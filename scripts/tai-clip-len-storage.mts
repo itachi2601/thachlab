@@ -33,7 +33,8 @@ if (!file || !tn || !fs.existsSync(file)) {
 }
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const khoFile = path.join(root, "content/thi-nghiem", `${tn}.json`);
+// --kho-dir: kho khác content/thi-nghiem (clip bẫy phụ đạo: content/phu-dao/clip-bay, chặng C 1/11/2026).
+const khoFile = path.join(root, opt("--kho-dir") ?? "content/thi-nghiem", `${tn}.json`);
 if (!fs.existsSync(khoFile)) {
   console.error(`✗ Không thấy ${khoFile}`);
   process.exit(1);

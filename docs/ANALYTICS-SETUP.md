@@ -41,3 +41,19 @@ Ngưỡng màu: đỏ khi sai > 50 %, vàng 30–50 %; mastery: ≥ 80 % Nắm v
 - Nhập kết quả làm trên Azota về LMS — toàn bộ tích hợp Azota hiện chỉ là chiều đề → LMS hoặc nhúng
   iframe (`docs/AZOTA-INTEGRATION.md`).
 - Hai việc trên nằm trong đề xuất skill `phan-tich-ket-qua` ở `docs/DE-XUAT-SKILL-2026-09-29.md`.
+
+## Đo clip bẫy phụ đạo (chặng C, thêm 1/11/2026)
+
+Thí điểm L12 Ch.3: 5 clip 20–30 s cho 5 YCCĐ sai nhiều nhất 30 ngày tới 1/11 (`content/phu-dao/clip-bay/*.json` ghi
+câu gốc, số lượt sai/luợt làm). Clip hiện trong thẻ mục phụ đạo của học sinh ở `/lop-hoc/ket-qua` (`NeedRow` →
+`ClipBayCard`, chỉ khi em đang sai đúng YCCĐ có clip; không RP, không ghi "đã xem").
+
+- **Mốc D** = ngày clip lên web (deploy + kho có `video.mp4`). So 14 ngày trước D với 14 ngày sau D, chạy
+  `scripts/sql/do-clip-bay-phu-dao.sql` (chỉ đọc, gộp theo chủ đề, không tên HS) sau D + 14 ngày.
+- **Chỉ số chính — tỉ lệ thoát phụ đạo** của chủ đề tầng bài (66 Lực từ, 67 Cảm ứng điện từ): trong các mục
+  `tutoring_needs` còn mở lúc đầu cửa sổ hoặc mở trong cửa sổ (bỏ `dismissed`), bao nhiêu % được `cleared` trong cửa sổ.
+- **Phụ**: % lượt tự kiểm tra thoát đạt (`tutoring_exit_attempts.passed`); % sai đúng 5 YCCĐ có clip (216, 217, 218,
+  233, 234) trong kiểm tra + luyện tập.
+- **Đọc kết quả**: mẫu nhỏ (vài chục mục/chủ đề) → chỉ coi là tín hiệu khi tỉ lệ thoát lệch ≥ 10 điểm % và % sai YCCĐ
+  cùng chiều; không có nhóm đối chứng nên so thêm chủ đề 65/68 (không clip) cùng cửa sổ để trừ hiệu ứng thời điểm
+  (sắp thi, đổi bài giao). Chưa đo được "bấm phát" vì thẻ `<video>` không ghi sự kiện (cố ý, V5 — không thêm JS).
