@@ -12,7 +12,7 @@ metadata:
 **Đã ghi DB tới 2026-10-10 (commit `9accb4478`, `f54afa7b9`, skill nhật ký `ddb2d46be`):**
 - L12: bài 2,3,4,6,7,8 (đợt 1, `ce07b6902`, `scripts/dang-btm-l12-dot1.sh`+`dot1b.sh`); 9,11,13,14,15,16 (đợt 2, `32a3f6ec5`, `dang-btm-l12-dot2.sh`); 17,18,19,125,126,127 (đợt 3, `9e603f556`, `dang-btm-l12-dot3.sh`) — tất cả ghi 10/10, sao lưu `scripts/logs/bai-tap-mau-bai<id>-*.json`. Bài chưa có mục `bai_tap_mau` (6,7,8,9,15,16,17,18,19) phải `tao-muc-bai-tap-mau.mts --lesson <id> --mau 224` trước `publish` (script đăng đã gồm bước này).
 - L11: 20–26, 27,28,30–33 (ghi 9/10, backup trong `scripts/logs`); 35,36,37,39,40,41,42,44 (ghi 10/10). 5–6 dạng/bài. Bài 40 là bản ghép (nền `40.json` của phiên kia + dạng 3 của builder; bản v2 ở `old/40.v2.json`).
-- L10: 49,50,52–55,57 đã có; **58,60,62,63,66 (đợt A, commit `aca5b2add`) ĐÃ ĐĂNG 2026-10-10** bằng `scripts/dang-btm-l10-dotA.sh` (dạng cũ 20/13/?/8/15 đã sao lưu `scripts/logs/bai-tap-mau-bai<id>-*.json`, đã nằm trong `tu_luan` nên không dùng `--giu-cu`).
+- L10: 49,50,52–55,57 đã có (49–55 bổ sung buoc[] tự giải từng bước + mũi tên chevron, ĐÃ ĐĂNG 1/11/2026, sao lưu `scripts/logs/bai-tap-mau-bai<id>-17935*.json`); **58,60,62,63,66 (đợt A, commit `aca5b2add`) ĐÃ ĐĂNG 2026-10-10** bằng `scripts/dang-btm-l10-dotA.sh` (dạng cũ 20/13/?/8/15 đã sao lưu `scripts/logs/bai-tap-mau-bai<id>-*.json`, đã nằm trong `tu_luan` nên không dùng `--giu-cu`).
 - Lý thuyết L11 bài 23,26,28,29,30,34: học sinh ảo → API sửa → kiểm chéo → đã đăng (10/10); dòng hang-doi đã `da-dang`.
 
 **Còn chờ:**
