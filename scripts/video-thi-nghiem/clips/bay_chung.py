@@ -98,5 +98,7 @@ def answer_pill(d, y, letter, s, k):
     if k <= 0: return
     yy = y + (1 - k) * 30
     d.rounded_rectangle([100, yy - 46, 980, yy + 46], radius=46, fill=A(mix(GREEN, WHITE, 0.85), k), outline=A(GREEN, k), width=5)
-    text(d, (150, yy), f"{letter}.  {s}", 46, GREEN, anchor="lm", alpha=k)
+    sz = 46
+    while sz > 36 and tw(d, f"{letter}.  {s}", F(sz)) > 740: sz -= 2   # chua cho dau ✓ ben phai
+    text(d, (150, yy), f"{letter}.  {s}", sz, GREEN, anchor="lm", alpha=k)
     text(d, (940, yy), "✓", 52, GREEN, anchor="rm", alpha=k)

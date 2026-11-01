@@ -13,9 +13,9 @@ LINES_Y = (390, 470, 620, 700)       # bo duong y = 545 de khong de len truc qua
 OX, OY, R = 540, 545, 210            # truc quay O, nua chieu rong khung
 FL = 120                             # do dai mui ten luc
 QY = 830
-Q_LINES = ["Ngẫu lực vì hai lực đó…"]
-OPTS = ["bằng nhau, cùng chiều, cùng giá", "khác nhau, ngược chiều, cùng giá",
-        "bằng nhau, ngược chiều, cùng giá", "bằng nhau, ngược chiều, khác giá"]
+Q_LINES = ["Lực từ lên hai cạnh đối diện khung", "là ngẫu lực vì chúng…"]
+OPTS = ["bằng nhau, cùng chiều, cùng giá", "không bằng nhau, ngược chiều, cùng giá",
+        "bằng nhau, ngược chiều, cùng giá", "bằng nhau, ngược chiều, khác giá"]   # "bằng nhau" = cùng độ lớn (đề gốc)
 ANS = 3
 
 
@@ -45,7 +45,7 @@ def frame_top(d, phi, forces=0.0, gia=0.0):
     (x1, y1), (x2, y2) = sides(phi)
     d.line([(x1, y1), (x2, y2)], fill=ORANGE, width=12)
     d.ellipse([OX - 12, OY - 12, OX + 12, OY + 12], fill=NAVY)
-    text(d, (OX + 26, OY + 34), "O", 36, NAVY, anchor="lm")
+    text(d, (OX - 30, OY + 44), "O", 36, NAVY, anchor="rm")
     if gia > 0:   # gia cua hai luc: duong thang dung net dut qua moi canh
         for x in (x1, x2): dash_line(d, (x, PY0 - 10), (x, PY1 + 10), A(GREEN, 0.55 * gia), w=4)
     if forces > 0:
@@ -64,7 +64,7 @@ def view_tag(d, k=1.0):
 def s_hoi(img, d, t, sc):
     field(d); frame_top(d, 0.0)
     k = appear(t, sc["M"][1] - 0.15, 0.45)
-    qcard(d, t, sc, QY, Q_LINES, OPTS, sc["M"][1] + 0.6, sc["T"] - 0.1, k=k)
+    qcard(d, t, sc, QY, Q_LINES, OPTS, sc["M"][1] + 0.6, sc["T"] - 0.1, k=k, head="")
 
 
 # ---------------- canh 2: dap an ----------------
@@ -91,7 +91,9 @@ def s_saivi(img, d, t, sc):
             ye = OY + sg * (30 + FL)
             d.line([(xa, OY + sg * 30), (xa, ye)], fill=A(RED, 0.9), width=9)
             chevron(d, xa, ye, sg * math.pi / 2, A(RED, 0.9), s=24, w=8)
-        badge(d, 1000, 300, "M = 0", RED, appear(t, m0 + 1.4, 0.4))
+        for sg in (-1, 1):   # net dut tu canh khung toi gia chung qua O: luc van dat o canh, chi cung gia
+            dash_line(d, (x1 if sg < 0 else x2, OY), (OX, OY), A(RED, 0.5 * u), w=4)
+        badge(d, 680, 800, "Không quay", RED, appear(t, m0 + 1.4, 0.4))
     else:
         frame_top(d, phi, forces=1.0, gia=1.0)
     note(d, 900, "Cùng giá: triệt tiêu", RED, appear(t, m0, 0.45) * (1 - appear(t, m1 - 0.1, 0.3)))
@@ -108,12 +110,12 @@ CLIP = dict(id="bay-l12-ch3-02", header="VẬT LÍ 12 · BẪY HAY SAI", footer=
             scenes=[
  dict(key="hoi", title="Tình huống", draw=s_hoi, tail=0.5, caps=[
    ("Nhìn từ trên xuống.", 3.0),
-   ("Chọn một đáp án.", 5.8)]),
- dict(key="dapan", title="Đáp án", draw=s_dapan, tail=0.8, caps=[
+   ("Chọn một đáp án.", 7.0)]),
+ dict(key="dapan", title="Đáp án", draw=s_dapan, tail=0.6, caps=[
    ("Đáp án D.", 2.8)]),
- dict(key="saivi", title="Sai vì…", draw=s_saivi, tail=0.9, caps=[
+ dict(key="saivi", title="Sai vì…", draw=s_saivi, tail=0.6, caps=[
    ("Chọn C: hai lực cùng giá.", 3.4),
    ("Thật ra: khác giá.", 3.8)]),
  dict(key="end", title="Quy tắc", draw=s_end, tail=1.0, caps=[
-   ("Tự nhớ lại.", 6.0)]),
+   ("Tự nhớ lại.", 5.6)]),
 ])

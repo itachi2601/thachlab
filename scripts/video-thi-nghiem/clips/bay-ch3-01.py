@@ -41,7 +41,18 @@ def force(d, cur, alpha=1.0, lab=True):
     L = F1 * cur; y0 = WY + WR + 8; y1 = y0 + L
     d.line([(WX, y0), (WX, y1)], fill=A(GREEN, alpha), width=9)
     chevron(d, WX, y1, math.pi / 2, A(GREEN, alpha), s=24, w=8)
-    if lab: text(d, (WX + 30, (y0 + y1) / 2 + 10), "F" if cur < 1.5 else "2F", 44, GREEN, anchor="lm", alpha=alpha)
+    if lab:   # nhan ben trai mui ten, nen trang de khong de len duong suc net dut
+        s = "F" if cur < 1.5 else "2F"; yl = (y0 + y1) / 2 + 10; wl = tw(d, s, F(44))
+        d.rounded_rectangle([WX - 34 - wl - 10, yl - 30, WX - 24, yl + 30], radius=10, fill=A(BG, alpha))
+        text(d, (WX - 34, yl), s, 44, GREEN, anchor="rm", alpha=alpha)
+
+
+def den(d, cx, cy, coef, alpha):
+    """Mau so 'I.l' ve tung phan: I mau cam (nhu nhan day thu), l mau muc — phong SF ve I va l gan giong nhau."""
+    parts = [(coef + "I", ORANGE), ("·", INK), ("l", INK)]; f = F(50)
+    x = cx - sum(tw(d, s, f) + 4 for s, _ in parts) / 2
+    for s, c in parts:
+        text(d, (x, cy), s, 50, c, anchor="lm", alpha=alpha); x += tw(d, s, f) + 4
 
 
 # ---------------- canh 1: tinh huong ----------------
@@ -66,7 +77,7 @@ def s_saivi(img, d, t, sc):
     if g > 0.02: force(d, 1, alpha=0.3, lab=False)   # bong mui ten cu de so do dai
     force(d, cur)
     kB = appear(t, sc["M"][0] + 2.4, 0.4)
-    badge(d, 1000, 300, "B giữ nguyên", PURPLE, kB)
+    badge(d, 640, 292, "B giữ nguyên", PURPLE, kB)
     # the cong thuc: B = F/(Il) -> 2F/(2I.l): x2 o tu va mau triet tieu
     k = appear(t, sc["M"][1] - 0.1, 0.45)
     if k <= 0: return
@@ -74,21 +85,21 @@ def s_saivi(img, d, t, sc):
     card(d, (60, y, 1020, y + 400), fill=A(WHITE, k), outline=A(RED, k), w=5)
     text(d, (W / 2, y + 46), "Sai vì coi B đổi theo I", 40, RED, alpha=k)
     rich(d, 250, y + 220, "B =", 50, INK, alpha=k)
-    frac(d, 440, y + 220, "F", "I·l", 50, INK, alpha=k, wline=150)
+    frac(d, 440, y + 220, "F", "", 50, INK, alpha=k, wline=150); den(d, 440, y + 256, "", k)
     text(d, (580, y + 220), "=", 50, INK, alpha=k)
     k2 = appear(t, sc["M"][1] + 1.0, 0.45)
-    frac(d, 760, y + 220, "2F", "2I·l", 50, INK, alpha=k * k2, wline=190)
+    frac(d, 760, y + 220, "2F", "", 50, INK, alpha=k * k2, wline=190); den(d, 760, y + 256, "2", k * k2)
     k3 = appear(t, sc["M"][1] + 2.0, 0.4)
     if k3 > 0:   # gach hai so 2 triet tieu
         for yy in (y + 220 - 36, y + 220 + 36):
             d.line([(690, yy + 18), (726, yy - 18)], fill=A(RED, k3), width=6)
-        text(d, (W / 2, y + 350), "F và I cùng gấp đôi", 38, MUTED, bold=False, alpha=k3)
+        text(d, (W / 2, y + 350), "chữ l thường: chiều dài dây", 36, MUTED, bold=False, alpha=k3)
 
 
 # ---------------- canh 4: quy tac + cau hoi tu nho ----------------
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "B do từ trường, không do dây thử",
-             "Rút dây thử ra. B tại điểm đó còn không?")
+             "Dây thử dài gấp đôi, I giữ nguyên: F gấp mấy lần?")
 
 
 CLIP = dict(id="bay-l12-ch3-01", header="VẬT LÍ 12 · BẪY HAY SAI", footer="Cảm ứng từ · thachlab.id.vn", cues=bay_cues,
@@ -100,7 +111,7 @@ CLIP = dict(id="bay-l12-ch3-01", header="VẬT LÍ 12 · BẪY HAY SAI", footer=
    ("Đáp án C.", 2.8)]),
  dict(key="saivi", title="Sai vì…", draw=s_saivi, tail=0.9, caps=[
    ("Tăng I: lực F gấp đôi.", 3.2),
-   ("Tỉ số F/(Il) giữ nguyên.", 3.6)]),
+   ("F, I cùng gấp đôi: tỉ số giữ nguyên.", 3.6)]),
  dict(key="end", title="Quy tắc", draw=s_end, tail=1.0, caps=[
    ("Tự nhớ lại.", 6.0)]),
 ])
