@@ -291,6 +291,21 @@ export default function ExamRunner({
     return () => clearInterval(timer);
   }, [phase, flushProgress]);
 
+  // Đồng hồ ngừng đếm khi em thoát khỏi bài: ghi ngay số giây còn lại chính xác lúc đóng tab / quay về trang
+  // trước / chuyển trang trong app (unmount), thay vì chờ nhịp lưu 30s–2 phút. Vào lại thì beginExam dựng
+  // lại mốc từ seconds_left này nên thời gian vắng mặt không bị tính. Đã nộp thì không ghi (seconds_left đã xoá).
+  useEffect(() => {
+    if (phase !== "running") return;
+    const saveOnExit = () => {
+      if (!submittedRef.current) flushProgress(true);
+    };
+    window.addEventListener("pagehide", saveOnExit);
+    return () => {
+      window.removeEventListener("pagehide", saveOnExit);
+      saveOnExit();
+    };
+  }, [phase, flushProgress]);
+
   // Ghi nhận rời tab / thoát fullscreen lúc đang làm bài — chỉ log + cảnh báo,
   // không tự nộp bài, không chặn thao tác gì khác.
   useEffect(() => {
