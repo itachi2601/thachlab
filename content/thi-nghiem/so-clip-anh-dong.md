@@ -65,11 +65,11 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 
 ## Chặng B — L10 còn lại (lô 1/11/2026, 8 clip; ưu tiên chương sắp dạy: Ch.6 tròn đều, Ch.7 biến dạng, rồi ôn Ch.2, Ch.1. Không hộp nào đã có clip/PhET/SVG thể hiện TN → không bỏ qua TN nào)
 
-- l10-chuyen-dong-tron-deu · tn-l10-trondeu-03 · clip trondeu3 · nháp · 1/11/2026 ·
-- l10-bien-dang-vat-ran · tn-l10-biendang-03 · clip biendang3 · nháp · 1/11/2026 ·
-- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip giatoc1 · nháp · 1/11/2026 · khác bố cục ctbdd1
-- l10-toc-do-van-toc · tn-l10-tdvt-01 · clip tdvt1 · nháp · 1/11/2026 ·
-- l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip dog3 · nháp · 1/11/2026 ·
-- l10-thuc-hanh-sai-so · tn-l10-sai-so-02 · clip saiso2 · nháp · 1/11/2026 ·
-- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-01 · clip antoan1 · nháp · 1/11/2026 ·
-- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-02 · clip antoan2 · nháp · 1/11/2026 ·
+- l10-chuyen-dong-tron-deu · tn-l10-trondeu-03 · clip trondeu3 · đã soát · 1/11/2026 · 49,9 s · 1,41 MB · cổng B 1 vòng
+- l10-bien-dang-vat-ran · tn-l10-biendang-03 · clip biendang3 · đã soát · 1/11/2026 · 49,7 s · 1,35 MB · cổng B 2 vòng
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip giatoc1 · đã soát · 1/11/2026 · 49,6 s · 1,29 MB · cổng B 1 vòng · khác bố cục ctbdd1
+- l10-toc-do-van-toc · tn-l10-tdvt-01 · clip tdvt1 · đã soát · 1/11/2026 · 49,9 s · 1,19 MB · cổng B 1 vòng
+- l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip dog3 · đã soát · 1/11/2026 · 49,9 s · 1,33 MB · cổng B 1 vòng
+- l10-thuc-hanh-sai-so · tn-l10-sai-so-02 · clip saiso2 · đã soát · 1/11/2026 · 49,5 s · 1,12 MB · cổng B 1 vòng
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-01 · clip antoan1 · đã soát · 1/11/2026 · 49,7 s · 1,18 MB · cổng B 1 vòng; khi gắn khung bỏ chữ "Quan sát" hộp tĩnh (lộ đáp án B)
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-02 · clip antoan2 · đã soát · 1/11/2026 · 49,7 s · 1,24 MB · cổng B 2 vòng (chốt cũ ngoại suy 1/d²)
