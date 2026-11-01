@@ -384,6 +384,45 @@ export async function findOpenExamAttempt(
   }
 }
 
+export interface MyOpenExamAttempt {
+  examId: number;
+  itemId: number | null;
+  examTitle: string;
+  secondsLeft: number;
+}
+
+/** Bài kiểm tra em vào làm mà chưa nộp (đã lưu nháp ít nhất một nhịp, còn giờ, trong 3 ngày) — mới lưu nhất trước. */
+export async function fetchMyOpenExamAttempts(studentId: string): Promise<MyOpenExamAttempt[]> {
+  try {
+    const since = new Date(Date.now() - 3 * 86_400_000).toISOString();
+    const { data } = await getSupabase()
+      .from("exam_attempts")
+      .select("exam_id, item_id, seconds_left, exams(title)")
+      .eq("student_id", studentId)
+      .is("submitted_at", null)
+      .gt("seconds_left", 0)
+      .gte("saved_at", since)
+      .order("saved_at", { ascending: false })
+      .limit(5);
+    const out: MyOpenExamAttempt[] = [];
+    const seen = new Set<number>();
+    for (const r of (data ?? []) as unknown as {
+      exam_id: number;
+      item_id: number | null;
+      seconds_left: number;
+      exams: { title: string } | { title: string }[] | null;
+    }[]) {
+      const ex = Array.isArray(r.exams) ? r.exams[0] : r.exams;
+      if (!ex?.title || seen.has(r.exam_id)) continue; // đề đã ẩn/xoá với em thì bỏ
+      seen.add(r.exam_id);
+      out.push({ examId: r.exam_id, itemId: r.item_id, examTitle: ex.title, secondsLeft: r.seconds_left });
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 export async function saveExamAttemptProgress(
   clientToken: string,
   responses: QuestionResponse[],

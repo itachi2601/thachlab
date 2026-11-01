@@ -3,7 +3,7 @@
 // Thầy chốt 8/10/2026: trang chủ chỉ gợi việc THÍCH ỨNG theo hồ sơ em. Thầy chốt lại 17/10/2026: đề KIỂM TRA lớp đã giao mà em
 // chưa làm (class_assessments, 21 ngày gần nhất) quay lại thẻ, chung 2 suất đầu với BTVN — em bỏ lỡ chuông thì vẫn thấy.
 
-export type NextStepKind = "session" | "homework" | "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
+export type NextStepKind = "resume" | "session" | "homework" | "assigned" | "unlock" | "weak" | "retry" | "lesson" | "review";
 
 export interface NextStep {
   kind: NextStepKind;
@@ -48,6 +48,15 @@ export interface AssignedInput {
   kindLabel: string;
 }
 
+export interface ResumeInput {
+  examId: number;
+  /** Có khi bài làm dở là mục kiểm tra trong bài học — cần để vào lại đúng chế độ. */
+  itemId: number | null;
+  examTitle: string;
+  /** Giây còn lại lúc em thoát (đồng hồ đang tạm dừng). */
+  secondsLeft: number;
+}
+
 export interface SessionInput {
   mode: "live" | "self";
   title: string;
@@ -60,6 +69,8 @@ export interface SessionInput {
 }
 
 export interface NextStepInput {
+  /** Bài kiểm tra em đang làm dở (đã vào làm, chưa nộp, đồng hồ tạm dừng) — luôn là việc đầu tiên, đặt trước cả buổi ôn/BTVN. */
+  resume?: ResumeInput | null;
   /** Buổi ôn tập theo chặng của lớp đang mở (tự học ở nhà hoặc trên lớp), em chưa qua hết chặng — việc đầu tiên. */
   session?: SessionInput | null;
   /** Đề kiểm tra lớp đã giao, em chưa làm — xếp sau BTVN, chung 2 suất đầu. */
@@ -76,6 +87,12 @@ export interface NextStepInput {
   weak?: WeakInput[];
   /** Bài đã học xong gần nhất — việc "ôn lại" khi hết việc khác. */
   reviewLesson?: { id: number; chapterId: number; title: string } | null;
+}
+
+function formatLeft(secs: number): string {
+  const m = Math.floor(secs / 60);
+  const s = secs % 60;
+  return m > 0 ? `${m} phút${s >= 30 ? " hơn" : ""}` : `${s} giây`;
 }
 
 /** "Hạn 21:00 thứ Sáu 23/10" / "Quá hạn, làm bù vẫn được" / "" khi không đặt hạn. */
@@ -231,5 +248,20 @@ export function rankNextSteps(input: NextStepInput): NextStep[] {
     );
   }
   if (locked) steps.push(locked);
+  if (input.resume) {
+    const r = input.resume;
+    const href = `/kiem-tra/lam?id=${r.examId}${r.itemId ? `&item=${r.itemId}` : ""}`;
+    // Cùng đề với một việc khác (đề lớp giao, BTVN, làm lại) thì gộp vào một dòng "làm tiếp".
+    const rest = steps.filter((st) => !st.href?.startsWith(`/kiem-tra/lam?id=${r.examId}`));
+    rest.unshift({
+      kind: "resume",
+      key: `resume-${r.examId}`,
+      action: "Làm tiếp bài dở",
+      title: r.examTitle,
+      hint: `Còn ${formatLeft(r.secondsLeft)}, đồng hồ đang tạm dừng. Vào lại là đếm tiếp`,
+      href,
+    });
+    return rest.slice(0, MAX_STEPS);
+  }
   return steps.slice(0, MAX_STEPS);
 }
