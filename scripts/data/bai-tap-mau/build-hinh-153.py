@@ -43,6 +43,15 @@ write(J, 153, "Chuyên đề 12. Nhiệt học nâng cao: cân bằng nhiệt v�
 inject(J, BUILD, ANALYSIS, SOLS, STEPS)
 d = json.load(open(J))
 d["generated_at"] = "2026-10-16"
+# 💡 Mẹo nhìn (1/11/2026, docs/KE-HOACH-MEO-GIAI-BAI-TAP.md) — chỉ hiện sau lời giải, trước "Làm bài tương tự"
+if not ONLY or ONLY == "btm153_d123":
+    from meo_nhiet import don_bay_nhiet, quy_nhiet
+    d["dang_bai"][0]["meo"] = don_bay_nhiet(
+        "<p>Ở dạng này: bình nhôm và nước cùng ở 20&nbsp;°C nên gộp thành <b>một</b> quả nặng $m_1c_1+m_2c_2$. "
+        "Quên bình là bỏ bớt quả nặng bên lạnh, điểm tựa trượt về phía miếng đồng nóng: nhiệt độ tính ra cao hơn thật.</p>")
+    d["dang_bai"][1]["meo"] = quy_nhiet(
+        "<p>Ở dạng này: tính quỹ của nước trước, rồi so với số nhiệt mà đá cần để lên 0&nbsp;°C và tan hết. "
+        "Quỹ đủ thì đá tan hết; quỹ thiếu thì còn đá và hệ dừng ở 0&nbsp;°C; quỹ không đủ đưa cả đá lên 0&nbsp;°C thì nước đông một phần, xét riêng.</p>")
 REVIEW = os.path.join(HERE, "review-153.json")   # phiên chính ghi sau kiểm chéo
 d["review"] = json.load(open(REVIEW)) if os.path.exists(REVIEW) else {"checked": False, "notes": "chờ kiểm chéo"}
 json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
