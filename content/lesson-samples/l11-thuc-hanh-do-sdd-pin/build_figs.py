@@ -41,7 +41,7 @@ def ring(x, y, r, c, label, size=14):
 
 
 def sub(s):  # R_0 -> R<tspan baseline-shift="sub">0</tspan>
-    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="12">\1</tspan>', s)
+    return re.sub(r"_(\w)", r'<tspan baseline-shift="sub" font-size="14">\1</tspan>', s)
 
 
 class Fig:

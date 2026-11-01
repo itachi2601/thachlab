@@ -110,3 +110,6 @@ mp4 chưa chèn vào bài: chỗ đặt (YouTube không công khai + `scripts/ch
 - 2026-11-01 · Cổng B bắt 3/5 clip có câu tự nhớ bị thẻ Quy tắc trả lời sẵn hoặc hỏi điều clip không dạy → viết câu tự nhớ là biến thể của tình huống mà Quy tắc cho cách làm nhưng không cho đáp số (đổi số/góc, đổi đại lượng giữ nguyên).
 - 2026-11-01 · Font SF không có ℓ, và I với l trông như nhau → dùng "l" thường kèm dòng chú, tô I (cam) khác l (mực); kiểm glyph bằng so `getmask().getbbox()` với ký tự PUA vì máy không có fontTools.
 - 2026-11-01 · Chữ trong ô nhỏ nhân hệ số `s` (lưới 2×2) rơi xuống ~20 px ở khung 1080 → nhãn luôn `max(36, int(size*s))`.
+- 2026-11-01 · Prompt chặng B "các bài còn lại L11" chạy khi L11 đã dựng đủ 21/22 (phiên 30–31/10), sổ trên main còn ghi Ch.4 "chỉ render" vì nhánh `claude/motion-graphic-chapter-4-grade-11-*` (ghi "đã đăng DB") và `claude/ra-soat-bai-hoc-lop-11-*` chưa vào main → trước khi giao agent Opus: `ls clips/` + `ls video-khung/` + `git log origin/main..origin/claude/<nhánh motion/ra-soat>` đối chiếu danh sách, phần còn lại thường chỉ là bước 5 (chèn/đăng), không tốn USD.
+- 2026-11-01 · Gộp tay nhánh `claude/*` bị kẹt vì xung đột: `bundle.json` hai bên đều = `theory.html` → dựng lại bundle từ `theory.html` đã gộp (`json.dumps(..., ensure_ascii=False, indent=1)` + "
+"), không sửa tay chuỗi JSON; sổ clip lấy dòng trạng thái mới nhất từng bên.

@@ -81,8 +81,8 @@ b += poly([(x, Y0 - AU * math.sin(2 * math.pi * (x - X0 - T0) / PER)) for x in r
 pO, pM = X0 + PER / 4, X0 + T0 + PER / 4    # hai đỉnh đầu tiên
 b += line(pO, Y0 - AU, pO, 154, RED, 1.2, "3 3") + line(pM, Y0 - AU, pM, 154, BLUE, 1.2, "3 3")
 b += dbl_h(pO, pM, 156, GRN, 1.6) + text(pM + 8, 161, "trễ d/v", GRN, 14, "start", "700")
-b += text(398, Y0 - 28, "u", RED, 14, "start", "700").replace(">u<", '>u<tspan baseline-shift="sub" font-size="13">O</tspan><')
-b += text(398, Y0 + 44, "u", BLUE, 14, "start", "700").replace(">u<", '>u<tspan baseline-shift="sub" font-size="13">M</tspan><')
+b += text(398, Y0 - 28, "u", RED, 14, "start", "700").replace(">u<", '>u<tspan baseline-shift="sub" font-size="14">O</tspan><')
+b += text(398, Y0 + 44, "u", BLUE, 14, "start", "700").replace(">u<", '>u<tspan baseline-shift="sub" font-size="14">M</tspan><')
 b += text(20, 264, "M dao động chậm hơn O khoảng d/v", "currentColor", 14, "start", "500")
 b += text(20, 284, "→ trễ pha Δφ = 2πd/λ", "currentColor", 14, "start", "600")
 fig3 = wrap("0 0 440 294", "Điểm M cách nguồn O đoạn d: sóng tới M chậm hơn d/v, dao động tại M trễ pha hơn O đúng Δφ = 2πd/λ",

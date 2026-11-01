@@ -4,7 +4,7 @@ import math, os, sys
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 from svg_lib import *
 
-FS, SUB = 17, 13          # cỡ chữ nhãn / chỉ số dưới (viewBox rộng 420)
+FS, SUB = 17, 14          # cỡ chữ nhãn / chỉ số dưới (viewBox rộng 420)
 LABELS = []               # (x, y, số ký tự hiển thị, cỡ, anchor, chuỗi) để kiểm chồng chữ + mép
 
 
