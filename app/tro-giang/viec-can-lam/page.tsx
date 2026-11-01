@@ -29,7 +29,7 @@ const CLASS_AFTER: Task[] = [
 
 // Buổi phụ đạo: nhận em → đặt lịch → trước → trong → cuối → sau
 const TUTOR_STEPS: Task[] = [
-  { when: "1 · Hằng tuần", title: "Nhận em cần phụ đạo", text: "Danh sách xếp em còn hổng nhiều lên đầu. Bấm “Tôi nhận” để nhận. Thẻ của em có phiếu xuất phát nếu em đã làm kiểm tra đầu vào. Một buổi tối đa 4 em.", href: "/tro-giang/phu-dao" },
+  { when: "1 · Hằng tuần", title: "Nhận em cần phụ đạo", text: "Danh sách xếp em còn hổng nhiều lên đầu. Bấm “Tôi nhận” để nhận. Thẻ của em có phiếu xuất phát nếu em đã làm kiểm tra đầu vào.", href: "/tro-giang/phu-dao" },
   { when: "2 · Trước buổi", title: "Đăng lịch phụ đạo cho học sinh đặt", text: "Em chọn 1–3 chủ đề và đặt chỗ, chốt trước buổi 6 giờ. Buổi đầy chỗ có hàng chờ; bấm “Mở lượt tiếp” nếu còn chỗ (tối đa 4 em).", href: "/tro-giang/phu-dao?tab=slots" },
   { when: "3 · Trước buổi", title: "Đọc phiếu xuất phát và chuẩn bị bài", text: "Xem chủ đề đã vững (bỏ qua), cần ôn, hiểu chưa đúng, chưa biết. Phụ đạo bắt đầu từ chỗ em hổng, không dò lại phần em đã vững. Nắm bài trước buổi là một điều kiện tính điểm phụ đạo." },
   { when: "4 · Đầu buổi", title: "Dò bài cũ", text: "Mỗi em được hỏi ít nhất một lần. Hỏi để em nhớ lại, không đọc đáp án cho em." },
