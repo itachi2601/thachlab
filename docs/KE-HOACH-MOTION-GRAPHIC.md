@@ -33,7 +33,7 @@ Quy tắc áp dụng: `docs/QUY-TAC-THIET-KE.md` **V1–V12** (V8 rút chữ, V9
 
 | # | Mảng | Hình thức | Vì sao hợp / quy tắc | Ưu tiên |
 |---|---|---|---|---|
-| 1 | **Thí nghiệm trong bài lý thuyết** (đang làm) | Lớp A + **lớp B** (dừng ở Dự đoán) | Đã có 23 clip L12; còn **211 TN / 65 bài** L9–L11 chưa clip; nhóm C (không có YouTube) 64 clip còn lại, nhóm B 88 chờ thầy chọn. V1, V8, V9, V12, T2 | ★★★ |
+| 1 | **Thí nghiệm trong bài lý thuyết** (đang làm) | Lớp A + **lớp B** (dừng ở Dự đoán) | Đã có 23 clip L12; còn **211 TN / 65 bài** L9–L11 chưa clip; nhóm C L10–L11 (không có YouTube) còn **40/55 clip** (cập nhật 1/11: L10 25, L11 15), nhóm B 88 chờ thầy chọn. V1, V8, V9, V12, T2 | ★★★ |
 | 2 | **Phụ đạo theo chủ đề + Trả bài** | "Clip bẫy" 20–30 s: tình huống → HS chọn → vì sao sai → quy tắc 1 dòng; 1 clip/bẫy, lấy từ chủ đề hay sai của lớp (`docs/ANALYTICS-SETUP.md`) | HS vào phụ đạo đã "sai rồi", xem lý do sai dạng động hợp Mayer – signaling + quyền được sai (Dahl–Steinberg). Không thay 20 câu thoát phụ đạo | ★★★ |
 | 3 | **Ôn tập theo chặng** (3 màn hình, chưa deploy) | Video ôn chương 60–90 s dạng **hỏi trước – hiện sau**: 4–6 câu từ khoá, mỗi câu dừng 4 s rồi hiện đáp án | Retrieval practice; thay "tóm tắt có giọng" (thụ động). Chèn ở màn hình 1 của chặng, bấm mới phát (V5) | ★★ |
 | 4 | **Sách in** (`sach-in-tu-web`) | QR cạnh hộp thí nghiệm trỏ thẳng tới clip (`lesson-clips/...mp4`) | Đã có pipeline QR; không cần dựng thêm, chỉ in link. Clip 9:16 xem trên điện thoại khi đang cầm sách | ★★ (rẻ) |
@@ -61,12 +61,27 @@ Quy tắc áp dụng: `docs/QUY-TAC-THIET-KE.md` **V1–V12** (V8 rút chữ, V9
 | Chặng | Việc | Thời gian | Xong khi | Ai |
 |---|---|---|---|---|
 | **A. Đưa khung tương tác vào bài thật** | Deploy CSS `tl-video--doc` còn treo; `ContentHtml`/chèn bài nhận `data-khung` để render `VideoThiNghiemKhung` cho 23 clip L12; thêm event `clip_choice` (chọn ở điểm dừng) ghi gộp theo heartbeat, **không thêm round-trip** cho `/lop-hoc/bai`; chụp 375 px sáng/tối | 30/10–3/11 (1–2 phiên) | 23 clip L12 dừng ở Dự đoán trên web; có số lượt chọn đúng/sai | phiên chính Sonnet + `kiem-code` |
-| **B. Phủ L10–L11 nhóm C** | 64 clip còn lại theo chương **sắp dạy** (lịch `lich-tuan`), lô 7–10 clip/phiên, mỗi clip kèm JSON khung | 3–22/11 | 64 dòng "đã đăng/bỏ qua"; ≈ 150–170 USD | Opus dựng (song song ≤ 3), Sonnet `kiem-code` cổng B |
+| **B. Phủ L10–L11 nhóm C** | **Đang làm** (xem 4a): 15/55 clip đã dựng 30/10, còn 40 theo chương **sắp dạy** (lịch `lich-tuan`), lô 7–10 clip/phiên, mỗi clip kèm JSON khung | 3–22/11 | 40 dòng còn lại "đã đăng/bỏ qua"; ≈ 100 USD | Opus dựng (song song ≤ 3), Sonnet `kiem-code` cổng B |
 | **B'. Nhóm B 88 TN** | Thầy duyệt danh sách: dùng YouTube có sẵn (0 USD, V3–V5) hay tự dựng | chờ thầy | danh sách có cột "YT/tự dựng" | thầy |
 | **C. Clip bẫy cho phụ đạo** | Thí điểm 1 chương L12 đang dạy: lấy 5 chủ đề sai nhiều nhất từ Trả bài → 5 clip 20–30 s → nhúng ở `/phu-dao` chủ đề đó + bài lý thuyết liên quan; mẫu kịch bản `clips/bay-*.py` (cảnh: tình huống → chọn → sai vì → quy tắc) | 10–20/11 | 5 clip + kịch bản mẫu được thầy duyệt; đo tỉ lệ thoát phụ đạo trước/sau | Opus (mẫu), Sonnet (lô) |
 | **D. Video ôn chương hỏi-trước** | 1 chương L12 thử (60–90 s, 5 câu từ khoá dừng 4 s); gắn vào màn hình 1 của Ôn tập theo chặng khi deploy | tháng 12 | thầy duyệt 1 clip; quyết định mở rộng | Opus |
 | **E. QR sách in** | Thêm QR clip cạnh hộp thí nghiệm trong `book/` cho chương đã có clip | khi dựng lại sách | QR giải mã đúng (`scripts/kiem-qr.mts`) | Sonnet |
 | **F. Clip phụ huynh / tuyển sinh** | 1 clip 30 s theo P1..P21, đặt ở `/phu-huynh`; bản 9:16 cho Zalo | khi thầy cần | thầy duyệt | Opus |
+
+### 4a. Tiến độ chặng B (cập nhật 1/11/2026)
+
+Nhóm C L10–L11 = 55 clip (`danh-sach-tu-dung.md`). Đã dựng 30/10: L10 Động lực học 8 (có `klr-apsuat-04` bỏ qua vì bài không có hộp), L11 Điện 7. **Còn 40**, đề xuất thứ tự lô (theo chương sắp dạy):
+
+| Lô | Chương | Bài (số clip) | Clip |
+|---|---|---|--:|
+| B3 | L11 Ch.1 Dao động | B2 (2) · B3 (1) · B4 (2) · B5 (1) · B7 (1) | 7 |
+| B4 | L11 Ch.4 Dòng điện (hoãn từ 30/10) | Cường độ dòng điện (2) · Ohm (1) · Nguồn điện (2) · Năng lượng–công suất điện (2) · TH đo suất điện động (1) | 8 |
+| B5 | L10 Ch.2 Động học, nửa đầu | B4 (1) · B5 (2) · B6 (1) · B7 (1) · B8 (2) | 7 |
+| B6 | L10 Ch.2 Động học, nửa sau | B9 (1) · B10 (1) · B11 (2) · B12 (1) | 5 |
+| B7 | L10 Ch.4–7 | B24–B27 (4) · B28 (2) · B30 (1) · B31 (1) · B33 (1) · B34 (1, `klr-apsuat-04`: thêm hộp vào bài hoặc loại) | 10 |
+| B8 | L10 Ch.1 Mở đầu | B2 (2) · B3 (1) | 3 |
+
+Ch.2 Sóng L11 và Ch.3 L10 không còn clip nhóm C. Tồn đọng của lô 30/10: chưa chèn `coulomb2`, `dtdeu2`, `trongluc2/3` (chờ bài đủ 24 h); 5 clip L11 Điện chờ thầy duyệt rồi mới đăng DB; số 20 nC của `tn-l11-coulomb-02` gần ngưỡng đánh thủng, chờ thầy quyết sửa kho/bài. Lưu ý khi ghi sổ: id trong sổ và `index.json` lệch ở vài bài (như `tonghopluc-02`), đối chiếu tay.
 
 Ranh giới: L12 `theory.src.html` đang có phiên mẹo 🧠 và thí nghiệm khung 6 ô — trước khi sửa bài nào chạy
 `git log origin/main -3 -- content/lesson-samples/<bài>/theory.src.html`, có commit 24 h qua thì chờ. Chặng A chỉ đụng
