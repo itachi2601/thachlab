@@ -19,8 +19,16 @@ def circ(x, y, r=5.5):
 def varrow(p, X, Y, L, dur):
     """Mũi tên vận tốc đỏ chạy cùng vật: đuôi ở X[i], dài L[i] px (âm = hướng trái). Mờ dần khi v → 0 để khỏi hiện mũi nhọn."""
     op = [min(1.0, abs(l) / 6) for l in L]
-    return (f'<line x1="{X[0]:.1f}" y1="{Y:.1f}" x2="{X[0] + L[0]:.1f}" y2="{Y:.1f}" stroke="{RED}" stroke-width="3" marker-end="url(#{p}-r)">'
-            + smil("x1", X, dur) + smil("x2", [x + l for x, l in zip(X, L)], dur) + smil("opacity", op, dur) + "</line>")
+    tips = [x + l for x, l in zip(X, L)]
+    sg = [(1 if l >= 0 else -1) for l in L]
+    hx = [t - s_ * 9 * 0.866 for t, s_ in zip(tips, sg)]   # đầu V 30°, cánh dài 9 px
+    body = (f'<line x1="{X[0]:.1f}" y1="{Y:.1f}" x2="{tips[0]:.1f}" y2="{Y:.1f}" stroke="{RED}" stroke-width="2.8" stroke-linecap="round">'
+            + smil("x1", X, dur) + smil("x2", tips, dur) + "</line>")
+    wing = ""
+    for sgn in (-1, 1):
+        wing += (f'<line x1="{tips[0]:.1f}" y1="{Y:.1f}" x2="{hx[0]:.1f}" y2="{Y + sgn * 4.5:.1f}" stroke="{RED}" stroke-width="2.8" stroke-linecap="round">'
+                 + smil("x1", tips, dur) + smil("x2", hx, dur) + "</line>")
+    return f'<g>{body}{wing}' + smil("opacity", op, dur) + "</g>"
 
 
 def ruler(x0, y, scale, vals, size=12):
@@ -323,6 +331,123 @@ DANG = [
                    "<li>Tính gia tốc trung bình của bóng trong thời gian va chạm và cho biết hướng của gia tốc.</li></ol>"),
 ]
 
+# Tự giải từng bước (thầy chốt 9/10/2026; thêm cho bài đã đăng 1/11/2026): buoc[] khớp 1-1 với các bước trong SOLS.
+STEPS = [
+ dict(nhan_dang=r"Thấy <b>vận tốc ở hai thời điểm</b> và <b>km/h</b> → đổi sang m/s, tính $a$ rồi dùng lại cho các mốc khác.",
+  cap_do=1, fading="mo_het", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Đổi đơn vị", r"Vận tốc $72\ \text{km/h}$ bằng bao nhiêu m/s?", 20, "m/s", 0.2,
+       loi=r"Nhân với $3{,}6$ thay vì chia: $1\ \text{m/s}=3{,}6\ \text{km/h}$ nên đổi km/h sang m/s phải chia."),
+  buoc("Gia tốc", r"Gia tốc của xe là bao nhiêu (m/s²)?", 0.25, "m/s²", 0.005,
+       loi=r"Dùng thẳng số km/h với giây rồi coi là m/s²; hoặc chia cho khoảng thời gian sai. Đổi hết vận tốc sang m/s trước.",
+       ke=[(r"Đổi hai vận tốc sang m/s rồi $a=\dfrac{v_2-v_1}{\Delta t}$", True),
+           (r"$a=\dfrac{36-18}{20}$ ngay bằng số km/h", "Lẫn đơn vị km/h với giây; đổi mọi vận tốc sang m/s thì $a$ mới có đơn vị m/s²."),
+           (r"$a=\dfrac{v_2}{\Delta t}$", "Quên trừ vận tốc ban đầu: xe không xuất phát từ trạng thái nghỉ.")]),
+  buoc("Vận tốc sau 40 s", r"Vận tốc của xe sau $40\ \text{s}$ kể từ lúc tăng ga là bao nhiêu (m/s)?", 15, "m/s", 0.2,
+       loi=r"Lấy vận tốc đạt được lúc 20 s làm vận tốc đầu, hoặc trừ bớt 20 s. Mốc 40 s đã tính từ lúc tăng ga nên vận tốc đầu là vận tốc lúc tăng ga.",
+       ke=[(r"$v=v_1+a\Delta t$ với $\Delta t=40$ s tính từ lúc tăng ga", True),
+           (r"Lấy vận tốc lúc 20 s cộng $a\cdot40$", "Thời gian 40 s đã tính từ lúc tăng ga, lúc đó vận tốc là $v_1$; vận tốc lúc 20 s mới đạt sau 20 s."),
+           (r"$v=v_1+a\cdot(40-20)$", "Không trừ 20 s: mốc 40 s đã đo từ lúc tăng ga.")]),
+  buoc("Thời gian đạt 72 km/h", r"Kể từ lúc tăng ga, sau bao lâu xe đạt $72\ \text{km/h}$ (s)?", 60, "s", 1,
+       loi=r"Chia thẳng vận tốc cần đạt cho $a$ (quên trừ vận tốc ban đầu), hoặc trừ vận tốc lúc 20 s thay vì vận tốc lúc tăng ga.",
+       ke=[(r"$\Delta t=\dfrac{v_3-v_1}{a}$ ($v_3$ là vận tốc cần đạt)", True),
+           (r"$\Delta t=\dfrac{v_3}{a}$", "Xe không xuất phát từ nghỉ; phải trừ vận tốc ban đầu."),
+           (r"$\Delta t=\dfrac{v_3-v_2}{a}$ ($v_2$ là vận tốc lúc 20 s)", "Đề hỏi kể từ lúc tăng ga nên mốc đầu là $v_1$, không phải $v_2$.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang=r"Thấy <b>chiều dương</b> hoặc xe <b>phanh</b> hỏi dấu $a$ → xét tích $a\cdot v$, đổi chiều dương thì đổi dấu cả $v$ và $a$.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Đổi đơn vị", r"Vận tốc $36\ \text{km/h}$ bằng bao nhiêu m/s?", 10, "m/s", 0.1,
+       loi=r"Nhân với $3{,}6$ thay vì chia."),
+  buoc("Chiều dương cùng chiều chuyển động", r"Chọn chiều dương cùng chiều chuyển động. Gia tốc của xe bằng bao nhiêu (m/s²)?", -2.5, "m/s²", 0.05,
+       loi=r"Lấy hiệu theo thứ tự đầu trừ cuối nên sai dấu; $\Delta v$ luôn là vận tốc cuối trừ vận tốc đầu, xe dừng thì vận tốc cuối là 0.",
+       ke=[(r"$a=\dfrac{v_2-v_1}{\Delta t}$ với $v_1$ là vận tốc lúc bắt đầu phanh, $v_2$ lúc dừng", True),
+           (r"$a=\dfrac{v_1-v_2}{\Delta t}$", "Đảo thứ tự hiệu nên sai dấu: $\\Delta v$ là cuối trừ đầu."),
+           (r"$a=\dfrac{v_1}{\Delta t}$ rồi tự thêm dấu theo cảm giác", "Phải tính từ $v_2-v_1$ với dấu theo chiều dương đã chọn, không đoán dấu.")]),
+  buoc("Chiều dương ngược chiều chuyển động", r"Chọn chiều dương ngược chiều chuyển động. Gia tốc của xe bằng bao nhiêu (m/s²)?", 2.5, "m/s²", 0.05,
+       loi=r"Giữ nguyên vận tốc đầu của câu trước trong khi chiều dương đã đổi; vận tốc đầu phải đổi dấu theo chiều dương mới.",
+       ke=[(r"Đổi dấu $v_1$ theo chiều dương mới rồi tính $\dfrac{v_2-v_1}{\Delta t}$", True),
+           (r"Giữ $v_1=+10$, $v_2=0$ như câu trước rồi lấy luôn kết quả", "Ra gia tốc theo chiều dương cũ, không phải theo chiều dương mới; $v_1$ phải đổi dấu trước khi tính."),
+           (r"Coi $a$ không phụ thuộc chiều dương nên giữ nguyên giá trị câu trước", "$a$ là đại lượng có hướng; đổi chiều dương thì dấu của nó đổi.")]),
+  buoc("Vận tốc sau 2 s phanh", r"Chọn chiều dương như câu a. Vận tốc của xe sau $2\ \text{s}$ phanh bằng bao nhiêu (m/s)?", 5, "m/s", 0.1,
+       loi=r"Dùng thời gian phanh cả quá trình thay cho 2 s, hoặc dùng $a$ của câu b trong khi chiều dương là của câu a.",
+       ke=[(r"$v=v_1+a\Delta t$ với $a$ của câu a và $\Delta t=2$ s", True),
+           (r"$v=v_1+a\cdot4$", "Đề hỏi sau 2 s; 4 s là thời gian phanh cả quá trình, lúc đó xe đã dừng."),
+           (r"$v=v_1+a\Delta t$ nhưng lấy $a$ của câu b", "Chiều dương ở câu c là của câu a, nên phải dùng $a$ của câu a.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang=r"Thấy <b>đồ thị vận tốc – thời gian</b> gồm nhiều đoạn thẳng → tách giai đoạn, độ dốc từng đoạn là $a$.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 3}, buoc=[
+  buoc("Chia giai đoạn theo đoạn thẳng", r"Nên chia đồ thị thành các giai đoạn ở đâu?",
+       loi=r"Chia theo khoảng thời gian bằng nhau hoặc dùng một gia tốc chung cho cả đồ thị.",
+       lua_chon=[(r"Tại chỗ đồ thị đổi độ dốc, mỗi đoạn thẳng một giai đoạn", True),
+                 (r"Chia đều thành các khoảng thời gian bằng nhau", "Gia tốc chỉ không đổi trên mỗi đoạn thẳng; chia đều có thể gộp hai đoạn dốc khác nhau."),
+                 (r"Dùng một gia tốc chung từ lúc đầu đến lúc cuối", "Đồ thị không phải một đoạn thẳng nên một gia tốc chung che mất các giai đoạn.")]),
+  buoc("Giai đoạn ①", r"Gia tốc trong giai đoạn ① là bao nhiêu (m/s²)?", 2, "m/s²", 0.05,
+       loi=r"Đọc nhầm mốc thời gian đầu hoặc cuối của đoạn; $\Delta t$ là hiệu hai mốc của chính đoạn đó.",
+       ke=[(r"Độ dốc của đoạn ①: $a=\dfrac{\Delta v}{\Delta t}$ với hai đầu mút của đoạn", True),
+           (r"$a=\dfrac{v}{t}$ với $t$ là mốc cuối của cả đồ thị", "Mốc cuối của cả đồ thị không thuộc đoạn ①; $\\Delta t$ phải lấy trong chính đoạn đó."),
+           (r"Diện tích dưới đoạn ①", "Diện tích cho quãng đường, không phải gia tốc.")]),
+  buoc("Giai đoạn ②", r"Gia tốc trong giai đoạn ② (đoạn nằm ngang) là bao nhiêu (m/s²)?", 0, "m/s²", 0.05,
+       loi=r"Lấy $a=\dfrac{v}{t}$ thay vì $\dfrac{\Delta v}{\Delta t}$: gia tốc đo sự thay đổi của $v$, không phải độ lớn của $v$.",
+       ke=[(r"Vẫn dùng $a=\dfrac{\Delta v}{\Delta t}$ với hai mốc của đoạn ②", True),
+           (r"Đoạn nằm ngang là tàu đứng yên nên bỏ qua", "Tàu vẫn chạy với vận tốc khác không; đoạn này vẫn phải tính $a$ như mọi đoạn khác."),
+           (r"Dùng lại $a$ của đoạn ① vì tàu vẫn đang đi", "$a$ thay đổi khi đồ thị đổi độ dốc; mỗi đoạn thẳng có một $a$ riêng.")]),
+  buoc("Giai đoạn ③", r"Gia tốc trong giai đoạn ③ là bao nhiêu (m/s²)?", -1.5, "m/s²", 0.05,
+       loi=r"Đảo thứ tự hiệu (đầu trừ cuối), hoặc lấy độ lớn vì nghĩ gia tốc không thể mang dấu.",
+       ke=[(r"$a=\dfrac{v_{\text{cuối}}-v_{\text{đầu}}}{\Delta t}$ của đoạn ③", True),
+           (r"Lấy vận tốc lớn trừ vận tốc nhỏ cho ra số dương", "$\\Delta v$ là cuối trừ đầu, giữ nguyên dấu; đảo thứ tự sẽ sai hướng của $a$."),
+           (r"Chỉ lấy độ lớn vì gia tốc không âm", "Gia tốc là đại lượng có hướng; dấu cho biết hướng so với chiều dương đã chọn.")]),
+  buoc("So sánh và xét $t=18$ s", r"Vận tốc của tàu lúc $t=18\ \text{s}$ là bao nhiêu (m/s)?", 9, "m/s", 0.2,
+       loi=r"Tính thời gian trôi trong đoạn ③ từ mốc 0 thay vì từ mốc bắt đầu của đoạn ③.",
+       ke=[(r"Mốc 18 s thuộc đoạn ③: $v=v_{\text{đầu\ đoạn}}+a_3\cdot(t-t_{đầu\ đoạn})$", True),
+           (r"$v=12+a_3\cdot18$", "Thời gian trôi trong đoạn ③ tính từ lúc đoạn ấy bắt đầu, không phải từ 0."),
+           (r"Vẫn là vận tốc của đoạn nằm ngang", "Đoạn nằm ngang đã kết thúc trước 18 s; lúc đó tàu đang trong đoạn ③ nên vận tốc đã đổi.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang=r"Thấy <b>quãng đường</b> cho đồ thị hoặc bảng $v$–$t$ → chia diện tích thành tam giác, chữ nhật, hình thang.",
+  cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Dựng đồ thị từ các mốc", r"Tính chất chuyển động của xe qua ba giai đoạn là gì?",
+       loi=r"Coi đoạn vận tốc không đổi là nhanh dần, hoặc coi cả quá trình là thẳng đều.",
+       lua_chon=[(r"Nhanh dần đều, thẳng đều, rồi chậm dần đều", True),
+                 (r"Nhanh dần đều, nhanh dần đều, rồi chậm dần đều", "Ở giai đoạn giữa hai mốc có cùng vận tốc nên vận tốc không đổi, không phải nhanh dần."),
+                 (r"Thẳng đều trong suốt cả quá trình", "Vận tốc thay đổi ở đoạn đầu và đoạn cuối nên không thể thẳng đều.")]),
+  buoc("Gia tốc hai đoạn", r"Gia tốc của xe trong $10\ \text{s}$ cuối là bao nhiêu (m/s²)?", -1.2, "m/s²", 0.03,
+       loi=r"Lấy tổng thời gian làm $\Delta t$, hoặc đảo thứ tự hiệu vận tốc.",
+       ke=[(r"Mỗi đoạn dùng $a=\dfrac{\Delta v}{\Delta t}$ với hai mốc của chính đoạn đó", True),
+           (r"Một gia tốc chung cho cả hành trình", "Ba đoạn có độ dốc khác nhau nên không có một gia tốc chung; mỗi đoạn một $a$."),
+           (r"Dùng $a$ của đoạn đầu cho đoạn cuối", "Hai đoạn có độ dài và chiều biến thiên của vận tốc khác nhau nên phải tính riêng.")]),
+  buoc("Quãng đường: ba phần diện tích", r"Quãng đường xe đi được trong $30\ \text{s}$ bằng bao nhiêu (m)?", 252, "m", 2,
+       loi=r"Bỏ sót phần chữ nhật ở giữa, hoặc dùng hệ số $\dfrac{1}{2}$ cho cả ba phần; chỉ phần tam giác mới có $\dfrac{1}{2}$.",
+       ke=[(r"Chia diện tích dưới đồ thị: hai tam giác và một chữ nhật", True),
+           (r"$s=v_{max}\cdot t$ cho cả 30 s", "Vận tốc không bằng giá trị lớn nhất suốt thời gian; hai đoạn đầu và cuối vận tốc nhỏ hơn."),
+           (r"$s=\dfrac{1}{2}a_1t^2$ với $t=30$ s", "Công thức này chỉ đúng khi gia tốc không đổi suốt thời gian; ở đây $a$ đổi theo từng đoạn.")]),
+  buoc("Kiểm tra bằng hình thang", r"Khi tính quãng đường bằng diện tích hình thang, hai đáy và đường cao là gì?",
+       loi=r"Lấy hai vận tốc làm đáy, hoặc dùng mốc thời gian thay cho độ dài đoạn.",
+       lua_chon=[(r"Đáy: tổng thời gian và thời gian đoạn đều; cao: vận tốc lớn nhất", True),
+                 (r"Hai đáy là vận tốc đầu và vận tốc cuối", "Hai vận tốc này nằm trên trục tung, không phải cạnh song song của hình thang."),
+                 (r"Hai đáy là hai mốc thời gian bắt đầu và kết thúc giai đoạn đều", "Đáy phải là độ dài đoạn (hiệu hai mốc), không phải chính các mốc thời gian.")],
+       ke=[(r"Vẽ lại hình dưới đồ thị là hình thang rồi so với kết quả cộng ba phần", True),
+           (r"Lấy trung bình hai vận tốc nhân tổng thời gian", "Trung bình cộng hai vận tốc chỉ đúng khi $a$ không đổi suốt thời gian; ở đây có ba đoạn."),
+           (r"Lấy vận tốc lớn nhất nhân tổng thời gian", "Vận tốc chỉ đạt giá trị lớn nhất ở một đoạn; hai đoạn còn lại nhỏ hơn nên kết quả bị thừa.")]),
+  buoc("Tốc độ trung bình", r"Tốc độ trung bình của xe trong $30\ \text{s}$ bằng bao nhiêu (m/s)?", 8.4, "m/s", 0.1,
+       loi=r"Lấy trung bình cộng vận tốc đầu và cuối, hoặc chia quãng đường cho thời gian một đoạn thay vì cả hành trình.",
+       ke=[(r"$v_{tb}=\dfrac{s}{t}$ với $s$ và $t$ của cả hành trình", True),
+           (r"$v_{tb}=\dfrac{v_{\text{đầu}}+v_{\text{cuối}}}{2}$", "Công thức này chỉ đúng khi gia tốc không đổi; ở đây đồ thị có ba đoạn."),
+           (r"Chia $s$ cho thời gian giai đoạn đều", "Tốc độ trung bình tính trên cả thời gian chuyển động, không chỉ một đoạn.")])]),
+ dict(nhan_dang=r"Thấy vật <b>bật lại</b> hoặc đổi hướng → chọn chiều dương, $v_1$ và $v_2$ trái dấu, $\Delta v$ là hiệu có dấu.",
+  cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 1}, buoc=[
+  buoc("Độ biến thiên tốc độ", r"Độ biến thiên tốc độ $|v_2|-|v_1|$ bằng bao nhiêu (m/s)?", -10, "m/s", 0.2,
+       loi=r"Đảo thứ tự hiệu hai tốc độ, hoặc cộng hai tốc độ."),
+  buoc("Độ biến thiên vận tốc", r"Chọn chiều dương hướng đông. Độ biến thiên vận tốc $\Delta v$ bằng bao nhiêu (m/s)?", -40, "m/s", 0.5,
+       loi=r"Lấy cả hai vận tốc cùng dấu dương; bóng bật về phía ngược lại nên vận tốc sau mang dấu ngược với vận tốc trước.",
+       ke=[(r"Viết $v_1$ và $v_2$ có dấu theo chiều dương đã chọn rồi $\Delta v=v_2-v_1$", True),
+           (r"$\Delta v=15-25$", "Đó là hiệu hai tốc độ; bóng đổi hướng nên $v_2$ phải ngược dấu $v_1$."),
+           (r"$\Delta v=v_1-v_2$ với số có dấu", "$\\Delta v$ luôn là cuối trừ đầu; đảo thứ tự sẽ sai hướng.")]),
+  buoc("Gia tốc", r"Gia tốc trung bình của bóng trong lúc va chạm bằng bao nhiêu (m/s²)?", -800, "m/s²", 10,
+       loi=r"Dùng hiệu hai tốc độ thay cho $\Delta v$ có dấu, hoặc nhân với thời gian thay vì chia.",
+       ke=[(r"$a=\dfrac{\Delta v}{\Delta t}$ với $\Delta v$ là hiệu có dấu vừa tính", True),
+           (r"$a=\dfrac{|v_2|-|v_1|}{\Delta t}$", "Hiệu hai tốc độ bỏ qua việc đổi hướng nên không phải gia tốc của chuyển động này."),
+           (r"$a=\Delta v\cdot\Delta t$", "Gia tốc là $\\Delta v$ chia $\\Delta t$; nhân sẽ ra đơn vị mét, không phải m/s².")]),
+  buoc("Kiểm tra")]),
+]
+
 # ───────────── Tự luận: ví dụ cũ chưa biên tập (idx 0-based trong old/53.json), xếp dễ → khó ─────────────
 # Đã biên tập thành dạng: VD11(idx10)→D1, VD10(idx9)→D2, VD6(idx5)→D3, VD18(idx17)→D4, VD9(idx8)→D5.
 ORDER = [2, 7, 0, 6, 1, 13, 15, 11, 14, 18, 3, 4, 16]   # bỏ idx12 (VD13: đáp án không đối chiếu được với hình)
@@ -345,3 +470,4 @@ OLD[16]["body_html"] = OLD[16]["body_html"].replace("d_{3}=v_{03}t+\\frac{1}{2}a
 TU_LUAN = tu_luan_tu(OLD, ORDER, MUC)
 
 write(J, 53, "Bài 8. Chuyển động biến đổi. Gia tốc", DANG, BUILD, ANALYSIS, SOLS, TU_LUAN)
+inject(J, BUILD, ANALYSIS, SOLS, STEPS)
