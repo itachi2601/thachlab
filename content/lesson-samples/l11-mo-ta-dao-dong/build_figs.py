@@ -201,7 +201,7 @@ fig3 = wrap(
     "0 0 440 214",
     "Hai dao động cùng biên độ cùng chu kì: đường 1 đạt đỉnh sớm hơn đường 2 một khoảng T/4",
     b,
-    "Hình 3. Đường 1 đạt đỉnh sớm hơn đường 2 đúng T/4.",
+    "Hình 4. Đường 1 đạt đỉnh sớm hơn đường 2 đúng T/4.",
 )
 
 # ---- Hình 4: đọc đồ thị, năm chấm đúng phương trình
@@ -263,11 +263,14 @@ fig4 = with_exp(wrap(
     "0 0 440 212",
     "Đồ thị li độ theo thời gian với năm chấm tính từ phương trình x bằng 5 cos 2 pi t",
     b,
-    "Hình 4. Năm chấm từ x = 5 cos(2πt) cm. Đỉnh là A, hai đỉnh cách T.",
+    "Hình 5. Năm chấm từ x = 5 cos(2πt) cm. Đỉnh là A, hai đỉnh cách T.",
 ), "tn-l11-motadddh-02")
 
 h = open("theory.src.html", encoding="utf8").read()
-for n, fig in enumerate((fig1, fig2, fig3, fig4), 1):
+from fig_pha_dong import build as _build_fig5
+fig5 = _build_fig5()  # Hình 5: SVG động tròn đều ↔ dao động điều hoà (fig_pha_dong.py)
+
+for n, fig in enumerate((fig1, fig2, fig3, fig4, fig5), 1):
     assert f"<!--FIG{n}-->" in h, n
     h = h.replace(f"<!--FIG{n}-->", fig, 1)
 assert "<!--FIG" not in h
