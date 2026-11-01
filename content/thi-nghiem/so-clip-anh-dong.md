@@ -17,9 +17,9 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 
 ## Chặng B — L11 Điện (lô 30/10/2026; 11L4/11L5 mới tới chương sóng ngày 18/10 nên thứ tự theo chương: điện trường → điện thế → tụ điện, dòng điện để lô sau)
 
-- l11-luc-coulomb · tn-l11-coulomb-02 · clip coulomb2 · đã soát, đã tải (chưa chèn: bài có commit < 24 h ngày 30/10) · 30/10/2026 · kho + hộp bài còn ghi q = 20 nC, cầu ~0,7 cm → E bề mặt ≈ 3,9·10⁶ V/m gần ngưỡng đánh thủng; clip đã bỏ số 20 nC, chờ thầy quyết sửa kho/bài
+- l11-luc-coulomb · tn-l11-coulomb-02 · clip coulomb2 · đã soát, đã tải + chèn repo + khung 1/11 (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 · kho + hộp bài còn ghi q = 20 nC, cầu ~0,7 cm → E bề mặt ≈ 3,9·10⁶ V/m gần ngưỡng đánh thủng; clip đã bỏ số 20 nC, chờ thầy quyết sửa kho/bài
 - l11-khai-niem-dien-truong · tn-l11-dien-truong-02 · clip dientruong11 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
-- l11-dien-truong-deu · tn-l11-dien-truong-deu-02 · clip dtdeu2 · đã soát, đã tải (chưa chèn: bài có commit < 24 h ngày 30/10) · 30/10/2026 ·
+- l11-dien-truong-deu · tn-l11-dien-truong-deu-02 · clip dtdeu2 · đã soát, đã tải + chèn repo + khung 1/11 (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-the-nang-dien · tn-l11-the-nang-dien-01 · clip thenang1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-dien-the · tn-l11-dien-the-01 · clip dienthe1 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
 - l11-dien-the · tn-l11-dien-the-02 · clip dienthe2 · đã soát, đã tải + chèn repo + khung (chờ thầy duyệt, chưa đăng DB) · 30/10/2026 ·
