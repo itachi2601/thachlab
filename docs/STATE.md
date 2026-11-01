@@ -47,6 +47,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lịch `dang-ly-thuyet-l12-luc-tu-clip-bay-01-11` 22h05 đăng lý thuyết lesson 11 + deploy; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
+- Lịch 22h05 (1/11): ĐÃ GHI DB mục ly_thuyet lesson 11 (item 52, `--chi-video`, sao lưu `scripts/logs/ly-thuyet-bai11-backup-1793545613467.json`); CHƯA DEPLOY (phiên tự động bị chặn chạy `scripts/deploy.sh`) → thầy chạy `bash scripts/deploy.sh` rồi grep `bay-l12-ch3-01` trong `public/data`.
 - 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
 - Bài tập mẫu L12 soạn lại 12 bài (9, 11, 13–19, 125–127); kế hoạch 42 bài L10/L11 chờ duyệt.
 - Bài 11 L12 Thực hành chưa ghi DB; 4 bài L12 sửa đường sức — kiểm `so-file-voi-db.mts` trước.
