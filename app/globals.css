@@ -3460,6 +3460,14 @@ html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: 
 html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
 html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
 html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+/* 💡 Mẹo nhìn (1/11/2026): khối gập sau lời giải, trước "Làm bài tương tự" — docs/KE-HOACH-MEO-GIAI-BAI-TAP.md */
+.bt-meo { border: 1px solid rgba(251,191,36,.45); border-radius: 10px; background: rgba(251,191,36,.06); }
+.bt-meo-head { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px; border: 0; background: none; color: inherit; font-size: 15px; font-weight: 600; text-align: left; cursor: pointer; }
+.bt-meo-head:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; border-radius: 10px; }
+.bt-meo-body { padding: 0 12px 12px; }
+.bt-meo-dk { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+.bt-meo-dk .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: rgba(180,83,9,.05); }
 
 /* ==========================================================================
    NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)

@@ -17,6 +17,7 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
   const [jump, setJump] = useState<{ idx: number; n: number } | null>(null);
   const [allOpen, setAllOpen] = useState(false); // tự giải từng bước: bài tương tự chỉ hiện khi đã mở hết các bước
   const markAllOpen = useCallback(() => setAllOpen(true), []);
+  const [meoOpen, setMeoOpen] = useState(false); // 💡 Mẹo nhìn: gập sẵn, chỉ có sau lời giải (N6, B4)
   const hasAnalysis = !!q.analysis_html;
   const stepwise = !!q.buoc?.length; // tự giải từng bước (9/10/2026)
   return (
@@ -70,6 +71,22 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
             <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} />
           ) : (
             <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
+          )}
+          {q.meo && (allOpen || !stepwise) && (
+            <div className="bt-meo">
+              <button type="button" className="bt-meo-head" aria-expanded={meoOpen} onClick={() => setMeoOpen((o) => !o)}>
+                <span>💡 Mẹo nhìn: {q.meo.ten}</span>
+                <ChevronDown size={16} className={meoOpen ? "rotate-180" : ""} />
+              </button>
+              {meoOpen && (
+                <div className="bt-meo-body">
+                  <p className="bt-meo-dk">
+                    ⚠ <ContentHtml html={q.meo.dieu_kien} className="inline" />
+                  </p>
+                  <ContentHtml html={q.meo.html} className="block leading-relaxed" />
+                </div>
+              )}
+            </div>
           )}
           {q.topic_id && (allOpen || !stepwise) ? (
             <SimilarBankPractice

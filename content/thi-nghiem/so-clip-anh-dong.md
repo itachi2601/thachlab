@@ -50,15 +50,26 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l11-bai-tap-dao-dong · tn-l11-baitapdaodong-03 · clip bttdaodong3 · đã soát, đã tải + chèn + khung, đã đăng DB 1/11 12h23 · 31/10/2026 · 48,9 s, 1,3 MB
 - l11-co-nang-dao-dong · tn-l11-conangdddh-01 · clip conangdddh1 · đã soát, đã tải + chèn + khung, đã đăng DB 1/11 12h23 · 31/10/2026 · 49,1 s, 1,4 MB; kho cần sửa: hien_tuong_hay_sai[3] thêm "khi treo thẳng đứng", "năm hàng" ≠ 4 hàng trong hình
 - l11-bai-tap-nang-luong-dao-dong · tn-l11-baitapnangluong-01 · clip btnangluong1 · đã soát, đã tải + chèn + khung, đã đăng DB 1/11 12h23 · 31/10/2026 · 49,6 s, 1,45 MB
-- l10-toc-do-van-toc · tn-l10-tdvt-03 · clip tdvt3 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,9 s, 1,1 MB
-- l10-do-dich-chuyen-quang-duong · tn-l10-dd-qd-01 · clip ddqd1 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,1 s, 1,1 MB
-- l10-thuc-hanh-do-toc-do · tn-l10-do-toc-do-03 · clip dotocdo3 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,3 s, 1,3 MB
-- l10-do-thi-dich-chuyen-thoi-gian · tn-l10-dt-dctg-01 · clip dtdctg1 · đã soát (2 vòng), đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,8 s, 1,4 MB
-- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-02 · clip giatoc2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,5 s, 1,2 MB
-- l10-chuyen-dong-thang-bien-doi-deu · tn-l10-ctbdd-01 · clip ctbdd1 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,7 s, 1,4 MB
-- l10-su-roi-tu-do · tn-l10-roi-tu-do-02 · clip roitudo2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,9 s, 1,2 MB
-- l10-thuc-hanh-do-g · tn-l10-do-g-02 · clip dog2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,3 s, 1,4 MB
-- l10-chuyen-dong-nem · tn-l10-nemngang-02 · clip nemngang2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; lịch đăng DB --chi-video 22h05 1/11, lesson 49–57) · 31/10/2026 · 49,4 s, 1,1 MB
+- l10-toc-do-van-toc · tn-l10-tdvt-03 · clip tdvt3 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,9 s, 1,1 MB
+- l10-do-dich-chuyen-quang-duong · tn-l10-dd-qd-01 · clip ddqd1 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,1 s, 1,1 MB
+- l10-thuc-hanh-do-toc-do · tn-l10-do-toc-do-03 · clip dotocdo3 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,3 s, 1,3 MB
+- l10-do-thi-dich-chuyen-thoi-gian · tn-l10-dt-dctg-01 · clip dtdctg1 · đã soát (2 vòng), đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,8 s, 1,4 MB
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-02 · clip giatoc2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,5 s, 1,2 MB
+- l10-chuyen-dong-thang-bien-doi-deu · tn-l10-ctbdd-01 · clip ctbdd1 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,7 s, 1,4 MB
+- l10-su-roi-tu-do · tn-l10-roi-tu-do-02 · clip roitudo2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,9 s, 1,2 MB
+- l10-thuc-hanh-do-g · tn-l10-do-g-02 · clip dog2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,3 s, 1,4 MB
+- l10-chuyen-dong-nem · tn-l10-nemngang-02 · clip nemngang2 · đã soát, đã tải + chèn repo + khung (thầy duyệt 1/11; ĐÃ ĐĂNG DB --chi-video 12h10 1/11, lesson 49–57) · 31/10/2026 · 49,4 s, 1,1 MB
 - l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip · để phiên sau: trùng dụng cụ máng + cổng quang với ctbdd1 · 31/10/2026 ·
 - l10-toc-do-van-toc · tn-l10-tdvt-01 · clip · để phiên sau: lô đủ 9 clip (tdvt3 đã làm cho bài này) · 31/10/2026 ·
 - l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip · để phiên sau: lô đủ 9 clip (dog2 đã làm cho bài này) · 31/10/2026 ·
+
+## Chặng B — L10 còn lại (lô 1/11/2026, 8 clip; ưu tiên chương sắp dạy: Ch.6 tròn đều, Ch.7 biến dạng, rồi ôn Ch.2, Ch.1. Không hộp nào đã có clip/PhET/SVG thể hiện TN → không bỏ qua TN nào)
+
+- l10-chuyen-dong-tron-deu · tn-l10-trondeu-03 · clip trondeu3 · đã soát · 1/11/2026 · 49,9 s · 1,41 MB · cổng B 1 vòng
+- l10-bien-dang-vat-ran · tn-l10-biendang-03 · clip biendang3 · đã soát · 1/11/2026 · 49,7 s · 1,35 MB · cổng B 2 vòng
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip giatoc1 · đã soát · 1/11/2026 · 49,6 s · 1,29 MB · cổng B 1 vòng · khác bố cục ctbdd1
+- l10-toc-do-van-toc · tn-l10-tdvt-01 · clip tdvt1 · đã soát · 1/11/2026 · 49,9 s · 1,19 MB · cổng B 1 vòng
+- l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip dog3 · đã soát · 1/11/2026 · 49,9 s · 1,33 MB · cổng B 1 vòng
+- l10-thuc-hanh-sai-so · tn-l10-sai-so-02 · clip saiso2 · đã soát · 1/11/2026 · 49,5 s · 1,12 MB · cổng B 1 vòng
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-01 · clip antoan1 · đã soát · 1/11/2026 · 49,7 s · 1,18 MB · cổng B 1 vòng; khi gắn khung bỏ chữ "Quan sát" hộp tĩnh (lộ đáp án B)
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-02 · clip antoan2 · đã soát · 1/11/2026 · 49,7 s · 1,24 MB · cổng B 2 vòng (chốt cũ ngoại suy 1/d²)
