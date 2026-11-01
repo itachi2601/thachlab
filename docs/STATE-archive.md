@@ -843,3 +843,6 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 ## 1/11/2026 22h30 — đăng clip lesson 11 + 43, deploy
 - Lịch 22h05 (1/11): ĐÃ GHI DB mục ly_thuyet lesson 11 (item 52, `--chi-video`, sao lưu `scripts/logs/ly-thuyet-bai11-backup-1793545613467.json`); CHƯA DEPLOY (phiên tự động bị chặn chạy `scripts/deploy.sh`) → thầy chạy `bash scripts/deploy.sh` rồi grep `bay-l12-ch3-01` trong `public/data`.
 - Clip tự dựng Ch.4 L11: 5 clip đã đăng DB 31/10 (bài 41, 42, 44, 45); bài 43 Nguồn điện (nguondien1/2, đã có storage + JSON khung) chèn sau khi `claude/ra-soat-bai-hoc-lop-11-a501a6` vào main và qua 20:35 1/11 → `chen-video-thi-nghiem.mts --bai l11-nguon-dien --apply` + `gan-khung-video.mts` + đăng `--chi-video` lesson 43.
+
+## 1/11/2026 22h40 — chặng B L11 Dao động đã duyệt
+- Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
