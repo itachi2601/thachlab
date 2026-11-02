@@ -22,7 +22,13 @@ function md(text, { dropH1 = true, shift = 1 } = {}) {
     html = html.replace(/<(\/?)h([1-6])(\b[^>]*)>/g, (m, c, n, rest) => `<${c}h${Math.min(6, +n + shift)}${rest}>`);
   }
   html = html
-    .replace(/<table>/g, '<table class="tl-table">')
+    .replace(/<table>([\s\S]*?)<\/table>/g, (m, inner) => `<div class="tl-scroll"><table class="tl-table">${inner}</table></div>`)
+    // "[ ]" trong ô bảng (phiếu tự chấm): marked chỉ đổi task-list trong <li> → tự đổi thành ô tick
+    .replace(/<th>\s*\[ \]\s*<\/th>/g, '<th class="tl-nw">Tick</th>')
+    .replace(/<td>\s*\[ \]\s*<\/td>/g, '<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>')
+    .replace(/<td>\s*\[x\]\s*<\/td>/gi, '<td class="tl-nw"><input type="checkbox" checked aria-label="Đạt"></td>')
+    // EN:/VI: cùng một đoạn → mỗi thứ tiếng một dòng
+    .replace(/([^>])\s*<strong>VI:<\/strong>/g, "$1<br><strong>VI:</strong>")
     .replace(/<blockquote>/g, '<div class="tl-box">').replace(/<\/blockquote>/g, "</div>")
     .replace(/<input (checked="" )?disabled="" type="checkbox">/g, (m, chk) => `<input type="checkbox"${chk ? " checked" : ""}>`)
     .replace(/<a href="(https?:[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener"');
@@ -61,17 +67,17 @@ const subs = [];
 const subTotal = (s) => s.items.reduce((a, i) => a + i.marks, 0);
 const critTotal = (c) => subs.filter((s) => s.id[0] === c).reduce((a, s) => a + subTotal(s), 0);
 function markingTable(c) {
-  let h = `<table class="tl-table"><thead><tr><th>Mã</th><th>Loại</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th>Điểm</th></tr></thead><tbody>`;
+  let h = `<div class="tl-scroll tl-scroll--rong"><table class="tl-table"><thead><tr><th class="tl-nw">Mã</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th class="tl-nw">Điểm</th></tr></thead><tbody>`;
   for (const s of subs.filter((s) => s.id[0] === c)) {
-    h += `<tr><td><strong>${esc(s.id)}</strong></td><td colspan="3"><strong>${esc(s.vi)}</strong><br><em>${esc(s.en)}</em></td><td><strong>${subTotal(s).toFixed(2)}</strong></td></tr>`;
+    h += `<tr><td class="tl-nw"><strong>${esc(s.id)}</strong></td><td colspan="2"><strong>${esc(s.vi)}</strong><br><em>${esc(s.en)}</em></td><td class="tl-nw"><strong>${subTotal(s).toFixed(2)}</strong></td></tr>`;
     for (const i of s.items) {
       const scale = i.scale ? `<ol start="0">${i.scale.map((x) => `<li>${esc(x.vi)}<br><em>${esc(x.en)}</em></li>`).join("")}</ol>` : "";
-      h += `<tr><td></td><td>${i.type}</td><td>${esc(i.vi)}<br><em>${esc(i.en)}</em></td><td>${esc(i.xvi)}${i.req ? ` <strong>${esc(i.req)}</strong>` : ""}${i.xen ? `<br><em>${esc(i.xen)}</em>` : ""}${scale}</td><td>${i.marks.toFixed(2)}</td></tr>`;
+      h += `<tr><td class="tl-nw">${i.type}</td><td>${esc(i.vi)}<br><em>${esc(i.en)}</em></td><td>${esc(i.xvi)}${i.req ? ` <strong>${esc(i.req)}</strong>` : ""}${i.xen ? `<br><em>${esc(i.xen)}</em>` : ""}${scale}</td><td class="tl-nw">${i.marks.toFixed(2)}</td></tr>`;
     }
   }
-  return h + "</tbody></table>";
+  return h + "</tbody></table></div>";
 }
-const markingNote = `<p class="tl-note">M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p>`;
+const markingNote = `<p class="tl-note">Bảng rộng: vuốt ngang trên điện thoại. M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p>`;
 const markingSection = (c, open = false) =>
   `<h3 id="thang-diem-${c}">Thang điểm tiêu chí ${c} — ${esc(CRIT[c])} — ${critTotal(c).toFixed(1)} điểm</h3>${markingNote}${fold(`Mở bảng thang điểm ${c} (${subs.filter((s) => s.id[0] === c).length} tiêu chí con)`, markingTable(c), open)}`;
 
@@ -81,7 +87,8 @@ function phieuSection(c) {
   const t = rd(`${B1}/phieu-tu-cham/${PHIEU[c]}.md`);
   const title = (t.match(/^# (.*)$/m) || [, `Phiếu tự chấm ${c}`])[1];
   let body = md(t, { shift: 2 }); // ## → h4, ### → h5 (phiếu nằm dưới h3 của bài)
-  body = body.replace(/<h4([^>]*)>(\s*Bẫy mất điểm)/, '<h4$1 class="tl-trap">$2');
+  const k = body.search(/<h4[^>]*>\s*Bẫy mất điểm/);
+  if (k >= 0) body = body.slice(0, k) + '<div class="tl-box tl-trap">' + body.slice(k) + "</div>";
   return `<h3 id="phieu-${c}">${esc(title)}</h3><p class="tl-note">In ra hoặc tick ngay trên màn hình. Mỗi lần thử ghi số tự đo vào cột "Tự đo" rồi so với miền đạt.</p>${body}`;
 }
 

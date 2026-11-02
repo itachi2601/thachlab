@@ -4123,3 +4123,10 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 @media (min-width: 1280px) and (pointer: coarse) {
   .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
 }
+
+/* Học phần WorldSkills IM (2/11/2026): bảng nhiều cột từ bộ dịch cuộn ngang trên điện thoại thay vì bẻ từng chữ. */
+.exam-content .tl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0; }
+.exam-content .tl-scroll > .tl-table { min-width: 560px; margin: 0; }
+.exam-content .tl-scroll--rong > .tl-table { min-width: 760px; }
+.exam-content .tl-table :is(td, th).tl-nw { white-space: nowrap; }
+.exam-content .tl-table input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent, #0284c7); }

@@ -10,7 +10,7 @@
 <h3 id="1-chuoi-hoat-dong-circuit-sequence-giai-thich-bang-loi">1. Chuỗi hoạt động (Circuit Sequence) — giải thích bằng lời</h3>
 <p><strong>Circuit Sequence: (MM1+, MM2+ &amp; MM3+, MM4+) (MM1−, MM2− &amp; MM3−, MM4−)</strong></p>
 <p>Bốn xi lanh (tờ 4, &quot;Actuators&quot;):</p>
-<table class="tl-table">
+<div class="tl-scroll"><table class="tl-table">
 <thead>
 <tr>
 <th>Mã</th>
@@ -43,7 +43,7 @@
 <td>ADN-S-50-20-A-P-A (Ø50, hành trình 20)</td>
 <td><strong>Đột lỗ</strong> Ø6.5 qua tấm mang chày 403</td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>[Ghi chú dịch: tờ 4 rev 13 ghi mã xi lanh là <strong>-MMB1…-MMB4</strong> (ba chữ, EN IEC 81346-2:2019), còn dòng Circuit Sequence trên tờ 1, đề A2 và thang điểm F1 viết tắt <strong>MM1…MM4</strong>. Cùng một xi lanh. Bản dịch dùng MM1…MM4 khi nói về chuỗi, -MMB khi tra bảng linh kiện.]</p>
 <p>Diễn giải một chu trình (dấu + = đi ra/duỗi, − = đi về/co):</p>
 <ol>
@@ -60,7 +60,7 @@
 <p>[Ghi chú dịch: thứ tự cảm biến–van trong các bước 3–8 suy ra từ bảng ống WQG và vị trí phần tử; muốn luyện chi tiết hãy mở sơ đồ PDF tờ 3–4 và dò theo từng WQG trong mục 4.]</p>
 <h3 id="2-ma-tham-chieu-reference-designation-en-iec-81346-2-2019">2. Mã tham chiếu (Reference designation, EN IEC 81346-2:2019)</h3>
 <p>Mỗi phần tử có mã bắt đầu bằng dấu &quot;-&quot; + 3 chữ (lớp đối tượng) + số thứ tự; phần tử con nối tiếp bằng &quot;-&quot;: ví dụ <code>-QMA5-XMA1</code> = đầu nối số 1 của van số 5; <code>-AZA2-XMA1-RND1</code> = nút bịt 1 trên đầu nối 1 của thanh gom 2.</p>
-<table class="tl-table">
+<div class="tl-scroll"><table class="tl-table">
 <thead>
 <tr>
 <th>Mã</th>
@@ -183,10 +183,10 @@
 <td>Số cổng van: 1 = cấp khí, 2, 4 = ra làm việc, 3, 5 = xả, 12/14 = cổng điều khiển (đẩy sang nối 1→2 / 1→4); P/A/R là ký hiệu cũ trên SV-3-M5</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <h3 id="3-danh-sach-linh-kien-parts-list-to-5-ma-festo-giu-nguyen">3. Danh sách linh kiện (Parts List, tờ 5) — mã Festo giữ nguyên</h3>
 <p>Cột: Pos. (số vị trí trên BOM), Part number (mã đặt hàng Festo), Quantity, Order code (mã kiểu), Item name, mô tả VI, Identification (mã tham chiếu các phần tử dùng mã này), Location (tờ.ô). Nhà cung cấp: Festo cho mọi dòng.</p>
-<table class="tl-table">
+<div class="tl-scroll"><table class="tl-table">
 <thead>
 <tr>
 <th>Pos.</th>
@@ -739,10 +739,10 @@
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <h3 id="4-danh-sach-ong-tubing-list-to-6-74-ong">4. Danh sách ống (Tubing List, tờ 6) — 74 ống</h3>
 <p>Cách đọc: ống WQGn đi <strong>từ</strong> phần tử A (cổng x, tờ.ô) <strong>đến</strong> phần tử B (cổng y, tờ.ô), đường kính Ø4 (tín hiệu điều khiển) hoặc Ø6 (nguồn khí và cấp xi lanh). &quot;—&quot; = đầu nối T/Y không ghi số cổng. Thí sinh đánh dấu ✓ vào cột đầu khi đã lắp.</p>
-<table class="tl-table">
+<div class="tl-scroll"><table class="tl-table">
 <thead>
 <tr>
 <th>Pos.</th>
@@ -1581,7 +1581,7 @@
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <h3 id="5-lich-su-sua-doi-revisions-to-1">5. Lịch sử sửa đổi (Revisions, tờ 1)</h3>
 <p>Bản vẽ qua 13 lần sửa từ 2025-06-06 đến 2026-09-08 (tất cả do ACK). Thiết kế ban đầu (rev 1, 2025-06-06); rev 2 (2025-06-20) đổi xi lanh uốn thành chuyển động 2 (b) và xi lanh đột thành chuyển động 3 (c), thêm công tắc báo phôi; rev 3–6 chỉnh BOM: đầu nối, khớp tự lựa FK-M10×1,25 → FK-M12×1,25 (2025-10-15), xi lanh uốn DSNU-25-40-PPS-A → ADN-32-30-A-P-A (2026-01-14); rev 7 dọn bản vẽ, thêm bảng revision; rev 8 (2026-02-17) thêm QSML-4 và màu ống, chỉnh bảng ống; rev 9 chỉnh ống và khung tên; rev 10 (2026-03-26) cập nhật mạch và BOM; <strong>rev 11 (2026-06-10) đổi mã tham chiếu từ 2 chữ sang 3 chữ (EN 81346-2:2009 → EN IEC 81346-2:2019)</strong> — vì vậy tài liệu cũ ghi A+, B+ nay là MM1+, MM2+; rev 12 (2026-07-17) cập nhật số cổng trên SV-3-M5; rev 13 (2026-09-08) cập nhật mã tham chiếu. Bản thi dùng <strong>rev 13</strong>.</p>
 <h3 id="ghi-chu-ban-goc">Ghi chú bản gốc</h3>
@@ -1594,10 +1594,10 @@
 </ul>
 <h3 id="phieu-E">Phiếu tự chấm E — Lắp ráp khí nén, đi ống (Module D, bước 3) — Điểm tối đa 10.4</h3><p class="tl-note">In ra hoặc tick ngay trên màn hình. Mỗi lần thử ghi số tự đo vào cột "Tự đo" rồi so với miền đạt.</p>
 <p>Họ tên: ____________________ Ngày tập: ____________ Lần thử: ____ Tổng tự chấm: ______ / 10.4</p>
-<table class="tl-table">
+<div class="tl-scroll"><table class="tl-table">
 <thead>
 <tr>
-<th>[ ]</th>
+<th class="tl-nw">Tick</th>
 <th>Mục chấm</th>
 <th>Yêu cầu</th>
 <th>Điểm</th>
@@ -1606,7 +1606,7 @@
 </tr>
 </thead>
 <tbody><tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống đến 2 xi lanh uốn (trái, phải) đi gọn, có trật tự</td>
 <td>0.5 mỗi bên</td>
 <td>1.0</td>
@@ -1614,7 +1614,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống đến xi lanh kẹp (AEN-32-10) đi gọn</td>
 <td></td>
 <td>0.7</td>
@@ -1622,7 +1622,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống đến xi lanh đột (ADN-S-50-20) đi gọn</td>
 <td></td>
 <td>0.7</td>
@@ -1630,7 +1630,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống đến tấm linh kiện 500 đi gọn</td>
 <td></td>
 <td>1.0</td>
@@ -1638,7 +1638,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống được đỡ đủ toàn tuyến</td>
 <td>không võng, không treo lơ lửng</td>
 <td>1.0</td>
@@ -1646,7 +1646,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Dây rút cách đều hợp lý</td>
 <td>≈ 100 mm, thẳng hàng</td>
 <td>1.0</td>
@@ -1654,7 +1654,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Dây rút <strong>không bẹp ống</strong></td>
 <td>thử thổi/ấn</td>
 <td>1.0</td>
@@ -1662,7 +1662,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td><strong>Không gập/bẹp ống</strong> ở bất kỳ đâu</td>
 <td>soát từng ống</td>
 <td>1.0</td>
@@ -1670,7 +1670,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Bán kính uốn đủ</td>
 <td>Ø4 ≥ ~20 mm, Ø6 ≥ ~30 mm</td>
 <td>1.0</td>
@@ -1678,7 +1678,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Ống động (theo xi lanh) bó cùng ống cố định</td>
 <td>nhập số bó đúng</td>
 <td>1.0</td>
@@ -1686,7 +1686,7 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Tháo được từng ống mà không cắt cả bó</td>
 <td>dây rút không quá chặt, ống riêng đến đầu nối</td>
 <td>0.5</td>
@@ -1694,20 +1694,20 @@
 <td></td>
 </tr>
 <tr>
-<td>[ ]</td>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
 <td>Mọi ống tránh chi tiết chuyển động (302, 403, cần piston)</td>
 <td>chạy tay kiểm</td>
 <td>0.5</td>
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody></table></div>
 <p>Tự kiểm trước khi gọi chạy thử: đủ <strong>74 ống WQG1–WQG74</strong> theo bảng ống (file 07), đúng cổng 1/2/3/4/5 và 12/14, Ø4 tín hiệu, Ø6 nguồn/xi lanh; đủ nút bịt (B-M5-B ×2, B-M7 ×1, B-1/8 ×3), đủ giảm thanh; cảm biến SMPO-8E đúng đầu xi lanh; tiết lưu đúng chiều; áp <strong>8.0 bar</strong>.</p>
-<h4 class="tl-trap">Bẫy mất điểm</h4>
+<div class="tl-box tl-trap"><h4>Bẫy mất điểm</h4>
 <ul>
 <li><input type="checkbox"> Chỉ lắp khí nén <strong>sau khi</strong> chuyên gia chấm xong cơ khí (bước 2) — vi phạm = 0 điểm bước 3.</li>
 <li><input type="checkbox"> Lắp xong → báo chuyên gia → <strong>1 lượt chạy thử miễn phí</strong>, mỗi lượt thêm <strong>−2 điểm</strong>, tối đa <strong>3 lượt</strong>. Tự dò ống trước khi gọi.</li>
 <li><input type="checkbox"> Khoá van đóng/mở trên bộ MS4 trước khi cắm/rút ống; không thổi khí vào người; dùng dao cắt ống đúng — −0.5/lần.</li>
 <li><input type="checkbox"> Ký tắt bước 3 (Expert Initials) sau khi chạy thử đạt.</li>
 </ul>
-<h3 id="thang-diem-E">Thang điểm tiêu chí E — Lắp ráp khí nén — 10.4 điểm</h3><p class="tl-note">M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p><details class="tl-details"><summary><strong>Mở bảng thang điểm E (1 tiêu chí con)</strong></summary><table class="tl-table"><thead><tr><th>Mã</th><th>Loại</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th>Điểm</th></tr></thead><tbody><tr><td><strong>E1</strong></td><td colspan="3"><strong>Lắp ráp khí nén</strong><br><em>Pneumatic Assembly</em></td><td><strong>10.40</strong></td></tr><tr><td></td><td>M</td><td>Ống khí nén đến hai xi lanh uốn item 17 trái và phải có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the wiping cylinders item 17 left and right</em></td><td>Nhập số tuyến ống đi gọn, trái và phải, tối đa 2; 0.5 điểm mỗi bên<br><em>Enter the number of orderly routing patterns from Left to Right of 2. .5 marks per side</em></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến xi lanh kẹp item 6 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the clamping cylinder item 6</em></td><td></td><td>0.70</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến xi lanh đột item 17 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the punching cylinder item 17</em></td><td></td><td>0.70</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến chi tiết 500 – tấm linh kiện có đi gọn, có trật tự không<br><em>Is the pneumatic tubing routed in an orderly pattern to detail 500 - component plate</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén có được đỡ đủ trên toàn tuyến không<br><em>Is pneumatic tubing adequately supported throughout</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Dây rút (nơi có dùng) có cách đều hợp lý không<br><em>Are zip ties spaced approperiately where used</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Nơi dùng dây rút – có làm bẹp ống khí nén cản dòng khí không<br><em>Where zip ties were used - is there crushing of the pneumatic tubing to prevent air flow</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Có chỗ gập hay bẹp ống khí nén nào nhìn thấy trên máy không<br><em>Were there any visable kinks or flattening of pneumatic tubing anywhere on the machine</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Bán kính uốn ống khí nén có đủ trên toàn tuyến không<br><em>Was adaquate bend radius used on the pneumatic tubing throughout</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén động có được bó cùng ống cố định không<br><em>Were moving pneumatic tubing lines bundled with fixed pneumatic lines</em></td><td>Nhập số bó ống khí nén được cố định đúng tuyến<br><em>Enter the number of Pneumatic tubing bundles correctly fixed in line</em></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Từng ống khí nén có tháo được mà không phải cắt cả bó không<br><em>Are individaul pneumatic tubes removable without cutting an entire bundle</em></td><td></td><td>0.50</td></tr><tr><td></td><td>M</td><td>Mọi ống khí nén tránh chi tiết chuyển động<br><em>All pneumatic tubing is clear of moving parts</em></td><td></td><td>0.50</td></tr></tbody></table></details>
+</div><h3 id="thang-diem-E">Thang điểm tiêu chí E — Lắp ráp khí nén — 10.4 điểm</h3><p class="tl-note">Bảng rộng: vuốt ngang trên điện thoại. M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p><details class="tl-details"><summary><strong>Mở bảng thang điểm E (1 tiêu chí con)</strong></summary><div class="tl-scroll tl-scroll--rong"><table class="tl-table"><thead><tr><th class="tl-nw">Mã</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th class="tl-nw">Điểm</th></tr></thead><tbody><tr><td class="tl-nw"><strong>E1</strong></td><td colspan="2"><strong>Lắp ráp khí nén</strong><br><em>Pneumatic Assembly</em></td><td class="tl-nw"><strong>10.40</strong></td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén đến hai xi lanh uốn item 17 trái và phải có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the wiping cylinders item 17 left and right</em></td><td>Nhập số tuyến ống đi gọn, trái và phải, tối đa 2; 0.5 điểm mỗi bên<br><em>Enter the number of orderly routing patterns from Left to Right of 2. .5 marks per side</em></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén đến xi lanh kẹp item 6 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the clamping cylinder item 6</em></td><td></td><td class="tl-nw">0.70</td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén đến xi lanh đột item 17 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the punching cylinder item 17</em></td><td></td><td class="tl-nw">0.70</td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén đến chi tiết 500 – tấm linh kiện có đi gọn, có trật tự không<br><em>Is the pneumatic tubing routed in an orderly pattern to detail 500 - component plate</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén có được đỡ đủ trên toàn tuyến không<br><em>Is pneumatic tubing adequately supported throughout</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Dây rút (nơi có dùng) có cách đều hợp lý không<br><em>Are zip ties spaced approperiately where used</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Nơi dùng dây rút – có làm bẹp ống khí nén cản dòng khí không<br><em>Where zip ties were used - is there crushing of the pneumatic tubing to prevent air flow</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Có chỗ gập hay bẹp ống khí nén nào nhìn thấy trên máy không<br><em>Were there any visable kinks or flattening of pneumatic tubing anywhere on the machine</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Bán kính uốn ống khí nén có đủ trên toàn tuyến không<br><em>Was adaquate bend radius used on the pneumatic tubing throughout</em></td><td></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Ống khí nén động có được bó cùng ống cố định không<br><em>Were moving pneumatic tubing lines bundled with fixed pneumatic lines</em></td><td>Nhập số bó ống khí nén được cố định đúng tuyến<br><em>Enter the number of Pneumatic tubing bundles correctly fixed in line</em></td><td class="tl-nw">1.00</td></tr><tr><td class="tl-nw">M</td><td>Từng ống khí nén có tháo được mà không phải cắt cả bó không<br><em>Are individaul pneumatic tubes removable without cutting an entire bundle</em></td><td></td><td class="tl-nw">0.50</td></tr><tr><td class="tl-nw">M</td><td>Mọi ống khí nén tránh chi tiết chuyển động<br><em>All pneumatic tubing is clear of moving parts</em></td><td></td><td class="tl-nw">0.50</td></tr></tbody></table></div></details>
