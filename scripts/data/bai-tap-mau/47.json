@@ -1,0 +1,314 @@
+{
+ "lesson_id": 47,
+ "lesson_title": "Bài 2. Quy tắc an toàn trong phòng thực hành",
+ "generated_at": "2026-10-07",
+ "review": {
+  "checked": false,
+  "notes": "chờ kiểm chéo"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Đọc nhãn thiết bị: DC, AC, Input, Output, cực + và −",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "problem_html": "<p>Một bộ sạc có nhãn: <strong>Input: 100–240 V ~</strong>; <strong>Output: 5 V ⎓ 2 A</strong> (dấu $⎓$ là dòng một chiều). Một quạt mini ghi <strong>5 V, DC</strong>; dây đỏ của quạt cần nối với cực mang dấu $+$ của bộ sạc.</p><p>a) Đầu Input nhận dòng điện loại nào, đầu Output cấp dòng điện loại nào?</p><p>b) Quạt mini nên nối vào đầu nào của bộ sạc?</p><p>c) Quạt có phù hợp với bộ sạc không? Dây xanh của quạt nối với cực nào?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bộ sạc có nhãn Input và Output, nối với quạt mini ghi 5 V DC\"><rect x=\"130\" y=\"60\" width=\"150\" height=\"90\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"205\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">BỘ SẠC</text><line x1=\"70.0\" y1=\"105.0\" x2=\"130.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><line x1=\"280.0\" y1=\"105.0\" x2=\"340.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><text x=\"100\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">IN</text><text x=\"310\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">OUT</text><text x=\"205\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Input: 100–240 V ~</text><text x=\"205\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Output: 5 V ⎓ 2 A</text><circle cx=\"360\" cy=\"105\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"360\" y=\"110\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"360\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">quạt mini 5 V DC</text><text x=\"40\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">ổ cắm</text><circle cx=\"70.0\" cy=\"105.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"70.0;79.0;88.0;97.0;106.0;115.0;124.0;133.0;142.0;151.0;160.0;169.0;178.0;187.0;196.0;205.0;214.0;223.0;232.0;241.0;250.0;259.0;268.0;277.0;286.0;295.0;304.0;313.0;322.0;331.0;340.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0;105.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện đi từ ổ cắm vào Input, ra Output rồi tới quạt. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>DC / AC:</strong> DC (hoặc dấu $⎓$): một chiều; AC (hoặc dấu $\\sim$): xoay chiều.</li><li><strong>Input / Output:</strong> Input là đầu vào, nhận điện; Output là đầu ra, cấp điện cho mạch.</li><li><strong>Cực:</strong> cực dương ghi $+$ hoặc màu đỏ; cực âm ghi $-$ hoặc màu xanh.</li><li>⚠ <strong>Điều kiện:</strong> phải khớp cả loại dòng, vị trí nối và số vôn trên nhãn dụng cụ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Loại dòng ở Input và Output</span></p><p>Input ghi dấu $\\sim$: xoay chiều (AC), nhận điện từ ổ cắm. Output ghi dấu $⎓$: một chiều (DC), cấp điện cho mạch.</p><div class=\"bt-ans\"><p>Input: xoay chiều · Output: một chiều.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chỗ nối quạt</span></p><p>Quạt là dụng cụ nhận điện từ bộ sạc nên nối vào đầu ra:</p><div class=\"bt-ans\"><p>Nối vào <strong>Output</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đối chiếu nhãn quạt và bộ sạc</span></p><p>Quạt cần 5 V một chiều; Output cấp $5\\ \\text{V}$ một chiều: khớp loại dòng và số vôn.</p><div class=\"bt-ans\"><p>Phù hợp. Dây đỏ nối cực $+$ (đỏ), dây xanh nối cực $-$ (xanh).</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Input: xoay chiều (AC) · Output: một chiều (DC)</p><p>b) Output</p><p>c) Phù hợp; dây xanh nối cực âm ($-$)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhãn thiết bị</strong> → đọc loại dòng, vị trí nối, số vôn, rồi đối chiếu hai nhãn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bộ sạc: đầu vào và đầu ra cần xác định loại dòng điện\"><rect x=\"130\" y=\"60\" width=\"150\" height=\"90\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"205\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">BỘ SẠC</text><line x1=\"70.0\" y1=\"105.0\" x2=\"130.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><line x1=\"280.0\" y1=\"105.0\" x2=\"340.0\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><text x=\"100\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">IN</text><text x=\"310\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">OUT</text><text x=\"205\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Input: 100–240 V ~</text><text x=\"205\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">Output: 5 V ⎓ 2 A</text><circle cx=\"360\" cy=\"105\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\"/><text x=\"360\" y=\"110\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"360\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">quạt mini 5 V DC</text><text x=\"40\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">ổ cắm</text><text x=\"100\" y=\"40\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"310\" y=\"40\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">?</text></svg><figcaption>Dữ kiện: nhãn bộ sạc và nhãn quạt. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Input: 100–240 V ~\"</td><td>Dấu ~ ở đầu vào</td><td>⚠ Dấu $\\sim$ và dấu $⎓$ chỉ hai loại dòng điện khác nhau: loại nào là xoay chiều, loại nào một chiều?</td></tr><tr><td>\"Output: 5 V ⎓ 2 A\"</td><td>Dấu ⎓ ở đầu ra</td><td>Output là nơi thiết bị cấp điện cho mạch hay nơi nhận điện từ ổ cắm?</td></tr><tr><td>\"quạt mini ghi 5 V, DC\"</td><td>Cần 5 V một chiều</td><td>Quạt cần loại dòng nào và mấy vôn? Đối chiếu với nhãn bộ sạc.</td></tr><tr><td>\"dây đỏ nối cực mang dấu +\"</td><td>Dây đỏ ↔ cực $+$</td><td>Cực dương ghi dấu hoặc màu gì, cực âm ghi dấu hoặc màu gì?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhãn thiết bị</b> → đọc <b>loại dòng, đầu nối, số vôn</b> rồi đối chiếu",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Loại dòng ở Output",
+     "hoi": "Dấu ⎓ ở đầu Output cho biết dòng điện loại nào?",
+     "lua_chon": [
+      {
+       "text": "Một chiều (DC)",
+       "dung": true
+      },
+      {
+       "text": "Xoay chiều (AC)",
+       "dung": false,
+       "vi_sao": "Dấu $\\sim$ mới là xoay chiều; dấu $⎓$ (hoặc chữ DC) là một chiều."
+      },
+      {
+       "text": "Xoay chiều (AC) vì có chữ V",
+       "dung": false,
+       "vi_sao": "Chữ V là vôn, không nói loại dòng; dấu $⎓$ mới cho biết dòng một chiều."
+      }
+     ],
+     "loi_hay_gap": "Đọc chữ V rồi cho rằng đầu nào cũng như nhau."
+    },
+    {
+     "tieu_de": "Chỗ nối quạt",
+     "hoi": "Quạt mini nên nối vào đầu nào của bộ sạc?",
+     "lua_chon": [
+      {
+       "text": "Output",
+       "dung": true
+      },
+      {
+       "text": "Input",
+       "dung": false,
+       "vi_sao": "Input là chỗ bộ sạc nhận điện từ ổ cắm; nối quạt vào đó là sai chỗ."
+      },
+      {
+       "text": "Input, vì ghi nhiều vôn hơn",
+       "dung": false,
+       "vi_sao": "Input nhận điện từ ổ cắm; nối quạt 5 V vào đó là sai chỗ và nguy hiểm."
+      }
+     ],
+     "loi_hay_gap": "Thấy Input ghi nhiều vôn hơn nên cho rằng nối vào đó \"cho mạnh\"."
+    },
+    {
+     "tieu_de": "Quạt có phù hợp không",
+     "hoi": "Đối chiếu nhãn quạt 5 V DC với Output: dây xanh của quạt nối cực nào và quạt có phù hợp không?",
+     "lua_chon": [
+      {
+       "text": "Phù hợp; dây xanh nối cực âm",
+       "dung": true
+      },
+      {
+       "text": "Phù hợp; dây xanh nối cực dương",
+       "dung": false,
+       "vi_sao": "Cực dương là cực đỏ hoặc ghi $+$; dây xanh nối cực âm."
+      },
+      {
+       "text": "Không phù hợp vì bộ sạc ghi 2 A",
+       "dung": false,
+       "vi_sao": "Số ampe trên nhãn là dòng tối đa bộ sạc cung cấp được; quạt chỉ lấy phần nó cần. Cùng 5 V một chiều là phù hợp."
+      }
+     ],
+     "loi_hay_gap": "Chỉ so số vôn mà bỏ qua loại dòng điện, hoặc nối dây xanh vào cực đỏ."
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Đọc kí hiệu cảnh báo qua hình dạng và màu, rồi biết phải làm gì",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "problem_html": "<p>Một thùng thu pin cũ trong phòng chuẩn bị dán bốn nhãn: <strong>(1)</strong> tam giác viền vàng, hình đầu lâu bên trong; <strong>(2)</strong> vòng tròn đỏ gạch chéo, hình thùng rác bên trong; <strong>(3)</strong> vòng tròn xanh, hình mặt nạ phòng độc bên trong; <strong>(4)</strong> hình chiếc cốc vỡ, không có khung bao quanh.</p><p>a) Xếp mỗi nhãn vào nhóm: cảnh báo, cấm, bắt buộc hay bảo quản. Có bao nhiêu nhãn có khung (không tính nhãn bảo quản)?</p><p>b) Một học sinh định vứt pin cũ vào thùng rác thường. Điều đó có được phép không? Vì sao?</p><p>c) Học sinh cần làm gì trước khi mở thùng ra kiểm tra?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bốn nhãn trên thùng thu pin cũ: tam giác, tròn đỏ gạch chéo, tròn xanh và nhãn không khung\"><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\" points=\"40.0,120.0 80.0,50.0 120.0,120.0 40.0,120.0\"/><text x=\"80\" y=\"108\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">độc</text><circle cx=\"170\" cy=\"85\" r=\"34\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"4\"/><line x1=\"146.0\" y1=\"61.0\" x2=\"194.0\" y2=\"109.0\" stroke=\"#f87171\" stroke-width=\"4\" opacity=\"1\"/><text x=\"170\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">rác</text><circle cx=\"260\" cy=\"85\" r=\"34\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"4\"/><text x=\"260\" y=\"90\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">mặt nạ</text><path d=\"M330,60 L338,110 L372,110 L380,60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><line x1=\"340.0\" y1=\"78.0\" x2=\"354.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"354.0\" y1=\"92.0\" x2=\"346.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"80\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(1)</text><text x=\"170\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(2)</text><text x=\"260\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(3)</text><text x=\"355\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(4)</text><circle cx=\"80.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"80.0;170.0;260.0;355.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;40.0;40.0;40.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Bốn nhãn dán trên thùng; hình vẽ đơn giản hoá, chữ thay cho hình bên trong nhãn. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Nhóm kí hiệu:</strong> tam giác là cảnh báo; tròn đỏ gạch chéo là cấm; tròn xanh là bắt buộc phải làm.</li><li><strong>Nhóm bảo quản:</strong> thường không có khung riêng, nhận ra qua hình bên trong.</li><li><strong>Cách đọc:</strong> nhìn hình dạng và màu trước, rồi mới xem hình bên trong.</li><li>⚠ <strong>Điều kiện:</strong> kí hiệu cấm nghĩa là không được làm; kí hiệu bắt buộc nghĩa là phải làm trước khi tiếp xúc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhãn (1) và (2)</span></p><p>Nhãn (1): hình tam giác là nhóm cảnh báo, hình đầu lâu là nguy hiểm đến sức khoẻ (chất độc). Nhãn (2): vòng tròn đỏ gạch chéo là nhóm cấm; hình thùng rác là không được bỏ vào thùng rác.</p><div class=\"bt-ans\"><p>Nhãn (1) cảnh báo; nhãn (2) cấm.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhãn (3): bắt buộc</span></p><p>Vòng tròn xanh là nhóm bắt buộc; hình mặt nạ phòng độc là phải đeo mặt nạ. Nhãn (4) không có khung, nhận ra qua hình cốc vỡ: dụng cụ dễ vỡ, nhóm bảo quản.</p><div class=\"bt-ans\"><p>Nhãn (3) bắt buộc; nhãn (4) bảo quản.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đếm nhãn có khung</span></p><p>Nhãn có khung (cảnh báo, cấm, bắt buộc):</p>$$(1),\\ (2),\\ (3)$$<div class=\"bt-ans\">$$3 \\text{ nhãn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vứt pin vào thùng rác thường</span></p><p>Nhãn (2) cấm bỏ vào thùng rác: học sinh không được vứt pin cũ vào thùng rác thường. Trước khi mở thùng, theo nhãn (1) và (3) cần cẩn thận chất độc và đeo mặt nạ phòng độc.</p><div class=\"bt-ans\"><p>Không được phép.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) (1) cảnh báo · (2) cấm · (3) bắt buộc · (4) bảo quản; có $3$ nhãn có khung</p><p>b) Không được phép: nhãn (2) cấm bỏ vào thùng rác</p><p>c) Đeo mặt nạ phòng độc (nhãn 3) và cẩn thận chất độc (nhãn 1)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều kí hiệu</strong> → nhìn hình dạng và màu để xếp nhóm, rồi nêu việc phải làm theo từng nhóm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bốn nhãn cần phân nhóm theo hình dạng và màu\"><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"3\" opacity=\"1\" points=\"40.0,120.0 80.0,50.0 120.0,120.0 40.0,120.0\"/><text x=\"80\" y=\"108\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">độc</text><circle cx=\"170\" cy=\"85\" r=\"34\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"4\"/><line x1=\"146.0\" y1=\"61.0\" x2=\"194.0\" y2=\"109.0\" stroke=\"#f87171\" stroke-width=\"4\" opacity=\"1\"/><text x=\"170\" y=\"90\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">rác</text><circle cx=\"260\" cy=\"85\" r=\"34\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"4\"/><text x=\"260\" y=\"90\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">mặt nạ</text><path d=\"M330,60 L338,110 L372,110 L380,60\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linejoin=\"round\"/><line x1=\"340.0\" y1=\"78.0\" x2=\"354.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"354.0\" y1=\"92.0\" x2=\"346.0\" y2=\"104.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"80\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(1)</text><text x=\"170\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(2)</text><text x=\"260\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(3)</text><text x=\"355\" y=\"150\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">(4)</text><text x=\"80\" y=\"175\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khung?</text><text x=\"170\" y=\"175\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khung?</text><text x=\"260\" y=\"175\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khung?</text><text x=\"355\" y=\"175\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">không khung</text></svg><figcaption>Dữ kiện: hình dạng và màu từng nhãn. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tam giác viền vàng, hình đầu lâu\"</td><td>Nhãn (1)</td><td>⚠ Nhìn hình dạng và màu trước: tam giác thuộc nhóm nào?</td></tr><tr><td>\"vòng tròn đỏ gạch chéo, hình thùng rác\"</td><td>Nhãn (2)</td><td>Vòng tròn đỏ gạch chéo cho biết điều gì được phép hay không được phép?</td></tr><tr><td>\"vòng tròn xanh, hình mặt nạ phòng độc\"</td><td>Nhãn (3)</td><td>Vòng tròn xanh là nhóm nào: cho biết phải làm hay không được làm?</td></tr><tr><td>\"hình chiếc cốc vỡ, không có khung\"</td><td>Nhãn (4)</td><td>Nhãn không có khung riêng thuộc nhóm nào, nhận ra qua điều gì?</td></tr><tr><td>\"định vứt pin cũ vào thùng rác thường\"</td><td>Cần xét cho phép hay cấm</td><td>Đối chiếu với nhãn nào trong bốn nhãn? Có cho phép không?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều kí hiệu</b> → nhìn <b>hình dạng và màu</b> trước để xếp nhóm, rồi nêu việc phải làm",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhãn (2) thuộc nhóm nào",
+     "hoi": "Vòng tròn đỏ gạch chéo thuộc nhóm nào?",
+     "lua_chon": [
+      {
+       "text": "Cấm",
+       "dung": true
+      },
+      {
+       "text": "Cảnh báo",
+       "dung": false,
+       "vi_sao": "Cảnh báo là hình tam giác; vòng tròn đỏ gạch chéo là cấm."
+      },
+      {
+       "text": "Bắt buộc",
+       "dung": false,
+       "vi_sao": "Bắt buộc là vòng tròn xanh, không gạch chéo."
+      }
+     ],
+     "loi_hay_gap": "Nhìn hình thùng rác trước, bỏ qua hình dạng và màu."
+    },
+    {
+     "tieu_de": "Nhãn (3) yêu cầu gì",
+     "hoi": "Vòng tròn xanh có hình mặt nạ phòng độc yêu cầu làm gì?",
+     "lua_chon": [
+      {
+       "text": "Phải đeo mặt nạ phòng độc",
+       "dung": true
+      },
+      {
+       "text": "Không được đeo mặt nạ khi mở thùng",
+       "dung": false,
+       "vi_sao": "Vòng tròn xanh là bắt buộc phải làm, không phải cấm."
+      },
+      {
+       "text": "Chỉ cần đeo nếu thấy mùi lạ",
+       "dung": false,
+       "vi_sao": "Kí hiệu bắt buộc nghĩa là phải làm trước khi mở, không đợi có mùi."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng vòng tròn nào cũng là cấm vì có hình tròn."
+    },
+    {
+     "tieu_de": "Đếm nhãn có khung",
+     "hoi": "Trong bốn nhãn, có bao nhiêu nhãn có khung (cảnh báo, cấm, bắt buộc)?",
+     "dap_so": 3,
+     "sai_so": 0,
+     "loi_hay_gap": "Đếm theo số hình bên trong nhãn thay vì theo khung bao quanh."
+    },
+    {
+     "tieu_de": "Vứt pin vào thùng rác thường",
+     "hoi": "Học sinh định vứt pin cũ vào thùng rác thường. Việc đó có được phép không?",
+     "lua_chon": [
+      {
+       "text": "Không, theo nhãn (2)",
+       "dung": true
+      },
+      {
+       "text": "Được, vì pin cũ đã hết điện",
+       "dung": false,
+       "vi_sao": "Nhãn (2) cấm bỏ vào thùng rác; pin cũ vẫn có chất độc theo nhãn (1)."
+      },
+      {
+       "text": "Được nếu đeo mặt nạ",
+       "dung": false,
+       "vi_sao": "Mặt nạ là yêu cầu khi mở thùng (nhãn 3), không thay được lệnh cấm vứt vào thùng rác."
+      }
+     ],
+     "loi_hay_gap": "Thấy chỉ là pin cũ nên cho rằng vứt vào thùng rác nào cũng được.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đối chiếu việc định làm với nhãn cấm trên thùng",
+       "dung": true
+      },
+      {
+       "text": "Hỏi ý kiến bạn cùng nhóm",
+       "dung": false,
+       "vi_sao": "Bạn cùng nhóm không phải người quyết định; phải theo nhãn cấm trên thùng."
+      },
+      {
+       "text": "Chỉ nhìn hình bên trong của nhãn (3)",
+       "dung": false,
+       "vi_sao": "Nhãn (3) nói về việc phải làm khi mở thùng; việc vứt pin phải xét theo nhãn cấm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khó · Giữ khoảng cách an toàn: đọc số đo, so với sai số và áp dụng quy tắc",
+   "topic": "Quy tắc an toàn trong phòng thực hành",
+   "problem_html": "<p>Giáo viên đặt nhiệt kế cạnh ngọn đèn cồn đang cháy, lần lượt cách $3$; $8$; $15$; $30\\ \\text{cm}$ và đọc số chỉ khi đã ổn định. Nhiệt độ phòng là $25\\ ^\\circ\\text{C}$, sai số mỗi số đọc là $\\pm 1\\ ^\\circ\\text{C}$ (số liệu minh hoạ).</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Khoảng cách (cm)</th><th>3</th><th>8</th><th>15</th><th>30</th></tr></thead><tbody><tr><td>Nhiệt độ ($^\\circ\\text{C}$)</td><td>70</td><td>33</td><td>27</td><td>25,5</td></tr></tbody></table></div><p>a) Ở $3\\ \\text{cm}$, nhiệt độ cao hơn nhiệt độ phòng bao nhiêu? b) Từ $3\\ \\text{cm}$ ra $8\\ \\text{cm}$, phần nóng hơn nhiệt độ phòng giảm bao nhiêu? c) Trong bốn vị trí đã đo, vị trí gần đèn nhất nào có nhiệt độ không còn khác nhiệt độ phòng quá sai số? d) Quy tắc an toàn nào được minh hoạ và nhóm nên đứng thế nào khi đèn cồn đang cháy?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Nhiệt độ đo được cách ngọn đèn cồn 3, 8, 15 và 30 cm\"><line x1=\"60.0\" y1=\"120.0\" x2=\"400.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><ellipse cx=\"50\" cy=\"104\" rx=\"9\" ry=\"14\" fill=\"#fb923c\" opacity=\"0.8\"/><text x=\"50\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">đèn cồn</text><line x1=\"100.0\" y1=\"112.0\" x2=\"100.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3 cm</text><line x1=\"160.0\" y1=\"112.0\" x2=\"160.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"160\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">8 cm</text><line x1=\"240.0\" y1=\"112.0\" x2=\"240.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">15 cm</text><line x1=\"360.0\" y1=\"112.0\" x2=\"360.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"360\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">30 cm</text><circle cx=\"100.0\" cy=\"120.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"100.0;160.0;240.0;360.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120.0;120.0;120.0;120.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"100\" y=\"98\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">70 °C</text><text x=\"160\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">33 °C</text><text x=\"240\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">27 °C</text><text x=\"360\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">25,5 °C</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Dữ kiện: nhiệt độ phòng 25 °C, sai số ±1 °C. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Phần nóng hơn phòng:</strong> $\\Delta T = T - T_{\\text{phòng}}$.</li><li><strong>Sai số:</strong> chênh lệch trong $\\pm 1\\ ^\\circ\\text{C}$ thì chưa kết luận được là khác nhiệt độ phòng.</li><li><strong>Quy tắc:</strong> giữ khoảng cách an toàn khi nung nóng; không chạm vật nóng khi chưa có dụng cụ hỗ trợ.</li><li>⚠ <strong>Điều kiện:</strong> chỉ kết luận trong các vị trí đã đo; số đo minh hoạ cho xu hướng, không phải con số cố định ở mọi đèn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Phần nóng hơn phòng ở 3 cm</span></p><p>Lấy nhiệt độ đo trừ nhiệt độ phòng:</p>$$\\Delta T_3 = 70 - 25$$<div class=\"bt-ans\">$$45\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Giảm khi ra từ 3 cm đến 8 cm</span></p><p>Ở $8\\ \\text{cm}$:</p>$$\\Delta T_8 = 33 - 25 = 8\\ ^\\circ\\text{C}$$<p>Phần nóng hơn phòng đã giảm:</p>$$45 - 8$$<div class=\"bt-ans\">$$37\\ ^\\circ\\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí không còn khác phòng quá sai số</span></p><p>Tính $\\Delta T$ ở $15\\ \\text{cm}$ và $30\\ \\text{cm}$:</p>$$\\Delta T_{15} = 27 - 25 = 2\\ ^\\circ\\text{C} > 1\\ ^\\circ\\text{C}$$$$\\Delta T_{30} = 25{,}5 - 25 = 0{,}5\\ ^\\circ\\text{C} \\le 1\\ ^\\circ\\text{C}$$<div class=\"bt-ans\"><p>Vị trí gần nhất: $30\\ \\text{cm}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Áp dụng quy tắc</span></p><p>Gần ngọn lửa rất nóng và giảm mạnh khi ra xa, đúng quy tắc <strong>giữ khoảng cách an toàn</strong> khi nung nóng. Số đo chỉ ở bốn vị trí; càng xa ngọn lửa càng bớt nóng, nên phải giữ khoảng cách khi đèn đang cháy.</p><div class=\"bt-ans\"><p>Giữ khoảng cách an toàn khi nung nóng.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $45\\ ^\\circ\\text{C}$</p><p>b) $37\\ ^\\circ\\text{C}$</p><p>c) $30\\ \\text{cm}$ (còn $15\\ \\text{cm}$ vẫn nóng hơn phòng $2\\ ^\\circ\\text{C}$)</p><p>d) Giữ khoảng cách an toàn khi nung nóng; không chạm vật nóng khi chưa có dụng cụ hỗ trợ</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số đo kèm sai số</strong> → tính chênh lệch với nhiệt độ phòng, so với sai số, rồi nêu quy tắc áp dụng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bốn vị trí đo, nhiệt độ cần so với nhiệt độ phòng\"><line x1=\"60.0\" y1=\"120.0\" x2=\"400.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><ellipse cx=\"50\" cy=\"104\" rx=\"9\" ry=\"14\" fill=\"#fb923c\" opacity=\"0.8\"/><text x=\"50\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">đèn cồn</text><line x1=\"100.0\" y1=\"112.0\" x2=\"100.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"100\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3 cm</text><line x1=\"160.0\" y1=\"112.0\" x2=\"160.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"160\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">8 cm</text><line x1=\"240.0\" y1=\"112.0\" x2=\"240.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"240\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">15 cm</text><line x1=\"360.0\" y1=\"112.0\" x2=\"360.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"360\" y=\"146\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">30 cm</text><text x=\"210\" y=\"60\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">càng xa ngọn lửa, nhiệt độ càng giảm</text><text x=\"100\" y=\"98\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"160\" y=\"98\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"240\" y=\"98\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"360\" y=\"98\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">?</text></svg><figcaption>Dữ kiện: các vị trí đo theo đề. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cách 3; 8; 15; 30 cm ... nhiệt độ phòng 25 °C\"</td><td>Bốn số chỉ và mốc so sánh</td><td>Phần nóng hơn phòng ở mỗi vị trí tính thế nào?</td></tr><tr><td>\"sai số mỗi số đọc là ±1 °C\"</td><td>Ngưỡng $1\\ ^\\circ\\text{C}$</td><td>⚠ Số đọc chênh nhiệt độ phòng bao nhiêu thì chưa coi là nóng hơn phòng thật?</td></tr><tr><td>\"bảng: 70; 33; 27; 25,5\"</td><td>Bốn số chỉ ở bốn khoảng cách</td><td>Vị trí nào đầu tiên có chênh lệch trong ngưỡng sai số?</td></tr><tr><td>\"nhóm nên đứng thế nào khi đèn đang cháy\"</td><td>Áp dụng quy tắc</td><td>Nhóm quy tắc nào về nhiệt và tia? Rút ra điều gì từ số đo?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>số đo kèm sai số</b> → tính <b>chênh lệch với nhiệt độ phòng</b>, so với sai số, rồi nêu quy tắc",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Phần nóng hơn phòng ở 3 cm",
+     "hoi": "Ở 3 cm, nhiệt độ cao hơn nhiệt độ phòng bao nhiêu độ?",
+     "dap_so": 45,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Đọc nhầm số chỉ làm phần nóng hơn phòng."
+    },
+    {
+     "tieu_de": "Giảm khi ra từ 3 cm đến 8 cm",
+     "hoi": "Từ 3 cm ra 8 cm, phần nóng hơn phòng giảm bao nhiêu độ?",
+     "dap_so": 37,
+     "sai_so": 1,
+     "don_vi": "°C",
+     "loi_hay_gap": "Trừ hai số chỉ nhiệt độ rồi so với nhiệt độ phòng một lần nữa, hoặc dùng nhầm khoảng 8 cm và 15 cm.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy phần nóng hơn phòng ở 3 cm trừ phần ở 8 cm",
+       "dung": true
+      },
+      {
+       "text": "Lấy 70 trừ 33 rồi trừ thêm 25",
+       "dung": false,
+       "vi_sao": "Trừ nhiệt độ phòng một lần nữa làm lệch kết quả: 70 − 33 − 25 = 12 °C, không phải độ giảm."
+      },
+      {
+       "text": "Lấy nhiệt độ ở 8 cm trừ nhiệt độ phòng",
+       "dung": false,
+       "vi_sao": "Đây chỉ là phần nóng hơn phòng ở 8 cm, chưa phải độ giảm giữa hai vị trí."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí không còn khác phòng quá sai số",
+     "hoi": "Trong bốn vị trí, vị trí gần đèn nhất nào có nhiệt độ không còn khác nhiệt độ phòng quá sai số ±1 °C?",
+     "lua_chon": [
+      {
+       "text": "30 cm",
+       "dung": true
+      },
+      {
+       "text": "15 cm",
+       "dung": false,
+       "vi_sao": "Ở 15 cm chênh lệch là 2 °C, lớn hơn sai số 1 °C: vẫn nóng hơn phòng thật."
+      },
+      {
+       "text": "8 cm",
+       "dung": false,
+       "vi_sao": "Ở 8 cm chênh lệch là 8 °C, còn nóng hơn phòng rõ rệt."
+      }
+     ],
+     "loi_hay_gap": "Chọn vị trí xa nhất chỉ vì \"càng xa càng mát\", không so chênh lệch với sai số; hoặc coi 27 °C là bằng phòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính chênh lệch với nhiệt độ phòng ở từng vị trí rồi so với sai số 1 °C",
+       "dung": true
+      },
+      {
+       "text": "Chọn vị trí có nhiệt độ thấp nhất",
+       "dung": false,
+       "vi_sao": "Nhiệt độ thấp nhất là câu trả lời cho \"xa nhất\", nhưng đề hỏi vị trí gần nhất mà vẫn trong sai số."
+      },
+      {
+       "text": "Chọn vị trí có nhiệt độ bằng đúng 25 °C",
+       "dung": false,
+       "vi_sao": "Không có số chỉ nào đúng bằng 25 °C; cần so với sai số."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Áp dụng quy tắc",
+     "hoi": "Từ các số đo, nhóm nên làm gì khi đèn cồn đang cháy?",
+     "lua_chon": [
+      {
+       "text": "Đứng xa ngọn lửa, không chạm vật nóng",
+       "dung": true
+      },
+      {
+       "text": "Đứng cách 8 cm để vẫn nhìn rõ",
+       "dung": false,
+       "vi_sao": "Ở 8 cm vẫn nóng hơn phòng 8 °C: chưa đủ xa."
+      },
+      {
+       "text": "Đứng sát ngọn lửa rồi dùng kẹp là đủ an toàn",
+       "dung": false,
+       "vi_sao": "Kẹp giúp tay không chạm vật nóng nhưng không thay được việc giữ khoảng cách; ở 3 cm nóng hơn phòng 45 °C."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng chỉ nóng khi chạm vào ngọn lửa, đứng gần quan sát thì không sao.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng quy tắc giữ khoảng cách an toàn khi nung nóng",
+       "dung": true
+      },
+      {
+       "text": "Coi số đo là cố định ở mọi đèn cồn",
+       "dung": false,
+       "vi_sao": "Số đo chỉ cho xu hướng của thí nghiệm này; mỗi đèn có thể khác."
+      },
+      {
+       "text": "Bỏ qua quy tắc vì chỉ cháy một lúc",
+       "dung": false,
+       "vi_sao": "Quy tắc áp dụng suốt thời gian nung nóng, dù chỉ ngắn."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
