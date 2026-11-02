@@ -198,6 +198,7 @@ export default function StepwiseSolution({
   color,
   jump,
   onAllOpen,
+  onProgress,
 }: {
   q: LessonWorkedQuestion;
   color: string;
@@ -205,6 +206,8 @@ export default function StepwiseSolution({
   jump?: { idx: number; n: number } | null;
   /** Gọi một lần khi mọi bước đã mở — cha mới hiện "Làm bài tương tự" (ví dụ mẫu đi trước, retrieval đi sau). */
   onAllOpen?: () => void;
+  /** Số bước đầu đã mở liên tiếp — công cụ tương tác dưới đề vẽ lớp phủ tới đúng bước đó (không lộ bước còn giấu). */
+  onProgress?: (opened: number) => void;
 }) {
   const parts = useMemo(() => splitSolution(q.solution_html ?? ""), [q.solution_html]);
   const steps = useMemo(() => q.buoc ?? [], [q.buoc]);
@@ -239,6 +242,10 @@ export default function StepwiseSolution({
   useEffect(() => {
     if (allOpen) onAllOpen?.();
   }, [allOpen, onAllOpen]);
+  const opened = current < 0 ? steps.length : current;
+  useEffect(() => {
+    onProgress?.(usable ? opened : steps.length);
+  }, [usable, opened, steps.length, onProgress]);
 
   if (!usable) return <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />;
 

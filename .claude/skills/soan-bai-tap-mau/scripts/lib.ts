@@ -46,6 +46,8 @@ export interface Dang {
   go_roi?: { buoc_hay_sai: number };
   // 💡 Mẹo nhìn (1/11/2026) — docs/KE-HOACH-MEO-GIAI-BAI-TAP.md
   meo?: { ten: string; dieu_kien: string; html: string };
+  // 🧪 Công cụ giải tương tác (thử 2/11/2026) — features/lessons/types.ts WorkedTool
+  cong_cu?: { loai: string; [k: string]: number | string };
 }
 
 function validateMeo(m: Dang["meo"], at: string, errors: string[], warnings: string[]) {

@@ -132,7 +132,12 @@ export interface LessonWorkedQuestion {
   go_roi?: { buoc_hay_sai: number };
   /** 💡 Mẹo nhìn (1/11/2026): mô hình đời thường giải nhanh dạng này — chỉ hiện sau lời giải (hình chạy tới đáp số). */
   meo?: WorkedMeo;
+  /** 🧪 Công cụ giải tương tác (thử 2/11/2026, bài 14 Sóng dạng 3): khám phá trước khi giải, lớp phủ chạy theo bước đã mở. */
+  cong_cu?: WorkedTool;
 }
+
+/** Công cụ tương tác dưới đề. Số liệu theo đề (đơn vị: Hz, cm/s, cm) — lớp phủ lời giải chỉ hiện sau khi em mở bước tương ứng. */
+export type WorkedTool = { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number };
 
 export interface WorkedMeo {
   /** Tên 2–3 chữ, dùng y hệt ở mọi lớp (docs/KE-HOACH-MEO-GIAI-BAI-TAP.md). */

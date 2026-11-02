@@ -46,6 +46,7 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   // tự giải từng bước (9/10/2026) — bỏ qua khi dạng chưa có
   ...(d.buoc ? { buoc: d.buoc, nhan_dang: d.nhan_dang, cap_do: d.cap_do, fading: d.fading, go_roi: d.go_roi } : {}),
   ...(d.meo ? { meo: d.meo } : {}), // 💡 Mẹo nhìn (1/11/2026)
+  ...(d.cong_cu ? { cong_cu: d.cong_cu } : {}), // 🧪 công cụ giải tương tác (2/11/2026)
 }));
 if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối
 console.log(`Bài ${lessonId} "${data.lesson_title ?? ""}": ${questions.length} dạng → chỉ ghi lesson_items.questions (kind=bai_tap_mau)`);

@@ -5,6 +5,7 @@ import { ChevronDown } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
+import CongCuBaiTapLazy from "@/components/lessons/cong-cu/CongCuBaiTapLazy";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
 /** Dạng có cấu trúc: đề + mô phỏng → (HS chọn) phân tích đề → (HS chọn) lời giải đầy đủ → làm bài tương tự.
@@ -18,6 +19,7 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
   const [allOpen, setAllOpen] = useState(false); // tự giải từng bước: bài tương tự chỉ hiện khi đã mở hết các bước
   const markAllOpen = useCallback(() => setAllOpen(true), []);
   const [meoOpen, setMeoOpen] = useState(false); // 💡 Mẹo nhìn: gập sẵn, chỉ có sau lời giải (N6, B4)
+  const [opened, setOpened] = useState(0); // số bước đã mở — lớp phủ của công cụ tương tác chạy theo (không lộ bước giấu)
   const hasAnalysis = !!q.analysis_html;
   const stepwise = !!q.buoc?.length; // tự giải từng bước (9/10/2026)
   return (
@@ -28,6 +30,14 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
         </p>
       )}
       <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
+      {q.cong_cu && (
+        <CongCuBaiTapLazy
+          tool={q.cong_cu}
+          opened={solved ? (stepwise ? opened : 99) : null}
+          color={color}
+          steps={q.buoc?.map((b) => b.tieu_de)}
+        />
+      )}
       <p className="text-xs text-muted">
         {hasAnalysis ? "Tự thử giải trên giấy trước, kẹt thì mở phân tích đề." : "Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý."}
       </p>
@@ -68,7 +78,7 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
       {solved && (
         <>
           {stepwise ? (
-            <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} />
+            <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} onProgress={setOpened} />
           ) : (
             <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
           )}
