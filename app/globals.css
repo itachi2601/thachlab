@@ -3471,13 +3471,13 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
 
 /* 🧪 Giải từng bước cùng hình (components/lessons/cong-cu, thử 2/11/2026): hình dính nửa trên, bước ở nửa dưới — N8, N5, D2 */
 .lesson-worked-row:has(.cc-split) { overflow: clip; } /* overflow:hidden làm hình dính (sticky) mất tác dụng */
-.cc-split { --cc-halo: var(--color-panel); display: grid; gap: 10px; }
+.cc-split { --cc-halo: var(--color-panel); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; } /* minmax(0,…): chữ dài không làm cột phình tràn ngang (HS ảo 2/11) */
 .cc-sticky { position: sticky; z-index: 5; margin: 0 -4px; padding: 6px 4px 4px; background: var(--color-panel); border-bottom: 1px solid var(--color-line); }
 .cc-sticky--off { position: static; }
 .cc-fig { display: block; width: 100%; height: calc(42svh - 96px); min-height: 150px; max-height: 340px; }
 .cc-stepper { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 600; }
 .cc-step-title { flex: 1; min-width: 0; text-align: center; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.cc-hint { margin: 2px 0 0; min-height: 1.4em; font-size: 13.5px; text-align: center; color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cc-hint { margin: 2px 0 0; min-height: 2.7em; font-size: 13.5px; line-height: 1.35; text-align: center; color: var(--color-muted); text-wrap: balance; }
 .cc-stepper button { flex: 0 0 auto; min-width: 44px; min-height: 44px; border: 1px solid var(--color-line-strong); border-radius: 9px; background: none; color: inherit; font-size: 16px; cursor: pointer; }
 .cc-stepper button:disabled { opacity: .3; cursor: default; }
 .cc-next-ready { border-width: 2px !important; animation: cc-nudge 1.2s ease-in-out 2; }

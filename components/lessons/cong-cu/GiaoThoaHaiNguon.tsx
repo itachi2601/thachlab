@@ -58,8 +58,8 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
   const ratio = Math.abs(s) / lam, full = Math.floor(ratio + 1e-9), rest = ratio - full;
   const R = Math.ceil(nAB) + 1;
   const kx = (k: number) => (k / R) * (X - 1);
-  const bandY = 2.8;
-  const H = 5.8; // dải dưới luôn giữ chỗ: hình không đổi cao giữa các bước (nút ◀ ▶ đứng yên)
+  const bandY = 3.2;
+  const H = 7.2; // dải dưới luôn giữ chỗ: hình không đổi cao giữa các bước (nút ◀ ▶ đứng yên)
   const tile = 1.5, gap = 0.12;
 
   return (
@@ -84,7 +84,7 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
       {L >= 1 && L < 4 && (
         <g className="cc-in">
           <path d={`M${c + 0.9} 0.3 v0.4 h${lam} v-0.4`} stroke="currentColor" strokeWidth={0.1} fill="none" />
-          <Label x={c + 0.9 + lam / 2} y={2.1}>{`λ = ${fmt(lam, 2)}`}</Label>
+          <Label x={c + 0.9 + lam / 2} y={2.1}>{`λ=${fmt(lam, 2)}`}</Label>
         </g>
       )}
       {/* bước 4–5: điểm trên AB */}
@@ -143,7 +143,7 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
               <circle key={`nm${k}`} cx={kx(k)} cy={bandY + 0.6} r={0.15} fill="var(--cc-halo)" stroke={C_MIN} strokeWidth={0.08} className="cc-pop" style={{ animationDelay: `${i * 70}ms` }} />
             ))}
           <Label x={-X + 0.4} y={bandY - 0.5} a="start" size={1.1}>{`−${fmt(nAB, 2)} < k < ${fmt(nAB, 2)}`}</Label>
-          <Label x={X - 0.4} y={bandY - 0.5} a="end" size={1.1} fill={L >= 5 ? C_MIN : C_MAX}>
+          <Label x={0} y={bandY + 3.5} size={1.1} fill={L >= 5 ? C_MIN : C_MAX}>
             {L >= 5 ? `${maxima.length} cực đại · ${minima.length} cực tiểu` : `${maxima.length} cực đại`}
           </Label>
         </g>
