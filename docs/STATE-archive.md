@@ -841,3 +841,9 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Chặng B L10 Ch.2 Động học: 9 clip đã tải + chèn + khung vào 9 bài (tốc độ–vận tốc, ĐDC–QĐ, thực hành đo tốc độ, đồ thị d–t, gia tốc, CĐ thẳng BĐĐ, rơi tự do, thực hành đo g, CĐ ném; commit 49dd39c20, 67191db26), thầy DUYỆT 1/11; dry-run sạch, lịch tự đăng `--chi-video` 22h05 1/11 (tab terminal, lesson 49–57) — sáng 2/11 kiểm log rồi chuyển sang archive — sổ `so-clip-anh-dong.md`. — ĐÃ ĐĂNG DB 1/11/2026 12h10 (thầy cho đăng ngay, ngoài giờ học), 9/9 bài ✓ đối chiếu trước/sau.
 
 - 2/11/2026 07:55 · ĐÃ CHẠY `20261102080000_lop_worldskills_industrial_mechanics.sql` (học phần CTTC WorldSkills IM: môn, lớp, 5 chương, 16 bài id 185–200) + `scripts/dang-worldskills-im.sh` ghi 16 mục ly_thuyet. Log `scripts/logs/20261102-075504-*`.
+## 1/11/2026 22h30 — đăng clip lesson 11 + 43, deploy
+- Lịch 22h05 (1/11): ĐÃ GHI DB mục ly_thuyet lesson 11 (item 52, `--chi-video`, sao lưu `scripts/logs/ly-thuyet-bai11-backup-1793545613467.json`); CHƯA DEPLOY (phiên tự động bị chặn chạy `scripts/deploy.sh`) → thầy chạy `bash scripts/deploy.sh` rồi grep `bay-l12-ch3-01` trong `public/data`.
+- Clip tự dựng Ch.4 L11: 5 clip đã đăng DB 31/10 (bài 41, 42, 44, 45); bài 43 Nguồn điện (nguondien1/2, đã có storage + JSON khung) chèn sau khi `claude/ra-soat-bai-hoc-lop-11-a501a6` vào main và qua 20:35 1/11 → `chen-video-thi-nghiem.mts --bai l11-nguon-dien --apply` + `gan-khung-video.mts` + đăng `--chi-video` lesson 43.
+
+## 1/11/2026 22h40 — chặng B L11 Dao động đã duyệt
+- Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.

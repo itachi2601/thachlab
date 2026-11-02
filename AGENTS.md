@@ -171,3 +171,5 @@ Lightning CSS gộp khối `@media` sát nhau; Turbopack có lúc giữ CSS cũ 
 Đọc CSS mẫu (số đo thật), lập danh sách điểm so; chụp cùng cỡ 1280·1024·768·375 sáng+tối, đo `getComputedStyle`; lệch cố ý thì ghi lý do. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
 # Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (29/10/2026)
 Chạy `npm run dev` (không `next dev` trực tiếp) — `predev` symlink `.env.local` về checkout chính.
+# Báo cáo: không tin nhắn quá trình, chỉ báo cáo tổng hợp cuối (thầy chốt 2/11/2026)
+Trong lúc làm không viết tin nhắn tiến độ/"đang làm X"; làm im lặng tới khi xong. Chỉ MỘT báo cáo tổng hợp cuối phiên: đã làm gì, kết quả đã kiểm, file/nhánh đã đụng, việc còn treo. Chỉ dừng giữa chừng khi bị chặn bởi quyết định của thầy.

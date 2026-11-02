@@ -7,7 +7,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 ## Hạ tầng
 - Next.js App Router + TS + Tailwind v4, `output: "export"`, deploy `scripts/deploy.sh` → nhánh `deploy`.
 - Supabase `jgvbdbpvjdntdgzthumv` (Singapore, gói PRO từ 23/10, compute t3a.small). Sơ đồ: `docs/DATABASE.md`, RPC: `docs/DATABASE-RPC.md`.
-- KaTeX 0.17; học liệu tĩnh `public/data/` sinh ở `prebuild` — sửa lý thuyết phải **deploy lại** mới lên web.
+- KaTeX 0.17; học liệu tĩnh `public/data/` sinh ở `prebuild` CHỈ cho bài xem thử (`lessons.is_preview`: 2, 20, 46) — bài khác HS đọc thẳng DB, ghi `cap-nhat-ly-thuyet.sh` là lên ngay, chỉ deploy khi đổi CSS/code (kiểm 1/11 22h30).
 - Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
@@ -44,10 +44,10 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 ## Nội dung đang treo
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
-- Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+- Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
+- Chỉ số tspan 13→14 L11 (commit bc839cd4b, 6 bài): đã vào DB bài 26 + 43 (1/11 22h40); CÒN 4 bài Mô tả sóng, Cường độ dòng điện, TH đo SĐĐ pin, TH đo tốc độ âm — gộp đợt `--chi-video --cho-phep-khac` sau 22h cùng 8 bài L10.
 - Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
-- Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lịch `dang-ly-thuyet-l12-luc-tu-clip-bay-01-11` 22h05 đăng lý thuyết lesson 11 + deploy; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
-- Lịch 22h05 (1/11): ĐÃ GHI DB mục ly_thuyet lesson 11 (item 52, `--chi-video`, sao lưu `scripts/logs/ly-thuyet-bai11-backup-1793545613467.json`); CHƯA DEPLOY (phiên tự động bị chặn chạy `scripts/deploy.sh`) → thầy chạy `bash scripts/deploy.sh` rồi grep `bay-l12-ch3-01` trong `public/data`.
+- Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lý thuyết lesson 11 (item 52) đã ghi DB 22h05, đã kiểm DB + deploy lại 22h25 1/11; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
 - 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
 - Bài tập mẫu L12 soạn lại 12 bài (9, 11, 13–19, 125–127); kế hoạch 42 bài L10/L11 chờ duyệt.
 - Bài 11 L12 Thực hành chưa ghi DB; 4 bài L12 sửa đường sức — kiểm `so-file-voi-db.mts` trước.
@@ -56,7 +56,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
-- Clip tự dựng Ch.4 L11: 5 clip đã đăng DB 31/10 (bài 41, 42, 44, 45); bài 43 Nguồn điện (nguondien1/2, đã có storage + JSON khung) chèn sau khi `claude/ra-soat-bai-hoc-lop-11-a501a6` vào main và qua 20:35 1/11 → `chen-video-thi-nghiem.mts --bai l11-nguon-dien --apply` + `gan-khung-video.mts` + đăng `--chi-video` lesson 43.
+- Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 
