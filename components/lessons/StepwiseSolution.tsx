@@ -200,6 +200,7 @@ export default function StepwiseSolution({
   onAllOpen,
   onProgress,
   only,
+  fading,
 }: {
   q: LessonWorkedQuestion;
   color: string;
@@ -211,11 +212,13 @@ export default function StepwiseSolution({
   onProgress?: (opened: number) => void;
   /** Chỉ hiện một bước (giải cùng hình: cha lật bước bằng ◀ ▶, lời giải đầy đủ để riêng bên dưới). */
   only?: number;
+  /** Đè mức mờ dần của dạng (giải cùng hình: mọi bước có câu hỏi đều tự làm, thầy chốt 2/11/2026). */
+  fading?: LessonWorkedQuestion["fading"];
 }) {
   const parts = useMemo(() => splitSolution(q.solution_html ?? ""), [q.solution_html]);
   const steps = useMemo(() => q.buoc ?? [], [q.buoc]);
   const usable = !!parts && parts.steps.length === steps.length && steps.length > 0;
-  const hidden = useMemo(() => hiddenSteps(q.fading, steps), [q.fading, steps]);
+  const hidden = useMemo(() => hiddenSteps(fading ?? q.fading, steps), [fading, q.fading, steps]);
   const [revealed, setRevealed] = useState<boolean[]>(() => hidden.map((h) => !h));
   const [flash, setFlash] = useState<number | null>(null);
   const refs = useRef<(HTMLDivElement | null)[]>([]);

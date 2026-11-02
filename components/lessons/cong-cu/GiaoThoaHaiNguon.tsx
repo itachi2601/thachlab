@@ -34,7 +34,7 @@ function hyperbola(s: number, c: number, yMax: number): string {
   return "M" + pts.join(" L");
 }
 
-function Label({ x, y, children, fill = "currentColor", a = "middle", size = 1.05 }: { x: number; y: number; children: ReactNode; fill?: string; a?: "start" | "middle" | "end"; size?: number }) {
+function Label({ x, y, children, fill = "currentColor", a = "middle", size = 1.3 }: { x: number; y: number; children: ReactNode; fill?: string; a?: "start" | "middle" | "end"; size?: number }) {
   return (
     <text x={x} y={y} fontSize={size} textAnchor={a} fill={fill} fontWeight={600} stroke="var(--cc-halo)" strokeWidth={0.3} paintOrder="stroke">
       {children}
@@ -47,7 +47,7 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
   // M theo đề: (x + c)² + y² = d1², (x − c)² + y² = d2²
   const mx = (d1 * d1 - d2 * d2) / (4 * c);
   const my = Math.sqrt(Math.max(d2 * d2 - (mx - c) ** 2, 0));
-  const X = Math.max(c + 3.2, Math.abs(mx) + 2.2), Y1 = my + 2.2;
+  const X = Math.max(c + 3.6, Math.abs(mx) + 2.2), Y1 = my + 2.4;
   const s = d1 - d2, kM = s / lam, onMax = Math.abs(kM - Math.round(kM)) < 1e-6;
   const nAB = AB / lam;
   const maxima: number[] = [], minima: number[] = [];
@@ -59,7 +59,7 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
   const R = Math.ceil(nAB) + 1;
   const kx = (k: number) => (k / R) * (X - 1);
   const bandY = 2.8;
-  const H = L >= 2 ? 5.4 : 1.9; // dải dưới chỉ chiếm chỗ khi có gì để vẽ
+  const H = 5.8; // dải dưới luôn giữ chỗ: hình không đổi cao giữa các bước (nút ◀ ▶ đứng yên)
   const tile = 1.5, gap = 0.12;
 
   return (
@@ -78,13 +78,13 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
       <line x1={-c} y1={0} x2={c} y2={0} stroke="currentColor" strokeWidth={0.1} />
       <line x1={-c} y1={0} x2={mx} y2={-my} stroke="currentColor" strokeWidth={0.1} opacity={0.75} />
       <line x1={c} y1={0} x2={mx} y2={-my} stroke="currentColor" strokeWidth={0.1} opacity={0.75} />
-      <Label x={(mx - c) / 2 - 0.6} y={-my / 2 - 0.2} a="end">{`d₁ = ${fmt(d1)}`}</Label>
-      <Label x={(mx + c) / 2 - 0.9} y={-my / 2 + 1.5} a="end">{`d₂ = ${fmt(d2)}`}</Label>
+      <Label x={(mx - c) / 2 - 0.7} y={-my / 2 - 0.2} a="end">{`d₁ = ${fmt(d1)}`}</Label>
+      <Label x={(mx + c) / 2 - 1} y={-my / 2 + 1.8} a="end">{`d₂ = ${fmt(d2)}`}</Label>
       {/* bước 1: thước λ đặt ngoài B (từ bước 4 nhường chỗ cho trục số k) */}
       {L >= 1 && L < 4 && (
         <g className="cc-in">
-          <path d={`M${c + 1.1} 0.3 v0.4 h${lam} v-0.4`} stroke="currentColor" strokeWidth={0.1} fill="none" />
-          <Label x={c + 1.1 + lam / 2} y={1.9}>{`λ = ${fmt(lam, 2)}`}</Label>
+          <path d={`M${c + 0.9} 0.3 v0.4 h${lam} v-0.4`} stroke="currentColor" strokeWidth={0.1} fill="none" />
+          <Label x={c + 0.9 + lam / 2} y={2.1}>{`λ = ${fmt(lam, 2)}`}</Label>
         </g>
       )}
       {/* bước 4–5: điểm trên AB */}
@@ -128,7 +128,7 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
             <g key={k}>
               <line x1={kx(k)} y1={bandY + 0.45} x2={kx(k)} y2={bandY + 0.75} stroke="currentColor" strokeWidth={0.05} />
               {(R <= 8 || k % 2 === 0) && (
-                <text x={kx(k)} y={bandY + 1.8} fontSize={0.75} textAnchor="middle" fill="currentColor">
+                <text x={kx(k)} y={bandY + 2.0} fontSize={0.95} textAnchor="middle" fill="currentColor">
                   {k}
                 </text>
               )}
@@ -142,8 +142,8 @@ export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) 
             minima.map((k, i) => (
               <circle key={`nm${k}`} cx={kx(k)} cy={bandY + 0.6} r={0.15} fill="var(--cc-halo)" stroke={C_MIN} strokeWidth={0.08} className="cc-pop" style={{ animationDelay: `${i * 70}ms` }} />
             ))}
-          <Label x={-X + 0.4} y={bandY - 0.4} a="start" size={0.85}>{`−${fmt(nAB, 2)} < k < ${fmt(nAB, 2)}`}</Label>
-          <Label x={X - 0.4} y={bandY - 0.4} a="end" size={0.85} fill={L >= 5 ? C_MIN : C_MAX}>
+          <Label x={-X + 0.4} y={bandY - 0.5} a="start" size={1.1}>{`−${fmt(nAB, 2)} < k < ${fmt(nAB, 2)}`}</Label>
+          <Label x={X - 0.4} y={bandY - 0.5} a="end" size={1.1} fill={L >= 5 ? C_MIN : C_MAX}>
             {L >= 5 ? `${maxima.length} cực đại · ${minima.length} cực tiểu` : `${maxima.length} cực đại`}
           </Label>
         </g>

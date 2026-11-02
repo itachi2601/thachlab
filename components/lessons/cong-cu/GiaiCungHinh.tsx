@@ -10,6 +10,7 @@ import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types"
  * Giải từng bước CÙNG hình (thầy góp ý 2/11/2026): trên điện thoại hình dính nửa trên màn hình, em làm từng bước ở
  * nửa dưới — làm bước nào thấy ngay hình của bước đó, không phải cuộn qua lại (N8 split-attention, Chandler & Sweller).
  * Mỗi lần chỉ một bước (N5); lời giải đầy đủ gập ở dưới cùng. Hình của bước chỉ vẽ khi em đã làm xong bước đó.
+ * Mọi bước có câu hỏi đều tự làm (fading giau_het, thầy chốt 2/11 sau góp ý học sinh ảo: "4/6 bước chỉ đọc đáp số").
  */
 
 function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
@@ -82,16 +83,27 @@ export default function GiaiCungHinh({
   const layer = Math.min(opened, step + 1);
   const canNext = step + 1 < n && step + 1 <= opened;
   const title = q.buoc?.[step]?.tieu_de ?? "";
+  // một dòng cố định dưới nút: nói vì sao ▶ khoá / đã mở / đã xong (L1 phản hồi, D2 nút không nhảy chỗ)
+  const hint =
+    step + 1 >= n
+      ? opened >= n
+        ? "✓ Xong cả bài — tự trình bày lại, rồi so với lời giải đầy đủ ở cuối."
+        : "Trả lời bước này để hoàn thành."
+      : canNext
+        ? step + 1 === opened
+          ? "Xong bước này — bấm ▶ sang bước tiếp."
+          : "Bấm ▶ xem lại bước sau."
+        : "Trả lời câu hỏi bên dưới để mở bước sau.";
 
   return (
     <div ref={splitRef} className="cc-split">
-      <div className="cc-sticky" style={{ top }}>
+      <div className={full ? "cc-sticky cc-sticky--off" : "cc-sticky"} style={{ top }}>
         <Hinh tool={tool} layer={layer} />
         <div className="cc-stepper">
           <button type="button" aria-label="Bước trước" disabled={step <= 0} onClick={() => go(step - 1)}>
             ◀
           </button>
-          <span>
+          <span className="cc-step-title">
             Bước {step + 1}/{n} · <ContentHtml html={title} className="inline" />
           </span>
           <button
@@ -105,9 +117,12 @@ export default function GiaiCungHinh({
             ▶
           </button>
         </div>
+        <p className="cc-hint" aria-live="polite">
+          {hint}
+        </p>
       </div>
       <div className="cc-steps">
-        <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={onAllOpen} onProgress={setOpened} only={step} />
+        <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={onAllOpen} onProgress={setOpened} only={step} fading="giau_het" />
       </div>
       <div className="bt-meo">
         <button type="button" className="bt-meo-head" aria-expanded={full} onClick={() => setFull((o) => !o)}>
