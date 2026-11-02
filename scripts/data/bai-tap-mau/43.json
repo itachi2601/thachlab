@@ -1,0 +1,423 @@
+{
+ "lesson_id": 43,
+ "lesson_title": "Bài 24. Nguồn điện",
+ "generated_at": "2026-11-02",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải độc lập 2/11/2026: 4 dạng khớp; đã sửa hình đồ thị D3, loi_hay_gap D1, vi_sao D2, nhan_dang D3/D4, bảng D4"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Suất điện động: công của lực lạ, điện tích dịch chuyển và thời gian",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Một ắc quy có suất điện động $\\mathcal{E}=12\\ \\text{V}$ cấp điện cho một mạch kín. Trong thời gian dòng điện không đổi $I=0{,}50\\ \\text{A}$ chạy qua nguồn, lực lạ bên trong ắc quy thực hiện công $A=1{,}8\\cdot10^{3}\\ \\text{J}$ để đưa điện tích dương từ cực âm sang cực dương.</p><ol type=\"a\"><li>Tính điện tích đã dịch chuyển qua nguồn.</li><li>Tính khoảng thời gian dòng điện chạy.</li><li>Một pin $1{,}5\\ \\text{V}$ muốn đưa cùng lượng điện tích đó qua nguồn thì lực lạ trong pin phải thực hiện công bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 212\" role=\"img\" aria-label=\"Mạch kín gồm một nguồn điện và một điện trở; một điện tích dương chạy một vòng: ngoài nguồn từ cực dương về cực âm, trong nguồn từ cực âm lên cực dương\"><line x1=\"110.0\" y1=\"44.0\" x2=\"370.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"154.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"108.0\" x2=\"110.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"95.0\" y1=\"90.0\" x2=\"125.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"108.0\" x2=\"118.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"134\" y=\"96\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"134\" y=\"119\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"370.0\" y1=\"44.0\" x2=\"370.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"370.0\" y1=\"121.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"362\" y=\"77\" width=\"16\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"354\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R</text><path d=\"M260.5,38.5 L270.0,44.0 L260.5,49.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M279.5,159.5 L270.0,154.0 L279.5,148.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"35\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I</text><text x=\"88\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">ℰ = 3,0 V</text><circle cx=\"230.0\" cy=\"44.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"230.0;240.6;251.1;261.7;272.3;282.9;293.4;304.0;314.6;325.1;335.7;346.3;356.9;367.4;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;366.3;355.7;345.1;334.6;324.0;313.4;302.9;292.3;281.7;271.1;260.6;250.0;239.4;228.9;218.3;207.7;197.1;186.6;176.0;165.4;154.9;144.3;133.7;123.1;112.6;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;113.7;124.3;134.9;145.4;156.0;166.6;177.1;187.7;198.3;208.9;219.4;230.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;52.0;62.6;73.1;83.7;94.3;104.9;115.4;126.0;136.6;147.1;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;146.0;135.4;124.9;114.3;103.7;93.1;82.6;72.0;61.4;50.9;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"20\" y=\"184\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">Trong nguồn: lực lạ đưa điện tích từ cực − lên cực +</text><text x=\"20\" y=\"202\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● điện tích dương mẫu chạy một vòng (nguồn mẫu 3,0 V)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điện tích dương mẫu đi hết một vòng của mạch kín; nguồn mẫu có số liệu khác đề; chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực lạ đưa điện tích dương từ cực (−) sang cực (+) trong nguồn.</li><li>Suất điện động: $\\mathcal{E}=\\dfrac{A}{q}$ ($A$: công của lực lạ, $q$: điện tích dịch chuyển trong nguồn)</li><li>Điện tích qua một tiết diện: $q=It$</li><li>⚠ <strong>Điều kiện:</strong> $A$ là công của lực lạ trong nguồn; công của lực điện ở mạch ngoài là $Uq$, nhỏ hơn $\\mathcal{E}q$ khi có dòng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện tích dịch chuyển qua nguồn</span></p><p>Từ định nghĩa suất điện động, suy ra $q$:</p>$$q=\\dfrac{A}{\\mathcal{E}}=\\dfrac{1{,}8\\cdot10^{3}}{12}$$<div class=\"bt-ans\">$$q=150\\ \\text{C}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Khoảng thời gian</span></p><p>Từ $q=It$:</p>$$t=\\dfrac{q}{I}=\\dfrac{150}{0{,}50}$$<div class=\"bt-ans\">$$t=300\\ \\text{s}=5{,}0\\ \\text{phút}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực lạ trong pin $1{,}5\\ \\text{V}$</span></p><p>Cùng điện tích $q=150\\ \\text{C}$, suất điện động $\\mathcal{E}'=1{,}5\\ \\text{V}$:</p>$$A'=\\mathcal{E}'q=1{,}5\\cdot150$$<div class=\"bt-ans\">$$A'=225\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{J}/\\text{C}=\\text{V}$ ✓</p><p>$\\mathcal{E}$ giảm $\\dfrac{12}{1{,}5}=8$ lần nên công giảm 8 lần: $\\dfrac{1{,}8\\cdot10^{3}}{8}=225\\ \\text{J}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $q=150\\ \\text{C}$</p><p>b) $t=300\\ \\text{s}$</p><p>c) $A'=225\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công của lực lạ</strong> hoặc hỏi công lực lạ khi đưa điện tích qua nguồn → dùng $\\mathcal{E}=\\dfrac{A}{q}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Mạch kín có ắc quy suất điện động 12 vôn, dòng điện không đổi 0,50 ampe; lực lạ trong nguồn làm công 1,8 nhân 10 mũ 3 jun\"><line x1=\"110.0\" y1=\"44.0\" x2=\"370.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"154.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"108.0\" x2=\"110.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"95.0\" y1=\"90.0\" x2=\"125.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"108.0\" x2=\"118.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"134\" y=\"96\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"134\" y=\"119\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><line x1=\"370.0\" y1=\"44.0\" x2=\"370.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"370.0\" y1=\"121.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"362\" y=\"77\" width=\"16\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"354\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R</text><path d=\"M260.5,38.5 L270.0,44.0 L260.5,49.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M279.5,159.5 L270.0,154.0 L279.5,148.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"35\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I = 0,50 A</text><text x=\"88\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">ℰ = 12 V</text><text x=\"20\" y=\"184\" fill=\"#f87171\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Lực lạ làm công A = 1,8·10³ J trong nguồn</text><text x=\"20\" y=\"204\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: q, t, và công A′ của pin 1,5 V</text></svg><figcaption>Dữ kiện: nguồn, dòng điện và công của lực lạ. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ắc quy có suất điện động $\\mathcal{E}=12$ V\"</td><td>$\\mathcal{E}=12$ V</td><td>Suất điện động: công của lực lạ trên mỗi coulomb điện tích dương đi qua nguồn</td></tr><tr><td>\"dòng điện không đổi $I=0{,}50$ A\"</td><td>$I=0{,}50$ A</td><td>Liên hệ giữa điện tích, cường độ dòng điện và thời gian</td></tr><tr><td>\"lực lạ … thực hiện công $A=1{,}8\\cdot10^{3}$ J … từ cực âm sang cực dương\"</td><td>$A=1{,}8\\cdot10^{3}$ J</td><td>⚠ $A$ là công của lực lạ trong nguồn, không phải công của lực điện ở mạch ngoài</td></tr><tr><td>\"điện tích đã dịch chuyển qua nguồn\"</td><td>Cần $q$</td><td>Đại lượng cần tìm: liên hệ $\\mathcal{E}$, $A$, $q$</td></tr><tr><td>\"khoảng thời gian dòng điện chạy\"</td><td>Cần $t$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"pin $1{,}5$ V … cùng lượng điện tích đó\"</td><td>$\\mathcal{E}'=1{,}5$ V; cùng $q$</td><td>Cùng điện tích mà suất điện động khác thì công của lực lạ có khác không? Cần $A'$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>công của lực lạ khi đưa điện tích qua nguồn</b> → nghĩ tới <b>ℰ = A/q</b>, và q = I·t.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Điện tích dịch chuyển qua nguồn",
+     "hoi": "Điện tích q đã dịch chuyển qua nguồn bằng bao nhiêu C?",
+     "dap_so": 150,
+     "sai_so": 1,
+     "don_vi": "C",
+     "loi_hay_gap": "Nhân thay vì chia ($q=\\mathcal{E}A$), hoặc dùng công của lực điện ở mạch ngoài thay cho công của lực lạ."
+    },
+    {
+     "tieu_de": "Khoảng thời gian",
+     "hoi": "Dòng điện đã chạy trong bao nhiêu giây?",
+     "dap_so": 300,
+     "sai_so": 3,
+     "don_vi": "s",
+     "loi_hay_gap": "Lấy $t=A/I$ (chia công cho cường độ) thay vì chia điện tích cho cường độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $q=It$ suy ra thời gian bằng điện tích chia cho cường độ dòng điện",
+       "dung": true
+      },
+      {
+       "text": "Lấy công của lực lạ chia cho cường độ dòng điện",
+       "dung": false,
+       "vi_sao": "$A/I$ có đơn vị J/A, không phải giây; thời gian phải tính từ điện tích đã dịch chuyển."
+      },
+      {
+       "text": "Lấy công của lực lạ chia cho suất điện động",
+       "dung": false,
+       "vi_sao": "$A/\\mathcal{E}$ chính là điện tích $q$ (đơn vị C), chưa phải thời gian."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực lạ trong pin 1,5 V",
+     "hoi": "Pin $1{,}5\\ \\text{V}$ đưa cùng lượng điện tích đó thì lực lạ làm công bao nhiêu J?",
+     "dap_so": 225,
+     "sai_so": 2,
+     "don_vi": "J",
+     "loi_hay_gap": "Giữ nguyên công cũ vì \"cùng điện tích\", quên rằng công trên mỗi coulomb chính là suất điện động nên phụ thuộc vào nguồn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhân suất điện động của pin mới với điện tích đã tìm",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên công của ắc quy vì điện tích như nhau",
+       "dung": false,
+       "vi_sao": "Công của lực lạ trên mỗi coulomb chính là $\\mathcal{E}$ nên công phụ thuộc vào $\\mathcal{E}$ của nguồn, không giữ nguyên."
+      },
+      {
+       "text": "Chia điện tích cho suất điện động của pin mới",
+       "dung": false,
+       "vi_sao": "Đó là $q/\\mathcal{E}'$ có đơn vị C/V, không phải jun; từ $\\mathcal{E}=A/q$ phải nhân $\\mathcal{E}'$ với $q$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Hai số chỉ của vôn kế: suất điện động, dòng điện, điện trở trong và dòng khi nối tắt",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Một pin đã dùng lâu. Vôn kế lí tưởng mắc ở hai cực pin chỉ $9{,}0\\ \\text{V}$ khi mạch hở. Nối hai cực pin với điện trở $R=30\\ \\Omega$ (bỏ qua điện trở dây nối), vôn kế vẫn mắc ở hai cực pin chỉ $7{,}5\\ \\text{V}$.</p><ol type=\"a\"><li>Suất điện động của pin bằng bao nhiêu?</li><li>Tính cường độ dòng điện trong mạch kín.</li><li>Tính điện trở trong của pin.</li><li>Nối tắt hai cực pin bằng dây dẫn có điện trở không đáng kể thì dòng điện chạy qua pin bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Pin có điện trở trong nối với một điện trở qua một khoá; vôn kế mắc ở hai cực pin chỉ giá trị lớn khi khoá mở và giá trị nhỏ hơn khi khoá đóng\"><line x1=\"110.0\" y1=\"44.0\" x2=\"370.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"154.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"108.0\" x2=\"110.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"95.0\" y1=\"90.0\" x2=\"125.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"108.0\" x2=\"118.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"134\" y=\"96\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"134\" y=\"119\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><rect x=\"82\" y=\"73\" width=\"62\" height=\"52\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\".6\"/><line x1=\"370.0\" y1=\"44.0\" x2=\"370.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"370.0\" y1=\"121.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"362\" y=\"77\" width=\"16\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"354\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R = 12 Ω</text><path d=\"M260.5,38.5 L270.0,44.0 L260.5,49.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M279.5,159.5 L270.0,154.0 L279.5,148.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"35\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I</text><line x1=\"200.0\" y1=\"44.0\" x2=\"200.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"200.0\" y1=\"115.0\" x2=\"200.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"200\" cy=\"99\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"200\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"200.0\" cy=\"44.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"154.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"74\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">ℰ, r</text><line x1=\"290\" y1=\"44\" x2=\"340\" y2=\"44\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0.000;0.300\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><line x1=\"290\" y1=\"44\" x2=\"334\" y2=\"22\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0.000;0.300\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"290.0\" cy=\"44.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"340.0\" cy=\"44.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"315\" y=\"64\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">khoá</text><circle cx=\"230.0\" cy=\"44.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"230.0;230.0;240.6;251.1;261.7;272.3;282.9;293.4;304.0;314.6;325.1;335.7;346.3;356.9;367.4;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;366.3;355.7;345.1;334.6;324.0;313.4;302.9;292.3;281.7;271.1;260.6;250.0;239.4;228.9;218.3;207.7;197.1;186.6;176.0;165.4;154.9;144.3;133.7;123.1;112.6;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;110.0;113.7;124.3;134.9;145.4;156.0;166.6;177.1;187.7;198.3;208.9;219.4;230.0\" keyTimes=\"0.000;0.350;0.359;0.369;0.378;0.387;0.396;0.406;0.415;0.424;0.434;0.443;0.452;0.461;0.471;0.480;0.489;0.499;0.508;0.517;0.526;0.536;0.545;0.554;0.564;0.573;0.582;0.591;0.601;0.610;0.619;0.629;0.638;0.647;0.656;0.666;0.675;0.684;0.694;0.703;0.712;0.721;0.731;0.740;0.749;0.759;0.768;0.777;0.786;0.796;0.805;0.814;0.824;0.833;0.842;0.851;0.861;0.870;0.879;0.889;0.898;0.907;0.916;0.926;0.935;0.944;0.954;0.963;0.972;0.981;0.991;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;52.0;62.6;73.1;83.7;94.3;104.9;115.4;126.0;136.6;147.1;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;154.0;146.0;135.4;124.9;114.3;103.7;93.1;82.6;72.0;61.4;50.9;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0;44.0\" keyTimes=\"0.000;0.350;0.359;0.369;0.378;0.387;0.396;0.406;0.415;0.424;0.434;0.443;0.452;0.461;0.471;0.480;0.489;0.499;0.508;0.517;0.526;0.536;0.545;0.554;0.564;0.573;0.582;0.591;0.601;0.610;0.619;0.629;0.638;0.647;0.656;0.666;0.675;0.684;0.694;0.703;0.712;0.721;0.731;0.740;0.749;0.759;0.768;0.777;0.786;0.796;0.805;0.814;0.824;0.833;0.842;0.851;0.861;0.870;0.879;0.889;0.898;0.907;0.916;0.926;0.935;0.944;0.954;0.963;0.972;0.981;0.991;1.000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"20\" y=\"184\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" opacity=\"0\">Khoá mở: vôn kế chỉ 4,5 V<animate attributeName=\"opacity\" values=\"1;0\" keyTimes=\"0.000;0.300\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"20\" y=\"184\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" opacity=\"1\">Khoá đóng: vôn kế chỉ 3,6 V<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0.000;0.300\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text x=\"20\" y=\"204\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● pin mẫu ℰ = 4,5 V (số liệu khác đề)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: pin mẫu (số liệu khác đề). Khoá mở thì vôn kế chỉ một số, đóng khoá thì dòng chạy và số chỉ đổi; chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hở mạch ($I=0$) thì không có độ giảm thế trong nguồn; có dòng thì $U$ nhỏ hơn $\\mathcal{E}$.</li><li>Hiệu điện thế hai cực: $U=\\mathcal{E}-Ir$ · định luật Ohm cho điện trở ngoài: $I=\\dfrac{U}{R}$</li><li>Nối tắt ($R\\to0$): $I_{\\text{đm}}=\\dfrac{\\mathcal{E}}{r}$</li><li>⚠ <strong>Điều kiện:</strong> vôn kế lí tưởng; bỏ qua điện trở dây nối nên $R$ là toàn bộ mạch ngoài.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Suất điện động</span></p><p>Khi hở mạch $I=0$ nên $Ir=0$:</p>$$U=\\mathcal{E}-Ir=\\mathcal{E}$$<div class=\"bt-ans\">$$\\mathcal{E}=9{,}0\\ \\text{V}$$</div><p>Số chỉ $7{,}5\\ \\text{V}$ đo lúc có dòng nên nhỏ hơn $\\mathcal{E}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ dòng điện</span></p><p>Hai cực pin nối thẳng với $R$ nên hiệu điện thế hai đầu $R$ bằng số chỉ vôn kế lúc có dòng:</p>$$I=\\dfrac{U}{R}=\\dfrac{7{,}5}{30}$$<div class=\"bt-ans\">$$I=0{,}25\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện trở trong</span></p><p>Độ giảm thế trong nguồn:</p>$$Ir=\\mathcal{E}-U=9{,}0-7{,}5=1{,}5\\ \\text{V}$$$$r=\\dfrac{\\mathcal{E}-U}{I}=\\dfrac{1{,}5}{0{,}25}$$<div class=\"bt-ans\">$$r=6{,}0\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện khi nối tắt</span></p><p>Nối tắt: $R\\to0$, chỉ còn $r$ giữ dòng:</p>$$I_{\\text{đm}}=\\dfrac{\\mathcal{E}}{r}=\\dfrac{9{,}0}{6{,}0}$$<div class=\"bt-ans\">$$I_{\\text{đm}}=1{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Toàn mạch: $I=\\dfrac{\\mathcal{E}}{R+r}=\\dfrac{9{,}0}{30+6{,}0}=0{,}25\\ \\text{A}$ ✓</p><p>Dòng nối tắt gấp $\\dfrac{1{,}5}{0{,}25}=6$ lần dòng khi có $R$, bằng $\\dfrac{R+r}{r}=\\dfrac{36}{6}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\mathcal{E}=9{,}0\\ \\text{V}$</p><p>b) $I=0{,}25\\ \\text{A}$</p><p>c) $r=6{,}0\\ \\Omega$</p><p>d) $I_{\\text{đm}}=1{,}5\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>số chỉ vôn kế khi hở mạch và khi nối $R$</strong> → hở mạch cho $\\mathcal{E}$, hiệu hai số chỉ chia cho $I$ cho $r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Pin có điện trở trong nối với điện trở 30 ôm, vôn kế mắc ở hai cực pin chỉ 9,0 vôn khi mạch hở và 7,5 vôn khi nối điện trở\"><line x1=\"110.0\" y1=\"44.0\" x2=\"370.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"154.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"44.0\" x2=\"110.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"110.0\" y1=\"108.0\" x2=\"110.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"95.0\" y1=\"90.0\" x2=\"125.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.0\" y1=\"108.0\" x2=\"118.0\" y2=\"108.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"134\" y=\"96\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"134\" y=\"119\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><rect x=\"82\" y=\"73\" width=\"62\" height=\"52\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\".6\"/><line x1=\"370.0\" y1=\"44.0\" x2=\"370.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"370.0\" y1=\"121.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"362\" y=\"77\" width=\"16\" height=\"44\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"354\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">R = 30 Ω</text><path d=\"M260.5,38.5 L270.0,44.0 L260.5,49.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M279.5,159.5 L270.0,154.0 L279.5,148.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"262\" y=\"35\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I</text><line x1=\"200.0\" y1=\"44.0\" x2=\"200.0\" y2=\"83.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"200.0\" y1=\"115.0\" x2=\"200.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"200\" cy=\"99\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"200\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"200.0\" cy=\"44.0\" r=\"3.5\" fill=\"currentColor\"/><circle cx=\"200.0\" cy=\"154.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"74\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">ℰ = ?, r = ?</text><text x=\"20\" y=\"184\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Khoá mở: vôn kế 9,0 V · khoá đóng: vôn kế 7,5 V</text><text x=\"20\" y=\"204\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: ℰ, I, r và dòng khi nối tắt hai cực</text></svg><figcaption>Dữ kiện: hai số chỉ của vôn kế ở hai cực pin. Đường nét đứt bao quanh nguồn: nguồn có điện trở trong. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vôn kế lí tưởng mắc ở hai cực pin\"</td><td>Vôn kế lí tưởng</td><td>⚠ Vôn kế lí tưởng không lấy dòng; số chỉ là hiệu điện thế giữa hai cực pin</td></tr><tr><td>\"khi mạch hở, vôn kế chỉ $9{,}0$ V\"</td><td>$U_{\\text{hở}}=9{,}0$ V</td><td>Khi hở mạch, cường độ dòng điện và độ giảm thế trong nguồn là bao nhiêu?</td></tr><tr><td>\"nối hai cực pin với điện trở $R=30\\ \\Omega$ … vôn kế chỉ $7{,}5$ V\"</td><td>$R=30\\ \\Omega$; $U=7{,}5$ V</td><td>Hai cực pin nối thẳng với $R$: hiệu điện thế giữa hai đầu $R$ là số nào?</td></tr><tr><td>\"bỏ qua điện trở dây nối\"</td><td>Mạch ngoài chỉ có $R$</td><td>⚠ Mọi điện trở ngoài đã nằm trong $R$</td></tr><tr><td>\"suất điện động của pin\"</td><td>Cần $\\mathcal{E}$</td><td>Đại lượng cần tìm: số chỉ nào ứng với $I=0$?</td></tr><tr><td>\"cường độ dòng điện trong mạch kín\"</td><td>Cần $I$</td><td>Đại lượng cần tìm: định luật Ohm cho điện trở $R$</td></tr><tr><td>\"điện trở trong của pin\"</td><td>Cần $r$</td><td>Đại lượng cần tìm: liên hệ $\\mathcal{E}$, $U$, $I$, $r$</td></tr><tr><td>\"nối tắt hai cực pin\"</td><td>Dây nối tắt có điện trở không đáng kể</td><td>Khi nối tắt, mạch ngoài còn lại điện trở nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>vôn kế chỉ khi hở mạch và khi nối R</b> → nghĩ tới <b>hở mạch: U = ℰ</b>; độ tụt = Ir.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Suất điện động",
+     "hoi": "Suất điện động của pin bằng bao nhiêu V?",
+     "dap_so": 9.0,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "lua_chon": [
+      {
+       "text": "$9{,}0\\ \\text{V}$: số chỉ lúc hở mạch",
+       "dung": true
+      },
+      {
+       "text": "$7{,}5\\ \\text{V}$: số chỉ lúc có dòng",
+       "dung": false,
+       "vi_sao": "Có dòng thì trong pin mất $Ir$, hai cực chỉ còn $U=\\mathcal{E}-Ir$ nhỏ hơn $\\mathcal{E}$."
+      },
+      {
+       "text": "Chưa tính được vì chưa biết điện trở trong",
+       "dung": false,
+       "vi_sao": "Hở mạch $I=0$ nên $Ir=0$ và $U=\\mathcal{E}$; không cần biết $r$."
+      }
+     ],
+     "loi_hay_gap": "Lấy số chỉ lúc nối điện trở làm suất điện động."
+    },
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện trong mạch kín bằng bao nhiêu A?",
+     "dap_so": 0.25,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Lấy $I=\\mathcal{E}/R$ như thể pin không có điện trở trong; số chỉ lúc nối $R$ mới là hiệu điện thế hai đầu $R$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Áp dụng định luật Ohm cho điện trở ngoài với hiệu điện thế hai đầu $R$",
+       "dung": true
+      },
+      {
+       "text": "Chia suất điện động cho $R$",
+       "dung": false,
+       "vi_sao": "Cách này bỏ qua điện trở trong: $\\mathcal{E}/R$ chỉ đúng khi $r=0$."
+      },
+      {
+       "text": "Chia số chỉ lúc nối $R$ cho tổng $R+r$",
+       "dung": false,
+       "vi_sao": "$7{,}5\\ \\text{V}/(R+r)$ không phải $I$: $7{,}5\\ \\text{V}$ đã là hiệu điện thế hai cực, còn $\\mathcal{E}$ mới là hiệu điện thế của cả mạch (ngoài và trong)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Điện trở trong",
+     "hoi": "Điện trở trong r của pin bằng bao nhiêu Ω?",
+     "dap_so": 6.0,
+     "sai_so": 0.1,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $r=U/I$ (đó là điện trở ngoài $R$), hoặc quên chia độ giảm thế trong nguồn cho cường độ dòng điện.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy độ giảm thế trong nguồn $\\mathcal{E}-U$ chia cho cường độ dòng điện",
+       "dung": true
+      },
+      {
+       "text": "Lấy số chỉ lúc có dòng chia cho cường độ dòng điện",
+       "dung": false,
+       "vi_sao": "$U/I$ là điện trở của mạch ngoài $R$, không phải $r$."
+      },
+      {
+       "text": "Lấy suất điện động chia cho cường độ dòng điện",
+       "dung": false,
+       "vi_sao": "$\\mathcal{E}/I$ là tổng $R+r$, không phải riêng $r$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện khi nối tắt",
+     "hoi": "Nối tắt hai cực pin thì dòng điện bằng bao nhiêu A?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $\\mathcal{E}/R$ với $R$ cũ, hoặc dùng số chỉ vôn kế khi có dòng thay cho suất điện động.",
+     "chon_buoc_ke": [
+      {
+       "text": "Mạch ngoài không còn điện trở: chia suất điện động cho điện trở trong",
+       "dung": true
+      },
+      {
+       "text": "Chia suất điện động cho $R$ của đề",
+       "dung": false,
+       "vi_sao": "Nối tắt thì điện trở ngoài về gần $0$, không còn là $R$."
+      },
+      {
+       "text": "Chia số chỉ lúc có dòng cho điện trở trong",
+       "dung": false,
+       "vi_sao": "Dòng khi nối tắt phải dùng suất điện động; số chỉ lúc có dòng đã bị trừ $Ir$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khó · Hai lần đo cùng một nguồn: lập hệ để tìm điện trở trong và suất điện động",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Để xác định suất điện động $\\mathcal{E}$ và điện trở trong $r$ của một nguồn, người ta nối nguồn lần lượt với hai điện trở $R_1=3{,}0\\ \\Omega$ và $R_2=10\\ \\Omega$ (bỏ qua điện trở dây nối). Vôn kế lí tưởng mắc ở hai cực nguồn chỉ $U_1=3{,}6\\ \\text{V}$ và $U_2=5{,}0\\ \\text{V}$ tương ứng.</p><ol type=\"a\"><li>Tính cường độ dòng điện trong mỗi lần đo.</li><li>Tính điện trở trong $r$ và suất điện động $\\mathcal{E}$ của nguồn.</li><li>Nối tắt hai cực nguồn thì dòng điện bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Đồ thị hiệu điện thế hai cực pin theo cường độ dòng: đường thẳng đi xuống từ giá trị suất điện động trên trục tung tới trục hoành; một điểm chạy dọc đường thẳng khi dòng tăng\"><line x1=\"70.0\" y1=\"150.0\" x2=\"400.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"70.0\" y1=\"150.0\" x2=\"70.0\" y2=\"15.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M391.3,145.0 L400.0,150.0 L391.3,155.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M65.0,23.7 L70.0,15.0 L75.0,23.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"145.0\" y1=\"146.0\" x2=\"145.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"145.0\" y=\"169\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">1</text><line x1=\"220.0\" y1=\"146.0\" x2=\"220.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"220.0\" y=\"169\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">2</text><line x1=\"295.0\" y1=\"146.0\" x2=\"295.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"295.0\" y=\"169\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">3</text><line x1=\"370.0\" y1=\"146.0\" x2=\"370.0\" y2=\"154.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"370.0\" y=\"169\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">4</text><line x1=\"66.0\" y1=\"114.0\" x2=\"74.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"118.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">0,4</text><line x1=\"66.0\" y1=\"78.0\" x2=\"74.0\" y2=\"78.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"82.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">0,8</text><line x1=\"66.0\" y1=\"42.0\" x2=\"74.0\" y2=\"42.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"61\" y=\"46.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">1,2</text><text x=\"404.0\" y=\"169\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"78\" y=\"21.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><line x1=\"70.0\" y1=\"42.0\" x2=\"370.0\" y2=\"150.0\" stroke=\"#38bdf8\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"70.0\" cy=\"42.0\" r=\"4\" fill=\"#38bdf8\"/><circle cx=\"370.0\" cy=\"150.0\" r=\"4\" fill=\"#38bdf8\"/><text x=\"82\" y=\"34.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">ℰ = 1,2 V (hở mạch)</text><text x=\"366.0\" y=\"108\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"end\">đoản mạch ↓</text><circle cx=\"70.0\" cy=\"42.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"70.0;74.0;78.0;82.0;86.0;90.0;94.0;98.0;102.0;106.0;110.0;114.0;118.0;122.0;126.0;130.0;134.0;138.0;142.0;146.0;150.0;154.0;158.0;162.0;166.0;170.0;174.0;178.0;182.0;186.0;190.0;194.0;198.0;202.0;206.0;210.0;214.0;218.0;222.0;226.0;230.0;234.0;238.0;242.0;246.0;250.0;254.0;258.0;262.0;266.0;270.0;274.0;278.0;282.0;286.0;290.0;294.0;298.0;302.0;306.0;310.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"42.0;43.4;44.9;46.3;47.8;49.2;50.6;52.1;53.5;55.0;56.4;57.8;59.3;60.7;62.2;63.6;65.0;66.5;67.9;69.4;70.8;72.2;73.7;75.1;76.6;78.0;79.4;80.9;82.3;83.8;85.2;86.6;88.1;89.5;91.0;92.4;93.8;95.3;96.7;98.2;99.6;101.0;102.5;103.9;105.4;106.8;108.2;109.7;111.1;112.6;114.0;115.4;116.9;118.3;119.8;121.2;122.6;124.1;125.5;127.0;128.4\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"20\" y=\"190\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● điểm đo (I, U) của pin mẫu, dòng tăng dần</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: pin mẫu (ℰ = 1,2 V, r khác đề), điểm (I, U) chạy dọc đồ thị khi dòng tăng; đường thẳng cắt hai trục. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cùng một nguồn nên $\\mathcal{E}$ và $r$ không đổi; đổi $R$ thì $I$ và $U$ đổi.</li><li>Mỗi lần đo: $I=\\dfrac{U}{R}$ và $U=\\mathcal{E}-Ir$</li><li>Hai ẩn $\\mathcal{E}$, $r$ cần hai phương trình; trừ vế để khử $\\mathcal{E}$.</li><li>Nối tắt: $I_{\\text{đm}}=\\dfrac{\\mathcal{E}}{r}$</li><li>⚠ <strong>Điều kiện:</strong> vôn kế lí tưởng, đo lúc có dòng nên cả hai số chỉ đều nhỏ hơn $\\mathcal{E}$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng trong hai lần đo</span></p><p>Hiệu điện thế hai cực chính là hiệu điện thế hai đầu $R$:</p>$$I_1=\\dfrac{U_1}{R_1}=\\dfrac{3{,}6}{3{,}0}=1{,}2\\ \\text{A}$$$$I_2=\\dfrac{U_2}{R_2}=\\dfrac{5{,}0}{10}=0{,}50\\ \\text{A}$$<div class=\"bt-ans\">$$I_1=1{,}2\\ \\text{A};\\ I_2=0{,}50\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở trong</span></p><p>Mỗi lần đo có $U=\\mathcal{E}-Ir$:</p>$$3{,}6=\\mathcal{E}-1{,}2\\,r$$$$5{,}0=\\mathcal{E}-0{,}50\\,r$$<p>Trừ vế theo vế để khử $\\mathcal{E}$:</p>$$5{,}0-3{,}6=(1{,}2-0{,}50)\\,r$$$$r=\\dfrac{1{,}4}{0{,}70}$$<div class=\"bt-ans\">$$r=2{,}0\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động</span></p><p>Thế $r$ vào phương trình của lần đo thứ nhất:</p>$$\\mathcal{E}=U_1+I_1r=3{,}6+1{,}2\\cdot2{,}0$$<div class=\"bt-ans\">$$\\mathcal{E}=6{,}0\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện khi nối tắt</span></p>$$I_{\\text{đm}}=\\dfrac{\\mathcal{E}}{r}=\\dfrac{6{,}0}{2{,}0}$$<div class=\"bt-ans\">$$I_{\\text{đm}}=3{,}0\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Lần 2: $\\mathcal{E}-I_2r=6{,}0-0{,}50\\cdot2{,}0=5{,}0\\ \\text{V}=U_2$ ✓</p><p>Toàn mạch lần 1: $I_1=\\dfrac{\\mathcal{E}}{R_1+r}=\\dfrac{6{,}0}{3{,}0+2{,}0}=1{,}2\\ \\text{A}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I_1=1{,}2\\ \\text{A}$; $I_2=0{,}50\\ \\text{A}$</p><p>b) $r=2{,}0\\ \\Omega$; $\\mathcal{E}=6{,}0\\ \\text{V}$</p><p>c) $I_{\\text{đm}}=3{,}0\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai lần đo $(R,U)$ trên cùng một nguồn</strong> → tính $I$ mỗi lần, viết hai phương trình $U=\\mathcal{E}-Ir$ rồi trừ vế.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Hai lần đo cùng một nguồn: nối điện trở 3,0 ôm thì vôn kế ở hai cực chỉ 3,6 vôn, nối điện trở 10 ôm thì vôn kế chỉ 5,0 vôn\"><line x1=\"30.0\" y1=\"66.0\" x2=\"180.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"146.0\" x2=\"180.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"66.0\" x2=\"30.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"30.0\" y1=\"114.0\" x2=\"30.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"17.0\" y1=\"98.0\" x2=\"43.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"23.0\" y1=\"114.0\" x2=\"37.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"10\" y=\"84\" width=\"40\" height=\"44\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\".6\"/><line x1=\"180.0\" y1=\"66.0\" x2=\"180.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"180.0\" y1=\"126.0\" x2=\"180.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><rect x=\"173\" y=\"86\" width=\"14\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"100.0\" y1=\"66.0\" x2=\"100.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"100.0\" y1=\"120.0\" x2=\"100.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><circle cx=\"100\" cy=\"106\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"100\" y=\"111\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"100.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"100.0\" cy=\"146.0\" r=\"3\" fill=\"currentColor\"/><text x=\"105\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Lần 1: R<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 3,0 Ω</tspan></text><text x=\"52\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"105\" y=\"170\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">vôn kế chỉ U<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> = 3,6 V</tspan></text><line x1=\"240.0\" y1=\"66.0\" x2=\"390.0\" y2=\"66.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"240.0\" y1=\"146.0\" x2=\"390.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"240.0\" y1=\"66.0\" x2=\"240.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"240.0\" y1=\"114.0\" x2=\"240.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"227.0\" y1=\"98.0\" x2=\"253.0\" y2=\"98.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"233.0\" y1=\"114.0\" x2=\"247.0\" y2=\"114.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><rect x=\"220\" y=\"84\" width=\"40\" height=\"44\" rx=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.3\" stroke-dasharray=\"5 4\" opacity=\".6\"/><line x1=\"390.0\" y1=\"66.0\" x2=\"390.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"390.0\" y1=\"126.0\" x2=\"390.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><rect x=\"383\" y=\"86\" width=\"14\" height=\"40\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"310.0\" y1=\"66.0\" x2=\"310.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"310.0\" y1=\"120.0\" x2=\"310.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><circle cx=\"310\" cy=\"106\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"310\" y=\"111\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"310.0\" cy=\"66.0\" r=\"3\" fill=\"currentColor\"/><circle cx=\"310.0\" cy=\"146.0\" r=\"3\" fill=\"currentColor\"/><text x=\"315\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Lần 2: R<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 10 Ω</tspan></text><text x=\"262\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"315\" y=\"170\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"middle\">vôn kế chỉ U<tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\"> = 5,0 V</tspan></text><text x=\"20\" y=\"20\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">Cùng một nguồn (ℰ, r không đổi), hai lần đo</text><text x=\"20\" y=\"212\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: I<tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\">, I</tspan><tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">, ℰ, r và dòng khi nối tắt</tspan></text></svg><figcaption>Dữ kiện: hai lần đo trên cùng một nguồn; vôn kế mắc ở hai cực nguồn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lần lượt hai điện trở $R_1=3{,}0\\ \\Omega$ và $R_2=10\\ \\Omega$\"</td><td>$R_1=3{,}0\\ \\Omega$; $R_2=10\\ \\Omega$</td><td>Hai lần đo trên cùng một nguồn: $\\mathcal{E}$ và $r$ không đổi</td></tr><tr><td>\"vôn kế lí tưởng mắc ở hai cực nguồn chỉ $U_1=3{,}6$ V và $U_2=5{,}0$ V\"</td><td>$U_1=3{,}6$ V; $U_2=5{,}0$ V</td><td>⚠ Vôn kế đo lúc có dòng: số chỉ là hiệu điện thế hai cực, chưa phải suất điện động</td></tr><tr><td>\"bỏ qua điện trở dây nối\"</td><td>$R$ là toàn bộ mạch ngoài</td><td>⚠ Hiệu điện thế hai cực chính là hiệu điện thế hai đầu $R$</td></tr><tr><td>\"cường độ dòng điện trong mỗi lần đo\"</td><td>Cần $I_1$, $I_2$</td><td>Đại lượng cần tìm: dùng $R$ và hiệu điện thế hai đầu $R$</td></tr><tr><td>\"điện trở trong $r$ và suất điện động $\\mathcal{E}$\"</td><td>Cần $r$, $\\mathcal{E}$</td><td>Đại lượng cần tìm: hai ẩn thì cần mấy phương trình? Có thể khử ẩn nào?</td></tr><tr><td>\"nối tắt hai cực nguồn\"</td><td>Mạch ngoài không đáng kể</td><td>Khi nối tắt, dòng điện bị giới hạn bởi điện trở nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>một nguồn, hai điện trở lần lượt, hai số chỉ vôn kế</b> → nghĩ tới <b>hai phương trình</b> cho ℰ và r.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Dòng trong hai lần đo",
+     "hoi": "Cường độ dòng điện I₁ ở lần đo thứ nhất bằng bao nhiêu A?",
+     "dap_so": 1.2,
+     "sai_so": 0.02,
+     "don_vi": "A",
+     "loi_hay_gap": "Lấy $U_1/R_2$ (nhầm cặp số của hai lần đo), hoặc coi số chỉ vôn kế là suất điện động rồi chia cho $R$."
+    },
+    {
+     "tieu_de": "Điện trở trong",
+     "hoi": "Điện trở trong r của nguồn bằng bao nhiêu Ω?",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Chia hiệu hai số chỉ vôn kế cho tổng hai dòng điện, hoặc chia cho một dòng thay vì hiệu hai dòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Viết $U=\\mathcal{E}-Ir$ cho mỗi lần đo rồi trừ vế để khử $\\mathcal{E}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy một trong hai số chỉ vôn kế làm suất điện động",
+       "dung": false,
+       "vi_sao": "Cả hai số chỉ đều đo lúc có dòng nên đều nhỏ hơn $\\mathcal{E}$; không số nào là $\\mathcal{E}$."
+      },
+      {
+       "text": "Cộng hai phương trình theo vế",
+       "dung": false,
+       "vi_sao": "Cộng không khử được $\\mathcal{E}$ (còn $2\\mathcal{E}$) nên không tìm được $r$ trực tiếp."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Suất điện động",
+     "hoi": "Suất điện động ℰ của nguồn bằng bao nhiêu V?",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $\\mathcal{E}=U_1$ hoặc $\\mathcal{E}=U_1+U_2$, quên hạng tử $Ir$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $r$ vừa tìm vào một phương trình $U=\\mathcal{E}-Ir$ rồi giải ra $\\mathcal{E}$",
+       "dung": true
+      },
+      {
+       "text": "Cộng hai số chỉ vôn kế",
+       "dung": false,
+       "vi_sao": "Hai số chỉ ứng với hai lần đo khác nhau; cộng chúng không có ý nghĩa vật lí."
+      },
+      {
+       "text": "Lấy $\\mathcal{E}=I_1R_1$",
+       "dung": false,
+       "vi_sao": "Đó chỉ là hiệu điện thế ở ngoài; thiếu độ giảm thế $Ir$ trong nguồn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng điện khi nối tắt",
+     "hoi": "Nối tắt hai cực nguồn thì dòng điện bằng bao nhiêu A?",
+     "dap_so": 3.0,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $\\mathcal{E}/R_1$ với một trong hai điện trở của đề thay vì $\\mathcal{E}/r$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia suất điện động cho điện trở trong",
+       "dung": true
+      },
+      {
+       "text": "Chia suất điện động cho $R_1$",
+       "dung": false,
+       "vi_sao": "Nối tắt thì mạch ngoài không còn $R_1$; chỉ còn điện trở trong giữ dòng."
+      },
+      {
+       "text": "Chia số chỉ vôn kế lần 2 cho điện trở trong",
+       "dung": false,
+       "vi_sao": "Dòng nối tắt phải dùng suất điện động, không phải số chỉ lúc có dòng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Bộ nguồn hỗn hợp đối xứng: suất điện động, điện trở trong, dòng điện và dòng qua mỗi pin",
+   "topic": "Định luật Ohm cho toàn mạch",
+   "problem_html": "<p>Một đèn pin dùng bộ nguồn gồm $8$ pin giống nhau, mỗi pin có suất điện động $\\mathcal{E}_0=1{,}5\\ \\text{V}$ và điện trở trong $r_0=0{,}50\\ \\Omega$, ghép thành $2$ dãy song song, mỗi dãy có $4$ pin nối tiếp. Bóng đèn coi như điện trở $R=3{,}0\\ \\Omega$ nối vào hai cực của bộ nguồn; bỏ qua điện trở dây nối.</p><ol type=\"a\"><li>Tính suất điện động và điện trở trong của bộ nguồn.</li><li>Tính cường độ dòng điện qua bóng đèn.</li><li>Tính hiệu điện thế giữa hai cực của bộ nguồn.</li><li>Tính cường độ dòng điện qua mỗi pin.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 238\" role=\"img\" aria-label=\"Bộ nguồn gồm ba dãy pin song song, mỗi dãy hai pin nối tiếp, nối với một điện trở; ba điện tích dương chạy qua ba dãy rồi cùng qua điện trở\"><line x1=\"60.0\" y1=\"48.0\" x2=\"60.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"350.0\" y1=\"48.0\" x2=\"350.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"48.0\" x2=\"126.5\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"126.5\" y1=\"41.0\" x2=\"126.5\" y2=\"55.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"138.5\" y1=\"35.0\" x2=\"138.5\" y2=\"61.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"138.5\" y1=\"48.0\" x2=\"271.5\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"271.5\" y1=\"41.0\" x2=\"271.5\" y2=\"55.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"283.5\" y1=\"35.0\" x2=\"283.5\" y2=\"61.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"283.5\" y1=\"48.0\" x2=\"350.0\" y2=\"48.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"92.0\" x2=\"126.5\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"126.5\" y1=\"85.0\" x2=\"126.5\" y2=\"99.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"138.5\" y1=\"79.0\" x2=\"138.5\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"138.5\" y1=\"92.0\" x2=\"271.5\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"271.5\" y1=\"85.0\" x2=\"271.5\" y2=\"99.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"283.5\" y1=\"79.0\" x2=\"283.5\" y2=\"105.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"283.5\" y1=\"92.0\" x2=\"350.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"136.0\" x2=\"126.5\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"126.5\" y1=\"129.0\" x2=\"126.5\" y2=\"143.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"138.5\" y1=\"123.0\" x2=\"138.5\" y2=\"149.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"138.5\" y1=\"136.0\" x2=\"271.5\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"271.5\" y1=\"129.0\" x2=\"271.5\" y2=\"143.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"283.5\" y1=\"123.0\" x2=\"283.5\" y2=\"149.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"283.5\" y1=\"136.0\" x2=\"350.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"178.0\" x2=\"175.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"235.0\" y1=\"178.0\" x2=\"350.0\" y2=\"178.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"175.0\" y=\"170\" width=\"60\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"205.0\" y=\"206\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R</text><circle cx=\"60.0\" cy=\"48.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"48.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"60.0\" cy=\"92.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"92.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"60.0\" cy=\"136.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"136.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"60.0\" cy=\"178.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"178.0\" r=\"3.2\" fill=\"currentColor\"/><path d=\"M196.3,43.0 L205.0,48.0 L196.3,53.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M196.3,87.0 L205.0,92.0 L196.3,97.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M196.3,131.0 L205.0,136.0 L196.3,141.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M128.7,183.0 L120.0,178.0 L128.7,173.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"60.0\" cy=\"48.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"60.0;72.0;84.0;96.0;108.0;120.0;132.0;144.0;156.0;168.0;180.0;192.0;204.0;216.0;228.0;240.0;252.0;264.0;276.0;288.0;300.0;312.0;324.0;336.0;348.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;338.0;326.0;314.0;302.0;290.0;278.0;266.0;254.0;242.0;230.0;218.0;206.0;194.0;182.0;170.0;158.0;146.0;134.0;122.0;110.0;98.0;86.0;74.0;62.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;48.0;58.0;70.0;82.0;94.0;106.0;118.0;130.0;142.0;154.0;166.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;168.0;156.0;144.0;132.0;120.0;108.0;96.0;84.0;72.0;60.0;48.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60.0\" cy=\"92.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"60.0;72.0;84.0;96.0;108.0;120.0;132.0;144.0;156.0;168.0;180.0;192.0;204.0;216.0;228.0;240.0;252.0;264.0;276.0;288.0;300.0;312.0;324.0;336.0;348.0;350.0;350.0;350.0;350.0;350.0;350.0;350.0;342.0;330.0;318.0;306.0;294.0;282.0;270.0;258.0;246.0;234.0;222.0;210.0;198.0;186.0;174.0;162.0;150.0;138.0;126.0;114.0;102.0;90.0;78.0;66.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;102.0;114.0;126.0;138.0;150.0;162.0;174.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;172.0;160.0;148.0;136.0;124.0;112.0;100.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0;92.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60.0\" cy=\"136.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"60.0;72.0;84.0;96.0;108.0;120.0;132.0;144.0;156.0;168.0;180.0;192.0;204.0;216.0;228.0;240.0;252.0;264.0;276.0;288.0;300.0;312.0;324.0;336.0;348.0;350.0;350.0;350.0;346.0;334.0;322.0;310.0;298.0;286.0;274.0;262.0;250.0;238.0;226.0;214.0;202.0;190.0;178.0;166.0;154.0;142.0;130.0;118.0;106.0;94.0;82.0;70.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;146.0;158.0;170.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;178.0;176.0;164.0;152.0;140.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0;136.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"60\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">bộ mẫu: 3 dãy song song, mỗi dãy 2 pin nối tiếp</text><text x=\"20\" y=\"228\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● ba điện tích dương, mỗi điện tích đi qua một dãy rồi qua R</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: bộ nguồn mẫu 3 dãy × 2 pin (khác đề); ba điện tích đi qua ba dãy rồi trở về qua điện trở R; chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> pin cùng dãy nối tiếp: cộng $\\mathcal{E}$, cộng $r$. Các dãy giống nhau song song: giữ $\\mathcal{E}$, chia $r$.</li><li>Bộ hỗn hợp đối xứng ($n$ dãy, mỗi dãy $m$ pin): $\\mathcal{E}_b=m\\mathcal{E}_0$ · $r_b=\\dfrac{mr_0}{n}$</li><li>Toàn mạch: $I=\\dfrac{\\mathcal{E}_b}{R+r_b}$ · $U=IR$</li><li>⚠ <strong>Điều kiện:</strong> pin giống nhau nên các dãy chia đều dòng; bỏ qua điện trở dây nối.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Suất điện động của bộ</span></p><p>Mỗi dãy có $m=4$ pin nối tiếp nên $\\mathcal{E}$ cộng lại; hai dãy song song giữ nguyên $\\mathcal{E}$ của dãy:</p>$$\\mathcal{E}_b=m\\mathcal{E}_0=4\\cdot1{,}5$$<div class=\"bt-ans\">$$\\mathcal{E}_b=6{,}0\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở trong của bộ</span></p><p>Một dãy: $mr_0=4\\cdot0{,}50=2{,}0\\ \\Omega$. Hai dãy giống nhau song song nên chia đôi:</p>$$r_b=\\dfrac{mr_0}{n}=\\dfrac{2{,}0}{2}$$<div class=\"bt-ans\">$$r_b=1{,}0\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng qua bóng đèn</span></p><p>Bộ nguồn tương đương một nguồn $(\\mathcal{E}_b,r_b)$ nối với $R$:</p>$$I=\\dfrac{\\mathcal{E}_b}{R+r_b}=\\dfrac{6{,}0}{3{,}0+1{,}0}$$<div class=\"bt-ans\">$$I=1{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế hai cực của bộ</span></p>$$U=IR=1{,}5\\cdot3{,}0$$<p>Cách khác:</p>$$U=\\mathcal{E}_b-Ir_b=6{,}0-1{,}5\\cdot1{,}0$$<div class=\"bt-ans\">$$U=4{,}5\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Dòng qua mỗi pin</span></p><p>Hai dãy giống nhau chia đều dòng chính; các pin trong một dãy nối tiếp có cùng dòng:</p>$$I_{\\text{pin}}=\\dfrac{I}{n}=\\dfrac{1{,}5}{2}$$<div class=\"bt-ans\">$$I_{\\text{pin}}=0{,}75\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Xét một dãy: $4\\mathcal{E}_0-I_{\\text{pin}}\\cdot4r_0=6{,}0-0{,}75\\cdot2{,}0=4{,}5\\ \\text{V}=U$ ✓</p><p>Hai cách tính $U$ ở bước 4 cho cùng kết quả ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\mathcal{E}_b=6{,}0\\ \\text{V}$; $r_b=1{,}0\\ \\Omega$</p><p>b) $I=1{,}5\\ \\text{A}$</p><p>c) $U=4{,}5\\ \\text{V}$</p><p>d) $I_{\\text{pin}}=0{,}75\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>$n$ dãy song song, mỗi dãy $m$ pin nối tiếp</strong> → $\\mathcal{E}_b=m\\mathcal{E}_0$, $r_b=\\dfrac{mr_0}{n}$, rồi giải toàn mạch.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Bộ nguồn gồm hai dãy song song, mỗi dãy bốn pin giống nhau nối tiếp, nối với điện trở 3,0 ôm\"><line x1=\"60.0\" y1=\"60.0\" x2=\"60.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"350.0\" y1=\"60.0\" x2=\"350.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"60.0\" x2=\"90.2\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"90.2\" y1=\"53.0\" x2=\"90.2\" y2=\"67.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"102.2\" y1=\"47.0\" x2=\"102.2\" y2=\"73.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.2\" y1=\"60.0\" x2=\"162.8\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"162.8\" y1=\"53.0\" x2=\"162.8\" y2=\"67.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"174.8\" y1=\"47.0\" x2=\"174.8\" y2=\"73.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"174.8\" y1=\"60.0\" x2=\"235.2\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"235.2\" y1=\"53.0\" x2=\"235.2\" y2=\"67.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"247.2\" y1=\"47.0\" x2=\"247.2\" y2=\"73.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"247.2\" y1=\"60.0\" x2=\"307.8\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"307.8\" y1=\"53.0\" x2=\"307.8\" y2=\"67.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"319.8\" y1=\"47.0\" x2=\"319.8\" y2=\"73.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"319.8\" y1=\"60.0\" x2=\"350.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"112.0\" x2=\"90.2\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"90.2\" y1=\"105.0\" x2=\"90.2\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"102.2\" y1=\"99.0\" x2=\"102.2\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"102.2\" y1=\"112.0\" x2=\"162.8\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"162.8\" y1=\"105.0\" x2=\"162.8\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"174.8\" y1=\"99.0\" x2=\"174.8\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"174.8\" y1=\"112.0\" x2=\"235.2\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"235.2\" y1=\"105.0\" x2=\"235.2\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"247.2\" y1=\"99.0\" x2=\"247.2\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"247.2\" y1=\"112.0\" x2=\"307.8\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"307.8\" y1=\"105.0\" x2=\"307.8\" y2=\"119.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"319.8\" y1=\"99.0\" x2=\"319.8\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"319.8\" y1=\"112.0\" x2=\"350.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"60.0\" y1=\"164.0\" x2=\"175.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"235.0\" y1=\"164.0\" x2=\"350.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"175.0\" y=\"156\" width=\"60\" height=\"16\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"205.0\" y=\"192\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R = 3,0 Ω</text><circle cx=\"60.0\" cy=\"60.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"60.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"60.0\" cy=\"112.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"112.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"60.0\" cy=\"164.0\" r=\"3.2\" fill=\"currentColor\"/><circle cx=\"350.0\" cy=\"164.0\" r=\"3.2\" fill=\"currentColor\"/><path d=\"M123.8,55.0 L132.5,60.0 L123.8,65.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M123.8,107.0 L132.5,112.0 L123.8,117.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M128.7,169.0 L120.0,164.0 L128.7,159.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"120\" y=\"154\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text><text x=\"360\" y=\"65\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">dãy 1</text><text x=\"360\" y=\"117\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">dãy 2</text><text x=\"60\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"600\" text-anchor=\"start\">mỗi pin: ℰ<tspan dy=\"4\" font-size=\"10\">0</tspan><tspan dy=\"-4\"> = 1,5 V; r</tspan><tspan dy=\"4\" font-size=\"10\">0</tspan><tspan dy=\"-4\"> = 0,50 Ω</tspan></text><text x=\"20\" y=\"212\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: ℰ<tspan dy=\"4\" font-size=\"10\">b</tspan><tspan dy=\"-4\">, r</tspan><tspan dy=\"4\" font-size=\"10\">b</tspan><tspan dy=\"-4\">, I, U hai cực bộ, dòng qua mỗi pin</tspan></text></svg><figcaption>Dữ kiện: cách ghép 8 pin giống nhau; vạch dài của pin là cực +; mũi tên là chiều dòng điện quy ước (trong nguồn từ cực − sang cực +). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$8$ pin giống nhau, mỗi pin $\\mathcal{E}_0=1{,}5$ V, $r_0=0{,}50\\ \\Omega$\"</td><td>$\\mathcal{E}_0=1{,}5$ V; $r_0=0{,}50\\ \\Omega$</td><td>⚠ Pin giống nhau nên các dãy giống nhau và chia đều dòng</td></tr><tr><td>\"ghép thành $2$ dãy song song, mỗi dãy có $4$ pin nối tiếp\"</td><td>$n=2$ dãy; $m=4$ pin mỗi dãy</td><td>Pin cùng dãy ghép kiểu gì, các dãy ghép với nhau kiểu gì?</td></tr><tr><td>\"bóng đèn coi như điện trở $R=3{,}0\\ \\Omega$ nối vào hai cực của bộ nguồn\"</td><td>$R=3{,}0\\ \\Omega$</td><td>⚠ $R$ nối vào hai cực của cả bộ nguồn</td></tr><tr><td>\"bỏ qua điện trở dây nối\"</td><td>Mạch ngoài chỉ có $R$</td><td>⚠ Mọi điện trở ngoài đã nằm trong $R$</td></tr><tr><td>\"suất điện động và điện trở trong của bộ nguồn\"</td><td>Cần $\\mathcal{E}_b$, $r_b$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"cường độ dòng điện qua bóng đèn\"</td><td>Cần $I$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"hiệu điện thế giữa hai cực của bộ nguồn\"</td><td>Cần $U$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"cường độ dòng điện qua mỗi pin\"</td><td>Cần dòng qua một pin</td><td>Đại lượng cần tìm: dòng chính chia cho các dãy thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều pin giống nhau ghép dãy song song, mỗi dãy nối tiếp</b> → nghĩ tới <b>bộ nguồn tương đương</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Suất điện động của bộ",
+     "hoi": "Suất điện động ℰ_b của bộ nguồn bằng bao nhiêu V?",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Cộng suất điện động của cả 8 pin, hoặc lấy suất điện động của một pin vì \"có song song\"."
+    },
+    {
+     "tieu_de": "Điện trở trong của bộ",
+     "hoi": "Điện trở trong r_b của bộ nguồn bằng bao nhiêu Ω?",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Cộng điện trở trong của cả 8 pin, hoặc chia $r_0$ cho 8 như thể 8 pin đều song song.",
+     "chon_buoc_ke": [
+      {
+       "text": "Điện trở một dãy bằng tổng các điện trở trong của pin trong dãy, rồi chia cho số dãy song song",
+       "dung": true
+      },
+      {
+       "text": "Cộng điện trở trong của cả 8 pin",
+       "dung": false,
+       "vi_sao": "Chỉ các pin cùng dãy (nối tiếp) mới cộng; hai dãy song song thì điện trở chung giảm đi."
+      },
+      {
+       "text": "Chia điện trở trong của một pin cho 8",
+       "dung": false,
+       "vi_sao": "Các pin trong một dãy nối tiếp, không phải song song; chia chỉ đúng với các nhánh song song."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng qua bóng đèn",
+     "hoi": "Cường độ dòng điện qua bóng đèn bằng bao nhiêu A?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Dùng $\\mathcal{E}_0/(R+r_0)$ của một pin, hoặc bỏ $r_b$ khỏi mẫu số ($\\mathcal{E}_b/R$).",
+     "chon_buoc_ke": [
+      {
+       "text": "Coi bộ nguồn là một nguồn $(\\mathcal{E}_b,r_b)$ rồi dùng định luật Ohm cho toàn mạch",
+       "dung": true
+      },
+      {
+       "text": "Dùng suất điện động và điện trở trong của một pin",
+       "dung": false,
+       "vi_sao": "Đèn được cấp điện bởi cả bộ nguồn, không phải một pin."
+      },
+      {
+       "text": "Chia $\\mathcal{E}_b$ cho $R$",
+       "dung": false,
+       "vi_sao": "Bỏ qua điện trở trong của bộ; dòng phải chia cho $R+r_b$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hiệu điện thế hai cực của bộ",
+     "hoi": "Hiệu điện thế giữa hai cực của bộ nguồn bằng bao nhiêu V?",
+     "dap_so": 4.5,
+     "sai_so": 0.05,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy $U=\\mathcal{E}_b$ (chỉ đúng khi hở mạch), hoặc lấy $U=Ir_b$ (đó là độ giảm thế trong nguồn).",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy dòng điện nhân với điện trở ngoài (hoặc $\\mathcal{E}_b-Ir_b$)",
+       "dung": true
+      },
+      {
+       "text": "Lấy $U$ bằng suất điện động của bộ",
+       "dung": false,
+       "vi_sao": "Chỉ đúng khi hở mạch; có dòng thì $U=\\mathcal{E}_b-Ir_b$ nhỏ hơn."
+      },
+      {
+       "text": "Lấy dòng điện nhân với điện trở trong của bộ",
+       "dung": false,
+       "vi_sao": "$Ir_b$ là phần mất đi bên trong nguồn, không phải hiệu điện thế hai cực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng qua mỗi pin",
+     "hoi": "Cường độ dòng điện qua mỗi pin bằng bao nhiêu A?",
+     "dap_so": 0.75,
+     "sai_so": 0.02,
+     "don_vi": "A",
+     "loi_hay_gap": "Cho mỗi pin chịu cả dòng chính, hoặc chia dòng chính cho 8 pin.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chia dòng chính cho số dãy song song; các pin cùng dãy có cùng dòng",
+       "dung": true
+      },
+      {
+       "text": "Mỗi pin chịu cả dòng chính",
+       "dung": false,
+       "vi_sao": "Hai dãy song song chia nhau dòng chính nên mỗi dãy chỉ nhận một phần."
+      },
+      {
+       "text": "Chia dòng chính cho 8 pin",
+       "dung": false,
+       "vi_sao": "Các pin trong một dãy nối tiếp nên có cùng dòng; chỉ chia cho số dãy."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}

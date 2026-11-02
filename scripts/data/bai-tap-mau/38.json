@@ -1,0 +1,409 @@
+{
+ "lesson_id": 38,
+ "lesson_title": "Bài 19. Thế năng điện",
+ "generated_at": "2026-11-02",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải độc lập 2 vòng 2/11/2026: 4 dạng khớp; đã sửa lộ dấu/hướng giải, D3 làm lại thành bài ngược, nhãn hình"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công của lực điện A = qEd: hình chiếu có dấu của đoạn đi và dấu của điện tích",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Điện trường đều có cường độ $E=5000\\ \\text{V/m}$, đường sức nằm ngang hướng sang phải. Một electron ($q=-1{,}6\\cdot10^{-19}\\ \\text{C}$) đi thẳng từ điểm M đến điểm N, đoạn $MN=8{,}0\\ \\text{cm}$ hợp với chiều đường sức góc $120^\\circ$ (từ M, MN hướng lên trên và chếch sang trái). Chỉ xét lực điện.</p><ol type=\"a\"><li>Tìm độ dài đại số $d$ của hình chiếu MN lên đường sức.</li><li>Tính công $A_{MN}$ của lực điện.</li><li>Electron quay lại, đi thẳng từ N về M. Công $A_{NM}$ so với $A_{MN}$ thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 218\" role=\"img\" aria-label=\"Điện trường đều có đường sức nằm ngang hướng sang phải; một hạt mẫu đi xiên lên, chấm rỗng bên dưới là hình chiếu của hạt lên đường sức\"><g opacity=\".45\"><line x1=\"20\" y1=\"36\" x2=\"395\" y2=\"36\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,31.5 L395.0,36.0 L387.2,40.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"90\" x2=\"395\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,85.5 L395.0,90.0 L387.2,94.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"138\" x2=\"395\" y2=\"138\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,133.5 L395.0,138.0 L387.2,142.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"398\" y=\"41\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">E</text><line x1=\"60.0\" y1=\"176.0\" x2=\"310.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"0.5\"/><line x1=\"70.0\" y1=\"138.0\" x2=\"70.0\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\".6\"><animate attributeName=\"x1\" values=\"70.0;75.5;81.0;86.5;92.0;97.5;103.0;108.5;114.0;119.5;125.0;130.5;136.0;141.5;147.0;152.5;158.0;163.5;169.0;174.5;180.0;185.5;191.0;196.5;202.0;207.5;213.0;218.5;224.0;229.5;235.0;240.5;246.0;251.5;257.0;262.5;268.0;273.5;279.0;284.5;290.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"70.0;75.5;81.0;86.5;92.0;97.5;103.0;108.5;114.0;119.5;125.0;130.5;136.0;141.5;147.0;152.5;158.0;163.5;169.0;174.5;180.0;185.5;191.0;196.5;202.0;207.5;213.0;218.5;224.0;229.5;235.0;240.5;246.0;251.5;257.0;262.5;268.0;273.5;279.0;284.5;290.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"138.0;136.1;134.2;132.3;130.4;128.5;126.6;124.7;122.8;120.9;119.0;117.1;115.2;113.3;111.4;109.5;107.6;105.7;103.8;101.9;100.0;98.1;96.2;94.3;92.4;90.5;88.6;86.7;84.8;82.9;81.0;79.1;77.2;75.3;73.4;71.5;69.6;67.7;65.8;63.9;62.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"70.0\" cy=\"176\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"70.0;75.5;81.0;86.5;92.0;97.5;103.0;108.5;114.0;119.5;125.0;130.5;136.0;141.5;147.0;152.5;158.0;163.5;169.0;174.5;180.0;185.5;191.0;196.5;202.0;207.5;213.0;218.5;224.0;229.5;235.0;240.5;246.0;251.5;257.0;262.5;268.0;273.5;279.0;284.5;290.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"70.0\" cy=\"138.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"70.0;75.5;81.0;86.5;92.0;97.5;103.0;108.5;114.0;119.5;125.0;130.5;136.0;141.5;147.0;152.5;158.0;163.5;169.0;174.5;180.0;185.5;191.0;196.5;202.0;207.5;213.0;218.5;224.0;229.5;235.0;240.5;246.0;251.5;257.0;262.5;268.0;273.5;279.0;284.5;290.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"138.0;136.1;134.2;132.3;130.4;128.5;126.6;124.7;122.8;120.9;119.0;117.1;115.2;113.3;111.4;109.5;107.6;105.7;103.8;101.9;100.0;98.1;96.2;94.3;92.4;90.5;88.6;86.7;84.8;82.9;81.0;79.1;77.2;75.3;73.4;71.5;69.6;67.7;65.8;63.9;62.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"20\" y=\"204\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● hạt mẫu q<tspan dy=\"4\" font-size=\"9\">0</tspan><tspan dy=\"-4\"> &gt; 0 (khác đề)   ○ hình chiếu lên đường sức</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt mẫu (không phải electron của đề, góc đi khác) đi xiên; chấm rỗng là hình chiếu của hạt lên đường sức. Chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trường đều: lực $\\vec F=q\\vec E$ không đổi; công phụ thuộc hình chiếu của đoạn đi lên đường sức.</li><li>Công: $A_{MN}=qEd$ · $d$ = hình chiếu có dấu của MN lên chiều đường sức · $d=MN\\cos\\alpha$ ($\\alpha$: góc giữa MN và chiều $\\vec E$)</li><li>$q$ lấy cả dấu; $d\\gt0$ nếu hình chiếu cùng chiều đường sức, $d\\lt0$ nếu ngược chiều.</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện; đổi cm ra m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hình chiếu có dấu của MN</span></p><p>Góc giữa MN và chiều đường sức là $120^\\circ$.</p>$$d=MN\\cos120^\\circ=0{,}080\\cdot(-0{,}5)$$<div class=\"bt-ans\">$$d=-0{,}040\\ \\text{m}=-4{,}0\\ \\text{cm}$$</div><p>$d\\lt0$: hình chiếu ngược chiều đường sức.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của lực điện</span></p>$$A_{MN}=qEd$$$$A_{MN}=(-1{,}6\\cdot10^{-19})\\cdot5000\\cdot(-0{,}040)$$<div class=\"bt-ans\">$$A_{MN}=+3{,}2\\cdot10^{-17}\\ \\text{J}$$</div><p>Hai dấu âm nhân nhau cho công dương: lực điện lên electron ngược chiều $\\vec E$, tức hướng sang trái, cùng phía với thành phần chuyển động sang trái của MN.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đi ngược từ N về M</span></p><p>Đổi chiều đi thì hình chiếu có dấu đổi dấu: $d'=+0{,}040$ m.</p>$$A_{NM}=(-1{,}6\\cdot10^{-19})\\cdot5000\\cdot0{,}040=-3{,}2\\cdot10^{-17}\\ \\text{J}$$<div class=\"bt-ans\"><p>$A_{NM}=-A_{MN}$: cùng độ lớn, trái dấu.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{C}\\cdot\\text{V/m}\\cdot\\text{m}=\\text{C}\\cdot\\text{V}=\\text{J}$ ✓</p><p>$A_{MN}+A_{NM}=0$: đi một vòng kín về chỗ cũ thì công bằng 0 ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d=-4{,}0\\ \\text{cm}$</p><p>b) $A_{MN}=+3{,}2\\cdot10^{-17}\\ \\text{J}$</p><p>c) $A_{NM}=-A_{MN}=-3{,}2\\cdot10^{-17}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đoạn đi hợp với đường sức một góc</strong> → $d=MN\\cos\\alpha$ có dấu, rồi $A=qEd$ với $q$ có dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Điện trường đều nằm ngang hướng sang phải; electron đi từ M đến N lên trên chếch sang trái, đoạn MN dài 8,0 cm hợp với đường sức góc 120 độ\"><g opacity=\".45\"><line x1=\"20\" y1=\"40\" x2=\"395\" y2=\"40\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,35.5 L395.0,40.0 L387.2,44.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"100\" x2=\"395\" y2=\"100\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,95.5 L395.0,100.0 L387.2,104.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"150\" x2=\"395\" y2=\"150\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,145.5 L395.0,150.0 L387.2,154.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"190\" x2=\"395\" y2=\"190\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,185.5 L395.0,190.0 L387.2,194.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"398\" y=\"45\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">E</text><line x1=\"250\" y1=\"150\" x2=\"197.5\" y2=\"59.1\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M197.5,69.9 L197.5,59.1 L206.9,64.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"250.0\" cy=\"150.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"197.5\" cy=\"59.1\" r=\"4.5\" fill=\"currentColor\"/><path d=\"M280.0,150.0 A30,30 0 0 0 235.0,124.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"274\" y=\"116\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">120°</text><text x=\"258\" y=\"174\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"187.5\" y=\"63.1\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">N</text><text x=\"209.8\" y=\"128\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">MN = 8,0 cm</text><text x=\"20\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">E = 5000 V/m</text><text x=\"20\" y=\"212\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">electron: q = −1,6·10⁻¹⁹ C</text></svg><figcaption>Dữ kiện: đường sức nằm ngang sang phải; MN hợp với chiều đường sức góc 120° (đường đi thẳng). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trường đều có cường độ $E=5000$ V/m, đường sức nằm ngang hướng sang phải\"</td><td>$E=5000$ V/m; $\\vec E$ sang phải</td><td>⚠ Công thức $A=qEd$ chỉ dùng cho điện trường đều; chỉ xét lực điện</td></tr><tr><td>\"electron ($q=-1{,}6\\cdot10^{-19}$ C)\"</td><td>$q=-1{,}6\\cdot10^{-19}$ C</td><td>Lấy cả dấu của $q$ vào công thức</td></tr><tr><td>\"đoạn $MN=8{,}0$ cm hợp với chiều đường sức góc $120^\\circ$\"</td><td>$MN=8{,}0$ cm; góc giữa MN và $\\vec E$ là $120^\\circ$</td><td>$d$ là hình chiếu có dấu của MN lên đường sức, không phải độ dài đường đi. Góc tù thì dấu của $d$ thế nào?</td></tr><tr><td>\"tìm độ dài đại số $d$ của hình chiếu\"</td><td>Cần $d$</td><td>Đại lượng cần tìm: chiếu MN lên đường sức</td></tr><tr><td>\"tính công $A_{MN}$\"</td><td>Cần $A_{MN}$</td><td>Công của lực điện trong điện trường đều</td></tr><tr><td>\"quay lại, đi thẳng từ N về M … so với $A_{MN}$\"</td><td>Cần so sánh $A_{NM}$ với $A_{MN}$</td><td>Đổi chiều đi thì hình chiếu có dấu đổi thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đoạn đi hợp với đường sức một góc</b> → nghĩ tới <b>d = MN·cosα có dấu</b>, rồi <b>A = qEd</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hình chiếu có dấu của MN",
+     "hoi": "Độ dài đại số d của hình chiếu MN lên đường sức bằng bao nhiêu cm?",
+     "dap_so": -4.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d$ bằng cả độ dài MN, hoặc chiếu bằng $\\sin$ thay vì $\\cos$, hoặc thế sai dấu của $d$."
+    },
+    {
+     "tieu_de": "Công của lực điện",
+     "hoi": "Công $A_{MN}$ của lực điện bằng bao nhiêu? (nhập số, đơn vị $10^{-17}$ J)",
+     "dap_so": 3.2,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻¹⁷ J",
+     "loi_hay_gap": "Thế sai dấu của $q$ hoặc của $d$; hoặc quên đổi cm ra m.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $q$ và $d$ cùng dấu của chúng vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $|q|\\cdot E\\cdot MN$ vì MN là quãng đường electron đi",
+       "dung": false,
+       "vi_sao": "$d$ là hình chiếu có dấu lên đường sức, không phải độ dài đường đi, và $q$ phải mang dấu."
+      },
+      {
+       "text": "Lấy $qEd$ với $d=MN\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "Hình chiếu lên đường sức là $MN\\cos\\alpha$; $\\sin\\alpha$ là thành phần vuông góc đường sức, không sinh công."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đi ngược từ N về M",
+     "hoi": "Công $A_{NM}$ so với $A_{MN}$ thế nào?",
+     "lua_chon": [
+      {
+       "text": "Cùng độ lớn, trái dấu",
+       "dung": true
+      },
+      {
+       "text": "Giống hệt $A_{MN}$ vì cùng đoạn MN",
+       "dung": false,
+       "vi_sao": "Đổi chiều đi thì hình chiếu có dấu đổi dấu, nên công đổi dấu."
+      },
+      {
+       "text": "Bằng không vì electron về lại điểm cũ",
+       "dung": false,
+       "vi_sao": "Chỉ cả vòng M → N → M mới bằng không; riêng đoạn N → M vẫn có công khác không."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng công không đổi khi đảo chiều đi, hoặc cho rằng quay về chỗ cũ là công của đoạn về bằng không.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại hình chiếu có dấu cho chiều đi N → M rồi thay vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại đúng $d$ và $q$ của câu trước",
+       "dung": false,
+       "vi_sao": "Đi ngược lại thì hình chiếu có dấu đổi dấu; dùng lại $d$ cũ sẽ sai dấu."
+      },
+      {
+       "text": "Tính lại $E$ vì electron đi theo chiều ngược",
+       "dung": false,
+       "vi_sao": "$E$ là của điện trường, không đổi theo chiều đi của hạt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Công không phụ thuộc đường đi: đường gấp khúc, đường cong, vòng kín",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Điện trường đều $E=3000\\ \\text{V/m}$, đường sức nằm ngang hướng từ A sang B. Một hạt mang điện $q=-2{,}0\\ \\mu\\text{C}$ đi từ A đến B theo đoạn thẳng $AB=6{,}0\\ \\text{cm}$ dọc đường sức, rồi từ B đến C theo đoạn thẳng $BC=10\\ \\text{cm}$ hợp với chiều đường sức góc $60^\\circ$. Chỉ xét lực điện.</p><ol type=\"a\"><li>Tính công của lực điện trên đường A → B → C.</li><li>Cũng hạt đó đi từ A tới điểm D theo một đường cong dài $25\\ \\text{cm}$. D nằm ngay dưới C, đoạn $CD=4{,}0\\ \\text{cm}$ vuông góc với đường sức. Tính công của lực điện.</li><li>Hạt đi hết đường A → B → C rồi trở về A theo đoạn thẳng CA. Tính công của lực điện trên cả vòng.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 222\" role=\"img\" aria-label=\"Điện trường đều có đường sức nằm ngang hướng sang phải; một hạt mẫu đi theo đường cong lượn từ trái sang phải, chấm rỗng bên dưới là hình chiếu của hạt lên đường sức\"><g opacity=\".45\"><line x1=\"20\" y1=\"30\" x2=\"395\" y2=\"30\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,25.5 L395.0,30.0 L387.2,34.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"78\" x2=\"395\" y2=\"78\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,73.5 L395.0,78.0 L387.2,82.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"126\" x2=\"395\" y2=\"126\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,121.5 L395.0,126.0 L387.2,130.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"398\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">E</text><line x1=\"50.0\" y1=\"180.0\" x2=\"330.0\" y2=\"180.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\"0.5\"/><polyline fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"0.5\" points=\"60.0,150.0 65.2,143.9 70.4,137.9 75.6,132.0 80.8,126.3 86.0,121.0 91.2,116.0 96.5,111.4 101.7,107.2 106.9,103.6 112.1,100.5 117.3,98.0 122.5,96.0 127.7,94.6 132.9,93.8 138.1,93.6 143.3,93.9 148.5,94.7 153.8,96.0 159.0,97.6 164.2,99.7 169.4,102.0 174.6,104.5 179.8,107.2 185.0,110.0 190.2,112.8 195.4,115.5 200.6,118.0 205.8,120.3 211.0,122.4 216.2,124.0 221.5,125.3 226.7,126.1 231.9,126.4 237.1,126.2 242.3,125.4 247.5,124.0 252.7,122.0 257.9,119.5 263.1,116.4 268.3,112.8 273.5,108.6 278.8,104.0 284.0,99.0 289.2,93.7 294.4,88.0 299.6,82.1 304.8,76.1 310.0,70.0\"/><line x1=\"60.0\" y1=\"150.0\" x2=\"60.0\" y2=\"180\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" opacity=\".6\"><animate attributeName=\"x1\" values=\"60.0;65.2;70.4;75.6;80.8;86.0;91.2;96.5;101.7;106.9;112.1;117.3;122.5;127.7;132.9;138.1;143.3;148.5;153.8;159.0;164.2;169.4;174.6;179.8;185.0;190.2;195.4;200.6;205.8;211.0;216.2;221.5;226.7;231.9;237.1;242.3;247.5;252.7;257.9;263.1;268.3;273.5;278.8;284.0;289.2;294.4;299.6;304.8;310.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"x2\" values=\"60.0;65.2;70.4;75.6;80.8;86.0;91.2;96.5;101.7;106.9;112.1;117.3;122.5;127.7;132.9;138.1;143.3;148.5;153.8;159.0;164.2;169.4;174.6;179.8;185.0;190.2;195.4;200.6;205.8;211.0;216.2;221.5;226.7;231.9;237.1;242.3;247.5;252.7;257.9;263.1;268.3;273.5;278.8;284.0;289.2;294.4;299.6;304.8;310.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y1\" values=\"150.0;143.9;137.9;132.0;126.3;121.0;116.0;111.4;107.2;103.6;100.5;98.0;96.0;94.6;93.8;93.6;93.9;94.7;96.0;97.6;99.7;102.0;104.5;107.2;110.0;112.8;115.5;118.0;120.3;122.4;124.0;125.3;126.1;126.4;126.2;125.4;124.0;122.0;119.5;116.4;112.8;108.6;104.0;99.0;93.7;88.0;82.1;76.1;70.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"60.0\" cy=\"180\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"cx\" values=\"60.0;65.2;70.4;75.6;80.8;86.0;91.2;96.5;101.7;106.9;112.1;117.3;122.5;127.7;132.9;138.1;143.3;148.5;153.8;159.0;164.2;169.4;174.6;179.8;185.0;190.2;195.4;200.6;205.8;211.0;216.2;221.5;226.7;231.9;237.1;242.3;247.5;252.7;257.9;263.1;268.3;273.5;278.8;284.0;289.2;294.4;299.6;304.8;310.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"60.0\" cy=\"150.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"60.0;65.2;70.4;75.6;80.8;86.0;91.2;96.5;101.7;106.9;112.1;117.3;122.5;127.7;132.9;138.1;143.3;148.5;153.8;159.0;164.2;169.4;174.6;179.8;185.0;190.2;195.4;200.6;205.8;211.0;216.2;221.5;226.7;231.9;237.1;242.3;247.5;252.7;257.9;263.1;268.3;273.5;278.8;284.0;289.2;294.4;299.6;304.8;310.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"150.0;143.9;137.9;132.0;126.3;121.0;116.0;111.4;107.2;103.6;100.5;98.0;96.0;94.6;93.8;93.6;93.9;94.7;96.0;97.6;99.7;102.0;104.5;107.2;110.0;112.8;115.5;118.0;120.3;122.4;124.0;125.3;126.1;126.4;126.2;125.4;124.0;122.0;119.5;116.4;112.8;108.6;104.0;99.0;93.7;88.0;82.1;76.1;70.0\" dur=\"3.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"20\" y=\"208\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● hạt mẫu đi theo đường cong   ○ hình chiếu lên đường sức</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt mẫu (số liệu khác đề) đi theo một đường cong; chấm rỗng là hình chiếu của hạt lên đường sức. Chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công của lực điện chỉ phụ thuộc điểm đầu và điểm cuối, không phụ thuộc đường đi (lực thế); đi một vòng kín thì $A=0$.</li><li>Mỗi đoạn: $A=qEd$ với $d$ là hình chiếu có dấu lên đường sức · công cả đường = tổng công các đoạn</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện; $q$ lấy cả dấu, đổi $\\mu$C ra C.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công trên đoạn AB</span></p><p>Đổi $q=-2{,}0\\cdot10^{-6}\\ \\text{C}$. AB dọc đường sức, cùng chiều $\\vec E$: $d_{AB}=+0{,}060\\ \\text{m}$.</p>$$A_{AB}=qEd_{AB}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}060$$<div class=\"bt-ans\">$$A_{AB}=-3{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}36\\ \\text{mJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công trên cả đường A → B → C</span></p><p>Hình chiếu của BC lên đường sức: $d_{BC}=BC\\cos60^\\circ=0{,}10\\cdot0{,}5=0{,}050\\ \\text{m}$.</p>$$A_{BC}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}050=-3{,}0\\cdot10^{-4}\\ \\text{J}$$$$A_{ABC}=A_{AB}+A_{BC}=-3{,}6\\cdot10^{-4}-3{,}0\\cdot10^{-4}$$<div class=\"bt-ans\">$$A_{ABC}=-6{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}66\\ \\text{mJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công trên đường cong từ A tới D</span></p><p>Công của lực điện chỉ phụ thuộc điểm đầu A và điểm cuối D, không phụ thuộc hình dạng hay độ dài đường đi.</p><p>CD vuông góc đường sức nên D và C có cùng hình chiếu lên đường sức: $d_{AD}=d_{AC}=d_{AB}+d_{BC}=0{,}060+0{,}050=0{,}110\\ \\text{m}$.</p>$$A_{AD}=qEd_{AD}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}110$$<div class=\"bt-ans\">$$A_{AD}=-6{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}66\\ \\text{mJ}$$</div><p>Bằng công trên đường gấp khúc A → B → C ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công trên cả vòng kín</span></p><p>Cả vòng A → B → C → A có điểm cuối trùng điểm đầu: hình chiếu tổng cộng của cả vòng bằng 0.</p>$$A_{\\text{vòng}}=A_{ABC}+A_{CA}=-6{,}6\\cdot10^{-4}+6{,}6\\cdot10^{-4}$$<div class=\"bt-ans\">$$A_{\\text{vòng}}=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đường cong dài 25 cm nhưng độ dài không đi vào công thức; nếu nhân $qE$ với 0,25 m sẽ ra công khác (sai), vì lực điện không phải lực ma sát.</p><p>Đơn vị: $\\text{C}\\cdot\\text{V/m}\\cdot\\text{m}=\\text{J}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{ABC}=-0{,}66\\ \\text{mJ}$</p><p>b) $A_{AD}=-0{,}66\\ \\text{mJ}$ (đường cong dài 25 cm cho cùng kết quả)</p><p>c) $A_{\\text{vòng}}=0$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều đường đi cùng điểm đầu, điểm cuối</strong> (hoặc vòng kín) → công như nhau; chỉ tính một lần theo hình chiếu của đoạn nối hai đầu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Điện trường đều nằm ngang hướng sang phải; đoạn AB dọc đường sức dài 6,0 cm, đoạn BC dài 10 cm hợp với đường sức góc 60 độ, đường cong nét đứt dài 25 cm nối A với D nằm dưới C\"><g opacity=\".45\"><line x1=\"20\" y1=\"36\" x2=\"395\" y2=\"36\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,31.5 L395.0,36.0 L387.2,40.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"112\" x2=\"395\" y2=\"112\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,107.5 L395.0,112.0 L387.2,116.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"20\" y1=\"206\" x2=\"395\" y2=\"206\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M387.2,201.5 L395.0,206.0 L387.2,210.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"398\" y=\"41\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">E</text><line x1=\"46\" y1=\"168\" x2=\"150\" y2=\"168\" stroke=\"#38bdf8\" stroke-width=\"2.4\"/><path d=\"M141.2,162.9 L150.0,168.0 L141.2,173.1\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150\" y1=\"168\" x2=\"192.0\" y2=\"95.3\" stroke=\"#f87171\" stroke-width=\"2.4\"/><path d=\"M183.2,100.4 L192.0,95.3 L192.0,105.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M46,168 C36,88 140,55.25386608210715 192.0,95.3 S212.0,117.3 192.0,137.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><line x1=\"192.0\" y1=\"95.3\" x2=\"192.0\" y2=\"137.3\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"2 3\" opacity=\"0.8\"/><text x=\"202.0\" y=\"141.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">D</text><circle cx=\"46.0\" cy=\"168.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"150.0\" cy=\"168.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"192.0\" cy=\"95.3\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"192.0\" cy=\"137.3\" r=\"4.5\" fill=\"currentColor\"/><text x=\"42\" y=\"190\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"150\" y=\"190\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"204.0\" y=\"87.3\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C</text><path d=\"M176.0,168.0 A26,26 0 0 0 163.0,145.5\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"180\" y=\"158\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">60°</text><text x=\"98.0\" y=\"190\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">6,0 cm</text><text x=\"151\" y=\"139.6\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">BC = 10 cm</text><text x=\"262\" y=\"74\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đường cong</text><text x=\"262\" y=\"92\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">dài 25 cm</text><text x=\"270\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">E = 3000 V/m</text><text x=\"270\" y=\"170\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q = −2,0 µC</text></svg><figcaption>Dữ kiện: A→B→C (xanh dương, đỏ) và đường cong nét đứt từ A tới D; CD vuông góc đường sức. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trường đều $E=3000$ V/m, đường sức từ A sang B\"</td><td>$E=3000$ V/m; $\\vec E$ từ A sang B</td><td>⚠ Điện trường đều; chỉ xét lực điện</td></tr><tr><td>\"hạt mang điện $q=-2{,}0\\ \\mu$C\"</td><td>$q=-2{,}0\\ \\mu\\text{C}=-2{,}0\\cdot10^{-6}$ C</td><td>Lấy cả dấu của $q$; đổi $\\mu$C ra C</td></tr><tr><td>\"$AB=6{,}0$ cm dọc đường sức\"</td><td>$AB=6{,}0$ cm, cùng chiều $\\vec E$</td><td>Hình chiếu có dấu của đoạn dọc đường sức</td></tr><tr><td>\"$BC=10$ cm hợp với chiều đường sức góc $60^\\circ$\"</td><td>$BC=10$ cm; góc với $\\vec E$: $60^\\circ$</td><td>Chiếu BC lên đường sức; độ dài BC chưa phải $d$</td></tr><tr><td>\"từ A tới D theo đường cong dài 25 cm … $CD=4{,}0$ cm vuông góc với đường sức\"</td><td>Đường dài 25 cm; $CD=4{,}0$ cm, $CD\\perp\\vec E$</td><td>Công của lực điện có phụ thuộc hình dạng và độ dài đường đi không? Hình chiếu của AD lên đường sức so với của AC?</td></tr><tr><td>\"trở về A theo CA … cả vòng\"</td><td>Điểm đầu và điểm cuối của cả vòng</td><td>Cả vòng đi qua những điểm nào? Điểm đầu và điểm cuối có gì đặc biệt?</td></tr><tr><td>\"công trên A → B → C … đường cong … cả vòng\"</td><td>Cần $A_{ABC}$, $A_{AD}$ (đường cong), $A_{\\text{vòng}}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều đường đi cùng điểm đầu, điểm cuối</b> hoặc <b>vòng kín</b> → nghĩ tới <b>công không phụ thuộc đường đi</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công trên đoạn AB",
+     "hoi": "Công của lực điện trên đoạn AB bằng bao nhiêu mJ?",
+     "dap_so": -0.36,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Thế sai dấu của $q$; hoặc đổi $\\mu$C ra C sai luỹ thừa mười."
+    },
+    {
+     "tieu_de": "Công trên cả đường A → B → C",
+     "hoi": "Công của lực điện trên cả đường A → B → C bằng bao nhiêu mJ?",
+     "dap_so": -0.66,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Lấy cả độ dài BC (hoặc $\\sin$ của góc) làm hình chiếu lên đường sức; hoặc quên cộng công của một đoạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính công đoạn BC theo hình chiếu của BC lên đường sức, rồi cộng với đoạn AB",
+       "dung": true
+      },
+      {
+       "text": "Lấy cả độ dài BC làm $d$ rồi cộng với đoạn AB",
+       "dung": false,
+       "vi_sao": "$d$ là hình chiếu lên đường sức; BC hợp với đường sức một góc nên chỉ một phần của nó dọc đường sức."
+      },
+      {
+       "text": "Chỉ tính đoạn BC vì AB nằm dọc đường sức",
+       "dung": false,
+       "vi_sao": "AB dọc đường sức nên hình chiếu của nó là đầy đủ, công khác không; phải cộng cả hai đoạn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công trên đường cong từ A tới D",
+     "hoi": "Công của lực điện trên đường cong dài 25 cm từ A tới D bằng bao nhiêu mJ?",
+     "dap_so": -0.66,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Nhân $qE$ với độ dài đường cong, coi lực điện như lực ma sát (công tỉ lệ quãng đường đi).",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng điểm đầu A và điểm cuối D: hình chiếu của đoạn nối hai điểm lên đường sức",
+       "dung": true
+      },
+      {
+       "text": "Nhân $qE$ với độ dài đường cong",
+       "dung": false,
+       "vi_sao": "Độ dài quãng đường không phải $d$: lực điện là lực thế, công không tỉ lệ quãng đường đi."
+      },
+      {
+       "text": "Phải biết hình dạng chính xác của đường cong mới tính được",
+       "dung": false,
+       "vi_sao": "Công của lực điện không phụ thuộc hình dạng đường đi, chỉ phụ thuộc điểm đầu và điểm cuối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công trên cả vòng kín",
+     "hoi": "Công của lực điện trên cả vòng A → B → C → A thế nào?",
+     "lua_chon": [
+      {
+       "text": "Bằng không",
+       "dung": true
+      },
+      {
+       "text": "Bằng công trên A → B → C vì chỉ lúc đi mới có công",
+       "dung": false,
+       "vi_sao": "Đoạn trở về C → A cũng có công, cùng độ lớn và trái dấu với công lúc đi."
+      },
+      {
+       "text": "Âm, vì hạt mang điện âm",
+       "dung": false,
+       "vi_sao": "Dấu của công không do dấu của $q$ riêng quyết định; cả vòng cho tổng bằng không."
+      }
+     ],
+     "loi_hay_gap": "Chỉ cộng công của các đoạn lúc đi, quên đoạn trở về, hoặc nhân $qE$ với chu vi của vòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét điểm đầu và điểm cuối của cả vòng",
+       "dung": true
+      },
+      {
+       "text": "Nhân $qE$ với chu vi tam giác ABC",
+       "dung": false,
+       "vi_sao": "Chu vi là độ dài đường đi; công của lực điện không tỉ lệ độ dài đường đi."
+      },
+      {
+       "text": "Cộng $A_{ABC}$ với $A_{CA}$, lấy $d_{CA}$ dương",
+       "dung": false,
+       "vi_sao": "Đi từ C về A là ngược chiều đường sức nên hình chiếu có dấu $d_{CA}$ âm, không phải dương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Thế năng điện có mốc: từ W_M và công tìm E, vị trí N, rồi đổi mốc",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Hai bản kim loại phẳng nằm ngang, song song, cách nhau $5{,}0\\ \\text{cm}$; bản trên tích điện âm, bản dưới tích điện dương; điện trường giữa hai bản là đều. Một hạt bụi mang điện $q=-5{,}0\\ \\text{nC}$. Chọn mốc thế năng ở bản trên. Tại điểm M cách bản trên $1{,}0\\ \\text{cm}$, thế năng của hạt là $W_M=-2{,}0\\cdot10^{-7}\\ \\text{J}$. Hạt đi (theo một đường bất kì) từ M tới điểm N nằm dưới M; lực điện sinh công $A_{MN}=+6{,}0\\cdot10^{-7}\\ \\text{J}$. Bỏ qua trọng lực.</p><ol type=\"a\"><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính thế năng $W_N$ của hạt tại N.</li><li>Tính khoảng cách từ N tới bản trên.</li><li>Đổi mốc sang bản dưới (bản dương). Tính thế năng của hạt tại N với mốc mới.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Hai bản phẳng nằm ngang, bản trên âm, bản dưới dương; hạt mẫu mang điện dương đi lên về phía bản âm, thanh W bên phải thấp dần\"><line x1=\"40.0\" y1=\"44.0\" x2=\"270.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"40.0\" y1=\"184.0\" x2=\"270.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"55\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"55\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"85\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"85\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"115\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"115\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"145\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"145\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"175\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"175\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"205\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"205\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"235\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"235\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><g opacity=\".5\"><line x1=\"80\" y1=\"176\" x2=\"80\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M75.5,59.8 L80.0,52.0 L84.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"125\" y1=\"176\" x2=\"125\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M120.5,59.8 L125.0,52.0 L129.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"170\" y1=\"176\" x2=\"170\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M165.5,59.8 L170.0,52.0 L174.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"215\" y1=\"176\" x2=\"215\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M210.5,59.8 L215.0,52.0 L219.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"176\" x2=\"260\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M255.5,59.8 L260.0,52.0 L264.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"150.0\" cy=\"160.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;157.7;155.4;153.1;150.8;148.5;146.2;143.9;141.6;139.3;137.0;134.7;132.4;130.1;127.8;125.5;123.2;120.9;118.6;116.3;114.0;111.7;109.4;107.1;104.8;102.5;100.2;97.9;95.6;93.3;91.0;88.7;86.4;84.1;81.8;79.5;77.2;74.9;72.6;70.3;68.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"330\" y=\"56\" width=\"26\" height=\"120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><rect x=\"330\" y=\"76.6\" width=\"26\" height=\"99.4\" fill=\"#fb923c\" opacity=\".85\"><animate attributeName=\"y\" values=\"76.6;78.5;80.5;82.5;84.5;86.4;88.4;90.4;92.3;94.3;96.3;98.3;100.2;102.2;104.2;106.1;108.1;110.1;112.1;114.0;116.0;118.0;119.9;121.9;123.9;125.9;127.8;129.8;131.8;133.7;135.7;137.7;139.7;141.6;143.6;145.6;147.5;149.5;151.5;153.5;155.4\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"99.4;97.5;95.5;93.5;91.5;89.6;87.6;85.6;83.7;81.7;79.7;77.7;75.8;73.8;71.8;69.9;67.9;65.9;63.9;62.0;60.0;58.0;56.1;54.1;52.1;50.1;48.2;46.2;44.2;42.3;40.3;38.3;36.3;34.4;32.4;30.4;28.5;26.5;24.5;22.5;20.6\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"343\" y=\"196\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">W</text><text x=\"300\" y=\"214\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mốc ở bản âm</text><text x=\"20\" y=\"232\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● hạt mẫu q<tspan dy=\"4\" font-size=\"9\">0</tspan><tspan dy=\"-4\"> &gt; 0 (khác hạt bụi của đề)</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt mẫu mang điện dương (khác hạt bụi của đề) đi về phía bản âm; thanh W là thế năng của nó với mốc ở bản âm. Chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thế năng điện tại M = công của lực điện khi $q$ đi từ M tới mốc; phải chọn mốc.</li><li>Điện trường đều: $W_M=qEd$, $d$ = hình chiếu có dấu của đoạn từ M tới mốc lên đường sức</li><li>Công và thế năng: $A_{MN}=W_M-W_N$; công dương thì thế năng giảm</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện. Đổi mốc thì từng $W$ đổi, hiệu $W_M-W_N$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ điện trường</span></p><p>Bản trên âm, bản dưới dương nên $\\vec E$ hướng từ dưới lên trên.</p><p>Từ M lên mốc (bản trên) là xuôi chiều $\\vec E$: $d_M=+0{,}010\\ \\text{m}$.</p>$$W_M=qEd_M\\Rightarrow E=\\dfrac{W_M}{qd_M}=\\dfrac{-2{,}0\\cdot10^{-7}}{(-5{,}0\\cdot10^{-9})\\cdot0{,}010}$$<div class=\"bt-ans\">$$E=4000\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thế năng tại N</span></p><p>Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$.</p>$$W_N=W_M-A_{MN}=-2{,}0\\cdot10^{-7}-6{,}0\\cdot10^{-7}$$<div class=\"bt-ans\">$$W_N=-8{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khoảng cách từ N tới bản trên</span></p><p>N cũng ở dưới mốc: từ N lên mốc là xuôi chiều $\\vec E$, $d_N\\gt0$.</p>$$W_N=qEd_N\\Rightarrow d_N=\\dfrac{W_N}{qE}=\\dfrac{-8{,}0\\cdot10^{-7}}{(-5{,}0\\cdot10^{-9})\\cdot4000}$$<div class=\"bt-ans\">$$d_N=0{,}040\\ \\text{m}=4{,}0\\ \\text{cm}$$</div><p>$4{,}0\\ \\text{cm}\\lt5{,}0\\ \\text{cm}$: N nằm giữa hai bản ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi mốc sang bản dưới</span></p><p>N cách bản dưới $5{,}0-4{,}0=1{,}0\\ \\text{cm}$. Từ N xuống mốc mới là ngược chiều $\\vec E$: $d'_N=-0{,}010\\ \\text{m}$.</p>$$W'_N=qEd'_N=(-5{,}0\\cdot10^{-9})\\cdot4000\\cdot(-0{,}010)$$<div class=\"bt-ans\">$$W'_N=+2{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Với mốc mới, M cách bản dưới $4{,}0$ cm nên $W'_M=+8{,}0\\cdot10^{-7}$ J.</p><p>$W'_M-W'_N=8{,}0\\cdot10^{-7}-2{,}0\\cdot10^{-7}=6{,}0\\cdot10^{-7}\\ \\text{J}$: bằng $A_{MN}$, hiệu không đổi khi đổi mốc ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=4000\\ \\text{V/m}$</p><p>b) $W_N=-8{,}0\\cdot10^{-7}\\ \\text{J}$</p><p>c) $d_N=4{,}0\\ \\text{cm}$</p><p>d) $W'_N=+2{,}0\\cdot10^{-7}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>thế năng hoặc công, hỏi E hay vị trí</strong> → $W=qEd$ với $d$ tới mốc có dấu; đổi mốc thì $W$ đổi, hiệu $W_M-W_N$ không đổi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Hai bản phẳng nằm ngang cách nhau 5,0 cm, bản trên âm, bản dưới dương; điểm M cách bản trên 1,0 cm, điểm N nằm dưới M, hạt bụi đi theo đường nét đứt từ M tới N\"><line x1=\"40.0\" y1=\"44.0\" x2=\"270.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"40.0\" y1=\"184.0\" x2=\"270.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"55\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"55\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"85\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"85\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"115\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"115\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"145\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"145\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"175\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"175\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"205\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"205\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"235\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"235\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><g opacity=\".5\"><line x1=\"175\" y1=\"176\" x2=\"175\" y2=\"52\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M170.5,59.8 L175.0,52.0 L179.5,59.8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"12\" y=\"24\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">bản trên (−)</text><text x=\"12\" y=\"236\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">bản dưới (+)</text><path d=\"M130,74 C200,64 125,140 205,130\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-dasharray=\"6 4\"/><circle cx=\"130.0\" cy=\"74.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"205.0\" cy=\"130.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"120\" y=\"66\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">M</text><text x=\"215\" y=\"134\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">N</text><line x1=\"90\" y1=\"44\" x2=\"90\" y2=\"74\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M94.1,67.0 L90.0,74.0 L85.9,67.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"90\" y1=\"74\" x2=\"90\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M85.9,51.0 L90.0,44.0 L94.1,51.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"84\" y=\"63.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">1,0 cm</text><text x=\"217\" y=\"148\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">?</text><text x=\"290\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q = −5,0 nC</text><text x=\"290\" y=\"66\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">mốc: bản trên</text><text x=\"290\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">W<tspan dy=\"4\" font-size=\"10\">M</tspan><tspan dy=\"-4\"> = −2,0·10⁻⁷ J</tspan></text><text x=\"290\" y=\"118\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"10\">MN</tspan><tspan dy=\"-4\"> = +6,0·10⁻⁷ J</tspan></text><text x=\"290\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">hai bản cách</text><text x=\"290\" y=\"166\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">nhau 5,0 cm</text></svg><figcaption>Dữ kiện: hai bản, điểm M, điểm N (chưa biết vị trí), thế năng tại M và công của lực điện. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai bản … cách nhau 5,0 cm; bản trên âm, bản dưới dương; điện trường đều\"</td><td>Bản trên $-$; $\\vec E$ hướng lên</td><td>⚠ Điện trường đều giữa hai bản; mốc ở bản nào thì $d$ tính tới bản đó</td></tr><tr><td>\"hạt bụi $q=-5{,}0$ nC\"</td><td>$q=-5{,}0\\cdot10^{-9}$ C</td><td>Lấy cả dấu của $q$</td></tr><tr><td>\"chọn mốc thế năng ở bản trên … M cách bản trên 1,0 cm … $W_M=-2{,}0\\cdot10^{-7}$ J\"</td><td>M cách bản trên 1,0 cm; $W_M=-2{,}0\\cdot10^{-7}$ J</td><td>Thế năng bằng công của lực điện từ điểm đó tới mốc. Từ M về mốc là xuôi hay ngược chiều $\\vec E$? Dấu của $d$?</td></tr><tr><td>\"đi từ M tới N nằm dưới M; $A_{MN}=+6{,}0\\cdot10^{-7}$ J\"</td><td>$A_{MN}=+6{,}0\\cdot10^{-7}$ J</td><td>Công và độ biến thiên thế năng liên hệ thế nào?</td></tr><tr><td>\"bỏ qua trọng lực\"</td><td>Chỉ có lực điện</td><td>⚠ Chỉ xét lực điện</td></tr><tr><td>\"cường độ điện trường … thế năng $W_N$ … khoảng cách từ N tới bản trên\"</td><td>Cần $E$, $W_N$, $d_N$</td><td>Đại lượng cần tìm: $W=qEd$ với $d$ tính tới mốc</td></tr><tr><td>\"đổi mốc sang bản dưới … thế năng tại N với mốc mới\"</td><td>Mốc mới ở bản dưới; cần $W'_N$</td><td>Từ N xuống mốc mới là xuôi hay ngược chiều $\\vec E$? Khoảng cách tới bản dưới là bao nhiêu?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cho thế năng hoặc công, hỏi E hay vị trí</b> → nghĩ tới <b>W = qEd</b>, <b>A = W_M − W_N</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường E bằng bao nhiêu V/m?",
+     "dap_so": 4000,
+     "sai_so": 20,
+     "don_vi": "V/m",
+     "loi_hay_gap": "Thế sai dấu của $q$ hoặc của $d$; hoặc để nguyên $d$ tính bằng cm."
+    },
+    {
+     "tieu_de": "Thế năng tại N",
+     "hoi": "Thế năng điện tại N bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": -8.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Cộng công vào $W_M$ thay vì trừ, hoặc coi $W_N$ bằng $W_M$ vì cùng một hạt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ liên hệ giữa công và hiệu hai thế năng, giải ra $W_N$",
+       "dung": true
+      },
+      {
+       "text": "Cộng công đã cho vào $W_M$",
+       "dung": false,
+       "vi_sao": "Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$, nên $W_N=W_M-A_{MN}$, không phải $W_M+A_{MN}$."
+      },
+      {
+       "text": "Coi $W_N=W_M$ vì cùng một hạt",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc vị trí: hai điểm cách mốc khác nhau thì thế năng khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách từ N tới bản trên",
+     "hoi": "Khoảng cách từ N tới bản trên bằng bao nhiêu cm?",
+     "dap_so": 4.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d_N$ bằng công chia $qE$ (đó là hình chiếu của đoạn MN), hoặc dùng $W_M$ thay cho $W_N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $W_N=qEd_N$ với $E$ đã tìm, rồi giải ra $d_N$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d_N=\\dfrac{A_{MN}}{qE}$",
+       "dung": false,
+       "vi_sao": "$A_{MN}/(qE)$ là hình chiếu của đoạn MN lên đường sức, không phải khoảng cách từ N tới mốc."
+      },
+      {
+       "text": "Lấy $d_N=\\dfrac{W_M}{qE}$",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách của điểm M (đề đã cho), không phải của N."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi mốc sang bản dưới",
+     "hoi": "Với mốc ở bản dưới, thế năng tại N bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Thế sai dấu của $d$ khi đổi mốc, hoặc tính khoảng cách từ N tới bản trên thay vì tới bản dưới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính khoảng cách từ N tới bản dưới, xét chiều so với $\\vec E$, rồi thay vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $W_N$ vì hạt không đổi vị trí",
+       "dung": false,
+       "vi_sao": "Thế năng đo bằng công tới mốc; đổi mốc thì giá trị $W_N$ đổi."
+      },
+      {
+       "text": "Lấy $d$ là khoảng cách từ N tới bản trên",
+       "dung": false,
+       "vi_sao": "Mốc mới ở bản dưới; $d$ tính từ N tới bản dưới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Từ nghỉ, chỉ có lực điện: công = độ tăng động năng, bài ngược tìm cường độ điện trường",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Một hạt bụi mang điện $q=+4{,}0\\ \\text{nC}$, khối lượng $m=2{,}0\\cdot10^{-8}\\ \\text{kg}$, được thả từ trạng thái nghỉ tại điểm M trong điện trường đều giữa hai bản kim loại phẳng song song nằm ngang (bản trên dương, bản dưới âm). M cách bản âm $5{,}0\\ \\text{cm}$. Hạt đi thẳng xuống theo đường sức và tới bản âm với tốc độ $10\\ \\text{m/s}$. Chỉ có lực điện tác dụng lên hạt.</p><ol type=\"a\"><li>Tính công của lực điện từ M tới bản âm.</li><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính tốc độ của hạt khi nó đi qua điểm P, cách bản âm $2{,}0\\ \\text{cm}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 244\" role=\"img\" aria-label=\"Hai bản phẳng nằm ngang, bản trên dương, bản dưới âm; hạt mẫu mang điện dương thả từ nghỉ rơi dần về bản âm, thanh W thấp dần, thanh K cao dần\"><line x1=\"40.0\" y1=\"44.0\" x2=\"270.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"40.0\" y1=\"184.0\" x2=\"270.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"55\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"55\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"85\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"85\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"115\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"115\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"145\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"145\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"175\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"175\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"205\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"205\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"235\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"235\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><g opacity=\".5\"><line x1=\"80\" y1=\"52\" x2=\"80\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M84.5,168.2 L80.0,176.0 L75.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"125\" y1=\"52\" x2=\"125\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M129.5,168.2 L125.0,176.0 L120.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"170\" y1=\"52\" x2=\"170\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M174.5,168.2 L170.0,176.0 L165.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"215\" y1=\"52\" x2=\"215\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M219.5,168.2 L215.0,176.0 L210.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"260\" y1=\"52\" x2=\"260\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M264.5,168.2 L260.0,176.0 L255.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"150.0\" cy=\"58.0\" r=\"5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0;150.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"58.0;58.1;58.3;58.6;59.1;59.8;60.5;61.4;62.5;63.7;65.0;66.5;68.1;69.8;71.7;73.8;75.9;78.2;80.7;83.3;86.0;88.9;91.9;95.0;98.3;101.8;105.3;109.0;112.9;116.9;121.0;125.3;129.7;134.2;138.9;143.8;148.7;153.8;159.1;164.5;170.0\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"300\" y=\"56\" width=\"26\" height=\"120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><rect x=\"300\" y=\"56.0\" width=\"26\" height=\"120.0\" fill=\"#fb923c\" opacity=\".85\"><animate attributeName=\"y\" values=\"56.0;56.1;56.3;56.6;57.1;57.7;58.4;59.3;60.3;61.4;62.7;64.1;65.6;67.3;69.1;71.0;73.1;75.3;77.6;80.1;82.7;85.4;88.3;91.3;94.4;97.7;101.1;104.6;108.3;112.1;116.0;120.1;124.3;128.6;133.1;137.7;142.4;147.3;152.3;157.4;162.7\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"120.0;119.9;119.7;119.4;118.9;118.3;117.6;116.7;115.7;114.6;113.3;111.9;110.4;108.7;106.9;105.0;102.9;100.7;98.4;95.9;93.3;90.6;87.7;84.7;81.6;78.3;74.9;71.4;67.7;63.9;60.0;55.9;51.7;47.4;42.9;38.3;33.6;28.7;23.7;18.6;13.3\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"313\" y=\"196\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">W</text><rect x=\"350\" y=\"56\" width=\"26\" height=\"120\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><rect x=\"350\" y=\"176.0\" width=\"26\" height=\"0.0\" fill=\"#38bdf8\" opacity=\".85\"><animate attributeName=\"y\" values=\"176.0;175.9;175.7;175.4;174.9;174.3;173.6;172.7;171.7;170.6;169.3;167.9;166.4;164.7;162.9;161.0;158.9;156.7;154.4;151.9;149.3;146.6;143.7;140.7;137.6;134.3;130.9;127.4;123.7;119.9;116.0;111.9;107.7;103.4;98.9;94.3;89.6;84.7;79.7;74.6;69.3\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"0.0;0.1;0.3;0.6;1.1;1.7;2.4;3.3;4.3;5.4;6.7;8.1;9.6;11.3;13.1;15.0;17.1;19.3;21.6;24.1;26.7;29.4;32.3;35.3;38.4;41.7;45.1;48.6;52.3;56.1;60.0;64.1;68.3;72.6;77.1;81.7;86.4;91.3;96.3;101.4;106.7\" dur=\"3.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"363\" y=\"196\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">K</text><text x=\"20\" y=\"232\" fill=\"#34d399\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">● hạt mẫu q<tspan dy=\"4\" font-size=\"9\">0</tspan><tspan dy=\"-4\"> &gt; 0, thả từ nghỉ (khác đề)</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hạt mẫu thả từ nghỉ (khác hạt của đề); W là thế năng điện của hạt mẫu, K là động năng. Chạy chậm hơn thật. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chỉ có lực điện: thế năng giảm bao nhiêu, động năng tăng bấy nhiêu; từ nghỉ nên công = động năng cuối.</li><li>Công: $A=qEd$ ($d$ hình chiếu của đoạn đi) · $A=\\tfrac12mv^2$ khi từ nghỉ</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; không có lực nào khác (bỏ qua trọng lực).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của lực điện từ M tới bản âm</span></p><p>Thả từ nghỉ, chỉ có lực điện nên công của lực điện bằng động năng ở bản âm.</p>$$A=\\tfrac12mv^2=\\tfrac12\\cdot2{,}0\\cdot10^{-8}\\cdot10^2$$<div class=\"bt-ans\">$$A=1{,}0\\cdot10^{-6}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ điện trường</span></p><p>Đoạn đi dọc đường sức, xuôi chiều $\\vec E$: $d=+0{,}050$ m.</p>$$A=qEd\\Rightarrow E=\\dfrac{A}{qd}=\\dfrac{1{,}0\\cdot10^{-6}}{4{,}0\\cdot10^{-9}\\cdot0{,}050}$$<div class=\"bt-ans\">$$E=5000\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực điện từ M tới P</span></p><p>Hình chiếu của MP lên đường sức: $d_{MP}=5{,}0-2{,}0=3{,}0\\ \\text{cm}=0{,}030\\ \\text{m}$ (xuôi chiều $\\vec E$).</p>$$A_{MP}=qEd_{MP}=4{,}0\\cdot10^{-9}\\cdot5000\\cdot0{,}030$$<div class=\"bt-ans\">$$A_{MP}=6{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ tại P</span></p><p>Từ nghỉ, chỉ có lực điện: công bằng động năng tại P.</p>$$\\tfrac12mv_P^2=A_{MP}\\Rightarrow v_P=\\sqrt{\\dfrac{2A_{MP}}{m}}=\\sqrt{\\dfrac{2\\cdot6{,}0\\cdot10^{-7}}{2{,}0\\cdot10^{-8}}}$$<div class=\"bt-ans\">$$v_P\\approx7{,}7\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thế năng tại P (chọn mốc ở bản âm): $W_P=qE\\cdot0{,}020=4{,}0\\cdot10^{-7}$ J; $W_M-W_P=1{,}0\\cdot10^{-6}-4{,}0\\cdot10^{-7}=6{,}0\\cdot10^{-7}$ J = động năng tại P ✓</p><p>$v_P\\lt10\\ \\text{m/s}$: hạt mới đi được một phần đường ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=1{,}0\\cdot10^{-6}\\ \\text{J}$</p><p>b) $E=5000\\ \\text{V/m}$</p><p>c) $v_P\\approx7{,}7\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hạt thả từ nghỉ, chỉ có lực điện</strong> và một tốc độ → công = động năng; thế năng giảm bao nhiêu thì động năng tăng bấy nhiêu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 246\" role=\"img\" aria-label=\"Hai bản phẳng nằm ngang, bản trên dương, bản dưới âm; hạt bụi thả từ nghỉ ở M cách bản âm 5,0 cm, điểm P cách bản âm 2,0 cm; tới bản âm hạt có tốc độ 10 mét trên giây\"><line x1=\"40.0\" y1=\"44.0\" x2=\"270.0\" y2=\"44.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"40.0\" y1=\"184.0\" x2=\"270.0\" y2=\"184.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"55\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"55\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"85\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"85\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"115\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"115\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"145\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"145\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"175\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"175\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"205\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"205\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><text x=\"235\" y=\"35\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"235\" y=\"206\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">−</text><g opacity=\".5\"><line x1=\"190\" y1=\"52\" x2=\"190\" y2=\"176\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"6 4\"/><path d=\"M194.5,168.2 L190.0,176.0 L185.5,168.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><text x=\"12\" y=\"24\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">bản trên (+)</text><text x=\"12\" y=\"236\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">bản dưới (−)</text><circle cx=\"150.0\" cy=\"62.0\" r=\"5\" fill=\"currentColor\"/><circle cx=\"150.0\" cy=\"130.0\" r=\"5\" fill=\"currentColor\"/><text x=\"162\" y=\"66\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">M</text><text x=\"162\" y=\"134\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">P</text><line x1=\"100\" y1=\"62\" x2=\"100\" y2=\"184\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M104.1,177.0 L100.0,184.0 L95.9,177.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"100\" y1=\"184\" x2=\"100\" y2=\"62\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M95.9,69.0 L100.0,62.0 L104.1,69.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"94\" y=\"127.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">5,0 cm</text><line x1=\"220\" y1=\"130\" x2=\"220\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M224.1,177.0 L220.0,184.0 L215.9,177.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"220\" y1=\"184\" x2=\"220\" y2=\"130\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M215.9,137.0 L220.0,130.0 L224.1,137.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"226\" y=\"161.0\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">2,0 cm</text><text x=\"300\" y=\"30\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">q = +4,0 nC</text><text x=\"296\" y=\"52\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 2,0·10⁻⁸ kg</text><text x=\"296\" y=\"84\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">thả từ nghỉ ở M</text><text x=\"296\" y=\"150\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">tới bản âm:</text><text x=\"296\" y=\"168\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 10 m/s</text></svg><figcaption>Dữ kiện: hạt thả từ nghỉ ở M, đi thẳng xuống theo đường sức. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hạt bụi $q=+4{,}0$ nC, $m=2{,}0\\cdot10^{-8}$ kg, thả từ trạng thái nghỉ tại M\"</td><td>$q=+4{,}0\\cdot10^{-9}$ C; $m=2{,}0\\cdot10^{-8}$ kg; $v_M=0$</td><td>Động năng ban đầu của hạt</td></tr><tr><td>\"bản trên dương, bản dưới âm; M cách bản âm 5,0 cm\"</td><td>M cách bản âm 5,0 cm; đường sức đi xuống</td><td>Chiều lực lên $q\\gt0$; hạt đi dọc đường sức</td></tr><tr><td>\"đi thẳng xuống theo đường sức, tới bản âm với tốc độ 10 m/s\"</td><td>$v=10$ m/s tại bản âm</td><td>Quan hệ giữa công và động năng</td></tr><tr><td>\"chỉ có lực điện tác dụng\"</td><td>Không còn lực nào khác</td><td>⚠ Chỉ có lực điện tác dụng</td></tr><tr><td>\"công của lực điện từ M tới bản âm\"</td><td>Cần $A$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"cường độ điện trường\"</td><td>Cần $E$</td><td>Công và hình chiếu của đoạn đi lên đường sức</td></tr><tr><td>\"tốc độ khi đi qua P, cách bản âm 2,0 cm\"</td><td>Cần $v_P$</td><td>Đoạn từ M tới P có hình chiếu bao nhiêu? Từ nghỉ nên công bằng gì?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thả từ nghỉ, chỉ có lực điện</b> và <b>tốc độ</b> → nghĩ tới <b>công = động năng</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của lực điện từ M tới bản âm",
+     "hoi": "Công của lực điện từ M tới bản âm bằng bao nhiêu? (nhập số, đơn vị $10^{-6}$ J)",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "×10⁻⁶ J",
+     "loi_hay_gap": "Dùng $mv^2$ (thiếu hệ số một nửa) hoặc dùng $mgh$ cho lực điện."
+    },
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường E bằng bao nhiêu V/m?",
+     "dap_so": 5000,
+     "sai_so": 50,
+     "don_vi": "V/m",
+     "loi_hay_gap": "Dùng khoảng cách đổi sai (cm thay vì m) nên $E$ lệch $100$ lần; hoặc lấy công chia cho $q$ mà quên chia cho $d$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt công bằng $qEd$ với $d$ là khoảng từ M tới bản âm",
+       "dung": true
+      },
+      {
+       "text": "Lấy $E=\\dfrac{A}{q}$",
+       "dung": false,
+       "vi_sao": "$A/q$ là hiệu điện thế, đơn vị V; cần chia thêm cho $d$ (công $A=qEd$) mới ra cường độ điện trường."
+      },
+      {
+       "text": "Lấy $E=\\dfrac{mv^2}{qd}$",
+       "dung": false,
+       "vi_sao": "Công bằng $\\tfrac12mv^2$, có hệ số một nửa; thiếu hệ số này làm $E$ gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực điện từ M tới P",
+     "hoi": "Công của lực điện từ M tới P bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Lấy $d$ là khoảng cách từ P tới bản âm (đoạn P tới mốc) thay vì hình chiếu của đoạn MP.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hình chiếu của đoạn MP lên đường sức nhân $qE$",
+       "dung": true
+      },
+      {
+       "text": "Lấy khoảng cách từ P tới bản âm làm $d$",
+       "dung": false,
+       "vi_sao": "Đó là $d$ của đoạn từ P tới mốc, cho thế năng $W_P$; công của đoạn MP dùng hình chiếu của MP."
+      },
+      {
+       "text": "Lấy luôn công cả đoạn tới bản âm",
+       "dung": false,
+       "vi_sao": "Hạt mới tới P, chưa tới bản âm; công của đoạn MP nhỏ hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ tại P",
+     "hoi": "Tốc độ của hạt tại P bằng bao nhiêu m/s?",
+     "dap_so": 7.7,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cho rằng tốc độ tỉ lệ thuận với quãng đường đã đi, hoặc dùng $d$ của đoạn P tới bản âm làm công.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ nghỉ: đặt công bằng động năng tại P rồi giải ra $v_P$",
+       "dung": true
+      },
+      {
+       "text": "Tốc độ tỉ lệ thuận với quãng đường đã đi nên lấy theo tỉ lệ so với tốc độ ở bản âm",
+       "dung": false,
+       "vi_sao": "Lực điện không đổi nên $v^2$ tỉ lệ quãng đường, không phải $v$."
+      },
+      {
+       "text": "Dùng lại tốc độ ở bản âm vì hạt chỉ chịu lực điện",
+       "dung": false,
+       "vi_sao": "Tốc độ tăng dần theo quãng đường; tốc độ ở bản âm là giá trị cuối, không phải tại P."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ]
+  }
+ ]
+}
