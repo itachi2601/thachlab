@@ -45,15 +45,25 @@ export function policyError(error: unknown): Error {
   if (e.code === 'PGRST202' || e.code === '42P01' || e.code === '42703') return new Error('Quy chế tháng 10 chưa được kích hoạt trên hệ thống. Thầy cần cập nhật dữ liệu trước khi sử dụng.');
   return new Error(e.message || 'Không tải được dữ liệu trợ giảng.');
 }
+/** Thầy chốt 2/11/2026: riêng tháng 10/2026 tiền = tổng giờ × đơn giá, không hệ số, không tiền chấm bài. Chỉ đổi cách hiển thị; hàm ta_monthly_policy không đổi. */
+export const FLAT_PAY_MONTH = '2026-10-01';
+export function applyFlatPay(s: MonthPolicy): MonthPolicy {
+  if (s.month !== FLAT_PAY_MONTH) return s;
+  const rate = s.hourly_rate;
+  const pay = (h: number) => (rate === null ? null : Math.round(h * rate));
+  const class_pay = pay(s.class_hours), teaching_pay = pay(s.teaching_hours), tutoring_pay = pay(s.tutoring_hours);
+  const total_pay = rate === null ? null : Math.round((s.class_hours + s.teaching_hours + s.tutoring_hours) * rate);
+  return { ...s, class_factor: 1, class_pay, teaching_pay, tutoring_pay, grading_pay: 0, total_pay };
+}
 export async function getPolicyMonth(id: string, month: string): Promise<MonthPolicy> {
   const { data, error } = await getSupabase().rpc('ta_monthly_policy', { p_assistant_id: id, p_month: month });
   if (error) throw policyError(error);
-  return data as MonthPolicy;
+  return applyFlatPay(data as MonthPolicy);
 }
 export async function savePolicyMonth(id: string, month: string, scores: MonthPolicy['overrides'], rate: number | null, note: string, close: boolean): Promise<MonthPolicy> {
   const { data, error } = await getSupabase().rpc('ta_save_month_review', { p_assistant_id: id, p_month: month, p_scores: scores, p_rate: rate, p_note: note, p_close: close });
   if (error) throw policyError(error);
-  return data as MonthPolicy;
+  return applyFlatPay(data as MonthPolicy);
 }
 export async function getPolicySessions(id: string, month: string): Promise<TaSessionRow[]> {
   const end = new Date(`${month}T12:00:00Z`); end.setUTCMonth(end.getUTCMonth() + 1);
