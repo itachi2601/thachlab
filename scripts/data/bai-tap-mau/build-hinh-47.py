@@ -48,7 +48,7 @@ def nhan(k):
     # (1) tam giác cảnh báo
     b += poly([(40, 120), (80, 50), (120, 120), (40, 120)], ORG, 3) + lbl(80, 108, "độc", ORG, 14, "middle", "700")
     # (2) tròn đỏ gạch chéo
-    b += f'<circle cx="170" cy="85" r="34" fill="none" stroke="{RED}" stroke-width="4"/>' + seg(146, 61, 194, 109, RED, 4) + lbl(170, 90, "rác", "currentColor", 13, "middle", "600")
+    b += f'<circle cx="170" cy="85" r="34" fill="none" stroke="{RED}" stroke-width="4"/>' + seg(146, 61, 194, 109, RED, 4) + lbl(170, 132, "rác", "currentColor", 12, "middle", "600")
     # (3) tròn xanh
     b += f'<circle cx="260" cy="85" r="34" fill="none" stroke="{BLUE}" stroke-width="4"/>' + lbl(260, 90, "mặt nạ", BLUE, 12, "middle", "700")
     # (4) không khung: cốc vỡ

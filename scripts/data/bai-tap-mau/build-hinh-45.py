@@ -73,8 +73,8 @@ def d1(k):
     if k == 0:
         pts = [(P1[0] + (P2[0] - P1[0]) * t / 20, P1[1] + (P2[1] - P1[1]) * t / 20) for t in range(21)]
         b += dot(*P1, 5, ORG) + dot(*P2, 5, ORG) + lbl(P1[0] + 8, P1[1] - 10, "lần 1: 0,20 A · 1,36 V", ORG, 13, "start", "700")
-        b += lbl(P2[0] + 10, P2[1] + 4, "lần 2: 0,60 A · 1,00 V", ORG, 13, "start", "700")
-        b += lbl(OX + 160, OY - 34, "vặn Rₓ nhỏ dần: I tăng, U giảm", "currentColor", 12, "middle", "400")
+        b += lbl(P2[0] - 10, P2[1] + 18, "lần 2: 0,60 A · 1,00 V", ORG, 13, "end", "700")
+        b += lbl(OX + 160, OY + 20, "vặn Rₓ nhỏ dần: I tăng, U giảm", "currentColor", 12, "middle", "400")
         b += ball(pts, 0, 0.1)
         return fig("d1-0", VB, "Hai điểm đo (I, U) của một pin; chấm chạy từ lần 1 sang lần 2 khi vặn biến trở", b,
                    "Mô phỏng: chấm chạy từ lần đo 1 sang lần đo 2 khi vặn biến trở (1 s thật = 1 s). " + NOTE)
