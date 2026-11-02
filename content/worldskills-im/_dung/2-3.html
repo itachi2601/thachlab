@@ -1,0 +1,1713 @@
+<p>Nguồn: <code>WS2026_TP01_Pneumatics Build</code> — bản vẽ Festo FluidDRAW, 6 tờ: 1 Mục lục + lịch sử sửa đổi, 2 Air Prep (xử lý khí), 3 Main Circuit (mạch điều khiển), 4 Actuators (cơ cấu chấp hành), 5 Parts List (danh sách linh kiện), 6 Tubing List (danh sách ống). Vẽ: ACK (Jim Ackert, Festo), 2026-09-08, rev 13. Tiêu đề: &quot;2026 WS Industrial Mechanic 01 — WorldSkills Shanghai 2026&quot;.</p>
+<div class="tl-box">
+<p><strong>Dùng để huấn luyện</strong></p>
+<ul>
+<li><strong>Điểm liên quan:</strong> E1 đi ống <strong>10.4</strong>, F1 vận hành <strong>7.5</strong> (chuỗi đúng 2.0, khoá liên động 2.0), G1 sửa lỗi FluidSIM <strong>2.5</strong> = <strong>20.4 điểm</strong> phụ thuộc vào việc thuộc sơ đồ này.</li>
+<li><strong>Điểm dễ lấy:</strong> 74 ống đều có tên WQG1–WQG74 với điểm đầu, điểm cuối, số cổng và đường kính — lắp theo bảng ống như theo &quot;công thức&quot;, đánh dấu từng ống đã lắp; dùng đúng Ø4 cho tín hiệu, Ø6 cho nguồn và xi lanh.</li>
+<li><strong>Bẫy mất điểm:</strong> cổng <strong>12 và 14</strong> trên van VUWG-L10-B52 đổi chỗ → xi lanh chạy ngược chuỗi (−2 điểm/lượt thử thêm); cảm biến SMPO-8E gắn sai đầu xi lanh; tiết lưu GRLA lắp ngược chiều (chỉnh xả); quên nút bịt (B-M5-B, B-M7, B-1/8) → xì khí; ống bẹp dưới dây rút; <strong>không khoá khí</strong> (van đóng/mở trên MS4) trước khi tháo ống = vi phạm an toàn −0.5.</li>
+</ul>
+</div>
+<h3 id="1-chuoi-hoat-dong-circuit-sequence-giai-thich-bang-loi">1. Chuỗi hoạt động (Circuit Sequence) — giải thích bằng lời</h3>
+<p><strong>Circuit Sequence: (MM1+, MM2+ &amp; MM3+, MM4+) (MM1−, MM2− &amp; MM3−, MM4−)</strong></p>
+<p>Bốn xi lanh (tờ 4, &quot;Actuators&quot;):</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Mã</th>
+<th>Tên trên sơ đồ</th>
+<th>Xi lanh Festo</th>
+<th>Vai trò</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-MMB1 (MM1)</td>
+<td>Clamping Cylinder</td>
+<td>AEN-32-10-A-P-A (Ø32, hành trình 10, cần piston lùi vào)</td>
+<td><strong>Kẹp phôi</strong> lên khối cối 401; cần có khớp tự lựa FK-M12×1,25</td>
+</tr>
+<tr>
+<td>-MMB2 (MM2)</td>
+<td>Bending Cylinder 1</td>
+<td>ADN-32-30-A-P-A (Ø32, hành trình 30)</td>
+<td><strong>Uốn cánh trái</strong>: kéo con trượt gót 302 dọc má uốn</td>
+</tr>
+<tr>
+<td>-MMB3 (MM3)</td>
+<td>Bending Cylinder 2</td>
+<td>ADN-32-30-A-P-A</td>
+<td><strong>Uốn cánh phải</strong> (đồng thời với MM2)</td>
+</tr>
+<tr>
+<td>-MMB4 (MM4)</td>
+<td>Punch Cylinder</td>
+<td>ADN-S-50-20-A-P-A (Ø50, hành trình 20)</td>
+<td><strong>Đột lỗ</strong> Ø6.5 qua tấm mang chày 403</td>
+</tr>
+</tbody></table>
+<p>[Ghi chú dịch: tờ 4 rev 13 ghi mã xi lanh là <strong>-MMB1…-MMB4</strong> (ba chữ, EN IEC 81346-2:2019), còn dòng Circuit Sequence trên tờ 1, đề A2 và thang điểm F1 viết tắt <strong>MM1…MM4</strong>. Cùng một xi lanh. Bản dịch dùng MM1…MM4 khi nói về chuỗi, -MMB khi tra bảng linh kiện.]</p>
+<p>Diễn giải một chu trình (dấu + = đi ra/duỗi, − = đi về/co):</p>
+<ol>
+<li><strong>Điều kiện khởi động:</strong> khí đã cấp qua bộ xử lý -AZA1 (8.0 bar); <strong>cửa chắn đóng</strong> → công tắc cửa -QMA1 (VMEF-RT-M32, &quot;Gate Switch&quot;) được nhấn, cho khí qua; <strong>có phôi</strong> → chốt báo phôi 103 nhấn van con lăn -QMA2 (R-3-M5, &quot;Part Present&quot;); công tắc chọn -SGA1 (N-22-SW, &quot;Reset Switch&quot;) ở vị trí chạy.</li>
+<li><strong>Nhấn hai nút cùng lúc</strong> -SGC1 và -SGC2 (T-22-GE trên van SV-3-M5 -QMA3, -QMA4) → khối hai tay -QMA6 (ZSB-1/8-B) chỉ cho tín hiệu ra khi hai nút nhấn gần đồng thời (an toàn hai tay).</li>
+<li><strong>Bước 1 — MM1+:</strong> tín hiệu khởi động đặt van -QMA7 (VUWG-L10-M52, 5/2 lò xo) và qua -QMA9 → van 5/3 -QMA20 (VUWG-L10-P53C-M7) cấp khí cho <strong>MM1 đi ra, kẹp phôi</strong>. Tốc độ do tiết lưu -RNB1 (GR-M5X2-B).</li>
+<li><strong>Bước 2 — MM2+ &amp; MM3+:</strong> cảm biến cuối hành trình MM1 (-QMA8, SMPO-8E) báo kẹp xong → qua van -QMA12 → van -QMA21 cấp khí cho <strong>MM2 và MM3 cùng đi ra, uốn hai cánh</strong> (ống chia bằng chữ Y -XMA20, -XMA21; tiết lưu -RNB2…-RNB5).</li>
+<li><strong>Bước 3 — MM4+:</strong> cảm biến cuối hành trình MM2 và MM3 (-QMA10, -QMA14) qua phần tử <strong>AND</strong> -KHB3/-KHB4/-KHB5 (ZK-PK-3) → van -QMA15/-QMA16 → van -QMA22 cấp khí cho <strong>MM4 đi ra, đột lỗ</strong> (tiết lưu -RNB6, -RNB7).</li>
+<li><strong>Bước 4 — MM1−:</strong> cảm biến cuối hành trình MM4 (-QMA18) đổi trạng thái → <strong>MM1 đi về, nhả kẹp</strong>.</li>
+<li><strong>Bước 5 — MM2− &amp; MM3−:</strong> cảm biến đầu hành trình MM1 (-QMA11) → <strong>MM2, MM3 đi về</strong>.</li>
+<li><strong>Bước 6 — MM4−:</strong> cảm biến đầu hành trình MM2, MM3 (-QMA13, -QMA17) qua AND → <strong>MM4 đi về</strong>. Máy sẵn sàng chu trình mới; chuỗi đúng = F1 2.0 điểm.</li>
+<li><strong>Khoá liên động (interlock):</strong> mở cửa chắn (QMA1 nhả) hoặc rút phôi (QMA2 nhả) thì nguồn khí điều khiển cắt → máy dừng/không khởi động — F1 2.0 điểm. Phần tử <strong>OR</strong> -KHB1, -KHB2 (OS-PK-3) gom tín hiệu reset/điều kiện.</li>
+</ol>
+<p>[Ghi chú dịch: thứ tự cảm biến–van trong các bước 3–8 suy ra từ bảng ống WQG và vị trí phần tử; muốn luyện chi tiết hãy mở sơ đồ PDF tờ 3–4 và dò theo từng WQG trong mục 4.]</p>
+<h3 id="2-ma-tham-chieu-reference-designation-en-iec-81346-2-2019">2. Mã tham chiếu (Reference designation, EN IEC 81346-2:2019)</h3>
+<p>Mỗi phần tử có mã bắt đầu bằng dấu &quot;-&quot; + 3 chữ (lớp đối tượng) + số thứ tự; phần tử con nối tiếp bằng &quot;-&quot;: ví dụ <code>-QMA5-XMA1</code> = đầu nối số 1 của van số 5; <code>-AZA2-XMA1-RND1</code> = nút bịt 1 trên đầu nối 1 của thanh gom 2.</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Mã</th>
+<th>Lớp đối tượng (EN)</th>
+<th>Nghĩa VI</th>
+<th>Ví dụ trong sơ đồ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-MMB</td>
+<td>Pneumatic linear actuator (cylinder)</td>
+<td><strong>Xi lanh</strong> khí nén (MM trong chuỗi)</td>
+<td>-MMB1 kẹp, -MMB2/-MMB3 uốn, -MMB4 đột</td>
+</tr>
+<tr>
+<td>-QMA</td>
+<td>Valve, directional / control</td>
+<td><strong>Van</strong> phân phối, van hành trình, nút nhấn van, cảm biến khí</td>
+<td>-QMA1 công tắc cửa, -QMA2 báo phôi, -QMA3/-QMA4 nút hai tay, -QMA5 van chọn SV-5, -QMA6 khối hai tay, -QMA7/-QMA9/-QMA12/-QMA15/-QMA16 van 5/2, -QMA8/-QMA10/-QMA11/-QMA13/-QMA14/-QMA17/-QMA18/-QMA19 cảm biến SMPO-8E, -QMA20…-QMA22 van 5/3 cấp xi lanh</td>
+</tr>
+<tr>
+<td>-KHB</td>
+<td>Logic element (pneumatic)</td>
+<td><strong>Phần tử logic</strong> AND / OR</td>
+<td>-KHB1, -KHB2 OR (OS-PK-3); -KHB3…-KHB5 AND (ZK-PK-3)</td>
+</tr>
+<tr>
+<td>-KHA</td>
+<td>Pressure control / regulating element</td>
+<td>Phần tử điều áp (trong bộ xử lý khí)</td>
+<td>-AZA1-KHA1</td>
+</tr>
+<tr>
+<td>-XMA</td>
+<td>Connector, fitting</td>
+<td><strong>Đầu nối</strong> ống (thẳng, L, T, Y)</td>
+<td>-XMA2, -XMA3 chữ T Ø6; -XMA4…-XMA19 chữ T/Y Ø4; -XMA20, -XMA21 chữ Y Ø6</td>
+</tr>
+<tr>
+<td>-GQA</td>
+<td>Pneumatic supply (compressor / air source)</td>
+<td><strong>Nguồn khí</strong> nén</td>
+<td>-GQA1</td>
+</tr>
+<tr>
+<td>-AZA</td>
+<td>Assembly / unit (air preparation, manifold)</td>
+<td><strong>Cụm</strong>: bộ xử lý khí, thanh gom</td>
+<td>-AZA1 bộ xử lý MS4; -AZA2 thanh gom VABM</td>
+</tr>
+<tr>
+<td>-SGC</td>
+<td>Manual control, pushbutton</td>
+<td><strong>Nút nhấn</strong> (tay)</td>
+<td>-SGC1, -SGC2 (T-22-GE) hai tay</td>
+</tr>
+<tr>
+<td>-SGA</td>
+<td>Manual control, selector switch</td>
+<td><strong>Công tắc chọn</strong></td>
+<td>-SGA1 (N-22-SW) Reset</td>
+</tr>
+<tr>
+<td>-RNB</td>
+<td>Flow restrictor (flow control)</td>
+<td><strong>Tiết lưu</strong> một chiều</td>
+<td>-RNB1 (GR-M5X2-B), -RNB2…-RNB7 (GRLA-1/8-QS-6-D)</td>
+</tr>
+<tr>
+<td>-RND</td>
+<td>Blanking (closing) element</td>
+<td><strong>Nút bịt</strong> cổng</td>
+<td>-QMA7-RND1, -AZA2-XMA1-RND1</td>
+</tr>
+<tr>
+<td>-RMB</td>
+<td>Blanking plug (M7)</td>
+<td>Nút bịt (trên van P53C)</td>
+<td>-QMA20-RMB1</td>
+</tr>
+<tr>
+<td>-RQC</td>
+<td>Silencer</td>
+<td><strong>Bộ giảm thanh</strong></td>
+<td>-QMA1-RQC1, -QMA5-RQC2</td>
+</tr>
+<tr>
+<td>-UQA</td>
+<td>Mounting (sensor kit)</td>
+<td>Bộ gá cảm biến</td>
+<td>-QMA8-UQA1 (SMB-8E)</td>
+</tr>
+<tr>
+<td>-UPA / -UPB</td>
+<td>Mounting accessory (flange / foot, coupler)</td>
+<td>Mặt bích xoay / đế chạc, khớp nối cần</td>
+<td>-MMB2-UPA1 (SNCS-32), -MMB2-UPB1 (LBG-32), -MMB1-UPB1 (FK-M12X1,25)</td>
+</tr>
+<tr>
+<td>WQG1…WQG74</td>
+<td>Pneumatic tubing (line)</td>
+<td><strong>Ống</strong> khí số 1…74</td>
+<td>xem mục 4</td>
+</tr>
+<tr>
+<td>P1…P9</td>
+<td>Page connector</td>
+<td>Mối nối liên trang (tín hiệu sang tờ khác), ví dụ <code>P4 /4.D3</code> = tiếp ở tờ 4 ô D3</td>
+<td></td>
+</tr>
+<tr>
+<td>/2.E4</td>
+<td>Location</td>
+<td>Vị trí trên bản vẽ: tờ 2, hàng E, cột 4</td>
+<td></td>
+</tr>
+<tr>
+<td>1, 2, 3, 4, 5 / 12, 14 / P(1), A(2), R(3)</td>
+<td>Port numbers (ISO 11727)</td>
+<td>Số cổng van: 1 = cấp khí, 2, 4 = ra làm việc, 3, 5 = xả, 12/14 = cổng điều khiển (đẩy sang nối 1→2 / 1→4); P/A/R là ký hiệu cũ trên SV-3-M5</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="3-danh-sach-linh-kien-parts-list-to-5-ma-festo-giu-nguyen">3. Danh sách linh kiện (Parts List, tờ 5) — mã Festo giữ nguyên</h3>
+<p>Cột: Pos. (số vị trí trên BOM), Part number (mã đặt hàng Festo), Quantity, Order code (mã kiểu), Item name, mô tả VI, Identification (mã tham chiếu các phần tử dùng mã này), Location (tờ.ô). Nhà cung cấp: Festo cho mọi dòng.</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Pos.</th>
+<th>Mã Festo</th>
+<th>SL</th>
+<th>Mã kiểu (Order code)</th>
+<th>Tên EN</th>
+<th>Mô tả VI</th>
+<th>Mã tham chiếu (Identification)</th>
+<th>Vị trí sơ đồ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>20</td>
+<td>531666</td>
+<td>1</td>
+<td>KS3-1/4-A</td>
+<td>Quick coupling plug</td>
+<td>Đầu cắm khớp nối nhanh (phía ống cấp khí)</td>
+<td>-AZA1-QMA1-XMA1</td>
+<td>/2.E4</td>
+</tr>
+<tr>
+<td>30</td>
+<td>8098373</td>
+<td>1</td>
+<td>MS4-EM1FR-1/4-D6-C-P-M-AG-BAR-WPE-B</td>
+<td>Service unit</td>
+<td>Bộ xử lý khí: van đóng/mở + lọc 5 µm + điều áp có đồng hồ bar (đặt 8.0 bar)</td>
+<td>-AZA1</td>
+<td>/2.E5</td>
+</tr>
+<tr>
+<td>40</td>
+<td>186118</td>
+<td>1</td>
+<td>QSL-G1/4-6</td>
+<td>Push-in L-fitting</td>
+<td>Đầu nối cắm nhanh chữ L (cút góc)</td>
+<td>-AZA1-KHA1-XMA1</td>
+<td>/2.E5</td>
+</tr>
+<tr>
+<td>50</td>
+<td>2316</td>
+<td>1</td>
+<td>U-1/4</td>
+<td>Silencer</td>
+<td>Bộ giảm thanh (ống xả)</td>
+<td>-AZA1-QMA1-RQC1</td>
+<td>/2.E5</td>
+</tr>
+<tr>
+<td>60</td>
+<td>8049239</td>
+<td>1</td>
+<td>VMEF-RT-M32-M-G18</td>
+<td>Roller lever valve</td>
+<td>Van cần con lăn 3/2 (van hành trình)</td>
+<td>-QMA1</td>
+<td>/2.E6</td>
+</tr>
+<tr>
+<td>70</td>
+<td>186107</td>
+<td>3</td>
+<td>QS-G1/8-6-I</td>
+<td>Push-in fitting</td>
+<td>Đầu nối cắm nhanh thẳng</td>
+<td>-QMA1-XMA1, -QMA1-XMA2, -AZA2-XMA1-XMA1</td>
+<td>/2.E6, /2.E6, /4.C4</td>
+</tr>
+<tr>
+<td>80</td>
+<td>153134</td>
+<td>2</td>
+<td>QST-6-4</td>
+<td>Push-in T-connector</td>
+<td>Đầu nối cắm nhanh chữ T</td>
+<td>-XMA2, -XMA3</td>
+<td>/2.E6, /2.E7</td>
+</tr>
+<tr>
+<td>90</td>
+<td>1206622</td>
+<td>4</td>
+<td>AMTE-M-H-G18</td>
+<td>Silencer</td>
+<td>Bộ giảm thanh (ống xả)</td>
+<td>-AZA2-XMA5-RQC1, -QMA1-RQC1, -QMA6-RQC1, -AZA2-XMA5-RQC2</td>
+<td>/4.C8, /2.E6, /3.B4, /4.C8</td>
+</tr>
+<tr>
+<td>190</td>
+<td>153333</td>
+<td>18</td>
+<td>QSML-M5-4</td>
+<td>Push-in L-fitting</td>
+<td>Đầu nối cắm nhanh chữ L (cút góc)</td>
+<td>-QMA5-XMA1, -QMA5-XMA3, -QMA15-XMA3, -QMA12-XMA3, -QMA15-XMA2, -QMA16-XMA1, -QMA5-XMA2, -QMA7-XMA1, -QMA20-XMA3, -QMA20-XMA1, -QMA16-XMA3, -QMA21-XMA1, -QMA21-XMA4, -QMA9-XMA3, -QMA22-XMA1, -QMA9-XMA1, -QMA22-XMA4, -QMA12-XMA1</td>
+<td>/3.B8, /3.B8, /3.E5, /3.D5, /3.E4, /3.E4, /3.B8, /3.B7, /4.D5, /4.D4, /3.E5, /4.D5, /4.D6, /3.C5, /4.D6, /3.C5, /4.D7, /3.D5</td>
+</tr>
+<tr>
+<td>310</td>
+<td>566559</td>
+<td>1</td>
+<td>VABM-L1-10S-G18-3</td>
+<td>Manifold rail</td>
+<td>Thanh gom (manifold) cho van VUWG</td>
+<td>-AZA2</td>
+<td>/4.C4</td>
+</tr>
+<tr>
+<td>480</td>
+<td>197383</td>
+<td>1</td>
+<td>PUN-H-4X0,75-BL</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø4 × 0.75, màu xanh (BL) — cuộn</td>
+<td>—</td>
+<td>/2.F8</td>
+</tr>
+<tr>
+<td>490</td>
+<td>197390</td>
+<td>1</td>
+<td>PUN-H-4X0,75-SW</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø4 × 0.75, màu đen (SW) — cuộn</td>
+<td>—</td>
+<td>/2.E8</td>
+</tr>
+<tr>
+<td>500</td>
+<td>558278</td>
+<td>1</td>
+<td>PUN-H-4X0,75-SI</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø4 × 0.75, màu bạc (SI) — cuộn</td>
+<td>—</td>
+<td>/2.E8</td>
+</tr>
+<tr>
+<td>510</td>
+<td>197384</td>
+<td>1</td>
+<td>PUN-H-6X1-BL</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø6 × 1, màu xanh (BL) — cuộn</td>
+<td>—</td>
+<td>/2.E8</td>
+</tr>
+<tr>
+<td>520</td>
+<td>197391</td>
+<td>1</td>
+<td>PUN-H-6X1-SW</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø6 × 1, màu đen (SW) — cuộn</td>
+<td>—</td>
+<td>/2.E8</td>
+</tr>
+<tr>
+<td>530</td>
+<td>558279</td>
+<td>1</td>
+<td>PUN-H-6X1-SI</td>
+<td>Plastic tubing</td>
+<td>Ống nhựa Ø6 × 1, màu bạc (SI) — cuộn</td>
+<td>—</td>
+<td>/2.E8</td>
+</tr>
+<tr>
+<td>540</td>
+<td>531629</td>
+<td>1</td>
+<td>KD3-CK-4</td>
+<td>Quick coupling socket</td>
+<td>Ổ cắm khớp nối nhanh (phía máy)</td>
+<td>-XMA1</td>
+<td>/2.E4</td>
+</tr>
+<tr>
+<td>550</td>
+<td>9301</td>
+<td>1</td>
+<td>N-22-SW</td>
+<td>Selector switch</td>
+<td>Công tắc chọn chế độ (xoay) – Reset</td>
+<td>-SGA1</td>
+<td>/3.B8</td>
+</tr>
+<tr>
+<td>560</td>
+<td>3629</td>
+<td>1</td>
+<td>R-3-M5</td>
+<td>Roller lever valve</td>
+<td>Van cần con lăn 3/2 (van hành trình)</td>
+<td>-QMA2</td>
+<td>/3.A3</td>
+</tr>
+<tr>
+<td>570</td>
+<td>11914</td>
+<td>1</td>
+<td>SV-5-M5-B</td>
+<td>Front panel valve</td>
+<td>Van gắn mặt máy 3/2 (SV-3) hoặc 5/2 (SV-5), tác động nút nhấn</td>
+<td>-QMA5</td>
+<td>/3.B8</td>
+</tr>
+<tr>
+<td>580</td>
+<td>574254</td>
+<td>1</td>
+<td>VUWG-L10-M52-M-M5</td>
+<td>Pneumatic valve</td>
+<td>Van phân phối khí nén (VUWG-L10: 5/2 tác động khí hai phía B52, hoặc một phía lò xo M52; P53C = 5/3 vị trí giữa đóng)</td>
+<td>-QMA7</td>
+<td>/3.B7</td>
+</tr>
+<tr>
+<td>590</td>
+<td>576656</td>
+<td>1</td>
+<td>ZSB-1/8-B</td>
+<td>Control block for two-hand start</td>
+<td>Khối điều khiển khởi động hai tay (ZSB)</td>
+<td>-QMA6</td>
+<td>/3.B4</td>
+</tr>
+<tr>
+<td>600</td>
+<td>174308</td>
+<td>2</td>
+<td>B-M5-B</td>
+<td>Blanking plug</td>
+<td>Nút bịt cổng</td>
+<td>-QMA7-RND1, -QMA9-RND1</td>
+<td>/3.B7, /3.C5</td>
+</tr>
+<tr>
+<td>610</td>
+<td>6817</td>
+<td>2</td>
+<td>SV-3-M5</td>
+<td>Front panel valve</td>
+<td>Van gắn mặt máy 3/2 (SV-3) hoặc 5/2 (SV-5), tác động nút nhấn</td>
+<td>-QMA3, -QMA4</td>
+<td>/3.B3, /3.B5</td>
+</tr>
+<tr>
+<td>620</td>
+<td>186095</td>
+<td>3</td>
+<td>QS-G1/8-4</td>
+<td>Push-in fitting</td>
+<td>Đầu nối cắm nhanh thẳng</td>
+<td>-QMA6-XMA3, -QMA6-XMA2, -QMA6-XMA1</td>
+<td>/3.B4, /3.C4, /3.B3</td>
+</tr>
+<tr>
+<td>630</td>
+<td>1206621</td>
+<td>14</td>
+<td>AMTE-M-H-M5</td>
+<td>Silencer</td>
+<td>Bộ giảm thanh (ống xả)</td>
+<td>-QMA7-RQC2, -QMA12-RQC2, -QMA9-RQC1, -QMA4-RQC1, -QMA5-RQC2, -QMA3-RQC1, -QMA15-RQC1, -QMA15-RQC2, -QMA5-RQC1, -QMA16-RQC1, -QMA16-RQC2, -QMA12-RQC1, -QMA7-RQC1, -QMA9-RQC2</td>
+<td>/3.B7, /3.D5, /3.C5, /3.B5, /3.B8, /3.B3, /3.E5, /3.E5, /3.B8, /3.E4, /3.E5, /3.D5, /3.B7, /3.C5</td>
+</tr>
+<tr>
+<td>640</td>
+<td>130831</td>
+<td>14</td>
+<td>QSMLV-M5-4-I</td>
+<td>Push-in L-fitting</td>
+<td>Đầu nối cắm nhanh chữ L (cút góc)</td>
+<td>-QMA12-XMA5, -QMA7-XMA2, -QMA4-XMA1, -QMA4-XMA2, -QMA12-XMA4, -QMA16-XMA2, -QMA15-XMA5, -QMA15-XMA4, -QMA3-XMA1, -QMA7-XMA3, -QMA3-XMA2, -QMA15-XMA1, -QMA12-XMA2, -QMA9-XMA4</td>
+<td>/3.D5, /3.B7, /3.B5, /3.B5, /3.D5, /3.E4, /3.E5, /3.E5, /3.B3, /3.B7, /3.B3, /3.E5, /3.D5, /3.C5</td>
+</tr>
+<tr>
+<td>650</td>
+<td>178230</td>
+<td>8</td>
+<td>SMB-8E</td>
+<td>Mounting kit</td>
+<td>Bộ gá cảm biến lên xi lanh</td>
+<td>-QMA11-UQA1, -QMA13-UQA1, -QMA10-UQA1, -QMA8-UQA1, -QMA14-UQA1, -QMA17-UQA1, -QMA18-UQA1, -QMA19-UQA1</td>
+<td>/3.D4, /3.D3, /3.D4, /3.C7, /3.D4, /3.G4, /3.G4, /3.G6</td>
+</tr>
+<tr>
+<td>660</td>
+<td>153128</td>
+<td>12</td>
+<td>QST-4</td>
+<td>Push-in T-connector</td>
+<td>Đầu nối cắm nhanh chữ T</td>
+<td>-XMA10, -XMA18, -XMA11, -XMA19, -XMA16, -XMA7, -XMA9, -XMA13, -XMA6, -XMA4, -XMA17, -XMA14</td>
+<td>/3.C5, /3.D8, /3.F6, /3.F8, /3.D7, /3.F5, /3.F5, /3.F3, /3.C4, /3.A3, /3.E7, /3.A7</td>
+</tr>
+<tr>
+<td>670</td>
+<td>178563</td>
+<td>8</td>
+<td>SMPO-8E</td>
+<td>Proximity sensor</td>
+<td>Cảm biến tiệm cận khí nén (báo vị trí piston, SMPO-8E)</td>
+<td>-QMA18, -QMA19, -QMA14, -QMA10, -QMA13, -QMA17, -QMA11, -QMA8</td>
+<td>/3.G4, /3.G6, /3.D4, /3.D4, /3.D3, /3.G4, /3.D4, /3.C7</td>
+</tr>
+<tr>
+<td>680</td>
+<td>153315</td>
+<td>5</td>
+<td>QSM-M5-4-I</td>
+<td>Push-in fitting</td>
+<td>Đầu nối cắm nhanh thẳng</td>
+<td>-QMA2-XMA2, -QMA2-XMA1, -QMA16-XMA4, -QMA16-XMA5, -QMA9-XMA2</td>
+<td>/3.A3, /3.A3, /3.E4, /3.E5, /3.C5</td>
+</tr>
+<tr>
+<td>690</td>
+<td>573809</td>
+<td>4</td>
+<td>VUWG-L10-B52-M5</td>
+<td>Pneumatic valve</td>
+<td>Van phân phối khí nén (VUWG-L10: 5/2 tác động khí hai phía B52, hoặc một phía lò xo M52; P53C = 5/3 vị trí giữa đóng)</td>
+<td>-QMA15, -QMA16, -QMA9, -QMA12</td>
+<td>/3.E5, /3.E4, /3.C5, /3.D5</td>
+</tr>
+<tr>
+<td>700</td>
+<td>9290</td>
+<td>2</td>
+<td>T-22-GE</td>
+<td>Pushbutton actuator</td>
+<td>Nút nhấn (đầu tác động cho SV-3-M5), màu vàng GE</td>
+<td>-SGC2, -SGC1</td>
+<td>/3.B4, /3.B3</td>
+</tr>
+<tr>
+<td>710</td>
+<td>6685</td>
+<td>3</td>
+<td>ZK-PK-3</td>
+<td>AND gate</td>
+<td>Phần tử AND (van hai áp)</td>
+<td>-KHB3, -KHB5, -KHB4</td>
+<td>/3.G3, /3.G7, /3.G5</td>
+</tr>
+<tr>
+<td>720</td>
+<td>153344</td>
+<td>15</td>
+<td>QSML-4</td>
+<td>Push-in L-connector</td>
+<td>Đầu nối cắm nhanh chữ L (ống–ống)</td>
+<td>-KHB2-XMA1, -KHB1-XMA2, -KHB2-XMA2, -KHB2-XMA3, -KHB3-XMA1, -KHB3-XMA3, -KHB4-XMA1, -KHB1-XMA1, -KHB4-XMA2, -KHB4-XMA3, -KHB5-XMA1, -KHB5-XMA3, -KHB5-XMA2, -KHB3-XMA2, -KHB1-XMA3</td>
+<td>/3.E4, /3.D4, /3.E4, /3.E4, /3.G3, /3.G3, /3.G5, /3.D4, /3.G5, /3.G5, /3.G7, /3.G7, /3.G8, /3.G3, /3.E4</td>
+</tr>
+<tr>
+<td>730</td>
+<td>153148</td>
+<td>2</td>
+<td>QSY-4</td>
+<td>Push-in Y-connector</td>
+<td>Đầu nối cắm nhanh chữ Y</td>
+<td>-XMA12, -XMA8</td>
+<td>/3.F6, /3.F4</td>
+</tr>
+<tr>
+<td>740</td>
+<td>6684</td>
+<td>2</td>
+<td>OS-PK-3</td>
+<td>OR gate</td>
+<td>Phần tử OR (van con thoi)</td>
+<td>-KHB2, -KHB1</td>
+<td>/3.E4, /3.D4</td>
+</tr>
+<tr>
+<td>750</td>
+<td>174309</td>
+<td>1</td>
+<td>B-M7</td>
+<td>Blanking plug</td>
+<td>Nút bịt cổng</td>
+<td>-QMA20-RMB1</td>
+<td>/4.D5</td>
+</tr>
+<tr>
+<td>760</td>
+<td>3568</td>
+<td>3</td>
+<td>B-1/8</td>
+<td>Blanking plug</td>
+<td>Nút bịt cổng</td>
+<td>-AZA2-XMA5-RND1, -AZA2-XMA1-RND1, -AZA2-XMA1-RND2</td>
+<td>/4.C8, /4.C4, /4.C4</td>
+</tr>
+<tr>
+<td>770</td>
+<td>566673</td>
+<td>3</td>
+<td>VABD-L1-10X-S-M7</td>
+<td>Seal</td>
+<td>Tấm đệm/kín cho manifold</td>
+<td>-AZA2-XMA4-RNB1, -AZA2-XMA3-RNB1, -AZA2-XMA2-RNB1</td>
+<td>/4.C7, /4.C6, /4.C4</td>
+</tr>
+<tr>
+<td>780</td>
+<td>573826</td>
+<td>3</td>
+<td>VUWG-L10-P53C-M7</td>
+<td>Pneumatic valve</td>
+<td>Van phân phối khí nén (VUWG-L10: 5/2 tác động khí hai phía B52, hoặc một phía lò xo M52; P53C = 5/3 vị trí giữa đóng)</td>
+<td>-QMA22, -QMA21, -QMA20</td>
+<td>/4.D7, /4.D6, /4.D4</td>
+</tr>
+<tr>
+<td>790</td>
+<td>153321</td>
+<td>5</td>
+<td>QSM-M7-6-I</td>
+<td>Push-in fitting</td>
+<td>Đầu nối cắm nhanh thẳng</td>
+<td>-QMA20-XMA2, -QMA21-XMA2, -QMA21-XMA3, -QMA22-XMA3, -QMA22-XMA2</td>
+<td>/4.D4, /4.D5, /4.D6, /4.D7, /4.D7</td>
+</tr>
+<tr>
+<td>800</td>
+<td>8092076</td>
+<td>1</td>
+<td>ADN-S-50-20-A-P-A</td>
+<td>Compact cylinder</td>
+<td>Xi lanh compact tác động kép</td>
+<td>-MMB4</td>
+<td>/4.F7</td>
+</tr>
+<tr>
+<td>810</td>
+<td>536418</td>
+<td>1</td>
+<td>AEN-32-10-A-P-A</td>
+<td>Compact cylinder</td>
+<td>Xi lanh compact tác động kép</td>
+<td>-MMB1</td>
+<td>/4.F4</td>
+</tr>
+<tr>
+<td>820</td>
+<td>6141</td>
+<td>1</td>
+<td>FK-M12X1,25</td>
+<td>Self-aligning rod coupler</td>
+<td>Khớp nối tự lựa cần piston</td>
+<td>-MMB1-UPB1</td>
+<td>/4.F8</td>
+</tr>
+<tr>
+<td>830</td>
+<td>152611</td>
+<td>1</td>
+<td>GR-M5X2-B</td>
+<td>One-way flow control valve</td>
+<td>Van tiết lưu một chiều (chỉnh tốc độ xi lanh)</td>
+<td>-RNB1</td>
+<td>/4.F4</td>
+</tr>
+<tr>
+<td>840</td>
+<td>186117</td>
+<td>1</td>
+<td>QSL-G1/8-6</td>
+<td>Push-in L-fitting</td>
+<td>Đầu nối cắm nhanh chữ L (cút góc)</td>
+<td>-MMB1-XMA1</td>
+<td>/4.F4</td>
+</tr>
+<tr>
+<td>850</td>
+<td>536273</td>
+<td>2</td>
+<td>ADN-32-30-A-P-A</td>
+<td>Compact cylinder</td>
+<td>Xi lanh compact tác động kép</td>
+<td>-MMB3, -MMB2</td>
+<td>/4.F6, /4.F5</td>
+</tr>
+<tr>
+<td>860</td>
+<td>31761</td>
+<td>2</td>
+<td>LBG-32</td>
+<td>Clevis foot</td>
+<td>Đế chạc (chân chạc chữ U) cho xi lanh</td>
+<td>-MMB2-UPB1, -MMB3-UPB1</td>
+<td>/4.F5, /4.F6</td>
+</tr>
+<tr>
+<td>870</td>
+<td>174397</td>
+<td>2</td>
+<td>SNCS-32</td>
+<td>Swivel flange</td>
+<td>Mặt bích xoay (lắp xi lanh lắc được)</td>
+<td>-MMB3-UPA1, -MMB2-UPA1</td>
+<td>/4.F6, /4.F5</td>
+</tr>
+<tr>
+<td>880</td>
+<td>193144</td>
+<td>6</td>
+<td>GRLA-1/8-QS-6-D</td>
+<td>One-way flow control valve</td>
+<td>Van tiết lưu một chiều (chỉnh tốc độ xi lanh)</td>
+<td>-RNB2, -RNB3, -RNB6, -RNB7, -RNB4, -RNB5</td>
+<td>/4.F5, /4.F5, /4.F7, /4.F7, /4.F6, /4.F6</td>
+</tr>
+<tr>
+<td>890</td>
+<td>153317</td>
+<td>2</td>
+<td>QSM-M5-6-I</td>
+<td>Push-in fitting</td>
+<td>Đầu nối cắm nhanh thẳng</td>
+<td>-RNB1-XMA2, -RNB1-XMA1</td>
+<td>/4.F4, /4.E4</td>
+</tr>
+<tr>
+<td>900</td>
+<td>153149</td>
+<td>2</td>
+<td>QSY-6</td>
+<td>Push-in Y-connector</td>
+<td>Đầu nối cắm nhanh chữ Y</td>
+<td>-XMA21, -XMA20</td>
+<td>/4.E6, /4.E5</td>
+</tr>
+<tr>
+<td>Tổng: 46 dòng BOM + 6 cuộn ống. Những thứ <strong>thí sinh phải tự lắp lên tấm 500 và xi lanh</strong>: van VUWG (690, 780) lên thanh gom VABM (310) với đệm (770); nút bịt (600, 750, 760); giảm thanh (90, 630); đầu nối (70, 80, 190, 620, 640, 660, 680, 720, 730, 790, 890, 900); cảm biến SMPO-8E (670) với gá SMB-8E (650); tiết lưu (830, 880); khớp FK (820), đế chạc LBG-32 (860), bích SNCS-32 (870).</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="4-danh-sach-ong-tubing-list-to-6-74-ong">4. Danh sách ống (Tubing List, tờ 6) — 74 ống</h3>
+<p>Cách đọc: ống WQGn đi <strong>từ</strong> phần tử A (cổng x, tờ.ô) <strong>đến</strong> phần tử B (cổng y, tờ.ô), đường kính Ø4 (tín hiệu điều khiển) hoặc Ø6 (nguồn khí và cấp xi lanh). &quot;—&quot; = đầu nối T/Y không ghi số cổng. Thí sinh đánh dấu ✓ vào cột đầu khi đã lắp.</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Pos.</th>
+<th>Ống</th>
+<th>Từ (trang/ô)</th>
+<th>Từ phần tử</th>
+<th>Cổng</th>
+<th>Đến (trang/ô)</th>
+<th>Đến phần tử</th>
+<th>Cổng</th>
+<th>Ø ống</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>WQG1</td>
+<td>/2.D4</td>
+<td>-GQA1</td>
+<td>—</td>
+<td>/2.E4</td>
+<td>-XMA1</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>2</td>
+<td>WQG2</td>
+<td>/2.E5</td>
+<td>-AZA1-KHA1-XMA1</td>
+<td>2</td>
+<td>/2.E6</td>
+<td>-XMA2</td>
+<td>—</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>3</td>
+<td>WQG3</td>
+<td>/2.E7</td>
+<td>-XMA3</td>
+<td>—</td>
+<td>/3.A3</td>
+<td>-XMA4</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>4</td>
+<td>WQG4</td>
+<td>/2.E6</td>
+<td>-XMA2</td>
+<td>—</td>
+<td>/2.E6</td>
+<td>-QMA1-XMA1</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>5</td>
+<td>WQG5</td>
+<td>/2.E6</td>
+<td>-QMA1-XMA2</td>
+<td>2</td>
+<td>/2.E7</td>
+<td>-XMA3</td>
+<td>—</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>6</td>
+<td>WQG6</td>
+<td>/2.E6</td>
+<td>-XMA2</td>
+<td>—</td>
+<td>/3.B5</td>
+<td>-QMA4-XMA1</td>
+<td>P(1)</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>7</td>
+<td>WQG7</td>
+<td>/2.E7</td>
+<td>-XMA3</td>
+<td>—</td>
+<td>/4.C4</td>
+<td>-AZA2-XMA1-XMA1</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>8</td>
+<td>WQG8</td>
+<td>/3.A3</td>
+<td>-XMA4</td>
+<td>—</td>
+<td>/3.A7</td>
+<td>-XMA14</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>9</td>
+<td>WQG9</td>
+<td>/3.A3</td>
+<td>-XMA4</td>
+<td>—</td>
+<td>/3.A3</td>
+<td>-QMA2-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>10</td>
+<td>WQG10</td>
+<td>/3.A7</td>
+<td>-XMA14</td>
+<td>—</td>
+<td>/3.B8</td>
+<td>-QMA5-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>11</td>
+<td>WQG11</td>
+<td>/3.A3</td>
+<td>-QMA2-XMA2</td>
+<td>2</td>
+<td>/3.B3</td>
+<td>-QMA3-XMA1</td>
+<td>P(1)</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>12</td>
+<td>WQG12</td>
+<td>/3.A7</td>
+<td>-XMA14</td>
+<td>—</td>
+<td>/3.B7</td>
+<td>-QMA7-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>13</td>
+<td>WQG13</td>
+<td>/3.B3</td>
+<td>-QMA3-XMA2</td>
+<td>A(2)</td>
+<td>/3.B3</td>
+<td>-QMA6-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>14</td>
+<td>WQG14</td>
+<td>/3.B5</td>
+<td>-QMA4-XMA2</td>
+<td>A(2)</td>
+<td>/3.B4</td>
+<td>-QMA6-XMA3</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>15</td>
+<td>WQG15</td>
+<td>/3.C4</td>
+<td>-QMA6-XMA2</td>
+<td>2</td>
+<td>/3.C4</td>
+<td>-XMA6</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>16</td>
+<td>WQG16</td>
+<td>/3.C4</td>
+<td>-XMA6</td>
+<td>—</td>
+<td>/3.C5</td>
+<td>-XMA10</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>17</td>
+<td>WQG17</td>
+<td>/3.C5</td>
+<td>-XMA10</td>
+<td>—</td>
+<td>/3.B7</td>
+<td>-QMA7-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>18</td>
+<td>WQG18</td>
+<td>/3.B7</td>
+<td>-QMA7-XMA3</td>
+<td>2</td>
+<td>/3.C7</td>
+<td>-QMA8-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>19</td>
+<td>WQG19</td>
+<td>/3.C4</td>
+<td>-XMA6</td>
+<td>—</td>
+<td>/3.C5</td>
+<td>-QMA9-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>20</td>
+<td>WQG20</td>
+<td>/3.C5</td>
+<td>-XMA10</td>
+<td>—</td>
+<td>/3.C5</td>
+<td>-QMA9-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>21</td>
+<td>WQG21</td>
+<td>/3.C7</td>
+<td>-XMA5</td>
+<td>—</td>
+<td>/3.C5</td>
+<td>-QMA9-XMA3</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>22</td>
+<td>WQG22</td>
+<td>/3.C7</td>
+<td>-QMA8-XMA1</td>
+<td>2</td>
+<td>/3.C7</td>
+<td>-XMA5</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>23</td>
+<td>WQG23</td>
+<td>/3.B8</td>
+<td>-QMA5-XMA2</td>
+<td>4</td>
+<td>/3.D8</td>
+<td>-XMA18</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>24</td>
+<td>WQG24</td>
+<td>/3.C5</td>
+<td>-QMA9-XMA4</td>
+<td>4</td>
+<td>/3.D5</td>
+<td>-QMA12-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>25</td>
+<td>WQG25</td>
+<td>/3.C7</td>
+<td>-XMA5</td>
+<td>—</td>
+<td>/3.D7</td>
+<td>-XMA16</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>26</td>
+<td>WQG26</td>
+<td>/3.D4</td>
+<td>-QMA10-XMA1</td>
+<td>2</td>
+<td>/3.D4</td>
+<td>-QMA14-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>27</td>
+<td>WQG27</td>
+<td>/3.D4</td>
+<td>-QMA11-XMA1</td>
+<td>2</td>
+<td>/3.D5</td>
+<td>-QMA12-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>28</td>
+<td>WQG28</td>
+<td>/3.D7</td>
+<td>-XMA16</td>
+<td>—</td>
+<td>/3.D5</td>
+<td>-QMA12-XMA3</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>29</td>
+<td>WQG29</td>
+<td>/3.B8</td>
+<td>-QMA5-XMA3</td>
+<td>2</td>
+<td>/3.F8</td>
+<td>-XMA19</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>30</td>
+<td>WQG30</td>
+<td>/3.D4</td>
+<td>-QMA14-XMA1</td>
+<td>2</td>
+<td>/3.D4</td>
+<td>-KHB1-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>31</td>
+<td>WQG31</td>
+<td>/3.D5</td>
+<td>-QMA12-XMA4</td>
+<td>4</td>
+<td>/3.E5</td>
+<td>-QMA15-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>32</td>
+<td>WQG32</td>
+<td>/3.D7</td>
+<td>-XMA16</td>
+<td>—</td>
+<td>/3.E7</td>
+<td>-XMA17</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>33</td>
+<td>WQG33</td>
+<td>/3.D3</td>
+<td>-QMA13-XMA1</td>
+<td>2</td>
+<td>/3.E4</td>
+<td>-KHB2-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>34</td>
+<td>WQG34</td>
+<td>/3.F5</td>
+<td>-XMA9</td>
+<td>—</td>
+<td>/3.D4</td>
+<td>-QMA10-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>35</td>
+<td>WQG35</td>
+<td>/3.D8</td>
+<td>-XMA18</td>
+<td>—</td>
+<td>/3.E4</td>
+<td>-KHB2-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>36</td>
+<td>WQG36</td>
+<td>/3.E4</td>
+<td>-KHB1-XMA3</td>
+<td>2</td>
+<td>/3.E4</td>
+<td>-QMA15-XMA2</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>37</td>
+<td>WQG37</td>
+<td>/3.D8</td>
+<td>-XMA18</td>
+<td>—</td>
+<td>/3.D4</td>
+<td>-KHB1-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>38</td>
+<td>WQG38</td>
+<td>/3.E7</td>
+<td>-XMA17</td>
+<td>—</td>
+<td>/3.E5</td>
+<td>-QMA15-XMA3</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>39</td>
+<td>WQG39</td>
+<td>/3.F3</td>
+<td>-XMA13</td>
+<td>—</td>
+<td>/3.D4</td>
+<td>-QMA11-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>40</td>
+<td>WQG40</td>
+<td>/3.F5</td>
+<td>-XMA7</td>
+<td>—</td>
+<td>/3.D3</td>
+<td>-QMA13-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>41</td>
+<td>WQG41</td>
+<td>/3.E7</td>
+<td>-XMA17</td>
+<td>—</td>
+<td>/3.E5</td>
+<td>-QMA16-XMA3</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>42</td>
+<td>WQG42</td>
+<td>/3.D5</td>
+<td>-QMA12-XMA5</td>
+<td>2</td>
+<td>/3.F3</td>
+<td>-XMA13</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>43</td>
+<td>WQG43</td>
+<td>/3.E4</td>
+<td>-KHB2-XMA3</td>
+<td>2</td>
+<td>/3.E4</td>
+<td>-QMA16-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>44</td>
+<td>WQG44</td>
+<td>/3.E5</td>
+<td>-QMA15-XMA4</td>
+<td>4</td>
+<td>/3.E4</td>
+<td>-QMA16-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>45</td>
+<td>WQG45</td>
+<td>/3.E5</td>
+<td>-QMA15-XMA5</td>
+<td>2</td>
+<td>/3.F5</td>
+<td>-XMA9</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>46</td>
+<td>WQG46</td>
+<td>/3.E4</td>
+<td>-QMA16-XMA4</td>
+<td>4</td>
+<td>/3.F4</td>
+<td>-XMA8</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>47</td>
+<td>WQG47</td>
+<td>/3.E5</td>
+<td>-QMA16-XMA5</td>
+<td>2</td>
+<td>/3.F5</td>
+<td>-XMA7</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>48</td>
+<td>WQG48</td>
+<td>/3.F8</td>
+<td>-XMA19</td>
+<td>—</td>
+<td>/3.F6</td>
+<td>-XMA11</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>49</td>
+<td>WQG49</td>
+<td>/3.F3</td>
+<td>-XMA13</td>
+<td>—</td>
+<td>/3.G3</td>
+<td>-KHB3-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>50</td>
+<td>WQG50</td>
+<td>/3.F6</td>
+<td>-XMA11</td>
+<td>—</td>
+<td>/3.G3</td>
+<td>-KHB3-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>51</td>
+<td>WQG51</td>
+<td>/3.F4</td>
+<td>-XMA8</td>
+<td>—</td>
+<td>/3.G4</td>
+<td>-QMA17-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>52</td>
+<td>WQG52</td>
+<td>/3.F4</td>
+<td>-XMA8</td>
+<td>—</td>
+<td>/3.F6</td>
+<td>-XMA12</td>
+<td>—</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>53</td>
+<td>WQG53</td>
+<td>/3.F5</td>
+<td>-XMA7</td>
+<td>—</td>
+<td>/3.G7</td>
+<td>-KHB5-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>54</td>
+<td>WQG54</td>
+<td>/3.F5</td>
+<td>-XMA9</td>
+<td>—</td>
+<td>/3.G5</td>
+<td>-KHB4-XMA1</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>55</td>
+<td>WQG55</td>
+<td>/3.F6</td>
+<td>-XMA11</td>
+<td>—</td>
+<td>/3.G5</td>
+<td>-KHB4-XMA3</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>56</td>
+<td>WQG56</td>
+<td>/3.F8</td>
+<td>-XMA19</td>
+<td>—</td>
+<td>/3.G8</td>
+<td>-KHB5-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>57</td>
+<td>WQG57</td>
+<td>/3.F6</td>
+<td>-XMA12</td>
+<td>—</td>
+<td>/3.G6</td>
+<td>-QMA19-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>58</td>
+<td>WQG58</td>
+<td>/3.G4</td>
+<td>-QMA17-XMA1</td>
+<td>2</td>
+<td>/3.G4</td>
+<td>-QMA18-XMA2</td>
+<td>1</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>59</td>
+<td>WQG59</td>
+<td>/3.G3</td>
+<td>-KHB3-XMA3</td>
+<td>2</td>
+<td>/4.D4</td>
+<td>-QMA20-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>60</td>
+<td>WQG60</td>
+<td>/3.G4</td>
+<td>-QMA18-XMA1</td>
+<td>2</td>
+<td>/4.D5</td>
+<td>-QMA20-XMA3</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>61</td>
+<td>WQG61</td>
+<td>/3.G5</td>
+<td>-KHB4-XMA2</td>
+<td>2</td>
+<td>/4.D5</td>
+<td>-QMA21-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>62</td>
+<td>WQG62</td>
+<td>/3.G6</td>
+<td>-QMA19-XMA1</td>
+<td>2</td>
+<td>/4.D6</td>
+<td>-QMA21-XMA4</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>63</td>
+<td>WQG63</td>
+<td>/3.G7</td>
+<td>-KHB5-XMA3</td>
+<td>2</td>
+<td>/4.D6</td>
+<td>-QMA22-XMA1</td>
+<td>14</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>64</td>
+<td>WQG64</td>
+<td>/3.F6</td>
+<td>-XMA12</td>
+<td>—</td>
+<td>/4.D7</td>
+<td>-QMA22-XMA4</td>
+<td>12</td>
+<td>Ø4mm</td>
+</tr>
+<tr>
+<td>65</td>
+<td>WQG65</td>
+<td>/4.D4</td>
+<td>-QMA20-XMA2</td>
+<td>4</td>
+<td>/4.E4</td>
+<td>-RNB1-XMA1</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>66</td>
+<td>WQG66</td>
+<td>/4.D5</td>
+<td>-QMA21-XMA2</td>
+<td>4</td>
+<td>/4.E5</td>
+<td>-XMA20</td>
+<td>—</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>67</td>
+<td>WQG67</td>
+<td>/4.D6</td>
+<td>-QMA21-XMA3</td>
+<td>2</td>
+<td>/4.E6</td>
+<td>-XMA21</td>
+<td>—</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>68</td>
+<td>WQG68</td>
+<td>/4.D7</td>
+<td>-QMA22-XMA2</td>
+<td>4</td>
+<td>/4.F7</td>
+<td>-RNB6</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>69</td>
+<td>WQG69</td>
+<td>/4.D7</td>
+<td>-QMA22-XMA3</td>
+<td>2</td>
+<td>/4.F7</td>
+<td>-RNB7</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>70</td>
+<td>WQG70</td>
+<td>/4.E5</td>
+<td>-XMA20</td>
+<td>—</td>
+<td>/4.F5</td>
+<td>-RNB2</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>71</td>
+<td>WQG71</td>
+<td>/4.E5</td>
+<td>-XMA20</td>
+<td>—</td>
+<td>/4.F6</td>
+<td>-RNB4</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>72</td>
+<td>WQG72</td>
+<td>/4.E6</td>
+<td>-XMA21</td>
+<td>—</td>
+<td>/4.F5</td>
+<td>-RNB3</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>73</td>
+<td>WQG73</td>
+<td>/4.E6</td>
+<td>-XMA21</td>
+<td>—</td>
+<td>/4.F6</td>
+<td>-RNB5</td>
+<td>1</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>74</td>
+<td>WQG74</td>
+<td>/4.F4</td>
+<td>-RNB1-XMA2</td>
+<td>2</td>
+<td>/4.F4</td>
+<td>-MMB1-XMA1</td>
+<td>—</td>
+<td>Ø6mm</td>
+</tr>
+<tr>
+<td>Quy tắc đi ống để lấy đủ E1 (10.4 điểm): cắt vuông, cắm hết chiều sâu đầu nối, bó ống Ø4 tín hiệu thành bó dọc tấm 500, ống động đến xi lanh uốn bó cùng ống cố định, dây rút cách đều (≈100 mm) <strong>không siết bẹp</strong>, bán kính uốn tối thiểu ≈ 20 mm cho Ø4 và ≈ 30 mm cho Ø6, chừa chiều dài cho MM2/MM3 lắc trên bích xoay, không để ống chạm con trượt gót 302 và tấm mang chày 403.</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="5-lich-su-sua-doi-revisions-to-1">5. Lịch sử sửa đổi (Revisions, tờ 1)</h3>
+<p>Bản vẽ qua 13 lần sửa từ 2025-06-06 đến 2026-09-08 (tất cả do ACK). Thiết kế ban đầu (rev 1, 2025-06-06); rev 2 (2025-06-20) đổi xi lanh uốn thành chuyển động 2 (b) và xi lanh đột thành chuyển động 3 (c), thêm công tắc báo phôi; rev 3–6 chỉnh BOM: đầu nối, khớp tự lựa FK-M10×1,25 → FK-M12×1,25 (2025-10-15), xi lanh uốn DSNU-25-40-PPS-A → ADN-32-30-A-P-A (2026-01-14); rev 7 dọn bản vẽ, thêm bảng revision; rev 8 (2026-02-17) thêm QSML-4 và màu ống, chỉnh bảng ống; rev 9 chỉnh ống và khung tên; rev 10 (2026-03-26) cập nhật mạch và BOM; <strong>rev 11 (2026-06-10) đổi mã tham chiếu từ 2 chữ sang 3 chữ (EN 81346-2:2009 → EN IEC 81346-2:2019)</strong> — vì vậy tài liệu cũ ghi A+, B+ nay là MM1+, MM2+; rev 12 (2026-07-17) cập nhật số cổng trên SV-3-M5; rev 13 (2026-09-08) cập nhật mã tham chiếu. Bản thi dùng <strong>rev 13</strong>.</p>
+<h3 id="ghi-chu-ban-goc">Ghi chú bản gốc</h3>
+<ul>
+<li><code>loi-ban-goc.md</code> #10: rev 11 đổi mã 2 chữ → 3 chữ; bản dịch dùng MM1…MM4.</li>
+<li>Mới (#19): tờ 4 ghi xi lanh là -MMB1…-MMB4 còn chuỗi/đề/thang điểm viết MM1…MM4 — cùng phần tử, chỉ khác độ dài mã.</li>
+<li>Parts List có hai dòng &quot;Front panel valve&quot; (570 SV-5-M5-B là van 5/2, 610 SV-3-M5 là van 3/2) và &quot;Pneumatic valve&quot; chung cho VUWG-L10-M52 (5/2 lò xo), -B52 (5/2 khí hai phía), -P53C (5/3 giữa đóng) — bản dịch ghi rõ loại trong cột mô tả.</li>
+<li>Khung tên tờ 5 ghi FILE NAME &quot;2_Parts_List&quot; trong khi là tờ 5 of 6, tờ 6 ghi &quot;3_Tubing_List&quot; — tên file nội bộ, bỏ qua.</li>
+<li>Pos. 60 (VMEF-RT-M32-M-G18, công tắc cửa) nằm trong Parts List khí nén nhưng cũng là item 7 của BOM bản vẽ 100 — cùng một linh kiện.</li>
+</ul>
+<h3 id="phieu-E">Phiếu tự chấm E — Lắp ráp khí nén, đi ống (Module D, bước 3) — Điểm tối đa 10.4</h3><p class="tl-note">In ra hoặc tick ngay trên màn hình. Mỗi lần thử ghi số tự đo vào cột "Tự đo" rồi so với miền đạt.</p>
+<p>Họ tên: ____________________ Ngày tập: ____________ Lần thử: ____ Tổng tự chấm: ______ / 10.4</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>[ ]</th>
+<th>Mục chấm</th>
+<th>Yêu cầu</th>
+<th>Điểm</th>
+<th>Kiểm</th>
+<th>Đạt?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>[ ]</td>
+<td>Ống đến 2 xi lanh uốn (trái, phải) đi gọn, có trật tự</td>
+<td>0.5 mỗi bên</td>
+<td>1.0</td>
+<td>T__ P__</td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Ống đến xi lanh kẹp (AEN-32-10) đi gọn</td>
+<td></td>
+<td>0.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Ống đến xi lanh đột (ADN-S-50-20) đi gọn</td>
+<td></td>
+<td>0.7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Ống đến tấm linh kiện 500 đi gọn</td>
+<td></td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Ống được đỡ đủ toàn tuyến</td>
+<td>không võng, không treo lơ lửng</td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Dây rút cách đều hợp lý</td>
+<td>≈ 100 mm, thẳng hàng</td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Dây rút <strong>không bẹp ống</strong></td>
+<td>thử thổi/ấn</td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td><strong>Không gập/bẹp ống</strong> ở bất kỳ đâu</td>
+<td>soát từng ống</td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Bán kính uốn đủ</td>
+<td>Ø4 ≥ ~20 mm, Ø6 ≥ ~30 mm</td>
+<td>1.0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Ống động (theo xi lanh) bó cùng ống cố định</td>
+<td>nhập số bó đúng</td>
+<td>1.0</td>
+<td>__</td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Tháo được từng ống mà không cắt cả bó</td>
+<td>dây rút không quá chặt, ống riêng đến đầu nối</td>
+<td>0.5</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[ ]</td>
+<td>Mọi ống tránh chi tiết chuyển động (302, 403, cần piston)</td>
+<td>chạy tay kiểm</td>
+<td>0.5</td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Tự kiểm trước khi gọi chạy thử: đủ <strong>74 ống WQG1–WQG74</strong> theo bảng ống (file 07), đúng cổng 1/2/3/4/5 và 12/14, Ø4 tín hiệu, Ø6 nguồn/xi lanh; đủ nút bịt (B-M5-B ×2, B-M7 ×1, B-1/8 ×3), đủ giảm thanh; cảm biến SMPO-8E đúng đầu xi lanh; tiết lưu đúng chiều; áp <strong>8.0 bar</strong>.</p>
+<h4 class="tl-trap">Bẫy mất điểm</h4>
+<ul>
+<li><input type="checkbox"> Chỉ lắp khí nén <strong>sau khi</strong> chuyên gia chấm xong cơ khí (bước 2) — vi phạm = 0 điểm bước 3.</li>
+<li><input type="checkbox"> Lắp xong → báo chuyên gia → <strong>1 lượt chạy thử miễn phí</strong>, mỗi lượt thêm <strong>−2 điểm</strong>, tối đa <strong>3 lượt</strong>. Tự dò ống trước khi gọi.</li>
+<li><input type="checkbox"> Khoá van đóng/mở trên bộ MS4 trước khi cắm/rút ống; không thổi khí vào người; dùng dao cắt ống đúng — −0.5/lần.</li>
+<li><input type="checkbox"> Ký tắt bước 3 (Expert Initials) sau khi chạy thử đạt.</li>
+</ul>
+<h3 id="thang-diem-E">Thang điểm tiêu chí E — Lắp ráp khí nén — 10.4 điểm</h3><p class="tl-note">M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p><details class="tl-details"><summary><strong>Mở bảng thang điểm E (1 tiêu chí con)</strong></summary><table class="tl-table"><thead><tr><th>Mã</th><th>Loại</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th>Điểm</th></tr></thead><tbody><tr><td><strong>E1</strong></td><td colspan="3"><strong>Lắp ráp khí nén</strong><br><em>Pneumatic Assembly</em></td><td><strong>10.40</strong></td></tr><tr><td></td><td>M</td><td>Ống khí nén đến hai xi lanh uốn item 17 trái và phải có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the wiping cylinders item 17 left and right</em></td><td>Nhập số tuyến ống đi gọn, trái và phải, tối đa 2; 0.5 điểm mỗi bên<br><em>Enter the number of orderly routing patterns from Left to Right of 2. .5 marks per side</em></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến xi lanh kẹp item 6 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the clamping cylinder item 6</em></td><td></td><td>0.70</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến xi lanh đột item 17 có đi gọn, có trật tự không<br><em>Is pneumatic tubing routed in an orderly pattern to the punching cylinder item 17</em></td><td></td><td>0.70</td></tr><tr><td></td><td>M</td><td>Ống khí nén đến chi tiết 500 – tấm linh kiện có đi gọn, có trật tự không<br><em>Is the pneumatic tubing routed in an orderly pattern to detail 500 - component plate</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén có được đỡ đủ trên toàn tuyến không<br><em>Is pneumatic tubing adequately supported throughout</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Dây rút (nơi có dùng) có cách đều hợp lý không<br><em>Are zip ties spaced approperiately where used</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Nơi dùng dây rút – có làm bẹp ống khí nén cản dòng khí không<br><em>Where zip ties were used - is there crushing of the pneumatic tubing to prevent air flow</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Có chỗ gập hay bẹp ống khí nén nào nhìn thấy trên máy không<br><em>Were there any visable kinks or flattening of pneumatic tubing anywhere on the machine</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Bán kính uốn ống khí nén có đủ trên toàn tuyến không<br><em>Was adaquate bend radius used on the pneumatic tubing throughout</em></td><td></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Ống khí nén động có được bó cùng ống cố định không<br><em>Were moving pneumatic tubing lines bundled with fixed pneumatic lines</em></td><td>Nhập số bó ống khí nén được cố định đúng tuyến<br><em>Enter the number of Pneumatic tubing bundles correctly fixed in line</em></td><td>1.00</td></tr><tr><td></td><td>M</td><td>Từng ống khí nén có tháo được mà không phải cắt cả bó không<br><em>Are individaul pneumatic tubes removable without cutting an entire bundle</em></td><td></td><td>0.50</td></tr><tr><td></td><td>M</td><td>Mọi ống khí nén tránh chi tiết chuyển động<br><em>All pneumatic tubing is clear of moving parts</em></td><td></td><td>0.50</td></tr></tbody></table></details>

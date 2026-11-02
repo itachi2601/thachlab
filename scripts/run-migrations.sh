@@ -93,6 +93,7 @@ FILES=(
   "supabase/migrations/20261030210000_ta_quy_trinh_cuoi_thang.sql|Quy trình công TA hằng tháng: pg_cron ta-month-cycle mỗi giờ (báo cuối tháng 19h, mở ngày 1–3, nhắc ngày 3, khoá + báo thầy chốt), trigger ta_month_lock_guard khoá tháng cũ, bảng ta_month_appeals + 3 RPC khiếu nại; có rollback|lúc nào cũng được"
   "supabase/migrations/20261030230000_ta_he_so_1_15_1_3_1_5.sql|Hệ số trợ giảng từ 11/2026 cho mọi TA: phụ đạo ×1,15 (1–2 em) / ×1,3 (3–4 em), chữa bài thay thầy ×1,5; tháng 10 giữ ×1,1/×1,2/×1,6 (hàm ta_monthly_policy)|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại hàm trong 20261016170000_ta_he_so_phu_dao_1_1_1_2.sql"
   "supabase/migrations/20261101130000_ta_phu_dao_khong_tran_4_em.sql|Bỏ trần 4 em/buổi phụ đạo khi trợ giảng điền tên (trigger ta_policy_session_guard); hệ số vẫn dừng ở mức 3+ em|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại hàm trong docs/supabase-migration-ta-policy-oct2026.sql"
+  "supabase/migrations/20261102080000_lop_worldskills_industrial_mechanics.sql|Học phần CTTC WorldSkills — Industrial Mechanics: môn + lớp worldskills-im, 5 chương, 16 bài (chỉ dữ liệu, idempotent, có rollback); nội dung ghi bằng scripts/dang-worldskills-im.sh|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

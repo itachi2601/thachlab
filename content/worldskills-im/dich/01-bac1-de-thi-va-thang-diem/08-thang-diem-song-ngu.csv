@@ -1,0 +1,278 @@
+﻿SubCriterion,Type,Aspect_EN,Aspect_VI,ExtraDesc_EN,ExtraDesc_VI,Requirement,Marks
+A1,,Data Collection,Thu thập dữ liệu,,,,
+A1,M,Machine Set-up in Measuring Tool,Cài đặt máy trong dụng cụ đo,,,,0.4
+A1,M,Confirming Speed,Xác nhận tốc độ (3600 rpm),Expert Sign Off,Chuyên gia ký xác nhận,,0.4
+A1,M,Correct Measurement Procedures (4 points),Quy trình đo đúng (4 điểm đo),Enter number of correct measurent procedures,Nhập số quy trình đo đúng,,0.4
+A1,M,Initial Condition Reading,Số đo tình trạng ban đầu,Expert Sign Off,Chuyên gia ký xác nhận,,0.4
+A2,,Flatness Check,Kiểm tra độ phẳng,,,,
+A2,M,Machine Set-up in Measuring Tool,Cài đặt máy trong dụng cụ đo,,,,0.4
+A2,M,Measurement Procedure,Quy trình đo,Enter number of correct measurent procedures,Nhập số quy trình đo đúng,,0.4
+A2,M,Reference Points,Điểm chuẩn đo,Enter number of correct measurent procedures - 3 rmaximum,"Nhập số quy trình đo đúng, tối đa 3",,0.4
+A3,,Level Check,Kiểm tra cân bằng (thuỷ),,,,
+A3,M,Machine Set-up in Measuring Tool,Cài đặt máy trong dụng cụ đo,,,,0.4
+A3,M,Measurement Procedure,Quy trình đo,Enter number of correct measurent procedures - 4 maximum,"Nhập số quy trình đo đúng, tối đa 4",,0.25
+A3,M,Bubbles are level,Bọt thuỷ ở vị trí cân,,,,0.25
+A3,M,Reference Points,Điểm chuẩn đo,Only 1 reference needed,Chỉ cần 1 điểm chuẩn,,0.4
+A4,,Shaft Alignment (Pre-Alignement),Cân chỉnh trục (kiểm tra trước cân chỉnh),,,,
+A4,M,Fixed and Moveable Shaft Runout,Trục bên cố định và bên di động: độ đảo,"full marks if both shafts OK, half marks if only 1 shaft OK and zero marks if neither shaft are OK",Trọn điểm nếu cả hai trục đạt; nửa điểm nếu chỉ 1 trục đạt; 0 nếu không trục nào đạt,,0.5
+A4,M,Fixed and Moveable Coupling Runout,Khớp nối bên cố định và bên di động: độ đảo hướng kính,"full marks if both shafts OK, half marks if only 1 shaft OK and zero marks if neither shaft are OK",Trọn điểm nếu cả hai trục đạt; nửa điểm nếu chỉ 1 trục đạt; 0 nếu không trục nào đạt,,0.5
+A4,M,Fixed and Moveable Coupling Axial,Khớp nối bên cố định và bên di động: độ đảo dọc trục,"full marks if both shafts OK, half marks if only 1 shaft OK and zero marks if neither shaft are OK",Trọn điểm nếu cả hai trục đạt; nửa điểm nếu chỉ 1 trục đạt; 0 nếu không trục nào đạt,,0.5
+A4,M,Bearing Clearances (Axial Float),Khe hở ổ lăn (độ rơ dọc trục),"full marks if both shafts OK, half marks if only 1 shaft OK and zero marks if neither shaft are OK",Trọn điểm nếu cả hai trục đạt; nửa điểm nếu chỉ 1 trục đạt; 0 nếu không trục nào đạt,,0.5
+A4,M,Soft foot prior to the start of alignment.,Chân máy hở (soft foot) trước khi bắt đầu cân chỉnh,Expert Sign Off,Chuyên gia ký xác nhận,,0.25
+A4,M,Soft Foot Correction,Sửa chân máy hở (soft foot),,,,0.25
+A4,M,Soft Foot Re-Check,Kiểm lại chân máy hở,Expert Sign Off,Chuyên gia ký xác nhận,,0.25
+A5,,Precision Alignment,Cân chỉnh chính xác,,,,
+A5,M,Correct Procedures used to install Precision Alignment Equipment,Quy trình lắp thiết bị cân chỉnh chính xác đúng,,,,0.2
+A5,M,Vertical Angular misalignment,Lệch góc phương đứng,"Red = zero marks, Yellow = half marks and Green = full marks","Đỏ = 0 điểm, Vàng = nửa điểm, Xanh = trọn điểm (màn hình máy laser)",,0.5
+A5,M,Horizontal Angular misalignment,Lệch góc phương ngang,"Red = zero marks, Yellow = half marks and Green = full marks","Đỏ = 0 điểm, Vàng = nửa điểm, Xanh = trọn điểm (màn hình máy laser)",,0.5
+A5,M,Vertical Offset misalignment,Lệch tâm phương đứng,"Red = zero marks, Yellow = half marks and Green = full marks","Đỏ = 0 điểm, Vàng = nửa điểm, Xanh = trọn điểm (màn hình máy laser)",,0.5
+A5,M,Horizontal Offset misalignment,Lệch tâm phương ngang,"Red = zero marks, Yellow = half marks and Green = full marks","Đỏ = 0 điểm, Vàng = nửa điểm, Xanh = trọn điểm (màn hình máy laser)",,0.5
+A5,M,Number of Shims under Feet,Số căn đệm (shim) dưới chân máy,,,,0.3
+A5,M,Bolts Tigntened and Jack Bolts Pulled Back,Bu-lông đã siết và bu-lông đẩy (jack bolt) đã rút về,,,,0.15
+A5,M,Final result report,Báo cáo kết quả cuối (cân chỉnh),Expert Sign Off,Chuyên gia ký xác nhận,,0.3
+A6,,Thermal Growth Measurement,Đo giãn nở nhiệt,,,,
+A6,M,Calculation,Tính toán (giãn nở nhiệt ΔL = α·L₀·ΔT),,,,0.5
+A6,M,Compensated in alignment,Đã bù (giãn nở nhiệt) vào cân chỉnh,,,,0.4
+A6,M,Thermal Growth OL2R Proper installation,Lắp OL2R đo giãn nở nhiệt đúng,,,,0.5
+A6,M,Thermal Growth measurement procedure,Quy trình đo giãn nở nhiệt,,,,0.5
+A6,M,"Confirmed and remeasured the ""found Thermal Growth"" measurement to the alignemnt portion",Đã xác nhận và đo lại giá trị giãn nở nhiệt thực đo so với phần cân chỉnh,,,,0.5
+A6,M,Final Condition Readings Report,Báo cáo số đo tình trạng cuối,Expert Sign Off,Chuyên gia ký xác nhận,,0.4
+A7,,Balancing,Cân bằng động,,,,
+A7,M,Proper Installation of Balancing Hardware,Lắp phần cứng cân bằng động đúng,,,,0.4
+A7,M,Machine Set-up in Measuring Tool,Cài đặt máy trong dụng cụ đo,,,,0.5
+A7,M,Balancing Procedures,Quy trình cân bằng động,,,,0.5
+A7,M,Final Balancing Readings (within Tolerances),Số đo cân bằng cuối (trong dung sai),"Expert Sign Off (6.3 < =0.3 full marks, 6.4-16=0.15 half marks, 16.1>=0 marks)",Chuyên gia ký xác nhận (≤ 6.3 = 0.3 trọn điểm; 6.4–16 = 0.15 nửa điểm; ≥ 16.1 = 0 điểm),,0.3
+A8,,Data Collection,Thu thập dữ liệu,,,,
+A8,M,Correct Measurement Procedures (4 points),Quy trình đo đúng (4 điểm đo),Enter number of correct measurent procedures - 4 maximum,"Nhập số quy trình đo đúng, tối đa 4",,0.4
+A8,M,Final Condition Reading Report,Báo cáo số đo tình trạng cuối,Expert Sign Off,Chuyên gia ký xác nhận,,0.4
+A9,,Reporting,Báo cáo,,,,
+A9,M,Condition Before (vibration),Tình trạng trước (rung động),,,,0.2
+A9,M,Condition Final (vibration),Tình trạng cuối (rung động),,,,0.2
+A9,M,Geometry Complete,"Hình học (độ phẳng, cân bằng thuỷ) đầy đủ",,,,0.2
+A9,M,Alignment Complete Including,"Báo cáo cân chỉnh đầy đủ, gồm (7 mục)",Enter number of complete alignment - maximum 7,"Nhập số mục cân chỉnh hoàn chỉnh, tối đa 7",,0.7
+A9,M,Balancing,Cân bằng động (trong báo cáo),,,,0.2
+A10,,Belt Alignment,Căn đai,,,,
+A10,M,Correct Measurement Procedures,Quy trình đo đúng,,,,0.2
+A10,M,Corrected,Đã sửa (căn đai),Expert Sign Off,Chuyên gia ký xác nhận,,0.2
+A10,M,"Pre Check (axial, RO, shaft, loseness)","Kiểm tra trước (dọc trục, độ đảo, trục, độ rơ)",Expert Sin Off,Chuyên gia ký xác nhận,,0.2
+A10,M,Report incl. picture before after ROP,"Báo cáo kèm ảnh trước/sau, độ đảo (ROP)",Enter number of completed report - maximum 3,"Nhập số báo cáo hoàn chỉnh, tối đa 3",,0.3
+B1,,Fabrication and Welding,Chế tạo và hàn,,,,
+B1,M,Weld detail 201 & 203 left side front. Square at 90°,"Hàn 201 & 203 bên trái, phía trước. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 203 right side front. Square at 90°,"Hàn 201 & 203 bên phải, phía trước. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 203 left side rear. Square at 90°,"Hàn 201 & 203 bên trái, phía sau. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 203 right side rear. Square at 90°,"Hàn 201 & 203 bên phải, phía sau. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 202 left side front and rear. Square at 90°,"Hàn 201 & 202 bên trái, trước và sau. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 202 right side front and rear. Square at 90°,"Hàn 201 & 202 bên phải, trước và sau. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 207 left side front and rear. Square at 90°Flush at bottom,"Hàn 201 & 207 bên trái, trước và sau. Vuông góc 90°, phẳng đáy",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 201 & 207 right side front and rear. Square at 90°Flush at bottom,"Hàn 201 & 207 bên phải, trước và sau. Vuông góc 90°, phẳng đáy",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 204 & 205 left side front. Square at 90°,"Hàn 204 & 205 bên trái, phía trước. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 204 & 205 right side front. Square at 90°,"Hàn 204 & 205 bên phải, phía trước. Vuông góc 90°",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 206 to 205 and 202 left side.,"Hàn 206 vào 205 và 202, bên trái",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 206 to 205 and 202 right side.,"Hàn 206 vào 205 và 202, bên phải",,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Weld detail 202 to 204 - rear and side - right side and left side.,Hàn 202 vào 204 – sau và hông – bên phải và bên trái,,,±2°,0.3
+B1,M,Leg length Z 3mm,Cạnh mối hàn Z 3 mm,"welds 3 to 4 = .2, 2 to 3 = .10, 1 to 2 or 4 to 5 = 0",Cạnh 3–4 mm = 0.2; 2–3 mm = 0.10; 1–2 hoặc 4–5 mm = 0,±1mm,0.2
+B1,M,Detail 205 & 204 frame mounted on details 202 left and right side Square at 90°,Khung 205 & 204 gắn trên 202 trái và phải: vuông góc 90°,2 @ .17 left side and right side,"2 mục × 0.17, bên trái và bên phải",±2°,0.34
+B1,M,Detail 205 & 204 frame mounted on details 202 left and right side 130mm from front edge both sides,"Khung 205 & 204 gắn trên 202 trái và phải: cách mép trước 130 mm, cả hai bên",2 @ .16 left side and right side,"2 mục × 0.16, bên trái và bên phải",±1mm,0.33
+B1,M,Detail 205 and 204 frame square across the diagonals x 2,Khung 205 và 204 vuông: hiệu hai đường chéo,,,±2mm,0.33
+B1,M,Detail 201 and 203 frame square across the diagonals x 2 front,"Khung 201 và 203 vuông: hiệu hai đường chéo, phía trước",,,±2mm,0.35
+B1,M,Detail 201 and 203 frame square across the diagonals x 2 rear,"Khung 201 và 203 vuông: hiệu hai đường chéo, phía sau",,,±2mm,0.35
+B1,M,Detail 201 and 202 frame square across the diagonals x 2 front,"Khung 201 và 202 vuông: hiệu hai đường chéo, phía trước",,,±2mm,0.35
+B1,M,Detail 201 and 202 frame square across the diagonals x 2 rear,"Khung 201 và 202 vuông: hiệu hai đường chéo, phía sau",,,±2mm,0.35
+B1,M,Overall width front 500mm - top and bottom,Chiều rộng bao phía trước 500 mm – trên và dưới,"498 to 502mm = 0.35 marks, smaller than 498 or above 500mm = 0 marks","498–502 mm = 0.35 điểm; nhỏ hơn 498 hoặc lớn hơn 500 mm = 0 điểm [Ghi chú dịch: bản gốc viết 500, đúng là 502]",±2mm,0.35
+B1,M,Overall width rear 500mm - top and bottom,Chiều rộng bao phía sau 500 mm – trên và dưới,"498 to 502mm = 0.35 marks, smaller than 498 or above 500mm = 0 marks","498–502 mm = 0.35 điểm; nhỏ hơn 498 hoặc lớn hơn 500 mm = 0 điểm [Ghi chú dịch: bản gốc viết 500, đúng là 502]",±2mm,0.35
+B1,M,Overall depth front to back left side rear 400mm - top and bottom,"Chiều sâu bao trước–sau, bên trái, 400 mm – trên và dưới","398 to 402mm = 0.35 marks, smaller than 398 or above 402mm = 0 marks",398–402 mm = 0.35 điểm; nhỏ hơn 398 hoặc lớn hơn 402 mm = 0 điểm,±2mm,0.35
+B1,M,Overall depth front to back right side rear 400mm - top and bottom,"Chiều sâu bao trước–sau, bên phải, 400 mm – trên và dưới","398 to 402mm = 0.35 marks, smaller than 398 or above 402mm = 0 marks",398–402 mm = 0.35 điểm; nhỏ hơn 398 hoặc lớn hơn 402 mm = 0 điểm,±2mm,0.35
+B1,M,Overall height left side side rear 675mm - top and bottom,"Chiều cao bao bên trái, 675 mm – trên và dưới","673 to 677mm = 0.35 marks, smaller than 673 or above 677mm = 0 marks",673–677 mm = 0.35 điểm; nhỏ hơn 673 hoặc lớn hơn 677 mm = 0 điểm,±2mm,0.35
+B1,M,Overall height right side side rear 675mm - top and bottom,"Chiều cao bao bên phải, 675 mm – trên và dưới","673 to 677mm = 0.35 marks, smaller than 673 or above 677mm = 0 marks",673–677 mm = 0.35 điểm; nhỏ hơn 673 hoặc lớn hơn 677 mm = 0 điểm,±2mm,0.35
+B1,J,Detail 201 & 203 - 4 welds - inside all around 90° - Weld Quality Welds exhibit a full radius contour,"Chi tiết 201 & 203 – 4 mối hàn – trong, quanh 90° – chất lượng: biên dạng lồi tròn đầy",,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 203 - 4 welds - outside - all around 90° - Weld Quality Welds exhibit a full radius contour,"Chi tiết 201 & 203 – 4 mối hàn – ngoài, quanh 90° – chất lượng: biên dạng lồi tròn đầy",,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 202 - 2 welds - outside - left side front and rear 90° - Weld Quality Welds exhibit a full radius contour,Chi tiết 201 & 202 – 2 mối hàn – ngoài – bên trái trước và sau 90° – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 202 - 2 welds - outside - right side front and rear 90° - Weld Quality Welds exhibit a full radius contour,Chi tiết 201 & 202 – 2 mối hàn – ngoài – bên phải trước và sau 90° – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 205 & 206 - 4 welds - outside and inside - left side front and rear - Weld Quality Welds exhibit a full radius contour,Chi tiết 205 & 206 – 4 mối hàn – ngoài và trong – bên trái trước và sau – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 205 & 206 - 4 welds - outside and inside - right side front and rear - Weld Quality Welds exhibit a full radius contour,Chi tiết 205 & 206 – 4 mối hàn – ngoài và trong – bên phải trước và sau – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 202 & 204 - 4 welds - rear and side - right side and left side - Weld Quality Welds exhibit a full radius contour,Chi tiết 202 & 204 – 4 mối hàn – sau và hông – phải và trái – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 207 - 4 welds - 2 per side - left and right side - 90° - Weld Quality Welds exhibit a full radius contour,Chi tiết 201 & 207 – 4 mối hàn – 2 mỗi bên – trái và phải – 90° – chất lượng: biên dạng lồi tròn đầy,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 203 - 4 welds - outside and inside -left side - Weld Quality General,Chi tiết 201 & 203 – 4 mối hàn – ngoài và trong – bên trái – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 203 - 4 welds - outside and inside - right side - Weld Quality General,Chi tiết 201 & 203 – 4 mối hàn – ngoài và trong – bên phải – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 202 - 2 welds - outside - left side - Weld Quality General,Chi tiết 201 & 202 – 2 mối hàn – ngoài – bên trái – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 201 & 202 - 2 welds - outside - right side - Weld Quality General,Chi tiết 201 & 202 – 2 mối hàn – ngoài – bên phải – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 205 & 206 - 4 welds - outside and inside - right side - Weld Quality General,Chi tiết 205 & 206 – 4 mối hàn – ngoài và trong – bên phải – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 205 & 206 - 4 welds - outside and inside - left side - Weld Quality General,Chi tiết 205 & 206 – 4 mối hàn – ngoài và trong – bên trái – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+B1,J,Detail 202 & 204 - 4 welds - rear and side - right side and left side - Weld Quality General,Chi tiết 202 & 204 – 4 mối hàn – sau và hông – phải và trái – chất lượng mối hàn tổng thể,,,,0.2
+B1,J,Score 0.0,Mức 0,Needs Re-work – joint not filled or with flat profile,Phải làm lại – mối ghép chưa điền đầy hoặc biên dạng phẳng,,
+B1,J,Score 1.0,Mức 1,Average – radius profile with flat areas and/or excess welds at the toes,Trung bình – biên dạng lồi nhưng có chỗ phẳng và/hoặc thừa kim loại ở chân mối hàn,,
+B1,J,Score 2.0,Mức 2,Good- radius profile with slight flatness in some areas,"Tốt – biên dạng lồi, hơi phẳng ở vài chỗ",,
+B1,J,Score 3.0,Mức 3,Excellent– Full radius profile equal to material thickness,"Xuất sắc – biên dạng lồi tròn đầy, bằng chiều dày vật liệu",,
+C1,,Detail 405,Chi tiết 405 (tiện),,,,
+C1,M,93 length,Chiều dài 93,"Above 93.30 or below 92.70 = zero, 92.70 to 93.30 = full marks",Trên 93.30 hoặc dưới 92.70 = 0; 92.70–93.30 = trọn điểm,,0.3
+C1,M,12 Length,Chiều dài 12,"Above 12.20 or below 11.80 = zero, 11.80 to 12.20 = full marks",Trên 12.20 hoặc dưới 11.80 = 0; 11.80–12.20 = trọn điểm,,0.4
+C1,M,15 length,Chiều dài 15,"Above 15.20 or below 14.80 = zero, 14.80 to 15.20 = full marks",Trên 15.20 hoặc dưới 14.80 = 0; 14.80–15.20 = trọn điểm,,0.4
+C1,M,85 dia f8,Đường kính Ø85 f8,"Above 84.910 or below 84.964 = zero marks, from 84.910 to 84.964 full marks","Trên 84.910 hoặc dưới 84.964 = 0; 84.910–84.964 = trọn điểm [Ghi chú dịch: bản gốc viết ngược, đúng là trên 84.964 hoặc dưới 84.910 = 0]",,1.5
+C1,M,58 dia,Đường kính Ø58,"Below 57.97 or above 58.00 = zero marks, 57.97 to 58.00 = full marks",Dưới 57.97 hoặc trên 58.00 = 0; 57.97–58.00 = trọn điểm,,1.5
+C1,M,20 dia,Đường kính Ø20,"Below 19.80 or above 20.20 = zero marks, from 19.80 to 20.20 = full marks",Dưới 19.80 hoặc trên 20.20 = 0; 19.80–20.20 = trọn điểm,,0.5
+C1,M,M 24 x 3 thread 6g,Ren M24 × 3 cấp 6g,"Below 21.803 or above 22.003 = zero marks, 21.803 to 22.003 = full marks",Dưới 21.803 hoặc trên 22.003 = 0; 21.803–22.003 (đường kính trung bình ren) = trọn điểm,,2.0
+C1,M,Surface Finish Ra Micro Meters 1.6 on 85 dia,Độ nhám Ra 1.6 µm trên Ø85,Expert visual check,Chuyên gia kiểm tra bằng mắt,Y/N,0.2
+C1,M,Surface Finish Ra Micro Meters 3.2 on M24 thread,Độ nhám Ra 3.2 µm trên ren M24,Expert visual check,Chuyên gia kiểm tra bằng mắt,Y/N,0.2
+C1,M,Concentricity B on 85 and 58 dias,Độ đồng tâm B giữa Ø85 và Ø58,0.03,0.03,Y/N,0.25
+C1,M,Perpendicularity A,Độ vuông góc với chuẩn A,0.1,0.1,Y/N,0.2
+C1,M,M8 x 1.25 6H x 16 deep,Ren M8 × 1.25 cấp 6H sâu 16,,,,0.25
+C1,M,M8 thread square and deburred,Ren M8 vuông và đã vê bavia,,,,0.2
+C1,M,M6 x 1 6H thru deburred,"Ren M6 × 1 cấp 6H xuyên, đã vê bavia",4 each side: 8 needed- add the number completed correctly,4 mỗi bên: cần 8; nhập số đã làm đúng,,0.4
+C1,M,M6 thread square,Ren M6 vuông,Need 4: Write the number completed correctly,Cần 4; ghi số đã làm đúng,,0.8
+C2,,Detail 404,Chi tiết 404 (tiện),,,,
+C2,M,25 dia,Đường kính Ø25,25.05 to 25.10 = Yes/ Below 25.05 or above 25.10= No,25.05–25.10 = Đạt / dưới 25.05 hoặc trên 25.10 = Không,,1.0
+C2,M,20 dia H8,Đường kính Ø20 H8,20.000 to 20.033 = Yes/ Below 20.000 or Above 20.033= No,20.000–20.033 = Đạt / dưới 20.000 hoặc trên 20.033 = Không,,1.5
+C2,M,5.00 depth,Chiều sâu 5.00,From 4.9 to 5.1= Yes/ Below 4.9 or Above 5.1= No,4.9–5.1 = Đạt / dưới 4.9 hoặc trên 5.1 = Không,±.1mm,0.4
+C2,M,Perpendicularity A,Độ vuông góc với chuẩn A,0.02,0.02,,0.2
+C2,M,Surface Finish Ra Micro Meters 1.6 on 25 dia,Độ nhám Ra 1.6 µm trên Ø25,Expert visual check,Chuyên gia kiểm tra bằng mắt,,0.2
+C2,M,Surface Finish Ra Micro Meters 1.6 on 20 dia,Độ nhám Ra 1.6 µm trên Ø20,Expert visual check,Chuyên gia kiểm tra bằng mắt,,0.2
+C3,,Detail 401,Chi tiết 401 (phay),,,,
+C3,M,75 hole centers,Khoảng tâm lỗ 75,74.99 to 75.01 = Yes/ Above 75.01 or Below 74.99= No,74.99–75.01 = Đạt / trên 75.01 hoặc dưới 74.99 = Không,,1.0
+C3,M,Positional tolerance on 75 x 20 holes,Dung sai vị trí các lỗ 75 × 20,2 x holes at tolerance 75x20,"2 lỗ trong dung sai, tại 75 × 20",,0.5
+C3,M,20.00 hole centers,Khoảng tâm lỗ 20.00,"correct hole at 2 holes x 19.98 to 20.02, 1 hole x 19.98 to 20.02, or above 20.02 or below 19.98 is incorrect","Đúng khi cả 2 lỗ trong 19.98–20.02; chỉ 1 lỗ đạt, hoặc trên 20.02 hoặc dưới 19.98 = sai",,1.0
+C3,M,20 dia reamed hole,Lỗ doa Ø20,20.000 - 20.033 dia,Ø20.000–20.033,,0.8
+C3,M,Positional tolerance on 20 reamed hole,Dung sai vị trí lỗ doa Ø20,,,,0.2
+C3,M,20 dia reamed hole depth,Chiều sâu lỗ doa Ø20,plus 0.10 / minus 0.00,+0.10 / −0.00,,0.5
+C3,M,12 dia reamed hole,Lỗ doa Ø12,12.000 - 12.027dia,Ø12.000–12.027,,0.8
+C3,M,12 dia reamed hole,Lỗ doa Ø12,depth 28.6,sâu 28.6,±.2mm,0.2
+C3,M,25.2 - 25.1mm slot,Rãnh 25.1–25.2 mm,25.2 to 25.1 = Yes/ Above 25.2 or below 25.1= No,25.1–25.2 = Đạt / trên 25.2 hoặc dưới 25.1 = Không,,1.0
+C3,M,47 x 20 - 10.5 dia hole location,Vị trí lỗ Ø10.5 tại 47 × 20,,,±.3mm,0.5
+C3,M,38 height,Chiều cao 38,,,±.15mm,0.5
+C3,M,105 hole centers,Khoảng tâm lỗ 105,,,±.15mm,0.5
+C3,M,12 height,Chiều cao 12,,,±.15mm,0.5
+C3,M,Positional tolerance on 10 reamed hole,Dung sai vị trí lỗ doa Ø10,2 holes at tolerance,2 lỗ trong dung sai,,0.4
+C3,M,32.5 hole centers on M4 holes horizontial,"Khoảng tâm 32.5 các lỗ M4, phương ngang",,,±.3mm,0.3
+C3,M,32.5 hole centers on M4 holes vertical,"Khoảng tâm 32.5 các lỗ M4, phương dọc",,,±.3mm,0.3
+C3,M,15.25 location off bottom datum,Vị trí 15.25 tính từ chuẩn đáy,,,,0.5
+C3,M,25.35 / 25.15 slot,Rãnh 25.15–25.35,"Above 25.35 or below 25.15 = zero marks, 25.35 to 25.15 = full marks",Trên 25.35 hoặc dưới 25.15 = 0; 25.15–25.35 = trọn điểm,,1.0
+C3,M,Surface Finish Ra Micro Meters 1.6 on 25.1 - .2 slot,Độ nhám Ra 1.6 µm trên rãnh 25.1–25.2,Expert visual check,Chuyên gia kiểm tra bằng mắt,,0.2
+C3,M,Surface Finish Ra Micro Meters 1.6 on 25.15 - .35 slot,Độ nhám Ra 1.6 µm trên rãnh 25.15–25.35,Expert visual check,Chuyên gia kiểm tra bằng mắt,,0.2
+C3,M,5.15 - 5.35 slot depth,Chiều sâu rãnh 5.15–5.35,"Above 5.35 or below 5.15 = zero marks, 5.35 to 5.15 = full marks",Trên 5.35 hoặc dưới 5.15 = 0; 5.15–5.35 = trọn điểm,,0.5
+C3,M,M4 x .07 tapped holes square,Lỗ ren M4 × .07 ta-rô vuông [Ghi chú dịch: đúng là M4×0.7],Enter number of .07 tapped holes square,Nhập số lỗ ren M4 (.07) ta-rô vuông,,1.0
+C3,M,R5 radius,Bán kính R5,Enter number of correct R5 radius,Nhập số bán kính R5 đúng,,1.0
+D1,,Detail 301,Chi tiết 301 (tấm lưng),,,,
+D1,M,Cluster 1 - 4 holes - 139 x 254 - 42 x 20. 4 holes - left side,"Cụm 1 – 4 lỗ – 139 × 254 – 42 × 20, 4 lỗ – bên trái",Enter the number of correct measurement holes on the left side-4 holes. 1 @ .25 x 4,"Nhập số lỗ đo đúng bên trái, 4 lỗ; 4 mục × 0.25",±.5mm,1.0
+D1,M,Cluster 1 and 2 Dia 7mm x 8,Cụm 1 và 2: Ø7 mm × 8 lỗ,8 holes @ 7mm- Enter the correct number of holes,8 lỗ Ø7 mm; nhập số lỗ đúng,,0.8
+D1,M,Cluster 2 - 4 holes - 139 x 254 - 42 x 20. 4 holes - right side,"Cụm 2 – 4 lỗ – 139 × 254 – 42 × 20, 4 lỗ – bên phải",Enter the number correct measurement completed. 1 @ .25 x 4,Nhập số kích thước đo đúng; 4 mục × 0.25,±.5mm,1.0
+D1,M,Cluster 3 - 243 x 90 x 45. 2 holes - right side,"Cụm 3 – 243 × 90 × 45, 2 lỗ – bên phải",Enter the number of correct measurements completed. 1 @ .25 x 2,Nhập số kích thước đo đúng; 2 mục × 0.25,±.5mm,0.5
+D1,M,Cluster 3 and 4 Dia 7mm x 4,Cụm 3 và 4: Ø7 mm × 4 lỗ,Enter the number completed- @ dia 7mm,Nhập số lỗ Ø7 mm đã làm đúng,,0.4
+D1,M,Cluster 4 - 243 x 90 x 45. 2 holes - left side,"Cụm 4 – 243 × 90 × 45, 2 lỗ – bên trái",Enter the number measurements completed. 1 @ .25 x 2,Nhập số mục đo đạt; 2 mục × 0.25,±.5mm,0.5
+D1,M,Cluster 5 -105 x 62 X 26. 4 holes - centre,"Cụm 5 – 105 × 62 × 26, 4 lỗ – giữa",Enter the number measurements completed. 1 @ .24 x 4,Nhập số mục đo đạt; 4 mục × 0.24 [Ghi chú dịch: các cụm khác ghi 0.25; điểm tối đa vẫn 1.0],±.5mm,1.0
+D1,M,Cluster 5 M10 x 1.5 x 2 tapped square,Cụm 5: 2 lỗ ren M10 × 1.5 ta-rô vuông,Enter the number measurements completed,Nhập số mục đo đạt,,0.3
+D1,M,Cluster 5 Dia 9.5 reamed 2 holes,"Cụm 5: Ø9.5 doa, 2 lỗ",Enter the number measurements completed,Nhập số mục đo đạt,,0.3
+D1,M,Cluster 6 - 1 hole - 97 x 20,Cụm 6 – 1 lỗ – 97 × 20,1 @ 0.15,1 mục × 0.15,±.5mm,0.15
+D1,M,Cluster 6 Dia 11- 1 hole,Cụm 6: Ø11 – 1 lỗ,1 @ 0.10,1 mục × 0.10,,0.1
+D1,M,M10 fasteners correctly torqued,Bu-lông M10 siết đúng mô-men,37 to 65 Nm x 6 Enter the number of correct torques maximum 6,"37–65 N·m × 6; nhập số bu-lông siết đúng, tối đa 6",,0.6
+D1,M,All holes deburred both sides x 20,Mọi lỗ đã vê bavia cả hai mặt × 20,Enter the number measurements completed,Nhập số mục đo đạt,,1.0
+D2,,Mechanical Assembly,Lắp ráp cơ khí,,,,
+D2,M,Detail 301 - back plate is secured to the weldment 200 assembly,Chi tiết 301 – tấm lưng đã bắt chặt vào cụm hàn 200,,,,0.2
+D2,M,Does detail 302 - heel slide move freely along detail 304 - bending wiper left side,Chi tiết 302 – con trượt gót có trượt tự do dọc chi tiết 304 – má uốn trái không,,,,1.25
+D2,M,Does detail 302 heel slide move freely along detail 305 bending wiper right side,Chi tiết 302 – con trượt gót có trượt tự do dọc chi tiết 305 – má uốn phải không,,,,1.25
+D2,M,Does detail 17 square bodied cylinder slide freely with detail 304 - bending wiper left side,Xi lanh thân vuông item 17 có trượt tự do cùng chi tiết 304 – má uốn trái không,,,,0.75
+D2,M,Does detail 17 square bodied cylinder slide freely with detail 305 - bending wiper right side,Xi lanh thân vuông item 17 có trượt tự do cùng chi tiết 305 – má uốn phải không,,,,0.75
+D2,M,Is clevis mount secured to detail 301 and detail 17 square bodied cylinder left and right side,"Đế chạc có bắt chặt vào chi tiết 301 và xi lanh thân vuông item 17, trái và phải không",Clevis mount secured at left and right sides. 1 @ .5 x 2,Đế chạc bắt chặt bên trái và bên phải; 2 mục × 0.5,,1.0
+D2,M,Is detail 106 - part present valve secured to detail 301 - back plate,Chi tiết 106 – giá van báo phôi có bắt chặt vào chi tiết 301 – tấm lưng không,,,,0.25
+D2,M,Is item 4 - roller valve secured to detail 106 - part present valve bracket,Item 4 – van con lăn có bắt chặt vào chi tiết 106 – giá van báo phôi không,,,,0.25
+D2,M,Is detail 103 - part present check pin correctly installed with item 4 - roller valve,Chi tiết 103 – chốt báo phôi có lắp đúng với item 4 – van con lăn không,,,,0.5
+D2,M,Is detail 302 - heel slide - left and right side secured to detail 301 - back plate,Chi tiết 302 – con trượt gót – trái và phải có bắt chặt vào chi tiết 301 – tấm lưng không,Heel slide left and right side secured at the back plate,Con trượt gót trái và phải bắt chặt vào tấm lưng,,0.5
+D2,M,"Are items 13, 14, 17 16, 9, 10, 11, 4, 1, 6, 7 and 2 in a complete assembly","Các item 13, 14, 17, 16, 9, 10, 11, 4, 1, 6, 7 và 2 (BOM 300) đã lắp hoàn chỉnh chưa",,,,1.75
+D2,M,Does detail 403 - punch plate slide freely on item 4 - guide pins,Chi tiết 403 – tấm mang chày có trượt tự do trên item 4 – chốt dẫn hướng không,,,,1.5
+D2,M,Does item 19 - punch enter item 3 - die button with equal clearance all around,Item 19 – chày có vào item 3 – cối với khe hở đều quanh không,,,,2.0
+D2,M,Is the shut height set correctly to allow item 19 - punch to pass into item 3 - die button and through metal strip,Chiều cao đóng có đặt đúng để item 19 – chày đi vào item 3 – cối và xuyên qua tấm kim loại không,,,,1.5
+D2,M,Is the Mchine guard installed correctly to detail 301 - bck plate,Tấm chắn máy có lắp đúng vào chi tiết 301 – tấm lưng không,,,,1.0
+E1,,Pneumatic Assembly,Lắp ráp khí nén,,,,
+E1,M,Is pneumatic tubing routed in an orderly pattern to the wiping cylinders item 17 left and right,"Ống khí nén đến hai xi lanh uốn item 17 trái và phải có đi gọn, có trật tự không",Enter the number of orderly routing patterns from Left to Right of 2. .5 marks per side,"Nhập số tuyến ống đi gọn, trái và phải, tối đa 2; 0.5 điểm mỗi bên",,1.0
+E1,M,Is pneumatic tubing routed in an orderly pattern to the clamping cylinder item 6,"Ống khí nén đến xi lanh kẹp item 6 có đi gọn, có trật tự không",,,,0.7
+E1,M,Is pneumatic tubing routed in an orderly pattern to the punching cylinder item 17,"Ống khí nén đến xi lanh đột item 17 có đi gọn, có trật tự không",,,,0.7
+E1,M,Is the pneumatic tubing routed in an orderly pattern to detail 500 - component plate,"Ống khí nén đến chi tiết 500 – tấm linh kiện có đi gọn, có trật tự không",,,,1.0
+E1,M,Is pneumatic tubing adequately supported throughout,Ống khí nén có được đỡ đủ trên toàn tuyến không,,,,1.0
+E1,M,Are zip ties spaced approperiately where used,Dây rút (nơi có dùng) có cách đều hợp lý không,,,,1.0
+E1,M,Where zip ties were used - is there crushing of the pneumatic tubing to prevent air flow,Nơi dùng dây rút – có làm bẹp ống khí nén cản dòng khí không,,,,1.0
+E1,M,Were there any visable kinks or flattening of pneumatic tubing anywhere on the machine,Có chỗ gập hay bẹp ống khí nén nào nhìn thấy trên máy không,,,,1.0
+E1,M,Was adaquate bend radius used on the pneumatic tubing throughout,Bán kính uốn ống khí nén có đủ trên toàn tuyến không,,,,1.0
+E1,M,Were moving pneumatic tubing lines bundled with fixed pneumatic lines,Ống khí nén động có được bó cùng ống cố định không,Enter the number of Pneumatic tubing bundles correctly fixed in line,Nhập số bó ống khí nén được cố định đúng tuyến,,1.0
+E1,M,Are individaul pneumatic tubes removable without cutting an entire bundle,Từng ống khí nén có tháo được mà không phải cắt cả bó không,,,,0.5
+E1,M,All pneumatic tubing is clear of moving parts,Mọi ống khí nén tránh chi tiết chuyển động,,,,0.5
+F1,,Final Project Functionality,Vận hành cuối cùng,,,,
+F1,M,Is the system pressure set to 800kpa (8 bar),Áp suất hệ thống có đặt 800 kPa (8 bar) không,,,,0.5
+F1,M,"Does the machine cycle safely and correctly in the correct sequence - MM1+, MM2+ & MM3+, MM4+… MM1-, MM2- & MM3-, MM4-","Máy có chạy an toàn và đúng chuỗi MM1+, MM2+ & MM3+, MM4+ … MM1−, MM2− & MM3−, MM4− không",,,,2.0
+F1,M,Do the safety interlocks work correclty whern the guard is lifted and / or the piece part is not in place,Khoá liên động an toàn có hoạt động đúng khi nâng cửa chắn và/hoặc không có phôi không,,,,2.0
+F1,M,Does the machine produce one piece part,Máy có làm ra một sản phẩm không,,,,0.5
+F1,M,Does the machine produce two more piece parts,Máy có làm ra thêm hai sản phẩm không,Enter the correct number of piece parts functioning correctly,Nhập số sản phẩm đạt,,1.0
+F1,M,Is the piece part with dimensional tolerances,Sản phẩm có nằm trong dung sai kích thước không,,,,1.5
+G1,,Pneumatic Troubleshooting,Sửa lỗi khí nén,,,,
+G1,M,Fault 1 Identified,Đã xác định lỗi 1,,,,0.3
+G1,M,Fault 2 Identified,Đã xác định lỗi 2,,,,0.3
+G1,M,Fault 3 Identified,Đã xác định lỗi 3,,,,0.3
+G1,M,Fault 1 Rectified,Đã sửa lỗi 1,,,,0.3
+G1,M,Fault 2 Rectified,Đã sửa lỗi 2,,,,0.3
+G1,M,Fault 3 Rectified,Đã sửa lỗi 3,,,,0.3
+G1,M,Total aggregate time,Tổng thời gian (xếp hạng tốc độ),,,,0.7

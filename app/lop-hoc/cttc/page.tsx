@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Cog, Factory, Sigma, Wrench, type LucideIcon } from "lucide-react";
+import { ArrowRight, BookOpen, Cog, Factory, Medal, Sigma, Wrench, type LucideIcon } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -40,6 +40,12 @@ const COURSES: Course[] = [
     description: "Từ vựng, đọc hiểu tài liệu kỹ thuật và luyện đúng 5 Part của đề cuối kỳ. Vào học tự do.",
     href: "/lop-hoc/avcn",
     icon: BookOpen,
+  },
+  {
+    title: "WorldSkills — Industrial Mechanics",
+    description: "Đề thi Shanghai 2026, thang điểm, phiếu tự chấm và thuật ngữ song ngữ cho đội tuyển. Vào học tự do.",
+    href: "/lop-hoc/worldskills-im",
+    icon: Medal,
   },
 ];
 

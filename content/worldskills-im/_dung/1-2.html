@@ -1,0 +1,1326 @@
+<p>Nguồn: <code>WS2026_TP01_1st Assembly and Machining</code> (bản vẽ lắp 100, 300, 400, 500, chi tiết 301, 401, 404, 405, 1000; 25/08/2026), <code>WS2026_TP01_1st Angle Machining Aid + Machining Detail Parts</code> (trích 401, 404, 405 + hướng dẫn gia công), <code>WS2026_TP01_200 Fab and Welding Series 1st angle</code> (bản vẽ 200, 201–207), <code>WSC2026_TP01_1st_angle_pre_en</code> (bộ pre-release, JANUARY 2026: 101–107, 201–207, 301P, 302–305, 401–410, 500). Người vẽ: Simon Heathcote; SCM: Craig Brazil. Khổ A3.</p>
+<p><strong>Các bản 3rd angle</strong> (<code>…3rd Assembly and Machining</code>, <code>…3rd Angle Machining Aid…</code>, <code>…200 Fab and Welding Series 3rd angle</code>, <code>WSC2026_TP01_3rd_angle_pre_en</code>) <strong>trùng nội dung hoàn toàn</strong> với bản 1st angle, chỉ khác phép chiếu (góc thứ ba, kiểu Bắc Mỹ) — không dịch riêng.</p>
+<div class="tl-box">
+<p><strong>Dùng để huấn luyện</strong></p>
+<ul>
+<li><strong>Điểm liên quan:</strong> mọi mục của C (26.0), D (22.1) và B1 (14.0) đều chấm theo bản vẽ này — đọc sai bản vẽ là mất điểm ở ba tiêu chí.</li>
+<li><strong>Điểm dễ lấy:</strong> thuộc BOM để lắp D2 &quot;complete assembly&quot; (1.75) và &quot;secured&quot; (≈3.5 điểm) không bỏ sót chi tiết; biết ký hiệu ±, H8/f8/6g để tự kiểm tra trước khi nộp.</li>
+<li><strong>Bẫy mất điểm:</strong> &quot;DO NOT TIGHTEN NYLOCK NUTS&quot; (tấm chắn phải lật tự do, 8 vị trí); &quot;NO WELD OR TACK ON THIS FACE ON ANY MEMBER&quot;; &quot;DO NOT GRIND WELDS&quot;; &quot;HOLES IN ONE PART ONLY&quot; (chỉ 1 trong 4 chân 201 có lỗ M4); &quot;REAM ON ASSEMBLY WITH PART 401&quot; (lỗ Ø9.5 trên 301 doa khi lắp cùng 401, không doa trước); &quot;MAY NEED TO REAM THE BUSHINGS&quot; (bạc 403 có thể phải doa để trượt êm); ký hiệu &quot;NEAR SIDE ONLY&quot; / &quot;BOTH SIDES&quot; trên 107 và 201.</li>
+</ul>
+</div>
+<h3 id="1-cach-doc-khung-ten-title-block-va-ghi-chu-chung">1. Cách đọc khung tên (title block) và ghi chú chung</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Trên bản vẽ (EN)</th>
+<th>Nghĩa (VI)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Drawing Title: WSC2026_TP01_CA_100_EN</td>
+<td>Mã bản vẽ: kỳ thi 2026, đề nghề 01, CA = Competitor/Assembly, số bản vẽ 100, tiếng Anh</td>
+</tr>
+<tr>
+<td>Scale: 1:5 / 1:2 / 1:1 / 2:1 / NTS / N/A / AS NOTED</td>
+<td>Tỷ lệ; NTS = không theo tỷ lệ; AS NOTED = ghi riêng từng hình</td>
+</tr>
+<tr>
+<td>Sheet Size: A3 — Dwg No: 1 of 3</td>
+<td>Khổ giấy A3 — tờ 1 trong 3</td>
+</tr>
+<tr>
+<td>SCM: CRAIG BRAZIL — Drawn by: SIMON HEATHCOTE</td>
+<td>Quản lý thi nghề — Người vẽ</td>
+</tr>
+<tr>
+<td>Date: 25/08/2026</td>
+<td>Ngày (bản thật); bản pre-release ghi JANUARY 2026</td>
+</tr>
+<tr>
+<td>PROJECTION (kèm ký hiệu hình nón cụt)</td>
+<td>Phép chiếu góc thứ nhất (1st) hoặc góc thứ ba (3rd)</td>
+</tr>
+<tr>
+<td>PART #: 301 — MTL: STEEL — QNTY: 1</td>
+<td>Mã chi tiết — Vật liệu: thép — Số lượng</td>
+</tr>
+<tr>
+<td>MTL: ALUM / STEEL / BRASS / ACETAL / LEXAN / BRONZE / M2</td>
+<td>Nhôm / thép / đồng thau / nhựa acetal (POM) / polycarbonate / đồng thanh / thép gió M2</td>
+</tr>
+<tr>
+<td>Test Project for the 48th WorldSkills Competition in Shanghai, China 2026 — Copyright © 2026 WorldSkills International</td>
+<td>Đề thi Kỳ thi Kỹ năng nghề thế giới lần 48, Thượng Hải 2026 — bản quyền WSI</td>
+</tr>
+<tr>
+<td>SOLIDWORKS Educational Product. For Instructional Use Only.</td>
+<td>Dấu nước của phần mềm vẽ, bỏ qua</td>
+</tr>
+<tr>
+<td>WSC2026_TPXX_AA_BB_EN_MULTI-SHEET.dwg</td>
+<td>Tên file CAD gốc nhiều tờ</td>
+</tr>
+</tbody></table>
+<p>Ghi chú lặp lại trên bản vẽ chi tiết gia công (401, 404, 405):</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. BREAK ALL SHARP EDGES</td>
+<td>1. Vê (phá) mọi cạnh sắc</td>
+</tr>
+<tr>
+<td>2. UNLESS OTHERWISE SPECIFIED SURFACE FINISH 1.6 (405: 3.2) ON ALL MACHINED SURFACES</td>
+<td>2. Nếu không ghi khác, độ nhám Ra 1.6 µm (405: Ra 3.2) trên mọi mặt gia công</td>
+</tr>
+<tr>
+<td>3. UNLESS OTHERWISE SPECIFIED TOLERANCE CLASS IS m (MEDIUM) ISO2768-1fk</td>
+<td>3. Nếu không ghi khác, dung sai chung theo ISO 2768-1, cấp m (trung bình) [Ghi chú dịch: ký hiệu kèm theo lại là &quot;fk&quot; = cấp f (fine) kích thước, K hình học — mâu thuẫn, <code>loi-ban-goc.md</code> #16; thang điểm dùng ±0.15/±0.3]</td>
+</tr>
+</tbody></table>
+<h3 id="2-ban-ve-lap-100-toan-may-wsc2026-tp01-ca-100-en-3-to-ty-le-">2. Bản vẽ lắp 100 — Toàn máy (WSC2026_TP01_CA_100_EN, 3 tờ, tỷ lệ 1:5, DETAIL G 1:2, DETAIL H 1:5)</h3>
+<p>Ghi chú trên bản vẽ:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DO NOT TIGHTEN NYLOCK NUTS, ALLOW FREE MOVEMENT OF SAFETY SHIELD – 8 PLACES</td>
+<td><strong>KHÔNG siết chặt đai ốc Nylock</strong> (item 17), để <strong>tấm chắn an toàn chuyển động tự do</strong> — 8 vị trí</td>
+</tr>
+</tbody></table>
+<p>BOM (ITEM NO. | PART NUMBER | DESCRIPTION EN | VI | QTY):</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Item</th>
+<th>Mã</th>
+<th>Mô tả EN</th>
+<th>Mô tả VI</th>
+<th>SL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>200</td>
+<td>WELDMENT</td>
+<td>Cụm hàn (khung đỡ máy, thí sinh hàn)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>300</td>
+<td>BACK PLATE ASSEMBLY</td>
+<td>Cụm tấm lưng</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>107</td>
+<td>SAFETY SHIELD</td>
+<td>Tấm chắn an toàn (Lexan)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>105</td>
+<td>HANDLE</td>
+<td>Tay cầm (acetal)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>102</td>
+<td>LONG ARM</td>
+<td>Tay đòn dài (nhôm)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>101</td>
+<td>SHORT ARM</td>
+<td>Tay đòn ngắn (nhôm)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8049239 VMEF-RT-M32-M-G18</td>
+<td>SAFETY SWITCH</td>
+<td>Công tắc an toàn (van cần con lăn Festo, -QMA1 &quot;Gate Switch&quot;)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>104</td>
+<td>SAFETY SWITCH STRIKER</td>
+<td>Vấu tác động công tắc an toàn (nhôm)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>91290A129</td>
+<td>M10 X 120 SHCS</td>
+<td>Vít lục giác chìm đầu trụ M10 × 120 (bắt 301 vào 200)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10</td>
+<td>91455A140</td>
+<td>M10 STEEL WASHER</td>
+<td>Vòng đệm thép M10</td>
+<td>4</td>
+</tr>
+<tr>
+<td>11</td>
+<td>90591A171</td>
+<td>M10 NUT</td>
+<td>Đai ốc M10</td>
+<td>4</td>
+</tr>
+<tr>
+<td>12</td>
+<td>91239A152</td>
+<td>M4 X 20 BUTTON HEAD HEX DRIVE SCREW</td>
+<td>Vít đầu tròn lục giác chìm M4 × 20</td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>98269A430</td>
+<td>M4 STEEL WASHER</td>
+<td>Vòng đệm thép M4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>14</td>
+<td>90593A003</td>
+<td>M4 NUT</td>
+<td>Đai ốc M4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>90854A152</td>
+<td>M6 X 15 STEEL HHCS</td>
+<td>Bu-lông đầu lục giác M6 × 15</td>
+<td>2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>91310A333</td>
+<td>M6 X 20 STEEL HHCS</td>
+<td>Bu-lông đầu lục giác M6 × 20</td>
+<td>4</td>
+</tr>
+<tr>
+<td>17</td>
+<td>94645A205</td>
+<td>M6 NYLON-INSERT LOCKNUT</td>
+<td>Đai ốc khoá lõi nylon M6 (Nylock) — <strong>không siết chặt</strong></td>
+<td>8</td>
+</tr>
+<tr>
+<td>18</td>
+<td>91280A351</td>
+<td>M6 X 65 HHCS</td>
+<td>Bu-lông đầu lục giác M6 × 65</td>
+<td>4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>91290A541</td>
+<td>M10 X 75 SHCS</td>
+<td>Vít lục giác chìm M10 × 75</td>
+<td>2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>91290A176</td>
+<td>M4 X 25 SHCS</td>
+<td>Vít lục giác chìm M4 × 25</td>
+<td>2</td>
+</tr>
+<tr>
+<td>21</td>
+<td>500</td>
+<td>PNEUMATIC ASSEMBLY</td>
+<td>Cụm khí nén (tấm linh kiện)</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<p>Mã dạng 9xxxxAxxx là mã McMaster-Carr (giữ nguyên). Trên bản vẽ, số trong bong bóng (12 13 14, 21, 7, 1, 8, 3, 20, 4 5, 9 10 11, 15, 16, 6, 10 11 19, 18 17) là số item.</p>
+<h3 id="3-ban-ve-lap-300-cum-tam-lung-wsc2026-tp01-ca-300-en-1-to-1-">3. Bản vẽ lắp 300 — Cụm tấm lưng (WSC2026_TP01_CA_300_EN, 1 tờ, 1:5, DETAIL L 2:5)</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Item</th>
+<th>Mã</th>
+<th>Mô tả EN</th>
+<th>Mô tả VI</th>
+<th>SL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>301</td>
+<td>BACK PLATE</td>
+<td>Tấm lưng (thí sinh lấy dấu, khoan, ta-rô)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>103</td>
+<td>PART PRESENT CHECK PIN</td>
+<td>Chốt báo có phôi (thép)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>106</td>
+<td>PART PRESENT VALVE BRACKET</td>
+<td>Giá van báo phôi (nhôm)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3629 R-3-M5 (0)</td>
+<td>ROLLER VALVE</td>
+<td>Van con lăn Festo R-3-M5 (-QMA2 &quot;Part Present&quot;)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>304 + 305</td>
+<td>BENDING PUNCH</td>
+<td>Chày/má uốn trái + phải (acetal) [Ghi chú dịch: bản vẽ pre-release đánh số má uốn là <strong>303 và 304</strong>, còn 305 là khối định vị hành trình bằng thép; thang điểm D2 gọi 304 trái/305 phải — <code>loi-ban-goc.md</code> #18]</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>302</td>
+<td>HEEL SLIDE</td>
+<td>Con trượt gót (đồng thau)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>400</td>
+<td>SUB ASSEMBLY</td>
+<td>Cụm con (cụm đột)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>8</td>
+<td>93475A250</td>
+<td>M6 WASHER</td>
+<td>Vòng đệm M6</td>
+<td>12</td>
+</tr>
+<tr>
+<td>9</td>
+<td>90592A016</td>
+<td>M6 Nut</td>
+<td>Đai ốc M6</td>
+<td>12</td>
+</tr>
+<tr>
+<td>10</td>
+<td>91290A534</td>
+<td>M10 X 55 SHCS</td>
+<td>Vít lục giác chìm M10 × 55 (bắt 401 vào 301)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>11</td>
+<td>91290A344</td>
+<td>M6 X 60 SHCS</td>
+<td>Vít lục giác chìm M6 × 60</td>
+<td>4</td>
+</tr>
+<tr>
+<td>12</td>
+<td>91595A664</td>
+<td>10 DOWEL 60 LONG</td>
+<td>Chốt định vị Ø10 dài 60 (vào lỗ Ø9.5 doa trên 301)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>13</td>
+<td>91290A148</td>
+<td>M4 X 12 SHCS</td>
+<td>Vít lục giác chìm M4 × 12</td>
+<td>2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>98269A430</td>
+<td>M4 WASHER</td>
+<td>Vòng đệm M4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>90593A003</td>
+<td>M4 NUT</td>
+<td>Đai ốc M4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>16</td>
+<td>91290A172</td>
+<td>M4 X 30 SHCS</td>
+<td>Vít lục giác chìm M4 × 30</td>
+<td>2</td>
+</tr>
+<tr>
+<td>17</td>
+<td>536273 ADN-32-30-A-P-A – with fittings</td>
+<td>SQUARE BODY CYLINDER C/W MOUNTING CLEVIS</td>
+<td>Xi lanh thân vuông Festo ADN-32-30 kèm đầu nối, <strong>có đế chạc</strong> (clevis LBG-32 + mặt bích xoay SNCS-32) — xi lanh uốn MM2, MM3</td>
+<td>2</td>
+</tr>
+<tr>
+<td>18</td>
+<td>91290A330</td>
+<td>M6 X 25 SHCS</td>
+<td>Vít lục giác chìm M6 × 25</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<h3 id="4-ban-ve-chi-tiet-301-tam-lung-wsc2026-tp01-ca-301-en-1-2-th">4. Bản vẽ chi tiết 301 — Tấm lưng (WSC2026_TP01_CA_301_EN, 1:2) — thí sinh làm</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Notes: 1. ALL HOLE LOCATIONS ±0.5</td>
+<td>Ghi chú: 1. Mọi vị trí lỗ ±0.5 mm</td>
+</tr>
+<tr>
+<td>2. BREAK ALL SHARP EDGES</td>
+<td>2. Vê mọi cạnh sắc</td>
+</tr>
+<tr>
+<td>8x Ø7 THRU ALL</td>
+<td>8 lỗ Ø7 xuyên suốt (cụm 1, 2: bắt con trượt gót 302)</td>
+</tr>
+<tr>
+<td>4x Ø7 THRU</td>
+<td>4 lỗ Ø7 xuyên (cụm 3, 4: bắt đế chạc xi lanh uốn)</td>
+</tr>
+<tr>
+<td>4x Ø11 THRU</td>
+<td>4 lỗ Ø11 xuyên (bắt vào khung 200)</td>
+</tr>
+<tr>
+<td>Ø11 THRU</td>
+<td>1 lỗ Ø11 xuyên (cụm 6)</td>
+</tr>
+<tr>
+<td>2x Ø8.5 THRU</td>
+<td>2 lỗ Ø8.5 xuyên</td>
+</tr>
+<tr>
+<td>Ø9.5 THROUGH — REAM ON ASSEMBLY WITH PART 401</td>
+<td>Ø9.5 xuyên — <strong>doa khi lắp cùng chi tiết 401</strong> (để đóng chốt Ø10)</td>
+</tr>
+<tr>
+<td>M10x1.5 – 6H THRU</td>
+<td>Ren M10 × 1.5 cấp 6H xuyên (2 lỗ, bắt 401)</td>
+</tr>
+<tr>
+<td>42 TYP, 25 TYP, 100 TYP</td>
+<td>Bước 42 / 25 / 100, áp dụng mọi vị trí tương tự</td>
+</tr>
+<tr>
+<td>Kích thước vị trí: 95, 15, 139, 20, 243, 254, 135, 97, 88, 90, 105, 62</td>
+<td>Giữ nguyên, đo từ mép tấm</td>
+</tr>
+</tbody></table>
+<p>Tấm 301 pre-release (301P): 500 × 375 (?) có hai khe cắt (CUT OUTS ARE THROUGH), <strong>mài phẳng Blanchard cả hai mặt</strong> (BLANCHARD GRIND BOTH FACES), Ra 3.2, dày 7 ±1, 2 lỗ Ø3.3 ta-rô M4×0.7, R6 TYP, vị trí ⟂ 0.1 B — <strong>cấp sẵn cho thí sinh</strong>; thí sinh chỉ lấy dấu và khoan/ta-rô 20 lỗ.</p>
+<h3 id="5-ban-ve-lap-400-cum-dot-wsc2026-tp01-ca-400-en-2-to-to-1-1-">5. Bản vẽ lắp 400 — Cụm đột (WSC2026_TP01_CA_400_EN, 2 tờ; tờ 1 1:1, tờ 2 1:2)</h3>
+<p>Ghi chú tờ 1:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PRE-BUILD ASSEMBLY AS SHOWN, BEFORE CONTINUING ENSURE THAT; 1, THE UPPER ASSEMBLY SLIDES EVENLY ON THE GUIDE PINS – MAY NEED TO REAM THE BUSHINGS 2, THE PUNCH ENTERS THE DIE BUTTON EVENLY WITH EQUAL CLEARANCE ALL AROUND</td>
+<td><strong>Lắp thử trước như hình</strong>, trước khi tiếp tục phải bảo đảm: 1. Cụm trên <strong>trượt đều trên chốt dẫn hướng</strong> — <strong>có thể phải doa bạc</strong> (sleeve bearing); 2. <strong>Chày vào cối đều, khe hở đều quanh</strong>. [Hai điều này là mục D2 1.5 + 2.0 điểm]</td>
+</tr>
+</tbody></table>
+<p>BOM 400:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Item</th>
+<th>Mã</th>
+<th>Mô tả EN</th>
+<th>Mô tả VI</th>
+<th>SL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>401</td>
+<td>DIE BLOCK</td>
+<td>Khối cối (thép, <strong>thí sinh phay</strong>, C3)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>402</td>
+<td>CLAMP</td>
+<td>Kẹp (thép, pre-release gồm 402-A, 402-B, 402-C)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>ADX20-A20-M2-P6.6</td>
+<td>DIE BUTTON</td>
+<td>Cối đột Misumi, lỗ Ø6.6 (= 408)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>4</td>
+<td>VFJT12-100-M6</td>
+<td>GUIDE PINS</td>
+<td>Chốt dẫn hướng Misumi Ø12 × 100, ren M6 (= 410)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>91290A332</td>
+<td>M6 X 30 SHCS</td>
+<td>Vít lục giác chìm M6 × 30</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>536418 AEN-32-10-A-P-A---(0)</td>
+<td>SQUARE BODY CYLINDER</td>
+<td>Xi lanh thân vuông Festo AEN-32-10 — <strong>xi lanh kẹp MM1</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>7</td>
+<td>402</td>
+<td>SPACER</td>
+<td>Căn đệm (thép) [Ghi chú dịch: trùng mã 402 với item 2 — <code>loi-ban-goc.md</code> #17]</td>
+<td>2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>91290A083</td>
+<td>M4 X 65 SHCS</td>
+<td>Vít lục giác chìm M4 × 65</td>
+<td>4</td>
+</tr>
+<tr>
+<td>9</td>
+<td>404</td>
+<td>PUNCH HOLDER</td>
+<td>Đầu giữ chày (nhôm, <strong>thí sinh tiện</strong>, C2)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>403</td>
+<td>PUNCH PLATE</td>
+<td>Tấm mang chày (nhôm, cấp sẵn)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>2934T138</td>
+<td>FLANGED SLEEVE BEARING</td>
+<td>Bạc trượt có vai, đồng thanh (McMaster-Carr) (= 409)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>12</td>
+<td>401</td>
+<td>STROKE POSITIONING SCREW</td>
+<td>Vít định vị hành trình (= <strong>Detail 405</strong>, thép, <strong>thí sinh tiện</strong>, C1) [Ghi chú dịch: trùng mã 401 với item 1 — #17]</td>
+<td>1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>90593A015</td>
+<td>M24 NUT</td>
+<td>Đai ốc M24 (khoá ren M24×3 của 405)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>14</td>
+<td>98687A327</td>
+<td>M24 WASHER</td>
+<td>Vòng đệm M24</td>
+<td>2</td>
+</tr>
+<tr>
+<td>15</td>
+<td>305</td>
+<td>STROKE POSITIONING BLOCK</td>
+<td>Khối định vị hành trình (thép, lỗ Ø24.5)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>16</td>
+<td>6141 FK-M12X1,25---(asm_0_0)</td>
+<td>MISALIGNMENT COUPLER</td>
+<td>Khớp nối tự lựa cần piston Festo FK-M12×1,25</td>
+<td>1</td>
+</tr>
+<tr>
+<td>17</td>
+<td>8092076 ADN-S-50-20-A-P-A---(0_high)</td>
+<td>SQUARE BODY CYLINDER</td>
+<td>Xi lanh thân vuông Festo ADN-S-50-20 — <strong>xi lanh đột MM4</strong></td>
+<td>1</td>
+</tr>
+<tr>
+<td>18</td>
+<td>91290A344</td>
+<td>M6 X 60 SHCS</td>
+<td>Vít lục giác chìm M6 × 60</td>
+<td>4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>SPTWA20-40-P6.5-B5-V8-F12</td>
+<td>PUNCH</td>
+<td>Chày đột Misumi Ø20 thân, mũi Ø6.5 (= 407)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>20</td>
+<td>91290A326</td>
+<td>M6 X 20 SHCS</td>
+<td>Vít lục giác chìm M6 × 20</td>
+<td>3</td>
+</tr>
+</tbody></table>
+<p><strong>Chiều cao đóng (shut height):</strong> vặn 405 (ren M24×3) qua khối 305 và khoá bằng 2 đai ốc M24 để mũi chày Ø6.5 xuyên qua phôi 0.5 mm vào cối ADX20 (lỗ 6.6) ở điểm chết dưới của MM4.</p>
+<h3>6. Bản vẽ chi tiết gia công 401, 404, 405 — xem số liệu đầy đủ trong <code>04-module-C-tien-phay.md</code></h3>
+<p>Ghi chú riêng:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Bản vẽ</th>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>401</td>
+<td>SECTION B-B REMOVED</td>
+<td>Mặt cắt B-B dạng tách (vẽ rời khỏi hình chiếu)</td>
+</tr>
+<tr>
+<td>401</td>
+<td>2 x REAM Ø10.00 THRU ALL</td>
+<td>2 lỗ Ø10.00 doa xuyên</td>
+</tr>
+<tr>
+<td>401</td>
+<td>REAM Ø20 H8 +0.033/0.000, depth 20 +0.10/−0.00</td>
+<td>Lỗ doa Ø20 H8 sâu 20 (+0.10/−0)</td>
+</tr>
+<tr>
+<td>401</td>
+<td>REAM Ø12 H8 +0.027/0.000, depth 28.6</td>
+<td>Lỗ doa Ø12 H8 sâu 28.6</td>
+</tr>
+<tr>
+<td>401</td>
+<td>4x Ø3.3 ↧15, M4x0.7 – 6H ↧8</td>
+<td>4 lỗ mồi Ø3.3 sâu 15, ren M4×0.7 6H sâu 8</td>
+</tr>
+<tr>
+<td>401</td>
+<td>2x Ø11 THRU ALL; Ø10.5</td>
+<td>2 lỗ Ø11 xuyên; 1 lỗ Ø10.5</td>
+</tr>
+<tr>
+<td>401</td>
+<td>⌖ 0.15 D E; ⟂ 0.05 D; 0.05 C D</td>
+<td>Dung sai vị trí 0.15 so với chuẩn D, E; vuông góc 0.05 với D; 0.05 với C và D</td>
+</tr>
+<tr>
+<td>404</td>
+<td>SECTION I-I (2:1); Ø20 H8 +0.033/0.000; Ø25.10/25.05; 5.1/5.0; 0.5 X 45°; Ra 1.6; ⟂ 0.02 F</td>
+<td>Mặt cắt I-I; lỗ Ø20 H8; trụ Ø25 (25.05–25.10); sâu 5.0–5.1; vát 0.5 × 45°; nhám 1.6; vuông góc 0.02 với F</td>
+</tr>
+<tr>
+<td>405</td>
+<td>M24 X 3 – 6g, MAJOR DIAMETER 23.952 / 23.577, PITCH DIAMETER 22.003 / 21.803</td>
+<td>Ren M24 × 3 cấp 6g, đường kính đỉnh 23.577–23.952, <strong>đường kính trung bình 21.803–22.003</strong> (mục chấm 2.0 điểm)</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Ø85 f8 −0.036/−0.090; Ø58 0.00/−0.03; Ø20; 93; 12; 15; 120; Ø6.8 ↧20, M8x1.25 – 6H ↧16; 4x Ø5 THRU ALL, M6x1.0 – 6H THRU ALL; 1 X 45°; Ra 1.6 trên Ø85; ◎ 0.03 B; ⟂ 0.1 A</td>
+<td>Các kích thước tiện và ren; đồng tâm 0.03 với B; vuông góc 0.1 với A</td>
+</tr>
+<tr>
+<td>405 (pre-release, phôi)</td>
+<td>NUMBER 4 CENTER BOTH ENDS AS SHOWN; Ø100 × 125</td>
+<td>Khoan tâm số 4 hai đầu; phôi Ø100 dài 125</td>
+</tr>
+</tbody></table>
+<h3 id="7-ban-ve-lap-500-tam-linh-kien-khi-nen-wsc2026-tp01-ca-500-e">7. Bản vẽ lắp 500 — Tấm linh kiện khí nén (WSC2026_TP01_CA_500_EN, N.T.S.)</h3>
+<p>Bản thật chỉ ghi vị trí các phần tử trên tấm: hàng trên <strong>QMA3, QMA4</strong> (2 nút nhấn hai tay), <strong>KHB1 … KHB5</strong> (phần tử OR/AND), <strong>QMA5, QMA6</strong> (van chọn chế độ, khối hai tay), hàng dưới <strong>QMA7, QMA9, QMA12, QMA15, QMA16</strong> (van 5/2) — ý nghĩa mã ở <code>07-so-do-khi-nen.md</code>.</p>
+<p>Bản pre-release 500: tấm nhôm 750 × 250 (gốc X–Y góc dưới trái), &quot;USE HOLE CHART FOR POSITION AND SIZE OF UNSPECIFIED HOLES. TAGS REMOVED FOR CLARITY&quot; (dùng <strong>bảng toạ độ lỗ</strong> X LOC / Y LOC / SIZE cho các lỗ không ghi; nhãn bỏ cho dễ nhìn); các lỗ Ø4.2 xuyên + M5×0.8 6H, Ø3.3 + M4×0.7 6H, Ø2.5 + M3×0.5 6H, Ø6.5, Ø23 xuyên; hàng lỗ &quot;50 X 7 PITCHES&quot; (7 bước 50 mm); DETAIL H 1:2. <strong>Cấp sẵn</strong>, thí sinh chỉ gắn van và đi ống.</p>
+<h3 id="8-ban-ve-1000-phoi-san-pham-wsc2026-tp01-ca-1000-en-1-1">8. Bản vẽ 1000 — Phôi/sản phẩm (WSC2026_TP01_CA_1000_EN, 1:1)</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MATERIAL IS 0.5 THICK</td>
+<td>Vật liệu dày 0.5 mm (nhôm)</td>
+</tr>
+<tr>
+<td>200; 25.0 / 24.5</td>
+<td>Dài 200; rộng 25.0 / 24.5 (phôi)</td>
+</tr>
+<tr>
+<td>DOWN 70° R 5 (×2)</td>
+<td>Uốn xuống 70°, bán kính trong R5, hai bên</td>
+</tr>
+<tr>
+<td>110° ±15° TYP</td>
+<td>Góc sau uốn 110° ±15°, cả hai bên (mục F1 &quot;piece part within dimensional tolerances&quot;, 1.5 điểm)</td>
+</tr>
+<tr>
+<td>MTL: ALUM, QNTY: 1</td>
+<td>Nhôm; 1 (thí sinh được cấp nhiều phôi để ra 3 sản phẩm)</td>
+</tr>
+</tbody></table>
+<h3 id="9-ban-ve-200-cum-han-wsc2026-tp01-ca-200-en-2-to-1-5-view-on">9. Bản vẽ 200 — Cụm hàn (WSC2026_TP01_CA_200_EN, 2 tờ, 1:5; VIEW ON ARROW A 1:10; DETAIL M 2:5) và 201–207</h3>
+<p>Ghi chú trên bản vẽ 200:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NO WELD OR TACK ON THIS FACE ON ANY MEMBER</td>
+<td><strong>Không hàn, không hàn đính lên mặt này của bất kỳ thanh nào</strong> (mặt lắp tấm lưng 301)</td>
+</tr>
+<tr>
+<td>NOTE: DO NOT GRIND WELDS</td>
+<td><strong>Không mài mối hàn</strong> (chuyên gia chấm biên dạng mối hàn nguyên trạng)</td>
+</tr>
+<tr>
+<td>Z3 TYP (ký hiệu hàn ISO 2553)</td>
+<td>Mối hàn góc, cạnh mối hàn Z = 3 mm, mọi vị trí tương tự (chấm 3–4 mm)</td>
+</tr>
+<tr>
+<td>3 TYP</td>
+<td>Cạnh/khe 3 mm điển hình</td>
+</tr>
+<tr>
+<td>13; 15; 117; 105; 57.5 TYP; 0</td>
+<td>Kích thước định vị (giữ nguyên)</td>
+</tr>
+<tr>
+<td>VIEW ON ARROW A</td>
+<td>Hình chiếu theo hướng mũi tên A</td>
+</tr>
+</tbody></table>
+<p>BOM 200:</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Item</th>
+<th>Mã</th>
+<th>Mô tả EN</th>
+<th>Mô tả VI</th>
+<th>SL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>201</td>
+<td>50 X 50 X 2 X 300 SHS</td>
+<td>Thép hộp vuông 50 × 50 × 2, dài 300 (chân)</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2</td>
+<td>204</td>
+<td>50 X 50 X 2 X 500 SHS</td>
+<td>Hộp vuông, dài 500 (thanh dài khung trên)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>202</td>
+<td>50 X 50 X 2 X 300 SHS</td>
+<td>Hộp vuông, dài 300 (thanh hông)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>203</td>
+<td>50 X 50 X 2 X 400 SHS</td>
+<td>Hộp vuông, dài 400 (thanh trước/sau)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>206</td>
+<td>50 X 50 X 2 X 375 SHS</td>
+<td>Hộp vuông, dài 375, vát 25° (chống chéo)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>6</td>
+<td>205</td>
+<td>50 X 50 X 2 X 275 SHS</td>
+<td>Hộp vuông, dài 275 (thanh ngắn khung trên)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>7</td>
+<td>207</td>
+<td>50 X 50 X 2 X 400 L</td>
+<td>Thép góc L 50 × 50 × 2, dài 400 (đáy, phẳng đáy với 201)</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p>Ghi chú bản vẽ 201–207 (WSC2026_TP01_CA_201-4_EN, 205-7_EN, 1:2):</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Chi tiết</th>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>201</td>
+<td>2x Ø3.3 THRU, M4x0.7 NEAR SIDE ONLY; NOTE: HOLES IN ONE PART ONLY; TYPICAL SECTION; 57.5, 17.5, 28, 50</td>
+<td>2 lỗ Ø3.3 ta-rô M4×0.7 <strong>chỉ mặt gần</strong>; <strong>chỉ khoan ở 1 trong 4 chân</strong>; mặt cắt điển hình (hộp 50, thành 2)</td>
+</tr>
+<tr>
+<td>204</td>
+<td>2x Ø12 THRU ALL; 202.5; 95; 15</td>
+<td>2 lỗ Ø12 xuyên suốt tại 202.5 và 95, cách mép 15</td>
+</tr>
+<tr>
+<td>205</td>
+<td>Ø12 THRU ALL; Ø6.5 THRU ALL; 25; 50; 225; 105</td>
+<td>Lỗ Ø12 và Ø6.5 xuyên suốt</td>
+</tr>
+<tr>
+<td>206</td>
+<td>25°; 65</td>
+<td>Vát đầu 25°</td>
+</tr>
+<tr>
+<td>207</td>
+<td>5; 50; 50</td>
+<td>Thép góc, cạnh 50</td>
+</tr>
+</tbody></table>
+<h3 id="10-bang-ma-chi-tiet-vat-lieu-so-luong-ai-lam">10. Bảng mã chi tiết — vật liệu, số lượng, ai làm</h3>
+<p>Theo bộ bản vẽ pre-release mọi tờ đều ghi <strong>&quot;SUPPLIED TO THE COMPETITOR&quot;</strong> (cấp cho thí sinh), nghĩa là <strong>phôi hoặc chi tiết hoàn chỉnh được cấp</strong>; cột &quot;Thí sinh làm gì&quot; lấy từ đề thật B, C, D.</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Mã</th>
+<th>Tên EN</th>
+<th>Tên VI</th>
+<th>Vật liệu</th>
+<th>SL</th>
+<th>Cấp</th>
+<th>Thí sinh làm gì</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>101</td>
+<td>SHORT ARM</td>
+<td>Tay đòn ngắn (tấm chắn)</td>
+<td>ALUM</td>
+<td>2</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>102</td>
+<td>LONG ARM</td>
+<td>Tay đòn dài</td>
+<td>ALUM</td>
+<td>2</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>103</td>
+<td>PART PRESENT CHECK PIN</td>
+<td>Chốt báo có phôi</td>
+<td>STEEL</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp với van con lăn</td>
+</tr>
+<tr>
+<td>104</td>
+<td>SAFETY SWITCH STRIKER</td>
+<td>Vấu tác động công tắc an toàn</td>
+<td>ALUM</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>105</td>
+<td>HANDLE</td>
+<td>Tay cầm, ren M6</td>
+<td>ACETAL</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>106</td>
+<td>PART PRESENT VALVE BRACKET</td>
+<td>Giá van báo phôi</td>
+<td>ALUM</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>107</td>
+<td>SAFETY SHIELD (500 × 350, R10, 2 × Ø7 BOTH SIDES, 2 × Ø5 NEAR SIDE ONLY)</td>
+<td>Tấm chắn an toàn</td>
+<td>LEXAN</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp, Nylock không siết</td>
+</tr>
+<tr>
+<td>201</td>
+<td>50 × 50 × 2 × 300 SHS</td>
+<td>Chân</td>
+<td>STEEL</td>
+<td>4</td>
+<td>thanh cắt sẵn</td>
+<td>khoan M4 ở 1 chân, hàn</td>
+</tr>
+<tr>
+<td>202</td>
+<td>50 × 50 × 2 × 300 SHS</td>
+<td>Thanh hông</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>hàn</td>
+</tr>
+<tr>
+<td>203</td>
+<td>50 × 50 × 2 × 400 SHS</td>
+<td>Thanh trước/sau</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>hàn</td>
+</tr>
+<tr>
+<td>204</td>
+<td>50 × 50 × 2 × 500 SHS</td>
+<td>Thanh dài khung trên</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>khoan 2 × Ø12, hàn</td>
+</tr>
+<tr>
+<td>205</td>
+<td>50 × 50 × 2 × 275 SHS</td>
+<td>Thanh ngắn khung trên</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>khoan Ø12, Ø6.5, hàn</td>
+</tr>
+<tr>
+<td>206</td>
+<td>50 × 50 × 2 × 375 SHS</td>
+<td>Chống chéo</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>cắt vát 25°, hàn</td>
+</tr>
+<tr>
+<td>207</td>
+<td>50 × 50 × 2 × 400 L</td>
+<td>Thép góc đáy</td>
+<td>STEEL</td>
+<td>2</td>
+<td>thanh cắt sẵn</td>
+<td>hàn phẳng đáy</td>
+</tr>
+<tr>
+<td>301</td>
+<td>BACK PLATE (301P)</td>
+<td>Tấm lưng</td>
+<td>STEEL</td>
+<td>1</td>
+<td>tấm mài sẵn</td>
+<td><strong>lấy dấu, khoan, ta-rô 20 lỗ</strong>, doa Ø9.5 khi lắp</td>
+</tr>
+<tr>
+<td>302</td>
+<td>HEEL SLIDE</td>
+<td>Con trượt gót</td>
+<td>BRASS</td>
+<td>2</td>
+<td>hoàn chỉnh</td>
+<td>lắp, phải trượt tự do</td>
+</tr>
+<tr>
+<td>303 / 304</td>
+<td>BENDING WIPER / PUNCH (BOM 300: 304 + 305)</td>
+<td>Má uốn trái/phải, M10×1.25</td>
+<td>ACETAL</td>
+<td>1 + 1</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>305</td>
+<td>STROKE POSITIONING BLOCK (Ø24.5)</td>
+<td>Khối định vị hành trình</td>
+<td>STEEL</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp, chỉnh shut height</td>
+</tr>
+<tr>
+<td>401</td>
+<td>DIE BLOCK</td>
+<td>Khối cối</td>
+<td>STEEL</td>
+<td>1</td>
+<td><strong>phôi</strong> 130 × 55 × 53</td>
+<td><strong>phay</strong> (C3, 13.4 đ)</td>
+</tr>
+<tr>
+<td>402 (A, B, C)</td>
+<td>CLAMP / SPACER</td>
+<td>Kẹp / căn</td>
+<td>STEEL</td>
+<td>1 (+2)</td>
+<td>hoàn chỉnh</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>403</td>
+<td>PUNCH PLATE (75 ±0.01 tâm lỗ, Ø20 H8, M12×1.25)</td>
+<td>Tấm mang chày</td>
+<td>ALUM</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>lắp, doa bạc nếu kẹt</td>
+</tr>
+<tr>
+<td>404</td>
+<td>PUNCH HOLDER</td>
+<td>Đầu giữ chày</td>
+<td>ALUM</td>
+<td>1</td>
+<td><strong>phôi</strong></td>
+<td><strong>tiện</strong> (C2, 3.5 đ)</td>
+</tr>
+<tr>
+<td>405</td>
+<td>STROKE POSITIONING SCREW</td>
+<td>Vít định vị hành trình, M24×3</td>
+<td>STEEL</td>
+<td>1</td>
+<td><strong>phôi</strong> Ø100 × 125</td>
+<td><strong>tiện</strong> (C1, 9.1 đ)</td>
+</tr>
+<tr>
+<td>407</td>
+<td>PUNCH — MISUMI SPTWA20-40-P6.5-B5-V8-F12</td>
+<td>Chày đột</td>
+<td>M2</td>
+<td>1</td>
+<td>mua sẵn</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>408</td>
+<td>DIE BUTTON — MISUMI ADX20-A20AM2AP6.6</td>
+<td>Cối đột</td>
+<td>M2</td>
+<td>1</td>
+<td>mua sẵn</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>409</td>
+<td>FLANGED SLEEVE BEARING — McMASTER-CARR 2934T138</td>
+<td>Bạc trượt có vai</td>
+<td>BRONZE</td>
+<td>2</td>
+<td>mua sẵn</td>
+<td>lắp vào 403, doa nếu cần</td>
+</tr>
+<tr>
+<td>410</td>
+<td>GUIDE PIN — MISUMI VFJT12-100-M6</td>
+<td>Chốt dẫn hướng</td>
+<td>STEEL</td>
+<td>2</td>
+<td>mua sẵn</td>
+<td>lắp</td>
+</tr>
+<tr>
+<td>500</td>
+<td>PNEUMATIC COMPONENT PLATE (750 × 250)</td>
+<td>Tấm linh kiện khí nén</td>
+<td>ALUM</td>
+<td>1</td>
+<td>hoàn chỉnh</td>
+<td>gắn van, đi ống</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>WORKPIECE</td>
+<td>Phôi/sản phẩm, dày 0.5</td>
+<td>ALUM</td>
+<td>nhiều</td>
+<td>phôi</td>
+<td>máy đột–uốn ra 3 cái</td>
+</tr>
+</tbody></table>
+<h3 id="11-chu-viet-tat-va-ky-hieu-tren-ban-ve">11. Chữ viết tắt và ký hiệu trên bản vẽ</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Ký hiệu</th>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>NTS / N.T.S.</td>
+<td>Not to scale</td>
+<td>Không theo tỷ lệ</td>
+</tr>
+<tr>
+<td>TYP</td>
+<td>Typical</td>
+<td>Điển hình — áp dụng cho mọi vị trí tương tự</td>
+</tr>
+<tr>
+<td>THRU / THRU ALL</td>
+<td>Through / through all</td>
+<td>Xuyên / xuyên suốt</td>
+</tr>
+<tr>
+<td>NEAR SIDE ONLY</td>
+<td></td>
+<td>Chỉ mặt gần (mặt nhìn thấy)</td>
+</tr>
+<tr>
+<td>BOTH SIDES</td>
+<td></td>
+<td>Cả hai mặt</td>
+</tr>
+<tr>
+<td>↧ 15 (depth symbol)</td>
+<td>Depth</td>
+<td>Sâu 15</td>
+</tr>
+<tr>
+<td>Ø / R</td>
+<td>Diameter / radius</td>
+<td>Đường kính / bán kính</td>
+</tr>
+<tr>
+<td>H8, H8 +0.033/0.000</td>
+<td>Hole tolerance ISO</td>
+<td>Lỗ cấp H8, miền +0.033/0</td>
+</tr>
+<tr>
+<td>f8 −0.036/−0.090</td>
+<td>Shaft tolerance ISO</td>
+<td>Trục cấp f8</td>
+</tr>
+<tr>
+<td>6H / 6g</td>
+<td>Thread tolerance</td>
+<td>Ren trong 6H / ren ngoài 6g</td>
+</tr>
+<tr>
+<td>M24 X 3</td>
+<td>Metric thread, pitch 3</td>
+<td>Ren hệ mét Ø24 bước 3</td>
+</tr>
+<tr>
+<td>Ra 1.6 / 3.2</td>
+<td>Surface roughness</td>
+<td>Độ nhám trung bình số học, µm</td>
+</tr>
+<tr>
+<td>⌖ 0.15 D E</td>
+<td>Position tolerance</td>
+<td>Dung sai vị trí 0.15 so với chuẩn D, E</td>
+</tr>
+<tr>
+<td>⟂ 0.05 D</td>
+<td>Perpendicularity</td>
+<td>Độ vuông góc 0.05 so với chuẩn D</td>
+</tr>
+<tr>
+<td>◎ 0.03 B</td>
+<td>Concentricity</td>
+<td>Độ đồng tâm 0.03 so với chuẩn B</td>
+</tr>
+<tr>
+<td>A, B, C, D, E, F (trong khung)</td>
+<td>Datum</td>
+<td>Chuẩn</td>
+</tr>
+<tr>
+<td>ISO 2768-1 fK / m</td>
+<td>General tolerances</td>
+<td>Dung sai chung ISO 2768-1</td>
+</tr>
+<tr>
+<td>SHCS</td>
+<td>Socket head cap screw</td>
+<td>Vít lục giác chìm đầu trụ</td>
+</tr>
+<tr>
+<td>HHCS</td>
+<td>Hex head cap screw</td>
+<td>Bu-lông đầu lục giác ngoài</td>
+</tr>
+<tr>
+<td>SHS</td>
+<td>Square hollow section</td>
+<td>Thép hộp vuông</td>
+</tr>
+<tr>
+<td>L</td>
+<td>Angle</td>
+<td>Thép góc chữ L</td>
+</tr>
+<tr>
+<td>MTL / QNTY / QTY</td>
+<td>Material / quantity</td>
+<td>Vật liệu / số lượng</td>
+</tr>
+<tr>
+<td>C/W</td>
+<td>Complete with</td>
+<td>Kèm theo</td>
+</tr>
+<tr>
+<td>P.C.D.</td>
+<td>Pitch circle diameter</td>
+<td>Đường kính vòng tròn chia (lỗ cách đều trên vòng)</td>
+</tr>
+<tr>
+<td>EQUALY SPACED</td>
+<td>Equally spaced</td>
+<td>Cách đều</td>
+</tr>
+<tr>
+<td>REAM</td>
+<td></td>
+<td>Doa</td>
+</tr>
+<tr>
+<td>BLANCHARD GRIND</td>
+<td></td>
+<td>Mài phẳng (máy mài Blanchard)</td>
+</tr>
+<tr>
+<td>CROPED VIEW</td>
+<td>Cropped view</td>
+<td>Hình chiếu cắt bớt</td>
+</tr>
+<tr>
+<td>SECTION B-B REMOVED</td>
+<td></td>
+<td>Mặt cắt tách rời</td>
+</tr>
+<tr>
+<td>DETAIL G, SCALE 1:2</td>
+<td></td>
+<td>Hình trích G, tỷ lệ 1:2</td>
+</tr>
+<tr>
+<td>VIEW ON ARROW A</td>
+<td></td>
+<td>Hình chiếu theo hướng mũi tên A</td>
+</tr>
+<tr>
+<td>DOWN 70° R 5</td>
+<td>Bend down 70°, inside radius 5</td>
+<td>Uốn xuống 70°, bán kính R5</td>
+</tr>
+<tr>
+<td>Dwg No: 1 of 3</td>
+<td>Drawing number</td>
+<td>Tờ 1 trong 3</td>
+</tr>
+<tr>
+<td>SCM</td>
+<td>Skill Competition Manager</td>
+<td>Quản lý thi nghề</td>
+</tr>
+<tr>
+<td>ALUM / ACETAL / LEXAN / M2</td>
+<td></td>
+<td>Nhôm / POM / polycarbonate / thép gió M2</td>
+</tr>
+<tr>
+<td>91290A129 …</td>
+<td>McMaster-Carr part number</td>
+<td>Mã McMaster-Carr (giữ nguyên)</td>
+</tr>
+<tr>
+<td>536273 ADN-32-30-A-P-A</td>
+<td>Festo part number + type code</td>
+<td>Mã đặt hàng Festo + mã kiểu (giữ nguyên)</td>
+</tr>
+</tbody></table>
+<h3 id="ghi-chu-ban-goc">Ghi chú bản gốc</h3>
+<ul>
+<li><code>loi-ban-goc.md</code> #14: ngày &quot;26_08_2026&quot;/&quot;25/08/2026&quot;/&quot;JANUARY 2026&quot; trộn; &quot;Dwg No: XX of XX&quot; chưa điền ở pre-release.</li>
+<li>Mới (#15): chiều dài thanh 201 (350→300), 202 (350→300), 205 (310→275), 206 (450→375) khác nhau giữa pre-release và bản thật — dùng bản thật.</li>
+<li>Mới (#16): ghi chú &quot;TOLERANCE CLASS IS m (MEDIUM)&quot; đi kèm &quot;ISO2768-1fk&quot; trên 401/404/405.</li>
+<li>Mới (#17): BOM 400 trùng mã: item 1 và 12 cùng &quot;401&quot; (die block / stroke positioning screw = Detail 405); item 2 và 7 cùng &quot;402&quot; (clamp / spacer).</li>
+<li>Mới (#18): số hiệu má uốn: pre-release 303 + 304 (acetal), 305 = khối định vị thép; BOM 300 ghi &quot;304 + 305 BENDING PUNCH&quot;; thang điểm D2 ghi 304 trái / 305 phải.</li>
+<li>Bản vẽ 107 ghi &quot;BOTH SIDES&quot; cho 2 × Ø7 và &quot;NEAR SIDE ONLY&quot; cho 2 × Ø5 — bình thường; nhưng 100 BOM dùng 8 Nylock M6 cho tấm chắn trong khi 107 chỉ có 4 lỗ — số Nylock còn lại nằm ở tay đòn 101/102; không phải lỗi, ghi để khỏi thắc mắc.</li>
+<li>&quot;EQUALY SPACED&quot;, &quot;CROPED VIEW&quot;, &quot;CLARTITY&quot; — lỗi chính tả, bỏ qua.</li>
+</ul>
