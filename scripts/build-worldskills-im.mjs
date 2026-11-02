@@ -13,6 +13,13 @@ const rd = (p) => fs.readFileSync(path.join(D, p), "utf8").replace(/^﻿/, "");
 const B1 = "01-bac1-de-thi-va-thang-diem", B2 = "02-bac2-technical-description", B3 = "03-bac3-tom-tat";
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
+/** Cặp EN | VI ngang hàng. Không có EN (chỉ VI) → một cột VI rộng đủ. */
+function biPair(tag, en, vi) {
+  const cell = (lang, tag2, x) => `<div class="tl-bi-${lang}" lang="${lang}"><span class="tl-bi-tag">${tag2}</span>${x.trim()}</div>`;
+  const inner = `<div class="tl-bi${en.trim() ? "" : " tl-bi--vi"}">${en.trim() ? cell("en", "EN", en) : ""}${cell("vi", "VI", vi)}</div>`;
+  return tag === "li" ? `<li class="tl-bi-li">${inner}</li>` : inner;
+}
+
 marked.use({ gfm: true, breaks: false });
 /** md → HTML bài học: bỏ H1 đầu, ## → h3, ### → h4, bảng có class, blockquote → hộp, checkbox bật được. */
 function md(text, { dropH1 = true, shift = 1 } = {}) {
@@ -27,8 +34,10 @@ function md(text, { dropH1 = true, shift = 1 } = {}) {
     .replace(/<th>\s*\[ \]\s*<\/th>/g, '<th class="tl-nw">Tick</th>')
     .replace(/<td>\s*\[ \]\s*<\/td>/g, '<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>')
     .replace(/<td>\s*\[x\]\s*<\/td>/gi, '<td class="tl-nw"><input type="checkbox" checked aria-label="Đạt"></td>')
-    // EN:/VI: cùng một đoạn → mỗi thứ tiếng một dòng
-    .replace(/([^>])\s*<strong>VI:<\/strong>/g, "$1<br><strong>VI:</strong>")
+    // EN:/VI: ngang hàng — EN trái, VI phải (điện thoại: xếp dọc, có nhãn)
+    .replace(/<(p|li)>\s*<strong>EN:<\/strong>([\s\S]*?)<strong>VI:<\/strong>([\s\S]*?)<\/\1>/g, (m, t, en, vi) => biPair(t, en, vi))
+    .replace(/<p>\s*<strong>EN:<\/strong>([\s\S]*?)<\/p>\s*<p>\s*<strong>VI:<\/strong>([\s\S]*?)<\/p>/g, (m, en, vi) => biPair("p", en, vi))
+    .replace(/<p>\s*<strong>VI:<\/strong>([\s\S]*?)<\/p>/g, (m, vi) => biPair("p", "", vi))
     .replace(/<blockquote>/g, '<div class="tl-box">').replace(/<\/blockquote>/g, "</div>")
     .replace(/<input (checked="" )?disabled="" type="checkbox">/g, (m, chk) => `<input type="checkbox"${chk ? " checked" : ""}>`)
     .replace(/<a href="(https?:[^"]+)"/g, '<a href="$1" target="_blank" rel="noopener"');
@@ -67,12 +76,12 @@ const subs = [];
 const subTotal = (s) => s.items.reduce((a, i) => a + i.marks, 0);
 const critTotal = (c) => subs.filter((s) => s.id[0] === c).reduce((a, s) => a + subTotal(s), 0);
 function markingTable(c) {
-  let h = `<div class="tl-scroll tl-scroll--rong"><table class="tl-table"><thead><tr><th class="tl-nw">Mã</th><th>Mục chấm</th><th>Yêu cầu / cách cho điểm</th><th class="tl-nw">Điểm</th></tr></thead><tbody>`;
+  let h = `<div class="tl-scroll tl-scroll--bi"><table class="tl-table tl-table--bi"><thead><tr><th class="tl-nw" rowspan="2">Mã</th><th colspan="2">Mục chấm (Aspect)</th><th colspan="2">Yêu cầu / cách cho điểm</th><th class="tl-nw" rowspan="2">Điểm</th></tr><tr><th lang="en">EN</th><th lang="vi">VI</th><th lang="en">EN</th><th lang="vi">VI</th></tr></thead><tbody>`;
   for (const s of subs.filter((s) => s.id[0] === c)) {
-    h += `<tr><td class="tl-nw"><strong>${esc(s.id)}</strong></td><td colspan="2"><strong>${esc(s.vi)}</strong><br><em>${esc(s.en)}</em></td><td class="tl-nw"><strong>${subTotal(s).toFixed(2)}</strong></td></tr>`;
+    h += `<tr class="tl-sub"><td class="tl-nw"><strong>${esc(s.id)}</strong></td><td lang="en"><strong>${esc(s.en)}</strong></td><td lang="vi"><strong>${esc(s.vi)}</strong></td><td colspan="2"></td><td class="tl-nw"><strong>${subTotal(s).toFixed(2)}</strong></td></tr>`;
     for (const i of s.items) {
-      const scale = i.scale ? `<ol start="0">${i.scale.map((x) => `<li>${esc(x.vi)}<br><em>${esc(x.en)}</em></li>`).join("")}</ol>` : "";
-      h += `<tr><td class="tl-nw">${i.type}</td><td>${esc(i.vi)}<br><em>${esc(i.en)}</em></td><td>${esc(i.xvi)}${i.req ? ` <strong>${esc(i.req)}</strong>` : ""}${i.xen ? `<br><em>${esc(i.xen)}</em>` : ""}${scale}</td><td class="tl-nw">${i.marks.toFixed(2)}</td></tr>`;
+      const sc = (k) => (i.scale ? `<ol start="0">${i.scale.map((x) => `<li>${esc(x[k])}</li>`).join("")}</ol>` : "");
+      h += `<tr><td class="tl-nw">${i.type}</td><td lang="en">${esc(i.en)}</td><td lang="vi">${esc(i.vi)}</td><td lang="en">${esc(i.xen)}${sc("en")}</td><td lang="vi">${esc(i.xvi)}${i.req ? ` <strong>${esc(i.req)}</strong>` : ""}${sc("vi")}</td><td class="tl-nw">${i.marks.toFixed(2)}</td></tr>`;
     }
   }
   return h + "</tbody></table></div>";

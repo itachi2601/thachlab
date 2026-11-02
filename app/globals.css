@@ -4131,3 +4131,22 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-table :is(td, th).tl-nw { white-space: nowrap; }
 .exam-content .tl-table input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent, #0284c7); }
 .exam-content .tl-scroll { background: linear-gradient(to left, rgba(15, 23, 42, 0.12), transparent 28px) right / 28px 100% no-repeat; background-attachment: local; }
+
+/* WorldSkills IM: song ngữ ngang hàng (2/11/2026). EN trái | VI phải; điện thoại xếp dọc có nhãn EN/VI (đích chạm không đổi, chỉ bố cục). */
+.exam-content .tl-bi { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; margin: 10px 0; }
+.exam-content .tl-bi-en, .exam-content .tl-bi-vi { padding: 8px 12px; border-radius: 8px; border-left: 3px solid; line-height: 1.55; overflow-wrap: anywhere; }
+.exam-content .tl-bi-en { border-left-color: rgba(59, 130, 246, .7); background: rgba(59, 130, 246, .07); }
+.exam-content .tl-bi-vi { border-left-color: rgba(16, 185, 129, .75); background: rgba(16, 185, 129, .08); }
+.exam-content .tl-bi-tag { display: inline-block; margin-right: 8px; padding: 0 6px; border-radius: 4px; font-size: .72em; font-weight: 700; letter-spacing: .05em; vertical-align: .08em; background: rgba(148, 163, 184, .25); }
+.exam-content .tl-bi--vi .tl-bi-vi { grid-column: 1 / -1; }
+.exam-content li.tl-bi-li { margin: 8px 0; }
+@media (min-width: 900px) {
+  .exam-content .tl-bi:not(.tl-bi--vi) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .exam-content .tl-bi-tag { display: block; width: max-content; margin: 0 0 4px; }
+}
+/* Bảng thang điểm: 2 cặp cột EN | VI cạnh nhau */
+.exam-content .tl-scroll--bi > .tl-table { min-width: 980px; }
+.exam-content .tl-table--bi thead th[lang="en"], .exam-content .tl-table--bi tbody td[lang="en"] { background: rgba(59, 130, 246, .06); }
+.exam-content .tl-table--bi thead th[lang="vi"], .exam-content .tl-table--bi tbody td[lang="vi"] { background: rgba(16, 185, 129, .07); }
+.exam-content .tl-table--bi tr.tl-sub td { border-top: 2px solid rgba(148, 163, 184, .7); }
+.exam-content .tl-table--bi ol { margin: 4px 0 0; padding-left: 1.3em; }
