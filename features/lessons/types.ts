@@ -134,9 +134,14 @@ export interface LessonWorkedQuestion {
   meo?: WorkedMeo;
   /** 🧪 Hình giải cùng bước (thử 2/11/2026, bài 14 Sóng dạng 3): hình dính nửa trên, bước làm nửa dưới, hình vẽ thêm theo bước đã xong. */
   cong_cu?: WorkedTool;
+  /** 🧪 Tóm đề (thử 3/11/2026): Cho/Tìm ngắn — điện thoại là một dòng dính chạm mở, desktop ≥1280 là thẻ lề phải. Ký hiệu khớp lời giải; không đổi đơn vị sẵn (đó là việc của bước). */
+  tom_de?: WorkedTomDe;
 }
 
 /** Hình giải cùng bước. Số liệu theo đề (đơn vị: Hz, cm/s, cm) — hình của bước chỉ vẽ khi em đã làm xong bước đó. */
+/** Mỗi phần tử là HTML ngắn (được dùng $…$). */
+export type WorkedTomDe = { cho: string[]; tim: string[] };
+
 export type WorkedTool = { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number };
 
 export interface WorkedMeo {

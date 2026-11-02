@@ -47,6 +47,13 @@ Quy tắc thiết kế (`docs/QUY-TAC-THIET-KE.md`): N1, N5, N6, N8 (split-atten
   - Nhãn dài thì cho xuống dòng riêng (như "11 cực đại · 12 cực tiểu" đặt dưới trục số).
   - Nét hai màu: `C_MAX #c2410c` cho cực đại, `C_MIN #0e7490` cho cực tiểu; đường loại thứ hai vẽ nét đứt (H4, không chỉ dựa vào màu).
 
+### 3b. Tóm đề (`tom_de`, thử 3/11/2026 ở bài 33 Dạng 3)
+- Thêm `"tom_de": {"cho": [...], "tim": [...]}` vào dạng. Mỗi phần tử là HTML ngắn, dùng được `$…$`, ký hiệu khớp lời giải.
+- **Không đổi đơn vị sẵn**: ghi $v=0{,}50$ m/s như đề, vì đổi sang cm/s là việc của bước 1. "Tìm" đánh a) b) c) theo ý đề.
+- Dưới 1280px là một dòng "Tìm: …" trong khối dính; chạm vào thì Cho, Tìm và đề đầy đủ (đã bỏ hình) mở đè lên, trang không xô.
+- Từ 1280px là thẻ lề phải dính theo, tràn vào `--wide-bleed` của trang bài.
+- Trang `/dev/btm` có `main` cắt mép (`overflow-x: clip`) nên không thấy thẻ lề phải. Muốn soát thì đặt `main.style.overflowX='visible'` bằng JS.
+
 ### 4. Xem thử (Mac)
 ```bash
 npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --xem-thu

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
 import GiaoThoaHaiNguon from "@/components/lessons/cong-cu/GiaoThoaHaiNguon";
-import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types";
+import type { LessonWorkedQuestion, WorkedTomDe, WorkedTool } from "@/features/lessons/types";
 
 /**
  * Giải từng bước CÙNG hình (thầy góp ý 2/11/2026): trên điện thoại hình dính nửa trên màn hình, em làm từng bước ở
@@ -16,6 +16,29 @@ import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types"
 function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "giao_thoa_2_nguon") return <GiaoThoaHaiNguon {...tool} layer={layer} />;
   return null;
+}
+
+function TomDeBody({ tomDe }: { tomDe: WorkedTomDe }) {
+  return (
+    <>
+      <h4>Cho</h4>
+      <ul>
+        {tomDe.cho.map((x, i) => (
+          <li key={i}>
+            <ContentHtml html={x} className="inline" />
+          </li>
+        ))}
+      </ul>
+      <h4>Tìm</h4>
+      <ul>
+        {tomDe.tim.map((x, i) => (
+          <li key={i}>
+            <ContentHtml html={x} className="inline" />
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
 
 /** Đáy các thanh dính/cố định ở đầu trang (navbar, header bài) — để hình dính ngay dưới chúng. */
@@ -64,6 +87,7 @@ export default function GiaiCungHinh({
   const [step, setStep] = useState(0);
   const [opened, setOpened] = useState(0); // số bước đầu đã làm xong liên tiếp
   const [full, setFull] = useState(false);
+  const [deOpen, setDeOpen] = useState(false); // tóm đề mở đè lên (điện thoại)
   const top = useStickyTop();
   const splitRef = useRef<HTMLDivElement>(null);
 
@@ -81,6 +105,7 @@ export default function GiaiCungHinh({
   };
   const go = (i: number) => {
     setStep(i);
+    setDeOpen(false);
     align();
   };
 
@@ -106,6 +131,9 @@ export default function GiaiCungHinh({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opened]);
   const layer = Math.min(opened, step + 1);
+  const tomDe = q.tom_de?.cho?.length || q.tom_de?.tim?.length ? q.tom_de : undefined;
+  // đề trong lớp đè: bỏ hình mô phỏng (đã có hình dính; SVG chép hai lần trùng id marker)
+  const deChu = (q.problem_html ?? "").replace(/<figure[\s\S]*?<\/figure>/g, "");
   const canNext = step + 1 < n && step + 1 <= opened;
   const title = q.buoc?.[step]?.tieu_de ?? "";
   // một dòng cố định dưới nút: nói vì sao ▶ khoá / đã mở / đã xong (L1 phản hồi, D2 nút không nhảy chỗ)
@@ -145,7 +173,32 @@ export default function GiaiCungHinh({
         <p className="cc-hint" aria-live="polite">
           {hint}
         </p>
+        {/* Tóm đề (thử 3/11): một dòng "Tìm" dính cùng hình — số liệu "Cho" đã nằm trên hình (N4); chạm thì đè lên, trang không xô (D2, N8) */}
+        {tomDe && (
+          <button type="button" className="bt-tomde-bar" aria-expanded={deOpen} onClick={() => setDeOpen((o) => !o)}>
+            <b>Tìm:</b>
+            <span>
+              <ContentHtml html={tomDe.tim.join(" · ")} className="inline" />
+            </span>
+            <i aria-hidden="true">{deOpen ? "▲" : "Đề ▼"}</i>
+          </button>
+        )}
+        {tomDe && deOpen && (
+          <div className="bt-tomde bt-tomde-pop">
+            <TomDeBody tomDe={tomDe} />
+            <h4>Đề đầy đủ</h4>
+            <ContentHtml html={deChu} className="block" />
+            <button type="button" className="bt-tomde-close" onClick={() => setDeOpen(false)}>
+              Đóng
+            </button>
+          </div>
+        )}
       </div>
+      {tomDe && (
+        <aside className="bt-tomde bt-tomde-side" style={{ top }} aria-label="Tóm đề">
+          <TomDeBody tomDe={tomDe} />
+        </aside>
+      )}
       <div className="cc-steps">
         <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={onAllOpen} onProgress={setOpened} only={step} fading="giau_het" />
       </div>

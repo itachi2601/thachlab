@@ -48,6 +48,8 @@ export interface Dang {
   meo?: { ten: string; dieu_kien: string; html: string };
   // 🧪 Công cụ giải tương tác (thử 2/11/2026) — features/lessons/types.ts WorkedTool
   cong_cu?: { loai: string; [k: string]: number | string };
+  // 🧪 Tóm đề (thử 3/11/2026) — features/lessons/types.ts WorkedTomDe
+  tom_de?: { cho: string[]; tim: string[] };
 }
 
 function validateMeo(m: Dang["meo"], at: string, errors: string[], warnings: string[]) {
