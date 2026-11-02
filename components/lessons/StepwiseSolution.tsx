@@ -199,6 +199,7 @@ export default function StepwiseSolution({
   jump,
   onAllOpen,
   onProgress,
+  only,
 }: {
   q: LessonWorkedQuestion;
   color: string;
@@ -208,6 +209,8 @@ export default function StepwiseSolution({
   onAllOpen?: () => void;
   /** Số bước đầu đã mở liên tiếp — công cụ tương tác dưới đề vẽ lớp phủ tới đúng bước đó (không lộ bước còn giấu). */
   onProgress?: (opened: number) => void;
+  /** Chỉ hiện một bước (giải cùng hình: cha lật bước bằng ◀ ▶, lời giải đầy đủ để riêng bên dưới). */
+  only?: number;
 }) {
   const parts = useMemo(() => splitSolution(q.solution_html ?? ""), [q.solution_html]);
   const steps = useMemo(() => q.buoc ?? [], [q.buoc]);
@@ -254,8 +257,8 @@ export default function StepwiseSolution({
   return (
     <div className="exam-content block leading-relaxed">
      <div className="bt-sol">
-      <ContentHtml html={parts!.head} className="block" />
-      {steps.map((s, i) => (
+      {only === undefined && <ContentHtml html={parts!.head} className="block" />}
+      {steps.map((s, i) => only !== undefined && i !== only ? null : (
         <div key={i} ref={(el) => { refs.current[i] = el; }} className={flash === i ? "bt-flash" : undefined}>
           {revealed[i] ? (
             <ContentHtml html={parts!.steps[i]} className="block" />
@@ -271,7 +274,7 @@ export default function StepwiseSolution({
           )}
         </div>
       ))}
-      {allOpen ? (
+      {only !== undefined ? null : allOpen ? (
         <ContentHtml html={parts!.tail} className="block" />
       ) : (
         <button type="button" className="bt-show-all" onClick={() => setRevealed(steps.map(() => true))}>
