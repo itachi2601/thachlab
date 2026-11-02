@@ -11,6 +11,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
+- `20261102080000_lop_worldskills_industrial_mechanics.sql` — học phần CTTC WorldSkills IM (môn, lớp, 5 chương, 16 bài; chỉ dữ liệu). Sau đó `bash scripts/dang-worldskills-im.sh` ghi lý thuyết 16 bài. Phiên 2/11.
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
 - `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.

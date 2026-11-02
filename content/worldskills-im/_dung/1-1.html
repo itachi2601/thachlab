@@ -1,0 +1,475 @@
+<p>Nguồn: <code>WSC2026_TP01_skill_sets_pre_en</code> (bản pre-release, 24.06.2026, v1.1), phần Criteria của thang điểm (Marking Scheme), và trang &quot;Instructions to the Competitor&quot; của các đề thật Module A1, A2, B, C, D (30.07.26, v1.0).</p>
+<div class="tl-box">
+<p><strong>Dùng để huấn luyện</strong></p>
+<ul>
+<li><strong>Điểm tối đa toàn bài: 100.</strong> Gia công (C) 26.0 + Lắp ráp cơ khí (D) 22.1 = <strong>48.1 điểm</strong>, gần nửa bài. Tập tiện–phay và lắp ráp trước, kỹ hơn mọi phần khác.</li>
+<li><strong>Điểm dễ lấy:</strong> mọi điểm &quot;ký xác nhận&quot; (Expert sign off) trong Module A — chỉ cần gọi chuyên gia đúng lúc; áp suất 8.0 bar (0.5 điểm, F1); nộp chi tiết đúng giờ; tự ghi báo cáo đủ 5 mục ở A9 (1.5 điểm).</li>
+<li><strong>Bẫy mất điểm (áp dụng mọi module):</strong><ol>
+<li>Vi phạm an toàn: <strong>−0.5 điểm mỗi lần</strong>, lần thứ 3 <strong>bị dừng thi</strong>, chấm trên phần đã làm.</li>
+<li>Bỏ sót một điểm ký xác nhận (sign off point) → <strong>mất toàn bộ điểm của mục đó</strong>.</li>
+<li>Không nộp chi tiết <strong>ngay khi hết giờ</strong> (Module B, C, D) → <strong>0 điểm</strong> mục đó.</li>
+<li>Module D: chạy thử chức năng được <strong>1 lượt miễn phí</strong>, mỗi lượt thêm <strong>−2 điểm</strong>, tối đa <strong>3 lượt</strong>; sửa lỗi khi vận hành cũng vậy.</li>
+<li>Module D: <strong>không được bắt đầu lắp khí nén</strong> trước khi chuyên gia chấm xong phần cơ khí.</li>
+</ol>
+</li>
+</ul>
+</div>
+<h3 id="1-thoi-gian-va-4-module-modules-overview">1. Thời gian và 4 module (Modules Overview)</h3>
+<p>Tổng thời gian thi (Total Competition Time): <strong>20 giờ</strong>.</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Module (đề thật)</th>
+<th>Module (pre-release)</th>
+<th>Giờ</th>
+<th>Nội dung EN</th>
+<th>Nội dung VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A1</strong> + <strong>A2</strong></td>
+<td>Module 1</td>
+<td>4 h</td>
+<td>Predictive Maintenance (3.5 h) and Pneumatics Troubleshooting (0.5 h)</td>
+<td>Bảo trì dự đoán (3.5 h) và sửa lỗi khí nén (0.5 h, trên FluidSIM)</td>
+</tr>
+<tr>
+<td><strong>B1</strong> + <strong>B2</strong></td>
+<td>Module 2</td>
+<td>4 h</td>
+<td>Fabrication, Welding (3 h) and Precision Layout (1 h)</td>
+<td>Chế tạo, hàn (3 h) và lấy dấu chính xác (1 h)</td>
+</tr>
+<tr>
+<td><strong>C1</strong> + <strong>C2</strong></td>
+<td>Module 3</td>
+<td>5 h</td>
+<td>Machining (Turning 2.5 h – Milling 2.5 h)</td>
+<td>Gia công: tiện (2.5 h) và phay (2.5 h)</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Module 4</td>
+<td>7 h</td>
+<td>Mechanical and Pneumatic Systems Assembly</td>
+<td>Lắp ráp hệ cơ khí và khí nén, vận hành</td>
+</tr>
+</tbody></table>
+<p>Ghi chú chung của đề (General notes):</p>
+<ul>
+<li>Sản phẩm Module 2 và 3 được <strong>dùng tiếp trong Module 4</strong> (Modules 2 and 3 are incorporated into Module 4 build and assembly). Làm hỏng chi tiết ở B/C thì D cũng khó chạy.</li>
+<li>Bản vẽ chi tiết và bản vẽ lắp cấp theo <strong>cả hai phép chiếu góc thứ nhất và góc thứ ba</strong> (first-angle and third-angle projections) — nội dung giống nhau, chọn bản quen dùng.</li>
+<li>Toàn bộ ghi kích thước <strong>hệ mét</strong> (metric).</li>
+<li>Máy tiện và máy phay đứng có <strong>bộ hiển thị toạ độ số</strong> (Digital Readout, DRO).</li>
+<li>Phải thể hiện <strong>quy trình làm việc an toàn và thực hành tốt</strong> (safe working procedures and best practices) <strong>mọi lúc</strong>.</li>
+</ul>
+<h3 id="2-trong-so-diem-that-marking-scheme-criteria">2. Trọng số điểm thật (Marking Scheme — Criteria)</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Tiêu chí (Criterion)</th>
+<th>Tên EN</th>
+<th>Tên VI</th>
+<th>Điểm</th>
+<th>Số mục chấm</th>
+<th>Thuộc module</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>Predictive Maintenance</td>
+<td>Bảo trì dự đoán</td>
+<td><strong>17.5</strong></td>
+<td>47</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Fabrication, Welding and Precision Layout</td>
+<td>Chế tạo, hàn và lấy dấu chính xác</td>
+<td><strong>14.0</strong></td>
+<td>54</td>
+<td>B1 (B2 lấy dấu chấm ở D1)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Machining – Turning – Milling</td>
+<td>Gia công tiện – phay</td>
+<td><strong>26.0</strong></td>
+<td>44</td>
+<td>C1 (405), C2 (404), C3 (401)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Mechanical Assembly</td>
+<td>Lắp ráp cơ khí</td>
+<td><strong>22.1</strong></td>
+<td>28</td>
+<td>D1 (Detail 301), D2 (lắp ráp)</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Pneumatic Assembly</td>
+<td>Lắp ráp khí nén (đi ống)</td>
+<td><strong>10.4</strong></td>
+<td>12</td>
+<td>D</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Final Project Functionality</td>
+<td>Vận hành cuối cùng</td>
+<td><strong>7.5</strong></td>
+<td>6</td>
+<td>D</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Pneumatic Troubleshooting</td>
+<td>Sửa lỗi khí nén (FluidSIM)</td>
+<td><strong>2.5</strong></td>
+<td>7</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>H, I</td>
+<td>—</td>
+<td>(không dùng)</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Tổng</strong></td>
+<td></td>
+<td></td>
+<td><strong>100.0</strong></td>
+<td>198</td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Chi tiết từng tiêu chí con (Sub Criterion):</p>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Sub</th>
+<th>Tên EN</th>
+<th>Tên VI</th>
+<th>Điểm</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>Data Collection</td>
+<td>Thu thập dữ liệu (ban đầu)</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Flatness Check</td>
+<td>Kiểm tra độ phẳng</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Level Check</td>
+<td>Kiểm tra cân bằng (thuỷ)</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Shaft Alignment (Pre-Alignment)</td>
+<td>Cân chỉnh trục — kiểm tra trước cân chỉnh</td>
+<td>2.75</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Precision Alignment</td>
+<td>Cân chỉnh chính xác (laser)</td>
+<td>2.95</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Thermal Growth Measurement</td>
+<td>Đo giãn nở nhiệt</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Balancing</td>
+<td>Cân bằng động</td>
+<td>1.7</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>Data Collection</td>
+<td>Thu thập dữ liệu (cuối)</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>Reporting</td>
+<td>Báo cáo</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Belt Alignment</td>
+<td>Căn đai</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>Fabrication and Welding</td>
+<td>Chế tạo và hàn (khung 200)</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Detail 405</td>
+<td>Chi tiết 405 (tiện: trục ren M24)</td>
+<td>9.1</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Detail 404</td>
+<td>Chi tiết 404 (tiện: đầu giữ chày, nhôm)</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Detail 401</td>
+<td>Chi tiết 401 (phay: khối cối)</td>
+<td>13.4</td>
+</tr>
+<tr>
+<td>D1</td>
+<td>Detail 301</td>
+<td>Chi tiết 301 (tấm lưng: lấy dấu, khoan, ta-rô, siết)</td>
+<td>7.65</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Mechanical Assembly</td>
+<td>Lắp ráp cơ khí</td>
+<td>14.45</td>
+</tr>
+<tr>
+<td>E1</td>
+<td>Pneumatic Assembly</td>
+<td>Lắp ráp khí nén</td>
+<td>10.4</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Final Project Functionality</td>
+<td>Vận hành cuối cùng</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>G1</td>
+<td>Pneumatic Troubleshooting</td>
+<td>Sửa lỗi khí nén</td>
+<td>2.5</td>
+</tr>
+</tbody></table>
+<p>Hai kiểu mục chấm (Aspect):</p>
+<ul>
+<li><strong>M — Measurement (chấm đo):</strong> đạt/không đạt theo số đo hoặc có/không; đa số mục. Nhiều mục kiểu &quot;nhập số lượng đúng&quot; (Enter the number…), điểm chia đều theo số lượng.</li>
+<li><strong>J — Judgement (chấm đánh giá):</strong> chỉ có ở B1 (chất lượng mối hàn), 15 mục × 0.2 điểm, thang 0–3: 0 = phải làm lại, 1 = chuẩn công nghiệp (trung bình), 2 = tốt, 3 = xuất sắc.</li>
+</ul>
+<h3 id="3-luat-tru-diem-va-diem-ky-xac-nhan-chung-cho-moi-de-that">3. Luật trừ điểm và điểm ký xác nhận (chung cho mọi đề thật)</h3>
+<p>Nguyên văn (có ở đầu đề A1, B, C, D; đề A2 chỉ có đoạn &quot;REMEMBER&quot;):</p>
+<div class="tl-box">
+<p>READ THE ENTIRE DOCUMENT BEFORE PROCEDING. ALL PROPER SAFETY PROCEDURES MUST BE DEMONSTRATED AS YOU WOULD ON THE JOB SITE. YOU ARE BEING OBSERVED AT ALL TIMES. IF YOU HAVE TO BE ADVISED OF SAFETY INFRACTIONS DURING THIS MODULE, 0.5 MARKS WILL BE DEDUCTED FOR EACH INFRACTION. Experts will not intervene unless there is a safety concern. On the 3rd infraction, the Competitor will be stopped, evaluation will be based on the work already completed. REMEMBER: Experts MUST sign off at designated module points in the documentation. If a sign off point is missed all marks for that section of the project will be deducted from the overall project total.</p>
+</div>
+<p>Dịch:</p>
+<div class="tl-box">
+<p>ĐỌC HẾT TÀI LIỆU TRƯỚC KHI BẮT ĐẦU. PHẢI THỂ HIỆN MỌI QUY TRÌNH AN TOÀN ĐÚNG NHƯ KHI LÀM VIỆC THẬT TẠI HIỆN TRƯỜNG. BẠN BỊ QUAN SÁT MỌI LÚC. NẾU BỊ NHẮC VI PHẠM AN TOÀN TRONG MODULE NÀY, <strong>TRỪ 0.5 ĐIỂM MỖI LẦN VI PHẠM.</strong> Chuyên gia sẽ không can thiệp trừ khi có vấn đề an toàn. <strong>Đến lần vi phạm thứ 3, thí sinh bị dừng thi</strong>, chấm điểm trên phần việc đã hoàn thành. NHỚ: Chuyên gia <strong>PHẢI ký xác nhận</strong> tại các điểm quy định trong tài liệu. <strong>Bỏ sót một điểm ký xác nhận thì toàn bộ điểm của phần đó bị trừ khỏi tổng điểm.</strong></p>
+</div>
+<p>Ý nghĩa khi luyện tập:</p>
+<ul>
+<li>&quot;Vi phạm an toàn&quot; gồm: không đeo kính/giày/găng đúng lúc, tay gần dao đang quay, không khoá khí trước khi sửa ống, đứng sai vị trí khi máy chạy, để phoi/dầu trên sàn, dùng khí nén thổi người… Hãy tập phản xạ an toàn như một thói quen, vì chuyên gia <strong>không nhắc trước</strong>, chỉ ghi trừ điểm.</li>
+<li>Ở mỗi phiếu nhiệm vụ đều có dòng <code>Expert sign off: ____</code> hoặc <code>Expert Initials: ____</code>. <strong>Thí sinh phải chủ động gọi chuyên gia đến ký</strong>. Không ký = mất điểm cả phần.</li>
+</ul>
+<h3 id="4-diem-ky-xac-nhan-va-thu-tu-nop-bai-theo-de-that">4. Điểm ký xác nhận và thứ tự nộp bài (theo đề thật)</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>Module</th>
+<th>Việc</th>
+<th>Nộp / ký khi nào</th>
+<th>Hậu quả nếu bỏ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>Mỗi Task 1–9</td>
+<td><code>Expert sign off</code> sau mỗi task (có cả &quot;Calculation&quot; ở Task 3)</td>
+<td>Mất điểm mục đó</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Các mục thang điểm có &quot;Expert Sign Off&quot;: xác nhận tốc độ, số đo tình trạng ban đầu, soft foot trước/sau, báo cáo kết quả cân chỉnh, báo cáo số đo cuối, cân bằng cuối, báo cáo cuối, căn đai đã sửa</td>
+<td>Gọi ký ngay khi làm xong bước đó</td>
+<td>0 điểm mục đó</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Xác định 3 lỗi → ký + ghi giờ; sửa 3 lỗi → ký + ghi giờ</td>
+<td>Hai lần ký</td>
+<td>Mất điểm G1, mất xếp hạng thưởng</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>Cụm hàn 201–207</td>
+<td><strong>Ngay khi hết 3 giờ</strong> trình chuyên gia; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Detail 301 (lấy dấu)</td>
+<td><strong>Ngay khi hoàn thành</strong> (trong 1 giờ); <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Detail 404 + 405 (tiện)</td>
+<td><strong>Ngay khi xong hoặc hết 2.5 giờ</strong>; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Detail 401 (phay)</td>
+<td><strong>Ngay khi xong hoặc hết 2.5 giờ</strong>; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>D-1</td>
+<td>Detail 301 khoan/ta-rô hoàn thiện</td>
+<td>Nộp ngay khi xong; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-2</td>
+<td>Lắp ráp cơ khí xong</td>
+<td>Báo chuyên gia; <strong>chưa được lắp khí nén</strong> cho đến khi chấm xong; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-3</td>
+<td>Lắp khí nén xong, đặt 8.0 bar, chạy thử chuỗi</td>
+<td>Báo chuyên gia; 1 lượt thử miễn phí, −2/lượt thêm, tối đa 3; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-4</td>
+<td>Nghiệm thu: ra 1 sản phẩm, rồi thêm 2</td>
+<td>Báo chuyên gia ngay khi xong; sửa lỗi 1 lượt miễn phí, −2/lượt thêm, tối đa 3; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+</tbody></table>
+<p>Thứ tự thi dự kiến (theo logic &quot;B, C làm ra chi tiết cho D&quot;): A1/A2 → B → C → D, hoặc B → C → A → D tuỳ ban tổ chức xếp lịch. Trong Module D, thí sinh <strong>được làm theo thứ tự tuỳ chọn</strong> (You may perform the work in any order you prefer), nhưng ba mốc ký D-2 → D-3 → D-4 phải theo đúng trình tự.</p>
+<h3 id="5-noi-dung-pre-release-tung-module-skill-sets-dich-kem-ghi-c">5. Nội dung pre-release từng module (skill sets) — dịch kèm ghi chú thay thế</h3>
+<h4>Module 1 — Predictive Maintenance (Bảo trì dự đoán)</h4>
+<p>Thực hiện các hoạt động bảo trì dự đoán bằng dụng cụ chẩn đoán và thiết bị giám sát được cấp:</p>
+<ul>
+<li>Kiểm tra thiết bị tìm dấu hiệu mòn và/hoặc hư hỏng (Inspect equipment for signs of wear and/or malfunction)</li>
+<li>Dùng dụng cụ chẩn đoán đo bất thường trong thông số vận hành</li>
+<li>Ghi và diễn giải dữ liệu (Record and interpret data)</li>
+<li>Áp dụng biện pháp khắc phục khi cần</li>
+</ul>
+<p>[Ghi chú dịch: đề thật A1 nêu rõ kịch bản quạt thông gió tháp Oriental Pearl, thiết bị AT-400 Ultimate, WBT-400, Machine Defender, Run-Out Probe, Stroboscope, OL2R, PAT; quạt 10 kg, 3600 rpm — xem file 01. Phần 0.5 giờ &quot;Pneumatics Troubleshooting&quot; thành Module A2 trên <strong>phần mềm FluidSIM</strong>, không phải mạch vật lý — xem file 02.]</p>
+<h4>Module 2 — Fabrication, Welding and Precision Layout (Chế tạo, hàn và lấy dấu chính xác)</h4>
+<ul>
+<li>Vật liệu: thép hộp vuông hoặc chữ nhật thép cacbon thấp (mild steel square or rectangular tubing), thành dày 2 mm – 4 mm. [Ghi chú dịch: đề thật dùng hộp vuông 50 × 50 × 2 (SHS), xem file 06.]</li>
+<li>Dây hàn: Merit Pro6 Premium MIG Wire, 1.0 mm</li>
+<li>Khí bảo vệ: 80% Argon / 20% CO₂</li>
+<li>Tiêu chuẩn hàn: ISO 2553:2019, Hệ A (System A)</li>
+</ul>
+<p>Lấy dấu chính xác và dụng cụ cầm tay (Precision Layout and Hand Tools): thước ê-ke tổ hợp (combination squares), thước cuộn (measuring tape), thước lá 300 mm (steel rule), tay quay ta-rô (tap handle), mũi vạch (scribing tools), đột tâm (centre punches), thiết bị khoan, giũa (files), búa đầu tròn (ball-peen hammers), máy khoan điện cầm tay (portable electric drills).</p>
+<p>Yêu cầu dung sai (pre-release): ±1.0 mm với chiều dài ≤ 150 mm; ±1.5 mm với 150–300 mm; ±2 mm với &gt; 300 mm.
+[Ghi chú dịch: thang điểm thật B1 dùng ±2 mm cho kích thước bao 500/400/675, ±1 mm cho vị trí 130 mm, ±2° cho góc vuông, ±2 mm hiệu đường chéo; D1 dùng ±0.5 mm cho vị trí lỗ trên Detail 301. Lấy số của thang điểm thật làm chuẩn luyện tập.]</p>
+<p>Nhiệm vụ (Tasks): lấy dấu và vạch dấu chính xác các chi tiết; khoan, giũa và chuẩn bị chi tiết đúng kích thước; chế tạo và hàn ra chi tiết chính xác cho Module 4.</p>
+<h4>Module 3 — Machining (Gia công)</h4>
+<p><strong>Phần 1: Tiện (Turning – Centre Lathe – 4 Jaw Independent Chuck, máy tiện vạn năng, mâm cặp 4 chấu độc lập).</strong> Các nguyên công: tiện mặt đầu, tiện trụ, tiện côn, tiện vai (facing, parallel turning, taper turning, shoulder turning); tiện rãnh thoát dao, vát mép, tiện lỗ (undercutting, chamfering, boring); tiện ren ngoài (external thread cutting); khoan và ta-rô; làm ra chi tiết chính xác cho Module 4. Vật liệu: thép cacbon thấp cán nguội 1020 (Cold Rolled Mild Steel 1020); nhôm 6160 T6 [Ghi chú dịch: đúng là 6061-T6, link kèm theo trong bản gốc cũng dẫn tới 6061]. Yêu cầu dung sai (pre-release): kích thước ±0.025 mm.</p>
+<p><strong>Phần 2: Phay (Milling – Vertical Milling Machine, máy phay đứng).</strong> Các nguyên công: rãnh then, rãnh, hốc (keyways, slots, pockets); khoan, ta-rô, doa (drilling, tapping, reaming); khoét bậc, khoét côn (counterboring, countersinking); làm ra chi tiết chính xác cho Module 4. Vật liệu: thép 1020; nhôm 6160 T6 [Ghi chú dịch: 6061-T6]; đồng thau C36000 (Brass C36000); Acetyl (Delrin) [Ghi chú dịch: đúng là Acetal/POM]. Yêu cầu dung sai (pre-release): kích thước ±0.025 mm, vị trí ±0.01 mm.</p>
+<p>[Ghi chú dịch — <strong>đã bị thang điểm thật thay thế</strong>: thực tế chấm theo lắp ghép ISO ghi trên bản vẽ: Ø85 f8 (84.910–84.964), Ø58 (57.97–58.00), Ø20 H8 (20.000–20.033), Ø12 H8 (12.000–12.027), ren M24×3 6g (đường kính trung bình 21.803–22.003), rãnh 25.1–25.2 và 25.15–25.35; các kích thước còn lại ±0.15 hoặc ±0.3 (dung sai chung ISO 2768-1 fK); <strong>chỉ</strong> khoảng tâm lỗ 75 là ±0.01 và tâm lỗ 20 là ±0.02. Xem file 04 và CSV 08. Dung sai ±0.025 &quot;cho mọi kích thước&quot; của pre-release không còn hiệu lực.]</p>
+<h4>Module 4 — Mechanical and Pneumatic Systems Assembly (Lắp ráp hệ cơ khí và khí nén)</h4>
+<p>Các việc sau có thể làm theo thứ tự bất kỳ:</p>
+<ul>
+<li>Lắp một hệ cơ khí và hệ truyền động khí nén (fluid power system)</li>
+<li>Dùng linh kiện khí nén được cấp, gồm phần tử đầu vào, phần tử xử lý, phần tử điều khiển cuối và cơ cấu chấp hành (input elements, processing elements, final control elements, actuators) cho mạch tầng hoặc mạch tuần tự nhiều xi lanh (multi-cylinder cascade or sequential circuit)</li>
+<li>Thiết kế mạch được lập bằng phần mềm thiết kế chuẩn công nghiệp và ghi nhãn theo chuẩn an toàn và vận hành [Ghi chú dịch: đề thật cấp sẵn sơ đồ khí nén Festo rev 13, thí sinh <strong>lắp theo sơ đồ</strong>, không tự thiết kế — xem file 07]</li>
+<li>Lấy dấu chính xác và lắp các chi tiết gia công sẵn, chi tiết chế tạo và chi tiết do thí sinh làm ra (pre-machined, fabricated, and competitor-produced parts)</li>
+<li>Sản phẩm phải đúng bản vẽ và bản thiết kế được cấp (blueprints and drawings)</li>
+<li>Tiêu chuẩn: ISO 1219-1:2012, ISO 1219-2:2012(E/F), EN81346-2:2019, ISO 4414, NFPA 79.</li>
+</ul>
+<p>[Ghi chú dịch: đề thật D chia 4 bước có ký xác nhận (lấy dấu 301 → lắp cơ khí → lắp khí nén + chạy thử → nghiệm thu ra 3 sản phẩm), áp suất làm việc 8.0 bar (800 kPa), điều khiển hai tay — xem file 05.]</p>
+<h3 id="6-nhung-diem-pre-release-da-bi-de-that-thay-the-tom-tat">6. Những điểm pre-release đã bị đề thật thay thế (tóm tắt)</h3>
+<table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>Pre-release nói</th>
+<th>Đề thật / thang điểm thật</th>
+<th>Xem</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Module 1–4</td>
+<td>Đổi tên thành Module A1, A2, B1/B2, C1/C2, D; tiêu chí chấm A–G</td>
+<td>file này, mục 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dung sai gia công ±0.025 mm, vị trí ±0.01 mm</td>
+<td>Lắp ghép ISO (f8, H8, 6g) + ±0.15/±0.3; chỉ tâm lỗ 75 ±0.01, tâm 20 ±0.02</td>
+<td><code>loi-ban-goc.md</code> #3, file 04</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dung sai lấy dấu ±1.0/±1.5/±2 theo chiều dài</td>
+<td>B1: ±2 mm kích thước bao, ±1 mm vị trí 130, ±2°; D1: ±0.5 mm vị trí lỗ</td>
+<td>file 03, 05</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thép hộp 2–4 mm</td>
+<td>50 × 50 × 2 SHS, chiều dài cắt sẵn 201–207</td>
+<td>file 06</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&quot;Pneumatics Troubleshooting&quot; 0.5 h</td>
+<td>Module A2 sửa 3 lỗi trên <strong>FluidSIM</strong>, tính giờ, xếp hạng thưởng</td>
+<td>file 02</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&quot;Circuit design will be created using design software&quot;</td>
+<td>Sơ đồ cấp sẵn (Festo, rev 13), thí sinh lắp ống theo sơ đồ</td>
+<td>file 07</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Nhôm &quot;6160 T6&quot;, &quot;Acetyl&quot;</td>
+<td>6061-T6, Acetal</td>
+<td><code>loi-ban-goc.md</code> #1, #2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Chưa có trọng số điểm</td>
+<td>A 17.5 / B 14.0 / C 26.0 / D 22.1 / E 10.4 / F 7.5 / G 2.5</td>
+<td>mục 2</td>
+</tr>
+</tbody></table>
+<h3 id="ghi-chu-ban-goc">Ghi chú bản gốc</h3>
+<ul>
+<li><code>loi-ban-goc.md</code> #1, #2: &quot;Aluminum 6160 T6&quot;, &quot;Acetyl (Delrin)&quot; — đã chú thích tại chỗ.</li>
+<li><code>loi-ban-goc.md</code> #3: dung sai pre-release ±0.025/±0.01 đã bị thang điểm thật thay thế — đã chú thích.</li>
+<li>Pre-release viết giờ bằng dấu phẩy thập phân (&quot;3,5 hours&quot;, &quot;0,5 hour&quot;); bản dịch viết 3.5 h, 0.5 h theo quy ước dấu chấm.</li>
+<li>Đề thật Module C viết &quot;.5 MARKS&quot; (thiếu số 0) thay cho &quot;0.5 MARKS&quot; — cùng nghĩa.</li>
+<li>Đề thật dùng &quot;PROCEDING&quot; (đúng: PROCEEDING) ở mọi module — lỗi chính tả, bỏ qua.</li>
+</ul>

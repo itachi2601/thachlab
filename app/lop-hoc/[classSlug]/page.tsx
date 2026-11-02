@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClassHubPage from "../page";
-import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG } from "@/services/classes";
 
 export const dynamicParams = false;
 
@@ -29,6 +29,13 @@ export async function generateMetadata({
     return {
       title: "Giải Vật lí trên máy tính cầm tay — Casio fx-580VN X",
       description: "Kỹ thuật bấm máy Casio fx-580VN X và bài luyện theo chuyên đề cho kỳ thi Giải Vật lí trên máy tính cầm tay.",
+    };
+  }
+
+  if (classSlug === WORLDSKILLS_CLASS_SLUG) {
+    return {
+      title: "WorldSkills — Industrial Mechanics 2026 — CTTC",
+      description: "Đề thi, thang điểm, phiếu tự chấm và thuật ngữ song ngữ Anh–Việt để huấn luyện sinh viên dự thi WorldSkills Skill 01 Industrial Mechanics.",
     };
   }
 

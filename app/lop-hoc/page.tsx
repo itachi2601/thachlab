@@ -27,6 +27,9 @@ import {
   AVCN_SUBJECT_CODE,
   CASIO_CLASS_SLUG,
   CASIO_SUBJECT_CODE,
+  WORLDSKILLS_CLASS_SLUG,
+  WORLDSKILLS_SUBJECT_CODE,
+  isCttcClassSlug,
   expandClassIdsByGrade,
   fetchMyClassRequest,
 } from "@/services/classes";
@@ -248,15 +251,19 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   );
   const isAvcn = active?.slug === AVCN_CLASS_SLUG;
   const isCasio = active?.slug === CASIO_CLASS_SLUG;
+  const isWorldSkills = active?.slug === WORLDSKILLS_CLASS_SLUG;
+  const isCttc = isCttcClassSlug(active?.slug);
   const subjectCode = isAvcn
     ? AVCN_SUBJECT_CODE
     : isCasio
     ? CASIO_SUBJECT_CODE
+    : isWorldSkills
+    ? WORLDSKILLS_SUBJECT_CODE
     : classGrade(active?.name ?? "") === "9"
     ? activeSubjectCode
     : "vat-ly";
   const activeDisplayName = active
-    ? isAvcn || isCasio
+    ? isAvcn || isCasio || isWorldSkills
       ? active.name
       : classGrade(active.name) === "9"
       ? subjectCode === HSG_SUBJECT_CODE
@@ -714,14 +721,14 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const gradeDescription = grade ? GRADE_DESCRIPTIONS[grade] ?? "" : "";
     const streakDays =
       !isParent && !isTeacherView && session && rank?.season && rank.daily ? rank.daily.streak : 0;
-    const rootHref = isAvcn ? "/lop-hoc/cttc" : "/lop-hoc";
-    const rootLabel = isAvcn ? "CTTC" : "Lớp học";
+    const rootHref = isCttc ? "/lop-hoc/cttc" : "/lop-hoc";
+    const rootLabel = isCttc ? "CTTC" : "Lớp học";
     const showRailProgress = !!session && !isTeacherView;
     return (
       <>
         <Navbar />
         <main className="min-h-screen w-full pt-[76px]">
-          <div className={isAvcn ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
+          <div className={isCttc ? "lesson-shell lesson-shell--cttc" : "lesson-shell"}>
             <TeacherViewBanner />
             <div className="lesson-layout lesson-layout--pick">
               {/* Rail chương (≥1024) theo bản duyệt (L2/B5): lối về Lớp học, khung "<lớp> · Chương", mỗi chương có

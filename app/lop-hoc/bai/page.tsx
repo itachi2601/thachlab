@@ -65,7 +65,7 @@ import {
 } from "@/services/static-content";
 import { fetchMyLessonPageProgress, type ItemProgress } from "@/services/progress";
 import type { TheoryStatusResult } from "@/features/progress/types";
-import { expandClassIdsByGrade, AVCN_CLASS_SLUG } from "@/services/classes";
+import { expandClassIdsByGrade, isCttcClassSlug } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 
@@ -1485,8 +1485,8 @@ function LessonLoader() {
   // Từ 21/10/2026 nội dung bài (trừ vài bài xem thử) chỉ mở cho tài khoản đăng nhập — RLS trả mục rỗng cho khách.
   if (!loading && !session && items.length === 0) return <LessonLoginWall title={title} />;
 
-  // AVCN là học phần CTTC: gốc đường dẫn về hub CTTC, không về bộ chọn lớp THPT.
-  const isAvcn = classSlug === AVCN_CLASS_SLUG;
+  // AVCN, WorldSkills là học phần CTTC: gốc đường dẫn về hub CTTC, không về bộ chọn lớp THPT.
+  const isAvcn = isCttcClassSlug(classSlug);
   const rootHref = isAvcn ? "/lop-hoc/cttc" : "/lop-hoc";
   const rootLabel = isAvcn ? "CTTC" : "Lớp học";
   const classHref = classSlug
