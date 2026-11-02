@@ -74,12 +74,37 @@ export default function GiaiCungHinh({
     if (jump) setStep(Math.min(Math.max(jump.idx, 0), n - 1));
   }
 
-  const go = (i: number) => {
-    setStep(i);
-    // đưa hình về đúng chỗ (đỉnh khung ngay dưới thanh dính) để bước mới hiện ngay dưới hình, không bị hình che
+  // đưa hình về đúng chỗ (đỉnh khung ngay dưới thanh dính) để bước hiện ngay dưới hình, không bị hình che
+  const align = () => {
     const dy = (splitRef.current?.getBoundingClientRect().top ?? top) - top;
     if (Math.abs(dy) > 4) window.scrollTo({ top: window.scrollY + dy, behavior: "instant" });
   };
+  const go = (i: number) => {
+    setStep(i);
+    align();
+  };
+
+  // Vừa trả lời đúng bước đang làm: lời giải ngắn của bước hiện ở đầu khung bước. Nếu lúc gõ trang đã cuộn (bàn phím
+  // điện thoại đẩy ô nhập lên) thì phần đó nằm dưới hình dính → cuộn về cho thấy (HS ảo 2/11: "lời giải bị đẩy khỏi tầm mắt").
+  const prevOpened = useRef(opened);
+  useEffect(() => {
+    const was = prevOpened.current;
+    prevOpened.current = opened;
+    if (opened <= was || opened !== step + 1) return;
+    const el = document.activeElement;
+    if (el instanceof HTMLElement && splitRef.current?.contains(el)) el.blur(); // đóng bàn phím trước khi đo
+    const fix = () => {
+      const stick = splitRef.current?.querySelector(".cc-sticky")?.getBoundingClientRect().bottom ?? 0;
+      const stepsTop = splitRef.current?.querySelector(".cc-steps")?.getBoundingClientRect().top ?? stick;
+      if (stepsTop < stick - 4) align();
+    };
+    const t = setTimeout(fix, 60), t2 = setTimeout(fix, 450); // lần 2: sau khi bàn phím đóng, khung nhìn đổi cỡ
+    return () => {
+      clearTimeout(t);
+      clearTimeout(t2);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [opened]);
   const layer = Math.min(opened, step + 1);
   const canNext = step + 1 < n && step + 1 <= opened;
   const title = q.buoc?.[step]?.tieu_de ?? "";
