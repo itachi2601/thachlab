@@ -4130,3 +4130,4 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-scroll--rong > .tl-table { min-width: 760px; }
 .exam-content .tl-table :is(td, th).tl-nw { white-space: nowrap; }
 .exam-content .tl-table input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent, #0284c7); }
+.exam-content .tl-scroll { background: linear-gradient(to left, rgba(15, 23, 42, 0.12), transparent 28px) right / 28px 100% no-repeat; background-attachment: local; }
