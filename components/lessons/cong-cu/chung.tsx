@@ -87,3 +87,15 @@ export function ghiMoiNhat(lop: ({ loai: string; text?: string } & LopChung)[][]
   }
   return [];
 }
+
+/** Ghi dài hơn bề ngang `w` ở cỡ `size` thì tách hai dòng ở khoảng trắng gần giữa (ưu tiên trước "⇒"), khỏi thu chữ quá nhỏ. */
+export function chiaDong(t: string, w: number, size: number): string[] {
+  if (t.length * 0.6 * size <= w) return [t];
+  const cut = [...t.matchAll(/ (?=⇒)| /g)].map((m) => m.index!);
+  if (!cut.length) return [t];
+  const mid = t.length / 2,
+    uu = cut.filter((i) => t[i + 1] === "⇒"),
+    pick = (ds: number[]) => ds.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a));
+  const i = uu.length && Math.abs(pick(uu) - mid) < t.length * 0.25 ? pick(uu) : pick(cut);
+  return [t.slice(0, i), t.slice(i + 1)];
+}

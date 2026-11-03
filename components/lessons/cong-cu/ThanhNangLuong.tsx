@@ -129,12 +129,12 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
               x1={X(x)}
               y1={yS + bh / 2}
               x2={X(x)}
-              y2={9.5}
+              y2={9.9}
               stroke={C_MIN}
               strokeWidth={0.06}
               strokeDasharray="0.25 0.2"
             />
-            <Label x={X(x)} y={10.5} size={0.95} fill={C_MIN}>
+            <Label x={X(x)} y={10.95} size={0.95} fill={C_MIN}>
               {fmt(x)}
             </Label>
             {vat.bong && (
@@ -143,12 +143,12 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
                   x1={X(-x)}
                   y1={yS + bh / 2}
                   x2={X(-x)}
-                  y2={9.5}
+                  y2={9.9}
                   stroke={C_MIN}
                   strokeWidth={0.06}
                   strokeDasharray="0.25 0.2"
                 />
-                <Label x={X(-x)} y={10.5} size={0.95} fill={C_MIN}>
+                <Label x={X(-x)} y={10.95} size={0.95} fill={C_MIN}>
                   {fmt(-x)}
                 </Label>
               </>
@@ -308,17 +308,20 @@ export default function ThanhNangLuong({ canh, cot, max, lop, layer: L }: Props)
           f = mau(c.mau);
         return (
           <g key={c.ten}>
-            <rect
-              x={x}
-              y={BASE - CAO}
-              width={bw}
-              height={CAO}
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={0.04}
-              strokeDasharray="0.25 0.2"
-              opacity={0.45}
-            />
+            {/* viền đứt giữ chỗ chỉ khi cột chưa có số — đầy rồi thì nhãn đầu cột khỏi chạm viền (HS ảo 3/11) */}
+            {!d && (
+              <rect
+                x={x}
+                y={BASE - CAO}
+                width={bw}
+                height={CAO}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={0.04}
+                strokeDasharray="0.25 0.2"
+                opacity={0.45}
+              />
+            )}
             {d && (
               <g className="cc-in">
                 <rect
@@ -332,7 +335,11 @@ export default function ThanhNangLuong({ canh, cot, max, lop, layer: L }: Props)
                   strokeWidth={0.08}
                 />
                 {d.nhan && (
-                  <Label x={x + bw / 2} y={BASE - h - 0.4} size={0.95}>
+                  <Label
+                    x={x + bw / 2}
+                    y={BASE - h - 0.4}
+                    size={Math.min(0.95, (2 * step - bw - 0.4) / (d.nhan.length * 0.6))}
+                  >
                     {d.nhan}
                   </Label>
                 )}

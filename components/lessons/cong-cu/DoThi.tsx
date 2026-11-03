@@ -14,7 +14,7 @@
  *  ·  dien_tich {tu,den,duong?,nhan?}  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k.
  */
 
-import { C_HL, C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
+import { C_HL, C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { DoThiDiem, DoThiDuong, DoThiHam, DoThiLop, DoThiTruc, DoThiVi } from "@/features/lessons/types";
 
 type Props = { x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][]; layer: number };
@@ -97,6 +97,12 @@ export default function DoThi({ x: ax, y: ay, duong = [], diem = [], lop, layer:
   const soY = items.flatMap((it) => ((it.loai === "chieu" && it.nhan_y) || (it.loai === "ngang" && it.nhan) ? [Y(it.y)] : []));
   const soX = items.flatMap((it) => ((it.loai === "chieu" && it.nhan_x) || (it.loai === "dung" && it.nhan) ? [X(it.x)] : []));
   const gan = (v: number, ds: number[], d: number) => ds.some((u) => Math.abs(u - v) < d && Math.abs(u - v) > 1e-6);
+  // xét nhãn chiếu của MỌI bước để tên trục không nhảy chỗ giữa các bước (D2)
+  const soXMoi = (lop ?? []).flat().flatMap((it) => ((it.loai === "chieu" && it.nhan_x) || (it.loai === "dung" && it.nhan) ? [X(it.x)] : []));
+  const tenTrai = PR + 1.1 - ax.ten.length * 0.6 * 0.95;
+  const tenDuoi = [...(ax.vach ?? []).map((v) => X(v) + fmt(v, 3).length * 0.3 * 0.95), ...soXMoi.map((v) => v + 1.3)].every(
+    (e) => e + 0.3 < tenTrai,
+  );
   const ghiY = PB + 2.85;
   const bot = ghiY + 1.35 * 1 + 0.6;
 
@@ -120,7 +126,8 @@ export default function DoThi({ x: ax, y: ay, duong = [], diem = [], lop, layer:
         // trục dọc không bắt đầu từ 0: dấu gãy trục
         <path d={`M${PL - 0.3} ${PB - 0.35} l0.6 -0.25 M${PL - 0.3} ${PB - 0.6} l0.6 -0.25`} stroke="currentColor" strokeWidth={0.07} />
       )}
-      <Label x={PR + 1.1} y={PB - 0.45} a="end" size={0.95}>
+      {/* tên trục ngang: dưới trục nếu không đụng số vạch/nhãn chiếu, để khỏi đè đường cong sát trục (HS ảo 3/11) */}
+      <Label x={PR + 1.1} y={tenDuoi ? PB + 1.15 : PB - 0.45} a="end" size={0.95}>
         {ax.ten}
       </Label>
       <Label x={PL + 0.4} y={PT - 0.35} a="start" size={0.95}>
@@ -301,11 +308,16 @@ export default function DoThi({ x: ax, y: ay, duong = [], diem = [], lop, layer:
           </g>
         );
       })}
-      {ghi.slice(0, 1).map((t, i) => (
-        <Label key={`${L}-${i}`} x={(PL + PR) / 2} y={ghiY} size={Math.min(NHAN, (PR + 0.6) / (t.length * 0.6))}>
-          {t}
-        </Label>
-      ))}
+      {ghi.slice(0, 1).flatMap((t) => {
+        // ghi dài: hai dòng thay vì thu chữ (≥ 10px ở 375 — HS ảo 3/11); dải dưới đủ chỗ hai dòng nên hình không đổi cao
+        const ds = chiaDong(t, PR + 0.6, NHAN),
+          y0 = ds.length > 1 ? ghiY - 0.35 : ghiY;
+        return ds.map((d, i) => (
+          <Label key={`${L}-${i}`} x={(PL + PR) / 2} y={y0 + i * 1.4} size={Math.min(NHAN, (PR + 0.6) / (d.length * 0.6))}>
+            {d}
+          </Label>
+        ));
+      })}
     </svg>
   );
 }

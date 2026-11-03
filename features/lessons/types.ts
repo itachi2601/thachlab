@@ -210,7 +210,8 @@ export type TuTruongLop =
   | { loai: "goc"; x: number; y: number; tu: number; den: number; nhan?: string; het?: number }
   | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number }
   | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; het?: number }
-  | { loai: "tran"; x1: number; x2: number; y: number; het?: number };
+  | { loai: "tran"; x1: number; x2: number; y: number; het?: number }
+  | { loai: "khung"; x: number; y: number; rong: number; sau: [number, number]; ten?: [string, string, string, string]; B?: boolean; nhan?: string; het?: number };
 /** Năng lượng (Đ2): cảnh bên trái + cột cùng thang `max` bên phải. */
 export type NangLuongCanh =
   | { kieu: "lo_xo_ngang"; A: number; don_vi?: string; x?: number }

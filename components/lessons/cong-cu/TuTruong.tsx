@@ -10,7 +10,8 @@
  *         lop: [[mục…] cho bước 1, …] }. Toạ độ 0..20 ngang, 0..11 dọc, gốc dưới trái, y hướng lên; góc theo độ.
  * Mục: day {tu,den,nhan?,mau?,dut?}  ·  dong {tu,den,nhan?} (mũi tên I)  ·  tiet_dien {x,y,chieu,ten?}
  *  ·  vec {x,y,goc,dai,nhan?,mau?,dut?,trai?}  ·  goc {x,y,tu,den,nhan?}  ·  chu {x,y,text,a?}  ·  nam_cham {x,y,dai,cao,n_trai?}
- *  ·  tran {x1,x2,y} (giá treo gạch chéo)  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k.
+ *  ·  tran {x1,x2,y} (giá treo gạch chéo)  ·  khung {x,y,rong,sau:[dx,dy],ten?,B?,nhan?} (hình nhỏ khung ABCD nhìn nghiêng,
+ *  A ở (x,y))  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k (cả mục trong `hinh`).
  */
 
 import { C_MAX, C_MIN, Chevron, Label, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
@@ -61,7 +62,14 @@ function Nen({ nen }: { nen: TuTruongNen }) {
           })}
         </g>
         {nen.nhan && (
-          <Label x={0.4} y={Y(hang[hang.length - 1]) - 0.35} a="start" fill={C_MIN} size={1.05}>
+          // đường sức trên cùng sát mép trên thì đặt nhãn dưới đường, khỏi bị viewBox cắt
+          <Label
+            x={0.4}
+            y={Y(hang[hang.length - 1]) - 0.35 < 1 ? Y(hang[hang.length - 1]) + 1.2 : Y(hang[hang.length - 1]) - 0.35}
+            a="start"
+            fill={C_MIN}
+            size={1.05}
+          >
             {nen.nhan}
           </Label>
         )}
@@ -165,8 +173,14 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
     // nhãn ở mũi: vectơ gần thẳng đứng thì đặt sang bên (phải, hoặc trái nếu `trai`), còn lại đặt phía trên mũi
     const dung = Math.abs(Math.cos(g)) < 0.3,
       s = it.trai ? -1 : 1;
-    const lx = dung ? x2 + s * 0.45 : x2 + 0.6 * Math.cos(g),
-      ly = dung ? y2 + 0.3 * Math.sin(g) : y2 + 0.6 * Math.sin(g) + 0.6;
+    // vectơ đứng dài ≥ 1,5: nhãn cạnh thân, ngay sau mũi (khỏi đụng trần/sợi chỉ phía trên mũi — HS ảo 3/11)
+    const canhThan = dung && it.dai >= 1.5,
+      lx = dung ? x2 + s * 0.45 : x2 + 0.6 * Math.cos(g),
+      ly = canhThan
+        ? y2 + (Math.sin(g) > 0 ? -0.55 : 0.65)
+        : dung
+          ? y2 + 0.3 * Math.sin(g)
+          : y2 + 0.6 * Math.sin(g) + 0.6;
     return (
       <g className={cls}>
         <line
@@ -237,6 +251,68 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
             strokeWidth={0.05}
           />
         ))}
+      </g>
+    );
+  }
+  if (it.loai === "khung") {
+    // hình nhỏ khung ABCD nhìn nghiêng (hình chiếu xiên) trong ô nền halo: A trước-trái, AB đi vào trong hình
+    const [dx, dy] = it.sau,
+      A = [it.x, it.y],
+      B = [it.x + dx, it.y + dy],
+      C = [it.x + it.rong + dx, it.y + dy],
+      D = [it.x + it.rong, it.y];
+    const [tA, tB, tC, tD] = it.ten ?? ["A", "B", "C", "D"];
+    const pts = [A, B, C, D].map(([x, y]) => `${x},${Y(y)}`).join(" ");
+    const giua = (P: number[], Q: number[]) => [(P[0] + Q[0]) / 2, Y((P[1] + Q[1]) / 2)];
+    const [ab1, ab2] = giua(B, A),
+      [cd1, cd2] = giua(D, C);
+    const x1 = it.x - 1,
+      x2 = C[0] + 0.75,
+      y1 = it.y - 1.55,
+      y2 = it.y + dy + 2;
+    return (
+      <g className={cls}>
+        <rect
+          x={x1}
+          y={Y(y2)}
+          width={x2 - x1}
+          height={y2 - y1}
+          rx={0.3}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={0.05}
+          opacity={0.6}
+        />
+        <polygon points={pts} fill="none" stroke="currentColor" strokeWidth={0.12} strokeLinejoin="round" />
+        {/* chiều dòng điện: B → A ở cạnh AB (ra phía người nhìn), D → C ở cạnh CD */}
+        <Chevron x={ab1} y={ab2} ang={Math.atan2(dy, -dx)} color={C_MAX} len={0.35} w={0.1} />
+        <Chevron x={cd1} y={cd2} ang={Math.atan2(-dy, dx)} color={C_MAX} len={0.35} w={0.1} />
+        <Label x={A[0] - 0.25} y={Y(A[1]) + 0.35} a="end" size={0.85}>
+          {tA}
+        </Label>
+        <Label x={B[0] - 0.25} y={Y(B[1])} a="end" size={0.85}>
+          {tB}
+        </Label>
+        <Label x={C[0] + 0.2} y={Y(C[1])} a="start" size={0.85}>
+          {tC}
+        </Label>
+        <Label x={D[0] + 0.2} y={Y(D[1]) + 0.35} a="start" size={0.85}>
+          {tD}
+        </Label>
+        {it.B && (
+          <g>
+            <line x1={B[0] - 0.2} y1={Y(y2 - 0.75)} x2={C[0]} y2={Y(y2 - 0.75)} stroke={C_MIN} strokeWidth={0.08} />
+            <Chevron x={C[0]} y={Y(y2 - 0.75)} ang={0} color={C_MIN} len={0.35} w={0.08} />
+            <Label x={B[0] - 0.5} y={Y(y2 - 0.75) + 0.3} a="end" size={0.85} fill={C_MIN}>
+              B
+            </Label>
+          </g>
+        )}
+        {it.nhan && (
+          <Label x={(x1 + x2) / 2} y={Y(y1 + 0.4)} size={0.85}>
+            {it.nhan}
+          </Label>
+        )}
       </g>
     );
   }
@@ -327,9 +403,7 @@ export default function TuTruong({ nen, hinh = [], lop, layer: L }: Props) {
       aria-label="Hình từ trường, dây dẫn và lực từ"
     >
       {nen && <Nen nen={nen} />}
-      {hinh.map((it, k) => (
-        <Muc key={`h${k}`} it={it} moi={false} />
-      ))}
+      {hinh.map((it, k) => (it.het != null && L >= it.het ? null : <Muc key={`h${k}`} it={it} moi={false} />))}
       {items.map((it, k) => (
         <Muc key={`l${k}`} it={it} moi />
       ))}
