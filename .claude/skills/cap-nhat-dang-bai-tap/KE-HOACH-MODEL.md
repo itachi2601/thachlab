@@ -10,11 +10,11 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 |---|---|---|---|---|
 | `do_thi` | Đồ thị trên lưới (đoạn thẳng + đường cong hàm, tô diện tích, tam giác độ dốc, điểm đánh dấu): x–t, v–t, T–t chuyển thể, T–Q, p–V/V–T/p–T, U–I, Φ–t, N(t), x–t dao động, W–x, W–t, A–f cộng hưởng, P(R) | 2 · D4 | 30 | 2, 3, 7, 8, 13, 18, 20, 21, 22, 23, 24, 25, 26, 42, 52, 53, 54, 89, 150, 153, 159, 160, 162, 166 · H9 Cơ; H9 Nhiệt; H9 Âm; H9 Điện; K9 Ch.3; L10 Ch.2; L11 Ch.1; L11 Ch.4; L12 Ch.1; L12 Ch.2; L12 Ch.3; L12 Ch.4 |
 | `tu_truong` | Nền B (mũi/chấm/chéo), nam châm, dây thẳng + đường sức tròn, la bàn, vectơ F (bàn tay trái), khung dây + pháp tuyến n, từ thông, Lenz | 11 · D4 | 6 | 10, 11, 13, 14, 126 · L12 Ch.3 |
-| `vong_tron` | Đường tròn: điểm quay + góc quét + chiếu lên trục x; vectơ v tiếp tuyến, a hướng tâm — vòng tròn pha (dao động, i/u xoay chiều, E–B) và chuyển động tròn đều | 23 · D4 | 9 | 14, 20, 21, 22, 23, 76, 77, 127 · L10 Ch.6; L11 Ch.1; L12 Ch.3 |
+| `vong_tron` (`VongTronPha.tsx`, Đ1 ✓) | Đường tròn: điểm quay + góc quét + chiếu lên trục x; vectơ v tiếp tuyến, a hướng tâm — vòng tròn pha (dao động, i/u xoay chiều, E–B) và chuyển động tròn đều | 23 · D4 | 9 | 14, 20, 21, 22, 23, 76, 77, 127 · L10 Ch.6; L11 Ch.1; L12 Ch.3 |
 | `thanh_nang_luong` | Cảnh (độ cao, dốc, con lắc, lò xo) + cột Wđ/Wt/Q; hộp hệ với mũi tên Q, A vào/ra (dấu ĐL1 NĐLH); chuỗi khâu hiệu suất | 26 · D2 | 14 | 4, 24, 26, 70, 71, 72, 129, 130, 163, 166, 167 · H9 Cơ; H9 Điện; K9 Ch.1; L10 Ch.4; L11 Ch.1; L12 Ch.1 |
-| `song_day` | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
+| `song_day` (`SongDay.tsx`, Đ1 ✓) | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
 | `giao_thoa_2_nguon` | Hai nguồn trên mặt nước, vân cực đại/cực tiểu (đã có) | 33 · D3 (đã có) | 1 | 31, 33 · L11 Ch.2 |
-| `van_giao_thoa` | Màn khe Young: thước vân sáng/tối, khoảng vân, trùng vân hai bức xạ | 31 · D4 | 1 | 31, 33 · L11 Ch.2 |
+| `van_giao_thoa` (`VanGiaoThoa.tsx`, Đ1 ✓) | Màn khe Young: thước vân sáng/tối, khoảng vân, trùng vân hai bức xạ | 31 · D4 | 1 | 31, 33 · L11 Ch.2 |
 | `dien_truong_deu` | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
 | `mach_dien` | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
 | `truc_chuyen_dong` | Trục toạ độ 1D: vị trí theo thời điểm, đi–quay lại, hai vật gặp/đuổi, vật có chiều dài (tàu, cầu), xuôi–ngược dòng, tiếng vang; va chạm/súng giật trước–sau (mũi tên v, p) | 50 · D3 | 5 | 50, 54, 73, 74, 150 · H9 Âm; L10 Ch.2; L10 Ch.5 |
@@ -74,7 +74,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | 20 | Bài 1. Dao động điều hoà | — | D3 (do_thi), D5 (vong_tron) | D1, D2, D4 | Sonnet | P1 |
 | 21 | Bài 2. Mô tả dao động điều hoà | — | D4 (do_thi), D5 (vong_tron) | D1, D2, D3 | Sonnet | P1 |
 | 22 | Bài 3. Vận tốc, gia tốc trong dao động điều hoà | — | D3 (do_thi), D4 (vong_tron) | D1, D2, D5 | Sonnet | P1 |
-| 23 | Bài 4. Bài tập về dao động điều hoà | D4 (vong_tron) | D3 (do_thi) | D1, D2, D5 | Opus | P1 |
+| 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11 | D3 (do_thi) — chờ Đ2 | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
 | 24 | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và | — | D2 (thanh_nang_luong), D5 (do_thi) | D1, D3, D4 | Sonnet | P1 |
 | 25 | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
 | 26 | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động đi | D2 (thanh_nang_luong) | D5 (do_thi) | D1, D3, D4 | Opus | P1 |
@@ -83,10 +83,10 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 27 | Bài 8. Mô tả sóng | D4 (song_day) | D5 (song_day) | D1, D2, D3 | Opus | P1 |
+| 27 | Bài 8. Mô tả sóng | ✓ D4 (song_day) 3/11 | ✓ D5 (song_day) 3/11 | ✓ D1, D2, D3 3/11 | Opus | P1 |
 | 28 | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng c | — | D3 (song_day) | D1, D2, D4, D5, D6 | Sonnet | P1 |
 | 30 | Bài 11. Sóng điện từ | — | — | D1, D2, D3, D4 | Sonnet | P4 |
-| 31 | Bài 12. Giao thoa sóng | D4 (van_giao_thoa) | D3 (giao_thoa_2_nguon) | D1, D2, D5 | Opus | P1 |
+| 31 | Bài 12. Giao thoa sóng | ✓ D4 (van_giao_thoa) 3/11 | ✓ D3 (giao_thoa_2_nguon `kieu: dem_day`) 3/11 | ✓ D1, D2, D5 3/11 | Opus | P1 |
 | 32 | Bài 13. Sóng dừng | — | D5 (song_day), D6 (song_day) | D1, D2, D3, D4 | Sonnet | P1 |
 | 33 | Bài 14. Bài tập về sóng | — | D3 (giao_thoa_2_nguon, đã làm), D4 (van_giao_thoa) | D1, D2, D5, D6 | Sonnet | P1 |
 | 34 | Bài 15. Thực hành: Đo tốc độ truyền âm | — | D2 (song_day), D3 (song_day) | D1, D4 | Sonnet | P1 |
@@ -291,6 +291,8 @@ Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Fou
 - Có gộp Young (`van_giao_thoa`) vào `giao_thoa_2_nguon` để bớt một đợt Opus không.
 - Một số dạng Trung bình hình rất có ích bị xếp "chỉ tóm đề" vì giới hạn 2 dạng/bài (31·D2 đếm cực đại, 58·D4 phân tích trọng lực trên dốc) — rà bảng B trước khi giao đợt.
 - `do_thi` (30 dạng dùng lại) và `so_do_vecto` (26) rộng: làm đợt Opus thì cân nhắc tách 2 component.
+
+- Đ1 (3/11): 23·D3 cần `do_thi` (tạo ở Đ2) nên mới có `tom_de`; thêm `cong_cu` khi Đ2 vào main. Ba họ mới khai từng bước bằng `lop: [[mục…], …]` trong JSON (xem chú thích đầu mỗi component) — phiên Sonnet dùng lại chỉ cần viết JSON.
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.

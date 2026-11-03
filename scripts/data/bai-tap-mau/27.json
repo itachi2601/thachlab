@@ -80,7 +80,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Phao nhô lên $9$ lần trong $20\\ \\text{s}$",
+     "Hai ngọn sóng liên tiếp cách $4{,}5\\ \\text{m}$"
+    ],
+    "tim": [
+     "a) $T$, $f$",
+     "b) $v$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -212,7 +222,20 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Sóng truyền từ M đến N",
+     "$v=1{,}2\\ \\text{m/s}$, $f=20\\ \\text{Hz}$",
+     "$MN=10{,}5\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $\\lambda$",
+     "b) $\\Delta\\varphi$ giữa M và N",
+     "c) Cùng, ngược hay vuông pha?",
+     "d) P gần M nhất, ngược pha M: $MP$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -345,7 +368,17 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$u=5\\cos(8\\pi t-0{,}2\\pi x)$ (cm; $x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $T$, $f$",
+     "b) $\\lambda$, $v$ (m/s)",
+     "c) $v_{max}$ của phần tử, so với $v$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -494,7 +527,121 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$u_O=4\\cos\\left(20\\pi t-\\dfrac{\\pi}{2}\\right)\\ \\text{cm}$",
+     "$v=1{,}5\\ \\text{m/s}$, theo chiều $+Ox$",
+     "O bắt đầu dao động lúc $t=0$",
+     "$OM=20\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $T$, $\\lambda$",
+     "b) Phương trình $u_M$",
+     "c) Lúc $t=0{,}15\\ \\text{s}$: $u_M$, chiều chuyển động"
+    ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 4,
+    "lam": 15,
+    "x_max": 30,
+    "diem": [
+     {
+      "x": 0,
+      "ten": "O"
+     },
+     {
+      "x": 20,
+      "ten": "M"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 15,
+       "nhan": "λ = 15 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 20π → f = 10 Hz, T = 0,1 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "λ = v/f = 150 : 10 = 15 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 20,
+       "nhan": "d = 20 cm",
+       "hang": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "Δφ = 2πd/λ = 8π/3 (M trễ pha)"
+      },
+      {
+       "loai": "ghi",
+       "text": "φ_M = −π/2 − 8π/3 = −19π/6"
+      }
+     ],
+     [
+      {
+       "loai": "song",
+       "pha": 2.1666666666666665,
+       "dau": 20
+      },
+      {
+       "loai": "dau_song",
+       "x": 20,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Sóng tới M lúc t₀ = d/v ≈ 0,133 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 0,15 s > t₀ → M đã dao động"
+      }
+     ],
+     [
+      {
+       "loai": "song",
+       "pha": 2.5,
+       "dau": 22.5
+      },
+      {
+       "loai": "ghi",
+       "text": "Pha M: 20π·0,15 − 19π/6 = −π/6"
+      },
+      {
+       "loai": "ghi",
+       "text": "u_M = 4cos(−π/6) ≈ 3,46 cm"
+      }
+     ],
+     [
+      {
+       "loai": "mui",
+       "x": 20,
+       "huong": "len"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_M = −ωA·sin(−π/6) > 0"
+      },
+      {
+       "loai": "ghi",
+       "text": "→ M đang đi lên"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -643,7 +790,97 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Hình (a): $u$–$x$ lúc $t=0$",
+     "Hình (b): $u$–$t$ của M, $x_M=6\\ \\text{cm}$",
+     "Truyền theo chiều $+Ox$",
+     "N cách M $9\\ \\text{cm}$ theo chiều truyền"
+    ],
+    "tim": [
+     "a) $A$, $\\lambda$, $T$",
+     "b) $v$",
+     "c) Phương trình $u_M$",
+     "d) Phương trình $u_N$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 3,
+    "lam": 24,
+    "x_max": 36,
+    "diem": [
+     {
+      "x": 6,
+      "ten": "M"
+     },
+     {
+      "x": 15,
+      "ten": "N"
+     }
+    ],
+    "song": {
+     "pha": 0.5
+    },
+    "lop": [
+     [
+      {
+       "loai": "thuoc",
+       "tu": 6,
+       "den": 30,
+       "nhan": "λ = 24 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai đỉnh liên tiếp cách nhau λ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Hình (b): hai đỉnh cách nhau 0,4 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "→ T = 0,4 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v = λ/T = 24 : 0,4 = 60 cm/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t = 0: M ở đỉnh → φ_M = 0"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 5π rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 6,
+       "den": 15,
+       "nhan": "d = 9 cm",
+       "hang": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "Δφ = 2π·9/24 = 3π/4"
+      },
+      {
+       "loai": "ghi",
+       "text": "N nhận sóng sau M → trễ pha"
+      }
+     ]
+    ]
+   }
   }
  ],
  "tu_luan": {

@@ -114,7 +114,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=-4\\sin(5\\pi t)$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) Dạng chuẩn: $A$, $\\varphi$",
+     "b) $T$, $f$",
+     "c) $v_{max}$, $a_{max}$",
+     "d) Lúc $t=0$: ở đâu, đi chiều nào?"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -213,7 +224,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x_1=3{,}0\\ \\text{cm}$: $v_1=16\\pi\\ \\text{cm/s}$",
+     "$x_2=4{,}0\\ \\text{cm}$: $v_2=12\\pi\\ \\text{cm/s}$"
+    ],
+    "tim": [
+     "a) $\\omega$, $T$",
+     "b) $A$",
+     "c) $a_{max}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -346,7 +368,17 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $x$–$t$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $T$",
+     "b) $\\omega$",
+     "c) $\\varphi$ và phương trình"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -385,7 +417,7 @@
     },
     {
      "tieu_de": "Lần đầu qua vị trí cân bằng",
-     "hoi": "Vật qua vị trí cân bằng lần đầu tiên ở thời điểm nào (s)?",
+     "hoi": "Vật qua vị trí cân bằng lần đầu tiên ở thời điểm nào (s)? (gõ số thập phân, ví dụ 0,25)",
      "dap_so": 0.0417,
      "sai_so": 0.002,
      "don_vi": "s",
@@ -409,7 +441,7 @@
     },
     {
      "tieu_de": "Góc M quét tới lần thứ 5",
-     "hoi": "Góc M phải quét tới lần thứ 5 qua $x=-3$ cm là bao nhiêu (đơn vị $\\pi$ rad)?",
+     "hoi": "Góc M phải quét tới lần thứ 5 qua $x=-3$ cm là bao nhiêu (đơn vị $\\pi$ rad)? (gõ số thập phân, ví dụ 0,25)",
      "dap_so": 4.333,
      "sai_so": 0.02,
      "don_vi": "π rad",
@@ -458,7 +490,93 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=6\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)\\ \\text{cm}$",
+     "Mỗi lần qua tính một lần (cả hai chiều)"
+    ],
+    "tim": [
+     "a) $t$ qua VTCB lần đầu",
+     "b) $t$ qua $x=-3\\ \\text{cm}$ lần thứ 5"
+    ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 6,
+    "don_vi": "cm",
+    "x_dich": [
+     -3
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3333333333333333,
+       "ten": "M₀",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 0: M₀ ở góc π/3, nửa trên"
+      },
+      {
+       "loai": "ghi",
+       "text": "→ vật đi theo chiều âm"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": 0.3333333333333333,
+       "den": 0.5,
+       "het": 3
+      },
+      {
+       "loai": "diem",
+       "goc": 0.5,
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "Tới VTCB: Δφ = π/2 − π/3 = π/6"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = (π/6) : 4π = 1/24 ≈ 0,042 s"
+      }
+     ],
+     [
+      {
+       "loai": "giao",
+       "x": -3,
+       "so": [
+        "lần 1, 3, 5",
+        "lần 2, 4"
+       ]
+      },
+      {
+       "loai": "cung",
+       "tu": 0.3333333333333333,
+       "den": 4.666666666666667
+      },
+      {
+       "loai": "ghi",
+       "text": "Lần 5 ở góc 2π/3 + 2·2π = 14π/3"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δφ = 14π/3 − π/3 = 13π/3"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t₅ = (13π/3) : 4π = 13/12 ≈ 1,08 s"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -577,7 +695,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$T=0{,}6\\ \\text{s}$, $A=4\\ \\text{cm}$",
+     "$t=0$: $x=2\\ \\text{cm}$, đi về biên âm",
+     "Xét từ $t=0$ đến $t=1{,}4\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) Quãng đường $s$",
+     "b) $v_{tb}$ và vận tốc trung bình"
+    ]
+   }
   }
  ]
 }

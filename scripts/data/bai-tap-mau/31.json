@@ -83,7 +83,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "A, B cùng pha, $f=25\\ \\text{Hz}$",
+     "$AB=20\\ \\text{cm}$, $v=50\\ \\text{cm/s}$",
+     "M: $MA=16\\ \\text{cm}$, $MB=21\\ \\text{cm}$",
+     "N: $NA=18\\ \\text{cm}$, $NB=24\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) M: cực đại hay cực tiểu?",
+     "b) N: cực đại hay cực tiểu?"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -181,7 +193,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "A, B cùng pha, $f=20\\ \\text{Hz}$",
+     "$AB=12\\ \\text{cm}$, $v=40\\ \\text{cm/s}$"
+    ],
+    "tim": [
+     "a) Số cực đại trên AB",
+     "b) Số cực tiểu trên AB"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -279,7 +301,29 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "A, B cùng pha, $f=10\\ \\text{Hz}$",
+     "$AB=24\\ \\text{cm}$",
+     "M cực đại: $d_1=MA=14\\ \\text{cm}$, $d_2=MB=26\\ \\text{cm}$",
+     "Giữa M và trung trực: $3$ dãy cực đại"
+    ],
+    "tim": [
+     "a) Bậc $k$ của dãy qua M",
+     "b) $\\lambda$",
+     "c) $v$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "giao_thoa_2_nguon",
+    "kieu": "dem_day",
+    "f": 10,
+    "v": 30,
+    "AB": 24,
+    "d1": 14,
+    "d2": 26
+   }
   },
   {
    "form": "bai_tap",
@@ -390,7 +434,85 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$a=0{,}8\\ \\text{mm}$, $D=1{,}6\\ \\text{m}$",
+     "$7$ vân sáng liên tiếp: $6{,}0\\ \\text{mm}$",
+     "Cùng phía: $x_M=4{,}5\\ \\text{mm}$, $x_N=7{,}0\\ \\text{mm}$"
+    ],
+    "tim": [
+     "a) $i$, $\\lambda$",
+     "b) M, N: vân sáng hay vân tối?"
+    ]
+   },
+   "cong_cu": {
+    "loai": "van_giao_thoa",
+    "i": 1,
+    "x_min": -1,
+    "x_max": 8.5,
+    "diem": [
+     {
+      "x": 4.5,
+      "ten": "M"
+     },
+     {
+      "x": 7,
+      "ten": "N"
+     }
+    ],
+    "nhom": {
+     "n": 7,
+     "L": 6
+    },
+    "lop": [
+     [
+      {
+       "loai": "dem"
+      },
+      {
+       "loai": "ghi",
+       "text": "7 vân sáng → 6 khoảng vân"
+      },
+      {
+       "loai": "ghi",
+       "text": "i = 6,0 : 6 = 1,0 mm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "λ = ia/D (đổi ra mét)"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 10⁻³·0,8·10⁻³ : 1,6 = 0,5 μm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc_i"
+      },
+      {
+       "loai": "ghi",
+       "text": "x_M : i = 4,5   ·   x_N : i = 7"
+      }
+     ],
+     [
+      {
+       "loai": "van"
+      },
+      {
+       "loai": "ghi",
+       "text": "M giữa hai vân sáng → vân tối"
+      },
+      {
+       "loai": "ghi",
+       "text": "N trùng vân sáng bậc 7"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -488,7 +610,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$a=1{,}2\\ \\text{mm}$, $D=2\\ \\text{m}$",
+     "$\\lambda_1=0{,}60\\ \\mu\\text{m}$, $\\lambda_2=0{,}45\\ \\mu\\text{m}$"
+    ],
+    "tim": [
+     "a) $i_1$, $i_2$",
+     "b) Vân trùng gần vân trung tâm nhất",
+     "c) Số vân sáng riêng $\\lambda_2$ giữa hai vân trùng liên tiếp"
+    ]
+   }
   }
  ],
  "tu_luan": {
