@@ -11,6 +11,8 @@ import SongDay from "@/components/lessons/cong-cu/SongDay";
 import VanGiaoThoa from "@/components/lessons/cong-cu/VanGiaoThoa";
 import VongTronPha from "@/components/lessons/cong-cu/VongTronPha";
 import SoDoVecto from "@/components/lessons/cong-cu/SoDoVecto";
+import DienTruongDeu from "@/components/lessons/cong-cu/DienTruongDeu";
+import MachDien from "@/components/lessons/cong-cu/MachDien";
 import { getTomDe, TomDeBar, TomDeSide, useStickyTop } from "@/components/lessons/TomDe";
 import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types";
 
@@ -30,6 +32,8 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "tu_truong") return <TuTruong {...tool} layer={layer} />;
   if (tool.loai === "thanh_nang_luong") return <ThanhNangLuong {...tool} layer={layer} />;
   if (tool.loai === "so_do_vecto" || tool.loai === "thanh_moment") return <SoDoVecto {...tool} layer={layer} />;
+  if (tool.loai === "dien_truong_deu") return <DienTruongDeu {...tool} layer={layer} />;
+  if (tool.loai === "mach_dien") return <MachDien {...tool} layer={layer} />;
   return null;
 }
 

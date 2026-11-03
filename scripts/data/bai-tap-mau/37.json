@@ -135,7 +135,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$d=8{,}0\\ \\text{mm}$",
+     "$U=240\\ \\text{V}$, bản trên dương",
+     "$q=-2{,}5\\ \\text{nC}$ ở giữa hai bản"
+    ],
+    "tim": [
+     "a) $E$",
+     "b) $F$",
+     "c) Lực hướng lên hay xuống",
+     "d) $F'$ khi $d$ còn một nửa"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -247,7 +260,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$E=1820\\ \\text{V/m}$",
+     "Electron vào cùng chiều $\\vec E$",
+     "$v_0=8{,}0\\cdot10^{6}\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "a) Lực cùng hay ngược chiều $\\vec v$; $a$",
+     "b) Quãng đường tới khi dừng $s$",
+     "c) Sau khi dừng thế nào; thời gian trở lại điểm vào $t$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -420,7 +445,136 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=1{,}0\\cdot10^{7}\\ \\text{m/s}$, vào chính giữa",
+     "$L=4{,}5\\ \\text{cm}$, $d=1{,}0\\ \\text{cm}$",
+     "$U=36{,}4\\ \\text{V}$, bản dưới dương"
+    ],
+    "tim": [
+     "a) $E$, $a$; lệch về bản nào",
+     "b) Ra khỏi hai bản không? Nếu chạm: cách mép vào bao nhiêu"
+    ]
+   },
+   "cong_cu": {
+    "loai": "dien_truong_deu",
+    "L": 4.5,
+    "d": 1.0,
+    "duong": "duoi",
+    "hinh": [
+     {
+      "loai": "thuoc_ngang",
+      "tu": 0,
+      "den": 4.5,
+      "nhan": "L = 4,5 cm",
+      "vi": "duoi",
+      "het": 6
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong_suc"
+      },
+      {
+       "loai": "chu",
+       "x": 2.0,
+       "y": 0.27,
+       "text": "E = 3640 V/m",
+       "a": "start",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "E = U/d = 36,4 : 0,010 = 3640 V/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a = |e|E/m_e ≈ 6,4·10¹⁴ m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "luc",
+       "huong": "xuong",
+       "nhan": "F"
+      },
+      {
+       "loai": "ghi",
+       "text": "q < 0 ⇒ F ngược chiều E ⇒ lệch về bản dưới (+)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Nếu bay hết L: t = L/v₀ = 4,5 ns ⇒ y = at²/2 ≈ 6,48 mm"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "y_cuoi": -0.648,
+       "dut": true,
+       "het": 6
+      },
+      {
+       "loai": "thuoc_doc",
+       "x": 4.85,
+       "tu": 0,
+       "den": -0.648,
+       "nhan": "6,48 mm",
+       "ben": "phai",
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc_doc",
+       "x": -0.28,
+       "tu": 0,
+       "den": -0.5,
+       "nhan": "d/2",
+       "ben": "trai",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "6,48 mm > d/2 = 5,0 mm ⇒ chạm bản dưới"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "y_cuoi": -0.648,
+       "dut": true,
+       "mau": "min"
+      },
+      {
+       "loai": "quy_dao",
+       "y_cuoi": -0.648,
+       "cat": true
+      },
+      {
+       "loai": "thuoc_ngang",
+       "tu": 0,
+       "den": 3.95,
+       "nhan": "x_c ≈ 3,95 cm",
+       "vi": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "y = d/2 ⇒ t_c ≈ 3,95 ns ⇒ x_c = v₀t_c ≈ 3,95 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x_c ≈ 3,95 cm < L = 4,5 cm ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -543,7 +697,21 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=1{,}0\\cdot10^{-10}\\ \\text{kg}$, $q=-2{,}0\\cdot10^{-12}\\ \\text{C}$",
+     "$v_0=20\\ \\text{m/s}$, vào chính giữa",
+     "$L=1{,}0\\ \\text{cm}$, $d=4{,}0\\ \\text{mm}$",
+     "$U=1600\\ \\text{V}$, bản trên dương",
+     "Ra khỏi bản bay thêm $D=2{,}0\\ \\text{cm}$ tới giấy"
+    ],
+    "tim": [
+     "a) $a$",
+     "b) $v_y$, $\\alpha$",
+     "c) $Y$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -716,7 +884,124 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=1{,}6\\cdot10^{7}\\ \\text{m/s}$, vào chính giữa",
+     "$L=4{,}0\\ \\text{cm}$, $d=2{,}0\\ \\text{cm}$",
+     "Bản trên dương"
+    ],
+    "tim": [
+     "a) $U_{\\max}$ để electron còn bay ra",
+     "b) $U=546\\ \\text{V}$: ra được không; chạm bản nào, cách mép vào bao nhiêu"
+    ]
+   },
+   "cong_cu": {
+    "loai": "dien_truong_deu",
+    "L": 4.0,
+    "d": 2.0,
+    "duong": "tren",
+    "hinh": [
+     {
+      "loai": "thuoc_ngang",
+      "tu": 0,
+      "den": 4.0,
+      "nhan": "L = 4,0 cm",
+      "vi": "duoi",
+      "het": 1
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "thuoc_ngang",
+       "tu": 0,
+       "den": 4.0,
+       "nhan": "L = 4,0 cm ⇒ t = 2,5 ns",
+       "vi": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = L/v₀ = 0,040 : 1,6·10⁷ = 2,5 ns (không phụ thuộc U)"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "y_cuoi": 1,
+       "dut": true,
+       "mau": "min"
+      },
+      {
+       "loai": "quy_dao",
+       "y_cuoi": -1,
+       "dut": true,
+       "mau": "min",
+       "het": 5
+      },
+      {
+       "loai": "thuoc_doc",
+       "x": -0.25,
+       "tu": 0,
+       "den": -1,
+       "nhan": "d/2",
+       "ben": "trai",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "Sượt mép bản ở cuối đường bay: y(L) = d/2 = 1,0 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a_{max} = d/t² = 3,2·10¹⁵ m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "U_{max} = m_e·d·a_{max}/|e| = 364 V"
+      }
+     ],
+     [
+      {
+       "loai": "luc",
+       "huong": "len",
+       "nhan": "F"
+      },
+      {
+       "loai": "ghi",
+       "text": "546 V > 364 V ⇒ không ra được, chạm bản trên (+)"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "y_cuoi": 1.5,
+       "cat": true
+      },
+      {
+       "loai": "thuoc_ngang",
+       "tu": 0,
+       "den": 3.27,
+       "nhan": "x_c ≈ 3,27 cm",
+       "vi": "tren"
+      },
+      {
+       "loai": "ghi",
+       "text": "a = 4,8·10¹⁵ m/s² ⇒ t_c ≈ 2,04 ns ⇒ x_c ≈ 3,27 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x_c = L·√(U_{max}/U) ≈ 3,27 cm ✓"
+      }
+     ]
+    ]
+   }
   }
  ],
  "tu_luan": {

@@ -48,7 +48,7 @@
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
-- [Giải cùng hình + tóm đề](project_thachlab_giai_cung_hinh.md) — mẫu 33·D3 chưa deploy; kế tiếp Đ1 Opus
+- [Giải cùng hình + tóm đề](project_thachlab_giai_cung_hinh.md) — 13 bài đã đăng; Đ3 (37, 43) soạn xong chờ duyệt+đăng; kế tiếp Đ4
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — thí điểm 20 câu chờ thầy
