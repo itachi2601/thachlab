@@ -58,7 +58,7 @@ export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L 
           return (
             <g key={k} className="cc-in">
               {[x1, x2].map((x, j) => (
-                <line key={j} x1={x} y1={0} x2={x} y2={y} stroke={C_MAX} strokeWidth={0.05} strokeDasharray="0.2 0.2" opacity={0.7} />
+                <line key={j} x1={x} y1={it.hang ? rowY(0) + 1.5 : 0} x2={x} y2={y} stroke={C_MAX} strokeWidth={0.05} strokeDasharray="0.2 0.2" opacity={0.7} />
               ))}
               <path d={`M${x1} ${y - 0.3} v0.3 H${x2} v-0.3`} stroke={C_MAX} strokeWidth={0.1} fill="none" />
               <Label x={(x1 + x2) / 2} y={y + 1.15} size={1} fill={C_MAX}>
@@ -76,6 +76,7 @@ export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L 
         }
         return null;
       })}
+      {/* thước hàng 2: vạch gióng bắt đầu dưới nhãn hàng 1 để không cắt chữ (HS ảo 3/11) */}
       {/* các điểm theo đề — nhãn bên trái, mũi tên chuyển động bên phải */}
       {diem.map((d) => {
         const x = X(d.x), y = Y(u(d.x));
