@@ -104,3 +104,4 @@
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 17 hình vẽ lại, chưa đăng DB
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — đã đăng DB, chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
+- [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — học phần worldskills-im 16 bài đã lên 2/11; chờ thầy soát bậc 1

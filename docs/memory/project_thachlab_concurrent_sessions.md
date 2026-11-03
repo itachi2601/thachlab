@@ -72,3 +72,5 @@ Thầy hỏi "làm sao cloud liền mạch như main", chọn phương án GitHu
 - Bộ lọc quyền auto-mode chặn commit workflow có `contents: write` → phải xin thầy "duyệt commit"; tách Write / commit / push
   thành ba bước, đừng gộp một lệnh.
 - Nhánh `claude/*` tạo trước 8/10 không có file workflow → không tự gộp, vẫn merge tay.
+
+- 2026-11-02 · Hai phiên cùng nối dòng vào CUỐI `docs/STATE-archive.md` → workflow gộp đỏ, phải merge tay (giữ cả hai bên). → Trước khi push lần cuối chạy `git fetch origin && git merge origin/main`; mục archive mới chèn ngay sau tiêu đề ngày tương ứng thay vì cuối file.
