@@ -433,7 +433,109 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "rong_roc"
+    },
+    "ti_le": 3.5,
+    "vec": [
+     {
+      "ten": "P_1",
+      "goc": "xuong",
+      "do_lon": 50,
+      "tu": "m1",
+      "lech": [
+       0,
+       -0.8
+      ],
+      "so": "50 N",
+      "so_buoc": 1
+     },
+     {
+      "ten": "P_2",
+      "goc": "xuong",
+      "do_lon": 30,
+      "tu": "m2",
+      "lech": [
+       0,
+       -0.8
+      ],
+      "so": "30 N",
+      "so_buoc": 1
+     },
+     {
+      "ten": "T",
+      "goc": "len",
+      "do_lon": 37.5,
+      "tu": "m1",
+      "lech": [
+       0,
+       0.8
+      ],
+      "mau": "cam",
+      "so": "37,5 N",
+      "so_buoc": 3
+     },
+     {
+      "ten": "T",
+      "goc": "len",
+      "do_lon": 37.5,
+      "tu": "m2",
+      "lech": [
+       0,
+       0.8
+      ],
+      "mau": "cam"
+     },
+     {
+      "ten": "a",
+      "goc": "xuong",
+      "do_lon": 2.5,
+      "kieu": "dong_hoc",
+      "tu": "m1",
+      "lech": [
+       -2.0,
+       1.5
+      ],
+      "buoc": 1,
+      "so": "2,5 m/s²",
+      "so_buoc": 2
+     },
+     {
+      "ten": "a",
+      "goc": "len",
+      "do_lon": 2.5,
+      "kieu": "dong_hoc",
+      "tu": "m2",
+      "lech": [
+       2.0,
+       -1.5
+      ],
+      "buoc": 1
+     }
+    ],
+    "bang": [
+     {
+      "text": "P_2 < T < P_1",
+      "buoc": 4,
+      "mau": "cam"
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m_1=5{,}0\\ \\text{kg}$, $m_2=3{,}0\\ \\text{kg}$",
+     "Thả nhẹ từ nghỉ, cùng độ cao",
+     "$g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $a$",
+     "b) $T$",
+     "c) So $T$ với $P_1$, $P_2$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -484,7 +586,103 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "ban_rong_roc",
+     "vat1": "A",
+     "vat2": "B"
+    },
+    "ti_le": 3,
+    "vec": [
+     {
+      "ten": "T",
+      "goc": "phai",
+      "do_lon": 12,
+      "tu": "A",
+      "lech": [
+       1.2,
+       0
+      ],
+      "mau": "cam",
+      "so": "12 N",
+      "nhan_lech": [
+       0.4,
+       0.9
+      ]
+     },
+     {
+      "ten": "a",
+      "goc": "phai",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "A",
+      "lech": [
+       -2.6,
+       1.7
+      ],
+      "buoc": 1
+     },
+     {
+      "ten": "T",
+      "goc": "len",
+      "do_lon": 12,
+      "tu": "B",
+      "lech": [
+       0,
+       0.8
+      ],
+      "mau": "cam",
+      "buoc": 2
+     },
+     {
+      "ten": "P_B",
+      "goc": "xuong",
+      "do_lon": 30,
+      "tu": "B",
+      "lech": [
+       0,
+       -0.8
+      ],
+      "buoc": 2
+     },
+     {
+      "ten": "a",
+      "goc": "xuong",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "B",
+      "lech": [
+       -1.6,
+       0.6
+      ],
+      "buoc": 1
+     }
+    ],
+    "bang": [
+     {
+      "text": "a_max = 6 m/s²",
+      "buoc": 1
+     },
+     {
+      "text": "m_B ≤ 3 kg",
+      "buoc": 2,
+      "mau": "cam"
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m_A=2{,}0\\ \\text{kg}$, bàn nhẵn",
+     "$T_{max}=12\\ \\text{N}$",
+     "$g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $a_{max}$",
+     "b) $m_{B,max}$"
+    ]
+   }
   }
  ],
  "tu_luan": {
