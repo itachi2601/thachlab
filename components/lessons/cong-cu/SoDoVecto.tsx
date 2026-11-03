@@ -263,6 +263,46 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
     });
     return { el: <g>{els}</g>, pts, box: [-9, -1.8, 9, top], day, can: [...Array.from({ length: 33 }, (_, i): P => [-8 + i / 2, 0.7]), ...nhanP] };
   }
+  if (nen.kieu === "song") {
+    // Đ4 3/11: hai bờ sông nằm ngang (bờ dưới y = 0, bờ trên y = rong), nước chảy sang phải; điểm trên bờ + quỹ đạo nét đứt
+    const Hs = nen.rong, x0 = Math.min(-4, ...nen.diem.map((d) => d.x - 2)), x1 = Math.max(6.5, ...nen.diem.map((d) => d.x + 2.5));
+    const pts: Record<string, P> = {};
+    nen.diem.forEach((d) => (pts[d.ten] = [d.x, d.bo === "tren" ? Hs : 0]));
+    return {
+      el: (
+        <g>
+          <rect x={x0} y={-Hs} width={x1 - x0} height={Hs} fill="#0e7490" fillOpacity={0.08} />
+          <Hatch a={[x0, 0]} b={[x1, 0]} side={[0, -1]} />
+          <Hatch a={[x0, Hs]} b={[x1, Hs]} side={[0, 1]} />
+          {nen.chay && (
+            <g opacity={0.75}>
+              <path d={`M${sv([x1 - 4.2, Hs * 0.12])} L${sv([x1 - 0.8, Hs * 0.12])}`} stroke="#0e7490" strokeWidth={0.08} />
+              <path d={`M${sv([x1 - 1.2, Hs * 0.12 + 0.25])} L${sv([x1 - 0.8, Hs * 0.12])} L${sv([x1 - 1.2, Hs * 0.12 - 0.25])}`} stroke="#0e7490" strokeWidth={0.08} fill="none" />
+              <Label p={[x1 - 2.5, Hs * 0.12 + 0.7]} size={0.95} fill="#0e7490">
+                {nen.chay}
+              </Label>
+            </g>
+          )}
+          {(nen.duong ?? []).map((d, i) =>
+            L >= (d.buoc ?? 0) && (d.den == null || L < d.den) ? (
+              <path key={i} className={d.buoc ? "cc-in" : undefined} d={`M${sv(pts[d.tu])} L${sv(pts[d.toi])}`} stroke="currentColor" strokeWidth={0.07} strokeDasharray="0.3 0.22" opacity={0.7} />
+            ) : null,
+          )}
+          {nen.diem.map((d) =>
+            L >= (d.buoc ?? 0) ? (
+              <g key={d.ten} className={d.buoc ? "cc-in" : undefined}>
+                <circle cx={d.x} cy={-pts[d.ten][1]} r={0.15} fill="currentColor" />
+                {/* tên điểm phía trong lòng sông (phía ngoài là gạch bờ) */}
+                <Label p={[d.x + (d.lech ?? 0), d.bo === "tren" ? Hs - 0.8 : 0.8]}>{d.ten}</Label>
+              </g>
+            ) : null,
+          )}
+        </g>
+      ),
+      pts,
+      box: [x0, -1.4, x1, Hs + 1.4],
+    };
+  }
   return { el: null, pts: { O: [0, 0] }, box: [-1, -1, 1, 1] };
 }
 

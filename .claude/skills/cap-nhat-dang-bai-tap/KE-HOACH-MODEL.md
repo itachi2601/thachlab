@@ -116,12 +116,12 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 49 | Bài 4. Độ dịch chuyển và quãng đường đi được | — | D3 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D4 | Sonnet | P2 |
-| 50 | Bài 5. Tốc độ và vận tốc | D3 (truc_chuyen_dong) | D6 (so_do_vecto) | D1, D2, D4, D5 | Opus | P2 |
+| 50 | Bài 5. Tốc độ và vận tốc | ✓ D3 (truc_chuyen_dong) 3/11 | ✓ D6 (so_do_vecto, cảnh `song`) 3/11 | ✓ D1, D2, D4, D5 3/11* | Opus | P2 |
 | 52 | Bài 7. Đồ thị độ dịch chuyển - thời gian | — | D3 (do_thi), D4 (do_thi) | D1, D2 | Sonnet | P2 |
 | 53 | Bài 8. Chuyển động biến đổi. Gia tốc | — | D4 (do_thi), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
 | 54 | Bài 9. Chuyển động thẳng biến đổi đều | — | D5 (do_thi), D6 (truc_chuyen_dong) | D1, D2, D3, D4 | Sonnet | P2 |
 | 55 | Bài 10. Sự rơi tự do | — | D4 (quy_dao_nem), D5 (quy_dao_nem) | D1, D2, D3 | Sonnet | P2 |
-| 57 | Chuyển động ném | D4 (quy_dao_nem) | D6 (quy_dao_nem) | D1, D2, D3, D5 | Opus | P2 |
+| 57 | Chuyển động ném | ✓ D4 (quy_dao_nem) 3/11 | ✓ D6 (quy_dao_nem) 3/11 | ✓ D1, D2, D3, D5 3/11* | Opus | P2 |
 
 ### Lớp 10 · Ch.3 Động lực học
 
@@ -164,7 +164,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 78 | Bài 33. Biến dạng của vật rắn | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 79 | Bài 34. Khối lượng riêng. Áp suất chất lỏng | D4 (cot_chat_long) | D5 (cot_chat_long) | D1, D2, D3 | Opus | P2 |
+| 79 | Bài 34. Khối lượng riêng. Áp suất chất lỏng | ✓ D4 (cot_chat_long) 3/11 | ✓ D5 (cot_chat_long) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
 
 ### KHTN 9 · Ch.1 Năng lượng cơ học
 
@@ -287,6 +287,8 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | **Cộng** | 492 |
 
 Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Foucault, E–B cùng pha) là Vật lí 12 Ch.3 — xếp vào L12, cần thầy xác nhận. Bài 7 · D5 (cột thuỷ ngân) dùng `cot_chat_long` tạo ở Đ4, nên Đ6 phải chạy sau Đ4.
+
+Đ4 xong 3/11/2026 (nhánh `claude/wave-exercises-interactive-graphics-a3ea00`): 3 họ mới `truc_chuyen_dong`, `quy_dao_nem`, `cot_chat_long` (API ghi ở đầu mỗi file component; `cot_chat_long` có 2 cảnh `ong_u`, `be`) + `SoDoVecto` thêm cảnh `song` (sông có bờ gạch, điểm A/B/C, đường đi theo bước). Đã soát 375px mọi bước bằng driver (không chồng/tràn nhãn); CHƯA chạy HS ảo, CHƯA deploy, CHƯA đăng DB (50, 57, 79). *Tóm đề viết tay, chưa qua HS ảo.
 
 ## F. Còn chờ thầy chốt (3/11/2026)
 - Bài 125–127 (máy phát xoay chiều, ứng dụng cảm ứng điện từ, sóng điện từ) xếp vào lớp 12 Ch.3 theo nội dung — thầy xác nhận lớp.

@@ -13,6 +13,9 @@ import VongTronPha from "@/components/lessons/cong-cu/VongTronPha";
 import SoDoVecto from "@/components/lessons/cong-cu/SoDoVecto";
 import DienTruongDeu from "@/components/lessons/cong-cu/DienTruongDeu";
 import MachDien from "@/components/lessons/cong-cu/MachDien";
+import TrucChuyenDong from "@/components/lessons/cong-cu/TrucChuyenDong";
+import QuyDaoNem from "@/components/lessons/cong-cu/QuyDaoNem";
+import CotChatLong from "@/components/lessons/cong-cu/CotChatLong";
 import { getTomDe, TomDeBar, TomDeSide, useStickyTop } from "@/components/lessons/TomDe";
 import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types";
 
@@ -34,6 +37,9 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "so_do_vecto" || tool.loai === "thanh_moment") return <SoDoVecto {...tool} layer={layer} />;
   if (tool.loai === "dien_truong_deu") return <DienTruongDeu {...tool} layer={layer} />;
   if (tool.loai === "mach_dien") return <MachDien {...tool} layer={layer} />;
+  if (tool.loai === "truc_chuyen_dong") return <TrucChuyenDong {...tool} layer={layer} />;
+  if (tool.loai === "quy_dao_nem") return <QuyDaoNem {...tool} layer={layer} />;
+  if (tool.loai === "cot_chat_long") return <CotChatLong {...tool} layer={layer} />;
   return null;
 }
 

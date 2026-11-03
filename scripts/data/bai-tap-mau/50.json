@@ -138,7 +138,19 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$t=10$ phút, đường thẳng, không đổi chiều",
+     "$4$ phút đầu: $4\\ \\text{m/s}$",
+     "thời gian còn lại: $3\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "a) $s$, $d$",
+     "b) $v_{tb}$, $v$ (m/s và km/h)",
+     "c) Lấy $\\dfrac{4+3}{2}$ được không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -261,7 +273,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$AB=480$ m hướng đông, $6$ phút",
+     "$BC=360$ m hướng bắc, $4$ phút",
+     "$AB\\perp BC$"
+    ],
+    "tim": [
+     "a) $s$, $d$",
+     "b) $v_{tb}$; $v$ (độ lớn, hướng)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -336,7 +359,97 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "bể dài $50$ m",
+     "đi: $40$ s · về: $50$ s",
+     "chiều dương: đầu → cuối bể"
+    ],
+    "tim": [
+     "a) $v_{tb}$, $v$ lúc đi",
+     "b) $v_{tb}$, $v$ lúc về",
+     "c) $v_{tb}$, $v$ cả đi lẫn về"
+    ]
+   },
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "x_min": -4,
+    "x_max": 54,
+    "don_vi": "m",
+    "diem": [
+     {
+      "x": 0,
+      "ten": "đầu bể"
+     },
+     {
+      "x": 50,
+      "ten": "cuối bể"
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "vat",
+      "x": 0,
+      "ten": "người",
+      "het": 1
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doan",
+       "tu": 0,
+       "den": 50,
+       "hang": 1,
+       "nhan": "đi: d = +50 m · 40 s",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_tb = v = 50 : 40 = 1,25 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": 50,
+       "den": 0,
+       "hang": 2,
+       "nhan": "về: d = −50 m · 50 s",
+       "mau": "min",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "d < 0 ⇒ v = −50 : 50 = −1 m/s; v_tb = 1 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ngoac",
+       "tu": 0,
+       "den": 50,
+       "hang": 3,
+       "nhan": "s = 50 + 50 = 100 m · d = 0"
+      },
+      {
+       "loai": "cham",
+       "x": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "v_tb = 100 : 90 ≈ 1,11 m/s · v = 0 : 90 = 0"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(1,25 + 1) : 2 = 1,125 ≠ 1,11 ⇒ không lấy trung bình cộng"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -435,7 +548,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "lúc đầu VĐV dẫn đầu cách mô tô $10$ km",
+     "mô tô: $60$ km/h so với mặt đường",
+     "cùng chiều, bắt kịp sau $30$ phút"
+    ],
+    "tim": [
+     "a) tốc độ VĐV dẫn đầu",
+     "b) quãng đường mỗi bên trong $30$ phút"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -555,7 +679,19 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "ca nô: $14{,}4$ km/h so với nước, mũi hướng đông",
+     "nước: $3\\ \\text{m/s}$ về phía nam",
+     "sông rộng $200$ m"
+    ],
+    "tim": [
+     "a) $v_{13}$: độ lớn, hướng",
+     "b) thời gian qua sông",
+     "c) độ trôi so với điểm đối diện"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -691,7 +827,140 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_{12}=4$ m/s (cả hai lần)",
+     "lần 1: mũi hướng $B$, $100$ s, cập $C$ cách $B$ $200$ m",
+     "lần 2: mũi theo $AD$, cập đúng $B$"
+    ],
+    "tim": [
+     "a) $v_{23}$",
+     "b) chiều rộng sông",
+     "c) góc giữa $AD$ và $AB$; thời gian lần 2"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "song",
+     "rong": 8,
+     "chay": "nước chảy",
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0,
+       "bo": "duoi"
+      },
+      {
+       "ten": "B",
+       "x": 0,
+       "bo": "tren"
+      },
+      {
+       "ten": "C",
+       "x": 4,
+       "bo": "tren"
+      }
+     ],
+     "duong": [
+      {
+       "tu": "A",
+       "toi": "C",
+       "den": 4
+      },
+      {
+       "tu": "A",
+       "toi": "B",
+       "buoc": 4
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "v_{12}",
+      "goc": 90,
+      "do_lon": 4,
+      "tu": "A",
+      "den": 4,
+      "so": "4 m/s"
+     },
+     {
+      "ten": "v_{23}",
+      "goc": 0,
+      "do_lon": 2,
+      "tu": [
+       0,
+       4.472
+      ],
+      "buoc": 2,
+      "den": 4,
+      "mau": "lam",
+      "so": "2 m/s"
+     },
+     {
+      "ten": "v_{13}",
+      "goc": 63.435,
+      "do_lon": 4.472,
+      "tu": "A",
+      "buoc": 2,
+      "den": 4,
+      "mau": "cam"
+     },
+     {
+      "ten": "v_{12}",
+      "goc": 120,
+      "do_lon": 4,
+      "tu": "A",
+      "buoc": 4
+     },
+     {
+      "ten": "v_{23}",
+      "goc": 0,
+      "do_lon": 2,
+      "tu": [
+       -2.236,
+       3.873
+      ],
+      "buoc": 4,
+      "mau": "lam"
+     },
+     {
+      "ten": "v_{13}",
+      "goc": 90,
+      "do_lon": 3.464,
+      "tu": "A",
+      "buoc": 4,
+      "mau": "cam",
+      "so": "3,46 m/s",
+      "so_buoc": 5
+     }
+    ],
+    "goc": [
+     {
+      "tai": "A",
+      "tu": 90,
+      "den": 120,
+      "text": "α",
+      "buoc": 4
+     }
+    ],
+    "bang": [
+     {
+      "text": "AB = 400 m",
+      "buoc": 3
+     },
+     {
+      "text": "α = 30°",
+      "buoc": 4
+     },
+     {
+      "text": "t_2 ≈ 115 s",
+      "buoc": 5
+     }
+    ],
+    "ti_le": 5
+   }
   }
  ],
  "tu_luan": {

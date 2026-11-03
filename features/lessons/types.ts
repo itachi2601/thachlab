@@ -152,7 +152,40 @@ export type WorkedTool =
   | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; lop?: NangLuongLop[][] }
   | SoDoVectoTool
   | { loai: "dien_truong_deu"; L: number; d: number; duong: "tren" | "duoi"; v0?: string; hinh?: DienTruongLop[]; lop?: DienTruongLop[][] }
-  | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] };
+  | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] }
+  | { loai: "truc_chuyen_dong"; x_min: number; x_max: number; don_vi?: string; diem?: { x: number; ten: string }[]; hinh?: TrucChuyenDongLop[]; lop?: TrucChuyenDongLop[][] }
+  | { loai: "quy_dao_nem"; v0: number; alpha: number; g?: number; h0?: number; x_max: number; y_max: number; hinh?: QuyDaoNemLop[]; lop?: QuyDaoNemLop[][] }
+  | { loai: "cot_chat_long"; canh: CotChatLongCanh; hinh?: CotChatLongLop[]; lop?: CotChatLongLop[][] };
+
+/** Trục chuyển động 1D (Đ4): x theo đơn vị đề; `hang` ≥ 1 trên trục, ≤ −1 dưới tên mốc, 0 = trên trục. */
+export type TrucChuyenDongLop =
+  | LopGhi
+  | { loai: "doan"; tu: number; den: number; hang: number; nhan?: string; mau?: "max" | "min" | "muc"; dut?: boolean; het?: number }
+  | { loai: "ngoac"; tu: number; den: number; hang: number; nhan: string; het?: number }
+  | { loai: "cham"; x: number; hang?: number; ten?: string; het?: number }
+  | { loai: "vat"; x: number; hang?: number; ten?: string; v?: number; nhan_v?: string; het?: number }
+  | { loai: "chu"; x: number; hang: number; text: string; a?: "start" | "middle" | "end"; het?: number };
+/** Quỹ đạo ném (Đ4): mét, cùng tỉ lệ hai trục; `t` = phần thời gian bay (0..1). */
+export type QuyDaoNemLop =
+  | LopGhi
+  | { loai: "quy_dao"; alpha?: number; tu?: number; den?: number; dut?: boolean; mau?: "max" | "min" | "muc"; nhan?: string; het?: number }
+  | { loai: "van_toc"; t: number; alpha?: number; tach?: boolean; chi?: "x" | "y" | "ca"; nhan?: string; nhan_x?: string; nhan_y?: string; het?: number }
+  | { loai: "diem"; t: number; alpha?: number; ten: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "goc"; alpha?: number; nhan: string; het?: number }
+  | { loai: "moc"; x: number; nhan: string; het?: number }
+  | { loai: "thuoc_ngang"; tu: number; den: number; nhan: string; het?: number }
+  | { loai: "thuoc_doc"; x: number; tu: number; den: number; nhan: string; ben?: "trai" | "phai"; het?: number };
+/** Cột chất lỏng (Đ4): độ cao theo cm; ống U: y = 0 ở mặt phân cách; bể: y = 0 ở mặt nước. */
+export type CotChatLongCanh = { kieu: "ong_u"; h_max: number } | { kieu: "be"; rong: number; cao: number; tren: number; sau: number };
+export type CotChatLongLop =
+  | LopGhi
+  | { loai: "muc"; h1: number; h2: number; het?: number }
+  | { loai: "diem"; ten: "A" | "B"; het?: number }
+  | { loai: "ngang"; nhan?: string; het?: number }
+  | { loai: "thuoc"; ong: "trai" | "phai" | "giua"; tu: number; den: number; nhan: string; het?: number }
+  | { loai: "khoi"; chim: number; vat?: string; het?: number }
+  | { loai: "luc"; ten: string; huong: "len" | "xuong"; do_lon: number; tu?: "khoi" | "vat"; lech?: number; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number };
 
 /** Điện trường đều (Đ3): x tính từ mép vào của bản (cùng đơn vị L), y tính từ đường giữa hai bản (cùng đơn vị d), lên là dương. */
 export type DienTruongLop =
@@ -273,6 +306,14 @@ export type SoDoVectoTool = {
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
     | { kieu: "khong" }
+    | {
+        /** Đ4: hai bờ sông (bờ dưới y = 0, bờ trên y = rong), `chay` = nhãn mũi tên dòng nước; `duong` nét đứt nối hai điểm. */
+        kieu: "song";
+        rong: number;
+        chay?: string;
+        diem: { ten: string; x: number; bo: "tren" | "duoi"; buoc?: number; lech?: number }[];
+        duong?: { tu: string; toi: string; buoc?: number; den?: number }[];
+      }
     | {
         kieu: "thanh";
         dai: number;

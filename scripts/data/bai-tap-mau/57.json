@@ -56,7 +56,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "bay ngang: $h=490$ m, $v_0=60$ m/s",
+     "$g=9{,}8\\ \\text{m/s}^2$, bỏ qua lực cản"
+    ],
+    "tim": [
+     "a) $t$ chạm đất",
+     "b) khoảng cách ngang $L$ lúc thả"
+    ]
+   }
   },
   {
    "label": "Dạng 2 · Dễ · Ném ngang: vận tốc khi chạm đất và góc so với phương ngang",
@@ -155,7 +165,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "ném ngang: $h=78{,}4$ m, $v_0=30$ m/s",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "lúc chạm đất: a) $v$",
+     "b) góc của $\\vec v$ với phương ngang"
+    ]
+   }
   },
   {
    "label": "Dạng 3 · Trung bình · Ném ngang, bài ngược: biết tầm xa, tìm vận tốc ném, kiểm tra vật cản",
@@ -288,7 +308,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "ném ngang từ $h=19{,}6$ m, chạm đất cách chân nhà $15$ m",
+     "cây cao $10$ m, cách chân nhà $10$ m",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $v_0$",
+     "b) đá bay qua ngọn cây không"
+    ]
+   }
   },
   {
    "label": "Dạng 4 · Trung bình · Ném xiên từ mặt đất: tầm cao, thời gian bay, tầm xa",
@@ -384,7 +415,98 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=9{,}8$ m/s, $\\alpha=30^\\circ$, bật từ mặt đất",
+     "tiếp đất cùng độ cao, $g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $v_{0x}$, $v_{0y}$",
+     "b) $t$ lên đỉnh, $H$",
+     "c) thời gian bay, $L$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "quy_dao_nem",
+    "v0": 9.8,
+    "alpha": 30,
+    "x_max": 9.6,
+    "y_max": 1.5,
+    "hinh": [
+     {
+      "loai": "van_toc",
+      "t": 0,
+      "nhan": "v_0"
+     },
+     {
+      "loai": "goc",
+      "nhan": "30°"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "van_toc",
+       "t": 0,
+       "tach": true,
+       "nhan_x": "v_{0x} ≈ 8,49",
+       "nhan_y": "v_{0y} = 4,9",
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "v_{0y} = v_0 sinα = 4,9 m/s · v_{0x} = v_0 cosα ≈ 8,49 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "den": 0.5
+      },
+      {
+       "loai": "van_toc",
+       "t": 0.5,
+       "nhan_x": "v_y = 0"
+      },
+      {
+       "loai": "thuoc_doc",
+       "x": 4.245,
+       "tu": 0,
+       "den": 1.225,
+       "nhan": "H",
+       "ben": "trai"
+      },
+      {
+       "loai": "ghi",
+       "text": "đỉnh: v_y = 0 ⇒ t_1 = 4,9 : 9,8 = 0,5 s; H = 4,9² : (2·9,8) ≈ 1,23 m"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "tu": 0.5,
+       "den": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "lên – xuống đối xứng ⇒ t = 2t_1 = 1 s"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc_ngang",
+       "tu": 0,
+       "den": 8.487,
+       "nhan": "L ≈ 8,49 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "L = v_{0x}·t = 8,49·1 ≈ 8,49 m"
+      }
+     ]
+    ]
+   }
   },
   {
    "label": "Dạng 5 · Khó · Ném xiên từ độ cao: ném và rơi không cùng độ cao",
@@ -504,7 +626,20 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "vách cao $h=22{,}05$ m",
+     "$v_0=14{,}7$ m/s, ném lên $30^\\circ$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) thời gian bay",
+     "b) tầm xa từ chân vách",
+     "c) độ cao lớn nhất so với đất",
+     "d) $v$ lúc chạm đất"
+    ]
+   }
   },
   {
    "label": "Dạng 6 · Khó · Ném xiên, bài ngược: biết tầm xa, tìm góc ném (có hai nghiệm)",
@@ -599,7 +734,82 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=14$ m/s, rơi cùng độ cao nòng",
+     "cần tầm xa $L=15$ m",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) góc $\\alpha$",
+     "b) thời gian bay mỗi trường hợp",
+     "c) $L_{max}$, đạt ở góc nào"
+    ]
+   },
+   "cong_cu": {
+    "loai": "quy_dao_nem",
+    "v0": 14,
+    "alpha": 45,
+    "x_max": 21,
+    "y_max": 8.6,
+    "hinh": [
+     {
+      "loai": "moc",
+      "x": 15,
+      "nhan": "15 m"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "L = v_0² sin2α : g ⇒ sin2α = 9,8·15 : 14² = 0,75"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "alpha": 24.3,
+       "nhan": "24,3°"
+      },
+      {
+       "loai": "quy_dao",
+       "alpha": 65.7,
+       "mau": "min",
+       "dut": true,
+       "nhan": "65,7°"
+      },
+      {
+       "loai": "ghi",
+       "text": "2α ≈ 48,6° hoặc 131,4° ⇒ α ≈ 24,3° hoặc 65,7° (phụ nhau)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t = 2v_0 sinα : g ⇒ t ≈ 1,18 s (24,3°) · t ≈ 2,60 s (65,7°)"
+      }
+     ],
+     [
+      {
+       "loai": "quy_dao",
+       "alpha": 45,
+       "mau": "muc",
+       "nhan": "45°"
+      },
+      {
+       "loai": "moc",
+       "x": 20,
+       "nhan": "20 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "sin2α ≤ 1 ⇒ L_{max} = v_0² : g = 20 m ở α = 45°"
+      }
+     ]
+    ]
+   }
   }
  ],
  "tu_luan": {
