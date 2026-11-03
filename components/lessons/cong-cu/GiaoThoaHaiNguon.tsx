@@ -111,7 +111,7 @@ function DemDay({ f, v, AB, d1, d2, layer: L }: Props) {
             ))
           )}
           <Label x={-X + 0.6 * z} y={bandY + 2.9 * z} a="start" size={1.15 * z}>
-            {L < 3 ? `|d₁ − d₂| = ${fmt(Math.abs(s))} cm` : `${fmt(Math.abs(s))} = ${kM}λ → λ = ${fmt(lam, 2)} cm`}
+            {L < 3 ? `${sg < 0 ? "d₂ − d₁" : "d₁ − d₂"} = ${fmt(Math.abs(s))} cm` : `${fmt(Math.abs(s))} = ${kM}λ → λ = ${fmt(lam, 2)} cm`}
           </Label>
         </g>
       )}
