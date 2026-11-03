@@ -26,7 +26,7 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   return null;
 }
 
-export function TomDeBody({ tomDe }: { tomDe: WorkedTomDe }) {
+function TomDeBody({ tomDe }: { tomDe: WorkedTomDe }) {
   return (
     <>
       <h4>Cho</h4>
@@ -76,45 +76,6 @@ function useStickyTop() {
     };
   }, []);
   return top;
-}
-
-/**
- * Tóm đề cho dạng KHÔNG có hình (thầy 3/11): các bước xếp chồng nên đề trôi khỏi màn khi em làm tới bước sau — giữ một dòng
- * "Tìm" dính ở đầu phần lời giải, chạm thì Cho/Tìm + đề đầy đủ đè lên (N8 split-attention, D2 trang không xô); ≥1280 thẻ ở lề ghi chú.
- */
-export function TomDeChu({ q, children }: { q: LessonWorkedQuestion; children: React.ReactNode }) {
-  const top = useStickyTop();
-  const [deOpen, setDeOpen] = useState(false);
-  const tomDe = q.tom_de?.cho?.length || q.tom_de?.tim?.length ? q.tom_de : undefined;
-  if (!tomDe) return <>{children}</>;
-  const deChu = (q.problem_html ?? "").replace(/<figure[\s\S]*?<\/figure>/g, "");
-  return (
-    <div className="cc-split cc-split--chu">
-      <div className="cc-sticky" style={{ top }}>
-        <button type="button" className="bt-tomde-bar" aria-expanded={deOpen} onClick={() => setDeOpen((o) => !o)}>
-          <b>Tìm:</b>
-          <span>
-            <ContentHtml html={tomDe.tim.join(" · ")} className="inline" />
-          </span>
-          <i aria-hidden="true">{deOpen ? "▲" : "Đề ▼"}</i>
-        </button>
-        {deOpen && (
-          <div className="bt-tomde bt-tomde-pop">
-            <TomDeBody tomDe={tomDe} />
-            <h4>Đề đầy đủ</h4>
-            <ContentHtml html={deChu} className="block" />
-            <button type="button" className="bt-tomde-close" onClick={() => setDeOpen(false)}>
-              Đóng
-            </button>
-          </div>
-        )}
-      </div>
-      <aside className="bt-tomde bt-tomde-side" style={{ top }} aria-label="Tóm đề">
-        <TomDeBody tomDe={tomDe} />
-      </aside>
-      <div>{children}</div>
-    </div>
-  );
 }
 
 export default function GiaiCungHinh({
