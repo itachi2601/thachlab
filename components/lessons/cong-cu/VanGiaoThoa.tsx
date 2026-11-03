@@ -33,7 +33,7 @@ export default function VanGiaoThoa({ i, x_min, x_max, diem = [], nhom, lop, lay
   const sy0 = -5.2, sy1 = -3.2, ay = -2.5; // dải màn, trục
   const ks: number[] = [];
   for (let k = Math.ceil(x_min / i - 1e-9); k <= Math.floor(x_max / i + 1e-9); k++) ks.push(k);
-  const top = -7.6, bot = 7.1;
+  const top = -8.2, bot = 7.4;
   const gap = 1.45; // khoảng giữa hai vân của sơ đồ (đơn vị hình, cố ý khác tỉ lệ màn)
 
   return (
@@ -65,7 +65,7 @@ export default function VanGiaoThoa({ i, x_min, x_max, diem = [], nhom, lop, lay
           <g key={k} className="cc-in">
             <line x1={X(k * i)} y1={ay - 0.2} x2={X(k * i)} y2={ay + 0.2} stroke={C_MAX} strokeWidth={0.07} />
             <text x={X(k * i)} y={ay + 1.15} fontSize={0.85} textAnchor="middle" fill={C_MAX} fontWeight={600}>
-              {k === 0 ? "0" : k === 1 ? "i" : `${k}i`}
+              {k === 0 ? "0" : k === 1 ? "i" : k === -1 ? "−i" : `${k < 0 ? "−" : ""}${Math.abs(k)}i`}
             </text>
           </g>
         ))}

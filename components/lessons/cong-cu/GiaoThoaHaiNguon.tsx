@@ -56,7 +56,7 @@ function DemDay({ f, v, AB, d1, d2, layer: L }: Props) {
   const my = Math.sqrt(Math.max(d2 * d2 - (mx - c) ** 2, 0));
   const X = Math.max(c + 3.6, Math.abs(mx) + 2.2), Y1 = my + 2.4, z = X / 9.6;
   const s = d1 - d2, kM = Math.round(Math.abs(s) / lam), sg = Math.sign(s) || 1;
-  const H = 7.2 * z, bandY = 3.2 * z;
+  const H = 8.8 * z, bandY = 3.2 * z;
   const ks = Array.from({ length: kM }, (_, j) => j + 1);
   // đỉnh mỗi dãy ở mép trên hình — chỗ đặt số k
   const topX = (k: number) => {
@@ -73,7 +73,7 @@ function DemDay({ f, v, AB, d1, d2, layer: L }: Props) {
         ks.map((k, j) => (
           <g key={k} className="cc-in" style={{ animationDelay: `${j * 120}ms` }}>
             <path d={hyperbola(sg * k * lam, c, Y1)} stroke={C_MAX} strokeWidth={(k === kM ? 0.2 : 0.1) * z} fill="none" opacity={k === kM ? 1 : 0.7} />
-            <Label x={topX(k)} y={-Y1 + 1.6 * z} size={1.15 * z} fill={C_MAX}>{`${k}`}</Label>
+            {k < kM && <Label x={topX(k)} y={-Y1 + 1.6 * z} size={1.15 * z} fill={C_MAX}>{`${k}`}</Label>}
           </g>
         ))}
       <line x1={-c} y1={0} x2={c} y2={0} stroke="currentColor" strokeWidth={0.1 * z} />
@@ -91,6 +91,11 @@ function DemDay({ f, v, AB, d1, d2, layer: L }: Props) {
       <circle cx={mx} cy={-my} r={0.3 * z} fill="#facc15" stroke="currentColor" strokeWidth={0.08 * z} />
       <Label x={mx - 0.5 * z} y={-my - 0.4 * z} a="end" size={1.3 * z}>M</Label>
       {/* dải dưới: bước 2 thanh |d₁ − d₂|, bước 3 chia thành k khúc λ, bước 4 tốc độ */}
+      {L === 1 && (
+        <Label x={-X + 0.6 * z} y={bandY + 1.1 * z} a="start" size={1.15 * z} fill={C_MAX}>
+          {`M trên dãy thứ ${kM} → k = ${kM}`}
+        </Label>
+      )}
       {L >= 2 && (
         <g className="cc-in">
           {L < 3 ? (

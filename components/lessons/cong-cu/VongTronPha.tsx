@@ -39,7 +39,7 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], lop, layer:
   const top = -R - 1.6, bot = R + 4.2;
   return (
     <svg viewBox={`-10 ${top} 20 ${bot - top}`} className="cc-fig" role="img" aria-label={`Vòng tròn pha, biên độ ${fmt(A)} ${don_vi}`}>
-      {/* trục x và vòng tròn */}
+      {/* trục x và vòng tròn — nhãn số đặt phía trong vòng để cung xoắn bên ngoài không đè */}
       <circle cx={0} cy={0} r={R} fill="none" stroke="currentColor" strokeWidth={0.08} opacity={0.7} />
       <line x1={-R - 1.4} y1={0} x2={R + 1.8} y2={0} stroke="currentColor" strokeWidth={0.07} />
       <Chevron x={R + 1.8} y={0} ang={0} len={0.45} w={0.07} />
@@ -47,16 +47,16 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], lop, layer:
       {[-1, 1].map((s) => (
         <g key={s}>
           <line x1={s * R} y1={-0.2} x2={s * R} y2={0.2} stroke="currentColor" strokeWidth={0.07} />
-          <Label x={s * R + s * 0.35} y={1.05} a={s < 0 ? "end" : "start"} size={0.95}>{fmt(s * A)}</Label>
+          <Label x={s * R - s * 0.3} y={1.05} a={s < 0 ? "start" : "end"} size={0.95}>{fmt(s * A)}</Label>
         </g>
       ))}
       <circle cx={0} cy={0} r={0.12} fill="currentColor" />
-      <Label x={-0.3} y={1.05} a="end" size={0.95}>O</Label>
+      <Label x={-0.3} y={-0.35} a="end" size={0.95}>O</Label>
       {/* đường đích theo đề */}
       {x_dich.map((x) => (
         <g key={x}>
           <line x1={X(x)} y1={-R - 0.6} x2={X(x)} y2={R + 0.6} stroke={C_MIN} strokeWidth={0.08} strokeDasharray="0.35 0.25" />
-          <Label x={X(x) - 0.2} y={-0.35} a={x < 0 ? "end" : "start"} size={0.95} fill={C_MIN}>{`x = ${fmt(x)}`}</Label>
+          <Label x={X(x) + (x < 0 ? 0.25 : -0.25)} y={1.15} a={x < 0 ? "start" : "end"} size={0.95} fill={C_MIN}>{`x = ${fmt(x)}`}</Label>
         </g>
       ))}
       {items.map((it, k) => {

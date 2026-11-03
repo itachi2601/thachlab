@@ -31,7 +31,7 @@ export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L 
     const x = (x_max * i) / n;
     return `${X(x).toFixed(3)} ${Y(u(x)).toFixed(3)}`;
   });
-  const top = -UA - 1.7, bot = 9.6;
+  const top = -UA - 2.5, bot = 9.6;
   const rowY = (h = 0) => UA + 1.1 + h * 1.9;
 
   return (
@@ -76,13 +76,13 @@ export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L 
         }
         return null;
       })}
-      {/* các điểm theo đề */}
+      {/* các điểm theo đề — nhãn bên trái, mũi tên chuyển động bên phải */}
       {diem.map((d) => {
         const x = X(d.x), y = Y(u(d.x));
         return (
           <g key={d.ten}>
             <circle cx={x} cy={y} r={0.28} fill={C_HL} stroke="currentColor" strokeWidth={0.07} />
-            <Label x={x + 0.45} y={y < -0.5 ? y - 0.35 : y - 0.45} a="start">
+            <Label x={x - 0.4} y={y - 0.45} a="end">
               {d.ten}
             </Label>
           </g>
@@ -93,8 +93,8 @@ export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L 
         const x = X(it.x), y = Y(u(it.x)), s = it.huong === "len" ? -1 : 1;
         return (
           <g key={`m${k}`} className="cc-in">
-            <line x1={x - 0.45} y1={y + s * 0.4} x2={x - 0.45} y2={y + s * 1.6} stroke={C_MAX} strokeWidth={0.14} />
-            <Chevron x={x - 0.45} y={y + s * 1.6} ang={s < 0 ? -Math.PI / 2 : Math.PI / 2} color={C_MAX} w={0.14} len={0.45} />
+            <line x1={x + 0.5} y1={y + s * 0.4} x2={x + 0.5} y2={y + s * 1.6} stroke={C_MAX} strokeWidth={0.14} />
+            <Chevron x={x + 0.5} y={y + s * 1.6} ang={s < 0 ? -Math.PI / 2 : Math.PI / 2} color={C_MAX} w={0.14} len={0.45} />
           </g>
         );
       })}
