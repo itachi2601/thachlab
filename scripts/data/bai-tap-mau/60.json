@@ -114,7 +114,25 @@
      ]
     },
     {
-     "tieu_de": "Hướng của gia tốc"
+     "tieu_de": "Hướng của gia tốc",
+     "hoi": "Gia tốc của thùng hướng thế nào?",
+     "lua_chon": [
+      {
+       "text": "Cùng chiều lực kéo, về phía người kéo",
+       "dung": true
+      },
+      {
+       "text": "Ngược chiều lực kéo, vì có ma sát cản",
+       "dung": false,
+       "vi_sao": "Gia tốc cùng hướng <strong>hợp lực</strong>, không theo riêng một lực. Lực kéo $120\\ \\text{N}$ lớn hơn ma sát $50\\ \\text{N}$ nên hợp lực hướng theo lực kéo; ma sát chỉ làm gia tốc nhỏ đi."
+      },
+      {
+       "text": "Cùng chiều lực ma sát",
+       "dung": false,
+       "vi_sao": "Ma sát chỉ là một trong hai lực ngang. Hợp lực $F_{hl}=120-50=70\\ \\text{N}$ hướng theo lực kéo, nên gia tốc cũng theo lực kéo."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ có ma sát thì gia tốc ngược chiều chuyển động; gia tốc luôn cùng hướng hợp lực."
     },
     {
      "tieu_de": "Kiểm tra"
