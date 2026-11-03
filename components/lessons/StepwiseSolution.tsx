@@ -30,10 +30,78 @@ export function splitSolution(html: string): { head: string; steps: string[]; ta
   return { head: inner.slice(0, a), steps, tail: inner.slice(b) };
 }
 
-/** Lấy số đầu tiên em gõ: "10,5 m" → 10.5 (D6: bàn phím số, dấu phẩy thập phân). */
-function parseNumber(s: string): number | null {
-  const m = s.replace(/\s+/g, "").match(/-?\d+(?:[.,]\d+)?/);
-  return m ? Number(m[0].replace(",", ".")) : null;
+/**
+ * Đọc đáp số em gõ (D6: bàn phím số, dấu phẩy thập phân): "10,5 m" → 10.5, và cả biểu thức ngắn như trên giấy —
+ * "13/3", "-1/24", "2√3", "π/3", "2√(3)/3", "3.10^8" (HS ảo 3/11/2026: trước chỉ đọc số đầu nên "1/24" bị chấm là 1).
+ * Đơn vị cuối chuỗi bị bỏ qua; chuỗi đọc không trọn (vd "1/") → null để nút Kiểm tra còn tắt.
+ */
+export function parseNumber(raw: string): number | null {
+  let s = raw.replace(/\s+/g, "").replace(/[−–]/g, "-").replace(/[×·]/g, "*").replace(/:/g, "/");
+  s = s.replace(/(\d),(\d)/g, "$1.$2").replace(/pi/gi, "π").replace(/sqrt/gi, "√");
+  s = s.replace(/(\d)\.10\^/g, "$1*10^"); // cách viết lớp học: 3.10^8 = 3×10⁸
+  s = s.replace(/[a-zA-Zµμ°Ω%][a-zA-Zµμ°Ω%/²³0-9.]*$/, ""); // bỏ đơn vị cuối: "m/s", "cm", "rad"
+  let i = 0;
+  const peek = () => s[i];
+  const expr = (): number | null => {
+    let v = term();
+    while (v !== null && (peek() === "+" || peek() === "-")) {
+      const op = s[i++], r = term();
+      if (r === null) return null;
+      v = op === "+" ? v + r : v - r;
+    }
+    return v;
+  };
+  const term = (): number | null => {
+    let v = power();
+    while (v !== null && i < s.length) {
+      const c = peek();
+      if (c === "*" || c === "/") {
+        i++;
+        const r = power();
+        if (r === null) return null;
+        v = c === "*" ? v * r : v / r;
+      } else if (c === "√" || c === "π" || c === "(") {
+        const r = power(); // nhân ngầm: 2√3, 2π, 3(…)
+        if (r === null) return null;
+        v *= r;
+      } else break;
+    }
+    return v;
+  };
+  const power = (): number | null => {
+    const b = unary();
+    if (b === null || peek() !== "^") return b;
+    i++;
+    const e = unary();
+    return e === null ? null : b ** e;
+  };
+  const unary = (): number | null => {
+    if (peek() === "-") {
+      i++;
+      const u = unary();
+      return u === null ? null : -u;
+    }
+    if (peek() === "+") return (i++, unary());
+    if (peek() === "√") {
+      i++;
+      const u = unary();
+      return u === null || u < 0 ? null : Math.sqrt(u);
+    }
+    if (peek() === "π") return i++, Math.PI;
+    if (peek() === "(") {
+      i++;
+      const v = expr();
+      if (v === null || peek() !== ")") return null;
+      i++;
+      return v;
+    }
+    const m = s.slice(i).match(/^\d+(?:\.\d*)?|^\.\d+/);
+    if (!m) return null;
+    i += m[0].length;
+    return Number(m[0]);
+  };
+  const v = expr();
+  return v !== null && i === s.length && Number.isFinite(v) ? v : null;
 }
 
 /** Đảo thứ tự lựa chọn ổn định theo nội dung (không để đáp án đúng luôn ở đầu, nhưng không nhảy mỗi lần render). */
