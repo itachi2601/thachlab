@@ -8,19 +8,19 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | Họ hình | Mô tả component | Dạng mẫu đầu (Opus) | Số dạng dùng lại (Sonnet) | Bài/chương phủ |
 |---|---|---|---|---|
-| `do_thi` | Đồ thị trên lưới (đoạn thẳng + đường cong hàm, tô diện tích, tam giác độ dốc, điểm đánh dấu): x–t, v–t, T–t chuyển thể, T–Q, p–V/V–T/p–T, U–I, Φ–t, N(t), x–t dao động, W–x, W–t, A–f cộng hưởng, P(R) | 2 · D4 | 30 | 2, 3, 7, 8, 13, 18, 20, 21, 22, 23, 24, 25, 26, 42, 52, 53, 54, 89, 150, 153, 159, 160, 162, 166 · H9 Cơ; H9 Nhiệt; H9 Âm; H9 Điện; K9 Ch.3; L10 Ch.2; L11 Ch.1; L11 Ch.4; L12 Ch.1; L12 Ch.2; L12 Ch.3; L12 Ch.4 |
-| `tu_truong` | Nền B (mũi/chấm/chéo), nam châm, dây thẳng + đường sức tròn, la bàn, vectơ F (bàn tay trái), khung dây + pháp tuyến n, từ thông, Lenz | 11 · D4 | 6 | 10, 11, 13, 14, 126 · L12 Ch.3 |
+| `do_thi` (`DoThi.tsx`, Đ2 ✓) | Đồ thị trên lưới (đoạn thẳng + đường cong hàm, tô diện tích, tam giác độ dốc, điểm đánh dấu): x–t, v–t, T–t chuyển thể, T–Q, p–V/V–T/p–T, U–I, Φ–t, N(t), x–t dao động, W–x, W–t, A–f cộng hưởng, P(R) | 2 · D4 | 30 | 2, 3, 7, 8, 13, 18, 20, 21, 22, 23, 24, 25, 26, 42, 52, 53, 54, 89, 150, 153, 159, 160, 162, 166 · H9 Cơ; H9 Nhiệt; H9 Âm; H9 Điện; K9 Ch.3; L10 Ch.2; L11 Ch.1; L11 Ch.4; L12 Ch.1; L12 Ch.2; L12 Ch.3; L12 Ch.4 |
+| `tu_truong` (`TuTruong.tsx`, Đ2 ✓) | Nền B (mũi/chấm/chéo), nam châm, dây thẳng + đường sức tròn, la bàn, vectơ F (bàn tay trái), khung dây + pháp tuyến n, từ thông, Lenz | 11 · D4 | 6 | 10, 11, 13, 14, 126 · L12 Ch.3 |
 | `vong_tron` (`VongTronPha.tsx`, Đ1 ✓) | Đường tròn: điểm quay + góc quét + chiếu lên trục x; vectơ v tiếp tuyến, a hướng tâm — vòng tròn pha (dao động, i/u xoay chiều, E–B) và chuyển động tròn đều | 23 · D4 | 9 | 14, 20, 21, 22, 23, 76, 77, 127 · L10 Ch.6; L11 Ch.1; L12 Ch.3 |
-| `thanh_nang_luong` | Cảnh (độ cao, dốc, con lắc, lò xo) + cột Wđ/Wt/Q; hộp hệ với mũi tên Q, A vào/ra (dấu ĐL1 NĐLH); chuỗi khâu hiệu suất | 26 · D2 | 14 | 4, 24, 26, 70, 71, 72, 129, 130, 163, 166, 167 · H9 Cơ; H9 Điện; K9 Ch.1; L10 Ch.4; L11 Ch.1; L12 Ch.1 |
+| `thanh_nang_luong` (`ThanhNangLuong.tsx`, Đ2 ✓) | Cảnh (độ cao, dốc, con lắc, lò xo) + cột Wđ/Wt/Q; hộp hệ với mũi tên Q, A vào/ra (dấu ĐL1 NĐLH); chuỗi khâu hiệu suất | 26 · D2 | 14 | 4, 24, 26, 70, 71, 72, 129, 130, 163, 166, 167 · H9 Cơ; H9 Điện; K9 Ch.1; L10 Ch.4; L11 Ch.1; L12 Ch.1 |
 | `song_day` (`SongDay.tsx`, Đ1 ✓) | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
 | `giao_thoa_2_nguon` | Hai nguồn trên mặt nước, vân cực đại/cực tiểu (đã có) | 33 · D3 (đã có) | 1 | 31, 33 · L11 Ch.2 |
 | `van_giao_thoa` (`VanGiaoThoa.tsx`, Đ1 ✓) | Màn khe Young: thước vân sáng/tối, khoảng vân, trùng vân hai bức xạ | 31 · D4 | 1 | 31, 33 · L11 Ch.2 |
 | `dien_truong_deu` | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
 | `mach_dien` | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
 | `truc_chuyen_dong` | Trục toạ độ 1D: vị trí theo thời điểm, đi–quay lại, hai vật gặp/đuổi, vật có chiều dài (tàu, cầu), xuôi–ngược dòng, tiếng vang; va chạm/súng giật trước–sau (mũi tên v, p) | 50 · D3 | 5 | 50, 54, 73, 74, 150 · H9 Âm; L10 Ch.2; L10 Ch.5 |
-| `so_do_vecto` | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
+| `so_do_vecto` (`SoDoVecto.tsx`, ✓ 3/11) | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
-| `thanh_moment` | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
+| `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
 | `tia_sang` | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
 | `thau_kinh` | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
@@ -32,7 +32,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 2 | Bài 1. Sự chuyển thể | D4 (do_thi) | D5 (do_thi) | D1, D2, D3 | Opus | P1 |
+| 2 | Bài 1. Sự chuyển thể | ✓ D4 (do_thi) 3/11 | ✓ D5 (do_thi) 3/11 | ✓ D1, D2, D3 3/11 | Opus | P1 |
 | 3 | Bài 2. Thang nhiệt độ | — | D6 (do_thi) | D1, D2, D3, D4, D5 | Sonnet | P1 |
 | 4 | Bài 3. Nội năng. Định luật 1 của nhiệt động lực học | — | D4 (thanh_nang_luong), D5 (thanh_nang_luong) | D1, D2, D3 | Sonnet | P1 |
 
@@ -50,7 +50,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 10 | Bài 9. Khái niệm từ trường | — | D3 (tu_truong), D4 (tu_truong) | D1, D2 | Sonnet | P1 |
-| 11 | Bài 10. Lực từ. Cảm ứng từ | D4 (tu_truong) | D5 (tu_truong) | D1, D2, D3 | Opus | P1 |
+| 11 | Bài 10. Lực từ. Cảm ứng từ | ✓ D4 (tu_truong) 3/11 | ✓ D5 (tu_truong) 3/11 | ✓ D1, D2, D3 3/11 | Opus | P1 |
 | 13 | Bài 12. Hiện tượng cảm ứng điện từ | — | D4 (tu_truong), D5 (do_thi) | D1, D2, D3 | Sonnet | P1 |
 | 14 | Bài 13. Đại cương về dòng điện xoay chiều | — | D4 (tu_truong), D5 (vong_tron) | D1, D2, D3 | Sonnet | P1 |
 | 125 | Bài 14. Máy phát điện xoay chiều. Máy biến áp | — | D4 (mach_dien), D5 (mach_dien) | D1, D2, D3 | Sonnet | P1 |
@@ -77,7 +77,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11 | D3 (do_thi) — chờ Đ2 | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
 | 24 | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và | — | D2 (thanh_nang_luong), D5 (do_thi) | D1, D3, D4 | Sonnet | P1 |
 | 25 | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
-| 26 | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động đi | D2 (thanh_nang_luong) | D5 (do_thi) | D1, D3, D4 | Opus | P1 |
+| 26 | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động đi | ✓ D2 (thanh_nang_luong) 3/11 | ✓ D5 (do_thi) 3/11 | ✓ D1, D3, D4 3/11 | Opus | P1 |
 
 ### Lớp 11 · Ch.2 Sóng
 
@@ -127,11 +127,13 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 58 | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực | — | D5 (so_do_vecto), D6 (so_do_vecto) | D1, D2, D3, D4 | Sonnet | P2 |
-| 60 | Bài 15. Định luật 2 Newton | — | D2 (so_do_vecto), D4 (so_do_vecto) | D1, D3, D5, D6 | Sonnet | P2 |
-| 62 | Bài 17. Trọng lực và lực căng | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 63 | Bài 18. Lực ma sát | D4 (so_do_vecto) | D5 (so_do_vecto) | D1, D2, D3 | Opus | P2 |
-| 66 | Bài 21. Moment lực. Cân bằng của vật rắn | D4 (thanh_moment) | D5 (thanh_moment) | D1, D2, D3 | Opus | P2 |
+| 58 | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực | — | ✓ D5 (so_do_vecto), D6 (so_do_vecto) 3/11 | ✓ D1, D2, D3, D4 3/11* | Sonnet | P2 |
+| 60 | Bài 15. Định luật 2 Newton | — | ✓ D2 (so_do_vecto), D4 (so_do_vecto) 3/11 | ✓ D1, D3, D5, D6 3/11* | Sonnet | P2 |
+| 62 | Bài 17. Trọng lực và lực căng | — | ✓ D4 (so_do_vecto), D5 (so_do_vecto) 3/11 | ✓ D1, D2, D3 3/11* | Sonnet | P2 |
+| 63 | Bài 18. Lực ma sát | ✓ D4 (so_do_vecto) 3/11 | ✓ D5 (so_do_vecto) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
+| 66 | Bài 21. Moment lực. Cân bằng của vật rắn | ✓ D4 (thanh_moment) 3/11 | ✓ D5 (thanh_moment) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
+
+\* Tóm đề đã ghi vào JSON nhưng dạng không có `cong_cu` đi qua `StepwiseSolution`, chưa hiện `tom_de` (3/11) — cần sửa UI trước khi đăng mới có tác dụng.
 
 ### Lớp 10 · Ch.4 Năng lượng, công, công suất
 
@@ -293,6 +295,8 @@ Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Fou
 - `do_thi` (30 dạng dùng lại) và `so_do_vecto` (26) rộng: làm đợt Opus thì cân nhắc tách 2 component.
 
 - Đ1 (3/11): 23·D3 cần `do_thi` (tạo ở Đ2) nên mới có `tom_de`; thêm `cong_cu` khi Đ2 vào main. Ba họ mới khai từng bước bằng `lop: [[mục…], …]` trong JSON (xem chú thích đầu mỗi component) — phiên Sonnet dùng lại chỉ cần viết JSON.
+- Đ2 (3/11): thầy duyệt giữ `do_thi` **một** component (gấp khúc `diem` + hàm lấy mẫu `ham` cos/mũ/nghịch/đa thức) — không tách. 23·D3 giờ thêm được `cong_cu` `do_thi`. API JSON từng họ: chú thích đầu `DoThi.tsx`, `TuTruong.tsx`, `ThanhNangLuong.tsx` và kiểu trong `features/lessons/types.ts`. `thanh_nang_luong` mới thử cảnh `lo_xo_ngang`; `con_lac_don`, `doc`, `hop_he` và mục `nam_cham` của `tu_truong` đã viết nhưng chưa soát bằng mắt — phiên dùng lại đầu tiên soát kỹ.
+- **Chờ thầy chốt (Đ2 phát hiện):** dạng chỉ có `tom_de` (không `cong_cu`) hiện **chưa hiện gì** — tóm đề chỉ vẽ trong `GiaiCungHinh`; `StepwiseSolution` chưa đọc `tom_de`. Các ô "✓ chỉ tóm đề" ở bảng B là dữ liệu đã ghi, chờ UI (đề xuất: dòng "Tìm" dính đầu khung bước + thẻ lề ≥1280, dùng lại `TomDeBody`).
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.

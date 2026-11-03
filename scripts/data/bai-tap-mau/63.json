@@ -154,7 +154,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=50\\ \\text{kg}$",
+     "Bắt đầu trượt khi $F=160\\ \\text{N}$",
+     "Trượt đều khi $F=120\\ \\text{N}$"
+    ],
+    "tim": [
+     "a) $F=140\\ \\text{N}$: đứng yên hay trượt, $F_{ms}$",
+     "b) $F=200\\ \\text{N}$: đứng yên hay trượt, $F_{ms}$, $a$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -276,7 +287,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=40\\ \\text{kg}$, $g=9{,}8\\ \\text{m/s}^2$",
+     "Trượt đều khi $F=98\\ \\text{N}$",
+     "Kéo $150\\ \\text{N}$ từ nghỉ trong $4{,}0\\ \\text{s}$ rồi buông"
+    ],
+    "tim": [
+     "a) $\\mu$",
+     "b) $a$ khi kéo $150\\ \\text{N}$",
+     "c) Đoạn trượt thêm sau khi buông"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -351,7 +374,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=6{,}0\\ \\text{kg}$, $\\mu=0{,}30$",
+     "$F=30\\ \\text{N}$ chếch lên $30^\\circ$",
+     "$g=9{,}8\\ \\text{m/s}^2$, từ nghỉ"
+    ],
+    "tim": [
+     "a) Áp lực $N$",
+     "b) $F_{mst}$",
+     "c) $a$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -450,7 +485,114 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 35,
+     "vat": "m",
+     "dai": "L = 5,0 m"
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 117.6,
+      "so": "117,6 N"
+     },
+     {
+      "ten": "P_x",
+      "goc": "doc_xuong",
+      "do_lon": 67.4,
+      "kieu": "thanh_phan",
+      "buoc": 1
+     },
+     {
+      "ten": "P_y",
+      "goc": "vao_doc",
+      "do_lon": 96.3,
+      "kieu": "thanh_phan",
+      "buoc": 1
+     },
+     {
+      "ten": "N",
+      "goc": "phap_tuyen",
+      "do_lon": 96.3,
+      "buoc": 1,
+      "mau": "cam",
+      "so": "96,3 N"
+     },
+     {
+      "ten": "F_mst",
+      "goc": "doc_len",
+      "do_lon": 28.9,
+      "tu": "vat_day",
+      "buoc": 2,
+      "mau": "cam",
+      "so": "28,9 N",
+      "lech": [
+       -1.23,
+       0.86
+      ]
+     },
+     {
+      "ten": "a",
+      "goc": "doc_xuong",
+      "do_lon": 3.21,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 3,
+      "so": "3,21 m/s²"
+     },
+     {
+      "ten": "v",
+      "goc": "doc_xuong",
+      "do_lon": 5.67,
+      "kieu": "dong_hoc",
+      "tu": "chan",
+      "buoc": 4,
+      "so": "5,67 m/s"
+     }
+    ],
+    "hbh": [
+     {
+      "vec": "P",
+      "thanh": [
+       "P_x",
+       "P_y"
+      ],
+      "buoc": 1
+     }
+    ],
+    "goc": [
+     {
+      "tai": "vat",
+      "tu": "xuong",
+      "den": "vao_doc",
+      "r": 1.8,
+      "text": "α",
+      "buoc": 1
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=12\\ \\text{kg}$, $v_0=0$",
+     "$L=5{,}0\\ \\text{m}$, $\\alpha=35^\\circ$",
+     "$\\mu=0{,}30$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $N$, $F_{\\text{mst}}$",
+     "b) $a$",
+     "c) $v$ ở chân ván"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -586,7 +728,130 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 25,
+     "vat": "m"
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 29.4
+     },
+     {
+      "ten": "v_0",
+      "goc": "doc_len",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       0.3,
+       2.2
+      ],
+      "den": 3
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_xuong",
+      "do_lon": 5.33,
+      "tu": "vat_day",
+      "buoc": 1,
+      "den": 4,
+      "mau": "cam",
+      "lech": [
+       1.36,
+       -0.63
+      ]
+     },
+     {
+      "ten": "a",
+      "goc": "doc_xuong",
+      "do_lon": 5.92,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 1,
+      "den": 4,
+      "so": "5,92 m/s²"
+     },
+     {
+      "ten": "P_x",
+      "goc": "doc_xuong",
+      "do_lon": 12.4,
+      "kieu": "thanh_phan",
+      "buoc": 3,
+      "lech": [
+       0.7,
+       1.5
+      ]
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_len",
+      "do_lon": 5.33,
+      "tu": "vat_day",
+      "buoc": 4,
+      "mau": "cam",
+      "lech": [
+       -1.36,
+       0.63
+      ]
+     },
+     {
+      "ten": "a'",
+      "goc": "doc_xuong",
+      "do_lon": 2.37,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 4,
+      "so": "2,37 m/s²"
+     },
+     {
+      "ten": "v",
+      "goc": "doc_xuong",
+      "do_lon": 3.79,
+      "kieu": "dong_hoc",
+      "tu": "chan",
+      "lech": [
+       -2.47,
+       1.81
+      ],
+      "buoc": 5,
+      "so": "3,79 m/s"
+     }
+    ],
+    "bang": [
+     {
+      "text": "s = 3,04 m",
+      "buoc": 2
+     }
+    ],
+    "ti_le": 3.2
+   },
+   "tom_de": {
+    "cho": [
+     "$m=3{,}0\\ \\text{kg}$, $\\alpha=25^\\circ$",
+     "$v_0=6{,}0\\ \\text{m/s}$ lên dốc",
+     "$\\mu=0{,}20$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $a$ lúc lên, quãng đường $s$",
+     "b) Nằm yên hay trượt xuống",
+     "c) $v$ khi về chân dốc"
+    ]
+   }
   }
  ],
  "tu_luan": {

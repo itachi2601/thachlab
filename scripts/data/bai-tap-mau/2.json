@@ -143,7 +143,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cốc nước ngọt có đá, phòng nóng ẩm, 30 phút",
+     "(1) đá nhỏ đi · (2) giọt nước ngoài thành cốc · (3) nước đĩa cạn, không sủi bọt"
+    ],
+    "tim": [
+     "a) tên quá trình + chiều chuyển thể",
+     "b) số hiện tượng toả nhiệt"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -255,7 +265,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Sáp, dầu ăn, khí helium: mỗi chất $0{,}30$ lít",
+     "Ba bình kín $1{,}5$ lít; bình khí đã hút chân không",
+     "$T$ không đổi, không chuyển thể"
+    ],
+    "tim": [
+     "a) thể tích + hình dạng mỗi chất",
+     "b) giải thích khí helium (động học phân tử)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -404,7 +425,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bảng $T$ theo $t$ (phút $0$ → $14$) của chất rắn kết tinh $X$",
+     "Bảng $T_{nc}$: nước đá, thiếc, chì, nhôm"
+    ],
+    "tim": [
+     "a) $T_{nc}$, $X$ là chất gì",
+     "b) thời gian nóng chảy",
+     "c) thể ở phút $9$",
+     "d) độ tăng mỗi phút sau khi chảy hết"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -540,7 +573,217 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Rắn, $20\\ ^\\circ\\text{C}$, đun nóng đều",
+     "Đồ thị $T$–$t$: $BC$, $DE$ nằm ngang"
+    ],
+    "tim": [
+     "a) $T_{nc}$, $T_s$",
+     "b) thể ở phút $16$",
+     "c) thời gian sôi",
+     "d) tốc độ tăng nhiệt ở $CD$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 23,
+     "ten": "t (phút)",
+     "vach": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 300,
+     "ten": "T (°C)",
+     "vach": [
+      0,
+      40,
+      80,
+      120,
+      160,
+      200,
+      240,
+      280
+     ],
+     "luoi": 20
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        20
+       ],
+       [
+        2,
+        60
+       ],
+       [
+        7,
+        60
+       ],
+       [
+        12,
+        200
+       ],
+       [
+        20,
+        200
+       ],
+       [
+        22,
+        280
+       ]
+      ]
+     }
+    ],
+    "diem": [
+     {
+      "x": 0,
+      "y": 20,
+      "ten": "A",
+      "vi": "r"
+     },
+     {
+      "x": 2,
+      "y": 60,
+      "ten": "B",
+      "vi": "tl"
+     },
+     {
+      "x": 7,
+      "y": 60,
+      "ten": "C",
+      "vi": "tl"
+     },
+     {
+      "x": 12,
+      "y": 200,
+      "ten": "D",
+      "vi": "tl"
+     },
+     {
+      "x": 20,
+      "y": 200,
+      "ten": "E",
+      "vi": "tl"
+     },
+     {
+      "x": 22,
+      "y": 280,
+      "ten": "F",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doan",
+       "tu": 2,
+       "den": 7,
+       "nhan": "nóng chảy",
+       "nhan_xy": [
+        5.2,
+        28
+       ],
+       "het": 5
+      },
+      {
+       "loai": "ngang",
+       "y": 60,
+       "tu": 0,
+       "den": 2,
+       "nhan": "60"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ngang thấp BC: T_nc = 60 °C"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": 12,
+       "den": 20,
+       "nhan": "sôi",
+       "vi": "t"
+      },
+      {
+       "loai": "ngang",
+       "y": 200,
+       "tu": 0,
+       "den": 12,
+       "nhan": "200"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ngang cao DE: T_s = 200 °C"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 16,
+       "het": 5
+      },
+      {
+       "loai": "diem",
+       "x": 16,
+       "y": 200,
+       "ten": "lỏng + hơi",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "Phút 16 nằm trên DE: đang sôi"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 12,
+       "den": 20,
+       "y": 262,
+       "nhan": "8 phút"
+      },
+      {
+       "loai": "ghi",
+       "text": "Sôi: từ phút 12 đến phút 20"
+      }
+     ],
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        7,
+        60
+       ],
+       "den": [
+        12,
+        200
+       ],
+       "nhan_x": "Δt = 5",
+       "nhan_y": "ΔT = 140"
+      },
+      {
+       "loai": "ghi",
+       "text": "CD: 140 : 5 = 28 °C mỗi phút"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -676,7 +919,172 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Chì lỏng $397\\ ^\\circ\\text{C}$, nguội $14\\ ^\\circ\\text{C}$/phút khi còn lỏng",
+     "Nóng chảy hết mất $4$ phút (cùng tốc độ trao đổi nhiệt)",
+     "Bảng: chì $T_{nc}=327\\ ^\\circ\\text{C}$"
+    ],
+    "tim": [
+     "a) $T_{đđ}$",
+     "b) lúc bắt đầu đông đặc",
+     "c) lúc đông đặc hết",
+     "d) $T$ ở phút $7$",
+     "e) thuỷ tinh là chất rắn gì"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 12,
+     "ten": "t (phút)",
+     "vach": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 300,
+     "max": 410,
+     "ten": "T (°C)",
+     "vach": [
+      397
+     ],
+     "luoi": 10
+    },
+    "diem": [
+     {
+      "x": 0,
+      "y": 397,
+      "ten": "rót",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 327,
+       "nhan": "327"
+      },
+      {
+       "loai": "ghi",
+       "text": "Chì kết tinh: T_đđ = T_nc = 327 °C"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          397
+         ],
+         [
+          5,
+          327
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 5,
+       "y": 327,
+       "nhan_x": "5"
+      },
+      {
+       "loai": "ghi",
+       "text": "(397 − 327) : 14 = 5 phút"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          5,
+          327
+         ],
+         [
+          9,
+          327
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 9,
+       "y": 327,
+       "nhan_x": "9"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 5,
+       "den": 9,
+       "y": 345,
+       "nhan": "4 phút",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "Đông đặc 4 phút, như nóng chảy"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 7,
+       "y": 327,
+       "ten": "phút 7",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "Phút 7 ở đoạn ngang: 327 °C"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          385
+         ],
+         [
+          12,
+          318
+         ]
+        ],
+        "mau": "min",
+        "ten": "thuỷ tinh",
+        "ten_xy": [
+         7.2,
+         355
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Không đoạn ngang: vô định hình"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
