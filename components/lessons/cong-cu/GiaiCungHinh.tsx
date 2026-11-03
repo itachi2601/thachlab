@@ -151,6 +151,26 @@ export default function GiaiCungHinh({
   return (
     <div ref={splitRef} className="cc-split">
       <div className={full ? "cc-sticky cc-sticky--off" : "cc-sticky"} style={{ top }}>
+        {/* Tóm đề (thử 3/11): một dòng "Tìm" ở ĐẦU khối dính (thầy 3/11: để dưới nút thì bị thanh điều hướng đáy che) — số liệu "Cho" đã nằm trên hình (N4); chạm thì đè lên, trang không xô (D2, N8) */}
+        {tomDe && (
+          <button type="button" className="bt-tomde-bar" aria-expanded={deOpen} onClick={() => setDeOpen((o) => !o)}>
+            <b>Tìm:</b>
+            <span>
+              <ContentHtml html={tomDe.tim.join(" · ")} className="inline" />
+            </span>
+            <i aria-hidden="true">{deOpen ? "▲" : "Đề ▼"}</i>
+          </button>
+        )}
+        {tomDe && deOpen && (
+          <div className="bt-tomde bt-tomde-pop">
+            <TomDeBody tomDe={tomDe} />
+            <h4>Đề đầy đủ</h4>
+            <ContentHtml html={deChu} className="block" />
+            <button type="button" className="bt-tomde-close" onClick={() => setDeOpen(false)}>
+              Đóng
+            </button>
+          </div>
+        )}
         <Hinh tool={tool} layer={layer} />
         <div className="cc-stepper">
           <button type="button" aria-label="Bước trước" disabled={step <= 0} onClick={() => go(step - 1)}>
@@ -173,26 +193,6 @@ export default function GiaiCungHinh({
         <p className="cc-hint" aria-live="polite">
           {hint}
         </p>
-        {/* Tóm đề (thử 3/11): một dòng "Tìm" dính cùng hình — số liệu "Cho" đã nằm trên hình (N4); chạm thì đè lên, trang không xô (D2, N8) */}
-        {tomDe && (
-          <button type="button" className="bt-tomde-bar" aria-expanded={deOpen} onClick={() => setDeOpen((o) => !o)}>
-            <b>Tìm:</b>
-            <span>
-              <ContentHtml html={tomDe.tim.join(" · ")} className="inline" />
-            </span>
-            <i aria-hidden="true">{deOpen ? "▲" : "Đề ▼"}</i>
-          </button>
-        )}
-        {tomDe && deOpen && (
-          <div className="bt-tomde bt-tomde-pop">
-            <TomDeBody tomDe={tomDe} />
-            <h4>Đề đầy đủ</h4>
-            <ContentHtml html={deChu} className="block" />
-            <button type="button" className="bt-tomde-close" onClick={() => setDeOpen(false)}>
-              Đóng
-            </button>
-          </div>
-        )}
       </div>
       {tomDe && (
         <aside className="bt-tomde bt-tomde-side" style={{ top }} aria-label="Tóm đề">
