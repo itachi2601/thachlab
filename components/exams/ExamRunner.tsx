@@ -388,8 +388,14 @@ export default function ExamRunner({
         res = await checkPracticeAnswer(exam.id, idx, resp);
       }
       setChecked((prev) => new Map(prev).set(idx, res));
-    } catch {
-      setCheckError("Chưa kiểm tra được câu này — kiểm tra mạng rồi bấm Kiểm tra lại. Đáp án của em vẫn được giữ.");
+    } catch (e) {
+      // Lỗi quyền (42501) / không thấy đề (P0002) không phải do mạng: nói thật để em không loay hoay bấm lại.
+      const code = (e as { code?: string } | null)?.code;
+      setCheckError(
+        code === "42501" || code === "P0002"
+          ? "Đề này chưa mở xem đáp án từng câu. Em tải lại bài học và mở quiz từ mục lý thuyết nhé. Đáp án của em vẫn được giữ."
+          : "Chưa kiểm tra được câu này — kiểm tra mạng rồi bấm Kiểm tra lại. Đáp án của em vẫn được giữ.",
+      );
     } finally {
       setCheckBusy(false);
     }

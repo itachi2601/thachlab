@@ -109,16 +109,24 @@ function ExamLoader() {
     if (!session || !itemId) return;
     getSupabase()
       .from("lesson_items")
-      .select("kind, quiz_min_correct, lesson_id")
+      .select("kind, quiz_min_correct, lesson_id, exam_ids")
       .eq("id", itemId)
       .single()
       .then(({ data }) => {
         if (data?.kind === "ly_thuyet") {
+          // Link cũ (tab mở sẵn, dấu trang, tin nhắn): quiz của mục đã được tạo lại với mã đề mới (vd. 945 → 1226,
+          // 27/10/2026). Đề cũ không còn gắn mục lý thuyết nên server khoá đáp án và nút Kiểm tra báo "kiểm tra mạng"
+          // (báo lỗi #151). Chuyển sang đề hiện tại của mục.
+          const current = (data.exam_ids as number[] | null) ?? [];
+          if (current.length > 0 && !current.includes(id)) {
+            window.location.replace(`/kiem-tra/lam/?id=${current[0]}&item=${itemId}`);
+            return;
+          }
           setMinCorrect((data.quiz_min_correct as number | null) ?? null);
           setTheoryLessonId((data.lesson_id as number | null) ?? null);
         }
       });
-  }, [session, itemId]);
+  }, [session, itemId, id]);
 
   let body: ReactNode;
   if (!id) body = <p className="text-center text-slate-400">Thiếu mã đề trong địa chỉ.</p>;
