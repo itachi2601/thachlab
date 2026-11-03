@@ -3493,6 +3493,7 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
   .cc-split > .bt-tomde-side { display: block; position: sticky; grid-column: 2; grid-row: 1 / span 3; align-self: start; width: min(240px, calc(var(--wide-bleed, 240px) + 4px)); margin-left: 28px; border-left: 1px solid var(--color-line); padding-left: 12px; color: var(--color-ink); font-size: 13.5px; line-height: 1.55; }
   .cc-sticky :is(.bt-tomde-bar, .bt-tomde-pop) { display: none; }
   .cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px); }
+  .cc-split--chu > .cc-sticky { display: none; } /* dạng không hình: ≥1280 chỉ còn thẻ ở lề */
 }
 .cc-fig { display: block; width: 100%; height: calc(42svh - 96px); min-height: 150px; max-height: 340px; }
 .cc-stepper { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 600; }

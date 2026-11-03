@@ -5,7 +5,7 @@ import { ChevronDown } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
-import GiaiCungHinh from "@/components/lessons/cong-cu/GiaiCungHinh";
+import GiaiCungHinh, { TomDeChu } from "@/components/lessons/cong-cu/GiaiCungHinh";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
 /** Dạng có cấu trúc: đề + mô phỏng → (HS chọn) phân tích đề → (HS chọn) lời giải đầy đủ → làm bài tương tự.
@@ -71,7 +71,9 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
           {stepwise && q.cong_cu ? (
             <GiaiCungHinh q={q} tool={q.cong_cu} color={color} jump={jump} onAllOpen={markAllOpen} />
           ) : stepwise ? (
-            <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} />
+            <TomDeChu q={q}>
+              <StepwiseSolution q={q} color={color} jump={jump} onAllOpen={markAllOpen} />
+            </TomDeChu>
           ) : (
             <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />
           )}
