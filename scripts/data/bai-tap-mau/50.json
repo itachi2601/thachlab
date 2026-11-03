@@ -407,7 +407,7 @@
       },
       {
        "loai": "ghi",
-       "text": "v_tb = v = 50 : 40 = 1,25 m/s"
+       "text": "v_{tb} = v = 50 : 40 = 1,25 m/s"
       }
      ],
      [
@@ -422,7 +422,7 @@
       },
       {
        "loai": "ghi",
-       "text": "d < 0 ⇒ v = −50 : 50 = −1 m/s; v_tb = 1 m/s"
+       "text": "d < 0 ⇒ v = −50 : 50 = −1 m/s; v_{tb} = 1 m/s"
       }
      ],
      [
@@ -439,7 +439,7 @@
       },
       {
        "loai": "ghi",
-       "text": "v_tb = 100 : 90 ≈ 1,11 m/s · v = 0 : 90 = 0"
+       "text": "v_{tb} = 100 : 90 ≈ 1,11 m/s · v = 0 : 90 = 0"
       }
      ],
      [
@@ -698,7 +698,7 @@
    "label": "Dạng 6 · Khó · Chọn hướng mũi để tới đúng điểm đối diện",
    "topic": "Tổng hợp vận tốc, tính tương đối của chuyển động",
    "problem_html": "<p>Ca nô có tốc độ $4\\ \\text{m/s}$ so với nước (giữ nguyên ở mọi lần chạy), xuất phát từ A ở một bờ sông, cần sang điểm B ở bờ đối diện ($AB$ vuông góc với bờ). Lần 1, mũi ca nô hướng thẳng tới B: sau $100\\ \\text{s}$ ca nô cập bờ ở điểm C, cách B $200\\ \\text{m}$ về phía hạ lưu. Lần 2, người lái hướng mũi theo AD lệch về phía thượng lưu, vẫn giữ tốc độ máy như cũ, và cập bờ đúng ở B.</p><ol type=\"a\"><li>Tìm vận tốc của nước so với bờ.</li><li>Tìm chiều rộng của sông.</li><li>Tìm góc giữa AD và AB, và thời gian qua sông ở lần 2.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-0\"><svg viewBox=\"0 0 420 210\" role=\"img\" aria-label=\"Lần một: ca nô hướng mũi thẳng tới điểm B đối diện nhưng bị nước cuốn tới C, cách B 200 m\"><defs><marker id=\"d60-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d60-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d60-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d60-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"100.0\" y1=\"30.0\" x2=\"100.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"340.0\" y1=\"30.0\" x2=\"340.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"100.0\" y1=\"60.0\" x2=\"340.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><circle cx=\"100.0\" cy=\"60.0\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"340.0\" cy=\"60.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"340.0\" cy=\"140.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"92\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"348\" y=\"54\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"348\" y=\"156\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">C</text><line x1=\"100\" y1=\"60\" x2=\"160\" y2=\"60\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M150.0,54.2 L160.0,60.0 L150.0,65.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"106\" y=\"49\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₁₂ = 4 m/s</text><text x=\"180\" y=\"120\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">nước chảy</text><line x1=\"180\" y1=\"130\" x2=\"180\" y2=\"168\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M185.8,158.0 L180.0,168.0 L174.2,158.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"180\" y=\"188\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">v₂₃ = ?</text><line x1=\"358\" y1=\"60\" x2=\"358\" y2=\"140\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M362.1,133.0 L358.0,140.0 L353.9,133.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"358\" y1=\"140\" x2=\"358\" y2=\"60\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M353.9,67.0 L358.0,60.0 L362.1,67.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"364\" y=\"104\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">200 m</text><circle cx=\"100.0\" cy=\"60.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"100.0;106.0;112.0;118.0;124.0;130.0;136.0;142.0;148.0;154.0;160.0;166.0;172.0;178.0;184.0;190.0;196.0;202.0;208.0;214.0;220.0;226.0;232.0;238.0;244.0;250.0;256.0;262.0;268.0;274.0;280.0;286.0;292.0;298.0;304.0;310.0;316.0;322.0;328.0;334.0;340.0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"60.0;62.0;64.0;66.0;68.0;70.0;72.0;74.0;76.0;78.0;80.0;82.0;84.0;86.0;88.0;90.0;92.0;94.0;96.0;98.0;100.0;102.0;104.0;106.0;108.0;110.0;112.0;114.0;116.0;118.0;120.0;122.0;124.0;126.0;128.0;130.0;132.0;134.0;136.0;138.0;140.0\" dur=\"10.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng lần 1: mũi hướng thẳng B, sau 100 s cập bờ ở C (chạy nhanh 10 lần). Quỹ đạo tính theo công thức; hình không đúng tỉ lệ.</figcaption></figure>",
-   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vận tốc có tính tương đối; (1) vật, (2) hệ chuyển động, (3) hệ đứng yên.</li><li><strong>Công thức cộng:</strong> $\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$.</li><li>Cùng chiều: $v_{13}=v_{12}+v_{23}$ · ngược chiều: $v_{13}=\\lvert v_{12}-v_{23}\\rvert$.</li><li>Vuông góc: $v_{13}=\\sqrt{v_{12}^2+v_{23}^2}$.</li><li>⚠ <strong>Điều kiện:</strong> các vận tốc không đổi; vẽ vectơ trước, tính độ lớn sau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đánh số</span></p><p>(1) ca nô; (2) nước; (3) bờ. $v_{12}=4$ m/s không đổi ở cả hai lần.</p>$$\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lần 1: vận tốc nước</span></p><p>Mũi vuông góc bờ: dọc bờ chỉ có dòng nước kéo ca nô đoạn $BC=200$ m trong $100$ s:</p>$$v_{23}=\\dfrac{BC}{t_1}=\\dfrac{200}{100}$$<div class=\"bt-ans\">$$v_{23}=2\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều rộng sông</span></p><p>Ngang bờ chỉ có $v_{12}$:</p>$$AB=v_{12}t_1=4\\cdot100$$<div class=\"bt-ans\">$$AB=400\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lần 2: góc hướng mũi</span></p><p>Muốn $\\vec v_{13}$ vuông góc bờ, thành phần dọc bờ của $\\vec v_{12}$ phải triệt tiêu $\\vec v_{23}$:</p>$$v_{23}=v_{12}\\sin\\alpha$$$$\\sin\\alpha=\\dfrac{2}{4}=0{,}5$$<div class=\"bt-ans\">$$\\alpha=30^\\circ$$</div><p>Mũi lệch $30^\\circ$ so với $AB$, về phía thượng lưu.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lần 2: thời gian qua sông</span></p>$$v_{13}=\\sqrt{v_{12}^2-v_{23}^2}=\\sqrt{4^2-2^2}=\\sqrt{12}\\approx3{,}46\\ \\text{m/s}$$$$t_2=\\dfrac{AB}{v_{13}}=\\dfrac{400}{3{,}46}$$<div class=\"bt-ans\">$$t_2\\approx115\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$t_2\\gt t_1$ ($115\\gt100$): một phần tốc độ máy dùng để chống dòng.</p><p>Kiểm bằng $v_{13}=v_{12}\\cos30^\\circ=4\\cdot0{,}866\\approx3{,}46$ m/s ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{23}=2\\ \\text{m/s}$</p><p>b) $AB=400\\ \\text{m}$</p><p>c) $\\alpha=30^\\circ$ (lệch về thượng lưu) · $t_2\\approx115\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: đề muốn <strong>tới đúng điểm đối diện</strong> → $\\vec v_{13}$ vuông góc bờ, $v_{23}=v_{12}\\sin\\alpha$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vận tốc có tính tương đối; (1) vật, (2) hệ chuyển động, (3) hệ đứng yên.</li><li><strong>Công thức cộng:</strong> $\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$.</li><li>Cùng chiều: $v_{13}=v_{12}+v_{23}$ · ngược chiều: $v_{13}=\\lvert v_{12}-v_{23}\\rvert$.</li><li>Vuông góc: $v_{13}=\\sqrt{v_{12}^2+v_{23}^2}$.</li><li>⚠ <strong>Điều kiện:</strong> các vận tốc không đổi; vẽ vectơ trước, tính độ lớn sau.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đánh số</span></p><p>(1) ca nô; (2) nước; (3) bờ. $v_{12}=4$ m/s không đổi ở cả hai lần.</p>$$\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lần 1: vận tốc nước</span></p><p>Mũi vuông góc bờ: dọc bờ chỉ có dòng nước kéo ca nô đoạn $BC=200$ m trong $100$ s:</p>$$v_{23}=\\dfrac{BC}{t_1}=\\dfrac{200}{100}$$<div class=\"bt-ans\">$$v_{23}=2\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều rộng sông</span></p><p>Ngang bờ chỉ có $v_{12}$:</p>$$AB=v_{12}t_1=4\\cdot100$$<div class=\"bt-ans\">$$AB=400\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lần 2: góc hướng mũi</span></p><p>Muốn $\\vec v_{13}$ vuông góc bờ, thành phần dọc bờ của $\\vec v_{12}$ phải triệt tiêu $\\vec v_{23}$:</p>$$v_{23}=v_{12}\\sin\\alpha$$$$\\sin\\alpha=\\dfrac{2}{4}=0{,}5$$<div class=\"bt-ans\">$$\\alpha=30^\\circ$$</div><p>Mũi lệch $30^\\circ$ so với $AB$, về phía thượng lưu.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lần 2: thời gian qua sông</span></p>$$v_{13}=\\sqrt{v_{12}^2-v_{23}^2}$$$$=\\sqrt{4^2-2^2}=\\sqrt{12}\\approx3{,}46\\ \\text{m/s}$$$$t_2=\\dfrac{AB}{v_{13}}=\\dfrac{400}{3{,}46}$$<div class=\"bt-ans\">$$t_2\\approx115\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$t_2\\gt t_1$ ($115\\gt100$): một phần tốc độ máy dùng để chống dòng.</p><p>Kiểm bằng $v_{13}=v_{12}\\cos30^\\circ=4\\cdot0{,}866\\approx3{,}46$ m/s ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v_{23}=2\\ \\text{m/s}$</p><p>b) $AB=400\\ \\text{m}$</p><p>c) $\\alpha=30^\\circ$ (lệch về thượng lưu) · $t_2\\approx115\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: đề muốn <strong>tới đúng điểm đối diện</strong> → $\\vec v_{13}$ vuông góc bờ, $v_{23}=v_{12}\\sin\\alpha$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d6-2\"><svg viewBox=\"0 0 420 176\" role=\"img\" aria-label=\"Lần hai: mũi ca nô lệch ngược dòng một góc để tổng vận tốc vuông góc với bờ\"><defs><marker id=\"d62-r\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#f87171\"/></marker><marker id=\"d62-b\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#38bdf8\"/></marker><marker id=\"d62-o\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#fb923c\"/></marker><marker id=\"d62-g\" viewBox=\"0 0 10 10\" refX=\"8\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto\"><path d=\"M0,0 L10,5 L0,10 z\" fill=\"#34d399\"/></marker></defs><line x1=\"60\" y1=\"140\" x2=\"198.5640646055102\" y2=\"60.000000000000014\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M187.0,60.0 L198.6,60.0 L192.8,70.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"198.5640646055102\" y1=\"60.000000000000014\" x2=\"198.5640646055102\" y2=\"140\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M204.3,130.0 L198.6,140.0 L192.8,130.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60\" y1=\"140\" x2=\"198.5640646055102\" y2=\"140\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M188.6,134.2 L198.6,140.0 L188.6,145.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M188.6,140.0 L188.6,130.0 L198.6,130.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\"/><path d=\"M94.0,140.0 A34,34 0 0 0 89.4,123.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><text x=\"100\" y=\"134\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = ?</text><text x=\"122\" y=\"86\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v₁₂ = 4 m/s</text><text x=\"206.6\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₂₃ (từ lần 1)</text><text x=\"129.3\" y=\"162\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">v₁₃ vuông góc bờ (tới đúng B)</text><text x=\"250\" y=\"36\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">sinα = v₂₃ / v₁₂</text><text x=\"250\" y=\"56\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₁₃ = √(v₁₂² − v₂₃²)</text></svg><figcaption>Dữ kiện: v₁₃ vuông góc bờ thì thành phần dọc bờ của v₁₂ cân bằng với v₂₃. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lần 1: mũi hướng thẳng B … cập bờ ở C, cách B $200\\ \\text{m}$\"</td><td>$t_1=100$ s; $BC=200$ m</td><td>Dọc bờ chỉ có dòng nước: $v_{23}=\\dfrac{BC}{t_1}$</td></tr><tr><td>\"tốc độ $4\\ \\text{m/s}$ so với nước (giữ nguyên)\"</td><td>$v_{12}=4$ m/s</td><td>⚠ $v_{12}$ không đổi, chỉ đổi hướng mũi; $\\vec v_{13}=\\vec v_{12}+\\vec v_{23}$</td></tr><tr><td>\"chiều rộng của sông\"</td><td>Cần $AB$</td><td>Lần 1: $v_{12}\\perp$ bờ nên $AB=v_{12}t_1$</td></tr><tr><td>\"lần 2: hướng mũi AD … cập đúng B\"</td><td>$\\vec v_{13}$ dọc $AB$ (vuông góc bờ)</td><td>⚠ Thành phần dọc bờ của $v_{12}$ cân bằng $v_{23}$: $v_{23}=v_{12}\\sin\\alpha$</td></tr><tr><td>\"góc giữa AD và AB\"</td><td>Cần $\\alpha$</td><td>$\\sin\\alpha=\\dfrac{v_{23}}{v_{12}}$</td></tr><tr><td>\"thời gian qua sông ở lần 2\"</td><td>Cần $t_2$</td><td>$v_{13}=\\sqrt{v_{12}^2-v_{23}^2}$; $t_2=\\dfrac{AB}{v_{13}}$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>tới đúng điểm đối diện</b> → $\\vec v_{13}$ vuông góc bờ, thành phần dọc bờ của $\\vec v_{12}$ triệt tiêu $v_{23}$.",
    "cap_do": 3,
@@ -850,17 +850,20 @@
       {
        "ten": "A",
        "x": 0,
-       "bo": "duoi"
+       "bo": "duoi",
+       "lech": -0.7
       },
       {
        "ten": "B",
        "x": 0,
-       "bo": "tren"
+       "bo": "tren",
+       "lech": -0.7
       },
       {
        "ten": "C",
        "x": 4,
-       "bo": "tren"
+       "bo": "tren",
+       "lech": 0.7
       }
      ],
      "duong": [
@@ -883,7 +886,11 @@
       "do_lon": 4,
       "tu": "A",
       "den": 4,
-      "so": "4 m/s"
+      "so": "4 m/s",
+      "nhan_lech": [
+       -0.9,
+       -0.4
+      ]
      },
      {
       "ten": "v_{23}",
@@ -896,7 +903,11 @@
       "buoc": 2,
       "den": 4,
       "mau": "lam",
-      "so": "2 m/s"
+      "so": "2 m/s",
+      "nhan_lech": [
+       -1.87,
+       0.55
+      ]
      },
      {
       "ten": "v_{13}",
@@ -923,7 +934,11 @@
        3.873
       ],
       "buoc": 4,
-      "mau": "lam"
+      "mau": "lam",
+      "nhan_lech": [
+       -1.87,
+       0.55
+      ]
      },
      {
       "ten": "v_{13}",
@@ -933,7 +948,11 @@
       "buoc": 4,
       "mau": "cam",
       "so": "3,46 m/s",
-      "so_buoc": 5
+      "so_buoc": 5,
+      "nhan_lech": [
+       0.9,
+       -0.5
+      ]
      }
     ],
     "goc": [
