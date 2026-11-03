@@ -5,6 +5,7 @@ import ContentHtml from "@/components/exams/ContentHtml";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
 import DoThi from "@/components/lessons/cong-cu/DoThi";
 import GiaoThoaHaiNguon from "@/components/lessons/cong-cu/GiaoThoaHaiNguon";
+import TuTruong from "@/components/lessons/cong-cu/TuTruong";
 import SongDay from "@/components/lessons/cong-cu/SongDay";
 import VanGiaoThoa from "@/components/lessons/cong-cu/VanGiaoThoa";
 import VongTronPha from "@/components/lessons/cong-cu/VongTronPha";
@@ -23,6 +24,7 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "song_day") return <SongDay {...tool} layer={layer} />;
   if (tool.loai === "van_giao_thoa") return <VanGiaoThoa {...tool} layer={layer} />;
   if (tool.loai === "do_thi") return <DoThi {...tool} layer={layer} />;
+  if (tool.loai === "tu_truong") return <TuTruong {...tool} layer={layer} />;
   return null;
 }
 

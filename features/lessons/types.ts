@@ -198,13 +198,14 @@ export type DoThiLop =
   | { loai: "doc"; tu: [number, number]; den: [number, number]; nhan_x?: string; nhan_y?: string; het?: number }
   | { loai: "dien_tich"; tu: number; den: number; duong?: number; nhan?: string; het?: number };
 /** Từ trường (Đ2): toạ độ hình 0..20 ngang, 0..11 dọc, gốc dưới trái (y hướng lên). Góc theo độ, 0° = sang phải. */
-export type TuTruongNen = { kieu: "ra" | "vao" | "duong_suc"; goc?: number; nhan?: string };
+/** `hang`: toạ độ dọc các đường sức (kiểu duong_suc), chừa chỗ dây/khung. */
+export type TuTruongNen = { kieu: "ra" | "vao" | "duong_suc"; goc?: number; nhan?: string; hang?: number[] };
 export type TuTruongLop =
   | LopGhi
   | { loai: "day"; tu: [number, number]; den: [number, number]; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; het?: number }
   | { loai: "dong"; tu: [number, number]; den: [number, number]; nhan?: string; het?: number }
   | { loai: "tiet_dien"; x: number; y: number; chieu: "ra" | "vao"; ten?: string; het?: number }
-  | { loai: "vec"; x: number; y: number; goc: number; dai: number; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; het?: number }
+  | { loai: "vec"; x: number; y: number; goc: number; dai: number; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; trai?: boolean; het?: number }
   | { loai: "goc"; x: number; y: number; tu: number; den: number; nhan?: string; het?: number }
   | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number }
   | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; het?: number }
