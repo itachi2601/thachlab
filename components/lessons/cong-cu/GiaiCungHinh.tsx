@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
 import GiaoThoaHaiNguon from "@/components/lessons/cong-cu/GiaoThoaHaiNguon";
+import SoDoVecto from "@/components/lessons/cong-cu/SoDoVecto";
 import type { LessonWorkedQuestion, WorkedTomDe, WorkedTool } from "@/features/lessons/types";
 
 /**
@@ -15,6 +16,7 @@ import type { LessonWorkedQuestion, WorkedTomDe, WorkedTool } from "@/features/l
 
 function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "giao_thoa_2_nguon") return <GiaoThoaHaiNguon {...tool} layer={layer} />;
+  if (tool.loai === "so_do_vecto") return <SoDoVecto {...tool} layer={layer} />;
   return null;
 }
 

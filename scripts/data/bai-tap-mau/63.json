@@ -450,7 +450,114 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 35,
+     "vat": "m",
+     "dai": "L = 5,0 m"
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 117.6,
+      "so": "117,6 N"
+     },
+     {
+      "ten": "P_x",
+      "goc": "doc_xuong",
+      "do_lon": 67.4,
+      "kieu": "thanh_phan",
+      "buoc": 1
+     },
+     {
+      "ten": "P_y",
+      "goc": "vao_doc",
+      "do_lon": 96.3,
+      "kieu": "thanh_phan",
+      "buoc": 1
+     },
+     {
+      "ten": "N",
+      "goc": "phap_tuyen",
+      "do_lon": 96.3,
+      "buoc": 1,
+      "mau": "cam",
+      "so": "96,3 N"
+     },
+     {
+      "ten": "F_mst",
+      "goc": "doc_len",
+      "do_lon": 28.9,
+      "tu": "vat_day",
+      "buoc": 2,
+      "mau": "cam",
+      "so": "28,9 N",
+      "lech": [
+       -1.23,
+       0.86
+      ]
+     },
+     {
+      "ten": "a",
+      "goc": "doc_xuong",
+      "do_lon": 3.21,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 3,
+      "so": "3,21 m/s²"
+     },
+     {
+      "ten": "v",
+      "goc": "doc_xuong",
+      "do_lon": 5.67,
+      "kieu": "dong_hoc",
+      "tu": "chan",
+      "buoc": 4,
+      "so": "5,67 m/s"
+     }
+    ],
+    "hbh": [
+     {
+      "vec": "P",
+      "thanh": [
+       "P_x",
+       "P_y"
+      ],
+      "buoc": 1
+     }
+    ],
+    "goc": [
+     {
+      "tai": "vat",
+      "tu": "xuong",
+      "den": "vao_doc",
+      "r": 1.8,
+      "text": "α",
+      "buoc": 1
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=12\\ \\text{kg}$, $v_0=0$",
+     "$L=5{,}0\\ \\text{m}$, $\\alpha=35^\\circ$",
+     "$\\mu=0{,}30$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $N$, $F_{\\text{mst}}$",
+     "b) $a$",
+     "c) $v$ ở chân ván"
+    ]
+   }
   },
   {
    "form": "bai_tap",

@@ -142,7 +142,37 @@ export interface LessonWorkedQuestion {
 /** Mỗi phần tử là HTML ngắn (được dùng $…$). */
 export type WorkedTomDe = { cho: string[]; tim: string[] };
 
-export type WorkedTool = { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number };
+export type WorkedTool = { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number } | SoDoVectoTool;
+
+/** Điểm đặt: tên điểm của cảnh ("vat", "vat_day", "chan", "dinh", "O", tên đầu dây, "m1", "m2", "A", "B") hoặc toạ độ [x, y] (y lên). */
+export type VecPoint = string | [number, number];
+/** Hướng: độ (0 = sang phải, 90 = lên) hoặc "phai" | "trai" | "len" | "xuong" | "doc_xuong" | "doc_len" | "phap_tuyen" | "vao_doc" | "day:<tên đầu dây>". */
+export type VecDir = number | string;
+type Mau = "muc" | "cam" | "lam" | "tim";
+
+/** 🧪 Họ `so_do_vecto` (3/11/2026): cảnh vẽ bằng code + vectơ khai ở đây; `buoc` = hiện khi đã xong bước đó (0 = có từ đầu), `den` = ẩn từ bước đó. */
+export type SoDoVectoTool = {
+  loai: "so_do_vecto";
+  nen:
+    | { kieu: "mat_ngang"; vat?: string; vat_x?: number }
+    | { kieu: "mat_nghieng"; alpha: number; vat?: string; vat_t?: number; dai?: string }
+    | { kieu: "nut"; day: { goc: number; dai: number; neo: "tuong" | "tran" | "cot" | "vat" | "khong"; ten?: string; vat?: string }[] }
+    | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
+    | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
+    | { kieu: "khong" };
+  /** kieu: "luc" (mặc định, nét liền) · "thanh_phan" (nét đứt) · "dong_hoc" (a, v: màu lam, tỉ lệ riêng). `so` = độ lớn hiện ở bảng số từ bước `so_buoc` (mặc định = `buoc`). */
+  vec: { ten: string; goc: VecDir; do_lon: number; tu?: VecPoint; lech?: [number, number]; buoc?: number; den?: number; kieu?: "luc" | "thanh_phan" | "dong_hoc"; mau?: Mau; so?: string; so_buoc?: number; nhan_lech?: [number, number] }[];
+  /** Nét chấm từ ngọn vectơ `vec` tới ngọn các thành phần (hình bình hành / hình chữ nhật phân tích). */
+  hbh?: { vec: string; thanh: string[]; buoc?: number; den?: number }[];
+  truc?: { tai?: VecPoint; goc: number; dai?: number; ten?: [string, string]; buoc?: number; den?: number };
+  goc?: { tai?: VecPoint; tu: VecDir; den: VecDir; r?: number; text?: string; mau?: Mau; buoc?: number; an?: number }[];
+  /** Dòng thêm ở bảng số (vd "θ = 9,46°"). */
+  bang?: { text: string; mau?: Mau; buoc?: number; den?: number }[];
+  /** Mặc định "phai" (nới khung sang phải); mặt nghiêng mặc định "trong" (góc trên phải, khoảng trống trên chân dốc). */
+  bang_vi_tri?: "trai" | "phai" | "trong";
+  /** Độ dài (đơn vị hình) của vectơ lớn nhất mỗi nhóm; mặc định 5. */
+  ti_le?: number;
+};
 
 export interface WorkedMeo {
   /** Tên 2–3 chữ, dùng y hệt ở mọi lớp (docs/KE-HOACH-MEO-GIAI-BAI-TAP.md). */
