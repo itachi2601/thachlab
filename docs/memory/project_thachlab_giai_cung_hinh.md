@@ -16,3 +16,4 @@ L10 Ch.3 Động lực học (3/11/2026, nhánh `claude/l10-ch3-giai-cung-hinh-b
 **How to apply:** phiên mới làm theo đợt trong KE-HOACH-MODEL.md, đợt kế tiếp là Đ1 (Opus: bài 23, 27, 31); 4 điểm chờ thầy chốt ở mục F. Liên quan [[project_thachlab_btm_quet_dang]].
 
 **3/11/2026 tối: ĐÃ DEPLOY + ĐĂNG DB** bài 33, 23, 27, 31 (Đ1), 58, 60, 62, 63, 66 (L10 Ch.3); sao lưu `scripts/logs/bai-tap-mau-bai<id>-17937*.json`. Đ2 (2, 11, 26) CHƯA đăng — chờ phiên "Sửa hình Đ2" xong. Đăng JSON xong phải deploy lại (build-content đọc DB lúc build); publish cần `--yes` khi chạy vòng lặp.
+- 3/11/2026 khuya: ĐÃ ĐĂNG DB + DEPLOY Đ2 (bài 2, 11, 26) sau phiên 'Sửa hình Đ2'; sao lưu scripts/logs/bai-tap-mau-bai{2,11,26}-179371*.json. Bài 11 thêm mục 6 'Bài tập tự luận' (tu_luan, cố ý). Còn: Đ3 (37, 43), Đ4 (50, 57, 79), Đ5.
