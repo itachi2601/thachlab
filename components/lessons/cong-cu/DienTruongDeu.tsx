@@ -126,7 +126,7 @@ export default function DienTruongDeu({ L, d, duong, v0 = "v_0", hinh = [], lop,
             <line x1={x1} y1={y - 0.3} x2={x1} y2={y + 0.3} />
             <line x1={x2} y1={y - 0.3} x2={x2} y2={y + 0.3} />
           </g>
-          <Label x={(x1 + x2) / 2} y={it.vi === "tren" ? y - 0.4 : y + 1.2} size={1.05}>
+          <Label x={(x1 + x2) / 2} y={it.vi === "tren" ? y - 0.4 : y + 1.35} size={1.05}>
             {it.nhan}
           </Label>
         </g>

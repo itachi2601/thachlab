@@ -92,11 +92,18 @@ export function ghiMoiNhat(lop: ({ loai: string; text?: string } & LopChung)[][]
 export function chiaDong(t: string, w: number, size: number): string[] {
   // độ dài hiển thị: bỏ ký hiệu chỉ số dưới "_{…}"
   if (t.replace(/_\{([^}]*)\}/g, "$1").replace(/_/g, "").length * 0.6 * size <= w) return [t];
-  const cut = [...t.matchAll(/ (?=⇒)| /g)].map((m) => m.index!);
-  if (!cut.length) return [t];
+  const all = [...t.matchAll(/ /g)].map((m) => m.index!);
+  if (!all.length) return [t];
+  // không cắt giữa biểu thức: sau số ("1,2 | A"), sát phép toán ("3,6 | + …", "= | 5"); HS ảo Đ3 3/11
+  const op = /[=+−\-:·/<>×≈]/;
+  const tot = all.filter((i) => !/\d/.test(t[i - 1]) && !op.test(t[i - 1]) && !op.test(t[i + 1]));
   const mid = t.length / 2,
-    uu = cut.filter((i) => t[i + 1] === "⇒"),
+    uu = all.filter((i) => t[i + 1] === "⇒" || (/[;,:]/.test(t[i - 1]) && t[i - 2] !== " ") || (t[i - 1] === "·" && t[i - 2] === " ")),
     pick = (ds: number[]) => ds.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a));
-  const i = uu.length && Math.abs(pick(uu) - mid) < t.length * 0.25 ? pick(uu) : pick(cut);
-  return [t.slice(0, i), t.slice(i + 1)];
+  const near = (ds: number[]) => ds.length > 0 && Math.abs(pick(ds) - mid) < t.length * 0.3;
+  const truocBang = all.filter((i) => t[i + 1] === "=" && i > t.length * 0.3); // dòng 2 mở bằng "= …"
+  const i = near(uu) ? pick(uu) : near(tot) ? pick(tot) : near(truocBang) ? pick(truocBang) : uu.length + tot.length ? pick([...uu, ...tot]) : pick(all);
+  // dấu "·" tách ý: bỏ khỏi cuối dòng đầu
+  const a = t.slice(0, i).replace(/ ·$/, "");
+  return [a, t.slice(i + 1)];
 }
