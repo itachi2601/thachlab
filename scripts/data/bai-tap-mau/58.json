@@ -104,7 +104,15 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F_1=5{,}0\\ \\text{N}$, $F_2=12\\ \\text{N}$, đồng quy"
+    ],
+    "tim": [
+     "$F$ khi $\\alpha=0^\\circ;\\ 180^\\circ;\\ 90^\\circ;\\ 60^\\circ$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -239,7 +247,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F_1=7{,}0\\ \\text{N}$, $F_2=15\\ \\text{N}$, đồng quy",
+     "Lần sau: $F=20\\ \\text{N}$"
+    ],
+    "tim": [
+     "a) $F_{min}$, $F_{max}$",
+     "b) $F=5{,}0\\ \\text{N}$? $F=12\\ \\text{N}$?",
+     "c) Góc $\\alpha$ khi $F=20\\ \\text{N}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -351,7 +370,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F=45\\ \\text{N}$, $\\alpha=40^\\circ$ so với phương ngang",
+     "Lần sau: $\\alpha=60^\\circ$"
+    ],
+    "tim": [
+     "a) $F_x$, $F_y$",
+     "b) Thành phần nào làm thùng tiến, thành phần nào giảm ép sàn",
+     "c) $F_x$ khi $\\alpha=60^\\circ$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -450,7 +480,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=8{,}0\\ \\text{kg}$, $\\alpha=40^\\circ$",
+     "$g=10\\ \\text{m/s}^2$",
+     "Lần sau: $\\alpha=20^\\circ$"
+    ],
+    "tim": [
+     "a) $P$",
+     "b) $P_x$, $P_y$",
+     "c) $P_x$ khi $\\alpha=20^\\circ$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -525,7 +567,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "nut",
+     "day": [
+      {
+       "goc": 180,
+       "dai": 8,
+       "neo": "tuong",
+       "ten": "A"
+      },
+      {
+       "goc": 60,
+       "dai": 8,
+       "neo": "tran",
+       "ten": "B"
+      },
+      {
+       "goc": 270,
+       "dai": 7.5,
+       "neo": "vat",
+       "vat": "m"
+      }
+     ],
+     "ten_nut": "O",
+     "ten_nut_lech": [
+      -0.75,
+      -0.8
+     ]
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 30,
+      "so": "30 N",
+      "so_buoc": 1
+     },
+     {
+      "ten": "T_OB",
+      "goc": "day:B",
+      "do_lon": 34.6,
+      "buoc": 2,
+      "mau": "cam",
+      "so": "34,6 N"
+     },
+     {
+      "ten": "T_OA",
+      "goc": "day:A",
+      "do_lon": 17.3,
+      "buoc": 3,
+      "mau": "cam",
+      "so": "17,3 N"
+     }
+    ],
+    "truc": {
+     "tai": "O",
+     "goc": 0,
+     "buoc": 1
+    },
+    "goc": [
+     {
+      "tai": "O",
+      "tu": 60,
+      "den": 90,
+      "r": 2.2,
+      "text": "30°"
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=3{,}0\\ \\text{kg}$, $g=10\\ \\text{m/s}^2$",
+     "$OA$ nằm ngang",
+     "$OB$ lệch $30^\\circ$ so với phương đứng"
+    ],
+    "tim": [
+     "$T_{OA}$, $T_{OB}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -599,7 +721,115 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "nut",
+     "day": [
+      {
+       "goc": 170.54,
+       "dai": 6.6,
+       "neo": "cot",
+       "ten": "A"
+      },
+      {
+       "goc": 9.46,
+       "dai": 6.6,
+       "neo": "cot",
+       "ten": "B"
+      },
+      {
+       "goc": 270,
+       "dai": 3.6,
+       "neo": "vat",
+       "vat": "m"
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 40,
+      "so": "40 N",
+      "so_buoc": 2
+     },
+     {
+      "ten": "T_1",
+      "goc": "day:A",
+      "do_lon": 121.7,
+      "buoc": 2,
+      "mau": "cam",
+      "nhan_lech": [
+       0,
+       0.9
+      ]
+     },
+     {
+      "ten": "T_2",
+      "goc": "day:B",
+      "do_lon": 121.7,
+      "buoc": 2,
+      "mau": "cam",
+      "so": "121,7 N",
+      "nhan_lech": [
+       0,
+       0.9
+      ]
+     }
+    ],
+    "goc": [
+     {
+      "tai": "O",
+      "tu": 0,
+      "den": 9.46,
+      "r": 4.6,
+      "text": "θ",
+      "buoc": 1
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "6,0 m"
+     }
+    ],
+    "bang": [
+     {
+      "text": "θ ≈ 9,46°",
+      "buoc": 1
+     },
+     {
+      "text": "T/P ≈ 3,04",
+      "buoc": 3
+     }
+    ],
+    "ti_le": 3.4,
+    "truc": {
+     "tai": "O",
+     "goc": 0,
+     "dai": 5.6,
+     "ten": [
+      "",
+      ""
+     ],
+     "buoc": 1
+    }
+   },
+   "tom_de": {
+    "cho": [
+     "$AB=6{,}0\\ \\text{m}$, độ võng $h=0{,}50\\ \\text{m}$",
+     "$m=4{,}0\\ \\text{kg}$ treo chính giữa",
+     "$g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Góc $\\theta$",
+     "b) Lực căng $T$ mỗi nhánh",
+     "c) $T$ gấp mấy lần $P$"
+    ]
+   }
   }
  ],
  "tu_luan": {

@@ -10,6 +10,7 @@ import TuTruong from "@/components/lessons/cong-cu/TuTruong";
 import SongDay from "@/components/lessons/cong-cu/SongDay";
 import VanGiaoThoa from "@/components/lessons/cong-cu/VanGiaoThoa";
 import VongTronPha from "@/components/lessons/cong-cu/VongTronPha";
+import SoDoVecto from "@/components/lessons/cong-cu/SoDoVecto";
 import type { LessonWorkedQuestion, WorkedTomDe, WorkedTool } from "@/features/lessons/types";
 
 /**
@@ -27,6 +28,7 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "do_thi") return <DoThi {...tool} layer={layer} />;
   if (tool.loai === "tu_truong") return <TuTruong {...tool} layer={layer} />;
   if (tool.loai === "thanh_nang_luong") return <ThanhNangLuong {...tool} layer={layer} />;
+  if (tool.loai === "so_do_vecto" || tool.loai === "thanh_moment") return <SoDoVecto {...tool} layer={layer} />;
   return null;
 }
 

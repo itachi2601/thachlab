@@ -18,9 +18,9 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `dien_truong_deu` | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
 | `mach_dien` | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
 | `truc_chuyen_dong` | Trục toạ độ 1D: vị trí theo thời điểm, đi–quay lại, hai vật gặp/đuổi, vật có chiều dài (tàu, cầu), xuôi–ngược dòng, tiếng vang; va chạm/súng giật trước–sau (mũi tên v, p) | 50 · D3 | 5 | 50, 54, 73, 74, 150 · H9 Âm; L10 Ch.2; L10 Ch.5 |
-| `so_do_vecto` | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
+| `so_do_vecto` (`SoDoVecto.tsx`, ✓ 3/11) | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
-| `thanh_moment` | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
+| `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
 | `tia_sang` | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
 | `thau_kinh` | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
@@ -127,11 +127,13 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 58 | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực | — | D5 (so_do_vecto), D6 (so_do_vecto) | D1, D2, D3, D4 | Sonnet | P2 |
-| 60 | Bài 15. Định luật 2 Newton | — | D2 (so_do_vecto), D4 (so_do_vecto) | D1, D3, D5, D6 | Sonnet | P2 |
-| 62 | Bài 17. Trọng lực và lực căng | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 63 | Bài 18. Lực ma sát | D4 (so_do_vecto) | D5 (so_do_vecto) | D1, D2, D3 | Opus | P2 |
-| 66 | Bài 21. Moment lực. Cân bằng của vật rắn | D4 (thanh_moment) | D5 (thanh_moment) | D1, D2, D3 | Opus | P2 |
+| 58 | Bài 13. Tổng hợp và phân tích lực. Cân bằng lực | — | ✓ D5 (so_do_vecto), D6 (so_do_vecto) 3/11 | ✓ D1, D2, D3, D4 3/11* | Sonnet | P2 |
+| 60 | Bài 15. Định luật 2 Newton | — | ✓ D2 (so_do_vecto), D4 (so_do_vecto) 3/11 | ✓ D1, D3, D5, D6 3/11* | Sonnet | P2 |
+| 62 | Bài 17. Trọng lực và lực căng | — | ✓ D4 (so_do_vecto), D5 (so_do_vecto) 3/11 | ✓ D1, D2, D3 3/11* | Sonnet | P2 |
+| 63 | Bài 18. Lực ma sát | ✓ D4 (so_do_vecto) 3/11 | ✓ D5 (so_do_vecto) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
+| 66 | Bài 21. Moment lực. Cân bằng của vật rắn | ✓ D4 (thanh_moment) 3/11 | ✓ D5 (thanh_moment) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
+
+\* Tóm đề đã ghi vào JSON nhưng dạng không có `cong_cu` đi qua `StepwiseSolution`, chưa hiện `tom_de` (3/11) — cần sửa UI trước khi đăng mới có tác dụng.
 
 ### Lớp 10 · Ch.4 Năng lượng, công, công suất
 

@@ -80,7 +80,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F=20\\ \\text{N}$ vuông góc mặt cửa",
+     "$d=75\\ \\text{cm}$; lần sau $d'=15\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $M$",
+     "b) $F'$ để giữ nguyên $M$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -155,7 +165,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F=80\\ \\text{N}$, $r=0{,}30\\ \\text{m}$",
+     "Giá của $F$ hợp với bán kính góc $40^\\circ$"
+    ],
+    "tim": [
+     "a) Cánh tay đòn $d$",
+     "b) $M$",
+     "c) $F$ vuông góc bán kính để cùng $M$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -243,7 +264,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Hai lực $F=30\\ \\text{N}$ ngược chiều, tiếp tuyến",
+     "Hai tay cách nhau $0{,}90\\ \\text{m}$"
+    ],
+    "tim": [
+     "a) Hợp lực",
+     "b) $M$ của ngẫu lực",
+     "c) $F$ mỗi tay để $M=36\\ \\text{N·m}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -318,7 +350,132 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_moment",
+    "nen": {
+     "kieu": "thanh",
+     "dai": 1.0,
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0
+      },
+      {
+       "ten": "B",
+       "x": 1.0
+      },
+      {
+       "ten": "G",
+       "x": 0.5,
+       "buoc": 1
+      },
+      {
+       "ten": "O",
+       "x": 0.375,
+       "buoc": 2,
+       "nhan": "duoi",
+       "nhan_lech": [
+        -1.3,
+        0
+       ]
+      }
+     ],
+     "do": {
+      "kieu": "gia_do",
+      "x": 0.375,
+      "buoc": 2
+     },
+     "khoi": [
+      {
+       "x": 0,
+       "text": "40 N"
+      },
+      {
+       "x": 1.0,
+       "text": "20 N"
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "P_A",
+      "goc": "xuong",
+      "do_lon": 40,
+      "tu": "A"
+     },
+     {
+      "ten": "P_B",
+      "goc": "xuong",
+      "do_lon": 20,
+      "tu": "B"
+     },
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 20,
+      "tu": "G",
+      "buoc": 1,
+      "so": "20 N",
+      "so_buoc": 0
+     },
+     {
+      "ten": "N",
+      "goc": "len",
+      "do_lon": 80,
+      "tu": "O",
+      "buoc": 3,
+      "mau": "cam",
+      "so": "80 N"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "1,0 m"
+     },
+     {
+      "a": "A",
+      "b": "G",
+      "text": "0,5",
+      "buoc": 1,
+      "an": 2
+     }
+    ],
+    "tay_don": [
+     {
+      "truc": "O",
+      "luc": "P_A",
+      "text": "0,375",
+      "buoc": 2
+     },
+     {
+      "truc": "O",
+      "luc": "P",
+      "text": "0,125",
+      "buoc": 2
+     },
+     {
+      "truc": "O",
+      "luc": "P_B",
+      "text": "0,625",
+      "buoc": 2
+     }
+    ],
+    "ti_le": 4
+   },
+   "tom_de": {
+    "cho": [
+     "Thanh đồng chất $AB=1{,}0\\ \\text{m}$, $P=20\\ \\text{N}$",
+     "Khối ở $A$: $40\\ \\text{N}$; ở $B$: $20\\ \\text{N}$",
+     "Giá đỡ $O$, thanh nằm ngang cân bằng"
+    ],
+    "tim": [
+     "a) $OA$",
+     "b) Lực giá đỡ $N$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -454,7 +611,151 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_moment",
+    "nen": {
+     "kieu": "thanh",
+     "dai": 1.5,
+     "tuong": true,
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0,
+       "nhan": "duoi",
+       "nhan_lech": [
+        0.9,
+        0
+       ]
+      },
+      {
+       "ten": "B",
+       "x": 1.5
+      },
+      {
+       "ten": "G",
+       "x": 0.75
+      },
+      {
+       "ten": "C",
+       "x": 1.2,
+       "nhan": "duoi"
+      }
+     ],
+     "do": {
+      "kieu": "ban_le",
+      "x": 0
+     },
+     "khoi": [
+      {
+       "x": 1.5,
+       "text": "16 N"
+      }
+     ],
+     "day": {
+      "tu": "C",
+      "x": 1.2,
+      "goc": 150
+     }
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 40,
+      "tu": "G",
+      "so": "40 N"
+     },
+     {
+      "ten": "P_1",
+      "goc": "xuong",
+      "do_lon": 16,
+      "tu": "B"
+     },
+     {
+      "ten": "T",
+      "goc": "day:C",
+      "do_lon": 90,
+      "tu": "C",
+      "buoc": 3,
+      "mau": "cam",
+      "so": "90 N"
+     },
+     {
+      "ten": "T_y",
+      "goc": "len",
+      "do_lon": 45,
+      "tu": "C",
+      "buoc": 4,
+      "kieu": "thanh_phan",
+      "mau": "cam",
+      "so": "45 N"
+     },
+     {
+      "ten": "N_y",
+      "goc": "len",
+      "do_lon": 11,
+      "tu": "A",
+      "buoc": 5,
+      "mau": "lam",
+      "so": "11 N",
+      "so_buoc": 4
+     }
+    ],
+    "goc": [
+     {
+      "tai": "C",
+      "tu": 150,
+      "den": 180,
+      "r": 2.2,
+      "text": "30°"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "G",
+      "text": "0,75",
+      "buoc": 2
+     },
+     {
+      "a": "A",
+      "b": "B",
+      "text": "1,5 m",
+      "buoc": 2
+     }
+    ],
+    "tay_don": [
+     {
+      "truc": "A",
+      "luc": "T",
+      "text": "d_T",
+      "buoc": 1
+     }
+    ],
+    "bang": [
+     {
+      "text": "d_T = 0,6 m",
+      "buoc": 1,
+      "mau": "cam"
+     },
+     {
+      "text": "M = 54 N·m",
+      "buoc": 2
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Thanh đồng chất $AB=1{,}5\\ \\text{m}$, $P=40\\ \\text{N}$, nằm ngang",
+     "Biển hiệu $16\\ \\text{N}$ ở $B$",
+     "Bản lề ở $A$; dây ở $C$: $AC=1{,}2\\ \\text{m}$, hợp với thanh $30^\\circ$"
+    ],
+    "tim": [
+     "a) Lực căng $T$",
+     "b) $N_y$ của bản lề: độ lớn, hướng"
+    ]
+   }
   }
  ],
  "tu_luan": {
