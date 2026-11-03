@@ -303,13 +303,16 @@ export default function StepwiseSolution({
   }
   useEffect(() => {
     if (flash === null) return;
-    const t = setTimeout(() => refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
+    // chế độ giải cùng hình (`only`): GiaiCungHinh tự căn khung dưới hình dính
+    const t = setTimeout(() => {
+      if (only === undefined) refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 50);
     const t2 = setTimeout(() => setFlash(null), 2500);
     return () => {
       clearTimeout(t);
       clearTimeout(t2);
     };
-  }, [flash]);
+  }, [flash, only]);
 
   const current = revealed.findIndex((v) => !v); // bước đầu tiên chưa mở
   const allOpen = !usable || current < 0;
