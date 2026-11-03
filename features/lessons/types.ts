@@ -142,7 +142,29 @@ export interface LessonWorkedQuestion {
 /** Mỗi phần tử là HTML ngắn (được dùng $…$). */
 export type WorkedTomDe = { cho: string[]; tim: string[] };
 
-export type WorkedTool = { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number };
+export type WorkedTool =
+  | { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day" }
+  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; lop?: VongTronLop[][] }
+  | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; lop?: SongDayLop[][] }
+  | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] };
+
+/** Mục vẽ thêm của từng bước (lop[i] hiện khi em đã xong bước i + 1; `het: k` ẩn từ khi xong bước k). Góc theo đơn vị π. */
+type LopGhi = { loai: "ghi"; text: string; het?: number };
+export type VongTronLop =
+  | LopGhi
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; het?: number }
+  | { loai: "cung"; tu: number; den: number; het?: number }
+  | { loai: "giao"; x: number; so?: string[]; het?: number };
+export type SongDayLop =
+  | LopGhi
+  | { loai: "song"; pha: number; dau?: number; het?: number }
+  | { loai: "thuoc"; tu: number; den: number; nhan: string; hang?: number; het?: number }
+  | { loai: "mui"; x: number; huong: "len" | "xuong"; het?: number }
+  | { loai: "dau_song"; x: number; het?: number };
+export type VanGiaoThoaLop =
+  | LopGhi
+  | { loai: "dem" | "thuoc_i" | "van"; het?: number }
+  | { loai: "thuoc"; tu: number; den: number; nhan: string; het?: number };
 
 export interface WorkedMeo {
   /** Tên 2–3 chữ, dùng y hệt ở mọi lớp (docs/KE-HOACH-MEO-GIAI-BAI-TAP.md). */

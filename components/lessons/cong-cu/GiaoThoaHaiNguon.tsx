@@ -11,7 +11,7 @@
 
 import type { ReactNode } from "react";
 
-type Props = { f: number; v: number; AB: number; d1: number; d2: number; layer: number };
+type Props = { f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day"; layer: number };
 
 const C_MAX = "#c2410c", C_MIN = "#0e7490";
 
@@ -42,7 +42,84 @@ function Label({ x, y, children, fill = "currentColor", a = "middle", size = 1.3
   );
 }
 
-export default function GiaoThoaHaiNguon({ f, v, AB, d1, d2, layer: L }: Props) {
+export default function GiaoThoaHaiNguon(p: Props) {
+  return p.kieu === "dem_day" ? <DemDay {...p} /> : <TimLoai {...p} />;
+}
+
+/**
+ * Biến thể "đếm dãy" (đợt Đ1 3/11, bài 12 dạng 3): biết M là cực đại và số dãy giữa M với trung trực → bậc k → λ → v.
+ * Bước: 1 bậc k (vẽ các dãy cực đại từ trung trực tới M, đánh số) → 2 hiệu đường đi → 3 λ (chia thành k khúc) → 4 v.
+ */
+function DemDay({ f, v, AB, d1, d2, layer: L }: Props) {
+  const lam = v / f, c = AB / 2;
+  const mx = (d1 * d1 - d2 * d2) / (4 * c);
+  const my = Math.sqrt(Math.max(d2 * d2 - (mx - c) ** 2, 0));
+  const X = Math.max(c + 3.6, Math.abs(mx) + 2.2), Y1 = my + 2.4, z = X / 9.6;
+  const s = d1 - d2, kM = Math.round(Math.abs(s) / lam), sg = Math.sign(s) || 1;
+  const H = 7.2 * z, bandY = 3.2 * z;
+  const ks = Array.from({ length: kM }, (_, j) => j + 1);
+  // đỉnh mỗi dãy ở mép trên hình — chỗ đặt số k
+  const topX = (k: number) => {
+    const a = (k * lam) / 2, b = Math.sqrt(c * c - a * a);
+    return sg * a * Math.sqrt(1 + (Y1 / b) ** 2);
+  };
+  const tw = Math.min(2.2 * z, (2 * X - 1.2 * z) / Math.max(kM, 1) - 0.15 * z);
+  return (
+    <svg viewBox={`${-X} ${-Y1} ${2 * X} ${Y1 + H}`} className="cc-fig" role="img" aria-label={`Hai nguồn A, B cách nhau ${fmt(AB)} cm; M cách A ${fmt(d1)} cm, cách B ${fmt(d2)} cm`}>
+      {/* đường trung trực (k = 0) — dữ kiện đề */}
+      <line x1={0} y1={0} x2={0} y2={-Y1} stroke={C_MAX} strokeWidth={0.08 * z} strokeDasharray={`${0.4 * z} ${0.3 * z}`} opacity={0.8} />
+      <Label x={0.4 * z} y={-Y1 + 1.6 * z} a="start" size={1.1 * z} fill={C_MAX}>trung trực</Label>
+      {L >= 1 &&
+        ks.map((k, j) => (
+          <g key={k} className="cc-in" style={{ animationDelay: `${j * 120}ms` }}>
+            <path d={hyperbola(sg * k * lam, c, Y1)} stroke={C_MAX} strokeWidth={(k === kM ? 0.2 : 0.1) * z} fill="none" opacity={k === kM ? 1 : 0.7} />
+            <Label x={topX(k)} y={-Y1 + 1.6 * z} size={1.15 * z} fill={C_MAX}>{`${k}`}</Label>
+          </g>
+        ))}
+      <line x1={-c} y1={0} x2={c} y2={0} stroke="currentColor" strokeWidth={0.1 * z} />
+      <line x1={-c} y1={0} x2={mx} y2={-my} stroke="currentColor" strokeWidth={0.1 * z} opacity={0.75} />
+      <line x1={c} y1={0} x2={mx} y2={-my} stroke="currentColor" strokeWidth={0.1 * z} opacity={0.75} />
+      {/* nhãn d₁ sát A, bên trong góc (M gần mép hình nên không đặt được phía ngoài) */}
+      <Label x={sg * (c - 1.0 * z)} y={-2.2 * z} a={sg < 0 ? "start" : "end"} size={1.25 * z}>{sg < 0 ? `d₁ = ${fmt(d1)}` : `d₂ = ${fmt(d2)}`}</Label>
+      <Label x={(mx - sg * c) / 2 - sg * 0.8 * z} y={-my / 2} a={sg < 0 ? "start" : "end"} size={1.25 * z}>{sg < 0 ? `d₂ = ${fmt(d2)}` : `d₁ = ${fmt(d1)}`}</Label>
+      {[-c, c].map((x, i) => (
+        <g key={i}>
+          <circle cx={x} cy={0} r={0.3 * z} fill="currentColor" />
+          <Label x={x} y={1.35 * z} size={1.3 * z}>{i ? "B" : "A"}</Label>
+        </g>
+      ))}
+      <circle cx={mx} cy={-my} r={0.3 * z} fill="#facc15" stroke="currentColor" strokeWidth={0.08 * z} />
+      <Label x={mx - 0.5 * z} y={-my - 0.4 * z} a="end" size={1.3 * z}>M</Label>
+      {/* dải dưới: bước 2 thanh |d₁ − d₂|, bước 3 chia thành k khúc λ, bước 4 tốc độ */}
+      {L >= 2 && (
+        <g className="cc-in">
+          {L < 3 ? (
+            <rect x={-X + 0.6 * z} y={bandY} width={kM * (tw + 0.15 * z) - 0.15 * z} height={1.3 * z} rx={0.15 * z} fill={C_MAX} opacity={0.85} />
+          ) : (
+            ks.map((k, j) => (
+              <g key={k} className="cc-pop" style={{ animationDelay: `${j * 110}ms` }}>
+                <rect x={-X + 0.6 * z + j * (tw + 0.15 * z)} y={bandY} width={tw} height={1.3 * z} rx={0.15 * z} fill={C_MAX} />
+                <text x={-X + 0.6 * z + j * (tw + 0.15 * z) + tw / 2} y={bandY + 0.95 * z} fontSize={0.8 * z} textAnchor="middle" fill="#fff" fontWeight={700}>
+                  λ
+                </text>
+              </g>
+            ))
+          )}
+          <Label x={-X + 0.6 * z} y={bandY + 2.9 * z} a="start" size={1.15 * z}>
+            {L < 3 ? `|d₁ − d₂| = ${fmt(Math.abs(s))} cm` : `${fmt(Math.abs(s))} = ${kM}λ → λ = ${fmt(lam, 2)} cm`}
+          </Label>
+        </g>
+      )}
+      {L >= 4 && (
+        <Label x={-X + 0.6 * z} y={bandY + 4.5 * z} a="start" size={1.15 * z} fill={C_MIN}>
+          {`v = λf = ${fmt(lam, 2)}·${fmt(f)} = ${fmt(v)} cm/s`}
+        </Label>
+      )}
+    </svg>
+  );
+}
+
+function TimLoai({ f, v, AB, d1, d2, layer: L }: Props) {
   const lam = v / f, c = AB / 2;
   // M theo đề: (x + c)² + y² = d1², (x − c)² + y² = d2²
   const mx = (d1 * d1 - d2 * d2) / (4 * c);
