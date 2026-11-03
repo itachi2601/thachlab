@@ -181,7 +181,7 @@ export type SoDoVectoTool = {
   /** Dòng thêm ở bảng số (vd "θ = 9,46°"). */
   bang?: { text: string; mau?: Mau; buoc?: number; den?: number }[];
   /** Mặc định "phai" (nới khung sang phải); mặt nghiêng mặc định "trong" (góc trên phải, khoảng trống trên chân dốc). */
-  bang_vi_tri?: "trai" | "phai" | "trong";
+  bang_vi_tri?: "trai" | "phai" | "trong" | "tren";
   /** Độ dài (đơn vị hình) của vectơ lớn nhất mỗi nhóm; mặc định 5. */
   ti_le?: number;
   /** Ngoặc đo ngang dưới hình (vd AB = 1,0 m); `an` = ẩn từ bước đó. */

@@ -376,7 +376,9 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   const vt = bang_vi_tri ?? (nen.kieu === "mat_nghieng" || nen.kieu === "thanh" ? "trong" : "phai");
   // "trong": dời sang phải cho tới khi không đè nét/nhãn nào trong dải cao của bảng
   const band = obs.filter((p) => p[1] >= y1 - bh - 0.5 && p[1] <= y1 + 0.5);
-  const bx = vt === "trai" ? x0 - bw : vt === "trong" ? Math.max(x1 - bw, ...band.map((p) => p[0] + 0.5)) : x1 + 0.6;
+  // "tren": nằm trên toàn bộ hình, canh phải — cho hình dẹt (mặt ngang) khỏi bị bảng làm rộng thêm
+  if (vt === "tren") y1 += bh + 0.4;
+  const bx = vt === "trai" ? x0 - bw : vt === "tren" ? x1 - bw : vt === "trong" ? Math.max(x1 - bw, ...band.map((p) => p[0] + 0.5)) : x1 + 0.6;
   if (vt === "trong") x1 = Math.max(x1, bx + bw);
   if (vt === "trai") x0 -= bw;
   else if (vt === "phai") x1 += bw + 0.6;

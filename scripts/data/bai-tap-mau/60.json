@@ -110,7 +110,78 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_ngang",
+     "vat": "35 kg"
+    },
+    "vec": [
+     {
+      "ten": "F",
+      "goc": "phai",
+      "do_lon": 120,
+      "tu": "vat",
+      "lech": [
+       1.5,
+       0
+      ]
+     },
+     {
+      "ten": "F_ms",
+      "goc": "trai",
+      "do_lon": 50,
+      "tu": "vat_day",
+      "lech": [
+       -1.5,
+       0.2
+      ],
+      "nhan_lech": [
+       -0.6,
+       0.8
+      ]
+     },
+     {
+      "ten": "F_hl",
+      "goc": "phai",
+      "do_lon": 70,
+      "tu": "vat",
+      "lech": [
+       -1.5,
+       2.0
+      ],
+      "buoc": 1,
+      "mau": "cam",
+      "so": "70 N"
+     },
+     {
+      "ten": "a",
+      "goc": "phai",
+      "do_lon": 2,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       -1.5,
+       3.3
+      ],
+      "buoc": 3,
+      "so": "2,0 m/s²",
+      "so_buoc": 2
+     }
+    ],
+    "bang_vi_tri": "tren"
+   },
+   "tom_de": {
+    "cho": [
+     "$m=35\\ \\text{kg}$",
+     "$F=120\\ \\text{N}$ (ngang)",
+     "$F_{\\text{ms}}=50\\ \\text{N}$"
+    ],
+    "tim": [
+     "Độ lớn và hướng của $a$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -284,7 +355,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_ngang",
+     "vat": "12 kg"
+    },
+    "vec": [
+     {
+      "ten": "F",
+      "goc": "phai",
+      "do_lon": 54,
+      "tu": "vat",
+      "lech": [
+       1.5,
+       0
+      ]
+     },
+     {
+      "ten": "F_ms",
+      "goc": "trai",
+      "do_lon": 18,
+      "tu": "vat_day",
+      "lech": [
+       -1.5,
+       0.2
+      ],
+      "nhan_lech": [
+       -0.6,
+       0.8
+      ]
+     },
+     {
+      "ten": "F_hl",
+      "goc": "phai",
+      "do_lon": 36,
+      "tu": "vat",
+      "lech": [
+       -1.5,
+       2.0
+      ],
+      "buoc": 1,
+      "mau": "cam",
+      "so": "36 N"
+     },
+     {
+      "ten": "a",
+      "goc": "phai",
+      "do_lon": 3,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       -1.5,
+       3.3
+      ],
+      "buoc": 2,
+      "so": "3,0 m/s²"
+     }
+    ],
+    "bang": [
+     {
+      "text": "v = 18 m/s",
+      "buoc": 3
+     },
+     {
+      "text": "s = 54 m",
+      "buoc": 4
+     }
+    ],
+    "bang_vi_tri": "tren"
+   },
+   "tom_de": {
+    "cho": [
+     "$m=12\\ \\text{kg}$, $v_0=0$",
+     "$F=54\\ \\text{N}$, $F_{\\text{ms}}=18\\ \\text{N}$",
+     "$t=6\\ \\text{s}$"
+    ],
+    "tim": [
+     "$v$ và $s$ sau $6\\ \\text{s}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
