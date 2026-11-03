@@ -52,6 +52,12 @@ export default function GiaiCungHinh({
 }) {
   const n = q.buoc?.length ?? 0;
   const [step, setStep] = useState(0);
+  // bước em đã mở xem (bước tự mở vì không có câu hỏi thì chưa chắc đã xem) — để dòng nhắc không nói "xem lại" bước chưa xem (HS ảo 3/11)
+  const [seen, setSeen] = useState<number[]>([0]);
+  const visit = (i: number) => {
+    setStep(i);
+    setSeen((s) => (s.includes(i) ? s : [...s, i]));
+  };
   const [opened, setOpened] = useState(0); // số bước đầu đã làm xong liên tiếp
   const [full, setFull] = useState(false);
   const [deOpen, setDeOpen] = useState(false); // tóm đề mở đè lên (điện thoại)
@@ -60,14 +66,9 @@ export default function GiaiCungHinh({
 
   // gỡ rối từ bài tương tự: nhảy về đúng bước
   const [seenJump, setSeenJump] = useState(jump);
-  const [daXem, setDaXem] = useState(0); // bước xa nhất em đã mở tới (để chữ gợi ý không nói "xem lại" bước chưa xem)
   if (jump !== seenJump) {
     setSeenJump(jump);
-    if (jump) {
-      const i = Math.min(Math.max(jump.idx, 0), n - 1);
-      setStep(i);
-      setDaXem((d) => Math.max(d, i));
-    }
+    if (jump) visit(Math.min(Math.max(jump.idx, 0), n - 1));
   }
 
   // đưa hình về đúng chỗ (đỉnh khung ngay dưới thanh dính) để bước hiện ngay dưới hình, không bị hình che
@@ -75,20 +76,28 @@ export default function GiaiCungHinh({
     const dy = (splitRef.current?.getBoundingClientRect().top ?? top) - top;
     if (Math.abs(dy) > 4) window.scrollTo({ top: window.scrollY + dy, behavior: "instant" });
   };
+  // gỡ rối: StepwiseSolution không tự cuộn khi có `only` (scrollIntoView center đặt tiêu đề bước dưới hình dính — HS ảo 3/11);
+  // cuộn ở đây sau khi bước đã vẽ, để đỉnh bước nằm ngay dưới hình
+  useEffect(() => {
+    if (!jump) return;
+    const t = setTimeout(align, 60);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [jump]);
   const go = (i: number) => {
-    setStep(i);
-    setDaXem((d) => Math.max(d, i));
+    visit(i);
     setDeOpen(false);
     align();
   };
 
   // Vừa trả lời đúng bước đang làm: lời giải ngắn của bước hiện ở đầu khung bước. Nếu lúc gõ trang đã cuộn (bàn phím
   // điện thoại đẩy ô nhập lên) thì phần đó nằm dưới hình dính → cuộn về cho thấy (HS ảo 2/11: "lời giải bị đẩy khỏi tầm mắt").
+  // `opened` có thể nhảy nhiều bước một lúc (các bước sau không có câu hỏi, vd "Hướng của gia tốc", "Kiểm tra") — HS ảo 3/11:
+  // điều kiện `opened === step + 1` bỏ qua ca này nên lời giải bước nằm khuất dưới hình. Chỉ cần bước đang xem vừa được mở.
   const prevOpened = useRef(opened);
   useEffect(() => {
     const was = prevOpened.current;
     prevOpened.current = opened;
-    // bước đang làm vừa mở (kể cả khi các bước không hỏi phía sau mở luôn, opened nhảy quá step + 1 — HS ảo bài 60 3/11)
     if (opened <= was || step < was || step >= opened) return;
     const el = document.activeElement;
     if (el instanceof HTMLElement && splitRef.current?.contains(el)) el.blur(); // đóng bàn phím trước khi đo
@@ -104,13 +113,6 @@ export default function GiaiCungHinh({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opened]);
-  // gỡ rối: StepwiseSolution không tự cuộn khi `only` (cuộn "center" làm tiêu đề bước nằm dưới hình dính) → căn khung ở đây
-  useEffect(() => {
-    if (!jump) return;
-    const t = setTimeout(align, 60);
-    return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [jump]);
   const layer = Math.min(opened, step + 1);
   const tomDe = getTomDe(q);
   const canNext = step + 1 < n && step + 1 <= opened;
@@ -122,9 +124,11 @@ export default function GiaiCungHinh({
         ? "✓ Xong cả bài — tự trình bày lại, rồi so với lời giải đầy đủ ở cuối."
         : "Trả lời bước này để hoàn thành."
       : canNext
-        ? step + 1 > daXem
+        ? step + 1 === opened
           ? "Xong bước này — bấm ▶ sang bước tiếp."
-          : "Bấm ▶ xem lại bước sau."
+          : seen.includes(step + 1)
+            ? "Bấm ▶ xem lại bước sau."
+            : `Bấm ▶ xem bước ${step + 2}.`
         : "Trả lời câu hỏi bên dưới để mở bước sau.";
 
   return (
@@ -144,7 +148,7 @@ export default function GiaiCungHinh({
             type="button"
             aria-label="Bước sau"
             disabled={!canNext}
-            className={canNext && step + 1 > daXem ? "cc-next-ready" : undefined}
+            className={canNext && step + 1 === opened ? "cc-next-ready" : undefined}
             style={canNext ? { borderColor: color, color } : undefined}
             onClick={() => go(step + 1)}
           >

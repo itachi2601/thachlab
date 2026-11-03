@@ -303,10 +303,8 @@ export default function StepwiseSolution({
   }
   useEffect(() => {
     if (flash === null) return;
-    // chế độ giải cùng hình (`only`): GiaiCungHinh tự căn khung dưới hình dính
-    const t = setTimeout(() => {
-      if (only === undefined) refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 50);
+    // giải cùng hình (`only`): cha (GiaiCungHinh) cuộn sao cho đỉnh bước nằm ngay dưới hình dính; block:"center" ở đây đặt tiêu đề bước khuất sau hình
+    const t = setTimeout(() => only === undefined && refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     const t2 = setTimeout(() => setFlash(null), 2500);
     return () => {
       clearTimeout(t);
