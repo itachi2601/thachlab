@@ -155,7 +155,102 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=500\\ \\text{g}$, $k=100\\ \\text{N/m}$, $A=10\\ \\text{cm}$, không ma sát",
+     "Lúc đó $W_{\\text{đ}}=24\\,W_t$"
+    ],
+    "tim": [
+     "a) cơ năng $W$",
+     "b) li độ $x$ lúc đó",
+     "c) tốc độ $|v|$ lúc đó"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "lo_xo_ngang",
+     "A": 10,
+     "don_vi": "cm",
+     "x": 10
+    },
+    "cot": [
+     {
+      "ten": "W",
+      "mau": "chu"
+     },
+     {
+      "ten": "W_t",
+      "mau": "min"
+     },
+     {
+      "ten": "W_đ",
+      "mau": "max"
+     }
+    ],
+    "max": 0.5,
+    "don_vi": "J",
+    "lop": [
+     [
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 0.5,
+       "nhan": "0,5 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = ½kA² = 0,5 J (không đổi)"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 2,
+       "bong": true
+      },
+      {
+       "loai": "cot",
+       "ten": "W_t",
+       "gia_tri": 0.02,
+       "nhan": "1 phần"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_đ",
+       "gia_tri": 0.48,
+       "nhan": "24 phần"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = 25 W_t ⇒ |x| = A : 5 = 2 cm"
+      }
+     ],
+     [
+      {
+       "loai": "v",
+       "nhan": "|v| ≈ 1,39 m/s"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_t",
+       "gia_tri": 0.02,
+       "nhan": "0,02 J"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_đ",
+       "gia_tri": 0.48,
+       "nhan": "0,48 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "½mv² = 0,48 J ⇒ |v| ≈ 1,39 m/s"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
