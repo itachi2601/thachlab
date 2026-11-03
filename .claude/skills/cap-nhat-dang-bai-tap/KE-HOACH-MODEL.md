@@ -15,8 +15,8 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `song_day` (`SongDay.tsx`, Đ1 ✓) | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
 | `giao_thoa_2_nguon` | Hai nguồn trên mặt nước, vân cực đại/cực tiểu (đã có) | 33 · D3 (đã có) | 1 | 31, 33 · L11 Ch.2 |
 | `van_giao_thoa` (`VanGiaoThoa.tsx`, Đ1 ✓) | Màn khe Young: thước vân sáng/tối, khoảng vân, trùng vân hai bức xạ | 31 · D4 | 1 | 31, 33 · L11 Ch.2 |
-| `dien_truong_deu` | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
-| `mach_dien` | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
+| `dien_truong_deu` (`DienTruongDeu.tsx`, Đ3 ✓) | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
+| `mach_dien` (`MachDien.tsx`, Đ3 ✓) | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
 | `truc_chuyen_dong` | Trục toạ độ 1D: vị trí theo thời điểm, đi–quay lại, hai vật gặp/đuổi, vật có chiều dài (tàu, cầu), xuôi–ngược dòng, tiếng vang; va chạm/súng giật trước–sau (mũi tên v, p) | 50 · D3 | 5 | 50, 54, 73, 74, 150 · H9 Âm; L10 Ch.2; L10 Ch.5 |
 | `so_do_vecto` (`SoDoVecto.tsx`, ✓ 3/11) | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
@@ -97,7 +97,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 |---|---|---|---|---|---|---|
 | 35 | Bài 16. Lực tương tác giữa hai điện tích | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P1 |
 | 36 | Bài 17. Khái niệm điện trường | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P1 |
-| 37 | Bài 18. Điện trường đều | D3 (dien_truong_deu) | D5 (dien_truong_deu) | D1, D2, D4 | Opus | P1 |
+| 37 | Bài 18. Điện trường đều | ✓ D3 (dien_truong_deu) 3/11 | ✓ D5 (dien_truong_deu) 3/11 | ✓ D1, D2, D4 3/11 | Opus | P1 |
 | 38 | Bài 19. Thế năng điện | — | D3 (dien_truong_deu), D4 (dien_truong_deu) | D1, D2 | Sonnet | P1 |
 | 39 | Bài 20. Điện thế | — | D4 (dien_truong_deu), D5 (dien_truong_deu) | D1, D2, D3 | Sonnet | P1 |
 | 40 | Bài 21. Tụ điện | — | D4 (mach_dien), D5 (dien_truong_deu) | D1, D2, D3 | Sonnet | P1 |
@@ -108,7 +108,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 |---|---|---|---|---|---|---|
 | 41 | Bài 22. Cường độ dòng điện | — | — | D1, D2, D3, D4, D5 | Sonnet | P4 |
 | 42 | Bài 23. Điện trở. Định luật Ohm | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
-| 43 | Bài 24. Nguồn điện | D3 (mach_dien) | D4 (mach_dien) | D1, D2 | Opus | P1 |
+| 43 | Bài 24. Nguồn điện | ✓ D3 (mach_dien) 3/11 | ✓ D4 (mach_dien) 3/11 | ✓ D1, D2 3/11 | Opus | P1 |
 | 44 | Bài 25. Năng lượng điện và công suất điện | — | D4 (mach_dien), D5 (mach_dien) | D1, D2, D3 | Sonnet | P1 |
 
 ### Lớp 10 · Ch.2 Động học
@@ -297,6 +297,8 @@ Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Fou
 - Đ1 (3/11): 23·D3 cần `do_thi` (tạo ở Đ2) nên mới có `tom_de`; thêm `cong_cu` khi Đ2 vào main. Ba họ mới khai từng bước bằng `lop: [[mục…], …]` trong JSON (xem chú thích đầu mỗi component) — phiên Sonnet dùng lại chỉ cần viết JSON.
 - Đ2 (3/11): thầy duyệt giữ `do_thi` **một** component (gấp khúc `diem` + hàm lấy mẫu `ham` cos/mũ/nghịch/đa thức) — không tách. 23·D3 giờ thêm được `cong_cu` `do_thi`. API JSON từng họ: chú thích đầu `DoThi.tsx`, `TuTruong.tsx`, `ThanhNangLuong.tsx` và kiểu trong `features/lessons/types.ts`. `thanh_nang_luong` mới thử cảnh `lo_xo_ngang`; `con_lac_don`, `doc`, `hop_he` và mục `nam_cham` của `tu_truong` đã viết nhưng chưa soát bằng mắt — phiên dùng lại đầu tiên soát kỹ.
 - **Chờ thầy chốt (Đ2 phát hiện):** dạng chỉ có `tom_de` (không `cong_cu`) hiện **chưa hiện gì** — tóm đề chỉ vẽ trong `GiaiCungHinh`; `StepwiseSolution` chưa đọc `tom_de`. Các ô "✓ chỉ tóm đề" ở bảng B là dữ liệu đã ghi, chờ UI (đề xuất: dòng "Tìm" dính đầu khung bước + thẻ lề ≥1280, dùng lại `TomDeBody`).
+
+- Đ3 (3/11): `dien_truong_deu` (bản +/−, đường sức, lực, quỹ đạo parabol `cat` dừng ở bản + chấm, thước ngang/dọc) và `mach_dien` (nguồn, R, đèn, V/A kế, khoá, mũi tên dòng, ngoặc nhóm, `bang` số điền dần với ô "?") — API ở chú thích đầu hai file + `features/lessons/types.ts`. Chưa soát bằng mắt: `khoa`, `dong_ho` kiểu A — phiên dùng lại đầu tiên (38, 40, 44) soát kỹ. Đã xem thử 375px, chưa HS ảo, chưa đăng.
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.
