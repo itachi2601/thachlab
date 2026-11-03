@@ -50,9 +50,10 @@ Quy tắc thiết kế (`docs/QUY-TAC-THIET-KE.md`): N1, N5, N6, N8 (split-atten
 ### 3b. Tóm đề (`tom_de`, thử 3/11/2026 ở bài 33 Dạng 3)
 - Thêm `"tom_de": {"cho": [...], "tim": [...]}` vào dạng. Mỗi phần tử là HTML ngắn, dùng được `$…$`, ký hiệu khớp lời giải.
 - **Không đổi đơn vị sẵn**: ghi $v=0{,}50$ m/s như đề, vì đổi sang cm/s là việc của bước 1. "Tìm" đánh a) b) c) theo ý đề.
-- Dưới 1280px là một dòng "Tìm: …" trong khối dính; chạm vào thì Cho, Tìm và đề đầy đủ (đã bỏ hình) mở đè lên, trang không xô.
-- Từ 1280px là thẻ lề phải dính theo, tràn vào `--wide-bleed` của trang bài.
-- Trang `/dev/btm` có `main` cắt mép (`overflow-x: clip`) nên không thấy thẻ lề phải. Muốn soát thì đặt `main.style.overflowX='visible'` bằng JS.
+- Dưới 1280px là một dòng "Tìm: …" ở **ĐẦU khối dính, trên hình**; chạm vào thì Cho, Tìm và đề đầy đủ (đã bỏ hình) mở đè lên, trang không xô. Không đặt dòng này dưới nút ◀ ▶: lúc vừa mở bước 1 nó rơi đúng chỗ thanh điều hướng đáy điện thoại che.
+- Từ 1280px là thẻ Cho/Tìm ở **lề phải, chỗ ghi chú lề** của bài lý thuyết (`--wide-bleed`), dính theo; dòng "Tìm" ẩn. Trang bài thật ở đúng 1280px lề chỉ ~140px nên dòng dài xuống 2–3 dòng — giữ mỗi phần tử ngắn.
+- `/dev/btm` đã dựng khung rộng toàn màn như trang thật (3/11), nên thấy được thẻ lề ở cỡ 1280.
+- Soát: chụp 375px **lúc vừa mở "Giải từng bước", chưa cuộn** (thấy dòng Tìm, không bị thanh đáy che) và chụp 1280px (thẻ lề hiện, `scrollWidth` = 1280).
 
 ### 4. Xem thử (Mac)
 ```bash
@@ -111,3 +112,4 @@ npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --giu-cu
 ## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
 - 2026-11-02 · v1 dùng canvas sóng chạy cộng chế độ khám phá; thầy chê xa hình, rối → v2: SVG nét, hình dính nửa trên, mỗi lần một bước. Học sinh ảo: "chỉ 1 bước tương tác" → v3: `giau_het`, hình theo bước đã xong.
 - 2026-11-02 · Học sinh ảo bắt 2 lỗi mà ảnh chụp bước 2 bỏ sót: tràn ngang ở bước cuối, lời giải bị hình che sau khi gõ → luôn chạy đủ checklist mục 5 qua MỌI bước trước khi báo xong.
+- 2026-11-03 · Tóm đề: chỉ đo phần tử tồn tại + không tràn, không chụp lúc vừa mở → dòng "Tìm" bị thanh điều hướng đáy che, thầy không thấy; trang xem thử cắt mất lề phải nên thầy cũng không thấy thẻ desktop → dòng Tìm lên đầu khối dính; trang xem thử phải dựng khung giống trang thật; luôn chụp màn ở trạng thái học sinh thấy đầu tiên.
