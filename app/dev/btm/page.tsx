@@ -37,11 +37,14 @@ export default function BtmPreviewPage() {
       .catch((e: Error) => setErr(e.message));
   }, []);
   return (
-    <main className="lesson-shell lesson-page mx-auto max-w-3xl px-4 py-6">
+    <main className="lesson-shell lesson-page">
+      {/* rộng toàn màn như trang bài thật: lề phải (≥1280) còn chỗ cho thẻ tóm đề, không bị lesson-shell cắt */}
+      <div className="mx-auto max-w-3xl px-4 py-6">
       <h1 className="mb-1 text-lg font-bold text-white">Xem thử bài tập mẫu {data ? `· bài ${data.lesson_id}` : ""}</h1>
       <p className="mb-4 text-sm text-slate-400">{data?.lesson_title ?? ""}</p>
       {err && <p className="text-sm text-rose-300">Chưa có public/xem-thu/btm.json ({err}) — chạy publish-bai-tap-mau.mts --xem-thu.</p>}
       {data && <WorkedQuestionsGrid questions={data.questions} />}
+      </div>
     </main>
   );
 }
