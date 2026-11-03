@@ -9,4 +9,5 @@ Nâng dạng bài tập mẫu thành "giải cùng hình" (hình SVG dính nửa
 Hiện trạng 3/11/2026: mẫu bài 33 (lesson_id 33) Dạng 3 `giao_thoa_2_nguon` chạy ở `/dev/btm`; code đã vào main qua nhánh `claude/wave-exercises-interactive-graphics-a3ea00`. **Chưa deploy, chưa đăng 33.json lên DB** (phải deploy code trước rồi mới publish JSON).
 
 **Why:** thầy muốn HS không phải cuộn qua lại giữa hình và lời giải (N8).
+Đ1 (23, 27, 31) và Đ2 (2, 11, 26 — họ `do_thi`, `tu_truong`, `thanh_nang_luong`) xong ở xem thử 3/11, chưa deploy/chưa đăng JSON. Treo: dạng chỉ `tom_de` chưa có UI hiện (chờ thầy chốt, mục F kế hoạch); học sinh ảo Đ2 chưa chạy.
 **How to apply:** phiên mới làm theo đợt trong KE-HOACH-MODEL.md, đợt kế tiếp là Đ1 (Opus: bài 23, 27, 31); 4 điểm chờ thầy chốt ở mục F. Liên quan [[project_thachlab_btm_quet_dang]].
