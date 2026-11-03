@@ -16,7 +16,7 @@ import type { LessonWorkedQuestion, WorkedTomDe, WorkedTool } from "@/features/l
 
 function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "giao_thoa_2_nguon") return <GiaoThoaHaiNguon {...tool} layer={layer} />;
-  if (tool.loai === "so_do_vecto") return <SoDoVecto {...tool} layer={layer} />;
+  if (tool.loai === "so_do_vecto" || tool.loai === "thanh_moment") return <SoDoVecto {...tool} layer={layer} />;
   return null;
 }
 

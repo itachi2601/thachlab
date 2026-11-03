@@ -93,7 +93,7 @@ function Block({ c, w, h, rot = 0, text, tx = 0 }: { c: P; w: number; h: number;
 /** `can`: điểm mẫu trên nét cảnh để bảng số "trong" tránh đè. */
 type Scene = { el: ReactNode; pts: Record<string, P>; box: [number, number, number, number]; doc?: number; day?: Record<string, number>; can?: P[] };
 
-function scene(nen: SoDoVectoTool["nen"]): Scene {
+function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
   if (nen.kieu === "mat_nghieng") {
     const al = nen.alpha, S = 17, s = -al; // s: hướng xuống dốc (dốc cao bên trái)
     const B: P = [(S * Math.cos(rad(al))) / 2, 0], T: P = [-(S * Math.cos(rad(al))) / 2, S * Math.sin(rad(al))];
@@ -205,11 +205,63 @@ function scene(nen: SoDoVectoTool["nen"]): Scene {
       box: [-9, -6, 5.5, 1.6],
     };
   }
+  if (nen.kieu === "thanh") {
+    // họ thanh_moment (3/11/2026, mẫu bài 21 dạng 4): thanh nằm ngang dài 16 đơn vị, toạ độ thật x (m) đo từ đầu trái
+    const K = 16 / nen.dai, X = (x: number) => -8 + x * K;
+    const pts: Record<string, P> = {}, day: Record<string, number> = {}, els: ReactNode[] = [];
+    let top = 1.4;
+    const khoiX = new Set((nen.khoi ?? []).map((k) => k.x));
+    if (nen.day) {
+      const C: P = [X(nen.day.x), 0], u = dirv(nen.day.goc);
+      const t = nen.tuong && u[0] < -1e-6 ? (-8 - C[0]) / u[0] : 9;
+      const E = add(C, u, t);
+      top = Math.max(top, E[1] + 1);
+      day[nen.day.tu] = nen.day.goc;
+      if (nen.day.ten_neo) pts[nen.day.ten_neo] = E;
+      els.push(<line key="day" x1={C[0]} y1={-C[1]} x2={E[0]} y2={-E[1]} stroke="currentColor" strokeWidth={0.1} />);
+      if (nen.day.ten_neo) els.push(<Label key="dn" p={add(E, [0.9, 0.3])} a="start">{nen.day.ten_neo}</Label>);
+    }
+    if (nen.tuong) els.push(<Hatch key="tg" a={[-8, -2.6]} b={[-8, top]} side={[-1, 0]} />);
+    if (nen.do && L >= (nen.do.buoc ?? 0)) {
+      const x = X(nen.do.x);
+      els.push(
+        nen.do.kieu === "gia_do" ? (
+          <g key="do" className={nen.do.buoc ? "cc-in" : undefined}>
+            <path d={`M${x} 0.22 L${x - 0.8} 1.6 L${x + 0.8} 1.6 Z`} fill="currentColor" fillOpacity={0.12} stroke="currentColor" strokeWidth={0.1} />
+            <Hatch a={[x - 1.4, -1.6]} b={[x + 1.4, -1.6]} side={[0, -1]} />
+          </g>
+        ) : (
+          <circle key="do" cx={x} cy={0} r={0.32} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.12} />
+        ),
+      );
+    }
+    els.unshift(<rect key="thanh" x={-8} y={-0.2} width={16} height={0.4} rx={0.1} fill="currentColor" fillOpacity={0.15} stroke="currentColor" strokeWidth={0.1} />);
+    (nen.khoi ?? []).forEach((k, i) => els.push(<Block key={`k${i}`} c={[X(k.x), 0]} w={2.7} h={1.3} text={k.text} />));
+    nen.diem.forEach((d) => {
+      const p: P = [X(d.x), 0];
+      pts[d.ten] = p;
+      if (L < (d.buoc ?? 0)) return;
+      const end = d.x <= 1e-9 ? -1 : d.x >= nen.dai - 1e-9 ? 1 : 0;
+      const vt = d.nhan ?? (end < 0 ? "trai" : end > 0 ? "phai" : "tren");
+      const off = khoiX.has(d.x) ? 1.7 : 0.75;
+      const lp0: P = vt === "trai" ? [p[0] - off, 0] : vt === "phai" ? [p[0] + off, 0] : vt === "duoi" ? [p[0], -1.0] : [p[0], khoiX.has(d.x) ? 1.35 : 0.85];
+      const lp = add(lp0, d.nhan_lech ?? [0, 0]);
+      els.push(
+        <g key={`p${d.ten}`} className={d.buoc ? "cc-in" : undefined}>
+          {!khoiX.has(d.x) && <circle cx={p[0]} cy={0} r={0.13} fill="currentColor" />}
+          <Label p={lp} a={vt === "trai" ? "end" : vt === "phai" ? "start" : "middle"}>
+            {d.ten}
+          </Label>
+        </g>,
+      );
+    });
+    return { el: <g>{els}</g>, pts, box: [-9, -1.8, 9, top], day, can: Array.from({ length: 33 }, (_, i): P => [-8 + i / 2, 0.7]) };
+  }
   return { el: null, pts: { O: [0, 0] }, box: [-1, -1, 1, 1] };
 }
 
-export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [], bang_vi_tri, ti_le, layer: L }: SoDoVectoTool & { layer: number }) {
-  const sc = scene(nen);
+export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [], bang_vi_tri, ti_le, kich_thuoc = [], tay_don = [], layer: L }: SoDoVectoTool & { layer: number }) {
+  const sc = scene(nen, L);
   const pt = (p: VecPoint | undefined): P => (Array.isArray(p) ? p : sc.pts[p ?? Object.keys(sc.pts)[0]] ?? [0, 0]);
   const dir = (d: VecDir): number => {
     if (typeof d === "number") return d;
@@ -226,7 +278,7 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   const maxBy: Record<string, number> = {};
   vec.forEach((v) => (maxBy[nhom(v.kieu)] = Math.max(maxBy[nhom(v.kieu)] ?? 0, Math.abs(v.do_lon))));
   // a, v khác đơn vị với lực và với nhau → độ dài cố định (chỉ chỉ hướng), lực thì theo tỉ lệ độ lớn
-  const len = (v: (typeof vec)[number]) => (v.kieu === "dong_hoc" ? 3 : Math.max(1.6, (Math.abs(v.do_lon) / (maxBy[nhom(v.kieu)] || 1)) * (ti_le ?? 5)));
+  const len = (v: (typeof vec)[number]) => (v.kieu === "dong_hoc" ? 3 : Math.max(nen.kieu === "thanh" ? 1.2 : 1.6, (Math.abs(v.do_lon) / (maxBy[nhom(v.kieu)] || 1)) * (ti_le ?? 5)));
 
   const geo = vec.map((v) => {
     const d = dir(v.goc), o = add(pt(v.tu), v.lech ?? [0, 0]), u = dirv(d), e = add(o, u, len(v));
@@ -263,6 +315,41 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
     const m = (dir(g.tu) + dir(g.den)) / 2;
     grow(add(pt(g.tai), dirv(m), (g.r ?? 1.6) + 1.4), 1.2, 0.8);
   });
+  // cánh tay đòn: lực thẳng đứng trên thanh ngang → ngoặc đo dưới thanh; lực xiên → đoạn vuông góc từ trục tới giá của lực
+  type Dim = { a: number; b: number; text?: string; buoc: number; an: number; row?: number };
+  const dims: Dim[] = kich_thuoc.map((k) => ({ a: pt(k.a)[0], b: pt(k.b)[0], text: k.text, buoc: k.buoc ?? 0, an: k.an ?? 99 }));
+  const xien: { A: P; F: P; o: P; u: P; text?: string; buoc: number; an: number }[] = [];
+  tay_don.forEach((t) => {
+    const g = byName(t.luc);
+    if (!g) return;
+    const A = pt(t.truc), k = (A[0] - g.o[0]) * g.u[0] + (A[1] - g.o[1]) * g.u[1], F = add(g.o, g.u, k);
+    if (Math.abs(g.u[0]) < 1e-6 && Math.abs(A[1] - g.o[1]) < 1e-6) dims.push({ a: A[0], b: g.o[0], text: t.text, buoc: t.buoc ?? 0, an: t.an ?? 99 });
+    else xien.push({ A, F, o: g.o, u: g.u, text: t.text, buoc: t.buoc ?? 0, an: t.an ?? 99 });
+  });
+  // xếp hàng ngoặc đo: hai ngoặc chung hàng nếu không chồng nhau về bề ngang HOẶC không cùng hiện ở bước nào (hình không đổi cao)
+  const span = (d: Dim): [number, number] => {
+    const w = d.text ? textLen(d.text) * 0.6 + 0.6 : 0, lo = Math.min(d.a, d.b), hi = Math.max(d.a, d.b), m = (lo + hi) / 2;
+    return [Math.min(lo, m - w / 2) - 0.2, Math.max(hi, m + w / 2) + 0.2];
+  };
+  // chung hàng được khi đoạn đo chỉ chạm đầu nhau (chuỗi A|O|G) và chữ không đè nhau
+  const seg = (d: Dim): [number, number] => [Math.min(d.a, d.b), Math.max(d.a, d.b)];
+  const clash = (d: Dim, e: Dim) => (seg(e)[0] < seg(d)[1] - 1e-6 && seg(d)[0] < seg(e)[1] - 1e-6) || (span(e)[0] < span(d)[1] && span(d)[0] < span(e)[1] && !!d.text && !!e.text && Math.abs((seg(d)[0] + seg(d)[1]) - (seg(e)[0] + seg(e)[1])) / 2 < (textLen(d.text) + textLen(e.text)) * 0.3 + 0.4);
+  dims.forEach((d, i) => {
+    let r = 0;
+    while (dims.slice(0, i).some((e) => e.row === r && clash(d, e) && e.buoc < d.an && d.buoc < e.an)) r++;
+    d.row = r;
+  });
+  const dimTop = Math.min(y0, ...geo.flatMap((g) => [g.e[1], g.lp[1] - 0.5])) - 0.5;
+  const dimY = (r: number) => dimTop - 0.4 - r * 1.7;
+  dims.forEach((d) => {
+    grow([span(d)[0], dimY(d.row ?? 0) - 0.75], 0, 0.6);
+    grow([span(d)[1], dimY(d.row ?? 0) - 0.75], 0, 0.6);
+  });
+  xien.forEach((x) => {
+    grow(x.F);
+    if (x.text) grow(add(x.A, [(x.F[0] - x.A[0]) / 2, (x.F[1] - x.A[1]) / 2]), textLen(x.text) * 0.35 + 0.8, 1);
+  });
+
   // bảng số: mọi dòng ở mọi lớp để giữ chỗ
   const rows = [
     ...geo.filter((g) => g.v.so).map((g) => ({ text: `${g.v.ten} = ${g.v.so}`, fill: MAU[g.v.mau ?? "muc"], b: g.v.so_buoc ?? g.v.buoc ?? 0, den: undefined as number | undefined })),
@@ -273,7 +360,7 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   const bh = rows.length * lh;
   if (y1 - y0 < bh + 0.6) y0 = y1 - bh - 0.6;
   // "trong": góc trên phải của khung (mặt nghiêng để trống góc đó) — không nới bề ngang, hình to hơn ở 375px
-  const vt = bang_vi_tri ?? (nen.kieu === "mat_nghieng" ? "trong" : "phai");
+  const vt = bang_vi_tri ?? (nen.kieu === "mat_nghieng" || nen.kieu === "thanh" ? "trong" : "phai");
   // "trong": dời sang phải cho tới khi không đè nét/nhãn nào trong dải cao của bảng
   const band = obs.filter((p) => p[1] >= y1 - bh - 0.5 && p[1] <= y1 + 0.5);
   const bx = vt === "trai" ? x0 - bw : vt === "trong" ? Math.max(x1 - bw, ...band.map((p) => p[0] + 0.5)) : x1 + 0.6;
@@ -345,6 +432,42 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
             <Label p={lp} a={a} fill={col}>
               <Sub s={v.ten} />
             </Label>
+          </g>
+        );
+      })}
+      {dims.map((d, i) => {
+        if (!show(d.buoc, d.an)) return null;
+        const y = dimY(d.row ?? 0), lo = Math.min(d.a, d.b), hi = Math.max(d.a, d.b);
+        return (
+          <g key={`kt${i}`} className={d.buoc > 0 ? "cc-in" : undefined} color={MAU.cam}>
+            {[lo, hi].map((x) => (
+              <line key={x} x1={x} y1={0.3} x2={x} y2={-y + 0.35} stroke="currentColor" strokeWidth={0.05} strokeDasharray="0.12 0.18" opacity={0.6} />
+            ))}
+            <path d={`M${lo} ${-y - 0.3} v0.6 M${lo} ${-y} H${hi} M${hi} ${-y - 0.3} v0.6`} stroke="currentColor" strokeWidth={0.09} fill="none" />
+            {d.text && (
+              <Label p={[(lo + hi) / 2, y - 0.75]} size={1} fill="currentColor">
+                <Sub s={d.text} />
+              </Label>
+            )}
+          </g>
+        );
+      })}
+      {xien.map((x, i) => {
+        if (!show(x.buoc, x.an)) return null;
+        const v: P = [x.A[0] - x.F[0], x.A[1] - x.F[1]], n = Math.hypot(v[0], v[1]) || 1, w: P = [v[0] / n, v[1] / n];
+        const q = 0.45, c1 = add(x.F, x.u, q), c2 = add(c1, w, q), c3 = add(x.F, w, q);
+        const back = (x.F[0] - x.o[0]) * x.u[0] + (x.F[1] - x.o[1]) * x.u[1] < 0;
+        const m = add(x.A, [-v[0] / 2, -v[1] / 2]);
+        return (
+          <g key={`td${i}`} className={x.buoc > 0 ? "cc-in" : undefined}>
+            {back && <line x1={x.o[0]} y1={-x.o[1]} x2={x.F[0]} y2={-x.F[1]} stroke="currentColor" strokeWidth={0.06} strokeDasharray="0.3 0.2" opacity={0.7} />}
+            <line x1={x.A[0]} y1={-x.A[1]} x2={x.F[0]} y2={-x.F[1]} stroke={MAU.cam} strokeWidth={0.12} />
+            <path d={`M${sv(c1)} L${sv(c2)} L${sv(c3)}`} stroke={MAU.cam} strokeWidth={0.06} fill="none" />
+            {x.text && (
+              <Label p={add(m, [-w[1] * (x.u[0] < 0 ? -1 : 1), w[0] * (x.u[0] < 0 ? -1 : 1)], 1)} fill={MAU.cam} size={1} a={x.u[0] < 0 ? "end" : "start"}>
+                <Sub s={x.text} />
+              </Label>
+            )}
           </g>
         );
       })}

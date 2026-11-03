@@ -152,14 +152,26 @@ type Mau = "muc" | "cam" | "lam" | "tim";
 
 /** 🧪 Họ `so_do_vecto` (3/11/2026): cảnh vẽ bằng code + vectơ khai ở đây; `buoc` = hiện khi đã xong bước đó (0 = có từ đầu), `den` = ẩn từ bước đó. */
 export type SoDoVectoTool = {
-  loai: "so_do_vecto";
+  /** "thanh_moment" dùng chung component, cảnh `nen.kieu: "thanh"` (thanh ngang, x thật tính từ đầu trái). */
+  loai: "so_do_vecto" | "thanh_moment";
   nen:
     | { kieu: "mat_ngang"; vat?: string; vat_x?: number }
     | { kieu: "mat_nghieng"; alpha: number; vat?: string; vat_t?: number; dai?: string }
     | { kieu: "nut"; day: { goc: number; dai: number; neo: "tuong" | "tran" | "cot" | "vat" | "khong"; ten?: string; vat?: string }[] }
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
-    | { kieu: "khong" };
+    | { kieu: "khong" }
+    | {
+        kieu: "thanh";
+        dai: number;
+        diem: { ten: string; x: number; buoc?: number; nhan?: "tren" | "duoi" | "trai" | "phai"; nhan_lech?: [number, number] }[];
+        /** Giá đỡ nhọn dưới thanh hoặc bản lề (vòng tròn); `buoc` = hiện khi xong bước đó (vd vị trí O là đáp số). */
+        do?: { kieu: "gia_do" | "ban_le"; x: number; buoc?: number };
+        khoi?: { x: number; text?: string }[];
+        /** Dây từ điểm `tu` (tên điểm, x thật) theo hướng `goc` tới tường trái (nếu `tuong`). Hướng "day:<tu>". */
+        day?: { tu: string; x: number; goc: number; ten_neo?: string };
+        tuong?: boolean;
+      };
   /** kieu: "luc" (mặc định, nét liền) · "thanh_phan" (nét đứt) · "dong_hoc" (a, v: màu lam, tỉ lệ riêng). `so` = độ lớn hiện ở bảng số từ bước `so_buoc` (mặc định = `buoc`). */
   vec: { ten: string; goc: VecDir; do_lon: number; tu?: VecPoint; lech?: [number, number]; buoc?: number; den?: number; kieu?: "luc" | "thanh_phan" | "dong_hoc"; mau?: Mau; so?: string; so_buoc?: number; nhan_lech?: [number, number] }[];
   /** Nét chấm từ ngọn vectơ `vec` tới ngọn các thành phần (hình bình hành / hình chữ nhật phân tích). */
@@ -172,6 +184,10 @@ export type SoDoVectoTool = {
   bang_vi_tri?: "trai" | "phai" | "trong";
   /** Độ dài (đơn vị hình) của vectơ lớn nhất mỗi nhóm; mặc định 5. */
   ti_le?: number;
+  /** Ngoặc đo ngang dưới hình (vd AB = 1,0 m); `an` = ẩn từ bước đó. */
+  kich_thuoc?: { a: VecPoint; b: VecPoint; text?: string; buoc?: number; an?: number }[];
+  /** Cánh tay đòn của lực `luc` đối với trục qua điểm `truc`: lực đứng → ngoặc đo; lực xiên → đoạn vuông góc + dấu góc vuông. */
+  tay_don?: { truc: VecPoint; luc: string; text?: string; buoc?: number; an?: number }[];
 };
 
 export interface WorkedMeo {
