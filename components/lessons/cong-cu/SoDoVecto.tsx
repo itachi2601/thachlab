@@ -211,6 +211,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
     const pts: Record<string, P> = {}, day: Record<string, number> = {}, els: ReactNode[] = [];
     let top = 1.4;
     const khoiX = new Set((nen.khoi ?? []).map((k) => k.x));
+    const nhanP: P[] = (nen.khoi ?? []).map((k): P => [X(k.x) + 1.4, 0.7]);
     if (nen.day) {
       const C: P = [X(nen.day.x), 0], u = dirv(nen.day.goc);
       const t = nen.tuong && u[0] < -1e-6 ? (-8 - C[0]) / u[0] : 9;
@@ -246,6 +247,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
       const off = khoiX.has(d.x) ? 1.7 : 0.75;
       const lp0: P = vt === "trai" ? [p[0] - off, 0] : vt === "phai" ? [p[0] + off, 0] : vt === "duoi" ? [p[0], -1.0] : [p[0], khoiX.has(d.x) ? 1.35 : 0.85];
       const lp = add(lp0, d.nhan_lech ?? [0, 0]);
+      nhanP.push([lp[0] + (vt === "phai" ? 1.2 : 0.6), lp[1] + 0.5]);
       els.push(
         <g key={`p${d.ten}`} className={d.buoc ? "cc-in" : undefined}>
           {!khoiX.has(d.x) && <circle cx={p[0]} cy={0} r={0.13} fill="currentColor" />}
@@ -255,7 +257,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
         </g>,
       );
     });
-    return { el: <g>{els}</g>, pts, box: [-9, -1.8, 9, top], day, can: Array.from({ length: 33 }, (_, i): P => [-8 + i / 2, 0.7]) };
+    return { el: <g>{els}</g>, pts, box: [-9, -1.8, 9, top], day, can: [...Array.from({ length: 33 }, (_, i): P => [-8 + i / 2, 0.7]), ...nhanP] };
   }
   return { el: null, pts: { O: [0, 0] }, box: [-1, -1, 1, 1] };
 }
@@ -347,14 +349,21 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   });
   xien.forEach((x) => {
     grow(x.F);
-    if (x.text) grow(add(x.A, [(x.F[0] - x.A[0]) / 2, (x.F[1] - x.A[1]) / 2]), textLen(x.text) * 0.35 + 0.8, 1);
+    if (x.text) {
+      // nhãn neo start/end ở trung điểm, lệch 1 đơn vị — giữ chỗ đúng phía chữ chạy
+      const L = Math.hypot(x.A[0] - x.F[0], x.A[1] - x.F[1]) || 1, k = x.u[0] < 0 ? -1 : 1;
+      const w: P = [(x.A[0] - x.F[0]) / L, (x.A[1] - x.F[1]) / L];
+      const p = add(add(x.A, [(x.F[0] - x.A[0]) / 2, (x.F[1] - x.A[1]) / 2]), [-w[1] * k, w[0] * k], 1);
+      grow(p, 0, 0.8);
+      grow([p[0] + k * (textLen(x.text) * 0.6 + 0.3), p[1]], 0, 0.8);
+    }
   });
 
   // bảng số: mọi dòng ở mọi lớp để giữ chỗ
   const rows = [
     ...geo.filter((g) => g.v.so).map((g) => ({ text: `${g.v.ten} = ${g.v.so}`, fill: MAU[g.v.mau ?? "muc"], b: g.v.so_buoc ?? g.v.buoc ?? 0, den: undefined as number | undefined })),
     ...bang.map((r) => ({ text: r.text, fill: MAU[r.mau ?? "muc"], b: r.buoc ?? 0, den: r.den })),
-  ];
+  ].sort((p, q) => p.b - q.b); // dòng hiện theo thứ tự bước, từ trên xuống
   const bw = rows.length ? Math.max(...rows.map((r) => textLen(r.text))) * FS * 0.6 + 1 : 0;
   const lh = FS * 1.45;
   const bh = rows.length * lh;

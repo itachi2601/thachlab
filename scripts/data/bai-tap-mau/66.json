@@ -579,7 +579,151 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_moment",
+    "nen": {
+     "kieu": "thanh",
+     "dai": 1.5,
+     "tuong": true,
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0,
+       "nhan": "duoi",
+       "nhan_lech": [
+        0.9,
+        0
+       ]
+      },
+      {
+       "ten": "B",
+       "x": 1.5
+      },
+      {
+       "ten": "G",
+       "x": 0.75
+      },
+      {
+       "ten": "C",
+       "x": 1.2,
+       "nhan": "duoi"
+      }
+     ],
+     "do": {
+      "kieu": "ban_le",
+      "x": 0
+     },
+     "khoi": [
+      {
+       "x": 1.5,
+       "text": "16 N"
+      }
+     ],
+     "day": {
+      "tu": "C",
+      "x": 1.2,
+      "goc": 150
+     }
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 40,
+      "tu": "G",
+      "so": "40 N"
+     },
+     {
+      "ten": "P_1",
+      "goc": "xuong",
+      "do_lon": 16,
+      "tu": "B"
+     },
+     {
+      "ten": "T",
+      "goc": "day:C",
+      "do_lon": 90,
+      "tu": "C",
+      "buoc": 3,
+      "mau": "cam",
+      "so": "90 N"
+     },
+     {
+      "ten": "T_y",
+      "goc": "len",
+      "do_lon": 45,
+      "tu": "C",
+      "buoc": 4,
+      "kieu": "thanh_phan",
+      "mau": "cam",
+      "so": "45 N"
+     },
+     {
+      "ten": "N_y",
+      "goc": "len",
+      "do_lon": 11,
+      "tu": "A",
+      "buoc": 5,
+      "mau": "lam",
+      "so": "11 N",
+      "so_buoc": 4
+     }
+    ],
+    "goc": [
+     {
+      "tai": "C",
+      "tu": 150,
+      "den": 180,
+      "r": 2.2,
+      "text": "30°"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "G",
+      "text": "0,75",
+      "buoc": 2
+     },
+     {
+      "a": "A",
+      "b": "B",
+      "text": "1,5 m",
+      "buoc": 2
+     }
+    ],
+    "tay_don": [
+     {
+      "truc": "A",
+      "luc": "T",
+      "text": "d_T",
+      "buoc": 1
+     }
+    ],
+    "bang": [
+     {
+      "text": "d_T = 0,6 m",
+      "buoc": 1,
+      "mau": "cam"
+     },
+     {
+      "text": "M = 54 N·m",
+      "buoc": 2
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Thanh đồng chất $AB=1{,}5\\ \\text{m}$, $P=40\\ \\text{N}$, nằm ngang",
+     "Biển hiệu $16\\ \\text{N}$ ở $B$",
+     "Bản lề ở $A$; dây ở $C$: $AC=1{,}2\\ \\text{m}$, hợp với thanh $30^\\circ$"
+    ],
+    "tim": [
+     "a) Lực căng $T$",
+     "b) $N_y$ của bản lề: độ lớn, hướng"
+    ]
+   }
   }
  ],
  "tu_luan": {
