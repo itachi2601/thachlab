@@ -150,7 +150,34 @@ export type WorkedTool =
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
   | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; lop?: NangLuongLop[][] }
-  | SoDoVectoTool;
+  | SoDoVectoTool
+  | { loai: "dien_truong_deu"; L: number; d: number; duong: "tren" | "duoi"; v0?: string; hinh?: DienTruongLop[]; lop?: DienTruongLop[][] }
+  | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] };
+
+/** Điện trường đều (Đ3): x tính từ mép vào của bản (cùng đơn vị L), y tính từ đường giữa hai bản (cùng đơn vị d), lên là dương. */
+export type DienTruongLop =
+  | LopGhi
+  | { loai: "duong_suc"; nhan?: string; het?: number }
+  | { loai: "luc"; huong: "len" | "xuong"; nhan?: string; het?: number }
+  | { loai: "quy_dao"; y_cuoi: number; cat?: boolean; dut?: boolean; mau?: "max" | "min"; het?: number }
+  | { loai: "thuoc_ngang"; tu: number; den: number; nhan: string; vi: "tren" | "duoi"; het?: number }
+  | { loai: "thuoc_doc"; x: number; tu: number; den: number; nhan: string; ben?: "trai" | "phai"; mau?: "max" | "min"; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number };
+/** Mạch điện (Đ3): toạ độ 0..20 ngang, 0..11 dọc, gốc dưới trái (y lên). Linh kiện đặt TÂM tại (x, y), che dây bên dưới bằng nền halo. */
+export type MachDienHuong = "ngang" | "doc";
+export type MachDienLop =
+  | LopGhi
+  | { loai: "day"; diem: [number, number][]; dut?: boolean; mau?: "max" | "min"; het?: number }
+  | { loai: "nut"; x: number; y: number; het?: number }
+  | { loai: "nguon"; x: number; y: number; huong?: MachDienHuong; duong?: "truoc" | "sau"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "dien_tro"; x: number; y: number; huong?: MachDienHuong; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "den"; x: number; y: number; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "dong_ho"; x: number; y: number; kieu: "V" | "A"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "khoa"; x: number; y: number; huong?: MachDienHuong; mo?: boolean; het?: number }
+  | { loai: "dong"; tu: [number, number]; den: [number, number]; nhan?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "ngoac"; tu: [number, number]; den: [number, number]; nhan: string; vi?: "t" | "b"; mau?: "max" | "min"; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number }
+  | { loai: "bang"; x: number; y: number; hang: string[][]; het?: number };
 
 /** Mục vẽ thêm của từng bước (lop[i] hiện khi em đã xong bước i + 1; `het: k` ẩn từ khi xong bước k). Góc theo đơn vị π. */
 type LopGhi = { loai: "ghi"; text: string; het?: number };

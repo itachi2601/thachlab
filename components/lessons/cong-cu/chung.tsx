@@ -90,7 +90,8 @@ export function ghiMoiNhat(lop: ({ loai: string; text?: string } & LopChung)[][]
 
 /** Ghi dài hơn bề ngang `w` ở cỡ `size` thì tách hai dòng ở khoảng trắng gần giữa (ưu tiên trước "⇒"), khỏi thu chữ quá nhỏ. */
 export function chiaDong(t: string, w: number, size: number): string[] {
-  if (t.length * 0.6 * size <= w) return [t];
+  // độ dài hiển thị: bỏ ký hiệu chỉ số dưới "_{…}"
+  if (t.replace(/_\{([^}]*)\}/g, "$1").replace(/_/g, "").length * 0.6 * size <= w) return [t];
   const cut = [...t.matchAll(/ (?=⇒)| /g)].map((m) => m.index!);
   if (!cut.length) return [t];
   const mid = t.length / 2,

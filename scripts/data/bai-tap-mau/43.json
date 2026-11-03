@@ -80,7 +80,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$\\mathcal{E}=12\\ \\text{V}$",
+     "$I=0{,}50\\ \\text{A}$",
+     "Công lực lạ $A=1{,}8\\cdot10^{3}\\ \\text{J}$"
+    ],
+    "tim": [
+     "a) $q$",
+     "b) $t$",
+     "c) $A'$ của pin $1{,}5\\ \\text{V}$ với cùng $q$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -195,7 +207,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Hở mạch: vôn kế chỉ $9{,}0\\ \\text{V}$",
+     "Nối $R=30\\ \\Omega$: vôn kế chỉ $7{,}5\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $\\mathcal{E}$",
+     "b) $I$",
+     "c) $r$",
+     "d) $I_{\\text{đm}}$ khi nối tắt"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -294,7 +318,246 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Lần 1: $R_1=3{,}0\\ \\Omega$, $U_1=3{,}6\\ \\text{V}$",
+     "Lần 2: $R_2=10\\ \\Omega$, $U_2=5{,}0\\ \\text{V}$",
+     "Vôn kế lí tưởng ở hai cực nguồn"
+    ],
+    "tim": [
+     "a) $I_1$, $I_2$",
+     "b) $r$, $\\mathcal{E}$",
+     "c) $I_{\\text{đm}}$ khi nối tắt"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.5,
+        5.0
+       ],
+       [
+        2.5,
+        9.6
+       ],
+       [
+        17.5,
+        9.6
+       ],
+       [
+        17.5,
+        5.0
+       ],
+       [
+        2.5,
+        5.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        11,
+        9.6
+       ],
+       [
+        11,
+        5.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 11,
+      "y": 9.6
+     },
+     {
+      "loai": "nut",
+      "x": 11,
+      "y": 5.0
+     },
+     {
+      "loai": "nguon",
+      "x": 2.5,
+      "y": 7.3,
+      "huong": "doc"
+     },
+     {
+      "loai": "chu",
+      "x": 3.6,
+      "y": 6.9,
+      "text": "ℰ, r",
+      "a": "start",
+      "het": 2
+     },
+     {
+      "loai": "dong_ho",
+      "x": 11,
+      "y": 7.3,
+      "kieu": "V"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 17.5,
+      "y": 7.3,
+      "huong": "doc",
+      "ten": "R",
+      "vi": "l"
+     },
+     {
+      "loai": "bang",
+      "x": 10,
+      "y": 4.2,
+      "hang": [
+       [
+        "",
+        "R",
+        "U",
+        "I"
+       ],
+       [
+        "Lần 1",
+        "3,0 Ω",
+        "3,6 V",
+        "?"
+       ],
+       [
+        "Lần 2",
+        "10 Ω",
+        "5,0 V",
+        "?"
+       ]
+      ],
+      "het": 1
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        5,
+        9.6
+       ],
+       "den": [
+        8,
+        9.6
+       ],
+       "nhan": "I",
+       "vi": "t"
+      },
+      {
+       "loai": "bang",
+       "x": 10,
+       "y": 4.2,
+       "hang": [
+        [
+         "",
+         "R",
+         "U",
+         "I"
+        ],
+        [
+         "Lần 1",
+         "3,0 Ω",
+         "3,6 V",
+         "1,2 A"
+        ],
+        [
+         "Lần 2",
+         "10 Ω",
+         "5,0 V",
+         "0,50 A"
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "I = U/R: I₁ = 3,6 : 3,0 = 1,2 A · I₂ = 5,0 : 10 = 0,50 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 3.6,
+       "y": 7.8,
+       "text": "r = 2,0 Ω",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U₂ − U₁ = (I₁ − I₂)r ⇒ r = 1,4 : 0,70 = 2,0 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 3.6,
+       "y": 6.2,
+       "text": "ℰ = 6,0 V",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℰ = U₁ + I₁r = 3,6 + 1,2·2,0 = 6,0 V"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "diem": [
+        [
+         2.5,
+         9.6
+        ],
+        [
+         0.6,
+         9.6
+        ],
+        [
+         0.6,
+         5.0
+        ],
+        [
+         2.5,
+         5.0
+        ]
+       ],
+       "dut": true,
+       "mau": "max"
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        0.6,
+        8.2
+       ],
+       "den": [
+        0.6,
+        6.4
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Nối tắt: I_{đm} = ℰ/r = 6,0 : 2,0 = 3,0 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lần 2: ℰ − I₂r = 5,0 V = U₂ ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -417,7 +680,278 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "8 pin: 2 dãy song song, mỗi dãy 4 pin nối tiếp",
+     "$\\mathcal{E}_0=1{,}5\\ \\text{V}$, $r_0=0{,}50\\ \\Omega$",
+     "Đèn $R=3{,}0\\ \\Omega$"
+    ],
+    "tim": [
+     "a) $\\mathcal{E}_b$, $r_b$",
+     "b) $I$ qua đèn",
+     "c) $U$ hai cực bộ nguồn",
+     "d) $I_{\\text{pin}}$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        9.0
+       ],
+       [
+        13,
+        9.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        7.0
+       ],
+       [
+        13,
+        7.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        9.0
+       ],
+       [
+        3,
+        2.2
+       ],
+       [
+        13,
+        2.2
+       ],
+       [
+        13,
+        9.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 3,
+      "y": 7.0
+     },
+     {
+      "loai": "nut",
+      "x": 13,
+      "y": 7.0
+     },
+     {
+      "loai": "nguon",
+      "x": 5,
+      "y": 9.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 7,
+      "y": 9.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 9,
+      "y": 9.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 11,
+      "y": 9.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 5,
+      "y": 7.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 7,
+      "y": 7.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 9,
+      "y": 7.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "nguon",
+      "x": 11,
+      "y": 7.0,
+      "huong": "ngang"
+     },
+     {
+      "loai": "chu",
+      "x": 13.6,
+      "y": 8.6,
+      "text": "ℰ_0, r_0",
+      "a": "start",
+      "het": 2
+     },
+     {
+      "loai": "den",
+      "x": 8,
+      "y": 2.2,
+      "ten": "R = 3,0 Ω",
+      "vi": "t"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngoac",
+       "tu": [
+        4.2,
+        10.0
+       ],
+       "den": [
+        11.8,
+        10.0
+       ],
+       "nhan": "ℰ_b = 4·1,5 = 6,0 V",
+       "vi": "t",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Một dãy 4 pin nối tiếp; hai dãy song song giữ ℰ ⇒ ℰ_b = 6,0 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.6,
+       "y": 8.6,
+       "text": "2,0 Ω",
+       "a": "start",
+       "het": 5
+      },
+      {
+       "loai": "chu",
+       "x": 13.6,
+       "y": 6.6,
+       "text": "2,0 Ω",
+       "a": "start",
+       "het": 5
+      },
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 4.9,
+       "text": "r_b = 1,0 Ω",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Một dãy 4r₀ = 2,0 Ω; hai dãy song song ⇒ r_b = 1,0 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        13,
+        5.6
+       ],
+       "den": [
+        13,
+        3.8
+       ],
+       "nhan": "I = 1,5 A",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ_b/(R + r_b) = 1,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 0.6,
+       "text": "U = IR = 4,5 V",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U = IR = 1,5·3,0 = 4,5 V (= ℰ_b − Ir_b)"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        11.5,
+        9.0
+       ],
+       "den": [
+        12.7,
+        9.0
+       ]
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        11.5,
+        7.0
+       ],
+       "den": [
+        12.7,
+        7.0
+       ]
+      },
+      {
+       "loai": "chu",
+       "x": 13.6,
+       "y": 8.6,
+       "text": "0,75 A",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 13.6,
+       "y": 6.6,
+       "text": "0,75 A",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai dãy giống nhau chia đều: I_{pin} = I/2 = 0,75 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Một dãy: 6,0 − 0,75·2,0 = 4,5 V ✓"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
