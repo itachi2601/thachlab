@@ -547,7 +547,131 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=200\\ \\text{g}$, lò xo ngang, $t=0$ ở biên",
+     "Đồ thị $W_t$, $W_{\\text{đ}}$ cắt nhau tại $t=0{,}05\\ \\text{s}$ và $0{,}15\\ \\text{s}$, ở mức $45\\ \\text{mJ}$",
+     "$\\pi^2=10$"
+    ],
+    "tim": [
+     "a) $W$, $T$",
+     "b) $k$, $A$",
+     "c) $v_{max}$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 0.45,
+     "ten": "t (s)",
+     "vach": [
+      0.05,
+      0.15
+     ]
+    },
+    "y": {
+     "min": 0,
+     "max": 105,
+     "ten": "W (mJ)",
+     "vach": [
+      45
+     ]
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "cos",
+       "a": 45,
+       "w": 10,
+       "c": 45
+      },
+      "mau": "max",
+      "ten": "W_t",
+      "ten_xy": [
+       0.215,
+       99
+      ]
+     },
+     {
+      "ham": {
+       "kieu": "cos",
+       "a": -45,
+       "w": 10,
+       "c": 45
+      },
+      "mau": "min",
+      "ten": "W_đ",
+      "ten_xy": [
+       0.115,
+       99
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "x": 0.05,
+       "y": 45,
+       "vi": "r"
+      },
+      {
+       "loai": "ngang",
+       "y": 90,
+       "nhan": "90"
+      },
+      {
+       "loai": "ghi",
+       "text": "Cắt nhau: W_t = W_đ = W/2 = 45 ⇒ W = 90 mJ"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0.15,
+       "y": 45,
+       "vi": "r"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0.05,
+       "den": 0.15,
+       "y": 24,
+       "nhan": "T/4 = 0,1 s",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai lần cắt liên tiếp cách T/4 ⇒ T = 0,4 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 5π rad/s ⇒ k = mω² = 50 N/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W = ½kA² ⇒ A = √(2W/k) = 0,06 m = 6 cm"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0.1,
+       "y": 90
+      },
+      {
+       "loai": "ghi",
+       "text": "Qua VTCB: W_đ = W ⇒ v_{max} = √(2W/m) ≈ 0,95 m/s"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
