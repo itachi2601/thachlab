@@ -3438,7 +3438,10 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 .exam-content .bt-ask { margin: 8px 0 0 36px; }
 .exam-content .bt-ask + .bt-ask { margin-top: 14px; }
 .exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
-.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-row .bt-ask-unit { flex: 0 0 auto; white-space: nowrap; }
+.exam-content .bt-ask-row .lesson-btn-ghost { flex: 0 0 auto; }
+.exam-content .bt-ask-row .bt-ask-input { flex: 1 1 7.5em; min-width: 4.5em; } /* 375px: ô nhập co lại để đơn vị dài (m/s²) + nút Kiểm tra cùng một dòng (HS ảo 3/11, D6) */
 .exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
 .exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
 .exam-content .bt-ask-unit { color: #94a3b8; }
@@ -3497,7 +3500,7 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
 }
 .cc-fig { display: block; width: 100%; height: calc(42svh - 96px); min-height: 150px; max-height: 340px; }
 .cc-stepper { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 600; }
-.cc-step-title { flex: 1; min-width: 0; text-align: center; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cc-step-title { flex: 1; min-width: 0; text-align: center; font-size: 13.5px; line-height: 1.25; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-wrap: balance; } /* 2 dòng thay vì cắt "Hướng của gia …" ở 375px (HS ảo 3/11, C2) */
 .cc-hint { margin: 2px 0 0; min-height: 2.7em; font-size: 13.5px; line-height: 1.35; text-align: center; color: var(--color-muted); text-wrap: balance; }
 .cc-stepper button { flex: 0 0 auto; min-width: 44px; min-height: 44px; border: 1px solid var(--color-line-strong); border-radius: 9px; background: none; color: inherit; font-size: 16px; cursor: pointer; }
 .cc-stepper button:disabled { opacity: .3; cursor: default; }

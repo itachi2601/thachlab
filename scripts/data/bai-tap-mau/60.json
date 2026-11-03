@@ -114,7 +114,25 @@
      ]
     },
     {
-     "tieu_de": "Hướng của gia tốc"
+     "tieu_de": "Hướng của gia tốc",
+     "hoi": "Gia tốc của thùng hướng về đâu?",
+     "lua_chon": [
+      {
+       "text": "Về phía người kéo (cùng chiều lực kéo $\\vec F$)",
+       "dung": true
+      },
+      {
+       "text": "Ra xa người kéo (cùng chiều lực ma sát $\\vec F_{\\text{ms}}$)",
+       "dung": false,
+       "vi_sao": "Gia tốc cùng hướng với <b>hợp lực</b>. Lực kéo lớn hơn ma sát nên hợp lực hướng về phía người kéo, không theo ma sát."
+      },
+      {
+       "text": "Không xác định được vì hai lực ngược chiều nhau",
+       "dung": false,
+       "vi_sao": "Hai lực ngược chiều thì hợp lực theo chiều lực lớn hơn; đã tính được hợp lực $70\\ \\text{N}$ nên hướng gia tốc xác định được."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ vật trượt về phía người kéo thì ma sát quyết định hướng gia tốc; thực ra gia tốc theo hướng hợp lực."
     },
     {
      "tieu_de": "Kiểm tra"
@@ -135,7 +153,8 @@
       "lech": [
        1.5,
        0
-      ]
+      ],
+      "so": "120 N"
      },
      {
       "ten": "F_ms",
@@ -149,7 +168,8 @@
       "nhan_lech": [
        -0.6,
        0.8
-      ]
+      ],
+      "so": "50 N"
      },
      {
       "ten": "F_hl",
@@ -390,7 +410,8 @@
       "lech": [
        1.5,
        0
-      ]
+      ],
+      "so": "54 N"
      },
      {
       "ten": "F_ms",
@@ -404,7 +425,8 @@
       "nhan_lech": [
        -0.6,
        0.8
-      ]
+      ],
+      "so": "18 N"
      },
      {
       "ten": "F_hl",

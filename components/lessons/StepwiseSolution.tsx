@@ -303,13 +303,14 @@ export default function StepwiseSolution({
   }
   useEffect(() => {
     if (flash === null) return;
-    const t = setTimeout(() => refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
+    // giải cùng hình (`only`): cha (GiaiCungHinh) cuộn sao cho đỉnh bước nằm ngay dưới hình dính; block:"center" ở đây đặt tiêu đề bước khuất sau hình
+    const t = setTimeout(() => only === undefined && refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     const t2 = setTimeout(() => setFlash(null), 2500);
     return () => {
       clearTimeout(t);
       clearTimeout(t2);
     };
-  }, [flash]);
+  }, [flash, only]);
 
   const current = revealed.findIndex((v) => !v); // bước đầu tiên chưa mở
   const allOpen = !usable || current < 0;

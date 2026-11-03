@@ -48,6 +48,12 @@ export default function GiaiCungHinh({
 }) {
   const n = q.buoc?.length ?? 0;
   const [step, setStep] = useState(0);
+  // bước em đã mở xem (bước tự mở vì không có câu hỏi thì chưa chắc đã xem) — để dòng nhắc không nói "xem lại" bước chưa xem (HS ảo 3/11)
+  const [seen, setSeen] = useState<number[]>([0]);
+  const visit = (i: number) => {
+    setStep(i);
+    setSeen((s) => (s.includes(i) ? s : [...s, i]));
+  };
   const [opened, setOpened] = useState(0); // số bước đầu đã làm xong liên tiếp
   const [full, setFull] = useState(false);
   const [deOpen, setDeOpen] = useState(false); // tóm đề mở đè lên (điện thoại)
@@ -58,7 +64,7 @@ export default function GiaiCungHinh({
   const [seenJump, setSeenJump] = useState(jump);
   if (jump !== seenJump) {
     setSeenJump(jump);
-    if (jump) setStep(Math.min(Math.max(jump.idx, 0), n - 1));
+    if (jump) visit(Math.min(Math.max(jump.idx, 0), n - 1));
   }
 
   // đưa hình về đúng chỗ (đỉnh khung ngay dưới thanh dính) để bước hiện ngay dưới hình, không bị hình che
@@ -66,19 +72,29 @@ export default function GiaiCungHinh({
     const dy = (splitRef.current?.getBoundingClientRect().top ?? top) - top;
     if (Math.abs(dy) > 4) window.scrollTo({ top: window.scrollY + dy, behavior: "instant" });
   };
+  // gỡ rối: StepwiseSolution không tự cuộn khi có `only` (scrollIntoView center đặt tiêu đề bước dưới hình dính — HS ảo 3/11);
+  // cuộn ở đây sau khi bước đã vẽ, để đỉnh bước nằm ngay dưới hình
+  useEffect(() => {
+    if (!jump) return;
+    const t = setTimeout(align, 60);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [jump]);
   const go = (i: number) => {
-    setStep(i);
+    visit(i);
     setDeOpen(false);
     align();
   };
 
   // Vừa trả lời đúng bước đang làm: lời giải ngắn của bước hiện ở đầu khung bước. Nếu lúc gõ trang đã cuộn (bàn phím
   // điện thoại đẩy ô nhập lên) thì phần đó nằm dưới hình dính → cuộn về cho thấy (HS ảo 2/11: "lời giải bị đẩy khỏi tầm mắt").
+  // `opened` có thể nhảy nhiều bước một lúc (các bước sau không có câu hỏi, vd "Hướng của gia tốc", "Kiểm tra") — HS ảo 3/11:
+  // điều kiện `opened === step + 1` bỏ qua ca này nên lời giải bước nằm khuất dưới hình. Chỉ cần bước đang xem vừa được mở.
   const prevOpened = useRef(opened);
   useEffect(() => {
     const was = prevOpened.current;
     prevOpened.current = opened;
-    if (opened <= was || opened !== step + 1) return;
+    if (opened <= was || step < was || step >= opened) return;
     const el = document.activeElement;
     if (el instanceof HTMLElement && splitRef.current?.contains(el)) el.blur(); // đóng bàn phím trước khi đo
     const fix = () => {
@@ -106,7 +122,9 @@ export default function GiaiCungHinh({
       : canNext
         ? step + 1 === opened
           ? "Xong bước này — bấm ▶ sang bước tiếp."
-          : "Bấm ▶ xem lại bước sau."
+          : seen.includes(step + 1)
+            ? "Bấm ▶ xem lại bước sau."
+            : `Bấm ▶ xem bước ${step + 2}.`
         : "Trả lời câu hỏi bên dưới để mở bước sau.";
 
   return (
