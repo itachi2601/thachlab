@@ -693,7 +693,130 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 25,
+     "vat": "m"
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 29.4
+     },
+     {
+      "ten": "v_0",
+      "goc": "doc_len",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       0.3,
+       2.2
+      ],
+      "den": 3
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_xuong",
+      "do_lon": 5.33,
+      "tu": "vat_day",
+      "buoc": 1,
+      "den": 4,
+      "mau": "cam",
+      "lech": [
+       1.36,
+       -0.63
+      ]
+     },
+     {
+      "ten": "a",
+      "goc": "doc_xuong",
+      "do_lon": 5.92,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 1,
+      "den": 4,
+      "so": "5,92 m/s²"
+     },
+     {
+      "ten": "P_x",
+      "goc": "doc_xuong",
+      "do_lon": 12.4,
+      "kieu": "thanh_phan",
+      "buoc": 3,
+      "lech": [
+       0.7,
+       1.5
+      ]
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_len",
+      "do_lon": 5.33,
+      "tu": "vat_day",
+      "buoc": 4,
+      "mau": "cam",
+      "lech": [
+       -1.36,
+       0.63
+      ]
+     },
+     {
+      "ten": "a'",
+      "goc": "doc_xuong",
+      "do_lon": 2.37,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       2.7,
+       2.1
+      ],
+      "buoc": 4,
+      "so": "2,37 m/s²"
+     },
+     {
+      "ten": "v",
+      "goc": "doc_xuong",
+      "do_lon": 3.79,
+      "kieu": "dong_hoc",
+      "tu": "chan",
+      "lech": [
+       -2.47,
+       1.81
+      ],
+      "buoc": 5,
+      "so": "3,79 m/s"
+     }
+    ],
+    "bang": [
+     {
+      "text": "s = 3,04 m",
+      "buoc": 2
+     }
+    ],
+    "ti_le": 3.2
+   },
+   "tom_de": {
+    "cho": [
+     "$m=3{,}0\\ \\text{kg}$, $\\alpha=25^\\circ$",
+     "$v_0=6{,}0\\ \\text{m/s}$ lên dốc",
+     "$\\mu=0{,}20$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $a$ lúc lên, quãng đường $s$",
+     "b) Nằm yên hay trượt xuống",
+     "c) $v$ khi về chân dốc"
+    ]
+   }
   }
  ],
  "tu_luan": {
