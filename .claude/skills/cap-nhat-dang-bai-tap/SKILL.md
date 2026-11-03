@@ -16,26 +16,27 @@ Code: `components/lessons/cong-cu/GiaiCungHinh.tsx` (khung) + `GiaoThoaHaiNguon.
 
 Quy tắc thiết kế (`docs/QUY-TAC-THIET-KE.md`): N1, N5, N6, N8 (split-attention), H3, H4, D2, D3, L1. Ghi các mã này vào commit.
 
-## Chọn model (thầy chốt 3/11/2026)
-Quy tắc nhanh: **dạng cần loại hình MỚI → Opus; dạng dùng lại loại hình đã có → Sonnet.**
-
-| Việc | Model |
-|---|---|
-| Điều phối (chọn dạng nào đáng làm, chia việc cho phiên nhánh/agent, đọc kết quả, quyết sửa gì, báo thầy) | **Opus** — phiên chính |
-| Vẽ loại hình mới: thêm `loai` vào `WorkedTool`, component SVG theo lớp bước, CSS khối dính, sửa tràn/nhảy màn | **Opus** |
-| Soát `buoc[]` (lựa chọn khác nghĩa, đáp án đúng không lộ), viết `tom_de` | **Opus** (cần phán đoán sư phạm) |
-| Dạng dùng lại hình có sẵn: sửa JSON `cong_cu`/`tom_de` + chạy checklist mục 5 | **Sonnet** được (phiên nhánh, mỗi dạng một phiên) |
-| Học sinh ảo thử (mục 6) | **Sonnet** |
-| Soát diff trước khi đăng | **Sonnet** — agent `kiem-code` |
-| Haiku | Không dùng (không chấm được hình và lời giải) |
-
-Làm nhiều dạng một lượt: phiên chính Opus giữ việc điều phối + dạng cần hình mới; mỗi dạng dùng lại hình giao một phiên nhánh Sonnet, brief ghi rõ lesson, số dạng, loại hình, file JSON, "chạy đủ mục 5, chưa đăng". Opus đọc ảnh chụp/diff các phiên trả về rồi mới đăng.
-
 ## Không làm
 - Không chạy sóng hay hoạt hình phức tạp. Thầy góp ý 2/11: "hình nhỏ, đơn giản hoá thành các đường".
 - Không thêm chế độ "khám phá" với số liệu khác đề (bản v1 đã bỏ).
 - Không làm cho mọi dạng: mỗi bài chỉ 1–2 dạng mà **hình thay đổi theo từng bước** thật sự giúp hiểu (giao thoa, sóng dừng, đồ thị x–t/v–t, vectơ lực, tia sáng, mạch điện). Dạng chỉ thế số vào công thức thì giữ giải từng bước thường.
 - Chưa có dạng trong JSON thì soạn bằng `soan-bai-tap-mau` trước, rồi mới quay lại đây.
+
+## Chọn model (thầy chốt 3/11/2026)
+Kế hoạch đủ 492 dạng / 93 bài, bảng theo bài, theo chương và 9 đợt làm: [`KE-HOACH-MODEL.md`](KE-HOACH-MODEL.md) (chỉ mở phần chương đang làm).
+
+| Việc | Model |
+|---|---|
+| Dạng đầu tiên của một **họ hình mới** (viết component SVG, vẽ lớp theo bước, chỉnh khối dính) — 15 dạng, 5 đợt Đ1–Đ5 | **Opus** |
+| Dạng **dùng lại họ hình đã có** (khai `cong_cu` trong JSON, `tom_de`, soát `buoc[]`, checklist 375px) — 140 dạng, đợt Đ6–Đ9 | **Sonnet** |
+| Dạng **chỉ tóm đề** (nhận biết, đổi đơn vị, thế một công thức) — 336 dạng | **Sonnet**, gộp nhiều bài một phiên |
+| Soát lựa chọn từng bước (khác nghĩa, không lộ đáp án) khi thầy chưa duyệt | Opus (phiên chính) |
+| Học sinh ảo thử (bước 6), `kiem-code` soát diff | Sonnet |
+| Haiku | Không dùng |
+
+- Mỗi bài tối đa **2 dạng** giải cùng hình; còn lại chỉ tóm đề.
+- Đợt Sonnet chỉ chạy sau khi đợt Opus tạo họ hình nó cần đã vào main (ví dụ 7·D5 cần `cot_chat_long` của Đ4).
+- Phiên Sonnet gặp dạng cần họ hình chưa có → dừng dạng đó, ghi vào bảng F của file kế hoạch, không tự viết component mới.
 
 ## Quy trình
 
