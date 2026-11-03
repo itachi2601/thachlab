@@ -161,9 +161,13 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
         els.push(<Block key={`v${i}`} c={c} w={2} h={1.4} text={d.vat} />);
         grow(add(c, [0, -0.7]), 1);
       }
-      if (d.ten && d.neo !== "vat") els.push(<Label key={`t${i}`} p={add(E, u, 0.9)}>{d.ten}</Label>);
+      if (d.ten && d.neo !== "vat") {
+        els.push(<Label key={`t${i}`} p={add(E, u, 0.9)}>{d.ten}</Label>);
+        grow(add(E, u, 0.9), 0.8);
+      }
     });
     els.push(<circle key="O" cx={0} cy={0} r={0.22} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.1} />);
+    if (nen.ten_nut) els.push(<Label key="On" p={nen.ten_nut_lech ?? [-0.75, -0.75]}>{nen.ten_nut}</Label>);
     return { el: <g>{els}</g>, pts, box, day };
   }
   if (nen.kieu === "rong_roc") {

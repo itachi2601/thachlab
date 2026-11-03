@@ -157,7 +157,7 @@ export type SoDoVectoTool = {
   nen:
     | { kieu: "mat_ngang"; vat?: string; vat_x?: number }
     | { kieu: "mat_nghieng"; alpha: number; vat?: string; vat_t?: number; dai?: string }
-    | { kieu: "nut"; day: { goc: number; dai: number; neo: "tuong" | "tran" | "cot" | "vat" | "khong"; ten?: string; vat?: string }[] }
+    | { kieu: "nut"; ten_nut?: string; ten_nut_lech?: [number, number]; day: { goc: number; dai: number; neo: "tuong" | "tran" | "cot" | "vat" | "khong"; ten?: string; vat?: string }[] }
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
     | { kieu: "khong" }
