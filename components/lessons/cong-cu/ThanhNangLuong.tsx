@@ -10,7 +10,7 @@
  * canh: lo_xo_ngang {A, don_vi?, x?}  ·  con_lac_don {goc0, goc?}  ·  doc {h, don_vi?, vi?}  ·  hop_he {ten?}
  * Mục: cot {ten, gia_tri, nhan?}  ·  vat {x? | goc? | vi?, bong?} (đặt lại vật; bong = bóng đối xứng −x)
  *  ·  v {nhan, chieu?: 1|-1} (mũi tên vận tốc ở vật)  ·  mui {vao, nhan, hang?} (hộp hệ: Q, A vào/ra)  ·  ghi {text}.
- * `het: k` = ẩn từ khi xong bước k.
+ * `het: k` = ẩn từ khi xong bước k. `hinh` (tuỳ chọn) = mục vẽ sẵn từ bước 1, cùng cú pháp mục của `lop`.
  */
 
 import { C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
@@ -21,6 +21,8 @@ type Props = {
   cot: { ten: string; mau?: "max" | "min" | "chu" }[];
   max: number;
   don_vi?: string;
+  /** mục vẽ sẵn từ bước 1 (dữ kiện đề đã cho); `het: k` ẩn khi xong bước k */
+  hinh?: NangLuongLop[];
   lop?: NangLuongLop[][];
   layer: number;
 };
@@ -276,8 +278,8 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
   );
 }
 
-export default function ThanhNangLuong({ canh, cot, max, lop, layer: L }: Props) {
-  const items = dangHien(lop, L);
+export default function ThanhNangLuong({ canh, cot, max, hinh, lop, layer: L }: Props) {
+  const items = [...(hinh ?? []).filter((it) => it.het == null || L < it.het), ...dangHien(lop, L)];
   const ghi = ghiMoiNhat(lop, L);
   const val = new Map<string, { v: number; nhan?: string }>();
   for (const it of items) if (it.loai === "cot") val.set(it.ten, { v: it.gia_tri, nhan: it.nhan });
