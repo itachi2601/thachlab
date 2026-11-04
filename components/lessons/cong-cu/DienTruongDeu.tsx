@@ -21,6 +21,8 @@ type Props = {
   d: number;
   duong: "tren" | "duoi";
   v0?: string;
+  /** Thêm 11/2026 (Đ7): không vẽ electron + mũi tên v₀ (đề không có hạt bay vào, vd hạt bụi thả nghỉ, tụ điện). */
+  an_hat?: boolean;
   hinh?: DienTruongLop[];
   lop?: DienTruongLop[][];
   layer: number;
@@ -35,7 +37,7 @@ const W = 20,
   MID = 6;
 const mau = (m?: string) => (m === "min" ? C_MIN : C_MAX);
 
-export default function DienTruongDeu({ L, d, duong, v0 = "v_0", hinh = [], lop, layer: Lr }: Props) {
+export default function DienTruongDeu({ L, d, duong, v0 = "v_0", an_hat = false, hinh = [], lop, layer: Lr }: Props) {
   const X = (x: number) => PX0 + (x / L) * (PX1 - PX0);
   const Yv = (y: number) => MID - (y / (d / 2)) * (BOT - MID);
   const items = dangHien(lop, Lr);
@@ -192,18 +194,26 @@ export default function DienTruongDeu({ L, d, duong, v0 = "v_0", hinh = [], lop,
       {dau(true)}
       {dau(false)}
       {/* electron vào chính giữa, v₀ song song hai bản */}
-      <line x1={0.4} y1={MID} x2={PX0 - 0.55} y2={MID} stroke="currentColor" strokeWidth={0.12} />
-      <Chevron x={PX0 - 0.55} y={MID} ang={0} len={0.45} w={0.12} />
-      <Label x={(0.4 + PX0) / 2 - 0.2} y={MID - 0.55}>
+      {!an_hat && (
+        <>
+          <line x1={0.4} y1={MID} x2={PX0 - 0.55} y2={MID} stroke="currentColor" strokeWidth={0.12} />
+          <Chevron x={PX0 - 0.55} y={MID} ang={0} len={0.45} w={0.12} />
+          <Label x={(0.4 + PX0) / 2 - 0.2} y={MID - 0.55}>
         {v0}
-      </Label>
+          </Label>
+        </>
+      )}
       <line x1={PX0} y1={MID} x2={PX1} y2={MID} stroke="currentColor" strokeWidth={0.04} strokeDasharray="0.2 0.3" opacity={0.5} />
       {hinh.map((it, k) => (it.het != null && Lr >= it.het ? null : <g key={`h${k}`}>{veMuc(it, false)}</g>))}
       {items.map((it, k) => (
         <g key={`l${k}`}>{veMuc(it, true)}</g>
       ))}
-      <circle cx={PX0} cy={MID} r={0.34} fill="var(--cc-halo)" stroke={C_MIN} strokeWidth={0.08} />
-      <line x1={PX0 - 0.17} y1={MID} x2={PX0 + 0.17} y2={MID} stroke={C_MIN} strokeWidth={0.08} />
+      {!an_hat && (
+        <>
+          <circle cx={PX0} cy={MID} r={0.34} fill="var(--cc-halo)" stroke={C_MIN} strokeWidth={0.08} />
+          <line x1={PX0 - 0.17} y1={MID} x2={PX0 + 0.17} y2={MID} stroke={C_MIN} strokeWidth={0.08} />
+        </>
+      )}
       {ghi.map((t, i) => (
         <Label key={`${Lr}-${i}`} x={W / 2} y={H + 1.7 + i * 1.45} size={1.05}>
           {t}
