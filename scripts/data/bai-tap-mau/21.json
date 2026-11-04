@@ -117,7 +117,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=8\\cos\\left(5\\pi t-\\dfrac{\\pi}{3}\\right)$ cm ($t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $\\omega$, $\\varphi$",
+     "b) $T$, $f$",
+     "c) $x$ lúc $t=0{,}1$ s"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -228,7 +238,17 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$A=6$ cm, $T=0{,}5$ s",
+     "$t=0$: $x=-3$ cm, đang đi theo chiều dương"
+    ],
+    "tim": [
+     "a) Phương trình dao động",
+     "b) Từ $t=0$ tới lần đầu ở biên dương: bao lâu?"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -353,7 +373,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x_1=3\\cos\\left(4\\pi t+\\dfrac{\\pi}{6}\\right)$ cm",
+     "$x_2=5\\cos\\left(4\\pi t-\\dfrac{\\pi}{3}\\right)$ cm"
+    ],
+    "tim": [
+     "a) Dao động nào sớm pha, lệch bao nhiêu",
+     "b) Đỉnh dương cách nhau bao lâu",
+     "c) $x_3$: cùng biên độ, ngược pha $x_1$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -465,7 +496,121 @@
     {
      "tieu_de": "Viết phương trình và kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $x$–$t$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $T$",
+     "b) $\\omega$",
+     "c) $\\varphi$ và phương trình"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 3,
+     "ten": "t (s)",
+     "vach": [
+      0.5,
+      1,
+      1.5,
+      2,
+      2.5,
+      3
+     ],
+     "luoi": 0.5
+    },
+    "y": {
+     "min": -6,
+     "max": 6,
+     "ten": "x (cm)",
+     "luoi": 2
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "cos",
+       "a": 4,
+       "w": 1.3333333333333333,
+       "phi": 0.3333333333333333
+      },
+      "tu": 0,
+      "den": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 4,
+       "nhan": "4"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 4 cm (từ trục t tới đỉnh)"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 1.25,
+       "y": 4,
+       "ten": "đỉnh",
+       "vi": "t"
+      },
+      {
+       "loai": "diem",
+       "x": 2.75,
+       "y": 4,
+       "ten": "đỉnh",
+       "vi": "t"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 1.25,
+       "den": 2.75,
+       "y": 5.2,
+       "nhan": "T = 1,5 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai đỉnh liên tiếp cách nhau T = 1,5 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 4π/3 ≈ 4,19 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 2,
+       "ten": "x(0) = 2",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "x(0) = A cosφ = 2 ⇒ cosφ = 1/2"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đồ thị đi xuống ⇒ φ = π/3 rad"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x = 4cos(4πt/3 + π/3) cm"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -640,7 +785,93 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồng hồ An: $x=8\\cos\\left(2\\pi t-\\dfrac{5\\pi}{6}\\right)$ cm",
+     "Bình bấm giờ muộn hơn An $0{,}25$ s"
+    ],
+    "tim": [
+     "a) Phương trình theo đồng hồ Bình",
+     "b) $x$ và chiều chuyển động lúc Bình bắt đầu",
+     "c) Đại lượng nào đổi, nào giữ nguyên"
+    ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 8,
+    "don_vi": "cm",
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Đồng hồ Bình chạy muộn 0,25 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ t = t′ + 0,25"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": -0.8333333333333334,
+       "ten": "M(An)"
+      },
+      {
+       "loai": "ghi",
+       "text": "Pha thêm: ω·0,25 = 2π·0,25"
+      },
+      {
+       "loai": "ghi",
+       "text": "= π/2 rad"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": -0.8333333333333334,
+       "den": -0.3333333333333333
+      },
+      {
+       "loai": "diem",
+       "goc": -0.3333333333333333,
+       "ten": "M(Bình)",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "φ′ = −5π/6 + π/2 = −π/3 rad"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": -0.3333333333333333,
+       "ten": "M(Bình)",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "x = 8cos(−π/3) = 4 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "Pha tăng ⇒ x tăng (sang dương)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Chỉ φ đổi (−5π/6 → −π/3)"
+      },
+      {
+       "loai": "ghi",
+       "text": "A, T, f, ω giữ nguyên"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
