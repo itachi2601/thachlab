@@ -74,7 +74,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | 20 | Bài 1. Dao động điều hoà | — | D3 (do_thi), D5 (vong_tron) | D1, D2, D4 | Sonnet | P1 |
 | 21 | Bài 2. Mô tả dao động điều hoà | — | D4 (do_thi), D5 (vong_tron) | D1, D2, D3 | Sonnet | P1 |
 | 22 | Bài 3. Vận tốc, gia tốc trong dao động điều hoà | — | D3 (do_thi), D4 (vong_tron) | D1, D2, D5 | Sonnet | P1 |
-| 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11 | D3 (do_thi) — chờ Đ2 | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
+| 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11 | D3 (do_thi) — còn thiếu `cong_cu` (rà 4/11), làm trong Đ7 | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
 | 24 | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và | — | D2 (thanh_nang_luong), D5 (do_thi) | D1, D3, D4 | Sonnet | P1 |
 | 25 | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
 | 26 | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động đi | ✓ D2 (thanh_nang_luong) 3/11 | ✓ D5 (do_thi) 3/11 | ✓ D1, D3, D4 3/11 | Opus | P1 |
@@ -133,7 +133,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | 63 | Bài 18. Lực ma sát | ✓ D4 (so_do_vecto) 3/11 | ✓ D5 (so_do_vecto) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
 | 66 | Bài 21. Moment lực. Cân bằng của vật rắn | ✓ D4 (thanh_moment) 3/11 | ✓ D5 (thanh_moment) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
 
-\* Tóm đề đã ghi vào JSON nhưng dạng không có `cong_cu` đi qua `StepwiseSolution`, chưa hiện `tom_de` (3/11) — cần sửa UI trước khi đăng mới có tác dụng.
+\* Tóm đề viết tay, chưa qua HS ảo. (Hở UI `tom_de` ở dạng không `cong_cu` đã vá 3/11 bằng `TomDeKhung`.)
 
 ### Lớp 10 · Ch.4 Năng lượng, công, công suất
 
@@ -272,8 +272,8 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Đ4 | Opus | L10 động học, moment, chất lỏng | 50, 57, 66, 79 | 8 | 14 | truc_chuyen_dong, quy_dao_nem, thanh_moment, cot_chat_long |
 | Đ5 | Opus | Quang (chỉ có ở KHTN9/HSG9) | 83, 156 | 4 | 8 | tia_sang, thau_kinh |
 | Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | — |
-| Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
-| Đ8 | Sonnet | L10 còn lại (P2) | 49, 52, 53, 54, 55, 58, 60, 62, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
+| Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) + 23·D3 `do_thi` | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
+| Đ8 | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
 | Đ9 | Sonnet | KHTN 9 + HSG 9 (P3) | 129, 130, 131, 84, 89, 90, 91, 160, 162, 155, 161, 166, 154, 167, 153, 164, 159, 157, 165, 152, 163, 151, 158, 150, 178 | 43 | 102 | — |
 
 ## E. Tổng số
@@ -291,6 +291,8 @@ Ghi chú: id 125–127 chỉ tạo muộn nên số id gần dải KHTN 9; trong
 Đ4 xong 3/11/2026 (nhánh `claude/wave-exercises-interactive-graphics-a3ea00`): 3 họ mới `truc_chuyen_dong`, `quy_dao_nem`, `cot_chat_long` (API ghi ở đầu mỗi file component; `cot_chat_long` có 2 cảnh `ong_u`, `be`) + `SoDoVecto` thêm cảnh `song` (sông có bờ gạch, điểm A/B/C, đường đi theo bước). Đã soát 375px mọi bước bằng driver (không chồng/tràn nhãn); HS ảo đã thử + sửa 3/11; ĐÃ ĐĂNG DB 50, 57, 79 ngày 4/11 (sao lưu `scripts/logs/bai-tap-mau-bai{50,57,79}-179377*.json` trong worktree), deploy + kiểm live 4/11. *Tóm đề viết tay, chưa qua HS ảo.
 
 Đ5 xong 4/11/2026 (cùng nhánh): `tia_sang` (môi trường xếp lớp ngang, tia qua từng lớp theo `goc[]`, phản xạ, pháp tuyến, cung góc đặt tên theo hướng `toi`/`khuc_xa`/`phap_vao`…, `chieu: "len"`) và `thau_kinh` (trục + lưới ô ly, TK hội tụ/phân kì, F/F′, vật/ảnh ảo nét đứt, tia `qua`/`keo`/`mep`, thước ngang/dọc; `phan[]` = một khung cho mỗi câu a/b/c, chọn theo **bước đang làm** `tu_buoc`). API ở chú thích đầu hai file. Soát 375px mọi bước bằng driver + một ảnh nền tối + thẻ lề 1280; HS ảo đã thử 4/11 (8 · 7 · 7,5 · 6 điểm) → đã sửa (khoá lựa chọn sau khi đúng, 156 D7 thêm bước hỏi chiều ảnh), deploy + đăng DB 83, 156 ngày 4/11. **Giới hạn cho đợt Sonnet dùng lại** (84, 151, 158, 178): `tia_sang` chưa có lăng kính, gương phẳng, sợi quang, nguồn rộng/bóng tối, tia song song chéo — phiên đó phải mở rộng component (ghi vào mục F trước khi làm).
+
+Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy. Giao song song 3 phiên Sonnet Đ6 (L12), Đ7 (L11), Đ8 (L10) — mỗi phiên chỉ sửa JSON bài của mình; cần mở rộng component dùng chung (`DoThi`, `SoDoVecto`, `VongTronPha`, `MachDien`…) thì chỉ THÊM tuỳ chọn, không đổi hành vi cũ, commit riêng sớm. Đ9 chờ sau (phải mở rộng `tia_sang`).
 
 ## F. Còn chờ thầy chốt (3/11/2026)
 - ~~Bài 125–127 xếp lớp nào~~ — đã đối chiếu catalog 4/11: thuộc L12 Ch.3 trong DB, không cần thầy xác nhận.
