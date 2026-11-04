@@ -117,7 +117,21 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Loa $800$ Hz; $I=4{,}0\\cdot10^{-7}$ W/m², $I_0=10^{-12}$ W/m²",
+     "Tăng $I$ gấp $100$ lần",
+     "Bàn khác: $L=85$ dB",
+     "Đổi sang $1600$ Hz, giữ nguyên $L$"
+    ],
+    "tim": [
+     "a) $L$ tại bàn nhóm",
+     "b) $L$ sau khi $I$ tăng $100$ lần",
+     "c) $I$ tại bàn khác",
+     "d) Tai nghe cao hơn/thấp hơn, to hơn/nhỏ hơn"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -253,7 +267,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ống thẳng đứng, miệng hở, $f=600$ Hz, $15\\ ^\\circ$C",
+     "Bụng cao hơn miệng ống $e=0{,}5$ cm; ống dài $67$ cm",
+     "$l$ đo từ miệng ống tới mặt nước"
+    ],
+    "tim": [
+     "a) $v$ và $\\lambda$",
+     "b) $l_1$ và $l_2$",
+     "c) Có nghe to nhất lần thứ ba không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -352,7 +378,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$f=640$ Hz; phòng $28\\ ^\\circ$C",
+     "$l_1=13{,}0$ cm, $l_2=39{,}9$ cm"
+    ],
+    "tim": [
+     "a) $\\lambda$ và $v$ đo được",
+     "b) Đoạn $e$",
+     "c) $v$ theo nhiệt độ phòng; độ lệch %"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -488,7 +525,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ống dài $70$ cm; phòng $30\\ ^\\circ$C; $f=400\\pm1$ Hz",
+     "Bảng $l_1$, $l_2$ năm lần đo (ở đề)",
+     "$\\Delta l_{\\text{dc}}=0{,}1$ cm"
+    ],
+    "tim": [
+     "a) $\\bar\\lambda$ và $\\bar v$",
+     "b) $\\Delta\\lambda$, $\\Delta v$; viết $v=\\bar v\\pm\\Delta v$",
+     "c) So với giá trị tham khảo"
+    ]
+   }
   }
  ]
 }

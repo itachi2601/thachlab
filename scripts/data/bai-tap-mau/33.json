@@ -80,7 +80,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Sóng hình sin trên dây truyền theo chiều $+x$, $f=4$ Hz",
+     "Hình: bốn đỉnh sóng liên tiếp"
+    ],
+    "tim": [
+     "a) $\\lambda$ đọc từ hình",
+     "b) $T$",
+     "c) $v$ (m/s)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -168,7 +179,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Sóng trên dây: $f=20$ Hz, $v=4{,}0$ m/s",
+     "M, N cách nhau $MN=0{,}45$ m theo phương truyền"
+    ],
+    "tim": [
+     "a) $\\lambda$",
+     "b) Độ lệch pha M, N",
+     "c) Cùng pha, ngược pha, vuông pha hay không đặc biệt"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -311,8 +333,18 @@
     "d2": 8
    },
    "tom_de": {
-    "cho": ["A, B cùng pha, $f=25\\ \\text{Hz}$", "$AB=12\\ \\text{cm}$", "$v=0{,}50\\ \\text{m/s}$", "$d_1=MA=15\\ \\text{cm}$", "$d_2=MB=8\\ \\text{cm}$"],
-    "tim": ["a) $\\lambda$", "b) M: cực đại hay cực tiểu?", "c) Số cực đại, cực tiểu trên AB"]
+    "cho": [
+     "A, B cùng pha, $f=25\\ \\text{Hz}$",
+     "$AB=12\\ \\text{cm}$",
+     "$v=0{,}50\\ \\text{m/s}$",
+     "$d_1=MA=15\\ \\text{cm}$",
+     "$d_2=MB=8\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $\\lambda$",
+     "b) M: cực đại hay cực tiểu?",
+     "c) Số cực đại, cực tiểu trên AB"
+    ]
    }
   },
   {
@@ -446,7 +478,99 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khe Young: $a=0{,}50$ mm, $D=1{,}5$ m, $\\lambda=0{,}60\\ \\mu$m",
+     "Trường giao thoa rộng $L=17$ mm, đối xứng qua vân sáng trung tâm",
+     "Điểm P cách vân trung tâm $6{,}3$ mm"
+    ],
+    "tim": [
+     "a) Khoảng vân $i$",
+     "b) Số vân sáng, số vân tối trên trường",
+     "c) P là vân sáng hay vân tối"
+    ]
+   },
+   "cong_cu": {
+    "loai": "van_giao_thoa",
+    "i": 1.8,
+    "x_min": -9.5,
+    "x_max": 9.5,
+    "diem": [
+     {
+      "x": 6.3,
+      "ten": "P"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "i = λD/a (đổi ra mét)"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 0,6·10⁻⁶·1,5 : 0,5·10⁻³"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 1,8 mm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc_i"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 8.5,
+       "nhan": "L/2 = 8,5 mm"
+      },
+      {
+       "loai": "ghi",
+       "text": "L/2i = 8,5 : 1,8 ≈ 4,7"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ k từ −4 đến 4: 9 vân sáng"
+      }
+     ],
+     [
+      {
+       "loai": "van",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Vân tối ở (k + ½)i ≤ 8,5"
+      },
+      {
+       "loai": "ghi",
+       "text": "k + ½ ≤ 4,7 ⇒ k = 0…4"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x_P : i = 6,3 : 1,8 = 3,5"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ bán nguyên"
+      }
+     ],
+     [
+      {
+       "loai": "van"
+      },
+      {
+       "loai": "ghi",
+       "text": "3,5 = 3 + ½ ⇒ vân tối thứ 4"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -544,7 +668,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$AB=L=0{,}60$ m, hai đầu cố định, $f=150$ Hz",
+     "Sóng dừng như hình vẽ"
+    ],
+    "tim": [
+     "a) $\\lambda$ và $v$",
+     "b) Số nút (kể cả A, B)",
+     "c) $f'$ để có $4$ bụng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -641,7 +776,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ống sáo một đầu kín, một đầu hở",
+     "Hai tần số cộng hưởng liên tiếp: $1020$ Hz và $1700$ Hz",
+     "$v=340$ m/s"
+    ],
+    "tim": [
+     "a) $f$ cơ bản",
+     "b) Chiều dài ống",
+     "c) Số bụng (kể cả đầu hở) ở $1700$ Hz"
+    ]
+   }
   }
  ],
  "tu_luan": {
