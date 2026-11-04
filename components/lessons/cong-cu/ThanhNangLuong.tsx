@@ -279,7 +279,7 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
         return m.vao ? (
           <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} rong={4.2} />
         ) : (
-          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={3.8} />
+          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={3.2} />
         );
       })}
     </g>
