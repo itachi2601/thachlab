@@ -80,7 +80,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$AB=800\\ \\text{m}$, $AC=300\\ \\text{m}$ (C nằm giữa A và B)",
+     "Gốc $O\\equiv A$, chiều dương từ A tới B",
+     "Đi A → B → C, rồi C → A"
+    ],
+    "tim": [
+     "a) $d$ và $s$ của hành trình A → B → C",
+     "b) $d$ và $s$ của hành trình A → B → C → A"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -192,7 +203,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x_1=12\\ \\text{km}$ → $x_2=-3\\ \\text{km}$ → $x_3=2\\ \\text{km}$",
+     "Gốc $O$ ở trạm xăng, $Ox$ hướng về phía Đông"
+    ],
+    "tim": [
+     "a) $d$ và $s$ của đoạn $x_1\\to x_2$",
+     "b) $d$ và $s$ của cả hành trình",
+     "c) Điểm dừng nằm về phía nào so với điểm xuất phát"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -267,7 +289,89 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 5,
+    "vec": [
+     {
+      "ten": "d_1",
+      "goc": 0,
+      "do_lon": 900,
+      "tu": [
+       0,
+       0
+      ],
+      "nhan_lech": [
+       0,
+       -0.8
+      ]
+     },
+     {
+      "ten": "d_2",
+      "goc": 90,
+      "do_lon": 1200,
+      "tu": [
+       3,
+       0
+      ],
+      "nhan_lech": [
+       1.0,
+       0
+      ]
+     },
+     {
+      "ten": "d",
+      "goc": 53.13,
+      "do_lon": 1500,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 2,
+      "mau": "cam",
+      "so": "1500 m",
+      "nhan_lech": [
+       -1.2,
+       0.2
+      ]
+     }
+    ],
+    "goc": [
+     {
+      "tai": [
+       0,
+       0
+      ],
+      "tu": 0,
+      "den": 53.13,
+      "r": 1.6,
+      "text": "α",
+      "buoc": 3,
+      "mau": "lam"
+     }
+    ],
+    "bang": [
+     {
+      "text": "s = 2100 m",
+      "buoc": 1
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "Đi $900\\ \\text{m}$ về phía Đông, rồi rẽ trái đi $1200\\ \\text{m}$ về phía Bắc"
+    ],
+    "tim": [
+     "a) Quãng đường $s$",
+     "b) Độ lớn độ dịch chuyển $d$",
+     "c) Góc giữa $\\vec d$ và hướng Đông"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -379,7 +483,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đoạn 1: $4\\ \\text{km}$ trong $20$ phút",
+     "Nghỉ $10$ phút",
+     "Đoạn 2: $2\\ \\text{km}$ trong $20$ phút, không đổi chiều"
+    ],
+    "tim": [
+     "a) Tốc độ trung bình từng đoạn đạp (km/h)",
+     "b) Tốc độ trung bình cả hành trình (km/h và m/s)",
+     "c) Có bằng trung bình cộng hai tốc độ ở câu a không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -478,7 +594,119 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 7,
+    "vec": [
+     {
+      "ten": "d_1",
+      "goc": 0,
+      "do_lon": 7,
+      "tu": [
+       0,
+       0
+      ],
+      "nhan_lech": [
+       0,
+       0.7
+      ]
+     },
+     {
+      "ten": "d_2",
+      "goc": 180,
+      "do_lon": 3,
+      "tu": [
+       7,
+       0
+      ],
+      "lech": [
+       0,
+       -1
+      ],
+      "nhan_lech": [
+       0,
+       -0.7
+      ]
+     },
+     {
+      "ten": "d_3",
+      "goc": 90,
+      "do_lon": 3,
+      "tu": [
+       4,
+       0
+      ],
+      "nhan_lech": [
+       0.9,
+       0
+      ]
+     },
+     {
+      "ten": "d",
+      "goc": 36.87,
+      "do_lon": 5,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 3,
+      "mau": "cam",
+      "nhan_lech": [
+       -1.0,
+       0.3
+      ]
+     }
+    ],
+    "goc": [
+     {
+      "tai": [
+       0,
+       0
+      ],
+      "tu": 0,
+      "den": 36.87,
+      "r": 1.8,
+      "text": "α",
+      "buoc": 3,
+      "mau": "lam"
+     }
+    ],
+    "bang": [
+     {
+      "text": "s = 13 m",
+      "buoc": 1
+     },
+     {
+      "text": "d_x = 4 m",
+      "buoc": 2
+     },
+     {
+      "text": "d = 5 m",
+      "buoc": 3,
+      "mau": "cam"
+     },
+     {
+      "text": "v_{tb} = 0,5 m/s",
+      "buoc": 4
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "$7\\ \\text{m}$ về Đông, quay đầu $3\\ \\text{m}$ về Tây, rồi $3\\ \\text{m}$ về Bắc",
+     "Cả hành trình mất $26\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) Quãng đường $s$",
+     "b) Độ lớn và hướng của $\\vec d$",
+     "c) Tốc độ trung bình"
+    ]
+   }
   }
  ],
  "tu_luan": {
