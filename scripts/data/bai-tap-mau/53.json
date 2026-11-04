@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=18\\ \\text{km/h}$; sau $20\\ \\text{s}$: $v=36\\ \\text{km/h}$",
+     "Vận tốc tăng đều"
+    ],
+    "tim": [
+     "a) Gia tốc $a$",
+     "b) $v$ sau $40\\ \\text{s}$",
+     "c) Thời gian để đạt $72\\ \\text{km/h}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -203,7 +214,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=36\\ \\text{km/h}$, phanh, dừng sau $4\\ \\text{s}$",
+     "Chậm dần đều"
+    ],
+    "tim": [
+     "a) $a$ và dấu của $v$, $a$ (chiều dương theo chuyển động)",
+     "b) Như câu a, chiều dương ngược chiều chuyển động",
+     "c) $v$ sau $2\\ \\text{s}$ phanh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -339,7 +361,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $v$–$t$ của tàu gồm ba đoạn thẳng ①, ②, ③ (hình đề)",
+     "Mốc thời gian $0;\\ 6;\\ 16;\\ 24\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) Mô tả từng giai đoạn",
+     "b) Gia tốc từng giai đoạn",
+     "c) Giai đoạn có $|a|$ lớn nhất",
+     "d) Lúc $t=18\\ \\text{s}$ nhanh dần hay chậm dần"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -485,7 +519,160 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 30,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      8,
+      20,
+      30
+     ],
+     "luoi": 2
+    },
+    "y": {
+     "min": 0,
+     "max": 14,
+     "ten": "v (m/s)",
+     "vach": [
+      0,
+      12
+     ],
+     "luoi": 2
+    },
+    "diem": [
+     {
+      "x": 0,
+      "y": 0
+     },
+     {
+      "x": 8,
+      "y": 12
+     },
+     {
+      "x": 20,
+      "y": 12
+     },
+     {
+      "x": 30,
+      "y": 0
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          8,
+          12
+         ],
+         [
+          20,
+          12
+         ],
+         [
+          30,
+          0
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Dốc lên – nằm ngang – dốc xuống"
+      }
+     ],
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        20,
+        12
+       ],
+       "den": [
+        30,
+        0
+       ],
+       "nhan_x": "10 s",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "Δv = −12 m/s trong 10 s ⇒ a = −1,2 m/s²",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 8,
+       "nhan": "S₁"
+      },
+      {
+       "loai": "dien_tich",
+       "tu": 8,
+       "den": 20,
+       "nhan": "S₂"
+      },
+      {
+       "loai": "dien_tich",
+       "tu": 20,
+       "den": 30
+      },
+      {
+       "loai": "ghi",
+       "text": "S = S₁ + S₂ + S₃ = 252 m"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 8,
+       "den": 20,
+       "y": 13,
+       "nhan": "12 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đáy 30 s và 12 s, cao 12 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 8.4,
+       "nhan": "8,4"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_{tb} = 252 : 30 = 8,4 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Mốc $(t;v)$: $(0;0)$, $(8\\ \\text{s};12\\ \\text{m/s})$, $(20\\ \\text{s};12\\ \\text{m/s})$, $(30\\ \\text{s};0)$",
+     "Giữa hai mốc liên tiếp $v$ đổi đều"
+    ],
+    "tim": [
+     "a) Tính chất chuyển động từng giai đoạn",
+     "b) $a$ trong $8\\ \\text{s}$ đầu và $10\\ \\text{s}$ cuối",
+     "c) Quãng đường trong $30\\ \\text{s}$ (diện tích dưới đồ thị)",
+     "d) Tốc độ trung bình"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -560,7 +747,83 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 5,
+    "vec": [
+     {
+      "ten": "v_1 = 25",
+      "goc": 0,
+      "do_lon": 25,
+      "kieu": "dong_hoc",
+      "tu": [
+       0,
+       1.3
+      ],
+      "nhan_lech": [
+       0.3,
+       1.0
+      ]
+     },
+     {
+      "ten": "v_2 = 15",
+      "goc": 180,
+      "do_lon": 15,
+      "kieu": "dong_hoc",
+      "tu": [
+       0,
+       0
+      ],
+      "nhan_lech": [
+       -0.2,
+       0.9
+      ]
+     },
+     {
+      "ten": "Δv = −40",
+      "goc": 180,
+      "do_lon": 40,
+      "kieu": "dong_hoc",
+      "tu": [
+       3.125,
+       -1.3
+      ],
+      "buoc": 2,
+      "mau": "cam",
+      "nhan_lech": [
+       0,
+       -0.9
+      ]
+     }
+    ],
+    "bang": [
+     {
+      "text": "Δ|v| = −10 m/s",
+      "buoc": 1
+     },
+     {
+      "text": "a = −800 m/s²",
+      "buoc": 3,
+      "mau": "cam"
+     }
+    ],
+    "bang_vi_tri": "tren"
+   },
+   "tom_de": {
+    "cho": [
+     "Bóng bay $25\\ \\text{m/s}$ hướng đông, đập vuông góc vào tường, bật lại $15\\ \\text{m/s}$ hướng tây",
+     "Thời gian va chạm $0{,}05\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) Độ biến thiên tốc độ",
+     "b) $\\Delta v$ (chiều dương hướng đông)",
+     "c) Gia tốc trung bình và hướng"
+    ]
+   }
   }
  ],
  "tu_luan": {
