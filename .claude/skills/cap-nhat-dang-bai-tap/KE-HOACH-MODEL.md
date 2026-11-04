@@ -286,14 +286,14 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Chỉ tóm đề (Sonnet) | 336 |
 | **Cộng** | 492 |
 
-Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Foucault, E–B cùng pha) là Vật lí 12 Ch.3 — xếp vào L12, cần thầy xác nhận. Bài 7 · D5 (cột thuỷ ngân) dùng `cot_chat_long` tạo ở Đ4, nên Đ6 phải chạy sau Đ4.
+Ghi chú: id 125–127 chỉ tạo muộn nên số id gần dải KHTN 9; trong DB chúng thuộc chương 4 "Chương 3: Từ trường" lớp 12 (sau bài 10–14), không chồng lấn (đối chiếu `public/data/catalog.json` 4/11). Bài 7 · D5 (cột thuỷ ngân) dùng `cot_chat_long` tạo ở Đ4, nên Đ6 phải chạy sau Đ4.
 
 Đ4 xong 3/11/2026 (nhánh `claude/wave-exercises-interactive-graphics-a3ea00`): 3 họ mới `truc_chuyen_dong`, `quy_dao_nem`, `cot_chat_long` (API ghi ở đầu mỗi file component; `cot_chat_long` có 2 cảnh `ong_u`, `be`) + `SoDoVecto` thêm cảnh `song` (sông có bờ gạch, điểm A/B/C, đường đi theo bước). Đã soát 375px mọi bước bằng driver (không chồng/tràn nhãn); HS ảo đã thử + sửa 3/11; ĐÃ ĐĂNG DB 50, 57, 79 ngày 4/11 (sao lưu `scripts/logs/bai-tap-mau-bai{50,57,79}-179377*.json` trong worktree), deploy + kiểm live 4/11. *Tóm đề viết tay, chưa qua HS ảo.
 
 Đ5 xong 4/11/2026 (cùng nhánh): `tia_sang` (môi trường xếp lớp ngang, tia qua từng lớp theo `goc[]`, phản xạ, pháp tuyến, cung góc đặt tên theo hướng `toi`/`khuc_xa`/`phap_vao`…, `chieu: "len"`) và `thau_kinh` (trục + lưới ô ly, TK hội tụ/phân kì, F/F′, vật/ảnh ảo nét đứt, tia `qua`/`keo`/`mep`, thước ngang/dọc; `phan[]` = một khung cho mỗi câu a/b/c, chọn theo **bước đang làm** `tu_buoc`). API ở chú thích đầu hai file. Soát 375px mọi bước bằng driver + một ảnh nền tối + thẻ lề 1280; HS ảo đã thử 4/11 (8 · 7 · 7,5 · 6 điểm) → đã sửa (khoá lựa chọn sau khi đúng, 156 D7 thêm bước hỏi chiều ảnh), deploy + đăng DB 83, 156 ngày 4/11. **Giới hạn cho đợt Sonnet dùng lại** (84, 151, 158, 178): `tia_sang` chưa có lăng kính, gương phẳng, sợi quang, nguồn rộng/bóng tối, tia song song chéo — phiên đó phải mở rộng component (ghi vào mục F trước khi làm).
 
 ## F. Còn chờ thầy chốt (3/11/2026)
-- Bài 125–127 (máy phát xoay chiều, ứng dụng cảm ứng điện từ, sóng điện từ) xếp vào lớp 12 Ch.3 theo nội dung — thầy xác nhận lớp.
+- ~~Bài 125–127 xếp lớp nào~~ — đã đối chiếu catalog 4/11: thuộc L12 Ch.3 trong DB, không cần thầy xác nhận.
 - Có gộp Young (`van_giao_thoa`) vào `giao_thoa_2_nguon` để bớt một đợt Opus không.
 - Một số dạng Trung bình hình rất có ích bị xếp "chỉ tóm đề" vì giới hạn 2 dạng/bài (31·D2 đếm cực đại, 58·D4 phân tích trọng lực trên dốc) — rà bảng B trước khi giao đợt.
 - `do_thi` (30 dạng dùng lại) và `so_do_vecto` (26) rộng: làm đợt Opus thì cân nhắc tách 2 component.
