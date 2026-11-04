@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$k=50$ N/m, $m=500$ g",
+     "Kéo ra $10$ cm rồi thả nhẹ, không ma sát"
+    ],
+    "tim": [
+     "a) Cơ năng $W$",
+     "b) $E_t$, $E_d$ tại $x=6{,}0$ cm",
+     "c) Tốc độ tại đó"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -237,7 +248,106 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=250$ g, $k=25$ N/m, $A=12$ cm",
+     "Lúc đó $E_d=8E_t$"
+    ],
+    "tim": [
+     "a) $|x|$",
+     "b) Tốc độ $|v|$",
+     "c) Số lần $E_d=8E_t$ trong một chu kì"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "lo_xo_ngang",
+     "A": 12,
+     "don_vi": "cm",
+     "x": 12
+    },
+    "cot": [
+     {
+      "ten": "W",
+      "mau": "chu"
+     },
+     {
+      "ten": "W_t",
+      "mau": "min"
+     },
+     {
+      "ten": "W_đ",
+      "mau": "max"
+     }
+    ],
+    "max": 0.2,
+    "don_vi": "J",
+    "lop": [
+     [
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 0.18,
+       "nhan": "0,18 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = ½kA² = 0,18 J (không đổi)"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "W_t",
+       "gia_tri": 0.02,
+       "nhan": "0,02 J"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_đ",
+       "gia_tri": 0.16,
+       "nhan": "0,16 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = 9W_t ⇒ W_t = W/9 = 0,02 J"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 4,
+       "bong": true
+      },
+      {
+       "loai": "ghi",
+       "text": "W_t = ½kx² ⇒ |x| = 4 cm"
+      }
+     ],
+     [
+      {
+       "loai": "v",
+       "nhan": "|v| ≈ 1,13 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "½mv² = 0,16 J ⇒ |v| ≈ 1,13 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Hai li độ ±4 cm, mỗi li độ qua 2 lần"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ 4 lần trong một chu kì"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -357,7 +467,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=250$ g, $k=25$ N/m",
+     "$x=3{,}0$ cm thì $v=40$ cm/s"
+    ],
+    "tim": [
+     "a) Cơ năng",
+     "b) Biên độ $A$",
+     "c) $v_{max}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -477,7 +598,19 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=100$ g, $k=40$ N/m",
+     "Kéo tới $x=A=5{,}0$ cm, thả nhẹ lúc $t=0$; $\\pi=3{,}14$"
+    ],
+    "tim": [
+     "a) $T$",
+     "b) Chu kì $T'$ của $E_t$, $E_d$",
+     "c) $\\Delta t$ ngắn nhất giữa hai lần $E_d=E_t$",
+     "d) $E_d$ lúc $t=\\dfrac{T}{6}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -576,7 +709,133 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=500$ g",
+     "Đồ thị $E_d$–$x$ ($E_d$: J, $x$: cm)"
+    ],
+    "tim": [
+     "a) $W$ và $A$",
+     "b) $k$",
+     "c) $v_{max}$",
+     "d) $|x|$ khi $E_d=0{,}030$ J"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": -5,
+     "max": 5,
+     "ten": "x (cm)",
+     "vach": [
+      -4,
+      -2,
+      2,
+      4
+     ],
+     "luoi": 2
+    },
+    "y": {
+     "min": 0,
+     "max": 0.05,
+     "ten": "E_đ (J)",
+     "vach": [
+      0.01,
+      0.02,
+      0.03,
+      0.04
+     ],
+     "luoi": 0.01
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "da_thuc",
+       "he": [
+        0.04,
+        0,
+        -0.0025
+       ]
+      },
+      "tu": -4,
+      "den": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 0.04,
+       "ten": "W",
+       "vi": "t"
+      },
+      {
+       "loai": "diem",
+       "x": -4,
+       "y": 0,
+       "vi": "t"
+      },
+      {
+       "loai": "diem",
+       "x": 4,
+       "y": 0,
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = E_đ max = 0,04 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "E_đ = 0 tại x = ±4 ⇒ A = 4 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "k = 2W/A² = 0,08/0,04²"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 50 N/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v_max = √(2W/m) = 0,4 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 0.03,
+       "tu": -2,
+       "den": 2
+      },
+      {
+       "loai": "diem",
+       "x": -2,
+       "y": 0.03
+      },
+      {
+       "loai": "diem",
+       "x": 2,
+       "y": 0.03
+      },
+      {
+       "loai": "ghi",
+       "text": "E_t = W − E_đ = 0,01 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ |x| = 2 cm"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
