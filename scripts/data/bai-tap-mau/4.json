@@ -93,7 +93,19 @@
     {
      "tieu_de": "Kiểm tra: cả quá trình"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đĩa nhôm $m=0{,}25\\ \\text{kg}$, $25{,}0\\ ^\\circ\\text{C}$; phanh: ma sát thực hiện công $4400\\ \\text{J}$ (chưa kịp truyền nhiệt)",
+     "Sau đó đĩa $45{,}0\\ ^\\circ\\text{C}$ nguội về $25{,}0\\ ^\\circ\\text{C}$",
+     "$c=880\\ \\text{J/(kg·K)}$"
+    ],
+    "tim": [
+     "a) cách biến đổi nội năng lúc phanh, $\\Delta U_1$",
+     "b) cách biến đổi lúc nguội, $Q$, $\\Delta U_2$",
+     "c) $\\Delta U$ cả quá trình"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -168,7 +180,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Giai đoạn 1 (nén): khí nhận công $180\\ \\text{J}$, toả nhiệt $70\\ \\text{J}$",
+     "Giai đoạn 2 (giãn): khí nhận nhiệt $130\\ \\text{J}$, sinh công $150\\ \\text{J}$"
+    ],
+    "tim": [
+     "a) $\\Delta U_1$",
+     "b) $\\Delta U_2$",
+     "c) nội năng sau hai giai đoạn tăng hay giảm, bao nhiêu"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -219,7 +242,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Quá trình 1: khí nhận công $25\\ \\text{J}$, nội năng giảm $35\\ \\text{J}$",
+     "Quá trình 2: khí nhận nhiệt $100\\ \\text{J}$, nội năng tăng $20\\ \\text{J}$"
+    ],
+    "tim": [
+     "a) QT 1: toả hay thu nhiệt, $Q$",
+     "b) QT 2: nhận hay sinh công, $A$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -294,7 +327,104 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khối đồng $0{,}300\\ \\text{kg}$; mũi khoan thực hiện công $5400\\ \\text{J}$ lên đồng",
+     "Nước $0{,}250\\ \\text{kg}$: $24{,}0\\ ^\\circ\\text{C}$ → $27{,}0\\ ^\\circ\\text{C}$",
+     "Nước chỉ nhận nhiệt từ đồng; $c_{nước}=4200\\ \\text{J/(kg·K)}$"
+    ],
+    "tim": [
+     "a) nhiệt lượng nước nhận",
+     "b) đồng toả hay thu nhiệt, $Q$ của đồng",
+     "c) $\\Delta U$ của đồng, tăng hay giảm"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "hop_he",
+     "ten": "đồng"
+    },
+    "cot": [
+     {
+      "ten": "Q_n",
+      "mau": "min"
+     },
+     {
+      "ten": "A",
+      "mau": "max"
+     },
+     {
+      "ten": "Q",
+      "mau": "min"
+     },
+     {
+      "ten": "ΔU",
+      "mau": "chu"
+     }
+    ],
+    "max": 6000,
+    "don_vi": "J",
+    "hinh": [
+     {
+      "loai": "mui",
+      "vao": true,
+      "nhan": "A=5400",
+      "hang": 0
+     },
+     {
+      "loai": "cot",
+      "ten": "A",
+      "gia_tri": 5400,
+      "nhan": "+5400"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "cot",
+       "ten": "Q_n",
+       "gia_tri": 3150,
+       "nhan": "3150"
+      },
+      {
+       "loai": "ghi",
+       "text": "Nước nhận Q = 0,25·4200·3 = 3150 J"
+      }
+     ],
+     [
+      {
+       "loai": "mui",
+       "vao": false,
+       "nhan": "Q=−3150",
+       "hang": 1
+      },
+      {
+       "loai": "cot",
+       "ten": "Q",
+       "gia_tri": 3150,
+       "nhan": "−3150"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đồng toả nhiệt: Q = −3150 J"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "ΔU",
+       "gia_tri": 2250,
+       "nhan": "+2250"
+      },
+      {
+       "loai": "ghi",
+       "text": "ΔU = 5400 + (−3150) = +2250 J"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -406,7 +536,116 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Một chu trình: máy nén thực hiện công $150\\ \\text{J}$ lên gas",
+     "Dàn nóng: gas toả $450\\ \\text{J}$; van tiết lưu không $A$, không $Q$; gas chỉ thu nhiệt ở dàn lạnh",
+     "Cần lấy $54\\ \\text{kJ}$ từ ngăn lạnh"
+    ],
+    "tim": [
+     "a) nhiệt gas thu ở dàn lạnh mỗi chu trình",
+     "b) số chu trình",
+     "c) tổng công máy nén"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "hop_he",
+     "ten": "gas"
+    },
+    "cot": [
+     {
+      "ten": "A",
+      "mau": "max"
+     },
+     {
+      "ten": "Q_n",
+      "mau": "min"
+     },
+     {
+      "ten": "Q_l",
+      "mau": "max"
+     },
+     {
+      "ten": "ΔU",
+      "mau": "chu"
+     }
+    ],
+    "max": 500,
+    "don_vi": "J",
+    "hinh": [
+     {
+      "loai": "mui",
+      "vao": true,
+      "nhan": "A=150",
+      "hang": 0
+     },
+     {
+      "loai": "mui",
+      "vao": false,
+      "nhan": "Q=−450",
+      "hang": 1
+     },
+     {
+      "loai": "cot",
+      "ten": "A",
+      "gia_tri": 150,
+      "nhan": "+150"
+     },
+     {
+      "loai": "cot",
+      "ten": "Q_n",
+      "gia_tri": 450,
+      "nhan": "−450"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "cot",
+       "ten": "ΔU",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "ghi",
+       "text": "Trở về trạng thái đầu: ΔU = 0"
+      }
+     ],
+     [
+      {
+       "loai": "mui",
+       "vao": true,
+       "nhan": "Q=300",
+       "hang": 2
+      },
+      {
+       "loai": "cot",
+       "ten": "Q_l",
+       "gia_tri": 300,
+       "nhan": "+300"
+      },
+      {
+       "loai": "ghi",
+       "text": "0 = 150 − 450 + Q ⇒ Q = 300 J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "54 000 : 300 = 180 chu trình"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "180 · 150 = 27 000 J = 27 kJ"
+      }
+     ]
+    ]
+   }
   }
  ]
 }

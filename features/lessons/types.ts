@@ -149,7 +149,7 @@ export type WorkedTool =
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
-  | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; lop?: NangLuongLop[][] }
+  | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; hinh?: NangLuongLop[]; lop?: NangLuongLop[][] }
   | SoDoVectoTool
   | { loai: "dien_truong_deu"; L: number; d: number; duong: "tren" | "duoi"; v0?: string; hinh?: DienTruongLop[]; lop?: DienTruongLop[][] }
   | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] }
