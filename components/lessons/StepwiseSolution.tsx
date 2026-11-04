@@ -183,7 +183,9 @@ function StepAsk({
     }
   }
 
+  // đã chọn đúng thì khoá: chạm nhầm lựa chọn khác không mở lại bước (HS ảo Đ5)
   function pickChoice(c: WorkedChoice) {
+    if (pick?.dung) return;
     setPick(c);
     if (c.dung) onDone();
     else {
@@ -203,7 +205,7 @@ function StepAsk({
       {needNext && (
         <div className="bt-ask">
           <p className="bt-ask-q">Bước tiếp theo làm gì?</p>
-          <Choices choices={step.chon_buoc_ke!} onPick={setNextPick} picked={nextPick} color={color} />
+          <Choices choices={step.chon_buoc_ke!} onPick={(c) => !nextPick?.dung && setNextPick(c)} picked={nextPick} color={color} />
         </div>
       )}
       {nextOk && (

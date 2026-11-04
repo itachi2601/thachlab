@@ -389,7 +389,7 @@
      "hoi": "Chiết suất của chất lỏng bằng bao nhiêu?",
      "dap_so": 1.64,
      "sai_so": 0.02,
-     "loi_hay_gap": "Hay lật tỉ số hai sin, hoặc dùng góc hợp mặt phân cách thay cho góc tới.",
+     "loi_hay_gap": "Ra khoảng $0{,}61$ là lật tỉ số $\\dfrac{\\sin r}{\\sin i}$; ra khoảng $1{,}15$ là lấy góc $35^\\circ$ hợp mặt phân cách làm góc tới.",
      "chon_buoc_ke": [
       {
        "text": "$n=\\dfrac{\\sin i}{\\sin r}$ với $n_1=1$",
@@ -584,7 +584,7 @@
      "dap_so": 31.9,
      "sai_so": 0.3,
      "don_vi": "°",
-     "loi_hay_gap": "Hay dùng cùng một chiết suất cho cả hai phía của mặt phân cách. Ở mặt nước–thuỷ tinh, một phía là nước, một phía là thuỷ tinh."
+     "loi_hay_gap": "Ra $28^\\circ$ là coi góc trong nước bằng góc trong thuỷ tinh; ra khoảng $24{,}7^\\circ$ là đặt nhầm hai chiết suất: phải là $\\dfrac43\\sin r_1=1{,}5\\sin28^\\circ$."
     },
     {
      "tieu_de": "Góc tới ở mặt nước",
@@ -595,16 +595,16 @@
      "loi_hay_gap": "Hay lấy góc trong thuỷ tinh áp thẳng cho mặt nước. Ở mặt này, tia khúc xạ nằm trong nước.",
      "chon_buoc_ke": [
       {
-       "text": "Mặt không khí–nước: $\\sin i=\\dfrac43\\sin r_1$, với $r_1$ là góc trong nước",
+       "text": "Mặt không khí–nước: $\\sin i=\\dfrac43\\sin r_1$",
        "dung": true
       },
       {
-       "text": "Dùng góc trong thuỷ tinh: $\\sin i=\\dfrac43\\sin28^\\circ$",
+       "text": "Dùng góc thuỷ tinh: $\\sin i=\\dfrac43\\sin28^\\circ$",
        "dung": false,
        "vi_sao": "Tia ở mặt nước khúc xạ vào nước, không phải vào thuỷ tinh; góc trong nước mới là góc khúc xạ ở mặt này."
       },
       {
-       "text": "$\\sin i=1{,}5\\sin r_1$",
+       "text": "Mặt không khí–nước: $\\sin i=1{,}5\\sin r_1$",
        "dung": false,
        "vi_sao": "Mặt nước là mặt phân cách không khí–nước; chiết suất $1{,}5$ là của thuỷ tinh, không có mặt ở đây."
       }
@@ -615,16 +615,16 @@
      "hoi": "Rút hết nước, giữ nguyên góc tới ở câu b. Góc khúc xạ trong thuỷ tinh thay đổi thế nào?",
      "lua_chon": [
       {
-       "text": "Không đổi",
+       "text": "Không đổi: vẫn bằng góc đề cho",
        "dung": true
       },
       {
-       "text": "Lớn hơn, vì không còn nước làm tia lệch thêm",
+       "text": "Lớn hơn: bỏ nước thì tia lệch ít đi",
        "dung": false,
        "vi_sao": "Thử tính $\\sin r_2=\\dfrac{\\sin i}{1{,}5}$ với $\\sin i$ ở câu b rồi so với góc đề cho."
       },
       {
-       "text": "Nhỏ hơn, vì thuỷ tinh tiếp xúc trực tiếp với không khí",
+       "text": "Nhỏ hơn: thuỷ tinh gặp thẳng không khí",
        "dung": false,
        "vi_sao": "Cũng thử tính như trên: kết quả không nhỏ hơn góc đề cho."
       }
@@ -632,18 +632,18 @@
      "loi_hay_gap": "Hay nghĩ bỏ lớp nước thì tia phải lệch khác đi. Thử tính lại với mặt không khí–thuỷ tinh rồi so với góc đề cho.",
      "chon_buoc_ke": [
       {
-       "text": "Áp dụng định luật cho mặt không khí–thuỷ tinh với $i$ ở câu b",
+       "text": "Viết định luật cho mặt không khí–thuỷ tinh với $i$ ở câu b",
        "dung": true
       },
       {
-       "text": "Tia vào thuỷ tinh với góc tới bằng góc trong nước vừa tính",
+       "text": "Lấy góc trong nước vừa tính làm góc tới thuỷ tinh",
        "dung": false,
        "vi_sao": "Khi không còn nước thì góc tới thuỷ tinh là góc đã tính ở mặt không khí, không phải góc trong nước."
       },
       {
-       "text": "Không tính được vì thiếu chiết suất của nước",
+       "text": "Lấy góc trong thuỷ tinh bằng góc tới $i$ ở câu b",
        "dung": false,
-       "vi_sao": "Chiết suất nước không còn cần nữa: chỉ còn mặt phân cách không khí–thuỷ tinh."
+       "vi_sao": "Vào môi trường chiết quang hơn, tia luôn lệch về phía pháp tuyến: góc khúc xạ nhỏ hơn $i$."
       }
      ]
     },

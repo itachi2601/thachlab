@@ -63,16 +63,16 @@
      "hoi": "Thấu kính ở hình b là loại nào?",
      "lua_chon": [
       {
-       "text": "Phân kì: ảnh cùng chiều (ảnh ảo) mà nhỏ hơn vật",
+       "text": "Phân kì: ảnh ảo cùng chiều, nhỏ hơn vật",
        "dung": true
       },
       {
-       "text": "Hội tụ: thấu kính hội tụ cũng cho ảnh ảo cùng chiều",
+       "text": "Hội tụ: hội tụ cũng cho ảnh ảo cùng chiều",
        "dung": false,
        "vi_sao": "Ảnh ảo của thấu kính hội tụ luôn lớn hơn vật; ở đây ảnh nhỏ hơn vật."
       },
       {
-       "text": "Chưa biết được khi chưa vẽ thấu kính",
+       "text": "Chưa biết: phải vẽ thấu kính trước đã",
        "dung": false,
        "vi_sao": "Chiều và độ lớn của ảnh so với vật đã đủ để nhận loại thấu kính."
       }
@@ -80,11 +80,11 @@
      "loi_hay_gap": "Thấy ảnh cùng chiều liền nghĩ tới kính lúp (hội tụ), quên so độ lớn của ảnh với vật.",
      "chon_buoc_ke": [
       {
-       "text": "Dựa vào chiều và độ lớn của ảnh so với vật để nhận loại thấu kính",
+       "text": "So chiều và độ lớn của ảnh với vật",
        "dung": true
       },
       {
-       "text": "Vẽ ngay tia song song trục ló qua $F'$ ở phía bên phải",
+       "text": "Vẽ ngay tia song song trục ló qua $F'$",
        "dung": false,
        "vi_sao": "Chưa biết thấu kính ở đâu, loại gì, nên chưa biết $F'$ ở phía nào."
       },
@@ -104,16 +104,16 @@
      "loi_hay_gap": "Đặt $O$ ở trung điểm $AA'$ hoặc ngay dưới $B'$; tia qua quang tâm truyền thẳng nên $O$ nằm trên đường $BB'$ kéo dài.",
      "chon_buoc_ke": [
       {
-       "text": "Kéo dài đường $BB'$ cắt trục chính: giao điểm là $O$",
+       "text": "Kéo dài $BB'$ cắt trục chính tại $O$",
        "dung": true
       },
       {
-       "text": "Lấy $O$ là trung điểm của $AA'$",
+       "text": "Lấy $O$ ở trung điểm của $AA'$",
        "dung": false,
        "vi_sao": "Không có quy tắc trung điểm; điểm vật, điểm ảnh và quang tâm thẳng hàng."
       },
       {
-       "text": "Lấy $O$ ngay dưới $B'$ (trùng $A'$)",
+       "text": "Lấy $O$ ngay dưới $B'$, trùng $A'$",
        "dung": false,
        "vi_sao": "Ảnh không nằm trên thấu kính; $O$ là giao của đường $BB'$ với trục."
       }
@@ -128,16 +128,16 @@
      "loi_hay_gap": "Kéo dài tia ló về phía sau thấu kính thay vì về phía vật, hoặc ghi $f$ dương cho thấu kính phân kì.",
      "chon_buoc_ke": [
       {
-       "text": "Vẽ tia từ $B$ song song trục tới $I$; kéo dài đường $IB'$ cắt trục chính tại $F'$",
+       "text": "Tia từ $B$ song song trục tới $I$; kéo dài $IB'$ cắt trục",
        "dung": true
       },
       {
-       "text": "Vẽ thêm tia từ $B$ qua $O$",
+       "text": "Vẽ thêm tia từ $B$ qua quang tâm $O$",
        "dung": false,
        "vi_sao": "Tia này chỉ cho lại đường $BB'$ đã dùng để tìm $O$, không cho thêm điểm nào trên trục."
       },
       {
-       "text": "Lấy $OF'$ bằng $OA'$",
+       "text": "Lấy $OF'$ bằng $OA'$, coi ảnh ở tiêu điểm",
        "dung": false,
        "vi_sao": "$A'$ là vị trí ảnh, không phải tiêu điểm; ảnh chỉ nằm ở $F'$ khi vật ở rất xa."
       }
@@ -388,8 +388,8 @@
       },
       {
        "loai": "chu",
-       "x": 23.5,
-       "y": 3.4,
+       "x": 23.4,
+       "y": 2.1,
        "text": "I",
        "a": "end",
        "mau": "max"
@@ -1337,7 +1337,7 @@
      "dap_so": 60.0,
      "sai_so": 0.2,
      "don_vi": "cm",
-     "loi_hay_gap": "Nhớ nhầm $\\dfrac1{d'}=\\dfrac1f+\\dfrac1d$, ra ảnh gần thấu kính hơn tiêu cự — vô lí với ảnh thật."
+     "loi_hay_gap": "Ra $12$ là nhớ nhầm $\\dfrac1{d'}=\\dfrac1f+\\dfrac1d$; ra $-60$ là sai dấu: ảnh thật qua thấu kính hội tụ có $d'\\gt0$."
     },
     {
      "tieu_de": "Vật của $TK_2$",
@@ -1369,7 +1369,7 @@
      "dap_so": -10.0,
      "sai_so": 0.1,
      "don_vi": "cm",
-     "loi_hay_gap": "Quên $f_2\\lt0$ : thế $f_2$ dương thì $d_2=f_2$, ảnh ở vô cực — vô lí với thấu kính phân kì.",
+     "loi_hay_gap": "Ra $10$ là thế $f_2$ dương lại dùng mẫu $d_2+f_2$ (hai lỗi dấu); thế $f_2=+20$ vào $\\dfrac{d_2f_2}{d_2-f_2}$ thì mẫu bằng $0$, không tính được.",
      "chon_buoc_ke": [
       {
        "text": "$d_2'=\\dfrac{d_2f_2}{d_2-f_2}$ với $f_2\\lt0$",
@@ -1393,7 +1393,7 @@
      "dap_so": 2.0,
      "sai_so": 0.05,
      "don_vi": "cm",
-     "loi_hay_gap": "Kết luận ảnh cuối cùng chiều vật vì ảnh của thấu kính phân kì cùng chiều — quên ảnh trung gian đã ngược chiều.",
+     "loi_hay_gap": "Ra $4$ là quên tỉ số $\\dfrac{|d_2'|}{d_2}=\\dfrac12$ của $TK_2$; ra $1$ là quên ảnh trung gian đã gấp đôi vật ($\\dfrac{60}{30}=2$).",
      "chon_buoc_ke": [
       {
        "text": "$h_2'=h\\cdot\\dfrac{|d_1'|}{d_1}\\cdot\\dfrac{|d_2'|}{d_2}$",
@@ -1417,14 +1417,14 @@
      "dap_so": -60.0,
      "sai_so": 0.2,
      "don_vi": "cm",
-     "loi_hay_gap": "Coi điểm hội tụ $A_1'$ là vật thật (bỏ dấu trừ) : kết quả không khớp kết luận hệ như tấm kính phẳng.",
+     "loi_hay_gap": "Ra $60$ là coi điểm hội tụ $A_1'$ là vật thật (bỏ dấu trừ); ra $30$ là lấy luôn vật $AB$ làm vật của $TK_2$.",
      "chon_buoc_ke": [
       {
-       "text": "$d_2=a-d_1'$ với $a=0$ : âm, vật ảo",
+       "text": "$d_2=a-d_1'$ với $a=0$, vật ảo",
        "dung": true
       },
       {
-       "text": "$d_2=d_1$",
+       "text": "$d_2=d_1$, vật thật là $AB$",
        "dung": false,
        "vi_sao": "Vật của $TK_2$ là ảnh qua $TK_1$, không phải $AB$."
       },
@@ -1441,21 +1441,21 @@
      "dap_so": -30.0,
      "sai_so": 0.2,
      "don_vi": "cm",
-     "loi_hay_gap": "Thế $d_2$ dương ; hoặc đi tìm công thức riêng cho vật ảo thay vì dùng lại một công thức.",
+     "loi_hay_gap": "Ra $-15$ là thế $d_2=+60$ (quên vật ảo); ra $60$ là lấy luôn $A_1'B_1'$ làm ảnh cuối.",
      "chon_buoc_ke": [
       {
-       "text": "Thế $d_2\\lt0$ vào $\\dfrac1{f_2}=\\dfrac1{d_2}+\\dfrac1{d_2'}$",
+       "text": "Thế $d_2=-60$ vào $\\dfrac1{f_2}=\\dfrac1{d_2}+\\dfrac1{d_2'}$",
        "dung": true
       },
       {
-       "text": "Lấy luôn $A_1'B_1'$ làm ảnh cuối",
+       "text": "Thế $d_2=+60$ vào $\\dfrac1{f_2}=\\dfrac1{d_2}+\\dfrac1{d_2'}$",
        "dung": false,
-       "vi_sao": "$TK_2$ chặn chùm tia trước khi hội tụ nên $A_1'B_1'$ không còn là ảnh thật."
+       "vi_sao": "Điểm hội tụ nằm sau $TK_2$ nên là vật ảo, $d_2\\lt0$; bỏ dấu trừ ra $d_2'=-15$ cm, sai."
       },
       {
-       "text": "Dùng công thức đổi dấu riêng cho vật ảo",
+       "text": "Lấy luôn $A_1'B_1'$ ($d'=60$ cm) làm ảnh cuối",
        "dung": false,
-       "vi_sao": "Không cần công thức mới : một công thức cho mọi trường hợp, chỉ cần thế $d_2$ có dấu."
+       "vi_sao": "$TK_2$ chặn chùm tia trước khi hội tụ nên $A_1'B_1'$ không còn là ảnh thật."
       }
      ]
     },
@@ -1465,26 +1465,44 @@
      "dap_so": 100.0,
      "sai_so": 0.2,
      "don_vi": "cm",
-     "loi_hay_gap": "Quên tỉ số của $TK_1$ đã bằng 2 nên cho $TK_2$ phóng to tiếp ; hoặc lấy $a=d_2$.",
+     "loi_hay_gap": "Ra $90$ là cho $TK_2$ cũng phóng to gấp đôi ($d_2=30$ cm); ra $40$ là lấy $a=d_2$, quên cộng $d_1'$.",
      "chon_buoc_ke": [
       {
-       "text": "Ảnh trung gian đã gấp đôi vật ⇒ $TK_2$ cho ảnh thật bằng vật : $d_2=2f_2$",
+       "text": "$TK_1$ đã gấp đôi ⇒ $TK_2$ cho ảnh bằng vật: $d_2=2f_2$",
        "dung": true
       },
       {
-       "text": "Cho $TK_2$ cũng phóng to gấp đôi",
+       "text": "Cho $TK_2$ cũng phóng to gấp đôi: $d_2=1{,}5f_2$",
        "dung": false,
        "vi_sao": "Tỉ số của hệ là tích hai tỉ số ; $TK_1$ đã gấp đôi nên $TK_2$ chỉ được cho ảnh bằng vật."
       },
       {
-       "text": "Đặt $TK_2$ cách $TK_1$ đúng $2f_2$",
+       "text": "Đặt $TK_2$ cách $TK_1$ đúng $2f_2$: $a=40$ cm",
        "dung": false,
        "vi_sao": "$d_2$ đo từ ảnh trung gian tới $TK_2$, không phải từ $TK_1$ : $a=d_1'+d_2$."
       }
      ]
     },
     {
-     "tieu_de": "Kiểm tra"
+     "tieu_de": "Chiều của ảnh cuối (câu c)",
+     "hoi": "Ảnh cuối ở câu c cùng chiều hay ngược chiều vật $AB$?",
+     "lua_chon": [
+      {
+       "text": "Cùng chiều: qua mỗi thấu kính ảnh thật lật một lần",
+       "dung": true
+      },
+      {
+       "text": "Ngược chiều: ảnh cuối là ảnh thật nên luôn ngược",
+       "dung": false,
+       "vi_sao": "Ảnh thật ngược chiều với vật CỦA NÓ là $A_1'B_1'$, mà $A_1'B_1'$ đã ngược chiều $AB$: lật hai lần thành cùng chiều."
+      },
+      {
+       "text": "Ngược chiều: giống ảnh trung gian $A_1'B_1'$",
+       "dung": false,
+       "vi_sao": "$TK_2$ còn lật $A_1'B_1'$ thêm một lần nữa."
+      }
+     ],
+     "loi_hay_gap": "Ảnh thật ngược chiều so với vật của chính nó; ở đây ảnh thật được tạo hai lần, lật hai lần."
     }
    ],
    "cong_cu": {
@@ -1507,6 +1525,10 @@
         "tieu": [
          "F_1",
          "F_1′"
+        ],
+        "vi_tieu": [
+         "b",
+         "t"
         ]
        },
        {
@@ -1547,6 +1569,10 @@
         "tieu": [
          "F_1",
          "F_1′"
+        ],
+        "vi_tieu": [
+         "b",
+         "t"
         ]
        },
        {
@@ -1579,6 +1605,10 @@
         "tieu": [
          "F_1",
          "F_1′"
+        ],
+        "vi_tieu": [
+         "b",
+         "t"
         ]
        },
        {
@@ -1671,7 +1701,8 @@
         "A_1′",
         "B_1′"
        ],
-       "mau": "max"
+       "mau": "max",
+       "het": 3
       },
       {
        "loai": "ghi",
@@ -1692,6 +1723,17 @@
       }
      ],
      [
+      {
+       "loai": "vat",
+       "x": 60,
+       "h": -4,
+       "ten": [
+        "",
+        "B_1′"
+       ],
+       "mau": "max",
+       "het": 5
+      },
       {
        "loai": "tia",
        "qua": [
@@ -1851,8 +1893,25 @@
        "tieu": [
         "F_2",
         "F_2′"
+       ],
+       "vi_tieu": [
+        "t",
+        "b"
        ]
       },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 100,
+       "o": 4.2,
+       "nhan": "a = 100 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_2 = 2f_2 = 40 cm ⇒ a = d_1′ + d_2 = 60 + 40 = 100 cm"
+      }
+     ],
+     [
       {
        "loai": "tia",
        "qua": [
@@ -1894,19 +1953,6 @@
        ],
        "mau": "min"
       },
-      {
-       "loai": "thuoc",
-       "tu": 0,
-       "den": 100,
-       "o": 4.2,
-       "nhan": "a = 100 cm"
-      },
-      {
-       "loai": "ghi",
-       "text": "d_2 = 2f_2 = 40 cm ⇒ a = d_1′ + d_2 = 60 + 40 = 100 cm"
-      }
-     ],
-     [
       {
        "loai": "ghi",
        "text": "2·(40 : 40) = 2 ✓ · hai ảnh thật ⇒ ảnh cuối cùng chiều vật"
