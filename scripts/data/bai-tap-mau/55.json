@@ -56,7 +56,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thả nhẹ ($v_0=0$), rơi $4{,}0\\ \\text{s}$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Độ cao $h$ của mặt cầu",
+     "b) Vận tốc lúc chạm sông"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -155,7 +165,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thả rơi tự do từ $h=125\\ \\text{m}$",
+     "$g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Thời gian rơi",
+     "b) Quãng đường $3\\ \\text{s}$ đầu",
+     "c) Quãng đường trong giây thứ $3$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -267,7 +288,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thả rơi tự do, $v_0=0$",
+     "Giây cuối đi được $24{,}5\\ \\text{m}$",
+     "$g=9{,}8\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Thời gian rơi",
+     "b) Độ cao cửa sổ",
+     "c) Vận tốc lúc chạm sân"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -399,7 +432,102 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 5,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      4.25
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 50,
+     "ten": "v (m/s)",
+     "vach": [
+      0
+     ],
+     "luoi": 10
+    },
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "t₁ + t₂ = 4,25 s; h = 5t₁² = 320t₂"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t₁² + 64t₁ − 272 = 0 (chia cho 5)"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          4,
+          40
+         ]
+        ],
+        "ten": "v = 10t",
+        "ten_xy": [
+         1.2,
+         18
+        ]
+       }
+      },
+      {
+       "loai": "dung",
+       "x": 4,
+       "nhan": "t₁"
+      },
+      {
+       "loai": "ghi",
+       "text": "t₁ = 4 s ⇒ t₂ = 0,25 s"
+      }
+     ],
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 4,
+       "nhan": "h = 80 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "h = diện tích dưới v–t = 5·4² = 80 m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Bỏ qua âm: h' = 5·4,25² ≈ 90,3 m (lệch ≈ 10 m)"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Thả hòn đá rơi tự do vào hang, nghe tiếng chạm đáy sau $4{,}25\\ \\text{s}$",
+     "$v_{\\text{âm}}=320\\ \\text{m/s}$, $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Chiều sâu của hang",
+     "b) Độ sâu nếu bỏ qua thời gian truyền âm và sai lệch"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -532,7 +660,141 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 5,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      1
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 50,
+     "ten": "v (m/s)",
+     "vach": [
+      0
+     ],
+     "luoi": 10
+    },
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          5,
+          50
+         ]
+        ],
+        "ten": "A",
+        "ten_xy": [
+         1.3,
+         16
+        ]
+       }
+      },
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          1,
+          0
+         ],
+         [
+          5,
+          40
+         ]
+        ],
+        "mau": "min",
+        "ten": "B",
+        "ten_xy": [
+         3.4,
+         16
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "B chậm A 1 s: t_B = t − 1"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 2 s: 20 m − 5 m = 15 m"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 3,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 3 s: 45 m − 20 m = 25 m"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "d = 10t − 5 = 35 ⇒ t = 4 s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 4,
+       "y": 40,
+       "ten": "40",
+       "vi": "tl"
+      },
+      {
+       "loai": "diem",
+       "x": 4,
+       "y": 30,
+       "ten": "30",
+       "vi": "br"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_A − v_B = 40 − 30 = 10 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Cột cao $125\\ \\text{m}$; thả bi A, sau $1\\ \\text{s}$ thả bi B, cùng điểm, $v_0=0$",
+     "$g=10\\ \\text{m/s}^2$, $t=0$ lúc thả A"
+    ],
+    "tim": [
+     "a) Khoảng cách khi A rơi $3\\ \\text{s}$",
+     "b) Lúc hai bi cách nhau $35\\ \\text{m}$",
+     "c) $v_A-v_B$",
+     "d) Khoảng cách tăng thêm mỗi giây"
+    ]
+   }
   }
  ],
  "tu_luan": {
