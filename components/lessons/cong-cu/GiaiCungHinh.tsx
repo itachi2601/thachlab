@@ -16,6 +16,8 @@ import MachDien from "@/components/lessons/cong-cu/MachDien";
 import TrucChuyenDong from "@/components/lessons/cong-cu/TrucChuyenDong";
 import QuyDaoNem from "@/components/lessons/cong-cu/QuyDaoNem";
 import CotChatLong from "@/components/lessons/cong-cu/CotChatLong";
+import TiaSang from "@/components/lessons/cong-cu/TiaSang";
+import ThauKinh from "@/components/lessons/cong-cu/ThauKinh";
 import { getTomDe, TomDeBar, TomDeSide, useStickyTop } from "@/components/lessons/TomDe";
 import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types";
 
@@ -26,7 +28,7 @@ import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types"
  * Mọi bước có câu hỏi đều tự làm (fading giau_het, thầy chốt 2/11 sau góp ý học sinh ảo: "4/6 bước chỉ đọc đáp số").
  */
 
-function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
+function Hinh({ tool, layer, step }: { tool: WorkedTool; layer: number; step: number }) {
   if (tool.loai === "giao_thoa_2_nguon") return <GiaoThoaHaiNguon {...tool} layer={layer} />;
   if (tool.loai === "vong_tron") return <VongTronPha {...tool} layer={layer} />;
   if (tool.loai === "song_day") return <SongDay {...tool} layer={layer} />;
@@ -40,6 +42,9 @@ function Hinh({ tool, layer }: { tool: WorkedTool; layer: number }) {
   if (tool.loai === "truc_chuyen_dong") return <TrucChuyenDong {...tool} layer={layer} />;
   if (tool.loai === "quy_dao_nem") return <QuyDaoNem {...tool} layer={layer} />;
   if (tool.loai === "cot_chat_long") return <CotChatLong {...tool} layer={layer} />;
+  if (tool.loai === "tia_sang") return <TiaSang {...tool} layer={layer} />;
+  // thấu kính: câu a/b/c khác khung hình — chọn khung theo bước đang xem, không theo số bước đã xong
+  if (tool.loai === "thau_kinh") return <ThauKinh {...tool} layer={layer} buoc={step} />;
   return null;
 }
 
@@ -142,7 +147,7 @@ export default function GiaiCungHinh({
       <div className={full ? "cc-sticky cc-sticky--off" : "cc-sticky"} style={{ top }}>
         {/* Tóm đề (thử 3/11): một dòng "Tìm" ở ĐẦU khối dính (thầy 3/11: để dưới nút thì bị thanh điều hướng đáy che) — số liệu "Cho" đã nằm trên hình (N4); chạm thì đè lên, trang không xô (D2, N8) */}
         {tomDe && <TomDeBar tomDe={tomDe} problemHtml={q.problem_html} open={deOpen} setOpen={setDeOpen} />}
-        <Hinh tool={tool} layer={layer} />
+        <Hinh tool={tool} layer={layer} step={step} />
         <div className="cc-stepper">
           <button type="button" aria-label="Bước trước" disabled={step <= 0} onClick={() => go(step - 1)}>
             ◀

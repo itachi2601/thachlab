@@ -146,7 +146,284 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -14,
+      "x_max": 30,
+      "y_tren": 4,
+      "y_duoi": -6,
+      "o_ly": 2,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 8,
+        "vi_tieu": [
+         "b",
+         "t"
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": -0.5,
+        "y": -2.2,
+        "text": "O",
+        "a": "end"
+       },
+       {
+        "loai": "vat",
+        "x": -12,
+        "h": 2
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "x_min": -2,
+      "x_max": 28,
+      "y_tren": 4,
+      "y_duoi": -3.5,
+      "o_ly": 1,
+      "hinh": [
+       {
+        "loai": "vat",
+        "x": 0,
+        "h": 3
+       },
+       {
+        "loai": "vat",
+        "x": 16,
+        "h": 1,
+        "ao": true,
+        "ten": [
+         "A′",
+         "B′"
+        ]
+       },
+       {
+        "loai": "thuoc",
+        "tu": 0,
+        "den": 16,
+        "o": -2.4,
+        "nhan": "AA′ = 16 cm",
+        "ben": "duoi",
+        "het": 5
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -12,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         24,
+         -4
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -12,
+         2
+        ],
+        [
+         24,
+         -4
+        ]
+       ]
+      },
+      {
+       "loai": "vat",
+       "x": 24,
+       "h": -4,
+       "ten": [
+        "A′",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 24,
+       "o": 3,
+       "nhan": "12 ô"
+      },
+      {
+       "loai": "ghi",
+       "text": "OA′ = 12 ô × 2 cm = 24 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": -4,
+       "o": 25,
+       "doc": true,
+       "nhan": "2 ô",
+       "ben": "phai"
+      },
+      {
+       "loai": "ghi",
+       "text": "A′B′ = 2 ô × 2 cm = 4 cm · ảnh thật, ngược chiều, gấp 2 vật"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -12,
+         2
+        ],
+        [
+         0,
+         -4
+        ],
+        [
+         24,
+         -4
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "Tia qua F ló song song trục, cũng tới B′ ✓ · d′ = 12·8 : (12 − 8) = 24 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B, B′ cùng phía trục ⇒ ảnh ảo; 1 cm < 3 cm ⇒ thấu kính phân kì"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         3
+        ],
+        [
+         24,
+         0
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "tk",
+       "x": 24,
+       "kieu": "phan_ki"
+      },
+      {
+       "loai": "chu",
+       "x": 23.5,
+       "y": -1.6,
+       "text": "O",
+       "a": "end"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 24,
+       "o": -2.4,
+       "nhan": "OA = 24 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "BB′ kéo dài cắt trục tại O ⇒ OA = 16 + 8 = 24 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         3
+        ],
+        [
+         24,
+         3
+        ],
+        [
+         28,
+         4
+        ]
+       ],
+       "keo": [
+        [
+         24,
+         3
+        ],
+        [
+         12,
+         0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 23.5,
+       "y": 3.4,
+       "text": "I",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "diem",
+       "x": 12,
+       "ten": "F′",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "IB′ kéo dài cắt trục tại F′: OF′ = 12 cm ⇒ f = −12 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1/24 + 1/(−8) = −1/12 = 1/f ✓ · h′ : h = 8 : 24 = 1 : 3 ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "a) ô $2$ cm; hội tụ $f=8$ cm; $AB=2$ cm, $d=12$ cm",
+     "b) ô $1$ cm; $B$ cách trục $3$ cm, $B'$ cách trục $1$ cm, cùng phía",
+     "b) $AA'=16$ cm, $A'$ bên phải $A$"
+    ],
+    "tim": [
+     "a) $OA'$, $A'B'$, tính chất ảnh",
+     "b) loại thấu kính, $O$, $F'$, $f$ (có dấu)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -343,7 +620,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=20$ cm; $h=1$ cm; $d=15$ cm",
+     "phân kì $f=30$ cm; $h=1{,}5$ cm; $d=15$ cm"
+    ],
+    "tim": [
+     "a) dựng ảnh, tính chất; $d'$, $h'$, khoảng cách vật–ảnh",
+     "b) với thấu kính phân kì: $d'$ (có dấu), $h'$, khoảng cách vật–ảnh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -503,7 +790,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=12$ cm"
+    ],
+    "tim": [
+     "a) $d$ để ảnh cao gấp $3$ vật; ảnh cách vật bao nhiêu",
+     "b) mọi $d$ để ảnh cách vật $50$ cm; mấy vị trí"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -650,7 +946,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=15$ cm; $h=2$ cm; $d=45$ cm",
+     "dịch vật lại gần $15$ cm, rồi thêm $10$ cm",
+     "thấu kính khác: dịch $5$ cm → ảnh dịch $10$ cm, cao gấp đôi"
+    ],
+    "tim": [
+     "a) $d'$, $h'$, khoảng cách vật–ảnh; ảnh dịch chiều nào, bao nhiêu",
+     "b) ảnh dịch thêm bao nhiêu; chứng minh $L\\ge4f$",
+     "c) $f$ và vị trí ban đầu của vật"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -821,7 +1129,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$h=2$ cm; vật–màn $L=125$ cm",
+     "hai vị trí thấu kính cách nhau $75$ cm",
+     "2f–2f: $79{,}5$; $80{,}6$; $80{,}2$ cm"
+    ],
+    "tim": [
+     "a) $f$; hai chiều cao ảnh",
+     "b) $L=70$ cm còn ảnh rõ không; $L_{min}$",
+     "c) $f=\\bar f\\pm\\Delta f$",
+     "d) đo lệch $1$ cm: $f$ đổi bao nhiêu"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -981,7 +1302,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "kính lúp $5\\times$, đặt sát mắt",
+     "mắt tốt: $C_c$ cách mắt $25$ cm, $C_v$ ở vô cực",
+     "vết xước $0{,}4$ mm"
+    ],
+    "tim": [
+     "a) $f$",
+     "b) $d$ khi ngắm chừng ở $C_c$; ảnh gấp mấy lần",
+     "c) $d$ khi ngắm chừng ở vô cực",
+     "d) khoảng đặt vật (mm); ảnh vết xước ở $C_c$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -1152,7 +1486,447 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -38,
+      "x_max": 102,
+      "y_tren": 5,
+      "y_duoi": -6.5,
+      "phong_doc": 5,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 20,
+        "ten": "TK_1",
+        "tieu": [
+         "F_1",
+         "F_1′"
+        ]
+       },
+       {
+        "loai": "tk",
+        "x": 80,
+        "kieu": "phan_ki",
+        "ten": "TK_2"
+       },
+       {
+        "loai": "vat",
+        "x": -30,
+        "h": 2
+       },
+       {
+        "loai": "thuoc",
+        "tu": 0,
+        "den": 80,
+        "o": 4.2,
+        "nhan": "a = 80 cm"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 4,
+      "x_min": -38,
+      "x_max": 72,
+      "y_tren": 5,
+      "y_duoi": -6.5,
+      "phong_doc": 3.93,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": -1.5,
+        "kieu": "hoi_tu",
+        "f": 20,
+        "ten": "TK_1",
+        "ten_ben": "trai",
+        "tieu": [
+         "F_1",
+         "F_1′"
+        ]
+       },
+       {
+        "loai": "tk",
+        "x": 1.5,
+        "kieu": "phan_ki",
+        "ten": "TK_2"
+       },
+       {
+        "loai": "vat",
+        "x": -30,
+        "h": 2
+       }
+      ]
+     },
+     {
+      "tu_buoc": 6,
+      "x_min": -38,
+      "x_max": 148,
+      "y_tren": 5,
+      "y_duoi": -6.5,
+      "phong_doc": 6.64,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 20,
+        "ten": "TK_1",
+        "tieu": [
+         "F_1",
+         "F_1′"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -30,
+        "h": 2
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          -30,
+          2
+         ],
+         [
+          0,
+          2
+         ],
+         [
+          60,
+          -4
+         ]
+        ],
+        "mau": "max"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          -30,
+          2
+         ],
+         [
+          60,
+          -4
+         ]
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": 60,
+        "h": -4,
+        "ten": [
+         "A_1′",
+         "B_1′"
+        ],
+        "mau": "max"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -30,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         60,
+         -4
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -30,
+         2
+        ],
+        [
+         60,
+         -4
+        ]
+       ]
+      },
+      {
+       "loai": "vat",
+       "x": 60,
+       "h": -4,
+       "ten": [
+        "A_1′",
+        "B_1′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_1′ = 30·20 : (30 − 20) = 60 cm · ảnh thật, ngược chiều"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 60,
+       "den": 80,
+       "o": 2.4,
+       "nhan": "d_2"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_2 = a − d_1′ = 80 − 60 = 20 cm (vật thật)"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         60,
+         -4
+        ],
+        [
+         80,
+         -4
+        ],
+        [
+         85,
+         -5
+        ]
+       ],
+       "keo": [
+        [
+         80,
+         -4
+        ],
+        [
+         60,
+         0
+        ]
+       ],
+       "mau": "min",
+       "mep": true
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         60,
+         -4
+        ],
+        [
+         80,
+         0
+        ]
+       ],
+       "mep": true,
+       "mau": "min"
+      },
+      {
+       "loai": "vat",
+       "x": 70,
+       "h": -2,
+       "ao": true,
+       "ten": [
+        "",
+        ""
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 70,
+       "y": -0.9,
+       "text": "B_2′",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_2′ = 20·(−20) : (20 + 20) = −10 cm: ảnh ảo"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "h_2′ = 2·(60 : 30)·(10 : 20) = 2 cm · ngược chiều vật"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -30,
+         2
+        ],
+        [
+         0,
+         2
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         2
+        ],
+        [
+         60,
+         -4
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": 60,
+       "h": -4,
+       "ao": true,
+       "ten": [
+        "A_1′",
+        "B_1′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 60,
+       "o": 4.2,
+       "nhan": "d_2 = −60 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "a = 0 ⇒ d_2 = 0 − 60 = −60 cm: vật ảo (sau TK_2)"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         2
+        ],
+        [
+         72,
+         2
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": -37.6,
+       "y": -4.4,
+       "text": "ảnh ≡ AB",
+       "mau": "min",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_2′ = −30 cm: ảnh ảo trùng AB · hệ như tấm kính phẳng"
+      }
+     ],
+     [
+      {
+       "loai": "tk",
+       "x": 100,
+       "kieu": "hoi_tu",
+       "f": 20,
+       "ten": "TK_2",
+       "tieu": [
+        "F_2",
+        "F_2′"
+       ]
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         60,
+         -4
+        ],
+        [
+         100,
+         -4
+        ],
+        [
+         140,
+         4
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         60,
+         -4
+        ],
+        [
+         140,
+         4
+        ]
+       ]
+      },
+      {
+       "loai": "vat",
+       "x": 140,
+       "h": 4,
+       "ten": [
+        "A_2′",
+        "B_2′"
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 100,
+       "o": 4.2,
+       "nhan": "a = 100 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_2 = 2f_2 = 40 cm ⇒ a = d_1′ + d_2 = 60 + 40 = 100 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "2·(40 : 40) = 2 ✓ · hai ảnh thật ⇒ ảnh cuối cùng chiều vật"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$TK_1$ hội tụ $f_1=20$ cm; $h=2$ cm; $d_1=30$ cm",
+     "a) $TK_2$ phân kì $f=20$ cm, cách $TK_1$ $80$ cm",
+     "b) $TK_2$ ghép sát $TK_1$",
+     "c) $TK_2$ hội tụ $f=20$ cm, sau ảnh trung gian"
+    ],
+    "tim": [
+     "a) vị trí, tính chất, chiều, chiều cao ảnh cuối",
+     "b) hệ tương đương gì; ảnh cuối ở đâu",
+     "c) $a$ để ảnh cuối thật, gấp đôi vật; chiều"
+    ]
+   }
   }
  ],
  "tu_luan": {

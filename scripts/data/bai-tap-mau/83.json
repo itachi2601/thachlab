@@ -92,7 +92,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$c=3\\cdot10^8$ m/s",
+     "rượu: $n=1{,}36$",
+     "nhựa: $v=2{,}0\\cdot10^8$ m/s"
+    ],
+    "tim": [
+     "a) $v$ trong rượu",
+     "b) $n$ của nhựa",
+     "c) môi trường chiết quang hơn"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -204,7 +216,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "tia tới hợp mặt phân cách $40^\\circ$",
+     "tia khúc xạ hợp mặt phân cách $62^\\circ$"
+    ],
+    "tim": [
+     "a) $i$, $r$",
+     "b) gần hay xa pháp tuyến; môi trường chiết quang hơn",
+     "c) góc ló khi tia đi ngược lại"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -302,7 +325,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "thuỷ tinh $n=1{,}5$ → không khí",
+     "tia tới hợp mặt phân cách $65^\\circ$"
+    ],
+    "tim": [
+     "a) góc tới $i$",
+     "b) góc khúc xạ $r$",
+     "c) góc lệch $D$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -400,7 +434,135 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "x0": 10,
+    "goc": [
+     55,
+     30
+    ],
+    "moi": [
+     {
+      "ten": "không khí",
+      "cao": 5.5
+     },
+     {
+      "ten": "chất lỏng",
+      "cao": 5
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "tia",
+      "moi": 0
+     },
+     {
+      "loai": "phan_xa",
+      "mat": 0
+     },
+     {
+      "loai": "tia",
+      "moi": 1
+     },
+     {
+      "loai": "goc",
+      "mat": 0,
+      "tu": "mat_trai",
+      "den": "toi",
+      "nhan": "35°",
+      "r_nhan": 1.5
+     },
+     {
+      "loai": "goc",
+      "mat": 0,
+      "tu": "phan_xa",
+      "den": "khuc_xa",
+      "nhan": "95°",
+      "r": 1.3,
+      "r_nhan": 1.5,
+      "mau": "chu"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "mat": 0
+      },
+      {
+       "loai": "goc",
+       "mat": 0,
+       "tu": "phap_vao",
+       "den": "toi",
+       "nhan": "i"
+      },
+      {
+       "loai": "ghi",
+       "text": "i = 90° − 35° = 55°"
+      }
+     ],
+     [
+      {
+       "loai": "goc",
+       "mat": 0,
+       "tu": "phap_vao",
+       "den": "phan_xa",
+       "nhan": "i′"
+      },
+      {
+       "loai": "goc",
+       "mat": 0,
+       "tu": "phap_ra",
+       "den": "khuc_xa",
+       "nhan": "r",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "i′ = i = 55° ⇒ 180° − 55° − r = 95° ⇒ r = 30°"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 0.4,
+       "y": 9.1,
+       "text": "n ≈ 1,64",
+       "a": "start",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "n = sin 55° : sin 30° = 0,819 : 0,5 ≈ 1,64"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v = c : n = 3·10⁸ : 1,64 ≈ 1,83·10⁸ m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "r < i (30° < 55°) ✓ · n > 1 và v < c ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "tia tới hợp mặt chất lỏng $35^\\circ$",
+     "tia phản xạ hợp tia khúc xạ $95^\\circ$",
+     "$c=3\\cdot10^8$ m/s"
+    ],
+    "tim": [
+     "a) $i$, $r$",
+     "b) $n$ của chất lỏng",
+     "c) $v$ trong chất lỏng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -488,7 +650,125 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "x0": 9,
+    "goc": [
+     44.8,
+     31.9,
+     28
+    ],
+    "moi": [
+     {
+      "ten": "không khí",
+      "cao": 3.4
+     },
+     {
+      "ten": "nước · n = 4/3",
+      "cao": 3.4
+     },
+     {
+      "ten": "thuỷ tinh · n = 1,5",
+      "cao": 2.8
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "tia",
+      "moi": 0
+     },
+     {
+      "loai": "tia",
+      "moi": 1
+     },
+     {
+      "loai": "tia",
+      "moi": 2
+     },
+     {
+      "loai": "phap_tuyen",
+      "mat": 1
+     },
+     {
+      "loai": "goc",
+      "mat": 1,
+      "tu": "phap_ra",
+      "den": "khuc_xa",
+      "nhan": "28°",
+      "mau": "min",
+      "nhan_goc": -45,
+      "r_nhan": 0.8
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "goc",
+       "mat": 1,
+       "tu": "phap_vao",
+       "den": "toi",
+       "nhan": "r_1",
+       "nhan_goc": 140,
+       "r_nhan": 0.9,
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "4/3 sin r_1 = 1,5 sin 28° ⇒ r_1 ≈ 31,9°"
+      }
+     ],
+     [
+      {
+       "loai": "phap_tuyen",
+       "mat": 0
+      },
+      {
+       "loai": "goc",
+       "mat": 0,
+       "tu": "phap_vao",
+       "den": "toi",
+       "nhan": "i"
+      },
+      {
+       "loai": "goc",
+       "mat": 0,
+       "tu": "phap_ra",
+       "den": "khuc_xa",
+       "nhan": "r_1",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "sin i = 4/3 sin r_1 ≈ 0,704 ⇒ i ≈ 44,8°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin i = 4/3 sin r_1 = 1,5 sin 28° ⇒ không đổi, vẫn 28°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "44,8° > 31,9° > 28°: càng chiết quang, tia càng gần pháp tuyến ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "nước $n=\\dfrac43$; thuỷ tinh $n=1{,}5$",
+     "các mặt phân cách song song",
+     "trong thuỷ tinh: tia hợp pháp tuyến $28^\\circ$"
+    ],
+    "tim": [
+     "a) góc trong nước",
+     "b) góc tới ở mặt nước",
+     "c) rút nước, giữ $i$: góc trong thuỷ tinh đổi thế nào"
+    ]
+   }
   }
  ],
  "tu_luan": {

@@ -155,7 +155,30 @@ export type WorkedTool =
   | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] }
   | { loai: "truc_chuyen_dong"; x_min: number; x_max: number; don_vi?: string; diem?: { x: number; ten: string }[]; hinh?: TrucChuyenDongLop[]; lop?: TrucChuyenDongLop[][] }
   | { loai: "quy_dao_nem"; v0: number; alpha: number; g?: number; h0?: number; x_max: number; y_max: number; hinh?: QuyDaoNemLop[]; lop?: QuyDaoNemLop[][] }
-  | { loai: "cot_chat_long"; canh: CotChatLongCanh; hinh?: CotChatLongLop[]; lop?: CotChatLongLop[][] };
+  | { loai: "cot_chat_long"; canh: CotChatLongCanh; hinh?: CotChatLongLop[]; lop?: CotChatLongLop[][] }
+  | { loai: "tia_sang"; moi: TiaSangMoi[]; goc: number[]; x0?: number; chieu?: "xuong" | "len"; hinh?: TiaSangLop[]; lop?: TiaSangLop[][] }
+  | { loai: "thau_kinh"; phan: ThauKinhPhan[]; lop?: ThauKinhLop[][] };
+
+/** Tia sáng qua các lớp môi trường (Đ5): đơn vị hình (ngang 20), môi trường theo thứ tự tia đi qua; mặt k nằm giữa môi trường k và k + 1. */
+export type TiaSangMoi = { ten: string; cao: number; dam?: number; nhan_x?: number };
+export type TiaSangHuong = "phap_vao" | "phap_ra" | "mat_trai" | "mat_phai" | "toi" | "phan_xa" | "khuc_xa" | number;
+export type TiaSangLop =
+  | LopGhi
+  | { loai: "tia"; moi: number; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; het?: number }
+  | { loai: "phan_xa"; mat: number; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; het?: number }
+  | { loai: "phap_tuyen"; mat: number; dai?: number; het?: number }
+  | { loai: "goc"; mat: number; tu: TiaSangHuong; den: TiaSangHuong; nhan: string; r?: number; r_nhan?: number; nhan_goc?: number; mau?: "max" | "min" | "chu"; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number };
+/** Thấu kính (Đ5): cm, y lên; mỗi `phan` là một khung (câu a/b/c), chọn theo chỉ số bước đang xem. */
+export type ThauKinhPhan = { tu_buoc?: number; x_min: number; x_max: number; y_tren: number; y_duoi: number; o_ly?: number; phong_doc?: number; hinh?: ThauKinhLop[] };
+export type ThauKinhLop =
+  | LopGhi
+  | { loai: "tk"; x: number; kieu: "hoi_tu" | "phan_ki"; ten?: string; ten_ben?: "trai" | "phai"; f?: number; tieu?: [string, string]; vi_tieu?: ["t" | "b" | "l" | "r", "t" | "b" | "l" | "r"]; het?: number }
+  | { loai: "vat"; x: number; h: number; ten?: [string, string]; ten_b_ben?: "trai" | "phai"; ao?: boolean; mau?: "max" | "min"; het?: number }
+  | { loai: "diem"; x: number; y?: number; ten: string; vi?: "t" | "b" | "l" | "r"; mau?: "max" | "min"; het?: number }
+  | { loai: "tia"; qua: number[][]; keo?: number[][]; mau?: "max" | "min"; dut?: boolean; mep?: boolean; het?: number }
+  | { loai: "thuoc"; tu: number; den: number; o: number; doc?: boolean; nhan: string; ben?: "tren" | "duoi" | "trai" | "phai"; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number };
 
 /** Trục chuyển động 1D (Đ4): x theo đơn vị đề; `hang` ≥ 1 trên trục, ≤ −1 dưới tên mốc, 0 = trên trục. */
 export type TrucChuyenDongLop =

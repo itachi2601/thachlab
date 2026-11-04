@@ -22,8 +22,8 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
 | `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
-| `tia_sang` | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
-| `thau_kinh` | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
+| `tia_sang` (`TiaSang.tsx`, Đ5 ✓) | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
+| `thau_kinh` (`ThauKinh.tsx`, Đ5 ✓) | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
 
 ## B. Theo bài
 
@@ -178,7 +178,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 83 | Bài 5. Khúc xạ ánh sáng | D4 (tia_sang) | D5 (tia_sang) | D1, D2, D3 | Opus | P3 |
+| 83 | Bài 5. Khúc xạ ánh sáng | ✓ D4 (tia_sang) 4/11 | ✓ D5 (tia_sang) 4/11 | ✓ D1, D2, D3 4/11* | Opus | P3 |
 | 84 | Bài 6. Phản xạ toàn phần | — | D2 (tia_sang), D4 (tia_sang) | D1, D3 | Sonnet | P3 |
 
 ### KHTN 9 · Ch.3 Điện
@@ -223,7 +223,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
-| 156 | Chuyên đề 07. Thấu kính mỏng và kính lúp | D1 (thau_kinh) | D7 (thau_kinh) | D2, D3, D4, D5, D6 | Opus | P3 |
+| 156 | Chuyên đề 07. Thấu kính mỏng và kính lúp | ✓ D1 (thau_kinh) 4/11 | ✓ D7 (thau_kinh) 4/11 | ✓ D2, D3, D4, D5, D6 4/11* | Opus | P3 |
 | 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Âm học & thiên văn
@@ -289,6 +289,8 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 Ghi chú: id 125–127 nằm trong dải "KHTN 9" nhưng nội dung (f = np, Foucault, E–B cùng pha) là Vật lí 12 Ch.3 — xếp vào L12, cần thầy xác nhận. Bài 7 · D5 (cột thuỷ ngân) dùng `cot_chat_long` tạo ở Đ4, nên Đ6 phải chạy sau Đ4.
 
 Đ4 xong 3/11/2026 (nhánh `claude/wave-exercises-interactive-graphics-a3ea00`): 3 họ mới `truc_chuyen_dong`, `quy_dao_nem`, `cot_chat_long` (API ghi ở đầu mỗi file component; `cot_chat_long` có 2 cảnh `ong_u`, `be`) + `SoDoVecto` thêm cảnh `song` (sông có bờ gạch, điểm A/B/C, đường đi theo bước). Đã soát 375px mọi bước bằng driver (không chồng/tràn nhãn); CHƯA chạy HS ảo, CHƯA deploy, CHƯA đăng DB (50, 57, 79). *Tóm đề viết tay, chưa qua HS ảo.
+
+Đ5 xong 4/11/2026 (cùng nhánh): `tia_sang` (môi trường xếp lớp ngang, tia qua từng lớp theo `goc[]`, phản xạ, pháp tuyến, cung góc đặt tên theo hướng `toi`/`khuc_xa`/`phap_vao`…, `chieu: "len"`) và `thau_kinh` (trục + lưới ô ly, TK hội tụ/phân kì, F/F′, vật/ảnh ảo nét đứt, tia `qua`/`keo`/`mep`, thước ngang/dọc; `phan[]` = một khung cho mỗi câu a/b/c, chọn theo **bước đang làm** `tu_buoc`). API ở chú thích đầu hai file. Soát 375px mọi bước bằng driver + một ảnh nền tối + thẻ lề 1280; CHƯA HS ảo, CHƯA deploy, CHƯA đăng DB (83, 156). **Giới hạn cho đợt Sonnet dùng lại** (84, 151, 158, 178): `tia_sang` chưa có lăng kính, gương phẳng, sợi quang, nguồn rộng/bóng tối, tia song song chéo — phiên đó phải mở rộng component (ghi vào mục F trước khi làm).
 
 ## F. Còn chờ thầy chốt (3/11/2026)
 - Bài 125–127 (máy phát xoay chiều, ứng dụng cảm ứng điện từ, sóng điện từ) xếp vào lớp 12 Ch.3 theo nội dung — thầy xác nhận lớp.
