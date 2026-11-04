@@ -80,7 +80,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=6{,}0$ V thì $I=24$ mA; nhiệt độ ổn định",
+     "Tăng nguồn lên $15$ V"
+    ],
+    "tim": [
+     "a) $R$ (Ω)",
+     "b) $I$ khi $15$ V (mA)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -205,7 +215,166 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "X, Y: một điện trở thuần, một NTC",
+     "Bảng (U, I): X: $(2{,}0;\\,2{,}0)$ $(4{,}0;\\,4{,}0)$ $(6{,}0;\\,6{,}0)$; Y: $(1{,}0;\\,0{,}50)$ $(3{,}0;\\,2{,}0)$ $(6{,}0;\\,6{,}6)$ (V; mA)"
+    ],
+    "tim": [
+     "a) $U/I$ mỗi lần đo (kΩ)",
+     "b) Linh kiện có đường đặc trưng thẳng qua gốc",
+     "c) Vì sao đường của linh kiện còn lại không thẳng"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 7,
+     "ten": "U (V)",
+     "vach": [
+      1,
+      2,
+      3,
+      4,
+      6
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 7,
+     "ten": "I (mA)",
+     "vach": [
+      2,
+      4,
+      6
+     ],
+     "luoi": 1
+    },
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          2,
+          2
+         ],
+         [
+          4,
+          4
+         ],
+         [
+          6,
+          6
+         ]
+        ],
+        "ten": "X",
+        "ten_xy": [
+         6.4,
+         5.3
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 6
+      },
+      {
+       "loai": "diem",
+       "x": 4,
+       "y": 4
+      },
+      {
+       "loai": "diem",
+       "x": 2,
+       "y": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "U/I (X) = 1,0 kΩ ở cả ba lần"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          1,
+          0.5
+         ],
+         [
+          3,
+          2
+         ],
+         [
+          6,
+          6.6
+         ]
+        ],
+        "mau": "max",
+        "ten": "Y",
+        "ten_xy": [
+         6.4,
+         6.9
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 6.6
+      },
+      {
+       "loai": "diem",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "loai": "diem",
+       "x": 1,
+       "y": 0.5
+      },
+      {
+       "loai": "ghi",
+       "text": "U/I (Y) = 2,0 ; 1,5 ; 0,91 kΩ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "X: thẳng qua gốc ⇒ điện trở thuần"
+      },
+      {
+       "loai": "ghi",
+       "text": "Y: đường cong ⇒ NTC"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "I tăng ⇒ Y nóng lên ⇒ R giảm"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ U/I không còn là hằng số"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -317,7 +486,139 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đường (1) và (2) là hai đường thẳng qua gốc toạ độ ($U$: V; $I$: mA)",
+     "(1) qua $(6{,}0;\\,3{,}0)$; (2) qua $(6{,}0;\\,1{,}2)$",
+     "Đặt $9{,}0$ V vào $R_2$"
+    ],
+    "tim": [
+     "a) $R_1$, $R_2$ (kΩ)",
+     "b) Đường nào dốc hơn; điện trở lớn hơn hay nhỏ hơn",
+     "c) $I$ qua $R_2$ (mA)"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 10,
+     "ten": "U (V)",
+     "vach": [
+      3,
+      6,
+      9
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 5,
+     "ten": "I (mA)",
+     "luoi": 1
+    },
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          9,
+          4.5
+         ]
+        ],
+        "ten": "(1)",
+        "ten_xy": [
+         9.3,
+         4.5
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 3,
+       "ten": "3,0",
+       "vi": "tl"
+      },
+      {
+       "loai": "ghi",
+       "text": "R₁ = 6,0 V : 3,0 mA = 2,0 kΩ"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          9,
+          1.8
+         ]
+        ],
+        "mau": "max",
+        "ten": "(2)",
+        "ten_xy": [
+         9.4,
+         0.9
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 1.2,
+       "ten": "1,2",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "R₂ = 6,0 V : 1,2 mA = 5,0 kΩ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(1) dốc hơn: cùng U, I lớn hơn"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ R nhỏ hơn (R₁ < R₂)"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 9
+      },
+      {
+       "loai": "diem",
+       "x": 9,
+       "y": 1.8,
+       "ten": "1,8",
+       "vi": "tl"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = U/R₂ = 9,0 : 5,0"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 1,8 mA"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -428,7 +729,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Dây platin: $R_0=100\\ \\Omega$ ở $0\\ ^\\circ$C, $\\alpha=3{,}9\\cdot10^{-3}$ K⁻¹",
+     "Trong lò: $U=0{,}89$ V, $I=5{,}0$ mA"
+    ],
+    "tim": [
+     "a) $R$ của dây trong lò",
+     "b) Nhiệt độ lò",
+     "c) NTC: nhiệt độ tăng thì $R$ tăng hay giảm"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -550,7 +862,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Dây nicrom ở $20\\ ^\\circ$C: $R_0=40{,}0\\ \\Omega$, $\\rho_0=1{,}10\\cdot10^{-6}\\ \\Omega\\cdot$m, $\\alpha=0{,}40\\cdot10^{-3}$ K⁻¹",
+     "Mạng $220$ V; nóng ổn định ở $270\\ ^\\circ$C"
+    ],
+    "tim": [
+     "a) $R$ khi nóng",
+     "b) $I$ khi nóng",
+     "c) $I$ lúc vừa cắm điện; gấp mấy lần",
+     "d) $\\rho$ khi nóng"
+    ]
+   }
   }
  ]
 }
