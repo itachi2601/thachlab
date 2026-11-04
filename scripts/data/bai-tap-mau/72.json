@@ -77,7 +77,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Mỗi lần khoan: $W_{tp}=150\\ \\text{kJ}$, $W_{ci}=105\\ \\text{kJ}$",
+     "Sau khi tra dầu: $W_{hp}=25\\ \\text{kJ}$"
+    ],
+    "tim": [
+     "a) $W_{hp}$",
+     "b) Hao phí đi đâu",
+     "c) $W_{tp}$ mới"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -152,7 +163,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$W_{tp}=540\\ \\text{kJ}$, $W_{ci}=405\\ \\text{kJ}$",
+     "Thời gian bơm $5$ phút"
+    ],
+    "tim": [
+     "a) $H$",
+     "b) $P_{tp}$, $P_{ci}$",
+     "c) $H$ tính lại từ công suất"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -227,7 +249,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$H=80\\,\\%$, $P_{tp}=250\\ \\text{W}$",
+     "Đoạn dốc: $W_{ci}=144\\ \\text{kJ}$"
+    ],
+    "tim": [
+     "a) $P_{ci}$",
+     "b) $W_{tp}$",
+     "c) $W_{hp}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -326,7 +359,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=350\\ \\text{kg}$, $h=12\\ \\text{m}$, $t=24\\ \\text{s}$",
+     "$P_{tp}=2{,}5\\ \\text{kW}$, $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) $W_{ci}$",
+     "b) $P_{ci}$ và $H$",
+     "c) $W_{hp}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -438,7 +482,114 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "hop_he",
+     "ten": "xe điện"
+    },
+    "cot": [
+     {
+      "ten": "Pin",
+      "mau": "chu"
+     },
+     {
+      "ten": "BĐK",
+      "mau": "min"
+     },
+     {
+      "ten": "ĐC",
+      "mau": "min"
+     },
+     {
+      "ten": "HS",
+      "mau": "max"
+     }
+    ],
+    "max": 100,
+    "don_vi": "%",
+    "lop": [
+     [
+      {
+       "loai": "cot",
+       "ten": "BĐK",
+       "gia_tri": 95,
+       "nhan": "95"
+      },
+      {
+       "loai": "cot",
+       "ten": "ĐC",
+       "gia_tri": 76,
+       "nhan": "76"
+      },
+      {
+       "loai": "cot",
+       "ten": "HS",
+       "gia_tri": 57,
+       "nhan": "57"
+      },
+      {
+       "loai": "ghi",
+       "text": "H = 0,95·0,80·0,75 = 57 %"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "Pin",
+       "gia_tri": 100,
+       "nhan": "100"
+      },
+      {
+       "loai": "mui",
+       "vao": true,
+       "nhan": "10 kJ",
+       "hang": 0
+      },
+      {
+       "loai": "mui",
+       "vao": false,
+       "nhan": "5,7 kJ",
+       "hang": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "W_{tp} = 5,7 : 0,57 = 10 kJ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Thay hộp số (khâu thấp nhất): 75 % → 90 %"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "HS",
+       "gia_tri": 68.4,
+       "nhan": "68,4"
+      },
+      {
+       "loai": "ghi",
+       "text": "H′ = 0,95·0,80·0,90 = 68,4 %"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Ba khâu nối tiếp: $H_1=95\\,\\%$, $H_2=80\\,\\%$, $H_3=75\\,\\%$",
+     "Bánh xe nhận $W_{ci}=5{,}7\\ \\text{kJ}$",
+     "Thay MỘT khâu bằng khâu $90\\,\\%$"
+    ],
+    "tim": [
+     "a) $H$ cả hệ",
+     "b) $W_{tp}$ của pin",
+     "c) Thay khâu nào, $H$ mới"
+    ]
+   }
   }
  ]
 }
