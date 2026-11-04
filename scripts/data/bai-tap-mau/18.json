@@ -100,7 +100,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$^{238}_{92}\\text{U}$ phóng xạ $\\alpha$ → X; X phóng xạ $\\beta^-$ → Y; Y phóng xạ $\\beta^-$ → W"
+    ],
+    "tim": [
+     "a) số khối và số proton của X, Y, W",
+     "b) W so với U trong bảng tuần hoàn; số khối đổi thế nào"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -199,7 +208,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$N_0=6{,}4\\cdot10^{18}$ hạt $^{210}_{84}\\text{Po}$ (phóng xạ $\\alpha$), $T=138$ ngày"
+    ],
+    "tim": [
+     "a) số hạt còn lại sau $552$ ngày",
+     "b) % đã phân rã khi đó",
+     "c) % còn lại sau $759$ ngày"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -322,7 +341,115 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 80,
+     "ten": "t (ngày)",
+     "vach": [
+      0
+     ],
+     "luoi": 10
+    },
+    "y": {
+     "min": 0,
+     "max": 70,
+     "ten": "m (μg)",
+     "vach": [
+      0
+     ],
+     "luoi": 16
+    },
+    "diem": [
+     {
+      "x": 0,
+      "y": 64,
+      "ten": "64",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chieu",
+       "x": 24,
+       "y": 8,
+       "nhan_x": "24"
+      },
+      {
+       "loai": "diem",
+       "x": 24,
+       "y": 8,
+       "ten": "8",
+       "vi": "tr"
+      },
+      {
+       "loai": "ghi",
+       "text": "Còn lại: 64 − 56 = 8 μg"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "64 → 32 → 16 → 8: giảm một nửa 3 lần"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "ham": {
+         "kieu": "mu",
+         "a": 64,
+         "T": 8
+        },
+        "mau": "max"
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "3T = 24 ngày ⇒ T = 8 ngày"
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 40,
+       "y": 2,
+       "nhan_x": "40"
+      },
+      {
+       "loai": "diem",
+       "x": 40,
+       "y": 2,
+       "ten": "2",
+       "vi": "tr"
+      },
+      {
+       "loai": "ghi",
+       "text": "40 : 8 = 5 chu kì ⇒ 64 : 2⁵ = 2 μg"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "64 : 2ⁿ < 0,1 ⇒ n > 9,3 ⇒ t > 74,6 ngày ⇒ 75 ngày"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Iốt-131: $m_0=64\\ \\mu\\text{g}$; sau $24$ ngày đã phân rã $56\\ \\mu\\text{g}$"
+    ],
+    "tim": [
+     "a) chu kì bán rã $T$",
+     "b) khối lượng còn sau $40$ ngày",
+     "c) sau bao nhiêu ngày thì còn dưới $0{,}1\\ \\mu\\text{g}$ (làm tròn lên)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -445,7 +572,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$4{,}0\\ \\text{g}$ $^{60}_{27}\\text{Co}$, $T=5{,}27$ năm; $1$ năm $=365$ ngày",
+     "$N_A=6{,}022\\cdot10^{23}\\ \\text{mol}^{-1}$, $A=60\\ \\text{g/mol}$, $\\ln2=0{,}693$"
+    ],
+    "tim": [
+     "a) $N_0$ và $\\lambda$ ($\\text{s}^{-1}$)",
+     "b) $H_0$ theo Bq và Ci",
+     "c) $H$ (Ci) sau $10{,}54$ năm"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -580,7 +718,103 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 12000,
+     "ten": "t (năm)",
+     "vach": [
+      0,
+      5730
+     ],
+     "luoi": 2000
+    },
+    "y": {
+     "min": 0,
+     "max": 1.1,
+     "ten": "H : H₀",
+     "vach": [
+      0,
+      1
+     ],
+     "luoi": 0.25
+    },
+    "diem": [
+     {
+      "x": 0,
+      "y": 1,
+      "ten": "cây sống",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "0,360 : 5,0 = 0,072 Bq/g"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 0.319,
+       "nhan": "0,319"
+      },
+      {
+       "loai": "ghi",
+       "text": "0,072 : 0,226 ≈ 0,319 so với cây sống"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1 : 2ⁿ = 0,319 ⇒ n ≈ 1,65 chu kì"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "ham": {
+         "kieu": "mu",
+         "a": 1,
+         "T": 5730
+        },
+        "mau": "max"
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 9455,
+       "y": 0.319,
+       "nhan_x": "9455"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 1,65 · 5730 ≈ 9455 năm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lẫn carbon mới: H cao hơn ⇒ trông trẻ hơn ⇒ tuổi tính ra nhỏ hơn"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Cây sống: $0{,}226\\ \\text{Bq}$/g carbon; $^{14}\\text{C}$ có $T=5730$ năm",
+     "Mẩu than $5{,}0\\ \\text{g}$ carbon, đo được $0{,}360\\ \\text{Bq}$"
+    ],
+    "tim": [
+     "a) độ phóng xạ riêng của mẫu, tỉ số so với cây sống",
+     "b) tuổi mẩu than",
+     "c) lẫn carbon hiện đại: tuổi tính ra lớn hay nhỏ hơn tuổi thật"
+    ]
+   }
   }
  ]
 }
