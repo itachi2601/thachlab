@@ -104,7 +104,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=0{,}20\\ \\text{kg}$; $P$ cao $8{,}0\\ \\text{m}$, $v_P=3{,}0\\ \\text{m/s}$",
+     "Cửa sổ $6{,}0\\ \\text{m}$, mái $10\\ \\text{m}$ so với đất"
+    ],
+    "tim": [
+     "$W_{\\text{đ}}$, $W_t$, $W$ tại $P$ với mốc: đất; cửa sổ; mái"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -203,7 +212,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=50\\ \\text{g}$, thả từ A cao $2{,}45\\ \\text{m}$, máng nhẵn",
+     "M cao $1{,}2\\ \\text{m}$; N có $v=3{,}0\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "$v_O$, $v_M$",
+     "Độ cao của N"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -315,7 +334,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=0{,}40\\ \\text{kg}$, ném lên từ đất với $12\\ \\text{m/s}$",
+     "Bỏ qua cản, mốc ở mặt đất"
+    ],
+    "tim": [
+     "a) Cơ năng đổi thế nào",
+     "b) $W$",
+     "c) $h$ khi $W_{\\text{đ}}=W_t$",
+     "d) $W_{\\text{đ}}$ ở $5{,}0\\ \\text{m}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -414,7 +445,158 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "doc",
+     "h": 8,
+     "don_vi": "m",
+     "vi": 1
+    },
+    "cot": [
+     {
+      "ten": "W_{đ}",
+      "mau": "max"
+     },
+     {
+      "ten": "W_{t}",
+      "mau": "min"
+     },
+     {
+      "ten": "W",
+      "mau": "chu"
+     }
+    ],
+    "max": 16,
+    "don_vi": "J",
+    "lop": [
+     [
+      {
+       "loai": "vat",
+       "vi": 1
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 16,
+       "nhan": "16"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 16,
+       "nhan": "16"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = mgh_{max} = 16 J"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0.375
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 10,
+       "nhan": "10"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 6,
+       "nhan": "6"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 16,
+       "nhan": "16"
+      },
+      {
+       "loai": "ghi",
+       "text": "½mv_0² = 16 − 6 = 10 J ⇒ v_0 = 10 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0.25
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 12,
+       "nhan": "12"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 4,
+       "nhan": "4"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 16,
+       "nhan": "16"
+      },
+      {
+       "loai": "ghi",
+       "text": "W_{đ} = 3W_{t} ⇒ W = 4W_{t} ⇒ h = 2 m"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 1
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 10,
+       "nhan": "10"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 10,
+       "nhan": "10"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mốc sân thượng: W = mgh′ = 10 J (h′ = 5 m)"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=0{,}20\\ \\text{kg}$, ném lên từ sân thượng $3{,}0\\ \\text{m}$",
+     "Lên cao nhất $8{,}0\\ \\text{m}$ so với đất; mốc ở đất"
+    ],
+    "tim": [
+     "a) $W$",
+     "b) $v_0$",
+     "c) $h$ khi $W_{\\text{đ}}=3W_t$",
+     "d) $W$ và $h_{\\max}$ khi mốc ở sân thượng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -537,7 +719,142 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "doc",
+     "h": 10,
+     "don_vi": "m",
+     "vi": 1
+    },
+    "cot": [
+     {
+      "ten": "W_{đ}",
+      "mau": "max"
+     },
+     {
+      "ten": "W_{t}",
+      "mau": "min"
+     },
+     {
+      "ten": "W",
+      "mau": "chu"
+     }
+    ],
+    "max": 5625,
+    "don_vi": "J",
+    "lop": [
+     [
+      {
+       "loai": "vat",
+       "vi": 1
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 5000,
+       "nhan": "5000"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 5000,
+       "nhan": "5000"
+      },
+      {
+       "loai": "ghi",
+       "text": "W_A = mgh = 5000 J"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 3600,
+       "nhan": "3600"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 3600,
+       "nhan": "3600"
+      },
+      {
+       "loai": "ghi",
+       "text": "W_B = ½mv² = 3600 J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A_c = W_B − W_A = −1400 J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1400 : 5000 = 28 %"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 4225,
+       "nhan": "4225"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W",
+       "gia_tri": 4225,
+       "nhan": "4225"
+      },
+      {
+       "loai": "ghi",
+       "text": "W_B′ = 5625 − 1400 = 4225 J ⇒ v = 13 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=50\\ \\text{kg}$, từ nghỉ ở A cao $10\\ \\text{m}$, tới B với $12\\ \\text{m/s}$",
+     "Lần 2: $v_A=5{,}0\\ \\text{m/s}$, công cản như lần 1"
+    ],
+    "tim": [
+     "a) $W_A$, $W_B$",
+     "b) $A_c$",
+     "c) % cơ năng mất",
+     "d) $v_B$ lần 2"
+    ]
+   }
   }
  ],
  "tu_luan": {
