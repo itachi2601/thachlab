@@ -226,6 +226,7 @@ export type MachDienLop =
   | { loai: "day"; diem: [number, number][]; dut?: boolean; mau?: "max" | "min"; het?: number }
   | { loai: "nut"; x: number; y: number; het?: number }
   | { loai: "nguon"; x: number; y: number; huong?: MachDienHuong; duong?: "truoc" | "sau"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "tu"; x: number; y: number; huong?: MachDienHuong; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "dien_tro"; x: number; y: number; huong?: MachDienHuong; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "den"; x: number; y: number; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "dong_ho"; x: number; y: number; kieu: "V" | "A"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
