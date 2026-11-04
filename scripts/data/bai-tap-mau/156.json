@@ -1502,7 +1502,23 @@
        "vi_sao": "$TK_2$ còn lật $A_1'B_1'$ thêm một lần nữa."
       }
      ],
-     "loi_hay_gap": "Ảnh thật ngược chiều so với vật của chính nó; ở đây ảnh thật được tạo hai lần, lật hai lần."
+     "loi_hay_gap": "Ảnh thật ngược chiều so với vật của chính nó; ở đây ảnh thật được tạo hai lần, lật hai lần.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đếm số lần ảnh thật được tạo ra",
+       "dung": true
+      },
+      {
+       "text": "Chỉ xét ảnh cuối qua $TK_2$",
+       "dung": false,
+       "vi_sao": "Chiều ảnh cuối so với $AB$ phụ thuộc cả hai lần tạo ảnh, không chỉ lần qua $TK_2$."
+      },
+      {
+       "text": "Lấy chiều của ảnh trung gian",
+       "dung": false,
+       "vi_sao": "$A_1'B_1'$ còn đi qua $TK_2$ nữa mới thành ảnh cuối."
+      }
+     ]
     }
    ],
    "cong_cu": {
