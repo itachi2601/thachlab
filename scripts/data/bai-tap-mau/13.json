@@ -104,7 +104,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khung tròn $R=5{,}0\\ \\text{cm}$, $B=0{,}40\\ \\text{T}$",
+     "Mặt phẳng khung hợp đường sức góc $30^\\circ$"
+    ],
+    "tim": [
+     "a) từ thông qua khung",
+     "b) vị trí để từ thông lớn nhất, giá trị đó"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -255,7 +265,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vòng dây kín nằm trong mặt phẳng giấy",
+     "$\\vec B$ vuông góc giấy, hướng vào (⊗)",
+     "Chiều quay kim đồng hồ xét từ phía người đọc"
+    ],
+    "tim": [
+     "a) $B$ tăng đều: dòng cảm ứng cùng hay ngược chiều kim đồng hồ",
+     "b) $B$ giảm đều: chiều dòng đổi thế nào"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -378,7 +399,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khung vuông cạnh $6{,}0\\ \\text{cm}$, $R=0{,}30\\ \\Omega$, mặt khung vuông góc đường sức",
+     "$B$ giảm đều $0{,}50\\ \\text{T}$ → $0{,}20\\ \\text{T}$ trong $15\\ \\text{ms}$",
+     "Câu b: thời gian chỉ bằng một nửa"
+    ],
+    "tim": [
+     "a) $|e_c|$ và $I$",
+     "b) $I$ khi thời gian giảm một nửa"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -514,7 +546,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cuộn $N=100$ vòng, $S=50\\ \\text{cm}^2$ mỗi vòng, $R=4{,}0\\ \\Omega$, $B=0{,}40\\ \\text{T}$",
+     "Ban đầu mặt cuộn vuông góc $\\vec B$; quay đều trong $0{,}050\\ \\text{s}$ tới khi mặt hợp $\\vec B$ góc $30^\\circ$"
+    ],
+    "tim": [
+     "a) $|e_c|$ trung bình và $I$ trung bình",
+     "b) $\\vec B_c$ cùng hay ngược chiều $\\vec B$ ngoài"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -639,7 +681,94 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 0.4,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      0.1,
+      0.3,
+      0.35
+     ],
+     "luoi": 0.05
+    },
+    "y": {
+     "min": 0,
+     "max": 24,
+     "ten": "Φ (mWb)",
+     "vach": [
+      0,
+      20
+     ],
+     "luoi": 5
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.1,
+        20
+       ],
+       [
+        0.3,
+        20
+       ],
+       [
+        0.35,
+        0
+       ]
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doan",
+       "tu": 0,
+       "den": 0.1,
+       "nhan": "(1)",
+       "vi": "t"
+      },
+      {
+       "loai": "doan",
+       "tu": 0.3,
+       "den": 0.35,
+       "nhan": "(3)",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ đổi ở (1), (3); (2) giữ nguyên ⇒ không có dòng"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 20 mWb : 0,10 s = 0,20 V ⇒ I = 0,20 : 0,50 = 0,4 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 20 mWb : 0,05 s = 0,40 V ⇒ I = 0,40 : 0,50 = 0,8 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(1) Φ tăng: ngược chiều kim đồng hồ · (3) Φ giảm: cùng chiều"
+      }
+     ]
+    ]
+   }
   }
  ],
  "tu_luan": {
