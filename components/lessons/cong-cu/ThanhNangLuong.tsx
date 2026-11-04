@@ -39,6 +39,7 @@ function MuiTen({
   c,
   nhan,
   w = 0.14,
+  rong,
 }: {
   x1: number;
   y1: number;
@@ -47,6 +48,8 @@ function MuiTen({
   c: string;
   nhan?: string;
   w?: number;
+  /** bề ngang tối đa của nhãn (đơn vị hình): dài hơn thì thu chữ; không khai = cỡ cố định như cũ */
+  rong?: number;
 }) {
   const ang = Math.atan2(y2 - y1, x2 - x1);
   return (
@@ -54,7 +57,12 @@ function MuiTen({
       <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth={w} />
       <Chevron x={x2} y={y2} ang={ang} color={c} len={0.5} w={w} />
       {nhan && (
-        <Label x={(x1 + x2) / 2} y={Math.min(y1, y2) - 0.45} fill={c} size={1.05}>
+        <Label
+          x={(x1 + x2) / 2}
+          y={Math.min(y1, y2) - 0.45}
+          fill={c}
+          size={rong ? Math.min(1.05, rong / (nhan.length * 0.6)) : 1.05}
+        >
           {nhan}
         </Label>
       )}
@@ -269,9 +277,9 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
       {mui.map((m, k) => {
         const y = 3.9 + (m.hang ?? k) * 1.5;
         return m.vao ? (
-          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} />
+          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} rong={4.2} />
         ) : (
-          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} />
+          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={3.8} />
         );
       })}
     </g>
