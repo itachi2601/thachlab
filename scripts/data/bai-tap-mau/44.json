@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bình nóng lạnh $220$ V – $2000$ W, đúng định mức",
+     "Mỗi tối $45$ phút; $30$ ngày"
+    ],
+    "tim": [
+     "a) Điện năng mỗi tối (J)",
+     "b) Đổi ra kWh",
+     "c) Số điện trong $30$ ngày"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -203,7 +214,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bàn là $220$ V – $1100$ W; ổ cắm chỉ có $176$ V",
+     "Điện trở bàn là không đổi; chạy $30$ phút"
+    ],
+    "tim": [
+     "a) $R$",
+     "b) $I$ và công suất thực",
+     "c) Điện năng theo kWh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -350,7 +372,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$\\mathcal{E}=6{,}0$ V, $r=0{,}40\\ \\Omega$, $R=2{,}6\\ \\Omega$",
+     "Bỏ qua điện trở dây nối"
+    ],
+    "tim": [
+     "a) $I$",
+     "b) Công suất nguồn, mạch ngoài, toả nhiệt trong nguồn",
+     "c) Công của nguồn trong $5$ phút"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -473,7 +506,141 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$\\mathcal{E}=12$ V, $r=0{,}75\\ \\Omega$, biến trở $R$",
+     "Hiệu suất nguồn $H=80\\ \\%$; $t=10$ phút"
+    ],
+    "tim": [
+     "a) $R$",
+     "b) $I$ và hiệu điện thế hai cực",
+     "c) Năng lượng có ích và năng lượng toả ra trong pin"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        9.0
+       ],
+       [
+        17,
+        9.0
+       ],
+       [
+        17,
+        2.2
+       ],
+       [
+        3,
+        2.2
+       ],
+       [
+        3,
+        9.0
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 3,
+      "y": 5.6,
+      "huong": "doc",
+      "ten": "ℰ, r",
+      "vi": "r"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 17,
+      "y": 5.6,
+      "huong": "doc",
+      "ten": "R",
+      "vi": "l"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 6.2,
+       "text": "R = 3,0 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "H = R/(R + r) = 0,8"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ R = 4r = 3,0 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        7,
+        9.0
+       ],
+       "den": [
+        11,
+        9.0
+       ],
+       "nhan": "I",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ/(R + r) = 12 : 3,75"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 3,2 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 3.8,
+       "text": "U = 9,6 V",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U = IR = 3,2·3,0 = 9,6 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A_{ci} = UIt = 9,6·3,2·600"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 18 432 J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Q = I²rt = 3,2²·0,75·600"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 4608 J"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "ly_thuyet",
@@ -596,7 +763,159 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ắc quy $\\mathcal{E}=12$ V, $r=0{,}030\\ \\Omega$",
+     "Bộ đèn $2{,}37\\ \\Omega$ nối tiếp cầu chì; chì $3$ A, $7{,}5$ A, $30$ A",
+     "Chập: điện trở mạch ngoài còn $0{,}010\\ \\Omega$"
+    ],
+    "tim": [
+     "a) $I$ khi đèn sáng; chọn cầu chì",
+     "b) $I$ và công suất toả nhiệt trong ắc quy lúc chập",
+     "c) Dòng chập gấp mấy lần dòng định mức của chì; chì có đứt không"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.5,
+        9.0
+       ],
+       [
+        17,
+        9.0
+       ],
+       [
+        17,
+        2.2
+       ],
+       [
+        2.5,
+        2.2
+       ],
+       [
+        2.5,
+        9.0
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 2.5,
+      "y": 5.6,
+      "huong": "doc",
+      "ten": "ℰ, r",
+      "vi": "r"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 8,
+      "y": 9.0,
+      "ten": "chì",
+      "vi": "t"
+     },
+     {
+      "loai": "den",
+      "x": 17,
+      "y": 5.6,
+      "ten": "đèn",
+      "vi": "l"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        11,
+        9.0
+       ],
+       "den": [
+        14,
+        9.0
+       ],
+       "nhan": "I",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ/(R + r) = 12 : 2,40"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 5,0 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Chì phải > 5,0 A mà gần nhất"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ chọn chì 7,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "diem": [
+        [
+         17,
+         8.2
+        ],
+        [
+         19.2,
+         8.2
+        ],
+        [
+         19.2,
+         2.9
+        ],
+        [
+         17,
+         2.9
+        ]
+       ],
+       "dut": true,
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ/(R + r) = 12 : 0,040"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 300 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "P = I²r = 300²·0,030"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 2700 W"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "300 : 7,5 = 40 lần"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ chì đứt, ngắt mạch"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
