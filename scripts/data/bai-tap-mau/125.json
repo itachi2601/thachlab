@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Rô-to nam châm $4$ cặp cực, quay $750$ vòng/phút",
+     "Máy khác: rô-to quay $300$ vòng/phút, phát $50\\ \\text{Hz}$"
+    ],
+    "tim": [
+     "a) tần số $f$",
+     "b) tần số góc $\\omega$",
+     "c) số cặp cực của máy thứ hai"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -203,7 +214,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khung $N=400$ vòng, $S=50\\ \\text{cm}^2$ mỗi vòng, quay $1200$ vòng/phút",
+     "$B=0{,}030\\ \\text{T}$ (trục vuông góc $\\vec B$)",
+     "Câu d: tăng tốc quay lên $1800$ vòng/phút"
+    ],
+    "tim": [
+     "a) $\\omega$",
+     "b) $E_0$",
+     "c) $E$",
+     "d) $E_0$ khi quay $1800$ vòng/phút"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -315,7 +339,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Máy biến áp lí tưởng: $N_1=1100$, $N_2=60$ vòng",
+     "$U_1=220\\ \\text{V}$; cuộn thứ cấp nối đèn, $I_2=2{,}5\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) tăng áp hay hạ áp; $U_2$",
+     "b) $I_1$",
+     "c) công suất mạch sơ cấp lấy từ mạng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -414,7 +449,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$P=1{,}2\\ \\text{MW}$ truyền qua dây $R=5\\ \\Omega$",
+     "$U=20\\ \\text{kV}$, $\\cos\\varphi=1$",
+     "Câu c: tăng $U$ lên $60\\ \\text{kV}$ (giữ $P$, $R$)"
+    ],
+    "tim": [
+     "a) $I$ trên dây",
+     "b) $\\Delta P$ và hiệu suất $H$",
+     "c) $\\Delta P$ khi $U=60\\ \\text{kV}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -561,7 +608,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Máy phát $P=400\\ \\text{kW}$, $U_1=2\\ \\text{kV}$",
+     "Biến áp lí tưởng $N_1=1000$, $N_2=5000$ vòng; dây $R=10\\ \\Omega$, $\\cos\\varphi=1$",
+     "Câu c: cần $H\\ge99\\%$ (giữ $P$, $R$, $U_1$, $N_1$)"
+    ],
+    "tim": [
+     "a) điện áp đầu đường dây",
+     "b) $I$ trên dây và $\\Delta P$",
+     "c) điện áp tối thiểu (kV) và $N_2$ tối thiểu"
+    ]
+   }
   }
  ],
  "tu_luan": {
