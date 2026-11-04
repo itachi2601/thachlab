@@ -130,7 +130,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Điện năng vào $300\\ \\text{J/s}$; động năng ra $240\\ \\text{J/s}$",
+     "Máy chạy $20\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) Các dạng năng lượng",
+     "b) Nhiệt + âm thanh mỗi giây",
+     "c) Nhiệt + âm thanh trong $20\\ \\text{s}$",
+     "d) Nhận xét lời An"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -229,7 +241,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$s=12\\ \\text{m}$, $F=25\\ \\text{N}$ cùng hướng chuyển động",
+     "Xe đi thẳng đều"
+    ],
+    "tim": [
+     "$A_F$, $A_C$, tổng công"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -341,7 +362,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$s=8{,}0\\ \\text{m}$, $F=70\\ \\text{N}$",
+     "$\\alpha=60^\\circ$; thẳng đứng; $\\alpha=120^\\circ$"
+    ],
+    "tim": [
+     "Công của $\\vec F$ mỗi tình huống, gọi tên công"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -464,7 +494,96 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 30,
+     "vat": "40 kg",
+     "dai": "6,0 m"
+    },
+    "ti_le": 2.8,
+    "vec": [
+     {
+      "ten": "s",
+      "goc": "doc_len",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       0.9,
+       1.4
+      ],
+      "buoc": 1,
+      "den": 4
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_xuong",
+      "do_lon": 40,
+      "tu": "vat_day",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "ten": "s",
+      "goc": "doc_xuong",
+      "do_lon": 6,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       -0.9,
+       1.4
+      ],
+      "buoc": 4
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_len",
+      "do_lon": 40,
+      "tu": "vat_day",
+      "buoc": 5
+     }
+    ],
+    "bang": [
+     {
+      "text": "h = 3,0 m",
+      "buoc": 1
+     },
+     {
+      "text": "A_P = −1200 J",
+      "buoc": 2,
+      "den": 4
+     },
+     {
+      "text": "A_ms = −240 J",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "A_P = +1200 J",
+      "buoc": 4
+     },
+     {
+      "text": "A_ms = −240 J",
+      "buoc": 5
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "$m=40\\ \\text{kg}$, dốc $30^\\circ$, $s=6{,}0\\ \\text{m}$",
+     "$F_{\\text{ms}}=40\\ \\text{N}$, $g=10\\ \\text{m/s}^2$",
+     "Kéo đều lên rồi trượt xuống về chỗ cũ"
+    ],
+    "tim": [
+     "a) Độ cao $h$, $A_P$ lúc lên",
+     "b) $A_{\\text{ms}}$ lúc lên",
+     "c) $A_P$, $A_{\\text{ms}}$ lúc xuống"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -624,7 +743,94 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_ngang",
+     "vat": "25 kg"
+    },
+    "ti_le": 5,
+    "vec": [
+     {
+      "ten": "F",
+      "goc": 30,
+      "do_lon": 100,
+      "tu": "vat",
+      "lech": [
+       1.5,
+       0.3
+      ]
+     },
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 250,
+      "tu": "vat",
+      "buoc": 1
+     },
+     {
+      "ten": "N",
+      "goc": "len",
+      "do_lon": 200,
+      "tu": "vat",
+      "buoc": 1,
+      "mau": "cam"
+     },
+     {
+      "ten": "F_ms",
+      "goc": "trai",
+      "do_lon": 40,
+      "tu": "vat_day",
+      "lech": [
+       -1.5,
+       0.2
+      ],
+      "buoc": 2,
+      "mau": "cam"
+     }
+    ],
+    "bang": [
+     {
+      "text": "N = 200 N",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "F_ms = 40 N",
+      "buoc": 2,
+      "den": 3
+     },
+     {
+      "text": "A_F = 1039 J",
+      "buoc": 3,
+      "den": 5
+     },
+     {
+      "text": "A_ms = −480 J",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "A_P = A_N = 0",
+      "buoc": 5
+     },
+     {
+      "text": "ΣA = 559 J",
+      "buoc": 6
+     }
+    ],
+    "bang_vi_tri": "tren"
+   },
+   "tom_de": {
+    "cho": [
+     "$m=25\\ \\text{kg}$, $F=100\\ \\text{N}$ chếch lên $30^\\circ$",
+     "$s=12\\ \\text{m}$, $\\mu=0{,}20$, $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "$A_F$, $A_P$, $A_N$, $A_{\\text{ms}}$ và tổng công"
+    ]
+   }
   }
  ]
 }
