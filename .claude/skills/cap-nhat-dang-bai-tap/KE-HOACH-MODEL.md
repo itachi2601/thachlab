@@ -224,7 +224,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 |---|---|---|---|---|---|---|
 | 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | ✓ D6 (tia_sang), D7 (tia_sang) 5/11 | ✓ D1, D2, D3, D4, D5 5/11 | Sonnet | P3 |
 | 156 | Chuyên đề 07. Thấu kính mỏng và kính lúp | ✓ D1 (thau_kinh) 4/11 | ✓ D7 (thau_kinh) 4/11 | ✓ D2, D3, D4, D5, D6 4/11* | Opus | P3 |
-| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
+| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | ✓ D3 (tia_sang), D6 (tia_sang) 5/11 (D7 → tóm đề: số ảnh đổi theo α ở 4 ca; D3 hợp "nguồn rộng + vật chắn") | ✓ D1, D2, D4, D5, D7 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Âm học & thiên văn
 
