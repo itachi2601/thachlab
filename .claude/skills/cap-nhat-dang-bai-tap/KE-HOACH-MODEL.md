@@ -179,7 +179,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 83 | Bài 5. Khúc xạ ánh sáng | ✓ D4 (tia_sang) 4/11 | ✓ D5 (tia_sang) 4/11 | ✓ D1, D2, D3 4/11* | Opus | P3 |
-| 84 | Bài 6. Phản xạ toàn phần | — | D2 (tia_sang), D4 (tia_sang) | D1, D3 | Sonnet | P3 |
+| 84 | Bài 6. Phản xạ toàn phần | — | ✓ D2 (tia_sang), D4 (tia_sang) 5/11 | ✓ D1, D3 5/11 | Sonnet | P3 |
 
 ### KHTN 9 · Ch.3 Điện
 
@@ -222,9 +222,9 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
+| 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | ✓ D6 (tia_sang), D7 (tia_sang) 5/11 | ✓ D1, D2, D3, D4, D5 5/11 | Sonnet | P3 |
 | 156 | Chuyên đề 07. Thấu kính mỏng và kính lúp | ✓ D1 (thau_kinh) 4/11 | ✓ D7 (thau_kinh) 4/11 | ✓ D2, D3, D4, D5, D6 4/11* | Opus | P3 |
-| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
+| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | ✓ D3 (tia_sang), D6 (tia_sang) 5/11 (D7 → tóm đề: số ảnh đổi theo α ở 4 ca; D3 hợp "nguồn rộng + vật chắn") | ✓ D1, D2, D4, D5, D7 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Âm học & thiên văn
 
@@ -306,6 +306,8 @@ Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy
 - ~~**Chờ thầy chốt (Đ2 phát hiện):**~~ ĐÃ VÁ 3/11 (`TomDeKhung` trong `TomDe.tsx`). Dạng chỉ có `tom_de` (không `cong_cu`) hiện **chưa hiện gì** — tóm đề chỉ vẽ trong `GiaiCungHinh`; `StepwiseSolution` chưa đọc `tom_de`. Các ô "✓ chỉ tóm đề" ở bảng B là dữ liệu đã ghi, chờ UI (đề xuất: dòng "Tìm" dính đầu khung bước + thẻ lề ≥1280, dùng lại `TomDeBody`).
 
 - Đ3 (3/11): `dien_truong_deu` (bản +/−, đường sức, lực, quỹ đạo parabol `cat` dừng ở bản + chấm, thước ngang/dọc) và `mach_dien` (nguồn, R, đèn, V/A kế, khoá, mũi tên dòng, ngoặc nhóm, `bang` số điền dần với ô "?") — API ở chú thích đầu hai file + `features/lessons/types.ts`. Chưa soát bằng mắt: `khoa`, `dong_ho` kiểu A — phiên dùng lại đầu tiên (38, 40, 44) soát kỹ. Đã xem thử 375px; HS ảo + sửa 3/11; ĐÃ ĐĂNG DB 37, 43 ngày 4/11 (sao lưu `bai-tap-mau-bai{37,43}-179377*.json`), deploy + kiểm live 4/11.
+
+- **Đ9c (5/11/2026) — mở rộng `tia_sang`, chỉ THÊM, bài 83 giữ nguyên**: cảnh xếp lớp cũ không vẽ được 8 dạng của 84, 151, 158, 178 nên thêm `canh: "tu_do"` (toạ độ hình 0..20, y xuống; không có `canh` = hành vi cũ). Mục mới: `vung` (đa giác tô: lăng kính, lõi/vỏ sợi quang, nước, vùng tối/nửa tối), `tron` (Mặt Trời, Trái Đất, Mặt Trăng), `doan` kiểu `guong` (gạch mặt sau)/`mat`/`vat`, `tia` gấp khúc theo điểm (chevron từng đoạn, nét đứt cho đường kéo dài), `phap_tuyen` tại điểm, `goc` giữa hai hướng (điểm hoặc độ), `diem` (ảnh: chấm rỗng), `thuoc`, `chu`, `ghi`; `phan[]` chọn khung theo bước đang làm (`tu_buoc`, như `thau_kinh`) cho bài nhiều câu khác hình. Cảnh cần cho từng bài: lăng kính (151·D6), sợi quang (84·D4, 151·D7), hai tia ở một mặt phân cách (84·D2), gương phẳng + ảnh + hai gương (158·D6, D7), nguồn rộng + vật chắn → nón bóng tối/nửa tối (178·D3), tia song song chéo trên Trái Đất (178·D5). `GiaiCungHinh` truyền thêm `buoc` cho `TiaSang` (cảnh cũ bỏ qua).
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.
