@@ -79,3 +79,8 @@ Tổng: **16 có ích · 17 trang trí · 1 nửa vời · 1 gây hiểu sai**; 
 Đo hiệu quả: tỉ lệ dạng mở tới bước cuối, số lần cuộn ngược lên đề trong lúc giải (nếu có log), phản hồi Báo lỗi.
 
 Thứ tự làm: (a) code — `cong_cu` hiện dưới đề + khoá `dong` (một phiên); (b) chương Từ trường 35 dạng (soạn hình cho 23 dạng, gỡ ①②, gắn `dong` 16 dạng); (c) thầy duyệt ở `/dev/btm` → đăng → nhân ra các chương khác theo cùng bảng đánh giá.
+
+## 5. Trạng thái (5/11/2026, cuối phiên)
+Đã làm đủ 6 điểm trên nhánh `claude/sync-simulation-images-b9910d`: code (`cong_cu.de`, `cong_cu.dong`, mục mới của `tu_truong`/`do_thi`, trang soát `/dev/btm-hinh`) + 35/35 dạng có một hình, `#kiem` SACH cả 7 bài, đã xem 375px. **CHƯA đăng DB, chưa deploy** — chờ thầy duyệt ở `/dev/btm/?f=btm-<id>` (chạy `npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --xem-thu` trước), rồi publish 7 bài `--giu-cu --yes` + deploy.
+Chờ thầy quyết: 13·D2 thanh "độ lớn B" (ký hiệu tự đặt) giữ hay bỏ `dong`; 126·D3 tấm Foucault nhìn cạnh nên dòng xoáy/rãnh chỉ có trong chữ; 14·D5 điểm chạy hết một chu kì rồi nhảy về t = 0.
+Còn thiếu mục hình: `mach_dien` nguồn xoay chiều/cuộn dây/lõi thép, `tu_truong` hình chữ nhật tô màu + vòng dòng xoáy (đang vẽ gần đúng bằng `duong`/`elip`).

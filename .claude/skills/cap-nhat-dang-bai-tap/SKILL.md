@@ -34,7 +34,7 @@ Kế hoạch đủ 492 dạng / 93 bài, bảng theo bài, theo chương và 9 �
 | Học sinh ảo thử (bước 6), `kiem-code` soát diff | Sonnet |
 | Haiku | Không dùng |
 
-- Mỗi bài tối đa **2 dạng** giải cùng hình; còn lại chỉ tóm đề.
+- Mỗi bài tối đa **2 dạng** giải cùng hình; còn lại chỉ tóm đề. *(L12 Ch.3 đang thử mọi dạng có `cong_cu` + `"de": true` + `dong` — thầy giao 5/11, chờ duyệt; xem `docs/RA-SOAT-HINH-BTM-TU-TRUONG.md`.)*
 - Đợt Sonnet chỉ chạy sau khi đợt Opus tạo họ hình nó cần đã vào main (ví dụ 7·D5 cần `cot_chat_long` của Đ4).
 - Phiên Sonnet gặp dạng cần họ hình chưa có → dừng dạng đó, ghi vào bảng F của file kế hoạch, không tự viết component mới.
 
@@ -197,3 +197,7 @@ npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --giu-cu
 - 2026-11-05 · 8 nhánh đợt song song kẹt ngoài main vì cùng sửa nhật ký cuối file này + bảng B/F KE-HOACH-MODEL (job gộp tự động đỏ, bảng B sinh hàng Đ6/Đ7/Đ8 trùng khi gộp giữ cả hai) → phiên đợt: `git merge origin/main` ngay trước push; phiên điều phối gộp tay giữ cả hai phía, hàng bảng lấy phía có ✓, rồi `grep -c "^| Đ"` soát hàng trùng.
 - 2026-11-05 · HS ảo Đ9 (25 bài, 43 dạng có hình) chạy máy bằng `scripts/dev/hs-ao-run.js` + `/dev/btm?f=btm-<id>` (mỗi bài một file, không giẫm `btm.json`): mọi dạng giải trọn, 375px, không chữ đè/tràn — nhưng lint độ dài bắt 424/668 nhóm đáp án đúng dài nhất (soạn Đ9 chưa áp quy tắc Đ7) → lint độ dài (`đúng − sai_max ≤ 3` ký tự, bỏ LaTeX) phải chạy NGAY khi soạn xong, trước HS ảo; sửa hàng loạt chia agent theo file, kiểm cấu trúc so HEAD (chỉ `text`/`vi_sao` đổi) + KaTeX + `kiem-code` (bắt 7 mệnh đề "vì…" mâu thuẫn `vi_sao`/sai dữ kiện đề). Agent song song phải dùng thư mục scratch riêng (dùng chung bị ghi đè script).
 - 2026-11-05 · Được giao "đăng Đ9" trong khi phiên khác (khanh-class) đã publish 26 bài và đang deploy → trước mọi vòng publish/deploy: `ps aux | grep "publish-bai-tap-mau\|deploy.sh"` + `ls -lt .claude/worktrees/*/scripts/logs/ | grep bai-tap-mau` tìm sao lưu mới; có rồi thì dừng, báo thầy, không đăng chồng.
+- 2026-11-05 · "Một dạng — một hình" L12 Ch.3 (7 bài, 35 dạng, 4 agent song song): `cong_cu.de: true` vẽ lớp 0 dưới đề, gỡ `<figure>` khỏi `problem_html`/`analysis_html`, `cong_cu.dong` đổi số theo đường dẫn JSON (mốc cuối = giá trị gốc, góc quay +180/+360 chấp nhận khi hình trùng). Kiểm máy: `/dev/btm-hinh/?f=btm-<id>` (`#kiem` = SACH) — "…" là trang chưa vẽ xong → profile Chrome mới + `--virtual-time-budget=40000`. Payload JSON nhẹ đi ~40%.
+- 2026-11-05 · Phiên chính sửa component (`ghi` tu_truong tự xuống 2 dòng) giữa lúc agent nội dung đang chạy → agent thấy DE ở bản dở, tự rút ngắn mọi `ghi`. Chốt + commit component TRƯỚC khi giao agent nội dung; cần đổi giữa chừng thì SendMessage báo cả nhóm.
+- 2026-11-05 · Agent báo "`lop` = `len(buoc)`" nhưng 11·D5/D6 thiếu lớp cuối → phiên chính luôn kiểm bằng máy (len, `<figure`, `de`) trước khi commit, không tin báo cáo.
+- 2026-11-05 · Chrome headless `--window-size=375` không ra layout điện thoại (trang vẫn rộng, bị cắt) → 375px kiểm bằng `resize_window mobile` ở pane; headless chỉ dùng cho trang soát 1150px.
