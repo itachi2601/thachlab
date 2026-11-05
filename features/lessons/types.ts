@@ -144,7 +144,7 @@ export type WorkedTomDe = { cho: string[]; tim: string[] };
 
 export type WorkedTool =
   | { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day" }
-  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; lop?: VongTronLop[][] }
+  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][] }
   | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
@@ -304,7 +304,7 @@ export type TuTruongLop =
 export type NangLuongCanh =
   | { kieu: "lo_xo_ngang"; A: number; don_vi?: string; x?: number }
   | { kieu: "con_lac_don"; goc0: number; goc?: number }
-  | { kieu: "doc"; h: number; don_vi?: string; vi?: number }
+  | { kieu: "doc"; h: number; don_vi?: string; vi?: number; nhan_h?: string }
   | { kieu: "hop_he"; ten?: string };
 export type NangLuongLop =
   | LopGhi
