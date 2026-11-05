@@ -271,7 +271,7 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Đ3 | Opus | L11 điện trường–mạch, L10 lực | 37, 43, 63 | 6 | 8 | dien_truong_deu, mach_dien, so_do_vecto |
 | Đ4 | Opus | L10 động học, moment, chất lỏng | 50, 57, 66, 79 | 8 | 14 | truc_chuyen_dong, quy_dao_nem, thanh_moment, cot_chat_long |
 | Đ5 | Opus | Quang (chỉ có ở KHTN9/HSG9) | 83, 156 | 4 | 8 | tia_sang, thau_kinh |
-| Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | 4/11: XONG hình+tóm đề: 3, 4, 6, 7 (trừ D5), 8, 9, 10, 18; XONG chỉ tóm đề: 13, 14, 15, 16, 17, 19, 125, 126, 127. CÒN: hình 13·D4, 14·D4 (tu_truong), 14·D5, 127·D6 (vong_tron), 125·D4/D5 (mach_dien), 126·D1 (tu_truong), 7·D5 (cot_chat_long chưa có cảnh ống kín giam khí → cần thêm `canh`). Chưa chạy HS ảo, chưa đăng. |
+| Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | 4/11: XONG hình+tóm đề: 3, 4, 6, 7 (trừ D5), 8, 9, 10, 18; XONG chỉ tóm đề: 13, 14, 15, 16, 17, 19, 125, 126, 127. 5/11 ✓ XONG hình 13·D4, 14·D4, 14·D5, 127·D6, 125·D4/D5, 126·D1 (HS ảo 375px sạch, kiem-code số liệu sạch). CÒN: 7·D5 (cot_chat_long chưa có cảnh ống kín giam khí → cần thêm `canh`). Chưa đăng DB. |
 | Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) + 23·D3 `do_thi` | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
 | Đ8 | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
 | Đ9 | Sonnet | KHTN 9 + HSG 9 (P3) | 129, 130, 131, 84, 89, 90, 91, 160, 162, 155, 161, 166, 154, 167, 153, 164, 159, 157, 165, 152, 163, 151, 158, 150, 178 | 43 | 102 | — |
