@@ -84,8 +84,16 @@ if (loi.length) {
 
 // ---- ảnh bìa ----
 const bia = path.join(os.tmpdir(), path.basename(file).replace(/\.mp4$/, "-bia.webp"));
-execFileSync(ffmpeg, ["-y", "-loglevel", "error", "-ss", String(giayBia), "-i", file, "-frames:v", "1",
-  "-vf", "scale=960:-2", "-quality", "70", bia]);
+try {
+  execFileSync(ffmpeg, ["-y", "-loglevel", "error", "-ss", String(giayBia), "-i", file, "-frames:v", "1",
+    "-vf", "scale=960:-2", "-quality", "70", bia], { stdio: ["ignore", "ignore", "pipe"] });
+} catch {
+  // ffmpeg 9 (Homebrew 11/2026) không kèm libwebp → xuất PNG rồi đổi bằng cwebp (brew install webp).
+  const png = bia.replace(/\.webp$/, ".png");
+  execFileSync(ffmpeg, ["-y", "-loglevel", "error", "-ss", String(giayBia), "-i", file, "-frames:v", "1",
+    "-vf", "scale=960:-2", png]);
+  execFileSync("cwebp", ["-quiet", "-q", "70", png, "-o", bia]);
+}
 console.log(`ảnh bìa: ${bia} · ${Math.round(fs.statSync(bia).size / 1024)} KB (giây ${giayBia})`);
 
 const ngay = new Date().toISOString().slice(0, 10).replace(/-/g, "");
