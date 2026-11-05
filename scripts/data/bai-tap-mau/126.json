@@ -103,6 +103,199 @@
      "a) có dòng cảm ứng không; tần số",
      "b) $|e_c|$ trung bình trong nửa chu kì"
     ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       4.5,
+       6.6
+      ],
+      "den": [
+       15.5,
+       6.6
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 0.8,
+      "y": 10.2,
+      "text": "dây La: f = 110 Hz",
+      "a": "start"
+     },
+     {
+      "loai": "nam_cham",
+      "x": 10,
+      "y": 2.4,
+      "dai": 5,
+      "cao": 1.8
+     },
+     {
+      "loai": "day",
+      "tu": [
+       6.6,
+       0.9
+      ],
+      "den": [
+       13.4,
+       0.9
+      ],
+      "mau": "min"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       13.4,
+       0.9
+      ],
+      "den": [
+       13.4,
+       4.3
+      ],
+      "mau": "min"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       13.4,
+       4.3
+      ],
+      "den": [
+       6.6,
+       4.3
+      ],
+      "mau": "min"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       6.6,
+       4.3
+      ],
+      "den": [
+       6.6,
+       0.9
+      ],
+      "mau": "min"
+     },
+     {
+      "loai": "chu",
+      "x": 14.0,
+      "y": 3.5,
+      "text": "cuộn",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 14.0,
+      "y": 2.0,
+      "text": "N = 6000",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 17.6,
+       "y": 6.2,
+       "goc": 90,
+       "dai": 1.2
+      },
+      {
+       "loai": "vec",
+       "x": 17.6,
+       "y": 7.4,
+       "goc": 270,
+       "dai": 1.2
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        6.6,
+        1.8
+       ],
+       "den": [
+        6.6,
+        3.5
+       ]
+      },
+      {
+       "loai": "chu",
+       "x": 6.0,
+       "y": 2.4,
+       "text": "i",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "Từ thông đổi ⇒ i cùng nhịp: 110 Hz"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "tu": [
+        4.5,
+        7.7
+       ],
+       "den": [
+        15.5,
+        7.7
+       ],
+       "mau": "max",
+       "dut": true
+      },
+      {
+       "loai": "day",
+       "tu": [
+        4.5,
+        5.5
+       ],
+       "den": [
+        15.5,
+        5.5
+       ],
+       "mau": "max",
+       "dut": true
+      },
+      {
+       "loai": "vec",
+       "x": 3.4,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.2,
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 2.9,
+       "y": 6.5,
+       "text": "Δt",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δt = T/2 = 1 : (2·110) = 4,55 ms"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 0.8,
+       "y": 8.45,
+       "text": "|ΔΦ| = 0,30 μWb",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "|e| = N·|ΔΦ| : Δt ≈ 0,396 V"
+      }
+     ]
+    ]
    }
   },
   {
