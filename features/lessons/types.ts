@@ -199,7 +199,10 @@ export type QuyDaoNemLop =
   | { loai: "thuoc_ngang"; tu: number; den: number; nhan: string; het?: number }
   | { loai: "thuoc_doc"; x: number; tu: number; den: number; nhan: string; ben?: "trai" | "phai"; het?: number };
 /** Cột chất lỏng (Đ4): độ cao theo cm; ống U: y = 0 ở mặt phân cách; bể: y = 0 ở mặt nước. */
-export type CotChatLongCanh = { kieu: "ong_u"; h_max: number } | { kieu: "be"; rong: number; cao: number; tren: number; sau: number };
+export type CotChatLongCanh =
+  | { kieu: "ong_u"; h_max: number }
+  | { kieu: "be"; rong: number; cao: number; tren: number; sau: number }
+  | { kieu: "ong_kin"; dai: number };
 export type CotChatLongLop =
   | LopGhi
   | { loai: "muc"; h1: number; h2: number; het?: number }
@@ -208,7 +211,8 @@ export type CotChatLongLop =
   | { loai: "thuoc"; ong: "trai" | "phai" | "giua"; tu: number; den: number; nhan: string; het?: number }
   | { loai: "khoi"; chim: number; vat?: string; het?: number }
   | { loai: "luc"; ten: string; huong: "len" | "xuong"; do_lon: number; tu?: "khoi" | "vat"; lech?: number; het?: number }
-  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number };
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number }
+  | { loai: "ong"; ben: "trai" | "phai"; mieng: "len" | "xuong"; khi: number; hg: number; nhan_khi?: string; nhan_hg?: string; p0?: string; dut?: boolean; het?: number };
 
 /** Điện trường đều (Đ3): x tính từ mép vào của bản (cùng đơn vị L), y tính từ đường giữa hai bản (cùng đơn vị d), lên là dương. */
 export type DienTruongLop =
