@@ -866,3 +866,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - 05/11 · `scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql`: 95 câu mới cho 26 dạng lý thuyết thiếu câu (`docs/dang-thieu-cau.md`) — CHỜ thầy duyệt `scripts/data/soan-cau-dang-thieu/duyet.html` (câu Bỏ: `tao-sql-va-trang.py --bo stt,…`), rồi chạy sau 22h; đã thử trong giao dịch hoàn tác 95/95.
 - Kết quả: question_dang 1.573 → 5.039 dòng (3.466 mới, tổng unsure 1.313); 95 câu mới vào question_bank, 95 gán dạng, thiếu grade 0. File 85 lỗi mạng lần đầu (không ghi gì), chạy lại OK. RPC get_similar_dang_questions vai HS trả 4 câu/dạng ở 6 dạng thử.
 - 05/11 13:40 · Chặng 4 đo câu tương tự: 82/88 đúng dạng (docs/do-cau-tuong-tu-2026-11-05.md); đã đặt unsure=true 6 câu lệch (lesson 38 Dạng 4 ×4, 377728@83, 674161@153), sao lưu question_dang_bak_20261105_do (6 dòng).
+
+## 5/11/2026 13:38 — ĐÃ CHẠY 20261105200000_rank_mo_mua_2 (mục 103)
+- 5/11 · `20261105200000_rank_mo_mua_2`: đóng mùa 5 + mở 4 mùa theo khối 02/11–17/01 (bậc 0/180/…/1080, recompute); thử trong giao dịch trước, chạy sau 22h. Rollback `perf/rollback/20261105200000_rank_mo_mua_2.down.sql`.
+- Rank 5/11: L11/L12 không có mùa từ 26/10; mùa #5 L10 quá hạn chưa đóng; tên mùa 2 đã chọn (memory `project_thachlab_rank_system`), chờ thầy gật mở.
+- Đã chạy: mùa 5 đóng (77 kết quả + snapshot); mở mùa 26 L12 Lôi Đình Cảm Ứng (391 đề + 24 mục nguồn, 111 HS), 27 L11 Thợ Săn Sóng (168 + 30, 97 HS), 28 L10 Kỷ Nguyên Newton (290 + 33, 80 HS), 29 L9 Bẻ Cong Ánh Sáng (2 + 18, 24 HS); bậc 0/180/…/1080; recompute từ 02/11 khớp bản thử. Log `scripts/logs/20261105-133854-20261105200000_rank_mo_mua_2.log`. gen-database-doc không đổi.
