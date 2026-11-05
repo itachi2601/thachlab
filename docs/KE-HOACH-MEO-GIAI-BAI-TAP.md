@@ -89,9 +89,9 @@ Bỏ ra khỏi kho: chỗ đã có mẹo từ khoá đủ dùng (ném ngang "Nga
 | Chặng | Việc | Ra gì | Ai/đâu |
 |---|---|---|---|
 | 0 | Thầy chốt: tên "💡 Mẹo nhìn", vị trí sau lời giải, danh sách ★ đợt 1 | dòng chốt trong file này | thầy |
-| 1 | UI: trường tuỳ chọn `meo` mỗi dạng (`ten`, `dieu_kien`, `html`) trong `WorkedQuestionsGrid.tsx`, khối gập sau bước cuối; validator `scripts/lib.ts` (có ⚠, ≤ 15 KB, không `<script>`); `publish-bai-tap-mau.mts` chuyển trường; xem ở `/dev/btm` | 1 commit, chụp 375 px | phiên Mac |
-| 2 | Chuyển 2 artifact sang SMIL theo mục 3, gắn 153 d1–d2; tính lại số (30 °C → C_nước = 7C; 39 viên, dư 9 000 J); `kiem-code` soát vật lí + lộ đáp số | 2 khối mẹo, chụp sáng/tối 375/1280 | phiên Mac |
-| 3 | `docs/BANG-MEO-GIAI.md` (tên mẹo · dạng gắn · ⚠ · chỗ mẹo sai) + mục "Mẹo nhìn" trong skill `soan-bai-tap-mau` | bảng tra trước khi đặt mẹo mới | phiên Mac |
+| 1 ✅ | UI: trường tuỳ chọn `meo` mỗi dạng (`ten`, `dieu_kien`, `html`) trong `WorkedQuestionsGrid.tsx`, khối gập sau bước cuối; validator `scripts/lib.ts` (có ⚠, ≤ 15 KB, không `<script>`); `publish-bai-tap-mau.mts` chuyển trường; xem ở `/dev/btm` | 1 commit, chụp 375 px | phiên Mac |
+| 2 ✅ | Chuyển 2 artifact sang SMIL theo mục 3, gắn 153 d1–d2; tính lại số (30 °C → C_nước = 7C; 39 viên, dư 9 000 J); `kiem-code` soát vật lí + lộ đáp số | 2 khối mẹo, chụp sáng/tối 375/1280 | phiên Mac |
+| 3 ✅ | `docs/BANG-MEO-GIAI.md` (tên mẹo · dạng gắn · ⚠ · chỗ mẹo sai) + mục "Mẹo nhìn" trong skill `soan-bai-tap-mau` | bảng tra trước khi đặt mẹo mới | phiên Mac |
 | 4 | Đợt 1: 6 mẹo ★ còn lại (bè, con sâu, cổng soát vé, bóng đu quay, chia đôi bánh, xe đẩy vào cát) — mỗi mẹo một agent `ve-hinh-dong`, phiên chính soát; dùng lại tên ở mọi lớp có dạng đó | ~8 dạng có mẹo, đăng ngoài giờ HS | Mac, ≥ 22h |
 | 5 | Đo 2–3 tuần (mục 3) rồi mới mở đợt 2 | ghi số liệu vào file này | thầy + phiên sau |
 
