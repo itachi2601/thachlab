@@ -10,7 +10,7 @@
  * canh: lo_xo_ngang {A, don_vi?, x?}  ·  con_lac_don {goc0, goc?}  ·  doc {h, don_vi?, vi?}  ·  hop_he {ten?}
  * Mục: cot {ten, gia_tri, nhan?}  ·  vat {x? | goc? | vi?, bong?} (đặt lại vật; bong = bóng đối xứng −x)
  *  ·  v {nhan, chieu?: 1|-1} (mũi tên vận tốc ở vật)  ·  mui {vao, nhan, hang?} (hộp hệ: Q, A vào/ra)  ·  ghi {text}.
- * `het: k` = ẩn từ khi xong bước k.
+ * `het: k` = ẩn từ khi xong bước k. `hinh` (tuỳ chọn) = mục vẽ sẵn từ bước 1, cùng cú pháp mục của `lop`.
  */
 
 import { C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
@@ -21,6 +21,8 @@ type Props = {
   cot: { ten: string; mau?: "max" | "min" | "chu" }[];
   max: number;
   don_vi?: string;
+  /** mục vẽ sẵn từ bước 1 (dữ kiện đề đã cho); `het: k` ẩn khi xong bước k */
+  hinh?: NangLuongLop[];
   lop?: NangLuongLop[][];
   layer: number;
 };
@@ -37,6 +39,7 @@ function MuiTen({
   c,
   nhan,
   w = 0.14,
+  rong,
 }: {
   x1: number;
   y1: number;
@@ -45,6 +48,8 @@ function MuiTen({
   c: string;
   nhan?: string;
   w?: number;
+  /** bề ngang tối đa của nhãn (đơn vị hình): dài hơn thì thu chữ; không khai = cỡ cố định như cũ */
+  rong?: number;
 }) {
   const ang = Math.atan2(y2 - y1, x2 - x1);
   return (
@@ -52,7 +57,12 @@ function MuiTen({
       <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth={w} />
       <Chevron x={x2} y={y2} ang={ang} color={c} len={0.5} w={w} />
       {nhan && (
-        <Label x={(x1 + x2) / 2} y={Math.min(y1, y2) - 0.45} fill={c} size={1.05}>
+        <Label
+          x={(x1 + x2) / 2}
+          y={Math.min(y1, y2) - 0.45}
+          fill={c}
+          size={rong ? Math.min(1.05, rong / (nhan.length * 0.6)) : 1.05}
+        >
           {nhan}
         </Label>
       )}
@@ -267,17 +277,17 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
       {mui.map((m, k) => {
         const y = 3.9 + (m.hang ?? k) * 1.5;
         return m.vao ? (
-          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} />
+          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} rong={4.2} />
         ) : (
-          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} />
+          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={3.2} />
         );
       })}
     </g>
   );
 }
 
-export default function ThanhNangLuong({ canh, cot, max, lop, layer: L }: Props) {
-  const items = dangHien(lop, L);
+export default function ThanhNangLuong({ canh, cot, max, hinh, lop, layer: L }: Props) {
+  const items = [...(hinh ?? []).filter((it) => it.het == null || L < it.het), ...dangHien(lop, L)];
   const ghi = ghiMoiNhat(lop, L);
   const val = new Map<string, { v: number; nhan?: string }>();
   for (const it of items) if (it.loai === "cot") val.set(it.ten, { v: it.gia_tri, nhan: it.nhan });
