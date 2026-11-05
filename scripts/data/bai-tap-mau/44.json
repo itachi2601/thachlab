@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "Nhân công suất với thời gian tính bằng phút",
+       "text": "Nhân công suất với thời gian tính bằng phút : $A=Pt$",
        "dung": false,
        "vi_sao": "Ra jun thì $t$ phải là giây ; dùng phút thì kết quả nhỏ đi $60$ lần."
       },
       {
-       "text": "Nhân hiệu điện thế $220\\ \\text{V}$ với thời gian",
+       "text": "Nhân hiệu điện thế $220\\ \\text{V}$ với thời gian tính bằng giây",
        "dung": false,
        "vi_sao": "$U\\cdot t$ không phải điện năng ; còn thiếu cường độ dòng điện."
       }
@@ -152,12 +152,12 @@
        "dung": true
       },
       {
-       "text": "Lấy dòng định mức $I=\\dfrac{P_{\\text{đm}}}{U_{\\text{đm}}}$",
+       "text": "Lấy dòng định mức $I=\\dfrac{P_{\\text{đm}}}{U_{\\text{đm}}}$ vì thiết bị ghi sẵn trên nhãn",
        "dung": false,
        "vi_sao": "Đó là dòng khi dùng đúng $220\\ \\text{V}$ ; ổ cắm chỉ có $176\\ \\text{V}$ nên dòng khác."
       },
       {
-       "text": "Lấy $I=\\dfrac{U_{\\text{đm}}}{R}$",
+       "text": "Lấy $I=\\dfrac{U_{\\text{đm}}}{R}$ với hiệu điện thế định mức ghi trên nhãn",
        "dung": false,
        "vi_sao": "Vẫn dùng hiệu điện thế định mức thay vì hiệu điện thế thực của ổ cắm."
       }
@@ -176,12 +176,12 @@
        "dung": true
       },
       {
-       "text": "Giảm công suất tỉ lệ với hiệu điện thế",
+       "text": "Giảm công suất tỉ lệ với hiệu điện thế thực của ổ cắm",
        "dung": false,
        "vi_sao": "$P=\\dfrac{U^{2}}{R}$ tỉ lệ với $U^{2}$ chứ không tỉ lệ với $U$."
       },
       {
-       "text": "Giữ nguyên công suất ghi trên nhãn",
+       "text": "Giữ nguyên công suất ghi trên nhãn của bàn là",
        "dung": false,
        "vi_sao": "Công suất trên nhãn chỉ có khi dùng đúng $220\\ \\text{V}$."
       }
@@ -262,12 +262,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $U=\\mathcal{E}$",
+       "text": "Lấy $U=\\mathcal{E}$ vì hiệu điện thế hai cực bằng suất điện động",
        "dung": false,
        "vi_sao": "Chỉ đúng khi $I=0$ ; có dòng điện thì một phần suất điện động mất trên điện trở trong."
       },
       {
-       "text": "Nhân dòng điện với điện trở trong : $U=Ir$",
+       "text": "Nhân dòng điện với điện trở trong của nguồn : $U=Ir$",
        "dung": false,
        "vi_sao": "Đó là hiệu điện thế rơi trên điện trở trong, không phải giữa hai cực."
       }
@@ -286,12 +286,12 @@
        "dung": true
       },
       {
-       "text": "Nhân hiệu điện thế hai cực với dòng điện : $UI$",
+       "text": "Nhân hiệu điện thế hai cực với dòng điện : $P=UI$ của nguồn",
        "dung": false,
        "vi_sao": "$UI$ là công suất của mạch ngoài, chưa tính phần toả nhiệt trong nguồn."
       },
       {
-       "text": "Tính $I^{2}R$",
+       "text": "Tính $I^{2}R$ với $R$ là điện trở mạch ngoài của mạch",
        "dung": false,
        "vi_sao": "$I^{2}R$ cũng chỉ là công suất mạch ngoài."
       }
@@ -310,12 +310,12 @@
        "dung": true
       },
       {
-       "text": "Nhân suất điện động với dòng điện",
+       "text": "Nhân suất điện động với dòng điện chạy trong mạch",
        "dung": false,
        "vi_sao": "Đó là công suất của nguồn, gồm cả phần toả nhiệt trong nguồn."
       },
       {
-       "text": "Tính $I^{2}r$",
+       "text": "Tính $I^{2}r$ với $r$ là điện trở trong của nguồn",
        "dung": false,
        "vi_sao": "Đó là nhiệt toả trong nguồn, không phải phần mạch ngoài nhận."
       }
@@ -420,12 +420,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{R}$",
+       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{R}$ vì chỉ mạch ngoài có điện trở",
        "dung": false,
        "vi_sao": "Bỏ sót điện trở trong, dòng tính ra lớn hơn thực tế."
       },
       {
-       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{r}$",
+       "text": "Lấy $I=\\dfrac{\\mathcal{E}}{r}$ vì dòng được quyết định bởi nguồn",
        "dung": false,
        "vi_sao": "Đó là dòng khi đoản mạch ($R\\to0$), không phải mạch đang xét."
       }
@@ -444,12 +444,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $U=\\mathcal{E}-IR$",
+       "text": "Lấy $U=\\mathcal{E}-IR$ vì độ giảm thế trên mạch ngoài",
        "dung": false,
        "vi_sao": "Trừ nhầm : phần mất đi trong nguồn là $Ir$ chứ không phải $IR$."
       },
       {
-       "text": "Lấy $U=Ir$",
+       "text": "Lấy $U=Ir$ vì đó là độ giảm thế trong nguồn",
        "dung": false,
        "vi_sao": "Đó là hiệu điện thế rơi trên điện trở trong."
       }
@@ -677,12 +677,12 @@
        "dung": true
       },
       {
-       "text": "Chọn loại lớn nhất cho an toàn",
+       "text": "Chọn loại lớn nhất trong ba loại cho an toàn tuyệt đối",
        "dung": false,
        "vi_sao": "Cầu chì quá lớn không đứt khi dòng đã vượt mức dây chịu được ; cháy dây trước khi cầu chì đứt."
       },
       {
-       "text": "Chọn loại nhỏ hơn dòng làm việc",
+       "text": "Chọn loại nhỏ hơn dòng làm việc để dễ ngắt mạch",
        "dung": false,
        "vi_sao": "Cầu chì sẽ đứt ngay khi bật đèn bình thường."
       }
@@ -701,12 +701,12 @@
        "dung": true
       },
       {
-       "text": "Chia suất điện động cho riêng $0{,}010\\ \\Omega$",
+       "text": "Chia suất điện động cho riêng điện trở chỗ chập $0{,}010\\ \\Omega$ của dây",
        "dung": false,
        "vi_sao": "Điện trở trong $0{,}030\\ \\Omega$ vẫn nằm trong mạch, lớn hơn cả điện trở chỗ chập."
       },
       {
-       "text": "Chia suất điện động cho điện trở đèn cộng điện trở trong",
+       "text": "Chia suất điện động cho tổng điện trở đèn cộng điện trở trong và điện trở chỗ chập",
        "dung": false,
        "vi_sao": "Đèn đã bị nối tắt nên không còn nằm trong mạch ngoài."
       }
@@ -725,12 +725,12 @@
        "dung": true
       },
       {
-       "text": "Tính $I^{2}$ nhân điện trở chỗ chập",
+       "text": "Tính $I^{2}$ nhân điện trở chỗ chập của dây",
        "dung": false,
        "vi_sao": "Đó là nhiệt toả ở chỗ chập, câu hỏi hỏi nhiệt trong ắc quy."
       },
       {
-       "text": "Tính $\\mathcal{E}I$",
+       "text": "Tính $\\mathcal{E}I$ với suất điện động của ắc quy",
        "dung": false,
        "vi_sao": "Đó là công suất cả nguồn, gồm cả phần toả ở chỗ chập."
       }

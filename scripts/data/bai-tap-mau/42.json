@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "Lấy cường độ dòng điện chia hiệu điện thế",
+       "text": "Lấy cường độ dòng điện chia hiệu điện thế đã đổi ra vôn",
        "dung": false,
        "vi_sao": "Phép chia này cho $1/R$, đơn vị A/V, không phải ôm."
       },
       {
-       "text": "Lấy hiệu điện thế nhân cường độ dòng điện",
+       "text": "Lấy hiệu điện thế nhân cường độ dòng điện đã đổi ra ampe",
        "dung": false,
        "vi_sao": "Tích $U\\cdot I$ có đơn vị V·A, không phải V/A của ôm."
       }
@@ -127,12 +127,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ lấy lần đo cuối, coi $R$ không đổi",
+       "text": "Chỉ lấy lần đo cuối của Y rồi tính $U/I$, coi $R$ không đổi theo $U$ nên không cần so",
        "dung": false,
        "vi_sao": "Muốn biết $R$ có đổi không phải so các lần đo với nhau."
       },
       {
-       "text": "Cộng các cường độ dòng điện của Y lại",
+       "text": "Cộng các cường độ dòng điện của Y lại rồi chia cho tổng các hiệu điện thế",
        "dung": false,
        "vi_sao": "Tổng dòng điện không cho biết $R$ ; $R$ tính từ từng cặp $U$, $I$."
       }
@@ -201,12 +201,12 @@
        "dung": true
       },
       {
-       "text": "Cho rằng dụng cụ đo sai",
+       "text": "Cho rằng dụng cụ đo bị sai nên $R$ mới đổi theo $U$",
        "dung": false,
        "vi_sao": "Sai số dụng cụ không làm $U/I$ giảm đều theo $U$ như vậy."
       },
       {
-       "text": "Cho rằng Y chỉ có một điện trở cố định",
+       "text": "Cho rằng Y chỉ có một điện trở cố định nên $R$ không đổi",
        "dung": false,
        "vi_sao": "Bảng đo cho thấy $U/I$ đổi, nên điện trở không cố định."
       }
@@ -411,12 +411,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $R_2$ bằng $R_1$ vì cùng $U=6{,}0$ V",
+       "text": "Lấy $R_2$ bằng $R_1$ vì cùng đặt hiệu điện thế $U=6{,}0$ V",
        "dung": false,
        "vi_sao": "Cùng $U$ mà $I$ khác thì $R$ khác ; $R=U/I$ phải tính riêng cho từng đường."
       },
       {
-       "text": "Lấy $R_2=R_1\\cdot\\dfrac{1{,}2}{3{,}0}$",
+       "text": "Lấy $R_2=R_1\\cdot\\dfrac{1{,}2}{3{,}0}$ vì cùng hiệu điện thế nhưng dòng khác",
        "dung": false,
        "vi_sao": "Cùng $U$ thì $R$ tỉ lệ nghịch với $I$ ; nhân với tỉ số dòng là thuận chiều, sai."
       }
@@ -448,12 +448,12 @@
        "dung": true
       },
       {
-       "text": "Áp quy tắc của đồ thị $U$ theo $I$: dốc hơn thì $R$ lớn hơn",
+       "text": "Áp quy tắc của đồ thị $U$ theo $I$ : đường dốc hơn thì điện trở $R$ ứng với đường đó lớn hơn",
        "dung": false,
        "vi_sao": "Quy tắc đó chỉ đúng khi trục đứng là $U$ ; ở đây trục đứng là $I$."
       },
       {
-       "text": "So điểm cắt trục tung của hai đường",
+       "text": "So điểm cắt trục tung của hai đường rồi suy ra đường nào có điện trở lớn hơn",
        "dung": false,
        "vi_sao": "Cả hai đi qua gốc nên điểm cắt giống nhau, không phân biệt được."
       }
@@ -472,12 +472,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $R_1$ vì hai điện trở cùng loại",
+       "text": "Dùng $R_1$ với hiệu điện thế mới vì hai điện trở cùng loại",
        "dung": false,
        "vi_sao": "Đề hỏi dòng qua $R_2$ ; $R_1$ là điện trở khác."
       },
       {
-       "text": "Giữ nguyên $I=1{,}2$ mA vì $R_2$ không đổi",
+       "text": "Giữ nguyên $I=1{,}2$ mA vì điện trở $R_2$ không đổi",
        "dung": false,
        "vi_sao": "$R_2$ không đổi nhưng $U$ đổi từ $6{,}0$ V sang $9{,}0$ V nên $I$ phải đổi theo."
       }
@@ -654,12 +654,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $R$ cộng $R_0$",
+       "text": "Lấy $R$ cộng $R_0$ ở nhiệt độ $t_0$ của đề rồi so sánh",
        "dung": false,
        "vi_sao": "Cộng hai điện trở không có ý nghĩa ở đây ; công thức so $R$ với $R_0$ bằng phép chia."
       },
       {
-       "text": "Lấy $R_0$ chia $R$",
+       "text": "Lấy $R_0$ chia $R$ ở nhiệt độ $t_0$ của đề",
        "dung": false,
        "vi_sao": "Ngược chiều : công thức có $R$ ở tử số."
       }
@@ -678,12 +678,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $R/R_0$ chia $\\alpha$",
+       "text": "Lấy $R/R_0$ chia cho $\\alpha$ rồi cộng thêm $t_0$ của đề để ra nhiệt độ lò",
        "dung": false,
        "vi_sao": "Quên số $1$ trong ngoặc: $R/R_0=1+\\alpha(t-t_0)$ chứ không phải $\\alpha(t-t_0)$."
       },
       {
-       "text": "Lấy $(R-R_0)$ nhân $\\alpha$",
+       "text": "Lấy $(R-R_0)$ nhân với $\\alpha$ rồi cộng thêm $t_0$ của đề để ra nhiệt độ lò",
        "dung": false,
        "vi_sao": "Nhân thay vì chia: $\\alpha(t-t_0)=\\dfrac{R-R_0}{R_0}$, phải chia cho $\\alpha$ để tìm $t-t_0$."
       }
@@ -800,12 +800,12 @@
        "dung": true
       },
       {
-       "text": "Lấy hiệu điện thế chia $R_0$",
+       "text": "Lấy hiệu điện thế chia $R_0$ là điện trở ở $20\\ ^\\circ\\text{C}$",
        "dung": false,
        "vi_sao": "$R_0$ là điện trở ở $20\\ ^\\circ\\text{C}$, không phải lúc dây đã nóng."
       },
       {
-       "text": "Lấy điện trở chia hiệu điện thế",
+       "text": "Lấy điện trở lúc nóng chia hiệu điện thế đặt vào dây",
        "dung": false,
        "vi_sao": "Phép chia này cho $1/I$, đơn vị Ω/V, không phải ampe."
       }
