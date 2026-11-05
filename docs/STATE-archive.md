@@ -860,3 +860,8 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## Migration — 5/11/2026 11:05 (đã chạy, log `scripts/logs/20261105-110551-*`)
 - `20261105120000_similar_dang_questions`: RPC `get_similar_dang_questions` (câu tương tự đúng dạng cho nút "Làm bài tương tự"); chỉ tạo hàm, lúc nào cũng được. Kiểm: bài 33 dạng 4 (49 câu gán) trả 10 câu, dạng không có trả 0.
+
+## Đã chạy 05/11/2026 13:06–13:10 (file 82–102, thầy bảo "đăng luôn")
+- 05/11 · Gán dạng chặng 2: 20 file `scripts/sql/gan-dang-*.sql` (3.371 dòng `question_dang`, 915 unsure; thử giao dịch hoàn tác OK) — **chạy sau 22h**: `bash scripts/run-migrations.sh --list` tìm số các file `gan-dang-*` mới rồi `--yes --only N` từng file; rollback `delete from question_dang where source like 'claude-2026-11-05-%'`. Dạng thiếu câu: `docs/dang-thieu-cau.md`.
+- 05/11 · `scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql`: 95 câu mới cho 26 dạng lý thuyết thiếu câu (`docs/dang-thieu-cau.md`) — CHỜ thầy duyệt `scripts/data/soan-cau-dang-thieu/duyet.html` (câu Bỏ: `tao-sql-va-trang.py --bo stt,…`), rồi chạy sau 22h; đã thử trong giao dịch hoàn tác 95/95.
+- Kết quả: question_dang 1.573 → 5.039 dòng (3.466 mới, tổng unsure 1.313); 95 câu mới vào question_bank, 95 gán dạng, thiếu grade 0. File 85 lỗi mạng lần đầu (không ghi gì), chạy lại OK. RPC get_similar_dang_questions vai HS trả 4 câu/dạng ở 6 dạng thử.
