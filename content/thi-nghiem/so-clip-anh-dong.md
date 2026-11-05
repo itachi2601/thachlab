@@ -76,7 +76,7 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 
 ## Chặng B — L9 nhóm C (lô 5/11/2026, 9 TN; 8 clip dựng, 1 bỏ qua V6). Đã tải lesson-clips (-20261105) + chèn repo + khung 6 ô; CHỜ THẦY DUYỆT LÔ, CHƯA ĐĂNG DB
 
-- l9-thuc-hanh-tieu-cu · tn-l9-tieucu-03 · clip l9tieucu3 · đã soát (cổng B 1 vòng), chèn repo + khung · 5/11/2026 · 49,4 s · 1,21 MB · dòng "Quan sát" hộp exp nêu sẵn L = 40,4 cm (lộ đáp án) — thầy quyết
+- l9-thuc-hanh-tieu-cu · tn-l9-tieucu-03 · clip l9tieucu3 · đã soát (cổng B 1 vòng), chèn repo + khung · 5/11/2026 · 49,4 s · 1,21 MB · dòng "Quan sát" hộp exp nêu sẵn L = 40,4 cm (lộ đáp án) — thầy chốt giữ nguyên 5/11
 - l9-nang-luong-dong-dien-cong-suat · tn-l9-congsuat-01 · clip l9congsuat1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,9 s · 1,15 MB
 - l9-nang-luong-dong-dien-cong-suat · tn-l9-congsuat-03 · clip l9congsuat3 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,4 s · 1,22 MB · "Quan sát" hộp exp lộ đáp án; kho I = 0,33 A làm tròn (màn ghi ≈)
 - l9-co-nang · tn-l9-conang-01 · clip l9conang1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,7 s · 1,20 MB
