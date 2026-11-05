@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$f_0=\\dfrac{v}{l}$",
+       "text": "$f_0=\\dfrac{v}{l}$ với $l$ là chiều dài dây đã cho",
        "dung": false,
        "vi_sao": "Chia cho $l$ là coi $\\lambda=l$; nhưng $\\lambda_{max}=2l$ vì một bó chỉ chiếm $\\dfrac{\\lambda}{2}$."
       },
       {
-       "text": "$f_0=v\\cdot\\lambda_{max}$",
+       "text": "$f_0=v\\cdot\\lambda_{max}$ với $\\lambda_{max}$ vừa tìm",
        "dung": false,
        "vi_sao": "Tích $v\\cdot\\lambda$ không có đơn vị Hz; tần số là $f=\\dfrac{v}{\\lambda}$."
       }
@@ -90,12 +90,12 @@
        "dung": true
       },
       {
-       "text": "$k=\\dfrac{l}{\\lambda}$",
+       "text": "$k=\\dfrac{l}{\\lambda}$, và $k$ phải nguyên",
        "dung": false,
        "vi_sao": "Mỗi bó dài $\\dfrac{\\lambda}{2}$ chứ không phải $\\lambda$, nên $l=k\\dfrac{\\lambda}{2}$."
       },
       {
-       "text": "$k=\\dfrac{\\lambda}{2l}$",
+       "text": "$k=\\dfrac{\\lambda}{2l}$, và $k$ phải nguyên",
        "dung": false,
        "vi_sao": "Ngược tử và mẫu: $\\lambda$ càng ngắn thì số bó càng nhiều."
       }
@@ -114,12 +114,12 @@
        "dung": true
       },
       {
-       "text": "Số nút $=k$",
+       "text": "Số nút $=k$ vì mỗi bó sóng có đúng một nút sóng",
        "dung": false,
        "vi_sao": "Quên hai đầu: A và B cũng là nút (cố định), nên thêm 1."
       },
       {
-       "text": "Số nút $=2k$",
+       "text": "Số nút $=2k$ vì mỗi bó sóng có riêng hai nút sóng",
        "dung": false,
        "vi_sao": "Hai bó kề nhau dùng chung nút ở giữa, không phải mỗi bó có riêng 2 nút."
       }
@@ -162,12 +162,12 @@
        "dung": true
       },
       {
-       "text": "$l=k\\dfrac{\\lambda}{2}$, $k=1,2,3,\\dots$",
+       "text": "$l=k\\dfrac{\\lambda}{2}$, $k=1,2,3,\\dots$ (hai đầu đều là nút)",
        "dung": false,
        "vi_sao": "Đó là điều kiện của dây hai đầu cố định (hai đầu đều là nút)."
       },
       {
-       "text": "$l=k\\dfrac{\\lambda}{4}$ với mọi $k$ nguyên",
+       "text": "$l=k\\dfrac{\\lambda}{4}$ với mọi $k$ nguyên dương",
        "dung": false,
        "vi_sao": "Cho $k$ chẵn thì đầu B lại thành nút, trái với đầu tự do luôn là bụng."
       }
@@ -230,12 +230,12 @@
        "dung": true
       },
       {
-       "text": "Có — vì số lần đó là số nguyên",
+       "text": "Có — vì số lần $\\frac{\\lambda}{4}$ đó là số nguyên",
        "dung": false,
        "vi_sao": "Nguyên chưa đủ: số lẻ lần $\\dfrac{\\lambda}{4}$ mới làm đầu B là bụng; số chẵn thì B thành nút, mâu thuẫn với đầu tự do."
       },
       {
-       "text": "Có — vì 30 Hz chia hết cho $f_0$",
+       "text": "Có — vì 30 Hz chia hết cho tần số $f_0$",
        "dung": false,
        "vi_sao": "Chia hết chưa đủ; ví dụ 10 Hz cũng chia hết cho $f_0$ nhưng dây không có sóng dừng ở 10 Hz."
       }
@@ -247,12 +247,12 @@
        "dung": true
       },
       {
-       "text": "Số nguyên là đủ vì $k$ nguyên",
+       "text": "Số nguyên là đủ vì $k$ nguyên, không cần xét chẵn lẻ",
        "dung": false,
        "vi_sao": "Điều kiện là $2k+1$ lẻ chứ không chỉ nguyên."
       },
       {
-       "text": "Kết luận theo tần số lớn hơn $f_0$",
+       "text": "Kết luận theo việc tần số lớn hơn $f_0$ là đủ",
        "dung": false,
        "vi_sao": "Lớn hơn $f_0$ chưa đủ; phải thuộc dãy $(2k+1)f_0$."
       }
@@ -270,12 +270,12 @@
        "dung": true
       },
       {
-       "text": "Dùng lại $\\lambda$ của câu trước",
+       "text": "Dùng lại $\\lambda$ của câu trước rồi tính $\\dfrac{l}{\\lambda/4}$",
        "dung": false,
        "vi_sao": "$f$ đã đổi nên $\\lambda=\\dfrac{v}{f}$ đổi theo."
       },
       {
-       "text": "Lấy $\\dfrac{l}{\\lambda/2}$",
+       "text": "Lấy $\\dfrac{l}{\\lambda/2}$ như dây hai đầu cố định",
        "dung": false,
        "vi_sao": "Dây có đầu tự do nên đo bằng $\\dfrac{\\lambda}{4}$."
       }
@@ -294,12 +294,12 @@
        "dung": true
       },
       {
-       "text": "Số bụng bằng số lần vừa tìm",
+       "text": "Số bụng bằng số lần $\\dfrac{\\lambda}{4}$ vừa tìm được ở bước trước",
        "dung": false,
        "vi_sao": "Mỗi bó (một bụng) chiếm $\\dfrac{\\lambda}{2}$ tức hai lần $\\dfrac{\\lambda}{4}$, nên số bụng gần bằng một nửa."
       },
       {
-       "text": "Số bụng $=k$ như hai đầu cố định",
+       "text": "Số bụng $=k$ như dây hai đầu cố định, không cộng thêm B",
        "dung": false,
        "vi_sao": "Dây có đầu tự do: B là bụng thêm vào, nên số bụng $=k+1$."
       }
@@ -355,12 +355,12 @@
        "dung": true
       },
       {
-       "text": "$\\lambda=\\dfrac{l}{k}$",
+       "text": "$\\lambda=\\dfrac{l}{k}$ vì $l=k\\lambda$",
        "dung": false,
        "vi_sao": "Một bó dài $\\dfrac{\\lambda}{2}$ chứ không phải $\\lambda$."
       },
       {
-       "text": "$\\lambda=\\dfrac{v}{f}$ rồi so với $l$",
+       "text": "$\\lambda=\\dfrac{v}{f}$ rồi so với chiều dài $l$",
        "dung": false,
        "vi_sao": "Chưa biết $v$, không dùng được; phải dùng số bó và chiều dài dây."
       }
@@ -551,12 +551,12 @@
        "dung": true
       },
       {
-       "text": "$A_M=A_b\\cdot\\dfrac{d}{\\lambda}$",
+       "text": "$A_M=A_b\\cdot\\dfrac{d}{\\lambda}$ với $d$ tính từ nút, biên độ tăng đều theo $d$",
        "dung": false,
        "vi_sao": "Biên độ không tăng đều theo $d$ mà theo hàm sin: tăng nhanh gần nút, chậm dần gần bụng."
       },
       {
-       "text": "$A_M=A_b\\left|\\cos\\dfrac{2\\pi d}{\\lambda}\\right|$",
+       "text": "$A_M=A_b\\left|\\cos\\dfrac{2\\pi d}{\\lambda}\\right|$ với $d$ tính từ nút",
        "dung": false,
        "vi_sao": "Tại nút $d=0$ biên độ phải bằng 0 nhưng $\\cos0=1$; đo từ nút thì dùng $\\sin$."
       }
@@ -575,12 +575,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\varphi=\\dfrac{A_M}{A_b}$ rồi đổi sang độ",
+       "text": "Lấy $\\varphi=\\dfrac{A_M}{A_b}$ rồi đổi sang độ cho nhanh",
        "dung": false,
        "vi_sao": "Tỉ số biên độ là giá trị của $\\sin\\varphi$; phải lấy $\\arcsin$ mới ra góc."
       },
       {
-       "text": "Cộng thêm $180^\\circ$ cho chắc",
+       "text": "Giải như câu trước rồi cộng thêm $180^\\circ$ cho chắc",
        "dung": false,
        "vi_sao": "Cộng $180^\\circ$ sẽ sang bó kế tiếp, xa A hơn; đề hỏi điểm gần A nhất."
       }
@@ -623,12 +623,12 @@
        "dung": true
       },
       {
-       "text": "Bề rộng $=A_b$",
+       "text": "Bề rộng $=A_b$ (từ vị trí cân bằng ra biên)",
        "dung": false,
        "vi_sao": "$A_b$ chỉ là nửa khoảng vung (từ vị trí cân bằng ra biên)."
       },
       {
-       "text": "Bề rộng $=\\dfrac{\\lambda}{2}$",
+       "text": "Bề rộng $=\\dfrac{\\lambda}{2}$ (chiều dài một bó sóng)",
        "dung": false,
        "vi_sao": "$\\dfrac{\\lambda}{2}$ là chiều dài một bó dọc theo dây, không phải bề rộng dao động."
       }

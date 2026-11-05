@@ -38,12 +38,12 @@
        "dung": true
       },
       {
-       "text": "Cùng hướng $\\vec F_1$ (hướng bắc)",
+       "text": "Cùng hướng $\\vec F_1$ (hướng bắc), vì $q_1\\lt0$",
        "dung": false,
        "vi_sao": "Chỉ đúng với điện tích thử dương ; $q_1$ âm nên lực ngược chiều $\\vec E$."
       },
       {
-       "text": "Vuông góc với $\\vec F_1$",
+       "text": "Vuông góc với $\\vec F_1$, vì $q_1\\lt0$ nên lệch hướng",
        "dung": false,
        "vi_sao": "Từ $\\vec F=q\\vec E$, lực luôn cùng phương với $\\vec E$."
       }
@@ -99,12 +99,12 @@
        "dung": true
       },
       {
-       "text": "Cùng hướng $\\vec F_1$ (hướng bắc)",
+       "text": "Cùng hướng $\\vec F_1$ (hướng bắc), vì $q_2\\gt0$",
        "dung": false,
        "vi_sao": "$\\vec F_1$ tác dụng lên điện tích âm ; điện tích dương chịu lực ngược chiều với nó."
       },
       {
-       "text": "Ngược hướng $\\vec E$",
+       "text": "Ngược hướng $\\vec E$ (hướng bắc), vì $q_2\\gt0$",
        "dung": false,
        "vi_sao": "Chỉ điện tích âm chịu lực ngược chiều $\\vec E$."
       }
@@ -190,12 +190,12 @@
        "dung": true
       },
       {
-       "text": "Lấy dấu của $Q$ đưa vào công thức để $E$ mang dấu",
+       "text": "Lấy dấu của $Q$ đưa vào công thức để $E$ mang dấu, hướng theo dấu đó",
        "dung": false,
        "vi_sao": "Công thức cho độ lớn ; dấu của $Q$ chỉ dùng để chọn chiều."
       },
       {
-       "text": "Cho $\\vec E$ luôn hướng ra xa điện tích nguồn",
+       "text": "Cho $\\vec E$ luôn hướng ra xa điện tích nguồn, bất kể dấu của $Q$",
        "dung": false,
        "vi_sao": "Chỉ đúng với $Q$ dương."
       }
@@ -436,12 +436,12 @@
        "dung": true
       },
       {
-       "text": "Cộng ngay hai độ lớn",
+       "text": "Cộng ngay hai độ lớn của $E_1$ và $E_2$ rồi mới xét chiều",
        "dung": false,
        "vi_sao": "Chỉ cộng độ lớn khi hai vectơ cùng chiều ; chưa xét chiều thì chưa biết."
       },
       {
-       "text": "Lấy chiều theo dấu của điện tích lớn hơn",
+       "text": "Lấy chiều theo dấu của điện tích lớn hơn trong hai điện tích",
        "dung": false,
        "vi_sao": "Mỗi vectơ có chiều theo dấu điện tích gây ra nó."
       }
@@ -460,12 +460,12 @@
        "dung": true
       },
       {
-       "text": "Cộng hai độ lớn",
+       "text": "Cộng hai độ lớn $E_1+E_2$ vì hai vectơ cùng chiều tại M nên không cần xét hiệu",
        "dung": false,
        "vi_sao": "Chỉ cộng khi cùng chiều."
       },
       {
-       "text": "Lấy $\\sqrt{E_1^2+E_2^2}$",
+       "text": "Lấy $\\sqrt{E_1^2+E_2^2}$ vì hai vectơ vuông góc nhau tại điểm M đang xét",
        "dung": false,
        "vi_sao": "Công thức này chỉ dùng khi hai vectơ vuông góc."
       }
@@ -484,12 +484,12 @@
        "dung": true
       },
       {
-       "text": "Dùng lại kết quả ở M vì cùng nằm trên AB",
+       "text": "Dùng lại kết quả ở M vì cùng nằm trên đường thẳng AB",
        "dung": false,
        "vi_sao": "$E$ phụ thuộc khoảng cách tới từng điện tích nên mỗi điểm một giá trị."
       },
       {
-       "text": "Lấy hiệu hai độ lớn như ở M",
+       "text": "Lấy hiệu hai độ lớn như ở M rồi chọn chiều vectơ lớn hơn",
        "dung": false,
        "vi_sao": "I nằm giữa hai điện tích trái dấu nên hai vectơ cùng chiều, không ngược chiều."
       }
@@ -703,12 +703,12 @@
        "dung": true
       },
       {
-       "text": "Thế $r=MH$ vì M gần H nhất",
+       "text": "Thế $r=MH$ vì M gần H nhất vào $E=k\\dfrac{|Q|}{r^2}$",
        "dung": false,
        "vi_sao": "$r$ là khoảng cách từ điện tích nguồn tới điểm xét, tức từ quả cầu tới M."
       },
       {
-       "text": "Thế $r=AB$",
+       "text": "Thế $r=AB$ là khoảng cách hai quả cầu vào $E=k\\dfrac{|Q|}{r^2}$",
        "dung": false,
        "vi_sao": "$AB$ là khoảng cách giữa hai quả cầu, không phải khoảng cách từ quả cầu tới M."
       }
@@ -727,12 +727,12 @@
        "dung": true
       },
       {
-       "text": "Coi $\\alpha=90^\\circ$ vì bộ ba cạnh quen thuộc",
+       "text": "Coi $\\alpha=90^\\circ$ vì bộ ba cạnh quen thuộc $3-4-5$ nên hai vectơ vuông góc nhau",
        "dung": false,
        "vi_sao": "Góc vuông của bộ ba cạnh nằm ở H trong tam giác MHA ; góc AMB không vuông."
       },
       {
-       "text": "Lấy $\\alpha$ bằng góc $\\widehat{AMH}$",
+       "text": "Lấy $\\alpha$ bằng đúng góc $\\widehat{AMH}$ của tam giác vuông MHA, không nhân đôi",
        "dung": false,
        "vi_sao": "Đường trung trực chia đôi góc giữa hai vectơ, nên $\\alpha$ gấp đôi $\\widehat{AMH}$."
       }
@@ -775,12 +775,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $F=k\\dfrac{|Q||q|}{MH^2}$ với một quả cầu",
+       "text": "Dùng $F=k\\dfrac{|Q||q|}{MH^2}$ với một quả cầu, chiều ngược $\\vec E$",
        "dung": false,
        "vi_sao": "Hai quả cầu cùng tác dụng lực và khoảng cách tới M là $MA$, không phải $MH$."
       },
       {
-       "text": "Dùng $F=|q|E$ nhưng lấy cùng chiều $\\vec E$",
+       "text": "Dùng $F=|q|E$ nhưng lấy cùng chiều $\\vec E$ vì $|q|$ dương",
        "dung": false,
        "vi_sao": "$q$ âm chịu lực ngược chiều $\\vec E$."
       }

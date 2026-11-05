@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên điện tích mỗi quả vì hệ cô lập",
+       "text": "Giữ nguyên điện tích mỗi quả vì hệ cô lập nên không có gì đổi",
        "dung": false,
        "vi_sao": "Hệ cô lập chỉ giữ tổng điện tích không đổi ; khi chạm, điện tích phân bố lại đều giữa hai quả giống hệt nhau."
       },
       {
-       "text": "Lấy hiệu hai điện tích rồi chia đôi",
+       "text": "Lấy hiệu hai điện tích rồi chia đôi vì hai quả giống hệt nhau",
        "dung": false,
        "vi_sao": "Điện tích được bảo toàn khi cộng có dấu, không phải khi trừ ; hiệu không phải đại lượng bảo toàn."
       }
@@ -151,12 +151,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $F=k\\dfrac{|q_1+q_2|}{r^2}$",
+       "text": "Dùng $F=k\\dfrac{|q_1+q_2|}{r^2}$ với $q$, $r$ đã đổi sang SI",
        "dung": false,
        "vi_sao": "Lực tỉ lệ với tích $|q_1q_2|$, không phải với tổng hai điện tích."
       },
       {
-       "text": "Dùng $F=k\\dfrac{|q_1q_2|}{r}$",
+       "text": "Dùng $F=k\\dfrac{|q_1q_2|}{r}$ với $q$, $r$ đã đổi sang SI",
        "dung": false,
        "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với $r$."
       }
@@ -212,12 +212,12 @@
        "dung": true
       },
       {
-       "text": "Rút $|q|=\\dfrac{F r^2}{k}$, không lấy căn",
+       "text": "Viết $F=k\\dfrac{q^2}{r^2}$ rồi rút $|q|=\\dfrac{F r^2}{k}$, không lấy căn",
        "dung": false,
        "vi_sao": "Hai điện tích bằng nhau nên tích là $q^2$ ; muốn có $|q|$ phải lấy căn bậc hai."
       },
       {
-       "text": "Rút $|q|=\\dfrac{k r^2}{F}$",
+       "text": "Viết $F=k\\dfrac{q^2}{r^2}$ rồi rút $|q|=\\dfrac{k r^2}{F}$ cho gọn",
        "dung": false,
        "vi_sao": "Lực tỉ lệ thuận với $q^2$ nên $F$ nằm ở tử số của $q^2$, không phải ở mẫu."
       }
@@ -273,12 +273,12 @@
        "dung": true
       },
       {
-       "text": "Chia $r$ cho $\\varepsilon$ : $r'=r/\\varepsilon$",
+       "text": "Chia $r$ cho $\\varepsilon$ : $r^{\\prime}=r/\\varepsilon$, vì dầu làm lực giảm $\\varepsilon$ lần nên rút ngắn $r$ đúng $\\varepsilon$ lần",
        "dung": false,
        "vi_sao": "Lực tỉ lệ nghịch với $r^2$ chứ không phải $r$ ; phải lập phương trình lực rồi giải, không chia thẳng."
       },
       {
-       "text": "Nhân $r$ với $\\varepsilon$ để lực tăng lại",
+       "text": "Nhân $r$ với $\\varepsilon$ để lực tăng lại, vì dầu làm lực giảm $\\varepsilon$ lần đúng bằng chừng đó",
        "dung": false,
        "vi_sao": "Tăng $r$ làm lực giảm thêm ; muốn lực tăng lại phải đưa hai điện tích lại gần."
       }
@@ -297,12 +297,12 @@
        "dung": true
       },
       {
-       "text": "Nhân lực với 3 rồi với 2, vì $r$ giảm một nửa",
+       "text": "Nhân lực với 3 rồi với 2, vì $r$ giảm một nửa nên lực gấp đôi",
        "dung": false,
        "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với khoảng cách."
       },
       {
-       "text": "Lấy lực trong dầu làm mốc rồi đổi tiếp",
+       "text": "Lấy lực trong dầu làm mốc rồi đổi tiếp sang không khí",
        "dung": false,
        "vi_sao": "Đề đã đưa về không khí nên mốc là $F_0$ ban đầu, không còn $\\varepsilon$."
       }
@@ -371,12 +371,12 @@
        "dung": true
       },
       {
-       "text": "Cho $\\dfrac{|q_1|}{r_1}=\\dfrac{|q_2|}{r_2}$",
+       "text": "Cho $F_{10}=F_{20}$ : $\\dfrac{|q_1|}{r_1}=\\dfrac{|q_2|}{r_2}$ vì lực tỉ lệ nghịch với $r$",
        "dung": false,
        "vi_sao": "Lực tỉ lệ nghịch với bình phương khoảng cách, không phải với khoảng cách."
       },
       {
-       "text": "Cho $|q_1|r_1^2=|q_2|r_2^2$",
+       "text": "Cho $F_{10}=F_{20}$ : $|q_1|r_1^2=|q_2|r_2^2$ vì lực tỉ lệ thuận với $r^2$",
        "dung": false,
        "vi_sao": "Điện tích lớn hơn phải ở xa hơn, tức $|q|/r^2$ bằng nhau, không phải $|q|r^2$ bằng nhau."
       }
@@ -419,12 +419,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $AB$ làm khoảng cách",
+       "text": "Dùng $F_{10}=k\\dfrac{|q_1q_0|}{AB^2}$ với $AB$ đổi ra m",
        "dung": false,
        "vi_sao": "$AB$ là khoảng cách giữa hai điện tích cố định, không phải từ $q_1$ đến $q_0$."
       },
       {
-       "text": "Dùng $CB$ làm khoảng cách",
+       "text": "Dùng $F_{10}=k\\dfrac{|q_1q_0|}{CB^2}$ với $CB$ đổi ra m",
        "dung": false,
        "vi_sao": "$CB$ là khoảng cách từ $q_2$ đến $q_0$, không phải từ $q_1$."
       }
@@ -439,12 +439,12 @@
        "dung": true
       },
       {
-       "text": "Chuyển sang phía A",
+       "text": "Chuyển sang phía A, vì lực của hai điện tích đã đổi chiều nên điểm cân bằng bị đẩy về phía điện tích nhỏ",
        "dung": false,
        "vi_sao": "Đổi dấu $q_0$ đảo cả hai lực cùng lúc, nên quan hệ ngược chiều và bằng độ lớn vẫn giữ nguyên."
       },
       {
-       "text": "Không còn vị trí cân bằng",
+       "text": "Không còn vị trí cân bằng nào nữa, vì $q_0$ đã đổi dấu nên hai lực không thể triệt tiêu",
        "dung": false,
        "vi_sao": "$q_0$ giản ước khỏi điều kiện $F_{10}=F_{20}$, nên vị trí vẫn tồn tại."
       }
@@ -456,12 +456,12 @@
        "dung": true
       },
       {
-       "text": "Tính lại từ đầu với $q_0=-2{,}0$ nC",
+       "text": "Tính lại từ đầu với $q_0=-2{,}0$ nC rồi so sánh với kết quả cũ ở trên",
        "dung": false,
        "vi_sao": "Không cần : $q_0$ xuất hiện ở cả hai vế nên đổi dấu hay độ lớn đều không ảnh hưởng."
       },
       {
-       "text": "Đổi chỗ vai trò của $q_1$ và $q_2$",
+       "text": "Đổi chỗ vai trò của $q_1$ và $q_2$ trong điều kiện cân bằng vì $q_0$ đã đổi dấu",
        "dung": false,
        "vi_sao": "$q_1$, $q_2$ là hai điện tích cố định, không đổi vai trò khi đổi dấu $q_0$."
       }
@@ -705,12 +705,12 @@
        "dung": true
       },
       {
-       "text": "$180^\\circ$, vì $q_1$ và $q_2$ trái dấu",
+       "text": "$180^\\circ$, vì $q_1$ và $q_2$ trái dấu nên hai lực ngược chiều nhau",
        "dung": false,
        "vi_sao": "Dấu chỉ cho biết chiều của mỗi lực dọc đường nối nó với $q_0$ ; hai đường nối này vẫn vuông góc."
       },
       {
-       "text": "$0^\\circ$, vì $q_1$ và $q_0$ cùng dấu",
+       "text": "$0^\\circ$, vì $q_1$ và $q_0$ cùng dấu nên hai lực cùng chiều nhau",
        "dung": false,
        "vi_sao": "Một lực đẩy, một lực hút, và chúng nằm trên hai đường vuông góc nên không cùng chiều."
       }
@@ -722,12 +722,12 @@
        "dung": true
       },
       {
-       "text": "Cộng ngay hai độ lớn $F_1+F_2$",
+       "text": "Cộng ngay hai độ lớn $F_1+F_2$ rồi kết luận không cần góc",
        "dung": false,
        "vi_sao": "Chỉ cộng độ lớn được khi hai lực cùng chiều ; ở đây hai lực lệch nhau một góc."
       },
       {
-       "text": "Trừ hai độ lớn $|F_1-F_2|$",
+       "text": "Trừ hai độ lớn $|F_1-F_2|$ rồi kết luận không cần góc",
        "dung": false,
        "vi_sao": "Chỉ trừ được khi hai lực ngược chiều ; chưa biết góc thì chưa chọn được công thức."
       }
@@ -746,12 +746,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $F=F_1+F_2$",
+       "text": "Dùng $F=F_1+F_2$ vì hợp lực là tổng độ lớn hai lực",
        "dung": false,
        "vi_sao": "Chỉ đúng khi hai lực cùng chiều ; ở đây chúng vuông góc nên hợp lực nhỏ hơn tổng độ lớn."
       },
       {
-       "text": "Dùng $F=|F_1-F_2|$",
+       "text": "Dùng $F=|F_1-F_2|$ vì hai lực khác dấu nên trừ nhau",
        "dung": false,
        "vi_sao": "Chỉ đúng khi hai lực ngược chiều ; hai lực vuông góc thì không triệt tiêu một phần như vậy."
       }
@@ -770,12 +770,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $\\tan\\varphi=\\dfrac{F_1}{F_2}$",
+       "text": "Dùng $\\tan\\varphi=\\dfrac{F_1}{F_2}$ vì $F_1$ là cạnh đối của $\\varphi$",
        "dung": false,
        "vi_sao": "Tỉ số này cho góc giữa hợp lực và $\\vec F_2$, không phải $\\vec F_1$."
       },
       {
-       "text": "Dùng $\\cos\\varphi=\\dfrac{F_2}{F_1}$",
+       "text": "Dùng $\\cos\\varphi=\\dfrac{F_2}{F_1}$ vì $F_2$ là cạnh kề của $\\varphi$",
        "dung": false,
        "vi_sao": "$\\cos\\varphi=F_1/F$ (cạnh kề trên cạnh huyền) ; $F_2$ là cạnh đối nên không đi với cosin."
       }
