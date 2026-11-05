@@ -95,6 +95,7 @@ FILES=(
   "supabase/migrations/20261101130000_ta_phu_dao_khong_tran_4_em.sql|Bỏ trần 4 em/buổi phụ đạo khi trợ giảng điền tên (trigger ta_policy_session_guard); hệ số vẫn dừng ở mức 3+ em|lúc nào cũng được, chỉ đổi 1 hàm|chạy lại hàm trong docs/supabase-migration-ta-policy-oct2026.sql"
   "supabase/migrations/20261102080000_lop_worldskills_industrial_mechanics.sql|Học phần CTTC WorldSkills — Industrial Mechanics: môn + lớp worldskills-im, 5 chương, 16 bài (chỉ dữ liệu, idempotent, có rollback); nội dung ghi bằng scripts/dang-worldskills-im.sh|lúc nào cũng được"
   "supabase/migrations/20261105120000_similar_dang_questions.sql|RPC get_similar_dang_questions: câu tương tự ĐÚNG DẠNG (question_dang, bài + số dạng) cho nút Làm bài tương tự; chỉ tạo 1 hàm|lúc nào cũng được"
+  "scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql|Nạp 95 câu mới soạn cho 26 dạng lý thuyết/hiện tượng thiếu câu: question_bank (note soan-dang-thieu-ly-thuyet-20261105) + question_dang (unsure=false); CHỈ chạy sau khi thầy duyệt duyet.html|sau 22h|begin; delete from public.question_dang where source = 'claude-2026-11-05-soan-dang-thieu'; delete from public.question_bank where note = 'soan-dang-thieu-ly-thuyet-20261105'; commit;"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

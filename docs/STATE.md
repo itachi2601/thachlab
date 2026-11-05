@@ -14,6 +14,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
 - P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
+- 05/11 · `scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql`: 95 câu mới cho 26 dạng lý thuyết thiếu câu (`docs/dang-thieu-cau.md`) — CHỜ thầy duyệt `scripts/data/soan-cau-dang-thieu/duyet.html` (câu Bỏ: `tao-sql-va-trang.py --bo stt,…`), rồi chạy sau 22h; đã thử trong giao dịch hoàn tác 95/95.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
