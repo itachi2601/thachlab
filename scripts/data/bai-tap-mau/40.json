@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên điện tích cũ vì vẫn là tụ ấy",
+       "text": "Giữ nguyên điện tích cũ của tụ vì vẫn là tụ ấy khi nối vào nguồn mới",
        "dung": false,
        "vi_sao": "Điện tích phụ thuộc hiệu điện thế đặt vào ($Q=CU$); chỉ điện dung $C$ mới giữ nguyên."
       },
       {
-       "text": "Tính lại $C'=\\dfrac{Q}{U'}$ với điện tích cũ rồi tính tiếp",
+       "text": "Tính lại $C^{\\prime}=\\dfrac{Q}{U^{\\prime}}$ với điện tích cũ rồi dùng $C^{\\prime}$ để tính tiếp",
        "dung": false,
        "vi_sao": "Điện tích cũ ứng với $9{,}0$ V, không ứng với nguồn mới; ghép hai điều kiện khác nhau cho điện dung sai."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "Dùng hiệu điện thế của nguồn ở câu a thay cho số ghi trên vỏ",
+       "text": "Dùng hiệu điện thế của nguồn ở câu a thay cho số ghi trên vỏ tụ B, nhân với điện dung",
        "dung": false,
        "vi_sao": "Điện tích lớn nhất ứng với hiệu điện thế tối đa ghi trên vỏ tụ B, không phải nguồn của tụ A."
       },
       {
-       "text": "Coi $4{,}7$ nF như $4{,}7\\ \\mu\\text{F}$ rồi nhân với hiệu điện thế",
+       "text": "Coi $4{,}7$ nF như $4{,}7\\ \\mu\\text{F}$ rồi nhân với hiệu điện thế tối đa ghi trên vỏ",
        "dung": false,
        "vi_sao": "$1\\ \\text{nF}=10^{-3}\\ \\mu\\text{F}$; nhầm ước số làm kết quả lệch 1000 lần."
       }
@@ -238,12 +238,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $C=\\dfrac QU$",
+       "text": "Dùng $C=\\dfrac QU$ với $Q$ và $U$ ước lượng từ các số liệu của đề",
        "dung": false,
        "vi_sao": "Đề không cho $Q$ hay $U$, và $C$ do cấu tạo quyết định nên dùng công thức theo $S$, $d$, $\\varepsilon$."
       },
       {
-       "text": "Thế $d$ theo mm vào công thức mà không đổi ra mét",
+       "text": "Thế $S$, $d$ theo mm và $\\varepsilon=1$ vào công thức tụ phẳng mà không đổi ra mét",
        "dung": false,
        "vi_sao": "Công thức cần $d$ tính bằng mét ; để mm thì kết quả sai một nghìn lần."
       }
@@ -262,12 +262,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên $C$ vì $C$ không phụ thuộc $Q$ và $U$",
+       "text": "Giữ nguyên $C$ vì $C$ không phụ thuộc $Q$ và $U$ nên cũng không đổi theo điện môi",
        "dung": false,
        "vi_sao": "$C$ đúng là không phụ thuộc $Q$, $U$, nhưng có phụ thuộc $\\varepsilon$ của điện môi."
       },
       {
-       "text": "Chia $C$ cho $\\varepsilon$ vì điện môi cản điện trường",
+       "text": "Chia $C$ cho $\\varepsilon$ vì điện môi cản điện trường nên điện dung giảm",
        "dung": false,
        "vi_sao": "$\\varepsilon$ nằm ở tử số của công thức: $\\varepsilon$ lớn thì $C$ lớn, không giảm."
       }
@@ -286,12 +286,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $U_{\\max}=\\dfrac{E_{\\max}}{d}$",
+       "text": "Điện trường đều $E=\\dfrac Ud$, không đánh thủng khi $E\\le E_{\\max}$: $U_{\\max}=\\dfrac{E_{\\max}}{d}$",
        "dung": false,
        "vi_sao": "$E=\\dfrac Ud$ suy ra $U=Ed$ ; phép chia này không ra đơn vị vôn."
       },
       {
-       "text": "Coi $E_{\\max}$ là hiệu điện thế tối đa",
+       "text": "Coi $E_{\\max}$ chính là hiệu điện thế tối đa vì không đánh thủng khi $U\\le E_{\\max}$",
        "dung": false,
        "vi_sao": "$E_{\\max}$ đo bằng V/m là cường độ điện trường, phải nhân với $d$ mới ra vôn."
       }
@@ -373,12 +373,12 @@
        "dung": true
       },
       {
-       "text": "Chia nguồn làm đôi rồi mới nhân với $C_3$",
+       "text": "Chia hiệu điện thế nguồn làm đôi rồi mới nhân với $C_3$",
        "dung": false,
        "vi_sao": "$C_3$ không nối tiếp với tụ nào; hai đầu nối thẳng vào hai cực nguồn nên chịu trọn hiệu điện thế."
       },
       {
-       "text": "Lấy điện tích của cả bộ làm điện tích $C_3$",
+       "text": "Lấy điện tích của cả bộ làm điện tích của tụ $C_3$",
        "dung": false,
        "vi_sao": "Chỉ các tụ nối tiếp mới cùng điện tích; điện tích của cả bộ gồm cả phần ở nhánh kia."
       }
@@ -397,12 +397,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $Q_1=C_1U$ vì mỗi tụ chịu hiệu điện thế nguồn",
+       "text": "Dùng $Q_1=C_1U$ vì mỗi tụ đều chịu trọn hiệu điện thế nguồn, nhân hiệu điện thế đó với điện dung $C_1$",
        "dung": false,
        "vi_sao": "Hai tụ nối tiếp chia nhau hiệu điện thế nguồn; chỉ $C_3$ chịu trọn hiệu điện thế."
       },
       {
-       "text": "Lấy điện tích của bộ trừ phần của $C_3$ rồi chia đôi cho $C_1$, $C_2$",
+       "text": "Lấy điện tích của cả bộ trừ phần của $C_3$ rồi chia đôi cho $C_1$ và $C_2$ để ra $Q_1$, không xét mắc nối tiếp",
        "dung": false,
        "vi_sao": "Nối tiếp thì $C_1$ và $C_2$ có cùng điện tích bằng điện tích của cả nhánh, không chia đôi."
       }
@@ -421,12 +421,12 @@
        "dung": true
       },
       {
-       "text": "Chia đôi hiệu điện thế nguồn",
+       "text": "Chia đôi hiệu điện thế nguồn vì hai tụ nối tiếp chia đều hiệu điện thế",
        "dung": false,
        "vi_sao": "Chia đều chỉ khi hai tụ có điện dung bằng nhau; nối tiếp thì hiệu điện thế tỉ lệ nghịch với điện dung."
       },
       {
-       "text": "Chia điện tích của $C_1$ cho điện dung của cả bộ",
+       "text": "Chia điện tích của $C_1$ cho điện dung của cả bộ tụ",
        "dung": false,
        "vi_sao": "Hiệu điện thế của một tụ phải dùng điện dung của chính tụ đó; điện dung bộ cho ra giá trị khác."
       }
@@ -698,12 +698,12 @@
        "dung": true
       },
       {
-       "text": "Điện dung tăng gấp ba vì khoảng cách tăng gấp ba",
+       "text": "Điện dung tăng gấp ba vì khoảng cách hai bản tăng gấp ba nên điện dung tăng theo",
        "dung": false,
        "vi_sao": "$C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}$ tỉ lệ nghịch với $d$, không tỉ lệ thuận."
       },
       {
-       "text": "Điện dung không đổi vì đã ngắt nguồn",
+       "text": "Điện dung không đổi vì đã ngắt nguồn nên không có gì làm điện dung thay đổi",
        "dung": false,
        "vi_sao": "Ngắt nguồn chỉ giữ cố định điện tích; điện dung do cấu tạo quyết định mà khoảng cách hai bản đã đổi."
       }
@@ -722,12 +722,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên hiệu điện thế cũ vì đó là số của tụ",
+       "text": "Giữ nguyên hiệu điện thế cũ vì đó là số ghi của tụ, nên không đổi khi kéo hai bản ra xa",
        "dung": false,
        "vi_sao": "Hiệu điện thế chỉ giữ nguyên khi còn nối nguồn; đã ngắt thì điện tích giữ nguyên và $U=\\dfrac{Q}{C'}$ đổi theo $C'$."
       },
       {
-       "text": "Chia điện tích cho điện dung ban đầu",
+       "text": "Chia điện tích đã ngắt cho điện dung ban đầu của tụ, rồi lấy kết quả làm $U^{\\prime}$ sau khi kéo",
        "dung": false,
        "vi_sao": "Sau khi kéo, điện dung đã đổi thành $C'$; phải dùng $C'$."
       }
@@ -746,12 +746,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $\\tfrac12C'U_0^2$ với hiệu điện thế ban đầu",
+       "text": "Dùng $\\tfrac12C^{\\prime}U_0^2$ với hiệu điện thế ban đầu $U_0$ của tụ",
        "dung": false,
        "vi_sao": "Hiệu điện thế đã đổi thành $U'$ nên không còn dùng giá trị ban đầu."
       },
       {
-       "text": "Cho $W'=W_0$ vì không có điện tích nào thêm vào",
+       "text": "Cho $W^{\\prime}=W_0$ vì không có điện tích nào thêm vào tụ khi kéo",
        "dung": false,
        "vi_sao": "Kéo hai bản phải tốn công ngoài nên năng lượng điện trường tăng; điện tích giữ nguyên chưa suy ra năng lượng giữ nguyên."
       }
@@ -770,12 +770,12 @@
        "dung": true
       },
       {
-       "text": "Lấy luôn năng lượng sau khi kéo",
+       "text": "Lấy luôn năng lượng sau khi kéo làm công cần thực hiện",
        "dung": false,
        "vi_sao": "Tụ đã có sẵn năng lượng ban đầu; công kéo chỉ là phần tăng thêm."
       },
       {
-       "text": "Nhân điện tích với độ tăng hiệu điện thế",
+       "text": "Nhân điện tích với độ tăng hiệu điện thế, không có hệ số một nửa",
        "dung": false,
        "vi_sao": "Hiệu điện thế tăng dần trong lúc kéo nên phải lấy giá trị trung bình, có hệ số $\\tfrac12$."
       }
