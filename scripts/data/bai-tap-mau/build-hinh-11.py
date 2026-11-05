@@ -1,6 +1,8 @@
 """Bài tập mẫu Bài 10 "Lực từ. Cảm ứng từ" (Vật lí 12) — lesson_id 11. 5 dạng (quét dạng:
 scripts/logs/batch-ra-soat/ket-qua/11.quet-dang.json). Hình: hinh_11.py. Ví dụ cũ (8 mục) giữ nguyên vào tu_luan.
-Chạy: python3 scripts/data/bai-tap-mau/build-hinh-11.py   (idempotent, ghi 11.json với review.checked=false)"""
+Chạy: python3 scripts/data/bai-tap-mau/build-hinh-11.py   (idempotent, ghi 11.json với review.checked=false)
+⚠ Từ 5/11/2026 11.json có 6 dạng: Dạng 2 (bài ngược bàn tay trái) do them-dang-chieu-11.py chèn, và tom_de/cong_cu do script khác thêm.
+KHÔNG chạy lại file này (lệch chỉ số dạng, mất tom_de/cong_cu) — vá JSON tại chỗ."""
 import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
