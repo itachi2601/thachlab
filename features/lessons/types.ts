@@ -144,7 +144,7 @@ export type WorkedTomDe = { cho: string[]; tim: string[] };
 
 export type WorkedTool =
   | { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day" }
-  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][] }
+  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][] }
   | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
@@ -261,8 +261,9 @@ export type MachDienLop =
 type LopGhi = { loai: "ghi"; text: string; het?: number };
 export type VongTronLop =
   | LopGhi
-  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; het?: number }
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
+  | { loai: "vong"; r: number; nhan?: string; dut?: boolean; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };
 export type SongDayLop =
   | LopGhi
@@ -351,6 +352,8 @@ export type SoDoVectoTool = {
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
     | { kieu: "khong" }
+    /** Lò xo treo thẳng đứng vẽ răng cưa: `dai[L]` = chiều dài lò xo (đơn vị hình) ở lớp L (dùng giá trị cuối khi L vượt mảng); điểm đặt "vat_tren" (mép trên khối, lệch phải), "vat_giua" (tâm khối, lệch trái). */
+    | { kieu: "lo_xo_dung"; dai: number[]; vat?: string }
     | {
         /** Đ4: hai bờ sông (bờ dưới y = 0, bờ trên y = rong), `chay` = nhãn mũi tên dòng nước; `duong` nét đứt nối hai điểm. */
         kieu: "song";

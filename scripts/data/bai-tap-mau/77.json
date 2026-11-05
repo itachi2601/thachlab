@@ -758,15 +758,24 @@
    ],
    "cong_cu": {
     "loai": "vong_tron",
-    "A": 50,
+    "A": 75,
     "don_vi": "m",
+    "an_vong": true,
     "lop": [
      [
+      {
+       "loai": "vong",
+       "r": 50,
+       "nhan": "r = 50 m",
+       "het": 3
+      },
       {
        "loai": "diem",
        "goc": 0.3,
        "ten": "xe",
-       "chieu": true
+       "chieu": true,
+       "r": 50,
+       "het": 3
       },
       {
        "loai": "ghi",
@@ -779,12 +788,6 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "xe",
-       "chieu": true
-      },
-      {
        "loai": "ghi",
        "text": "Khô: 0,60·2000 = 1200 N > 900 N"
       },
@@ -795,10 +798,17 @@
      ],
      [
       {
+       "loai": "vong",
+       "r": 37.5,
+       "nhan": "r = 37,5 m"
+      },
+      {
        "loai": "diem",
        "goc": 0.3,
        "ten": "xe",
-       "chieu": true
+       "chieu": true,
+       "r": 37.5,
+       "het": 4
       },
       {
        "loai": "ghi",
@@ -811,10 +821,16 @@
      ],
      [
       {
+       "loai": "vong",
+       "r": 75,
+       "nhan": "r = 75 m"
+      },
+      {
        "loai": "diem",
        "goc": 0.3,
        "ten": "xe",
-       "chieu": true
+       "chieu": true,
+       "r": 75
       },
       {
        "loai": "ghi",
