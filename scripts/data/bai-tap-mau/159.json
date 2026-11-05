@@ -104,7 +104,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Dây nhôm $l=200\\ \\text{m}$, $S=0{,}5\\ \\text{mm}^2$",
+     "$\\rho_{Al}=2{,}8\\cdot10^{-8}$, $\\rho_{Cu}=1{,}7\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$",
+     "$U=5{,}6\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R$ dây nhôm",
+     "b) $S$ dây đồng cùng $l$, cùng $R$",
+     "c) đường kính $d$ dây đồng",
+     "d) $I$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -227,7 +240,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R=90\\ \\Omega$ cắt 3 đoạn bằng nhau",
+     "$U=6\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R$ mỗi đoạn",
+     "b) $R_{td}$ khi ghép song song",
+     "c) $I$ mạch chính, $I$ mỗi đoạn",
+     "d) số đoạn để $R_{td}=0{,}9\\ \\Omega$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -347,7 +372,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R_1=20\\ \\Omega$, thể tích không đổi",
+     "Khối đồng $178\\ \\text{g}$, $D=8900\\ \\text{kg/m}^3$, $S=0{,}5\\ \\text{mm}^2$"
+    ],
+    "tim": [
+     "a) $R_2$ khi $l$ tăng $50\\%$",
+     "b) $R_3$ khi $d$ giảm một nửa",
+     "c) chiều dài và $R$ sợi đồng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -504,7 +540,174 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 0.8,
+     "ten": "I (A)",
+     "vach": [
+      0.5
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 0,
+     "max": 6,
+     "ten": "U (V)",
+     "vach": [
+      3,
+      4.5
+     ],
+     "luoi": 0.5
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.8,
+        4.8
+       ]
+      ],
+      "ten": "(1)",
+      "ten_xy": [
+       0.82,
+       4.6
+      ]
+     },
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.6,
+        5.4
+       ]
+      ],
+      "mau": "max",
+      "ten": "(2)",
+      "ten_xy": [
+       0.62,
+       5.6
+      ]
+     }
+    ],
+    "diem": [
+     {
+      "x": 0.5,
+      "y": 3,
+      "ten": "A",
+      "vi": "br"
+     },
+     {
+      "x": 0.5,
+      "y": 4.5,
+      "ten": "B",
+      "vi": "tl"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chieu",
+       "x": 0.5,
+       "y": 3,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "R₁ = U_A : I_A = 3,0 : 0,5 = 6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 0.5,
+       "y": 4.5,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "R₂ = U_B : I_B = 4,5 : 0,5 = 9 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Cùng I: U₂ > U₁ ⇒ (2) dốc hơn (độ dốc = R)"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 4.5,
+       "het": 5
+      },
+      {
+       "loai": "diem",
+       "x": 0.75,
+       "y": 4.5,
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 0,75 + 0,5 = 1,25 A",
+       "het": 5
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 0.4,
+       "nhan": "0,4"
+      },
+      {
+       "loai": "diem",
+       "x": 0.4,
+       "y": 2.4,
+       "ten": "2,4",
+       "vi": "l"
+      },
+      {
+       "loai": "diem",
+       "x": 0.4,
+       "y": 3.6,
+       "ten": "3,6",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "U₁′ = 2,4 V ; U₂′ = 3,6 V (tổng 6 V)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Trục I–U: độ dốc = 1/R₁ ≈ 0,167 A/V"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$(1)$ qua $O$ và $A(0{,}5\\ \\text{A};\\,3{,}0\\ \\text{V})$",
+     "$(2)$ qua $O$ và $B(0{,}5\\ \\text{A};\\,4{,}5\\ \\text{V})$"
+    ],
+    "tim": [
+     "a) $R_1$, $R_2$",
+     "b) đường nào dốc hơn",
+     "c) $I$ khi song song, $U=4{,}5\\ \\text{V}$",
+     "d) $U_1'$, $U_2'$ khi nối tiếp, $U=6\\ \\text{V}$",
+     "e) độ dốc đường $(1)$ trên đồ thị $I$–$U$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -648,7 +851,19 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=24\\ \\text{V}$, $R=30\\ \\Omega$ nối tiếp biến trở",
+     "$R_{max}=50\\ \\Omega$, chịu $1{,}5\\ \\text{A}$",
+     "Nicrom $\\rho=1{,}1\\cdot10^{-6}\\ \\Omega\\cdot\\text{m}$, $d=0{,}4\\ \\text{mm}$, ống $D=2\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) khoảng $I$ điều chỉnh được",
+     "b) $R_b$ để $I=0{,}6\\ \\text{A}$, vị trí con chạy (%)",
+     "c) chiều dài dây, số vòng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -816,7 +1031,201 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2,
+        2
+       ],
+       [
+        2,
+        7.2
+       ],
+       [
+        18,
+        7.2
+       ],
+       [
+        18,
+        2
+       ],
+       [
+        2,
+        2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        8.4,
+        7.2
+       ],
+       [
+        8.4,
+        9.4
+       ],
+       [
+        12.6,
+        9.4
+       ],
+       [
+        12.6,
+        7.2
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 8.4,
+      "y": 7.2
+     },
+     {
+      "loai": "nut",
+      "x": 12.6,
+      "y": 7.2
+     },
+     {
+      "loai": "nguon",
+      "x": 2,
+      "y": 4.6,
+      "huong": "doc",
+      "ten": "U = 12 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 5.4,
+      "y": 7.2,
+      "kieu": "A",
+      "ten": "R_A",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10.5,
+      "y": 7.2,
+      "ten": "R₁",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 15.5,
+      "y": 7.2,
+      "ten": "R₂",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 10.5,
+      "y": 9.4,
+      "kieu": "V"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngoac",
+       "tu": [
+        8.4,
+        5.6
+       ],
+       "den": [
+        12.6,
+        5.6
+       ],
+       "nhan": "R_P",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_P = 6·4000 : 4006 ≈ 5,99 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        12,
+        2
+       ],
+       "den": [
+        8,
+        2
+       ],
+       "nhan": "I_A ≈ 0,490 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{m} ≈ 24,49 Ω ⇒ I_A = 12 : 24,49 ≈ 0,490 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 10.6,
+       "text": "2,94 V",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V = I_A·R_P ≈ 0,490·5,99 ≈ 2,94 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 10.6,
+       "text": "R_V = 6 Ω: 1,67 V",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_P′ = 3 Ω, I_A′ ≈ 0,558 A ⇒ U_V′ ≈ 1,67 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lệch: (2,94 − 1,67) : 2,94 ≈ 43 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ĐCNN = 6 : 30 = 0,2 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ΔU = 1,0 %·6 = 0,06 V (theo thang)"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$U=12\\ \\text{V}$, $R_A=0{,}5\\ \\Omega$, $R_1=6\\ \\Omega$, $R_2=18\\ \\Omega$",
+     "Vôn kế $R_V=4000\\ \\Omega$ song song $R_1$",
+     "Thang $0$–$6\\ \\text{V}$, 30 vạch, cấp $1{,}0$"
+    ],
+    "tim": [
+     "a) số chỉ ampe kế, vôn kế",
+     "b) số chỉ vôn kế $6\\ \\Omega$, độ lệch (%)",
+     "c) ĐCNN, $\\Delta U$, sai số tương đối"
+    ]
+   }
   }
  ],
  "tu_luan": {
