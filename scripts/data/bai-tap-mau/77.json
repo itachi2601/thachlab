@@ -371,7 +371,7 @@
    "label": "Dạng 4 · Trung bình · Xác định lực đóng vai lực hướng tâm",
    "topic": "Lực hướng tâm trong các tình huống thực tế",
    "problem_html": "<p>Một vật nhỏ khối lượng $50\\ \\text{g}$ đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$. Đĩa quay đều $60$ vòng/phút, vật nằm yên so với đĩa (không trượt).</p>\n<ol type=\"a\"><li>Lực nào đóng vai lực hướng tâm của vật?</li>\n<li>Tính độ lớn lực hướng tâm.</li>\n<li>Nêu lực đóng vai lực hướng tâm của (i) ô tô chạy đều qua khúc cua nằm ngang; (ii) vệ tinh nhân tạo chuyển động tròn đều quanh Trái Đất.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Nhìn từ trên xuống: đĩa nằm ngang quay đều 60 vòng/phút, vật nhỏ 50 g nằm yên trên đĩa cách trục 20 cm\"><g><circle cx=\"125\" cy=\"118\" r=\"99.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"125.0\" y1=\"118.0\" x2=\"26.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><rect x=\"178.0\" y=\"111\" width=\"14\" height=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 125 118;360 125 118\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"125.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 50 g</text><text x=\"255\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 20 cm</text><text x=\"255\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">60 vòng/phút</text><text x=\"197.0\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống: đĩa quay đúng một vòng (chạy chậm 4 lần, khoảng 4 s); vật nằm yên so với đĩa. Vạch xám trên đĩa chỉ để thấy đĩa quay.</figcaption></figure>",
-   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hướng tâm là tên một vai: hợp lực hướng vào tâm, không phải lực mới.</li><li>Chỉ tính lực do một vật cụ thể tác dụng lên vật.</li><li>$F_{\\text{ht}}=m\\omega^2 r$ và $\\omega=2\\pi f$.</li><li>⚠ <strong>Điều kiện:</strong> vật chuyển động tròn đều trong hệ gắn với mặt đất; không vẽ thêm lực hướng tâm, không có lực li tâm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Các lực theo phương thẳng đứng</span></p><p>Vật không chuyển động theo phương đứng nên hợp lực theo phương đó bằng $0$.</p><p>Trọng lực $\\vec P$ và phản lực $\\vec N$ của đĩa cân bằng nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đóng vai lực hướng tâm</span></p><p>Lực nằm ngang duy nhất còn lại là <strong>lực ma sát nghỉ</strong> của đĩa tác dụng lên vật.</p><p>Vật chuyển động tròn đều nên hợp lực hướng vào trục: ma sát nghỉ chính là lực hướng tâm, không thêm lực nào khác.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn lực hướng tâm</span></p><p>Đổi: $m=50\\ \\text{g}=0{,}050\\ \\text{kg}$, $r=20\\ \\text{cm}=0{,}20\\ \\text{m}$, $60$ vòng/phút $=1$ vòng/s.</p>$$\\omega=2\\pi f=2\\pi\\cdot1\\approx6{,}283\\ \\text{rad/s}$$$$F_{\\text{ht}}=m\\omega^2 r=0{,}050\\cdot(2\\pi)^2\\cdot0{,}20$$<div class=\"bt-ans\">$$F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$$</div><p>Lực ma sát nghỉ tác dụng lên vật có đúng độ lớn này.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ô tô qua khúc cua nằm ngang</span></p><p>Trọng lực và phản lực của mặt đường cân bằng nhau theo phương đứng.</p><p>Lực chĩa vào tâm cua là <strong>lực ma sát nghỉ</strong> giữa lốp xe và mặt đường.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vệ tinh quanh Trái Đất</span></p><p>Lực đáng kể duy nhất tác dụng lên vệ tinh là lực hấp dẫn của Trái Đất.</p><p>Lực này chĩa vào tâm Trái Đất nên chính là <strong>lực hướng tâm</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$a_{\\text{ht}}=\\omega^2 r=(2\\pi)^2\\cdot0{,}20\\approx7{,}90\\ \\text{m/s}^2$$$$F_{\\text{ht}}=m a_{\\text{ht}}=0{,}050\\cdot7{,}90\\approx0{,}395\\ \\text{N}$$<p>Khớp ✓. Không vẽ thêm lực hướng tâm bên cạnh ma sát nghỉ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Lực ma sát nghỉ của đĩa</p><p>b) $F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$</p><p>c) (i) ma sát nghỉ giữa lốp và mặt đường · (ii) lực hấp dẫn của Trái Đất</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật quay cùng đĩa, không trượt</strong> → mỗi lực do một vật gây ra; lực nằm ngang chĩa vào tâm đóng vai lực hướng tâm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hướng tâm là tên một vai: hợp lực hướng vào tâm, không phải lực mới.</li><li>Chỉ tính lực do một vật cụ thể tác dụng lên vật.</li><li>$F_{\\text{ht}}=m\\omega^2 r$ và $\\omega=2\\pi f$.</li><li>⚠ <strong>Điều kiện:</strong> vật chuyển động tròn đều trong hệ gắn với mặt đất; không vẽ thêm lực hướng tâm, không có lực li tâm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Các lực theo phương thẳng đứng</span></p><p>Vật không chuyển động theo phương đứng nên hợp lực theo phương đó bằng $0$.</p><p>Trọng lực $\\vec P$ và phản lực $\\vec N$ của đĩa cân bằng nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đóng vai lực hướng tâm</span></p><p>Lực nằm ngang duy nhất còn lại là <strong>lực ma sát nghỉ</strong> của đĩa tác dụng lên vật.</p><p>Vật chuyển động tròn đều nên hợp lực hướng vào trục: ma sát nghỉ chính là lực hướng tâm, không thêm lực nào khác.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn lực hướng tâm</span></p><p>Đổi: $m=50\\ \\text{g}=0{,}050\\ \\text{kg}$, $r=20\\ \\text{cm}=0{,}20\\ \\text{m}$, $60$ vòng/phút $=1$ vòng/s.</p>$$\\omega=2\\pi f=2\\pi\\cdot1\\approx6{,}283\\ \\text{rad/s}$$$$F_{\\text{ht}}=m\\omega^2 r=0{,}050\\cdot(2\\pi)^2\\cdot0{,}20$$<div class=\"bt-ans\">$$F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$$</div><p>Lực ma sát nghỉ tác dụng lên vật có đúng độ lớn này.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ô tô qua khúc cua nằm ngang</span></p><p>Trọng lực và phản lực của mặt đường cân bằng nhau theo phương đứng.</p><p>Lực chĩa vào tâm cua là <strong>lực ma sát nghỉ</strong> giữa lốp xe và mặt đường.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vệ tinh quanh Trái Đất</span></p><p>Lực đáng kể duy nhất tác dụng lên vệ tinh là lực hấp dẫn của Trái Đất.</p><p>Lực này chĩa vào tâm Trái Đất nên chính là <strong>lực hướng tâm</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$a_{\\text{ht}}=(2\\pi)^2\\cdot0{,}20\\approx7{,}9\\ \\text{m/s}^2$$$$F_{\\text{ht}}=0{,}050\\cdot7{,}9\\approx0{,}395\\ \\text{N}$$<p>Khớp ✓. Không vẽ thêm lực hướng tâm bên cạnh ma sát nghỉ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Lực ma sát nghỉ của đĩa</p><p>b) $F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$</p><p>c) (i) ma sát nghỉ giữa lốp và mặt đường · (ii) lực hấp dẫn của Trái Đất</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật quay cùng đĩa, không trượt</strong> → mỗi lực do một vật gây ra; lực nằm ngang chĩa vào tâm đóng vai lực hướng tâm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Vật nhỏ trên đĩa nằm ngang cách trục quay r = 20 cm\"><circle cx=\"125\" cy=\"118\" r=\"99.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"125.0\" y1=\"118.0\" x2=\"26.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><rect x=\"178.0\" y=\"111\" width=\"14\" height=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"125.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 50 g</text><text x=\"255\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 20 cm</text><text x=\"255\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">60 vòng/phút</text><line x1=\"125.0\" y1=\"118.0\" x2=\"185.0\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"155.0\" y=\"109\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r</text><text x=\"197.0\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật</text></svg><figcaption>Dữ kiện: vật cách trục quay r = 20 cm và nằm yên so với đĩa. Chưa vẽ lực nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vật nhỏ khối lượng $50\\ \\text{g}$”</td><td>$m=0{,}050\\ \\text{kg}$</td><td>Đổi g sang kg</td></tr><tr><td>“đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$”</td><td>$r=0{,}20\\ \\text{m}$</td><td>Quỹ đạo của vật là đường tròn tâm ở trục quay</td></tr><tr><td>“đĩa quay đều $60$ vòng/phút”</td><td>$f=1$ vòng/s</td><td>⚠ Đổi sang tốc độ góc (rad/s) trước khi dùng công thức</td></tr><tr><td>“vật nằm yên so với đĩa (không trượt)”</td><td>Vật quay cùng đĩa, cùng $\\omega$</td><td>⚠ Vật chuyển động tròn đều: hợp lực phải hướng vào đâu?</td></tr><tr><td>“a) lực nào đóng vai lực hướng tâm”</td><td>Liệt kê các lực do vật cụ thể tác dụng lên vật</td><td>Mỗi lực do một vật gây ra; lực hướng tâm có phải một lực riêng?</td></tr><tr><td>“b) độ lớn lực hướng tâm”</td><td>Cần $F_{\\text{ht}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) ô tô qua khúc cua nằm ngang; vệ tinh quanh Trái Đất”</td><td>Hai tình huống khác</td><td>Tìm lực đang chĩa vào tâm trong mỗi trường hợp</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>vật quay cùng đĩa, không trượt</b> → nghĩ tới <b>lực do vật cụ thể</b> đóng vai lực hướng tâm.",
    "cap_do": 2,
@@ -559,12 +559,6 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "vật",
-       "chieu": true
-      },
-      {
        "loai": "ghi",
        "text": "Nằm ngang: chỉ còn lực ma sát nghỉ"
       },
@@ -574,12 +568,6 @@
       }
      ],
      [
-      {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "vật",
-       "chieu": true
-      },
       {
        "loai": "cung",
        "tu": 0.3,
@@ -596,12 +584,6 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "vật",
-       "chieu": true
-      },
-      {
        "loai": "ghi",
        "text": "Ô tô qua cua nằm ngang:"
       },
@@ -611,12 +593,6 @@
       }
      ],
      [
-      {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "vật",
-       "chieu": true
-      },
       {
        "loai": "ghi",
        "text": "Vệ tinh quanh Trái Đất:"
