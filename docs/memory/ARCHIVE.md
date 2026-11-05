@@ -100,3 +100,11 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
 - [L10 Ch.4 lý thuyết rà soát](project_thachlab_l10_ly_thuyet_ch4.md) — B23–27 lesson 68–72, đã đăng 30/10 (chuyển 31/10)
 - [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng (chuyển 31/10)
+
+## Chuyển từ MEMORY.md 2026-11-05 (đã xong/đã deploy, chi tiết trong file)
+- [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do; Chapter 8 đăng 13/10
+- [Kho bẫy trộn câu ok](project_thachlab_kho_bay_tron_cau_ok.md) — chưa thử HS thật
+- [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan
+- [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`
+- [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat chỉ ở lý thuyết
+- [Hình OpenStax cho L12](project_thachlab_hinh_openstax.md) — chèn ảnh thẳng, không vẽ lại SVG

@@ -38,6 +38,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
+- 5/11 · Giải cùng hình: Đ1–Đ8 đã đăng DB + deploy (51 bài); Đ9 (KHTN 9 + HSG 9, 25 bài) đã vào main, CHƯA HS ảo/CHƯA đăng DB; ~20 nhánh `claude/*` >4 ngày chưa vào main chờ thầy chỉ (memory `project_thachlab_giai_cung_hinh`).
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
 - Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
