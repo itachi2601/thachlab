@@ -103,3 +103,4 @@ Hạn mức: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có mẹo (G1, V1
 - **Làm đầy `dieu_kien` đã đăng** (Đòn bẩy nhiệt, Quỹ nhiệt trong `scripts/data/bai-tap-mau/meo_nhiet.py`): còn thiếu so với bảng (nhiệt lượng kế, chỉ các vật trên đòn trao đổi nhiệt, không công cơ học/hoà tan; c và λ không đổi, áp suất thường, nước tinh khiết). Sửa rồi đăng lại bài 153 sau 22h.
 - **Cần kiểm**: c_đá = 2100 và ngưỡng 10° của con lắc đơn (đối chiếu SGK); Cổng soát vé chưa có vật gần gũi cho U; Xe đẩy vào cát nên ở bài lý thuyết hay bài tập mẫu.
 - **Chặng 5** (đo 2–3 tuần) chưa bắt đầu, chờ có mẹo trên web đủ lâu.
+  - Bắt đầu đo từ 2026-11-05 (ngày deploy ghi lượt): bảng `similar_practice_attempts` ghi mỗi lượt "Làm bài tương tự"; câu đo `scripts/sql/do-meo-nhin.sql` (lượt 1, dạng có mẹo so với dạng chưa có mẹo cùng chương).

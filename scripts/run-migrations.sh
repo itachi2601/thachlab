@@ -117,6 +117,7 @@ FILES=(
   "scripts/sql/gan-dang-hsg9-dien-tu.sql|Nạp 70 câu ngân hàng gán dạng bài tập mẫu (HSG9 Điện từ) vào question_dang (rollback: delete ... where source='claude-2026-11-05-hsg9-dien-tu')|sau 22h"
   "scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql|Nạp 95 câu mới soạn cho 26 dạng lý thuyết/hiện tượng thiếu câu: question_bank (note soan-dang-thieu-ly-thuyet-20261105) + question_dang (unsure=false); CHỈ chạy sau khi thầy duyệt duyet.html|sau 22h|begin; delete from public.question_dang where source = 'claude-2026-11-05-soan-dang-thieu'; delete from public.question_bank where note = 'soan-dang-thieu-ly-thuyet-20261105'; commit;"
   "supabase/migrations/20261105200000_rank_mo_mua_2.sql|Rank: đóng mùa 5 Alpha test (chụp kết quả) + mở 4 mùa 02/11–17/01 theo khối (L12 Lôi Đình Cảm Ứng, L11 Thợ Săn Sóng, L10 Kỷ Nguyên Newton, L9 Bẻ Cong Ánh Sáng): bậc 0/180/…/1080, config chặn nhảy bậc, chép + bật nguồn RP, recompute|ngoài giờ HS làm bài (sau 22h)"
+  "supabase/migrations/20261105220000_similar_practice_attempts.sql|Bảng mới similar_practice_attempts: ghi mỗi lượt Làm bài tương tự ở bài tập mẫu để đo Mẹo nhìn (chặng 5); HS chỉ insert, instructor/admin đọc|lúc nào cũng được|drop table if exists public.similar_practice_attempts;"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong

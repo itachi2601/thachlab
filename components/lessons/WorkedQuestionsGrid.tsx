@@ -27,6 +27,7 @@ function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color
   const [allOpen, setAllOpen] = useState(false); // tự giải từng bước: bài tương tự chỉ hiện khi đã mở hết các bước
   const markAllOpen = useCallback(() => setAllOpen(true), []);
   const [meoOpen, setMeoOpen] = useState(false); // 💡 Mẹo nhìn: gập sẵn, chỉ có sau lời giải (N6, B4)
+  const [meoSeen, setMeoSeen] = useState(false); // đã từng mở mẹo — ghi kèm lượt bài tương tự để đo (chặng 5)
   const hasAnalysis = !!q.analysis_html;
   const stepwise = !!q.buoc?.length; // tự giải từng bước (9/10/2026)
   const dangNo = dangNumber(q.label);
@@ -89,7 +90,7 @@ function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color
           )}
           {q.meo && (allOpen || !stepwise) && (
             <div className="bt-meo">
-              <button type="button" className="bt-meo-head" aria-expanded={meoOpen} onClick={() => setMeoOpen((o) => !o)}>
+              <button type="button" className="bt-meo-head" aria-expanded={meoOpen} onClick={() => { setMeoOpen((o) => !o); setMeoSeen(true); }}>
                 <span>💡 Mẹo nhìn: {q.meo.ten}</span>
                 <ChevronDown size={16} className={meoOpen ? "rotate-180" : ""} />
               </button>
@@ -112,6 +113,7 @@ function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color
               dangNo={dangNo ?? undefined}
               topicId={q.topic_id}
               form={q.form}
+              meo={{ co: !!q.meo, mo: meoSeen }}
               color={color}
               stepTitles={stepwise ? q.buoc!.map((b) => b.tieu_de) : undefined}
               defaultStep={q.go_roi?.buoc_hay_sai}

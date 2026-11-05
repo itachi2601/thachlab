@@ -40,7 +40,10 @@ export default function SimilarBankPractice({
   stepTitles,
   defaultStep,
   onGoRoi,
+  meo,
 }: {
+  /** Đo "💡 Mẹo nhìn" (chặng 5): dạng có mẹo không, em đã mở mẹo chưa — ghi kèm lượt vào similar_practice_attempts. */
+  meo?: { co: boolean; mo: boolean };
   lessonId?: number;
   /** Số N trong nhãn "Dạng N · …" của dạng mẫu. */
   dangNo?: number;
@@ -60,6 +63,31 @@ export default function SimilarBankPractice({
   const [error, setError] = useState(false);
   // null = chưa chọn nguồn. Đã có câu đúng dạng thì "làm câu khác" chỉ lấy tiếp đúng dạng (hết thì báo hết).
   const [source, setSource] = useState<Source | null>(null);
+  const [luot, setLuot] = useState(0); // số lượt đã chấm trong lần mở trang này (1 = lần đầu thật)
+
+  /** Chấm xong một bộ: ghi MỘT dòng để đo mẹo (chỉ lúc bấm Chấm, không gọi gì khi tải trang); lỗi thì bỏ qua. */
+  function finish() {
+    const correct = gradeExam(questions, responses).correctCount;
+    const n = luot + 1;
+    setLuot(n);
+    setPhase("done");
+    if (!source) return;
+    void getSupabase()
+      .from("similar_practice_attempts")
+      .insert({
+        lesson_id: lessonId ?? null,
+        dang_no: dangNo ?? null,
+        topic_id: topicId ?? null,
+        form: form ?? null,
+        nguon: source,
+        luot: n,
+        co_meo: !!meo?.co,
+        mo_meo: !!meo?.mo,
+        dung_lan_dau: correct,
+        tong: questions.length,
+      })
+      .then(() => undefined, () => undefined);
+  }
 
   async function fetchDang(exclude: number[]): Promise<SimilarRow[] | null> {
     if (!lessonId || dangNo == null) return null;
@@ -168,7 +196,7 @@ export default function SimilarBankPractice({
             />
           ))}
           {phase === "running" ? (
-            <Button onClick={() => setPhase("done")} disabled={answered === 0}>
+            <Button onClick={finish} disabled={answered === 0}>
               Chấm {answered}/{questions.length} câu
             </Button>
           ) : (
