@@ -47,13 +47,15 @@ export function apDong<T>(tool: T, d: WorkedDong, t: number): T {
 
 export function useDong<T extends { dong?: WorkedDong[] }>(tool: T) {
   const [run, setRun] = useState<{ i: number; t: number } | null>(null);
-  const raf = useRef(0);
-  useEffect(() => () => cancelAnimationFrame(raf.current), []);
+  // setTimeout ~30 khung/giây thay vì requestAnimationFrame: rAF đứng hẳn ở khung nền/ẩn (nút kẹt "Đang chạy…"), timer thì
+  // chỉ chậm lại và lượt chạy vẫn kết thúc đúng giờ (tính theo đồng hồ, không theo số khung)
+  const raf = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  useEffect(() => () => clearTimeout(raf.current), []);
   const play = useCallback(
     (i: number) => {
       const d = tool.dong?.[i];
       if (!d) return;
-      cancelAnimationFrame(raf.current);
+      clearTimeout(raf.current);
       const reduce = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
       if (reduce) {
         setRun(null);
@@ -61,17 +63,17 @@ export function useDong<T extends { dong?: WorkedDong[] }>(tool: T) {
       }
       const ms = Math.max(0.5, d.giay ?? 3) * 1000,
         t0 = performance.now();
-      const tick = (now: number) => {
-        const t = (now - t0) / ms;
+      const tick = () => {
+        const t = (performance.now() - t0) / ms;
         if (t >= 1) {
           setRun(null);
           return;
         }
         setRun({ i, t });
-        raf.current = requestAnimationFrame(tick);
+        raf.current = setTimeout(tick, 33);
       };
       setRun({ i, t: 0 });
-      raf.current = requestAnimationFrame(tick);
+      raf.current = setTimeout(tick, 33);
     },
     [tool],
   );
