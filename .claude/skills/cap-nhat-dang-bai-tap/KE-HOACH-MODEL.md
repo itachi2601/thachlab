@@ -179,7 +179,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 83 | Bài 5. Khúc xạ ánh sáng | ✓ D4 (tia_sang) 4/11 | ✓ D5 (tia_sang) 4/11 | ✓ D1, D2, D3 4/11* | Opus | P3 |
-| 84 | Bài 6. Phản xạ toàn phần | — | D2 (tia_sang), D4 (tia_sang) | D1, D3 | Sonnet | P3 |
+| 84 | Bài 6. Phản xạ toàn phần | — | ✓ D2 (tia_sang), D4 (tia_sang) 5/11 | ✓ D1, D3 5/11 | Sonnet | P3 |
 
 ### KHTN 9 · Ch.3 Điện
 
