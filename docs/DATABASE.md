@@ -60,7 +60,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **lessons** (~155): id:int8*, created_at:ts, chapter_id:int8>chapters, title:text, sort_order:int, published:bool, lesson_kind:text, description:text, is_preview:bool
 - **subjects** (~4): id:int8*, code:text, name:text, area:text, active:bool, is_practicum:bool
 
-## Đề · câu hỏi · bài làm — 25 bảng
+## Đề · câu hỏi · bài làm — 26 bảng
 
 - **bug_reports** (~144): id:int8*, created_at:ts, updated_at:ts, user_id:uuid>profiles, reporter_name:text, reporter_email:text, page_url:text, category:text, description:text, screenshot_path:text, status:text, admin_note:text, exam_id:int8>exams, question_index:int
 - **exam_attempts** (~3484): id:int8*, client_token:uuid, student_id:uuid>profiles, exam_id:int8>exams, item_id:int8>lesson_items, started_at:ts, submitted_at:ts, exam_result_id:int8>exam_results, responses:jsonb, seconds_left:int, saved_at:ts
@@ -81,6 +81,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **question_bank_grade_fix_20261004** (~5899): id:int8*
 - **question_bank_grade_fix_20261005** (~6262): id:int8*
 - **question_dang** (~4743): question_id:int8*>question_bank, lesson_id:int8*>lessons, dang_label:text, source:text, unsure:bool, created_at:ts
+- **question_dang_bak_20261105_do** (~-1): question_id:int8, lesson_id:int8, dang_label:text, source:text, unsure:bool, created_at:ts
 - **question_result_rollups** (~-1): id:int8*, student_id:uuid>profiles, source:text, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, difficulty:text, attempted:int, correct:int, earned:num, max:num, first_at:ts, last_at:ts, updated_at:ts
 - **question_topics** (~254): id:int8*, created_at:ts, subject_code:text, grade:text, chapter_id:int8>chapters, lesson_id:int8>lessons, name:text, sort_order:int, parent_id:int8>question_topics
 - **rubric_exam_attempts** (~63): id:int8*, course_id:int8>course_offerings, student_id:uuid>profiles, machine:text, role:text, grader_id:uuid>profiles, item_levels:jsonb, zero_tolerance_confirmed:jsonb, ky_thuat_score:num, thanh_phan_score:num, total_score:num, xep_loai:text, notes:text, created_at:ts, updated_at:ts
@@ -94,7 +95,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **rank_fix_attempts_backup_20260930** (~-1): id:int8, question_ids:bigint[]
 - **rank_gate_attempts** (~50): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, tier_code:text, status:text, question_ids:bigint[], answers:jsonb, pool_ids:bigint[], level_cur:text, correct:int, total:int, hard_correct:int, pct:int, passed:bool, level_end:text, created_at:ts, submitted_at:ts
 - **rank_gate_passes** (~232): season_id:int8*>rank_seasons, student_id:uuid*>profiles, tier_code:text*, passed_at:ts, evidence:jsonb
-- **rank_rp_awards** (~4092): season_id:int8*>rank_seasons, student_id:uuid*>profiles, source_kind:text*, source_ref:text*, awarded:int, best_value:numeric(6,2), updated_at:ts
+- **rank_rp_awards** (~4268): season_id:int8*>rank_seasons, student_id:uuid*>profiles, source_kind:text*, source_ref:text*, awarded:int, best_value:numeric(6,2), updated_at:ts
 - **rank_rp_awards_backup_20261010** (~79): season_id:int8, student_id:uuid, source_kind:text, source_ref:text, awarded:int, best_value:numeric(6,2), updated_at:ts, new_awarded:int, note:text, backed_up_at:ts
 - **rank_rp_ledger** (~4280): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, source_kind:text, source_ref:text, amount:int, reason:text, ref_result_id:int8, actor:uuid>profiles, created_at:ts
 - **rank_season_results** (~207): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, division:int, titles_count:int, closed_at:ts, tier_sort:int, tier_name:text, class_names:text, season_titles:jsonb, weeks_goal_met:int, weekly_rp:jsonb, mastered_topic_ids:bigint[], mastered_count:int, snapshot_at:ts
