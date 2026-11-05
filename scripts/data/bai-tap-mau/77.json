@@ -143,7 +143,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bi buộc dây, chuyển động tròn đều trên bàn nhẵn",
+     "$v=2{,}0\\ \\text{m/s}$, $r=0{,}50\\ \\text{m}$; $A$, $B$ hai đầu đường kính"
+    ],
+    "tim": [
+     "$\\vec v_A$, $\\vec v_B$ có giống nhau không",
+     "Bi có gia tốc không; hướng tại $A$",
+     "Độ lớn gia tốc"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -218,7 +229,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vòng quay $r=15\\ \\text{m}$, $T=40\\ \\text{s}$",
+     "Khách ngồi ở mép vòng"
+    ],
+    "tim": [
+     "$\\omega$",
+     "$v$ của khách",
+     "$a_{ht}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -330,7 +352,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Quạt: $\\omega=20\\ \\text{rad/s}$; $A$ cách trục $10\\ \\text{cm}$, $B$ cách $30\\ \\text{cm}$",
+     "Hai xe $10\\ \\text{m/s}$, khúc cua $r_1=20\\ \\text{m}$, $r_2=40\\ \\text{m}$",
+     "Xe 1 tăng lên $12\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "$a_{ht}$ của $A$, $B$",
+     "$a_{ht}$ của mỗi xe",
+     "$a_{ht}$ mới, gấp mấy lần"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -505,7 +539,106 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 20,
+    "don_vi": "cm",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "vật",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Thẳng đứng: P = N (cân bằng)"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "vật",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Nằm ngang: chỉ còn lực ma sát nghỉ"
+      },
+      {
+       "loai": "ghi",
+       "text": "F_{ms} đóng vai F_{ht}"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "vật",
+       "chieu": true
+      },
+      {
+       "loai": "cung",
+       "tu": 0.3,
+       "den": 2.3
+      },
+      {
+       "loai": "ghi",
+       "text": "60 vòng/phút ⇒ ω = 2π rad/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "F = mω²r = 0,05·39,5·0,20 = 0,395 N"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "vật",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Ô tô qua cua nằm ngang:"
+      },
+      {
+       "loai": "ghi",
+       "text": "ma sát nghỉ của mặt đường"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "vật",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Vệ tinh quanh Trái Đất:"
+      },
+      {
+       "loai": "ghi",
+       "text": "lực hấp dẫn của Trái Đất"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Vật $50\\ \\text{g}$ cách trục $20\\ \\text{cm}$, đĩa quay đều $60$ vòng/phút",
+     "Vật nằm yên so với đĩa"
+    ],
+    "tim": [
+     "Lực đóng vai lực hướng tâm",
+     "Độ lớn lực hướng tâm",
+     "Lực hướng tâm của ô tô, của vệ tinh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -622,7 +755,88 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 50,
+    "don_vi": "m",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "xe",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "v = 54 km/h = 15 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "F_{ht} = 200·15²/50 = 900 N"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "xe",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Khô: 0,60·2000 = 1200 N > 900 N"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ướt: 0,30·2000 = 600 N < 900 N: trượt"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "xe",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Khô: F_{ht} ≤ 1200 N"
+      },
+      {
+       "loai": "ghi",
+       "text": "r ≥ mv²/1200 = 37,5 m"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "xe",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Ướt: F_{ht} ≤ 600 N"
+      },
+      {
+       "loai": "ghi",
+       "text": "r ≥ mv²/600 = 75 m"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Mô tô + người $200\\ \\text{kg}$, $54\\ \\text{km/h}$, $r=50\\ \\text{m}$",
+     "$F_{ms\\,max}$: $0{,}60P$ (khô), $0{,}30P$ (ướt); $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "$F_{ht}$; có trượt không (khô, ướt)",
+     "$r_{min}$ khi khô, khi ướt"
+    ]
+   }
   }
  ],
  "tu_luan": {

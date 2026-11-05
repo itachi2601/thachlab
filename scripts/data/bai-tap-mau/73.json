@@ -93,7 +93,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xe tải $1{,}5$ tấn, $54\\ \\text{km/h}$; ô tô con $750\\ \\text{kg}$, $72\\ \\text{km/h}$ ngược chiều",
+     "Chiều dương: chiều xe tải"
+    ],
+    "tim": [
+     "a) $p_1$",
+     "b) $p_2$ (kể cả dấu)",
+     "c) Xe nào $|p|$ lớn hơn"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -168,7 +179,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F=9000\\ \\text{N}$, $\\Delta t=1{,}0\\ \\text{ms}$, đạn $10\\ \\text{g}$ đứng yên",
+     "Ý c: $\\Delta t=0{,}50\\ \\text{ms}$"
+    ],
+    "tim": [
+     "a) Xung lượng",
+     "b) $v$ ra nòng",
+     "c) $v$ khi nòng ngắn"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -275,7 +297,155 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 5,
+    "vec": [
+     {
+      "ten": "p_1",
+      "goc": 0,
+      "do_lon": 300,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 1,
+      "mau": "lam",
+      "so": "300",
+      "nhan_lech": [
+       0,
+       -0.7
+      ]
+     },
+     {
+      "ten": "p_2",
+      "goc": 90,
+      "do_lon": 400,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 2,
+      "den": 3,
+      "mau": "cam",
+      "so": "400"
+     },
+     {
+      "ten": "p_2",
+      "goc": 180,
+      "do_lon": 400,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 3,
+      "den": 4,
+      "mau": "cam"
+     },
+     {
+      "ten": "p",
+      "goc": 180,
+      "do_lon": 100,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 3,
+      "den": 4,
+      "nhan_lech": [
+       0,
+       -0.7
+      ]
+     },
+     {
+      "ten": "p_2",
+      "goc": 90,
+      "do_lon": 400,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 4,
+      "den": 5,
+      "mau": "cam"
+     },
+     {
+      "ten": "p",
+      "goc": 53.13,
+      "do_lon": 500,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "ten": "p_2",
+      "goc": 60,
+      "do_lon": 400,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 5,
+      "mau": "cam"
+     },
+     {
+      "ten": "p",
+      "goc": 34.7,
+      "do_lon": 608,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 5
+     }
+    ],
+    "goc": [
+     {
+      "tai": [
+       0,
+       0
+      ],
+      "tu": 0,
+      "den": 60,
+      "r": 1.2,
+      "text": "60°",
+      "buoc": 5
+     }
+    ],
+    "bang": [
+     {
+      "text": "p = 100",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "p = 500",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "p = 608",
+      "buoc": 5
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "Xe 1: $50\\ \\text{kg}$, $6{,}0\\ \\text{m/s}$; xe 2: $80\\ \\text{kg}$, $5{,}0\\ \\text{m/s}$",
+     "Góc giữa hai vận tốc: $180^\\circ$; $90^\\circ$; $60^\\circ$"
+    ],
+    "tim": [
+     "Độ lớn động lượng của hệ ở ba trường hợp"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -374,7 +544,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bóng $0{,}10\\ \\text{kg}$, tới vách $4{,}0\\ \\text{m/s}$",
+     "a) bật lại $4{,}0\\ \\text{m/s}$; b) bật lại $3{,}0\\ \\text{m/s}$",
+     "Chiều dương: chiều tới vách"
+    ],
+    "tim": [
+     "a), b) $\\Delta p$",
+     "c) $\\Delta p$ khi đổi chiều dương"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -472,7 +653,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "x_min": -0.1,
+    "x_max": 1.3,
+    "don_vi": "m",
+    "diem": [
+     {
+      "x": 0,
+      "ten": "0"
+     },
+     {
+      "x": 1,
+      "ten": "tay"
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "vat",
+      "x": 0,
+      "hang": 1,
+      "ten": "bóng",
+      "v": 0.4,
+      "nhan_v": "20 m/s"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Δp = 0 − 0,40·20 = −8,0 kg·m/s"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": 1,
+       "den": 0.4,
+       "hang": 2,
+       "nhan": "800 N",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "|F| = |Δp| : Δt = 8,0 : 0,010 = 800 N",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": 1,
+       "den": 0.88,
+       "hang": 3,
+       "nhan": "160 N",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "|F| = 8,0 : 0,050 = 160 N"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "160 : 800 = 0,2 lần — Δt dài gấp 5, F nhỏ đi 5"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Bóng $0{,}40\\ \\text{kg}$, $20\\ \\text{m/s}$, dừng hẳn",
+     "a) $\\Delta t=0{,}010\\ \\text{s}$; b) $\\Delta t=0{,}050\\ \\text{s}$"
+    ],
+    "tim": [
+     "$\\Delta p$",
+     "a), b) Lực trung bình của tay",
+     "Tỉ số hai lực"
+    ]
+   }
   }
  ],
  "tu_luan": {

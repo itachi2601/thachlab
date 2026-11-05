@@ -93,7 +93,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xe 1: $0{,}30\\ \\text{kg}$, $0{,}60\\ \\text{m/s}$; xe 2: $0{,}20\\ \\text{kg}$ đứng yên",
+     "Sau va chạm xe 2: $0{,}45\\ \\text{m/s}$ cùng chiều"
+    ],
+    "tim": [
+     "a) Có phải hệ kín không",
+     "b) Vận tốc xe 1 sau va chạm"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -192,7 +202,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "A: $150\\ \\text{kg}$, $2{,}0\\ \\text{m/s}$; B: $250\\ \\text{kg}$",
+     "Va chạm mềm, móc dính"
+    ],
+    "tim": [
+     "a) $V$ khi B đứng yên",
+     "b) $V$ khi B chạy cùng chiều $0{,}40\\ \\text{m/s}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -304,7 +324,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xe 1: $0{,}30\\ \\text{kg}$, $0{,}80\\ \\text{m/s}$; xe 2: $0{,}10\\ \\text{kg}$ đứng yên",
+     "Sau: $v_1'=0{,}40\\ \\text{m/s}$, $v_2'=1{,}2\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "a) $p$ bảo toàn?",
+     "b) $W_đ$ bảo toàn?",
+     "c) Mềm hay đàn hồi",
+     "d) $W_đ$ nếu hai xe dính nhau"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -416,7 +448,95 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "x_min": -1.4,
+    "x_max": 9.1,
+    "don_vi": "m",
+    "hinh": [
+     {
+      "loai": "vat",
+      "x": 0,
+      "hang": 1,
+      "ten": "A 900 kg",
+      "v": 1.2,
+      "nhan_v": "2,0",
+      "het": 3
+     },
+     {
+      "loai": "vat",
+      "x": 7.5,
+      "hang": 1,
+      "ten": "B 600 kg",
+      "v": -0.6,
+      "nhan_v": "1,0",
+      "het": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Chiều dương →: v_A = +2,0; v_B = −1,0 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "p = 900·2,0 + 600·(−1,0) = 1200 kg·m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 3.5,
+       "hang": 1,
+       "ten": "A+B",
+       "v": 0.48,
+       "nhan_v": "0,8",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "V = 1200 : 1500 = +0,8 m/s (theo chiều A)",
+       "het": 4
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 0,
+       "hang": 1,
+       "ten": "A",
+       "v": 1.2,
+       "nhan_v": "2,0"
+      },
+      {
+       "loai": "vat",
+       "x": 7.5,
+       "hang": 1,
+       "ten": "B",
+       "v": -1.8,
+       "nhan_v": "3,0"
+      },
+      {
+       "loai": "ghi",
+       "text": "0 = 900·2,0 − 600·v_B ⇒ v_B = 3,0 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Goòng A: $900\\ \\text{kg}$, $2{,}0\\ \\text{m/s}$; goòng B: $600\\ \\text{kg}$, $1{,}0\\ \\text{m/s}$, ngược chiều",
+     "Đâm nhau rồi móc dính"
+    ],
+    "tim": [
+     "a) $V$ sau va chạm",
+     "b) $v_B$ để hai goòng đứng yên"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -515,7 +635,99 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "x_min": -0.5,
+    "x_max": 9.5,
+    "don_vi": "m",
+    "hinh": [
+     {
+      "loai": "vat",
+      "x": 1,
+      "hang": 1,
+      "ten": "súng 2,5 kg",
+      "het": 3
+     },
+     {
+      "loai": "vat",
+      "x": 4.5,
+      "hang": 1,
+      "ten": "đạn 10 g",
+      "v": 2,
+      "nhan_v": "400 m/s",
+      "het": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "m = 10 g = 0,010 kg"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 1,
+       "hang": 2,
+       "text": "giật lùi",
+       "a": "middle",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "0 = 0,010·400 − 2,5·V ⇒ V = 1,6 m/s",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 2,
+       "hang": 1,
+       "ten": "tên lửa",
+       "het": 4
+      },
+      {
+       "loai": "vat",
+       "x": 6.2,
+       "hang": 1,
+       "ten": "khí",
+       "v": 1.8,
+       "nhan_v": "30 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "m′ = 0,60 − 0,10 = 0,50 kg"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 2,
+       "hang": 1,
+       "ten": "tên lửa",
+       "v": -0.36,
+       "nhan_v": "6,0 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "0 = 0,10·30 − 0,50·v ⇒ v = 6,0 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Súng $2{,}5\\ \\text{kg}$, đạn $10\\ \\text{g}$, $400\\ \\text{m/s}$; ban đầu đứng yên",
+     "Tên lửa $0{,}60\\ \\text{kg}$ phụt $0{,}10\\ \\text{kg}$ khí, $30\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "a) Tốc độ giật của súng",
+     "b) Tốc độ tên lửa"
+    ]
+   }
   }
  ],
  "tu_luan": {

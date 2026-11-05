@@ -103,7 +103,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xe chạy ngược chiều kim đồng hồ, $r=0{,}50\\ \\text{m}$",
+     "Tốc độ luôn $0{,}40\\ \\text{m/s}$; xét lúc qua $A$, sau $5{,}0\\ \\text{s}$"
+    ],
+    "tim": [
+     "Có tròn đều không? $\\vec v$ có đổi không",
+     "Phương, chiều $\\vec v$ tại $A$",
+     "$s$ và $\\theta$ sau $5{,}0\\ \\text{s}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -154,7 +165,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vòng đu quay: $5$ vòng trong $2{,}0$ phút",
+     "Cabin xuất phát ở vị trí thấp nhất"
+    ],
+    "tim": [
+     "$T$, $f$",
+     "$\\omega$",
+     "Góc quét sau $10\\ \\text{s}$ (độ)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -237,7 +259,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ổ cứng quay đều $7200$ vòng/phút",
+     "Điểm đánh dấu xuất phát ở đỉnh đĩa"
+    ],
+    "tim": [
+     "$f$, $T$ (ms)",
+     "$\\omega$ (rad/s)",
+     "Góc quay trong $1{,}0\\ \\text{ms}$ (độ)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -296,7 +329,78 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 15,
+    "don_vi": "cm",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "M",
+       "chieu": true
+      },
+      {
+       "loai": "cung",
+       "tu": 0.3,
+       "den": 1.8
+      },
+      {
+       "loai": "ghi",
+       "text": "45 vòng/phút = 0,75 vòng/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π·0,75 = 4,71 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "M",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "r_M = 0,15 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_M = ωr = 0,707 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "M",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "N: r_N = 0,05 m, cùng ω"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_N = ωr = 0,236 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Đĩa than $d=30\\ \\text{cm}$, quay đều $45$ vòng/phút",
+     "$M$ ở mép; $N$ cách tâm $5{,}0\\ \\text{cm}$"
+    ],
+    "tim": [
+     "$\\omega$ của đĩa",
+     "$v_M$",
+     "$v_N$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -419,7 +523,105 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 0.4,
+    "don_vi": "m",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "đầu cánh",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "480 vòng/phút : 60"
+      },
+      {
+       "loai": "ghi",
+       "text": "f = 8,0 vòng/s = 8,0 Hz"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "đầu cánh",
+       "chieu": true
+      },
+      {
+       "loai": "cung",
+       "tu": 0.3,
+       "den": 2.3
+      },
+      {
+       "loai": "ghi",
+       "text": "1 vòng = 2π rad mỗi 0,125 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π·8 = 50,3 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "đầu cánh",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "v = ωr = 50,3·0,40 = 20,1 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "đầu cánh",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "320 vòng/phút : 60 = 5,33 Hz"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω₂ = 2π·5,33 = 33,5 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3,
+       "ten": "đầu cánh",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "giữ v = 20,1 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "r₂ = v/ω₂ = 20,1 : 33,5 = 0,60 m"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Cánh quạt dài $0{,}40\\ \\text{m}$, quay đều $480$ vòng/phút",
+     "Cánh mới quay $320$ vòng/phút, giữ nguyên tốc độ đầu cánh"
+    ],
+    "tim": [
+     "$v$ đầu cánh",
+     "Chiều dài cánh mới $r_2$"
+    ]
+   }
   }
  ],
  "tu_luan": {
