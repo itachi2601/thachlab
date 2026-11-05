@@ -306,6 +306,7 @@ Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy
 - ~~**Chờ thầy chốt (Đ2 phát hiện):**~~ ĐÃ VÁ 3/11 (`TomDeKhung` trong `TomDe.tsx`). Dạng chỉ có `tom_de` (không `cong_cu`) hiện **chưa hiện gì** — tóm đề chỉ vẽ trong `GiaiCungHinh`; `StepwiseSolution` chưa đọc `tom_de`. Các ô "✓ chỉ tóm đề" ở bảng B là dữ liệu đã ghi, chờ UI (đề xuất: dòng "Tìm" dính đầu khung bước + thẻ lề ≥1280, dùng lại `TomDeBody`).
 
 - Đ3 (3/11): `dien_truong_deu` (bản +/−, đường sức, lực, quỹ đạo parabol `cat` dừng ở bản + chấm, thước ngang/dọc) và `mach_dien` (nguồn, R, đèn, V/A kế, khoá, mũi tên dòng, ngoặc nhóm, `bang` số điền dần với ô "?") — API ở chú thích đầu hai file + `features/lessons/types.ts`. Chưa soát bằng mắt: `khoa`, `dong_ho` kiểu A — phiên dùng lại đầu tiên (38, 40, 44) soát kỹ. Đã xem thử 375px; HS ảo + sửa 3/11; ĐÃ ĐĂNG DB 37, 43 ngày 4/11 (sao lưu `bai-tap-mau-bai{37,43}-179377*.json`), deploy + kiểm live 4/11.
+- **Đ9a (5/11)** — 131 (công, công suất): không dạng nào có hình vì chưa có họ hình hợp (lực đẩy/nâng + quãng đường, so sánh công suất hai máy); chỉ tóm đề. Cần họ hình mới "cong_luc" hay để tóm đề? · 89·D2: đáp số c) U = 20 V nằm ngoài khung đồ thị (0–12 V) nên bước đó chỉ ghi chữ, không chấm điểm trên hình — có muốn nới trục tới 20 V (vạch thưa hơn) không?
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.
