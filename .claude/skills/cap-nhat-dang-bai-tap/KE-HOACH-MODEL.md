@@ -275,6 +275,7 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) + 23·D3 `do_thi` | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
 | Đ8 ✓ 4/11 (HS ảo mẫu 8 dạng, nhánh claude/d8-l10-giai-cung-hinh-91bf58) | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
 | Đ9 | Sonnet | KHTN 9 + HSG 9 (P3) | 129, 130, 131, 84, 89, 90, 91, 160, 162, 155, 161, 166, 154, 167, 153, 164, 159, 157, 165, 152, 163, 151, 158, 150, 178 | 43 | 102 | — |
+**5/11/2026: Đ6 (L12, 17 bài), Đ7 (L11, 19 bài), Đ8 (L10, 15 bài) — ĐÃ ĐĂNG DB (`--giu-cu --yes`, sao lưu `scripts/logs/bai-tap-mau-bai<id>-17938*.json`) + DEPLOY.** Lượt đăng chạy chồng hai lần nên 18 bài bị nhân bản mục "Bài tập tự luận"; đã gỡ bản trùng (sao lưu `bai-tap-mau-dedupe-bai<id>-*.json`). Đợt kế tiếp Đ9: cần mở rộng `tia_sang` trước.
 
 ## E. Tổng số
 
