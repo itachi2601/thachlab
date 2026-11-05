@@ -350,6 +350,29 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
       box: [x0, -1.4, x1, Hs + 1.4],
     };
   }
+  if (nen.kieu === "lo_xo_dung") {
+    // lò xo răng cưa treo từ trần (y = C); chiều dài đổi theo lớp, khung hình dựa trên độ dài lớn nhất nên không nhảy giữa các bước
+    const C = Math.max(...nen.dai) + 1.6, len = nen.dai[Math.min(L, nen.dai.length - 1)];
+    const top = C - len, hb = 1.4, cy = top - hb / 2;
+    const n = 8, a0 = 0.5, amp = 0.5, zig = len - 2 * a0;
+    let d = `M${sv([0, C])} L${sv([0, C - a0])}`;
+    for (let i = 0; i < n; i++) {
+      const y = C - a0 - ((i + 0.5) * zig) / n;
+      d += ` L${sv([i % 2 ? -amp : amp, y])}`;
+    }
+    d += ` L${sv([0, top + a0])} L${sv([0, top])}`;
+    return {
+      el: (
+        <g>
+          <Hatch a={[-2, C]} b={[2, C]} side={[0, 1]} />
+          <path d={d} stroke="currentColor" strokeWidth={0.12} fill="none" strokeLinejoin="round" />
+          <Block c={[0, cy]} w={2} h={hb} text={nen.vat} />
+        </g>
+      ),
+      pts: { vat_tren: [1.0, top], vat_giua: [-1.0, cy], vat: [0, cy] },
+      box: [-2.4, -5.6, 2.4, C + 0.4],
+    };
+  }
   return { el: null, pts: { O: [0, 0] }, box: [-1, -1, 1, 1] };
 }
 

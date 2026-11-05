@@ -22,7 +22,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
 | `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
-| `tia_sang` (`TiaSang.tsx`, Đ5 ✓) | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
+| `tia_sang` (`TiaSang.tsx`, Đ5 ✓) | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4; Đ9c thêm cảnh `canh: "tu_do"` (toạ độ tự do: vùng, tròn, đoạn gương/vật, tia nhiều điểm, góc, thước, khung theo bước) — đã làm 84 · D2, D4; 151 · D6, D7; 158 · D3, D6; 178 · D3, D5 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
 | `thau_kinh` (`ThauKinh.tsx`, Đ5 ✓) | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
 
 ## B. Theo bài
@@ -41,7 +41,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 6 | Bài 5. Thuyết động học phân tử chất khí | — | — | D1, D2, D3, D4, D5 | Sonnet | P4 |
-| 7 | Bài 6. Định luật Boyle. Định luật Charles | — | D4 (do_thi), D5 (cot_chat_long) | D1, D2, D3 | Sonnet | P1 |
+| 7 | Bài 6. Định luật Boyle. Định luật Charles | — | ✓ D4 (do_thi) 4/11, ✓ D5 (cot_chat_long · ong_kin) 5/11 | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
 | 8 | Bài 7. Phương trình trạng thái của khí lí tưởng | — | D3 (do_thi) | D1, D2, D4, D5 | Sonnet | P1 |
 | 9 | Bài 8. Áp suất - động năng của phân tử khí | — | — | D1, D2, D3, D4, D5 | Sonnet | P4 |
 
@@ -179,15 +179,15 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 83 | Bài 5. Khúc xạ ánh sáng | ✓ D4 (tia_sang) 4/11 | ✓ D5 (tia_sang) 4/11 | ✓ D1, D2, D3 4/11* | Opus | P3 |
-| 84 | Bài 6. Phản xạ toàn phần | — | D2 (tia_sang), D4 (tia_sang) | D1, D3 | Sonnet | P3 |
+| 84 | Bài 6. Phản xạ toàn phần | — | ✓ D2 (tia_sang), D4 (tia_sang) 5/11 | ✓ D1, D3 5/11 | Sonnet | P3 |
 
 ### KHTN 9 · Ch.3 Điện
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 89 | Bài 11. Điện trở. Định luật Ohm | — | D2 (do_thi) | D1, D3, D4 | Sonnet | P3 |
-| 90 | Bài 12. Đoạn mạch nối tiếp, song song | — | D3 (mach_dien), D4 (mach_dien) | D1, D2 | Sonnet | P3 |
-| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | D3 (mach_dien) | D1, D2, D4 | Sonnet | P3 |
+| 89 | Bài 11. Điện trở. Định luật Ohm | — | ✓ D2 (do_thi) 5/11 | ✓ D1, D3, D4 5/11 | Sonnet | P3 |
+| 90 | Bài 12. Đoạn mạch nối tiếp, song song | — | ✓ D3, D4 (mach_dien) 5/11 | ✓ D1, D2 5/11 | Sonnet | P3 |
+| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | ✓ D3 (mach_dien) 5/11 | ✓ D1, D2, D4 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Cơ học
 
@@ -222,16 +222,16 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
+| 151 | Chuyên đề 06. Khúc xạ ánh sáng, phản xạ toàn phần, lăng kính | — | ✓ D6 (tia_sang), D7 (tia_sang) 5/11 | ✓ D1, D2, D3, D4, D5 5/11 | Sonnet | P3 |
 | 156 | Chuyên đề 07. Thấu kính mỏng và kính lúp | ✓ D1 (thau_kinh) 4/11 | ✓ D7 (thau_kinh) 4/11 | ✓ D2, D3, D4, D5, D6 4/11* | Opus | P3 |
-| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | D6 (tia_sang), D7 (tia_sang) | D1, D2, D3, D4, D5 | Sonnet | P3 |
+| 158 | Chuyên đề 14. Gương phẳng, bóng tối và nửa tối | — | ✓ D3 (tia_sang), D6 (tia_sang) 5/11 (D7 → tóm đề: số ảnh đổi theo α ở 4 ca; D3 hợp "nguồn rộng + vật chắn") | ✓ D1, D2, D4, D5, D7 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Âm học & thiên văn
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 150 | Chuyên đề 15. Âm thanh: sóng âm, độ cao, độ to, phản xạ âm | — | D2 (do_thi), D5 (truc_chuyen_dong) | D1, D3, D4, D6 | Sonnet | P3 |
-| 178 | Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà | — | D3 (tia_sang), D5 (tia_sang) | D1, D2, D4, D6 | Sonnet | P3 |
+| 178 | Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà | — | ✓ D3 (tia_sang), D5 (tia_sang) 5/11 | ✓ D1, D2, D4, D6 5/11 | Sonnet | P3 |
 
 ## C. Tổng theo chương
 
@@ -271,7 +271,7 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Đ3 | Opus | L11 điện trường–mạch, L10 lực | 37, 43, 63 | 6 | 8 | dien_truong_deu, mach_dien, so_do_vecto |
 | Đ4 | Opus | L10 động học, moment, chất lỏng | 50, 57, 66, 79 | 8 | 14 | truc_chuyen_dong, quy_dao_nem, thanh_moment, cot_chat_long |
 | Đ5 | Opus | Quang (chỉ có ở KHTN9/HSG9) | 83, 156 | 4 | 8 | tia_sang, thau_kinh |
-| Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | 4/11: XONG hình+tóm đề: 3, 4, 6, 7 (trừ D5), 8, 9, 10, 18; XONG chỉ tóm đề: 13, 14, 15, 16, 17, 19, 125, 126, 127. CÒN: hình 13·D4, 14·D4 (tu_truong), 14·D5, 127·D6 (vong_tron), 125·D4/D5 (mach_dien), 126·D1 (tu_truong), 7·D5 (cot_chat_long chưa có cảnh ống kín giam khí → cần thêm `canh`). Chưa chạy HS ảo, chưa đăng. |
+| Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | 4/11: XONG hình+tóm đề: 3, 4, 6, 7 (trừ D5), 8, 9, 10, 18; XONG chỉ tóm đề: 13, 14, 15, 16, 17, 19, 125, 126, 127. 5/11 ✓ XONG hình 13·D4, 14·D4, 14·D5, 127·D6, 125·D4/D5, 126·D1 (HS ảo 375px sạch, kiem-code số liệu sạch). 5/11 ✓ 7·D5: thêm cảnh `ong_kin` vào `CotChatLong.tsx` (ống một đầu kín, cột Hg giam khí, lật ống), driver 375px sạch mọi bước, chưa HS ảo. Đ6 XONG hình; chưa đăng DB. |
 | Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) + 23·D3 `do_thi` | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
 | Đ8 ✓ 4/11 (HS ảo mẫu 8 dạng, nhánh claude/d8-l10-giai-cung-hinh-91bf58) | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
 | Đ9 | Sonnet | KHTN 9 + HSG 9 (P3) | 129, 130, 131, 84, 89, 90, 91, 160, 162, 155, 161, 166, 154, 167, 153, 164, 159, 157, 165, 152, 163, 151, 158, 150, 178 | 43 | 102 | — |
@@ -306,6 +306,8 @@ Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy
 - ~~**Chờ thầy chốt (Đ2 phát hiện):**~~ ĐÃ VÁ 3/11 (`TomDeKhung` trong `TomDe.tsx`). Dạng chỉ có `tom_de` (không `cong_cu`) hiện **chưa hiện gì** — tóm đề chỉ vẽ trong `GiaiCungHinh`; `StepwiseSolution` chưa đọc `tom_de`. Các ô "✓ chỉ tóm đề" ở bảng B là dữ liệu đã ghi, chờ UI (đề xuất: dòng "Tìm" dính đầu khung bước + thẻ lề ≥1280, dùng lại `TomDeBody`).
 
 - Đ3 (3/11): `dien_truong_deu` (bản +/−, đường sức, lực, quỹ đạo parabol `cat` dừng ở bản + chấm, thước ngang/dọc) và `mach_dien` (nguồn, R, đèn, V/A kế, khoá, mũi tên dòng, ngoặc nhóm, `bang` số điền dần với ô "?") — API ở chú thích đầu hai file + `features/lessons/types.ts`. Chưa soát bằng mắt: `khoa`, `dong_ho` kiểu A — phiên dùng lại đầu tiên (38, 40, 44) soát kỹ. Đã xem thử 375px; HS ảo + sửa 3/11; ĐÃ ĐĂNG DB 37, 43 ngày 4/11 (sao lưu `bai-tap-mau-bai{37,43}-179377*.json`), deploy + kiểm live 4/11.
+
+- **Đ9c (5/11/2026) — mở rộng `tia_sang`, chỉ THÊM, bài 83 giữ nguyên**: cảnh xếp lớp cũ không vẽ được 8 dạng của 84, 151, 158, 178 nên thêm `canh: "tu_do"` (toạ độ hình 0..20, y xuống; không có `canh` = hành vi cũ). Mục mới: `vung` (đa giác tô: lăng kính, lõi/vỏ sợi quang, nước, vùng tối/nửa tối), `tron` (Mặt Trời, Trái Đất, Mặt Trăng), `doan` kiểu `guong` (gạch mặt sau)/`mat`/`vat`, `tia` gấp khúc theo điểm (chevron từng đoạn, nét đứt cho đường kéo dài), `phap_tuyen` tại điểm, `goc` giữa hai hướng (điểm hoặc độ), `diem` (ảnh: chấm rỗng), `thuoc`, `chu`, `ghi`; `phan[]` chọn khung theo bước đang làm (`tu_buoc`, như `thau_kinh`) cho bài nhiều câu khác hình. Cảnh cần cho từng bài: lăng kính (151·D6), sợi quang (84·D4, 151·D7), hai tia ở một mặt phân cách (84·D2), gương phẳng + ảnh + hai gương (158·D6, D7), nguồn rộng + vật chắn → nón bóng tối/nửa tối (178·D3), tia song song chéo trên Trái Đất (178·D5). `GiaiCungHinh` truyền thêm `buoc` cho `TiaSang` (cảnh cũ bỏ qua).
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.

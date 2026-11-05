@@ -130,7 +130,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "tia nắng hợp phương ngang $50^\\circ$",
+     "tường cách điểm tới $4{,}0$ m",
+     "gương quay $3^\\circ$; vệt cần dịch $70$ cm"
+    ],
+    "tim": [
+     "a) góc tới, góc gương khi hắt xuống giếng",
+     "b) góc gương khi hắt lên trần",
+     "c) vệt sáng dịch bao nhiêu cm",
+     "d) góc quay để vệt dịch $70$ cm"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -253,7 +266,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "đèn điểm cao $H=4{,}5$ m; người $h=1{,}5$ m",
+     "$v=1{,}2$ m/s; tường cách cột $9$ m",
+     "đèn thứ hai cách cột đầu $12$ m"
+    ],
+    "tim": [
+     "a) bóng dài khi cách cột $2$ m, $5$ m",
+     "b) tốc độ đỉnh bóng; bóng dài thêm mỗi giây",
+     "c) lúc bóng leo tường; bóng trên tường khi cách $7{,}5$ m",
+     "d) hai bóng khi cách cột đầu $4$ m"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -437,7 +463,670 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "đèn đĩa $D_n=20$ cm; đĩa chắn $d=30$ cm cách đèn $a=60$ cm",
+     "màn cách đèn $L=180$ cm",
+     "câu c: đĩa $12$ cm"
+    ],
+    "tim": [
+     "a) bóng khi đèn là điểm",
+     "b) vùng tối, mép ngoài nửa tối, bề rộng vành",
+     "c) đĩa $12$ cm: lúc vùng tối biến mất; màn $120$, $180$ cm",
+     "d) màn ở đâu để vùng tối $60$ cm"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11.8,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         1.6,
+         4.85
+        ],
+        "den": [
+         1.6,
+         6.35
+        ],
+        "kieu": "vat",
+        "mau": "vang"
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1.6,
+          4.85
+         ],
+         [
+          1.6,
+          6.35
+         ],
+         [
+          1.1,
+          6.35
+         ],
+         [
+          1.1,
+          4.85
+         ]
+        ],
+        "mau": "vang",
+        "dam": 0.55
+       },
+       {
+        "loai": "chu",
+        "x": 1.5,
+        "y": 4.35,
+        "text": "đèn",
+        "a": "start"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         6.6,
+         4.47
+        ],
+        "den": [
+         6.6,
+         6.72
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 6.6,
+        "y": 7.92,
+        "text": "đĩa 30 cm"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         16.6,
+         0.3
+        ],
+        "den": [
+         16.6,
+         10.9
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 16.6,
+        "y": 11.6,
+        "text": "màn"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         1.6,
+         4.4
+        ],
+        "den": [
+         1.6,
+         6.8
+        ],
+        "kieu": "vat",
+        "mau": "vang"
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1.6,
+          4.4
+         ],
+         [
+          1.6,
+          6.8
+         ],
+         [
+          1.1,
+          6.8
+         ],
+         [
+          1.1,
+          4.4
+         ]
+        ],
+        "mau": "vang",
+        "dam": 0.55
+       },
+       {
+        "loai": "chu",
+        "x": 1.5,
+        "y": 3.9000000000000004,
+        "text": "đèn",
+        "a": "start"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         6.6,
+         4.88
+        ],
+        "den": [
+         6.6,
+         6.32
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 6.6,
+        "y": 7.5200000000000005,
+        "text": "đĩa 12 cm"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 6,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         1.6,
+         4.85
+        ],
+        "den": [
+         1.6,
+         6.35
+        ],
+        "kieu": "vat",
+        "mau": "vang"
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1.6,
+          4.85
+         ],
+         [
+          1.6,
+          6.35
+         ],
+         [
+          1.23,
+          6.35
+         ],
+         [
+          1.23,
+          4.85
+         ]
+        ],
+        "mau": "vang",
+        "dam": 0.55
+       },
+       {
+        "loai": "chu",
+        "x": 1.5,
+        "y": 4.35,
+        "text": "đèn",
+        "a": "start"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         5.35,
+         4.47
+        ],
+        "den": [
+         5.35,
+         6.72
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 5.35,
+        "y": 7.92,
+        "text": "đĩa 30 cm"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         16.6,
+         0.3
+        ],
+        "den": [
+         16.6,
+         10.9
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 16.6,
+        "y": 11.6,
+        "text": "màn"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         5.6
+        ],
+        [
+         16.6,
+         2.22
+        ]
+       ],
+       "dut": true,
+       "mui": false,
+       "het": 2
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         5.6
+        ],
+        [
+         16.6,
+         8.97
+        ]
+       ],
+       "dut": true,
+       "mui": false,
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "đèn là điểm: d₁ = 30·180 : 60 = 90 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         6.6,
+         4.47
+        ],
+        [
+         16.6,
+         3.72
+        ],
+        [
+         16.6,
+         7.47
+        ],
+        [
+         6.6,
+         6.72
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.55
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         4.85
+        ],
+        [
+         16.6,
+         3.72
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         6.35
+        ],
+        [
+         16.6,
+         7.47
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "chu",
+       "x": 16.3,
+       "y": 6.0,
+       "text": "tối",
+       "a": "end",
+       "mau": "vang"
+      },
+      {
+       "loai": "ghi",
+       "text": "tia cùng mép: 10 + 5·180 : 60 = 25"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ vùng tối 50 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         6.6,
+         4.47
+        ],
+        [
+         16.6,
+         0.72
+        ],
+        [
+         16.6,
+         3.72
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.22
+      },
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         6.6,
+         6.72
+        ],
+        [
+         16.6,
+         10.47
+        ],
+        [
+         16.6,
+         7.47
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.22
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         6.35
+        ],
+        [
+         16.6,
+         0.72
+        ]
+       ],
+       "mau": "max",
+       "mui": false
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         4.85
+        ],
+        [
+         16.6,
+         10.47
+        ]
+       ],
+       "mau": "max",
+       "mui": false
+      },
+      {
+       "loai": "chu",
+       "x": 16.3,
+       "y": 2.62,
+       "text": "nửa tối",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "tia chéo mép ⇒ mép ngoài 130 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "vành nửa tối rộng 40 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         6.6,
+         4.88
+        ],
+        [
+         14.1,
+         5.6
+        ],
+        [
+         6.6,
+         6.32
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.55
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         4.4
+        ],
+        [
+         6.6,
+         4.88
+        ],
+        [
+         14.1,
+         5.6
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         6.8
+        ],
+        [
+         6.6,
+         6.32
+        ],
+        [
+         14.1,
+         5.6
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        14.1,
+        5.6
+       ],
+       "ten": "150 cm",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_t = 20 − 8L : 60 = 0 ⇒ L = 150 cm"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        11.6,
+        0.3
+       ],
+       "den": [
+        11.6,
+        10.9
+       ],
+       "kieu": "vat",
+       "het": 6
+      },
+      {
+       "loai": "chu",
+       "x": 11.6,
+       "y": 11.6,
+       "text": "màn 120",
+       "het": 6
+      },
+      {
+       "loai": "ghi",
+       "text": "L = 120 cm ⇒ d_t = 20 − 16 = 4 cm"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        16.6,
+        0.3
+       ],
+       "den": [
+        16.6,
+        10.9
+       ],
+       "kieu": "vat"
+      },
+      {
+       "loai": "chu",
+       "x": 16.6,
+       "y": 11.6,
+       "text": "màn 180"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         14.1,
+         5.6
+        ],
+        [
+         16.6,
+         5.84
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "ghi",
+       "text": "180 > 150: không còn vùng tối"
+      },
+      {
+       "loai": "ghi",
+       "text": "giữa màn chỉ là nửa tối"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         5.35,
+         4.47
+        ],
+        [
+         16.6,
+         3.35
+        ],
+        [
+         16.6,
+         7.85
+        ],
+        [
+         5.35,
+         6.72
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.55
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         4.85
+        ],
+        [
+         16.6,
+         3.35
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.6,
+         6.35
+        ],
+        [
+         16.6,
+         7.85
+        ]
+       ],
+       "mui": false
+      },
+      {
+       "loai": "thuoc",
+       "tu": [
+        16.6,
+        3.35
+       ],
+       "den": [
+        16.6,
+        7.85
+       ],
+       "nhan": "60",
+       "lech": -0.8
+      },
+      {
+       "loai": "ghi",
+       "text": "20 + 10L′ : 60 = 60 ⇒ L′ = 240 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "đĩa lớn hơn đèn: vùng tối nở ra · nhỏ hơn: thu lại ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -584,7 +1273,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "người cách gương $3{,}0$ m",
+     "người đi $1{,}2$ m/s; gương kéo $0{,}4$ m/s",
+     "đi xiên $60^\\circ$ với gương; gương quay $15^\\circ$"
+    ],
+    "tim": [
+     "a) tốc độ ảnh lại gần; khoảng cách sau $1{,}5$ s",
+     "b) tốc độ ảnh, khoảng cách sau $2$ s",
+     "c) tốc độ ảnh, góc giữa hai vận tốc",
+     "d) ảnh dời bao nhiêu khi gương quay"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -773,7 +1475,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "người cao $1{,}70$ m, mắt thấp hơn đỉnh $12$ cm",
+     "gương $0{,}60$ m, mép dưới cách sàn $0{,}95$ m",
+     "gương rộng $40$ cm; tường sau cách gương $2{,}0$ m"
+    ],
+    "tim": [
+     "a) gương tối thiểu, độ cao hai mép",
+     "b) thấy phần cơ thể nào",
+     "c) dải tường thấy được (mắt cách $30$, $60$ cm)",
+     "d) mắt lệch: thấy A hay B, dải tường"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -957,7 +1672,499 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$A$ cách gương $30$ cm, $B$ cách $50$ cm, $H_AH_B=60$ cm",
+     "lều $30$ m, nhà $50$ m, cách nhau $60$ m dọc bờ; $1{,}25$ m/s",
+     "hai gương vuông góc: $A(40;20)$, $B(10;50)$"
+    ],
+    "tim": [
+     "a) $H_AI$, góc tới, độ dài $A\\to I\\to B$",
+     "b) thời gian đi ngắn nhất",
+     "c) $J$, $I$, độ dài $A\\to I\\to J\\to B$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11.4,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         0.5,
+         7.4
+        ],
+        "den": [
+         19.5,
+         7.4
+        ],
+        "kieu": "guong",
+        "gach": -1,
+        "nhan": "gương",
+        "nhan_o": [
+         17.6,
+         6.9
+        ]
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         4.0,
+         3.5
+        ],
+        "den": [
+         4.0,
+         7.4
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         11.8,
+         0.9
+        ],
+        "den": [
+         11.8,
+         7.4
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         4.0,
+         3.5
+        ],
+        "ten": "A",
+        "vi": "l"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         11.8,
+         0.9
+        ],
+        "ten": "B",
+        "vi": "r"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         4.0,
+         7.4
+        ],
+        "ten": "H_A",
+        "vi": "b"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         11.8,
+         7.4
+        ],
+        "ten": "H_B",
+        "vi": "b"
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         4.0,
+         3.5
+        ],
+        "den": [
+         4.0,
+         7.4
+        ],
+        "nhan": "30",
+        "lech": -0.9
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         11.8,
+         7.4
+        ],
+        "den": [
+         11.8,
+         0.9
+        ],
+        "nhan": "50",
+        "lech": 0.9
+       },
+       {
+        "loai": "chu",
+        "x": 19.6,
+        "y": 1.2,
+        "text": "cm",
+        "a": "end"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 4,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         6.2,
+         7.6
+        ],
+        "den": [
+         19.5,
+         7.6
+        ],
+        "kieu": "guong",
+        "gach": -1,
+        "nhan": "G₁",
+        "nhan_o": [
+         18.9,
+         7.1
+        ]
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         6.2,
+         7.6
+        ],
+        "den": [
+         6.2,
+         0.2
+        ],
+        "kieu": "guong",
+        "gach": 1,
+        "nhan": "G₂",
+        "nhan_o": [
+         5.3,
+         0.9
+        ]
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0.3,
+         7.6
+        ],
+        "den": [
+         6.2,
+         7.6
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         6.2,
+         7.6
+        ],
+        "den": [
+         6.2,
+         11.2
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         6.2,
+         7.6
+        ],
+        "ten": "O",
+        "vi": "l"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         11.8,
+         4.8
+        ],
+        "ten": "A(40; 20)",
+        "vi": "r"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         7.6,
+         0.6
+        ],
+        "ten": "B(10; 50)",
+        "vi": "r"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        4.0,
+        11.3
+       ],
+       "ten": "A′",
+       "vi": "t",
+       "ro": true
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        4.0,
+        3.5
+       ],
+       "den": [
+        4.0,
+        11.3
+       ],
+       "kieu": "mo"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         4.0,
+         11.3
+        ],
+        [
+         11.8,
+         0.9
+        ]
+       ],
+       "dut": true,
+       "mui": false,
+       "het": 2
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        6.93,
+        7.4
+       ],
+       "ten": "I",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "H_AI : H_BI = 30 : 50 ⇒ H_AI = 22,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         4.0,
+         3.5
+        ],
+        [
+         6.93,
+         7.4
+        ],
+        [
+         11.8,
+         0.9
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        6.93,
+        7.4
+       ],
+       "huong": 90,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        6.93,
+        7.4
+       ],
+       "tu": [
+        4.0,
+        3.5
+       ],
+       "den": 90,
+       "nhan": "i",
+       "r": 1.3
+      },
+      {
+       "loai": "ghi",
+       "text": "tan i = 22,5 : 30 ⇒ i ≈ 36,9°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         4.0,
+         11.3
+        ],
+        [
+         6.93,
+         7.4
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "ghi",
+       "text": "AI + IB = A′B = √(60² + 80²) = 100 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "lều, nhà, bờ sông giống A, B, gương (m)"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 100 : 1,25 = 80 s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        11.8,
+        10.4
+       ],
+       "ten": "A₁",
+       "vi": "r",
+       "ro": true
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        0.6,
+        10.4
+       ],
+       "ten": "A₁₂",
+       "vi": "r",
+       "ro": true
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        11.8,
+        4.8
+       ],
+       "den": [
+        11.8,
+        10.4
+       ],
+       "kieu": "mo"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        11.8,
+        10.4
+       ],
+       "den": [
+        0.6,
+        10.4
+       ],
+       "kieu": "mo"
+      },
+      {
+       "loai": "ghi",
+       "text": "A₁ = ảnh của A qua G₁"
+      },
+      {
+       "loai": "ghi",
+       "text": "A₁₂ = ảnh của A₁ qua G₂"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0.6,
+         10.4
+        ],
+        [
+         7.6,
+         0.6
+        ]
+       ],
+       "dut": true,
+       "mui": false,
+       "het": 7
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        6.2,
+        2.56
+       ],
+       "ten": "J",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "đường A₁₂B cắt G₂ tại J(0; 36)"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         11.8,
+         4.8
+        ],
+        [
+         9.8,
+         7.6
+        ],
+        [
+         6.2,
+         2.56
+        ],
+        [
+         7.6,
+         0.6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        9.8,
+        7.6
+       ],
+       "ten": "I",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "AI + IJ + JB = A₁₂B"
+      },
+      {
+       "loai": "ghi",
+       "text": "= √(50² + 70²) ≈ 86,0 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "JB song song AI, ngược chiều ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -1152,7 +2359,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "hai gương hợp góc $\\alpha$, điểm sáng $S$ trong góc",
+     "$\\alpha=72^\\circ$, $i_1=25^\\circ$; câu c: góc tới $70^\\circ$",
+     "gương song song cách $20$ cm, $S$ cách $G_1$ $6$ cm"
+    ],
+    "tim": [
+     "a) số ảnh với từng $\\alpha$",
+     "b) $i_2$, góc giữa tia ló và tia tới",
+     "c) $\\alpha$ và số lần phản xạ",
+     "d) $S_1S_2$; $S_{12}$ cách $G_1$"
+    ]
+   }
   }
  ],
  "tu_luan": {

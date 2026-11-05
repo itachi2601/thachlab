@@ -105,7 +105,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "không khí → chất lỏng: $i=60^\\circ$, $r=36^\\circ$",
+     "$c=3\\cdot10^8$ m/s",
+     "câu b: từ chất lỏng ra, góc tới $30^\\circ$"
+    ],
+    "tim": [
+     "a) $n$ và $v$ trong chất lỏng",
+     "b) góc khúc xạ; lệch gần hay xa pháp tuyến",
+     "c) góc giữa tia phản xạ và tia khúc xạ"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -228,7 +240,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "dầu dày $14$ cm, $n=1{,}4$; nước dày $80$ cm, $n=4/3$",
+     "cá dưới mặt dầu – nước $36$ cm",
+     "đèn trên cá, cách mặt dầu $150$ cm"
+    ],
+    "tim": [
+     "a) đáy trông cách mặt dầu bao nhiêu, nâng lên bao nhiêu",
+     "b) cá trông cách mặt dầu bao nhiêu",
+     "c) cá thấy đèn cách nó bao nhiêu, cao bao nhiêu"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -388,7 +412,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "đèn điểm ở đáy, sâu $0{,}9$ m; nước $n=4/3$",
+     "chất lỏng thay thế: $n=1{,}6$",
+     "đĩa chắn bán kính $0{,}5$ m"
+    ],
+    "tim": [
+     "a) bán kính, diện tích vùng sáng; bán kính đĩa tối thiểu",
+     "b) bán kính vùng sáng khi $n=1{,}6$",
+     "c) độ sâu lớn nhất của đèn dưới đĩa $0{,}5$ m"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -548,7 +584,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "tấm kính $e=6$ cm, $n=1{,}5$",
+     "góc tới $i=60^\\circ$"
+    ],
+    "tim": [
+     "a) $r$, quãng đường trong kính, phương tia ló",
+     "b) độ dời ngang $d$",
+     "c) $d$ khi $i=30^\\circ,45^\\circ,75^\\circ$",
+     "d) chữ trông gần mắt hơn bao nhiêu"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -758,7 +806,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "lăng kính $A=30^\\circ$, tia tới vuông góc $AB$",
+     "$n_{\\text{đ}}=1{,}50$, $n_t=1{,}54$",
+     "màn cách lăng kính $1{,}2$ m"
+    ],
+    "tim": [
+     "a) góc ló, góc lệch $D$ của đỏ, tím; góc giữa hai tia",
+     "b) bề rộng vệt màu trên màn",
+     "c) thấy gì qua tấm lọc, trên giấy lục",
+     "d) với $A=41^\\circ$: đỏ, tím có ló ra $AC$?"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -940,7 +1001,401 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11.8,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí",
+        "a": "start"
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          10,
+          2.2
+         ],
+         [
+          3,
+          9.2
+         ],
+         [
+          17,
+          9.2
+         ]
+        ],
+        "dam": 0.24,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         2.2
+        ],
+        "ten": "A",
+        "vi": "t"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         3,
+         9.2
+        ],
+        "ten": "B",
+        "vi": "l"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         17,
+         9.2
+        ],
+        "ten": "C",
+        "vi": "r"
+       },
+       {
+        "loai": "chu",
+        "x": 10,
+        "y": 8.4,
+        "text": "n = 1,5"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          6,
+          11.7
+         ],
+         [
+          6,
+          9.2
+         ],
+         [
+          6,
+          6.2
+         ]
+        ]
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          20,
+          0
+         ],
+         [
+          20,
+          11.8
+         ],
+         [
+          0,
+          11.8
+         ]
+        ],
+        "dam": 0.1
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "nước, n = 4/3",
+        "a": "start"
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          10,
+          2.2
+         ],
+         [
+          3,
+          9.2
+         ],
+         [
+          17,
+          9.2
+         ]
+        ],
+        "dam": 0.24,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         2.2
+        ],
+        "ten": "A",
+        "vi": "t"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         3,
+         9.2
+        ],
+        "ten": "B",
+        "vi": "l"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         17,
+         9.2
+        ],
+        "ten": "C",
+        "vi": "r"
+       },
+       {
+        "loai": "chu",
+        "x": 10,
+        "y": 8.4,
+        "text": "n = 1,5"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          6,
+          11.7
+         ],
+         [
+          6,
+          9.2
+         ],
+         [
+          6,
+          6.2
+         ]
+        ]
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         6,
+         6.2
+        ],
+        "huong": 135,
+        "dai": 2.4
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         6,
+         6.2
+        ],
+        "tu": 270,
+        "den": -45,
+        "nhan": "45°",
+        "r": 1.2,
+        "r_nhan": 0.9
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        6,
+        6.2
+       ],
+       "huong": 135,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        6,
+        6.2
+       ],
+       "tu": 270,
+       "den": -45,
+       "nhan": "i",
+       "r": 1.2,
+       "r_nhan": 0.9
+      },
+      {
+       "loai": "ghi",
+       "text": "tia ⊥ BC, mặt AB hợp BC 45° ⇒ i = 45°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6,
+         6.2
+        ],
+        [
+         14,
+         6.2
+        ],
+        [
+         14,
+         9.2
+        ],
+        [
+         14,
+         11.7
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        14,
+        6.2
+       ],
+       "huong": 45,
+       "dai": 1.8
+      },
+      {
+       "loai": "ghi",
+       "text": "45° > i_{gh} ≈ 41,8°"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ phản xạ toàn phần ở AB, AC"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin 45° ≥ 1 : n ⇒ n ≥ √2 ≈ 1,414"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin 45° ≥ (4/3) : n ⇒ n ≥ 1,886"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin i_{gh} = 0,889 ⇒ i_{gh} ≈ 62,7°"
+      },
+      {
+       "loai": "ghi",
+       "text": "45° < 62,7° ⇒ ló ra nước ở AB"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6,
+         6.2
+        ],
+        [
+         6.43,
+         3.03
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        6,
+        6.2
+       ],
+       "tu": [
+        6.43,
+        3.03
+       ],
+       "den": 135,
+       "nhan": "r",
+       "r": 1.9,
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "1,5·sin 45° = (4/3)·sin r ⇒ r ≈ 52,7°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6,
+         6.2
+        ],
+        [
+         6,
+         2.6
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        6,
+        6.2
+       ],
+       "tu": [
+        6.43,
+        3.03
+       ],
+       "den": 90,
+       "nhan": "δ",
+       "r": 3.0,
+       "nhan_goc": 70,
+       "r_nhan": 1.2
+      },
+      {
+       "loai": "ghi",
+       "text": "δ = r − i = 52,7° − 45° ≈ 7,7°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "không khí: quay ngược 180° · nước: lệch 7,7° ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "lăng kính vuông cân tại $A$, $n=1{,}5$",
+     "tia tới vuông góc mặt huyền $BC$",
+     "nước: $n=4/3$"
+    ],
+    "tim": [
+     "a) đường truyền, phương chiều tia ló",
+     "b) điều kiện của $n$ trong không khí",
+     "c) $n$ tối thiểu trong nước; với $n=1{,}5$: góc khúc xạ, góc lệch"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -1087,7 +1542,326 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        4.0,
+        1.4
+       ],
+       [
+        20,
+        1.4
+       ],
+       [
+        20,
+        3.5
+       ],
+       [
+        4.0,
+        3.5
+       ]
+      ],
+      "dam": 0.08
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        4.0,
+        3.5
+       ],
+       [
+        20,
+        3.5
+       ],
+       [
+        20,
+        8.5
+       ],
+       [
+        4.0,
+        8.5
+       ]
+      ],
+      "dam": 0.22
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        4.0,
+        8.5
+       ],
+       [
+        20,
+        8.5
+       ],
+       [
+        20,
+        10.6
+       ],
+       [
+        4.0,
+        10.6
+       ]
+      ],
+      "dam": 0.08
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       4.0,
+       3.5
+      ],
+      "den": [
+       20,
+       3.5
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       4.0,
+       8.5
+      ],
+      "den": [
+       20,
+       8.5
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       4.0,
+       1.4
+      ],
+      "den": [
+       4.0,
+       10.6
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       4.0,
+       6.0
+      ],
+      "den": [
+       20,
+       6.0
+      ],
+      "kieu": "mo"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 1.2,
+      "text": "không khí",
+      "a": "start",
+      "het": 6
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 2.8,
+      "text": "vỏ, n₂ = 1,50",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 8.2,
+      "text": "lõi, n₁ = 1,60",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 10.1,
+      "text": "vỏ",
+      "a": "end"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        0.34,
+        8.45
+       ],
+       [
+        4.0,
+        6.0
+       ],
+       [
+        10.74,
+        3.5
+       ],
+       [
+        19.8,
+        6.86
+       ]
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        10.74,
+        3.5
+       ],
+       "huong": 90,
+       "dai": 2.0
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        10.74,
+        3.5
+       ],
+       "tu": 200.36,
+       "den": 270,
+       "nhan": "i_{gh}",
+       "r": 1.4,
+       "r_nhan": 1.2
+      },
+      {
+       "loai": "ghi",
+       "text": "sin i_{gh} = 1,50 : 1,60 ⇒ i_{gh} ≈ 69,6°"
+      }
+     ],
+     [
+      {
+       "loai": "goc",
+       "tai": [
+        4.0,
+        6.0
+       ],
+       "tu": 0,
+       "den": 20.36,
+       "nhan": "θ",
+       "r": 2.6,
+       "r_nhan": 0.8
+      },
+      {
+       "loai": "ghi",
+       "text": "θ_{max} = 90° − 69,6° ≈ 20,4°"
+      }
+     ],
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        4.0,
+        6.0
+       ],
+       "huong": 0,
+       "dai": 2.6
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        4.0,
+        6.0
+       ],
+       "tu": 180,
+       "den": 213.82999999999998,
+       "nhan": "i_{max}",
+       "r": 1.6,
+       "r_nhan": 1.6
+      },
+      {
+       "loai": "ghi",
+       "text": "sin i_{max} = 1,60·sin 20,4° ⇒ i_{max} ≈ 33,8°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         4.0,
+         6.0
+        ],
+        [
+         19.8,
+         6.0
+        ]
+       ],
+       "mau": "min",
+       "nhan": "dọc trục",
+       "nhan_o": [
+        12.6,
+        6.95
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "t₀ = n₁L : c"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 1,60·10³ : 3·10⁸ ≈ 5,33 µs"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "tia xiên: t = t₀ : cos 20,4°"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δt = t − t₀ ≈ 356 ns"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 0.3,
+       "y": 1.2,
+       "text": "nước, n = 4/3",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "(4/3)·sin i_{max} = 1,60·sin 20,4° ⇒ i_{max} ≈ 24,7°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "nước chiết quang hơn không khí"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ i_{max} nhỏ hơn: 24,7° < 33,8° ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "lõi $n_1=1{,}60$, vỏ $n_2=1{,}50$",
+     "sợi dài $L=1$ km; $c=3\\cdot10^8$ m/s",
+     "nước: $n=4/3$"
+    ],
+    "tim": [
+     "a) $i_{gh}$, góc lớn nhất với trục, $i_{max}$",
+     "b) thời gian theo tia dọc trục, tia xiên; $\\Delta t$",
+     "c) $i_{max}$ khi đầu sợi ở trong nước"
+    ]
+   }
   }
  ],
  "tu_luan": {

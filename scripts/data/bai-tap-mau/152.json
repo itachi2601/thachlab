@@ -264,7 +264,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cuộn dây kín nối điện kế G",
+     "Nam châm thẳng trên trục, cực N hướng về đầu A"
+    ],
+    "tim": [
+     "a) lại gần: có dòng? đầu A cực gì? chiều dòng",
+     "b) nằm yên: có dòng?",
+     "c) ra xa: như câu a",
+     "d) quay quanh trục dọc: có dòng?",
+     "e) nam châm điện: đóng K, giữ K, ngắt K"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -387,7 +400,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$f=np$",
+     "Thuỷ điện: $p=6$, $f=50\\ \\text{Hz}$; sau đó $480$ vòng/phút",
+     "Dinamô: núm $d=2\\ \\text{cm}$, 4 cực, xe $18\\ \\text{km/h}$"
+    ],
+    "tim": [
+     "a) vòng/phút của rôto",
+     "b) $f$ khi $480$ vòng/phút",
+     "c) vòng/s của núm, $f$ dinamô",
+     "d) số lần đổi chiều mỗi giây ở $50\\ \\text{Hz}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -534,7 +560,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Hai đèn $12\\ \\text{V}-24\\ \\text{W}$ song song",
+     "$N_1=1650$ vòng, $U_1=220\\ \\text{V}$",
+     "$H_{\\text{BA}}=94\\%$ (câu b)"
+    ],
+    "tim": [
+     "a) $N_2$",
+     "b) $I_2$, $I_1$; $I_1$ khi $H=94\\%$",
+     "c) vòng rút đầu ra $6\\ \\text{V}$",
+     "d) $U$ cuộn $1650$ vòng khi lắp nhầm"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -681,7 +720,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$P=600\\ \\text{kW}$ không đổi, $R=24\\ \\Omega$",
+     "$U=15\\ \\text{kV}$, rồi $60\\ \\text{kV}$"
+    ],
+    "tim": [
+     "a) $I$, $P_{hp}$, $H$ ở $15\\ \\text{kV}$",
+     "b) $P_{hp}$ giảm mấy lần, $H$ ở $60\\ \\text{kV}$",
+     "c) $U_{min}$ để $P_{hp}\\le1\\%P$",
+     "d) tiết diện, khối lượng dây mới gấp mấy lần"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -827,7 +878,185 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        18,
+        8
+       ],
+       [
+        18,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 2,
+      "y": 5.5,
+      "huong": "doc"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10,
+      "y": 8,
+      "ten": "R/2",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10,
+      "y": 3,
+      "ten": "R/2",
+      "vi": "b"
+     },
+     {
+      "loai": "den",
+      "x": 18,
+      "y": 5.5
+     },
+     {
+      "loai": "chu",
+      "x": 2.9,
+      "y": 5.2,
+      "text": "6 kV",
+      "a": "start",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 17.1,
+      "y": 6.4,
+      "text": "khu dân cư",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 4.1,
+       "text": "R = 16 Ω",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "R = ρ·2l/S, 2l = 40 km ⇒ R = 16 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        5,
+        8
+       ],
+       "den": [
+        7,
+        8
+       ],
+       "nhan": "I ≈ 333 A",
+       "vi": "t",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "P_{hp} = P²R/U² ≈ 1,78 MW: mất gần hết!",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 2.9,
+       "y": 5.2,
+       "text": "40 kV",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "P²R/U² ≤ 2 % P ⇒ U ≥ 40 kV"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "N₂ = 300·40 : 6 = 2000 vòng"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        5,
+        8
+       ],
+       "den": [
+        7,
+        8
+       ],
+       "nhan": "I = 50 A",
+       "vi": "t"
+      },
+      {
+       "loai": "chu",
+       "x": 17.1,
+       "y": 4.4,
+       "text": "39,2 kV",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ΔU = 50·16 = 800 V ⇒ N₃/N₄ = 39 200 : 400 = 98"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Chỉ 22 kV: S = 70·(40/22)² ≈ 231 mm²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: P_{hp} = 50²·16 = 40 kW = 2 % ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$P=2\\ \\text{MW}$, máy phát $6\\ \\text{kV}$",
+     "Dây đôi nhôm dài $20\\ \\text{km}$, $S=70\\ \\text{mm}^2$, $\\rho=2{,}8\\cdot10^{-8}\\ \\Omega\\cdot\\text{m}$",
+     "Tăng áp: $N_1=300$ vòng; hạ áp về $400\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R$; $P_{hp}$ và $U$ cuối khi truyền ở $6\\ \\text{kV}$",
+     "b) $U_{min}$ để $P_{hp}\\le2\\%$; $N_2$",
+     "c) $I$, $P_{hp}$, $U$ cuối; $N_3/N_4$",
+     "d) $S_{min}$ khi chỉ dùng $22\\ \\text{kV}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -987,7 +1216,170 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2,
+        3
+       ],
+       [
+        2,
+        8
+       ],
+       [
+        18,
+        8
+       ],
+       [
+        18,
+        3
+       ],
+       [
+        2,
+        3
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 2,
+      "y": 5.5,
+      "huong": "doc"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10,
+      "y": 8,
+      "ten": "R/2",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10,
+      "y": 3,
+      "ten": "R/2",
+      "vi": "b"
+     },
+     {
+      "loai": "den",
+      "x": 18,
+      "y": 5.5
+     },
+     {
+      "loai": "chu",
+      "x": 2.9,
+      "y": 5.2,
+      "text": "10 kV",
+      "a": "start",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 17.1,
+      "y": 6.4,
+      "text": "1,6 MW",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 4.1,
+       "text": "R = 10 Ω",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "UI = P_{tt} + RI²"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        5,
+        8
+       ],
+       "den": [
+        7,
+        8
+       ],
+       "nhan": "I = 200 A",
+       "vi": "t",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 200 A hoặc 800 A ⇒ chọn 200 A (H > 50 %)"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 17.1,
+       "y": 4.4,
+       "text": "8 kV",
+       "a": "end",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "P = 10 kV·200 A = 2 MW ⇒ H = 80 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "H = 95 %: P = 1,6 : 0,95 ≈ 1,684 MW"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 2.9,
+       "y": 5.2,
+       "text": "18,35 kV",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "P_{hp} ≈ 84,2 kW ⇒ I ≈ 91,8 A ⇒ U = P/I ≈ 18,35 kV"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Công thức kia ra 20 kV: coi P không đổi, nhưng P đã đổi"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 91,8²·10 ≈ 84 kW = 5 % P ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$R=10\\ \\Omega$, $U=10\\ \\text{kV}$",
+     "$P_{\\text{tt}}=1{,}6\\ \\text{MW}$, $H>50\\%$"
+    ],
+    "tim": [
+     "a) $I$, $P$ đầu dây, $H$, $U$ nơi tiêu thụ",
+     "b) $U$ đầu dây để $H=95\\%$",
+     "c) kết quả và chỗ sai của công thức căn bạn dùng"
+    ]
+   }
   }
  ],
  "tu_luan": {

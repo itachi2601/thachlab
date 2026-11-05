@@ -502,18 +502,24 @@
    "cong_cu": {
     "loai": "so_do_vecto",
     "nen": {
-     "kieu": "khong"
+     "kieu": "lo_xo_dung",
+     "dai": [
+      4.6,
+      4.6,
+      4.6,
+      5,
+      6.4,
+      6.4
+     ],
+     "vat": "m"
     },
-    "ti_le": 6,
+    "ti_le": 5,
     "vec": [
      {
       "ten": "F_{đh}",
       "goc": "len",
       "do_lon": 1.2,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_tren",
       "buoc": 1,
       "den": 3,
       "mau": "cam"
@@ -522,10 +528,7 @@
       "ten": "P",
       "goc": "xuong",
       "do_lon": 1.2,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_giua",
       "buoc": 1,
       "den": 3
      },
@@ -533,10 +536,7 @@
       "ten": "F_{đh}",
       "goc": "len",
       "do_lon": 2,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_tren",
       "buoc": 3,
       "den": 4,
       "mau": "cam"
@@ -545,10 +545,7 @@
       "ten": "P",
       "goc": "xuong",
       "do_lon": 2,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_giua",
       "buoc": 3,
       "den": 4
      },
@@ -556,10 +553,7 @@
       "ten": "F_{đh}",
       "goc": "len",
       "do_lon": 4.8,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_tren",
       "buoc": 4,
       "mau": "cam"
      },
@@ -567,10 +561,7 @@
       "ten": "P",
       "goc": "xuong",
       "do_lon": 4.8,
-      "tu": [
-       0,
-       0
-      ],
+      "tu": "vat_giua",
       "buoc": 4
      }
     ],
@@ -602,7 +593,8 @@
      },
      {
       "text": "Δl = 12 cm ⇒ F = 4,8 N",
-      "buoc": 4
+      "buoc": 4,
+      "den": 5
      }
     ],
     "bang_vi_tri": "phai"
