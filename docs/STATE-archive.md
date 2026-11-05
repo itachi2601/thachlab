@@ -3,6 +3,9 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 05/11/2026 18:37 (đã chạy, log `scripts/logs/20261105-183751-20261105220000_similar_practice_attempts.log`)
+- `20261105220000_similar_practice_attempts.sql`: bảng ghi lượt Làm bài tương tự để đo Mẹo nhìn (chặng 5), bảng mới rỗng — đã chạy, đã thấy dòng ghi thật từ trang bài 153; đo bằng `scripts/sql/do-meo-nhin.sql`.
+
 ## Migration — 11/10/2026 (đã chạy xong 9 file)
 Log: `scripts/logs/` đợt 11/10/2026. Tất cả đã chạy thành công trên production.
 1. `20261010500000_notify_rp_thuong.sql` — Báo chuông khi em được cộng RP thưởng mục tiêu tuần / tiến bộ tuần / mục tiêu cả lớp (trigger trên rank_rp_ledger, kèm phụ huynh); chỉ thêm hàm + trigger, không gửi bù [rollback perf/rollback/20261010500000_notify_rp_thuong.down.sql].

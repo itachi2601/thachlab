@@ -95,19 +95,19 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **rank_fix_attempts_backup_20260930** (~-1): id:int8, question_ids:bigint[]
 - **rank_gate_attempts** (~50): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, tier_code:text, status:text, question_ids:bigint[], answers:jsonb, pool_ids:bigint[], level_cur:text, correct:int, total:int, hard_correct:int, pct:int, passed:bool, level_end:text, created_at:ts, submitted_at:ts
 - **rank_gate_passes** (~232): season_id:int8*>rank_seasons, student_id:uuid*>profiles, tier_code:text*, passed_at:ts, evidence:jsonb
-- **rank_rp_awards** (~4268): season_id:int8*>rank_seasons, student_id:uuid*>profiles, source_kind:text*, source_ref:text*, awarded:int, best_value:numeric(6,2), updated_at:ts
+- **rank_rp_awards** (~4594): season_id:int8*>rank_seasons, student_id:uuid*>profiles, source_kind:text*, source_ref:text*, awarded:int, best_value:numeric(6,2), updated_at:ts
 - **rank_rp_awards_backup_20261010** (~79): season_id:int8, student_id:uuid, source_kind:text, source_ref:text, awarded:int, best_value:numeric(6,2), updated_at:ts, new_awarded:int, note:text, backed_up_at:ts
-- **rank_rp_ledger** (~4280): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, source_kind:text, source_ref:text, amount:int, reason:text, ref_result_id:int8, actor:uuid>profiles, created_at:ts
-- **rank_season_results** (~207): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, division:int, titles_count:int, closed_at:ts, tier_sort:int, tier_name:text, class_names:text, season_titles:jsonb, weeks_goal_met:int, weekly_rp:jsonb, mastered_topic_ids:bigint[], mastered_count:int, snapshot_at:ts
+- **rank_rp_ledger** (~5021): id:int8*, season_id:int8>rank_seasons, student_id:uuid>profiles, source_kind:text, source_ref:text, amount:int, reason:text, ref_result_id:int8, actor:uuid>profiles, created_at:ts
+- **rank_season_results** (~284): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, division:int, titles_count:int, closed_at:ts, tier_sort:int, tier_name:text, class_names:text, season_titles:jsonb, weeks_goal_met:int, weekly_rp:jsonb, mastered_topic_ids:bigint[], mastered_count:int, snapshot_at:ts
 - **rank_seasons** (~2): id:int8*, created_at:ts, created_by:uuid>profiles, name:text, starts_on:date, ends_on:date, class_ids:bigint[], status:text, config:jsonb, boss_exam_id:int8>exams, boss_pass_score:numeric(4,2), closed_at:ts
-- **rank_sources** (~894): season_id:int8*>rank_seasons, source_kind:text*, source_id:int8*, max_rp:int, enabled:bool
+- **rank_sources** (~1850): season_id:int8*>rank_seasons, source_kind:text*, source_id:int8*, max_rp:int, enabled:bool
 - **rank_sources_backup_20261011** (~340): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts
 - **rank_sources_backup_20261017** (~364): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts
 - **rank_sources_backup_20261017b** (~-1): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts
 - **rank_sources_backup_20261020** (~-1): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts
-- **rank_student_seasons** (~284): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, tier_sort:int, division:int, tier_reached_at:ts, joined_at:ts, updated_at:ts
+- **rank_student_seasons** (~596): season_id:int8*>rank_seasons, student_id:uuid*>profiles, rp:int, tier_code:text, tier_sort:int, division:int, tier_reached_at:ts, joined_at:ts, updated_at:ts
 - **rank_tier_floor** (~-1): season_id:int8*>rank_seasons, student_id:uuid*>profiles, tier_code:text, tier_sort:int, reason:text, created_at:ts
-- **rank_tiers** (~14): season_id:int8*>rank_seasons, code:text*, sort:int, name:text, min_rp:int, has_divisions:bool, required_title_count:int, required_title_level:text, challenge_exam_id:int8>exams, challenge_pass_score:numeric(4,2), gate_pass_pct:int, gate_min_hard_correct:int, gate_min_level_held:text
+- **rank_tiers** (~42): season_id:int8*>rank_seasons, code:text*, sort:int, name:text, min_rp:int, has_divisions:bool, required_title_count:int, required_title_level:text, challenge_exam_id:int8>exams, challenge_pass_score:numeric(4,2), gate_pass_pct:int, gate_min_hard_correct:int, gate_min_level_held:text
 - **rank_tiers_backup_20261017** (~-1): season_id:int8, code:text, min_rp:int, backed_up_at:ts
 - **rank_title_awards** (~1676): id:int8*, student_id:uuid>profiles, title_code:text>rank_titles, level:text, season_id:int8>rank_seasons, evidence:jsonb, awarded_at:ts
 - **rank_title_topics** (~71): title_code:text*>rank_titles, topic_id:int8*>question_topics
@@ -116,7 +116,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 ## Phụ đạo · thông báo · bài đăng — 13 bảng
 
 - **messages** (~-1): id:int8*, created_at:ts, sender_id:uuid>profiles, recipient_id:uuid>profiles, class_name:text, subject:text, body:text
-- **notifications** (~2461): id:int8*, user_id:uuid>profiles, kind:text, title:text, body:text, href:text, created_at:ts, read_at:ts, pushed_at:ts
+- **notifications** (~2599): id:int8*, user_id:uuid>profiles, kind:text, title:text, body:text, href:text, created_at:ts, read_at:ts, pushed_at:ts
 - **post_classes** (~-1): post_id:int8*>posts, class_id:int8*>classes
 - **post_courses** (~-1): post_id:int8*>posts, course_id:int8*>course_offerings
 - **posts** (~1): id:int8*, created_at:ts, title:text, body:text, video_url:text, published:bool, topic:text, content_type:text, subject_code:text>academic_subjects
@@ -177,7 +177,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **ta_video_rates** (~1): id:uuid*, effective_from:date, price_don_gian:int, price_dung_ky:int, view_threshold_1:int, view_bonus_1:int, view_threshold_2:int, view_bonus_2:int, lead_bonus:int, monthly_budget_cap:int
 - **ta_video_stats** (~-1): id:uuid*, session_id:uuid>ta_sessions, checked_at:date, views:int, saves:int, comments:int, created_at:ts
 
-## Khác — 27 bảng
+## Khác — 28 bảng
 
 - **_bak_exam_classes_avcn_20261013** (~-1): exam_id:int8, class_id:int8
 - **_bak_profiles_birth_20261015** (~142): id:uuid*, copied_at:ts
@@ -199,6 +199,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **rate_hits** (~32): id:int8*, key:text, hit_at:ts
 - **referrals** (~-1): id:int8*, created_at:ts, referrer_user_id:uuid>profiles, referred_request_id:int8>trial_requests, status:text
 - **review_sessions** (~19): id:int8*, created_at:ts, class_id:int8>classes, created_by:uuid>profiles, title:text, threshold:int, stages:jsonb, current_stage:int, stage_started_at:ts, extra_seconds:int, status:text, mode:text, due_at:ts, sequential:bool
+- **similar_practice_attempts** (~-1): id:int8*, user_id:uuid>users, lesson_id:int8>lessons, dang_no:int, topic_id:int8>question_topics, form:text, nguon:text, luot:smallint, co_meo:bool, mo_meo:bool, dung_lan_dau:smallint, tong:smallint, created_at:ts
 - **student_mistake_review_attempts** (~125): id:int8*, student_id:uuid>profiles, season_id:int8>rank_seasons, mistake_ids:bigint[], answers:jsonb, correct_count:int, total:int, rp_awarded:int, status:text, created_at:ts, submitted_at:ts, ok_items:jsonb
 - **student_mistakes** (~13085): id:int8*, student_id:uuid>profiles, exam_id:int8>exams, question_index:int, topic_id:int8>question_topics, form:text, difficulty:text, mistake_count:int, consecutive_correct:int, stage:int, cleared:bool, last_wrong_at:ts, last_reviewed_at:ts, next_review_at:ts, created_at:ts
 - **teacher_lesson_notes** (~-1): id:int8*, created_at:ts, updated_at:ts, user_id:uuid>profiles, lesson_id:int8>lessons, item_id:int8>lesson_items, page_key:text, page_heading:text, tag:text, body:text, status:text, resolution:text
