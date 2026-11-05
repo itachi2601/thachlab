@@ -18,8 +18,11 @@ import QuyDaoNem from "@/components/lessons/cong-cu/QuyDaoNem";
 import CotChatLong from "@/components/lessons/cong-cu/CotChatLong";
 import TiaSang from "@/components/lessons/cong-cu/TiaSang";
 import ThauKinh from "@/components/lessons/cong-cu/ThauKinh";
+import { DongNut, useDong } from "@/components/lessons/cong-cu/Dong";
 import { getTomDe, TomDeBar, TomDeSide, useStickyTop } from "@/components/lessons/TomDe";
-import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types";
+import type { LessonWorkedQuestion, WorkedDong, WorkedTool } from "@/features/lessons/types";
+
+type ToolDong = WorkedTool & { dong?: WorkedDong[]; de?: boolean };
 
 /**
  * Giải từng bước CÙNG hình (thầy góp ý 2/11/2026): trên điện thoại hình dính nửa trên màn hình, em làm từng bước ở
@@ -28,7 +31,7 @@ import type { LessonWorkedQuestion, WorkedTool } from "@/features/lessons/types"
  * Mọi bước có câu hỏi đều tự làm (fading giau_het, thầy chốt 2/11 sau góp ý học sinh ảo: "4/6 bước chỉ đọc đáp số").
  */
 
-function Hinh({ tool, layer, step }: { tool: WorkedTool; layer: number; step: number }) {
+export function Hinh({ tool, layer, step }: { tool: WorkedTool; layer: number; step: number }) {
   if (tool.loai === "giao_thoa_2_nguon") return <GiaoThoaHaiNguon {...tool} layer={layer} />;
   if (tool.loai === "vong_tron") return <VongTronPha {...tool} layer={layer} />;
   if (tool.loai === "song_day") return <SongDay {...tool} layer={layer} />;
@@ -48,6 +51,21 @@ function Hinh({ tool, layer, step }: { tool: WorkedTool; layer: number; step: nu
   return null;
 }
 
+/**
+ * Hình dưới đề ("một dạng — một hình", thầy chốt 5/11/2026): đúng hình sẽ dính lúc giải, ở lớp 0 (chỉ dữ kiện đề), thay cho
+ * SVG mô phỏng riêng + hình dữ kiện trong "Phân tích đề" — em nhìn một hình từ đầu đến cuối (N8, N4, H1).
+ * Nút chạy chỉ có khi `dong` không ghi `buoc` (chuyển động giúp hình dung đề).
+ */
+export function HinhDe({ tool }: { tool: ToolDong }) {
+  const { cur, play, dangChay } = useDong(tool);
+  return (
+    <figure className="cc-de">
+      <Hinh tool={cur} layer={0} step={0} />
+      <DongNut dong={tool.dong} khop={(d) => d.buoc == null} play={play} dangChay={dangChay} />
+    </figure>
+  );
+}
+
 export default function GiaiCungHinh({
   q,
   tool,
@@ -56,7 +74,7 @@ export default function GiaiCungHinh({
   onAllOpen,
 }: {
   q: LessonWorkedQuestion;
-  tool: WorkedTool;
+  tool: ToolDong;
   color: string;
   jump: { idx: number; n: number } | null;
   onAllOpen: () => void;
@@ -125,6 +143,7 @@ export default function GiaiCungHinh({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opened]);
   const layer = Math.min(opened, step + 1);
+  const { cur, play, dangChay } = useDong(tool);
   const tomDe = getTomDe(q);
   const canNext = step + 1 < n && step + 1 <= opened;
   const title = q.buoc?.[step]?.tieu_de ?? "";
@@ -147,7 +166,8 @@ export default function GiaiCungHinh({
       <div className={full ? "cc-sticky cc-sticky--off" : "cc-sticky"} style={{ top }}>
         {/* Tóm đề (thử 3/11): một dòng "Tìm" ở ĐẦU khối dính (thầy 3/11: để dưới nút thì bị thanh điều hướng đáy che) — số liệu "Cho" đã nằm trên hình (N4); chạm thì đè lên, trang không xô (D2, N8) */}
         {tomDe && <TomDeBar tomDe={tomDe} problemHtml={q.problem_html} open={deOpen} setOpen={setDeOpen} />}
-        <Hinh tool={tool} layer={layer} step={step} />
+        <Hinh tool={cur} layer={layer} step={step} />
+        <DongNut dong={tool.dong} khop={(d) => d.buoc === step + 1} play={play} dangChay={dangChay} />
         <div className="cc-stepper">
           <button type="button" aria-label="Bước trước" disabled={step <= 0} onClick={() => go(step - 1)}>
             ◀

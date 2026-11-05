@@ -133,7 +133,8 @@ export interface LessonWorkedQuestion {
   /** 💡 Mẹo nhìn (1/11/2026): mô hình đời thường giải nhanh dạng này — chỉ hiện sau lời giải (hình chạy tới đáp số). */
   meo?: WorkedMeo;
   /** 🧪 Hình giải cùng bước (thử 2/11/2026, bài 14 Sóng dạng 3): hình dính nửa trên, bước làm nửa dưới, hình vẽ thêm theo bước đã xong. */
-  cong_cu?: WorkedTool;
+  /** `de: true` = "một dạng — một hình" (5/11/2026): hình này hiện luôn dưới đề (lớp 0), dạng không còn SVG mô phỏng riêng. */
+  cong_cu?: WorkedTool & { dong?: WorkedDong[]; de?: boolean };
   /** 🧪 Tóm đề (thử 3/11/2026): Cho/Tìm ngắn — điện thoại là một dòng dính chạm mở, desktop ≥1280 là thẻ lề phải. Ký hiệu khớp lời giải; không đổi đơn vị sẵn (đó là việc của bước). */
   tom_de?: WorkedTomDe;
   /** 🧪 Biến thể đổi số (chặng 3A, 5/11/2026): khuôn đề, trình duyệt tự sinh câu mới cùng dạng. Thư viện: lib/bien-the.ts. */
@@ -188,7 +189,7 @@ export type WorkedTool =
   | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][] }
   | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; canh?: SongDayCanh; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
-  | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
+  | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; hinh?: DoThiLop[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
   | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; hinh?: NangLuongLop[]; lop?: NangLuongLop[][] }
   | SoDoVectoTool
@@ -300,6 +301,16 @@ export type MachDienLop =
 
 /** Mục vẽ thêm của từng bước (lop[i] hiện khi em đã xong bước i + 1; `het: k` ẩn từ khi xong bước k). Góc theo đơn vị π. */
 type LopGhi = { loai: "ghi"; text: string; het?: number };
+/** "Một dạng — một hình" (5/11/2026): chuyển động chạy TRÊN hình `cong_cu`, bấm mới chạy (B4, V10).
+ *  `buoc` (1-based) = nút hiện ở bước đó khi giải; bỏ trống = nút hiện ở hình dưới đề. `doi[].p` là đường dẫn trong JSON
+ *  của `cong_cu` ("hinh.2.goc", "lop.0.1.dai", "A"); `cac` = các mốc cách đều (nội suy tuyến tính, chữ thì nhảy bậc),
+ *  hoặc `tu` → `den`. Hết lượt chạy, hình trở về đúng JSON gốc (nên mốc cuối = giá trị gốc). */
+export type WorkedDong = {
+  nut: string;
+  buoc?: number;
+  giay?: number;
+  doi: { p: string; tu?: number; den?: number; cac?: (number | string | boolean)[] }[];
+};
 export type VongTronLop =
   | LopGhi
   | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
@@ -355,19 +366,27 @@ export type DoThiLop =
   | { loai: "doan"; tu: number; den: number; duong?: number; nhan?: string; vi?: "t" | "b"; nhan_xy?: [number, number]; het?: number }
   | { loai: "thuoc"; tu: number; den: number; y: number; nhan: string; het?: number }
   | { loai: "doc"; tu: [number, number]; den: [number, number]; nhan_x?: string; nhan_y?: string; het?: number }
-  | { loai: "dien_tich"; tu: number; den: number; duong?: number; nhan?: string; het?: number };
+  | { loai: "dien_tich"; tu: number; den: number; duong?: number; nhan?: string; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min" | "chu"; het?: number };
 /** Từ trường (Đ2): toạ độ hình 0..20 ngang, 0..11 dọc, gốc dưới trái (y hướng lên). Góc theo độ, 0° = sang phải. */
 /** `hang`: toạ độ dọc các đường sức (kiểu duong_suc), chừa chỗ dây/khung. */
 export type TuTruongNen = { kieu: "ra" | "vao" | "duong_suc"; goc?: number; nhan?: string; hang?: number[] };
+type MauTT = "max" | "min" | "chu" | "luc" | "b" | "i";
 export type TuTruongLop =
   | LopGhi
-  | { loai: "day"; tu: [number, number]; den: [number, number]; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; het?: number }
+  | { loai: "diem"; x: number; y: number; ten?: string; vi?: "tren" | "duoi" | "trai" | "phai"; het?: number }
+  | { loai: "vong"; x: number; y: number; r: number; chieu?: "cung" | "nguoc"; mau?: MauTT; dut?: boolean; het?: number }
+  | { loai: "la_ban"; x: number; y: number; r: number; goc: number; het?: number }
+  | { loai: "thanh"; x: number; y: number; goc: number; dai: number; mau?: MauTT; dut?: boolean; het?: number }
+  | { loai: "duong"; diem: [number, number][]; mau?: MauTT; dut?: boolean; mui?: number; kin?: boolean; nhan?: string; het?: number }
+  | { loai: "elip"; x: number; y: number; rx: number; ry: number; goc?: number; mau?: MauTT; dut?: boolean; het?: number }
+  | { loai: "day"; tu: [number, number]; den: [number, number]; nhan?: string; mau?: MauTT; dut?: boolean; het?: number }
   | { loai: "dong"; tu: [number, number]; den: [number, number]; nhan?: string; het?: number }
   | { loai: "tiet_dien"; x: number; y: number; chieu: "ra" | "vao"; ten?: string; het?: number }
-  | { loai: "vec"; x: number; y: number; goc: number; dai: number; nhan?: string; mau?: "max" | "min" | "chu"; dut?: boolean; trai?: boolean; het?: number }
+  | { loai: "vec"; x: number; y: number; goc: number; dai: number; nhan?: string; mau?: MauTT; dut?: boolean; trai?: boolean; het?: number }
   | { loai: "goc"; x: number; y: number; tu: number; den: number; nhan?: string; het?: number }
-  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number }
-  | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: MauTT; het?: number }
+  | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; dung?: boolean; het?: number }
   | { loai: "tran"; x1: number; x2: number; y: number; het?: number }
   | { loai: "khung"; x: number; y: number; rong: number; sau: [number, number]; ten?: [string, string, string, string]; B?: boolean; nhan?: string; het?: number };
 /** Năng lượng (Đ2): cảnh bên trái + cột cùng thang `max` bên phải. */

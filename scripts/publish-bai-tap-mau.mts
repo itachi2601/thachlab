@@ -63,6 +63,7 @@ if (argv.includes("--xem-thu")) { // xem UI ở http://localhost:3000/dev/btm tr
   const out = path.join(root, "public/xem-thu/btm.json");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify({ lesson_id: lessonId, lesson_title: data.lesson_title, questions }));
+  fs.writeFileSync(path.join(root, `public/xem-thu/btm-${lessonId}.json`), JSON.stringify({ lesson_id: lessonId, lesson_title: data.lesson_title, questions })); // bản theo bài: /dev/btm?f=btm-<id>, /dev/btm-hinh?f=btm-<id> (nhiều phiên/agent cùng lúc)
   console.log(`[XEM-THU] đã ghi ${path.relative(root, out)} → mở /dev/btm trên dev server.`);
   process.exit(0);
 }
