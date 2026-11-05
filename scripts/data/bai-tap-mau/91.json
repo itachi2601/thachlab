@@ -93,7 +93,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bàn là ghi $220\\ \\text{V}$ – $1\\,210\\ \\text{W}$, dùng ở đúng $220\\ \\text{V}$",
+     "Điện trở không đổi"
+    ],
+    "tim": [
+     "a) Ý nghĩa số $1\\,210\\ \\text{W}$",
+     "b) $I$",
+     "c) $R$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -168,7 +179,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$30$ ngày. Điều hoà $1\\,200\\ \\text{W}$, bật $8$ giờ/ngày",
+     "$5$ đèn LED $20\\ \\text{W}$, mỗi bóng $6$ giờ/ngày",
+     "Giá $2\\,500$ đồng/kWh"
+    ],
+    "tim": [
+     "a) $A$ điều hoà (kWh)",
+     "b) $A$ năm bóng đèn",
+     "c) Tiền điện"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -341,7 +364,218 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        8.8
+       ],
+       [
+        17,
+        8.8
+       ],
+       [
+        17,
+        2.2
+       ],
+       [
+        3,
+        2.2
+       ],
+       [
+        3,
+        8.8
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 3,
+      "y": 5.5,
+      "huong": "doc",
+      "ten": "12 V",
+      "vi": "r"
+     },
+     {
+      "loai": "den",
+      "x": 9,
+      "y": 8.8,
+      "ten": "Đ_1",
+      "vi": "t",
+      "het": 5
+     },
+     {
+      "loai": "den",
+      "x": 14,
+      "y": 8.8,
+      "ten": "Đ_2",
+      "vi": "t",
+      "het": 5
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 9,
+       "y": 7.3,
+       "text": "24 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "R_1 = U²/P = 144 : 6 = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14,
+       "y": 7.3,
+       "text": "8 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "R_2 = 144 : 18 = 8 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        12,
+        2.2
+       ],
+       "den": [
+        9.5,
+        2.2
+       ],
+       "nhan": "0,375 A",
+       "vi": "t",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 12 : (24 + 8) = 0,375 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 9.4,
+       "y": 6.1,
+       "text": "3,375 W",
+       "a": "middle",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "P_1 = 0,375²·24 = 3,375 W"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "diem": [
+        [
+         10,
+         8.8
+        ],
+        [
+         10,
+         2.2
+        ]
+       ]
+      },
+      {
+       "loai": "nut",
+       "x": 10,
+       "y": 8.8
+      },
+      {
+       "loai": "nut",
+       "x": 10,
+       "y": 2.2
+      },
+      {
+       "loai": "den",
+       "x": 10,
+       "y": 5.5,
+       "ten": "Đ_1",
+       "vi": "r"
+      },
+      {
+       "loai": "den",
+       "x": 17,
+       "y": 5.5,
+       "ten": "Đ_2",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "Nối tiếp: P_2 ≈ 1,1 W < P_1"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ Đ_1 sáng hơn"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 9.3,
+       "y": 3.8,
+       "text": "6 W",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 16.3,
+       "y": 3.8,
+       "text": "18 W",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Song song: mỗi đèn đủ 12 V"
+      },
+      {
+       "loai": "ghi",
+       "text": "18 W > 6 W ⇒ Đ_2 sáng hơn"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 0,375·(24 + 8) = 12 V ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Đ1: $12\\ \\text{V}$ – $6\\ \\text{W}$; Đ2: $12\\ \\text{V}$ – $18\\ \\text{W}$; $R$ không đổi",
+     "Lần 1: nối tiếp vào $12\\ \\text{V}$. Lần 2: song song vào $12\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R_1$, $R_2$",
+     "b) $I$ và $P_1$ khi nối tiếp",
+     "c) Đèn nào sáng hơn khi nối tiếp, khi song song"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -440,7 +674,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ấm ghi $220\\ \\text{V}$ – $1\\,500\\ \\text{W}$, dùng ở đúng $220\\ \\text{V}$",
+     "Nước cần $Q=504\\,000\\ \\text{J}$; $H=84\\ \\%$",
+     "$2$ lần/ngày, $30$ ngày; giá $2\\,000$ đồng/kWh"
+    ],
+    "tim": [
+     "a) $A$ một lần đun",
+     "b) $t$ một lần đun",
+     "c) $A$ trong $30$ ngày (kWh)",
+     "d) Tiền điện"
+    ]
+   }
   }
  ]
 }

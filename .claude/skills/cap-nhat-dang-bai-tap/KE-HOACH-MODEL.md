@@ -170,9 +170,9 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 129 | Bài 2. Động năng. Thế năng | — | D3 (thanh_nang_luong), D4 (thanh_nang_luong) | D1, D2 | Sonnet | P3 |
-| 130 | Bài 3. Cơ năng | — | D3 (thanh_nang_luong), D4 (thanh_nang_luong) | D1, D2 | Sonnet | P3 |
-| 131 | Bài 4. Công và công suất | — | — | D1, D2, D3, D4 | Sonnet | P4 |
+| 129 | Bài 2. Động năng. Thế năng | — | ✓ D3 (thanh_nang_luong), D4 (thanh_nang_luong) 5/11 | ✓ D1, D2 5/11 | Sonnet | P3 |
+| 130 | Bài 3. Cơ năng | — | ✓ D3 (thanh_nang_luong), D4 (thanh_nang_luong) 5/11 | ✓ D1, D2 5/11 | Sonnet | P3 |
+| 131 | Bài 4. Công và công suất | — | — | ✓ D1, D2, D3, D4 5/11 | Sonnet | P4 |
 
 ### KHTN 9 · Ch.2 Ánh sáng
 
@@ -185,9 +185,9 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 89 | Bài 11. Điện trở. Định luật Ohm | — | D2 (do_thi) | D1, D3, D4 | Sonnet | P3 |
-| 90 | Bài 12. Đoạn mạch nối tiếp, song song | — | D3 (mach_dien), D4 (mach_dien) | D1, D2 | Sonnet | P3 |
-| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | D3 (mach_dien) | D1, D2, D4 | Sonnet | P3 |
+| 89 | Bài 11. Điện trở. Định luật Ohm | — | ✓ D2 (do_thi) 5/11 | ✓ D1, D3, D4 5/11 | Sonnet | P3 |
+| 90 | Bài 12. Đoạn mạch nối tiếp, song song | — | ✓ D3, D4 (mach_dien) 5/11 | ✓ D1, D2 5/11 | Sonnet | P3 |
+| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | ✓ D3 (mach_dien) 5/11 | ✓ D1, D2, D4 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Cơ học
 

@@ -64,7 +64,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R_1=4\\ \\Omega$ nối tiếp $(R_2=15\\ \\Omega\\ //\\ R_3=10\\ \\Omega)$",
+     "$U=30\\ \\text{V}$; vôn kế song song đoạn song song"
+    ],
+    "tim": [
+     "a) $R_{td}$, số chỉ ampe kế",
+     "b) số chỉ vôn kế, $I_2$, $I_3$",
+     "c) $R_1'$ để ampe kế chỉ $2\\ \\text{A}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -139,7 +150,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=12\\ \\text{V}$; $R_1=30\\ \\Omega$ nối tiếp $R_2=60\\ \\Omega$",
+     "Vôn kế song song $R_2$"
+    ],
+    "tim": [
+     "a) số chỉ khi dụng cụ lí tưởng",
+     "b) số chỉ khi $R_V=60\\ \\Omega$, sai số tương đối",
+     "c) số chỉ khi thêm $R_A=3\\ \\Omega$",
+     "d) $R_V$ tối thiểu để sai số $\\le1\\%$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -259,7 +282,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=12\\ \\text{V}$; $R_1$ nối tiếp $(R_2=12\\ \\Omega\\ //\\ R_3)$",
+     "K song song $R_2$",
+     "K đóng: $I=2\\ \\text{A}$; K mở: $I=1{,}2\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) điện trở có dòng khi K đóng, $R_1$",
+     "b) $R_3$",
+     "c) $U_3$, $I_2$ khi K mở"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -382,7 +417,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=18\\ \\text{V}$; $R_1=6\\ \\Omega$ nối tiếp $(R_b\\ //\\ R_2=12\\ \\Omega)$",
+     "$R_b$ từ $0$ đến $24\\ \\Omega$"
+    ],
+    "tim": [
+     "a) số chỉ ampe kế, vôn kế khi $R_b=12\\ \\Omega$",
+     "b) $R_b$ để vôn kế chỉ $8\\ \\text{V}$",
+     "c) khoảng số chỉ ampe kế",
+     "d) vôn kế chỉ $11\\ \\text{V}$ được không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -505,7 +552,270 @@
     {
      "tieu_de": "Kiểm tra bằng cách chập P với Q"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        4.5
+       ],
+       [
+        3,
+        9.5
+       ],
+       [
+        17,
+        9.5
+       ],
+       [
+        17,
+        4.5
+       ],
+       [
+        3,
+        4.5
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        7
+       ],
+       [
+        1.2,
+        7
+       ],
+       [
+        1.2,
+        1.2
+       ],
+       [
+        18.8,
+        1.2
+       ],
+       [
+        18.8,
+        7
+       ],
+       [
+        17,
+        7
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 3,
+      "y": 7
+     },
+     {
+      "loai": "nut",
+      "x": 17,
+      "y": 7
+     },
+     {
+      "loai": "chu",
+      "x": 2.6,
+      "y": 7.5,
+      "text": "M",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 17.4,
+      "y": 7.5,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 10,
+      "y": 1.2
+     },
+     {
+      "loai": "chu",
+      "x": 11.2,
+      "y": 1.9,
+      "text": "U = 30 V",
+      "a": "start"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.5,
+      "y": 9.5,
+      "ten": "R₁",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 9.5,
+      "ten": "R₃",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.5,
+      "y": 4.5,
+      "ten": "R₂",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 4.5,
+      "ten": "R₄",
+      "vi": "b"
+     },
+     {
+      "loai": "nut",
+      "x": 10,
+      "y": 9.5
+     },
+     {
+      "loai": "nut",
+      "x": 10,
+      "y": 4.5
+     },
+     {
+      "loai": "chu",
+      "x": 10.4,
+      "y": 10.1,
+      "text": "P",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 10.4,
+      "y": 3.5,
+      "text": "Q",
+      "a": "start"
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10,
+        9.5
+       ],
+       [
+        10,
+        4.5
+       ]
+      ]
+     },
+     {
+      "loai": "dong_ho",
+      "x": 10,
+      "y": 7,
+      "kieu": "V",
+      "het": 5
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "U_V = 0 ⇒ R₁/R₃ = R₂/R₄ ⇒ R₄ = 15 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R_{13} = 6 + 10 = 16 Ω · R_{24} = 9 + 15 = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R_{td} = 16·24 : 40 = 9,6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        15.3,
+        9.5
+       ],
+       "den": [
+        16.6,
+        9.5
+       ],
+       "nhan": "1,875 A",
+       "vi": "t",
+       "het": 5
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        15.3,
+        4.5
+       ],
+       "den": [
+        16.6,
+        4.5
+       ],
+       "nhan": "1,25 A",
+       "vi": "t",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I_{13} = 30 : 16 = 1,875 A · I_{24} = 1,25 A"
+      }
+     ],
+     [
+      {
+       "loai": "dien_tro",
+       "x": 10,
+       "y": 7,
+       "huong": "doc",
+       "ten": "R₅",
+       "vi": "r"
+      },
+      {
+       "loai": "chu",
+       "x": 9.3,
+       "y": 5.9,
+       "text": "I₅ = 0",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_P = V_Q ⇒ I₅ = 0, R_{td} không đổi"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Chập P, Q: 3,6 + 6 = 9,6 Ω ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$U_{MN}=30\\ \\text{V}$",
+     "Trái: $R_1=6\\ \\Omega$, $R_3=10\\ \\Omega$ (nối ở P)",
+     "Phải: $R_2=9\\ \\Omega$, $R_4$ (nối ở Q)",
+     "Vôn kế P–Q chỉ $0$"
+    ],
+    "tim": [
+     "a) $R_4$",
+     "b) $R_{td}$, $I$ chính và mỗi nhánh",
+     "c) $I_5$ khi thay vôn kế bằng $R_5=20\\ \\Omega$",
+     "d) $R_{td}$ khi chập P với Q"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -628,7 +938,280 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        1.5,
+        2
+       ],
+       [
+        1.5,
+        10
+       ],
+       [
+        8,
+        10
+       ],
+       [
+        19,
+        10
+       ],
+       [
+        19,
+        2
+       ],
+       [
+        1.5,
+        2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        8,
+        10
+       ],
+       [
+        8,
+        6.5
+       ],
+       [
+        13,
+        6.5
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        13,
+        6.5
+       ],
+       [
+        13,
+        8.2
+       ],
+       [
+        18.2,
+        8.2
+       ],
+       [
+        18.2,
+        5
+       ],
+       [
+        13,
+        5
+       ],
+       [
+        13,
+        6.5
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        18.2,
+        6.5
+       ],
+       [
+        19,
+        6.5
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 8,
+      "y": 10
+     },
+     {
+      "loai": "nut",
+      "x": 19,
+      "y": 10
+     },
+     {
+      "loai": "nut",
+      "x": 13,
+      "y": 6.5
+     },
+     {
+      "loai": "nut",
+      "x": 18.2,
+      "y": 6.5
+     },
+     {
+      "loai": "nut",
+      "x": 19,
+      "y": 6.5
+     },
+     {
+      "loai": "chu",
+      "x": 8,
+      "y": 10.5,
+      "text": "M",
+      "a": "middle"
+     },
+     {
+      "loai": "nguon",
+      "x": 1.5,
+      "y": 6,
+      "huong": "doc",
+      "ten": "U = 24 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.6,
+      "y": 10,
+      "kieu": "A",
+      "ten": "A₂",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 5.9,
+      "y": 10,
+      "ten": "R₁",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 10,
+      "ten": "R₂",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 10.4,
+      "y": 6.5,
+      "ten": "R₃",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 14.4,
+      "y": 8.2,
+      "kieu": "A",
+      "ten": "A₁",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 16.6,
+      "y": 8.2,
+      "ten": "R₄",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 15,
+      "y": 5,
+      "ten": "R₅",
+      "vi": "b"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "U₄ = I₄R₄ = 1·12 = 12 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(24 − U_X)/2 = U_X/12 + (U_X − 12)/4 ⇒ U_X = 18 V"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        8.3,
+        6.5
+       ],
+       "den": [
+        9.3,
+        6.5
+       ],
+       "nhan": "1,5 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₃ = (18 − 12) : 4 = 1,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        16.6,
+        5
+       ],
+       "den": [
+        17.8,
+        5
+       ],
+       "nhan": "0,5 A",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₅ = 1,5 − 1 = 0,5 A ⇒ R₅ = 12 : 0,5 = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        12,
+        2
+       ],
+       "den": [
+        8,
+        2
+       ],
+       "nhan": "I = 3 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₂ = 18 : 12 = 1,5 A ⇒ A₂ = 1,5 + 1,5 = 3 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: U₁ = 3·2 = 6 V · 6 + 18 = 24 V ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$U=24\\ \\text{V}$; $R_1=2\\ \\Omega$ nối tiếp X",
+     "X: $R_2=12\\ \\Omega$ // Y",
+     "Y: $R_3=4\\ \\Omega$ nối tiếp $(R_4=12\\ \\Omega\\ //\\ R_5)$",
+     "$A_1$ nối tiếp $R_4$ chỉ $1\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) $R_5$",
+     "b) số chỉ $A_2$"
+    ]
+   }
   }
  ],
  "tu_luan": {

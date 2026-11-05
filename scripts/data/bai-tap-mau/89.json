@@ -80,7 +80,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vôn kế $6{,}0\\ \\text{V}$, ampe kế $240\\ \\text{mA}$",
+     "$R$ không đổi; sau tăng $U$ lên $9{,}0\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R$",
+     "b) Số chỉ ampe kế khi $U=9{,}0\\ \\text{V}$ (mA)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -192,7 +202,152 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 13,
+     "ten": "U (V)",
+     "vach": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12
+     ],
+     "luoi": 2
+    },
+    "y": {
+     "min": 0,
+     "max": 1.0,
+     "ten": "I (A)",
+     "vach": [
+      0.2,
+      0.4,
+      0.6,
+      0.8
+     ],
+     "luoi": 0.1
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        12,
+        0.8
+       ]
+      ],
+      "mau": "max",
+      "ten": "(1)",
+      "ten_xy": [
+       12.4,
+       0.86
+      ]
+     },
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        12,
+        0.3
+       ]
+      ],
+      "mau": "min",
+      "ten": "(2)",
+      "ten_xy": [
+       12.4,
+       0.36
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "x": 12,
+       "y": 0.8
+      },
+      {
+       "loai": "chieu",
+       "x": 12,
+       "y": 0.8
+      },
+      {
+       "loai": "ghi",
+       "text": "R_1 = 12 : 0,8 = 15 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 12,
+       "y": 0.3
+      },
+      {
+       "loai": "chieu",
+       "x": 12,
+       "y": 0.3,
+       "nhan_y": "0,3"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_2 = 12 : 0,3 = 40 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 6
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 0.4
+      },
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 0.15
+      },
+      {
+       "loai": "ghi",
+       "text": "Cùng U: I_2 < I_1 ⇒ R_2 cản hơn"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "U = 0,5·40 = 20 V (ngoài khung đồ thị)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 0,8·15 = 12 V ✓ · 0,3·40 = 12 V ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Đồ thị $I$ theo $U$: đường 1 là $R_1$, đường 2 là $R_2$",
+     "$R_2$ không đổi khi $U$ tăng"
+    ],
+    "tim": [
+     "a) $R_1$, $R_2$",
+     "b) Điện trở nào cản nhiều hơn",
+     "c) $U$ để $I_2=0{,}5\\ \\text{A}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -267,7 +422,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cùng constantan. Dây 1: $l_1=2\\ \\text{m}$, $S_1=0{,}4\\ \\text{mm}^2$, $R_1=2{,}5\\ \\Omega$",
+     "Dây 2: $l_2=6\\ \\text{m}$, $S_2=0{,}5\\ \\text{mm}^2$; mắc vào $4{,}5\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R_2$ (không dùng $\\rho$)",
+     "b) $I$ qua dây 2"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -403,7 +568,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cuộn dây $l=20\\ \\text{m}$, $S=0{,}5\\ \\text{mm}^2$",
+     "Vôn kế $11\\ \\text{V}$, ampe kế $250\\ \\text{mA}$",
+     "Bảng $\\rho$: đồng, constantan, nichrome",
+     "Gập đôi dây, vẫn mắc vào $11\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R$",
+     "b) $\\rho$ và vật liệu",
+     "c) Số chỉ ampe kế sau khi gập đôi"
+    ]
+   }
   }
  ]
 }
