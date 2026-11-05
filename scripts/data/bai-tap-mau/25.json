@@ -68,12 +68,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ nhìn đồ thị (2) rồi gọi tên theo biên độ không đổi",
+       "text": "Chỉ nhìn đồ thị (2) rồi gọi tên theo biên độ không đổi theo thời gian",
        "dung": false,
        "vi_sao": "Biên độ không đổi cũng gặp ở cưỡng bức; phải xét năng lượng được cấp bằng cách nào."
       },
       {
-       "text": "Dùng kết quả của (1) vì cùng là con lắc lò xo",
+       "text": "Dùng kết quả của (1) vì cả hai đều là con lắc lò xo như nhau",
        "dung": false,
        "vi_sao": "Mỗi con lắc có điều kiện riêng; (2) có thêm cơ cấu bù nên khác (1)."
       }
@@ -105,12 +105,12 @@
        "dung": true
       },
       {
-       "text": "Gọi tên theo biên độ: không đổi thì là duy trì",
+       "text": "Gọi tên theo biên độ: không đổi thì chắc chắn là duy trì, không cần xét lực từ bệ",
        "dung": false,
        "vi_sao": "Cả duy trì và cưỡng bức đều có biên độ không đổi; phải xét lực."
       },
       {
-       "text": "Gọi tên theo chu kì riêng $T_0$ của con lắc",
+       "text": "Gọi tên theo chu kì riêng $T_0$ của con lắc, vì vật luôn dao động theo $T_0$ khi ổn định",
        "dung": false,
        "vi_sao": "Cưỡng bức ổn định thì vật theo nhịp của lực, không theo $T_0$."
       }
@@ -252,12 +252,12 @@
        "dung": true
       },
       {
-       "text": "Lấy hiệu hai tần số rồi so với sai số đọc",
+       "text": "Lấy hiệu hai tần số trong bảng rồi so với sai số đọc",
        "dung": false,
        "vi_sao": "Sai số đọc là của biên độ (cm), phải so với hiệu hai biên độ."
       },
       {
-       "text": "Bỏ qua sai số vì số đọc đã làm tròn",
+       "text": "Bỏ qua sai số vì số đọc đã được làm tròn rồi kết luận ngay",
        "dung": false,
        "vi_sao": "Hai số đọc chỉ khác nhau thật khi hiệu vượt sai số; phải so."
       }
@@ -463,12 +463,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $t=\\dfrac{A_0}{2\\beta}$",
+       "text": "Lấy $t=\\dfrac{A_0}{2\\beta}$ vì biên độ giảm đều theo thời gian",
        "dung": false,
        "vi_sao": "Biên độ giảm theo hàm mũ chứ không giảm đều theo thời gian, nên công thức này không đúng."
       },
       {
-       "text": "Lấy $t$ bằng nửa thời gian ở câu a",
+       "text": "Lấy $t$ bằng nửa thời gian ở câu a vì một nửa biên độ",
        "dung": false,
        "vi_sao": "Biên độ không giảm tuyến tính theo thời gian nên một nửa thời gian không cho một nửa biên độ."
       }
@@ -487,12 +487,12 @@
        "dung": true
       },
       {
-       "text": "Cơ năng tỉ lệ $A$: cũng giảm một nửa",
+       "text": "Cơ năng tỉ lệ $A$ nên cũng giảm đúng một nửa như biên độ",
        "dung": false,
        "vi_sao": "Cơ năng $W=\\dfrac12kA^2$ tỉ lệ bình phương biên độ, không tỉ lệ bậc nhất."
       },
       {
-       "text": "Cơ năng tỉ lệ $e^{-\\beta t}$ như biên độ",
+       "text": "Cơ năng tỉ lệ $e^{-\\beta t}$ giống như biên độ, nên lấy tỉ số mũ",
        "dung": false,
        "vi_sao": "Cơ năng tỉ lệ $A^2$ nên theo $e^{-2\\beta t}$, hệ số mũ gấp đôi."
       }
@@ -636,12 +636,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $T=T_0$ vì xe có chu kì riêng",
+       "text": "Lấy $T=T_0$ vì xe có chu kì dao động riêng nên ngoại lực cùng chu kì đó",
        "dung": false,
        "vi_sao": "$T_0$ là của xe; chu kì của ngoại lực phụ thuộc vận tốc và khoảng cách gờ."
       },
       {
-       "text": "Lấy $T=L\\cdot v$",
+       "text": "Lấy $T=L\\cdot v$ vì nhân khoảng cách gờ với vận tốc xe",
        "dung": false,
        "vi_sao": "Tích $L\\cdot v$ có đơn vị m²/s, không phải giây."
       }
