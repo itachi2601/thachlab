@@ -322,7 +322,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
           <Block c={[0, cy]} w={2} h={hb} text={nen.vat} />
         </g>
       ),
-      pts: { vat_tren: [0.55, top], vat_giua: [-0.55, cy], vat: [0, cy] },
+      pts: { vat_tren: [1.0, top], vat_giua: [-1.0, cy], vat: [0, cy] },
       box: [-2.4, -5.6, 2.4, C + 0.4],
     };
   }
