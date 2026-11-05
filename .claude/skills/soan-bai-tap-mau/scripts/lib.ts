@@ -140,7 +140,9 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
     if (typeof d.analysis_html !== "string" || !/tl-table--data/.test(d.analysis_html))
       errors.push(`${at}: thiếu analysis_html (bảng Câu trong đề | Dữ liệu | Kiến thức liên quan, class tl-table--data)`);
     else if (!/⚠/.test(d.analysis_html)) errors.push(`${at}: bảng phân tích chưa có hàng ⚠ điều kiện áp dụng (AI-TUTOR 9.1)`);
-    if (!/<svg[\s\S]*<animate/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có mô phỏng chuyển động ngay dưới đề`);
+    // "một dạng — một hình" (5/11/2026): hình dưới đề là lớp 0 của cong_cu (`de: true`), không cần mô phỏng SVG riêng
+    const coHinhDe = (d as { cong_cu?: { de?: boolean } }).cong_cu?.de === true;
+    if (!coHinhDe && !/<svg[\s\S]*<animate/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có mô phỏng chuyển động ngay dưới đề`);
     const all = [d.problem_html, d.solution_html, d.analysis_html].join("\n");
     if (!dollarsBalanced(all)) errors.push(`${at}: số dấu $ lẻ`);
     if (/[<>]/.test((all.match(/\$[^$]*\$/g) ?? []).join(""))) errors.push(`${at}: công thức có < hoặc > — viết \\lt / \\gt`);
