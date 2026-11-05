@@ -104,7 +104,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U_1=4{,}5$ V, $I_1=0{,}18$ A; $U_2=6{,}0$ V",
+     "$R_0=10\\ \\Omega$ nối tiếp biến trở; $R_1=20\\ \\Omega$: $0{,}4$ A; $R_2=50\\ \\Omega$",
+     "$20\\ \\Omega$: $0{,}20$ A, $P_1=0{,}80$ W; tăng lên $0{,}30$ A"
+    ],
+    "tim": [
+     "a) $I_2$",
+     "b) Cách viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ đúng/sai; $I_2$",
+     "c) $P_2/P_1$ và $P_2$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -240,7 +252,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$P=\\dfrac{U^2}{R}$",
+     "$3{,}6$ km trong $40$ phút",
+     "Lò sưởi $220$ V – $2$ kW, dùng $3$ giờ ở $220$ V"
+    ],
+    "tim": [
+     "a) Đơn vị của $\\dfrac{U^2}{R}$",
+     "b) $v$ (m/s, km/h), hợp lí?",
+     "c) $A$ (kWh, J)",
+     "d) $I$, nhận xét"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -400,7 +425,177 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "A: $I=0{,}10\\ldots0{,}40$ A, $U=1{,}2\\ldots4{,}8$ V",
+     "B: $I=0{,}05\\ldots0{,}20$ A, $U=1{,}5\\ldots6{,}0$ V"
+    ],
+    "tim": [
+     "a) $R_A$, $R_B$",
+     "b) Đường nào dốc hơn",
+     "c) $I$ của A khi $U=2{,}7$ V",
+     "d) Hệ số góc đồ thị $I$–$U$ của A",
+     "e) $U$ của B khi $I=0{,}25$ A"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 0.45,
+     "ten": "I (A)",
+     "vach": [
+      0.1,
+      0.2,
+      0.3,
+      0.4
+     ],
+     "luoi": 0.05
+    },
+    "y": {
+     "min": 0,
+     "max": 8.5,
+     "ten": "U (V)",
+     "vach": [
+      2,
+      4,
+      6,
+      8
+     ],
+     "luoi": 1
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.4,
+        4.8
+       ]
+      ],
+      "ten": "A",
+      "ten_xy": [
+       0.42,
+       4.4
+      ]
+     },
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.2,
+        6
+       ]
+      ],
+      "mau": "max",
+      "ten": "B",
+      "ten_xy": [
+       0.17,
+       6.6
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0,
+        0
+       ],
+       "den": [
+        0.4,
+        4.8
+       ],
+       "nhan_y": "4,8 V",
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "R_A = 4,8 : 0,40 = 12 Ω",
+       "het": 2
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 0.2,
+       "y": 6,
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "R_B = 6,0 : 0,20 = 30 Ω",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B dốc hơn ⇒ R_B > R_A",
+       "het": 4
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 0.225,
+       "y": 2.7,
+       "nhan_x": "0,225",
+       "nhan_y": "2,7",
+       "het": 6
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 2,7 : 12 = 0,225 A",
+       "het": 5
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Đồ thị I–U: hệ số góc 1/R_A ≈ 0,083 A/V",
+       "het": 6
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0.2,
+          6
+         ],
+         [
+          0.25,
+          7.5
+         ]
+        ],
+        "mau": "min"
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 0.25,
+       "y": 7.5,
+       "nhan_x": "0,25",
+       "nhan_y": "7,5"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ngoại suy: U ≈ 7,5 V (kém tin cậy)"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -499,7 +694,148 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$0$–$20$ s: $4$ m/s",
+     "$20$–$35$ s: $6$ m/s",
+     "$35$–$45$ s: dừng",
+     "$45$–$65$ s: $5$ m/s"
+    ],
+    "tim": [
+     "a) $s$",
+     "b) $v_{tb}$",
+     "c) Vị trí lúc $t=50$ s",
+     "d) Thời điểm đi được $150$ m"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 70,
+     "ten": "t (s)",
+     "vach": [
+      20,
+      35,
+      45,
+      65
+     ],
+     "luoi": 5
+    },
+    "y": {
+     "min": 0,
+     "max": 7.5,
+     "ten": "v (m/s)",
+     "vach": [
+      4,
+      5,
+      6
+     ],
+     "luoi": 1
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        4
+       ],
+       [
+        20,
+        4
+       ],
+       [
+        20,
+        6
+       ],
+       [
+        35,
+        6
+       ],
+       [
+        35,
+        0
+       ],
+       [
+        45,
+        0
+       ],
+       [
+        45,
+        5
+       ],
+       [
+        65,
+        5
+       ]
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 65,
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "s = 80 + 90 + 0 + 100 = 270 m",
+       "het": 2
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 4.15,
+       "nhan": "v_{tb}",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "v_{tb} = 270 : 65 ≈ 4,15 m/s",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 50,
+       "het": 4
+      },
+      {
+       "loai": "dung",
+       "x": 50,
+       "nhan": "50 s",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "170 + 5·5 = 195 m",
+       "het": 4
+      }
+     ],
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 31.7
+      },
+      {
+       "loai": "dung",
+       "x": 31.7,
+       "nhan": "31,7 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "80 + 6(t − 20) = 150 ⇒ t ≈ 31,7 s"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -622,7 +958,21 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$s=1{,}20$ m, $\\Delta s=0{,}01$ m",
+     "ĐCNN $0{,}1$ s",
+     "$t$: $2{,}4$; $2{,}7$; $2{,}5$; $2{,}3$; $2{,}6$ s"
+    ],
+    "tim": [
+     "a) $t_{tb}$",
+     "b) $\\Delta t$",
+     "c) $\\delta_t$",
+     "d) Ghi kết quả $t$",
+     "e) $v$, $\\Delta v$, ghi kết quả $v$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -769,7 +1119,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ấm $220$ V – $1800$ W, dùng ở $220$ V",
+     "$1{,}8$ lít nước, $20\\ ^\\circ$C → $100\\ ^\\circ$C",
+     "$H=84\\%$; $c=4200$ J/(kg·K)",
+     "$2$ lần/ngày, $30$ ngày, $2000$ đ/kWh"
+    ],
+    "tim": [
+     "a) Thời gian đun $t$",
+     "b) Tiền điện $30$ ngày",
+     "c) $t'$ khi cắm vào $110$ V"
+    ]
+   }
   }
  ],
  "tu_luan": {
