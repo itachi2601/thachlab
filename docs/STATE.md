@@ -52,7 +52,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
 - Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
-- Rank 5/11: L11/L12 không có mùa từ 26/10; mùa #5 L10 quá hạn chưa đóng; tên mùa 2 đã chọn (memory `project_thachlab_rank_system`), chờ thầy gật mở.
+- Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 
