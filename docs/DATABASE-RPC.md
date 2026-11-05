@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 419 hàm, sinh tự động 2026-10-30
+# Hàm SQL / RPC (schema public) — 428 hàm, sinh tự động 2026-11-05
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -68,6 +68,7 @@ repo — xem trên Supabase Dashboard).
 - `get_periodic_rank_of(p_student uuid, p_class_id bigint)` → TABLE(rnk integer, total integer, my_avg numeric, class_avg numeric)
 - `get_public_stats()` → jsonb
 - `get_similar_bank_questions(p_topic_id bigint, p_form text, p_exclude_ids bigint[], p_limit integer)` → TABLE(id bigint, topic_id bigint, topic_name text, form text, qtype text, difficulty text, question jsonb, same_form boolean)
+- `get_similar_dang_questions(p_lesson_id bigint, p_dang_no integer, p_exclude_ids bigint[], p_limit integer)` → TABLE(id bigint, topic_id bigint, topic_name text, form text, qtype text, difficulty text, question jsonb, same_form boolean)
 - `get_student_learning_history(p_student uuid)` → TABLE(activity text, at timestamp with time zone, lesson_title text, item_title text, score numeric, correct_count integer, question_count integer, detail_correct_count jsonb, has_essay boolean)
 - `gin_extract_query_trgm(text, internal, smallint, internal, internal, internal, internal)` → internal
 - `gin_extract_value_trgm(text, internal)` → internal
@@ -168,8 +169,8 @@ repo — xem trên Supabase Dashboard).
 - `rank_eval_weekly_goal(p_season bigint, p_student uuid, p_at timestamp with time zone)` → integer
 - `rank_fix_quiz_open(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
 - `rank_fix_quiz_start(p_exam_result_id bigint, p_topic_id bigint)` → jsonb
-- `rank_fix_quiz_submit(p_attempt_id bigint, p_correct integer)` → jsonb
 - `rank_fix_quiz_submit(p_attempt_id bigint, p_responses jsonb)` → jsonb
+- `rank_fix_quiz_submit(p_attempt_id bigint, p_correct integer)` → jsonb
 - `rank_gate_adaptive_code(p_code text)` → boolean
 - `rank_gate_answer(p_attempt_id bigint, p_response jsonb, p_question_id bigint)` → jsonb
 - `rank_gate_attempts_of(p_student uuid, p_season bigint)` → jsonb
@@ -310,15 +311,23 @@ repo — xem trên Supabase Dashboard).
 - `ta_homework_overview(p_class_id bigint, p_days integer)` → TABLE(id bigint, student_id uuid, student_name text, exam_id bigint, exam_title text, due_at timestamp with time zone, assigned_at timestamp with time zone, done boolean, best_score numeric, late boolean)
 - `ta_interview_list()` → jsonb
 - `ta_interview_save(p_code text, p_grp text, p_answers jsonb, p_barrier text, p_wish text)` → uuid
+- `ta_list_appeals(p_assistant_id uuid, p_month date)` → SETOF ta_month_appeals
+- `ta_month_cycle()` → text
+- `ta_month_lock_guard()` → trigger
 - `ta_monthly_policy(p_assistant_id uuid, p_month date)` → jsonb
 - `ta_monthly_score(p_assistant_id uuid, p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
 - `ta_monthly_scores(p_assistant_ids uuid[], p_month date)` → TABLE(assistant_id uuid, month date, lop_sessions integer, phudao_sessions integer, avg_touches numeric, touches_score numeric, ontime_error_notes integer, error_note_rate numeric, error_note_score numeric, complete_phudao integer, phudao_complete_rate numeric, phudao_score numeric, flag_count integer, focus_score numeric, total_score numeric, bonus_per_hour integer, converted_hours numeric, papers_graded integer, base_pay numeric, bonus_pay numeric, grading_pay numeric, total_pay numeric)
 - `ta_policy_session_guard()` → trigger
 - `ta_policy_today()` → date
+- `ta_reopen_active(p_work_date date)` → boolean
+- `ta_reopen_status_reset()` → trigger
+- `ta_reopen_window()` → TABLE(month date, until timestamp with time zone)
+- `ta_resolve_appeal(p_id bigint, p_reply text)` → void
 - `ta_save_month_review(p_assistant_id uuid, p_month date, p_scores jsonb, p_rate integer, p_note text, p_close boolean)` → jsonb
 - `ta_session_slot_guard()` → trigger
 - `ta_session_student_count(p_students text[])` → integer
 - `ta_session_student_link_guard()` → trigger
+- `ta_submit_appeal(p_month date, p_body text)` → bigint
 - `ta_team_monthly_hours(p_months integer)` → TABLE(month date, converted_hours numeric, session_count integer)
 - `ta_topic_exploitation_rate(p_days integer)` → TABLE(eligible_count integer, used_count integer, rate numeric)
 - `ta_tutoring_pass_ratio(p_session uuid)` → numeric

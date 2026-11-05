@@ -84,12 +84,12 @@
      "hoi": "Dòng nạp này thuộc loại nào?",
      "lua_chon": [
       {
-       "text": "Dòng không đổi, vì chiều không đổi",
+       "text": "Dòng không đổi, vì chiều dòng điện không đổi theo thời gian",
        "dung": false,
        "vi_sao": "Dòng không đổi cần cả chiều và cường độ đều không đổi ; ở đây cường độ thay đổi."
       },
       {
-       "text": "Dòng xoay chiều, vì cường độ thay đổi",
+       "text": "Dòng xoay chiều, vì cường độ thay đổi theo thời gian nạp",
        "dung": false,
        "vi_sao": "Xoay chiều là chiều đổi qua lại, còn ở đây kim luôn ở một phía vạch $0$."
       },
@@ -105,12 +105,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ cần kiểm điều kiện chiều",
+       "text": "Chỉ cần kiểm điều kiện chiều của dòng điện rồi kết luận ngay",
        "dung": false,
        "vi_sao": "Dòng không đổi đòi cả hai điều kiện ; chỉ xét chiều sẽ nhầm hai loại dòng."
       },
       {
-       "text": "Chỉ cần kiểm điều kiện cường độ",
+       "text": "Chỉ cần kiểm điều kiện cường độ của dòng điện rồi kết luận ngay",
        "dung": false,
        "vi_sao": "Cường độ thay đổi không đủ để kết luận xoay chiều ; chiều còn quyết định loại dòng."
       }
@@ -191,12 +191,12 @@
        "dung": true
       },
       {
-       "text": "Nhân điện lượng với cường độ",
+       "text": "Nhân điện lượng với cường độ dòng điện để ra thời gian",
        "dung": false,
        "vi_sao": "Phép nhân cho đơn vị $\\text{C}\\cdot\\text{A}$, không phải giây."
       },
       {
-       "text": "Chia điện lượng cho điện tích mỗi electron",
+       "text": "Chia điện lượng cho điện tích của mỗi electron để ra thời gian",
        "dung": false,
        "vi_sao": "Đó là số hạt, không phải thời gian."
       }
@@ -472,12 +472,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $v=\\dfrac{\\Delta q}{\\Delta t}$",
+       "text": "Lấy $v=\\dfrac{\\Delta q}{\\Delta t}$ với $I$ vừa tìm rồi đổi sang mm/s",
        "dung": false,
        "vi_sao": "Đó là cường độ dòng điện (C/s), không phải tốc độ trôi (m/s)."
       },
       {
-       "text": "Lấy $v=\\dfrac{N}{\\Delta t}$",
+       "text": "Lấy $v=\\dfrac{N}{\\Delta t}$ với $N$ electron rồi đổi sang mm/s",
        "dung": false,
        "vi_sao": "Đó là số electron qua tiết diện mỗi giây, đơn vị 1/s không phải m/s."
       }

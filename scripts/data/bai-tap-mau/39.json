@@ -26,7 +26,7 @@
      "hoi": "Đường đi cong thì $d$ trong $A=qEd$ lấy thế nào?",
      "lua_chon": [
       {
-       "text": "Chiều dài của đường cong từ M đến N",
+       "text": "Chiều dài của đường cong từ M đến N đã cho trong hình",
        "dung": false,
        "vi_sao": "Công của lực điện không phụ thuộc hình dạng đường đi nên không cần độ dài đường cong."
       },
@@ -35,7 +35,7 @@
        "dung": true
       },
       {
-       "text": "Độ dài đoạn thẳng nối M với N",
+       "text": "Độ dài đoạn thẳng nối M với N, đo trực tiếp trên hình",
        "dung": false,
        "vi_sao": "Chỉ thành phần dọc đường sức mới góp vào công, không phải cả đoạn MN."
       }
@@ -55,12 +55,12 @@
        "dung": true
       },
       {
-       "text": "Tìm độ dài đường cong rồi nhân với lực điện",
+       "text": "Tìm độ dài đường cong từ M đến N rồi nhân với lực điện $qE$, đổi ra mét và ra đơn vị đề cho",
        "dung": false,
        "vi_sao": "Công của lực điện không phụ thuộc đường đi, nên không cần độ dài đường cong."
       },
       {
-       "text": "Lấy $q$ nhân $E$ rồi dừng lại",
+       "text": "Lấy $q$ nhân $E$ rồi dừng lại vì tích đó đã là công của lực điện, không cần nhân thêm gì",
        "dung": false,
        "vi_sao": "Tích $qE$ mới là lực ; muốn có công phải nhân thêm quãng dịch chuyển dọc đường sức."
       }
@@ -92,12 +92,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $A_{MN}=W_N-W_M$",
+       "text": "Dùng $A_{MN}=W_N-W_M$ rồi xét dấu của công",
        "dung": false,
        "vi_sao": "Công bằng thế năng đầu trừ thế năng cuối, không phải ngược lại."
       },
       {
-       "text": "Lấy thế năng tại N bằng $qEd$",
+       "text": "Lấy thế năng tại N bằng $qEd$ rồi so với thế năng tại M",
        "dung": false,
        "vi_sao": "Thế năng chỉ có nghĩa khi đã chọn mốc ; $qEd$ là công giữa hai điểm, không phải thế năng tại một điểm."
       }
@@ -191,12 +191,12 @@
        "dung": true
       },
       {
-       "text": "Dựa vào dấu của $q_1$",
+       "text": "Dựa vào dấu của $q_1$, vì điện tích thử quyết định dấu của $Q$",
        "dung": false,
        "vi_sao": "$q_1$ chỉ là điện tích thử ; dấu của nó không quyết định dấu điện thế."
       },
       {
-       "text": "So độ lớn của $V_M$ với $V_N$",
+       "text": "So độ lớn của $V_M$ với $V_N$ rồi kết luận về dấu của $Q$",
        "dung": false,
        "vi_sao": "Độ lớn không cho biết dấu của $Q$ ; dấu của $V$ so với mốc mới cho biết."
       }
@@ -351,12 +351,12 @@
        "dung": true
       },
       {
-       "text": "Dùng lại kết quả của electron",
+       "text": "Dùng lại kết quả của electron vì cùng đi từ A đến B",
        "dung": false,
        "vi_sao": "Proton mang điện dương, dấu của $q$ đổi nên dấu của công đổi."
       },
       {
-       "text": "Dùng $U_{BA}$ cho proton",
+       "text": "Dùng $U_{BA}$ cho proton vì proton mang điện dương",
        "dung": false,
        "vi_sao": "Đề cho đi từ A đến B nên dùng $U_{AB}$ ; thứ tự phải theo điểm đầu và điểm cuối."
       }
@@ -413,12 +413,12 @@
        "dung": true
       },
       {
-       "text": "Lấy luôn độ dài MN vì M và N là hai điểm cần xét",
+       "text": "Lấy luôn độ dài MN làm hình chiếu vì M và N là hai điểm cần xét hiệu điện thế, chiều dài xiên",
        "dung": false,
        "vi_sao": "MN xiên so với đường sức ; chỉ phần dọc đường sức góp vào hiệu điện thế."
       },
       {
-       "text": "Lấy cạnh NP",
+       "text": "Lấy cạnh NP vuông góc đường sức của tam giác vuông MNP làm hình chiếu cần tìm",
        "dung": false,
        "vi_sao": "NP vuông góc đường sức, nằm trên một mặt đẳng thế nên không góp vào hiệu điện thế."
       }
@@ -437,12 +437,12 @@
        "dung": true
       },
       {
-       "text": "Nhân $E$ với độ dài MN",
+       "text": "Nhân $E$ với độ dài MN đã đổi ra mét vì $U=Ed$ với $d$ là chiều dài đoạn",
        "dung": false,
        "vi_sao": "MN là đoạn xiên ; $U=Ed$ chỉ đúng với $d$ đo dọc đường sức."
       },
       {
-       "text": "Nhân $E$ với cạnh NP",
+       "text": "Nhân $E$ với cạnh NP đã đổi ra mét vì $U=Ed$ với $d$ là cạnh còn lại",
        "dung": false,
        "vi_sao": "NP vuông góc đường sức nên hiệu điện thế giữa N và P bằng $0$."
       }
@@ -623,12 +623,12 @@
        "dung": true
       },
       {
-       "text": "Lấy khoảng cách $1{,}5$ cm từ M đến bản B",
+       "text": "Lấy khoảng cách $1{,}5$ cm từ M đến bản B rồi xét điện thế giảm dọc đường sức",
        "dung": false,
        "vi_sao": "Mốc ở bản A nên khoảng cách phải tính từ M đến bản A, không phải đến bản B."
       },
       {
-       "text": "Lấy $V_M$ bằng hiệu điện thế hai bản",
+       "text": "Lấy $V_M$ bằng hiệu điện thế hai bản vì M nằm giữa hai bản",
        "dung": false,
        "vi_sao": "Hiệu điện thế hai bản là $U$ ; điện thế tại M chỉ là một phần của nó, tính so với mốc."
       }
@@ -647,12 +647,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $A=qV_M$ vì M là điểm cuối",
+       "text": "Dùng $A=qV_M$ vì M là điểm cuối của đường đi từ B",
        "dung": false,
        "vi_sao": "Công phụ thuộc hiệu hai điện thế ; riêng $V_M$ còn thay đổi theo mốc."
       },
       {
-       "text": "Dùng $A=qU_{MB}$",
+       "text": "Dùng $A=qU_{MB}$ với điểm đầu là bản B",
        "dung": false,
        "vi_sao": "Điểm đầu là bản B nên phải viết B trước rồi đến M."
       }
@@ -671,12 +671,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên $V_M$ vì M không di chuyển",
+       "text": "Giữ nguyên $V_M$ vì M không di chuyển và điện trường cũng không đổi khi đổi mốc",
        "dung": false,
        "vi_sao": "Điện thế đo so với mốc nên đổi mốc là đổi giá trị."
       },
       {
-       "text": "Chỉ đổi dấu điện thế cũ",
+       "text": "Chỉ đổi dấu điện thế cũ, vì mốc mới nằm ở phía bên kia của điểm M trong điện trường",
        "dung": false,
        "vi_sao": "Đổi mốc không đơn giản là đổi dấu ; giá trị mới tính lại từ khoảng cách tới mốc mới."
       }
@@ -691,12 +691,12 @@
        "dung": true
       },
       {
-       "text": "Đổi theo điện thế mới của M",
+       "text": "Đổi theo điện thế mới của M vì công phụ thuộc điện thế điểm cuối",
        "dung": false,
        "vi_sao": "Điện thế đổi theo mốc nhưng hiệu điện thế giữa hai điểm giữ nguyên nên công không đổi."
       },
       {
-       "text": "Đổi dấu, vì điện thế đổi dấu",
+       "text": "Đổi dấu, vì điện thế đổi dấu khi chuyển mốc sang bản B",
        "dung": false,
        "vi_sao": "Hiệu điện thế $U_{BM}$ không đổi dấu khi đổi mốc ; công giữ nguyên."
       }
@@ -708,12 +708,12 @@
        "dung": true
       },
       {
-       "text": "Thế điện thế mới của M vào $A=qV$",
+       "text": "Thế điện thế mới của M vào $A=qV$ rồi so với công đã tính ở câu c) trước đó",
        "dung": false,
        "vi_sao": "Công cần hiệu hai điện thế, không cần điện thế riêng lẻ."
       },
       {
-       "text": "Giữ nguyên mọi điện thế cũ",
+       "text": "Giữ nguyên mọi điện thế cũ của hai điểm rồi tính công theo mốc mới ở bản B",
        "dung": false,
        "vi_sao": "Đổi mốc là đổi điện thế các điểm ; phải xét xem hiệu của chúng có đổi không."
       }

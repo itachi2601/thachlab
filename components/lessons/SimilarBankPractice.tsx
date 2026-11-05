@@ -19,13 +19,21 @@ interface SimilarRow {
   same_form: boolean;
 }
 
+/** Nguồn câu đang hiện: đúng dạng (question_dang) hay cùng chủ đề (dự phòng, chưa phân dạng). */
+type Source = "dang" | "chu_de";
+
 /**
- * "Làm bài tương tự" ở cuối một dạng bài tập mẫu: bốc COUNT câu cùng chủ đề (ưu tiên cùng Dạng) từ
- * ngân hàng câu hỏi qua RPC `get_similar_bank_questions` (học sinh không đọc được bảng trực tiếp — RLS).
+ * "Làm bài tương tự" ở cuối một dạng bài tập mẫu, bốc COUNT câu từ ngân hàng (HS không đọc thẳng bảng — RLS):
+ * 1. `get_similar_dang_questions(lesson, số dạng)` — chỉ câu đã gán ĐÚNG dạng (question_dang, unsure=false).
+ * 2. Dạng chưa có câu gán (hoặc RPC chưa có trên DB) → `get_similar_bank_questions(chủ đề)` nhưng ghi rõ nhãn
+ *    "Câu cùng chủ đề (chưa phân dạng)" để em không tưởng đó là cùng dạng.
+ * 3. Cả hai rỗng → báo "Dạng này chưa có bài tương tự", không đưa câu lệch.
  * Chấm ngay phía em để đối chiếu; chưa ghi vào phiên luyện tập/mastery (RPC không trả mã đề nguồn).
  * Đặt sau lời giải để "ví dụ mẫu đi trước, retrieval đi sau" (docs/AI-TUTOR.md 9.3).
  */
 export default function SimilarBankPractice({
+  lessonId,
+  dangNo,
   topicId,
   form,
   color = "#8B5CF6",
@@ -33,7 +41,10 @@ export default function SimilarBankPractice({
   defaultStep,
   onGoRoi,
 }: {
-  topicId: number;
+  lessonId?: number;
+  /** Số N trong nhãn "Dạng N · …" của dạng mẫu. */
+  dangNo?: number;
+  topicId?: number;
   form?: string;
   color?: string;
   /** Gỡ rối (9/10/2026): làm sai → hỏi "em tính đến bước nào?" theo các bước của dạng mẫu rồi gọi onGoRoi(idx). */
@@ -47,26 +58,58 @@ export default function SimilarBankPractice({
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
   const [seen, setSeen] = useState<number[]>([]);
   const [error, setError] = useState(false);
+  // null = chưa chọn nguồn. Đã có câu đúng dạng thì "làm câu khác" chỉ lấy tiếp đúng dạng (hết thì báo hết).
+  const [source, setSource] = useState<Source | null>(null);
 
-  async function load(exclude: number[]) {
-    setPhase("loading");
-    setError(false);
+  async function fetchDang(exclude: number[]): Promise<SimilarRow[] | null> {
+    if (!lessonId || dangNo == null) return null;
+    const { data, error: err } = await getSupabase().rpc("get_similar_dang_questions", {
+      p_lesson_id: lessonId,
+      p_dang_no: dangNo,
+      p_exclude_ids: exclude,
+      p_limit: COUNT,
+    });
+    return err ? null : ((data ?? []) as SimilarRow[]); // lỗi (kể cả RPC chưa chạy migration) → coi như chưa có
+  }
+
+  async function fetchChuDe(exclude: number[]): Promise<SimilarRow[] | null> {
+    if (!topicId) return [];
     const { data, error: err } = await getSupabase().rpc("get_similar_bank_questions", {
       p_topic_id: topicId,
       p_form: form ?? "",
       p_exclude_ids: exclude,
       p_limit: COUNT,
     });
-    if (err) {
-      setError(true);
-      setPhase("empty");
-      return;
+    return err ? null : ((data ?? []) as SimilarRow[]);
+  }
+
+  const usable = (list: SimilarRow[]) => list.filter((r) => r.question && r.question.type !== "essay");
+
+  async function load(exclude: number[]) {
+    setPhase("loading");
+    setError(false);
+    let next: SimilarRow[] = [];
+    let src: Source | null = source;
+    let failed = false;
+    if (src !== "chu_de") {
+      const dang = await fetchDang(exclude);
+      next = usable(dang ?? []);
+      if (next.length > 0) src = "dang";
+      else if (src === "dang") failed = dang === null; // đang lấy tiếp đúng dạng mà lỗi mạng → "chưa tải được", không phải "đã hết"
     }
-    const next = arrangeForMotivation(((data ?? []) as SimilarRow[]).filter((r) => r.question && r.question.type !== "essay"));
+    if (next.length === 0 && src !== "dang") {
+      const chuDe = await fetchChuDe(exclude);
+      failed = chuDe === null;
+      next = usable(chuDe ?? []);
+      if (next.length > 0) src = "chu_de";
+    }
+    setSource(src);
     if (next.length === 0) {
+      setError(failed);
       setPhase("empty");
       return;
     }
+    next = arrangeForMotivation(next);
     setRows(next);
     setResponses(emptyResponses(next.map((r) => r.question)));
     setSeen([...exclude, ...next.map((r) => r.id)]);
@@ -99,12 +142,19 @@ export default function SimilarBankPractice({
           {error
             ? "Chưa tải được bài tương tự, thử lại sau nhé."
             : seen.length > 0
-              ? "Đã hết bài tương tự cho dạng này trong ngân hàng."
-              : "Ngân hàng chưa có bài tương tự cho dạng này."}
+              ? source === "chu_de"
+                ? "Đã hết câu cùng chủ đề trong ngân hàng."
+                : "Đã hết bài tương tự cho dạng này trong ngân hàng."
+              : "Dạng này chưa có bài tương tự."}
         </p>
       )}
       {(phase === "running" || phase === "done") && (
         <>
+          {source === "chu_de" && (
+            <p className="text-sm text-muted" role="note">
+              Câu cùng chủ đề (chưa phân dạng) — có thể khác cách giải dạng mẫu.
+            </p>
+          )}
           {rows.map((r, i) => (
             <QuestionCard
               key={r.id}
