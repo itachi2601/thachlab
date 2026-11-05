@@ -279,6 +279,126 @@
      "b) $l_1$ và $l_2$",
      "c) Có nghe to nhất lần thứ ba không"
     ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 1,
+    "lam": 56.67,
+    "x_max": 1,
+    "canh": {
+     "kieu": "ong",
+     "dai": 67,
+     "e": 0.5,
+     "nguon": "600 Hz",
+     "nhan_dai": "đáy 67 cm",
+     "hinh": [
+      {
+       "loai": "thuoc",
+       "tu": -0.5,
+       "den": 0,
+       "nhan": "e",
+       "hang": 0
+      },
+      {
+       "loai": "nuoc",
+       "l": 6,
+       "het": 3
+      },
+      {
+       "loai": "vach",
+       "l": 6,
+       "ten": "l ↓",
+       "het": 3
+      }
+     ]
+    },
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "v = 331 + 0,6·15 = 340 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "λ = v/f = 340/600 = 56,7 cm"
+      }
+     ],
+     [
+      {
+       "loai": "nuoc",
+       "l": 13.67
+      },
+      {
+       "loai": "bao",
+       "l": 13.67
+      },
+      {
+       "loai": "vach",
+       "l": 13.67,
+       "ten": "l_1 = 13,7"
+      },
+      {
+       "loai": "thuoc",
+       "tu": -0.5,
+       "den": 13.67,
+       "nhan": "λ/4",
+       "hang": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "l_1 = λ/4 − e = 14,2 − 0,5 = 13,7 cm"
+      }
+     ],
+     [
+      {
+       "loai": "nuoc",
+       "l": 42
+      },
+      {
+       "loai": "bao",
+       "l": 42
+      },
+      {
+       "loai": "vach",
+       "l": 42,
+       "ten": "l_2 = 42"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 13.67,
+       "den": 42,
+       "nhan": "λ/2",
+       "hang": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "l_2 = 3λ/4 − e = 42,5 − 0,5 = 42 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vach",
+       "l": 70.33,
+       "ten": "l_3 = 70,3"
+      },
+      {
+       "loai": "ghi",
+       "text": "l_3 = 5λ/4 − e = 70,3 cm > 67 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ không nghe được lần thứ ba"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "l_2 − l_1 = 28,3 cm = λ/2 ✓"
+      }
+     ]
+    ]
    }
   },
   {
@@ -388,6 +508,99 @@
      "a) $\\lambda$ và $v$ đo được",
      "b) Đoạn $e$",
      "c) $v$ theo nhiệt độ phòng; độ lệch %"
+    ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 1,
+    "lam": 53.8,
+    "x_max": 1,
+    "canh": {
+     "kieu": "ong",
+     "dai": 50,
+     "e": 0.45,
+     "nguon": "640 Hz",
+     "hinh": [
+      {
+       "loai": "nuoc",
+       "l": 39.9
+      },
+      {
+       "loai": "vach",
+       "l": 13,
+       "ten": "l_1 = 13,0"
+      },
+      {
+       "loai": "vach",
+       "l": 39.9,
+       "ten": "l_2 = 39,9"
+      }
+     ]
+    },
+    "lop": [
+     [
+      {
+       "loai": "bao",
+       "l": 39.9
+      },
+      {
+       "loai": "thuoc",
+       "tu": 13,
+       "den": 39.9,
+       "nhan": "λ/2",
+       "hang": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "λ = 2(l_2 − l_1) = 2·26,9 = 53,8 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v = λf = 0,538·640 = 344,3 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": -0.45,
+       "den": 0,
+       "nhan": "e",
+       "hang": 0
+      },
+      {
+       "loai": "thuoc",
+       "tu": -0.45,
+       "den": 13,
+       "nhan": "λ/4",
+       "hang": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "λ/4 = 13,45 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "e = λ/4 − l_1 = 13,45 − 13,0 = 0,45 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v_{tk} = 331 + 0,6·28 = 347,8 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "lệch = 3,5/347,8 ≈ 1 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "l_2 + e = 40,35 cm = 3λ/4 ✓"
+      }
+     ]
     ]
    }
   },

@@ -484,6 +484,93 @@
      "c) Nén thứ nhất tới nén thứ sáu",
      "d) M có $u=+A$ thuộc vùng nào"
     ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 1.4,
+    "lam": 20,
+    "x_max": 110,
+    "song": {
+     "pha": 0
+    },
+    "canh": {
+     "kieu": "doc",
+     "nguon": "1700 Hz",
+     "vung": true
+    },
+    "lop": [
+     [
+      {
+       "loai": "thuoc",
+       "tu": 5,
+       "den": 25,
+       "nhan": "λ = 20 cm",
+       "hang": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "λ = v/f = 340/1700 = 0,2 m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "N → N liền nhau: λ = 0,2 m"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 25,
+       "den": 35,
+       "nhan": "λ/2",
+       "hang": 1,
+       "het": 4
+      },
+      {
+       "loai": "vung",
+       "dem": true
+      },
+      {
+       "loai": "ghi",
+       "text": "N → D gần nhất: λ/2 = 0,1 m"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 5,
+       "den": 105,
+       "nhan": "5λ = 1 m",
+       "hang": 1
+      },
+      {
+       "loai": "diem",
+       "x": 60,
+       "ten": "M"
+      },
+      {
+       "loai": "ghi",
+       "text": "N_1 → N_6: 5 khoảng ⇒ 5λ = 1 m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lớp khí hai bên M lệch gần bằng M"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ cách đều: M không nén, không dãn"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "λ = 0,2 m · N–N: 0,2 m · N–D: 0,1 m"
+      }
+     ]
+    ]
    }
   },
   {

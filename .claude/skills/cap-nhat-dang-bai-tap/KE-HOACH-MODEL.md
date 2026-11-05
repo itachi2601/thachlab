@@ -12,13 +12,13 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `tu_truong` (`TuTruong.tsx`, Đ2 ✓) | Nền B (mũi/chấm/chéo), nam châm, dây thẳng + đường sức tròn, la bàn, vectơ F (bàn tay trái), khung dây + pháp tuyến n, từ thông, Lenz | 11 · D4 | 6 | 10, 11, 13, 14, 126 · L12 Ch.3 |
 | `vong_tron` (`VongTronPha.tsx`, Đ1 ✓) | Đường tròn: điểm quay + góc quét + chiếu lên trục x; vectơ v tiếp tuyến, a hướng tâm — vòng tròn pha (dao động, i/u xoay chiều, E–B) và chuyển động tròn đều | 23 · D4 | 9 | 14, 20, 21, 22, 23, 76, 77, 127 · L10 Ch.6; L11 Ch.1; L12 Ch.3 |
 | `thanh_nang_luong` (`ThanhNangLuong.tsx`, Đ2 ✓) | Cảnh (độ cao, dốc, con lắc, lò xo) + cột Wđ/Wt/Q; hộp hệ với mũi tên Q, A vào/ra (dấu ĐL1 NĐLH); chuỗi khâu hiệu suất | 26 · D2 | 14 | 4, 24, 26, 70, 71, 72, 129, 130, 163, 166, 167 · H9 Cơ; H9 Điện; K9 Ch.1; L10 Ch.4; L11 Ch.1; L12 Ch.1 |
-| `song_day` (`SongDay.tsx`, Đ1 ✓) | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
+| `song_day` (`SongDay.tsx`, Đ1 ✓; cảnh `canh.kieu` "doc" → `SongDoc.tsx`, "ong" → `OngCongHuong.tsx` 5/11) | Dây/ống: u–x sóng chạy (chiều truyền, chiều chuyển động phần tử, Δφ hai điểm), sóng dọc nén–dãn, sóng dừng bụng–nút, ống một đầu kín | 27 · D4 | 6 | 27, 28, 32, 34 · L11 Ch.2 |
 | `giao_thoa_2_nguon` | Hai nguồn trên mặt nước, vân cực đại/cực tiểu (đã có) | 33 · D3 (đã có) | 1 | 31, 33 · L11 Ch.2 |
 | `van_giao_thoa` (`VanGiaoThoa.tsx`, Đ1 ✓) | Màn khe Young: thước vân sáng/tối, khoảng vân, trùng vân hai bức xạ | 31 · D4 | 1 | 31, 33 · L11 Ch.2 |
 | `dien_truong_deu` (`DienTruongDeu.tsx`, Đ3 ✓) | Hai bản song song: đường sức, điểm M/N, hình chiếu d, điện thế, quỹ đạo hạt bay vào, tụ phẳng đổi d | 37 · D3 | 6 | 37, 38, 39, 40 · L11 Ch.3 |
 | `mach_dien` (`MachDien.tsx`, Đ3 ✓) | Sơ đồ mạch: nguồn (E,r), R nối tiếp/song song/cầu, biến trở, khoá, ampe/vôn kế, đèn, tụ ghép, đường dây truyền tải | 43 · D3 | 16 | 40, 43, 44, 90, 91, 125, 152, 157, 159, 165 · H9 Điện; K9 Ch.3; L11 Ch.3; L11 Ch.4; L12 Ch.3 |
 | `truc_chuyen_dong` | Trục toạ độ 1D: vị trí theo thời điểm, đi–quay lại, hai vật gặp/đuổi, vật có chiều dài (tàu, cầu), xuôi–ngược dòng, tiếng vang; va chạm/súng giật trước–sau (mũi tên v, p) | 50 · D3 | 5 | 50, 54, 73, 74, 150 · H9 Âm; L10 Ch.2; L10 Ch.5 |
-| `so_do_vecto` (`SoDoVecto.tsx`, ✓ 3/11) | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
+| `so_do_vecto` (`SoDoVecto.tsx`, ✓ 3/11; nền `duong_thang` — điện tích/điểm trên một đường, vectơ lệch khỏi đường 5/11) | Vectơ đồng quy + phân tích/hình bình hành trên nền: mặt ngang, mặt nghiêng, dây treo, ròng rọc/palăng, lò xo + thước; cũng dùng cho cộng vận tốc, độ dịch chuyển 2D, Δv, động lượng theo góc, lực Coulomb/E tổng hợp | 63 · D4 | 26 | 35, 36, 49, 50, 53, 58, 60, 62, 63, 68, 69, 70, 73, 78, 155, 161, 162 · H9 Cơ; L10 Ch.2; L10 Ch.3; L10 Ch.4; L10 Ch.5; L10 Ch.7; L11 Ch.3 |
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
 | `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
@@ -84,19 +84,19 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 27 | Bài 8. Mô tả sóng | ✓ D4 (song_day) 3/11 | ✓ D5 (song_day) 3/11 | ✓ D1, D2, D3 3/11 | Opus | P1 |
-| 28 | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng c | — | D3 (song_day) — không làm, xem F | ✓ D1, D2, D4, D5, D6 4/11 | Sonnet | P1 |
+| 28 | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng c | — | ✓ D3 (song_day, cảnh `doc`) 5/11 | ✓ D1, D2, D4, D5, D6 4/11 | Sonnet | P1 |
 | 30 | Bài 11. Sóng điện từ | — | — | ✓ D1, D2, D3, D4 4/11 | Sonnet | P4 |
 | 31 | Bài 12. Giao thoa sóng | ✓ D4 (van_giao_thoa) 3/11 | ✓ D3 (giao_thoa_2_nguon `kieu: dem_day`) 3/11 | ✓ D1, D2, D5 3/11 | Opus | P1 |
 | 32 | Bài 13. Sóng dừng | ✓ D5, D6 4/11 | — | ✓ D1, D2, D3, D4 4/11 | Sonnet | P1 |
 | 33 | Bài 14. Bài tập về sóng | ✓ D4 4/11 | — | ✓ D1, D2, D5, D6 4/11 | Sonnet | P1 |
-| 34 | Bài 15. Thực hành: Đo tốc độ truyền âm | — | D2 (song_day), D3 (song_day) — chưa làm, xem F | ✓ D1, D4 4/11 | Sonnet | P1 |
+| 34 | Bài 15. Thực hành: Đo tốc độ truyền âm | — | ✓ D2, D3 (song_day, cảnh `ong`) 5/11 | ✓ D1, D4 4/11 | Sonnet | P1 |
 
 ### Lớp 11 · Ch.3 Điện trường
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 35 | Bài 16. Lực tương tác giữa hai điện tích | ✓ D5 4/11 | D4 (so_do_vecto) — chưa làm, xem F | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
-| 36 | Bài 17. Khái niệm điện trường | ✓ D5 4/11 | D4 (so_do_vecto) — chưa làm, xem F | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
+| 35 | Bài 16. Lực tương tác giữa hai điện tích | ✓ D5 4/11 | ✓ D4 (so_do_vecto, nền `duong_thang`) 5/11 | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
+| 36 | Bài 17. Khái niệm điện trường | ✓ D5 4/11 | ✓ D4 (so_do_vecto, nền `duong_thang`) 5/11 | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
 | 37 | Bài 18. Điện trường đều | ✓ D3 (dien_truong_deu) 3/11 | ✓ D5 (dien_truong_deu) 3/11 | ✓ D1, D2, D4 3/11 | Opus | P1 |
 | 38 | Bài 19. Thế năng điện | ✓ D3, D4 4/11 | — | ✓ D1, D2 4/11 | Sonnet | P1 |
 | 39 | Bài 20. Điện thế | ✓ D4, D5 4/11 | — | ✓ D1, D2, D3 4/11 | Sonnet | P1 |

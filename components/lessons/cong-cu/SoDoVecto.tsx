@@ -8,6 +8,10 @@
  * `layer` = số bước đã xong: vectơ có `buoc = i` chỉ vẽ khi em đã làm xong bước i (không lộ đáp số bước đang hỏi).
  * Độ lớn của vectơ đã biết nằm ở "bảng số" góc hình (nhãn trên mũi tên chỉ có tên → không chồng chữ).
  * viewBox tính từ MỌI lớp nên hình không đổi cao giữa các bước (nút ◀ ▶ đứng yên).
+ * Thêm 5/11/2026 (chỉ thêm): cảnh `duong_thang` — điện tích/điểm trên một đường thẳng ngang, x thật (cm) đo theo đề, phóng
+ * 16 đơn vị cho khoảng [x_min, x_max] (bài 35, 36 L11: hai điện tích, điểm cân bằng, E tổng hợp cùng phương). Điện tích
+ * vẽ vòng tròn có dấu +/−; tên điểm và nhãn `q` ở DƯỚI đường (phía trên để vectơ + nhãn vectơ, nên dùng `nhan_lech` đặt nhãn trên ngọn); bảng số mặc định "tren". Vectơ nhận thêm `dai` (độ dài
+ * vẽ, đơn vị hình) khi hai nhóm độ lớn khác bậc (E ở M ~10⁴, ở I ~10⁵) — không khai thì tỉ lệ như cũ.
  * Quy tắc: N8 + H3 (nhãn trên hình), H4 (nét 2–3 màu, thành phần nét đứt — không chỉ dựa vào màu), N5 (lớp theo bước), B4 (không chạy).
  */
 
@@ -263,6 +267,49 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
     });
     return { el: <g>{els}</g>, pts, box: [-9, -1.8, 9, top], day, can: [...Array.from({ length: 33 }, (_, i): P => [-8 + i / 2, 0.7]), ...nhanP] };
   }
+  if (nen.kieu === "duong_thang") {
+    // 5/11/2026: đường thẳng ngang (thanh nhựa nếu `thanh`), x thật → −8..8; điện tích và điểm có `buoc`/`den`
+    const K = 16 / (nen.x_max - nen.x_min), X = (x: number) => -8 + (x - nen.x_min) * K;
+    const pts: Record<string, P> = {}, els: ReactNode[] = [];
+    const vis = (b?: number, den?: number) => L >= (b ?? 0) && (den == null || L < den);
+    els.push(
+      nen.thanh ? (
+        <rect key="ln" x={-8.6} y={-0.14} width={17.2} height={0.28} rx={0.1} fill="currentColor" fillOpacity={0.12} stroke="currentColor" strokeWidth={0.07} />
+      ) : (
+        <line key="ln" x1={-8.6} y1={0} x2={8.6} y2={0} stroke="currentColor" strokeWidth={0.07} opacity={0.7} />
+      ),
+    );
+    (nen.dien_tich ?? []).forEach((q) => {
+      const p: P = [X(q.x), 0];
+      pts[q.ten] = p;
+      if (!vis(q.buoc, q.den)) return;
+      const col = q.dau === "+" ? MAU.cam : MAU.lam;
+      els.push(
+        <g key={`q${q.ten}`} className={q.buoc ? "cc-in" : undefined}>
+          <circle cx={p[0]} cy={0} r={0.5} fill="var(--cc-halo)" stroke={col} strokeWidth={0.12} />
+          <path d={q.dau === "+" ? `M${p[0] - 0.27} 0 H${p[0] + 0.27} M${p[0]} -0.27 V0.27` : `M${p[0] - 0.27} 0 H${p[0] + 0.27}`} stroke={col} strokeWidth={0.11} />
+          <Label p={[p[0], -1.05]}>{q.ten}</Label>
+          {q.q && (
+            <Label p={[p[0], -2.25]} fill={col}>
+              <Sub s={q.q} />
+            </Label>
+          )}
+        </g>,
+      );
+    });
+    (nen.diem ?? []).forEach((d) => {
+      const p: P = [X(d.x), 0];
+      pts[d.ten] = p;
+      if (!vis(d.buoc, d.den)) return;
+      els.push(
+        <g key={`p${d.ten}`} className={d.buoc ? "cc-in" : undefined}>
+          <circle cx={p[0]} cy={0} r={0.17} fill="currentColor" />
+          <Label p={[p[0] + (d.lech ?? 0), -1.05]}>{d.ten}</Label>
+        </g>,
+      );
+    });
+    return { el: <g>{els}</g>, pts, box: [-9, (nen.dien_tich ?? []).some((q) => q.q) ? -2.9 : -1.7, 9, 1.2], can: Array.from({ length: 37 }, (_, i): P => [-9 + i / 2, 0]) };
+  }
   if (nen.kieu === "song") {
     // Đ4 3/11: hai bờ sông nằm ngang (bờ dưới y = 0, bờ trên y = rong), nước chảy sang phải; điểm trên bờ + quỹ đạo nét đứt
     const Hs = nen.rong, x0 = Math.min(-4, ...nen.diem.map((d) => d.x - 2)), x1 = Math.max(6.5, ...nen.diem.map((d) => d.x + 2.5));
@@ -324,7 +371,7 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   const maxBy: Record<string, number> = {};
   vec.forEach((v) => (maxBy[nhom(v.kieu)] = Math.max(maxBy[nhom(v.kieu)] ?? 0, Math.abs(v.do_lon))));
   // a, v khác đơn vị với lực và với nhau → độ dài cố định (chỉ chỉ hướng), lực thì theo tỉ lệ độ lớn
-  const len = (v: (typeof vec)[number]) => (v.kieu === "dong_hoc" ? 3 : Math.max(nen.kieu === "thanh" ? 1.2 : 1.6, (Math.abs(v.do_lon) / (maxBy[nhom(v.kieu)] || 1)) * (ti_le ?? 5)));
+  const len = (v: (typeof vec)[number]) => v.dai ?? (v.kieu === "dong_hoc" ? 3 : Math.max(nen.kieu === "thanh" ? 1.2 : 1.6, (Math.abs(v.do_lon) / (maxBy[nhom(v.kieu)] || 1)) * (ti_le ?? 5)));
 
   const geo = vec.map((v) => {
     const d = dir(v.goc), o = add(pt(v.tu), v.lech ?? [0, 0]), u = dirv(d), e = add(o, u, len(v));
@@ -413,7 +460,7 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
   const bh = rows.length * lh;
   if (y1 - y0 < bh + 0.6) y0 = y1 - bh - 0.6;
   // "trong": góc trên phải của khung (mặt nghiêng để trống góc đó) — không nới bề ngang, hình to hơn ở 375px
-  const vt = bang_vi_tri ?? (nen.kieu === "mat_nghieng" || nen.kieu === "thanh" ? "trong" : "phai");
+  const vt = bang_vi_tri ?? (nen.kieu === "mat_nghieng" || nen.kieu === "thanh" ? "trong" : nen.kieu === "duong_thang" ? "tren" : "phai");
   // "trong": dời sang phải cho tới khi không đè nét/nhãn nào trong dải cao của bảng
   const band = obs.filter((p) => p[1] >= y1 - bh - 0.5 && p[1] <= y1 + 0.5);
   // "tren": nằm trên toàn bộ hình, canh phải — cho hình dẹt (mặt ngang) khỏi bị bảng làm rộng thêm
