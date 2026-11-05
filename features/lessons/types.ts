@@ -189,7 +189,7 @@ export type WorkedTool =
   | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][] }
   | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; canh?: SongDayCanh; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
-  | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
+  | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; hinh?: DoThiLop[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
   | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; hinh?: NangLuongLop[]; lop?: NangLuongLop[][] }
   | SoDoVectoTool
@@ -366,7 +366,8 @@ export type DoThiLop =
   | { loai: "doan"; tu: number; den: number; duong?: number; nhan?: string; vi?: "t" | "b"; nhan_xy?: [number, number]; het?: number }
   | { loai: "thuoc"; tu: number; den: number; y: number; nhan: string; het?: number }
   | { loai: "doc"; tu: [number, number]; den: [number, number]; nhan_x?: string; nhan_y?: string; het?: number }
-  | { loai: "dien_tich"; tu: number; den: number; duong?: number; nhan?: string; het?: number };
+  | { loai: "dien_tich"; tu: number; den: number; duong?: number; nhan?: string; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min" | "chu"; het?: number };
 /** Từ trường (Đ2): toạ độ hình 0..20 ngang, 0..11 dọc, gốc dưới trái (y hướng lên). Góc theo độ, 0° = sang phải. */
 /** `hang`: toạ độ dọc các đường sức (kiểu duong_suc), chừa chỗ dây/khung. */
 export type TuTruongNen = { kieu: "ra" | "vao" | "duong_suc"; goc?: number; nhan?: string; hang?: number[] };
@@ -385,7 +386,7 @@ export type TuTruongLop =
   | { loai: "vec"; x: number; y: number; goc: number; dai: number; nhan?: string; mau?: MauTT; dut?: boolean; trai?: boolean; het?: number }
   | { loai: "goc"; x: number; y: number; tu: number; den: number; nhan?: string; het?: number }
   | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: MauTT; het?: number }
-  | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; het?: number }
+  | { loai: "nam_cham"; x: number; y: number; dai: number; cao: number; n_trai?: boolean; dung?: boolean; het?: number }
   | { loai: "tran"; x1: number; x2: number; y: number; het?: number }
   | { loai: "khung"; x: number; y: number; rong: number; sau: [number, number]; ten?: [string, string, string, string]; B?: boolean; nhan?: string; het?: number };
 /** Năng lượng (Đ2): cảnh bên trái + cột cùng thang `max` bên phải. */

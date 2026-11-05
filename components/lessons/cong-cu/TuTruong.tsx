@@ -468,7 +468,8 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
       />
     );
     return (
-      <g className={cls}>
+      // `dung`: xoay 90° quanh tâm (nửa trái lên trên); chữ N/S quay ngược lại cho đứng thẳng
+      <g className={cls} transform={it.dung ? `rotate(90 ${it.x} ${Y(it.y)})` : undefined}>
         {P(
           [
             [x0, y0],
@@ -499,6 +500,7 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
         <rect x={x0} y={y0} width={it.dai / 2} height={it.cao} fill={CL[0]} stroke={UM_EDGE} strokeWidth={0.08} />
         <rect x={it.x} y={y0} width={it.dai / 2} height={it.cao} fill={CR[0]} stroke={UM_EDGE} strokeWidth={0.08} />
         <text
+          transform={it.dung ? `rotate(-90 ${x0 + it.dai / 4} ${Y(it.y)})` : undefined}
           x={x0 + it.dai / 4}
           y={Y(it.y) + it.cao * 0.18}
           fontSize={it.cao * 0.5}
@@ -509,6 +511,7 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
           {it.n_trai === false ? "S" : "N"}
         </text>
         <text
+          transform={it.dung ? `rotate(-90 ${x1 - it.dai / 4} ${Y(it.y)})` : undefined}
           x={x1 - it.dai / 4}
           y={Y(it.y) + it.cao * 0.18}
           fontSize={it.cao * 0.5}

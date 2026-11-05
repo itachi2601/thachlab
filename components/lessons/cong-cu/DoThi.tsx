@@ -11,13 +11,14 @@
  * Mục: diem {x,y,ten,vi}  ·  duong {duong}  ·  chieu {x,y,nhan_x?,nhan_y?} (nét đứt xuống hai trục)
  *  ·  ngang {y,nhan?,tu?,den?}  ·  dung {x,nhan?}  ·  doan {tu,den,duong?,nhan?,vi?,nhan_xy?} (tô đậm khúc đường theo x)
  *  ·  thuoc {tu,den,y,nhan}  ·  doc {tu:[x,y],den:[x,y],nhan_x?,nhan_y?} (tam giác độ dốc)
- *  ·  dien_tich {tu,den,duong?,nhan?}  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k.
+ *  ·  dien_tich {tu,den,duong?,nhan?}  ·  chu {x,y,text,a?,mau?} (chữ tự do theo toạ độ đồ thị)  ·  ghi {text}.
+ *  `hinh?: [mục…]` = vẽ sẵn theo đề (lớp 0), dùng khi hình đồ thị là hình dưới đề (`de: true`). `het: k` = ẩn từ khi xong bước k.
  */
 
 import { C_HL, C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { DoThiDiem, DoThiDuong, DoThiHam, DoThiLop, DoThiTruc, DoThiVi } from "@/features/lessons/types";
 
-type Props = { x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][]; layer: number };
+type Props = { x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; hinh?: DoThiLop[]; lop?: DoThiLop[][]; layer: number };
 
 // vùng vẽ (đơn vị hình): trái, phải, trên, dưới
 const PL = 2.9, PR = 20.6, PT = 1.3, PB = 10.4;
@@ -67,8 +68,9 @@ const VI: Record<DoThiVi, [number, number, "start" | "middle" | "end"]> = {
   br: [0.35, 1.35, "start"],
 };
 
-export default function DoThi({ x: ax, y: ay, duong = [], diem = [], lop, layer: L }: Props) {
-  const items = dangHien(lop, L);
+export default function DoThi({ x: ax, y: ay, duong = [], diem = [], hinh = [], lop, layer: L }: Props) {
+  // `hinh` = mục vẽ sẵn theo đề (lớp 0, "một dạng — một hình" 5/11/2026), cùng cú pháp mục của `lop`
+  const items = [...hinh.filter((h) => h.het == null || L < h.het), ...dangHien(lop, L)];
   const ghi = ghiMoiNhat(lop, L);
   const X = (v: number) => PL + ((v - ax.min) / (ax.max - ax.min)) * (PR - PL);
   const Y = (v: number) => PB - ((v - ay.min) / (ay.max - ay.min)) * (PB - PT);
@@ -198,6 +200,13 @@ export default function DoThi({ x: ax, y: ay, duong = [], diem = [], lop, layer:
       ))}
       {/* mục theo bước (trừ điểm — điểm vẽ sau cùng cho nổi) */}
       {items.map((it, k) => {
+        if (it.loai === "chu") {
+          return (
+            <Label key={k} x={X(it.x)} y={Y(it.y)} a={it.a ?? "middle"} size={0.95} fill={mauNet(it.mau)}>
+              {it.text}
+            </Label>
+          );
+        }
         if (it.loai === "doan") {
           const d = allDuong[it.duong ?? 0];
           if (!d) return null;
