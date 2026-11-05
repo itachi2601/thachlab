@@ -509,6 +509,163 @@
      "a) $E$ tổng hợp tại M: độ lớn và hướng",
      "b) $E$ tổng hợp tại I"
     ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "duong_thang",
+     "x_min": -1,
+     "x_max": 7.5,
+     "dien_tich": [
+      {
+       "ten": "A",
+       "x": 0,
+       "dau": "+",
+       "q": "q_1"
+      },
+      {
+       "ten": "B",
+       "x": 4,
+       "dau": "-",
+       "q": "q_2"
+      }
+     ],
+     "diem": [
+      {
+       "ten": "M",
+       "x": 6
+      },
+      {
+       "ten": "I",
+       "x": 2,
+       "buoc": 4
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "E_1",
+      "goc": "phai",
+      "do_lon": 2.25,
+      "dai": 1.0,
+      "tu": "M",
+      "buoc": 3,
+      "den": 4,
+      "nhan_lech": [
+       -0.75,
+       0.85
+      ],
+      "lech": [
+       0,
+       1.6
+      ]
+     },
+     {
+      "ten": "E_2",
+      "goc": "trai",
+      "do_lon": 9,
+      "dai": 4.0,
+      "tu": "M",
+      "buoc": 3,
+      "den": 4,
+      "nhan_lech": [
+       0.75,
+       0.85
+      ],
+      "mau": "lam",
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "E_M",
+      "goc": "trai",
+      "do_lon": 6.75,
+      "dai": 3.0,
+      "tu": "M",
+      "buoc": 4,
+      "den": 5,
+      "nhan_lech": [
+       -0.3,
+       0.95
+      ],
+      "mau": "cam",
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "E_1",
+      "goc": "phai",
+      "do_lon": 20.25,
+      "dai": 2.42,
+      "tu": "I",
+      "buoc": 5,
+      "lech": [
+       0,
+       1.9
+      ]
+     },
+     {
+      "ten": "E_2",
+      "goc": "phai",
+      "do_lon": 9,
+      "dai": 1.08,
+      "tu": "I",
+      "lech": [
+       0,
+       0.8
+      ],
+      "buoc": 5,
+      "mau": "lam"
+     },
+     {
+      "ten": "E_I",
+      "goc": "phai",
+      "do_lon": 29.25,
+      "dai": 3.5,
+      "tu": "I",
+      "lech": [
+       0,
+       3.0
+      ],
+      "buoc": 5,
+      "mau": "cam"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "4 cm"
+     },
+     {
+      "a": "B",
+      "b": "M",
+      "text": "2 cm"
+     },
+     {
+      "a": "A",
+      "b": "M",
+      "text": "AM = 6 cm",
+      "buoc": 1
+     }
+    ],
+    "bang": [
+     {
+      "text": "E_M = 6,75·10⁴ V/m",
+      "buoc": 4,
+      "mau": "cam",
+      "den": 5
+     },
+     {
+      "text": "E_I = 2,925·10⁵ V/m",
+      "buoc": 5,
+      "mau": "cam"
+     }
+    ]
    }
   },
   {

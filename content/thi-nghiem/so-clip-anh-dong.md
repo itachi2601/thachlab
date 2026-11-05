@@ -5,8 +5,8 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 
 ## Chặng B — L10 Động lực học (lô 30/10/2026, ưu tiên theo lịch: 10L3/10L4 đã tới Tổng hợp lực, tiếp Newton → Trọng lực–lực căng → … )
 
-- l10-trong-luc-luc-cang · tn-l10-trong-luc-luc-cang-02 · clip trongluc2 · đã soát, đã tải (thầy duyệt 30/10; chưa chèn: bài có commit 30/10 sáng, chờ đủ 24 h) · 30/10/2026 ·
-- l10-trong-luc-luc-cang · tn-l10-trong-luc-luc-cang-03 · clip trongluc3 · đã soát, lực kế vẽ lại theo mẫu trongluc2, tải bản -2 (thầy duyệt 30/10; chưa chèn: bài có commit 30/10 sáng, chờ đủ 24 h) · 30/10/2026 ·
+- l10-trong-luc-luc-cang · tn-l10-trong-luc-luc-cang-02 · clip trongluc2 · đã soát, đã tải (thầy duyệt 30/10; đã chèn repo + khung 5/11; đã đăng DB 5/11 ~10h, item 120) · 30/10/2026 ·
+- l10-trong-luc-luc-cang · tn-l10-trong-luc-luc-cang-03 · clip trongluc3 · đã soát, lực kế vẽ lại theo mẫu trongluc2, tải bản -2 (thầy duyệt 30/10; đã chèn repo + khung 5/11; đã đăng DB 5/11 ~10h, item 120) · 30/10/2026 ·
 - l10-giai-bai-toan-dong-luc-hoc · tn-l10-giaibt-dlh-01 · clip giaibtdlh1 · đã soát, đã tải + chèn repo (thầy duyệt 30/10, đã đăng DB 30/10) · 30/10/2026 ·
 - l10-giai-bai-toan-dong-luc-hoc · tn-l10-giaibt-dlh-02 · clip giaibtdlh2 · đã soát, đã tải + chèn repo (thầy duyệt 30/10, đã đăng DB 30/10) · 30/10/2026 ·
 - l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-01 · clip klr1 · đã soát, đã tải + chèn repo (thầy duyệt 30/10, đã đăng DB 30/10) · 30/10/2026 ·
