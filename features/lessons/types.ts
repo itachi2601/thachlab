@@ -300,7 +300,7 @@ export type TuTruongLop =
 export type NangLuongCanh =
   | { kieu: "lo_xo_ngang"; A: number; don_vi?: string; x?: number }
   | { kieu: "con_lac_don"; goc0: number; goc?: number }
-  | { kieu: "doc"; h: number; don_vi?: string; vi?: number }
+  | { kieu: "doc"; h: number; don_vi?: string; vi?: number; nhan_h?: string }
   | { kieu: "hop_he"; ten?: string };
 export type NangLuongLop =
   | LopGhi
