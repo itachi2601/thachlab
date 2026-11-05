@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Đo trực tiếp nhiều lần: trung bình, sai số tuyệt đối, tỉ đối, ghi kết quả",
    "topic": "Sai số tuyệt đối, sai số tỉ đối",
-   "problem_html": "<p>Một viên bi thép được cân bốn lần bằng cân điện tử có độ chia nhỏ nhất $0{,}01\\ \\text{g}$ (sai số dụng cụ lấy bằng một độ chia nhỏ nhất), số chỉ lần lượt: $5{,}38\\ \\text{g}$; $5{,}42\\ \\text{g}$; $5{,}38\\ \\text{g}$; $5{,}42\\ \\text{g}$.</p><p>a) Tính giá trị trung bình $\\overline{m}$. b) Tính sai số tuyệt đối $\\Delta m$ của phép đo. c) Tính sai số tỉ đối $\\delta m$. d) Ghi kết quả đo.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bốn số chỉ của cân điện tử trên trục số, từ 5,38 g đến 5,42 g\"><line x1=\"50.0\" y1=\"110.0\" x2=\"380.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M369.6,104.0 L380.0,110.0 L369.6,116.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60.0\" y1=\"104.0\" x2=\"60.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,36</text><line x1=\"135.0\" y1=\"104.0\" x2=\"135.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"135.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,38</text><line x1=\"210.0\" y1=\"104.0\" x2=\"210.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,40</text><line x1=\"285.0\" y1=\"104.0\" x2=\"285.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"285.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,42</text><line x1=\"360.0\" y1=\"104.0\" x2=\"360.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"360.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,44</text><text x=\"380\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">số chỉ cân (g)</text><circle cx=\"135.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"285.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"135.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"285.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"135.0\" cy=\"110.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"135.0;285.0;210.0;210.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"110.0;110.0;110.0;110.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm xanh đi qua bốn số chỉ lần lượt. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một viên bi thép được cân bốn lần bằng cân điện tử có độ chia nhỏ nhất $0{,}01\\ \\text{g}$ (sai số dụng cụ lấy bằng một độ chia nhỏ nhất), số chỉ lần lượt: $5{,}38\\ \\text{g}$; $5{,}42\\ \\text{g}$; $5{,}38\\ \\text{g}$; $5{,}42\\ \\text{g}$.</p><p>a) Tính giá trị trung bình $\\overline{m}$. b) Tính sai số tuyệt đối $\\Delta m$ của phép đo. c) Tính sai số tỉ đối $\\delta m$. d) Ghi kết quả đo.</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Trung bình:</strong> $\\overline{A} = \\dfrac{A_1 + \\dots + A_n}{n}$; <strong>độ lệch từng lần:</strong> $\\Delta A_i = |\\overline{A} - A_i|$.</li><li><strong>Sai số tuyệt đối:</strong> $\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$.</li><li><strong>Sai số tỉ đối:</strong> $\\delta A = \\dfrac{\\Delta A}{\\overline{A}} \\cdot 100\\,\\%$.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta A$ viết 1–2 chữ số có nghĩa; $\\overline{A}$ viết cùng bậc thập phân với $\\Delta A$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Giá trị trung bình</span></p><p>Cộng bốn số chỉ rồi chia cho $4$:</p>$$\\overline{m} = \\dfrac{5{,}38 + 5{,}42 + 5{,}38 + 5{,}42}{4} = \\dfrac{21{,}60}{4}$$<div class=\"bt-ans\">$$5{,}40\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Sai số tuyệt đối</span></p><p>Độ lệch mỗi lần đều bằng $0{,}02\\ \\text{g}$. Trung bình các độ lệch:</p>$$\\overline{\\Delta m} = \\dfrac{4 \\cdot 0{,}02}{4} = 0{,}02\\ \\text{g}$$<p>Cộng sai số dụng cụ:</p>$$\\Delta m = 0{,}02 + 0{,}01$$<div class=\"bt-ans\">$$0{,}03\\ \\text{g}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Sai số tỉ đối</span></p>$$\\delta m = \\dfrac{0{,}03}{5{,}40} \\cdot 100\\,\\% \\approx 0{,}56\\,\\%$$<div class=\"bt-ans\">$$0{,}56\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ghi kết quả</span></p><p>$\\Delta m = 0{,}03\\ \\text{g}$ (1 chữ số có nghĩa), dừng ở chữ số thập phân thứ hai nên $\\overline{m}$ cũng lấy hai chữ số thập phân:</p><div class=\"bt-ans\">$$m = (5{,}40 \\pm 0{,}03)\\ \\text{g}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $5{,}40\\ \\text{g}$</p><p>b) $0{,}03\\ \\text{g}$</p><p>c) $\\approx 0{,}56\\,\\%$</p><p>d) $m = (5{,}40 \\pm 0{,}03)\\ \\text{g}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều lần đo cùng một đại lượng</strong> → trung bình, độ lệch từng lần, cộng sai số dụng cụ, rồi $\\delta$ và cách ghi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Bốn số chỉ của cân điện tử trên trục số\"><line x1=\"50.0\" y1=\"110.0\" x2=\"380.0\" y2=\"110.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M369.6,104.0 L380.0,110.0 L369.6,116.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"60.0\" y1=\"104.0\" x2=\"60.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"60.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,36</text><line x1=\"135.0\" y1=\"104.0\" x2=\"135.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"135.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,38</text><line x1=\"210.0\" y1=\"104.0\" x2=\"210.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"210.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,40</text><line x1=\"285.0\" y1=\"104.0\" x2=\"285.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"285.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,42</text><line x1=\"360.0\" y1=\"104.0\" x2=\"360.0\" y2=\"116.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"360.0\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"600\" text-anchor=\"middle\">5,44</text><text x=\"380\" y=\"160\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">số chỉ cân (g)</text><text x=\"210\" y=\"66\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">bốn lần đo tản quanh một giá trị</text><circle cx=\"135.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"285.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"135.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"285.0\" cy=\"110.0\" r=\"5\" fill=\"#fb923c\"/></svg><figcaption>Dữ kiện: bốn số chỉ trong đề. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cân bốn lần ... $5{,}38$; $5{,}42$; $5{,}38$; $5{,}42$\"</td><td>Bốn số đo cùng đơn vị g</td><td>Giá trị trung bình của $n$ lần đo tính thế nào?</td></tr><tr><td>\"độ chia nhỏ nhất $0{,}01\\ \\text{g}$ (sai số dụng cụ ... một độ chia)\"</td><td>$\\Delta m_{\\text{dc}} = 0{,}01\\ \\text{g}$</td><td>⚠ Sai số tuyệt đối gồm hai phần: phần nào từ dao động giữa các lần đo, phần nào từ dụng cụ?</td></tr><tr><td>\"sai số tuyệt đối $\\Delta m$\"</td><td>Cần tìm $\\Delta m$</td><td>Độ lệch từng lần $|\\overline{m} - m_i|$ rồi lấy trung bình, cộng sai số dụng cụ.</td></tr><tr><td>\"sai số tỉ đối $\\delta m$ ... ghi kết quả\"</td><td>$\\delta = \\dfrac{\\Delta m}{\\overline{m}}$</td><td>Cần ghi cả sai số tỉ đối và khoảng $\\overline{m} \\pm \\Delta m$ với đúng chữ số có nghĩa.</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"cân bốn lần ... $5{,}38$; $5{,}42$; $5{,}38$; $5{,}42$\"</td><td>Bốn số đo cùng đơn vị g</td><td>Giá trị trung bình của $n$ lần đo tính thế nào?</td></tr><tr><td>\"độ chia nhỏ nhất $0{,}01\\ \\text{g}$ (sai số dụng cụ ... một độ chia)\"</td><td>$\\Delta m_{\\text{dc}} = 0{,}01\\ \\text{g}$</td><td>⚠ Sai số tuyệt đối gồm hai phần: phần nào từ dao động giữa các lần đo, phần nào từ dụng cụ?</td></tr><tr><td>\"sai số tuyệt đối $\\Delta m$\"</td><td>Cần tìm $\\Delta m$</td><td>Độ lệch từng lần $|\\overline{m} - m_i|$ rồi lấy trung bình, cộng sai số dụng cụ.</td></tr><tr><td>\"sai số tỉ đối $\\delta m$ ... ghi kết quả\"</td><td>$\\delta = \\dfrac{\\Delta m}{\\overline{m}}$</td><td>Cần ghi cả sai số tỉ đối và khoảng $\\overline{m} \\pm \\Delta m$ với đúng chữ số có nghĩa.</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>nhiều lần đo cùng một đại lượng</b> → <b>trung bình, độ lệch, cộng sai số dụng cụ</b>, rồi tỉ đối",
    "cap_do": 1,
    "fading": "mo_het",
@@ -82,15 +82,103 @@
      ],
      "loi_hay_gap": "Giữ nhiều chữ số thập phân hơn sai số cho phép, hoặc ghi thiếu sai số."
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 5,
+     "ten": "lần đo",
+     "vach": [
+      1,
+      2,
+      3,
+      4
+     ]
+    },
+    "y": {
+     "min": 5.34,
+     "max": 5.46,
+     "ten": "m (g)",
+     "luoi": 0.01
+    },
+    "diem": [
+     {
+      "x": 1,
+      "y": 5.38,
+      "ten": "5,38",
+      "vi": "r"
+     },
+     {
+      "x": 2,
+      "y": 5.42,
+      "ten": "5,42",
+      "vi": "r"
+     },
+     {
+      "x": 3,
+      "y": 5.38,
+      "ten": "5,38",
+      "vi": "r"
+     },
+     {
+      "x": 4,
+      "y": 5.42,
+      "ten": "5,42",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 5.4,
+       "nhan": "5,40"
+      },
+      {
+       "loai": "ghi",
+       "text": "TB = (5,38 + 5,42 + 5,38 + 5,42) : 4 = 5,40 g"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 5.37,
+       "nhan": "5,37"
+      },
+      {
+       "loai": "ngang",
+       "y": 5.43,
+       "nhan": "5,43"
+      },
+      {
+       "loai": "ghi",
+       "text": "Lệch TB 0,02 g + dụng cụ 0,01 g ⇒ Δm = 0,03 g"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "δm = 0,03 : 5,40 ≈ 0,56 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "m = (5,40 ± 0,03) g"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Trung bình · Đo gián tiếp (nhân, chia): cộng sai số tỉ đối rồi ghi kết quả",
    "topic": "Sai số tuyệt đối, sai số tỉ đối",
-   "problem_html": "<p>Một xe lăn chạy hết đường ray, quãng đường đo bằng thước cuộn được $s = (2{,}50 \\pm 0{,}01)\\ \\text{m}$; thời gian đo bằng đồng hồ bấm tay được $t = (4{,}2 \\pm 0{,}1)\\ \\text{s}$. Tốc độ trung bình của xe được tính bằng $v = \\dfrac{s}{t}$.</p><p>a) Tính $\\delta s$ và $\\delta t$. b) Tính sai số tỉ đối $\\delta v$. c) Tính $\\overline{v}$ và sai số tuyệt đối $\\Delta v$, rồi ghi kết quả $v = \\overline{v} \\pm \\Delta v$ với đúng chữ số có nghĩa.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Xe lăn chạy hết đường ray dài 2,50 m\"><line x1=\"40.0\" y1=\"130.0\" x2=\"380.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"50.0\" y1=\"124.0\" x2=\"50.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"370.0\" y1=\"124.0\" x2=\"370.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"50\" y1=\"80\" x2=\"370\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M363.0,75.9 L370.0,80.0 L363.0,84.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"370\" y1=\"80\" x2=\"50\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M57.0,84.1 L50.0,80.0 L57.0,75.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"70\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 2,50 m</text><g><rect x=\"30\" y=\"108\" width=\"40\" height=\"16\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"127\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"60\" cy=\"127\" r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;320 0\" dur=\"2.6s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"210\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t = 4,2 s (đồng hồ bấm tay)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy đều qua đường ray 2,50 m. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một xe lăn chạy hết đường ray, quãng đường đo bằng thước cuộn được $s = (2{,}50 \\pm 0{,}01)\\ \\text{m}$; thời gian đo bằng đồng hồ bấm tay được $t = (4{,}2 \\pm 0{,}1)\\ \\text{s}$. Tốc độ trung bình của xe được tính bằng $v = \\dfrac{s}{t}$.</p><p>a) Tính $\\delta s$ và $\\delta t$. b) Tính sai số tỉ đối $\\delta v$. c) Tính $\\overline{v}$ và sai số tuyệt đối $\\Delta v$, rồi ghi kết quả $v = \\overline{v} \\pm \\Delta v$ với đúng chữ số có nghĩa.</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tỉ đối của từng đại lượng:</strong> $\\delta X = \\dfrac{\\Delta X}{\\overline{X}} \\cdot 100\\,\\%$.</li><li><strong>Nhân, chia:</strong> $\\delta A = \\delta X + \\delta Y + \\delta Z$ (chia cũng cộng).</li><li><strong>Sai số tuyệt đối:</strong> $\\Delta A = \\overline{A} \\cdot \\dfrac{\\delta A}{100\\,\\%}$.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta A$ giữ 2 chữ số có nghĩa nếu chữ số đầu là $1$ hoặc $2$, còn lại giữ $1$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Sai số tỉ đối của s và t</span></p><p>Áp dụng $\\delta X = \\dfrac{\\Delta X}{\\overline{X}}$:</p>$$\\delta s = \\dfrac{0{,}01}{2{,}50} \\cdot 100\\,\\% = 0{,}4\\,\\%$$$$\\delta t = \\dfrac{0{,}1}{4{,}2} \\cdot 100\\,\\% \\approx 2{,}38\\,\\%$$<div class=\"bt-ans\">$$\\delta s = 0{,}4\\,\\%;\\ \\delta t \\approx 2{,}38\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Sai số tỉ đối của v</span></p><p>$v = \\dfrac{s}{t}$ là phép chia, cộng sai số tỉ đối:</p>$$\\delta v = \\delta s + \\delta t = 0{,}4 + 2{,}38$$<div class=\"bt-ans\">$$\\delta v \\approx 2{,}78\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Giá trị và sai số tuyệt đối</span></p>$$\\overline{v} = \\dfrac{2{,}50}{4{,}2} \\approx 0{,}595\\ \\text{m/s}$$$$\\Delta v = \\overline{v} \\cdot \\dfrac{\\delta v}{100\\,\\%} = 0{,}595 \\cdot 0{,}0278 \\approx 0{,}0166\\ \\text{m/s}$$<div class=\"bt-ans\">$$\\Delta v \\approx 0{,}017\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ghi kết quả</span></p><p>Chữ số đầu của $\\Delta v$ là $1$, nên giữ hai chữ số có nghĩa: $0{,}017$. $\\overline{v}$ lấy đến chữ số thập phân thứ ba:</p><div class=\"bt-ans\">$$v = (0{,}595 \\pm 0{,}017)\\ \\text{m/s}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\delta s = 0{,}4\\,\\%$; $\\delta t \\approx 2{,}38\\,\\%$</p><p>b) $\\delta v \\approx 2{,}78\\,\\%$</p><p>c) $v = (0{,}595 \\pm 0{,}017)\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>kết quả dạng $X \\pm \\Delta X$ và công thức nhân chia</strong> → đổi sang $\\delta$, cộng lại, đổi ngược về $\\Delta$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Xe lăn và đường ray cần đo tốc độ\"><line x1=\"40.0\" y1=\"130.0\" x2=\"380.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"50.0\" y1=\"124.0\" x2=\"50.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"370.0\" y1=\"124.0\" x2=\"370.0\" y2=\"136.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"50\" y1=\"80\" x2=\"370\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M363.0,75.9 L370.0,80.0 L363.0,84.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"370\" y1=\"80\" x2=\"50\" y2=\"80\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M57.0,84.1 L50.0,80.0 L57.0,75.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"210\" y=\"70\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 2,50 m</text><rect x=\"30\" y=\"108\" width=\"40\" height=\"16\" rx=\"3\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"40\" cy=\"127\" r=\"4.5\" fill=\"currentColor\"/><circle cx=\"60\" cy=\"127\" r=\"4.5\" fill=\"currentColor\"/><text x=\"210\" y=\"168\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">v = ? (tính từ s và t)</text></svg><figcaption>Dữ kiện: s và t đo trực tiếp. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$s = (2{,}50 \\pm 0{,}01)\\ \\text{m}$\"</td><td>$\\Delta s = 0{,}01\\ \\text{m}$</td><td>Sai số tỉ đối của $s$ tính thế nào?</td></tr><tr><td>\"$t = (4{,}2 \\pm 0{,}1)\\ \\text{s}$\"</td><td>$\\Delta t = 0{,}1\\ \\text{s}$</td><td>Sai số tỉ đối của $t$ tính thế nào?</td></tr><tr><td>\"$v = \\dfrac{s}{t}$\"</td><td>Một thương</td><td>⚠ Phép chia thì cộng sai số tuyệt đối hay sai số tỉ đối?</td></tr><tr><td>\"ghi kết quả ... đúng chữ số có nghĩa\"</td><td>Cần $\\overline{v}$ và $\\Delta v$</td><td>$\\Delta v$ giữ mấy chữ số có nghĩa? $\\overline{v}$ lấy đến chữ số thập phân nào?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$s = (2{,}50 \\pm 0{,}01)\\ \\text{m}$\"</td><td>$\\Delta s = 0{,}01\\ \\text{m}$</td><td>Sai số tỉ đối của $s$ tính thế nào?</td></tr><tr><td>\"$t = (4{,}2 \\pm 0{,}1)\\ \\text{s}$\"</td><td>$\\Delta t = 0{,}1\\ \\text{s}$</td><td>Sai số tỉ đối của $t$ tính thế nào?</td></tr><tr><td>\"$v = \\dfrac{s}{t}$\"</td><td>Một thương</td><td>⚠ Phép chia thì cộng sai số tuyệt đối hay sai số tỉ đối?</td></tr><tr><td>\"ghi kết quả ... đúng chữ số có nghĩa\"</td><td>Cần $\\overline{v}$ và $\\Delta v$</td><td>$\\Delta v$ giữ mấy chữ số có nghĩa? $\\overline{v}$ lấy đến chữ số thập phân nào?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>kết quả dạng X ± ΔX và công thức nhân chia</b> → đổi sang <b>sai số tỉ đối</b>, cộng, rồi đổi ngược",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -197,9 +285,9 @@
    "form": "bai_tap",
    "label": "Dạng 3 · Khó · Gián tiếp có số mũ: gộp phép đo nhiều lần với phép đo một lần, tìm nguồn sai số lớn nhất",
    "topic": "Sai số tuyệt đối, sai số tỉ đối",
-   "problem_html": "<p>Một vật trượt không vận tốc đầu trên mặt phẳng nghiêng dài $s = (1{,}20 \\pm 0{,}01)\\ \\text{m}$. Thời gian trượt $t$ đo năm lần bằng đồng hồ số (độ chia nhỏ nhất $0{,}01\\ \\text{s}$, sai số dụng cụ lấy bằng một độ chia): $1{,}54\\ \\text{s}$; $1{,}48\\ \\text{s}$; $1{,}48\\ \\text{s}$; $1{,}51\\ \\text{s}$; $1{,}49\\ \\text{s}$. Gia tốc tính theo $a = \\dfrac{2s}{t^{2}}$.</p><p>a) Tính $\\overline{t}$ và $\\Delta t$ của phép đo thời gian. b) Tính $\\delta s$, $\\delta t$ rồi $\\delta a$. c) Tính $\\overline{a}$, $\\Delta a$ và ghi kết quả $a = \\overline{a} \\pm \\Delta a$ đúng chữ số có nghĩa. d) Đại lượng nào đóng góp nhiều nhất vào $\\delta a$?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Vật trượt từ nghỉ xuống mặt phẳng nghiêng dài 1,20 m, chuyển động nhanh dần\"><line x1=\"60.0\" y1=\"150.0\" x2=\"360.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><line x1=\"60.0\" y1=\"150.0\" x2=\"360.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"52\" y1=\"136\" x2=\"352\" y2=\"56\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M344.2,53.9 L352.0,56.0 L346.3,61.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"352\" y1=\"56\" x2=\"52\" y2=\"136\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M59.8,138.1 L52.0,136.0 L57.7,130.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 1,20 m</text><circle cx=\"360.0\" cy=\"62.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"360.0;359.5;358.1;355.7;352.3;348.0;342.7;336.5;329.3;321.1;312.0;301.9;290.9;278.9;265.9;252.0;237.1;221.3;204.5;186.7;168.0;148.3;127.7;106.1;83.5;60.0\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"62.0;62.1;62.5;63.2;64.0;65.2;66.6;68.3;70.2;72.4;74.8;77.5;80.4;83.6;87.1;90.8;94.8;99.0;103.5;108.2;113.2;118.4;124.0;129.7;135.7;142.0\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"300\" y=\"170\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t ≈ 1,50 s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vật chuyển động nhanh dần đều từ nghỉ, quãng đường tỉ lệ với t². Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một vật trượt không vận tốc đầu trên mặt phẳng nghiêng dài $s = (1{,}20 \\pm 0{,}01)\\ \\text{m}$. Thời gian trượt $t$ đo năm lần bằng đồng hồ số (độ chia nhỏ nhất $0{,}01\\ \\text{s}$, sai số dụng cụ lấy bằng một độ chia): $1{,}54\\ \\text{s}$; $1{,}48\\ \\text{s}$; $1{,}48\\ \\text{s}$; $1{,}51\\ \\text{s}$; $1{,}49\\ \\text{s}$. Gia tốc tính theo $a = \\dfrac{2s}{t^{2}}$.</p><p>a) Tính $\\overline{t}$ và $\\Delta t$ của phép đo thời gian. b) Tính $\\delta s$, $\\delta t$ rồi $\\delta a$. c) Tính $\\overline{a}$, $\\Delta a$ và ghi kết quả $a = \\overline{a} \\pm \\Delta a$ đúng chữ số có nghĩa. d) Đại lượng nào đóng góp nhiều nhất vào $\\delta a$?</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Đo nhiều lần:</strong> $\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$.</li><li><strong>Số mũ:</strong> $A = X^{n}\\dfrac{Y^{m}}{Z^{k}}$ thì $\\delta A = n\\,\\delta X + m\\,\\delta Y + k\\,\\delta Z$.</li><li><strong>Hệ số $2$:</strong> hằng số chính xác nên không đóng góp vào sai số.</li><li>⚠ <strong>Điều kiện:</strong> chỉ cộng các $\\delta$ khi các phép đo độc lập; giữ chữ số có nghĩa theo $\\Delta a$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Trung bình và sai số của t</span></p><p>Giá trị trung bình:</p>$$\\overline{t} = \\dfrac{1{,}54 + 1{,}48 + 1{,}48 + 1{,}51 + 1{,}49}{5} = \\dfrac{7{,}50}{5} = 1{,}50\\ \\text{s}$$<p>Độ lệch từng lần: $0{,}04;\\ 0{,}02;\\ 0{,}02;\\ 0{,}01;\\ 0{,}01\\ \\text{s}$. Trung bình độ lệch: $\\dfrac{0{,}10}{5} = 0{,}02\\ \\text{s}$.</p>$$\\Delta t = 0{,}02 + 0{,}01$$<div class=\"bt-ans\">$$0{,}03\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Sai số tỉ đối của s, t</span></p>$$\\delta s = \\dfrac{0{,}01}{1{,}20} \\cdot 100\\,\\% \\approx 0{,}83\\,\\%$$$$\\delta t = \\dfrac{0{,}03}{1{,}50} \\cdot 100\\,\\% = 2{,}0\\,\\%$$<div class=\"bt-ans\">$$\\delta s \\approx 0{,}83\\,\\%;\\ \\delta t = 2{,}0\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Sai số tỉ đối của a</span></p><p>$t$ có số mũ $2$; hệ số $2$ là hằng số chính xác:</p>$$\\delta a = \\delta s + 2\\,\\delta t = 0{,}83 + 2 \\cdot 2{,}0$$<div class=\"bt-ans\">$$\\delta a \\approx 4{,}8\\,\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Giá trị và sai số tuyệt đối của a</span></p>$$\\overline{a} = \\dfrac{2 \\cdot 1{,}20}{1{,}50^{2}} \\approx 1{,}07\\ \\text{m/s}^2$$$$\\Delta a = 1{,}067 \\cdot 0{,}048 \\approx 0{,}051\\ \\text{m/s}^2$$<p>Chữ số đầu của $\\Delta a$ là $5$: giữ một chữ số có nghĩa, $0{,}05$; $\\overline{a}$ lấy hai chữ số thập phân:</p><div class=\"bt-ans\">$$a = (1{,}07 \\pm 0{,}05)\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Nguồn sai số lớn nhất</span></p><p>Phần đóng góp của $t$ là $2\\,\\delta t = 4{,}0\\,\\%$; của $s$ chỉ $0{,}83\\,\\%$.</p><div class=\"bt-ans\"><p>Thời gian $t$ đóng góp nhiều nhất: muốn giảm sai số cần cải thiện phép đo thời gian.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\overline{t} = 1{,}50\\ \\text{s}$; $\\Delta t = 0{,}03\\ \\text{s}$</p><p>b) $\\delta s \\approx 0{,}83\\,\\%$; $\\delta t = 2{,}0\\,\\%$; $\\delta a \\approx 4{,}8\\,\\%$</p><p>c) $a = (1{,}07 \\pm 0{,}05)\\ \\text{m/s}^2$</p><p>d) Thời gian $t$</p></div><p class=\"bt-note\">Nhận dạng: đề <strong>trộn phép đo nhiều lần, đo một lần, có số mũ</strong> → tính $\\Delta$ từng đại lượng, đổi sang $\\delta$, nhân số mũ rồi cộng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Mặt phẳng nghiêng dài 1,20 m, đo thời gian trượt\"><line x1=\"60.0\" y1=\"150.0\" x2=\"360.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><line x1=\"60.0\" y1=\"150.0\" x2=\"360.0\" y2=\"150.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"52\" y1=\"136\" x2=\"352\" y2=\"56\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M344.2,53.9 L352.0,56.0 L346.3,61.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"352\" y1=\"56\" x2=\"52\" y2=\"136\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M59.8,138.1 L52.0,136.0 L57.7,130.3\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"190\" y=\"92\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">s = 1,20 m</text><text x=\"300\" y=\"170\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">a = ? (từ s và t)</text></svg><figcaption>Dữ kiện: s đo một lần, t đo năm lần. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$s = (1{,}20 \\pm 0{,}01)\\ \\text{m}$\"</td><td>$\\Delta s = 0{,}01\\ \\text{m}$</td><td>Đo một lần: sai số tuyệt đối là bao nhiêu và $\\delta s$ tính thế nào?</td></tr><tr><td>\"đo năm lần ... đồng hồ số\"</td><td>Năm số đo $t$</td><td>⚠ Đo nhiều lần: $\\Delta t$ gồm trung bình các độ lệch cộng sai số dụng cụ.</td></tr><tr><td>\"$a = \\dfrac{2s}{t^{2}}$\"</td><td>Có tỉ số và số mũ 2</td><td>$t$ có số mũ 2 thì $\\delta t$ vào $\\delta a$ với hệ số bao nhiêu? Số $2$ có sai số không?</td></tr><tr><td>\"đại lượng nào đóng góp nhiều nhất\"</td><td>So hai thành phần của $\\delta a$</td><td>So $\\delta s$ với phần đóng góp của $t$ trong tổng.</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$s = (1{,}20 \\pm 0{,}01)\\ \\text{m}$\"</td><td>$\\Delta s = 0{,}01\\ \\text{m}$</td><td>Đo một lần: sai số tuyệt đối là bao nhiêu và $\\delta s$ tính thế nào?</td></tr><tr><td>\"đo năm lần ... đồng hồ số\"</td><td>Năm số đo $t$</td><td>⚠ Đo nhiều lần: $\\Delta t$ gồm trung bình các độ lệch cộng sai số dụng cụ.</td></tr><tr><td>\"$a = \\dfrac{2s}{t^{2}}$\"</td><td>Có tỉ số và số mũ 2</td><td>$t$ có số mũ 2 thì $\\delta t$ vào $\\delta a$ với hệ số bao nhiêu? Số $2$ có sai số không?</td></tr><tr><td>\"đại lượng nào đóng góp nhiều nhất\"</td><td>So hai thành phần của $\\delta a$</td><td>So $\\delta s$ với phần đóng góp của $t$ trong tổng.</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>phép đo trộn nhiều lần, một lần, có số mũ</b> → tính <b>Δ</b>, đổi sang <b>δ</b>, nhân số mũ, cộng",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -369,7 +457,108 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 6,
+     "ten": "lần đo",
+     "vach": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ]
+    },
+    "y": {
+     "min": 1.44,
+     "max": 1.58,
+     "ten": "t (s)",
+     "luoi": 0.01
+    },
+    "diem": [
+     {
+      "x": 1,
+      "y": 1.54,
+      "ten": "1,54",
+      "vi": "t"
+     },
+     {
+      "x": 2,
+      "y": 1.48,
+      "ten": "1,48",
+      "vi": "b"
+     },
+     {
+      "x": 3,
+      "y": 1.48,
+      "ten": "1,48",
+      "vi": "b"
+     },
+     {
+      "x": 4,
+      "y": 1.51,
+      "ten": "1,51",
+      "vi": "r"
+     },
+     {
+      "x": 5,
+      "y": 1.49,
+      "ten": "1,49",
+      "vi": "r"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 1.5,
+       "nhan": "1,50"
+      },
+      {
+       "loai": "ngang",
+       "y": 1.47,
+       "nhan": "1,47"
+      },
+      {
+       "loai": "ngang",
+       "y": 1.53,
+       "nhan": "1,53"
+      },
+      {
+       "loai": "ghi",
+       "text": "TB 1,50 s · Δt = 0,02 + 0,01 = 0,03 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "δt = 0,03 : 1,50 = 2,0 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "δa = δs + 2δt = 0,83 % + 4,0 % ≈ 4,8 %"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a = (1,07 ± 0,05) m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Phần của t (4,0 %) lớn hơn nhiều phần của s (0,83 %)"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
