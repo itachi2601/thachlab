@@ -13,7 +13,7 @@
 import { C_HL, C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { VongTronLop } from "@/features/lessons/types";
 
-type Props = { A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][]; layer: number };
+type Props = { A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][]; layer: number };
 
 const R = 4.2;
 const P = (g: number, r = R) => [r * Math.cos(g * Math.PI), -r * Math.sin(g * Math.PI)] as const;
@@ -32,7 +32,7 @@ function cungPath(tu: number, den: number) {
   return { d: "M" + pts.join(" L"), end };
 }
 
-export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, lop, layer: L }: Props) {
+export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, an_vong, lop, layer: L }: Props) {
   const items = dangHien(lop, L);
   const ghi = ghiMoiNhat(lop, L);
   const X = (x: number) => (x / A) * R;
@@ -40,11 +40,11 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
   return (
     <svg viewBox={`-10 ${top} 20 ${bot - top}`} className="cc-fig" role="img" aria-label={`Vòng tròn pha, biên độ ${fmt(A)} ${don_vi}`}>
       {/* trục x và vòng tròn — nhãn số đặt phía trong vòng để cung xoắn bên ngoài không đè */}
-      <circle cx={0} cy={0} r={R} fill="none" stroke="currentColor" strokeWidth={0.08} opacity={0.7} />
+      {!an_vong && <circle cx={0} cy={0} r={R} fill="none" stroke="currentColor" strokeWidth={0.08} opacity={0.7} />}
       <line x1={-R - 1.4} y1={0} x2={R + 1.8} y2={0} stroke="currentColor" strokeWidth={0.07} />
       <Chevron x={R + 1.8} y={0} ang={0} len={0.45} w={0.07} />
       <Label x={R + 1.8} y={-0.45} size={1}>x</Label>
-      {[-1, 1].map((s) => (
+      {(an_vong ? [] : [-1, 1]).map((s) => (
         <g key={s}>
           <line x1={s * R} y1={-0.2} x2={s * R} y2={0.2} stroke="currentColor" strokeWidth={0.07} />
           <Label x={s * R - s * 0.3} y={1.05} a={s < 0 ? "start" : "end"} size={0.95}>{fmt(s * A)}</Label>
@@ -67,6 +67,16 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
             <g key={k} className="cc-in">
               <path d={d} stroke={C_MAX} strokeWidth={0.13} fill="none" strokeLinecap="round" />
               <Chevron x={end.x} y={end.y} ang={end.ang} color={C_MAX} w={0.13} len={0.5} />
+            </g>
+          );
+        }
+        if (it.loai === "vong") {
+          // an_vong: vòng bán kính r (cùng đơn vị với A) hiện theo bước; nhãn "r = …" ghi ngay dưới đáy vòng (hai vòng lồng nhau thì nhãn không chồng)
+          const rx = X(it.r);
+          return (
+            <g key={k} className="cc-in">
+              <circle cx={0} cy={0} r={rx} fill="none" stroke="currentColor" strokeWidth={0.09} strokeDasharray={it.dut ? "0.35 0.25" : undefined} opacity={0.85} />
+              {it.nhan && <Label x={0} y={rx + 0.95} a="middle" size={0.95}>{it.nhan}</Label>}
             </g>
           );
         }
@@ -97,7 +107,7 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
         // `r` (cùng đơn vị với A): điểm nằm trong vòng, cách tâm r (vd. điểm N giữa bán kính); mặc định ở mép vòng
         const rr = it.r != null ? (it.r / A) * R : R;
         const [x, y] = P(it.goc, rr), [lx, ly] = P(it.goc, rr + 1.25), vx = -Math.sin(it.goc * Math.PI);
-        const arc = it.chieu ? cungArrow(it.goc) : null;
+        const arc = it.chieu ? cungArrow(it.goc, rr + 0.55) : null;
         return (
           <g key={`d${k}`} className="cc-in">
             {it.r != null && <line x1={0} y1={0} x2={P(it.goc, R)[0]} y2={P(it.goc, R)[1]} stroke="currentColor" strokeWidth={0.06} opacity={0.5} />}
@@ -135,12 +145,12 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
 }
 
 /** Mũi tên cong nhỏ chỉ chiều quay (ngược kim đồng hồ) ngay sau điểm. */
-function cungArrow(g: number) {
+function cungArrow(g: number, rad = R + 0.55) {
   const pts: string[] = [];
   let end = { x: 0, y: 0, ang: 0 };
   for (let i = 0; i <= 8; i++) {
     const gg = g + 0.04 + (0.16 * i) / 8;
-    const [x, y] = P(gg, R + 0.55);
+    const [x, y] = P(gg, rad);
     pts.push(`${x.toFixed(3)} ${y.toFixed(3)}`);
     if (i === 8) end = { x, y, ang: Math.atan2(-Math.cos(gg * Math.PI), -Math.sin(gg * Math.PI)) };
   }

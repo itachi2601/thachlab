@@ -144,7 +144,7 @@ export type WorkedTomDe = { cho: string[]; tim: string[] };
 
 export type WorkedTool =
   | { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day" }
-  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][] }
+  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][] }
   | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
@@ -246,6 +246,7 @@ export type VongTronLop =
   | LopGhi
   | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
+  | { loai: "vong"; r: number; nhan?: string; dut?: boolean; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };
 export type SongDayLop =
   | LopGhi
