@@ -38,16 +38,16 @@
      "loi_hay_gap": "Lấy $S_{Cu}/S_{Al}=\\rho_{Al}/\\rho_{Cu}$ (ngược) nên ra $S_{Cu}$ lớn hơn $S_{Al}$ dù đồng dẫn điện tốt hơn.",
      "chon_buoc_ke": [
       {
-       "text": "Cùng $l$ và $R$ nên $S$ tỉ lệ thuận với $\\rho$ : $\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Cu}}{\\rho_{Al}}$",
+       "text": "Cùng $l$, $R$ nên $S$ tỉ lệ thuận với $\\rho$ : $\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Cu}}{\\rho_{Al}}$",
        "dung": true
       },
       {
-       "text": "$\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Al}}{\\rho_{Cu}}$",
+       "text": "Cùng $l$ và $R$ nên $S$ tỉ lệ nghịch với $\\rho$ : $\\dfrac{S_{Cu}}{S_{Al}}=\\dfrac{\\rho_{Al}}{\\rho_{Cu}}$",
        "dung": false,
        "vi_sao": "Từ $R=\\rho l/S$ với $R$, $l$ không đổi thì $S\\propto\\rho$ chứ không tỉ lệ nghịch ; đồng có $\\rho$ nhỏ hơn nên cần $S$ nhỏ hơn."
       },
       {
-       "text": "Cùng $R$ nên cùng tiết diện",
+       "text": "Cùng $R$ nên hai dây cùng tiết diện, không cần xét $\\rho$",
        "dung": false,
        "vi_sao": "$R$ còn phụ thuộc $\\rho$ ; hai vật liệu khác nhau thì cùng $R$ vẫn cần tiết diện khác nhau."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "$d=\\sqrt{\\dfrac S\\pi}$",
+       "text": "$d=\\sqrt{\\dfrac S\\pi}$ từ $S=\\pi r^2$ luôn",
        "dung": false,
        "vi_sao": "Đó là bán kính $r$ (từ $S=\\pi r^2$) ; đường kính gấp đôi."
       },
       {
-       "text": "$d=\\dfrac{S}{\\pi}$",
+       "text": "$d=\\dfrac{S}{\\pi}$ từ $S=\\pi d$ luôn",
        "dung": false,
        "vi_sao": "$S$ tỉ lệ với $d^2$ chứ không tỉ lệ với $d$."
       }
@@ -86,16 +86,16 @@
      "loi_hay_gap": "Đảo thành $I=R/U$, hoặc nhân $U$ với $R$ thay vì chia.",
      "chon_buoc_ke": [
       {
-       "text": "$I=\\dfrac UR$ với $R$ vừa tính ở bước đầu",
+       "text": "$I=\\dfrac UR$ với $R$ ở bước đầu",
        "dung": true
       },
       {
-       "text": "$I=U\\cdot R$",
+       "text": "$I=U\\cdot R$ vì $I$ tăng khi $R$ tăng",
        "dung": false,
        "vi_sao": "Tích $\\text{V}\\cdot\\Omega$ không phải ampe ; $U$ tăng thì $I$ tăng nhưng $R$ tăng thì $I$ giảm."
       },
       {
-       "text": "$I=\\dfrac RU$",
+       "text": "$I=\\dfrac RU$ vì $R$ lớn thì $I$ lớn",
        "dung": false,
        "vi_sao": "Đảo ngược : $I$ phải tăng khi $U$ tăng."
       }
@@ -150,16 +150,16 @@
      "loi_hay_gap": "Cộng ba điện trở như nối tiếp ($90\\ \\Omega$), hoặc cộng nghịch đảo nhưng quên lấy nghịch đảo lần nữa.",
      "chon_buoc_ke": [
       {
-       "text": "$R_{td}=\\dfrac{R_0}{3}$ vì ba nhánh giống nhau",
+       "text": "$R_{td}=\\dfrac{R_0}{3}$ vì ba nhánh",
        "dung": true
       },
       {
-       "text": "$R_{td}=3R_0$",
+       "text": "$R_{td}=3R_0$ vì ba nhánh cộng",
        "dung": false,
        "vi_sao": "Đó là nối tiếp ; song song nhiều nhánh làm điện trở chung nhỏ hơn."
       },
       {
-       "text": "$R_{td}=R_0$",
+       "text": "$R_{td}=R_0$ vì ba nhánh y hệt",
        "dung": false,
        "vi_sao": "Thêm nhánh song song luôn làm điện trở chung giảm."
       }
@@ -174,16 +174,16 @@
      "loi_hay_gap": "Chia $6\\ \\text{V}$ cho điện trở của <em>một</em> đoạn hay của cả dây $90\\ \\Omega$.",
      "chon_buoc_ke": [
       {
-       "text": "$I=\\dfrac U{R_{td}}$ với $R_{td}$ của cả bộ",
+       "text": "$I=\\dfrac U{R_{td}}$ với $R_{td}$ cả bộ",
        "dung": true
       },
       {
-       "text": "$I=\\dfrac U{R_0}$",
+       "text": "$I=\\dfrac U{R_0}$ với $R_0$ của một đoạn",
        "dung": false,
        "vi_sao": "Đó là dòng qua <em>một</em> đoạn, chưa phải dòng mạch chính."
       },
       {
-       "text": "$I=\\dfrac UR$ với $R=90\\ \\Omega$",
+       "text": "$I=\\dfrac UR$ với $R=90\\ \\Omega$ như lúc đầu",
        "dung": false,
        "vi_sao": "$90\\ \\Omega$ là dây trước khi cắt ; mạch bây giờ là bộ song song."
       }
@@ -198,16 +198,16 @@
      "loi_hay_gap": "Lấy mỗi đoạn có cả $0{,}6\\ \\text{A}$ (quên chia cho $3$ nhánh).",
      "chon_buoc_ke": [
       {
-       "text": "Ba đoạn giống nhau, chung $U$ : $I_0=\\dfrac U{R_0}$",
+       "text": "Ba đoạn chung $U$ : $I_0=\\dfrac U{R_0}$",
        "dung": true
       },
       {
-       "text": "$I_0=3I$",
+       "text": "Ba đoạn chung $I$ : $I_0=3I$",
        "dung": false,
        "vi_sao": "Dòng mạch chính là <em>tổng</em> ba nhánh nên mỗi nhánh nhỏ hơn, không lớn hơn."
       },
       {
-       "text": "$I_0=\\dfrac U{R_{td}}$",
+       "text": "Ba đoạn chung $U$ : $I_0=\\dfrac U{R_{td}}$",
        "dung": false,
        "vi_sao": "Đó là dòng mạch chính."
       }
@@ -222,16 +222,16 @@
      "loi_hay_gap": "Dùng $R_{td}=R/n$ (quên một lần chia nữa khi ghép song song) nên ra $n=100$.",
      "chon_buoc_ke": [
       {
-       "text": "$R_{td}=\\dfrac R{n^2}$ rồi giải $n^2=\\dfrac R{R_{td}}$",
+       "text": "$R_{td}=\\dfrac R{n^2}$ rồi giải $n$",
        "dung": true
       },
       {
-       "text": "$R_{td}=\\dfrac Rn$",
+       "text": "$R_{td}=\\dfrac Rn$ rồi giải ra $n$",
        "dung": false,
        "vi_sao": "$R/n$ mới là điện trở <em>mỗi đoạn</em> ; ghép song song $n$ đoạn còn chia thêm $n$ lần."
       },
       {
-       "text": "$R_{td}=nR$",
+       "text": "$R_{td}=nR$ vì nối tiếp",
        "dung": false,
        "vi_sao": "Cắt dây rồi ghép nối tiếp chỉ được lại $R$, không phải $nR$."
       }
@@ -313,12 +313,12 @@
        "dung": true
       },
       {
-       "text": "$R_3=16R_1$",
+       "text": "$R_3=16R_1$ vì tỉ số $16$ tính từ $R_1$",
        "dung": false,
        "vi_sao": "Tỉ số $16$ là so với $R_2$ (đã kéo lần một), không phải so với $R_1$."
       },
       {
-       "text": "$\\dfrac{R_3}{R_2}=\\dfrac{l_3}{l_2}$",
+       "text": "$\\dfrac{R_3}{R_2}=\\dfrac{l_3}{l_2}$ vì $S$ không đổi khi kéo",
        "dung": false,
        "vi_sao": "Kéo dãn thì $S$ đổi nên phải bình phương tỉ số chiều dài."
       }
@@ -337,12 +337,12 @@
        "dung": true
       },
       {
-       "text": "$l=\\dfrac mD$",
+       "text": "$l=\\dfrac mD$ vì chia cho $D$",
        "dung": false,
        "vi_sao": "$m/D$ là <em>thể tích</em>, chưa phải chiều dài ; còn phải chia cho $S$."
       },
       {
-       "text": "$l=V\\cdot S$",
+       "text": "$l=V\\cdot S$ với $V=\\dfrac mD$",
        "dung": false,
        "vi_sao": "$V=S\\cdot l$ nên $l=V/S$ ; nhân $V$ với $S$ không ra chiều dài."
       }
@@ -416,16 +416,16 @@
      "loi_hay_gap": "Lấy $4{,}5-3{,}0$ rồi chia cho $0{,}5$ : trừ hai điểm của <em>hai đường khác nhau</em> thay vì cùng một đường.",
      "chon_buoc_ke": [
       {
-       "text": "$R_2=\\dfrac{U_B}{I_B}$ vì đường $(2)$ đi qua gốc toạ độ",
+       "text": "$R_2=\\dfrac{U_B}{I_B}$ vì (2) qua gốc toạ độ",
        "dung": true
       },
       {
-       "text": "$R_2=\\dfrac{U_B-U_A}{I_B-I_A}$",
+       "text": "$R_2=\\dfrac{U_B-U_A}{I_B-I_A}$ lấy hai điểm A và B",
        "dung": false,
        "vi_sao": "$A$ và $B$ thuộc hai đường khác nhau ; hiệu hai điểm đó không phải hệ số góc của đường nào ($I_B-I_A=0$)."
       },
       {
-       "text": "$R_2=U_B\\cdot I_B$",
+       "text": "$R_2=U_B\\cdot I_B$ với $U_B$, $I_B$ đọc trên đồ thị",
        "dung": false,
        "vi_sao": "Tích $\\text{V}\\cdot\\text{A}$ là công suất, không phải điện trở."
       }
@@ -505,12 +505,12 @@
        "dung": true
       },
       {
-       "text": "$U_1'=\\dfrac{U'}2$",
+       "text": "$U_1'=\\dfrac{U'}2$ vì hai điện trở chia đôi",
        "dung": false,
        "vi_sao": "Nối tiếp thì $I$ bằng nhau, $U$ chia theo tỉ lệ $R$ ; hai điện trở khác nhau thì $U$ khác nhau."
       },
       {
-       "text": "$U_1'=U'$",
+       "text": "$U_1'=U'$ vì vật dẫn (1) nằm trong mạch",
        "dung": false,
        "vi_sao": "Chỉ đúng khi song song ; nối tiếp thì $U_1'+U_2'=U'$."
       }
@@ -529,12 +529,12 @@
        "dung": true
       },
       {
-       "text": "Độ dốc vẫn là $R=6$",
+       "text": "Trục tung là $I$ nhưng độ dốc vẫn là $R=6$",
        "dung": false,
        "vi_sao": "Đó là độ dốc của đồ thị $U$–$I$ ; đổi trục thì độ dốc là $1/R$."
       },
       {
-       "text": "Độ dốc là $\\dfrac1{R_2}$",
+       "text": "Trục tung là $I$ nên độ dốc là $\\dfrac1{R_2}$ của vật (2)",
        "dung": false,
        "vi_sao": "$1/R_2$ ứng với vật dẫn $(2)$, không phải $(1)$."
       }
@@ -740,7 +740,7 @@
      "loi_hay_gap": "Cho $R_b=0$ rồi chia $U$ cho $0$ ; điện trở phụ $R$ vẫn còn trong mạch.",
      "chon_buoc_ke": [
       {
-       "text": "$R_b=0$ nên chỉ còn $R$ : $I_{max}=\\dfrac UR$",
+       "text": "$R_b=0$ nên $I_{max}=\\dfrac UR$",
        "dung": true
       },
       {
@@ -792,12 +792,12 @@
        "dung": true
       },
       {
-       "text": "$\\dfrac{R_b}{R}$",
+       "text": "Cuộn đều nên $\\dfrac{R_b}{R}$ cho biết vị trí con chạy",
        "dung": false,
        "vi_sao": "$R$ là điện trở phụ ngoài biến trở, không liên quan chiều dài cuộn dây."
       },
       {
-       "text": "$\\dfrac{R_b}{R_b+R}$",
+       "text": "Cuộn đều nên $\\dfrac{R_b}{R_b+R}$ là phần dài đã mắc",
        "dung": false,
        "vi_sao": "Đó là tỉ lệ hiệu điện thế trên biến trở, không phải vị trí con chạy."
       }
@@ -840,12 +840,12 @@
        "dung": true
       },
       {
-       "text": "$N=\\dfrac l{\\pi d}$",
+       "text": "Mỗi vòng dài $\\pi d$ nên $N=\\dfrac l{\\pi d}$",
        "dung": false,
        "vi_sao": "$d$ là đường kính <em>dây</em> ; chiều dài mỗi vòng theo chu vi ống sứ $D$."
       },
       {
-       "text": "$N=\\dfrac lD$",
+       "text": "Mỗi vòng dài $D$ nên $N=\\dfrac lD$",
        "dung": false,
        "vi_sao": "Thiếu $\\pi$ : chu vi vòng tròn là $\\pi D$."
       }
@@ -920,16 +920,16 @@
      "loi_hay_gap": "Nhân $I_A$ với $R_V$ thay vì với điện trở của đoạn song song $R_P$.",
      "chon_buoc_ke": [
       {
-       "text": "$U_V=I_AR_P$ (hiệu điện thế hai đầu đoạn song song)",
+       "text": "$U_V=I_AR_P$ (hiệu điện thế đoạn song song)",
        "dung": true
       },
       {
-       "text": "$U_V=I_AR_V$",
+       "text": "$U_V=I_AR_V$ (hiệu điện thế hai đầu vôn kế)",
        "dung": false,
        "vi_sao": "Dòng qua vôn kế chỉ là một phần rất nhỏ của $I_A$ ; $I_AR_V$ cho giá trị vô lí."
       },
       {
-       "text": "$U_V=U$",
+       "text": "$U_V=U$ (hiệu điện thế toàn mạch đặt vào vôn kế)",
        "dung": false,
        "vi_sao": "$12\\ \\text{V}$ là hiệu điện thế cả mạch ; vôn kế chỉ đo hai đầu $R_1$."
       }
@@ -944,16 +944,16 @@
      "loi_hay_gap": "Dùng $R_P=R_1$ như vôn kế lí tưởng, nên vẫn ra gần $2{,}94\\ \\text{V}$.",
      "chon_buoc_ke": [
       {
-       "text": "Tính lại $R_P'$, $R_{mach}'$, $I_A'$ rồi $U_V'=I_A'R_P'$",
+       "text": "Tính lại $R_P'$, $R_{mach}'$, $I_A'$ rồi $U_V'$",
        "dung": true
       },
       {
-       "text": "Giữ $I_A$ ở câu a rồi nhân với $R_P'$",
+       "text": "Giữ $I_A$ ở câu a rồi nhân với $R_P'$ mới",
        "dung": false,
        "vi_sao": "Vôn kế kém làm $R_{mach}$ đổi nên $I_A$ cũng đổi ; phải tính lại."
       },
       {
-       "text": "$U_V'=\\dfrac{U_1}2$ vì $R_V=R_1$",
+       "text": "$U_V'=\\dfrac{U_1}2$ vì $R_V=R_1$ nên điện trở chia đôi",
        "dung": false,
        "vi_sao": "Điện trở đoạn song song còn một nửa nhưng dòng mạch chính tăng lên nên hiệu điện thế giảm ít hơn một nửa ; phải tính lại cả mạch."
       }
@@ -972,12 +972,12 @@
        "dung": true
       },
       {
-       "text": "$\\dfrac{U_1-U_V'}{U_V'}$",
+       "text": "$\\dfrac{U_1-U_V'}{U_V'}$ với $U_V'$ là số chỉ vôn kế",
        "dung": false,
        "vi_sao": "Độ lệch đo so với giá trị <em>thật</em> $U_1$, không phải so với số chỉ sai."
       },
       {
-       "text": "$\\dfrac{U-U_V'}{U}$",
+       "text": "$\\dfrac{U-U_V'}{U}$ với $U$ là hiệu điện thế nguồn",
        "dung": false,
        "vi_sao": "$U=12\\ \\text{V}$ là hiệu điện thế cả mạch, không phải giá trị thật trên $R_1$."
       }
@@ -1016,16 +1016,16 @@
      "loi_hay_gap": "Lấy $1\\%$ của <em>số chỉ</em> $2{,}94\\ \\text{V}$ (được $0{,}03\\ \\text{V}$) thay vì của giá trị lớn nhất của thang $6\\ \\text{V}$.",
      "chon_buoc_ke": [
       {
-       "text": "$\\Delta U=x\\%\\cdot A_{max}$ với $A_{max}$ là cả thang",
+       "text": "$\\Delta U=x\\%\\cdot A_{max}$ với $A_{max}$ cả thang",
        "dung": true
       },
       {
-       "text": "$\\Delta U=x\\%\\cdot U_{doc}$",
+       "text": "$\\Delta U=x\\%\\cdot U_{doc}$ với $U_{doc}$ là số chỉ",
        "dung": false,
        "vi_sao": "Cấp chính xác tính theo giá trị lớn nhất của thang, không theo số chỉ."
       },
       {
-       "text": "$\\Delta U=\\text{ĐCNN}$",
+       "text": "$\\Delta U=\\text{ĐCNN}$ với ĐCNN là khoảng chia",
        "dung": false,
        "vi_sao": "ĐCNN và sai số dụng cụ là hai đại lượng khác nhau (một là khoảng chia, một là mức sai)."
       }

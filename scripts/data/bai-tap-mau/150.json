@@ -38,16 +38,16 @@
      "loi_hay_gap": "Lấy hiệu hai thời gian nhân với tốc độ âm ; con số đó là đoạn cơn giông đã dịch lại, không phải khoảng cách lúc sau.",
      "chon_buoc_ke": [
       {
-       "text": "Tính $d_2=v\\,t_2$ với thời gian nghe sấm của lần sau",
+       "text": "Tính $d_2=v\\,t_2$ với thời gian nghe sấm lần sau",
        "dung": true
       },
       {
-       "text": "Tính $v\\,(t_1-t_2)$",
+       "text": "Tính $v\\,(t_1-t_2)$, hiệu hai lần nghe sấm nhân tốc độ âm",
        "dung": false,
        "vi_sao": "Đó là đoạn chỗ chớp đã dịch lại gần, không phải khoảng cách từ chỗ chớp mới tới bạn."
       },
       {
-       "text": "Tính $\\dfrac{v\\,t_2}{2}$",
+       "text": "Tính $\\dfrac{v\\,t_2}{2}$ vì âm sấm đi tới tai rồi dội lại",
        "dung": false,
        "vi_sao": "Âm sấm đi thẳng một chiều tới tai, không phản xạ nên không chia 2."
       }
@@ -125,16 +125,16 @@
      "loi_hay_gap": "Đếm số đỉnh trên màn hình rồi coi đó là tần số, hoặc để chu kì theo ms khi lấy nghịch đảo.",
      "chon_buoc_ke": [
       {
-       "text": "Đếm số dao động trọn vẹn trong $10\\ \\text{ms}$ để ra $T_B$, đổi ra giây rồi lấy $f=\\dfrac{1}{T}$",
+       "text": "Đếm dao động trong $10\\ \\text{ms}$ để ra $T_B$, đổi ra giây rồi lấy $f=\\dfrac{1}{T}$",
        "dung": true
       },
       {
-       "text": "Đo $T_B$ từ một đỉnh tới đáy liền kề",
+       "text": "Đo $T_B$ từ một đỉnh tới đáy liền kề rồi tính $f=\\dfrac{1}{T_B}$",
        "dung": false,
        "vi_sao": "Từ đỉnh tới đáy liền kề chỉ là nửa dao động ; tần số sẽ ra gấp đôi."
       },
       {
-       "text": "Lấy $f=\\dfrac{1}{T_B}$ với $T_B$ để nguyên theo ms",
+       "text": "Lấy $f=\\dfrac{1}{T_B}$ với $T_B$ để nguyên theo ms, không đổi ra giây",
        "dung": false,
        "vi_sao": "Hz là số dao động trong một giây ; để $T$ theo ms thì $f$ nhỏ đi $1000$ lần."
       }
@@ -162,16 +162,16 @@
      "loi_hay_gap": "Gộp độ to với độ cao : cho rằng âm có biên độ lớn thì cũng cao hơn.",
      "chon_buoc_ke": [
       {
-       "text": "So sánh tần số để xét độ cao, so sánh biên độ để xét độ to",
+       "text": "So tần số để xét độ cao, so biên độ để xét độ to",
        "dung": true
       },
       {
-       "text": "So sánh biên độ để xét cả độ cao lẫn độ to",
+       "text": "So biên độ để xét cả độ cao lẫn độ to của âm",
        "dung": false,
        "vi_sao": "Biên độ chỉ cho biết độ to ; độ cao phải xét bằng tần số."
       },
       {
-       "text": "So sánh chu kì : chu kì lớn hơn thì âm cao hơn",
+       "text": "So chu kì : chu kì lớn hơn thì âm cao hơn, nghe the thé hơn",
        "dung": false,
        "vi_sao": "Chu kì lớn thì tần số nhỏ, âm trầm hơn chứ không cao hơn."
       }
@@ -190,12 +190,12 @@
        "dung": true
       },
       {
-       "text": "Tính $f=\\dfrac{N}{t}$ với $t=2$",
+       "text": "Tính $f=\\dfrac{N}{t}$ với $t=2$ phút, không đổi đơn vị",
        "dung": false,
        "vi_sao": "Tần số là số dao động trong một giây ; để $t$ theo phút thì kết quả lớn gấp $60$ lần."
       },
       {
-       "text": "Tính $f=\\dfrac{t}{N}$",
+       "text": "Tính $f=\\dfrac{t}{N}$ rồi đổi ra giây",
        "dung": false,
        "vi_sao": "$\\dfrac{t}{N}$ là thời gian một dao động, tức chu kì, không phải tần số."
       }
@@ -214,12 +214,12 @@
        "dung": true
       },
       {
-       "text": "Tính $f=N\\cdot t$",
+       "text": "Tính $f=N\\cdot t$ vì $t=1{,}5\\ \\text{s}$ là thời gian đo",
        "dung": false,
        "vi_sao": "Tần số là số dao động trong một giây nên phải chia số dao động cho thời gian."
       },
       {
-       "text": "Lấy luôn $f=N$",
+       "text": "Lấy luôn $f=N$ dao động",
        "dung": false,
        "vi_sao": "$N$ là số dao động trong $1{,}5\\ \\text{s}$, không phải trong $1\\ \\text{s}$."
       }
@@ -477,7 +477,7 @@
        "dung": true
       },
       {
-       "text": "Lấy độ sâu bằng quãng đường xung đã đi",
+       "text": "Lấy độ sâu bằng quãng đường xung đã đi trong nước",
        "dung": false,
        "vi_sao": "Thời gian đo là từ lúc phát tới lúc thu lại, gồm cả đi xuống và đi lên."
       },
@@ -501,12 +501,12 @@
        "dung": true
       },
       {
-       "text": "Cho $d=v\\cdot\\dfrac{1}{15}$",
+       "text": "Cho $d=v\\cdot\\dfrac{1}{15}$ vì âm chỉ đi một chiều",
        "dung": false,
        "vi_sao": "Trong $\\dfrac{1}{15}\\ \\text{s}$ âm phải đi tới vách rồi về, tức quãng $2d$, nên kết quả này gấp đôi."
       },
       {
-       "text": "Cho $d=\\dfrac{v\\cdot15}{2}$",
+       "text": "Cho $d=\\dfrac{v\\cdot15}{2}$ vì cần quãng đi – về",
        "dung": false,
        "vi_sao": "Thời gian tối thiểu là $\\dfrac{1}{15}\\ \\text{s}$ chứ không phải $15\\ \\text{s}$ : phép nhân này đặt nhầm chỗ."
       }
@@ -562,12 +562,12 @@
        "dung": true
       },
       {
-       "text": "Xét tường có cứng, nhẵn không",
+       "text": "Xét tường có cứng, nhẵn không, vì tường xốp thì không dội âm",
        "dung": false,
        "vi_sao": "Tường nào cũng phản xạ một phần ; điều kiện quyết định tiếng vang là thời gian chênh."
       },
       {
-       "text": "Xét người nói to hay nhỏ",
+       "text": "Xét người nói to hay nhỏ, vì nói to mới có vang",
        "dung": false,
        "vi_sao": "Độ to chỉ làm âm phản xạ to hay nhỏ ; tai tách được tiếng vang hay không là do thời gian chênh."
       }
@@ -639,12 +639,12 @@
        "dung": true
       },
       {
-       "text": "$L=v_{kk}\\cdot\\Delta t$",
+       "text": "$L=v_{kk}\\cdot\\Delta t$ vì âm đi hết ray trong không khí",
        "dung": false,
        "vi_sao": "$\\Delta t$ là khoảng cách giữa hai tiếng, không phải thời gian âm đi hết ray trong không khí."
       },
       {
-       "text": "$L=(v_{\\text{thép}}-v_{kk})\\cdot\\Delta t$",
+       "text": "$L=(v_{\\text{thép}}-v_{kk})\\cdot\\Delta t$ vì hiệu tốc độ",
        "dung": false,
        "vi_sao": "Hiệu thời gian không tính bằng hiệu tốc độ nhân $\\Delta t$ ; phải trừ hai thời gian $\\dfrac{L}{v}$."
       }
@@ -663,12 +663,12 @@
        "dung": true
       },
       {
-       "text": "$t_{kk}=\\Delta t'$",
+       "text": "$t_{kk}=\\Delta t'$ vì âm qua gang coi như tức thời",
        "dung": false,
        "vi_sao": "$\\Delta t'$ là hiệu hai thời gian ; âm qua gang cũng mất một khoảng thời gian, không bằng $0$."
       },
       {
-       "text": "$t=\\dfrac{L'}{v_{\\text{thép}}}$",
+       "text": "$t=\\dfrac{L'}{v_{\\text{thép}}}$ vì ống là kim loại như ray",
        "dung": false,
        "vi_sao": "Ống bằng gang, không phải thép ; tốc độ âm trong gang đang là ẩn."
       }
@@ -774,12 +774,12 @@
        "dung": true
       },
       {
-       "text": "$s_{xe}=s_{\\text{âm}}-2d$",
+       "text": "$s_{xe}=s_{\\text{âm}}-2d$, lấy quãng âm trừ quãng đường đi – về",
        "dung": false,
        "vi_sao": "Âm phải đi ít hơn $2d$ vì xe tiến lại gặp âm phản xạ ; trừ ngược sẽ ra số âm."
       },
       {
-       "text": "$s_{xe}=d-\\dfrac{s_{\\text{âm}}}{2}$",
+       "text": "$s_{xe}=d-\\dfrac{s_{\\text{âm}}}{2}$, coi âm chỉ đi một chiều tới vách",
        "dung": false,
        "vi_sao": "Tổng quãng âm và quãng xe bằng $2d$, không phải $d$ ; tính như vậy chỉ ra một nửa quãng xe đi."
       }
@@ -846,12 +846,12 @@
        "dung": true
       },
       {
-       "text": "$t_2=\\dfrac{2d'}{v_{\\text{âm}}}$",
+       "text": "$t_2=\\dfrac{2d'}{v_{\\text{âm}}}$ vì coi xe đứng yên",
        "dung": false,
        "vi_sao": "Lại coi xe đứng yên ; xe tiến tới gặp âm phản xạ nên nghe sớm hơn."
       },
       {
-       "text": "$t_2=\\dfrac{2d'}{v_{\\text{âm}}-v_{xe}}$",
+       "text": "$t_2=\\dfrac{2d'}{v_{\\text{âm}}-v_{xe}}$ vì xe chạy ngược",
        "dung": false,
        "vi_sao": "Âm phản xạ và xe đi ngược chiều nhau, tiến lại gần nhau : quãng đường cộng lại nên tốc độ cộng, không trừ."
       }
@@ -1032,16 +1032,16 @@
      "loi_hay_gap": "Nghĩ tần số đổi theo tốc độ, hoặc giữ bước sóng như trong không khí.",
      "chon_buoc_ke": [
       {
-       "text": "Xét xem đại lượng nào do nguồn quyết định khi âm đổi môi trường",
+       "text": "Xét đại lượng nào do nguồn quyết định khi âm đổi môi trường",
        "dung": true
       },
       {
-       "text": "Lấy $f_n=\\dfrac{v_n}{\\lambda_{kk}}$",
+       "text": "Lấy $f_n=\\dfrac{v_n}{\\lambda_{kk}}$, dùng luôn bước sóng trong không khí",
        "dung": false,
        "vi_sao": "Bước sóng trong không khí không dùng được cho nước ; mỗi môi trường có bước sóng riêng."
       },
       {
-       "text": "Coi mọi đại lượng của sóng giữ nguyên khi vào nước",
+       "text": "Coi mọi đại lượng của sóng giữ nguyên khi vào nước, kể cả tốc độ",
        "dung": false,
        "vi_sao": "Tốc độ đã đổi (đề cho hai giá trị khác nhau) nên không thể mọi đại lượng đều giữ nguyên."
       }
@@ -1060,12 +1060,12 @@
        "dung": true
       },
       {
-       "text": "$\\lambda_n=\\lambda_{kk}$",
+       "text": "$\\lambda_n=\\lambda_{kk}$ vì tần số giữ nguyên",
        "dung": false,
        "vi_sao": "Tốc độ đổi mà tần số giữ nguyên thì bước sóng phải đổi theo, vì $\\lambda=\\dfrac{v}{f}$."
       },
       {
-       "text": "$\\lambda_n=\\lambda_{kk}\\cdot\\dfrac{v_{kk}}{v_n}$",
+       "text": "$\\lambda_n=\\lambda_{kk}\\cdot\\dfrac{v_{kk}}{v_n}$ vì bước sóng tỉ lệ nghịch",
        "dung": false,
        "vi_sao": "Cùng tần số thì bước sóng tỉ lệ THUẬN với tốc độ, không tỉ lệ nghịch."
       }

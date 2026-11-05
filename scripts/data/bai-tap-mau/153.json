@@ -197,7 +197,7 @@
        "dung": true
       },
       {
-       "text": "Viết ngay phương trình $Q_{\\text{toả}}=Q_{\\text{thu}}$ với $t\\gt0\\ ^{\\circ}\\text{C}$",
+       "text": "Viết ngay phương trình $Q_{\\text{toả}}=Q_{\\text{thu}}$ với $t\\gt0\\ ^{\\circ}\\text{C}$, rồi giải ra $t$",
        "dung": false,
        "vi_sao": "Chưa biết đá tan hết hay không; nếu đá chỉ tan một phần, phương trình đó sai và cho nhiệt độ âm."
       },
@@ -217,11 +217,11 @@
      "loi_hay_gap": "Chia phần nhiệt dư cho riêng khối lượng nước ban đầu, quên nước do đá tan ra cũng phải nóng lên từ $0\\ ^{\\circ}\\text{C}$.",
      "chon_buoc_ke": [
       {
-       "text": "Phần nhiệt dư làm nóng toàn bộ nước trong bình (nước cũ và nước do đá tan) từ $0\\ ^{\\circ}\\text{C}$",
+       "text": "Phần nhiệt dư làm nóng toàn bộ nước trong bình từ $0\\ ^{\\circ}\\text{C}$",
        "dung": true
       },
       {
-       "text": "Chia phần nhiệt dư cho nhiệt dung của $1\\ \\text{kg}$ nước ban đầu",
+       "text": "Chia phần nhiệt dư cho nhiệt dung của $1\\ \\text{kg}$ nước ban đầu trong bình",
        "dung": false,
        "vi_sao": "Nước do đá tan ra cũng ở trong bình và cũng nóng lên tới cùng nhiệt độ."
       },
@@ -254,16 +254,16 @@
      "loi_hay_gap": "Dùng lại nhiệt toả tối đa của câu a, quên nước lúc này chỉ còn hơn $0\\ ^{\\circ}\\text{C}$ vài độ.",
      "chon_buoc_ke": [
       {
-       "text": "Tính lại nhiệt toả tối đa của toàn bộ nước hiện có khi hạ về $0\\ ^{\\circ}\\text{C}$, rồi so",
+       "text": "Tính lại nhiệt toả tối đa của nước hiện có khi hạ về $0\\ ^{\\circ}\\text{C}$, rồi so",
        "dung": true
       },
       {
-       "text": "Dùng lại nhiệt toả tối đa đã tính ở câu a",
+       "text": "Dùng lại nhiệt toả tối đa đã tính ở câu a, rồi so với nhiệt đá cần",
        "dung": false,
        "vi_sao": "Sau câu a nước đã nguội tới gần $0\\ ^{\\circ}\\text{C}$ và có khối lượng mới; phải tính lại."
       },
       {
-       "text": "Giả sử nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$ rồi viết phương trình",
+       "text": "Giả sử nhiệt độ cuối trên $0\\ ^{\\circ}\\text{C}$ rồi viết phương trình cân bằng nhiệt",
        "dung": false,
        "vi_sao": "Giải ra nhiệt độ âm, mâu thuẫn với giả sử; phải biện luận trước."
       }
@@ -282,12 +282,12 @@
        "dung": true
       },
       {
-       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt toả tối đa",
+       "text": "Cho $\\lambda\\,\\Delta m$ bằng toàn bộ nhiệt toả tối đa của nước trong bình",
        "dung": false,
        "vi_sao": "Một phần nhiệt đó phải dùng để đưa đá lên $0\\ ^{\\circ}\\text{C}$ trước khi đá tan."
       },
       {
-       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt đưa đá lên $0\\ ^{\\circ}\\text{C}$",
+       "text": "Cho $\\lambda\\,\\Delta m$ bằng nhiệt mà đá nhận để nóng lên tới $0\\ ^{\\circ}\\text{C}$, rồi chia cho $\\lambda$",
        "dung": false,
        "vi_sao": "Đó là phần nhiệt đá nhận để nóng lên, không phải phần nhiệt còn lại để làm tan."
       }
@@ -306,12 +306,12 @@
        "dung": true
       },
       {
-       "text": "Lấy tổng đá của hai lần thả trừ phần đã tan",
+       "text": "Lấy tổng đá của cả hai lần thả rồi trừ phần đã tan",
        "dung": false,
        "vi_sao": "Đá của lần thả đầu đã tan hết ở câu a, chỉ còn đá của lần sau."
       },
       {
-       "text": "Cộng phần đã tan vào khối lượng đá lần sau",
+       "text": "Cộng phần đã tan vào khối lượng đá của lần thả sau",
        "dung": false,
        "vi_sao": "Phần tan biến thành nước, nên khối đá giảm đi chứ không tăng."
       }
@@ -562,16 +562,16 @@
      "loi_hay_gap": "Lấy nhiệt độ cuối của đoạn làm độ tăng nhiệt độ thay vì hiệu hai mốc.",
      "chon_buoc_ke": [
       {
-       "text": "Chia nhiệt lượng cho $m\\,\\Delta t$ với $\\Delta t$ là hiệu hai mốc nhiệt độ của đoạn AB",
+       "text": "Chia nhiệt lượng cho $m\\,\\Delta t$, với $\\Delta t$ là hiệu hai mốc của đoạn AB",
        "dung": true
       },
       {
-       "text": "Chia nhiệt lượng cho $m$ nhân nhiệt độ ở B",
+       "text": "Chia nhiệt lượng cho $m$ nhân với nhiệt độ cuối ở điểm B của đoạn",
        "dung": false,
        "vi_sao": "Cần độ tăng nhiệt độ của đoạn, không phải nhiệt độ cuối."
       },
       {
-       "text": "Chia nhiệt lượng cho $m$ (không có $\\Delta t$)",
+       "text": "Chia nhiệt lượng của đoạn AB cho $m$ (không có $\\Delta t$ ở mẫu)",
        "dung": false,
        "vi_sao": "Thương đó có đơn vị J/kg, là dạng của $\\lambda$, không phải nhiệt dung riêng."
       }
@@ -610,16 +610,16 @@
      "loi_hay_gap": "Lấy độ tăng nhiệt độ của đoạn CD từ $0\\ ^{\\circ}\\text{C}$ thay vì từ nhiệt độ nóng chảy.",
      "chon_buoc_ke": [
       {
-       "text": "Trên CD, chia $P\\,\\Delta\\tau$ cho $m\\,\\Delta t$, mỗi đại lượng lấy hiệu hai mốc của CD",
+       "text": "Trên CD, chia $P\\,\\Delta\\tau$ cho $m\\,\\Delta t$ (hiệu hai mốc của CD)",
        "dung": true
       },
       {
-       "text": "Trên CD, lấy $\\Delta t$ bằng nhiệt độ ở D",
+       "text": "Trên CD, chia $P\\,\\Delta\\tau$ cho $m\\,\\Delta t$ với $\\Delta t$ bằng nhiệt độ ở D",
        "dung": false,
        "vi_sao": "Chất bắt đầu nóng lên ở thể lỏng từ nhiệt độ nóng chảy, không phải từ $0\\ ^{\\circ}\\text{C}$."
       },
       {
-       "text": "Trên CD, lấy $\\Delta\\tau$ bằng toàn bộ thời gian đun",
+       "text": "Trên CD, chia $P\\,\\Delta\\tau$ cho $m\\,\\Delta t$ với $\\Delta\\tau$ là toàn bộ thời gian đun",
        "dung": false,
        "vi_sao": "Chỉ đoạn CD chất ở thể lỏng; các đoạn trước chất còn rắn hoặc đang chảy."
       }
@@ -861,12 +861,12 @@
        "dung": true
       },
       {
-       "text": "$m_{gas}=\\dfrac{Q_{\\text{ích}}}{q}$",
+       "text": "$m_{gas}=\\dfrac{Q_{\\text{ích}}}{q}$ rồi đổi sang gam",
        "dung": false,
        "vi_sao": "Gas toả ra $Q_{tp}$, không phải $Q_{\\text{ích}}$ ; chia $Q_{\\text{ích}}$ cho $q$ là coi bếp không hao phí."
       },
       {
-       "text": "$m_{gas}=\\dfrac{H\\cdot Q_{\\text{ích}}}{q}$",
+       "text": "$m_{gas}=\\dfrac{H\\cdot Q_{\\text{ích}}}{q}$ rồi quy ra gam",
        "dung": false,
        "vi_sao": "Nhân thêm $H$ làm lượng gas còn nhỏ hơn cả khi không hao phí ; hiệu suất phải làm tăng lượng gas."
       }
@@ -885,12 +885,12 @@
        "dung": true
       },
       {
-       "text": "$Q'=L\\cdot0{,}1\\,m_n+(m_nc_n+m_{nh}c_{nh})\\Delta t$",
+       "text": "$Q'=L\\cdot0{,}1\\,m_n+(m_nc_n+m_{nh}c_{nh})\\Delta t$ vì nồi và nước vẫn nóng thêm",
        "dung": false,
        "vi_sao": "Khi sôi nhiệt độ đứng yên nên nồi và nước không cần nhận nhiệt để nóng thêm."
       },
       {
-       "text": "$Q'=L\\cdot m_n$",
+       "text": "$Q'=L\\cdot m_n$ vì coi như toàn bộ nước đều hoá hơi",
        "dung": false,
        "vi_sao": "Đề chỉ cho $10\\,\\%$ lượng nước hoá hơi, không phải toàn bộ nước."
       }
@@ -972,12 +972,12 @@
        "dung": true
       },
       {
-       "text": "$m\\,c\\,(t_1-t_2')=(m_2+m)\\,c\\,(t_2'-t_2)$",
+       "text": "Cân bằng lần 1 : $m\\,c\\,(t_1-t_2')=(m_2+m)\\,c\\,(t_2'-t_2)$",
        "dung": false,
        "vi_sao": "Lượng $m$ là bên toả nhiệt ; bên thu chỉ là $1\\ \\text{kg}$ nước ban đầu của bình 2."
       },
       {
-       "text": "$m\\,c\\,(t_1-t_1')=m_2c\\,(t_2'-t_2)$",
+       "text": "Cân bằng lần 1 : $m_2c\\,(t_2'-t_2)=m\\,c\\,(t_1-t_1')$",
        "dung": false,
        "vi_sao": "Ở lần 1, lượng $m$ nguội tới $t_2'$ của bình 2, không phải tới nhiệt độ cuối của bình 1."
       }
@@ -1107,12 +1107,12 @@
        "dung": true
       },
       {
-       "text": "$\\dfrac{Q}{m}=\\lambda$",
+       "text": "$\\dfrac{Q}{m}=\\lambda$ vì chì nóng chảy ngay khi nhận nhiệt",
        "dung": false,
        "vi_sao": "Chì ở 27 °C chưa chảy được ; phải nóng tới 327 °C trước rồi mới nóng chảy."
       },
       {
-       "text": "$\\dfrac{Q}{m}=c\\,t_{nc}+\\lambda$",
+       "text": "$\\dfrac{Q}{m}=c\\,(t_{nc}-0)+\\lambda$",
        "dung": false,
        "vi_sao": "Chì bắt đầu từ 27 °C, không phải từ 0 °C ; độ tăng nhiệt độ là $t_{nc}-t_0$."
       }
@@ -1131,12 +1131,12 @@
        "dung": true
       },
       {
-       "text": "$\\dfrac12v^2=\\dfrac{Q}{m}$",
+       "text": "$\\dfrac12v^2=\\dfrac{Q}{m}$ rồi lấy căn bậc hai",
        "dung": false,
        "vi_sao": "Vẫn chỉ $60\\,\\%$ động năng làm nóng đạn ; bỏ hệ số này sẽ ra tốc độ nhỏ hơn thực tế cần."
       },
       {
-       "text": "$0{,}6\\cdot v^2=\\dfrac{Q}{m}$",
+       "text": "$0{,}6\\cdot v^2=\\dfrac{Q}{m}$ rồi khai căn",
        "dung": false,
        "vi_sao": "Động năng có $\\dfrac12$ ; thiếu nó làm tốc độ tìm được nhỏ đi."
       }

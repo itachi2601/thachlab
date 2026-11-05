@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$v_{tb}=\\dfrac{v_1+v_2}{2}$",
+       "text": "$v_{tb}=\\dfrac{v_1+v_2}{2}$ vì tốc độ trung bình là trung bình cộng",
        "dung": false,
        "vi_sao": "Trung bình cộng chỉ đúng khi hai chặng có thời gian bằng nhau ; ở đây hai chặng có quãng đường bằng nhau nên chặng chậm chiếm nhiều thời gian hơn."
       },
       {
-       "text": "$v_{tb}=v_1+v_2$",
+       "text": "$v_{tb}=v_1+v_2$ vì tốc độ cả hành trình là tổng hai chặng",
        "dung": false,
        "vi_sao": "Tốc độ trung bình không thể lớn hơn tốc độ lớn nhất của các chặng."
       }
@@ -62,16 +62,16 @@
      "loi_hay_gap": "Dùng lại cách làm câu a (hai chặng cùng quãng đường) trong khi câu b chia theo thời gian.",
      "chon_buoc_ke": [
       {
-       "text": "Gọi $t$ là tổng thời gian, mỗi nửa $\\dfrac{t}{2}$ ; cộng quãng đường hai chặng",
+       "text": "Gọi $t$ là tổng thời gian, mỗi nửa $\\dfrac{t}{2}$ ; cộng hai quãng đường",
        "dung": true
       },
       {
-       "text": "Tính $t_1=\\dfrac{12}{12}$ và $t_2=\\dfrac{12}{24}$ như câu a",
+       "text": "Tính $t_1=\\dfrac{12}{12}$ và $t_2=\\dfrac{12}{24}$ như câu a rồi lấy tổng thời gian",
        "dung": false,
        "vi_sao": "Câu b không cho mỗi chặng dài $12\\ \\text{km}$ ; hai chặng có thời gian bằng nhau nên quãng đường khác nhau."
       },
       {
-       "text": "$v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}$",
+       "text": "$v_{tb}=\\dfrac{2v_1v_2}{v_1+v_2}$ vì hai chặng đi cùng quãng đường",
        "dung": false,
        "vi_sao": "Công thức đó dành cho chia đều quãng đường ; câu b chia đều thời gian."
       }
@@ -90,12 +90,12 @@
        "dung": true
       },
       {
-       "text": "$v_{tb}=\\dfrac{0}{3}$ vì về đúng chỗ xuất phát",
+       "text": "$v_{tb}=\\dfrac{0}{3}$ vì về đúng chỗ xuất phát nên bằng $0$",
        "dung": false,
        "vi_sao": "Đó là vận tốc trung bình (dùng độ dịch chuyển). Tốc độ trung bình dùng tổng quãng đường đã đi nên không triệt tiêu khi đổi chiều."
       },
       {
-       "text": "$v_{tb}=\\dfrac{24}{3}$ (chỉ tính lượt đi)",
+       "text": "$v_{tb}=\\dfrac{24}{3}$ (chỉ tính quãng đường lượt đi)",
        "dung": false,
        "vi_sao": "Tổng quãng đường phải gồm cả lượt về."
       }
@@ -114,12 +114,12 @@
        "dung": true
       },
       {
-       "text": "$|\\vec v_{tb}|=\\dfrac{48}{3}$",
+       "text": "$|\\vec v_{tb}|=\\dfrac{48}{3}$ lấy tổng quãng đường đi và về",
        "dung": false,
        "vi_sao": "$48\\ \\text{km}$ là quãng đường, không phải độ dịch chuyển ; về đúng điểm xuất phát nên độ dịch chuyển bằng $0$."
       },
       {
-       "text": "$|\\vec v_{tb}|=\\dfrac{24}{1{,}5}$ (lấy riêng lượt đi)",
+       "text": "$|\\vec v_{tb}|=\\dfrac{24}{1{,}5}$ (chỉ lấy độ dịch chuyển lượt đi)",
        "dung": false,
        "vi_sao": "Câu hỏi nói cả hành trình đi và về ; lượt đi và lượt về có độ dịch chuyển ngược dấu nên triệt tiêu nhau."
       }
@@ -174,16 +174,16 @@
      "loi_hay_gap": "Lấy quãng đường xe máy đi (tính từ $B$) làm khoảng cách tới $A$ ; hoặc cho rằng hai xe gặp nhau ở trung điểm.",
      "chon_buoc_ke": [
       {
-       "text": "Thế thời gian gặp vào phương trình toạ độ của ô tô",
+       "text": "Thế thời gian gặp vào phương trình của ô tô",
        "dung": true
       },
       {
-       "text": "Lấy $x=v_2t$ của xe máy",
+       "text": "Thế thời gian gặp vào $x=v_2t$ của xe máy",
        "dung": false,
        "vi_sao": "Xe máy xuất phát từ $B$ nên toạ độ của nó là $150-v_2t$ ; $v_2t$ chỉ là quãng đường nó đã đi."
       },
       {
-       "text": "Lấy $x=\\dfrac{150}{2}$ vì hai xe gặp ở giữa",
+       "text": "Lấy $x=\\dfrac{150}{2}$ vì hai xe xuất phát cùng lúc nên gặp ở giữa",
        "dung": false,
        "vi_sao": "Hai xe có tốc độ khác nhau nên không gặp ở trung điểm ; xe nhanh đi được quãng đường dài hơn."
       }
@@ -202,12 +202,12 @@
        "dung": true
       },
       {
-       "text": "Viết $x_1-x_2=30$",
+       "text": "Viết $d=x_1-x_2=30$ với $x_1\\gt x_2$ vì ô tô đi nhanh hơn",
        "dung": false,
        "vi_sao": "Đó là trường hợp đã qua nhau ; lần cách nhau $30\\ \\text{km}$ đầu tiên là lúc xe máy còn ở phía trước ô tô."
       },
       {
-       "text": "Lấy $\\dfrac{30}{60+40}$",
+       "text": "Lấy $\\dfrac{30}{60+40}$ vì hai xe lại gần nhau với tổng tốc độ",
        "dung": false,
        "vi_sao": "$30\\ \\text{km}$ là khoảng cách còn lại, không phải quãng đường hai xe cùng đi được từ lúc xuất phát."
       }
@@ -226,12 +226,12 @@
        "dung": true
       },
       {
-       "text": "Giải lại $x_2-x_1=30$ như lần trước",
+       "text": "Giải lại $x_2-x_1=30$ như lần trước và lấy nghiệm còn lại",
        "dung": false,
        "vi_sao": "Phương trình đó chỉ cho đúng một nghiệm (lúc chưa gặp). Sau khi gặp, ô tô ở phía xa hơn nên $x_1\\gt x_2$."
       },
       {
-       "text": "Viết $x_1-x_2=30$ nhưng thay $x_2=40t$",
+       "text": "Viết $x_1-x_2=30$ nhưng thay $x_2=40t$ cho toạ độ xe máy",
        "dung": false,
        "vi_sao": "Toạ độ xe máy là $150-40t$ ; $40t$ chỉ là quãng đường nó đi được."
       }
@@ -250,12 +250,12 @@
        "dung": true
       },
       {
-       "text": "Tính $x_2$ tại thời điểm hai xe gặp nhau",
+       "text": "Tính $x_2$ tại thời điểm hai xe vừa gặp nhau trên đường",
        "dung": false,
        "vi_sao": "Đó là lúc hai xe gặp nhau ; ô tô còn phải đi tiếp đến $B$."
       },
       {
-       "text": "Tính $x_2$ lúc xe máy đến $A$",
+       "text": "Tính $x_2$ lúc xe máy đến $A$ rồi lấy làm kết quả",
        "dung": false,
        "vi_sao": "Đó là lúc $x_2=0$ ; cần thời điểm ô tô đến $B$ chứ không phải lúc xe máy đến $A$."
       }
@@ -360,12 +360,12 @@
        "dung": true
       },
       {
-       "text": "Tốc độ tương đối $v_1-v_2$",
+       "text": "Tốc độ tương đối $v_1-v_2$ vì hai tàu chuyển động ngược nhau",
        "dung": false,
        "vi_sao": "Hai tàu ngược chiều nên tốc độ lại gần nhau là tổng ; hiệu chỉ dùng khi cùng chiều."
       },
       {
-       "text": "Quãng đường tương đối chỉ là $L_1$",
+       "text": "Quãng đường tương đối chỉ là $L_1$ vì tàu thứ nhất mới là tàu vượt",
        "dung": false,
        "vi_sao": "Hai tàu vượt nhau hoàn toàn khi cả hai đoàn đã qua nhau : phải cộng chiều dài của cả hai."
       }
@@ -384,12 +384,12 @@
        "dung": true
       },
       {
-       "text": "Tốc độ tương đối $v_1+v_2$ như câu c",
+       "text": "Tốc độ tương đối $v_1+v_2$ như câu c vì hai tàu vẫn tiến lại gần nhau",
        "dung": false,
        "vi_sao": "Cùng chiều thì tàu nhanh chỉ tiến lại gần tàu chậm với tốc độ bằng hiệu hai tốc độ."
       },
       {
-       "text": "Quãng đường tương đối $L_1$",
+       "text": "Quãng đường tương đối chỉ là $L_1$ vì tàu thứ nhất là tàu vượt",
        "dung": false,
        "vi_sao": "Tàu thứ nhất phải vượt hết chiều dài tàu thứ hai và cả chiều dài của chính nó : $L_1+L_2$."
       }
@@ -449,16 +449,16 @@
      "loi_hay_gap": "Lấy hiệu hai tốc độ mà không chia $2$, hoặc lấy trung bình cộng (đó là tốc độ riêng của canô).",
      "chon_buoc_ke": [
       {
-       "text": "Lập hệ $v_t+v_n=v_x$ và $v_t-v_n=v_{ng}$ rồi trừ vế theo vế : $v_n=\\dfrac{v_x-v_{ng}}{2}$",
+       "text": "Lập hệ $v_t+v_n=v_x$, $v_t-v_n=v_{ng}$ rồi trừ vế : $v_n=\\dfrac{v_x-v_{ng}}{2}$",
        "dung": true
       },
       {
-       "text": "$v_n=v_x-v_{ng}$",
+       "text": "Lập hệ $v_t+v_n=v_x$, $v_t-v_n=v_{ng}$ rồi trừ vế : $v_n=v_x-v_{ng}$",
        "dung": false,
        "vi_sao": "Hiệu hai tốc độ bằng $2v_n$ (xuôi cộng $v_n$, ngược trừ $v_n$) nên phải chia đôi."
       },
       {
-       "text": "$v_n=\\dfrac{v_x+v_{ng}}{2}$",
+       "text": "Lập hệ $v_t+v_n=v_x$, $v_t-v_n=v_{ng}$ rồi cộng vế : $v_n=\\dfrac{v_x+v_{ng}}{2}$",
        "dung": false,
        "vi_sao": "Đó là tốc độ riêng $v_t$ của canô, không phải của dòng nước."
       }
@@ -473,16 +473,16 @@
      "loi_hay_gap": "Dùng tốc độ riêng của canô cho bè, hoặc cộng thời gian xuôi và ngược.",
      "chon_buoc_ke": [
       {
-       "text": "Bè trôi với tốc độ đúng bằng tốc độ dòng nước : $t=\\dfrac{s}{v_n}$",
+       "text": "Bè trôi đúng bằng tốc độ dòng nước : $t=\\dfrac{s}{v_n}$",
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{s}{v_t}$",
+       "text": "$t=\\dfrac{s}{v_t}$ vì bè đi theo tốc độ riêng của canô",
        "dung": false,
        "vi_sao": "Bè không có máy : tốc độ của bè so với bờ chỉ là tốc độ dòng nước, không phải tốc độ riêng của canô."
       },
       {
-       "text": "$t=t_x+t_{ng}$",
+       "text": "$t=t_x+t_{ng}$ vì bè đi hết cả lượt xuôi lẫn lượt ngược",
        "dung": false,
        "vi_sao": "Cộng hai thời gian của canô không liên quan tới chuyển động của bè."
       }
@@ -497,16 +497,16 @@
      "loi_hay_gap": "Lấy quãng đường canô đã đi ngược dòng (so với bờ) chia cho tốc độ xuôi dòng — quên rằng phao cũng đang trôi.",
      "chon_buoc_ke": [
       {
-       "text": "Xét trong hệ quy chiếu gắn với dòng nước : phao đứng yên, canô rời ra rồi quay lại với cùng tốc độ riêng",
+       "text": "Trong hệ quy chiếu gắn với nước : phao đứng yên, canô rời ra rồi quay lại cùng tốc độ",
        "dung": true
       },
       {
-       "text": "Lấy thời gian quay lại bằng quãng đường canô đã đi ngược dòng (so với bờ) chia $v_x$",
+       "text": "Lấy thời gian quay lại bằng quãng đường canô đã đi ngược dòng (so với bờ) chia $v_x$ như bình thường",
        "dung": false,
        "vi_sao": "Phao cũng trôi theo dòng nên quãng đường canô cần đuổi không bằng quãng đường canô đã đi so với bờ ; kết quả sai."
       },
       {
-       "text": "Quay lại xuôi dòng nhanh hơn nên mất ít thời gian hơn lúc rời đi",
+       "text": "Quay lại xuôi dòng nhanh hơn nên mất ít thời gian hơn lúc rời đi ngược dòng",
        "dung": false,
        "vi_sao": "Dòng nước đẩy cả canô lẫn phao như nhau, nên so với phao thì xuôi hay ngược không làm tốc độ canô thay đổi."
       }
@@ -521,11 +521,11 @@
      "loi_hay_gap": "Chỉ tính phao trôi trong $20$ phút đầu, hoặc lấy bằng quãng đường canô đi xuôi dòng khi quay lại.",
      "chon_buoc_ke": [
       {
-       "text": "Phao trôi đều với tốc độ dòng nước suốt thời gian từ lúc rơi đến lúc được vớt",
+       "text": "Phao trôi đều với tốc độ dòng nước từ lúc rơi đến lúc được vớt",
        "dung": true
       },
       {
-       "text": "Phao chỉ trôi trong $20$ phút đầu",
+       "text": "Phao chỉ trôi trong $20$ phút đầu, sau đó canô quay lại nên phao đứng yên",
        "dung": false,
        "vi_sao": "Phao vẫn trôi trong lúc canô quay lại ; thời gian trôi là tổng của hai khoảng."
       },
@@ -593,12 +593,12 @@
        "dung": true
       },
       {
-       "text": "$v=\\dfrac{150}{3}$ (từ gốc đến cuối)",
+       "text": "$v=\\dfrac{150}{3}$ (từ gốc toạ độ đến cuối hành trình)",
        "dung": false,
        "vi_sao": "Đó là tốc độ trung bình cả hành trình, tính cả lúc nghỉ ; giai đoạn cuối phải dùng độ biến thiên trên chính đoạn đó."
       },
       {
-       "text": "Tính độ dốc từ $t=1\\ \\text{h}$ đến $t=3\\ \\text{h}$",
+       "text": "Tính độ dốc từ $t=1\\ \\text{h}$ đến $t=3\\ \\text{h}$ của đồ thị",
        "dung": false,
        "vi_sao": "Khoảng này có cả lúc nghỉ ; giai đoạn đi tiếp chỉ bắt đầu từ $t=1{,}5\\ \\text{h}$."
       }
@@ -613,16 +613,16 @@
      "loi_hay_gap": "Viết $x_A=60t$ (phương trình giai đoạn đầu) hoặc thiếu mốc thời gian lúc bắt đầu giai đoạn đi tiếp.",
      "chon_buoc_ke": [
       {
-       "text": "$x_A=x_0+v(t-t_0)$ với $(t_0;x_0)$ là điểm đầu giai đoạn đi tiếp",
+       "text": "$x_A=x_0+v(t-t_0)$ với $(t_0;x_0)$ là điểm đầu giai đoạn này",
        "dung": true
       },
       {
-       "text": "$x_A=60t$",
+       "text": "$x_A=60t$ vì xe $A$ xuất phát từ gốc và chạy đều với $60\\ \\text{km/h}$",
        "dung": false,
        "vi_sao": "Đó là phương trình giai đoạn đầu (từ gốc) ; giai đoạn đi tiếp bắt đầu từ $x=60$ lúc $t=1{,}5\\ \\text{h}$ nên phải có $t-1{,}5$."
       },
       {
-       "text": "$x_A=60+60t$",
+       "text": "$x_A=60+60t$ vì xe $A$ bắt đầu từ $x=60$ và chạy đều $60\\ \\text{km/h}$ từ lúc $t=0$",
        "dung": false,
        "vi_sao": "Thiếu mốc thời gian : giai đoạn này bắt đầu lúc $t=1{,}5\\ \\text{h}$ chứ không phải lúc $t=0$."
       }
@@ -637,16 +637,16 @@
      "loi_hay_gap": "Giải $x_A=x_B$ bằng phương trình giai đoạn đầu rồi nhận nghiệm nằm ngoài đoạn $0\\le t\\le1$ ; hoặc cho hai vận tốc bằng nhau.",
      "chon_buoc_ke": [
       {
-       "text": "Giải $x_A=x_B$ với phương trình xe $A$ ở giai đoạn đi tiếp, rồi kiểm tra $t$ có thuộc đoạn đó không",
+       "text": "Giải $x_A=x_B$ với phương trình giai đoạn đi tiếp của $A$, rồi kiểm tra $t$ thuộc đoạn",
        "dung": true
       },
       {
-       "text": "Giải $x_A=x_B$ với $x_A=60t$ (giai đoạn đầu) vì xe $A$ xuất phát từ gốc",
+       "text": "Giải $x_A=x_B$ với $x_A=60t$ (giai đoạn đầu) vì xe $A$ xuất phát từ gốc toạ độ $O$ và chạy đều",
        "dung": false,
        "vi_sao": "Mỗi phương trình chỉ đúng trong khoảng thời gian của giai đoạn : giai đoạn đầu chỉ tới $t=1\\ \\text{h}$, nghiệm ngoài đoạn đó vô nghĩa."
       },
       {
-       "text": "Cho hai vận tốc bằng nhau",
+       "text": "Cho hai vận tốc bằng nhau rồi giải ra thời điểm hai xe gặp nhau",
        "dung": false,
        "vi_sao": "Hai xe gặp nhau khi toạ độ bằng nhau, không phải khi vận tốc bằng nhau."
       }
@@ -661,16 +661,16 @@
      "loi_hay_gap": "Đọc toạ độ từ lưới ô vuông bằng mắt, hoặc lấy toạ độ lúc xe $A$ đang nghỉ.",
      "chon_buoc_ke": [
       {
-       "text": "Thế thời điểm gặp vào phương trình của một trong hai xe",
+       "text": "Thế thời điểm gặp vào phương trình của một xe",
        "dung": true
       },
       {
-       "text": "Đọc toạ độ giao điểm từ lưới ô vuông",
+       "text": "Đọc toạ độ giao điểm từ lưới ô vuông của đồ thị",
        "dung": false,
        "vi_sao": "Giao điểm không nằm đúng nút lưới ($t$ không tròn) nên đọc bằng mắt chỉ gần đúng ; phải tính."
       },
       {
-       "text": "Lấy toạ độ xe $A$ lúc nghỉ",
+       "text": "Lấy toạ độ của xe $A$ lúc nghỉ trên đồ thị",
        "dung": false,
        "vi_sao": "Xe $A$ nghỉ trong khoảng $1\\ \\text{h}$ đến $1{,}5\\ \\text{h}$, trước lúc hai xe gặp nhau."
       }
@@ -878,12 +878,12 @@
        "dung": true
       },
       {
-       "text": "$v=v_b-v_n$",
+       "text": "$\\vec v$ vuông góc bờ nên trừ độ lớn : $v=v_b-v_n$",
        "dung": false,
        "vi_sao": "Hai vectơ không cùng phương nên không trừ độ lớn trực tiếp ; vận tốc thực là tổng vectơ."
       },
       {
-       "text": "$v=\\sqrt{v_b^2+v_n^2}$",
+       "text": "$\\vec v$ vuông góc bờ nên $v_b$ là cạnh góc vuông : $v=\\sqrt{v_b^2+v_n^2}$",
        "dung": false,
        "vi_sao": "Căn tổng bình phương dùng khi $v_b$ và $v_n$ vuông góc nhau (bơi vuông góc bờ). Ở đây vận tốc thực vuông góc với dòng nước nên $v_b$ là cạnh huyền."
       }
@@ -902,12 +902,12 @@
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{AB}{v_b}$",
+       "text": "$t=\\dfrac{AB}{v_b}$ với $v_b$ là tốc độ bơi của người",
        "dung": false,
        "vi_sao": "Người không đi theo hướng bơi : so với bờ chỉ tiến sang bờ kia với tốc độ thực $v$ nhỏ hơn $v_b$."
       },
       {
-       "text": "$t=\\dfrac{AB}{v_n}$",
+       "text": "$t=\\dfrac{AB}{v_n}$ với $v_n$ là tốc độ chảy của nước",
        "dung": false,
        "vi_sao": "Dòng nước chảy dọc bờ, không giúp người sang bờ ; thành phần sang bờ là thành phần vuông góc."
       }
@@ -922,16 +922,16 @@
      "loi_hay_gap": "Dùng tốc độ thực của câu a, hoặc chia $AB$ cho độ lớn vận tốc thực chéo.",
      "chon_buoc_ke": [
       {
-       "text": "Hướng bơi vuông góc bờ nên thành phần sang bờ chính là $v_b$ : $t=\\dfrac{d}{v_b}$",
+       "text": "Bơi vuông góc bờ nên tốc độ sang bờ chính là $v_b$ : $t=\\dfrac{d}{v_b}$",
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{d}{v}$ với $v$ của câu a",
+       "text": "$t=\\dfrac{d}{v}$ với $v$ của câu a vì vẫn là tốc độ thực so với bờ",
        "dung": false,
        "vi_sao": "Tốc độ $v$ ở câu a ứng với hướng bơi chếch ; câu b bơi vuông góc nên tốc độ sang bờ là $v_b$."
       },
       {
-       "text": "$t=\\dfrac{d}{\\sqrt{v_b^2+v_n^2}}$",
+       "text": "$t=\\dfrac{d}{\\sqrt{v_b^2+v_n^2}}$ vì người đi chéo theo vận tốc thực so với bờ",
        "dung": false,
        "vi_sao": "$d$ không phải quãng đường đi chéo ; thời gian sang bờ chỉ phụ thuộc thành phần vuông góc bờ, tức là $v_b$."
       }
@@ -946,16 +946,16 @@
      "loi_hay_gap": "Dùng thời gian của câu a, hoặc lấy tốc độ bơi $v_b$ thay cho tốc độ dòng nước.",
      "chon_buoc_ke": [
       {
-       "text": "Trôi theo dòng nước trong suốt thời gian bơi : $\\ell=v_nt$",
+       "text": "Trôi theo dòng nước trong thời gian bơi : $\\ell=v_nt$",
        "dung": true
       },
       {
-       "text": "$\\ell=v_bt$",
+       "text": "$\\ell=v_bt$ vì người bị đẩy đi với tốc độ bơi trong thời gian bơi",
        "dung": false,
        "vi_sao": "Nước đẩy người dọc bờ với $v_n$ ; $v_b$ là tốc độ bơi vuông góc bờ."
       },
       {
-       "text": "$\\ell=v_nt$ với $t$ của câu a",
+       "text": "$\\ell=v_nt$ với $t$ của câu a vì vẫn là thời gian bơi sang bờ",
        "dung": false,
        "vi_sao": "Thời gian câu a ứng với cách bơi chếch ; câu b phải dùng thời gian của chính lần bơi vuông góc."
       }
@@ -966,16 +966,16 @@
      "hoi": "Chọn kết luận đúng.",
      "lua_chon": [
       {
-       "text": "Bơi vuông góc bờ sang nhanh hơn nhưng bị trôi ; bơi chếch ngược dòng chậm hơn nhưng tới đúng $B$",
+       "text": "Bơi vuông góc bờ nhanh hơn nhưng bị trôi ; bơi chếch ngược dòng chậm hơn nhưng tới đúng $B$",
        "dung": true
       },
       {
-       "text": "Bơi chếch ngược dòng vừa nhanh hơn vừa tới đúng $B$",
+       "text": "Bơi chếch ngược dòng vừa nhanh hơn vừa tới đúng $B$, vì đã triệt tiêu tác dụng của dòng nước",
        "dung": false,
        "vi_sao": "Thời gian câu a lớn hơn câu b vì thành phần vận tốc sang bờ nhỏ hơn."
       },
       {
-       "text": "Bơi vuông góc bờ vừa nhanh hơn vừa tới đúng $B$",
+       "text": "Bơi vuông góc bờ vừa nhanh hơn vừa tới đúng $B$, vì đi thẳng sang là quãng đường ngắn nhất",
        "dung": false,
        "vi_sao": "Bơi vuông góc thì dòng nước làm người lệch xuống phía dưới nên không tới đúng $B$."
       }
@@ -987,12 +987,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ so thời gian",
+       "text": "Chỉ so thời gian $t_a$ với $t_b$ rồi chọn cách ngắn hơn",
        "dung": false,
        "vi_sao": "Câu hỏi còn hỏi cách nào tới đúng $B$ : phải xét cả vị trí tới."
       },
       {
-       "text": "Chỉ so vị trí tới",
+       "text": "Chỉ so vị trí tới bờ bên kia của hai cách bơi",
        "dung": false,
        "vi_sao": "Câu hỏi còn hỏi cách nào nhanh hơn : phải so cả thời gian."
       }

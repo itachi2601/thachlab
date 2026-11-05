@@ -40,16 +40,16 @@
      "loi_hay_gap": "Đặt ngược tỉ số công suất : cùng nhiệt lượng thì thời gian tỉ lệ nghịch với công suất, không tỉ lệ thuận.",
      "chon_buoc_ke": [
       {
-       "text": "Cùng nhiệt lượng $Q$ : $P_1t_1=P_2t_2$, rồi giải $t_2$",
+       "text": "Cùng nhiệt lượng $Q$ : $P_1t_1=P_2t_2$, giải $t_2$",
        "dung": true
       },
       {
-       "text": "Lấy $t_2=t_1\\cdot\\dfrac{P_2}{P_1}$",
+       "text": "Lấy $t_2=t_1\\cdot\\dfrac{P_2}{P_1}$ vì công suất nhỏ thì thời gian ngắn",
        "dung": false,
        "vi_sao": "Công suất nhỏ thì phải lâu mới đủ nhiệt lượng ; thời gian tỉ lệ nghịch với công suất nên tỉ số phải là $\\dfrac{P_1}{P_2}$."
       },
       {
-       "text": "Lấy $t_2=t_1\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$",
+       "text": "Lấy $t_2=t_1\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$ rồi bỏ qua độ dày thành",
        "dung": false,
        "vi_sao": "Bỏ mất ảnh hưởng của độ dày thành ; hơn nữa chênh nhiệt độ nhỏ thì nhiệt vào chậm, thời gian phải tỉ lệ nghịch với $\\Delta t$."
       }
@@ -64,16 +64,16 @@
      "loi_hay_gap": "Đặt tỉ số độ chênh nhiệt độ theo chiều ngược, hoặc so với hộp thứ hai thay vì hộp đầu (hộp đã biết thời gian 6 giờ).",
      "chon_buoc_ke": [
       {
-       "text": "Cùng $Q$, cùng thời gian nên $P$ bằng $P_1$ : $\\dfrac{\\Delta t_2}{d}=\\dfrac{\\Delta t_1}{d_1}$",
+       "text": "Cùng $Q$, cùng thời gian nên $P=P_1$ : $\\dfrac{\\Delta t_2}{d}=\\dfrac{\\Delta t_1}{d_1}$",
        "dung": true
       },
       {
-       "text": "Lấy $d=d_1\\cdot\\dfrac{\\Delta t_1}{\\Delta t_2}$",
+       "text": "Lấy $d=d_1\\cdot\\dfrac{\\Delta t_1}{\\Delta t_2}$ vì $d$ tỉ lệ nghịch với $\\Delta t$",
        "dung": false,
        "vi_sao": "$P$ tỉ lệ thuận với $\\Delta t$, tỉ lệ nghịch với $d$ ; giữ $P$ không đổi thì $d$ phải tỉ lệ thuận với $\\Delta t$, không phải tỉ lệ nghịch."
       },
       {
-       "text": "Lấy $d=d_2\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$",
+       "text": "Lấy $d=d_2\\cdot\\dfrac{\\Delta t_2}{\\Delta t_1}$ với mốc so sánh là hộp thứ hai",
        "dung": false,
        "vi_sao": "Hộp thứ hai không tan hết sau 6 giờ ; mốc so sánh phải là hộp đầu (dày $d_1$, tan hết sau đúng 6 giờ)."
       }
@@ -126,11 +126,11 @@
      "loi_hay_gap": "Chia nhiệt lượng của 1 lít nước cho thời gian lần đun đầu, quên rằng trong lần đó ấm còn làm nóng vỏ ấm.",
      "chon_buoc_ke": [
       {
-       "text": "Chia nhiệt lượng đó cho hiệu thời gian $t_2-t_1$ (đổi ra giây)",
+       "text": "Chia nhiệt lượng đó cho $t_2-t_1$ (đổi ra giây)",
        "dung": true
       },
       {
-       "text": "Chia nhiệt lượng đó cho $t_1=600\\ \\text{s}$",
+       "text": "Chia nhiệt lượng đó cho $t_1=600\\ \\text{s}$ của lần đun đầu",
        "dung": false,
        "vi_sao": "Trong $600\\ \\text{s}$ đầu, phần công suất này làm nóng cả nước lẫn vỏ ấm ; nhiệt lượng của riêng 1 lít nước không ứng với $600\\ \\text{s}$."
       },
@@ -154,12 +154,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $C=\\dfrac{P_{ci}\\,t_1}{\\Delta t}$",
+       "text": "Viết $P_{ci}\\,t_1=C\\,\\Delta t$ cho lần 1 rồi suy ra $C$",
        "dung": false,
-       "vi_sao": "Đó là nhiệt dung của cả nước lẫn vỏ ấm ; phải trừ phần của nước $m_1c$."
+       "vi_sao": "Phương trình đó gộp cả nước lẫn vỏ ấm vào $C$ ; phải trừ phần của nước $m_1c$."
       },
       {
-       "text": "Viết phương trình lần 1 với $\\Delta t=100\\ ^\\circ\\text{C}$",
+       "text": "Viết phương trình lần 1 với $\\Delta t=100\\ ^\\circ\\text{C}$ rồi tìm $C$",
        "dung": false,
        "vi_sao": "Nước và vỏ ấm nóng từ $20\\ ^\\circ\\text{C}$ lên $100\\ ^\\circ\\text{C}$ ; độ tăng nhiệt độ không phải $100\\ ^\\circ\\text{C}$."
       }
@@ -178,12 +178,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $t_3=3\\,t_1$ vì nước gấp 3 lần",
+       "text": "Lấy $t_3=3\\,t_1$ vì nước gấp 3 lần, rồi đổi sang phút",
        "dung": false,
        "vi_sao": "Nhiệt lượng làm nóng vỏ ấm không tăng theo lượng nước nên thời gian không tỉ lệ thuận với khối lượng nước."
       },
       {
-       "text": "Tính $t_3=\\dfrac{m_3c\\,\\Delta t}{P_{ci}}$",
+       "text": "Tính nhanh $t_3=\\dfrac{m_3c\\,\\Delta t}{P_{ci}}$ rồi quy ra phút",
        "dung": false,
        "vi_sao": "Quên phần nhiệt lượng làm nóng vỏ ấm $C\\,\\Delta t$."
       }
@@ -274,16 +274,16 @@
      "hoi": "Khi nhiệt độ phòng đã ổn định, phát biểu nào đúng?",
      "lua_chon": [
       {
-       "text": "Công suất máy sưởi bằng công suất nhiệt phòng mất ra ngoài",
+       "text": "Công suất máy sưởi bằng công suất phòng mất nhiệt",
        "dung": true
       },
       {
-       "text": "Máy sưởi đã ngừng truyền nhiệt cho phòng",
+       "text": "Máy sưởi đã ngừng truyền nhiệt cho phòng vì nhiệt độ đứng yên",
        "dung": false,
        "vi_sao": "Máy vẫn chạy và vẫn cấp nhiệt ; nhiệt độ đứng yên vì nhiệt mất ra ngoài nhanh đúng bằng thế."
       },
       {
-       "text": "Phòng không còn mất nhiệt ra ngoài trời",
+       "text": "Phòng không còn mất nhiệt ra ngoài trời nữa nên nhiệt độ không đổi",
        "dung": false,
        "vi_sao": "Phòng còn ấm hơn ngoài trời thì nhiệt vẫn truyền ra ngoài."
       }
@@ -299,16 +299,16 @@
      "loi_hay_gap": "Chia công suất cho nhiệt độ phòng hoặc nhiệt độ ngoài trời thay vì cho hiệu hai nhiệt độ.",
      "chon_buoc_ke": [
       {
-       "text": "Dùng $P=k\\,(t-t_0)$ với $t-t_0$ là hiệu nhiệt độ lúc ổn định",
+       "text": "Dùng $P=k\\,(t-t_0)$ với $t-t_0$ là hiệu nhiệt độ",
        "dung": true
       },
       {
-       "text": "Lấy $k=\\dfrac{P}{t}$ với $t$ là nhiệt độ phòng",
+       "text": "Lấy $k=\\dfrac{P}{t}$ với $t$ là nhiệt độ phòng lúc ổn định",
        "dung": false,
        "vi_sao": "Hao phí tỉ lệ với hiệu nhiệt độ trong – ngoài, không phải với nhiệt độ phòng."
       },
       {
-       "text": "Lấy $k=P\\cdot(t-t_0)$",
+       "text": "Lấy $k=P\\cdot(t-t_0)$ vì hiệu nhiệt độ càng lớn thì $k$ càng lớn",
        "dung": false,
        "vi_sao": "$P=k\\,(t-t_0)$ nên $k$ là thương chứ không phải tích ; đơn vị của $k$ phải là W/°C."
       }
@@ -351,12 +351,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $t'=\\dfrac{P}{k}$",
+       "text": "Lấy $t'=\\dfrac{P}{k}$ rồi coi đó là nhiệt độ phòng",
        "dung": false,
        "vi_sao": "$\\dfrac{P}{k}$ là hiệu nhiệt độ trong – ngoài, chưa phải nhiệt độ phòng."
       },
       {
-       "text": "Lấy $t'=22\\cdot\\dfrac{4}{10}$",
+       "text": "Lấy $t'=22\\cdot\\dfrac{4}{10}$ theo tỉ lệ nhiệt độ ngoài trời",
        "dung": false,
        "vi_sao": "Nhiệt độ phòng không tỉ lệ thuận với nhiệt độ ngoài trời ; mốc $0\\ ^\\circ\\text{C}$ là quy ước nên tỉ số hai nhiệt độ không có ý nghĩa."
       }
@@ -410,16 +410,16 @@
      "loi_hay_gap": "Lấy chiều dài lúc nóng $l_0(1+\\alpha\\Delta t)$ làm đáp số, trong khi đề hỏi phần thay đổi $\\Delta l$.",
      "chon_buoc_ke": [
       {
-       "text": "$\\Delta l=l_0\\alpha\\Delta t$ với $\\Delta t$ là chênh lệch giữa nhiệt độ cao nhất và thấp nhất",
+       "text": "$\\Delta l=l_0\\alpha\\Delta t$ với $\\Delta t$ là chênh lệch nhiệt độ",
        "dung": true
       },
       {
-       "text": "$\\Delta l=l_0\\alpha t$ với $t$ là nhiệt độ cao nhất",
+       "text": "$\\Delta l=l_0\\alpha t$ với $t$ là nhiệt độ cao nhất mà cầu đạt tới",
        "dung": false,
        "vi_sao": "$\\alpha$ nhân với độ tăng nhiệt độ tính từ lúc cầu dài $l_0$, không nhân với nhiệt độ cuối."
       },
       {
-       "text": "$\\Delta l=l_0(1+\\alpha\\Delta t)$",
+       "text": "$\\Delta l=l_0(1+\\alpha\\Delta t)$ khi $\\Delta t$ là độ tăng nhiệt độ",
        "dung": false,
        "vi_sao": "Đó là chiều dài cầu lúc nóng, không phải phần thay đổi."
       }
@@ -430,7 +430,7 @@
      "hoi": "Ở 45 °C, số đọc trên thước so với chiều dài thật của ống thế nào?",
      "lua_chon": [
       {
-       "text": "Nhỏ hơn chiều dài thật, vì mỗi khoảng chia của thước đã dãn dài ra",
+       "text": "Nhỏ hơn chiều dài thật, vì mỗi khoảng chia đã dãn dài ra",
        "dung": true
       },
       {
@@ -447,16 +447,16 @@
      "loi_hay_gap": "Nghĩ thước dài ra thì số đọc lớn hơn ; thật ra mỗi vạch ghi một giá trị cố định mà khoảng chia đã dài ra.",
      "chon_buoc_ke": [
       {
-       "text": "So sánh độ dài thật của một khoảng chia lúc dãn với giá trị ghi trên vạch",
+       "text": "So độ dài thật của một khoảng chia lúc dãn với giá trị ghi",
        "dung": true
       },
       {
-       "text": "Tính luôn $l=l_{\\text{đọc}}(1-\\alpha\\Delta t)$",
+       "text": "Tính luôn $l=l_{\\text{đọc}}(1-\\alpha\\Delta t)$ rồi chọn dấu theo kết quả",
        "dung": false,
        "vi_sao": "Chưa xét thước dãn làm số đọc lệch về phía nào đã chọn dấu ; cần lập luận trước rồi mới viết công thức."
       },
       {
-       "text": "Coi thước không đổi vì thép nở rất ít",
+       "text": "Coi thước không đổi vì thép nở rất ít, số đọc là chiều dài thật",
        "dung": false,
        "vi_sao": "Độ nở nhỏ nhưng đề hỏi đúng phần lệch nhỏ đó ; bỏ qua thì không trả lời được câu c."
       }
@@ -475,12 +475,12 @@
        "dung": true
       },
       {
-       "text": "$l=\\dfrac{l_{\\text{đọc}}}{1+\\alpha\\Delta t}$",
+       "text": "$l=\\dfrac{l_{\\text{đọc}}}{1+\\alpha\\Delta t}$, $\\Delta t$ tính từ nhiệt độ ban đầu của thước",
        "dung": false,
        "vi_sao": "Kết quả nhỏ hơn số đọc, trái với bước trước : thước dãn thì số đọc nhỏ hơn chiều dài thật."
       },
       {
-       "text": "$l=l_{\\text{đọc}}(1+\\alpha\\cdot45)$",
+       "text": "$l=l_{\\text{đọc}}(1+\\alpha\\cdot45)$, tính $\\Delta t$ từ mốc $0\\ ^\\circ\\text{C}$ luôn",
        "dung": false,
        "vi_sao": "Vạch khắc đúng ở $20\\ ^\\circ\\text{C}$ nên độ tăng nhiệt độ tính từ $20\\ ^\\circ\\text{C}$, không từ $0\\ ^\\circ\\text{C}$."
       }
@@ -583,7 +583,7 @@
      "loi_hay_gap": "Coi dung tích can giữ nguyên, hoặc cho rằng thép nở lấn vào trong làm dung tích giảm.",
      "chon_buoc_ke": [
       {
-       "text": "$\\Delta V_{can}=V_0\\beta_{\\text{thép}}\\Delta t$ : dung tích nở như khối thép đặc cùng hình dạng",
+       "text": "$\\Delta V_{can}=V_0\\beta_{\\text{thép}}\\Delta t$ : nở như khối thép đặc",
        "dung": true
       },
       {
@@ -658,16 +658,16 @@
      "hoi": "Hiệu chiều dài hai thanh không đổi ở mọi nhiệt độ khi nào?",
      "lua_chon": [
       {
-       "text": "Khi cùng tăng nhiệt độ, hai thanh dãn thêm đúng bằng nhau",
+       "text": "Khi cùng tăng nhiệt độ, hai thanh dãn thêm bằng nhau",
        "dung": true
       },
       {
-       "text": "Khi hai thanh có cùng hệ số nở dài",
+       "text": "Khi hai thanh có cùng hệ số nở dài, dù dài khác nhau",
        "dung": false,
        "vi_sao": "Đồng và thép có hệ số nở khác nhau ; điều kiện phải nói về độ dãn $l_0\\alpha\\Delta t$, không chỉ về $\\alpha$."
       },
       {
-       "text": "Khi hai thanh dài bằng nhau",
+       "text": "Khi hai thanh có chiều dài bằng nhau ở mọi nhiệt độ",
        "dung": false,
        "vi_sao": "Hai thanh bằng nhau thì hiệu bằng $0$, không phải $5\\ \\text{cm}$ ; dài bằng nhau mà khác $\\alpha$ thì dãn khác nhau."
       }
@@ -683,11 +683,11 @@
      "loi_hay_gap": "Viết tỉ lệ thuận $\\dfrac{l_{Cu}}{l_{Fe}}=\\dfrac{\\alpha_{Cu}}{\\alpha_{Fe}}$, cho thanh có $\\alpha$ lớn dài hơn — khi đó thanh đó dãn nhiều hơn, hiệu thay đổi.",
      "chon_buoc_ke": [
       {
-       "text": "$l_{Cu}\\alpha_{Cu}=l_{Fe}\\alpha_{Fe}$ kết hợp hiệu chiều dài, thanh có $\\alpha$ lớn hơn là thanh ngắn hơn",
+       "text": "$l_{Cu}\\alpha_{Cu}=l_{Fe}\\alpha_{Fe}$ và coi thanh thép dài hơn thanh đồng $5\\ \\text{cm}$",
        "dung": true
       },
       {
-       "text": "$\\dfrac{l_{Cu}}{l_{Fe}}=\\dfrac{\\alpha_{Cu}}{\\alpha_{Fe}}$ kết hợp hiệu chiều dài",
+       "text": "$\\dfrac{l_{Cu}}{l_{Fe}}=\\dfrac{\\alpha_{Cu}}{\\alpha_{Fe}}$ và hiệu chiều dài hai thanh",
        "dung": false,
        "vi_sao": "Tỉ lệ ngược : thanh dài hơn lại có $\\alpha$ lớn hơn thì dãn nhiều hơn hẳn, hiệu không giữ nguyên."
       },
@@ -707,16 +707,16 @@
      "loi_hay_gap": "Cho lỗ hẹp lại khi nung vì nhôm nở lấn vào trong, hoặc quên cầu thép cũng nở.",
      "chon_buoc_ke": [
       {
-       "text": "Lỗ nở theo $\\alpha_{Al}$ như miếng nhôm đặc, cầu nở theo $\\alpha_{Fe}$ ; lấy hiệu hai độ tăng đường kính",
+       "text": "Lỗ nở theo $\\alpha_{Al}$ như nhôm đặc, cầu theo $\\alpha_{Fe}$ ; lấy hiệu hai độ tăng",
        "dung": true
       },
       {
-       "text": "Chỉ tính lỗ nở theo $\\alpha_{Al}$, coi cầu giữ nguyên",
+       "text": "Chỉ tính lỗ nở theo $\\alpha_{Al}$, coi cầu thép giữ nguyên đường kính",
        "dung": false,
        "vi_sao": "Cầu thép cũng nóng lên cùng nhiệt độ nên cũng nở, làm phần chênh giảm chậm hơn."
       },
       {
-       "text": "Lỗ hẹp lại theo $\\alpha_{Al}$ vì nhôm nở lấn vào trong",
+       "text": "Lỗ hẹp lại theo $\\alpha_{Al}$ vì nhôm nở lấn vào trong, rồi lấy hiệu",
        "dung": false,
        "vi_sao": "Vòng dãn đều mọi phía như phóng to cả vòng ; lỗ rộng ra như một đĩa nhôm đặc cùng cỡ."
       }
@@ -731,16 +731,16 @@
      "loi_hay_gap": "Chỉ cho vòng nở (quên cầu nở), hoặc đổi chỗ hệ số nở của nhôm và thép.",
      "chon_buoc_ke": [
       {
-       "text": "Cho hai đường kính lúc nung bằng nhau : $d_{\\text{lỗ}}(1+\\alpha_{Al}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Fe}\\Delta t)$",
+       "text": "Đường kính bằng nhau : $d_{\\text{lỗ}}(1+\\alpha_{Al}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Fe}\\Delta t)$",
        "dung": true
       },
       {
-       "text": "$\\Delta t=\\dfrac{d_{\\text{cầu}}-d_{\\text{lỗ}}}{d_{\\text{lỗ}}\\alpha_{Al}}$",
+       "text": "$\\Delta t=\\dfrac{d_{\\text{cầu}}-d_{\\text{lỗ}}}{d_{\\text{lỗ}}\\alpha_{Al}}$ vì coi như chỉ có vòng nhôm nở",
        "dung": false,
        "vi_sao": "Bỏ quên cầu thép cũng nở ; nhiệt độ tìm được thấp quá, cầu chưa lọt."
       },
       {
-       "text": "$d_{\\text{lỗ}}(1+\\alpha_{Fe}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Al}\\Delta t)$",
+       "text": "$d_{\\text{lỗ}}(1+\\alpha_{Fe}\\Delta t)=d_{\\text{cầu}}(1+\\alpha_{Al}\\Delta t)$ với hai hệ số hoán đổi",
        "dung": false,
        "vi_sao": "Đổi chỗ hệ số : vòng là nhôm, cầu là thép ; viết như vậy ra $\\Delta t$ âm, cầu không bao giờ lọt."
       }
@@ -755,16 +755,16 @@
      "loi_hay_gap": "Lấy luôn $\\Delta t$ làm nhiệt độ nung, quên nhiệt độ ban đầu của vòng và cầu.",
      "chon_buoc_ke": [
       {
-       "text": "$t=t_0+\\Delta t$ với $t_0$ là nhiệt độ lúc đo hai đường kính",
+       "text": "$t=t_0+\\Delta t$ với $t_0$ là nhiệt độ ban đầu",
        "dung": true
       },
       {
-       "text": "$t=\\Delta t$",
+       "text": "$t=\\Delta t$ vì coi nhiệt độ ban đầu là $0\\ ^\\circ\\text{C}$",
        "dung": false,
        "vi_sao": "$\\Delta t$ là độ tăng nhiệt độ ; vòng và cầu bắt đầu từ nhiệt độ ban đầu chứ không từ $0\\ ^\\circ\\text{C}$."
       },
       {
-       "text": "$t=\\Delta t-t_0$",
+       "text": "$t=\\Delta t-t_0$ vì nung nóng thì trừ đi mốc đầu",
        "dung": false,
        "vi_sao": "Nung nóng thì nhiệt độ tăng thêm $\\Delta t$ so với lúc đầu, phải cộng chứ không trừ."
       }

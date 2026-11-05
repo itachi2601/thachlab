@@ -86,16 +86,16 @@
      "loi_hay_gap": "Lấy độ sâu của lỗ là $10\\ \\text{cm}$ (khoảng cách tới đáy) hoặc dùng luôn áp suất tại đáy cho lỗ.",
      "chon_buoc_ke": [
       {
-       "text": "Độ sâu đo từ mặt thoáng ; áp suất tại lỗ = áp suất lớp dầu + áp suất cột nước từ mặt phân cách xuống lỗ",
+       "text": "Áp suất tại lỗ = áp suất lớp dầu + áp suất cột nước từ mặt phân cách xuống lỗ",
        "dung": true
       },
       {
-       "text": "Độ sâu của lỗ là khoảng cách tới đáy nên $p=d_n\\cdot0{,}1$",
+       "text": "Độ sâu của lỗ là khoảng cách tới đáy nên chỉ tính cột nước : $p=d_n\\cdot0{,}1$",
        "dung": false,
        "vi_sao": "$h$ trong $p=d\\,h$ đo từ mặt thoáng xuống điểm xét, không đo từ đáy lên."
       },
       {
-       "text": "Lỗ ở sát đáy nên dùng luôn áp suất tại đáy",
+       "text": "Lỗ ở sát đáy nên dùng luôn áp suất tại đáy bình để tính lực tối thiểu giữ nắp",
        "dung": false,
        "vi_sao": "Lỗ cao hơn đáy nên áp suất nhỏ hơn áp suất tại đáy ; mỗi độ sâu có một áp suất riêng."
       }
@@ -177,12 +177,12 @@
        "dung": true
       },
       {
-       "text": "$\\Delta h=0$ vì bình thông nhau luôn có mặt thoáng ngang nhau",
+       "text": "$\\Delta h=0$ vì bình thông nhau luôn có mặt thoáng ngang nhau dù chứa chất lỏng khác nhau",
        "dung": false,
        "vi_sao": "Nguyên tắc đó chỉ đúng với MỘT chất lỏng đứng yên ; ở đây có hai chất lỏng khác khối lượng riêng."
       },
       {
-       "text": "$\\Delta h=h_d-y$",
+       "text": "Lấy độ dâng của mực nước làm mốc : $\\Delta h=h_d-y$",
        "dung": false,
        "vi_sao": "$y$ là độ dâng so với mức ban đầu, không phải khoảng cách tới mặt phẳng chuẩn."
       }
@@ -349,12 +349,12 @@
        "dung": true
       },
       {
-       "text": "$\\Delta h=\\dfrac{V_{gỗ}}{S_{bình}}$ : dùng thể tích cả khối",
+       "text": "$\\Delta h=\\dfrac{V_{gỗ}}{S_{bình}}$ : dùng thể tích cả khối gỗ kể cả phần nổi trên mặt nước",
        "dung": false,
        "vi_sao": "Gỗ nổi chỉ chiếm chỗ phần chìm, không phải cả khối."
       },
       {
-       "text": "$\\Delta h=h_{ch}$ : mực dâng bằng phần chìm",
+       "text": "$\\Delta h=h_{ch}$ : mực nước dâng bằng đúng chiều cao phần chìm của khối gỗ",
        "dung": false,
        "vi_sao": "Thể tích bị chiếm chỗ dàn ra trên tiết diện cả bình nên mực dâng nhỏ hơn nhiều phần chìm."
       }
@@ -546,12 +546,12 @@
        "dung": true
       },
       {
-       "text": "Sắt vẫn chiếm chỗ $\\dfrac{m_s}{D_n}$ như lúc còn trong đá",
+       "text": "Sắt vẫn chiếm chỗ $\\dfrac{m_s}{D_n}$ như lúc còn trong đá, dù đã rơi xuống đáy",
        "dung": false,
        "vi_sao": "Lúc đầu cả hệ nổi nên mới tính theo khối lượng ; sắt đã rơi xuống đáy thì chỉ chiếm đúng thể tích thật của nó."
       },
       {
-       "text": "Nước mới chiếm $\\dfrac{m_đ}{D_đ}$, bằng thể tích cục đá",
+       "text": "Nước mới chiếm $\\dfrac{m_đ}{D_đ}$, tức bằng thể tích cục đá lúc đầu",
        "dung": false,
        "vi_sao": "Đá tan thành nước có cùng khối lượng nhưng khối lượng riêng lớn hơn, nên thể tích nhỏ hơn thể tích cục đá."
       }
@@ -570,12 +570,12 @@
        "dung": true
       },
       {
-       "text": "$\\Delta h=\\dfrac{V_2}{S}$",
+       "text": "Mực hạ bằng thể tích còn lại chia tiết diện : $\\Delta h=\\dfrac{V_2}{S}$",
        "dung": false,
        "vi_sao": "Mực nước thay đổi theo độ GIẢM thể tích chiếm chỗ, không theo thể tích còn lại."
       },
       {
-       "text": "Mực nước không đổi vì đá tan bù đúng phần đã chìm",
+       "text": "Mực nước không đổi vì đá tan bù đúng phần đã chìm trong nước",
        "dung": false,
        "vi_sao": "Đúng với đá nguyên chất ; ở đây mẩu sắt rơi xuống đáy nên thể tích chiếm chỗ giảm."
       }
@@ -607,12 +607,12 @@
        "dung": true
       },
       {
-       "text": "Dị vật nào cũng rơi xuống đáy khi hết đá giữ",
+       "text": "Dị vật nào cũng rơi xuống đáy khi hết đá giữ, kể cả mẩu sáp nhẹ",
        "dung": false,
        "vi_sao": "Chỉ vật có $D\\gt D_n$ mới chìm ; sáp $D=0{,}8\\lt D_n$ tự nổi."
       },
       {
-       "text": "Chỉ cần so khối lượng hai mẩu vì chúng bằng nhau",
+       "text": "Chỉ cần so khối lượng hai mẩu vì chúng bằng nhau nên kết quả giống nhau",
        "dung": false,
        "vi_sao": "Thể tích chiếm chỗ còn phụ thuộc vật nổi hay chìm, không chỉ khối lượng."
       }
@@ -670,12 +670,12 @@
        "dung": true
       },
       {
-       "text": "Giữ cánh tay đòn cũ : $P_1\\cdot OA=P_2'\\cdot OB$",
+       "text": "Giữ cánh tay đòn cũ vì đòn vẫn thăng bằng : $P_1\\cdot OA=P_2'\\cdot OB$",
        "dung": false,
        "vi_sao": "Điểm tựa đã dời nên $OA$ và $OB$ đều đã đổi ; giữ cũ thì chỉ trở lại trọng lượng ban đầu của vật 2."
       },
       {
-       "text": "Chỉ $OB$ tăng $2\\ \\text{cm}$, còn $OA$ giữ $10\\ \\text{cm}$",
+       "text": "Dời điểm tựa nên chỉ $OB$ tăng $2\\ \\text{cm}$, còn $OA$ giữ $10\\ \\text{cm}$",
        "dung": false,
        "vi_sao": "Dời O về phía A thì $OA$ giảm $2\\ \\text{cm}$ và $OB$ tăng $2\\ \\text{cm}$ (tổng $AB$ không đổi)."
       }
@@ -694,12 +694,12 @@
        "dung": true
       },
       {
-       "text": "$F_A=P_2'$",
+       "text": "Lực đẩy bằng đúng lực kéo còn lại ở đầu B : $F_A=P_2'$",
        "dung": false,
        "vi_sao": "$P_2'$ là lực còn lại sau khi trừ lực đẩy, không phải chính lực đẩy."
       },
       {
-       "text": "$F_A=P_1-P_2'$",
+       "text": "Lực đẩy bằng hiệu trọng lượng hai vật : $F_A=P_1-P_2'$",
        "dung": false,
        "vi_sao": "$P_1$ là trọng lượng vật ở đầu A, không liên quan tới lực đẩy lên vật 2."
       }
@@ -718,12 +718,12 @@
        "dung": true
       },
       {
-       "text": "$V_2=\\dfrac{m_2}{D_n}$",
+       "text": "Vật có cùng khối lượng với nước : $V_2=\\dfrac{m_2}{D_n}$",
        "dung": false,
        "vi_sao": "Đó là thể tích nước có cùng khối lượng với vật, chỉ đúng nếu vật có khối lượng riêng bằng nước."
       },
       {
-       "text": "$V_2=\\dfrac{F_A}{D_n}$",
+       "text": "Chia lực đẩy cho khối lượng riêng nước : $V_2=\\dfrac{F_A}{D_n}$",
        "dung": false,
        "vi_sao": "Thiếu hệ số 10 : $F_A=d_nV=10D_nV$, nên thể tích bị tính lớn gấp 10 lần."
       }

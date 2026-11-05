@@ -65,7 +65,7 @@
      "loi_hay_gap": "Hay nói ngược chiều. Từ A về O vật thấp dần (thế năng giảm) và nhanh dần (động năng tăng).",
      "chon_buoc_ke": [
       {
-       "text": "Xét độ cao và tốc độ của vật thay đổi thế nào",
+       "text": "Xét độ cao và tốc độ thay đổi thế nào",
        "dung": true
       },
       {
@@ -113,7 +113,7 @@
      "loi_hay_gap": "Hay quên lấy căn: $v^2=4$ mới là bình phương vận tốc. Hoặc quên $\\frac{1}{2}$, ra $v^2=2$.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt $\\frac{1}{2}mv_O^2=W$ rồi lấy căn",
+       "text": "Đặt $\\frac{1}{2}mv_O^2=W$",
        "dung": true
       },
       {
@@ -314,12 +314,12 @@
        "dung": true
       },
       {
-       "text": "$W=3W_t$",
+       "text": "$W=W_đ=3W_t$",
        "dung": false,
-       "vi_sao": "Quên cộng chính $W_t$: cơ năng gồm cả động năng lẫn thế năng."
+       "vi_sao": "Cơ năng gồm cả động năng lẫn thế năng, không chỉ động năng."
       },
       {
-       "text": "$W_t=3W_đ$",
+       "text": "$W=W_đ+W_t=3W_đ$",
        "dung": false,
        "vi_sao": "Đảo ngược: đề cho động năng bằng ba lần thế năng."
       }
@@ -358,7 +358,7 @@
      "loi_hay_gap": "Hay lấy $\\frac{3}{4}v_0$. Động năng là $\\frac{3}{4}W$, mà động năng tỉ lệ với $v^2$, không tỉ lệ với $v$.",
      "chon_buoc_ke": [
       {
-       "text": "$W_đ=3W_t$, rồi $v^2=\\frac{2W_đ}{m}$",
+       "text": "$v^2=\\frac{2W_đ}{m}$",
        "dung": true
       },
       {
@@ -544,7 +544,7 @@
      "loi_hay_gap": "Hay cho rằng cơ năng ở chân bằng ở đỉnh. Có ma sát nên phải tính lại từ vận tốc thật ở chân.",
      "chon_buoc_ke": [
       {
-       "text": "Ở chân $h=0$: $W_2=\\frac{1}{2}mv^2$ với vận tốc đề cho",
+       "text": "Ở chân $h=0$: $W_2=\\frac{1}{2}mv^2$",
        "dung": true
       },
       {

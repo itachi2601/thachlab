@@ -37,7 +37,7 @@
        "vi_sao": "Dòng cảm ứng không cần tiếp xúc; chỉ cần số đường sức qua cuộn dây biến thiên."
       },
       {
-       "text": "Có, vì cuộn dây nằm trong từ trường của nam châm",
+       "text": "Có, vì cuộn dây nằm trong từ trường mạnh của nam châm",
        "dung": false,
        "vi_sao": "Kết luận đúng nhưng lí do sai: chỉ nằm trong từ trường chưa đủ, điều kiện là số đường sức qua cuộn dây biến thiên."
       }
@@ -53,7 +53,7 @@
        "dung": true
       },
       {
-       "text": "Cực Nam, để hút nam châm",
+       "text": "Cực Nam, để hút cực Bắc của nam châm đang tiến lại gần",
        "dung": false,
        "vi_sao": "Hút thì nam châm càng tới gần, số đường sức càng tăng: dòng cảm ứng tiếp tay cho sự biến thiên, trái định luật Lenz và bảo toàn năng lượng."
       },
@@ -98,11 +98,11 @@
      "loi_hay_gap": "Đặt mắt sai chỗ: nhìn từ phía trong ống ra thì chiều quay thấy được bị đảo ngược.",
      "chon_buoc_ke": [
       {
-       "text": "Từ cực của đầu A, dùng quy tắc nắm tay phải (mẹo nhìn đầu ống) suy ra chiều dòng",
+       "text": "Từ cực của đầu A, dùng quy tắc nắm tay phải suy ra chiều dòng",
        "dung": true
       },
       {
-       "text": "Lấy chiều theo đường sức của nam châm đi vào đầu A",
+       "text": "Lấy chiều theo đường sức của nam châm đi vào đầu A, dòng quay theo chiều đó",
        "dung": false,
        "vi_sao": "Đường sức là đường thẳng đi dọc trục, không cho biết dòng quay chiều nào quanh trục."
       },
@@ -135,7 +135,7 @@
      "loi_hay_gap": "Nhầm &quot;nhiều đường sức&quot; với &quot;số đường sức biến thiên&quot;.",
      "chon_buoc_ke": [
       {
-       "text": "So số đường sức qua cuộn dây ở hai thời điểm khác nhau trong lúc nam châm nằm yên",
+       "text": "So số đường sức qua cuộn dây ở hai thời điểm khi nam châm nằm yên",
        "dung": true
       },
       {
@@ -144,7 +144,7 @@
        "vi_sao": "Điều kiện không phụ thuộc từ trường mạnh hay yếu mà phụ thuộc nó có thay đổi hay không."
       },
       {
-       "text": "Xét nam châm có nằm bên trong cuộn dây hay không",
+       "text": "Xét nam châm có nằm bên trong cuộn dây hay không, vì ở trong thì từ trường mạnh",
        "dung": false,
        "vi_sao": "Vị trí không quyết định; điều quyết định là số đường sức có biến thiên không."
       }
@@ -172,11 +172,11 @@
      "loi_hay_gap": "Hiểu định luật Lenz là &quot;dòng cảm ứng luôn đẩy nam châm ra&quot;.",
      "chon_buoc_ke": [
       {
-       "text": "Xét số đường sức đang tăng hay giảm, dùng định luật Lenz rồi suy ra chiều dòng",
+       "text": "Xét số đường sức tăng hay giảm, dùng định luật Lenz suy ra chiều dòng",
        "dung": true
       },
       {
-       "text": "Giữ nguyên kết quả câu a vì vẫn là nam châm và cuộn dây đó",
+       "text": "Giữ nguyên kết quả câu a vì vẫn là nam châm và cuộn dây đó, chỉ đi xa hơn",
        "dung": false,
        "vi_sao": "Chiều dòng cảm ứng phụ thuộc số đường sức đang tăng hay đang giảm, không chỉ phụ thuộc nam châm và cuộn dây."
       },
@@ -192,16 +192,16 @@
      "hoi": "Quay nam châm quanh chính trục dọc của nó: có dòng điện cảm ứng không?",
      "lua_chon": [
       {
-       "text": "Không, vì đường sức phân bố đều quanh trục nên số đường sức qua cuộn dây không đổi",
+       "text": "Không, vì đường sức đối xứng quanh trục nên số đường sức qua dây không đổi",
        "dung": true
       },
       {
-       "text": "Có, vì nam châm đang chuyển động",
+       "text": "Có, vì nam châm đang chuyển động nên từ trường qua cuộn dây thay đổi",
        "dung": false,
        "vi_sao": "Có chuyển động chưa đủ; điều kiện là số đường sức qua cuộn dây biến thiên."
       },
       {
-       "text": "Có, và là dòng xoay chiều vì nam châm quay",
+       "text": "Có, và là dòng xoay chiều vì các cực nam châm lần lượt quay qua cuộn dây",
        "dung": false,
        "vi_sao": "Máy phát cần các cực lần lượt đi qua cuộn dây; ở đây cực Bắc luôn hướng về đầu A."
       }
@@ -209,16 +209,16 @@
      "loi_hay_gap": "Nghĩ rằng hễ nam châm chuyển động là có dòng cảm ứng.",
      "chon_buoc_ke": [
       {
-       "text": "Xét khi nam châm quay, số đường sức xuyên qua tiết diện cuộn dây có thay đổi không",
+       "text": "Xét khi nam châm quay, số đường sức qua tiết diện cuộn dây có đổi không",
        "dung": true
       },
       {
-       "text": "Xét nam châm có chuyển động hay không",
+       "text": "Xét nam châm có chuyển động hay không, vì chuyển động thì có dòng",
        "dung": false,
        "vi_sao": "Chuyển động không phải điều kiện; nhiều chuyển động không làm số đường sức thay đổi."
       },
       {
-       "text": "Xét nam châm quay nhanh hay chậm",
+       "text": "Xét nam châm quay nhanh hay chậm, vì quay càng nhanh dòng càng lớn",
        "dung": false,
        "vi_sao": "Tốc độ chỉ quyết định độ lớn của dòng khi đã có biến thiên; trước hết phải xét có biến thiên không."
       }
@@ -229,16 +229,16 @@
      "hoi": "Đóng K, giữ K đóng, rồi ngắt K: điện kế cho thấy gì?",
      "lua_chon": [
       {
-       "text": "Đóng K: dòng thoáng qua; giữ K: không có dòng; ngắt K: dòng thoáng qua ngược chiều lúc đóng",
+       "text": "Đóng K: dòng thoáng qua; giữ K: không có dòng; ngắt K: dòng thoáng qua ngược chiều",
        "dung": true
       },
       {
-       "text": "Đóng K: có dòng suốt thời gian giữ K; ngắt K: hết dòng",
+       "text": "Đóng K: có dòng suốt thời gian giữ K; ngắt K: hết dòng, kim điện kế về $0$",
        "dung": false,
        "vi_sao": "Giữ K đóng thì dòng qua nam châm điện không đổi, số đường sức qua cuộn dây không đổi."
       },
       {
-       "text": "Đóng K và ngắt K đều cho dòng thoáng qua cùng một chiều",
+       "text": "Đóng K và ngắt K đều cho dòng thoáng qua cùng một chiều, còn giữ K thì không có dòng",
        "dung": false,
        "vi_sao": "Đóng K số đường sức tăng, ngắt K số đường sức giảm: hai biến thiên ngược nhau cho hai dòng ngược chiều."
       }
@@ -250,12 +250,12 @@
        "dung": true
       },
       {
-       "text": "Xét nam châm điện có dịch chuyển không",
+       "text": "Xét nam châm điện có dịch chuyển không, vì dịch chuyển mới có dòng",
        "dung": false,
        "vi_sao": "Nam châm điện đặt yên; từ trường của nó vẫn thay đổi được khi dòng qua nó thay đổi."
       },
       {
-       "text": "Coi nam châm điện như nam châm vĩnh cửu đặt yên",
+       "text": "Coi nam châm điện như nam châm vĩnh cửu đặt yên, từ trường không thay đổi",
        "dung": false,
        "vi_sao": "Khác nam châm vĩnh cửu, từ trường nam châm điện xuất hiện khi đóng khoá và mất đi khi ngắt khoá."
       }
@@ -310,16 +310,16 @@
      "loi_hay_gap": "Nhân thẳng số vòng/phút với số cặp cực, quên đổi ra vòng/s.",
      "chon_buoc_ke": [
       {
-       "text": "Đổi số vòng/phút ra vòng/s rồi nhân với số cặp cực",
+       "text": "Đổi vòng/phút ra vòng/s rồi nhân với số cặp cực",
        "dung": true
       },
       {
-       "text": "Nhân thẳng số vòng/phút với số cặp cực",
+       "text": "Nhân thẳng số vòng/phút với số cặp cực, không cần đổi đơn vị",
        "dung": false,
        "vi_sao": "Đề cho vòng/phút; $f=np$ dùng $n$ theo vòng/s, để nguyên thì kết quả lớn gấp $60$ lần."
       },
       {
-       "text": "Đổi ra vòng/s rồi chia cho số cặp cực",
+       "text": "Đổi ra vòng/s rồi chia cho số cặp cực, vì cặp cực làm tần số giảm",
        "dung": false,
        "vi_sao": "Tần số tăng theo số cặp cực vì mỗi vòng quay cho $p$ chu kì; phải nhân với $p$."
       }
@@ -362,12 +362,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $p=4$ rồi dùng $f=np$",
+       "text": "Lấy $p=4$ vì có $4$ cực, rồi dùng $f=np$",
        "dung": false,
        "vi_sao": "$4$ là số cực; một cực Bắc với một cực Nam mới tạo thành một cặp."
       },
       {
-       "text": "Lấy $f$ bằng số vòng quay mỗi giây của núm",
+       "text": "Lấy $f$ bằng số vòng quay mỗi giây của núm, vì nam châm cũng quay một vòng",
        "dung": false,
        "vi_sao": "Chỉ đúng khi nam châm có đúng một cặp cực; nam châm này có nhiều cực hơn."
       }
@@ -382,16 +382,16 @@
      "loi_hay_gap": "Đồng nhất số chu kì mỗi giây với số lần đổi chiều mỗi giây.",
      "chon_buoc_ke": [
       {
-       "text": "Đếm số lần đổi chiều trong một chu kì rồi nhân với số chu kì mỗi giây",
+       "text": "Đếm số lần đổi chiều trong một chu kì, nhân số chu kì mỗi giây",
        "dung": true
       },
       {
-       "text": "Lấy đúng bằng tần số",
+       "text": "Lấy đúng bằng tần số, vì mỗi chu kì dòng đổi chiều một lần",
        "dung": false,
        "vi_sao": "Tần số là số chu kì mỗi giây; trong một chu kì dòng đổi chiều nhiều hơn một lần."
       },
       {
-       "text": "Lấy một nửa tần số",
+       "text": "Lấy một nửa tần số, vì chỉ có nửa chu kì là dòng đổi chiều",
        "dung": false,
        "vi_sao": "Mỗi chu kì có ít nhất một lần đổi chiều, nên số lần đổi chiều không thể ít hơn số chu kì."
       }
@@ -450,12 +450,12 @@
        "dung": true
       },
       {
-       "text": "Chia công suất một đèn cho $U_2$",
+       "text": "Chia công suất của một đèn cho $U_2$, vì đèn nào cũng như đèn nào",
        "dung": false,
        "vi_sao": "Đó là dòng qua một đèn; cuộn thứ cấp cấp dòng cho cả hai đèn song song."
       },
       {
-       "text": "Chia tổng công suất cho $U_1$",
+       "text": "Chia tổng công suất hai đèn cho $U_1$",
        "dung": false,
        "vi_sao": "Đó là cách tính dòng phía sơ cấp; phía thứ cấp dùng hiệu điện thế ra $U_2$."
       }
@@ -527,7 +527,7 @@
        "vi_sao": "Nửa của $12\\ \\text{V}$ ứng với nửa cuộn THỨ CẤP; cuộn sơ cấp ứng với $220\\ \\text{V}$."
       },
       {
-       "text": "Lấy $N_x=N_2\\cdot\\dfrac{12}{6}$",
+       "text": "Lấy $N_x=N_2\\cdot\\dfrac{12}{6}$ vì hiệu điện thế nhỏ nên nhiều vòng hơn",
        "dung": false,
        "vi_sao": "Hiệu điện thế ra tỉ lệ THUẬN với số vòng: dùng ít vòng hơn thì hiệu điện thế nhỏ hơn."
       }
@@ -551,7 +551,7 @@
        "vi_sao": "Cuộn nối nguồn luôn là sơ cấp; đổi cuộn nối nguồn thì tỉ số đảo lại."
       },
       {
-       "text": "Kết luận máy không hoạt động vì nối ngược",
+       "text": "Kết luận máy không hoạt động được vì nối ngược hai cuộn dây",
        "dung": false,
        "vi_sao": "Máy biến áp làm việc theo cả hai chiều; nối ngược thì thành máy tăng áp."
       }
@@ -658,7 +658,7 @@
        "dung": true
       },
       {
-       "text": "$P_{\\text{hp}}$ tỉ lệ nghịch với $U$ : chia cho $\\dfrac{60}{15}$",
+       "text": "$P_{\\text{hp}}$ tỉ lệ nghịch với $U$ : chia cho $\\dfrac{60}{15}$ lần",
        "dung": false,
        "vi_sao": "$I$ giảm $k$ lần nhưng $P_{\\text{hp}}=RI^2$ nên giảm $k^2$ lần."
       },
@@ -682,12 +682,12 @@
        "dung": true
       },
       {
-       "text": "$U\\ge\\dfrac{PR}{0{,}01}$",
+       "text": "$\\dfrac{P^2R}{U}\\le0{,}01P\\Rightarrow U\\ge\\dfrac{PR}{0{,}01}$",
        "dung": false,
        "vi_sao": "Quên căn : hao phí tỉ lệ nghịch với $U^2$, không phải với $U$."
       },
       {
-       "text": "$U\\ge\\sqrt{\\dfrac{P^2R}{0{,}01}}$",
+       "text": "$\\dfrac{P^2R}{U^2}\\le0{,}01\\Rightarrow U\\ge\\sqrt{\\dfrac{P^2R}{0{,}01}}$",
        "dung": false,
        "vi_sao": "$1\\,\\%$ là của $P$ : vế phải phải là $0{,}01\\,P$, không phải $0{,}01$."
       }
@@ -702,16 +702,16 @@
      "loi_hay_gap": "Cho tiết diện chỉ gấp $4$ lần (bằng số lần tăng $U$) : hao phí phải giảm đúng như câu b, mà $I$ không đổi nên $R$ phải giảm cùng số lần đó.",
      "chon_buoc_ke": [
       {
-       "text": "Giữ $I$, nên $R$ giảm cùng số lần với $P_{\\text{hp}}$ ; $S$ tỉ lệ nghịch với $R$",
+       "text": "Giữ $I$, nên $R$ giảm bằng số lần $P_{\\text{hp}}$ giảm ; $S$ tỉ lệ nghịch $R$",
        "dung": true
       },
       {
-       "text": "$S$ tỉ lệ thuận với $R$",
+       "text": "$S$ tỉ lệ thuận với $R$, vì dây to thì dòng khó đi hơn",
        "dung": false,
        "vi_sao": "$R=\\rho\\dfrac{\\ell}{S}$ : dây to hơn thì điện trở nhỏ hơn."
       },
       {
-       "text": "$S$ gấp bằng số lần tăng $U$ ở câu b",
+       "text": "$S$ gấp bằng số lần tăng $U$ ở câu b, vì hao phí giảm theo $U$",
        "dung": false,
        "vi_sao": "Hao phí phải giảm bằng số lần ở câu b, tức $k^2$ lần chứ không phải $k$ lần."
       }
@@ -793,12 +793,12 @@
        "dung": true
       },
       {
-       "text": "$U\\ge\\dfrac{PR}{0{,}02}$",
+       "text": "$\\dfrac{PR}{U}\\le0{,}02\\Rightarrow U\\ge\\dfrac{PR}{0{,}02}$",
        "dung": false,
        "vi_sao": "Quên căn : hao phí tỉ lệ nghịch với $U^2$."
       },
       {
-       "text": "$U\\ge\\sqrt{\\dfrac{P^2R}{0{,}02}}$",
+       "text": "$\\dfrac{P^2R}{U^2}\\le0{,}02\\Rightarrow U\\ge\\sqrt{\\dfrac{P^2R}{0{,}02}}$",
        "dung": false,
        "vi_sao": "$2\\,\\%$ là của $P$ : phải viết $P_{\\text{hp}}\\le0{,}02\\,P$."
       }
@@ -1106,7 +1106,7 @@
        "dung": true
       },
       {
-       "text": "Giải phương trình bậc hai, lấy nghiệm lớn",
+       "text": "Giải phương trình bậc hai, lấy nghiệm lớn hơn",
        "dung": false,
        "vi_sao": "Nghiệm lớn cho hao phí lớn hơn cả công suất nơi tiêu thụ, hiệu suất dưới $50\\,\\%$ — trái giả thiết của đề."
       },
@@ -1174,16 +1174,16 @@
      "loi_hay_gap": "Chia $P_2$ cho cường độ dòng của câu a (dòng đã đổi), hoặc dùng công thức tỉ số căn của câu c.",
      "chon_buoc_ke": [
       {
-       "text": "$P_{\\text{hp}2}=P_2-P_{\\text{tt}}$, $I_2=\\sqrt{\\dfrac{P_{\\text{hp}2}}{R}}$, rồi $U_2=\\dfrac{P_2}{I_2}$",
+       "text": "$P_{\\text{hp}2}=P_2-P_{\\text{tt}}$, $I_2=\\sqrt{\\dfrac{P_{\\text{hp}2}}{R}}$, $U_2=\\dfrac{P_2}{I_2}$",
        "dung": true
       },
       {
-       "text": "$U_2=\\dfrac{P_2}{I}$ với $I$ của câu a",
+       "text": "$U_2=\\dfrac{P_2}{I}$ với $I$ của câu a, rồi đổi sang kilôvôn",
        "dung": false,
        "vi_sao": "Đổi $U$ thì cường độ dòng cũng đổi ; phải tính lại $I_2$ từ hao phí mới."
       },
       {
-       "text": "$U_2=U_1\\sqrt{\\dfrac{1-H_1}{1-H_2}}$",
+       "text": "$U_2=U_1\\sqrt{\\dfrac{1-H_1}{1-H_2}}$ vì công suất đầu dây không đổi",
        "dung": false,
        "vi_sao": "Công thức này giả sử công suất đầu dây không đổi ; ở bài này nó đã thay đổi."
       }
@@ -1202,7 +1202,7 @@
        "dung": true
       },
       {
-       "text": "Thế tỉ lệ hao phí vào chỗ $H_1$, $H_2$",
+       "text": "Thế tỉ lệ hao phí vào chỗ $H_1$, $H_2$ của công thức",
        "dung": false,
        "vi_sao": "Công thức đã có sẵn $1-H$ ; thế nhầm sẽ ra số khác."
       },

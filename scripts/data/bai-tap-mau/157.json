@@ -137,16 +137,16 @@
      "loi_hay_gap": "Giải ngược sai: lấy $U_V=0{,}99\\,U$ (bỏ $R_1$) hoặc quên đảo công thức song song khi tìm $R_V$.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt $U_V\\ge0{,}99$ lần số chỉ lí tưởng, suy $U_1$, $R_{doan}$, rồi đảo công thức song song tìm $R_V$",
+       "text": "Đặt $U_V\\ge0{,}99$ lần số chỉ lí tưởng, đảo song song tìm $R_V$",
        "dung": true
       },
       {
-       "text": "Cho $R_V=\\infty$ vì sai số nhỏ nhất",
+       "text": "Cho $R_V=\\infty$ vì khi đó sai số nhỏ nhất, không cần tính thêm",
        "dung": false,
        "vi_sao": "$R_V=\\infty$ là vôn kế lí tưởng chứ không phải giá trị cần tìm ; đề hỏi $R_V$ nhỏ nhất vẫn đạt $1\\%$."
       },
       {
-       "text": "Cho $R_V=100\\,R_2$ vì $1\\%=\\tfrac1{100}$",
+       "text": "Cho $R_V=100\\,R_2$ vì $1\\%=\\tfrac1{100}$, tức lớn gấp trăm lần $R_2$",
        "dung": false,
        "vi_sao": "Đó chỉ là điều kiện đủ ước chừng, không phải giá trị tối thiểu ; phải tính từ $U_V=0{,}99$ lần giá trị thật."
       }
@@ -249,12 +249,12 @@
        "dung": true
       },
       {
-       "text": "$R_3=R_{23}-R_2$",
+       "text": "Coi hai điện trở nối tiếp : $R_3=R_{23}-R_2$",
        "dung": false,
-       "vi_sao": "Công thức nối tiếp : đoạn này là song song nên điện trở thành phần lớn hơn $R_{23}$."
+       "vi_sao": "Đoạn này là song song nên điện trở thành phần lớn hơn $R_{23}$."
       },
       {
-       "text": "$R_3=R_{23}\\cdot R_2$",
+       "text": "Dùng tích hai điện trở : $R_3=R_{23}\\cdot R_2$ cho gọn",
        "dung": false,
        "vi_sao": "Không có công thức nhân đó ; điện trở song song là tích chia tổng."
       }
@@ -336,12 +336,12 @@
        "dung": true
       },
       {
-       "text": "$R_{td}=R_1+R_b+R_2$",
+       "text": "$R_{td}=R_1+R_b+R_2$ rồi tính $I$ theo $U$",
        "dung": false,
        "vi_sao": "$R_b$ và $R_2$ chung hai nút nên song song, không cộng."
       },
       {
-       "text": "$I=\\dfrac U{R_{ss}}$",
+       "text": "$I=\\dfrac U{R_{ss}}$ không cần xét thêm $R_1$",
        "dung": false,
        "vi_sao": "$R_{ss}$ chỉ là một phần của mạch ; hiệu điện thế hai đầu nó nhỏ hơn $U$ vì còn $R_1$."
       }
@@ -356,16 +356,16 @@
      "loi_hay_gap": "Cho $I=\\dfrac U{R_1}$ rồi $R_b=\\dfrac{U_{ss}}I$ : quên $R_2$ song song và $U_1$ chỉ là $U-U_{ss}$.",
      "chon_buoc_ke": [
       {
-       "text": "$U_1=U-U_{ss}$, rồi $I$, rồi $R_{ss}=\\dfrac{U_{ss}}I$, rồi đảo công thức song song tìm $R_b$",
+       "text": "$I=\\dfrac{U-U_{ss}}{R_1}$ rồi $R_{ss}$, rồi đảo song song tìm $R_b$",
        "dung": true
       },
       {
-       "text": "Cho $I=\\dfrac U{R_1}$",
+       "text": "Cho $I=\\dfrac U{R_1}$ rồi $R_{ss}$, rồi $R_b$ theo công thức song song",
        "dung": false,
        "vi_sao": "$R_1$ chỉ chịu $U-U_{ss}$ chứ không chịu toàn bộ $U$."
       },
       {
-       "text": "Cho $R_b=R_{ss}$",
+       "text": "Cho $R_b=R_{ss}$ rồi lấy luôn làm kết quả của $R_b$",
        "dung": false,
        "vi_sao": "$R_{ss}$ là điện trở của $R_b$ song song $R_2$, nhỏ hơn $R_b$ ; phải đảo công thức song song."
       }
@@ -380,11 +380,11 @@
      "loi_hay_gap": "Chọn $R_b=0$ cho dòng nhỏ nhất : đó là lúc đoạn song song bị nối tắt và dòng lớn nhất.",
      "chon_buoc_ke": [
       {
-       "text": "Dòng nhỏ nhất khi $R_{td}$ lớn nhất, tức $R_b$ lớn nhất",
+       "text": "Dòng nhỏ nhất khi $R_{td}$ lớn, tức $R_b$ lớn nhất",
        "dung": true
       },
       {
-       "text": "Dòng nhỏ nhất khi $R_b=0$",
+       "text": "Dòng nhỏ nhất khi $R_{td}$ nhỏ nhất, tức $R_b=0$",
        "dung": false,
        "vi_sao": "$R_b=0$ làm đoạn song song bị nối tắt, $R_{td}$ nhỏ nhất, dòng lớn nhất."
       },
@@ -404,11 +404,11 @@
      "loi_hay_gap": "Cho vôn kế chỉ tới $U$ của nguồn : quên $R_1$ còn chịu một phần hiệu điện thế.",
      "chon_buoc_ke": [
       {
-       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ lớn nhất, tức $R_b=24\\ \\Omega$",
+       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ lớn, tức $R_b=24\\ \\Omega$",
        "dung": true
       },
       {
-       "text": "$U_{ss}$ lớn nhất khi $R_b=0$",
+       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ nhỏ, tức $R_b=0$",
        "dung": false,
        "vi_sao": "$R_b=0$ nối tắt đoạn song song nên $U_{ss}=0$."
       },
@@ -471,12 +471,12 @@
        "dung": true
       },
       {
-       "text": "$R_2$ và $R_4$ song song : tích chia tổng",
+       "text": "$R_2$ và $R_4$ song song : lấy tích chia tổng",
        "dung": false,
        "vi_sao": "Cùng nhánh thì dòng đi qua lần lượt cả hai điện trở, tức nối tiếp."
       },
       {
-       "text": "Chỉ lấy $R_4$",
+       "text": "Chỉ lấy $R_4$ vì dòng đi qua nhánh cuối cùng",
        "dung": false,
        "vi_sao": "Dòng đi qua cả $R_2$ lẫn $R_4$ nên phải cộng cả hai."
       }
@@ -491,16 +491,16 @@
      "loi_hay_gap": "Cộng cả bốn điện trở hoặc tính $(R_1\\parallel R_3)+(R_2\\parallel R_4)$.",
      "chon_buoc_ke": [
       {
-       "text": "Hai nhánh (mỗi nhánh nối tiếp) song song nhau, bỏ nhánh PQ",
+       "text": "Mỗi nhánh nối tiếp, hai nhánh song song, bỏ PQ",
        "dung": true
       },
       {
-       "text": "Cộng cả bốn : $R_1+R_2+R_3+R_4$",
+       "text": "Cộng cả bốn : $R_1+R_2+R_3+R_4$ vì cùng chung nguồn",
        "dung": false,
        "vi_sao": "Đó là nối tiếp cả bốn ; hai nhánh có chung hai nút M, N nên song song."
       },
       {
-       "text": "$(R_1\\parallel R_3)+(R_2\\parallel R_4)$",
+       "text": "$(R_1\\parallel R_3)+(R_2\\parallel R_4)$ vì cùng nút là song song",
        "dung": false,
        "vi_sao": "$R_1$ và $R_3$ cùng nhánh nên nối tiếp, không song song."
       }
@@ -539,16 +539,16 @@
      "loi_hay_gap": "Dùng $\\dfrac U{R_5}$ hoặc hiệu hai dòng nhánh : dòng qua $R_5$ chỉ phụ thuộc hiệu điện thế giữa P và Q.",
      "chon_buoc_ke": [
       {
-       "text": "$V_P=V_Q$ vì cầu cân bằng nên không có dòng qua $R_5$",
+       "text": "$V_P=V_Q$ vì cầu cân bằng nên $I_5=0$",
        "dung": true
       },
       {
-       "text": "$I_5=\\dfrac U{R_5}$",
+       "text": "$I_5=\\dfrac U{R_5}$ vì $R_5$ mắc vào nguồn",
        "dung": false,
        "vi_sao": "$R_5$ không nối trực tiếp vào hai cực nguồn ; nó chỉ chịu $U_{PQ}$."
       },
       {
-       "text": "$I_5=I_{trai}-I_{phai}$",
+       "text": "$I_5=I_{trai}-I_{phai}$ vì hiệu hai nhánh",
        "dung": false,
        "vi_sao": "Hiệu hai dòng nhánh không phải dòng qua $R_5$ ; dòng qua $R_5$ do $U_{PQ}$ quyết định."
       }
@@ -853,7 +853,7 @@
      "loi_hay_gap": "Coi dòng chính bằng số chỉ $A_1$ : thiếu dòng qua $R_2$ và qua $R_5$.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt $U_X$ làm ẩn : $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$ và $U-U_X=IR_1$",
+       "text": "Đặt $U_X$ làm ẩn : $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$",
        "dung": true
       },
       {
@@ -862,7 +862,7 @@
        "vi_sao": "$A_1$ chỉ dòng qua $R_4$, chỉ là một phần của dòng nhánh Y ; dòng chính còn gồm cả nhánh $R_2$."
       },
       {
-       "text": "Cho $U_X=U-U_{45}$",
+       "text": "Cho $U_X=U-U_{45}$ vì $U_{45}$ là hiệu điện thế trên $R_1$",
        "dung": false,
        "vi_sao": "$U_{45}$ là hiệu điện thế hai đầu $R_4$ chứ không phải hiệu điện thế rơi trên $R_1$."
       }
@@ -881,12 +881,12 @@
        "dung": true
       },
       {
-       "text": "$I_Y=\\dfrac{U_X}{R_3}$",
+       "text": "$I_Y=\\dfrac{U_X}{R_3}$ cho cả $U_X$",
        "dung": false,
        "vi_sao": "$R_3$ chỉ chịu một phần của $U_X$ ; phần còn lại nằm trên $R_4\\parallel R_5$."
       },
       {
-       "text": "$I_Y=I_4$",
+       "text": "$I_Y=I_4$ vì cùng nhánh",
        "dung": false,
        "vi_sao": "Dòng qua $R_3$ gồm cả dòng qua $R_4$ lẫn dòng qua $R_5$."
       }

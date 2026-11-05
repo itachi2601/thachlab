@@ -61,16 +61,16 @@
      "loi_hay_gap": "Cộng $S$ rồi trừ $30$ ngày; tháng 3 có $31$ ngày.",
      "chon_buoc_ke": [
       {
-       "text": "Cộng $S$ vào ngày 3/3 rồi trừ $31$ ngày của tháng 3",
+       "text": "Cộng $S$ vào 3/3 rồi trừ $31$ ngày của tháng 3",
        "dung": true
       },
       {
-       "text": "Cộng $S$ rồi trừ $30$ ngày",
+       "text": "Cộng $S$ vào ngày 3/3 rồi trừ $30$ ngày cho tháng 3",
        "dung": false,
        "vi_sao": "Tháng 3 có $31$ ngày; trừ $30$ thì lệch sang một ngày sau."
       },
       {
-       "text": "Cộng $2S$ vào ngày 3/3",
+       "text": "Cộng $2S$ vào ngày 3/3 rồi trừ ngày của tháng 3",
        "dung": false,
        "vi_sao": "Chỉ cần một Tuần Trăng là trở lại rằm; $2S$ là rằm của tháng sau nữa."
       }
@@ -81,11 +81,11 @@
      "hoi": "Câu nào mô tả đúng trăng thượng huyền?",
      "lua_chon": [
       {
-       "text": "Mọc khoảng $12$ h; lúc $18$ h ở cao nhất trên bầu trời, phần sáng quay về phía Tây",
+       "text": "Mọc khoảng $12$ h; lúc $18$ h ở cao nhất, phần sáng quay về phía Tây",
        "dung": true
       },
       {
-       "text": "Mọc khoảng $18$ h; lúc $18$ h vừa nhô lên ở phía Đông",
+       "text": "Mọc khoảng $18$ h; lúc $18$ h vừa nhô lên ở phía Đông, phần sáng hướng về phía Tây",
        "dung": false,
        "vi_sao": "Đó là trăng tròn: đối diện Mặt Trời nên mọc lúc Mặt Trời lặn."
       },
@@ -98,16 +98,16 @@
      "loi_hay_gap": "Nhầm thượng huyền với hạ huyền: hạ huyền mọc khoảng nửa đêm và sáng nửa phía Đông.",
      "chon_buoc_ke": [
       {
-       "text": "Dùng góc $90°$ giữa Mặt Trăng và Mặt Trời, Trái Đất quay $15°$ mỗi giờ",
+       "text": "Dùng góc $90°$ Trăng – Mặt Trời, Trái Đất quay $15°$ mỗi giờ",
        "dung": true
       },
       {
-       "text": "Dùng giờ mọc của trăng tròn cho mọi pha",
+       "text": "Dùng giờ mọc của trăng tròn cho mọi pha trăng",
        "dung": false,
        "vi_sao": "Mỗi ngày trăng mọc trễ khoảng $49$ phút, mỗi pha có giờ mọc riêng tuỳ góc với Mặt Trời."
       },
       {
-       "text": "Cho rằng phần sáng quay về phía Mặt Trăng mọc",
+       "text": "Cho rằng phần sáng quay về phía Mặt Trăng mọc lên trước",
        "dung": false,
        "vi_sao": "Phần sáng do Mặt Trời chiếu nên quay về phía Mặt Trời, không phụ thuộc phía mọc."
       }
@@ -118,16 +118,16 @@
      "hoi": "Nguyên nhân chính là gì?",
      "lua_chon": [
       {
-       "text": "Quỹ đạo Mặt Trăng nghiêng khoảng $5°$; một tháng sau trăng tròn không còn ở gần giao tuyến nên đi lệch khỏi bóng Trái Đất",
+       "text": "Quỹ đạo Mặt Trăng nghiêng khoảng $5°$ nên trăng tròn kế tiếp lệch khỏi bóng Trái Đất",
        "dung": true
       },
       {
-       "text": "Trái Đất tự quay nên bóng Trái Đất quay sang chỗ khác",
+       "text": "Trái Đất tự quay nên bóng Trái Đất quay sang chỗ khác, Mặt Trăng không còn đi qua",
        "dung": false,
        "vi_sao": "Tự quay không đổi hướng bóng; bóng Trái Đất luôn nằm phía đối diện Mặt Trời."
       },
       {
-       "text": "Quỹ đạo Mặt Trăng là elip nên tháng sau Mặt Trăng ở quá xa, không chạm bóng",
+       "text": "Quỹ đạo Mặt Trăng là elip nên tháng sau Mặt Trăng ở quá xa Trái Đất, không chạm bóng",
        "dung": false,
        "vi_sao": "Khoảng cách Mặt Trăng chỉ đổi khoảng $10\\ \\%$, chưa đủ ra khỏi bóng; nguyên nhân là Mặt Trăng lệch lên hoặc xuống."
       }
@@ -139,12 +139,12 @@
        "dung": true
       },
       {
-       "text": "Xét khoảng cách Trái Đất – Mặt Trời trong năm",
+       "text": "Xét khoảng cách Trái Đất – Mặt Trời thay đổi trong năm",
        "dung": false,
        "vi_sao": "Khoảng cách đó chỉ đổi vài phần trăm và không quyết định ba thiên thể có thẳng hàng hay không."
       },
       {
-       "text": "Xét tốc độ tự quay của Trái Đất",
+       "text": "Xét tốc độ tự quay của Trái Đất, nhanh hay chậm",
        "dung": false,
        "vi_sao": "Tự quay chỉ quyết định nơi nào đang là đêm, không làm Mặt Trăng vào hay ra khỏi bóng."
       }
@@ -226,12 +226,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\ell=363\\,000\\ \\text{km}$",
+       "text": "Tính $\\dfrac{D_M}{\\ell}$ với $\\ell=363\\,000\\ \\text{km}$",
        "dung": false,
        "vi_sao": "Đó là khoảng cách từ tâm Trái Đất; người quan sát đứng trên mặt đất, ngay dưới Mặt Trăng."
       },
       {
-       "text": "Lấy $\\ell=363\\,000-12\\,740\\ \\text{km}$",
+       "text": "Tính $\\dfrac{D_M}{\\ell}$ với $\\ell=363\\,000-12\\,740\\ \\text{km}$",
        "dung": false,
        "vi_sao": "Từ tâm ra mặt đất chỉ là một bán kính, không phải cả đường kính Trái Đất."
       }
@@ -283,7 +283,7 @@
      "loi_hay_gap": "So đường kính thật $D_M$ với $D_S$ rồi kết luận Mặt Trăng không bao giờ che kín được.",
      "chon_buoc_ke": [
       {
-       "text": "So góc trông Mặt Trăng với góc trông Mặt Trời trong từng trường hợp",
+       "text": "So góc trông Mặt Trăng với góc trông Mặt Trời",
        "dung": true
       },
       {
@@ -331,11 +331,11 @@
      "loi_hay_gap": "Đảo tỉ số thành $D_S\\cdot\\text{AU}/D_M$, ra khoảng cách lớn hơn cả $1\\ \\text{AU}$, vô lí.",
      "chon_buoc_ke": [
       {
-       "text": "Cho góc trông Mặt Trăng bằng góc trông Mặt Trời rồi giải ra $\\ell$",
+       "text": "Cho hai góc trông bằng nhau rồi giải ra $\\ell$",
        "dung": true
       },
       {
-       "text": "Tính $\\ell=D_S\\,\\dfrac{1\\ \\text{AU}}{D_M}$",
+       "text": "Tính $\\ell=D_S\\,\\dfrac{1\\ \\text{AU}}{D_M}$ từ tỉ số đường kính",
        "dung": false,
        "vi_sao": "Đảo ngược tỉ số; kết quả lớn hơn cả khoảng cách tới Mặt Trời là vô lí."
       },
@@ -399,12 +399,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $x=d$ rồi tính $D_M\\,\\dfrac{L-x}{L}$",
+       "text": "Lấy $x=d$ rồi tính $D_M\\,\\dfrac{L-x}{L}$ như cũ",
        "dung": false,
        "vi_sao": "Bóng rơi lên mặt đất, gần Mặt Trăng hơn tâm Trái Đất một bán kính."
       },
       {
-       "text": "Tính $D_M\\,\\dfrac{x}{L}$",
+       "text": "Tính $D_M\\,\\dfrac{x}{L}$ rồi coi đó là đường kính",
        "dung": false,
        "vi_sao": "Đó là phần đường kính nón đã thu hẹp đi sau đoạn $x$, không phải phần còn lại."
       }
@@ -439,11 +439,11 @@
      "hoi": "Người ngay dưới Mặt Trăng thấy gì?",
      "lua_chon": [
       {
-       "text": "Nhật thực hình khuyên: chóp nón bóng tối dừng trước mặt đất",
+       "text": "Nhật thực hình khuyên: nón bóng tối dừng trước mặt đất",
        "dung": true
       },
       {
-       "text": "Nhật thực toàn phần vì ba thiên thể vẫn thẳng hàng",
+       "text": "Nhật thực toàn phần vì ba thiên thể vẫn thẳng hàng với nhau",
        "dung": false,
        "vi_sao": "Thẳng hàng chưa đủ; phải xét chóp nón bóng tối có tới mặt đất không."
       },
@@ -456,16 +456,16 @@
      "loi_hay_gap": "Dùng lại khoảng cách tới mặt đất của câu b; khoảng cách Mặt Trăng đã đổi.",
      "chon_buoc_ke": [
       {
-       "text": "Tính lại $L$ với $a=1\\ \\text{AU}-405\\,000$ và $x=405\\,000-6370$ rồi so",
+       "text": "Tính lại $L$ và $x$ với khoảng cách $405\\,000\\ \\text{km}$ rồi so",
        "dung": true
       },
       {
-       "text": "Dùng lại khoảng cách $x$ của câu b",
+       "text": "Dùng lại khoảng cách $x$ của câu b để so với $L$, không tính lại",
        "dung": false,
        "vi_sao": "Mặt Trăng đã ra xa thêm $42\\,000\\ \\text{km}$, khoảng cách tới mặt đất phải tính lại."
       },
       {
-       "text": "So $D_M$ với $D_S$",
+       "text": "So $D_M$ với $D_S$ để biết bóng tối tới đất",
        "dung": false,
        "vi_sao": "So đường kính thật không đủ; chóp nón phụ thuộc cả khoảng cách."
       }
@@ -532,12 +532,12 @@
        "dung": true
       },
       {
-       "text": "Lấy đúng bằng $D_E$",
+       "text": "Lấy đúng bằng $D_E$ vì bóng tối là hình trụ",
        "dung": false,
        "vi_sao": "Nón bóng tối thu nhỏ dần về chóp, nên càng xa Trái Đất càng hẹp."
       },
       {
-       "text": "Tính $D_E\\,\\dfrac{d}{L_E}$",
+       "text": "Với $d=384\\,000\\ \\text{km}$ tính $D_E\\,\\dfrac{d}{L_E}$",
        "dung": false,
        "vi_sao": "Đó là phần đường kính đã thu hẹp đi, không phải phần còn lại."
       }
@@ -1223,12 +1223,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\omega_M+\\omega_E$",
+       "text": "Với $\\omega_E=\\dfrac{360°}{365{,}25\\ \\text{ngày}}$ lấy $\\omega_M+\\omega_E$",
        "dung": false,
        "vi_sao": "Hai chuyển động cùng chiều: hướng Mặt Trời quay cùng chiều với Mặt Trăng nên phải trừ, như kim phút đuổi kim giờ."
       },
       {
-       "text": "Lấy luôn $\\omega_M$",
+       "text": "Lấy luôn $\\omega_M$, coi Trái Đất đứng yên",
        "dung": false,
        "vi_sao": "Bỏ qua chuyển động của Trái Đất quanh Mặt Trời; hướng Mặt Trời không đứng yên so với các sao."
       }
@@ -1267,7 +1267,7 @@
      "loi_hay_gap": "Chia góc Trái Đất đã đi cho $\\omega_M$: quên rằng trong lúc Mặt Trăng đi thêm thì hướng Mặt Trời vẫn tiếp tục quay.",
      "chon_buoc_ke": [
       {
-       "text": "Góc Trái Đất đã đi $\\omega_E T$, chia cho tốc độ đuổi $\\omega_M-\\omega_E$",
+       "text": "Góc Trái Đất đã đi $\\omega_E T$, chia cho $\\omega_M-\\omega_E$",
        "dung": true
       },
       {
@@ -1291,16 +1291,16 @@
      "loi_hay_gap": "Dùng tháng giao hội của Mặt Trăng để tính, hoặc coi $15°$/h là tốc độ tự quay so với sao.",
      "chon_buoc_ke": [
       {
-       "text": "Trong một ngày Mặt Trời, Trái Đất tự quay $360°+\\omega_E\\cdot1\\ \\text{ngày}$; từ đó tính thời gian quay đúng $360°$",
+       "text": "Ngày Mặt Trời, Trái Đất quay $360°+\\omega_E\\cdot1\\ \\text{ngày}$; từ đó tính thời gian quay $360°$",
        "dung": true
       },
       {
-       "text": "Lấy $24$ h chia cho $29{,}53$ ngày như trăng mọc trễ",
+       "text": "Lấy $24$ h chia cho $29{,}53$ ngày như trăng mọc trễ mỗi ngày",
        "dung": false,
        "vi_sao": "Ngày Mặt Trời liên quan tới chuyển động của Trái Đất quanh Mặt Trời, không liên quan tới Mặt Trăng."
       },
       {
-       "text": "Trái Đất quay $15°$/h nên một vòng so với sao đúng $24$ h",
+       "text": "Trái Đất quay $15°$/h nên một vòng so với sao đúng $24$ h, bằng ngày Mặt Trời",
        "dung": false,
        "vi_sao": "$15°$/h là tốc độ so với hướng Mặt Trời; so với sao Trái Đất quay nhanh hơn một chút vì hướng Mặt Trời dịch theo quỹ đạo."
       }
@@ -1407,12 +1407,12 @@
        "dung": true
       },
       {
-       "text": "$h=90°-(\\varphi+\\delta)$",
+       "text": "Với $\\delta=+23{,}5°$ lấy $h=90°-(\\varphi+\\delta)$",
        "dung": false,
        "vi_sao": "$\\delta$ hạ chí cùng phía Bắc với Hà Nội; khoảng cách góc tới thiên đỉnh là hiệu $|\\varphi-\\delta|$, không phải tổng."
       },
       {
-       "text": "$h=90°-\\varphi+\\delta$",
+       "text": "Với $\\delta=+23{,}5°$ lấy $h=90°-\\varphi+\\delta$",
        "dung": false,
        "vi_sao": "Góc cao không vượt quá $90°$; khi $\\delta\\gt\\varphi$ Mặt Trời đã qua phía Bắc thiên đỉnh nên phải lấy trị tuyệt đối."
       }
@@ -1440,11 +1440,11 @@
      "loi_hay_gap": "Nghĩ ở bán cầu Bắc bóng trưa luôn ngả về phía Bắc: điều đó chỉ đúng khi Mặt Trời ở phía Nam thiên đỉnh.",
      "chon_buoc_ke": [
       {
-       "text": "So sánh $\\delta$ với $\\varphi$ để biết Mặt Trời ở phía nào của thiên đỉnh",
+       "text": "So $\\delta$ với $\\varphi$ để biết Mặt Trời ở phía nào của thiên đỉnh",
        "dung": true
       },
       {
-       "text": "Ở bán cầu Bắc, bóng trưa luôn ngả về phía Bắc",
+       "text": "Ở bán cầu Bắc, bóng trưa luôn ngả về phía Bắc, mọi ngày trong năm",
        "dung": false,
        "vi_sao": "Chỉ đúng khi $\\delta\\lt\\varphi$; vùng giữa hai chí tuyến có lúc Mặt Trời ở phía Bắc thiên đỉnh."
       },
@@ -1468,12 +1468,12 @@
        "dung": true
       },
       {
-       "text": "$h$ như trên, rồi bóng $=1\\ \\text{m}\\cdot\\tan h$",
+       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=-23{,}5°$, rồi bóng $=1\\ \\text{m}\\cdot\\tan h$",
        "dung": false,
        "vi_sao": "$\\tan h=\\dfrac{\\text{cọc}}{\\text{bóng}}$ nên bóng $=\\dfrac{\\text{cọc}}{\\tan h}$."
       },
       {
-       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=+23{,}5°$",
+       "text": "$h=90°-|\\varphi-\\delta|$ với $\\delta=+23{,}5°$, rồi bóng $=\\dfrac{1\\ \\text{m}}{\\tan h}$ mét",
        "dung": false,
        "vi_sao": "Đông chí Mặt Trời chiếu vuông góc ở chí tuyến Nam nên $\\delta$ mang dấu âm."
       }
@@ -1540,12 +1540,12 @@
        "dung": true
       },
       {
-       "text": "$C=s\\cdot\\dfrac{\\theta}{360°}$",
+       "text": "Góc ở tâm $=\\theta$ (so le trong); $C=s\\cdot\\dfrac{\\theta}{360°}$",
        "dung": false,
        "vi_sao": "Ngược tỉ lệ: cung $s$ ứng với góc $\\theta$ nhỏ nên cả vòng $360°$ phải dài hơn $s$ rất nhiều lần."
       },
       {
-       "text": "Góc ở tâm $=2\\theta$; $C=s\\cdot\\dfrac{360°}{2\\theta}$",
+       "text": "Góc ở tâm $=2\\theta$; $C=s\\cdot\\dfrac{360°}{2\\theta}$ (hai bán kính)",
        "dung": false,
        "vi_sao": "Tia nắng ở A và B song song, cọc A và cọc B là hai bán kính; góc ở tâm bằng $\\theta$ (so le trong), không gấp đôi."
       }
@@ -2254,7 +2254,7 @@
        "vi_sao": "$2{,}52$ AU là khoảng cách giữa hai hành tinh, không cần cộng khoảng cách Trái Đất – Mặt Trời."
       },
       {
-       "text": "Tính như trên rồi nhân $2$ cho đi và về",
+       "text": "Tính như trên rồi nhân $2$ cho quãng đi và quãng về",
        "dung": false,
        "vi_sao": "Đề hỏi một chiều từ Trái Đất tới xe; đi và về là để giải thích vì sao không lái trực tiếp."
       }
@@ -2317,11 +2317,11 @@
      "loi_hay_gap": "Trả lời $4{,}24$ năm (thời gian của ánh sáng), hoặc đổi giây ra năm mà quên nhân $365{,}25$.",
      "chon_buoc_ke": [
       {
-       "text": "$t=\\dfrac{s\\ (\\text{km})}{17\\ \\text{km/s}}$, rồi chia cho số giây của một năm",
+       "text": "$t=\\dfrac{s\\ (\\text{km})}{17\\ \\text{km/s}}$, rồi đổi giây ra năm",
        "dung": true
       },
       {
-       "text": "$t=4{,}24$ năm vì khoảng cách là $4{,}24$ ly",
+       "text": "$t=4{,}24$ năm vì khoảng cách là $4{,}24$ ly, như ánh sáng",
        "dung": false,
        "vi_sao": "Đó là thời gian của ánh sáng; tàu chậm hơn ánh sáng hàng vạn lần."
       },
