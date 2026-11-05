@@ -81,7 +81,8 @@ if (!yes) {
 let finalQ: unknown[] = questions;
 if (keepOld || fromBackup) {
   const old = (fromBackup ? JSON.parse(fs.readFileSync(fromBackup, "utf8")).questions : item.questions) as { problem_html?: string }[];
-  finalQ = [...questions, ...old.filter((q) => !q.problem_html)];
+  const newLabels = new Set(questions.map((q) => (q as { label?: string }).label));
+  finalQ = [...questions, ...old.filter((q) => !q.problem_html && !newLabels.has((q as { label?: string }).label))]; // không nhân đôi mục (vd tự luận) đã có trong JSON mới
   console.log(`Giữ ${finalQ.length - questions.length} dạng cũ sau ${questions.length} dạng mới.`);
 }
 // Chỉ dạng có cấu trúc (problem_html) mới là "dạng"; mục tự luận/dạng cũ đếm riêng (khớp workedSubtitle ở app/lop-hoc/bai/page.tsx).
