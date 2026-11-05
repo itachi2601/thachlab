@@ -78,7 +78,7 @@
        "dung": true
       },
       {
-       "text": "Trùng: phao bị sóng đẩy trôi theo",
+       "text": "Trùng: phao bị gợn sóng đẩy trôi theo cùng chiều lan của sóng trên mặt nước",
        "dung": false,
        "vi_sao": "Phao chỉ nhấp nhô tại chỗ, không trôi theo sóng; phương dao động là thẳng đứng."
       }
@@ -142,7 +142,7 @@
        "dung": true
       },
       {
-       "text": "Có: rung nhanh hơn thì thành sóng dọc",
+       "text": "Có: rung nhanh gấp đôi thì sóng ở (1) thành sóng dọc",
        "dung": false,
        "vi_sao": "Tần số chỉ đổi chu kì và bước sóng; loại sóng do phương dao động so với phương truyền quyết định."
       }
@@ -295,12 +295,12 @@
        "dung": true
       },
       {
-       "text": "Nước ở O chảy tới phao",
+       "text": "Nước ở O chảy tới phao rồi làm phao dao động",
        "dung": false,
        "vi_sao": "Nếu nước chảy tới thì phao phải trôi theo; phao chỉ nhấp nhô tại chỗ."
       },
       {
-       "text": "Cả nước lẫn năng lượng",
+       "text": "Cả nước lẫn năng lượng cùng truyền tới phao",
        "dung": false,
        "vi_sao": "Phần tử môi trường chỉ dao động quanh vị trí cân bằng, không chạy theo sóng."
       }
@@ -312,12 +312,12 @@
        "dung": true
       },
       {
-       "text": "Dựa vào việc sóng lan được xa nên phải có nước chảy",
+       "text": "Dựa vào việc sóng lan được xa nên nước phải chảy theo sóng",
        "dung": false,
        "vi_sao": "Sóng lan xa không đòi hỏi nước chảy; nước chỉ dao động tại chỗ."
       },
       {
-       "text": "Dựa vào quãng $s=vt$ bằng quãng nước đi",
+       "text": "Dựa vào quãng $s=vt$ mà sóng đi được bằng quãng nước đi",
        "dung": false,
        "vi_sao": "$s=vt$ là quãng của sóng, không phải của nước."
       }
@@ -374,12 +374,12 @@
        "dung": true
       },
       {
-       "text": "Cách nhau nửa bước sóng",
+       "text": "Hai vùng nén liên tiếp là hai điểm ngược trạng thái liền nhau: cách nhau nửa bước sóng",
        "dung": false,
        "vi_sao": "Nửa bước sóng là khoảng cách giữa một vùng nén và một vùng dãn gần nhất."
       },
       {
-       "text": "Cách nhau hai bước sóng",
+       "text": "Hai vùng nén liên tiếp là hai điểm cùng trạng thái cách một vùng: cách nhau hai bước sóng",
        "dung": false,
        "vi_sao": "Hai bước sóng là hai vùng nén cách nhau một vùng nén ở giữa."
       }
@@ -398,12 +398,12 @@
        "dung": true
       },
       {
-       "text": "Cách nhau một bước sóng",
+       "text": "Nén và dãn gần nhất cùng trạng thái: cách nhau một bước sóng",
        "dung": false,
        "vi_sao": "Một bước sóng là khoảng cách giữa hai vùng nén liên tiếp."
       },
       {
-       "text": "Cách nhau một phần tư bước sóng",
+       "text": "Nén và dãn gần nhất lệch pha $\\dfrac{\\pi}{2}$: cách nhau một phần tư bước sóng",
        "dung": false,
        "vi_sao": "Một phần tư bước sóng không ứng với cặp nén – dãn nào trong sóng này."
       }
@@ -422,12 +422,12 @@
        "dung": true
       },
       {
-       "text": "Nhân bước sóng với số vùng nén",
+       "text": "Nhân bước sóng với số vùng nén tính từ vùng thứ nhất",
        "dung": false,
        "vi_sao": "Từ vùng 1 đến vùng 6 chỉ có 5 khoảng, không phải 6."
       },
       {
-       "text": "Nhân nửa bước sóng với số vùng nén",
+       "text": "Nhân nửa bước sóng với số vùng nén tính từ vùng thứ nhất",
        "dung": false,
        "vi_sao": "Giữa hai vùng nén liền nhau là một bước sóng, không phải nửa."
       }
@@ -459,12 +459,12 @@
        "dung": true
       },
       {
-       "text": "Xét độ lệch của riêng M: lệch nhiều thì nén",
+       "text": "Xét độ lệch của riêng M so với vị trí cân bằng: lệch nhiều nhất thì M là vùng nén",
        "dung": false,
        "vi_sao": "Độ lệch của một lớp không cho biết nó nén hay dãn; phải so với các lớp bên cạnh."
       },
       {
-       "text": "Dùng lại $d=\\lambda/2$ của bước trước",
+       "text": "Dùng lại $d=\\lambda/2$ của bước trước để kết luận M ở vùng nào",
        "dung": false,
        "vi_sao": "Đó là khoảng cách giữa hai vùng, không trả lời M thuộc vùng nào."
       }
@@ -606,12 +606,12 @@
        "dung": true
       },
       {
-       "text": "Lấy luôn tỉ số tần số, vì $E\\sim f$",
+       "text": "Lấy luôn tỉ số tần số, vì $E\\sim f$ nên giảm một nửa",
        "dung": false,
        "vi_sao": "Đề cho $E\\sim f^2$ nên phải bình phương tỉ số tần số."
       },
       {
-       "text": "Giữ nguyên vì biên độ không đổi",
+       "text": "Giữ nguyên vì biên độ không đổi nên năng lượng không đổi",
        "dung": false,
        "vi_sao": "Năng lượng phụ thuộc cả $A$ và $f$; đổi $f$ thì năng lượng đổi."
       }
@@ -629,12 +629,12 @@
        "dung": true
       },
       {
-       "text": "Cộng hai tỉ số bình phương",
+       "text": "Cộng hai tỉ số đã bình phương của biên độ và tần số",
        "dung": false,
        "vi_sao": "Năng lượng tỉ lệ với tích $A^2f^2$, nên nhân chứ không cộng."
       },
       {
-       "text": "Chỉ xét tần số vì tần số tăng nhiều hơn",
+       "text": "Chỉ xét tần số vì tần số tăng nhiều hơn mức biên độ giảm đi",
        "dung": false,
        "vi_sao": "Biên độ giảm cũng làm năng lượng giảm; phải tính cả hai đại lượng."
       }
@@ -653,12 +653,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $A=4A_1$",
+       "text": "Đặt $\\dfrac{A}{A_1}=4$ rồi lấy $A=4A_1$ cho năng lượng gấp 4",
        "dung": false,
        "vi_sao": "Năng lượng tỉ lệ $A^2$ nên biên độ chỉ cần gấp $\\sqrt4$ lần, không gấp 4 lần."
       },
       {
-       "text": "Lấy $A=16A_1$",
+       "text": "Đặt $\\dfrac{A}{A_1}=4^2$ rồi lấy $A=16A_1$ cho năng lượng gấp 4",
        "dung": false,
        "vi_sao": "Bình phương thừa: $A^2$ gấp 4 chứ không phải $A$ gấp $4^2$."
       }
@@ -715,12 +715,12 @@
        "dung": true
       },
       {
-       "text": "Xa gấp đôi thì $I$ giảm 2 lần",
+       "text": "Xa gấp đôi thì quãng đường truyền gấp đôi, nên $I$ giảm đúng 2 lần",
        "dung": false,
        "vi_sao": "$I$ tỉ lệ nghịch với $r^2$ vì diện tích mặt cầu là $4\\pi r^2$, không phải $r$."
       },
       {
-       "text": "Cường độ không đổi vì công suất nguồn không đổi",
+       "text": "Cường độ không đổi vì công suất nguồn âm không đổi",
        "dung": false,
        "vi_sao": "Công suất không đổi nhưng trải trên diện tích lớn hơn nên cường độ giảm."
       }
@@ -739,12 +739,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $E=I\\cdot t$ vì cường độ đã là năng lượng",
+       "text": "Lấy $E=I\\cdot t$ vì cường độ đã là năng lượng sẵn",
        "dung": false,
        "vi_sao": "Cường độ là công suất trên mỗi mét vuông; còn phải nhân diện tích tấm."
       },
       {
-       "text": "Đổi 10 phút thành 10 s rồi nhân",
+       "text": "Đổi 10 phút thành 10 s rồi nhân với công suất qua tấm",
        "dung": false,
        "vi_sao": "10 phút là 600 s; số giây phải đúng đơn vị của công suất."
       }
@@ -789,12 +789,12 @@
        "dung": true
       },
       {
-       "text": "Sóng P, vì sóng dọc chỉ truyền trong chất rắn",
+       "text": "Sóng P, vì là sóng dọc nên chỉ truyền được trong chất rắn chứ không qua được chất lỏng ở lõi",
        "dung": false,
        "vi_sao": "Sóng dọc truyền được cả trong chất lỏng và khí (nén – dãn); chỉ sóng ngang bị hạn chế."
       },
       {
-       "text": "Cả hai sóng đều truyền được vì lõi cũng là vật chất",
+       "text": "Cả hai sóng đều truyền được vì lõi ngoài cũng là vật chất",
        "dung": false,
        "vi_sao": "Có vật chất chưa đủ; loại lực đàn hồi của môi trường quyết định sóng nào truyền được."
       }
@@ -814,12 +814,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $d=(v_P-v_S)\\,\\Delta t$",
+       "text": "Lấy $d=(v_P-v_S)\\,\\Delta t$ vì hiệu tốc độ nhân hiệu thời gian",
        "dung": false,
        "vi_sao": "Hai sóng đi cùng quãng $d$ nhưng mất thời gian khác nhau; hiệu tốc độ nhân $\\Delta t$ không cho quãng đó."
       },
       {
-       "text": "Lấy $d=v_S\\,\\Delta t$",
+       "text": "Lấy $d=v_S\\,\\Delta t$ vì sóng S là sóng đến sau",
        "dung": false,
        "vi_sao": "$\\Delta t$ là hiệu hai thời gian truyền, không phải thời gian truyền của sóng S."
       }
