@@ -65,12 +65,12 @@
        "dung": true
       },
       {
-       "text": "Lấy hiệu hai bước sóng",
+       "text": "Lấy hiệu hai bước sóng sau khi đã đổi cùng một đơn vị",
        "dung": false,
        "vi_sao": "Hỏi \"gấp mấy lần\" là phép chia, không phải phép trừ."
       },
       {
-       "text": "Chia ngay $2\\ \\text{m}$ cho $15\\ \\text{cm}$",
+       "text": "Chia ngay $2\\ \\text{m}$ cho $15\\ \\text{cm}$ rồi lấy kết quả làm tỉ số",
        "dung": false,
        "vi_sao": "Chưa cùng đơn vị nên tỉ số sai; phải đổi cả hai về mét hoặc cả hai về cm."
       }
@@ -127,12 +127,12 @@
        "dung": true
       },
       {
-       "text": "$\\lambda_2=\\lambda_1\\dfrac{f_2}{f_1}$",
+       "text": "Dùng $\\lambda_2=\\lambda_1\\dfrac{f_2}{f_1}$ rồi đổi mét sang μm",
        "dung": false,
        "vi_sao": "Ngược tỉ lệ: $\\lambda$ tỉ lệ nghịch với $f$, nên phải là $\\lambda_1\\dfrac{f_1}{f_2}$."
       },
       {
-       "text": "$\\lambda_2=\\dfrac{f_2}{c}$",
+       "text": "Dùng $\\lambda_2=\\dfrac{f_2}{c}$ rồi đổi mét sang μm",
        "dung": false,
        "vi_sao": "Lật ngược công thức; đơn vị hai vế không khớp."
       }
@@ -147,12 +147,12 @@
        "dung": true
       },
       {
-       "text": "Bức xạ 1 là tử ngoại; bức xạ 2 là vi sóng",
+       "text": "Bức xạ 1 là tử ngoại; bức xạ 2 là vi sóng dài hơn 1 mm",
        "dung": false,
        "vi_sao": "$\\lambda_1$ nằm trong khoảng $380$–$760$ nm của ánh sáng nhìn thấy (tử ngoại ngắn hơn $380$ nm); $\\lambda_2\\lt1$ mm nên là hồng ngoại, vi sóng dài hơn $1$ mm."
       },
       {
-       "text": "Bức xạ 1 là hồng ngoại; bức xạ 2 là sóng vô tuyến",
+       "text": "Bức xạ 1 là hồng ngoại; bức xạ 2 là sóng vô tuyến dài",
        "dung": false,
        "vi_sao": "Hồng ngoại dài hơn $760$ nm mà $\\lambda_1$ nằm trong dải nhìn thấy; sóng vô tuyến dài hơn $1$ m còn $\\lambda_2$ chỉ cỡ $0{,}1$ mm."
       }
@@ -213,12 +213,12 @@
        "dung": true
       },
       {
-       "text": "Đúng: sóng nào cũng phải có phần tử môi trường để dao động",
+       "text": "Đúng: sóng nào cũng phải có phần tử môi trường để dao động tại chỗ",
        "dung": false,
        "vi_sao": "Đó là sóng cơ. Sóng điện từ là điện từ trường biến thiên lan truyền nên đi được qua chân không."
       },
       {
-       "text": "Sai: sóng điện từ chỉ truyền được trong chất rắn",
+       "text": "Sai: sóng điện từ chỉ truyền được trong chất rắn và chất lỏng",
        "dung": false,
        "vi_sao": "Sóng điện từ truyền được trong rắn, lỏng, khí và cả chân không."
       }
@@ -251,12 +251,12 @@
        "dung": true
       },
       {
-       "text": "Tính $\\lambda=\\dfrac{c}{f}$ để kiểm tra",
+       "text": "Tính $\\lambda=\\dfrac{c}{f}$ rồi so với kích thước vật để kiểm tra",
        "dung": false,
        "vi_sao": "Nhận định này nói về hướng của các vectơ, không cần tính bước sóng."
       },
       {
-       "text": "Xét xem sóng có cần môi trường không",
+       "text": "Xét xem sóng điện từ có cần môi trường vật chất để truyền hay không",
        "dung": false,
        "vi_sao": "Đó là nội dung nhận định a; nhận định b nói về hướng của $\\vec E$, $\\vec B$."
       }
@@ -271,12 +271,12 @@
        "dung": true
       },
       {
-       "text": "Đúng: sóng vào thuỷ tinh thì tần số giảm",
+       "text": "Đúng: sóng vào thuỷ tinh thì tần số giảm đi cùng tốc độ",
        "dung": false,
        "vi_sao": "Tần số do nguồn quyết định nên không đổi khi sóng đổi môi trường."
       },
       {
-       "text": "Sai: tần số tăng, tốc độ không đổi",
+       "text": "Sai: tần số tăng lên, còn tốc độ vẫn không đổi như cũ",
        "dung": false,
        "vi_sao": "Tần số không đổi; tốc độ trong thuỷ tinh nhỏ hơn trong không khí."
       }
@@ -288,12 +288,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $c=3\\cdot10^{8}$ m/s cho cả hai môi trường",
+       "text": "Dùng $c=3\\cdot10^{8}$ m/s cho cả hai môi trường nên tốc độ và bước sóng đều giữ nguyên, chỉ tần số đổi",
        "dung": false,
        "vi_sao": "$c$ là tốc độ trong chân không; trong thuỷ tinh sóng chậm hơn."
       },
       {
-       "text": "Xét xem $\\vec E$ có vuông góc $\\vec B$ không",
+       "text": "Xét xem $\\vec E$ có vuông góc $\\vec B$ không, rồi suy ra tần số và tốc độ sóng đổi thế nào",
        "dung": false,
        "vi_sao": "Đó là nội dung nhận định b, không liên quan đến việc đổi môi trường."
       }
@@ -308,12 +308,12 @@
        "dung": true
       },
       {
-       "text": "Sai: ánh sáng tím có $f$ lớn hơn nên nhanh hơn",
+       "text": "Sai: ánh sáng tím có $f$ lớn hơn nên truyền nhanh hơn ánh sáng đỏ",
        "dung": false,
        "vi_sao": "$c=\\lambda f$ không đổi: $f$ lớn thì $\\lambda$ nhỏ đúng tỉ lệ, tốc độ vẫn là $c$."
       },
       {
-       "text": "Sai: ánh sáng đỏ có $\\lambda$ dài hơn nên nhanh hơn",
+       "text": "Sai: ánh sáng đỏ có $\\lambda$ dài hơn nên truyền nhanh hơn ánh sáng tím",
        "dung": false,
        "vi_sao": "Bước sóng dài đi với tần số nhỏ; tích $\\lambda f$ vẫn bằng $c$."
       }
@@ -325,12 +325,12 @@
        "dung": true
       },
       {
-       "text": "So tần số: tần số lớn hơn thì nhanh hơn",
+       "text": "So tần số hai ánh sáng: tần số lớn hơn thì truyền nhanh hơn",
        "dung": false,
        "vi_sao": "Tốc độ trong chân không không phụ thuộc tần số."
       },
       {
-       "text": "So khả năng đâm xuyên của hai ánh sáng",
+       "text": "So khả năng đâm xuyên của hai ánh sáng khi đi qua vật chắn",
        "dung": false,
        "vi_sao": "Đâm xuyên là tương tác với vật chất, không quyết định tốc độ truyền trong chân không."
       }
@@ -385,12 +385,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $d=ct$ vì sóng truyền với tốc độ $c$",
+       "text": "Lấy $d=ct$ vì sóng truyền với tốc độ $c$ suốt thời gian đo",
        "dung": false,
        "vi_sao": "$ct$ là quãng đường đi - về; khoảng cách tới vật chỉ bằng một nửa."
       },
       {
-       "text": "Nhân đôi quãng đường vì có hai chiều",
+       "text": "Nhân đôi quãng đường vì sóng đi cả hai chiều đi và về",
        "dung": false,
        "vi_sao": "Quãng đường đi - về đã gồm cả hai chiều; khoảng cách chỉ là một chiều nên phải chia đôi."
       }
@@ -409,12 +409,12 @@
        "dung": true
       },
       {
-       "text": "Cộng $30\\ \\text{s}$ vào $t_2$ rồi tính",
+       "text": "Cộng $30\\ \\text{s}$ vào $t_2$ rồi tính $d_2=\\dfrac{c(t_2+30)}{2}$",
        "dung": false,
        "vi_sao": "$30\\ \\text{s}$ là khoảng giữa hai lần đo, không phải thời gian sóng đi - về."
       },
       {
-       "text": "$d_2=d_1+ct_2$",
+       "text": "Lấy $d_2=d_1+ct_2$ vì drone đã bay thêm một quãng",
        "dung": false,
        "vi_sao": "Mỗi lần đo cho khoảng cách tính từ ra-đa, không cộng dồn với lần trước."
       }
@@ -433,12 +433,12 @@
        "dung": true
       },
       {
-       "text": "$v=\\dfrac{d_2-d_1}{t_2-t_1}$",
+       "text": "$v=\\dfrac{d_2-d_1}{t_2-t_1}$ với $t_2$, $t_1$ là hai thời gian sóng đi - về",
        "dung": false,
        "vi_sao": "$t_2-t_1$ chỉ là hiệu thời gian sóng đi - về; thời gian drone bay là $30$ s giữa hai lần đo."
       },
       {
-       "text": "$v=\\dfrac{d_2}{t_2}$",
+       "text": "$v=\\dfrac{d_2}{t_2}$ với $d_2$ đổi ra mét và $t_2$ đổi ra giây",
        "dung": false,
        "vi_sao": "Đó là $\\dfrac{c}{2}$, tốc độ liên quan đến sóng, không phải tốc độ của drone."
       }

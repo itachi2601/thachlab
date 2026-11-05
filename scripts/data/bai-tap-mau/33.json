@@ -246,12 +246,12 @@
        "dung": true
       },
       {
-       "text": "Cực đại, vì hiệu đường đi lớn",
+       "text": "Cực đại, vì hiệu đường đi lớn hơn nhiều bước sóng",
        "dung": false,
        "vi_sao": "Cực đại cần hiệu đường là số nguyên lần $\\lambda$, không phải số lớn."
       },
       {
-       "text": "Điểm có biên độ trung gian, không đặc biệt",
+       "text": "Điểm có biên độ trung gian, không phải cực trị nào cả",
        "dung": false,
        "vi_sao": "Số bán nguyên lần $\\lambda$ chính là điều kiện cực tiểu nên M đặc biệt."
       }
@@ -309,12 +309,12 @@
        "dung": true
       },
       {
-       "text": "Lấy số cực tiểu bằng số cực đại",
+       "text": "Lấy số cực tiểu bằng đúng số cực đại đã đếm được trên AB",
        "dung": false,
        "vi_sao": "Cực đại và cực tiểu xen kẽ: giữa hai cực đại liên tiếp có một cực tiểu, lại còn cực tiểu ở hai phía ngoài cùng, nên hai số không bằng nhau."
       },
       {
-       "text": "Lấy số cực đại trừ 1",
+       "text": "Lấy số cực đại trừ 1 vì cực tiểu xen giữa hai cực đại",
        "dung": false,
        "vi_sao": "Cực tiểu ứng với $k+\\tfrac{1}{2}$, phải đếm riêng theo điều kiện này chứ không suy từ số cực đại."
       }
@@ -381,12 +381,12 @@
        "dung": true
       },
       {
-       "text": "Làm tròn $\\dfrac{L}{2i}$ lên rồi $N_s=2[\\,\\cdot\\,]+1$",
+       "text": "Làm tròn $\\dfrac{L}{2i}$ lên số nguyên rồi $N_s=2[\\,\\cdot\\,]+1$ để lấy đủ vân",
        "dung": false,
        "vi_sao": "Phải bỏ phần lẻ: vân bậc 5 nằm ở $9$ mm, ngoài mép $\\pm8{,}5$ mm nên không đếm."
       },
       {
-       "text": "$N_s=2[\\,\\dfrac{L}{2i}\\,]$",
+       "text": "Lấy $N_s=2[\\,\\dfrac{L}{2i}\\,]$ vì vân sáng đối xứng thành từng cặp",
        "dung": false,
        "vi_sao": "Quên vân sáng trung tâm: trường đối xứng nên số vân sáng luôn lẻ."
       }
@@ -427,12 +427,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\dfrac{x_P}{\\lambda}$",
+       "text": "Lấy $\\dfrac{x_P}{\\lambda}$: nguyên → sáng, bán nguyên → tối",
        "dung": false,
        "vi_sao": "Vị trí vân tính theo khoảng vân $i$, không theo bước sóng."
       },
       {
-       "text": "So $x_P$ với $\\dfrac{L}{2}$",
+       "text": "So $x_P$ với $\\dfrac{L}{2}$: nhỏ hơn thì P là vân sáng",
        "dung": false,
        "vi_sao": "Chỉ cho biết P có nằm trong trường hay không, không cho biết sáng hay tối."
       }
@@ -603,12 +603,12 @@
        "dung": true
       },
       {
-       "text": "$v=2Lf$",
+       "text": "$v=2Lf$ với $L$ là chiều dài dây",
        "dung": false,
        "vi_sao": "Công thức này chỉ đúng với một múi sóng ($n=1$); dây đang có 3 múi."
       },
       {
-       "text": "$v=\\dfrac{\\lambda}{f}$",
+       "text": "$v=\\dfrac{\\lambda}{f}$ với $\\lambda$ vừa tìm",
        "dung": false,
        "vi_sao": "Thương này có đơn vị m·s, không phải m/s."
       }
@@ -712,12 +712,12 @@
        "dung": true
       },
       {
-       "text": "$L=\\dfrac{v}{2f_1}$",
+       "text": "$L=\\dfrac{v}{2f_1}$ vì ở âm cơ bản $L=\\dfrac{\\lambda}{2}$",
        "dung": false,
        "vi_sao": "Công thức đó dành cho dây hai đầu cố định (hoặc ống hai đầu hở), $L=\\dfrac{\\lambda}{2}$."
       },
       {
-       "text": "$L=\\dfrac{v}{f_1}$",
+       "text": "$L=\\dfrac{v}{f_1}$ vì ở âm cơ bản $L=\\lambda$",
        "dung": false,
        "vi_sao": "Ống không dài bằng cả một bước sóng ở âm cơ bản; chỉ bằng một phần tư."
       }
