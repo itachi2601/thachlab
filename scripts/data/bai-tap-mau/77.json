@@ -423,16 +423,16 @@
      "loi_hay_gap": "Vẽ thêm một “lực hướng tâm” riêng hoặc dùng “lực li tâm” để cân bằng.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm lực nằm ngang duy nhất còn lại sau khi $\\vec P$ và $\\vec N$ cân bằng",
+       "text": "Tìm lực nằm ngang duy nhất còn lại khi $\\vec P$, $\\vec N$ cân bằng",
        "dung": true
       },
       {
-       "text": "Thêm một lực hướng vào trục để vật đi vòng",
+       "text": "Thêm một lực hướng vào trục để vật đi vòng quanh tâm",
        "dung": false,
        "vi_sao": "Mọi lực phải do một vật cụ thể tác dụng lên vật; không được vẽ thêm lực cho đủ."
       },
       {
-       "text": "Lấy lực li tâm cân bằng với lực kéo vào trục",
+       "text": "Lấy lực li tâm hướng ra ngoài cân bằng với lực kéo vào",
        "dung": false,
        "vi_sao": "Lực li tâm không do vật nào gây ra; bài này xét trong hệ gắn với mặt đất."
       }
@@ -471,12 +471,12 @@
        "dung": true
       },
       {
-       "text": "Lực kéo của động cơ",
+       "text": "Lực kéo của động cơ hướng về phía trước",
        "dung": false,
        "vi_sao": "Lực kéo của động cơ nằm dọc theo hướng chạy, không chĩa vào tâm khúc cua."
       },
       {
-       "text": "Phản lực của mặt đường",
+       "text": "Phản lực của mặt đường lên các bánh xe",
        "dung": false,
        "vi_sao": "Phản lực vuông góc với mặt đường, cân bằng với trọng lực theo phương đứng."
       }
@@ -504,16 +504,16 @@
      "hoi": "Lực nào đóng vai lực hướng tâm của vệ tinh chuyển động tròn đều quanh Trái Đất?",
      "lua_chon": [
       {
-       "text": "Lực hấp dẫn của Trái Đất tác dụng lên vệ tinh",
+       "text": "Lực hấp dẫn của Trái Đất lên vệ tinh",
        "dung": true
       },
       {
-       "text": "Lực đẩy của động cơ vệ tinh",
+       "text": "Lực đẩy của động cơ vệ tinh về phía trước",
        "dung": false,
        "vi_sao": "Vệ tinh bay vòng khi không bật động cơ; lực đẩy không phải lực chĩa vào tâm Trái Đất."
       },
       {
-       "text": "Lực li tâm do vệ tinh sinh ra",
+       "text": "Lực li tâm do chính vệ tinh sinh ra",
        "dung": false,
        "vi_sao": "Không vật nào gây ra lực li tâm lên vệ tinh."
       }
@@ -521,16 +521,16 @@
      "loi_hay_gap": "Cho rằng cần lực đẩy của động cơ, hoặc “lực li tâm” cân bằng với hấp dẫn.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm lực do một vật cụ thể tác dụng lên vệ tinh và chĩa vào tâm quỹ đạo",
+       "text": "Tìm lực của một vật cụ thể chĩa vào tâm quỹ đạo",
        "dung": true
       },
       {
-       "text": "Tìm lực làm vệ tinh tiến về phía trước",
+       "text": "Tìm lực làm vệ tinh tiến về phía trước trên quỹ đạo",
        "dung": false,
        "vi_sao": "Vệ tinh đi vòng đều nên không cần lực dọc theo hướng chuyển động; lực hướng tâm vuông góc với hướng đó."
       },
       {
-       "text": "Coi vệ tinh chỉ chuyển động theo quán tính",
+       "text": "Coi vệ tinh chỉ chuyển động theo quán tính, không cần lực",
        "dung": false,
        "vi_sao": "Chỉ có quán tính thì vệ tinh bay thẳng; muốn đi vòng phải có lực chĩa vào tâm."
       }
@@ -689,16 +689,16 @@
      "loi_hay_gap": "Dùng $r=v^2/g$ như thể gia tốc hướng tâm bằng $g$, hoặc giữ $r=50\\ \\text{m}$.",
      "chon_buoc_ke": [
       {
-       "text": "Cho lực hướng tâm bằng lực ma sát nghỉ cực đại rồi rút $r$",
+       "text": "Cho lực hướng tâm bằng ma sát nghỉ cực đại rồi rút $r$",
        "dung": true
       },
       {
-       "text": "Dùng $r=v^2/g$",
+       "text": "Dùng $r=v^2/g$ vì lực hướng tâm bằng trọng lực",
        "dung": false,
        "vi_sao": "Gia tốc hướng tâm tối đa của xe là $F_{\\text{max}}/m$, không phải $g$."
       },
       {
-       "text": "Giữ $r=50\\ \\text{m}$ vì đề đã cho",
+       "text": "Giữ $r=50\\ \\text{m}$ vì đề đã cho, chỉ đổi tốc độ",
        "dung": false,
        "vi_sao": "$50\\ \\text{m}$ chỉ là bán kính ở ý a; ý b hỏi bán kính nhỏ nhất để không trượt."
       }

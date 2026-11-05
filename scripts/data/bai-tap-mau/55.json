@@ -321,16 +321,16 @@
      "hoi": "Điều nào đúng về hai giai đoạn (đá rơi xuống, âm truyền lên)?",
      "lua_chon": [
       {
-       "text": "Hai giai đoạn cùng đi quãng bằng độ sâu hang; thời gian của chúng cộng lại bằng $4{,}25$ s",
+       "text": "Hai giai đoạn cùng đi quãng bằng độ sâu hang, tổng thời gian $4{,}25$ s",
        "dung": true
       },
       {
-       "text": "Mỗi giai đoạn chiếm đúng một nửa $4{,}25$ s",
+       "text": "Mỗi giai đoạn chiếm đúng một nửa $4{,}25$ s vì đối xứng",
        "dung": false,
        "vi_sao": "Đá rơi nhanh dần còn âm truyền đều với vận tốc rất lớn, hai thời gian không thể bằng nhau."
       },
       {
-       "text": "$4{,}25$ s là riêng thời gian đá rơi",
+       "text": "$4{,}25$ s là riêng thời gian đá rơi, chưa tính âm",
        "dung": false,
        "vi_sao": "Mốc nghe tiếng nằm sau khi âm đã đi ngược lên, nên $4{,}25$ s gồm cả thời gian âm truyền."
       }
@@ -345,16 +345,16 @@
      "loi_hay_gap": "Quên nhân cả hai vế cho mẫu số của $t_2$, nên hệ số của $t_1$ bị để nguyên bằng $1$.",
      "chon_buoc_ke": [
       {
-       "text": "Viết $t_2=\\dfrac{h}{v_{\\text{âm}}}$ theo $t_1$, thế vào $t_1+t_2=4{,}25$",
+       "text": "Thế $t_2=\\dfrac{h}{v_{\\text{âm}}}$ vào $t_1+t_2=4{,}25$",
        "dung": true
       },
       {
-       "text": "Cho $t_1=t_2$ vì cùng đi quãng $h$",
+       "text": "Cho $t_1=t_2$ vì cùng đi quãng $h$, rồi giải $h$",
        "dung": false,
        "vi_sao": "Cùng quãng đường không kéo theo cùng thời gian: một bên nhanh dần, một bên đều."
       },
       {
-       "text": "Tính $h=\\dfrac{1}{2}g\\cdot4{,}25^2$ ngay",
+       "text": "Tính $h=\\dfrac{1}{2}g\\cdot4{,}25^2$ ngay, bỏ qua âm",
        "dung": false,
        "vi_sao": "Coi cả $4{,}25$ s là thời gian rơi, bỏ qua thời gian âm truyền."
       }
@@ -417,16 +417,16 @@
      "loi_hay_gap": "Quên bình phương $4{,}25$ hoặc thiếu hệ số $\\dfrac{1}{2}$.",
      "chon_buoc_ke": [
       {
-       "text": "Coi cả $4{,}25$ s là thời gian rơi: $h'=\\dfrac{1}{2}g\\cdot4{,}25^2$",
+       "text": "Coi cả $4{,}25$ s là rơi: $h'=\\dfrac{1}{2}g\\cdot4{,}25^2$",
        "dung": true
       },
       {
-       "text": "$h'=v_{\\text{âm}}\\cdot4{,}25$",
+       "text": "$h'=v_{\\text{âm}}\\cdot4{,}25$ như âm truyền suốt",
        "dung": false,
        "vi_sao": "Đó là coi cả $4{,}25$ s là thời gian âm truyền, trái với giả thiết."
       },
       {
-       "text": "Lấy lại $h$ ở câu a",
+       "text": "Lấy lại $h$ ở câu a vì cùng một hang",
        "dung": false,
        "vi_sao": "Câu a đã tính cả thời gian âm; câu b hỏi kết quả khi bỏ nó đi."
       }
@@ -564,12 +564,12 @@
        "dung": true
       },
       {
-       "text": "$t+1$ giây",
+       "text": "$t+1$ giây vì B thả sau A một giây",
        "dung": false,
        "vi_sao": "B bắt đầu rơi muộn hơn A, thời gian rơi của B tính từ mốc của A phải trừ độ trễ chứ không cộng."
       },
       {
-       "text": "$t$ giây như A",
+       "text": "$t$ giây như A vì thả cùng nơi",
        "dung": false,
        "vi_sao": "B chưa rơi trong giây đầu tiên của A, nên hai thời gian rơi khác nhau."
       }
@@ -657,16 +657,16 @@
      "loi_hay_gap": "Lấy hiệu quãng đường làm hiệu vận tốc, hoặc tính $v_A$, $v_B$ ở hai thời điểm khác nhau.",
      "chon_buoc_ke": [
       {
-       "text": "Trừ $v_A=gt$ và $v_B=g(t-1)$ tại cùng một thời điểm",
+       "text": "Trừ $v_A=gt$, $v_B=g(t-1)$ cùng một thời điểm",
        "dung": true
       },
       {
-       "text": "$v_A-v_B=gt$ vì coi B đứng yên",
+       "text": "$v_A-v_B=gt$ vì coi như B còn đứng yên",
        "dung": false,
        "vi_sao": "Khi $t>1$ s, B đã rơi và có vận tốc riêng."
       },
       {
-       "text": "$v_A-v_B=\\dfrac{d}{t}$",
+       "text": "$v_A-v_B=\\dfrac{d}{t}$ theo khoảng cách",
        "dung": false,
        "vi_sao": "Đó là vận tốc trung bình tương đối, không phải hiệu vận tốc tức thời."
       }

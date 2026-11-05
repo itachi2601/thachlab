@@ -247,16 +247,16 @@
      "loi_hay_gap": "Cộng thẳng hai đoạn; hai đoạn vuông góc nên $\\vec d$ là cạnh huyền chứ không phải tổng độ dài.",
      "chon_buoc_ke": [
       {
-       "text": "Hai đoạn vuông góc, $d$ là cạnh huyền: $d=\\sqrt{d_1^2+d_2^2}$",
+       "text": "Hai đoạn vuông góc: $d=\\sqrt{d_1^2+d_2^2}$",
        "dung": true
       },
       {
-       "text": "$d=d_1+d_2$",
+       "text": "Hai đoạn nối thẳng hàng: $d=d_1+d_2$",
        "dung": false,
        "vi_sao": "Cộng độ dài hai đoạn cho quãng đường $s$, không cho độ dịch chuyển."
       },
       {
-       "text": "$d=d_2-d_1$",
+       "text": "Hai đoạn ngược chiều: $d=d_2-d_1$",
        "dung": false,
        "vi_sao": "Lấy hiệu chỉ khi hai đoạn cùng phương, ngược chiều; ở đây chúng vuông góc."
       }
@@ -271,16 +271,16 @@
      "loi_hay_gap": "Lấy $\\tan\\alpha=\\dfrac{d_1}{d_2}$ sẽ ra góc so với hướng Bắc; so với hướng Đông thì cạnh đối là đoạn hướng Bắc.",
      "chon_buoc_ke": [
       {
-       "text": "$\\tan\\alpha=\\dfrac{d_2}{d_1}$ (đối là đoạn hướng Bắc, kề là đoạn hướng Đông)",
+       "text": "$\\tan\\alpha=\\dfrac{d_2}{d_1}$ (đối: hướng Bắc, kề: hướng Đông)",
        "dung": true
       },
       {
-       "text": "$\\tan\\alpha=\\dfrac{d_1}{d_2}$",
+       "text": "$\\tan\\alpha=\\dfrac{d_1}{d_2}$ (đối: hướng Đông, kề: hướng Bắc)",
        "dung": false,
        "vi_sao": "Lật tỉ số sẽ ra góc so với hướng Bắc."
       },
       {
-       "text": "$\\sin\\alpha=\\dfrac{d_1}{d}$",
+       "text": "$\\sin\\alpha=\\dfrac{d_1}{d}$ (cạnh kề chia cạnh huyền)",
        "dung": false,
        "vi_sao": "Cạnh kề chia cạnh huyền là $\\cos\\alpha$, không phải $\\sin\\alpha$."
       }

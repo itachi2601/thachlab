@@ -231,16 +231,16 @@
      "loi_hay_gap": "Cộng hai độ lớn như khi cùng chiều, hoặc dùng căn tổng bình phương của trường hợp vuông góc.",
      "chon_buoc_ke": [
       {
-       "text": "Chọn chiều dương rồi cộng đại số hai động lượng trái dấu",
+       "text": "Chọn chiều dương, cộng đại số hai động lượng trái dấu",
        "dung": true
       },
       {
-       "text": "Cộng hai độ lớn $p_1+p_2$",
+       "text": "Cộng hai độ lớn $p_1+p_2$ như hai vectơ cùng chiều",
        "dung": false,
        "vi_sao": "Chỉ khi cùng chiều mới cộng độ lớn; ngược chiều thì hai vectơ triệt tiêu một phần."
       },
       {
-       "text": "Dùng $\\sqrt{p_1^2+p_2^2}$",
+       "text": "Dùng $\\sqrt{p_1^2+p_2^2}$ như hai vectơ vuông góc",
        "dung": false,
        "vi_sao": "Căn tổng bình phương chỉ dành cho hai vectơ vuông góc."
       }
@@ -255,16 +255,16 @@
      "loi_hay_gap": "Cộng thẳng hai độ lớn, hoặc quên khai căn sau khi cộng bình phương.",
      "chon_buoc_ke": [
       {
-       "text": "Dựng hai vectơ làm hai cạnh góc vuông, tổng là cạnh huyền",
+       "text": "Hai vectơ là hai cạnh góc vuông, tổng là cạnh huyền",
        "dung": true
       },
       {
-       "text": "Cộng hai độ lớn $p_1+p_2$",
+       "text": "Cộng hai độ lớn $p_1+p_2$ như hai vectơ cùng chiều",
        "dung": false,
        "vi_sao": "Cộng thẳng độ lớn chỉ đúng khi hai vectơ cùng hướng; ở đây tổng vectơ ngắn hơn tổng hai độ dài."
       },
       {
-       "text": "Lấy hiệu $\\lvert p_1-p_2\\rvert$",
+       "text": "Lấy hiệu $\\lvert p_1-p_2\\rvert$ như hai vectơ ngược chiều",
        "dung": false,
        "vi_sao": "Hiệu chỉ đúng khi hai vectơ ngược hướng."
       }
@@ -283,12 +283,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $p^2=p_1^2+p_2^2-2p_1p_2\\cos\\alpha$",
+       "text": "Dùng $p^2=p_1^2+p_2^2-2p_1p_2\\cos\\alpha$ với $\\alpha=60^\\circ$",
        "dung": false,
        "vi_sao": "Sai dấu: $\\alpha$ là góc giữa hai vectơ chung gốc nên số hạng chứa $\\cos\\alpha$ mang dấu $+$."
       },
       {
-       "text": "Coi như vuông góc: $p=\\sqrt{p_1^2+p_2^2}$",
+       "text": "Coi hai vectơ vuông góc: $p=\\sqrt{p_1^2+p_2^2}$",
        "dung": false,
        "vi_sao": "Công thức đó chỉ đúng khi $\\cos\\alpha=0$, tức $\\alpha=90^\\circ$."
       }
@@ -598,16 +598,16 @@
      "loi_hay_gap": "Nhân $\\Delta p$ với $\\Delta t$ thay vì chia, hoặc thay trọng lượng bóng vào làm lực dừng.",
      "chon_buoc_ke": [
       {
-       "text": "Lấy độ biến thiên động lượng chia cho thời gian dừng",
+       "text": "Lấy $\\Delta p$ chia cho thời gian dừng",
        "dung": true
       },
       {
-       "text": "Lấy $\\Delta p\\cdot\\Delta t$",
+       "text": "Lấy $\\Delta p\\cdot\\Delta t$, nhân với thời gian dừng",
        "dung": false,
        "vi_sao": "Xung lượng bằng $F\\Delta t$, nên $F=\\Delta p/\\Delta t$; nhân là sai phép tính."
       },
       {
-       "text": "Lấy lực bằng trọng lượng của bóng",
+       "text": "Lấy lực bằng trọng lượng của quả bóng",
        "dung": false,
        "vi_sao": "Trọng lượng là lực hút của Trái Đất; lực làm bóng dừng là lực nằm ngang của tay."
       }
@@ -622,16 +622,16 @@
      "loi_hay_gap": "Cho rằng $\\Delta p$ nhỏ đi vì tay mềm; hoặc giữ nguyên lực của ý a.",
      "chon_buoc_ke": [
       {
-       "text": "Giữ nguyên $\\Delta p$ (cùng bóng, cùng dừng hẳn), thay thời gian dừng mới",
+       "text": "Giữ nguyên $\\Delta p$ (cùng bóng, dừng hẳn), đổi thời gian dừng",
        "dung": true
       },
       {
-       "text": "Cho $\\Delta p$ nhỏ đi vì tay mềm",
+       "text": "Cho $\\Delta p$ nhỏ đi vì tay mềm hơn, bóng dừng chậm hơn",
        "dung": false,
        "vi_sao": "Bóng vẫn từ tốc độ cũ về $0$ nên $\\Delta p$ như nhau; tay mềm chỉ làm $\\Delta t$ dài hơn."
       },
       {
-       "text": "Giữ nguyên lực của ý a vì cùng một quả bóng",
+       "text": "Giữ nguyên lực của ý a vì cùng một quả bóng, cùng tốc độ",
        "dung": false,
        "vi_sao": "Cùng $\\Delta p$ nhưng $\\Delta t$ khác thì $F=\\Delta p/\\Delta t$ khác."
       }

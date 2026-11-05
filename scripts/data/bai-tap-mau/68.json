@@ -404,16 +404,16 @@
      "loi_hay_gap": "Tính theo quãng đường dọc dốc thay vì độ cao, hoặc quên xét thùng đi lên hay đi xuống.",
      "chon_buoc_ke": [
       {
-       "text": "Dùng $A_P=\\pm Ph$ và chọn dấu theo chiều lên hoặc xuống",
+       "text": "Dùng $A_P=\\pm Ph$, chọn dấu theo chiều lên hay xuống",
        "dung": true
       },
       {
-       "text": "Dùng $A_P=+Ph$ vì thùng có trọng lực",
+       "text": "Dùng $A_P=+Ph$ vì thùng chịu tác dụng trọng lực",
        "dung": false,
        "vi_sao": "Dấu của công trọng lực phụ thuộc thùng lên hay xuống, không phải chỉ vì có trọng lực."
       },
       {
-       "text": "Dùng $A_P=\\pm Ps$ với $s$ dọc dốc",
+       "text": "Dùng $A_P=\\pm Ps$ với $s$ là quãng đường dọc dốc",
        "dung": false,
        "vi_sao": "Công của trọng lực tính theo độ cao $h$, không theo quãng đường dọc dốc."
       }
@@ -428,16 +428,16 @@
      "loi_hay_gap": "Dùng độ cao $h$ thay cho quãng đường $s$, hoặc đặt dấu theo hướng của lực kéo.",
      "chon_buoc_ke": [
       {
-       "text": "Dùng công thức công của lực ma sát với $s$ là quãng đường dọc dốc",
+       "text": "Dùng công thức công của ma sát với $s$ dọc dốc",
        "dung": true
       },
       {
-       "text": "Dùng $A_{ms}=-F_{ms}\\,h$ với $h$ là độ cao",
+       "text": "Dùng $A_{ms}=-F_{ms}\\,h$ với $h$ là độ cao của dốc",
        "dung": false,
        "vi_sao": "Ma sát tác dụng suốt quãng đường dọc dốc, nên phải dùng quãng đường đi thật."
       },
       {
-       "text": "Dùng $A_{ms}=+F_{ms}\\,s$",
+       "text": "Dùng $A_{ms}=+F_{ms}\\,s$ vì lực ma sát sinh công",
        "dung": false,
        "vi_sao": "Dấu của công do góc giữa lực ma sát và dịch chuyển quyết định; cần xét lại góc đó."
       }
@@ -452,16 +452,16 @@
      "loi_hay_gap": "Giữ nguyên kết quả lúc đi lên mà không xét lại chiều chuyển động.",
      "chon_buoc_ke": [
       {
-       "text": "Xét lại dấu theo chiều đi xuống, vẫn dùng độ cao $h$",
+       "text": "Đổi dấu theo chiều đi xuống, vẫn dùng độ cao $h$",
        "dung": true
       },
       {
-       "text": "Giữ nguyên kết quả lúc kéo lên",
+       "text": "Giữ nguyên kết quả lúc kéo lên cho cả chiều xuống",
        "dung": false,
        "vi_sao": "Chiều chuyển động đã đổi nên cần xét lại góc giữa trọng lực và dịch chuyển."
       },
       {
-       "text": "Dùng $A_P=Ps$ vì thùng trượt dọc dốc",
+       "text": "Dùng $A_P=Ps$ vì thùng trượt dọc theo dốc",
        "dung": false,
        "vi_sao": "Công của trọng lực tính theo độ cao, không theo quãng đường trượt dọc dốc."
       }
@@ -664,16 +664,16 @@
      "loi_hay_gap": "Dùng $\\mu mg$ thay cho $\\mu N$ hoặc quên dấu của công cản.",
      "chon_buoc_ke": [
       {
-       "text": "Nhân $F_{ms}$ với quãng đường rồi đặt dấu theo góc giữa ma sát và hướng đi",
+       "text": "Nhân $F_{ms}$ với quãng đường, dấu theo góc ma sát và hướng đi",
        "dung": true
       },
       {
-       "text": "Lấy $A_{ms}=+F_{ms}\\,s$",
+       "text": "Lấy $A_{ms}=+F_{ms}\\,s$ như công của lực kéo",
        "dung": false,
        "vi_sao": "Dấu của công do góc giữa lực ma sát và dịch chuyển quyết định; cần xét lại góc đó."
       },
       {
-       "text": "Lấy $A_{ms}=-\\mu P s$",
+       "text": "Lấy $A_{ms}=-\\mu P s$ với $P$ là trọng lượng thùng",
        "dung": false,
        "vi_sao": "Ma sát phụ thuộc phản lực $N$ đã tìm ở bước đầu, không phụ thuộc trọng lượng."
       }
