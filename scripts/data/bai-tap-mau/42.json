@@ -256,6 +256,48 @@
     "lop": [
      [
       {
+       "loai": "diem",
+       "x": 6,
+       "y": 6
+      },
+      {
+       "loai": "diem",
+       "x": 4,
+       "y": 4
+      },
+      {
+       "loai": "diem",
+       "x": 2,
+       "y": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "U/I (X) = 1,0 kΩ ở cả ba lần"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 6,
+       "y": 6.6
+      },
+      {
+       "loai": "diem",
+       "x": 3,
+       "y": 2
+      },
+      {
+       "loai": "diem",
+       "x": 1,
+       "y": 0.5
+      },
+      {
+       "loai": "ghi",
+       "text": "U/I (Y) = 2,0 ; 1,5 ; 0,91 kΩ"
+      }
+     ],
+     [
+      {
        "loai": "duong",
        "duong": {
         "diem": [
@@ -283,27 +325,6 @@
         ]
        }
       },
-      {
-       "loai": "diem",
-       "x": 6,
-       "y": 6
-      },
-      {
-       "loai": "diem",
-       "x": 4,
-       "y": 4
-      },
-      {
-       "loai": "diem",
-       "x": 2,
-       "y": 2
-      },
-      {
-       "loai": "ghi",
-       "text": "U/I (X) = 1,0 kΩ ở cả ba lần"
-      }
-     ],
-     [
       {
        "loai": "duong",
        "duong": {
@@ -333,27 +354,6 @@
         ]
        }
       },
-      {
-       "loai": "diem",
-       "x": 6,
-       "y": 6.6
-      },
-      {
-       "loai": "diem",
-       "x": 3,
-       "y": 2
-      },
-      {
-       "loai": "diem",
-       "x": 1,
-       "y": 0.5
-      },
-      {
-       "loai": "ghi",
-       "text": "U/I (Y) = 2,0 ; 1,5 ; 0,91 kΩ"
-      }
-     ],
-     [
       {
        "loai": "ghi",
        "text": "X: thẳng qua gốc ⇒ điện trở thuần"
