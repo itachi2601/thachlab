@@ -509,16 +509,16 @@
      "loi_hay_gap": "Lấy vận tốc đầu bằng $0$ như giai đoạn ①, hoặc bỏ sót dấu của gia tốc khi quả cầu dừng dần.",
      "chon_buoc_ke": [
       {
-       "text": "Dùng $v_B$ làm vận tốc đầu, $v_C=0$, rồi $v_C^2-v_B^2=2a_2d_2$",
+       "text": "Lấy $v_B$ làm vận tốc đầu, $v_C=0$ rồi $v_C^2-v_B^2=2a_2d_2$",
        "dung": true
       },
       {
-       "text": "Dùng lại $a_1$ vì vẫn là quả cầu đó",
+       "text": "Dùng lại $a_1$ vì vẫn là quả cầu đó, chỉ đổi quãng",
        "dung": false,
        "vi_sao": "Gia tốc phụ thuộc đoạn đường; mặt ngang khác dốc nên $a$ khác."
       },
       {
-       "text": "Dùng $d_2=\\dfrac12a_2t_2^2$ như giai đoạn ①",
+       "text": "Dùng $d_2=\\dfrac12a_2t_2^2$ như ở giai đoạn ①",
        "dung": false,
        "vi_sao": "Giai đoạn ② có vận tốc đầu khác $0$; công thức đó bỏ mất $v_B$."
       }
@@ -754,16 +754,16 @@
      "loi_hay_gap": "Lấy dấu dương vì đề chỉ cho độ lớn của gia tốc; dấu của $a$ phải xác định từ việc chậm dần hay nhanh dần.",
      "chon_buoc_ke": [
       {
-       "text": "Viết $x_1=x_{01}+v_{01}t+\\dfrac12a_1t^2$ rồi xác định dấu $a_1$ theo $v_{01}$",
+       "text": "Viết $x_1=x_{01}+v_{01}t+\\dfrac12a_1t^2$, xét dấu $a_1$ theo $v_{01}$",
        "dung": true
       },
       {
-       "text": "Lấy $a_1$ dương vì đề cho giá trị $0{,}4$",
+       "text": "Lấy $a_1$ dương vì đề cho giá trị $0{,}4$ không có dấu",
        "dung": false,
        "vi_sao": "Đề chỉ cho độ lớn; chậm dần đều thì $a$ ngược dấu với $v$."
       },
       {
-       "text": "Viết $x_1=v_{01}t$ vì ô tô xuất phát từ gốc",
+       "text": "Viết $x_1=v_{01}t$ vì ô tô xuất phát từ gốc toạ độ",
        "dung": false,
        "vi_sao": "Ô tô có gia tốc nên thiếu số hạng $\\dfrac12at^2$."
       }
@@ -778,7 +778,7 @@
      "loi_hay_gap": "Cho $a_2$ cùng dấu với chiều dương mà không đối chiếu chiều chuyển động của xe đạp.",
      "chon_buoc_ke": [
       {
-       "text": "Lập $x_2$ với $x_{02}$ là vị trí xe đạp trong hệ đã chọn, rồi xác định dấu của $v_{02}$ và $a_2$",
+       "text": "Lập $x_2$ từ $x_{02}$ trong hệ đã chọn, rồi xét dấu $v_{02}$, $a_2$",
        "dung": true
       },
       {
@@ -802,16 +802,16 @@
      "loi_hay_gap": "Không kiểm nghiệm nghiệm: một nghiệm của phương trình bậc hai có thể ứng với lúc ô tô đã đổi chiều và công thức không còn đúng.",
      "chon_buoc_ke": [
       {
-       "text": "Cho $x_1=x_2$, giải phương trình bậc hai, kiểm nghiệm nghiệm",
+       "text": "Cho $x_1=x_2$, giải phương trình, kiểm nghiệm nghiệm",
        "dung": true
       },
       {
-       "text": "Cho $v_1=v_2$",
+       "text": "Cho $v_1=v_2$ vì hai xe gặp nhau thì cùng vận tốc",
        "dung": false,
        "vi_sao": "Hai xe cùng vận tốc không có nghĩa là cùng vị trí."
       },
       {
-       "text": "Lấy $t=\\dfrac{570}{20+2}$",
+       "text": "Lấy $t=\\dfrac{570}{20+2}$ như hai xe chuyển động đều",
        "dung": false,
        "vi_sao": "Công thức đó chỉ đúng khi hai xe chuyển động đều; ở đây vận tốc thay đổi."
       }
