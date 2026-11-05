@@ -149,9 +149,9 @@ export type WorkedTool =
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
-  | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; lop?: NangLuongLop[][] }
+  | { loai: "thanh_nang_luong"; canh: NangLuongCanh; cot: { ten: string; mau?: "max" | "min" | "chu" }[]; max: number; don_vi?: string; hinh?: NangLuongLop[]; lop?: NangLuongLop[][] }
   | SoDoVectoTool
-  | { loai: "dien_truong_deu"; L: number; d: number; duong: "tren" | "duoi"; v0?: string; hinh?: DienTruongLop[]; lop?: DienTruongLop[][] }
+  | { loai: "dien_truong_deu"; L: number; d: number; duong: "tren" | "duoi"; v0?: string; an_hat?: boolean; hinh?: DienTruongLop[]; lop?: DienTruongLop[][] }
   | { loai: "mach_dien"; hinh?: MachDienLop[]; lop?: MachDienLop[][] }
   | { loai: "truc_chuyen_dong"; x_min: number; x_max: number; don_vi?: string; diem?: { x: number; ten: string }[]; hinh?: TrucChuyenDongLop[]; lop?: TrucChuyenDongLop[][] }
   | { loai: "quy_dao_nem"; v0: number; alpha: number; g?: number; h0?: number; x_max: number; y_max: number; hinh?: QuyDaoNemLop[]; lop?: QuyDaoNemLop[][] }
@@ -226,6 +226,7 @@ export type MachDienLop =
   | { loai: "day"; diem: [number, number][]; dut?: boolean; mau?: "max" | "min"; het?: number }
   | { loai: "nut"; x: number; y: number; het?: number }
   | { loai: "nguon"; x: number; y: number; huong?: MachDienHuong; duong?: "truoc" | "sau"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "tu"; x: number; y: number; huong?: MachDienHuong; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "dien_tro"; x: number; y: number; huong?: MachDienHuong; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "den"; x: number; y: number; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }
   | { loai: "dong_ho"; x: number; y: number; kieu: "V" | "A"; ten?: string; vi?: "t" | "b" | "l" | "r"; het?: number }

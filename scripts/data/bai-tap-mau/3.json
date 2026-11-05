@@ -106,7 +106,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bi thép $120\\ ^\\circ\\text{C}$ thả vào bể nước $25\\ ^\\circ\\text{C}$",
+     "Bể rất lớn, cách nhiệt với bên ngoài"
+    ],
+    "tim": [
+     "a) độ chênh nhiệt độ hai vật",
+     "b) chiều truyền nhiệt năng",
+     "c) lúc dừng truyền, trạng thái hai vật"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -218,7 +229,22 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$T=t+273$ (làm tròn)",
+     "Người: $37\\ ^\\circ\\text{C}$",
+     "Heli sôi: $4{,}22\\ \\text{K}$",
+     "Thuỷ ngân đông đặc: $-39\\ ^\\circ\\text{C}$",
+     "Một bạn báo đo được $-300\\ ^\\circ\\text{C}$"
+    ],
+    "tim": [
+     "a) người theo K",
+     "b) heli theo °C",
+     "c) thuỷ ngân theo K",
+     "d) $-300\\ ^\\circ\\text{C}$ có đáng tin không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -317,7 +343,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$t_F=1{,}8\\,t+32$ và $T=t+273$",
+     "Nướng bánh: $374\\ ^\\circ\\text{F}$",
+     "Nhiệt kế y tế: $98{,}6\\ ^\\circ\\text{F}$",
+     "Nhiệt độ phòng: $293\\ \\text{K}$"
+    ],
+    "tim": [
+     "a) nhiệt độ nướng theo °C",
+     "b) thân nhiệt theo °C, rồi theo K",
+     "c) nhiệt độ phòng theo °F"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -429,7 +468,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Hà Nội: thấp nhất $17\\ ^\\circ\\text{C}$, cao nhất $29\\ ^\\circ\\text{C}$",
+     "$T=t+273$ và $t_F=1{,}8\\,t+32$"
+    ],
+    "tim": [
+     "a) chênh lệch theo độ Celsius",
+     "b) chênh lệch theo kelvin",
+     "c) chênh lệch theo độ Fahrenheit",
+     "d) chỗ sai khi An cộng thêm $273$"
+    ]
+   }
   },
   {
    "form": "ly_thuyet",
@@ -554,7 +605,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vật A chỉ $68\\ ^\\circ\\text{F}$, vật B chỉ $293\\ \\text{K}$, vật C chỉ $25\\ ^\\circ\\text{C}$",
+     "Ba vật tiếp xúc nhau, không trao đổi nhiệt với ngoài"
+    ],
+    "tim": [
+     "a) A và B theo °C",
+     "b) xếp theo nhiệt độ tăng dần",
+     "c) cặp không trao đổi nhiệt, chiều truyền nhiệt"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -666,7 +728,181 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$t_F=1{,}8\\,t+32$ và $T=t+273$"
+    ],
+    "tim": [
+     "a) nhiệt độ để số đọc °F gấp đôi số đọc °C",
+     "b) nhiệt độ để °F và °C cùng số đọc",
+     "c) nhiệt độ (theo K) để số đọc °C bằng nửa số đọc K"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": -60,
+     "max": 300,
+     "ten": "t (°C)",
+     "vach": [
+      0,
+      100,
+      200,
+      300
+     ],
+     "luoi": 50
+    },
+    "y": {
+     "min": -60,
+     "max": 600,
+     "ten": "số đọc",
+     "vach": [
+      0,
+      200,
+      400,
+      600
+     ],
+     "luoi": 100
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        -40,
+        -40
+       ],
+       [
+        300,
+        572
+       ]
+      ],
+      "mau": "chu",
+      "ten": "°F",
+      "ten_xy": [
+       110,
+       262
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          -30,
+          -60
+         ],
+         [
+          300,
+          600
+         ]
+        ],
+        "mau": "max",
+        "ten": "2t",
+        "ten_xy": [
+         200,
+         340
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Số đọc °F = 2t"
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 160,
+       "y": 320,
+       "nhan_x": "160",
+       "nhan_y": "320"
+      },
+      {
+       "loai": "diem",
+       "x": 160,
+       "y": 320,
+       "ten": "A",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "1,8t + 32 = 2t ⇒ t = 160 °C"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          -60,
+          -60
+         ],
+         [
+          300,
+          300
+         ]
+        ],
+        "mau": "min",
+        "ten": "°C",
+        "ten_xy": [
+         40,
+         115
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": -40,
+       "y": -40,
+       "ten": "B",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "1,8t + 32 = t ⇒ t = −40 °C"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          -60,
+          213
+         ],
+         [
+          300,
+          573
+         ]
+        ],
+        "mau": "min",
+        "ten": "K",
+        "ten_xy": [
+         -10,
+         300
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 273,
+       "y": 546,
+       "ten": "C",
+       "vi": "tl"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = T/2, T = t + 273 ⇒ T = 546 K"
+      }
+     ]
+    ]
+   }
   }
  ]
 }

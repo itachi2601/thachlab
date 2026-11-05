@@ -159,7 +159,17 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=5\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $v_{max}$, $a_{max}$",
+     "b) $v(t)$ và $a(t)$",
+     "c) $v$, $a$ lúc $t=\\dfrac{1}{12}$ s; đang về VTCB hay ra biên"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -268,7 +278,20 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$A=10$ cm, $\\omega=4$ rad/s",
+     "Qua $x=+6$ cm theo chiều dương",
+     "Lúc khác: tốc độ $24$ cm/s"
+    ],
+    "tim": [
+     "a) $|v|$ tại $x=6$ cm",
+     "b) $a$ tại đó (kể cả dấu)",
+     "c) Nhanh dần hay chậm dần",
+     "d) $|x|$ khi tốc độ $24$ cm/s"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -417,7 +440,123 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $x$–$t$ từ $t=0$ đến $1{,}8$ s ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $T$, $\\omega$, $\\varphi$",
+     "b) $v(t)$, $a(t)$ và pha so với $x$",
+     "c) $v(0)$, $a(0)$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 1.8,
+     "ten": "t (s)",
+     "vach": [
+      0.4,
+      0.8,
+      1.2,
+      1.6
+     ],
+     "luoi": 0.2
+    },
+    "y": {
+     "min": -8,
+     "max": 8,
+     "ten": "x (cm)",
+     "luoi": 3
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "cos",
+       "a": 6,
+       "w": 1.6666666666666667,
+       "phi": 0.3333333333333333
+      },
+      "tu": 0,
+      "den": 1.8
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 6,
+       "nhan": "6"
+      },
+      {
+       "loai": "diem",
+       "x": 0.4,
+       "y": -6
+      },
+      {
+       "loai": "diem",
+       "x": 1.6,
+       "y": -6
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0.4,
+       "den": 1.6,
+       "y": -7,
+       "nhan": "T = 1,2 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 6 cm, T = 1,2 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 5π/3 ≈ 5,24 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 3,
+       "ten": "x(0) = 3",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "x(0) = A/2 ⇒ cosφ = 1/2; đồ thị đi xuống"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ φ = π/3 rad"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v sớm pha π/2 so với x"
+      },
+      {
+       "loai": "ghi",
+       "text": "a ngược pha với x (lệch π)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v(0) = −Aω sinφ ≈ −27,2 cm/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a(0) = −ω²x(0) ≈ −82,2 cm/s²"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -513,7 +652,84 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$A=8$ cm, $T=1{,}2$ s",
+     "$t=0$: vật ở biên dương"
+    ],
+    "tim": [
+     "a) $v_{max}$",
+     "b) $|x|$ khi $|v|=\\dfrac{v_{max}}{2}$",
+     "c) $t$ ngắn nhất từ $t=0$ tới lúc đó",
+     "d) $|a|$ lúc đó"
+    ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 8,
+    "don_vi": "cm",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "M₀ ở biên dương (t = 0)"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_{max} = ωA ≈ 41,9 cm/s"
+      }
+     ],
+     [
+      {
+       "loai": "giao",
+       "x": 6.93
+      },
+      {
+       "loai": "ghi",
+       "text": "|v| = v_{max}/2 ⇒ |x| = A√3/2"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 6,93 cm"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": 0,
+       "den": 0.16666666666666666
+      },
+      {
+       "loai": "diem",
+       "goc": 0.16666666666666666,
+       "ten": "M"
+      },
+      {
+       "loai": "ghi",
+       "text": "Quét góc π/6 = T/12"
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 1,2/12 = 0,1 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|a| = ω²|x| = (5π/3)² · 6,93"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 190 cm/s²"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -612,7 +828,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x_1=3$ cm: $v_1=40$ cm/s",
+     "$x_2=4$ cm: $v_2=30$ cm/s"
+    ],
+    "tim": [
+     "a) $\\omega$, $T$",
+     "b) $A$",
+     "c) $v_{max}$, $a_{max}$"
+    ]
+   }
   }
  ]
 }

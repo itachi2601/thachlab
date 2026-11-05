@@ -170,7 +170,19 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thanh nam châm nằm ngang: N bên phải, S bên trái",
+     "M: phía trên, giữa thanh (ngoài); P: bên phải cực N (ngoài); Q: giữa thanh (bên trong)",
+     "A gần cực N (đường sức mau), B ở xa (thưa)"
+    ],
+    "tim": [
+     "a) chiều từ trường tại M, P, Q",
+     "b) từ trường ở A hay B mạnh hơn",
+     "c) chuỗi mạt sắt có phải đường sức không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -313,7 +325,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Dây thẳng dài vuông góc trang giấy, dòng điện hướng ra phía người nhìn",
+     "A: bên phải, 2 cm · B: phía trên, 2 cm · C: bên trái, 6 cm"
+    ],
+    "tim": [
+     "a) chiều từ trường tại A, B, C",
+     "b) đảo dòng: chiều tại A đổi thế nào",
+     "c) B hay C mạnh hơn, vì sao"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -438,7 +461,157 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$B_{\\text{đ}}=40\\ \\mu\\text{T}$ hướng bắc; dây thẳng dài theo bắc – nam, trên la bàn",
+     "$I$ từ nam đến bắc, kim lệch $37^\\circ$ về tây; $\\tan37^\\circ\\approx0{,}754$, $\\cos37^\\circ\\approx0{,}799$"
+    ],
+    "tim": [
+     "a) $B_{\\text{dây}}$",
+     "b) cảm ứng từ tổng hợp tại kim",
+     "c) đảo chiều dòng: kim lệch về phía nào, bao nhiêu độ"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "hinh": [
+     {
+      "x": 10,
+      "y": 5.5,
+      "goc": 90,
+      "dai": 2.8,
+      "nhan": "Bđ (bắc)",
+      "mau": "chu",
+      "loai": "vec"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       10,
+       0.6
+      ],
+      "den": [
+       10,
+       10.3
+      ],
+      "dut": true,
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 0.8,
+      "y": 5.0,
+      "text": "Tây",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 19.2,
+      "y": 5.0,
+      "text": "Đông",
+      "a": "end"
+     },
+     {
+      "loai": "dong",
+      "tu": [
+       10,
+       1.2
+      ],
+      "den": [
+       10,
+       2.8
+      ],
+      "nhan": "I"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 180,
+       "dai": 2.11,
+       "nhan": "Bdây",
+       "mau": "min",
+       "loai": "vec"
+      },
+      {
+       "loai": "ghi",
+       "text": "I từ nam đến bắc ⇒ B dây hướng tây"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.2,
+       "y": 4.3,
+       "text": "30,2 μT",
+       "a": "middle"
+      },
+      {
+       "loai": "ghi",
+       "text": "Bdây = Bđ·tan 37° = 40·0,754 = 30,2 μT"
+      }
+     ],
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 127,
+       "dai": 3.51,
+       "nhan": "B",
+       "mau": "max",
+       "het": 4,
+       "loai": "vec"
+      },
+      {
+       "loai": "goc",
+       "x": 10,
+       "y": 5.5,
+       "tu": 90,
+       "den": 127,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "B = Bđ : cos 37° = 40 : 0,799 = 50,1 μT"
+      }
+     ],
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 0,
+       "dai": 2.11,
+       "nhan": "B′dây",
+       "mau": "min",
+       "dut": true,
+       "loai": "vec"
+      },
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 53,
+       "dai": 3.51,
+       "nhan": "B",
+       "mau": "max",
+       "loai": "vec"
+      },
+      {
+       "loai": "goc",
+       "x": 10,
+       "y": 5.5,
+       "tu": 53,
+       "den": 90
+      },
+      {
+       "loai": "ghi",
+       "text": "Đảo dòng: B dây hướng đông ⇒ kim lệch 37° về phía đông"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -545,7 +718,160 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$B_{\\text{đ}}=40\\ \\mu\\text{T}$ hướng bắc; dây (1) trên, dây (2) dưới la bàn",
+     "Chỉ dây (1), $I$ nam→bắc: $B_1=30\\ \\mu\\text{T}$",
+     "Cả hai dây ($I_2$ bắc→nam): kim lệch $45^\\circ$ về tây"
+    ],
+    "tim": [
+     "a) chiều từ trường mỗi dây",
+     "b) $B_2$",
+     "c) đổi chiều $I_2$: $B$ tổng hợp, góc lệch, phía lệch"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "hinh": [
+     {
+      "x": 10,
+      "y": 5.5,
+      "goc": 90,
+      "dai": 2.8,
+      "nhan": "Bđ (bắc)",
+      "mau": "chu",
+      "loai": "vec"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       10,
+       0.6
+      ],
+      "den": [
+       10,
+       10.3
+      ],
+      "dut": true,
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 0.8,
+      "y": 5.0,
+      "text": "Tây",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 19.2,
+      "y": 5.0,
+      "text": "Đông",
+      "a": "end"
+     },
+     {
+      "loai": "dong",
+      "tu": [
+       10,
+       1.2
+      ],
+      "den": [
+       10,
+       2.8
+      ],
+      "nhan": "I₁"
+     },
+     {
+      "loai": "dong",
+      "tu": [
+       10,
+       10.0
+      ],
+      "den": [
+       10,
+       8.6
+      ],
+      "nhan": "I₂"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 180,
+       "dai": 2.1,
+       "nhan": "B₁",
+       "mau": "min",
+       "loai": "vec"
+      },
+      {
+       "x": 7.9,
+       "y": 5.5,
+       "goc": 180,
+       "dai": 0.7,
+       "mau": "max",
+       "loai": "vec"
+      },
+      {
+       "loai": "chu",
+       "x": 7.2,
+       "y": 3.8,
+       "text": "B₂",
+       "a": "middle"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₁ (dây trên) và I₂ (dây dưới) đều cho B hướng tây"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B₁ + B₂ = Bđ·tan 45° = 40 ⇒ B₂ = 10 μT"
+      }
+     ],
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 0,
+       "dai": 0.7,
+       "nhan": "B′₂",
+       "mau": "max",
+       "dut": true,
+       "loai": "vec"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đổi I₂: B₂ hướng đông ⇒ B₁ − B₂ = 20 μT hướng tây"
+      }
+     ],
+     [
+      {
+       "x": 10,
+       "y": 5.5,
+       "goc": 116.6,
+       "dai": 3.13,
+       "nhan": "B",
+       "mau": "max",
+       "loai": "vec"
+      },
+      {
+       "loai": "goc",
+       "x": 10,
+       "y": 5.5,
+       "tu": 90,
+       "den": 116.6
+      },
+      {
+       "loai": "ghi",
+       "text": "B = 44,7 μT; tan α = 20/40 ⇒ kim lệch 26,6° về phía tây"
+      }
+     ]
+    ]
+   }
   }
  ]
 }

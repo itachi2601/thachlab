@@ -128,7 +128,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$l=0{,}6$ m, hai đầu cố định, $v=24$ m/s"
+    ],
+    "tim": [
+     "a) $\\lambda$ dài nhất, $f$ nhỏ nhất",
+     "b) $f=60$ Hz: có sóng dừng không; số bó, bụng, nút"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -299,7 +308,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$l=0{,}9$ m; A cố định, B tự do; $v=18$ m/s"
+    ],
+    "tim": [
+     "a) $f$ nhỏ nhất",
+     "b) $f=30$ Hz: có sóng dừng không",
+     "c) $f=45$ Hz: có không; số bụng, nút"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -374,7 +393,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$l=1{,}5$ m, hai đầu cố định, $f=40$ Hz",
+     "Ngoài hai đầu có $4$ điểm khác luôn đứng yên"
+    ],
+    "tim": [
+     "a) Số bó",
+     "b) $\\lambda$",
+     "c) $v$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -473,7 +503,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$l=1{,}5$ m, hai đầu cố định, $v$ không đổi",
+     "$f_1=42$ Hz: sóng dừng $7$ nút (kể cả hai đầu)"
+    ],
+    "tim": [
+     "a) $f$ nhỏ nhất",
+     "b) $f_2$ để có $5$ nút",
+     "c) $v$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -596,7 +637,104 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$AB=90$ cm, hai đầu cố định, $3$ bó",
+     "Biên độ bụng $4$ cm; M cách A $5$ cm"
+    ],
+    "tim": [
+     "a) $\\lambda$",
+     "b) Biên độ của M",
+     "c) Khoảng cách nhỏ nhất từ A tới điểm biên độ $2\\sqrt{3}$ cm",
+     "d) Bề rộng vùng dao động của bụng"
+    ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 4,
+    "lam": 60,
+    "x_max": 90,
+    "diem": [
+     {
+      "x": 5,
+      "ten": "M"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "song",
+       "pha": 0.5
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 60,
+       "nhan": "λ = 60 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "AB = 3·λ/2 = 90 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ λ = 60 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 5,
+       "nhan": "5 cm",
+       "hang": 1,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "A_M = 4|sin(2π·5/60)|"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 4·sin 30° = 2 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|sin| = 2√3/4 = √3/2"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ 2πd/λ = π/3"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 10,
+       "nhan": "10 cm",
+       "hang": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "d = λ/6 = 10 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Bụng dao động từ −4 tới +4 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ bề rộng = 2·4 = 8 cm"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -695,7 +833,93 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$l=0{,}75$ m, hai đầu cố định",
+     "Hai tần số liên tiếp cho sóng dừng: $150$ Hz và $200$ Hz"
+    ],
+    "tim": [
+     "a) $f$ nhỏ nhất",
+     "b) $v$",
+     "c) $f=200$ Hz: số bó, số nút (kể cả hai đầu)"
+    ]
+   },
+   "cong_cu": {
+    "loai": "song_day",
+    "A": 3,
+    "lam": 37.5,
+    "x_max": 75,
+    "diem": [
+     {
+      "x": 0,
+      "ten": "A"
+     },
+     {
+      "x": 75,
+      "ten": "B"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "f_{n+1} − f_n = f_{min}"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ f_{min} = 200 − 150 = 50 Hz"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 75,
+       "nhan": "l = 75 cm = λ₁/2",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "λ₁ = 2l = 1,5 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "v = λ₁·f_{min} = 75 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "song",
+       "pha": 0.5
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 18.75,
+       "nhan": "1 bó = λ/2"
+      },
+      {
+       "loai": "ghi",
+       "text": "n = f/f_{min} = 200/50 = 4 bó"
+      },
+      {
+       "loai": "ghi",
+       "text": "λ = v/f = 37,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "4 bó ⇒ 5 nút (kể cả A, B)"
+      },
+      {
+       "loai": "ghi",
+       "text": "và 4 bụng"
+      }
+     ]
+    ]
+   }
   }
  ]
 }

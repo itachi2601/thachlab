@@ -8,6 +8,7 @@
  *
  * JSON: { loai: "mach_dien", hinh?: [mục…] (vẽ sẵn theo đề), lop: [[mục…] cho bước 1, …] }. Toạ độ 0..20 ngang, 0..11
  * dọc, gốc dưới trái, y hướng lên. Mục: day {diem: [[x,y],…], dut?, mau?} · nut {x,y} · nguon {x,y,huong?,duong?,ten?,vi?}
+ *  · tu {x,y,huong?,ten?,vi?} (tụ điện, thêm Đ7)
  *  (duong "sau" = cực + ở phía x lớn / y lớn, mặc định) · dien_tro {x,y,huong?,ten?,vi?} · den {x,y,ten?,vi?}
  *  · dong_ho {x,y,kieu: "V"|"A",ten?,vi?} · khoa {x,y,huong?,mo?} · dong {tu,den,nhan?,vi?} · ngoac {tu,den,nhan,vi?,mau?}
  *  · chu {x,y,text,a?,mau?} · bang {x (giữa), y (mép trên), hang: [[ô…],…]} (ô "?" vẽ mờ) · ghi {text}.
@@ -84,6 +85,27 @@ function veMuc(it: MachDienLop, moi: boolean) {
         />
         {vach(s * g, 0.75, 0.08)}
         {vach(-s * g, 0.4, 0.22)}
+        {it.ten && <NhanCanh x={cx} y={cy} r={0.75} vi={it.vi} text={it.ten} />}
+      </g>
+    );
+  }
+  if (it.loai === "tu") {
+    // tụ điện (Đ7): hai vạch song song bằng nhau, vuông góc dây (dây ngang → vạch đứng)
+    const doc = it.huong === "doc",
+      cx = it.x,
+      cy = Y(it.y),
+      g = 0.2;
+    const vach = (o: number) =>
+      doc ? (
+        <line x1={cx - 0.75} y1={cy - o} x2={cx + 0.75} y2={cy - o} stroke="currentColor" strokeWidth={0.12} />
+      ) : (
+        <line x1={cx + o} y1={cy - 0.75} x2={cx + o} y2={cy + 0.75} stroke="currentColor" strokeWidth={0.12} />
+      );
+    return (
+      <g className={cls}>
+        <rect x={doc ? cx - 0.8 : cx - g - 0.1} y={doc ? cy - g - 0.1 : cy - 0.8} width={doc ? 1.6 : 2 * g + 0.2} height={doc ? 2 * g + 0.2 : 1.6} fill={HALO} />
+        {vach(g)}
+        {vach(-g)}
         {it.ten && <NhanCanh x={cx} y={cy} r={0.75} vi={it.vi} text={it.ten} />}
       </g>
     );

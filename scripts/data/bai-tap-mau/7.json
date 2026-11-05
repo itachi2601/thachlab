@@ -93,7 +93,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bơm kín: $240\\ \\text{cm}^3$, $1{,}0\\cdot10^5\\ \\text{Pa}$; ấn chậm còn $80\\ \\text{cm}^3$ (T không đổi)",
+     "Tiếp tục ấn tới $p=4{,}8\\cdot10^5\\ \\text{Pa}$"
+    ],
+    "tim": [
+     "a) áp suất lúc $80\\ \\text{cm}^3$",
+     "b) thể tích khi $p=4{,}8\\cdot10^5\\ \\text{Pa}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -216,7 +226,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xilanh pittông nhẹ, $p$ không đổi; $450\\ \\text{cm}^3$ ở $17\\ ^\\circ\\text{C}$",
+     "Nung tới $75\\ ^\\circ\\text{C}$",
+     "Rồi làm lạnh (p không đổi) còn $360\\ \\text{cm}^3$"
+    ],
+    "tim": [
+     "a) thể tích sau nung, phần tăng thêm",
+     "b) nhiệt độ sau làm lạnh (°C)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -340,7 +361,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $V$–$T$: hai đường thẳng (1), (2) qua gốc O",
+     "Tại $T=300\\ \\text{K}$: A (đường 1) $V=4$ lít, B (đường 2) $V=6$ lít",
+     "Khí đường (2) nung đến $450\\ \\text{K}$"
+    ],
+    "tim": [
+     "a) mỗi đường là quá trình nào, đường nào $p$ lớn hơn",
+     "b) $p_1/p_2$",
+     "c) $V$ khi $450\\ \\text{K}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -476,7 +509,148 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xilanh kín: $3{,}0$ lít, $1{,}0\\ \\text{atm}$, $27\\ ^\\circ\\text{C}$",
+     "GĐ 1: đẩy chậm (T không đổi) tới $2{,}5\\ \\text{atm}$",
+     "GĐ 2: giữ $2{,}5\\ \\text{atm}$, nung tới $127\\ ^\\circ\\text{C}$"
+    ],
+    "tim": [
+     "a) $V$ sau giai đoạn 1",
+     "b) $V$ sau giai đoạn 2",
+     "c) $V$ cuối giảm bao nhiêu lít"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 3.5,
+     "ten": "V (lít)",
+     "vach": [
+      0,
+      3
+     ],
+     "luoi": 0.5
+    },
+    "y": {
+     "min": 0,
+     "max": 3,
+     "ten": "p (atm)",
+     "vach": [
+      0,
+      1
+     ],
+     "luoi": 0.5
+    },
+    "diem": [
+     {
+      "x": 3,
+      "y": 1,
+      "ten": "A",
+      "vi": "t"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 2.5,
+       "nhan": "2,5"
+      },
+      {
+       "loai": "ghi",
+       "text": "GĐ1: đẳng nhiệt · GĐ2: đẳng áp (p = 2,5 atm)"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "ham": {
+         "kieu": "nghich",
+         "a": 3
+        },
+        "tu": 1.2,
+        "den": 3,
+        "mau": "chu"
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 1.2,
+       "y": 2.5,
+       "nhan_x": "1,2"
+      },
+      {
+       "loai": "diem",
+       "x": 1.2,
+       "y": 2.5,
+       "ten": "B",
+       "vi": "tr"
+      },
+      {
+       "loai": "ghi",
+       "text": "p·V không đổi: V = 1,0·3,0 : 2,5 = 1,2 lít"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "T = 127 + 273 = 400 K (lúc đầu 300 K)"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          1.2,
+          2.5
+         ],
+         [
+          1.6,
+          2.5
+         ]
+        ],
+        "mau": "max"
+       }
+      },
+      {
+       "loai": "chieu",
+       "x": 1.6,
+       "y": 2.5,
+       "nhan_x": "1,6"
+      },
+      {
+       "loai": "diem",
+       "x": 1.6,
+       "y": 2.5,
+       "ten": "C",
+       "vi": "tr"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đẳng áp: V = 1,2·400 : 300 = 1,6 lít"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 1.6,
+       "den": 3,
+       "y": 0.4,
+       "nhan": "giảm 1,4"
+      },
+      {
+       "loai": "ghi",
+       "text": "3,0 − 1,6 = 1,4 lít"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -551,7 +725,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ống dài $80\\ \\text{cm}$, một đầu kín; thuỷ ngân cao $20\\ \\text{cm}$ giam cột khí dài $28\\ \\text{cm}$ ở đáy",
+     "$p_0=760\\ \\text{mmHg}$; lật $180^\\circ$, T không đổi"
+    ],
+    "tim": [
+     "a) $p$ khí lúc miệng hướng lên (mmHg)",
+     "b) $p$ khí sau khi lật",
+     "c) chiều dài cột khí sau khi lật"
+    ]
+   }
   }
  ]
 }

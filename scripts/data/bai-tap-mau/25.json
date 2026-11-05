@@ -143,7 +143,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ba con lắc giống nhau, $T_0=1{,}0$ s",
+     "(1) thả trong không khí; (2) cấp năng lượng bù ma sát mỗi chu kì",
+     "(3) trên bệ rung $1{,}5$ Hz, đã ổn định"
+    ],
+    "tim": [
+     "a) Loại dao động của (1), (2), (3)",
+     "b) Chu kì của con lắc (3)"
+    ]
+   }
   },
   {
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cộng hưởng – biên độ cưỡng bức cực đại khi $f=f_0$.</li><li>Lực và lực cản không đổi: $|f-f_0|$ càng nhỏ, biên độ càng lớn.</li><li>Cưỡng bức ổn định: $f_{vật}=f_{lực}$.</li><li>⚠ <strong>Điều kiện:</strong> hai số đọc chỉ khác nhau thật khi hiệu của chúng vượt sai số đọc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tần số riêng $f_0$</span></p><p>$A$ lớn nhất là $6{,}0$ cm tại $f=3{,}5$ Hz.</p><p>Hai bên đối xứng: $3{,}0$ Hz và $4{,}0$ Hz cùng $5{,}4$ cm; $2{,}0$ Hz và $5{,}0$ Hz cùng $3{,}3$ cm.</p><p>Hiệu đỉnh với hàng kề: $6{,}0-5{,}4=0{,}6$ cm, lớn hơn $0{,}2$ cm nên đỉnh không nhầm.</p><div class=\"bt-ans\">$$f_0=3{,}5\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tần số dao động của cột</span></p><p>Dao động cưỡng bức đã ổn định thì tần số vật bằng tần số lực:</p><div class=\"bt-ans\">$$f_{vật}=f_{lực}=5{,}0\\ \\text{Hz}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Biên độ ở $4{,}0$ Hz so với $5{,}0$ Hz</span></p>$$|4{,}0-3{,}5|=0{,}5\\ \\text{Hz}$$$$|5{,}0-3{,}5|=1{,}5\\ \\text{Hz}$$<div class=\"bt-ans\"><p>$4{,}0$ Hz gần $f_0$ hơn nên biên độ <strong>tăng</strong>: từ $3{,}3$ cm lên $5{,}4$ cm.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chênh lệch so với sai số</span></p>$$5{,}4-3{,}3$$<div class=\"bt-ans\">$$\\Delta A=2{,}1\\ \\text{cm}$$</div><p>Lớn hơn nhiều so với sai số $0{,}2$ cm nên chênh lệch thật, không do đọc số.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Bảng đối xứng quanh $3{,}5$ Hz: $3{,}0$ và $4{,}0$ cùng $5{,}4$; $2{,}0$ và $5{,}0$ cùng $3{,}3$ ✓.</p><p>Lực không đổi, nên chỉ $|f-f_0|$ làm biên độ đổi ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f_0=3{,}5\\ \\text{Hz}$</p><p>b) $5{,}0\\ \\text{Hz}$</p><p>c) tăng $2{,}1\\ \\text{cm}$, vượt sai số đọc</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>bảng quét tần số kèm sai số đọc</strong> → đỉnh bảng là $f_0$; tần số cột lấy theo lực; so biên độ qua $|f-f_0|$ và sai số.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
@@ -255,7 +266,167 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bàn rung, cùng lực: bảng $A$–$f$, sai số đọc $\\pm0{,}2$ cm",
+     "Xe tải làm đất rung $5{,}0$ Hz, rồi $4{,}0$ Hz"
+    ],
+    "tim": [
+     "a) $f_0$ của cột",
+     "b) Tần số dao động của cột lúc $5{,}0$ Hz",
+     "c) $A$ tăng hay giảm khi xuống $4{,}0$ Hz; hơn sai số?"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 1,
+     "max": 7,
+     "ten": "f (Hz)",
+     "vach": [
+      2,
+      3,
+      5,
+      6
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 8,
+     "ten": "A (cm)",
+     "vach": [
+      2,
+      4,
+      6
+     ],
+     "luoi": 2
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        2,
+        3.3
+       ],
+       [
+        3,
+        5.4
+       ],
+       [
+        3.5,
+        6
+       ],
+       [
+        4,
+        5.4
+       ],
+       [
+        5,
+        3.3
+       ],
+       [
+        6,
+        2.2
+       ]
+      ]
+     }
+    ],
+    "diem": [
+     {
+      "x": 2,
+      "y": 3.3
+     },
+     {
+      "x": 3,
+      "y": 5.4
+     },
+     {
+      "x": 3.5,
+      "y": 6
+     },
+     {
+      "x": 4,
+      "y": 5.4
+     },
+     {
+      "x": 5,
+      "y": 3.3
+     },
+     {
+      "x": 6,
+      "y": 2.2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dung",
+       "x": 3.5,
+       "nhan": "3,5"
+      },
+      {
+       "loai": "diem",
+       "x": 3.5,
+       "y": 6,
+       "ten": "A lớn nhất",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "A lớn nhất ở f = 3,5 Hz"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ f₀ = 3,5 Hz"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 5,
+       "nhan": "5"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ổn định: f dao động = f lực"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 5,0 Hz"
+      }
+     ],
+     [
+      {
+       "loai": "chieu",
+       "x": 4,
+       "y": 5.4,
+       "nhan_y": "5,4"
+      },
+      {
+       "loai": "chieu",
+       "x": 5,
+       "y": 3.3,
+       "nhan_y": "3,3"
+      },
+      {
+       "loai": "ghi",
+       "text": "|4 − 3,5| < |5 − 3,5| ⇒ A tăng"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ΔA = 5,4 − 3,3 = 2,1 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "2,1 > 0,2 cm: tăng thật sự"
+      }
+     ]
+    ]
+   }
   },
   {
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> tắt dần – biên độ và cơ năng giảm dần, cơ năng thành nhiệt.</li><li><strong>Công thức:</strong> $A=A_0e^{-\\beta t}$ · cơ năng $W\\sim A^2$ (bài năng lượng dao động điều hoà) nên $\\dfrac{W}{W_0}=\\left(\\dfrac{A}{A_0}\\right)^2$.</li><li>Giải $e^{-x}=\\dfrac12$ bằng logarit (Toán 11): $x=\\ln2\\approx0{,}693$.</li><li>⚠ <strong>Điều kiện:</strong> $\\beta t$ không có đơn vị; $\\beta$ (s$^{-1}$) nhân với $t$ (s).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Biên độ sau $5{,}0$ s</span></p><p>Thế vào mô hình, $\\beta t=0{,}20\\cdot5{,}0=1{,}0$ (không đơn vị):</p>$$A=A_0e^{-\\beta t}=5{,}0\\,e^{-1{,}0}$$<div class=\"bt-ans\">$$A\\approx1{,}8\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lúc còn một nửa biên độ</span></p><p>Đặt $A=\\dfrac{A_0}{2}$:</p>$$e^{-\\beta t}=\\dfrac12\\ \\Rightarrow\\ \\beta t=\\ln2$$$$t=\\dfrac{\\ln2}{\\beta}=\\dfrac{0{,}693}{0{,}20}$$<div class=\"bt-ans\">$$t\\approx3{,}5\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cơ năng còn lại</span></p><p>Cơ năng tỉ lệ bình phương biên độ:</p>$$\\dfrac{W}{W_0}=\\left(\\dfrac{A}{A_0}\\right)^2=\\left(\\dfrac12\\right)^2$$<div class=\"bt-ans\">$$\\dfrac{W}{W_0}=0{,}25=25\\%$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Biên độ còn một nửa lúc $3{,}5$ s, trước $5{,}0$ s; ở $5{,}0$ s biên độ $1{,}8$ cm nhỏ hơn $2{,}5$ cm ✓.</p><p>Cơ năng lúc $5{,}0$ s: $\\left(\\dfrac{1{,}84}{5{,}0}\\right)^2\\approx13{,}5\\%$, nhỏ hơn $25\\%$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A\\approx1{,}8\\ \\text{cm}$</p><p>b) $t\\approx3{,}5\\ \\text{s}$</p><p>c) còn $25\\%$ cơ năng</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>biên độ giảm theo hàm mũ</strong> và hỏi <strong>cơ năng</strong> → biên độ theo $e^{-\\beta t}$, cơ năng theo bình phương biên độ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
@@ -330,7 +501,105 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$A=A_0e^{-\\beta t}$, $A_0=5{,}0$ cm, $\\beta=0{,}20\\ \\text{s}^{-1}$",
+     "Chu kì $\\approx1{,}0$ s"
+    ],
+    "tim": [
+     "a) $A$ sau $5{,}0$ s",
+     "b) $t$ để $A=\\dfrac{A_0}{2}$",
+     "c) Phần trăm cơ năng còn lại lúc đó"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 8,
+     "ten": "t (s)",
+     "vach": [
+      2,
+      4,
+      6,
+      8
+     ],
+     "luoi": 1
+    },
+    "y": {
+     "min": 0,
+     "max": 6,
+     "ten": "A (cm)",
+     "vach": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "luoi": 1
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "mu",
+       "a": 5,
+       "T": 3.4657359
+      },
+      "tu": 0,
+      "den": 8
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chieu",
+       "x": 5,
+       "y": 1.839,
+       "nhan_x": "5"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 5e^(−0,2·5) = 5e^(−1)"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 1,8 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 2.5
+      },
+      {
+       "loai": "chieu",
+       "x": 3.4657,
+       "y": 2.5,
+       "nhan_x": "3,5"
+      },
+      {
+       "loai": "ghi",
+       "text": "e^(−0,2t) = ½ ⇒ t = ln2/0,2"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 3,5 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W ∝ A² ⇒ (½)² = ¼"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ còn 25 % cơ năng ban đầu"
+      }
+     ]
+    ]
+   }
   },
   {
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> các gờ cách đều làm thành ngoại lực tuần hoàn; cộng hưởng khi $T=T_0$ (hay $f=f_0$).</li><li><strong>Công thức:</strong> $T=\\dfrac{L}{v}$ · $f=\\dfrac{v}{L}$ · $1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$.</li><li>Lực và cản như nhau: biên độ lớn hơn khi $|f-f_0|$ nhỏ hơn.</li><li>⚠ <strong>Điều kiện:</strong> $L$, $v$ cùng hệ đơn vị (m, m/s).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị</span></p>$$v=\\dfrac{36}{3{,}6}$$<div class=\"bt-ans\">$$v=10\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chu kì ngoại lực</span></p><p>Hai gờ liên tiếp cách $L$, xe đi hết thời gian:</p>$$T=\\dfrac{L}{v}=\\dfrac{6{,}0}{10}$$<div class=\"bt-ans\">$$T=0{,}60\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc gây cộng hưởng</span></p><p>Cộng hưởng khi $T=T_0=0{,}80$ s:</p>$$v=\\dfrac{L}{T_0}=\\dfrac{6{,}0}{0{,}80}=7{,}5\\ \\text{m/s}$$$$v=7{,}5\\cdot3{,}6$$<div class=\"bt-ans\">$$v=27\\ \\text{km/h}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>So $36$ km/h và $54$ km/h</span></p><p>$f_0=\\dfrac{1}{T_0}=1{,}25$ Hz. Ở $36$ km/h ($10$ m/s): $f=\\dfrac{v}{L}=\\dfrac{10}{6{,}0}\\approx1{,}67$ Hz.</p><p>Ở $54$ km/h ($15$ m/s): $f=\\dfrac{15}{6{,}0}=2{,}5$ Hz.</p>$$|1{,}67-1{,}25|=0{,}42\\ \\text{Hz}\\ \\lt\\ |2{,}5-1{,}25|=1{,}25\\ \\text{Hz}$$<div class=\"bt-ans\"><p><strong>36 km/h</strong> làm thân xe rung mạnh hơn, vì tần số lực gần $f_0$ hơn.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$7{,}5\\ \\text{m/s}\\cdot0{,}80\\ \\text{s}=6{,}0$ m đúng bằng $L$ ✓.</p><p>Cách khác: $|v-27|$ là $9$ km/h và $27$ km/h, cũng cho $36$ km/h gần cộng hưởng hơn ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $T=0{,}60\\ \\text{s}$</p><p>b) $v=27\\ \\text{km/h}$</p><p>c) $36\\ \\text{km/h}$ rung mạnh hơn (tần số lực gần $f_0$ hơn)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>các gờ cách đều và chu kì riêng của xe</strong> → $T=\\dfrac{L}{v}$, cộng hưởng khi $T=T_0$; so vận tốc bằng độ lệch tần số, không bằng độ nhanh.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
@@ -442,7 +711,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Gờ cách đều $L=6{,}0$ m; $T_0=0{,}80$ s",
+     "Xe chạy $36$ km/h"
+    ],
+    "tim": [
+     "a) Chu kì ngoại lực",
+     "b) Vận tốc để cộng hưởng (km/h)",
+     "c) So $36$ và $54$ km/h: rung mạnh hơn? vì sao"
+    ]
+   }
   },
   {
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> cưỡng bức ổn định: $f_{vật}=f_{lực}$ · cộng hưởng khi $f=f_0$.</li><li><strong>Công thức:</strong> $A(f)=\\dfrac{A_r\\,b}{\\sqrt{(f-f_0)^2+b^2}}$ · $A(f_0)=A_r$.</li><li>Cản nhỏ: đỉnh cao, hẹp · cản lớn: đỉnh thấp, thoải.</li><li>⚠ <strong>Điều kiện:</strong> máy khởi động thì tần số lực quét qua mọi giá trị từ $0$ đến tần số chạy ổn định.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hai tần số cần kiểm</span></p><p>Chạy ổn định: tần số lực $20$ Hz.</p><p>Khởi động: tần số lực quét từ $0$ đến $20$ Hz nên có lúc đúng $f=f_0=5{,}0$ Hz.</p><div class=\"bt-ans\"><p>Kiểm hai biên độ: tại <strong>20 Hz</strong> và tại <strong>$f_0$</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đệm X lúc chạy ổn định</span></p>$$A_X=\\dfrac{A_r\\,b}{\\sqrt{(f-f_0)^2+b^2}}=\\dfrac{7{,}5\\cdot0{,}40}{\\sqrt{(20-5{,}0)^2+0{,}40^2}}$$$$A_X=\\dfrac{3{,}0}{15{,}005}$$<div class=\"bt-ans\">$$A_X\\approx0{,}20\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đệm Y lúc chạy ổn định</span></p>$$A_Y=\\dfrac{2{,}0\\cdot1{,}5}{\\sqrt{(20-5{,}0)^2+1{,}5^2}}=\\dfrac{3{,}0}{15{,}075}$$<div class=\"bt-ans\">$$A_Y\\approx0{,}20\\ \\text{cm}$$</div><p>Xa $f_0$ thì mẫu số gần bằng $|f-f_0|$, lực cản hầu như không đổi kết quả; hai đệm cùng đạt $A\\le0{,}30$ cm.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lúc khởi động qua $f_0$</span></p><p>Khi $f=f_0$ thì $A=A_r$:</p>$$A_X=7{,}5\\ \\text{cm}\\ \\gt\\ 3{,}0\\ \\text{cm}$$$$A_Y=2{,}0\\ \\text{cm}\\ \\lt\\ 3{,}0\\ \\text{cm}$$<div class=\"bt-ans\"><p>Chỉ đệm Y đạt yêu cầu khi khởi động.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chọn đệm</span></p><p>Hai đệm bằng nhau lúc chạy ổn định; khác nhau ở lúc đi qua cộng hưởng. Lực cản lớn hạ đỉnh cộng hưởng.</p><div class=\"bt-ans\"><p>Chọn <strong>đệm Y</strong> (cản lớn).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Cả hai đệm có $A_r\\,b=3{,}0$ cm·Hz (cùng lực) nên $A$ lúc chạy ổn định gần bằng nhau ✓.</p><p>$A_r$ gấp $3{,}75$ lần, $b$ nhỏ đi $3{,}75$ lần ✓ ($7{,}5/2{,}0$ và $1{,}5/0{,}40$).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_X\\approx A_Y\\approx0{,}20\\ \\text{cm}$</p><p>b) $A_X=7{,}5\\ \\text{cm}$, $A_Y=2{,}0\\ \\text{cm}$</p><p>c) chọn đệm Y: ổn định như nhau, khởi động đạt yêu cầu</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>khởi động (tần số quét từ 0)</strong> và tần số chạy ổn định → kiểm hai chỗ: $f=f_{ổn}$ và $f=f_0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
@@ -604,7 +884,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Chạy ổn định $20$ Hz; khởi động qua $f_0=5{,}0$ Hz",
+     "$A(f)=\\dfrac{A_r\\,b}{\\sqrt{(f-f_0)^2+b^2}}$",
+     "Đệm X: $A_r=7{,}5$ cm, $b=0{,}40$ Hz; đệm Y: $A_r=2{,}0$ cm, $b=1{,}5$ Hz",
+     "Yêu cầu: ổn định $A\\le0{,}30$ cm; khởi động $A\\le3{,}0$ cm"
+    ],
+    "tim": [
+     "a) $A$ lúc chạy ổn định của mỗi đệm",
+     "b) $A$ lớn nhất lúc khởi động của mỗi đệm",
+     "c) Chọn đệm nào, vì sao"
+    ]
+   }
   }
  ]
 }
