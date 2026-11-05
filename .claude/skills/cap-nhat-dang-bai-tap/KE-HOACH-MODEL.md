@@ -193,30 +193,30 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 160 | Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai | — | D3 (do_thi), D4 (do_thi) | D1, D2, D5, D6 | Sonnet | P3 |
-| 162 | Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động | — | D5 (do_thi), D6 (so_do_vecto) | D1, D2, D3, D4 | Sonnet | P3 |
-| 155 | Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy | — | D5 (thanh_moment), D6 (so_do_vecto) | D1, D2, D3, D4 | Sonnet | P3 |
-| 161 | Chuyên đề 01. Công và công suất | — | D5 (so_do_vecto), D7 (so_do_vecto) | D1, D2, D3, D4, D6 | Sonnet | P3 |
-| 166 | Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo | — | D6 (do_thi), D7 (thanh_nang_luong) | D1, D2, D3, D4, D5 | Sonnet | P3 |
-| 154 | Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông | — | D5 (cot_chat_long), D6 (thanh_moment) | D1, D2, D3, D4 | Sonnet | P3 |
-| 167 | Bài tập tuần này: 12 bài tự luận Cơ học (Vận dụng → Vận dụng | — | B9 (cot_chat_long), B11 (thanh_nang_luong) | B1, B2, B3, B4, B5, B6, B7, B8, B10, B12 | Sonnet | P3 |
+| 160 | Chuyên đề 00. Kỹ năng nền: công cụ toán học, đọc đồ thị, sai | — | ✓ D3 (do_thi), D4 (do_thi) 5/11 | ✓ D1, D2, D5, D6 5/11 | Sonnet | P3 |
+| 162 | Chuyên đề 13. Chuyển động cơ học và đồ thị chuyển động | — | ✓ D5 (do_thi), D6 (so_do_vecto) 5/11 | ✓ D1, D2, D3, D4 5/11 | Sonnet | P3 |
+| 155 | Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy | — | ✓ D5 (thanh_moment), D6 (so_do_vecto) 5/11 | ✓ D1, D2, D3, D4 5/11 | Sonnet | P3 |
+| 161 | Chuyên đề 01. Công và công suất | — | ✓ D4 (so_do_vecto), D5 (so_do_vecto, cảnh nut) 5/11 · D7 đổi sang D4 | ✓ D1, D2, D3, D6, D7 5/11 | Sonnet | P3 |
+| 166 | Chuyên đề 02. Động năng, thế năng, cơ năng và định luật bảo | — | ✓ D6 (do_thi), D7 (thanh_nang_luong) 5/11 | ✓ D1, D2, D3, D4, D5 5/11 | Sonnet | P3 |
+| 154 | Chuyên đề 11. Cơ học chất lưu: áp suất chất lỏng, bình thông | — | ✓ D2 (cot_chat_long ong_u), D6 (thanh_moment) 5/11 · D5 đổi sang D2 | ✓ D1, D3, D4, D5 5/11 | Sonnet | P3 |
+| 167 | Bài tập tuần này: 12 bài tự luận Cơ học (Vận dụng → Vận dụng | — | ✓ B9 (cot_chat_long), B11 (thanh_nang_luong) 5/11 | ✓ B1, B2, B3, B4, B5, B6, B7, B8, B10, B12 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Nhiệt học
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 153 | Chuyên đề 12. Nhiệt học nâng cao: cân bằng nhiệt và chuyển t | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5, D6 | Sonnet | P3 |
-| 164 | Chuyên đề 16. Truyền nhiệt và sự nở vì nhiệt | — | — | D1, D2, D3, D4, D5, D6 | Sonnet | P4 |
+| 153 | Chuyên đề 12. Nhiệt học nâng cao: cân bằng nhiệt và chuyển t | — | ✓ D2 (do_thi), D3 (do_thi) 5/11 | ✓ D1, D4, D5, D6 5/11 | Sonnet | P3 |
+| 164 | Chuyên đề 16. Truyền nhiệt và sự nở vì nhiệt | — | — | ✓ D1, D2, D3, D4, D5, D6 5/11 | Sonnet | P4 |
 
 ### HSG KHTN 9 · Điện học & năng lượng
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 159 | Chuyên đề 03. Điện trở và định luật Ohm | — | D4 (do_thi), D6 (mach_dien) | D1, D2, D3, D5 | Sonnet | P3 |
-| 157 | Chuyên đề 04. Đoạn mạch nối tiếp, song song, hỗn hợp | — | D5 (mach_dien), D6 (mach_dien) | D1, D2, D3, D4 | Sonnet | P3 |
-| 165 | Chuyên đề 05. Công suất điện, định luật Joule–Lenz | — | D5 (mach_dien), D6 (mach_dien) | D1, D2, D3, D4 | Sonnet | P3 |
-| 152 | Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều | — | D5 (mach_dien), D6 (mach_dien) | D1, D2, D3, D4 | Sonnet | P3 |
-| 163 | Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái | — | D1 (thanh_nang_luong) | D2, D3, D4, D5 | Sonnet | P3 |
+| 159 | Chuyên đề 03. Điện trở và định luật Ohm | — | ✓ D4 (do_thi), D6 (mach_dien) 5/11 | ✓ D1, D2, D3, D5 5/11 | Sonnet | P3 |
+| 157 | Chuyên đề 04. Đoạn mạch nối tiếp, song song, hỗn hợp | — | ✓ D5 (mach_dien), D6 (mach_dien) 5/11 | ✓ D1, D2, D3, D4 5/11 | Sonnet | P3 |
+| 165 | Chuyên đề 05. Công suất điện, định luật Joule–Lenz | — | ✓ D4 (mach_dien), D5 (do_thi) 5/11 · đổi từ D5, D6 mach_dien | ✓ D1, D2, D3, D6 5/11 | Sonnet | P3 |
+| 152 | Chuyên đề 08. Cảm ứng điện từ và dòng điện xoay chiều | — | ✓ D5 (mach_dien), D6 (mach_dien) 5/11 | ✓ D1, D2, D3, D4 5/11 | Sonnet | P3 |
+| 163 | Chuyên đề 09. Năng lượng với cuộc sống: vòng năng lượng Trái | — | ✓ D1 (thanh_nang_luong) 5/11 | ✓ D2, D3, D4, D5 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Quang học
 
@@ -230,7 +230,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 150 | Chuyên đề 15. Âm thanh: sóng âm, độ cao, độ to, phản xạ âm | — | D2 (do_thi), D5 (truc_chuyen_dong) | D1, D3, D4, D6 | Sonnet | P3 |
+| 150 | Chuyên đề 15. Âm thanh: sóng âm, độ cao, độ to, phản xạ âm | — | ✓ D2 (do_thi), D5 (truc_chuyen_dong) 5/11 | ✓ D1, D3, D4, D6 5/11 | Sonnet | P3 |
 | 178 | Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà | — | ✓ D3 (tia_sang), D5 (tia_sang) 5/11 | ✓ D1, D2, D4, D6 5/11 | Sonnet | P3 |
 
 ## C. Tổng theo chương
@@ -308,6 +308,7 @@ Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy
 - Đ3 (3/11): `dien_truong_deu` (bản +/−, đường sức, lực, quỹ đạo parabol `cat` dừng ở bản + chấm, thước ngang/dọc) và `mach_dien` (nguồn, R, đèn, V/A kế, khoá, mũi tên dòng, ngoặc nhóm, `bang` số điền dần với ô "?") — API ở chú thích đầu hai file + `features/lessons/types.ts`. Chưa soát bằng mắt: `khoa`, `dong_ho` kiểu A — phiên dùng lại đầu tiên (38, 40, 44) soát kỹ. Đã xem thử 375px; HS ảo + sửa 3/11; ĐÃ ĐĂNG DB 37, 43 ngày 4/11 (sao lưu `bai-tap-mau-bai{37,43}-179377*.json`), deploy + kiểm live 4/11.
 
 - **Đ9c (5/11/2026) — mở rộng `tia_sang`, chỉ THÊM, bài 83 giữ nguyên**: cảnh xếp lớp cũ không vẽ được 8 dạng của 84, 151, 158, 178 nên thêm `canh: "tu_do"` (toạ độ hình 0..20, y xuống; không có `canh` = hành vi cũ). Mục mới: `vung` (đa giác tô: lăng kính, lõi/vỏ sợi quang, nước, vùng tối/nửa tối), `tron` (Mặt Trời, Trái Đất, Mặt Trăng), `doan` kiểu `guong` (gạch mặt sau)/`mat`/`vat`, `tia` gấp khúc theo điểm (chevron từng đoạn, nét đứt cho đường kéo dài), `phap_tuyen` tại điểm, `goc` giữa hai hướng (điểm hoặc độ), `diem` (ảnh: chấm rỗng), `thuoc`, `chu`, `ghi`; `phan[]` chọn khung theo bước đang làm (`tu_buoc`, như `thau_kinh`) cho bài nhiều câu khác hình. Cảnh cần cho từng bài: lăng kính (151·D6), sợi quang (84·D4, 151·D7), hai tia ở một mặt phân cách (84·D2), gương phẳng + ảnh + hai gương (158·D6, D7), nguồn rộng + vật chắn → nón bóng tối/nửa tối (178·D3), tia song song chéo trên Trái Đất (178·D5). `GiaiCungHinh` truyền thêm `buoc` cho `TiaSang` (cảnh cũ bỏ qua).
+- **Đ9b (5/11, 15 bài HSG 9 không quang, chưa HS ảo, chưa đăng):** (1) `mach_dien` chưa có máy biến áp (152·D5 ghi bằng chữ). (2) `do_thi` chưa có hàm phân thức: P(R) = 576R/(R+6)² ở 165·D5 lấy mẫu 61 điểm. (3) `so_do_vecto` mặt nghiêng luôn in góc thật nên dốc ~3° (161·D7) dẹt; cần tuỳ chọn ẩn/đổi nhãn góc, và cảnh palăng (ròng rọc động) — 161·D5 tạm dùng cảnh `nut`. (4) `thanh_nang_luong` cảnh `doc` chưa có "dốc–mặt ngang ma sát–dốc" (166·D7 chỉ thể hiện qua cột + ghi). (5) `cot_chat_long` cảnh `be` giữ mặt nước cố định: mực dâng (167·B9) chỉ ở ghi. (6) 150·D5 trục không theo tỉ lệ mà vẫn ghi "x (m)" — thầy chọn bỏ "(m)" hay giữ. (7) 153·D2 tự dựng đồ thị t–Q (đề không có đồ thị); câu b chỉ ở ghi.
 
 ## Cách cập nhật bảng này
 Làm xong một dạng → đổi ô của dạng đó thành `✓` + ngày ở bảng B. Họ hình mới tạo xong → ghi tên component ở bảng A. Không sinh lại toàn bộ bảng.
