@@ -8,17 +8,23 @@
  * JSON: { loai: "song_day", A, lam, x_max, diem: [{x, ten}], song?: {pha, dau?}, lop: [[mục…], …] }. Mục:
  *  song {pha, dau?} (thay ảnh sóng)  ·  thuoc {tu, den, nhan, hang?: 0|1}  ·  mui {x, huong: "len"|"xuong"}
  *  ·  dau_song {x}  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k. Đơn vị cm.
+ * Thêm 5/11/2026 (chỉ thêm, không có `canh` thì vẽ như cũ): `canh: {kieu: "doc", …}` → sóng dọc trong ống (`SongDoc.tsx`),
+ * `canh: {kieu: "ong", …}` → ống cộng hưởng một đầu kín (`OngCongHuong.tsx`). API từng cảnh ở chú thích đầu hai file đó.
  */
 
 import { C_HL, C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
-import type { SongDayLop } from "@/features/lessons/types";
+import OngCongHuong from "@/components/lessons/cong-cu/OngCongHuong";
+import SongDoc from "@/components/lessons/cong-cu/SongDoc";
+import type { SongDayCanh, SongDayLop } from "@/features/lessons/types";
 
 type Song = { pha: number; dau?: number };
-type Props = { A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: Song; lop?: SongDayLop[][]; layer: number };
+type Props = { A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: Song; canh?: SongDayCanh; lop?: SongDayLop[][]; layer: number };
 
 const W = 18, UA = 2; // bề ngang trục x và độ cao biên độ (đơn vị hình)
 
-export default function SongDay({ A, lam, x_max, diem = [], song, lop, layer: L }: Props) {
+export default function SongDay({ A, lam, x_max, diem = [], song, canh, lop, layer: L }: Props) {
+  if (canh?.kieu === "doc") return <SongDoc A={A} lam={lam} x_max={x_max} pha={song?.pha ?? 0} canh={canh} lop={lop} layer={L} />;
+  if (canh?.kieu === "ong") return <OngCongHuong lam={lam} canh={canh} lop={lop} layer={L} />;
   const items = dangHien(lop, L);
   const ghi = ghiMoiNhat(lop, L);
   let cur: Song | undefined = song;
