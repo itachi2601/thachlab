@@ -1,0 +1,93 @@
+# "Một dạng — một hình" cho Bài tập mẫu — quy trình áp cho mọi chương (thầy duyệt + đăng L12 Ch.3 ngày 5/11/2026)
+
+Mẫu đã đăng: L12 Ch.3 Từ trường (bài 10, 11, 13, 14, 125, 126, 127) — xem `scripts/data/bai-tap-mau/<id>.json` các bài đó.
+Lý do + cách đánh giá từng dạng (Có ích / Trang trí): `docs/RA-SOAT-HINH-BTM-TU-TRUONG.md`.
+Họ hình có sẵn: `components/lessons/cong-cu/*.tsx` (đọc chú thích đầu file) + kiểu ở `features/lessons/types.ts`.
+`cong_cu.de` và `cong_cu.dong` dùng được với MỌI họ (GiaiCungHinh/HinhDe/Dong.tsx không phụ thuộc họ).
+
+## Cách làm một chương (phiên điều phối)
+1. Với mỗi bài: lập bảng đánh giá từng dạng như mục 3 của `RA-SOAT-HINH-BTM-TU-TRUONG.md` (mô phỏng Có ích/Trang trí, bước dùng).
+2. Giao agent con (general-purpose, 1–2 bài/agent, tối đa 2–3 agent cùng lúc) theo phần "Đích" dưới đây; brief của agent = file này + bảng đánh giá + cổng dev server.
+3. Phiên điều phối kiểm bằng máy, KHÔNG tin báo cáo: mọi dạng `cong_cu.de == true`, `len(lop) == len(buoc)`, không còn `<figure` trong `problem_html`/`analysis_html`, `#kiem` = SACH; xem vài ảnh; 375px bằng `resize_window mobile` (Chrome headless 375 không ra layout điện thoại).
+4. Commit từng bài theo đường dẫn (`git commit -- scripts/data/bai-tap-mau/<id>.json`), push.
+5. KHÔNG sửa component dùng chung (`components/lessons/cong-cu/*`, `types.ts`, `globals.css`) — nhiều phiên chạy song song. Thiếu mục hình thì vẽ gần đúng bằng mục có sẵn và ghi "cần mục X" vào báo cáo cuối.
+6. KHÔNG publish DB, KHÔNG deploy: báo thầy duyệt ở `/dev/btm/?f=btm-<id>` (sau `npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --xem-thu`). Thầy duyệt trong phiên thì mới publish `--giu-cu --yes` (bài có tự luận đã nằm trong dang_bai thì xem kĩ số dạng trước/sau) rồi `bash scripts/deploy.sh` từ checkout chính sau `git pull origin main`.
+7. Không ghi vào nhật ký SKILL.md (nhiều nhánh cùng sửa cuối file sẽ kẹt gộp) — đưa bài học vào báo cáo cuối, phiên điều phối chung sẽ gộp.
+
+## Vấn đề
+Mỗi dạng đang có tới 3 hình khác nhau (mô phỏng SVG trong `problem_html`, hình dữ kiện trong `analysis_html`, hình
+giải từng bước `cong_cu`), khác hướng nhìn/màu/nhãn; 23/35 dạng không có `cong_cu` nên giải từng bước không có hình.
+
+## Đích (cho MỖI dạng của bài được giao)
+1. **Một hình duy nhất = `cong_cu`, có `"de": true`.** UI mới (đã code xong) vẽ lớp 0 của `cong_cu` ngay dưới đề, rồi
+   chính hình đó dính trên khi "Giải từng bước", thêm `lop[i]` sau khi em xong bước i+1.
+   - Lớp 0 (`nen`, `hinh`, `duong`/`diem` gốc, `x_dich`…) = **bức hình của đề**: đủ mọi thứ đề mô tả hoặc nói "trên hình",
+     có số liệu đề, ký hiệu khớp đề/lời giải. Nhìn lớp 0 phải hiểu tình huống mà không cần mô phỏng cũ.
+   - Lớp 0 và các lớp chưa tới **không được lộ đáp án** của bước đang hỏi (chiều lực, chiều dòng, chiều đường sức khi đề
+     hỏi chiều, số đáp số, góc cần tìm…). Đề hỏi chiều đường sức → vẽ đường sức KHÔNG mũi ở lớp 0, mũi thêm ở lớp sau.
+     Không vẽ đúng tỉ lệ khi đo pixel ra đáp số.
+   - `lop` có đúng `len(buoc)` phần tử (bước chỉ đọc có thể `[]`), thứ tự khớp `buoc[]`. Mỗi lớp vẽ đúng kết luận của bước
+     đó; `ghi` ngắn (≤ ~45 ký tự, quá thì tự xuống 2 dòng — xem `chiaDong`). `het: k` để nhường chỗ.
+   - Dạng đã có `cong_cu`: giữ phần lớp đang tốt, sửa lớp 0 cho đủ dữ kiện đề (vẽ cái đề có — vd. la bàn, dây, chiều I),
+     sửa màu theo mục 3.
+   - Dạng chưa có: viết mới bằng họ có sẵn (`tu_truong`, `do_thi`, `vong_tron`, `mach_dien`). Đọc chú thích đầu file
+     component `components/lessons/cong-cu/<Ho>.tsx` và kiểu trong `features/lessons/types.ts` (tìm `TuTruongLop`,
+     `DoThiLop`, `VongTronLop`, `MachDienLop`). Xem các dạng đã có `cong_cu` trong cùng file JSON làm mẫu.
+   - Họ `vong_tron` chỉ là công cụ giải; nếu lớp 0 của nó trống thì không làm hình đề được → chọn họ thể hiện đúng đề
+     (vd. đề cho đồ thị u(t) → `do_thi` có đường ngưỡng), hoặc bảo đảm lớp 0 có dữ kiện đề. Tự cân, ghi lý do vào báo cáo.
+2. **Chuyển động (`dong`) chỉ cho dạng "Có ích"** trong bảng rà soát, và chỉ khi nó cho thấy điều một bước cần (quay khung
+   tới góc α, dây quay đổi α, điểm chạy trên vòng tròn pha / đồ thị, dây đàn dao động, nam châm đi vào ống…). Không bịa
+   chuyển động cho có. Dạng "Trang trí" / "Nửa vời": KHÔNG `dong`.
+   Cú pháp (trong `cong_cu`):
+   ```json
+   "dong": [{"nut": "▶ Xem khung quay tới vị trí đề", "giay": 3,
+             "doi": [{"p": "hinh.1.goc", "tu": 0, "den": 60}, {"p": "hinh.2.goc", "cac": [90, 120, 150]}]}]
+   ```
+   `buoc` (1-based) = nút hiện ở bước đó lúc giải; bỏ `buoc` = nút ở hình dưới đề. `p` = đường dẫn trong JSON của
+   `cong_cu`; `cac` = các mốc cách đều (số thì nội suy, chữ/bool thì nhảy). Hết lượt, hình về đúng JSON gốc → **mốc cuối
+   phải bằng giá trị gốc** (trạng thái đề) để không giật. Một lượt 2–4 giây; dao động thì cho 2–3 chu kì trong `cac`.
+   Đổi được mọi số trong JSON (toạ độ `tu.1`, `diem.0.x`, `goc`, `dai`…), kể cả item nằm trong `lop.<i>.<j>` khi có `buoc`.
+3. **Màu thống nhất cả chương** (họ `tu_truong`: `mau`): cảm ứng từ B = `"b"` (xanh), dòng điện I = mục `dong` (cam sẵn)
+   hoặc `"i"`, lực từ F = `"luc"` (đỏ), pháp tuyến n và hình học = `"chu"` (đen). `vec` mặc định là cam → luôn ghi `mau`
+   rõ. Nhãn chỉ số dưới viết `B_đ`, `B_{dây}`, `F_{AB}` (component tự hạ chỉ số); không viết "Bđ".
+   Họ khác giữ màu của họ, chỉ cần đại lượng cùng tên cùng màu giữa các lớp.
+4. **Gỡ hình cũ:** xoá nguyên khối `<figure …>…</figure>` (mỗi trường đúng 1 khối) khỏi `problem_html` và `analysis_html`.
+   Sửa câu chữ còn nhắc tới mô phỏng/nút ("Bấm Chạy mô phỏng", "hình bên dưới", "trên hình mô phỏng"…) cho khớp hình mới;
+   `analysis_html` chỉ còn bảng và chữ.
+5. `tom_de`: giữ; sửa nếu ký hiệu đổi.
+
+## Mục mới của `tu_truong` (đã có trong TuTruong.tsx, toạ độ 0..20 ngang × 0..11 dọc, y hướng lên, góc độ)
+`diem {x,y,ten?,vi?}` · `vong {x,y,r,chieu?:"cung"|"nguoc",mau?,dut?}` (đường sức tròn quanh dây; bỏ `chieu` = không mũi)
+· `la_ban {x,y,r,goc}` (kim, nửa N đỏ theo `goc`) · `thanh {x,y,goc,dai,mau?,dut?}` (đoạn qua tâm — khung nhìn dọc trục,
+quay bằng `dong`) · `duong {diem:[[x,y]…],mau?,dut?,mui?,kin?,nhan?}` (đường cong gấp khúc — đường sức nam châm; `mui` =
+số mũi theo chiều vẽ, 0 = không mũi) · `elip {x,y,rx,ry,goc?,mau?,dut?}` (vòng dây nhìn nghiêng) · `chu` nhận `mau`.
+Thiếu thứ gì họ hình không vẽ được → vẽ gần đúng bằng `duong`/`chu`, ghi vào báo cáo "cần mục X"; KHÔNG sửa component.
+
+## Cách sửa JSON
+File `scripts/data/bai-tap-mau/<id>.json` là nguồn duy nhất. Sửa bằng script Python tại chỗ:
+`json.load` → sửa → `json.dump(J, f, ensure_ascii=False, indent=1)` + xuống dòng cuối. **Không chạy `build-hinh-<id>.py`**
+(ghi lại từ đầu, mất `cong_cu`/`tom_de`). Sau mỗi lần sửa, `git diff --stat` chỉ được đụng file bài của mình.
+
+## Kiểm (bắt buộc, lặp tới sạch)
+Dev server: mỗi phiên một cổng riêng (ghi trong brief phiên), chạy `npm run dev -- -p <cổng>` trong tab terminal (KHÔNG `next dev` trực tiếp — `predev` nối `.env.local`). Thay `3000` bên dưới bằng cổng đó.
+```bash
+npx tsx scripts/publish-bai-tap-mau.mts --lesson <id> --xem-thu      # ghi public/xem-thu/btm-<id>.json (không ghi DB)
+C="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"; S=<thư mục scratchpad của em>
+"$C" --headless=new --disable-gpu --virtual-time-budget=20000 --window-size=1200,1400 --user-data-dir=$S/chr-<id> \
+  --dump-dom "http://localhost:3000/dev/btm-hinh/?f=btm-<id>" | python3 -c "import sys,re;print(re.search(r'<pre id=\"kiem\"[^>]*>(.*?)</pre>',sys.stdin.read(),re.S).group(1))"
+"$C" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=20000 --window-size=1150,1500 --user-data-dir=$S/chr-<id> \
+  --screenshot=$S/<id>-d<k>.png "http://localhost:3000/dev/btm-hinh/?f=btm-<id>&d=<k>"
+```
+- `#kiem` phải là `SACH` (TRAN = chữ ra ngoài hình, DE = hai chữ đè nhau). Dấu `/` cuối `btm-hinh/` bắt buộc (308).
+- Mở ảnh từng dạng (Read) và tự soát: lớp 0 khớp đề, không lộ đáp án; mỗi lớp khớp kết luận bước; mũi tên/nhãn không
+  chạm nhau, không chạm mép; khung `dong` (t=0 / 0,5 / 0,97) đúng ý và mốc cuối trùng hình gốc; màu đúng quy ước.
+  Ô hình trong bảng soát ≈ 360px — gần cỡ điện thoại 375px; chữ < ~10px là quá nhỏ.
+- `npx tsc --noEmit -p .` không cần (không sửa code), nhưng JSON phải hợp lệ.
+
+## Không được làm
+(Dành cho agent con.) Không sửa code/CSS/component, không sửa file bài khác, không commit, không publish DB, không deploy,
+không ghi vào SKILL.md/STATE.md/memory. Không đổi đề, số liệu, đáp án, `buoc[].hoi/lua_chon` (chỉ sửa câu nhắc tới hình cũ).
+
+## Báo cáo (≤ 40 dòng)
+Mỗi dạng một dòng: có/không `dong` (vì sao), họ hình, đã sửa gì ở lớp 0/lớp bước/màu, chỗ còn băn khoăn (nội dung cần thầy
+quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = SACH?, đường dẫn ảnh đã soát.
