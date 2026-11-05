@@ -94,10 +94,13 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
       })}
       {items.map((it, k) => {
         if (it.loai !== "diem") return null;
-        const [x, y] = P(it.goc), [lx, ly] = P(it.goc, R + 1.25), vx = -Math.sin(it.goc * Math.PI);
+        // `r` (cùng đơn vị với A): điểm nằm trong vòng, cách tâm r (vd. điểm N giữa bán kính); mặc định ở mép vòng
+        const rr = it.r != null ? (it.r / A) * R : R;
+        const [x, y] = P(it.goc, rr), [lx, ly] = P(it.goc, rr + 1.25), vx = -Math.sin(it.goc * Math.PI);
         const arc = it.chieu ? cungArrow(it.goc) : null;
         return (
           <g key={`d${k}`} className="cc-in">
+            {it.r != null && <line x1={0} y1={0} x2={P(it.goc, R)[0]} y2={P(it.goc, R)[1]} stroke="currentColor" strokeWidth={0.06} opacity={0.5} />}
             <line x1={x} y1={y} x2={x} y2={0} stroke="currentColor" strokeWidth={0.06} strokeDasharray="0.25 0.2" opacity={0.8} />
             <circle cx={x} cy={0} r={0.18} fill={C_HL} stroke="currentColor" strokeWidth={0.05} />
             {it.chieu && Math.abs(vx) > 0.05 && (

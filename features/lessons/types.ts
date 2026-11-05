@@ -244,7 +244,7 @@ export type MachDienLop =
 type LopGhi = { loai: "ghi"; text: string; het?: number };
 export type VongTronLop =
   | LopGhi
-  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; het?: number }
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };
 export type SongDayLop =
