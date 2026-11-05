@@ -104,7 +104,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Máy bơm $P=2{,}0\\ \\text{kW}$, chạy $3{,}0\\ \\text{h}$",
+     "$1\\ \\text{CV}=736\\ \\text{W}$"
+    ],
+    "tim": [
+     "a) $A$ theo kWh",
+     "b) $A$ theo jun",
+     "c) $P$ theo CV",
+     "d) Thời gian của máy $0{,}50\\ \\text{kW}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -227,7 +239,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Kéo: $F=120\\ \\text{N}$, $s=15\\ \\text{m}$, $t=20\\ \\text{s}$",
+     "Nâng: $m=24\\ \\text{kg}$, $h=1{,}5\\ \\text{m}$, $t=3{,}0\\ \\text{s}$"
+    ],
+    "tim": [
+     "$A$, $\\mathcal P$ khi kéo",
+     "$\\mathcal P$ khi nâng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -326,7 +348,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v=36\\ \\text{km/h}$, $F=150\\ \\text{N}$, chạy đều $5{,}0$ phút",
+     "Về sau: $54\\ \\text{km/h}$, $F=120\\ \\text{N}$"
+    ],
+    "tim": [
+     "a) $\\mathcal P$ lúc đều",
+     "b) $A$ trong $5{,}0$ phút",
+     "c) $\\mathcal P$ lúc $54\\ \\text{km/h}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -401,7 +434,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$\\mathcal P=22{,}5\\ \\text{kW}$, $m=750\\ \\text{kg}$, $h=30\\ \\text{m}$",
+     "Nâng đều, $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "a) Lực nâng",
+     "b) $v_{\\max}$",
+     "c) $t_{\\min}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -500,7 +544,70 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 20,
+     "vat": "4,5 tấn"
+    },
+    "ti_le": 3.2,
+    "vec": [
+     {
+      "ten": "F",
+      "goc": "doc_len",
+      "do_lon": 4500,
+      "tu": "vat",
+      "buoc": 2,
+      "mau": "cam",
+      "so": "4500 N"
+     },
+     {
+      "ten": "F_c",
+      "goc": "doc_xuong",
+      "do_lon": 1800,
+      "tu": "vat_day",
+      "buoc": 2
+     },
+     {
+      "ten": "v",
+      "goc": "doc_len",
+      "do_lon": 8,
+      "kieu": "dong_hoc",
+      "tu": "vat",
+      "lech": [
+       0.9,
+       1.4
+      ],
+      "buoc": 3,
+      "so": "8,0 m/s"
+     }
+    ],
+    "bang": [
+     {
+      "text": "v_ngang = 20 m/s",
+      "buoc": 1,
+      "den": 2
+     },
+     {
+      "text": "t = 62,5 s",
+      "buoc": 4
+     }
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=4{,}5$ tấn, $\\mathcal P_{\\max}=36\\ \\text{kW}$, $F_c=1800\\ \\text{N}$",
+     "Dốc $6\\,\\%$ (100 m dọc dốc lên 6 m), dài $500\\ \\text{m}$"
+    ],
+    "tim": [
+     "a) $v$ trên đường ngang",
+     "b) $F$ lên dốc đều",
+     "c) $v$ lên dốc",
+     "d) Thời gian hết dốc"
+    ]
+   }
   }
  ]
 }

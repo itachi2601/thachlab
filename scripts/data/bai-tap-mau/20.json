@@ -104,7 +104,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=10\\cos\\left(4\\pi t+\\dfrac{2\\pi}{3}\\right)$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $\\omega$, $\\varphi$",
+     "b) $T$, $f$",
+     "c) Pha và $x$ lúc $t=0{,}25$ s"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -216,7 +226,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$x=-6\\cos\\left(5\\pi t-\\dfrac{\\pi}{3}\\right)$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$",
+     "b) Viết lại dạng $A\\gt0$, nêu $\\varphi$",
+     "c) $x$ lúc $t=0$ và $t=0{,}2$ s"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -365,7 +385,119 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $x$–$t$ ($x$: cm, $t$: s)"
+    ],
+    "tim": [
+     "a) $A$, $T$",
+     "b) $\\omega$",
+     "c) $\\varphi$ và phương trình"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 2.1,
+     "ten": "t (s)",
+     "vach": [
+      0.5,
+      1,
+      1.5,
+      2
+     ],
+     "luoi": 0.5
+    },
+    "y": {
+     "min": -6,
+     "max": 6,
+     "ten": "x (cm)",
+     "luoi": 2
+    },
+    "duong": [
+     {
+      "ham": {
+       "kieu": "cos",
+       "a": 4,
+       "w": 2,
+       "phi": 1
+      },
+      "tu": 0,
+      "den": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 4,
+       "nhan": "4"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 4 cm (từ trục t tới đỉnh)"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0.5,
+       "y": 4,
+       "ten": "đỉnh",
+       "vi": "t"
+      },
+      {
+       "loai": "diem",
+       "x": 1.5,
+       "y": 4,
+       "ten": "đỉnh",
+       "vi": "t"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0.5,
+       "den": 1.5,
+       "y": 5.2,
+       "nhan": "T = 1 s"
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai đỉnh liên tiếp cách nhau T = 1 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 2π ≈ 6,28 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": -4,
+       "ten": "x(0) = −4",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "x(0) = A cosφ = −4 ⇒ cosφ = −1"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ φ = π rad"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x = 4cos(2πt + π) cm"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -501,7 +633,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Quỹ đạo dài $16$ cm; $30$ dao động toàn phần trong $20$ s",
+     "$t=0$: vật ở biên âm"
+    ],
+    "tim": [
+     "a) $A$, $T$",
+     "b) $\\omega$ và phương trình",
+     "c) $x$ lúc $t=\\dfrac{1}{3}$ s"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -650,7 +793,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R=12$ cm, quay đều $150$ vòng/phút, ngược chiều kim đồng hồ",
+     "$t=0$: M ở điểm cao nhất; Q là hình chiếu của M lên Ox"
+    ],
+    "tim": [
+     "a) $\\omega$ (rad/s) và $A$ của Q",
+     "b) $\\varphi$ và phương trình của Q",
+     "c) $x$ lúc $t=\\dfrac{1}{30}$ s"
+    ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 12,
+    "don_vi": "cm",
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "150 vòng/phút = 2,5 vòng/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π·2,5 = 5π ≈ 15,7 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Q chạy từ −12 tới +12 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ A = R = 12 cm"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.5,
+       "ten": "M₀",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "t = 0: M₀ ở đỉnh, góc π/2"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ φ = π/2 rad"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x = 12cos(5πt + π/2) cm"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": 0.5,
+       "den": 0.6666666666666666
+      },
+      {
+       "loai": "diem",
+       "goc": 0.6666666666666666,
+       "ten": "M"
+      },
+      {
+       "loai": "ghi",
+       "text": "Pha = 5π/30 + π/2 = 2π/3"
+      },
+      {
+       "loai": "ghi",
+       "text": "x = 12cos(2π/3) = −6 cm"
+      }
+     ]
+    ]
+   }
   }
  ]
 }

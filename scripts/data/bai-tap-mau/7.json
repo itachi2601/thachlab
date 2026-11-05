@@ -736,6 +736,84 @@
      "b) $p$ khí sau khi lật",
      "c) chiều dài cột khí sau khi lật"
     ]
+   },
+   "cong_cu": {
+    "loai": "cot_chat_long",
+    "canh": {
+     "kieu": "ong_kin",
+     "dai": 80
+    },
+    "hinh": [
+     {
+      "loai": "ong",
+      "ben": "trai",
+      "mieng": "len",
+      "khi": 28,
+      "hg": 20,
+      "nhan_khi": "l_1=28",
+      "nhan_hg": "h=20",
+      "p0": "p_0"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ong",
+       "ben": "phai",
+       "mieng": "xuong",
+       "khi": 28,
+       "hg": 20,
+       "nhan_khi": "l_2=?",
+       "p0": "p_0",
+       "dut": true,
+       "het": 3
+      },
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 50,
+       "text": "lật"
+      },
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 38,
+       "text": "180°"
+      },
+      {
+       "loai": "ghi",
+       "text": "p_1 = 760 + 200 = 960 mmHg"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "p_2 = 760 − 200 = 560 mmHg"
+      }
+     ],
+     [
+      {
+       "loai": "ong",
+       "ben": "phai",
+       "mieng": "xuong",
+       "khi": 48,
+       "hg": 20,
+       "nhan_khi": "l_2=48",
+       "nhan_hg": "h=20",
+       "p0": "p_0"
+      },
+      {
+       "loai": "ghi",
+       "text": "l_2 = 960·28 / 560 = 48 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "l_2 + h = 68 cm < 80 cm ✓"
+      }
+     ]
+    ]
    }
   }
  ]

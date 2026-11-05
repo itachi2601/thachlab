@@ -103,7 +103,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Xe tải $m=4{,}0$ tấn, $36\\ \\text{km/h}$ rồi $90\\ \\text{km/h}$",
+     "Ô tô con $1{,}0$ tấn có cùng động năng"
+    ],
+    "tim": [
+     "a) $W_{\\text{đ}}$ xe tải",
+     "b) $v$ ô tô con",
+     "c) $W_{\\text{đ}}$ lúc sau gấp mấy lần"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -215,7 +226,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Mốc ở nền kho, $g=10\\ \\text{m/s}^2$",
+     "A: $12\\ \\text{kg}$, $1{,}5\\ \\text{m}$; B: $5{,}0\\ \\text{kg}$, $3{,}6\\ \\text{m}$",
+     "C: $8{,}0\\ \\text{kg}$, $W_t=240\\ \\text{J}$"
+    ],
+    "tim": [
+     "$W_t$ của A, B và so sánh",
+     "Độ cao của C"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -290,7 +312,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Chậu cây $2{,}0\\ \\text{kg}$ ở sàn tầng 3 cao $6{,}0\\ \\text{m}$",
+     "Hầm $-4{,}0\\ \\text{m}$; tầng 6 cao $15\\ \\text{m}$"
+    ],
+    "tim": [
+     "$W_t$ khi mốc ở mặt đường, sàn hầm, sàn tầng 6"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -365,7 +396,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "doc",
+     "h": 40,
+     "don_vi": "m",
+     "vi": 1
+    },
+    "cot": [
+     {
+      "ten": "W_{tA}",
+      "mau": "max"
+     },
+     {
+      "ten": "W_{tB}",
+      "mau": "min"
+     },
+     {
+      "ten": "W_{tC}",
+      "mau": "chu"
+     }
+    ],
+    "max": 24,
+    "don_vi": "kJ",
+    "lop": [
+     [
+      {
+       "loai": "vat",
+       "vi": 0.3
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{tA}",
+       "gia_tri": 24,
+       "nhan": "24"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{tB}",
+       "gia_tri": 7.2,
+       "nhan": "7,2"
+      },
+      {
+       "loai": "ghi",
+       "text": "A_{AB} = W_{tA} − W_{tB} = 16,8 kJ"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0.625
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{tC}",
+       "gia_tri": 15,
+       "nhan": "15"
+      },
+      {
+       "loai": "ghi",
+       "text": "A_{BC} = W_{tB} − W_{tC} = −7,8 kJ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A_{AC} = W_{tA} − W_{tC} = 9,0 kJ"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$m=60\\ \\text{kg}$; A $40\\ \\text{m}$, B $12\\ \\text{m}$, C $25\\ \\text{m}$",
+     "$g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "$A_{AB}$, $A_{BC}$, $A_{AC}$ của trọng lực"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -488,7 +599,77 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 30,
+     "vat": "20 kg",
+     "dai": "10 m"
+    },
+    "ti_le": 3.2,
+    "vec": [
+     {
+      "ten": "F",
+      "goc": "doc_len",
+      "do_lon": 150,
+      "tu": "vat",
+      "den": 5
+     },
+     {
+      "ten": "F_ms",
+      "goc": "doc_xuong",
+      "do_lon": 25,
+      "tu": "vat_day"
+     },
+     {
+      "ten": "F'",
+      "goc": "doc_len",
+      "do_lon": 121,
+      "tu": "vat",
+      "buoc": 5,
+      "mau": "cam"
+     }
+    ],
+    "bang": [
+     {
+      "text": "A_F = 1500 J",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "A_ms = −250 J",
+      "buoc": 2,
+      "den": 4
+     },
+     {
+      "text": "A_P = −1000 J",
+      "buoc": 3,
+      "den": 5
+     },
+     {
+      "text": "v = 5,0 m/s",
+      "buoc": 4
+     },
+     {
+      "text": "F' = 121 N",
+      "buoc": 5
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "$m=20\\ \\text{kg}$, dốc $10\\ \\text{m}$, $30^\\circ$, từ nghỉ",
+     "$F=150\\ \\text{N}$, $F_{\\text{ms}}=25\\ \\text{N}$",
+     "Lần 2: $v_0=2{,}0\\ \\text{m/s}$, vừa tới đỉnh thì dừng"
+    ],
+    "tim": [
+     "a) $v$ ở đỉnh dốc",
+     "b) Lực kéo $F'$ lần 2"
+    ]
+   }
   }
  ],
  "tu_luan": {

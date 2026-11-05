@@ -7,7 +7,8 @@
  * Hình không đổi cao giữa các bước (D2); không hoạt hình (thầy 2/11).
  *
  * JSON: { loai: "thanh_nang_luong", canh: {kieu…}, cot: [{ten, mau?}], max, don_vi?, lop: [[mục…] cho bước 1, …] }.
- * canh: lo_xo_ngang {A, don_vi?, x?}  ·  con_lac_don {goc0, goc?}  ·  doc {h, don_vi?, vi?}  ·  hop_he {ten?}
+ * canh: lo_xo_ngang {A, don_vi?, x?}  ·  con_lac_don {goc0, goc?}  ·  doc {h, don_vi?, vi?, nhan_h?}  ·  hop_he {ten?}
+ *   (doc.nhan_h thay chữ "h = …" khi h là ẩn của đề, vd "h_{max} = ?"; mục v có chieu −1 thì mũi tên đi lên.)
  * Mục: cot {ten, gia_tri, nhan?}  ·  vat {x? | goc? | vi?, bong?} (đặt lại vật; bong = bóng đối xứng −x)
  *  ·  v {nhan, chieu?: 1|-1} (mũi tên vận tốc ở vật)  ·  mui {vao, nhan, hang?} (hộp hệ: Q, A vào/ra)  ·  ghi {text}.
  * `het: k` = ẩn từ khi xong bước k. `hinh` (tuỳ chọn) = mục vẽ sẵn từ bước 1, cùng cú pháp mục của `lop`.
@@ -249,7 +250,7 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
         <Chevron x={2} y={yT} ang={-Math.PI / 2} color={C_MIN} len={0.35} w={0.06} />
         <Chevron x={2} y={yG} ang={Math.PI / 2} color={C_MIN} len={0.35} w={0.06} />
         <Label x={2.4} y={(yT + yG) / 2} a="start" size={1} fill={C_MIN}>
-          {`h = ${fmt(canh.h)} ${canh.don_vi ?? "m"}`}
+          {canh.nhan_h ?? `h = ${fmt(canh.h)} ${canh.don_vi ?? "m"}`}
         </Label>
         <line
           x1={7}
@@ -262,7 +263,8 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
           opacity={0.6}
         />
         <circle cx={7} cy={y - 0.5} r={0.5} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.1} />
-        {v && <MuiTen x1={8} y1={y - 0.5} x2={8} y2={y - 0.5 + 2.2} c={C_MAX} nhan={v.nhan} />}
+        {/* chieu −1 = mũi tên đi lên (ném lên, Đ9a 5/11); mặc định đi xuống như cũ */}
+        {v && <MuiTen x1={8} y1={y - 0.5} x2={8} y2={y - 0.5 + (v.chieu === -1 ? -2.2 : 2.2)} c={C_MAX} nhan={v.nhan} />}
       </g>
     );
   }

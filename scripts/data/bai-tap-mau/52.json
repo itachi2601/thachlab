@@ -151,7 +151,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị độ dịch chuyển – thời gian của xe (hình đề), $0\\to10\\ \\text{s}$",
+     "Chiều dương là chiều xe chạy lúc đầu"
+    ],
+    "tim": [
+     "a) Mô tả chuyển động từng khoảng thời gian",
+     "b) Vị trí tại $t=2;\\ 4;\\ 8;\\ 10\\ \\text{s}$",
+     "c) $s$ và $d$ sau $10\\ \\text{s}$, vì sao khác nhau"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -247,7 +258,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $d$–$t$ của người đi bộ (hình đề), $0\\to50\\ \\text{s}$",
+     "$d$ tính từ cột mốc $O$"
+    ],
+    "tim": [
+     "a) Vận tốc từng đoạn",
+     "b) Những lúc người đó cách $O$ $10\\ \\text{m}$",
+     "c) $v_{tb}$ và tốc độ trung bình trong $50\\ \\text{s}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -343,7 +365,146 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 2.5,
+     "ten": "t (h)",
+     "vach": [
+      0,
+      0.5,
+      1,
+      1.5,
+      2,
+      2.5
+     ],
+     "luoi": 0.5
+    },
+    "y": {
+     "min": 0,
+     "max": 150,
+     "ten": "x (km)",
+     "vach": [
+      0,
+      50,
+      100,
+      150
+     ],
+     "luoi": 50
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        2.5,
+        100
+       ]
+      ],
+      "ten": "I",
+      "ten_xy": [
+       2.2,
+       92
+      ]
+     },
+     {
+      "diem": [
+       [
+        0,
+        150
+       ],
+       [
+        2.5,
+        0
+       ]
+      ],
+      "mau": "min",
+      "ten": "II",
+      "ten_xy": [
+       2.25,
+       18
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0.1,
+        144
+       ],
+       "den": [
+        0.6,
+        114
+       ],
+       "nhan_x": "0,5 h",
+       "nhan_y": "−30 km"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δx : Δt = −30 : 0,5 = −60 km/h"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 1,
+       "y": 90,
+       "ten": "90",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "x_II = 150 − 60t, t = 1 ⇒ 90 km"
+      }
+     ],
+     [
+      {
+       "loai": "dung",
+       "x": 1.5
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai xe cùng toạ độ lúc t = 1,5 h"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 60,
+       "nhan": "60"
+      },
+      {
+       "loai": "diem",
+       "x": 1.5,
+       "y": 60,
+       "ten": "gặp nhau",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "Gặp nhau cách A 60 km"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Đồ thị $x$–$t$ của hai xe I, II (hình đề)",
+     "Gốc $O$ tại bến A, chiều dương từ A tới B, gốc thời gian lúc cùng xuất phát"
+    ],
+    "tim": [
+     "a) Vận tốc mỗi xe",
+     "b) Phương trình chuyển động mỗi xe",
+     "c) Lúc và nơi hai xe gặp nhau"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -452,7 +613,141 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 1.5,
+     "ten": "t (h)",
+     "vach": [
+      0,
+      0.5,
+      1,
+      1.5
+     ],
+     "luoi": 0.5
+    },
+    "y": {
+     "min": 0,
+     "max": 10,
+     "ten": "x (km)",
+     "vach": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+     ],
+     "luoi": 2
+    },
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          1.5,
+          6
+         ]
+        ],
+        "ten": "A",
+        "ten_xy": [
+         1.1,
+         2.2
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Cùng độ lớn v = 4 km/h"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 1,
+       "y": 8,
+       "ten": "8",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "x_B = 10 − 4(t − 0,5), t = 1 ⇒ 8 km"
+      }
+     ],
+     [
+      {
+       "loai": "ngang",
+       "y": 6
+      },
+      {
+       "loai": "ghi",
+       "text": "Gặp nhau lúc t = 1,5 h, cách A 6 km"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0.5,
+          10
+         ],
+         [
+          1.5,
+          6
+         ]
+        ],
+        "mau": "min",
+        "ten": "B",
+        "ten_xy": [
+         1.2,
+         9.2
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 0.5,
+       "y": 10,
+       "ten": "(0,5; 10)",
+       "vi": "r"
+      },
+      {
+       "loai": "diem",
+       "x": 1.5,
+       "y": 6,
+       "ten": "gặp",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "B đi từ (0,5 h; 10 km) xuống"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$AB=10\\ \\text{km}$, đi ngược chiều, vận tốc độ lớn bằng nhau",
+     "A đi trước B $0{,}5\\ \\text{h}$",
+     "B đi được $1\\ \\text{h}$ thì gặp A",
+     "Gốc $O\\equiv A$, chiều dương A → B, gốc thời gian lúc A xuất phát"
+    ],
+    "tim": [
+     "a) Vận tốc mỗi người",
+     "b) Phương trình chuyển động",
+     "c) Đồ thị $x$–$t$, vị trí và thời điểm gặp nhau"
+    ]
+   }
   }
  ],
  "tu_luan": {

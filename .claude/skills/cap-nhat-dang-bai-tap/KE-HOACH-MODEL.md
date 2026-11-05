@@ -71,12 +71,12 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 20 | Bài 1. Dao động điều hoà | — | D3 (do_thi), D5 (vong_tron) | D1, D2, D4 | Sonnet | P1 |
-| 21 | Bài 2. Mô tả dao động điều hoà | — | D4 (do_thi), D5 (vong_tron) | D1, D2, D3 | Sonnet | P1 |
-| 22 | Bài 3. Vận tốc, gia tốc trong dao động điều hoà | — | D3 (do_thi), D4 (vong_tron) | D1, D2, D5 | Sonnet | P1 |
-| 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11 | D3 (do_thi) — còn thiếu `cong_cu` (rà 4/11), làm trong Đ7 | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
-| 24 | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và | — | D2 (thanh_nang_luong), D5 (do_thi) | D1, D3, D4 | Sonnet | P1 |
-| 25 | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
+| 20 | Bài 1. Dao động điều hoà | ✓ D3, D5 4/11 | — | ✓ D1, D2, D4 4/11 | Sonnet | P1 |
+| 21 | Bài 2. Mô tả dao động điều hoà | ✓ D4, D5 4/11 | — | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
+| 22 | Bài 3. Vận tốc, gia tốc trong dao động điều hoà | ✓ D3, D4 4/11 | — | ✓ D1, D2, D5 4/11 | Sonnet | P1 |
+| 23 | Bài 4. Bài tập về dao động điều hoà | ✓ D4 (vong_tron) 3/11; ✓ D3 (do_thi) 4/11 | — | ✓ D1, D2, D3, D5 3/11 | Opus | P1 |
+| 24 | Bài 5. Động năng. Thế năng. Sự chuyển hoá giữa động năng và | ✓ D2, D5 4/11 | — | ✓ D1, D3, D4 4/11 | Sonnet | P1 |
+| 25 | Bài 6. Dao động tắt dần. Dao động cưỡng bức. Hiện tượng cộng | ✓ D2, D3 4/11 | — | ✓ D1, D4, D5 4/11 | Sonnet | P1 |
 | 26 | Bài 7. Bài tập về sự chuyển hoá năng lượng trong dao động đi | ✓ D2 (thanh_nang_luong) 3/11 | ✓ D5 (do_thi) 3/11 | ✓ D1, D3, D4 3/11 | Opus | P1 |
 
 ### Lớp 11 · Ch.2 Sóng
@@ -84,43 +84,43 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 27 | Bài 8. Mô tả sóng | ✓ D4 (song_day) 3/11 | ✓ D5 (song_day) 3/11 | ✓ D1, D2, D3 3/11 | Opus | P1 |
-| 28 | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng c | — | D3 (song_day) | D1, D2, D4, D5, D6 | Sonnet | P1 |
-| 30 | Bài 11. Sóng điện từ | — | — | D1, D2, D3, D4 | Sonnet | P4 |
+| 28 | Bài 9. Sóng ngang, sóng dọc, sự truyền năng lượng của sóng c | — | D3 (song_day) — không làm, xem F | ✓ D1, D2, D4, D5, D6 4/11 | Sonnet | P1 |
+| 30 | Bài 11. Sóng điện từ | — | — | ✓ D1, D2, D3, D4 4/11 | Sonnet | P4 |
 | 31 | Bài 12. Giao thoa sóng | ✓ D4 (van_giao_thoa) 3/11 | ✓ D3 (giao_thoa_2_nguon `kieu: dem_day`) 3/11 | ✓ D1, D2, D5 3/11 | Opus | P1 |
-| 32 | Bài 13. Sóng dừng | — | D5 (song_day), D6 (song_day) | D1, D2, D3, D4 | Sonnet | P1 |
-| 33 | Bài 14. Bài tập về sóng | — | D3 (giao_thoa_2_nguon, đã làm), D4 (van_giao_thoa) | D1, D2, D5, D6 | Sonnet | P1 |
-| 34 | Bài 15. Thực hành: Đo tốc độ truyền âm | — | D2 (song_day), D3 (song_day) | D1, D4 | Sonnet | P1 |
+| 32 | Bài 13. Sóng dừng | ✓ D5, D6 4/11 | — | ✓ D1, D2, D3, D4 4/11 | Sonnet | P1 |
+| 33 | Bài 14. Bài tập về sóng | ✓ D4 4/11 | — | ✓ D1, D2, D5, D6 4/11 | Sonnet | P1 |
+| 34 | Bài 15. Thực hành: Đo tốc độ truyền âm | — | D2 (song_day), D3 (song_day) — chưa làm, xem F | ✓ D1, D4 4/11 | Sonnet | P1 |
 
 ### Lớp 11 · Ch.3 Điện trường
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 35 | Bài 16. Lực tương tác giữa hai điện tích | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P1 |
-| 36 | Bài 17. Khái niệm điện trường | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P1 |
+| 35 | Bài 16. Lực tương tác giữa hai điện tích | ✓ D5 4/11 | D4 (so_do_vecto) — chưa làm, xem F | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
+| 36 | Bài 17. Khái niệm điện trường | ✓ D5 4/11 | D4 (so_do_vecto) — chưa làm, xem F | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
 | 37 | Bài 18. Điện trường đều | ✓ D3 (dien_truong_deu) 3/11 | ✓ D5 (dien_truong_deu) 3/11 | ✓ D1, D2, D4 3/11 | Opus | P1 |
-| 38 | Bài 19. Thế năng điện | — | D3 (dien_truong_deu), D4 (dien_truong_deu) | D1, D2 | Sonnet | P1 |
-| 39 | Bài 20. Điện thế | — | D4 (dien_truong_deu), D5 (dien_truong_deu) | D1, D2, D3 | Sonnet | P1 |
-| 40 | Bài 21. Tụ điện | — | D4 (mach_dien), D5 (dien_truong_deu) | D1, D2, D3 | Sonnet | P1 |
+| 38 | Bài 19. Thế năng điện | ✓ D3, D4 4/11 | — | ✓ D1, D2 4/11 | Sonnet | P1 |
+| 39 | Bài 20. Điện thế | ✓ D4, D5 4/11 | — | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
+| 40 | Bài 21. Tụ điện | ✓ D4, D5 4/11 | — | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
 
 ### Lớp 11 · Ch.4 Dòng điện, mạch điện
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 41 | Bài 22. Cường độ dòng điện | — | — | D1, D2, D3, D4, D5 | Sonnet | P4 |
-| 42 | Bài 23. Điện trở. Định luật Ohm | — | D2 (do_thi), D3 (do_thi) | D1, D4, D5 | Sonnet | P1 |
+| 41 | Bài 22. Cường độ dòng điện | — | — | ✓ D1, D2, D3, D4, D5 4/11 | Sonnet | P4 |
+| 42 | Bài 23. Điện trở. Định luật Ohm | ✓ D2, D3 4/11 | — | ✓ D1, D4, D5 4/11 | Sonnet | P1 |
 | 43 | Bài 24. Nguồn điện | ✓ D3 (mach_dien) 3/11 | ✓ D4 (mach_dien) 3/11 | ✓ D1, D2 3/11 | Opus | P1 |
-| 44 | Bài 25. Năng lượng điện và công suất điện | — | D4 (mach_dien), D5 (mach_dien) | D1, D2, D3 | Sonnet | P1 |
+| 44 | Bài 25. Năng lượng điện và công suất điện | ✓ D4, D5 4/11 | — | ✓ D1, D2, D3 4/11 | Sonnet | P1 |
 
 ### Lớp 10 · Ch.2 Động học
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 49 | Bài 4. Độ dịch chuyển và quãng đường đi được | — | D3 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D4 | Sonnet | P2 |
+| 49 | Bài 4. Độ dịch chuyển và quãng đường đi được | — | ✓ D3 (so_do_vecto), D5 (so_do_vecto) 4/11 | ✓ D1, D2, D4 4/11* | Sonnet | P2 |
 | 50 | Bài 5. Tốc độ và vận tốc | ✓ D3 (truc_chuyen_dong) 3/11 | ✓ D6 (so_do_vecto, cảnh `song`) 3/11 | ✓ D1, D2, D4, D5 3/11* | Opus | P2 |
-| 52 | Bài 7. Đồ thị độ dịch chuyển - thời gian | — | D3 (do_thi), D4 (do_thi) | D1, D2 | Sonnet | P2 |
-| 53 | Bài 8. Chuyển động biến đổi. Gia tốc | — | D4 (do_thi), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 54 | Bài 9. Chuyển động thẳng biến đổi đều | — | D5 (do_thi), D6 (truc_chuyen_dong) | D1, D2, D3, D4 | Sonnet | P2 |
-| 55 | Bài 10. Sự rơi tự do | — | D4 (quy_dao_nem), D5 (quy_dao_nem) | D1, D2, D3 | Sonnet | P2 |
+| 52 | Bài 7. Đồ thị độ dịch chuyển - thời gian | — | ✓ D3 (do_thi), D4 (do_thi) 4/11 | ✓ D1, D2 4/11* | Sonnet | P2 |
+| 53 | Bài 8. Chuyển động biến đổi. Gia tốc | — | ✓ D4 (do_thi), D5 (so_do_vecto) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
+| 54 | Bài 9. Chuyển động thẳng biến đổi đều | — | ✓ D5 (do_thi), D6 (truc_chuyen_dong) 4/11 | ✓ D1, D2, D3, D4 4/11* | Sonnet | P2 |
+| 55 | Bài 10. Sự rơi tự do | — | ✓ D4 (do_thi v–t), D5 (do_thi v–t) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
 | 57 | Chuyển động ném | ✓ D4 (quy_dao_nem) 3/11 | ✓ D6 (quy_dao_nem) 3/11 | ✓ D1, D2, D3, D5 3/11* | Opus | P2 |
 
 ### Lớp 10 · Ch.3 Động lực học
@@ -139,31 +139,31 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 68 | Bài 23. Năng lượng. Công cơ học | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 69 | Bài 24. Công suất | — | D5 (so_do_vecto) | D1, D2, D3, D4 | Sonnet | P2 |
-| 70 | Bài 25. Động năng, thế năng | — | D4 (thanh_nang_luong), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
-| 71 | Bài 26. Cơ năng và định luật bảo toàn cơ năng | — | D4 (thanh_nang_luong), D5 (thanh_nang_luong) | D1, D2, D3 | Sonnet | P2 |
-| 72 | Bài 27. Hiệu suất | — | D5 (thanh_nang_luong) | D1, D2, D3, D4 | Sonnet | P2 |
+| 68 | Bài 23. Năng lượng. Công cơ học | — | ✓ D4 (so_do_vecto), D5 (so_do_vecto) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
+| 69 | Bài 24. Công suất | — | ✓ D5 (so_do_vecto) 4/11 | ✓ D1, D2, D3, D4 4/11* | Sonnet | P2 |
+| 70 | Bài 25. Động năng, thế năng | — | ✓ D4 (thanh_nang_luong), D5 (so_do_vecto) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
+| 71 | Bài 26. Cơ năng và định luật bảo toàn cơ năng | — | ✓ D4 (thanh_nang_luong), D5 (thanh_nang_luong) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
+| 72 | Bài 27. Hiệu suất | — | ✓ D5 (thanh_nang_luong) 4/11 | ✓ D1, D2, D3, D4 4/11* | Sonnet | P2 |
 
 ### Lớp 10 · Ch.5 Động lượng
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 73 | Bài 28. Động lượng | — | D3 (so_do_vecto), D5 (truc_chuyen_dong) | D1, D2, D4 | Sonnet | P2 |
-| 74 | Bài 29. Định luật bảo toàn động lượng | — | D4 (truc_chuyen_dong), D5 (truc_chuyen_dong) | D1, D2, D3 | Sonnet | P2 |
+| 73 | Bài 28. Động lượng | — | ✓ D3 (so_do_vecto), D5 (truc_chuyen_dong) 4/11 | ✓ D1, D2, D4 4/11* | Sonnet | P2 |
+| 74 | Bài 29. Định luật bảo toàn động lượng | — | ✓ D4 (truc_chuyen_dong), D5 (truc_chuyen_dong) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
 
 ### Lớp 10 · Ch.6 Chuyển động tròn
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 76 | Bài 31. Động học của chuyển động tròn đều | — | D4 (vong_tron), D5 (vong_tron) | D1, D2, D3 | Sonnet | P2 |
-| 77 | Bài 32. Lực hướng tâm và gia tốc hướng tâm | — | D4 (vong_tron), D5 (vong_tron) | D1, D2, D3 | Sonnet | P2 |
+| 76 | Bài 31. Động học của chuyển động tròn đều | — | ✓ D4 (vong_tron), D5 (vong_tron) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
+| 77 | Bài 32. Lực hướng tâm và gia tốc hướng tâm | — | ✓ D4 (vong_tron), D5 (vong_tron) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
 
 ### Lớp 10 · Ch.7 Biến dạng vật rắn. Áp suất chất lỏng
 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
-| 78 | Bài 33. Biến dạng của vật rắn | — | D4 (so_do_vecto), D5 (so_do_vecto) | D1, D2, D3 | Sonnet | P2 |
+| 78 | Bài 33. Biến dạng của vật rắn | — | ✓ D4 (so_do_vecto), D5 (so_do_vecto) 4/11 | ✓ D1, D2, D3 4/11* | Sonnet | P2 |
 | 79 | Bài 34. Khối lượng riêng. Áp suất chất lỏng | ✓ D4 (cot_chat_long) 3/11 | ✓ D5 (cot_chat_long) 3/11 | ✓ D1, D2, D3 3/11* | Opus | P2 |
 
 ### KHTN 9 · Ch.1 Năng lượng cơ học
@@ -273,7 +273,7 @@ Trong mỗi đợt: làm dạng có hình Khó/TB trước, dạng chỉ tóm đ
 | Đ5 | Opus | Quang (chỉ có ở KHTN9/HSG9) | 83, 156 | 4 | 8 | tia_sang, thau_kinh |
 | Đ6 | Sonnet | L12 còn lại — dùng lại họ (P1) | 3, 4, 6, 7, 8, 9, 10, 13, 14, 125, 126, 127, 15, 16, 17, 18, 19 | 18 | 69 | 4/11: XONG hình+tóm đề: 3, 4, 6, 7 (trừ D5), 8, 9, 10, 18; XONG chỉ tóm đề: 13, 14, 15, 16, 17, 19, 125, 126, 127. 5/11 ✓ XONG hình 13·D4, 14·D4, 14·D5, 127·D6, 125·D4/D5, 126·D1 (HS ảo 375px sạch, kiem-code số liệu sạch). CÒN: 7·D5 (cot_chat_long chưa có cảnh ống kín giam khí → cần thêm `canh`). Chưa đăng DB. |
 | Đ7 | Sonnet | L11 còn lại — dùng lại họ (P1) + 23·D3 `do_thi` | 20, 21, 22, 24, 25, 28, 30, 32, 33, 34, 35, 36, 38, 39, 40, 41, 42, 44 | 31 | 59 | — |
-| Đ8 | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
+| Đ8 ✓ 4/11 (HS ảo mẫu 8 dạng, nhánh claude/d8-l10-giai-cung-hinh-91bf58) | Sonnet | L10 còn lại (P2; 58, 60, 62 đã xong 3/11) | 49, 52, 53, 54, 55, 68, 69, 70, 71, 72, 73, 74, 76, 77, 78 | 34 | 58 | — |
 | Đ9 | Sonnet | KHTN 9 + HSG 9 (P3) | 129, 130, 131, 84, 89, 90, 91, 160, 162, 155, 161, 166, 154, 167, 153, 164, 159, 157, 165, 152, 163, 151, 158, 150, 178 | 43 | 102 | — |
 
 ## E. Tổng số
@@ -296,6 +296,7 @@ Rà 4/11/2026: Đ1–Đ5 + L10 Ch.3 (58, 60, 62, 63, 66) đã đăng DB + deploy
 
 ## F. Còn chờ thầy chốt (3/11/2026)
 - ~~Bài 125–127 xếp lớp nào~~ — đã đối chiếu catalog 4/11: thuộc L12 Ch.3 trong DB, không cần thầy xác nhận.
+- **Đ7 (4/11)** — không có hình, đã có tóm đề: 28·D3 (sóng dọc: hình u(x) dạng sóng ngang sẽ gây hiểu nhầm; cần họ hình mới "lò xo sóng dọc"); 34·D2, D3 (ống cộng hưởng: `song_day` không vẽ được ống + cột khí, cần họ "ong_cong_huong"); 35·D4, 36·D4 (cảnh `thanh` của `so_do_vecto` quá nhỏ ở 375px, chữ ~8px, mũi tên chồng nhau — cần cảnh `thanh` phóng to hoặc cảnh `duong_thang` mới). Thêm 2 tuỳ chọn dùng chung: `dien_truong_deu.an_hat` (ẩn electron + v₀) và mục `tu` của `mach_dien` (tụ điện).
 - Có gộp Young (`van_giao_thoa`) vào `giao_thoa_2_nguon` để bớt một đợt Opus không.
 - Một số dạng Trung bình hình rất có ích bị xếp "chỉ tóm đề" vì giới hạn 2 dạng/bài (31·D2 đếm cực đại, 58·D4 phân tích trọng lực trên dốc) — rà bảng B trước khi giao đợt.
 - `do_thi` (30 dạng dùng lại) và `so_do_vecto` (26) rộng: làm đợt Opus thì cân nhắc tách 2 component.

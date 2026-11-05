@@ -130,7 +130,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Tại M: $q_1=-4$ nC chịu lực $6\\cdot10^{-4}$ N hướng bắc",
+     "Bỏ $q_1$, đặt $q_2=+2$ nC tại M"
+    ],
+    "tim": [
+     "a) $E$ tại M: độ lớn và hướng",
+     "b) Lực lên $q_2$: độ lớn và hướng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -255,7 +265,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$Q=-6$ nC cố định trong không khí; M cách Q $3$ cm",
+     "Đặt $q=+2$ nC tại M"
+    ],
+    "tim": [
+     "a) $E$ tại M: độ lớn và hướng",
+     "b) Lực lên $q$: độ lớn và hướng"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -330,7 +350,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$Q=+8$ nC trong dầu $\\varepsilon=2$",
+     "M cách Q $4$ cm; N trên tia QM, cách Q $12$ cm",
+     "P trên tia QM có $E_P=900$ V/m"
+    ],
+    "tim": [
+     "a) $E_M$",
+     "b) $E_N$",
+     "c) Khoảng cách PQ"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -466,7 +498,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Không khí: $q_1=+9$ nC tại A, $q_2=-4$ nC tại B, $AB=4$ cm",
+     "M trên AB, ngoài đoạn AB, phía B, cách B $2$ cm",
+     "I là trung điểm AB"
+    ],
+    "tim": [
+     "a) $E$ tổng hợp tại M: độ lớn và hướng",
+     "b) $E$ tổng hợp tại I"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -626,7 +669,98 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Không khí: $Q=+5$ nC tại A và tại B, $AB=8$ cm",
+     "M trên trung trực AB, cách trung điểm H $3$ cm",
+     "Đặt $q=-2$ nC tại M; hoặc tại H"
+    ],
+    "tim": [
+     "a) $E$ tổng hợp tại M: độ lớn và hướng",
+     "b) Lực lên $q$ tại M",
+     "c) Lực lên $q$ nếu đặt tại H"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "nut",
+     "ten_nut": "M",
+     "ten_nut_lech": [
+      0,
+      0.9
+     ],
+     "day": [
+      {
+       "goc": 216.87,
+       "dai": 5,
+       "neo": "khong",
+       "ten": "A"
+      },
+      {
+       "goc": 323.13,
+       "dai": 5,
+       "neo": "khong",
+       "ten": "B"
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "E_A",
+      "goc": 36.87,
+      "do_lon": 18000,
+      "buoc": 2,
+      "so": "18 000 V/m"
+     },
+     {
+      "ten": "E_B",
+      "goc": 143.13,
+      "do_lon": 18000,
+      "buoc": 2,
+      "mau": "cam",
+      "so": "18 000 V/m"
+     },
+     {
+      "ten": "E",
+      "goc": 90,
+      "do_lon": 21600,
+      "buoc": 4,
+      "mau": "tim",
+      "so": "21 600 V/m"
+     },
+     {
+      "ten": "F",
+      "goc": 270,
+      "do_lon": 4.32e-05,
+      "buoc": 5,
+      "mau": "lam",
+      "so": "4,32·10⁻⁵ N",
+      "den": 6
+     }
+    ],
+    "hbh": [
+     {
+      "vec": "E",
+      "thanh": [
+       "E_A",
+       "E_B"
+      ],
+      "buoc": 4
+     }
+    ],
+    "goc": [
+     {
+      "tai": "M",
+      "tu": 36.87,
+      "den": 143.13,
+      "r": 2.2,
+      "text": "106°",
+      "buoc": 3
+     }
+    ]
+   }
   }
  ]
 }

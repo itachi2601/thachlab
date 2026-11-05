@@ -104,7 +104,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$q_1=-8{,}0$ nC, $q_2=+2{,}0$ nC; hai quả cầu giống hệt",
+     "Chạm nhau rồi tách; $|e|=1{,}6\\cdot10^{-19}$ C"
+    ],
+    "tim": [
+     "a) Điện tích mỗi quả sau khi tách",
+     "b) Êlectron chuyển từ quả nào sang quả nào; số êlectron"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -216,7 +226,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Trong không khí: $q_1=+3{,}0\\ \\mu$C, $q_2=-5{,}0\\ \\mu$C, $r=30$ cm",
+     "Cặp khác: $|q_1|=|q_2|$, $r=10$ cm, đẩy nhau với $F=0{,}90$ N"
+    ],
+    "tim": [
+     "a) Độ lớn lực; hút hay đẩy",
+     "b) Độ lớn mỗi điện tích ở cặp khác"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -291,7 +311,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Không khí: $r=6{,}0$ cm, hút nhau $F_0=4{,}0$ mN",
+     "Dầu: $\\varepsilon=4{,}0$, giữ $r=6{,}0$ cm"
+    ],
+    "tim": [
+     "a) Lực trong dầu",
+     "b) $r'$ trong dầu để lực lại $4{,}0$ mN",
+     "c) Không khí, $q_1$ tăng $3$ lần, $r=3{,}0$ cm: lực"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -436,7 +467,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Không khí; $q_1=+36$ nC tại A, $q_2=-4{,}0$ nC tại B, $AB=9{,}0$ cm",
+     "Thanh thẳng đủ dài hai phía; hạt $q_0=+2{,}0$ nC trượt không ma sát"
+    ],
+    "tim": [
+     "a) Vị trí C để hợp lực bằng $0$: $CA$, $CB$",
+     "b) Lực $F_1$, $F_2$ tại C (kiểm tra)",
+     "c) $q_0=-2{,}0$ nC: vị trí cân bằng có đổi không"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -572,7 +614,97 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Không khí: $q_1=+4{,}0$ nC tại A, $q_2=-12$ nC tại B, $q_0=+2{,}0$ nC tại C",
+     "$CA=3{,}0$ cm, $CB=6{,}0$ cm, $CA\\perp CB$"
+    ],
+    "tim": [
+     "a) $F_1$ và $F_2$ lên $q_0$",
+     "b) Độ lớn hợp lực",
+     "c) Góc giữa hợp lực và $\\vec F_1$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "nut",
+     "ten_nut": "C",
+     "ten_nut_lech": [
+      0.5,
+      -0.55
+     ],
+     "day": [
+      {
+       "goc": 180,
+       "dai": 4,
+       "neo": "khong",
+       "ten": "A"
+      },
+      {
+       "goc": 90,
+       "dai": 8,
+       "neo": "khong",
+       "ten": "B"
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "F_1",
+      "goc": 0,
+      "do_lon": 0.08,
+      "buoc": 1,
+      "so": "8,0·10⁻⁵ N"
+     },
+     {
+      "ten": "F_2",
+      "goc": "day:B",
+      "do_lon": 0.06,
+      "buoc": 2,
+      "mau": "cam",
+      "so": "6,0·10⁻⁵ N"
+     },
+     {
+      "ten": "F",
+      "goc": 36.87,
+      "do_lon": 0.1,
+      "buoc": 4,
+      "mau": "tim",
+      "so": "1,0·10⁻⁴ N"
+     }
+    ],
+    "hbh": [
+     {
+      "vec": "F",
+      "thanh": [
+       "F_1",
+       "F_2"
+      ],
+      "buoc": 4
+     }
+    ],
+    "goc": [
+     {
+      "tai": "C",
+      "tu": 0,
+      "den": 90,
+      "r": 1.5,
+      "text": "90°",
+      "buoc": 3,
+      "an": 4
+     },
+     {
+      "tai": "C",
+      "tu": 0,
+      "den": 36.87,
+      "r": 2.6,
+      "text": "α",
+      "buoc": 5
+     }
+    ]
+   }
   }
  ],
  "tu_luan": {

@@ -93,7 +93,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=20\\ \\text{m/s}$, $a=0{,}5\\ \\text{m/s}^2$",
+     "Tăng tốc đều trong $30\\ \\text{s}$"
+    ],
+    "tim": [
+     "a) $v$ sau $30\\ \\text{s}$",
+     "b) Quãng đường đi được"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -181,7 +191,16 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đồ thị $v$–$t$: $v(0)=4$, $v(6)=16$, $v=16$ đến $t=10$, $v(14)=0$ ($\\text{m/s}$, $\\text{s}$)"
+    ],
+    "tim": [
+     "a) Gia tốc từng giai đoạn, nhanh dần hay chậm dần",
+     "b) Quãng đường trong $14\\ \\text{s}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -301,7 +320,18 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$v_0=54\\ \\text{km/h}$, phanh đến dừng",
+     "Vết phanh dài $37{,}5\\ \\text{m}$, chậm dần đều"
+    ],
+    "tim": [
+     "a) $a$ và thời gian phanh",
+     "b) $v$ sau $2\\ \\text{s}$",
+     "c) Quãng đường trong $7\\ \\text{s}$ kể từ lúc phanh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -412,7 +442,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Nhanh dần đều, $v_0=3\\ \\text{m/s}$",
+     "Giây thứ $5$ đi được $12\\ \\text{m}$"
+    ],
+    "tim": [
+     "a) Gia tốc $a$",
+     "b) Quãng đường trong giây thứ $8$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -511,7 +551,164 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 13,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      8
+     ],
+     "luoi": 2
+    },
+    "y": {
+     "min": 0,
+     "max": 18,
+     "ten": "v (m/s)",
+     "vach": [
+      0
+     ],
+     "luoi": 2
+    },
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          4,
+          8
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "a₁ = 2 · 64 : 8² = 2 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          8,
+          16
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 8,
+       "y": 16,
+       "ten": "B",
+       "vi": "tl"
+      },
+      {
+       "loai": "ngang",
+       "y": 16,
+       "nhan": "16"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_B = 2 · 8 = 16 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          8,
+          16
+         ],
+         [
+          12,
+          0
+         ]
+        ],
+        "mau": "min"
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 12,
+       "y": 0,
+       "ten": "C",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "a₂ = (0 − 16²) : (2 · 32) = −4 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          8,
+          16
+         ],
+         [
+          12,
+          0
+         ]
+        ]
+       }
+      },
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 12,
+       "duong": 3,
+       "nhan": "96 m"
+      },
+      {
+       "loai": "ngang",
+       "y": 8,
+       "nhan": "8",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "v_{tb} = 96 : 12 = 8 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Dốc $AB=64\\ \\text{m}$, thả từ nghỉ, tới $B$ sau $8\\ \\text{s}$",
+     "Mặt ngang $BC=32\\ \\text{m}$, dừng ở $C$",
+     "Mỗi giai đoạn biến đổi đều"
+    ],
+    "tim": [
+     "a) $a_1$ và $v_B$",
+     "b) $a_2$ và thời gian lăn trên $BC$",
+     "c) Vận tốc trung bình trên $AC$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -668,7 +865,112 @@
       }
      ]
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "x_min": -40,
+    "x_max": 660,
+    "don_vi": "m",
+    "diem": [
+     {
+      "x": 0,
+      "ten": "chân dốc"
+     },
+     {
+      "x": 570,
+      "ten": "đỉnh dốc"
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "vat",
+      "x": 0,
+      "hang": 1,
+      "ten": "ô tô",
+      "v": 100,
+      "nhan_v": "20 m/s",
+      "het": 6
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vat",
+       "x": 570,
+       "hang": -1,
+       "ten": "xe đạp",
+       "v": -25,
+       "nhan_v": "2 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "Chiều dương lên đỉnh: v_2 = −2 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Ô tô chậm dần ngược chiều v ⇒ a_1 = −0,4 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Xe đạp nhanh dần theo chiều xuống ⇒ a_2 = −0,2 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x_1 = x_2 ⇒ t = 30 s"
+      }
+     ],
+     [
+      {
+       "loai": "cham",
+       "x": 420,
+       "hang": 0,
+       "ten": "gặp"
+      },
+      {
+       "loai": "ngoac",
+       "tu": 0,
+       "den": 420,
+       "hang": -2,
+       "nhan": "420 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "x_1 = 20·30 − 0,2·30² = 420 m"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 420,
+       "hang": 1,
+       "ten": "ô tô",
+       "v": 40,
+       "nhan_v": "8 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_1 = 20 − 0,4·30 = 8 m/s"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Ô tô qua chân dốc $20\\ \\text{m/s}$, lên dốc, chậm dần $a=0{,}4\\ \\text{m/s}^2$",
+     "Cùng lúc, xe đạp ở đỉnh dốc $2\\ \\text{m/s}$, xuống dốc, nhanh dần $a=0{,}2\\ \\text{m/s}^2$",
+     "Dốc dài $570\\ \\text{m}$"
+    ],
+    "tim": [
+     "a) Lúc và nơi hai xe gặp nhau",
+     "b) Vận tốc mỗi xe lúc gặp"
+    ]
+   }
   }
  ],
  "tu_luan": {

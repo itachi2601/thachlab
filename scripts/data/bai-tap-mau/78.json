@@ -143,7 +143,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Lò xo $l_0=20\\ \\text{cm}$, kéo bằng $F=2;4;6;8;10\\ \\text{N}$",
+     "Bảng $l$ khi có lực và $l'$ sau khi thôi lực"
+    ],
+    "tim": [
+     "Biến dạng kéo hay nén",
+     "Lần thử nào bị dẻo",
+     "$F$ lớn nhất còn đàn hồi",
+     "Khoảng giới hạn đàn hồi"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -242,7 +254,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Lò xo nằm ngang, $F=6{,}0\\ \\text{N}$ ⇒ dãn $4{,}0\\ \\text{cm}$",
+     "Luôn trong giới hạn đàn hồi"
+    ],
+    "tim": [
+     "$k$",
+     "Độ dãn khi $F=9{,}0\\ \\text{N}$",
+     "$F$ để dãn $2{,}0\\ \\text{cm}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -341,7 +364,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Lò xo nằm ngang, $l_0=24\\ \\text{cm}$, $k=120\\ \\text{N/m}$",
+     "Kéo $3{,}6\\ \\text{N}$; đẩy $4{,}8\\ \\text{N}$ về phía tường"
+    ],
+    "tim": [
+     "$l$ khi kéo",
+     "$l$ khi nén",
+     "$F$ kéo để $l=30\\ \\text{cm}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -464,7 +498,126 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 6,
+    "vec": [
+     {
+      "ten": "F_{đh}",
+      "goc": "len",
+      "do_lon": 1.2,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 1,
+      "den": 3,
+      "mau": "cam"
+     },
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 1.2,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "ten": "F_{đh}",
+      "goc": "len",
+      "do_lon": 2,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 3,
+      "den": 4,
+      "mau": "cam"
+     },
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 2,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "ten": "F_{đh}",
+      "goc": "len",
+      "do_lon": 4.8,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 4,
+      "mau": "cam"
+     },
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 4.8,
+      "tu": [
+       0,
+       0
+      ],
+      "buoc": 4
+     }
+    ],
+    "bang": [
+     {
+      "text": "F_{đh} = P = 1,2 N",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "k = 1,2 : 0,03 = 40 N/m",
+      "buoc": 2,
+      "den": 3
+     },
+     {
+      "text": "F_{đh} = P = 2,0 N",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "Δl = 2,0 : 40 = 5 cm",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "l = 20 + 5 = 25 cm",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "Δl = 12 cm ⇒ F = 4,8 N",
+      "buoc": 4
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "Lò xo treo thẳng đứng, $l_0=20\\ \\text{cm}$",
+     "Treo $120\\ \\text{g}$ ⇒ $l=23\\ \\text{cm}$; $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "$k$",
+     "$l$ khi treo thêm $80\\ \\text{g}$",
+     "Treo thêm bao nhiêu g để $l=32\\ \\text{cm}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -587,7 +740,81 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "khong"
+    },
+    "ti_le": 6,
+    "vec": [
+     {
+      "ten": "F_1",
+      "goc": "len",
+      "do_lon": 1.6,
+      "tu": [
+       -1.5,
+       0
+      ],
+      "buoc": 1,
+      "mau": "cam"
+     },
+     {
+      "ten": "F_2",
+      "goc": "len",
+      "do_lon": 4.8,
+      "tu": [
+       1.5,
+       0
+      ],
+      "buoc": 1,
+      "mau": "cam"
+     }
+    ],
+    "bang": [
+     {
+      "text": "F_1 = 1,6 N; F_2 = 4,8 N",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "ΔF = 3,2 N",
+      "buoc": 1,
+      "den": 2
+     },
+     {
+      "text": "k = 3,2 : 0,04 = 80 N/m",
+      "buoc": 2,
+      "den": 3
+     },
+     {
+      "text": "Δl₁ = 1,6 : 80 = 2 cm",
+      "buoc": 3,
+      "den": 4
+     },
+     {
+      "text": "l₀ = 24 − 2 = 22 cm",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "l = 22 + 5 = 27 cm",
+      "buoc": 5
+     }
+    ],
+    "bang_vi_tri": "phai"
+   },
+   "tom_de": {
+    "cho": [
+     "Treo $160\\ \\text{g}$ ⇒ $l_1=24\\ \\text{cm}$; treo $480\\ \\text{g}$ ⇒ $l_2=28\\ \\text{cm}$",
+     "$g=10\\ \\text{m/s}^2$; chưa biết $l_0$, $k$"
+    ],
+    "tim": [
+     "$k$",
+     "$l_0$",
+     "$l$ khi chỉ treo $400\\ \\text{g}$"
+    ]
+   }
   }
  ]
 }
