@@ -334,6 +334,8 @@ export type SoDoVectoTool = {
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
     | { kieu: "khong" }
+    /** Lò xo treo thẳng đứng vẽ răng cưa: `dai[L]` = chiều dài lò xo (đơn vị hình) ở lớp L (dùng giá trị cuối khi L vượt mảng); điểm đặt "vat_tren" (mép trên khối, lệch phải), "vat_giua" (tâm khối, lệch trái). */
+    | { kieu: "lo_xo_dung"; dai: number[]; vat?: string }
     | {
         /** Đ4: hai bờ sông (bờ dưới y = 0, bờ trên y = rong), `chay` = nhãn mũi tên dòng nước; `duong` nét đứt nối hai điểm. */
         kieu: "song";
