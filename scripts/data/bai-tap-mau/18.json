@@ -223,6 +223,93 @@
     "ten": "Chia đôi bánh",
     "dieu_kien": "Mẫu có rất nhiều hạt, mỗi hạt phân rã độc lập và hằng số phân rã không đổi (không phụ thuộc nhiệt độ, áp suất hay hoá học). Chỉ một chất phóng xạ, hạt con không phóng xạ hoặc đang tính riêng phần chất mẹ; đếm số hạt hay hoạt độ của chất đó, không đếm khối lượng cả mẫu (hạt con vẫn nằm trong mẫu). Mẫu kín, $t=0$ là lúc còn nguyên chất mẹ; $t$ và $T$ cùng đơn vị.",
     "html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"meo-banh\"><svg viewBox=\"0 0 320 246\" role=\"img\" aria-label=\"Cái bánh bị chia đôi sau mỗi chu kì bán rã: còn 1/2, 1/4, 1/8, rồi lùi về 1,5 chu kì còn khoảng 35,4 phần trăm\"><rect x=\"40\" y=\"34\" width=\"240\" height=\"48\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\".6\"/><rect x=\"40\" y=\"34\" width=\"84.85\" height=\"48\" rx=\"6\" fill=\"#f59e0b\" stroke=\"currentColor\" stroke-width=\"2\"><animate attributeName=\"width\" values=\"240;240;120.0;60.0;30.0;84.85;84.85\" keyTimes=\"0;0.1;0.2667;0.4333;0.6;0.7;1\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"40\" y1=\"90\" x2=\"280\" y2=\"90\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><line x1=\"40.0\" y1=\"86\" x2=\"40.0\" y2=\"94\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><line x1=\"160.0\" y1=\"86\" x2=\"160.0\" y2=\"94\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><line x1=\"280.0\" y1=\"86\" x2=\"280.0\" y2=\"94\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".6\"/><text x=\"40\" y=\"112\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">0</text><text x=\"280\" y=\"112\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">100 %</text><g opacity=\"1\"><line x1=\"100.0\" y1=\"28\" x2=\"100.0\" y2=\"90\" stroke=\"#f87171\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><line x1=\"130.0\" y1=\"28\" x2=\"130.0\" y2=\"90\" stroke=\"#f87171\" stroke-width=\"2\" stroke-dasharray=\"3 3\"/><text x=\"96.0\" y=\"112\" font-size=\"15\" font-weight=\"600\" text-anchor=\"end\" fill=\"#f87171\">25</text><text x=\"134.0\" y=\"112\" font-size=\"15\" font-weight=\"600\" text-anchor=\"start\" fill=\"#f87171\">37,5</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><path d=\"M40.0,128.0 L64.0,136.3 L88.0,143.0 L112.0,148.4 L136.0,152.8 L160.0,156.4 L184.0,159.4 L208.0,161.7 L232.0,163.7 L256.0,165.2 L280.0,166.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\".4\"/><line x1=\"40\" y1=\"172\" x2=\"280\" y2=\"172\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\".5\"/><circle cx=\"120\" cy=\"150.0\" r=\"4.5\" fill=\"#f59e0b\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.1\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></circle><circle cx=\"200\" cy=\"161.0\" r=\"4.5\" fill=\"#f59e0b\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.2667\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></circle><circle cx=\"280\" cy=\"166.5\" r=\"4.5\" fill=\"#f59e0b\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></circle><text x=\"120\" y=\"192\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">T</text><text x=\"200\" y=\"192\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">2T</text><text x=\"280\" y=\"192\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">3T</text><circle cx=\"160.0\" cy=\"156.4\" r=\"5.5\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.5\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></circle><text x=\"32\" y=\"133\" font-size=\"15\" font-weight=\"500\" text-anchor=\"end\" fill=\"currentColor\">1</text><g opacity=\"0\"><text x=\"10\" y=\"22\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">t = 0 · còn 100 %</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.1\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"22\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">t = T · còn 1/2 = 50 %</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1;0.2667\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"22\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">t = 2T · còn 1/4 = 25 %</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2667;0.4333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"22\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">t = 3T · còn 1/8 = 12,5 %</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4333;0.6333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"10\" y=\"22\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">t = 1,5T · còn ≈ 35,4 %</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Bánh nguyên. Cứ sau mỗi chu kì T,</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">bánh bị chia đôi, bỏ một nửa.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.1\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Sau T: còn một nửa.</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Nửa bỏ đi là phần đã phân rã.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1;0.2667\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Sau 2T: còn 1/4, chưa hết đâu:</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">không phải trừ đều mỗi chu kì.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2667;0.4333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Sau 3T: còn 1/8 = 12,5 %.</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Mỗi chu kì chỉ bỏ nửa phần đang có.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4333;0.6333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Lùi về 1,5T: còn ≈ 35,4 %, không</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">phải 25 % hay 37,5 % (hai vạch đỏ).</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6333;0.8333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"10\" y=\"214\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Sau n chu kì còn (1/2)^n,</text><text x=\"10\" y=\"233\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">n không cần là số nguyên.</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8333\" dur=\"15s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Chia đôi bánh: $N=N_0\\cdot 2^{-t/T}$, số hạt đã phân rã $=N_0-N$. Với $t=1{,}5T$: $2^{-1{,}5}\\approx 0{,}354$.</figcaption></figure><p>Ở dạng này: đổi thời gian ra số chu kì $t/T$ trước. Số tròn thì đếm số lần chia đôi; số lẻ thì vẫn là $2^{-t/T}$, không ghép nửa chu kì cuối bằng phép trừ. Đề hỏi “đã phân rã” thì lấy phần bánh bị bỏ đi, $1-2^{-t/T}$.</p>"
+   },
+   "bien_the": {
+    "kieu": "abcd",
+    "de": "<p>Một mẫu chứa $N_0={{N0}}$ hạt nhân {{ten}} với chu kì bán rã $T={{T}}$ {{dv}}. Sau $t={{t|4}}$ {{dv}}, số hạt nhân {{ki}} còn lại chưa phân rã là</p>",
+    "bo": [
+     {
+      "ten": "poloni $^{210}_{84}\\text{Po}$",
+      "ki": "Po",
+      "T": 138,
+      "dv": "ngày"
+     },
+     {
+      "ten": "iốt $^{131}_{53}\\text{I}$",
+      "ki": "I",
+      "T": 8,
+      "dv": "ngày"
+     },
+     {
+      "ten": "photpho $^{32}_{15}\\text{P}$",
+      "ki": "P",
+      "T": 14,
+      "dv": "ngày"
+     },
+     {
+      "ten": "natri $^{24}_{11}\\text{Na}$",
+      "ki": "Na",
+      "T": 15,
+      "dv": "giờ"
+     }
+    ],
+    "bien": {
+     "a": {
+      "min": 1.0,
+      "max": 9.9,
+      "buoc": 0.1
+     },
+     "k": {
+      "min": 16,
+      "max": 20,
+      "buoc": 1
+     },
+     "n": {
+      "min": 1.5,
+      "max": 6,
+      "buoc": 0.5
+     }
+    },
+    "tinh": {
+     "N0": "a * 10^k",
+     "t": "n * T"
+    },
+    "dap_so": "N0 * 2^(-t / T)",
+    "don_vi": "hạt",
+    "lam_tron": {
+     "cs": 3
+    },
+    "nhieu": [
+     {
+      "bieu_thuc": "N0 / (t / T)",
+      "loi": "Chia $N_0$ cho số chu kì $n$ — phải chia cho $2^n$.",
+      "buoc": 1
+     },
+     {
+      "bieu_thuc": "N0 - dap_so",
+      "loi": "Đây là số hạt đã phân rã $N_0-N$, đề hỏi số hạt còn lại.",
+      "buoc": 1
+     },
+     {
+      "bieu_thuc": "N0 * 2^(-T / t)",
+      "loi": "Lập tỉ số ngược $\\dfrac{T}{t}$ nên số chu kì nhỏ hơn 1.",
+      "buoc": 0
+     },
+     {
+      "bieu_thuc": "N0 * exp(-t / T)",
+      "loi": "Dùng $e^{-t/T}$: quên $\\ln 2$ ở số mũ (phải là $e^{-\\lambda t}$ với $\\lambda=\\frac{\\ln2}{T}$).",
+      "buoc": 1
+     },
+     {
+      "bieu_thuc": "N0 / 2",
+      "loi": "Chỉ giảm một nửa dù đã qua hơn một chu kì.",
+      "buoc": 0
+     }
+    ],
+    "rang_buoc": [
+     "dap_so > 0"
+    ],
+    "loi_giai": "<p>$n=\\dfrac{t}{T}=\\dfrac{ {{t|4}} }{ {{T}} }={{n}}$ chu kì, nên $N=N_0\\cdot 2^{-n}={{N0}}\\cdot 2^{-{{n}}}\\approx {{dap_so}}$ hạt.</p>"
    }
   },
   {
@@ -588,6 +675,38 @@
      "b) $H_0$ theo Bq và Ci",
      "c) $H$ (Ci) sau $10{,}54$ năm"
     ]
+   },
+   "bien_the": {
+    "kieu": "so",
+    "de": "<p>Nguồn coban-60 ($^{60}_{27}\\text{Co}$) trong máy xạ trị là $m={{m}}\\ \\text{g}$ coban-60 nguyên chất, chu kì bán rã $T=5{,}27$ năm. Lấy $1$ năm $=365$ ngày, $N_A=6{,}022.10^{23}\\ \\text{mol}^{-1}$, khối lượng mol $60\\ \\text{g/mol}$, $\\ln2=0{,}693$ và $1\\ \\text{Ci}=3{,}7.10^{10}\\ \\text{Bq}$.</p><p>Sau $t={{t}}$ năm kể từ lúc nguồn mới, độ phóng xạ của nguồn bằng bao nhiêu curi? <em>(Làm tròn đến hàng đơn vị.)</em></p>",
+    "bien": {
+     "m": {
+      "min": 1.0,
+      "max": 8.0,
+      "buoc": 0.5
+     },
+     "t": {
+      "min": 1,
+      "max": 20,
+      "buoc": 1
+     }
+    },
+    "tinh": {
+     "N0": "m / 60 * 6.022e23",
+     "lam": "0.693 / (5.27 * 365 * 86400)",
+     "H0Bq": "lam * N0",
+     "H0": "H0Bq / 3.7e10"
+    },
+    "dap_so": "H0 * 2^(-t / 5.27)",
+    "don_vi": "Ci",
+    "lam_tron": {
+     "tp": 0
+    },
+    "sai_so": 0.01,
+    "rang_buoc": [
+     "dap_so >= 100"
+    ],
+    "loi_giai": "<p>$N_0=\\dfrac{m}{A}N_A={{N0}}$ hạt; $\\lambda=\\dfrac{\\ln2}{T}={{lam}}\\ \\text{s}^{-1}$ (đổi $T$ ra giây).</p><p>$H_0=\\lambda N_0={{H0Bq}}\\ \\text{Bq}\\approx {{H0|4}}\\ \\text{Ci}$.</p><p>$H=H_0\\cdot 2^{-t/T}={{H0|4}}\\cdot 2^{-{{t}}/5{,}27}\\approx {{dap_so}}\\ \\text{Ci}$.</p>"
    }
   },
   {
@@ -819,6 +938,73 @@
      "b) tuổi mẩu than",
      "c) lẫn carbon hiện đại: tuổi tính ra lớn hay nhỏ hơn tuổi thật"
     ]
+   },
+   "bien_the": {
+    "kieu": "abcd",
+    "de": "<p>Cây còn sống có độ phóng xạ của $^{14}_6\\text{C}$ là $0{,}226\\ \\text{Bq}$ trên mỗi gam carbon; chu kì bán rã của $^{14}\\text{C}$ là $T=5730$ năm. Một mẩu {{vat}} cổ chứa $m={{m}}\\ \\text{g}$ carbon, đo được độ phóng xạ của $^{14}\\text{C}$ trong cả mẩu là $H={{H|.3}}\\ \\text{Bq}$. Coi tỉ lệ $^{14}\\text{C}$ trong khí quyển không đổi và mẫu không nhiễm carbon mới. Tuổi của mẩu {{vat}} xấp xỉ bằng</p>",
+    "bo": [
+     {
+      "vat": "than gỗ"
+     },
+     {
+      "vat": "xương"
+     },
+     {
+      "vat": "vải lanh"
+     },
+     {
+      "vat": "hạt thóc"
+     }
+    ],
+    "bien": {
+     "m": {
+      "min": 2.0,
+      "max": 10.0,
+      "buoc": 0.5
+     },
+     "r": {
+      "min": 0.1,
+      "max": 0.9,
+      "buoc": 0.01
+     }
+    },
+    "tinh": {
+     "H": "round(r * 0.226 * m, 3)",
+     "h": "H / m",
+     "n": "log2(0.226 / h)"
+    },
+    "dap_so": "5730 * n",
+    "don_vi": "năm",
+    "lam_tron": {
+     "cs": 3
+    },
+    "nhieu": [
+     {
+      "bieu_thuc": "5730 * log2(0.226 / H)",
+      "loi": "Dùng thẳng số đo của cả mẩu, chưa chia cho khối lượng carbon $m$.",
+      "buoc": 0
+     },
+     {
+      "bieu_thuc": "5730 * (0.226 / h)",
+      "loi": "Lấy số chu kì bằng chính tỉ số $\\dfrac{h_0}{h}$ — phải là $\\log_2\\dfrac{h_0}{h}$.",
+      "buoc": 2
+     },
+     {
+      "bieu_thuc": "5730 * (1 - h / 0.226)",
+      "loi": "Lấy phần đã phân rã $1-\\dfrac{h}{h_0}$ làm số chu kì.",
+      "buoc": 2
+     },
+     {
+      "bieu_thuc": "5730 * ln(0.226 / h)",
+      "loi": "Dùng $\\ln$ thay cho $\\log_2$ — quên chia cho $\\ln 2$.",
+      "buoc": 2
+     }
+    ],
+    "rang_buoc": [
+     "dap_so > 0",
+     "H >= 0.01"
+    ],
+    "loi_giai": "<p>$h=\\dfrac{H}{m}=\\dfrac{ {{H|.3}} }{ {{m}} }\\approx {{h}}\\ \\text{Bq/g}$; $n=\\log_2\\dfrac{h_0}{h}={{n}}$ chu kì; $t=nT\\approx {{dap_so}}$ năm.</p>"
    }
   }
  ]

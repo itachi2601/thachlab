@@ -9,6 +9,8 @@ import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
 import { fileURLToPath } from "node:url";
+import { checkTemplate } from "../lib/bien-the";
+import type { WorkedVariant } from "../features/lessons/types";
 import { composeBody, DATA_DIR, loadTopics, validate, type Dang } from "../.claude/skills/soan-bai-tap-mau/scripts/lib";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -33,6 +35,10 @@ const topics = loadTopics();
 const { errors, warnings } = validate(data, topics);
 warnings.forEach((w) => console.warn("  ! " + w));
 if (errors.length) fail("không qua validate:\n   - " + errors.join("\n   - "));
+for (const d of data.dang_bai as (Dang & { bien_the?: WorkedVariant })[]) { // khuôn đổi số hỏng → dừng (chạy kiem-bien-the.mts để xem 200 bộ số)
+  const e = d.bien_the ? checkTemplate(d.bien_the) : [];
+  if (e.length) fail(`${d.label}: bien_the lỗi:\n   - ` + e.join("\n   - "));
+}
 
 const questions = (data.dang_bai as Dang[]).map((d) => ({
   label: d.label,
@@ -48,6 +54,7 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   ...(d.meo ? { meo: d.meo } : {}), // 💡 Mẹo nhìn (1/11/2026)
   ...(d.cong_cu ? { cong_cu: d.cong_cu } : {}), // 🧪 công cụ giải tương tác (2/11/2026)
   ...(d.tom_de ? { tom_de: d.tom_de } : {}), // 🧪 tóm đề dính (3/11/2026)
+  ...((d as { bien_the?: WorkedVariant }).bien_the ? { bien_the: (d as { bien_the?: WorkedVariant }).bien_the } : {}), // 🧪 biến thể đổi số (5/11/2026, lib/bien-the.ts)
 }));
 if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối
 console.log(`Bài ${lessonId} "${data.lesson_title ?? ""}": ${questions.length} dạng → chỉ ghi lesson_items.questions (kind=bai_tap_mau)`);
