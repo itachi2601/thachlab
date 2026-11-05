@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import type { LessonWorkedQuestion, WorkedTomDe } from "@/features/lessons/types";
 
 /**
  * Tóm đề (Cho/Tìm) của một dạng bài tập mẫu (thử 3/11/2026) — dùng chung cho giải cùng hình (GiaiCungHinh) và giải
- * từng bước không có hình (TomDeKhung). < 1280: một dòng "Tìm" dính đầu khối, chạm mở lớp đè (không xô trang — D2, N8);
+ * từng bước không có hình (TomDeKhung). < 1280: dòng "Tìm" (≤ 4 dòng) dính đầu khối, chạm mở lớp đè (không xô trang — D2, N8);
  * ≥ 1280: thẻ Cho/Tìm ở lề phải dính theo (CSS `.bt-tomde*` trong globals.css).
  */
 
@@ -41,12 +41,27 @@ export function TomDeBody({ tomDe }: { tomDe: WorkedTomDe }) {
 export function TomDeBar({ tomDe, problemHtml, open, setOpen }: { tomDe: WorkedTomDe; problemHtml?: string; open: boolean; setOpen: (o: boolean) => void }) {
   // đề trong lớp đè: bỏ hình (SVG chép hai lần trùng id marker; dạng có hình thì hình đã dính sẵn)
   const deChu = (problemHtml ?? "").replace(/<figure[\s\S]*?<\/figure>/g, "");
+  // "Tìm" xuống tối đa 4 dòng (HS ảo Đ8 5/11: một dòng cắt "…" ở cả 8 dạng L10 → mất cái cần tìm, C2). Đo chiều cao thanh
+  // ghi vào --cc-tim của khối dính để hình co lại đúng phần thanh cao thêm: cả khối dính giữ nguyên cỡ (N8, N1).
+  // Dài hơn nữa thì "…" cuối dòng 4; chạm mở lớp đè có đủ Cho/Tìm/Đề.
+  const barRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+    const measure = () => bar.parentElement?.style.setProperty("--cc-tim", `${Math.round(bar.offsetHeight)}px`);
+    measure();
+    const ro = new ResizeObserver(measure);
+    ro.observe(bar);
+    return () => ro.disconnect();
+  }, []);
   return (
     <>
-      <button type="button" className="bt-tomde-bar" aria-expanded={open} onClick={() => setOpen(!open)}>
-        <b>Tìm:</b>
+      <button ref={barRef} type="button" className="bt-tomde-bar" aria-expanded={open} onClick={() => setOpen(!open)}>
         <span>
-          <ContentHtml html={tomDe.tim.join(" · ")} className="inline" />
+          {/* "Tìm:" nằm trong dòng chữ (không chiếm cột riêng) để mỗi dòng chứa nhiều chữ hơn; nbsp giữ "a)" với chữ sau
+              nó và "·" với ý trước nó → dòng mới luôn mở đầu bằng một ý trọn "b) …" */}
+          <b>Tìm: </b>
+          <ContentHtml html={tomDe.tim.map((x) => x.replace(/^([a-dA-D]\))\s+/, "$1\u00a0")).join("\u00a0· ")} className="inline" />
         </span>
         <i aria-hidden="true">{open ? "▲" : "Đề ▼"}</i>
       </button>

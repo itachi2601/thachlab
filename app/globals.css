@@ -3418,6 +3418,10 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content .bt-step .katex-display > .katex { text-align: left; }
 .exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
 .exam-content .bt-ans .katex-display { margin: 0; }
+/* Công thức khối dài trong lời giải bước: cho ngắt dòng sau dấu "=", "+", "·" (KaTeX đã chia sẵn các .base tại đó; chỉ
+   .katex-display > .katex bị nowrap) thay vì cuộn ngang ngầm — điện thoại ẩn thanh cuộn nên HS tưởng bị cắt mất kết quả
+   (HS ảo Đ4 + Đ8: 70·D5 b6, 74·D4 b5, 55·D4 b5; C2, H5). Một .base dài hơn khung vẫn cuộn ngang như cũ. */
+.exam-content :is(.bt-sol, .cc-split) .katex-display > .katex { white-space: normal; }
 .exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
 .exam-content .bt-final p { margin: 0 0 6px; }
 .exam-content .bt-final p:last-child { margin-bottom: 0; }
@@ -3478,11 +3482,15 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
 .cc-sticky { position: sticky; z-index: 5; margin: 0 -4px; padding: 6px 4px 4px; background: var(--color-panel); border-bottom: 1px solid var(--color-line); }
 .cc-sticky--off { position: relative; }
 .cc-split:has(.cc-steps :is(input, textarea):focus) .cc-sticky { position: relative; } /* đang gõ: bàn phím chiếm nửa dưới → thôi dính hình để ô nhập + phản hồi không bị che (giữ chỗ trong dòng nên không xô trang) */
-/* Tóm đề (thử 3/11/2026): < 1280 một dòng "Tìm" trong khối dính, chạm mở lớp đè (không xô trang); ≥ 1280 thẻ lề phải dính theo, kiểu chữ như cột lề .tl-sn (N8, N4, D2) */
-.bt-tomde-bar { display: flex; align-items: center; gap: 6px; width: 100%; min-height: 40px; margin-top: 2px; border: 1px solid var(--color-line); border-radius: 10px; background: var(--color-bg); padding: 6px 10px; color: var(--color-ink); font-size: 13.5px; text-align: left; cursor: pointer; }
-.bt-tomde-bar > span { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+/* Tóm đề (thử 3/11/2026): < 1280 thanh "Tìm" (≤ 4 dòng, 5/11) trong khối dính, chạm mở lớp đè (không xô trang); ≥ 1280 thẻ lề phải dính theo, kiểu chữ như cột lề .tl-sn (N8, N4, D2) */
+.bt-tomde-bar { display: flex; align-items: baseline; gap: 6px; width: 100%; min-height: 40px; margin-top: 2px; border: 1px solid var(--color-line); border-radius: 10px; background: var(--color-bg); padding: 11px 10px; color: var(--color-ink); font-size: 13.5px; line-height: 1.3; text-align: left; cursor: pointer; }
+/* "Tìm" xuống tối đa 4 dòng thay vì cắt "…" một dòng (HS ảo Đ8 5/11, C2); hình co theo --cc-tim (TomDeBar đo) nên khối dính không cao thêm (N8) */
+.bt-tomde-bar > span { flex: 1; min-width: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; } /* 4 dòng ≈ 150 ký tự: đủ mọi tom_de có hình đến 5/11 */
+.bt-tomde-khung .bt-tomde-bar > span { -webkit-line-clamp: 5; } /* dạng không hình: khối dính chỉ có thanh này */
+.bt-tomde-bar .exam-content { font-size: inherit; line-height: inherit; } /* .exam-content đặt 16px/1.6 → dòng 28px */
+.bt-tomde-bar .katex { display: inline; overflow: visible; vertical-align: baseline; font-size: 1.08em; } /* inline-block (luật chung .exam-content .katex) làm dòng cao ~24px → thanh cao, hình co */
 .bt-tomde-bar > i { flex: none; color: var(--color-muted); font-size: 12.5px; font-style: normal; font-weight: 600; }
-.cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 136px); }
+.cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px - var(--cc-tim, 40px)); }
 .bt-tomde-pop { position: absolute; top: 100%; right: 0; left: 0; z-index: 6; max-height: min(60svh, 480px); overflow: auto; border: 1px solid var(--color-line); border-radius: 0 0 12px 12px; background: var(--color-panel); padding: 12px 14px; box-shadow: 0 14px 28px rgb(0 0 0 / .18); font-size: 15px; line-height: 1.55; }
 .bt-tomde h4 { margin: 0 0 2px; color: var(--color-muted); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .bt-tomde ul { margin: 0 0 10px; padding-left: 1.1em; list-style: disc; }
