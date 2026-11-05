@@ -419,16 +419,16 @@
      "loi_hay_gap": "Lấy tổng thời gian làm $\\Delta t$, hoặc đảo thứ tự hiệu vận tốc.",
      "chon_buoc_ke": [
       {
-       "text": "Mỗi đoạn dùng $a=\\dfrac{\\Delta v}{\\Delta t}$ với hai mốc của chính đoạn đó",
+       "text": "Mỗi đoạn một $a=\\dfrac{\\Delta v}{\\Delta t}$ theo hai mốc của đoạn",
        "dung": true
       },
       {
-       "text": "Một gia tốc chung cho cả hành trình",
+       "text": "Một gia tốc chung cho cả hành trình, lấy từ hai đầu",
        "dung": false,
        "vi_sao": "Ba đoạn có độ dốc khác nhau nên không có một gia tốc chung; mỗi đoạn một $a$."
       },
       {
-       "text": "Dùng $a$ của đoạn đầu cho đoạn cuối",
+       "text": "Dùng $a$ của đoạn đầu cho cả đoạn giữa và đoạn cuối",
        "dung": false,
        "vi_sao": "Hai đoạn có độ dài và chiều biến thiên của vận tốc khác nhau nên phải tính riêng."
       }
@@ -443,16 +443,16 @@
      "loi_hay_gap": "Bỏ sót phần chữ nhật ở giữa, hoặc dùng hệ số $\\dfrac{1}{2}$ cho cả ba phần; chỉ phần tam giác mới có $\\dfrac{1}{2}$.",
      "chon_buoc_ke": [
       {
-       "text": "Chia diện tích dưới đồ thị: hai tam giác và một chữ nhật",
+       "text": "Tính diện tích: hai tam giác và một chữ nhật",
        "dung": true
       },
       {
-       "text": "$s=v_{max}\\cdot t$ cho cả 30 s",
+       "text": "$s=v_{max}\\cdot t$ cho cả 30 s, theo vận tốc lớn nhất",
        "dung": false,
        "vi_sao": "Vận tốc không bằng giá trị lớn nhất suốt thời gian; hai đoạn đầu và cuối vận tốc nhỏ hơn."
       },
       {
-       "text": "$s=\\dfrac{1}{2}a_1t^2$ với $t=30$ s",
+       "text": "$s=\\dfrac{1}{2}a_1t^2$ với $t=30$ s như nhanh dần đều",
        "dung": false,
        "vi_sao": "Công thức này chỉ đúng khi gia tốc không đổi suốt thời gian; ở đây $a$ đổi theo từng đoạn."
       }
@@ -480,7 +480,7 @@
      "loi_hay_gap": "Lấy hai vận tốc làm đáy, hoặc dùng mốc thời gian thay cho độ dài đoạn.",
      "chon_buoc_ke": [
       {
-       "text": "Vẽ lại hình dưới đồ thị là hình thang rồi so với kết quả cộng ba phần",
+       "text": "Tính lại bằng hình thang rồi so với tổng ba phần",
        "dung": true
       },
       {
@@ -489,7 +489,7 @@
        "vi_sao": "Trung bình cộng hai vận tốc chỉ đúng khi $a$ không đổi suốt thời gian; ở đây có ba đoạn."
       },
       {
-       "text": "Lấy vận tốc lớn nhất nhân tổng thời gian",
+       "text": "Lấy vận tốc lớn nhất nhân với tổng thời gian chạy",
        "dung": false,
        "vi_sao": "Vận tốc chỉ đạt giá trị lớn nhất ở một đoạn; hai đoạn còn lại nhỏ hơn nên kết quả bị thừa."
       }
@@ -705,16 +705,16 @@
      "loi_hay_gap": "Lấy cả hai vận tốc cùng dấu dương; bóng bật về phía ngược lại nên vận tốc sau mang dấu ngược với vận tốc trước.",
      "chon_buoc_ke": [
       {
-       "text": "Viết $v_1$ và $v_2$ có dấu theo chiều dương đã chọn rồi $\\Delta v=v_2-v_1$",
+       "text": "Lấy $v_1$, $v_2$ có dấu theo chiều dương rồi $\\Delta v=v_2-v_1$",
        "dung": true
       },
       {
-       "text": "$\\Delta v=15-25$",
+       "text": "$\\Delta v=15-25$ bằng các độ lớn, bỏ qua dấu",
        "dung": false,
        "vi_sao": "Đó là hiệu hai tốc độ; bóng đổi hướng nên $v_2$ phải ngược dấu $v_1$."
       },
       {
-       "text": "$\\Delta v=v_1-v_2$ với số có dấu",
+       "text": "Lấy $\\Delta v=v_1-v_2$ với số đã có dấu",
        "dung": false,
        "vi_sao": "$\\Delta v$ luôn là cuối trừ đầu; đảo thứ tự sẽ sai hướng."
       }
@@ -729,16 +729,16 @@
      "loi_hay_gap": "Dùng hiệu hai tốc độ thay cho $\\Delta v$ có dấu, hoặc nhân với thời gian thay vì chia.",
      "chon_buoc_ke": [
       {
-       "text": "$a=\\dfrac{\\Delta v}{\\Delta t}$ với $\\Delta v$ là hiệu có dấu vừa tính",
+       "text": "$a=\\dfrac{\\Delta v}{\\Delta t}$ với $\\Delta v$ có dấu vừa tính",
        "dung": true
       },
       {
-       "text": "$a=\\dfrac{|v_2|-|v_1|}{\\Delta t}$",
+       "text": "$a=\\dfrac{|v_2|-|v_1|}{\\Delta t}$ lấy hiệu hai độ lớn",
        "dung": false,
        "vi_sao": "Hiệu hai tốc độ bỏ qua việc đổi hướng nên không phải gia tốc của chuyển động này."
       },
       {
-       "text": "$a=\\Delta v\\cdot\\Delta t$",
+       "text": "$a=\\Delta v\\cdot\\Delta t$ nhân biến thiên với thời gian",
        "dung": false,
        "vi_sao": "Gia tốc là $\\Delta v$ chia $\\Delta t$; nhân sẽ ra đơn vị mét, không phải m/s²."
       }
