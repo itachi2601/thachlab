@@ -13,7 +13,8 @@
     "test:next-steps": "tsx scripts/test-next-steps.mts",
     "test:offline-queue": "tsx scripts/test-offline-queue.mts",
     "test:tuition": "tsx scripts/test-tuition-ledger.mts",
-    "test:quiz-speak": "tsx scripts/test-quiz-speak.mts"
+    "test:quiz-speak": "tsx scripts/test-quiz-speak.mts",
+    "test:bien-the": "tsx scripts/test-bien-the.mts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.132.1",

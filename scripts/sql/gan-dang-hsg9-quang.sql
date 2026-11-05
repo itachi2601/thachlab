@@ -1,0 +1,55 @@
+-- Gán dạng bài tập cho câu ngân hàng (sinh bởi skill on-tap-dang-bai-tap). Rollback: delete from public.question_dang where source = 'claude-2026-11-05-hsg9-quang';
+begin;
+insert into public.question_dang (question_id, lesson_id, dang_label, unsure, source)
+select v.qid, v.lid, v.label, v.unsure, 'claude-2026-11-05-hsg9-quang'
+from (values
+  (1514918, 151, 'Dạng 2 · Trung bình · Độ sâu biểu kiến qua nhiều lớp chất lỏng: người nhìn xuống đáy, cá nhìn lên đèn', false),
+  (1514917, 151, 'Dạng 2 · Trung bình · Độ sâu biểu kiến qua nhiều lớp chất lỏng: người nhìn xuống đáy, cá nhìn lên đèn', true),
+  (378947, 151, 'Dạng 4 · Nâng cao · Bản mặt song song: tia ló song song tia tới, độ dời ngang', false),
+  (377781, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378099, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (1473846, 151, 'Dạng 4 · Nâng cao · Bản mặt song song: tia ló song song tia tới, độ dời ngang', true),
+  (377834, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (379053, 151, 'Dạng 4 · Nâng cao · Bản mặt song song: tia ló song song tia tới, độ dời ngang', true),
+  (377887, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378311, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (377622, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378523, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (456363, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', true),
+  (377675, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378205, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378470, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (1514912, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (379000, 151, 'Dạng 4 · Nâng cao · Bản mặt song song: tia ló song song tia tới, độ dời ngang', false),
+  (378046, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378682, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (456360, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378258, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (377993, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378364, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (377728, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378152, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (378629, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (377940, 151, 'Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ', false),
+  (1514913, 151, 'Dạng 3 · Trung bình · Phản xạ toàn phần: vùng sáng tròn trên mặt nước và đĩa chắn sáng', true),
+  (1514919, 151, 'Dạng 3 · Trung bình · Phản xạ toàn phần: vùng sáng tròn trên mặt nước và đĩa chắn sáng', false),
+  (1518468, 156, 'Dạng 5 · Nâng cao · Đo tiêu cự thấu kính hội tụ: cách Bessel và cách 2f–2f', false),
+  (1518470, 156, 'Dạng 7 · Vận dụng cao · Hệ hai thấu kính đồng trục: ảnh qua thấu kính 1 là vật của thấu kính 2', true),
+  (1518469, 156, 'Dạng 2 · Trung bình · Công thức thấu kính, quy ước dấu và chứng minh bằng tam giác đồng dạng', false),
+  (1518465, 156, 'Dạng 4 · Nâng cao · Dịch chuyển vật–ảnh: ảnh dịch theo chiều nào, khoảng cách vật–ảnh nhỏ nhất 4f', true),
+  (1518464, 156, 'Dạng 2 · Trung bình · Công thức thấu kính, quy ước dấu và chứng minh bằng tam giác đồng dạng', false),
+  (1518467, 156, 'Dạng 2 · Trung bình · Công thức thấu kính, quy ước dấu và chứng minh bằng tam giác đồng dạng', false),
+  (1518731, 158, 'Dạng 1 · Dễ · Định luật phản xạ: đặt gương để hắt tia theo hướng cho trước, gương quay', false),
+  (1518724, 158, 'Dạng 1 · Dễ · Định luật phản xạ: đặt gương để hắt tia theo hướng cho trước, gương quay', false),
+  (1518726, 158, 'Dạng 1 · Dễ · Định luật phản xạ: đặt gương để hắt tia theo hướng cho trước, gương quay', false),
+  (1518725, 158, 'Dạng 7 · Vận dụng cao · Mở rộng HSG: Hai gương hợp góc — số ảnh, phản xạ nhiều lần', false),
+  (1518728, 158, 'Dạng 5 · Nâng cao · Vùng nhìn thấy, gương thấy toàn thân', true),
+  (1518729, 158, 'Dạng 3 · Trung bình · Nguồn sáng rộng: vùng tối, vùng nửa tối trên màn; đĩa chắn nhỏ hơn nguồn', false),
+  (1518730, 158, 'Dạng 2 · Trung bình · Bóng người dưới đèn đường: chiều dài bóng, tốc độ đỉnh bóng, bóng leo tường, hai đèn', false),
+  (1518923, 178, 'Dạng 4 · Nâng cao · Tháng giao hội, ngày sao và thời gian nguyệt thực toàn phần', false),
+  (1518918, 178, 'Dạng 5 · Nâng cao · Góc cao Mặt Trời buổi trưa và phép đo của Eratosthenes', false),
+  (1518922, 178, 'Dạng 6 · Vận dụng cao · Hệ Mặt Trời và Ngân Hà: khoảng cách, thời gian, tốc độ', false)
+) as v(qid, lid, label, unsure)
+join public.question_bank qb on qb.id = v.qid
+on conflict (question_id, lesson_id) do update set dang_label = excluded.dang_label, unsure = excluded.unsure, source = 'claude-2026-11-05-hsg9-quang';
+commit;
