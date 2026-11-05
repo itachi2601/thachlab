@@ -22,7 +22,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | `quy_dao_nem` | Mặt phẳng đứng: rơi tự do (chấm theo từng giây), ném ngang/xiên/đứng, tách vx–vy, vectơ v chạm đất | 57 · D4 | 3 | 55, 57 · L10 Ch.2 |
 | `thanh_moment` (`SoDoVecto.tsx` cảnh `thanh`, ✓ 3/11) | Thanh cứng + điểm tựa/bản lề/giá đỡ, lực, cánh tay đòn, ngẫu lực, đòn bẩy, ròng rọc cố định | 66 · D4 | 3 | 66, 154, 155 · H9 Cơ; L10 Ch.3 |
 | `cot_chat_long` | Bình/ống chất lỏng: áp suất theo độ sâu, bình thông nhau nhiều chất lỏng, pittông, vật nổi/chìm (Archimedes), mực nước dâng, cột thuỷ ngân giam khí | 79 · D4 | 4 | 7, 79, 154, 167 · H9 Cơ; L10 Ch.7; L12 Ch.2 |
-| `tia_sang` (`TiaSang.tsx`, Đ5 ✓) | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
+| `tia_sang` (`TiaSang.tsx`, Đ5 ✓) | Dò tia: mặt phân cách (khúc xạ, phản xạ, toàn phần, góc tới hạn), bản mặt, lăng kính, sợi quang, gương phẳng, nguồn rộng + vật chắn (bóng tối/nửa tối, nhật–nguyệt thực), tia song song (Eratosthenes) | 83 · D4; Đ9c thêm cảnh `canh: "tu_do"` (toạ độ tự do: vùng, tròn, đoạn gương/vật, tia nhiều điểm, góc, thước, khung theo bước) — đã làm 84 · D2, D4; 151 · D6, D7; 158 · D3, D6; 178 · D3, D5 | 9 | 83, 84, 151, 158, 178 · H9 Quang; H9 Âm; K9 Ch.2 |
 | `thau_kinh` (`ThauKinh.tsx`, Đ5 ✓) | Trục chính + thấu kính hội tụ/phân kì, F/F′, 3 tia đặc biệt, ảnh thật/ảo, hệ 2 thấu kính, kính lúp | 156 · D1 | 1 | 156 · H9 Quang |
 
 ## B. Theo bài
@@ -231,7 +231,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 | id | Bài | Dạng Opus | Dạng Sonnet có hình | Dạng chỉ tóm đề | Model phiên | Ưu tiên |
 |---|---|---|---|---|---|---|
 | 150 | Chuyên đề 15. Âm thanh: sóng âm, độ cao, độ to, phản xạ âm | — | D2 (do_thi), D5 (truc_chuyen_dong) | D1, D3, D4, D6 | Sonnet | P3 |
-| 178 | Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà | — | D3 (tia_sang), D5 (tia_sang) | D1, D2, D4, D6 | Sonnet | P3 |
+| 178 | Chuyên đề 17. Thiên văn: Mặt Trăng, Hệ Mặt Trời và Ngân Hà | — | ✓ D3 (tia_sang), D5 (tia_sang) 5/11 | ✓ D1, D2, D4, D6 5/11 | Sonnet | P3 |
 
 ## C. Tổng theo chương
 
