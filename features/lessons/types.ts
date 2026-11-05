@@ -136,6 +136,47 @@ export interface LessonWorkedQuestion {
   cong_cu?: WorkedTool;
   /** 🧪 Tóm đề (thử 3/11/2026): Cho/Tìm ngắn — điện thoại là một dòng dính chạm mở, desktop ≥1280 là thẻ lề phải. Ký hiệu khớp lời giải; không đổi đơn vị sẵn (đó là việc của bước). */
   tom_de?: WorkedTomDe;
+  /** 🧪 Biến thể đổi số (chặng 3A, 5/11/2026): khuôn đề, trình duyệt tự sinh câu mới cùng dạng. Thư viện: lib/bien-the.ts. */
+  bien_the?: WorkedVariant;
+}
+
+/** Một biến số của khuôn đề: giá trị lấy ngẫu nhiên theo bước trong [min, max] (gồm cả hai đầu). */
+export type WorkedVariantVar = { min: number; max: number; buoc: number };
+
+/** Biểu thức tính phương án nhiễu (lỗi hay gặp) — `buoc`: chỉ số bước (0-based) gỡ rối gợi ý khi em chọn nó. */
+export type WorkedVariantDistractor = { bieu_thuc: string; loi: string; buoc?: number };
+
+/**
+ * Khuôn đề đổi số. Chỗ trống viết `{{ten}}`, `{{ten|3}}` (3 chữ số có nghĩa) hoặc `{{ten|.2}}` (2 chữ số thập phân),
+ * luôn nằm trong `$…$` (số lớn/nhỏ in dạng `6{,}4.10^{18}`). Biểu thức dùng + − × ÷ ^, so sánh, `&&` `||`
+ * và hàm sqrt, ln, log10, log2, exp, abs, sin/cos/tan (độ), floor, ceil, round(x, k), min, max, pi — không eval.
+ */
+export interface WorkedVariant {
+  /** Đề HTML có chỗ trống. */
+  de: string;
+  /** Biến lấy ngẫu nhiên. */
+  bien: Record<string, WorkedVariantVar>;
+  /** Bộ dữ kiện đi cùng nhau (vd tên chất + chu kì bán rã): mỗi lần sinh bốc MỘT bộ; trường số vào biểu thức, trường chữ chỉ thay chỗ trống. */
+  bo?: Record<string, number | string>[];
+  /** Đại lượng trung gian tính lần lượt theo thứ tự khai báo — dùng được ở đề, đáp số, ràng buộc. */
+  tinh?: Record<string, string>;
+  /** Biểu thức đáp số. Trong ràng buộc/phương án nhiễu gọi là `dap_so`. */
+  dap_so: string;
+  don_vi?: string;
+  /** Làm tròn đáp số và phương án: `cs` chữ số có nghĩa hoặc `tp` chữ số thập phân. Mặc định cs = 3. */
+  lam_tron?: { cs: number } | { tp: number };
+  /** `so`: ô đáp số Phần III (≤ 4 ký tự); `abcd`: Phần I, đáp án đúng + 3 phương án nhiễu. */
+  kieu: "so" | "abcd";
+  /** Kiểu `so`: sai số tương đối chấp nhận (0,01 = 1 %), cộng thêm nửa đơn vị làm tròn. Mặc định 0. */
+  sai_so?: number;
+  /** Kiểu `abcd`: ≥ 3 phương án nhiễu; lấy 3 cái đầu hợp lệ. */
+  nhieu?: WorkedVariantDistractor[];
+  /** Biểu thức phải đúng (khác 0) với mọi bộ số, vd "dap_so > 0", "n != floor(n)". */
+  rang_buoc?: string[];
+  /** Các phương án khác nhau tối thiểu (tương đối). Mặc định 0,05. */
+  khac_nhau?: number;
+  /** Lời giải ngắn (HTML, có chỗ trống) — hiện sau khi chấm. */
+  loi_giai?: string;
 }
 
 /** Hình giải cùng bước. Số liệu theo đề (đơn vị: Hz, cm/s, cm) — hình của bước chỉ vẽ khi em đã làm xong bước đó. */

@@ -37,7 +37,7 @@
      "loi_hay_gap": "Bấm máy sai chế độ (radian) hoặc lấy $\\sin$ thay vì $\\sin^{-1}$ nên ra số lạ.",
      "chon_buoc_ke": [
       {
-       "text": "$i_{th}=\\sin^{-1}$ của giá trị vừa tính, máy ở chế độ độ",
+       "text": "$i_{th}=\\sin^{-1}(\\ldots)$",
        "dung": true
       },
       {
@@ -183,16 +183,16 @@
      "loi_hay_gap": "Thế thẳng $60^\\circ$ (góc với mặt) vào định luật khúc xạ: khi đó $1{,}40\\cdot\\sin60^\\circ\\gt1$, không có nghiệm.",
      "chon_buoc_ke": [
       {
-       "text": "Đổi sang góc tới rồi so với $i_{th}$; nếu nhỏ hơn thì dùng $n_1\\sin i=n_2\\sin r$",
+       "text": "Đổi sang góc tới, so với $i_{th}$ rồi mới tính $r$",
        "dung": true
       },
       {
-       "text": "Góc tới $60^\\circ\\gt i_{th}$ nên không có tia ló",
+       "text": "Góc tới $60^\\circ\\gt i_{th}$ nên không có tia ló ra ngoài",
        "dung": false,
        "vi_sao": "$60^\\circ$ là góc với mặt thoáng; góc tới là $90^\\circ-60^\\circ$."
       },
       {
-       "text": "$\\sin r=\\dfrac{\\sin i}{1{,}40}$",
+       "text": "$\\sin r=\\dfrac{\\sin i}{1{,}40}$ rồi lấy $\\sin^{-1}$, không cần so với $i_{th}$",
        "dung": false,
        "vi_sao": "Đảo tỉ số: ra không khí tia lệch xa pháp tuyến nên $r\\gt i$, theo $n_1\\sin i=n_2\\sin r$."
       }
@@ -495,7 +495,7 @@
      "loi_hay_gap": "Dùng lại $\\sin i_{th}=\\dfrac{1}{n}$ (môi trường thứ hai vẫn coi là không khí) nên ra lại đúng góc ban đầu.",
      "chon_buoc_ke": [
       {
-       "text": "$\\sin i'_{th}=\\dfrac{1{,}33}{n}$ với $n$ vừa tìm",
+       "text": "$\\sin i'_{th}=\\dfrac{1{,}33}{n}$",
        "dung": true
       },
       {

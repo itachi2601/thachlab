@@ -40,16 +40,16 @@
      "loi_hay_gap": "Lấy góc giữa tia và mặt gương làm góc tới, hoặc đặt mặt gương theo phân giác của góc $SIR$.",
      "chon_buoc_ke": [
       {
-       "text": "Kẻ pháp tuyến $IN$ là phân giác của góc $SIR$, rồi đặt gương vuông góc với $IN$",
+       "text": "Kẻ pháp tuyến $IN$ là phân giác góc $SIR$, rồi đặt gương vuông góc $IN$",
        "dung": true
       },
       {
-       "text": "Đặt mặt gương theo phân giác của góc $SIR$",
+       "text": "Đặt mặt gương theo phân giác của góc $SIR$, vì tia tới và tia phản xạ đối xứng qua đó",
        "dung": false,
        "vi_sao": "Phân giác của góc $SIR$ là pháp tuyến; mặt gương phải vuông góc với nó."
       },
       {
-       "text": "Lấy góc tới bằng cả góc $SIR$",
+       "text": "Lấy góc tới bằng cả góc $SIR$, vì đó là góc tia tới hợp với tia phản xạ",
        "dung": false,
        "vi_sao": "Góc $SIR$ gồm cả góc tới và góc phản xạ, bằng $2i$."
       }
@@ -92,12 +92,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $x=\\ell\\tan\\delta$ với $\\delta$ là góc quay của gương",
+       "text": "Dùng $x=\\ell\\tan\\delta$ với $\\delta$ là góc quay của gương, vì tia phản xạ quay cùng góc",
        "dung": false,
        "vi_sao": "Gương quay $\\delta$ thì góc tới đổi $\\delta$, góc giữa tia tới và tia phản xạ đổi $2\\delta$."
       },
       {
-       "text": "Tính cung $x=\\ell\\cdot2\\delta$ với góc để theo độ",
+       "text": "Tính cung $x=\\ell\\cdot2\\delta$ với góc để theo độ, vì vệt sáng chạy theo cung tròn",
        "dung": false,
        "vi_sao": "Công thức độ dài cung cần góc đo bằng radian; để theo độ thì số sai hàng chục lần."
       }
@@ -116,12 +116,12 @@
        "dung": true
       },
       {
-       "text": "Lấy góc quay của gương bằng $\\varphi$ với $\\tan\\varphi=\\dfrac{x'}{\\ell}$",
+       "text": "Lấy góc quay của gương bằng $\\varphi$ với $\\tan\\varphi=\\dfrac{x'}{\\ell}$, vì gương quay cùng góc",
        "dung": false,
        "vi_sao": "$\\varphi$ là góc quay của tia phản xạ; gương chỉ quay nửa góc đó."
       },
       {
-       "text": "Lấy góc quay của gương bằng $2\\varphi$",
+       "text": "Lấy góc quay của gương bằng $2\\varphi$, vì tia phản xạ quay chậm hơn gương",
        "dung": false,
        "vi_sao": "Ngược quan hệ: tia phản xạ quay gấp đôi gương, không phải gương quay gấp đôi tia."
       }
@@ -176,16 +176,16 @@
      "loi_hay_gap": "Cho rằng đỉnh bóng chạy cùng tốc độ với người, hoặc lấy tốc độ dài ra của bóng làm tốc độ đỉnh bóng.",
      "chon_buoc_ke": [
       {
-       "text": "Viết vị trí đỉnh bóng $x+\\ell$ theo $x$, rồi xem nó tăng bao nhiêu khi $x$ tăng $v$ trong $1\\ \\text{s}$",
+       "text": "Viết vị trí đỉnh bóng theo $x$, xem nó tăng bao nhiêu khi $x$ tăng $v$ sau $1\\ \\text{s}$",
        "dung": true
       },
       {
-       "text": "Lấy tốc độ đỉnh bóng bằng $v$ vì bóng đi theo người",
+       "text": "Lấy tốc độ đỉnh bóng bằng $v$ vì bóng đi theo người, đỉnh bóng luôn sát người",
        "dung": false,
        "vi_sao": "Bóng dài ra khi người đi xa đèn, nên đỉnh bóng phải nhanh hơn người."
       },
       {
-       "text": "Lấy tốc độ đỉnh bóng bằng tốc độ dài ra của bóng",
+       "text": "Lấy tốc độ đỉnh bóng bằng tốc độ dài ra của bóng, vì đó là phần bóng tăng mỗi giây",
        "dung": false,
        "vi_sao": "Đó là tốc độ của đỉnh bóng so với người; so với mặt đất phải cộng thêm tốc độ của người."
       }
@@ -224,16 +224,16 @@
      "loi_hay_gap": "Lấy phần bóng thừa ra sau chân tường (khi coi như không có tường) làm chiều cao bóng trên tường; tường dựng đứng chặn tia nên phải tìm chỗ tia cắt tường.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm chỗ tia từ đèn sát đỉnh đầu cắt tường, bằng tam giác đồng dạng có đỉnh tại đèn",
+       "text": "Tìm chỗ tia từ đèn sát đỉnh đầu cắt tường, bằng tam giác đồng dạng",
        "dung": true
       },
       {
-       "text": "Lấy phần bóng thừa ra sau chân tường khi coi như không có tường",
+       "text": "Lấy phần bóng thừa ra sau chân tường khi coi như không có tường, vì tường chỉ gập bóng lên",
        "dung": false,
        "vi_sao": "Tường dựng đứng chặn tia; phần trên tường là độ cao chỗ tia cắt tường, không bằng phần bóng thừa trên sàn."
       },
       {
-       "text": "Lấy chiều cao bóng trên tường bằng chiều cao người",
+       "text": "Lấy chiều cao bóng trên tường bằng chiều cao người, vì bóng không đổi kích thước",
        "dung": false,
        "vi_sao": "Bóng của đỉnh đầu chỉ cao bằng người khi tia nằm ngang, tức đèn thấp ngang đầu; ở đây tia đi chếch xuống."
       }
@@ -248,16 +248,16 @@
      "loi_hay_gap": "Dùng khoảng cách tới cột thứ nhất (hoặc cả khoảng cách giữa hai cột) cho đèn thứ hai; mỗi bóng dùng khoảng cách từ người tới chân cột của chính đèn tạo ra nó.",
      "chon_buoc_ke": [
       {
-       "text": "Áp dụng công thức của câu a riêng cho từng đèn, mỗi đèn dùng khoảng cách từ người tới chân cột của nó",
+       "text": "Áp dụng công thức câu a cho từng đèn, mỗi đèn dùng khoảng cách tới chân cột của nó",
        "dung": true
       },
       {
-       "text": "Dùng khoảng cách giữa hai chân cột cho đèn thứ hai",
+       "text": "Dùng khoảng cách giữa hai chân cột cho đèn thứ hai, vì đèn đó nằm ở chân cột còn lại",
        "dung": false,
        "vi_sao": "Người không đứng ở chân cột 1; khoảng cách tới cột 2 là hiệu hai khoảng cách đã cho."
       },
       {
-       "text": "Cho hai bóng dài bằng nhau vì hai đèn giống hệt nhau",
+       "text": "Cho hai bóng dài bằng nhau vì hai đèn giống hệt nhau, cùng độ cao so với sàn",
        "dung": false,
        "vi_sao": "Người đứng lệch về phía đèn 1 nên khoảng cách tới hai cột khác nhau, hai bóng dài khác nhau."
       }
@@ -312,16 +312,16 @@
      "loi_hay_gap": "Chỉ vẽ tia từ tâm đèn nên ra bóng của nguồn điểm; với nguồn rộng, mép vùng tối do tia cùng mép quyết định.",
      "chon_buoc_ke": [
       {
-       "text": "Vẽ tia cùng mép: từ mép trên của đèn qua mép trên của đĩa, tìm độ cao nó chạm màn",
+       "text": "Vẽ tia cùng mép: mép trên đèn qua mép trên đĩa, tìm độ cao nó chạm màn",
        "dung": true
       },
       {
-       "text": "Vẽ tia từ mép dưới của đèn qua mép trên của đĩa",
+       "text": "Vẽ tia từ mép dưới của đèn qua mép trên của đĩa, vì đó là tia giới hạn vùng tối",
        "dung": false,
        "vi_sao": "Tia chéo mép đó giới hạn mép ngoài vùng nửa tối, không phải vùng tối."
       },
       {
-       "text": "Lấy bóng nguồn điểm trừ đi đường kính đèn",
+       "text": "Lấy bóng nguồn điểm trừ đi đường kính đèn, vì đèn rộng làm bóng nhỏ bấy nhiêu",
        "dung": false,
        "vi_sao": "Mép đèn lệch khỏi trục được phóng theo tỉ số khác với mép đĩa, nên không trừ thẳng được; phải tính theo tia cùng mép."
       }
@@ -336,16 +336,16 @@
      "loi_hay_gap": "Vẽ tia chéo mép nhưng lấy điểm xuất phát ở mép trên của đèn (dấu cộng), tức là vẽ lại tia cùng mép.",
      "chon_buoc_ke": [
       {
-       "text": "Vẽ tia chéo mép: từ mép dưới của đèn qua mép trên của đĩa",
+       "text": "Vẽ tia chéo mép: mép dưới đèn qua mép trên đĩa",
        "dung": true
       },
       {
-       "text": "Dùng lại tia cùng mép của bước trước",
+       "text": "Dùng lại tia cùng mép của bước trước, vì tia ấy đã giới hạn vùng bóng",
        "dung": false,
        "vi_sao": "Tia cùng mép cho mép vùng tối; ngoài mép nửa tối mới thấy được toàn bộ đèn, đó là tia chéo mép."
       },
       {
-       "text": "Cộng đường kính đèn vào bóng nguồn điểm",
+       "text": "Cộng đường kính đèn vào bóng nguồn điểm, vì vùng ngoài rộng hơn bấy nhiêu",
        "dung": false,
        "vi_sao": "Tia chéo mép đi qua mép đĩa nên độ lệch của mép đèn đổi dấu và bị phóng theo tỉ số đồng dạng, không cộng thẳng được."
       }
@@ -360,16 +360,16 @@
      "loi_hay_gap": "Nghĩ rằng vùng tối luôn lớn dần khi lùi màn; với đĩa nhỏ hơn đèn, tia cùng mép đi chụm về trục nên vùng tối co lại.",
      "chon_buoc_ke": [
       {
-       "text": "Viết đường kính vùng tối theo $L$ với đĩa $12\\ \\text{cm}$ rồi cho bằng $0$",
+       "text": "Viết đường kính vùng tối theo $L$ rồi cho bằng $0$",
        "dung": true
       },
       {
-       "text": "Cho bóng nguồn điểm $d_2\\,\\dfrac{L}{a}$ bằng đường kính đèn",
+       "text": "Cho bóng nguồn điểm $d_2\\,\\dfrac{L}{a}$ bằng đường kính đèn, vì lúc đó đèn che hết",
        "dung": false,
        "vi_sao": "Bóng nguồn điểm chỉ dùng khi coi nguồn là điểm; vùng tối do tia cùng mép quyết định."
       },
       {
-       "text": "Cho đường kính mép ngoài nửa tối bằng $0$",
+       "text": "Cho đường kính mép ngoài nửa tối bằng $0$, vì bóng biến thì mép ngoài về $0$",
        "dung": false,
        "vi_sao": "Mép ngoài nửa tối luôn lớn dần khi lùi màn, không bao giờ bằng $0$ sau đĩa."
       }
@@ -384,16 +384,16 @@
      "loi_hay_gap": "Dùng công thức vùng tối nhưng viết $D_n-d$ thay cho $d-D_n$, tức cho tia cùng mép đi loe ra.",
      "chon_buoc_ke": [
       {
-       "text": "Thay $L$ vào $d_t=D_n+(d_2-D_n)\\dfrac{L}{a}$, chú ý $d_2-D_n$ âm",
+       "text": "Thay $L$ vào $d_t=D_n+(d_2-D_n)\\dfrac{L}{a}$ ; $d_2-D_n$ âm",
        "dung": true
       },
       {
-       "text": "Lấy $d_2\\,\\dfrac{L}{a}$",
+       "text": "Lấy $d_2\\,\\dfrac{L}{a}$, vì đĩa vẫn chắn sáng như với nguồn điểm",
        "dung": false,
        "vi_sao": "Đó là bóng khi coi nguồn là điểm; nguồn rộng thì vùng tối nhỏ hơn thế."
       },
       {
-       "text": "Lấy $D_n+(D_n-d_2)\\dfrac{L}{a}$",
+       "text": "Lấy $D_n+(D_n-d_2)\\dfrac{L}{a}$, vì bóng nở dần theo khoảng cách",
        "dung": false,
        "vi_sao": "Tia cùng mép đi từ mép đèn ở độ cao $D_n/2$ xuống mép đĩa ở $d_2/2$; đảo dấu là cho tia đi lên."
       }
@@ -404,16 +404,16 @@
      "hoi": "Câu c: khi màn cách đèn 180 cm, trên màn có gì?",
      "lua_chon": [
       {
-       "text": "Không còn vùng tối; giữa màn là vùng nửa tối, ngay chính giữa vẫn thấy vành ngoài của đèn",
+       "text": "Không còn vùng tối ; giữa màn là nửa tối, vẫn thấy vành ngoài của đèn",
        "dung": true
       },
       {
-       "text": "Vẫn còn một vùng tối nhỏ ở giữa màn",
+       "text": "Vẫn còn một vùng tối nhỏ ở giữa màn, vì đĩa vẫn che hết đèn ở chính giữa",
        "dung": false,
        "vi_sao": "Màn ở xa hơn chỗ vùng tối vừa biến mất; các tia cùng mép đã cắt nhau trước màn nên điểm nào cũng thấy được một phần đèn."
       },
       {
-       "text": "Màn sáng đều, không còn bóng",
+       "text": "Màn sáng đều, không còn bóng, vì màn xa nên đĩa không còn che đèn nữa",
        "dung": false,
        "vi_sao": "Đĩa vẫn che một phần đèn đối với các điểm gần giữa màn, nên vẫn có vùng nửa tối."
       }
@@ -1159,16 +1159,16 @@
      "loi_hay_gap": "Trừ quãng người đi vào khoảng cách người – gương rồi coi đó là khoảng cách người – ảnh.",
      "chon_buoc_ke": [
       {
-       "text": "Lúc đầu cách $2d$, mỗi giây giảm $2v$ : $\\ell=2d-2vt$",
+       "text": "Lúc đầu cách $2d$, mỗi giây giảm $2v$",
        "dung": true
       },
       {
-       "text": "$\\ell=d-vt$",
+       "text": "$\\ell=d-vt$, vì người đi quãng $vt$ về phía gương",
        "dung": false,
        "vi_sao": "Đó là khoảng cách người – gương ; ảnh ở sau gương cùng khoảng ấy nên khoảng người – ảnh phải tính cả hai đoạn."
       },
       {
-       "text": "$\\ell=2d-vt$",
+       "text": "$\\ell=2d-vt$, vì chỉ có người đi, ảnh đứng yên",
        "dung": false,
        "vi_sao": "Ảnh cũng tiến lại nên khoảng người – ảnh giảm theo cả hai bên, không chỉ theo quãng người đi."
       }
@@ -1183,16 +1183,16 @@
      "loi_hay_gap": "Cho ảnh đi cùng tốc độ với gương, hoặc cho ảnh đứng yên vì người đứng yên.",
      "chon_buoc_ke": [
       {
-       "text": "Viết vị trí ảnh theo vị trí gương : gương – ảnh luôn bằng người – gương",
+       "text": "Viết vị trí ảnh theo gương : gương – ảnh bằng người – gương",
        "dung": true
       },
       {
-       "text": "Ảnh đi cùng tốc độ với gương",
+       "text": "Ảnh đi cùng tốc độ với gương, vì ảnh gắn liền với gương",
        "dung": false,
        "vi_sao": "Gương dời thì cả khoảng người – gương lẫn khoảng gương – ảnh cùng thay đổi ; phải tính cả hai."
       },
       {
-       "text": "Ảnh đứng yên vì người đứng yên",
+       "text": "Ảnh đứng yên vì người đứng yên, ảnh chỉ phụ thuộc vị trí người",
        "dung": false,
        "vi_sao": "Vị trí ảnh phụ thuộc cả vị trí gương : mặt đối xứng dời thì ảnh dời theo."
       }
@@ -1211,12 +1211,12 @@
        "dung": true
       },
       {
-       "text": "$2d+v_Gt$",
+       "text": "$2d+v_Gt$, vì ảnh lùi thêm đúng quãng gương lùi",
        "dung": false,
        "vi_sao": "Gương lùi thì khoảng gương – ảnh cũng dài thêm ; cộng quãng gương lùi một lần là thiếu."
       },
       {
-       "text": "$d+2v_Gt$",
+       "text": "$d+2v_Gt$, vì ảnh lùi gấp đôi gương nên cộng ngay vào $d$",
        "dung": false,
        "vi_sao": "Lúc đầu ảnh đã cách người $2d$ chứ không phải $d$ ; quãng ảnh đi phải cộng vào $2d$."
       }
@@ -1231,16 +1231,16 @@
      "loi_hay_gap": "Dùng $\\cos60^\\circ$ cho thành phần vuông góc gương : góc $60^\\circ$ đo với mặt gương, không phải với pháp tuyến.",
      "chon_buoc_ke": [
       {
-       "text": "Tách vận tốc thành phần dọc gương và vuông góc gương ; chỉ thành phần vuông góc làm khoảng cách thay đổi",
+       "text": "Tách vận tốc làm hai phần ; chỉ phần vuông góc gương làm khoảng cách đổi",
        "dung": true
       },
       {
-       "text": "Lấy $2v$ như câu a",
+       "text": "Lấy $2v$ như câu a, vì ảnh luôn đối xứng với người qua gương nên hai bên cùng tiến lại",
        "dung": false,
        "vi_sao": "Người đi xiên nên chỉ một phần vận tốc hướng vào gương ; thành phần dọc gương không làm người và ảnh gần nhau."
       },
       {
-       "text": "Bằng $0$ vì ảnh và người có cùng tốc độ",
+       "text": "Bằng $0$ vì ảnh và người có cùng tốc độ, nên khoảng cách hai bên không đổi",
        "dung": false,
        "vi_sao": "Cùng độ lớn nhưng khác hướng ; tốc độ lại gần phụ thuộc hướng của hai vận tốc, không chỉ độ lớn."
       }
@@ -1255,16 +1255,16 @@
      "loi_hay_gap": "Cho ảnh quay quanh $H$ cùng góc với gương, hoặc tính độ dài cung tròn thay cho đoạn thẳng nối hai vị trí ảnh.",
      "chon_buoc_ke": [
       {
-       "text": "Ảnh luôn cách $H$ bằng $HP$ ; tìm góc ảnh quay quanh $H$ rồi tính dây cung",
+       "text": "Ảnh luôn cách $H$ bằng $HP$ ; tìm góc quay của ảnh rồi tính dây cung",
        "dung": true
       },
       {
-       "text": "Ảnh quay quanh $H$ cùng góc gương quay",
+       "text": "Ảnh quay quanh $H$ cùng góc gương quay, vì ảnh gắn chặt với gương",
        "dung": false,
        "vi_sao": "Gương là phân giác của góc $PHP'$ ; người đứng yên nên góc $PHP'$ đổi nhiều hơn góc quay của gương."
       },
       {
-       "text": "Ảnh dời bằng độ dài cung tròn ảnh đi qua",
+       "text": "Ảnh dời bằng độ dài cung tròn ảnh đi qua, vì ảnh chuyển động theo cung",
        "dung": false,
        "vi_sao": "Đề hỏi khoảng cách giữa hai vị trí ảnh (đoạn thẳng), không phải quãng đường đi trên cung."
       }
@@ -1319,16 +1319,16 @@
      "loi_hay_gap": "Cho mép trên ngang đỉnh đầu hoặc ngang mắt ; hoặc nghĩ đứng càng xa thì gương cần càng nhỏ.",
      "chon_buoc_ke": [
       {
-       "text": "Tia từ đỉnh đầu vào mắt : mép trên ở độ cao trung bình của đỉnh đầu và mắt ; lấy mép trên trừ mép dưới",
+       "text": "Mép trên ở độ cao trung bình của đỉnh đầu và mắt ; lấy mép trên trừ mép dưới",
        "dung": true
       },
       {
-       "text": "Mép trên ngang đỉnh đầu",
+       "text": "Mép trên ngang đỉnh đầu, vì gương phải cao tới đúng chỗ đỉnh đầu mới thấy hết đầu",
        "dung": false,
        "vi_sao": "Tia từ đỉnh đầu đi xuống tới gương rồi lên mắt ; điểm tới nằm giữa đỉnh đầu và mắt, thấp hơn đỉnh đầu."
       },
       {
-       "text": "Mép trên ngang mắt",
+       "text": "Mép trên ngang mắt, vì mắt là chỗ tia sáng đi tới nên gương chỉ cần cao tới đó",
        "dung": false,
        "vi_sao": "Mắt thấp hơn đỉnh đầu nên tia từ đỉnh đầu tới gương ở điểm cao hơn mắt ; gương chỉ tới ngang mắt sẽ mất phần trên của đầu."
       }
@@ -1343,16 +1343,16 @@
      "loi_hay_gap": "Lấy độ cao mép dưới chia đôi, hoặc cho điểm thấy được ngang mép dưới gương.",
      "chon_buoc_ke": [
       {
-       "text": "Mép dưới gương ở độ cao trung bình của mắt và điểm thấp nhất thấy được",
+       "text": "Mép dưới gương ở độ cao trung bình của mắt và điểm thấp nhất",
        "dung": true
       },
       {
-       "text": "Điểm thấp nhất ngang mép dưới gương",
+       "text": "Điểm thấp nhất ngang mép dưới gương, vì tia đi thẳng từ điểm đó tới mắt qua mép gương",
        "dung": false,
        "vi_sao": "Tia từ điểm thấy được đi chéo tới mép gương rồi lên mắt ; điểm đó không nằm ngang mép gương."
       },
       {
-       "text": "Lấy nửa độ cao mép dưới",
+       "text": "Lấy nửa độ cao mép dưới, vì mép gương chia đôi độ cao điểm cần tìm",
        "dung": false,
        "vi_sao": "Quy tắc trung điểm ghép mắt với điểm cần tìm ; mắt không ở sát sàn nên không chia đôi độ cao mép gương."
       }
@@ -1367,16 +1367,16 @@
      "loi_hay_gap": "Cho rằng thấy tới đỉnh đầu vì mép trên gương gần ngang mắt, hoặc lấy điểm cao nhất ngang mép trên.",
      "chon_buoc_ke": [
       {
-       "text": "Mép trên gương ở độ cao trung bình của mắt và điểm cao nhất thấy được",
+       "text": "Mép trên gương ở độ cao trung bình của mắt và điểm cao nhất",
        "dung": true
       },
       {
-       "text": "Thấy tới đỉnh đầu",
+       "text": "Thấy tới đỉnh đầu, vì gương đủ dài để phản chiếu cả đầu người đứng trước",
        "dung": false,
        "vi_sao": "Tia từ đỉnh đầu phải tới gương ở điểm giữa đỉnh đầu và mắt ; điểm đó cao hơn mép trên gương nên không có gương ở đó."
       },
       {
-       "text": "Điểm cao nhất ngang mép trên gương",
+       "text": "Điểm cao nhất ngang mép trên gương, vì tia đi thẳng qua mép gương",
        "dung": false,
        "vi_sao": "Điểm thấy được nằm đối xứng với mắt qua độ cao của mép gương, không nằm ngang mép gương."
       }
@@ -1391,16 +1391,16 @@
      "loi_hay_gap": "Dùng tỉ số khoảng gương – tường trên khoảng mắt – gương : quên ảnh của mắt ở sau gương, nên khoảng từ ảnh của mắt tới tường phải cộng thêm khoảng mắt – gương.",
      "chon_buoc_ke": [
       {
-       "text": "Dựng ảnh $O'$ của mắt ; nối $O'$ với hai mép gương, kéo tới tường",
+       "text": "Dựng ảnh $O'$ của mắt, nối hai mép gương rồi kéo tới tường",
        "dung": true
       },
       {
-       "text": "Nối mắt với hai mép gương rồi kéo thẳng tới tường",
+       "text": "Nối mắt với hai mép gương rồi kéo thẳng tới tường, vì ánh sáng đi theo đường thẳng",
        "dung": false,
        "vi_sao": "Tia vào mắt là tia phản xạ ; vùng thấy được xác định bằng ảnh của mắt sau gương, không phải tia đi thẳng từ mắt."
       },
       {
-       "text": "Dải rộng bằng gương vì tường song song gương",
+       "text": "Dải rộng bằng gương vì tường song song gương, nên mọi tia đều song song nhau",
        "dung": false,
        "vi_sao": "Các tia từ tường qua hai mép gương tới mắt không song song nhau, nên dải trên tường không bằng bề rộng gương."
       }
@@ -1521,16 +1521,16 @@
      "loi_hay_gap": "Lấy góc giữa tia $AI$ và mặt gương làm góc tới.",
      "chon_buoc_ke": [
       {
-       "text": "$\\tan i=\\dfrac{H_AI}{AH_A}$ (pháp tuyến tại $I$ song song $AH_A$)",
+       "text": "$\\tan i=\\dfrac{H_AI}{AH_A}$ (pháp tuyến song song $AH_A$)",
        "dung": true
       },
       {
-       "text": "$\\tan i=\\dfrac{AH_A}{H_AI}$",
+       "text": "$\\tan i=\\dfrac{AH_A}{H_AI}$, vì lấy tỉ số hai cạnh góc vuông, không để ý cạnh nào đối",
        "dung": false,
        "vi_sao": "Đó là tan của góc giữa tia và mặt gương ; góc tới đo với pháp tuyến."
       },
       {
-       "text": "$\\sin i=\\dfrac{H_AI}{AH_A}$",
+       "text": "$\\sin i=\\dfrac{H_AI}{AH_A}$, vì $AH_A$ là cạnh huyền của tam giác",
        "dung": false,
        "vi_sao": "Trong tam giác vuông $AH_AI$, $H_AI$ và $AH_A$ là hai cạnh góc vuông nên dùng tan, không phải sin."
       }
@@ -1545,16 +1545,16 @@
      "loi_hay_gap": "Tính $A'B$ với cạnh vuông góc gương là hiệu hai khoảng cách : $A'$ ở sau gương nên cạnh đó là tổng hai khoảng cách.",
      "chon_buoc_ke": [
       {
-       "text": "$AI+IB=A'I+IB=A'B$, tính $A'B$ bằng định lí Py-ta-go",
+       "text": "$AI+IB=A'B$, tính $A'B$ bằng Py-ta-go",
        "dung": true
       },
       {
-       "text": "Cộng $AH_A+H_AH_B+H_BB$",
+       "text": "Cộng $AH_A+H_AH_B+H_BB$, vì tia đi theo đường vuông góc rồi men gương",
        "dung": false,
        "vi_sao": "Đó là đường gấp khúc qua hai chân đường vuông góc, không phải đường tia sáng đi."
       },
       {
-       "text": "Tính $AB$ bằng định lí Py-ta-go",
+       "text": "Tính $AB$ bằng định lí Py-ta-go, vì đường ngắn nhất là đường thẳng",
        "dung": false,
        "vi_sao": "$AB$ là đường thẳng không chạm gương ; tia phải tới gương rồi mới tới $B$."
       }
@@ -1569,7 +1569,7 @@
      "loi_hay_gap": "Chọn điểm lấy nước ở giữa hai chân đường vuông góc, hoặc đi vuông góc ra bờ rồi men theo bờ.",
      "chon_buoc_ke": [
       {
-       "text": "Bờ sông đóng vai mặt gương : quãng ngắn nhất tính như câu a, rồi $t=s/v$",
+       "text": "Bờ sông là mặt gương : quãng ngắn nhất tính như câu a, rồi $t=s/v$",
        "dung": true
       },
       {
@@ -1578,7 +1578,7 @@
        "vi_sao": "Đường gấp khúc ấy là tổng ba cạnh, dài hơn một đường gãy duy nhất qua bờ."
       },
       {
-       "text": "Lấy nước ở giữa hai chân đường vuông góc",
+       "text": "Lấy nước ở giữa hai chân đường vuông góc, vì đi đều hai bên là ngắn nhất",
        "dung": false,
        "vi_sao": "Trung điểm chỉ là điểm tốt nhất khi lều và nhà cách sông bằng nhau."
       }
@@ -1589,16 +1589,16 @@
      "hoi": "Để tia đi A → G₁ → G₂ → B, phải nối B với ảnh nào của A?",
      "lua_chon": [
       {
-       "text": "$A_{12}$ : ảnh của $A_1$ qua $G_2$, với $A_1$ là ảnh của $A$ qua $G_1$",
+       "text": "$A_{12}$ : ảnh qua $G_2$ của $A_1$, ảnh của $A$ qua $G_1$",
        "dung": true
       },
       {
-       "text": "$A_1$ : ảnh của $A$ qua $G_1$",
+       "text": "$A_1$ : ảnh của $A$ qua $G_1$, vì tia chỉ cần phản xạ một lần ở $G_1$",
        "dung": false,
        "vi_sao": "Tia còn phản xạ lần nữa trên $G_2$ trước khi tới $B$ ; mỗi lần phản xạ cần lấy ảnh thêm một lần."
       },
       {
-       "text": "Ảnh của $A$ qua $G_2$",
+       "text": "Ảnh của $A$ qua $G_2$, vì tia tới $G_2$ trước khi về $B$",
        "dung": false,
        "vi_sao": "Tia gặp $G_1$ trước ; ảnh đầu tiên phải lấy qua $G_1$, rồi mới qua $G_2$."
       }
@@ -2197,16 +2197,16 @@
      "loi_hay_gap": "Làm tròn $360^\\circ/\\alpha$ rồi dùng công thức đếm, hoặc dựng tiếp cả ảnh đã nằm sau cả hai gương.",
      "chon_buoc_ke": [
       {
-       "text": "Dựng lần lượt hai chuỗi ảnh (bắt đầu từ $G_1$ và từ $G_2$), dừng khi ảnh nằm sau cả hai gương",
+       "text": "Dựng hai chuỗi ảnh (từ $G_1$, từ $G_2$), dừng khi ảnh nằm sau cả hai gương",
        "dung": true
       },
       {
-       "text": "Làm tròn $360^\\circ/\\alpha$ rồi trừ 1",
+       "text": "Làm tròn $360^\\circ/\\alpha$ rồi trừ 1, vì mỗi ảnh chiếm một góc $\\alpha$ quanh $O$ của hai gương",
        "dung": false,
        "vi_sao": "Công thức đếm chỉ dùng khi $360^\\circ/\\alpha$ nguyên ; ở đây phải dựng từng ảnh."
       },
       {
-       "text": "Lấy phần nguyên của $360^\\circ/\\alpha$ rồi trừ 1",
+       "text": "Lấy phần nguyên của $360^\\circ/\\alpha$ rồi trừ 1, vì số ảnh chẵn là số tối đa có thể",
        "dung": false,
        "vi_sao": "Phần nguyên không cho số ảnh : phải xem từng ảnh còn nằm trước gương tiếp theo hay không."
       }
@@ -2221,16 +2221,16 @@
      "loi_hay_gap": "Dùng góc giữa tia và mặt gương thay cho góc tới, hoặc coi góc tới không đổi sau khi phản xạ.",
      "chon_buoc_ke": [
       {
-       "text": "Tam giác tạo bởi hai pháp tuyến và tia $IJ$ : $i_1+i_2=\\alpha$ (vì $i_1\\lt\\alpha$)",
+       "text": "Tam giác hai pháp tuyến và tia $IJ$ : $i_1+i_2=\\alpha$",
        "dung": true
       },
       {
-       "text": "$i_2=i_1$",
+       "text": "$i_2=i_1$, vì hai gương phản xạ giống nhau nên góc tới giữ nguyên",
        "dung": false,
        "vi_sao": "Hai gương không song song, pháp tuyến tại $I$ và $J$ lệch nhau nên góc tới thay đổi."
       },
       {
-       "text": "$i_2=\\alpha-(90^\\circ-i_1)$",
+       "text": "$i_2=\\alpha-(90^\\circ-i_1)$, vì dùng góc giữa tia và mặt gương",
        "dung": false,
        "vi_sao": "$90^\\circ-i_1$ là góc giữa tia và mặt gương, không phải góc tới ; công thức trong tam giác pháp tuyến dùng góc tới."
       }
@@ -2245,16 +2245,16 @@
      "loi_hay_gap": "Lấy góc lệch tổng làm đáp số dù nó lớn hơn $180^\\circ$, hoặc lấy thẳng góc giữa hai gương.",
      "chon_buoc_ke": [
       {
-       "text": "Cộng góc lệch $180^\\circ-2i$ của từng lần phản xạ, rồi đổi ra góc giữa hai hướng",
+       "text": "Cộng góc lệch $180^\\circ-2i$ mỗi lần phản xạ, rồi lấy góc giữa hai hướng",
        "dung": true
       },
       {
-       "text": "Góc giữa tia ló và tia tới bằng $\\alpha$",
+       "text": "Góc giữa tia ló và tia tới bằng $\\alpha$, vì tia quay đúng góc giữa hai gương",
        "dung": false,
        "vi_sao": "Phải cộng hai góc lệch của hai lần phản xạ, không lấy thẳng góc giữa hai gương."
       },
       {
-       "text": "Tổng $(180^\\circ-2i_1)+(180^\\circ-2i_2)$ chính là đáp số",
+       "text": "Tổng $(180^\\circ-2i_1)+(180^\\circ-2i_2)$ chính là đáp số, vì hai lần lệch cộng lại",
        "dung": false,
        "vi_sao": "Tổng đó lớn hơn $180^\\circ$ ; góc giữa hai hướng truyền phải từ $0^\\circ$ tới $180^\\circ$ nên lấy phần bù tới $360^\\circ$."
       }
@@ -2269,16 +2269,16 @@
      "loi_hay_gap": "Viết góc tới lần thứ ba bằng $90^\\circ$ (tới vuông góc mặt gương là góc tới $0^\\circ$), hoặc dùng $i_1+i_2=\\alpha$ như câu b khi góc tới lớn.",
      "chon_buoc_ke": [
       {
-       "text": "Theo dõi góc giữa tia và mặt gương : mỗi lần phản xạ tăng thêm $\\alpha$, lần thứ ba bằng $90^\\circ$",
+       "text": "Theo dõi góc giữa tia và mặt gương : mỗi lần phản xạ tăng $\\alpha$, lần ba bằng $90^\\circ$",
        "dung": true
       },
       {
-       "text": "Dùng $i_1+i_2=\\alpha$ như câu b",
+       "text": "Dùng $i_1+i_2=\\alpha$ như câu b, vì công thức ấy đúng với mọi góc tới",
        "dung": false,
        "vi_sao": "Công thức ấy cần $i_1\\lt\\alpha$ ; với góc tới $70^\\circ$ chưa biết điều đó có đúng không, theo dõi góc với mặt gương thì luôn dùng được."
       },
       {
-       "text": "Cho góc tới ở lần thứ ba bằng $90^\\circ$",
+       "text": "Cho góc tới ở lần thứ ba bằng $90^\\circ$, vì tia tới vuông góc là tia quay đầu",
        "dung": false,
        "vi_sao": "Tới vuông góc mặt gương nghĩa là tia trùng pháp tuyến, góc tới bằng $0^\\circ$."
       }
@@ -2293,11 +2293,11 @@
      "loi_hay_gap": "Dừng đếm ở lần tới vuông góc, hoặc đếm lần quay đầu hai lần.",
      "chon_buoc_ke": [
       {
-       "text": "Tới vuông góc thì tia quay ngược đường cũ, lặp lại các lần phản xạ theo thứ tự ngược",
+       "text": "Tới vuông góc thì tia quay ngược đường cũ, lặp lại các lần phản xạ",
        "dung": true
       },
       {
-       "text": "Dừng ở lần tới vuông góc",
+       "text": "Dừng ở lần tới vuông góc, vì tia đã đập vuông góc vào gương nên dừng lại",
        "dung": false,
        "vi_sao": "Tới vuông góc thì tia phản xạ ngược lại, vẫn còn đi tiếp giữa hai gương."
       },
@@ -2317,16 +2317,16 @@
      "loi_hay_gap": "Cho $S$ cách $G_2$ cũng $6\\ \\text{cm}$, hoặc lấy $S_1S_2$ bằng khoảng cách hai gương.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt trục vuông góc hai gương, gốc tại $G_1$ ; ảnh qua mỗi gương đối xứng qua gương đó",
+       "text": "Đặt trục vuông góc hai gương, gốc tại $G_1$ ; ảnh đối xứng qua gương",
        "dung": true
       },
       {
-       "text": "$S_1S_2$ bằng khoảng cách hai gương",
+       "text": "$S_1S_2$ bằng khoảng cách hai gương, vì hai ảnh nằm sát hai gương đó",
        "dung": false,
        "vi_sao": "$S_1$ ở sau $G_1$, $S_2$ ở sau $G_2$ ; cả hai nằm ngoài khoảng giữa hai gương."
       },
       {
-       "text": "$S_1S_2=2\\cdot6+2\\cdot6$",
+       "text": "$S_1S_2=2\\cdot6+2\\cdot6$, vì $S$ cách mỗi gương $6\\ \\text{cm}$ nên cộng hai lần",
        "dung": false,
        "vi_sao": "$S$ cách $G_2$ không phải $6\\ \\text{cm}$ mà là phần còn lại của khoảng giữa hai gương."
       }
@@ -2341,16 +2341,16 @@
      "loi_hay_gap": "Lấy $S$ làm vật cho $G_2$ (đó là $S_2$), hoặc đối xứng $S_1$ qua $G_1$ lần nữa.",
      "chon_buoc_ke": [
       {
-       "text": "Lấy $S_1$ làm vật cho $G_2$ : khoảng $S_1$ tới $G_2$ rồi đối xứng",
+       "text": "Lấy $S_1$ làm vật cho $G_2$ rồi lấy đối xứng",
        "dung": true
       },
       {
-       "text": "Lấy $S$ làm vật cho $G_2$",
+       "text": "Lấy $S$ làm vật cho $G_2$, vì ảnh sau chỉ phụ thuộc vật gốc",
        "dung": false,
        "vi_sao": "Đó là ảnh $S_2$ ; ảnh $S_{12}$ là ảnh của ảnh $S_1$."
       },
       {
-       "text": "Đối xứng $S_1$ qua $G_1$",
+       "text": "Đối xứng $S_1$ qua $G_1$, vì ảnh thứ hai lấy qua cùng một gương",
        "dung": false,
        "vi_sao": "Đối xứng qua $G_1$ lần nữa thì về lại $S$ ; ảnh tiếp theo của chuỗi phải qua gương kia."
       }

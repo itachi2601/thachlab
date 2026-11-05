@@ -14,7 +14,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
 - P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
-- `20261105120000_similar_dang_questions`: RPC `get_similar_dang_questions` (câu tương tự đúng dạng cho nút "Làm bài tương tự"); chỉ tạo hàm, lúc nào cũng được.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
@@ -54,6 +53,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
 - Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
+- Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 

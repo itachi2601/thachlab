@@ -148,16 +148,16 @@
      "loi_hay_gap": "Lấy $t=\\dfrac{Q_{ích}}{P}$ rồi quên hao phí.",
      "chon_buoc_ke": [
       {
-       "text": "$t=\\dfrac{A}{P}$ với $A$ là điện năng toàn phần",
+       "text": "$t=\\dfrac{A}{P}$ với $A$ là điện năng",
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{Q_{ích}}{P}$",
+       "text": "$t=\\dfrac{Q_{ích}}{P}$ với $Q_{ích}$ là nhiệt",
        "dung": false,
        "vi_sao": "Công suất của ấm là công suất điện toàn phần ; dùng $Q_{ích}$ là bỏ qua hao phí nên thời gian ra ngắn hơn thực tế."
       },
       {
-       "text": "$t=A\\cdot P$",
+       "text": "$t=A\\cdot P$ với $A$ là điện năng đã dùng",
        "dung": false,
        "vi_sao": "Đơn vị $\\text{J}\\cdot\\text{W}$ không phải giây ; từ $P=\\dfrac{A}{t}$ suy ra $t=\\dfrac{A}{P}$."
       }
@@ -196,7 +196,7 @@
      "loi_hay_gap": "Vẫn dùng $P=1200\\ \\text{W}$, hoặc nhân điện năng với $(U'/U)^2$ trong khi nhiệt cần đun không đổi.",
      "chon_buoc_ke": [
       {
-       "text": "$A$ vẫn bằng $\\dfrac{Q_{ích}}{H}$, chỉ công suất đổi : $t'=\\dfrac{A}{P'}$",
+       "text": "$A$ vẫn bằng $\\dfrac{Q_{ích}}{H}$, chỉ $P$ đổi : $t'=\\dfrac{A}{P'}$",
        "dung": true
       },
       {
@@ -205,7 +205,7 @@
        "vi_sao": "Ở hiệu điện thế khác định mức thì công suất không còn là số ghi ; $P'=P\\left(\\dfrac{U'}{U}\\right)^2$."
       },
       {
-       "text": "$A'=A\\left(\\dfrac{U'}{U}\\right)^2$",
+       "text": "$A'=A\\left(\\dfrac{U'}{U}\\right)^2$ vì $A$ tỉ lệ với $U^2$",
        "dung": false,
        "vi_sao": "Nhiệt cần đun không đổi và hiệu suất không đổi nên điện năng cần dùng không đổi ; chỉ khả năng cấp công suất thay đổi."
       }
@@ -263,12 +263,12 @@
        "dung": true
       },
       {
-       "text": "$Q_{hp}=A\\cdot H$",
+       "text": "$Q_{hp}=A\\cdot H$ vì $H$ là hiệu suất của ấm",
        "dung": false,
        "vi_sao": "$A\\cdot H$ chính là nhiệt có ích ; hao phí là $A(1-H)$."
       },
       {
-       "text": "$Q_{hp}=Q_{ích}$",
+       "text": "$Q_{hp}=Q_{ích}$ vì bằng nhiệt có ích",
        "dung": false,
        "vi_sao": "Hao phí và nhiệt có ích cộng lại mới bằng điện năng ; hai số này không bằng nhau."
       }
@@ -307,16 +307,16 @@
      "loi_hay_gap": "Chia toàn bộ hao phí cho độ tăng nhiệt, bỏ phần toả ra môi trường.",
      "chon_buoc_ke": [
       {
-       "text": "Thế $p$ vào một phương trình : $C=\\dfrac{Q_{hp}-p\\,t}{\\Delta t}$",
+       "text": "$C=\\dfrac{Q_{hp}-p\\,t}{\\Delta t}$ sau khi thế $p$",
        "dung": true
       },
       {
-       "text": "$C=\\dfrac{Q_{hp}}{\\Delta t}$",
+       "text": "$C=\\dfrac{Q_{hp}}{\\Delta t}$ sau khi bỏ phần toả ra",
        "dung": false,
        "vi_sao": "Phần toả ra môi trường $p\\,t$ cũng nằm trong hao phí ; bỏ nó thì $C$ ra lớn hơn thực tế."
       },
       {
-       "text": "$C=\\dfrac{p}{\\Delta t}$",
+       "text": "$C=\\dfrac{p}{\\Delta t}$ sau khi thế $p$ vào",
        "dung": false,
        "vi_sao": "$p$ là công suất (oát) còn $C$ là nhiệt dung ($\\text{J/K}$) ; đơn vị không khớp."
       }
@@ -418,7 +418,7 @@
      "loi_hay_gap": "Cộng hai dòng định mức, hoặc lấy dòng định mức lớn hơn.",
      "chon_buoc_ke": [
       {
-       "text": "Lấy dòng định mức nhỏ hơn trong hai đèn",
+       "text": "Lấy dòng định mức nhỏ hơn",
        "dung": true
       },
       {
@@ -466,11 +466,11 @@
      "loi_hay_gap": "Cho $R_x$ nhận dòng định mức của $Đ_2$ hoặc cho là bằng không vì $Đ_1$ đã đủ.",
      "chon_buoc_ke": [
       {
-       "text": "Dòng mạch chính trừ phần dòng $Đ_1$ cần",
+       "text": "Dòng mạch chính trừ dòng của $Đ_1$",
        "dung": true
       },
       {
-       "text": "Bằng dòng mạch chính",
+       "text": "Bằng dòng mạch chính, $Đ_1$ không lấy",
        "dung": false,
        "vi_sao": "Dòng mạch chính chia hai nhánh ; $R_x$ chỉ nhận phần $Đ_1$ không dùng."
       },
@@ -490,11 +490,11 @@
      "loi_hay_gap": "Dùng hiệu điện thế của cả nguồn thay vì hiệu điện thế trên cụm song song.",
      "chon_buoc_ke": [
       {
-       "text": "$R_x=\\dfrac{U_{đm}}{I_x}$ với $U_{đm}$ là hiệu điện thế trên $Đ_1$",
+       "text": "$R_x=\\dfrac{U_{đm}}{I_x}$ với $U_{đm}$ của $Đ_1$",
        "dung": true
       },
       {
-       "text": "$R_x=\\dfrac{U_{nguồn}}{I_x}$",
+       "text": "$R_x=\\dfrac{U_{nguồn}}{I_x}$ với $U_{nguồn}$ của cả mạch",
        "dung": false,
        "vi_sao": "$R_x$ chỉ nhận hiệu điện thế của cụm song song với $Đ_1$, không phải cả nguồn."
       },
@@ -719,12 +719,12 @@
        "dung": true
       },
       {
-       "text": "$P_R=\\dfrac{U^2}{R}$",
+       "text": "$P_R=\\dfrac{U^2}{R}$ (không có $R_0$)",
        "dung": false,
        "vi_sao": "Đó là công suất nếu cả $U$ đặt lên $R$ ; ở đây $R$ nối tiếp $R_0$ nên chỉ nhận một phần của $U$."
       },
       {
-       "text": "$P_R=\\dfrac{U^2}{R+R_0}$",
+       "text": "$P_R=\\dfrac{U^2}{R+R_0}$ (cả mạch)",
        "dung": false,
        "vi_sao": "Đó là công suất của toàn mạch, không phải của riêng biến trở."
       }
@@ -740,11 +740,11 @@
      "loi_hay_gap": "Cho $R$ rất nhỏ (dòng lớn) hoặc rất lớn (điện trở lớn) vì nghĩ công suất luôn tăng.",
      "chon_buoc_ke": [
       {
-       "text": "Đổi $P_R$ thành $\\dfrac{U^2}{\\frac{(R-R_0)^2}{R}+4R_0}$ rồi xét dấu bằng",
+       "text": "Đưa mẫu về $\\dfrac{(R-R_0)^2}{R}+4R_0$ rồi xét dấu bằng",
        "dung": true
       },
       {
-       "text": "Cho $R\\to0$ để dòng điện lớn nhất",
+       "text": "Cho $R\\to0$ để dòng điện lớn nhất, công suất cũng lớn",
        "dung": false,
        "vi_sao": "Khi $R=0$ thì $P_R=I^2R=0$ ; dòng lớn nhất làm công suất toàn mạch lớn nhất, không phải của biến trở."
       },
@@ -812,16 +812,16 @@
      "loi_hay_gap": "Lấy giá trị đối xứng qua $R_0$ theo hiệu, thay vì giải phương trình bậc hai.",
      "chon_buoc_ke": [
       {
-       "text": "Lập $\\dfrac{U^2R}{(R+R_0)^2}$ bằng công suất đó rồi giải phương trình bậc hai",
+       "text": "Cho $\\dfrac{U^2R}{(R+R_0)^2}$ bằng công suất đó rồi giải $R$",
        "dung": true
       },
       {
-       "text": "Lấy $R$ cách $R_0$ cùng một khoảng ở phía lớn hơn",
+       "text": "Lấy $R$ cách $R_0$ cùng một khoảng ở phía lớn hơn, đối xứng",
        "dung": false,
        "vi_sao": "Hai nghiệm không đối xứng theo hiệu mà theo tích : $R_1R_2=R_0^2$."
       },
       {
-       "text": "Cho rằng chỉ có đúng một giá trị $R$",
+       "text": "Cho rằng chỉ có đúng một giá trị $R$, không cần giải",
        "dung": false,
        "vi_sao": "Đồ thị tăng rồi giảm nên mỗi mức công suất dưới đỉnh có hai giá trị $R$."
       }
@@ -1286,7 +1286,7 @@
      "loi_hay_gap": "Chọn dây theo dòng làm việc rồi gắn aptomat lớn hơn dòng cho phép của dây.",
      "chon_buoc_ke": [
       {
-       "text": "Chọn aptomat nhỏ nhất lớn hơn dòng làm việc rồi $S\\ge\\dfrac{I_{apt}}{J}$",
+       "text": "Chọn aptomat nhỏ nhất vượt dòng làm việc rồi $S\\ge\\dfrac{I_{apt}}{J}$",
        "dung": true
       },
       {
@@ -1295,7 +1295,7 @@
        "vi_sao": "Aptomat không được lớn hơn dòng cho phép của dây ; không thì dây nóng trước khi aptomat ngắt."
       },
       {
-       "text": "Chọn aptomat bé nhất trong dãy cho chắc",
+       "text": "Chọn aptomat bé nhất trong dãy cho chắc ăn rồi tính $S$",
        "dung": false,
        "vi_sao": "Aptomat bé hơn dòng làm việc sẽ nhảy liên tục khi các thiết bị cùng chạy."
       }
@@ -1310,11 +1310,11 @@
      "loi_hay_gap": "Chỉ cộng dòng của bình rồi bỏ dòng cũ, hoặc không so lại với dòng cho phép của dây.",
      "chon_buoc_ke": [
       {
-       "text": "Cộng công suất mới rồi chia $220\\ \\text{V}$, so với dòng cho phép của dây",
+       "text": "Cộng công suất mới rồi chia $220\\ \\text{V}$, so dòng cho phép",
        "dung": true
       },
       {
-       "text": "Chỉ tính dòng riêng của bình",
+       "text": "Chỉ tính dòng riêng của bình, không cộng thiết bị cũ",
        "dung": false,
        "vi_sao": "Nhánh dùng chung nên dòng nhánh gồm cả thiết bị cũ lẫn bình mới."
       },
@@ -1330,16 +1330,16 @@
      "hoi": "Phương án nào đúng?",
      "lua_chon": [
       {
-       "text": "Tách bình nóng lạnh sang nhánh riêng, dây $4\\ \\text{mm}^2$, aptomat $16\\ \\text{A}$",
+       "text": "Tách bình sang nhánh riêng, dây $4\\ \\text{mm}^2$, aptomat $16\\ \\text{A}$",
        "dung": true
       },
       {
-       "text": "Giữ nhánh cũ, thay aptomat $32\\ \\text{A}$",
+       "text": "Giữ nhánh cũ và dây cũ, thay aptomat $32\\ \\text{A}$ cho lớn",
        "dung": false,
        "vi_sao": "Dây $4\\ \\text{mm}^2$ chỉ chịu $20\\ \\text{A}$ ; aptomat $32\\ \\text{A}$ không ngắt khi dòng tới $25\\ \\text{A}$ nên dây nóng chảy."
       },
       {
-       "text": "Giữ dây $4\\ \\text{mm}^2$, dùng aptomat $25\\ \\text{A}$",
+       "text": "Giữ nhánh cũ, dây $4\\ \\text{mm}^2$, dùng aptomat $25\\ \\text{A}$",
        "dung": false,
        "vi_sao": "Dòng nhánh vượt $25\\ \\text{A}$ nên vẫn nhảy ; đồng thời aptomat $25\\ \\text{A}$ vượt dòng cho phép $20\\ \\text{A}$ của dây."
       }

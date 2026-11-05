@@ -625,7 +625,7 @@
      "loi_hay_gap": "Hay chia hiệu điện thế của đèn cho dòng. Cả mạch nhận hiệu điện thế của nguồn.",
      "chon_buoc_ke": [
       {
-       "text": "$R_{td}=\\dfrac{U_{nguồn}}{I_đ}$ vì nối tiếp có dòng chung",
+       "text": "$R_{td}=\\dfrac{U_{nguồn}}{I_đ}$",
        "dung": true
       },
       {
@@ -693,7 +693,7 @@
      "hoi": "Khi mắc nhầm, đèn sẽ thế nào?",
      "lua_chon": [
       {
-       "text": "Sáng quá mức bình thường, có thể hỏng",
+       "text": "Sáng quá mức, có thể hỏng",
        "dung": true
       },
       {
@@ -702,7 +702,7 @@
        "vi_sao": "Đèn nhận hiệu điện thế lớn hơn $6$ V nên dòng qua đèn lớn hơn khi sáng bình thường."
       },
       {
-       "text": "Sáng bình thường",
+       "text": "Vẫn sáng bình thường",
        "dung": false,
        "vi_sao": "Đèn chỉ sáng bình thường khi nhận đúng $6$ V; ở đây nó nhận nhiều hơn."
       }
@@ -710,11 +710,11 @@
      "loi_hay_gap": "Hay nghĩ thêm điện trở thì đèn yếu đi. Ở đây đèn nhận hiệu điện thế lớn hơn mức cần.",
      "chon_buoc_ke": [
       {
-       "text": "So dòng qua đèn với dòng khi đèn sáng bình thường",
+       "text": "So dòng qua đèn với dòng định mức",
        "dung": true
       },
       {
-       "text": "So điện trở của đèn với $R_x$",
+       "text": "So điện trở của đèn với điện trở $R_x$",
        "dung": false,
        "vi_sao": "Độ sáng do dòng qua đèn quyết định, so điện trở không trả lời được."
       },

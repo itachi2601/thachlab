@@ -75,7 +75,7 @@
      "loi_hay_gap": "Hay lấy $\\dfrac{P}{I}$: kết quả đó là hiệu điện thế (V), không phải điện trở.",
      "chon_buoc_ke": [
       {
-       "text": "$R=\\dfrac{U}{I}$ (hoặc $\\dfrac{U^2}{P}$)",
+       "text": "$R=\\dfrac{U}{I}$",
        "dung": true
       },
       {
@@ -137,11 +137,11 @@
      "loi_hay_gap": "Hay chỉ tính một bóng. Năm bóng cùng bật nên điện năng gấp năm lần một bóng.",
      "chon_buoc_ke": [
       {
-       "text": "$A=5\\cdot P\\cdot t$ với $P$ (kW), $t$ (h) cả tháng",
+       "text": "$A=5\\cdot P\\cdot t$ với $P$ (kW), $t$ (h)",
        "dung": true
       },
       {
-       "text": "$A=P\\cdot t$ của một bóng",
+       "text": "$A=P\\cdot t$ của một bóng đèn",
        "dung": false,
        "vi_sao": "Có năm bóng cùng bật, phải nhân thêm 5."
       },
@@ -346,7 +346,7 @@
      "loi_hay_gap": "Hay giữ kết quả của mạch nối tiếp. Song song thì mỗi đèn có đủ $12$ V, chạy đúng định mức.",
      "chon_buoc_ke": [
       {
-       "text": "Mỗi đèn có đúng $12$ V: so hai công suất định mức",
+       "text": "Cùng $12$ V: so hai công suất định mức",
        "dung": true
       },
       {
@@ -608,7 +608,7 @@
      "loi_hay_gap": "Hay chia thẳng nhiệt lượng nước nhận cho công suất, bỏ quên hiệu suất: thời gian tính ra ngắn hơn thật.",
      "chon_buoc_ke": [
       {
-       "text": "$t=\\dfrac{A}{P}$ với $A$ là điện năng tiêu thụ",
+       "text": "$t=\\dfrac{A}{P}$",
        "dung": true
       },
       {
@@ -632,7 +632,7 @@
      "loi_hay_gap": "Hay đổi J ra kWh bằng cách chia cho $1\\,000$. Đúng là chia cho $3{,}6\\cdot10^6$ vì $1\\ \\text{kWh}=1\\,000\\ \\text{W}\\cdot3\\,600\\ \\text{s}$.",
      "chon_buoc_ke": [
       {
-       "text": "Nhân với số lần đun cả tháng ($2$ lần/ngày), rồi chia cho số jun trong một kWh",
+       "text": "Nhân với số lần đun cả tháng, rồi đổi jun ra kWh",
        "dung": true
       },
       {

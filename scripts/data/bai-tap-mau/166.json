@@ -42,7 +42,7 @@
        "dung": true
       },
       {
-       "text": "$W_{\\text{đ}}=mv^2$",
+       "text": "Quên hệ số một nửa của công thức: $W_{\\text{đ}}=mv^2$",
        "dung": false,
        "vi_sao": "Thiếu hệ số $\\dfrac{1}{2}$ nên gấp đôi giá trị đúng."
       },
@@ -114,7 +114,7 @@
        "dung": true
       },
       {
-       "text": "Cơ năng không đổi khi đổi mốc",
+       "text": "Cơ năng không đổi khi đổi mốc thế năng",
        "dung": false,
        "vi_sao": "Giá trị cơ năng phụ thuộc mốc; chỉ độ biến thiên cơ năng không phụ thuộc mốc."
       },
@@ -311,7 +311,7 @@
        "dung": true
       },
       {
-       "text": "$s=h'$ (quãng đường bằng độ cao)",
+       "text": "$s=h'$ (quãng đường dọc dốc bằng độ cao)",
        "dung": false,
        "vi_sao": "Dốc nghiêng nên quãng đường dọc dốc dài hơn độ cao: $s=\\dfrac{h'}{\\sin\\alpha}$."
       },
@@ -335,12 +335,12 @@
        "dung": true
       },
       {
-       "text": "$v_M=\\dfrac{v_B}{2}$",
+       "text": "Tại M động năng chỉ bằng nửa cơ năng nên $v_M=\\dfrac{v_B}{2}$",
        "dung": false,
        "vi_sao": "Động năng chỉ bằng nửa cơ năng, nên vận tốc nhỏ hơn $v_B$ khoảng $\\sqrt2$ lần, không phải 2 lần."
       },
       {
-       "text": "$v_M=v_B$",
+       "text": "Tại M vật vẫn có đủ động năng nên $v_M=v_B$",
        "dung": false,
        "vi_sao": "Tại M còn độ cao nên chưa có toàn bộ động năng: $v_M\\lt v_B$."
       }
@@ -355,12 +355,12 @@
        "dung": true
       },
       {
-       "text": "Gấp đôi vì khối lượng gấp đôi",
+       "text": "Gấp đôi vì khối lượng gấp đôi nên động năng gấp đôi",
        "dung": false,
        "vi_sao": "Động năng gấp đôi nhưng thế năng ban đầu cũng gấp đôi; $v$ không đổi."
       },
       {
-       "text": "Nhỏ hơn vì vật nặng khó tăng tốc",
+       "text": "Nhỏ hơn vì vật nặng thì khó tăng tốc hơn",
        "dung": false,
        "vi_sao": "Bỏ qua ma sát, mọi vật trượt cùng dốc đều có gia tốc như nhau."
       }
@@ -434,12 +434,12 @@
        "dung": true
       },
       {
-       "text": "$F_{ms}=\\mu mg$",
+       "text": "Như trên mặt ngang: $F_{ms}=\\mu mg$",
        "dung": false,
        "vi_sao": "Đó là công thức trên mặt ngang; trên dốc áp lực nhỏ hơn $mg$."
       },
       {
-       "text": "$F_{ms}=\\mu mg\\sin\\alpha$",
+       "text": "Dùng thành phần dọc dốc: $F_{ms}=\\mu mg\\sin\\alpha$",
        "dung": false,
        "vi_sao": "$\\sin\\alpha$ gắn với thành phần dọc dốc kéo vật xuống; áp lực vuông góc dốc đi với $\\cos\\alpha$."
       }
@@ -458,12 +458,12 @@
        "dung": true
       },
       {
-       "text": "$A=F_{ms}\\cdot h$",
+       "text": "Lực ma sát nhân với độ cao đã hạ: $A=F_{ms}\\cdot h$",
        "dung": false,
        "vi_sao": "$h$ là độ cao; lực ma sát sinh công trên quãng đường đi, không phải độ cao."
       },
       {
-       "text": "$A=F_{ms}\\cdot l\\cdot\\cos\\alpha$",
+       "text": "Lực ma sát hợp góc với dốc nên $A=F_{ms}\\cdot l\\cdot\\cos\\alpha$",
        "dung": false,
        "vi_sao": "Lực ma sát cùng phương với chuyển động nên không nhân thêm $\\cos\\alpha$."
       }
@@ -482,12 +482,12 @@
        "dung": true
       },
       {
-       "text": "$W_2=W_1$ (cơ năng bảo toàn)",
+       "text": "Ma sát nhỏ nên coi như cơ năng bảo toàn: $W_2=W_1$",
        "dung": false,
        "vi_sao": "Có ma sát nên cơ năng giảm, không bảo toàn."
       },
       {
-       "text": "$W_2=W_1+A_{ms}$",
+       "text": "Công ma sát cộng vào cơ năng: $W_2=W_1+A_{ms}$",
        "dung": false,
        "vi_sao": "Công của ma sát là công cản, làm giảm cơ năng chứ không tăng."
       }
@@ -506,12 +506,12 @@
        "dung": true
       },
       {
-       "text": "$Q=W_2$",
+       "text": "Nhiệt toả ra bằng cơ năng còn lại ở chân dốc: $Q=W_2$",
        "dung": false,
        "vi_sao": "$W_2$ là cơ năng còn lại (động năng ở chân dốc), không phải phần mất đi."
       },
       {
-       "text": "$Q=W_1$",
+       "text": "Nhiệt toả ra bằng toàn bộ cơ năng ban đầu: $Q=W_1$",
        "dung": false,
        "vi_sao": "Chỉ phần mất đi mới thành nhiệt; ở chân dốc vật vẫn còn động năng."
       }
@@ -568,12 +568,12 @@
        "dung": true
       },
       {
-       "text": "Rơi tự do từ độ cao $l$: $v=\\sqrt{2gl}$",
+       "text": "Em bé rơi tự do hết độ cao $l$: $v=\\sqrt{2gl}$",
        "dung": false,
        "vi_sao": "Vật chuyển động trên cung tròn và chỉ hạ một độ cao $h$, không rơi hết chiều dài dây."
       },
       {
-       "text": "$v=gt$",
+       "text": "Dùng chuyển động nhanh dần đều: $v=gt$",
        "dung": false,
        "vi_sao": "Không biết thời gian, và chuyển động trên cung tròn không có gia tốc không đổi."
       }
@@ -616,12 +616,12 @@
        "dung": true
       },
       {
-       "text": "$v'=\\dfrac{v_O}{2}$",
+       "text": "Động năng chỉ bằng nửa cơ năng cực đại: $v'=\\dfrac{v_O}{2}$",
        "dung": false,
        "vi_sao": "Động năng chỉ bằng nửa cơ năng cực đại nên vận tốc giảm $\\sqrt2$ lần, không phải 2 lần."
       },
       {
-       "text": "$v'=v_O$",
+       "text": "Vật tới vị trí đó có vận tốc cực đại: $v'=v_O$",
        "dung": false,
        "vi_sao": "Tại vị trí đó vật chưa tới O nên chưa có vận tốc cực đại."
       }
@@ -636,12 +636,12 @@
        "dung": true
       },
       {
-       "text": "Tại hai vị trí biên",
+       "text": "Tại hai vị trí biên (lò xo dãn hoặc nén tối đa)",
        "dung": false,
        "vi_sao": "Ở biên vật dừng tức thời nên động năng bằng 0; thế năng đàn hồi cực đại."
       },
       {
-       "text": "Tại mọi vị trí như nhau",
+       "text": "Tại mọi vị trí như nhau vì cơ năng không đổi",
        "dung": false,
        "vi_sao": "Cơ năng không đổi nhưng phân bố giữa động năng và thế năng đàn hồi đổi theo vị trí."
       }
@@ -653,7 +653,7 @@
        "dung": true
       },
       {
-       "text": "Dùng $W_t=mgh$ cho thế năng của lò xo nằm ngang",
+       "text": "Dùng $W_t=mgh$ cho thế năng của lò xo nằm ngang rồi so sánh các độ cao của vật",
        "dung": false,
        "vi_sao": "Thế năng của lò xo là thế năng đàn hồi; vật không đổi độ cao nên không có $mgh$ thay đổi."
       },
@@ -764,7 +764,7 @@
        "dung": true
       },
       {
-       "text": "$v=\\sqrt{2gh}$ với $h$ là độ cao còn lại",
+       "text": "Áp dụng $v=\\sqrt{2gh}$ với $h$ là độ cao còn lại của vật",
        "dung": false,
        "vi_sao": "$h$ còn lại không phải độ cao đã rơi; công thức đó cần độ giảm độ cao."
       },
@@ -808,7 +808,7 @@
        "dung": true
       },
       {
-       "text": "Đường nằm ngang như khi không có cản",
+       "text": "Đường nằm ngang giống như khi không có lực cản",
        "dung": false,
        "vi_sao": "Có cản thì cơ năng bị mất dần, không giữ nguyên."
       },
@@ -825,12 +825,12 @@
        "dung": true
       },
       {
-       "text": "Cơ năng bảo toàn nên không đổi",
+       "text": "Lực cản nhỏ có thể bỏ qua nên cơ năng bảo toàn, đồ thị là đường nằm ngang",
        "dung": false,
        "vi_sao": "Điều kiện bảo toàn là không có lực cản."
       },
       {
-       "text": "Cơ năng giảm theo $s^2$",
+       "text": "Công cản tăng theo bình phương quãng đường nên cơ năng giảm theo $s^2$",
        "dung": false,
        "vi_sao": "Công cản $F_c\\,s$ tỉ lệ bậc nhất với $s$, nên là đường thẳng chứ không phải parabol."
       }
@@ -1020,12 +1020,12 @@
        "dung": true
       },
       {
-       "text": "Cơ năng bảo toàn từ A đến C",
+       "text": "Cơ năng bảo toàn từ A đến C nên $W_C=W_A$",
        "dung": false,
        "vi_sao": "BC có ma sát nên cơ năng giảm, không bảo toàn."
       },
       {
-       "text": "B và C cùng độ cao nên $v_C=v_B$",
+       "text": "B và C cùng độ cao nên thế năng như nhau, $v_C=v_B$",
        "dung": false,
        "vi_sao": "Cùng độ cao chỉ nghĩa thế năng bằng nhau; ma sát vẫn làm giảm động năng."
       }
@@ -1044,7 +1044,7 @@
        "dung": true
       },
       {
-       "text": "$h_{max}=h_A$ vì cơ năng ban đầu",
+       "text": "$h_{max}=h_A$ vì cơ năng ban đầu chuyển hết thành thế năng",
        "dung": false,
        "vi_sao": "Cơ năng đã mất ở BC, nên không còn lên được độ cao ban đầu."
       },
@@ -1068,7 +1068,7 @@
        "dung": true
       },
       {
-       "text": "Vật dừng ngay khi tới C lần đầu nên $S=BC$",
+       "text": "Vật dừng ngay khi tới C lần đầu vì ma sát lớn nên $S=BC$",
        "dung": false,
        "vi_sao": "Tới C vật vẫn còn động năng, tiếp tục lên dốc CD nên chưa dừng."
       },
@@ -1092,12 +1092,12 @@
        "dung": true
       },
       {
-       "text": "Khoảng cách tính từ C: $S-BC$",
+       "text": "Khoảng cách tính từ C sau lượt thứ nhất: $S-BC$",
        "dung": false,
        "vi_sao": "Lượt thứ ba vật xuất phát từ B, nên đoạn còn lại tính từ B."
       },
       {
-       "text": "Vật dừng tại C vì $S$ lớn hơn $BC$",
+       "text": "Vật dừng tại C vì $S$ lớn hơn $BC$ nên hết năng lượng",
        "dung": false,
        "vi_sao": "Sau lượt đầu vật vẫn còn năng lượng nên quay lại; phải trừ các lượt đi hết BC mới biết chỗ dừng."
       }

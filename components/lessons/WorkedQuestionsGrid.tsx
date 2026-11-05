@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
+import VariantPractice from "@/components/lessons/VariantPractice";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
 import GiaiCungHinh from "@/components/lessons/cong-cu/GiaiCungHinh";
 import { TomDeKhung } from "@/components/lessons/TomDe";
@@ -101,6 +102,9 @@ function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color
                 </div>
               )}
             </div>
+          )}
+          {q.bien_the && (allOpen || !stepwise) && (
+            <VariantPractice bt={q.bien_the} color={color} stepTitles={stepwise ? q.buoc!.map((b) => b.tieu_de) : undefined} defaultStep={q.go_roi?.buoc_hay_sai} onGoRoi={(idx) => setJump((j) => ({ idx, n: (j?.n ?? 0) + 1 }))} />
           )}
           {canSimilar && (allOpen || !stepwise) ? (
             <SimilarBankPractice

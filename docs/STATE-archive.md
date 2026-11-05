@@ -857,3 +857,17 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Chỉ số tspan 13→14 L11 (commit bc839cd4b, 6 bài): đã vào DB bài 26 + 43 (1/11 22h40); CÒN 4 bài Mô tả sóng, Cường độ dòng điện, TH đo SĐĐ pin, TH đo tốc độ âm — gộp đợt `--chi-video --cho-phep-khac` sau 22h cùng 8 bài L10.
 - Kiểm DB 5/11: `profiles.is_test` có (12 tài khoản thử), `sweep_engagement_alerts` lọc `is_test`, `don-canh-bao-gia` dry-run 3/11 rỗng; 73 đề 1102–1174 đều Hiện, deploy 5/11 10h47; 8 bài L10 tspan 14 đã ở DB; HSG9 151, 152, 156, 158, 163, 178 đã Hiện; `hsg-ai-grade` ACTIVE v11 (17/10) + secret `ANTHROPIC_API_KEY` có.
 - 5/11 ~14h: đăng 4 bài L11 tspan 14 (27, 34, 41, 45) bằng `cap-nhat-ly-thuyet.sh --chi-video --cho-phep-khac`; đối chiếu trước: DB và file chỉ khác cỡ chữ tspan sub; kiểm sau: 0 còn 12–13. Sao lưu `scripts/logs/ly-thuyet-bai{27,34,41,45}-backup-17938509*/17938510*.json`.
+
+## Migration — 5/11/2026 11:05 (đã chạy, log `scripts/logs/20261105-110551-*`)
+- `20261105120000_similar_dang_questions`: RPC `get_similar_dang_questions` (câu tương tự đúng dạng cho nút "Làm bài tương tự"); chỉ tạo hàm, lúc nào cũng được. Kiểm: bài 33 dạng 4 (49 câu gán) trả 10 câu, dạng không có trả 0.
+
+## Đã chạy 05/11/2026 13:06–13:10 (file 82–102, thầy bảo "đăng luôn")
+- 05/11 · Gán dạng chặng 2: 20 file `scripts/sql/gan-dang-*.sql` (3.371 dòng `question_dang`, 915 unsure; thử giao dịch hoàn tác OK) — **chạy sau 22h**: `bash scripts/run-migrations.sh --list` tìm số các file `gan-dang-*` mới rồi `--yes --only N` từng file; rollback `delete from question_dang where source like 'claude-2026-11-05-%'`. Dạng thiếu câu: `docs/dang-thieu-cau.md`.
+- 05/11 · `scripts/sql/soan-cau-dang-thieu-ly-thuyet.sql`: 95 câu mới cho 26 dạng lý thuyết thiếu câu (`docs/dang-thieu-cau.md`) — CHỜ thầy duyệt `scripts/data/soan-cau-dang-thieu/duyet.html` (câu Bỏ: `tao-sql-va-trang.py --bo stt,…`), rồi chạy sau 22h; đã thử trong giao dịch hoàn tác 95/95.
+- Kết quả: question_dang 1.573 → 5.039 dòng (3.466 mới, tổng unsure 1.313); 95 câu mới vào question_bank, 95 gán dạng, thiếu grade 0. File 85 lỗi mạng lần đầu (không ghi gì), chạy lại OK. RPC get_similar_dang_questions vai HS trả 4 câu/dạng ở 6 dạng thử.
+- 05/11 13:40 · Chặng 4 đo câu tương tự: 82/88 đúng dạng (docs/do-cau-tuong-tu-2026-11-05.md); đã đặt unsure=true 6 câu lệch (lesson 38 Dạng 4 ×4, 377728@83, 674161@153), sao lưu question_dang_bak_20261105_do (6 dòng).
+
+## 5/11/2026 13:38 — ĐÃ CHẠY 20261105200000_rank_mo_mua_2 (mục 103)
+- 5/11 · `20261105200000_rank_mo_mua_2`: đóng mùa 5 + mở 4 mùa theo khối 02/11–17/01 (bậc 0/180/…/1080, recompute); thử trong giao dịch trước, chạy sau 22h. Rollback `perf/rollback/20261105200000_rank_mo_mua_2.down.sql`.
+- Rank 5/11: L11/L12 không có mùa từ 26/10; mùa #5 L10 quá hạn chưa đóng; tên mùa 2 đã chọn (memory `project_thachlab_rank_system`), chờ thầy gật mở.
+- Đã chạy: mùa 5 đóng (77 kết quả + snapshot); mở mùa 26 L12 Lôi Đình Cảm Ứng (391 đề + 24 mục nguồn, 111 HS), 27 L11 Thợ Săn Sóng (168 + 30, 97 HS), 28 L10 Kỷ Nguyên Newton (290 + 33, 80 HS), 29 L9 Bẻ Cong Ánh Sáng (2 + 18, 24 HS); bậc 0/180/…/1080; recompute từ 02/11 khớp bản thử. Log `scripts/logs/20261105-133854-20261105200000_rank_mo_mua_2.log`. gen-database-doc không đổi.

@@ -63,16 +63,16 @@
      "loi_hay_gap": "Giữ công thức của câu a ($\\sin r=\\dfrac{\\sin i}{n}$) dù tia giờ đi ngược chiều, ra góc khúc xạ nhỏ hơn góc tới.",
      "chon_buoc_ke": [
       {
-       "text": "Viết $n\\sin30^{\\circ}=1\\cdot\\sin r$ (chất lỏng giờ là môi trường chứa tia tới)",
+       "text": "Viết $n\\sin30^{\\circ}=\\sin r$ (tia đi từ chất lỏng ra ngoài)",
        "dung": true
       },
       {
-       "text": "Viết $\\sin r=\\dfrac{\\sin30^{\\circ}}{n}$ như câu a",
+       "text": "Viết $\\sin r=\\dfrac{\\sin30^{\\circ}}{n}$ như câu a, vì khúc xạ luôn chia cho $n$",
        "dung": false,
        "vi_sao": "Ở câu a tia đi từ không khí vào; bây giờ tia đi từ chất lỏng ra nên $n$ đứng cạnh $\\sin i$."
       },
       {
-       "text": "Lấy $r=36^{\\circ}$ theo tính thuận nghịch",
+       "text": "Lấy $r=36^{\\circ}$ theo tính thuận nghịch, vì tia đi ngược đường cũ",
        "dung": false,
        "vi_sao": "Thuận nghịch chỉ áp dụng khi tia đi ngược đúng đường cũ, tức góc tới trong chất lỏng bằng $36^{\\circ}$; ở đây góc tới là $30^{\\circ}$."
       }
@@ -87,16 +87,16 @@
      "loi_hay_gap": "Cộng thẳng góc phản xạ với góc khúc xạ; hai góc đó đo từ hai nửa khác nhau của pháp tuyến nên không ghép liền nhau.",
      "chon_buoc_ke": [
       {
-       "text": "Cộng hai góc mà tia phản xạ và tia khúc xạ hợp với mặt thoáng",
+       "text": "Cộng hai góc mà hai tia hợp với mặt thoáng",
        "dung": true
       },
       {
-       "text": "Cộng góc phản xạ với góc khúc xạ $i'+r$",
+       "text": "Cộng góc phản xạ với góc khúc xạ $i'+r$, vì hai tia nằm hai bên pháp tuyến",
        "dung": false,
        "vi_sao": "Tia phản xạ đo từ nửa pháp tuyến phía trên, tia khúc xạ đo từ nửa phía dưới; hai góc này không nằm kề nhau nên tổng không phải góc giữa hai tia."
       },
       {
-       "text": "Lấy hiệu $i-r$",
+       "text": "Lấy hiệu $i-r$, vì đó là độ lệch của tia khúc xạ so với tia tới",
        "dung": false,
        "vi_sao": "Hiệu đó là góc lệch giữa phương tia tới và tia khúc xạ, không liên quan tới tia phản xạ."
       }
@@ -198,16 +198,16 @@
      "loi_hay_gap": "Đổi các lớp ra độ dày tương đương trong không khí rồi dừng ở đó; mắt cá ở trong nước nên còn phải nhân với chiết suất nước.",
      "chon_buoc_ke": [
       {
-       "text": "Đổi mọi lớp giữa đèn và cá ra độ dày tương đương trong không khí, cộng lại rồi nhân với chiết suất nước",
+       "text": "Đổi mọi lớp ra độ dày tương đương trong không khí, cộng lại, nhân chiết suất nước",
        "dung": true
       },
       {
-       "text": "Cộng thẳng các độ dài thật $36+14+150$",
+       "text": "Cộng thẳng các độ dài thật $36+14+150$, vì ánh sáng đi thẳng nên không cần đổi lớp nào",
        "dung": false,
        "vi_sao": "Cách đó bỏ qua khúc xạ ở hai mặt phân cách; đó là khoảng cách thật, không phải khoảng cách cá trông thấy."
       },
       {
-       "text": "Đổi mọi lớp ra độ dày tương đương trong không khí, cộng lại và dừng ở đó",
+       "text": "Đổi mọi lớp ra độ dày tương đương trong không khí, cộng lại và dừng ở đó, vì không khí có $n=1$",
        "dung": false,
        "vi_sao": "Kết quả đó đúng cho mắt đặt trong không khí; mắt cá ở trong nước nên phải đổi sang nước."
       }
@@ -222,16 +222,16 @@
      "loi_hay_gap": "Lấy $n_{\\text{n}}\\cdot150$ ngay, bỏ qua ảnh hưởng của lớp dầu; kết quả gần đúng nhưng lệch, vì lớp dầu mắt cá nhìn thấy cũng dày khác thật.",
      "chon_buoc_ke": [
       {
-       "text": "Lấy khoảng cách biểu kiến cá – đèn trừ khoảng cách thật từ cá lên mặt dầu",
+       "text": "Lấy khoảng cách biểu kiến cá – đèn trừ khoảng cách thật cá – mặt dầu",
        "dung": true
       },
       {
-       "text": "Lấy khoảng cách biểu kiến cá – đèn trừ $36\\ \\text{cm}$",
+       "text": "Lấy khoảng cách biểu kiến cá – đèn trừ $36\\ \\text{cm}$, vì coi cá chỉ cách mặt dầu $36\\ \\text{cm}$",
        "dung": false,
        "vi_sao": "Giữa cá và mặt dầu có cả nước lẫn dầu; trừ $36\\ \\text{cm}$ mới tới mặt phân cách dầu – nước."
       },
       {
-       "text": "Lấy $n_{\\text{n}}\\cdot150$, bỏ qua lớp dầu",
+       "text": "Lấy $n_{\\text{n}}\\cdot150$, bỏ qua lớp dầu, vì lớp dầu mỏng nên không ảnh hưởng",
        "dung": false,
        "vi_sao": "Ảnh của đèn tính từ vị trí cá; bỏ lớp dầu là bỏ sự dịch chỗ do chính lớp dầu gây ra, kết quả bị lệch."
       }
@@ -346,16 +346,16 @@
      "loi_hay_gap": "Nghĩ rằng chỉ cần che chỗ sáng nhất ngay trên đèn; mọi điểm trong vùng tròn đều có tia ló ra.",
      "chon_buoc_ke": [
       {
-       "text": "Xét xem tia nào còn ló được ra không khí, đĩa phải che hết các điểm đó",
+       "text": "Tìm vùng tia còn ló ra không khí ; đĩa phải che hết vùng đó",
        "dung": true
       },
       {
-       "text": "Lấy bán kính đĩa bằng độ sâu của bể",
+       "text": "Lấy bán kính đĩa bằng độ sâu của bể, vì đèn ở đáy nên đĩa rộng bằng độ sâu",
        "dung": false,
        "vi_sao": "Không có lí do hình học nào để bán kính đĩa bằng độ sâu; vùng cần che do góc giới hạn quyết định."
       },
       {
-       "text": "Lấy bán kính đĩa bằng nửa bán kính vùng sáng",
+       "text": "Lấy bán kính đĩa bằng nửa bán kính vùng sáng, vì tia ở giữa mới là tia mạnh nhất",
        "dung": false,
        "vi_sao": "Ngoài nửa đó vẫn còn tia có góc tới nhỏ hơn góc giới hạn, vẫn ló ra được."
       }
@@ -374,12 +374,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $R$ câu a nhân $\\dfrac{4/3}{1{,}6}$",
+       "text": "Lấy $R$ câu a nhân $\\dfrac{4/3}{1{,}6}$, vì $R$ tỉ lệ nghịch với $n$",
        "dung": false,
        "vi_sao": "$R=h\\tan i_{gh}$ mà tang không tỉ lệ với sin, nên $R$ không tỉ lệ nghịch đơn giản với $n$."
       },
       {
-       "text": "Giữ $i_{gh}$ của nước, vì độ sâu không đổi",
+       "text": "Giữ $i_{gh}$ của nước, vì độ sâu không đổi nên vùng sáng cũng không đổi",
        "dung": false,
        "vi_sao": "Góc giới hạn chỉ phụ thuộc chiết suất hai môi trường; đổi chất lỏng là đổi góc giới hạn."
       }
@@ -394,16 +394,16 @@
      "loi_hay_gap": "Nhân bán kính đĩa với $\\tan i_{gh}$ thay vì chia; ở đây biết $R$, cần tìm $h$.",
      "chon_buoc_ke": [
       {
-       "text": "Cho vùng sáng vừa bằng đĩa: $h\\tan i_{gh}=r_{\\text{đ}}$, rồi giải tìm $h$",
+       "text": "Cho vùng sáng vừa bằng đĩa: $h\\tan i_{gh}=r_{\\text{đ}}$ rồi giải $h$",
        "dung": true
       },
       {
-       "text": "Lấy $h=r_{\\text{đ}}\\tan i_{gh}$",
+       "text": "Lấy $h=r_{\\text{đ}}\\tan i_{gh}$, vì từ $R=h\\tan i_{gh}$ cứ nhân tang vào",
        "dung": false,
        "vi_sao": "Đó là đổi chỗ sai: từ $R=h\\tan i_{gh}$ thì $h=\\dfrac{R}{\\tan i_{gh}}$."
       },
       {
-       "text": "Lấy $h=\\dfrac{r_{\\text{đ}}}{\\sin i_{gh}}$",
+       "text": "Lấy $h=\\dfrac{r_{\\text{đ}}}{\\sin i_{gh}}$, vì tia tới mép đĩa là cạnh huyền",
        "dung": false,
        "vi_sao": "$\\dfrac{r_{\\text{đ}}}{\\sin i_{gh}}$ là độ dài đường đi của tia tới mép đĩa (cạnh huyền), không phải độ sâu."
       }
@@ -494,16 +494,16 @@
      "loi_hay_gap": "Quên rằng ở mặt dưới tia khúc xạ lần thứ hai ; hai mặt song song nên góc tới ở mặt dưới bằng $r$.",
      "chon_buoc_ke": [
       {
-       "text": "Viết định luật khúc xạ ở mặt dưới với góc tới bằng $r$",
+       "text": "Viết định luật khúc xạ ở mặt dưới, góc tới là $r$",
        "dung": true
       },
       {
-       "text": "Coi tia đi thẳng qua mặt dưới",
+       "text": "Coi tia đi thẳng qua mặt dưới, vì kính và không khí đều trong suốt",
        "dung": false,
        "vi_sao": "Mặt dưới cũng là mặt phân cách kính – không khí ; tia khúc xạ ở đó."
       },
       {
-       "text": "Lấy góc tới ở mặt dưới bằng $i$",
+       "text": "Lấy góc tới ở mặt dưới bằng $i$, vì tia tới ban đầu có góc $i$",
        "dung": false,
        "vi_sao": "Trong kính tia hợp với pháp tuyến góc $r$ ; hai mặt song song nên góc tới ở mặt dưới là $r$."
       }
@@ -546,12 +546,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $d$ của câu b nhân với $\\dfrac{75}{60}$",
+       "text": "Lấy $d$ của câu b nhân với $\\dfrac{75}{60}$, vì $d$ tỉ lệ với $i$",
        "dung": false,
        "vi_sao": "$d$ không tỉ lệ thuận với $i$ ; công thức có sin và cos."
       },
       {
-       "text": "Giữ $r$ như câu b, chỉ đổi $i$",
+       "text": "Giữ $r$ như câu b, chỉ đổi $i$, vì $r$ là hằng số của kính",
        "dung": false,
        "vi_sao": "Góc tới đổi thì góc khúc xạ đổi theo định luật khúc xạ."
       }
@@ -657,12 +657,12 @@
        "dung": true
       },
       {
-       "text": "$D_t=D_{\\text{đ}}\\cdot\\dfrac{n_t}{n_{\\text{đ}}}$",
+       "text": "$D_t=D_{\\text{đ}}\\cdot\\dfrac{n_t}{n_{\\text{đ}}}$, vì góc lệch tỉ lệ với chiết suất",
        "dung": false,
        "vi_sao": "Góc lệch không tỉ lệ với chiết suất ; chỉ $\\sin r_2$ tỉ lệ với $n$."
       },
       {
-       "text": "$D_t=D_{\\text{đ}}$ vì cùng góc tới",
+       "text": "$D_t=D_{\\text{đ}}$ vì cùng góc tới nên tia ló cùng hướng",
        "dung": false,
        "vi_sao": "Cùng góc tới nhưng chiết suất khác nên góc ló khác : đó chính là tán sắc."
       }
@@ -734,16 +734,16 @@
      "hoi": "Trên tờ giấy xanh lục, dải màu trông thế nào?",
      "lua_chon": [
       {
-       "text": "Chỉ vùng lục sáng rõ, vùng đỏ gần như đen",
+       "text": "Chỉ vùng lục sáng, vùng đỏ gần như đen",
        "dung": true
       },
       {
-       "text": "Dải màu vẫn đủ như trên màn trắng",
+       "text": "Dải màu vẫn đủ như trên màn trắng, vì giấy chỉ đổi độ sáng",
        "dung": false,
        "vi_sao": "Giấy lục hắt lại chủ yếu ánh sáng lục, hấp thụ phần lớn các màu khác."
       },
       {
-       "text": "Cả dải đều thành màu lục",
+       "text": "Cả dải đều thành màu lục, vì giấy lục nhuộm mọi ánh sáng thành lục",
        "dung": false,
        "vi_sao": "Chỗ chỉ có ánh sáng đỏ chiếu tới, giấy không có ánh sáng lục để hắt lại nên chỗ đó tối."
       }
@@ -771,7 +771,7 @@
      "hoi": "Với góc chiết quang 41°, ánh sáng nào ló ra khỏi mặt AC?",
      "lua_chon": [
       {
-       "text": "Chỉ ánh sáng đỏ ló ra, ánh sáng tím phản xạ toàn phần",
+       "text": "Chỉ đỏ ló ra, tím phản xạ toàn phần",
        "dung": true
       },
       {
@@ -848,16 +848,16 @@
      "hoi": "Sau khi gặp mặt bên thứ nhất, tia sáng đi thế nào?",
      "lua_chon": [
       {
-       "text": "Phản xạ toàn phần ở cả hai mặt bên, ló ra qua mặt huyền, ngược chiều tia tới",
+       "text": "Phản xạ toàn phần ở cả hai mặt bên, rồi ló ra qua mặt huyền",
        "dung": true
       },
       {
-       "text": "Khúc xạ ló ra ngoài ngay ở mặt bên thứ nhất",
+       "text": "Khúc xạ ló ra ngoài ngay ở mặt bên thứ nhất, vì tia đi từ thuỷ tinh ra không khí",
        "dung": false,
        "vi_sao": "Góc tới lớn hơn góc giới hạn thuỷ tinh – không khí nên không có tia khúc xạ."
       },
       {
-       "text": "Phản xạ toàn phần một lần rồi ló ra ở mặt bên thứ hai",
+       "text": "Phản xạ toàn phần một lần rồi ló ra ở mặt bên thứ hai, vì lần sau góc tới giảm",
        "dung": false,
        "vi_sao": "Sau lần phản xạ thứ nhất, tia gặp mặt bên thứ hai với góc tới bằng lần đầu nên lại phản xạ toàn phần."
       }
@@ -865,16 +865,16 @@
      "loi_hay_gap": "Không so góc tới với góc giới hạn mà cho tia khúc xạ ra ngoài như bình thường.",
      "chon_buoc_ke": [
       {
-       "text": "So góc tới với $i_{gh}$ của thuỷ tinh – không khí",
+       "text": "So góc tới với $i_{gh}$ thuỷ tinh – không khí",
        "dung": true
       },
       {
-       "text": "So góc tới với $90^\\circ$",
+       "text": "So góc tới với $90^\\circ$, vì tia chỉ phản xạ khi góc tới gần vuông",
        "dung": false,
        "vi_sao": "Mọi góc tới đều nhỏ hơn $90^\\circ$ ; điều kiện là góc tới $\\ge i_{gh}$."
       },
       {
-       "text": "Áp dụng ngay $n\\sin i=\\sin r$ để tìm góc ló",
+       "text": "Áp dụng ngay $n\\sin i=\\sin r$ để tìm góc ló, vì ánh sáng luôn khúc xạ",
        "dung": false,
        "vi_sao": "Phải kiểm điều kiện phản xạ toàn phần trước ; nếu $n\\sin i\\gt1$ thì không có góc ló."
       }
@@ -888,16 +888,16 @@
      "loi_hay_gap": "Viết ngược $\\sin i_{gh}=n$, hoặc lấy góc tới là $90^\\circ$ thay cho góc tìm ở bước 1.",
      "chon_buoc_ke": [
       {
-       "text": "$\\sin i\\ge\\sin i_{gh}=\\dfrac1n$, với $i$ là góc tìm ở bước 1",
+       "text": "$\\sin i\\ge\\dfrac1n$, với $i$ là góc ở bước 1",
        "dung": true
       },
       {
-       "text": "$\\sin i_{gh}=n$ rồi cho $i_{gh}\\le i$",
+       "text": "$\\sin i_{gh}=n$ rồi cho $i_{gh}\\le i$, vì $n$ là chiết suất",
        "dung": false,
        "vi_sao": "Viết ngược : $\\sin i_{gh}=\\dfrac{n_2}{n_1}=\\dfrac1n$, luôn nhỏ hơn 1."
       },
       {
-       "text": "$n\\ge\\dfrac1{\\sin90^\\circ}$",
+       "text": "$n\\ge\\dfrac1{\\sin90^\\circ}$, vì lăng kính có góc vuông",
        "dung": false,
        "vi_sao": "Góc tới là góc ở bước 1, không phải góc vuông của lăng kính."
       }
@@ -983,16 +983,16 @@
      "loi_hay_gap": "Cộng góc tới với góc khúc xạ, hoặc lấy phần bù của góc khúc xạ : cả hai góc đều đo từ cùng một pháp tuyến, cùng một phía.",
      "chon_buoc_ke": [
       {
-       "text": "Lấy hiệu góc khúc xạ và góc tới, $\\delta=r-i$",
+       "text": "Lấy hiệu hai góc, $\\delta=r-i$",
        "dung": true
       },
       {
-       "text": "$\\delta=r+i$",
+       "text": "$\\delta=r+i$, vì hai tia hợp nhau thành một góc",
        "dung": false,
        "vi_sao": "Tia tới và tia ló ở cùng phía pháp tuyến nên góc giữa chúng là hiệu, không phải tổng."
       },
       {
-       "text": "$\\delta=90^\\circ-r$",
+       "text": "$\\delta=90^\\circ-r$, vì lấy góc giữa tia ló và mặt bên",
        "dung": false,
        "vi_sao": "Đó là góc giữa tia ló và mặt bên, không phải góc giữa tia ló và phương tia tới."
       }
@@ -1428,16 +1428,16 @@
      "loi_hay_gap": "Lấy luôn góc giới hạn làm góc với trục : góc giới hạn đo so với pháp tuyến của thành, mà pháp tuyến này vuông góc với trục.",
      "chon_buoc_ke": [
       {
-       "text": "$\\theta_{max}=90^\\circ-i_{gh}$, tia càng gần trục thì góc tới ở thành càng lớn",
+       "text": "$\\theta_{max}=90^\\circ-i_{gh}$, vì góc tới ở thành phải $\\ge i_{gh}$",
        "dung": true
       },
       {
-       "text": "$\\theta_{max}=i_{gh}$",
+       "text": "$\\theta_{max}=i_{gh}$, vì $i_{gh}$ là góc lớn nhất tia hợp với trục",
        "dung": false,
        "vi_sao": "$i_{gh}$ đo so với pháp tuyến của thành ; pháp tuyến vuông góc với trục nên hai góc phụ nhau."
       },
       {
-       "text": "$90^\\circ-i_{gh}$ là góc tối thiểu với trục",
+       "text": "$90^\\circ-i_{gh}$ là góc tối thiểu với trục, vì tia sát trục khó phản xạ",
        "dung": false,
        "vi_sao": "Tia càng nghiêng so với trục thì góc tới ở thành càng nhỏ ; điều kiện góc tới $\\ge i_{gh}$ cho giới hạn trên của góc với trục."
       }
@@ -1504,12 +1504,12 @@
        "dung": true
       },
       {
-       "text": "Tia xiên đi trong vỏ với tốc độ $\\dfrac{c}{n_2}$",
+       "text": "Tia xiên đi trong vỏ với tốc độ $\\dfrac{c}{n_2}$, vì nó chạm thành",
        "dung": false,
        "vi_sao": "Tia vẫn ở trong lõi, chỉ chạm thành rồi phản xạ toàn phần."
       },
       {
-       "text": "Quãng đường tia xiên là $L\\cos\\theta_{max}$",
+       "text": "Quãng đường tia xiên là $L\\cos\\theta_{max}$, vì đường gấp khúc ngắn hơn",
        "dung": false,
        "vi_sao": "Đường gấp khúc dài hơn trục ; mỗi đoạn là cạnh huyền."
       }

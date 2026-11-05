@@ -37,7 +37,8 @@ export default function BtmPreviewPage() {
             ? Promise.resolve({ data: mock === "rong" ? [] : rows, error: null })
             : orig(fn, args);
     }
-    fetch("/xem-thu/btm.json", { cache: "no-store" })
+    const f = new URLSearchParams(location.search).get("f"); // ?f=btm-129 → nhiều bài xem thử cùng lúc (HS ảo)
+    fetch(`/xem-thu/${f && /^[\w-]+$/.test(f) ? f : "btm"}.json`, { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
       .then(setData)
       .catch((e: Error) => setErr(e.message));

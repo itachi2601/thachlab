@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$U=I\\,R_1$ vì chỉ biến trở thay đổi",
+       "text": "$U=I\\,R_1$ vì dòng điện chỉ chạy qua biến trở và nó thay đổi",
        "dung": false,
        "vi_sao": "Nguồn cấp điện cho cả $R_0$ và biến trở ; điện trở toàn mạch là $R_0+R_1$."
       },
       {
-       "text": "$U=I\\,R_0$",
+       "text": "$U=I\\,R_0$ vì $R_0$ là điện trở cố định của mạch",
        "dung": false,
        "vi_sao": "Dòng điện còn chạy qua biến trở ; hiệu điện thế nguồn là tổng hai phần."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "$I_2=I_1\\dfrac{R_1}{R_2}$",
+       "text": "$I_2=I_1\\dfrac{R_1}{R_2}$ vì dòng điện tỉ lệ nghịch với biến trở",
        "dung": false,
        "vi_sao": "Chỉ đúng khi $R_1$, $R_2$ là toàn bộ điện trở mạch ; ở đây còn $R_0$ không đổi nối tiếp."
       },
       {
-       "text": "$I_2=I_1\\dfrac{R_2}{R_1}$",
+       "text": "$I_2=I_1\\dfrac{R_2}{R_1}$ vì điện trở tăng thì dòng điện tăng theo",
        "dung": false,
        "vi_sao": "Điện trở tăng thì dòng điện giảm, không tăng."
       }
@@ -166,12 +166,12 @@
        "dung": true
       },
       {
-       "text": "$v=\\dfrac{3{,}6}{40}$ rồi chia $3{,}6$ để ra m/s",
+       "text": "$v=\\dfrac{3{,}6}{40}$ rồi chia $3{,}6$ để đổi sang m/s như đổi km/h",
        "dung": false,
        "vi_sao": "Đó là km/phút ; chia $3{,}6$ chỉ dùng đổi km/h sang m/s. Km/phút sang m/s phải nhân $\\dfrac{1000}{60}$."
       },
       {
-       "text": "$v=\\dfrac{3600}{40}$",
+       "text": "$v=\\dfrac{3600}{40}$ : đổi km ra m, giữ nguyên số phút",
        "dung": false,
        "vi_sao": "Mẫu số phải là $40\\ \\text{phút}$ đổi ra giây ($2400\\ \\text{s}$), không dùng số phút."
       }
@@ -190,12 +190,12 @@
        "dung": true
       },
       {
-       "text": "$A=\\dfrac{P}{t}$",
+       "text": "$A=\\dfrac{P}{t}$ vì điện năng là công suất tính trên mỗi giờ",
        "dung": false,
        "vi_sao": "Công suất chia thời gian ra đơn vị khác ; điện năng là tích $P\\,t$."
       },
       {
-       "text": "$A=2000\\cdot3=6000\\ \\text{kWh}$",
+       "text": "$A=2000\\cdot3=6000\\ \\text{kWh}$ : nhân công suất với thời gian",
        "dung": false,
        "vi_sao": "$2000\\ \\text{W}\\cdot3\\ \\text{h}$ cho $6000\\ \\text{Wh}$, tức $6\\ \\text{kWh}$ ; thiếu bước đổi Wh ra kWh nên sai $1000$ lần."
       }
@@ -214,12 +214,12 @@
        "dung": true
       },
       {
-       "text": "$1\\ \\text{kWh}=3600\\ \\text{J}$",
+       "text": "$1\\ \\text{kWh}=3600\\ \\text{J}$ vì một giờ có $3600$ giây, nhân vào $A$",
        "dung": false,
        "vi_sao": "$3600$ chỉ là số giây trong một giờ ; còn phải nhân $1000$ vì kW = 1000 W."
       },
       {
-       "text": "$1\\ \\text{kWh}=1000\\ \\text{J}$",
+       "text": "$1\\ \\text{kWh}=1000\\ \\text{J}$ vì tiền tố k là nghìn, nhân vào $A$",
        "dung": false,
        "vi_sao": "Tiền tố k chỉ nhân $1000$ cho oát ; còn phải nhân $3600$ giây của một giờ."
       }
@@ -302,12 +302,12 @@
        "dung": true
       },
       {
-       "text": "$R=\\dfrac{I}{U}$ vì trục hoành là $I$",
+       "text": "Lấy một điểm trên đường thẳng : $R=\\dfrac{I}{U}$ vì trục hoành là $I$",
        "dung": false,
        "vi_sao": "$R=\\dfrac{U}{I}$ không phụ thuộc cách đặt trục ; $\\dfrac{I}{U}$ là $\\dfrac{1}{R}$ (đơn vị A/V)."
       },
       {
-       "text": "$R=U\\cdot I$",
+       "text": "Lấy một điểm trên đường thẳng : $R=U\\cdot I$ cho mỗi điểm đo",
        "dung": false,
        "vi_sao": "$U\\cdot I$ là công suất (đơn vị W), không phải điện trở."
       }
@@ -322,12 +322,12 @@
        "dung": true
       },
       {
-       "text": "Dây A dốc hơn vì đường của nó dài hơn",
+       "text": "Dây A dốc hơn vì đường của nó dài hơn và kéo tới $I$ lớn hơn",
        "dung": false,
        "vi_sao": "Độ dốc là hệ số góc $\\dfrac{\\Delta U}{\\Delta I}$, không phụ thuộc đường vẽ dài hay ngắn."
       },
       {
-       "text": "Hai dây dốc như nhau vì đều là đường thẳng qua gốc",
+       "text": "Hai dây dốc như nhau vì đều là đường thẳng đi qua gốc toạ độ",
        "dung": false,
        "vi_sao": "Đều tỉ lệ thuận nhưng hệ số góc (điện trở) khác nhau nên độ dốc khác nhau."
       }
@@ -339,12 +339,12 @@
        "dung": true
       },
       {
-       "text": "Đường nào vẽ dài hơn thì dốc hơn",
+       "text": "Đường nào vẽ dài hơn trên giấy thì dốc hơn",
        "dung": false,
        "vi_sao": "Độ dài đoạn vẽ chỉ do khoảng đo, không quyết định độ dốc ; độ dốc là tỉ số $\\dfrac{\\Delta U}{\\Delta I}$."
       },
       {
-       "text": "Đường nào kết thúc ở $I$ lớn hơn thì dốc hơn",
+       "text": "Đường nào kết thúc ở $I$ lớn hơn thì dốc hơn, vì đi xa hơn",
        "dung": false,
        "vi_sao": "Điểm cuối của dây A có $I$ lớn hơn nhưng $U$ lại nhỏ hơn ; độ dốc là tỉ số $\\dfrac{\\Delta U}{\\Delta I}$."
       }
@@ -359,16 +359,16 @@
      "loi_hay_gap": "Lấy trung bình hai dòng điện của hai điểm kề, chỉ đúng khi $U$ nằm chính giữa hai điểm đó.",
      "chon_buoc_ke": [
       {
-       "text": "$I=\\dfrac{U}{R_A}$ hoặc nội suy tuyến tính giữa $(0{,}20;\\ 2{,}4)$ và $(0{,}30;\\ 3{,}6)$",
+       "text": "$I=\\dfrac{U}{R_A}$ hoặc nội suy giữa $(0{,}20;\\ 2{,}4)$ và $(0{,}30;\\ 3{,}6)$",
        "dung": true
       },
       {
-       "text": "$I=R_A\\cdot U$",
+       "text": "$I=R_A\\cdot U$ vì dòng điện tỉ lệ với cả điện trở và hiệu điện thế",
        "dung": false,
        "vi_sao": "Nhân điện trở với hiệu điện thế ra đơn vị $\\Omega\\cdot\\text{V}$, không phải ampe ; $I=\\dfrac{U}{R}$."
       },
       {
-       "text": "Lấy trung bình hai dòng điện $0{,}20\\ \\text{A}$ và $0{,}30\\ \\text{A}$",
+       "text": "Lấy trung bình hai dòng $0{,}20\\ \\text{A}$ và $0{,}30\\ \\text{A}$ vì $2{,}7\\ \\text{V}$ nằm giữa hai điểm đo",
        "dung": false,
        "vi_sao": "Chỉ đúng khi $U$ nằm chính giữa hai điểm ; $2{,}7\\ \\text{V}$ gần $2{,}4\\ \\text{V}$ hơn $3{,}6\\ \\text{V}$ nên $I$ gần $0{,}20\\ \\text{A}$ hơn."
       }
@@ -411,12 +411,12 @@
        "dung": true
       },
       {
-       "text": "Không tính được vì $0{,}25\\ \\text{A}$ nằm ngoài các điểm đo",
+       "text": "Không tính được vì $0{,}25\\ \\text{A}$ nằm ngoài các điểm đo, không có số liệu",
        "dung": false,
        "vi_sao": "Đường thẳng qua gốc, vượt ngắn nên ngoại suy được, miễn ghi rõ là dự đoán."
       },
       {
-       "text": "$U=\\dfrac{I}{R_B}$",
+       "text": "$U=\\dfrac{I}{R_B}$ vì hiệu điện thế tỉ lệ nghịch với điện trở",
        "dung": false,
        "vi_sao": "Ngược rồi : $U=I\\,R$."
       }
@@ -632,12 +632,12 @@
        "dung": true
       },
       {
-       "text": "$v_{tb}=\\dfrac{4+6+0+5}{4}$",
+       "text": "$v_{tb}=\\dfrac{4+6+0+5}{4}$ : trung bình cộng bốn vận tốc các giai đoạn",
        "dung": false,
        "vi_sao": "Các giai đoạn dài ngắn khác nhau nên không được lấy trung bình cộng các vận tốc."
       },
       {
-       "text": "$v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{chạy}}}$ (bỏ lúc dừng)",
+       "text": "$v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{chạy}}}$ (bỏ lúc dừng vì xe không tiến)",
        "dung": false,
        "vi_sao": "Tốc độ trung bình tính trên toàn bộ thời gian, kể cả lúc dừng."
       }
@@ -656,12 +656,12 @@
        "dung": true
       },
       {
-       "text": "$s(50)=5\\cdot50$ vì lúc này $v=5\\ \\text{m/s}$",
+       "text": "$s(50)=5\\cdot50$ vì lúc $t=50\\ \\text{s}$ xe đang chạy với $v=5\\ \\text{m/s}$",
        "dung": false,
        "vi_sao": "Vận tốc $5\\ \\text{m/s}$ chỉ có từ giây 45 ; phải cộng cả quãng đường của các giai đoạn trước."
       },
       {
-       "text": "$s(50)=s_{\\text{tổng}}\\cdot\\dfrac{50}{65}$",
+       "text": "$s(50)=s_{\\text{tổng}}\\cdot\\dfrac{50}{65}$ vì quãng đường tỉ lệ thời gian",
        "dung": false,
        "vi_sao": "Xe không chạy đều nên quãng đường không tỉ lệ với thời gian."
       }
@@ -680,12 +680,12 @@
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{150}{4}$ (vận tốc giai đoạn đầu)",
+       "text": "$t=\\dfrac{150}{4}$ vì giai đoạn đầu có vận tốc $4\\ \\text{m/s}$, đi đều tới đó",
        "dung": false,
        "vi_sao": "Xe chỉ chạy $4\\ \\text{m/s}$ trong $20\\ \\text{s}$ đầu ($80\\ \\text{m}$) ; sau đó chạy nhanh hơn."
       },
       {
-       "text": "$t=\\dfrac{150}{4{,}15}$ (dùng tốc độ trung bình)",
+       "text": "$t=\\dfrac{150}{4{,}15}$ (dùng tốc độ trung bình của cả hành trình)",
        "dung": false,
        "vi_sao": "Tốc độ trung bình của cả hành trình không áp dụng cho từng đoạn."
       }
@@ -872,12 +872,12 @@
        "dung": true
       },
       {
-       "text": "Cộng đại số các độ lệch $t_i-t_{tb}$ rồi chia cho $5$",
+       "text": "Cộng đại số các độ lệch $t_i-t_{tb}$ (giữ dấu) rồi chia cho $5$ lần đo",
        "dung": false,
        "vi_sao": "Độ lệch dương và âm triệt tiêu nhau nên ra gần $0$ một cách vô lí."
       },
       {
-       "text": "Bình phương các độ lệch rồi cộng lại",
+       "text": "Bình phương các độ lệch rồi cộng lại và lấy căn bậc hai",
        "dung": false,
        "vi_sao": "Cách tính ở đây lấy trung bình độ lệch tuyệt đối, không bình phương."
       }
@@ -896,12 +896,12 @@
        "dung": true
       },
       {
-       "text": "$\\Delta t=\\Delta t_{ng}$ (bỏ sai số dụng cụ)",
+       "text": "$\\Delta t=\\Delta t_{ng}$ (bỏ sai số dụng cụ vì rất nhỏ)",
        "dung": false,
        "vi_sao": "Sai số dụng cụ luôn có mặt, bằng nửa ĐCNN ; phải cộng vào. Bỏ đi thì ra $0{,}12\\ \\text{s}$, làm tròn thành $0{,}1\\ \\text{s}$, khác kết quả đúng."
       },
       {
-       "text": "$\\Delta t=\\Delta t_{ng}+\\text{ĐCNN}$",
+       "text": "$\\Delta t=\\Delta t_{ng}+\\text{ĐCNN}$ rồi làm tròn một chữ số",
        "dung": false,
        "vi_sao": "Sai số dụng cụ lấy bằng nửa độ chia nhỏ nhất, không phải cả độ chia : được $0{,}22\\ \\text{s}$ thay vì $0{,}17\\ \\text{s}$ ; hai số cùng làm tròn thành $0{,}2\\ \\text{s}$ chỉ là trùng hợp, phương pháp vẫn sai."
       }
@@ -944,12 +944,12 @@
        "dung": true
       },
       {
-       "text": "$\\Delta v=\\dfrac{\\Delta s}{\\Delta t}$",
+       "text": "Chia hai sai số tuyệt đối : $\\Delta v=\\dfrac{\\Delta s}{\\Delta t}$ như chia hai đại lượng",
        "dung": false,
        "vi_sao": "Không chia hai sai số tuyệt đối cho nhau ; phép chia cộng các sai số tương đối."
       },
       {
-       "text": "$\\delta_v=\\delta_s-\\delta_t$",
+       "text": "Trừ sai số tương đối : $\\delta_v=\\delta_s-\\delta_t$ vì $v$ là thương của $s$ và $t$",
        "dung": false,
        "vi_sao": "Phép chia vẫn cộng các sai số tương đối ; sai số không bù trừ cho nhau."
       }
@@ -1057,12 +1057,12 @@
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{A}{P}$ lấy $A$ theo kJ",
+       "text": "$t=\\dfrac{A}{P}$ với $A$ giữ nguyên kJ, $P$ theo W",
        "dung": false,
        "vi_sao": "$A$ theo kJ phải đổi ra J (nhân $1000$) rồi chia cho oát, nếu không sai $1000$ lần."
       },
       {
-       "text": "$t=P\\cdot A$",
+       "text": "$t=P\\cdot A$ vì thời gian bằng tích công suất và nhiệt lượng",
        "dung": false,
        "vi_sao": "Nhân sẽ ra đơn vị $\\text{W}\\cdot\\text{J}$ ; $A=P\\,t$ nên $t=\\dfrac{A}{P}$."
       }
@@ -1081,12 +1081,12 @@
        "dung": true
       },
       {
-       "text": "Nhân $A=720\\ \\text{kJ}$ với giá $2000$ đồng",
+       "text": "Nhân $A=720\\ \\text{kJ}$ với số lần đun rồi nhân giá $2000$ đồng",
        "dung": false,
        "vi_sao": "Giá tính theo kWh ; phải đổi kJ ra kWh (chia $3600$) rồi mới nhân."
       },
       {
-       "text": "Chỉ tính một lần đun mỗi ngày",
+       "text": "Chỉ tính một lần đun mỗi ngày trong $30$ ngày rồi nhân giá",
        "dung": false,
        "vi_sao": "Đề cho đun hai lần mỗi ngày : số lần là $2\\cdot30$."
       }

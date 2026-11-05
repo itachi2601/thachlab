@@ -184,7 +184,7 @@
      "loi_hay_gap": "Hay tìm trên đồ thị và không thấy vì $0{,}5$ A nằm ngoài khung; phải tính bằng định luật Ohm. Chia $\\dfrac{I}{R}$ hoặc $\\dfrac{R}{I}$ cũng sai.",
      "chon_buoc_ke": [
       {
-       "text": "$U=I\\cdot R_2$ (từ $I=\\dfrac{U}{R}$)",
+       "text": "$U=I\\cdot R_2$",
        "dung": true
       },
       {
@@ -526,16 +526,16 @@
      "loi_hay_gap": "Hay chỉ chia đôi vì dây dài một nửa, quên rằng hai sợi cùng dẫn điện làm $R$ giảm thêm.",
      "chon_buoc_ke": [
       {
-       "text": "Dài một nửa và hai sợi cùng dẫn điện: $R'=\\dfrac{R}{4}$",
+       "text": "Dài nửa, tiết diện gấp đôi: $R'=\\dfrac{R}{4}$",
        "dung": true
       },
       {
-       "text": "$R'=\\dfrac{R}{2}$ vì dây dài một nửa",
+       "text": "$R'=\\dfrac{R}{2}$ vì dây chỉ còn dài một nửa",
        "dung": false,
        "vi_sao": "Hai sợi chập nhau cùng dẫn điện, như tiết diện gấp đôi, nên $R$ giảm thêm 2 lần."
       },
       {
-       "text": "$R'=R$ vì vẫn là dây đó",
+       "text": "$R'=R$ vì vẫn là một sợi dây như cũ",
        "dung": false,
        "vi_sao": "Vật liệu giữ nguyên nhưng chiều dài và cách dẫn điện đã đổi, nên $R$ đổi."
       }

@@ -64,16 +64,16 @@
      "loi_hay_gap": "Nhân $(1-H_2)$ với công suất của than; tuabin chỉ nhận phần lò hơi đưa ra, không nhận toàn bộ $P_{nl}$.",
      "chon_buoc_ke": [
       {
-       "text": "Nhân $(1-H_2)$ với công suất vào tuabin $P_1=H_1P_{nl}$",
+       "text": "Nhân $(1-H_2)$ với công suất vào tuabin $H_1P_{nl}$",
        "dung": true
       },
       {
-       "text": "Nhân $(1-H_2)$ với $P_{nl}$",
+       "text": "Nhân $(1-H_2)$ với công suất $P_{nl}$ do nhiên liệu cháy toả ra",
        "dung": false,
        "vi_sao": "Lò hơi đã hao một phần trước đó, nên công suất vào tuabin nhỏ hơn $P_{nl}$."
       },
       {
-       "text": "Nhân $(1-H_2)$ với $P_{\\text{đ}}$",
+       "text": "Nhân $(1-H_2)$ với công suất điện $P_{\\text{đ}}$ của nhà máy",
        "dung": false,
        "vi_sao": "Công suất điện là đầu ra của máy phát, khâu cuối; tuabin nhận công suất lớn hơn nhiều."
       }
@@ -92,12 +92,12 @@
        "dung": true
       },
       {
-       "text": "Tính $m=\\dfrac{P_{\\text{đ}}\\,t}{q}$",
+       "text": "Tính $m=\\dfrac{P_{\\text{đ}}\\,t}{q}$ với $t=86\\,400\\ \\text{s}$ một ngày",
        "dung": false,
        "vi_sao": "Công suất điện chỉ là phần có ích; than phải cấp toàn bộ công suất nhiên liệu."
       },
       {
-       "text": "Tính $m=\\dfrac{P_{nl}\\,t}{q}$ với $t=24$",
+       "text": "Tính $m=\\dfrac{P_{nl}\\,t}{q}$ với $t=24$ giờ",
        "dung": false,
        "vi_sao": "Oát là jun trên giây, nên thời gian phải đổi ra giây."
       }
@@ -358,12 +358,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ đổi $h$, giữ $L=250\\ \\text{m}^3\\text{/s}$",
+       "text": "Chỉ đổi $h$ xuống mức mới, giữ $L=250\\ \\text{m}^3\\text{/s}$",
        "dung": false,
        "vi_sao": "Mùa khô lưu lượng cũng giảm; công suất tỉ lệ với cả hai thừa số."
       },
       {
-       "text": "Chỉ đổi $L$, giữ $h=95\\ \\text{m}$",
+       "text": "Chỉ đổi $L$ xuống mức mới, giữ $h=95\\ \\text{m}$",
        "dung": false,
        "vi_sao": "Mực hồ hạ nên độ cao cột nước cũng giảm."
       }
@@ -453,12 +453,12 @@
        "dung": true
       },
       {
-       "text": "Tính $m=\\dfrac{H_{than}\\,A}{q}$",
+       "text": "Tính $m=\\dfrac{H_{than}\\,A}{q}$ với $A$ tính theo jun",
        "dung": false,
        "vi_sao": "Than phải toả nhiều năng lượng hơn điện thu được, nên chia cho $H_{than}$ chứ không nhân."
       },
       {
-       "text": "Tính $m=\\dfrac{A}{q}$",
+       "text": "Tính $m=\\dfrac{A}{q}$ với $A$ đổi ra jun, bỏ qua hao phí",
        "dung": false,
        "vi_sao": "Bỏ qua hao phí của nhà máy than; phần lớn năng lượng than thành nhiệt thải."
       }
@@ -541,12 +541,12 @@
        "dung": true
       },
       {
-       "text": "Tính $P=I\\,S$",
+       "text": "Tính $P=I\\,S$ cho một tấm pin",
        "dung": false,
        "vi_sao": "Đó là công suất nắng chiếu lên tấm; pin chỉ biến $20\\,\\%$ thành điện."
       },
       {
-       "text": "Tính $P=H_{pin}\\,I$",
+       "text": "Tính $P=H_{pin}\\,I$ cho cả tấm pin",
        "dung": false,
        "vi_sao": "Đó là công suất điện trên $1\\ \\text{m}^2$; tấm có diện tích $2\\ \\text{m}^2$."
       }
@@ -609,7 +609,7 @@
      "loi_hay_gap": "So với số tấm của câu b thay vì so với nhu cầu: hệ ở câu b đã dư điện.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm số tấm đặt vừa mái, điện các tấm đó cho mỗi ngày; lấy nhu cầu ngày trừ đi rồi nhân $30$",
+       "text": "Lấy số tấm vừa mái, nhu cầu ngày trừ điện các tấm đó rồi nhân $30$",
        "dung": true
       },
       {
@@ -633,11 +633,11 @@
      "loi_hay_gap": "Tính tiền tiết kiệm theo toàn bộ điện hệ pin phát ra; phần dư không bán nên không thành tiền.",
      "chon_buoc_ke": [
       {
-       "text": "Tiền tiết kiệm mỗi tháng là tiền của $375\\ \\text{kWh}$; chia tiền lắp đặt cho số đó rồi đổi tháng ra năm",
+       "text": "Tiền tiết kiệm mỗi tháng là tiền $375\\ \\text{kWh}$; chia tiền lắp đặt cho số đó, đổi ra năm",
        "dung": true
       },
       {
-       "text": "Tính tiền tiết kiệm theo toàn bộ điện năng 9 tấm phát ra mỗi tháng",
+       "text": "Tính tiền tiết kiệm theo toàn bộ điện năng 9 tấm phát ra mỗi tháng, kể cả điện dư",
        "dung": false,
        "vi_sao": "Phần điện dư không bán được nên không tiết kiệm thêm đồng nào."
       },
@@ -921,12 +921,12 @@
        "dung": true
       },
       {
-       "text": "$A=\\dfrac{A_{\\text{ích}}}{H_{\\text{đc}}}$",
+       "text": "$A=\\dfrac{A_{\\text{ích}}}{H_{\\text{đc}}}$ rồi quy sang kWh",
        "dung": false,
        "vi_sao": "Quên khâu sạc : ổ điện phải cấp nhiều hơn phần đi vào acquy."
       },
       {
-       "text": "$A=\\dfrac{A_{\\text{ích}}}{(H_s+H_{\\text{đc}})/2}$",
+       "text": "$A=\\dfrac{A_{\\text{ích}}}{(H_s+H_{\\text{đc}})/2}$ rồi đổi ra kWh",
        "dung": false,
        "vi_sao": "Hai khâu nối tiếp thì hiệu suất nhân nhau, không lấy trung bình."
       }
@@ -969,12 +969,12 @@
        "dung": true
       },
       {
-       "text": "tiền xăng $-$ tiền điện mỗi ngày",
+       "text": "tiền xăng $-$ tiền điện mỗi ngày, chưa đổi ra năm",
        "dung": false,
        "vi_sao": "Đó là số tiết kiệm một ngày ; đề hỏi một năm."
       },
       {
-       "text": "tiền xăng mỗi ngày $\\times365$",
+       "text": "tiền xăng mỗi ngày $\\times365$, không trừ tiền điện",
        "dung": false,
        "vi_sao": "Dùng xe điện vẫn phải trả tiền điện ; tiết kiệm là phần chênh lệch."
       }

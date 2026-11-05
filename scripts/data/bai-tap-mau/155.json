@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$R=F_1+F_2$",
+       "text": "$R=F_1+F_2$ : hai lực cùng phương thì lấy tổng hai độ lớn",
        "dung": false,
        "vi_sao": "Cộng độ lớn chỉ khi cùng chiều ; ngược chiều thì hai lực triệt tiêu bớt."
       },
       {
-       "text": "$R=\\sqrt{F_2^2-F_1^2}$",
+       "text": "$R=\\sqrt{F_2^2-F_1^2}$ : lấy căn của hiệu hai bình phương độ lớn",
        "dung": false,
        "vi_sao": "Không có quy tắc nào dùng căn của hiệu bình phương ; hai lực cùng phương thì chỉ cần lấy hiệu độ lớn."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "$R=F_1+F_2$",
+       "text": "$R=F_1+F_2$ (cộng độ lớn của hai lực thành phần)",
        "dung": false,
        "vi_sao": "Cộng độ lớn chỉ khi cùng chiều. Hai lực vuông góc là hai cạnh, hợp lực là đường chéo nên ngắn hơn tổng."
       },
       {
-       "text": "$R=|F_2-F_1|$",
+       "text": "$R=|F_2-F_1|$ (lấy hiệu hai độ lớn của hai lực)",
        "dung": false,
        "vi_sao": "Hiệu độ lớn chỉ đúng khi hai lực ngược chiều."
       }
@@ -152,12 +152,12 @@
        "dung": true
       },
       {
-       "text": "$2T\\cos\\theta=P$",
+       "text": "$2T\\cos\\theta=P$ : chiếu lên phương thẳng đứng, dùng cos cho góc lệch",
        "dung": false,
        "vi_sao": "$\\theta$ đo với phương ngang nên thành phần đứng của lực căng là $T\\sin\\theta$ ; $\\cos\\theta$ là thành phần ngang."
       },
       {
-       "text": "$T=\\dfrac{P}{2}$",
+       "text": "$T=\\dfrac{P}{2}$ : hai dây chia đều trọng lượng, mỗi dây đỡ một nửa",
        "dung": false,
        "vi_sao": "Chỉ đúng khi hai dây thẳng đứng. Dây nghiêng thì mỗi dây phải căng hơn để thành phần đứng đủ đỡ đèn."
       }
@@ -189,12 +189,12 @@
        "dung": true
       },
       {
-       "text": "So trọng lượng đèn với giới hạn $55\\ \\text{N}$",
+       "text": "So trọng lượng đèn với giới hạn $55\\ \\text{N}$ của dây treo",
        "dung": false,
        "vi_sao": "Mỗi dây chỉ chịu lực căng của chính nó, không chịu cả trọng lượng : $P=60\\ \\text{N}$ vượt $55\\ \\text{N}$ nhưng mỗi dây chỉ căng $50\\ \\text{N}$, nên so như vậy sẽ kết luận sai là dây đứt."
       },
       {
-       "text": "Cộng hai lực căng rồi so với giới hạn $55\\ \\text{N}$",
+       "text": "Cộng hai lực căng lại rồi so với giới hạn $55\\ \\text{N}$ của dây",
        "dung": false,
        "vi_sao": "Giới hạn $55\\ \\text{N}$ áp dụng cho từng dây, không phải cho tổng hai dây ($2T=100\\ \\text{N}$ sẽ cho kết luận sai là dây đứt)."
       }
@@ -213,12 +213,12 @@
        "dung": true
       },
       {
-       "text": "$2T_{max}\\cos\\theta=P$",
+       "text": "Cho $T=T_{max}$ trong $2T\\cos\\theta=P$ rồi giải ra $\\theta$",
        "dung": false,
        "vi_sao": "$\\theta$ đo với phương ngang nên thành phần đứng là $T\\sin\\theta$."
       },
       {
-       "text": "$T_{max}\\sin\\theta=P$",
+       "text": "Cho $T=T_{max}$ trong $T\\sin\\theta=P$ rồi suy ra góc $\\theta$",
        "dung": false,
        "vi_sao": "Có hai dây cùng đỡ đèn nên tổng thành phần đứng là $2T\\sin\\theta$ ; viết như vậy còn ra $\\sin\\theta=60/55\\gt1$, vô lý."
       }
@@ -295,16 +295,16 @@
      "loi_hay_gap": "Ghi luôn $\\mu_nN$ vì tưởng ma sát nghỉ luôn cực đại ; hoặc ghi $0$ vì thùng không chuyển động.",
      "chon_buoc_ke": [
       {
-       "text": "Lực kéo nhỏ hơn ma sát nghỉ cực đại nên thùng đứng yên và $F_{ms}=F$",
+       "text": "Lực kéo nhỏ hơn ma sát nghỉ cực đại nên thùng đứng yên, $F_{ms}=F$",
        "dung": true
       },
       {
-       "text": "$F_{ms}=\\mu_nN$ vì ma sát nghỉ luôn bằng cực đại",
+       "text": "$F_{ms}=\\mu_nN$ vì thùng chưa trượt nên ma sát nghỉ luôn đạt cực đại",
        "dung": false,
        "vi_sao": "Ma sát nghỉ chỉ đạt cực đại khi thùng sắp trượt ; còn nhỏ hơn thì chỉ cần cân bằng lực kéo."
       },
       {
-       "text": "$F_{ms}=0$ vì thùng không chuyển động",
+       "text": "$F_{ms}=0$ vì thùng không chuyển động nên không có ma sát",
        "dung": false,
        "vi_sao": "Thùng đứng yên chính vì ma sát nghỉ cân bằng với lực kéo ; không có ma sát thì thùng đã bị kéo đi."
       }
@@ -433,12 +433,12 @@
        "dung": true
       },
       {
-       "text": "$F_{ms}=\\mu_nN$",
+       "text": "Vật đứng yên nên $F_{ms}=\\mu_nN$, vì ma sát nghỉ đạt cực đại",
        "dung": false,
        "vi_sao": "Đó chỉ là giá trị tối đa của ma sát nghỉ ; ma sát thực tế chỉ lớn bằng mức cần để vật đứng yên."
       },
       {
-       "text": "$F_{ms}=\\mu_tN$",
+       "text": "$F_{ms}=\\mu_tN$ vì mặt dốc có hệ số ma sát trượt",
        "dung": false,
        "vi_sao": "Ma sát trượt chỉ có khi vật đang trượt, mà vật này đứng yên."
       }
@@ -457,12 +457,12 @@
        "dung": true
       },
       {
-       "text": "$F=P_\\parallel-\\mu_tN$",
+       "text": "$F=P_\\parallel-\\mu_tN$ (ma sát trượt hướng lên dốc)",
        "dung": false,
        "vi_sao": "Vật đi lên nên ma sát trượt hướng xuống, cùng chiều $P_\\parallel$ ; phải cộng."
       },
       {
-       "text": "$F=P_\\parallel+\\mu_nN$",
+       "text": "$F=P_\\parallel+\\mu_nN$ (ma sát nghỉ hướng xuống dốc)",
        "dung": false,
        "vi_sao": "Đang chuyển động đều dùng ma sát trượt $\\mu_t$, không phải $\\mu_n$."
       }
@@ -481,14 +481,14 @@
        "dung": true
       },
       {
-       "text": "$\\sin\\alpha=\\mu_n$",
+       "text": "Lúc vừa trượt $P\\sin\\alpha=\\mu_nP$, suy ra $\\sin\\alpha=\\mu_n$",
        "dung": false,
-       "vi_sao": "Đẳng thức $P\\sin\\alpha=\\mu_nP\\cos\\alpha$ chia hai vế cho $P\\cos\\alpha$ cho $\\tan\\alpha=\\mu_n$, không phải $\\sin\\alpha$."
+       "vi_sao": "Áp lực lên mặt dốc là $P\\cos\\alpha$ chứ không phải $P$ ; từ $P\\sin\\alpha=\\mu_nP\\cos\\alpha$ chia hai vế cho $P\\cos\\alpha$ được $\\tan\\alpha=\\mu_n$."
       },
       {
-       "text": "$\\cos\\alpha=\\mu_n$",
+       "text": "Lúc vừa trượt $P\\cos\\alpha=\\mu_nP\\sin\\alpha$, suy ra $\\cot\\alpha=\\mu_n$",
        "dung": false,
-       "vi_sao": "Chia hai vế cho $P\\cos\\alpha$ mới ra $\\tan\\alpha$ ; không có đẳng thức $\\cos\\alpha=\\mu_n$."
+       "vi_sao": "Thành phần dọc dốc là $P\\sin\\alpha$, còn ma sát là $\\mu_nP\\cos\\alpha$ ; chia hai vế cho $P\\cos\\alpha$ mới ra $\\tan\\alpha=\\mu_n$."
       }
      ]
     },
@@ -543,12 +543,12 @@
        "dung": true
       },
       {
-       "text": "$M_v=P_v\\cdot CB$",
+       "text": "$M_v=P_v\\cdot CB$ (cánh tay đòn tính từ vật đến đầu B)",
        "dung": false,
        "vi_sao": "Cánh tay đòn tính từ trục quay A đến đường tác dụng của lực, không phải từ C đến B."
       },
       {
-       "text": "$M_v=P_v\\cdot AB$",
+       "text": "$M_v=P_v\\cdot AB$ (cánh tay đòn bằng cả chiều dài thanh)",
        "dung": false,
        "vi_sao": "$AB$ là chiều dài thanh ; vật treo ở C nên cánh tay đòn là $AC$."
       }
@@ -567,12 +567,12 @@
        "dung": true
       },
       {
-       "text": "$F=P_t+P_v$",
+       "text": "$F=P_t+P_v$ (cân bằng các lực theo phương thẳng đứng)",
        "dung": false,
        "vi_sao": "Các lực đặt ở những điểm khác nhau nên không cộng thẳng được để cân bằng moment ; điều kiện cân bằng lực dùng để tìm lực bản lề."
       },
       {
-       "text": "$F\\cdot AB=M_v$",
+       "text": "$F\\cdot AB=M_v$ (cân bằng moment, bỏ qua trọng lực thanh)",
        "dung": false,
        "vi_sao": "Thanh có khối lượng nên trọng lực thanh cũng tạo moment, không được bỏ."
       }
@@ -591,12 +591,12 @@
        "dung": true
       },
       {
-       "text": "$R=P_t+P_v$",
+       "text": "$R=P_t+P_v$ (cân bằng lực, bản lề đỡ toàn bộ trọng lượng)",
        "dung": false,
        "vi_sao": "Lực kế cũng kéo thanh lên nên bản lề chỉ đỡ phần còn lại."
       },
       {
-       "text": "$R=F$",
+       "text": "$R=F$ (bản lề và lực kế kéo ngược chiều nhau)",
        "dung": false,
        "vi_sao": "Hai lực này không đối nhau : tổng lực lên phải bằng tổng trọng lượng của thanh và vật."
       }
@@ -834,16 +834,16 @@
      "hoi": "Nếu không có lò xo, vật có nằm yên được không?",
      "lua_chon": [
       {
-       "text": "Không : thành phần dọc dốc lớn hơn ma sát nghỉ cực đại, vật trượt xuống",
+       "text": "Không : thành phần dọc dốc lớn hơn ma sát nghỉ cực đại nên vật trượt",
        "dung": true
       },
       {
-       "text": "Có : vì có ma sát nên vật luôn đứng yên",
+       "text": "Có : vì có ma sát nghỉ nên vật luôn được giữ đứng yên trên mặt dốc nghiêng",
        "dung": false,
        "vi_sao": "Ma sát nghỉ có giới hạn $\\mu N$ ; vượt giới hạn thì vật vẫn trượt."
       },
       {
-       "text": "Có : vì $\\mu$ nhỏ hơn $1$",
+       "text": "Có : vì $\\mu$ nhỏ hơn $1$ nên ma sát đủ lớn để giữ vật không trượt",
        "dung": false,
        "vi_sao": "Phải so $P_\\parallel$ với $\\mu N$ (hay $\\tan\\alpha$ với $\\mu$) ; $\\mu\\lt1$ chưa kết luận được."
       }
@@ -879,12 +879,12 @@
        "dung": true
       },
       {
-       "text": "$F_{đh}=P_\\parallel$",
+       "text": "Vật sắp trượt xuống : $F_{đh}=P_\\parallel$ vì bỏ qua ma sát nghỉ",
        "dung": false,
        "vi_sao": "Bỏ qua ma sát nghỉ ; thực tế ma sát cũng giúp giữ vật nên lò xo không phải đỡ cả $P_\\parallel$."
       },
       {
-       "text": "$F_{đh}=P_\\parallel+F_{msn,\\max}$",
+       "text": "Vật sắp trượt xuống : $F_{đh}=P_\\parallel+F_{msn,\\max}$",
        "dung": false,
        "vi_sao": "Dấu cộng ứng với lúc vật sắp trượt lên (ma sát hướng xuống) — đó là biên lớn nhất, không phải nhỏ nhất."
       }
@@ -903,12 +903,12 @@
        "dung": true
       },
       {
-       "text": "$F_{đh}=P_\\parallel-F_{msn,\\max}$",
+       "text": "Vật sắp trượt lên : $F_{đh}=P_\\parallel-F_{msn,\\max}$",
        "dung": false,
        "vi_sao": "Đó là biên nhỏ nhất ; biên lớn nhất khi ma sát nghỉ cực đại hướng cùng chiều $P_\\parallel$."
       },
       {
-       "text": "$F_{đh}=\\mu P$",
+       "text": "Vật sắp trượt lên : $F_{đh}=\\mu P$ với $P$ là áp lực",
        "dung": false,
        "vi_sao": "Ma sát nghỉ không phải lực đàn hồi, và áp lực không phải $P$."
       }
@@ -927,12 +927,12 @@
        "dung": true
       },
       {
-       "text": "$F_{ms}=\\mu N$ vì ma sát nghỉ luôn đạt cực đại",
+       "text": "$F_{ms}=\\mu N$ vì lò xo giãn $10\\ \\text{cm}$ nên ma sát nghỉ đạt cực đại",
        "dung": false,
        "vi_sao": "Ma sát nghỉ chỉ lớn bằng mức cần để vật đứng yên, không phải lúc nào cũng cực đại."
       },
       {
-       "text": "$F_{ms}=k\\,\\Delta l$",
+       "text": "$F_{ms}=k\\,\\Delta l$ vì lò xo giãn thì ma sát bằng lực của lò xo",
        "dung": false,
        "vi_sao": "$k\\,\\Delta l$ là lực đàn hồi của lò xo, không phải lực ma sát."
       }

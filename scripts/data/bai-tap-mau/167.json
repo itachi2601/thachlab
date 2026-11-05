@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$s=(v_1+v_2)t$",
+       "text": "Tổng quãng đường hai xe cùng đi được : $s=(v_1+v_2)t$",
        "dung": false,
        "vi_sao": "Đó là tổng quãng đường cả hai xe đi, bằng đúng $AB$ ; chưa phải khoảng cách từ A."
       },
       {
-       "text": "$s=v_2t$",
+       "text": "Quãng đường xe thứ hai đi được tới chỗ gặp : $s=v_2t$",
        "dung": false,
        "vi_sao": "Xe thứ hai đi từ B, nên $v_2t$ là khoảng cách từ chỗ gặp tới B chứ không phải tới A."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "$s_m=AB$, vì xe máy chạy từ A tới B",
+       "text": "Xe máy chạy một chiều từ A tới B nên $s_m=AB$, không cần tính thời gian",
        "dung": false,
        "vi_sao": "Xe máy quay đầu liên tục chứ không đi một chiều tới B ; quãng đường của nó dài hơn đoạn nó dịch chuyển được. Xe máy chỉ chạy đúng thời gian hai xe đi tới gặp nhau với tốc độ $50\\ \\text{km/h}$ nên quãng đường tính được từ $v\\cdot t$, không tự bằng $AB$."
       },
       {
-       "text": "$s_m=\\dfrac12v_mt$, vì xe đi rồi quay lại",
+       "text": "Xe đi rồi quay lại nên chỉ tính một nửa quãng đường : $s_m=\\dfrac12v_mt$",
        "dung": false,
        "vi_sao": "Tốc độ không đổi nên quãng đường mọi chiều đều cộng dồn, không bị chia đôi."
       }
@@ -114,12 +114,12 @@
        "dung": true
       },
       {
-       "text": "Chia $AB$ cho $v_1+v_2$ rồi cộng thêm $15$ phút",
+       "text": "Chia $AB$ cho $v_1+v_2$ rồi cộng thêm $15$ phút xe đã đi trước",
        "dung": false,
        "vi_sao": "Lúc 7 h hai xe không còn cách nhau $AB$ ; phải dùng khoảng cách đã giảm."
       },
       {
-       "text": "Chia khoảng cách còn lại cho $v_1$ (chỉ xe thứ nhất)",
+       "text": "Chia khoảng cách còn lại cho tốc độ $v_1$ (chỉ tính xe thứ nhất chạy)",
        "dung": false,
        "vi_sao": "Cả hai xe đều chạy lại gần nhau, nên mẫu số là tổng hai tốc độ."
       }
@@ -138,12 +138,12 @@
        "dung": true
       },
       {
-       "text": "$s_1=v_1(t+0{,}25)$",
+       "text": "Cộng thêm 15 phút đi trước lúc 6 h 45 : $s_1=v_1(t+0{,}25)$",
        "dung": false,
        "vi_sao": "Xe thứ nhất chỉ xuất phát lúc 7 h, không phải 6 h 45."
       },
       {
-       "text": "$s_1=v_1t$ với $t$ để nguyên số phút",
+       "text": "Lấy $s_1=v_1t$ với $t$ để nguyên số phút tính từ 7 h, không đổi đơn vị",
        "dung": false,
        "vi_sao": "Tốc độ tính bằng km/h nên $t$ phải đổi ra giờ trước khi nhân."
       }
@@ -201,12 +201,12 @@
        "dung": true
       },
       {
-       "text": "Hai nửa quãng đường bằng nhau nên thời gian cũng bằng nhau",
+       "text": "Hai nửa quãng đường bằng nhau nên thời gian cũng bằng nhau, tỉ số bằng 1",
        "dung": false,
        "vi_sao": "Quãng đường bằng nhau nhưng tốc độ khác nhau nên thời gian khác nhau."
       },
       {
-       "text": "$\\dfrac{t_2}{t_1}=\\dfrac{v_{tb2}}{v_1}$",
+       "text": "Tốc độ lớn hơn nên đi nhanh hơn, tỉ số thời gian bằng tỉ số tốc độ : $\\dfrac{t_2}{t_1}=\\dfrac{v_{tb2}}{v_1}$",
        "dung": false,
        "vi_sao": "Tốc độ lớn đi nhanh hơn nên mất ít thời gian hơn ; tỉ số thời gian là tỉ số nghịch đảo của tỉ số tốc độ."
       }
@@ -225,12 +225,12 @@
        "dung": true
       },
       {
-       "text": "$v_{tb}=\\dfrac{18+20+4}{3}$",
+       "text": "Lấy trung bình cộng ba tốc độ : $v_{tb}=\\dfrac{18+20+4}{3}$",
        "dung": false,
        "vi_sao": "Trung bình cộng chỉ đúng khi các đoạn có cùng thời gian ; các đoạn này thì không."
       },
       {
-       "text": "$v_{tb}=\\dfrac{18+12}{2}$",
+       "text": "Trung bình cộng hai tốc độ : $v_{tb}=\\dfrac{18+12}{2}$",
        "dung": false,
        "vi_sao": "Hai nửa quãng đường bằng nhau nhưng thời gian đi khác nhau, nên không lấy trung bình cộng hai tốc độ."
       }
@@ -273,12 +273,12 @@
        "dung": true
       },
       {
-       "text": "$AB=v_1\\cdot t$ với $v_1$ là tốc độ nửa đầu",
+       "text": "$AB=v_1\\cdot t$ với $v_1$ là tốc độ của đoạn nửa đầu",
        "dung": false,
        "vi_sao": "Tốc độ nửa đầu chỉ đúng cho nửa quãng đường đầu ; cả quãng đường phải dùng tốc độ trung bình toàn bộ."
       },
       {
-       "text": "$AB=\\dfrac{v_{tb}}{t}$",
+       "text": "Quãng đường là thương : $AB=\\dfrac{v_{tb}}{t}$",
        "dung": false,
        "vi_sao": "Quãng đường bằng tốc độ nhân thời gian, không chia."
       }
@@ -336,12 +336,12 @@
        "dung": true
       },
       {
-       "text": "$v_n=\\dfrac{AB}{t_x}$",
+       "text": "Dùng luôn thời gian xuôi dòng : $v_n=\\dfrac{AB}{t_x}$",
        "dung": false,
        "vi_sao": "Thời gian $t_x$ là lúc xuôi dòng ; tốc độ ngược dòng phải dùng thời gian chiều ngược."
       },
       {
-       "text": "$v_n=\\dfrac{AB}{t_x+t_n}$",
+       "text": "Dùng tổng thời gian đi và về : $v_n=\\dfrac{AB}{t_x+t_n}$",
        "dung": false,
        "vi_sao": "Tổng hai thời gian là cả đi lẫn về, quãng đường tương ứng là $2AB$ nên không dùng được với $AB$."
       }
@@ -408,12 +408,12 @@
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{AB}{v}$",
+       "text": "Bè trôi với tốc độ riêng của ca nô : $t=\\dfrac{AB}{v}$",
        "dung": false,
        "vi_sao": "Bè không có động cơ nên không có tốc độ riêng $v$ ; nó chỉ chuyển động theo dòng nước."
       },
       {
-       "text": "$t=\\dfrac{t_x+t_n}{2}$",
+       "text": "Bè trôi mất thời gian trung bình hai chiều : $t=\\dfrac{t_x+t_n}{2}$",
        "dung": false,
        "vi_sao": "Trung bình hai thời gian không có ý nghĩa vật lí ở đây ; bè chuyển động theo dòng với tốc độ $u$."
       }
@@ -432,12 +432,12 @@
        "dung": true
       },
       {
-       "text": "$d=AB$, vì bè thả ở A",
+       "text": "Bè thả ở A nên vẫn đứng ở A : $d=AB$",
        "dung": false,
        "vi_sao": "Bè không đứng yên mà vẫn trôi theo dòng suốt thời gian ca nô đi xuôi."
       },
       {
-       "text": "$d=AB-v\\,t_x$",
+       "text": "Bè trôi theo tốc độ ca nô : $d=AB-v\\,t_x$",
        "dung": false,
        "vi_sao": "Bè trôi với tốc độ dòng nước $u$ chứ không phải $v$."
       }
@@ -456,12 +456,12 @@
        "dung": true
       },
       {
-       "text": "Tốc độ lại gần là $v_n-u$",
+       "text": "Ca nô và bè lại gần với tốc độ $v_n-u$",
        "dung": false,
        "vi_sao": "Ca nô đi ngược dòng còn bè đi xuôi dòng, hai vật ngược chiều nên tốc độ lại gần là tổng."
       },
       {
-       "text": "$t^\\prime=\\dfrac{d}{v_n}$, coi bè đứng yên",
+       "text": "Vì bè không có động cơ nên coi như đứng yên : $t^\\prime=\\dfrac{d}{v_n}$",
        "dung": false,
        "vi_sao": "Bè vẫn trôi về phía ca nô với tốc độ $u$ nên hai vật lại gần nhanh hơn $v_n$."
       }
@@ -504,12 +504,12 @@
        "dung": true
       },
       {
-       "text": "$s=u\\,t^\\prime$",
+       "text": "Bè đã trôi từ lúc ca nô quay đầu : $s=u\\,t^\\prime$",
        "dung": false,
        "vi_sao": "Bè đã trôi từ lúc 6 h, không chỉ từ lúc ca nô quay đầu."
       },
       {
-       "text": "$s=v_n\\,t^\\prime$",
+       "text": "Quãng đường ca nô đi ngược trong $t^\\prime$ : $s=v_n\\,t^\\prime$",
        "dung": false,
        "vi_sao": "Đó là quãng đường ca nô đi ngược từ B, tức khoảng cách tới B chứ không phải tới A."
       }
@@ -563,12 +563,12 @@
        "dung": true
       },
       {
-       "text": "$L=v\\,t_2$ (dùng thời gian qua cầu)",
+       "text": "$L=v\\,t_2$ (dùng thời gian qua cầu, coi cầu như một cột điện)",
        "dung": false,
        "vi_sao": "Trong thời gian qua cầu, đầu tàu đi $L+S$ chứ không chỉ $L$."
       },
       {
-       "text": "$L$ bằng chiều dài cầu",
+       "text": "Chiều dài tàu bằng chiều dài cầu vì tàu vừa qua hết cầu",
        "dung": false,
        "vi_sao": "Chiều dài cầu và chiều dài tàu là hai đại lượng độc lập ; đề không nói chúng bằng nhau."
       }
@@ -611,12 +611,12 @@
        "dung": true
       },
       {
-       "text": "$t=\\dfrac{L_2}{v_{\\text{tđ}}}$",
+       "text": "$t=\\dfrac{L_2}{v_{\\text{tđ}}}$ : chia chiều dài tàu kia cho tốc độ tương đối",
        "dung": false,
        "vi_sao": "Hai đuôi chỉ rời nhau khi cả hai đoàn tàu đã lướt qua nhau, phải tính cả $L$ lẫn $L_2$."
       },
       {
-       "text": "$t=\\dfrac{L+L_2}{v}$ (dùng tốc độ tàu mình)",
+       "text": "Chia tổng chiều dài hai tàu cho tốc độ tàu mình : $t=\\dfrac{L+L_2}{v}$",
        "dung": false,
        "vi_sao": "Tàu kia cũng chuyển động nên tốc độ lướt qua nhau phải là tốc độ tương đối."
       }
@@ -721,12 +721,12 @@
        "dung": true
       },
       {
-       "text": "$OG=\\dfrac{AB}{2}$ (đo từ $A$)",
+       "text": "Trọng tâm cách $A$ nửa thanh : $OG=\\dfrac{AB}{2}$",
        "dung": false,
        "vi_sao": "Cánh tay đòn phải tính từ điểm tựa $O$, không phải từ đầu $A$."
       },
       {
-       "text": "$OG=\\dfrac{OB}{2}$",
+       "text": "Trọng tâm giữa đoạn $OB$ : $OG=\\dfrac{OB}{2}$",
        "dung": false,
        "vi_sao": "Trọng tâm nằm ở giữa cả thanh $AB$, không phải ở giữa đoạn $OB$."
       }
@@ -741,12 +741,12 @@
        "dung": true
       },
       {
-       "text": "Mômen của vật ở $A$ lớn hơn, nên $F$ hướng lên",
+       "text": "Mômen của vật ở $A$ lớn hơn mômen của trọng lượng thanh, nên $F$ hướng lên",
        "dung": false,
        "vi_sao": "Hướng lên làm $B$ quay lên, giống chiều quay của vật ở $A$, càng mất cân bằng."
       },
       {
-       "text": "Thanh đồng chất nên tự cân bằng, không cần $F$",
+       "text": "Thanh đồng chất nên tự cân bằng, mômen hai bên đều bằng nhau nên không cần $F$",
        "dung": false,
        "vi_sao": "Thanh đồng chất chỉ cân bằng khi $O$ ở trung điểm ; ở đây $O$ lệch về phía $A$ và còn vật treo ở $A$."
       }
@@ -758,12 +758,12 @@
        "dung": true
       },
       {
-       "text": "So trọng lượng vật ở $A$ với trọng lượng thanh",
+       "text": "So trọng lượng vật ở $A$ với trọng lượng thanh, vật nặng hơn thì mômen lớn hơn",
        "dung": false,
        "vi_sao": "Phải so mômen $F\\cdot d$, vì cánh tay đòn hai lực khác nhau."
       },
       {
-       "text": "Cho luôn $F=P_A$",
+       "text": "Cho luôn $F=P_A$ để thanh nằm ngang, không cần so sánh gì",
        "dung": false,
        "vi_sao": "Không có cơ sở : cánh tay đòn của $F$ và của vật ở $A$ khác nhau."
       }
@@ -806,12 +806,12 @@
        "dung": true
       },
       {
-       "text": "$N=P_A+P$ (không kể $F$)",
+       "text": "$N=P_A+P$ (bỏ qua $F$ vì $F$ chỉ giữ thanh nằm ngang)",
        "dung": false,
        "vi_sao": "$F$ hướng xuống cũng đè lên thanh nên $O$ phải đỡ cả phần đó."
       },
       {
-       "text": "$N=P_A+P-F$",
+       "text": "Lực $F$ cùng chiều đỡ nên trừ đi : $N=P_A+P-F$",
        "dung": false,
        "vi_sao": "$F$ hướng xuống, cùng chiều hai trọng lượng, nên phải cộng chứ không trừ."
       }
@@ -839,16 +839,16 @@
      "loi_hay_gap": "Dời vật sang phía $B$ vì tưởng \"dời ra xa\" thì cân bằng.",
      "chon_buoc_ke": [
       {
-       "text": "Vật chỉ cần cân bằng với mômen của trọng lượng thanh, nên cánh tay đòn phải ngắn đi",
+       "text": "Chỉ cần cân bằng mômen của trọng lượng thanh nên cánh tay đòn phải ngắn đi",
        "dung": true
       },
       {
-       "text": "Dời vật tới trung điểm $G$ của thanh",
+       "text": "Dời vật tới trung điểm $G$ của thanh vì trọng tâm ở đó nên đòn sẽ cân bằng",
        "dung": false,
        "vi_sao": "Tại $G$ vật tạo mômen cùng chiều với trọng lượng thanh, không đối trọng."
       },
       {
-       "text": "Dời vật tới đầu $B$",
+       "text": "Dời vật tới đầu $B$ để thanh nằm ngang nhờ cánh tay đòn dài nhất của thanh",
        "dung": false,
        "vi_sao": "Ở $B$ vật làm thanh quay về phía $B$ rất mạnh, càng mất cân bằng."
       }
@@ -953,12 +953,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $H=\\dfrac{P\\,h}{F\\,l}$ với $F$ là lực ở đầu dây",
+       "text": "Dùng $H=\\dfrac{P\\,h}{F\\,l}$ với $F$ là lực kéo ở đầu dây ròng rọc",
        "dung": false,
        "vi_sao": "Hiệu suất này chỉ của mặt nghiêng, ứng với lực dọc trên quãng đường $l$ ; lực ở đầu dây ứng với quãng đường dây $2l$."
       },
       {
-       "text": "$F_{\\text{dọc}}=F_0\\cdot H$",
+       "text": "Nhân lực lí tưởng với hiệu suất : $F_{\\text{dọc}}=F_0\\cdot H$",
        "dung": false,
        "vi_sao": "Có ma sát thì lực phải lớn hơn trường hợp lí tưởng, nhân với $H\\lt1$ làm lực nhỏ đi."
       }
@@ -977,12 +977,12 @@
        "dung": true
       },
       {
-       "text": "$F_{\\text{ms}}=(1-H)\\,P$",
+       "text": "Phần hao phí của trọng lượng : $F_{\\text{ms}}=(1-H)\\,P$",
        "dung": false,
        "vi_sao": "Hiệu suất tính trên công dọc mặt nghiêng, không nhân thẳng với trọng lượng."
       },
       {
-       "text": "$F_{\\text{ms}}=F_{\\text{dọc}}$",
+       "text": "Lực dọc chính là ma sát : $F_{\\text{ms}}=F_{\\text{dọc}}$",
        "dung": false,
        "vi_sao": "Lực dọc còn phải cân bằng thành phần trọng lực dọc mặt nghiêng $F_0$, không chỉ thắng ma sát."
       }
@@ -1025,12 +1025,12 @@
        "dung": true
       },
       {
-       "text": "$s=l$",
+       "text": "Dây chỉ đi đúng bằng quãng đường của vật : $s=l$",
        "dung": false,
        "vi_sao": "Ròng rọc động lợi lực thì thiệt đường đi, dây phải đi dài hơn vật."
       },
       {
-       "text": "$s=\\dfrac{l}{2}$",
+       "text": "Dây đi ngắn hơn vật một nửa quãng : $s=\\dfrac{l}{2}$",
        "dung": false,
        "vi_sao": "Ngược lại : lợi hai lần về lực thì phải kéo dài gấp đôi, không ngắn đi."
       }
@@ -1049,12 +1049,12 @@
        "dung": true
       },
       {
-       "text": "$A=F\\,l$",
+       "text": "Quãng đường của vật là $l$ : $A=F\\,l$",
        "dung": false,
        "vi_sao": "Lực $F$ ở đầu dây đi quãng $s=2l$, không phải $l$ ; làm vậy thiếu một nửa công."
       },
       {
-       "text": "$A=P\\,h$",
+       "text": "Công có ích nâng vật : $A=P\\,h$",
        "dung": false,
        "vi_sao": "Đó là công có ích nâng vật lên, chưa gồm công thắng ma sát."
       }
@@ -1073,12 +1073,12 @@
        "dung": true
       },
       {
-       "text": "$H_{\\text{hệ}}=0{,}8\\times0{,}5$",
+       "text": "Nhân hiệu suất với lợi lực ròng rọc : $H_{\\text{hệ}}=0{,}8\\times0{,}5$",
        "dung": false,
        "vi_sao": "$0{,}5$ là lợi về lực của ròng rọc, không phải hiệu suất ; ròng rọc không ma sát không hao phí."
       },
       {
-       "text": "$H_{\\text{hệ}}=\\dfrac{P\\,h}{F\\,l}$",
+       "text": "Công có ích chia công lực ở đầu dây : $H_{\\text{hệ}}=\\dfrac{P\\,h}{F\\,l}$",
        "dung": false,
        "vi_sao": "Mẫu số dùng $l$ trong khi lực ở đầu dây ứng với đường $2l$, sẽ ra kết quả vượt $100\\ \\%$, vô lí."
       }
@@ -1173,12 +1173,12 @@
        "dung": true
       },
       {
-       "text": "Nhánh nào chứa nhiều nước hơn thì mực nước cao hơn",
+       "text": "Nhánh nào chứa nhiều nước hơn thì mực nước cao hơn vì nước dồn về đó",
        "dung": false,
        "vi_sao": "Mực nước quyết định bởi áp suất, không phải lượng nước ; nhánh rộng chứa nhiều nước vẫn có thể thấp hơn."
       },
       {
-       "text": "Quả cân đặt ở nhánh nào thì nhánh đó nâng mực nước lên",
+       "text": "Quả cân đặt ở nhánh nào thì nhánh đó nâng mực nước lên cao hơn nhánh kia",
        "dung": false,
        "vi_sao": "Quả cân đè xuống chứ không nâng : nước bị ép dồn sang nhánh còn lại."
       }
@@ -1197,12 +1197,12 @@
        "dung": true
       },
       {
-       "text": "Hai quả cân phải bằng nhau : $m_2=m_1$",
+       "text": "Hai quả cân phải bằng nhau để cân bằng áp suất : $m_2=m_1$",
        "dung": false,
        "vi_sao": "Ngang mực nghĩa là áp suất bằng nhau, không phải lực bằng nhau ; tiết diện khác nhau thì lực khác nhau."
       },
       {
-       "text": "$F_2=F_1\\cdot\\dfrac{S_1}{S_2}$",
+       "text": "Nhân lực của nhánh nhỏ với tỉ số tiết diện : $F_2=F_1\\cdot\\dfrac{S_1}{S_2}$",
        "dung": false,
        "vi_sao": "Ngược tỉ lệ : tiết diện nhánh nhỏ bé hơn nên lực cần để cùng áp suất cũng nhỏ hơn, phải nhân $\\dfrac{S_2}{S_1}$."
       }
@@ -1332,12 +1332,12 @@
        "dung": true
       },
       {
-       "text": "$F_{A,g}=P_g+P_s$ (bỏ lực đẩy lên quả cầu)",
+       "text": "Cân bằng cả hệ : $F_{A,g}=P_g+P_s$ (bỏ lực đẩy lên quả cầu)",
        "dung": false,
        "vi_sao": "Quả cầu ngập hoàn toàn trong nước cũng chịu lực đẩy, không thể bỏ qua."
       },
       {
-       "text": "Lấy khối lượng quả cầu bằng khối lượng vật ở câu b",
+       "text": "Lấy khối lượng quả cầu bằng khối lượng vật đã dùng ở câu b",
        "dung": false,
        "vi_sao": "Vật ở câu b chỉ chịu trọng lượng ; quả cầu bị nước đẩy lên nên khối lượng khác, phải tìm qua thể tích."
       }
@@ -1380,12 +1380,12 @@
        "dung": true
       },
       {
-       "text": "$T=P_s$",
+       "text": "Dây chịu cả trọng lượng quả cầu : $T=P_s$",
        "dung": false,
        "vi_sao": "Nước đẩy quả cầu lên nên dây chỉ chịu trọng lượng trừ lực đẩy, không phải toàn bộ trọng lượng."
       },
       {
-       "text": "$T=F_{A,g}+P_g$",
+       "text": "Cộng lực đẩy với trọng lượng gỗ : $T=F_{A,g}+P_g$",
        "dung": false,
        "vi_sao": "Lực căng dây và trọng lượng gỗ cùng hướng xuống, cùng cân bằng với lực đẩy : phải lấy $F_A-P_g$."
       }
@@ -1443,12 +1443,12 @@
        "dung": true
       },
       {
-       "text": "Mực nước dâng đúng bằng độ chìm của cốc : $\\Delta h=x$",
+       "text": "Mực nước bình dâng đúng bằng độ chìm thêm của cốc : $\\Delta h=x$",
        "dung": false,
        "vi_sao": "Nước dâng thêm $V$ phân bố trên cả tiết diện bình $S$, còn độ chìm thêm $x$ tính theo tiết diện cốc $S_c$ : $\\Delta h=V/S$, $x=V/S_c$ mà $S\\gt S_c$ nên $\\Delta h\\lt x$."
       },
       {
-       "text": "$\\Delta h=\\dfrac{V_{chìm}}{S_c}$",
+       "text": "Chia thể tích chìm cho tiết diện cốc : $\\Delta h=\\dfrac{V_{chìm}}{S_c}$",
        "dung": false,
        "vi_sao": "$S_c$ là tiết diện cốc ; nước dâng trong toàn bình nên phải chia cho tiết diện bình $S$."
       }
@@ -1467,12 +1467,12 @@
        "dung": true
       },
       {
-       "text": "Độ chìm không đổi vì cốc vẫn là cốc đó",
+       "text": "Độ chìm không đổi vì cốc vẫn là cốc đó, nước chỉ nằm bên trong cốc",
        "dung": false,
        "vi_sao": "Cốc nặng thêm thì lực đẩy phải tăng, cốc phải chìm sâu hơn."
       },
       {
-       "text": "$V_{chìm}=\\dfrac{m_n}{D_n}$ (chỉ tính nước rót)",
+       "text": "Cốc nổi nên chìm đủ chỗ cho nước rót : $V_{chìm}=\\dfrac{m_n}{D_n}$ (chỉ tính nước rót)",
        "dung": false,
        "vi_sao": "Cốc vẫn nặng $200\\ \\text{g}$ ; lực đẩy phải đỡ cả cốc và nước."
       }
@@ -1515,7 +1515,7 @@
        "dung": true
       },
       {
-       "text": "Nước bị chiếm chỗ thêm có thể tích bằng thể tích thật của sỏi",
+       "text": "Nước bị chiếm chỗ thêm có thể tích bằng thể tích thật của sỏi, như mọi vật rắn",
        "dung": false,
        "vi_sao": "Đó là khi sỏi chìm hẳn xuống đáy ; sỏi trong cốc đang nổi cùng cốc nên chiếm chỗ theo khối lượng."
       },
@@ -1539,12 +1539,12 @@
        "dung": true
       },
       {
-       "text": "Sỏi vẫn chiếm chỗ theo khối lượng như khi nổi",
+       "text": "Sỏi vẫn chiếm chỗ theo khối lượng như khi nổi, dù đã chìm",
        "dung": false,
        "vi_sao": "Sỏi nằm dưới đáy được đáy bình đỡ, không còn nổi nên chỉ chiếm chỗ đúng thể tích thật."
       },
       {
-       "text": "Sỏi nằm dưới đáy nên không làm mực nước thay đổi",
+       "text": "Sỏi nằm dưới đáy bình nên không làm mực nước thay đổi thêm",
        "dung": false,
        "vi_sao": "Sỏi vẫn chiếm một thể tích trong nước nên mực nước vẫn dâng."
       }
@@ -1624,12 +1624,12 @@
        "dung": true
       },
       {
-       "text": "Đổ đầy cốc : $m=D_n\\,S_c\\,h_c$ (không trừ khối lượng cốc)",
+       "text": "Đổ đầy cốc tới miệng : $m=D_n\\,S_c\\,h_c$ (không trừ khối lượng cốc)",
        "dung": false,
        "vi_sao": "Khi miệng cốc chạm mặt nước, khối lượng cốc và nước cộng lại mới bằng khối lượng nước chiếm chỗ ; phải trừ khối lượng cốc."
       },
       {
-       "text": "$V_{chìm,max}=S\\,h_c$ (tiết diện bình)",
+       "text": "Phần chìm lấy theo tiết diện bình : $V_{chìm,max}=S\\,h_c$",
        "dung": false,
        "vi_sao": "Phần chìm của cốc là hình trụ tiết diện $S_c$, không phải tiết diện bình."
       }
@@ -1836,12 +1836,12 @@
        "dung": true
       },
       {
-       "text": "Lấy cả trọng lượng $P$ làm lực cản dọc dốc",
+       "text": "Lấy cả trọng lượng $P$ của xe làm lực cản dọc dốc vì xe bị kéo xuống",
        "dung": false,
        "vi_sao": "Xe không bị nâng thẳng đứng : dọc theo dốc chỉ có thành phần $P\\dfrac{h}{l}$ cần cân bằng."
       },
       {
-       "text": "Bỏ qua trọng lực vì xe chuyển động đều",
+       "text": "Bỏ qua trọng lực vì xe chuyển động đều nên hợp lực bằng không, lực kéo chỉ thắng cản",
        "dung": false,
        "vi_sao": "Chuyển động đều chỉ nói hợp lực bằng $0$ ; lực kéo vẫn phải cân bằng thành phần trọng lực, không bỏ được."
       }
@@ -1860,12 +1860,12 @@
        "dung": true
       },
       {
-       "text": "$F_k=P\\dfrac{h}{l}-F_c$",
+       "text": "Lực kéo là hiệu hai lực : $F_k=P\\dfrac{h}{l}-F_c$",
        "dung": false,
        "vi_sao": "Lực cản ngược chiều chuyển động giống thành phần trọng lực nên lực kéo phải thắng cả hai, không phải trừ."
       },
       {
-       "text": "$F_k=F_c$ vì chạy đều",
+       "text": "Xe chạy đều nên $F_k=F_c$ vì hợp lực bằng không",
        "dung": false,
        "vi_sao": "Chạy đều trên dốc còn thành phần trọng lực kéo xe xuống ; lực kéo phải cân bằng cả nó nữa."
       }
@@ -1908,12 +1908,12 @@
        "dung": true
       },
       {
-       "text": "$A=P\\,h$",
+       "text": "Công động cơ là công nâng xe lên cao : $A=P\\,h$",
        "dung": false,
        "vi_sao": "$P\\,h$ chỉ là công nâng xe lên ; động cơ còn phải thắng lực cản dọc suốt quãng đường nên công lớn hơn."
       },
       {
-       "text": "$A=\\mathcal{P}\\,l$",
+       "text": "Lấy công suất nhân quãng đường : $A=\\mathcal{P}\\,l$",
        "dung": false,
        "vi_sao": "Công suất nhân quãng đường không ra công ; công $=$ lực $\\times$ quãng đường hoặc công suất $\\times$ thời gian."
       }
@@ -2039,12 +2039,12 @@
        "dung": true
       },
       {
-       "text": "Trừ công ma sát của $MN$ trước khi tính",
+       "text": "Trừ công ma sát của đoạn $MN$ trước khi tính tốc độ",
        "dung": false,
        "vi_sao": "Tới $M$ vật chưa vào đoạn $MN$ nên ma sát chưa sinh công."
       },
       {
-       "text": "Dùng $v=g\\,t$ với gia tốc không đổi",
+       "text": "Dùng $v=g\\,t$ với gia tốc không đổi trên máng",
        "dung": false,
        "vi_sao": "Máng cong nên gia tốc dọc máng thay đổi và thời gian chưa biết ; phải dùng bảo toàn cơ năng."
       }
@@ -2111,12 +2111,12 @@
        "dung": true
       },
       {
-       "text": "$F_{ms}\\,s=W_N$",
+       "text": "Cơ năng sau lần qua đầu tiên bằng công ma sát : $F_{ms}\\,s=W_N$",
        "dung": false,
        "vi_sao": "$W_N$ chỉ là cơ năng sau lần qua đầu tiên ; vật còn quay lại, phải mất hết $W_0$ mới dừng."
       },
       {
-       "text": "$s=MN$ vì vật qua $MN$ một lần",
+       "text": "Vật chỉ qua $MN$ một lần rồi dừng hẳn nên $s=MN$",
        "dung": false,
        "vi_sao": "Hai máng nhẵn nên vật quay lại và qua $MN$ nhiều lần."
       }
@@ -2135,12 +2135,12 @@
        "dung": true
       },
       {
-       "text": "Lấy luôn $s_{\\text{tổng}}$ làm khoảng cách tới $M$",
+       "text": "Lấy luôn $s_{\\text{tổng}}$ làm khoảng cách từ chỗ dừng tới $M$",
        "dung": false,
        "vi_sao": "$s_{\\text{tổng}}$ dài hơn $MN$ vì vật đã quay lại nhiều lần ; vị trí phải tính từ phần dư."
       },
       {
-       "text": "Bỏ phần dư, kết luận dừng đúng ở $M$ hoặc $N$",
+       "text": "Bỏ phần dư đi, kết luận vật dừng đúng ở $M$ hoặc $N$",
        "dung": false,
        "vi_sao": "Phần dư khác $0$ nên vật dừng ở giữa $MN$, không phải ở hai đầu."
       }
@@ -2339,12 +2339,12 @@
        "dung": true
       },
       {
-       "text": "Dùng công suất điện : $\\mathcal{P}=m\\,g\\,h$",
+       "text": "Dùng công suất điện của máy làm công có ích : $\\mathcal{P}=m\\,g\\,h$",
        "dung": false,
        "vi_sao": "Công suất điện là phần máy tiêu thụ ; chỉ phần có ích (nhân hiệu suất) mới nâng nước."
       },
       {
-       "text": "Tính $m$ rồi nhân $1000$ để ra lít",
+       "text": "Tính $m$ bằng kg rồi nhân $1000$ để đổi ra lít mỗi giây",
        "dung": false,
        "vi_sao": "Khối lượng riêng $1000\\ \\text{kg/m}^3$ tức $1\\ \\text{kg}=1\\ \\text{lít}$ ; nhân thêm $1000$ là nhầm với đổi sang m³ hay cm³."
       }
@@ -2387,12 +2387,12 @@
        "dung": true
       },
       {
-       "text": "Giữ kết quả câu a vì công suất không đổi",
+       "text": "Giữ kết quả câu a vì công suất không đổi nên số lít mỗi giây không đổi",
        "dung": false,
        "vi_sao": "Công suất không đổi nhưng mỗi kg nay cần nhiều năng lượng hơn nên số kg mỗi giây phải giảm."
       },
       {
-       "text": "$m=\\mathcal{P}_{\\text{ích}}\\cdot e$",
+       "text": "Nhân năng lượng có ích mỗi giây với năng lượng mỗi kg : $m=\\mathcal{P}_{\\text{ích}}\\cdot e$",
        "dung": false,
        "vi_sao": "Số kilôgam mỗi giây là năng lượng có ích mỗi giây chia năng lượng mỗi kilôgam, không phải nhân."
       }
