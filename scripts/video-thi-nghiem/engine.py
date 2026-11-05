@@ -206,7 +206,7 @@ def chrome(d, clip, sc, t, gt):
         card(d, (60, y0, 1020, y1), fill=A(NAVY, 0.92 * a), r=30)
         for j, l in enumerate(ls):
             dtext(d, (W / 2, y0 + 25 + 29 + j * 58), l, f, WHITE, a)
-    text(d, (W / 2, 1860), clip["footer"], 30, MUTED, bold=False)
+    text(d, (W / 2, 1860), clip["footer"], 32, MUTED, bold=False)
 
 # ---------------- nhac nen tong hop (khong ban quyen) ----------------
 def music(total, seed=7):
