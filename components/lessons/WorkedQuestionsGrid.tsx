@@ -9,9 +9,15 @@ import GiaiCungHinh from "@/components/lessons/cong-cu/GiaiCungHinh";
 import { TomDeKhung } from "@/components/lessons/TomDe";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
+/** Số dạng từ nhãn "Dạng N · Mức · tên" (khớp question_dang.dang_label phía RPC). */
+function dangNumber(label?: string): number | null {
+  const m = /^\s*Dạng\s*(\d+)/.exec(label ?? "");
+  return m ? Number(m[1]) : null;
+}
+
 /** Dạng có cấu trúc: đề + mô phỏng → (HS chọn) phân tích đề → (HS chọn) lời giải đầy đủ → làm bài tương tự.
  *  Bản cũ có `hints_html` (gợi ý theo tầng) vẫn hiển thị như trước. Dạng cũ chỉ có body_html ở dưới. */
-function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }) {
+function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color: string; lessonId?: number }) {
   const hints = q.hints_html ?? [];
   const [shown, setShown] = useState(0);
   const [analysed, setAnalysed] = useState(false);
@@ -22,6 +28,8 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
   const [meoOpen, setMeoOpen] = useState(false); // 💡 Mẹo nhìn: gập sẵn, chỉ có sau lời giải (N6, B4)
   const hasAnalysis = !!q.analysis_html;
   const stepwise = !!q.buoc?.length; // tự giải từng bước (9/10/2026)
+  const dangNo = dangNumber(q.label);
+  const canSimilar = !!q.topic_id || (!!lessonId && dangNo != null);
   return (
     <div className="space-y-3">
       {q.nhan_dang && (
@@ -94,8 +102,10 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
               )}
             </div>
           )}
-          {q.topic_id && (allOpen || !stepwise) ? (
+          {canSimilar && (allOpen || !stepwise) ? (
             <SimilarBankPractice
+              lessonId={lessonId}
+              dangNo={dangNo ?? undefined}
               topicId={q.topic_id}
               form={q.form}
               color={color}
@@ -114,9 +124,12 @@ function StructuredBody({ q, color }: { q: LessonWorkedQuestion; color: string }
 export default function WorkedQuestionsGrid({
   questions,
   color = "#8B5CF6",
+  lessonId,
 }: {
   questions: LessonWorkedQuestion[];
   color?: string;
+  /** Bài chứa các dạng — để "Làm bài tương tự" lấy đúng câu đã gán dạng (question_dang). */
+  lessonId?: number;
 }) {
   const [openIdx, setOpenIdx] = useState<Set<number>>(() => new Set(questions.length ? [0] : []));
 
@@ -155,7 +168,7 @@ export default function WorkedQuestionsGrid({
             {open && (
               <div className="lesson-worked-body exam-paper">
                 {q.problem_html && q.solution_html ? (
-                  <StructuredBody q={q} color={color} />
+                  <StructuredBody q={q} color={color} lessonId={lessonId} />
                 ) : (
                   <ContentHtml html={q.body_html} className="block leading-relaxed" />
                 )}
