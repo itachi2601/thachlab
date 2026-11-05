@@ -187,7 +187,7 @@ Ký hiệu: D = Dạng, B = Bài (id 167). Ưu tiên P1 = L12/L11, P2 = L10, P3 
 |---|---|---|---|---|---|---|
 | 89 | Bài 11. Điện trở. Định luật Ohm | — | ✓ D2 (do_thi) 5/11 | ✓ D1, D3, D4 5/11 | Sonnet | P3 |
 | 90 | Bài 12. Đoạn mạch nối tiếp, song song | — | ✓ D3, D4 (mach_dien) 5/11 | ✓ D1, D2 5/11 | Sonnet | P3 |
-| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | D3 (mach_dien) | D1, D2, D4 | Sonnet | P3 |
+| 91 | Bài 13. Năng lượng của dòng điện và công suất điện | — | ✓ D3 (mach_dien) 5/11 | ✓ D1, D2, D4 5/11 | Sonnet | P3 |
 
 ### HSG KHTN 9 · Cơ học
 
