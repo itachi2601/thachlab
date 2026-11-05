@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "Nhân $L$ với $100$ vì cường độ tăng gấp $100$",
+       "text": "Nhân $L$ với $100$ vì mức cường độ âm tỉ lệ thuận với cường độ âm tăng gấp $100$ lần",
        "dung": false,
        "vi_sao": "$L$ là logarit của tỉ số $I/I_0$, không tỉ lệ thuận với $I$: nhân $I$ lên chỉ cộng thêm một lượng vào $L$."
       },
       {
-       "text": "Cộng thêm $100\\ \\text{dB}$ vào $L$",
+       "text": "Cộng thêm $100\\ \\text{dB}$ vào $L$ vì cường độ âm đã tăng thêm gấp $100$ lần",
        "dung": false,
        "vi_sao": "Lượng cộng thêm là $10\\lg100$ chứ không phải số lần $100$."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $I=I_0\\cdot\\dfrac{L}{10}$",
+       "text": "Lấy $I=I_0\\cdot\\dfrac{L}{10}$ vì $L$ chia $10$ là tỉ số cường độ, rồi đổi đơn vị",
        "dung": false,
        "vi_sao": "$L$ là logarit của $I/I_0$ nên đảo bằng luỹ thừa $10$, không phải phép chia."
       },
       {
-       "text": "Lấy $I=10^{L}\\cdot I_0$",
+       "text": "Lấy $I=10^{L}\\cdot I_0$ vì $L$ là số mũ của $10$, rồi đổi sang đơn vị đề cho",
        "dung": false,
        "vi_sao": "Hệ số đứng trước $\\lg$ là $10$, nên số mũ là $L/10$, không phải $L$."
       }
@@ -103,7 +103,7 @@
        "dung": true
       },
       {
-       "text": "Chỉ xét bước sóng vì $f$ tăng thì $\\lambda$ đổi",
+       "text": "Chỉ xét bước sóng vì khi $f$ tăng thì $\\lambda$ đổi theo, tai nghe thấy bước sóng",
        "dung": false,
        "vi_sao": "Bước sóng không phải là cảm giác của tai; độ cao do tần số quyết định."
       },
@@ -168,12 +168,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\lambda=v\\cdot f$",
+       "text": "Lấy $\\lambda=v\\cdot f$ từ $v=\\lambda f$ rồi đổi ra cm",
        "dung": false,
        "vi_sao": "Từ $v=\\lambda f$ suy ra $\\lambda=v/f$, không phải tích."
       },
       {
-       "text": "Lấy $\\lambda=\\dfrac{f}{v}$",
+       "text": "Lấy $\\lambda=\\dfrac{f}{v}$ từ $v=\\lambda f$ rồi đổi ra cm",
        "dung": false,
        "vi_sao": "Đảo tỉ số nên đơn vị là $\\text{Hz}/(\\text{m/s})$, không phải mét."
       }
@@ -236,12 +236,12 @@
        "dung": true
       },
       {
-       "text": "Có: cứ hạ thêm nước là còn nghe thêm lần to nữa",
+       "text": "Có: cứ hạ thêm nước là còn nghe thêm lần to nữa, không giới hạn",
        "dung": false,
        "vi_sao": "Chỉ có cộng hưởng ở những vị trí $l$ rời rạc; hết chiều dài ống thì không còn vị trí nào."
       },
       {
-       "text": "Có: lần thứ ba cách lần thứ hai chỉ $\\lambda/4$",
+       "text": "Có: lần thứ ba cách lần thứ hai chỉ $\\lambda/4$ nên còn nằm trong ống",
        "dung": false,
        "vi_sao": "Hai lần liên tiếp cách nhau $\\lambda/2$ chứ không phải $\\lambda/4$."
       }
@@ -639,12 +639,12 @@
        "dung": true
       },
       {
-       "text": "Giữ $\\bar\\lambda$ ở đơn vị cm khi nhân với $f$",
+       "text": "Giữ $\\bar\\lambda$ ở đơn vị cm khi nhân với $f$ rồi ghi kết quả là m/s",
        "dung": false,
        "vi_sao": "Kết quả sẽ có đơn vị cm/s; phải đổi $\\bar\\lambda$ ra mét để có m/s."
       },
       {
-       "text": "Lấy $\\bar v=\\dfrac{\\bar\\lambda}{f}$",
+       "text": "Lấy $\\bar v=\\dfrac{\\bar\\lambda}{f}$ với $\\bar\\lambda$ đã đổi ra mét",
        "dung": false,
        "vi_sao": "$v=\\lambda f$ chứ không phải thương."
       }
@@ -663,12 +663,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\Delta\\lambda=2(\\Delta\\bar l_2-\\Delta\\bar l_1)$ vì $\\lambda=2(l_2-l_1)$",
+       "text": "Lấy $\\Delta\\lambda=2(\\Delta\\bar l_2-\\Delta\\bar l_1)$ vì $\\lambda=2(l_2-l_1)$, kèm sai số dụng cụ của thước",
        "dung": false,
        "vi_sao": "Với hiệu hai đại lượng, sai số tuyệt đối vẫn cộng lại (trường hợp xấu nhất), không trừ."
       },
       {
-       "text": "Chỉ lấy độ lệch trung bình, bỏ qua sai số của thước",
+       "text": "Chỉ lấy độ lệch trung bình $\\Delta\\bar l_1$, $\\Delta\\bar l_2$ rồi $\\Delta\\lambda=2(\\Delta\\bar l_1+\\Delta\\bar l_2)$, bỏ qua sai số của thước",
        "dung": false,
        "vi_sao": "Đề yêu cầu cộng sai số dụng cụ vào mỗi giá trị trung bình; chỉ có độ lệch trung bình là thiếu."
       }
@@ -687,12 +687,12 @@
        "dung": true
       },
       {
-       "text": "Cộng sai số tuyệt đối $\\Delta v=\\Delta\\lambda+\\Delta f$",
+       "text": "Cộng sai số tuyệt đối $\\Delta v=\\Delta\\lambda+\\Delta f$ vì $v$ là tích $\\bar\\lambda f$ của hai đại lượng",
        "dung": false,
        "vi_sao": "$\\lambda$ và $f$ khác đơn vị nên không cộng tuyệt đối được; với tích phải cộng sai số tỉ đối."
       },
       {
-       "text": "Chỉ dùng $\\dfrac{\\Delta\\lambda}{\\bar\\lambda}$ vì coi $f$ là chính xác",
+       "text": "Chỉ dùng $\\dfrac{\\Delta\\lambda}{\\bar\\lambda}$ rồi nhân $\\bar v$ vì coi tần số $f$ là chính xác",
        "dung": false,
        "vi_sao": "Đề cho $\\Delta f=1\\ \\text{Hz}$, nên $\\dfrac{\\Delta f}{f}$ vẫn phải cộng vào."
       }
@@ -707,12 +707,12 @@
        "dung": true
       },
       {
-       "text": "Không phù hợp: $343\\ \\text{m/s}$ nằm ngoài khoảng đo",
+       "text": "Không phù hợp: $343\\ \\text{m/s}$ nằm ngoài khoảng $\\bar v\\pm\\Delta v$ đã đo được",
        "dung": false,
        "vi_sao": "$343\\ \\text{m/s}$ ứng với $20\\ ^\\circ\\text{C}$; phòng $30\\ ^\\circ\\text{C}$ phải dùng giá trị tính theo nhiệt độ phòng."
       },
       {
-       "text": "Không so sánh được vì số đo có sai số",
+       "text": "Không so sánh được vì số đo có sai số nên không có giá trị nào để đối chiếu",
        "dung": false,
        "vi_sao": "Chính khoảng $\\bar v\\pm\\Delta v$ là thứ đem so với giá trị tham khảo."
       }
@@ -724,12 +724,12 @@
        "dung": true
       },
       {
-       "text": "So $\\bar v$ với $343\\ \\text{m/s}$ vì đây là giá trị quen thuộc",
+       "text": "So $\\bar v$ với $343\\ \\text{m/s}$ vì đây là giá trị quen thuộc của tốc độ âm trong không khí",
        "dung": false,
        "vi_sao": "$343\\ \\text{m/s}$ chỉ đúng ở $20\\ ^\\circ\\text{C}$."
       },
       {
-       "text": "Chỉ kết luận phù hợp khi $\\bar v$ trùng đúng giá trị tham khảo",
+       "text": "Chỉ kết luận phù hợp khi $\\bar v$ trùng đúng giá trị tham khảo ở nhiệt độ phòng",
        "dung": false,
        "vi_sao": "Mọi phép đo có sai số; chỉ cần giá trị tham khảo nằm trong khoảng $\\bar v\\pm\\Delta v$."
       }
