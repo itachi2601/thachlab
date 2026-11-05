@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Rút tỉ số: tỉ lệ thuận, tỉ lệ nghịch và tỉ lệ với bình phương",
    "topic": "Định luật Ohm cho một điện trở",
-   "problem_html": "<p>Một dây dẫn có điện trở $R$ không đổi. Khi đặt vào hai đầu dây hiệu điện thế $U_1=4{,}5\\ \\text{V}$ thì cường độ dòng điện là $I_1=0{,}18\\ \\text{A}$.</p><ol type=\"a\"><li>Lập tỉ số, không cần tính $R$, để tìm cường độ dòng điện $I_2$ khi hiệu điện thế là $U_2=6{,}0\\ \\text{V}$.</li><li>Mắc điện trở $R_0=10\\ \\Omega$ nối tiếp với một biến trở vào nguồn có hiệu điện thế $U$ không đổi. Khi biến trở có giá trị $R_1=20\\ \\Omega$ thì dòng điện trong mạch là $0{,}4\\ \\text{A}$. Tăng biến trở lên $R_2=50\\ \\Omega$. Một bạn viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ để tính dòng điện lúc này. Cách viết đó đúng hay sai? Tính $I_2$ đúng.</li><li>Một điện trở $20\\ \\Omega$ toả nhiệt với công suất $P_1=0{,}80\\ \\text{W}$ khi dòng điện qua nó là $0{,}20\\ \\text{A}$. Tăng dòng điện lên $0{,}30\\ \\text{A}$ thì công suất tăng bao nhiêu lần và bằng bao nhiêu oát?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-1-0\"><svg viewBox=\"0 0 420 206\" role=\"img\" aria-label=\"Cùng một điện trở R được đặt vào hai hiệu điện thế khác nhau; ở trạng thái 2 dòng điện chưa biết\"><text x=\"99\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Trạng thái 1</text><line x1=\"24.0\" y1=\"128.0\" x2=\"24.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"24.0\" y1=\"52.0\" x2=\"73.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" points=\"73.0,52.0 79.5,45.0 92.5,59.0 105.5,45.0 118.5,59.0 125.0,52.0\"/><text x=\"99.0\" y=\"36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R</text><line x1=\"125.0\" y1=\"52.0\" x2=\"174.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"52.0\" x2=\"174.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"174.0\" cy=\"90.0\" r=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"174\" y=\"95.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"174.0\" y1=\"103.0\" x2=\"174.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"174.0\" y1=\"128.0\" x2=\"107.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"91.0\" y1=\"128.0\" x2=\"24.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"91.0\" y1=\"116.0\" x2=\"91.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"107.0\" y1=\"122.0\" x2=\"107.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"99\" y=\"154\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U₁ = 4,5 V</text><text x=\"99\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I₁ = 0,18 A</text><g opacity=\"0.25\"><text x=\"321\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Trạng thái 2</text><line x1=\"246.0\" y1=\"128.0\" x2=\"246.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"246.0\" y1=\"52.0\" x2=\"295.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" points=\"295.0,52.0 301.5,45.0 314.5,59.0 327.5,45.0 340.5,59.0 347.0,52.0\"/><text x=\"321.0\" y=\"36\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R</text><line x1=\"347.0\" y1=\"52.0\" x2=\"396.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"396.0\" y1=\"52.0\" x2=\"396.0\" y2=\"77.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"396.0\" cy=\"90.0\" r=\"13\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"396\" y=\"95.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"396.0\" y1=\"103.0\" x2=\"396.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"396.0\" y1=\"128.0\" x2=\"329.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"313.0\" y1=\"128.0\" x2=\"246.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"313.0\" y1=\"116.0\" x2=\"313.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"329.0\" y1=\"122.0\" x2=\"329.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"321\" y=\"154\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">U₂ = 6,0 V</text><text x=\"321\" y=\"174\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I₂ = ?</text><animate attributeName=\"opacity\" values=\"0.25;1\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"210\" y=\"198\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">cùng một điện trở R, không đổi</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chuyển từ trạng thái 1 sang trạng thái 2 (đổi hiệu điện thế, giữ nguyên R).</figcaption></figure>",
+   "problem_html": "<p>Một dây dẫn có điện trở $R$ không đổi. Khi đặt vào hai đầu dây hiệu điện thế $U_1=4{,}5\\ \\text{V}$ thì cường độ dòng điện là $I_1=0{,}18\\ \\text{A}$.</p><ol type=\"a\"><li>Lập tỉ số, không cần tính $R$, để tìm cường độ dòng điện $I_2$ khi hiệu điện thế là $U_2=6{,}0\\ \\text{V}$.</li><li>Mắc điện trở $R_0=10\\ \\Omega$ nối tiếp với một biến trở vào nguồn có hiệu điện thế $U$ không đổi. Khi biến trở có giá trị $R_1=20\\ \\Omega$ thì dòng điện trong mạch là $0{,}4\\ \\text{A}$. Tăng biến trở lên $R_2=50\\ \\Omega$. Một bạn viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ để tính dòng điện lúc này. Cách viết đó đúng hay sai? Tính $I_2$ đúng.</li><li>Một điện trở $20\\ \\Omega$ toả nhiệt với công suất $P_1=0{,}80\\ \\text{W}$ khi dòng điện qua nó là $0{,}20\\ \\text{A}$. Tăng dòng điện lên $0{,}30\\ \\text{A}$ thì công suất tăng bao nhiêu lần và bằng bao nhiêu oát?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai đại lượng tỉ lệ thuận khi thương không đổi ($y=kx$), tỉ lệ nghịch khi tích không đổi ($y=\\dfrac{k}{x}$).</li><li><strong>Định luật:</strong> $I=\\dfrac{U}{R}$ ; với hai trạng thái của cùng một hệ, chia vế theo vế để hằng số triệt tiêu.</li><li><strong>Công thức:</strong> $P=I^2R$ nên $\\dfrac{P_2}{P_1}=\\left(\\dfrac{I_2}{I_1}\\right)^2$ khi $R$ không đổi.</li><li>⚠ <strong>Điều kiện:</strong> chỉ lập tỉ số trực tiếp khi đại lượng ở mẫu là đại lượng duy nhất thay đổi ; mạch có biến trở nối tiếp thì $I$ tỉ lệ nghịch với tổng $R_0+R$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lập tỉ số cho dây dẫn</span></p><p>$R$ không đổi nên $I$ tỉ lệ thuận với $U$:</p>$$\\dfrac{I_2}{I_1}=\\dfrac{U_2}{U_1}$$$$I_2=I_1\\,\\dfrac{U_2}{U_1}=0{,}18\\cdot\\dfrac{6{,}0}{4{,}5}$$<div class=\"bt-ans\">$$I_2=0{,}24\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hiệu điện thế của nguồn</span></p><p>Hai điện trở nối tiếp, điện trở toàn mạch là $R_0+R_1$:</p>$$U=I_1\\,(R_0+R_1)=0{,}4\\cdot(10+20)$$<div class=\"bt-ans\">$$U=12\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng điện khi tăng biến trở</span></p><p>$U$ không đổi, điện trở toàn mạch lúc sau là $R_0+R_2$:</p>$$I_2=\\dfrac{U}{R_0+R_2}=\\dfrac{12}{10+50}$$<div class=\"bt-ans\">$$I_2=0{,}2\\ \\text{A}$$</div><p>Cách viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ cho $0{,}16\\ \\text{A}$ : <strong>sai</strong>, vì còn $R_0$ nối tiếp không đổi.</p><p>Tỉ số đúng là $\\dfrac{I_2}{I_1}=\\dfrac{R_0+R_1}{R_0+R_2}=\\dfrac{30}{60}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công suất khi dòng điện tăng</span></p><p>$R$ không đổi, $P=I^2R$ nên:</p>$$\\dfrac{P_2}{P_1}=\\left(\\dfrac{I_2}{I_1}\\right)^2=\\left(\\dfrac{0{,}30}{0{,}20}\\right)^2=2{,}25$$$$P_2=2{,}25\\cdot0{,}80$$<div class=\"bt-ans\">$$P_2=1{,}8\\ \\text{W}$$</div><p>Dòng điện tăng 1,5 lần thì công suất tăng 2,25 lần, không phải 1,5 lần.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Câu a: $R=\\dfrac{4{,}5}{0{,}18}=25\\ \\Omega$ và $\\dfrac{6{,}0}{0{,}24}=25\\ \\Omega$ ✓ cùng một giá trị.</p><p>Câu b: điện trở toàn mạch tăng từ $30\\ \\Omega$ lên $60\\ \\Omega$ (gấp 2) nên dòng điện giảm một nửa, từ $0{,}4\\ \\text{A}$ xuống $0{,}2\\ \\text{A}$ ✓.</p><p>Câu c: $0{,}20^2\\cdot20=0{,}80\\ \\text{W}$ và $0{,}30^2\\cdot20=1{,}8\\ \\text{W}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I_2=0{,}24\\ \\text{A}$</p><p>b) Cách viết của bạn sai ; $U=12\\ \\text{V}$ và $I_2=0{,}2\\ \\text{A}$</p><p>c) Công suất tăng $2{,}25$ lần ; $P_2=1{,}8\\ \\text{W}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>hai trạng thái của cùng một hệ</strong> → chia hai phương trình vế theo vế ; <strong>biến trở nối tiếp</strong> → tỉ lệ nghịch với $R_0+R$, không phải $R$ riêng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-1-2\"><svg viewBox=\"0 0 420 190\" role=\"img\" aria-label=\"Biến trở mắc nối tiếp với điện trở R0 và nguồn; dòng điện tỉ lệ nghịch với tổng R0 cộng R\"><line x1=\"20.0\" y1=\"140.0\" x2=\"20.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"60.0\" x2=\"60.7\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" points=\"60.7,60.0 67.2,53.0 80.2,67.0 93.2,53.0 106.2,67.0 112.7,60.0\"/><text x=\"86.7\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">R₀ = 10 Ω</text><line x1=\"112.7\" y1=\"60.0\" x2=\"127.3\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" points=\"127.3,60.0 133.8,53.0 146.8,67.0 159.8,53.0 172.8,67.0 179.3,60.0\"/><text x=\"153.3\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">biến trở R</text><line x1=\"135.33333333333334\" y1=\"76\" x2=\"171.33333333333334\" y2=\"44\" stroke=\"#fb923c\" stroke-width=\"2\"/><path d=\"M162.7,45.8 L171.3,44.0 L168.6,52.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"179.3\" y1=\"60.0\" x2=\"220.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"220.0\" y1=\"60.0\" x2=\"220.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"220.0\" y1=\"140.0\" x2=\"128.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"112.0\" y1=\"140.0\" x2=\"20.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"112.0\" y1=\"128.0\" x2=\"112.0\" y2=\"152.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><line x1=\"128.0\" y1=\"134.0\" x2=\"128.0\" y2=\"146.0\" stroke=\"currentColor\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"120\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"middle\">U không đổi</text><text x=\"238\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R toàn mạch = R₀ + R</text><text x=\"238\" y=\"82\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">I = U / (R₀ + R)</text><text x=\"238\" y=\"114\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">⚠ I không tỉ lệ nghịch</text><text x=\"238\" y=\"134\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">với riêng R</text></svg><figcaption>Dữ kiện: R₀ không đổi nối tiếp với biến trở. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trở $R$ không đổi\"</td><td>$R$ không đổi</td><td>⚠ Chỉ khi $R$ không đổi mới có $I$ tỉ lệ thuận $U$ ; lập tỉ số để $R$ triệt tiêu</td></tr><tr><td>\"$U_1=4{,}5$ V thì $I_1=0{,}18$ A\"</td><td>$U_1=4{,}5$ V ; $I_1=0{,}18$ A</td><td>$I=\\dfrac{U}{R}$ cho trạng thái 1</td></tr><tr><td>\"khi hiệu điện thế là $U_2=6{,}0$ V\"</td><td>$U_2=6{,}0$ V</td><td>$I=\\dfrac{U}{R}$ cho trạng thái 2 ; chia vế theo vế</td></tr><tr><td>\"biến trở nối tiếp $R_0=10\\ \\Omega$ … $R_1=20\\ \\Omega$ … $R_2=50\\ \\Omega$\"</td><td>$R_0=10\\ \\Omega$ ; $R_1=20\\ \\Omega$ ; $R_2=50\\ \\Omega$ ; $I_1=0{,}4$ A</td><td>⚠ Điện trở toàn mạch là $R_0+R$ ; $I$ tỉ lệ nghịch với tổng này, không phải với riêng $R$</td></tr><tr><td>\"nguồn có hiệu điện thế $U$ không đổi\"</td><td>$U$ giữ nguyên ở hai trạng thái</td><td>$U=I\\,(R_0+R)$</td></tr><tr><td>\"dòng điện từ $0{,}20$ A lên $0{,}30$ A … $20\\ \\Omega$ … $0{,}80$ W\"</td><td>$R=20\\ \\Omega$ ; $I_1=0{,}20$ A ; $I_2=0{,}30$ A ; $P_1=0{,}80$ W</td><td>$P=I^2R$ ; $R$ không đổi nên tỉ số phải bình phương</td></tr><tr><td>\"công suất tăng bao nhiêu lần … bằng bao nhiêu oát\"</td><td>Cần $\\dfrac{P_2}{P_1}$ và $P_2$</td><td>$\\dfrac{P_2}{P_1}=\\left(\\dfrac{I_2}{I_1}\\right)^2$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trở $R$ không đổi\"</td><td>$R$ không đổi</td><td>⚠ Chỉ khi $R$ không đổi mới có $I$ tỉ lệ thuận $U$ ; lập tỉ số để $R$ triệt tiêu</td></tr><tr><td>\"$U_1=4{,}5$ V thì $I_1=0{,}18$ A\"</td><td>$U_1=4{,}5$ V ; $I_1=0{,}18$ A</td><td>$I=\\dfrac{U}{R}$ cho trạng thái 1</td></tr><tr><td>\"khi hiệu điện thế là $U_2=6{,}0$ V\"</td><td>$U_2=6{,}0$ V</td><td>$I=\\dfrac{U}{R}$ cho trạng thái 2 ; chia vế theo vế</td></tr><tr><td>\"biến trở nối tiếp $R_0=10\\ \\Omega$ … $R_1=20\\ \\Omega$ … $R_2=50\\ \\Omega$\"</td><td>$R_0=10\\ \\Omega$ ; $R_1=20\\ \\Omega$ ; $R_2=50\\ \\Omega$ ; $I_1=0{,}4$ A</td><td>⚠ Điện trở toàn mạch là $R_0+R$ ; $I$ tỉ lệ nghịch với tổng này, không phải với riêng $R$</td></tr><tr><td>\"nguồn có hiệu điện thế $U$ không đổi\"</td><td>$U$ giữ nguyên ở hai trạng thái</td><td>$U=I\\,(R_0+R)$</td></tr><tr><td>\"dòng điện từ $0{,}20$ A lên $0{,}30$ A … $20\\ \\Omega$ … $0{,}80$ W\"</td><td>$R=20\\ \\Omega$ ; $I_1=0{,}20$ A ; $I_2=0{,}30$ A ; $P_1=0{,}80$ W</td><td>$P=I^2R$ ; $R$ không đổi nên tỉ số phải bình phương</td></tr><tr><td>\"công suất tăng bao nhiêu lần … bằng bao nhiêu oát\"</td><td>Cần $\\dfrac{P_2}{P_1}$ và $P_2$</td><td>$\\dfrac{P_2}{P_1}=\\left(\\dfrac{I_2}{I_1}\\right)^2$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hai trạng thái, cùng điện trở</b> → <b>chia vế theo vế</b> ; có <b>biến trở nối tiếp</b> → dùng <b>R₀ + R</b>.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -116,15 +116,233 @@
      "b) Cách viết $\\dfrac{I_2}{I_1}=\\dfrac{R_1}{R_2}$ đúng/sai; $I_2$",
      "c) $P_2/P_1$ và $P_2$"
     ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "bang",
+      "x": 4.6,
+      "y": 10.9,
+      "hang": [
+       [
+        "a) U",
+        "I"
+       ],
+       [
+        "4,5 V",
+        "0,18 A"
+       ],
+       [
+        "6,0 V",
+        "?"
+       ]
+      ],
+      "het": 1
+     },
+     {
+      "loai": "bang",
+      "x": 4.6,
+      "y": 5.9,
+      "hang": [
+       [
+        "c) I",
+        "P"
+       ],
+       [
+        "0,20 A",
+        "0,80 W"
+       ],
+       [
+        "0,30 A",
+        "?"
+       ]
+      ],
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 4.6,
+      "y": 0.45,
+      "text": "R = 20 Ω",
+      "a": "middle"
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        11,
+        5.4
+       ],
+       [
+        11,
+        9.8
+       ],
+       [
+        19.2,
+        9.8
+       ],
+       [
+        19.2,
+        5.4
+       ],
+       [
+        11,
+        5.4
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 15.1,
+      "y": 9.8,
+      "ten": "U không đổi",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 12.9,
+      "y": 5.4,
+      "ten": "R_0 = 10 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 17.6,
+      "y": 5.4,
+      "ten": "R_b",
+      "vi": "t"
+     },
+     {
+      "loai": "chu",
+      "x": 10.6,
+      "y": 10.7,
+      "text": "b)",
+      "a": "end"
+     },
+     {
+      "loai": "bang",
+      "x": 15.1,
+      "y": 4.2,
+      "hang": [
+       [
+        "biến trở",
+        "I"
+       ],
+       [
+        "20 Ω",
+        "0,4 A"
+       ],
+       [
+        "50 Ω",
+        "?"
+       ]
+      ],
+      "het": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "bang",
+       "x": 4.6,
+       "y": 10.9,
+       "hang": [
+        [
+         "a) U",
+         "I"
+        ],
+        [
+         "4,5 V",
+         "0,18 A"
+        ],
+        [
+         "6,0 V",
+         "0,24 A"
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "I_2 = 0,18 · 6,0 : 4,5 = 0,24 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 15.1,
+       "y": 8.0,
+       "text": "U = 12 V",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U = 0,4 · (10 + 20) = 12 V"
+      }
+     ],
+     [
+      {
+       "loai": "bang",
+       "x": 15.1,
+       "y": 4.2,
+       "hang": [
+        [
+         "biến trở",
+         "I"
+        ],
+        [
+         "20 Ω",
+         "0,4 A"
+        ],
+        [
+         "50 Ω",
+         "0,2 A"
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "I_2 = 12 : (10 + 50) = 0,2 A"
+      }
+     ],
+     [
+      {
+       "loai": "bang",
+       "x": 4.6,
+       "y": 5.9,
+       "hang": [
+        [
+         "c) I",
+         "P"
+        ],
+        [
+         "0,20 A",
+         "0,80 W"
+        ],
+        [
+         "0,30 A",
+         "1,8 W"
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "P_2 = 0,80 · 1,5² = 1,8 W"
+      }
+     ],
+     []
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Dễ · Đổi đơn vị, kiểm tra thứ nguyên và phán đoán tính hợp lí",
    "topic": "Khái niệm và đơn vị đo năng lượng",
-   "problem_html": "<p>Làm từng câu, ghi đơn vị ở mọi bước.</p><ol type=\"a\"><li>Dùng đơn vị để kiểm tra công thức $P=\\dfrac{U^2}{R}$ (tính công suất) có cho kết quả đơn vị oát hay không.</li><li>Một người đi bộ được quãng đường $3{,}6\\ \\text{km}$ trong $40$ phút. Tính tốc độ theo m/s và theo km/h; kết quả có hợp lí với người đi bộ không?</li><li>Một lò sưởi ghi $220\\ \\text{V}-2\\ \\text{kW}$ hoạt động $3$ giờ ở hiệu điện thế $220\\ \\text{V}$. Tính điện năng tiêu thụ theo kWh và theo J.</li><li>Tính cường độ dòng điện qua lò sưởi và nhận xét độ lớn.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-2-0\"><svg viewBox=\"0 0 420 150\" role=\"img\" aria-label=\"Một người đi bộ đi hết quãng đường 3,6 km trong 40 phút\"><line x1=\"30.0\" y1=\"112.0\" x2=\"392.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"30.0\" y1=\"106.0\" x2=\"30.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"30\" y=\"138\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">xuất phát</text><g transform=\"translate(30 112)\"><g><rect x=\"-10.0\" y=\"-52.0\" width=\"20.0\" height=\"52.0\" rx=\"0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\" opacity=\"0.35\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0 0;340 0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"0.0\" cy=\"-46.0\" r=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"0.0\" y1=\"-40.0\" x2=\"0.0\" y2=\"-20.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"0.0\" y1=\"-34.0\" x2=\"-10.0\" y2=\"-24.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"0.0\" y1=\"-34.0\" x2=\"10.0\" y2=\"-24.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"0.0\" y1=\"-20.0\" x2=\"-8.0\" y2=\"0.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"0.0\" y1=\"-20.0\" x2=\"8.0\" y2=\"0.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/></g></g><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">đi bộ 3,6 km</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">trong 40 phút</text><text x=\"250\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = ?  (m/s)</text><text x=\"250\" y=\"44\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = ?  (km/h)</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: người đi bộ đều hết quãng đường (tốc độ minh hoạ, chạy 5 s).</figcaption></figure>",
+   "problem_html": "<p>Làm từng câu, ghi đơn vị ở mọi bước.</p><ol type=\"a\"><li>Dùng đơn vị để kiểm tra công thức $P=\\dfrac{U^2}{R}$ (tính công suất) có cho kết quả đơn vị oát hay không.</li><li>Một người đi bộ được quãng đường $3{,}6\\ \\text{km}$ trong $40$ phút. Tính tốc độ theo m/s và theo km/h; kết quả có hợp lí với người đi bộ không?</li><li>Một lò sưởi ghi $220\\ \\text{V}-2\\ \\text{kW}$ hoạt động $3$ giờ ở hiệu điện thế $220\\ \\text{V}$. Tính điện năng tiêu thụ theo kWh và theo J.</li><li>Tính cường độ dòng điện qua lò sưởi và nhận xét độ lớn.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai vế của một công thức đúng phải có cùng đơn vị (thứ nguyên).</li><li><strong>Công thức:</strong> $P=UI=\\dfrac{U^2}{R}$ ; $A=P\\,t$ ; $v=\\dfrac{s}{t}$.</li><li>$1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$ ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ ; $1\\ \\text{kW}=1000\\ \\text{W}$.</li><li>⚠ <strong>Điều kiện:</strong> đổi mọi đại lượng về cùng hệ đơn vị trước khi thay số ; kiểm tra đơn vị không bắt được sai hệ số, nên cần thêm kiểm tra độ lớn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thứ nguyên của $P=U^2/R$</span></p><p>Thay đơn vị rồi rút gọn như phân số đại số:</p>$$\\dfrac{\\text{V}^2}{\\Omega}=\\text{V}\\cdot\\dfrac{\\text{V}}{\\Omega}=\\text{V}\\cdot\\text{A}$$<div class=\"bt-ans\">$$\\text{V}\\cdot\\text{A}=\\text{W}$$</div><p>Vế phải có đơn vị oát, đúng bằng đơn vị công suất : công thức hợp lí về đơn vị.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ đi bộ</span></p><p>Đổi $s=3{,}6\\ \\text{km}=3600\\ \\text{m}$ ; $t=40\\ \\text{phút}=2400\\ \\text{s}$.</p>$$v=\\dfrac{s}{t}=\\dfrac{3600}{2400}$$<div class=\"bt-ans\">$$v=1{,}5\\ \\text{m/s}$$</div>$$v=1{,}5\\cdot3{,}6=5{,}4\\ \\text{km/h}$$<p>Người đi bộ thông thường đi cỡ $4$ đến $6\\ \\text{km/h}$ : kết quả hợp lí.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện năng theo kWh</span></p><p>Công suất theo kW và thời gian theo giờ thì điện năng ra thẳng kWh:</p>$$A=P\\,t=2\\cdot3$$<div class=\"bt-ans\">$$A=6\\ \\text{kWh}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi ra jun</span></p>$$A=6\\cdot3{,}6\\cdot10^6=21{,}6\\cdot10^6\\ \\text{J}$$<div class=\"bt-ans\">$$A=21{,}6\\ \\text{MJ}=2{,}16\\cdot10^7\\ \\text{J}$$</div><p>Kiểm tra theo SI: $2000\\ \\text{W}\\cdot10800\\ \\text{s}=2{,}16\\cdot10^7\\ \\text{J}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Cường độ dòng điện</span></p><p>Đổi $P=2\\ \\text{kW}=2000\\ \\text{W}$ ; lò dùng đúng $220\\ \\text{V}$:</p>$$I=\\dfrac{P}{U}=\\dfrac{2000}{220}$$<div class=\"bt-ans\">$$I\\approx9{,}09\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Bóng đèn dây tóc cỡ vài phần mười ampe ; lò sưởi $2\\ \\text{kW}$ cỡ vài ampe đến chục ampe : $9{,}09\\ \\text{A}$ hợp lí.</p><p>Nếu ra $0{,}09\\ \\text{A}$ hay $909\\ \\text{A}$ thì đã sai một bậc thập phân (quên đổi kW ra W, hoặc đổi ngược).</p><p>Dây dẫn cấp điện cho lò phải chịu được dòng gần $10\\ \\text{A}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\dfrac{\\text{V}^2}{\\Omega}=\\text{V}\\cdot\\text{A}=\\text{W}$ : đúng đơn vị</p><p>b) $v=1{,}5\\ \\text{m/s}=5{,}4\\ \\text{km/h}$ ; hợp lí</p><p>c) $A=6\\ \\text{kWh}=21{,}6\\ \\text{MJ}$</p><p>d) $I\\approx9{,}09\\ \\text{A}$ ; hợp lí</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>kWh, km/h, phút</strong> → đổi về SI trước khi thay số ; gặp <strong>công thức lạ</strong> → kiểm tra đơn vị hai vế rồi kiểm tra độ lớn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-2-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Bảng các phép đổi đơn vị thường dùng: km/h sang m/s, phút sang giây, giờ sang giây, kWh sang J, kW sang W\"><rect x=\"16.0\" y=\"10.0\" width=\"388.0\" height=\"26.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.35\"/><text x=\"30\" y=\"28\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">km/h → m/s</text><text x=\"220\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">chia 3,6</text><rect x=\"16.0\" y=\"38.0\" width=\"388.0\" height=\"26.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.35\"/><text x=\"30\" y=\"56\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">phút → s</text><text x=\"220\" y=\"56\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nhân 60</text><rect x=\"16.0\" y=\"66.0\" width=\"388.0\" height=\"26.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.35\"/><text x=\"30\" y=\"84\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">giờ → s</text><text x=\"220\" y=\"84\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nhân 3600</text><rect x=\"16.0\" y=\"94.0\" width=\"388.0\" height=\"26.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.35\"/><text x=\"30\" y=\"112\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">kWh → J</text><text x=\"220\" y=\"112\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nhân 3,6·10⁶</text><rect x=\"16.0\" y=\"122.0\" width=\"388.0\" height=\"26.0\" rx=\"6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" opacity=\"0.35\"/><text x=\"30\" y=\"140\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">kW → W</text><text x=\"220\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">nhân 1000</text><text x=\"16\" y=\"188\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">V²/Ω = V·A = W : kiểm bằng đơn vị</text></svg><figcaption>Dữ kiện: đổi mọi đại lượng về cùng hệ đơn vị trước khi thay số.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"công thức $P=\\dfrac{U^2}{R}$ … đơn vị oát\"</td><td>Hai vế phải cùng đơn vị</td><td>⚠ Thay đơn vị từng đại lượng rồi rút gọn như đại số ; đúng đơn vị chưa chắc đúng hệ số</td></tr><tr><td>\"$3{,}6$ km trong $40$ phút\"</td><td>$s=3{,}6$ km ; $t=40$ phút</td><td>⚠ Đổi về m và s trước khi chia ; $v=\\dfrac{s}{t}$</td></tr><tr><td>\"tốc độ theo m/s và theo km/h … hợp lí\"</td><td>Cần $v$ (m/s), $v$ (km/h)</td><td>$1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$ ; so với mốc quen thuộc của người đi bộ</td></tr><tr><td>\"lò sưởi $220\\ \\text{V}-2\\ \\text{kW}$ … $3$ giờ\"</td><td>$P=2$ kW ; $U=220$ V ; $t=3$ h</td><td>⚠ Dùng đúng hiệu điện thế định mức nên công suất bằng số ghi ; $A=P\\,t$</td></tr><tr><td>\"điện năng theo kWh và theo J\"</td><td>Cần $A$ (kWh), $A$ (J)</td><td>$A=P\\,t$ ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$</td></tr><tr><td>\"cường độ dòng điện qua lò sưởi\"</td><td>Cần $I$</td><td>$P=U\\,I$ nên $I=\\dfrac{P}{U}$ (đổi kW ra W)</td></tr><tr><td>\"nhận xét độ lớn\"</td><td>So với mốc đời sống</td><td>Bóng đèn cỡ vài phần mười ampe ; thiết bị toả nhiệt công suất lớn cỡ vài ampe đến chục ampe</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"công thức $P=\\dfrac{U^2}{R}$ … đơn vị oát\"</td><td>Hai vế phải cùng đơn vị</td><td>⚠ Thay đơn vị từng đại lượng rồi rút gọn như đại số ; đúng đơn vị chưa chắc đúng hệ số</td></tr><tr><td>\"$3{,}6$ km trong $40$ phút\"</td><td>$s=3{,}6$ km ; $t=40$ phút</td><td>⚠ Đổi về m và s trước khi chia ; $v=\\dfrac{s}{t}$</td></tr><tr><td>\"tốc độ theo m/s và theo km/h … hợp lí\"</td><td>Cần $v$ (m/s), $v$ (km/h)</td><td>$1\\ \\text{m/s}=3{,}6\\ \\text{km/h}$ ; so với mốc quen thuộc của người đi bộ</td></tr><tr><td>\"lò sưởi $220\\ \\text{V}-2\\ \\text{kW}$ … $3$ giờ\"</td><td>$P=2$ kW ; $U=220$ V ; $t=3$ h</td><td>⚠ Dùng đúng hiệu điện thế định mức nên công suất bằng số ghi ; $A=P\\,t$</td></tr><tr><td>\"điện năng theo kWh và theo J\"</td><td>Cần $A$ (kWh), $A$ (J)</td><td>$A=P\\,t$ ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$</td></tr><tr><td>\"cường độ dòng điện qua lò sưởi\"</td><td>Cần $I$</td><td>$P=U\\,I$ nên $I=\\dfrac{P}{U}$ (đổi kW ra W)</td></tr><tr><td>\"nhận xét độ lớn\"</td><td>So với mốc đời sống</td><td>Bóng đèn cỡ vài phần mười ampe ; thiết bị toả nhiệt công suất lớn cỡ vài ampe đến chục ampe</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>kWh, km/h, phút</b> trong đề → đổi về <b>SI</b> trước ; gặp <b>công thức lạ</b> → kiểm tra <b>đơn vị hai vế</b>.",
    "cap_do": 1,
    "fading": "giau_buoc_cuoi",
@@ -265,15 +483,172 @@
      "c) $A$ (kWh, J)",
      "d) $I$, nhận xét"
     ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        1.5,
+        3.6
+       ],
+       [
+        1.5,
+        9.4
+       ],
+       [
+        11.5,
+        9.4
+       ],
+       [
+        11.5,
+        3.6
+       ],
+       [
+        1.5,
+        3.6
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 6.5,
+      "y": 9.4,
+      "ten": "U = 220 V",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 4.6,
+      "y": 3.6,
+      "ten": "lò sưởi 2 kW",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 9.2,
+      "y": 3.6,
+      "kieu": "A",
+      "ten": "I = ?",
+      "vi": "t",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 6.5,
+      "y": 7.6,
+      "text": "P = U²/R",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 13.0,
+      "y": 8.6,
+      "text": "t = 3 h",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 13.0,
+      "y": 7.0,
+      "text": "A = ?",
+      "a": "start",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 10.0,
+      "y": 0.4,
+      "text": "b) đi bộ 3,6 km trong 40 phút: v = ?",
+      "a": "middle",
+      "het": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 6.5,
+       "y": 6.3,
+       "text": "V²/Ω = V·A = W",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "V²/Ω = V · (V/Ω) = V·A = W"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.0,
+       "y": 0.4,
+       "text": "b) 3600 m : 2400 s = 1,5 m/s = 5,4 km/h",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "v = 1,5 m/s = 5,4 km/h: hợp lí"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.0,
+       "y": 7.0,
+       "text": "A = 6 kWh",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = P·t = 2 kW · 3 h = 6 kWh"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.0,
+       "y": 5.4,
+       "text": "= 21,6 MJ",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "6 · 3,6·10⁶ J = 21,6 MJ"
+      }
+     ],
+     [
+      {
+       "loai": "dong_ho",
+       "x": 9.2,
+       "y": 3.6,
+       "kieu": "A",
+       "ten": "I ≈ 9,09 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 2000 : 220 ≈ 9,09 A"
+      }
+     ],
+     []
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Đọc đồ thị U–I: điện trở, độ dốc, nội suy và ngoại suy",
    "topic": "Tính vận tốc từ độ dốc đồ thị",
-   "problem_html": "<p>Khảo sát hai dây dẫn A và B bằng cách đo hiệu điện thế $U$ giữa hai đầu dây và cường độ dòng điện $I$ qua dây. Đồ thị $U$–$I$ (trục hoành là $I$, trục tung là $U$) được vẽ từ các số liệu sau.</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Dây</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead><tbody><tr><td>A</td><td>$0{,}10$ ; $0{,}20$ ; $0{,}30$ ; $0{,}40$</td><td>$1{,}2$ ; $2{,}4$ ; $3{,}6$ ; $4{,}8$</td></tr><tr><td>B</td><td>$0{,}05$ ; $0{,}10$ ; $0{,}15$ ; $0{,}20$</td><td>$1{,}5$ ; $3{,}0$ ; $4{,}5$ ; $6{,}0$</td></tr></tbody></table></div><ol type=\"a\"><li>Tính điện trở của mỗi dây từ đồ thị.</li><li>Trên cùng một hệ trục, đường của dây nào dốc hơn? Giải thích.</li><li>Nội suy cường độ dòng điện qua dây A khi $U=2{,}7\\ \\text{V}$.</li><li>Nếu vẽ lại đồ thị $I$–$U$ (trục hoành là $U$) cho dây A thì hệ số góc của đường thẳng bằng bao nhiêu, đơn vị gì?</li><li>Ngoại suy hiệu điện thế giữa hai đầu dây B khi $I=0{,}25\\ \\text{A}$; nói rõ độ tin cậy của kết quả.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-3-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị U theo I của hai dây dẫn A và B là hai đường thẳng đi qua gốc toạ độ\"><line x1=\"56.0\" y1=\"190.0\" x2=\"404.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"190.0\" x2=\"56.0\" y2=\"18.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M395.3,185.0 L404.0,190.0 L395.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M51.0,26.7 L56.0,18.0 L61.0,26.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56.0\" y1=\"190.0\" x2=\"56.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"56.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"130.0\" y1=\"190.0\" x2=\"130.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"130.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,1</text><line x1=\"204.0\" y1=\"190.0\" x2=\"204.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"204.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"278.0\" y1=\"190.0\" x2=\"278.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"278.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,3</text><line x1=\"352.0\" y1=\"190.0\" x2=\"352.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"352.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"51.0\" y1=\"164.0\" x2=\"56.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"164.0\" x2=\"396.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"168.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">1</text><line x1=\"51.0\" y1=\"138.0\" x2=\"56.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"138.0\" x2=\"396.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"142.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"51.0\" y1=\"112.0\" x2=\"56.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"112.0\" x2=\"396.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"116.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"51.0\" y1=\"86.0\" x2=\"56.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"86.0\" x2=\"396.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"90.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">4</text><line x1=\"51.0\" y1=\"60.0\" x2=\"56.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"60.0\" x2=\"396.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"64.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">5</text><line x1=\"51.0\" y1=\"34.0\" x2=\"56.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"34.0\" x2=\"396.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"38.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">6</text><text x=\"402\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">I (A)</text><text x=\"64\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">U (V)</text><line x1=\"56\" y1=\"190\" x2=\"56\" y2=\"190\" stroke=\"#38bdf8\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"56.0;352.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"190.0;65.2\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"130.0\" cy=\"158.8\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.240;0.270\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"204.0\" cy=\"127.6\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.480;0.510\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"278.0\" cy=\"96.4\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.720;0.750\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"352.0\" cy=\"65.2\" r=\"4.5\" fill=\"#38bdf8\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.960;0.990\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><line x1=\"56\" y1=\"190\" x2=\"56\" y2=\"190\" stroke=\"#fb923c\" stroke-width=\"2.4\"><animate attributeName=\"x2\" values=\"56.0;204.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"190.0;34.0\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"93.0\" cy=\"151.0\" r=\"4.5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.240;0.270\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"130.0\" cy=\"112.0\" r=\"4.5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.480;0.510\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"167.0\" cy=\"73.0\" r=\"4.5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.720;0.750\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"204.0\" cy=\"34.0\" r=\"4.5\" fill=\"#fb923c\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.960;0.990\" dur=\"4.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"360.0\" y=\"69.2\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"212.0\" y=\"38.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">B</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai đường thẳng được vẽ dần qua các điểm đo (trục hoành là I, trục tung là U).</figcaption></figure>",
+   "problem_html": "<p>Khảo sát hai dây dẫn A và B bằng cách đo hiệu điện thế $U$ giữa hai đầu dây và cường độ dòng điện $I$ qua dây. Đồ thị $U$–$I$ (trục hoành là $I$, trục tung là $U$) được vẽ từ các số liệu sau.</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Dây</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead><tbody><tr><td>A</td><td>$0{,}10$ ; $0{,}20$ ; $0{,}30$ ; $0{,}40$</td><td>$1{,}2$ ; $2{,}4$ ; $3{,}6$ ; $4{,}8$</td></tr><tr><td>B</td><td>$0{,}05$ ; $0{,}10$ ; $0{,}15$ ; $0{,}20$</td><td>$1{,}5$ ; $3{,}0$ ; $4{,}5$ ; $6{,}0$</td></tr></tbody></table></div><ol type=\"a\"><li>Tính điện trở của mỗi dây từ đồ thị.</li><li>Trên cùng một hệ trục, đường của dây nào dốc hơn? Giải thích.</li><li>Nội suy cường độ dòng điện qua dây A khi $U=2{,}7\\ \\text{V}$.</li><li>Nếu vẽ lại đồ thị $I$–$U$ (trục hoành là $U$) cho dây A thì hệ số góc của đường thẳng bằng bao nhiêu, đơn vị gì?</li><li>Ngoại suy hiệu điện thế giữa hai đầu dây B khi $I=0{,}25\\ \\text{A}$; nói rõ độ tin cậy của kết quả.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> dây dẫn tuân theo định luật Ôm có $U$ tỉ lệ thuận $I$ : đồ thị là đường thẳng qua gốc toạ độ.</li><li><strong>Định luật:</strong> $R=\\dfrac{U}{I}$ ; trên đồ thị $U$–$I$ hệ số góc $\\dfrac{\\Delta U}{\\Delta I}=R$ (V/A = Ω) ; trên đồ thị $I$–$U$ hệ số góc là $\\dfrac{1}{R}$.</li><li><strong>Công thức:</strong> nội suy tuyến tính $y=y_1+(y_2-y_1)\\dfrac{x-x_1}{x_2-x_1}$.</li><li>⚠ <strong>Điều kiện:</strong> đọc đúng trục trước ; nội suy chỉ trong khoảng đã đo ; giá trị ngoại suy phải ghi rõ là dự đoán.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở dây A</span></p><p>Lấy một điểm trên đường thẳng, ví dụ $(0{,}40\\ \\text{A};\\ 4{,}8\\ \\text{V})$:</p>$$R_A=\\dfrac{U}{I}=\\dfrac{4{,}8}{0{,}40}$$<div class=\"bt-ans\">$$R_A=12\\ \\Omega$$</div><p>Điểm $(0{,}10;\\ 1{,}2)$ cho $\\dfrac{1{,}2}{0{,}10}=12\\ \\Omega$ : khớp, hệ số góc $\\dfrac{\\Delta U}{\\Delta I}$ không đổi.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở dây B</span></p><p>Điểm cuối $(0{,}20\\ \\text{A};\\ 6{,}0\\ \\text{V})$:</p>$$R_B=\\dfrac{U}{I}=\\dfrac{6{,}0}{0{,}20}$$<div class=\"bt-ans\">$$R_B=30\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>So sánh độ dốc</span></p><p>Hệ số góc của đồ thị $U$–$I$ chính là $R$:</p>$$R_B=30\\ \\Omega\\gt R_A=12\\ \\Omega$$<div class=\"bt-ans\"><p>Đường của dây B <strong>dốc hơn</strong> : cùng cường độ $I$ thì $U$ của dây B lớn hơn.</p></div><p>Độ dốc không phụ thuộc đường vẽ dài hay ngắn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nội suy cường độ dòng điện</span></p><p>$U=2{,}7\\ \\text{V}$ nằm giữa hai điểm đo $(0{,}20;\\ 2{,}4)$ và $(0{,}30;\\ 3{,}6)$.</p>$$I=0{,}20+(0{,}30-0{,}20)\\cdot\\dfrac{2{,}7-2{,}4}{3{,}6-2{,}4}$$$$I=0{,}20+0{,}10\\cdot0{,}25$$<div class=\"bt-ans\">$$I=0{,}225\\ \\text{A}$$</div><p>Cách khác : $I=\\dfrac{U}{R_A}=\\dfrac{2{,}7}{12}=0{,}225\\ \\text{A}$ ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Hệ số góc của đồ thị I–U</span></p><p>Đổi hai trục thì hệ số góc thành nghịch đảo:</p>$$k=\\dfrac{\\Delta I}{\\Delta U}=\\dfrac{1}{R_A}=\\dfrac{1}{12}$$<div class=\"bt-ans\">$$k\\approx0{,}0833\\ \\text{A/V}$$</div><p>Đơn vị $\\text{A/V}=\\dfrac{1}{\\Omega}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Ngoại suy hiệu điện thế</span></p><p>$I=0{,}25\\ \\text{A}$ vượt điểm đo cuối ($0{,}20\\ \\text{A}$) một đoạn ngắn ; đường thẳng qua gốc nên:</p>$$U=I\\,R_B=0{,}25\\cdot30$$<div class=\"bt-ans\">$$U=7{,}5\\ \\text{V}$$</div><p>Đây là giá trị dự đoán (ngoại suy), cần kiểm tra bằng phép đo thực.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Dây A: $\\dfrac{3{,}6}{0{,}30}=12\\ \\Omega$ và $\\dfrac{2{,}4}{0{,}20}=12\\ \\Omega$ ✓ ; dây B: $\\dfrac{4{,}5}{0{,}15}=30\\ \\Omega$ ✓.</p><p>Đồ thị $I$–$U$ của dây B có hệ số góc $\\dfrac{1}{30}\\approx0{,}033\\ \\text{A/V}$, nhỏ hơn của dây A : dây có $R$ lớn thì dốc hơn trên đồ thị $U$–$I$ và thoải hơn trên đồ thị $I$–$U$.</p><p>Đọc nhầm trục là lỗi mất điểm phổ biến nhất của dạng này.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_A=12\\ \\Omega$ ; $R_B=30\\ \\Omega$</p><p>b) Đường của dây B dốc hơn</p><p>c) $I=0{,}225\\ \\text{A}$</p><p>d) $k\\approx0{,}0833\\ \\text{A/V}$</p><p>e) $U\\approx7{,}5\\ \\text{V}$ (giá trị dự đoán)</p></div><p class=\"bt-note\">Nhận dạng: <strong>đồ thị $U$–$I$ là đường thẳng qua gốc</strong> → hệ số góc là $R$ ; đổi sang <strong>$I$–$U$</strong> thì hệ số góc là $\\dfrac{1}{R}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-3-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Đồ thị U–I của hai dây dẫn với tam giác chỉ hệ số góc delta U chia delta I của dây A\"><line x1=\"56.0\" y1=\"190.0\" x2=\"404.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"190.0\" x2=\"56.0\" y2=\"18.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M395.3,185.0 L404.0,190.0 L395.3,195.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M51.0,26.7 L56.0,18.0 L61.0,26.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56.0\" y1=\"190.0\" x2=\"56.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"56.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"130.0\" y1=\"190.0\" x2=\"130.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"130.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,1</text><line x1=\"204.0\" y1=\"190.0\" x2=\"204.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"204.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,2</text><line x1=\"278.0\" y1=\"190.0\" x2=\"278.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"278.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,3</text><line x1=\"352.0\" y1=\"190.0\" x2=\"352.0\" y2=\"195.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"352.0\" y=\"209\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0,4</text><line x1=\"51.0\" y1=\"164.0\" x2=\"56.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"164.0\" x2=\"396.0\" y2=\"164.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"168.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">1</text><line x1=\"51.0\" y1=\"138.0\" x2=\"56.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"138.0\" x2=\"396.0\" y2=\"138.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"142.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"51.0\" y1=\"112.0\" x2=\"56.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"112.0\" x2=\"396.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"116.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">3</text><line x1=\"51.0\" y1=\"86.0\" x2=\"56.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"86.0\" x2=\"396.0\" y2=\"86.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"90.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">4</text><line x1=\"51.0\" y1=\"60.0\" x2=\"56.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"60.0\" x2=\"396.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"64.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">5</text><line x1=\"51.0\" y1=\"34.0\" x2=\"56.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"56.0\" y1=\"34.0\" x2=\"396.0\" y2=\"34.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 5\" opacity=\"0.25\"/><text x=\"47\" y=\"38.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">6</text><text x=\"402\" y=\"182\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">I (A)</text><text x=\"64\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">U (V)</text><line x1=\"56.0\" y1=\"190.0\" x2=\"352.0\" y2=\"65.2\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"130.0\" cy=\"158.8\" r=\"4.5\" fill=\"#38bdf8\"/><circle cx=\"204.0\" cy=\"127.6\" r=\"4.5\" fill=\"#38bdf8\"/><circle cx=\"278.0\" cy=\"96.4\" r=\"4.5\" fill=\"#38bdf8\"/><circle cx=\"352.0\" cy=\"65.2\" r=\"4.5\" fill=\"#38bdf8\"/><line x1=\"56.0\" y1=\"190.0\" x2=\"204.0\" y2=\"34.0\" stroke=\"#fb923c\" stroke-width=\"2.4\" opacity=\"1\"/><circle cx=\"93.0\" cy=\"151.0\" r=\"4.5\" fill=\"#fb923c\"/><circle cx=\"130.0\" cy=\"112.0\" r=\"4.5\" fill=\"#fb923c\"/><circle cx=\"167.0\" cy=\"73.0\" r=\"4.5\" fill=\"#fb923c\"/><circle cx=\"204.0\" cy=\"34.0\" r=\"4.5\" fill=\"#fb923c\"/><text x=\"346.0\" y=\"55.2\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"212.0\" y=\"38.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">B</text><line x1=\"130.0\" y1=\"158.8\" x2=\"352.0\" y2=\"158.8\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"352.0\" y1=\"158.8\" x2=\"352.0\" y2=\"65.2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"241.0\" y=\"175.8\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">ΔI</text><text x=\"359.0\" y=\"116.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ΔU</text><text x=\"66\" y=\"52\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">hệ số góc = ΔU / ΔI</text><text x=\"66\" y=\"70\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">đơn vị V/A = Ω</text></svg><figcaption>Dữ kiện: trên đồ thị U–I, hệ số góc ΔU/ΔI bằng điện trở. Đổi trục thì hệ số góc thành 1/R.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"trục hoành là $I$, trục tung là $U$\"</td><td>Trục hoành $I$ (A) ; trục tung $U$ (V)</td><td>⚠ Đọc đúng trục trước : hệ số góc của $U$–$I$ là $R$, của $I$–$U$ là $\\dfrac{1}{R}$</td></tr><tr><td>\"dây A : $I=0{,}10\\dots0{,}40$ A ; $U=1{,}2\\dots4{,}8$ V\"</td><td>4 điểm thẳng hàng, qua gốc</td><td>$U$ tỉ lệ thuận $I$ ; $R=\\dfrac{U}{I}=\\dfrac{\\Delta U}{\\Delta I}$</td></tr><tr><td>\"dây B : $I=0{,}05\\dots0{,}20$ A ; $U=1{,}5\\dots6{,}0$ V\"</td><td>4 điểm thẳng hàng, qua gốc</td><td>$R=\\dfrac{\\Delta U}{\\Delta I}$</td></tr><tr><td>\"đường của dây nào dốc hơn\"</td><td>So hệ số góc hai đường</td><td>Dốc hơn ⇔ hệ số góc lớn hơn ⇔ $R$ lớn hơn</td></tr><tr><td>\"nội suy … dây A khi $U=2{,}7$ V\"</td><td>$U=2{,}7$ V nằm giữa hai điểm đo</td><td>⚠ Nội suy chỉ dùng trong khoảng đã đo ; $I=\\dfrac{U}{R}$ hoặc nội suy tuyến tính hai điểm kề</td></tr><tr><td>\"đồ thị $I$–$U$ cho dây A … hệ số góc\"</td><td>Đổi vai hai trục</td><td>$k=\\dfrac{\\Delta I}{\\Delta U}=\\dfrac{1}{R}$ (đơn vị A/V)</td></tr><tr><td>\"ngoại suy … dây B khi $I=0{,}25$ A\"</td><td>$I=0{,}25$ A vượt điểm đo cuối</td><td>⚠ Ngoại suy chỉ khi vượt ngắn và đường đã rõ dạng ; ghi rõ là giá trị dự đoán</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"trục hoành là $I$, trục tung là $U$\"</td><td>Trục hoành $I$ (A) ; trục tung $U$ (V)</td><td>⚠ Đọc đúng trục trước : hệ số góc của $U$–$I$ là $R$, của $I$–$U$ là $\\dfrac{1}{R}$</td></tr><tr><td>\"dây A : $I=0{,}10\\dots0{,}40$ A ; $U=1{,}2\\dots4{,}8$ V\"</td><td>4 điểm thẳng hàng, qua gốc</td><td>$U$ tỉ lệ thuận $I$ ; $R=\\dfrac{U}{I}=\\dfrac{\\Delta U}{\\Delta I}$</td></tr><tr><td>\"dây B : $I=0{,}05\\dots0{,}20$ A ; $U=1{,}5\\dots6{,}0$ V\"</td><td>4 điểm thẳng hàng, qua gốc</td><td>$R=\\dfrac{\\Delta U}{\\Delta I}$</td></tr><tr><td>\"đường của dây nào dốc hơn\"</td><td>So hệ số góc hai đường</td><td>Dốc hơn ⇔ hệ số góc lớn hơn ⇔ $R$ lớn hơn</td></tr><tr><td>\"nội suy … dây A khi $U=2{,}7$ V\"</td><td>$U=2{,}7$ V nằm giữa hai điểm đo</td><td>⚠ Nội suy chỉ dùng trong khoảng đã đo ; $I=\\dfrac{U}{R}$ hoặc nội suy tuyến tính hai điểm kề</td></tr><tr><td>\"đồ thị $I$–$U$ cho dây A … hệ số góc\"</td><td>Đổi vai hai trục</td><td>$k=\\dfrac{\\Delta I}{\\Delta U}=\\dfrac{1}{R}$ (đơn vị A/V)</td></tr><tr><td>\"ngoại suy … dây B khi $I=0{,}25$ A\"</td><td>$I=0{,}25$ A vượt điểm đo cuối</td><td>⚠ Ngoại suy chỉ khi vượt ngắn và đường đã rõ dạng ; ghi rõ là giá trị dự đoán</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>đồ thị U–I thẳng qua gốc</b> → hệ số góc là <b>R</b> ; đổi sang <b>I–U</b> thì là <b>1/R</b>.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -593,17 +968,19 @@
        "loai": "ghi",
        "text": "Ngoại suy: U ≈ 7,5 V (kém tin cậy)"
       }
-     ]
-    ]
+     ],
+     []
+    ],
+    "de": true
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Trung bình · Diện tích dưới đồ thị v–t bậc thang: quãng đường và tốc độ trung bình",
    "topic": "Tốc độ trung bình và vận tốc trung bình",
-   "problem_html": "<p>Một người đi xe đạp trên đường thẳng, luôn theo một chiều. Đồ thị vận tốc theo thời gian gồm bốn giai đoạn liên tiếp:</p><ul><li>từ $0$ đến $20\\ \\text{s}$: vận tốc $4\\ \\text{m/s}$;</li><li>từ $20\\ \\text{s}$ đến $35\\ \\text{s}$: vận tốc $6\\ \\text{m/s}$;</li><li>từ $35\\ \\text{s}$ đến $45\\ \\text{s}$: dừng ở đèn đỏ;</li><li>từ $45\\ \\text{s}$ đến $65\\ \\text{s}$: vận tốc $5\\ \\text{m/s}$.</li></ul><ol type=\"a\"><li>Tính tổng quãng đường xe đi được.</li><li>Tính tốc độ trung bình trên toàn hành trình.</li><li>Lúc $t=50\\ \\text{s}$ xe cách điểm xuất phát bao nhiêu mét?</li><li>Xe đi được $150\\ \\text{m}$ đầu tiên vào thời điểm nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-4-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Người đi xe đạp chạy theo bốn giai đoạn: 4 m/s, 6 m/s, dừng, 5 m/s\"><line x1=\"24.0\" y1=\"74.0\" x2=\"398.0\" y2=\"74.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"40.0\" y1=\"68.0\" x2=\"40.0\" y2=\"80.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"40\" y=\"98\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">xuất phát</text><g transform=\"translate(40 74)\"><g><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;24.0 0;48.0 0;72.0 0;96.0 0;132.0 0;168.0 0;204.0 0;204.0 0;204.0 0;234.0 0;264.0 0;294.0 0;324.0 0\" dur=\"13.00s\" begin=\"indefinite\" fill=\"freeze\"/><circle cx=\"-13.0\" cy=\"-8.0\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><circle cx=\"13.0\" cy=\"-8.0\" r=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" points=\"-13.0,-8.0 -3.0,-24.0 9.0,-24.0 13.0,-8.0\"/><line x1=\"-3.0\" y1=\"-24.0\" x2=\"-6.0\" y2=\"-32.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"2.0\" cy=\"-42.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"2.0\" y1=\"-37.0\" x2=\"-3.0\" y2=\"-24.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"2.0\" y1=\"-35.0\" x2=\"10.0\" y2=\"-26.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/></g></g><text x=\"16\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">s = ?     v<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">0–20 s : 4 m/s</text><text x=\"16\" y=\"148\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">20–35 s : 6 m/s</text><text x=\"16\" y=\"168\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">35–45 s : dừng</text><text x=\"16\" y=\"188\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">45–65 s : 5 m/s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe chạy theo đúng bốn giai đoạn, nhanh gấp 5 lần thời gian thật (65 s thành 13 s).</figcaption></figure>",
+   "problem_html": "<p>Một người đi xe đạp trên đường thẳng, luôn theo một chiều. Đồ thị vận tốc theo thời gian gồm bốn giai đoạn liên tiếp:</p><ul><li>từ $0$ đến $20\\ \\text{s}$: vận tốc $4\\ \\text{m/s}$;</li><li>từ $20\\ \\text{s}$ đến $35\\ \\text{s}$: vận tốc $6\\ \\text{m/s}$;</li><li>từ $35\\ \\text{s}$ đến $45\\ \\text{s}$: dừng ở đèn đỏ;</li><li>từ $45\\ \\text{s}$ đến $65\\ \\text{s}$: vận tốc $5\\ \\text{m/s}$.</li></ul><ol type=\"a\"><li>Tính tổng quãng đường xe đi được.</li><li>Tính tốc độ trung bình trên toàn hành trình.</li><li>Lúc $t=50\\ \\text{s}$ xe cách điểm xuất phát bao nhiêu mét?</li><li>Xe đi được $150\\ \\text{m}$ đầu tiên vào thời điểm nào?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên đồ thị $v$–$t$, diện tích giữa đường biểu diễn và trục hoành là quãng đường ; đoạn dừng có diện tích bằng 0.</li><li><strong>Công thức:</strong> mỗi giai đoạn đều $s_k=v_k\\,t_k$ (hình chữ nhật) ; $v_{tb}=\\dfrac{s_{\\text{tổng}}}{t_{\\text{tổng}}}$.</li><li>Độ dài mỗi giai đoạn $t_k$ bằng mốc cuối trừ mốc đầu.</li><li>⚠ <strong>Điều kiện:</strong> quãng đường bằng diện tích khi xe không đổi chiều ; thời gian dừng vẫn tính vào $t_{\\text{tổng}}$ ; không lấy trung bình cộng các vận tốc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tổng quãng đường</span></p><p>Độ dài các giai đoạn: $20\\ \\text{s}$, $15\\ \\text{s}$, $10\\ \\text{s}$, $20\\ \\text{s}$.</p>$$s_1=4\\cdot20=80\\ \\text{m}$$$$s_2=6\\cdot15=90\\ \\text{m}$$$$s_3=0\\cdot10=0\\ \\text{m}$$$$s_4=5\\cdot20=100\\ \\text{m}$$$$s=80+90+0+100$$<div class=\"bt-ans\">$$s=270\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ trung bình</span></p><p>Tổng thời gian, kể cả lúc dừng:</p>$$t=65\\ \\text{s}$$$$v_{tb}=\\dfrac{s}{t}=\\dfrac{270}{65}$$<div class=\"bt-ans\">$$v_{tb}\\approx4{,}15\\ \\text{m/s}$$</div><p>Trung bình cộng bốn vận tốc cho $3{,}75\\ \\text{m/s}$ : <strong>sai</strong>, vì các giai đoạn dài ngắn khác nhau.</p><p>Bỏ $10\\ \\text{s}$ dừng sẽ ra $4{,}91\\ \\text{m/s}$ : <strong>sai</strong>, thời gian dừng vẫn tính.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí lúc $t=50$ s</span></p><p>Đến $t=45\\ \\text{s}$ xe đã đi $80+90+0=170\\ \\text{m}$ ; từ giây 45 đến giây 50 xe chạy $5\\ \\text{m/s}$ trong $5\\ \\text{s}$.</p>$$s(50)=170+5\\cdot(50-45)$$<div class=\"bt-ans\">$$s(50)=195\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời điểm đi được 150 m</span></p><p>Hết giai đoạn 1 xe đi $80\\ \\text{m}$ ($t=20\\ \\text{s}$) ; hết giai đoạn 2 xe đi $170\\ \\text{m}$ : mốc $150\\ \\text{m}$ nằm trong giai đoạn 2.</p>$$s_{\\text{còn}}=150-80=70\\ \\text{m},\\qquad v=6\\ \\text{m/s}$$$$\\Delta t=\\dfrac{70}{6}\\approx11{,}67\\ \\text{s}$$$$t=20+11{,}67$$<div class=\"bt-ans\">$$t\\approx31{,}7\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đồ thị $s$–$t$ có hệ số góc $4$, $6$, $0$, $5\\ \\text{m/s}$ trên bốn đoạn và kết thúc ở $270\\ \\text{m}$ ✓.</p><p>$s(31{,}7)=80+6\\cdot11{,}7\\approx150\\ \\text{m}$ ✓ ; $v_{tb}=4{,}15\\ \\text{m/s}$ nằm giữa $0$ và $6\\ \\text{m/s}$ ✓.</p><p>Quãng đường cộng dồn theo thời gian không bao giờ giảm (xe không đổi chiều).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $s=270\\ \\text{m}$</p><p>b) $v_{tb}\\approx4{,}15\\ \\text{m/s}$</p><p>c) $s(50)=195\\ \\text{m}$</p><p>d) $t\\approx31{,}7\\ \\text{s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đồ thị $v$–$t$ bậc thang</strong> → mỗi bậc là một hình chữ nhật, diện tích là quãng đường ; <strong>tốc độ trung bình</strong> = tổng quãng đường chia tổng thời gian (kể cả lúc dừng).</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-4-2\"><svg viewBox=\"0 0 420 202\" role=\"img\" aria-label=\"Đồ thị vận tốc theo thời gian gồm bốn giai đoạn; mỗi giai đoạn là một hình chữ nhật\"><line x1=\"56.0\" y1=\"170.0\" x2=\"392.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"56.0\" y1=\"170.0\" x2=\"56.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M383.3,165.0 L392.0,170.0 L383.3,175.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M51.0,38.7 L56.0,30.0 L61.0,38.7\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56.0\" y1=\"170.0\" x2=\"56.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"56.0\" y=\"189\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"156.0\" y1=\"170.0\" x2=\"156.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"156.0\" y=\"189\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">20</text><line x1=\"231.0\" y1=\"170.0\" x2=\"231.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"231.0\" y=\"189\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">35</text><line x1=\"281.0\" y1=\"170.0\" x2=\"281.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"281.0\" y=\"189\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">45</text><line x1=\"381.0\" y1=\"170.0\" x2=\"381.0\" y2=\"175.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"381.0\" y=\"189\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">65</text><line x1=\"51.0\" y1=\"130.0\" x2=\"56.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"47\" y=\"134.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">2</text><line x1=\"51.0\" y1=\"90.0\" x2=\"56.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"47\" y=\"94.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">4</text><line x1=\"51.0\" y1=\"50.0\" x2=\"56.0\" y2=\"50.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"47\" y=\"54.0\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">6</text><text x=\"396\" y=\"189\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">t (s)</text><text x=\"64\" y=\"32\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">v (m/s)</text><rect x=\"56.0\" y=\"90.0\" width=\"100.0\" height=\"80.0\" fill=\"#38bdf8\" fill-opacity=\".2\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"106.0\" y=\"135.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">①</text><rect x=\"156.0\" y=\"50.0\" width=\"75.0\" height=\"120.0\" fill=\"#34d399\" fill-opacity=\".2\" stroke=\"#34d399\" stroke-width=\"2\"/><text x=\"193.5\" y=\"115.0\" fill=\"#34d399\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">②</text><rect x=\"281.0\" y=\"70.0\" width=\"100.0\" height=\"100.0\" fill=\"#fb923c\" fill-opacity=\".2\" stroke=\"#fb923c\" stroke-width=\"2\"/><text x=\"331.0\" y=\"125.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">④</text><line x1=\"231.0\" y1=\"169.0\" x2=\"281.0\" y2=\"169.0\" stroke=\"#f87171\" stroke-width=\"3.2\" opacity=\"1\"/><text x=\"256.0\" y=\"160\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">③</text><text x=\"246\" y=\"42\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">diện tích = quãng đường</text><text x=\"246\" y=\"62\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">v<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = s / t (tổng / tổng)</tspan></text></svg><figcaption>Dữ kiện: diện tích mỗi hình chữ nhật là quãng đường của giai đoạn; giai đoạn dừng có diện tích bằng 0.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"luôn theo một chiều … bốn giai đoạn liên tiếp\"</td><td>4 hình chữ nhật dưới đồ thị $v$–$t$</td><td>⚠ Quãng đường bằng diện tích dưới đồ thị $v$–$t$ chỉ khi không đổi chiều</td></tr><tr><td>\"$0$ đến $20$ s : $4$ m/s\"</td><td>$v_1=4$ m/s ; $t_1=20$ s</td><td>$s_1=v_1t_1$</td></tr><tr><td>\"$20$ s đến $35$ s : $6$ m/s\"</td><td>$v_2=6$ m/s ; $t_2=15$ s</td><td>$s_2=v_2t_2$ ; $t_2$ là độ dài đoạn (mốc cuối trừ mốc đầu)</td></tr><tr><td>\"$35$ s đến $45$ s : dừng ở đèn đỏ\"</td><td>$v_3=0$ ; $t_3=10$ s</td><td>⚠ Đoạn dừng có diện tích 0 nhưng vẫn tính vào thời gian</td></tr><tr><td>\"$45$ s đến $65$ s : $5$ m/s\"</td><td>$v_4=5$ m/s ; $t_4=20$ s</td><td>$s_4=v_4t_4$</td></tr><tr><td>\"tổng quãng đường … tốc độ trung bình\"</td><td>Cần $s$ và $v_{tb}$</td><td>$s=s_1+s_2+s_3+s_4$ ; $v_{tb}=\\dfrac{s}{t}$ (tổng chia tổng)</td></tr><tr><td>\"lúc $t=50$ s … cách điểm xuất phát\"</td><td>$t=50$ s</td><td>Cộng diện tích đến thời điểm đó</td></tr><tr><td>\"đi được $150$ m đầu tiên vào thời điểm nào\"</td><td>$s=150$ m</td><td>Tìm giai đoạn chứa $150$ m rồi giải $s=v\\,t$ trong đoạn đó</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"luôn theo một chiều … bốn giai đoạn liên tiếp\"</td><td>4 hình chữ nhật dưới đồ thị $v$–$t$</td><td>⚠ Quãng đường bằng diện tích dưới đồ thị $v$–$t$ chỉ khi không đổi chiều</td></tr><tr><td>\"$0$ đến $20$ s : $4$ m/s\"</td><td>$v_1=4$ m/s ; $t_1=20$ s</td><td>$s_1=v_1t_1$</td></tr><tr><td>\"$20$ s đến $35$ s : $6$ m/s\"</td><td>$v_2=6$ m/s ; $t_2=15$ s</td><td>$s_2=v_2t_2$ ; $t_2$ là độ dài đoạn (mốc cuối trừ mốc đầu)</td></tr><tr><td>\"$35$ s đến $45$ s : dừng ở đèn đỏ\"</td><td>$v_3=0$ ; $t_3=10$ s</td><td>⚠ Đoạn dừng có diện tích 0 nhưng vẫn tính vào thời gian</td></tr><tr><td>\"$45$ s đến $65$ s : $5$ m/s\"</td><td>$v_4=5$ m/s ; $t_4=20$ s</td><td>$s_4=v_4t_4$</td></tr><tr><td>\"tổng quãng đường … tốc độ trung bình\"</td><td>Cần $s$ và $v_{tb}$</td><td>$s=s_1+s_2+s_3+s_4$ ; $v_{tb}=\\dfrac{s}{t}$ (tổng chia tổng)</td></tr><tr><td>\"lúc $t=50$ s … cách điểm xuất phát\"</td><td>$t=50$ s</td><td>Cộng diện tích đến thời điểm đó</td></tr><tr><td>\"đi được $150$ m đầu tiên vào thời điểm nào\"</td><td>$s=150$ m</td><td>Tìm giai đoạn chứa $150$ m rồi giải $s=v\\,t$ trong đoạn đó</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>đồ thị v–t bậc thang</b> → <b>diện tích</b> là quãng đường ; <b>tốc độ trung bình</b> = <b>tổng s / tổng t</b>.",
    "cap_do": 2,
    "fading": "giau_tu_buoc_2",
@@ -833,17 +1210,19 @@
        "loai": "ghi",
        "text": "80 + 6(t − 20) = 150 ⇒ t ≈ 31,7 s"
       }
-     ]
-    ]
+     ],
+     []
+    ],
+    "de": true
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Khó · Sai số: giá trị trung bình, sai số tuyệt đối, sai số tương đối và ghi kết quả đo",
    "topic": "Sai số tuyệt đối, sai số tỉ đối",
-   "problem_html": "<p>Một nhóm đo thời gian $t$ để một xe lăn đi hết quãng đường $s=1{,}20\\ \\text{m}$ trên máng bằng đồng hồ bấm giây có độ chia nhỏ nhất (ĐCNN) $0{,}1\\ \\text{s}$. Năm lần đo cho kết quả: $2{,}4$ ; $2{,}7$ ; $2{,}5$ ; $2{,}3$ ; $2{,}6$ (đơn vị giây). Quãng đường $s$ có sai số tuyệt đối $\\Delta s=0{,}01\\ \\text{m}$.</p><ol type=\"a\"><li>Tính giá trị trung bình $t_{tb}$.</li><li>Tính sai số tuyệt đối $\\Delta t$ (sai số ngẫu nhiên cộng sai số dụng cụ bằng nửa ĐCNN), làm tròn đến một chữ số có nghĩa.</li><li>Tính sai số tương đối $\\delta_t$.</li><li>Ghi kết quả đo $t$ đúng quy cách.</li><li>Tính tốc độ trung bình $v=\\dfrac{s}{t}$ và sai số $\\Delta v$; ghi kết quả đo $v$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-5-0\"><svg viewBox=\"0 0 420 166\" role=\"img\" aria-label=\"Năm kết quả đo thời gian xếp trên trục thời gian từ 2,0 đến 3,2 giây\"><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Năm lần đo thời gian t</text><text x=\"16\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">ĐCNN của đồng hồ : 0,1 s</text><text x=\"250\" y=\"24\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"250\" y=\"44\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = ?</text><line x1=\"30.0\" y1=\"118.0\" x2=\"394.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M385.3,113.0 L394.0,118.0 L385.3,123.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"40.0\" y1=\"118.0\" x2=\"40.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"40.0\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,0</text><line x1=\"68.3\" y1=\"118.0\" x2=\"68.3\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"96.7\" y1=\"118.0\" x2=\"96.7\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"96.7\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,2</text><line x1=\"125.0\" y1=\"118.0\" x2=\"125.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"153.3\" y1=\"118.0\" x2=\"153.3\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"153.3\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,4</text><line x1=\"181.7\" y1=\"118.0\" x2=\"181.7\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"210.0\" y1=\"118.0\" x2=\"210.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"210.0\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,6</text><line x1=\"238.3\" y1=\"118.0\" x2=\"238.3\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"266.6\" y1=\"118.0\" x2=\"266.6\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"266.6\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,8</text><line x1=\"295.0\" y1=\"118.0\" x2=\"295.0\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"323.3\" y1=\"118.0\" x2=\"323.3\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"323.3\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">3,0</text><line x1=\"351.6\" y1=\"118.0\" x2=\"351.6\" y2=\"122.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"380.0\" y1=\"118.0\" x2=\"380.0\" y2=\"125.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"380.0\" y=\"140\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">3,2</text><text x=\"398\" y=\"108\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"end\">t (s)</text><g opacity=\"0\"><circle cx=\"153.3\" cy=\"118.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"153.3\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">1</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.167;0.197\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"238.3\" cy=\"118.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"238.3\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">2</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.333;0.363\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"181.7\" cy=\"118.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"181.7\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">3</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.500;0.530\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"125.0\" cy=\"118.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"125.0\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">4</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.667;0.697\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"210.0\" cy=\"118.0\" r=\"6\" fill=\"#38bdf8\" stroke=\"#38bdf8\" stroke-width=\"2\"/><text x=\"210.0\" y=\"98\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">5</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0.000;0.833;0.863\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: năm lần đo lần lượt hiện lên trục thời gian (số trên chấm là thứ tự lần đo).</figcaption></figure>",
+   "problem_html": "<p>Một nhóm đo thời gian $t$ để một xe lăn đi hết quãng đường $s=1{,}20\\ \\text{m}$ trên máng bằng đồng hồ bấm giây có độ chia nhỏ nhất (ĐCNN) $0{,}1\\ \\text{s}$. Năm lần đo cho kết quả: $2{,}4$ ; $2{,}7$ ; $2{,}5$ ; $2{,}3$ ; $2{,}6$ (đơn vị giây). Quãng đường $s$ có sai số tuyệt đối $\\Delta s=0{,}01\\ \\text{m}$.</p><ol type=\"a\"><li>Tính giá trị trung bình $t_{tb}$.</li><li>Tính sai số tuyệt đối $\\Delta t$ (sai số ngẫu nhiên cộng sai số dụng cụ bằng nửa ĐCNN), làm tròn đến một chữ số có nghĩa.</li><li>Tính sai số tương đối $\\delta_t$.</li><li>Ghi kết quả đo $t$ đúng quy cách.</li><li>Tính tốc độ trung bình $v=\\dfrac{s}{t}$ và sai số $\\Delta v$; ghi kết quả đo $v$.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> sai số ngẫu nhiên do mỗi lần đo khác nhau một chút ; sai số dụng cụ do vạch chia của dụng cụ.</li><li><strong>Công thức:</strong> $t_{tb}=\\dfrac{\\sum t_i}{n}$ ; $\\Delta t_{ng}=\\dfrac{\\sum|t_i-t_{tb}|}{n}$ ; $\\Delta t_{dc}=\\dfrac{\\text{ĐCNN}}{2}$ ; $\\Delta t=\\Delta t_{ng}+\\Delta t_{dc}$ ; $\\delta=\\dfrac{\\Delta t}{t_{tb}}$.</li><li>Phép chia $v=\\dfrac{s}{t}$ : $\\delta_v=\\delta_s+\\delta_t$ và $\\Delta v=v\\,\\delta_v$.</li><li>⚠ <strong>Điều kiện:</strong> độ lệch lấy trị tuyệt đối ; sai số làm tròn đến một chữ số có nghĩa, giá trị trung bình làm tròn cùng hàng thập phân với sai số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Giá trị trung bình</span></p>$$t_{tb}=\\dfrac{2{,}4+2{,}7+2{,}5+2{,}3+2{,}6}{5}=\\dfrac{12{,}5}{5}$$<div class=\"bt-ans\">$$t_{tb}=2{,}50\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Sai số ngẫu nhiên</span></p><p>Độ lệch tuyệt đối của từng lần so với giá trị trung bình:</p>$$0{,}1;\\ \\ 0{,}2;\\ \\ 0;\\ \\ 0{,}2;\\ \\ 0{,}1\\ \\ (\\text{s})$$$$\\Delta t_{ng}=\\dfrac{0{,}1+0{,}2+0+0{,}2+0{,}1}{5}=\\dfrac{0{,}6}{5}$$<div class=\"bt-ans\">$$\\Delta t_{ng}=0{,}12\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Sai số tuyệt đối</span></p><p>Sai số dụng cụ bằng nửa ĐCNN:</p>$$\\Delta t_{dc}=\\dfrac{0{,}1}{2}=0{,}05\\ \\text{s}$$$$\\Delta t=0{,}12+0{,}05=0{,}17\\ \\text{s}$$<p>Làm tròn đến một chữ số có nghĩa:</p><div class=\"bt-ans\">$$\\Delta t\\approx0{,}2\\ \\text{s}$$</div><p>Bỏ sai số dụng cụ sẽ ra $0{,}12\\ \\text{s}$, làm tròn thành $0{,}1\\ \\text{s}$ : <strong>sai</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Sai số tương đối và ghi kết quả</span></p>$$\\delta_t=\\dfrac{\\Delta t}{t_{tb}}\\cdot100\\%=\\dfrac{0{,}17}{2{,}50}\\cdot100\\%$$<div class=\"bt-ans\">$$\\delta_t\\approx7\\%$$</div><p>Dùng $\\Delta t$ chưa làm tròn ($0{,}17\\ \\text{s}$) ; dùng $0{,}2\\ \\text{s}$ đã làm tròn sẽ ra $8\\%$, lệch thêm một chút.</p><p>Giá trị trung bình làm tròn cùng hàng thập phân với sai số:</p><div class=\"bt-ans\">$$t=2{,}5\\ \\text{s}\\pm0{,}2\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Sai số của tốc độ</span></p>$$\\delta_s=\\dfrac{0{,}01}{1{,}20}\\approx0{,}83\\%$$$$v=\\dfrac{s}{t_{tb}}=\\dfrac{1{,}20}{2{,}50}=0{,}48\\ \\text{m/s}$$<p>Phép chia cộng các sai số tương đối:</p>$$\\delta_v=\\delta_s+\\delta_t\\approx0{,}83\\%+6{,}8\\%\\approx7{,}6\\%$$$$\\Delta v=v\\,\\delta_v\\approx0{,}48\\cdot0{,}076\\approx0{,}037\\ \\text{m/s}$$<div class=\"bt-ans\">$$\\Delta v\\approx0{,}04\\ \\text{m/s}$$</div><div class=\"bt-ans\">$$v=0{,}48\\ \\text{m/s}\\pm0{,}04\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Ghi đúng quy cách : $t=2{,}5\\ \\text{s}\\pm0{,}2\\ \\text{s}$ (không ghi $2{,}50\\pm0{,}2$) ; $v=0{,}48\\ \\text{m/s}\\pm0{,}04\\ \\text{m/s}$ cùng hàng thập phân.</p><p>Sai số ngẫu nhiên ($0{,}12\\ \\text{s}$) lớn hơn sai số dụng cụ ($0{,}05\\ \\text{s}$) : thao tác bấm đồng hồ mới là nguồn sai số chính.</p><p>Sai số tương đối của $t$ (cỡ $7\\%$) lớn hơn của $s$ (cỡ $0{,}8\\%$) nên quyết định sai số của $v$.</p><p>Quy ước một chữ số có nghĩa cho sai số là cách ghi thông dụng ở trường ; đề yêu cầu hai chữ số thì làm theo đề.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $t_{tb}=2{,}50\\ \\text{s}$</p><p>b) $\\Delta t\\approx0{,}2\\ \\text{s}$</p><p>c) $\\delta_t\\approx7\\%$</p><p>d) $t=2{,}5\\ \\text{s}\\pm0{,}2\\ \\text{s}$</p><p>e) $v=0{,}48\\ \\text{m/s}\\pm0{,}04\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: <strong>bảng nhiều lần đo kèm ĐCNN</strong> → trung bình, độ lệch tuyệt đối, cộng <strong>nửa ĐCNN</strong>, ghi $A\\pm\\Delta A$ cùng hàng thập phân.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-5-2\"><svg viewBox=\"0 0 420 218\" role=\"img\" aria-label=\"Các công thức tính giá trị trung bình, sai số tuyệt đối, sai số tương đối và khoảng giá trị t trung bình cộng trừ delta t\"><text x=\"16\" y=\"24\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> = (t</tspan><tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\"> + … + t</tspan><tspan dy=\"4\" font-size=\"10\">5</tspan><tspan dy=\"-4\">) / 5</tspan></text><text x=\"16\" y=\"46\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt<tspan dy=\"4\" font-size=\"10\">ng</tspan><tspan dy=\"-4\"> = (Σ|t</tspan><tspan dy=\"4\" font-size=\"10\">i</tspan><tspan dy=\"-4\"> − t</tspan><tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\">|) / 5</tspan></text><text x=\"16\" y=\"68\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Δt = Δt<tspan dy=\"4\" font-size=\"10\">ng</tspan><tspan dy=\"-4\"> + Δt</tspan><tspan dy=\"4\" font-size=\"10\">dc</tspan><tspan dy=\"-4\"> ,  Δt</tspan><tspan dy=\"4\" font-size=\"10\">dc</tspan><tspan dy=\"-4\"> = ½ ĐCNN</tspan></text><text x=\"16\" y=\"90\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">δ = Δt / t<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> · 100%</tspan></text><line x1=\"150.0\" y1=\"150.0\" x2=\"270.0\" y2=\"150.0\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"150.0\" y1=\"142.0\" x2=\"150.0\" y2=\"158.0\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"270.0\" y1=\"142.0\" x2=\"270.0\" y2=\"158.0\" stroke=\"#38bdf8\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"210.0\" y1=\"142.0\" x2=\"210.0\" y2=\"158.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"210\" y=\"136\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t<tspan dy=\"4\" font-size=\"10\">tb</tspan></text><text x=\"150\" y=\"174\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">t<tspan dy=\"4\" font-size=\"9\">tb</tspan><tspan dy=\"-4\"> − Δt</tspan></text><text x=\"270\" y=\"174\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">t<tspan dy=\"4\" font-size=\"9\">tb</tspan><tspan dy=\"-4\"> + Δt</tspan></text><text x=\"16\" y=\"202\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">Ghi kết quả : t = t<tspan dy=\"4\" font-size=\"10\">tb</tspan><tspan dy=\"-4\"> ± Δt</tspan></text></svg><figcaption>Dữ kiện: kết quả đo là một khoảng quanh giá trị trung bình. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đồng hồ bấm giây có ĐCNN $0{,}1$ s\"</td><td>$\\text{ĐCNN}=0{,}1$ s</td><td>⚠ Dụng cụ chỉ có vạch chia thì sai số dụng cụ bằng nửa ĐCNN</td></tr><tr><td>\"năm lần đo : $2{,}4$ ; $2{,}7$ ; $2{,}5$ ; $2{,}3$ ; $2{,}6$\"</td><td>$n=5$ giá trị $t_i$</td><td>$t_{tb}=\\dfrac{\\sum t_i}{n}$ ; độ lệch $|t_i-t_{tb}|$ lấy trị tuyệt đối</td></tr><tr><td>\"sai số tuyệt đối $\\Delta t$ … làm tròn một chữ số có nghĩa\"</td><td>Cần $\\Delta t$</td><td>$\\Delta t=\\Delta t_{ng}+\\Delta t_{dc}$</td></tr><tr><td>\"sai số tương đối $\\delta_t$\"</td><td>Cần $\\delta_t$</td><td>$\\delta_t=\\dfrac{\\Delta t}{t_{tb}}\\cdot100\\%$</td></tr><tr><td>\"ghi kết quả đo $t$ đúng quy cách\"</td><td>Cần $t=t_{tb}\\pm\\Delta t$</td><td>⚠ Giá trị trung bình làm tròn cùng hàng thập phân với sai số</td></tr><tr><td>\"$s=1{,}20$ m, $\\Delta s=0{,}01$ m\"</td><td>$s=1{,}20$ m ; $\\Delta s=0{,}01$ m</td><td>$\\delta_s=\\dfrac{\\Delta s}{s}$ ; phép chia cộng các sai số tương đối : $\\delta_v=\\delta_s+\\delta_t$</td></tr><tr><td>\"tốc độ $v=\\dfrac{s}{t}$ và sai số $\\Delta v$\"</td><td>Cần $v$, $\\Delta v$</td><td>$v=\\dfrac{s}{t_{tb}}$ ; $\\Delta v=v\\,\\delta_v$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"đồng hồ bấm giây có ĐCNN $0{,}1$ s\"</td><td>$\\text{ĐCNN}=0{,}1$ s</td><td>⚠ Dụng cụ chỉ có vạch chia thì sai số dụng cụ bằng nửa ĐCNN</td></tr><tr><td>\"năm lần đo : $2{,}4$ ; $2{,}7$ ; $2{,}5$ ; $2{,}3$ ; $2{,}6$\"</td><td>$n=5$ giá trị $t_i$</td><td>$t_{tb}=\\dfrac{\\sum t_i}{n}$ ; độ lệch $|t_i-t_{tb}|$ lấy trị tuyệt đối</td></tr><tr><td>\"sai số tuyệt đối $\\Delta t$ … làm tròn một chữ số có nghĩa\"</td><td>Cần $\\Delta t$</td><td>$\\Delta t=\\Delta t_{ng}+\\Delta t_{dc}$</td></tr><tr><td>\"sai số tương đối $\\delta_t$\"</td><td>Cần $\\delta_t$</td><td>$\\delta_t=\\dfrac{\\Delta t}{t_{tb}}\\cdot100\\%$</td></tr><tr><td>\"ghi kết quả đo $t$ đúng quy cách\"</td><td>Cần $t=t_{tb}\\pm\\Delta t$</td><td>⚠ Giá trị trung bình làm tròn cùng hàng thập phân với sai số</td></tr><tr><td>\"$s=1{,}20$ m, $\\Delta s=0{,}01$ m\"</td><td>$s=1{,}20$ m ; $\\Delta s=0{,}01$ m</td><td>$\\delta_s=\\dfrac{\\Delta s}{s}$ ; phép chia cộng các sai số tương đối : $\\delta_v=\\delta_s+\\delta_t$</td></tr><tr><td>\"tốc độ $v=\\dfrac{s}{t}$ và sai số $\\Delta v$\"</td><td>Cần $v$, $\\Delta v$</td><td>$v=\\dfrac{s}{t_{tb}}$ ; $\\Delta v=v\\,\\delta_v$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>bảng nhiều lần đo kèm ĐCNN</b> → trung bình, độ lệch tuyệt đối, <b>nửa ĐCNN</b>, ghi <b>A ± ΔA</b>.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -972,15 +1351,162 @@
      "d) Ghi kết quả $t$",
      "e) $v$, $\\Delta v$, ghi kết quả $v$"
     ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 2.0,
+     "max": 3.0,
+     "ten": "t (s)",
+     "vach": [
+      2.3,
+      2.4,
+      2.5,
+      2.6,
+      2.7
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 0,
+     "max": 6.5,
+     "ten": "lần đo",
+     "vach": [
+      1,
+      2,
+      3,
+      4,
+      5
+     ],
+     "luoi": 1
+    },
+    "hinh": [
+     {
+      "loai": "diem",
+      "x": 2.4,
+      "y": 1
+     },
+     {
+      "loai": "diem",
+      "x": 2.7,
+      "y": 2
+     },
+     {
+      "loai": "diem",
+      "x": 2.5,
+      "y": 3
+     },
+     {
+      "loai": "diem",
+      "x": 2.3,
+      "y": 4
+     },
+     {
+      "loai": "diem",
+      "x": 2.6,
+      "y": 5
+     },
+     {
+      "loai": "chu",
+      "x": 2.78,
+      "y": 5.9,
+      "text": "ĐCNN 0,1 s",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dung",
+       "x": 2.5
+      },
+      {
+       "loai": "chu",
+       "x": 2.52,
+       "y": 0.35,
+       "text": "t_{tb}",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "t_{tb} = 12,5 : 5 = 2,50 s"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 2.4,
+       "den": 2.5,
+       "y": 1,
+       "nhan": "0,1",
+       "het": 3
+      },
+      {
+       "loai": "thuoc",
+       "tu": 2.5,
+       "den": 2.7,
+       "y": 2,
+       "nhan": "0,2",
+       "het": 3
+      },
+      {
+       "loai": "thuoc",
+       "tu": 2.3,
+       "den": 2.5,
+       "y": 4,
+       "nhan": "0,2",
+       "het": 3
+      },
+      {
+       "loai": "thuoc",
+       "tu": 2.5,
+       "den": 2.6,
+       "y": 5,
+       "nhan": "0,1",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "Δt_{ng} = 0,6 : 5 = 0,12 s"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 2.3,
+       "den": 2.7,
+       "y": 5.9,
+       "nhan": "t_{tb} ± Δt"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δt = 0,12 + 0,05 ≈ 0,2 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "δ_t = 0,17 : 2,50 ≈ 7%"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Δv = 0,48 · 7,6% ≈ 0,04 m/s"
+      }
+     ],
+     []
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 6 · Khó · Bài tổng hợp: tóm tắt, đổi đơn vị, hiệu suất, điện năng, tiền điện và rút tỉ số",
    "topic": "Tính điện năng tiêu thụ và tiền điện",
-   "problem_html": "<p>Một ấm điện ghi $220\\ \\text{V}-1800\\ \\text{W}$ được dùng ở hiệu điện thế $220\\ \\text{V}$ để đun $1{,}8$ lít nước từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$. Hiệu suất của ấm là $84\\%$. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$.</p><ol type=\"a\"><li>Tính thời gian đun.</li><li>Mỗi ngày đun hai lần như vậy. Tính tiền điện của ấm trong $30$ ngày, giá $2000$ đồng một kWh.</li><li>Nếu cắm nhầm ấm vào nguồn $110\\ \\text{V}$ (điện trở dây đun và hiệu suất không đổi) thì thời gian đun mỗi lần là bao lâu?</li></ol><p>Trình bày theo bốn bước: tóm tắt, đặt ký hiệu, lập luận từng bước, kết luận có đơn vị.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-6-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Ấm điện đun 1,8 lít nước; nhiệt kế cho thấy nhiệt độ nước tăng từ 20 độ C lên 100 độ C\"><rect x=\"30.0\" y=\"74.0\" width=\"90.0\" height=\"66.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\" points=\"120.0,90.0 140.0,80.0 146.0,84.0\"/><path d=\"M30,88 C8,88 8,126 30,126\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"60.0\" y1=\"140.0\" x2=\"60.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><line x1=\"60.0\" y1=\"156.0\" x2=\"40.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"30\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">220 V – 1800 W</text><text x=\"30\" y=\"192\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">H = 84%</text><rect x=\"212.0\" y=\"30.0\" width=\"16.0\" height=\"120.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><circle cx=\"220.0\" cy=\"160.0\" r=\"13\" fill=\"#f87171\" stroke=\"#f87171\" stroke-width=\"2.2\"/><rect x=\"216\" y=\"128\" width=\"8\" height=\"22\" fill=\"#f87171\"><animate attributeName=\"y\" values=\"128.0;40.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"22.0;110.0\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"232.0\" y1=\"40.0\" x2=\"240.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"244\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">100 °C</text><line x1=\"232.0\" y1=\"128.0\" x2=\"240.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"244\" y=\"132\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">20 °C</text><text x=\"290\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1,8 lít nước</text><text x=\"290\" y=\"74\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">t = ?</text><text x=\"290\" y=\"98\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">tiền điện 30 ngày = ?</text><text x=\"290\" y=\"122\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">t′ ở 110 V = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: nhiệt độ nước tăng từ 20 °C đến 100 °C (không theo thời gian thật; thời gian đun là điều cần tìm).</figcaption></figure>",
+   "problem_html": "<p>Một ấm điện ghi $220\\ \\text{V}-1800\\ \\text{W}$ được dùng ở hiệu điện thế $220\\ \\text{V}$ để đun $1{,}8$ lít nước từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$. Hiệu suất của ấm là $84\\%$. Nhiệt dung riêng của nước là $4200\\ \\text{J/(kg·K)}$, khối lượng riêng của nước là $1000\\ \\text{kg/m}^3$.</p><ol type=\"a\"><li>Tính thời gian đun.</li><li>Mỗi ngày đun hai lần như vậy. Tính tiền điện của ấm trong $30$ ngày, giá $2000$ đồng một kWh.</li><li>Nếu cắm nhầm ấm vào nguồn $110\\ \\text{V}$ (điện trở dây đun và hiệu suất không đổi) thì thời gian đun mỗi lần là bao lâu?</li></ol><p>Trình bày theo bốn bước: tóm tắt, đặt ký hiệu, lập luận từng bước, kết luận có đơn vị.</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhiệt lượng có ích làm nóng nước ; điện năng là năng lượng toàn phần ấm tiêu thụ ; hiệu suất đo phần có ích.</li><li><strong>Công thức:</strong> $m=D\\,V$ ; $Q_{ich}=m\\,c\\,\\Delta t$ ; $H=\\dfrac{Q_{ich}}{A}$ ; $A=P\\,t$ ; $P=\\dfrac{U^2}{R}$.</li><li>$1\\ \\text{lít}=10^{-3}\\ \\text{m}^3$ ; $1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$.</li><li>⚠ <strong>Điều kiện:</strong> dùng đúng hiệu điện thế định mức thì công suất bằng số ghi ; đổi mọi đại lượng về SI rồi mới thay số ; giữ ký hiệu chữ đến bước cuối.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tóm tắt và khối lượng nước</span></p><p>Tóm tắt: $U=220\\ \\text{V}$ ; $P=1800\\ \\text{W}$ ; $t_1=20\\ ^\\circ\\text{C}$ ; $t_2=100\\ ^\\circ\\text{C}$ ; $H=0{,}84$ ; $c=4200\\ \\text{J/(kg·K)}$.</p><p>$V=1{,}8\\ \\text{lít}=1{,}8\\cdot10^{-3}\\ \\text{m}^3$ ; $D=1000\\ \\text{kg/m}^3$:</p>$$m=D\\,V=1000\\cdot1{,}8\\cdot10^{-3}$$<div class=\"bt-ans\">$$m=1{,}8\\ \\text{kg}$$</div><p>Cần tìm : $t$ ; tiền điện 30 ngày ; $t'$ khi dùng $110\\ \\text{V}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Nhiệt lượng có ích</span></p>$$\\Delta t=t_2-t_1=100-20=80\\ \\text{K}$$$$Q_{ich}=m\\,c\\,\\Delta t=1{,}8\\cdot4200\\cdot80$$<div class=\"bt-ans\">$$Q_{ich}=604800\\ \\text{J}=604{,}8\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện năng một lần đun</span></p><p>Từ hiệu suất:</p>$$H=\\dfrac{Q_{ich}}{A}\\ \\Rightarrow\\ A=\\dfrac{Q_{ich}}{H}=\\dfrac{604800}{0{,}84}$$<div class=\"bt-ans\">$$A=720000\\ \\text{J}=720\\ \\text{kJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian đun</span></p><p>Ấm dùng đúng $220\\ \\text{V}$ nên $P=1800\\ \\text{W}$:</p>$$t=\\dfrac{A}{P}=\\dfrac{720000}{1800}$$<div class=\"bt-ans\">$$t=400\\ \\text{s}\\approx6\\ \\text{phút}\\ 40\\ \\text{giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tiền điện 30 ngày</span></p>$$A=\\dfrac{720000}{3{,}6\\cdot10^6}=0{,}2\\ \\text{kWh}$$<p>Số lần đun trong 30 ngày: $2\\cdot30=60$ lần.</p>$$A_{30}=60\\cdot0{,}2=12\\ \\text{kWh}$$$$\\text{Tiền}=12\\cdot2000$$<div class=\"bt-ans\">$$\\text{Tiền}=24000\\ \\text{đồng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Cắm nhầm vào 110 V</span></p><p>Điện trở $R$ không đổi nên $P=\\dfrac{U^2}{R}$ tỉ lệ với $U^2$:</p>$$\\dfrac{P'}{P}=\\left(\\dfrac{U'}{U}\\right)^2=\\left(\\dfrac{110}{220}\\right)^2=\\dfrac14$$<p>Hiệu suất không đổi nên điện năng cần dùng vẫn là $A$ ; $t=\\dfrac{A}{P}$:</p>$$t'=\\dfrac{A}{P'}=4t=4\\cdot400$$<div class=\"bt-ans\">$$t'=1600\\ \\text{s}\\approx26\\ \\text{phút}\\ 40\\ \\text{giây}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Dòng điện định mức $I=\\dfrac{P}{U}=\\dfrac{1800}{220}\\approx8{,}2\\ \\text{A}$ : hợp lí với ấm điện.</p><p>Đun $1{,}8$ lít nước trong khoảng $6{,}7$ phút bằng ấm $1800\\ \\text{W}$ : hợp lí.</p><p>Thử ngược: $0{,}84\\cdot1800\\cdot400=604800\\ \\text{J}=Q_{ich}$ ✓.</p><p>Kết luận bằng một câu có đơn vị, mỗi bước một dòng, giữ ký hiệu chữ đến bước cuối.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Thời gian đun $t=400\\ \\text{s}\\approx6\\ \\text{phút}\\ 40\\ \\text{giây}$</p><p>b) Tiền điện 30 ngày khoảng $24000\\ \\text{đồng}$</p><p>c) Ở $110\\ \\text{V}$: $t'=1600\\ \\text{s}\\approx26\\ \\text{phút}\\ 40\\ \\text{giây}$</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>hiệu suất, lít, kWh</strong> cùng lúc → tóm tắt đổi về SI, giữ ký hiệu chữ, <strong>kiểm tra đơn vị</strong> ở cuối ; đổi hiệu điện thế → <strong>rút tỉ số $P\\sim U^2$</strong>.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c0-6-2\"><svg viewBox=\"0 0 420 186\" role=\"img\" aria-label=\"Chuỗi tính từ khối lượng nước đến nhiệt có ích, điện năng và thời gian đun\"><text x=\"55\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">khối lượng</text><rect x=\"12.0\" y=\"30.0\" width=\"86.0\" height=\"40.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"55\" y=\"55\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">m = D·V</text><line x1=\"100\" y1=\"50\" x2=\"114\" y2=\"50\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M106.7,45.8 L114.0,50.0 L106.7,54.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"159\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">nhiệt có ích</text><rect x=\"116.0\" y=\"30.0\" width=\"86.0\" height=\"40.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"159\" y=\"55\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q = m·c·Δt</text><line x1=\"204\" y1=\"50\" x2=\"218\" y2=\"50\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M210.7,45.8 L218.0,50.0 L210.7,54.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"263\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">điện năng</text><rect x=\"220.0\" y=\"30.0\" width=\"86.0\" height=\"40.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"263\" y=\"55\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A = Q / H</text><line x1=\"308\" y1=\"50\" x2=\"322\" y2=\"50\" stroke=\"#38bdf8\" stroke-width=\"2\"/><path d=\"M314.7,45.8 L322.0,50.0 L314.7,54.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"367\" y=\"22\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">thời gian</text><rect x=\"324.0\" y=\"30.0\" width=\"86.0\" height=\"40.0\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"367\" y=\"55\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">t = A / P</text><text x=\"16\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">⚠ A là điện năng (toàn phần), Q là nhiệt có ích</text><text x=\"16\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">1 kWh = 3,6·10⁶ J</text><text x=\"16\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">R không đổi : P = U²/R, tỉ lệ với U²</text><text x=\"16\" y=\"172\" fill=\"currentColor\" font-size=\"13\" font-weight=\"400\" text-anchor=\"start\">U giảm 2 lần → P giảm 4 lần</text></svg><figcaption>Dữ kiện: chuỗi tính từ khối lượng nước đến thời gian đun. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ấm $220\\ \\text{V}-1800\\ \\text{W}$ dùng ở $220\\ \\text{V}$\"</td><td>$U=220$ V ; $P=1800$ W</td><td>⚠ Đúng hiệu điện thế định mức nên công suất thực bằng công suất ghi</td></tr><tr><td>\"$1{,}8$ lít nước từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$\"</td><td>$V=1{,}8$ lít ; $t_1=20\\ ^\\circ\\text{C}$ ; $t_2=100\\ ^\\circ\\text{C}$ ; $D=1000\\ \\text{kg/m}^3$</td><td>$m=D\\,V$ (đổi lít ra $\\text{m}^3$) ; $Q_{ich}=m\\,c\\,\\Delta t$</td></tr><tr><td>\"hiệu suất $84\\%$\"</td><td>$H=0{,}84$</td><td>⚠ $H=\\dfrac{Q_{ich}}{A}$ : $A$ là điện năng toàn phần, lớn hơn nhiệt có ích</td></tr><tr><td>\"thời gian đun\"</td><td>Cần $t$</td><td>$A=P\\,t$ nên $t=\\dfrac{A}{P}$ (J và W)</td></tr><tr><td>\"hai lần mỗi ngày, $30$ ngày, $2000$ đồng một kWh\"</td><td>$2\\cdot30$ lần ; giá $2000$ đồng/kWh</td><td>$1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ ; tiền $=A_{kWh}\\cdot$ giá</td></tr><tr><td>\"cắm nhầm vào nguồn $110$ V\"</td><td>$U'=110$ V ; $R$ và $H$ không đổi</td><td>⚠ $P=\\dfrac{U^2}{R}$ : công suất tỉ lệ với $U^2$ ; rút tỉ số $\\dfrac{P'}{P}$</td></tr><tr><td>\"thời gian đun mỗi lần ở $110$ V\"</td><td>Cần $t'$</td><td>Cùng điện năng $A$ : $t'=\\dfrac{A}{P'}$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ấm $220\\ \\text{V}-1800\\ \\text{W}$ dùng ở $220\\ \\text{V}$\"</td><td>$U=220$ V ; $P=1800$ W</td><td>⚠ Đúng hiệu điện thế định mức nên công suất thực bằng công suất ghi</td></tr><tr><td>\"$1{,}8$ lít nước từ $20\\ ^\\circ\\text{C}$ đến $100\\ ^\\circ\\text{C}$\"</td><td>$V=1{,}8$ lít ; $t_1=20\\ ^\\circ\\text{C}$ ; $t_2=100\\ ^\\circ\\text{C}$ ; $D=1000\\ \\text{kg/m}^3$</td><td>$m=D\\,V$ (đổi lít ra $\\text{m}^3$) ; $Q_{ich}=m\\,c\\,\\Delta t$</td></tr><tr><td>\"hiệu suất $84\\%$\"</td><td>$H=0{,}84$</td><td>⚠ $H=\\dfrac{Q_{ich}}{A}$ : $A$ là điện năng toàn phần, lớn hơn nhiệt có ích</td></tr><tr><td>\"thời gian đun\"</td><td>Cần $t$</td><td>$A=P\\,t$ nên $t=\\dfrac{A}{P}$ (J và W)</td></tr><tr><td>\"hai lần mỗi ngày, $30$ ngày, $2000$ đồng một kWh\"</td><td>$2\\cdot30$ lần ; giá $2000$ đồng/kWh</td><td>$1\\ \\text{kWh}=3{,}6\\cdot10^6\\ \\text{J}$ ; tiền $=A_{kWh}\\cdot$ giá</td></tr><tr><td>\"cắm nhầm vào nguồn $110$ V\"</td><td>$U'=110$ V ; $R$ và $H$ không đổi</td><td>⚠ $P=\\dfrac{U^2}{R}$ : công suất tỉ lệ với $U^2$ ; rút tỉ số $\\dfrac{P'}{P}$</td></tr><tr><td>\"thời gian đun mỗi lần ở $110$ V\"</td><td>Cần $t'$</td><td>Cùng điện năng $A$ : $t'=\\dfrac{A}{P'}$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hiệu suất, lít, kWh</b> cùng lúc → tóm tắt đổi về <b>SI</b>, giữ ký hiệu chữ, <b>kiểm tra đơn vị</b> cuối bài.",
    "cap_do": 4,
    "fading": "giau_het",
@@ -1131,6 +1657,97 @@
      "a) Thời gian đun $t$",
      "b) Tiền điện $30$ ngày",
      "c) $t'$ khi cắm vào $110$ V"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "de": true,
+    "canh": {
+     "kieu": "hop_he",
+     "ten": "H = 84%"
+    },
+    "cot": [
+     {
+      "ten": "Q_{ích}",
+      "mau": "min"
+     },
+     {
+      "ten": "A",
+      "mau": "max"
+     }
+    ],
+    "max": 800,
+    "don_vi": "kJ",
+    "hinh": [
+     {
+      "loai": "mui",
+      "vao": true,
+      "nhan": "ấm 1800 W",
+      "hang": 1
+     },
+     {
+      "loai": "mui",
+      "vao": false,
+      "nhan": "Q_{ích}",
+      "hang": 0
+     },
+     {
+      "loai": "mui",
+      "vao": false,
+      "nhan": "hao phí",
+      "hang": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "m = 1000 · 1,8·10⁻³ = 1,8 kg"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "Q_{ích}",
+       "gia_tri": 604.8,
+       "nhan": "604,8"
+      },
+      {
+       "loai": "ghi",
+       "text": "Q = 1,8 · 4200 · 80 = 604,8 kJ"
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "A",
+       "gia_tri": 720,
+       "nhan": "720"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 604,8 : 0,84 = 720 kJ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t = 720 000 : 1800 = 400 s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "60 · 0,2 kWh = 12 kWh: 24 000 đ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "P' = P : 4 ⇒ t' = 4t = 1600 s"
+      }
+     ],
+     []
     ]
    }
   }
