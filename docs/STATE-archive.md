@@ -857,3 +857,6 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Chỉ số tspan 13→14 L11 (commit bc839cd4b, 6 bài): đã vào DB bài 26 + 43 (1/11 22h40); CÒN 4 bài Mô tả sóng, Cường độ dòng điện, TH đo SĐĐ pin, TH đo tốc độ âm — gộp đợt `--chi-video --cho-phep-khac` sau 22h cùng 8 bài L10.
 - Kiểm DB 5/11: `profiles.is_test` có (12 tài khoản thử), `sweep_engagement_alerts` lọc `is_test`, `don-canh-bao-gia` dry-run 3/11 rỗng; 73 đề 1102–1174 đều Hiện, deploy 5/11 10h47; 8 bài L10 tspan 14 đã ở DB; HSG9 151, 152, 156, 158, 163, 178 đã Hiện; `hsg-ai-grade` ACTIVE v11 (17/10) + secret `ANTHROPIC_API_KEY` có.
 - 5/11 ~14h: đăng 4 bài L11 tspan 14 (27, 34, 41, 45) bằng `cap-nhat-ly-thuyet.sh --chi-video --cho-phep-khac`; đối chiếu trước: DB và file chỉ khác cỡ chữ tspan sub; kiểm sau: 0 còn 12–13. Sao lưu `scripts/logs/ly-thuyet-bai{27,34,41,45}-backup-17938509*/17938510*.json`.
+
+## Migration — 5/11/2026 11:05 (đã chạy, log `scripts/logs/20261105-110551-*`)
+- `20261105120000_similar_dang_questions`: RPC `get_similar_dang_questions` (câu tương tự đúng dạng cho nút "Làm bài tương tự"); chỉ tạo hàm, lúc nào cũng được. Kiểm: bài 33 dạng 4 (49 câu gán) trả 10 câu, dạng không có trả 0.
