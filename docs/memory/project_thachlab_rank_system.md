@@ -119,3 +119,8 @@ Thầy chốt: điểm kiểm tra trên lớp là điểm thật, phải tính R
 ## 2026-10-20 — Cộng bù RP Kiểm tra nhanh 19/10 (ĐÃ CHẠY)
 - `20261020090000_rank_bat_nguon_kiem_tra_nhanh_19_10.sql`: đề #1003, #979 (mùa 5), #1032 tạo sau đợt 17/10 nên chưa có `rank_sources`; bật 10 RP + recompute → +159 RP (23 em, #1003) và +160 RP (24 lượt, #979). #1032 (1 em, không thuộc mùa nào) không có RP là đúng. Sao lưu `rank_sources_backup_20261020`.
 - Bài học: đề "Kiểm tra nhanh" tạo SAU 17/10 không tự có nguồn RP → cần bật sau mỗi đợt tạo đề (hoặc trigger tự bật).
+
+## 2026-11-05 — Hiện trạng + tên mùa 2 thầy chọn (CHƯA mở)
+- DB 5/11: mùa #4 (L11+L12) đóng 30/10, 207 kết quả; từ 26/10 L11/L12 không có mùa → không cộng RP. Mùa #5 "Alpha test" (L10) hết hạn 31/10 nhưng còn `active`, chưa đóng. KHTN 9 (15) + HSG 9 (19) chưa từng có mùa.
+- Tên thầy chọn (hợp giọng danh hiệu + chương dạy tới HK1): L12 **Mùa 2 · Lôi Đình Cảm Ứng** · L11 **Mùa 2 · Thợ Săn Sóng** · L10 **Mùa 2 · Kỷ Nguyên Newton** · L9 **Mùa 1 · Bẻ Cong Ánh Sáng**.
+- Mở mùa mới: `rank_create_season` chỉ seed bậc mặc định (200…2600) — KHÔNG chép `rank_sources`/`config`; phải bật nguồn RP + đặt config theo 4 quy tắc ở `project_thachlab_rank_gate_adaptive` ("Mùa sau").
