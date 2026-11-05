@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R_1=15\\ \\Omega$ nối tiếp $R_2=25\\ \\Omega$",
+     "Vôn kế giữa $A$, $B$ chỉ $12\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R_{\\text{tđ}}$",
+     "b) Số chỉ ampe kế",
+     "c) $U_1$, $U_2$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -203,7 +214,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R_1=40\\ \\Omega$ song song $R_2=60\\ \\Omega$",
+     "Vôn kế giữa $A$, $B$ chỉ $12\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $R_{\\text{tđ}}$",
+     "b) $I_1$, $I_2$",
+     "c) Số chỉ ampe kế mạch chính"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -326,7 +348,246 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9,
+        7.2
+       ],
+       [
+        1.5,
+        7.2
+       ],
+       [
+        1.5,
+        1.0
+       ],
+       [
+        18.5,
+        1.0
+       ],
+       [
+        18.5,
+        7.2
+       ],
+       [
+        15,
+        7.2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9,
+        3.0
+       ],
+       [
+        9,
+        9.4
+       ],
+       [
+        15,
+        9.4
+       ],
+       [
+        15,
+        3.0
+       ],
+       [
+        9,
+        3.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9,
+        5.2
+       ],
+       [
+        15,
+        5.2
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 9,
+      "y": 7.2
+     },
+     {
+      "loai": "nut",
+      "x": 15,
+      "y": 7.2
+     },
+     {
+      "loai": "nut",
+      "x": 9,
+      "y": 5.2
+     },
+     {
+      "loai": "nut",
+      "x": 15,
+      "y": 5.2
+     },
+     {
+      "loai": "chu",
+      "x": 8.6,
+      "y": 7.7,
+      "text": "M",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 15.4,
+      "y": 7.7,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 6,
+      "y": 1.0,
+      "duong": "truoc",
+      "ten": "18 V",
+      "vi": "t"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 1.5,
+      "y": 3.6,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 5.2,
+      "y": 7.2,
+      "ten": "R_1 = 5 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 12,
+      "y": 9.4,
+      "ten": "R_2 = 15 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 12,
+      "y": 5.2,
+      "ten": "R_3 = 30 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 12,
+      "y": 3.0,
+      "kieu": "V"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 16.5,
+       "y": 8.4,
+       "text": "10 Ω",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{MN} = 15·30 : 45 = 10 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R_{tđ} = R_1 + R_{MN} = 5 + 10 = 15 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        1.5,
+        5.0
+       ],
+       "den": [
+        1.5,
+        6.3
+       ],
+       "nhan": "1,2 A",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 18 : 15 = 1,2 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 15.6,
+       "y": 2.6,
+       "text": "12 V",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U_{MN} = 1,2·10 = 12 V"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        13.5,
+        5.2
+       ],
+       "den": [
+        14.8,
+        5.2
+       ],
+       "nhan": "0,4 A",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "I_3 = 12 : 30 = 0,4 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "I_2 + I_3 = 0,8 + 0,4 = 1,2 A ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$R_1=5\\ \\Omega$ nối tiếp cụm ($R_2=15\\ \\Omega$ song song $R_3=30\\ \\Omega$) giữa $M$, $N$",
+     "Nguồn $18\\ \\text{V}$; ampe kế ở mạch chính, vôn kế giữa $M$, $N$"
+    ],
+    "tim": [
+     "a) $R_{\\text{tđ}}$",
+     "b) Số chỉ ampe kế",
+     "c) Số chỉ vôn kế",
+     "d) $I_3$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -462,7 +723,189 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        8.8
+       ],
+       [
+        17,
+        8.8
+       ],
+       [
+        17,
+        2.2
+       ],
+       [
+        3,
+        2.2
+       ],
+       [
+        3,
+        8.8
+       ]
+      ]
+     },
+     {
+      "loai": "nguon",
+      "x": 3,
+      "y": 5.5,
+      "huong": "doc",
+      "ten": "9 V",
+      "vi": "r"
+     },
+     {
+      "loai": "den",
+      "x": 8,
+      "y": 8.8,
+      "ten": "Đ (6 V, 12 Ω)",
+      "vi": "t",
+      "het": 3
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 8.8,
+      "ten": "R_x",
+      "vi": "t",
+      "het": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        10,
+        8.8
+       ],
+       "den": [
+        11.8,
+        8.8
+       ],
+       "nhan": "0,5 A",
+       "vi": "b",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 6 : 12 = 0,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 5.2,
+       "text": "R_{tđ} = 18 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{tđ} = 9 : 0,5 = 18 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "diem": [
+        [
+         9,
+         8.8
+        ],
+        [
+         9,
+         2.2
+        ]
+       ]
+      },
+      {
+       "loai": "nut",
+       "x": 9,
+       "y": 8.8
+      },
+      {
+       "loai": "nut",
+       "x": 9,
+       "y": 2.2
+      },
+      {
+       "loai": "dien_tro",
+       "x": 9,
+       "y": 5.5,
+       "huong": "doc",
+       "ten": "R_x = 6 Ω",
+       "vi": "r"
+      },
+      {
+       "loai": "den",
+       "x": 17,
+       "y": 5.5,
+       "ten": "Đ",
+       "vi": "r"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_x = 18 − 12 = 6 Ω"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mắc nhầm: R_x song song đèn"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        17,
+        8.2
+       ],
+       "den": [
+        17,
+        7.0
+       ],
+       "nhan": "0,75 A",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "I_{đ} = 9 : 12 = 0,75 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "0,75 A > 0,5 A ⇒ đèn sáng quá"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 0,5·18 = 9 V ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Đèn sáng bình thường: $U_{\\text{đ}}=6\\ \\text{V}$, $R_{\\text{đ}}=12\\ \\Omega$",
+     "Nguồn $9\\ \\text{V}$",
+     "Mắc nhầm: $R_x$ song song với đèn, nối thẳng vào $9\\ \\text{V}$"
+    ],
+    "tim": [
+     "a) $I$ qua đèn khi sáng bình thường",
+     "b) $R_x$ nối tiếp cần mắc",
+     "c) Mắc nhầm: $I_{\\text{đ}}$ và đèn thế nào"
+    ]
+   }
   }
  ]
 }

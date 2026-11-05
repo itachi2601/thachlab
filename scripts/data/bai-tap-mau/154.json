@@ -104,7 +104,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Đáy $S=200\\ \\text{cm}^2$; nước $40\\ \\text{cm}$ dưới, dầu $20\\ \\text{cm}$ trên",
+     "$D_n=1000\\ \\text{kg/m}^3$, $D_d=800\\ \\text{kg/m}^3$; $g=10\\ \\text{m/s}^2$",
+     "Nắp $5\\ \\text{cm}^2$, tâm cách đáy $10\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $p$ tại đáy",
+     "b) Áp lực lên đáy",
+     "c) Lực tối thiểu giữ nắp"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -179,7 +191,104 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Ống U: $S_1=30\\ \\text{cm}^2$ (trái), $S_2=20\\ \\text{cm}^2$ (phải)",
+     "Lúc đầu nước $40\\ \\text{cm}$ mỗi nhánh",
+     "Đổ dầu vào trái: $h_d=25\\ \\text{cm}$; $D_d=800$, $D_n=1000\\ \\text{kg/m}^3$"
+    ],
+    "tim": [
+     "a) $h_n$ (từ mặt phân cách)",
+     "b) Nước nhánh phải dâng thêm $y$",
+     "c) Mặt thoáng nào cao hơn, bao nhiêu"
+    ]
+   },
+   "cong_cu": {
+    "loai": "cot_chat_long",
+    "canh": {
+     "kieu": "ong_u",
+     "h_max": 27
+    },
+    "hinh": [
+     {
+      "loai": "muc",
+      "h1": 25,
+      "h2": 20
+     },
+     {
+      "loai": "thuoc",
+      "ong": "trai",
+      "tu": 0,
+      "den": 25,
+      "nhan": "h_d"
+     },
+     {
+      "loai": "chu",
+      "x": 2.6,
+      "y": 3,
+      "text": "dầu",
+      "mau": "min"
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "y": -5.5,
+      "text": "nước"
+     },
+     {
+      "loai": "diem",
+      "ten": "A"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "ten": "B"
+      },
+      {
+       "loai": "ngang"
+      },
+      {
+       "loai": "thuoc",
+       "ong": "phai",
+       "tu": 0,
+       "den": 20,
+       "nhan": "h_n"
+      },
+      {
+       "loai": "ghi",
+       "text": "p_A = p_B ⇒ d_dh_d = d_nh_n ⇒ h_n = 20 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "S_1x = S_2y; x + y = h_n ⇒ y = 12 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "ong": "giua",
+       "tu": 20,
+       "den": 25,
+       "nhan": "Δh"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δh = h_d − h_n = 25 − 20 = 5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "30·8 = 20·12 = 240 cm³ ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -254,7 +363,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Gỗ: $S_g=40\\ \\text{cm}^2$, $h=20\\ \\text{cm}$, $D_g=700\\ \\text{kg/m}^3$",
+     "Bình $S=160\\ \\text{cm}^2$, nước sâu $30\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) Chiều cao phần chìm",
+     "b) Quả cân tối thiểu để gỗ chìm hết",
+     "c) Mực nước dâng thêm (chưa có quả cân)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -377,7 +497,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Lực kế: $3{,}6\\ \\text{N}$ (không khí), $2{,}4\\ \\text{N}$ (nước), $2{,}76\\ \\text{N}$ (chất X)",
+     "Khối nhựa $500\\ \\text{cm}^3$, $200\\ \\text{g}$ buộc đáy bình nước"
+    ],
+    "tim": [
+     "a) $V$ và $D$ quả cầu",
+     "b) $D_X$",
+     "c) Lực căng dây",
+     "d) Phần chìm khi cắt dây"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -489,7 +621,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bình $S=85\\ \\text{cm}^2$, nước ở $0\\ ^\\circ\\text{C}$",
+     "Đá $540\\ \\text{g}$ gắn sắt $39\\ \\text{g}$, nổi",
+     "$D$: nước $1$, đá $0{,}9$, sắt $7{,}8\\ \\text{g/cm}^3$; sáp $0{,}8\\ \\text{g/cm}^3$"
+    ],
+    "tim": [
+     "a) Thể tích chiếm chỗ lúc đầu",
+     "b) Thể tích chiếm chỗ sau khi tan; mực nước đổi bao nhiêu",
+     "c) Thay sắt bằng sáp thì sao"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -612,7 +756,148 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thanh AB $40\\ \\text{cm}$, nhẹ; $m_1=300\\ \\text{g}$ ở A, vật 2 ở B",
+     "Cân bằng khi $OA=10\\ \\text{cm}$",
+     "Nhúng vật 2 vào nước: dời điểm tựa về A thêm $2\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $m_2$",
+     "b) $D_2$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_moment",
+    "nen": {
+     "kieu": "thanh",
+     "dai": 40,
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0,
+       "nhan": "tren"
+      },
+      {
+       "ten": "B",
+       "x": 40,
+       "nhan": "phai"
+      },
+      {
+       "ten": "O",
+       "x": 10,
+       "nhan": "duoi"
+      },
+      {
+       "ten": "O'",
+       "x": 8,
+       "buoc": 1,
+       "nhan": "tren"
+      }
+     ],
+     "do": {
+      "kieu": "gia_do",
+      "x": 10
+     }
+    },
+    "vec": [
+     {
+      "ten": "P_1",
+      "goc": "xuong",
+      "do_lon": 3,
+      "tu": "A",
+      "so": "3 N"
+     },
+     {
+      "ten": "P_2",
+      "goc": "xuong",
+      "do_lon": 1,
+      "tu": "B",
+      "buoc": 1,
+      "den": 2
+     },
+     {
+      "ten": "P_2'",
+      "goc": "xuong",
+      "do_lon": 0.75,
+      "tu": "B",
+      "buoc": 2,
+      "mau": "cam"
+     },
+     {
+      "ten": "F_A",
+      "goc": "len",
+      "do_lon": 0.25,
+      "tu": "B",
+      "buoc": 3,
+      "mau": "lam"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "40 cm"
+     }
+    ],
+    "tay_don": [
+     {
+      "truc": "O",
+      "luc": "P_1",
+      "text": "10",
+      "buoc": 1,
+      "an": 2
+     },
+     {
+      "truc": "O",
+      "luc": "P_2",
+      "text": "30",
+      "buoc": 1,
+      "an": 2
+     },
+     {
+      "truc": "O'",
+      "luc": "P_1",
+      "text": "8",
+      "buoc": 2
+     },
+     {
+      "truc": "O'",
+      "luc": "P_2'",
+      "text": "32",
+      "buoc": 2
+     }
+    ],
+    "bang": [
+     {
+      "text": "P_2 = 1 N",
+      "buoc": 1,
+      "den": 2
+     },
+     {
+      "text": "P_2' = 0,75 N",
+      "buoc": 2,
+      "den": 4,
+      "mau": "cam"
+     },
+     {
+      "text": "F_A = 0,25 N",
+      "buoc": 3,
+      "mau": "lam"
+     },
+     {
+      "text": "V_2 = 25 cm³",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "D_2 = 4000 kg/m³",
+      "buoc": 5
+     }
+    ],
+    "ti_le": 4
+   }
   }
  ],
  "tu_luan": {

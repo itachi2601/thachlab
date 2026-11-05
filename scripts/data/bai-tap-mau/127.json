@@ -556,6 +556,79 @@
      "b) thời điểm đầu tiên $E=0$ (từ $t=0$)",
      "c) thời điểm đầu tiên $E$ cực đại"
     ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 1,
+    "don_vi": "E₀",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0.3333333333333333,
+       "ten": "M₀",
+       "chieu": true
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π·10⁸ rad/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ T = 2π : ω = 10⁻⁸ s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "E cùng pha B ⇒ M₀ ở góc π/3"
+      },
+      {
+       "loai": "ghi",
+       "text": "(trục x: E : E₀)"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": 0.3333333333333333,
+       "den": 0.5,
+       "het": 4
+      },
+      {
+       "loai": "diem",
+       "goc": 0.5,
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Δφ = π/2 − π/3 = π/6"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ t = T/12 ≈ 8,33·10⁻¹⁰ s"
+      }
+     ],
+     [
+      {
+       "loai": "cung",
+       "tu": 0.3333333333333333,
+       "den": 2
+      },
+      {
+       "loai": "diem",
+       "goc": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "Δφ = 2π − π/3 = 5π/3"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ t = 5T/6 ≈ 8,33·10⁻⁹ s"
+      }
+     ]
+    ]
    }
   }
  ],

@@ -539,6 +539,133 @@
      "b) $E_0$ và $E$",
      "c) biểu thức $e$"
     ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "nhan": "B",
+     "hang": [
+      1,
+      2.2,
+      8.8,
+      10
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       10,
+       2.8
+      ],
+      "den": [
+       10,
+       8.2
+      ],
+      "mau": "chu",
+      "het": 3
+     },
+     {
+      "loai": "vec",
+      "x": 10,
+      "y": 5.5,
+      "goc": 0,
+      "dai": 2.6,
+      "nhan": "n",
+      "mau": "chu",
+      "het": 3
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 10,
+       "y": 5.5,
+       "goc": 40,
+       "dai": 3.4,
+       "nhan": "n(t)",
+       "mau": "min",
+       "dut": true,
+       "het": 2
+      },
+      {
+       "loai": "goc",
+       "x": 10,
+       "y": 5.5,
+       "tu": 0,
+       "den": 40,
+       "nhan": "ωt",
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "25 vòng/s ⇒ ω = 2π·25 = 157 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14.4,
+       "y": 8.4,
+       "text": "n ∥ B ⇒ Φ = Φ₀",
+       "a": "middle",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ₀ = NBS = 200·0,04·0,01 = 0,08 Wb"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "tu": [
+        7.2,
+        5.5
+       ],
+       "den": [
+        12.8,
+        5.5
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "vec",
+       "x": 10,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.6,
+       "nhan": "n",
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 15,
+       "y": 3.9,
+       "text": "n ⊥ B ⇒ e = E₀",
+       "a": "middle"
+      },
+      {
+       "loai": "ghi",
+       "text": "E₀ = ωΦ₀ = 157·0,08 = 12,6 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "E = E₀ : √2 = 12,57 : 1,414 = 8,89 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Φ = Φ₀cos ωt ⇒ e = E₀cos(ωt − π/2)"
+      }
+     ]
+    ]
    }
   },
   {
@@ -696,6 +823,105 @@
      "a) thời gian sáng trong một chu kì (ms)",
      "b) thời gian sáng trong $1\\ \\text{s}$",
      "c) lần đầu đèn tắt (ms)"
+    ]
+   },
+   "cong_cu": {
+    "loai": "vong_tron",
+    "A": 200,
+    "don_vi": "V",
+    "x_dich": [
+     173.2,
+     -173.2
+    ],
+    "nhan_dich": "tren",
+    "lop": [
+     [
+      {
+       "loai": "diem",
+       "goc": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 100π ⇒ T = 2π : ω"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 20 ms"
+      }
+     ],
+     [
+      {
+       "loai": "giao",
+       "x": 173.2
+      },
+      {
+       "loai": "cung",
+       "tu": -0.16666666666666666,
+       "den": 0.16666666666666666
+      },
+      {
+       "loai": "ghi",
+       "text": "|cos ωt| ≥ √3/2 ⇒ pha quét"
+      },
+      {
+       "loai": "ghi",
+       "text": "π/3 mỗi lần sáng"
+      }
+     ],
+     [
+      {
+       "loai": "giao",
+       "x": -173.2
+      },
+      {
+       "loai": "cung",
+       "tu": 0.8333333333333334,
+       "den": 1.1666666666666667
+      },
+      {
+       "loai": "ghi",
+       "text": "Sáng quanh pha 0 và pha π"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ 2 lần mỗi chu kì"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t = 2·(π/3) : 100π"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 1/150 s ≈ 6,67 ms"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1 s = 50 chu kì"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ 50·6,67 ms ≈ 0,333 s"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "goc": 0.16666666666666666,
+       "ten": "tắt"
+      },
+      {
+       "loai": "ghi",
+       "text": "Tắt khi ωt = π/6"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ t ≈ 1,67 ms"
+      }
+     ]
     ]
    }
   }

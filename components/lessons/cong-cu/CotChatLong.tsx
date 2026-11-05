@@ -8,6 +8,10 @@
  *    nối A–B), thuoc {ong: "trai"|"phai"|"giua", tu, den, nhan} (giữa: thước giữa hai nhánh + gạch dóng hai mức).
  *  - `be`: bể rộng, mặt nước y = 0, khối hộp (`rong` × `cao` cm) ở giữa. Mục: khoi {chim, vat?} (khối mới nhất đang hiện
  *    là khối dùng cho lực), luc {ten, huong, do_lon, tu?: "khoi"|"vat", lech?}, thuoc {ong: "trai"|"phai", tu, den, nhan}.
+ *  - `ong_kin` (Đ6 5/11/2026, bài 7 Boyle L12 dạng 5): ống thẳng đứng dài `dai` cm, một đầu kín, cột thuỷ ngân giam cột
+ *    khí; y = 0 là đáy khung (cm, lên là dương), hai chỗ đặt ống trái/phải. Mục: ong {ben: "trai"|"phai", mieng:
+ *    "len"|"xuong", khi, hg (cm), nhan_khi?, nhan_hg? (thước ở phía ngoài: ống trái thước bên trái, ống phải bên phải),
+ *    p0? (nhãn mũi tên áp suất khí quyển ở miệng), dut? (vẽ nhạt, mặt phân cách nét đứt — chiều dài chưa biết)}.
  * Chung: chu {x (0..20), y (cm), text, a?} · ghi {text}. `het: k` = ẩn từ khi xong bước k.
  * Hình không đổi cao giữa các bước (D2: khung theo h_max/tren/sau); nhãn trên hình (N8, H3); lực bằng nét + tên (H4).
  */
@@ -24,6 +28,7 @@ const W = 20,
   R = 1; // nửa bề rộng lòng ống
 
 export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) {
+  if (canh.kieu === "ong_kin") return <OngKin dai={canh.dai} hinh={hinh} lop={lop} layer={Lr} />;
   const items = dangHien(lop, Lr);
   const hinhHien = hinh.filter((it) => it.het == null || Lr < it.het);
   const hien = [...hinhHien, ...items];
@@ -110,7 +115,7 @@ export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) 
       );
     }
     if (it.loai === "khoi" && !u) {
-      const top = Y(canh.cao - it.chim);
+      const top = Y(canh.kieu === "be" ? canh.cao - it.chim : 0);
       return (
         <g className={cls}>
           <rect x={W / 2 - BW / 2} y={top} width={BW} height={BH} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.12} />
@@ -189,6 +194,100 @@ export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) 
         </Label>
       ))}
       {/* giữ chỗ dải dưới để hình không đổi cao (D2) */}
+      <rect x={0} y={H} width={0.01} height={3.1} fill="none" />
+    </svg>
+  );
+}
+
+/** Cảnh `ong_kin`: ống một đầu kín giam khí bằng cột thuỷ ngân (Boyle). Khung cao cố định theo `dai` (D2). */
+function OngKin({ dai, hinh, lop, layer: Lr }: { dai: number; hinh: CotChatLongLop[]; lop?: CotChatLongLop[][]; layer: number }) {
+  const items = dangHien(lop, Lr);
+  const hinhHien = hinh.filter((it) => it.het == null || Lr < it.het);
+  const ghi = ghiMoiNhat(lop, Lr).flatMap((t) => chiaDong(t, W, FS)).slice(0, 2);
+  const k = 8.5 / dai,
+    TOP = 2.1,
+    R2 = 0.9;
+  const Y = (y: number) => TOP + (dai - y) * k;
+  const YB = Y(0),
+    H = YB + 2.3;
+  const XC = (ben: "trai" | "phai") => (ben === "trai" ? 6.5 : 13.5);
+
+  function thuoc(x: number, y1: number, y2: number, nhan: string, trai: boolean) {
+    return (
+      <g>
+        <g stroke={C_MAX} strokeWidth={0.07}>
+          <line x1={x} y1={y1} x2={x} y2={y2} />
+          <line x1={x - 0.22} y1={y1} x2={x + 0.22} y2={y1} />
+          <line x1={x - 0.22} y1={y2} x2={x + 0.22} y2={y2} />
+        </g>
+        <Label x={trai ? x - 0.35 : x + 0.35} y={(y1 + y2) / 2 + 0.38} a={trai ? "end" : "start"} fill={C_MAX} size={FS}>
+          {nhan}
+        </Label>
+      </g>
+    );
+  }
+
+  function veMuc(it: CotChatLongLop, moi: boolean) {
+    const cls = moi ? "cc-in" : undefined;
+    if (it.loai === "ong") {
+      const x = XC(it.ben),
+        len = it.mieng === "len",
+        trai = it.ben === "trai";
+      // khí sát đầu kín, thuỷ ngân ngay sau khí về phía miệng
+      const kA = len ? 0 : dai - it.khi,
+        kB = len ? it.khi : dai,
+        gA = len ? it.khi : dai - it.khi - it.hg,
+        gB = len ? it.khi + it.hg : dai - it.khi;
+      const op = it.dut ? 0.5 : 1,
+        yKin = len ? Y(0) : Y(dai),
+        xt = trai ? x - R2 - 0.55 : x + R2 + 0.55;
+      const yMat = len ? Y(it.khi) : Y(dai - it.khi); // mặt phân cách khí–Hg
+      return (
+        <g className={cls}>
+          <rect x={x - R2} y={Y(kB)} width={2 * R2} height={Y(kA) - Y(kB)} fill={C_MIN} fillOpacity={0.16 * op} />
+          <rect x={x - R2} y={Y(gB)} width={2 * R2} height={Y(gA) - Y(gB)} fill="currentColor" fillOpacity={0.34 * op} />
+          <line x1={x - R2} y1={yMat} x2={x + R2} y2={yMat} stroke="currentColor" strokeWidth={0.07} strokeDasharray={it.dut ? "0.25 0.18" : undefined} />
+          <path d={`M${x - R2} ${Y(0)} V${Y(dai)} M${x + R2} ${Y(0)} V${Y(dai)}`} stroke="currentColor" strokeWidth={0.14} fill="none" />
+          <line x1={x - R2 - 0.07} y1={yKin} x2={x + R2 + 0.07} y2={yKin} stroke="currentColor" strokeWidth={0.3} />
+          {it.nhan_khi && thuoc(xt, Y(kA), Y(kB), it.nhan_khi, trai)}
+          {it.nhan_hg && thuoc(xt, Y(gA), Y(gB), it.nhan_hg, trai)}
+          {it.p0 && (
+            <g>
+              <line x1={x} y1={len ? TOP - 1.9 : YB + 1.9} x2={x} y2={len ? TOP - 0.3 : YB + 0.3} stroke={C_MAX} strokeWidth={0.12} />
+              <Chevron x={x} y={len ? TOP - 0.25 : YB + 0.25} ang={len ? Math.PI / 2 : -Math.PI / 2} color={C_MAX} len={0.45} w={0.12} />
+              <Label x={x + 0.45} y={len ? TOP - 0.85 : YB + 1.55} a="start" fill={C_MAX} size={FS}>
+                {it.p0}
+              </Label>
+            </g>
+          )}
+        </g>
+      );
+    }
+    if (it.loai === "chu") {
+      return (
+        <g className={cls}>
+          <Label x={it.x} y={Y(it.y)} a={it.a ?? "middle"} size={FS} fill={it.mau === "min" ? C_MIN : it.mau === "max" ? C_MAX : "currentColor"}>
+            {it.text}
+          </Label>
+        </g>
+      );
+    }
+    return null;
+  }
+
+  return (
+    <svg viewBox={`-0.4 -0.2 ${W + 0.8} ${H + 3.7}`} className="cc-fig" role="img" aria-label="Ống thuỷ tinh một đầu kín, cột thuỷ ngân giam cột khí">
+      {hinhHien.map((it, j) => (
+        <g key={`h${j}`}>{veMuc(it, false)}</g>
+      ))}
+      {items.map((it, j) => (
+        <g key={`l${j}`}>{veMuc(it, true)}</g>
+      ))}
+      {ghi.map((t, i) => (
+        <Label key={`${Lr}-${i}`} x={W / 2} y={H + 1.2 + i * 1.45} size={FS}>
+          {t}
+        </Label>
+      ))}
       <rect x={0} y={H} width={0.01} height={3.1} fill="none" />
     </svg>
   );

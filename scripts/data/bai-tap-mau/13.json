@@ -556,6 +556,121 @@
      "a) $|e_c|$ trung bình và $I$ trung bình",
      "b) $\\vec B_c$ cùng hay ngược chiều $\\vec B$ ngoài"
     ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "nhan": "B",
+     "hang": [
+      1,
+      2.2,
+      8.8,
+      10
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       10,
+       2.8
+      ],
+      "den": [
+       10,
+       8.2
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "chu",
+      "x": 9.7,
+      "y": 8.75,
+      "text": "lúc đầu",
+      "a": "end"
+     },
+     {
+      "loai": "vec",
+      "x": 10,
+      "y": 5.5,
+      "goc": 0,
+      "dai": 2.6,
+      "nhan": "n",
+      "mau": "chu"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "day",
+       "tu": [
+        7.4,
+        7.0
+       ],
+       "den": [
+        12.6,
+        4.0
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "vec",
+       "x": 10,
+       "y": 5.5,
+       "goc": 60,
+       "dai": 3.0,
+       "nhan": "n′",
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "x": 10,
+       "y": 5.5,
+       "tu": 0,
+       "den": 60,
+       "nhan": "α"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mặt hợp B 30° ⇒ n hợp B 60°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Φ₁ − Φ₂ = BS(1 − cos 60°) = 1,0 mWb"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 100·1,0·10⁻³ : 0,050 = 2,0 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "i = |e| : R = 2,0 : 4,0 = 0,50 A"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 14.2,
+       "y": 2.3,
+       "goc": 0,
+       "dai": 2.8,
+       "nhan": "Bc",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ giảm ⇒ Bc cùng chiều B"
+      }
+     ]
+    ]
    }
   },
   {

@@ -104,7 +104,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$F_1=30$ N, $F_2=40$ N",
+     "c) $21$ N và $24$ N hợp góc $60^\\circ$"
+    ],
+    "tim": [
+     "a) $F$ khi cùng chiều; khi ngược chiều",
+     "b) $F$ khi vuông góc",
+     "c) $F$ khi hợp góc $60^\\circ$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -216,7 +227,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=6$ kg, hai dây đối xứng",
+     "Mỗi dây hợp phương ngang góc $\\theta$, $\\sin\\theta=0{,}6$",
+     "Dây chịu tối đa $55$ N; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $T$ mỗi dây",
+     "b) Dây có đứt không; $\\theta$ nhỏ nhất"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -315,7 +337,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=50$ kg, sàn ngang, $F$ nằm ngang",
+     "$\\mu_n=0{,}4$, $\\mu_t=0{,}3$; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $F=120$ N: chuyển động không; $F_{ms}$",
+     "b) $F$ nhỏ nhất để bắt đầu trượt",
+     "c) $F$ để trượt đều"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -462,7 +495,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=10$ kg; dốc dài $5$ m, cao $3$ m",
+     "$\\mu_n=0{,}8$, $\\mu_t=0{,}6$; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) Tự trượt không; $F_{ms}$",
+     "b) $F$ kéo đều lên dốc",
+     "c) Góc nghiêng bắt đầu trượt"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -585,7 +629,159 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Thanh $AB=1$ m, $2$ kg, bản lề ở $A$",
+     "Lực kế thẳng đứng ở $B$",
+     "Vật $3$ kg treo ở $C$, $AC=0{,}8$ m",
+     "c) Lực kế tối đa $28$ N"
+    ],
+    "tim": [
+     "a) Số chỉ $F$",
+     "b) Lực bản lề $R$ (độ lớn, chiều)",
+     "c) $x$ tối đa từ $A$ tới vật"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_moment",
+    "nen": {
+     "kieu": "thanh",
+     "dai": 1.0,
+     "diem": [
+      {
+       "ten": "A",
+       "x": 0,
+       "nhan": "tren"
+      },
+      {
+       "ten": "G",
+       "x": 0.5,
+       "buoc": 1
+      },
+      {
+       "ten": "C",
+       "x": 0.8
+      },
+      {
+       "ten": "B",
+       "x": 1.0
+      },
+      {
+       "ten": "D",
+       "x": 0.6,
+       "buoc": 5,
+       "nhan": "tren"
+      }
+     ],
+     "do": {
+      "kieu": "ban_le",
+      "x": 0
+     }
+    },
+    "vec": [
+     {
+      "ten": "P_v",
+      "goc": "xuong",
+      "do_lon": 30,
+      "tu": "C",
+      "den": 5
+     },
+     {
+      "ten": "P_t",
+      "goc": "xuong",
+      "do_lon": 20,
+      "tu": "G",
+      "buoc": 1
+     },
+     {
+      "ten": "F",
+      "goc": "len",
+      "do_lon": 34,
+      "tu": "B",
+      "buoc": 3,
+      "den": 5,
+      "mau": "cam"
+     },
+     {
+      "ten": "R",
+      "goc": "len",
+      "do_lon": 16,
+      "tu": "A",
+      "buoc": 4,
+      "den": 5,
+      "mau": "cam"
+     },
+     {
+      "ten": "P_v",
+      "goc": "xuong",
+      "do_lon": 30,
+      "tu": "D",
+      "buoc": 5
+     },
+     {
+      "ten": "F_{max}",
+      "goc": "len",
+      "do_lon": 28,
+      "tu": "B",
+      "buoc": 5,
+      "mau": "cam"
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "1 m",
+      "an": 5
+     },
+     {
+      "a": "A",
+      "b": "D",
+      "text": "x = 0,6 m",
+      "buoc": 5
+     }
+    ],
+    "tay_don": [
+     {
+      "truc": "A",
+      "luc": "P_t",
+      "text": "0,5",
+      "buoc": 1,
+      "an": 3
+     },
+     {
+      "truc": "A",
+      "luc": "P_v",
+      "text": "0,8",
+      "buoc": 2,
+      "an": 3
+     }
+    ],
+    "bang": [
+     {
+      "text": "M_t = 10 N·m",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "M_v = 24 N·m",
+      "buoc": 2,
+      "den": 4
+     },
+     {
+      "text": "F = 34 N",
+      "buoc": 3,
+      "den": 5
+     },
+     {
+      "text": "R = 16 N",
+      "buoc": 4,
+      "den": 5
+     }
+    ],
+    "ti_le": 4
+   }
   },
   {
    "form": "bai_tap",
@@ -745,7 +941,173 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=4$ kg; dốc dài $5$ m, cao $3$ m",
+     "Lò xo $k=200$ N/m song song dốc, cố định phía trên",
+     "$\\mu=0{,}5$; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) Không lò xo: nằm yên được không",
+     "b) $\\Delta l_{min}$, $\\Delta l_{max}$",
+     "c) $F_{ms}$ (độ lớn, chiều) khi $\\Delta l=10$ cm"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 36.87,
+     "vat": "m"
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 40
+     },
+     {
+      "ten": "P_{∥}",
+      "goc": "doc_xuong",
+      "do_lon": 24,
+      "kieu": "thanh_phan",
+      "buoc": 1
+     },
+     {
+      "ten": "P_{⊥}",
+      "goc": "vao_doc",
+      "do_lon": 32,
+      "kieu": "thanh_phan",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "ten": "N",
+      "goc": "phap_tuyen",
+      "do_lon": 32,
+      "buoc": 2,
+      "den": 3,
+      "mau": "cam"
+     },
+     {
+      "ten": "F_{đh}",
+      "goc": "doc_len",
+      "do_lon": 8,
+      "tu": "vat",
+      "buoc": 4,
+      "den": 5,
+      "mau": "lam",
+      "lech": [
+       -0.9,
+       1.3
+      ]
+     },
+     {
+      "ten": "F_{ms}",
+      "goc": "doc_len",
+      "do_lon": 16,
+      "tu": "vat_day",
+      "buoc": 4,
+      "den": 5,
+      "mau": "cam",
+      "lech": [
+       -1.23,
+       0.86
+      ],
+      "nhan_lech": [
+       0.2,
+       -1.0
+      ]
+     },
+     {
+      "ten": "F_{đh}",
+      "goc": "doc_len",
+      "do_lon": 40,
+      "tu": "vat",
+      "buoc": 5,
+      "den": 6,
+      "mau": "lam",
+      "lech": [
+       -0.9,
+       1.3
+      ]
+     },
+     {
+      "ten": "F_{ms}",
+      "goc": "doc_xuong",
+      "do_lon": 16,
+      "tu": "vat_day",
+      "buoc": 5,
+      "den": 6,
+      "mau": "cam",
+      "nhan_lech": [
+       -0.4,
+       -1.1
+      ]
+     },
+     {
+      "ten": "F_{đh}",
+      "goc": "doc_len",
+      "do_lon": 20,
+      "tu": "vat",
+      "buoc": 6,
+      "mau": "lam",
+      "lech": [
+       -0.9,
+       1.3
+      ]
+     },
+     {
+      "ten": "F_{ms}",
+      "goc": "doc_len",
+      "do_lon": 4,
+      "tu": "vat_day",
+      "buoc": 6,
+      "mau": "cam",
+      "lech": [
+       -1.23,
+       0.86
+      ]
+     }
+    ],
+    "hbh": [
+     {
+      "vec": "P",
+      "thanh": [
+       "P_{∥}",
+       "P_{⊥}"
+      ],
+      "buoc": 1,
+      "den": 3
+     }
+    ],
+    "bang": [
+     {
+      "text": "P_{∥} = 24 N",
+      "buoc": 1
+     },
+     {
+      "text": "F_{max} = 16 N",
+      "buoc": 2,
+      "den": 4
+     },
+     {
+      "text": "Δl_{min} = 4 cm",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "Δl_{max} = 20 cm",
+      "buoc": 5,
+      "den": 6
+     },
+     {
+      "text": "F_{ms} = 4 N",
+      "buoc": 6
+     }
+    ]
+   }
   }
  ],
  "tu_luan": {

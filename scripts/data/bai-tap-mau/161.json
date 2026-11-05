@@ -104,7 +104,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=40$ kg, kéo trượt đều, $F$ nằm ngang",
+     "$\\mu=0{,}25$; $s=8$ m; $g=10$ m/s²",
+     "c) $F'=150$ N, $\\alpha=60^\\circ$"
+    ],
+    "tim": [
+     "a) $F$",
+     "b) $A_F$, $A_{ms}$",
+     "c) $A_{F'}$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -200,7 +212,17 @@
       }
      ]
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "a) Ròng rọc cố định, $P=500$ N, $h=2$ m",
+     "b) Đòn bẩy $l_1=20$ cm, $l_2=1{,}2$ m; $P=600$ N lên $5$ cm"
+    ],
+    "tim": [
+     "a) $A$",
+     "b) $F$, quãng đường điểm đặt lực, $A$; so với nâng trực tiếp"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -312,7 +334,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$h=4$ m",
+     "Máy A: $50$ kg trong $20$ s",
+     "Máy B: $30$ kg trong $8$ s"
+    ],
+    "tim": [
+     "a) $A_A$, $A_B$",
+     "b) $P_A$, $P_B$",
+     "c) Máy nào công lớn hơn, máy nào mạnh hơn"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -435,7 +469,87 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=60$ kg, $h=1{,}5$ m, ván $l=5$ m",
+     "$F_{ms}=60$ N; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $A_{ci}$",
+     "b) $A_{hp}$, $A_{tp}$",
+     "c) $F$ dọc ván",
+     "d) $H$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "mat_nghieng",
+     "alpha": 17.46,
+     "vat": "m",
+     "vat_t": 0.3
+    },
+    "vec": [
+     {
+      "ten": "P",
+      "goc": "xuong",
+      "do_lon": 600,
+      "buoc": 1
+     },
+     {
+      "ten": "F_{ms}",
+      "goc": "doc_xuong",
+      "do_lon": 60,
+      "tu": "vat_day",
+      "buoc": 2,
+      "mau": "cam",
+      "nhan_lech": [
+       0.3,
+       1.0
+      ]
+     },
+     {
+      "ten": "F",
+      "goc": "doc_len",
+      "do_lon": 240,
+      "tu": "vat",
+      "buoc": 4,
+      "mau": "lam",
+      "lech": [
+       0,
+       0.9
+      ]
+     }
+    ],
+    "bang": [
+     {
+      "text": "A_{ci} = Ph = 900 J",
+      "buoc": 1,
+      "den": 3
+     },
+     {
+      "text": "A_{hp} = F_{ms}l = 300 J",
+      "buoc": 2,
+      "den": 4
+     },
+     {
+      "text": "A_{tp} = 1200 J",
+      "buoc": 3
+     },
+     {
+      "text": "F = A_{tp} : l = 240 N",
+      "buoc": 4,
+      "den": 5
+     },
+     {
+      "text": "H = 900 : 1200 = 75%",
+      "buoc": 5
+     }
+    ],
+    "bang_vi_tri": "tren",
+    "ti_le": 5
+   }
   },
   {
    "form": "bai_tap",
@@ -558,7 +672,105 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "1 ròng rọc cố định + 1 ròng rọc động, $m_r=4$ kg",
+     "Vật $m=76$ kg lên $h=3$ m; $g=10$ m/s²",
+     "2 đoạn dây đỡ ròng rọc động"
+    ],
+    "tim": [
+     "a) $F$ và $s$",
+     "b) $A_{tp}$, $A_{ci}$, $H$",
+     "c) Công nâng ròng rọc động; kiểm $A_{tp}=A_{ci}+A_{hp}$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "nut",
+     "day": [
+      {
+       "goc": 105,
+       "dai": 6,
+       "neo": "tran"
+      },
+      {
+       "goc": 75,
+       "dai": 6,
+       "neo": "tran"
+      },
+      {
+       "goc": -90,
+       "dai": 2.2,
+       "neo": "vat",
+       "vat": "m"
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "P_t",
+      "goc": "xuong",
+      "do_lon": 800,
+      "tu": "vat",
+      "lech": [
+       0,
+       -0.7
+      ],
+      "buoc": 1
+     },
+     {
+      "ten": "F",
+      "goc": 105,
+      "do_lon": 400,
+      "tu": "O",
+      "buoc": 2,
+      "mau": "cam",
+      "nhan_lech": [
+       -1.0,
+       -0.3
+      ]
+     },
+     {
+      "ten": "F",
+      "goc": 75,
+      "do_lon": 400,
+      "tu": "O",
+      "buoc": 2,
+      "mau": "cam",
+      "nhan_lech": [
+       1.0,
+       -0.3
+      ]
+     }
+    ],
+    "bang": [
+     {
+      "text": "P_t = 760 + 40 = 800 N",
+      "buoc": 1,
+      "den": 4
+     },
+     {
+      "text": "F = 800 : 2 = 400 N",
+      "buoc": 2
+     },
+     {
+      "text": "s = 2h = 6 m",
+      "buoc": 3,
+      "den": 5
+     },
+     {
+      "text": "A_{tp} = Fs = 2400 J",
+      "buoc": 4
+     },
+     {
+      "text": "H = 2280 : 2400 = 95%",
+      "buoc": 5
+     }
+    ],
+    "ti_le": 5
+   }
   },
   {
    "form": "bai_tap",
@@ -657,7 +869,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$P_{tp}=1250$ W, $H=80\\%$",
+     "Giếng sâu $h=12$ m",
+     "$D=1000$ kg/m³; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $P_{ci}$",
+     "b) $m$ nước trong $6$ phút",
+     "c) $V$ (m³, lít)"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -804,7 +1028,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=1{,}5$ tấn, đều $18$ km/h lên dốc",
+     "Dốc $l=300$ m, $h=15$ m",
+     "$F_c=450$ N; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $F$",
+     "b) $A_{tp}$ khi lên hết dốc",
+     "c) $H$",
+     "d) $P_{cs}$"
+    ]
+   }
   }
  ],
  "tu_luan": {
