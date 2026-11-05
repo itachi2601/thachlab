@@ -83,6 +83,8 @@ Nhóm C L10–L11 = 55 clip (`danh-sach-tu-dung.md`). Đã dựng 30/10: L10 Đ�
 
 Ch.2 Sóng L11 và Ch.3 L10 không còn clip nhóm C. Tồn đọng của lô 30/10: chưa chèn `coulomb2`, `dtdeu2`, `trongluc2/3` (chờ bài đủ 24 h); 5 clip L11 Điện chờ thầy duyệt rồi mới đăng DB; số 20 nC của `tn-l11-coulomb-02` gần ngưỡng đánh thủng, chờ thầy quyết sửa kho/bài. Lưu ý khi ghi sổ: id trong sổ và `index.json` lệch ở vài bài (như `tonghopluc-02`), đối chiếu tay.
 
+**L9 nhóm C (lô 5/11/2026):** 8/9 clip dựng (tieucu3, congsuat1, congsuat3, conang1, dongthe1, dongthe2, ohm1, congco1; kinhlup-02 bỏ qua V6), cả 8 qua cổng B 1 vòng, 48,8–49,9 s, 1,15–1,31 MB, đã tải + chèn repo 6 bài + khung; chờ thầy duyệt rồi đăng `cap-nhat-ly-thuyet.sh` sau 22h.
+
 Ranh giới: L12 `theory.src.html` đang có phiên mẹo 🧠 và thí nghiệm khung 6 ô — trước khi sửa bài nào chạy
 `git log origin/main -3 -- content/lesson-samples/<bài>/theory.src.html`, có commit 24 h qua thì chờ. Chặng A chỉ đụng
 component video + CSS, không sửa chữ bài.

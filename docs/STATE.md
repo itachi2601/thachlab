@@ -51,6 +51,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
+- Clip tự dựng L9 nhóm C (5/11): 8 clip đã tải + chèn repo 6 bài (tiêu cự, cơ năng, công suất điện, động năng–thế năng, Ohm, công–công suất) + khung; CHỜ THẦY DUYỆT, chưa đăng DB — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
 - Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.

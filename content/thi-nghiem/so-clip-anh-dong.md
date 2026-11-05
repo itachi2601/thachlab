@@ -73,3 +73,15 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l10-thuc-hanh-sai-so · tn-l10-sai-so-02 · clip saiso2 · đã soát · 1/11/2026 · 49,5 s · 1,12 MB · cổng B 1 vòng
 - l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-01 · clip antoan1 · đã soát · 1/11/2026 · 49,7 s · 1,18 MB · cổng B 1 vòng; khi gắn khung bỏ chữ "Quan sát" hộp tĩnh (lộ đáp án B)
 - l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-02 · clip antoan2 · đã soát · 1/11/2026 · 49,7 s · 1,24 MB · cổng B 2 vòng (chốt cũ ngoại suy 1/d²)
+
+## Chặng B — L9 nhóm C (lô 5/11/2026, 9 TN; 8 clip dựng, 1 bỏ qua V6). Đã tải lesson-clips (-20261105) + chèn repo + khung 6 ô; CHỜ THẦY DUYỆT LÔ, CHƯA ĐĂNG DB
+
+- l9-thuc-hanh-tieu-cu · tn-l9-tieucu-03 · clip l9tieucu3 · đã soát (cổng B 1 vòng), chèn repo + khung · 5/11/2026 · 49,4 s · 1,21 MB · dòng "Quan sát" hộp exp nêu sẵn L = 40,4 cm (lộ đáp án) — thầy quyết
+- l9-nang-luong-dong-dien-cong-suat · tn-l9-congsuat-01 · clip l9congsuat1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,9 s · 1,15 MB
+- l9-nang-luong-dong-dien-cong-suat · tn-l9-congsuat-03 · clip l9congsuat3 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,4 s · 1,22 MB · "Quan sát" hộp exp lộ đáp án; kho I = 0,33 A làm tròn (màn ghi ≈)
+- l9-co-nang · tn-l9-conang-01 · clip l9conang1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,7 s · 1,20 MB
+- l9-dong-nang-the-nang · tn-l9-dongthe-01 · clip l9dongthe1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 48,8 s · 1,16 MB · kho sửa k = 800 cm/(kg·m); "Quan sát" hộp exp lộ đáp án
+- l9-dong-nang-the-nang · tn-l9-dongthe-02 · clip l9dongthe2 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,8 s · 1,17 MB · THỬ NGHĨ đáp số gần 0,196 J đã hiện (giới hạn kho)
+- l9-dien-tro-dinh-luat-ohm · tn-l9-ohm-01 · clip l9ohm1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,8 s · 1,20 MB · "Quan sát" hộp exp lộ đáp án; ví dụ 10/20 Ω sau hộp lặp ý clip
+- l9-cong-cong-suat · tn-l9-congco-01 · clip l9congco1 · đã soát (1 vòng), chèn repo + khung · 5/11/2026 · 49,9 s · 1,31 MB
+- l9-kinh-lup · tn-l9-kinhlup-02 · bỏ qua: V6 — bài đã có video YouTube soi chữ nhỏ bằng kính lúp · 5/11/2026 ·
