@@ -19,7 +19,7 @@
  *  A ở (x,y))  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k (cả mục trong `hinh`).
  */
 
-import { C_MAX, C_MIN, Chevron, Label, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
+import { C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { TuTruongLop, TuTruongNen } from "@/features/lessons/types";
 
 type Props = { nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][]; layer: number };
@@ -533,7 +533,7 @@ export default function TuTruong({ nen, hinh = [], lop, layer: L }: Props) {
   const ghiY = H + 1.5;
   return (
     <svg
-      viewBox={`-0.4 -0.2 ${W + 0.8} ${H + 2.5}`}
+      viewBox={`-0.4 -0.2 ${W + 0.8} ${H + 2.9}`}
       className="cc-fig"
       role="img"
       aria-label="Hình từ trường, dây dẫn và lực từ"
@@ -543,11 +543,22 @@ export default function TuTruong({ nen, hinh = [], lop, layer: L }: Props) {
       {items.map((it, k) => (
         <Muc key={`l${k}`} it={it} moi />
       ))}
-      {ghi.slice(0, 1).map((t, i) => (
-        <Label key={`${L}-${i}`} x={W / 2} y={ghiY} size={Math.min(1.05, (W + 0.6) / (t.length * 0.6))}>
-          {t}
-        </Label>
-      ))}
+      {ghi.slice(0, 1).map((t) => {
+        // ghi dài tự xuống hai dòng (như DoThi) thay vì thu chữ quá nhỏ ở 375px
+        const ds = chiaDong(t, W + 0.6, 1.0);
+        const size = ds.length > 1 ? 0.9 : 1.05;
+        // hai dòng cách 1,3 (như DoThi 1,4): dải dưới cao thêm 0,4 trong viewBox nên không đè nhau
+        return ds.map((d, j) => (
+          <Label
+            key={`${L}-${j}`}
+            x={W / 2}
+            y={ds.length > 1 ? ghiY - 0.65 + j * 1.3 : ghiY}
+            size={Math.min(size, (W + 0.6) / (d.replace(/_\{([^}]*)\}/g, "$1").length * 0.6))}
+          >
+            {d}
+          </Label>
+        ));
+      })}
       {/* giữ chỗ dải dưới để hình không đổi cao (D2) */}
       <rect x={0} y={H + 0.3} width={0.01} height={1.8} fill="none" />
     </svg>
