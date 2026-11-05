@@ -20,9 +20,9 @@ window.HSAO = (() => {
   const root = () => document.querySelector('.cc-split');
   async function mo(n) {
     // đóng các dạng đang mở, mở dạng n
-    const hs = [...document.querySelectorAll('button,summary')].filter((b) => /^\d\s*Dạng|^\d\s*Bài tập tự luận/.test(b.innerText.trim()));
+    const hs = [...document.querySelectorAll('button,summary')].filter((b) => /^\d+\s*(Dạng|Bài )|^\d+\s*Bài tập tự luận/.test(b.innerText.trim()));
     for (const h of hs) if (h.getAttribute('aria-expanded') === 'true') { h.click(); await sleep(300); }
-    const d = [...document.querySelectorAll('button,summary')].find((b) => new RegExp('^' + n + '\\s*Dạng').test(b.innerText.trim()));
+    const d = [...document.querySelectorAll('button,summary')].find((b) => new RegExp('^' + n + '\\s*(Dạng|Bài )').test(b.innerText.trim()));
     d.click(); await sleep(600);
     const g = [...document.querySelectorAll('button')].filter((b) => b.innerText.trim() === 'Giải từng bước');
     g[g.length - 1].click(); await sleep(800);
