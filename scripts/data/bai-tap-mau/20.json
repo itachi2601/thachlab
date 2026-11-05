@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$T=\\dfrac{\\omega}{2\\pi}$",
+       "text": "$T=\\dfrac{\\omega}{2\\pi}$ vì chu kì là số vòng quay trong 1 s",
        "dung": false,
        "vi_sao": "Đó là tần số $f$ (số dao động mỗi giây), không phải chu kì."
       },
       {
-       "text": "$T=2\\pi\\omega$",
+       "text": "$T=2\\pi\\omega$ vì nhân hai đại lượng tốc độ với vòng",
        "dung": false,
        "vi_sao": "Đơn vị không ra giây: $T$ phải giảm khi $\\omega$ tăng, còn tích $2\\pi\\omega$ lại tăng theo $\\omega$."
       }
@@ -90,12 +90,12 @@
        "dung": true
       },
       {
-       "text": "thay $t=0{,}25$ vào $x=A\\cos t$",
+       "text": "thay $t=0{,}25$ s trực tiếp vào hàm $x=A\\cos t$ cho nhanh",
        "dung": false,
        "vi_sao": "Cung của côsin là pha $\\omega t+\\varphi$, không phải riêng $t$."
       },
       {
-       "text": "lấy $x=A\\cdot$ pha",
+       "text": "lấy $x=A\\cdot(\\text{pha})$ rồi đổi pha sang cm",
        "dung": false,
        "vi_sao": "Li độ là $A$ nhân với $\\cos(\\text{pha})$, không nhân với chính pha."
       }
@@ -164,12 +164,12 @@
        "dung": true
       },
       {
-       "text": "bỏ dấu trừ vì biên độ phải dương",
+       "text": "bỏ dấu trừ ngoài cùng vì biên độ luôn phải dương",
        "dung": false,
        "vi_sao": "Bỏ dấu trừ làm li độ đổi dấu ở mọi thời điểm, tức là một dao động khác."
       },
       {
-       "text": "đổi $\\cos$ thành $\\sin$",
+       "text": "đổi $\\cos$ thành $\\sin$ rồi giữ nguyên pha cũ vì cùng dạng",
        "dung": false,
        "vi_sao": "Đổi hàm làm đổi pha theo cách khác và đề yêu cầu dạng côsin."
       }
@@ -188,12 +188,12 @@
        "dung": true
       },
       {
-       "text": "lấy $x=A$ vì $t=0$ là lúc bắt đầu",
+       "text": "lấy $x=A$ vì $t=0$ chính là lúc vật bắt đầu dao động",
        "dung": false,
        "vi_sao": "Lúc $t=0$ vật chưa chắc ở biên; li độ phụ thuộc $\\varphi$."
       },
       {
-       "text": "lấy $x=0$ vì $t=0$",
+       "text": "lấy $x=0$ vì $t=0$ là lúc vật qua vị trí cân bằng",
        "dung": false,
        "vi_sao": "$t=0$ không có nghĩa là $x=0$; $x(0)=A\\cos\\varphi$."
       }
@@ -273,12 +273,12 @@
        "dung": true
       },
       {
-       "text": "T là thời gian từ $t=0$ tới đỉnh đầu tiên",
+       "text": "T là thời gian từ $t=0$ tới đỉnh đầu tiên của đồ thị",
        "dung": false,
        "vi_sao": "Đồ thị xuất phát từ đáy, nên đoạn đó mới là nửa chu kì."
       },
       {
-       "text": "T là giá trị lớn nhất của $t$ trên trục",
+       "text": "T là giá trị lớn nhất của $t$ ghi trên trục thời gian",
        "dung": false,
        "vi_sao": "Đồ thị vẽ nhiều dao động; cả trục thời gian dài gấp nhiều lần chu kì."
       }
@@ -334,12 +334,12 @@
        "dung": true
       },
       {
-       "text": "lấy $\\varphi$ bằng góc của đường cong với trục $t$",
+       "text": "lấy $\\varphi$ bằng góc nhọn mà đường cong tạo với trục $t$ tại gốc toạ độ",
        "dung": false,
        "vi_sao": "$\\varphi$ không phải góc hình học của đường cong; nó là pha tại $t=0$."
       },
       {
-       "text": "lấy $\\varphi=0$ vì đồ thị là đường hình sin",
+       "text": "lấy $\\varphi=0$ vì đồ thị có dạng đường hình sin nên pha đầu bằng $0$",
        "dung": false,
        "vi_sao": "Đồ thị vẫn là đường hình sin dù $\\varphi\\ne0$; $\\varphi$ phụ thuộc điểm xuất phát."
       }
@@ -558,12 +558,12 @@
        "dung": true
       },
       {
-       "text": "$\\omega=\\dfrac{1}{T}$",
+       "text": "$\\omega=\\dfrac{1}{T}$ vì đó chính là số dao động trong 1 s",
        "dung": false,
        "vi_sao": "Đó là tần số $f$ (Hz); $\\omega$ còn phải nhân với $2\\pi$."
       },
       {
-       "text": "$\\omega=\\dfrac{2\\pi}{N}$ với $N=30$",
+       "text": "$\\omega=\\dfrac{2\\pi}{N}$ với $N=30$ là số dao động đã đếm",
        "dung": false,
        "vi_sao": "$N$ là số dao động trong cả $20$ s, không phải thời gian của một dao động."
       }
@@ -718,12 +718,12 @@
        "dung": true
       },
       {
-       "text": "$\\varphi$ là góc từ phương thẳng đứng tới $OM$",
+       "text": "$\\varphi$ là góc đo từ phương thẳng đứng tới bán kính $OM$ lúc $t=0$, theo chiều kim đồng hồ",
        "dung": false,
        "vi_sao": "Góc $\\varphi$ đo từ trục $Ox$ (nơi Q dao động), không đo từ phương thẳng đứng."
       },
       {
-       "text": "$\\varphi=0$ vì lúc $t=0$ đĩa mới bắt đầu quay",
+       "text": "$\\varphi=0$ vì lúc $t=0$ đĩa mới bắt đầu quay nên chưa có pha",
        "dung": false,
        "vi_sao": "Pha ban đầu phụ thuộc vị trí của M lúc $t=0$, không tự bằng $0$."
       }
@@ -755,12 +755,12 @@
        "dung": true
       },
       {
-       "text": "viết $x=R\\cos(\\omega t)$ vì M bắt đầu quay từ trục",
+       "text": "viết $x=R\\cos(\\omega t)$ vì M bắt đầu quay từ trục $Ox$ nên pha đầu bằng $0$",
        "dung": false,
        "vi_sao": "M không bắt đầu từ trục $Ox$ mà từ điểm cao nhất, nên $\\varphi\\ne0$."
       },
       {
-       "text": "viết $x=A\\sin(\\omega t)$ cho gọn",
+       "text": "viết $x=A\\sin(\\omega t)$ cho gọn, bỏ hẳn pha ban đầu như mọi bài",
        "dung": false,
        "vi_sao": "Với $\\varphi=\\dfrac{\\pi}{2}$ thì $\\cos\\left(\\omega t+\\dfrac{\\pi}{2}\\right)=-\\sin\\omega t$, nên $A\\sin\\omega t$ ngược dấu li độ ở mọi thời điểm."
       }

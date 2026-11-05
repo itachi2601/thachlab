@@ -103,12 +103,12 @@
        "dung": true
       },
       {
-       "text": "Chỉ thế vào $\\omega t$, bỏ $\\varphi$",
+       "text": "Chỉ thế $t=0{,}1$ vào phần $\\omega t$ rồi bỏ hẳn $\\varphi$ cho gọn",
        "dung": false,
        "vi_sao": "$\\varphi$ có mặt trong pha ở mọi thời điểm, không chỉ lúc $t=0$."
       },
       {
-       "text": "Lấy $x=A\\cos\\varphi$",
+       "text": "Lấy $x=A\\cos\\varphi$ vì li độ luôn tính từ pha ban đầu",
        "dung": false,
        "vi_sao": "Công thức đó chỉ đúng lúc $t=0$; ở $t=0{,}1$ s phải thế $t$ vào pha."
       }
@@ -200,12 +200,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\varphi=\\arccos(-0{,}5)$ bằng máy tính là xong",
+       "text": "Lấy $\\varphi=\\arccos(-0{,}5)$ bằng máy tính là có ngay đáp số, không cần xét chiều chuyển động",
        "dung": false,
        "vi_sao": "Máy chỉ cho một nghiệm trong $[0;\\pi]$ và không xét chiều chuyển động."
       },
       {
-       "text": "Lấy $\\varphi=0$ vì chọn $t=0$ làm gốc",
+       "text": "Lấy $\\varphi=0$ vì ta chọn $t=0$ làm gốc thời gian của bài",
        "dung": false,
        "vi_sao": "$\\varphi=0$ chỉ khi lúc $t=0$ vật ở biên dương; ở đây $x_0=-3$ cm."
       }
@@ -227,12 +227,12 @@
        "dung": true
       },
       {
-       "text": "Từ $-3$ cm tới biên dương mất $\\dfrac{T}{2}$",
+       "text": "Từ $-3$ cm tới biên dương mất đúng $\\dfrac{T}{2}$ vì đi qua O rồi tới biên",
        "dung": false,
        "vi_sao": "$\\dfrac{T}{2}$ là đi từ biên này sang biên kia ($-A$ tới $A$); đây xuất phát từ $-\\dfrac{A}{2}$ nên ngắn hơn."
       },
       {
-       "text": "Từ gần O tới biên dương mất $\\dfrac{T}{4}$",
+       "text": "Từ gần O tới biên dương mất $\\dfrac{T}{4}$ rồi cộng thêm đoạn về O",
        "dung": false,
        "vi_sao": "$\\dfrac{T}{4}$ chỉ đúng khi xuất phát đúng từ O; vật xuất phát từ $-3$ cm, trước đó còn đoạn về O."
       }
@@ -298,12 +298,12 @@
        "dung": true
       },
       {
-       "text": "So hai biên độ $A_1$ và $A_2$",
+       "text": "So hai biên độ $A_1$ và $A_2$: biên độ lớn hơn thì sớm pha hơn",
        "dung": false,
        "vi_sao": "Biên độ không quyết định sớm hay trễ; chỉ so pha ban đầu."
       },
       {
-       "text": "So hai chu kì",
+       "text": "So hai chu kì: chu kì nhỏ hơn thì dao động đó sớm pha hơn",
        "dung": false,
        "vi_sao": "Hai vật cùng $\\omega$ nên cùng chu kì; hiệu pha mới khác nhau."
       }
@@ -359,12 +359,12 @@
        "dung": true
       },
       {
-       "text": "Đổi dấu $\\varphi_1$",
+       "text": "Đổi dấu $\\varphi_1$ thành $\\varphi_3=-\\varphi_1$ vì ngược pha là đối nhau",
        "dung": false,
        "vi_sao": "Đổi dấu chỉ là đối xứng của pha, không phải lệch $\\pi$."
       },
       {
-       "text": "Đổi dấu biên độ $A_3=-3$ cm",
+       "text": "Đổi dấu biên độ thành $A_3=-3$ cm, giữ nguyên pha $\\varphi_1$",
        "dung": false,
        "vi_sao": "Biên độ luôn dương ($A\\gt0$); muốn đảo dấu li độ thì đổi pha thêm $\\pi$."
       }
@@ -482,12 +482,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $\\varphi=0$ vì đồ thị bắt đầu ở trục $x$",
+       "text": "Lấy $\\varphi=0$ vì đồ thị bắt đầu ngay tại trục $x$ lúc $t=0$",
        "dung": false,
        "vi_sao": "$\\varphi=0$ chỉ khi lúc $t=0$ đồ thị ở đỉnh dương; ở đây $x_0=2$ cm, chưa phải đỉnh."
       },
       {
-       "text": "Bấm $\\arccos$ rồi dừng, không xét chiều dốc",
+       "text": "Bấm $\\arccos\\dfrac{x_0}{A}$ rồi dừng, không xét chiều dốc đồ thị",
        "dung": false,
        "vi_sao": "Máy chỉ cho một nghiệm; nghiệm đối nhau cho đồ thị đi theo chiều ngược lại."
       }
@@ -660,12 +660,12 @@
        "dung": true
       },
       {
-       "text": "Trừ $\\omega\\tau$ vào pha",
+       "text": "Trừ $\\omega\\tau$ vào pha vì gốc thời gian mới đến muộn hơn",
        "dung": false,
        "vi_sao": "$t=t'+\\tau$ nên pha là $\\omega t'+\\omega\\tau+\\varphi$: phải cộng."
       },
       {
-       "text": "Chỉ đổi biên độ $A$",
+       "text": "Chỉ đổi biên độ $A$ vì gốc thời gian mới cho vật dao động khác",
        "dung": false,
        "vi_sao": "Đổi gốc thời gian không làm vật dao động mạnh hơn hay yếu hơn; $A$ giữ nguyên."
       }
@@ -697,12 +697,12 @@
        "dung": true
       },
       {
-       "text": "Giữ $\\varphi'=\\varphi$ vì cùng một vật",
+       "text": "Giữ $\\varphi'=\\varphi$ vì hai người cùng quan sát một vật",
        "dung": false,
        "vi_sao": "Cùng một vật nhưng gốc thời gian khác, nên pha lúc $t'=0$ khác."
       },
       {
-       "text": "$\\varphi'=\\varphi-\\omega\\tau$",
+       "text": "$\\varphi'=\\varphi-\\omega\\tau$ rồi đưa về khoảng $(-\\pi;\\pi]$",
        "dung": false,
        "vi_sao": "Dấu cộng: Bình bấm muộn nên lúc $t'=0$ vật đã đi được thêm pha $\\omega\\tau$."
       }
@@ -717,12 +717,12 @@
        "dung": true
       },
       {
-       "text": "$x=4$ cm, đang đi theo chiều âm (về O)",
+       "text": "$x=4$ cm, đang đi theo chiều âm (về vị trí cân bằng O)",
        "dung": false,
        "vi_sao": "Pha $-\\dfrac{\\pi}{3}$ tăng lên thì côsin tăng (trong $(-\\pi;0)$), nên $x$ tăng: chiều dương."
       },
       {
-       "text": "$x=-4$ cm, đang đi theo chiều dương",
+       "text": "$x=-4$ cm, đang đi theo chiều dương (về vị trí cân bằng)",
        "dung": false,
        "vi_sao": "$\\cos\\left(-\\dfrac{\\pi}{3}\\right)=+0{,}5$ nên $x=+4$ cm, không phải $-4$ cm."
       }
@@ -734,12 +734,12 @@
        "dung": true
       },
       {
-       "text": "Dùng phương trình của An với $t=0$",
+       "text": "Dùng phương trình của An với $t=0$ vì cùng một vật dao động",
        "dung": false,
        "vi_sao": "Lúc Bình bắt đầu, đồng hồ An chỉ $0{,}25$ s, không phải $0$."
       },
       {
-       "text": "Lấy $x=A$ vì lúc bắt đầu vật ở biên",
+       "text": "Lấy $x=A$ vì lúc bắt đầu bấm giờ vật luôn ở biên dương",
        "dung": false,
        "vi_sao": "Chỉ khi $\\varphi'=0$ vật mới ở biên dương; ở đây $\\varphi'=-\\dfrac{\\pi}{3}$."
       }
@@ -754,12 +754,12 @@
        "dung": true
       },
       {
-       "text": "Cả $A$, $T$, $f$, $\\omega$ và $\\varphi$ đều đổi",
+       "text": "Cả $A$, $T$, $f$, $\\omega$ và $\\varphi$ đều đổi theo gốc thời gian",
        "dung": false,
        "vi_sao": "Đổi gốc thời gian không làm vật dao động khác đi; $A$, $T$, $f$, $\\omega$ là của vật."
       },
       {
-       "text": "Chỉ tần số góc $\\omega$ đổi",
+       "text": "Chỉ tần số góc $\\omega$ đổi, còn pha ban đầu giữ nguyên",
        "dung": false,
        "vi_sao": "Hai phương trình cùng $2\\pi t$: $\\omega$ như nhau."
       }

@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$E_t=\\dfrac{1}{2}kA^2$",
+       "text": "$E_t=\\dfrac{1}{2}kA^2$ vì thế năng lấy theo biên độ của dao động",
        "dung": false,
        "vi_sao": "Đó là cơ năng (thế năng ở biên); tại li độ $x$ đang xét thì dùng $x$."
       },
       {
-       "text": "$E_t=\\dfrac{1}{2}mx^2$",
+       "text": "$E_t=\\dfrac{1}{2}mx^2$ với $x$ là li độ lúc đang xét",
        "dung": false,
        "vi_sao": "Thiếu độ cứng: thế năng đàn hồi là $\\dfrac{1}{2}kx^2$, không có khối lượng."
       }
@@ -66,12 +66,12 @@
        "dung": true
       },
       {
-       "text": "$E_d=E_t$ vì hai năng lượng đổi chỗ cho nhau",
+       "text": "$E_d=E_t$ vì hai năng lượng luôn đổi chỗ cho nhau mọi lúc",
        "dung": false,
        "vi_sao": "Hai năng lượng chỉ bằng nhau ở $x=\\pm\\dfrac{A}{\\sqrt{2}}$; ở li độ khác thì khác nhau."
       },
       {
-       "text": "$E_d=\\dfrac{1}{2}kx^2$",
+       "text": "$E_d=\\dfrac{1}{2}kx^2$ với $x$ là li độ lúc đang xét",
        "dung": false,
        "vi_sao": "Đó là công thức thế năng; động năng là phần còn lại $W-E_t$."
       }
@@ -90,12 +90,12 @@
        "dung": true
       },
       {
-       "text": "$|v|=\\sqrt{\\dfrac{E_d}{m}}$",
+       "text": "$|v|=\\sqrt{\\dfrac{E_d}{m}}$ từ $E_d=mv^2$ vì động năng của vật",
        "dung": false,
        "vi_sao": "Thiếu hệ số $2$: từ $E_d=\\dfrac{1}{2}mv^2$ suy ra $v^2=\\dfrac{2E_d}{m}$."
       },
       {
-       "text": "$|v|=\\dfrac{2E_d}{m}$",
+       "text": "$|v|=\\dfrac{2E_d}{m}$ từ $E_d=\\dfrac{1}{2}mv^2$ cho gọn",
        "dung": false,
        "vi_sao": "Thiếu dấu căn: đó mới là $v^2$."
       }
@@ -152,12 +152,12 @@
        "dung": true
       },
       {
-       "text": "$E_t=\\dfrac{W}{8}$",
+       "text": "Từ $E_d=8E_t$ suy ra $W=8E_t$ nên $E_t=\\dfrac{W}{8}$",
        "dung": false,
        "vi_sao": "Cơ năng gồm cả thế năng lẫn động năng, không chỉ phần động năng."
       },
       {
-       "text": "$E_t=\\dfrac{W}{2}$ vì hai năng lượng chia đôi",
+       "text": "$E_t=\\dfrac{W}{2}$ vì hai năng lượng chia đôi cơ năng",
        "dung": false,
        "vi_sao": "Chia đôi chỉ khi $E_d=E_t$; ở đây động năng lớn hơn thế năng rất nhiều."
       }
@@ -200,12 +200,12 @@
        "dung": true
       },
       {
-       "text": "$|v|=\\omega|x|$",
+       "text": "$|v|=\\omega|x|$ với $x$ là li độ lúc đang xét",
        "dung": false,
        "vi_sao": "Công thức này cho tốc độ bằng $0$ ở VTCB và lớn nhất ở biên, ngược thực tế; tốc độ là $\\omega\\sqrt{A^2-x^2}$ và lớn nhất ở VTCB."
       },
       {
-       "text": "$|v|=v_{max}$ vì $E_d$ lớn hơn $E_t$",
+       "text": "$|v|=v_{max}$ vì $E_d$ lớn hơn $E_t$ nên vật chạy nhanh nhất",
        "dung": false,
        "vi_sao": "$v_{max}$ chỉ ở VTCB ($x=0$); ở $|x|\\ne0$ thì $|v|\\lt v_{max}$."
       }
@@ -220,12 +220,12 @@
        "dung": true
       },
       {
-       "text": "2 lần, ứng với $x=+|x|$ và $x=-|x|$",
+       "text": "2 lần, ứng với $x=+|x|$ và $x=-|x|$ trong một chu kì",
        "dung": false,
        "vi_sao": "Mỗi li độ vật đi qua hai lần (lúc đi ra và lúc quay về), không phải một lần."
       },
       {
-       "text": "8 lần, vì tỉ số trong đề là $8$",
+       "text": "8 lần, vì tỉ số động năng trên thế năng trong đề là $8$",
        "dung": false,
        "vi_sao": "Số lần không phụ thuộc giá trị của tỉ số; nó chỉ phụ thuộc số li độ thoả mãn và số lần đi qua mỗi li độ."
       }
@@ -237,12 +237,12 @@
        "dung": true
       },
       {
-       "text": "Lấy chu kì chia cho khoảng thời gian giữa hai lần",
+       "text": "Lấy chu kì chia cho khoảng thời gian giữa hai lần liên tiếp",
        "dung": false,
        "vi_sao": "Đề không cho thời gian; hơn nữa các lần không cách đều nhau."
       },
       {
-       "text": "Lấy luôn hệ số của đề làm số lần",
+       "text": "Lấy luôn hệ số $8$ của đề làm số lần xảy ra trong một chu kì",
        "dung": false,
        "vi_sao": "Hệ số $8$ chỉ cho biết li độ, không cho biết vật đi qua bao nhiêu lần."
       }
@@ -384,12 +384,12 @@
        "dung": true
       },
       {
-       "text": "$E_t=\\dfrac{1}{2}kA^2$",
+       "text": "$E_t=\\dfrac{1}{2}kA^2$ với $A$ là biên độ của dao động",
        "dung": false,
        "vi_sao": "$A$ chưa biết (đó là điều cần tìm); thế năng lúc này tính bằng li độ $x$ đã cho."
       },
       {
-       "text": "$E_t=\\dfrac{1}{2}mx^2$",
+       "text": "$E_t=\\dfrac{1}{2}mx^2$ với $x$ đã đổi sang mét",
        "dung": false,
        "vi_sao": "Thiếu độ cứng: thế năng đàn hồi là $\\dfrac{1}{2}kx^2$."
       }
@@ -456,12 +456,12 @@
        "dung": true
       },
       {
-       "text": "$v_{max}=\\omega x$",
+       "text": "$v_{max}=\\omega x$ với $x$ là li độ đã cho trong đề",
        "dung": false,
        "vi_sao": "Phải dùng biên độ $A$: $v_{max}=\\omega A$ khi qua VTCB; $\\omega x$ không phải tốc độ cực đại."
       },
       {
-       "text": "$v_{max}=\\sqrt{\\dfrac{2W}{k}}$",
+       "text": "$v_{max}=\\sqrt{\\dfrac{2W}{k}}$ vì cơ năng chia độ cứng",
        "dung": false,
        "vi_sao": "Đó là biên độ $A$ (đơn vị mét), không phải tốc độ."
       }
@@ -515,12 +515,12 @@
        "dung": true
       },
       {
-       "text": "$T'=T$ vì cùng chu kì với li độ",
+       "text": "$T'=T$ vì thế năng cùng chu kì với li độ của vật",
        "dung": false,
        "vi_sao": "Mỗi chu kì của li độ, thế năng đạt cực đại hai lần (ở hai biên), nên chu kì của năng lượng ngắn hơn."
       },
       {
-       "text": "$T'=2T$",
+       "text": "$T'=2T$ vì năng lượng biến đổi chậm hơn li độ một nửa",
        "dung": false,
        "vi_sao": "Năng lượng đổi nhanh gấp đôi li độ chứ không chậm hơn."
       }
@@ -563,12 +563,12 @@
        "dung": true
       },
       {
-       "text": "$W=\\dfrac{1}{2}mv^2$",
+       "text": "$W=\\dfrac{1}{2}mv^2$ với $v$ là tốc độ lúc thả vật",
        "dung": false,
        "vi_sao": "Chưa biết $v$; hơn nữa đó chỉ là động năng tại thời điểm xét."
       },
       {
-       "text": "$W=\\dfrac{1}{2}kA$",
+       "text": "$W=\\dfrac{1}{2}kA$ với $A$ đã đổi sang mét",
        "dung": false,
        "vi_sao": "Thiếu bình phương biên độ: $W=\\dfrac{1}{2}kA^2$."
       }
@@ -587,12 +587,12 @@
        "dung": true
       },
       {
-       "text": "$E_d=W\\cos^2\\omega t$",
+       "text": "$E_d=W\\cos^2\\omega t$ vì vật thả từ biên nên $x=A\\cos\\omega t$",
        "dung": false,
        "vi_sao": "Thả từ biên nên $x=A\\cos\\omega t$, do đó $\\cos^2$ đi với thế năng, $\\sin^2$ mới đi với động năng."
       },
       {
-       "text": "$E_d=\\dfrac{W}{2}$ vì $t$ nằm giữa",
+       "text": "$E_d=\\dfrac{W}{2}$ vì $t=\\dfrac{T}{6}$ nằm giữa lúc thả và lúc qua VTCB",
        "dung": false,
        "vi_sao": "$E_d=\\dfrac{W}{2}$ chỉ tại $t=\\dfrac{T}{8}$ ($x=\\dfrac{A}{\\sqrt{2}}$)."
       }
@@ -647,12 +647,12 @@
        "dung": true
       },
       {
-       "text": "$k=\\dfrac{2W}{A}$",
+       "text": "$k=\\dfrac{2W}{A}$ với $A$ đọc ở chỗ $E_d=0$, đổi sang mét",
        "dung": false,
        "vi_sao": "Thiếu bình phương biên độ: $W=\\dfrac{1}{2}kA^2$."
       },
       {
-       "text": "$k=m\\omega^2$ với $\\omega$ đọc từ đồ thị",
+       "text": "$k=m\\omega^2$ với $\\omega$ đọc từ đồ thị, đổi sang rad/s",
        "dung": false,
        "vi_sao": "Đồ thị $E_d(x)$ không cho $\\omega$ trực tiếp; đã biết $W$ và $A$ thì tính $k$ từ $W=\\dfrac{1}{2}kA^2$."
       }
@@ -671,12 +671,12 @@
        "dung": true
       },
       {
-       "text": "$v_{max}=\\sqrt{\\dfrac{2W}{k}}$",
+       "text": "$v_{max}=\\sqrt{\\dfrac{2W}{k}}$ vì tại VTCB $E_d=W$",
        "dung": false,
        "vi_sao": "Đó là biên độ $A$; tốc độ cần khối lượng: $W=\\dfrac{1}{2}mv_{max}^2$."
       },
       {
-       "text": "$v_{max}=\\sqrt{\\dfrac{k}{m}}$",
+       "text": "$v_{max}=\\sqrt{\\dfrac{k}{m}}$ vì tại VTCB $E_d=W$",
        "dung": false,
        "vi_sao": "Đó là $\\omega$ (rad/s); còn phải nhân với biên độ: $v_{max}=\\omega A$."
       }
@@ -695,12 +695,12 @@
        "dung": true
       },
       {
-       "text": "$|x|=\\sqrt{\\dfrac{2E_d}{k}}$",
+       "text": "Lấy $E_d$ làm thế năng rồi $|x|=\\sqrt{\\dfrac{2E_d}{k}}$ cho nhanh",
        "dung": false,
        "vi_sao": "Đó là li độ mà thế năng bằng $0{,}030$ J; đề cho động năng nên thế năng là phần còn lại $W-E_d$."
       },
       {
-       "text": "$|x|=A\\sqrt{\\dfrac{E_d}{W}}$",
+       "text": "Dùng $|x|=A\\sqrt{\\dfrac{E_d}{W}}$ vì $E_d$ tỉ lệ với bình phương",
        "dung": false,
        "vi_sao": "Đó là mối liên hệ của tốc độ ($|v|=v_{max}\\sqrt{E_d/W}$), không phải của li độ; li độ liên hệ với $E_t$."
       }

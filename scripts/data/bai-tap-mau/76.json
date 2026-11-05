@@ -311,16 +311,16 @@
      "loi_hay_gap": "Cho mỗi điểm một $\\omega$ riêng theo khoảng cách tới tâm, hoặc lấy lại tốc độ của $M$.",
      "chon_buoc_ke": [
       {
-       "text": "Giữ nguyên $\\omega$ của đĩa, thay $r$ bằng khoảng cách từ $N$ đến tâm",
+       "text": "Giữ $\\omega$ của đĩa, thay $r$ bằng khoảng cách từ $N$ đến tâm",
        "dung": true
       },
       {
-       "text": "Dùng $\\omega$ riêng cho $N$ vì $N$ nằm gần tâm",
+       "text": "Dùng $\\omega$ riêng cho $N$ vì $N$ nằm gần tâm hơn",
        "dung": false,
        "vi_sao": "Mọi điểm của đĩa quét cùng một góc trong cùng thời gian nên có chung $\\omega$; chỉ $v$ phụ thuộc $r$."
       },
       {
-       "text": "Giữ nguyên $v_M$ vì cùng một đĩa",
+       "text": "Giữ nguyên $v_M$ vì cùng một đĩa, cùng một vòng quay",
        "dung": false,
        "vi_sao": "Cùng $\\omega$ nhưng khác bán kính quỹ đạo thì $v=\\omega r$ khác nhau."
       }
@@ -358,12 +358,6 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "M",
-       "chieu": true
-      },
-      {
        "loai": "ghi",
        "text": "r_M = 0,15 m"
       },
@@ -373,12 +367,6 @@
       }
      ],
      [
-      {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "M",
-       "chieu": true
-      },
       {
        "loai": "diem",
        "goc": 0.3,
@@ -467,12 +455,12 @@
        "dung": true
       },
       {
-       "text": "Dùng $v=\\omega/r$",
+       "text": "Dùng $v=\\omega/r$ với $r$ là chiều dài cánh quạt",
        "dung": false,
        "vi_sao": "Chia $\\omega$ cho $r$ cho đơn vị $1/(\\text{m}\\cdot\\text{s})$, không phải m/s."
       },
       {
-       "text": "Lấy $v=f\\cdot r$",
+       "text": "Lấy $v=f\\cdot r$ với $f$ là tần số vòng/s",
        "dung": false,
        "vi_sao": "Thiếu hệ số $2\\pi$: một vòng dài $2\\pi r$, nên $v=2\\pi fr=\\omega r$."
       }
@@ -515,12 +503,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $v$ nhân với $\\omega_2$",
+       "text": "Lấy $v$ nhân với $\\omega_2$ vì $v=\\omega r$",
        "dung": false,
        "vi_sao": "Tích $v\\omega$ có đơn vị $\\text{m/s}^2$, không phải mét."
       },
       {
-       "text": "Lấy $\\omega_2$ chia cho $v$",
+       "text": "Lấy $\\omega_2$ chia cho $v$ để ra bán kính",
        "dung": false,
        "vi_sao": "Thương $\\omega/v$ có đơn vị $1/\\text{m}$, đó là $1/r$ chứ không phải $r$."
       }
@@ -553,12 +541,6 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "đầu cánh",
-       "chieu": true
-      },
-      {
        "loai": "cung",
        "tu": 0.3,
        "den": 2.3
@@ -574,23 +556,11 @@
      ],
      [
       {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "đầu cánh",
-       "chieu": true
-      },
-      {
        "loai": "ghi",
        "text": "v = ωr = 50,3·0,40 = 20,1 m/s"
       }
      ],
      [
-      {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "đầu cánh",
-       "chieu": true
-      },
       {
        "loai": "ghi",
        "text": "320 vòng/phút : 60 = 5,33 Hz"
@@ -601,12 +571,6 @@
       }
      ],
      [
-      {
-       "loai": "diem",
-       "goc": 0.3,
-       "ten": "đầu cánh",
-       "chieu": true
-      },
       {
        "loai": "ghi",
        "text": "giữ v = 20,1 m/s"

@@ -42,12 +42,12 @@
        "dung": true
       },
       {
-       "text": "$a_{max}=A\\omega$",
+       "text": "$a_{max}=A\\omega$ vì gia tốc cực đại tỉ lệ bậc nhất với $\\omega$",
        "dung": false,
        "vi_sao": "Đó là tốc độ cực đại; gia tốc có thêm một thừa số $\\omega$ nữa."
       },
       {
-       "text": "$a_{max}=\\omega^2x$ với $x=5\\cos\\dfrac{\\pi}{3}$",
+       "text": "$a_{max}=\\omega^2x$ với $x=5\\cos\\dfrac{\\pi}{3}$ tại $t=0$",
        "dung": false,
        "vi_sao": "Cực đại phải lấy $|x|=A$, không lấy li độ ở thời điểm $t=0$."
       }
@@ -87,12 +87,12 @@
        "dung": true
       },
       {
-       "text": "Thế $t$ vào $x$ rồi lấy $v=\\omega x$",
+       "text": "Thế $t$ vào $x$ rồi lấy $v=\\omega x$ vì $v$ tỉ lệ với $x$",
        "dung": false,
        "vi_sao": "$v$ và $x$ vuông pha, không tỉ lệ nhau: $v$ lấy từ $v(t)$ hoặc $\\omega\\sqrt{A^2-x^2}$ kèm dấu."
       },
       {
-       "text": "Dùng $v_{max}$ vì $v$ cực đại",
+       "text": "Dùng $v_{max}=A\\omega$ vì đề hỏi vận tốc ở thời điểm cụ thể",
        "dung": false,
        "vi_sao": "Chỉ ở O thì $|v|$ mới cực đại; pha lúc này chưa tới đó."
       }
@@ -111,12 +111,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $a=\\dfrac{dv}{dt}$ bằng $v/t$",
+       "text": "Lấy $a=v/t$ bằng vận tốc vừa tìm chia cho thời gian $t$ đã trôi",
        "dung": false,
        "vi_sao": "$a$ là đạo hàm, không phải thương $v/t$ (chuyển động không đều)."
       },
       {
-       "text": "Dùng $a_{max}$ vì $a$ cực đại",
+       "text": "Dùng $a_{max}=A\\omega^2$ vì gia tốc luôn lấy giá trị cực đại",
        "dung": false,
        "vi_sao": "Cực đại chỉ ở biên; lúc này $|x|\\lt A$."
       }
@@ -206,12 +206,12 @@
        "dung": true
       },
       {
-       "text": "$a=-\\omega x$",
+       "text": "$a=-\\omega x$ vì gia tốc tỉ lệ bậc nhất với li độ",
        "dung": false,
        "vi_sao": "Thiếu bình phương: đơn vị của $\\omega x$ là cm/s, không phải cm/s²."
       },
       {
-       "text": "$a=-\\omega^2A$",
+       "text": "$a=-\\omega^2A$ vì gia tốc luôn lấy giá trị ở biên",
        "dung": false,
        "vi_sao": "Đó là gia tốc ở biên; vật đang ở $x\\lt A$ nên phải dùng $x$ hiện tại."
       }
@@ -323,12 +323,12 @@
        "dung": true
       },
       {
-       "text": "$\\varphi=-\\dfrac{\\pi}{3}$",
+       "text": "$\\varphi=-\\dfrac{\\pi}{3}$, vì $x(0)=\\dfrac{A}{2}$ và đồ thị đang đi lên",
        "dung": false,
        "vi_sao": "Cùng $x(0)=\\dfrac{A}{2}$ nhưng ứng với đồ thị đang đi lên ($v\\gt0$)."
       },
       {
-       "text": "$\\varphi=\\dfrac{\\pi}{6}$",
+       "text": "$\\varphi=\\dfrac{\\pi}{6}$, vì $x(0)=\\dfrac{A}{2}$ ứng với góc nhỏ hơn",
        "dung": false,
        "vi_sao": "$\\cos\\dfrac{\\pi}{6}=\\dfrac{\\sqrt3}{2}$, không phải $\\dfrac{1}{2}$."
       }
@@ -340,12 +340,12 @@
        "dung": true
       },
       {
-       "text": "Chọn $\\varphi=0$ vì đồ thị bắt đầu ở $t=0$",
+       "text": "Chọn $\\varphi=0$ vì đồ thị bắt đầu đúng tại $t=0$ rồi đi xuống",
        "dung": false,
        "vi_sao": "$\\varphi=0$ chỉ khi $t=0$ ở biên dương; ở đây $x(0)$ chưa phải đỉnh."
       },
       {
-       "text": "Chỉ dùng độ dốc đồ thị, bỏ qua $x(0)$",
+       "text": "Chỉ dùng độ dốc đồ thị tại $t=0$, bỏ qua giá trị $x(0)$ đọc được",
        "dung": false,
        "vi_sao": "Độ dốc chỉ cho dấu của $v(0)$; độ lớn của $\\varphi$ phải lấy từ $x(0)$."
       }
@@ -377,12 +377,12 @@
        "dung": true
       },
       {
-       "text": "Cho $v$ cùng pha $x$ vì cùng tần số",
+       "text": "Cho $v$ cùng pha với $x$ vì hai đại lượng cùng tần số góc",
        "dung": false,
        "vi_sao": "Cùng tần số không có nghĩa cùng pha: $v$ lệch $x$ một góc $\\dfrac{\\pi}{2}$."
       },
       {
-       "text": "Lấy pha của $a$ bằng pha của $v$",
+       "text": "Lấy pha của $a$ bằng pha của $v$ vì $a$ là đạo hàm của $v$",
        "dung": false,
        "vi_sao": "$a$ lệch $v$ thêm $\\dfrac{\\pi}{2}$ nữa, tổng cộng $\\pi$ so với $x$."
       }
@@ -592,12 +592,12 @@
        "dung": true
       },
       {
-       "text": "$|x|=\\dfrac{A}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$",
+       "text": "$|x|=\\dfrac{A}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$, tức tỉ lệ thuận",
        "dung": false,
        "vi_sao": "$x$ và $v$ vuông pha, không tỉ lệ: quan hệ là elip."
       },
       {
-       "text": "$|x|=\\dfrac{v}{\\omega}$",
+       "text": "$|x|=\\dfrac{v}{\\omega}$ vì $v=\\omega x$ ở mọi thời điểm",
        "dung": false,
        "vi_sao": "$\\dfrac{v}{\\omega}$ bằng $\\sqrt{A^2-x^2}$, không phải $x$."
       }
@@ -616,12 +616,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $t=\\dfrac{T}{6}$ vì $x=\\dfrac{A}{2}$",
+       "text": "Lấy $t=\\dfrac{T}{6}$ vì mốc quen thuộc của $x=\\dfrac{A}{2}$",
        "dung": false,
        "vi_sao": "Mốc $\\dfrac{T}{6}$ ứng với $x=\\dfrac{A}{2}$; ở đây $x=\\dfrac{A\\sqrt3}{2}$."
       },
       {
-       "text": "Lấy $t=\\dfrac{T}{4}$ vì tốc độ cực đại ở O",
+       "text": "Lấy $t=\\dfrac{T}{4}$ vì tốc độ cực đại đạt được tại vị trí cân bằng O",
        "dung": false,
        "vi_sao": "$\\dfrac{T}{4}$ là lúc tới O, tốc độ khi đó đã cực đại chứ chưa bằng một nửa."
       }
@@ -640,12 +640,12 @@
        "dung": true
       },
       {
-       "text": "$|a|=\\dfrac{a_{max}}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$",
+       "text": "$|a|=\\dfrac{a_{max}}{2}$ vì $|v|=\\dfrac{v_{max}}{2}$, gia tốc cũng giảm một nửa",
        "dung": false,
        "vi_sao": "$a$ tỉ lệ với $x$ chứ không với $v$; tốc độ giảm thì $|a|$ lại tăng."
       },
       {
-       "text": "$|a|=\\omega^2A$",
+       "text": "$|a|=\\omega^2A$ vì gia tốc tính theo biên độ của dao động",
        "dung": false,
        "vi_sao": "Đó là $a_{max}$ ở biên; lúc này $|x|\\lt A$."
       }
@@ -765,12 +765,12 @@
        "dung": true
       },
       {
-       "text": "$A=x_1+x_2$",
+       "text": "$A=x_1+x_2$ vì biên độ bằng tổng hai li độ đã cho",
        "dung": false,
        "vi_sao": "Hai li độ thuộc hai thời điểm khác nhau, cộng lại không cho biên độ."
       },
       {
-       "text": "$A=x_2$ vì $x_2$ lớn hơn",
+       "text": "$A=x_2$ vì $x_2$ lớn hơn nên đó là li độ ở biên",
        "dung": false,
        "vi_sao": "Tại $x_2$ tốc độ vẫn khác 0 nên vật còn đi tiếp tới biên."
       }
