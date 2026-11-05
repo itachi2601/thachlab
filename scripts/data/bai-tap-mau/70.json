@@ -509,7 +509,7 @@
      "loi_hay_gap": "Bỏ sót công của ma sát, hoặc gán sai dấu.",
      "chon_buoc_ke": [
       {
-       "text": "Xét chiều của ma sát so với chuyển động rồi tính $F_\\text{ms}s\\cos\\varphi$",
+       "text": "Xét chiều ma sát rồi tính $F_\\text{ms}s\\cos\\varphi$",
        "dung": true
       },
       {
@@ -557,16 +557,16 @@
      "loi_hay_gap": "Quên một trong ba công, cộng độ lớn thay vì cộng đại số, hoặc quên hệ số $\\dfrac12$.",
      "chon_buoc_ke": [
       {
-       "text": "Cộng công của ba lực rồi cho bằng độ biến thiên động năng",
+       "text": "Cộng công ba lực rồi cho bằng độ biến thiên động năng",
        "dung": true
       },
       {
-       "text": "Chỉ lấy công của lực kéo",
+       "text": "Chỉ lấy công của lực kéo vì lực này sinh công",
        "dung": false,
        "vi_sao": "Ma sát và trọng lực cũng sinh công nên phải cộng vào tổng."
       },
       {
-       "text": "Cộng độ lớn công của ba lực, bỏ dấu",
+       "text": "Cộng độ lớn công của ba lực, không xét dấu",
        "dung": false,
        "vi_sao": "Công cản mang dấu khác công phát động nên phải cộng đại số."
       }
@@ -581,16 +581,16 @@
      "loi_hay_gap": "Coi động năng đầu bằng $0$ dù thùng được đẩy sẵn, hoặc bỏ sót công của một lực.",
      "chon_buoc_ke": [
       {
-       "text": "Cho tổng công ba lực bằng độ biến thiên động năng, từ tốc độ đầu về $0$",
+       "text": "Tổng công ba lực bằng biến thiên động năng, đến khi dừng",
        "dung": true
       },
       {
-       "text": "Cho lực kéo bằng lực ma sát",
+       "text": "Cho lực kéo bằng lực ma sát vì vật dừng lại",
        "dung": false,
        "vi_sao": "Đi lên dốc thì trọng lực cũng cản chuyển động nên lực kéo phải thắng cả hai."
       },
       {
-       "text": "Cho tổng công của ba lực bằng $0$",
+       "text": "Cho tổng công của ba lực bằng $0$ vì vật dừng",
        "dung": false,
        "vi_sao": "Động năng không đứng yên từ đầu: đầu khác $0$, cuối bằng $0$ nên độ biến thiên khác $0$."
       }
