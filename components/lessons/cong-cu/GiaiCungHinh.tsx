@@ -42,7 +42,7 @@ function Hinh({ tool, layer, step }: { tool: WorkedTool; layer: number; step: nu
   if (tool.loai === "truc_chuyen_dong") return <TrucChuyenDong {...tool} layer={layer} />;
   if (tool.loai === "quy_dao_nem") return <QuyDaoNem {...tool} layer={layer} />;
   if (tool.loai === "cot_chat_long") return <CotChatLong {...tool} layer={layer} />;
-  if (tool.loai === "tia_sang") return <TiaSang {...tool} layer={layer} />;
+  if (tool.loai === "tia_sang") return <TiaSang {...tool} layer={layer} buoc={step} />;
   // thấu kính: câu a/b/c khác khung hình — chọn khung theo bước đang xem, không theo số bước đã xong
   if (tool.loai === "thau_kinh") return <ThauKinh {...tool} layer={layer} buoc={step} />;
   return null;
