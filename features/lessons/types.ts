@@ -144,8 +144,8 @@ export type WorkedTomDe = { cho: string[]; tim: string[] };
 
 export type WorkedTool =
   | { loai: "giao_thoa_2_nguon"; f: number; v: number; AB: number; d1: number; d2: number; kieu?: "dem_day" }
-  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][] }
-  | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; lop?: SongDayLop[][] }
+  | { loai: "vong_tron"; A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; an_vong?: boolean; lop?: VongTronLop[][] }
+  | { loai: "song_day"; A: number; lam: number; x_max: number; diem?: { x: number; ten: string }[]; song?: { pha: number; dau?: number }; canh?: SongDayCanh; lop?: SongDayLop[][] }
   | { loai: "van_giao_thoa"; i: number; x_min: number; x_max: number; diem?: { x: number; ten: string }[]; nhom?: { n: number; L: number }; lop?: VanGiaoThoaLop[][] }
   | { loai: "do_thi"; x: DoThiTruc; y: DoThiTruc; duong?: DoThiDuong[]; diem?: DoThiDiem[]; lop?: DoThiLop[][] }
   | { loai: "tu_truong"; nen?: TuTruongNen; hinh?: TuTruongLop[]; lop?: TuTruongLop[][] }
@@ -157,6 +157,7 @@ export type WorkedTool =
   | { loai: "quy_dao_nem"; v0: number; alpha: number; g?: number; h0?: number; x_max: number; y_max: number; hinh?: QuyDaoNemLop[]; lop?: QuyDaoNemLop[][] }
   | { loai: "cot_chat_long"; canh: CotChatLongCanh; hinh?: CotChatLongLop[]; lop?: CotChatLongLop[][] }
   | { loai: "tia_sang"; moi: TiaSangMoi[]; goc: number[]; x0?: number; chieu?: "xuong" | "len"; hinh?: TiaSangLop[]; lop?: TiaSangLop[][] }
+  | { loai: "tia_sang"; canh: "tu_do"; cao: number; hinh?: TiaSangTuDoMuc[]; phan?: TiaSangPhan[]; lop?: TiaSangTuDoMuc[][] }
   | { loai: "thau_kinh"; phan: ThauKinhPhan[]; lop?: ThauKinhLop[][] };
 
 /** Tia sáng qua các lớp môi trường (Đ5): đơn vị hình (ngang 20), môi trường theo thứ tự tia đi qua; mặt k nằm giữa môi trường k và k + 1. */
@@ -169,6 +170,22 @@ export type TiaSangLop =
   | { loai: "phap_tuyen"; mat: number; dai?: number; het?: number }
   | { loai: "goc"; mat: number; tu: TiaSangHuong; den: TiaSangHuong; nhan: string; r?: number; r_nhan?: number; nhan_goc?: number; mau?: "max" | "min" | "chu"; het?: number }
   | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: "max" | "min"; het?: number };
+/** Cảnh tự do của `tia_sang` (Đ9c): toạ độ hình x 0..20, y xuống; hướng = độ toán học hoặc một điểm. */
+export type TiaSangP = [number, number];
+export type TiaSangHuongTuDo = number | TiaSangP;
+type MauTD = "max" | "min" | "chu" | "vang";
+export type TiaSangTuDoMuc =
+  | LopGhi
+  | { loai: "vung"; diem: TiaSangP[]; mau?: MauTD; dam?: number; vien?: boolean; dut?: boolean; het?: number }
+  | { loai: "tron"; tam: TiaSangP; r: number; mau?: MauTD; dam?: number; vien?: boolean; het?: number }
+  | { loai: "doan"; tu: TiaSangP; den: TiaSangP; kieu?: "guong" | "mat" | "vat" | "mo"; gach?: 1 | -1; nhan?: string; nhan_o?: TiaSangP; mau?: MauTD; het?: number }
+  | { loai: "tia"; qua: TiaSangP[]; mau?: MauTD; dut?: boolean; mui?: boolean; nhan?: string; nhan_o?: TiaSangP; het?: number }
+  | { loai: "phap_tuyen"; tai: TiaSangP; huong: number; dai?: number; het?: number }
+  | { loai: "goc"; tai: TiaSangP; tu: TiaSangHuongTuDo; den: TiaSangHuongTuDo; nhan: string; r?: number; r_nhan?: number; nhan_goc?: number; mau?: MauTD; het?: number }
+  | { loai: "diem"; tai: TiaSangP; ten?: string; vi?: "t" | "b" | "l" | "r"; ro?: boolean; mau?: MauTD; het?: number }
+  | { loai: "thuoc"; tu: TiaSangP; den: TiaSangP; nhan: string; lech?: number; het?: number }
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; mau?: MauTD; het?: number };
+export type TiaSangPhan = { tu_buoc?: number; hinh?: TiaSangTuDoMuc[] };
 /** Thấu kính (Đ5): cm, y lên; mỗi `phan` là một khung (câu a/b/c), chọn theo chỉ số bước đang xem. */
 export type ThauKinhPhan = { tu_buoc?: number; x_min: number; x_max: number; y_tren: number; y_duoi: number; o_ly?: number; phong_doc?: number; hinh?: ThauKinhLop[] };
 export type ThauKinhLop =
@@ -244,15 +261,27 @@ export type MachDienLop =
 type LopGhi = { loai: "ghi"; text: string; het?: number };
 export type VongTronLop =
   | LopGhi
-  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; het?: number }
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
+  | { loai: "vong"; r: number; nhan?: string; dut?: boolean; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };
 export type SongDayLop =
   | LopGhi
   | { loai: "song"; pha: number; dau?: number; het?: number }
   | { loai: "thuoc"; tu: number; den: number; nhan: string; hang?: number; het?: number }
   | { loai: "mui"; x: number; huong: "len" | "xuong"; het?: number }
-  | { loai: "dau_song"; x: number; het?: number };
+  | { loai: "dau_song"; x: number; het?: number }
+  /** 5/11/2026 — chỉ cảnh `doc`: ghi N/D ở tâm vùng nén/dãn (dem = đánh số N₁, N₂…); tô lớp khí có vị trí cân bằng x. */
+  | { loai: "vung"; dem?: boolean; het?: number }
+  | { loai: "diem"; x: number; ten: string; het?: number }
+  /** 5/11/2026 — chỉ cảnh `ong` (độ sâu l tính từ miệng ống, cm): mặt nước · đường bao sóng dừng nút ở l · vạch ngang có nhãn. */
+  | { loai: "nuoc"; l: number; het?: number }
+  | { loai: "bao"; l: number; het?: number }
+  | { loai: "vach"; l: number; ten: string; het?: number };
+/** Cảnh thêm của `song_day` (5/11/2026); không khai thì là dây sóng ngang như cũ. API: chú thích đầu `SongDoc.tsx`, `OngCongHuong.tsx`. */
+export type SongDayCanh =
+  | { kieu: "doc"; buoc_lop?: number; nguon?: string; vung?: boolean }
+  | { kieu: "ong"; dai: number; e: number; nguon?: string; nhan_dai?: string; hinh?: SongDayLop[] };
 /** Đồ thị (Đ2): trục có `vach` (số ghi trên trục, khai đúng số đề cho để không lộ đáp số) và `luoi` (bước lưới mờ). */
 export type DoThiTruc = { min: number; max: number; ten: string; vach?: number[]; luoi?: number };
 /** Hàm lấy mẫu (không chạy chuỗi công thức): cos y = c + a·cos(wπx + phiπ) · mu y = c + a·2^(−x/T) · nghich y = a/x · da_thuc Σ he[i]·xⁱ. */
@@ -334,6 +363,8 @@ export type SoDoVectoTool = {
     | { kieu: "rong_roc"; vat1?: string; vat2?: string; lech?: number }
     | { kieu: "ban_rong_roc"; vat1?: string; vat2?: string }
     | { kieu: "khong" }
+    /** Lò xo treo thẳng đứng vẽ răng cưa: `dai[L]` = chiều dài lò xo (đơn vị hình) ở lớp L (dùng giá trị cuối khi L vượt mảng); điểm đặt "vat_tren" (mép trên khối, lệch phải), "vat_giua" (tâm khối, lệch trái). */
+    | { kieu: "lo_xo_dung"; dai: number[]; vat?: string }
     | {
         /** Đ4: hai bờ sông (bờ dưới y = 0, bờ trên y = rong), `chay` = nhãn mũi tên dòng nước; `duong` nét đứt nối hai điểm. */
         kieu: "song";
@@ -352,9 +383,18 @@ export type SoDoVectoTool = {
         /** Dây từ điểm `tu` (tên điểm, x thật) theo hướng `goc` tới tường trái (nếu `tuong`). Hướng "day:<tu>". */
         day?: { tu: string; x: number; goc: number; ten_neo?: string };
         tuong?: boolean;
+      }
+    | {
+        /** 5/11/2026: đường thẳng ngang, x thật (cm) trong [x_min, x_max]; `thanh` = vẽ thanh nhựa. Điện tích `dau` +/−, `q` = nhãn trên ("q_1"); điểm có tên dưới. `buoc`/`den` như vectơ. */
+        kieu: "duong_thang";
+        x_min: number;
+        x_max: number;
+        thanh?: boolean;
+        dien_tich?: { ten: string; x: number; dau: "+" | "-"; q?: string; buoc?: number; den?: number }[];
+        diem?: { ten: string; x: number; buoc?: number; den?: number; lech?: number }[];
       };
-  /** kieu: "luc" (mặc định, nét liền) · "thanh_phan" (nét đứt) · "dong_hoc" (a, v: màu lam, tỉ lệ riêng). `so` = độ lớn hiện ở bảng số từ bước `so_buoc` (mặc định = `buoc`). */
-  vec: { ten: string; goc: VecDir; do_lon: number; tu?: VecPoint; lech?: [number, number]; buoc?: number; den?: number; kieu?: "luc" | "thanh_phan" | "dong_hoc"; mau?: Mau; so?: string; so_buoc?: number; nhan_lech?: [number, number] }[];
+  /** kieu: "luc" (mặc định, nét liền) · "thanh_phan" (nét đứt) · "dong_hoc" (a, v: màu lam, tỉ lệ riêng). `so` = độ lớn hiện ở bảng số từ bước `so_buoc` (mặc định = `buoc`). `dai` (5/11) = độ dài vẽ cố định, thay tỉ lệ theo độ lớn. */
+  vec: { ten: string; goc: VecDir; do_lon: number; tu?: VecPoint; lech?: [number, number]; buoc?: number; den?: number; kieu?: "luc" | "thanh_phan" | "dong_hoc"; mau?: Mau; so?: string; so_buoc?: number; nhan_lech?: [number, number]; dai?: number }[];
   /** Nét chấm từ ngọn vectơ `vec` tới ngọn các thành phần (hình bình hành / hình chữ nhật phân tích). */
   hbh?: { vec: string; thanh: string[]; buoc?: number; den?: number }[];
   truc?: { tai?: VecPoint; goc: number; dai?: number; ten?: [string, string]; buoc?: number; den?: number };

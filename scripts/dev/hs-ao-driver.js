@@ -35,7 +35,10 @@ window.HSAO = (() => {
     const want = [...dung(b.chon_buoc_ke), ...dung(b.lua_chon)];
     for (let k = 0; k < 4; k++) {
       const btns = [...area.querySelectorAll('button.bt-choice')];
-      const hit = btns.find((x) => want.some((w) => textOf(x).includes(w.slice(0, 25)) || w.includes(textOf(x).slice(0, 25))));
+      // khớp bằng ĐUÔI nhãn (đầu nhãn hay trùng nhau); bước có cả chon_buoc_ke lẫn lua_chon hiện đủ hai nhóm nút cùng lúc nên bấm lần lượt hết nút đúng chưa bấm
+      const tail = (t) => t.slice(-18);
+      const hit = btns.find((x) => !x.dataset.hsao && want.some((w) => tail(textOf(x)) === tail(w) || textOf(x).endsWith(tail(w))));
+      if (hit) hit.dataset.hsao = '1';
       if (!hit) break;
       hit.click(); await sleep(500);
       if (area.querySelector('input')) break;

@@ -128,7 +128,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=400$ g, $v=18$ km/h",
+     "$h=8$ m so với đất; sân thượng cao $3$ m",
+     "$g=10$ m/s²"
+    ],
+    "tim": [
+     "a) Mốc mặt đất: $W_{\\text{đ}}$, $W_t$, $W$",
+     "b) Mốc sân thượng: $W$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -227,7 +238,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=2$ kg, ném lên $v_0=10$ m/s",
+     "Mốc mặt đất; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $W$",
+     "b) $h_{max}$",
+     "c) $v$ ở $h=3{,}2$ m",
+     "d) $h$ khi $W_{\\text{đ}}=W_t$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -363,7 +386,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=1{,}5$ kg, dốc $l=8$ m, $h=3{,}2$ m",
+     "Không ma sát, $v_A=0$; mốc tại B"
+    ],
+    "tim": [
+     "a) $v_B$",
+     "b) M có $W_{\\text{đ}}=W_t$: $MB$, $v_M$",
+     "c) $v_B$ khi $m=3$ kg"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -486,7 +520,18 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=2$ kg, dốc $l=10$ m, $h=6$ m",
+     "$\\cos\\alpha=0{,}8$; $\\mu=0{,}35$; mốc tại B"
+    ],
+    "tim": [
+     "a) $F_{ms}$",
+     "b) $v_B$",
+     "c) $Q$ toả ra"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -622,7 +667,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Dây $l=4{,}5$ m, $m=25$ kg",
+     "$\\cos\\alpha_0=0{,}9$, thả nhẹ; mốc tại O"
+    ],
+    "tim": [
+     "a) $h_0$",
+     "b) $v_O$",
+     "c) $h$, $v$ khi $W_{\\text{đ}}=W_t$",
+     "d) Con lắc lò xo: $W_{\\text{đ}}$ cực đại ở đâu"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -782,7 +839,151 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=0{,}5$ kg, rơi tự do từ $h_0=20$ m",
+     "Mốc mặt đất; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $W$",
+     "b) $W_t(h)$, $W_{\\text{đ}}(h)$; $W_{\\text{đ}}$ ở $15$ m",
+     "c) $h$ tại giao điểm",
+     "d) $v$ ở $5$ m",
+     "e) Đồ thị $W_{\\text{đ}}$–$v^2$, hệ số góc",
+     "f) Có lực cản: đồ thị $W$ theo quãng đường"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 22,
+     "ten": "h (m)",
+     "vach": [
+      5,
+      15,
+      20
+     ],
+     "luoi": 5
+    },
+    "y": {
+     "min": 0,
+     "max": 115,
+     "ten": "W (J)",
+     "luoi": 25
+    },
+    "duong": [],
+    "lop": [
+     [
+      {
+       "loai": "ngang",
+       "y": 100,
+       "nhan": "W",
+       "tu": 0,
+       "den": 20
+      },
+      {
+       "loai": "ghi",
+       "text": "W = mgh_0 = 0,5·10·20 = 100 J",
+       "het": 2
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          0
+         ],
+         [
+          20,
+          100
+         ]
+        ],
+        "ten": "W_t",
+        "ten_xy": [
+         19,
+         88
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 15,
+       "y": 25,
+       "ten": "25 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "W_t = 5h; W_{đ} = 100 − 5h",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          100
+         ],
+         [
+          20,
+          0
+         ]
+        ],
+        "mau": "max",
+        "ten": "W_{đ}",
+        "ten_xy": [
+         19,
+         15
+        ]
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 10,
+       "y": 50,
+       "ten": "h = 10 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "5h = 100 − 5h ⇒ h = 10 m",
+       "het": 4
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 5,
+       "y": 75,
+       "ten": "75 J"
+      },
+      {
+       "loai": "ghi",
+       "text": "½mv² = 75 J ⇒ v ≈ 17,3 m/s",
+       "het": 5
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W_{đ} = ½m·v²: hệ số góc 0,25 kg",
+       "het": 6
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lực cản F_c: W = 100 − F_c·s"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -905,7 +1106,148 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$m=1{,}5$ kg, AB cao $h=3{,}2$ m, không ma sát",
+     "BC $=3{,}5$ m, $\\mu=0{,}4$; CD không ma sát",
+     "Mốc tại BC; $g=10$ m/s²"
+    ],
+    "tim": [
+     "a) $v_B$, $v_C$",
+     "b) $h_{max}$ trên CD",
+     "c) Vị trí dừng, cách B bao xa"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thanh_nang_luong",
+    "canh": {
+     "kieu": "doc",
+     "h": 3.2,
+     "don_vi": "m",
+     "vi": 1
+    },
+    "cot": [
+     {
+      "ten": "W_{đ}",
+      "mau": "max"
+     },
+     {
+      "ten": "W_{t}",
+      "mau": "min"
+     },
+     {
+      "ten": "Q",
+      "mau": "chu"
+     }
+    ],
+    "max": 48,
+    "don_vi": "J",
+    "hinh": [
+     {
+      "loai": "cot",
+      "ten": "W_{t}",
+      "gia_tri": 48,
+      "nhan": "48"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vat",
+       "vi": 0
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 48,
+       "nhan": "48"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "ghi",
+       "text": "½mv_B² = mgh = 48 J ⇒ v_B = 8 m/s",
+       "het": 2
+      }
+     ],
+     [
+      {
+       "loai": "cot",
+       "ten": "Q",
+       "gia_tri": 21,
+       "nhan": "21"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 27,
+       "nhan": "27"
+      },
+      {
+       "loai": "ghi",
+       "text": "Q = μmg·BC = 21 J ⇒ W_{đC} = 27 J",
+       "het": 3
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0.5625
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{đ}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 27,
+       "nhan": "27"
+      },
+      {
+       "loai": "ghi",
+       "text": "Trên CD: h_{max} = 27 : 15 = 1,8 m",
+       "het": 4
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "vi": 0
+      },
+      {
+       "loai": "cot",
+       "ten": "W_{t}",
+       "gia_tri": 0,
+       "nhan": "0"
+      },
+      {
+       "loai": "cot",
+       "ten": "Q",
+       "gia_tri": 48,
+       "nhan": "48"
+      },
+      {
+       "loai": "ghi",
+       "text": "Dừng hẳn: 6·s = 48 J ⇒ s = 8 m",
+       "het": 5
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "8 = 3,5 + 3,5 + 1 ⇒ dừng cách B 1 m"
+      }
+     ]
+    ]
+   }
   }
  ],
  "tu_luan": {

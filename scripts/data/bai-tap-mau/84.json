@@ -79,7 +79,17 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "khối nhựa: $n=1{,}49$",
+     "nước: $n=1{,}33$"
+    ],
+    "tim": [
+     "a) $i_{th}$ khi từ nhựa ra không khí",
+     "b) $i_{th}$ khi từ nhựa ra nước"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -191,7 +201,270 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        4.8
+       ],
+       [
+        20,
+        4.8
+       ],
+       [
+        20,
+        11
+       ],
+       [
+        0,
+        11
+       ]
+      ],
+      "dam": 0.16
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       4.8
+      ],
+      "den": [
+       20,
+       4.8
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 1.2,
+      "text": "không khí",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 9.6,
+      "y": 10.6,
+      "text": "chất lỏng, n = 1,40"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        1.17,
+        8.01
+       ],
+       [
+        5,
+        4.8
+       ]
+      ],
+      "nhan": "(1)",
+      "nhan_o": [
+       1.3699999999999999,
+       9.11
+      ]
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        17.0,
+        9.13
+       ],
+       [
+        14.5,
+        4.8
+       ]
+      ],
+      "nhan": "(2)",
+      "nhan_o": [
+       16.7,
+       10.23
+      ]
+     },
+     {
+      "loai": "goc",
+      "tai": [
+       5,
+       4.8
+      ],
+      "tu": 180,
+      "den": [
+       1.17,
+       8.01
+      ],
+      "nhan": "40°",
+      "r": 1.4,
+      "mau": "chu"
+     },
+     {
+      "loai": "goc",
+      "tai": [
+       14.5,
+       4.8
+      ],
+      "tu": [
+       17.0,
+       9.13
+      ],
+      "den": 0,
+      "nhan": "60°",
+      "r": 1.4,
+      "mau": "chu"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        5,
+        4.8
+       ],
+       "huong": 90,
+       "dai": 2.8
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        5,
+        4.8
+       ],
+       "tu": [
+        1.17,
+        8.01
+       ],
+       "den": 270,
+       "nhan": "i₁",
+       "r": 2.0,
+       "r_nhan": 0.9
+      },
+      {
+       "loai": "ghi",
+       "text": "i₁ = 90° − 40° = 50°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin i_{th} = 1 : 1,40 ⇒ i_{th} ≈ 45,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         5,
+         4.8
+        ],
+        [
+         8.52,
+         7.76
+        ]
+       ],
+       "mau": "max",
+       "nhan": "phản xạ",
+       "nhan_o": [
+        10.92,
+        7.859999999999999
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "50° > 45,6° ⇒ (1) phản xạ toàn phần"
+      }
+     ],
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        14.5,
+        4.8
+       ],
+       "huong": 90,
+       "dai": 2.8
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        14.5,
+        4.8
+       ],
+       "tu": 270,
+       "den": [
+        17.0,
+        9.13
+       ],
+       "nhan": "i₂",
+       "r": 2.0,
+       "r_nhan": 0.9
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         14.5,
+         4.8
+        ],
+        [
+         10.78,
+         1.16
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        14.5,
+        4.8
+       ],
+       "tu": 90,
+       "den": [
+        10.78,
+        1.16
+       ],
+       "nhan": "r",
+       "r": 1.8,
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "i₂ = 30° < 45,6° ⇒ ló ra"
+      },
+      {
+       "loai": "ghi",
+       "text": "1,40·sin 30° = sin r ⇒ r ≈ 44,4°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(1): i₁ > i_{th} ✓ · (2): r > i₂ ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "chất lỏng $n=1{,}40$, phía trên là không khí",
+     "tia (1) hợp mặt thoáng $40^\\circ$",
+     "tia (2) hợp mặt thoáng $60^\\circ$"
+    ],
+    "tim": [
+     "a) tia (1) có phản xạ toàn phần?",
+     "b) tia (2) có ló ra? góc khúc xạ $r$"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -301,7 +574,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "khối bán trụ trong không khí: góc tới $40^\\circ$ thì tia ló sát mặt",
+     "nước: $n=1{,}33$",
+     "câu c: góc tới $50^\\circ$"
+    ],
+    "tim": [
+     "a) chiết suất $n$ của khối",
+     "b) góc tới hạn khi nhúng vào nước",
+     "c) tia $50^\\circ$ có ló ra nước?"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -412,7 +697,279 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.6,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        0.6
+       ],
+       [
+        20,
+        0.6
+       ],
+       [
+        20,
+        3.0
+       ],
+       [
+        0,
+        3.0
+       ]
+      ],
+      "dam": 0.08
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        3.0
+       ],
+       [
+        20,
+        3.0
+       ],
+       [
+        20,
+        8.0
+       ],
+       [
+        0,
+        8.0
+       ]
+      ],
+      "dam": 0.22
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        8.0
+       ],
+       [
+        20,
+        8.0
+       ],
+       [
+        20,
+        10.4
+       ],
+       [
+        0,
+        10.4
+       ]
+      ],
+      "dam": 0.08
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       3.0
+      ],
+      "den": [
+       20,
+       3.0
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       8.0
+      ],
+      "den": [
+       20,
+       8.0
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       5.5
+      ],
+      "den": [
+       20,
+       5.5
+      ],
+      "kieu": "mo"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 2.2,
+      "text": "vỏ, n₂ = ?",
+      "a": "end",
+      "het": 2
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 7.5,
+      "text": "lõi, n₁ = 1,50",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 9.7,
+      "text": "vỏ",
+      "a": "start"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        1.5,
+        5.5
+       ],
+       [
+        5.83,
+        3.0
+       ],
+       [
+        14.49,
+        8.0
+       ],
+       [
+        19.6,
+        5.05
+       ]
+      ]
+     },
+     {
+      "loai": "goc",
+      "tai": [
+       10.16,
+       5.5
+      ],
+      "tu": -30,
+      "den": 0,
+      "nhan": "30°",
+      "r": 1.6,
+      "mau": "chu"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        5.83,
+        3.0
+       ],
+       "huong": 90,
+       "dai": 2.3
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        5.83,
+        3.0
+       ],
+       "tu": [
+        1.5,
+        5.5
+       ],
+       "den": 270,
+       "nhan": "i",
+       "r": 1.4
+      },
+      {
+       "loai": "ghi",
+       "text": "i = 90° − 30° = 60°"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 19.6,
+       "y": 2.2,
+       "text": "vỏ, n₂ ≤ 1,30",
+       "a": "end",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "i ≥ i_{th} ⇒ n₂ ≤ 1,50·sin 60° ≈ 1,30"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 19.6,
+       "y": 2.2,
+       "text": "vỏ, n₂ = 1,40",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "sin i_{th} = 1,40 : 1,50 ⇒ i_{th} ≈ 69,0°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         5.83,
+         3.0
+        ],
+        [
+         11.83,
+         0.6
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 5.4,
+       "y": 1.9,
+       "text": "lọt ra vỏ",
+       "a": "end",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "60° < 69,0° ⇒ không phản xạ toàn phần"
+      },
+      {
+       "loai": "ghi",
+       "text": "một phần ánh sáng lọt ra vỏ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1,40 > 1,30 nên vỏ này không dẫn tia 30° ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "lõi: $n_1=1{,}50$",
+     "tia hợp trục sợi $30^\\circ$",
+     "vỏ thực tế: $n_2=1{,}40$"
+    ],
+    "tim": [
+     "a) $n_2$ lớn nhất để tia bị phản xạ toàn phần",
+     "b) vỏ $1{,}40$: tia còn được dẫn?"
+    ]
+   }
   }
  ],
  "tu_luan": {

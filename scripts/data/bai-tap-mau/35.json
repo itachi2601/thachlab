@@ -478,6 +478,176 @@
      "b) Lực $F_1$, $F_2$ tại C (kiểm tra)",
      "c) $q_0=-2{,}0$ nC: vị trí cân bằng có đổi không"
     ]
+   },
+   "cong_cu": {
+    "loai": "so_do_vecto",
+    "nen": {
+     "kieu": "duong_thang",
+     "x_min": -1,
+     "x_max": 15,
+     "thanh": true,
+     "dien_tich": [
+      {
+       "ten": "A",
+       "x": 0,
+       "dau": "+",
+       "q": "q_1"
+      },
+      {
+       "ten": "B",
+       "x": 9,
+       "dau": "-",
+       "q": "q_2"
+      }
+     ],
+     "diem": [
+      {
+       "ten": "C?",
+       "x": 12.5,
+       "buoc": 1,
+       "den": 3
+      },
+      {
+       "ten": "C",
+       "x": 13.5,
+       "buoc": 3
+      }
+     ]
+    },
+    "vec": [
+     {
+      "ten": "F_10",
+      "goc": "phai",
+      "do_lon": 0.23,
+      "dai": 1.8,
+      "tu": "C?",
+      "buoc": 1,
+      "den": 3,
+      "nhan_lech": [
+       -0.75,
+       0.85
+      ],
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "F_20",
+      "goc": "trai",
+      "do_lon": 0.33,
+      "dai": 2.6,
+      "tu": "C?",
+      "buoc": 1,
+      "den": 3,
+      "nhan_lech": [
+       0.75,
+       0.85
+      ],
+      "mau": "lam",
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "F_10",
+      "goc": "phai",
+      "do_lon": 1,
+      "dai": 2.6,
+      "tu": "C",
+      "buoc": 3,
+      "den": 5,
+      "nhan_lech": [
+       -0.75,
+       0.85
+      ],
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "F_20",
+      "goc": "trai",
+      "do_lon": 1,
+      "dai": 2.6,
+      "tu": "C",
+      "buoc": 3,
+      "den": 5,
+      "nhan_lech": [
+       0.75,
+       0.85
+      ],
+      "mau": "lam",
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "F_10",
+      "goc": "trai",
+      "do_lon": 1,
+      "dai": 2.6,
+      "tu": "C",
+      "buoc": 5,
+      "nhan_lech": [
+       0.75,
+       0.85
+      ],
+      "mau": "tim",
+      "lech": [
+       0,
+       0.75
+      ]
+     },
+     {
+      "ten": "F_20",
+      "goc": "phai",
+      "do_lon": 1,
+      "dai": 2.6,
+      "tu": "C",
+      "buoc": 5,
+      "nhan_lech": [
+       -0.75,
+       0.85
+      ],
+      "mau": "tim",
+      "lech": [
+       0,
+       0.75
+      ]
+     }
+    ],
+    "kich_thuoc": [
+     {
+      "a": "A",
+      "b": "B",
+      "text": "AB = 9 cm"
+     },
+     {
+      "a": "B",
+      "b": "C",
+      "text": "CB = 4,5 cm",
+      "buoc": 3
+     }
+    ],
+    "bang": [
+     {
+      "text": "r_1/r_2 = 3",
+      "buoc": 2
+     },
+     {
+      "text": "F = 3,56·10⁻⁵ N",
+      "buoc": 4
+     },
+     {
+      "text": "q_0 < 0: C như cũ",
+      "buoc": 5,
+      "mau": "tim"
+     }
+    ]
    }
   },
   {

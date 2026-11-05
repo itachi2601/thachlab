@@ -153,7 +153,19 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "rằm $3/3$ có nguyệt thực toàn phần",
+     "Tuần Trăng $S=29{,}5$ ngày; tháng 3 có $31$ ngày"
+    ],
+    "tim": [
+     "a) ngày hạ huyền, không trăng, trăng tròn kế tiếp",
+     "b) nhật thực rơi vào ngày nào, vì sao",
+     "c) giờ mọc trăng thượng huyền; vị trí lúc $18$ h, phía sáng",
+     "d) vì sao rằm sau thường không nguyệt thực"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -337,7 +349,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$D_S=1{,}39\\cdot10^6$ km; $1$ AU $=1{,}5\\cdot10^8$ km",
+     "$D_M=3470$ km; $R_E=6370$ km",
+     "Mặt Trăng: gần $363\\,000$ km, xa $405\\,000$ km; xu $2$ cm"
+    ],
+    "tim": [
+     "a) khoảng cách xu che kín; góc trông Mặt Trời",
+     "b) góc trông Mặt Trăng gần, xa; toàn phần hay khuyên",
+     "c) % diện tích bị che khi xa nhất",
+     "d) khoảng cách lớn nhất còn che kín"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -521,7 +546,647 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$D_S=1{,}39\\cdot10^6$ km; $D_M=3470$ km; $D_E=12\\,740$ km",
+     "$1$ AU $=1{,}5\\cdot10^8$ km",
+     "Mặt Trăng: $363\\,000$; $384\\,000$; $405\\,000$ km"
+    ],
+    "tim": [
+     "a) $L$ nón bóng Mặt Trăng; chóp tới mặt đất không",
+     "b) vùng tối, nửa tối trên mặt đất (gần nhất)",
+     "c) xa nhất: loại nhật thực, đường kính vùng",
+     "d) nón bóng Trái Đất, vùng tối ở quỹ đạo Mặt Trăng"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.2,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "tron",
+        "tam": [
+         23.5,
+         5.0
+        ],
+        "r": 7.5,
+        "mau": "min",
+        "dam": 0.12
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         1.8,
+         5.0
+        ],
+        "r": 1.1,
+        "mau": "vang",
+        "dam": 0.7
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         8.5,
+         5.0
+        ],
+        "r": 0.6,
+        "mau": "chu",
+        "dam": 0.85
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          8.5,
+          4.4
+         ],
+         [
+          16.54,
+          5.0
+         ],
+         [
+          8.5,
+          5.6
+         ]
+        ],
+        "mau": "chu",
+        "dam": 0.6
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          3.9
+         ],
+         [
+          16.54,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          6.1
+         ],
+         [
+          16.54,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "chu",
+        "x": 1.8,
+        "y": 7.3999999999999995,
+        "text": "Mặt Trời"
+       },
+       {
+        "loai": "chu",
+        "x": 8.5,
+        "y": 6.8999999999999995,
+        "text": "Mặt Trăng"
+       },
+       {
+        "loai": "chu",
+        "x": 20.2,
+        "y": 0.9,
+        "text": "Trái Đất",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 0.2,
+        "y": 1.0,
+        "text": "không theo tỉ lệ",
+        "a": "start"
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         8.5,
+         5.0
+        ],
+        "den": [
+         16.54,
+         5.0
+        ],
+        "nhan": "L = ?",
+        "lech": 1.8,
+        "het": 1
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "hinh": [
+       {
+        "loai": "tron",
+        "tam": [
+         23.5,
+         5.0
+        ],
+        "r": 7.5,
+        "mau": "min",
+        "dam": 0.12
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         1.8,
+         5.0
+        ],
+        "r": 1.1,
+        "mau": "vang",
+        "dam": 0.7
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         8.0,
+         5.0
+        ],
+        "r": 0.6,
+        "mau": "chu",
+        "dam": 0.85
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          8.0,
+          4.4
+         ],
+         [
+          15.439999999999998,
+          5.0
+         ],
+         [
+          8.0,
+          5.6
+         ]
+        ],
+        "mau": "chu",
+        "dam": 0.6
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          3.9
+         ],
+         [
+          15.439999999999998,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          6.1
+         ],
+         [
+          15.439999999999998,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "chu",
+        "x": 1.8,
+        "y": 7.3999999999999995,
+        "text": "Mặt Trời"
+       },
+       {
+        "loai": "chu",
+        "x": 8.0,
+        "y": 6.8999999999999995,
+        "text": "Mặt Trăng"
+       },
+       {
+        "loai": "chu",
+        "x": 20.2,
+        "y": 0.9,
+        "text": "Trái Đất",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 0.2,
+        "y": 1.0,
+        "text": "không theo tỉ lệ",
+        "a": "start"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          15.439999999999998,
+          5.0
+         ],
+         [
+          16.6,
+          4.906451612903226
+         ]
+        ],
+        "dut": true,
+        "mui": false
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          15.439999999999998,
+          5.0
+         ],
+         [
+          16.6,
+          5.093548387096774
+         ]
+        ],
+        "dut": true,
+        "mui": false
+       },
+       {
+        "loai": "chu",
+        "x": 0.2,
+        "y": 2.1,
+        "text": "Mặt Trăng ở xa nhất",
+        "a": "start"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 5,
+      "hinh": [
+       {
+        "loai": "tron",
+        "tam": [
+         1.8,
+         5.0
+        ],
+        "r": 1.5,
+        "mau": "vang",
+        "dam": 0.7
+       },
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          7.0,
+          4.0
+         ],
+         [
+          17.4,
+          5.0
+         ],
+         [
+          7.0,
+          6.0
+         ]
+        ],
+        "mau": "chu",
+        "dam": 0.6
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         7.0,
+         5.0
+        ],
+        "r": 1.0,
+        "mau": "min",
+        "dam": 0.9
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          3.5
+         ],
+         [
+          17.4,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.8,
+          6.5
+         ],
+         [
+          17.4,
+          5.0
+         ]
+        ],
+        "mui": false
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         9.87,
+         1.6
+        ],
+        "den": [
+         9.87,
+         8.6
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "tron",
+        "tam": [
+         9.87,
+         5.0
+        ],
+        "r": 0.3,
+        "mau": "max",
+        "dam": 0.9
+       },
+       {
+        "loai": "chu",
+        "x": 9.569999999999999,
+        "y": 1.2,
+        "text": "quỹ đạo Mặt Trăng",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 1.8,
+        "y": 7.8,
+        "text": "Mặt Trời"
+       },
+       {
+        "loai": "chu",
+        "x": 6.4,
+        "y": 7.3,
+        "text": "Trái Đất"
+       },
+       {
+        "loai": "chu",
+        "x": 0.2,
+        "y": 3.0,
+        "text": "nguyệt thực",
+        "a": "start"
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         7.0,
+         5.0
+        ],
+        "den": [
+         17.4,
+         5.0
+        ],
+        "nhan": "L_E = ?",
+        "lech": -2.2,
+        "het": 6
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "thuoc",
+       "tu": [
+        8.5,
+        5.0
+       ],
+       "den": [
+        16.54,
+        5.0
+       ],
+       "nhan": "374 nghìn km",
+       "lech": 1.8
+      },
+      {
+       "loai": "ghi",
+       "text": "L = a·D_M : (D_S − D_M)"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 374 nghìn km"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        16.0,
+        4.88
+       ],
+       "den": [
+        16.0,
+        5.12
+       ],
+       "kieu": "vat",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "x = d − R_E ≈ 356,6 nghìn km < L"
+      },
+      {
+       "loai": "ghi",
+       "text": "vùng tối ≈ 165 km"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         8.5,
+         4.4
+        ],
+        [
+         16.4,
+         2.4
+        ],
+        [
+         16.4,
+         7.6
+        ],
+        [
+         8.5,
+         5.6
+        ]
+       ],
+       "mau": "chu",
+       "dam": 0.18
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.8,
+         6.1
+        ],
+        [
+         16.4,
+         2.4
+        ]
+       ],
+       "mui": false,
+       "mau": "min"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         1.8,
+         3.9
+        ],
+        [
+         16.4,
+         7.6
+        ]
+       ],
+       "mui": false,
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 20.2,
+       "y": 9.1,
+       "text": "nửa tối 6791 km",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "nửa tối D_M + x(D_S + D_M) : a"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 6791 km"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 20.2,
+       "y": 9.1,
+       "text": "hình khuyên",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "x ≈ 398,6 nghìn km > L ≈ 374,4"
+      },
+      {
+       "loai": "ghi",
+       "text": "chóp nón dừng trước mặt đất"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         15.439999999999998,
+         5.0
+        ],
+        [
+         16.6,
+         4.906451612903226
+        ],
+        [
+         16.6,
+         5.093548387096774
+        ]
+       ],
+       "mau": "max",
+       "dam": 0.35
+      },
+      {
+       "loai": "ghi",
+       "text": "D_M(x − L) : L ≈ 225 km"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": [
+        7.0,
+        5.0
+       ],
+       "den": [
+        17.4,
+        5.0
+       ],
+       "nhan": "1,39 triệu km",
+       "lech": -2.2
+      },
+      {
+       "loai": "ghi",
+       "text": "L_E = 1 AU·D_E : (D_S − D_E)"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 1,39 triệu km"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        9.87,
+        4.28
+       ],
+       "den": [
+        9.87,
+        5.72
+       ],
+       "kieu": "vat",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 10.27,
+       "y": 3.8800000000000003,
+       "text": "9214 km",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "D_E(L_E − d) : L_E ≈ 9214 km"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 2,7 lần D_M"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "vùng tối ≈ 2,7 D_M: trăng chìm hẳn ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -692,7 +1357,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "tháng thiên văn $T=27{,}32$ ngày; năm $365{,}25$ ngày",
+     "ngày Mặt Trời $24$ h",
+     "vùng tối $9200$ km; $D_M=3470$ km; $d=384\\,000$ km"
+    ],
+    "tim": [
+     "a) tốc độ góc Mặt Trăng, Trái Đất; tháng giao hội $S$",
+     "b) thời gian đi thêm tới trăng non",
+     "c) ngày sao ngắn hơn bao nhiêu phút",
+     "d) tốc độ so với bóng; toàn phần dài nhất"
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -876,7 +1554,665 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "trục nghiêng $23{,}5^\\circ$; Hà Nội $21{,}0^\\circ$ B, TP.HCM $10{,}8^\\circ$ B",
+     "cọc $1$ m thẳng đứng",
+     "B cách A $556$ km về Bắc, bóng $0{,}0875$ m"
+    ],
+    "tim": [
+     "a) góc cao ở Hà Nội ngày xuân phân, hạ chí",
+     "b) hướng bóng trưa hạ chí ở Hà Nội",
+     "c) bóng cọc: Hà Nội đông chí, TP.HCM hạ chí",
+     "d) góc $\\theta$ ở B; chu vi, bán kính Trái Đất"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.2,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "tron",
+        "tam": [
+         5.0,
+         5.4
+        ],
+        "r": 4.6,
+        "mau": "min",
+        "dam": 0.1
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         5.0,
+         5.4
+        ],
+        "den": [
+         9.6,
+         5.4
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         5.0,
+         5.4
+        ],
+        "den": [
+         11.35,
+         2.96
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         8.64,
+         2.07
+        ],
+        "den": [
+         9.94,
+         5.43
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          19.6,
+          3.75
+         ],
+         [
+          9.29,
+          3.75
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          19.6,
+          5.4
+         ],
+         [
+          9.6,
+          5.4
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          19.6,
+          7.800000000000001
+         ],
+         [
+          8.924283374069717,
+          7.800000000000001
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         5.0,
+         5.4
+        ],
+        "tu": 0,
+        "den": 21,
+        "nhan": "21°",
+        "r": 2.0
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         9.29,
+         3.75
+        ],
+        "tu": -69,
+        "den": 0,
+        "nhan": "h",
+        "r": 1.0
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         9.29,
+         3.75
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": 8.889999999999999,
+        "y": 2.85,
+        "text": "Hà Nội",
+        "a": "end"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         5.0,
+         5.4
+        ],
+        "ten": "O",
+        "vi": "l"
+       },
+       {
+        "loai": "chu",
+        "x": 7.6,
+        "y": 6.4,
+        "text": "xích đạo"
+       },
+       {
+        "loai": "chu",
+        "x": 19.8,
+        "y": 7.4,
+        "text": "nắng xuân phân",
+        "a": "end"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 1,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         0.6,
+         8.2
+        ],
+        "den": [
+         19.4,
+         8.2
+        ],
+        "kieu": "guong",
+        "gach": -1
+       },
+       {
+        "loai": "chu",
+        "x": 0.7,
+        "y": 7.799999999999999,
+        "text": "Nam",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 19.299999999999997,
+        "y": 7.799999999999999,
+        "text": "Bắc",
+        "a": "end"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         10,
+         8.2
+        ],
+        "den": [
+         10,
+         4.199999999999999
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10.16,
+          0.6
+         ],
+         [
+          10,
+          4.199999999999999
+         ],
+         [
+          9.83,
+          8.2
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         9.83,
+         8.2
+        ],
+        "tu": 0,
+        "den": 87.5,
+        "nhan": "h",
+        "r": 1.1
+       },
+       {
+        "loai": "chu",
+        "x": 10,
+        "y": 9.399999999999999,
+        "text": "Hà Nội · trưa hạ chí"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "hinh": [
+       {
+        "loai": "doan",
+        "tu": [
+         0.4,
+         8.2
+        ],
+        "den": [
+         9.6,
+         8.2
+        ],
+        "kieu": "guong",
+        "gach": -1
+       },
+       {
+        "loai": "chu",
+        "x": 0.5,
+        "y": 7.799999999999999,
+        "text": "Nam",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 9.5,
+        "y": 7.799999999999999,
+        "text": "Bắc",
+        "a": "end"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         10.6,
+         8.2
+        ],
+        "den": [
+         19.6,
+         8.2
+        ],
+        "kieu": "guong",
+        "gach": -1
+       },
+       {
+        "loai": "chu",
+        "x": 10.7,
+        "y": 7.799999999999999,
+        "text": "Nam",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 19.5,
+        "y": 7.799999999999999,
+        "text": "Bắc",
+        "a": "end"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         4.2,
+         8.2
+        ],
+        "den": [
+         4.2,
+         4.199999999999999
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          1.68,
+          1.63
+         ],
+         [
+          4.2,
+          4.199999999999999
+         ],
+         [
+          8.13,
+          8.2
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         8.13,
+         8.2
+        ],
+        "tu": 180,
+        "den": 134.5,
+        "nhan": "h",
+        "r": 1.1
+       },
+       {
+        "loai": "chu",
+        "x": 4.2,
+        "y": 9.399999999999999,
+        "text": "Hà Nội · đông chí"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         15.6,
+         8.2
+        ],
+        "den": [
+         15.6,
+         4.199999999999999
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          16.39,
+          0.69
+         ],
+         [
+          15.6,
+          4.199999999999999
+         ],
+         [
+          14.7,
+          8.2
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         14.7,
+         8.2
+        ],
+        "tu": 0,
+        "den": 77.3,
+        "nhan": "h",
+        "r": 1.1
+       },
+       {
+        "loai": "chu",
+        "x": 15.6,
+        "y": 9.399999999999999,
+        "text": "TP.HCM · hạ chí"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 5,
+      "hinh": [
+       {
+        "loai": "tron",
+        "tam": [
+         4.4,
+         6.0
+        ],
+        "r": 5.0,
+        "mau": "min",
+        "dam": 0.1
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         4.4,
+         6.0
+        ],
+        "den": [
+         11.0,
+         6.0
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         4.4,
+         6.0
+        ],
+        "den": [
+         10.78,
+         4.29
+        ],
+        "kieu": "mo"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         9.4,
+         6.0
+        ],
+        "den": [
+         11.0,
+         6.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         9.23,
+         4.71
+        ],
+        "den": [
+         10.78,
+         4.29
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          19.6,
+          6.0
+         ],
+         [
+          11.0,
+          6.0
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          19.6,
+          4.29
+         ],
+         [
+          10.78,
+          4.29
+         ]
+        ],
+        "mau": "vang"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         10.78,
+         4.29
+        ],
+        "tu": 0,
+        "den": 15,
+        "nhan": "θ",
+        "r": 1.0
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         4.4,
+         6.0
+        ],
+        "tu": 0,
+        "den": 15,
+        "nhan": "θ",
+        "r": 1.6
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         9.4,
+         6.0
+        ],
+        "ten": "A",
+        "vi": "b"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         9.23,
+         4.71
+        ],
+        "ten": "B",
+        "vi": "l"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         4.4,
+         6.0
+        ],
+        "ten": "O",
+        "vi": "l"
+       },
+       {
+        "loai": "chu",
+        "x": 10.3,
+        "y": 7.1,
+        "text": "AB = 556 km",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 19.8,
+        "y": 1.0,
+        "text": "góc vẽ phóng to",
+        "a": "end"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "xuân phân: h = 90° − 21° = 69°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "h = 90° − |21° − 23,5°| = 87,5°"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        10,
+        8.2
+       ],
+       "den": [
+        9.83,
+        8.2
+       ],
+       "kieu": "vat",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mặt Trời lệch Bắc ⇒ bóng ngả Nam"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        4.2,
+        8.2
+       ],
+       "den": [
+        8.13,
+        8.2
+       ],
+       "kieu": "vat",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "h = 45,5°; bóng = 1 : tan h"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 0,983 m (ngả Bắc)"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        15.6,
+        8.2
+       ],
+       "den": [
+        14.7,
+        8.2
+       ],
+       "kieu": "vat",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "h = 77,3° ⇒ bóng ≈ 0,225 m"
+      },
+      {
+       "loai": "ghi",
+       "text": "(ngả Nam)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "tan θ = 0,0875 ⇒ θ ≈ 5,00°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "C = 556 · 360° : 5,001°"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 40 027 km"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R = C : 2π ≈ 6370 km ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
@@ -1047,7 +2383,20 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$c=3\\cdot10^5$ km/s; $1$ AU $=1{,}5\\cdot10^8$ km",
+     "$1$ ly $=9{,}46\\cdot10^{12}$ km; Proxima $4{,}24$ ly",
+     "Mặt Trời cách tâm Ngân Hà $26\\,000$ ly, vòng $230$ triệu năm"
+    ],
+    "tim": [
+     "a) ánh sáng tới Trái Đất, Sao Hải Vương",
+     "b) tín hiệu tới Sao Hoả ít nhất, nhiều nhất",
+     "c) tốc độ quỹ đạo Trái Đất; Proxima theo AU, thời gian bay",
+     "d) tốc độ quanh Ngân Hà, số vòng; mô hình $1:10^{10}$"
+    ]
+   }
   }
  ],
  "tu_luan": {
