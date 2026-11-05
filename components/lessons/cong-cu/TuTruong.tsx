@@ -10,6 +10,11 @@
  *         lop: [[mục…] cho bước 1, …] }. Toạ độ 0..20 ngang, 0..11 dọc, gốc dưới trái, y hướng lên; góc theo độ.
  * Mục: day {tu,den,nhan?,mau?,dut?}  ·  dong {tu,den,nhan?} (mũi tên I)  ·  tiet_dien {x,y,chieu,ten?}
  *  ·  vec {x,y,goc,dai,nhan?,mau?,dut?,trai?}  ·  goc {x,y,tu,den,nhan?}  ·  chu {x,y,text,a?}  ·  nam_cham {x,y,dai,cao,n_trai?}
+ *  ·  diem {x,y,ten?,vi?}  ·  vong {x,y,r,chieu?:"cung"|"nguoc",mau?,dut?} (đường sức tròn quanh dây, mũi theo chiều)
+ *  ·  la_ban {x,y,r,goc} (kim: nửa N đỏ chỉ theo `goc`)  ·  thanh {x,y,goc,dai,mau?,dut?} (đoạn thẳng qua tâm — khung nhìn dọc
+ *  trục, quay được bằng `dong`)  ·  duong {diem:[[x,y]…],mau?,dut?,mui?,kin?,nhan?} (đường gấp khúc/cong: đường sức nam châm;
+ *  `mui` = số mũi chevron theo chiều vẽ)  ·  elip {x,y,rx,ry,goc?,mau?,dut?} (vòng dây nhìn nghiêng)
+ *  ·  màu `mau`: "b" (B, xanh) · "i" (I, cam) · "luc" (F, đỏ) · "chu" (đen) — thầy chốt 5/11/2026.
  *  ·  tran {x1,x2,y} (giá treo gạch chéo)  ·  khung {x,y,rong,sau:[dx,dy],ten?,B?,nhan?} (hình nhỏ khung ABCD nhìn nghiêng,
  *  A ở (x,y))  ·  ghi {text}. `het: k` = ẩn từ khi xong bước k (cả mục trong `hinh`).
  */
@@ -23,7 +28,10 @@ const W = 20,
   H = 11;
 const Y = (y: number) => H - y;
 const rad = (d: number) => (d * Math.PI) / 180;
-const mau = (m?: string) => (m === "max" ? C_MAX : m === "min" ? C_MIN : "currentColor");
+// quy ước màu cả chương (5/11/2026): B xanh (C_MIN), I cam (C_MAX), F đỏ; "max"/"min" giữ cho JSON cũ
+const C_LUC = "#dc2626";
+const mau = (m?: string) =>
+  m === "max" || m === "i" ? C_MAX : m === "min" || m === "b" ? C_MIN : m === "luc" ? C_LUC : "currentColor";
 // bảng màu nam châm chuẩn (svg_lib.py UM_*)
 const UM_EDGE = "#334155",
   UM_N = ["#dc2626", "#f87171", "#b91c1c"],
@@ -230,9 +238,134 @@ function Muc({ it, moi }: { it: TuTruongLop; moi: boolean }) {
   if (it.loai === "chu") {
     return (
       <g className={cls}>
-        <Label x={it.x} y={Y(it.y)} a={it.a ?? "middle"}>
+        <Label x={it.x} y={Y(it.y)} a={it.a ?? "middle"} fill={mau(it.mau)}>
           {it.text}
         </Label>
+      </g>
+    );
+  }
+  if (it.loai === "diem") {
+    const v = it.vi ?? "tren",
+      dx = v === "phai" ? 0.45 : v === "trai" ? -0.45 : 0,
+      dy = v === "tren" ? -0.55 : v === "duoi" ? 1.25 : 0.4;
+    return (
+      <g className={cls}>
+        <circle cx={it.x} cy={Y(it.y)} r={0.2} fill="currentColor" />
+        {it.ten && (
+          <Label x={it.x + dx} y={Y(it.y) + dy} a={v === "phai" ? "start" : v === "trai" ? "end" : "middle"}>
+            {it.ten}
+          </Label>
+        )}
+      </g>
+    );
+  }
+  if (it.loai === "vong") {
+    const c = mau(it.mau ?? "b"),
+      cy = Y(it.y);
+    // mũi ở đỉnh trên và đáy dưới: "nguoc" (ngược kim đồng hồ) → trên chỉ sang trái
+    const s = it.chieu === "nguoc" ? Math.PI : 0;
+    return (
+      <g className={cls}>
+        <circle cx={it.x} cy={cy} r={it.r} fill="none" stroke={c} strokeWidth={0.07} strokeDasharray={it.dut ? "0.4 0.25" : undefined} />
+        {it.chieu && (
+          <>
+            <Chevron x={it.x} y={cy - it.r} ang={s} color={c} len={0.4} w={0.08} />
+            <Chevron x={it.x} y={cy + it.r} ang={s + Math.PI} color={c} len={0.4} w={0.08} />
+          </>
+        )}
+      </g>
+    );
+  }
+  if (it.loai === "la_ban") {
+    const g = rad(it.goc),
+      cx = it.x,
+      cy = Y(it.y),
+      r = it.r,
+      k = r * 0.8,
+      w = r * 0.16,
+      ux = Math.cos(g),
+      uy = -Math.sin(g),
+      px = -uy,
+      py = ux;
+    const nua = (sgn: number) => `M${cx + px * w} ${cy + py * w} L${cx + sgn * ux * k} ${cy + sgn * uy * k} L${cx - px * w} ${cy - py * w} Z`;
+    return (
+      <g className={cls}>
+        <circle cx={cx} cy={cy} r={r} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.08} />
+        <path d={nua(1)} fill="#dc2626" />
+        <path d={nua(-1)} fill="none" stroke="currentColor" strokeWidth={0.06} />
+        <circle cx={cx} cy={cy} r={0.1} fill="currentColor" />
+      </g>
+    );
+  }
+  if (it.loai === "thanh") {
+    const g = rad(it.goc),
+      h = it.dai / 2;
+    return (
+      <g className={cls}>
+        <line
+          x1={it.x - h * Math.cos(g)}
+          y1={Y(it.y - h * Math.sin(g))}
+          x2={it.x + h * Math.cos(g)}
+          y2={Y(it.y + h * Math.sin(g))}
+          stroke={mau(it.mau)}
+          strokeWidth={it.dut ? 0.1 : 0.2}
+          strokeDasharray={it.dut ? "0.4 0.25" : undefined}
+          strokeLinecap="round"
+        />
+      </g>
+    );
+  }
+  if (it.loai === "duong") {
+    const c = mau(it.mau ?? "b"),
+      P = it.diem;
+    if (P.length < 2) return null;
+    const d = P.map(([x, y], i) => `${i ? "L" : "M"}${x} ${Y(y)}`).join(" ") + (it.kin ? " Z" : "");
+    // mũi chevron đặt đều theo độ dài
+    const seg = P.slice(1).map((q, i) => Math.hypot(q[0] - P[i][0], q[1] - P[i][1]));
+    const tong = seg.reduce((a, b) => a + b, 0);
+    const mui: { x: number; y: number; ang: number }[] = [];
+    for (let m = 1; m <= (it.mui ?? 0); m++) {
+      let L = (tong * m) / ((it.mui ?? 0) + 1);
+      for (let i = 0; i < seg.length; i++) {
+        if (L <= seg[i] || i === seg.length - 1) {
+          const f = seg[i] ? Math.min(L / seg[i], 1) : 0,
+            [x1, y1] = P[i],
+            [x2, y2] = P[i + 1];
+          mui.push({ x: x1 + f * (x2 - x1), y: y1 + f * (y2 - y1), ang: Math.atan2(-(y2 - y1), x2 - x1) });
+          break;
+        }
+        L -= seg[i];
+      }
+    }
+    const [lx, ly] = P[Math.floor(P.length / 2)];
+    return (
+      <g className={cls}>
+        <path d={d} fill="none" stroke={c} strokeWidth={0.07} strokeDasharray={it.dut ? "0.4 0.25" : undefined} strokeLinejoin="round" />
+        {mui.map((m, i) => (
+          <Chevron key={i} x={m.x} y={Y(m.y)} ang={m.ang} color={c} len={0.4} w={0.08} />
+        ))}
+        {it.nhan && (
+          <Label x={lx} y={Y(ly) - 0.4} fill={c} size={1}>
+            {it.nhan}
+          </Label>
+        )}
+      </g>
+    );
+  }
+  if (it.loai === "elip") {
+    return (
+      <g className={cls}>
+        <ellipse
+          cx={it.x}
+          cy={Y(it.y)}
+          rx={Math.max(it.rx, 0.02)}
+          ry={Math.max(it.ry, 0.02)}
+          transform={it.goc ? `rotate(${-it.goc} ${it.x} ${Y(it.y)})` : undefined}
+          fill="none"
+          stroke={mau(it.mau)}
+          strokeWidth={it.dut ? 0.08 : 0.16}
+          strokeDasharray={it.dut ? "0.4 0.25" : undefined}
+        />
       </g>
     );
   }

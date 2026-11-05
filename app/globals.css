@@ -4202,3 +4202,10 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-table--bi thead th[lang="vi"], .exam-content .tl-table--bi tbody td[lang="vi"] { background: rgba(16, 185, 129, .07); }
 .exam-content .tl-table--bi tr.tl-sub td { border-top: 2px solid rgba(148, 163, 184, .7); }
 .exam-content .tl-table--bi ol { margin: 4px 0 0; padding-left: 1.3em; }
+
+/* "Một dạng — một hình" (5/11/2026): hình cong_cu ngay dưới đề (lớp 0) + nút chạy chuyển động trên chính hình (N8, N4, H1, B4) */
+.cc-de { --cc-halo: var(--color-panel); margin: 6px 0 0; }
+.cc-de .cc-fig { height: auto; min-height: 0; max-height: 320px; margin: 0 auto; }
+.cc-dong { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 4px; }
+.cc-dong-nut { min-height: 40px; padding: 6px 14px; border: 1px solid var(--color-line-strong); border-radius: 9px; background: none; color: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.cc-dong-nut:disabled { opacity: .55; cursor: default; }

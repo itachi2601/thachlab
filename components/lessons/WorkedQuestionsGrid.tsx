@@ -6,7 +6,7 @@ import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import VariantPractice from "@/components/lessons/VariantPractice";
 import StepwiseSolution from "@/components/lessons/StepwiseSolution";
-import GiaiCungHinh from "@/components/lessons/cong-cu/GiaiCungHinh";
+import GiaiCungHinh, { HinhDe } from "@/components/lessons/cong-cu/GiaiCungHinh";
 import { TomDeKhung } from "@/components/lessons/TomDe";
 import type { LessonWorkedQuestion } from "@/features/lessons/types";
 
@@ -40,6 +40,7 @@ function StructuredBody({ q, color, lessonId }: { q: LessonWorkedQuestion; color
         </p>
       )}
       <ContentHtml html={q.problem_html ?? ""} className="block leading-relaxed" />
+      {q.cong_cu?.de && <HinhDe tool={q.cong_cu} />}
       <p className="text-xs text-muted">
         {hasAnalysis ? "Tự thử giải trên giấy trước, kẹt thì mở phân tích đề." : "Tự thử giải trên giấy trước, kẹt thì mở từng gợi ý."}
       </p>
