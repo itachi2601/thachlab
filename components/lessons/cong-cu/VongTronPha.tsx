@@ -13,7 +13,7 @@
 import { C_HL, C_MAX, C_MIN, Chevron, Label, dangHien, fmt, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { VongTronLop } from "@/features/lessons/types";
 
-type Props = { A: number; don_vi?: string; x_dich?: number[]; lop?: VongTronLop[][]; layer: number };
+type Props = { A: number; don_vi?: string; x_dich?: number[]; nhan_dich?: "tren"; lop?: VongTronLop[][]; layer: number };
 
 const R = 4.2;
 const P = (g: number, r = R) => [r * Math.cos(g * Math.PI), -r * Math.sin(g * Math.PI)] as const;
@@ -32,7 +32,7 @@ function cungPath(tu: number, den: number) {
   return { d: "M" + pts.join(" L"), end };
 }
 
-export default function VongTronPha({ A, don_vi = "cm", x_dich = [], lop, layer: L }: Props) {
+export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, lop, layer: L }: Props) {
   const items = dangHien(lop, L);
   const ghi = ghiMoiNhat(lop, L);
   const X = (x: number) => (x / A) * R;
@@ -56,7 +56,8 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], lop, layer:
       {x_dich.map((x) => (
         <g key={x}>
           <line x1={X(x)} y1={-R - 0.6} x2={X(x)} y2={R + 0.6} stroke={C_MIN} strokeWidth={0.08} strokeDasharray="0.35 0.25" />
-          <Label x={X(x) + (x < 0 ? 0.25 : -0.25)} y={1.15} a={x < 0 ? "start" : "end"} size={0.95} fill={C_MIN}>{`x = ${fmt(x)}`}</Label>
+          {/* nhan_dich "tren": nhãn ở đầu trên đường, khi hai đường sát ±A thì nhãn bên trong vòng chồng nhãn số trục */}
+          <Label x={X(x) + (nhan_dich === "tren" ? (x < 0 ? -0.25 : 0.25) : x < 0 ? 0.25 : -0.25)} y={nhan_dich === "tren" ? -R - 0.55 : 1.15} a={nhan_dich === "tren" ? (x < 0 ? "end" : "start") : x < 0 ? "start" : "end"} size={0.95} fill={C_MIN}>{`x = ${fmt(x)}`}</Label>
         </g>
       ))}
       {items.map((it, k) => {
