@@ -264,7 +264,7 @@ export default function InlineLessonAccordion({
                                 {item.exam_ids.length > 0 && (
                                   <SampleQuestionsGrid examIds={item.exam_ids} color={meta.color} />
                                 )}
-                                <WorkedQuestionsGrid questions={item.questions} color={meta.color} />
+                                <WorkedQuestionsGrid questions={item.questions} color={meta.color} lessonId={item.lesson_id} />
                               </div>
                             )}
                             {item.kind === "luyen_tap" && (

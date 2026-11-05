@@ -1809,7 +1809,7 @@ function LessonLoader() {
                   )}
                 </p>
               ) : (
-                <WorkedQuestionsGrid questions={item.questions} color={ACCENT} />
+                <WorkedQuestionsGrid questions={item.questions} color={ACCENT} lessonId={item.lesson_id} />
               )}
             </>
           ) : (

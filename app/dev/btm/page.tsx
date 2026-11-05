@@ -15,21 +15,27 @@ export default function BtmPreviewPage() {
   const [data, setData] = useState<{ lesson_id: number; lesson_title?: string; questions: LessonWorkedQuestion[] } | null>(null);
   const [err, setErr] = useState<string | null>(null);
   useEffect(() => {
-    // ?mock=1: giả RPC bài tương tự (không cần đăng nhập) để xem luồng chấm + gỡ rối
-    if (new URLSearchParams(location.search).has("mock")) {
+    // ?mock=1: giả RPC bài tương tự (không cần đăng nhập) để xem luồng chấm + gỡ rối.
+    // ?mock=chude: RPC đúng dạng lỗi/chưa có → rơi về câu cùng chủ đề (có nhãn); ?mock=rong: cả hai rỗng.
+    const mock = new URLSearchParams(location.search).get("mock");
+    if (mock) {
       const sb = getSupabase() as unknown as { rpc: (fn: string, args?: unknown) => unknown };
       const orig = sb.rpc.bind(sb);
+      const rows = [1, 2, 3].map((id) => ({
+        id,
+        same_form: true,
+        question: { type: "multiple_choice", question: `Câu giả ${id}: $t=\\sqrt{2h/g}$ với $h=20$ m, $g=10$ m/s² bằng?`, options: ["1 s", "2 s", "3 s", "4 s"], answer: 1, explanation: "t = 2 s" },
+      }));
       sb.rpc = (fn, args) =>
-        fn === "get_similar_bank_questions"
-          ? Promise.resolve({
-              data: [1, 2, 3].map((id) => ({
-                id,
-                same_form: true,
-                question: { type: "multiple_choice", question: `Câu giả ${id}: $t=\\sqrt{2h/g}$ với $h=20$ m, $g=10$ m/s² bằng?`, options: ["1 s", "2 s", "3 s", "4 s"], answer: 1, explanation: "t = 2 s" },
-              })),
-              error: null,
-            })
-          : orig(fn, args);
+        fn === "get_similar_dang_questions"
+          ? Promise.resolve(
+              mock === "chude"
+                ? { data: null, error: { message: "function does not exist" } }
+                : { data: mock === "rong" ? [] : rows, error: null },
+            )
+          : fn === "get_similar_bank_questions"
+            ? Promise.resolve({ data: mock === "rong" ? [] : rows, error: null })
+            : orig(fn, args);
     }
     fetch("/xem-thu/btm.json", { cache: "no-store" })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
@@ -43,7 +49,7 @@ export default function BtmPreviewPage() {
       <h1 className="mb-1 text-lg font-bold text-white">Xem thử bài tập mẫu {data ? `· bài ${data.lesson_id}` : ""}</h1>
       <p className="mb-4 text-sm text-slate-400">{data?.lesson_title ?? ""}</p>
       {err && <p className="text-sm text-rose-300">Chưa có public/xem-thu/btm.json ({err}) — chạy publish-bai-tap-mau.mts --xem-thu.</p>}
-      {data && <WorkedQuestionsGrid questions={data.questions} />}
+      {data && <WorkedQuestionsGrid questions={data.questions} lessonId={data.lesson_id} />}
       </div>
     </main>
   );
