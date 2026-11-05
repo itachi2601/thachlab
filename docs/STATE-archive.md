@@ -847,3 +847,13 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 
 ## 1/11/2026 22h40 — chặng B L11 Dao động đã duyệt
 - Chặng B L11 Dao động: 7 clip đã tải + chèn + khung vào bài 21, 22, 23, 24, 26 (commit ae9503b51), CHỜ thầy duyệt lô rồi `cap-nhat-ly-thuyet.sh … --chi-video` sau 22h — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+## 5/11/2026 — kiểm DB: 6 mục STATE.md đã xong
+- `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.
+- Quiz lý thuyết đợt 2 (73 bài, exam 1102–1174) đã ghi DB, CHƯA DEPLOY. 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
+- L10 8 bài nâng chỉ số SVG lên 14 + B34 H2 đầu V (31/10, đã vào main): CHƯA đăng DB — gộp đợt đăng sau: `cap-nhat-ly-thuyet.sh` B4, 5, 9, 12, 25, 26, 27, 34 (lesson_id suy 45+n: 49, 50, 54, 57, 70, 71, 72, 79; dry-run kiểm tiêu đề).
+- HSG9 đợt 4 (6 CĐ ẩn): chờ thầy xem rồi bật Hiện + deploy (memory `project_thachlab_khoa_hsg9_vat_ly`).
+- `hsg-ai-grade` chưa deploy (cần `ANTHROPIC_API_KEY`).
+- Chỉ số tspan 13→14 L11 (commit bc839cd4b, 6 bài): đã vào DB bài 26 + 43 (1/11 22h40); CÒN 4 bài Mô tả sóng, Cường độ dòng điện, TH đo SĐĐ pin, TH đo tốc độ âm — gộp đợt `--chi-video --cho-phep-khac` sau 22h cùng 8 bài L10.
+- Kiểm DB 5/11: `profiles.is_test` có (12 tài khoản thử), `sweep_engagement_alerts` lọc `is_test`, `don-canh-bao-gia` dry-run 3/11 rỗng; 73 đề 1102–1174 đều Hiện, deploy 5/11 10h47; 8 bài L10 tspan 14 đã ở DB; HSG9 151, 152, 156, 158, 163, 178 đã Hiện; `hsg-ai-grade` ACTIVE v11 (17/10) + secret `ANTHROPIC_API_KEY` có.
+- 5/11 ~14h: đăng 4 bài L11 tspan 14 (27, 34, 41, 45) bằng `cap-nhat-ly-thuyet.sh --chi-video --cho-phep-khac`; đối chiếu trước: DB và file chỉ khác cỡ chữ tspan sub; kiểm sau: 0 còn 12–13. Sao lưu `scripts/logs/ly-thuyet-bai{27,34,41,45}-backup-17938509*/17938510*.json`.

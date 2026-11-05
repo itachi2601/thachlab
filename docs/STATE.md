@@ -13,7 +13,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
-- `20261018170000_canh_bao_bo_bai_kt…`: chạy TRƯỚC deploy (code select `is_test`), rồi `don-canh-bao-gia.mts --dry-run` → `--apply`.
 - P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
@@ -21,18 +20,15 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - 30/10 · Công TA hằng tháng tự chạy (cron `ta-month-cycle`): báo 19h cuối tháng → mở ngày 1–3 → khoá, báo thầy chốt; khiếu nại ở /tro-giang. T10 đang mở, 1/11 tự kéo hạn tới 23:59 03/11. Chưa thử bằng tài khoản TA thật. Thấy lạ: `.claude/worktrees/deploy-tree` có `app/globals.css` sửa dở chưa commit, HEAD kẹt ở ac5a22baf.
 - Ôn tập theo chặng + Tự học ở nhà + "Việc hôm nay": đã deploy, chưa thử bằng HS thật/tivi; thông báo buổi tạo MỚI chưa thử (memory `project_thachlab_on_tap_theo_chang`).
 - Ngân hàng→Luyện tập chặng 0: đã deploy; còn gắn `lint_flags` cho 127 câu `_can_xac_nhan`, thử ghi `bank_id` bằng HS thật (`docs/BAO-CAO-NGAN-HANG-THEO-BAI-2026-10-24.md`).
-- Quiz lý thuyết đợt 2 (73 bài, exam 1102–1174) đã ghi DB, CHƯA DEPLOY. 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
+- Quiz lý thuyết: 129–131 chờ đăng lý thuyết tương tác trước; 178 còn 18 câu.
 - Hình OpenStax L10/L11 (nhánh `claude/distracted-gauss-2d45d4`, 20 bài): CHƯA đăng DB/deploy ảnh; L12 chờ thầy xem 375 px (`docs/ra-soat/hinh-openstax-*.md`).
-- L10 8 bài nâng chỉ số SVG lên 14 + B34 H2 đầu V (31/10, đã vào main): CHƯA đăng DB — gộp đợt đăng sau: `cap-nhat-ly-thuyet.sh` B4, 5, 9, 12, 25, 26, 27, 34 (lesson_id suy 45+n: 49, 50, 54, 57, 70, 71, 72, 79; dry-run kiểm tiêu đề).
 - Làm bài "tự nhảy câu" (24/10): 4 sửa đã deploy, chờ HS phản hồi.
 - Push thông báo: đã chạy cron; chưa thử điện thoại thật. Push nhắc hằng ngày: còn VAPID + `send-daily-push` (`docs/PUSH-NHAC-HANG-NGAY.md`).
-- HSG9 đợt 4 (6 CĐ ẩn): chờ thầy xem rồi bật Hiện + deploy (memory `project_thachlab_khoa_hsg9_vat_ly`).
 - AVCN: chờ thầy nghe thử giọng Guy/Andrew/Brian.
 - Mạng nhện Theo chương: chờ thầy xem 375 px; chưa có "Theo học kì".
 - Kiểm tra hành trang (L10 ch.3, bài 58–67): chờ đo tỉ lệ đọc hết + đúng quiz.
 - Mã QR đề: chưa thử iPhone/Android thật; chưa có QR cho CNC, `LessonImporter`.
 - RP lý thuyết: chưa có khoá → `sinh-khoa-quiz-ly-thuyet.mts` rồi `--ghi`; chưa thử nộp thật.
-- `hsg-ai-grade` chưa deploy (cần `ANTHROPIC_API_KEY`).
 - Độ sâu đọc: chưa có UI GV đọc `teacher_lesson_read_depth`. DT-01: kiểm `learning_events` có dữ liệu chưa.
 - DT-16 RLS: chưa kiểm grant cho `anon` và `learning_events`.
 - Casio: mini-test WP-01 lặp bài luyện, kiểm `suggestedAnswer` markdown trên trang HS.
@@ -45,7 +41,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
 - Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
-- Chỉ số tspan 13→14 L11 (commit bc839cd4b, 6 bài): đã vào DB bài 26 + 43 (1/11 22h40); CÒN 4 bài Mô tả sóng, Cường độ dòng điện, TH đo SĐĐ pin, TH đo tốc độ âm — gộp đợt `--chi-video --cho-phep-khac` sau 22h cùng 8 bài L10.
 - Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lý thuyết lesson 11 (item 52) đã ghi DB 22h05, đã kiểm DB + deploy lại 22h25 1/11; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
 - 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
