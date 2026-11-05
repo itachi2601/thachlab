@@ -79,12 +79,12 @@
        "dung": true
       },
       {
-       "text": "Dùng lại đúng $d$ và $q$ của câu trước",
+       "text": "Dùng lại đúng $d$ và $q$ của câu trước rồi thế vào $qEd$ như cũ",
        "dung": false,
        "vi_sao": "Đi ngược lại thì hình chiếu có dấu đổi dấu; dùng lại $d$ cũ sẽ sai dấu."
       },
       {
-       "text": "Tính lại $E$ vì electron đi theo chiều ngược",
+       "text": "Tính lại $E$ vì electron đi theo chiều ngược với lúc trước",
        "dung": false,
        "vi_sao": "$E$ là của điện trường, không đổi theo chiều đi của hạt."
       }
@@ -142,12 +142,12 @@
        "dung": true
       },
       {
-       "text": "Lấy cả độ dài BC làm $d$ rồi cộng với đoạn AB",
+       "text": "Lấy cả độ dài BC làm $d$ trong công thức $qEd$ rồi cộng với công của đoạn AB, đổi ra mJ như đề yêu cầu",
        "dung": false,
        "vi_sao": "$d$ là hình chiếu lên đường sức; BC hợp với đường sức một góc nên chỉ một phần của nó dọc đường sức."
       },
       {
-       "text": "Chỉ tính đoạn BC vì AB nằm dọc đường sức",
+       "text": "Chỉ tính công đoạn BC vì AB nằm dọc đường sức nên công của AB bằng không",
        "dung": false,
        "vi_sao": "AB dọc đường sức nên hình chiếu của nó là đầy đủ, công khác không; phải cộng cả hai đoạn."
       }
@@ -166,12 +166,12 @@
        "dung": true
       },
       {
-       "text": "Nhân $qE$ với độ dài đường cong",
+       "text": "Nhân $qE$ với độ dài đường cong 25 cm rồi đổi sang mJ để ra công của cả đường",
        "dung": false,
        "vi_sao": "Độ dài quãng đường không phải $d$: lực điện là lực thế, công không tỉ lệ quãng đường đi."
       },
       {
-       "text": "Phải biết hình dạng chính xác của đường cong mới tính được",
+       "text": "Phải biết hình dạng chính xác của đường cong mới tính được công của lực điện",
        "dung": false,
        "vi_sao": "Công của lực điện không phụ thuộc hình dạng đường đi, chỉ phụ thuộc điểm đầu và điểm cuối."
       }
@@ -267,12 +267,12 @@
        "dung": true
       },
       {
-       "text": "Cộng công đã cho vào $W_M$",
+       "text": "Cộng công đã cho vào $W_M$ vì thế năng tăng thêm phần công đó",
        "dung": false,
        "vi_sao": "Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$, nên $W_N=W_M-A_{MN}$, không phải $W_M+A_{MN}$."
       },
       {
-       "text": "Coi $W_N=W_M$ vì cùng một hạt",
+       "text": "Coi $W_N=W_M$ vì cùng một hạt nên thế năng không đổi",
        "dung": false,
        "vi_sao": "Thế năng phụ thuộc vị trí: hai điểm cách mốc khác nhau thì thế năng khác nhau."
       }
@@ -291,12 +291,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $d_N=\\dfrac{A_{MN}}{qE}$",
+       "text": "Lấy $d_N=\\dfrac{A_{MN}}{qE}$ rồi đổi sang cm làm đáp số",
        "dung": false,
        "vi_sao": "$A_{MN}/(qE)$ là hình chiếu của đoạn MN lên đường sức, không phải khoảng cách từ N tới mốc."
       },
       {
-       "text": "Lấy $d_N=\\dfrac{W_M}{qE}$",
+       "text": "Lấy $d_N=\\dfrac{W_M}{qE}$ rồi đổi sang cm làm đáp số",
        "dung": false,
        "vi_sao": "Đó là khoảng cách của điểm M (đề đã cho), không phải của N."
       }
@@ -315,12 +315,12 @@
        "dung": true
       },
       {
-       "text": "Giữ nguyên $W_N$ vì hạt không đổi vị trí",
+       "text": "Giữ nguyên $W_N$ vì hạt không đổi vị trí nên thế năng không đổi khi đổi mốc sang bản dưới",
        "dung": false,
        "vi_sao": "Thế năng đo bằng công tới mốc; đổi mốc thì giá trị $W_N$ đổi."
       },
       {
-       "text": "Lấy $d$ là khoảng cách từ N tới bản trên",
+       "text": "Lấy $d$ là khoảng cách từ N tới bản trên như mốc cũ rồi thay vào $qEd$ để tính",
        "dung": false,
        "vi_sao": "Mốc mới ở bản dưới; $d$ tính từ N tới bản dưới."
       }
@@ -483,12 +483,12 @@
        "dung": true
       },
       {
-       "text": "Lấy $E=\\dfrac{A}{q}$",
+       "text": "Lấy $E=\\dfrac{A}{q}$ với $A=\\tfrac12mv^2$ là công của lực điện",
        "dung": false,
        "vi_sao": "$A/q$ là hiệu điện thế, đơn vị V; cần chia thêm cho $d$ (công $A=qEd$) mới ra cường độ điện trường."
       },
       {
-       "text": "Lấy $E=\\dfrac{mv^2}{qd}$",
+       "text": "Lấy $E=\\dfrac{mv^2}{qd}$ với $d$ là khoảng từ M tới bản âm",
        "dung": false,
        "vi_sao": "Công bằng $\\tfrac12mv^2$, có hệ số một nửa; thiếu hệ số này làm $E$ gấp đôi."
       }
@@ -507,12 +507,12 @@
        "dung": true
       },
       {
-       "text": "Lấy khoảng cách từ P tới bản âm làm $d$",
+       "text": "Lấy khoảng cách từ P tới bản âm làm $d$ rồi nhân $qE$",
        "dung": false,
        "vi_sao": "Đó là $d$ của đoạn từ P tới mốc, cho thế năng $W_P$; công của đoạn MP dùng hình chiếu của MP."
       },
       {
-       "text": "Lấy luôn công cả đoạn tới bản âm",
+       "text": "Lấy luôn công của cả đoạn từ M tới bản âm rồi chia theo tỉ lệ",
        "dung": false,
        "vi_sao": "Hạt mới tới P, chưa tới bản âm; công của đoạn MP nhỏ hơn."
       }
