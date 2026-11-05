@@ -96,3 +96,9 @@ Bỏ ra khỏi kho: chỗ đã có mẹo từ khoá đủ dùng (ném ngang "Nga
 | 5 | Đo 2–3 tuần (mục 3) rồi mới mở đợt 2 | ghi số liệu vào file này | thầy + phiên sau |
 
 Hạn mức: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có mẹo (G1, V11 tinh thần).
+
+## 6. Còn treo (cập nhật 5/11/2026, sau chặng 3)
+- **Chặng 4** (vẽ 6 mẹo ★): mỗi mẹo tra `docs/BANG-MEO-GIAI.md` trước; chỉ số dạng của 6 mẹo còn "dự kiến, cần kiểm" nên phải mở bài thật xác nhận khi gắn; đăng DB sau 22h.
+- **Làm đầy `dieu_kien` đã đăng** (Đòn bẩy nhiệt, Quỹ nhiệt trong `scripts/data/bai-tap-mau/meo_nhiet.py`): còn thiếu so với bảng (nhiệt lượng kế, chỉ các vật trên đòn trao đổi nhiệt, không công cơ học/hoà tan; c và λ không đổi, áp suất thường, nước tinh khiết). Sửa rồi đăng lại bài 153 sau 22h.
+- **Cần kiểm**: c_đá = 2100 và ngưỡng 10° của con lắc đơn (đối chiếu SGK); Cổng soát vé chưa có vật gần gũi cho U; Xe đẩy vào cát nên ở bài lý thuyết hay bài tập mẫu.
+- **Chặng 5** (đo 2–3 tuần) chưa bắt đầu, chờ có mẹo trên web đủ lâu.
