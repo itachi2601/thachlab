@@ -876,5 +876,7 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - Đã chạy: mùa 5 đóng (77 kết quả + snapshot); mở mùa 26 L12 Lôi Đình Cảm Ứng (391 đề + 24 mục nguồn, 111 HS), 27 L11 Thợ Săn Sóng (168 + 30, 97 HS), 28 L10 Kỷ Nguyên Newton (290 + 33, 80 HS), 29 L9 Bẻ Cong Ánh Sáng (2 + 18, 24 HS); bậc 0/180/…/1080; recompute từ 02/11 khớp bản thử. Log `scripts/logs/20261105-133854-20261105200000_rank_mo_mua_2.log`. gen-database-doc không đổi.
 
 - Motion graphic chặng A (23 clip L12, CSS `tl-video--doc` chưa deploy) chờ thầy chốt — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
+- 5/11 · BTM L12 Ch.3 "một dạng — một hình" (bài 10,11,13,14,125,126,127): chờ thầy duyệt `/dev/btm` → publish `--giu-cu --yes` + deploy (`docs/RA-SOAT-HINH-BTM-TU-TRUONG.md` mục 5).
+- 6/11 23:45 · Thầy duyệt ảnh 149 dạng / 30 bài BTM "một dạng — một hình" (10 11 13 14 125 126 127 + 23 bài cứu 26…159) → đã publish `--giu-cu --yes` (sao lưu `scripts/logs/bai-tap-mau-bai<id>-*.json`), kiểm DB 30/30 khớp, deploy.
 [ĐÃ ĐĂNG DB 6/11] - Chặng B L10 Ch.2 Động học (6/11): 12/12 clip đã dựng; 3 clip lô 1/11 (tdvt1, giatoc1, dog3) đã chèn repo + khung bài B5/B8/B11, CHỜ thầy duyệt, đăng `--chi-video` sau 22h; hộp exp còn dòng Quan sát/Rút ra lộ đáp án — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 [ĐÃ ĐĂNG DB 6/11] - Clip tự dựng L10 B7–B8 (6/11): không còn clip phải dựng; 5 clip lô 1/11 (trondeu3, biendang3, saiso2, antoan1/2 — lesson 76, 78, 48, 47) đã chèn repo + khung, CHỜ THẦY DUYỆT, đăng sau 22h; `klr-apsuat-04` thầy loại khỏi nhóm C 6/11.
