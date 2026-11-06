@@ -11,9 +11,9 @@
    "form": "ly_thuyet",
    "label": "Dạng 1 · Dễ · Phân hạch, nhiệt hạch và hệ số nhân nơtron k",
    "topic": "Phản ứng phân hạch, phản ứng nhiệt hạch",
-   "problem_html": "<p>Hai phản ứng sau xảy ra ở hai thiết bị khác nhau:</p><p>(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to{}^{95}_{39}\\text{Y}+{}^{138}_{53}\\text{I}+3\\,{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$</p><p>Phản ứng (1) xảy ra trong một lò phản ứng. Người vận hành đếm số nơtron ở ba thế hệ liên tiếp: $50\\,000$; $50\\,200$; $50\\,400$.</p><ol type=\"a\"><li>Phản ứng (1) và (2) thuộc loại nào?</li><li>Tính hệ số nhân nơtron $k$ của lò và cho biết công suất lò thay đổi thế nào.</li><li>Muốn công suất lò ổn định, người vận hành phải làm gì với thanh điều khiển?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Ba thế hệ nơtron liên tiếp hiện lần lượt thành ba thanh có số nơtron ghi bên phải\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ba thế hệ nơtron liên tiếp trong lò</text><text x=\"16\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 1</text><rect x=\"118\" y=\"42\" width=\"0\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"><animate attributeName=\"width\" values=\"0;0;212.302;212.302\" keyTimes=\"0;0;0.3;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></rect><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.3;0.35;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"336.3\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 000</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.3;0.35;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"118\" y=\"86\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">↓ nhân với k = ?</text></g><text x=\"16\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 2</text><rect x=\"118\" y=\"92\" width=\"0\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"><animate attributeName=\"width\" values=\"0;0;213.151;213.151\" keyTimes=\"0;0.3;0.65;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></rect><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.65;0.7;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"337.2\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 200</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.65;0.7;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"118\" y=\"136\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">↓ nhân với k = ?</text></g><text x=\"16\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 3</text><rect x=\"118\" y=\"142\" width=\"0\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"><animate attributeName=\"width\" values=\"0;0;214;214\" keyTimes=\"0;0.65;1;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></rect><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;1;1;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"338.0\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 400</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: ba thế hệ nơtron hiện lần lượt trong 4 s. Thanh vẽ đúng tỉ lệ với số nơtron (trục bắt đầu từ 0).</figcaption></figure>",
+   "problem_html": "<p>Hai phản ứng sau xảy ra ở hai thiết bị khác nhau:</p><p>(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to{}^{95}_{39}\\text{Y}+{}^{138}_{53}\\text{I}+3\\,{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$</p><p>Phản ứng (1) xảy ra trong một lò phản ứng. Người vận hành đếm số nơtron ở ba thế hệ liên tiếp: $50\\,000$; $50\\,200$; $50\\,400$.</p><ol type=\"a\"><li>Phản ứng (1) và (2) thuộc loại nào?</li><li>Tính hệ số nhân nơtron $k$ của lò và cho biết công suất lò thay đổi thế nào.</li><li>Muốn công suất lò ổn định, người vận hành phải làm gì với thanh điều khiển?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phân hạch là hạt nhân rất nặng hấp thụ nơtron rồi vỡ thành hai hạt nhân nhẹ hơn; nhiệt hạch là hạt nhân rất nhẹ kết hợp thành hạt nhân nặng hơn.</li><li><strong>Khái niệm:</strong> hệ số nhân $k$ là tỉ số số nơtron thế hệ sau so với thế hệ trước.</li><li><strong>Định luật:</strong> $k\\lt1$ phản ứng dây chuyền tắt dần; $k=1$ tự duy trì; $k\\gt1$ tăng nhanh theo từng thế hệ.</li><li><strong>Công thức:</strong> $k=\\dfrac{N_{sau}}{N_{trước}}$.</li><li>⚠ <strong>Điều kiện:</strong> mốc so sánh của $k$ là $1$; thanh điều khiển hấp thụ nơtron, đẩy vào thì $k$ giảm, kéo ra thì $k$ tăng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận ra loại phản ứng (câu a)</span></p><p>Phản ứng (1): hạt nhân ${}^{235}_{92}\\text{U}$ rất nặng hấp thụ một nơtron, vỡ thành hai hạt nhân nhẹ hơn và thải $3$ nơtron.</p><p>Phản ứng (2): hai hạt nhân hiđrô rất nhẹ kết hợp thành hạt nhân heli.</p><div class=\"bt-ans\"><p>(1) là <strong>phân hạch</strong>; (2) là <strong>nhiệt hạch</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hệ số nhân (câu b)</span></p>$$k=\\dfrac{N_2}{N_1}=\\dfrac{50\\,200}{50\\,000}$$<div class=\"bt-ans\">$$k=1{,}004$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công suất thay đổi thế nào (câu b)</span></p><p>Mốc so sánh là $1$:</p>$$k=1{,}004\\gt1$$<div class=\"bt-ans\"><p>Mỗi thế hệ có nhiều nơtron hơn thế hệ trước một chút: số nơtron và công suất <strong>tăng dần</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thanh điều khiển (câu c)</span></p><p>Muốn đưa $k$ về đúng $1$ phải bớt nơtron; thanh điều khiển (bo, cađimi) hấp thụ nơtron mạnh.</p><div class=\"bt-ans\"><p><strong>Đẩy thanh điều khiển sâu thêm</strong> cho tới khi $k=1$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$50\\,200\\cdot1{,}004=50\\,400{,}8\\approx50\\,400$$<p>Khớp với thế hệ thứ ba. Dù $k$ chỉ hơn $1$ bốn phần nghìn, số nơtron vẫn tăng theo cấp số nhân qua nhiều thế hệ nên phải chỉnh $k$ về $1$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) (1) phân hạch ; (2) nhiệt hạch</p><p>b) $k=1{,}004$ ; công suất tăng dần</p><p>c) Đẩy thanh điều khiển sâu thêm để $k=1$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hạt nhân tham gia</strong> hoặc <strong>số nơtron các thế hệ</strong> → xét hạt nhân nặng vỡ hay nhẹ ghép, $k=\\dfrac{N_{sau}}{N_{trước}}$ rồi so với $1$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: số nơtron của ba thế hệ liên tiếp, hệ số nhân cần tìm\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Ba thế hệ nơtron liên tiếp trong lò</text><text x=\"16\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 1</text><rect x=\"118\" y=\"42\" width=\"212.3\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"/><text x=\"336.3\" y=\"60\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 000</text><text x=\"118\" y=\"86\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">↓ nhân với k = ?</text><text x=\"16\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 2</text><rect x=\"118\" y=\"92\" width=\"213.2\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"/><text x=\"337.2\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 200</text><text x=\"118\" y=\"136\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">↓ nhân với k = ?</text><text x=\"16\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Thế hệ 3</text><rect x=\"118\" y=\"142\" width=\"214.0\" height=\"26\" rx=\"3\" fill=\"#38bdf8\" opacity=\".85\"/><text x=\"338.0\" y=\"160\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">50 400</text></svg><figcaption>Dữ kiện: số nơtron ba thế hệ liên tiếp; hệ số nhân k chưa biết. Thanh vẽ đúng tỉ lệ với số nơtron (trục bắt đầu từ 0).</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) $\\ldots{}^{235}_{92}\\text{U}\\ldots3\\,{}^{1}_{0}\\text{n}$”</td><td>Hạt nhân tham gia: ${}^{235}_{92}\\text{U}$ và một nơtron; sản phẩm: hai hạt nhân và $3$ nơtron</td><td>Khái niệm: phản ứng hạt nhân; hạt nhân nặng hay nhẹ</td></tr><tr><td>“(2) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$”</td><td>Hạt nhân tham gia: hai hạt nhân hiđrô; sản phẩm: heli và một nơtron</td><td>Khái niệm: phản ứng hạt nhân; hạt nhân nặng hay nhẹ</td></tr><tr><td>“a) thuộc loại nào”</td><td>Cần loại của (1) và (2)</td><td>⚠ Hạt nhân tham gia là nặng hay nhẹ? Việc có nơtron ở vế phải có đủ để phân biệt hai loại không?</td></tr><tr><td>“số nơtron ở ba thế hệ liên tiếp: $50\\,000$; $50\\,200$; $50\\,400$”</td><td>$N_1=50\\,000$; $N_2=50\\,200$; $N_3=50\\,400$</td><td>Khái niệm: thế hệ nơtron, hệ số nhân</td></tr><tr><td>“b) hệ số nhân nơtron $k$”</td><td>Cần $k$</td><td>Đại lượng cần tìm</td></tr><tr><td>“công suất lò thay đổi thế nào”</td><td>Cần kết luận về công suất</td><td>⚠ So $k$ với mốc nào thì biết số nơtron tăng, giữ hay giảm?</td></tr><tr><td>“c) thanh điều khiển”</td><td>Cần thao tác với thanh điều khiển</td><td>Vai trò của thanh điều khiển trong lò phản ứng</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) $\\ldots{}^{235}_{92}\\text{U}\\ldots3\\,{}^{1}_{0}\\text{n}$”</td><td>Hạt nhân tham gia: ${}^{235}_{92}\\text{U}$ và một nơtron; sản phẩm: hai hạt nhân và $3$ nơtron</td><td>Khái niệm: phản ứng hạt nhân; hạt nhân nặng hay nhẹ</td></tr><tr><td>“(2) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$”</td><td>Hạt nhân tham gia: hai hạt nhân hiđrô; sản phẩm: heli và một nơtron</td><td>Khái niệm: phản ứng hạt nhân; hạt nhân nặng hay nhẹ</td></tr><tr><td>“a) thuộc loại nào”</td><td>Cần loại của (1) và (2)</td><td>⚠ Hạt nhân tham gia là nặng hay nhẹ? Việc có nơtron ở vế phải có đủ để phân biệt hai loại không?</td></tr><tr><td>“số nơtron ở ba thế hệ liên tiếp: $50\\,000$; $50\\,200$; $50\\,400$”</td><td>$N_1=50\\,000$; $N_2=50\\,200$; $N_3=50\\,400$</td><td>Khái niệm: thế hệ nơtron, hệ số nhân</td></tr><tr><td>“b) hệ số nhân nơtron $k$”</td><td>Cần $k$</td><td>Đại lượng cần tìm</td></tr><tr><td>“công suất lò thay đổi thế nào”</td><td>Cần kết luận về công suất</td><td>⚠ So $k$ với mốc nào thì biết số nơtron tăng, giữ hay giảm?</td></tr><tr><td>“c) thanh điều khiển”</td><td>Cần thao tác với thanh điều khiển</td><td>Vai trò của thanh điều khiển trong lò phản ứng</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hạt nhân tham gia</b> hoặc <b>số nơtron các thế hệ</b> → nghĩ tới <b>loại phản ứng</b> và <b>hệ số nhân $k$</b>.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -154,15 +154,459 @@
      "b) hệ số nhân $k$; công suất lò thay đổi thế nào",
      "c) thao tác với thanh điều khiển để công suất ổn định"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "de": true,
+    "cao": 12.4,
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 1.5,
+      "text": "(1)",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 10.6,
+      "y": 1.5,
+      "text": "(2)",
+      "a": "start"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       10.2,
+       1.0
+      ],
+      "den": [
+       10.2,
+       6.6
+      ],
+      "kieu": "mo"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       1.2,
+       3.6
+      ],
+      "r": 0.38,
+      "mau": "min",
+      "dam": 0.6
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        1.7,
+        3.6
+       ],
+       [
+        2.7,
+        3.6
+       ]
+      ],
+      "mui": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       4.0,
+       3.6
+      ],
+      "r": 1.2,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 4.0,
+      "y": 4.0,
+      "text": "U"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        5.4,
+        3.6
+       ],
+       [
+        6.6,
+        3.6
+       ]
+      ]
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       7.6,
+       2.6
+      ],
+      "r": 0.7,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 7.6,
+      "y": 3.0,
+      "text": "Y"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       7.7,
+       4.6
+      ],
+      "r": 0.75,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 7.7,
+      "y": 5.0,
+      "text": "I"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       9.3,
+       2.4
+      ],
+      "r": 0.3,
+      "mau": "min",
+      "dam": 0.6
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       9.4,
+       3.6
+      ],
+      "r": 0.3,
+      "mau": "min",
+      "dam": 0.6
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       9.3,
+       4.8
+      ],
+      "r": 0.3,
+      "mau": "min",
+      "dam": 0.6
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       12.0,
+       2.8
+      ],
+      "r": 0.5,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 12.0,
+      "y": 3.2,
+      "text": "D"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       12.0,
+       4.5
+      ],
+      "r": 0.55,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 12.0,
+      "y": 4.9,
+      "text": "T"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        13.0,
+        3.6
+       ],
+       [
+        14.8,
+        3.6
+       ]
+      ]
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       16.2,
+       3.6
+      ],
+      "r": 0.75,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 16.2,
+      "y": 4.0,
+      "text": "He"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       18.4,
+       3.6
+      ],
+      "r": 0.38,
+      "mau": "min",
+      "dam": 0.6
+     },
+     {
+      "loai": "chu",
+      "x": 18.4,
+      "y": 5.0,
+      "text": "n"
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 6.4,
+      "text": "loại ?",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 15.4,
+      "y": 6.4,
+      "text": "loại ?",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 2.6,
+      "y": 8.0,
+      "text": "Thế hệ 1"
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0.3999999999999999,
+        8.6
+       ],
+       [
+        4.800000000000001,
+        8.6
+       ],
+       [
+        4.800000000000001,
+        10.2
+       ],
+       [
+        0.3999999999999999,
+        10.2
+       ]
+      ],
+      "mau": "min",
+      "dam": 0.12,
+      "vien": true
+     },
+     {
+      "loai": "chu",
+      "x": 2.6,
+      "y": 9.8,
+      "text": "50 000"
+     },
+     {
+      "loai": "chu",
+      "x": 10.0,
+      "y": 8.0,
+      "text": "Thế hệ 2"
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        7.8,
+        8.6
+       ],
+       [
+        12.2,
+        8.6
+       ],
+       [
+        12.2,
+        10.2
+       ],
+       [
+        7.8,
+        10.2
+       ]
+      ],
+      "mau": "min",
+      "dam": 0.12,
+      "vien": true
+     },
+     {
+      "loai": "chu",
+      "x": 10.0,
+      "y": 9.8,
+      "text": "50 200"
+     },
+     {
+      "loai": "chu",
+      "x": 17.4,
+      "y": 8.0,
+      "text": "Thế hệ 3"
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        15.2,
+        8.6
+       ],
+       [
+        19.599999999999998,
+        8.6
+       ],
+       [
+        19.599999999999998,
+        10.2
+       ],
+       [
+        15.2,
+        10.2
+       ]
+      ],
+      "mau": "min",
+      "dam": 0.12,
+      "vien": true
+     },
+     {
+      "loai": "chu",
+      "x": 17.4,
+      "y": 9.8,
+      "text": "50 400"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        4.9,
+        9.4
+       ],
+       [
+        7.7,
+        9.4
+       ]
+      ],
+      "nhan": "×k",
+      "nhan_o": [
+       6.3,
+       8.6
+      ]
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        12.3,
+        9.4
+       ],
+       [
+        15.1,
+        9.4
+       ]
+      ],
+      "nhan": "×k",
+      "nhan_o": [
+       13.7,
+       8.6
+      ]
+     },
+     {
+      "loai": "chu",
+      "x": 10.0,
+      "y": 11.7,
+      "text": "k = ?",
+      "het": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 5.0,
+       "y": 6.4,
+       "text": "phân hạch",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 15.4,
+       "y": 6.4,
+       "text": "nhiệt hạch",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "(1) hạt nhân nặng vỡ; (2) hạt nhẹ kết hợp"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.0,
+       "y": 11.7,
+       "text": "k = 50 200 : 50 000 = 1,004",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "k = 50 200 : 50 000 = 1,004"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "k > 1: số nơtron tăng ⇒ công suất tăng"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Đẩy thanh điều khiển sâu thêm ⇒ k = 1"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "50 200·1,004 ≈ 50 400: khớp thế hệ 3 ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Dễ · Bảo toàn số nuclôn và điện tích, tìm hạt x",
    "topic": "Định luật bảo toàn trong phản ứng hạt nhân",
-   "problem_html": "<p>Cho hai phản ứng hạt nhân:</p><p>(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to{}^{139}_{54}\\text{Xe}+{}^{95}_{38}\\text{Sr}+x\\,{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{2}_{1}\\text{H}+{}^{2}_{1}\\text{H}\\to{}^{3}_{2}\\text{He}+{}^{A}_{Z}\\text{X}$</p><ol type=\"a\"><li>Tìm số nơtron $x$ ở phản ứng (1) và kiểm tra điện tích hai vế có bằng nhau không.</li><li>Xác định hạt X ở phản ứng (2).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Phản ứng phân hạch và phản ứng hai hạt đơteri: nơtron bắn vào urani, hai hạt đơteri va chạm, sản phẩm bay ra, số nơtron và hạt X chưa biết\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(1) n + U-235 → Xe-139 + Sr-95 + x n</text><text x=\"16\" y=\"108\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(2) D + D → He-3 + X</text><g transform=\"translate(30.0 62.0)\" opacity=\"1\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"30.0 62.0;112.0 62.0;112.0 62.0;112.0 62.0\" keyTimes=\"0;0.38;0.4;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.38;0.4;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/></g><g transform=\"translate(140.0 62.0)\" opacity=\"1\"><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.4;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"21\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">U</text></g><g transform=\"translate(140.0 62.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"140.0 62.0;140.0 62.0;250.0 40.0\" keyTimes=\"0;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.4;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"16\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">Xe</text></g><g transform=\"translate(140.0 62.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"140.0 62.0;140.0 62.0;250.0 86.0\" keyTimes=\"0;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.4;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"13\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">Sr</text></g><g transform=\"translate(340.0 62.0)\" opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.6;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"currentColor\">x n</text></g><g transform=\"translate(50.0 152.0)\" opacity=\"1\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"50.0 152.0;120.0 152.0;120.0 152.0\" keyTimes=\"0;0.38;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.38;0.4;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><g transform=\"translate(190.0 152.0)\" opacity=\"1\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"190.0 152.0;130.0 152.0;130.0 152.0\" keyTimes=\"0;0.38;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.38;0.4;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><g transform=\"translate(125.0 152.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"125.0 152.0;125.0 152.0;250.0 136.0\" keyTimes=\"0;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.4;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"11\" font-weight=\"700\" fill=\"#0f172a\">He</text></g><g transform=\"translate(125.0 152.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"125.0 152.0;125.0 152.0;335.0 158.0\" keyTimes=\"0;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.4;0.42;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"currentColor\">X?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai phản ứng trong 4 s; số nơtron x ở (1) và hạt X ở (2) để dấu hỏi. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Cho hai phản ứng hạt nhân:</p><p>(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to{}^{139}_{54}\\text{Xe}+{}^{95}_{38}\\text{Sr}+x\\,{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{2}_{1}\\text{H}+{}^{2}_{1}\\text{H}\\to{}^{3}_{2}\\text{He}+{}^{A}_{Z}\\text{X}$</p><ol type=\"a\"><li>Tìm số nơtron $x$ ở phản ứng (1) và kiểm tra điện tích hai vế có bằng nhau không.</li><li>Xác định hạt X ở phản ứng (2).</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mỗi hạt có số nuclôn $A$ và điện tích $Z$ (nơtron: $A=1$, $Z=0$).</li><li><strong>Định luật:</strong> phản ứng hạt nhân bảo toàn điện tích và bảo toàn số nuclôn.</li><li><strong>Công thức:</strong> $\\sum A_{trước}=\\sum A_{sau}$ · $\\sum Z_{trước}=\\sum Z_{sau}$.</li><li>⚠ <strong>Điều kiện:</strong> cộng đủ mọi hạt ở mỗi vế, kể cả nơtron bắn vào; mỗi ẩn cần một phương trình riêng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tổng số nuclôn vế trái</span></p><p>Cộng cả nơtron bắn vào và hạt nhân urani:</p>$$A_{trái}=235+1$$<div class=\"bt-ans\">$$A_{trái}=236$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tìm số nơtron $x$ (câu a)</span></p><p>Số nuclôn hai vế bằng nhau:</p>$$236=139+95+x$$$$x=236-234$$<div class=\"bt-ans\">$$x=2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra điện tích (câu a)</span></p><p>Nơtron không mang điện nên $Z=0$:</p>$$Z_{trái}=92+0=92$$$$Z_{phải}=54+38+x\\cdot0=92$$<div class=\"bt-ans\"><p>Hai vế cùng bằng $92$: điện tích bảo toàn, kết quả $x=2$ hợp lí.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Xác định hạt X (câu b)</span></p><p>Hai ẩn $A$ và $Z$ cần hai phương trình:</p>$$2+2=3+A\\Rightarrow A=1$$$$1+1=2+Z\\Rightarrow Z=0$$<div class=\"bt-ans\"><p>Hạt có $A=1$, $Z=0$ là <strong>nơtron</strong> ${}^{1}_{0}\\text{n}$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Phản ứng (2) là ${}^{2}_{1}\\text{H}+{}^{2}_{1}\\text{H}\\to{}^{3}_{2}\\text{He}+{}^{1}_{0}\\text{n}$, một phản ứng nhiệt hạch có nơtron bay ra.</p><p>Phân hạch thải từ $2$ đến $3$ nơtron mỗi lần, như đã nêu ở bài lý thuyết: $x=2$ nằm trong khoảng đó.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $x=2$ ; điện tích hai vế cùng bằng $92$</p><p>b) X là nơtron ${}^{1}_{0}\\text{n}$</p></div><p class=\"bt-note\">Nhận dạng: phương trình có <strong>hạt hoặc số hạt chưa biết</strong> → viết hai phương trình $\\sum A$ và $\\sum Z$, nhớ cộng cả hạt bắn vào.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: số khối A và số prôtôn Z của các hạt đã biết; số nơtron x và hạt X chưa biết\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(1) n + U-235 → Xe-139 + Sr-95 + x n</text><text x=\"16\" y=\"116\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(2) D + D → He-3 + X</text><g transform=\"translate(36.0 48.0)\" opacity=\"1\"><circle r=\"5\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/></g><text x=\"36\" y=\"68\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A=1, Z=0</text><g transform=\"translate(110.0 48.0)\" opacity=\"1\"><circle r=\"20\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">U</text></g><text x=\"110\" y=\"82\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 235</text><text x=\"110\" y=\"94\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 92</text><g transform=\"translate(210.0 48.0)\" opacity=\"1\"><circle r=\"16\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">Xe</text></g><text x=\"210\" y=\"78\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 139</text><text x=\"210\" y=\"90\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 54</text><g transform=\"translate(285.0 48.0)\" opacity=\"1\"><circle r=\"13\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">Sr</text></g><text x=\"285\" y=\"75\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 95</text><text x=\"285\" y=\"87\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 38</text><g transform=\"translate(358.0 48.0)\" opacity=\"1\"><circle r=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"currentColor\">x n</text></g><text x=\"358\" y=\"84\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">x = ?</text><g transform=\"translate(60.0 150.0)\" opacity=\"1\"><circle r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><text x=\"60\" y=\"174\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 2</text><text x=\"60\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 1</text><g transform=\"translate(130.0 150.0)\" opacity=\"1\"><circle r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><text x=\"130\" y=\"174\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 2</text><text x=\"130\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 1</text><g transform=\"translate(240.0 150.0)\" opacity=\"1\"><circle r=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">He</text></g><text x=\"240\" y=\"178\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">A = 3</text><text x=\"240\" y=\"190\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">Z = 2</text><g transform=\"translate(330.0 150.0)\" opacity=\"1\"><circle r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"currentColor\">X?</text></g><text x=\"330\" y=\"186\" fill=\"#fb923c\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">A = ?  Z = ?</text></svg><figcaption>Dữ kiện: số khối A, số prôtôn Z của từng hạt đã cho; x và hạt X chưa biết. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) $\\ldots{}^{139}_{54}\\text{Xe}+{}^{95}_{38}\\text{Sr}+x\\,{}^{1}_{0}\\text{n}$”</td><td>Sản phẩm: Xe ($A=139$, $Z=54$), Sr ($A=95$, $Z=38$), $x$ nơtron</td><td>Khái niệm: số nuclôn $A$ và số prôtôn $Z$ của từng hạt</td></tr><tr><td>“(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to\\ldots$”</td><td>Vế trái: nơtron ($A=1$, $Z=0$) và U ($A=235$, $Z=92$)</td><td>⚠ Vế trái có những hạt nào? Có hạt nào dễ bị bỏ sót khi cộng không?</td></tr><tr><td>“a) tìm số nơtron $x$”</td><td>Cần $x$</td><td>Đại lượng cần tìm</td></tr><tr><td>“kiểm tra điện tích hai vế có bằng nhau không”</td><td>Cần tổng $Z$ của hai vế</td><td>Định luật bảo toàn điện tích</td></tr><tr><td>“(2) ${}^{2}_{1}\\text{H}+{}^{2}_{1}\\text{H}\\to{}^{3}_{2}\\text{He}+{}^{A}_{Z}\\text{X}$”</td><td>Vế trái: hai hạt có $A=2$, $Z=1$; vế phải: He ($A=3$, $Z=2$) và X chưa biết</td><td>⚠ Có mấy ẩn số? Cần mấy phương trình để tìm hạt X?</td></tr><tr><td>“b) xác định hạt X”</td><td>Cần $A$ và $Z$ của X</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) $\\ldots{}^{139}_{54}\\text{Xe}+{}^{95}_{38}\\text{Sr}+x\\,{}^{1}_{0}\\text{n}$”</td><td>Sản phẩm: Xe ($A=139$, $Z=54$), Sr ($A=95$, $Z=38$), $x$ nơtron</td><td>Khái niệm: số nuclôn $A$ và số prôtôn $Z$ của từng hạt</td></tr><tr><td>“(1) ${}^{1}_{0}\\text{n}+{}^{235}_{92}\\text{U}\\to\\ldots$”</td><td>Vế trái: nơtron ($A=1$, $Z=0$) và U ($A=235$, $Z=92$)</td><td>⚠ Vế trái có những hạt nào? Có hạt nào dễ bị bỏ sót khi cộng không?</td></tr><tr><td>“a) tìm số nơtron $x$”</td><td>Cần $x$</td><td>Đại lượng cần tìm</td></tr><tr><td>“kiểm tra điện tích hai vế có bằng nhau không”</td><td>Cần tổng $Z$ của hai vế</td><td>Định luật bảo toàn điện tích</td></tr><tr><td>“(2) ${}^{2}_{1}\\text{H}+{}^{2}_{1}\\text{H}\\to{}^{3}_{2}\\text{He}+{}^{A}_{Z}\\text{X}$”</td><td>Vế trái: hai hạt có $A=2$, $Z=1$; vế phải: He ($A=3$, $Z=2$) và X chưa biết</td><td>⚠ Có mấy ẩn số? Cần mấy phương trình để tìm hạt X?</td></tr><tr><td>“b) xác định hạt X”</td><td>Cần $A$ và $Z$ của X</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>phương trình có hạt hoặc số hạt chưa biết</b> → nghĩ tới <b>cân bằng số nuclôn $A$ và điện tích $Z$</b> hai vế.",
    "cap_do": 1,
    "fading": "giau_buoc_cuoi",
@@ -273,15 +717,480 @@
      "a) $x$; điện tích hai vế có bằng nhau không",
      "b) xác định hạt X"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "de": true,
+    "cao": 13.2,
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 1.4,
+      "text": "(1)",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 7.6,
+      "text": "(2)",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 5.2,
+      "text": "A",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 6.4,
+      "text": "Z",
+      "a": "start"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       2.2,
+       3.2
+      ],
+      "r": 0.42,
+      "mau": "min",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 3.6,
+      "text": "n"
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 5.2,
+      "text": "1"
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 6.4,
+      "text": "0"
+     },
+     {
+      "loai": "chu",
+      "x": 3.5,
+      "y": 3.6,
+      "text": "+"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       5.0,
+       3.2
+      ],
+      "r": 1.1,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 3.6,
+      "text": "U"
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 5.2,
+      "text": "235"
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 6.4,
+      "text": "92"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        6.4,
+        3.2
+       ],
+       [
+        8.0,
+        3.2
+       ]
+      ]
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       9.2,
+       3.2
+      ],
+      "r": 0.9,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 3.6,
+      "text": "Xe"
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 5.2,
+      "text": "139"
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 6.4,
+      "text": "54"
+     },
+     {
+      "loai": "chu",
+      "x": 10.9,
+      "y": 3.6,
+      "text": "+"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       12.6,
+       3.2
+      ],
+      "r": 0.85,
+      "mau": "chu",
+      "dam": 0.12
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 3.6,
+      "text": "Sr"
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 5.2,
+      "text": "95"
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 6.4,
+      "text": "38"
+     },
+     {
+      "loai": "chu",
+      "x": 14.3,
+      "y": 3.6,
+      "text": "+"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       16.0,
+       3.2
+      ],
+      "r": 0.42,
+      "mau": "min",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 16.0,
+      "y": 3.6,
+      "text": "n"
+     },
+     {
+      "loai": "chu",
+      "x": 16.0,
+      "y": 6.4,
+      "text": "0"
+     },
+     {
+      "loai": "chu",
+      "x": 17.0,
+      "y": 3.6,
+      "text": "× x",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 16.0,
+      "y": 5.2,
+      "text": "x·1",
+      "het": 2
+     },
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 11.4,
+      "text": "A",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.2,
+      "y": 12.6,
+      "text": "Z",
+      "a": "start"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       2.2,
+       9.4
+      ],
+      "r": 0.5,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 9.8,
+      "text": "D"
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 11.4,
+      "text": "2"
+     },
+     {
+      "loai": "chu",
+      "x": 2.2,
+      "y": 12.6,
+      "text": "1"
+     },
+     {
+      "loai": "chu",
+      "x": 3.5,
+      "y": 9.8,
+      "text": "+"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       5.0,
+       9.4
+      ],
+      "r": 0.5,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 9.8,
+      "text": "D"
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 11.4,
+      "text": "2"
+     },
+     {
+      "loai": "chu",
+      "x": 5.0,
+      "y": 12.6,
+      "text": "1"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        6.4,
+        9.4
+       ],
+       [
+        8.0,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       9.2,
+       9.4
+      ],
+      "r": 0.7,
+      "mau": "vang",
+      "dam": 0.4
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 9.8,
+      "text": "He"
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 11.4,
+      "text": "3"
+     },
+     {
+      "loai": "chu",
+      "x": 9.2,
+      "y": 12.6,
+      "text": "2"
+     },
+     {
+      "loai": "chu",
+      "x": 10.9,
+      "y": 9.8,
+      "text": "+"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       12.6,
+       9.4
+      ],
+      "r": 0.5,
+      "mau": "chu",
+      "dam": 0.0,
+      "vien": true,
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 9.8,
+      "text": "X",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 11.4,
+      "text": "?",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 12.6,
+      "y": 12.6,
+      "text": "?",
+      "het": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 19.8,
+       "y": 1.4,
+       "text": "ΣA trái = 1 + 235 = 236",
+       "a": "end",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "ΣA trái = 1 + 235 = 236"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 16.0,
+       "y": 5.2,
+       "text": "x = 2",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "236 = 139 + 95 + x ⇒ x = 2"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 19.8,
+       "y": 1.4,
+       "text": "ΣZ phải = 54 + 38 + 0 = 92",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ΣZ phải = 54 + 38 = 92 = ΣZ trái ✓"
+      }
+     ],
+     [
+      {
+       "loai": "tron",
+       "tam": [
+        12.6,
+        9.4
+       ],
+       "r": 0.42,
+       "mau": "min",
+       "dam": 0.6
+      },
+      {
+       "loai": "chu",
+       "x": 12.6,
+       "y": 9.8,
+       "text": "n"
+      },
+      {
+       "loai": "chu",
+       "x": 12.6,
+       "y": 11.4,
+       "text": "1",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 12.6,
+       "y": 12.6,
+       "text": "0",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 19.8,
+       "y": 7.6,
+       "text": "A: 4 − 3 = 1 ; Z: 2 − 2 = 0",
+       "a": "end",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "A = 1, Z = 0 ⇒ X là nơtron"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "x = 2: phân hạch thải 2–3 nơtron ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Năng lượng toả ra hay thu vào của một phản ứng",
    "topic": "Năng lượng toả ra của phản ứng hạt nhân",
-   "problem_html": "<p>Xét hai phản ứng hạt nhân:</p><p>(1) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{14}_{7}\\text{N}+{}^{4}_{2}\\text{He}\\to{}^{17}_{8}\\text{O}+{}^{1}_{1}\\text{p}$</p><p>Khối lượng các hạt nhân: $m_{\\text{D}}=2{,}013553\\ \\text{u}$; $m_{\\text{T}}=3{,}015501\\ \\text{u}$; $m_{\\text{He}}=4{,}001506\\ \\text{u}$; $m_{\\text{n}}=1{,}008665\\ \\text{u}$; $m_{\\text{N}}=13{,}999231\\ \\text{u}$; $m_{\\text{O}}=16{,}994740\\ \\text{u}$; $m_{\\text{p}}=1{,}007276\\ \\text{u}$.</p><p>Cho $1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$; $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$.</p><ol type=\"a\"><li>Tính năng lượng của phản ứng (1) theo MeV và theo jun.</li><li>Phản ứng (2) toả hay thu năng lượng? Tính năng lượng đó theo MeV.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Hạt đơteri và hạt triti lao vào nhau rồi tạo ra hạt heli và nơtron bay đi, độ hụt khối và năng lượng chưa biết\"><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(1) D + T → He + n</text><g transform=\"translate(50.0 100.0)\" opacity=\"1\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"50.0 100.0;175.0 100.0;175.0 100.0\" keyTimes=\"0;0.45;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.45;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"11\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><g transform=\"translate(370.0 100.0)\" opacity=\"1\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"370.0 100.0;205.0 100.0;205.0 100.0\" keyTimes=\"0;0.45;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.45;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">T</text></g><g transform=\"translate(190.0 100.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"190.0 100.0;190.0 100.0;110.0 48.0\" keyTimes=\"0;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.45;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">He</text></g><g transform=\"translate(190.0 100.0)\" opacity=\"0\"><animateTransform attributeName=\"transform\" type=\"translate\" values=\"190.0 100.0;190.0 100.0;330.0 42.0\" keyTimes=\"0;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.45;0.47;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><circle r=\"7\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"3.5\" text-anchor=\"middle\" font-size=\"10\" font-weight=\"700\" fill=\"#0f172a\">n</text></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.7;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"210\" y=\"180\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Δm = ?    W = ?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: phản ứng (1) trong 4 s; hai hạt sau phản ứng bay ra với động năng. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Xét hai phản ứng hạt nhân:</p><p>(1) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$</p><p>(2) ${}^{14}_{7}\\text{N}+{}^{4}_{2}\\text{He}\\to{}^{17}_{8}\\text{O}+{}^{1}_{1}\\text{p}$</p><p>Khối lượng các hạt nhân: $m_{\\text{D}}=2{,}013553\\ \\text{u}$; $m_{\\text{T}}=3{,}015501\\ \\text{u}$; $m_{\\text{He}}=4{,}001506\\ \\text{u}$; $m_{\\text{n}}=1{,}008665\\ \\text{u}$; $m_{\\text{N}}=13{,}999231\\ \\text{u}$; $m_{\\text{O}}=16{,}994740\\ \\text{u}$; $m_{\\text{p}}=1{,}007276\\ \\text{u}$.</p><p>Cho $1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$; $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$.</p><ol type=\"a\"><li>Tính năng lượng của phản ứng (1) theo MeV và theo jun.</li><li>Phản ứng (2) toả hay thu năng lượng? Tính năng lượng đó theo MeV.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> độ hụt khối của phản ứng $\\Delta m=\\sum m_{trước}-\\sum m_{sau}$ (khác độ hụt khối của một hạt nhân).</li><li><strong>Định luật:</strong> $W=\\Delta m\\,c^2$ với $1\\ \\text{u}\\cdot c^2=931{,}5\\ \\text{MeV}$.</li><li><strong>Công thức:</strong> $W=\\Delta m\\cdot931{,}5$ (MeV) · $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$.</li><li>⚠ <strong>Điều kiện:</strong> trước nặng hơn thì toả ($W\\gt0$), trước nhẹ hơn thì thu ($W\\lt0$); cộng đủ mọi hạt ở mỗi vế, giữ 6 chữ số thập phân.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Độ hụt khối phản ứng (1)</span></p><p>Cộng đủ các hạt ở mỗi vế, kể cả nơtron:</p>$$\\sum m_{trước}=m_D+m_T=2{,}013553+3{,}015501=5{,}029054\\ \\text{u}$$$$\\sum m_{sau}=m_{He}+m_n=4{,}001506+1{,}008665=5{,}010171\\ \\text{u}$$$$\\Delta m=5{,}029054-5{,}010171$$<div class=\"bt-ans\">$$\\Delta m=0{,}018883\\ \\text{u}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Năng lượng phản ứng (1) theo MeV (câu a)</span></p><p>Hệ số $931{,}5\\ \\text{MeV/u}$ đã chứa sẵn $c^2$:</p>$$W=\\Delta m\\cdot931{,}5=0{,}018883\\cdot931{,}5$$<div class=\"bt-ans\">$$W\\approx17{,}59\\ \\text{MeV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đổi sang jun (câu a)</span></p>$$W=17{,}59\\cdot1{,}6\\cdot10^{-13}$$<div class=\"bt-ans\">$$W\\approx2{,}81\\cdot10^{-12}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ hụt khối phản ứng (2)</span></p>$$\\sum m_{trước}=m_N+m_{He}=13{,}999231+4{,}001506=18{,}000737\\ \\text{u}$$$$\\sum m_{sau}=m_O+m_p=16{,}994740+1{,}007276=18{,}002016\\ \\text{u}$$$$\\Delta m=18{,}000737-18{,}002016$$<div class=\"bt-ans\">$$\\Delta m=-0{,}001279\\ \\text{u}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Toả hay thu (câu b)</span></p><p>$\\Delta m\\lt0$: khối lượng nghỉ sau phản ứng lớn hơn trước.</p><div class=\"bt-ans\"><p>Phản ứng (2) <strong>thu</strong> năng lượng, cần cấp năng lượng cho phản ứng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Năng lượng phản ứng (2) (câu b)</span></p>$$W=\\Delta m\\cdot931{,}5=-0{,}001279\\cdot931{,}5$$<div class=\"bt-ans\">$$W\\approx-1{,}19\\ \\text{MeV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Phản ứng D–T toả cỡ $17{,}6\\ \\text{MeV}$ như đã nêu ở bài lý thuyết: khớp.</p><p>Với (2), $|\\Delta m|$ chỉ cỡ $10^{-3}\\ \\text{u}$ nên mỗi khối lượng phải giữ $6$ chữ số thập phân; làm tròn xuống $3$ chữ số thập phân thì $\\Delta m$ còn $-0{,}001\\ \\text{u}$ (khoảng $-0{,}93\\ \\text{MeV}$), lệch khoảng $20\\ \\%$.</p><p>Phản ứng thu năng lượng chỉ xảy ra khi hạt bắn vào mang đủ động năng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $W\\approx17{,}59\\ \\text{MeV}\\approx2{,}81\\cdot10^{-12}\\ \\text{J}$</p><p>b) Phản ứng (2) thu năng lượng, $W\\approx-1{,}19\\ \\text{MeV}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng các hạt hai vế</strong> và hỏi năng lượng → $\\Delta m=\\sum m_{trước}-\\sum m_{sau}$, xét dấu rồi nhân $931{,}5$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: khối lượng các hạt nhân của hai phản ứng\"><text x=\"16\" y=\"20\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(1) D + T → He + n</text><g transform=\"translate(50.0 52.0)\" opacity=\"1\"><circle r=\"11\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">D</text></g><text x=\"50\" y=\"86\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">2,013553 u</text><g transform=\"translate(150.0 52.0)\" opacity=\"1\"><circle r=\"14\" fill=\"#38bdf8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">T</text></g><text x=\"150\" y=\"86\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">3,015501 u</text><g transform=\"translate(270.0 52.0)\" opacity=\"1\"><circle r=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">He</text></g><text x=\"270\" y=\"86\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">4,001506 u</text><g transform=\"translate(362.0 52.0)\" opacity=\"1\"><circle r=\"8\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">n</text></g><text x=\"362\" y=\"86\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">1,008665 u</text><text x=\"100\" y=\"57\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"210\" y=\"57\" fill=\"currentColor\" font-size=\"20\" font-weight=\"700\" text-anchor=\"middle\">→</text><text x=\"316\" y=\"57\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"16\" y=\"118\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">(2) N + He → O + p</text><g transform=\"translate(36.0 152.0)\" opacity=\"1\"><circle r=\"17\" fill=\"#94a3b8\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">N</text></g><text x=\"36\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">13,999231 u</text><g transform=\"translate(130.0 152.0)\" opacity=\"1\"><circle r=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">He</text></g><text x=\"130\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">4,001506 u</text><g transform=\"translate(262.0 152.0)\" opacity=\"1\"><circle r=\"16\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">O</text></g><text x=\"262\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">16,994740 u</text><g transform=\"translate(362.0 152.0)\" opacity=\"1\"><circle r=\"10\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text y=\"4\" text-anchor=\"middle\" font-size=\"12\" font-weight=\"700\" fill=\"#0f172a\">p</text></g><text x=\"362\" y=\"186\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"middle\">1,007276 u</text><text x=\"83\" y=\"157\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text><text x=\"196\" y=\"157\" fill=\"currentColor\" font-size=\"20\" font-weight=\"700\" text-anchor=\"middle\">→</text><text x=\"316\" y=\"157\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">+</text></svg><figcaption>Dữ kiện: khối lượng hạt nhân (đơn vị u) của từng hạt. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$”</td><td>Vế trái: hai hạt; vế phải: hai hạt</td><td>⚠ Đã cộng đủ khối lượng mọi hạt ở mỗi vế, kể cả nơtron, chưa?</td></tr><tr><td>“$m_{\\text{D}}=2{,}013553\\ \\text{u}$; $m_{\\text{T}}=3{,}015501\\ \\text{u}$; $m_{\\text{He}}=4{,}001506\\ \\text{u}$; $m_{\\text{n}}=1{,}008665\\ \\text{u}$”</td><td>Khối lượng bốn hạt của (1), đơn vị u</td><td>Khái niệm: khối lượng nghỉ của các hạt trước và sau phản ứng</td></tr><tr><td>“(2) ${}^{14}_{7}\\text{N}+{}^{4}_{2}\\text{He}\\to{}^{17}_{8}\\text{O}+{}^{1}_{1}\\text{p}$” và khối lượng của N, O, p</td><td>Bốn hạt của (2); $m_{\\text{N}}$, $m_{\\text{O}}$, $m_{\\text{p}}$ cho trong đề, $m_{\\text{He}}$ dùng lại</td><td>Khái niệm: khối lượng nghỉ của các hạt trước và sau phản ứng</td></tr><tr><td>“$1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$; $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$”</td><td>Hai hệ số đổi</td><td>Hệ thức khối lượng – năng lượng; đổi MeV sang jun</td></tr><tr><td>“a) năng lượng của phản ứng (1) theo MeV và theo jun”</td><td>Cần $W$ (MeV) và $W$ (J)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) phản ứng (2) toả hay thu năng lượng”</td><td>Cần dấu và độ lớn của $W$</td><td>⚠ Hiệu hai tổng khối lượng mang dấu gì thì phản ứng toả, mang dấu gì thì thu?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“(1) ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$”</td><td>Vế trái: hai hạt; vế phải: hai hạt</td><td>⚠ Đã cộng đủ khối lượng mọi hạt ở mỗi vế, kể cả nơtron, chưa?</td></tr><tr><td>“$m_{\\text{D}}=2{,}013553\\ \\text{u}$; $m_{\\text{T}}=3{,}015501\\ \\text{u}$; $m_{\\text{He}}=4{,}001506\\ \\text{u}$; $m_{\\text{n}}=1{,}008665\\ \\text{u}$”</td><td>Khối lượng bốn hạt của (1), đơn vị u</td><td>Khái niệm: khối lượng nghỉ của các hạt trước và sau phản ứng</td></tr><tr><td>“(2) ${}^{14}_{7}\\text{N}+{}^{4}_{2}\\text{He}\\to{}^{17}_{8}\\text{O}+{}^{1}_{1}\\text{p}$” và khối lượng của N, O, p</td><td>Bốn hạt của (2); $m_{\\text{N}}$, $m_{\\text{O}}$, $m_{\\text{p}}$ cho trong đề, $m_{\\text{He}}$ dùng lại</td><td>Khái niệm: khối lượng nghỉ của các hạt trước và sau phản ứng</td></tr><tr><td>“$1\\ \\text{u}=931{,}5\\ \\text{MeV}/c^2$; $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$”</td><td>Hai hệ số đổi</td><td>Hệ thức khối lượng – năng lượng; đổi MeV sang jun</td></tr><tr><td>“a) năng lượng của phản ứng (1) theo MeV và theo jun”</td><td>Cần $W$ (MeV) và $W$ (J)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) phản ứng (2) toả hay thu năng lượng”</td><td>Cần dấu và độ lớn của $W$</td><td>⚠ Hiệu hai tổng khối lượng mang dấu gì thì phản ứng toả, mang dấu gì thì thu?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>khối lượng các hạt hai vế</b> và hỏi năng lượng → nghĩ tới <b>độ hụt khối của phản ứng</b> và <b>dấu</b> của nó.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -444,15 +1353,340 @@
      "a) năng lượng phản ứng (1) theo MeV và J",
      "b) phản ứng (2) toả hay thu; bao nhiêu MeV"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "de": true,
+    "cao": 13.0,
+    "hinh": [
+     {
+      "loai": "doan",
+      "tu": [
+       10.0,
+       0.8
+      ],
+      "den": [
+       10.0,
+       11.4
+      ],
+      "kieu": "mo"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 1.5,
+      "text": "(1) D+T → He+n",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 10.6,
+      "y": 1.5,
+      "text": "(2) N+He → O+p",
+      "a": "start"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0.8,
+       5.4
+      ],
+      "den": [
+       3.8,
+       5.4
+      ],
+      "kieu": "mo",
+      "het": 1
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       5.6,
+       5.4
+      ],
+      "den": [
+       8.6,
+       5.4
+      ],
+      "kieu": "mo",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 2.3,
+      "y": 4.8,
+      "text": "D + T",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 7.1,
+      "y": 4.8,
+      "text": "He + n",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 4.7,
+      "y": 8.4,
+      "text": "Δm = ?",
+      "het": 1
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       10.8,
+       5.4
+      ],
+      "den": [
+       13.8,
+       5.4
+      ],
+      "kieu": "mo",
+      "het": 4
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       15.6,
+       5.4
+      ],
+      "den": [
+       18.6,
+       5.4
+      ],
+      "kieu": "mo",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 12.3,
+      "y": 4.8,
+      "text": "N + He",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 17.1,
+      "y": 4.8,
+      "text": "O + p",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 14.7,
+      "y": 8.4,
+      "text": "Δm = ?",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 12.6,
+      "text": "trước: trái · sau: phải (không theo tỉ lệ)",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        0.8,
+        3.8
+       ],
+       "den": [
+        3.8,
+        3.8
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        5.6,
+        6.6
+       ],
+       "den": [
+        8.6,
+        6.6
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "chu",
+       "x": 0.6,
+       "y": 3.2,
+       "text": "D+T 5,029054",
+       "a": "start"
+      },
+      {
+       "loai": "chu",
+       "x": 9.6,
+       "y": 6.0,
+       "text": "He+n 5,010171",
+       "a": "end"
+      },
+      {
+       "loai": "chu",
+       "x": 4.7,
+       "y": 8.4,
+       "text": "Δm ≈ 0,018883 u",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δm = 5,029054 − 5,010171 = 0,018883 u"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         3.8,
+         3.8
+        ],
+        [
+         5.6,
+         6.6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 4.7,
+       "y": 9.7,
+       "text": "toả 17,59 MeV",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = 0,018883·931,5 ≈ 17,59 MeV"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 4.7,
+       "y": 11.0,
+       "text": "≈ 2,81·10⁻¹² J",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "17,59·1,6·10⁻¹³ ≈ 2,81·10⁻¹² J"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        10.8,
+        6.0
+       ],
+       "den": [
+        13.8,
+        6.0
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        15.6,
+        4.6
+       ],
+       "den": [
+        18.6,
+        4.6
+       ],
+       "mau": "chu"
+      },
+      {
+       "loai": "chu",
+       "x": 10.6,
+       "y": 7.4,
+       "text": "N+He 18,000737",
+       "a": "start"
+      },
+      {
+       "loai": "chu",
+       "x": 19.6,
+       "y": 4.0,
+       "text": "O+p 18,002016",
+       "a": "end"
+      },
+      {
+       "loai": "chu",
+       "x": 14.7,
+       "y": 8.8,
+       "text": "Δm ≈ −0,001279 u",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δm = 18,000737 − 18,002016 = −0,001279 u"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         13.8,
+         6.0
+        ],
+        [
+         15.6,
+         4.6
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 14.7,
+       "y": 10.1,
+       "text": "thu năng lượng",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "Δm < 0: trước nhẹ hơn sau ⇒ thu"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14.7,
+       "y": 11.4,
+       "text": "W ≈ −1,19 MeV",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "W = −0,001279·931,5 ≈ −1,19 MeV"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "D–T toả ≈ 17,6 MeV như bài lý thuyết ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Khá · Năng lượng của cả lượng nhiên liệu nhiệt hạch, so với than",
    "topic": "Năng lượng toả ra của phản ứng hạt nhân",
-   "problem_html": "<p>Phản ứng nhiệt hạch ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$ toả ra $17{,}6\\ \\text{MeV}$. Một lò thử nghiệm đốt hết $1{,}0\\ \\text{g}$ đơteri (D, khối lượng mol $2{,}0\\ \\text{g/mol}$) với lượng triti dư.</p><p>Lấy $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$. Than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Tính số phản ứng đã xảy ra.</li><li>Tính năng lượng toả ra theo jun.</li><li>Năng lượng đó bằng đốt bao nhiêu kilôgam than đá?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Các hạt nhân đơteri trong mẫu lần lượt tham gia phản ứng, thanh năng lượng toả ra dâng dần\"><rect x=\"24\" y=\"52\" width=\"150\" height=\"100\" rx=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"24\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,0 g đơteri (D)</text><text x=\"24\" y=\"176\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N phản ứng = ?</text><circle cx=\"77\" cy=\"75\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.64;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"45\" cy=\"105\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.42;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"43\" cy=\"103\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.18;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"91\" cy=\"69\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.22;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"89\" cy=\"127\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.24;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"64\" cy=\"112\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.86;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"109\" cy=\"94\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.88;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"42\" cy=\"129\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.37;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"54\" cy=\"73\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.38;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"139\" cy=\"78\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.59;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"117\" cy=\"92\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.56;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"44\" cy=\"69\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.3;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"122\" cy=\"96\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.39;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"110\" cy=\"98\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.37;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"136\" cy=\"117\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.33;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"108\" cy=\"104\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.81;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"128\" cy=\"86\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.89;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"51\" cy=\"96\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.72;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"55\" cy=\"101\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.18;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"120\" cy=\"122\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.58;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"146\" cy=\"88\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.67;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"111\" cy=\"108\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.49;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"142\" cy=\"136\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.51;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"120\" cy=\"69\" r=\"5.5\" fill=\"#94a3b8\"><animate attributeName=\"fill\" values=\"#94a3b8;#fb923c;#fb923c\" keyTimes=\"0;0.68;1\" calcMode=\"discrete\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/></circle><rect x=\"250\" y=\"52\" width=\"40\" height=\"100\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><rect x=\"252\" y=\"150\" width=\"36\" height=\"1\" fill=\"#fb923c\"><animate attributeName=\"y\" values=\"150.0;74.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"height\" values=\"1.0;76.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><text x=\"270\" y=\"36\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">E toả ra = ?</text><text x=\"270\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">so với than đá</text><text x=\"304\" y=\"76\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D + T → He + n</text><text x=\"304\" y=\"94\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">17,6 MeV</text><text x=\"304\" y=\"110\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mỗi phản ứng</text><text x=\"304\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">than: 2,7·10⁷ J/kg</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: từng hạt đơteri (rút gọn còn 24 chấm) lần lượt phản ứng trong 4 s, thanh năng lượng dâng lên. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Phản ứng nhiệt hạch ${}^{2}_{1}\\text{H}+{}^{3}_{1}\\text{H}\\to{}^{4}_{2}\\text{He}+{}^{1}_{0}\\text{n}$ toả ra $17{,}6\\ \\text{MeV}$. Một lò thử nghiệm đốt hết $1{,}0\\ \\text{g}$ đơteri (D, khối lượng mol $2{,}0\\ \\text{g/mol}$) với lượng triti dư.</p><p>Lấy $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$. Than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Tính số phản ứng đã xảy ra.</li><li>Tính năng lượng toả ra theo jun.</li><li>Năng lượng đó bằng đốt bao nhiêu kilôgam than đá?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> số hạt nhân trong mẫu $N=\\dfrac{m}{M}N_A$; mỗi hạt đơteri tham gia đúng một phản ứng nên số phản ứng bằng số hạt đơteri.</li><li><strong>Định luật:</strong> các phản ứng toả năng lượng độc lập nên năng lượng cộng được.</li><li><strong>Công thức:</strong> $E=N\\cdot W$ · $m_{than}=\\dfrac{E}{q}$.</li><li>⚠ <strong>Điều kiện:</strong> triti dư nên đơteri hết trước; $W$ đề cho bằng MeV, phải đổi sang jun.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số phản ứng (câu a)</span></p><p>Số hạt nhân đơteri trong mẫu; mỗi hạt tham gia một phản ứng:</p>$$N=\\dfrac{m}{M}N_A=\\dfrac{1{,}0}{2{,}0}\\cdot6{,}02\\cdot10^{23}$$<div class=\"bt-ans\">$$N=3{,}01\\cdot10^{23}\\ \\text{phản ứng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Năng lượng một phản ứng theo jun</span></p>$$W=17{,}6\\cdot1{,}6\\cdot10^{-13}$$<div class=\"bt-ans\">$$W=2{,}82\\cdot10^{-12}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Năng lượng cả mẫu (câu b)</span></p>$$E=N\\cdot W=3{,}01\\cdot10^{23}\\cdot2{,}816\\cdot10^{-12}$$<div class=\"bt-ans\">$$E\\approx8{,}48\\cdot10^{11}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khối lượng than tương đương (câu c)</span></p>$$m_{than}=\\dfrac{E}{q}=\\dfrac{8{,}48\\cdot10^{11}}{2{,}7\\cdot10^{7}}$$<div class=\"bt-ans\">$$m_{than}\\approx3{,}14\\cdot10^{4}\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cỡ $31$ tấn than cho $1{,}0\\ \\text{g}$ đơteri. Bài lý thuyết: $1\\ \\text{g}$ U-235 phân hạch tương đương cỡ $2{,}6$ tấn than, nên mỗi gam đơteri (có triti dư đi kèm) toả nhiều hơn cỡ $12$ lần mỗi gam U-235; nếu tính cả khối lượng triti đã dùng thì chỉ còn nhiều hơn cỡ $5$ lần.</p><p>Đơn vị: $\\text{J}\\ /\\ (\\text{J/kg})=\\text{kg}$, đúng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $N\\approx3{,}01\\cdot10^{23}$ phản ứng</p><p>b) $E\\approx8{,}48\\cdot10^{11}\\ \\text{J}$</p><p>c) $m_{than}\\approx3{,}14\\cdot10^{4}\\ \\text{kg}$ (cỡ $31$ tấn)</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>khối lượng nhiên liệu (gam)</strong> và hỏi năng lượng → đếm $N=\\dfrac{m}{M}N_A$ rồi nhân năng lượng một phản ứng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: mẫu một gam đơteri, năng lượng mỗi phản ứng và năng suất toả nhiệt của than\"><rect x=\"24\" y=\"52\" width=\"150\" height=\"100\" rx=\"10\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"24\" y=\"36\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1,0 g đơteri (D)</text><text x=\"24\" y=\"176\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N phản ứng = ?</text><circle cx=\"77\" cy=\"75\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"118\" cy=\"70\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"104\" cy=\"92\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"43\" cy=\"103\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"41\" cy=\"97\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"45\" cy=\"71\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"89\" cy=\"127\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"52\" cy=\"81\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"115\" cy=\"136\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"109\" cy=\"94\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"159\" cy=\"68\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"144\" cy=\"86\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"54\" cy=\"73\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"75\" cy=\"126\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"59\" cy=\"108\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"117\" cy=\"92\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"105\" cy=\"69\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"44\" cy=\"80\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"122\" cy=\"96\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"76\" cy=\"109\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"93\" cy=\"87\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"136\" cy=\"117\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"67\" cy=\"108\" r=\"5.5\" fill=\"#94a3b8\"/><circle cx=\"102\" cy=\"131\" r=\"5.5\" fill=\"#94a3b8\"/><rect x=\"250\" y=\"52\" width=\"40\" height=\"100\" rx=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"270\" y=\"108\" fill=\"#fb923c\" font-size=\"22\" font-weight=\"700\" text-anchor=\"middle\">?</text><text x=\"270\" y=\"36\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">E toả ra = ?</text><text x=\"270\" y=\"176\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">so với than đá</text><text x=\"304\" y=\"76\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">D + T → He + n</text><text x=\"304\" y=\"94\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">17,6 MeV</text><text x=\"304\" y=\"110\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mỗi phản ứng</text><text x=\"304\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">than: 2,7·10⁷ J/kg</text></svg><figcaption>Dữ kiện: khối lượng đơteri, năng lượng mỗi phản ứng, năng suất toả nhiệt của than. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“toả ra $17{,}6\\ \\text{MeV}$”</td><td>$W=17{,}6\\ \\text{MeV}$ mỗi phản ứng</td><td>Khái niệm: năng lượng toả ra của một phản ứng</td></tr><tr><td>“$1{,}0\\ \\text{g}$ đơteri (khối lượng mol $2{,}0\\ \\text{g/mol}$)”</td><td>$m=1{,}0\\ \\text{g}$; $M=2{,}0\\ \\text{g/mol}$</td><td>Khái niệm: số mol, số hạt nhân, hằng số Avôgađrô</td></tr><tr><td>“với lượng triti dư”</td><td>Chất nào hết trước là đơteri</td><td>⚠ Chất nào hết trước thì quyết định số phản ứng? Mỗi phản ứng dùng mấy hạt đơteri?</td></tr><tr><td>“$1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$”</td><td>Hai hằng số đổi</td><td>Đổi MeV sang jun; số hạt trong một mol</td></tr><tr><td>“than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$”</td><td>$q=2{,}7\\cdot10^{7}\\ \\text{J/kg}$</td><td>Năng suất toả nhiệt của nhiên liệu</td></tr><tr><td>“a) số phản ứng; b) năng lượng toả ra theo jun; c) bao nhiêu kilôgam than”</td><td>Cần $N$, $E$ (J), $m_{than}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“toả ra $17{,}6\\ \\text{MeV}$”</td><td>$W=17{,}6\\ \\text{MeV}$ mỗi phản ứng</td><td>Khái niệm: năng lượng toả ra của một phản ứng</td></tr><tr><td>“$1{,}0\\ \\text{g}$ đơteri (khối lượng mol $2{,}0\\ \\text{g/mol}$)”</td><td>$m=1{,}0\\ \\text{g}$; $M=2{,}0\\ \\text{g/mol}$</td><td>Khái niệm: số mol, số hạt nhân, hằng số Avôgađrô</td></tr><tr><td>“với lượng triti dư”</td><td>Chất nào hết trước là đơteri</td><td>⚠ Chất nào hết trước thì quyết định số phản ứng? Mỗi phản ứng dùng mấy hạt đơteri?</td></tr><tr><td>“$1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$”</td><td>Hai hằng số đổi</td><td>Đổi MeV sang jun; số hạt trong một mol</td></tr><tr><td>“than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$”</td><td>$q=2{,}7\\cdot10^{7}\\ \\text{J/kg}$</td><td>Năng suất toả nhiệt của nhiên liệu</td></tr><tr><td>“a) số phản ứng; b) năng lượng toả ra theo jun; c) bao nhiêu kilôgam than”</td><td>Cần $N$, $E$ (J), $m_{than}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>khối lượng nhiên liệu (gam)</b> và hỏi năng lượng → nghĩ tới <b>đếm số hạt nhân</b> rồi nhân năng lượng một phản ứng.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -554,15 +1788,282 @@
      "b) năng lượng toả ra (J)",
      "c) tương đương đốt bao nhiêu kg than"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "de": true,
+    "cao": 12.8,
+    "hinh": [
+     {
+      "loai": "tron",
+      "tam": [
+       3.8,
+       5.0
+      ],
+      "r": 3.0,
+      "mau": "vang",
+      "dam": 0.15,
+      "vien": true
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       2.2,
+       3.8
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       3.4,
+       3.1
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       4.7,
+       3.6
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       5.7,
+       4.6
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       1.7,
+       5.3
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       3.0,
+       4.7
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       4.3,
+       5.1
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       5.4,
+       6.0
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       2.4,
+       6.5
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       3.8,
+       6.8
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       5.0,
+       7.0
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       3.5,
+       6.0
+      ],
+      "r": 0.22,
+      "mau": "vang",
+      "dam": 0.8,
+      "vien": false
+     },
+     {
+      "loai": "chu",
+      "x": 4.0,
+      "y": 9.3,
+      "text": "1,0 g D; T dư"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 11.3,
+      "text": "D + T → He + n: 17,6 MeV mỗi lần",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 12.6,
+      "text": "than: 2,7·10⁷ J/kg",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 8.2,
+      "y": 2.2,
+      "text": "N = ?",
+      "a": "start",
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 8.2,
+      "y": 4.6,
+      "text": "W_1 = ?",
+      "a": "start",
+      "het": 2
+     },
+     {
+      "loai": "chu",
+      "x": 8.2,
+      "y": 7.0,
+      "text": "E = ?",
+      "a": "start",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 8.2,
+      "y": 9.4,
+      "text": "m_{than} = ?",
+      "a": "start",
+      "het": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 8.2,
+       "y": 2.2,
+       "text": "N ≈ 3,01·10²³",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "N = (1,0 : 2,0)·6,02·10²³ ≈ 3,01·10²³"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 8.2,
+       "y": 4.6,
+       "text": "W_1 ≈ 2,82·10⁻¹² J",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "17,6·1,6·10⁻¹³ ≈ 2,82·10⁻¹² J"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 8.2,
+       "y": 7.0,
+       "text": "E ≈ 8,48·10¹¹ J",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "E = N·W_1 ≈ 8,48·10¹¹ J"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 8.2,
+       "y": 9.4,
+       "text": "m_{than} ≈ 3,14·10⁴ kg",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "m = 8,48·10¹¹ : 2,7·10⁷ ≈ 3,14·10⁴ kg"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Khoảng 31 tấn than cho 1,0 g đơteri ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Khó · Công suất lò phản ứng và lượng U-235 phân hạch",
    "topic": "Nhà máy điện hạt nhân và phản ứng nhiệt hạch",
-   "problem_html": "<p>Một lò phản ứng hạt nhân có công suất nhiệt $900\\ \\text{MW}$, chạy liên tục $30$ ngày. Giả sử toàn bộ nhiệt toả ra đến từ phân hạch ${}^{235}_{92}\\text{U}$, mỗi phân hạch toả trung bình $200\\ \\text{MeV}$.</p><p>Lấy $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$. Khối lượng mol của U-235 là $235\\ \\text{g/mol}$; than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Tính năng lượng lò toả ra trong $30$ ngày, theo jun.</li><li>Tính khối lượng U-235 đã phân hạch.</li><li>Năng lượng đó bằng đốt bao nhiêu tấn than đá?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Đồ thị công suất không đổi theo thời gian, phần tô màu dưới đồ thị lớn dần theo ngày chạy của lò\"><line x1=\"62.0\" y1=\"150.0\" x2=\"332.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"62.0\" y1=\"150.0\" x2=\"62.0\" y2=\"36.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"62.0\" y1=\"150.0\" x2=\"62.0\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"62.0\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"148.7\" y1=\"150.0\" x2=\"148.7\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"148.7\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><line x1=\"235.3\" y1=\"150.0\" x2=\"235.3\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"235.3\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><line x1=\"322.0\" y1=\"150.0\" x2=\"322.0\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"322.0\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><line x1=\"57.0\" y1=\"150.0\" x2=\"62.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"154.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"57.0\" y1=\"117.3\" x2=\"62.0\" y2=\"117.3\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"121.3\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">300</text><line x1=\"57.0\" y1=\"84.7\" x2=\"62.0\" y2=\"84.7\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"88.7\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">600</text><line x1=\"57.0\" y1=\"52.0\" x2=\"62.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"56.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">900</text><text x=\"332\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">t (ngày)</text><text x=\"68\" y=\"32\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">P (MW)</text><rect x=\"62\" y=\"52.0\" width=\"1\" height=\"98.0\" fill=\"#fb923c\" opacity=\".35\"><animate attributeName=\"width\" values=\"1.0;260.0\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"62.0\" y1=\"52.0\" x2=\"322.0\" y2=\"52.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.8;1\" dur=\"4s\" begin=\"indefinite\" fill=\"freeze\"/><text x=\"192.0\" y=\"108\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">E = ?</text></g><text x=\"342\" y=\"56.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">P = 900 MW</text><text x=\"342\" y=\"110\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">200 MeV</text><text x=\"342\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mỗi phân hạch</text><text x=\"16\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">than đá: 2,7·10⁷ J/kg</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: lò chạy liên tục 30 ngày trong 4 s; phần tô màu dưới đường công suất lớn dần theo thời gian. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một lò phản ứng hạt nhân có công suất nhiệt $900\\ \\text{MW}$, chạy liên tục $30$ ngày. Giả sử toàn bộ nhiệt toả ra đến từ phân hạch ${}^{235}_{92}\\text{U}$, mỗi phân hạch toả trung bình $200\\ \\text{MeV}$.</p><p>Lấy $1\\ \\text{MeV}=1{,}6\\cdot10^{-13}\\ \\text{J}$, $N_A=6{,}02\\cdot10^{23}\\ \\text{mol}^{-1}$. Khối lượng mol của U-235 là $235\\ \\text{g/mol}$; than đá toả $2{,}7\\cdot10^{7}\\ \\text{J/kg}$.</p><ol type=\"a\"><li>Tính năng lượng lò toả ra trong $30$ ngày, theo jun.</li><li>Tính khối lượng U-235 đã phân hạch.</li><li>Năng lượng đó bằng đốt bao nhiêu tấn than đá?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công suất $P$ là năng lượng toả ra trong một giây; nhiệt của lò đến từ các phân hạch U-235.</li><li><strong>Định luật:</strong> các phân hạch độc lập nên năng lượng cộng được; mỗi hạt nhân U-235 phân hạch một lần.</li><li><strong>Công thức:</strong> $E=Pt$ · $N=\\dfrac{E}{W_1}$ · $m=\\dfrac{N}{N_A}M$.</li><li>⚠ <strong>Điều kiện:</strong> $t$ phải đổi ra giây khi $P$ tính bằng oát; $W_1$ phải đổi từ MeV ra jun.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Năng lượng lò toả ra trong 30 ngày (câu a)</span></p><p>Đổi thời gian ra giây:</p>$$t=30\\cdot24\\cdot3600=2{,}592\\cdot10^{6}\\ \\text{s}$$$$E=Pt=900\\cdot10^{6}\\cdot2{,}592\\cdot10^{6}$$<div class=\"bt-ans\">$$E\\approx2{,}33\\cdot10^{15}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Năng lượng một phân hạch theo jun</span></p>$$W_1=200\\cdot1{,}6\\cdot10^{-13}$$<div class=\"bt-ans\">$$W_1=3{,}2\\cdot10^{-11}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số phân hạch</span></p>$$N=\\dfrac{E}{W_1}=\\dfrac{2{,}33\\cdot10^{15}}{3{,}2\\cdot10^{-11}}$$<div class=\"bt-ans\">$$N\\approx7{,}29\\cdot10^{25}\\ \\text{hạt nhân}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khối lượng U-235 (câu b)</span></p><p>Đổi số hạt ra mol rồi ra khối lượng:</p>$$n=\\dfrac{N}{N_A}=\\dfrac{7{,}29\\cdot10^{25}}{6{,}02\\cdot10^{23}}\\approx121\\ \\text{mol}$$$$m=n\\cdot M=121{,}1\\cdot235\\approx2{,}85\\cdot10^{4}\\ \\text{g}$$<div class=\"bt-ans\">$$m\\approx28{,}5\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Khối lượng than tương đương (câu c)</span></p>$$m_{than}=\\dfrac{E}{q}=\\dfrac{2{,}33\\cdot10^{15}}{2{,}7\\cdot10^{7}}\\approx8{,}64\\cdot10^{7}\\ \\text{kg}$$<div class=\"bt-ans\">$$m_{than}\\approx8{,}64\\cdot10^{4}\\ \\text{tấn}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Bài lý thuyết: $1\\ \\text{g}$ U-235 tương đương cỡ $2{,}6$ tấn than; $28\\,460\\ \\text{g}$ tương đương cỡ $7{,}4\\cdot10^{4}$ tấn, cùng bậc với kết quả (đề dùng $200\\ \\text{MeV}$ thay vì $173\\ \\text{MeV}$ nên lớn hơn một chút).</p><p>Đơn vị: $\\text{W}\\cdot\\text{s}=\\text{J}$ và $\\text{J}\\ /\\ (\\text{J/kg})=\\text{kg}$, đúng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E\\approx2{,}33\\cdot10^{15}\\ \\text{J}$</p><p>b) $m_{U}\\approx28{,}5\\ \\text{kg}$</p><p>c) $m_{than}\\approx8{,}64\\cdot10^{4}$ tấn</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>công suất và thời gian chạy</strong> của lò → tính năng lượng lò toả ra, chia cho năng lượng một phân hạch để đếm hạt nhân.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Dữ kiện: công suất nhiệt không đổi 900 MW trong 30 ngày, năng lượng mỗi phân hạch, năng suất toả nhiệt của than\"><line x1=\"62.0\" y1=\"150.0\" x2=\"332.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"62.0\" y1=\"150.0\" x2=\"62.0\" y2=\"36.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"62.0\" y1=\"150.0\" x2=\"62.0\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"62.0\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0</text><line x1=\"148.7\" y1=\"150.0\" x2=\"148.7\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"148.7\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">10</text><line x1=\"235.3\" y1=\"150.0\" x2=\"235.3\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"235.3\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">20</text><line x1=\"322.0\" y1=\"150.0\" x2=\"322.0\" y2=\"155.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"322.0\" y=\"170\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">30</text><line x1=\"57.0\" y1=\"150.0\" x2=\"62.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"154.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">0</text><line x1=\"57.0\" y1=\"117.3\" x2=\"62.0\" y2=\"117.3\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"121.3\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">300</text><line x1=\"57.0\" y1=\"84.7\" x2=\"62.0\" y2=\"84.7\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"88.7\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">600</text><line x1=\"57.0\" y1=\"52.0\" x2=\"62.0\" y2=\"52.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"54\" y=\"56.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">900</text><text x=\"332\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">t (ngày)</text><text x=\"68\" y=\"32\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">P (MW)</text><rect x=\"62\" y=\"52.0\" width=\"260\" height=\"98.0\" fill=\"#fb923c\" opacity=\".35\"/><line x1=\"62.0\" y1=\"52.0\" x2=\"322.0\" y2=\"52.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><g opacity=\"1\"><text x=\"192.0\" y=\"108\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">E = ?</text></g><text x=\"342\" y=\"56.0\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">P = 900 MW</text><text x=\"342\" y=\"110\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">200 MeV</text><text x=\"342\" y=\"126\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">mỗi phân hạch</text><text x=\"16\" y=\"188\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">than đá: 2,7·10⁷ J/kg</text></svg><figcaption>Dữ kiện: công suất, thời gian chạy, năng lượng mỗi phân hạch, năng suất toả nhiệt của than. Sơ đồ minh hoạ, kích thước hạt không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“công suất nhiệt $900\\ \\text{MW}$”</td><td>$P=900\\ \\text{MW}$</td><td>Khái niệm: công suất</td></tr><tr><td>“chạy liên tục $30$ ngày”</td><td>$t=30$ ngày</td><td>⚠ Đơn vị thời gian đi cùng đơn vị oát là gì? Có cần đổi không?</td></tr><tr><td>“toàn bộ nhiệt toả ra đến từ phân hạch ${}^{235}_{92}\\text{U}$; mỗi phân hạch toả $200\\ \\text{MeV}$”</td><td>$W_1=200\\ \\text{MeV}$ mỗi phân hạch</td><td>⚠ Nhiệt của lò đến từ đâu? Mỗi hạt nhân U-235 phân hạch mấy lần?</td></tr><tr><td>“$1\\ \\text{MeV}=\\ldots$; $N_A=\\ldots$; $235\\ \\text{g/mol}$; than đá $2{,}7\\cdot10^{7}\\ \\text{J/kg}$”</td><td>Các hằng số đổi và năng suất toả nhiệt của than</td><td>Đổi MeV sang jun; số hạt trong một mol; năng suất toả nhiệt</td></tr><tr><td>“a) năng lượng trong $30$ ngày; b) khối lượng U-235; c) bao nhiêu tấn than”</td><td>Cần $E$ (J), $m_{U}$, $m_{than}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“công suất nhiệt $900\\ \\text{MW}$”</td><td>$P=900\\ \\text{MW}$</td><td>Khái niệm: công suất</td></tr><tr><td>“chạy liên tục $30$ ngày”</td><td>$t=30$ ngày</td><td>⚠ Đơn vị thời gian đi cùng đơn vị oát là gì? Có cần đổi không?</td></tr><tr><td>“toàn bộ nhiệt toả ra đến từ phân hạch ${}^{235}_{92}\\text{U}$; mỗi phân hạch toả $200\\ \\text{MeV}$”</td><td>$W_1=200\\ \\text{MeV}$ mỗi phân hạch</td><td>⚠ Nhiệt của lò đến từ đâu? Mỗi hạt nhân U-235 phân hạch mấy lần?</td></tr><tr><td>“$1\\ \\text{MeV}=\\ldots$; $N_A=\\ldots$; $235\\ \\text{g/mol}$; than đá $2{,}7\\cdot10^{7}\\ \\text{J/kg}$”</td><td>Các hằng số đổi và năng suất toả nhiệt của than</td><td>Đổi MeV sang jun; số hạt trong một mol; năng suất toả nhiệt</td></tr><tr><td>“a) năng lượng trong $30$ ngày; b) khối lượng U-235; c) bao nhiêu tấn than”</td><td>Cần $E$ (J), $m_{U}$, $m_{than}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>công suất và thời gian chạy</b> của lò → nghĩ tới <b>năng lượng lò toả ra</b>, rồi <b>số phân hạch</b>.",
    "cap_do": 4,
    "fading": "giau_het",
@@ -687,6 +2188,111 @@
      "a) năng lượng lò toả ra trong $30$ ngày (J)",
      "b) khối lượng U-235 đã phân hạch",
      "c) tương đương đốt bao nhiêu tấn than"
+    ]
+   },
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 34,
+     "ten": "t (ngày)",
+     "vach": [
+      30
+     ]
+    },
+    "y": {
+     "min": 0,
+     "max": 1100,
+     "ten": "P (MW)",
+     "vach": [
+      900
+     ]
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        900
+       ],
+       [
+        30,
+        900
+       ]
+      ],
+      "mau": "max"
+     }
+    ],
+    "hinh": [
+     {
+      "loai": "dien_tich",
+      "tu": 0,
+      "den": 30,
+      "nhan": "E = ?",
+      "het": 1
+     },
+     {
+      "loai": "dung",
+      "x": 30
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dien_tich",
+       "tu": 0,
+       "den": 30,
+       "nhan": "2,33·10¹⁵ J"
+      },
+      {
+       "loai": "ghi",
+       "text": "E = 900·10⁶·30·86 400 ≈ 2,33·10¹⁵ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "E_1 = 200·1,6·10⁻¹³ = 3,2·10⁻¹¹ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "N = 2,33·10¹⁵ : 3,2·10⁻¹¹ ≈ 7,29·10²⁵"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "m = (7,29·10²⁵ : N_A)·235 g ≈ 28,5 kg"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "8,64·10⁷ kg = 8,64·10⁴ tấn than"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "28,5 kg U-235 ≈ 86 400 tấn than ✓"
+      }
+     ]
+    ],
+    "dong": [
+     {
+      "nut": "▶ Xem năng lượng dồn lại qua 30 ngày",
+      "giay": 3,
+      "doi": [
+       {
+        "p": "hinh.0.den",
+        "tu": 1,
+        "den": 30
+       }
+      ]
+     }
     ]
    }
   }
