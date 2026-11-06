@@ -13,9 +13,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Định luật khúc xạ: chiết suất, tốc độ ánh sáng, chiếu ngược chiều và góc giữa tia phản xạ – tia khúc xạ",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "problem_html": "<p>Chiếu một tia laser từ không khí tới mặt thoáng phẳng của một chất lỏng trong suốt với góc tới $i=60^{\\circ}$; đo được góc khúc xạ $r=36^{\\circ}$. Cho $\\sin60^{\\circ}\\approx0{,}8660$; $\\sin36^{\\circ}\\approx0{,}5878$; tốc độ ánh sáng trong không khí $c=3\\cdot10^8\\ \\text{m/s}$, chiết suất không khí bằng $1$. Dùng máy tính khi cần tìm góc từ giá trị sin.</p><ol type=\"a\"><li>Tính chiết suất của chất lỏng và tốc độ ánh sáng trong chất lỏng.</li><li>Chiếu một tia sáng từ trong chất lỏng ra không khí với góc tới $30^{\\circ}$. Tính góc khúc xạ. Tia khúc xạ lệch gần hay lệch xa pháp tuyến hơn tia tới?</li><li>Trở lại tia laser ở câu a: tại điểm tới, một phần ánh sáng bị phản xạ trên mặt thoáng. Tính góc hợp bởi tia phản xạ và tia khúc xạ.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-1-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Tia laser từ không khí tới mặt chất lỏng với góc tới 60 độ, khúc xạ vào chất lỏng với góc khúc xạ 36 độ, chiết suất chưa biết\"><rect x=\"20\" y=\"120\" width=\"380\" height=\"118\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"20.0\" y1=\"120.0\" x2=\"400.0\" y2=\"120.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"30\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">không khí</text><text x=\"30\" y=\"144\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">chất lỏng</text><text x=\"30\" y=\"164\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n = ?</text><line x1=\"210.0\" y1=\"22.0\" x2=\"210.0\" y2=\"232.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"216\" y=\"32\" fill=\"#94a3b8\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">pháp tuyến</text><line x1=\"80.1\" y1=\"45.0\" x2=\"106.1\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"9\" stroke-linecap=\"round\"/><text x=\"78.1\" y=\"35.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">laser</text><line x1=\"106.1\" y1=\"60.0\" x2=\"210.0\" y2=\"120.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M157.2,83.7 L162.2,92.4 L152.2,92.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"120.0\" x2=\"278.2\" y2=\"213.8\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M245.8,160.7 L246.8,170.7 L237.7,166.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M210.0,86.0 A34,34 0 0 0 180.6,103.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"170\" y=\"80\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">60°</text><path d=\"M210.0,160.0 A40,40 0 0 0 233.5,152.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\"/><text x=\"202\" y=\"176\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">36°</text><circle cx=\"106.1\" cy=\"60.0\" r=\"5.5\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"106.1;210;278.2\" keyTimes=\"0;0.4125;1\" dur=\"4.85s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"60.0;120;213.8\" keyTimes=\"0;0.4125;1\" dur=\"4.85s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm sáng đi theo tia tới rồi theo tia khúc xạ; vào chất lỏng nó đi chậm lại. Hai góc vẽ đúng số liệu đề cho, đo so với pháp tuyến. Phần ánh sáng phản xạ chưa vẽ.</figcaption></figure>",
+   "problem_html": "<p>Chiếu một tia laser từ không khí tới mặt thoáng phẳng của một chất lỏng trong suốt với góc tới $i=60^{\\circ}$; đo được góc khúc xạ $r=36^{\\circ}$. Cho $\\sin60^{\\circ}\\approx0{,}8660$; $\\sin36^{\\circ}\\approx0{,}5878$; tốc độ ánh sáng trong không khí $c=3\\cdot10^8\\ \\text{m/s}$, chiết suất không khí bằng $1$. Dùng máy tính khi cần tìm góc từ giá trị sin.</p><ol type=\"a\"><li>Tính chiết suất của chất lỏng và tốc độ ánh sáng trong chất lỏng.</li><li>Chiếu một tia sáng từ trong chất lỏng ra không khí với góc tới $30^{\\circ}$. Tính góc khúc xạ. Tia khúc xạ lệch gần hay lệch xa pháp tuyến hơn tia tới?</li><li>Trở lại tia laser ở câu a: tại điểm tới, một phần ánh sáng bị phản xạ trên mặt thoáng. Tính góc hợp bởi tia phản xạ và tia khúc xạ.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khúc xạ là hiện tượng tia sáng gãy khúc tại mặt phân cách hai môi trường trong suốt; góc đo so với pháp tuyến.</li><li><strong>Định luật:</strong> $n_1\\sin i=n_2\\sin r$, tia khúc xạ nằm bên kia pháp tuyến so với tia tới.</li><li><strong>Công thức:</strong> $n=\\dfrac cv$; góc phản xạ $i'=i$.</li><li><strong>Điều kiện:</strong> $n_1$ là chiết suất môi trường chứa tia tới; đổi chiều truyền thì đổi vai $n_1$, $n_2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiết suất của chất lỏng</span></p><p>Tia đi từ không khí ($n_1=1$) vào chất lỏng ($n_2=n$):</p>$$1\\cdot\\sin i=n\\sin r$$$$n=\\dfrac{\\sin60^{\\circ}}{\\sin36^{\\circ}}=\\dfrac{0{,}8660}{0{,}5878}$$<div class=\"bt-ans\">$$n\\approx1{,}473\\approx1{,}47$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ ánh sáng trong chất lỏng</span></p>$$v=\\dfrac cn$$$$v=\\dfrac{3\\cdot10^8}{1{,}473}$$<div class=\"bt-ans\">$$v\\approx2{,}04\\cdot10^8\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiếu ngược ra không khí</span></p><p>Bây giờ môi trường chứa tia tới là chất lỏng: $n_1=n$, $n_2=1$, $i=30^{\\circ}$.</p>$$n\\sin30^{\\circ}=1\\cdot\\sin r$$$$\\sin r=1{,}473\\cdot0{,}5\\approx0{,}737$$<div class=\"bt-ans\">$$r\\approx47{,}4^{\\circ}$$</div><p>$r\\gt i$: đi sang môi trường chiết quang kém hơn, tia khúc xạ <strong>lệch xa pháp tuyến</strong> hơn tia tới.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc giữa tia phản xạ và tia khúc xạ</span></p><p>Tia phản xạ ở phía không khí, hợp với pháp tuyến góc $i'=i=60^{\\circ}$, tức hợp với mặt thoáng góc $90^{\\circ}-60^{\\circ}=30^{\\circ}$.</p><p>Tia khúc xạ ở phía chất lỏng, hợp với mặt thoáng góc $90^{\\circ}-36^{\\circ}=54^{\\circ}$.</p><p>Hai tia cùng ở bên phải pháp tuyến, một tia trên và một tia dưới mặt thoáng, nên góc giữa chúng là tổng hai góc với mặt thoáng:</p>$$\\alpha=(90^{\\circ}-i')+(90^{\\circ}-r)=180^{\\circ}-i-r$$$$\\alpha=180^{\\circ}-60^{\\circ}-36^{\\circ}$$<div class=\"bt-ans\">$$\\alpha=84^{\\circ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$n\\gt1$ ✓ (chất lỏng chiết quang hơn không khí) và $v\\lt c$ ✓.</p><p>Câu b: kiểm ngược $\\dfrac{\\sin47{,}4^{\\circ}}{\\sin30^{\\circ}}\\approx\\dfrac{0{,}736}{0{,}5}\\approx1{,}47=n$ ✓.</p><p>Câu c: góc tìm được nằm giữa $0^{\\circ}$ và $180^{\\circ}$ ✓; khi $i$ tăng thì cả hai tia đều nghiêng về phía mặt thoáng hơn nên góc giữa chúng nhỏ lại, đúng chiều với công thức $180^{\\circ}-i-r$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $n\\approx1{,}47$; $v\\approx2{,}04\\cdot10^8\\ \\text{m/s}$</p><p>b) $r\\approx47{,}4^{\\circ}$, tia khúc xạ lệch xa pháp tuyến</p><p>c) $84^{\\circ}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>góc tới, góc khúc xạ, tốc độ ánh sáng</strong> → $n_1\\sin i=n_2\\sin r$ và $n=\\dfrac cv$; đổi chiều thì đổi vai $n_1$, $n_2$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-1-2\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Sơ đồ tia tới, tia phản xạ và tia khúc xạ tại một điểm tới, các góc i, i phẩy, r đo so với pháp tuyến, góc giữa tia phản xạ và tia khúc xạ là ẩn\"><rect x=\"20\" y=\"100\" width=\"380\" height=\"96\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"20.0\" y1=\"100.0\" x2=\"400.0\" y2=\"100.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"210.0\" y1=\"14.0\" x2=\"210.0\" y2=\"192.0\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"139.5\" y1=\"40.9\" x2=\"210.0\" y2=\"100.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M174.2,63.4 L177.6,72.8 L167.7,71.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"100.0\" x2=\"280.5\" y2=\"40.9\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M238.2,69.8 L248.1,68.1 L244.6,77.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"210.0\" y1=\"100.0\" x2=\"256.0\" y2=\"179.7\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M234.8,133.0 L234.8,143.0 L226.2,138.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M210.0,70.0 A30,30 0 0 0 187.0,80.7\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"184\" y=\"66\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">i</text><path d=\"M233.0,80.7 A30,30 0 0 0 210.0,70.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"236\" y=\"66\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">i'</text><path d=\"M210.0,134.0 A34,34 0 0 0 227.0,129.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\"/><text x=\"202\" y=\"146\" fill=\"#34d399\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">r</text><path d=\"M239.0,150.2 A58,58 0 0 0 254.4,62.7\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.6\"/><text x=\"286\" y=\"106\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">?</text><text x=\"284.5\" y=\"36.9\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">tia phản xạ</text><text x=\"262.0\" y=\"183.7\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">tia khúc xạ</text><text x=\"135.5\" y=\"34.9\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">tia tới</text></svg><figcaption>Sơ đồ ba tia tại điểm tới (góc vẽ không theo số liệu của đề). Dấu ? là góc câu c hỏi.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"từ không khí tới mặt thoáng phẳng của một chất lỏng\"</td><td>$n_1=1$ (chứa tia tới); $n_2=n$</td><td>Định luật khúc xạ $n_1\\sin i=n_2\\sin r$<br>Môi trường 1 là môi trường chứa tia tới</td></tr><tr><td>\"góc tới $i=60^{\\circ}$; … góc khúc xạ $r=36^{\\circ}$\"</td><td>$i=60^{\\circ}$; $r=36^{\\circ}$</td><td>⚠ góc tới, góc khúc xạ đo so với <strong>pháp tuyến</strong>, không đo so với mặt thoáng</td></tr><tr><td>\"$c=3\\cdot10^8\\ \\text{m/s}$\"</td><td>$c$</td><td>Chiết suất tuyệt đối $n=\\dfrac cv$</td></tr><tr><td>\"Tính chiết suất … và tốc độ ánh sáng trong chất lỏng\"</td><td>Cần $n$, $v$</td><td>$n=\\dfrac{\\sin i}{\\sin r}$; $v=\\dfrac cn$</td></tr><tr><td>\"từ trong chất lỏng ra không khí với góc tới $30^{\\circ}$\"</td><td>Bây giờ $n_1=n$, $n_2=1$; $i=30^{\\circ}$</td><td>Môi trường chứa tia tới đã đổi<br>Ánh sáng đi sang môi trường chiết quang hơn hay kém hơn?</td></tr><tr><td>\"một phần ánh sáng bị phản xạ trên mặt thoáng\"</td><td>Tia phản xạ cùng điểm tới</td><td>Định luật phản xạ: góc phản xạ $i'=i$</td></tr><tr><td>\"góc hợp bởi tia phản xạ và tia khúc xạ\"</td><td>Cần góc giữa hai tia</td><td>Vẽ hình: góc cần tìm ghép từ những góc nào quanh điểm tới?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"từ không khí tới mặt thoáng phẳng của một chất lỏng\"</td><td>$n_1=1$ (chứa tia tới); $n_2=n$</td><td>Định luật khúc xạ $n_1\\sin i=n_2\\sin r$<br>Môi trường 1 là môi trường chứa tia tới</td></tr><tr><td>\"góc tới $i=60^{\\circ}$; … góc khúc xạ $r=36^{\\circ}$\"</td><td>$i=60^{\\circ}$; $r=36^{\\circ}$</td><td>⚠ góc tới, góc khúc xạ đo so với <strong>pháp tuyến</strong>, không đo so với mặt thoáng</td></tr><tr><td>\"$c=3\\cdot10^8\\ \\text{m/s}$\"</td><td>$c$</td><td>Chiết suất tuyệt đối $n=\\dfrac cv$</td></tr><tr><td>\"Tính chiết suất … và tốc độ ánh sáng trong chất lỏng\"</td><td>Cần $n$, $v$</td><td>$n=\\dfrac{\\sin i}{\\sin r}$; $v=\\dfrac cn$</td></tr><tr><td>\"từ trong chất lỏng ra không khí với góc tới $30^{\\circ}$\"</td><td>Bây giờ $n_1=n$, $n_2=1$; $i=30^{\\circ}$</td><td>Môi trường chứa tia tới đã đổi<br>Ánh sáng đi sang môi trường chiết quang hơn hay kém hơn?</td></tr><tr><td>\"một phần ánh sáng bị phản xạ trên mặt thoáng\"</td><td>Tia phản xạ cùng điểm tới</td><td>Định luật phản xạ: góc phản xạ $i'=i$</td></tr><tr><td>\"góc hợp bởi tia phản xạ và tia khúc xạ\"</td><td>Cần góc giữa hai tia</td><td>Vẽ hình: góc cần tìm ghép từ những góc nào quanh điểm tới?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>góc tới, góc khúc xạ, tốc độ ánh sáng</b> → $n_1\\sin i=n_2\\sin r$ và $n=\\dfrac cv$.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -117,15 +117,424 @@
      "b) góc khúc xạ; lệch gần hay xa pháp tuyến",
      "c) góc giữa tia phản xạ và tia khúc xạ"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10,
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          0,
+          4.5
+         ],
+         [
+          20,
+          4.5
+         ],
+         [
+          20,
+          10
+         ],
+         [
+          0,
+          10
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         4.5
+        ],
+        "den": [
+         20,
+         4.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí · n = 1",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 9.4,
+        "text": "chất lỏng",
+        "a": "start"
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         10,
+         4.5
+        ],
+        "huong": 90,
+        "dai": 2.2
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          6.02,
+          2.2
+         ],
+         [
+          10,
+          4.5
+         ]
+        ]
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10,
+          4.5
+         ],
+         [
+          12.94,
+          8.55
+         ]
+        ],
+        "mau": "min"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         10,
+         4.5
+        ],
+        "tu": 90,
+        "den": 150,
+        "nhan": "60°",
+        "r": 1.3,
+        "r_nhan": 1.0
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         10,
+         4.5
+        ],
+        "tu": 270,
+        "den": 306,
+        "nhan": "36°",
+        "r": 1.3,
+        "r_nhan": 1.0
+       }
+      ]
+     },
+     {
+      "tu_buoc": 2,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          0,
+          4.5
+         ],
+         [
+          20,
+          4.5
+         ],
+         [
+          20,
+          10
+         ],
+         [
+          0,
+          10
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         4.5
+        ],
+        "den": [
+         20,
+         4.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí · n = 1",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 9.4,
+        "text": "chất lỏng",
+        "a": "start"
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         10,
+         4.5
+        ],
+        "huong": 90,
+        "dai": 2.2
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          7.7,
+          8.48
+         ],
+         [
+          10,
+          4.5
+         ]
+        ]
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         10,
+         4.5
+        ],
+        "tu": 240,
+        "den": 270,
+        "nhan": "30°",
+        "r": 1.4,
+        "r_nhan": 1.0
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          0,
+          4.5
+         ],
+         [
+          20,
+          4.5
+         ],
+         [
+          20,
+          10
+         ],
+         [
+          0,
+          10
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         4.5
+        ],
+        "den": [
+         20,
+         4.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí · n = 1",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 9.4,
+        "text": "chất lỏng",
+        "a": "start"
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         10,
+         4.5
+        ],
+        "huong": 90,
+        "dai": 2.2
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          6.02,
+          2.2
+         ],
+         [
+          10,
+          4.5
+         ]
+        ]
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10,
+          4.5
+         ],
+         [
+          12.94,
+          8.55
+         ]
+        ],
+        "mau": "min"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10,
+          4.5
+         ],
+         [
+          13.98,
+          2.2
+         ]
+        ],
+        "mau": "max"
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         10,
+         4.5
+        ],
+        "tu": 90,
+        "den": 150,
+        "nhan": "60°",
+        "r": 1.3,
+        "r_nhan": 1.0
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "n = sin 60° : sin 36°"
+      },
+      {
+       "loai": "ghi",
+       "text": "= 0,8660 : 0,5878 ≈ 1,47"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v = c : n = 3·10⁸ : 1,47"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 2,04·10⁸ m/s"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         4.5
+        ],
+        [
+         13.39,
+         1.39
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        10,
+        4.5
+       ],
+       "tu": 42.6,
+       "den": 90,
+       "nhan": "r",
+       "r": 1.6,
+       "r_nhan": 1.1
+      },
+      {
+       "loai": "ghi",
+       "text": "sin r = 1,47·sin 30° ⇒ r ≈ 47,4°"
+      },
+      {
+       "loai": "ghi",
+       "text": "r > 30°: lệch xa pháp tuyến"
+      }
+     ],
+     [
+      {
+       "loai": "goc",
+       "tai": [
+        10,
+        4.5
+       ],
+       "tu": -54,
+       "den": 30,
+       "nhan": "84°",
+       "r": 1.7,
+       "r_nhan": 1.2
+      },
+      {
+       "loai": "ghi",
+       "text": "i' = i = 60°"
+      },
+      {
+       "loai": "ghi",
+       "text": "180° − 60° − 36° = 84°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "n > 1 ⇒ r < i ✓ · v < c ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Trung bình · Độ sâu biểu kiến qua nhiều lớp chất lỏng: người nhìn xuống đáy, cá nhìn lên đèn",
    "topic": "Mô tả hiện tượng khúc xạ, vẽ đường truyền tia sáng",
-   "problem_html": "<p>Một bể chứa lớp nước dày $80\\ \\text{cm}$; trên mặt nước nổi một lớp dầu dày $14\\ \\text{cm}$. Chiết suất của dầu là $1{,}4$, của nước là $\\dfrac43$, của không khí là $1$. Mọi lần quan sát đều nhìn theo phương gần vuông góc với mặt chất lỏng.</p><ol type=\"a\"><li>Một người ở trên nhìn thẳng xuống đáy bể. Đáy bể trông như cách mặt dầu bao nhiêu? Đáy bể như được nâng lên bao nhiêu?</li><li>Một con cá nằm trong nước, ở dưới mặt phân cách dầu – nước $36\\ \\text{cm}$. Người đó thấy cá như cách mặt dầu bao nhiêu?</li><li>Ngay phía trên con cá, cách mặt dầu $150\\ \\text{cm}$, treo một bóng đèn nhỏ. Con cá nhìn lên thấy bóng đèn như cách nó bao nhiêu, và như ở độ cao bao nhiêu so với mặt dầu (mặt phẳng thật của lớp dầu)?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-2-0\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Bể có lớp dầu nổi trên lớp nước, tia sáng từ điểm S ở đáy đi lên, gãy khúc ở hai mặt phân cách, đường kéo dài của tia ló cắt nhau ở ảnh S phẩy chưa biết vị trí\"><rect x=\"70\" y=\"72\" width=\"280\" height=\"46\" fill=\"#fb923c\" opacity=\"0.22\" stroke=\"none\"/><rect x=\"70\" y=\"118\" width=\"280\" height=\"126\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"70.0\" y1=\"72.0\" x2=\"350.0\" y2=\"72.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"70.0\" y1=\"118.0\" x2=\"350.0\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><path d=\"M70,42 L70,244 L350,244 L350,42\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"356\" y=\"92\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">dầu</text><text x=\"356\" y=\"110\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">14 cm</text><text x=\"356\" y=\"158\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nước</text><text x=\"356\" y=\"176\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">80 cm</text><line x1=\"210.0\" y1=\"46.0\" x2=\"210.0\" y2=\"244.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><path d=\"M194,20 Q210,6 226,20 Q210,34 194,20 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"210\" cy=\"20\" r=\"4.5\" fill=\"currentColor\"/><text x=\"234\" y=\"24\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">mắt</text><circle cx=\"210\" cy=\"242\" r=\"5\" fill=\"#f87171\" stroke=\"currentColor\" stroke-width=\"1.2\"/><text x=\"200\" y=\"236\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">S</text><polyline points=\"210.0,244.0 246.1,118.0 258.6,72.0 275.6,29.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-dasharray=\"226.7\" stroke-dashoffset=\"226.7\"><animate attributeName=\"stroke-dashoffset\" values=\"226.7;0;0\" keyTimes=\"0;0.55;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.55;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M246.0,101.3 L252.4,95.0 L254.7,103.7\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M260.0,56.2 L267.1,50.6 L268.4,59.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><polyline points=\"210.0,244.0 173.9,118.0 161.4,72.0 144.4,29.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-dasharray=\"226.7\" stroke-dashoffset=\"226.7\"><animate attributeName=\"stroke-dashoffset\" values=\"226.7;0;0\" keyTimes=\"0;0.55;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></polyline><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.55;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><path d=\"M165.3,103.7 L167.6,95.0 L174.0,101.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M151.6,59.5 L152.9,50.6 L160.0,56.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.6;0.85;1\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"258.6\" y1=\"72.0\" x2=\"210.0\" y2=\"195.1\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"161.4\" y1=\"72.0\" x2=\"210.0\" y2=\"195.1\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"210\" cy=\"195.1\" r=\"4.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\"/><line x1=\"216.0\" y1=\"195.1\" x2=\"262.0\" y2=\"195.1\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><text x=\"266\" y=\"200.1\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\">S' = ?</text></g><text x=\"78\" y=\"234\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">đáy</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: tia sáng từ đáy đi lên, gãy khúc ở hai mặt phân cách rồi tới mắt; đường kéo dài (nét đứt) cho ảnh S'. Góc tia phóng to cho dễ thấy, độ dày các lớp không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một bể chứa lớp nước dày $80\\ \\text{cm}$; trên mặt nước nổi một lớp dầu dày $14\\ \\text{cm}$. Chiết suất của dầu là $1{,}4$, của nước là $\\dfrac43$, của không khí là $1$. Mọi lần quan sát đều nhìn theo phương gần vuông góc với mặt chất lỏng.</p><ol type=\"a\"><li>Một người ở trên nhìn thẳng xuống đáy bể. Đáy bể trông như cách mặt dầu bao nhiêu? Đáy bể như được nâng lên bao nhiêu?</li><li>Một con cá nằm trong nước, ở dưới mặt phân cách dầu – nước $36\\ \\text{cm}$. Người đó thấy cá như cách mặt dầu bao nhiêu?</li><li>Ngay phía trên con cá, cách mặt dầu $150\\ \\text{cm}$, treo một bóng đèn nhỏ. Con cá nhìn lên thấy bóng đèn như cách nó bao nhiêu, và như ở độ cao bao nhiêu so với mặt dầu (mặt phẳng thật của lớp dầu)?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nhìn vật qua mặt phân cách, ta thấy ảnh ảo của vật, dịch về phía môi trường chiết quang kém hơn.</li><li><strong>Công thức:</strong> mắt ở không khí, lớp dày $e_k$ chiết suất $n_k$ trông dày $\\dfrac{e_k}{n_k}$; nhiều lớp $h'=\\sum\\dfrac{e_k}{n_k}$.</li><li><strong>Mắt trong môi trường chiết suất $n$:</strong> khoảng cách biểu kiến $=n\\cdot\\sum\\dfrac{e_k}{n_k}$ (lớp không khí dày $H$ trông dày $nH$).</li><li><strong>Điều kiện:</strong> nhìn gần vuông góc với mặt phân cách; chỉ tính các lớp nằm giữa vật và mắt.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lớp dầu trông dày bao nhiêu</span></p><p>Mắt ở không khí, lớp dầu dày $14\\ \\text{cm}$:</p>$$e'_{\\text{d}}=\\dfrac{e_{\\text{d}}}{n_{\\text{d}}}=\\dfrac{14}{1{,}4}$$<div class=\"bt-ans\">$$e'_{\\text{d}}=10\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đáy bể trông sâu bao nhiêu</span></p><p>Cộng phần đóng góp của hai lớp:</p>$$h'=\\dfrac{14}{1{,}4}+\\dfrac{80}{4/3}=10+60$$<div class=\"bt-ans\">$$h'=70\\ \\text{cm}$$</div><p>Độ sâu thật $14+80=94\\ \\text{cm}$, nên đáy như được nâng lên $\\Delta h=94-70=24\\ \\text{cm}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Người thấy cá ở đâu</span></p><p>Giữa cá và mắt chỉ có $14\\ \\text{cm}$ dầu và $36\\ \\text{cm}$ nước:</p>$$h'_{\\text{cá}}=\\dfrac{14}{1{,}4}+\\dfrac{36}{4/3}=10+27$$<div class=\"bt-ans\">$$h'_{\\text{cá}}=37\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cá thấy đèn cách nó bao nhiêu</span></p><p>Đổi từng lớp giữa đèn và cá ra 'độ dày tương đương trong không khí' rồi nhân với chiết suất nước (mắt cá ở trong nước):</p>$$d'=n_{\\text{n}}\\left(\\dfrac{36}{4/3}+\\dfrac{14}{1{,}4}+\\dfrac{150}{1}\\right)$$$$d'=\\dfrac43\\cdot(27+10+150)=\\dfrac43\\cdot187$$<div class=\"bt-ans\">$$d'\\approx249{,}3\\ \\text{cm}$$</div><p>Khoảng cách thật từ cá tới đèn là $36+14+150=200\\ \\text{cm}$: cá thấy đèn xa hơn thật.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Độ cao của ảnh đèn so với mặt dầu</span></p><p>Ảnh của đèn nằm trên đường thẳng đứng qua cá; từ cá lên tới mặt dầu là $36+14=50\\ \\text{cm}$:</p>$$H'=d'-50=249{,}3-50$$<div class=\"bt-ans\">$$H'\\approx199{,}3\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Mắt ở không khí: ảnh dịch lại gần mắt (đáy nông hơn thật) ✓. Mắt ở nước: ảnh của vật ngoài không khí dịch ra xa (đèn cao hơn thật) ✓ — đúng quy tắc ảnh dịch về phía môi trường chiết quang kém.</p><p>$H'$ rất gần $\\dfrac43\\cdot150=200\\ \\text{cm}$ vì lớp dầu mỏng và chiết suất dầu gần chiết suất nước; bỏ hẳn lớp dầu thì sai khoảng $0{,}7\\ \\text{cm}$.</p><p>Đơn vị: chỉ cộng các độ dài cùng đơn vị cm ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Đáy trông cách mặt dầu $70\\ \\text{cm}$, như được nâng lên $24\\ \\text{cm}$</p><p>b) Cá trông cách mặt dầu $37\\ \\text{cm}$</p><p>c) Đèn trông cách cá khoảng $249\\ \\text{cm}$, cao khoảng $199\\ \\text{cm}$ so với mặt dầu</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nhìn gần vuông góc qua nhiều lớp</strong> → mỗi lớp đổi thành $\\dfrac{e_k}{n_k}$; mắt ở trong chất lỏng thì nhân thêm chiết suất của chất lỏng đó.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-2-2\"><svg viewBox=\"0 0 420 256\" role=\"img\" aria-label=\"Sơ đồ bể: lớp dầu 14 xăng-ti-mét chiết suất 1,4 trên lớp nước 80 xăng-ti-mét chiết suất bốn phần ba, cá dưới mặt dầu nước 36 xăng-ti-mét, đèn cao 150 xăng-ti-mét trên mặt dầu\"><rect x=\"70\" y=\"72\" width=\"160\" height=\"46\" fill=\"#fb923c\" opacity=\"0.22\" stroke=\"none\"/><rect x=\"70\" y=\"118\" width=\"160\" height=\"126\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"70.0\" y1=\"72.0\" x2=\"230.0\" y2=\"72.0\" stroke=\"#fb923c\" stroke-width=\"1.8\" opacity=\"1\"/><line x1=\"70.0\" y1=\"118.0\" x2=\"230.0\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"70.0\" y1=\"244.0\" x2=\"230.0\" y2=\"244.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\"/><text x=\"76\" y=\"92\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">dầu n = 1,4</text><text x=\"76\" y=\"138\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nước n = 4/3</text><line x1=\"150.0\" y1=\"18.0\" x2=\"150.0\" y2=\"72.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 3\" opacity=\"1\"/><circle cx=\"150\" cy=\"18\" r=\"6\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"160\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">đèn</text><path d=\"M136,176 Q150,167 162,176 Q150,185 136,176 Z M162,176 L170,170 L170,182 Z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"/><text x=\"130\" y=\"181\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"end\">cá</text><line x1=\"244\" y1=\"95.0\" x2=\"244\" y2=\"74\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M240.3,80.4 L244.0,74.0 L247.7,80.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244\" y1=\"95.0\" x2=\"244\" y2=\"116\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M247.7,109.6 L244.0,116.0 L240.3,109.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"250\" y=\"100.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">14 cm</text><line x1=\"244\" y1=\"181.0\" x2=\"244\" y2=\"120\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M240.3,126.4 L244.0,120.0 L247.7,126.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244\" y1=\"181.0\" x2=\"244\" y2=\"242\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M247.7,235.6 L244.0,242.0 L240.3,235.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"250\" y=\"186.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">80 cm</text><line x1=\"180\" y1=\"147.0\" x2=\"180\" y2=\"120\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M176.3,126.4 L180.0,120.0 L183.7,126.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"180\" y1=\"147.0\" x2=\"180\" y2=\"174\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M183.7,167.6 L180.0,174.0 L176.3,167.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"186\" y=\"152.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">36 cm</text><line x1=\"180\" y1=\"45.0\" x2=\"180\" y2=\"20\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M176.3,26.4 L180.0,20.0 L183.7,26.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"180\" y1=\"45.0\" x2=\"180\" y2=\"70\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M183.7,63.6 L180.0,70.0 L176.3,63.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"186\" y=\"50.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">150 cm</text><text x=\"298\" y=\"60\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">a), b) mắt ở</text><text x=\"298\" y=\"78\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">không khí</text><text x=\"298\" y=\"96\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">nhìn đáy, cá</text><text x=\"298\" y=\"150\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">c) mắt cá</text><text x=\"298\" y=\"168\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ở trong nước</text><text x=\"298\" y=\"186\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nhìn đèn</text></svg><figcaption>Dữ kiện (không theo tỉ lệ): mắt người ở không khí, mắt cá ở trong nước. Chỉ các lớp nằm giữa vật và mắt mới làm ảnh dịch chỗ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lớp nước dày $80\\ \\text{cm}$ … lớp dầu dày $14\\ \\text{cm}$\"</td><td>$e_{\\text{d}}=14\\ \\text{cm}$; $e_{\\text{n}}=80\\ \\text{cm}$</td><td>Mỗi lớp nằm giữa vật và mắt làm ảnh dịch chỗ</td></tr><tr><td>\"Chiết suất của dầu là $1{,}4$, của nước là $\\dfrac43$\"</td><td>$n_{\\text{d}}=1{,}4$; $n_{\\text{n}}=\\dfrac43$</td><td>Lớp dày $e$ chiết suất $n$, mắt ở không khí: trông dày $\\dfrac en$</td></tr><tr><td>\"nhìn theo phương gần vuông góc\"</td><td>Góc tới rất nhỏ</td><td>⚠ chỉ khi nhìn gần vuông góc mới dùng được $h'=\\dfrac hn$ (xấp xỉ góc nhỏ $\\tan\\approx\\sin$); nhìn xiên thì khác</td></tr><tr><td>\"Đáy bể trông như cách mặt dầu bao nhiêu? … nâng lên bao nhiêu?\"</td><td>Cần $h'$ và $\\Delta h$</td><td>$h'=\\sum\\dfrac{e_k}{n_k}$; độ nâng $\\Delta h=$ độ sâu thật $-\\ h'$</td></tr><tr><td>\"cá … ở dưới mặt phân cách dầu – nước $36\\ \\text{cm}$\"</td><td>Nước giữa cá và mặt phân cách: $36\\ \\text{cm}$</td><td>Chỉ tính phần nước nằm giữa cá và mắt, không lấy cả $80\\ \\text{cm}$</td></tr><tr><td>\"bóng đèn … cách mặt dầu $150\\ \\text{cm}$; con cá nhìn lên\"</td><td>$H=150\\ \\text{cm}$; mắt ở trong nước</td><td>Vật ở không khí, mắt ở nước: lớp không khí dày $H$ trông dày $nH$<br>Mắt ở trong nước thì khoảng cách biểu kiến phải đổi về môi trường nào?</td></tr><tr><td>\"như ở độ cao bao nhiêu so với mặt dầu\"</td><td>Cần độ cao của ảnh đèn</td><td>Ảnh nằm ở đâu so với cá? Giữa cá và mặt dầu có những lớp nào?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"lớp nước dày $80\\ \\text{cm}$ … lớp dầu dày $14\\ \\text{cm}$\"</td><td>$e_{\\text{d}}=14\\ \\text{cm}$; $e_{\\text{n}}=80\\ \\text{cm}$</td><td>Mỗi lớp nằm giữa vật và mắt làm ảnh dịch chỗ</td></tr><tr><td>\"Chiết suất của dầu là $1{,}4$, của nước là $\\dfrac43$\"</td><td>$n_{\\text{d}}=1{,}4$; $n_{\\text{n}}=\\dfrac43$</td><td>Lớp dày $e$ chiết suất $n$, mắt ở không khí: trông dày $\\dfrac en$</td></tr><tr><td>\"nhìn theo phương gần vuông góc\"</td><td>Góc tới rất nhỏ</td><td>⚠ chỉ khi nhìn gần vuông góc mới dùng được $h'=\\dfrac hn$ (xấp xỉ góc nhỏ $\\tan\\approx\\sin$); nhìn xiên thì khác</td></tr><tr><td>\"Đáy bể trông như cách mặt dầu bao nhiêu? … nâng lên bao nhiêu?\"</td><td>Cần $h'$ và $\\Delta h$</td><td>$h'=\\sum\\dfrac{e_k}{n_k}$; độ nâng $\\Delta h=$ độ sâu thật $-\\ h'$</td></tr><tr><td>\"cá … ở dưới mặt phân cách dầu – nước $36\\ \\text{cm}$\"</td><td>Nước giữa cá và mặt phân cách: $36\\ \\text{cm}$</td><td>Chỉ tính phần nước nằm giữa cá và mắt, không lấy cả $80\\ \\text{cm}$</td></tr><tr><td>\"bóng đèn … cách mặt dầu $150\\ \\text{cm}$; con cá nhìn lên\"</td><td>$H=150\\ \\text{cm}$; mắt ở trong nước</td><td>Vật ở không khí, mắt ở nước: lớp không khí dày $H$ trông dày $nH$<br>Mắt ở trong nước thì khoảng cách biểu kiến phải đổi về môi trường nào?</td></tr><tr><td>\"như ở độ cao bao nhiêu so với mặt dầu\"</td><td>Cần độ cao của ảnh đèn</td><td>Ảnh nằm ở đâu so với cá? Giữa cá và mặt dầu có những lớp nào?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>nhìn gần vuông góc qua nhiều lớp chất lỏng</b> → mỗi lớp trông dày $\\dfrac{e}{n}$, rồi cộng.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -252,15 +661,261 @@
      "b) cá trông cách mặt dầu bao nhiêu",
      "c) cá thấy đèn cách nó bao nhiêu, cao bao nhiêu"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.8,
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        3.6
+       ],
+       [
+        20,
+        3.6
+       ],
+       [
+        20,
+        5.2
+       ],
+       [
+        0,
+        5.2
+       ]
+      ],
+      "dam": 0.3,
+      "mau": "vang"
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        0,
+        5.2
+       ],
+       [
+        20,
+        5.2
+       ],
+       [
+        20,
+        10.5
+       ],
+       [
+        0,
+        10.5
+       ]
+      ],
+      "dam": 0.2
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       3.6
+      ],
+      "den": [
+       20,
+       3.6
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       5.2
+      ],
+      "den": [
+       20,
+       5.2
+      ],
+      "kieu": "mat"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       0,
+       10.5
+      ],
+      "den": [
+       20,
+       10.5
+      ],
+      "kieu": "vat"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 4.85,
+      "text": "dầu 14 cm · n = 1,4",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 10.1,
+      "text": "nước 80 cm · n = 4/3",
+      "a": "start"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       7,
+       0.9
+      ],
+      "vi": "r",
+      "ten": "đèn"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       7,
+       1.2
+      ],
+      "den": [
+       7,
+       3.6
+      ],
+      "kieu": "mo"
+     },
+     {
+      "loai": "chu",
+      "x": 7.4,
+      "y": 2.9,
+      "text": "150 cm",
+      "a": "start"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       7,
+       7.6
+      ],
+      "vi": "r",
+      "ten": "cá"
+     },
+     {
+      "loai": "thuoc",
+      "tu": [
+       9.4,
+       5.2
+      ],
+      "den": [
+       9.4,
+       7.6
+      ],
+      "nhan": "36 cm",
+      "lech": 0.8
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       15,
+       1.2
+      ],
+      "vi": "r",
+      "ten": "mắt"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        15,
+        1.6
+       ],
+       [
+        15,
+        3.6
+       ]
+      ],
+      "dut": true
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "dầu trông dày 14 : 1,4 = 10 cm"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        15,
+        8.8
+       ],
+       "vi": "r",
+       "ten": "ảnh đáy",
+       "ro": true
+      },
+      {
+       "loai": "ghi",
+       "text": "10 + 80 : (4/3) = 70 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "nâng lên 94 − 70 = 24 cm"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        7,
+        6.56
+       ],
+       "vi": "l",
+       "ten": "ảnh cá",
+       "ro": true
+      },
+      {
+       "loai": "ghi",
+       "text": "10 + 36 : (4/3) = 37 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "36 + 14·(4/3) : 1,4 + 150·(4/3)"
+      },
+      {
+       "loai": "ghi",
+       "text": "≈ 249,3 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "249,3 − 36 − 14 = 199,3 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "cao hơn đèn thật (150 cm)"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ảnh luôn gần mặt phân cách hơn"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Phản xạ toàn phần: vùng sáng tròn trên mặt nước và đĩa chắn sáng",
    "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "problem_html": "<p>Một bóng đèn nhỏ (coi là nguồn sáng điểm) đặt ở đáy một bể nước sâu $0{,}9\\ \\text{m}$. Chiết suất của nước là $\\dfrac43$, của không khí là $1$. Mặt nước phẳng, lặng; bỏ qua ánh sáng phản xạ ở thành bể và đáy bể.</p><ol type=\"a\"><li>Ánh sáng từ đèn chỉ ló ra không khí qua một vùng tròn trên mặt nước. Tính bán kính và diện tích vùng đó. Một đĩa chắn sáng tròn, mỏng, thả nổi trên mặt nước, tâm đĩa ở ngay trên đèn, phải có bán kính tối thiểu bao nhiêu để không tia sáng nào từ đèn ló ra không khí?</li><li>Thay nước bằng một chất lỏng trong suốt có chiết suất $1{,}6$, độ sâu vẫn $0{,}9\\ \\text{m}$. Tính bán kính vùng sáng.</li><li>Trở lại bể nước. Chỉ có một đĩa chắn bán kính $0{,}5\\ \\text{m}$ thả nổi trên mặt nước. Đèn phải đặt ngay dưới tâm đĩa, ở độ sâu lớn nhất bằng bao nhiêu để không tia sáng nào ló ra không khí?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-3-0\"><svg viewBox=\"0 0 420 200\" role=\"img\" aria-label=\"Đèn ở đáy bể nước phát tia theo nhiều hướng, tia gần phương thẳng đứng ló ra không khí, tia nghiêng nhiều bị phản xạ toàn phần, trên mặt nước hiện vùng sáng tròn chưa biết bán kính\"><rect x=\"20\" y=\"70\" width=\"380\" height=\"106\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"20.0\" y1=\"70.0\" x2=\"400.0\" y2=\"70.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"176.0\" x2=\"400.0\" y2=\"176.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"26\" y=\"60\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">không khí</text><text x=\"26\" y=\"166\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">nước</text><circle cx=\"210\" cy=\"172\" r=\"6\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"210\" y=\"194\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">đèn</text><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.080;0.140;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"224.9\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M211.8,124.8 L218.0,116.9 L221.7,126.2\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"224.9\" y1=\"70.0\" x2=\"236.6\" y2=\"17.3\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M224.5,48.9 L231.2,41.5 L234.2,51.1\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"224.9\" y1=\"70.0\" x2=\"229.1\" y2=\"99.7\" stroke=\"#f87171\" stroke-width=\"1.2\" opacity=\"0.35\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.220;0.280;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"244.4\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M221.1,123.5 L228.6,116.9 L230.6,126.7\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244.4\" y1=\"70.0\" x2=\"270.4\" y2=\"22.6\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M249.9,49.6 L258.5,44.4 L258.7,54.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"244.4\" y1=\"70.0\" x2=\"253.7\" y2=\"98.5\" stroke=\"#f87171\" stroke-width=\"1.2\" opacity=\"0.35\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.360;0.420;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"266.4\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M231.9,122.1 L240.4,116.9 L240.6,126.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"266.4\" y1=\"70.0\" x2=\"305.8\" y2=\"33.1\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M277.9,52.3 L287.7,50.1 L284.7,59.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"266.4\" y1=\"70.0\" x2=\"280.4\" y2=\"96.5\" stroke=\"#f87171\" stroke-width=\"1.2\" opacity=\"0.35\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.500;0.560;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"298.9\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M248.6,120.2 L258.0,116.9 L256.1,126.7\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"298.9\" y1=\"70.0\" x2=\"342.9\" y2=\"67.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M313.7,64.0 L322.7,68.4 L314.4,74.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.640;0.700;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"327.7\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M263.8,118.8 L273.6,116.9 L270.3,126.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"327.7\" y1=\"70.0\" x2=\"357.5\" y2=\"96.8\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M340.7,74.9 L343.8,84.5 L334.0,82.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.780;0.840;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"210.0\" y1=\"172.0\" x2=\"361.4\" y2=\"70.0\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M281.8,117.6 L291.7,116.9 L287.4,125.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"361.4\" y1=\"70.0\" x2=\"394.1\" y2=\"92.9\" stroke=\"#f87171\" stroke-width=\"2.0\" opacity=\"1\"/><path d=\"M374.9,73.3 L379.1,82.4 L369.1,81.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.0\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><g opacity=\"0\"><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.920;1\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><line x1=\"121.1\" y1=\"70\" x2=\"298.9\" y2=\"70\" stroke=\"#facc15\" stroke-width=\"7\" stroke-linecap=\"round\" opacity=\"0.9\"/><text x=\"150\" y=\"100\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">vùng sáng</text><text x=\"150\" y=\"120\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">bán kính R = ?</text></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (vẽ nửa bên phải, nửa trái đối xứng): lần lượt các tia nghiêng dần. Tia nghiêng ít ló ra không khí (kèm một phần phản xạ mờ); tới một góc thì tia ló đi là là mặt nước; nghiêng hơn nữa thì phản xạ toàn phần. Góc vẽ minh hoạ, không theo số liệu của đề.</figcaption></figure>",
+   "problem_html": "<p>Một bóng đèn nhỏ (coi là nguồn sáng điểm) đặt ở đáy một bể nước sâu $0{,}9\\ \\text{m}$. Chiết suất của nước là $\\dfrac43$, của không khí là $1$. Mặt nước phẳng, lặng; bỏ qua ánh sáng phản xạ ở thành bể và đáy bể.</p><ol type=\"a\"><li>Ánh sáng từ đèn chỉ ló ra không khí qua một vùng tròn trên mặt nước. Tính bán kính và diện tích vùng đó. Một đĩa chắn sáng tròn, mỏng, thả nổi trên mặt nước, tâm đĩa ở ngay trên đèn, phải có bán kính tối thiểu bao nhiêu để không tia sáng nào từ đèn ló ra không khí?</li><li>Thay nước bằng một chất lỏng trong suốt có chiết suất $1{,}6$, độ sâu vẫn $0{,}9\\ \\text{m}$. Tính bán kính vùng sáng.</li><li>Trở lại bể nước. Chỉ có một đĩa chắn bán kính $0{,}5\\ \\text{m}$ thả nổi trên mặt nước. Đèn phải đặt ngay dưới tâm đĩa, ở độ sâu lớn nhất bằng bao nhiêu để không tia sáng nào ló ra không khí?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> phản xạ toàn phần là hiện tượng toàn bộ ánh sáng bị phản xạ, không còn tia khúc xạ.</li><li><strong>Điều kiện:</strong> đi từ môi trường chiết quang hơn sang kém hơn và $i\\ge i_{gh}$.</li><li><strong>Công thức:</strong> $\\sin i_{gh}=\\dfrac{n_2}{n_1}$; vùng sáng $R=h\\tan i_{gh}$, $S=\\pi R^2$.</li><li><strong>Hình học:</strong> góc tại nguồn (giữa đường thẳng đứng và tia) bằng góc tới ở mặt nước vì hai pháp tuyến song song.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc giới hạn nước – không khí</span></p><p>Ánh sáng đi từ nước ($n_1=\\frac43$) ra không khí ($n_2=1$), có thể phản xạ toàn phần:</p>$$\\sin i_{gh}=\\dfrac{n_2}{n_1}=\\dfrac{1}{4/3}=0{,}75$$<div class=\"bt-ans\">$$i_{gh}\\approx48{,}6^{\\circ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bán kính vùng sáng</span></p><p>Tia tới mép vùng sáng có $i=i_{gh}$; ra ngoài mép thì $i\\gt i_{gh}$, phản xạ toàn phần. Trong tam giác vuông có cạnh $h$ và $R$:</p>$$R=h\\tan i_{gh}=0{,}9\\cdot\\tan48{,}6^{\\circ}$$$$R\\approx0{,}9\\cdot1{,}134$$<div class=\"bt-ans\">$$R\\approx1{,}02\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Diện tích vùng sáng</span></p>$$S=\\pi R^2=3{,}14\\cdot1{,}0205^2$$<div class=\"bt-ans\">$$S\\approx3{,}27\\ \\text{m}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bán kính tối thiểu của đĩa chắn</span></p><p>Chỉ các tia rơi vào trong vùng sáng mới ló ra; tia rơi ra ngoài vùng đó đã bị phản xạ toàn phần.</p><p>Đĩa tâm ngay trên đèn chỉ cần phủ kín vùng sáng: $r_{\\min}=R\\approx1{,}02\\ \\text{m}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Bán kính vùng sáng với chất lỏng chiết suất 1,6</span></p>$$\\sin i'_{gh}=\\dfrac{1}{1{,}6}=0{,}625\\Rightarrow i'_{gh}\\approx38{,}7^{\\circ}$$$$R'=0{,}9\\cdot\\tan38{,}7^{\\circ}\\approx0{,}9\\cdot0{,}801$$<div class=\"bt-ans\">$$R'\\approx0{,}72\\ \\text{m}$$</div><p>Chiết suất lớn hơn thì góc giới hạn nhỏ hơn, vùng sáng thu hẹp.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Độ sâu lớn nhất của đèn</span></p><p>Đèn càng sâu thì vùng sáng càng rộng. Không tia nào ló ra khi vùng sáng nằm gọn trong đĩa: $h\\tan i_{gh}\\le r_{\\text{đ}}$.</p>$$h_{\\max}=\\dfrac{r_{\\text{đ}}}{\\tan i_{gh}}=\\dfrac{0{,}5}{1{,}134}$$<div class=\"bt-ans\">$$h_{\\max}\\approx0{,}44\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>$\\sin i_{gh}=0{,}75\\lt1$ ✓ (nếu viết ngược $\\dfrac{n_1}{n_2}$ sẽ ra $\\dfrac43\\gt1$, vô lí).</p><p>Câu c: $0{,}44\\cdot1{,}134\\approx0{,}50\\ \\text{m}$ đúng bằng bán kính đĩa ✓; $0{,}44\\ \\text{m}\\lt0{,}9\\ \\text{m}$ nên đèn treo lơ lửng trong nước, không ở đáy.</p><p>Đơn vị: $R$ cùng đơn vị với $h$ (m) vì $\\tan$ không có đơn vị ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R\\approx1{,}02\\ \\text{m}$; $S\\approx3{,}27\\ \\text{m}^2$; đĩa chắn bán kính tối thiểu $\\approx1{,}02\\ \\text{m}$</p><p>b) $R'\\approx0{,}72\\ \\text{m}$</p><p>c) $h_{\\max}\\approx0{,}44\\ \\text{m}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>nguồn sáng dưới nước, vùng sáng trên mặt nước, đĩa che</strong> → mép vùng sáng ứng với $i=i_{gh}$, $R=h\\tan i_{gh}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-3-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Sơ đồ mặt cắt: nguồn S ở đáy, tia tới mép vùng sáng hợp với pháp tuyến góc giới hạn, độ sâu h, bán kính R chưa biết, đĩa chắn nổi trên mặt nước\"><rect x=\"20\" y=\"54\" width=\"320\" height=\"142\" fill=\"#38bdf8\" opacity=\"0.18\" stroke=\"none\"/><line x1=\"20.0\" y1=\"54.0\" x2=\"340.0\" y2=\"54.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"20.0\" y1=\"196.0\" x2=\"340.0\" y2=\"196.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><rect x=\"50.8\" y=\"47\" width=\"238.3\" height=\"6\" fill=\"currentColor\" opacity=\"0.75\"/><text x=\"170\" y=\"40\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">đĩa chắn</text><circle cx=\"170\" cy=\"192\" r=\"6\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.4\"/><text x=\"160\" y=\"212\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">S</text><line x1=\"170.0\" y1=\"54.0\" x2=\"170.0\" y2=\"192.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"170.0\" y1=\"192.0\" x2=\"289.2\" y2=\"54.0\" stroke=\"#f87171\" stroke-width=\"2.2\" opacity=\"1\"/><path d=\"M224.9,120.8 L234.3,117.5 L232.5,127.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"289.2\" y1=\"28.0\" x2=\"289.2\" y2=\"94.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><path d=\"M195.7,161.4 A40,40 0 0 0 170.0,152.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"180.0\" y=\"144.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">i<tspan dy=\"4\" font-size=\"12\">gh</tspan><tspan dy=\"-4\"></tspan></text><path d=\"M269.9,77.0 A30,30 0 0 0 289.2,84.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><text x=\"259.2\" y=\"100.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">i<tspan dy=\"4\" font-size=\"12\">gh</tspan><tspan dy=\"-4\"></tspan></text><line x1=\"136\" y1=\"125.0\" x2=\"136\" y2=\"56\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M132.3,62.4 L136.0,56.0 L139.7,62.4\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"136\" y1=\"125.0\" x2=\"136\" y2=\"194\" stroke=\"#fb923c\" stroke-width=\"1.6\"/><path d=\"M139.7,187.6 L136.0,194.0 L132.3,187.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"130\" y=\"130.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">h</text><line x1=\"229.57607381358687\" y1=\"68\" x2=\"172\" y2=\"68\" stroke=\"#34d399\" stroke-width=\"1.6\"/><path d=\"M178.4,71.7 L172.0,68.0 L178.4,64.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"229.57607381358687\" y1=\"68\" x2=\"287.15214762717375\" y2=\"68\" stroke=\"#34d399\" stroke-width=\"1.6\"/><path d=\"M280.7,64.3 L287.2,68.0 L280.7,71.7\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"229.6\" y=\"86\" fill=\"#34d399\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R = ?</text><text x=\"348\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">Mép vùng</text><text x=\"348\" y=\"108\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">sáng: tia</text><text x=\"348\" y=\"126\" fill=\"currentColor\" font-size=\"14\" font-weight=\"400\" text-anchor=\"start\">tới với</text><text x=\"348.0\" y=\"146.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">i = i<tspan dy=\"4\" font-size=\"12\">gh</tspan><tspan dy=\"-4\"></tspan></text></svg><figcaption>Sơ đồ mặt cắt (không theo tỉ lệ): góc tại S bằng góc tới ở mép vùng sáng vì hai pháp tuyến song song.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bóng đèn nhỏ (coi là nguồn sáng điểm) … đáy một bể nước sâu $0{,}9\\ \\text{m}$\"</td><td>$h=0{,}9\\ \\text{m}$</td><td>Đèn phát tia theo mọi hướng, góc tới ở mặt nước tăng dần khi tia nghiêng dần</td></tr><tr><td>\"Chiết suất của nước là $\\dfrac43$, của không khí là $1$\"</td><td>$n_1=\\dfrac43$; $n_2=1$</td><td>⚠ phản xạ toàn phần cần <strong>đủ hai điều kiện</strong>: ánh sáng đi từ môi trường chiết quang hơn sang kém hơn <strong>và</strong> $i\\ge i_{gh}$</td></tr><tr><td>\"chỉ ló ra không khí qua một vùng tròn … bán kính và diện tích\"</td><td>Cần $R$, $S$</td><td>Mép vùng sáng ứng với tia có $i=i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$<br>$R=h\\tan i_{gh}$; $S=\\pi R^2$</td></tr><tr><td>\"đĩa chắn … bán kính tối thiểu … không tia sáng nào ló ra\"</td><td>Cần $r_{\\min}$</td><td>Những tia nào còn ló được ra không khí? Đĩa phải che chỗ nào?</td></tr><tr><td>\"chất lỏng trong suốt có chiết suất $1{,}6$\"</td><td>$n_1=1{,}6$; $h=0{,}9\\ \\text{m}$</td><td>$i_{gh}$ đổi theo chiết suất, tính lại rồi mới tính $R$</td></tr><tr><td>\"đĩa chắn bán kính $0{,}5\\ \\text{m}$ … độ sâu lớn nhất\"</td><td>$r_{\\text{đ}}=0{,}5\\ \\text{m}$; cần $h_{\\max}$</td><td>Đèn càng sâu thì vùng sáng càng rộng hay càng hẹp? So vùng sáng với đĩa</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bóng đèn nhỏ (coi là nguồn sáng điểm) … đáy một bể nước sâu $0{,}9\\ \\text{m}$\"</td><td>$h=0{,}9\\ \\text{m}$</td><td>Đèn phát tia theo mọi hướng, góc tới ở mặt nước tăng dần khi tia nghiêng dần</td></tr><tr><td>\"Chiết suất của nước là $\\dfrac43$, của không khí là $1$\"</td><td>$n_1=\\dfrac43$; $n_2=1$</td><td>⚠ phản xạ toàn phần cần <strong>đủ hai điều kiện</strong>: ánh sáng đi từ môi trường chiết quang hơn sang kém hơn <strong>và</strong> $i\\ge i_{gh}$</td></tr><tr><td>\"chỉ ló ra không khí qua một vùng tròn … bán kính và diện tích\"</td><td>Cần $R$, $S$</td><td>Mép vùng sáng ứng với tia có $i=i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$<br>$R=h\\tan i_{gh}$; $S=\\pi R^2$</td></tr><tr><td>\"đĩa chắn … bán kính tối thiểu … không tia sáng nào ló ra\"</td><td>Cần $r_{\\min}$</td><td>Những tia nào còn ló được ra không khí? Đĩa phải che chỗ nào?</td></tr><tr><td>\"chất lỏng trong suốt có chiết suất $1{,}6$\"</td><td>$n_1=1{,}6$; $h=0{,}9\\ \\text{m}$</td><td>$i_{gh}$ đổi theo chiết suất, tính lại rồi mới tính $R$</td></tr><tr><td>\"đĩa chắn bán kính $0{,}5\\ \\text{m}$ … độ sâu lớn nhất\"</td><td>$r_{\\text{đ}}=0{,}5\\ \\text{m}$; cần $h_{\\max}$</td><td>Đèn càng sâu thì vùng sáng càng rộng hay càng hẹp? So vùng sáng với đĩa</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>đèn dưới nước, vùng sáng tròn trên mặt nước, đĩa che</b> → mép vùng sáng là tia có $i=i_{gh}$.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -424,15 +1079,615 @@
      "b) bán kính vùng sáng khi $n=1{,}6$",
      "c) độ sâu lớn nhất của đèn dưới đĩa $0{,}5$ m"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 9.6,
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1,
+          3.0
+         ],
+         [
+          19,
+          3.0
+         ],
+         [
+          19,
+          9.0
+         ],
+         [
+          1,
+          9.0
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         3.0
+        ],
+        "den": [
+         19,
+         3.0
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         9.0
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         2.4
+        ],
+        "den": [
+         1,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         19,
+         2.4
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 7.0,
+        "text": "nước",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 8.4,
+        "text": "n = 4/3",
+        "a": "end"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         9.0
+        ],
+        "vi": "r",
+        "ten": "S"
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         2.2,
+         3.0
+        ],
+        "den": [
+         2.2,
+         9.0
+        ],
+        "nhan": "0,9 m",
+        "lech": 0.6
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10,
+          9.0
+         ],
+         [
+          12.18,
+          3.0
+         ],
+         [
+          13.23,
+          0.95
+         ]
+        ],
+        "het": 2
+       }
+      ]
+     },
+     {
+      "tu_buoc": 4,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1,
+          3.0
+         ],
+         [
+          19,
+          3.0
+         ],
+         [
+          19,
+          9.0
+         ],
+         [
+          1,
+          9.0
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         3.0
+        ],
+        "den": [
+         19,
+         3.0
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         9.0
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         2.4
+        ],
+        "den": [
+         1,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         19,
+         2.4
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 7.0,
+        "text": "chất lỏng",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 8.4,
+        "text": "n = 1,6",
+        "a": "end"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         9.0
+        ],
+        "vi": "r",
+        "ten": "S"
+       },
+       {
+        "loai": "thuoc",
+        "tu": [
+         2.2,
+         3.0
+        ],
+        "den": [
+         2.2,
+         9.0
+        ],
+        "nhan": "0,9 m",
+        "lech": 0.6
+       }
+      ]
+     },
+     {
+      "tu_buoc": 5,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          1,
+          3.0
+         ],
+         [
+          19,
+          3.0
+         ],
+         [
+          19,
+          9.0
+         ],
+         [
+          1,
+          9.0
+         ]
+        ],
+        "dam": 0.2
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         3.0
+        ],
+        "den": [
+         19,
+         3.0
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         9.0
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         1,
+         2.4
+        ],
+        "den": [
+         1,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         19,
+         2.4
+        ],
+        "den": [
+         19,
+         9.0
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 0.4,
+        "y": 1.2,
+        "text": "không khí",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 7.0,
+        "text": "nước",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 18.6,
+        "y": 8.4,
+        "text": "n = 4/3",
+        "a": "end"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         6.666666666666666,
+         2.9
+        ],
+        "den": [
+         13.333333333333334,
+         2.9
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 10,
+        "y": 1.9,
+        "text": "đĩa r = 0,5 m",
+        "a": "middle"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         10,
+         3.0
+        ],
+        "den": [
+         10,
+         9.0
+        ],
+        "kieu": "mo"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         9.0
+        ],
+        [
+         16.8,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        10,
+        3.0
+       ],
+       "den": [
+        10,
+        9.0
+       ],
+       "kieu": "mo"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        10,
+        9.0
+       ],
+       "tu": 90,
+       "den": 41.409622109270856,
+       "nhan": "i_{gh}",
+       "r": 1.6,
+       "r_nhan": 1.4
+      },
+      {
+       "loai": "ghi",
+       "text": "sin i_{gh} = 3/4 ⇒ i_{gh} ≈ 48,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         9.0
+        ],
+        [
+         3.2,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc",
+       "tu": [
+        10,
+        3.0
+       ],
+       "den": [
+        16.8,
+        3.0
+       ],
+       "nhan": "R",
+       "lech": 0.7
+      },
+      {
+       "loai": "ghi",
+       "text": "R = 0,9·tan 48,6° ≈ 1,02 m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "S = πR² = π·1,02² ≈ 3,27 m²"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        3.1966394858339093,
+        2.9
+       ],
+       "den": [
+        16.80336051416609,
+        2.9
+       ],
+       "kieu": "vat"
+      },
+      {
+       "loai": "ghi",
+       "text": "đĩa che kín vùng sáng: r = R"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         9.0
+        ],
+        [
+         14.8,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         9.0
+        ],
+        [
+         5.2,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc",
+       "tu": [
+        10,
+        3.0
+       ],
+       "den": [
+        14.8,
+        3.0
+       ],
+       "nhan": "R'",
+       "lech": 0.7
+      },
+      {
+       "loai": "ghi",
+       "text": "i_{gh} ≈ 38,7° ⇒ R' ≈ 0,72 m"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        10,
+        5.94
+       ],
+       "vi": "r",
+       "ten": "S"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         5.94
+        ],
+        [
+         13.33,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         10,
+         5.94
+        ],
+        [
+         6.67,
+         3.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        10,
+        5.94
+       ],
+       "tu": 90,
+       "den": 41.409622109270856,
+       "nhan": "i_{gh}",
+       "r": 1.2,
+       "r_nhan": 1.3
+      },
+      {
+       "loai": "ghi",
+       "text": "h = 0,5 : tan 48,6° ≈ 0,44 m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "n lớn ⇒ i_{gh} nhỏ, R nhỏ ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Nâng cao · Bản mặt song song: tia ló song song tia tới, độ dời ngang",
    "topic": "Chiết suất và định luật khúc xạ ánh sáng",
-   "problem_html": "<p>Một tấm kính phẳng có hai mặt song song, dày $e=6\\ \\text{cm}$, chiết suất $n=1{,}5$, đặt trong không khí. Chiếu một tia sáng hẹp tới mặt trên của tấm kính với góc tới $i=60^\\circ$. Dùng máy tính cầm tay để tính sin, cos, tan.</p><ol type=\"a\"><li>Tính góc khúc xạ $r$ trong kính và quãng đường tia sáng đi trong kính. Tia ló ra ở mặt dưới có phương thế nào so với tia tới?</li><li>Tính độ dời ngang $d$ của tia ló, tức là khoảng cách giữa đường kéo dài của tia tới và tia ló.</li><li>Tính $d$ khi góc tới lần lượt là $30^\\circ$, $45^\\circ$, $75^\\circ$. Nhận xét $d$ thay đổi thế nào khi $i$ tăng.</li><li>Đặt tấm kính nằm ngang lên một trang sách rồi nhìn gần vuông góc từ trên xuống. Dòng chữ trông gần mắt hơn bao nhiêu so với khi không có tấm kính?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-4-0\"><svg viewBox=\"0 0 420 248\" role=\"img\" aria-label=\"Tia sáng đi qua tấm kính hai mặt song song: khúc xạ ở mặt trên, khúc xạ lần nữa ở mặt dưới rồi ló ra\"><rect x=\"40\" y=\"92\" width=\"340\" height=\"80\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150.0\" y1=\"36.0\" x2=\"150.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><line x1=\"196.2\" y1=\"132.0\" x2=\"196.2\" y2=\"224.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"372\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">n = 1,5</text><line x1=\"30.0\" y1=\"92.0\" x2=\"30.0\" y2=\"172.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M26.0,98.9 L30.0,92.0 L34.0,98.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M34.0,165.1 L30.0,172.0 L26.0,165.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"34\" y=\"194\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">e = 6 cm</text><path d=\"M150.0,62.0 A30,30 0 0 0 124.0,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"130\" y=\"50\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">60°</text><path d=\"M150.0,126.0 A34,34 0 0 0 167.0,121.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"156\" y=\"140\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">r</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tia sáng qua tấm kính hai mặt song song</text><line x1=\"54.7\" y1=\"37.0\" x2=\"150.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M103.1,59.1 L108.1,67.8 L98.1,67.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><g opacity=\"0\"><line x1=\"150.0\" y1=\"92.0\" x2=\"196.2\" y2=\"172.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M175.9,126.8 L175.9,136.8 L167.2,131.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.3000\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"196.2\" y1=\"172.0\" x2=\"279.3\" y2=\"220.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M237.7,190.2 L242.7,198.9 L232.7,198.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6200\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><line x1=\"150.0\" y1=\"92.0\" x2=\"366.5\" y2=\"217.0\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"6 5\" opacity=\"0.8\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8600\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"54.7\" cy=\"37.0\" r=\"5\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"54.7;54.7;150.0;196.2;279.3;279.3\" keyTimes=\"0.0000;0.0000;0.2745;0.6204;0.8600;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"37.0;37.0;92.0;172.0;220.0;220.0\" keyTimes=\"0.0000;0.0000;0.2745;0.6204;0.8600;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text opacity=\"0\" x=\"16\" y=\"238\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">đường kéo dài tia tới (nét đứt)<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8600\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"300\" y=\"214\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">d = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8600\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm sáng đi chậm hơn trong kính (tốc độ giảm n lần). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một tấm kính phẳng có hai mặt song song, dày $e=6\\ \\text{cm}$, chiết suất $n=1{,}5$, đặt trong không khí. Chiếu một tia sáng hẹp tới mặt trên của tấm kính với góc tới $i=60^\\circ$. Dùng máy tính cầm tay để tính sin, cos, tan.</p><ol type=\"a\"><li>Tính góc khúc xạ $r$ trong kính và quãng đường tia sáng đi trong kính. Tia ló ra ở mặt dưới có phương thế nào so với tia tới?</li><li>Tính độ dời ngang $d$ của tia ló, tức là khoảng cách giữa đường kéo dài của tia tới và tia ló.</li><li>Tính $d$ khi góc tới lần lượt là $30^\\circ$, $45^\\circ$, $75^\\circ$. Nhận xét $d$ thay đổi thế nào khi $i$ tăng.</li><li>Đặt tấm kính nằm ngang lên một trang sách rồi nhìn gần vuông góc từ trên xuống. Dòng chữ trông gần mắt hơn bao nhiêu so với khi không có tấm kính?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Định luật khúc xạ:</strong> $n_1\\sin i=n_2\\sin r$, góc đo so với pháp tuyến.</li><li><strong>Bản mặt song song:</strong> hai mặt song song nên góc khúc xạ ở mặt trên bằng góc tới ở mặt dưới.</li><li><strong>Hình học:</strong> tam giác vuông $\\cos r=\\dfrac{e}{IJ}$ ; khoảng cách từ $J$ tới một đường $= IJ\\cdot\\sin(\\text{góc giữa chúng})$.</li><li><strong>Nhìn gần vuông góc:</strong> lớp dày $e$ chiết suất $n$ trông dày $\\dfrac en$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc khúc xạ trong kính</span></p><p>Ở mặt trên, ánh sáng từ không khí vào kính :</p>$$\\sin i=n\\sin r\\ \\Rightarrow\\ \\sin r=\\dfrac{\\sin60^\\circ}{1{,}5}\\approx0{,}5774$$<div class=\"bt-ans\">$$r\\approx35{,}3^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Quãng đường trong kính</span></p><p>Tam giác vuông có cạnh góc vuông $e$ (theo pháp tuyến) và cạnh huyền $IJ$ :</p>$$IJ=\\dfrac{e}{\\cos r}=\\dfrac{6}{\\cos35{,}3^\\circ}$$<div class=\"bt-ans\">$$IJ\\approx7{,}35\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phương của tia ló</span></p><p>Hai mặt song song nên góc tới ở mặt dưới bằng $r$. Từ kính ra không khí :</p>$$n\\sin r=\\sin i'\\ \\Rightarrow\\ \\sin i'=\\sin i\\ \\Rightarrow\\ i'=i=60^\\circ$$<div class=\"bt-ans\"><p>Tia ló song song với tia tới, chỉ bị dời sang một bên.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ dời ngang $d$</span></p><p>Tia $IJ$ hợp với đường kéo dài của tia tới góc $i-r$ ; $d$ là khoảng cách từ $J$ tới đường đó :</p>$$d=IJ\\sin(i-r)=\\dfrac{e\\sin(i-r)}{\\cos r}$$$$d=\\dfrac{6\\sin24{,}7^\\circ}{\\cos35{,}3^\\circ}$$<div class=\"bt-ans\">$$d\\approx3{,}07\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Bảng $i$ – $d$</span></p><p>Lặp lại hai bước : tìm $r$ từ $\\sin r=\\dfrac{\\sin i}{n}$, rồi $d=\\dfrac{e\\sin(i-r)}{\\cos r}$ :</p>$$i=30^\\circ:\\ r\\approx19{,}5^\\circ,\\ d\\approx1{,}16\\ \\text{cm}$$$$i=45^\\circ:\\ r\\approx28{,}1^\\circ,\\ d\\approx1{,}97\\ \\text{cm}$$$$i=75^\\circ:\\ r\\approx40{,}1^\\circ,\\ d\\approx4{,}49\\ \\text{cm}$$<div class=\"bt-ans\"><p>$i$ càng lớn thì $d$ càng lớn ; $i=0$ thì tia đi thẳng, không dời.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Nhìn vuông góc xuống trang sách</span></p><p>Lớp kính dày $e$ trông chỉ dày $\\dfrac en$, nên dòng chữ (ở mặt dưới) trông được nâng lên :</p>$$\\Delta=e-\\dfrac en=e\\left(1-\\dfrac1n\\right)=6\\left(1-\\dfrac1{1{,}5}\\right)$$<div class=\"bt-ans\">$$\\Delta=2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Vào kính (chiết quang hơn) ra $r\\lt i$ ✓ ; $IJ\\gt e$ vì là cạnh huyền ✓.</p><p>$d\\lt IJ$ ✓ ; $d$ tăng theo $i$ đúng như bảng ✓.</p><p>Ảnh dịch về phía môi trường chiết quang kém (lên phía mắt) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $r\\approx35{,}3^\\circ$ ; $IJ\\approx7{,}35\\ \\text{cm}$ ; tia ló song song tia tới</p><p>b) $d\\approx3{,}07\\ \\text{cm}$</p><p>c) $1{,}16\\ \\text{cm}$ ; $1{,}97\\ \\text{cm}$ ; $4{,}49\\ \\text{cm}$ : $i$ tăng thì $d$ tăng</p><p>d) chữ trông gần hơn $2\\ \\text{cm}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>tấm kính hai mặt song song</strong> → khúc xạ hai lần, tia ló song song tia tới ; độ dời $d=\\dfrac{e\\sin(i-r)}{\\cos r}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-4-2\"><svg viewBox=\"0 0 420 248\" role=\"img\" aria-label=\"Tấm kính dày e, tia tới tại I với góc tới 60 độ, khúc xạ tới J ở mặt dưới rồi ló ra; cần tìm r, IJ và độ dời ngang d\"><rect x=\"40\" y=\"92\" width=\"340\" height=\"80\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150.0\" y1=\"36.0\" x2=\"150.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><line x1=\"196.2\" y1=\"132.0\" x2=\"196.2\" y2=\"224.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"372\" y=\"118\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">n = 1,5</text><line x1=\"30.0\" y1=\"92.0\" x2=\"30.0\" y2=\"172.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><path d=\"M26.0,98.9 L30.0,92.0 L34.0,98.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M34.0,165.1 L30.0,172.0 L26.0,165.1\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"34\" y=\"194\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">e = 6 cm</text><path d=\"M150.0,62.0 A30,30 0 0 0 124.0,77.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"130\" y=\"50\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">60°</text><path d=\"M150.0,126.0 A34,34 0 0 0 167.0,121.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"156\" y=\"140\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">r</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dữ kiện và đại lượng cần tìm</text><line x1=\"54.7\" y1=\"37.0\" x2=\"150.0\" y2=\"92.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M103.1,59.1 L108.1,67.8 L98.1,67.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"92.0\" x2=\"196.2\" y2=\"172.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M175.9,126.8 L175.9,136.8 L167.2,131.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"196.2\" y1=\"172.0\" x2=\"279.3\" y2=\"220.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M237.7,190.2 L242.7,198.9 L232.7,198.9\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"150.0\" y1=\"92.0\" x2=\"366.5\" y2=\"217.0\" stroke=\"#f87171\" stroke-width=\"1.6\" stroke-dasharray=\"6 5\" opacity=\"0.8\"/><circle cx=\"150.0\" cy=\"92.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"156\" y=\"84\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">I</text><circle cx=\"196.2\" cy=\"172.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"188.2\" y=\"192\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">J</text><text x=\"126.2\" y=\"162.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">IJ = ?</text><text x=\"300\" y=\"214\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">d = ?</text><text x=\"16\" y=\"238\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Tia ló có song song tia tới không?</text></svg><figcaption>Dữ kiện: góc đo so với pháp tuyến (nét đứt). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Một tấm kính phẳng có hai mặt song song, dày $e=6\\ \\text{cm}$, chiết suất $n=1{,}5$, đặt trong không khí\"</td><td>$e=6\\ \\text{cm}$ ; $n=1{,}5$ ; ngoài là không khí</td><td>Bản mặt song song : hai mặt phân cách song song, cùng pháp tuyến</td></tr><tr><td>\"Chiếu một tia sáng hẹp tới mặt trên của tấm kính với góc tới $i=60^\\circ$\"</td><td>$i=60^\\circ$</td><td>⚠ góc đo so với pháp tuyến. Định luật khúc xạ : $n_1\\sin i=n_2\\sin r$</td></tr><tr><td>\"quãng đường tia sáng đi trong kính\"</td><td>$IJ=?$</td><td>Tam giác vuông nào có cạnh huyền $IJ$ và cạnh góc vuông $e$ ?</td></tr><tr><td>\"Tia ló ra ở mặt dưới có phương thế nào so với tia tới?\"</td><td>phương tia ló</td><td>Ở mặt dưới, góc tới trong kính bằng góc nào ở mặt trên ? Áp dụng định luật khúc xạ lần hai</td></tr><tr><td>\"khoảng cách giữa đường kéo dài của tia tới và tia ló\"</td><td>$d=?$</td><td>⚠ khoảng cách giữa hai đường song song đo theo phương vuông góc với chúng. Góc giữa $IJ$ và đường kéo dài tia tới là bao nhiêu ?</td></tr><tr><td>\"Tính $d$ khi góc tới lần lượt là $30^\\circ$, $45^\\circ$, $75^\\circ$\"</td><td>ba góc tới</td><td>Góc tới đổi thì đại lượng nào đổi theo ?</td></tr><tr><td>\"nhìn gần vuông góc từ trên xuống\"</td><td>nhìn gần vuông góc</td><td>⚠ chỉ khi nhìn gần vuông góc mới dùng độ sâu biểu kiến $h'=\\dfrac hn$. Ảnh của dòng chữ qua lớp kính nằm ở đâu ?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Một tấm kính phẳng có hai mặt song song, dày $e=6\\ \\text{cm}$, chiết suất $n=1{,}5$, đặt trong không khí\"</td><td>$e=6\\ \\text{cm}$ ; $n=1{,}5$ ; ngoài là không khí</td><td>Bản mặt song song : hai mặt phân cách song song, cùng pháp tuyến</td></tr><tr><td>\"Chiếu một tia sáng hẹp tới mặt trên của tấm kính với góc tới $i=60^\\circ$\"</td><td>$i=60^\\circ$</td><td>⚠ góc đo so với pháp tuyến. Định luật khúc xạ : $n_1\\sin i=n_2\\sin r$</td></tr><tr><td>\"quãng đường tia sáng đi trong kính\"</td><td>$IJ=?$</td><td>Tam giác vuông nào có cạnh huyền $IJ$ và cạnh góc vuông $e$ ?</td></tr><tr><td>\"Tia ló ra ở mặt dưới có phương thế nào so với tia tới?\"</td><td>phương tia ló</td><td>Ở mặt dưới, góc tới trong kính bằng góc nào ở mặt trên ? Áp dụng định luật khúc xạ lần hai</td></tr><tr><td>\"khoảng cách giữa đường kéo dài của tia tới và tia ló\"</td><td>$d=?$</td><td>⚠ khoảng cách giữa hai đường song song đo theo phương vuông góc với chúng. Góc giữa $IJ$ và đường kéo dài tia tới là bao nhiêu ?</td></tr><tr><td>\"Tính $d$ khi góc tới lần lượt là $30^\\circ$, $45^\\circ$, $75^\\circ$\"</td><td>ba góc tới</td><td>Góc tới đổi thì đại lượng nào đổi theo ?</td></tr><tr><td>\"nhìn gần vuông góc từ trên xuống\"</td><td>nhìn gần vuông góc</td><td>⚠ chỉ khi nhìn gần vuông góc mới dùng độ sâu biểu kiến $h'=\\dfrac hn$. Ảnh của dòng chữ qua lớp kính nằm ở đâu ?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>tấm kính hai mặt song song</b> → <b>khúc xạ hai lần</b>, tia ló song song tia tới",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -596,15 +1851,391 @@
      "c) $d$ khi $i=30^\\circ,45^\\circ,75^\\circ$",
      "d) chữ trông gần mắt hơn bao nhiêu"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.4,
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          0,
+          3.5
+         ],
+         [
+          20,
+          3.5
+         ],
+         [
+          20,
+          7.5
+         ],
+         [
+          0,
+          7.5
+         ]
+        ],
+        "dam": 0.22
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         3.5
+        ],
+        "den": [
+         20,
+         3.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         7.5
+        ],
+        "den": [
+         20,
+         7.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "chu",
+        "x": 19.6,
+        "y": 4.6,
+        "text": "kính · n = 1,5",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 19.6,
+        "y": 6.9,
+        "text": "e = 6 cm",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 19.6,
+        "y": 1.2,
+        "text": "không khí",
+        "a": "end"
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         6,
+         3.5
+        ],
+        "huong": 90,
+        "dai": 2.0
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          3.23,
+          1.9
+         ],
+         [
+          6,
+          3.5
+         ]
+        ]
+       },
+       {
+        "loai": "goc",
+        "tai": [
+         6,
+         3.5
+        ],
+        "tu": 90,
+        "den": 150,
+        "nhan": "60°",
+        "r": 1.2,
+        "r_nhan": 1.0
+       }
+      ]
+     },
+     {
+      "tu_buoc": 5,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          2,
+          3.5
+         ],
+         [
+          18,
+          3.5
+         ],
+         [
+          18,
+          7.5
+         ],
+         [
+          2,
+          7.5
+         ]
+        ],
+        "dam": 0.22
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         2,
+         3.5
+        ],
+        "den": [
+         18,
+         3.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         2,
+         7.5
+        ],
+        "den": [
+         18,
+         7.5
+        ],
+        "kieu": "mat"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         0,
+         7.6
+        ],
+        "den": [
+         20,
+         7.6
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 18.4,
+        "y": 8.7,
+        "text": "trang sách",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 17.6,
+        "y": 7.0,
+        "text": "kính · n = 1,5",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 17.6,
+        "y": 4.4,
+        "text": "e = 6 cm",
+        "a": "end"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         7.55
+        ],
+        "vi": "b",
+        "ten": "chữ"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10,
+         0.9
+        ],
+        "vi": "r",
+        "ten": "mắt"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          10,
+          1.4
+         ],
+         [
+          10,
+          3.2
+         ]
+        ],
+        "dut": true
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        8.83,
+        7.5
+       ],
+       "huong": 90,
+       "dai": 1.6
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6,
+         3.5
+        ],
+        [
+         8.83,
+         7.5
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        6,
+        3.5
+       ],
+       "tu": 270,
+       "den": 305.26438968275465,
+       "nhan": "r",
+       "r": 1.3,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "sin r = sin 60° : 1,5 ⇒ r ≈ 35,26°"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 8.31,
+       "y": 5.5,
+       "text": "IJ",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "IJ = e : cos r ≈ 7,35 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.83,
+         7.5
+        ],
+        [
+         11.6,
+         9.1
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6,
+         3.5
+        ],
+        [
+         17.6,
+         10.2
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "ghi",
+       "text": "hai mặt kính song song"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ tia ló song song tia tới"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": [
+        9.85,
+        5.72
+       ],
+       "den": [
+        8.83,
+        7.5
+       ],
+       "nhan": "d",
+       "lech": 0.0001
+      },
+      {
+       "loai": "ghi",
+       "text": "d = IJ·sin(i − r) ≈ 3,07 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "30°: 1,16 cm · 45°: 1,97 cm"
+      },
+      {
+       "loai": "ghi",
+       "text": "75°: 4,49 cm ⇒ i tăng, d tăng"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        10,
+        6.17
+       ],
+       "vi": "l",
+       "ten": "ảnh chữ",
+       "ro": true
+      },
+      {
+       "loai": "ghi",
+       "text": "e(1 − 1/n) = 6·(1 − 1/1,5) = 2 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "d < e ✓ · ảnh gần hơn 2 cm ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Nâng cao · Lăng kính: góc lệch, tán sắc và màu sắc",
    "topic": "Tán sắc ánh sáng qua lăng kính",
-   "problem_html": "<p>Một lăng kính thuỷ tinh có tiết diện thẳng là tam giác $ABC$, góc chiết quang $A=30^\\circ$, đặt trong không khí. Chiếu một chùm sáng trắng hẹp tới mặt bên $AB$ theo phương vuông góc với mặt đó. Chiết suất của thuỷ tinh với ánh sáng đỏ là $n_{\\text{đ}}=1{,}50$, với ánh sáng tím là $n_t=1{,}54$. Dùng máy tính cầm tay để tính sin, tan.</p><ol type=\"a\"><li>Tính góc ló và góc lệch $D$ (góc giữa tia ló và phương tia tới) của tia đỏ và của tia tím. Tính góc hợp bởi tia đỏ và tia tím ló ra.</li><li>Đặt một màn ảnh vuông góc với phương tia tới, cách lăng kính $1{,}2\\ \\text{m}$. Coi các tia ló cùng xuất phát từ một điểm trên mặt $AC$, khoảng cách tới màn tính từ điểm đó theo phương tia tới. Tính bề rộng vệt màu trên màn (theo cm).</li><li>Đặt một tấm lọc màu đỏ trước màn, rồi chồng thêm một tấm lọc màu lục. Mỗi lần trên màn thấy gì? Bỏ hai tấm lọc, thay màn trắng bằng một tờ giấy màu xanh lục: dải màu trông thế nào?</li><li>Thay bằng một lăng kính cùng loại thuỷ tinh nhưng góc chiết quang $A=41^\\circ$, chùm sáng vẫn tới vuông góc mặt $AB$. Ánh sáng đỏ và ánh sáng tím có ló ra khỏi mặt $AC$ không?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-5-0\"><svg viewBox=\"0 0 420 326\" role=\"img\" aria-label=\"Chùm sáng trắng tới vuông góc mặt AB, truyền thẳng tới mặt AC rồi ló ra tách thành dải màu từ đỏ tới tím trên màn\"><polygon points=\"136,34 136,214 239.9,214\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"128\" y=\"38\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"128\" y=\"218\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"245.9\" y=\"218\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C</text><path d=\"M136.0,74.0 A40,40 0 0 0 156.0,68.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"146\" y=\"92\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">30°</text><line x1=\"400.0\" y1=\"110.0\" x2=\"400.0\" y2=\"300.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"396\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">màn</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Chùm sáng trắng qua lăng kính</text><line x1=\"14.0\" y1=\"156.0\" x2=\"136.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M73.7,151.0 L82.3,156.0 L73.7,161.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><g opacity=\"0\"><line x1=\"136.0\" y1=\"156.0\" x2=\"206.4\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.3000\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"146\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">ánh sáng trắng</text><circle cx=\"14.0\" cy=\"156.0\" r=\"5\" fill=\"#f8fafc\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"14.0;14.0;136.0;206.4;206.4\" keyTimes=\"0.0000;0.0000;0.2929;0.5500;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"156.0;156.0;156.0;156.0;156.0\" keyTimes=\"0.0000;0.0000;0.2929;0.5500;1.0000\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><g opacity=\"0\"><defs><linearGradient id=\"c06g0\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f87171\"/><stop offset=\".35\" stop-color=\"#facc15\"/><stop offset=\".6\" stop-color=\"#34d399\"/><stop offset=\"1\" stop-color=\"#a78bfa\"/></linearGradient></defs><polygon points=\"206.4,156 400,211.5 400,254.6\" fill=\"url(#c06g0)\" fill-opacity=\".45\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"211.5\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M307.9,179.9 L314.8,187.1 L305.1,189.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"254.6\" stroke=\"#a78bfa\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M309.4,202.8 L314.8,211.2 L304.8,211.8\" fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\" opacity=\"0.7\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5500\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text opacity=\"0\" x=\"394\" y=\"316\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">vệt màu: ? cm<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5500\" calcMode=\"discrete\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: góc tách giữa các màu vẽ phóng to nhiều lần. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một lăng kính thuỷ tinh có tiết diện thẳng là tam giác $ABC$, góc chiết quang $A=30^\\circ$, đặt trong không khí. Chiếu một chùm sáng trắng hẹp tới mặt bên $AB$ theo phương vuông góc với mặt đó. Chiết suất của thuỷ tinh với ánh sáng đỏ là $n_{\\text{đ}}=1{,}50$, với ánh sáng tím là $n_t=1{,}54$. Dùng máy tính cầm tay để tính sin, tan.</p><ol type=\"a\"><li>Tính góc ló và góc lệch $D$ (góc giữa tia ló và phương tia tới) của tia đỏ và của tia tím. Tính góc hợp bởi tia đỏ và tia tím ló ra.</li><li>Đặt một màn ảnh vuông góc với phương tia tới, cách lăng kính $1{,}2\\ \\text{m}$. Coi các tia ló cùng xuất phát từ một điểm trên mặt $AC$, khoảng cách tới màn tính từ điểm đó theo phương tia tới. Tính bề rộng vệt màu trên màn (theo cm).</li><li>Đặt một tấm lọc màu đỏ trước màn, rồi chồng thêm một tấm lọc màu lục. Mỗi lần trên màn thấy gì? Bỏ hai tấm lọc, thay màn trắng bằng một tờ giấy màu xanh lục: dải màu trông thế nào?</li><li>Thay bằng một lăng kính cùng loại thuỷ tinh nhưng góc chiết quang $A=41^\\circ$, chùm sáng vẫn tới vuông góc mặt $AB$. Ánh sáng đỏ và ánh sáng tím có ló ra khỏi mặt $AC$ không?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Góc chiết quang $A$:</strong> góc giữa hai mặt bên ; tia tới vuông góc $AB$ thì góc tới ở $AC$ là $i_2=A$ (hai góc có cạnh tương ứng vuông góc).</li><li><strong>Ló ra không khí:</strong> $n\\sin i_2=\\sin r_2$ ; góc lệch $D=r_2-A$, lệch về phía đáy.</li><li><strong>Tán sắc:</strong> $n_{\\text{đ}}\\lt n_t$ nên tia tím lệch nhiều nhất.</li><li><strong>Màu sắc:</strong> tấm lọc cho qua màu của nó ; vật hắt lại màu của nó, hấp thụ màu khác.</li><li><strong>Điều kiện ló:</strong> $i_2\\lt i_{gh}$, $\\sin i_{gh}=\\dfrac1n$ ; ngược lại phản xạ toàn phần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc ló của tia đỏ</span></p><p>Tia vuông góc $AB$ đi thẳng tới $AC$ với góc tới $i_2=A=30^\\circ$. Ra không khí :</p>$$\\sin r_{\\text{2đ}}=n_{\\text{đ}}\\sin A=1{,}50\\cdot0{,}5=0{,}75$$<div class=\"bt-ans\">$$r_{\\text{2đ}}\\approx48{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc lệch của tia đỏ</span></p><p>Pháp tuyến của $AC$ hợp với phương tia tới góc $A$ ; tia ló lệch thêm về phía đáy :</p>$$D_{\\text{đ}}=r_{\\text{2đ}}-A=48{,}6^\\circ-30^\\circ$$<div class=\"bt-ans\">$$D_{\\text{đ}}\\approx18{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc lệch của tia tím</span></p>$$\\sin r_{2t}=1{,}54\\cdot0{,}5=0{,}77\\ \\Rightarrow\\ r_{2t}\\approx50{,}4^\\circ$$$$D_t=r_{2t}-A$$<div class=\"bt-ans\">$$D_t\\approx20{,}4^\\circ$$</div><p>Góc giữa tia đỏ và tia tím ló ra : $D_t-D_{\\text{đ}}\\approx1{,}76^\\circ$. Tia tím lệch nhiều hơn, nằm gần đáy hơn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bề rộng vệt màu</span></p><p>Tia lệch góc $D$ cắt màn cách phương tia tới $L\\tan D$ :</p>$$\\ell=L(\\tan D_t-\\tan D_{\\text{đ}})=1{,}2\\cdot(0{,}3710-0{,}3364)$$<div class=\"bt-ans\">$$\\ell\\approx0{,}042\\ \\text{m}\\approx4{,}2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tấm lọc màu</span></p><p>Lọc đỏ chỉ cho ánh sáng đỏ đi qua : trên màn chỉ còn vệt đỏ.</p><p>Chồng thêm lọc lục : ánh sáng đỏ qua được lọc đỏ nhưng bị lọc lục hấp thụ.</p><div class=\"bt-ans\"><p>Màn tối, không còn vệt màu nào.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Màn giấy xanh lục</span></p><p>Giấy lục hắt lại chủ yếu ánh sáng lục, hấp thụ phần lớn các màu khác.</p><div class=\"bt-ans\"><p>Chỉ vùng lục sáng rõ ; vùng đỏ (và tím) gần như đen.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Lăng kính $A=41^\\circ$</span></p><p>Góc tới ở $AC$ là $i_2=41^\\circ$. So với góc giới hạn của từng màu :</p>$$\\sin i_{\\text{gh,đ}}=\\dfrac1{1{,}50}\\ \\Rightarrow\\ i_{\\text{gh,đ}}\\approx41{,}8^\\circ\\gt41^\\circ$$$$\\sin i_{gh,t}=\\dfrac1{1{,}54}\\ \\Rightarrow\\ i_{gh,t}\\approx40{,}5^\\circ\\lt41^\\circ$$<p>Tia đỏ ló ra với $\\sin r_2=1{,}5\\sin41^\\circ\\approx0{,}984$, $r_2\\approx79{,}8^\\circ$ (gần sát mặt $AC$). Tia tím : $1{,}54\\sin41^\\circ\\approx1{,}010\\gt1$, không có góc ló.</p><div class=\"bt-ans\"><p>Đỏ ló ra ; tím phản xạ toàn phần ở $AC$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$r_2\\gt i_2$ khi ra không khí ✓ ; $D_t\\gt D_{\\text{đ}}$ vì $n_t\\gt n_{\\text{đ}}$ ✓.</p><p>Vệt màu vài xentimét trên màn cách hơn một mét : hợp lí với góc tách chưa tới $2^\\circ$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $D_{\\text{đ}}\\approx18{,}6^\\circ$ ($r_2\\approx48{,}6^\\circ$) ; $D_t\\approx20{,}4^\\circ$ ($r_2\\approx50{,}4^\\circ$) ; góc tách $\\approx1{,}76^\\circ$</p><p>b) vệt màu rộng khoảng $4{,}2\\ \\text{cm}$, tím ở phía đáy</p><p>c) lọc đỏ : chỉ còn vệt đỏ</p><p>c) chồng lọc lục : màn tối</p><p>c) giấy lục : chỉ vùng lục sáng, vùng đỏ gần như đen</p><p>d) đỏ ló ra, tím phản xạ toàn phần</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>tia tới vuông góc mặt bên</strong> lăng kính → $i_2=A$, $\\sin r_2=n\\sin A$, $D=r_2-A$ ; mỗi màu một $n$, kiểm $n\\sin A\\lt1$ trước.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-5-2\"><svg viewBox=\"0 0 420 312\" role=\"img\" aria-label=\"Lăng kính góc chiết quang 30 độ; tia tới vuông góc AB; ở mặt AC cần tìm góc tới, góc lệch của tia đỏ và tia tím\"><polygon points=\"136,34 136,214 239.9,214\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"128\" y=\"38\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"128\" y=\"218\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"245.9\" y=\"218\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C</text><path d=\"M136.0,74.0 A40,40 0 0 0 156.0,68.6\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><text x=\"146\" y=\"92\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">30°</text><line x1=\"400.0\" y1=\"110.0\" x2=\"400.0\" y2=\"300.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"396\" y=\"104\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">màn</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dữ kiện và đại lượng cần tìm</text><line x1=\"14.0\" y1=\"156.0\" x2=\"136.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><path d=\"M73.7,151.0 L82.3,156.0 L73.7,161.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"136.0\" y1=\"156.0\" x2=\"206.4\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"2.6\" opacity=\"1\"/><defs><linearGradient id=\"c06g2\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\"><stop offset=\"0\" stop-color=\"#f87171\"/><stop offset=\".35\" stop-color=\"#facc15\"/><stop offset=\".6\" stop-color=\"#34d399\"/><stop offset=\"1\" stop-color=\"#a78bfa\"/></linearGradient></defs><polygon points=\"206.4,156 400,211.5 400,254.6\" fill=\"url(#c06g2)\" fill-opacity=\".45\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"211.5\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M307.9,179.9 L314.8,187.1 L305.1,189.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"254.6\" stroke=\"#a78bfa\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M309.4,202.8 L314.8,211.2 L304.8,211.8\" fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"206.4\" y1=\"156.0\" x2=\"400.0\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\" opacity=\"0.7\"/><line x1=\"163.1\" y1=\"181.0\" x2=\"258.4\" y2=\"126.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"216.4\" y=\"116\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">i<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = ?</tspan></text><path d=\"M281.4,177.5 A78,78 0 0 0 284.4,156.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.8\"/><path d=\"M259.9,183.2 A60,60 0 0 0 266.4,156.0\" fill=\"none\" stroke=\"#a78bfa\" stroke-width=\"1.8\"/><text x=\"292.4\" y=\"175\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">D<tspan dy=\"4\" font-size=\"12\">đ</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"280\" y=\"244\" fill=\"#a78bfa\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">D<tspan dy=\"4\" font-size=\"12\">t</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"250\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n<tspan dy=\"4\" font-size=\"12\">đ</tspan><tspan dy=\"-4\"> = 1,50</tspan></text><text x=\"16\" y=\"272\" fill=\"#a78bfa\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n<tspan dy=\"4\" font-size=\"12\">t</tspan><tspan dy=\"-4\"> = 1,54</tspan></text><text x=\"16\" y=\"300\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">màn cách 1,2 m, vuông góc phương tia tới</text></svg><figcaption>Dữ kiện: góc lệch D đo giữa tia ló và phương tia tới (nét đứt ngang). Góc tách màu vẽ phóng to. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tam giác $ABC$, góc chiết quang $A=30^\\circ$, đặt trong không khí\"</td><td>$A=30^\\circ$ ; ngoài là không khí</td><td>Góc chiết quang : góc giữa hai mặt bên $AB$, $AC$</td></tr><tr><td>\"theo phương vuông góc với mặt đó\"</td><td>tia tới ⊥ $AB$</td><td>⚠ góc tới bằng $0$ ⇒ tia truyền thẳng vào lăng kính. Góc tới ở $AC$ bằng góc nào của lăng kính ?</td></tr><tr><td>\"Chiết suất của thuỷ tinh với ánh sáng đỏ là $n_{\\text{đ}}=1{,}50$, với ánh sáng tím là $n_t=1{,}54$\"</td><td>$n_{\\text{đ}}=1{,}50$ ; $n_t=1{,}54$</td><td>Tán sắc : chiết suất phụ thuộc màu. Ra không khí ở $AC$ : $n\\sin i_2=\\sin r_2$</td></tr><tr><td>\"góc lệch $D$ (góc giữa tia ló và phương tia tới)\"</td><td>$D_{\\text{đ}}=?$ ; $D_t=?$</td><td>Pháp tuyến của $AC$ nghiêng bao nhiêu so với phương tia tới ? Tia ló lệch về phía nào của pháp tuyến ?</td></tr><tr><td>\"Đặt một màn ảnh vuông góc với phương tia tới, cách lăng kính $1{,}2\\ \\text{m}$\"</td><td>$L=1{,}2\\ \\text{m}$</td><td>Một tia lệch góc $D$ thì cắt màn cách phương tia tới bao xa ?</td></tr><tr><td>\"Đặt một tấm lọc màu đỏ trước màn, rồi chồng thêm một tấm lọc màu lục\"</td><td>lọc đỏ ; lọc đỏ + lọc lục</td><td>Tấm lọc màu cho qua màu của nó, hấp thụ các màu khác</td></tr><tr><td>\"thay màn trắng bằng một tờ giấy màu xanh lục\"</td><td>giấy lục</td><td>Màu của vật : màu ánh sáng chiếu tới mà vật hắt lại</td></tr><tr><td>\"góc chiết quang $A=41^\\circ$\"</td><td>$A=41^\\circ$</td><td>⚠ muốn ló ra ở $AC$ : góc tới ở $AC$ phải nhỏ hơn góc giới hạn. Mỗi màu có góc giới hạn riêng không ?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tam giác $ABC$, góc chiết quang $A=30^\\circ$, đặt trong không khí\"</td><td>$A=30^\\circ$ ; ngoài là không khí</td><td>Góc chiết quang : góc giữa hai mặt bên $AB$, $AC$</td></tr><tr><td>\"theo phương vuông góc với mặt đó\"</td><td>tia tới ⊥ $AB$</td><td>⚠ góc tới bằng $0$ ⇒ tia truyền thẳng vào lăng kính. Góc tới ở $AC$ bằng góc nào của lăng kính ?</td></tr><tr><td>\"Chiết suất của thuỷ tinh với ánh sáng đỏ là $n_{\\text{đ}}=1{,}50$, với ánh sáng tím là $n_t=1{,}54$\"</td><td>$n_{\\text{đ}}=1{,}50$ ; $n_t=1{,}54$</td><td>Tán sắc : chiết suất phụ thuộc màu. Ra không khí ở $AC$ : $n\\sin i_2=\\sin r_2$</td></tr><tr><td>\"góc lệch $D$ (góc giữa tia ló và phương tia tới)\"</td><td>$D_{\\text{đ}}=?$ ; $D_t=?$</td><td>Pháp tuyến của $AC$ nghiêng bao nhiêu so với phương tia tới ? Tia ló lệch về phía nào của pháp tuyến ?</td></tr><tr><td>\"Đặt một màn ảnh vuông góc với phương tia tới, cách lăng kính $1{,}2\\ \\text{m}$\"</td><td>$L=1{,}2\\ \\text{m}$</td><td>Một tia lệch góc $D$ thì cắt màn cách phương tia tới bao xa ?</td></tr><tr><td>\"Đặt một tấm lọc màu đỏ trước màn, rồi chồng thêm một tấm lọc màu lục\"</td><td>lọc đỏ ; lọc đỏ + lọc lục</td><td>Tấm lọc màu cho qua màu của nó, hấp thụ các màu khác</td></tr><tr><td>\"thay màn trắng bằng một tờ giấy màu xanh lục\"</td><td>giấy lục</td><td>Màu của vật : màu ánh sáng chiếu tới mà vật hắt lại</td></tr><tr><td>\"góc chiết quang $A=41^\\circ$\"</td><td>$A=41^\\circ$</td><td>⚠ muốn ló ra ở $AC$ : góc tới ở $AC$ phải nhỏ hơn góc giới hạn. Mỗi màu có góc giới hạn riêng không ?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>tia tới vuông góc mặt bên</b> lăng kính → <b>góc tới mặt kia bằng A</b>, mỗi màu một n",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -819,15 +2450,426 @@
      "c) thấy gì qua tấm lọc, trên giấy lục",
      "d) với $A=41^\\circ$: đỏ, tím có ló ra $AC$?"
     ]
+   },
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 11.8,
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          6,
+          1.8
+         ],
+         [
+          6,
+          10.2
+         ],
+         [
+          10.849742261192855,
+          10.2
+         ]
+        ],
+        "dam": 0.22,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         6,
+         1.8
+        ],
+        "vi": "t",
+        "ten": "A"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         6,
+         10.2
+        ],
+        "vi": "b",
+        "ten": "B"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         10.85,
+         10.2
+        ],
+        "vi": "r",
+        "ten": "C"
+       },
+       {
+        "loai": "chu",
+        "x": 6.3,
+        "y": 4.4,
+        "text": "30°",
+        "a": "start"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          0.3,
+          5.0
+         ],
+         [
+          6,
+          5.0
+         ],
+         [
+          7.85,
+          5.0
+         ]
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 4.2,
+        "text": "tia trắng",
+        "a": "start"
+       },
+       {
+        "loai": "doan",
+        "tu": [
+         19.4,
+         2.5
+        ],
+        "den": [
+         19.4,
+         11.2
+        ],
+        "kieu": "vat"
+       },
+       {
+        "loai": "chu",
+        "x": 19.2,
+        "y": 2.0,
+        "text": "màn",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 8.0,
+        "text": "n_đ = 1,50",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 9.6,
+        "text": "n_t = 1,54",
+        "a": "start"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 6,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          6,
+          1.8
+         ],
+         [
+          6,
+          10.2
+         ],
+         [
+          13.302008597656304,
+          10.2
+         ]
+        ],
+        "dam": 0.22,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         6,
+         1.8
+        ],
+        "vi": "t",
+        "ten": "A"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         6,
+         10.2
+        ],
+        "vi": "b",
+        "ten": "B"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         13.3,
+         10.2
+        ],
+        "vi": "r",
+        "ten": "C"
+       },
+       {
+        "loai": "chu",
+        "x": 6.3,
+        "y": 4.4,
+        "text": "41°",
+        "a": "start"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          0.3,
+          5.0
+         ],
+         [
+          6,
+          5.0
+         ],
+         [
+          8.78,
+          5.0
+         ]
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 4.2,
+        "text": "tia trắng",
+        "a": "start"
+       },
+       {
+        "loai": "phap_tuyen",
+        "tai": [
+         8.78,
+         5.0
+        ],
+        "huong": 41,
+        "dai": 2.0
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 8.0,
+        "text": "n_đ = 1,50",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 9.6,
+        "text": "n_t = 1,54",
+        "a": "start"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        7.85,
+        5.0
+       ],
+       "huong": 30,
+       "dai": 2.0
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.85,
+         5.0
+        ],
+        [
+         19.4,
+         8.89
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        7.85,
+        5.0
+       ],
+       "tu": 210,
+       "den": 180,
+       "nhan": "i",
+       "r": 1.3,
+       "r_nhan": 1.1
+      },
+      {
+       "loai": "ghi",
+       "text": "i = A = 30°"
+      },
+      {
+       "loai": "ghi",
+       "text": "sin r₂ = 1,50·0,5 ⇒ r₂ ≈ 48,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.85,
+         5.0
+        ],
+        [
+         19.4,
+         5.0
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        7.85,
+        5.0
+       ],
+       "tu": -18.590377890729144,
+       "den": 0,
+       "nhan": "D_đ",
+       "r": 2.6,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "D_đ = r₂ − A ≈ 18,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.85,
+         5.0
+        ],
+        [
+         19.4,
+         9.29
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "tím: sin r₂ = 0,77 ⇒ r₂ ≈ 50,35°"
+      },
+      {
+       "loai": "ghi",
+       "text": "D_t ≈ 20,35° · đỏ–tím ≈ 1,76°"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": [
+        19.4,
+        8.89
+       ],
+       "den": [
+        19.4,
+        9.29
+       ],
+       "nhan": "ℓ",
+       "lech": -0.7
+      },
+      {
+       "loai": "ghi",
+       "text": "1,2·(tan 20,35° − tan 18,59°)"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℓ ≈ 4,16 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "lọc đỏ: còn vệt đỏ · thêm lục: tối"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "giấy lục: vùng lục sáng, còn lại tối"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.78,
+         5.0
+        ],
+        [
+         12.68,
+         8.13
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.78,
+         5.0
+        ],
+        [
+         8.36,
+         7.97
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "đỏ ló ra, tím phản xạ toàn phần"
+      },
+      {
+       "loai": "ghi",
+       "text": "i_{gh,t} 40,5° < 41° < i_{gh,đ} 41,8°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "n lớn ⇒ lệch nhiều, i_{gh} nhỏ ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 6 · Nâng cao · Lăng kính phản xạ toàn phần: đổi môi trường bên ngoài",
    "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "problem_html": "<p>Một lăng kính thuỷ tinh có tiết diện thẳng là tam giác $ABC$ vuông cân tại $A$, chiết suất $n=1{,}5$, đặt trong không khí. Chiếu một tia sáng hẹp tới mặt huyền $BC$ theo phương vuông góc với mặt đó, ở gần đầu $B$. Chiết suất của nước là $\\dfrac43$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Vẽ đường truyền của tia sáng qua lăng kính. Tia ló ra khỏi lăng kính có phương và chiều thế nào so với tia tới?</li><li>Chiết suất của lăng kính phải thoả điều kiện gì để đường truyền ở câu a xảy ra khi lăng kính đặt trong không khí?</li><li>Nhúng cả lăng kính vào nước. Lăng kính phải có chiết suất tối thiểu bằng bao nhiêu để tia sáng vẫn đi như câu a? Với lăng kính thuỷ tinh đã cho (vẫn nhúng trong nước), tia sáng có ló ra ở mặt bên thứ nhất không? Nếu có, tính góc khúc xạ và góc hợp bởi tia ló với phương tia tới.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-6-0\"><svg viewBox=\"0 0 420 306\" role=\"img\" aria-label=\"Tia sáng đi lên, vuông góc mặt huyền BC của lăng kính vuông cân, truyền thẳng tới mặt bên AB\"><polygon points=\"80,210 340,210 210,80\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M199,91 L210,102 L221,91\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"210\" y=\"72\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"72\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"348\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C</text><text x=\"286\" y=\"196\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">n = 1,5</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Tia sáng tới vuông góc mặt huyền BC</text><line x1=\"128.0\" y1=\"296.0\" x2=\"128.0\" y2=\"210.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M123.0,256.5 L128.0,247.8 L133.0,256.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><g opacity=\"0\"><line x1=\"128.0\" y1=\"210.0\" x2=\"128.0\" y2=\"162.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M123.0,191.8 L128.0,183.1 L133.0,191.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4200\" calcMode=\"discrete\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"128.0\" cy=\"296.0\" r=\"5\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"128.0;128.0;128.0;128.0;128.0\" keyTimes=\"0.0000;0.0000;0.4354;0.8000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"296.0;296.0;210.0;162.0;162.0\" keyTimes=\"0.0000;0.0000;0.4354;0.8000;1.0000\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><g opacity=\"0\"><line x1=\"156.3\" y1=\"190.3\" x2=\"99.7\" y2=\"133.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8000\" calcMode=\"discrete\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text opacity=\"0\" x=\"16\" y=\"60\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">tia đi tiếp thế nào?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8000\" calcMode=\"discrete\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy tới lúc tia gặp mặt bên thứ nhất; đường đi sau đó là câu hỏi của bài. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một lăng kính thuỷ tinh có tiết diện thẳng là tam giác $ABC$ vuông cân tại $A$, chiết suất $n=1{,}5$, đặt trong không khí. Chiếu một tia sáng hẹp tới mặt huyền $BC$ theo phương vuông góc với mặt đó, ở gần đầu $B$. Chiết suất của nước là $\\dfrac43$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Vẽ đường truyền của tia sáng qua lăng kính. Tia ló ra khỏi lăng kính có phương và chiều thế nào so với tia tới?</li><li>Chiết suất của lăng kính phải thoả điều kiện gì để đường truyền ở câu a xảy ra khi lăng kính đặt trong không khí?</li><li>Nhúng cả lăng kính vào nước. Lăng kính phải có chiết suất tối thiểu bằng bao nhiêu để tia sáng vẫn đi như câu a? Với lăng kính thuỷ tinh đã cho (vẫn nhúng trong nước), tia sáng có ló ra ở mặt bên thứ nhất không? Nếu có, tính góc khúc xạ và góc hợp bởi tia ló với phương tia tới.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Góc tới ở mặt bên:</strong> bằng góc giữa mặt tia đi vào và mặt tia gặp tiếp theo.</li><li><strong>Phản xạ toàn phần:</strong> đi từ $n_1$ sang $n_2\\lt n_1$ VÀ $i\\ge i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$.</li><li><strong>Phản xạ:</strong> góc phản xạ bằng góc tới.</li><li><strong>Khúc xạ:</strong> $n_1\\sin i=n_2\\sin r$, môi trường 1 chứa tia tới.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới ở mặt bên thứ nhất</span></p><p>Tia vuông góc $BC$ đi thẳng tới mặt $AB$. Góc tới tại $K$ bằng góc giữa mặt $BC$ và mặt $AB$, tức góc $B$ :</p><div class=\"bt-ans\">$$i=\\widehat B=45^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đường đi tiếp của tia sáng</span></p>$$\\sin i_{gh}=\\dfrac1{1{,}5}\\ \\Rightarrow\\ i_{gh}\\approx41{,}8^\\circ\\lt45^\\circ$$<p>Tại $K$ phản xạ toàn phần ; tia phản xạ quay $90^\\circ$, đi song song $BC$, gặp mặt $AC$ cũng với góc tới $45^\\circ$ nên lại phản xạ toàn phần.</p><p>Tia đi xuống vuông góc $BC$, ló ra không đổi phương.</p><div class=\"bt-ans\"><p>Tia ló song song, ngược chiều tia tới (quay $180^\\circ$), dời sang một bên.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiết suất tối thiểu trong không khí</span></p>$$i\\ge i_{gh}\\ \\Leftrightarrow\\ \\sin45^\\circ\\ge\\dfrac1n$$$$n\\ge\\dfrac1{\\sin45^\\circ}=\\sqrt2$$<div class=\"bt-ans\">$$n_{min}\\approx1{,}414$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiết suất tối thiểu khi nhúng trong nước</span></p>$$\\sin45^\\circ\\ge\\dfrac{n_{\\text{nước}}}{n}\\ \\Rightarrow\\ n\\ge\\dfrac43\\sqrt2$$<div class=\"bt-ans\">$$n_{min}\\approx1{,}886$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Góc giới hạn thuỷ tinh – nước</span></p>$$\\sin i_{gh}=\\dfrac{4/3}{1{,}5}\\approx0{,}889$$<div class=\"bt-ans\">$$i_{gh}\\approx62{,}7^\\circ$$</div><p>Góc tới $45^\\circ\\lt62{,}7^\\circ$ : không còn phản xạ toàn phần, tia ló vào nước ngay ở mặt bên thứ nhất.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Góc khúc xạ vào nước</span></p>$$1{,}5\\sin45^\\circ=\\dfrac43\\sin r\\ \\Rightarrow\\ \\sin r\\approx0{,}796$$<div class=\"bt-ans\">$$r\\approx52{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Góc giữa tia ló và phương tia tới</span></p><p>Tia tới và tia ló nằm cùng phía pháp tuyến tại $K$ (tia ló lệch xa pháp tuyến hơn) :</p>$$\\delta=r-i=52{,}7^\\circ-45^\\circ$$<div class=\"bt-ans\">$$\\delta\\approx7{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$1{,}414\\lt1{,}5\\lt1{,}886$ : thuỷ tinh dùng được trong không khí, không dùng được trong nước ✓.</p><p>Từ thuỷ tinh ra nước (chiết quang kém hơn) ra $r\\gt i$ ✓ ; trong nước góc giới hạn lớn hơn trong không khí ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) phản xạ toàn phần hai lần ; tia ló song song, ngược chiều tia tới</p><p>b) $n\\ge\\sqrt2\\approx1{,}414$</p><p>c) cần $n\\ge\\dfrac43\\sqrt2\\approx1{,}886$</p><p>c) thuỷ tinh $1{,}5$ : tia ló vào nước ở mặt bên thứ nhất, $r\\approx52{,}7^\\circ$, lệch $\\approx7{,}7^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>lăng kính vuông cân</strong>, tia <strong>vuông góc mặt huyền</strong> → góc tới mặt bên bằng góc đáy ; so với $i_{gh}$ của đúng môi trường bên ngoài.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-6-2\"><svg viewBox=\"0 0 420 306\" role=\"img\" aria-label=\"Lăng kính tam giác vuông cân vuông tại A; tia vuông góc BC đi thẳng tới điểm K trên mặt AB; cần tìm góc tới tại K\"><polygon points=\"80,210 340,210 210,80\" fill=\"#38bdf8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M199,91 L210,102 L221,91\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"210\" y=\"72\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"72\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"348\" y=\"216\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">C</text><text x=\"286\" y=\"196\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">n = 1,5</text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dữ kiện và đại lượng cần tìm</text><line x1=\"128.0\" y1=\"296.0\" x2=\"128.0\" y2=\"210.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M123.0,256.5 L128.0,247.8 L133.0,256.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"128.0\" y1=\"210.0\" x2=\"128.0\" y2=\"162.0\" stroke=\"#f87171\" stroke-width=\"2.4\" opacity=\"1\"/><path d=\"M123.0,191.8 L128.0,183.1 L133.0,191.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"156.3\" y1=\"190.3\" x2=\"99.7\" y2=\"133.7\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><circle cx=\"128.0\" cy=\"162.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"118\" y=\"158\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">K</text><text x=\"142\" y=\"166\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">i = ?</text><text x=\"160\" y=\"248\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">a, b) ngoài là không khí</text><text x=\"160\" y=\"270\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">c) ngoài là nước, n = 4/3</text></svg><figcaption>Dữ kiện: tia tới vuông góc mặt huyền nên đi thẳng vào lăng kính. Pháp tuyến tại K nét đứt. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tam giác $ABC$ vuông cân tại $A$, chiết suất $n=1{,}5$, đặt trong không khí\"</td><td>vuông cân tại $A$ ; $n=1{,}5$</td><td>Hai góc ở $B$, $C$ bằng bao nhiêu ?</td></tr><tr><td>\"Chiếu một tia sáng hẹp tới mặt huyền $BC$ theo phương vuông góc với mặt đó\"</td><td>tia tới ⊥ $BC$</td><td>Góc tới bằng $0$ ⇒ truyền thẳng. Góc tới ở mặt bên bằng góc giữa mặt tia đi vào và mặt tia gặp tiếp theo</td></tr><tr><td>\"Tia ló ra khỏi lăng kính có phương và chiều thế nào so với tia tới?\"</td><td>đường truyền</td><td>⚠ phản xạ toàn phần khi : đi từ môi trường chiết quang hơn sang kém hơn VÀ góc tới $\\ge i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>\"Chiết suất của lăng kính phải thoả điều kiện gì\"</td><td>$n_{min}=?$</td><td>Viết điều kiện góc tới $\\ge i_{gh}$ thành bất đẳng thức của $n$</td></tr><tr><td>\"Nhúng cả lăng kính vào nước\"</td><td>$n_{\\text{nước}}=\\dfrac43$</td><td>⚠ môi trường ngoài đổi ⇒ $i_{gh}$ đổi : $\\sin i_{gh}=\\dfrac{n_{\\text{nước}}}{n}$</td></tr><tr><td>\"tính góc khúc xạ và góc hợp bởi tia ló với phương tia tới\"</td><td>$r=?$ ; góc lệch $=?$</td><td>Định luật khúc xạ, môi trường 1 chứa tia tới : $n_1\\sin i=n_2\\sin r$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"tam giác $ABC$ vuông cân tại $A$, chiết suất $n=1{,}5$, đặt trong không khí\"</td><td>vuông cân tại $A$ ; $n=1{,}5$</td><td>Hai góc ở $B$, $C$ bằng bao nhiêu ?</td></tr><tr><td>\"Chiếu một tia sáng hẹp tới mặt huyền $BC$ theo phương vuông góc với mặt đó\"</td><td>tia tới ⊥ $BC$</td><td>Góc tới bằng $0$ ⇒ truyền thẳng. Góc tới ở mặt bên bằng góc giữa mặt tia đi vào và mặt tia gặp tiếp theo</td></tr><tr><td>\"Tia ló ra khỏi lăng kính có phương và chiều thế nào so với tia tới?\"</td><td>đường truyền</td><td>⚠ phản xạ toàn phần khi : đi từ môi trường chiết quang hơn sang kém hơn VÀ góc tới $\\ge i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>\"Chiết suất của lăng kính phải thoả điều kiện gì\"</td><td>$n_{min}=?$</td><td>Viết điều kiện góc tới $\\ge i_{gh}$ thành bất đẳng thức của $n$</td></tr><tr><td>\"Nhúng cả lăng kính vào nước\"</td><td>$n_{\\text{nước}}=\\dfrac43$</td><td>⚠ môi trường ngoài đổi ⇒ $i_{gh}$ đổi : $\\sin i_{gh}=\\dfrac{n_{\\text{nước}}}{n}$</td></tr><tr><td>\"tính góc khúc xạ và góc hợp bởi tia ló với phương tia tới\"</td><td>$r=?$ ; góc lệch $=?$</td><td>Định luật khúc xạ, môi trường 1 chứa tia tới : $n_1\\sin i=n_2\\sin r$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>lăng kính vuông cân</b>, tia <b>vuông góc mặt huyền</b> → so góc tới mặt bên với <b>i_gh của môi trường ngoài</b>",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -1275,11 +3317,11 @@
       },
       {
        "loai": "ghi",
-       "text": "45° > i_{gh} ≈ 41,8°"
+       "text": "phản xạ toàn phần ở AB, AC"
       },
       {
        "loai": "ghi",
-       "text": "⇒ phản xạ toàn phần ở AB, AC"
+       "text": "vì 45° > i_{gh} ≈ 41,8°"
       }
      ],
      [
@@ -1297,11 +3339,11 @@
      [
       {
        "loai": "ghi",
-       "text": "sin i_{gh} = 0,889 ⇒ i_{gh} ≈ 62,7°"
+       "text": "góc giới hạn ≈ 62,7° > 45°"
       },
       {
        "loai": "ghi",
-       "text": "45° < 62,7° ⇒ ló ra nước ở AB"
+       "text": "⇒ ló ra nước ở AB"
       }
      ],
      [
@@ -1382,7 +3424,8 @@
        "text": "không khí: quay ngược 180° · nước: lệch 7,7° ✓"
       }
      ]
-    ]
+    ],
+    "de": true
    },
    "tom_de": {
     "cho": [
@@ -1401,9 +3444,9 @@
    "form": "bai_tap",
    "label": "Dạng 7 · Vận dụng cao · Mở rộng HSG: Sợi quang định lượng",
    "topic": "Điều kiện xảy ra phản xạ toàn phần",
-   "problem_html": "<p>Một sợi quang đặt thẳng, dài $L=1\\ \\text{km}$, gồm lõi có chiết suất $n_1=1{,}60$ và lớp vỏ có chiết suất $n_2=1{,}50$. Hai đầu sợi được cắt phẳng, vuông góc với trục sợi. Chiếu ánh sáng từ không khí vào tâm một đầu sợi. Lấy $c=3\\cdot10^8\\ \\text{m/s}$; chiết suất của nước là $\\dfrac43$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Tính góc giới hạn ở mặt phân cách lõi – vỏ. Tia sáng trong lõi phải hợp với trục sợi một góc tối đa bằng bao nhiêu để bị phản xạ toàn phần ở thành lõi? Suy ra góc tới lớn nhất $i_{max}$ ở đầu sợi để ánh sáng được giữ trong lõi.</li><li>Tính thời gian ánh sáng truyền hết sợi theo tia đi dọc trục và theo tia xiên nhất còn được giữ trong lõi. Hai tia chênh nhau bao nhiêu nano giây? Vì sao một xung sáng rất ngắn đi qua sợi thì bị \"nhoè\" ra?</li><li>Nếu đầu sợi đặt trong nước, góc tới lớn nhất $i_{max}$ bằng bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-7-0\"><svg viewBox=\"0 0 420 270\" role=\"img\" aria-label=\"Trong lõi sợi quang, một chấm sáng đi dọc trục và một chấm sáng đi đường gấp khúc phản xạ ở thành; chấm đi dọc trục tới đầu kia trước\"><rect x=\"70\" y=\"96\" width=\"334\" height=\"92\" fill=\"#94a3b8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"70\" y=\"112\" width=\"334\" height=\"60\" fill=\"#38bdf8\" fill-opacity=\".16\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"20.0\" y1=\"142.0\" x2=\"404.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"8 5\" opacity=\"0.6\"/><text x=\"400\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">vỏ n<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 1,50</tspan></text><text x=\"400\" y=\"208\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">lõi n<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 1,60</tspan></text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Hai tia cùng vào sợi một lúc: dọc trục và xiên</text><line x1=\"14.0\" y1=\"94.0\" x2=\"70.0\" y2=\"142.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M42.0,111.4 L45.4,120.9 L35.5,119.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70.0\" y1=\"142.0\" x2=\"137.4\" y2=\"112.0\" stroke=\"#f87171\" stroke-width=\"1.8\" opacity=\"0.55\"/><line x1=\"137.4\" y1=\"112.0\" x2=\"272.1\" y2=\"172.0\" stroke=\"#f87171\" stroke-width=\"1.8\" opacity=\"0.55\"/><line x1=\"272.1\" y1=\"172.0\" x2=\"404.0\" y2=\"113.3\" stroke=\"#f87171\" stroke-width=\"1.8\" opacity=\"0.55\"/><circle cx=\"70.0\" cy=\"142.0\" r=\"6\" fill=\"#facc15\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"70.0;70.0;404.0;404.0\" keyTimes=\"0.0000;0.0000;0.6852;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"142.0;142.0;142.0;142.0\" keyTimes=\"0.0000;0.0000;0.6852;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"70.0\" cy=\"142.0\" r=\"6\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.2\"><animate attributeName=\"cx\" values=\"70.0;70.0;137.4;272.1;404.0;404.0\" keyTimes=\"0.0000;0.0000;0.1513;0.4539;0.7500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"142.0;142.0;112.0;172.0;113.3;113.3\" keyTimes=\"0.0000;0.0000;0.1513;0.4539;0.7500;1.0000\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text opacity=\"0\" x=\"16\" y=\"236\" fill=\"#facc15\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">tia dọc trục tới trước<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6852\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text><text opacity=\"0\" x=\"16\" y=\"258\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">tia xiên tới sau: Δt = ?<animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7500\" calcMode=\"discrete\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai chấm sáng cùng tốc độ c/n<sub>1</sub> trong lõi; tia xiên phản xạ toàn phần ở thành nên đi đường dài hơn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một sợi quang đặt thẳng, dài $L=1\\ \\text{km}$, gồm lõi có chiết suất $n_1=1{,}60$ và lớp vỏ có chiết suất $n_2=1{,}50$. Hai đầu sợi được cắt phẳng, vuông góc với trục sợi. Chiếu ánh sáng từ không khí vào tâm một đầu sợi. Lấy $c=3\\cdot10^8\\ \\text{m/s}$; chiết suất của nước là $\\dfrac43$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Tính góc giới hạn ở mặt phân cách lõi – vỏ. Tia sáng trong lõi phải hợp với trục sợi một góc tối đa bằng bao nhiêu để bị phản xạ toàn phần ở thành lõi? Suy ra góc tới lớn nhất $i_{max}$ ở đầu sợi để ánh sáng được giữ trong lõi.</li><li>Tính thời gian ánh sáng truyền hết sợi theo tia đi dọc trục và theo tia xiên nhất còn được giữ trong lõi. Hai tia chênh nhau bao nhiêu nano giây? Vì sao một xung sáng rất ngắn đi qua sợi thì bị \"nhoè\" ra?</li><li>Nếu đầu sợi đặt trong nước, góc tới lớn nhất $i_{max}$ bằng bao nhiêu?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Phản xạ toàn phần ở thành lõi:</strong> $n_1\\gt n_2$ và góc tới $\\ge i_{gh}$, $\\sin i_{gh}=\\dfrac{n_2}{n_1}$.</li><li><strong>Hình học:</strong> pháp tuyến của thành vuông góc với trục ⇒ góc với trục $\\theta=90^\\circ-$ góc tới ở thành.</li><li><strong>Đầu sợi:</strong> $n_{\\text{ngoài}}\\sin i=n_1\\sin\\theta$.</li><li><strong>Tốc độ trong lõi:</strong> $v=\\dfrac{c}{n_1}$ ; $t=\\dfrac sv$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc giới hạn lõi – vỏ</span></p>$$\\sin i_{gh}=\\dfrac{n_2}{n_1}=\\dfrac{1{,}50}{1{,}60}=0{,}9375$$<div class=\"bt-ans\">$$i_{gh}\\approx69{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc lớn nhất giữa tia và trục</span></p><p>Pháp tuyến của thành vuông góc với trục nên góc với trục và góc tới ở thành phụ nhau. Cần góc tới $\\ge i_{gh}$ :</p>$$\\theta\\le\\theta_{max}=90^\\circ-i_{gh}$$<div class=\"bt-ans\">$$\\theta_{max}\\approx20{,}4^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc tới lớn nhất ở đầu sợi</span></p><p>Pháp tuyến của đầu sợi là trục. Từ không khí vào lõi :</p>$$\\sin i_{max}=n_1\\sin\\theta_{max}=n_1\\cos i_{gh}=\\sqrt{n_1^2-n_2^2}$$$$\\sin i_{max}=\\sqrt{1{,}6^2-1{,}5^2}\\approx0{,}557$$<div class=\"bt-ans\">$$i_{max}\\approx33{,}8^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thời gian theo tia dọc trục</span></p>$$t_0=\\dfrac{L}{v}=\\dfrac{n_1L}{c}=\\dfrac{1{,}6\\cdot1000}{3\\cdot10^8}$$<div class=\"bt-ans\">$$t_0\\approx5{,}333\\cdot10^{-6}\\ \\text{s}=5{,}333\\ \\mu\\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chênh lệch thời gian</span></p><p>Tia xiên nhất hợp với trục $\\theta_{max}$ ; mỗi đoạn gấp khúc là cạnh huyền, tổng quãng đường $\\dfrac{L}{\\cos\\theta_{max}}=\\dfrac{L}{\\sin i_{gh}}$ :</p>$$t_1=\\dfrac{t_0}{\\sin i_{gh}}=\\dfrac{5{,}333}{0{,}9375}\\approx5{,}689\\ \\mu\\text{s}$$$$\\Delta t=t_1-t_0$$<div class=\"bt-ans\">$$\\Delta t\\approx0{,}356\\ \\mu\\text{s}=356\\ \\text{ns}$$</div><p>Xung sáng ngắn gồm nhiều tia đi các đường khác nhau, tới đầu kia lệch nhau tới hàng trăm nano giây nên xung bị kéo dài ra.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Đầu sợi đặt trong nước</span></p><p>Điều kiện ở thành lõi không đổi ($\\theta_{max}$ như cũ) ; chỉ khúc xạ ở đầu sợi đổi :</p>$$n_{\\text{nước}}\\sin i_{max}=n_1\\sin\\theta_{max}\\ \\Rightarrow\\ \\sin i_{max}=\\dfrac{0{,}557}{4/3}\\approx0{,}418$$<div class=\"bt-ans\">$$i_{max}\\approx24{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>$\\sin i_{max}\\lt1$ ✓ ; trong nước $i_{max}$ nhỏ hơn trong không khí vì môi trường ngoài chiết quang hơn ✓.</p><p>$t_1\\gt t_0$ ✓ ; chênh $\\dfrac{1}{0{,}9375}-1\\approx6{,}7\\,\\%$ của $t_0$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i_{gh}\\approx69{,}6^\\circ$ ; $\\theta_{max}\\approx20{,}4^\\circ$ ; $i_{max}\\approx33{,}8^\\circ$</p><p>b) $t_0\\approx5{,}333\\ \\mu\\text{s}$ ; $t_1\\approx5{,}689\\ \\mu\\text{s}$ ; chênh $\\approx356\\ \\text{ns}$</p><p>c) $i_{max}\\approx24{,}7^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>lõi – vỏ, sợi quang</strong> → $\\sin i_{gh}=n_2/n_1$ ở thành, $\\theta=90^\\circ-i_{gh}$ với trục, rồi khúc xạ ở đầu sợi ra $i_{max}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"c06-7-2\"><svg viewBox=\"0 0 420 270\" role=\"img\" aria-label=\"Đầu sợi quang: tia tới với góc i max, khúc xạ vào lõi hợp với trục góc theta, gặp thành lõi với góc tới giới hạn\"><rect x=\"70\" y=\"96\" width=\"334\" height=\"92\" fill=\"#94a3b8\" fill-opacity=\".14\" stroke=\"currentColor\" stroke-width=\"1.6\"/><rect x=\"70\" y=\"112\" width=\"334\" height=\"60\" fill=\"#38bdf8\" fill-opacity=\".16\" stroke=\"currentColor\" stroke-width=\"1.6\"/><line x1=\"20.0\" y1=\"142.0\" x2=\"404.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"8 5\" opacity=\"0.6\"/><text x=\"400\" y=\"90\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">vỏ n<tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 1,50</tspan></text><text x=\"400\" y=\"208\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">lõi n<tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 1,60</tspan></text><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">Dữ kiện và đại lượng cần tìm</text><line x1=\"14.0\" y1=\"112.4\" x2=\"70.0\" y2=\"142.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M40.0,120.5 L45.4,129.0 L35.4,129.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70.0\" y1=\"142.0\" x2=\"168.1\" y2=\"112.0\" stroke=\"#f87171\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M115.2,123.0 L125.0,125.2 L118.1,132.5\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"70.0\" y1=\"78.0\" x2=\"70.0\" y2=\"182.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"0.9\"/><text x=\"12\" y=\"104.4\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">i<tspan dy=\"4\" font-size=\"12\">max</tspan><tspan dy=\"-4\"> = ?</tspan></text><path d=\"M116.0,142.0 A46,46 0 0 0 114.0,128.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><text x=\"120\" y=\"144\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">θ = ?</text><line x1=\"168.1\" y1=\"78.0\" x2=\"168.1\" y2=\"156.0\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\" opacity=\"0.8\"/><text x=\"176.1\" y=\"134\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">i<tspan dy=\"4\" font-size=\"12\">gh</tspan><tspan dy=\"-4\"> = ?</tspan></text><text x=\"16\" y=\"236\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">dài L = 1 km ; c = 3·10<tspan dy=\"-6\" font-size=\"12\">8</tspan><tspan dy=\"6\"> m/s</tspan></text><text x=\"16\" y=\"258\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">c) đầu sợi đặt trong nước, n = 4/3</text></svg><figcaption>Dữ kiện: θ đo giữa tia trong lõi và trục sợi ; góc tới ở thành đo so với pháp tuyến của thành. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"gồm lõi có chiết suất $n_1=1{,}60$ và lớp vỏ có chiết suất $n_2=1{,}50$\"</td><td>$n_1=1{,}60$ ; $n_2=1{,}50$</td><td>⚠ $n_1\\gt n_2$ nên ở thành lõi có thể phản xạ toàn phần : $\\sin i_{gh}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>\"Hai đầu sợi được cắt phẳng, vuông góc với trục sợi\"</td><td>đầu sợi ⊥ trục</td><td>Pháp tuyến của đầu sợi trùng phương nào ? Pháp tuyến của thành lõi vuông góc với phương nào ?</td></tr><tr><td>\"Tia sáng trong lõi phải hợp với trục sợi một góc tối đa bằng bao nhiêu\"</td><td>$\\theta_{max}=?$</td><td>Góc với trục và góc tới ở thành liên hệ thế nào ? Tia càng nghiêng thì góc tới ở thành lớn hay nhỏ ?</td></tr><tr><td>\"Suy ra góc tới lớn nhất $i_{max}$ ở đầu sợi\"</td><td>$i_{max}=?$</td><td>Định luật khúc xạ ở đầu sợi, từ không khí vào lõi</td></tr><tr><td>\"dài $L=1\\ \\text{km}$\"</td><td>$L=1000\\ \\text{m}$ ; $c=3\\cdot10^8\\ \\text{m/s}$</td><td>Tốc độ trong lõi : $v=\\dfrac{c}{n_1}$ ; $t=\\dfrac{s}{v}$</td></tr><tr><td>\"theo tia xiên nhất còn được giữ trong lõi\"</td><td>$\\Delta t=?$</td><td>Tia gấp khúc đi quãng đường dài bao nhiêu so với trục ? Mỗi đoạn là cạnh huyền của tam giác vuông nào ?</td></tr><tr><td>\"Nếu đầu sợi đặt trong nước\"</td><td>$n_{\\text{nước}}=\\dfrac43$</td><td>⚠ điều kiện ở thành lõi không đổi ; chỉ khúc xạ ở đầu sợi đổi</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"gồm lõi có chiết suất $n_1=1{,}60$ và lớp vỏ có chiết suất $n_2=1{,}50$\"</td><td>$n_1=1{,}60$ ; $n_2=1{,}50$</td><td>⚠ $n_1\\gt n_2$ nên ở thành lõi có thể phản xạ toàn phần : $\\sin i_{gh}=\\dfrac{n_2}{n_1}$</td></tr><tr><td>\"Hai đầu sợi được cắt phẳng, vuông góc với trục sợi\"</td><td>đầu sợi ⊥ trục</td><td>Pháp tuyến của đầu sợi trùng phương nào ? Pháp tuyến của thành lõi vuông góc với phương nào ?</td></tr><tr><td>\"Tia sáng trong lõi phải hợp với trục sợi một góc tối đa bằng bao nhiêu\"</td><td>$\\theta_{max}=?$</td><td>Góc với trục và góc tới ở thành liên hệ thế nào ? Tia càng nghiêng thì góc tới ở thành lớn hay nhỏ ?</td></tr><tr><td>\"Suy ra góc tới lớn nhất $i_{max}$ ở đầu sợi\"</td><td>$i_{max}=?$</td><td>Định luật khúc xạ ở đầu sợi, từ không khí vào lõi</td></tr><tr><td>\"dài $L=1\\ \\text{km}$\"</td><td>$L=1000\\ \\text{m}$ ; $c=3\\cdot10^8\\ \\text{m/s}$</td><td>Tốc độ trong lõi : $v=\\dfrac{c}{n_1}$ ; $t=\\dfrac{s}{v}$</td></tr><tr><td>\"theo tia xiên nhất còn được giữ trong lõi\"</td><td>$\\Delta t=?$</td><td>Tia gấp khúc đi quãng đường dài bao nhiêu so với trục ? Mỗi đoạn là cạnh huyền của tam giác vuông nào ?</td></tr><tr><td>\"Nếu đầu sợi đặt trong nước\"</td><td>$n_{\\text{nước}}=\\dfrac43$</td><td>⚠ điều kiện ở thành lõi không đổi ; chỉ khúc xạ ở đầu sợi đổi</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>lõi – vỏ</b>, <b>sợi quang</b> → <b>i_gh ở thành</b>, góc với trục phụ với nó, rồi khúc xạ ở đầu sợi",
    "cap_do": 4,
    "fading": "giau_het",
@@ -1738,7 +3781,11 @@
       },
       {
        "loai": "ghi",
-       "text": "sin i_{gh} = 1,50 : 1,60 ⇒ i_{gh} ≈ 69,6°"
+       "text": "sin = 1,50 : 1,60 = 0,9375"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ i_{gh} ≈ 69,6°"
       }
      ],
      [
@@ -1783,7 +3830,11 @@
       },
       {
        "loai": "ghi",
-       "text": "sin i_{max} = 1,60·sin 20,4° ⇒ i_{max} ≈ 33,8°"
+       "text": "sin = 1,60·sin 20,4° ≈ 0,558"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ i_{max} ≈ 33,8°"
       }
      ],
      [
@@ -1835,7 +3886,11 @@
       },
       {
        "loai": "ghi",
-       "text": "(4/3)·sin i_{max} = 1,60·sin 20,4° ⇒ i_{max} ≈ 24,7°"
+       "text": "1,60·sin 20,4° : (4/3) ≈ 0,418"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ i_{max} ≈ 24,7°"
       }
      ],
      [
@@ -1848,7 +3903,8 @@
        "text": "⇒ i_{max} nhỏ hơn: 24,7° < 33,8° ✓"
       }
      ]
-    ]
+    ],
+    "de": true
    },
    "tom_de": {
     "cho": [
