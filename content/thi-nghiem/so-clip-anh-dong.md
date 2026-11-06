@@ -85,3 +85,6 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l9-dien-tro-dinh-luat-ohm · tn-l9-ohm-01 · clip l9ohm1 · đã soát (1 vòng), chèn repo + khung · ĐÃ ĐĂNG DB 5/11 23h35 (--chi-video) · 5/11/2026 · 49,8 s · 1,20 MB · "Quan sát" hộp exp lộ đáp án; ví dụ 10/20 Ω sau hộp lặp ý clip
 - l9-cong-cong-suat · tn-l9-congco-01 · clip l9congco1 · đã soát (1 vòng), chèn repo + khung · ĐÃ ĐĂNG DB 5/11 23h35 (--chi-video) · 5/11/2026 · 49,9 s · 1,31 MB
 - l9-kinh-lup · tn-l9-kinhlup-02 · bỏ qua: V6 — bài đã có video YouTube soi chữ nhỏ bằng kính lúp · 5/11/2026 ·
+
+## Chặng A — kiểm khung L12 trên DB + web thật (6/11/2026)
+- 23/23 clip L12 có `tl-box--khung data-khung` trong `lesson_items.ly_thuyet` (lesson 2,3,5,7,8,9,10,12,13,14,15,16,18,19,125,126,127); không cần chạy `gan-khung-db.py`. Web thật bài 6 L12 (lesson 7) 375 px: không tràn ngang, video tự dừng 9,2 s ở câu Dự đoán, nhãn A. B. C. (clip chỉ 3 phương án). `lesson_clip_choices` = 0 lượt → chưa có % đúng/sai; kiểm lại khi lớp đã học (ngưỡng mục 5: >85 % đúng = câu quá dễ, cần ≥30 % chọn sai). Chưa kiểm: nền sáng (trang bài đang dark), giảm chuyển động.
