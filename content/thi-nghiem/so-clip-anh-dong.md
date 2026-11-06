@@ -91,3 +91,17 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l10-toc-do-van-toc · tn-l10-tdvt-01 · clip tdvt1 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 50) · 49,9 s · 1,19 MB · "Quan sát" hộp exp lộ đáp án B ("năm số đo không trùng nhau" + bảng) — thầy quyết
 - l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip giatoc1 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 53) · 49,6 s · 1,29 MB · "Quan sát" + bảng lộ đáp án B (v tăng đều mỗi 0,2 s) — thầy quyết
 - l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip dog3 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 56) · 49,9 s · 1,33 MB · "Rút ra" hộp exp lộ đáp án C (1/240 ≈ 0,0042 s > 0,001 s) — thầy quyết
+
+## Chặng A — kiểm khung L12 trên DB + web thật (6/11/2026)
+- 23/23 clip L12 có `tl-box--khung data-khung` trong `lesson_items.ly_thuyet` (lesson 2,3,5,7,8,9,10,12,13,14,15,16,18,19,125,126,127); không cần chạy `gan-khung-db.py`. Web thật bài 6 L12 (lesson 7) 375 px: không tràn ngang, video tự dừng 9,2 s ở câu Dự đoán, nhãn A. B. C. (clip chỉ 3 phương án). `lesson_clip_choices` = 0 lượt → chưa có % đúng/sai; kiểm lại khi lớp đã học (ngưỡng mục 5: >85 % đúng = câu quá dễ, cần ≥30 % chọn sai). Chưa kiểm: nền sáng (trang bài đang dark), giảm chuyển động.
+
+## Chặng B — đối chiếu lô B7 (L10 Ch.4–7) + B8 (L10 Ch.1) ngày 6/11/2026: không còn clip nhóm C nào phải dựng
+
+Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuchanhdl3) đã đăng DB 31/10; klr1/klr2 đã đăng 30/10. 5 clip lô 1/11 dưới đây đã tải lesson-clips (`-20261101.mp4`, HEAD 200 ngày 6/11) + chèn repo + gắn khung ở cả src/html/bundle (commit 3e29ac620, 890518a54), **CHƯA đăng DB — chờ thầy duyệt, đăng sau 22h** (`cap-nhat-ly-thuyet.sh … --chi-video`):
+- l10-chuyen-dong-tron-deu (lesson 76) · tn-l10-trondeu-03 · clip trondeu3 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
+- l10-bien-dang-vat-ran (lesson 78) · tn-l10-biendang-03 · clip biendang3 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
+- l10-thuc-hanh-sai-so (lesson 48) · tn-l10-sai-so-02 · clip saiso2 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
+- l10-an-toan-phong-thuc-hanh (lesson 47) · tn-l10-an-toan-01 · clip antoan1 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
+- l10-an-toan-phong-thuc-hanh (lesson 47) · tn-l10-an-toan-02 · clip antoan2 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
+- l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-04 · clip · CHỜ THẦY QUYẾT: bài không có hộp TN ống chữ U (bài chỉ có hộp -01/-02/-03) → thêm hộp vào bài rồi dựng, hay loại khỏi nhóm C · 6/11/2026 ·
+
