@@ -85,3 +85,9 @@ Chỉ thêm dòng, không viết lại dòng của phiên khác (đổi trạng 
 - l9-dien-tro-dinh-luat-ohm · tn-l9-ohm-01 · clip l9ohm1 · đã soát (1 vòng), chèn repo + khung · ĐÃ ĐĂNG DB 5/11 23h35 (--chi-video) · 5/11/2026 · 49,8 s · 1,20 MB · "Quan sát" hộp exp lộ đáp án; ví dụ 10/20 Ω sau hộp lặp ý clip
 - l9-cong-cong-suat · tn-l9-congco-01 · clip l9congco1 · đã soát (1 vòng), chèn repo + khung · ĐÃ ĐĂNG DB 5/11 23h35 (--chi-video) · 5/11/2026 · 49,9 s · 1,31 MB
 - l9-kinh-lup · tn-l9-kinhlup-02 · bỏ qua: V6 — bài đã có video YouTube soi chữ nhỏ bằng kính lúp · 5/11/2026 ·
+
+## Chặng B L10 Ch.2 Động học — đối chiếu 6/11/2026 (12 clip nhóm C: 12/12 đã dựng; 9 đã đăng DB 1/11; 3 clip lô 1/11 nay chèn repo)
+
+- l10-toc-do-van-toc · tn-l10-tdvt-01 · clip tdvt1 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 50) · 49,9 s · 1,19 MB · "Quan sát" hộp exp lộ đáp án B ("năm số đo không trùng nhau" + bảng) — thầy quyết
+- l10-chuyen-dong-bien-doi-gia-toc · tn-l10-gia-toc-01 · clip giatoc1 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 53) · 49,6 s · 1,29 MB · "Quan sát" + bảng lộ đáp án B (v tăng đều mỗi 0,2 s) — thầy quyết
+- l10-thuc-hanh-do-g · tn-l10-do-g-03 · clip dog3 · đã soát, đã tải (20261101, HEAD 200) + chèn repo + khung 6/11 · CHỜ thầy duyệt, đăng sau 22h (`--chi-video`, lesson suy 56) · 49,9 s · 1,33 MB · "Rút ra" hộp exp lộ đáp án C (1/240 ≈ 0,0042 s > 0,001 s) — thầy quyết
