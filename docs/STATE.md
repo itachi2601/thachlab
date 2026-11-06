@@ -54,8 +54,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Clip tự dựng L9 nhóm C (5/11): 8 clip, 6 bài (lesson 87, 89, 91, 129–131) thầy duyệt, ĐÃ ĐĂNG DB 23h35 5/11 (--chi-video, kiểm DB đủ 8 clip); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- Chặng B L10 Ch.2 Động học (6/11): 12/12 clip đã dựng; 3 clip lô 1/11 (tdvt1, giatoc1, dog3) đã chèn repo + khung bài B5/B8/B11, CHỜ thầy duyệt, đăng `--chi-video` sau 22h; hộp exp còn dòng Quan sát/Rút ra lộ đáp án — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- Clip tự dựng L10 B7–B8 (6/11): không còn clip phải dựng; 5 clip lô 1/11 (trondeu3, biendang3, saiso2, antoan1/2 — lesson 76, 78, 48, 47) đã chèn repo + khung, CHỜ THẦY DUYỆT, đăng sau 22h; `klr-apsuat-04` thầy loại khỏi nhóm C 6/11.
+- Clip L10 lô 1/11 (8 clip: tdvt1, giatoc1, dog3, trondeu3, biendang3, saiso2, antoan1/2 — lesson 50, 53, 56, 76, 78, 48, 47) ĐÃ ĐĂNG DB 6/11 ~23h55 (`--chi-video`, kiểm DB 8/8 có khung); giữ nguyên dòng Quan sát như L9; chưa thử HS thật.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
 - Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
