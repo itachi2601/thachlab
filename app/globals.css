@@ -1770,7 +1770,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
   font-size: var(--fs-sm);
-  color: var(--color-muted); /* C2: #475569 trên nền sáng (≥7:1), #94a3b8 trên nền tối */
+  color: var(--color-muted); /* C2: #475569 trên nền khối mẹo sáng 6,61:1; #94a3b8 trên nền tối 7,30:1 */
   text-align: center;
 }
 
