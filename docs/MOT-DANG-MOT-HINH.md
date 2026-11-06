@@ -94,7 +94,7 @@ quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = S
 
 ## Trạng thái 6/11/2026 (7 phiên nhánh dừng giữa chừng vì hết hạn mức tuần)
 - **Xong trên main (55 bài):** 2 3 4 6 7 8 · 20–25 26 27 · 35 36 37 38 39 40 41 42 · 46–50 52–55 57 58 60 · 68 69 70 72 73 74 · 83 84 89 90 91 129 130 131 · 150 153 157 159 160 162 164.
-  Trong đó 23 bài (commit 6426c6cf5) được cứu từ worktree phiên nhánh: kiểm máy + `#kiem` SACH, CHƯA soát ảnh.
+  Trong đó 23 bài (commit 6426c6cf5) được cứu từ worktree phiên nhánh. 6/11 23:45 thầy duyệt ảnh 30 bài (23 bài này + 10 11 13 14 125 126 127) → ĐÃ ĐĂNG DB + deploy. 25 bài còn lại trong 55 chưa rõ đã đăng chưa — kiểm DB trước khi publish.
 - **Dở, còn lỗi chữ đè/tràn (10 bài)** — bản dở nằm ở worktree phiên nhánh, chưa commit: 9 15 16 17 (`.claude/worktrees/xenodochial-antonelli-2bf293`), 28 31 (`vigilant-maxwell-0d1cf4`), 43 44 (`vibrant-hypatia-aa60fe`), 161 178 (`ecstatic-wilson-bdc8a9`). Chép file sang rồi chỉ dời nhãn tới `#kiem` SACH.
 - **Chưa làm (25 bài):** 18 19 · 30 32 33 34 · 45 · 62 63 66 · 71 76 77 78 79 · 151 152 154 155 156 158 · 163 165 166 167.
 - Họ `so_do_vecto` không có `lop` (mỗi `vec` mang `buoc` riêng) — đừng báo lỗi "lop ≠ buoc" cho họ này. Bài 46–48 có dạng cố ý không có hình.
