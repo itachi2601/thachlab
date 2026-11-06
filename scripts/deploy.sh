@@ -15,6 +15,9 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 
 cd "$ROOT"
 npm run build
+# public/xem-thu/ là nháp xem thử cục bộ (gitignore: btm-*.json, trang duyệt) — next build chép cả
+# public/ vào out/, nên phải xoá trước khi đẩy, không thì nháp lên web công khai (7/11/2026).
+rm -rf out/xem-thu
 
 cd out
 
