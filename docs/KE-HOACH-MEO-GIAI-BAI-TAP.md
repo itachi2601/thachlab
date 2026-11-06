@@ -98,9 +98,9 @@ Bỏ ra khỏi kho: chỗ đã có mẹo từ khoá đủ dùng (ném ngang "Nga
 Hạn mức: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có mẹo (G1, V11 tinh thần).
 
 ## 6. Còn treo (cập nhật 5/11/2026, sau chặng 3)
-- **Chặng 4** đã vẽ + gắn JSON (5/11, 7 dạng ở 6 bài: 162, 90, 157, 23, 18, 83; nơi gắn ở `docs/BANG-MEO-GIAI.md`) — chờ thầy duyệt ảnh rồi đăng sau 22h: `npx tsx scripts/publish-bai-tap-mau.mts --lesson <id>`.
+- ✅ **Chặng 4** (7 dạng ở 6 bài: 162, 90, 157, 23, 18, 83) thầy duyệt qua trang `public/xem-thu/duyet-meo-chang4.html` 6/11, đăng 23h45 6/11/2026 kèm bài 153 (`scripts/logs/dang-meo-chang4.log`, sao lưu `scripts/logs/bai-tap-mau-bai<id>-17939835*.json`) + deploy.
 - ✅ **Chữ chú thích (figcaption) trong khối mẹo** (6/11/2026, C2): `.exam-content figure.fig figcaption` đổi `#94a3b8` → `var(--color-muted)`; đo bằng `getComputedStyle` trên `/dev/btm` (bài 153, 375px): nền sáng 2,24 → 6,61:1, nền tối 7,30:1. Áp mọi hình có chú thích, không riêng `.bt-meo`.
-- ✅ **`dieu_kien` Đòn bẩy nhiệt, Quỹ nhiệt** (6/11/2026) đã làm đầy trong `meo_nhiet.py` và vá tại chỗ vào `153.json` (diff chỉ 2 dòng `meo.dieu_kien`). **Chưa đăng**: chạy sau 22h `npx tsx scripts/publish-bai-tap-mau.mts --lesson 153`.
+- ✅ **`dieu_kien` Đòn bẩy nhiệt, Quỹ nhiệt** (6/11/2026) đã làm đầy trong `meo_nhiet.py` và vá tại chỗ vào `153.json` (diff chỉ 2 dòng `meo.dieu_kien`). Đã đăng 6/11 cùng chặng 4.
 - **Cần kiểm** (đối chiếu 6/11, chưa mở bản SGK giấy): c_đá = 2100 J/kg·K khớp bài đã đăng `l12-thuc-hanh-nhiet` và `l12-su-chuyen-the` (≈2100; bản khác ghi 2090–2200, sai lệch <5%, không đổi đáp số làm tròn). Ngưỡng góc nhỏ 10° khớp bài `l11-bai-tap-nang-luong-dao-dong` ("khoảng 10° trở xuống"; sai số chu kì ≈0,2% ở 10°); nếu SGK dùng ngưỡng 5° thì chỉ cần ghi "khoảng" như bài đó. Còn mở: Cổng soát vé chưa có vật gần gũi cho U; Xe đẩy vào cát nên ở bài lý thuyết hay bài tập mẫu.
 - **Chặng 5** (đo 2–3 tuần) chưa bắt đầu, chờ có mẹo trên web đủ lâu.
   - Bắt đầu đo từ 2026-11-05 (ngày deploy ghi lượt): bảng `similar_practice_attempts` ghi mỗi lượt "Làm bài tương tự"; câu đo `scripts/sql/do-meo-nhin.sql` (lượt 1, dạng có mẹo so với dạng chưa có mẹo cùng chương).
