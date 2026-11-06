@@ -90,7 +90,7 @@ Nhóm A+B nằm ở `video-de-xuat-l<lớp>-tu-loc.md`; nếu thầy loại mộ
 | tn-l10-hieu-suat-01 | Sờ vỏ quạt bàn sau khi chạy | camungdt |
 | tn-l10-klr-apsuat-01 | Đo khối lượng riêng của nhôm bằng cân và bình chia độ | boyle |
 | tn-l10-klr-apsuat-02 | Bút chì ép giữa hai ngón tay: cùng áp lực, khác áp suất | camungdt |
-| tn-l10-klr-apsuat-04 | Ống chữ U chứa nước và dầu: so cột chất lỏng ở hai nhánh | camungdt |
+| tn-l10-klr-apsuat-04 | Ống chữ U chứa nước và dầu: so cột chất lỏng ở hai nhánh (LOẠI 6/11: bài không có hộp) | camungdt |
 | tn-l10-moment-luc-03 | Ngẫu lực làm thước quay quanh trọng tâm | camungdt |
 | tn-l10-nemngang-02 | Bắn bi ngang khỏi mép bàn ở ba độ cao: đo tầm xa, suy ra vận tốc ném | boyle |
 | tn-l10-roi-tu-do-02 | Dây dọi và video quay chậm: vị trí bi rơi sau mỗi 0,1 s | camungdt |

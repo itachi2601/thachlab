@@ -85,7 +85,7 @@ Ch.2 Sóng L11 và Ch.3 L10 không còn clip nhóm C. Tồn đọng của lô 30
 
 **L9 nhóm C (lô 5/11/2026):** 8/9 clip dựng (tieucu3, congsuat1, congsuat3, conang1, dongthe1, dongthe2, ohm1, congco1; kinhlup-02 bỏ qua V6), cả 8 qua cổng B 1 vòng, 48,8–49,9 s, 1,15–1,31 MB, đã tải + chèn repo 6 bài + khung; chờ thầy duyệt rồi đăng `cap-nhat-ly-thuyet.sh` sau 22h.
 
-**B7–B8 (đối chiếu 6/11/2026):** đã dựng đủ từ 30/10–1/11 (bảng trên lỗi thời); Ch.4–5 + klr1/2 đã đăng DB; trondeu3, biendang3, saiso2, antoan1/2 đã chèn repo + khung, chờ thầy duyệt rồi đăng; `klr-apsuat-04` chờ thầy quyết.
+**B7–B8 (đối chiếu 6/11/2026):** đã dựng đủ từ 30/10–1/11 (bảng trên lỗi thời); Ch.4–5 + klr1/2 đã đăng DB; trondeu3, biendang3, saiso2, antoan1/2 đã chèn repo + khung, chờ thầy duyệt rồi đăng; `klr-apsuat-04` thầy loại khỏi nhóm C (6/11).
 
 Ranh giới: L12 `theory.src.html` đang có phiên mẹo 🧠 và thí nghiệm khung 6 ô — trước khi sửa bài nào chạy
 `git log origin/main -3 -- content/lesson-samples/<bài>/theory.src.html`, có commit 24 h qua thì chờ. Chặng A chỉ đụng
