@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Hai cặp (I, U) của pin: tìm điện trở trong và suất điện động",
    "topic": "Suất điện động và điện trở trong của nguồn",
-   "problem_html": "<p>Một nhóm đo một viên pin: mắc pin với điện trở bảo vệ, biến trở, ampe kế nối tiếp và vôn kế song song hai cực pin. Vặn biến trở hai lần, đọc được:</p><ul><li>Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$;</li><li>Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$.</li></ul><p>$U$ là số chỉ vôn kế (hiệu điện thế hai cực pin). Hai lần đo cùng một pin, $\\mathcal{E}$ và $r$ không đổi.</p><p>a) Tính điện trở trong $r$ của pin.</p><p>b) Tính suất điện động $\\mathcal{E}$ của pin.</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Hai điểm đo (I, U) của một pin; chấm chạy từ lần 1 sang lần 2 khi vặn biến trở\"><line x1=\"62.0\" y1=\"208.0\" x2=\"382.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M371.6,202.0 L382.0,208.0 L371.6,214.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62.0\" y1=\"208.0\" x2=\"62.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M56.0,34.4 L62.0,24.0 L68.0,34.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"380\" y=\"230\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"70\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><line x1=\"147.7\" y1=\"96.3\" x2=\"319.1\" y2=\"183.7\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"147.7\" cy=\"96.3\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"319.1\" cy=\"183.7\" r=\"5\" fill=\"#fb923c\"/><text x=\"155.7\" y=\"86.3\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">lần 1: 0,20 A · 1,36 V</text><text x=\"309.1\" y=\"201.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">lần 2: 0,60 A · 1,00 V</text><text x=\"222\" y=\"228\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">vặn Rₓ nhỏ dần: I tăng, U giảm</text><circle cx=\"147.7\" cy=\"96.3\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"147.7;156.3;164.9;173.4;182.0;190.6;199.1;207.7;216.3;224.9;233.4;242.0;250.6;259.1;267.7;276.3;284.9;293.4;302.0;310.6;319.1\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"96.3;100.7;105.0;109.4;113.8;118.1;122.5;126.9;131.3;135.6;140.0;144.4;148.7;153.1;157.5;161.9;166.2;170.6;175.0;179.3;183.7\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm chạy từ lần đo 1 sang lần đo 2 khi vặn biến trở (1 s thật = 1 s). Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một nhóm đo một viên pin: mắc pin với điện trở bảo vệ, biến trở, ampe kế nối tiếp và vôn kế song song hai cực pin. Vặn biến trở hai lần, đọc được:</p><ul><li>Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$;</li><li>Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$.</li></ul><p>$U$ là số chỉ vôn kế (hiệu điện thế hai cực pin). Hai lần đo cùng một pin, $\\mathcal{E}$ và $r$ không đổi.</p><p>a) Tính điện trở trong $r$ của pin.</p><p>b) Tính suất điện động $\\mathcal{E}$ của pin.</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hiệu điện thế hai cực pin khi có dòng: $U = \\mathcal{E} - Ir$; chỉ khi $I = 0$ mới có $U = \\mathcal{E}$.</li><li><strong>Định luật:</strong> hai cặp $(I, U)$ của cùng một pin cùng thoả hệ thức này.</li><li><strong>Công thức:</strong> $r = \\dfrac{U_1 - U_2}{I_2 - I_1}$ · $\\mathcal{E} = U + Ir$.</li><li>⚠ <strong>Điều kiện:</strong> hai lần đo cùng một pin; $\\mathcal{E}$ và $r$ không đổi giữa hai lần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tìm điện trở trong $r$</span></p><p>Viết $U = \\mathcal{E} - Ir$ cho hai lần đo rồi trừ vế, $\\mathcal{E}$ mất đi:</p>$$U_1 - U_2 = (I_2 - I_1)\\,r$$$$r = \\dfrac{U_1 - U_2}{I_2 - I_1}$$$$r = \\dfrac{1{,}36 - 1{,}00}{0{,}60 - 0{,}20}$$<div class=\"bt-ans\">$$r = 0{,}90\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tìm suất điện động $\\mathcal{E}$</span></p><p>Thế lần 1 vào $U_1 = \\mathcal{E} - I_1 r$:</p>$$\\mathcal{E} = U_1 + I_1 r$$$$\\mathcal{E} = 1{,}36 + 0{,}20 \\cdot 0{,}90$$<div class=\"bt-ans\">$$\\mathcal{E} = 1{,}54\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>Thế vào lần 2 phải ra đúng số đo:</p>$$U_2 = 1{,}54 - 0{,}60 \\cdot 0{,}90 = 1{,}00\\ \\text{V}$$<p>Khớp. $\\mathcal{E}$ lớn hơn cả hai số vôn kế đọc vì có dòng chạy; $r \\approx 1\\ \\Omega$ là cỡ của một viên pin AA đã dùng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $r = 0{,}90\\ \\Omega$</p><p>b) $\\mathcal{E} = 1{,}54\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai cặp $(I, U)$ của cùng một pin</strong> → trừ vế hai hệ thức $U = \\mathcal{E} - Ir$ để tìm $r$, rồi thế lại tìm $\\mathcal{E}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Đồ thị U theo I với hai điểm đo; cần tìm r và ℰ\"><line x1=\"62.0\" y1=\"208.0\" x2=\"382.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M371.6,202.0 L382.0,208.0 L371.6,214.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62.0\" y1=\"208.0\" x2=\"62.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M56.0,34.4 L62.0,24.0 L68.0,34.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"380\" y=\"230\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"70\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><line x1=\"147.7\" y1=\"96.3\" x2=\"319.1\" y2=\"183.7\" stroke=\"#94a3b8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\" opacity=\"1\"/><circle cx=\"147.7\" cy=\"96.3\" r=\"5\" fill=\"#fb923c\"/><circle cx=\"319.1\" cy=\"183.7\" r=\"5\" fill=\"#fb923c\"/><line x1=\"147.7\" y1=\"96.3\" x2=\"147.7\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 4\" opacity=\"1\"/><line x1=\"319.1\" y1=\"183.7\" x2=\"319.1\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 4\" opacity=\"1\"/><line x1=\"62.0\" y1=\"96.3\" x2=\"147.7\" y2=\"96.3\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 4\" opacity=\"1\"/><line x1=\"62.0\" y1=\"183.7\" x2=\"319.1\" y2=\"183.7\" stroke=\"currentColor\" stroke-width=\"1\" stroke-dasharray=\"3 4\" opacity=\"1\"/><text x=\"147.7\" y=\"226.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I<tspan dy=\"4\" font-size=\"10\">1</tspan></text><text x=\"319.1\" y=\"226.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">I<tspan dy=\"4\" font-size=\"10\">2</tspan></text><text x=\"56.0\" y=\"100.3\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U<tspan dy=\"4\" font-size=\"10\">1</tspan></text><text x=\"56.0\" y=\"187.7\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">U<tspan dy=\"4\" font-size=\"10\">2</tspan></text><text x=\"70\" y=\"56\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">ℰ = ?</text><text x=\"217.7\" y=\"146.3\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">r = ?</text></svg><figcaption>Dữ kiện: hai điểm đo (I₁, U₁) và (I₂, U₂). Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vôn kế song song hai cực pin\"</td><td>$U$ là hiệu điện thế hai cực pin</td><td>⚠ Có dòng $I \\gt 0$ chạy thì $U \\lt \\mathcal{E}$: số vôn kế chỉ không phải $\\mathcal{E}$ (chỉ khi mạch hở mới bằng nhau).</td></tr><tr><td>\"Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$\"</td><td>Điểm $(0{,}20\\ \\text{A};\\ 1{,}36\\ \\text{V})$</td><td>Mỗi cặp $(I, U)$ thoả hệ thức $U = \\mathcal{E} - Ir$.</td></tr><tr><td>\"Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$\"</td><td>Điểm $(0{,}60\\ \\text{A};\\ 1{,}00\\ \\text{V})$</td><td>Hai cặp cho hai phương trình cùng $\\mathcal{E}$, $r$: trừ vế thì mất đại lượng nào?</td></tr><tr><td>\"Tính điện trở trong $r$\"</td><td>Cần tìm $r$</td><td>$r = \\dfrac{U_1 - U_2}{I_2 - I_1}$</td></tr><tr><td>\"Tính suất điện động $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Thế một cặp $(I, U)$ và $r$ vừa tìm: $\\mathcal{E} = U + Ir$.</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vôn kế song song hai cực pin\"</td><td>$U$ là hiệu điện thế hai cực pin</td><td>⚠ Có dòng $I \\gt 0$ chạy thì $U \\lt \\mathcal{E}$: số vôn kế chỉ không phải $\\mathcal{E}$ (chỉ khi mạch hở mới bằng nhau).</td></tr><tr><td>\"Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$\"</td><td>Điểm $(0{,}20\\ \\text{A};\\ 1{,}36\\ \\text{V})$</td><td>Mỗi cặp $(I, U)$ thoả hệ thức $U = \\mathcal{E} - Ir$.</td></tr><tr><td>\"Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$\"</td><td>Điểm $(0{,}60\\ \\text{A};\\ 1{,}00\\ \\text{V})$</td><td>Hai cặp cho hai phương trình cùng $\\mathcal{E}$, $r$: trừ vế thì mất đại lượng nào?</td></tr><tr><td>\"Tính điện trở trong $r$\"</td><td>Cần tìm $r$</td><td>$r = \\dfrac{U_1 - U_2}{I_2 - I_1}$</td></tr><tr><td>\"Tính suất điện động $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Thế một cặp $(I, U)$ và $r$ vừa tìm: $\\mathcal{E} = U + Ir$.</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hai cặp (I, U) của cùng một pin</b> → nghĩ tới <b>trừ vế hai hệ thức</b> U = ℰ − Ir để tìm r",
    "cap_do": 1,
    "fading": "mo_het",
@@ -56,15 +56,125 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 0.8,
+     "ten": "I (A)",
+     "vach": [
+      0.2,
+      0.6
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 0,
+     "max": 1.8,
+     "ten": "U (V)",
+     "vach": [
+      1.0,
+      1.36
+     ],
+     "luoi": 0.2
+    },
+    "hinh": [
+     {
+      "loai": "diem",
+      "x": 0.2,
+      "y": 1.36,
+      "ten": "lần 1",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.6,
+      "y": 1.0,
+      "ten": "lần 2",
+      "vi": "tr"
+     },
+     {
+      "loai": "chu",
+      "x": 0.42,
+      "y": 0.45,
+      "text": "ℰ = ? ; r = ?",
+      "a": "middle",
+      "het": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0.6,
+        1.0
+       ],
+       "den": [
+        0.2,
+        1.36
+       ],
+       "nhan_x": "ΔI = 0,40 A",
+       "nhan_y": "ΔU = 0,36 V"
+      },
+      {
+       "loai": "ghi",
+       "text": "r = ΔU : ΔI = 0,36 : 0,40 = 0,90 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          1.54
+         ],
+         [
+          0.2,
+          1.36
+         ]
+        ],
+        "mau": "max"
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 1.54
+      },
+      {
+       "loai": "chu",
+       "x": 0.45,
+       "y": 1.62,
+       "text": "ℰ = 1,54 V (I = 0)",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℰ = U₁ + I₁r = 1,36 + 0,20·0,90 = 1,54 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lần 2: 1,54 − 0,60·0,90 = 1,00 V ✓"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Trung bình · Dự đoán số chỉ ampe kế, vôn kế và vai trò điện trở bảo vệ",
    "topic": "Suất điện động và điện trở trong của nguồn",
-   "problem_html": "<p>Mạch đo như hình: pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$; điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, đang vặn ở $R_x = 3{,}0\\ \\Omega$. Ampe kế có điện trở không đáng kể, vôn kế mắc song song hai cực pin có điện trở rất lớn. Khoá K đóng.</p><p>a) Ampe kế chỉ bao nhiêu?</p><p>b) Vôn kế chỉ bao nhiêu?</p><p>c) Giả sử bạn học sinh bỏ $R_0$ rồi vặn $R_x$ về $0$. Dòng qua pin lúc đó là bao nhiêu? Ampe kế thang $2\\ \\text{A}$ có chịu được không?</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Mạch đo gồm pin, R0, Rx, ampe kế nối tiếp và vôn kế song song hai cực pin; chấm chạy một vòng\"><line x1=\"90.0\" y1=\"60.0\" x2=\"150.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"150\" y=\"50\" width=\"60\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"210.0\" y1=\"60.0\" x2=\"260.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"260\" y=\"50\" width=\"60\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"320.0\" y1=\"60.0\" x2=\"370.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R₀ = 2,0 Ω</text><text x=\"290\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Rₓ = 3,0 Ω</text><line x1=\"370.0\" y1=\"60.0\" x2=\"370.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"370.0\" y1=\"190.0\" x2=\"244.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"216.0\" y1=\"190.0\" x2=\"90.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"230\" cy=\"190\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230\" y=\"195\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"90.0\" y1=\"60.0\" x2=\"90.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"100.0\" x2=\"90.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"142.0\" x2=\"90.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"76.0\" y1=\"130.0\" x2=\"104.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"83.0\" y1=\"142.0\" x2=\"97.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"72\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">pin</text><line x1=\"90.0\" y1=\"100.0\" x2=\"150.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"100.0\" x2=\"150.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"152.0\" x2=\"150.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"150\" cy=\"138\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"143\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"90.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"98\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"90.0\" cy=\"190.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"98\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">N</text><circle cx=\"90.0\" cy=\"60.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"90.0;103.7;117.3;131.0;144.7;158.3;172.0;185.7;199.3;213.0;226.7;240.3;254.0;267.7;281.3;295.0;308.7;322.3;336.0;349.7;363.3;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;370.0;356.3;342.7;329.0;315.3;301.7;288.0;274.3;260.7;247.0;233.3;219.7;206.0;192.3;178.7;165.0;151.3;137.7;124.0;110.3;96.7;90.0;90.0;90.0;90.0;90.0;90.0;90.0;90.0;90.0;90.0\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;60.0;67.0;80.7;94.3;108.0;121.7;135.3;149.0;162.7;176.3;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;190.0;183.0;169.3;155.7;142.0;128.3;114.7;101.0;87.3;73.7;60.0\" dur=\"4.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chấm là dòng điện quy ước chạy một vòng quanh mạch kín (chạy chậm, không theo tỉ lệ). Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Mạch đo như hình: pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$; điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, đang vặn ở $R_x = 3{,}0\\ \\Omega$. Ampe kế có điện trở không đáng kể, vôn kế mắc song song hai cực pin có điện trở rất lớn. Khoá K đóng.</p><p>a) Ampe kế chỉ bao nhiêu?</p><p>b) Vôn kế chỉ bao nhiêu?</p><p>c) Giả sử bạn học sinh bỏ $R_0$ rồi vặn $R_x$ về $0$. Dòng qua pin lúc đó là bao nhiêu? Ampe kế thang $2\\ \\text{A}$ có chịu được không?</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $\\mathcal{E}$ là suất điện động của pin; $r$ là điện trở trong; dòng chạy qua cả mạch ngoài và $r$.</li><li><strong>Định luật Ohm toàn mạch:</strong> $I = \\dfrac{\\mathcal{E}}{R_{\\text{ngoài}} + r}$.</li><li><strong>Hiệu điện thế hai cực pin:</strong> $U = \\mathcal{E} - Ir$.</li><li>⚠ <strong>Điều kiện:</strong> ampe kế điện trở không đáng kể (nối tiếp); vôn kế điện trở rất lớn (song song, không kéo dòng).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tính dòng điện qua mạch</span></p><p>Mạch ngoài $R_0 + R_x$ nối tiếp, cộng thêm $r$ của pin:</p>$$I = \\dfrac{\\mathcal{E}}{R_0 + R_x + r}$$$$I = \\dfrac{1{,}55}{2{,}0 + 3{,}0 + 0{,}60}$$<div class=\"bt-ans\">$$I \\approx 0{,}277\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chỉ vôn kế</span></p><p>Vôn kế đo hiệu điện thế hai cực pin, nhỏ hơn $\\mathcal{E}$ vì có dòng chạy:</p>$$U = \\mathcal{E} - Ir$$$$U = 1{,}55 - 0{,}277 \\cdot 0{,}60$$<div class=\"bt-ans\">$$U \\approx 1{,}38\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng khi bỏ $R_0$ và vặn $R_x$ về $0$</span></p><p>Mạch ngoài chỉ còn dây nối, điện trở coi bằng $0$, toàn mạch chỉ còn $r$:</p>$$I = \\dfrac{\\mathcal{E}}{r}$$$$I = \\dfrac{1{,}55}{0{,}60}$$<div class=\"bt-ans\">$$I \\approx 2{,}58\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra với thang ampe kế</span></p><p>$2{,}58\\ \\text{A}$ vượt thang $2\\ \\text{A}$: ampe kế quá tải, pin nóng nhanh.</p><p>Khi có $R_0$ và $R_x = 0$: $I = \\dfrac{1{,}55}{2{,}0 + 0{,}60} \\approx 0{,}596\\ \\text{A}$, an toàn. Đó là lí do mắc điện trở bảo vệ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I \\approx 0{,}277\\ \\text{A}$</p><p>b) $U \\approx 1{,}38\\ \\text{V}$</p><p>c) $I \\approx 2{,}58\\ \\text{A}$, vượt thang $2\\ \\text{A}$: không chịu được</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>pin có điện trở trong và các điện trở nối tiếp</strong> → định luật Ohm toàn mạch tìm $I$, rồi $U = \\mathcal{E} - Ir$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Sơ đồ mạch đo với số chỉ ampe kế và vôn kế cần tìm\"><line x1=\"90.0\" y1=\"60.0\" x2=\"150.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"150\" y=\"50\" width=\"60\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"210.0\" y1=\"60.0\" x2=\"260.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><rect x=\"260\" y=\"50\" width=\"60\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"320.0\" y1=\"60.0\" x2=\"370.0\" y2=\"60.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"180\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R₀ = 2,0 Ω</text><text x=\"290\" y=\"40\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Rₓ = 3,0 Ω</text><line x1=\"370.0\" y1=\"60.0\" x2=\"370.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"370.0\" y1=\"190.0\" x2=\"244.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"216.0\" y1=\"190.0\" x2=\"90.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"230\" cy=\"190\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"230\" y=\"195\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"90.0\" y1=\"60.0\" x2=\"90.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"100.0\" x2=\"90.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"90.0\" y1=\"142.0\" x2=\"90.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"76.0\" y1=\"130.0\" x2=\"104.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"83.0\" y1=\"142.0\" x2=\"97.0\" y2=\"142.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><text x=\"72\" y=\"138\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">pin</text><line x1=\"90.0\" y1=\"100.0\" x2=\"150.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"100.0\" x2=\"150.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"150.0\" y1=\"152.0\" x2=\"150.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><circle cx=\"150\" cy=\"138\" r=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"150\" y=\"143\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">V</text><circle cx=\"90.0\" cy=\"100.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"98\" y=\"92\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">M</text><circle cx=\"90.0\" cy=\"190.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"98\" y=\"208\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">N</text><text x=\"230\" y=\"226\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">I = ?</text><text x=\"168\" y=\"138\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">U = ?</text></svg><figcaption>Dữ kiện: pin ℰ = 1,55 V, r = 0,60 Ω; R₀ = 2,0 Ω; Rₓ = 3,0 Ω. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$\"</td><td>$\\mathcal{E}$, $r$ đã biết</td><td>Hai đại lượng có mặt trong định luật Ohm toàn mạch.</td></tr><tr><td>\"$R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, $R_x = 3{,}0\\ \\Omega$\"</td><td>Mạch ngoài $R_0 + R_x$</td><td>Điện trở mắc nối tiếp: điện trở tương đương? Điện trở trong $r$ cũng nằm nối tiếp trong toàn mạch.</td></tr><tr><td>\"ampe kế điện trở không đáng kể; vôn kế điện trở rất lớn\"</td><td>$R_A \\approx 0$, $R_V \\to \\infty$</td><td>⚠ Ampe kế nối tiếp, vôn kế song song: ampe kế có làm đổi điện trở toàn mạch không? Vôn kế có kéo dòng không?</td></tr><tr><td>\"Ampe kế chỉ bao nhiêu?\"</td><td>Cần tìm $I$</td><td>Định luật Ohm toàn mạch: $I = \\dfrac{\\mathcal{E}}{R_{\\text{ngoài}} + r}$</td></tr><tr><td>\"Vôn kế chỉ bao nhiêu?\"</td><td>Cần tìm $U$</td><td>Hệ thức giữa $U$, $\\mathcal{E}$, $I$, $r$.</td></tr><tr><td>\"bỏ $R_0$, vặn $R_x$ về $0$\"</td><td>Điện trở ngoài thay đổi</td><td>Điện trở ngoài thay đổi thì dòng trong mạch đổi thế nào?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$\"</td><td>$\\mathcal{E}$, $r$ đã biết</td><td>Hai đại lượng có mặt trong định luật Ohm toàn mạch.</td></tr><tr><td>\"$R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, $R_x = 3{,}0\\ \\Omega$\"</td><td>Mạch ngoài $R_0 + R_x$</td><td>Điện trở mắc nối tiếp: điện trở tương đương? Điện trở trong $r$ cũng nằm nối tiếp trong toàn mạch.</td></tr><tr><td>\"ampe kế điện trở không đáng kể; vôn kế điện trở rất lớn\"</td><td>$R_A \\approx 0$, $R_V \\to \\infty$</td><td>⚠ Ampe kế nối tiếp, vôn kế song song: ampe kế có làm đổi điện trở toàn mạch không? Vôn kế có kéo dòng không?</td></tr><tr><td>\"Ampe kế chỉ bao nhiêu?\"</td><td>Cần tìm $I$</td><td>Định luật Ohm toàn mạch: $I = \\dfrac{\\mathcal{E}}{R_{\\text{ngoài}} + r}$</td></tr><tr><td>\"Vôn kế chỉ bao nhiêu?\"</td><td>Cần tìm $U$</td><td>Hệ thức giữa $U$, $\\mathcal{E}$, $I$, $r$.</td></tr><tr><td>\"bỏ $R_0$, vặn $R_x$ về $0$\"</td><td>Điện trở ngoài thay đổi</td><td>Điện trở ngoài thay đổi thì dòng trong mạch đổi thế nào?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>pin có r và điện trở nối tiếp</b> → nghĩ tới <b>Ohm toàn mạch</b>, rồi U = ℰ − Ir",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -131,15 +241,203 @@
     {
      "tieu_de": "Kiểm tra với thang ampe kế"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        4,
+        2
+       ],
+       [
+        16,
+        2
+       ],
+       [
+        16,
+        8
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        4,
+        2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        4,
+        7
+       ],
+       [
+        1.3,
+        7
+       ],
+       [
+        1.3,
+        3
+       ],
+       [
+        4,
+        3
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 4,
+      "y": 7
+     },
+     {
+      "loai": "nut",
+      "x": 4,
+      "y": 3
+     },
+     {
+      "loai": "nguon",
+      "x": 4,
+      "y": 5,
+      "huong": "doc",
+      "ten": "pin",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 1.3,
+      "y": 5,
+      "kieu": "V"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 8,
+      "y": 8,
+      "kieu": "A"
+     },
+     {
+      "loai": "khoa",
+      "x": 14.5,
+      "y": 8
+     },
+     {
+      "loai": "chu",
+      "x": 14.5,
+      "y": 9.1,
+      "text": "K"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 7,
+      "y": 2,
+      "ten": "R₀ = 2,0 Ω",
+      "vi": "b",
+      "het": 3
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 2,
+      "ten": "Rₓ = 3,0 Ω",
+      "vi": "b",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 10.5,
+      "y": 6.1,
+      "text": "ℰ = 1,55 V"
+     },
+     {
+      "loai": "chu",
+      "x": 10.5,
+      "y": 4.9,
+      "text": "r = 0,60 Ω"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        10,
+        8
+       ],
+       "den": [
+        12.3,
+        8
+       ]
+      },
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 9.6,
+       "text": "I ≈ 0,277 A",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ : (R₀ + Rₓ + r) = 1,55 : 5,6 ≈ 0,277 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 3.5,
+       "text": "V chỉ U ≈ 1,38 V",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "U = ℰ − Ir = 1,55 − 0,277·0,60 ≈ 1,38 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 0.8,
+       "text": "bỏ R₀, Rₓ = 0",
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 9.6,
+       "text": "I ≈ 2,58 A",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Chỉ còn r: I = ℰ : r = 1,55 : 0,60 ≈ 2,58 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "2,58 A > 2 A: quá thang; có R₀ chỉ ≈ 0,596 A"
+      }
+     ]
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Khó · Xử lý bảng số liệu: chọn cặp điểm, tính r, ℰ và sai số",
    "topic": "Suất điện động và điện trở trong của nguồn",
-   "problem_html": "<p>Bảng số liệu đo một viên pin AA, điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$; vôn kế sai số $\\pm 0{,}01\\ \\text{V}$, ampe kế sai số $\\pm 0{,}002\\ \\text{A}$:</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Lần</th><th>$R_x\\ (\\Omega)$</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead><tbody><tr><td>1</td><td>100</td><td>0,015</td><td>1,54</td></tr><tr><td>2</td><td>20</td><td>0,069</td><td>1,52</td></tr><tr><td>3</td><td>10</td><td>0,124</td><td>1,49</td></tr><tr><td>4</td><td>5</td><td>0,208</td><td>1,46</td></tr><tr><td>5</td><td>2</td><td>0,348</td><td>1,39</td></tr><tr><td>6</td><td>0</td><td>0,633</td><td>1,27</td></tr></tbody></table></div><p>a) Chọn hai lần đo cho giá trị $r$ đáng tin nhất (không vẽ đồ thị) và tính $r$.</p><p>b) Tính suất điện động $\\mathcal{E}$.</p><p>c) Coi $r$ là thương của hai hiệu; ước lượng $\\Delta r$ bằng cách cộng sai số tỉ đối của tử số và mẫu số, rồi ghi kết quả $r = \\ldots \\pm \\ldots$</p><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Sáu điểm đo (I, U) của một pin lần lượt hiện ra khi biến trở giảm dần\"><line x1=\"62.0\" y1=\"208.0\" x2=\"382.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M371.6,202.0 L382.0,208.0 L371.6,214.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62.0\" y1=\"208.0\" x2=\"62.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M56.0,34.4 L62.0,24.0 L68.0,34.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"380\" y=\"230\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"70\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><g><circle cx=\"68.4\" cy=\"63.5\" r=\"5\" fill=\"#fb923c\"/><text x=\"75.4\" y=\"54.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.10;0.18\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"91.6\" cy=\"72.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"98.6\" y=\"63.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">2</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.23;0.31\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"115.1\" cy=\"84.7\" r=\"5\" fill=\"#fb923c\"/><text x=\"122.1\" y=\"75.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.36;0.44\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"151.1\" cy=\"97.5\" r=\"5\" fill=\"#fb923c\"/><text x=\"158.1\" y=\"88.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">4</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.49;0.57\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"211.1\" cy=\"127.3\" r=\"5\" fill=\"#fb923c\"/><text x=\"218.1\" y=\"118.3\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">5</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.62;0.70\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><circle cx=\"333.3\" cy=\"178.2\" r=\"5\" fill=\"#fb923c\"/><text x=\"340.3\" y=\"169.2\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6</text><animate attributeName=\"opacity\" values=\"0;0;1\" keyTimes=\"0;0.75;0.83\" dur=\"4.0s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"222\" y=\"202\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">6 lần đo, Rₓ giảm từ 100 Ω về 0</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: sáu điểm đo lần lượt hiện ra (số trên điểm là lần đo). Hình minh hoạ, không theo tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Bảng số liệu đo một viên pin AA, điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$; vôn kế sai số $\\pm 0{,}01\\ \\text{V}$, ampe kế sai số $\\pm 0{,}002\\ \\text{A}$:</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Lần</th><th>$R_x\\ (\\Omega)$</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead><tbody><tr><td>1</td><td>100</td><td>0,015</td><td>1,54</td></tr><tr><td>2</td><td>20</td><td>0,069</td><td>1,52</td></tr><tr><td>3</td><td>10</td><td>0,124</td><td>1,49</td></tr><tr><td>4</td><td>5</td><td>0,208</td><td>1,46</td></tr><tr><td>5</td><td>2</td><td>0,348</td><td>1,39</td></tr><tr><td>6</td><td>0</td><td>0,633</td><td>1,27</td></tr></tbody></table></div><p>a) Chọn hai lần đo cho giá trị $r$ đáng tin nhất (không vẽ đồ thị) và tính $r$.</p><p>b) Tính suất điện động $\\mathcal{E}$.</p><p>c) Coi $r$ là thương của hai hiệu; ước lượng $\\Delta r$ bằng cách cộng sai số tỉ đối của tử số và mẫu số, rồi ghi kết quả $r = \\ldots \\pm \\ldots$</p>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> sai số của hiệu hai số đo bằng tổng hai sai số; sai số tỉ đối của thương bằng tổng sai số tỉ đối của tử và mẫu.</li><li><strong>Hệ thức:</strong> $U = \\mathcal{E} - Ir$ ⇒ $r = \\dfrac{U_1 - U_2}{I_2 - I_1}$, $\\mathcal{E} = U + Ir$.</li><li><strong>Sai số tỉ đối:</strong> $\\dfrac{\\Delta r}{r} = \\dfrac{\\Delta(U_1 - U_2)}{U_1 - U_2} + \\dfrac{\\Delta(I_2 - I_1)}{I_2 - I_1}$.</li><li>⚠ <strong>Điều kiện:</strong> hai lần đo xa nhau thì hiệu lớn, sai số tỉ đối nhỏ. Không dùng $U/I$ của một cặp (đó là điện trở mạch ngoài).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn hai lần đo</span></p><p>Sai số mỗi số đo cố định, nên hiệu hai số càng lớn thì sai số tỉ đối của hiệu càng nhỏ. Chọn lần 1 và lần 6 (xa nhau nhất):</p><div class=\"bt-ans\"><p>Hiệu $U$: $1{,}54 - 1{,}27 = 0{,}27\\ \\text{V}$; hiệu $I$: $0{,}633 - 0{,}015 = 0{,}618\\ \\text{A}$.</p></div><p>Hai lần liền kề, chẳng hạn lần 3 và 4, có hiệu $U$ chỉ $0{,}03\\ \\text{V}$ so với sai số $0{,}02\\ \\text{V}$: không dùng được.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính $r$</span></p>$$r = \\dfrac{U_1 - U_6}{I_6 - I_1}$$$$r = \\dfrac{1{,}54 - 1{,}27}{0{,}633 - 0{,}015}$$<div class=\"bt-ans\">$$r \\approx 0{,}44\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tính $\\mathcal{E}$</span></p><p>Thế lần 1 và $r$ vừa tìm vào $U = \\mathcal{E} - Ir$:</p>$$\\mathcal{E} = U_1 + I_1 r$$$$\\mathcal{E} = 1{,}54 + 0{,}015 \\cdot 0{,}437$$<div class=\"bt-ans\">$$\\mathcal{E} \\approx 1{,}55\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Sai số của $r$</span></p><p>Tử $U_1 - U_6$ mang sai số $0{,}01 + 0{,}01$ V; mẫu $I_6 - I_1$ mang $0{,}002 + 0{,}002$ A:</p>$$\\dfrac{\\Delta r}{r} = \\dfrac{0{,}01 + 0{,}01}{0{,}27} + \\dfrac{0{,}002 + 0{,}002}{0{,}618} \\approx 0{,}081$$$$\\Delta r = 0{,}437 \\cdot 0{,}081$$<div class=\"bt-ans\">$$\\Delta r \\approx 0{,}04\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Ghi kết quả và kiểm tra</span></p><p>$\\Delta r$ giữ 1 chữ số có nghĩa, $r$ viết cùng bậc thập phân với $\\Delta r$:</p><div class=\"bt-ans\">$$r = (0{,}44 \\pm 0{,}04)\\ \\Omega$$</div><p>Kiểm tra bằng lần 4: $U = 1{,}55 - 0{,}208 \\cdot 0{,}44 \\approx 1{,}46\\ \\text{V}$, khớp bảng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Chọn lần 1 và lần 6; $r \\approx 0{,}44\\ \\Omega$</p><p>b) $\\mathcal{E} \\approx 1{,}55\\ \\text{V}$</p><p>c) $\\Delta r \\approx 0{,}04\\ \\Omega$; $r = (0{,}44 \\pm 0{,}04)\\ \\Omega$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>bảng $(I, U)$ kèm sai số dụng cụ</strong> → chọn hai điểm xa nhau, trừ vế tìm $r$, thế tìm $\\mathcal{E}$, cộng sai số tỉ đối của tử và mẫu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Sáu điểm đo (I, U) đánh số theo lần đo\"><line x1=\"62.0\" y1=\"208.0\" x2=\"382.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M371.6,202.0 L382.0,208.0 L371.6,214.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"62.0\" y1=\"208.0\" x2=\"62.0\" y2=\"24.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><path d=\"M56.0,34.4 L62.0,24.0 L68.0,34.4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"380\" y=\"230\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">I (A)</text><text x=\"70\" y=\"26\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U (V)</text><circle cx=\"68.4\" cy=\"63.5\" r=\"5\" fill=\"#fb923c\"/><text x=\"75.4\" y=\"54.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">1</text><circle cx=\"91.6\" cy=\"72.0\" r=\"5\" fill=\"#fb923c\"/><text x=\"98.6\" y=\"63.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">2</text><circle cx=\"115.1\" cy=\"84.7\" r=\"5\" fill=\"#fb923c\"/><text x=\"122.1\" y=\"75.7\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">3</text><circle cx=\"151.1\" cy=\"97.5\" r=\"5\" fill=\"#fb923c\"/><text x=\"158.1\" y=\"88.5\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">4</text><circle cx=\"211.1\" cy=\"127.3\" r=\"5\" fill=\"#fb923c\"/><text x=\"218.1\" y=\"118.3\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">5</text><circle cx=\"333.3\" cy=\"178.2\" r=\"5\" fill=\"#fb923c\"/><text x=\"340.3\" y=\"169.2\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">6</text><text x=\"312\" y=\"120\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">gần một đường thẳng dốc xuống</text></svg><figcaption>Dữ kiện: sáu điểm đo theo bảng trong đề. Hình minh hoạ, không theo tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bảng 6 lần đo, $R_x$ từ $100\\ \\Omega$ về $0$\"</td><td>$I$ tăng, $U$ giảm dần</td><td>Đồ thị $U$–$I$ của pin có dạng gì? Hệ thức nào mô tả?</td></tr><tr><td>\"vôn kế $\\pm 0{,}01\\ \\text{V}$, ampe kế $\\pm 0{,}002\\ \\text{A}$\"</td><td>$\\Delta U$, $\\Delta I$ của mỗi số đọc</td><td>⚠ Một hiệu hai số đo mang sai số của cả hai số: hiệu càng nhỏ so với sai số thì sai số tỉ đối càng lớn.</td></tr><tr><td>\"chọn hai lần đo cho $r$ đáng tin nhất\"</td><td>Hai lần đo nào?</td><td>So sai số tỉ đối của hiệu $U$ ở một cặp xa nhau và một cặp gần nhau.</td></tr><tr><td>\"tính $r$\"</td><td>Cần tìm $r$</td><td>Hai cặp $(I, U)$ cho hệ thức nào chứa $r$ mà không cần biết $\\mathcal{E}$?</td></tr><tr><td>\"tính $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Đã biết $r$, dùng một cặp $(I, U)$ với hệ thức nào? Số hạng $Ir$ mang dấu gì?</td></tr><tr><td>\"ước lượng $\\Delta r$ ... ghi kết quả\"</td><td>Cần tìm $\\Delta r$</td><td>$r$ là thương của hai hiệu: sai số tỉ đối của một thương tính thế nào? $\\Delta r$ giữ mấy chữ số có nghĩa?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bảng 6 lần đo, $R_x$ từ $100\\ \\Omega$ về $0$\"</td><td>$I$ tăng, $U$ giảm dần</td><td>Đồ thị $U$–$I$ của pin có dạng gì? Hệ thức nào mô tả?</td></tr><tr><td>\"vôn kế $\\pm 0{,}01\\ \\text{V}$, ampe kế $\\pm 0{,}002\\ \\text{A}$\"</td><td>$\\Delta U$, $\\Delta I$ của mỗi số đọc</td><td>⚠ Một hiệu hai số đo mang sai số của cả hai số: hiệu càng nhỏ so với sai số thì sai số tỉ đối càng lớn.</td></tr><tr><td>\"chọn hai lần đo cho $r$ đáng tin nhất\"</td><td>Hai lần đo nào?</td><td>So sai số tỉ đối của hiệu $U$ ở một cặp xa nhau và một cặp gần nhau.</td></tr><tr><td>\"tính $r$\"</td><td>Cần tìm $r$</td><td>Hai cặp $(I, U)$ cho hệ thức nào chứa $r$ mà không cần biết $\\mathcal{E}$?</td></tr><tr><td>\"tính $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Đã biết $r$, dùng một cặp $(I, U)$ với hệ thức nào? Số hạng $Ir$ mang dấu gì?</td></tr><tr><td>\"ước lượng $\\Delta r$ ... ghi kết quả\"</td><td>Cần tìm $\\Delta r$</td><td>$r$ là thương của hai hiệu: sai số tỉ đối của một thương tính thế nào? $\\Delta r$ giữ mấy chữ số có nghĩa?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>bảng (I, U) kèm sai số</b> → nghĩ tới <b>hai điểm xa nhau</b>, trừ vế tìm r, cộng sai số tỉ đối",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -243,7 +541,150 @@
     {
      "tieu_de": "Ghi kết quả và kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 0.7,
+     "ten": "I (A)",
+     "vach": [
+      0.2,
+      0.4,
+      0.6
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 1.2,
+     "max": 1.6,
+     "ten": "U (V)",
+     "vach": [
+      1.3,
+      1.4,
+      1.5
+     ],
+     "luoi": 0.05
+    },
+    "hinh": [
+     {
+      "loai": "diem",
+      "x": 0.015,
+      "y": 1.54,
+      "ten": "1",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.069,
+      "y": 1.52,
+      "ten": "2",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.124,
+      "y": 1.49,
+      "ten": "3",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.208,
+      "y": 1.46,
+      "ten": "4",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.348,
+      "y": 1.39,
+      "ten": "5",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.633,
+      "y": 1.27,
+      "ten": "6",
+      "vi": "tr"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0.015,
+          1.54
+         ],
+         [
+          0.633,
+          1.27
+         ]
+        ],
+        "mau": "min"
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Lần 1 và 6 xa nhau nhất: hiệu lớn nhất"
+      }
+     ],
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0.633,
+        1.27
+       ],
+       "den": [
+        0.015,
+        1.54
+       ],
+       "nhan_x": "ΔI = 0,618 A",
+       "nhan_y": "ΔU = 0,27 V"
+      },
+      {
+       "loai": "ghi",
+       "text": "r = 0,27 : 0,618 ≈ 0,44 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 1.547
+      },
+      {
+       "loai": "chu",
+       "x": 0.45,
+       "y": 1.565,
+       "text": "ℰ ≈ 1,55 V (I = 0)",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℰ = U₁ + I₁r = 1,54 + 0,015·0,437 ≈ 1,55 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Δr/r ≈ 0,081 ⇒ Δr = 0,437·0,081 ≈ 0,04 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "r = (0,44 ± 0,04) Ω; lần 4 khớp ✓"
+      }
+     ]
+    ]
+   }
   }
  ]
 }
