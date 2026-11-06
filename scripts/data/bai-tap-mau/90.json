@@ -12,8 +12,8 @@
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đoạn mạch nối tiếp chỉ có một đường đi của dòng điện.</li><li><strong>Tính chất:</strong> $I=I_1=I_2$.</li><li>$U=U_1+U_2$.</li><li>Công thức: $R_{td}=R_1+R_2$.</li><li>Định luật Ohm: $I=\\dfrac{U}{R}$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua điện trở dây nối, ampe kế; vôn kế điện trở rất lớn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở tương đương</span></p>$$R_{td}=R_1+R_2$$$$R_{td}=15+25$$<div class=\"bt-ans\">$$R_{td}=40\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chỉ ampe kế</span></p><p>Nối tiếp nên ampe kế đo dòng chung:</p>$$I=\\dfrac{U_{AB}}{R_{td}}=\\dfrac{12}{40}$$<div class=\"bt-ans\">$$I=0{,}3\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hiệu điện thế trên $R_1$</span></p>$$U_1=I\\cdot R_1=0{,}3\\cdot15$$<div class=\"bt-ans\">$$U_1=4{,}5\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Hiệu điện thế trên $R_2$</span></p>$$U_2=I\\cdot R_2=0{,}3\\cdot25$$<div class=\"bt-ans\">$$U_2=7{,}5\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$U_1+U_2=4{,}5+7{,}5=12\\ \\text{V}=U_{AB}\\ ✓$$<p>$R_2$ lớn hơn nhận hiệu điện thế lớn hơn: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_{td}=40\\ \\Omega$</p><p>b) $I=0{,}3\\ \\text{A}$</p><p>c) $U_1=4{,}5\\ \\text{V}$</p><p>$U_2=7{,}5\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>mắc nối tiếp</strong> và $U$ cả đoạn → cộng $R$, tính $I$ chung, rồi $U=IR$ từng cái.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "label": "Dạng 1 · Đoạn mạch nối tiếp: tính điện trở tương đương, I, U từng điện trở",
    "topic": "Điện trở tương đương của đoạn mạch",
-   "problem_html": "<p>Cho đoạn mạch $AB$ gồm $R_1 = 15\\ \\Omega$ mắc nối tiếp với $R_2 = 25\\ \\Omega$ như hình. Vôn kế mắc giữa $A$ và $B$ chỉ $12\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của đoạn mạch.</li><li>Ampe kế chỉ bao nhiêu?</li><li>Tính hiệu điện thế giữa hai đầu mỗi điện trở.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 262\" role=\"img\" aria-label=\"Đoạn mạch nối tiếp: R1 15 ôm và R2 25 ôm nối tiếp giữa A và B, vôn kế chỉ 12 vôn giữa A và B, ampe kế nối tiếp chưa biết số chỉ\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,160 40,120 127,120\"/><rect x=\"127.0\" y=\"110.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"173,120 245,120\"/><rect x=\"245.0\" y=\"110.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"291,120 380,120 380,236 217,236\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"203,236 40,236 40,196\"/><circle cx=\"40\" cy=\"178\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"185\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"203.0\" y1=\"219.0\" x2=\"203.0\" y2=\"253.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"227.0\" x2=\"217.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"95,120 95,48 192,48\"/><circle cx=\"210\" cy=\"48\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"228,48 325,48 325,120\"/><circle cx=\"95.0\" cy=\"120.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"325.0\" cy=\"120.0\" r=\"4\" fill=\"currentColor\"/><text x=\"88\" y=\"146\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"332\" y=\"146\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">B</text><path d=\"M59.6,114L70,120L59.6,126\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M341.6,114L352,120L341.6,126\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M386,169.6L380,180L374,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M130.4,242L120,236L130.4,230\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"150\" y=\"102\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">1</tspan><tspan dy=\"-4\"></tspan></text><text x=\"268\" y=\"102\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">2</tspan><tspan dy=\"-4\"></tspan></text><text x=\"150\" y=\"154\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">15 Ω</text><text x=\"268\" y=\"154\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">25 Ω</text><text x=\"252\" y=\"30\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">12 V</text><text x=\"64\" y=\"214\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">?</text><circle cx=\"203\" cy=\"236\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"203;40;40;380;380;217;203;203\" keyTimes=\"0;0.179;0.306;0.679;0.806;0.985;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"236;236;120;120;236;236;236;236\" keyTimes=\"0;0.179;0.306;0.679;0.806;0.985;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40\" cy=\"171\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40;40;380;380;217;203;40;40\" keyTimes=\"0;0.056;0.429;0.556;0.735;0.75;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"171;120;120;236;236;236;236;171\" keyTimes=\"0;0.056;0.429;0.556;0.735;0.75;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"217\" cy=\"120\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"217;380;380;217;203;40;40;217\" keyTimes=\"0;0.179;0.306;0.485;0.5;0.679;0.806;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120;120;236;236;236;236;120;120\" keyTimes=\"0;0.179;0.306;0.485;0.5;0.679;0.806;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"380\" cy=\"185\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"380;380;217;203;40;40;380;380\" keyTimes=\"0;0.056;0.235;0.25;0.429;0.556;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"185;236;236;236;236;120;120;185\" keyTimes=\"0;0.056;0.235;0.25;0.429;0.556;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng).<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua mạch, về cực (−).<br>Chấm chỉ minh hoạ chiều dòng điện, không cho biết cường độ.<br>Tốc độ chấm chỉ để minh hoạ, không đúng thời gian thật.</figcaption></figure>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 292\" role=\"img\" aria-label=\"Sơ đồ mạch nối tiếp với dữ kiện: hai điện trở, hiệu điện thế giữa A và B\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,160 40,120 127,120\"/><rect x=\"127.0\" y=\"110.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"173,120 245,120\"/><rect x=\"245.0\" y=\"110.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"291,120 380,120 380,236 217,236\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"203,236 40,236 40,196\"/><circle cx=\"40\" cy=\"178\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"185\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"203.0\" y1=\"219.0\" x2=\"203.0\" y2=\"253.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"227.0\" x2=\"217.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"95,120 95,48 192,48\"/><circle cx=\"210\" cy=\"48\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"210\" y=\"55\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"228,48 325,48 325,120\"/><circle cx=\"95.0\" cy=\"120.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"325.0\" cy=\"120.0\" r=\"4\" fill=\"currentColor\"/><text x=\"88\" y=\"146\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"332\" y=\"146\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">B</text><path d=\"M59.6,114L70,120L59.6,126\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M341.6,114L352,120L341.6,126\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M386,169.6L380,180L374,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M130.4,242L120,236L130.4,230\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"150\" y=\"102\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 15 Ω</tspan></text><text x=\"268\" y=\"102\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 25 Ω</tspan></text><text x=\"252\" y=\"30\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">U</tspan><tspan dy=\"4\" font-size=\"11\">AB</tspan><tspan dy=\"-4\"> = 12 V</tspan></text><text x=\"16\" y=\"282\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Một đường đi: ampe kế đo I chung</text></svg><figcaption>Dữ kiện: vôn kế đo $U_{AB}$ của cả đoạn mạch.<br>Ampe kế nối tiếp đo dòng chung của $R_1$ và $R_2.$</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;mắc nối tiếp&quot;</td><td>Một đường đi</td><td>⚠ Nối tiếp: $I$ như nhau qua mọi điện trở</td></tr><tr><td>&quot;R1 = 15&nbsp;Ω … R2 = 25&nbsp;Ω&quot;</td><td>$R_1=15\\ \\Omega$; $R_2=25\\ \\Omega$</td><td>Điện trở tương đương của đoạn nối tiếp tính thế nào?</td></tr><tr><td>&quot;Vôn kế mắc giữa A và B chỉ 12&nbsp;V&quot;</td><td>$U_{AB}=12\\ \\text{V}$</td><td>Vôn kế đo $U$ của cả đoạn $AB$</td></tr><tr><td>&quot;Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể&quot;</td><td>Chỉ tính hai điện trở</td><td>⚠ Điều kiện để dùng $R_{td}$ của riêng hai điện trở</td></tr><tr><td>&quot;Ampe kế chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=\\dfrac{U_{AB}}{R_{td}}$</td></tr><tr><td>&quot;hiệu điện thế giữa hai đầu mỗi điện trở&quot;</td><td>Cần $U_1$, $U_2$</td><td>$U=IR$ cho từng điện trở</td></tr></tbody></table></div>",
+   "problem_html": "<p>Cho đoạn mạch $AB$ gồm $R_1 = 15\\ \\Omega$ mắc nối tiếp với $R_2 = 25\\ \\Omega$ như hình. Vôn kế mắc giữa $A$ và $B$ chỉ $12\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của đoạn mạch.</li><li>Ampe kế chỉ bao nhiêu?</li><li>Tính hiệu điện thế giữa hai đầu mỗi điện trở.</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;mắc nối tiếp&quot;</td><td>Một đường đi</td><td>⚠ Nối tiếp: $I$ như nhau qua mọi điện trở</td></tr><tr><td>&quot;R1 = 15&nbsp;Ω … R2 = 25&nbsp;Ω&quot;</td><td>$R_1=15\\ \\Omega$; $R_2=25\\ \\Omega$</td><td>Điện trở tương đương của đoạn nối tiếp tính thế nào?</td></tr><tr><td>&quot;Vôn kế mắc giữa A và B chỉ 12&nbsp;V&quot;</td><td>$U_{AB}=12\\ \\text{V}$</td><td>Vôn kế đo $U$ của cả đoạn $AB$</td></tr><tr><td>&quot;Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể&quot;</td><td>Chỉ tính hai điện trở</td><td>⚠ Điều kiện để dùng $R_{td}$ của riêng hai điện trở</td></tr><tr><td>&quot;Ampe kế chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=\\dfrac{U_{AB}}{R_{td}}$</td></tr><tr><td>&quot;hiệu điện thế giữa hai đầu mỗi điện trở&quot;</td><td>Cần $U_1$, $U_2$</td><td>$U=IR$ cho từng điện trở</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>mắc nối tiếp</b> và $U$ của cả đoạn → cộng điện trở, tìm $I$ chung, rồi $U=IR$ từng cái.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -115,6 +115,189 @@
      "b) Số chỉ ampe kế",
      "c) $U_1$, $U_2$"
     ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        2,
+        6.5
+       ],
+       [
+        18,
+        6.5
+       ],
+       [
+        18,
+        1.0
+       ],
+       [
+        10,
+        1.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        4.5,
+        6.5
+       ],
+       [
+        4.5,
+        9.6
+       ],
+       [
+        15.5,
+        9.6
+       ],
+       [
+        15.5,
+        6.5
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 4.5,
+      "y": 6.5
+     },
+     {
+      "loai": "nut",
+      "x": 15.5,
+      "y": 6.5
+     },
+     {
+      "loai": "chu",
+      "x": 4.5,
+      "y": 5.0,
+      "text": "A",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 15.5,
+      "y": 5.0,
+      "text": "B",
+      "a": "middle"
+     },
+     {
+      "loai": "nguon",
+      "x": 10,
+      "y": 1.0,
+      "duong": "truoc"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 2,
+      "y": 3.6,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 7.5,
+      "y": 6.5,
+      "ten": "R_1 = 15 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 12.5,
+      "y": 6.5,
+      "ten": "R_2 = 25 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 10,
+      "y": 9.6,
+      "kieu": "V",
+      "ten": "12 V",
+      "vi": "t"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 10,
+       "y": 2.6,
+       "text": "R_{tđ} = 40 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{tđ} = R_1 + R_2 = 15 + 25 = 40 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        7,
+        1.0
+       ],
+       "den": [
+        5,
+        1.0
+       ],
+       "nhan": "0,3 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 12 : 40 = 0,3 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 7.5,
+       "y": 7.4,
+       "text": "4,5 V",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U_1 = 0,3·15 = 4,5 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 12.5,
+       "y": 7.4,
+       "text": "7,5 V",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U_2 = 0,3·25 = 7,5 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 4,5 + 7,5 = 12 V ✓"
+      }
+     ]
+    ]
    }
   },
   {
@@ -122,8 +305,8 @@
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đoạn mạch song song: các điện trở chung hai đầu $A$, $B$.</li><li><strong>Tính chất:</strong> $U=U_1=U_2$.</li><li>$I=I_1+I_2$.</li><li>Công thức: $\\dfrac{1}{R_{td}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}$, hai điện trở: $R_{td}=\\dfrac{R_1R_2}{R_1+R_2}$.</li><li>⚠ <strong>Điều kiện:</strong> bỏ qua điện trở dây nối, ampe kế; vôn kế điện trở rất lớn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điện trở tương đương</span></p><p>Tích chia tổng:</p>$$R_{td}=\\dfrac{R_1R_2}{R_1+R_2}=\\dfrac{40\\cdot60}{40+60}$$<div class=\"bt-ans\">$$R_{td}=24\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Dòng qua $R_1$</span></p><p>Mỗi nhánh nhận đủ $U_{AB}=12$ V:</p>$$I_1=\\dfrac{U_{AB}}{R_1}=\\dfrac{12}{40}$$<div class=\"bt-ans\">$$I_1=0{,}3\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng qua $R_2$</span></p>$$I_2=\\dfrac{U_{AB}}{R_2}=\\dfrac{12}{60}$$<div class=\"bt-ans\">$$I_2=0{,}2\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số chỉ ampe kế mạch chính</span></p>$$I=I_1+I_2=0{,}3+0{,}2$$<div class=\"bt-ans\">$$I=0{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\dfrac{U_{AB}}{R_{td}}=\\dfrac{12}{24}=0{,}5\\ \\text{A}\\ ✓$$<p>$R_{td}=24\\ \\Omega$ nhỏ hơn cả $40\\ \\Omega$ và $60\\ \\Omega$: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_{td}=24\\ \\Omega$</p><p>b) $I_1=0{,}3\\ \\text{A}$</p><p>$I_2=0{,}2\\ \\text{A}$</p><p>c) $I=0{,}5\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>mắc song song</strong> → mỗi nhánh nhận đủ $U$; $I$ mạch chính bằng tổng các nhánh.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "label": "Dạng 2 · Đoạn mạch song song: điện trở tương đương, dòng từng nhánh, dòng mạch chính",
    "topic": "Điện trở tương đương của đoạn mạch",
-   "problem_html": "<p>Cho đoạn mạch $AB$ gồm $R_1 = 40\\ \\Omega$ mắc song song với $R_2 = 60\\ \\Omega$ như hình. Vôn kế mắc giữa $A$ và $B$ chỉ $12\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của đoạn mạch.</li><li>Tính cường độ dòng điện qua mỗi điện trở.</li><li>Ampe kế ở mạch chính chỉ bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Đoạn mạch song song: R1 40 ôm và R2 60 ôm nối chung hai điểm A và B, vôn kế chỉ 12 vôn, ampe kế mạch chính chưa biết số chỉ\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 120,190\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,110 330,190\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 202,110\"/><rect x=\"202.0\" y=\"100.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"248,110 330,110\"/><path d=\"M164.6,104L175,110L164.6,116\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,190 202,190\"/><rect x=\"202.0\" y=\"180.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"248,190 330,190\"/><path d=\"M164.6,184L175,190L164.6,196\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,150 40,150 40,202\"/><circle cx=\"40\" cy=\"220\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"227\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,238 40,272 203,272\"/><line x1=\"203.0\" y1=\"255.0\" x2=\"203.0\" y2=\"289.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"263.0\" x2=\"217.0\" y2=\"281.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"251\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"251\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"217,272 385,272 385,150 330,150\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 120,40 207,40\"/><circle cx=\"225\" cy=\"40\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"225\" y=\"47\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"243,40 330,40 330,110\"/><circle cx=\"120.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><text x=\"112\" y=\"174.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"338\" y=\"174.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">B</text><text x=\"225\" y=\"92\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">1</tspan><tspan dy=\"-4\"></tspan></text><text x=\"225\" y=\"224\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">2</tspan><tspan dy=\"-4\"></tspan></text><path d=\"M69.6,144L80,150L69.6,156\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M391,219.6L385,230L379,219.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M310.4,278L300,272L310.4,266\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"258\" y=\"94\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">40 Ω</text><text x=\"258\" y=\"222\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">60 Ω</text><text x=\"268\" y=\"28\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">12 V</text><text x=\"64\" y=\"254\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">?</text><circle cx=\"203\" cy=\"272\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"203;40;40;120;120;330;330;385;385;217;203;203\" keyTimes=\"0;0.161;0.281;0.36;0.399;0.607;0.646;0.7;0.821;0.986;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"272;272;150;150;110;110;150;150;272;272;272;272\" keyTimes=\"0;0.161;0.281;0.36;0.399;0.607;0.646;0.7;0.821;0.986;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"222\" cy=\"190\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"222;330;330;385;385;217;203;40;40;120;120;222\" keyTimes=\"0;0.107;0.146;0.2;0.321;0.486;0.5;0.661;0.781;0.86;0.899;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"190;190;150;150;272;272;272;272;150;150;190;190\" keyTimes=\"0;0.107;0.146;0.2;0.321;0.486;0.5;0.661;0.781;0.86;0.899;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng): tới A dòng điện rẽ hai nhánh, tới B nhập lại.<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua mạch, về cực (−).<br>Chấm chỉ minh hoạ chiều dòng điện, không cho biết cường độ.<br>Tốc độ chấm chỉ để minh hoạ, không đúng thời gian thật.</figcaption></figure>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 300\" role=\"img\" aria-label=\"Sơ đồ mạch song song với dữ kiện: hai điện trở cùng nối vào A và B, hiệu điện thế giữa A và B\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 120,190\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,110 330,190\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 202,110\"/><rect x=\"202.0\" y=\"100.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"248,110 330,110\"/><path d=\"M164.6,104L175,110L164.6,116\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,190 202,190\"/><rect x=\"202.0\" y=\"180.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"248,190 330,190\"/><path d=\"M164.6,184L175,190L164.6,196\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,150 40,150 40,202\"/><circle cx=\"40\" cy=\"220\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"227\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,238 40,272 203,272\"/><line x1=\"203.0\" y1=\"255.0\" x2=\"203.0\" y2=\"289.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"263.0\" x2=\"217.0\" y2=\"281.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"251\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"251\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"217,272 385,272 385,150 330,150\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"120,110 120,40 207,40\"/><circle cx=\"225\" cy=\"40\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"225\" y=\"47\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"243,40 330,40 330,110\"/><circle cx=\"120.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"150.0\" r=\"4\" fill=\"currentColor\"/><text x=\"112\" y=\"174.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">A</text><text x=\"338\" y=\"174.0\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">B</text><path d=\"M69.6,144L80,150L69.6,156\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M391,219.6L385,230L379,219.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M310.4,278L300,272L310.4,266\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"225\" y=\"92\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 40 Ω</tspan></text><text x=\"225\" y=\"224\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 60 Ω</tspan></text><text x=\"268\" y=\"28\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">U</tspan><tspan dy=\"4\" font-size=\"11\">AB</tspan><tspan dy=\"-4\"> = 12 V</tspan></text></svg><figcaption>Dữ kiện: hai nhánh cùng nối vào $A$ và $B.$<br>Ampe kế ở dây bên trái đo dòng mạch chính.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;mắc song song&quot;</td><td>Hai đầu nối chung $A$, $B$</td><td>⚠ Song song: $U$ như nhau ở mọi nhánh</td></tr><tr><td>&quot;R1 = 40&nbsp;Ω … R2 = 60&nbsp;Ω&quot;</td><td>$R_1=40\\ \\Omega$; $R_2=60\\ \\Omega$</td><td>Điện trở tương đương của đoạn song song tính thế nào? Nhớ lật ngược.</td></tr><tr><td>&quot;Vôn kế mắc giữa A và B chỉ 12&nbsp;V&quot;</td><td>$U_{AB}=12\\ \\text{V}$</td><td>Mỗi nhánh nhận hiệu điện thế bao nhiêu?</td></tr><tr><td>&quot;Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể&quot;</td><td>Chỉ tính hai điện trở</td><td>⚠ Điều kiện để $U$ hai nhánh bằng $U_{AB}$</td></tr><tr><td>&quot;cường độ dòng điện qua mỗi điện trở&quot;</td><td>Cần $I_1$, $I_2$</td><td>$I=\\dfrac{U}{R}$ cho từng nhánh</td></tr><tr><td>&quot;Ampe kế ở mạch chính chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=I_1+I_2$</td></tr></tbody></table></div>",
+   "problem_html": "<p>Cho đoạn mạch $AB$ gồm $R_1 = 40\\ \\Omega$ mắc song song với $R_2 = 60\\ \\Omega$ như hình. Vôn kế mắc giữa $A$ và $B$ chỉ $12\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của đoạn mạch.</li><li>Tính cường độ dòng điện qua mỗi điện trở.</li><li>Ampe kế ở mạch chính chỉ bao nhiêu?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;mắc song song&quot;</td><td>Hai đầu nối chung $A$, $B$</td><td>⚠ Song song: $U$ như nhau ở mọi nhánh</td></tr><tr><td>&quot;R1 = 40&nbsp;Ω … R2 = 60&nbsp;Ω&quot;</td><td>$R_1=40\\ \\Omega$; $R_2=60\\ \\Omega$</td><td>Điện trở tương đương của đoạn song song tính thế nào? Nhớ lật ngược.</td></tr><tr><td>&quot;Vôn kế mắc giữa A và B chỉ 12&nbsp;V&quot;</td><td>$U_{AB}=12\\ \\text{V}$</td><td>Mỗi nhánh nhận hiệu điện thế bao nhiêu?</td></tr><tr><td>&quot;Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể&quot;</td><td>Chỉ tính hai điện trở</td><td>⚠ Điều kiện để $U$ hai nhánh bằng $U_{AB}$</td></tr><tr><td>&quot;cường độ dòng điện qua mỗi điện trở&quot;</td><td>Cần $I_1$, $I_2$</td><td>$I=\\dfrac{U}{R}$ cho từng nhánh</td></tr><tr><td>&quot;Ampe kế ở mạch chính chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=I_1+I_2$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>mắc song song</b> → mỗi nhánh nhận đủ $U$; dòng mạch chính = tổng các nhánh.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -230,6 +413,255 @@
     "ten": "Cổng soát vé",
     "dieu_kien": "Mạch ở trạng thái dừng (không đóng, ngắt hay nạp tụ), điện trở thuần $R$ không đổi theo dòng (bóng dây tóc nóng lên thì không đúng) và dây nối coi như $R=0$. Chỉ dòng một chiều hoặc mạch thuần trở (có tụ, cuộn cảm hay xoay chiều phải dùng $Z$ thay $R$), mỗi nhánh chỉ có điện trở, không có nguồn riêng, và mạch phải rút được thành một hàng hoặc các làn (không phải cầu, tam giác). Mẹo chỉ nói về dòng điện, không nói về hiệu điện thế; nguồn có điện trở trong đáng kể thì thêm nhánh làm U của cả cụm giảm.",
     "html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"meo-cong\"><svg viewBox=\"0 0 320 316\" role=\"img\" aria-label=\"Cổng soát vé: một hàng qua hai cổng nối tiếp, và hai làn song song chung sảnh vào, sảnh ra\"><text x=\"10\" y=\"20\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">Nối tiếp: một hàng, hai cổng</text><line x1=\"10\" y1=\"58\" x2=\"310\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><polygon points=\"300,52 312,58 300,64\" fill=\"currentColor\" opacity=\".5\"/><rect x=\"97\" y=\"33.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"97\" y=\"69.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"207\" y=\"38.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><rect x=\"207\" y=\"64.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><text x=\"90\" y=\"46\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">R</text><text x=\"200\" y=\"46\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">2R</text><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.1291\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1291;0.2829\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2829;0.4368\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4368\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.245\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.245;0.3988\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3988;0.5527\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5527\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.0385;0.3462;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0385;0.3462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.1923;0.5;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1923;0.5\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.3462;0.6538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3462;0.6538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><text x=\"10\" y=\"112\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">Song song: hai làn, chung sảnh</text><rect x=\"8\" y=\"132\" width=\"42\" height=\"92\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\".5\"/><text x=\"29\" y=\"216\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">vào</text><rect x=\"270\" y=\"132\" width=\"42\" height=\"92\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\".5\"/><text x=\"291\" y=\"216\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">ra</text><polyline points=\"50,170 100,152 220,152 270,170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><polyline points=\"50,186 100,204 220,204 270,186\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><rect x=\"157\" y=\"127.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"157\" y=\"163.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"157\" y=\"184.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><rect x=\"157\" y=\"210.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><text x=\"150\" y=\"140\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">R</text><text x=\"150\" y=\"192\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">2R</text><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.0769;0.1541;0.2766;0.3538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0769;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.2692;0.3464;0.469;0.5462;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2692;0.5462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.4615;0.5387;0.6613;0.7385;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4615;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.6538;0.731;0.8536;0.9308;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6538;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,204;220,204;291,178;291,178\" keyTimes=\"0;0.0769;0.1541;0.2766;0.3538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0769;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,204;220,204;291,178;291,178\" keyTimes=\"0;0.4615;0.5387;0.6613;0.7385;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4615;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2154\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2154;0.4077\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4077;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6;0.7923\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 4</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7923\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2154\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2154;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3538;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3538;0.5462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 3</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5462;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 4</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7385;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 5</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7385;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 6</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Mỗi chấm là một người. Cổng R dễ qua,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">cổng 2R khó qua gấp đôi.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2692\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Nối tiếp: mỗi cổng đếm cùng số người,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">không ai ứ lại giữa hai cổng.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2692;0.6538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Song song: cổng 2R qua ít đi một nửa,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">R qua 4 người thì 2R qua 2 người.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6538;0.8846\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Lối chính = tổng hai làn: 4 + 2 = 6.</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Cổng càng khó, qua càng ít.</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8846\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Người qua mỗi phút = dòng $I$, cổng khó qua = điện trở $R$ lớn. Nối tiếp: $I$ như nhau; song song: $I=I_1+I_2$, $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}$.</figcaption></figure><p>Ở dạng này: hai điện trở là hai làn chung sảnh vào $A$ và sảnh ra $B$. Làn $R_1$ dễ đi hơn nên dòng qua nhiều hơn, $I_1:I_2=R_2:R_1$; ampe kế ở mạch chính đếm cả hai làn.</p>"
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10,
+        1.0
+       ],
+       [
+        2,
+        1.0
+       ],
+       [
+        2,
+        5.8
+       ],
+       [
+        5,
+        5.8
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        15,
+        5.8
+       ],
+       [
+        18,
+        5.8
+       ],
+       [
+        18,
+        1.0
+       ],
+       [
+        10,
+        1.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        5,
+        3.8
+       ],
+       [
+        5,
+        7.6
+       ],
+       [
+        15,
+        7.6
+       ],
+       [
+        15,
+        3.8
+       ],
+       [
+        5,
+        3.8
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 5,
+      "y": 5.8
+     },
+     {
+      "loai": "nut",
+      "x": 15,
+      "y": 5.8
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        5,
+        7.6
+       ],
+       [
+        5,
+        9.6
+       ],
+       [
+        15,
+        9.6
+       ],
+       [
+        15,
+        7.6
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 5,
+      "y": 7.6
+     },
+     {
+      "loai": "nut",
+      "x": 15,
+      "y": 7.6
+     },
+     {
+      "loai": "chu",
+      "x": 4.6,
+      "y": 6.2,
+      "text": "A",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 15.4,
+      "y": 6.2,
+      "text": "B",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 10,
+      "y": 1.0,
+      "duong": "truoc"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 2,
+      "y": 3.4,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 8.5,
+      "y": 7.6,
+      "ten": "R_1 = 40 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 8.5,
+      "y": 3.8,
+      "ten": "R_2 = 60 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 10,
+      "y": 9.6,
+      "kieu": "V",
+      "ten": "12 V",
+      "vi": "t"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 2.4,
+       "y": 9.6,
+       "text": "R_{tđ} =",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 2.4,
+       "y": 7.5,
+       "text": "24 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{tđ} = 40·60 : (40 + 60) = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        11.5,
+        7.6
+       ],
+       "den": [
+        13.3,
+        7.6
+       ],
+       "nhan": "0,3 A",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "I_1 = 12 : 40 = 0,3 A"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        11.5,
+        3.8
+       ],
+       "den": [
+        13.3,
+        3.8
+       ],
+       "nhan": "0,2 A",
+       "vi": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "I_2 = 12 : 60 = 0,2 A"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        2,
+        4.6
+       ],
+       "den": [
+        2,
+        5.6
+       ],
+       "nhan": "0,5 A",
+       "vi": "l"
+      },
+      {
+       "loai": "ghi",
+       "text": "I = I_1 + I_2 = 0,3 + 0,2 = 0,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: 12 : 24 = 0,5 A ✓"
+      }
+     ]
+    ]
    }
   },
   {
@@ -237,8 +669,8 @@
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> mạch hỗn hợp: gộp từng cụm, cụm nằm giữa hai điểm chung gộp trước.</li><li>Song song: $R_{23}=\\dfrac{R_2R_3}{R_2+R_3}$.</li><li>Trong cụm song song: $U_2=U_3$.</li><li>Nối tiếp: $R_{td}=R_1+R_{23}$, dòng qua $R_1$ bằng dòng qua cụm.</li><li>Định luật Ohm: $I=\\dfrac{U}{R}$, $U=IR$.</li><li>⚠ <strong>Điều kiện:</strong> nguồn lí tưởng, bỏ qua điện trở dây nối, ampe kế.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Gộp cụm song song</span></p>$$R_{23}=\\dfrac{R_2R_3}{R_2+R_3}=\\dfrac{15\\cdot30}{15+30}$$<div class=\"bt-ans\">$$R_{23}=10\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở tương đương</span></p>$$R_{td}=R_1+R_{23}=5+10$$<div class=\"bt-ans\">$$R_{td}=15\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chỉ ampe kế</span></p>$$I=\\dfrac{U}{R_{td}}=\\dfrac{18}{15}$$<div class=\"bt-ans\">$$I=1{,}2\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Số chỉ vôn kế</span></p><p>Dòng $I$ qua cả cụm $MN$:</p>$$U_{MN}=I\\cdot R_{23}=1{,}2\\cdot10$$<div class=\"bt-ans\">$$U_{MN}=12\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Dòng qua $R_3$</span></p><p>$R_3$ nhận đúng $U_{MN}$:</p>$$I_3=\\dfrac{U_{MN}}{R_3}=\\dfrac{12}{30}$$<div class=\"bt-ans\">$$I_3=0{,}4\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$I_2=\\dfrac{12}{15}=0{,}8\\ \\text{A}$$$$I_2+I_3=0{,}8+0{,}4=1{,}2\\ \\text{A}=I\\ ✓$$$$U_1=1{,}2\\cdot5=6\\ \\text{V}$$$$U_1+U_{MN}=6+12=18\\ \\text{V}\\ ✓$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_{td}=15\\ \\Omega$</p><p>b) $I=1{,}2\\ \\text{A}$</p><p>c) $U_{MN}=12\\ \\text{V}$</p><p>d) $I_3=0{,}4\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: thấy <strong>cụm hai điện trở chung hai đầu</strong> nằm nối tiếp với điện trở khác → gộp cụm, cộng nối tiếp, rồi tính ngược.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "label": "Dạng 3 · Mạch hỗn hợp: R₁ nối tiếp (R₂ song song R₃)",
    "topic": "Tính U, I trong mạch hỗn hợp",
-   "problem_html": "<p>Cho mạch điện như hình: $R_1 = 5\\ \\Omega$ mắc nối tiếp với cụm gồm $R_2 = 15\\ \\Omega$ song song $R_3 = 30\\ \\Omega$ (giữa hai điểm $M$, $N$). Hiệu điện thế giữa hai cực nguồn là $18\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của cả mạch.</li><li>Ampe kế ở mạch chính chỉ bao nhiêu?</li><li>Vôn kế mắc giữa $M$ và $N$ chỉ bao nhiêu?</li><li>Tính cường độ dòng điện qua $R_3$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 312\" role=\"img\" aria-label=\"Mạch: R1 5 ôm nối tiếp cụm R2 15 ôm song song R3 30 ôm, nguồn 18 vôn\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,170 40,117 77,117\"/><rect x=\"77.0\" y=\"107.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"123,117 160,117\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 160,152\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,82 330,152\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 222,82\"/><rect x=\"222.0\" y=\"72.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"268,82 330,82\"/><path d=\"M186.6,76L197,82L186.6,88\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,152 222,152\"/><rect x=\"222.0\" y=\"142.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"268,152 330,152\"/><path d=\"M186.6,146L197,152L186.6,158\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,117 380,117 380,262 217,262\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"203,262 40,262 40,206\"/><circle cx=\"40\" cy=\"188\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"195\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"203.0\" y1=\"245.0\" x2=\"203.0\" y2=\"279.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"253.0\" x2=\"217.0\" y2=\"271.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"241\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"241\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 160,34 227,34\"/><circle cx=\"245\" cy=\"34\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"245\" y=\"41\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"263,34 330,34 330,82\"/><circle cx=\"160.0\" cy=\"117.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"117.0\" r=\"4\" fill=\"currentColor\"/><text x=\"152\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">M</text><text x=\"338\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">N</text><text x=\"100\" y=\"99\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">1</tspan><tspan dy=\"-4\"></tspan></text><text x=\"245\" y=\"66\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">2</tspan><tspan dy=\"-4\"></tspan></text><text x=\"245\" y=\"184\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">3</tspan><tspan dy=\"-4\"></tspan></text><path d=\"M34,150.4L40,140L46,150.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M349.6,111L360,117L349.6,123\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M310.4,268L300,262L310.4,256\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"100\" y=\"151\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">5 Ω</text><text x=\"274\" y=\"68\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">15 Ω</text><text x=\"274\" y=\"184\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">30 Ω</text><text x=\"376\" y=\"302\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">nguồn 18 V</text><text x=\"64\" y=\"226\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">?</text><text x=\"272\" y=\"24\" fill=\"#f87171\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">?</text><circle cx=\"203\" cy=\"262\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"203;40;40;160;160;330;330;380;380;217;203;203\" keyTimes=\"0;0.157;0.296;0.412;0.445;0.609;0.642;0.69;0.83;0.987;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"262;262;117;117;82;82;117;117;262;262;262;262\" keyTimes=\"0;0.157;0.296;0.412;0.445;0.609;0.642;0.69;0.83;0.987;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"217\" cy=\"152\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"217;330;330;380;380;217;203;40;40;160;160;217\" keyTimes=\"0;0.109;0.142;0.19;0.33;0.487;0.5;0.657;0.796;0.912;0.945;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"152;152;117;117;262;262;262;262;117;117;152;152\" keyTimes=\"0;0.109;0.142;0.19;0.33;0.487;0.5;0.657;0.796;0.912;0.945;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: qua $R_1,$ tới $M$ rẽ hai nhánh, tới $N$ nhập lại.<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua mạch, về cực (−).<br>Chấm chỉ minh hoạ chiều dòng điện, không cho biết cường độ.<br>Tốc độ chấm chỉ để minh hoạ, không đúng thời gian thật.</figcaption></figure>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 312\" role=\"img\" aria-label=\"Sơ đồ mạch hỗn hợp với dữ kiện: R1 nối tiếp cụm R2 song song R3 giữa hai điểm M và N\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,170 40,117 77,117\"/><rect x=\"77.0\" y=\"107.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"123,117 160,117\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 160,152\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,82 330,152\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 222,82\"/><rect x=\"222.0\" y=\"72.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"268,82 330,82\"/><path d=\"M186.6,76L197,82L186.6,88\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,152 222,152\"/><rect x=\"222.0\" y=\"142.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"268,152 330,152\"/><path d=\"M186.6,146L197,152L186.6,158\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,117 380,117 380,262 217,262\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"203,262 40,262 40,206\"/><circle cx=\"40\" cy=\"188\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"40\" y=\"195\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">A</text><line x1=\"203.0\" y1=\"245.0\" x2=\"203.0\" y2=\"279.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"253.0\" x2=\"217.0\" y2=\"271.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"241\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"241\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"160,82 160,34 227,34\"/><circle cx=\"245\" cy=\"34\" r=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"245\" y=\"41\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"middle\">V</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"263,34 330,34 330,82\"/><circle cx=\"160.0\" cy=\"117.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"117.0\" r=\"4\" fill=\"currentColor\"/><text x=\"152\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\">M</text><text x=\"338\" y=\"141\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">N</text><path d=\"M34,150.4L40,140L46,150.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M349.6,111L360,117L349.6,123\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M310.4,268L300,262L310.4,256\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><text x=\"100\" y=\"99\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">1</tspan><tspan dy=\"-4\"> = 5 Ω</tspan></text><text x=\"245\" y=\"66\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">2</tspan><tspan dy=\"-4\"> = 15 Ω</tspan></text><text x=\"245\" y=\"184\" fill=\"#fb923c\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">3</tspan><tspan dy=\"-4\"> = 30 Ω</tspan></text><text x=\"376\" y=\"302\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">U</tspan> = 18 V</text><text x=\"16\" y=\"300\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">Cụm nằm giữa M và N: gộp trước</text></svg><figcaption>Dữ kiện: $R_2,$ $R_3$ cùng nối vào $M$ và $N.$<br>Vôn kế đo hiệu điện thế giữa $M$ và $N.$</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;R2 = 15&nbsp;Ω song song R3 = 30&nbsp;Ω (giữa hai điểm M, N)&quot;</td><td>$R_2=15\\ \\Omega$; $R_3=30\\ \\Omega$</td><td>⚠ Hai điện trở có chung hai đầu $M$, $N$ mới là song song: gộp cụm này trước</td></tr><tr><td>&quot;R1 = 5&nbsp;Ω mắc nối tiếp với cụm&quot;</td><td>$R_1=5\\ \\Omega$</td><td>Sau khi gộp, $R_1$ và cụm mắc thế nào?</td></tr><tr><td>&quot;hai cực nguồn là 18&nbsp;V&quot;</td><td>$U=18\\ \\text{V}$</td><td>Nguồn lí tưởng: $U$ đặt vào cả mạch</td></tr><tr><td>&quot;Ampe kế ở mạch chính chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=\\dfrac{U}{R_{td}}$</td></tr><tr><td>&quot;Vôn kế mắc giữa M và N chỉ bao nhiêu?&quot;</td><td>Cần $U_{MN}$</td><td>$U_{MN}=I\\cdot R_{23}$</td></tr><tr><td>&quot;cường độ dòng điện qua R3&quot;</td><td>Cần $I_3$</td><td>Hiệu điện thế nào đặt lên $R_3$? Rồi $I=\\dfrac{U}{R}$</td></tr></tbody></table></div>",
+   "problem_html": "<p>Cho mạch điện như hình: $R_1 = 5\\ \\Omega$ mắc nối tiếp với cụm gồm $R_2 = 15\\ \\Omega$ song song $R_3 = 30\\ \\Omega$ (giữa hai điểm $M$, $N$). Hiệu điện thế giữa hai cực nguồn là $18\\ \\text{V}$. Coi nguồn điện lí tưởng, điện trở của dây nối và ampe kế không đáng kể, vôn kế có điện trở rất lớn.</p><ol type='a'><li>Tính điện trở tương đương của cả mạch.</li><li>Ampe kế ở mạch chính chỉ bao nhiêu?</li><li>Vôn kế mắc giữa $M$ và $N$ chỉ bao nhiêu?</li><li>Tính cường độ dòng điện qua $R_3$.</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;R2 = 15&nbsp;Ω song song R3 = 30&nbsp;Ω (giữa hai điểm M, N)&quot;</td><td>$R_2=15\\ \\Omega$; $R_3=30\\ \\Omega$</td><td>⚠ Hai điện trở có chung hai đầu $M$, $N$ mới là song song: gộp cụm này trước</td></tr><tr><td>&quot;R1 = 5&nbsp;Ω mắc nối tiếp với cụm&quot;</td><td>$R_1=5\\ \\Omega$</td><td>Sau khi gộp, $R_1$ và cụm mắc thế nào?</td></tr><tr><td>&quot;hai cực nguồn là 18&nbsp;V&quot;</td><td>$U=18\\ \\text{V}$</td><td>Nguồn lí tưởng: $U$ đặt vào cả mạch</td></tr><tr><td>&quot;Ampe kế ở mạch chính chỉ bao nhiêu?&quot;</td><td>Cần $I$</td><td>$I=\\dfrac{U}{R_{td}}$</td></tr><tr><td>&quot;Vôn kế mắc giữa M và N chỉ bao nhiêu?&quot;</td><td>Cần $U_{MN}$</td><td>$U_{MN}=I\\cdot R_{23}$</td></tr><tr><td>&quot;cường độ dòng điện qua R3&quot;</td><td>Cần $I_3$</td><td>Hiệu điện thế nào đặt lên $R_3$? Rồi $I=\\dfrac{U}{R}$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hai điện trở chung hai đầu</b> nối tiếp với điện trở khác → gộp cụm trước, rồi tính ngược.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -356,6 +788,7 @@
    ],
    "cong_cu": {
     "loai": "mach_dien",
+    "de": true,
     "hinh": [
      {
       "loai": "day",
@@ -599,8 +1032,8 @@
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Định luật Ohm: $I=\\dfrac{U}{R}$.</li><li>Nối tiếp: $I$ chung.</li><li>$R_{td}=R_đ+R_x$.</li><li>Song song: các nhánh cùng hiệu điện thế.</li><li>Đèn sáng bình thường khi đúng $U_đ$ (và đúng $I_đ$) ghi trong đề.</li><li>⚠ <strong>Điều kiện:</strong> nguồn lí tưởng, điện trở đèn coi như không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dòng qua đèn khi sáng bình thường</span></p>$$I_đ=\\dfrac{U_đ}{R_đ}=\\dfrac{6}{12}$$<div class=\"bt-ans\">$$I_đ=0{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở tương đương cần có</span></p><p>Nối tiếp nên dòng cả mạch cũng phải bằng $I_đ$:</p>$$R_{td}=\\dfrac{U}{I_đ}=\\dfrac{9}{0{,}5}$$<div class=\"bt-ans\">$$R_{td}=18\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện trở cần mắc thêm</span></p>$$R_x=R_{td}-R_đ=18-12$$<div class=\"bt-ans\">$$R_x=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng qua đèn khi mắc nhầm</span></p><p>Đèn song song với $R_x$ và nối thẳng vào nguồn: đèn nhận đủ $9$ V.</p>$$I_đ'=\\dfrac{U}{R_đ}=\\dfrac{9}{12}$$<div class=\"bt-ans\">$$I_đ'=0{,}75\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Đèn thế nào</span></p><div class=\"bt-ans\"><p>Dòng lớn hơn $0{,}5$ A: đèn sáng quá mức bình thường, có thể hỏng.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Câu b: hiệu điện thế trên $R_x$:</p>$$U_x=0{,}5\\cdot6=3\\ \\text{V}$$$$U_đ+U_x=6+3=9\\ \\text{V}\\ ✓$$<p>Mắc nối tiếp thì $R_x$ \"gánh\" phần $3$ V dư: hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I_đ=0{,}5\\ \\text{A}$</p><p>b) $R_x=6\\ \\Omega$</p><p>c) $I_đ'=0{,}75\\ \\text{A}$</p><p>Đèn sáng quá mức, có thể hỏng</p></div><p class=\"bt-note\">Nhận dạng: <strong>nguồn lớn hơn hiệu điện thế đèn cần</strong> → mắc thêm điện trở nối tiếp để nó nhận phần hiệu điện thế dư.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
    "label": "Dạng 4 · Tìm điện trở cần mắc thêm để đèn sáng bình thường",
    "topic": "Điện trở tương đương của đoạn mạch",
-   "problem_html": "<p>Một bóng đèn sáng bình thường khi hiệu điện thế giữa hai đầu đèn là $6\\ \\text{V}$; khi đó điện trở của đèn là $12\\ \\Omega$. Chỉ có nguồn $9\\ \\text{V}$. Coi nguồn lí tưởng, điện trở của đèn không đổi, điện trở dây nối không đáng kể.</p><ol type='a'><li>Khi đèn sáng bình thường, cường độ dòng điện qua đèn bằng bao nhiêu?</li><li>Phải mắc nối tiếp với đèn một điện trở $R_x$ bằng bao nhiêu để đèn sáng bình thường?</li><li>Một bạn mắc nhầm: $R_x$ song song với đèn rồi nối thẳng vào nguồn $9\\ \\text{V}$. Tính cường độ dòng điện qua đèn. Đèn sẽ thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 290\" role=\"img\" aria-label=\"Mạch: nguồn 9 vôn, đèn sáng bình thường ở 6 vôn có điện trở 12 ôm, mắc nối tiếp với điện trở Rx chưa biết\"><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"40,236 40,120 148,120\"/><circle cx=\"165\" cy=\"120\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"154.5\" y1=\"109.5\" x2=\"175.5\" y2=\"130.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"154.5\" y1=\"130.5\" x2=\"175.5\" y2=\"109.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"180,120 255,120\"/><rect x=\"255.0\" y=\"110.0\" width=\"46\" height=\"20\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"301,120 380,120 380,236 217,236\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"203,236 40,236\"/><line x1=\"203.0\" y1=\"219.0\" x2=\"203.0\" y2=\"253.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><line x1=\"217.0\" y1=\"227.0\" x2=\"217.0\" y2=\"245.0\" stroke=\"currentColor\" stroke-width=\"5\" opacity=\"1\"/><text x=\"197\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"end\">+</text><text x=\"223\" y=\"215\" fill=\"currentColor\" font-size=\"18\" font-weight=\"700\" text-anchor=\"start\">−</text><text x=\"210.0\" y=\"276\" fill=\"#38bdf8\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">9 V</text><text x=\"165\" y=\"94\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\">đèn</text><text x=\"165\" y=\"160\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">6 V</text><text x=\"165\" y=\"180\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">12 Ω</text><text x=\"278\" y=\"100\" fill=\"#f87171\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"13\">x</tspan><tspan dy=\"-4\"> = ?</tspan></text><path d=\"M34,190.4L40,180L46,190.4\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M209.6,114L220,120L209.6,126\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M386,169.6L380,180L374,169.6\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><path d=\"M130.4,242L120,236L130.4,230\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.6\"/><circle cx=\"203\" cy=\"236\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"203;40;40;380;380;217;203;203\" keyTimes=\"0;0.179;0.306;0.679;0.806;0.985;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"236;236;120;120;236;236;236;236\" keyTimes=\"0;0.179;0.306;0.679;0.806;0.985;1;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"40\" cy=\"171\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"40;40;380;380;217;203;40;40\" keyTimes=\"0;0.056;0.429;0.556;0.735;0.75;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"171;120;120;236;236;236;236;171\" keyTimes=\"0;0.056;0.429;0.556;0.735;0.75;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"217\" cy=\"120\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"217;380;380;217;203;40;40;217\" keyTimes=\"0;0.179;0.306;0.485;0.5;0.679;0.806;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"120;120;236;236;236;236;120;120\" keyTimes=\"0;0.179;0.306;0.485;0.5;0.679;0.806;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"380\" cy=\"185\" r=\"4\" fill=\"#fb923c\"><animate attributeName=\"cx\" values=\"380;380;217;203;40;40;380;380\" keyTimes=\"0;0.056;0.235;0.25;0.429;0.556;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"185;236;236;236;236;120;120;185\" keyTimes=\"0;0.056;0.235;0.25;0.429;0.556;0.929;1\" dur=\"6.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng (bấm Chạy mô phỏng).<br>Chấm cam chạy theo chiều dòng điện quy ước: từ cực (+), qua mạch, về cực (−).<br>Chấm chỉ minh hoạ chiều dòng điện, không cho biết cường độ.<br>Tốc độ chấm chỉ để minh hoạ, không đúng thời gian thật.</figcaption></figure>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 216\" role=\"img\" aria-label=\"Hai cách mắc: đèn nối tiếp điện trở Rx; và mắc nhầm đèn song song với Rx rồi nối vào nguồn 9 vôn\"><text x=\"10\" y=\"24\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">(a) nối tiếp (câu a, b)</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"20,70 48,70\"/><circle cx=\"63\" cy=\"70\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"52.5\" y1=\"59.5\" x2=\"73.5\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"52.5\" y1=\"80.5\" x2=\"73.5\" y2=\"59.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"78,70 115,70\"/><rect x=\"118.0\" y=\"61.0\" width=\"40\" height=\"18\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"158,70 195,70\"/><text x=\"138\" y=\"54\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">x</tspan><tspan dy=\"-4\"></tspan></text><text x=\"63\" y=\"106\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">đèn</text><text x=\"10\" y=\"140\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">nối vào nguồn 9 V</text><line x1=\"210.0\" y1=\"10.0\" x2=\"210.0\" y2=\"210.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"5 5\" opacity=\"0.5\"/><text x=\"220\" y=\"24\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">(b) mắc nhầm (câu c)</text><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"222,97 250,97\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"250,70 250,124\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"370,70 370,124\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"370,97 400,97\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"250,70 295,70\"/><circle cx=\"310\" cy=\"70\" r=\"15\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><line x1=\"299.5\" y1=\"59.5\" x2=\"320.5\" y2=\"80.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"299.5\" y1=\"80.5\" x2=\"320.5\" y2=\"59.5\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"325,70 370,70\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"250,124 290,124\"/><rect x=\"290.0\" y=\"115.0\" width=\"40\" height=\"18\" fill=\"rgba(251,146,60,.2)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><polyline fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" points=\"330,124 370,124\"/><text x=\"310\" y=\"156\" fill=\"currentColor\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\"><tspan font-family=\"Georgia, 'Times New Roman', serif\" font-style=\"italic\">R</tspan><tspan dy=\"4\" font-size=\"12\">x</tspan><tspan dy=\"-4\"></tspan></text><text x=\"310\" y=\"48\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">đèn</text><text x=\"220\" y=\"184\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">nối thẳng vào nguồn 9 V</text><text x=\"220\" y=\"206\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">đèn nhận bao nhiêu vôn?</text></svg><figcaption>Dữ kiện: (a) đèn nối tiếp $R_x.$ (b) đèn song song với $R_x.$<br>Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;sáng bình thường khi hiệu điện thế giữa hai đầu đèn là 6&nbsp;V; khi đó điện trở của đèn là 12&nbsp;Ω&quot;</td><td>$U_đ=6\\ \\text{V}$; $R_đ=12\\ \\Omega$</td><td>Định luật Ohm cho đèn: dòng cần có qua đèn</td></tr><tr><td>&quot;Chỉ có nguồn 9&nbsp;V&quot;</td><td>$U=9\\ \\text{V}$</td><td>Nguồn lớn hơn $U_đ$: phần dư phải đặt lên đâu?</td></tr><tr><td>&quot;Coi nguồn lí tưởng, điện trở của đèn không đổi&quot;</td><td>$R_đ$ giữ nguyên</td><td>⚠ Điều kiện để dùng một giá trị $R_đ$ cho mọi cách mắc</td></tr><tr><td>&quot;mắc nối tiếp với đèn một điện trở R<sub>x</sub>&quot;</td><td>Cần $R_x$</td><td>Nối tiếp: $I$ chung, $R_{td}=R_đ+R_x$</td></tr><tr><td>&quot;R<sub>x</sub> song song với đèn rồi nối thẳng vào nguồn 9&nbsp;V&quot;</td><td>Cần $I_đ'$</td><td>⚠ Song song với nhau và nối thẳng vào nguồn: đèn nhận hiệu điện thế nào?</td></tr><tr><td>&quot;Đèn sẽ thế nào?&quot;</td><td>So dòng với mức bình thường</td><td>Độ sáng do dòng qua đèn quyết định.</td></tr></tbody></table></div>",
+   "problem_html": "<p>Một bóng đèn sáng bình thường khi hiệu điện thế giữa hai đầu đèn là $6\\ \\text{V}$; khi đó điện trở của đèn là $12\\ \\Omega$. Chỉ có nguồn $9\\ \\text{V}$. Coi nguồn lí tưởng, điện trở của đèn không đổi, điện trở dây nối không đáng kể.</p><ol type='a'><li>Khi đèn sáng bình thường, cường độ dòng điện qua đèn bằng bao nhiêu?</li><li>Phải mắc nối tiếp với đèn một điện trở $R_x$ bằng bao nhiêu để đèn sáng bình thường?</li><li>Một bạn mắc nhầm: $R_x$ song song với đèn rồi nối thẳng vào nguồn $9\\ \\text{V}$. Tính cường độ dòng điện qua đèn. Đèn sẽ thế nào?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>&quot;sáng bình thường khi hiệu điện thế giữa hai đầu đèn là 6&nbsp;V; khi đó điện trở của đèn là 12&nbsp;Ω&quot;</td><td>$U_đ=6\\ \\text{V}$; $R_đ=12\\ \\Omega$</td><td>Định luật Ohm cho đèn: dòng cần có qua đèn</td></tr><tr><td>&quot;Chỉ có nguồn 9&nbsp;V&quot;</td><td>$U=9\\ \\text{V}$</td><td>Nguồn lớn hơn $U_đ$: phần dư phải đặt lên đâu?</td></tr><tr><td>&quot;Coi nguồn lí tưởng, điện trở của đèn không đổi&quot;</td><td>$R_đ$ giữ nguyên</td><td>⚠ Điều kiện để dùng một giá trị $R_đ$ cho mọi cách mắc</td></tr><tr><td>&quot;mắc nối tiếp với đèn một điện trở R<sub>x</sub>&quot;</td><td>Cần $R_x$</td><td>Nối tiếp: $I$ chung, $R_{td}=R_đ+R_x$</td></tr><tr><td>&quot;R<sub>x</sub> song song với đèn rồi nối thẳng vào nguồn 9&nbsp;V&quot;</td><td>Cần $I_đ'$</td><td>⚠ Song song với nhau và nối thẳng vào nguồn: đèn nhận hiệu điện thế nào?</td></tr><tr><td>&quot;Đèn sẽ thế nào?&quot;</td><td>So dòng với mức bình thường</td><td>Độ sáng do dòng qua đèn quyết định.</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>nguồn lớn hơn hiệu điện thế đèn cần</b> → mắc thêm điện trở <b>nối tiếp</b> để nhận phần dư.",
    "cap_do": 4,
    "fading": "giau_tu_buoc_2",
@@ -731,6 +1164,7 @@
    ],
    "cong_cu": {
     "loai": "mach_dien",
+    "de": true,
     "hinh": [
      {
       "loai": "day",
@@ -860,10 +1294,6 @@
       {
        "loai": "ghi",
        "text": "R_x = 18 − 12 = 6 Ω"
-      },
-      {
-       "loai": "ghi",
-       "text": "Mắc nhầm: R_x song song đèn"
       }
      ],
      [

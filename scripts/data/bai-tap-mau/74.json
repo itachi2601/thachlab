@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Nhận biết hệ kín và áp dụng định luật bảo toàn động lượng",
    "topic": "Định luật bảo toàn động lượng cho hệ kín",
-   "problem_html": "<p>Trên đường ray đệm khí nằm ngang (ma sát coi như bằng $0$), xe 1 khối lượng $0{,}30\\ \\text{kg}$ chạy với tốc độ $0{,}60\\ \\text{m/s}$ tới đẩy xe 2 khối lượng $0{,}20\\ \\text{kg}$ đang đứng yên. Ngay sau va chạm, xe 2 chạy cùng chiều với xe 1, tốc độ $0{,}45\\ \\text{m/s}$.</p>\n<ol type=\"a\"><li>Hệ gồm hai xe có coi là hệ kín trong lúc va chạm không? Vì sao?</li>\n<li>Tính vận tốc của xe 1 ngay sau va chạm (độ lớn và chiều).</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Xe 1 chạy trên đệm khí tới đẩy xe 2 đang đứng yên\"><line x1=\"14.0\" y1=\"128.0\" x2=\"406.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"40.0\" y=\"86.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"51.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"99.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"75.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><line x1=\"48.0\" y1=\"72\" x2=\"84.0\" y2=\"72.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M74.0,66.2 L84.0,72.0 L74.0,77.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"110.0\" y=\"60\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">v₁ = 0,60 m/s</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;6.9 0;13.8 0;20.7 0;27.6 0;34.5 0;41.4 0;48.3 0;55.2 0;62.1 0;69.0 0;75.9 0;82.8 0;89.7 0;96.6 0;103.4 0;110.3 0;117.2 0;124.1 0;131.0 0;137.9 0;140.0 0;140.0 0;140.0 0;140.0 0;140.0 0;140.0 0;140.0 0;140.0 0;140.0 0\" dur=\"1.67s\" begin=\"indefinite\" fill=\"freeze\"/></g><rect x=\"250.0\" y=\"86.0\" width=\"58\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"261.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"297.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"279.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,20 kg</text><text x=\"264.0\" y=\"60\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₂ = 0</text><g opacity=\"0\"><polygon points=\"259.0,86.0 253.7,87.5 256.4,92.4 251.5,89.7 250.0,95.0 248.5,89.7 243.6,92.4 246.3,87.5 241.0,86.0 246.3,84.5 243.6,79.6 248.5,82.3 250.0,77.0 251.5,82.3 256.4,79.6 253.7,84.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1\" opacity=\".9\"/><text x=\"250.0\" y=\"152\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">va chạm</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.700;0.720;1\" dur=\"1.67s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: vận tốc xe 1 ngay sau va chạm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe 1 chạy tới xe 2 đúng thời gian thật (1 m ứng với 200 px), dừng ngay lúc hai xe chạm nhau. Phần sau va chạm là phần cần tính.</figcaption></figure>",
+   "problem_html": "<p>Trên đường ray đệm khí nằm ngang (ma sát coi như bằng $0$), xe 1 khối lượng $0{,}30\\ \\text{kg}$ chạy với tốc độ $0{,}60\\ \\text{m/s}$ tới đẩy xe 2 khối lượng $0{,}20\\ \\text{kg}$ đang đứng yên. Ngay sau va chạm, xe 2 chạy cùng chiều với xe 1, tốc độ $0{,}45\\ \\text{m/s}$.</p>\n<ol type=\"a\"><li>Hệ gồm hai xe có coi là hệ kín trong lúc va chạm không? Vì sao?</li>\n<li>Tính vận tốc của xe 1 ngay sau va chạm (độ lớn và chiều).</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hệ</strong> là nhóm vật xét; <strong>nội lực</strong> là lực giữa các vật trong hệ, <strong>ngoại lực</strong> là lực từ bên ngoài.</li><li><strong>Hệ kín:</strong> không có ngoại lực, hoặc các ngoại lực cân bằng nhau.</li><li><strong>Định luật:</strong> hệ kín thì tổng vectơ động lượng không đổi: $m_1\\vec v_1+m_2\\vec v_2=m_1\\vec v_1'+m_2\\vec v_2'$.</li><li>Chọn chiều dương rồi thế vận tốc có dấu.</li><li>⚠ <strong>Điều kiện:</strong> chỉ dùng cho hệ kín (hoặc va chạm rất ngắn, ngoại lực không đáng kể).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn hệ và kiểm tra hệ kín</span></p><p>Hệ gồm hai xe. Lực xe 1 đẩy xe 2 và lực xe 2 đẩy xe 1 là nội lực.</p><p>Ngoại lực: trọng lực cân bằng với phản lực của đệm khí; ma sát coi như bằng $0$.</p><div class=\"bt-ans\"><p>Hệ hai xe là <strong>hệ kín</strong> trong lúc va chạm, nên động lượng được bảo toàn.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tổng động lượng trước va chạm</span></p><p>Chọn chiều dương theo chiều chuyển động của xe 1; xe 2 đứng yên:</p>$$p=m_1v_1+m_2v_2=0{,}30\\cdot0{,}60+0{,}20\\cdot0$$<div class=\"bt-ans\">$$p=0{,}18\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc xe 1 sau va chạm</span></p><p>Tổng động lượng sau bằng tổng động lượng trước:</p>$$m_1v_1'+m_2v_2'=p$$$$v_1'=\\dfrac{p-m_2v_2'}{m_1}=\\dfrac{0{,}18-0{,}20\\cdot0{,}45}{0{,}30}$$<div class=\"bt-ans\">$$v_1'=0{,}30\\ \\text{m/s}$$</div><p>$v_1'\\gt0$: xe 1 vẫn chạy theo chiều cũ, chậm lại vì đã đẩy xe 2.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p>$$m_1v_1'+m_2v_2'=0{,}30\\cdot0{,}30+0{,}20\\cdot0{,}45=0{,}18\\ \\text{kg}\\cdot\\text{m/s}$$<p>Bằng $p$ trước va chạm ✓.</p><p>Động năng sau ($0{,}034\\ \\text{J}$) nhỏ hơn trước ($0{,}054\\ \\text{J}$): hợp lí, va chạm không làm động năng tăng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Có: trọng lực cân bằng phản lực, ma sát coi như bằng $0$</p><p>b) $v_1'=0{,}30\\ \\text{m/s}$, cùng chiều chuyển động ban đầu</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>vận tốc trước, một vận tốc sau và mặt không ma sát</strong> → kiểm hệ kín rồi bảo toàn tổng động lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hai xe trước và sau va chạm; vận tốc xe 1 sau va chạm chưa biết\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trước</text><rect x=\"40.0\" y=\"50.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"51.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"99.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"75.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><rect x=\"250.0\" y=\"50.0\" width=\"58\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"261.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"297.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"279.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,20 kg</text><line x1=\"48\" y1=\"36\" x2=\"84.0\" y2=\"36.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M74.0,30.2 L84.0,36.0 L74.0,41.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"40\" y=\"22\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₁ = 0,60 m/s</text><text x=\"254\" y=\"22\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₂ = 0</text><line x1=\"14.0\" y1=\"202.0\" x2=\"406.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Sau</text><rect x=\"100.0\" y=\"160.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"111.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"159.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"135.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><rect x=\"220.0\" y=\"160.0\" width=\"58\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"231.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"267.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"249.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,20 kg</text><line x1=\"232\" y1=\"146\" x2=\"259.0\" y2=\"146.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M249.0,140.2 L259.0,146.0 L249.0,151.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"100\" y=\"132\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v₁′ = ?</text><text x=\"224\" y=\"132\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₂′ = 0,45 m/s</text><line x1=\"300\" y1=\"222\" x2=\"392\" y2=\"222\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M383.3,217.0 L392.0,222.0 L383.3,227.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"300\" y=\"242\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều dương</text></svg><figcaption>Dữ kiện: chiều dương theo chiều chuyển động của xe 1; mũi tên vận tốc vẽ cùng tỉ lệ (1 m/s ứng với 60 px). Vận tốc xe 1 sau va chạm chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đường ray đệm khí nằm ngang (ma sát coi như bằng $0$)”</td><td>Ma sát $\\approx0$</td><td>⚠ Điều kiện dùng định luật: xét hệ có kín không (ngoại lực bằng $0$ hay cân bằng nhau?)</td></tr><tr><td>“xe 1 khối lượng $0{,}30$ kg chạy với tốc độ $0{,}60$ m/s”</td><td>$m_1=0{,}30\\ \\text{kg}$; $v_1=0{,}60\\ \\text{m/s}$</td><td>Động lượng $p=mv$; chọn chiều dương theo xe 1</td></tr><tr><td>“xe 2 khối lượng $0{,}20$ kg đang đứng yên”</td><td>$m_2=0{,}20\\ \\text{kg}$; $v_2=0$</td><td>Động lượng của vật đứng yên</td></tr><tr><td>“Ngay sau va chạm, xe 2 chạy cùng chiều xe 1, tốc độ $0{,}45$ m/s”</td><td>$v_2'=+0{,}45\\ \\text{m/s}$</td><td>Va chạm rất ngắn: so sánh trạng thái ngay trước và ngay sau</td></tr><tr><td>“a) có coi là hệ kín không?”</td><td>Cần nhận xét về ngoại lực</td><td>Hệ kín; nội lực và ngoại lực</td></tr><tr><td>“b) vận tốc của xe 1 ngay sau va chạm (độ lớn và chiều)”</td><td>Cần $v_1'$ (m/s) có dấu</td><td>Tổng động lượng trước = tổng động lượng sau; dấu của kết quả cho biết chiều</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đường ray đệm khí nằm ngang (ma sát coi như bằng $0$)”</td><td>Ma sát $\\approx0$</td><td>⚠ Điều kiện dùng định luật: xét hệ có kín không (ngoại lực bằng $0$ hay cân bằng nhau?)</td></tr><tr><td>“xe 1 khối lượng $0{,}30$ kg chạy với tốc độ $0{,}60$ m/s”</td><td>$m_1=0{,}30\\ \\text{kg}$; $v_1=0{,}60\\ \\text{m/s}$</td><td>Động lượng $p=mv$; chọn chiều dương theo xe 1</td></tr><tr><td>“xe 2 khối lượng $0{,}20$ kg đang đứng yên”</td><td>$m_2=0{,}20\\ \\text{kg}$; $v_2=0$</td><td>Động lượng của vật đứng yên</td></tr><tr><td>“Ngay sau va chạm, xe 2 chạy cùng chiều xe 1, tốc độ $0{,}45$ m/s”</td><td>$v_2'=+0{,}45\\ \\text{m/s}$</td><td>Va chạm rất ngắn: so sánh trạng thái ngay trước và ngay sau</td></tr><tr><td>“a) có coi là hệ kín không?”</td><td>Cần nhận xét về ngoại lực</td><td>Hệ kín; nội lực và ngoại lực</td></tr><tr><td>“b) vận tốc của xe 1 ngay sau va chạm (độ lớn và chiều)”</td><td>Cần $v_1'$ (m/s) có dấu</td><td>Tổng động lượng trước = tổng động lượng sau; dấu của kết quả cho biết chiều</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>va chạm trên đệm khí, ma sát bằng 0</b> → nghĩ tới <b>hệ kín</b>: tổng động lượng trước = sau.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -103,15 +103,122 @@
      "a) Có phải hệ kín không",
      "b) Vận tốc xe 1 sau va chạm"
     ]
+   },
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "de": true,
+    "x_min": -1,
+    "x_max": 11,
+    "don_vi": "m",
+    "diem": [],
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 1.5,
+      "hang": 2,
+      "text": "xe 1: 0,30 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 8,
+      "hang": 2,
+      "text": "xe 2: 0,20 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": 1,
+      "text": "Trước",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 1.5,
+      "hang": 1,
+      "v": 1.2,
+      "nhan_v": "0,60 m/s"
+     },
+     {
+      "loai": "vat",
+      "x": 8,
+      "hang": 1
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": -1,
+      "text": "Sau",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 1.5,
+      "hang": -1,
+      "ten": "xe 1",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 2.5,
+      "hang": -1,
+      "text": "v_1' = ?",
+      "a": "start",
+      "het": 3
+     },
+     {
+      "loai": "vat",
+      "x": 8,
+      "hang": -1,
+      "ten": "xe 2",
+      "v": 0.9,
+      "nhan_v": "0,45 m/s"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "P cân bằng N, ma sát = 0 ⇒ hệ kín"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "p = 0,30·0,60 + 0 = 0,18 kg·m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 1.5,
+       "hang": -1,
+       "ten": "xe 1",
+       "v": 0.6,
+       "nhan_v": "0,30 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "v_1' = 0,09 : 0,30 = +0,30 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "0,30·0,30 + 0,20·0,45 = 0,18 ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Dễ · Va chạm mềm: tính vận tốc chung",
    "topic": "Va chạm mềm, va chạm đàn hồi",
-   "problem_html": "<p>Trong một kho hàng, xe đẩy A khối lượng $150\\ \\text{kg}$ chạy với tốc độ $2{,}0\\ \\text{m/s}$ trên nền phẳng nhẵn tới va vào xe đẩy B khối lượng $250\\ \\text{kg}$. Sau va chạm hai xe móc dính vào nhau. Bỏ qua ma sát. Tính tốc độ của hai xe ngay sau va chạm khi:</p>\n<ol type=\"a\"><li>xe B đang đứng yên;</li><li>xe B đang chạy cùng chiều với xe A, tốc độ $0{,}40\\ \\text{m/s}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Xe A chạy tới va vào xe B đứng yên rồi hai xe móc dính\"><line x1=\"14.0\" y1=\"128.0\" x2=\"406.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"20.0\" y=\"86.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"79.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"55.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">150 kg</text><line x1=\"28.0\" y1=\"72\" x2=\"78.0\" y2=\"72.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,66.2 L78.0,72.0 L68.0,77.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"90.0\" y=\"60\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">v_A = 2,0 m/s</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;5.5 0;11.0 0;16.6 0;22.1 0;27.6 0;33.1 0;38.6 0;44.1 0;49.7 0;55.2 0;60.7 0;66.2 0;71.7 0;77.2 0;82.8 0;88.3 0;93.8 0;99.3 0;104.8 0;110.3 0;115.9 0;120.0 0;120.0 0;120.0 0;120.0 0;120.0 0;120.0 0;120.0 0;120.0 0\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><rect x=\"210.0\" y=\"86.0\" width=\"100\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"221.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"299.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"260.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">250 kg</text><text x=\"224.0\" y=\"60\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_B = 0</text><g opacity=\"0\"><polygon points=\"219.0,86.0 213.7,87.5 216.4,92.4 211.5,89.7 210.0,95.0 208.5,89.7 203.6,92.4 206.3,87.5 201.0,86.0 206.3,84.5 203.6,79.6 208.5,82.3 210.0,77.0 211.5,82.3 216.4,79.6 213.7,84.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1\" opacity=\".9\"/><text x=\"210.0\" y=\"152\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">va chạm, móc dính</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.750;0.770;1\" dur=\"2.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: vận tốc hai xe ngay sau va chạm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: xe A chạy tới xe B đúng thời gian thật (1 m ứng với 40 px), dừng ngay lúc chạm. Chuyển động sau va chạm là phần cần tính.</figcaption></figure>",
+   "problem_html": "<p>Trong một kho hàng, xe đẩy A khối lượng $150\\ \\text{kg}$ chạy với tốc độ $2{,}0\\ \\text{m/s}$ trên nền phẳng nhẵn tới va vào xe đẩy B khối lượng $250\\ \\text{kg}$. Sau va chạm hai xe móc dính vào nhau. Bỏ qua ma sát. Tính tốc độ của hai xe ngay sau va chạm khi:</p>\n<ol type=\"a\"><li>xe B đang đứng yên;</li><li>xe B đang chạy cùng chiều với xe A, tốc độ $0{,}40\\ \\text{m/s}$.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Va chạm mềm:</strong> sau va chạm hai vật dính nhau, chuyển động với cùng vận tốc $v$.</li><li>Hệ kín: $m_1\\vec v_1+m_2\\vec v_2=(m_1+m_2)\\vec v$.</li><li>$v=\\dfrac{m_1v_1+m_2v_2}{m_1+m_2}$ (giá trị đại số).</li><li>Vật đứng yên: $v_2=0$.</li><li>⚠ <strong>Điều kiện:</strong> hệ kín trong lúc va chạm; chọn chiều dương trước khi thế số.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tổng động lượng trước va chạm (a)</span></p><p>Chọn chiều dương theo xe A; xe B đứng yên:</p>$$p=m_Av_A+m_Bv_B=150\\cdot2{,}0+250\\cdot0$$<div class=\"bt-ans\">$$p=300\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vận tốc chung (a)</span></p><p>Sau va chạm hai xe dính nhau, khối lượng chung $m_A+m_B$:</p>$$v=\\dfrac{p}{m_A+m_B}=\\dfrac{300}{150+250}$$<div class=\"bt-ans\">$$v=0{,}75\\ \\text{m/s}$$</div><p>Cùng chiều với xe A.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tổng động lượng trước va chạm (b)</span></p><p>Xe B chạy cùng chiều dương nên $v_B=+0{,}40\\ \\text{m/s}$:</p>$$p=m_Av_A+m_Bv_B=150\\cdot2{,}0+250\\cdot0{,}40=300+100$$<div class=\"bt-ans\">$$p=400\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Vận tốc chung (b)</span></p>$$v=\\dfrac{p}{m_A+m_B}=\\dfrac{400}{150+250}$$<div class=\"bt-ans\">$$v=1{,}0\\ \\text{m/s}$$</div><p>Cùng chiều với xe A.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hai xe dính nhau chạy với một vận tốc nằm giữa hai vận tốc ban đầu: ở (a) từ $0$ đến $2{,}0\\ \\text{m/s}$; ở (b) từ $0{,}40$ đến $2{,}0\\ \\text{m/s}$ ✓.</p><p>Xe B có thêm động lượng ở (b) nên hai xe chạy nhanh hơn ở (a) ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v=0{,}75\\ \\text{m/s}$</p><p>b) $v=1{,}0\\ \\text{m/s}$</p><p>Cả hai: cùng chiều chuyển động ban đầu của xe A</p></div><p class=\"bt-note\">Nhận dạng: đề nói <strong>hai vật dính nhau / móc vào nhau</strong> sau va chạm → va chạm mềm: cộng khối lượng, chia tổng động lượng.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Hai xe trước va chạm trong hai trường hợp: xe B đứng yên và xe B chạy cùng chiều\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a)</text><rect x=\"20.0\" y=\"50.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"79.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"55.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">150 kg</text><rect x=\"210.0\" y=\"50.0\" width=\"100\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"221.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"299.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"260.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">250 kg</text><line x1=\"28\" y1=\"36\" x2=\"78.0\" y2=\"36.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,30.2 L78.0,36.0 L68.0,41.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"20\" y=\"22\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_A = 2,0 m/s</text><text x=\"214\" y=\"22\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_B = 0</text><line x1=\"14.0\" y1=\"202.0\" x2=\"406.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">b)</text><rect x=\"20.0\" y=\"160.0\" width=\"70\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"79.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"55.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">150 kg</text><rect x=\"210.0\" y=\"160.0\" width=\"100\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"221.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"299.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"260.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">250 kg</text><line x1=\"28\" y1=\"146\" x2=\"78.0\" y2=\"146.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,140.2 L78.0,146.0 L68.0,151.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"218\" y1=\"146\" x2=\"228.0\" y2=\"146.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M222.8,143.0 L228.0,146.0 L222.8,149.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"20\" y=\"132\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_A = 2,0 m/s</text><text x=\"214\" y=\"132\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_B = 0,40 m/s</text><line x1=\"300\" y1=\"222\" x2=\"392\" y2=\"222\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-dasharray=\"5 4\"/><path d=\"M383.3,217.0 L392.0,222.0 L383.3,227.0\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.6\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"300\" y=\"242\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">chiều dương</text></svg><figcaption>Dữ kiện: hai trường hợp a) và b), mũi tên vận tốc vẽ cùng tỉ lệ (1 m/s ứng với 25 px). Sau va chạm hai xe dính nhau, vận tốc chung chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“nền phẳng nhẵn … Bỏ qua ma sát”</td><td>Ngoại lực cân bằng</td><td>⚠ Hệ kín (ngoại lực cân bằng hoặc bỏ qua được) thì mới dùng được bảo toàn động lượng</td></tr><tr><td>“xe đẩy A khối lượng $150$ kg chạy với tốc độ $2{,}0$ m/s”</td><td>$m_A=150\\ \\text{kg}$; $v_A=2{,}0\\ \\text{m/s}$</td><td>Chọn chiều dương theo xe A</td></tr><tr><td>“xe đẩy B khối lượng $250$ kg”</td><td>$m_B=250\\ \\text{kg}$</td><td>Khối lượng vật bị va vào</td></tr><tr><td>“Sau va chạm hai xe móc dính vào nhau”</td><td>Hai xe chung vận tốc $v$</td><td>Va chạm mềm: $m_1\\vec v_1+m_2\\vec v_2=(m_1+m_2)\\vec v$</td></tr><tr><td>“a) xe B đang đứng yên”</td><td>$v_B=0$</td><td>Vật đứng yên có động lượng bằng bao nhiêu?</td></tr><tr><td>“b) xe B chạy cùng chiều xe A, tốc độ $0{,}40$ m/s”</td><td>$v_B=+0{,}40\\ \\text{m/s}$</td><td>⚠ Vận tốc cùng chiều dương mang dấu $+$</td></tr><tr><td>“tốc độ của hai xe ngay sau va chạm”</td><td>Cần $v$ (m/s) ở hai trường hợp</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“nền phẳng nhẵn … Bỏ qua ma sát”</td><td>Ngoại lực cân bằng</td><td>⚠ Hệ kín (ngoại lực cân bằng hoặc bỏ qua được) thì mới dùng được bảo toàn động lượng</td></tr><tr><td>“xe đẩy A khối lượng $150$ kg chạy với tốc độ $2{,}0$ m/s”</td><td>$m_A=150\\ \\text{kg}$; $v_A=2{,}0\\ \\text{m/s}$</td><td>Chọn chiều dương theo xe A</td></tr><tr><td>“xe đẩy B khối lượng $250$ kg”</td><td>$m_B=250\\ \\text{kg}$</td><td>Khối lượng vật bị va vào</td></tr><tr><td>“Sau va chạm hai xe móc dính vào nhau”</td><td>Hai xe chung vận tốc $v$</td><td>Va chạm mềm: $m_1\\vec v_1+m_2\\vec v_2=(m_1+m_2)\\vec v$</td></tr><tr><td>“a) xe B đang đứng yên”</td><td>$v_B=0$</td><td>Vật đứng yên có động lượng bằng bao nhiêu?</td></tr><tr><td>“b) xe B chạy cùng chiều xe A, tốc độ $0{,}40$ m/s”</td><td>$v_B=+0{,}40\\ \\text{m/s}$</td><td>⚠ Vận tốc cùng chiều dương mang dấu $+$</td></tr><tr><td>“tốc độ của hai xe ngay sau va chạm”</td><td>Cần $v$ (m/s) ở hai trường hợp</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hai vật dính / móc vào nhau</b> sau va chạm → nghĩ tới <b>va chạm mềm</b>: chung vận tốc $v$.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -212,15 +319,133 @@
      "a) $V$ khi B đứng yên",
      "b) $V$ khi B chạy cùng chiều $0{,}40\\ \\text{m/s}$"
     ]
+   },
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "de": true,
+    "x_min": -1,
+    "x_max": 11,
+    "don_vi": "m",
+    "diem": [],
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 0.5,
+      "hang": 2,
+      "text": "A: 150 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 8.5,
+      "hang": 2,
+      "text": "B: 250 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": 1,
+      "text": "a)",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 0.5,
+      "hang": 1,
+      "v": 3.0,
+      "nhan_v": "2,0 m/s",
+      "het": 2
+     },
+     {
+      "loai": "vat",
+      "x": 8.5,
+      "hang": 1,
+      "het": 2
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": -1,
+      "text": "b)",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 0.5,
+      "hang": -1,
+      "ten": "A",
+      "v": 3.0,
+      "nhan_v": "2,0 m/s",
+      "het": 4
+     },
+     {
+      "loai": "vat",
+      "x": 8.5,
+      "hang": -1,
+      "ten": "B",
+      "v": 0.6,
+      "nhan_v": "0,40 m/s",
+      "het": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "p_a = 150·2,0 + 0 = 300 kg·m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 5,
+       "hang": 1,
+       "ten": "A+B",
+       "v": 1.125,
+       "nhan_v": "0,75 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_a = 300 : 400 = 0,75 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "p_b = 300 + 100 = 400 kg·m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 5,
+       "hang": -1,
+       "ten": "A+B",
+       "v": 1.5,
+       "nhan_v": "1,0 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_b = 400 : 400 = 1,0 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "V_b > V_a: B đã chạy sẵn ✓"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Phân biệt va chạm mềm và va chạm đàn hồi",
    "topic": "Va chạm mềm, va chạm đàn hồi",
-   "problem_html": "<p>Trên đường ray đệm khí, xe 1 khối lượng $0{,}30\\ \\text{kg}$ chạy với tốc độ $0{,}80\\ \\text{m/s}$ tới va vào xe 2 khối lượng $0{,}10\\ \\text{kg}$ đang đứng yên. Sau va chạm hai xe tách nhau và cùng chạy theo chiều ban đầu của xe 1: xe 1 có tốc độ $0{,}40\\ \\text{m/s}$, xe 2 có tốc độ $1{,}2\\ \\text{m/s}$.</p>\n<ol type=\"a\"><li>Tổng động lượng của hệ có được bảo toàn không?</li>\n<li>Tổng động năng của hệ có được bảo toàn không? Va chạm này là mềm hay đàn hồi?</li>\n<li>Nếu hai xe dính nhau sau va chạm (cùng điều kiện đầu) thì tổng động năng của hệ ngay sau đó là bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Xe 1 va vào xe 2 đứng yên rồi hai xe tách nhau, cùng chạy theo chiều ban đầu\"><line x1=\"14.0\" y1=\"128.0\" x2=\"406.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"30.0\" y=\"86.0\" width=\"62\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"41.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"81.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"61.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;5.4 0;10.8 0;16.1 0;21.5 0;26.9 0;32.3 0;37.7 0;43.0 0;48.4 0;53.8 0;59.2 0;62.3 0;65.0 0;67.7 0;70.3 0;73.0 0;75.7 0;78.4 0;81.1 0;83.8 0;86.5 0;89.2 0;91.9 0;94.6 0;97.2 0;99.9 0;102.6 0;105.3 0;108.0 0\" dur=\"3.25s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><rect x=\"152.0\" y=\"86.0\" width=\"46\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"163.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"187.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"175.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,10 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;0.0 0;6.8 0;14.9 0;23.0 0;31.0 0;39.1 0;47.2 0;55.2 0;63.3 0;71.4 0;79.4 0;87.5 0;95.6 0;103.7 0;111.7 0;119.8 0;127.9 0;135.9 0;144.0 0\" dur=\"3.25s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"28\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trước: v₁ = 0,80 m/s · v₂ = 0</text><g opacity=\"0\"><text x=\"16\" y=\"50\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Sau: v₁′ = 0,40 m/s · v₂′ = 1,2 m/s</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.435;0.455;1\" dur=\"3.25s\" begin=\"indefinite\" fill=\"freeze\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: chạy chậm 2 lần so với thật (1 m ứng với 120 px). Các vận tốc sau va chạm đều là số liệu của đề.</figcaption></figure>",
+   "problem_html": "<p>Trên đường ray đệm khí, xe 1 khối lượng $0{,}30\\ \\text{kg}$ chạy với tốc độ $0{,}80\\ \\text{m/s}$ tới va vào xe 2 khối lượng $0{,}10\\ \\text{kg}$ đang đứng yên. Sau va chạm hai xe tách nhau và cùng chạy theo chiều ban đầu của xe 1: xe 1 có tốc độ $0{,}40\\ \\text{m/s}$, xe 2 có tốc độ $1{,}2\\ \\text{m/s}$.</p>\n<ol type=\"a\"><li>Tổng động lượng của hệ có được bảo toàn không?</li>\n<li>Tổng động năng của hệ có được bảo toàn không? Va chạm này là mềm hay đàn hồi?</li>\n<li>Nếu hai xe dính nhau sau va chạm (cùng điều kiện đầu) thì tổng động năng của hệ ngay sau đó là bao nhiêu?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li>Cả hai loại va chạm: <strong>động lượng bảo toàn</strong> ($p=mv$).</li><li><strong>Mềm:</strong> dính nhau, động năng giảm.</li><li><strong>Đàn hồi:</strong> rời nhau, động năng giữ nguyên ($W_{\\text{đ}}=\\tfrac12mv^2$).</li><li>Hai vật dính nhau: $v=\\dfrac{m_1v_1+m_2v_2}{m_1+m_2}$.</li><li>⚠ <strong>Điều kiện:</strong> muốn phân loại phải kiểm <em>cả</em> động lượng <em>lẫn</em> động năng — chỉ động lượng bảo toàn thì chưa kết luận được.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Động lượng trước và sau</span></p><p>Chọn chiều dương theo chiều chuyển động của xe 1:</p>$$p_{\\text{trước}}=m_1v_1=0{,}30\\cdot0{,}80=0{,}24$$$$p_{\\text{sau}}=m_1v_1'+m_2v_2'=0{,}30\\cdot0{,}40+0{,}10\\cdot1{,}2$$<div class=\"bt-ans\">$$p_{\\text{sau}}=0{,}24\\ \\text{kg}\\cdot\\text{m/s}$$</div><p>Bằng $p_{\\text{trước}}$: động lượng bảo toàn ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Động năng trước và sau</span></p>$$W_{\\text{trước}}=\\tfrac12m_1v_1^2=\\tfrac12\\cdot0{,}30\\cdot0{,}80^2=0{,}096$$$$W_{\\text{sau}}=\\tfrac12m_1v_1'^2+\\tfrac12m_2v_2'^2=\\tfrac12\\cdot0{,}30\\cdot0{,}40^2+\\tfrac12\\cdot0{,}10\\cdot1{,}2^2$$<div class=\"bt-ans\">$$W_{\\text{sau}}=0{,}096\\ \\text{J}$$</div><p>Bằng $W_{\\text{trước}}$: động năng cũng bảo toàn.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phân loại va chạm</span></p><div class=\"bt-ans\"><p>Cả động lượng lẫn động năng đều bảo toàn, hai xe tách nhau: đây là va chạm <strong>đàn hồi</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Nếu hai xe dính nhau</span></p><p>Va chạm mềm, cùng điều kiện đầu: tìm vận tốc chung rồi tính động năng của cả hệ.</p>$$v=\\dfrac{m_1v_1}{m_1+m_2}=\\dfrac{0{,}24}{0{,}40}=0{,}60\\ \\text{m/s}$$$$W=\\tfrac12(m_1+m_2)v^2=\\tfrac12\\cdot0{,}40\\cdot0{,}60^2$$<div class=\"bt-ans\">$$W=0{,}072\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$\\dfrac{W}{W_{\\text{trước}}}=\\dfrac{0{,}072}{0{,}096}=0{,}75=\\dfrac{m_1}{m_1+m_2}$$<p>Va chạm mềm mất $25\\,\\%$ động năng (thành nhiệt, biến dạng) ✓.</p><p>Động lượng ở cả hai trường hợp đều là $0{,}24\\ \\text{kg}\\cdot\\text{m/s}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Có: $p_{\\text{trước}}=p_{\\text{sau}}=0{,}24\\ \\text{kg}\\cdot\\text{m/s}$</p><p>b) Có: $W_{\\text{trước}}=W_{\\text{sau}}=0{,}096\\ \\text{J}$, va chạm đàn hồi</p><p>c) $W=0{,}072\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>mềm hay đàn hồi</strong> → tính cả tổng động lượng và tổng động năng trước, sau rồi so.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Hai xe trước và sau va chạm với vận tốc cho trong đề\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Trước</text><rect x=\"30.0\" y=\"50.0\" width=\"62\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"41.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"81.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"61.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><rect x=\"190.0\" y=\"50.0\" width=\"46\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"201.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"225.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"213.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,10 kg</text><line x1=\"40\" y1=\"36\" x2=\"72.0\" y2=\"36.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M62.0,30.2 L72.0,36.0 L62.0,41.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"30\" y=\"22\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₁ = 0,80 m/s</text><text x=\"194\" y=\"22\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₂ = 0</text><line x1=\"14.0\" y1=\"202.0\" x2=\"406.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Sau</text><rect x=\"100.0\" y=\"160.0\" width=\"62\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"111.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"151.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"131.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,30 kg</text><rect x=\"226.0\" y=\"160.0\" width=\"46\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"237.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"261.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"249.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,10 kg</text><line x1=\"110\" y1=\"146\" x2=\"126.0\" y2=\"146.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M117.7,141.2 L126.0,146.0 L117.7,150.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"236\" y1=\"146\" x2=\"284.0\" y2=\"146.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M274.0,140.2 L284.0,146.0 L274.0,151.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"100\" y=\"132\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₁′ = 0,40 m/s</text><text x=\"226\" y=\"132\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v₂′ = 1,2 m/s</text></svg><figcaption>Dữ kiện: mũi tên vận tốc vẽ cùng tỉ lệ (1 m/s ứng với 40 px); hai xe tách nhau sau va chạm, cùng chiều chuyển động ban đầu của xe 1.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Trên đường ray đệm khí”</td><td>Ma sát $\\approx0$</td><td>⚠ Hệ kín là điều kiện dùng bảo toàn động lượng; động năng phải kiểm riêng</td></tr><tr><td>“xe 1 khối lượng $0{,}30$ kg … tốc độ $0{,}80$ m/s”</td><td>$m_1=0{,}30\\ \\text{kg}$; $v_1=0{,}80\\ \\text{m/s}$</td><td>Động lượng $p=mv$; động năng $W_{\\text{đ}}=\\tfrac12mv^2$</td></tr><tr><td>“xe 2 khối lượng $0{,}10$ kg đang đứng yên”</td><td>$m_2=0{,}10\\ \\text{kg}$; $v_2=0$</td><td>Vật đứng yên: động lượng và động năng</td></tr><tr><td>“hai xe tách nhau … xe 1 $0{,}40$ m/s, xe 2 $1{,}2$ m/s”</td><td>$v_1'=0{,}40\\ \\text{m/s}$; $v_2'=1{,}2\\ \\text{m/s}$</td><td>Hai xe có vận tốc riêng sau va chạm</td></tr><tr><td>“a) động lượng có bảo toàn không?”</td><td>So tổng $p$ trước và sau</td><td>Cộng động lượng của từng xe</td></tr><tr><td>“b) động năng có bảo toàn không? mềm hay đàn hồi?”</td><td>So tổng $W_{\\text{đ}}$ trước và sau</td><td>⚠ Muốn phân loại va chạm phải kiểm cả động lượng lẫn động năng</td></tr><tr><td>“c) nếu hai xe dính nhau sau va chạm”</td><td>Hai xe chung vận tốc $v$</td><td>Va chạm mềm: tìm $v$ rồi tính $W_{\\text{đ}}$ của cả hệ</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“Trên đường ray đệm khí”</td><td>Ma sát $\\approx0$</td><td>⚠ Hệ kín là điều kiện dùng bảo toàn động lượng; động năng phải kiểm riêng</td></tr><tr><td>“xe 1 khối lượng $0{,}30$ kg … tốc độ $0{,}80$ m/s”</td><td>$m_1=0{,}30\\ \\text{kg}$; $v_1=0{,}80\\ \\text{m/s}$</td><td>Động lượng $p=mv$; động năng $W_{\\text{đ}}=\\tfrac12mv^2$</td></tr><tr><td>“xe 2 khối lượng $0{,}10$ kg đang đứng yên”</td><td>$m_2=0{,}10\\ \\text{kg}$; $v_2=0$</td><td>Vật đứng yên: động lượng và động năng</td></tr><tr><td>“hai xe tách nhau … xe 1 $0{,}40$ m/s, xe 2 $1{,}2$ m/s”</td><td>$v_1'=0{,}40\\ \\text{m/s}$; $v_2'=1{,}2\\ \\text{m/s}$</td><td>Hai xe có vận tốc riêng sau va chạm</td></tr><tr><td>“a) động lượng có bảo toàn không?”</td><td>So tổng $p$ trước và sau</td><td>Cộng động lượng của từng xe</td></tr><tr><td>“b) động năng có bảo toàn không? mềm hay đàn hồi?”</td><td>So tổng $W_{\\text{đ}}$ trước và sau</td><td>⚠ Muốn phân loại va chạm phải kiểm cả động lượng lẫn động năng</td></tr><tr><td>“c) nếu hai xe dính nhau sau va chạm”</td><td>Hai xe chung vận tốc $v$</td><td>Va chạm mềm: tìm $v$ rồi tính $W_{\\text{đ}}$ của cả hệ</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy hỏi <b>mềm hay đàn hồi</b> → nghĩ tới <b>kiểm cả động lượng lẫn động năng</b>.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -336,15 +561,128 @@
      "c) Mềm hay đàn hồi",
      "d) $W_đ$ nếu hai xe dính nhau"
     ]
+   },
+   "cong_cu": {
+    "loai": "truc_chuyen_dong",
+    "de": true,
+    "x_min": -1,
+    "x_max": 11,
+    "don_vi": "m",
+    "diem": [],
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 1.5,
+      "hang": 2,
+      "text": "xe 1: 0,30 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 8,
+      "hang": 2,
+      "text": "xe 2: 0,10 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": 1,
+      "text": "Trước",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 1.5,
+      "hang": 1,
+      "v": 1.6,
+      "nhan_v": "0,80 m/s"
+     },
+     {
+      "loai": "vat",
+      "x": 8,
+      "hang": 1
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": -1,
+      "text": "Sau",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 1.5,
+      "hang": -1,
+      "ten": "xe 1",
+      "v": 0.8,
+      "nhan_v": "0,40 m/s"
+     },
+     {
+      "loai": "vat",
+      "x": 7.5,
+      "hang": -1,
+      "ten": "xe 2",
+      "v": 2.4,
+      "nhan_v": "1,2 m/s"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "p' = 0,12 + 0,12 = 0,24 = p ✓"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W' = 0,024 + 0,072 = 0,096 J = W"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "p, W_đ bảo toàn ⇒ đàn hồi"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": -2.3,
+       "hang": -3,
+       "text": "Nếu dính",
+       "a": "start"
+      },
+      {
+       "loai": "vat",
+       "x": 5,
+       "hang": -3,
+       "ten": "1+2",
+       "v": 1.2,
+       "nhan_v": "0,60 m/s"
+      },
+      {
+       "loai": "ghi",
+       "text": "V = 0,60 m/s ⇒ W = 0,072 J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Dính nhau: mất 0,024 J ⇒ mềm"
+      }
+     ]
+    ]
    }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Trung bình · Bảo toàn động lượng với vận tốc ngược chiều",
    "topic": "Định luật bảo toàn động lượng cho hệ kín",
-   "problem_html": "<p>Hai goòng chạy ngược chiều nhau trên đường ray thẳng nằm ngang của một hầm mỏ, tới đâm vào nhau rồi móc dính. Goòng A khối lượng $900\\ \\text{kg}$, tốc độ $2{,}0\\ \\text{m/s}$; goòng B khối lượng $600\\ \\text{kg}$, tốc độ $1{,}0\\ \\text{m/s}$. Bỏ qua ma sát.</p>\n<ol type=\"a\"><li>Tính vận tốc của hai goòng ngay sau va chạm (độ lớn và chiều).</li>\n<li>Goòng A giữ nguyên số liệu. Goòng B phải chạy ngược chiều A với tốc độ bao nhiêu để sau va chạm hai goòng đứng yên?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Hai goòng chạy ngược chiều tới đâm vào nhau\"><line x1=\"14.0\" y1=\"128.0\" x2=\"406.0\" y2=\"128.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"20.0\" y=\"86.0\" width=\"76\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"85.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"58.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">900 kg</text><line x1=\"28.0\" y1=\"72\" x2=\"78.0\" y2=\"72.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,66.2 L78.0,72.0 L68.0,77.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"96.0\" y=\"60\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">v_A = 2,0 m/s</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"0.0 0;4.1 0;8.3 0;12.4 0;16.6 0;20.7 0;24.8 0;29.0 0;33.1 0;37.2 0;41.4 0;45.5 0;49.7 0;53.8 0;57.9 0;62.1 0;66.2 0;70.3 0;74.5 0;78.6 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0;80.0 0\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/></g><g><rect x=\"216.0\" y=\"86.0\" width=\"60\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"227.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"265.0\" cy=\"124.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"246.0\" y=\"108.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">600 kg</text><line x1=\"268.0\" y1=\"72\" x2=\"243.0\" y2=\"72.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M253.0,77.8 L243.0,72.0 L253.0,66.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"216.0\" y=\"44\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_B = 1,0 m/s</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"-0.0 0;-2.1 0;-4.1 0;-6.2 0;-8.3 0;-10.3 0;-12.4 0;-14.5 0;-16.6 0;-18.6 0;-20.7 0;-22.8 0;-24.8 0;-26.9 0;-29.0 0;-31.0 0;-33.1 0;-35.2 0;-37.2 0;-39.3 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0;-40.0 0\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><polygon points=\"185.0,86.0 179.7,87.5 182.4,92.4 177.5,89.7 176.0,95.0 174.5,89.7 169.6,92.4 172.3,87.5 167.0,86.0 172.3,84.5 169.6,79.6 174.5,82.3 176.0,77.0 177.5,82.3 182.4,79.6 179.7,84.5\" fill=\"#fb923c\" stroke=\"#fb923c\" stroke-width=\"1\" opacity=\".9\"/><text x=\"176.0\" y=\"152\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">va chạm, móc dính</text><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.667;0.687;1\" dur=\"1.50s\" begin=\"indefinite\" fill=\"freeze\"/></g><text x=\"16\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: vận tốc hai goòng ngay sau va chạm</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: hai goòng chạy tới nhau đúng thời gian thật (1 m ứng với 40 px), dừng ngay lúc chạm. Chuyển động sau va chạm là phần cần tính.</figcaption></figure>",
+   "problem_html": "<p>Hai goòng chạy ngược chiều nhau trên đường ray thẳng nằm ngang của một hầm mỏ, tới đâm vào nhau rồi móc dính. Goòng A khối lượng $900\\ \\text{kg}$, tốc độ $2{,}0\\ \\text{m/s}$; goòng B khối lượng $600\\ \\text{kg}$, tốc độ $1{,}0\\ \\text{m/s}$. Bỏ qua ma sát.</p>\n<ol type=\"a\"><li>Tính vận tốc của hai goòng ngay sau va chạm (độ lớn và chiều).</li>\n<li>Goòng A giữ nguyên số liệu. Goòng B phải chạy ngược chiều A với tốc độ bao nhiêu để sau va chạm hai goòng đứng yên?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hệ kín:</strong> $m_1\\vec v_1+m_2\\vec v_2=m_1\\vec v_1'+m_2\\vec v_2'$.</li><li>Va chạm mềm: $m_Av_A+m_Bv_B=(m_A+m_B)v$.</li><li>Chọn <strong>chiều dương</strong>; vận tốc ngược chiều dương mang dấu $-$.</li><li>Dấu của $v$ sau va chạm cho biết chiều chuyển động.</li><li>⚠ <strong>Điều kiện:</strong> phương trình vectơ thế số thành phương trình đại số theo chiều dương đã chọn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn chiều dương và gán dấu</span></p><p>Chọn chiều dương theo chiều chuyển động của goòng A.</p>$$v_A=+2{,}0\\ \\text{m/s}$$$$v_B=-1{,}0\\ \\text{m/s}$$<p>Đề cho tốc độ của B là số dương, nhưng B chạy ngược chiều dương nên vận tốc mang dấu $-$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tổng động lượng trước va chạm (a)</span></p>$$p=m_Av_A+m_Bv_B$$$$=900\\cdot2{,}0+600\\cdot(-1{,}0)$$$$=1800-600$$<div class=\"bt-ans\">$$p=1200\\ \\text{kg}\\cdot\\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vận tốc chung (a)</span></p>$$v=\\dfrac{p}{m_A+m_B}=\\dfrac{1200}{900+600}$$<div class=\"bt-ans\">$$v=0{,}8\\ \\text{m/s}$$</div><p>$v\\gt0$: hai goòng chạy theo chiều của goòng A, tốc độ $0{,}8\\ \\text{m/s}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ goòng B để hai goòng đứng yên (b)</span></p><p>Sau va chạm hai goòng đứng yên nên tổng động lượng sau bằng $0$, cũng là tổng trước. Gọi $u$ là tốc độ goòng B ($v_B=-u$):</p>$$m_Av_A+m_B(-u)=0$$$$u=\\dfrac{m_Av_A}{m_B}=\\dfrac{900\\cdot2{,}0}{600}$$<div class=\"bt-ans\">$$u=3{,}0\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$p=900\\cdot2{,}0+600\\cdot(-3{,}0)$$$$p=1800-1800=0$$<p>Động lượng goòng A được goòng B triệt tiêu đúng ✓.</p><p>Hai goòng đứng yên nên toàn bộ động năng ban đầu biến thành nhiệt và biến dạng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v=0{,}8\\ \\text{m/s}$, theo chiều của goòng A</p><p>b) Goòng B phải chạy với tốc độ $3{,}0\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai vật chạy ngược chiều</strong> → chọn chiều dương trước, vận tốc ngược chiều mang dấu $-$, đọc chiều từ dấu của kết quả; muốn hai vật đứng yên thì cho tổng động lượng bằng $0$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 230\" role=\"img\" aria-label=\"Hai goòng chạy ngược chiều trước va chạm trong hai trường hợp a) và b)\"><line x1=\"14.0\" y1=\"92.0\" x2=\"406.0\" y2=\"92.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a)</text><rect x=\"20.0\" y=\"50.0\" width=\"76\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"85.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"58.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">900 kg</text><rect x=\"216.0\" y=\"50.0\" width=\"60\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"227.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"265.0\" cy=\"88.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"246.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">600 kg</text><line x1=\"28\" y1=\"36\" x2=\"78.0\" y2=\"36.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,30.2 L78.0,36.0 L68.0,41.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"268\" y1=\"36\" x2=\"243.0\" y2=\"36.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M253.0,41.8 L243.0,36.0 L253.0,30.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"20\" y=\"22\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_A = 2,0 m/s</text><text x=\"276\" y=\"22\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">v_B = 1,0 m/s</text><line x1=\"14.0\" y1=\"202.0\" x2=\"406.0\" y2=\"202.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"226\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">b)</text><rect x=\"20.0\" y=\"160.0\" width=\"76\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"31.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"85.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"58.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">900 kg</text><rect x=\"216.0\" y=\"160.0\" width=\"60\" height=\"34\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><circle cx=\"227.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"265.0\" cy=\"198.0\" r=\"4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"246.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">600 kg</text><line x1=\"28\" y1=\"146\" x2=\"78.0\" y2=\"146.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M68.0,140.2 L78.0,146.0 L68.0,151.8\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"20\" y=\"132\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">v_A = 2,0 m/s</text><text x=\"276\" y=\"132\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">v_B = ?</text></svg><figcaption>Dữ kiện: hai trường hợp, mũi tên vận tốc vẽ cùng tỉ lệ (1 m/s ứng với 25 px). Chiều dương chọn theo chiều chuyển động của goòng A; ở b) tốc độ goòng B chưa biết nên chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đường ray thẳng nằm ngang … Bỏ qua ma sát”</td><td>Ngoại lực cân bằng</td><td>⚠ Hệ kín mới dùng được bảo toàn động lượng</td></tr><tr><td>“chạy ngược chiều nhau”</td><td>Hai vận tốc trái dấu</td><td>⚠ Chọn chiều dương trước khi thế số; vận tốc ngược chiều dương mang dấu $-$</td></tr><tr><td>“goòng A khối lượng $900$ kg, tốc độ $2{,}0$ m/s”</td><td>$m_A=900\\ \\text{kg}$; $v_A=2{,}0\\ \\text{m/s}$</td><td>Động lượng $p=mv$ (đại số)</td></tr><tr><td>“goòng B khối lượng $600$ kg, tốc độ $1{,}0$ m/s”</td><td>$m_B=600\\ \\text{kg}$; $\\lvert v_B\\rvert=1{,}0\\ \\text{m/s}$</td><td>Tốc độ là số không âm; vận tốc thì có dấu</td></tr><tr><td>“tới đâm vào nhau rồi móc dính”</td><td>Chung vận tốc $v$</td><td>Va chạm mềm: $m_Av_A+m_Bv_B=(m_A+m_B)v$</td></tr><tr><td>“a) vận tốc … (độ lớn và chiều)”</td><td>Cần $v$ có dấu</td><td>Dấu của $v$ cho biết chiều chuyển động</td></tr><tr><td>“b) goòng B phải chạy với tốc độ bao nhiêu để sau va chạm hai goòng đứng yên”</td><td>Cần tốc độ $u$ của goòng B; sau va chạm $v=0$</td><td>Điều kiện để hai vật đứng yên sau va chạm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“đường ray thẳng nằm ngang … Bỏ qua ma sát”</td><td>Ngoại lực cân bằng</td><td>⚠ Hệ kín mới dùng được bảo toàn động lượng</td></tr><tr><td>“chạy ngược chiều nhau”</td><td>Hai vận tốc trái dấu</td><td>⚠ Chọn chiều dương trước khi thế số; vận tốc ngược chiều dương mang dấu $-$</td></tr><tr><td>“goòng A khối lượng $900$ kg, tốc độ $2{,}0$ m/s”</td><td>$m_A=900\\ \\text{kg}$; $v_A=2{,}0\\ \\text{m/s}$</td><td>Động lượng $p=mv$ (đại số)</td></tr><tr><td>“goòng B khối lượng $600$ kg, tốc độ $1{,}0$ m/s”</td><td>$m_B=600\\ \\text{kg}$; $\\lvert v_B\\rvert=1{,}0\\ \\text{m/s}$</td><td>Tốc độ là số không âm; vận tốc thì có dấu</td></tr><tr><td>“tới đâm vào nhau rồi móc dính”</td><td>Chung vận tốc $v$</td><td>Va chạm mềm: $m_Av_A+m_Bv_B=(m_A+m_B)v$</td></tr><tr><td>“a) vận tốc … (độ lớn và chiều)”</td><td>Cần $v$ có dấu</td><td>Dấu của $v$ cho biết chiều chuyển động</td></tr><tr><td>“b) goòng B phải chạy với tốc độ bao nhiêu để sau va chạm hai goòng đứng yên”</td><td>Cần tốc độ $u$ của goòng B; sau va chạm $v=0$</td><td>Điều kiện để hai vật đứng yên sau va chạm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>chạy ngược chiều</b> → nghĩ tới <b>chọn chiều dương</b>: vận tốc ngược chiều mang dấu $-$.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -451,78 +789,125 @@
    ],
    "cong_cu": {
     "loai": "truc_chuyen_dong",
-    "x_min": -1.4,
-    "x_max": 9.1,
+    "de": true,
+    "x_min": -1,
+    "x_max": 11,
     "don_vi": "m",
+    "diem": [],
     "hinh": [
+     {
+      "loai": "chu",
+      "x": 0,
+      "hang": 2,
+      "text": "A: 900 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "hang": 2,
+      "text": "B: 600 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": 1,
+      "text": "a)",
+      "a": "start"
+     },
      {
       "loai": "vat",
       "x": 0,
       "hang": 1,
-      "ten": "A 900 kg",
       "v": 1.2,
-      "nhan_v": "2,0",
+      "nhan_v": "2,0 m/s",
       "het": 3
      },
      {
       "loai": "vat",
-      "x": 7.5,
+      "x": 10,
       "hang": 1,
-      "ten": "B 600 kg",
       "v": -0.6,
-      "nhan_v": "1,0",
+      "nhan_v": "1,0 m/s",
       "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": -1,
+      "text": "b)",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 0,
+      "hang": -1,
+      "ten": "A",
+      "v": 1.2,
+      "nhan_v": "2,0 m/s"
+     },
+     {
+      "loai": "vat",
+      "x": 10,
+      "hang": -1,
+      "ten": "B",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 9.3,
+      "hang": -1,
+      "text": "v_B = ?",
+      "a": "end",
+      "het": 4
      }
     ],
     "lop": [
      [
       {
        "loai": "ghi",
-       "text": "Chiều dương →: v_A = +2,0; v_B = −1,0 m/s"
+       "text": "v_A = +2,0 m/s; v_B = −1,0 m/s"
       }
      ],
      [
       {
        "loai": "ghi",
-       "text": "p = 900·2,0 + 600·(−1,0) = 1200 kg·m/s"
+       "text": "p = 1800 − 600 = 1200 kg·m/s"
       }
      ],
      [
       {
        "loai": "vat",
-       "x": 3.5,
+       "x": 5,
        "hang": 1,
        "ten": "A+B",
        "v": 0.48,
-       "nhan_v": "0,8",
-       "het": 4
+       "nhan_v": "0,8 m/s"
       },
       {
        "loai": "ghi",
-       "text": "V = 1200 : 1500 = +0,8 m/s (theo chiều A)",
-       "het": 4
+       "text": "V = 1200 : 1500 = +0,8 m/s"
       }
      ],
      [
       {
        "loai": "vat",
-       "x": 0,
-       "hang": 1,
-       "ten": "A 900 kg",
-       "v": 1.2,
-       "nhan_v": "2,0"
-      },
-      {
-       "loai": "vat",
-       "x": 7.5,
-       "hang": 1,
-       "ten": "B 600 kg",
+       "x": 10,
+       "hang": -1,
+       "ten": "B",
        "v": -1.8,
-       "nhan_v": "3,0"
+       "nhan_v": "3,0 m/s"
       },
       {
        "loai": "ghi",
-       "text": "0 = 900·2,0 − 600·v_B ⇒ v_B = 3,0 m/s"
+       "text": "600·v_B = 1800 ⇒ v_B = 3,0 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "V > 0 ⇒ đi theo chiều goòng A ✓"
       }
      ]
     ]
@@ -542,9 +927,9 @@
    "form": "bai_tap",
    "label": "Dạng 5 · Khó · Chuyển động bằng phản lực: súng giật, tên lửa",
    "topic": "Định luật bảo toàn động lượng cho hệ kín",
-   "problem_html": "<p>Cả hai hệ dưới đây ban đầu đứng yên.</p>\n<ol type=\"a\"><li>Một khẩu súng khối lượng $2{,}5\\ \\text{kg}$ (không kể đạn) đặt tự do trên mặt phẳng nhẵn, bắn viên đạn khối lượng $10\\ \\text{g}$ theo phương ngang với tốc độ $400\\ \\text{m/s}$ so với mặt đất. Tính tốc độ giật lùi của súng.</li>\n<li>Một tên lửa mô hình khối lượng $0{,}60\\ \\text{kg}$ (kể cả khí) đặt trên đường ray đệm khí nằm ngang. Khi bật động cơ, nó phụt tức thời $0{,}10\\ \\text{kg}$ khí về phía sau với tốc độ $30\\ \\text{m/s}$ so với mặt đất. Tính tốc độ của tên lửa ngay sau khi phụt khí.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 160\" role=\"img\" aria-label=\"Súng đặt tự do trên mặt phẳng nhẵn bắn viên đạn theo phương ngang\"><line x1=\"14.0\" y1=\"120.0\" x2=\"406.0\" y2=\"120.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><g><rect x=\"40.0\" y=\"80\" width=\"78.0\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"118.0\" y=\"82\" width=\"46\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M54.0,102 L48.0,118 L68.0,118 L70.0,102\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"79.0\" y=\"95\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">2,5 kg</text><animateTransform attributeName=\"transform\" type=\"translate\" values=\"-0.0 0;-0.0 0;-0.1 0;-0.1 0;-0.1 0;-0.1 0;-0.2 0;-0.2 0;-0.2 0;-0.2 0;-0.3 0;-0.3 0;-0.3 0;-0.3 0;-0.4 0;-0.4 0;-0.4 0;-0.4 0;-0.5 0;-0.5 0;-0.5 0;-0.6 0;-0.6 0;-0.6 0;-0.6 0;-0.7 0;-0.7 0;-0.7 0;-0.7 0;-0.8 0\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"168.0\" cy=\"86\" r=\"4.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"168.0;174.6;181.1;187.7;194.2;200.8;207.3;213.9;220.4;227.0;233.5;240.1;246.6;253.2;259.7;266.3;272.8;279.4;285.9;292.5;299.0;305.6;312.1;318.7;325.2;331.8;338.3;344.9;351.4;358.0\" dur=\"2.50s\" begin=\"indefinite\" fill=\"freeze\"/></circle><text x=\"16\" y=\"28\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Cần tìm: tốc độ giật lùi của súng</text><text x=\"174.0\" y=\"68\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">viên đạn 10 g, 400 m/s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: viên đạn rời nòng, chuyển động của súng vẽ đúng tỉ lệ vận tốc (chạy chậm hàng nghìn lần). Phần cần tính là tốc độ giật của súng.</figcaption></figure>",
+   "problem_html": "<p>Cả hai hệ dưới đây ban đầu đứng yên.</p>\n<ol type=\"a\"><li>Một khẩu súng khối lượng $2{,}5\\ \\text{kg}$ (không kể đạn) đặt tự do trên mặt phẳng nhẵn, bắn viên đạn khối lượng $10\\ \\text{g}$ theo phương ngang với tốc độ $400\\ \\text{m/s}$ so với mặt đất. Tính tốc độ giật lùi của súng.</li>\n<li>Một tên lửa mô hình khối lượng $0{,}60\\ \\text{kg}$ (kể cả khí) đặt trên đường ray đệm khí nằm ngang. Khi bật động cơ, nó phụt tức thời $0{,}10\\ \\text{kg}$ khí về phía sau với tốc độ $30\\ \\text{m/s}$ so với mặt đất. Tính tốc độ của tên lửa ngay sau khi phụt khí.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Chuyển động bằng phản lực:</strong> một phần của hệ tách ra theo một hướng, phần còn lại đi ngược hướng.</li><li>Hệ ban đầu đứng yên: $m\\vec v+M\\vec V=\\vec0\\ \\Rightarrow\\ V=-\\dfrac{m}{M}v$ (dấu $-$: ngược chiều).</li><li>Đổi khối lượng ra kg: $1\\ \\text{g}=0{,}001\\ \\text{kg}$.</li><li>⚠ <strong>Điều kiện:</strong> $M$ là khối lượng <em>phần còn lại</em> sau khi tách; hệ đứng yên thì tổng động lượng trước bằng $0$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi đơn vị khối lượng</span></p>$$m=10\\ \\text{g}=10\\cdot0{,}001\\ \\text{kg}$$<div class=\"bt-ans\">$$m=0{,}010\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Súng giật lùi (a)</span></p><p>Hệ ban đầu đứng yên nên tổng động lượng trước bằng $0$. Chọn chiều dương theo chiều đạn bay:</p>$$mv+MV=0$$$$V=-\\dfrac{mv}{M}=-\\dfrac{0{,}010\\cdot400}{2{,}5}$$<div class=\"bt-ans\">$$V=-1{,}6\\ \\text{m/s}$$</div><p>Dấu $-$: súng giật ngược chiều đạn, tốc độ $1{,}6\\ \\text{m/s}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khối lượng phần tên lửa còn lại (b)</span></p><p>Khối lượng $0{,}60\\ \\text{kg}$ gồm cả khí; sau khi phụt, phần còn lại:</p>$$M'=0{,}60-0{,}10$$<div class=\"bt-ans\">$$M'=0{,}50\\ \\text{kg}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ tên lửa (b)</span></p><p>Chọn chiều dương theo chiều khí phụt:</p>$$mv+M'V=0$$$$V=-\\dfrac{mv}{M'}=-\\dfrac{0{,}10\\cdot30}{0{,}50}$$<div class=\"bt-ans\">$$V=-6{,}0\\ \\text{m/s}$$</div><p>Tên lửa chạy ngược chiều khí phụt, tốc độ $6{,}0\\ \\text{m/s}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p>$$MV+mv$$$$=2{,}5\\cdot(-1{,}6)+0{,}010\\cdot400=0$$$$M'V+mv$$$$=0{,}50\\cdot(-6{,}0)+0{,}10\\cdot30=0$$<p>Cả hai: tổng động lượng sau bằng $0$, đúng bằng trước khi tách ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Súng giật lùi với tốc độ $1{,}6\\ \\text{m/s}$</p><p>b) Tên lửa chạy với tốc độ $6{,}0\\ \\text{m/s}$, ngược chiều khí phụt</p></div><p class=\"bt-note\">Nhận dạng: <strong>hệ đứng yên rồi tách làm hai phần</strong> → tổng động lượng bằng $0$: phần nhỏ đi nhanh một hướng, phần lớn đi chậm hướng ngược lại.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 258\" role=\"img\" aria-label=\"Hệ đứng yên: súng bắn đạn và tên lửa phụt khí\"><line x1=\"14.0\" y1=\"100.0\" x2=\"406.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a) Súng</text><rect x=\"150\" y=\"60\" width=\"78\" height=\"22\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><rect x=\"228\" y=\"66\" width=\"46\" height=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><text x=\"189\" y=\"75\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">2,5 kg</text><line x1=\"282\" y1=\"70\" x2=\"342.0\" y2=\"70.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M332.0,64.2 L342.0,70.0 L332.0,75.8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"282\" y=\"56\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">đạn 10 g · 400 m/s</text><text x=\"100\" y=\"75\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">V = ?</text><text x=\"16\" y=\"124\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">ban đầu đứng yên</text><line x1=\"14.0\" y1=\"228.0\" x2=\"406.0\" y2=\"228.0\" stroke=\"currentColor\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"16\" y=\"152\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">b) Tên lửa mô hình</text><rect x=\"170\" y=\"192\" width=\"90\" height=\"22\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"215\" y=\"207\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0,60 kg</text><line x1=\"166\" y1=\"203\" x2=\"106.0\" y2=\"203.0\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M116.0,208.8 L106.0,203.0 L116.0,197.2\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"166\" y=\"184\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">khí 0,10 kg · 30 m/s</text><text x=\"290\" y=\"207\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">V = ?</text><text x=\"16\" y=\"252\" fill=\"#94a3b8\" font-size=\"12\" font-weight=\"600\" text-anchor=\"start\">ban đầu đứng yên; khối lượng 0,60 kg gồm cả khí phụt ra</text></svg><figcaption>Dữ kiện: vận tốc vẽ theo tỉ lệ riêng của từng tình huống (đạn 1 m/s ứng với 0,15 px, khí 1 m/s ứng với 2 px). Vận tốc của súng và của tên lửa chưa vẽ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ban đầu đứng yên”</td><td>Tổng động lượng trước $=0$</td><td>⚠ Hệ đứng yên rồi tách làm hai: tổng động lượng sau cũng phải bằng $\\vec0$</td></tr><tr><td>“súng khối lượng $2{,}5$ kg (không kể đạn)”</td><td>$M=2{,}5\\ \\text{kg}$</td><td>Phần còn lại sau khi đạn rời đi</td></tr><tr><td>“viên đạn khối lượng $10$ g … $400$ m/s so với mặt đất”</td><td>$m=10\\ \\text{g}$; $v=400\\ \\text{m/s}$</td><td>⚠ Đổi khối lượng ra kg trước khi thế số</td></tr><tr><td>“a) tốc độ giật lùi của súng”</td><td>Cần $\\lvert V\\rvert$ (m/s)</td><td>$m\\vec v+M\\vec V=\\vec0$</td></tr><tr><td>“tên lửa mô hình khối lượng $0{,}60$ kg (kể cả khí)”</td><td>Tổng khối lượng trước khi phụt</td><td>⚠ Sau khi phụt, khối lượng phần còn lại là bao nhiêu?</td></tr><tr><td>“phụt tức thời $0{,}10$ kg khí … $30$ m/s so với mặt đất”</td><td>$m=0{,}10\\ \\text{kg}$; $v=30\\ \\text{m/s}$</td><td>Phần tách ra đi về một hướng</td></tr><tr><td>“b) tốc độ của tên lửa ngay sau khi phụt khí”</td><td>Cần $\\lvert V\\rvert$ (m/s)</td><td>Phần còn lại chuyển động thế nào so với phần tách ra?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“ban đầu đứng yên”</td><td>Tổng động lượng trước $=0$</td><td>⚠ Hệ đứng yên rồi tách làm hai: tổng động lượng sau cũng phải bằng $\\vec0$</td></tr><tr><td>“súng khối lượng $2{,}5$ kg (không kể đạn)”</td><td>$M=2{,}5\\ \\text{kg}$</td><td>Phần còn lại sau khi đạn rời đi</td></tr><tr><td>“viên đạn khối lượng $10$ g … $400$ m/s so với mặt đất”</td><td>$m=10\\ \\text{g}$; $v=400\\ \\text{m/s}$</td><td>⚠ Đổi khối lượng ra kg trước khi thế số</td></tr><tr><td>“a) tốc độ giật lùi của súng”</td><td>Cần $\\lvert V\\rvert$ (m/s)</td><td>$m\\vec v+M\\vec V=\\vec0$</td></tr><tr><td>“tên lửa mô hình khối lượng $0{,}60$ kg (kể cả khí)”</td><td>Tổng khối lượng trước khi phụt</td><td>⚠ Sau khi phụt, khối lượng phần còn lại là bao nhiêu?</td></tr><tr><td>“phụt tức thời $0{,}10$ kg khí … $30$ m/s so với mặt đất”</td><td>$m=0{,}10\\ \\text{kg}$; $v=30\\ \\text{m/s}$</td><td>Phần tách ra đi về một hướng</td></tr><tr><td>“b) tốc độ của tên lửa ngay sau khi phụt khí”</td><td>Cần $\\lvert V\\rvert$ (m/s)</td><td>Phần còn lại chuyển động thế nào so với phần tách ra?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hệ đứng yên rồi tách làm hai phần</b> → nghĩ tới <b>tổng động lượng bằng 0</b>, hai phần đi ngược chiều.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -638,25 +1023,79 @@
    ],
    "cong_cu": {
     "loai": "truc_chuyen_dong",
-    "x_min": -0.5,
-    "x_max": 9.5,
+    "de": true,
+    "x_min": -1,
+    "x_max": 11,
     "don_vi": "m",
+    "diem": [],
     "hinh": [
      {
-      "loai": "vat",
-      "x": 1,
+      "loai": "chu",
+      "x": 3,
+      "hang": 2,
+      "text": "súng 2,5 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 7.5,
+      "hang": 2,
+      "text": "đạn 10 g",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
       "hang": 1,
-      "ten": "súng 2,5 kg",
-      "het": 3
+      "text": "a)",
+      "a": "start"
      },
      {
       "loai": "vat",
-      "x": 4.5,
+      "x": 3,
       "hang": 1,
-      "ten": "đạn 10 g",
-      "v": 2,
-      "nhan_v": "400 m/s",
-      "het": 3
+      "het": 2
+     },
+     {
+      "loai": "vat",
+      "x": 7.5,
+      "hang": 1,
+      "v": 2.0,
+      "nhan_v": "400 m/s"
+     },
+     {
+      "loai": "chu",
+      "x": 3,
+      "hang": -1,
+      "text": "khí 0,10 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 9.5,
+      "hang": -1,
+      "text": "tên lửa 0,60 kg",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": -2.3,
+      "hang": -2,
+      "text": "b)",
+      "a": "start"
+     },
+     {
+      "loai": "vat",
+      "x": 3,
+      "hang": -2,
+      "v": -1.0,
+      "nhan_v": "30 m/s"
+     },
+     {
+      "loai": "vat",
+      "x": 9.5,
+      "hang": -2,
+      "het": 4
      }
     ],
     "lop": [
@@ -668,35 +1107,18 @@
      ],
      [
       {
-       "loai": "chu",
-       "x": 1,
-       "hang": 2,
-       "text": "giật lùi",
-       "a": "middle",
-       "het": 3
+       "loai": "vat",
+       "x": 3,
+       "hang": 1,
+       "v": -1.0,
+       "nhan_v": "1,6 m/s"
       },
       {
        "loai": "ghi",
-       "text": "0 = 0,010·400 − 2,5·V ⇒ V = 1,6 m/s",
-       "het": 3
+       "text": "2,5·V = 0,010·400 ⇒ V = 1,6 m/s"
       }
      ],
      [
-      {
-       "loai": "vat",
-       "x": 2,
-       "hang": 1,
-       "ten": "tên lửa",
-       "het": 4
-      },
-      {
-       "loai": "vat",
-       "x": 6.2,
-       "hang": 1,
-       "ten": "khí",
-       "v": 1.8,
-       "nhan_v": "30 m/s"
-      },
       {
        "loai": "ghi",
        "text": "m′ = 0,60 − 0,10 = 0,50 kg"
@@ -705,15 +1127,20 @@
      [
       {
        "loai": "vat",
-       "x": 2,
-       "hang": 1,
-       "ten": "tên lửa",
-       "v": -0.36,
+       "x": 9.5,
+       "hang": -2,
+       "v": 0.8,
        "nhan_v": "6,0 m/s"
       },
       {
        "loai": "ghi",
-       "text": "0 = 0,10·30 − 0,50·v ⇒ v = 6,0 m/s"
+       "text": "0,50·v = 0,10·30 ⇒ v = 6,0 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Hai phần đi ngược chiều nhau ✓"
       }
      ]
     ]
