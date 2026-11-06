@@ -173,6 +173,24 @@ Không giọng đọc. Qua cổng A/B, render, gửi thầy xem bằng SendUserF
 Ôn tập theo chặng và cách đo (tỉ lệ đúng buổi ôn có/không video). Commit clips/on-<chuong>.py.
 ```
 
+**Kết quả 6/11/2026 (clip thử, chờ thầy duyệt):** `clips/on-ch3-l12.py` → `ra/on-l12-ch3.mp4`, 89,0 s, 169 từ/phút.
+5 câu lấy từ mục Trả bài Bài 9, 10, 12, 12, 13 (ưu tiên từ thông, lực từ — chủ đề sai nhiều ở chặng C); mỗi câu: đọc
+(200 từ/phút) → vòng đếm 4-3-2-1 → "Đáp án X." + thẻ TỪ KHOÁ = nguyên văn dòng 🔑 của bài (mỗi mục một dòng, ở 5 s);
+cuối: chuỗi Bài 12 → 13 (Quay khung → Φ biến thiên → Dòng xoay chiều) + THỬ NGHĨ, gợi ý trễ 4 s. Cổng B kiem-code 2 vòng.
+Còn treo trong `engine.py` dùng chung: header 28 px và chân trang y 1860 nằm ngoài vùng an toàn V12 (chỉ thương hiệu).
+
+**Đề xuất gắn (chưa code):**
+- Chỗ đặt: trạng thái "Chờ giáo viên mở chặng 1" của `ReviewStudent` (buổi ôn trên lớp) và đầu danh sách chặng của
+  `HomeView` (buổi tự học ở nhà) — thẻ "Ôn nhanh 90 giây trước khi làm" có ảnh bìa + nút phát, bấm mới phát (V5), không
+  tự phát, không chặn nút "Vào làm chặng 1". Màn tivi (`ReviewScreen`) có thể chiếu chung khi thầy bấm, cả lớp cùng nghĩ.
+- Dữ liệu: thêm `video_url` (tuỳ chọn) vào định nghĩa buổi ôn theo chương (jsonb `stages` đã có sẵn chỗ) — không bảng mới.
+- Tỉ lệ đúng theo nhóm câu: câu chặng 1 khớp 5 từ khoá (gắn sẵn qua topic) so với câu còn lại.
+
+**Đề xuất đo:** so tỉ lệ đúng lượt ĐẦU của chặng 1 giữa buổi ôn có video và không video, cùng chương, chia theo lớp
+(lớp A có, lớp B không; đợt sau đổi lại) để tránh so khác học lực. Chỉ tính em đã bấm phát ≥ 75 % (ghi sự kiện phát/xem
+xong). Kèm: số em bấm phát / số em vào buổi, và chênh lệch riêng ở câu trùng từ khoá. Mốc quyết định: ≥ 2 lượt đổi chéo,
+chênh ≥ 5 điểm % ở câu trùng từ khoá → mở rộng các chương khác; không chênh → dừng, không làm thêm.
+
 ### Chặng E — QR clip trong sách in (Sonnet)
 
 ```
