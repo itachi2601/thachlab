@@ -60,7 +60,7 @@ Quy tắc áp dụng: `docs/QUY-TAC-THIET-KE.md` **V1–V12** (V8 rút chữ, V9
 
 | Chặng | Việc | Thời gian | Xong khi | Ai |
 |---|---|---|---|---|
-| **A. Đưa khung tương tác vào bài thật** | Deploy CSS `tl-video--doc` còn treo; `ContentHtml`/chèn bài nhận `data-khung` để render `VideoThiNghiemKhung` cho 23 clip L12; thêm event `clip_choice` (chọn ở điểm dừng) ghi gộp theo heartbeat, **không thêm round-trip** cho `/lop-hoc/bai`; chụp 375 px sáng/tối | 30/10–3/11 (1–2 phiên) | 23 clip L12 dừng ở Dự đoán trên web; có số lượt chọn đúng/sai | phiên chính Sonnet + `kiem-code` |
+| **A. Đưa khung tương tác vào bài thật** | Deploy CSS `tl-video--doc` còn treo; `ContentHtml`/chèn bài nhận `data-khung` để render `VideoThiNghiemKhung` cho 23 clip L12; thêm event `clip_choice` (chọn ở điểm dừng) ghi gộp theo heartbeat, **không thêm round-trip** cho `/lop-hoc/bai`; chụp 375 px sáng/tối | 30/10–3/11 (1–2 phiên) | 23 clip L12 dừng ở Dự đoán trên web; có số lượt chọn đúng/sai | phiên chính Sonnet + `kiem-code` **✅ Chốt 6/11/2026:** DB 23/23 hộp `tl-box--khung data-khung` (16 bài); web thật bài 6 L12 (lesson 7) 375 px: khung không tràn, video dừng ở 9,2 s câu Dự đoán (nhãn A. B. C. — 3 phương án), `lesson_clip_choices` = 0 lượt (chưa HS nào chọn → chưa đo được % đúng). |
 | **B. Phủ L10–L11 nhóm C** | **Đang làm** (xem 4a): 15/55 clip đã dựng 30/10, còn 40 theo chương **sắp dạy** (lịch `lich-tuan`), lô 7–10 clip/phiên, mỗi clip kèm JSON khung | 3–22/11 | 40 dòng còn lại "đã đăng/bỏ qua"; ≈ 100 USD | Opus dựng (song song ≤ 3), Sonnet `kiem-code` cổng B |
 | **B'. Nhóm B 88 TN** | Thầy duyệt danh sách: dùng YouTube có sẵn (0 USD, V3–V5) hay tự dựng | chờ thầy | danh sách có cột "YT/tự dựng" | thầy |
 | **C. Clip bẫy cho phụ đạo** | Thí điểm 1 chương L12 đang dạy: lấy 5 chủ đề sai nhiều nhất từ Trả bài → 5 clip 20–30 s → nhúng ở `/phu-dao` chủ đề đó + bài lý thuyết liên quan; mẫu kịch bản `clips/bay-*.py` (cảnh: tình huống → chọn → sai vì → quy tắc) | 10–20/11 | 5 clip + kịch bản mẫu được thầy duyệt; đo tỉ lệ thoát phụ đạo trước/sau | Opus (mẫu), Sonnet (lô) |
@@ -84,6 +84,8 @@ Nhóm C L10–L11 = 55 clip (`danh-sach-tu-dung.md`). Đã dựng 30/10: L10 Đ�
 Ch.2 Sóng L11 và Ch.3 L10 không còn clip nhóm C. Tồn đọng của lô 30/10: chưa chèn `coulomb2`, `dtdeu2`, `trongluc2/3` (chờ bài đủ 24 h); 5 clip L11 Điện chờ thầy duyệt rồi mới đăng DB; số 20 nC của `tn-l11-coulomb-02` gần ngưỡng đánh thủng, chờ thầy quyết sửa kho/bài. Lưu ý khi ghi sổ: id trong sổ và `index.json` lệch ở vài bài (như `tonghopluc-02`), đối chiếu tay.
 
 **L9 nhóm C (lô 5/11/2026):** 8/9 clip dựng (tieucu3, congsuat1, congsuat3, conang1, dongthe1, dongthe2, ohm1, congco1; kinhlup-02 bỏ qua V6), cả 8 qua cổng B 1 vòng, 48,8–49,9 s, 1,15–1,31 MB, đã tải + chèn repo 6 bài + khung; chờ thầy duyệt rồi đăng `cap-nhat-ly-thuyet.sh` sau 22h.
+
+**B7–B8 (đối chiếu 6/11/2026):** đã dựng đủ từ 30/10–1/11 (bảng trên lỗi thời); Ch.4–5 + klr1/2 đã đăng DB; trondeu3, biendang3, saiso2, antoan1/2 đã chèn repo + khung, chờ thầy duyệt rồi đăng; `klr-apsuat-04` chờ thầy quyết.
 
 Ranh giới: L12 `theory.src.html` đang có phiên mẹo 🧠 và thí nghiệm khung 6 ô — trước khi sửa bài nào chạy
 `git log origin/main -3 -- content/lesson-samples/<bài>/theory.src.html`, có commit 24 h qua thì chờ. Chặng A chỉ đụng
