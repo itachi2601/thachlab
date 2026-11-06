@@ -91,3 +91,16 @@ không ghi vào SKILL.md/STATE.md/memory. Không đổi đề, số liệu, đá
 ## Báo cáo (≤ 40 dòng)
 Mỗi dạng một dòng: có/không `dong` (vì sao), họ hình, đã sửa gì ở lớp 0/lớp bước/màu, chỗ còn băn khoăn (nội dung cần thầy
 quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = SACH?, đường dẫn ảnh đã soát.
+
+## Trạng thái 6/11/2026 (7 phiên nhánh dừng giữa chừng vì hết hạn mức tuần)
+- **Xong trên main (55 bài):** 2 3 4 6 7 8 · 20–25 26 27 · 35 36 37 38 39 40 41 42 · 46–50 52–55 57 58 60 · 68 69 70 72 73 74 · 83 84 89 90 91 129 130 131 · 150 153 157 159 160 162 164.
+  23 bài in nghiêng trong commit 6426c6cf5 được cứu từ worktree phiên nhánh: kiểm máy + `#kiem` SACH, CHƯA soát ảnh.
+- **Dở, còn lỗi chữ đè/tràn (10 bài)** — bản dở nằm ở worktree phiên nhánh, chưa commit: 9 15 16 17 (`.claude/worktrees/xenodochial-antonelli-2bf293`), 28 31 (`vigilant-maxwell-0d1cf4`), 43 44 (`vibrant-hypatia-aa60fe`), 161 178 (`ecstatic-wilson-bdc8a9`). Chép file sang rồi chỉ dời nhãn tới `#kiem` SACH.
+- **Chưa làm (25 bài):** 18 19 · 30 32 33 34 · 45 · 62 63 66 · 71 76 77 78 79 · 151 152 154 155 156 158 · 163 165 166 167.
+- Họ `so_do_vecto` không có `lop` (mỗi `vec` mang `buoc` riêng) — đừng báo lỗi "lop ≠ buoc" cho họ này. Bài 46–48 có dạng cố ý không có hình.
+
+## Cách làm tiết kiệm token (rút từ đợt 5–6/11)
+- Phiên MỚI (không resume phiên cũ — context cũ 150k+ bị gửi lại mỗi lượt). Tối đa 2 phiên cùng lúc.
+- Phiên điều phối KHÔNG đọc ảnh; chỉ kiểm máy (script trạng thái + `#kiem`). Agent con tự soát ảnh, mỗi bài ≤ 1 ảnh/dạng.
+- Sửa nhãn đè/tràn = việc cơ học → Sonnet. Soạn hình mới (cần giải lại vật lí, chống lộ đáp án) → Opus, 2–3 bài/agent, 2 agent cùng lúc.
+- Commit ngay sau mỗi bài sạch (đừng dồn), để hết hạn mức giữa chừng không mất việc.
