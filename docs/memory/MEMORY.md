@@ -10,6 +10,7 @@
 - [Giảm token](project_thachlab_token_hygiene.md) — 87k/request cố định
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
+- [Lô duyệt kèm link](feedback_lo_duyet_kem_link.md) — báo cáo chờ duyệt phải có link mở xem từng mục
 - [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box câu hỏi
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — đặt trong khối bash
 - [Chạy script giúp thầy](feedback_chay_script_giup.md) — chạy trong tab terminal, tự kiểm

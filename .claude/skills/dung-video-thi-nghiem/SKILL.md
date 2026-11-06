@@ -65,6 +65,7 @@ Mỗi clip tự dựng có thêm một khung **sáu ô** chạy cùng video (`co
 **Clip đã làm cần JSON khung** (còn thiếu, 3 clip đã có: boylecharles-01, chuyenthe-01, camungdt-01): 20 clip nhóm C lô 0–2 (`ls scripts/video-thi-nghiem/clips/`). Làm theo lô 5 clip, mỗi lô một agent Sonnet theo 3 bước trên; chỉ lô thầy duyệt mới gắn vào bài.
 
 ## Sau khi render
+Báo cáo lô chờ thầy duyệt: mỗi clip một dòng `tn · link mp4 Storage (đã HEAD 200) · bài · điều cần quyết` để thầy bấm xem luôn (thầy chốt 6/11/2026).
 mp4 chưa chèn vào bài: chỗ đặt (YouTube không công khai + `scripts/chen-video-thi-nghiem.mts` hay file tĩnh trong web) thầy chưa chốt. Không tự đăng. Lô: 1 = L12 còn lại (~40), 2 = L12 + L11 điện (~60), 3 = L11 dao động + L9 (~45), 4 = L10 (~112).
 
 ## Nhật ký rút kinh nghiệm
