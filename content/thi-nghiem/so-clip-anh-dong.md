@@ -104,4 +104,4 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l10-an-toan-phong-thuc-hanh (lesson 47) · tn-l10-an-toan-01 · clip antoan1 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
 - l10-an-toan-phong-thuc-hanh (lesson 47) · tn-l10-an-toan-02 · clip antoan2 · chèn repo + khung · chờ thầy duyệt, đăng sau 22h · 6/11/2026 ·
 - l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-04 · clip · CHỜ THẦY QUYẾT: bài không có hộp TN ống chữ U (bài chỉ có hộp -01/-02/-03) → thêm hộp vào bài rồi dựng, hay loại khỏi nhóm C · 6/11/2026 ·
-
+- l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-04 · clip · LOẠI khỏi nhóm C (thầy quyết 6/11): bài không có hộp TN ống chữ U, không thêm hộp · 6/11/2026 ·
