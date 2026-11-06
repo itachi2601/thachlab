@@ -138,8 +138,9 @@ def don_bay_nhiet(noi_voi_de):
     html = fig("meo-don-bay", "0 40 320 172", "Đòn bẩy nhiệt trên trục nhiệt độ: thả lần lượt ba viên sắt 100 độ C vào nước 20 độ C", body, cap)
     return {
         "ten": "Đòn bẩy nhiệt",
-        "dieu_kien": "Chỉ dùng khi không có vật nào chuyển thể, nhiệt dung riêng coi như không đổi "
-                     "và bỏ qua trao đổi nhiệt với môi trường.",
+        "dieu_kien": "Chỉ dùng khi hệ cô lập (nhiệt lượng kế, bỏ qua trao đổi nhiệt với môi trường) và chỉ các vật nằm trên đòn "
+                     "trao đổi nhiệt với nhau; không vật nào chuyển thể, nhiệt dung riêng coi như không đổi, "
+                     "không có công cơ học, không có hoà tan.",
         "html": html + noi_voi_de,
     }
 
@@ -221,7 +222,8 @@ def quy_nhiet(noi_voi_de):
     html = fig("meo-quy", "0 0 320 238", "Quỹ nhiệt: bỏ lần lượt các viên đá 0 độ C vào 2 kg nước 80 độ C, cột quỹ cạn dần từng nấc", "".join(b), cap)
     return {
         "ten": "Quỹ nhiệt",
-        "dieu_kien": "Mốc là nước lỏng ở 0&nbsp;°C và bỏ qua trao đổi nhiệt với môi trường. "
+        "dieu_kien": "Mốc là nước lỏng ở 0&nbsp;°C, bỏ qua trao đổi nhiệt với môi trường; $c$ và $\\lambda$ không đổi, "
+                     "áp suất thường, nước tinh khiết. "
                      "Đá dưới 0&nbsp;°C thì mỗi viên rút thêm $m_0c_{đá}\\Delta t$ trước khi tan.",
         "html": html + noi_voi_de,
     }
