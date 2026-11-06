@@ -174,3 +174,4 @@ Lightning CSS gộp khối `@media` sát nhau; Turbopack có lúc giữ CSS cũ 
 Chạy `npm run dev` (không `next dev` trực tiếp) — `predev` symlink `.env.local` về checkout chính.
 # Báo cáo: không tin nhắn quá trình, chỉ báo cáo tổng hợp cuối (thầy chốt 2/11/2026)
 Trong lúc làm không viết tin nhắn tiến độ/"đang làm X"; làm im lặng tới khi xong. Chỉ MỘT báo cáo tổng hợp cuối phiên: đã làm gì, kết quả đã kiểm, file/nhánh đã đụng, việc còn treo. Chỉ dừng giữa chừng khi bị chặn bởi quyết định của thầy.
+**Lô chờ duyệt → kèm link mở xem ngay** (thầy chốt 6/11/2026): mỗi mục một dòng `tên · link (URL Storage / trang /dev / file) · điều cần quyết`; link đã kiểm mở được.
