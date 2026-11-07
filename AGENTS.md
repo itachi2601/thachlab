@@ -79,6 +79,7 @@ Nhánh `claude/*` tự fast-forward/merge vào `main` khi push (`.github/workflo
 git -C ~/Projects/thachlab pull && bash ~/Projects/thachlab/scripts/cai-skill.sh
 ```
 - Cuối phiên: commit đúng file, push; báo nhánh, đổi gì, file chung nào đã đụng. Chưa vào main thì nói rõ "chưa vào main", không báo "xong". Có migration → theo mục trên, rồi `/ban-giao`.
+- **Phiên song song cùng đụng file chung** (`run-migrations.sh`, `STATE.md`, component dùng chung): phiên xong sau phải `git merge origin/main` trước khi push, rồi xem `gh run list --workflow gop-claude-vao-main.yml` (xung đột làm workflow tự gộp sai hoặc huỷ lượt chờ).
 - Hai phiên sửa cùng một file riêng: phiên merge sau tự gộp và kiểm lại; ý định mâu thuẫn thì dừng, hỏi Thạch, không ghi đè.
 
 # Cập nhật bài lý thuyết đã đăng

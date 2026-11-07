@@ -73,6 +73,7 @@
 - [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ ví dụ của thầy
 ## Giao diện & sản phẩm
+- [Câu tương tự đúng dạng](project_thachlab_cau_tuong_tu_dung_dang.md) — chờ thầy xem biến thể bài 18
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — đã deploy, chưa thử HS thật
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
