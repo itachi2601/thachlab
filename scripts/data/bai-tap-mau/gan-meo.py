@@ -16,8 +16,20 @@ def _meo():
     from meo_bong_du_quay import bong_du_quay
     from meo_chia_doi_banh import chia_doi_banh
     from meo_xe_day_vao_cat import xe_day_vao_cat
+    from meo_thang_may_dung_tang import thang_may_dung_tang
     # lesson_id: {chỉ số dạng (đếm từ 1): mẹo}
     return {
+        2: {  # L12 Bài 1 (đợt 2, thầy chốt 7/11/2026)
+            3: thang_may_dung_tang(
+                "<p>Ở dạng này: trong bảng, các ô nhiệt độ lặp lại liên tiếp là lúc thang máy dừng tầng. Số đo lặp lại là "
+                "tầng dừng, tức nhiệt độ nóng chảy (tra bảng ra chất); thời gian dừng là phút cuối trừ phút đầu, "
+                "không đếm số ô. Hình chỉ minh hoạ cách đọc, số trong hình khác bảng của đề; bảng này chỉ có một chỗ dừng "
+                "và chất bắt đầu ở thể rắn nên đó là nóng chảy.</p>"),
+            4: thang_may_dung_tang(
+                "<p>Ở dạng này: đi từ dưới lên, chỗ dừng thứ nhất ($BC$) là nóng chảy, chỗ dừng thứ hai ($DE$) là sôi, "
+                "dù $DE$ dài hơn. Phút đề hỏi rơi vào giữa lúc dừng (không phải đúng mốc đầu, mốc cuối) thì hai thể cùng có mặt; "
+                "ở đoạn dốc thì chỉ một thể đang nóng lên.</p>"),
+        },
         162: {
             3: con_sau_qua_cong(
                 "<p>Ở dạng này: theo dõi đầu tàu. Qua người đứng yên thì đầu tàu chỉ đi $L_1$; qua cầu thì đi $S+L_1$. "
@@ -69,7 +81,9 @@ def main(ids):
         assert len(da_co) + len(meo[lid]) <= 2, f"bài {lid}: quá 2 dạng có mẹo (G1)"
         for i, m in meo[lid].items():
             d["dang_bai"][i - 1]["meo"] = m
-        json.dump(d, open(J, "w"), ensure_ascii=False, indent=1)
+        with open(J, "w") as fh:
+            json.dump(d, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
         print("ghi", J, "dạng", sorted(meo[lid]), [len(meo[lid][i]["html"].encode()) for i in sorted(meo[lid])], "byte")
 
 
