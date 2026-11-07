@@ -92,11 +92,15 @@ không ghi vào SKILL.md/STATE.md/memory. Không đổi đề, số liệu, đá
 Mỗi dạng một dòng: có/không `dong` (vì sao), họ hình, đã sửa gì ở lớp 0/lớp bước/màu, chỗ còn băn khoăn (nội dung cần thầy
 quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = SACH?, đường dẫn ảnh đã soát.
 
-## Trạng thái 6/11/2026 (7 phiên nhánh dừng giữa chừng vì hết hạn mức tuần)
-- **Xong trên main (55 bài):** 2 3 4 6 7 8 · 20–25 26 27 · 35 36 37 38 39 40 41 42 · 46–50 52–55 57 58 60 · 68 69 70 72 73 74 · 83 84 89 90 91 129 130 131 · 150 153 157 159 160 162 164.
-  Trong đó 23 bài (commit 6426c6cf5) được cứu từ worktree phiên nhánh. 6/11 23:45 thầy duyệt ảnh 30 bài (23 bài này + 10 11 13 14 125 126 127) → ĐÃ ĐĂNG DB + deploy. 25 bài còn lại trong 55 chưa rõ đã đăng chưa — kiểm DB trước khi publish.
-- **Dở, còn lỗi chữ đè/tràn (10 bài)** — bản dở nằm ở worktree phiên nhánh, chưa commit: 9 15 16 17 (`.claude/worktrees/xenodochial-antonelli-2bf293`), 28 31 (`vigilant-maxwell-0d1cf4`), 43 44 (`vibrant-hypatia-aa60fe`), 161 178 (`ecstatic-wilson-bdc8a9`). Chép file sang rồi chỉ dời nhãn tới `#kiem` SACH.
-- **Chưa làm (25 bài):** 18 19 · 30 32 33 34 · 45 · 62 63 66 · 71 76 77 78 79 · 151 152 154 155 156 158 · 163 165 166 167.
+## Trạng thái 7/11/2026 (đối chiếu DB bằng máy: số dạng `cong_cu.de` trên `lesson_items` = repo, không còn `<figure`)
+- **Repo: xong cả 97 bài** (mọi dạng `de: true`, không `<figure`; mỗi bài có commit "một hình" trên main).
+- **ĐÃ ĐĂNG DB (51):** 2 10 11 13 14 18 23 26 27 37 38 41 42 54 55 57 58 60 68 69 70 74 83 84 89 90 91 125 126 127 129 130 131 150–155 157–167 178.
+- **CHƯA ĐĂNG DB (46) — DB vẫn bản cũ (0 dạng `de`, còn `<figure`):**
+  L12: 3 4 6 7 8 9 15 16 17 19 · L11: 20 21 22 24 25 28 30 31 32 33 34 35 36 39 40 43 44 ·
+  L10: 45 46 47 48 49 50 52 53 62 63 66 71 72 73 76 77 78 79 · KHTN 9: 156.
+  Trong đó commit ghi "CHƯA soát ảnh": 9 15 16 17 28 31 43 44 (chỉ dời nhãn tới `#kiem` SACH). 76 79 đã sửa theo quyết định của thầy 6/11.
+- Việc còn: soát ảnh từng dạng → trang duyệt cho thầy → publish `--giu-cu --yes` → deploy → kiểm live 375px. Không soạn lại.
+- Bản dở trong 4 worktree cũ (xenodochial-antonelli, vigilant-maxwell, vibrant-hypatia, ecstatic-wilson) đã CŨ hơn main — đừng chép sang.
 - Họ `so_do_vecto` không có `lop` (mỗi `vec` mang `buoc` riêng) — đừng báo lỗi "lop ≠ buoc" cho họ này. Bài 46–48 có dạng cố ý không có hình.
 
 ## Cách làm tiết kiệm token (rút từ đợt 5–6/11)
