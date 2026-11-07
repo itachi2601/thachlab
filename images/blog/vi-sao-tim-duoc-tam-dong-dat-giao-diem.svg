@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 400" width="100%" height="100%">
+  <!-- Map background -->
+  <rect width="520" height="400" fill="#f8fafc"/>
+  <rect x="20" y="20" width="480" height="360" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Epicenter Target at (270, 210) -->
+
+  <!-- Circle A from Station A (170, 110), r = sqrt(100^2 + 100^2) = 141.42 -->
+  <circle cx="170" cy="110" r="141.42" stroke="#2563eb" stroke-width="2.5" fill="none" opacity="0.6"/>
+  <!-- Circle B from Station B (390, 160), r = sqrt(120^2 + 50^2) = 130 -->
+  <circle cx="390" cy="160" r="130" stroke="#059669" stroke-width="2.5" fill="none" opacity="0.6"/>
+  <!-- Circle C from Station C (210, 330), r = sqrt(60^2 + 120^2) = 134.16 -->
+  <circle cx="210" cy="330" r="134.16" stroke="#d97706" stroke-width="2.5" fill="none" opacity="0.6"/>
+
+  <!-- Station A -->
+  <circle cx="170" cy="110" r="7" fill="#2563eb"/>
+  <circle cx="170" cy="110" r="3" fill="#ffffff"/>
+  <text x="170" y="92" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#1e40af" text-anchor="middle">Trạm A</text>
+  <line x1="170" y1="110" x2="270" y2="210" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="210" y="150" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#2563eb">d_A</text>
+
+  <!-- Station B -->
+  <circle cx="390" cy="160" r="7" fill="#059669"/>
+  <circle cx="390" cy="160" r="3" fill="#ffffff"/>
+  <text x="390" y="142" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#047857" text-anchor="middle">Trạm B</text>
+  <line x1="390" y1="160" x2="270" y2="210" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="335" y="180" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#059669">d_B</text>
+
+  <!-- Station C -->
+  <circle cx="210" cy="330" r="7" fill="#d97706"/>
+  <circle cx="210" cy="330" r="3" fill="#ffffff"/>
+  <text x="210" y="355" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#b45309" text-anchor="middle">Trạm C</text>
+  <line x1="210" y1="330" x2="270" y2="210" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="250" y="280" font-family="system-ui, sans-serif" font-size="11" font-weight="bold" fill="#d97706">d_C</text>
+
+  <!-- Epicenter Intersection at (270, 210) -->
+  <circle cx="270" cy="210" r="14" fill="#ef4444" opacity="0.25"/>
+  <circle cx="270" cy="210" r="8" fill="#ef4444"/>
+  <circle cx="270" cy="210" r="3" fill="#ffffff"/>
+  <text x="270" y="240" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">Tâm chấn</text>
+</svg>

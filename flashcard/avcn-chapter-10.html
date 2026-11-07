@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 10 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 10</span></div>
+  <h1>Flashcard: Maintenance</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "maintenance", "ipa": "/ˈmeɪntənəns/", "vi": "bảo dưỡng, bảo trì", "def": "Any activity that keeps a machine working, such as checks and repairs.", "img": "", "group": "Cụm A · Các kiểu bảo dưỡng và ổ bi"}, {"term": "mechanical maintenance", "ipa": "/məˈkænɪkl ˈmeɪntənəns/", "vi": "bảo dưỡng cơ khí", "def": "The process of keeping machinery in good working condition.", "img": "", "group": "Cụm A · Các kiểu bảo dưỡng và ổ bi"}, {"term": "corrective maintenance", "ipa": "/kəˈrektɪv ˈmeɪntənəns/", "vi": "bảo dưỡng sửa chữa (làm khi máy đã hỏng)", "def": "Maintenance done only after a machine has broken down.", "img": "", "group": "Cụm A · Các kiểu bảo dưỡng và ổ bi"}, {"term": "preventive maintenance", "ipa": "/prɪˈventɪv ˈmeɪntənəns/", "vi": "bảo dưỡng phòng ngừa (làm trước khi hỏng)", "def": "Routine maintenance done to stop unplanned equipment failures.", "img": "", "group": "Cụm A · Các kiểu bảo dưỡng và ổ bi"}, {"term": "bearing", "ipa": "/ˈbeərɪŋ/", "vi": "ổ bi, ổ trục", "def": "A part that lets a shaft or wheel turn smoothly.", "img": "/assets/avcn/chapter-10/bearing.webp", "group": "Cụm A · Các kiểu bảo dưỡng và ổ bi"}, {"term": "lubrication", "ipa": "/ˌluːbrɪˈkeɪʃn/", "vi": "bôi trơn (tra dầu, mỡ)", "def": "The action of applying oil or grease to reduce friction.", "img": "/assets/avcn/chapter-10/lubrication.webp", "group": "Cụm B · Việc làm khi bảo dưỡng"}, {"term": "replacement", "ipa": "/rɪˈpleɪsmənt/", "vi": "sự thay thế", "def": "The process of replacing something with something else.", "img": "/assets/avcn/chapter-10/replacement.webp", "group": "Cụm B · Việc làm khi bảo dưỡng"}, {"term": "spare part", "ipa": "/speə pɑːt/", "vi": "phụ tùng thay thế", "def": "An extra piece that can be used to replace a piece that breaks.", "img": "/assets/avcn/chapter-10/spare-part.webp", "group": "Cụm B · Việc làm khi bảo dưỡng"}, {"term": "detection", "ipa": "/dɪˈtekʃn/", "vi": "sự phát hiện", "def": "The process of noticing something that is not easy to see or hear.", "img": "", "group": "Cụm B · Việc làm khi bảo dưỡng"}, {"term": "risk", "ipa": "/rɪsk/", "vi": "rủi ro, nguy cơ", "def": "The possibility of something bad happening in the future.", "img": "/assets/avcn/chapter-10/risk.webp", "group": "Cụm B · Việc làm khi bảo dưỡng"}, {"term": "failure", "ipa": "/ˈfeɪljə/", "vi": "sự hỏng, sự cố", "def": "The moment when a machine stops working properly.", "img": "/assets/avcn/chapter-10/failure.webp", "group": "Cụm C · Hỏng hóc, chi phí và kiểm tra"}, {"term": "downtime", "ipa": "/ˈdaʊntaɪm/", "vi": "thời gian máy ngừng chạy", "def": "The time when a machine or production line is not working.", "img": "", "group": "Cụm C · Hỏng hóc, chi phí và kiểm tra"}, {"term": "repair", "ipa": "/rɪˈpeə/", "vi": "sửa chữa", "def": "Work done to fix a machine that is broken or damaged.", "img": "", "group": "Cụm C · Hỏng hóc, chi phí và kiểm tra"}, {"term": "inspection", "ipa": "/ɪnˈspekʃn/", "vi": "kiểm tra, khám xét", "def": "A careful check of a machine or part to look for problems.", "img": "/assets/avcn/chapter-10/inspection.webp", "group": "Cụm C · Hỏng hóc, chi phí và kiểm tra"}, {"term": "schedule", "ipa": "/ˈʃedjuːl/", "vi": "lịch trình, kế hoạch bảo dưỡng", "def": "A plan that lists what work will be done and when.", "img": "", "group": "Cụm C · Hỏng hóc, chi phí và kiểm tra"}, {"term": "leak", "ipa": "/liːk/", "vi": "rò rỉ", "def": "A hole or crack through which liquid or gas escapes.", "img": "/assets/avcn/chapter-10/leak.webp", "group": "Cụm D · Dấu hiệu hỏng trên máy"}, {"term": "clearance", "ipa": "/ˈklɪərəns/", "vi": "khe hở", "def": "The empty space between two parts so that they do not touch.", "img": "/assets/avcn/chapter-10/clearance.webp", "group": "Cụm D · Dấu hiệu hỏng trên máy"}, {"term": "corrosion", "ipa": "/kəˈrəʊʒn/", "vi": "sự ăn mòn, gỉ sét", "def": "Damage to metal caused by rust or chemicals.", "img": "/assets/avcn/chapter-10/corrosion.webp", "group": "Cụm D · Dấu hiệu hỏng trên máy"}, {"term": "wear", "ipa": "/weə/", "vi": "mòn (do cọ xát)", "def": "To damage or remove a surface slowly by rubbing.", "img": "/assets/avcn/chapter-10/wear.webp", "group": "Cụm D · Dấu hiệu hỏng trên máy"}, {"term": "adjust", "ipa": "/əˈdʒʌst/", "vi": "điều chỉnh, chỉnh lại", "def": "To change a part a little to get the right setting.", "img": "/assets/avcn/chapter-10/adjust.webp", "group": "Cụm D · Dấu hiệu hỏng trên máy"}];
+const AUDIO = {"maintenance": "/assets/avcn/chapter-10/audio/740b40ae2f.mp3", "Any activity that keeps a machine working, such as checks and repairs.": "/assets/avcn/chapter-10/audio/e6e5c47bd7.mp3", "mechanical maintenance": "/assets/avcn/chapter-10/audio/c2c38bc8d5.mp3", "The process of keeping machinery in good working condition.": "/assets/avcn/chapter-10/audio/9e726c5a36.mp3", "corrective maintenance": "/assets/avcn/chapter-10/audio/adf295320c.mp3", "Maintenance done only after a machine has broken down.": "/assets/avcn/chapter-10/audio/4b29211406.mp3", "preventive maintenance": "/assets/avcn/chapter-10/audio/4f47a4fdfb.mp3", "Routine maintenance done to stop unplanned equipment failures.": "/assets/avcn/chapter-10/audio/e2da7e1eb3.mp3", "run-to-failure maintenance": "/assets/avcn/chapter-10/audio/58cf0f32fb.mp3", "Maintenance that waits for the machine to fail before any action.": "/assets/avcn/chapter-10/audio/c6df192cc3.mp3", "lubrication": "/assets/avcn/chapter-10/audio/c779de622a.mp3", "The action of applying oil or grease to reduce friction.": "/assets/avcn/chapter-10/audio/fc0fe11ae2.mp3", "replacement": "/assets/avcn/chapter-10/audio/c3c3ce484c.mp3", "The process of replacing something with something else.": "/assets/avcn/chapter-10/audio/4373131e0a.mp3", "spare part": "/assets/avcn/chapter-10/audio/3cb1d2f1f9.mp3", "An extra piece that can be used to replace a piece that breaks.": "/assets/avcn/chapter-10/audio/eceedd18a1.mp3", "detection": "/assets/avcn/chapter-10/audio/38fae07c8c.mp3", "The process of noticing something that is not easy to see or hear.": "/assets/avcn/chapter-10/audio/51d3f62ee0.mp3", "risk": "/assets/avcn/chapter-10/audio/df6c193431.mp3", "The possibility of something bad happening in the future.": "/assets/avcn/chapter-10/audio/6919bef16f.mp3", "failure": "/assets/avcn/chapter-10/audio/2187d3a5fe.mp3", "The moment when a machine stops working properly.": "/assets/avcn/chapter-10/audio/0029940fd5.mp3", "downtime": "/assets/avcn/chapter-10/audio/61c931c023.mp3", "The time when a machine or production line is not working.": "/assets/avcn/chapter-10/audio/d4a560df80.mp3", "repair": "/assets/avcn/chapter-10/audio/9613b5c60a.mp3", "Work done to fix a machine that is broken or damaged.": "/assets/avcn/chapter-10/audio/65f9e5c22a.mp3", "inspection": "/assets/avcn/chapter-10/audio/b87559840c.mp3", "A careful check of a machine or part to look for problems.": "/assets/avcn/chapter-10/audio/06d7e9ceaf.mp3", "schedule": "/assets/avcn/chapter-10/audio/d5866a434c.mp3", "A plan that lists what work will be done and when.": "/assets/avcn/chapter-10/audio/6a664936b5.mp3", "leak": "/assets/avcn/chapter-10/audio/e04aa2ac75.mp3", "A hole or crack through which liquid or gas escapes.": "/assets/avcn/chapter-10/audio/29c4012f65.mp3", "clearance": "/assets/avcn/chapter-10/audio/cdf7474743.mp3", "The empty space between two parts so that they do not touch.": "/assets/avcn/chapter-10/audio/69f7bd1bda.mp3", "corrosion": "/assets/avcn/chapter-10/audio/bf7d3a1448.mp3", "Damage to metal caused by rust or chemicals.": "/assets/avcn/chapter-10/audio/8b6e4c3499.mp3", "wear": "/assets/avcn/chapter-10/audio/14b0383fdd.mp3", "To damage or remove a surface slowly by rubbing.": "/assets/avcn/chapter-10/audio/084dbb6ebe.mp3", "adjust": "/assets/avcn/chapter-10/audio/747d34a789.mp3", "To change a part a little to get the right setting.": "/assets/avcn/chapter-10/audio/8a46b2b7ff.mp3", "routine": "/assets/avcn/chapter-10/audio/33b0fb1d99.mp3", "asset": "/assets/avcn/chapter-10/audio/2b870cfb3f.mp3", "overtime": "/assets/avcn/chapter-10/audio/41d15eaea3.mp3", "inventory": "/assets/avcn/chapter-10/audio/273df7e307.mp3", "mitigate": "/assets/avcn/chapter-10/audio/58d8734bc8.mp3", "reliability": "/assets/avcn/chapter-10/audio/cb64ea3bc9.mp3", "casing": "/assets/avcn/chapter-10/audio/7b46a2a574.mp3", "roller": "/assets/avcn/chapter-10/audio/7a37a53030.mp3", "expense": "/assets/avcn/chapter-10/audio/1af5966c6d.mp3", "align": "/assets/avcn/chapter-10/audio/275638503c.mp3", "tension": "/assets/avcn/chapter-10/audio/2dc14fd755.mp3", "shutdown": "/assets/avcn/chapter-10/audio/99d662cef2.mp3", "Maintenance is defined as any activity such as tests, measurements, replacements, adjustments, lubrication and repairs": "/assets/avcn/chapter-10/audio/c645b41c5d.mp3", "Maintenance": "/assets/avcn/chapter-10/audio/2447d7df04.mp3", "defined as": "/assets/avcn/chapter-10/audio/b8453ff252.mp3", "activity": "/assets/avcn/chapter-10/audio/adc3ae9239.mp3", "tests": "/assets/avcn/chapter-10/audio/32ae7cb92c.mp3", "measurements": "/assets/avcn/chapter-10/audio/da7f0ba55f.mp3", "replacements": "/assets/avcn/chapter-10/audio/7ef9a1f2d4.mp3", "adjustments": "/assets/avcn/chapter-10/audio/cccbbfffd7.mp3", "repairs": "/assets/avcn/chapter-10/audio/1a38ea4794.mp3", "which is intended to retain or restore a functional unit in or to a specified state in which it can perform its required functions.": "/assets/avcn/chapter-10/audio/1da070ee86.mp3", "retain": "/assets/avcn/chapter-10/audio/425d8b791f.mp3", "intended to": "/assets/avcn/chapter-10/audio/a543fea386.mp3", "restore": "/assets/avcn/chapter-10/audio/a58f9df427.mp3", "functional": "/assets/avcn/chapter-10/audio/8b12125e32.mp3", "unit": "/assets/avcn/chapter-10/audio/40359a8ee7.mp3", "specified state": "/assets/avcn/chapter-10/audio/8787ef09c5.mp3", "perform": "/assets/avcn/chapter-10/audio/5652fa4d46.mp3", "required": "/assets/avcn/chapter-10/audio/abea7c4178.mp3", "Plants typically utilize two types of maintenance management: (1) corrective maintenance, or (2) preventive maintenance.": "/assets/avcn/chapter-10/audio/9f360c135f.mp3", "corrective": "/assets/avcn/chapter-10/audio/b0f6f28f18.mp3", "preventive": "/assets/avcn/chapter-10/audio/177901ce06.mp3", "plants": "/assets/avcn/chapter-10/audio/7579b854b2.mp3", "typically": "/assets/avcn/chapter-10/audio/f2080080a6.mp3", "utilize": "/assets/avcn/chapter-10/audio/e2cc819e1c.mp3", "types": "/assets/avcn/chapter-10/audio/502f67eca2.mp3", "management": "/assets/avcn/chapter-10/audio/5e4be3247a.mp3", "Corrective maintenance, also known as breakdown maintenance or run-to-failure maintenance.": "/assets/avcn/chapter-10/audio/91fdfe6359.mp3", "breakdown maintenance": "/assets/avcn/chapter-10/audio/f505396e95.mp3", "run-to-failure": "/assets/avcn/chapter-10/audio/0b0e8d7388.mp3", "also known as": "/assets/avcn/chapter-10/audio/5e9bbae70b.mp3", "The logic of corrective maintenance management is simple and straightforward. When a machine breaks, fix it.": "/assets/avcn/chapter-10/audio/eaead2bd24.mp3", "straightforward": "/assets/avcn/chapter-10/audio/7f2cc53d4a.mp3", "breaks": "/assets/avcn/chapter-10/audio/ae0ba182cc.mp3", "logic": "/assets/avcn/chapter-10/audio/daa3fe50b6.mp3", "simple": "/assets/avcn/chapter-10/audio/49df9fdf09.mp3", "fix": "/assets/avcn/chapter-10/audio/2262b9c6c9.mp3", "when": "/assets/avcn/chapter-10/audio/efebb0d9c1.mp3", "Corrective maintenance is a technique that waits for machine or equipment failure before any maintenance action is taken.": "/assets/avcn/chapter-10/audio/2294516ee3.mp3", "technique": "/assets/avcn/chapter-10/audio/c67861638f.mp3", "waits for": "/assets/avcn/chapter-10/audio/948c488474.mp3", "equipment": "/assets/avcn/chapter-10/audio/abde12756d.mp3", "action": "/assets/avcn/chapter-10/audio/1be7368e5d.mp3", "is taken": "/assets/avcn/chapter-10/audio/3bce918b7b.mp3", "A plant using run-to-failure management does not spend any money on maintenance until a machine or system fails to operate.": "/assets/avcn/chapter-10/audio/13d3194f95.mp3", "spend": "/assets/avcn/chapter-10/audio/5293fd00e0.mp3", "fails to operate": "/assets/avcn/chapter-10/audio/3d4fcce51e.mp3", "plant": "/assets/avcn/chapter-10/audio/577f190644.mp3", "system": "/assets/avcn/chapter-10/audio/54dd0736e4.mp3", "until": "/assets/avcn/chapter-10/audio/bb67ef9f95.mp3", "operate": "/assets/avcn/chapter-10/audio/cc4458631e.mp3", "It is also the most expensive method of maintenance management.": "/assets/avcn/chapter-10/audio/efe313e90c.mp3", "expensive": "/assets/avcn/chapter-10/audio/66535c8c15.mp3", "method": "/assets/avcn/chapter-10/audio/a0ae394159.mp3", "most": "/assets/avcn/chapter-10/audio/b95adb3400.mp3", "The major expenses associated with this type of maintenance management are:": "/assets/avcn/chapter-10/audio/30ccf91f72.mp3", "(1) high spare parts inventory cost, (2) high overtime labor costs, (3) high machine downtime, and (4) low production availability.": "/assets/avcn/chapter-10/audio/8e261313ff.mp3", "spare parts": "/assets/avcn/chapter-10/audio/e9d2a63eaa.mp3", "labor": "/assets/avcn/chapter-10/audio/92f0394019.mp3", "production availability": "/assets/avcn/chapter-10/audio/97eb01a6f9.mp3", "Preventive maintenance (PM) is the routine maintenance of different assets, equipment and machinery to ensure smooth operations and reduce any unplanned equipment failures.": "/assets/avcn/chapter-10/audio/19cc2956f4.mp3", "ensure": "/assets/avcn/chapter-10/audio/ade3bacd91.mp3", "assets": "/assets/avcn/chapter-10/audio/f51c567a6b.mp3", "smooth operations": "/assets/avcn/chapter-10/audio/69fb7bee74.mp3", "reduce": "/assets/avcn/chapter-10/audio/f5cdc09d2b.mp3", "unplanned": "/assets/avcn/chapter-10/audio/f469316592.mp3", "failures": "/assets/avcn/chapter-10/audio/4b2defbc13.mp3", "Most companies often follow an established schedule for carrying out preventive maintenance to mitigate the chances of any unplanned downtime that could affect output.": "/assets/avcn/chapter-10/audio/bf343bd0f6.mp3", "established": "/assets/avcn/chapter-10/audio/ba3f604a75.mp3", "carrying out": "/assets/avcn/chapter-10/audio/53631bd4a7.mp3", "chances": "/assets/avcn/chapter-10/audio/c5578c6575.mp3", "unplanned downtime": "/assets/avcn/chapter-10/audio/aba01137e7.mp3", "affect": "/assets/avcn/chapter-10/audio/409ad0f792.mp3", "output": "/assets/avcn/chapter-10/audio/e92ab42d8d.mp3", "Preventive maintenance offers companies a number of important benefits including:": "/assets/avcn/chapter-10/audio/71855c2f2d.mp3", "benefits": "/assets/avcn/chapter-10/audio/95f2ffe482.mp3", "offers": "/assets/avcn/chapter-10/audio/551bd368fc.mp3", "a number of": "/assets/avcn/chapter-10/audio/167b49b976.mp3", "important": "/assets/avcn/chapter-10/audio/6e949d1d8c.mp3", "including": "/assets/avcn/chapter-10/audio/bab2821243.mp3", "Prolonged life of company equipment; Less unplanned downtime caused by equipment failure;": "/assets/avcn/chapter-10/audio/ae1d83c066.mp3", "Prolonged": "/assets/avcn/chapter-10/audio/fa9faf88c1.mp3", "life": "/assets/avcn/chapter-10/audio/fdd98f0efb.mp3", "company": "/assets/avcn/chapter-10/audio/627b0e6262.mp3", "less": "/assets/avcn/chapter-10/audio/9a83e3c549.mp3", "caused by": "/assets/avcn/chapter-10/audio/cb7dd9b478.mp3", "Less unnecessary maintenance and inspections; Fewer errors in day-to-day operations;": "/assets/avcn/chapter-10/audio/eadc4deed4.mp3", "inspections": "/assets/avcn/chapter-10/audio/bad377045a.mp3", "errors": "/assets/avcn/chapter-10/audio/ff1f510b70.mp3", "unnecessary": "/assets/avcn/chapter-10/audio/af59280728.mp3", "fewer": "/assets/avcn/chapter-10/audio/0ff8d17168.mp3", "day-to-day": "/assets/avcn/chapter-10/audio/58930b3f52.mp3", "operations": "/assets/avcn/chapter-10/audio/3423079fed.mp3", "Improved reliability of equipment; Fewer expensive repairs caused by unexpected equipment failure that must be fixed quickly;": "/assets/avcn/chapter-10/audio/c4ee01a2f5.mp3", "improved": "/assets/avcn/chapter-10/audio/c6754a0e51.mp3", "unexpected": "/assets/avcn/chapter-10/audio/99f03d8d80.mp3", "must be fixed": "/assets/avcn/chapter-10/audio/d3aa8596cb.mp3", "quickly": "/assets/avcn/chapter-10/audio/99ba35b0c8.mp3", "Reduced risk of injury.": "/assets/avcn/chapter-10/audio/32e6dc7770.mp3", "injury": "/assets/avcn/chapter-10/audio/456bfb9f84.mp3", "reduced": "/assets/avcn/chapter-10/audio/2c2289e8d2.mp3", "This is the true story of Air Trasant Flight 236.": "/assets/avcn/chapter-10/audio/b52d1d1a6b.mp3", "Flight": "/assets/avcn/chapter-10/audio/1633fe05d9.mp3", "true story": "/assets/avcn/chapter-10/audio/e77820c01c.mp3", "The chain of events began during routine maintenance work on an Air Trasant Airbus A330.": "/assets/avcn/chapter-10/audio/f2cc34b791.mp3", "chain of events": "/assets/avcn/chapter-10/audio/7e2ee62554.mp3", "began": "/assets/avcn/chapter-10/audio/8938202b92.mp3", "work": "/assets/avcn/chapter-10/audio/f57133ea5b.mp3", "An incorrect hydraulic pipe was fitted to the right-hand engine.": "/assets/avcn/chapter-10/audio/91229fec40.mp3", "hydraulic": "/assets/avcn/chapter-10/audio/4390b81d49.mp3", "fitted": "/assets/avcn/chapter-10/audio/2b3ddd8277.mp3", "incorrect": "/assets/avcn/chapter-10/audio/3f1f205e2f.mp3", "pipe": "/assets/avcn/chapter-10/audio/df18bb2976.mp3", "right-hand": "/assets/avcn/chapter-10/audio/eee085cd23.mp3", "engine": "/assets/avcn/chapter-10/audio/cf6bf12df6.mp3", "The component was oversized, leaving inadequate clearance with an adjacent fuel line.": "/assets/avcn/chapter-10/audio/17b3afd595.mp3", "oversized": "/assets/avcn/chapter-10/audio/74fba395e4.mp3", "component": "/assets/avcn/chapter-10/audio/8421eaf5ca.mp3", "leaving": "/assets/avcn/chapter-10/audio/0f926fa6b3.mp3", "inadequate": "/assets/avcn/chapter-10/audio/0463982041.mp3", "adjacent": "/assets/avcn/chapter-10/audio/84d8f830f2.mp3", "fuel line": "/assets/avcn/chapter-10/audio/c759f11246.mp3", "Subsequently, the two pipes rubbed together, causing the fuel line to wear progressively.": "/assets/avcn/chapter-10/audio/93809a65b8.mp3", "progressively": "/assets/avcn/chapter-10/audio/ae89da867f.mp3", "subsequently": "/assets/avcn/chapter-10/audio/2e5cdb6815.mp3", "rubbed together": "/assets/avcn/chapter-10/audio/b77362eb6e.mp3", "causing": "/assets/avcn/chapter-10/audio/e13e555be2.mp3", "The problem went undetected, until the night of August 24, 2001, at 35.000 feet above the Atlantic.": "/assets/avcn/chapter-10/audio/635a30429c.mp3", "undetected": "/assets/avcn/chapter-10/audio/7a8f6d5585.mp3", "went": "/assets/avcn/chapter-10/audio/6a08c36769.mp3", "feet": "/assets/avcn/chapter-10/audio/0941131dc9.mp3", "above": "/assets/avcn/chapter-10/audio/00483350d1.mp3", "Atlantic": "/assets/avcn/chapter-10/audio/e7ff00610d.mp3", "With Flight 236 en route from Toronto to Lisbon, carrying 306 people, the fuel line ruptured, resulting in a major leak.": "/assets/avcn/chapter-10/audio/edeaa9e569.mp3", "ruptured": "/assets/avcn/chapter-10/audio/f66dadccc5.mp3", "en route": "/assets/avcn/chapter-10/audio/9f652b13f8.mp3", "carrying": "/assets/avcn/chapter-10/audio/1e32b26d6c.mp3", "resulting in": "/assets/avcn/chapter-10/audio/159e5301a2.mp3", "major": "/assets/avcn/chapter-10/audio/0e31f60b98.mp3", "Less than two hours later, the aircraft was completely out of fuel, gliding silently through the night sky.": "/assets/avcn/chapter-10/audio/8f9d7a5c0b.mp3", "gliding": "/assets/avcn/chapter-10/audio/2f387e8dba.mp3", "less than": "/assets/avcn/chapter-10/audio/47b0cb2387.mp3", "aircraft": "/assets/avcn/chapter-10/audio/a49970565a.mp3", "completely": "/assets/avcn/chapter-10/audio/a2d58cbdac.mp3", "out of fuel": "/assets/avcn/chapter-10/audio/803137b0b1.mp3", "silently": "/assets/avcn/chapter-10/audio/235aad919d.mp3", "sky": "/assets/avcn/chapter-10/audio/b053e8d4b7.mp3", "Preventive maintenance is the routine maintenance of machinery and equipment.": "/assets/avcn/chapter-10/audio/cec5d7a19e.mp3", "Lubrication is the action of applying oil or grease to a component.": "/assets/avcn/chapter-10/audio/a8654adf64.mp3", "Detection is the process of noticing something that is not easy to see.": "/assets/avcn/chapter-10/audio/014037cf3e.mp3", "Preventive maintenance is done to reduce unplanned equipment failures.": "/assets/avcn/chapter-10/audio/76b84afebc.mp3", "Companies follow a schedule to mitigate the chances of unplanned downtime.": "/assets/avcn/chapter-10/audio/8f29c071f2.mp3", "We check the casing regularly to find signs of corrosion.": "/assets/avcn/chapter-10/audio/aaa562b07f.mp3", "hydraulic pipe": "/assets/avcn/chapter-10/audio/05f0290593.mp3", "A good maintenance plan starts with early  of problems, before the machine stops. Putting oil or grease on moving parts is called . When a bearing is worn out,  is needed. The technician takes a  from the store and fits it. Doing these jobs on time reduces the  of accidents.": "/assets/avcn/chapter-10/audio/72ca1c963f.mp3", "bearing": "/assets/avcn/chapter-10/audio/04d608a180.mp3", "A part that lets a shaft or wheel turn smoothly.": "/assets/avcn/chapter-10/audio/e93bcebb44.mp3", "belt": "/assets/avcn/chapter-10/audio/4bcbef76cd.mp3", "oil filter": "/assets/avcn/chapter-10/audio/c62c37ee3d.mp3", "gasket": "/assets/avcn/chapter-10/audio/a665ec088f.mp3", "oil seal": "/assets/avcn/chapter-10/audio/58a8dda253.mp3", "hydraulic hose": "/assets/avcn/chapter-10/audio/f1bae03e54.mp3", "motor oil": "/assets/avcn/chapter-10/audio/e415d2768d.mp3", "crack": "/assets/avcn/chapter-10/audio/a463c8d344.mp3", "Maintenance (giáo trình viết “Maintenace”)": "/assets/avcn/chapter-10/audio/9124a396a5.mp3", "Câu giáo trình viết “which intended … in can perform”": "/assets/avcn/chapter-10/audio/c542ce4711.mp3", "Maintenace": "/assets/avcn/chapter-10/audio/093be86cf3.mp3", "which intended … in can perform": "/assets/avcn/chapter-10/audio/1faa9db034.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch10";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>

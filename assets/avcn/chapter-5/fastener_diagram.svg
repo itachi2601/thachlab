@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <pattern id="hatch5" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="10" height="10" fill="#e2e8f0"/><line x1="0" y1="0" x2="0" y2="10" stroke="#94a3b8" stroke-width="2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="400" fill="#ffffff"/>
+  <!-- A: bolt + washer + nut through two plates (section view) -->
+  <rect x="150" y="150" width="73" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="257" y="150" width="73" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="150" y="190" width="73" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="257" y="190" width="73" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <!-- hex head -->
+  <rect x="198" y="108" width="84" height="42" fill="#94a3b8" stroke="#1e293b" stroke-width="2.5"/>
+  <line x1="212" y1="108" x2="212" y2="150" stroke="#1e293b" stroke-width="2"/>
+  <line x1="268" y1="108" x2="268" y2="150" stroke="#1e293b" stroke-width="2"/>
+  <!-- shank (plain) -->
+  <rect x="225" y="150" width="30" height="80" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- threaded part -->
+  <rect x="225" y="230" width="30" height="100" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <path d="M225 236 L255 244 M225 248 L255 256 M225 260 L255 268 M225 272 L255 280 M225 284 L255 292 M225 296 L255 304 M225 308 L255 316 M225 320 L255 328" stroke="#1e293b" stroke-width="2"/>
+  <!-- washer -->
+  <rect x="196" y="230" width="88" height="10" fill="#e2e8f0" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- nut -->
+  <rect x="204" y="240" width="72" height="36" fill="#94a3b8" stroke="#1e293b" stroke-width="2.5"/>
+  <line x1="217" y1="240" x2="217" y2="276" stroke="#1e293b" stroke-width="2"/>
+  <line x1="263" y1="240" x2="263" y2="276" stroke="#1e293b" stroke-width="2"/>
+  <text x="240" y="375" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a">A</text>
+  <!-- B: solid rivet through two plates -->
+  <rect x="500" y="150" width="88" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="612" y="150" width="88" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="500" y="190" width="88" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <rect x="612" y="190" width="88" height="40" fill="url(#hatch5)" stroke="#334155" stroke-width="2"/>
+  <path d="M566 150 Q600 96 634 150 Z" fill="#94a3b8" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="588" y="150" width="24" height="80" fill="#cbd5e1" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="568" y="230" width="64" height="18" rx="8" fill="#94a3b8" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="600" y="375" text-anchor="middle" font-size="26" font-weight="bold" fill="#0f172a">B</text>
+  <!-- leader lines -->
+  <g stroke="#0284c7" stroke-width="2.5" fill="none">
+    <line x1="112" y1="129" x2="198" y2="129"/>
+    <line x1="368" y1="170" x2="255" y2="170"/>
+    <line x1="368" y1="305" x2="255" y2="305"/>
+    <line x1="112" y1="235" x2="196" y2="235"/>
+    <line x1="112" y1="290" x2="210" y2="268"/>
+    <line x1="738" y1="118" x2="612" y2="127"/>
+    <line x1="738" y1="262" x2="632" y2="242"/>
+  </g>
+  <g font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle">
+    <circle cx="92" cy="129" r="20" fill="#0284c7"/><text x="92" y="137">1</text>
+    <circle cx="388" cy="170" r="20" fill="#0284c7"/><text x="388" y="178">2</text>
+    <circle cx="388" cy="305" r="20" fill="#0284c7"/><text x="388" y="313">3</text>
+    <circle cx="92" cy="235" r="20" fill="#0284c7"/><text x="92" y="243">4</text>
+    <circle cx="92" cy="292" r="20" fill="#0284c7"/><text x="92" y="300">5</text>
+    <circle cx="758" cy="118" r="20" fill="#0284c7"/><text x="758" y="126">6</text>
+    <circle cx="758" cy="262" r="20" fill="#0284c7"/><text x="758" y="270">7</text>
+  </g>
+</svg>
