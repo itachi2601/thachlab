@@ -8,6 +8,8 @@ import { getMyReviewState, type MyReviewState, type MyStage } from "@/services/r
 import { examTakePath } from "@/lib/exam-link";
 import { Bar, clock, StatePill } from "./shared";
 import ClassRoster from "./ClassRoster";
+import ClipOnCard from "./ClipOnCard";
+import { clipOnForSession } from "@/lib/clip-on-tap";
 
 const BTN =
   "inline-flex min-h-12 w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-base font-bold text-white hover:bg-primary-dark sm:w-auto";
@@ -81,6 +83,11 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
           </p>
         )}
       </div>
+
+      {(() => {
+        const clip = finished ? null : clipOnForSession(data.title, data.stages.map((x) => x.title));
+        return clip ? <ClipOnCard clip={clip} /> : null;
+      })()}
 
       <section className="space-y-2" aria-label="Tiến độ của em">
         <p className="font-semibold text-ink">Em đã qua {passedCount}/{n} chặng</p>
@@ -190,6 +197,7 @@ export default function ReviewStudent() {
   const idx = data.current_stage;
   const stage = idx >= 0 ? data.stages[idx] : null;
   const finished = data.status === "finished";
+  const waitClip = clipOnForSession(data.title, data.stages.map((s) => s.title));
   const earlier = data.stages.slice(0, Math.max(0, idx)).map((s, i) => ({ s, i }));
 
   return (
@@ -225,10 +233,13 @@ export default function ReviewStudent() {
           <p className="mt-1 text-muted">Cảm ơn em. Dưới đây là kết quả từng chặng của em.</p>
         </section>
       ) : !stage ? (
-        <section className="rounded-2xl border border-line bg-panel p-5">
-          <p className="text-lg font-bold text-ink">Chờ giáo viên mở chặng 1</p>
-          <p className="mt-1 text-muted">Em giữ trang này mở, chặng sẽ tự hiện ra.</p>
-        </section>
+        <>
+          <section className="rounded-2xl border border-line bg-panel p-5">
+            <p className="text-lg font-bold text-ink">Chờ giáo viên mở chặng 1</p>
+            <p className="mt-1 text-muted">Em giữ trang này mở, chặng sẽ tự hiện ra.</p>
+          </section>
+          {waitClip && <ClipOnCard clip={waitClip} />}
+        </>
       ) : (
         <section className="space-y-4 rounded-2xl border border-line bg-panel p-5" aria-label={`Chặng ${idx + 1}`}>
           <div>
