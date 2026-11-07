@@ -658,6 +658,29 @@
         "loai": "vat",
         "x": -15,
         "h": 1
+       },
+       {
+        "loai": "thuoc",
+        "tu": -15,
+        "den": 0,
+        "o": 3.0,
+        "nhan": "15 cm",
+        "ben": "tren"
+       },
+       {
+        "loai": "chu",
+        "x": -17,
+        "y": 2.0,
+        "text": "AB = 1 cm",
+        "a": "end",
+        "het": 1
+       },
+       {
+        "loai": "chu",
+        "x": 1.5,
+        "y": 5.2,
+        "text": "f = 20 cm",
+        "a": "start"
        }
       ]
      },
@@ -1092,7 +1115,7 @@
       "x_min": -64,
       "x_max": 36,
       "y_tren": 7.4,
-      "y_duoi": -2.6,
+      "y_duoi": -4.0,
       "phong_doc": 4,
       "hinh": [
        {
@@ -1386,7 +1409,7 @@
        "loai": "thuoc",
        "tu": -60,
        "den": -10,
-       "o": -1.6,
+       "o": -2.3,
        "nhan": "AA′ = 50 cm",
        "ben": "duoi"
       },
@@ -1588,7 +1611,8 @@
         "vi_tieu": [
          "b",
          "t"
-        ]
+        ],
+        "ten": "f = 15 cm"
        },
        {
         "loai": "vat",
@@ -1603,6 +1627,14 @@
         "o": -2.6,
         "nhan": "d = 45 cm",
         "ben": "duoi",
+        "het": 1
+       },
+       {
+        "loai": "chu",
+        "x": -43.5,
+        "y": 1.0,
+        "text": "h = 2 cm",
+        "a": "start",
         "het": 1
        }
       ]
@@ -2159,9 +2191,16 @@
         "tu": 5,
         "den": -10,
         "o": 125,
-        "nhan": "màn",
+        "nhan": "",
         "doc": true,
         "ben": "trai"
+       },
+       {
+        "loai": "chu",
+        "x": 123.5,
+        "y": 4.2,
+        "text": "màn",
+        "a": "end"
        },
        {
         "loai": "thuoc",
@@ -2198,9 +2237,17 @@
         "tu": 5,
         "den": -10,
         "o": 70,
-        "nhan": "màn",
+        "nhan": "",
         "doc": true,
         "ben": "trai",
+        "het": 5
+       },
+       {
+        "loai": "chu",
+        "x": 68.5,
+        "y": 4.2,
+        "text": "màn",
+        "a": "end",
         "het": 5
        },
        {
@@ -2343,7 +2390,7 @@
        "tu": 0,
        "den": 80,
        "o": -8,
-       "nhan": "L_{min} = 4f = 80 cm",
+       "nhan": "4f = 80 cm",
        "ben": "duoi",
        "het": 5
       },
@@ -2359,8 +2406,15 @@
        "den": -10,
        "o": 80,
        "doc": true,
-       "nhan": "màn",
+       "nhan": "",
        "ben": "phai"
+      },
+      {
+       "loai": "chu",
+       "x": 78.5,
+       "y": 4.2,
+       "text": "màn",
+       "a": "end"
       },
       {
        "loai": "tk",
@@ -2636,9 +2690,13 @@
        },
        {
         "loai": "vat",
-        "x": -3,
+        "x": -4.166666666666667,
         "h": 0.3,
-        "het": 2
+        "het": 2,
+        "ten": [
+         "",
+         "B"
+        ]
        },
        {
         "loai": "thuoc",

@@ -264,7 +264,14 @@
        "goc": 180,
        "dai": 2.0,
        "mau": "luc",
-       "nhan": "a_{ht}"
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.4,
+       "y": 6.4,
+       "text": "a_{ht}",
+       "mau": "luc"
       },
       {
        "loai": "ghi",
@@ -511,7 +518,14 @@
        "goc": 180,
        "dai": 2.0,
        "mau": "luc",
-       "nhan": "a_{ht}"
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.9,
+       "y": 6.4,
+       "text": "a_{ht}",
+       "mau": "luc"
       },
       {
        "loai": "ghi",
@@ -968,7 +982,7 @@
      {
       "loai": "chu",
       "x": 9.45,
-      "y": 2.0,
+      "y": 1.1,
       "text": "20 m",
       "a": "start"
      },
@@ -1002,7 +1016,7 @@
        "goc": 180,
        "dai": 1.0,
        "mau": "luc",
-       "nhan": "a_A"
+       "nhan": ""
       },
       {
        "loai": "vec",
@@ -1011,7 +1025,21 @@
        "goc": 180,
        "dai": 3.0,
        "mau": "luc",
-       "nhan": "a_B"
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 3.2,
+       "y": 9.4,
+       "text": "a_A",
+       "mau": "luc"
+      },
+      {
+       "loai": "chu",
+       "x": 10.0,
+       "y": 9.4,
+       "text": "a_B",
+       "mau": "luc"
       },
       {
        "loai": "ghi",
@@ -1026,7 +1054,7 @@
        "goc": 270,
        "dai": 1.8,
        "mau": "luc",
-       "nhan": "a_1",
+       "nhan": "",
        "trai": true
       },
       {
@@ -1036,8 +1064,23 @@
        "goc": 270,
        "dai": 0.9,
        "mau": "luc",
-       "nhan": "a_2",
+       "nhan": "",
        "trai": true
+      },
+      {
+       "loai": "chu",
+       "x": 8.3,
+       "y": 1.2,
+       "text": "a_1",
+       "mau": "luc"
+      },
+      {
+       "loai": "chu",
+       "x": 15.4,
+       "y": 3.9,
+       "text": "a_2",
+       "mau": "luc",
+       "a": "end"
       },
       {
        "loai": "ghi",
@@ -1343,10 +1386,10 @@
      },
      {
       "loai": "chu",
-      "x": 7.4,
+      "x": 6.6,
       "y": 1.0,
       "text": "r = 20 cm",
-      "a": "start"
+      "a": "end"
      },
      {
       "loai": "chu",
@@ -1397,7 +1440,14 @@
        "goc": 180,
        "dai": 2.0,
        "mau": "luc",
-       "nhan": "F_{ms}"
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.2,
+       "y": 1.7,
+       "text": "F_{ms}",
+       "mau": "luc"
       },
       {
        "loai": "ghi",
@@ -1696,7 +1746,14 @@
       "loai": "diem",
       "x": 10,
       "y": 5.4,
-      "ten": "xe"
+      "ten": ""
+     },
+     {
+      "loai": "chu",
+      "x": 11.3,
+      "y": 5.5,
+      "text": "xe",
+      "a": "start"
      },
      {
       "loai": "chu",
@@ -1722,7 +1779,15 @@
        "goc": 270,
        "dai": 2.5,
        "mau": "luc",
-       "nhan": "F_{ht}"
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 10.4,
+       "y": 2.95,
+       "text": "F_{ht}",
+       "mau": "luc",
+       "a": "start"
       },
       {
        "loai": "ghi",
