@@ -10,6 +10,8 @@ import type { CncQuizQuestion } from "@/services/cnc-exam-bank";
 import {
   CNC_PREP_PASS,
   CNC_PREP_SESSIONS,
+  cncLessonHref,
+  cncSessionSheetHref,
   fetchCncPrepBanks,
   fetchMyCncPrep,
   submitCncPrep,
@@ -70,10 +72,14 @@ export default function CncPrepQuiz({
         <FileQuestion size={16} className="mr-1 inline text-primary" aria-hidden />
         <strong>Chuẩn bị buổi {next.no}:</strong> đọc {next.read}, rồi làm 5 câu ở cuối phần Lý thuyết.{" "}
         {next.lessonId && (
-          <Link href={`/lop-hoc/cnc/?bai=${next.lessonId}`} className="font-semibold text-primary underline">
-            Mở bài
-          </Link>
-        )}
+          <a href={cncLessonHref(next.lessonId, next.anchor)} className="font-semibold text-primary underline">
+            Mở đúng mục
+          </a>
+        )}{" "}
+        ·{" "}
+        <Link href={cncSessionSheetHref(next.no)} className="font-semibold text-primary underline">
+          Phiếu buổi {next.no}
+        </Link>
       </p>
     );
   }
@@ -189,9 +195,10 @@ export function PrepForm({
               <>
                 {" "}
                 ·{" "}
-                <Link href={`/lop-hoc/cnc/?bai=${session.lessonId}`} className="underline">
-                  <BookOpen size={13} className="inline" aria-hidden /> mở bài
-                </Link>
+                {/* <a> (không phải Link): tải lại trang để CncCourseWorkspace đọc ?bai= và cuộn tới #muc-N */}
+                <a href={cncLessonHref(session.lessonId, session.anchor)} className="underline">
+                  <BookOpen size={13} className="inline" aria-hidden /> mở đúng mục
+                </a>
               </>
             )}
           </p>
