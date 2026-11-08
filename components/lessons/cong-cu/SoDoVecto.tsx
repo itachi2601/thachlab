@@ -88,7 +88,7 @@ function blk({ key, ...p }: { key?: string; c: P; w: number; h: number; rot?: nu
   const { c, w, h, rot = 0, text, tx = 0 } = p;
   if (!text || !NHAN_VAT) return <Block key={key} {...p} />;
   const u = dirv(rot),
-    q = add(c, u, tx),
+    q = add(add(c, u, tx), dirv(rot + 90), text.includes("_") ? 0.2 : 0), // chỉ số dưới (m₁) kéo chữ xuống: nâng lên khỏi viền đáy
     bw = Math.min(textLen(text) * FS * 0.55 + 0.12, w - 0.3),
     bh = Math.min(FS * 0.95, h - 0.35);
   NHAN_VAT.push(
