@@ -503,7 +503,7 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-section-pills button.active i { opacity: 1; }
 
 /* Các mục học của một bài (thẻ bấm mở) */
-.cnc-learning-sections { display: grid; gap: 22px; margin-top: 22px; }
+.cnc-learning-sections { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 22px; }
 .cnc-learning-section > header { display: grid; grid-template-columns: auto auto minmax(20px, 1fr) auto auto; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--cnc-muted); }
 .cnc-learning-section > header > span { color: var(--cnc-faint); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .12em; }
 .cnc-learning-section > header > div { display: flex; align-items: center; gap: 8px; color: var(--cnc-text); }
@@ -553,7 +553,7 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-ppt-viewer-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; }
 .cnc-ppt-viewer-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .cnc-ppt-viewer-info { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 16px; }
-.cnc-ppt-viewer-info > div { min-width: 0; }
+.cnc-ppt-viewer-info > div { min-width: 0; overflow-wrap: anywhere; }
 .cnc-ppt-viewer-info h3, .cnc-video h3, .cnc-standard-test h3 { margin-top: 4px; color: var(--cnc-title); font-size: 16px; font-weight: 600; line-height: 1.4; }
 .cnc-ppt-viewer-info p, .cnc-video p, .cnc-standard-test p { margin-top: 4px; color: var(--cnc-muted); font-size: 13.5px; line-height: 1.55; }
 .cnc-ppt-viewer-info > small { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; border-radius: 999px; background: var(--cnc-ok-soft); padding: 6px 10px; color: var(--cnc-ok); font-size: 12px; font-weight: 500; }
@@ -574,7 +574,7 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-detailed-content li::before { position: absolute; top: .65em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--lesson-accent); content: ""; }
 .cnc-detailed-content [id^="muc-"], .cnc-detailed-content #bai-mau { scroll-margin-top: 92px; } /* neo mục cho link quiz chuẩn bị/phiếu buổi, chừa Navbar cố định */
 .cnc-session-sheet h3 { margin-top: 14px; color: var(--cnc-title); font-size: 18px; font-weight: 600; line-height: 1.4; }
-.cnc-session-sheet a { color: var(--lesson-accent-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cnc-session-sheet a { display: inline-block; padding: 13px 0; margin: -13px 0; color: var(--lesson-accent-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Mục 03: video */
 .cnc-video-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; width: 100%; margin-top: 20px; }
