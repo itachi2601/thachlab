@@ -41,6 +41,8 @@ function MuiTen({
   nhan,
   w = 0.14,
   rong,
+  nhanX,
+  nhanA = "middle",
 }: {
   x1: number;
   y1: number;
@@ -51,7 +53,11 @@ function MuiTen({
   w?: number;
   /** bề ngang tối đa của nhãn (đơn vị hình): dài hơn thì thu chữ; không khai = cỡ cố định như cũ */
   rong?: number;
+  /** đặt nhãn lệch khỏi tâm mũi tên (8/11/2026: nhãn hộp hệ chạm khung hộp ở bài 4, 72) */
+  nhanX?: number;
+  nhanA?: "start" | "middle" | "end";
 }) {
+  const dai = nhan ? nhan.replace(/\u200b/g, "").length : 0;
   const ang = Math.atan2(y2 - y1, x2 - x1);
   return (
     <g className="cc-in">
@@ -59,10 +65,11 @@ function MuiTen({
       <Chevron x={x2} y={y2} ang={ang} color={c} len={0.5} w={w} />
       {nhan && (
         <Label
-          x={(x1 + x2) / 2}
+          x={nhanX ?? (x1 + x2) / 2}
           y={Math.min(y1, y2) - 0.45}
+          a={nhanA}
           fill={c}
-          size={rong ? Math.min(1.05, rong / (nhan.length * 0.6)) : 1.05}
+          size={rong ? Math.min(1.05, rong / (dai * 0.6)) : 1.05}
         >
           {nhan}
         </Label>
@@ -279,9 +286,9 @@ function Canh({ canh, items }: { canh: NangLuongCanh; items: NangLuongLop[] }) {
       {mui.map((m, k) => {
         const y = 3.9 + (m.hang ?? k) * 1.5;
         return m.vao ? (
-          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} rong={4.2} />
+          <MuiTen key={k} x1={0.6} y1={y} x2={3.8} y2={y} c={C_MAX} nhan={m.nhan} rong={2.9} nhanX={2.1} />
         ) : (
-          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={3.2} />
+          <MuiTen key={k} x1={9.2} y1={y} x2={12.4} y2={y} c={C_MIN} nhan={m.nhan} rong={2.9} nhanX={10.9} />
         );
       })}
     </g>

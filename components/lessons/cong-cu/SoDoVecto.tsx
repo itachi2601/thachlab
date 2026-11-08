@@ -79,6 +79,30 @@ function Hatch({ a, b, side }: { a: P; b: P; side: P }) {
   return <path d={d} stroke="currentColor" strokeWidth={0.08} fill="none" opacity={0.8} />;
 }
 
+/** 8/11/2026 (bài 62, 63): tên vật trong khối vẽ ở lớp TRÊN CÙNG (sau vectơ) — vectơ P/N đi từ tâm khối không gạch qua
+ * chữ nữa, nền halo của chữ ngắt nét vectơ. Mảng gom trong lúc render đồng bộ của SoDoVecto. */
+let NHAN_VAT: ReactNode[] | null = null;
+
+/** Gọi như hàm (không phải <Block/>): khi NHAN_VAT đang gom thì tên vật đi vào lớp trên cùng, khối vẽ không chữ. */
+function blk({ key, ...p }: { key?: string; c: P; w: number; h: number; rot?: number; text?: string; tx?: number }) {
+  const { c, w, h, rot = 0, text, tx = 0 } = p;
+  if (!text || !NHAN_VAT) return <Block key={key} {...p} />;
+  const u = dirv(rot),
+    q = add(c, u, tx),
+    bw = Math.min(textLen(text) * FS * 0.55 + 0.12, w - 0.3),
+    bh = Math.min(FS * 0.95, h - 0.35);
+  NHAN_VAT.push(
+    <g key={`nv${NHAN_VAT.length}`}>
+      {/* nền đặc sau chữ: viền halo không lấp khe giữa các nét chữ "m" nên vectơ đi từ tâm vẫn lộ ra */}
+      <rect x={q[0] - bw / 2} y={-q[1] - bh / 2} width={bw} height={bh} rx={0.15} fill="var(--cc-halo)" transform={rot ? `rotate(${-rot} ${q[0]} ${-q[1]})` : undefined} />
+      <Label p={q} size={FS} rot={-rot}>
+        <Sub s={text} />
+      </Label>
+    </g>,
+  );
+  return <Block key={key} {...p} text={undefined} />;
+}
+
 function Block({ c, w, h, rot = 0, text, tx = 0 }: { c: P; w: number; h: number; rot?: number; text?: string; tx?: number }) {
   const u = dirv(rot), n = dirv(rot + 90);
   const pts = [add(add(c, u, -w / 2), n, -h / 2), add(add(c, u, w / 2), n, -h / 2), add(add(c, u, w / 2), n, h / 2), add(add(c, u, -w / 2), n, h / 2)];
@@ -86,7 +110,7 @@ function Block({ c, w, h, rot = 0, text, tx = 0 }: { c: P; w: number; h: number;
     <g>
       <path d={"M" + pts.map(sv).join(" L") + " Z"} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.12} />
       {text && (
-        <Label p={add(c, u, tx)} size={0.95} rot={-rot}>
+        <Label p={add(c, u, tx)} size={FS} rot={-rot}>
           <Sub s={text} />
         </Label>
       )}
@@ -118,7 +142,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
               <Sub s={nen.dai} />
             </Label>
           )}
-          <Block c={c} w={bw} h={bh} rot={s} text={nen.vat} tx={-bw / 4 - 0.1} /> {/* chữ lệch nửa trên dốc: P vẽ từ tâm không cắt chữ */}
+          {blk({ c: c, w: bw, h: bh, rot: s, text: nen.vat, tx: -bw / 4 })} {/* chữ lệch nửa trên dốc: P vẽ từ tâm không cắt chữ */}
         </g>
       ),
       pts: { vat: c, vat_day: foot, dinh: add(T, nrm, 0.25), chan: add(B, nrm, 0.25) },
@@ -133,7 +157,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
       el: (
         <g>
           <Hatch a={[-9, 0]} b={[9, 0]} side={[0, -1]} />
-          <Block c={c} w={3} h={2} text={nen.vat} />
+          {blk({ c: c, w: 3, h: 2, text: nen.vat })}
         </g>
       ),
       pts: { vat: c, vat_day: [x, 0] },
@@ -162,7 +186,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
       if (d.neo === "vat") {
         const c = add(E, [0, -0.7]);
         pts.vat = c;
-        els.push(<Block key={`v${i}`} c={c} w={2} h={1.4} text={d.vat} />);
+        els.push(blk({ key: `v${i}`, c: c, w: 2, h: 1.4, text: d.vat }));
         grow(add(c, [0, -0.7]), 1);
       }
       if (d.ten && d.neo !== "vat") {
@@ -186,8 +210,8 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
           <circle cx={0} cy={0} r={0.15} fill="currentColor" />
           <line x1={-r} y1={0} x2={-r} y2={-y1} stroke="currentColor" strokeWidth={0.1} />
           <line x1={r} y1={0} x2={r} y2={-y2} stroke="currentColor" strokeWidth={0.1} />
-          <Block c={c1} w={2.2} h={1.6} text={nen.vat1 ?? "m_1"} />
-          <Block c={c2} w={2.2} h={1.6} text={nen.vat2 ?? "m_2"} />
+          {blk({ c: c1, w: 2.2, h: 1.6, text: nen.vat1 ?? "m_1" })}
+          {blk({ c: c2, w: 2.2, h: 1.6, text: nen.vat2 ?? "m_2" })}
         </g>
       ),
       pts: { m1: c1, m2: c2, rr: [0, 0] },
@@ -205,8 +229,8 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
           <circle cx={rc[0]} cy={-rc[1]} r={r} fill="var(--cc-halo)" stroke="currentColor" strokeWidth={0.12} />
           <line x1={A[0] + 1.2} y1={-0.8} x2={rc[0]} y2={-0.8} stroke="currentColor" strokeWidth={0.1} />
           <line x1={B[0]} y1={-rc[1]} x2={B[0]} y2={-(B[1] + 0.8)} stroke="currentColor" strokeWidth={0.1} />
-          <Block c={A} w={2.4} h={1.6} text={nen.vat1 ?? "A"} />
-          <Block c={B} w={1.8} h={1.6} text={nen.vat2 ?? "B"} />
+          {blk({ c: A, w: 2.4, h: 1.6, text: nen.vat1 ?? "A" })}
+          {blk({ c: B, w: 1.8, h: 1.6, text: nen.vat2 ?? "B" })}
         </g>
       ),
       pts: { A, B, A_day: [A[0], 0] },
@@ -245,7 +269,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
       );
     }
     els.unshift(<rect key="thanh" x={-8} y={-0.2} width={16} height={0.4} rx={0.1} fill="currentColor" fillOpacity={0.15} stroke="currentColor" strokeWidth={0.1} />);
-    (nen.khoi ?? []).forEach((k, i) => els.push(<Block key={`k${i}`} c={[X(k.x), 0]} w={2.7} h={1.3} text={k.text} />));
+    (nen.khoi ?? []).forEach((k, i) => els.push(blk({ key: `k${i}`, c: [X(k.x), 0], w: 2.7, h: 1.3, text: k.text })));
     nen.diem.forEach((d) => {
       const p: P = [X(d.x), 0];
       pts[d.ten] = p;
@@ -366,7 +390,7 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
         <g>
           <Hatch a={[-2, C]} b={[2, C]} side={[0, 1]} />
           <path d={d} stroke="currentColor" strokeWidth={0.12} fill="none" strokeLinejoin="round" />
-          <Block c={[0, cy]} w={2} h={hb} text={nen.vat} />
+          {blk({ c: [0, cy], w: 2, h: hb, text: nen.vat })}
         </g>
       ),
       pts: { vat_tren: [1.0, top], vat_giua: [-1.0, cy], vat: [0, cy] },
@@ -377,7 +401,10 @@ function scene(nen: SoDoVectoTool["nen"], L: number): Scene {
 }
 
 export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [], bang_vi_tri, ti_le, kich_thuoc = [], tay_don = [], layer: L }: SoDoVectoTool & { layer: number }) {
+  const nhanVat: ReactNode[] = [];
+  NHAN_VAT = nhanVat;
   const sc = scene(nen, L);
+  NHAN_VAT = null;
   const pt = (p: VecPoint | undefined): P => (Array.isArray(p) ? p : sc.pts[p ?? Object.keys(sc.pts)[0]] ?? [0, 0]);
   const dir = (d: VecDir): number => {
     if (typeof d === "number") return d;
@@ -605,6 +632,7 @@ export default function SoDoVecto({ nen, vec, hbh = [], truc, goc = [], bang = [
           </g>
         ) : null,
       )}
+      {nhanVat}
     </svg>
   );
 }
