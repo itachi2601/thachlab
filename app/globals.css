@@ -572,6 +572,9 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-detailed-content ul { display: grid; gap: 6px; margin-top: 12px; }
 .cnc-detailed-content li { position: relative; padding-left: 16px; color: var(--cnc-text); font-size: 15px; line-height: 1.7; }
 .cnc-detailed-content li::before { position: absolute; top: .65em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--lesson-accent); content: ""; }
+.cnc-detailed-content [id^="muc-"], .cnc-detailed-content #bai-mau { scroll-margin-top: 92px; } /* neo mục cho link quiz chuẩn bị/phiếu buổi, chừa Navbar cố định */
+.cnc-session-sheet h3 { margin-top: 14px; color: var(--cnc-title); font-size: 18px; font-weight: 600; line-height: 1.4; }
+.cnc-session-sheet a { color: var(--lesson-accent-text); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
 /* Mục 03: video */
 .cnc-video-list { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; width: 100%; margin-top: 20px; }
