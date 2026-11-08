@@ -542,6 +542,9 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(id);
     return viewerProfile?.role !== "admin" && (teacherLocked||(id === "lesson-5" && !competencyStates["turn-machining"].approved) || (id === "lesson-6" && !competencyStates["mill-machining"].approved));
   };
+  // Bài 6–7 chỉ khoá vì chưa duyệt năng lực (giảng viên đã mở bài): vẫn cho đọc tab Lý thuyết để chuẩn bị buổi 8–11
+  // (thầy chốt 9/11/2026); các tab thực hành/kiểm tra mở khi được duyệt.
+  const isTheoryOnly = (id: string) => isLessonLocked(id) && !(openLessonIds.length>0&&!openLessonIds.includes(id));
   // Giảng viên (admin) không có tiến độ riêng → không hiện dải; trang /dev không courseId thì hiện ngay.
   const showGates = viewerProfile?.role !== "admin" && (!courseId || (gateDataLoaded.records && gateDataLoaded.permissions));
   const gateStates = cncGateStates(passedAssessments, (id) => competencyStates[id].approved, isLessonLocked);
@@ -550,8 +553,9 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     setLessonSearch("");
     setLessonId(gateLessonId);
     setExpandedLessonId(gateLessonId);
-    setTab(section);
-    window.setTimeout(() => document.getElementById(`cnc-section-${gateLessonId}-${section}`)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    const target = isTheoryOnly(gateLessonId) ? "ly_thuyet" : section;
+    setTab(target);
+    window.setTimeout(() => document.getElementById(`cnc-section-${gateLessonId}-${target}`)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
   };
 
   const record = (assessmentId: string, value: number, total: number, didPass: boolean) => recordQuiz(lesson.id, assessmentId, value, total, didPass);
@@ -637,10 +641,11 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
               const index = lessons.findIndex((candidate) => candidate.id === item.id);
               const chapter = cncChapterOf(item.id);
               const chapterStart = !validInitialLessonId && chapter && (visibleIndex === 0 || cncChapterOf(visibleLessons[visibleIndex - 1].id) !== chapter);
-              const itemTabs = lessonTabs(item.id);
+              const theoryOnly = isTheoryOnly(item.id);
+              const itemTabs = theoryOnly ? lessonTabs(item.id).filter((t) => t.id === "ly_thuyet") : lessonTabs(item.id);
               const itemMeta = lessonMeta[item.id] ?? { theory: 0, practice: 0, test: 0 };
               const active = expandedLessonId === item.id;
-              const locked = isLessonLocked(item.id);
+              const locked = isLessonLocked(item.id) && !theoryOnly;
               return (
                 <Fragment key={item.id}>
                 {chapterStart && <h3 className="cnc-chapter-label">Chương {chapter.title}</h3>}
@@ -661,7 +666,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                       <strong>{plainLessonTitle(item.shortTitle)}</strong>
                       <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
                     </span>
-                    {locked ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
+                    {locked || theoryOnly ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
                     <span className={`cnc-lesson-collapse-label ${active ? "active" : ""}`}>
                       {active ? "Thu gọn" : "Mở bài"}
                     </span>
@@ -678,13 +683,14 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                       <strong>{plainLessonTitle(item.shortTitle)}</strong>
                       <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
                     </span>
-                    {locked ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
-                    <span className="cnc-lesson-collapse-label">{locked ? "Đang khóa" : "Vào bài"}</span>
+                    {locked || theoryOnly ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
+                    <span className="cnc-lesson-collapse-label">{locked ? "Đang khóa" : theoryOnly ? "Đọc trước" : "Vào bài"}</span>
                     <ChevronRight className="cnc-accordion-chevron" size={18} />
                   </Link>}
 
                   {active && !locked && (
                     <div id={`cnc-lesson-panel-${item.id}`} className="cnc-lesson-panel">
+                      {theoryOnly && <p className="cnc-theory-only-note"><LockKeyhole size={16} aria-hidden /> Em đọc trước phần Lý thuyết. Video, luyện tập và kiểm tra của bài mở khi giảng viên duyệt năng lực {item.id === "lesson-5" ? "gia công tiện" : "gia công phay"}.</p>}
                       <div className="cnc-lesson-hero">
                         <div className="cnc-title-row">
                           <div>
