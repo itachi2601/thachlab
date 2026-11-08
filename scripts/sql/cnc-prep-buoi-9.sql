@@ -1,5 +1,5 @@
--- Nạp quiz chuẩn bị tối trước BUỔI 9 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 5 · mục 4.
--- Soạn từ content/lesson-samples/cnc-bai-6-gia-cong-tien (mục 4 Tiện côn, tiện ren).
+-- Nạp quiz chuẩn bị tối trước BUỔI 9 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 6 · mục 4.
+-- Soạn từ content/lesson-samples/cnc-bai-6-gia-cong-tien — Bài 6 Gia công tiện (mục 4 Tiện côn, tiện ren).
 -- Không ghi đè nếu thầy đã đăng prep-9 qua /quan-tri/cnc-dang-de (on conflict do nothing).
 -- Lưu ý: trigger trg_exams_sync_bank chép câu vào question_bank như mọi ngân hàng CNC khác.
 -- Rollback: delete from public.exams where cnc_key = 'prep-9';

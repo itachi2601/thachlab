@@ -1,5 +1,5 @@
--- Nạp quiz chuẩn bị tối trước BUỔI 10 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 6 · mục 1.
--- Soạn từ content/lesson-samples/cnc-bai-7-gia-cong-phay (mục 1 Phay mặt phẳng).
+-- Nạp quiz chuẩn bị tối trước BUỔI 10 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 7 · mục 1.
+-- Soạn từ content/lesson-samples/cnc-bai-7-gia-cong-phay — Bài 7 Gia công phay (mục 1 Phay mặt phẳng).
 -- Không ghi đè nếu thầy đã đăng prep-10 qua /quan-tri/cnc-dang-de (on conflict do nothing).
 -- Lưu ý: trigger trg_exams_sync_bank chép câu vào question_bank như mọi ngân hàng CNC khác.
 -- Rollback: delete from public.exams where cnc_key = 'prep-10';
