@@ -99,6 +99,10 @@ quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = S
 - **Chưa làm (25 bài):** 18 19 · 30 32 33 34 · 45 · 62 63 66 · 71 76 77 78 79 · 151 152 154 155 156 158 · 163 165 166 167.
 - Họ `so_do_vecto` không có `lop` (mỗi `vec` mang `buoc` riêng) — đừng báo lỗi "lop ≠ buoc" cho họ này. Bài 46–48 có dạng cố ý không có hình.
 
+## Trạng thái 8/11/2026 — L12 + L11 (27 bài)
+- ĐÃ ĐĂNG DB (`--giu-cu --yes`, DB `cong_cu.de` = repo, không còn `<figure`) + deploy 8/11: L12 `3 4 6 7 8 9 15 16 17 19`, L11 `20 21 22 24 25 28 30 31 32 33 34 35 36 39 40 43 44`. Thầy duyệt ảnh sau soát Sonnet (sửa nhãn ở 3 6 15 16 17 19 25 28 30 31 32 33 35 36 39 40 43 44). Kiểm live 375px: trang cần đăng nhập → chờ thầy xem.
+- Còn lệch nhỏ, cần sửa COMPONENT (không sửa được bằng JSON): 33 D3 (`giao_thoa_2_nguon`: thiếu AB, nhãn d₁/d₂/M bị hypebol cắt) · 39 D4 (`DienTruongDeu` thiếu mục `doan` vẽ tam giác MNP; nhãn MP vắt qua mép bản) · 39 D5 (nhãn cm bị đường sức cắt) · 4 (`thanh_nang_luong` nhãn mũi tên chạm khung vật) · 44 D3 (nhãn A, I sát dây) · 28 D4 (tiêu đề `$A^2$` nghi chưa render) · 20 D5 (lớp 0 không vẽ M ở đỉnh, cố ý tránh lộ pha).
+
 ## Cách làm tiết kiệm token (rút từ đợt 5–6/11)
 - Phiên MỚI (không resume phiên cũ — context cũ 150k+ bị gửi lại mỗi lượt). Tối đa 2 phiên cùng lúc.
 - Phiên điều phối KHÔNG đọc ảnh; chỉ kiểm máy (script trạng thái + `#kiem`). Agent con tự soát ảnh, mỗi bài ≤ 1 ảnh/dạng.
