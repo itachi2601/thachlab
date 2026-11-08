@@ -16,7 +16,19 @@ import {
   type CncPrepResponse,
 } from "@/services/cnc-prep";
 
-export default function CncPrepQuiz({ courseId, studentId }: { courseId: number; studentId: string }) {
+// lessonId: chỉ các buổi thuộc bài đó (đặt cuối tab Lý thuyết, như Kiểm tra nhanh các môn khác).
+// variant "line": một dòng nhắc ở đầu trang khoá học, trỏ vào bài của buổi tới chưa làm.
+export default function CncPrepQuiz({
+  courseId,
+  studentId,
+  lessonId,
+  variant = "full",
+}: {
+  courseId: number;
+  studentId: string;
+  lessonId?: string;
+  variant?: "full" | "line";
+}) {
   const [banks, setBanks] = useState<Record<number, CncQuizQuestion[]> | null>(null);
   const [mine, setMine] = useState<CncPrepResponse[]>([]);
   const [sessionNo, setSessionNo] = useState<number | null>(null);
@@ -28,7 +40,7 @@ export default function CncPrepQuiz({ courseId, studentId }: { courseId: number;
         if (cancelled) return;
         setBanks(b);
         setMine(rows);
-        const available = CNC_PREP_SESSIONS.filter((s) => b[s.no]);
+        const available = CNC_PREP_SESSIONS.filter((s) => b[s.no] && (!lessonId || s.lessonId === lessonId));
         const done = new Set(rows.map((r) => r.session_no));
         setSessionNo((available.find((s) => !done.has(s.no)) ?? available[available.length - 1])?.no ?? null);
       })
@@ -38,13 +50,33 @@ export default function CncPrepQuiz({ courseId, studentId }: { courseId: number;
     return () => {
       cancelled = true;
     };
-  }, [courseId, studentId]);
+  }, [courseId, studentId, lessonId]);
 
-  const available = useMemo(() => CNC_PREP_SESSIONS.filter((s) => banks?.[s.no]), [banks]);
+  const available = useMemo(
+    () => CNC_PREP_SESSIONS.filter((s) => banks?.[s.no] && (!lessonId || s.lessonId === lessonId)),
+    [banks, lessonId],
+  );
   if (!banks || !available.length || sessionNo === null) return null;
   const session = available.find((s) => s.no === sessionNo) ?? available[0];
   const best = (no: number) =>
     mine.filter((r) => r.session_no === no).reduce<number | null>((m, r) => Math.max(m ?? 0, r.score), null);
+
+  if (variant === "line") {
+    const done = new Set(mine.map((r) => r.session_no));
+    const next = available.find((s) => !done.has(s.no));
+    if (!next) return null;
+    return (
+      <p className="cnc-prep-line mb-4 rounded-xl border border-line bg-panel px-4 py-3 text-sm text-ink">
+        <FileQuestion size={16} className="mr-1 inline text-primary" aria-hidden />
+        <strong>Chuẩn bị buổi {next.no}:</strong> đọc {next.read}, rồi làm 5 câu ở cuối phần Lý thuyết.{" "}
+        {next.lessonId && (
+          <Link href={`/lop-hoc/cnc/?bai=${next.lessonId}`} className="font-semibold text-primary underline">
+            Mở bài
+          </Link>
+        )}
+      </p>
+    );
+  }
 
   return (
     <section className="cnc-prep mb-6 rounded-2xl border border-line bg-panel p-5" aria-labelledby="cnc-prep-title">

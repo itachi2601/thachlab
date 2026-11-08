@@ -429,6 +429,8 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-lesson-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--cnc-text); font-size: 14px; }
 .cnc-lesson-search input::placeholder { color: var(--cnc-faint); }
 .cnc-lesson-stack { display: grid; gap: 10px; }
+.cnc-chapter-label { margin: 14px 0 0; color: var(--cnc-muted, #5b6770); font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: none; }
+.cnc-chapter-label:first-child { margin-top: 0; }
 .cnc-lesson-accordion { overflow: hidden; border: 1px solid var(--cnc-line); border-radius: 16px; background: var(--cnc-surface); transition: border-color .2s, box-shadow .3s; }
 .cnc-lesson-accordion:hover { box-shadow: 0 20px 50px -24px var(--lesson-glow); }
 .cnc-lesson-accordion.expanded { border-color: var(--lesson-accent-line); }

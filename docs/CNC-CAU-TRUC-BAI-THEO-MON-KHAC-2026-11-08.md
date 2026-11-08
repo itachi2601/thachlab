@@ -1,6 +1,6 @@
 # CNC — cấu trúc bài học theo khuôn các môn khác trên web (đề xuất 08/11/2026)
 
-> Trạng thái: **đề xuất, chờ thầy duyệt**. Chưa sửa code/DB.
+> Trạng thái: thầy duyệt chặng A (08/11). **Chặng A đã làm 08/11/2026**, chưa deploy; câu 2–4 mục 6 làm theo đề xuất. Xem thử: `/dev/cnc-bai?bai=lesson-2`.
 > Đi kèm: `docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md` (nhịp buổi lớp đảo ngược, quiz chuẩn bị đã chạy).
 
 ## 1. Các môn khác đang dựng bài thế nào
