@@ -62,3 +62,56 @@ export function cncAssessmentProgress(records: CncLearningRecord[]) {
   const passed = passedAssessmentKeys(records).size;
   return { passed, total: CNC_TOTAL_ASSESSMENTS, pct: Math.round((passed / CNC_TOTAL_ASSESSMENTS) * 100) };
 }
+
+// Năm cổng năng lực G1–G5 (docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md mục 4.2): chỉ ĐỌC lại khoá đánh giá
+// sẵn có trong CNC_ASSESSMENT_PLAN + quyền năng lực giảng viên duyệt; không thêm khoá, không đổi điều kiện mở bài.
+// Quiz chuẩn bị (flip-N/prep-N) không thuộc cổng nào.
+export type CncGateId = "G1" | "G2" | "G3" | "G4" | "G5";
+export type CncGateApproval = "turn-operation" | "turn-tool-setup" | "mill-operation" | "mill-tool-setup";
+export type CncGate = { id: CncGateId; title: string; keys: readonly string[]; approvals: readonly CncGateApproval[] };
+
+const planKeys = (lessonId: string, keep: (assessmentId: string) => boolean = () => true) =>
+  (CNC_ASSESSMENT_PLAN[lessonId] ?? []).filter(keep).map((assessmentId) => `${lessonId}:${assessmentId}`);
+
+export const CNC_GATES: readonly CncGate[] = [
+  { id: "G1", title: "An toàn", keys: planKeys("lesson-1"), approvals: [] },
+  { id: "G2", title: "Lập trình tiện", keys: planKeys("lesson-2", (id) => id.startsWith("exercise-")), approvals: [] },
+  { id: "G3", title: "Lập trình phay", keys: planKeys("lesson-3", (id) => id.startsWith("exercise-")), approvals: [] },
+  {
+    id: "G4",
+    title: "Vận hành + cài dao",
+    keys: [...planKeys("lesson-4-turn", (id) => id !== "checklist-practice"), ...planKeys("lesson-4-mill", (id) => id !== "checklist-practice")],
+    approvals: ["turn-operation", "turn-tool-setup", "mill-operation", "mill-tool-setup"],
+  },
+  { id: "G5", title: "Chi tiết đạt dung sai", keys: [...planKeys("lesson-5", (id) => id === "rubric-exam"), ...planKeys("lesson-6", (id) => id === "rubric-exam")], approvals: [] },
+];
+
+export type CncGateStatus = "dat" | "cho_duyet" | "dang_lam" | "chua_lam" | "khoa";
+export type CncGateState = {
+  gate: CncGate;
+  status: CncGateStatus;
+  done: number;
+  total: number;
+  /** Bài + tab còn thiếu để bấm vào; null khi đã đạt, chờ duyệt hoặc cả cổng đang khoá. */
+  next: { lessonId: string; section: CncSectionKind } | null;
+};
+
+const splitKey = (key: string) => {
+  const at = key.lastIndexOf(":");
+  return { lessonId: key.slice(0, at), assessmentId: key.slice(at + 1) };
+};
+
+export function cncGateStates(passed: Set<string>, isApproved: (id: CncGateApproval) => boolean, isLessonLocked: (lessonId: string) => boolean): CncGateState[] {
+  return CNC_GATES.map((gate) => {
+    const missing = gate.keys.filter((key) => !passed.has(key));
+    const done = gate.keys.length - missing.length;
+    const base = { gate, done, total: gate.keys.length };
+    if (missing.length === 0) {
+      // Đủ bài mà chưa duyệt: không còn việc gì trên web để trỏ tới → không bấm được.
+      return { ...base, status: gate.approvals.every(isApproved) ? "dat" : "cho_duyet", next: null };
+    }
+    const open = missing.map(splitKey).find((item) => !isLessonLocked(item.lessonId));
+    if (!open) return { ...base, status: "khoa", next: null };
+    return { ...base, status: done > 0 ? "dang_lam" : "chua_lam", next: { lessonId: open.lessonId, section: CNC_ASSESSMENT_SECTION[open.assessmentId] } };
+  });
+}
