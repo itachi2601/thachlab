@@ -63,8 +63,8 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 | 3 | Bài 2 mục 4–6 + mẫu | mục 4–5 | gá phôi, tiện mặt đầu bằng tay (Bài 4 mục 5–6 dạy *thao tác*) | bù mũi dao, chu trình · **G2** |
 | 4 | Bài 3 mục 1–3 | mục 1–2 | MILL: JOG, thay dao, MDI | rãnh, bậc |
 | 5 | Bài 3 mục 4–7 + mẫu | mục 4–5 | phay mặt phẳng bằng tay | contour, 4 lỗ · **G3** |
-| 6 | Bài 4 (tiện) | mục 7–9 (W, offset); mục 1–6 đã làm tay ở buổi 2–3 | đặt W, đo dao, chạy chương trình buổi 3 trên phôi | nhập offset, mô phỏng · **G4 tiện** |
-| 7 | Bài 5 (phay) | mục 7–9 | dò cạnh, bù dài/bán kính, chạy chương trình buổi 5 | · **G4 phay** |
+| 6 | Bài 4 (tiện) | mục 8–9 (W, offset; mục 7 học trên lớp); mục 1–6 đã làm tay ở buổi 2–3 | đặt W, đo dao, chạy chương trình buổi 3 trên phôi | nhập offset, mô phỏng · **G4 tiện** |
+| 7 | Bài 5 (phay) | mục 8–9 (mục 7 học trên lớp) | dò cạnh, bù dài/bán kính, chạy chương trình buổi 5 | · **G4 phay** |
 | 8 | Bài 6 mục 1–3 | mục 1–2 | cắt trục bậc vát/bo | kiểm trước |
 | 9 | Bài 6 mục 4–5 + mẫu | mục 4 | trục côn, ren; đo, ghi sai lệch · **G5** | |
 | 10 | Bài 7 mục 1–2 | mục 1 | phay bậc, cung | kiểm trước |

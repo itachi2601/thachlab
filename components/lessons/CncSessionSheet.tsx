@@ -3,7 +3,7 @@
 // Phiếu buổi CNC lớp đảo ngược (cnc_lessons id flip-1…flip-12, sinh từ content/lesson-samples/cnc-phieu-buoi/build.mjs).
 // Một trang một buổi (N1): mục tiêu · tối trước (link #muc-N) · nhịp 300 phút · nộp cuối buổi · cổng.
 // Chọn buổi bằng lưới 6×2 nút 44px (D2, D4 — lộ hết 12 buổi ở 360px), không tab cuộn ngang.
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { fetchCncLesson, type CncLesson } from "@/services/cnc-lessons";
@@ -18,11 +18,16 @@ function readSessionNo(): number {
 export default function CncSessionSheet() {
   const [no, setNo] = useState<number | null>(null);
   const [sheet, setSheet] = useState<CncLesson | null | "error">(null);
+  const noRef = useRef<number | null>(null);
 
   useEffect(() => {
+    // Chỉ xoá phiếu khi số buổi thật sự đổi — cùng số thì effect [no] không chạy lại, xoá sẽ kẹt "Đang tải".
     const sync = () => {
+      const n = readSessionNo();
+      if (n === noRef.current) return;
+      noRef.current = n;
       setSheet(null);
-      setNo(readSessionNo());
+      setNo(n);
     };
     sync();
     window.addEventListener("popstate", sync);
@@ -41,6 +46,8 @@ export default function CncSessionSheet() {
   }, [no]);
 
   const choose = (n: number) => {
+    if (n === noRef.current) return;
+    noRef.current = n;
     window.history.pushState(null, "", `/lop-hoc/cnc/buoi/?so=${n}`);
     setSheet(null);
     setNo(n);

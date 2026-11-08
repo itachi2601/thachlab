@@ -473,12 +473,12 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       setExpandedLessonId(requestedLesson);
       setTab("ly_thuyet");
     }, 0);
-    // ?bai=…#muc-N (link quiz chuẩn bị / phiếu buổi): đợi tab Lý thuyết vẽ xong body_html rồi cuộn tới mục (tối đa ~6 s).
+    // ?bai=…#muc-N (link quiz chuẩn bị / phiếu buổi): đợi tab Lý thuyết vẽ xong body_html rồi cuộn tới mục (tối đa ~10 s).
     const anchor = decodeURIComponent(window.location.hash.slice(1));
     let tries = 0;
     const poll = /^[\w-]+$/.test(anchor) ? window.setInterval(() => {
       const target = document.getElementById(anchor);
-      if (target || ++tries > 40) window.clearInterval(poll);
+      if (target || ++tries > 66) window.clearInterval(poll);
       // window.scrollTo (không scrollIntoView: nó cuộn ngang cả khung bài overflow); "instant" vì html có scroll-behavior smooth.
       if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 92, behavior: "instant" });
     }, 150) : 0;
