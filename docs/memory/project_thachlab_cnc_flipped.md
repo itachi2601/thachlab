@@ -12,3 +12,4 @@ Thầy dạy CNC ở CĐ: buổi 5 giờ (GV dạy 1–2 giờ đầu), 6 buổi
 - Treo: thầy chưa xác nhận số máy tính WinNC, thứ tự 12 buổi (vận hành trước lập trình), cổng 4/5; 4 buổi cần bài mới (lập trình tiện/phay 2, sửa lỗi–chế độ cắt, dự án). Tiêu đề trang vẫn ghi "7 bài học" cứng.
 - Bản commit cũ 8d47b8ace ghi nhầm "buổi 180 phút, thầy chốt" — đã sửa lại 5 giờ.
 - Bài học 18/10: thầy sửa "bài 1 chưa hợp lý" — buổi đầu của thầy gồm nội quy, giới thiệu máy, điểm chuẩn, hệ điều khiển WinNC, lệnh, chương trình cơ bản; 12 buổi phải bám 7 bài hiện có (70 tiết) chứ không tự bịa bài/đảo thứ tự. Trước khi thiết kế chương trình: đọc mục lục các bài đã có và hỏi thầy buổi đầu dạy gì. O0001 chưa chạy thử trên WinNC thật.
+- 8/11/2026: rà tiến trình + thiết kế lại ở `docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md` (phiếu buổi trỏ mục bài, cổng G1–G5 gắn `CNC_ASSESSMENT_PLAN`, quiz tối trước `flip-N-pre`); chờ thầy quyết 5 câu mục 6, chưa sửa code.

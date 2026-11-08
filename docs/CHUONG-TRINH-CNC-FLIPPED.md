@@ -1,5 +1,7 @@
 # Chương trình CNC theo lớp đảo ngược (flipped) — đề xuất 18/10/2026
 
+> Bản rà + thiết kế lại 8/11/2026 (phiếu buổi trỏ vào bài, 5 cổng, quiz tối trước có bảng kết quả): `docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md`.
+
 Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu buổi 1: `content/lesson-samples/cnc-flipped-buoi-1/` (đã ghi DB, `cnc_lessons.id = flip-1`).
 Lịch (thầy nói 18/10/2026): **buổi 5 tiếng (300 phút), giảng viên dạy lý thuyết 1–2 giờ đầu buổi, 6 buổi/tuần, học liên tục 2 tuần = 12 buổi** (60 giờ). Bản trước ghi nhầm 180 phút, đã sửa.
 
