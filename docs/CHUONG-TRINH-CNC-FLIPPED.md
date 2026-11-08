@@ -59,3 +59,4 @@ Thứ tự theo chương trình của thầy: nhập môn → lập trình tiệ
 - Buổi 1 đã ghi `cnc_lessons` (flip-1); buổi 2–12 chưa soạn trang flipped.
 - Chương trình O0001 chưa chạy thử trên WinNC FANUC 21T thật của xưởng; cú pháp (nhất là `T0202 M6;`, `M5;`, F giữ hiệu lực ở khối sau) cần thầy chạy thử trước khi dùng.
 - Chưa có chỗ để sinh viên gửi "câu chưa rõ" trên web (hiện nhờ nhóm lớp); chưa thử với sinh viên thật.
+- Cấu trúc bài theo khuôn các môn khác (6 tab, 4 chương, chặng A/B): `docs/CNC-CAU-TRUC-BAI-THEO-MON-KHAC-2026-11-08.md` (chờ duyệt).
