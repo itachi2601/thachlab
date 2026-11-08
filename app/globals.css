@@ -496,7 +496,7 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-section-progress-ring strong { color: var(--cnc-title); font-size: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cnc-section-progress-ring small { color: var(--cnc-faint); font-size: 12px; font-weight: 500; }
 .cnc-section-pills { display: flex; flex-wrap: wrap; gap: 6px; }
-.cnc-section-pills button { display: inline-flex; align-items: center; gap: 7px; border: 1px solid var(--cnc-line); border-radius: 999px; background: transparent; padding: 6px 12px; color: var(--cnc-muted); font-size: 12.5px; font-weight: 600; cursor: pointer; transition: border-color .15s, color .15s, background .15s; }
+.cnc-section-pills button { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; border: 1px solid var(--cnc-line); border-radius: 999px; background: transparent; padding: 6px 14px; color: var(--cnc-muted); font-size: 14px; font-weight: 600; cursor: pointer; transition: border-color .15s, color .15s, background .15s; }
 .cnc-section-pills button i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: .6; }
 .cnc-section-pills button:hover { border-color: rgba(148,163,184,.3); color: var(--cnc-text); }
 .cnc-section-pills button.active { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
@@ -781,7 +781,7 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-checklist-congratulations svg { flex: 0 0 auto; }
 .cnc-checklist-congratulations p { font-size: 14px; font-weight: 500; line-height: 1.55; }
 .cnc-checklist-congratulations.cnc-checklist-warn { border-color: var(--cnc-warn-line); background: var(--cnc-warn-soft); color: var(--cnc-warn); }
-.cnc-checklist-refresh { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; margin-left: auto; border: 1px solid var(--cnc-warn-line); border-radius: 999px; background: transparent; padding: 6px 12px; color: var(--cnc-warn); font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.cnc-checklist-refresh { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; min-height: 44px; margin-left: auto; border: 1px solid var(--cnc-warn-line); border-radius: 999px; background: transparent; padding: 6px 12px; color: var(--cnc-warn); font-size: 12.5px; font-weight: 600; cursor: pointer; }
 .cnc-cross-check-picker { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 16px; }
 .cnc-cross-check-picker span { display: flex; align-items: center; gap: 6px; color: var(--cnc-text); font-size: 13.5px; font-weight: 600; }
 .cnc-cross-check-picker select { flex: 1 1 220px; border: 1px solid var(--cnc-line); border-radius: 9px; background: var(--color-panel); padding: 9px 11px; color: var(--cnc-text); font-size: 14px; }
