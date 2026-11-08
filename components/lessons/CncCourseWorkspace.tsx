@@ -32,9 +32,13 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
 import CncCourseAnnouncements from "@/components/lessons/CncCourseAnnouncements";
+import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
+
+const CncPrepQuiz = dynamic(() => import("@/components/lessons/CncPrepQuiz"), { ssr: false });
 
 const CNC_ACTIVE_QUIZ_BANK_KEYS = [
   "lesson-1", "lesson-2", "lesson-3",
@@ -565,6 +569,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       </header>
 
       {courseId && <CncCourseAnnouncements courseId={courseId} />}
+      {courseId && session?.user.id && viewerProfile?.role !== "admin" && !validInitialLessonId && <LazyErrorBoundary fallback={null}><CncPrepQuiz courseId={courseId} studentId={session.user.id} /></LazyErrorBoundary>}
 
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">
