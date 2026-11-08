@@ -2,8 +2,8 @@
 .root { display: grid; gap: 14px; }
 .lead { max-width: 65ch; margin: 0; color: var(--cnc-muted); font-size: 15px; line-height: 1.55; }
 
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chips button { min-height: 44px; border: 1px solid var(--cnc-line); border-radius: 999px; background: transparent; padding: 0 16px; color: var(--cnc-muted); font-size: 15px; font-weight: 600; cursor: pointer; }
+.chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 8px; max-width: 420px; }
+.chips button { min-height: 44px; border: 1px solid var(--cnc-line); border-radius: 999px; background: transparent; padding: 0 6px; color: var(--cnc-muted); font-size: 14px; white-space: nowrap; font-weight: 600; cursor: pointer; }
 .chips button[aria-pressed="true"] { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
 
 .card { display: grid; gap: 14px; }
@@ -11,7 +11,7 @@
 .card h4 { margin: 4px 0 0; color: var(--cnc-title); font-size: 16px; font-weight: 700; }
 .task { max-width: 65ch; margin: 0; color: var(--cnc-text); font-size: 16px; line-height: 1.6; }
 
-.figure { margin: 0; border: 1px solid var(--cnc-line); border-radius: 12px; padding: 8px; color: var(--cnc-title); }
+.figure { margin: 0; border: 1px solid var(--cnc-line); border-radius: 12px; padding: 0; color: var(--cnc-title); }
 .figure svg { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; }
 
 .params { display: grid; gap: 0; margin: 0; border: 1px solid var(--cnc-line); border-radius: 12px; }

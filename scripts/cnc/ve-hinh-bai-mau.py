@@ -13,7 +13,7 @@ import pathlib
 
 W = 360
 ACCENT = "#ea580c"  # điểm W, điểm bắt đầu
-FONT = 'font-family="ui-sans-serif,system-ui,sans-serif" font-size="16"'
+FONT = 'font-family="ui-sans-serif,system-ui,sans-serif" font-size="18"'
 
 
 def num(v: float) -> str:
@@ -113,7 +113,7 @@ def turning(
     body.append(f'<circle cx="{num(X(0))}" cy="{num(yc)}" r="5" stroke="{ACCENT}" stroke-width="2.4" fill="none"/>')
     body.append(text(X(0) + 10, yc - 8, "W", "start", ACCENT, "700"))
     # trục toạ độ nhỏ: +X lên, Z sang phải
-    ax, ay = X(0) + 30, yc + 40
+    ax, ay = X(0) + 28, yc + 56
     body.append(f'<path d="M{num(ax)} {num(ay)} h22 M{num(ax+22)} {num(ay)} l-6 -4 M{num(ax+22)} {num(ay)} l-6 4" stroke-width="1.5"/>')
     body.append(f'<path d="M{num(ax)} {num(ay)} v-22 M{num(ax)} {num(ay-22)} l-4 6 M{num(ax)} {num(ay-22)} l4 6" stroke-width="1.5"/>')
     body.append(text(ax + 26, ay + 5, "Z", "start"))
@@ -204,8 +204,8 @@ def phay_vd1() -> str:
     rx, ry = P(25 - 5 + 5 * math.cos(math.pi / 4), 20 - 5 + 5 * math.sin(math.pi / 4))
     b.append(f'<path d="M{num(rx)} {num(ry)} l14 -14 h10" stroke-width="1"/>')
     b.append(text(rx + 26, ry - 10, "R5", "start"))
-    b.append(text(P(-30, 0)[0], P(0, -25)[1] + 26, "Phôi 60×50 (nét đứt) · sâu 3", "start"))
-    return svg(300, b, "Tấm 50×40 bo 4 góc R5, gốc W ở tâm")
+    b.append(text(P(-30, 0)[0], P(0, -25)[1] + 26, "Phôi 60×50 (nét đứt) · bệ cao 3", "start"))
+    return svg(300, b, "Bệ 50×40 bo 4 góc R5 trên phôi 60×50, gốc W ở tâm")
 
 
 def plate(P: Mapper, holes: bool, pocket: bool) -> list[str]:
@@ -224,7 +224,7 @@ def plate(P: Mapper, holes: bool, pocket: bool) -> list[str]:
 
 
 def phay_vd2() -> str:
-    P = Mapper(3.4, 50, 250)
+    P = Mapper(3.4, 40, 270)
     b = plate(P, True, False)
     b += axes(P, 0, 0)
     b += hdim(P, 0, 10, P(0, 60)[1] - 10, "10")
@@ -236,11 +236,11 @@ def phay_vd2() -> str:
     b.append(f'<path d="M{num(cx+10)} {num(cy+10)} l18 18" stroke-width="1"/>')
     b.append(text(P(40, 0)[0], P(0, 30)[1] + 6, "4 lỗ Ø8 xuyên"))
     b.append(text(P(40, 0)[0], P(0, 30)[1] + 28, "tấm dày 12", "middle"))
-    return svg(300, b, "Tấm 80×60 dày 12 với 4 lỗ Ø8 cách mép 10, gốc W ở góc dưới trái")
+    return svg(310, b, "Tấm 80×60 dày 12 với 4 lỗ Ø8 cách mép 10, gốc W ở góc dưới trái")
 
 
 def phay_vd3() -> str:
-    P = Mapper(3.4, 50, 250)
+    P = Mapper(3.4, 40, 270)
     b = plate(P, False, True)
     b += axes(P, 0, 0)
     b += hdim(P, 0, 25, P(0, 60)[1] - 10, "25")
@@ -251,8 +251,7 @@ def phay_vd3() -> str:
     b.append(f'<path d="M{num(rx)} {num(ry)} l16 -16 h8" stroke-width="1"/>')
     b.append(text(rx + 27, ry - 11, "R6", "start"))
     b.append(text(P(40, 0)[0], P(0, 30)[1] + 6, "sâu 3"))
-    b.append(text(P(40, 0)[0], P(0, 12)[1] + 6, "hốc 30×20, tâm (40; 30)"))
-    return svg(300, b, "Hốc chữ nhật 30×20 bo góc R6 ở giữa tấm 80×60, gốc W ở góc dưới trái")
+    return svg(310, b, "Hốc chữ nhật 30×20 bo góc R6 ở giữa tấm 80×60, gốc W ở góc dưới trái")
 
 
 def tien_vd1() -> str:
@@ -273,7 +272,7 @@ def tien_vd2() -> str:
         [(-1.5, "Ø16", 0), (-17, "Ø24", 0), (-34, "Ø36", 0), (-44, "Ø40", 1)],
         [(-12, 0), (-22, 0), (-28, 1), (-40, 0)],
         [(-22.6, 31.5, "R6", "end")],
-        face_x=300,
+        face_x=285,
     )
 
 
@@ -283,10 +282,10 @@ def tien_vd3() -> str:
         40, (0, 16),
         [("L", -2, 20), ("L", -15, 20), ("L", -15, 26), ("L", -25, 30), ("L", -35, 30), ("A", -39, 38, 4, "G02"), ("L", -50, 38), ("L", -50, 40)],
         -56, 4.3,
-        [(-8, "Ø20", 0), (-15, "Ø26", 1), (-27, "Ø30", 0), (-45, "Ø38", 0)],
+        [(-1, "Ø16", 1), (-8, "Ø20", 0), (-15, "Ø26", 1), (-27, "Ø30", 0), (-45, "Ø38", 0)],
         [(-2, 1), (-15, 0), (-25, 1), (-35, 0), (-39, 1), (-50, 0)],
-        [(0.6, 26, "2×45°", "start"), (-35.8, 34, "R4", "end")],
-        face_x=300,
+        [(0.6, 26, "2×45°", "start"), (-33.6, 33.4, "R4", "start")],
+        face_x=285,
     )
 
 

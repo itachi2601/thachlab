@@ -94,7 +94,7 @@ const lessonMeta: Record<string, { theory: number; practice: number; test: numbe
 const tabs = [
   { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, bài giảng, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
   { id: "video", label: "Video", description: "Video bài giảng của giảng viên", icon: MonitorPlay },
-  { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block, tự đoán block bị che", icon: FileText },
+  { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block", icon: FileText },
   { id: "luyen_tap", label: "Luyện tập", description: "Làm lại nhiều lần; cần đạt để mở bước sau", icon: ClipboardCheck },
   { id: "bai_tap_ve_nha", label: "BTVN", description: "Điền khuyết, viết chương trình, mô phỏng", icon: FileText },
   { id: "kiem_tra", label: "Kiểm tra", description: "Kiểm tra cuối bài, chấm tại xưởng", icon: FileQuestion },
