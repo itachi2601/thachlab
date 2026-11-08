@@ -49,6 +49,12 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 | G4 Vận hành + cài dao (tiện, phay) | 6, 7 | đạt thì mới cắt thật | `lesson-4-*: machine-operation, tool-setup, checklist` |
 | G5 Chi tiết đạt dung sai | 9, 11, 12 | rubric | `lesson-5/6: rubric-exam` |
 
+**Hiển thị trên web (việc 4, làm 8/11):** dải 5 ô G1–G5 ở đầu trang khoá (`CncGateStrip`, dữ liệu `CNC_GATES` trong `services/cnc-progress.ts`; xem thử `/dev/cnc-cong`). Tư vấn theo nghiên cứu:
+- Hợp: mốc năng lực cụ thể là thưởng hữu hình gắn với *quyền đứng máy* (L5 việc dở trỏ đúng chỗ, hiệu ứng tiến gần đích); 5 mốc có thứ tự đọc như một khối (G1 trí nhớ làm việc).
+- Ngược: 5 ô bấm được vượt N2 (≤4) → chỉ ô "cổng tiếp theo" được tô nổi (B2) + 1 dòng "Tiếp theo: … còn N bài"; ô đã đạt không bấm. Trạng thái luôn chữ + icon (M4), ô 52px (D2), cả dải ~96px = 12% màn 375×812 (B6).
+- Ngưỡng bỏ cuộc: G4 làm đủ bài nhưng chờ giảng viên duyệt hiện "Chờ duyệt" (không phải "chưa đạt") để SV không tưởng mình trượt. Cổng chưa mở bấm vào dẫn về việc còn thiếu ở cổng trước.
+- Đo: tỉ lệ SV bấm ô cổng (log sau), số SV kẹt "Chờ duyệt" quá 1 buổi → nhắc giảng viên. Bảng giảng viên chưa thêm (ma trận năng lực đã có duyệt G4); quiz `flip-N`/`prep-N` không thuộc cổng nào.
+
 ### 4.3 Bảng 12 buổi (giữ thứ tự bài, sửa cách chia gói)
 | Buổi | Bài · mục | Tối trước (≤20') | Máy thật | WinNC |
 |---|---|---|---|---|
