@@ -49,7 +49,7 @@
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
-- [Giải cùng hình + tóm đề](project_thachlab_giai_cung_hinh.md) — L10/L11/L12 (Đ1–Đ8) đã đăng 5/11; Đ9 KHTN9/HSG9 HS ảo đạt 5/11, chờ đăng
+- [Giải cùng hình + một dạng một hình](project_thachlab_giai_cung_hinh.md) — 46 bài chờ duyệt/đăng ở 2 phiên nhánh 7/11
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — thí điểm 20 câu chờ thầy
