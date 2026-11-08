@@ -79,8 +79,8 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 
 ## 5. Việc cần làm trên web (theo thứ tự ưu tiên)
 1. **Quiz tối trước theo buổi + bảng kết quả cho giảng viên** — dùng lại `exams.cnc_key` (mỗi buổi một khoá `flip-N-pre`) và `cnc_learning_records`; trang giảng viên lọc câu sai nhiều nhất. Cần agent `kien-truc-du-lieu` xem có phải thêm cột không.
-2. **Neo mục trong 7 bài** (`id="muc-1"`…) để phiếu buổi trỏ tới; sửa qua `scripts/cap-nhat-cnc-ly-thuyet.mts`.
-3. **Viết lại `flip-1` thành phiếu buổi** (trỏ Mở đầu + Bài 1), soạn `flip-2` … `flip-12` theo cùng khuôn.
+2. **Neo mục trong 7 bài** (`id="muc-1"`…) để phiếu buổi trỏ tới; sửa qua `scripts/cap-nhat-cnc-ly-thuyet.mts`. — **Xong 8/11**: tiêu đề "N. …" có `id="muc-N"`, "V. Bài toán mẫu" có `id="bai-mau"` (sao lưu `scripts/logs/cnc-lesson-*-body-backup-1794154*.html`); `CNC_PREP_SESSIONS.anchor` + `cncLessonHref()`; `CncCourseWorkspace` cuộn tới `#neo` sau `?bai=`.
+3. **Viết lại `flip-1` thành phiếu buổi** (trỏ Mở đầu + Bài 1), soạn `flip-2` … `flip-12` theo cùng khuôn. — **Xong 8/11**: nguồn `content/lesson-samples/cnc-phieu-buoi/build.mjs` (dữ liệu 12 buổi → `out/flip-N.html`), ghi DB bằng `dang.sh` (flip-1 sao lưu `scripts/logs/cnc-flip-1-row-backup-1794154420513.json`); xem ở `/lop-hoc/cnc/buoi/?so=N` (không cần đăng nhập), link "Phiếu 12 buổi học" trong cột bài + dòng nhắc quiz chuẩn bị; `flip-*` lọc khỏi danh sách bài. Không đổi schema. Phiếu theo bảng 4.3 (vận hành tay buổi 2–5) — chờ thầy chốt câu 1 mục 6.
 4. **Gắn `flip-N` vào `CNC_ASSESSMENT_PLAN`** (chỉ quiz tối trước, không khoá bài) và hiện cổng G1–G5 trên trang lớp.
 5. **Ô "câu em chưa rõ"** dưới quiz tối trước.
 6. Bỏ chữ cứng "70 tiết · 7 bài học", "/7 bài" → đếm từ dữ liệu.

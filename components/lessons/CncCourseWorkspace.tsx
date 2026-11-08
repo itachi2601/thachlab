@@ -475,7 +475,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     const poll = /^[\w-]+$/.test(anchor) ? window.setInterval(() => {
       const target = document.getElementById(anchor);
       if (target || ++tries > 40) window.clearInterval(poll);
-      target?.scrollIntoView({ block: "start" });
+      // window.scrollTo (không scrollIntoView: nó cuộn ngang cả khung bài overflow); "instant" vì html có scroll-behavior smooth.
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 92, behavior: "instant" });
     }, 150) : 0;
     return () => { window.clearTimeout(timer); window.clearInterval(poll); };
   }, [validInitialLessonId, lessons]);
