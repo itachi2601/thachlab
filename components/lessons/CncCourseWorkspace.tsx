@@ -36,9 +36,11 @@ import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
+import { hasCncWorkedExamples } from "@/services/cnc-worked-examples";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
 
 const CncPrepQuiz = dynamic(() => import("@/components/lessons/CncPrepQuiz"), { ssr: false });
+const CncWorkedExamples = dynamic(() => import("@/components/lessons/CncWorkedExamples"), { ssr: false });
 
 const CNC_ACTIVE_QUIZ_BANK_KEYS = [
   "lesson-1", "lesson-2", "lesson-3",
@@ -88,17 +90,18 @@ const lessonMeta: Record<string, { theory: number; practice: number; test: numbe
 };
 
 // Khuôn tab chung với các môn khác (SECTION_ORDER của /lop-hoc/bai): Lý thuyết → Video → Luyện tập → BTVN → Kiểm tra.
-// Bài mẫu chưa có nội dung CNC nên chưa có tab (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
+// Bài mẫu (chương trình giải sẵn, N6) chỉ hiện ở bài có ví dụ — Bài 2, 3 (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
 const tabs = [
   { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, bài giảng, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
   { id: "video", label: "Video", description: "Video bài giảng của giảng viên", icon: MonitorPlay },
+  { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block, tự đoán block bị che", icon: FileText },
   { id: "luyen_tap", label: "Luyện tập", description: "Làm lại nhiều lần; cần đạt để mở bước sau", icon: ClipboardCheck },
   { id: "bai_tap_ve_nha", label: "BTVN", description: "Điền khuyết, viết chương trình, mô phỏng", icon: FileText },
   { id: "kiem_tra", label: "Kiểm tra", description: "Kiểm tra cuối bài, chấm tại xưởng", icon: FileQuestion },
 ] as const;
 
 const lessonTabs = (lessonId: string) => {
-  const kinds = new Set<string>(["ly_thuyet", "video", ...cncLessonSections(lessonId)]);
+  const kinds = new Set<string>(["ly_thuyet", "video", ...(hasCncWorkedExamples(lessonId) ? ["bai_tap_mau"] : []), ...cncLessonSections(lessonId)]);
   return tabs.filter((item) => kinds.has(item.id));
 };
 // Tên bài trong DB có thể còn tiền tố số cũ ("Bài 4T: …"); số bài hiển thị lấy theo thứ tự 1–7.
@@ -535,6 +538,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />
     </>;
     if (sectionId === "video") return <Video lesson={lesson} videos={lessonVideos} />;
+    if (sectionId === "bai_tap_mau") return <LazyErrorBoundary fallback={null}><CncWorkedExamples lessonId={lesson.id} onDone={() => setTab("luyen_tap")} /></LazyErrorBoundary>;
     if (sectionId === "luyen_tap") {
       if (isProgramming) return <ProgrammingTestSuite key={`${lesson.id}-lt`} lessonId={lesson.id as "lesson-2" | "lesson-3"} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} only={["exercise-1", "exercise-2", "exercise-3-short"]} kicker="LUYỆN TẬP · LÀM LẠI NHIỀU LẦN" title="Nhận biết và dịch lệnh" description="Mỗi lượt rút câu ngẫu nhiên; làm tới khi đạt rồi chuyển sang BTVN." onResult={record} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
       if (isOperation) {
@@ -688,7 +692,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                             >
                               <span><Icon size={22} /></span>
                               <div><strong>{displayLabel}</strong><small>{description}</small></div>
-                              <b>{isActive ? "Thu gọn" : id === "ly_thuyet" || id === "video" ? "Xem" : "Làm bài"}<ChevronDown size={17} /></b>
+                              <b>{isActive ? "Thu gọn" : id === "ly_thuyet" || id === "video" || id === "bai_tap_mau" ? "Xem" : "Làm bài"}<ChevronDown size={17} /></b>
                             </button>
                             {isActive && <div id={`cnc-section-${lesson.id}-${id}`} className="cnc-section-body cnc-content">{renderSectionContent(id)}</div>}
                           </section>;
