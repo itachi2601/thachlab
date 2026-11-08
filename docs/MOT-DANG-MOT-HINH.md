@@ -104,3 +104,9 @@ quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = S
 - Phiên điều phối KHÔNG đọc ảnh; chỉ kiểm máy (script trạng thái + `#kiem`). Agent con tự soát ảnh, mỗi bài ≤ 1 ảnh/dạng.
 - Sửa nhãn đè/tràn = việc cơ học → Sonnet. Soạn hình mới (cần giải lại vật lí, chống lộ đáp án) → Opus, 2–3 bài/agent, 2 agent cùng lúc.
 - Commit ngay sau mỗi bài sạch (đừng dồn), để hết hạn mức giữa chừng không mất việc.
+
+## Cập nhật 8/11/2026 — L10 + KHTN 9: 19 bài đã lên DB (thầy duyệt 8/11)
+- **Đã đăng DB (`--giu-cu --yes`, sao lưu `scripts/logs/bai-tap-mau-bai<id>-*.json`):** L10 45 46 47 48 49 50 52 53 62 63 66 71 72 73 76 77 78 79; KHTN 9 156. Đối chiếu DB↔repo: số dạng và số `cong_cu.de` khớp, không còn `<figure` trong `problem_html`/`analysis_html` (`scripts/logs/kiem-db-19-btm.mts`).
+- Ngoài phạm vi gỡ: 52 (`solution_html`), 71 (`tu_luan.body_html`), 156 (`solution_html` + `tu_luan`) còn `<figure`.
+- **Còn treo (cần thầy quyết / sửa component):** 156-d1 lớp 0 thiếu hình b (cần mục "hiện 2 khung ở lớp 0"); 156-d7 nhãn B₂′; 62/63 họ `so_do_vecto` chữ ~8px, vector gạch nhãn "m" (sửa ở component); 72 nhãn vá bằng ký tự rộng 0/khoảng trắng em (nên sửa lề chữ trong `ThanhNangLuong.tsx`); 71-d5 đổi sang họ `tu_truong` nên mất cột năng lượng; 79-d2 nhãn "8000 Pa" còn vắt thành bể (đã sửa thành "p_M = 8000 Pa" ngoài bể).
+- Bài học: ảnh headless ~31 KB là trang chưa render → chụp lại với `--virtual-time-budget=40000`; agent dời nhãn có thể tạo đè mới → luôn chạy lại `#kiem`.
