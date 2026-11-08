@@ -49,6 +49,12 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 | G4 Vận hành + cài dao (tiện, phay) | 6, 7 | đạt thì mới cắt thật | `lesson-4-*: machine-operation, tool-setup, checklist` |
 | G5 Chi tiết đạt dung sai | 9, 11, 12 | rubric | `lesson-5/6: rubric-exam` |
 
+**Hiển thị trên web (việc 4, làm 8/11):** dải 5 ô G1–G5 ở đầu trang khoá (`CncGateStrip`, dữ liệu `CNC_GATES` trong `services/cnc-progress.ts`; xem thử `/dev/cnc-cong`). Tư vấn theo nghiên cứu:
+- Hợp: mốc năng lực cụ thể là thưởng hữu hình gắn với *quyền đứng máy* (L5 việc dở trỏ đúng chỗ, hiệu ứng tiến gần đích); 5 mốc có thứ tự đọc như một khối (G1 trí nhớ làm việc).
+- Ngược: 5 ô bấm được vượt N2 (≤4) → chỉ ô "cổng tiếp theo" được tô nổi (B2) + 1 dòng "Tiếp theo: … còn N bài"; ô đã đạt không bấm. Trạng thái luôn chữ + icon (M4), ô 52px (D2), cả dải ~96px = 12% màn 375×812 (B6).
+- Ngưỡng bỏ cuộc: G4 làm đủ bài nhưng chờ giảng viên duyệt hiện "Chờ duyệt" (không phải "chưa đạt") để SV không tưởng mình trượt. Cổng chưa mở bấm vào dẫn về việc còn thiếu ở cổng trước.
+- Đo: tỉ lệ SV bấm ô cổng (log sau), số SV kẹt "Chờ duyệt" quá 1 buổi → nhắc giảng viên. Bảng giảng viên chưa thêm (ma trận năng lực đã có duyệt G4); quiz `flip-N`/`prep-N` không thuộc cổng nào.
+
 ### 4.3 Bảng 12 buổi (giữ thứ tự bài, sửa cách chia gói)
 | Buổi | Bài · mục | Tối trước (≤20') | Máy thật | WinNC |
 |---|---|---|---|---|
@@ -57,8 +63,8 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 | 3 | Bài 2 mục 4–6 + mẫu | mục 4–5 | gá phôi, tiện mặt đầu bằng tay (Bài 4 mục 5–6 dạy *thao tác*) | bù mũi dao, chu trình · **G2** |
 | 4 | Bài 3 mục 1–3 | mục 1–2 | MILL: JOG, thay dao, MDI | rãnh, bậc |
 | 5 | Bài 3 mục 4–7 + mẫu | mục 4–5 | phay mặt phẳng bằng tay | contour, 4 lỗ · **G3** |
-| 6 | Bài 4 (tiện) | mục 7–9 (W, offset); mục 1–6 đã làm tay ở buổi 2–3 | đặt W, đo dao, chạy chương trình buổi 3 trên phôi | nhập offset, mô phỏng · **G4 tiện** |
-| 7 | Bài 5 (phay) | mục 7–9 | dò cạnh, bù dài/bán kính, chạy chương trình buổi 5 | · **G4 phay** |
+| 6 | Bài 4 (tiện) | mục 8–9 (W, offset; mục 7 học trên lớp); mục 1–6 đã làm tay ở buổi 2–3 | đặt W, đo dao, chạy chương trình buổi 3 trên phôi | nhập offset, mô phỏng · **G4 tiện** |
+| 7 | Bài 5 (phay) | mục 8–9 (mục 7 học trên lớp) | dò cạnh, bù dài/bán kính, chạy chương trình buổi 5 | · **G4 phay** |
 | 8 | Bài 6 mục 1–3 | mục 1–2 | cắt trục bậc vát/bo | kiểm trước |
 | 9 | Bài 6 mục 4–5 + mẫu | mục 4 | trục côn, ren; đo, ghi sai lệch · **G5** | |
 | 10 | Bài 7 mục 1–2 | mục 1 | phay bậc, cung | kiểm trước |
@@ -79,8 +85,8 @@ Cơ sở (nhớ từ tài liệu, chưa tra lại nguồn — cần kiểm trư�
 
 ## 5. Việc cần làm trên web (theo thứ tự ưu tiên)
 1. **Quiz tối trước theo buổi + bảng kết quả cho giảng viên** — dùng lại `exams.cnc_key` (mỗi buổi một khoá `flip-N-pre`) và `cnc_learning_records`; trang giảng viên lọc câu sai nhiều nhất. Cần agent `kien-truc-du-lieu` xem có phải thêm cột không.
-2. **Neo mục trong 7 bài** (`id="muc-1"`…) để phiếu buổi trỏ tới; sửa qua `scripts/cap-nhat-cnc-ly-thuyet.mts`.
-3. **Viết lại `flip-1` thành phiếu buổi** (trỏ Mở đầu + Bài 1), soạn `flip-2` … `flip-12` theo cùng khuôn.
+2. **Neo mục trong 7 bài** (`id="muc-1"`…) để phiếu buổi trỏ tới; sửa qua `scripts/cap-nhat-cnc-ly-thuyet.mts`. — **Xong 8/11**: tiêu đề "N. …" có `id="muc-N"`, "V. Bài toán mẫu" có `id="bai-mau"` (sao lưu `scripts/logs/cnc-lesson-*-body-backup-1794154*.html`); `CNC_PREP_SESSIONS.anchor` + `cncLessonHref()`; `CncCourseWorkspace` cuộn tới `#neo` sau `?bai=`.
+3. **Viết lại `flip-1` thành phiếu buổi** (trỏ Mở đầu + Bài 1), soạn `flip-2` … `flip-12` theo cùng khuôn. — **Xong 8/11**: nguồn `content/lesson-samples/cnc-phieu-buoi/build.mjs` (dữ liệu 12 buổi → `out/flip-N.html`), ghi DB bằng `dang.sh` (flip-1 sao lưu `scripts/logs/cnc-flip-1-row-backup-1794154420513.json`); xem ở `/lop-hoc/cnc/buoi/?so=N` (không cần đăng nhập), link "Phiếu 12 buổi học" trong cột bài + dòng nhắc quiz chuẩn bị; `flip-*` lọc khỏi danh sách bài. Không đổi schema. Phiếu theo bảng 4.3 (vận hành tay buổi 2–5) — chờ thầy chốt câu 1 mục 6.
 4. **Gắn `flip-N` vào `CNC_ASSESSMENT_PLAN`** (chỉ quiz tối trước, không khoá bài) và hiện cổng G1–G5 trên trang lớp.
 5. **Ô "câu em chưa rõ"** dưới quiz tối trước.
 6. Bỏ chữ cứng "70 tiết · 7 bài học", "/7 bài" → đếm từ dữ liệu.

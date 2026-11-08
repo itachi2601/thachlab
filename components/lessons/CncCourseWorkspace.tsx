@@ -36,9 +36,11 @@ import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
+import { hasCncWorkedExamples } from "@/services/cnc-worked-examples";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
 
 const CncPrepQuiz = dynamic(() => import("@/components/lessons/CncPrepQuiz"), { ssr: false });
+const CncWorkedExamples = dynamic(() => import("@/components/lessons/CncWorkedExamples"), { ssr: false });
 
 const CNC_ACTIVE_QUIZ_BANK_KEYS = [
   "lesson-1", "lesson-2", "lesson-3",
@@ -65,8 +67,9 @@ import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts"
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
-import { CNC_CHAPTERS, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncLessonSections, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
-import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
+import { CNC_CHAPTERS, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys, type CncSectionKind } from "@/services/cnc-progress";
+import CncGateStrip from "@/components/lessons/CncGateStrip";
+import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyId, type CompetencyPermission } from "@/services/cnc-competencies";
 import { fetchOpenCncLessons } from "@/services/course-lesson-release";
 
 const subscribeStorageNoop = () => () => {};
@@ -88,17 +91,18 @@ const lessonMeta: Record<string, { theory: number; practice: number; test: numbe
 };
 
 // Khuôn tab chung với các môn khác (SECTION_ORDER của /lop-hoc/bai): Lý thuyết → Video → Luyện tập → BTVN → Kiểm tra.
-// Bài mẫu chưa có nội dung CNC nên chưa có tab (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
+// Bài mẫu (chương trình giải sẵn, N6) chỉ hiện ở bài có ví dụ — Bài 2, 3 (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
 const tabs = [
   { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, bài giảng, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
   { id: "video", label: "Video", description: "Video bài giảng của giảng viên", icon: MonitorPlay },
+  { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block", icon: FileText },
   { id: "luyen_tap", label: "Luyện tập", description: "Làm lại nhiều lần; cần đạt để mở bước sau", icon: ClipboardCheck },
   { id: "bai_tap_ve_nha", label: "BTVN", description: "Điền khuyết, viết chương trình, mô phỏng", icon: FileText },
   { id: "kiem_tra", label: "Kiểm tra", description: "Kiểm tra cuối bài, chấm tại xưởng", icon: FileQuestion },
 ] as const;
 
 const lessonTabs = (lessonId: string) => {
-  const kinds = new Set<string>(["ly_thuyet", "video", ...cncLessonSections(lessonId)]);
+  const kinds = new Set<string>(["ly_thuyet", "video", ...(hasCncWorkedExamples(lessonId) ? ["bai_tap_mau"] : []), ...cncLessonSections(lessonId)]);
   return tabs.filter((item) => kinds.has(item.id));
 };
 // Tên bài trong DB có thể còn tiền tố số cũ ("Bài 4T: …"); số bài hiển thị lấy theo thứ tự 1–7.
@@ -381,14 +385,15 @@ export const cncChecklistConfig: Record<
   "lesson-6": { sections: millingMachiningChecklistSections, zeroTolerance: millingMachiningZeroTolerance, title: "Check list kiểm tra thực hành gia công phay", description: "An toàn, quy trình gia công và đo kiểm sản phẩm trên bài tập tổng hợp phay CNC." },
 };
 
-export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId }: { embedded?: boolean; courseId?: number; initialLessonId?: string }) {
+// demo: chỉ dùng ở trang xem thử /dev (không courseId) để thấy dải cổng ở các trạng thái đạt / chờ duyệt / đang làm.
+export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId, demo }: { embedded?: boolean; courseId?: number; initialLessonId?: string; demo?: { passed: string[]; approved: CompetencyId[] } }) {
   const { profile: viewerProfile, session } = useAuth();
   const [lessons, setLessons] = useState<CncLesson[]>([]);
   useEffect(() => {
     let cancelled = false;
     fetchCncLessons()
       .then((rows) => {
-        if (!cancelled) setLessons(rows.filter((row) => row.id !== "intro"));
+        if (!cancelled) setLessons(rows.filter((row) => row.id !== "intro" && !row.id.startsWith("flip-"))); // flip-N = phiếu buổi, trang /lop-hoc/cnc/buoi
       })
       .catch(() => undefined);
     return () => {
@@ -401,10 +406,12 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   const [tab, setTab] = useState<TabId | null>(validInitialLessonId ? "ly_thuyet" : null);
   const [lessonSearch, setLessonSearch] = useState("");
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
-  const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
+  const [passedAssessments, setPassedAssessments] = useState<Set<string>>(() => new Set(demo?.passed ?? []));
   const [assessmentAttempts, setAssessmentAttempts] = useState<Record<string, number>>({});
-  const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>([]);
+  const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>(() => (demo?.approved ?? []).map((competency_id) => ({ course_id: 0, student_id: "", competency_id, status: "approved", note: "", approved_at: null, updated_at: "", approved_by: null })));
   const [openLessonIds, setOpenLessonIds] = useState<string[]>([]);
+  // Dải cổng chỉ hiện khi đã tải xong kết quả + quyền năng lực (tránh nháy "Chưa làm").
+  const [gateDataLoaded, setGateDataLoaded] = useState({ records: false, permissions: false });
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
   const [quizBanks, setQuizBanks] = useState<Record<string, CncQuizQuestion[]>>({});
@@ -446,7 +453,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
         setPassedAssessments(passedAssessmentKeys(rows));
         setAssessmentAttempts(Object.fromEntries(rows.map((row) => [`${row.lesson_id}:${row.assessment_id}`, row.attempt_count])));
       }
-    }).catch(() => undefined);
+    }).catch(() => undefined).finally(() => { if (!cancelled) setGateDataLoaded((current) => ({ ...current, records: true })); });
     return () => { cancelled = true; };
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
@@ -457,7 +464,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
 
   useEffect(() => {
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
-    void fetchCourseCompetencyPermissions(courseId, session.user.id).then(setCompetencyPermissions).catch(() => setCompetencyPermissions([]));
+    void fetchCourseCompetencyPermissions(courseId, session.user.id).then(setCompetencyPermissions).catch(() => setCompetencyPermissions([])).finally(() => setGateDataLoaded((current) => ({ ...current, permissions: true })));
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   useEffect(() => {
@@ -469,7 +476,16 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       setExpandedLessonId(requestedLesson);
       setTab("ly_thuyet");
     }, 0);
-    return () => window.clearTimeout(timer);
+    // ?bai=…#muc-N (link quiz chuẩn bị / phiếu buổi): đợi tab Lý thuyết vẽ xong body_html rồi cuộn tới mục (tối đa ~10 s).
+    const anchor = decodeURIComponent(window.location.hash.slice(1));
+    let tries = 0;
+    const poll = /^[\w-]+$/.test(anchor) ? window.setInterval(() => {
+      const target = document.getElementById(anchor);
+      if (target || ++tries > 66) window.clearInterval(poll);
+      // window.scrollTo (không scrollIntoView: nó cuộn ngang cả khung bài overflow); "instant" vì html có scroll-behavior smooth.
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 92, behavior: "instant" });
+    }, 150) : 0;
+    return () => { window.clearTimeout(timer); window.clearInterval(poll); };
   }, [validInitialLessonId, lessons]);
 
   useEffect(() => {
@@ -500,6 +516,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     };
   }, [lessonId]);
 
+  const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
+
   if (!lesson) {
     return (
       <div className={`cnc-shell lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
@@ -520,6 +538,22 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     setTab("ly_thuyet");
   };
 
+  const isLessonLocked = (id: string) => {
+    const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(id);
+    return viewerProfile?.role !== "admin" && (teacherLocked||(id === "lesson-5" && !competencyStates["turn-machining"].approved) || (id === "lesson-6" && !competencyStates["mill-machining"].approved));
+  };
+  // Giảng viên (admin) không có tiến độ riêng → không hiện dải; trang /dev không courseId thì hiện ngay.
+  const showGates = viewerProfile?.role !== "admin" && (!courseId || (gateDataLoaded.records && gateDataLoaded.permissions));
+  const gateStates = cncGateStates(passedAssessments, (id) => competencyStates[id].approved, isLessonLocked);
+  // Bấm một cổng: mở đúng bài + tab còn thiếu ngay trong danh sách rồi cuộn tới (không đổi URL ?bai=).
+  const openGate = (gateLessonId: string, section: CncSectionKind) => {
+    setLessonSearch("");
+    setLessonId(gateLessonId);
+    setExpandedLessonId(gateLessonId);
+    setTab(section);
+    window.setTimeout(() => document.getElementById(`cnc-section-${gateLessonId}-${section}`)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+  };
+
   const record = (assessmentId: string, value: number, total: number, didPass: boolean) => recordQuiz(lesson.id, assessmentId, value, total, didPass);
   const isProgramming = lesson.id === "lesson-2" || lesson.id === "lesson-3";
   const isOperation = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
@@ -535,6 +569,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />
     </>;
     if (sectionId === "video") return <Video lesson={lesson} videos={lessonVideos} />;
+    if (sectionId === "bai_tap_mau") return <LazyErrorBoundary fallback={null}><CncWorkedExamples lessonId={lesson.id} onDone={() => setTab("luyen_tap")} /></LazyErrorBoundary>;
     if (sectionId === "luyen_tap") {
       if (isProgramming) return <ProgrammingTestSuite key={`${lesson.id}-lt`} lessonId={lesson.id as "lesson-2" | "lesson-3"} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} only={["exercise-1", "exercise-2", "exercise-3-short"]} kicker="LUYỆN TẬP · LÀM LẠI NHIỀU LẦN" title="Nhận biết và dịch lệnh" description="Mỗi lượt rút câu ngẫu nhiên; làm tới khi đạt rồi chuyển sang BTVN." onResult={record} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
       if (isOperation) {
@@ -580,8 +615,9 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
           </div>
         </div>
         <div className="cnc-stats">
-          <span><Clock3 />70 tiết</span><span><BookOpen />{CNC_LESSON_COUNT} bài · {CNC_CHAPTERS.length} chương</span><span><ShieldCheck />2 cổng an toàn vận hành</span>
+          <span><Clock3 />70 tiết</span><span><BookOpen />{CNC_LESSON_COUNT} bài · {CNC_CHAPTERS.length} chương</span>
         </div>
+        {!validInitialLessonId && showGates && <CncGateStrip states={gateStates} onOpen={openGate} />}
       </header>
 
       {courseId && <CncCourseAnnouncements courseId={courseId} />}
@@ -590,6 +626,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">
           <div className="cnc-nav-heading"><span>{validInitialLessonId ? "Nội dung bài học" : "Chương trình Gia công CNC"}</span>{validInitialLessonId && <small>{plainLessonTitle(lesson.shortTitle)}</small>}</div>
+          {!validInitialLessonId && <Link href="/lop-hoc/cnc/buoi/" className="lesson-link mb-2 min-h-[44px]">Phiếu 12 buổi học →</Link>}
           {validInitialLessonId && <Link href="/lop-hoc/cnc" className="lesson-link mb-4">← Tất cả bài học</Link>}
           {!validInitialLessonId && <label className="cnc-lesson-search">
             <Search size={20} />
@@ -603,9 +640,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
               const itemTabs = lessonTabs(item.id);
               const itemMeta = lessonMeta[item.id] ?? { theory: 0, practice: 0, test: 0 };
               const active = expandedLessonId === item.id;
-              const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
-              const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(item.id);
-              const locked = viewerProfile?.role !== "admin" && (teacherLocked||(item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
+              const locked = isLessonLocked(item.id);
               return (
                 <Fragment key={item.id}>
                 {chapterStart && <h3 className="cnc-chapter-label">Chương {chapter.title}</h3>}
@@ -688,7 +723,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                             >
                               <span><Icon size={22} /></span>
                               <div><strong>{displayLabel}</strong><small>{description}</small></div>
-                              <b>{isActive ? "Thu gọn" : id === "ly_thuyet" || id === "video" ? "Xem" : "Làm bài"}<ChevronDown size={17} /></b>
+                              <b>{isActive ? "Thu gọn" : id === "ly_thuyet" || id === "video" || id === "bai_tap_mau" ? "Xem" : "Làm bài"}<ChevronDown size={17} /></b>
                             </button>
                             {isActive && <div id={`cnc-section-${lesson.id}-${id}`} className="cnc-section-body cnc-content">{renderSectionContent(id)}</div>}
                           </section>;
