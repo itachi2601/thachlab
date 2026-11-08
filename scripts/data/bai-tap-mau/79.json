@@ -145,7 +145,7 @@
      {
       "loai": "chu",
       "x": 8.6,
-      "y": 2.5,
+      "y": 2.9,
       "text": "3,0 cm",
       "a": "start"
      },
@@ -248,7 +248,7 @@
       },
       {
        "loai": "chu",
-       "x": 4.9,
+       "x": 5.4,
        "y": 0.8,
        "text": "S = 4,0 × 15 cm²",
        "mau": "luc",
@@ -276,7 +276,7 @@
       },
       {
        "loai": "chu",
-       "x": 19.6,
+       "x": 19.1,
        "y": 0.8,
        "text": "S = 3,0 × 4,0 cm²",
        "a": "end",
@@ -463,10 +463,10 @@
      },
      {
       "loai": "chu",
-      "x": 6.8,
+      "x": 6.2,
       "y": 6.8,
       "text": "1,0 m",
-      "a": "start"
+      "a": "end"
      },
      {
       "loai": "duong",
@@ -521,9 +521,9 @@
      [
       {
        "loai": "chu",
-       "x": 6.95,
-       "y": 3.1,
-       "text": "8000 Pa",
+       "x": 10.7,
+       "y": 5.3,
+       "text": "p_M = 8000 Pa",
        "a": "start",
        "mau": "luc"
       },
@@ -827,7 +827,7 @@
      [
       {
        "loai": "diem",
-       "x": 5.5,
+       "x": 6.0,
        "y": 3.5,
        "ten": "B",
        "vi": "phai"
@@ -836,11 +836,11 @@
        "loai": "duong",
        "diem": [
         [
-         5.5,
+         6.0,
          3.5
         ],
         [
-         5.5,
+         6.0,
          8.9
         ]
        ],
@@ -849,7 +849,7 @@
       },
       {
        "loai": "chu",
-       "x": 5.8,
+       "x": 6.25,
        "y": 5.0,
        "text": "1,2 m",
        "a": "start",
@@ -1243,34 +1243,34 @@
      "kieu": "be",
      "rong": 20,
      "cao": 10,
-     "tren": 12,
+     "tren": 19,
      "sau": 16
     },
     "hinh": [
      {
       "loai": "khoi",
       "chim": 0,
-      "het": 2
+      "het": 3
      },
      {
       "loai": "chu",
-      "x": 17.6,
+      "x": 2.4,
       "y": -14.5,
       "text": "nước 1000 kg/m³",
       "mau": "min",
-      "a": "end"
+      "a": "start"
      },
      {
       "loai": "chu",
-      "x": 0.6,
-      "y": 8,
+      "x": 0.3,
+      "y": 17.4,
       "text": "m = 2,4 kg",
       "a": "start"
      },
      {
       "loai": "chu",
-      "x": 0.6,
-      "y": 3,
+      "x": 0.3,
+      "y": 12.6,
       "text": "20×20×10 cm",
       "a": "start"
      }
@@ -1284,23 +1284,18 @@
      ],
      [
       {
-       "loai": "khoi",
-       "chim": 6,
-       "het": 4
-      },
-      {
        "loai": "luc",
        "ten": "P = 24 N",
        "huong": "xuong",
-       "do_lon": 24,
-       "lech": -0.8,
+       "do_lon": 30,
+       "lech": 2.2,
        "het": 4
       },
       {
        "loai": "luc",
        "ten": "F_A = 24 N",
        "huong": "len",
-       "do_lon": 24,
+       "do_lon": 30,
        "lech": 0.8,
        "het": 4
       },
@@ -1310,6 +1305,11 @@
       }
      ],
      [
+      {
+       "loai": "khoi",
+       "chim": 6,
+       "het": 4
+      },
       {
        "loai": "thuoc",
        "ong": "phai",
@@ -1334,11 +1334,11 @@
        "ten": "P = 24 N",
        "huong": "xuong",
        "do_lon": 24,
-       "lech": -1.6
+       "lech": 2.2
       },
       {
        "loai": "luc",
-       "ten": "P' = 16 N",
+       "ten": "P'",
        "huong": "xuong",
        "do_lon": 16,
        "tu": "vat",

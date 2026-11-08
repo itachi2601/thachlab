@@ -181,7 +181,7 @@
        6.1
       ],
       "den": [
-       19.7,
+       18.0,
        6.1
       ],
       "mau": "chu",
@@ -194,7 +194,7 @@
        9.5
       ],
       "den": [
-       19.7,
+       18.0,
        9.5
       ],
       "mau": "chu",
@@ -207,7 +207,7 @@
        7.8
       ],
       "den": [
-       19.7,
+       18.0,
        7.8
       ],
       "mau": "chu",
@@ -278,14 +278,13 @@
      [
       {
        "loai": "vec",
-       "x": 18.9,
+       "x": 18.0,
        "y": 1.0,
        "goc": 90,
        "dai": 6.8,
        "nhan": "z_P",
        "mau": "b",
-       "het": 3,
-       "trai": true
+       "het": 3
       },
       {
        "loai": "ghi",
@@ -295,14 +294,13 @@
      [
       {
        "loai": "vec",
-       "x": 18.9,
+       "x": 18.0,
        "y": 6.1,
        "goc": 90,
        "dai": 1.7,
        "nhan": "z_P",
        "mau": "b",
-       "het": 4,
-       "trai": true
+       "het": 4
       },
       {
        "loai": "ghi",
@@ -312,13 +310,12 @@
      [
       {
        "loai": "vec",
-       "x": 18.9,
+       "x": 18.0,
        "y": 9.5,
        "goc": -90,
        "dai": 1.7,
        "nhan": "z_P",
-       "mau": "b",
-       "trai": true
+       "mau": "b"
       },
       {
        "loai": "ghi",
@@ -543,7 +540,6 @@
       "y": 1.5,
       "goc": 90,
       "dai": 7.5,
-      "nhan": "2,45 m",
       "mau": "b",
       "trai": true
      },
@@ -569,6 +565,14 @@
       ],
       "mau": "chu",
       "dut": true
+     },
+     {
+      "loai": "chu",
+      "x": 18.8,
+      "y": 5.0,
+      "text": "2,45 m",
+      "a": "end",
+      "mau": "b"
      }
     ],
     "lop": [
@@ -585,7 +589,13 @@
        "y": 1.8,
        "goc": 0,
        "dai": 2.6,
-       "nhan": "7,0 m/s",
+       "mau": "i"
+      },
+      {
+       "loai": "chu",
+       "x": 14.3,
+       "y": 2.4,
+       "text": "7,0 m/s",
        "mau": "i"
       },
       {
@@ -1242,80 +1252,110 @@
     }
    ],
    "cong_cu": {
-    "loai": "thanh_nang_luong",
-    "canh": {
-     "kieu": "doc",
-     "h": 10,
-     "don_vi": "m",
-     "vi": 1
-    },
-    "cot": [
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
      {
-      "ten": "W_{đ}",
-      "mau": "max"
-     },
-     {
-      "ten": "W_{t}",
-      "mau": "min"
-     },
-     {
-      "ten": "W",
+      "loai": "day",
+      "tu": [
+       0.5,
+       1.5
+      ],
+      "den": [
+       19.5,
+       1.5
+      ],
       "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       2.5,
+       9.0
+      ],
+      "den": [
+       13.0,
+       1.5
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       2.5,
+       9.0
+      ],
+      "den": [
+       17.5,
+       9.0
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "vec",
+      "x": 17.5,
+      "y": 1.5,
+      "goc": 90,
+      "dai": 7.5,
+      "mau": "b"
+     },
+     {
+      "loai": "chu",
+      "x": 17.0,
+      "y": 5.0,
+      "text": "h = 10 m",
+      "a": "end",
+      "mau": "b"
+     },
+     {
+      "loai": "diem",
+      "x": 2.5,
+      "y": 9.0,
+      "ten": "A",
+      "vi": "trai"
+     },
+     {
+      "loai": "diem",
+      "x": 13.0,
+      "y": 1.5,
+      "ten": "B",
+      "vi": "duoi"
+     },
+     {
+      "loai": "chu",
+      "x": 4.0,
+      "y": 9.6,
+      "text": "50 kg, từ nghỉ",
+      "a": "start",
+      "het": 5
+     },
+     {
+      "loai": "vec",
+      "x": 13.0,
+      "y": 1.9,
+      "goc": 0,
+      "dai": 2.6,
+      "mau": "i",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 14.9,
+      "y": 2.5,
+      "text": "12 m/s",
+      "mau": "i",
+      "het": 5
      }
     ],
-    "max": 5625,
-    "don_vi": "J",
     "lop": [
      [
-      {
-       "loai": "vat",
-       "vi": 1
-      },
-      {
-       "loai": "cot",
-       "ten": "W_{đ}",
-       "gia_tri": 0,
-       "nhan": "0"
-      },
-      {
-       "loai": "cot",
-       "ten": "W_{t}",
-       "gia_tri": 5000
-      },
-      {
-       "loai": "cot",
-       "ten": "W",
-       "gia_tri": 5000,
-       "nhan": "5000"
-      },
       {
        "loai": "ghi",
        "text": "W_A = mgh = 5000 J"
       }
      ],
      [
-      {
-       "loai": "vat",
-       "vi": 0
-      },
-      {
-       "loai": "cot",
-       "ten": "W_{đ}",
-       "gia_tri": 3600,
-       "nhan": "3600"
-      },
-      {
-       "loai": "cot",
-       "ten": "W_{t}",
-       "gia_tri": 0,
-       "nhan": "0"
-      },
-      {
-       "loai": "cot",
-       "ten": "W",
-       "gia_tri": 3600,
-       "nhan": "3600"
-      },
       {
        "loai": "ghi",
        "text": "W_B = ½mv² = 3600 J"
@@ -1335,26 +1375,35 @@
      ],
      [
       {
-       "loai": "vat",
-       "vi": 0
+       "loai": "vec",
+       "x": 2.5,
+       "y": 8.14,
+       "goc": -35.5,
+       "dai": 2.4,
+       "mau": "i"
       },
       {
-       "loai": "cot",
-       "ten": "W_{đ}",
-       "gia_tri": 4225,
-       "nhan": "4225"
+       "loai": "chu",
+       "x": 0.5,
+       "y": 5.3,
+       "text": "5,0 m/s",
+       "a": "start",
+       "mau": "i"
       },
       {
-       "loai": "cot",
-       "ten": "W_{t}",
-       "gia_tri": 0,
-       "nhan": "0"
+       "loai": "vec",
+       "x": 13.0,
+       "y": 1.9,
+       "goc": 0,
+       "dai": 2.6,
+       "mau": "i"
       },
       {
-       "loai": "cot",
-       "ten": "W",
-       "gia_tri": 4225,
-       "nhan": "4225"
+       "loai": "chu",
+       "x": 14.9,
+       "y": 2.5,
+       "text": "13 m/s",
+       "mau": "i"
       },
       {
        "loai": "ghi",
@@ -1362,8 +1411,7 @@
       }
      ],
      []
-    ],
-    "de": true
+    ]
    },
    "tom_de": {
     "cho": [
