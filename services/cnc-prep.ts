@@ -4,20 +4,28 @@ import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-ban
 // CNC lớp đảo ngược — quiz "chuẩn bị tối trước" theo buổi (JiTT).
 // Câu hỏi: exams.cnc_key = "prep-<buổi>" (đăng ở /quan-tri/cnc-dang-de). Kết quả: bảng cnc_prep_responses
 // (migration 20261108120000). Không tính điểm, chỉ để giảng viên biết lớp sai câu nào trước giờ học.
-// Bảng buổi theo docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md mục 4.3 (đánh số bài như trên web).
+// Bảng buổi theo docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md mục 4.3 (đánh số bài như trên web: lesson-4-turn = Bài 4,
+// lesson-4-mill = Bài 5, lesson-5 = Bài 6, lesson-6 = Bài 7).
 export const CNC_PREP_SESSIONS = [
-  { no: 2, title: "Lập trình tiện (1)", lessonId: "lesson-2", read: "Bài 2 · mục 1–2" },
-  { no: 3, title: "Lập trình tiện (2)", lessonId: "lesson-2", read: "Bài 2 · mục 4–5" },
-  { no: 4, title: "Lập trình phay (1)", lessonId: "lesson-3", read: "Bài 3 · mục 1–2" },
-  { no: 5, title: "Lập trình phay (2)", lessonId: "lesson-3", read: "Bài 3 · mục 4–5" },
-  { no: 6, title: "Vận hành tiện", lessonId: "lesson-4-turn", read: "Bài 4T · mục 7–9" },
-  { no: 7, title: "Vận hành phay", lessonId: "lesson-4-mill", read: "Bài 4P · mục 7–9" },
-  { no: 8, title: "Gia công tiện (1)", lessonId: "lesson-5", read: "Bài 5 · mục 1–2" },
-  { no: 9, title: "Gia công tiện (2)", lessonId: "lesson-5", read: "Bài 5 · mục 4" },
-  { no: 10, title: "Gia công phay (1)", lessonId: "lesson-6", read: "Bài 6 · mục 1" },
-  { no: 11, title: "Gia công phay (2)", lessonId: "lesson-6", read: "Bài 6 · mục 3–4" },
-  { no: 12, title: "Dự án nhóm", lessonId: null, read: "Đề dự án (giảng viên phát)" },
+  { no: 2, title: "Lập trình tiện (1)", lessonId: "lesson-2", read: "Bài 2 · mục 1–2", anchor: "muc-1" },
+  { no: 3, title: "Lập trình tiện (2)", lessonId: "lesson-2", read: "Bài 2 · mục 4–5", anchor: "muc-4" },
+  { no: 4, title: "Lập trình phay (1)", lessonId: "lesson-3", read: "Bài 3 · mục 1–2", anchor: "muc-1" },
+  { no: 5, title: "Lập trình phay (2)", lessonId: "lesson-3", read: "Bài 3 · mục 4–5", anchor: "muc-4" },
+  { no: 6, title: "Vận hành tiện", lessonId: "lesson-4-turn", read: "Bài 4 · mục 8–9", anchor: "muc-8" },
+  { no: 7, title: "Vận hành phay", lessonId: "lesson-4-mill", read: "Bài 5 · mục 8–9", anchor: "muc-8" },
+  { no: 8, title: "Gia công tiện (1)", lessonId: "lesson-5", read: "Bài 6 · mục 1–2", anchor: "muc-1" },
+  { no: 9, title: "Gia công tiện (2)", lessonId: "lesson-5", read: "Bài 6 · mục 4", anchor: "muc-4" },
+  { no: 10, title: "Gia công phay (1)", lessonId: "lesson-6", read: "Bài 7 · mục 1", anchor: "muc-1" },
+  { no: 11, title: "Gia công phay (2)", lessonId: "lesson-6", read: "Bài 7 · mục 3–4", anchor: "muc-3" },
+  { no: 12, title: "Dự án nhóm", lessonId: null, read: "Đề dự án (giảng viên phát)", anchor: null },
 ] as const;
+
+// Link "mở bài" nhảy thẳng tới mục: neo `muc-N` là id của tiêu đề "N. …" trong body_html (đã ghi 8/11/2026),
+// `bai-mau` là mục "V. Bài toán mẫu". CncCourseWorkspace đọc ?bai= rồi cuộn tới #neo.
+export const cncLessonHref = (lessonId: string, anchor?: string | null) =>
+  `/lop-hoc/cnc/?bai=${lessonId}${anchor ? `#${anchor}` : ""}`;
+// Phiếu buổi (cnc_lessons id flip-N), trang /lop-hoc/cnc/buoi/?so=N.
+export const cncSessionSheetHref = (no: number) => `/lop-hoc/cnc/buoi/?so=${no}`;
 
 export type CncPrepSession = (typeof CNC_PREP_SESSIONS)[number];
 export const CNC_PREP_PASS = 4; // trên 5 câu: "sẵn sàng vào máy"
