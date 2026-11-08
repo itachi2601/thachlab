@@ -1,5 +1,5 @@
--- Nạp quiz chuẩn bị tối trước BUỔI 7 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 4P · mục 7–9.
--- Soạn từ content/lesson-samples/cnc-bai-5-van-hanh-phay (mục 7 xóa dữ liệu cũ, mục 8 chiều dài/bán kính dao 2 và 4, mục 9 gốc phôi Z, X, Y).
+-- Nạp quiz chuẩn bị tối trước BUỔI 7 (CNC lớp đảo ngược): 5 câu, đọc trước Bài 5 · mục 8–9.
+-- Soạn từ content/lesson-samples/cnc-bai-5-van-hanh-phay — Bài 5 Vận hành phay (mục 8 chiều dài/bán kính dao 2 và 4, mục 9 gốc phôi Z, X, Y).
 -- Không ghi đè nếu thầy đã đăng prep-7 qua /quan-tri/cnc-dang-de (on conflict do nothing).
 -- Lưu ý: trigger trg_exams_sync_bank chép câu vào question_bank như mọi ngân hàng CNC khác.
 -- Rollback: delete from public.exams where cnc_key = 'prep-7';
