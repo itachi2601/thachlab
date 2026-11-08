@@ -24,8 +24,15 @@ export const CNC_PREP_PASS = 4; // trên 5 câu: "sẵn sàng vào máy"
 export const cncPrepKey = (no: number) => `prep-${no}`;
 
 export type CncPrepResponse = {
-  id: number; course_id: number; student_id: string; session_no: number;
-  answers: (number | null)[]; score: number; total: number; chua_ro: string | null; created_at: string;
+  id: number;
+  course_id: number;
+  student_id: string;
+  session_no: number;
+  answers: (number | null)[];
+  score: number;
+  total: number;
+  chua_ro: string | null;
+  created_at: string;
 };
 
 const fields = "id, course_id, student_id, session_no, answers, score, total, chua_ro, created_at";
@@ -41,30 +48,58 @@ export async function fetchCncPrepBanks(): Promise<Record<number, CncQuizQuestio
   return out;
 }
 
-export async function submitCncPrep(input: { courseId: number; sessionNo: number; answers: (number | null)[]; score: number; total: number; chuaRo: string }) {
+export async function submitCncPrep(input: {
+  courseId: number;
+  sessionNo: number;
+  answers: (number | null)[];
+  score: number;
+  total: number;
+  chuaRo: string;
+}) {
   const chuaRo = input.chuaRo.trim().slice(0, 500);
-  const { error } = await getSupabase().from("cnc_prep_responses").insert({
-    course_id: input.courseId, session_no: input.sessionNo, answers: input.answers,
-    score: input.score, total: input.total, chua_ro: chuaRo || null,
-  });
+  const { error } = await getSupabase()
+    .from("cnc_prep_responses")
+    .insert({
+      course_id: input.courseId,
+      session_no: input.sessionNo,
+      answers: input.answers,
+      score: input.score,
+      total: input.total,
+      chua_ro: chuaRo || null,
+    });
   if (error) throw error;
 }
 
 export async function fetchMyCncPrep(courseId: number, studentId: string) {
-  const { data, error } = await getSupabase().from("cnc_prep_responses").select(fields)
-    .eq("course_id", courseId).eq("student_id", studentId).order("created_at", { ascending: true });
+  const { data, error } = await getSupabase()
+    .from("cnc_prep_responses")
+    .select(fields)
+    .eq("course_id", courseId)
+    .eq("student_id", studentId)
+    .order("created_at", { ascending: true });
   if (error) throw error;
   return (data ?? []) as CncPrepResponse[];
 }
 
 export async function fetchCourseCncPrep(courseId: number, sessionNo: number) {
-  const { data, error } = await getSupabase().from("cnc_prep_responses").select(fields)
-    .eq("course_id", courseId).eq("session_no", sessionNo).order("created_at", { ascending: true });
+  const { data, error } = await getSupabase()
+    .from("cnc_prep_responses")
+    .select(fields)
+    .eq("course_id", courseId)
+    .eq("session_no", sessionNo)
+    .order("created_at", { ascending: true });
   if (error) throw error;
   return (data ?? []) as CncPrepResponse[];
 }
 
-export type CncPrepQuestionStat = { index: number; question: string; wrong: number; answered: number; picks: number[]; correctIndex: number };
+export type CncPrepQuestionStat = {
+  index: number;
+  question: string;
+  wrong: number;
+  answered: number;
+  picks: number[];
+  correctIndex: number;
+};
 
 // Thống kê theo LƯỢT ĐẦU của mỗi sinh viên (phản ánh việc chuẩn bị ở nhà, không bị lượt làm lại che).
 export function summarizeCncPrep(rows: CncPrepResponse[], questions: CncQuizQuestion[]) {
@@ -77,7 +112,8 @@ export function summarizeCncPrep(rows: CncPrepResponse[], questions: CncQuizQues
   const firsts = [...first.values()];
   const stats: CncPrepQuestionStat[] = questions.map((q, index) => {
     const picks = q.options.map(() => 0);
-    let answered = 0, wrong = 0;
+    let answered = 0,
+      wrong = 0;
     for (const row of firsts) {
       const pick = row.answers[index];
       if (pick === null || pick === undefined) continue;
@@ -87,7 +123,9 @@ export function summarizeCncPrep(rows: CncPrepResponse[], questions: CncQuizQues
     }
     return { index, question: q.question, wrong, answered, picks, correctIndex: q.correctIndex };
   });
-  const notes = rows.filter((row) => row.chua_ro).map((row) => ({ studentId: row.student_id, text: row.chua_ro as string, at: row.created_at }));
+  const notes = rows
+    .filter((row) => row.chua_ro)
+    .map((row) => ({ studentId: row.student_id, text: row.chua_ro as string, at: row.created_at }));
   const avg = firsts.length ? firsts.reduce((sum, row) => sum + row.score / row.total, 0) / firsts.length : 0;
   return { firsts, best, stats, notes, avg };
 }

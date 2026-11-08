@@ -3,6 +3,10 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 08/11/2026 19:00 (đã chạy, log `scripts/logs/20261108-185959-20261108120000_cnc_prep_responses.log`, `scripts/logs/20261108-190003-cnc-prep-buoi-2.log`)
+- `20261108120000_cnc_prep_responses.sql`: bảng mới cnc_prep_responses (CNC lớp đảo ngược, quiz chuẩn bị tối trước + câu chưa rõ), RLS SV của mình / GV phân công khoá + admin; thử trong giao dịch trước, đạt.
+- `scripts/sql/cnc-prep-buoi-2.sql`: 5 câu `exams.cnc_key='prep-2'` (published=false). Rollback: `delete from public.exams where cnc_key='prep-2';`
+
 ## Migration — 05/11/2026 18:37 (đã chạy, log `scripts/logs/20261105-183751-20261105220000_similar_practice_attempts.log`)
 - `20261105220000_similar_practice_attempts.sql`: bảng ghi lượt Làm bài tương tự để đo Mẹo nhìn (chặng 5), bảng mới rỗng — đã chạy, đã thấy dòng ghi thật từ trang bài 153; đo bằng `scripts/sql/do-meo-nhin.sql`.
 
