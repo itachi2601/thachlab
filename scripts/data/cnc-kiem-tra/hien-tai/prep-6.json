@@ -1,0 +1,68 @@
+{
+  "id": 1316,
+  "cnc_key": "prep-6",
+  "title": "Chuẩn bị buổi 6 — Vận hành tiện",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Chạm nhẹ đoạn có đường kính đã biết, nhập bán kính của đoạn đó vào X ở hàng 2 rồi Measure",
+        "Chạm nhẹ đoạn có đường kính đã biết, nhập đường kính đó vào X ở hàng 2 rồi Measure",
+        "Chạm mặt đầu phôi, nhập X0 ở hàng 2 rồi Measure",
+        "Đọc X máy trên POS rồi nhập thẳng vào Work Shift"
+      ],
+      "question": "Đo X cho dao số 2 ở Geometry Offset trên máy tiện. Làm thế nào?",
+      "explanation": "Mục 9: X: chạm nhẹ đường kính đã biết; hàng 2 nhập X đó → Measure. X trên máy tiện là đường kính, không phải bán kính; chạm mặt đầu là để đo Z."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Độ dời của từng dao, từ N tới P",
+        "Độ dời gốc từ M tới W (gốc phôi)",
+        "Vị trí điểm tham chiếu R",
+        "Bán kính và hướng mũi dao"
+      ],
+      "question": "Trang Work Shift lưu thông tin gì?",
+      "explanation": "Mục 8: Work Shift dời gốc M → W. Độ dời từng dao N → P nằm ở Geometry Offset (mục 9)."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "5 mm",
+        "50 mm",
+        "45 mm",
+        "95 mm"
+      ],
+      "question": "Đo trực tiếp: kích thước mâm cặp MA = 50 mm, khoảng mâm cặp đến mặt đầu phôi AW = 45 mm (số giả định). Khoảng MW bằng:",
+      "explanation": "Mục 8: Z phôi = MW = MA + AW = 50 + 45 = 95 mm. Không trừ, không lấy riêng một số."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "Z0",
+        "Tọa độ Z máy đang hiện trên POS",
+        "Chiều dài phôi",
+        "X0"
+      ],
+      "question": "Đo dao số 2: chạm nhẹ mũi dao vào mặt đầu phôi. Ở hàng 2 của Geometry Offset nhập gì rồi bấm Measure?",
+      "explanation": "Mục 9: mặt đầu là nơi đặt W, nên mũi dao chạm mặt đầu nghĩa là P đang ở Z = 0; nhập Z0, máy tự tính độ dời của dao."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Chỉ R, không cần T",
+        "X, Z của gốc phôi",
+        "R (bán kính mũi dao) và T (hướng mũi dao)",
+        "Mã G41 hoặc G42"
+      ],
+      "question": "Dao có dùng bù bán kính mũi dao. Ở hàng của dao trong Geometry Offset, ngoài X, Z còn phải nhập:",
+      "explanation": "Mục 9: có bù bán kính mũi dao thì nhập thêm R và T. G41/G42 viết trong chương trình, gốc phôi nằm ở Work Shift."
+    }
+  ]
+}

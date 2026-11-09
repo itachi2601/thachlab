@@ -1,0 +1,202 @@
+[
+  {
+    "id": "mill-short-q1",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G00 X10 Y10 Z20",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G00",
+      "chạy dao nhanh",
+      "không cắt gọt",
+      "X10",
+      "Y10",
+      "Z20"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G00 định vị nhanh không cắt gọt đến X10 Y10 Z20.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q2",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G01 X70 Y20 F120",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G01",
+      "nội suy tuyến tính",
+      "phay thẳng",
+      "X70",
+      "Y20",
+      "F120"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G01 phay thẳng đến X70 Y20 với tốc độ chạy dao F120 mm/phút.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q3",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G02 X15 Y25 R12 F150",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G02",
+      "nội suy cung tròn",
+      "thuận chiều kim đồng hồ",
+      "R12",
+      "F150"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G02 nội suy cung tròn thuận chiều kim đồng hồ, bán kính R12, F150.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q4",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G55 G90 X0 Y0",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G55",
+      "gốc tọa độ phôi",
+      "tọa độ tuyệt đối",
+      "X0",
+      "Y0"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G55 chọn gốc phôi thứ hai, G90 tọa độ tuyệt đối, chạy về X0 Y0.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q5",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G44 H02 Z30",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G44",
+      "bù chiều dài dao",
+      "âm",
+      "H02",
+      "Z30"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G44 bù chiều dài dao theo chiều âm, số hiệu H02, di chuyển đến Z30.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q6",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "M04 S1200",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "M04",
+      "quay ngược chiều kim đồng hồ",
+      "1200",
+      "vòng/phút"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "M04 quay trục chính ngược chiều kim đồng hồ, tốc độ 1200 vòng/phút.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q7",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "T02 M06",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "dao số 02",
+      "thay dao",
+      "M06"
+    ],
+    "min_keyword_matches": 2,
+    "explanation": "T02 chọn dao số 02, M06 thực hiện thay dao.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q8",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G41 D01 G01 X40",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G41",
+      "bù bán kính dao bên trái",
+      "D01",
+      "phay thẳng",
+      "X40"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G41 kích hoạt bù bán kính dao bên trái theo số hiệu D01, sau đó phay thẳng đến X40.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q9",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G81 X20 Y20 Z-10 R2 F100",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G81",
+      "chu trình khoan lỗ",
+      "tiêu chuẩn",
+      "Z-10",
+      "R2",
+      "F100"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G81 là chu trình khoan lỗ tiêu chuẩn, khoan đến Z-10, mặt phẳng lùi dao R2, tốc độ F100.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-short-q10",
+    "quiz_key": "lesson-3-exercise-6",
+    "question_type": "short_answer",
+    "question": "G17 G03 X30 Y10 R15",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G17",
+      "mặt phẳng XY",
+      "G03",
+      "ngược chiều kim đồng hồ",
+      "R15"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G17 chọn mặt phẳng XY, G03 nội suy cung tròn ngược chiều kim đồng hồ, bán kính R15.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

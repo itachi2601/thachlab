@@ -1,0 +1,68 @@
+{
+  "id": 1318,
+  "cnc_key": "prep-8",
+  "title": "Chuẩn bị buổi 8 — Gia công tiện (1)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "Tạo mặt vuông góc trục làm chuẩn Z0; mọi chiều dài về sau tính từ đây",
+        "Mặt đầu là chỗ dễ cắt nhất nên làm trước để thử dao",
+        "Để phôi nhẹ bớt, mâm cặp kẹp chắc hơn",
+        "Để máy tự tìm gốc máy M"
+      ],
+      "question": "Vì sao tiện mặt đầu trước tiên?",
+      "explanation": "Mục 1: tiện mặt đầu tạo mặt phẳng vuông góc trục, đặt Z0 trên đó; mọi chiều dài về sau tính từ mặt này."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "Trục Z, trục X đứng yên",
+        "Cả X và Z cùng lúc",
+        "Trục X, còn Z tiến theo để giữ tốc độ cắt",
+        "Trục X, trục Z đứng yên"
+      ],
+      "question": "Trong lúc tiện mặt đầu, dao chạy theo trục nào?",
+      "explanation": "Mục 1: dao chạy ngang theo X, trục Z đứng yên trong lúc cắt. X và Z cùng đổi là tiện côn (mục 4)."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Tăng dần, lớn nhất tại tâm",
+        "Giảm dần và bằng 0 tại tâm",
+        "Không đổi vì n không đổi",
+        "Giảm dần nhưng không bao giờ bằng 0"
+      ],
+      "question": "Tiện mặt đầu với số vòng quay n không đổi. Khi dao tiến dần vào tâm, tốc độ cắt vc:",
+      "explanation": "Mục 1: vc = πDn/1000, D giảm về 0 khi dao về tâm nên vc giảm dần và bằng 0 tại tâm."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "X38.5",
+        "X37",
+        "X43",
+        "X41.5"
+      ],
+      "question": "Đang tiện ở X40, ăn thêm một lát sâu ap = 1,5 mm. Giá trị X mới là:",
+      "explanation": "Mục 2: X là đường kính, ap đo theo bán kính, nên X mới = X cũ − 2ap = 40 − 3 = 37."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "ap và f lớn, để bỏ nhanh lượng dư còn lại",
+        "f lớn, ap nhỏ",
+        "Giữ nguyên ap, f; chỉ tăng tốc độ trục chính",
+        "ap và f nhỏ, để đạt kích thước và độ bóng"
+      ],
+      "question": "So với tiện thô, tiện tinh chọn chế độ cắt thế nào?",
+      "explanation": "Mục 2: thô ap, f lớn để bỏ nhanh vật liệu; tinh ap, f nhỏ. Khoảng cách hai vân xoắn chính là f, f nhỏ thì bóng."
+    }
+  ]
+}

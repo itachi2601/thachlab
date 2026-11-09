@@ -1,0 +1,382 @@
+[
+  {
+    "id": "lesson-2-basic-q1",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong khối lệnh tổng quát N_ G_ X_ Y_ Z_ M_ S_ F_ T_ ;, ký tự N dùng để khai báo thông tin nào?",
+    "options": [
+      "Lệnh tốc độ trục chính",
+      "Số thứ tự câu lệnh",
+      "Lệnh chọn dụng cụ cắt",
+      "Lệnh bước tiến dao"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "N là số thứ tự của câu lệnh (số block) trong chương trình CNC.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q2",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Ký tự nào sau đây biểu thị lệnh bước tiến dao (Feed) trong chương trình tiện CNC?",
+    "options": [
+      "S",
+      "T",
+      "F",
+      "M"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "F là địa chỉ khai báo lượng hoặc tốc độ chạy dao.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q3",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Ký tự ; đặt ở cuối mỗi khối lệnh trong chương trình CNC có ý nghĩa gì?",
+    "options": [
+      "Bắt đầu khối lệnh",
+      "Khai báo bán kính dao",
+      "Ký tự kết thúc câu lệnh",
+      "Bỏ qua câu lệnh"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Dấu chấm phẩy đánh dấu kết thúc một câu lệnh CNC.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q4",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Cặp mã lệnh nào được dùng để khai báo đơn vị đo trong hệ tọa độ gia công?",
+    "options": [
+      "G94 và G95",
+      "G70 và G71",
+      "G17 và G18",
+      "G41 và G42"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Theo hệ lệnh của tài liệu, G70 và G71 dùng để chọn hệ inch và hệ mét.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q5",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G71 dùng để khai báo đơn vị đo theo hệ nào?",
+    "options": [
+      "Hệ inch",
+      "Hệ mét",
+      "Hệ độ (Degree)",
+      "Hệ radian"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G71 khai báo đơn vị theo hệ mét trong hệ điều khiển được sử dụng ở bài học.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q6",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G95 được ứng dụng trong gia công tiện có ý nghĩa là gì?",
+    "options": [
+      "Chọn lượng chạy dao theo mm/phút",
+      "Chọn lượng chạy dao theo mm/vòng",
+      "Chọn tốc độ trục chính theo vòng/phút",
+      "Khai báo đơn vị đo hệ mét"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G95 chọn chế độ lượng chạy dao theo mỗi vòng quay của trục chính.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q7",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh nào dùng cho chuyển động chạy dao nhanh không cắt gọt?",
+    "options": [
+      "G01",
+      "G00",
+      "G02",
+      "G03"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G00 dùng để định vị nhanh, không thực hiện cắt gọt.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q8",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong cấu trúc lệnh G00 X(U)... Z(W)...;, hai ký tự U và W biểu thị tọa độ điểm đến theo giá trị nào?",
+    "options": [
+      "Tọa độ tuyệt đối",
+      "Tọa độ tương đối",
+      "Tọa độ cực",
+      "Bán kính cung tròn"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "U và W biểu thị lượng dịch chuyển tương đối theo trục X và Z.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q9",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G01 thực hiện chức năng gì trong quá trình gia công?",
+    "options": [
+      "Chạy dao nhanh không cắt gọt",
+      "Nội suy cung tròn cùng chiều kim đồng hồ",
+      "Nội suy theo đường thẳng",
+      "Xóa bù trừ bán kính dao"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 thực hiện nội suy tuyến tính với lượng chạy dao F.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q10",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Để tiện mặt đầu, tiện trụ thẳng hoặc tiện côn, người ta thường áp dụng lệnh nào?",
+    "options": [
+      "G00",
+      "G01",
+      "G02",
+      "G73"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Các chuyển động tiện thẳng và tiện côn cơ bản thường dùng nội suy đường thẳng G01.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q11",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G02 có công dụng nào sau đây?",
+    "options": [
+      "Nội suy cung tròn theo cùng chiều kim đồng hồ",
+      "Nội suy cung tròn theo ngược chiều kim đồng hồ",
+      "Nội suy theo đường thẳng",
+      "Chạy dao nhanh"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G02 là nội suy cung tròn theo chiều kim đồng hồ.",
+    "order_index": 10,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q12",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khi muốn gia công một khối lồi bằng lệnh nội suy cung tròn ngược chiều kim đồng hồ, mã lệnh cần chọn là:",
+    "options": [
+      "G01",
+      "G02",
+      "G03",
+      "G72"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G03 là nội suy cung tròn ngược chiều kim đồng hồ.",
+    "order_index": 11,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q13",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong lệnh nội suy cung tròn (G02/G03), ký tự R đại diện cho tham số nào?",
+    "options": [
+      "Tốc độ quay trục chính",
+      "Khoảng cách rút dao",
+      "Bán kính cung tròn",
+      "Lượng dư gia công"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "R khai báo bán kính của cung tròn cần nội suy.",
+    "order_index": 12,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q14",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Tham số I và K trong lệnh nội suy cung tròn (G02/G03) là tọa độ tương đối của tâm quay theo hai phương nào?",
+    "options": [
+      "I theo phương Z, K theo phương X",
+      "I theo phương X, K theo phương Z",
+      "I theo phương Y, K theo phương Z",
+      "I và K đều theo phương X"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Trên mặt phẳng tiện XZ, I là độ lệch tâm theo X và K là độ lệch tâm theo Z.",
+    "order_index": 13,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q15",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh nào được sử dụng để xóa chức năng bù trừ bán kính dao?",
+    "options": [
+      "G40",
+      "G41",
+      "G42",
+      "G70"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G40 hủy chức năng bù bán kính dao.",
+    "order_index": 14,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q16",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Để kích hoạt chế độ bù trừ bán kính dao bên phải, ta dùng mã lệnh nào?",
+    "options": [
+      "G40",
+      "G41",
+      "G42",
+      "G73"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G42 kích hoạt bù bán kính dao bên phải quỹ đạo lập trình.",
+    "order_index": 15,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q17",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G73 trong lập trình tiện CNC có công dụng là gì?",
+    "options": [
+      "Chu trình tiện tinh dọc trục",
+      "Chu trình tiện thô dọc trục",
+      "Chu trình tiện rãnh",
+      "Lệnh chạy dao nhanh"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Theo cấu trúc chu trình trong tài liệu, G73 là chu trình tiện thô dọc trục.",
+    "order_index": 16,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q18",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong cấu trúc chu trình G73 P... Q... U2... W...;, tham số U2 và W lần lượt là:",
+    "options": [
+      "Tọa độ điểm bắt đầu và kết thúc",
+      "Chiều sâu cắt thô và khoảng cách rút dao",
+      "Lượng dư gia công tinh theo phương X và phương Z",
+      "Bước tiến dao thô và bước tiến dao tinh"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "U2 và W là lượng dư để lại cho gia công tinh theo phương X và Z.",
+    "order_index": 17,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q19",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh được dùng để thực hiện chu trình tiện tinh dọc trục là:",
+    "options": [
+      "G01",
+      "G71",
+      "G72",
+      "G73"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Theo hệ chu trình trong tài liệu, G72 thực hiện chu trình tiện tinh dọc trục.",
+    "order_index": 18,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-2-basic-q20",
+    "quiz_key": "lesson-2-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong các lệnh chu trình gia công (G73, G72), tham số P và Q có ý nghĩa gì?",
+    "options": [
+      "P là tốc độ trục chính, Q là lượng chạy dao",
+      "P là số thứ tự câu lệnh bắt đầu, Q là số thứ tự câu lệnh kết thúc biên dạng",
+      "P là bán kính dao, Q là lượng dư gia công",
+      "P là chiều sâu cắt, Q là khoảng cách lùi dao"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "P và Q xác định số thứ tự block bắt đầu và kết thúc của biên dạng gia công.",
+    "order_index": 19,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]
