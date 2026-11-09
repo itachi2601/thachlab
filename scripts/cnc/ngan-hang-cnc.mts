@@ -67,7 +67,7 @@ if (cmd === "xuat") {
     fs.writeFileSync(bak, JSON.stringify(old, null, 2));
     console.log("Sao lưu:", bak);
   }
-  const row = { cnc_key: bank.cnc_key, title: bank.title, duration_minutes: bank.duration_minutes ?? 30, topic: "CNC", difficulty: "", published: false, questions: bank.questions, question_count: bank.questions.length };
+  const row = { cnc_key: bank.cnc_key, title: bank.title, duration_minutes: bank.duration_minutes ?? 30, topic: "CNC", difficulty: "", published: false, questions: bank.questions };
   const { data, error } = await db.from("exams").upsert(row, { onConflict: "cnc_key" }).select("id, cnc_key, question_count");
   if (error) fail(error.message);
   console.log("Đã ghi:", data);
