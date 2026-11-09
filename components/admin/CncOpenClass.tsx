@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import CreateCourseForm from "@/components/dashboard/CreateCourseForm";
 import { fetchCncCourses, type CourseOffering } from "@/services/course-enrollments";
@@ -10,16 +10,15 @@ export default function CncOpenClass() {
   const [courses, setCourses] = useState<CourseOffering[] | null>(null);
   const [error, setError] = useState("");
 
-  const load = useCallback(async () => {
-    try {
-      setCourses(await fetchCncCourses("cnc"));
-      setError("");
-    } catch (e) {
-      setError(e instanceof Error ? e.message : "Chưa tải được danh sách lớp.");
-    }
-  }, []);
+  const [reload, setReload] = useState(0);
 
-  useEffect(() => { void load(); }, [load]);
+  useEffect(() => {
+    let alive = true;
+    fetchCncCourses("cnc")
+      .then((rows) => { if (alive) { setCourses(rows); setError(""); } })
+      .catch((e) => { if (alive) setError(e instanceof Error ? e.message : "Chưa tải được danh sách lớp."); });
+    return () => { alive = false; };
+  }, [reload]);
 
   return (
     <div className="admin-stack" style={{ gap: 24 }}>
@@ -30,7 +29,7 @@ export default function CncOpenClass() {
       </header>
 
       <section>
-        <CreateCourseForm subjectCode="cnc" defaultOpen onCreated={() => void load()} />
+        <CreateCourseForm subjectCode="cnc" defaultOpen onCreated={() => setReload((n) => n + 1)} />
       </section>
 
       <section>
