@@ -1,0 +1,68 @@
+{
+  "id": 1314,
+  "cnc_key": "prep-4",
+  "title": "Chuẩn bị buổi 4 — Lập trình phay (1)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "M, gốc máy",
+        "R, điểm tham chiếu",
+        "T/N, điểm chuẩn dao",
+        "W, gốc phôi"
+      ],
+      "question": "Tháo phôi ra, gá lại ở chỗ khác trên ê-tô. Điểm chuẩn nào phải xác lập lại?",
+      "explanation": "Mục 1: M, R, T/N cố định theo máy; W đổi theo cách gá và chương trình nên gá chỗ khác thì phải xác lập lại W."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "P",
+        "T/N",
+        "R",
+        "M"
+      ],
+      "question": "Điểm nào là đỉnh mũi dao cắt gọt và thay đổi khi đổi dụng cụ?",
+      "explanation": "Mục 1: P (Cutter point) gắn với từng dụng cụ. T/N là điểm chuẩn dao, không đổi khi thay dao."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Tốc độ chạy dao",
+        "Số dao cần chọn",
+        "Tốc độ trục chính",
+        "Chức năng phụ"
+      ],
+      "question": "Trong khối lệnh phay N_ G_ X_ Y_ Z_ M_ S_ F_ T_ ; địa chỉ S cho máy biết điều gì?",
+      "explanation": "Mục 2: S tốc độ trục chính, F tốc độ chạy dao, T chọn dao, M chức năng phụ."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "X50",
+        "X30",
+        "X-10",
+        "X10"
+      ],
+      "question": "Dao đang ở X20 Y0 (tọa độ so với W). Chạy khối G91 G01 X30 F150; dao dừng ở X bao nhiêu so với W?",
+      "explanation": "Mục 2: G91 là lượng dịch chuyển so với điểm trước, nên dao đi thêm 30 mm: 20 + 30 = 50. X30 là cách đọc của G90."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Chạy nhanh tới X15 Y10, không cắt",
+        "Tọa độ X15 Y10 tính tương đối so với điểm trước",
+        "Cắt thẳng tới điểm X15 Y10",
+        "Chọn dao số 1"
+      ],
+      "question": "Trong khối N50 G01 X15 Y10 F120; phần G01 cho máy biết điều gì?",
+      "explanation": "Mục 2 (Xem thêm: đọc một khối lệnh): N50 số khối · G01 cắt thẳng · tới X15 Y10 · tốc độ chạy dao 120 · ; hết khối. Tương đối là G91, chọn dao là T."
+    }
+  ]
+}
