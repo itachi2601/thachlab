@@ -61,7 +61,7 @@ def peak_marks(d, cx, upto, a=1.0):
     while k * PER / 2 <= upto + 1e-6:
         th = theta(k * PER / 2, False)
         x, y = cx + (LR + 30) * math.sin(th), PY + (LR + 30) * math.cos(th)
-        dot(d, x, y, 9, A(BLUE, a))
+        if upto - k * PER / 2 > 0.3: dot(d, x, y, 6, A(BLUE, a))   # bo cham trung vi tri du hien tai
         k += 1
 
 def push_arrows(d, cx, t, sx_, sy_, a=1.0):
@@ -123,7 +123,7 @@ def s_hook(img, d, t, sc):
     y0 = 900 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, y0 + 60, "DỰ ĐOÁN", 40, WHITE, PURPLE, a)
-    ctext(d, y0 + 180, "Nhún cùng chiều, lúc đi xuống.", 42, MUTED, maxw=930, alpha=a)
+    ctext(d, y0 + 180, "Nhún cùng chiều chuyển động.", 42, MUTED, maxw=930, alpha=a)
     ctext(d, y0 + 350, "Sau 3 nhịp, đu lần hai\ncao cỡ nào?", 52, INK, maxw=930, alpha=a)
     tc, tend = M[1] + 0.6, sc["T"] - 0.3
     if t > tc:
@@ -186,7 +186,7 @@ def s_bay(img, d, t, sc):
     d.line([(cx, cy), P(th0)], fill=A(INK, kb * 0.6), width=4)
     d.line(up, fill=A(GRAY, kb), width=12)
     kt = appear(t, M[1] + 2.0, 0.4)
-    cg = GREEN if kt > 0 else GRAY
+    cg = ORANGE if kt > 0 else GRAY
     d.line(dn, fill=A(cg, kb), width=22 if kt > 0 else 12)
     for i0, i1 in ((6, 18), (22, 34)):
         a0, a1 = th0 * (1 - i0 / 40), th0 * (1 - i1 / 40)
@@ -195,32 +195,32 @@ def s_bay(img, d, t, sc):
         arrow(d, p0, p1, A(cg, kb), w=9, head=28)
     card(d, (P(th0)[0] - 40, P(th0)[1] - 8, P(th0)[0] + 40, P(th0)[1] + 8), fill=A((120, 80, 40), kb), r=6)
     if kt > 0:
-        x, y = P(th0 * 0.55); text(d, (x + 70, y + 40), "nhún ở đây", 44, GREEN, anchor="lm", alpha=kt)
+        x, y = P(th0 * 0.55); text(d, (x + 70, y + 40), "nhún ở đây", 44, ORANGE, anchor="lm", alpha=kt)
         x, y = P(-th0 * 0.55); text(d, (x - 30, y + 40), "không nhún", 44, MUTED, anchor="rm", alpha=kt)
     kc = appear(t, M[1] + 2.4, 0.5)
     if kc > 0:
         card(d, (60, 1210, 1020, 1380), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=24, w=4)
-        text(d, (W / 2, 1295), "✓ Chỉ nhún lúc đu đi xuống", 48, (21, 110, 55), alpha=kc)
+        text(d, (W / 2, 1295), "✓ Chỉ nhún khi đi xuống", 48, (21, 110, 55), alpha=kc)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
     tag(d)
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 290, 1020, 510), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    ctext(d, 400, "Nhún đúng lúc\ngiữ được độ cao", 48, GREEN, maxw=900, alpha=k0)
+    ctext(d, 400, "Nhún đúng lúc\ngiữ độ cao", 48, GREEN, maxw=900, alpha=k0)
     k1 = appear(t, M[0] + 0.1, 0.5)
     if k1 <= 0: return
-    card(d, (40, 570, 1040, 1520), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    card(d, (40, 570, 1040, 1180), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(38)) + 52
     card(d, (W / 2 - pw / 2, 600, W / 2 + pw / 2, 664), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 632), "THỬ NGHĨ", 38, WHITE, alpha=k1)
-    ctext(d, 840, "Thả từ 30 cm, ngồi yên.\nSau 3 nhịp còn khoảng bao nhiêu?",
+    ctext(d, 790, "Thả từ 30 cm, ngồi yên.\nSau 3 nhịp còn khoảng bao nhiêu?",
           48, INK, maxw=930, alpha=appear(t, M[0] + 0.4, 0.5))
     kh = appear(t, M[0] + 0.4 + 2.5, 0.5)
     if kh > 0:
-        card(d, (110, 1230, 970, 1430), fill=A((255, 247, 237), kh), r=24)
-        text(d, (W / 2, 1280), "Gợi ý", 40, INK, alpha=kh)
-        text(d, (W / 2, 1365), "Xem lại cột xanh", 44, ORANGE, alpha=kh)
+        card(d, (110, 940, 970, 1140), fill=A((255, 247, 237), kh), r=24)
+        text(d, (W / 2, 990), "Gợi ý", 40, INK, alpha=kh)
+        text(d, (W / 2, 1075), "Mỗi nhịp giảm cùng một tỉ lệ", 44, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
