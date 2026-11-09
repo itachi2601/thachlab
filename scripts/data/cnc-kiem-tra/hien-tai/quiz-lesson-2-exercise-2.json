@@ -1,0 +1,382 @@
+[
+  {
+    "id": "turn-block-q1",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G00 X50 Z2",
+    "options": [
+      "Phay đường thẳng có cắt gọt đến X50 Z2",
+      "Chạy dao nhanh (không cắt gọt) đến vị trí X50 Z2",
+      "Nội suy cung tròn đến X50 Z2",
+      "Tiện ren đến X50 Z2"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G00 là chuyển động định vị nhanh, không cắt gọt.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q2",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 X30 Z-40 F0.2",
+    "options": [
+      "Tiện thẳng (nội suy tuyến tính) đến X30 Z-40, lượng chạy dao 0.2mm/vòng",
+      "Chạy dao nhanh đến X30 Z-40",
+      "Nội suy cung tròn đến X30 Z-40, F0.2",
+      "Tiện ren bước 0.2mm đến X30 Z-40"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 nội suy tuyến tính đến X30 Z-40 với lượng chạy dao F0.2.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q3",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G02 X40 Z-20 R10",
+    "options": [
+      "Nội suy cung tròn ngược chiều kim đồng hồ đến X40 Z-20, bán kính 10",
+      "Nội suy cung tròn thuận chiều kim đồng hồ đến X40 Z-20, bán kính 10",
+      "Tiện côn thẳng đến X40 Z-20, R10",
+      "Tiện rãnh tại X40 Z-20, sâu R10"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G02 nội suy cung tròn thuận chiều kim đồng hồ, R10 là bán kính.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q4",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G54 G90 G00 X100 Z100",
+    "options": [
+      "Gọi gốc tọa độ máy, hệ tương đối, chạy nhanh về X100 Z100",
+      "Gọi gốc tọa độ phôi G54, hệ tọa độ tuyệt đối, chạy nhanh về X100 Z100",
+      "Gọi bù dao T01, chạy nhanh về X100 Z100",
+      "Gọi gốc tọa độ phôi G55, hệ tương đối, về X100 Z100"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G54 chọn gốc phôi, G90 chọn tọa độ tuyệt đối và G00 chạy nhanh.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q5",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "T0101",
+    "options": [
+      "Gọi dao số 01 và bù dao (offset) số 01",
+      "Gọi chương trình con số 01",
+      "Gọi gốc tọa độ phôi số 01",
+      "Gọi tốc độ trục chính số 01"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Hai cặp số lần lượt chỉ số dao và số hiệu offset.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q6",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G96 S150 M03",
+    "options": [
+      "Tốc độ trục chính không đổi vòng/phút S150, quay ngược chiều kim đồng hồ",
+      "Tốc độ cắt không đổi (Constant Surface Speed) 150 m/phút, trục chính quay thuận chiều kim đồng hồ",
+      "Tốc độ chạy dao không đổi F150, trục chính dừng",
+      "Giới hạn tốc độ trục chính tối đa 150 vòng/phút"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G96 chọn tốc độ cắt không đổi, S150 đặt 150 m/phút và M03 quay thuận.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q7",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G97 S1000 M03",
+    "options": [
+      "Tốc độ trục chính không đổi 1000 vòng/phút (constant RPM), quay thuận chiều kim đồng hồ",
+      "Tốc độ cắt không đổi 1000 m/phút, quay ngược chiều kim đồng hồ",
+      "Giới hạn tốc độ cắt tối đa 1000 m/phút",
+      "Chạy dao nhanh với tốc độ trục chính 1000"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G97 chọn tốc độ vòng quay không đổi, S1000 và M03 quay thuận.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q8",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G71 U2 R1",
+    "options": [
+      "Chu trình tiện tinh, chiều sâu cắt 2mm, lượng lùi dao 1mm",
+      "Chu trình tiện thô dọc trục (Rough Turning Cycle), chiều sâu cắt mỗi lát U2 (2mm/bán kính), lượng lùi dao R1",
+      "Chu trình tiện rãnh, chiều sâu 2mm, bán kính đáy rãnh 1mm",
+      "Chu trình tiện ren, bước ren 2mm, số lần cắt 1"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G71 là chu trình tiện thô dọc trục; U và R đặt chiều sâu cắt và lượng lùi.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q9",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G70 P10 Q20",
+    "options": [
+      "Chu trình tiện thô từ khối lệnh N10 đến N20",
+      "Chu trình tiện tinh (Finishing Cycle), thực hiện lại biên dạng từ khối lệnh N10 đến N20",
+      "Chu trình khoan lỗ từ N10 đến N20",
+      "Chu trình tiện ren từ N10 đến N20"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G70 tiện tinh lại biên dạng được xác định từ block P đến Q.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q10",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G28 U0 W0",
+    "options": [
+      "Về gốc tọa độ phôi G54 theo X, Z",
+      "Về điểm tham chiếu máy (Machine Zero Point) theo cả hai trục X (U0), Z (W0)",
+      "Chạy dao nhanh đến X0 Z0 theo hệ tuyệt đối",
+      "Tiện côn về vị trí gốc máy"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G28 đưa các trục X và Z về điểm tham chiếu máy.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q11",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 X-2 F0.1",
+    "options": [
+      "Tiện mặt đầu (Facing) vào tâm phôi đến đường kính X-2, F0.1",
+      "Chạy dao nhanh vào tâm phôi",
+      "Tiện ren vào tâm phôi",
+      "Tiện rãnh cắt đứt tại X-2"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 chạy dao theo X vào qua tâm để tiện mặt đầu với F0.1.",
+    "order_index": 10,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q12",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "M08 / M09",
+    "options": [
+      "Bật/tắt trục chính (Spindle)",
+      "Bật (M08) và tắt (M09) dung dịch làm mát (Coolant)",
+      "Bật/tắt chế độ Single Block",
+      "Bật/tắt bù bán kính mũi dao"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M08 bật và M09 tắt dung dịch làm mát.",
+    "order_index": 11,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q13",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G96 G50 S2000",
+    "options": [
+      "Tốc độ cắt không đổi, giới hạn tốc độ trục chính tối đa (Max Spindle Speed) 2000 vòng/phút",
+      "Đặt gốc tọa độ phôi tại S2000",
+      "Tốc độ trục chính không đổi 2000 vòng/phút, không giới hạn",
+      "Tiện ren với bước 2000"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G96 dùng tốc độ cắt không đổi và G50 S2000 giới hạn tốc độ trục chính.",
+    "order_index": 12,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q14",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G32 X30 Z-40 F2.0",
+    "options": [
+      "Tiện thẳng thông thường đến X30 Z-40",
+      "Tiện ren (Thread Cutting) đơn giản đến X30 Z-40, bước ren F2.0",
+      "Chạy dao nhanh đến X30 Z-40",
+      "Chu trình tiện thô đến X30 Z-40"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G32 cắt ren đến tọa độ đích, F2.0 là bước ren.",
+    "order_index": 13,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q15",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G04 X2.0",
+    "options": [
+      "Di chuyển dao nhanh đến X2.0",
+      "Dừng dao tạm thời (Dwell) trong 2 giây",
+      "Tiện rãnh sâu 2.0mm",
+      "Dừng chương trình 2 phút"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G04 là lệnh dừng tạm thời; X2.0 quy định thời gian 2 giây.",
+    "order_index": 14,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q16",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 X50 Z-30 F0.15",
+    "options": [
+      "Tiện côn (taper) đồng thời hai trục X, Z đến điểm (50, -30), F0.15",
+      "Chỉ tiện theo Z, bỏ qua X",
+      "Chỉ tiện theo X, bỏ qua Z",
+      "Nội suy cung tròn đến (50, -30)"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 nội suy đồng thời X và Z tạo đường côn đến điểm đích.",
+    "order_index": 15,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q17",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G40 G01 X30",
+    "options": [
+      "Kích hoạt bù bán kính mũi dao bên trái (G41)",
+      "Hủy bù bán kính mũi dao (Tool Nose Radius Compensation Cancel), tiện thẳng đến X30",
+      "Kích hoạt bù bán kính mũi dao bên phải (G42)",
+      "Hủy bù chiều dài dao, tiện thẳng đến X30"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G40 hủy bù bán kính mũi dao, G01 tiếp tục tiện thẳng đến X30.",
+    "order_index": 16,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q18",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "M00 / M01",
+    "options": [
+      "Kết thúc chương trình và quay về đầu (M30)",
+      "Dừng trục chính và tắt coolant",
+      "Dừng chương trình bắt buộc (M00) hoặc dừng tùy chọn (M01 - Optional Stop)",
+      "Gọi chương trình con M00/M01"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M00 là dừng bắt buộc; M01 dừng khi Optional Stop được bật.",
+    "order_index": 17,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q19",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G92 X40 Z-30 F2.0",
+    "options": [
+      "Chu trình tiện ren đơn giản (Simple Threading Cycle) đến X40 Z-30, bước ren F2.0",
+      "Thiết lập gốc tọa độ phôi tại X40 Z-30",
+      "Chu trình tiện thô đến X40 Z-30",
+      "Về điểm tham chiếu máy tại X40 Z-30"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Trong ngữ cảnh tiện Fanuc của đề, G92 là chu trình tiện ren đơn giản với bước F2.0.",
+    "order_index": 18,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-block-q20",
+    "quiz_key": "lesson-2-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G50 X100 Z150",
+    "options": [
+      "Chạy dao nhanh đến X100 Z150",
+      "Thiết lập/gán giá trị tọa độ hiện tại của dao là X100 Z150 (Coordinate System Setting)",
+      "Giới hạn tốc độ trục chính tại X100 Z150",
+      "Về điểm tham chiếu máy tại X100 Z150"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G50 với địa chỉ X/Z gán tọa độ hiện tại cho hệ tọa độ.",
+    "order_index": 19,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

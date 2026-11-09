@@ -1,0 +1,382 @@
+[
+  {
+    "id": "mill-translate-q1",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 X20 Y10 F150",
+    "options": [
+      "Phay đường thẳng (nội suy tuyến tính) đến X20 Y10, tốc độ chạy dao F150",
+      "Nội suy cung tròn đến X20 Y10, F150",
+      "Chạy dao nhanh (không cắt gọt) đến X20 Y10",
+      "Bù chiều dài dao đến X20 Y10"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 là nội suy tuyến tính có cắt gọt; X, Y là tọa độ đích và F150 là tốc độ chạy dao.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q2",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G00 X0 Y0 Z50",
+    "options": [
+      "Phay thẳng có cắt gọt đến X0 Y0 Z50",
+      "Di chuyển nhanh (không cắt gọt) dao đến vị trí X0 Y0 Z50",
+      "Nội suy cung tròn đến X0 Y0 Z50",
+      "Dừng chương trình tại X0 Y0 Z50"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G00 dùng để định vị nhanh, không thực hiện chuyển động cắt gọt.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q3",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G03 X40 Y40 R20 F180",
+    "options": [
+      "Nội suy cung tròn thuận chiều kim đồng hồ đến X40 Y40, R20",
+      "Phay đường thẳng đến X40 Y40, R20",
+      "Nội suy cung tròn ngược chiều kim đồng hồ đến X40 Y40, bán kính 20, F180",
+      "Chạy dao nhanh đến X40 Y40, bán kính 20"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G03 là nội suy cung tròn ngược chiều kim đồng hồ; R20 là bán kính và F180 là tốc độ chạy dao.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q4",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G54 G90 G00 X0 Y0",
+    "options": [
+      "Gọi gốc tọa độ máy, hệ tọa độ tương đối, chạy nhanh về X0 Y0",
+      "Gọi gốc tọa độ phôi G54, hệ tọa độ tuyệt đối, chạy nhanh về gốc X0 Y0",
+      "Gọi bù chiều dài dao H01, chạy nhanh về X0 Y0",
+      "Gọi gốc tọa độ phôi G55, hệ tọa độ tương đối, về X0 Y0"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G54 chọn gốc phôi, G90 chọn tọa độ tuyệt đối và G00 định vị nhanh đến X0 Y0.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q5",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G43 H01 Z50",
+    "options": [
+      "Bù bán kính dao theo H01, di chuyển đến Z50",
+      "Hủy bù chiều dài dao, di chuyển đến Z50",
+      "Bù chiều dài dao theo số hiệu H01, di chuyển dao lên Z50",
+      "Gọi gốc tọa độ phôi H01, lên Z50"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G43 kích hoạt bù chiều dài dao dương, H01 chọn ô hiệu chỉnh chiều dài số 01 và Z50 là vị trí đích.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q6",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G91 G01 X10",
+    "options": [
+      "Chuyển sang hệ tọa độ tuyệt đối, di chuyển đến X10",
+      "Chuyển sang hệ tọa độ tương đối (incremental), di chuyển thêm 10mm theo X",
+      "Chạy dao nhanh thêm 10mm theo X",
+      "Nội suy cung tròn thêm 10mm theo X"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G91 chọn tọa độ tương đối; G01 X10 làm dao nội suy thẳng thêm 10 mm theo chiều dương X.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q7",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "M03 S1000",
+    "options": [
+      "Trục chính quay ngược chiều kim đồng hồ, tốc độ 1000mm/phút",
+      "Bật dung dịch làm mát, tốc độ 1000 vòng/phút",
+      "Trục chính quay thuận chiều kim đồng hồ, tốc độ 1000 vòng/phút",
+      "Dừng trục chính ở tốc độ 1000 vòng/phút"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M03 khởi động trục chính theo chiều kim đồng hồ; S1000 đặt tốc độ 1000 vòng/phút.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q8",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G00 G90 X30 Y30 Z5",
+    "options": [
+      "Chạy dao cắt gọt (feed) đến X30 Y30 Z5",
+      "Chạy dao nhanh, tuyệt đối, đến vị trí X30 Y30 Z5",
+      "Nội suy cung tròn đến X30 Y30 Z5",
+      "Chạy dao nhanh, tương đối, đến X30 Y30 Z5"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G00 là chạy nhanh và G90 xác định X30 Y30 Z5 theo hệ tọa độ tuyệt đối.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q9",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G02 X60 Y0 I20 J0",
+    "options": [
+      "Nội suy cung tròn dùng bán kính R, không dùng tâm I J",
+      "Phay đường thẳng đến X60 Y0, bỏ qua I J",
+      "Nội suy cung tròn thuận chiều kim đồng hồ đến X60 Y0, tâm cung cách điểm đầu (I20, J0)",
+      "Nội suy cung tròn ngược chiều kim đồng hồ đến X60 Y0, tâm (I20, J0)"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G02 nội suy cung tròn theo chiều kim đồng hồ; I và J mô tả độ lệch tâm cung so với điểm bắt đầu.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q10",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G28 G91 Z0",
+    "options": [
+      "Về gốc phôi G54 theo trục Z",
+      "Về điểm tham chiếu máy (Machine Zero Point) theo trục Z, hệ tương đối",
+      "Bù chiều dài dao theo trục Z",
+      "Chạy dao nhanh tuyệt đối theo trục Z về 0"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G28 đưa trục về điểm tham chiếu máy; G91 Z0 khai báo điểm trung gian theo hệ tương đối cho trục Z.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q11",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 Z-5 F80",
+    "options": [
+      "Chạy dao nhanh lên Z-5",
+      "Nội suy cung tròn xuống Z-5",
+      "Phay ăn dao xuống theo trục Z, sâu -5mm, F80",
+      "Dừng dao tạm thời tại Z-5"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 tạo chuyển động ăn dao tuyến tính đến Z-5 với tốc độ chạy dao F80.",
+    "order_index": 10,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q12",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "M08 / M09",
+    "options": [
+      "Bật/tắt trục chính (Spindle)",
+      "Bật (M08) và tắt (M09) dung dịch làm mát (Coolant)",
+      "Bật/tắt đèn báo máy",
+      "Bật/tắt chế độ Single Block"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M08 bật và M09 tắt hệ thống dung dịch làm mát.",
+    "order_index": 11,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q13",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G17 G02 X20 Y0 R10",
+    "options": [
+      "Chọn mặt phẳng nội suy XZ, cung tròn ngược chiều kim đồng hồ",
+      "Chọn mặt phẳng nội suy YZ, cung tròn thuận chiều kim đồng hồ",
+      "Chọn mặt phẳng nội suy XY, cung tròn thuận chiều kim đồng hồ đến X20 Y0, R10",
+      "Chọn mặt phẳng nội suy XY, phay đường thẳng đến X20 Y0"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G17 chọn mặt phẳng XY; G02 nội suy cung tròn theo chiều kim đồng hồ đến X20 Y0 với bán kính R10.",
+    "order_index": 12,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q14",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G20 / G21",
+    "options": [
+      "Chọn hệ tọa độ tuyệt đối (G20) hoặc tương đối (G21)",
+      "Chọn đơn vị đo Inch (G20) hoặc Milimet (G21)",
+      "Chọn mặt phẳng nội suy XY (G20) hoặc XZ (G21)",
+      "Bật (G20) hoặc tắt (G21) bù bán kính dao"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G20 thiết lập đơn vị inch, còn G21 thiết lập đơn vị milimét.",
+    "order_index": 13,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q15",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "T01 M06",
+    "options": [
+      "Gọi Work Offset số 01",
+      "Gọi bù chiều dài dao số 01",
+      "Gọi dao số 01 và thực hiện lệnh thay dao (Tool Change)",
+      "Gọi chương trình con số 01"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "T01 chọn dao số 01 và M06 thực hiện chu trình thay dao.",
+    "order_index": 14,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q16",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G04 X2.0",
+    "options": [
+      "Di chuyển dao nhanh đến X2.0",
+      "Dừng dao tạm thời (Dwell) trong 2 giây",
+      "Phay đường thẳng đến X2.0 trong 2 giây",
+      "Dừng chương trình 2 phút"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G04 là lệnh dừng tạm thời; trong cấu trúc của đề, X2.0 quy định thời gian dừng 2 giây.",
+    "order_index": 15,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q17",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G01 X50 Y50 Z-2 F100",
+    "options": [
+      "Chỉ di chuyển theo Z, bỏ qua X và Y",
+      "Nội suy cung tròn 3 trục đến (50, 50, -2)",
+      "Chạy dao nhanh 3 trục đến (50, 50, -2)",
+      "Phay nội suy thẳng đồng thời 3 trục X, Y, Z đến điểm (50, 50, -2), F100"
+    ],
+    "correct_index": 3,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 nội suy tuyến tính đồng thời các trục được khai báo đến X50 Y50 Z-2 với tốc độ F100.",
+    "order_index": 16,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q18",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G40 G01 X30",
+    "options": [
+      "Kích hoạt bù bán kính dao bên trái (G41)",
+      "Hủy bù bán kính dao (Cutter Compensation Cancel), phay thẳng đến X30",
+      "Kích hoạt bù bán kính dao bên phải (G42)",
+      "Hủy bù chiều dài dao, phay thẳng đến X30"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G40 hủy bù bán kính dao, sau đó G01 thực hiện chuyển động thẳng đến X30.",
+    "order_index": 17,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q19",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "M00 / M01",
+    "options": [
+      "Kết thúc chương trình và quay về đầu (M30)",
+      "Dừng trục chính và tắt coolant",
+      "Dừng chương trình bắt buộc (M00) hoặc dừng tùy chọn (M01 - Optional Stop)",
+      "Gọi chương trình con M00/M01"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M00 luôn dừng chương trình; M01 chỉ dừng khi chức năng Optional Stop được bật.",
+    "order_index": 18,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "mill-translate-q20",
+    "quiz_key": "lesson-3-exercise-2",
+    "question_type": "multiple_choice",
+    "question": "G92 X0 Y0 Z0 (thiết lập G54 tương đương)",
+    "options": [
+      "Về điểm tham chiếu máy (Machine Zero Point)",
+      "Thiết lập/gán giá trị tọa độ hiện tại của dao là gốc tọa độ phôi (Work Offset)",
+      "Hủy toàn bộ Work Offset đang dùng",
+      "Bù chiều dài dao về giá trị 0"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Trong ngữ cảnh câu hỏi, G92 gán tọa độ vị trí hiện tại thành X0 Y0 Z0 để thiết lập gốc làm việc.",
+    "order_index": 19,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

@@ -1,0 +1,192 @@
+[
+  {
+    "id": "cnc-gate-1",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Trước khi mở máy CNC, thao tác nào bắt buộc phải kiểm tra đầu tiên?",
+    "options": [
+      "Nguồn điện, khí nén, dầu bôi trơn và trạng thái nút dừng khẩn.",
+      "Tốc độ cắt trong chương trình NC.",
+      "Màu sắc của phôi sau gia công.",
+      "Tên file chương trình trên máy tính cá nhân."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Nguồn, khí nén, bôi trơn và nút dừng khẩn là các điều kiện an toàn nền tảng trước khi vận hành.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-2",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Khi vừa mở máy, vì sao phải đưa máy về chuẩn máy Reference point?",
+    "options": [
+      "Để bộ điều khiển xác lập đúng tọa độ gốc máy trước khi thao tác tiếp.",
+      "Để làm nóng phôi trước khi cắt.",
+      "Để tự động sửa mọi lỗi trong chương trình NC.",
+      "Để tăng tốc độ trục chính lên mức lớn nhất."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Reference point giúp máy biết vị trí chuẩn của các trục, tránh sai lệch tọa độ khi vận hành.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-3",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Khi gá phôi, yêu cầu nào là quan trọng nhất trước khi chạy thử?",
+    "options": [
+      "Phôi được kẹp chắc chắn, đúng vị trí và không cản trở hành trình dao.",
+      "Phôi được đặt càng xa mâm cặp càng tốt.",
+      "Phôi chưa cần siết chặt vì chỉ đang chạy mô phỏng.",
+      "Phôi phải chạm trực tiếp vào mọi dao trong ổ dao."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Phôi lỏng hoặc đặt sai vị trí có thể gây văng phôi, gãy dao hoặc va chạm máy.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-4",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Geometry Offset dùng để làm gì trong quá trình cài đặt dao?",
+    "options": [
+      "Khai báo vị trí/kích thước dao để máy tính đúng đường chạy dao.",
+      "Đổi màu hiển thị của chương trình NC.",
+      "Lưu tên sinh viên thực hành.",
+      "Tự động chọn vật liệu phôi."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Geometry Offset cho bộ điều khiển biết vị trí thực của mũi dao theo hệ tọa độ máy/phôi.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-5",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Work shift hoặc G54 thường được dùng để xác lập điều gì?",
+    "options": [
+      "Gốc tọa độ làm việc của phôi.",
+      "Mật khẩu đăng nhập máy.",
+      "Tốc độ quạt làm mát trong xưởng.",
+      "Số lượng sinh viên trong nhóm."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G54/Work shift xác định gốc tọa độ gia công trên phôi để chương trình chạy đúng vị trí.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-6",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Trước khi cắt thật, sinh viên bắt buộc phải thực hiện bước nào?",
+    "options": [
+      "Mô phỏng, chạy thử không tải hoặc Single Block để kiểm tra va chạm.",
+      "Bỏ qua mô phỏng nếu đã từng làm bài tương tự.",
+      "Tăng Feed Override lên 100% ngay từ đầu.",
+      "Tắt dung dịch làm mát và đứng sát vùng cắt."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Chạy thử giúp phát hiện sai tọa độ, sai dao, sai chiều chạy hoặc nguy cơ va chạm trước khi cắt thật.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-7",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Nếu trong lúc chạy thử thấy dao đi sai hướng hoặc có nguy cơ va chạm, cần làm gì?",
+    "options": [
+      "Dừng máy ngay bằng Stop/Emergency Stop theo tình huống và báo giảng viên.",
+      "Đứng quan sát thêm đến khi dao chạm phôi.",
+      "Tăng tốc độ chạy dao để chương trình kết thúc nhanh.",
+      "Tự ý tháo phôi khi trục chính còn quay."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Khi có nguy cơ mất an toàn, ưu tiên dừng máy và báo giảng viên, không cố tiếp tục chương trình.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-8",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Trong chế độ JOG/HANDLE, nguyên tắc thao tác an toàn là gì?",
+    "options": [
+      "Di chuyển từng bước có kiểm soát, quan sát khoảng cách dao-phôi-mâm cặp.",
+      "Giữ nút di chuyển liên tục mà không cần quan sát vùng máy.",
+      "Chỉ nhìn màn hình, không cần nhìn vị trí dao thật.",
+      "Cho phép nhiều người cùng bấm bảng điều khiển."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "JOG/HANDLE là thao tác tay, nên phải di chuyển chậm, có kiểm soát và luôn quan sát vùng gia công.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-9",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Khi tắt máy và kết thúc ca thực hành, việc nào thuộc quy trình bắt buộc?",
+    "options": [
+      "Tắt máy đúng trình tự, vệ sinh công nghiệp và thực hiện 5S.",
+      "Để phoi và dụng cụ lại cho nhóm sau tự xử lý.",
+      "Tắt nguồn chính khi trục chính vẫn đang quay.",
+      "Mang dao và đồ gá ra khỏi xưởng không cần báo giảng viên."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Kết thúc ca phải đưa máy về trạng thái an toàn, vệ sinh và sắp xếp đúng 5S.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "cnc-gate-10",
+    "quiz_key": "gate",
+    "question_type": "multiple_choice",
+    "question": "Điều kiện để được lên máy thực tập trong bài vận hành CNC là gì?",
+    "options": [
+      "Hoàn thành checklist và trả lời đúng toàn bộ 10 câu hỏi chốt chặn.",
+      "Chỉ cần xem tiêu đề video là đủ.",
+      "Chỉ cần có mặt trong xưởng đúng giờ.",
+      "Chỉ cần nộp file .NC, không cần kiểm tra an toàn."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Đây là bài kiểm tra chốt chặn an toàn, nên yêu cầu đúng 10/10 trước khi thực hành trực tiếp.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

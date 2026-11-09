@@ -1,0 +1,68 @@
+{
+  "id": 1315,
+  "cnc_key": "prep-5",
+  "title": "Chuẩn bị buổi 5 — Lập trình phay (2)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "G44",
+        "G41",
+        "G49",
+        "G43"
+      ],
+      "question": "Lệnh bù chiều dài dao theo hướng dương là:",
+      "explanation": "Mục 4: G43 bù chiều dài hướng dương, G44 hướng âm, G49 hủy. G41/G42 là bù bán kính, không phải chiều dài."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Vì máy chỉ nhận G41/G42 khi trục chính đang dừng",
+        "Ở khối gọi bù, tâm dao dời ra một bán kính; gọi ngay trên biên dạng dao có thể ăn lẹm vào chi tiết",
+        "Để rút ngắn thời gian chạy chương trình",
+        "Vì G41/G42 chỉ đi được với lệnh chạy nhanh G00"
+      ],
+      "question": "Vì sao phải gọi G41/G42 khi dao còn ở ngoài phôi?",
+      "explanation": "Mục 4 (Xem thêm): ở khối gọi bù tâm dao bị dời một bán kính, nên gọi khi dao còn ngoài phôi; hủy G40 trong khối đưa dao rời biên dạng."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Chi tiết nhỏ đi đúng bằng phần bán kính tăng thêm",
+        "Chi tiết to ra đúng bằng phần bán kính tăng thêm",
+        "Tâm dao lùi xa biên dạng hơn, mép chi tiết vẫn đúng bản vẽ",
+        "Máy báo lỗi, phải viết lại toàn bộ tọa độ"
+      ],
+      "question": "Chương trình biên dạng có G41 giữ nguyên, chỉ nhập bán kính dao LỚN HƠN vào ô bù rồi mô phỏng lại. Kết quả là:",
+      "explanation": "Mục 4 (Thử trên Win-NC32): chương trình tả chi tiết; máy tự dời tâm dao theo ô bù, nên đổi dao không phải sửa tọa độ."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "G83",
+        "G81",
+        "G80",
+        "G98"
+      ],
+      "question": "Lỗ sâu gấp nhiều lần đường kính, phoi dễ kẹt. Nên chọn chu trình khoan nào?",
+      "explanation": "Mục 5: G83 khoan lỗ sâu theo từng lát Q; G81 khoan hết chiều sâu một lần nên dễ kẹt phoi. G80 là hủy chu trình, G98 là chọn mặt rút dao."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "R: bán kính lỗ; Z: đáy lỗ",
+        "R: đáy lỗ; Z: mặt phẳng an toàn",
+        "R: số lần lặp; Z: chiều sâu mỗi lát",
+        "R: mặt phẳng an toàn phía trên mặt phôi; Z: đáy lỗ"
+      ],
+      "question": "Trong G81 X… Y… Z… R… F…, hai địa chỉ R và Z nghĩa là gì?",
+      "explanation": "Mục 5: R là mặt phẳng an toàn phía trên mặt phôi, Z là đáy lỗ. Trong chu trình khoan R không phải bán kính."
+    }
+  ]
+}
