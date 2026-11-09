@@ -445,6 +445,9 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 
 /* Danh sách bài (accordion) */
 .cnc-workspace { max-width: 1080px; margin: 0 auto; padding: 8px 24px 72px; }
+/* Trang bài CNC trong khuôn lesson-layout: lesson-main đã có lề, không cộng thêm lề ngang (375px còn 343px cho bài). */
+.lesson-layout .cnc-workspace { padding-inline: 0; }
+.cnc-lesson-crumb { margin: 4px 0 12px; }
 .cnc-accordion-workspace { display: block; }
 .cnc-course-outline { width: 100%; }
 .cnc-nav-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 0 0 14px; }
@@ -835,6 +838,8 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
   .cnc-learning-section > header > i, .cnc-learning-section > header > b { display: none; }
   .cnc-learning-card { align-items: flex-start; flex-wrap: wrap; padding: 14px; }
   .cnc-learning-card > b { margin-left: 54px; }
+  /* chữ mô tả chiếm cả dòng, nút Xem/Thu gọn xuống dòng dưới (không ép chữ 1 từ/dòng) */
+  .cnc-learning-card > div { flex: 1 1 calc(100% - 54px); }
   .cnc-section-body.cnc-content { padding: 14px; border-radius: 12px; }
   .cnc-ppt-viewer-info { align-items: flex-start; flex-direction: column; }
   .cnc-standard-test { align-items: flex-start; flex-wrap: wrap; }
