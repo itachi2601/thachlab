@@ -46,6 +46,11 @@ const pick = (source, keys) => {
   for (const key of keys) if (source[key] !== undefined && source[key] !== null && source[key] !== "") return source[key];
   return undefined;
 };
+// Bản sao của toLessonKey trong lib/shcn/tuan-json.ts.
+const toLessonKey = (value) => {
+  const m = String(value ?? "").trim().toLowerCase().match(/^hk([1-6])\s*[/\-_ ]\s*b?(\d{1,2})$/);
+  return m ? `hk${m[1]}/b${m[2].padStart(2, "0")}` : null;
+};
 const toInt = (value) => (Number.isFinite(Number(value)) ? Math.trunc(Number(value)) : null);
 const toDate = (value) => {
   if (typeof value !== "string" || !value.trim()) return null;
@@ -93,6 +98,7 @@ function parseTuan(raw) {
     announcements: toAnnouncements(pick(raw, ["noi_dung_pho_bien", "noi_dung", "noiDung", "pho_bien", "muc"])),
     ethics_topic: String(pick(raw, ["gdnn_chu_de", "chu_de", "gddd_chu_de", "chuDe"]) ?? "").trim(),
     ethics_taught: toStringList(pick(raw, ["gdnn_da_day", "da_day", "gddd_da_day", "trong_tam", "gdddNoiDung"])),
+    lesson_key: toLessonKey(pick(raw, ["bai_doc", "baiDoc", "lesson_key"])),
     headcount: toInt(pick(raw, ["si_so", "siso", "siSo", "tong_so"])),
     present_count: toInt(pick(raw, ["co_mat", "comat", "coMat", "hien_dien"])),
   };
@@ -137,10 +143,12 @@ for (const file of files) {
       ethics_taught: parsed.ethics_taught,
       headcount: parsed.headcount,
       present_count: parsed.present_count,
+      // Chỉ ghi khi JSON có bai_doc — nạp lại file cũ không xoá bài đọc đã chọn trên web.
+      ...(parsed.lesson_key ? { lesson_key: parsed.lesson_key } : {}),
       updated_at: new Date().toISOString(),
     };
     if (dryRun) {
-      console.log(`[thử] ${file} → khóa ${courseId}, tuần ${row.week_no}, ${row.announcements.length} mục, "${row.ethics_topic}"`);
+      console.log(`[thử] ${file} → khóa ${courseId}, tuần ${row.week_no}, ${row.announcements.length} mục, "${row.ethics_topic}"${row.lesson_key ? `, bài đọc ${row.lesson_key}` : ""}`);
       continue;
     }
     const { error } = await supabase.from("homeroom_weekly_sessions").upsert(row, { onConflict: "course_id,week_no" });

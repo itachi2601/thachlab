@@ -4251,3 +4251,27 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .cc-sticky .cc-dong-nut { min-height: 36px; padding: 4px 12px; font-size: 13.5px; }
 .cc-sticky:has(.cc-dong) .cc-fig { height: calc(42svh - 136px); }
 .cc-sticky:has(.cc-dong):has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 136px - var(--cc-tim, 40px)); } /* nút chạy chỉ có ở bước dùng nó: hình co lại để khối dính không cao thêm (B6, N8) */
+
+/* Bài đọc SHCN (/sinh-hoat/[hk]/[bai]) — bảng phiếu tự điền + đáp án gập (B8, C1). */
+.shcn-prose { font-size: 1.0625rem; }
+.shcn-prose .shcn-table-wrap { overflow-x: auto; margin: 1rem 0; }
+.shcn-prose table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.shcn-prose th,
+.shcn-prose td {
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+  color: var(--color-ink);
+}
+.shcn-prose th { background: rgba(59, 130, 246, 0.08); font-weight: 600; }
+.shcn-prose td:empty::after { content: "\00a0"; }
+.shcn-prose details {
+  margin: 1rem 0;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+}
+.shcn-prose summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 44px; display: flex; align-items: center; }
+.shcn-prose ol li { margin: 0.5rem 0; }
+.shcn-prose h2 { font-size: 1.2rem; margin: 1.8rem 0 0.6rem; }

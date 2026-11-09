@@ -12,6 +12,8 @@ export interface ParsedTuan {
   announcements: { tieu_de: string; ghi_chu?: string }[];
   ethicsTopic: string;
   ethicsTaught: string[];
+  /** "hk1/b03" — bài đọc SHCN của tuần; null nếu JSON không có. */
+  lessonKey: string | null;
   headcount: number | null;
   presentCount: number | null;
 }
@@ -83,7 +85,14 @@ export function parseTuanJson(raw: unknown): ParsedTuan {
     announcements: toAnnouncements(pick(source, ["noi_dung_pho_bien", "noi_dung", "noiDung", "pho_bien", "muc"])),
     ethicsTopic: String(pick(source, ["gdnn_chu_de", "chu_de", "gddd_chu_de", "chuDe"]) ?? "").trim(),
     ethicsTaught: toStringList(pick(source, ["gdnn_da_day", "da_day", "gddd_da_day", "trong_tam", "gdddNoiDung"])),
+    lessonKey: toLessonKey(pick(source, ["bai_doc", "baiDoc", "lesson_key"])),
     headcount: toInt(pick(source, ["si_so", "siso", "siSo", "tong_so"])),
     presentCount: toInt(pick(source, ["co_mat", "comat", "coMat", "hien_dien"])),
   };
+}
+
+/** "hk1/b03", "HK1/B3", "hk1-b03" → "hk1/b03"; sai dạng → null. */
+export function toLessonKey(value: unknown): string | null {
+  const m = String(value ?? "").trim().toLowerCase().match(/^hk([1-6])\s*[/\-_ ]\s*b?(\d{1,2})$/);
+  return m ? `hk${m[1]}/b${m[2].padStart(2, "0")}` : null;
 }
