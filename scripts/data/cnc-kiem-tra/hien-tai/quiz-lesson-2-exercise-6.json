@@ -1,0 +1,205 @@
+[
+  {
+    "id": "turn-short-q1",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G00 X80 Z5",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G00",
+      "chạy dao nhanh",
+      "không cắt gọt",
+      "X80",
+      "Z5"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G00 định vị nhanh không cắt gọt đến X80 Z5.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q2",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G01 X45 Z-60 F0.15",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G01",
+      "tiện thẳng",
+      "nội suy tuyến tính",
+      "X45",
+      "Z-60",
+      "F0.15"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G01 nội suy tuyến tính đến X45 Z-60, lượng chạy dao F0.15 mm/vòng.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q3",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G03 X35 Z-15 R8",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G03",
+      "nội suy cung tròn",
+      "ngược chiều kim đồng hồ",
+      "X35",
+      "Z-15",
+      "R8"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G03 nội suy cung tròn ngược chiều kim đồng hồ, bán kính R8.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q4",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G96 S180 M04",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G96",
+      "tốc độ cắt không đổi",
+      "180",
+      "M04",
+      "ngược chiều kim đồng hồ"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G96 chọn tốc độ cắt không đổi 180 m/phút; M04 quay trục chính ngược chiều kim đồng hồ.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q5",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "T0303",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "dao số 03",
+      "offset số 03",
+      "gọi dao"
+    ],
+    "min_keyword_matches": 2,
+    "explanation": "T0303 gọi dao số 03 cùng bù dao (offset) số 03.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q6",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G71 U1.5 R0.5",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G71",
+      "tiện thô dọc trục",
+      "chiều sâu cắt",
+      "1.5",
+      "lùi dao",
+      "0.5"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G71 chu trình tiện thô dọc trục, chiều sâu cắt mỗi lát 1.5mm, lượng lùi dao 0.5mm.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q7",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G70 P20 Q40",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G70",
+      "tiện tinh",
+      "N20",
+      "N40",
+      "biên dạng"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G70 tiện tinh lại biên dạng từ khối lệnh N20 đến N40.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q8",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G28 U0 W0",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G28",
+      "điểm tham chiếu máy",
+      "chuẩn máy",
+      "X",
+      "Z"
+    ],
+    "min_keyword_matches": 3,
+    "explanation": "G28 đưa trục X (U0) và Z (W0) về điểm tham chiếu máy.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q9",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "G32 X25 Z-50 F1.5",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "G32",
+      "tiện ren",
+      "bước ren",
+      "1.5",
+      "X25",
+      "Z-50"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "G32 tiện ren đến X25 Z-50 với bước ren F1.5.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "turn-short-q10",
+    "quiz_key": "lesson-2-exercise-6",
+    "question_type": "short_answer",
+    "question": "M03 S900 M08",
+    "options": null,
+    "correct_index": null,
+    "keywords": [
+      "M03",
+      "quay thuận chiều kim đồng hồ",
+      "900",
+      "M08",
+      "dung dịch làm mát",
+      "bật"
+    ],
+    "min_keyword_matches": 4,
+    "explanation": "M03 quay trục chính thuận chiều kim đồng hồ 900 vòng/phút; M08 bật dung dịch làm mát.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

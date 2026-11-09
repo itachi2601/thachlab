@@ -1,0 +1,382 @@
+[
+  {
+    "id": "lesson-3-q1",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Tên chương trình phay CNC tiêu chuẩn trên hệ điều hành Fanuc 21M bắt đầu bằng ký tự nào?",
+    "options": [
+      "Bắt đầu bằng chữ N và theo sau là 4 chữ số.",
+      "Bắt đầu bằng chữ G và theo sau là 3 chữ số.",
+      "Bắt đầu bằng chữ O và theo sau là 4 chữ số.",
+      "Bắt đầu bằng chữ M và theo sau là 2 chữ số."
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Tên chương trình gồm chữ O và bốn chữ số, ví dụ: O1601.",
+    "order_index": 0,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q2",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Nguyên công phay CNC cơ bản thường được tiến hành trên mặt phẳng nào và mã lệnh nào dùng để lựa chọn mặt phẳng đó?",
+    "options": [
+      "Mặt phẳng XY (XOY); sử dụng lệnh G17.",
+      "Mặt phẳng ZX (XOZ); sử dụng lệnh G18.",
+      "Mặt phẳng YZ (YOZ); sử dụng lệnh G19.",
+      "Mặt phẳng tự do; sử dụng lệnh G54."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G17 chọn mặt phẳng làm việc XY (mặt phẳng XOY) sử dụng cho máy phay.",
+    "order_index": 1,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q3",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong chương trình phay CNC, đơn vị tốc độ tiến dao (Feedrate) thường được lập trình bằng đơn vị nào và mã lệnh nào dùng để thiết lập đơn vị đó?",
+    "options": [
+      "mm/vòng; sử dụng lệnh G95.",
+      "mm/phút; sử dụng lệnh G94.",
+      "inch/vòng; sử dụng lệnh G97.",
+      "m/phút; sử dụng lệnh G96."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G94 thiết lập lượng chạy dao theo đơn vị mm/phút, đặc trưng trong gia công phay.",
+    "order_index": 2,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q4",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khi muốn lập trình di chuyển dao đến điểm đích được xác định bằng giá trị khoảng cách tuyệt đối so với điểm gốc phôi (W), ta sử dụng mã lệnh nào?",
+    "options": [
+      "G90",
+      "G91",
+      "G92",
+      "G53"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G90 là lệnh tọa độ tuyệt đối, dao di chuyển đến điểm xác định so với điểm gốc chuẩn.",
+    "order_index": 3,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q5",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong hệ tọa độ tương đối (G91) trên máy phay CNC, dao di chuyển đến vị trí mới dựa trên cơ sở nào?",
+    "options": [
+      "Khoảng cách so với điểm gốc máy M.",
+      "Khoảng cách so với điểm gốc phôi W.",
+      "Khoảng cách từ vị trí hiện tại của dao trước khi thực hiện câu lệnh.",
+      "Khoảng cách so với điểm chuẩn dao N."
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G91 là hệ tọa độ tương đối, dao tịnh tiến một khoảng so với điểm hiện hành trước đó.",
+    "order_index": 4,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q6",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh G00 trên máy phay CNC được định nghĩa là gì?",
+    "options": [
+      "Chạy dao theo đường thẳng với tốc độ tiến dao định sẵn.",
+      "Di chuyển dao nhanh không cắt gọt để định vị dụng cụ cắt.",
+      "Di chuyển dao tịnh tiến về chuẩn tham chiếu.",
+      "Bù trừ bán kính mũi dao cắt."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G00 là lệnh di chuyển nhanh không cắt gọt, dùng để định vị dao.",
+    "order_index": 5,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q7",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khối lệnh N10 G01 X25 Y-25 F100; trên máy phay CNC có ý nghĩa kỹ thuật gì?",
+    "options": [
+      "Định vị nhanh dao đến điểm tọa độ X25 Y-25.",
+      "Nội suy đường thẳng đến điểm X25 Y-25 với tốc độ tiến dao 100 mm/phút.",
+      "Nội suy đường thẳng đến điểm X25 Y-25 với tốc độ tiến dao 100 mm/vòng.",
+      "Di chuyển dao nội suy cung tròn với lượng tiến dao 100 mm/phút."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G01 nội suy đường thẳng có cắt gọt; F là tốc độ chạy dao, đơn vị mm/phút khi dùng G94.",
+    "order_index": 6,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q8",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khi sử dụng lệnh nội suy đường thẳng G01 để bo góc hoặc vát góc trên mặt phẳng gia công, tham số nào được dùng để bo tròn một cung có bán kính quy định?",
+    "options": [
+      "Địa chỉ C.",
+      "Địa chỉ R.",
+      "Địa chỉ I.",
+      "Địa chỉ K."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Khi dùng G01 để bo cung, cấu trúc lệnh nhập thêm địa chỉ R.",
+    "order_index": 7,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q9",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Điểm khác biệt quan trọng nhất giữa mã lệnh G02 và G03 khi phay biên dạng cong là gì?",
+    "options": [
+      "G02 nội suy ngược chiều kim đồng hồ, G03 cùng chiều kim đồng hồ.",
+      "G02 nội suy cùng chiều kim đồng hồ, G03 ngược chiều kim đồng hồ.",
+      "G02 yêu cầu bán kính R, G03 yêu cầu tọa độ tâm I, J.",
+      "G02 dùng trên mặt phẳng XY, G03 dùng trên mặt phẳng YZ."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G02 nội suy cùng chiều kim đồng hồ, còn G03 nội suy ngược chiều kim đồng hồ.",
+    "order_index": 8,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q10",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong câu lệnh phay cung tròn sử dụng tọa độ tâm tương đối, hai địa chỉ I và J biểu diễn khoảng cách hình học nào?",
+    "options": [
+      "Khoảng cách từ tâm cung tròn đến điểm gốc phôi W.",
+      "Khoảng cách từ vị trí bắt đầu của cung tròn đến tâm cung tròn theo hai phương X và Y tương ứng.",
+      "Khoảng cách từ tâm cung tròn đến vị trí kết thúc của cung tròn.",
+      "Bán kính của cung tròn cần nội suy."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "I và J là tọa độ tương đối của tâm cung tròn so với điểm bắt đầu theo trục X và Y.",
+    "order_index": 9,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q11",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Để tránh sai số gia công do đường kính dụng cụ cắt gây ra khi phay biên dạng (Profile), người ta sử dụng các lệnh bù trừ bán kính dao nào?",
+    "options": [
+      "G43 và G44.",
+      "G41 và G42.",
+      "G54 và G55.",
+      "G90 và G91."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Lệnh bù bán kính để dịch quỹ đạo tâm dao gồm G41 bên trái và G42 bên phải.",
+    "order_index": 10,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q12",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khi dao phay di chuyển ở phía bên trái của đường biên chi tiết theo chiều tiến dao, ta sử dụng lệnh bù bán kính nào?",
+    "options": [
+      "G40",
+      "G41",
+      "G42",
+      "G43"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G41 bù bán kính dao trái, nghĩa là dao nằm bên trái đường biên theo chiều chuyển động.",
+    "order_index": 11,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q13",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Lệnh nào được sử dụng để hủy bỏ hiệu chỉnh bù trừ bán kính dao sau khi đã phay xong biên dạng?",
+    "options": [
+      "G40",
+      "G49",
+      "G80",
+      "G53"
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G40 hủy bỏ hiệu chỉnh bù trừ bán kính dao.",
+    "order_index": 12,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q14",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Để hiệu chỉnh bù trừ chiều dài dao theo chiều dương (+), ta sử dụng mã lệnh G nào đi kèm với địa chỉ H?",
+    "options": [
+      "G41 H_",
+      "G42 H_",
+      "G43 H_",
+      "G44 H_"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G43 hiệu chỉnh chiều dài dao theo chiều dương, kết hợp với số hiệu hiệu chỉnh H.",
+    "order_index": 13,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q15",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Lệnh nào được sử dụng để hủy bỏ hiệu chỉnh bù trừ chiều dài dụng cụ cắt?",
+    "options": [
+      "G40",
+      "G49",
+      "G80",
+      "G98"
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G49 hủy bỏ hiệu chỉnh chiều dài dao.",
+    "order_index": 14,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q16",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Mã lệnh M06 trong chương trình phay CNC hệ Fanuc 21M có chức năng gì?",
+    "options": [
+      "Quay trục chính cùng chiều kim đồng hồ.",
+      "Dừng trục chính không điều kiện.",
+      "Thay dụng cụ cắt (thay dao tự động).",
+      "Bật dung dịch tưới nguội."
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "M06 là chức năng phụ điều khiển thay dao tự động trên máy phay CNC.",
+    "order_index": 15,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q17",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Để thiết lập hệ tọa độ gia công (gốc phôi W) trên máy phay CNC, người lập trình có thể lựa chọn 6 hệ tọa độ làm việc chuẩn nào?",
+    "options": [
+      "G50 đến G55",
+      "G52 đến G57",
+      "G54 đến G59",
+      "G90 đến G95"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Sáu hệ tọa độ làm việc chuẩn được chọn bằng các mã G54 đến G59.",
+    "order_index": 16,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q18",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Lệnh G80 trong lập trình phay CNC được dùng để làm gì?",
+    "options": [
+      "Kết thúc và hủy bỏ toàn bộ chu trình gia công lỗ.",
+      "Hủy bỏ bù trừ bán kính dụng cụ cắt.",
+      "Khởi động chu trình taro ren.",
+      "Trả dụng cụ cắt về chuẩn tham chiếu máy."
+    ],
+    "correct_index": 0,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "G80 hủy bỏ toàn bộ chu trình gia công lỗ đã gọi trước đó.",
+    "order_index": 17,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q19",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Trong chu trình khoan lỗ sâu bước G83: G83 G99 G90 G00 X50 Y50 Z-98 I-22 J3 F100; hai tham số I và J được định nghĩa lần lượt là gì?",
+    "options": [
+      "I là bán kính hốc tròn, J là chiều sâu một lớp cắt.",
+      "I là giá trị mỗi bước khoan theo phương trục chính, J là số bước khoan thực hiện.",
+      "I là lượng dư gia công thô, J là lượng dư gia công tinh.",
+      "I là khoảng cách an toàn, J là thời gian dừng ở đáy lỗ."
+    ],
+    "correct_index": 1,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Trong chu trình G83 phay Fanuc, I định nghĩa trị số bước khoan và J định nghĩa số lần thực hiện bước khoan.",
+    "order_index": 18,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  },
+  {
+    "id": "lesson-3-q20",
+    "quiz_key": "lesson-3-exercise-1",
+    "question_type": "multiple_choice",
+    "question": "Khi mô phỏng chương trình phay CNC trên WinNC32 hệ Fanuc 21M, để chạy mô phỏng kiểm tra chương trình (SIMULATION), ta nhấn phím mềm nào?",
+    "options": [
+      "[TOOLS] (F3)",
+      "[WORKP] (F4)",
+      "[SIMUL] (F6)",
+      "[3DVIEW] (F3)"
+    ],
+    "correct_index": 2,
+    "keywords": null,
+    "min_keyword_matches": null,
+    "explanation": "Ở chế độ phay WinNC 21M, phím đồ họa SIMUL để chạy mô phỏng là F6.",
+    "order_index": 19,
+    "updated_by": null,
+    "updated_at": "2026-08-21T23:50:55.203791+00:00"
+  }
+]

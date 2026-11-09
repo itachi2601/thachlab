@@ -1,0 +1,68 @@
+{
+  "id": 1320,
+  "cnc_key": "prep-10",
+  "title": "Chuẩn bị buổi 10 — Gia công phay (1)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Để thử dao trước khi phay biên dạng",
+        "Tạo mặt chuẩn để đo chiều cao và gá các nguyên công sau",
+        "Để phôi đủ nhẹ cho ê-tô kẹp",
+        "Để máy tự xác lập gốc máy M"
+      ],
+      "question": "Phay mặt phẳng ở đầu quy trình để làm gì?",
+      "explanation": "Mục 1: phay mặt phẳng tạo mặt chuẩn để đo chiều cao và gá các nguyên công sau."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Dao phay ngón đường kính nhỏ",
+        "Mũi khoan tâm",
+        "Dao phay mặt đầu đường kính lớn",
+        "Mũi tarô"
+      ],
+      "question": "Phay mặt phẳng nên dùng dao nào?",
+      "explanation": "Mục 1: dùng dao phay mặt đầu đường kính lớn, chạy từng đường song song kín mặt phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "Nhỏ hơn đường kính dao, để các vệt cắt chồng lên nhau",
+        "Bằng đúng đường kính dao",
+        "Lớn hơn đường kính dao một chút cho nhanh",
+        "Không quan trọng, chỉ cần chạy đủ số đường"
+      ],
+      "question": "Khoảng cách giữa hai đường chạy kề nhau nên chọn thế nào so với đường kính dao?",
+      "explanation": "Mục 1: khoảng cách hai đường kề nhau nhỏ hơn đường kính dao để các vệt chồng lên nhau, không sót."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "Hai vệt chồng lên nhau 5 mm",
+        "Mặt phẳng kín vừa khít",
+        "Mặt phôi bị lõm giữa hai đường chạy",
+        "Còn sót một dải chưa cắt rộng khoảng 5 mm"
+      ],
+      "question": "Phay mặt phẳng bằng dao Ø50, hai đường chạy kề nhau cách nhau 55 mm. Kết quả là:",
+      "explanation": "Mục 1 (ghép dải bìa): bước chạy lớn hơn bề rộng vệt cắt thì để sót; 55 − 50 = 5 mm còn nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Z0 ở mặt bàn máy; X0 Y0 ở điểm tham chiếu R",
+        "Z0 ở mặt trên đã phay; X0 Y0 ở một góc hoặc tâm phôi có trên bản vẽ",
+        "Z0 ở mặt trên phôi thô chưa phay; X0 Y0 bất kỳ",
+        "Z0 ở đáy phôi; X0 Y0 ở gốc máy M"
+      ],
+      "question": "Khi phay một tấm phôi, gốc W thường được chọn ở đâu?",
+      "explanation": "Mục 1: Z0 thường ở mặt trên đã phay, X0 Y0 ở một góc hoặc tâm phôi; chọn điểm có trên bản vẽ để khỏi cộng trừ thêm."
+    }
+  ]
+}
