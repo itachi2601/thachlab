@@ -59,6 +59,7 @@ export const AREA_ITEMS: Record<AdminArea, AdminNavItem[]> = {
     { href: "/quan-tri/cnc-bai-hoc", label: "Bài học", desc: "Nội dung, tài nguyên và điều kiện mở bài", icon: BookOpen },
     { href: "/quan-tri/cnc-video", label: "Video bài giảng", desc: "Đăng video YouTube cho từng bài", icon: Video },
     { href: "/quan-tri/cnc-dang-de", label: "Đăng đề kiểm tra", desc: "Dán đề kiểu Azota rồi đăng vào ngân hàng CNC", icon: SquarePen },
+    { href: "/quan-tri/cnc-mo-lop", label: "Mở lớp mới", desc: "Tạo lớp học phần CNC cho sinh viên, xem mã vào lớp", icon: School },
     // Mở lớp học phần mới + nhập danh sách sinh viên nằm ở tab "Danh sách lớp" của dashboard.
     { href: "/dashboard", label: "Lớp học phần & sinh viên", desc: "Mở lớp, nhập danh sách sinh viên", icon: Users, external: true },
     { href: "/quan-tri/tinh-trang-may", label: "Tình trạng máy", desc: "Máy hư, người sửa, thời gian chờ", icon: Gauge },

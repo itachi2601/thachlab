@@ -18,7 +18,7 @@ export default function CncCourseAnnouncements({ courseId }: { courseId: number 
     fetchPublishedPosts()
       .then((all) => {
         if (cancelled) return;
-        setPosts(all.filter((p) => visibleToCourse(p.courseIds, p.classIds, courseId)));
+        setPosts(all.filter((p) => visibleToCourse(p.courseIds, p.classIds, courseId, p.subjectCode)));
       })
       .catch(() => setPosts([]));
     return () => {

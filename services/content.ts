@@ -1,3 +1,4 @@
+import { ACADEMIC_SUBJECTS } from "@/services/academic-subjects";
 import type { Difficulty } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
@@ -113,8 +114,11 @@ export function visibleToCourse(
   itemCourseIds: number[],
   itemClassIds: number[],
   myCourseId: number | null,
+  itemSubjectCode?: string,
 ) {
   if (myCourseId !== null && itemCourseIds.includes(myCourseId)) return true;
+  // Bài không gán gì mà thuộc môn THPT (tin Vật lí, HSG, Hóa, Sinh…) không phải thông báo của sinh viên CTTC.
+  if (itemSubjectCode && itemSubjectCode !== "avcn" && ACADEMIC_SUBJECTS.some((s) => s.code === itemSubjectCode)) return false;
   return itemCourseIds.length === 0 && itemClassIds.length === 0;
 }
 
