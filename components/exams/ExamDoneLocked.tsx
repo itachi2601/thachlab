@@ -1,8 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import QuestionCard from "@/components/exams/QuestionCard";
 import { useAuth } from "@/components/auth/AuthProvider";
 import Badge from "@/components/ui/Badge";
+import Html from "@/components/exams/ContentHtml";
+import { fetchWrongNotes, type WrongNote } from "@/services/exam-server";
 import { isAnswered, type ExamQuestionPublic, type QuestionResponse } from "@/features/exams/types";
 
 function formatClock(totalSeconds: number) {
@@ -24,6 +27,8 @@ export default function ExamDoneLocked({
   score10,
   correctCount,
   usedSeconds,
+  resultId,
+  passScore,
 }: {
   title: string;
   questions: ExamQuestionPublic[];
@@ -32,8 +37,20 @@ export default function ExamDoneLocked({
   score10: number;
   correctCount: number;
   usedSeconds: number;
+  resultId?: number;
+  passScore?: number | null;
 }) {
   const { profile } = useAuth();
+  // Gợi ý "vì sao phương án em chọn sai" (không kèm đáp án đúng). Lỗi mạng/thiếu ghi chú thì bỏ qua, không chặn màn kết quả.
+  const [notes, setNotes] = useState<WrongNote[]>([]);
+  useEffect(() => {
+    if (!resultId) return;
+    let alive = true;
+    fetchWrongNotes(resultId).then((n) => alive && setNotes(n)).catch(() => undefined);
+    return () => {
+      alive = false;
+    };
+  }, [resultId]);
   return (
     <div className="mx-auto max-w-3xl">
       <div className="rounded-2xl border border-line bg-panel p-6 text-center">
@@ -46,7 +63,10 @@ export default function ExamDoneLocked({
         <p className="mt-1 text-base text-ink">
           Đúng {correctCount}/{questions.length} câu
         </p>
-        <p className="mt-3 text-sm text-muted">Đáp án sẽ hiện sau 3 lượt làm hoặc khi đạt điểm.</p>
+        <p className="mt-3 text-sm text-muted">
+          Lời giải và đáp án đúng sẽ mở khi em {passScore != null ? `đạt ${passScore} điểm hoặc ` : ""}nộp xong lượt thứ 2.
+          Trong lúc chờ, câu nào em chọn sai có ghi chú vì sao phương án đó sai.
+        </p>
       </div>
 
       <h2 className="mb-4 mt-8 font-display text-xl font-semibold text-ink">Kết quả từng câu</h2>
@@ -75,6 +95,17 @@ export default function ExamDoneLocked({
                 <Badge tone={tone}>{label}</Badge>
               </div>
               <QuestionCard index={i + 1} question={q} response={responses[i]} />
+              {notes
+                .filter((n) => n.question_index === i)
+                .map((n) => (
+                  <div
+                    key={n.label}
+                    className="mt-2 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-ink"
+                  >
+                    <span className="font-semibold">Vì sao {n.label} sai: </span>
+                    <Html html={n.note} />
+                  </div>
+                ))}
             </div>
           );
         })}
