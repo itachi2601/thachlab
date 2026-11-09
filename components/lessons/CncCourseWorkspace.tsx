@@ -462,7 +462,13 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
 
   useEffect(() => {
     if (!courseId || viewerProfile?.role === "admin") return;
-    void fetchOpenCncLessons(courseId).then(setOpenLessonIds).catch(() => setOpenLessonIds([]));
+    void fetchOpenCncLessons(courseId).then((ids) => {
+      setOpenLessonIds(ids);
+      // Mặc định mở chương có bài giảng viên mới mở (chương cuối còn bài mở) để SV không phải tự bấm tìm.
+      let last = 0;
+      CNC_CHAPTERS.forEach((chapter, index) => { if (chapter.lessonIds.some((id) => ids.includes(id))) last = index; });
+      setPickedChapter(last);
+    }).catch(() => setOpenLessonIds([]));
   }, [courseId, viewerProfile?.role]);
 
   useEffect(() => {
