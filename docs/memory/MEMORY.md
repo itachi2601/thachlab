@@ -10,7 +10,7 @@
 - [Giảm token](project_thachlab_token_hygiene.md) — 87k/request cố định
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
-- [Lô duyệt kèm link](feedback_lo_duyet_kem_link.md) — báo cáo chờ duyệt phải có link mở xem từng mục
+- [Lô duyệt kèm link](feedback_lo_duyet_kem_link.md) — mỗi mục kèm link
 - [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box câu hỏi
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — đặt trong khối bash
 - [Chạy script giúp thầy](feedback_chay_script_giup.md) — chạy trong tab terminal, tự kiểm
@@ -23,7 +23,7 @@
 - [Tra trùng đề trước agent](feedback_dedup_check_before_agent.md) — exams bị RLS
 - [Đăng đề hàng loạt](feedback_batch_agent_upload_efficiency.md) — file sạch không agent
 - [Skill có 2 bản](feedback_skill_two_copies.md) — diff trước, sửa cả hai
-- [Rà ảnh bằng mắt](feedback_content_images_eyeball.md) — MD5 không bắt hết ảnh trang trí
+- [Rà ảnh bằng mắt](feedback_content_images_eyeball.md) — MD5 không bắt hết
 - [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — không dùng vai "thầy"
 - [Quy tắc thiết kế](feedback_design_research_rules.md) — nêu mã quy tắc
 - [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
@@ -40,16 +40,16 @@
 - [Model lịch tự động](reference_scheduled_task_model.md) — chọn ở form Edit task
 ## Skill & quy trình đăng nội dung
 - [Up đề](project_thachlab_up_de_skill.md) — /quan-tri/dang-de
-- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuat_thachlab.py → Word kèm nhãn YCCĐ
-- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md) — bước 7 xuat_thachlab.py
-- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — mặc định script upload-lesson.mts
-- [Skill latex](project_thachlab_latex_skill.md) — cache công thức + sinh HTML bằng script
+- [Skill azota](project_thachlab_azota_skill.md) — bước 6 xuất Word
+- [Skill ngân hàng câu hỏi](project_thachlab_ngan_hang_cau_hoi_skill.md)
+- [Skill đăng bài học](project_thachlab_dang_bai_hoc_skill.md) — upload-lesson.mts
+- [Skill latex](project_thachlab_latex_skill.md) — cache công thức
 - [Cập nhật chỉ lý thuyết](project_thachlab_cap_nhat_ly_thuyet.md) — cap-nhat-ly-thuyet.sh
-- [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — skill rà bài; treo duyệt lý thuyết
+- [Cập nhật bài theo Gemini](project_thachlab_cap_nhat_bai_theo_gemini.md) — treo duyệt lý thuyết
 - [Bài lý thuyết tương tác](project_thachlab_bai_ly_thuyet_tuong_tac.md) — skill + kho content/thi-nghiem
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
-- [Giải cùng hình + một dạng một hình](project_thachlab_giai_cung_hinh.md) — 46 bài chờ duyệt/đăng ở 2 phiên nhánh 7/11
+- [Giải cùng hình + một dạng một hình](project_thachlab_giai_cung_hinh.md) — 46 bài chờ duyệt/đăng
 - [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — thí điểm 20 câu chờ thầy
@@ -77,27 +77,28 @@
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — đã deploy, chưa thử HS thật
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
-- [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — 14 việc, chờ thầy chốt
+- [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — chờ thầy chốt
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — chờ duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
 - [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — chưa tự tính
 ## Việc đang làm (từ 30/9)
-- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — chờ thầy duyệt ~850 câu viet-lai*.json
+- [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — treo G41/H11, cổng G5, N4
+- [Giải lại + gọn ngân hàng](project_thachlab_giai_lai_ngan_hang.md) — chờ duyệt ~850 câu
 - [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — còn Ch.I, VII + Cơ năng
 - [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — Sheets
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S/tính toán, Ch.3–4
 - [Ruột tập bài 14](project_thachlab_ruot_tap_bai14.md) — chờ in thử, DB, deploy
-- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — L10 ĐLH 8 clip chờ đăng + bài 62
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 8 clip chờ đăng
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — chờ duyệt ảnh, chưa đăng
 - [L10 Ch.2 Động học rà soát](project_thachlab_l10_ly_thuyet_ch2.md) — chờ duyệt, đăng lesson 49–57
-- [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — đã đăng; treo "độ dẫn điện", α đồng
+- [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — đã đăng; treo 2 điểm
 - [Rà soát L10/L11 còn lại 31/10](project_thachlab_ra_soat_l10_l11_con_lai.md) — chưa đăng DB, chờ duyệt ảnh
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 17 hình vẽ lại, chưa đăng DB
-- [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — đã đăng DB, chờ deploy; treo video iốt
+- [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
-- [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — học phần worldskills-im 16 bài đã lên 2/11; chờ thầy soát bậc 1
+- [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — 16 bài đã lên; chờ soát bậc 1
