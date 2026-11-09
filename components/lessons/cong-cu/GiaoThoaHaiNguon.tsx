@@ -162,11 +162,13 @@ function TimLoai({ f, v, AB, d1, d2, layer: L }: Props) {
       <line x1={c} y1={0} x2={mx} y2={-my} stroke="currentColor" strokeWidth={0.1} opacity={0.75} />
       <Label x={(mx - c) / 2 - 0.7} y={-my / 2 - 0.2} a="end">{`d₁ = ${fmt(d1)}`}</Label>
       <Label x={(mx + c) / 2 - 1} y={-my / 2 + 1.8} a="end">{`d₂ = ${fmt(d2)}`}</Label>
+      {/* AB ghi dưới đoạn nối hai nguồn (bước 4+ nhường chỗ cho điểm trên AB) */}
+      {L < 4 && <Label x={0} y={1.6} size={1.15}>{`AB = ${fmt(AB)} cm`}</Label>}
       {/* bước 1: thước λ đặt ngoài B (từ bước 4 nhường chỗ cho trục số k) */}
       {L >= 1 && L < 4 && (
         <g className="cc-in">
           <path d={`M${c + 0.9} 0.3 v0.4 h${lam} v-0.4`} stroke="currentColor" strokeWidth={0.1} fill="none" />
-          <Label x={c + 0.9 + lam / 2} y={2.1}>{`λ=${fmt(lam, 2)}`}</Label>
+          <Label x={c + 0.8} y={2.1} a="start">{`λ = ${fmt(lam, 2)} cm`}</Label>
         </g>
       )}
       {/* bước 4–5: điểm trên AB */}

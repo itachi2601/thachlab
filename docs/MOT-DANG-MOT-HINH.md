@@ -92,12 +92,20 @@ không ghi vào SKILL.md/STATE.md/memory. Không đổi đề, số liệu, đá
 Mỗi dạng một dòng: có/không `dong` (vì sao), họ hình, đã sửa gì ở lớp 0/lớp bước/màu, chỗ còn băn khoăn (nội dung cần thầy
 quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = SACH?, đường dẫn ảnh đã soát.
 
-## Trạng thái 6/11/2026 (7 phiên nhánh dừng giữa chừng vì hết hạn mức tuần)
-- **Xong trên main (55 bài):** 2 3 4 6 7 8 · 20–25 26 27 · 35 36 37 38 39 40 41 42 · 46–50 52–55 57 58 60 · 68 69 70 72 73 74 · 83 84 89 90 91 129 130 131 · 150 153 157 159 160 162 164.
-  Trong đó 23 bài (commit 6426c6cf5) được cứu từ worktree phiên nhánh. 6/11 23:45 thầy duyệt ảnh 30 bài (23 bài này + 10 11 13 14 125 126 127) → ĐÃ ĐĂNG DB + deploy. 25 bài còn lại trong 55 chưa rõ đã đăng chưa — kiểm DB trước khi publish.
-- **Dở, còn lỗi chữ đè/tràn (10 bài)** — bản dở nằm ở worktree phiên nhánh, chưa commit: 9 15 16 17 (`.claude/worktrees/xenodochial-antonelli-2bf293`), 28 31 (`vigilant-maxwell-0d1cf4`), 43 44 (`vibrant-hypatia-aa60fe`), 161 178 (`ecstatic-wilson-bdc8a9`). Chép file sang rồi chỉ dời nhãn tới `#kiem` SACH.
-- **Chưa làm (25 bài):** 18 19 · 30 32 33 34 · 45 · 62 63 66 · 71 76 77 78 79 · 151 152 154 155 156 158 · 163 165 166 167.
+## Trạng thái 7/11/2026 (đối chiếu DB bằng máy: số dạng `cong_cu.de` trên `lesson_items` = repo, không còn `<figure`)
+- **Repo: xong cả 97 bài** (mọi dạng `de: true`, không `<figure`; mỗi bài có commit "một hình" trên main).
+- **ĐÃ ĐĂNG DB (51):** 2 10 11 13 14 18 23 26 27 37 38 41 42 54 55 57 58 60 68 69 70 74 83 84 89 90 91 125 126 127 129 130 131 150–155 157–167 178.
+- **CHƯA ĐĂNG DB (46) — DB vẫn bản cũ (0 dạng `de`, còn `<figure`):**
+  L12: 3 4 6 7 8 9 15 16 17 19 · L11: 20 21 22 24 25 28 30 31 32 33 34 35 36 39 40 43 44 ·
+  L10: 45 46 47 48 49 50 52 53 62 63 66 71 72 73 76 77 78 79 · KHTN 9: 156.
+  Trong đó commit ghi "CHƯA soát ảnh": 9 15 16 17 28 31 43 44 (chỉ dời nhãn tới `#kiem` SACH). 76 79 đã sửa theo quyết định của thầy 6/11.
+- Việc còn: soát ảnh từng dạng → trang duyệt cho thầy → publish `--giu-cu --yes` → deploy → kiểm live 375px. Không soạn lại.
+- Bản dở trong 4 worktree cũ (xenodochial-antonelli, vigilant-maxwell, vibrant-hypatia, ecstatic-wilson) đã CŨ hơn main — đừng chép sang.
 - Họ `so_do_vecto` không có `lop` (mỗi `vec` mang `buoc` riêng) — đừng báo lỗi "lop ≠ buoc" cho họ này. Bài 46–48 có dạng cố ý không có hình.
+
+## Trạng thái 8/11/2026 — L12 + L11 (27 bài)
+- ĐÃ ĐĂNG DB (`--giu-cu --yes`, DB `cong_cu.de` = repo, không còn `<figure`) + deploy 8/11: L12 `3 4 6 7 8 9 15 16 17 19`, L11 `20 21 22 24 25 28 30 31 32 33 34 35 36 39 40 43 44`. Thầy duyệt ảnh sau soát Sonnet (sửa nhãn ở 3 6 15 16 17 19 25 28 30 31 32 33 35 36 39 40 43 44). Kiểm live 375px (8/11, tài khoản thầy): bài 43 (hình dưới đề + Giải từng bước dính hình trên, bước 1/4) và bài 33 (6 dạng + 1 mục thêm, không tràn ngang) đạt.
+- Còn lệch nhỏ, cần sửa COMPONENT (không sửa được bằng JSON): 33 D3 (`giao_thoa_2_nguon`: thiếu AB, nhãn d₁/d₂/M bị hypebol cắt) · 39 D4 (`DienTruongDeu` thiếu mục `doan` vẽ tam giác MNP; nhãn MP vắt qua mép bản) · 39 D5 (nhãn cm bị đường sức cắt) · 4 (`thanh_nang_luong` nhãn mũi tên chạm khung vật) · 44 D3 (nhãn A, I sát dây) · 28 D4 (tiêu đề `$A^2$` nghi chưa render) · 20 D5 (lớp 0 không vẽ M ở đỉnh, cố ý tránh lộ pha).
 
 ## Cách làm tiết kiệm token (rút từ đợt 5–6/11)
 - Phiên MỚI (không resume phiên cũ — context cũ 150k+ bị gửi lại mỗi lượt). Tối đa 2 phiên cùng lúc.
@@ -110,3 +118,4 @@ quyết), "cần mục X" nếu có. Cuối cùng: `#kiem` của từng bài = S
 - Ngoài phạm vi gỡ: 52 (`solution_html`), 71 (`tu_luan.body_html`), 156 (`solution_html` + `tu_luan`) còn `<figure`.
 - **Còn treo (cần thầy quyết / sửa component):** 156-d1 lớp 0 thiếu hình b (cần mục "hiện 2 khung ở lớp 0"); 156-d7 nhãn B₂′; 62/63 họ `so_do_vecto` chữ ~8px, vector gạch nhãn "m" (sửa ở component); 72 nhãn vá bằng ký tự rộng 0/khoảng trắng em (nên sửa lề chữ trong `ThanhNangLuong.tsx`); 71-d5 đổi sang họ `tu_truong` nên mất cột năng lượng; 79-d2 nhãn "8000 Pa" còn vắt thành bể (đã sửa thành "p_M = 8000 Pa" ngoài bể).
 - Bài học: ảnh headless ~31 KB là trang chưa render → chụp lại với `--virtual-time-budget=40000`; agent dời nhãn có thể tạo đè mới → luôn chạy lại `#kiem`.
+- Đã deploy 8/11 (`scripts/deploy.sh` từ checkout chính, push nhánh deploy). Kiểm live 375px chưa làm được: trang bài cần đăng nhập, phiên không nhập mật khẩu — thầy mở `/lop-hoc/bai/?id=73#muc=bai-tap-mau` (và 71, 79, 156) bấm "Giải từng bước" xem.

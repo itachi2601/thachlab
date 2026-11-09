@@ -11,6 +11,8 @@
  * x tính từ mép vào (đơn vị như L), y tính từ đường giữa (đơn vị như d), lên là dương. Mục: duong_suc {nhan?}
  *  · luc {huong, nhan?} · quy_dao {y_cuoi, cat?, dut?, mau?} · thuoc_ngang {tu, den, nhan, vi} · thuoc_doc {x, tu, den,
  *  nhan, ben?, mau?} · chu {x, y, text, a?} · ghi {text}. `het: k` = ẩn từ khi xong bước k.
+ *  Thêm 8/11/2026 (bài 39 D4, tam giác MNP): diem {x, y, ten, vi?: t|b|l|r} chấm + tên · doan {tu: [x,y], den: [x,y],
+ *  nhan?, nhan_xy?: [x,y] (mặc định giữa đoạn), dut?, mau?}. Điểm/đoạn vẽ trên đường sức, nhãn có nền halo.
  */
 
 import { C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
@@ -150,6 +152,39 @@ export default function DienTruongDeu({ L, d, duong, v0 = "v_0", an_hat = false,
           <Label x={trai ? x - 0.35 : x + 0.35} y={(y1 + y2) / 2 + 0.4} a={trai ? "end" : "start"} fill={c} size={1.05}>
             {it.nhan}
           </Label>
+        </g>
+      );
+    }
+    if (it.loai === "diem") {
+      const cx = X(it.x),
+        cy = Yv(it.y),
+        vi = it.vi ?? "t";
+      const [lx, ly, a] =
+        vi === "b" ? [cx, cy + 1.35, "middle"] : vi === "l" ? [cx - 0.45, cy + 0.4, "end"] : vi === "r" ? [cx + 0.45, cy + 0.4, "start"] : [cx, cy - 0.5, "middle"];
+      return (
+        <g className={cls}>
+          <circle cx={cx} cy={cy} r={0.22} fill="currentColor" />
+          <Label x={lx} y={ly} a={a as "start" | "middle" | "end"} size={1.1}>
+            {it.ten}
+          </Label>
+        </g>
+      );
+    }
+    if (it.loai === "doan") {
+      const x1 = X(it.tu[0]),
+        y1 = Yv(it.tu[1]),
+        x2 = X(it.den[0]),
+        y2 = Yv(it.den[1]),
+        c = it.mau ? mau(it.mau) : "currentColor";
+      const [nx, ny] = it.nhan_xy ? [X(it.nhan_xy[0]), Yv(it.nhan_xy[1])] : [(x1 + x2) / 2, (y1 + y2) / 2 + 0.4];
+      return (
+        <g className={cls}>
+          <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={c} strokeWidth={0.1} strokeDasharray={it.dut ? "0.35 0.22" : undefined} strokeLinecap="round" />
+          {it.nhan && (
+            <Label x={nx} y={ny} fill={c} size={1.05}>
+              {it.nhan}
+            </Label>
+          )}
         </g>
       );
     }

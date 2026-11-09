@@ -18,6 +18,18 @@ export const CNC_QUIZ_BANKS = [
   { key: "gate", label: "Quiz chốt chặn an toàn (chưa gắn vào bài học)" },
   { key: "lesson-4-turn", label: "Quiz Bài 4 — Tiện (chưa gắn vào bài học)" },
   { key: "lesson-4-mill", label: "Quiz Bài 4 — Phay (chưa gắn vào bài học)" },
+  // Quiz chuẩn bị tối trước (lớp đảo ngược), 5 câu/buổi — services/cnc-prep.ts.
+  { key: "prep-2", label: "Chuẩn bị buổi 2 — Lập trình tiện (1)" },
+  { key: "prep-3", label: "Chuẩn bị buổi 3 — Lập trình tiện (2)" },
+  { key: "prep-4", label: "Chuẩn bị buổi 4 — Lập trình phay (1)" },
+  { key: "prep-5", label: "Chuẩn bị buổi 5 — Lập trình phay (2)" },
+  { key: "prep-6", label: "Chuẩn bị buổi 6 — Vận hành tiện" },
+  { key: "prep-7", label: "Chuẩn bị buổi 7 — Vận hành phay" },
+  { key: "prep-8", label: "Chuẩn bị buổi 8 — Gia công tiện (1)" },
+  { key: "prep-9", label: "Chuẩn bị buổi 9 — Gia công tiện (2)" },
+  { key: "prep-10", label: "Chuẩn bị buổi 10 — Gia công phay (1)" },
+  { key: "prep-11", label: "Chuẩn bị buổi 11 — Gia công phay (2)" },
+  { key: "prep-12", label: "Chuẩn bị buổi 12 — Dự án nhóm" },
 ] as const;
 
 export type CncQuizBankKey = (typeof CNC_QUIZ_BANKS)[number]["key"];

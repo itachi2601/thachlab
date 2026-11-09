@@ -908,25 +908,58 @@
       "nhan": "E"
      },
      {
-      "loai": "chu",
+      "loai": "doan",
+      "tu": [
+       3,
+       1.5
+      ],
+      "den": [
+       3,
+       -1.5
+      ]
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       3,
+       -1.5
+      ],
+      "den": [
+       7,
+       -1.5
+      ]
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       7,
+       -1.5
+      ],
+      "den": [
+       3,
+       1.5
+      ]
+     },
+     {
+      "loai": "diem",
       "x": 3,
       "y": 1.5,
-      "text": "● M",
-      "a": "start"
+      "ten": "M",
+      "vi": "t"
      },
      {
-      "loai": "chu",
+      "loai": "diem",
       "x": 3,
       "y": -1.5,
-      "text": "● P",
-      "a": "start"
+      "ten": "P",
+      "vi": "b"
      },
      {
-      "loai": "chu",
+      "loai": "diem",
       "x": 7,
       "y": -1.5,
-      "text": "● N",
-      "a": "start"
+      "ten": "N",
+      "vi": "r"
      },
      {
       "loai": "thuoc_ngang",
@@ -975,7 +1008,7 @@
        "x": 2,
        "tu": 1.5,
        "den": -1.5,
-       "nhan": "MP = 3,0 cm",
+       "nhan": "3,0 cm",
        "ben": "trai"
       },
       {

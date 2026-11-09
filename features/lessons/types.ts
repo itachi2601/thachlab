@@ -281,7 +281,9 @@ export type DienTruongLop =
   | { loai: "quy_dao"; y_cuoi: number; cat?: boolean; dut?: boolean; mau?: "max" | "min"; het?: number }
   | { loai: "thuoc_ngang"; tu: number; den: number; nhan: string; vi: "tren" | "duoi"; het?: number }
   | { loai: "thuoc_doc"; x: number; tu: number; den: number; nhan: string; ben?: "trai" | "phai"; mau?: "max" | "min"; het?: number }
-  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number };
+  | { loai: "chu"; x: number; y: number; text: string; a?: "start" | "middle" | "end"; het?: number }
+  | { loai: "diem"; x: number; y: number; ten: string; vi?: "t" | "b" | "l" | "r"; het?: number }
+  | { loai: "doan"; tu: [number, number]; den: [number, number]; nhan?: string; nhan_xy?: [number, number]; dut?: boolean; mau?: "max" | "min"; het?: number };
 /** Mạch điện (Đ3): toạ độ 0..20 ngang, 0..11 dọc, gốc dưới trái (y lên). Linh kiện đặt TÂM tại (x, y), che dây bên dưới bằng nền halo. */
 export type MachDienHuong = "ngang" | "doc";
 export type MachDienLop =
@@ -313,7 +315,7 @@ export type WorkedDong = {
 };
 export type VongTronLop =
   | LopGhi
-  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; ten_trong?: boolean; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
   | { loai: "vong"; r: number; nhan?: string; dut?: boolean; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };

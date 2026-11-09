@@ -39,6 +39,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 
 ## Nội dung đang treo
 - 5/11 · Giải cùng hình: Đ1–Đ8 đã đăng DB + deploy (51 bài); Đ9 (KHTN 9 + HSG 9, 25 bài) đã vào main, CHƯA HS ảo/CHƯA đăng DB; ~20 nhánh `claude/*` >4 ngày chưa vào main chờ thầy chỉ (memory `project_thachlab_giai_cung_hinh`).
+- 7/11 · BTM "một dạng — một hình": repo xong 97/97; DB đã đăng 51, CHƯA đăng 46 (danh sách: `docs/MOT-DANG-MOT-HINH.md` mục Trạng thái 7/11) — chờ soát ảnh + thầy duyệt → publish → deploy.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
 - Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
@@ -67,4 +68,5 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Đo độ trễ Supabase từ VN trước khi xoá project Sydney; cột `updated_at` cho `lessons`/`lesson_items`.
 - Đề xuất nghiên cứu HS 14–22 (chờ chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`.
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
+- "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
