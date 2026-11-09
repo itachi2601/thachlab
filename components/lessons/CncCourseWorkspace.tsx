@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronRight,
-  CirclePlay,
   ClipboardCheck,
   Download,
   FileQuestion,
@@ -19,7 +18,6 @@ import {
   LockKeyhole,
   MonitorPlay,
   Paperclip,
-  Presentation,
   Search,
   Send,
   ShieldCheck,
@@ -93,7 +91,7 @@ const lessonMeta: Record<string, { theory: number; practice: number; test: numbe
 // Khuôn tab chung với các môn khác (SECTION_ORDER của /lop-hoc/bai): Lý thuyết → Video → Luyện tập → BTVN → Kiểm tra.
 // Bài mẫu (chương trình giải sẵn, N6) chỉ hiện ở bài có ví dụ — Bài 2, 3 (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
 const tabs = [
-  { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, bài giảng, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
+  { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, nội dung bài, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
   { id: "video", label: "Video", description: "Video bài giảng của giảng viên", icon: MonitorPlay },
   { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block", icon: FileText },
   { id: "luyen_tap", label: "Luyện tập", description: "Làm lại nhiều lần; cần đạt để mở bước sau", icon: ClipboardCheck },
@@ -557,7 +555,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   const renderSectionContent = (sectionId: TabId) => {
     if (sectionId === "ly_thuyet") return <>
       <Outcomes lesson={lesson} meta={meta} />
-      <Slides lesson={lesson} files={lessonFiles.filter((file) => file.kind === "powerpoint")} />
+      <LessonBody lesson={lesson} />
       {showPrep && courseId && session && <LazyErrorBoundary fallback={null}><div id="cnc-chuan-bi" className="mt-8"><CncPrepQuiz courseId={courseId} studentId={session.user.id} lessonId={lesson.id} /></div></LazyErrorBoundary>}
       <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />
     </>;
@@ -934,31 +932,12 @@ function Outcomes({ lesson, meta }: { lesson: CncLesson; meta: (typeof lessonMet
   </>;
 }
 
-function Slides({ lesson, files }: { lesson: CncLesson; files: CncLessonFile[] }) {
+// Bài giảng PowerPoint đã ẩn (thầy chốt 9/11/2026: slide lỗi thời); file vẫn lưu ở cnc_lesson_files, chỉ không hiện cho SV.
+function LessonBody({ lesson }: { lesson: CncLesson }) {
+  if (!lesson.bodyHtml) return null;
   return <>
-    <SectionHeading icon={Presentation} kicker="BÀI GIẢNG" title="Nội dung bài học" description="Bài giảng PowerPoint và các nội dung trọng tâm của bài." />
-    {files.length === 0 ? (
-      <div className="cnc-file-empty"><Presentation size={28} /><div><strong>Chưa có PowerPoint</strong><p>Giảng viên chưa tải bài giảng PowerPoint cho bài học này.</p></div></div>
-    ) : files.map((file, index) => (
-      <article className="cnc-ppt-viewer-card" key={file.id}>
-        <div className="cnc-ppt-viewer-frame">
-          <iframe
-            src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.file_url)}`}
-            title={`Bài giảng ${file.title}`}
-            loading="lazy"
-            allowFullScreen
-          />
-        </div>
-        <div className="cnc-ppt-viewer-info">
-          <div><span>{index === 0 ? "BÀI GIẢNG CHÍNH" : `BÀI GIẢNG BỔ SUNG ${index}`}</span><h3>{file.title}</h3><p>{file.file_name} · {formatFileSize(file.size_bytes)}</p></div>
-          <small><CirclePlay size={14} /> Xem trực tiếp trên trang · Không cung cấp nút tải xuống</small>
-        </div>
-      </article>
-    ))}
-    {lesson.bodyHtml && <>
-      <h3 className="cnc-subheading">Giáo trình nội dung chi tiết</h3>
-      <ContentHtml html={lesson.bodyHtml} className="cnc-detailed-content" />
-    </>}
+    <SectionHeading icon={BookOpen} kicker="NỘI DUNG" title="Nội dung bài học" description="Các nội dung trọng tâm của bài, đọc theo từng mục." />
+    <ContentHtml html={lesson.bodyHtml} className="cnc-detailed-content" />
   </>;
 }
 
