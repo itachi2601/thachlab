@@ -2,12 +2,23 @@ import type { CncLearningRecord } from "@/services/cnc-learning-records";
 
 export const CNC_ASSESSMENT_PLAN: Record<string, readonly string[]> = {
   "lesson-1": ["final"],
-  "lesson-2": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5"],
-  "lesson-3": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5"],
-  "lesson-4-turn": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
-  "lesson-4-mill": ["machine-operation", "tool-setup", "checklist-practice", "checklist"],
-  "lesson-5": ["checklist-practice", "checklist", "rubric-exam"],
-  "lesson-6": ["checklist-practice", "checklist", "rubric-exam"],
+  "lesson-2": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5", "final"],
+  "lesson-3": ["exercise-1", "exercise-2", "exercise-3-short", "exercise-3", "exercise-4", "exercise-5", "final"],
+  "lesson-4-turn": ["machine-operation", "tool-setup", "checklist-practice", "final", "checklist"],
+  "lesson-4-mill": ["machine-operation", "tool-setup", "checklist-practice", "final", "checklist"],
+  "lesson-5": ["checklist-practice", "final", "checklist", "rubric-exam"],
+  "lesson-6": ["checklist-practice", "final", "checklist", "rubric-exam"],
+};
+
+// Đề kiểm tra trắc nghiệm cuối bài (assessment "final", tab Kiểm tra) — ngân hàng exams.cnc_key (thêm 9/11/2026).
+export const CNC_FINAL_TEST_BANK: Record<string, string> = {
+  "lesson-1": "lesson-1",
+  "lesson-2": "test-2",
+  "lesson-3": "test-3",
+  "lesson-4-turn": "test-4-turn",
+  "lesson-4-mill": "test-4-mill",
+  "lesson-5": "test-5",
+  "lesson-6": "test-6",
 };
 
 // Khuôn bài chung với các môn khác (docs/CNC-CAU-TRUC-BAI-THEO-MON-KHAC-2026-11-08.md, chặng A):

@@ -43,6 +43,7 @@ const CNC_ACTIVE_QUIZ_BANK_KEYS = [
   "turn-translate", "mill-translate",
   "operation-turn", "operation-mill",
   "tool-setup-turn", "tool-setup-mill",
+  "test-2", "test-3", "test-4-turn", "test-4-mill", "test-5", "test-6",
 ];
 import {
   fetchCncLessonFiles,
@@ -63,7 +64,7 @@ import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts"
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
-import { CNC_CHAPTERS, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
+import { CNC_CHAPTERS, CNC_FINAL_TEST_BANK, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 import CncGateStrip from "@/components/lessons/CncGateStrip";
 import "./class-overview.css"; // khuôn trang lớp (rail chương, dòng bài) dùng chung với các môn khác
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyId, type CompetencyPermission } from "@/services/cnc-competencies";
@@ -578,13 +579,20 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
       if (isProgramming) return <ProgrammingTestSuite key={`${lesson.id}-btvn`} lessonId={lesson.id as "lesson-2" | "lesson-3"} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} only={["exercise-3", "exercise-4", "exercise-5"]} kicker="BÀI TẬP VỀ NHÀ" title="Viết và kiểm chứng chương trình" description="Điền khuyết, viết chương trình từ bản vẽ, mô phỏng rồi nộp minh chứng cho giảng viên." onResult={record} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
       return null;
     }
-    if (isOperation) return <PracticalChecklistPanel fixedMode="cross-check" machine={machineName} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled lockedMessage="" courseId={courseId} onResult={record} />;
+    const finalTest = (heading: boolean, completesLesson: boolean) => <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} quizBanks={quizBanks} showHeading={heading} onResult={(value,total,didPass)=>record("final",value,total,didPass)} onPassed={() => { if (completesLesson) markCompleted(lesson.id); }} />;
+    if (isOperation) return <>
+      {finalTest(true, false)}
+      <h3 className="cnc-subheading">Checklist thực hành (chấm chéo)</h3>
+      <PracticalChecklistPanel fixedMode="cross-check" machine={machineName} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled lockedMessage="" courseId={courseId} onResult={record} />
+    </>;
     if (isMachining) return <>
+      {finalTest(true, false)}
+      <h3 className="cnc-subheading">Checklist thực hành (chấm chéo)</h3>
       <PracticalChecklistPanel fixedMode="cross-check" machine={machineName} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled lockedMessage="" courseId={courseId} onResult={record} />
       <SectionHeading icon={FileQuestion} kicker="THI THỰC HÀNH" title="Thi thực hành tổng hợp" description="Tự đánh giá theo rubric mà giảng viên sẽ dùng để chấm chính thức: lập trình, mô phỏng, cài đặt dao/phôi và gia công." />
       <RubricSelfAssessment key={lesson.id} machine={lesson.id === "lesson-5" ? "tien" : "phay"} courseId={courseId} />
     </>;
-    return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} quizBanks={quizBanks} onResult={(value,total,didPass)=>record("final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
+    return finalTest(true, true);
   };
 
   // Trang khoá học (chưa chọn bài): cùng khuôn trang lớp AVCN/Vật lí — rail chương ≥1024, dải chương 640–1023,
@@ -968,10 +976,21 @@ function Video({ lesson, videos }: { lesson: CncLesson; videos: CncLessonVideo[]
   </>;
 }
 
+const FINAL_TEST_DESCRIPTION: Record<string, string> = {
+  "lesson-1": "Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC.",
+  "lesson-2": "Đề trắc nghiệm lập trình tiện CNC trên hệ Win-NC32.",
+  "lesson-3": "Đề trắc nghiệm lập trình phay CNC trên hệ Win-NC32.",
+  "lesson-4-turn": "Đề trắc nghiệm vận hành máy tiện CNC: an toàn, gốc phôi, cài dao, chạy thử.",
+  "lesson-4-mill": "Đề trắc nghiệm vận hành máy phay CNC: an toàn, gốc phôi, bù dao, chạy thử.",
+  "lesson-5": "Đề trắc nghiệm gia công tiện CNC: chế độ cắt, chọn dao, kiểm tra kích thước.",
+  "lesson-6": "Đề trắc nghiệm gia công phay CNC: chế độ cắt, chọn dao, kiểm tra kích thước.",
+};
+
 function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, showHeading = true }: { lessonId: string; lessonTitle: string; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (score:number,total:number,passed:boolean)=>void; showHeading?: boolean }) {
-  const bankKey = lessonId === "lesson-1" ? "lesson-1" : lessonId === "lesson-2" ? "lesson-2" : lessonId === "lesson-3" ? "lesson-3" : null;
+  const bankKey = CNC_FINAL_TEST_BANK[lessonId] ?? null;
   const quiz = bankKey ? (quizBanks[bankKey] ?? null) : null;
-  const lessonNumber = lessonId.replace("lesson-", "");
+  const lessonNumber = CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(lessonId as never) + 1;
+  const total = quiz?.length ?? 0;
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [submitted, setSubmitted] = useState(false);
   const score = quiz?.filter((question) => answers[question.id] === question.correctIndex).length ?? 0;
@@ -986,11 +1005,11 @@ function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, sh
   </>;
 
   return <>
-    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description={lessonId === "lesson-1" ? "Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC." : lessonId === "lesson-2" ? "Đề trắc nghiệm lập trình tiện CNC trên hệ Fanuc 21T." : "Đề trắc nghiệm lập trình phay CNC trên hệ Fanuc 21M."} />}
+    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description={FINAL_TEST_DESCRIPTION[lessonId] ?? "Đề trắc nghiệm cuối bài."} />}
     <div className="cnc-gate-banner">
       <FileQuestion size={26} />
-      <div><span>BÀI KIỂM TRA KIẾN THỨC</span><h3>{lessonTitle}</h3><p><strong>20 câu trắc nghiệm</strong> · 30 phút · Đạt từ <strong>16/20 câu (80%)</strong></p></div>
-      <b className={passed ? "passed" : ""}>{submitted ? `${score}/20` : "80%"}<small>{passed ? "ĐÃ ĐẠT" : "YÊU CẦU"}</small></b>
+      <div><span>BÀI KIỂM TRA KIẾN THỨC</span><h3>{lessonTitle}</h3><p><strong>{total} câu trắc nghiệm</strong> · 30 phút · Đạt từ <strong>{requiredScore}/{total} câu (80%)</strong></p></div>
+      <b className={passed ? "passed" : ""}>{submitted ? `${score}/${total}` : "80%"}<small>{passed ? "ĐÃ ĐẠT" : "YÊU CẦU"}</small></b>
     </div>
     <div className="cnc-quiz">
       {quiz.map((question, questionIndex) => (
@@ -1015,7 +1034,7 @@ function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, sh
       ))}
     </div>
     <button className="cnc-submit" disabled={Object.keys(answers).length < quiz.length} onClick={() => { const didPass=score>=requiredScore; setSubmitted(true); onResult?.(score,quiz.length,didPass); if (didPass) onPassed(); }}><FileQuestion size={18} /> Nộp bài kiểm tra Bài {lessonNumber}</button>
-    {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đạt — Bạn trả lời đúng ${score}/20 câu và đã hoàn thành bài kiểm tra.` : `Chưa đạt — Bạn trả lời đúng ${score}/20 câu. Cần ít nhất 16 câu đúng; hãy xem giải thích và làm lại.`}</div>}
+    {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đạt — Bạn trả lời đúng ${score}/${total} câu và đã hoàn thành bài kiểm tra.` : `Chưa đạt — Bạn trả lời đúng ${score}/${total} câu. Cần ít nhất ${requiredScore} câu đúng; hãy xem giải thích và làm lại.`}</div>}
   </>;
 }
 
