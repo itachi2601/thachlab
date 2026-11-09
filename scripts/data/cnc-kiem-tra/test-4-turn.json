@@ -31,10 +31,10 @@
       "type": "multiple_choice",
       "question": "Trước khi cấp điện, vùng quay của mâm cặp phải ở trạng thái nào?",
       "options": [
-        "Có sẵn chìa khóa để kẹp phôi",
-        "Có dụng cụ đo để đo nhanh",
+        "Có sẵn chìa khóa để kẹp phôi nhanh hơn",
+        "Có sẵn dụng cụ đo để đo nhanh khi cần",
         "Không còn chìa khóa, dụng cụ, vật lạ",
-        "Có phôi đã kẹp và đang quay"
+        "Có phôi đã kẹp và đang quay ở tốc độ thấp"
       ],
       "answer": 2,
       "explanation": "Kiểm tra trước cấp điện luôn có mục vùng quay trống: không còn chìa khóa mâm cặp, dụng cụ, vật lạ."
@@ -56,9 +56,9 @@
       "question": "Chạy thử để kiểm tra cài đặt nên làm theo cách nào?",
       "options": [
         "Trong MDI, từng khối, bước tiến thấp",
-        "Chạy tự động cả chương trình",
-        "JOG với % bước tiến cao",
-        "Về Reference rồi chạy tự động"
+        "Chạy tự động cả chương trình ngay",
+        "JOG với % bước tiến đặt ở mức cao",
+        "Về Reference rồi chạy tự động luôn"
       ],
       "answer": 0,
       "explanation": "Chạy thử trong MDI từng khối với bước tiến thấp để kịp thấy lệch và dừng."
@@ -67,10 +67,10 @@
       "type": "multiple_choice",
       "question": "Gốc phôi W phải cài lại khi nào?",
       "options": [
-        "Mỗi lần mở máy",
-        "Mỗi lần gá phôi",
-        "Mỗi lần thay dao",
-        "Mỗi lần đổi % bước tiến"
+        "Mỗi lần mở máy lên lại",
+        "Mỗi lần gá lại phôi mới",
+        "Mỗi lần thay một con dao",
+        "Mỗi lần đổi % bước tiến JOG"
       ],
       "answer": 1,
       "explanation": "W do em cài ở Work Shift, gắn với mỗi lần gá phôi."
@@ -79,10 +79,10 @@
       "type": "multiple_choice",
       "question": "Điểm R và M được xác lập lại lúc nào?",
       "options": [
-        "Khi em nhập Work Shift",
-        "Khi em nhấn Measure",
-        "Khi gọi dao bằng T0202 M6;",
-        "Khi về Reference, mỗi lần mở máy"
+        "Khi em nhập Work Shift vào máy",
+        "Khi em nhấn Measure đo dao",
+        "Khi gọi dao bằng lệnh T0202 M6;",
+        "Khi về Reference sau mở máy"
       ],
       "answer": 3,
       "explanation": "R và M do máy tự xác lập lại khi về Reference sau mỗi lần mở máy."
@@ -103,10 +103,10 @@
       "type": "multiple_choice",
       "question": "Quên chìa khóa trên mâm cặp rồi cho trục chính quay, điều nguy hiểm nhất là gì?",
       "options": [
-        "Tọa độ trên màn hình bị sai",
-        "Máy mất điểm tham chiếu",
-        "Chìa khóa văng ra trúng người hoặc kính",
-        "Ụ động bị kẹt không di chuyển"
+        "Tọa độ trên màn hình bị sai lệch",
+        "Máy mất điểm tham chiếu đã về",
+        "Chìa khóa văng ra trúng người",
+        "Ụ động bị kẹt không di chuyển được"
       ],
       "answer": 2,
       "explanation": "Khi trục chính quay, chìa khóa văng ra theo phương tiếp tuyến, có thể trúng người hoặc kính."
@@ -115,10 +115,10 @@
       "type": "multiple_choice",
       "question": "Vì sao phải chạy thử từng khối với bước tiến thấp trước khi chạy tự động?",
       "options": [
-        "Để máy tự sửa offset sai",
-        "Để kịp thấy lệch và dừng trước khi va",
-        "Để trục chính quay đều hơn",
-        "Để khỏi phải về Reference"
+        "Để máy tự sửa lại offset bị sai",
+        "Để kịp thấy lệch rồi dừng máy",
+        "Để trục chính quay đều hơn lúc cắt",
+        "Để khỏi phải về Reference lần nữa"
       ],
       "answer": 1,
       "explanation": "Chạy thử chậm từng khối cho em thời gian so vị trí thật với tọa độ dự kiến và dừng khi lệch."
@@ -127,10 +127,10 @@
       "type": "multiple_choice",
       "question": "Khi nào mới được chuyển sang chạy tự động cả chương trình?",
       "options": [
-        "Ngay sau khi về Reference",
-        "Sau khi nhập xong Work Shift",
-        "Khi đã gọi đủ dao trong MDI",
-        "Sau khi chạy thử khớp tọa độ dự kiến"
+        "Ngay sau khi vừa về Reference xong",
+        "Sau khi đã nhập xong Work Shift",
+        "Khi đã gọi đủ các dao trong MDI",
+        "Sau khi chạy thử thấy tọa độ khớp"
       ],
       "answer": 3,
       "explanation": "Chỉ chạy tự động khi chạy thử đã khớp; lệch mà chạy tự động sẽ va dao, hỏng phôi."
@@ -139,10 +139,10 @@
       "type": "multiple_choice",
       "question": "Nhóm nào nằm trong danh sách phải nhìn trước khi cấp điện?",
       "options": [
-        "Số chương trình, tốc độ S, bước tiến F",
-        "Dừng khẩn cấp, cửa che chắn, vùng hành trình dao",
-        "Work Shift, Geometry và trang Position",
-        "Chiều quay M3, M4 và dao đang gọi"
+        "Số chương trình, tốc độ S, bước tiến F, M3",
+        "Dừng khẩn cấp, cửa che chắn, hành trình dao",
+        "Work Shift, Geometry, trang Position, Offset",
+        "Chiều quay M3, M4, dao đang gọi, tốc độ S"
       ],
       "answer": 1,
       "explanation": "Trước khi cấp điện phải nhìn dừng khẩn cấp, cửa che chắn, vùng hành trình dao; các mục còn lại chỉ xem được sau khi mở máy."
@@ -151,10 +151,10 @@
       "type": "multiple_choice",
       "question": "Ca chiều nhận máy sau nhóm khác, phôi mới, trang offset còn số của nhóm trước. Cần xử lý dữ liệu thế nào?",
       "options": [
-        "Giữ nguyên vì vẫn là máy đó",
-        "Chỉ xóa Geometry, giữ Work Shift",
-        "Xóa cả Work Shift và Geometry rồi đo lại",
-        "Chỉ về Reference là đủ"
+        "Giữ nguyên vì vẫn là cùng một máy",
+        "Chỉ xóa Geometry, giữ lại Work Shift",
+        "Xóa cả Work Shift và Geometry, đo lại",
+        "Chỉ cần về Reference lại các trục là đủ"
       ],
       "answer": 2,
       "explanation": "Phôi và cách gá đã khác nên phải xóa Work Shift (X, Z) và Offset Geometry (X, Z, R, T) cũ rồi đo lại."
@@ -164,7 +164,7 @@
       "question": "Cùng phôi đang kẹp, em gá thêm mũi khoan vào vị trí số 6. Cần cài gì cho mũi khoan?",
       "options": [
         "Cài lại Work Shift của phôi",
-        "Đo Geometry hàng 6",
+        "Đo Geometry ở hàng dao số 6",
         "Về Reference rồi dùng số cũ",
         "Không cần cài, dùng số dao 2"
       ],
@@ -175,10 +175,10 @@
       "type": "multiple_choice",
       "question": "Bản vẽ ghi kích thước tính từ mặt đầu phôi. Chương trình viết theo bản vẽ lấy gốc tọa độ là điểm nào?",
       "options": [
-        "Gốc máy M",
+        "Gốc máy M cố định",
         "Điểm tham chiếu R",
-        "Chuẩn dao N/T",
-        "Gốc phôi W"
+        "Điểm chuẩn dao N/T",
+        "Gốc phôi W ở mặt đầu"
       ],
       "answer": 3,
       "explanation": "Chương trình viết theo gốc phôi W đặt ở mặt đầu phôi; M, R, N/T cố định theo máy nên phải cài Work Shift để máy biết W."
@@ -188,9 +188,9 @@
       "question": "Vì sao vạt mặt còn sót một chấm lõi nhỏ ở tâm mặt đầu?",
       "options": [
         "Mũi dao gá thấp hơn tâm phôi",
-        "Mũi dao gá cao hơn tâm phôi",
-        "% bước tiến đặt quá thấp",
-        "Trục chính quay chiều M3"
+        "Mũi dao gá cao hơn tâm của phôi",
+        "% bước tiến đặt quá thấp lúc vạt",
+        "Trục chính đang quay chiều M3"
       ],
       "answer": 0,
       "explanation": "Mũi dao thấp hơn tâm thì khi vạt mặt không đi qua đúng tâm nên còn sót lõi; chỉnh lại bằng căn chêm."
@@ -223,10 +223,10 @@
       "type": "multiple_choice",
       "question": "Yêu cầu Ø18 ± 0,1 mm, em đo trụ được 17,85 mm. Kết luận nào đúng?",
       "options": [
-        "Đạt, vì chỉ lệch 0,15 mm",
-        "Chưa đạt, tiện thêm một nhát nhỏ",
-        "Đạt, vì nằm giữa 17,8 và 18,2 mm",
-        "Không đạt, đường kính đã nhỏ hơn mức cho phép"
+        "Đạt, vì chỉ lệch 0,15 mm so với kích thước 18",
+        "Chưa đạt, còn dư nên tiện thêm một nhát nhỏ",
+        "Đạt, vì nằm giữa 17,8 và 18,2 mm theo bản vẽ",
+        "Không đạt, đường kính nhỏ hơn mức cho phép"
       ],
       "answer": 3,
       "explanation": "Giới hạn dưới là 17,9 mm; 17,85 mm đã nhỏ hơn, tiện không thể bù thêm vật liệu nên chi tiết không đạt."
