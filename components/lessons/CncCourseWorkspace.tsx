@@ -711,7 +711,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
         <span>Bài {Math.max(1, CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(lesson.id as never) + 1)}</span>
       </nav>
 
-      {courseId && <CncCourseAnnouncements courseId={courseId} />}
+      {/* Thông báo học phần chỉ ở trang mục lục, không chen vào trang bài (thầy báo 9/11: lẫn vào nội dung bài, N3). */}
+      {courseId && !validInitialLessonId && <CncCourseAnnouncements courseId={courseId} />}
       {courseId && session?.user.id && viewerProfile?.role !== "admin" && !validInitialLessonId && <LazyErrorBoundary fallback={null}><CncPrepQuiz courseId={courseId} studentId={session.user.id} variant="line" /></LazyErrorBoundary>}
 
       <div className="cnc-workspace cnc-accordion-workspace">
