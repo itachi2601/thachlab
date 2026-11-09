@@ -12,7 +12,6 @@ import {
   ChevronRight,
   CirclePlay,
   ClipboardCheck,
-  Clock3,
   Download,
   FileQuestion,
   FileText,
@@ -26,7 +25,6 @@ import {
   ShieldCheck,
   UploadCloud,
   Users,
-  Wrench,
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
@@ -67,7 +65,7 @@ import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts"
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
-import { CNC_CHAPTERS, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys, type CncSectionKind } from "@/services/cnc-progress";
+import { CNC_CHAPTERS, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
 import CncGateStrip from "@/components/lessons/CncGateStrip";
 import "./class-overview.css"; // khuôn trang lớp (rail chương, dòng bài) dùng chung với các môn khác
 import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyId, type CompetencyPermission } from "@/services/cnc-competencies";
@@ -442,7 +440,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   const lesson = lessons.find((item) => item.id === lessonId) ?? lessons[0];
-  const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
   const matchingLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
       lessonSearch.trim().toLocaleLowerCase("vi-VN"),
@@ -538,16 +535,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   }
   const meta = lessonMeta[lesson.id] ?? { theory: 0, practice: 0, test: 0 };
 
-  const selectLesson = (id: string) => {
-    if (expandedLessonId === id) {
-      setExpandedLessonId(null);
-      setTab(null);
-      return;
-    }
-    setLessonId(id);
-    setExpandedLessonId(id);
-    setTab("ly_thuyet");
-  };
 
   const isLessonLocked = (id: string) => {
     const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(id);
@@ -559,15 +546,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   // Giảng viên (admin) không có tiến độ riêng → không hiện dải; trang /dev không courseId thì hiện ngay.
   const showGates = viewerProfile?.role !== "admin" && (!courseId || (gateDataLoaded.records && gateDataLoaded.permissions));
   const gateStates = cncGateStates(passedAssessments, (id) => competencyStates[id].approved, isLessonLocked);
-  // Bấm một cổng: mở đúng bài + tab còn thiếu ngay trong danh sách rồi cuộn tới (không đổi URL ?bai=).
-  const openGate = (gateLessonId: string, section: CncSectionKind) => {
-    setLessonSearch("");
-    setLessonId(gateLessonId);
-    setExpandedLessonId(gateLessonId);
-    const target = isTheoryOnly(gateLessonId) ? "ly_thuyet" : section;
-    setTab(target);
-    window.setTimeout(() => document.getElementById(`cnc-section-${gateLessonId}-${target}`)?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
-  };
 
   const record = (assessmentId: string, value: number, total: number, didPass: boolean) => recordQuiz(lesson.id, assessmentId, value, total, didPass);
   const isProgramming = lesson.id === "lesson-2" || lesson.id === "lesson-3";
@@ -704,37 +682,43 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
 
   return (
     <div className={`cnc-shell lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
-      <header className="cnc-course-header">
-        <div className="cnc-breadcrumb">
-          <Link href="/lop-hoc/cttc">Lớp học</Link><ChevronRight size={14} /><Link href="/lop-hoc/cttc">CTTC</Link><ChevronRight size={14} />Gia công CNC
-        </div>
-        <div className="cnc-header-grid">
-          <div>
-            <span className="cnc-kicker"><Wrench size={14} /> Học phần chuyên ngành</span>
-            <h1>Gia công <em>CNC</em></h1>
-            <p>Thực tập máy tiện, máy phay điều khiển theo chương trình số</p>
-          </div>
-          <div className="cnc-progress-card" aria-label={`Tiến độ ${progress}%`}>
-            <div><span>Tiến độ học phần</span><strong>{progress}%</strong></div>
-            <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
-            <small>{passedAssessments.size}/{CNC_TOTAL_ASSESSMENTS} bài kiểm tra đã đạt</small>
-          </div>
-        </div>
-        <div className="cnc-stats">
-          <span><Clock3 />70 tiết</span><span><BookOpen />{CNC_LESSON_COUNT} bài · {CNC_CHAPTERS.length} chương</span>
-        </div>
-        {!validInitialLessonId && showGates && <CncGateStrip states={gateStates} onOpen={openGate} />}
-      </header>
+      {/* Trang bài theo khuôn các môn khác: rail bài bên trái (≥1024), đường dẫn ngắn thay đầu trang học phần (B5, N4). */}
+      <div className="lesson-layout lesson-layout--pick">
+      <aside className="lesson-nav class-rail" aria-label="Bài trong học phần">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cùng route, chỉ khác ?bai= */}
+        <a href="/lop-hoc/cnc/" className="lesson-rail-back"><ChevronRight size={15} className="rotate-180" aria-hidden /><span>Gia công CNC</span></a>
+        <nav className="class-rail-box" aria-label="Bài">
+          <p className="class-rail-title">Gia công CNC<span>Bài</span></p>
+          <ol>
+            {CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).map((id, i) => {
+              const item = lessons.find((l) => l.id === id);
+              if (!item) return null;
+              const theoryOnly = isTheoryOnly(id);
+              const locked = isLessonLocked(id) && !theoryOnly;
+              const current = id === validInitialLessonId;
+              const inner = <><span className="class-rail-n">{completed[id] ? <Check size={13} aria-label="Xong" /> : i + 1}</span><span>{plainLessonTitle(item.shortTitle)}</span><span className="class-rail-st">{locked ? <LockKeyhole size={13} aria-label="Đang khoá" /> : theoryOnly ? "Đọc" : ""}</span></>;
+              return <li key={id}>{current || locked
+                ? <span className={`class-rail-item ${current ? "is-active" : ""}`} aria-current={current ? "page" : undefined}>{inner}</span>
+                : <a href={`/lop-hoc/cnc/?bai=${id}`} className="class-rail-item">{inner}</a>}</li>;
+            })}
+          </ol>
+        </nav>
+        <Link prefetch={false} href="/lop-hoc/cnc/buoi/" className="lesson-rail-back"><span>Phiếu 12 buổi học</span></Link>
+      </aside>
+      <div className="lesson-main lesson-main--single">
+      <nav className="lesson-breadcrumb cnc-lesson-crumb" aria-label="Đường dẫn">
+        <Link prefetch={false} href="/lop-hoc/cttc">CTTC</Link><span aria-hidden className="lesson-crumb-sep">›</span>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cùng route, chỉ khác ?bai= */}
+        <a href="/lop-hoc/cnc/">Gia công CNC</a><span aria-hidden className="lesson-crumb-sep">›</span>
+        <span>Bài {Math.max(1, CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(lesson.id as never) + 1)}</span>
+      </nav>
 
       {courseId && <CncCourseAnnouncements courseId={courseId} />}
       {courseId && session?.user.id && viewerProfile?.role !== "admin" && !validInitialLessonId && <LazyErrorBoundary fallback={null}><CncPrepQuiz courseId={courseId} studentId={session.user.id} variant="line" /></LazyErrorBoundary>}
 
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">
-          <div className="cnc-nav-heading"><span>{validInitialLessonId ? "Nội dung bài học" : "Chương trình Gia công CNC"}</span>{validInitialLessonId && <small>{plainLessonTitle(lesson.shortTitle)}</small>}</div>
           {!validInitialLessonId && <Link href="/lop-hoc/cnc/buoi/" className="lesson-link mb-2 min-h-[44px]">Phiếu 12 buổi học →</Link>}
-          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cùng route, chỉ khác ?bai=: Link không làm trang đọc lại URL */}
-          {validInitialLessonId && <a href="/lop-hoc/cnc/" className="lesson-link mb-4">← Tất cả bài học</a>}
           {!validInitialLessonId && <label className="cnc-lesson-search">
             <Search size={20} />
             <input value={lessonSearch} onChange={(event) => setLessonSearch(event.target.value)} placeholder="Tìm bài học…" />
@@ -753,28 +737,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                 <Fragment key={item.id}>
                 {chapterStart && <h3 className="cnc-chapter-label">Chương {chapter.title}</h3>}
                 <article className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
-                  {validInitialLessonId ? <button
-                    type="button"
-                    disabled={locked}
-                    onClick={() => selectLesson(item.id)}
-                    className="cnc-lesson-toggle"
-                    aria-expanded={active}
-                    aria-controls={`cnc-lesson-panel-${item.id}`}
-                    aria-label={`${active ? "Thu gọn" : "Mở"} ${item.shortTitle}`}
-                  >
-                    <span className={`cnc-lesson-number ${completed[item.id] ? "done" : ""}`}>
-                      {completed[item.id] ? <Check size={15} /> : index + 1}
-                    </span>
-                    <span className="cnc-lesson-copy">
-                      <strong>{plainLessonTitle(item.shortTitle)}</strong>
-                      <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
-                    </span>
-                    {locked || theoryOnly ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
-                    <span className={`cnc-lesson-collapse-label ${active ? "active" : ""}`}>
-                      {active ? "Thu gọn" : "Mở bài"}
-                    </span>
-                    <ChevronDown className="cnc-accordion-chevron" size={18} />
-                  </button> : <Link
+                  {validInitialLessonId ? null /* trang bài: tên bài ở hero + rail trái, không thêm thanh gấp (N4) */ : <Link
                     href={locked ? "/lop-hoc/cnc" : `/lop-hoc/cnc/?bai=${item.id}`}
                     aria-disabled={locked}
                     className="cnc-lesson-toggle"
@@ -852,6 +815,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
           </div>
           <div className="cnc-support"><ShieldCheck size={20} /><div><strong>An toàn là ưu tiên</strong><p>Bài vận hành phải đạt đúng ngưỡng kiểm tra trước máy của từng bài.</p></div></div>
         </section>
+      </div>
+      </div>
       </div>
     </div>
   );
