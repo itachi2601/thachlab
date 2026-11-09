@@ -19,8 +19,8 @@
       "type": "multiple_choice",
       "question": "Nhìn từ trên xuống mặt phẳng XY, lệnh G02 dùng để:",
       "options": [
-        "Chạy dao nhanh không cắt",
-        "Cắt đường thẳng có lượng chạy dao",
+        "Chạy dao nhanh tới điểm mà không cắt",
+        "Cắt đường thẳng với lượng chạy dao F",
         "Cắt cung tròn ngược chiều kim đồng hồ",
         "Cắt cung tròn cùng chiều kim đồng hồ"
       ],
@@ -32,9 +32,9 @@
       "question": "Lệnh G40 trong chương trình phay có tác dụng:",
       "options": [
         "Bật bù bán kính, dao bên trái hướng chạy",
-        "Hủy bù bán kính, tâm dao về đường lập trình",
+        "Hủy bù bán kính, dao về đường lập trình",
         "Bật bù bán kính, dao bên phải hướng chạy",
-        "Hủy chu trình khoan đang chạy"
+        "Hủy chu trình khoan đã gọi trước đó"
       ],
       "answer": 1,
       "explanation": "G41 và G42 bật bù bán kính dao (trái/phải hướng chạy), G40 hủy bù để tâm dao trở về đường lập trình."
@@ -43,10 +43,10 @@
       "type": "multiple_choice",
       "question": "Khi bật bù bán kính bằng G41, dao nằm ở đâu so với đường chạy?",
       "options": [
-        "Bên trái hướng chạy",
-        "Bên phải hướng chạy",
+        "Bên trái so với hướng chạy",
+        "Bên phải so với hướng chạy",
         "Ngay trên đường biên dạng",
-        "Phía trên mặt phôi"
+        "Phía trên so với mặt phôi"
       ],
       "answer": 0,
       "explanation": "Đứng trên đường chạy nhìn theo hướng đi: G41 dao ở bên trái, G42 dao ở bên phải."
@@ -55,9 +55,9 @@
       "type": "multiple_choice",
       "question": "Khi tạo lỗ ren, bước khoan tâm đầu tiên dùng để:",
       "options": [
-        "Tạo ren sơ bộ cho mũi tarô",
+        "Tạo sẵn ren sơ bộ cho mũi tarô sau",
         "Mở rộng lỗ tới đúng đường kính ren",
-        "Định vị để mũi khoan không bị trượt lệch",
+        "Định vị để mũi khoan không trượt",
         "Làm mát vùng cắt trước khi khoan"
       ],
       "answer": 2,
@@ -67,10 +67,10 @@
       "type": "multiple_choice",
       "question": "Khi phay một tấm phôi, Z0 của gốc W thường đặt ở đâu?",
       "options": [
-        "Mặt bàn máy dưới phôi",
+        "Mặt bàn máy nằm ngay dưới phôi",
         "Mặt trên của phôi đã phay phẳng",
-        "Đáy lỗ sâu nhất trên bản vẽ",
-        "Đầu mũi dao lúc vừa gọi dao"
+        "Đáy của lỗ sâu nhất trên bản vẽ",
+        "Đầu mũi dao lúc vừa mới gọi dao ra"
       ],
       "answer": 1,
       "explanation": "Phay mặt phẳng xong thì chạm dao trên mặt vừa phay để đặt Z0; X0 Y0 đặt ở một góc hoặc tâm phôi."
@@ -79,9 +79,9 @@
       "type": "multiple_choice",
       "question": "Khi khai báo cung bằng I và J, hai trị số này là:",
       "options": [
-        "Tọa độ điểm cuối cung theo X và Y",
-        "Bán kính cung theo X và theo Y",
-        "Tọa độ tâm cung tính từ gốc W",
+        "Tọa độ điểm cuối cung theo X và theo Y",
+        "Bán kính cung theo phương X và phương Y",
+        "Tọa độ tâm cung tính từ gốc W của phôi",
         "Hiệu tọa độ tâm trừ điểm đầu theo X, Y"
       ],
       "answer": 3,
@@ -91,10 +91,10 @@
       "type": "multiple_choice",
       "question": "Vì sao nên gia công trọn chi tiết trong một lần gá khi có thể?",
       "options": [
-        "Để gốc W không đổi giữa các nguyên công",
+        "Để gốc W giữ nguyên mọi nguyên công",
         "Để dùng được tốc độ trục chính cao hơn",
-        "Để không phải dùng bù bán kính dao",
-        "Để mũi khoan không bị mòn nhanh"
+        "Để không phải dùng bù bán kính dao nữa",
+        "Để mũi khoan khỏi bị mòn nhanh hơn"
       ],
       "answer": 0,
       "explanation": "Mọi tọa độ tính từ W; tháo ra gá lại phải xác lập W lại, chỉ lệch một chút là cả nhóm nguyên công sau lệch theo."
@@ -103,7 +103,7 @@
       "type": "multiple_choice",
       "question": "Biên dạng phay đúng, nhưng sau khi tháo ra gá lại để khoan, cả bốn lỗ cùng lệch 2 mm theo Y so với biên dạng. Cần kiểm tra trước tiên:",
       "options": [
-        "Độ mòn của mũi khoan",
+        "Độ mòn của mũi khoan đang dùng",
         "Tốc độ quay trục chính khi khoan",
         "Việc xác lập lại gốc W sau khi gá",
         "Tọa độ từng lỗ trong chương trình"
@@ -127,7 +127,7 @@
       "type": "multiple_choice",
       "question": "Dao đang ở (0; 10), cần cắt cung bán kính 10 mm tới (10; 0), tâm cung ở (0; 0), nhìn từ trên xuống. Lệnh đúng là:",
       "options": [
-        "G03, vì cung đi xuống dưới",
+        "G03, vì cung đi từ trên xuống dưới",
         "G01, vì hai điểm cùng mặt phẳng XY",
         "G02, vì đi cùng chiều kim đồng hồ",
         "G03, vì tâm cung nằm ở gốc tọa độ"
@@ -187,10 +187,10 @@
       "type": "multiple_choice",
       "question": "Mũi tarô M8×1,25 bị gãy giữa chừng; lỗ khoan trước đó dùng mũi Ø6. Nguyên nhân hợp lý nhất là:",
       "options": [
-        "Lỗ quá to nên ren nông, lỏng",
-        "Lỗ quá bé, mũi tarô chịu lực lớn",
-        "Chưa khoan tâm trước khi tarô",
-        "Tarô làm trước bước khoan lỗ"
+        "Lỗ quá to nên ren nông và bị lỏng",
+        "Lỗ quá bé, tarô chịu lực quá lớn",
+        "Chưa khoan tâm trước khi tarô lỗ",
+        "Tarô làm trước cả bước khoan lỗ"
       ],
       "answer": 1,
       "explanation": "Mũi khoan đúng là D − P = 6,75, chọn Ø6,8; khoan Ø6 thì lỗ quá bé, mũi tarô phải cắt nhiều kim loại nên dễ gãy."

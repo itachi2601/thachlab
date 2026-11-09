@@ -7,7 +7,7 @@
       "type": "multiple_choice",
       "question": "Theo bài, máy phay EMCO MILL 55 gồm hai phần chính nào?",
       "options": [
-        "Phần điều khiển xử lý chương trình và phần chấp hành tạo chuyển động",
+        "Phần điều khiển xử lý chương trình và phần chấp hành",
         "Phần cơ khí chịu lực và phần cấp dung dịch làm mát cho dao",
         "Phần trục chính mang dao và phần bàn máy mang ê-tô kẹp phôi",
         "Phần mềm WinNC trên máy tính và phần ổ tích dao 8 vị trí"
@@ -19,10 +19,10 @@
       "type": "multiple_choice",
       "question": "Bộ phận nào thuộc phần chấp hành tạo chuyển động tương đối giữa dao và phôi?",
       "options": [
-        "Thùng CPU của máy tính điều khiển",
-        "Màn hình hiển thị của tủ điều khiển",
+        "Thùng CPU máy tính điều khiển",
+        "Màn hình của tủ điều khiển",
         "Ổ tích dao và cơ cấu thay dao",
-        "Bàn phím máy tính và chuột"
+        "Bàn phím và chuột của máy tính"
       ],
       "answer": 2,
       "explanation": "Ổ tích dao, cơ cấu thay dao, trục chính, bàn máy, động cơ dẫn động thuộc phần chấp hành; CPU, màn hình, bàn phím thuộc phần điều khiển."
@@ -44,7 +44,7 @@
       "question": "Lệnh M03 trong dòng MDI có tác dụng gì?",
       "options": [
         "Cho trục chính quay nghịch",
-        "Dừng trục chính lại",
+        "Dừng trục chính ngay lập tức",
         "Thay dao số 3 vào trục chính",
         "Cho trục chính quay thuận"
       ],
@@ -103,10 +103,10 @@
       "type": "multiple_choice",
       "question": "Vì sao nên đi kiểm tra quanh máy khi chưa cấp điện thay vì sau khi đã bật máy?",
       "options": [
-        "Khi có điện thì màn hình WinNC che mất vùng gia công nên khó nhìn thấy",
-        "Máy chỉ cho phép siết ê-tô và tháo dao khi tủ điều khiển chưa bật CP",
-        "Chưa có điện thì không trục nào chạy bất ngờ, dọn vật cản và siết dao an toàn nhất",
-        "Kiểm sau khi bật máy sẽ làm mất tọa độ Reference đã lưu từ ca trước"
+        "Khi có điện thì màn hình WinNC che mất vùng gia công nên rất khó nhìn thấy",
+        "Máy chỉ cho phép siết ê-tô và tháo dao khi tủ điều khiển chưa bật công tắc CP",
+        "Chưa có điện thì không trục nào chạy bất ngờ nên dọn vật cản an toàn nhất",
+        "Kiểm sau khi bật máy sẽ làm mất toàn bộ tọa độ Reference đã lưu từ ca trước"
       ],
       "answer": 2,
       "explanation": "Lúc chưa đóng điện không có chuyển động nào bất ngờ, nên đây là lúc an toàn nhất để dọn vật để quên và kiểm dao."
@@ -115,10 +115,10 @@
       "type": "multiple_choice",
       "question": "Vì sao phải về Reference trước khi gọi dao, cài đặt phôi hay chạy chương trình?",
       "options": [
-        "Để máy xác lập lại tọa độ, mọi vị trí sau đó mới có căn cứ",
-        "Để máy tự đo lại chiều dài các dao trong ổ dao",
-        "Để xóa hết dữ liệu Work Shift của nhóm trước",
-        "Để trục chính được làm nóng trước khi cắt gọt"
+        "Để máy xác lập lại tọa độ, mọi vị trí sau có căn cứ",
+        "Để máy tự đo lại chiều dài tất cả các dao trong ổ dao",
+        "Để xóa hết dữ liệu Work Shift của nhóm làm trước đó",
+        "Để trục chính được làm nóng đều trước khi cắt gọt"
       ],
       "answer": 0,
       "explanation": "Khi chưa về Reference, máy chưa có tọa độ tham chiếu, chạy hay dò gốc lúc đó chỉ là đoán vị trí."
@@ -128,7 +128,7 @@
       "question": "Đang chạy JOG, dao đã tới gần phôi và ê-tô. Cách làm đúng là:",
       "options": [
         "Giữ bước tiến, chỉ giảm số vòng quay trục chính",
-        "Giảm bước tiến và đi từng bước ngắn",
+        "Giảm bước tiến, đi từng bước ngắn và quan sát",
         "Chuyển sang MDI, gõ G0 đưa dao tới sát phôi",
         "Về Reference rồi JOG lại với bước tiến cũ"
       ],
@@ -139,10 +139,10 @@
       "type": "multiple_choice",
       "question": "Vì sao trong MDI phải nhập T02 M6; trước rồi mới nhập M3 S500;?",
       "options": [
-        "Vì máy không đọc được lệnh M3 khi chưa có lệnh T",
-        "Để số vòng quay S500 được ghi vào hàng của dao 2",
+        "Vì máy sẽ không đọc được lệnh M3 khi chưa có lệnh T",
+        "Để số vòng quay S500 được ghi vào hàng của dao số 2",
         "Vì lệnh M6 sẽ tự đổi chiều quay của trục chính",
-        "Để trục chính chỉ quay khi đã lắp đúng dao cần dùng"
+        "Để trục chính chỉ quay khi đã có đúng dao cần dùng"
       ],
       "answer": 3,
       "explanation": "Thay dao trước, quay sau: quay trục chính khi chưa lắp dao cần dùng là sai trình tự."
@@ -152,8 +152,8 @@
       "question": "Khi nhấn nút tháo dao, vì sao phải giữ chắc chuôi dao và không đứng dưới dụng cụ?",
       "options": [
         "Nút tháo dao làm trục chính quay nhanh trong vài giây",
-        "Dao còn nóng nên cần giữ để tản nhiệt bớt cho tay",
-        "Dao được nhả khỏi trục chính, không giữ thì có thể rơi xuống",
+        "Dao còn nóng nên cần giữ chắc để tản nhiệt bớt cho tay",
+        "Dao được nhả khỏi trục chính, không giữ có thể rơi xuống",
         "Giữ chuôi dao giúp máy ghi lại chiều dài dao vừa tháo"
       ],
       "answer": 2,
@@ -163,10 +163,10 @@
       "type": "multiple_choice",
       "question": "Cuối ca kiểm đếm dụng cụ thấy thiếu một collet. Cách xử lý hợp lý nhất là:",
       "options": [
-        "Báo ngay để cả nhóm tìm, khi phoi và dụng cụ còn nguyên chỗ",
-        "Ghi vào phiếu bàn giao để ca sau tìm giúp",
+        "Báo ngay để cả nhóm cùng tìm khi hiện trường còn nguyên",
+        "Ghi vào phiếu bàn giao rồi nhờ ca sau tìm giúp",
         "Đợi đầu ca sau, khi bàn máy đã dọn sạch, mới tìm",
-        "Báo vào buổi kiểm kê tủ dụng cụ cuối tuần"
+        "Báo vào buổi kiểm kê tủ dụng cụ định kỳ cuối tuần"
       ],
       "answer": 0,
       "explanation": "Báo ngay thì còn tìm được, ví dụ trong phoi trên bàn máy; để sang ca sau thì không ai biết rơi ở đâu."
@@ -187,10 +187,10 @@
       "type": "multiple_choice",
       "question": "Trong dòng MDI \"M3 S500;\", con số 500 cho biết điều gì?",
       "options": [
-        "Bước tiến của dao là 500 mm/phút",
-        "Dao số 500 được gọi ra từ ổ dao",
-        "Dao sẽ dừng cách mặt phôi 500 mm",
-        "Số vòng quay trục chính là 500 vòng/phút"
+        "Bước tiến của dao là 500 mm/phút khi phay",
+        "Dao số 500 được gọi ra từ ổ tích dao",
+        "Dao sẽ dừng cách mặt phôi đúng 500 mm",
+        "Tốc độ quay trục chính là 500 vòng/phút"
       ],
       "answer": 3,
       "explanation": "S đi với số vòng quay (vòng/phút); M3 cho quay thuận."
@@ -199,10 +199,10 @@
       "type": "multiple_choice",
       "question": "Nhóm em vừa gá vào ổ dao một mũi tarô nhô dài, phôi trên ê-tô lại cao hơn mọi hôm. Trước lần đầu gọi dao tự động, cần kiểm điều gì?",
       "options": [
-        "Khoảng hở giữa các dao với phôi và ê-tô khi ổ dao thay dao",
-        "Chiều quay trục chính đã đặt là M3 hay M4",
-        "Bước tiến JOG đã đặt ở mức 100 % hay chưa",
-        "Ổ dao còn trống đủ vị trí cho dao mới hay không"
+        "Khoảng hở của dao với phôi và ê-tô khi ổ dao thay dao",
+        "Chiều quay trục chính đã đặt đúng là M3 hay M4 hay chưa",
+        "Bước tiến JOG đã đặt ở mức 100 % hay chưa trên màn hình",
+        "Ổ tích dao còn trống đủ vị trí cho dao mới hay không"
       ],
       "answer": 0,
       "explanation": "Dao nhô dài cộng phôi cao làm khoảng hở nhỏ lại, lúc thay dao tự động dao có thể quệt vào phôi hoặc ê-tô."
@@ -225,8 +225,8 @@
       "options": [
         "Đạt vì chỉ lệch 0,15 mm so với kích thước danh nghĩa",
         "Chưa đạt, phay thêm khoảng 0,15 mm là về đúng 60 mm",
-        "Đạt vì phần lệch nhỏ hơn dung sai tổng 0,2 mm",
-        "Chưa đạt, đã cắt quá, không sửa được bằng cách phay thêm"
+        "Đạt vì phần lệch nhỏ hơn tổng dung sai cho phép 0,2 mm",
+        "Chưa đạt, đã cắt quá, không sửa bằng cách phay thêm"
       ],
       "answer": 3,
       "explanation": "59,85 mm nhỏ hơn giới hạn dưới 59,9 mm, vật liệu đã bị cắt quá nên phay thêm chỉ làm nhỏ hơn; ghi nguyên nhân sai lệch."
@@ -235,8 +235,8 @@
       "type": "multiple_choice",
       "question": "Chuẩn bị đóng CP, em thấy cờ lê siết ê-tô còn nằm trên bàn máy. Việc nên làm là:",
       "options": [
-        "Đóng điện rồi cất, vì lúc đó chưa có trục nào chạy",
-        "Cất cờ lê vào tủ rồi mới đóng điện",
+        "Đóng điện rồi cất sau, vì chưa có trục nào chạy",
+        "Cất cờ lê vào tủ dụng cụ rồi mới đóng điện CP",
         "Để lại, ghi nhớ tránh chỗ đó khi chạy JOG",
         "Đẩy cờ lê ra sát mép bàn máy rồi đóng điện"
       ],

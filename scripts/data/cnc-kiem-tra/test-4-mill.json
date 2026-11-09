@@ -43,10 +43,10 @@
       "type": "multiple_choice",
       "question": "Tính xong Xphôi, Yphôi, Zphôi, em nhập chúng vào đâu?",
       "options": [
-        "Mục Offset, ở hàng chiều dài của dao 2",
-        "Work Shift/Work Coordinates, hệ tọa độ phôi G54",
+        "Mục Offset, ở hàng chiều dài của dao số 2",
+        "Work Shift/Work Coordinates, hệ tọa độ G54",
         "Program MDI, dưới dạng một dòng G0 X Y Z",
-        "Màn hình POS, ở cột tọa độ Machine"
+        "Màn hình POS, ở cột tọa độ Machine hiện tại"
       ],
       "answer": 1,
       "explanation": "Gốc phôi nhập vào Work Shift/Work Coordinates, hệ tọa độ phôi G54."
@@ -94,7 +94,7 @@
         "Trên bàn phím để gõ câu kế tiếp",
         "Trên ê-tô để giữ phôi khỏi rung",
         "Trên chuột để xem lại mục Offset",
-        "Sẵn trên nút dừng"
+        "Đặt sẵn trên nút dừng khẩn cấp"
       ],
       "answer": 3,
       "explanation": "Chạy từng câu, tay sẵn trên nút dừng để dừng ngay khi dao tới sai chỗ."
@@ -103,10 +103,10 @@
       "type": "multiple_choice",
       "question": "Nhóm em thay phôi khác và lắp lại dao. Vì sao không thể chạy luôn với số nhóm trước để lại?",
       "options": [
-        "Máy không tự biết phôi và dao đã đổi, nó vẫn tin số đang lưu",
-        "Máy sẽ tự khóa chương trình khi phát hiện phôi mới",
-        "Số cũ tự bị xóa mỗi khi tắt mở máy tính",
-        "Gốc máy M đã dịch chuyển theo phôi của nhóm trước"
+        "Máy không tự biết phôi và dao đã đổi nên vẫn tin số cũ",
+        "Máy sẽ tự khóa chương trình khi phát hiện phôi mới được gá",
+        "Số cũ sẽ tự bị xóa mỗi khi tắt rồi mở lại máy tính",
+        "Gốc máy M đã dịch chuyển theo phôi của nhóm trước đó"
       ],
       "answer": 0,
       "explanation": "Chương trình tính theo gốc phôi W và chiều dài dao đang lưu; phôi, dao đổi mà giữ số cũ thì dao đến sai chỗ."
@@ -115,10 +115,10 @@
       "type": "multiple_choice",
       "question": "Đổi sang phôi có chiều cao khác, điểm chuẩn nào phải cài lại?",
       "options": [
-        "Gốc máy M",
+        "Gốc máy M của máy",
         "Điểm tham chiếu R",
-        "Gốc phôi W",
-        "Điểm chuẩn dao N"
+        "Gốc phôi W của phôi",
+        "Điểm chuẩn dao N/T"
       ],
       "answer": 2,
       "explanation": "M, R, N gắn với máy và trục chính nên đứng yên; W gắn với phôi nên đổi phôi phải cài lại."
@@ -127,10 +127,10 @@
       "type": "multiple_choice",
       "question": "Vì sao khi máy còn số của nhóm trước phải xóa cả Work Shift lẫn Offset?",
       "options": [
-        "Vì máy chỉ cho nhập số mới vào ô đang trống",
-        "Work Shift giữ gốc phôi cũ, Offset giữ chiều dài và bán kính dao cũ",
-        "Vì Offset cũ làm trục chính quay sai chiều",
-        "Vì Work Shift cũ khiến máy không về được Reference"
+        "Vì máy chỉ cho nhập số mới vào những ô đang để trống",
+        "Work Shift giữ gốc phôi cũ, Offset giữ chiều dài dao cũ",
+        "Vì Offset cũ làm trục chính quay sai chiều khi chạy lại",
+        "Vì Work Shift cũ khiến máy không về được Reference nữa"
       ],
       "answer": 1,
       "explanation": "Không xóa Work Shift thì W còn ở phôi nhóm trước; không xóa Offset thì dao được bù theo số đo cũ."
@@ -141,8 +141,8 @@
       "options": [
         "Giảm bước tiến, chạm nhẹ cạnh trước phôi rồi trừ Rdao khỏi Ymachine",
         "Chạy nhanh tới cạnh trước phôi rồi lấy luôn Ymachine làm Yphôi",
-        "Chạm nhẹ mặt trên phôi rồi cộng Rdao vào Ymachine",
-        "Giảm bước tiến, chạm nhẹ cạnh trước phôi rồi cộng Rdao vào Ymachine"
+        "Giảm bước tiến, chạm nhẹ mặt trên phôi rồi cộng Rdao vào Ymachine",
+        "Giảm bước tiến, chạm nhẹ cạnh trước rồi cộng Rdao vào Ymachine"
       ],
       "answer": 3,
       "explanation": "Gốc Y lấy ở cạnh trước phôi: giảm bước tiến để chạm nhẹ, màn hình báo tâm dao nên Yphôi = Ymachine + Rdao."
@@ -163,9 +163,9 @@
       "type": "multiple_choice",
       "question": "Vì sao phải đo riêng chiều dài cho dao số 2 và dao số 4?",
       "options": [
-        "Vì mỗi dao dùng một gốc phôi W riêng",
-        "Vì dao số 4 luôn có cùng đường kính dao số 2",
-        "Mỗi dao nhô ra khỏi trục chính một chiều dài khác nhau",
+        "Vì mỗi dao dùng một gốc phôi W riêng cho chính nó",
+        "Vì dao số 4 luôn có cùng đường kính với dao số 2",
+        "Mỗi dao nhô ra khỏi trục chính dài ngắn khác nhau",
         "Vì máy chỉ nhớ chiều dài của dao vừa đo sau cùng"
       ],
       "answer": 2,
@@ -175,10 +175,10 @@
       "type": "multiple_choice",
       "question": "Chạy dòng kiểm dao 2 tới hết lệnh G0 X0 Y0 Z50, tâm dao phải dừng ở đâu?",
       "options": [
-        "Ngay trên tâm mặt phôi, cách mặt phôi 50 mm",
-        "Ngay trên góc trái – trước của phôi, cách mặt phôi 50 mm",
-        "Đúng tại góc trái – trước, chạm mặt phôi",
-        "Tại điểm tham chiếu R, cách bàn máy 50 mm"
+        "Ngay trên tâm mặt phôi, cách mặt phôi đúng 50 mm",
+        "Ngay trên góc trái – trước phôi, cách mặt phôi 50 mm",
+        "Đúng tại góc trái – trước của phôi, chạm mặt phôi",
+        "Tại điểm tham chiếu R của máy, cách bàn máy 50 mm"
       ],
       "answer": 1,
       "explanation": "Gốc W được cài tại cạnh trái và cạnh trước phôi, mặt trên phôi là Z0, nên X0 Y0 Z50 là trên góc trái – trước 50 mm."
@@ -188,9 +188,9 @@
       "question": "Em nhập chiều dài dao 2 vào hàng dành cho bán kính, hàng chiều dài của dao 2 để trống. Khi chạy G43 H2, điều gì xảy ra?",
       "options": [
         "Máy tự chuyển số từ hàng bán kính sang hàng chiều dài",
-        "Dao chỉ lệch theo X một khoảng bằng bán kính",
-        "Máy báo lỗi và không cho chạy dòng G43",
-        "Máy bù chiều dài bằng 0, dao không được bù đúng chiều dài"
+        "Dao chỉ lệch theo X một khoảng đúng bằng bán kính",
+        "Máy báo lỗi và không cho chạy dòng lệnh G43 này",
+        "Máy bù chiều dài bằng 0 nên dao không được bù đúng"
       ],
       "answer": 3,
       "explanation": "H2 đọc hàng chiều dài của dao 2, hàng này vẫn bằng 0 nên chiều dài dao không được bù."
@@ -201,8 +201,8 @@
       "options": [
         "Cao hơn Z50 một khoảng bằng hiệu chiều dài hai dao",
         "Thấp hơn Z50 một khoảng bằng hiệu chiều dài hai dao",
-        "Đúng Z50 vì máy tự đổi H4 thành H2",
-        "Đúng Z50 nhưng lệch theo X một bán kính dao"
+        "Đúng Z50 vì máy tự đổi H4 thành H2 cho phù hợp",
+        "Đúng Z50 nhưng chỉ lệch theo X một bán kính dao"
       ],
       "answer": 0,
       "explanation": "Máy bù như thể dao dài hơn đang lắp, mà dao 2 ngắn hơn nên mũi dao dừng cao hơn dự kiến đúng bằng phần chênh lệch."
@@ -212,9 +212,9 @@
       "question": "Phay mặt đầu yêu cầu 60 ± 0,1 mm, đo được 60,18 mm. Xử lý đúng là:",
       "options": [
         "Đạt, vì lệch 0,18 mm vẫn nhỏ hơn dung sai tổng 0,2 mm",
-        "Chưa đạt và không sửa được, phải bỏ chi tiết",
-        "Chưa đạt, còn thừa vật liệu: phay thêm khoảng 0,18 mm rồi đo lại",
-        "Đạt, chỉ cần ghi nguyên nhân sai lệch vào phiếu"
+        "Chưa đạt và không sửa được nữa, phải bỏ chi tiết đó",
+        "Chưa đạt, còn thừa vật liệu: phay thêm khoảng 0,18 mm",
+        "Đạt, chỉ cần ghi nguyên nhân sai lệch vào phiếu bàn giao"
       ],
       "answer": 2,
       "explanation": "60,18 mm vượt giới hạn trên 60,1 mm nhưng còn thừa vật liệu nên sửa được: phay thêm về gần 60,00 mm, đo lại và ghi nguyên nhân."
@@ -223,10 +223,10 @@
       "type": "multiple_choice",
       "question": "Chạy G1 Z0 F200 ở dòng kiểm tra, dao đã chạm mặt phôi trong khi Position chưa báo Z0. Nên nghi số nào?",
       "options": [
-        "Bán kính dao nhập sai nên dao lệch theo X",
-        "Chiều dài dao hoặc Zphôi đã nhập sai, dừng máy kiểm lại",
+        "Bán kính dao nhập sai nên dao bị lệch theo hướng X",
+        "Chiều dài dao hoặc Zphôi nhập sai, dừng máy kiểm lại",
         "Số vòng quay S500 quá thấp nên dao bị kéo xuống",
-        "Bước tiến F200 quá nhanh nên máy đọc sai Z"
+        "Bước tiến F200 quá nhanh nên máy đọc sai giá trị Z"
       ],
       "answer": 1,
       "explanation": "Sai lệch theo phương Z đến từ chiều dài dao (hàng H) hoặc Zphôi trong Work Shift; bán kính chỉ ảnh hưởng X, Y."
@@ -235,10 +235,10 @@
       "type": "multiple_choice",
       "question": "Một bạn rút gọn dòng kiểm tra thành \"G0 X0 Y0 Z0;\" cho nhanh. Nguy cơ lớn nhất là gì?",
       "options": [
-        "Máy không hiểu lệnh nên dao đứng yên tại chỗ",
-        "Dao tới đúng gốc nhưng trục chính quay nghịch",
-        "Máy tự hủy bù chiều dài dao đã gọi bằng G43",
-        "Dao chạy nhanh thẳng xuống mặt phôi, nếu số cài sai sẽ đâm phôi không kịp dừng"
+        "Máy không hiểu lệnh nên dao đứng yên tại chỗ không chạy",
+        "Dao tới đúng gốc phôi nhưng trục chính quay nghịch chiều",
+        "Máy tự hủy bù chiều dài dao đã gọi bằng lệnh G43 trước đó",
+        "Dao chạy nhanh thẳng xuống phôi, nếu số sai sẽ đâm phôi"
       ],
       "answer": 3,
       "explanation": "Dừng ở Z50 để kiểm bằng mắt rồi xuống bằng G1 F200 chậm là để kịp dừng; G0 thẳng tới Z0 bỏ mất khoảng an toàn đó."
