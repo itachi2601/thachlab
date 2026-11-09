@@ -4275,3 +4275,6 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .shcn-prose summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 44px; display: flex; align-items: center; }
 .shcn-prose ol li { margin: 0.5rem 0; }
 .shcn-prose h2 { font-size: 1.2rem; margin: 1.8rem 0 0.6rem; }
+/* CNC: điều kiện mở khoá bài hiện đủ dòng, kể cả khi danh sách bài ẩn phụ đề ở 375px (N4) */
+.class-lesson-title small.class-lesson-unlock,
+.lesson-layout--pick .class-lesson-title small.class-lesson-unlock { display: block; -webkit-line-clamp: unset; overflow: visible; margin-top: 4px; }

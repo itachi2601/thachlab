@@ -546,6 +546,13 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   };
   // Bài 6–7 chỉ khoá vì chưa duyệt năng lực (giảng viên đã mở bài): vẫn cho đọc tab Lý thuyết để chuẩn bị buổi 8–11
   // (thầy chốt 9/11/2026); các tab thực hành/kiểm tra mở khi được duyệt.
+  // Điều kiện mở khoá ghi ra cho SV biết (thầy yêu cầu 9/11/2026): giảng viên mở bài cho lớp; bài 5–6 cần thêm đủ 4 năng lực.
+  const unlockHint = (id: string) => {
+    const machine = id === "lesson-5" ? "tiện" : id === "lesson-6" ? "phay" : "";
+    const need = machine ? ` Thực hành mở khi được duyệt đủ 4 năng lực ${machine}: lập trình, mô phỏng, vận hành, cài dao.` : "";
+    const teacherLocked = openLessonIds.length > 0 && !openLessonIds.includes(id);
+    return teacherLocked ? `Mở khi giảng viên mở bài này cho lớp.${need}` : need.trim();
+  };
   const isTheoryOnly = (id: string) => isLessonLocked(id) && !(openLessonIds.length>0&&!openLessonIds.includes(id));
   // Giảng viên (admin) không có tiến độ riêng → không hiện dải; trang /dev không courseId thì hiện ngay.
   const showGates = viewerProfile?.role !== "admin" && (!courseId || (gateDataLoaded.records && gateDataLoaded.permissions));
@@ -622,7 +629,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                 const m = lessonMeta[item.id];
                 const inner = <>
                   <span className="class-num">{isDone ? <Check size={13} /> : lessonNo(item.id)}</span>
-                  <span className="class-lesson-title">{plainLessonTitle(item.title)}<small>{item.duration}{m?.practice ? ` · ${m.practice} thực hành` : ""}</small></span>
+                  <span className="class-lesson-title">{plainLessonTitle(item.title)}<small>{item.duration}{m?.practice ? ` · ${m.practice} thực hành` : ""}</small>{(locked || theoryOnly) && <small className="class-lesson-unlock">{unlockHint(item.id)}</small>}</span>
                   <span className={`class-meta ${!isDone && !locked && !theoryOnly ? "class-meta--idle" : ""}`}>{locked ? <><LockKeyhole size={13} aria-hidden /> Đang khoá</> : theoryOnly ? "Đọc trước" : isDone ? "Hoàn thành" : null}</span>
                 </>;
                 return <li key={item.id}>{locked
@@ -700,7 +707,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
               const theoryOnly = isTheoryOnly(id);
               const locked = isLessonLocked(id) && !theoryOnly;
               const current = id === validInitialLessonId;
-              const inner = <><span className="class-rail-n">{completed[id] ? <Check size={13} aria-label="Xong" /> : i + 1}</span><span>{plainLessonTitle(item.shortTitle)}</span><span className="class-rail-st">{locked ? <LockKeyhole size={13} aria-label="Đang khoá" /> : theoryOnly ? "Đọc" : ""}</span></>;
+              const inner = <><span className="class-rail-n" title={locked || theoryOnly ? unlockHint(id) : undefined}>{completed[id] ? <Check size={13} aria-label="Xong" /> : i + 1}</span><span>{plainLessonTitle(item.shortTitle)}</span><span className="class-rail-st">{locked ? <LockKeyhole size={13} aria-label="Đang khoá" /> : theoryOnly ? "Đọc" : ""}</span></>;
               return <li key={id}>{current || locked
                 ? <span className={`class-rail-item ${current ? "is-active" : ""}`} aria-current={current ? "page" : undefined}>{inner}</span>
                 : <a href={`/lop-hoc/cnc/?bai=${id}`} className="class-rail-item">{inner}</a>}</li>;
