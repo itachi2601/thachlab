@@ -1,0 +1,247 @@
+{
+  "cnc_key": "lesson-2",
+  "title": "Quiz nhận biết lệnh — Bài 2 (Tiện)",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Theo quy ước FANUC 21T trên Win-NC32, tên chương trình nào sau đây viết đúng?",
+      "options": [
+        "G1601",
+        "P1601",
+        "N1601",
+        "O1601"
+      ],
+      "answer": 3,
+      "explanation": "Tên chương trình gồm chữ O và bốn chữ số, ví dụ O1601; chữ N dùng cho số thứ tự khối."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong khối lệnh N_ G_ X_ Z_ M_ S_ F_ T_ ;, chữ N khai báo thông tin gì?",
+      "options": [
+        "Tốc độ trục chính",
+        "Số hiệu dao",
+        "Số thứ tự khối",
+        "Lượng chạy dao"
+      ],
+      "answer": 2,
+      "explanation": "N là số thứ tự của khối lệnh trong chương trình."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chữ địa chỉ nào khai báo lượng chạy dao trong chương trình tiện?",
+      "options": [
+        "F",
+        "S",
+        "M",
+        "T"
+      ],
+      "answer": 0,
+      "explanation": "F là lượng chạy dao; S là tốc độ trục chính, T chọn dao, M là lệnh phụ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chữ địa chỉ nào khai báo tốc độ trục chính?",
+      "options": [
+        "F",
+        "N",
+        "S",
+        "T"
+      ],
+      "answer": 2,
+      "explanation": "S khai báo tốc độ trục chính, ví dụ S800 cho 800 vòng/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chữ địa chỉ nào dùng để chọn dao trong chương trình tiện?",
+      "options": [
+        "G",
+        "M",
+        "F",
+        "T"
+      ],
+      "answer": 3,
+      "explanation": "T là lệnh chọn dao, ví dụ T0202 trong bài tập dùng cho dao tiện thô."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dấu ; ở cuối mỗi khối lệnh có ý nghĩa gì?",
+      "options": [
+        "Kết thúc khối lệnh",
+        "Bỏ qua khối lệnh đó",
+        "Tạm dừng máy chờ người vận hành",
+        "Bắt đầu một chương trình con"
+      ],
+      "answer": 0,
+      "explanation": "Mỗi khối lệnh kết thúc bằng dấu chấm phẩy; các khối chạy tuần tự từ trên xuống."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G90 chọn chế độ tọa độ nào?",
+      "options": [
+        "Tọa độ máy, tính so với gốc máy M",
+        "Tọa độ tương đối, tính so với điểm trước",
+        "Tọa độ tuyệt đối, tính so với gốc phôi W",
+        "Tọa độ cực, tính theo bán kính và góc"
+      ],
+      "answer": 2,
+      "explanation": "G90 là tọa độ tuyệt đối so với W; G91 là tọa độ tương đối so với điểm trước."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G91 chọn chế độ tọa độ nào?",
+      "options": [
+        "Tọa độ tuyệt đối so với gốc phôi W",
+        "Tọa độ tuyệt đối so với gốc máy M",
+        "Tọa độ so với điểm tham chiếu R",
+        "Tọa độ tương đối so với điểm trước"
+      ],
+      "answer": 3,
+      "explanation": "G91 cho tọa độ tương đối, mỗi giá trị là lượng dịch so với điểm dao vừa đứng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi tiện, mặt phẳng làm việc là XOZ. Mã G chọn mặt phẳng này là gì?",
+      "options": [
+        "G71",
+        "G18",
+        "G17",
+        "G19"
+      ],
+      "answer": 1,
+      "explanation": "G17, G18, G19 lần lượt chọn mặt phẳng XOY, XOZ, YOZ; tiện dùng G18."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32 dùng trong bài, mã G71 có chức năng gì?",
+      "options": [
+        "Chọn lượng chạy dao mm/vòng",
+        "Chọn đơn vị hệ mét",
+        "Chọn đơn vị inch",
+        "Chu trình tiện thô dọc trục"
+      ],
+      "answer": 1,
+      "explanation": "Trong bảng mã Win-NC32 của xưởng, G70 là inch và G71 là hệ mét; tài liệu dùng bộ mã khác có thể gán G71 cho chu trình."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G95 đặt lượng chạy dao F theo đơn vị nào?",
+      "options": [
+        "m/phút",
+        "mm/vòng",
+        "vòng/phút",
+        "mm/phút"
+      ],
+      "answer": 1,
+      "explanation": "G95 cho F tính theo mm/vòng, thường dùng khi tiện; G94 cho F theo mm/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G94 đặt lượng chạy dao F theo đơn vị nào?",
+      "options": [
+        "mm/phút",
+        "mm/vòng",
+        "m/phút",
+        "vòng/phút"
+      ],
+      "answer": 0,
+      "explanation": "G94 cho F tính theo mm/phút; khi tiện thường dùng G95 (mm/vòng)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã lệnh nào đưa dao chạy nhanh tới điểm đích mà không cắt gọt?",
+      "options": [
+        "G03",
+        "G01",
+        "G00",
+        "G02"
+      ],
+      "answer": 2,
+      "explanation": "G00 là chạy nhanh không cắt, tốc độ do máy quyết định."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã lệnh nào thực hiện cắt theo đường thẳng với lượng chạy dao F?",
+      "options": [
+        "G00",
+        "G02",
+        "G03",
+        "G01"
+      ],
+      "answer": 3,
+      "explanation": "G01 là nội suy đường thẳng theo F, dùng tiện mặt đầu, trụ, côn, rãnh, khoan, doa."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G02 thực hiện chuyển động gì?",
+      "options": [
+        "Cắt cung tròn ngược chiều kim đồng hồ",
+        "Cắt cung tròn cùng chiều kim đồng hồ",
+        "Chạy nhanh không cắt",
+        "Cắt theo đường thẳng"
+      ],
+      "answer": 1,
+      "explanation": "G02 nội suy cung tròn cùng chiều kim đồng hồ; G03 là ngược chiều kim đồng hồ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn cắt một cung tròn ngược chiều kim đồng hồ, dùng mã lệnh nào?",
+      "options": [
+        "G01",
+        "G03",
+        "G00",
+        "G02"
+      ],
+      "answer": 1,
+      "explanation": "G03 nội suy cung tròn ngược chiều kim đồng hồ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G41 có chức năng gì?",
+      "options": [
+        "Bù bán kính mũi dao về bên trái quỹ đạo",
+        "Hủy bù bán kính mũi dao",
+        "Hủy chu trình khoan",
+        "Bù bán kính mũi dao về bên phải quỹ đạo"
+      ],
+      "answer": 0,
+      "explanation": "G41 bù về bên trái quỹ đạo, G42 bù về bên phải, G40 hủy bù."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã lệnh nào hủy bù bán kính mũi dao?",
+      "options": [
+        "G80",
+        "G41",
+        "G40",
+        "G42"
+      ],
+      "answer": 2,
+      "explanation": "G40 hủy bù bán kính mũi dao, đặt trước khi rút dao; G80 hủy chu trình khoan."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32 dùng trong bài, chu trình tiện thô dọc trục theo biên dạng P–Q là mã nào?",
+      "options": [
+        "G73",
+        "G78",
+        "G72",
+        "G77"
+      ],
+      "answer": 0,
+      "explanation": "Theo bảng mã của xưởng: G73 thô, G72 tinh, G77 rãnh, G78 ren."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32 dùng trong bài, chu trình tiện tinh dọc trục theo biên dạng P–Q là mã nào?",
+      "options": [
+        "G73",
+        "G70",
+        "G71",
+        "G72"
+      ],
+      "answer": 3,
+      "explanation": "G72 P Q chạy tinh lại biên dạng từ khối P đến khối Q; G70, G71 trong bảng mã này là đơn vị inch và mét."
+    }
+  ]
+}

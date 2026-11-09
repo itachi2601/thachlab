@@ -1,0 +1,247 @@
+{
+  "cnc_key": "lesson-1",
+  "title": "Quiz cuối Bài 1 — Giới thiệu máy tiện/phay CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Chữ C đứng đầu trong tên gọi CNC (Computer Numerical Control) chỉ thành phần nào được thêm vào so với máy NC?",
+      "options": [
+        "Ổ chứa dao cỡ lớn",
+        "Bộ điều khiển bằng tay",
+        "Cơ cấu cắt gọt tự động",
+        "Máy tính và bộ xử lý"
+      ],
+      "answer": 3,
+      "explanation": "CNC là Computer Numerical Control: máy NC được thêm máy tính và bộ xử lý để lưu trữ và hiệu chỉnh chương trình linh hoạt."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cấu tạo chung của một máy CNC gồm hai phần chính nào?",
+      "options": [
+        "Phần cơ khí và phần thủy lực",
+        "Phần điều khiển và phần chấp hành",
+        "Phần phần mềm và phần màn hình",
+        "Phần trục chính và phần bàn máy"
+      ],
+      "answer": 1,
+      "explanation": "Máy CNC gồm phần điều khiển (chương trình, bàn phím, màn hình…) và phần chấp hành (máy cắt kim loại và cơ cấu tự động hóa), hai phần liên tục trao đổi tín hiệu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Xét máy CNC như một hệ thống, đầu vào và đầu ra của nó là gì?",
+      "options": [
+        "Vào: phôi và chương trình; ra: chi tiết",
+        "Vào: dao cắt; ra: dung dịch tưới nguội",
+        "Vào: bản vẽ; ra: chương trình",
+        "Vào: điện năng; ra: phoi kim loại"
+      ],
+      "answer": 0,
+      "explanation": "Máy CNC nhận phôi cùng chương trình gia công và cho ra chi tiết đúng yêu cầu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đặc tính \"tập trung nguyên công\" của máy CNC có nghĩa là gì?",
+      "options": [
+        "Mỗi máy chỉ làm đúng một nguyên công",
+        "Làm nhiều bước gia công trong một lần gá",
+        "Nhiều máy cùng làm một nguyên công",
+        "Gom mọi nguyên công vào một ca làm việc"
+      ],
+      "answer": 1,
+      "explanation": "Tập trung nguyên công là thực hiện nhiều bước gia công chỉ với một lần gá đặt phôi, giảm sai số do gá lại."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trên máy CNC, trục Z được quy ước như thế nào?",
+      "options": [
+        "Theo phương đường kính của phôi",
+        "Theo hướng nhìn của người vận hành",
+        "Trùng với trục chính của máy",
+        "Vuông góc với trục chính của máy"
+      ],
+      "answer": 2,
+      "explanation": "Quy ước chung cho cả máy tiện và máy phay: trục Z trùng trục chính; hướng nằm ngang hay thẳng đứng tùy kiểu máy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trên máy tiện CNC, chiều dương của trục Z hướng về phía nào?",
+      "options": [
+        "Đi ra xa mâm cặp",
+        "Đi vào phía mâm cặp",
+        "Đi về phía tâm phôi",
+        "Đi về phía người vận hành"
+      ],
+      "answer": 0,
+      "explanation": "Trên máy tiện, +Z hướng ra xa mâm cặp; phần phôi phía mâm cặp có tọa độ Z âm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Điểm gốc tọa độ máy M (Machine zero) có đặc điểm nào?",
+      "options": [
+        "Do nhà sản xuất định, không thay đổi",
+        "Đặt lại sau mỗi ca, theo điểm tham chiếu",
+        "Đổi mỗi lần thay dao, gắn với mũi dao",
+        "Do người lập trình chọn, đổi theo phôi"
+      ],
+      "answer": 0,
+      "explanation": "M là gốc tọa độ của máy, do nhà sản xuất xác định và cố định; W mới là điểm do người lập trình chọn theo phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Xòe bàn tay phải, ba ngón cái – trỏ – giữa vuông góc đôi một, ngón cái chỉ +X, ngón trỏ chỉ +Y. Ngón giữa chỉ chiều dương của trục nào?",
+      "options": [
+        "Trục chính đảo chiều",
+        "Trục Y",
+        "Trục Z",
+        "Trục X"
+      ],
+      "answer": 2,
+      "explanation": "Theo quy tắc bàn tay phải, ngón giữa chỉ chiều +Z khi ngón cái là +X và ngón trỏ là +Y."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ở xưởng, thợ phát hiện chương trình sai một số liệu, gõ sửa ngay trên bàn phím máy rồi chạy tiếp. Việc này cho thấy máy đó là loại nào?",
+      "options": [
+        "Máy vạn năng, nhờ tay quay có vạch chia số đo",
+        "Máy vạn năng, nhờ được lắp thêm động cơ điện",
+        "Máy NC, nhờ máy tính đọc băng chương trình lập sẵn",
+        "Máy CNC, nhờ có máy tính lưu và sửa chương trình"
+      ],
+      "answer": 3,
+      "explanation": "Lưu trữ và hiệu chỉnh chương trình ngay trên máy là nhờ máy tính và bộ xử lý, điểm làm nên chữ C của CNC."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bộ phận nào sau đây thuộc phần chấp hành của máy CNC?",
+      "options": [
+        "Bàn phím nhập chương trình",
+        "Màn hình hiển thị",
+        "Ổ chứa dao",
+        "Chương trình gia công"
+      ],
+      "answer": 2,
+      "explanation": "Phần chấp hành gồm máy cắt kim loại và cơ cấu tự động hóa như tay máy, ổ chứa dao, cấp phôi, hút phoi; bàn phím, màn hình, chương trình thuộc phần điều khiển."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Số chỉ vị trí bàn dao trên màn hình thay đổi theo đúng vị trí thật của bàn dao. Tín hiệu vị trí này đi theo chiều nào?",
+      "options": [
+        "Từ người vận hành sang bàn dao",
+        "Từ chương trình sang phôi",
+        "Từ phần điều khiển sang phần chấp hành",
+        "Từ phần chấp hành về phần điều khiển"
+      ],
+      "answer": 3,
+      "explanation": "Lệnh đi từ điều khiển sang chấp hành; vị trí thật và trạng thái lỗi được phản hồi ngược từ chấp hành về điều khiển."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Máy tiện CNC tạo ra bề mặt tròn xoay bằng cách phối hợp chuyển động nào?",
+      "options": [
+        "Phôi quay, dao tịnh tiến",
+        "Phôi và dao cùng đứng yên, ụ động di chuyển",
+        "Dao quay, phôi tịnh tiến dọc trục",
+        "Dao quay, bàn máy mang phôi di chuyển"
+      ],
+      "answer": 0,
+      "explanation": "Trên máy tiện, phôi quay còn dao tịnh tiến; dao quay và bàn máy mang phôi di chuyển là cách làm việc của máy phay."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Xưởng chuyển từ làm trục loại A sang trục loại B trên cùng một máy CNC. Đặc tính \"linh hoạt\" thể hiện ở việc gì?",
+      "options": [
+        "Người thợ quay tay theo bản vẽ mới",
+        "Phải thay toàn bộ bộ phận chấp hành",
+        "Chỉ cần đổi chương trình, không cần đổi máy",
+        "Phải chuyển sang máy vạn năng để làm mẫu mới"
+      ],
+      "answer": 2,
+      "explanation": "Máy CNC đổi sản phẩm bằng cách đổi chương trình; máy và cách vận hành giữ nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trên máy tiện CNC cơ bản, dao lùi ra xa tâm phôi (đường kính cắt tăng lên). Tọa độ nào tăng?",
+      "options": [
+        "Tọa độ Y",
+        "Cả Y và Z",
+        "Tọa độ Z",
+        "Tọa độ X"
+      ],
+      "answer": 3,
+      "explanation": "Trên máy tiện, X đo theo phương đường kính; dao ra xa tâm thì X tăng. Z chạy dọc trục chính và máy tiện cơ bản không có trục Y."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Hôm trước gá phôi ngắn, hôm nay gá phôi dài hơn và kẹp ở vị trí khác. Điểm chuẩn nào phải xác lập lại?",
+      "options": [
+        "Điểm tham chiếu R",
+        "Điểm gốc máy M",
+        "Điểm gốc phôi W",
+        "Điểm chuẩn giá dao N/T"
+      ],
+      "answer": 2,
+      "explanation": "W gắn với phôi nên đổi theo cách gá; M, R, N/T là các điểm cố định của máy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Người thợ thay dao tiện đang dùng bằng một dao khác có mũi dài hơn. Điểm chuẩn nào thay đổi theo?",
+      "options": [
+        "Điểm mũi dao P",
+        "Điểm chuẩn giá dao N/T",
+        "Điểm tham chiếu R",
+        "Điểm gốc máy M"
+      ],
+      "answer": 0,
+      "explanation": "P là đỉnh mũi dao tạo hình bề mặt nên đổi theo từng dao; N/T là điểm chuẩn của cơ cấu gá dao, cố định."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Một lỗ có tọa độ cực P (R50; 270°), gốc ở tâm, góc đo từ trục +X ngược chiều kim đồng hồ. Tọa độ Đề-các (X; Y) của lỗ là bao nhiêu?",
+      "options": [
+        "(50; 0)",
+        "(0; -50)",
+        "(-50; 0)",
+        "(0; 50)"
+      ],
+      "answer": 1,
+      "explanation": "X = 50·cos270° = 0, Y = 50·sin270° = -50, nên lỗ nằm trên phần âm của trục Y."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Một lỗ có tọa độ cực P (R60; 150°), gốc ở tâm, góc đo từ trục +X ngược chiều kim đồng hồ. Tọa độ Đề-các (X; Y) gần đúng của lỗ là bao nhiêu?",
+      "options": [
+        "(-30; 52)",
+        "(52; 30)",
+        "(30; -52)",
+        "(-52; 30)"
+      ],
+      "answer": 3,
+      "explanation": "X = 60·cos150° ≈ -52, Y = 60·sin150° = 30; góc 150° nằm ở góc phần tư thứ hai nên X âm, Y dương."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang gia công thì xưởng mất điện. Khi có điện lại, máy dựa vào điểm nào để xác lập lại hệ tọa độ của mình?",
+      "options": [
+        "Điểm gốc phôi W",
+        "Điểm tham chiếu R",
+        "Điểm mũi dao P",
+        "Điểm cuối của khối lệnh vừa chạy"
+      ],
+      "answer": 1,
+      "explanation": "R là điểm tham chiếu cố định trên máy, dùng để máy xác lập lại tọa độ, ví dụ sau khi mất điện."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đầu buổi thực tập, khi được phân máy, em thấy thiếu một chìa vặn mâm cặp. Cách xử lý đúng là gì?",
+      "options": [
+        "Cứ dùng máy, cuối buổi trả máy thì báo",
+        "Báo ngay cho giảng viên lúc nhận máy",
+        "Mượn tạm của máy bên cạnh, không cần báo",
+        "Ghi vào sổ cuối tuần khi tổng vệ sinh"
+      ],
+      "answer": 1,
+      "explanation": "Máy và phụ tùng phải kiểm tra ngay khi được phân máy; thiếu hỏng thì báo lúc nhận, không để đến lúc trả."
+    }
+  ]
+}
