@@ -315,7 +315,7 @@ export type WorkedDong = {
 };
 export type VongTronLop =
   | LopGhi
-  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; het?: number }
+  | { loai: "diem"; goc: number; ten?: string; chieu?: boolean; r?: number; ten_trong?: boolean; het?: number }
   | { loai: "cung"; tu: number; den: number; het?: number }
   | { loai: "vong"; r: number; nhan?: string; dut?: boolean; het?: number }
   | { loai: "giao"; x: number; so?: string[]; het?: number };

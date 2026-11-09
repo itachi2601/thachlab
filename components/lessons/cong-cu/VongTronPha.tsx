@@ -6,7 +6,7 @@
  * Góc tính theo đơn vị π rad. Hình không đổi cao giữa các bước (D2); nhãn trên hình (N8, H3); nét đứt cho đường đích (H4).
  *
  * JSON: { loai: "vong_tron", A, don_vi?, x_dich?: number[], lop: [[mục…] cho bước 1, …] }. Mục:
- *  diem {goc, ten, chieu?}  ·  cung {tu, den}  ·  giao {x, so: [nhãn điểm trên, nhãn điểm dưới]}  ·  ghi {text}
+ *  diem {goc, ten, chieu?, ten_trong? (nhãn phía trong vòng, khi cung/mũi tên chiếm phía ngoài)}  ·  cung {tu, den}  ·  giao {x, so: [nhãn điểm trên, nhãn điểm dưới]}  ·  ghi {text}
  *  Mục nào có `het: k` thì ẩn từ khi xong bước k.
  */
 
@@ -127,7 +127,14 @@ export default function VongTronPha({ A, don_vi = "cm", x_dich = [], nhan_dich, 
             )}
             <circle cx={x} cy={y} r={0.3} fill={C_HL} stroke="currentColor" strokeWidth={0.07} />
             {it.ten && (
-              <Label x={lx} y={ly + 0.4} a={x < -0.3 ? "end" : x > 0.3 ? "start" : "middle"}>
+              // điểm sát đỉnh vòng: nhãn đặt phía trong, lệch phải (ngoài vòng thì tràn mép trên, đè mũi tên chiều quay)
+              <Label
+                {...(it.ten_trong
+                  ? { ...(([a, b]) => ({ x: a, y: b + 0.45 }))(P(it.goc, rr - 1.1)), a: "middle" as const }
+                  : y < -R * 0.92 && Math.abs(x) < 1.2
+                  ? { x: x + 0.5, y: y + 1.25, a: "start" as const }
+                  : { x: lx, y: ly + 0.4, a: x < -0.3 ? ("end" as const) : x > 0.3 ? ("start" as const) : ("middle" as const) })}
+              >
                 {it.ten}
               </Label>
             )}
