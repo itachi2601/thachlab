@@ -106,3 +106,13 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-04 · clip · CHỜ THẦY QUYẾT: bài không có hộp TN ống chữ U (bài chỉ có hộp -01/-02/-03) → thêm hộp vào bài rồi dựng, hay loại khỏi nhóm C · 6/11/2026 ·
 - l10-khoi-luong-rieng-ap-suat · tn-l10-klr-apsuat-04 · clip · LOẠI khỏi nhóm C (thầy quyết 6/11): bài không có hộp TN ống chữ U, không thêm hộp · 6/11/2026 ·
 - 6/11/2026 ~23h55 · ĐÃ ĐĂNG DB 8 clip L10 lô 1/11 (`cap-nhat-ly-thuyet.sh … --chi-video --yes`): tdvt1 (lesson 50, item 93), giatoc1 (53, item 99), dog3 (56, item 288), trondeu3 (76, item 254), biendang3 (78, item 260), saiso2 (48, item 87), antoan1 + antoan2 (47, item 84). Kiểm DB 8/8 có `tl-box--khung` + mp4. Dòng "Quan sát" giữ nguyên như bản DB (theo thầy chốt cho L9 5/11; hoàn lại 890518a54 ở c12d765ca). Sao lưu `scripts/logs/ly-thuyet-bai{47,48,50,53,56,76,78}-backup-17939837*.json`.
+
+## Chặng B — L10 Ch.6 + Ch.1 (lô 9/11/2026, 6 clip; lọc: còn 6 TN `thi_nghiem` thiếu video, loại `vi_du`; ứng viên YouTube của chúng đều nhóm B chưa duyệt → tự dựng). Đã tải lesson-clips (-20261109, HEAD 200) + chèn repo + khung 6 ô; CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB (đăng sau 22h bằng `--chi-video`)
+
+- l10-chuyen-dong-tron-deu (lesson 76) · tn-l10-trondeu-02 · clip trondeu2 · đã soát (cổng B 1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,6 s · 1,19 MB · "Quan sát" hộp exp nêu sẵn "nắp to hay nhỏ đều vậy" (lộ đáp án) — thầy quyết
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-02 · clip huongtam2 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,2 s · 1,69 MB
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-03 · clip huongtam3 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,8 s · 1,58 MB · số 5,1 s = 10,2 : 2 (không có sẵn trong kho)
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-04 · clip huongtam4 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,8 s · 1,15 MB · "Quan sát" hộp exp lộ đáp án (tiếp tuyến), ngay trước hộp còn quiz "đứt dây" — thầy quyết
+- l10-lam-quen-voi-vat-li (lesson 46) · tn-l10-lam-quen-02 · clip lamquen2 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,9 s · 1,16 MB · "Quan sát" hộp exp lộ đáp án ("chỉ chậm hơn sách một chút") — thầy quyết; 0,04 s là số suy từ 2,67 khung : 60
+- l10-thuc-hanh-sai-so (lesson 48) · tn-l10-sai-so-01 · clip saiso1 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,6 s · 1,23 MB · clip không tính Δt (là đáp án Câu 2 sau hộp)
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-03, l10-lam-quen/sai-so/trondeu/huongtam-01,03,04 loại `vi_du` · bỏ qua: không phải thí nghiệm · 9/11/2026 ·
