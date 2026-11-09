@@ -1,0 +1,147 @@
+{
+  "cnc_key": "mill-translate",
+  "title": "Dịch lệnh G-code — Phay",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Máy đang ở G90, G94. Khối lệnh N20 G01 X30 Y15 F120; có nghĩa là gì?",
+      "options": ["Khối 20: chạy nhanh không cắt tới X30 Y15", "Khối 20: cắt thẳng tới X30 Y15, chạy dao 120 mm/phút", "Khối 20: cắt cung tròn tới X30 Y15, bán kính 120", "Khối 20: cắt thẳng tới X30 Y15, trục chính 120 vòng/phút"],
+      "answer": 1,
+      "explanation": "N20 là số khối, G01 là cắt thẳng, F120 là tốc độ chạy dao 120 mm/phút theo G94."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G00 X0 Y0 Z5; có nghĩa là gì?",
+      "options": ["Chạy nhanh không cắt tới X0 Y0 Z5", "Cắt thẳng tới X0 Y0 Z5 với tốc độ F", "Cắt cung tròn tới X0 Y0 Z5", "Dừng chương trình tại X0 Y0 Z5"],
+      "answer": 0,
+      "explanation": "G00 là chạy nhanh không cắt, ở đây đưa dao về trên gốc phôi, cách mặt phôi 5 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Máy đang ở G17, G90, G94. Khối lệnh G02 X40 Y20 R10 F100; có nghĩa là gì?",
+      "options": ["Cắt cung ngược chiều kim đồng hồ tới X40 Y20, bán kính 10", "Cắt thẳng tới X40 Y20, bo góc bán kính 10", "Cắt cung cùng chiều kim đồng hồ tới X40 Y20, bán kính 10", "Chạy nhanh theo cung tròn tới X40 Y20, bán kính 10"],
+      "answer": 2,
+      "explanation": "G02 là cung tròn cùng chiều kim đồng hồ, R10 là bán kính cung, F100 là tốc độ chạy dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G17 G90 G94; ở đầu chương trình có nghĩa là gì?",
+      "options": ["Mặt phẳng XOZ, tọa độ tương đối, chạy dao mm/vòng", "Mặt phẳng XOY, tọa độ tuyệt đối, chạy dao mm/phút", "Mặt phẳng XOY, tọa độ tương đối, chạy dao mm/phút", "Mặt phẳng YOZ, tọa độ tuyệt đối, chạy dao mm/vòng"],
+      "answer": 1,
+      "explanation": "G17 chọn mặt phẳng XOY, G90 là tọa độ tuyệt đối, G94 tính F theo mm/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G43 Z50 H02; có nghĩa là gì?",
+      "options": ["Bù bán kính dao bên trái theo ô H02, tới Z50", "Hủy bù chiều dài dao, chạy lên Z50", "Bù chiều dài dao hướng âm theo ô H02, tới Z50", "Bù chiều dài dao hướng dương theo ô H02, tới Z50"],
+      "answer": 3,
+      "explanation": "G43 bù chiều dài hướng dương, H02 là ô chiều dài của dao đang dùng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G91 G01 Y-40 F150; có nghĩa là gì?",
+      "options": ["Cắt thẳng tới điểm có tọa độ Y-40 tính từ W", "Chạy nhanh, đi thêm 40 mm theo chiều âm trục Y", "Cắt thẳng, đi thêm 40 mm theo chiều âm trục Y", "Cắt thẳng, đi thêm 40 mm theo chiều dương trục Y"],
+      "answer": 2,
+      "explanation": "G91 biến Y-40 thành lượng dịch 40 mm về phía âm tính từ chỗ dao đang đứng; G01 là cắt thẳng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh S1200 M03; có nghĩa là gì?",
+      "options": ["Trục chính quay thuận, 1200 vòng/phút", "Trục chính quay nghịch, 1200 vòng/phút", "Chạy dao 1200 mm/phút, bật tưới nguội", "Trục chính dừng sau 1200 vòng quay"],
+      "answer": 0,
+      "explanation": "S1200 là tốc độ trục chính, M03 cho trục chính quay thuận."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh M09; có nghĩa là gì?",
+      "options": ["Bật tưới nguội", "Tắt tưới nguội", "Dừng trục chính", "Kết thúc chương trình"],
+      "answer": 1,
+      "explanation": "M08 bật và M09 tắt tưới nguội."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh T04 M06; có nghĩa là gì?",
+      "options": ["Gọi ô bù chiều dài số 4", "Gọi chương trình con số 4", "Dừng trục chính trong 4 giây", "Chọn dao số 4 và thay vào trục chính"],
+      "answer": 3,
+      "explanation": "T04 chọn dao số 4, M06 là lệnh thay dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G41 H2 G01 X-30 Y-20 F150; có nghĩa là gì?",
+      "options": ["Bù bán kính theo ô H2, dao bên phải biên dạng, cắt thẳng tới X-30 Y-20", "Bù chiều dài theo ô H2, cắt thẳng tới X-30 Y-20", "Bù bán kính theo ô H2, dao bên trái biên dạng, cắt thẳng tới X-30 Y-20", "Hủy bù bán kính, cắt thẳng tới X-30 Y-20"],
+      "answer": 2,
+      "explanation": "G41 gọi bù bán kính với dao nằm bên trái biên dạng theo hướng chạy dao; H2 là ô bù bán kính theo cách ghi của máy EMCO trong xưởng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G40 G01 X-45 Y-20; ở cuối đường bao có nghĩa là gì?",
+      "options": ["Hủy bù chiều dài, cắt thẳng tới X-45 Y-20", "Gọi bù bán kính trái, cắt thẳng tới X-45 Y-20", "Hủy bù bán kính, cắt thẳng tới X-45 Y-20", "Hủy chu trình khoan, chạy nhanh tới X-45 Y-20"],
+      "answer": 2,
+      "explanation": "G40 hủy bù bán kính ngay trong khối đưa dao rời biên dạng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G01 X20 Y10 R5 F100; có nghĩa là gì?",
+      "options": ["Cắt thẳng tới X20 Y10, bo góc bán kính 5 mm", "Cắt cung tròn bán kính 5 mm tới X20 Y10", "Cắt thẳng tới X20 Y10, vát góc 5 mm", "Chạy nhanh tới X20 Y10, rút về mặt phẳng R5"],
+      "answer": 0,
+      "explanation": "Trong khối G01, địa chỉ R là bo góc; vát góc mới dùng C."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G99 G81 X12 Y25 Z-6 R2 F100; có nghĩa là gì?",
+      "options": ["Khoan lỗ sâu từng lát 2 mm tới Z-6, rút về mặt phẳng ban đầu", "Khoan một lần tới Z-6 tại X12 Y25, rút về mặt phẳng ban đầu", "Tarô lỗ tại X12 Y25 sâu tới Z-6, rút về mặt phẳng R", "Khoan một lần tới Z-6 tại X12 Y25, rút về mặt phẳng R"],
+      "answer": 3,
+      "explanation": "G81 khoan hết chiều sâu một lần tới đáy Z-6; G99 cho dao rút về mặt phẳng an toàn R2."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong khối G98 G83 X25 Y38 Z-20 R2 Q4 P500 F80; địa chỉ Q4 có nghĩa là gì?",
+      "options": ["Mỗi lát khoan sâu 4 mm", "Dừng ở đáy lỗ 4 giây", "Lặp lại chu trình 4 lần", "Mặt phẳng an toàn cao 4 mm"],
+      "answer": 0,
+      "explanation": "Trong G83, Q là chiều sâu mỗi lát; P là thời gian dừng ở đáy, K là số lần lặp, R là mặt phẳng an toàn."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G74 X20 Y0 Z-12 R3 F350; có nghĩa là gì?",
+      "options": ["Tarô ren phải tại X20 Y0, sâu tới Z-12", "Tarô ren trái tại X20 Y0, sâu tới Z-12", "Doa lỗ tại X20 Y0, dừng ở đáy Z-12", "Khoan cao tốc tại X20 Y0, sâu tới Z-12"],
+      "answer": 1,
+      "explanation": "G74 là chu trình tarô ren trái; ren phải dùng G84."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Máy đang ở G94, trục chính S300. Khối lệnh G84 X0 Y0 Z-15 R3 F450; có nghĩa là gì?",
+      "options": ["Khoan lỗ sâu từng lát tới Z-15, chạy dao 450 mm/phút", "Doa lỗ tới Z-15, dừng ở đáy, chạy dao 450 mm/phút", "Tarô ren phải tới Z-15, chạy dao 450 mm/phút đồng bộ trục chính", "Tarô ren trái tới Z-15, chạy dao 450 mm/phút đồng bộ trục chính"],
+      "answer": 2,
+      "explanation": "G84 là tarô ren phải; F450 = 300 × 1,5 nên mỗi vòng dao tiến đúng một bước ren 1,5 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G89 X10 Y10 Z-12 R2 P800 F60; có nghĩa là gì?",
+      "options": ["Khoan một lần tới Z-12 rồi rút ngay", "Tarô ren phải tới Z-12 rồi rút", "Khoan lỗ sâu từng lát tới Z-12", "Doa tới Z-12, dừng ở đáy rồi mới rút dao"],
+      "answer": 3,
+      "explanation": "G89 là chu trình doa có dừng: dừng một khoảng P ở đáy lỗ rồi mới rút dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh M30; ở cuối chương trình có nghĩa là gì?",
+      "options": ["Dừng vô điều kiện, chờ nhấn chạy tiếp", "Dừng có điều kiện", "Kết thúc chương trình", "Chỉ dừng trục chính"],
+      "answer": 2,
+      "explanation": "M30 kết thúc chương trình; M00 dừng vô điều kiện, M01 dừng có điều kiện."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G18 G03 X20 Z-10 R10 F80; có nghĩa là gì?",
+      "options": ["Cắt cung cùng chiều kim đồng hồ trong mặt phẳng XOY", "Cắt cung ngược chiều kim đồng hồ trong mặt phẳng XOZ", "Cắt cung ngược chiều kim đồng hồ trong mặt phẳng YOZ", "Cắt thẳng trong mặt phẳng XOZ, bo góc bán kính 10"],
+      "answer": 1,
+      "explanation": "G18 chọn mặt phẳng XOZ, G03 là cung ngược chiều kim đồng hồ bán kính R10."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối lệnh G49 G00 Z100; có nghĩa là gì?",
+      "options": ["Hủy bù chiều dài dao, chạy nhanh lên Z100", "Hủy bù bán kính dao, chạy nhanh lên Z100", "Bù chiều dài hướng âm, chạy nhanh lên Z100", "Hủy chu trình khoan, cắt thẳng lên Z100"],
+      "answer": 0,
+      "explanation": "G49 hủy bù chiều dài dao, G00 đưa dao chạy nhanh lên cao Z100."
+    }
+  ]
+}
