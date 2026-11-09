@@ -98,7 +98,7 @@ export default function TeacherAvcnExamAnalysis({ examIds, studentIds }: { examI
         </select>
         {examId !== null && (
           <a
-            href={`/quan-tri/sua-de?exam=${examId}`}
+            href={`/quan-tri/cnc-sua-de?exam=${examId}`}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 rounded-xl border border-line-strong px-3 py-2 text-sm font-bold text-ink hover:bg-surface-2"
@@ -141,7 +141,7 @@ export default function TeacherAvcnExamAnalysis({ examIds, studentIds }: { examI
                     </td>
                     <td className="px-4 py-3">
                       <a
-                        href={`/quan-tri/sua-de?exam=${examId}&q=${q.questionIndex}`}
+                        href={`/quan-tri/cnc-sua-de?exam=${examId}&q=${q.questionIndex}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-xs font-bold text-cyan-600 hover:underline"

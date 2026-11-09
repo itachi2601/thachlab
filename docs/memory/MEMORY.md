@@ -81,6 +81,7 @@
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — chờ duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
+- [Tab CTTC + hộp thư + sửa đề CTTC](project_thachlab_cttc_tab_hop_thu.md) — commit 10/11, chưa kiểm đăng nhập, chưa deploy
 - [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — chưa tự tính
 ## Việc đang làm (từ 30/9)
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — treo G41/H11, cổng G5, N4
