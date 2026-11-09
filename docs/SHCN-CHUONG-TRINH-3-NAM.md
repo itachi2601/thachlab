@@ -6,6 +6,9 @@ của chương trình chính thức** — mọi mục con của 12 chủ đề (
 (bảng đối chiếu ở mục 6); chỉ sắp lại thứ tự theo nhu cầu thật của sinh viên ở từng giai đoạn và
 thêm các bài về tự chăm sóc bản thân, sức khoẻ, tiền, chỗ ở, thái độ làm việc.
 
+Nội dung đầy đủ từng tiết (bản sinh viên + kịch bản giảng viên): `content/shcn-3-nam/` — xuất Word bằng
+`python3 scripts/xuat-shcn-3-nam-docx.py <thư mục ra>`.
+
 ---
 
 ## 1. Ý tưởng xuyên suốt
