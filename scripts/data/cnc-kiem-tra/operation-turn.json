@@ -1,0 +1,247 @@
+{
+  "cnc_key": "operation-turn",
+  "title": "Kiểm tra vận hành máy tiện",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Bộ phận nào thuộc phần điều khiển của máy EMCO TURN 55?",
+      "options": [
+        "Ụ động",
+        "Mâm dao",
+        "Thùng CPU",
+        "Băng máy"
+      ],
+      "answer": 2,
+      "explanation": "Phần điều khiển gồm tủ điều khiển, màn hình, bàn phím CNC, bàn phím máy tính và thùng CPU. Ụ động, mâm dao, băng máy là phần chấp hành."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bộ phận nào thuộc phần chấp hành của máy EMCO TURN 55?",
+      "options": [
+        "Bàn phím CNC",
+        "Ụ động",
+        "Màn hình",
+        "Tủ điều khiển"
+      ],
+      "answer": 1,
+      "explanation": "Ụ động trực tiếp tham gia gá đỡ khi cắt gọt nên thuộc phần chấp hành; ba bộ phận còn lại thuộc phần điều khiển."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trình tự mở máy đúng theo bài là gì?",
+      "options": [
+        "Power máy tính, mở WinNC FANUC 21T, rồi đóng CP máy tiện",
+        "Mở WinNC FANUC 21T, đóng CP máy tiện, rồi Power máy tính",
+        "Đóng CP máy tiện, mở WinNC FANUC 21T, rồi Power máy tính",
+        "Đóng CP máy tiện, Power máy tính, rồi mở WinNC FANUC 21T"
+      ],
+      "answer": 3,
+      "explanation": "Phải cấp điện cho máy tiện (CP) trước, sau đó bật máy tính rồi mới mở phần mềm điều khiển."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ở chế độ JOG, em di chuyển dao bằng tay bằng các phím nào?",
+      "options": [
+        "Các phím +X, −X, +Z, −Z",
+        "Các lệnh M3 và M4 trong MDI",
+        "Phím Measure ở trang Offset",
+        "Phím Reference trên bàn phím"
+      ],
+      "answer": 0,
+      "explanation": "JOG là chạy tay theo từng trục bằng các phím +X, −X, +Z, −Z, tốc độ chỉnh bằng % bước tiến."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh M04 điều khiển máy làm gì?",
+      "options": [
+        "Trục chính quay cùng chiều kim đồng hồ",
+        "Trục chính quay ngược chiều kim đồng hồ",
+        "Dừng trục chính sau khi cắt xong",
+        "Gọi dao số 4 trên mâm dao"
+      ],
+      "answer": 1,
+      "explanation": "M03 quay cùng chiều kim đồng hồ, M04 quay ngược chiều kim đồng hồ. Gọi dao dùng chữ T."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi có đường kính lớn thì nên kẹp bằng loại chấu nào?",
+      "options": [
+        "Chấu thuận, siết thật chặt",
+        "Chấu ngược trên mâm cặp",
+        "Chấu thuận kèm căn chêm",
+        "Không dùng chấu, chỉ dùng ụ động"
+      ],
+      "answer": 1,
+      "explanation": "Theo bài, chấu thuận dùng cho phôi nhỏ, chấu ngược dùng cho phôi lớn; độ nhô phôi phải phù hợp."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phím quay dao trên bàn phím dùng để làm gì?",
+      "options": [
+        "Đo tọa độ X, Z của mũi dao",
+        "Xóa dữ liệu ở trang Geometry",
+        "Xem vị trí và số lượng dao trên mâm dao",
+        "Đưa các trục về điểm tham chiếu"
+      ],
+      "answer": 2,
+      "explanation": "Phím quay dao xoay mâm dao để em xem dao nào đang ở vị trí nào và mâm dao có bao nhiêu dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dụng cụ, thiết bị đo dùng xong phải để ở đâu?",
+      "options": [
+        "Cất đúng chỗ trong tủ",
+        "Để trên bàn dao ngang cho tiện lấy",
+        "Để trong khay đặt trên băng máy",
+        "Để trên nóc tủ điện cạnh máy"
+      ],
+      "answer": 0,
+      "explanation": "Dụng cụ để trên máy có thể bị dao kẹp hoặc văng ra khi máy chạy, nên dùng xong cất đúng chỗ trong tủ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao phải về Reference trước khi bấm các phím JOG?",
+      "options": [
+        "Để trục chính đạt đủ tốc độ quay",
+        "Để máy tự xóa dữ liệu offset cũ",
+        "Để máy gọi sẵn dao số 1 ra vị trí cắt",
+        "Vì chưa về chuẩn, máy chưa biết dao ở đâu"
+      ],
+      "answer": 3,
+      "explanation": "Reference giúp máy xác lập vị trí các trục; chưa về chuẩn thì tọa độ trên màn hình chưa đáng tin."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi chạy JOG, dao càng tiến gần phôi thì em nên làm gì với % bước tiến?",
+      "options": [
+        "Tăng % để rút ngắn thời gian",
+        "Giữ nguyên % để tốc độ đều",
+        "Giảm % xuống mức nhỏ",
+        "Chuyển sang MDI, giữ % cũ"
+      ],
+      "answer": 2,
+      "explanation": "% bước tiến giống chân ga: dao càng gần phôi thì % càng nhỏ để kịp dừng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang giữ phím −Z ở chế độ JOG, em nhả tay ra. Dao sẽ thế nào?",
+      "options": [
+        "Dao dừng lại ngay",
+        "Dao chạy tiếp tới Z0 của phôi",
+        "Dao tự quay về điểm tham chiếu",
+        "Dao dừng, trục chính đảo chiều"
+      ],
+      "answer": 0,
+      "explanation": "Ở JOG dao chỉ chạy khi giữ phím; nhả phím thì dao dừng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sau khi chạy M3 S500; trong MDI, em cần xác nhận điều gì trước khi về JOG chạy tay?",
+      "options": [
+        "Số dao đang gọi trên màn hình",
+        "Giá trị Work Shift đã nhập",
+        "Chiều quay trục chính đúng với dao",
+        "Số dòng chương trình còn lại"
+      ],
+      "answer": 2,
+      "explanation": "Bài yêu cầu kiểm đúng chiều quay rồi mới về JOG chạy tay, vì dao gá sai chiều quay sẽ không cắt được và dễ mẻ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gá phôi và dao xong, vì sao cần quay thử mâm cặp ở tốc độ thấp?",
+      "options": [
+        "Để làm nóng trục chính trước khi cắt",
+        "Để kiểm khoảng hở, không vướng dao",
+        "Để máy tự đo đường kính phôi",
+        "Để xác lập gốc phôi W tự động"
+      ],
+      "answer": 1,
+      "explanation": "Quay thử ở tốc độ thấp giúp phát hiện chấu, phôi chạm vào dao hoặc vật khác khi còn an toàn."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi chạy dao bằng tay, em phải luôn nhìn vào đâu?",
+      "options": [
+        "Số hiệu chương trình trên màn hình",
+        "Bảng Geometry của dao đang dùng",
+        "Bàn phím máy tính và thùng CPU",
+        "Khoảng cách dao, phôi, mâm cặp, ụ động"
+      ],
+      "answer": 3,
+      "explanation": "Chạy tay dễ va chạm nếu không nhìn khoảng cách giữa dao với phôi, mâm cặp và ụ động."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Yêu cầu tiện trụ Ø18 ± 0,1 mm. Số đo đường kính nào đạt?",
+      "options": [
+        "18,12 mm",
+        "17,88 mm",
+        "18,08 mm",
+        "18,15 mm"
+      ],
+      "answer": 2,
+      "explanation": "Giới hạn cho phép từ 17,9 đến 18,1 mm; chỉ 18,08 mm nằm trong khoảng này."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Loại dao nào KHÔNG có trong danh sách dao gá trên mâm dao của bài?",
+      "options": [
+        "Dao phay mặt đầu",
+        "Dao cắt rãnh",
+        "Dao tiện lỗ",
+        "Mũi khoan"
+      ],
+      "answer": 0,
+      "explanation": "Mâm dao máy tiện gá dao tiện ngoài, cắt rãnh, ren ngoài, tiện lỗ, ren lỗ, mũi khoan; dao phay mặt đầu dùng cho máy phay."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vạt mặt yêu cầu dài 60 ± 0,1 mm, em đo được 60,18 mm. Xử lý thế nào?",
+      "options": [
+        "Đạt, vì chỉ lệch chưa tới 0,2 mm",
+        "Hỏng, vì chi tiết đã ngắn hơn yêu cầu",
+        "Đạt, vì nằm trong khoảng 59,8 đến 60,2",
+        "Chưa đạt, còn dư nên vạt thêm nhát nhỏ"
+      ],
+      "answer": 3,
+      "explanation": "Giới hạn trên là 60,1 mm; 60,18 mm còn dài hơn nên vạt thêm khoảng 0,08 đến 0,1 mm là vào dung sai."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang giữ −Z ở % bước tiến cao, dao chỉ còn cách mặt đầu phôi vài milimét. Em làm gì?",
+      "options": [
+        "Giữ tiếp phím cho dao chạm phôi",
+        "Nhả phím, giảm % thấp rồi tiến tiếp",
+        "Chuyển sang MDI gõ G0 Z0;",
+        "Bấm Reference để dao tự dừng"
+      ],
+      "answer": 1,
+      "explanation": "Gần phôi phải nhả phím và giảm % bước tiến để dao tiến chậm, kịp dừng khi chạm nhẹ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang làm thì mất điện; em mở lại máy, đóng CP và mở WinNC xong. Trước khi chạy tay tiếp, em phải làm gì?",
+      "options": [
+        "Bấm −Z để dao về chỗ cũ",
+        "Gõ T0202 M6; để gọi lại dao",
+        "Về Reference lại các trục",
+        "Xóa toàn bộ Work Shift cũ"
+      ],
+      "answer": 2,
+      "explanation": "Mỗi lần mở máy, máy phải về Reference để xác lập lại vị trí trục trước mọi lần chạy dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chạy M3 S500; trong MDI, em thấy trục chính quay ngược chiều cần cho dao đang gá. Em làm gì?",
+      "options": [
+        "Đổi sang M4 S500; cho đúng chiều rồi mới về JOG",
+        "Cứ về JOG cắt vì tốc độ đã đúng",
+        "Tăng lên S1000 để bù lại chiều quay",
+        "Gọi lại T0202 M6; để máy tự đảo chiều"
+      ],
+      "answer": 0,
+      "explanation": "M3 và M4 quyết định chiều quay; chiều quay phải khớp với chiều gá dao, đúng chiều rồi mới chạy tay."
+    }
+  ]
+}
