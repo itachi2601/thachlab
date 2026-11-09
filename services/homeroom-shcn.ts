@@ -49,6 +49,8 @@ export interface WeeklySession {
   announcements: { tieu_de: string; ghi_chu?: string }[];
   ethics_topic: string;
   ethics_taught: string[];
+  /** Bài đọc SHCN của tuần, dạng "hk1/b03" (lib/shcn/bai-doc.ts). */
+  lesson_key: string | null;
   headcount: number | null;
   present_count: number | null;
   created_at: string;
@@ -58,7 +60,7 @@ export interface WeeklySession {
 const DAILY_FIELDS =
   "id, course_id, attendance_date, headcount, present_count, absentees, submitted_by, submitted_at, updated_at";
 const WEEKLY_FIELDS =
-  "id, course_id, week_no, met_on, announcements, ethics_topic, ethics_taught, headcount, present_count, created_at, updated_at";
+  "id, course_id, week_no, met_on, announcements, ethics_topic, ethics_taught, lesson_key, headcount, present_count, created_at, updated_at";
 
 /**
  * Ngày hôm nay theo giờ Việt Nam, dạng YYYY-MM-DD — phải khớp public.vn_today() của RLS, nếu
@@ -218,6 +220,7 @@ export async function upsertWeeklySession(input: {
   announcements: { tieu_de: string; ghi_chu?: string }[];
   ethicsTopic: string;
   ethicsTaught: string[];
+  lessonKey: string | null;
   headcount: number | null;
   presentCount: number | null;
 }) {
@@ -235,6 +238,7 @@ export async function upsertWeeklySession(input: {
       announcements,
       ethics_topic: input.ethicsTopic.trim(),
       ethics_taught: input.ethicsTaught.map((item) => item.trim()).filter(Boolean),
+      lesson_key: input.lessonKey || null,
       headcount: input.headcount,
       present_count: input.presentCount,
       created_by: auth.user?.id ?? null,

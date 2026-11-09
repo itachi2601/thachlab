@@ -1,0 +1,147 @@
+{
+  "cnc_key": "lesson-3",
+  "title": "Quiz nhận biết lệnh — Bài 3 (Phay)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Tên một chương trình phay trên FANUC 21M được ghi theo dạng nào?",
+      "options": ["Chữ N và bốn chữ số, ví dụ N1601", "Chữ O và bốn chữ số, ví dụ O1601", "Chữ P và bốn chữ số, ví dụ P1601", "Chữ G và bốn chữ số, ví dụ G1601"],
+      "answer": 1,
+      "explanation": "Tên chương trình có dạng Oxxxx, ví dụ O1601. Chữ N chỉ đánh số thứ tự từng khối lệnh."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mỗi khối lệnh trong chương trình FANUC 21M kết thúc bằng ký tự nào?",
+      "options": ["Dấu chấm", "Dấu phẩy", "Dấu chấm phẩy", "Dấu hai chấm"],
+      "answer": 2,
+      "explanation": "Khối lệnh có dạng N_ G_ X_ Y_ Z_ M_ S_ F_ T_ ; và kết thúc bằng dấu chấm phẩy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong khối lệnh phay, địa chỉ F dùng để ghi đại lượng nào?",
+      "options": ["Tốc độ quay của trục chính", "Số hiệu dao cần chọn", "Số thứ tự của khối lệnh", "Tốc độ chạy dao"],
+      "answer": 3,
+      "explanation": "F là tốc độ chạy dao; S là tốc độ trục chính, T chọn dao, N là số thứ tự khối."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong khối lệnh phay, địa chỉ S dùng để ghi đại lượng nào?",
+      "options": ["Tốc độ quay của trục chính", "Tốc độ chạy dao", "Chiều sâu cắt mỗi lớp", "Thời gian dừng ở đáy lỗ"],
+      "answer": 0,
+      "explanation": "S là tốc độ trục chính, ví dụ S1000 M03 là trục chính quay thuận 1000 vòng/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh nào chọn mặt phẳng XOY, mặt phẳng thường dùng khi phay biên dạng?",
+      "options": ["G17", "G18", "G19", "G71"],
+      "answer": 0,
+      "explanation": "G17 chọn mặt phẳng XOY; G18 là XOZ, G19 là YOZ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32 dùng trong bài, lệnh nào chọn đơn vị hệ mét?",
+      "options": ["G70", "G94", "G71", "G17"],
+      "answer": 2,
+      "explanation": "Trên Win-NC32 của xưởng, G71 là hệ mét còn G70 là inch."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G94 quy định tốc độ chạy dao F tính theo đơn vị nào?",
+      "options": ["mm/vòng", "mm/phút", "vòng/phút", "m/phút"],
+      "answer": 1,
+      "explanation": "G94 tính F theo mm/phút, thường dùng khi phay; G95 tính theo mm/vòng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh nào cho biết các tọa độ X, Y, Z trong khối được tính từ gốc phôi W?",
+      "options": ["G91", "G94", "G17", "G90"],
+      "answer": 3,
+      "explanation": "G90 là tọa độ tuyệt đối, mọi con số tính từ gốc phôi W."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi máy đang ở chế độ G91, con số đi sau X trong khối lệnh có nghĩa là gì?",
+      "options": ["Tọa độ điểm đến tính từ gốc phôi W", "Lượng dịch chuyển tính từ vị trí dao đang đứng", "Tọa độ điểm đến tính từ gốc máy M", "Khoảng cách từ mũi dao tới điểm tham chiếu R"],
+      "answer": 1,
+      "explanation": "G91 là tọa độ tương đối: mỗi số là quãng dao phải đi thêm so với điểm trước."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G00 điều khiển dao chuyển động như thế nào?",
+      "options": ["Chạy nhanh tới điểm đích, không cắt gọt", "Cắt theo đường thẳng với tốc độ F", "Cắt theo cung tròn cùng chiều kim đồng hồ", "Dừng chương trình chờ người vận hành"],
+      "answer": 0,
+      "explanation": "G00 là chạy nhanh không cắt, dùng để đưa dao tới vị trí cần thiết."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh nào cắt theo cung tròn ngược chiều kim đồng hồ?",
+      "options": ["G01", "G02", "G03", "G00"],
+      "answer": 2,
+      "explanation": "G02 cắt cung cùng chiều kim đồng hồ, G03 cắt cung ngược chiều kim đồng hồ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn vát góc ngay trong khối cắt thẳng G01, ta thêm địa chỉ nào?",
+      "options": ["R", "I", "K", "C"],
+      "answer": 3,
+      "explanation": "Trong khối G01, thêm R để bo góc và thêm C để vát góc."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G42 có tác dụng gì?",
+      "options": ["Bù bán kính, dao nằm bên trái biên dạng theo hướng chạy dao", "Bù bán kính, dao nằm bên phải biên dạng theo hướng chạy dao", "Bù chiều dài dao theo hướng dương của trục Z", "Hủy bù bán kính dao đang có hiệu lực"],
+      "answer": 1,
+      "explanation": "G42 bù bán kính với dao nằm bên phải biên dạng, nhìn theo hướng chạy dao; G41 là bên trái."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh nào hủy bù bán kính dao?",
+      "options": ["G49", "G80", "G40", "G44"],
+      "answer": 2,
+      "explanation": "G40 hủy bù bán kính; G49 mới là hủy bù chiều dài."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G43 kèm địa chỉ H dùng để làm gì?",
+      "options": ["Bù chiều dài dao theo hướng dương", "Bù bán kính dao bên trái biên dạng", "Bù chiều dài dao theo hướng âm", "Chọn mặt phẳng gia công YOZ"],
+      "answer": 0,
+      "explanation": "G43 bù chiều dài dao hướng dương, H chọn ô chiều dài; G44 là hướng âm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh nào hủy bù chiều dài dao?",
+      "options": ["G40", "G49", "G80", "G98"],
+      "answer": 1,
+      "explanation": "G49 hủy bù chiều dài G43/G44; G40 hủy bù bán kính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chu trình G83 dùng cho việc gì?",
+      "options": ["Tarô ren phải", "Doa lỗ có dừng ở đáy", "Khoan lỗ sâu, cắt từng lát theo Q", "Khoan hết chiều sâu trong một lần"],
+      "answer": 2,
+      "explanation": "G83 khoan lỗ sâu: mỗi lát sâu Q rồi rút để thoát phoi; G81 mới khoan một lần."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chu trình nào dùng để tarô ren phải?",
+      "options": ["G74", "G89", "G81", "G84"],
+      "answer": 3,
+      "explanation": "G84 tarô ren phải, G74 tarô ren trái, G89 doa có dừng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G80 dùng để làm gì?",
+      "options": ["Hủy chu trình cố định khoan, tarô, doa", "Hủy bù bán kính dao", "Rút dao về mặt phẳng R", "Kết thúc toàn bộ chương trình"],
+      "answer": 0,
+      "explanation": "G80 hủy nhóm chu trình cố định trước khi chuyển sang chuyển động khác."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã M nào dừng chương trình vô điều kiện?",
+      "options": ["M01", "M00", "M30", "M05"],
+      "answer": 1,
+      "explanation": "M00 dừng vô điều kiện; M01 dừng có điều kiện, M30 kết thúc chương trình, M05 dừng trục chính."
+    }
+  ]
+}

@@ -13,6 +13,7 @@ import {
   type WeeklySession,
 } from "@/services/homeroom-shcn";
 import { parseTuanJson } from "@/lib/shcn/tuan-json";
+import { BAI_DOC, findBaiDoc, nhanBai } from "@/lib/shcn/bai-doc";
 
 const emptyForm = {
   weekNo: "",
@@ -21,6 +22,7 @@ const emptyForm = {
   notes: [""],
   ethicsTopic: "",
   ethicsTaught: "",
+  lessonKey: "",
   headcount: "",
   presentCount: "",
 };
@@ -35,6 +37,7 @@ function toForm(week: WeeklySession): Form {
     notes: week.announcements.length ? week.announcements.map((item) => item.ghi_chu ?? "") : [""],
     ethicsTopic: week.ethics_topic,
     ethicsTaught: week.ethics_taught.join("; "),
+    lessonKey: week.lesson_key ?? "",
     headcount: week.headcount === null ? "" : String(week.headcount),
     presentCount: week.present_count === null ? "" : String(week.present_count),
   };
@@ -67,6 +70,17 @@ export default function HomeroomWeeklyEditor({ courseId }: { courseId: number })
     setForm((current) => ({ ...current, ...patch }));
   }
 
+  /** Chọn bài đọc thì điền sẵn chủ đề + trọng tâm nếu đang trống (ghi biên bản theo bảng chương trình). */
+  function chooseLesson(key: string) {
+    const doc = findBaiDoc(key);
+    setForm((current) => ({
+      ...current,
+      lessonKey: key,
+      ethicsTopic: current.ethicsTopic || doc?.chu_de || "",
+      ethicsTaught: current.ethicsTaught || doc?.trong_tam || "",
+    }));
+  }
+
   function reset() {
     setForm(emptyForm);
     setEditingId(null);
@@ -85,6 +99,7 @@ export default function HomeroomWeeklyEditor({ courseId }: { courseId: number })
         notes: parsed.announcements.length ? parsed.announcements.map((item) => item.ghi_chu ?? "") : [""],
         ethicsTopic: parsed.ethicsTopic,
         ethicsTaught: parsed.ethicsTaught.join("; "),
+        lessonKey: parsed.lessonKey ?? "",
         headcount: parsed.headcount === null ? "" : String(parsed.headcount),
         presentCount: parsed.presentCount === null ? "" : String(parsed.presentCount),
       });
@@ -127,6 +142,7 @@ export default function HomeroomWeeklyEditor({ courseId }: { courseId: number })
         announcements: form.announcements.map((title, index) => ({ tieu_de: title, ghi_chu: form.notes[index] ?? "" })),
         ethicsTopic: form.ethicsTopic,
         ethicsTaught: form.ethicsTaught.split(";").map((item) => item.trim()).filter(Boolean),
+        lessonKey: form.lessonKey || null,
         headcount: form.headcount === "" ? null : Number(form.headcount),
         presentCount: form.presentCount === "" ? null : Number(form.presentCount),
       });
@@ -226,6 +242,20 @@ export default function HomeroomWeeklyEditor({ courseId }: { courseId: number })
             </button>
           )}
         </div>
+
+        <label className="mt-4 block">
+          <span className="mb-1.5 block text-xs font-bold uppercase tracking-wide text-slate-400">Bài đọc tuần này (sinh viên bấm đọc trên thẻ tuần)</span>
+          <select value={form.lessonKey} onChange={(event) => chooseLesson(event.target.value)} className="w-full rounded-xl border border-white/10 bg-[#080d1d] px-4 py-2.5 text-sm text-white">
+            <option value="">— Không có bài đọc —</option>
+            {Array.from(new Set(BAI_DOC.map((item) => item.hk))).map((hk) => (
+              <optgroup key={hk} label={`Học kì ${hk}`}>
+                {BAI_DOC.filter((item) => item.hk === hk).map((item) => (
+                  <option key={item.key} value={item.key}>{nhanBai(item.bai)}. {item.ten}</option>
+                ))}
+              </optgroup>
+            ))}
+          </select>
+        </label>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           <label className="block">
