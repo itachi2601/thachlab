@@ -85,16 +85,16 @@ const planKeys = (lessonId: string, keep: (assessmentId: string) => boolean = ()
   (CNC_ASSESSMENT_PLAN[lessonId] ?? []).filter(keep).map((assessmentId) => `${lessonId}:${assessmentId}`);
 
 export const CNC_GATES: readonly CncGate[] = [
-  { id: "G1", title: "An toàn", keys: planKeys("lesson-1"), approvals: [] },
-  { id: "G2", title: "Lập trình tiện", keys: planKeys("lesson-2", (id) => id.startsWith("exercise-")), approvals: [] },
-  { id: "G3", title: "Lập trình phay", keys: planKeys("lesson-3", (id) => id.startsWith("exercise-")), approvals: [] },
+  { id: "G1", title: "Nhập môn", keys: planKeys("lesson-1"), approvals: [] },
+  { id: "G2", title: "Lập trình tiện", keys: planKeys("lesson-2", (id) => id.startsWith("exercise-") || id === "final"), approvals: [] },
+  { id: "G3", title: "Lập trình phay", keys: planKeys("lesson-3", (id) => id.startsWith("exercise-") || id === "final"), approvals: [] },
   {
     id: "G4",
     title: "Vận hành + cài dao",
     keys: [...planKeys("lesson-4-turn", (id) => id !== "checklist-practice"), ...planKeys("lesson-4-mill", (id) => id !== "checklist-practice")],
     approvals: ["turn-operation", "turn-tool-setup", "mill-operation", "mill-tool-setup"],
   },
-  { id: "G5", title: "Chi tiết đạt dung sai", keys: [...planKeys("lesson-5", (id) => id === "rubric-exam"), ...planKeys("lesson-6", (id) => id === "rubric-exam")], approvals: [] },
+  { id: "G5", title: "Chi tiết đạt dung sai", keys: [...planKeys("lesson-5", (id) => id === "final" || id === "rubric-exam"), ...planKeys("lesson-6", (id) => id === "final" || id === "rubric-exam")], approvals: [] },
 ];
 
 export type CncGateStatus = "dat" | "cho_duyet" | "dang_lam" | "chua_lam" | "khoa";
