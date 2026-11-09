@@ -1,0 +1,247 @@
+{
+  "cnc_key": "test-5",
+  "title": "Kiểm tra cuối Bài 6 — Gia công tiện CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Thứ tự nguyên công chuẩn khi tiện một trục bậc là:",
+      "options": [
+        "Tiện thô → tiện mặt đầu → tiện tinh → tiện ren → đo kiểm",
+        "Tiện mặt đầu → tiện thô → tiện tinh → tiện ren → đo kiểm",
+        "Tiện mặt đầu → tiện ren → tiện thô → tiện tinh → đo kiểm",
+        "Tiện mặt đầu → tiện tinh → tiện thô → tiện ren → đo kiểm"
+      ],
+      "answer": 1,
+      "explanation": "Mặt đầu làm chuẩn trước, thô bỏ nhanh vật liệu rồi tinh đưa về kích thước; ren làm sau cùng khi đường kính đã đạt, đo kiểm rồi mới tháo phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi tiện trục bậc, gốc phôi W thường đặt ở đâu?",
+      "options": [
+        "Tâm mặt đầu thành phẩm: X0 ở tâm, Z0 ở mặt đầu",
+        "Mặt mâm cặp: X0 ở tâm, Z0 ở mặt mâm cặp",
+        "Mép ngoài phôi thô: X0 ở mép, Z0 ở mặt đầu",
+        "Đầu mũi dao: X0 và Z0 tại vị trí dao lúc gọi"
+      ],
+      "answer": 0,
+      "explanation": "Mặt đầu vừa tiện là chuẩn đo chiều dài nên Z0 đặt ở đó, X0 ở tâm trục; các điểm nằm trong phôi có Z âm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lượng chạy dao f khi tiện được đo bằng đơn vị nào?",
+      "options": [
+        "mm/phút",
+        "vòng/phút",
+        "mm/vòng",
+        "m/phút"
+      ],
+      "answer": 2,
+      "explanation": "f là quãng dao tiến sau mỗi vòng quay của phôi, nên đo bằng mm/vòng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Độ sâu cắt a_p là chiều dày lớp vật liệu bỏ đi, được đo theo:",
+      "options": [
+        "Đường kính phôi",
+        "Chiều dài trục Z",
+        "Chu vi phôi",
+        "Bán kính phôi"
+      ],
+      "answer": 3,
+      "explanation": "a_p đo theo bán kính, nên mỗi lát cắt làm đường kính (giá trị X) giảm 2a_p."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đặc điểm nào đúng với bước tiện thô?",
+      "options": [
+        "a_p và f nhỏ, đưa kích thước về đúng bản vẽ",
+        "a_p và f lớn, bỏ nhanh vật liệu, chừa lượng dư tinh",
+        "a_p lớn và f nhỏ, để bề mặt bóng ngay từ đầu",
+        "a_p nhỏ và f lớn, để rút ngắn thời gian tiện tinh"
+      ],
+      "answer": 1,
+      "explanation": "Tiện thô chọn a_p và f lớn để bỏ nhanh vật liệu, chừa lớp dư mỏng cho bước tinh (a_p, f nhỏ) đạt kích thước và độ bóng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ren ký hiệu M20×1,5. Con số 1,5 là:",
+      "options": [
+        "Bước ren P, tính bằng mm",
+        "Chiều sâu ren, tính bằng mm",
+        "Số lượt cắt cần thiết",
+        "Góc đỉnh ren, tính bằng độ"
+      ],
+      "answer": 0,
+      "explanation": "M20×1,5: đường kính danh nghĩa 20 mm, bước ren P = 1,5 mm; ren hệ mét có góc đỉnh 60 độ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao tiện ren (và rãnh) được xếp sau cùng, trước khâu đo kiểm?",
+      "options": [
+        "Vì ren cần tốc độ trục chính cao nhất",
+        "Vì dao ren phải gá cuối cùng trên đài dao",
+        "Vì ren cần đường kính ngoài đã đạt kích thước",
+        "Vì ren không cần đến gốc W ở mặt đầu"
+      ],
+      "answer": 2,
+      "explanation": "Ren cắt trên đường kính đã tiện tinh xong, và là bước dễ hỏng nhất nên làm sau cùng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chiều dài phôi tối thiểu cần chọn bằng tổng của những phần nào?",
+      "options": [
+        "Chiều dài chi tiết và phần kẹp trong mâm cặp",
+        "Chiều dài chi tiết và lớp dư mặt đầu",
+        "Chiều dài chi tiết, phần kẹp và đường kính phôi",
+        "Chiều dài chi tiết, lớp dư mặt đầu và phần kẹp"
+      ],
+      "answer": 3,
+      "explanation": "L phôi ≥ L chi tiết + lớp dư mặt đầu + phần kẹp trong mâm, cộng thêm bề rộng rãnh cắt đứt nếu có."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tiện thử hai đoạn cùng tốc độ trục chính: đoạn A có vân xoắn thưa và ráp, đoạn B có vân mịn. Khoảng cách giữa hai vân kế tiếp chính là:",
+      "options": [
+        "Độ sâu cắt a_p",
+        "Lượng chạy dao f",
+        "Tốc độ cắt v_c",
+        "Bán kính mũi dao"
+      ],
+      "answer": 1,
+      "explanation": "Mỗi vòng phôi quay, dao tiến đúng f, nên các vân xoắn cách nhau đúng f; đoạn A dùng f lớn hơn."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sau khi tiện tinh, bề mặt còn vân xoắn rõ và sờ thấy ráp. Điều chỉnh hợp lý nhất cho lần sau là:",
+      "options": [
+        "Tăng độ sâu cắt a_p ở lượt tinh",
+        "Tăng lượng chạy dao f ở lượt tinh",
+        "Giảm lượng chạy dao f ở lượt tinh",
+        "Bỏ lượt tinh, chỉ tiện thô kỹ hơn"
+      ],
+      "answer": 2,
+      "explanation": "Vân xoắn cách nhau đúng f; giảm f thì vân mịn hơn, bề mặt bóng hơn (đổi lại thời gian tiện lâu hơn)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Một bạn bỏ qua tiện mặt đầu và cắt thẳng các bậc. Lỗi dễ thấy nhất khi đo loạt chi tiết là:",
+      "options": [
+        "Đường kính các bậc to hơn bản vẽ",
+        "Chiều dài các bậc lệch, mỗi chi tiết lệch một khác",
+        "Bề mặt các bậc bị vân xoắn thô",
+        "Ren bị xé do lực cắt quá lớn"
+      ],
+      "answer": 1,
+      "explanation": "Không có mặt đầu phẳng làm chuẩn Z0 nên mọi chiều dài tính từ một mặt không đều, mỗi chi tiết lệch một kiểu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gốc W ở tâm mặt đầu thành phẩm. Đọc dòng lệnh G01 X30 Z-40, dao dừng ở đâu?",
+      "options": [
+        "Đường kính 30 mm, cách mặt đầu 40 mm về phía mâm cặp",
+        "Bán kính 30 mm, cách mặt đầu 40 mm về phía mâm cặp",
+        "Đường kính 30 mm, cách mặt đầu 40 mm ra xa mâm cặp",
+        "Bán kính 15 mm, cách mâm cặp 40 mm về phía mặt đầu"
+      ],
+      "answer": 0,
+      "explanation": "X là đường kính nên X30 là Ø30; Z âm là đi vào phía mâm cặp, cách mặt đầu 40 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi Ø40, lát tiện thô có a_p = 2 mm. Bạn viết G01 X38 Z-30, đo lại thấy chỉ bỏ 1 mm mỗi phía. Sửa trị số X thành:",
+      "options": [
+        "X39",
+        "X42",
+        "X36",
+        "X34"
+      ],
+      "answer": 2,
+      "explanation": "X là đường kính nên X mới = 40 − 2×2 = 36; viết X38 là trừ a_p thẳng vào đường kính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang tiện ren, thợ giảm tốc độ trục chính từ 600 xuống 300 vòng/phút. Đại lượng nào giữ nguyên?",
+      "options": [
+        "Tốc độ tiến dọc Z (mm/phút)",
+        "Bước ren P (mm/vòng)",
+        "Tốc độ cắt v_c (m/phút)",
+        "Thời gian chạy một lượt ren"
+      ],
+      "answer": 1,
+      "explanation": "Mỗi vòng dao tiến đúng P nên bước ren không đổi; tốc độ tiến P·n, tốc độ cắt và thời gian một lượt đều thay đổi theo n."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Một bạn cắt ren M24×3 chỉ trong một lượt, ăn đủ chiều sâu ngay. Điều dễ xảy ra nhất là:",
+      "options": [
+        "Bước ren bị tăng gấp đôi",
+        "Đường kính ngoài bị tiện nhỏ đi",
+        "Lực cắt lớn, dao dễ gãy, ren bị xé",
+        "Máy tự giảm tốc độ trục chính"
+      ],
+      "answer": 2,
+      "explanation": "Một nhát ăn cả rãnh ren làm lực cắt rất lớn; phải chia nhiều lượt, mỗi lượt nông dần."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bậc Ø30 có vát 1,5×45° ở mặt đầu (Z0). Điểm bắt đầu vát nằm trên mặt đầu có trị số X là:",
+      "options": [
+        "X28,5",
+        "X30",
+        "X26",
+        "X27"
+      ],
+      "answer": 3,
+      "explanation": "X là đường kính nên đổi 2c = 3: điểm đầu vát (27; 0), điểm cuối vát (30; −1,5)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tiện mặt đầu phôi Ø40 với tốc độ cắt v_c = 125,6 m/phút, lấy π = 3,14. Số vòng quay trục chính n = 1000·v_c/(π·D) là:",
+      "options": [
+        "1000 vòng/phút",
+        "2000 vòng/phút",
+        "3140 vòng/phút",
+        "500 vòng/phút"
+      ],
+      "answer": 0,
+      "explanation": "n = 1000 × 125,6 / (3,14 × 40) = 125600 / 125,6 = 1000 vòng/phút; D là đường kính, không thay bằng bán kính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bậc Ø20 kết thúc ở Z-15, tiếp theo là côn độ côn 1:4 dài 24 mm, đường kính tăng dần về phía mâm cặp. Tọa độ (X; Z) điểm cuối côn là:",
+      "options": [
+        "(23; −39)",
+        "(26; −24)",
+        "(26; −39)",
+        "(14; −39)"
+      ],
+      "answer": 2,
+      "explanation": "ΔX = C·L = 24/4 = 6 (không chia 2) nên X = 26; Z = −15 − 24 = −39."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tiện thô từ phôi Ø50 xuống Ø36 (chưa tính lượng dư tinh), mỗi lát a_p không quá 2,5 mm. Cần tối thiểu bao nhiêu lát?",
+      "options": [
+        "2 lát",
+        "6 lát",
+        "4 lát",
+        "3 lát"
+      ],
+      "answer": 3,
+      "explanation": "Dư theo bán kính (50 − 36)/2 = 7 mm, 7/2,5 = 2,8 nên làm tròn lên 3 lát (ví dụ X45, X40, X36)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chi tiết dài 85 mm, lớp dư mặt đầu 1,5 mm, phần kẹp trong mâm 35 mm, rãnh cắt đứt rộng 3 mm. Phôi cần dài tối thiểu:",
+      "options": [
+        "121,5 mm",
+        "124,5 mm",
+        "120 mm",
+        "86,5 mm"
+      ],
+      "answer": 1,
+      "explanation": "85 + 1,5 + 35 + 3 = 124,5 mm: chi tiết, lớp dư mặt đầu, phần kẹp và bề rộng rãnh cắt đứt."
+    }
+  ]
+}
