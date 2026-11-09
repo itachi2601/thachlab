@@ -117,3 +117,13 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l11-bai-tap-dao-dong · tn-l11-baitapdaodong-02 · clip bttdaodong2 · đã soát, đã tải + chèn repo + khung, CHỜ THẦY DUYỆT (chưa đăng DB) · 9/11/2026 · 49,1 s, 1,25 MB (vi_du) · hộp 'Quan sát/Rút ra' nêu sẵn 6,0 cm, 16,0 cm, A = 3,0 cm → lộ đáp án
 - l11-bai-tap-nang-luong-dao-dong · tn-l11-baitapnangluong-02 · clip btnangluong2 · đã soát, đã tải + chèn repo + khung, CHỜ THẦY DUYỆT (chưa đăng DB) · 9/11/2026 · 49,1 s, 1,41 MB (vi_du)
 - l11-co-nang-dao-dong · tn-l11-conangdddh-02 · clip conangdddh2 · đã soát, đã tải + chèn repo + khung, CHỜ THẦY DUYỆT (chưa đăng DB) · 9/11/2026 · 48,9 s, 1,16 MB (vi_du) · kho không ghi chiều dây (hình vẽ ~1,73 m)
+
+## Chặng B — L10 Ch.6 + Ch.1 (lô 9/11/2026, 6 clip; lọc: còn 6 TN `thi_nghiem` thiếu video, loại `vi_du`; ứng viên YouTube của chúng đều nhóm B chưa duyệt → tự dựng). Đã tải lesson-clips (-20261109, HEAD 200) + chèn repo + khung 6 ô; CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB (đăng sau 22h bằng `--chi-video`)
+
+- l10-chuyen-dong-tron-deu (lesson 76) · tn-l10-trondeu-02 · clip trondeu2 · đã soát (cổng B 1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,6 s · 1,19 MB · "Quan sát" hộp exp nêu sẵn "nắp to hay nhỏ đều vậy" (lộ đáp án) — thầy quyết
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-02 · clip huongtam2 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,2 s · 1,69 MB
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-03 · clip huongtam3 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,8 s · 1,58 MB · số 5,1 s = 10,2 : 2 (không có sẵn trong kho)
+- l10-luc-huong-tam (lesson 77) · tn-l10-huongtam-04 · clip huongtam4 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,8 s · 1,15 MB · "Quan sát" hộp exp lộ đáp án (tiếp tuyến), ngay trước hộp còn quiz "đứt dây" — thầy quyết
+- l10-lam-quen-voi-vat-li (lesson 46) · tn-l10-lam-quen-02 · clip lamquen2 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,9 s · 1,16 MB · "Quan sát" hộp exp lộ đáp án ("chỉ chậm hơn sách một chút") — thầy quyết; 0,04 s là số suy từ 2,67 khung : 60
+- l10-thuc-hanh-sai-so (lesson 48) · tn-l10-sai-so-01 · clip saiso1 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,6 s · 1,23 MB · clip không tính Δt (là đáp án Câu 2 sau hộp)
+- l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-03, l10-lam-quen/sai-so/trondeu/huongtam-01,03,04 loại `vi_du` · bỏ qua: không phải thí nghiệm · 9/11/2026 ·
