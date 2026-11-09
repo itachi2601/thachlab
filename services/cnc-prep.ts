@@ -137,3 +137,14 @@ export function summarizeCncPrep(rows: CncPrepResponse[], questions: CncQuizQues
   const avg = firsts.length ? firsts.reduce((sum, row) => sum + row.score / row.total, 0) / firsts.length : 0;
   return { firsts, best, stats, notes, avg };
 }
+
+// Mọi buổi của một lớp trong MỘT truy vấn (bảng điều hành giảng viên: ~30 SV × 11 buổi × vài lượt).
+export async function fetchCourseCncPrepAll(courseId: number) {
+  const { data, error } = await getSupabase()
+    .from("cnc_prep_responses")
+    .select(fields)
+    .eq("course_id", courseId)
+    .order("created_at", { ascending: true });
+  if (error) throw error;
+  return (data ?? []) as CncPrepResponse[];
+}
