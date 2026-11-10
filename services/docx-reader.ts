@@ -170,6 +170,24 @@ function objectText(el: Element, ctx: Ctx): string {
   return relId ? imageTag(ctx, relId, frameSizePx(el)) : "";
 }
 
+/**
+ * Ghép chữ `s` (chỉ số trên nếu `sup`, dưới nếu không) vào cuối `out` bằng LaTeX:
+ * "10"+⁵ → "$10^{5}$" · "6,02.10"+²³ → "6,02.$10^{23}$" · "18,0"+⁰ → "18,0°" · "m/s"+² → "m/$\mathrm{s}^{2}$" · "v"+₀ → "$v_{0}$".
+ */
+export function withScript(out: string, s: string, sup: boolean): string {
+  const body = s.trim();
+  if (!body || body.includes("$") || body.includes("<")) return out + s;
+  const op = sup ? "^" : "_";
+  // ⁰ / ° / º viết bằng chỉ số trên ngay sau số (hoặc t) = dấu độ, trừ 10⁰.
+  if (sup && /^[0oOº°]$/.test(body) && !/(?:^|[^\d.,])10\s*$/.test(out)) return out.replace(/\s+$/, "") + "°";
+  // Ngay sau công thức $…$: nối vào trong công thức, tránh "$$" (thành công thức khối).
+  if (/\$\s*$/.test(out) && (out.match(/\$/g) ?? []).length % 2 === 0) return out.replace(/\$\s*$/, `${op}{${body}}$`);
+  const m = out.match(sup ? /(\d+|[A-Za-z]{1,3}|[α-ωΑ-ΩΔΦ])$/ : /(\d+|[A-Za-zα-ωΑ-ΩΔΦ])$/);
+  if (!m) return `${out}$${op}{${body}}$`;
+  const base = /^\d/.test(m[1]) || !sup ? m[1] : `\\mathrm{${m[1]}}`; // mũ sau chữ thường là đơn vị (m², s²)
+  return `${out.slice(0, -m[1].length)}$${base}${op}{${body}}$`;
+}
+
 function inlineText(node: Element, ctx: Ctx): string {
   let out = "";
   for (const el of els(node)) {
@@ -210,6 +228,15 @@ function inlineText(node: Element, ctx: Ctx): string {
           ctx.shapeDrawings += 1;
           out += ` ${SHAPE_MARK} `;
         }
+        break;
+      }
+      case "r": {
+        // Run có chỉ số trên/dưới (w:vertAlign): trước đây chỉ lấy chữ nên 10⁵ → "105", 18,0⁰C → "18,00C",
+        // m/s² → "m/s2", v₀ → "v0" — nguồn chính của lỗi "mất mũ" trong ngân hàng (10/11/2026).
+        const va = child(el, "rPr");
+        const align = va ? attr(child(va, "vertAlign") ?? va, "val") : null;
+        const text = inlineText(el, ctx);
+        out = align === "superscript" || align === "subscript" ? withScript(out, text, align === "superscript") : out + text;
         break;
       }
       case "AlternateContent": {
