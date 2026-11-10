@@ -3,7 +3,7 @@
 // Nguồn nội dung: bài web lesson 72 (book/cache/72.json của worktree sach-in-tu-web-chuong-3): lý thuyết I–VI + 5 dạng bài tập mẫu.
 // Đáp số bài tương tự tính bằng Python (xem báo cáo phiên 10/11/2026); số liệu bài toán mẫu, thí nghiệm, thử thách lấy đúng bài web.
 // Chạy: node scripts/ruot-tap/l10-bai27.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl10-bai27.pdf
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, TRANG_DAU } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, dapSo, TRANG_DAU } from './khung.mjs';
 import { hinhBai27 as H } from './hinh-l10-bai27.mjs';
 const K = khoiTao({ bai: 27, lid: 72, ten: 'HIỆU SUẤT', lop: 10, baiDau: 23, sub: 'Vật lí 10 · Chương 4: Năng lượng, công, công suất' });
 const { head, h3, foot } = K;
@@ -183,31 +183,35 @@ const ttCss2 = `<style>.tt:has(.tt2)>.hd>span:last-child{display:none}.tt2{displ
 .tt2 .h2{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--navy);border-bottom:.2mm solid var(--grid);margin-bottom:.3mm}
 .tt2 .h2>span:last-child{font-weight:400;color:var(--ink);white-space:nowrap}.tt2 .q{margin-top:.5mm}</style>`;
 const okS = '<span><span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai, đã sửa</span>';
-const bai = (stmt, ys) => `<div>${stmt}</div>` + ys.map(([lab, q, n = 1]) => `<div class="q"><b>${lab})</b> ${q}</div>${lines(n)}`).join('');
+// Giải vào vở (thầy chốt 10/11): mỗi ý một dòng câu hỏi, cuối bài một hàng ô đáp số (dapSo); o mặc định = nhãn các ý, ý 2 kết quả tách b<sub>1</sub>/b<sub>2</sub>.
+const bai = (stmt, ys, o = ys.map((y) => y[0])) => `<div>${stmt}</div>` + ys.map(([lab, q]) => `<div class="q"><b>${lab})</b> ${q}</div>`).join('') + dapSo(o);
+const NHAP = [1, 6]; // số dòng nháp cuối tr.8, tr.9 — đổ cho dư 0–15 mm
+const nhap = (n) => `<div style="margin-top:2mm;border-top:.3mm solid var(--grid);padding-top:.8mm"><b>Nháp / chỗ em còn vướng</b>${lines(n)}</div>`;
 const hai = (a, b, css = '') => `${css}<div class="tt2">${[a, b].map((x, i) => `<div><div class="h2"><span>Bài ${i + 1}</span>${okS}</div>${x}</div>`).join('')}</div>`;
 const tuongTu = {
+  vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
     { t: 'Dạng 1 · Toàn phần, có ích, hao phí', k: 0, de: hai(
-      bai(`Máy xay sinh tố nhận ${u('60', 'kJ')} điện năng, ${u('42', 'kJ')} thành cơ năng quay lưỡi dao.`, [['a', 'Năng lượng hao phí?', 2], ['b', 'Hao phí chuyển sang những dạng nào?']]),
-      bai(`Động cơ ô tô nhận ${u('800', 'kJ')} từ xăng, hao phí ${u('560', 'kJ')}.`, [['a', 'Công có ích?', 2], ['b', `Bảo dưỡng xong hao phí còn ${u('500', 'kJ')}, có ích giữ nguyên: năng lượng toàn phần mới?`]]), ttCss2) },
+      bai(`Máy xay sinh tố nhận ${u('60', 'kJ')} điện năng, ${u('42', 'kJ')} thành cơ năng quay lưỡi dao.`, [['a', 'Năng lượng hao phí?'], ['b', 'Hao phí chuyển sang những dạng nào?']]),
+      bai(`Động cơ ô tô nhận ${u('800', 'kJ')} từ xăng, hao phí ${u('560', 'kJ')}.`, [['a', 'Công có ích?'], ['b', `Bảo dưỡng xong hao phí còn ${u('500', 'kJ')}, có ích giữ nguyên: năng lượng toàn phần mới?`]]), ttCss2) },
     { t: 'Dạng 2 · Hiệu suất theo năng lượng và công suất', k: 0, de: hai(
-      bai(`Quạt điện chạy ${nw('10 phút')}, nhận ${u('36', 'kJ')} điện năng, cho ${u('28{,}8', 'kJ')} cơ năng có ích.`, [['a', 'Hiệu suất?', 2], ['b', 'Công suất toàn phần và có ích?', 2]]),
-      bai(`Máy nâng hàng trong ${nw('2 phút')} nhận ${u('96', 'kJ')} điện năng, sinh công có ích ${u('60', 'kJ')}.`, [['a', 'Hiệu suất?', 2], ['b', 'Công suất toàn phần và có ích?', 2], ['c', 'Công suất hao phí?']])) },
+      bai(`Quạt điện chạy ${nw('10 phút')}, nhận ${u('36', 'kJ')} điện năng, cho ${u('28{,}8', 'kJ')} cơ năng có ích.`, [['a', 'Hiệu suất?'], ['b', 'Công suất toàn phần (b<sub>1</sub>) và có ích (b<sub>2</sub>)?']], ['a', 'b<sub>1</sub>', 'b<sub>2</sub>']),
+      bai(`Máy nâng hàng trong ${nw('2 phút')} nhận ${u('96', 'kJ')} điện năng, sinh công có ích ${u('60', 'kJ')}.`, [['a', 'Hiệu suất?'], ['b', 'Công suất toàn phần (b<sub>1</sub>) và có ích (b<sub>2</sub>)?'], ['c', 'Công suất hao phí?']], ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'])) },
     { t: 'Dạng 3 · Cho hiệu suất, tìm công suất hoặc năng lượng', k: 0, de: hai(
-      bai(`Máy bơm có ${Hp('70')}.`, [['a', `Nhận ${u('1{,}5', 'kW')} điện: công suất có ích?`, 2], ['b', `Cần cơ năng có ích ${u('210', 'kJ')}: điện năng phải nhận?`, 2], ['c', 'Năng lượng hao phí ở câu b?', 2]]),
-      bai(`Động cơ có ${Hp('85')}, công suất có ích ${u('1{,}7', 'kW')}.`, [['a', 'Công suất toàn phần?', 2], ['b', `Điện năng tiêu thụ trong ${nw('10 phút')}?`, 2], ['c', `Nhiệt hao phí trong ${nw('10 phút')}?`, 2]])) },
+      bai(`Máy bơm có ${Hp('70')}.`, [['a', `Nhận ${u('1{,}5', 'kW')} điện: công suất có ích?`], ['b', `Cần cơ năng có ích ${u('210', 'kJ')}: điện năng phải nhận?`], ['c', 'Năng lượng hao phí ở câu b?']]),
+      bai(`Động cơ có ${Hp('85')}, công suất có ích ${u('1{,}7', 'kW')}.`, [['a', 'Công suất toàn phần?'], ['b', `Điện năng tiêu thụ trong ${nw('10 phút')}?`], ['c', `Nhiệt hao phí trong ${nw('10 phút')}?`]])) + nhap(NHAP[0]) },
   ], [
     { t: 'Dạng 4 · Hiệu suất của máy kéo vật lên cao', k: 0, de: hai(
-      bai(`Cần cẩu nâng đều kiện hàng ${u('500', 'kg')} lên cao ${u('18', 'm')} trong ${u('30', 's')}; công suất điện ${u('4{,}0', 'kW')}; ${g10}.`, [['a', 'Công có ích?', 3], ['b', 'Công suất có ích và hiệu suất?', 3], ['c', `Năng lượng hao phí trong ${nw('30 s')}?`, 3]]),
-      bai(`Kéo đều thùng hàng ${u('50', 'kg')} lên ván nghiêng dài ${u('3{,}0', 'm')}, cao ${u('1{,}2', 'm')}, lực kéo ${u('250', 'N')} dọc ván; ${g10}.<div class="hint">Gợi ý: đề không cho ma sát. Công toàn phần = lực kéo × chiều dài ván; hao phí = toàn phần − có ích.</div>`, [['a', 'Công có ích?', 2], ['b', 'Công toàn phần?', 2], ['c', 'Hiệu suất?', 2], ['d', 'Công hao phí?', 2]])) },
+      bai(`Cần cẩu nâng đều kiện hàng ${u('500', 'kg')} lên cao ${u('18', 'm')} trong ${u('30', 's')}; công suất điện ${u('4{,}0', 'kW')}; ${g10}.`, [['a', 'Công có ích?'], ['b', 'Công suất có ích (b<sub>1</sub>) và hiệu suất (b<sub>2</sub>)?'], ['c', `Năng lượng hao phí trong ${nw('30 s')}?`]], ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c']),
+      bai(`Kéo đều thùng hàng ${u('50', 'kg')} lên ván nghiêng dài ${u('3{,}0', 'm')}, cao ${u('1{,}2', 'm')}, lực kéo ${u('250', 'N')} dọc ván; ${g10}.<div class="hint">Gợi ý: đề không cho ma sát. Công toàn phần = lực kéo × chiều dài ván; hao phí = toàn phần − có ích.</div>`, [['a', 'Công có ích?'], ['b', 'Công toàn phần?'], ['c', 'Hiệu suất?'], ['d', 'Công hao phí?']])) },
     { t: 'Dạng 5 · Ghép nhiều khâu nối tiếp', k: 0, de: hai(
-      bai(`Động cơ (${pct('90')}) nối với hộp giảm tốc (${pct('70')}).`, [['a', 'Hiệu suất cả hệ?', 3], ['b', `Đầu ra cần ${u('3{,}15', 'kJ')}: điện năng vào?`, 3], ['c', 'Tổng năng lượng hao phí?', 3]]),
-      bai(`Sạc xe điện: bộ sạc (${pct('90')}) → pin (${pct('80')}) → động cơ (${pct('85')}).`, [['a', 'Hiệu suất cả chuỗi?', 3], ['b', `Thay MỘT khâu bằng khâu ${pct('95')}: thay khâu nào để hiệu suất lớn nhất? Hiệu suất khi đó?<div class="hint">Gợi ý: thử thay lần lượt cả 3 khâu, mỗi lần tính lại ${m('H')} cả chuỗi rồi so.</div>`, 5]])) },
+      bai(`Động cơ (${pct('90')}) nối với hộp giảm tốc (${pct('70')}).`, [['a', 'Hiệu suất cả hệ?'], ['b', `Đầu ra cần ${u('3{,}15', 'kJ')}: điện năng vào?`], ['c', 'Tổng năng lượng hao phí?']]),
+      bai(`Sạc xe điện: bộ sạc (${pct('90')}) → pin (${pct('80')}) → động cơ (${pct('85')}).`, [['a', 'Hiệu suất cả chuỗi?'], ['b', `Thay MỘT khâu bằng khâu ${pct('95')}: thay khâu nào (b<sub>1</sub>) để hiệu suất lớn nhất? Hiệu suất khi đó (b<sub>2</sub>)?<div class="hint">Gợi ý: thử thay lần lượt cả 3 khâu, mỗi lần tính lại ${m('H')} cả chuỗi rồi so.</div>`]], ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'])) + nhap(NHAP[1]) },
   ]],
   dap: [
-    'D1·1: a) 18 kJ · b) nhiệt, âm, rung &nbsp;|&nbsp; D1·2: a) 240 kJ · b) 740 kJ &nbsp;|&nbsp; D2·1: a) 80 % · b) 60 W; 48 W &nbsp;|&nbsp; D2·2: a) 62,5 % · b) 800 W; 500 W · c) 300 W &nbsp;|&nbsp; D3·1: a) 1050 W · b) 300 kJ · c) 90 kJ &nbsp;|&nbsp; D3·2: a) 2000 W · b) 1200 kJ · c) 180 kJ',
-    'D4·1: a) 90 000 J · b) 3000 W; 75 % · c) 30 000 J &nbsp;|&nbsp; D4·2: a) 600 J · b) 750 J · c) 80 % · d) 150 J &nbsp;|&nbsp; D5·1: a) 63 % · b) 5,0 kJ · c) 1,85 kJ &nbsp;|&nbsp; D5·2: a) 61,2 % · b) thay pin; 72,7 %',
+    'D1·1: a) 18 kJ · b) nhiệt, âm, rung &nbsp;|&nbsp; D1·2: a) 240 kJ · b) 740 kJ &nbsp;|&nbsp; D2·1: a) 80 % · b<sub>1</sub>) 60 W · b<sub>2</sub>) 48 W &nbsp;|&nbsp; D2·2: a) 62,5 % · b<sub>1</sub>) 800 W · b<sub>2</sub>) 500 W · c) 300 W &nbsp;|&nbsp; D3·1: a) 1050 W · b) 300 kJ · c) 90 kJ &nbsp;|&nbsp; D3·2: a) 2000 W · b) 1200 kJ · c) 180 kJ',
+    'D4·1: a) 90 000 J · b<sub>1</sub>) 3000 W · b<sub>2</sub>) 75 % · c) 30 000 J &nbsp;|&nbsp; D4·2: a) 600 J · b) 750 J · c) 80 % · d) 150 J &nbsp;|&nbsp; D5·1: a) 63 % · b) 5,0 kJ · c) 1,85 kJ &nbsp;|&nbsp; D5·2: a) 61,2 % · b<sub>1</sub>) thay pin · b<sub>2</sub>) 72,7 %',
   ],
 };
 
