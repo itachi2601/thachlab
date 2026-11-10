@@ -1,6 +1,6 @@
 <!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-2-lop-10-57be28/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-thuc-hanh-do-toc-do-47c8b7/node_modules/katex/dist/katex.min.css">
 <style>
 :root{color-scheme:light}
 body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -152,7 +152,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
   font-size: var(--fs-sm);
-  color: #94a3b8;
+  color: var(--color-muted); /* C2: #475569 trên nền khối mẹo sáng 6,61:1; #94a3b8 trên nền tối 7,30:1 */
   text-align: center;
 }
 
@@ -801,6 +801,10 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 .exam-content .bt-step .katex-display > .katex { text-align: left; }
 .exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
 .exam-content .bt-ans .katex-display { margin: 0; }
+/* Công thức khối dài trong lời giải bước: cho ngắt dòng sau dấu "=", "+", "·" (KaTeX đã chia sẵn các .base tại đó; chỉ
+   .katex-display > .katex bị nowrap) thay vì cuộn ngang ngầm — điện thoại ẩn thanh cuộn nên HS tưởng bị cắt mất kết quả
+   (HS ảo Đ4 + Đ8: 70·D5 b6, 74·D4 b5, 55·D4 b5; C2, H5). Một .base dài hơn khung vẫn cuộn ngang như cũ. */
+.exam-content :is(.bt-sol, .cc-split) .katex-display > .katex { white-space: normal; }
 .exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
 .exam-content .bt-final p { margin: 0 0 6px; }
 .exam-content .bt-final p:last-child { margin-bottom: 0; }
@@ -821,7 +825,10 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 .exam-content .bt-ask { margin: 8px 0 0 36px; }
 .exam-content .bt-ask + .bt-ask { margin-top: 14px; }
 .exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
-.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: nowrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-row .bt-ask-unit { flex: 0 0 auto; white-space: nowrap; }
+.exam-content .bt-ask-row .lesson-btn-ghost { flex: 0 0 auto; }
+.exam-content .bt-ask-row .bt-ask-input { flex: 1 1 7.5em; min-width: 4.5em; } /* 375px: ô nhập co lại để đơn vị dài (m/s²) + nút Kiểm tra cùng một dòng (HS ảo 3/11, D6) */
 .exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
 .exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
 .exam-content .bt-ask-unit { color: #94a3b8; }
@@ -843,6 +850,59 @@ html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: 
 html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
 html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
 html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+/* 💡 Mẹo nhìn (1/11/2026): khối gập sau lời giải, trước "Làm bài tương tự" — docs/KE-HOACH-MEO-GIAI-BAI-TAP.md */
+.bt-meo { border: 1px solid rgba(251,191,36,.45); border-radius: 10px; background: rgba(251,191,36,.06); }
+.bt-meo-head { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 12px; border: 0; background: none; color: inherit; font-size: 15px; font-weight: 600; text-align: left; cursor: pointer; }
+.bt-meo-head:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; border-radius: 10px; }
+.bt-meo-body { padding: 0 12px 12px; }
+.bt-meo-dk { margin: 0 0 8px; font-size: 15px; line-height: 1.55; }
+.bt-meo-dk .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: rgba(180,83,9,.05); }
+
+/* 🧪 Giải từng bước cùng hình (components/lessons/cong-cu, thử 2/11/2026): hình dính nửa trên, bước ở nửa dưới — N8, N5, D2 */
+.lesson-worked-row:has(.cc-split) { overflow: clip; } /* overflow:hidden làm hình dính (sticky) mất tác dụng */
+.cc-split { --cc-halo: var(--color-panel); display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; } /* minmax(0,…): chữ dài không làm cột phình tràn ngang (HS ảo 2/11) */
+.cc-sticky { position: sticky; z-index: 5; margin: 0 -4px; padding: 6px 4px 4px; background: var(--color-panel); border-bottom: 1px solid var(--color-line); }
+.cc-sticky--off { position: relative; }
+.cc-split:has(.cc-steps :is(input, textarea):focus) .cc-sticky { position: relative; } /* đang gõ: bàn phím chiếm nửa dưới → thôi dính hình để ô nhập + phản hồi không bị che (giữ chỗ trong dòng nên không xô trang) */
+/* Tóm đề (thử 3/11/2026): < 1280 thanh "Tìm" (≤ 4 dòng, 5/11) trong khối dính, chạm mở lớp đè (không xô trang); ≥ 1280 thẻ lề phải dính theo, kiểu chữ như cột lề .tl-sn (N8, N4, D2) */
+.bt-tomde-bar { display: flex; align-items: baseline; gap: 6px; width: 100%; min-height: 40px; margin-top: 2px; border: 1px solid var(--color-line); border-radius: 10px; background: var(--color-bg); padding: 11px 10px; color: var(--color-ink); font-size: 13.5px; line-height: 1.3; text-align: left; cursor: pointer; }
+/* "Tìm" xuống tối đa 4 dòng thay vì cắt "…" một dòng (HS ảo Đ8 5/11, C2); hình co theo --cc-tim (TomDeBar đo) nên khối dính không cao thêm (N8) */
+.bt-tomde-bar > span { flex: 1; min-width: 0; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 4; } /* 4 dòng ≈ 150 ký tự: đủ mọi tom_de có hình đến 5/11 */
+.bt-tomde-khung .bt-tomde-bar > span { -webkit-line-clamp: 5; } /* dạng không hình: khối dính chỉ có thanh này */
+.bt-tomde-bar .exam-content { font-size: inherit; line-height: inherit; } /* .exam-content đặt 16px/1.6 → dòng 28px */
+.bt-tomde-bar .katex { display: inline; overflow: visible; vertical-align: baseline; font-size: 1.08em; } /* inline-block (luật chung .exam-content .katex) làm dòng cao ~24px → thanh cao, hình co */
+.bt-tomde-bar > i { flex: none; color: var(--color-muted); font-size: 12.5px; font-style: normal; font-weight: 600; }
+.cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px - var(--cc-tim, 40px)); }
+.bt-tomde-pop { position: absolute; top: 100%; right: 0; left: 0; z-index: 6; max-height: min(60svh, 480px); overflow: auto; border: 1px solid var(--color-line); border-radius: 0 0 12px 12px; background: var(--color-panel); padding: 12px 14px; box-shadow: 0 14px 28px rgb(0 0 0 / .18); font-size: 15px; line-height: 1.55; }
+.bt-tomde h4 { margin: 0 0 2px; color: var(--color-muted); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.bt-tomde ul { margin: 0 0 10px; padding-left: 1.1em; list-style: disc; }
+.bt-tomde-close { display: block; min-width: 88px; min-height: 44px; margin: 10px 0 0 auto; border: 1px solid var(--color-line); border-radius: 10px; background: none; color: var(--color-ink); font-weight: 600; cursor: pointer; }
+.cc-split > .bt-tomde-side { display: none; }
+@media (min-width: 1280px) {
+  .lesson-worked-row:has(.bt-tomde-side) { overflow: visible; }
+  .cc-split:has(> .bt-tomde-side) { grid-template-columns: minmax(0, 1fr) 0; column-gap: 0; }
+  .cc-split:has(> .bt-tomde-side) > * { grid-column: 1; }
+  /* cột 0px: thẻ tràn sang khoảng trống phải (--wide-bleed của trang bài; trang xem thử không có thì 240px) */
+  .cc-split > .bt-tomde-side { display: block; position: sticky; grid-column: 2; grid-row: 1 / span 3; align-self: start; width: min(240px, calc(var(--wide-bleed, 240px) + 4px)); margin-left: 28px; border-left: 1px solid var(--color-line); padding-left: 12px; color: var(--color-ink); font-size: 13.5px; line-height: 1.55; }
+  .cc-sticky :is(.bt-tomde-bar, .bt-tomde-pop) { display: none; }
+  .cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px); }
+  .bt-tomde-khung > .cc-sticky { display: none; } /* dạng không hình: khối dính chỉ có dòng Tìm → thẻ lề thay */
+}
+.cc-fig { display: block; width: 100%; height: calc(42svh - 96px); min-height: 150px; max-height: 340px; }
+.cc-stepper { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 600; }
+.cc-step-title { flex: 1; min-width: 0; text-align: center; font-size: 13.5px; line-height: 1.25; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-wrap: balance; } /* 2 dòng thay vì cắt "Hướng của gia …" ở 375px (HS ảo 3/11, C2) */
+.cc-hint { margin: 2px 0 0; min-height: 2.7em; font-size: 13.5px; line-height: 1.35; text-align: center; color: var(--color-muted); text-wrap: balance; }
+.cc-stepper button { flex: 0 0 auto; min-width: 44px; min-height: 44px; border: 1px solid var(--color-line-strong); border-radius: 9px; background: none; color: inherit; font-size: 16px; cursor: pointer; }
+.cc-stepper button:disabled { opacity: .3; cursor: default; }
+.cc-next-ready { border-width: 2px !important; animation: cc-nudge 1.2s ease-in-out 2; }
+.cc-steps { min-height: 40svh; }
+.cc-pop { animation: cc-pop .35s ease-out both; transform-box: fill-box; transform-origin: center; }
+.cc-in { animation: cc-in .5s ease-out both; }
+@keyframes cc-pop { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: scale(1); } }
+@keyframes cc-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes cc-nudge { 50% { transform: translateX(3px); } }
+@media (prefers-reduced-motion: reduce) { .cc-pop, .cc-in, .cc-next-ready { animation: none; } }
 
 /* ==========================================================================
    NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
@@ -1499,6 +1559,68 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
 }
 
+/* Học phần WorldSkills IM (2/11/2026): bảng nhiều cột từ bộ dịch cuộn ngang trên điện thoại thay vì bẻ từng chữ. */
+.exam-content .tl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 14px 0; }
+.exam-content .tl-scroll > .tl-table { min-width: 560px; margin: 0; }
+.exam-content .tl-scroll--rong > .tl-table { min-width: 760px; }
+.exam-content .tl-table :is(td, th).tl-nw { white-space: nowrap; }
+.exam-content .tl-table input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent, #0284c7); }
+.exam-content .tl-scroll { background: linear-gradient(to left, rgba(15, 23, 42, 0.12), transparent 28px) right / 28px 100% no-repeat; background-attachment: local; }
+
+/* WorldSkills IM: song ngữ ngang hàng (2/11/2026). EN trái | VI phải; điện thoại xếp dọc có nhãn EN/VI (đích chạm không đổi, chỉ bố cục). */
+.exam-content .tl-bi { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; margin: 10px 0; }
+.exam-content .tl-bi-en, .exam-content .tl-bi-vi { padding: 8px 12px; border-radius: 8px; border-left: 3px solid; line-height: 1.55; overflow-wrap: anywhere; }
+.exam-content .tl-bi-en { border-left-color: rgba(59, 130, 246, .7); background: rgba(59, 130, 246, .07); }
+.exam-content .tl-bi-vi { border-left-color: rgba(16, 185, 129, .75); background: rgba(16, 185, 129, .08); }
+.exam-content .tl-bi-tag { display: inline-block; margin-right: 8px; padding: 0 6px; border-radius: 4px; font-size: .72em; font-weight: 700; letter-spacing: .05em; vertical-align: .08em; background: rgba(148, 163, 184, .25); }
+.exam-content .tl-bi--vi .tl-bi-vi { grid-column: 1 / -1; }
+.exam-content li.tl-bi-li { margin: 8px 0; }
+@media (min-width: 900px) {
+  .exam-content .tl-bi:not(.tl-bi--vi) { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+  .exam-content .tl-bi-tag { display: block; width: max-content; margin: 0 0 4px; }
+}
+/* Bảng thang điểm: 2 cặp cột EN | VI cạnh nhau */
+.exam-content .tl-scroll--bi > .tl-table { min-width: 980px; }
+.exam-content .tl-table--bi thead th[lang="en"], .exam-content .tl-table--bi tbody td[lang="en"] { background: rgba(59, 130, 246, .06); }
+.exam-content .tl-table--bi thead th[lang="vi"], .exam-content .tl-table--bi tbody td[lang="vi"] { background: rgba(16, 185, 129, .07); }
+.exam-content .tl-table--bi tr.tl-sub td { border-top: 2px solid rgba(148, 163, 184, .7); }
+.exam-content .tl-table--bi ol { margin: 4px 0 0; padding-left: 1.3em; }
+
+/* "Một dạng — một hình" (5/11/2026): hình cong_cu ngay dưới đề (lớp 0) + nút chạy chuyển động trên chính hình (N8, N4, H1, B4) */
+.cc-de { --cc-halo: var(--color-panel); margin: 6px 0 0; }
+.cc-de .cc-fig { height: auto; min-height: 0; max-height: 320px; margin: 0 auto; }
+.cc-dong { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 4px; }
+.cc-dong-nut { min-height: 40px; padding: 6px 14px; border: 1px solid var(--color-line-strong); border-radius: 9px; background: none; color: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
+.cc-dong-nut:disabled { opacity: .55; cursor: default; }
+.cc-sticky .cc-dong { margin-top: 2px; }
+.cc-sticky .cc-dong-nut { min-height: 36px; padding: 4px 12px; font-size: 13.5px; }
+.cc-sticky:has(.cc-dong) .cc-fig { height: calc(42svh - 136px); }
+.cc-sticky:has(.cc-dong):has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 136px - var(--cc-tim, 40px)); } /* nút chạy chỉ có ở bước dùng nó: hình co lại để khối dính không cao thêm (B6, N8) */
+
+/* Bài đọc SHCN (/sinh-hoat/[hk]/[bai]) — bảng phiếu tự điền + đáp án gập (B8, C1). */
+.shcn-prose { font-size: 1.0625rem; }
+.shcn-prose .shcn-table-wrap { overflow-x: auto; margin: 1rem 0; }
+.shcn-prose table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.shcn-prose th,
+.shcn-prose td {
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  padding: 0.5rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+  color: var(--color-ink);
+}
+.shcn-prose th { background: rgba(59, 130, 246, 0.08); font-weight: 600; }
+.shcn-prose td:empty::after { content: "\00a0"; }
+.shcn-prose details {
+  margin: 1rem 0;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+  border-radius: 0.75rem;
+  padding: 0.6rem 1rem;
+}
+.shcn-prose summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 44px; display: flex; align-items: center; }
+.shcn-prose ol li { margin: 0.5rem 0; }
+.shcn-prose h2 { font-size: 1.2rem; margin: 1.8rem 0 0.6rem; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
@@ -1508,7 +1630,7 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 
 <div class="tl-box tl-note">
 <p class="tl-label">📝 Đề bài (số liệu minh hoạ)</p>
-<p>Một nhóm đo tốc độ xe bằng cổng quang. Tấm chắn rộng $2{,}0\ \text{cm}$, đo bằng thước chia mm nên sai số $0{,}1\ \text{cm}$. Đồng hồ hiện số hiện $0{,}050\ \text{s}$, sai số $0{,}001\ \text{s}$. Tính tốc độ của xe, sai số tương đối và kết quả có sai số. Nguồn sai số nào lớn hơn?</p>
+<p>Hai cổng quang đặt cách nhau $0{,}600\ \text{m}$ trên máng nghiêng có thước chia mm. Ở MODE A ↔ B, ba lần thả bi đồng hồ hiện $0{,}776\ \text{s}$; $0{,}780\ \text{s}$; $0{,}778\ \text{s}$. Viết kết quả đo tốc độ trung bình kèm sai số.</p>
 </div>
 
 <div class="table-scroll">
@@ -1517,11 +1639,11 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 </thead>
 <tbody>
-<tr><td>"rộng $2{,}0\ \text{cm}$"</td><td>$d = 0{,}020\ \text{m}$ (đổi sang m)</td></tr>
-<tr><td>"sai số $0{,}1\ \text{cm}$"</td><td>$\delta d = \dfrac{0{,}1}{2{,}0}$</td></tr>
-<tr><td>"hiện $0{,}050\ \text{s}$"</td><td>$t = 0{,}050\ \text{s}$</td></tr>
-<tr><td>"sai số $0{,}001\ \text{s}$"</td><td>Chỉ đọc một lần nên $\Delta t$ lấy bằng sai số dụng cụ (khác Thí nghiệm 2 đo 5 lần).<br>$\delta t = \dfrac{0{,}001}{0{,}050}$</td></tr>
-<tr><td>"tính tốc độ"</td><td>$v = d/t$; chia thì cộng phần trăm</td></tr>
+<tr><td>"cách nhau $0{,}600\ \text{m}$"</td><td>$s = 0{,}600\ \text{m}$, đo một lần</td></tr>
+<tr><td>"thước chia mm"</td><td>$\Delta s$ = nửa độ chia = $0{,}0005\ \text{m}$</td></tr>
+<tr><td>"MODE A ↔ B"</td><td>Số chỉ là thời gian đi hết $s$ → tốc độ trung bình $s/t$</td></tr>
+<tr><td>"ba lần… $0{,}776$; $0{,}780$; $0{,}778$"</td><td>Lấy $\bar t$, rồi trung bình các độ lệch</td></tr>
+<tr><td>"đồng hồ hiện"</td><td>Đồng hồ hiện số: sai số dụng cụ $0{,}001\ \text{s}$</td></tr>
 </tbody>
 </table>
 </div>
@@ -1529,52 +1651,53 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải</summary>
 <ol class="tl-steps">
-<li><strong>Tốc độ:</strong> đổi $d = 2{,}0\ \text{cm} = 0{,}020\ \text{m}$, nên $v = \dfrac{0{,}020}{0{,}050} = 0{,}40\ \text{m/s}$.</li>
-<li><strong>Sai số tương đối:</strong> $\delta d = 5{,}0\ \%$ và $\delta t = 2{,}0\ \%$.</li>
-<li><strong>Chia thì cộng phần trăm:</strong> $\delta v = 5{,}0 + 2{,}0 = 7{,}0\ \%$.</li>
-<li><strong>Sai số tuyệt đối:</strong> $\Delta v = 0{,}40 \cdot 0{,}07 \approx 0{,}028 \approx 0{,}03\ \text{m/s}$, nên $v = 0{,}40 \pm 0{,}03\ \text{m/s}$.</li>
-<li><strong>Nguồn sai số:</strong> $\delta d$ lớn hơn $\delta t$, nghĩa là <strong>thước đo $d$</strong> quyết định. Muốn chính xác hơn, đo $d$ bằng thước kẹp (dụng cụ đo độ dài chia tới $0{,}1\ \text{mm}$ hoặc nhỏ hơn).<br>Tấm chắn rộng hơn cũng giảm $\delta d$, nhưng chỉ hợp khi xe chạy gần đều. Xe đổi tốc độ thì tấm chắn rộng làm $d/t$ lệch khỏi tốc độ tức thời (mục 4).</li>
+<li><strong>Trung bình:</strong> $\bar t = \dfrac{0{,}776 + 0{,}780 + 0{,}778}{3} = 0{,}778\ \text{s}$.</li>
+<li><strong>Sai số của $t$:</strong> các độ lệch là $0{,}002$; $0{,}002$; $0{,}000$, trung bình $\approx 0{,}001\ \text{s}$. Cộng sai số dụng cụ: $\Delta t = 0{,}001 + 0{,}001 = 0{,}002\ \text{s}$.</li>
+<li><strong>Tốc độ:</strong> $\bar v = \dfrac{0{,}600}{0{,}778} \approx 0{,}771\ \text{m/s}$.</li>
+<li><strong>Chia thì cộng phần trăm:</strong> $\delta s = \dfrac{0{,}0005}{0{,}600} \approx 0{,}08\ \%$; $\delta t = \dfrac{0{,}002}{0{,}778} \approx 0{,}26\ \%$; $\delta v = 0{,}34\ \%$.</li>
+<li><strong>Kết quả:</strong> $\Delta v = 0{,}771 \cdot 0{,}0034 \approx 0{,}003\ \text{m/s}$, nên $v_{\text{tb}} = 0{,}771 \pm 0{,}003\ \text{m/s}$.</li>
+<li><strong>Kiểm tra:</strong> ba số đo đều cho $s/t$ nằm trong khoảng $0{,}769$ đến $0{,}773\ \text{m/s}$, khớp với kết quả.</li>
 </ol>
 </details>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Điền bước còn thiếu</p>
-<p>Cùng đề, đổi tấm chắn rộng $4{,}0\ \text{cm}$ (sai số $0{,}1\ \text{cm}$), đồng hồ hiện $0{,}100\ \text{s}$.</p>
+<p>Nhóm khác đặt hai cổng cách nhau $0{,}500\ \text{m}$ trên máng dốc hơn; ba lần đo được $0{,}612\ \text{s}$; $0{,}615\ \text{s}$; $0{,}618\ \text{s}$.</p>
 <ol class="tl-steps">
-<li>$v = \dfrac{0{,}040}{0{,}100} = 0{,}40\ \text{m/s}$.</li>
-<li><strong>Bước 2 (em điền):</strong> $\delta d = \;?$ và $\delta t = \;?$</li>
-<li><strong>Bước 3 (em điền):</strong> $\delta v = \;?$ — gợi ý: chia thì cộng phần trăm.</li>
+<li>$\bar t = 0{,}615\ \text{s}$, nên $\bar v = \dfrac{0{,}500}{0{,}615} \approx 0{,}813\ \text{m/s}$.</li>
+<li><strong>Bước 2 (em điền):</strong> $\Delta t = \;?$ — nhớ cộng sai số dụng cụ.</li>
+<li><strong>Bước 3 (em điền):</strong> $\delta v = \;?$ và kết quả $v_{\text{tb}} = \;?$</li>
 </ol>
 <details class="tl-details tl-more">
 <summary>Xem bước 2–3</summary>
-<p>$\delta d = \dfrac{0{,}1}{4{,}0} = 2{,}5\ \%$; $\delta t = \dfrac{0{,}001}{0{,}100} = 1{,}0\ \%$; $\delta v = 3{,}5\ \%$, tức $\Delta v \approx 0{,}014 \approx 0{,}01\ \text{m/s}$. Cùng tốc độ nhưng tấm chắn rộng hơn nên sai số tương đối nhỏ hơn.</p>
+<p>Các độ lệch $0{,}003$; $0{,}000$; $0{,}003$, trung bình $0{,}002\ \text{s}$, nên $\Delta t = 0{,}003\ \text{s}$. $\delta t \approx 0{,}49\ \%$, $\delta s = 0{,}10\ \%$, $\delta v \approx 0{,}59\ \%$. $\Delta v \approx 0{,}005\ \text{m/s}$: $v_{\text{tb}} = 0{,}813 \pm 0{,}005\ \text{m/s}$.</p>
 </details>
 </div>
 
 <details class="tl-details tl-more">
-<summary>🔁 Thử sức đổi số: xe chạy chậm hơn</summary>
-<p>Giữ tấm chắn $2{,}0\ \text{cm}$ nhưng xe chậm hơn nên đồng hồ hiện $0{,}100\ \text{s}$. Khi đó $v = 0{,}20\ \text{m/s}$, $\delta t = 1{,}0\ \%$ nhỏ đi, còn $\delta d$ vẫn $5\ \%$: $\delta v = 6{,}0\ \%$. Đồng hồ ít sai số hơn, nhưng thước vẫn giữ sai số tổng ở mức cao.</p>
+<summary>🔁 Thử sức đổi phương án: cùng máng, đo tốc độ tức thời tại E</summary>
+<p>Dời cổng quang về E, chọn MODE của ổ nối với nó. Bi đường kính $20{,}0\ \text{mm}$ chắn tia trong $0{,}058\ \text{s}$, nên $v_E = \dfrac{0{,}0200}{0{,}058} \approx 0{,}345\ \text{m/s}$. Thời gian chắn dài hơn ở F nên $\delta t$ chỉ còn khoảng $1{,}7\ \%$: bi càng chậm, phép đo tức thời càng chính xác.</p>
 </details>
 
 <p class="tl-conf">Em chắc bao nhiêu?
-<label><input type="radio" name="tl51-q6-conf" value="chac"> Chắc</label>
-<label><input type="radio" name="tl51-q6-conf" value="khong"> Không chắc</label></p>
+<label><input type="radio" name="tl51-q8-conf" value="chac"> Chắc</label>
+<label><input type="radio" name="tl51-q8-conf" value="khong"> Không chắc</label></p>
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 5.</strong> Tấm chắn rộng $3{,}0\ \text{cm}$ che cổng quang trong $0{,}060\ \text{s}$. Tốc độ của xe là:</p>
+<p><strong>Câu 6.</strong> Một phép đo tốc độ có $\bar v = 0{,}800\ \text{m/s}$, $\delta s = 0{,}1\ \%$ và $\delta t = 0{,}4\ \%$. Kết quả ghi vào báo cáo là</p>
 <div class="tl-quiz">
-<input type="radio" name="tl51-q6" id="tl51-q6a"><label for="tl51-q6a" class="tl-opt tl-no">A. $50\ \text{m/s}$</label>
-<input type="radio" name="tl51-q6" id="tl51-q6b"><label for="tl51-q6b" class="tl-opt tl-no">B. $2{,}0\ \text{m/s}$</label>
-<input type="radio" name="tl51-q6" id="tl51-q6c"><label for="tl51-q6c" class="tl-opt tl-no">C. $0{,}0018\ \text{m/s}$</label>
-<input type="radio" name="tl51-q6" id="tl51-q6d" checked><label for="tl51-q6d" class="tl-opt tl-ok">D. $0{,}50\ \text{m/s}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $v = \dfrac{0{,}030}{0{,}060} = 0{,}50\ \text{m/s}$ (đổi $3{,}0\ \text{cm} = 0{,}030\ \text{m}$).</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lấy $3{,}0 : 0{,}060 = 50$, quên đổi $\text{cm}$ ra $\text{m}$. B chia ngược $t : d$ ($d$ đã đổi ra m). C nhân $d \cdot t$ thay vì chia. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 1 của lời giải.</p></div>
+<input type="radio" name="tl51-q8" id="tl51-q8a"><label for="tl51-q8a" class="tl-opt tl-no">A. $v = 0{,}800 \pm 0{,}5\ \text{m/s}$</label>
+<input type="radio" name="tl51-q8" id="tl51-q8b"><label for="tl51-q8b" class="tl-opt tl-no">B. $v = 0{,}800 \pm 0{,}003\ \text{m/s}$</label>
+<input type="radio" name="tl51-q8" id="tl51-q8c" checked><label for="tl51-q8c" class="tl-opt tl-ok">C. $v = 0{,}800 \pm 0{,}004\ \text{m/s}$</label>
+<input type="radio" name="tl51-q8" id="tl51-q8d"><label for="tl51-q8d" class="tl-opt tl-no">D. $v = 0{,}800 \pm 0{,}0004\ \text{m/s}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\delta v = 0{,}1 + 0{,}4 = 0{,}5\ \%$, nên $\Delta v = 0{,}800 \cdot 0{,}005 = 0{,}004\ \text{m/s}$.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A viết thẳng $0{,}5\ \%$ thành $0{,}5\ \text{m/s}$, chưa nhân với $\bar v$. B lấy hiệu $0{,}4 - 0{,}1$: chia thì sai số tương đối cộng lại, không trừ. D cộng đúng nhưng đổi $0{,}5\ \%$ thành $0{,}0005$, thiếu mười lần. Đã chọn <em>Chắc</em> mà vẫn sai thì xem lại bước 4 và 5 của lời giải.</p></div>
 </div>
 </div>
 
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-2-lop-10-57be28/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/chuong-2-lop-10-57be28/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-thuc-hanh-do-toc-do-47c8b7/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-thuc-hanh-do-toc-do-47c8b7/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>
