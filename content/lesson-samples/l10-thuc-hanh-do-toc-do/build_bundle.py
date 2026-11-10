@@ -46,7 +46,7 @@ exam = {
          "options": ["(II), vì sai số $0{,}001\\ \\text{s}$ nhỏ hơn sai số $0{,}004\\ \\text{s}$",
                      "Như nhau, vì hai phép đo dùng cùng một đồng hồ hiện số",
                      "(II), vì thời gian đo càng ngắn thì càng ít bị lệch",
-                     "(I), vì sai số tương đối của (I) nhỏ hơn của (II)"],
+                     "(I), vì sai số tỉ đối của (I) nhỏ hơn của (II)"],
          "answer": 3,
          "explanation": "(I): $0{,}004/0{,}800 = 0{,}5\\ \\%$. (II): $0{,}001/0{,}020 = 5\\ \\%$. Phải so sai số với chính giá trị đo; thời gian càng ngắn thì một độ chia của đồng hồ càng chiếm phần lớn."},
         {"type": MC,
@@ -54,7 +54,7 @@ exam = {
          "options": ["$v = 0{,}800 \\pm 0{,}5\\ \\text{m/s}$", "$v = 0{,}800 \\pm 0{,}003\\ \\text{m/s}$",
                      "$v = 0{,}800 \\pm 0{,}004\\ \\text{m/s}$", "$v = 0{,}800 \\pm 0{,}0004\\ \\text{m/s}$"],
          "answer": 2,
-         "explanation": "$\\delta v = \\delta s + \\delta t = 0{,}5\\ \\%$, nên $\\Delta v = 0{,}800 \\cdot 0{,}005 = 0{,}004\\ \\text{m/s}$. $0{,}5$ là quên nhân với $\\bar v$; $0{,}003$ là lấy hiệu hai sai số tương đối; $0{,}0004$ là đổi phần trăm thiếu mười lần."},
+         "explanation": "$\\delta v = \\delta s + \\delta t = 0{,}5\\ \\%$, nên $\\Delta v = 0{,}800 \\cdot 0{,}005 = 0{,}004\\ \\text{m/s}$. $0{,}5$ là quên nhân với $\\bar v$; $0{,}003$ là lấy hiệu hai sai số tỉ đối; $0{,}0004$ là đổi phần trăm thiếu mười lần."},
     ],
 }
 
