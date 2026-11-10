@@ -43,6 +43,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
+- Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
 - 5/11 · Giải cùng hình: Đ1–Đ8 đã đăng DB + deploy (51 bài); Đ9 (KHTN 9 + HSG 9, 25 bài) đã vào main, CHƯA HS ảo/CHƯA đăng DB; ~20 nhánh `claude/*` >4 ngày chưa vào main chờ thầy chỉ (memory `project_thachlab_giai_cung_hinh`).
 - 7/11 · BTM "một dạng — một hình": repo xong 97/97; DB đã đăng 51, CHƯA đăng 46 (danh sách: `docs/MOT-DANG-MOT-HINH.md` mục Trạng thái 7/11) — chờ soát ảnh + thầy duyệt → publish → deploy.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
