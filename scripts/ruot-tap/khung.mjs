@@ -92,11 +92,12 @@ ${wl('Ghi chú của thầy về đề:', 2)}
 
   // ---- Bài tập mẫu (trang 6–7) ----
   const f = (w) => fill(w);
-  const ansRow = (labels) => `<div class="ans${labels.length === 3 ? ' c3' : ''}">${labels.map((l) => `<div><b>${l})</b>${f(10)}</div>`).join('')}</div>`;
+  // cot: số cột ô đáp số (mặc định 3–4 trên một hàng); cot: 2 khi đáp số dài/kép (vd "N = 160 N; Fms = 40 N") — HS ảo 10/11 báo ô 28 mm không vừa
+  const ansRow = (labels, cot) => `<div class="ans${labels.length === 3 ? ' c3' : ''}"${cot ? ` style="grid-template-columns:repeat(${cot},1fr)"` : ''}>${labels.map((l) => `<div><b>${l})</b>${f(10)}</div>`).join('')}</div>`;
   const tu = '<span><span class="ck"></span>tự làm &nbsp;<span class="ck"></span>cần gợi ý</span>';
   const figOf = (fig) => typeof fig === 'function' ? fig() : hinh[fig] ? hinh[fig]() : fig;
   const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${figOf(fig)}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
-  const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div>${d.bang ?? ''}<div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ansRow(d.a)}</div>`;
+  const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div>${d.bang ?? ''}<div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ansRow(d.a, d.cot)}</div>`;
   const kq = (ds) => TT ? `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự (tr. ${8 + off}–${9 + off}):</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`
     : `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
   const btmTrang = (n, btm) => {
