@@ -50,7 +50,7 @@ DANG.append(dict(
     topic=T_DO,
     problem_html=(
         "<p>Viên bi thép lăn trên máng nghiêng qua hai cổng quang E và F nối với đồng hồ đo thời gian hiện số. "
-        "Thước trên máng cho $EF = 0{,}400\\ \\text{m}$; thước kẹp cho đường kính bi $d = 20{,}0\\ \\text{mm}$. Đồng hồ hiện hai số sau:</p>"
+        "Thước trên máng cho $EF = 0{,}400\\ \\text{m}$; thước kẹp cho đường kính bi $d = 20{,}0\\ \\text{mm}$. Tia sáng của cổng F đi ngang tâm bi. Đồng hồ hiện hai số sau:</p>"
         + bang(["Lần thả", "Chế độ (MODE)", "Số hiển thị (s)"], [["1", "A↔B", "0,712"], ["2", "B (chỉ cổng F)", "0,022"]])
         + "<p>a) Mỗi số hiển thị là thời gian của việc gì?</p>"
         "<p>b) Tính tốc độ trung bình của bi trên đoạn EF.</p>"
@@ -95,7 +95,7 @@ DANG.append(dict(
              lua_chon=[("Một đường kính bi", True),
                        ("Cả đoạn EF", "Đoạn EF đi với thời gian ở MODE A↔B."),
                        ("Một bán kính bi", "Tia bị che từ mép trước tới mép sau của bi, tức cả đường kính.")],
-             loi="Quên đổi $20{,}0\\ \\text{mm}$ sang mét trước khi chia.",
+             loi="Thấy MODE B vẫn lấy $EF$ làm quãng đường, hoặc lấy bán kính thay cho đường kính.",
              ke=[("Tìm quãng đường bi đi trong lúc chắn tia", True),
                  ("Lấy luôn $v_{tb}$ làm tốc độ tại F", "Bi nhanh dần: tốc độ ở F lớn hơn tốc độ trung bình trên EF."),
                  ("Lấy $EF$ chia cho thời gian chắn tia", "Quãng đường và thời gian không thuộc cùng một chuyển động.")]),
@@ -149,13 +149,13 @@ DANG.append(dict(
     buoc=[
         buoc("Thời gian trung bình", "Tính $\\bar t$ (s, lấy 3 chữ số sau dấu phẩy).", 0.902, "s", 0.0005,
              loi="Lấy giá trị ở giữa bảng thay cho trung bình cộng của ba lần."),
-        buoc("Sai số tuyệt đối của t", "Tính $\\Delta t$ (s), gồm cả sai số dụng cụ.", 0.003, "s", 0.0002,
+        buoc("Sai số tuyệt đối của t", "Tính $\\Delta t$ (s) để ghi vào báo cáo.", 0.003, "s", 0.0002,
              loi="Chỉ lấy lệch trung bình, quên cộng sai số dụng cụ của đồng hồ.",
              ke=[("Lấy trung bình ba độ lệch rồi cộng sai số dụng cụ", True),
                  ("Lấy số đo lớn nhất trừ số đo nhỏ nhất", "Hiệu đó là khoảng trải của số liệu, không phải quy ước sai số của bài."),
                  ("Chỉ lấy độ chia nhỏ nhất của đồng hồ", "Ba lần đo lệch nhau nên còn phần sai số ngẫu nhiên phải cộng thêm.")]),
         buoc("Tốc độ trung bình", "Tính $\\bar v$ (m/s, lấy 3 chữ số sau dấu phẩy).", 0.721, "m/s", 0.001,
-             loi="Tính ba tốc độ từ ba lần rồi mới lấy trung bình cũng được, nhưng dài hơn và dễ bấm nhầm.",
+             loi="Lấy $s$ chia cho $\\Delta t$ hoặc cho một lần đo lẻ thay vì $\\bar t$.",
              ke=[("Lấy $s$ chia cho $\\bar t$", True),
                  ("Lấy $s$ chia cho $\\Delta t$", "$\\Delta t$ là sai số của thời gian, không phải thời gian đi."),
                  ("Lấy $\\bar t$ chia cho $s$", "Thương đó là thời gian đi mỗi mét, không phải tốc độ.")]),
@@ -178,7 +178,7 @@ DANG.append(dict(
     problem_html=(
         "<p>Đo tốc độ tức thời của viên bi tại cổng quang F. Thước kẹp (độ chia nhỏ nhất $0{,}1\\ \\text{mm}$) cho đường kính bi "
         "$d = 16{,}0\\ \\text{mm}$. Đồng hồ hiện số (độ chia nhỏ nhất $0{,}001\\ \\text{s}$) đặt MODE B; cả ba lần thả bi đều hiện "
-        "$t = 0{,}020\\ \\text{s}$.</p>"
+        "$t = 0{,}020\\ \\text{s}$. Tia sáng của cổng đi ngang tâm bi.</p>"
         "<p>a) Tính tốc độ tức thời $\\bar v$ của bi tại F.</p>"
         "<p>b) Tính sai số tỉ đối $\\delta v$ và viết kết quả $v = \\bar v \\pm \\Delta v$.</p>"
         "<p>c) Muốn kết quả chính xác hơn thì cần cải thiện phép đo đại lượng nào trước?</p>"),
@@ -237,7 +237,7 @@ DANG.append(dict(
 
 # ═════════════ Dạng 4 ═════════════
 DANG.append(dict(
-    label="Dạng 4 · Khó · Tia sáng lệch tâm bi: tìm sai số hệ thống của phép đo tốc độ tức thời",
+    label="Dạng 4 · Khó · Tia sáng lệch tâm bi: tìm độ lệch của phép đo tốc độ tức thời",
     topic=T_SS,
     problem_html=(
         "<p>Viên bi thép đường kính $d = 20{,}0\\ \\text{mm}$ lăn qua cổng quang F. Do cổng lắp thấp, tia sáng không đi qua tâm bi mà "
@@ -254,12 +254,12 @@ DANG.append(dict(
         ("\"tia … cắt bi theo một dây cung cách tâm h = 8,0 mm\"", "$h = 8{,}0\\ \\text{mm}$", "⚠ $d/t$ chỉ đúng khi tia qua <strong>tâm</strong> bi; lệch tâm thì quãng đường chắn tia là dây cung $c = 2\\sqrt{R^2 - h^2}$"),
         ("\"MODE B hiện t = 0,015 s\"", "$t = 0{,}015\\ \\text{s}$", "Tốc độ đúng: $v = \\dfrac{c}{t}$"),
         ("\"lớn hơn … bao nhiêu phần trăm\"", "So $d/t$ với $c/t$", "Cùng $t$ nên tỉ số tốc độ bằng tỉ số $d/c$"),
-        ("\"lấy trung bình có làm mất độ lệch\"", "Lệch cùng một phía ở mọi lần đo", "⚠ Sai số hệ thống: lặp lại không giảm, phải sửa cách lắp"),
+        ("\"lấy trung bình có làm mất độ lệch\"", "Lệch cùng một phía ở mọi lần đo", "⚠ Lệch cùng một phía: lặp lại không giảm, phải sửa cách lắp"),
     ],
     sol=sol(
         ["<strong>Khái niệm:</strong> thời gian chắn tia ứng với đoạn bi che tia, không phải lúc nào cũng là đường kính.",
-         "Dây cung cách tâm $h$: $c = 2\\sqrt{R^2 - h^2}$ (định lí Pythagore).",
-         "Sai số ngẫu nhiên: lệch lúc nhiều lúc ít, lấy trung bình thì giảm. Sai số hệ thống: lệch một phía, lấy trung bình không giảm.",
+         "Dây cung cách tâm $h$: $c = 2\\sqrt{R^2 - h^2}$ (định lí Pythagore cho tam giác vuông tâm – trung điểm dây – mép bi).",
+         "Độ lệch lúc lên lúc xuống: lấy trung bình thì giảm. Độ lệch luôn về một phía: lấy trung bình không giảm.",
          "⚠ <strong>Điều kiện:</strong> chỉ dùng $v = d/t$ khi tia đi qua tâm bi."],
         [("Quãng đường chắn tia", [M("R = \\dfrac{d}{2} = 10{,}0\\ \\text{mm}"), M("c = 2\\sqrt{R^2 - h^2} = 2\\sqrt{10{,}0^2 - 8{,}0^2} = 2 \\cdot 6{,}0"),
                                     A("c = 12{,}0\\ \\text{mm}")]),
@@ -267,7 +267,7 @@ DANG.append(dict(
          ("Độ lệch của d/t", [M("\\dfrac{d}{t} = \\dfrac{0{,}0200}{0{,}015} \\approx 1{,}33\\ \\text{m/s}"),
                               M("\\dfrac{d/t - c/t}{c/t} = \\dfrac{d - c}{c} = \\dfrac{20{,}0 - 12{,}0}{12{,}0}"), A("\\approx 66{,}7\\ \\%")]),
          ("Lấy trung bình có hết lệch không", [P("Lần thả nào tia cũng cắt đúng dây cung ấy nên lần nào $d/t$ cũng lớn hơn tốc độ đúng."),
-                                              A("T:Không. Đây là sai số hệ thống; phải chỉnh cổng cho tia đi qua tâm bi.")])],
+                                              A("T:Không. Độ lệch luôn về một phía; phải chỉnh cổng cho tia đi qua tâm bi.")])],
         ["a) $c = 12{,}0\\ \\text{mm}$.", "b) $v = 0{,}80\\ \\text{m/s}$.", "c) Lớn hơn khoảng $66{,}7\\ \\%$.",
          "d) Không; phải chỉnh lại độ cao cổng quang."],
         "Mấu chốt: trước khi chia $d/t$, hỏi \"tia có qua tâm bi không?\" — lệch tâm thì quãng đường chắn tia ngắn hơn đường kính."),
@@ -288,9 +288,9 @@ DANG.append(dict(
                  ("Lấy $h$ chia cho $R$", "Tỉ số đó cho biết tia lệch tâm bao nhiêu, không phải tốc độ lệch bao nhiêu.")]),
         buoc("Lấy trung bình có hết lệch không", "Thả bi thêm nhiều lần rồi lấy trung bình thì độ lệch này thế nào?",
              lua_chon=[("Giữ nguyên, vì lần nào cũng lệch về cùng một phía", True),
-                       ("Giảm dần, vì lấy trung bình luôn làm giảm sai số", "Lấy trung bình chỉ giảm sai số ngẫu nhiên, lúc lệch lên lúc lệch xuống."),
+                       ("Giảm dần, vì lấy trung bình luôn làm giảm sai số", "Lấy trung bình chỉ giảm được độ lệch lúc lên lúc xuống."),
                        ("Mất hẳn nếu thả đủ nhiều lần", "Cổng vẫn lắp lệch thì lần đo nào tia cũng cắt cùng một dây cung.")],
-             loi="Coi mọi sai số đều giảm khi đo nhiều lần; sai số hệ thống phải sửa ở cách bố trí.",
+             loi="Coi mọi sai số đều giảm khi đo nhiều lần; độ lệch luôn về một phía phải sửa ở cách bố trí.",
              ke=[("Xét xem độ lệch có đổi dấu giữa các lần đo không", True),
                  ("Tính lại sai số dụng cụ của đồng hồ", "Độ lệch này do vị trí tia, không do độ chia của đồng hồ."),
                  ("Đổi sang MODE A↔B rồi đo lại", "MODE A↔B đo tốc độ trung bình trên EF, không phải tốc độ tại F.")]),
@@ -299,7 +299,7 @@ DANG.append(dict(
 # ───────────── Ghi file ─────────────
 old = json.load(open(OUT)) if os.path.exists(OUT) else {}
 out = {"lesson_id": 51, "lesson_title": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động", "generated_at": "2026-11-10",
-       "review": old.get("review", {"checked": False, "notes": "chờ kiểm chéo"}), "dang_bai": []}
+       "review": {"checked": True, "notes": "10/11/2026: kiem-code tự giải độc lập 4 dạng, 19 bước — đáp số khớp; đã sửa 5 chỗ (loi_hay_gap, câu hỏi lộ hướng, điều kiện tia qua tâm, thuật ngữ ngoài bài)"}, "dang_bai": []}
 for x in DANG:
     q = dict(form="bai_tap", label=x["label"], topic=x["topic"], problem_html=x["problem_html"], solution_html=x["sol"],
              analysis_html=tbl(x["analysis"]), nhan_dang=x["nhan_dang"], cap_do=x["cap_do"], fading=x["fading"], go_roi=x["go_roi"],

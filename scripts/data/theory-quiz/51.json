@@ -6,12 +6,13 @@
   "generated_by": "claude-code",
   "quiz_min_correct": 15,
   "review": {
-    "checked": false,
+    "checked": true,
     "counts": {
       "kien_thuc": 10,
       "cong_thuc": 10
     },
-    "removed": []
+    "removed": [],
+    "notes": "10/11/2026: kiem-code kiểm chéo 20 câu; câu 13 có hai đáp án đúng (mm/ms = m/s) → đã thay phương án nhiễu; sửa note câu 2, nhiễu câu 11"
   },
   "questions": [
     {
@@ -56,7 +57,7 @@
       "explanation": "Nút RESET đưa số chỉ về $0{,}000$ trước mỗi lần đo, để số hiển thị chỉ là thời gian của lần đo mới.",
       "distractorNotes": {
         "A": "Đổi chế độ đo là việc của núm MODE, không phải nút RESET.",
-        "B": "RESET chỉ xoá số chỉ cũ; cổng quang phát tia ngay khi được cấp điện.",
+        "B": "RESET chỉ xoá số chỉ cũ; bên phát của cổng quang không do nút này điều khiển.",
         "D": "Ngắt nam châm điện là việc của công tắc riêng, không phải nút RESET."
       }
     },
@@ -217,7 +218,7 @@
       "form": "ly_thuyet",
       "difficulty": "de",
       "difficultySource": "ai",
-      "theorySection": 2,
+      "theorySection": 1,
       "question": "Viên bi lăn nhanh dần trên máng nghiêng. Nhóm đo tốc độ trung bình trên đoạn EF và tốc độ tức thời tại cổng F.",
       "statements": [
         {
@@ -292,7 +293,7 @@
       "options": [
         "$v_{\\text{tb}} = \\dfrac{t}{s}$",
         "$v_{\\text{tb}} = s \\cdot t$",
-        "$v_{\\text{tb}} = \\dfrac{2s}{t}$",
+        "$v_{\\text{tb}} = \\dfrac{s}{2t}$",
         "$v_{\\text{tb}} = \\dfrac{s}{t}$"
       ],
       "answer": 3,
@@ -300,7 +301,7 @@
       "distractorNotes": {
         "A": "Đảo tử và mẫu: thương này là thời gian đi mỗi mét, không phải tốc độ.",
         "B": "Tích $s \\cdot t$ có đơn vị m·s, không phải m/s.",
-        "C": "Hệ số 2 không có trong định nghĩa tốc độ trung bình."
+        "C": "Hệ số 2 ở mẫu không có trong định nghĩa tốc độ trung bình."
       }
     },
     {
@@ -336,7 +337,7 @@
       "theorySection": 1,
       "question": "Thước kẹp cho đường kính bi $d$ theo milimét, đồng hồ cho thời gian chắn tia $t$ theo giây. Để $v = d/t$ ra đơn vị m/s, cần",
       "options": [
-        "đổi $t$ từ giây sang mili giây",
+        "đổi $t$ từ giây sang phút",
         "đổi $d$ từ milimét sang mét",
         "nhân kết quả $d/t$ với 1000",
         "giữ nguyên hai số rồi chia"
@@ -344,7 +345,7 @@
       "answer": 1,
       "explanation": "Trong công thức $v = d/t$ của bài, $d$ tính bằng mét và $t$ bằng giây thì $v$ mới ra m/s; ví dụ $20{,}0\\ \\text{mm} = 0{,}0200\\ \\text{m}$.",
       "distractorNotes": {
-        "A": "Đổi $t$ sang mili giây thì kết quả thành mm/ms hoặc sai lệch nghìn lần.",
+        "A": "Đổi sang phút thì $v$ ra mm/phút, không phải m/s.",
         "C": "Từ mm/s sang m/s phải chia cho 1000, không phải nhân.",
         "D": "Giữ nguyên thì kết quả là mm/s, lớn gấp 1000 lần số m/s."
       }

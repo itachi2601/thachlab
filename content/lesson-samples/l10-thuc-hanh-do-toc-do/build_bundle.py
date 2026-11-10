@@ -51,10 +51,10 @@ exam = {
          "explanation": "(I): $0{,}004/0{,}800 = 0{,}5\\ \\%$. (II): $0{,}001/0{,}020 = 5\\ \\%$. Phải so sai số với chính giá trị đo; thời gian càng ngắn thì một độ chia của đồng hồ càng chiếm phần lớn."},
         {"type": MC,
          "question": "Một phép đo tốc độ có $\\bar v = 0{,}800\\ \\text{m/s}$, $\\delta s = 0{,}1\\ \\%$ và $\\delta t = 0{,}4\\ \\%$. Kết quả ghi vào báo cáo là",
-         "options": ["$v = 0{,}800 \\pm 0{,}5\\ \\text{m/s}$", "$v = 0{,}800 \\pm 0{,}003\\ \\text{m/s}$",
+         "options": ["$v = 0{,}800 \\pm 0{,}5\\ \\text{m/s}$", "$v = 0{,}800 \\pm 0{,}002\\ \\text{m/s}$",
                      "$v = 0{,}800 \\pm 0{,}004\\ \\text{m/s}$", "$v = 0{,}800 \\pm 0{,}0004\\ \\text{m/s}$"],
          "answer": 2,
-         "explanation": "$\\delta v = \\delta s + \\delta t = 0{,}5\\ \\%$, nên $\\Delta v = 0{,}800 \\cdot 0{,}005 = 0{,}004\\ \\text{m/s}$. $0{,}5$ là quên nhân với $\\bar v$; $0{,}003$ là lấy hiệu hai sai số tỉ đối; $0{,}0004$ là đổi phần trăm thiếu mười lần."},
+         "explanation": "$\\delta v = \\delta s + \\delta t = 0{,}5\\ \\%$, nên $\\Delta v = 0{,}800 \\cdot 0{,}005 = 0{,}004\\ \\text{m/s}$. $0{,}5$ là quên nhân với $\\bar v$; $0{,}002$ là lấy hiệu hai sai số tỉ đối; $0{,}0004$ là đổi phần trăm thiếu mười lần."},
     ],
 }
 
