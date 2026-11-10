@@ -226,7 +226,7 @@ def s_dapan(img, d, t, sc):
     for i in range(0, S_MAX, 22): dot(d, p0[0] + u[0] * i, p0[1] + u[1] * i, 5, COIN_D)
     coin(d, *ke)
     text(d, (p0[0] + 45, p0[1] - 340), "tiếp tuyến", 40, BLUE, anchor="lm", alpha=k1)
-    text(d, (400, CY + 95), "bán kính", 40, MUTED, anchor="lm", alpha=k1)
+    text(d, (280, CY + 55), "bán kính", 40, MUTED, alpha=k1)   # sat duong ban kinh (ben trai tam)
     ka = appear(t, 0.15, 0.5)
     lb = "ĐÁP ÁN · gần theo tiếp tuyến"
     pw = tw(d, lb, F(40)) + 56

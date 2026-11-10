@@ -159,7 +159,7 @@ def s_dapan(img, d, t, sc):
     if kn > 0:
         card(d, (60, 620, 1020, 840), fill=A(WHITE, kn), outline=A(NAVY, kn), r=24, w=5)
         text(d, (W / 2, 675), "Chưa nói được", 46, NAVY, alpha=kn)
-        text(d, (W / 2, 770), "• Nhún sai lúc thì sao?", 46, INK, alpha=kn * appear(t, M[1] + 0.3, 0.4))
+        text(d, (W / 2, 770), "• Nhún mạnh hơn thì sao?", 46, INK, alpha=kn * appear(t, M[1] + 0.3, 0.4))
     bars(d, 4, labels=True)
 
 # ---------------- canh 4: Bay - "nhun luc nao cung cao them" ----------------
@@ -175,32 +175,33 @@ def s_bay(img, d, t, sc):
     ks = clamp((t - (M[1] + 2.0)) / 0.4)
     if ks > 0:
         d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=(140, 15, 15), width=7)
-    # so do cung du (goc ve phong dai cho de nhin, khong co so): nua di xuong (bien phai -> giua) to dam + mui ten chieu di
+    # so do cung du (goc ve phong dai, khong co so). Soat 10/11 (xem mp4): ban cu ghi "Chi nhun khi di xuong" + "khong nhun"
+    #   o nua di len -> sai vat li (luc cung chieu van tang nang luong ca luc di len) va mau thuan o "Chua noi duoc".
+    #   Ban moi: du di tu bien phai sang trai (mui ten xam ngoai cung = chieu di); trong cung: nhun CUNG chieu (cam, them)
+    #   va nhun NGUOC chieu (do, bot) -> bac "luc nao cung cao them" bang dau cong cua luc so voi chieu di.
     cx, cy, R = W / 2, 650, 440
     kb = appear(t, 0.3, 0.4)
     th0 = 0.85
-    def P(th): return (cx + R * math.sin(th), cy + R * math.cos(th))
-    up = [P(-th0 * i / 40) for i in range(41)]
-    dn = [P(th0 * (1 - i / 40)) for i in range(41)]
+    RED = (185, 28, 28)
+    def P(th, r=R): return (cx + r * math.sin(th), cy + r * math.cos(th))
+    arc = [P(th0 - 2 * th0 * i / 80) for i in range(81)]          # bien phai -> bien trai
     dot(d, cx, cy, 10, A(NAVY, kb))
     d.line([(cx, cy), P(th0)], fill=A(INK, kb * 0.6), width=4)
-    d.line(up, fill=A(GRAY, kb), width=12)
-    kt = appear(t, M[1] + 2.0, 0.4)
-    cg = ORANGE if kt > 0 else GRAY
-    d.line(dn, fill=A(cg, kb), width=22 if kt > 0 else 12)
-    for i0, i1 in ((6, 18), (22, 34)):
-        a0, a1 = th0 * (1 - i0 / 40), th0 * (1 - i1 / 40)
-        p0 = (cx + (R + 50) * math.sin(a0), cy + (R + 50) * math.cos(a0))
-        p1 = (cx + (R + 50) * math.sin(a1), cy + (R + 50) * math.cos(a1))
-        arrow(d, p0, p1, A(cg, kb), w=9, head=28)
+    d.line(arc, fill=A(GRAY, kb), width=12)
+    # chieu di (xam, ngoai cung), hien ngay khi phu de len
+    for a0, a1 in ((0.70, 0.35), (-0.15, -0.50)):
+        arrow(d, P(a0, R + 50), P(a1, R + 50), A(GRAY, kb), w=8, head=26)
     card(d, (P(th0)[0] - 40, P(th0)[1] - 8, P(th0)[0] + 40, P(th0)[1] + 8), fill=A((120, 80, 40), kb), r=6)
+    kt = appear(t, M[1] + 2.0, 0.4)
     if kt > 0:
-        x, y = P(th0 * 0.55); text(d, (x + 70, y + 40), "nhún ở đây", 44, ORANGE, anchor="lm", alpha=kt)
-        x, y = P(-th0 * 0.55); text(d, (x - 30, y + 40), "không nhún", 44, MUTED, anchor="rm", alpha=kt)
+        arrow(d, P(0.62, R - 60), P(0.22, R - 60), A(ORANGE, kt), w=10, head=30)      # cung chieu di
+        arrow(d, P(-0.62, R - 60), P(-0.22, R - 60), A(RED, kt), w=10, head=30)       # nguoc chieu di
+        text(d, (P(0.40)[0] + 20, 1150), "cùng chiều", 40, ORANGE, alpha=kt)
+        text(d, (P(-0.40)[0] - 20, 1150), "ngược chiều", 40, RED, alpha=kt)
     kc = appear(t, M[1] + 2.4, 0.5)
     if kc > 0:
-        card(d, (60, 1210, 1020, 1380), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=24, w=4)
-        text(d, (W / 2, 1295), "✓ Chỉ nhún khi đi xuống", 48, (21, 110, 55), alpha=kc)
+        card(d, (60, 1220, 1020, 1390), fill=A((236, 253, 243), kc), outline=A(GREEN, kc), r=24, w=4)
+        text(d, (W / 2, 1305), "✓ Ngược chiều: bớt độ cao", 48, (21, 110, 55), alpha=kc)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):

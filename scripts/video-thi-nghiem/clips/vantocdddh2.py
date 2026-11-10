@@ -45,11 +45,19 @@ def axes(d, keys, tlab_y, a=1.0):
         text(d, (GX0 + 16, c - 150), lab, 40, col, anchor="lm", alpha=a)
         for yy, s in ((c - H2, lp), (c + H2, ln)):
             d.line([(GX0 - 8, yy), (GX0 + 8, yy)], fill=A(NAVY, a), width=3)
-            text(d, (GX0 - 16, yy), s, 40, NAVY, anchor="rm", alpha=a)
+            text(d, (GX0 - 32, yy), s, 40, NAVY, anchor="rm", alpha=a)       # cach cham o t = 0 (ban kinh 14)
     for tt in (0.2, 0.4, 0.6, 0.8):
         text(d, (gx(tt), tlab_y), f"{tt:.1f}".replace(".", ","), 40, NAVY, alpha=a)
     text(d, (GX0, tlab_y), "0", 40, NAVY, alpha=a)
     text(d, (gx(0.86) + 12, tlab_y), "t (s)", 40, INK, anchor="lm", alpha=a)
+
+def labels_top(d, keys=("x", "v", "a")):
+    """Ve lai ten truc tren nen BG, de con tro thoi gian khong cat ngang chu."""
+    for k in keys:
+        c, _, _, lab, col, _ = SER[k]
+        w = tw(d, lab, F(40))
+        d.rectangle([GX0 + 8, c - 174, GX0 + 24 + w, c - 126], fill=BG)
+        text(d, (GX0 + 16, c - 150), lab, 40, col, anchor="lm")
 
 def curve(d, k, t1, a=1.0, w=6):
     if t1 <= 0: return
@@ -118,7 +126,7 @@ def s_do(img, d, t, sc):
     tt, n, cur = phase(t)
     axes(d, ["x", "v", "a"], 1240)
     for k in ("x", "v", "a"): curve(d, k, tt)
-    if t >= D0: cursor(d, tt)
+    if t >= D0: cursor(d, tt); labels_top(d)
     table(d, n, cur)
 
 # ---------------- canh 3: Dap an + Rut ra ----------------
@@ -157,6 +165,7 @@ def s_bay(img, d, t, sc):
         d.line([(gx(0.2), SER["x"][0] - 140), (gx(0.2), SER["a"][0] + 125)], fill=A(PURPLE, 0.85 * kc), width=4)
         dot(d, gx(0.2), gy("v", -VM), 14, A(BLUE, kc), outline=WHITE)
         dot(d, gx(0.2), gy("a", 0), 14, A(RED, kc), outline=WHITE)
+        labels_top(d)
     a1 = appear(t, 0.0, 0.3) * (1 - appear(t, M[1] - 0.3, 0.2))
     if a1 > 0:
         y0 = 1290
