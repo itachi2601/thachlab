@@ -13,24 +13,38 @@ phân tích) mới dùng web qua mã QR cuối bài. Mọi quyết định thi�
 - Không in lời giải đầy đủ / tự luyện (đã ở web), nhưng **phải có đáp án thuần** trong sách cho câu thầy không kịp chữa.
 - Không nền đen chữ trắng, không cột ghi chú cả trang, cỡ chữ 5 mức (7,6 / 8,4 / 9,6 / 11,6 / 13,6 pt).
 
-## Chạy
+## Chạy — luôn soát lệch với web trước, rồi mới dựng
+Mỗi cuốn một **hồ sơ** `book/sach/<mã>.json`; nội dung lấy từ **web thật (DB, chỉ đọc)** về `book/cache/`, không đọc file nháp trong repo.
+Dùng `/usr/bin/python3` (có bs4, PyMuPDF, PIL; `python3` của Homebrew thiếu). Worktree mới chưa có `book/node_modules` →
+`ln -sfn /Users/MAC/Projects/thachlab/book/node_modules book/node_modules`.
 ```bash
-cd book && python3 make.py            # cả chương, ~30–60 s → out/vat-li-10-chuong-2-dong-hoc.pdf + public/sach-data/dap-an-<id>.json
-cd book && python3 make.py 49 50      # thử vài bài
-cd book && python3 build.py lesson 49 5 && node render.mjs src/lesson-49.html out/_t.pdf   # một bài, xem nhanh
+cd book && /usr/bin/python3 sach.py list                      # các cuốn + bản đang có
+cd book && /usr/bin/python3 sach.py lech l10-ch2-dong-hoc     # tải web → so với sổ khoá (cần mạng: tab terminal)
+cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc          # cả cuốn ~1–2 phút → out/<tep>.pdf + sổ khoá + public/sach-data
+cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài → out/<tep>-thu.pdf (không ghi sổ khoá)
 ```
-Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo dõi; `build.py`/`render.mjs` một bài thì `Bash` được.
+- `sach.py lech` báo từng bài: **khớp** (không làm gì) · **chữ** (nội dung đổi, số ô điền/câu/Dạng giữ nguyên → dựng lại, sách đã
+  phát vẫn dùng được) · **đánh số** (bộ đếm đổi → dựng lại sẽ tăng số bản, sách đã phát lệch số với đáp án mới) · **mới**.
+  Khớp hết thì DỪNG, không dựng lại. Dòng "repo có bản bài tập mẫu KHÁC bản đã đăng" = có nháp chưa đăng; sách vẫn theo web.
+- **Sổ khoá** `book/sach/<mã>.lock.json` (commit vào git) do `make.py` ghi sau khi dựng trọn cuốn: số bản, ngày, dấu vân tay
+  lý thuyết + bài tập mẫu từng bài, bộ đếm, trang bắt đầu. Không sửa tay.
+- Cuốn mới: `npx tsx book/lay-noi-dung.mts --moi <mã> <lớp> <lesson_id bất kỳ trong chương>` → hồ sơ nháp + cache; thầy sửa chữ.
+- Lệnh > 30 s hoặc cần mạng chạy trong tab terminal (`run_in_terminal`); `build.py lesson`/`render.mjs` một bài thì `Bash` được
+  (`BOOK_SACH=<mã>` chọn cuốn cho `build.py`).
 
-## Cấu hình thầy chỉnh (JSON trong `book/src/`, không sửa tay HTML)
-- `dang-chung.json` `{lesson_id: [chỉ số Dạng]}` — Dạng CHUNG NHẤT được giảng trên lớp (có ô "Lời giải — ghi cùng thầy cô").
+## Hồ sơ sách thầy chỉnh (`book/sach/<mã>.json`, không sửa tay HTML/Python)
+- Bắt buộc: `lop`, `chuong`, `ten`, `lessons` (id bài theo thứ tự). `tep` = tên file PDF. `bia` = chữ trên bìa.
+- `dang_chung` `{lesson_id: [chỉ số Dạng]}` — Dạng CHUNG NHẤT được giảng trên lớp (có ô "Lời giải — ghi cùng thầy cô").
   Mặc định `[1, 2]`; các Dạng còn lại + thử thách phân tầng tự thành mục "Luyện thêm — bài tương tự" (chỉ đề).
-- `tiet.json` `{lesson_id: [anchor]}` — vạch lề "hết tiết n". Anchor: `muc:II` (hết mục II lý thuyết), `dang:2`, `bai-tap-mau`.
-  Mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu (bài thực hành: hết mục V).
+- `tiet` `{lesson_id: [anchor]}` — vạch lề "hết tiết n". Anchor: `muc:II` (hết mục II lý thuyết), `dang:2`, `bai-tap-mau`.
+  Mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu (bài không có bài tập mẫu: hết mục V).
+- `ban_do_chuong.ga` (tên ga ngắn, thiếu thì lấy tên bài), `ban_do_chuong.nhom`, `tu_danh_gia` (thiếu thì bỏ trang Tự đánh giá).
 - Mục lục (`front.toc_full`) sinh tự động, một trang riêng, đủ phần đầu + mục con từng bài + phần cuối; số trang mục con
   đọc từ PDF con đã dựng bằng `make.page_of`. Phần đầu sách cố định `FRONT_PAGES` trang — `make.py` tự dừng nếu lệch.
-- Thêm chương: sửa `CHAPTER` trong `build.py` + tên ga/tổng kết/tự đánh giá trong `front.py` (đang viết riêng cho chương 2 lớp 10).
+- Còn chờ làm (thiết kế `docs/THIET-KE-SKILL-SACH-DONG-BO.md` chặng C–E): số bản trong QR, web → "Sách tr. X", bản Word.
 
 ## Kiểm sau mỗi lần dựng (bắt buộc, trước khi đưa thầy xem)
+0. `make.py` in `! CẢNH BÁO` (trang < 60 từ, bài thiếu hộp "Mang về") → xử lý hết hoặc ghi rõ khi giao.
 1. `render.mjs` tự in `CHẨN ĐOÁN` nếu có `.katex-error`, phần tử tràn khung, trang còn `$` — phải trống.
 2. PyMuPDF: đếm trang; trang < 60 từ phải ≈ 0; thống kê cỡ chữ (chỉ 5 mức + lẻ của KaTeX); không Dạng nào in 2 lần
    (Paged.js có thể nhân đôi nội dung mà không báo lỗi — xem nhật ký).
@@ -82,7 +96,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
-- Commit `book/` (code + `src/*.json`; HTML/PDF sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
+- Commit `book/` (code + `sach/*.json` gồm cả sổ khoá `.lock.json`; HTML/PDF/cache sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
   chỉ commit/deploy khi đã kiểm trang web thật; chưa thì ghi "ĐANG CHỜ" trong `docs/STATE.md`.
 - Rút kinh nghiệm vào mục dưới.
 
@@ -111,3 +125,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - 2026-10-25 · Lưới đáp án em–đúng trên trang sửa bài là chép lại thứ web đã hiện → với đề làm trên web, chỉ ghi số câu
   sai; hỏi "đề làm ở đâu" trước khi vẽ bảng điền.
 - 2026-10-25 · Ruột tập bài 15–18: tách KaTeX giữa chừng để chen ô trống (`m('…{')+fill+m('}')`) làm KaTeX báo lỗi → viết lại công thức bằng chỉ số riêng (`A_Y=` ô trống); hình trong SVG có `viewBox` rộng (>320) thì cột hình phải ≥ 52–56 mm mới giữ chữ ≈ 2,9 mm; hình chỉ hiện trong ô giải khi `gi > 0` (dạng `gi: 0` + `fig` thì mất hình, đã gặp ở Dạng 5 bài 18) → với dạng có hình luôn đặt `gi ≥ 1`; trang 7 tràn thì hạ `gi` các dạng không có hình trước, rồi mới rút hình.
+- 2026-11-10 · Pipeline đọc `public/data/lessons` (chỉ có bài xem thử, gitignore) + bài tập mẫu trong repo nên sách không theo web thật và không dựng lại được ở máy/worktree khác → nguồn duy nhất là `book/cache` tải từ DB (`sach.py lech`), kèm sổ khoá để biết sách lệch web ở mức chữ hay mức đánh số.
+- 2026-11-10 · Ba bài treo 10 phút rồi "render lỗi" không rõ lý do: bài trên web có thêm `<img loading="lazy" src="/assets/…">`; mở bằng file:// ảnh không tải, `img.decode()` của ảnh lazy không bao giờ xong nên Paged.js không chạy → `build.local_imgs` đổi mọi ảnh thành file cục bộ đen–trắng và bỏ `loading/width/height`. Bài treo thì so thẻ/lớp CSS với bài dựng được (đếm bằng regex) trước khi đoán Paged.js.
+- 2026-11-10 · Web đổi lớp CSS (`tl-box--rule` thêm `tl-keep`) làm regex khớp nguyên chuỗi `class="…"` trượt → trang Tổng kết chương rỗng mà không báo lỗi; ảnh nguồn mở cao 880px chiếm trọn trang và để lại trang trống trước nó → regex lớp dùng `[^"]*`, ảnh giới hạn `max-height:62mm`, và `make.py` tự in CẢNH BÁO trang < 60 từ / bài thiếu hộp "Mang về". Sách dựng từ web sống thì mỗi kiểm tra bằng mắt cũ phải thành kiểm tự động.
+- 2026-11-10 · `make.render` nuốt stdout của `render.mjs` nên dòng `CHẨN ĐOÁN` (KaTeX lỗi, tràn khung) không hiện khi dựng cả cuốn → muốn xem thì dựng lẻ `build.py lesson <id>` + `node render.mjs`; còn chờ sửa cho in ra.

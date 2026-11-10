@@ -1,6 +1,6 @@
 # Thiết kế: nâng cấp skill `sach-in-tu-web` thành sách đồng bộ với website
 
-Ngày 10/11/2026 · bản thiết kế, CHƯA cài đặt. Thầy đã chốt: nâng cấp skill cũ (không tạo skill mới) ·
+Ngày 10/11/2026 · **chặng A–B đã cài đặt** (hồ sơ sách, lấy nội dung DB, sổ khoá, soát lệch); chặng C–E chưa. Thầy đã chốt: nâng cấp skill cũ (không tạo skill mới) ·
 đồng bộ = **nội dung luôn khớp web** + **liên kết hai chiều** · xuất **PDF A4 đen–trắng** + **Word**.
 
 ## 1. Hiện trạng và ba chỗ hở
@@ -38,9 +38,9 @@ Mỗi cuốn một file, ví dụ `l10-ch2-dong-hoc.json`:
 }
 ```
 - `dang_chung`, `tiet` chuyển từ `book/src/*.json` vào đây (một nơi cho thầy chỉnh).
-- `ban_do_chuong`, `tong_ket` thiếu thì `front.py` **bỏ trang đó**, không bịa; `FRONT_PAGES` tính theo số trang thật có.
+- Khi cài đặt (10/11): bản đồ chương tự vẽ cho số bài bất kỳ, thiếu `ban_do_chuong.ga` thì lấy tên bài; Tổng kết lấy từ hộp "Mang về" của từng bài trên web; thiếu `tu_danh_gia` thì bỏ trang Tự đánh giá. `dang_chung`/`tiet` đọc từ hồ sơ.
 - Lệnh: `python3 make.py <mã>` · `python3 make.py <mã> 49 50` · `python3 make.py --list`.
-- Thêm cuốn mới: `python3 sach.py moi <lớp> <chương>` sinh hồ sơ nháp từ danh sách bài của chương (đọc cache), thầy chỉ sửa chữ.
+- Thêm cuốn mới: `npx tsx book/lay-noi-dung.mts --moi <mã> <lớp> <lesson_id trong chương>` sinh hồ sơ nháp + cache, thầy chỉ sửa chữ.
 
 ### 2.2 Lấy nội dung từ web thật: `book/lay-noi-dung.mts <mã>`
 - Chỉ ĐỌC, đúng một truy vấn cho cả chương: `lessons` + `lesson_items` (`ly_thuyet`, bài tập mẫu) theo danh sách `lessons`.
