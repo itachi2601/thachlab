@@ -134,3 +134,7 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-10 · Câu so sánh hai phép đo viết ngược chiều ("thời gian chắn dài hơn ở F" trong khi E mới dài hơn) lọt qua mọi lint → câu so sánh nào cũng kèm hai con số ngay trong câu, hoặc sinh từ token để assert được.
 - 2026-11-10 · Bài thực hành dùng "sai số tương đối" trong khi Bài 3 và YCCĐ dùng "sai số tỉ đối" → trước khi viết bài thực hành, grep thuật ngữ sai số ở `l10-thuc-hanh-sai-so/theory.src.html` và dùng đúng chữ đó.
 - 2026-11-10 · `chup_anh.py` chạy bằng `python3` homebrew báo thiếu PIL → trên Mac gọi `/usr/bin/python3` cho `build_preview.py`/`chup_anh.py`.
+- 2026-11-10 · Bài CNC (`cnc-*`) nằm ở bảng `cnc_lessons` (id `lesson-4-turn`…), không phải `lesson_items`; `cap-nhat-ly-thuyet.sh` không dùng được → đăng bằng `npx tsx scripts/cap-nhat-cnc-ly-thuyet.mts <theory.html> --lesson <id>` (dry-run trước, tự sao lưu).
+- 2026-11-10 · Bản trên DB CNC 4 có `id="muc-N"`/`bai-mau` ở tiêu đề mà theory.src.html không có (neo cho trang buổi học) → trước khi ghi đè, kéo body_html về và diff theo thẻ; thứ DB có mà repo thiếu thì đưa vào src rồi mới đăng.
+- 2026-11-10 · Mô phỏng nhiều bước chỉ radio + CSS: dùng khối dùng chung `.tl-sim--buoc` (radio `.tsb-sN`/`.tsb-vN`, phần tử `.sb-sN`/`.sb-vN` tự ẩn khi không khớp) thay vì viết CSS riêng mỗi bài; cần deploy globals.css. `$…$` trong câu bước không hiện ở xem thử → viết chữ thường.
+- 2026-11-10 · Chèn hình mới vào giữa bài → đánh lại số Hình theo thứ tự xuất hiện và sửa mọi "(Hình n)" dẫn tới.
