@@ -85,7 +85,8 @@ export const hinhL10b24 = {
     return wrap('0 0 292 226', b, cap, 'Cabin thang máy nâng đều: lực kéo F lên, trọng lực mg xuống');
   },
   // Thử thách / Dạng 5: xe lên dốc, lực kéo hướng lên dốc, lực cản và thành phần trọng lực hướng xuống dốc
-  xeDoc: (cap = 'Lên dốc đều: lực kéo cân bằng lực cản cộng thành phần trọng lực dọc dốc.', ngang = '100 m', cao = '6 m') => {
+  xeDoc: (cap = 'Ô tô lên dốc đều.', ngang = '100 m', cao = '6 m') => {
+    // Ba lực ghi rời nhau (HS ảo 10/11: nhãn gộp "Fc + mg sinα" lộ ô Mấu chốt); chữ 24 đơn vị để ≥ 3 mm khi cột 42 mm
     const a = Math.atan2(110, 290), c = Math.cos(a), s = Math.sin(a);
     const S = (x) => [10 + x * c, 190 - x * s];  // điểm trên mặt dốc cách chân x
     let b = defs('xd');
@@ -93,24 +94,25 @@ export const hinhL10b24 = {
     const [cx, cy] = S(150), nx = -s, ny = -c;   // pháp tuyến hướng ra ngoài mặt dốc
     const C = [cx + nx * 20, cy + ny * 20];
     b += `<g transform="translate(${C[0].toFixed(1)},${C[1].toFixed(1)}) rotate(${(-a * 180 / Math.PI).toFixed(1)})"><rect x="-34" y="-17" width="68" height="34" rx="5" fill="#fff" stroke="${INK}" stroke-width="${SW}"/></g>`;
-    const P = (k, dx) => [C[0] + c * k + dx * nx, C[1] - s * k + dx * ny];
-    const [f1, f2] = [P(36, 0), P(100, 0)], [r1, r2] = [P(-36, 6), P(-96, 6)];
-    b += arr(f1[0].toFixed(1), f1[1].toFixed(1), f2[0].toFixed(1), f2[1].toFixed(1), 'xd', RED) + T(f2[0] - 6, f2[1] - 14, `F${sb('k')}`, { c: RED, w: 700 });
-    b += arr(r1[0].toFixed(1), r1[1].toFixed(1), r2[0].toFixed(1), r2[1].toFixed(1), 'xd', BLUE, '6 4');
-    b += T(8, 108, `F${sb('c')} +`, { c: BLUE, size: 19 }) + T(8, 130, 'mg sin<tspan font-family="KaTeX_Math" font-style="italic">α</tspan>', { c: BLUE, size: 19 });
-    b += T(250, 214, ngang, { a: 'middle', size: 19 }) + T(296, 146, cao, { a: 'end', size: 19 });
-    return wrap('0 0 308 220', b, cap, 'Ô tô lên dốc: lực kéo lên dốc, lực cản và thành phần trọng lực xuống dốc');
+    const P = (k, dx) => [C[0] + c * k + dx * nx, C[1] - s * k + dx * ny].map((v) => +v.toFixed(1));
+    const [f1, f2] = [P(36, 0), P(100, 0)], [r1, r2] = [P(-36, 0), P(-96, 0)];
+    b += arr(...f1, ...f2, 'xd', RED) + T(f2[0] - 10, f2[1] - 14, `F${sb('k')}`, { c: RED, w: 700, size: 24 });
+    b += arr(...r1, ...r2, 'xd', BLUE, '6 4') + T(r2[0] - 18, r2[1] - 18, `F${sb('c')}`, { c: BLUE, w: 700, size: 24 });
+    b += arr(+C[0].toFixed(1), +C[1].toFixed(1) + 14, +C[0].toFixed(1), 182, 'xd', INK) + T(C[0] + 10, 180, 'mg', { w: 700, size: 24 });
+    const [lx, ly] = S(222).map((v, k) => v + (k ? c : s) * 24);   // nhãn chiều dài đặt dọc mặt dốc, phía trong tam giác
+    b += `<g transform="translate(${lx.toFixed(1)},${ly.toFixed(1)}) rotate(${(-a * 180 / Math.PI).toFixed(1)})">${T(0, 0, ngang, { a: 'middle', size: 22 })}</g>` + T(294, 172, cao, { a: 'end', size: 22 });
+    return wrap('0 0 308 198', b, cap, 'Ô tô lên dốc: lực kéo, lực cản, trọng lực');
   },
   // Dạng 2: kéo thùng trên sàn và nâng thùng lên giá
   keoNang: (cap = 'Kéo trên sàn: F cùng hướng đi. Nâng đều: lực nâng bằng mg.') => {
     let b = defs('kn') + defs2('knk');
-    b += dat(4, 188, 160) + rect(16, 116, 48, 44) + arr(64, 138, 124, 138, 'kn', RED) + T(98, 128, 'F', { c: RED, w: 700 });
-    b += kt(16, 182, 176, 182, 'knk') + T(96, 210, 'd', { a: 'middle', w: 700 });
-    b += dat(200, 304, 160) + ln(296, 160, 296, 60) + ln(248, 60, 304, 60);
-    b += rect(254, 18, 40, 40, 'stroke-dasharray="6 4"') + rect(208, 116, 40, 44);
-    b += arr(228, 116, 228, 70, 'kn', RED) + T(212, 92, 'F', { c: RED, w: 700, a: 'end' });
-    b += kt(282, 64, 282, 156, 'knk') + T(272, 114, 'h', { a: 'end', w: 700 });
-    return wrap('0 0 308 218', b, cap, 'Kéo thùng trên sàn ngang và nâng thùng lên giá');
+    b += dat(4, 188, 96) + rect(16, 60, 44, 36) + arr(60, 78, 120, 78, 'kn', RED) + T(96, 68, 'F', { c: RED, w: 700 });
+    b += kt(16, 114, 168, 114, 'knk') + T(176, 121, 'd', { w: 700 });
+    b += dat(200, 304, 96) + ln(296, 96, 296, 30) + ln(250, 30, 304, 30);
+    b += rect(258, 2, 32, 26, 'stroke-dasharray="6 4"') + rect(210, 64, 32, 32);
+    b += arr(226, 64, 226, 34, 'kn', RED) + T(214, 52, 'F', { c: RED, w: 700, a: 'end' });
+    b += kt(280, 34, 280, 92, 'knk') + T(270, 72, 'h', { a: 'end', w: 700 });
+    return wrap('0 0 308 126', b, cap, 'Kéo thùng trên sàn ngang và nâng thùng lên giá');
   },
   // Dạng 4: cần cẩu nâng đều kiện hàng
   canCau: (cap = 'Cần cẩu nâng đều: lực căng cáp bằng trọng lượng kiện.') => {
