@@ -44,13 +44,13 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
     {
       t: 'Dạng 4 · Khó · Đếm hạt trong một khối lượng chất',
       de: `${m('14\\ \\mathrm{g}')} sắt ${m('{}^{56}_{26}\\mathrm{Fe}')}, ${m('M\\approx56\\ \\mathrm{g/mol}')}:<br><b>a)</b> số mol<br><b>b)</b> số hạt nhân<br><b>c)</b> số nơtron<br><b>d)</b> tổng điện tích các prôtôn (C).`,
-      nd: `Cho khối lượng, hỏi số hạt → ${m('n=')} ${f(10)}, ${m('N=')} ${f(10)}, × số ${f(10)} mỗi hạt nhân`,
+      nd: `Cho khối lượng, hỏi số hạt → ${m('n=')} ${f(10)}, rồi ${f(14)}`,
       a: ['a', 'b', 'c', 'd'], gi: 7,
     },
     {
       t: 'Dạng 5 · Nâng cao · Khối lượng nguyên tử trung bình',
       de: `Bo: ${m('{}^{10}_{5}\\mathrm{B}')} (${m('10{,}013\\ \\mathrm{u}')}), ${m('{}^{11}_{5}\\mathrm{B}')} (${m('11{,}009\\ \\mathrm{u}')}), trung bình ${m('10{,}811\\ \\mathrm{u}')}:<br><b>a)</b> % mỗi đồng vị<br><b>b)</b> khối lượng một nguyên tử ${m('{}^{11}_{5}\\mathrm{B}')} ra kg<br><b>c)</b> ra ${m('\\mathrm{MeV}/c^2')}.`,
-      nd: `Cho khối lượng từng đồng vị và trung bình → ${f(20)}, ${m('x_1+x_2=')} ${f(6)}`,
+      nd: `Cho khối lượng từng đồng vị và trung bình → lập ${f(24)}`,
       a: ['a', 'b', 'c'], gi: 8, fig: 'canDongVi',
     },
   ];
