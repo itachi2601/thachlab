@@ -127,3 +127,15 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l10-lam-quen-voi-vat-li (lesson 46) · tn-l10-lam-quen-02 · clip lamquen2 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,9 s · 1,16 MB · "Quan sát" hộp exp lộ đáp án ("chỉ chậm hơn sách một chút") — thầy quyết; 0,04 s là số suy từ 2,67 khung : 60
 - l10-thuc-hanh-sai-so (lesson 48) · tn-l10-sai-so-01 · clip saiso1 · đã soát (1 vòng), chèn repo + khung · chờ thầy duyệt · 9/11/2026 · 49,6 s · 1,23 MB · clip không tính Δt (là đáp án Câu 2 sau hộp)
 - l10-an-toan-phong-thuc-hanh · tn-l10-an-toan-03, l10-lam-quen/sai-so/trondeu/huongtam-01,03,04 loại `vi_du` · bỏ qua: không phải thí nghiệm · 9/11/2026 ·
+
+## Chặng B — L11 Ch.1 Dao động, vòng soát mắt 2 (10/11/2026, Opus xem mp4 375 px + kiem-code soát lại): 7/9 clip soạn lại, tải lesson-clips -20261110-2 (HEAD 200), đổi URL tại chỗ + gắn lại khung ở 5 bài; CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB
+
+- l11-tat-dan-cuong-buc · tn-l11-tatdan-01 · clip tatdan1 · soạn lại: nét đứt ngoại suy tới 3,5 Hz trả lời sẵn câu THỬ NGHĨ → nét đứt chỉ 1,0–3,0 Hz · 10/11/2026 · 49,5 s · 1,38 MB
+- l11-tat-dan-cuong-buc · tn-l11-tatdan-02 · clip tatdan2 · ĐẠT, giữ bản -20261109-2 · 10/11/2026
+- l11-tat-dan-cuong-buc · tn-l11-tatdan-03 · clip tatdan3 · soạn lại: bẫy "chỉ nhún khi đi xuống" sai vật lí → nhún cùng/ngược chiều vận tốc · 10/11/2026 · 48,0 s · 1,25 MB
+- l11-dao-dong-dieu-hoa · tn-l11-daodongdieuhoa-01 · clip ddh1 · ĐẠT, giữ bản -20261109-2 · 10/11/2026
+- l11-dao-dong-dieu-hoa · tn-l11-daodongdieuhoa-03 · clip ddh3 · soạn lại: cảnh bẫy dày chữ, phụ đề dễ hiểu sai · 10/11/2026 · 49,5 s · 2,28 MB
+- l11-van-toc-gia-toc · tn-l11-vantocdddh-02 · clip vantocdddh2 · soạn lại: con trỏ che tên trục · đã tải, VẪN CHƯA CHÈN (bài không có hộp exp) · 10/11/2026 · 48,0 s · 1,35 MB
+- l11-bai-tap-dao-dong · tn-l11-baitapdaodong-02 · clip bttdaodong2 · soạn lại: nhãn 6,0 cm/2A đè nét sóng · 10/11/2026 · 49,1 s · 1,26 MB
+- l11-bai-tap-nang-luong-dao-dong · tn-l11-baitapnangluong-02 · clip btnangluong2 · soạn lại: ghế 30° cắt chân khung · 10/11/2026 · 49,1 s · 1,40 MB
+- l11-co-nang-dao-dong · tn-l11-conangdddh-02 · clip conangdddh2 · soạn lại: ghế đè thước, chỉ số dưới nhỏ, bẫy quá gấp · 10/11/2026 · 49,7 s · 1,17 MB
