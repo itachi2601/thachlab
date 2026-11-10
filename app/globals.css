@@ -2938,6 +2938,21 @@ html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-c
 .exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
 .exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
 .exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
+/* Mô phỏng từng bước (CNC Bài 4 cài dao, dùng lại được): radio .tsb-sN chọn bước, .tsb-vN chọn biến thể.
+   Phần tử mang .sb-sN / .sb-vN chỉ hiện khi radio tương ứng đang chọn; phần tử không mang lớp nào thì luôn hiện. Không JS. */
+.exam-content .tl-sim--buoc .sb-txt { margin: 8px 0 0; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s1:checked)) .sb-s1 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s2:checked)) .sb-s2 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s3:checked)) .sb-s3 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s4:checked)) .sb-s4 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s5:checked)) .sb-s5 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s6:checked)) .sb-s6 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s7:checked)) .sb-s7 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-s8:checked)) .sb-s8 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-v1:checked)) .sb-v1 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-v2:checked)) .sb-v2 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-v3:checked)) .sb-v3 { display: none; }
+.exam-content .tl-sim--buoc:not(:has(.tsb-v4:checked)) .sb-v4 { display: none; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }

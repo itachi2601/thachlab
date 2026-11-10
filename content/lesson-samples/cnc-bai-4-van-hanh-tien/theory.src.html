@@ -124,6 +124,8 @@ __FIG2__
 <li>Quay thử mâm cặp tốc độ thấp, kiểm khoảng hở.</li>
 </ul>
 
+__FIG4__
+
 <details class="tl-details">
 <summary>💡 Vì sao mũi dao phải ngang tâm phôi?</summary>
 <p>Cao hơn tâm: góc sau giảm, dao cọ vào phôi. Thấp hơn tâm: vạt mặt còn sót lõi ở tâm. Căn chêm dùng để chỉnh mũi dao về đúng độ cao tâm.</p>
@@ -173,7 +175,7 @@ __FIG2__
 <p><strong>🔑 Dời gốc: M → W · Đo trực tiếp hoặc chạm dao</strong></p>
 
 <ul>
-<li><strong>Cách 1, đo trực tiếp:</strong> kích thước mâm cặp <strong>MA</strong> + khoảng mâm cặp → mặt đầu phôi <strong>AW</strong> (Hình 3), nhập đúng dấu.</li>
+<li><strong>Cách 1, đo trực tiếp:</strong> kích thước mâm cặp <strong>MA</strong> + khoảng mâm cặp → mặt đầu phôi <strong>AW</strong> (Hình 4), nhập đúng dấu.</li>
 <li><strong>Cách 2, chạm dao:</strong> MDI quay phôi → JOG chạm nhẹ mặt đầu → <strong>POS</strong> đọc $Z_{\text{machine}}$ → đổi dấu → nhập Z của <strong>Shift Value</strong>.</li>
 <li>Nhập xong: rút dao về chỗ an toàn, xem lại W ở <strong>Position</strong>.</li>
 </ul>
@@ -196,6 +198,17 @@ __FIG3__
 $$Z_{\text{dao2}} = Z_{\text{machine2}} - Z_{\text{phôi}}$$
 
 $$X_{\text{dao2}} = X_{\text{machine2}} - X_{\text{phôi}}$$
+
+<p>Bấm <strong>Chọn dao</strong> rồi đi lần lượt 6 bước. So số Geometry của hai dao ở bước 3 và 5.</p>
+
+__SIM_DAO__
+
+<details class="tl-details">
+<summary>💡 Cùng chạm một mặt đầu, sao Z của hai dao khác nhau?</summary>
+<p>Hai mũi P nằm ở hai chỗ khác nhau so với chuẩn N (Hình 3), nên lúc chạm cùng mặt đầu, bàn dao đứng ở hai tọa độ máy khác nhau.</p>
+<p>Hiệu số ấy chính là độ dời N → P riêng của từng dao.</p>
+<p>Dao cắt rãnh có hai góc mũi: chạm bằng góc nào thì lập trình theo góc ấy.</p>
+</details>
 
 <details class="tl-details">
 <summary>💡 Vì sao chạm mặt đầu thì nhập Z0?</summary>
