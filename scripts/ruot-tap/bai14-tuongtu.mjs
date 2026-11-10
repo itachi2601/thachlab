@@ -26,7 +26,7 @@ export const ttPages = (n, { m, head, foot, lines }) => {
   ].join('\n');
   const p2 = [
     bai('Dạng 4 · Bài 1', `${m('6{,}0\\ \\mathrm{g}')} cacbon ${m('{}^{12}_{6}\\mathrm{C}')}, ${m('M=12\\ \\mathrm{g/mol}')}, ${m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol}^{-1}')}, ${m('e=1{,}6\\cdot10^{-19}\\ \\mathrm{C}')}: <b>a)</b> số mol · <b>b)</b> số hạt nhân · <b>c)</b> số nơtron · <b>d)</b> tổng điện tích các prôtôn (C).`, 7),
-    bai('Dạng 4 · Bài 2', `${m('2{,}7\\ \\mathrm{g}')} nhôm ${m('{}^{27}_{13}\\mathrm{Al}')}, ${m('M=27\\ \\mathrm{g/mol}')}: <b>a)</b> số mol · <b>b)</b> số hạt nhân · <b>c)</b> số nơtron.`, 5),
+    bai('Dạng 4 · Bài 2', `${m('2{,}7\\ \\mathrm{g}')} nhôm ${m('{}^{27}_{13}\\mathrm{Al}')}, ${m('M=27\\ \\mathrm{g/mol}')}, ${m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol}^{-1}')}: <b>a)</b> số mol · <b>b)</b> số hạt nhân · <b>c)</b> số nơtron.`, 5),
     bai('Dạng 5 · Bài 1', `Clo: ${m('{}^{35}\\mathrm{Cl}')} (${u('34{,}969')}), ${m('{}^{37}\\mathrm{Cl}')} (${u('36{,}966')}), trung bình ${u('35{,}453')}: <b>a)</b> % mỗi đồng vị · <b>b)</b> khối lượng một nguyên tử ${m('{}^{35}\\mathrm{Cl}')} ra kg (${m('1\\ \\mathrm{u}=1{,}6605\\cdot10^{-27}\\ \\mathrm{kg}')}).`, 5),
     bai('Dạng 5 · Bài 2', `Neon: ${m('{}^{20}\\mathrm{Ne}')} (${u('19{,}992')}), ${m('{}^{22}\\mathrm{Ne}')} (${u('21{,}991')}), trung bình ${u('20{,}180')}: <b>a)</b> % mỗi đồng vị · <b>b)</b> trong 500 nguyên tử Ne tự nhiên có khoảng bao nhiêu nguyên tử ${m('{}^{22}\\mathrm{Ne}')}?`, 5),
   ].join('\n');

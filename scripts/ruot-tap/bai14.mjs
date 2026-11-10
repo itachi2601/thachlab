@@ -249,11 +249,11 @@ ${wl('Ghi chú của thầy về đề:', 2)}
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
-<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · vì <span class="fill" style="min-width:20mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A^⅓ m) chiếm bao nhiêu phần thể tích nguyên tử? (kích thước ở Tập 2·3)', 4))}${hinh.kichThuoc()}</div>
+<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · số khối <span class="fill" style="min-width:14mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A^⅓ m) chiếm bao nhiêu phần thể tích nguyên tử? (nguyên tử cỡ 10⁻¹⁰ m)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
 <div class="fig-side" style="grid-template-columns:1fr 36mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
- + wl('Đồng vị neon · Dự đoán:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Chỉ hạt alpha đi sát hạt nhân (chấm đỏ) mới lệch mạnh.')}</div>
+ + wl('Đồng vị neon · Dự đoán:', 1) + wl('Thấy / vì sao 20,18:', 2))}${hinh.anh('rutherford-alpha-qua-la-vang.png', 'Hạt alpha bay qua các nguyên tử vàng; chấm đỏ là hạt nhân.')}</div>
 ${foot(5)}</section>
 
 ${btmPages(6, { m, head, foot, tag, lines, wl, hinh })}
@@ -264,7 +264,7 @@ ${fixPage(11, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4
 <section class="page">
 ${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
 <div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${10 + OFF} (câu ……………) · trang ${11 + OFF} (câu ……………)</div>
-${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(4))}`).join('')}
+${[1, 2, 3, 4, 5].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(3))}`).join('')}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
 ${gioiThieu}
 ${foot(12)}</section>

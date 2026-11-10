@@ -57,7 +57,7 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
   // Ô giải (phân tích đề + giải trong cùng ô): chỉ với dạng có gi > 0
   // Có hình: ô giải bên trái, hình bên phải (46 mm) — hình là gợi ý nhìn trước khi tính, không chiếm thêm chiều cao
   const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${hinh[fig]()}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
-  const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
+  const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự ở các trang sau:</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`;
   const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div><div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ans(d.a)}</div>`;
   return `<section class="page">
 ${head('BÀI TẬP MẪU · DẠNG 1–3')}
