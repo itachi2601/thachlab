@@ -5,7 +5,7 @@
 #   rut_ra: tb = 0,024 s; dt = 0,001 s; delta t ~ 4,17 %; delta d = 0,25 %; v_F = 0,83 +- 0,04 m/s (4,4 %) > 0,597 m/s tren EF.
 # Khac dotocdo3 (4 tam chan rong/hep, d/t voi xe nhanh dan): o day MOT vien bi, can canh do CAO tia so voi tam bi.
 # Du doan: tia lech tam -> d/t lon hay nho hon toc do that (dap an: lon hon). Tien hanh dung tia QUA tam (khong lo).
-# Cau chot: lech 8 mm (bien tren cua tham_so) -> day cung 2*sqrt(10^2 - 8^2) = 12 mm, chua tung hien.
+# Cau chot: lech 7 mm (trong mien tham_so 0-8) -> day cung 2*sqrt(10^2 - 7^2) ~ 14,3 mm, chua tung hien.
 # Canh: Du doan -> Tien hanh (3 lan, chieu cham 40 lan) -> Dap an (lan lech 6 mm + hinh day cung) -> Rut ra
 #       (v_F +- dv, so voi 0,597; chua noi duoc) -> Bay (ban kinh) -> Chot + cau hoi.
 from engine import *
@@ -208,7 +208,9 @@ def s_dapan(img, d, t, sc):
         dot(d, cx, cy, 6, A(INK, kg))
         text(d, (cx - 30, (cy + yb) / 2), "6", 38, INK, alpha=kg)
         text(d, (cx + hx / 2 + 10, (cy + yb) / 2 + 30), "10", 38, INK, alpha=kg)
-        text(d, (cx + hx / 2, yb - 30), "8", 38, ORANGE, alpha=kg)
+        d.line([(cx, yb), (cx + hx, yb)], fill=A((154, 52, 18), kg), width=13)        # nua day cung dam = 8 mm
+        d.line([(cx, yb - 14), (cx, yb + 14)], fill=A((154, 52, 18), kg), width=4)
+        text(d, (cx + hx / 2, yb - 34), "8", 40, (154, 52, 18), alpha=kg)
         k2 = appear(t, M[1] + 0.2, 0.5)
         text(d, (560, 930), "bi che tia trên", 40, INK, bold=False, anchor="lm", alpha=k2)
         text(d, (560, 990), "16 mm", 54, ORANGE, anchor="lm", alpha=k2)
@@ -271,8 +273,8 @@ def s_bay(img, d, t, sc):
     for xx in (cx - R, cx + R): d.line([(xx, cy), (xx, cy + R + 66)], fill=A(GREEN, kk), width=3)
     text(d, (cx, cy + R + 100), "20,0 mm", 46, GREEN, alpha=kk)
     card(d, (90, y0 + 900, 990, y0 + 1240), fill=A((236, 253, 243), kk), r=24)
-    text(d, (W / 2, y0 + 990), "Bi che tia suốt", 54, GREEN, alpha=kk)
-    text(d, (W / 2, y0 + 1090), "cả đường kính", 54, GREEN, alpha=kk)
+    text(d, (W / 2, y0 + 970), "Tia qua tâm: bi che tia", 52, GREEN, alpha=kk)
+    text(d, (W / 2, y0 + 1070), "suốt cả đường kính", 52, GREEN, alpha=kk)
     text(d, (W / 2, y0 + 1180), "d = 20,0 mm = 0,0200 m", 44, NAVY, alpha=kk)
 
 # ---------------- canh 6: Chot + cau hoi ----------------
@@ -281,21 +283,21 @@ def s_end(img, d, t, sc):
     def body(d, t, k):
         kb = appear(t, M[0] + 0.6, 0.5)
         if kb > 0:
-            cx, cy, R = 540, 1090, 110; yb = cy - 8 * R / 10
+            cx, cy, R = 540, 1090, 110; yb = cy - 7 * R / 10
             d.ellipse([cx - R, cy - R, cx + R, cy + R], fill=A((226, 232, 240), kb), outline=A(NAVY, kb), width=4)
             for i in range(16):
                 x0 = cx - 260 + i * 34; d.line([(x0, yb), (x0 + 18, yb)], fill=A(RED, kb), width=4)
             dot(d, cx, cy, 6, A(INK, kb))
             d.line([(cx + R + 40, cy), (cx + R + 40, yb)], fill=A(ORANGE, kb), width=4)
             for yy in (cy, yb): d.line([(cx + R + 28, yy), (cx + R + 52, yy)], fill=A(ORANGE, kb), width=4)
-            text(d, (cx + R + 70, (cy + yb) / 2), "8 mm", 42, ORANGE, anchor="lm", alpha=kb)
+            text(d, (cx + R + 70, (cy + yb) / 2), "7 mm", 42, ORANGE, anchor="lm", alpha=kb)
         kh = appear(t, M[0] + 2.6, 0.5)
         if kh <= 0: return
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1360), "Gợi ý", 40, INK, alpha=kh)
         text(d, (W / 2, 1450), "Bán kính 10,0 mm", 44, ORANGE, alpha=kh)
     chot_hoi(d, t, sc, "Tia phải đi qua tâm bi",
-             "Lệch tâm 8 mm: bi che tia trên bao nhiêu mm?", None, body=body)
+             "Lệch tâm 7 mm: bi che tia trên bao nhiêu mm?", None, body=body)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

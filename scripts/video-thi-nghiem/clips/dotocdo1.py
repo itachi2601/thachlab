@@ -13,8 +13,6 @@ from engine import *
 S_EF, ACC, X_E = 0.500, 0.60, 0.100
 READ = (0.835, 0.838, 0.837)                         # so_lieu_mau
 TBAR = 0.837
-T_MODEL = (math.sqrt(2 * ACC * (X_E + S_EF)) - math.sqrt(2 * ACC * X_E)) / ACC     # 0,8369 s
-TAU_E = math.sqrt(2 * X_E / ACC)                                                   # 0,577 s tu luc tha toi E
 BALL = (71, 85, 105); BALL_HI = (203, 213, 225); RAIL = (196, 200, 212); RAIL_D = (150, 155, 170)
 POST = (71, 85, 105); MAG = (124, 58, 237)
 
@@ -47,6 +45,10 @@ def seq(d, x, y, parts, size, color=INK, alpha=1.0, anchor="m"):
 R0 = (205, 395); ANG = math.radians(12); KPX = 1130.0          # px / m doc mang
 RU = (math.cos(ANG), math.sin(ANG)); RN = (RU[1], -RU[0])     # RN: phap tuyen huong len
 RB = 22                                                         # ban kinh bi (phong to cho de nhin)
+RR = RB / KPX                                                   # ban kinh bi theo m doc mang (ve)
+# Dong ho chay khi MEP TRUOC bi cham tia E, dung khi mep truoc cham tia F (khop luc cham tia bi che).
+TAU_E = math.sqrt(2 * (X_E - RR) / ACC)
+T_MODEL = math.sqrt(2 * (X_E + S_EF - RR) / ACC) - TAU_E
 def RP(s, h=0.0): return (R0[0] + RU[0] * s * KPX + RN[0] * h, R0[1] + RU[1] * s * KPX + RN[1] * h)
 
 def rig(d, ball_s=None, ball_a=1.0, mag_on=True, beam_cut=(False, False), alpha=1.0):
@@ -234,8 +236,8 @@ def s_rutra(img, d, t, sc):
         text(d, (W / 2, y0 + 65), "Chưa nói được", 46, NAVY, alpha=k6)
         kk = k6 * appear(t, M[2] + 0.4, 0.4)
         card(d, (80, y0 + 125, 1000, y0 + 420), fill=A((254, 242, 242), kk), outline=A(RED, kk), r=24, w=4)
-        text(d, (W / 2, y0 + 210), "Trên EF bi lăn đều", 48, RED, alpha=kk)
-        text(d, (W / 2, y0 + 320), "hay nhanh dần?", 48, RED, alpha=kk)
+        text(d, (W / 2, y0 + 210), "Muốn biết tốc độ tại F", 48, RED, alpha=kk)
+        text(d, (W / 2, y0 + 320), "phải đo cách khác", 48, RED, alpha=kk)
 
 # ---------------- canh 5: Bay (MODE A) ----------------
 def s_bay(img, d, t, sc):
@@ -303,8 +305,8 @@ CLIP = dict(id="tn-l10-do-toc-do-01", header="VẬT LÍ 10 · THÍ NGHIỆM", fo
    ("Bi lăn từ E tới F.", 2.6),
    ("Dừng video, chọn câu trả lời.", 5.8)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.5, caps=[
-   ("Bi chắn tia E: đồng hồ chạy.", 4.4),
-   ("Chắn tia F thì dừng. Lặp 3 lần.", 4.9)]),
+   ("Chắn tia E chạy, chắn tia F dừng.", 5.0),
+   ("Lặp lại 3 lần.", 4.3)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.9, caps=[
    ("Ba số trên cùng một trục.", 4.2)]),
  dict(key="rutra", title="Ghi kết quả", draw=s_rutra, tail=0.5, caps=[
