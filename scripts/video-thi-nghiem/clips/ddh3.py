@@ -51,8 +51,8 @@ def light(d, a=1.0):
 def wheel(d, th, a=1.0, cx=CX, cy=CY, r=R, sc=1.0):
     c = lambda col: A(col, a)
     d.ellipse([cx - r - 30 * sc, cy - r - 30 * sc, cx + r + 30 * sc, cy + r + 30 * sc], outline=c(TIRE), width=int(22 * sc))
-    for k in range(12):
-        ang = th + k * math.pi / 6
+    for k in range(8):                                 # 8 nan (12 nan lam mp4 nang ~2,5 MB)
+        ang = th + k * math.pi / 4
         d.line([(cx, cy), (cx + (r + 18 * sc) * math.cos(ang), cy - (r + 18 * sc) * math.sin(ang))], fill=c(GRAY), width=max(2, int(3 * sc)))
     dot(d, cx, cy, 14 * sc, c(NAVY))
     mx, my = mpos(th, cx, cy, r)
@@ -249,12 +249,12 @@ CLIP = dict(id="tn-l11-daodongdieuhoa-03", header="VẬT LÍ 11 · VÍ DỤ", fo
    ("Đèn chiếu song song, bóng in lên màn.", 3.8),
    ("Tự đoán trước khi xem tiếp.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.6, caps=[
-   ("Chấm: vị trí sau những khoảng bằng nhau.", 4.4),
+   ("Chấm cách đều nhau về thời gian.", 4.4),
    ("Dừng ở mỗi giây, đọc li độ bóng.", 4.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
    ("Cùng thời gian, gần đầu đi ít hơn.", 4.2),
    ("Bóng dao động điều hoà.", 4.4)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.8, caps=[
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=1.0, caps=[
    ("Bẫy: nhầm rad/s với vòng/giây.", 4.4),
    ("Kết quả này còn giới hạn.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.4, caps=[
