@@ -21,6 +21,7 @@ IMG = ROOT / 'assets' / 'img'
 BASE_URL = 'https://thachlab.id.vn'
 
 CUR = {'lid': 0}
+BAN = {'n': 0}   # số bản sách đang dựng (sổ khoá); >0 thì QR đáp án mang &b=<bản> — make.py đặt trước khi render
 
 SACH = {}        # hồ sơ cuốn đang dựng (book/sach/<mã>.json) — đổi bằng use(mã)
 CHAPTER = {}     # {'num', 'title', 'sub', 'lessons'} rút từ hồ sơ; front.py giữ tham chiếu nên chỉ cập nhật tại chỗ
@@ -39,7 +40,7 @@ def use(ma):
 
 
 def lesson_url(lid): return f'{BASE_URL}/lop-hoc/bai?id={lid}'
-def answers_url(lid): return f'{BASE_URL}/sach/dap-an/?bai={lid}'
+def answers_url(lid): return f'{BASE_URL}/sach/dap-an/?bai={lid}' + (f'&b={BAN["n"]}' if BAN['n'] else '')
 
 
 def dang_chung(lid, n):
@@ -334,7 +335,7 @@ def conv_h3(h):
     t = h.decode_contents()
     m = re.match(r'\s*([IVX]+)\.\s*(.*)', t, re.S)
     if m:
-        return f'<h3><span class="rn">{m.group(1)}</span><span class="ht">{m.group(2)}</span></h3>', m.group(1)
+        return f'<h3 data-neo="muc:{m.group(1)}"><span class="rn">{m.group(1)}</span><span class="ht">{m.group(2)}</span></h3>', m.group(1)
     return f'<h3><span class="ht">{t}</span></h3>', ''
 
 
@@ -528,7 +529,7 @@ def render_bt(bt, lid, keys, marks=None):
         ana = re.sub(r'<figure class="fig".*?</figure>', '', clean_fig_caption_bt(x['analysis_html']), flags=re.S)
         ana = blank_table(ana)
         ana = re.sub(r'<p>Mỗi câu của đề:.*?</p>', '<p>Mỗi câu của đề cho dữ liệu gì, gọi kiến thức nào? Điền vào hai cột bên phải. Hàng có ⚠ là <b>điều kiện áp dụng</b>.</p>', ana, flags=re.S)
-        out.append(f'''<article class="dang">
+        out.append(f'''<article class="dang" data-neo="dang:{k}">
 <div class="dang-top"><header class="dang-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span><h3>{title}</h3></header>
 <div class="de"><div class="de-l">Đề bài</div>{prob}</div></div>
 <div class="pt"><div class="pt-l">Phân tích đề — em tự điền</div>{timer()}{ana}</div>
@@ -556,13 +557,13 @@ def render_luyen_them(bt, lid, keys, main):
                 prob = txt
             sim = similar_to(x, bt, main)
             rel = f'<span class="lt-rel">tương tự Dạng {sim}</span>' if sim else '<span class="lt-rel">dạng riêng · lời giải trên web</span>'
-            items.append(f'<div class="lt"><div class="lt-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span>{rel}<span class="lt-k">đáp số: bảng cuối sách</span></div>'
+            items.append(f'<div class="lt" data-neo="dang:{k}"><div class="lt-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span>{rel}<span class="lt-k">đáp số: bảng cuối sách</span></div>'
                          f'<div class="lt-t">{title}</div>{prob}</div>')
     for c in keys.challenges:
         items.append(f'<div class="lt lt-ch"><div class="lt-h"><span class="dang-n">THỬ THÁCH</span><span class="lvl">{c["stars"]}</span>'
                      f'<span class="lt-k">đáp số: bảng cuối sách, số <b>{c["n"]}</b></span></div><p>{c["q"]}</p></div>')
     if not items: return ''
-    return bw.to_print(f'<section class="ltsec"><div class="sec-band"><span class="sb-k">LUYỆN THÊM — BÀI TƯƠNG TỰ</span>'
+    return bw.to_print(f'<section class="ltsec" data-neo="luyen-them"><div class="sec-band"><span class="sb-k">LUYỆN THÊM — BÀI TƯƠNG TỰ</span>'
                        f'<span class="sb-t">Làm vào vở · chọn mức ★ vừa sức · đáp số ở bảng cuối sách · lời giải đầy đủ: quét mã QR</span></div>'
                        + ''.join(items) + '</section>')
 
@@ -772,7 +773,7 @@ def build_lesson(lid, start=1, filler=False):
 <div class="theory">{theory}</div>
 </section>'''
     if bt_html:
-        html += f'<section class="btsec"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức · ghi lời giải cùng thầy cô</span></div>{bt_html}</section>'
+        html += f'<section class="btsec" data-neo="bai-tap-mau"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức · ghi lời giải cùng thầy cô</span></div>{bt_html}</section>'
     html += lt_html
     web = (f'<div class="websec"><div class="ws-i"><span class="qr" data-url="{lesson_url(lid)}"></span><div><div class="ws-h">Ở nhà: luyện tập &amp; giải đề</div>'
            '<p>Trắc nghiệm, tự luận ba mức, lời giải chi tiết, theo dõi tiến độ.</p></div></div>'
@@ -819,10 +820,15 @@ def answers_data(lid):
 
 
 def export_web(lid):
-    """Ghi đáp án cho trang /sach/dap-an/?bai=<id> (public/sach-data/dap-an-<id>.json)."""
+    """Ghi đáp án cho trang /sach/dap-an/?bai=<id>&b=<bản>: public/sach-data/dap-an-<id>-b<bản>.json (giữ file
+    bản cũ cho sách đã phát) + dap-an-<id>.json = bản mới nhất (QR sách in trước khi có số bản, không có &b)."""
     data = answers_data(lid)
-    out = REPO / 'public' / 'sach-data' / f'dap-an-{lid}.json'
-    out.parent.mkdir(parents=True, exist_ok=True)
+    d = REPO / 'public' / 'sach-data'
+    d.mkdir(parents=True, exist_ok=True)
+    if BAN['n']:
+        data = {**data, 'ban': BAN['n'], 'sach': SACH['ma']}
+        (d / f'dap-an-{lid}-b{BAN["n"]}.json').write_text(json.dumps(data, ensure_ascii=False))
+    out = d / f'dap-an-{lid}.json'
     out.write_text(json.dumps(data, ensure_ascii=False))
     return out, data
 
@@ -835,6 +841,7 @@ if __name__ == '__main__':
         p, k = build_lesson(int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 1)
         print(p, len(k.items), 'đáp án')
     elif cmd == 'web':
+        BAN['n'] = sach.doc_khoa(SACH['ma']).get('ban', 0)
         for lid in CHAPTER['lessons']:
             print(export_web(lid)[0])
     elif cmd == 'all':

@@ -1,6 +1,6 @@
 # Thiết kế: nâng cấp skill `sach-in-tu-web` thành sách đồng bộ với website
 
-Ngày 10/11/2026 · **chặng A–B đã cài đặt** (hồ sơ sách, lấy nội dung DB, sổ khoá, soát lệch); chặng C–E chưa. Thầy đã chốt: nâng cấp skill cũ (không tạo skill mới) ·
+Ngày 10/11/2026 · **chặng A–C đã cài đặt** (hồ sơ sách, lấy nội dung DB, sổ khoá, soát lệch; số bản trong QR, `trang-<mã>.json`, nhãn "Sách tr. X" ở chế độ trình chiếu); chặng D–E chưa. Thầy đã chốt: nâng cấp skill cũ (không tạo skill mới) ·
 đồng bộ = **nội dung luôn khớp web** + **liên kết hai chiều** · xuất **PDF A4 đen–trắng** + **Word**.
 
 ## 1. Hiện trạng và ba chỗ hở
@@ -119,7 +119,8 @@ ruột tập (đỡ token mỗi lần gọi skill). Mô tả skill giữ ≤ 400
 |---|---|---|
 | A | Hồ sơ sách, bỏ viết cứng trong `build.py`/`front.py`/`make.py` | Dựng lại L10 Ch.2 ra đúng 124 trang, chữ trích từ PDF trùng bản v6 |
 | B | `lay-noi-dung.mts`, cache, sổ khoá, `sach.py lech` | Sửa thử 1 chữ trong cache → báo "chữ"; thêm 1 Dạng → báo "đánh số" |
-| C | Số bản trong QR + `dap-an-<lid>-b<n>.json` + `trang-<mã>.json` + nhãn ở chế độ trình chiếu | QR cũ (không `b`) vẫn mở được; nhãn trang khớp PDF |
+| C | Số bản trong QR + `dap-an-<lid>-b<n>.json` + `trang-<mã>.json` + nhãn ở chế độ trình chiếu | QR cũ (không `b`) vẫn mở được; nhãn trang khớp PDF 
+|  | ↳ **Đã làm 10/11**: số bản tính TRƯỚC khi render (`make.so_ban`); neo đo bằng `data-neo` trên h3 mục La Mã / Dạng / `.btsec` / `.ltsec`, `render.mjs` in `NEO {...}` (bỏ mảnh rỗng Paged.js để lại); `trang-bai.json` gộp mọi cuốn theo lesson id cho trình chiếu (một fetch tĩnh). Kiểm: 113/113 neo khớp tiêu đề trong PDF, 9/9 QR giải mã ra `&b=7`, `/sach/dap-an` đúng với `b=7`, không `b`, `b` không tồn tại (lùi bản mới nhất + báo). | |
 | D | `word.py` + `mau.docx` | Số phương trình OMML khớp; thầy mở trên Word thật |
 | E | Viết lại `SKILL.md`, tách `RUOT-TAP.md`, dòng nhắc trong `cap-nhat-ly-thuyet.sh` | Chạy skill trọn một lượt cho L11 Ch.2 Sóng (cuốn thứ hai) |
 

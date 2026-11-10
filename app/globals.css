@@ -3160,6 +3160,7 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
 .presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
 .presenter-tap span { color: var(--pres-accent); }
+.presenter-tap + .presenter-tap { margin-left: .5em; }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
