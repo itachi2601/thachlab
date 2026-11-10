@@ -3,7 +3,7 @@
 // Nguồn nội dung: bài web lesson 71 (book/cache/71.json: theory + 5 dạng bài tập mẫu). Không dùng ảnh Halliday (toàn bộ hình SVG tự vẽ).
 // Đáp số Bài tương tự tính lại bằng Python (10/11/2026), g = 10 m/s².
 // Chạy: node scripts/ruot-tap/l10-bai26.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl10-bai26.pdf
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, dapSo, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
 import { hinh26 as H } from './hinh-l10-bai26.mjs';
 const K = khoiTao({ bai: 26, lid: 71, ten: 'CƠ NĂNG · BẢO TOÀN CƠ NĂNG', lop: 10, baiDau: 23, sub: 'Vật lí 10 · Chương 4: Năng lượng, công, công suất' });
 const { head, h3, foot } = K;
@@ -171,28 +171,37 @@ const dang = [
     nd: `Có lực cản → không dùng ${m('W_1=W_2')}: ${m('A_\\mathrm{c}=')} ${f(12)} − ${f(12)}, ${nw(`${m('A_\\mathrm{c}')} ${f(12)} 0`)}`, a: ['a', 'b', 'c', 'd'], gi: 8, fig: H.docTruot(''), cot: 2 },
 ];
 
-// ---- Bài tương tự: mỗi dạng 2 bài (2–3 ý), đáp số tính bằng Python. Ý bên trái, dòng kẻ bên phải (mỗi ý đối diện dòng của nó) ----
-const yk = (ys, k) => `<div style="display:grid;grid-template-columns:62mm 1fr;gap:2mm;align-items:start"><div>${ys.map((y, i) => `<div style="line-height:5mm"><b>${'abcd'[i]})</b> ${y}</div>`).join('')}</div><div>${lines(k)}</div></div>`;
-const tt = (t, stem, ys, k, fig, w) => fig ? { t, de: deFig(`${stem}<br>${ys.map((y, i) => `<b>${'abcd'[i]})</b> ${y}`).join('<br>')}`, fig, w), k }
-  : { t, de: stem + yk(ys, k), k: 0 };
+// ---- Bài tương tự = BÀI VỀ NHÀ (thầy chốt 10/11): giải vào vở, mỗi ý một ô đáp số (khung vo + o), đáp số tính bằng Python ----
+const tt = (t, stem, ys, o, fig, w) => {
+  const ds = ys.map((y, i) => `<b>${'abcd'[i]})</b> ${y}`); // có hình: mỗi ý một dòng cạnh hình; không hình: ý nối tiếp đề cho gọn
+  // có hình: ô đáp số nằm trong cột chữ cạnh hình (khỏi tốn một hàng dưới hình)
+  return fig ? { t, de: deFig(`${stem}<br>${ds.join('<br>')}${dapSo(o)}`, fig, w), k: 0 } : { t, de: `${stem} ${ds.map(nw).join(' &nbsp; ')}`, o };
+};
+// vùng nháp cuối trang: một mục không có ô tick, không có ô đáp số
+const nhap = (n) => ({ t: 'Nháp / chỗ em còn vướng', de: `<span class="nhap"></span>${lines(n)}`, k: 0 });
+const N1 = 3, N2 = 6; // số dòng nháp đổ cho kín trang 44–45
+const nhapCss = '<style>.tt:has(.nhap) .hd>span:last-child{display:none}</style>';
 const tuongTu = {
+  vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
-    tt('Dạng 1 · Bài 1', `Bóng ${u('0,50', 'kg')} qua ${m('P')} cao ${u('4,0', 'm')} so với sàn với ${u('4,0', 'm/s')}; trần cao ${u('6,0', 'm')}; ${g10}.`, [`${Wd} tại ${m('P')}`, `${W}, mốc ở sàn`, `${W}, mốc ở trần`], 4),
-    tt('Dạng 1 · Bài 2', `Táo ${u('0,15', 'kg')} rơi qua độ cao ${u('2,0', 'm')} với ${u('6,0', 'm/s')}; cành cao ${u('3,8', 'm')}; ${g10}.`, [`${W}, mốc ở mặt đất`, `${W}, mốc ở cành`], 2),
-    tt('Dạng 2 · Bài 1', `Thả vật từ đỉnh máng nhẵn cao ${u('1,8', 'm')}, không vận tốc đầu; ${g10}.`, [`tốc độ ở chân máng`, `độ cao nơi vật có ${u('5,0', 'm/s')}`], 2, H.mangCong('', { hA: '1,8 m', hM: '' }), 40),
-    tt('Dạng 2 · Bài 2', `Thả rơi bi từ độ cao ${u('7,2', 'm')}, bỏ qua lực cản; ${g10}.`, [`tốc độ khi chạm đất`, `tốc độ ở độ cao ${u('4,0', 'm')}`], 3),
-    tt('Dạng 3 · Bài 1', `Ném thẳng lên từ mặt đất bóng ${u('0,50', 'kg')} với ${u('8,0', 'm/s')}; bỏ qua cản; ${g10}; mốc mặt đất.`, [`cơ năng`, `độ cao nơi ${m('W_\\mathrm{d}=W_\\mathrm{t}')}`, `${Wd} ở độ cao ${u('1,2', 'm')}`], 4),
-    tt('Dạng 3 · Bài 2', `Thả rơi vật ${u('0,20', 'kg')} từ độ cao ${u('15', 'm')}; bỏ qua cản; ${g10}; mốc mặt đất.`, [`độ cao nơi ${m('W_\\mathrm{d}=W_\\mathrm{t}')}`, `tốc độ của vật khi đó`], 3),
+    tt('Dạng 1 · Bài 1', `Bóng ${u('0,50', 'kg')} qua ${m('P')} cao ${u('4,0', 'm')} so với sàn với ${u('4,0', 'm/s')}; trần cao ${u('6,0', 'm')}; ${g10}.`, [`${Wd} tại ${m('P')}`, `${W}, mốc ở sàn`, `${W}, mốc ở trần`], ['a', 'b', 'c']),
+    tt('Dạng 1 · Bài 2', `Táo ${u('0,15', 'kg')} rơi qua độ cao ${u('2,0', 'm')} với ${u('6,0', 'm/s')}; cành cao ${u('3,8', 'm')}; ${g10}.`, [`${W}, mốc ở mặt đất`, `${W}, mốc ở cành`], ['a', 'b']),
+    tt('Dạng 2 · Bài 1', `Thả vật từ đỉnh máng nhẵn cao ${u('1,8', 'm')}, không vận tốc đầu; ${g10}.`, [`tốc độ ở chân máng`, `độ cao nơi vật có ${u('5,0', 'm/s')}`], ['a', 'b'], H.mangCong('', { hA: '1,8 m', hM: '' }), 34),
+    tt('Dạng 2 · Bài 2', `Thả rơi bi từ độ cao ${u('7,2', 'm')}, bỏ qua lực cản; ${g10}.`, [`tốc độ khi chạm đất`, `tốc độ ở độ cao ${u('4,0', 'm')}`], ['a', 'b']),
+    tt('Dạng 3 · Bài 1', `Ném thẳng lên từ mặt đất bóng ${u('0,50', 'kg')} với ${u('8,0', 'm/s')}; bỏ qua cản; ${g10}; mốc mặt đất.`, [`cơ năng`, `độ cao nơi ${m('W_\\mathrm{d}=W_\\mathrm{t}')}`, `${Wd} ở độ cao ${u('1,2', 'm')}`], ['a', 'b', 'c']),
+    tt('Dạng 3 · Bài 2', `Thả rơi vật ${u('0,20', 'kg')} từ độ cao ${u('15', 'm')}; bỏ qua cản; ${g10}; mốc mặt đất.`, [`độ cao nơi ${m('W_\\mathrm{d}=W_\\mathrm{t}')}`, `tốc độ của vật khi đó`], ['a', 'b']),
+    { ...nhap(N1), de: nhapCss + nhap(N1).de },
   ], [
-    tt('Dạng 4 · Bài 1', `Từ ban công cao ${u('5,0', 'm')} ném thẳng đứng lên vật ${u('0,10', 'kg')}; vật lên tới ${u('10', 'm')} so với mặt đất. Bỏ qua cản, ${g10}.`, [`tốc độ lúc ném`, `mốc ở mặt đất: độ cao nơi ${m('W_\\mathrm{d}=4W_\\mathrm{t}')}`, `chọn lại mốc ở ban công: cơ năng và độ cao cực đại so với ban công`], 5, H.sanThuong('', { top: '10 m', base: '5,0 m', ten: 'ban công' }), 40),
-    tt('Dạng 4 · Bài 2', `Từ độ cao ${u('4,0', 'm')} ném thẳng đứng lên hòn sỏi ${u('0,20', 'kg')} với ${u('6,0', 'm/s')}; bỏ qua cản, ${g10}, mốc ở mặt đất.`, [`độ cao cực đại so với mặt đất`, `tốc độ khi chạm đất`], 4),
-    tt('Dạng 5 · Bài 1', `Xe trượt ${u('40', 'kg')} (kể cả người) xuất phát từ nghỉ ở đỉnh dốc cao ${u('8,0', 'm')}, tới chân dốc với ${u('10', 'm/s')}; ${g10}, mốc ở chân dốc.`, [`công của lực cản`, `phần trăm cơ năng bị mất`, `lượt khác qua đỉnh với ${u('3,0', 'm/s')}, công lực cản như cũ: tốc độ ở chân dốc`], 5, H.docTruot('', { h: '8,0 m', v: '10 m/s' }), 40),
-    tt('Dạng 5 · Bài 2', `Thả quả bóng ${u('0,40', 'kg')} từ độ cao ${u('5,0', 'm')}, chạm đất với ${u('9,0', 'm/s')}; ${g10}, mốc ở mặt đất.`, [`công của lực cản không khí`, `phần trăm cơ năng bị mất`], 4),
+    tt('Dạng 4 · Bài 1', `Từ ban công cao ${u('5,0', 'm')} ném thẳng đứng lên vật ${u('0,10', 'kg')}; vật lên tới ${u('10', 'm')} so với mặt đất. Bỏ qua cản, ${g10}.`, [`tốc độ lúc ném`, `mốc ở mặt đất: độ cao nơi ${m('W_\\mathrm{d}=4W_\\mathrm{t}')}`, `chọn lại mốc ở ban công: <b>c<sub>1</sub>)</b> cơ năng; <b>c<sub>2</sub>)</b> độ cao cực đại so với ban công`], ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], H.sanThuong('', { top: '10 m', base: '5,0 m', ten: 'ban công' }), 34),
+    tt('Dạng 4 · Bài 2', `Từ độ cao ${u('4,0', 'm')} ném thẳng đứng lên hòn sỏi ${u('0,20', 'kg')} với ${u('6,0', 'm/s')}; bỏ qua cản, ${g10}, mốc ở mặt đất.`, [`độ cao cực đại so với mặt đất`, `tốc độ khi chạm đất`], ['a', 'b']),
+    tt('Dạng 5 · Bài 1', `Xe trượt ${u('40', 'kg')} (kể cả người) xuất phát từ nghỉ ở đỉnh dốc cao ${u('8,0', 'm')}, tới chân dốc với ${u('10', 'm/s')}; ${g10}, mốc ở chân dốc.`, [`công của lực cản`, `phần trăm cơ năng bị mất`, `lượt khác qua đỉnh với ${u('3,0', 'm/s')}, công lực cản như cũ: tốc độ ở chân dốc`], ['a', 'b', 'c'], H.docTruot('', { h: '8,0 m', v: '10 m/s' }), 34),
+    tt('Dạng 5 · Bài 2', `Thả quả bóng ${u('0,40', 'kg')} từ độ cao ${u('5,0', 'm')}, chạm đất với ${u('9,0', 'm/s')}; ${g10}, mốc ở mặt đất.`, [`công của lực cản không khí`, `phần trăm cơ năng bị mất`], ['a', 'b']),
+    nhap(N2),
   ]],
   dap: [
     `D1·1: a) 4,0 J · b) 24 J · c) −6,0 J &nbsp;|&nbsp; D1·2: a) 5,7 J · b) 0 J &nbsp;|&nbsp; D2·1: a) 6,0 m/s · b) 0,55 m &nbsp;|&nbsp; D2·2: a) 12 m/s · b) 8,0 m/s &nbsp;|&nbsp; D3·1: a) 16 J · b) 1,6 m · c) 10 J &nbsp;|&nbsp; D3·2: a) 7,5 m · b) ≈ 12,2 m/s`,
-    `D4·1: a) 10 m/s · b) 2,0 m · c) 5,0 J; 5,0 m &nbsp;|&nbsp; D4·2: a) 5,8 m · b) ≈ 10,8 m/s &nbsp;|&nbsp; D5·1: a) −1 200 J · b) 37,5 % · c) ≈ 10,4 m/s &nbsp;|&nbsp; D5·2: a) −3,8 J · b) 19 %`,
+    `D4·1: a) 10 m/s · b) 2,0 m · c<sub>1</sub>) 5,0 J · c<sub>2</sub>) 5,0 m &nbsp;|&nbsp; D4·2: a) 5,8 m · b) ≈ 10,8 m/s &nbsp;|&nbsp; D5·1: a) −1 200 J · b) 37,5 % · c) ≈ 10,4 m/s &nbsp;|&nbsp; D5·2: a) −3,8 J · b) 19 %`,
   ],
 };
 
