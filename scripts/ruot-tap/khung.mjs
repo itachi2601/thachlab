@@ -8,6 +8,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { btmCss } from './bai14-btm.mjs';
+import { ttCss } from './bai14-tuongtu.mjs';
 import { hinh as hinh14 } from './hinh.mjs';
 import { hinhCh4 } from './hinh-ch4.mjs';
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -51,8 +52,10 @@ export const chon = (n = 10) => `Em chọn: ${fill(n)} <span class="ck"></span>c
 // số bắt đầu chẵn thì lề gáy đổi bên (class .flip). Nhãn "Tập t·ô" trên giấy dùng số trang tuyệt đối này.
 export const BAI_DAU = 14, TRANG_MOI_BAI = 12;
 export const TRANG_DAU = Number(process.env.BOOK_PAGE_START ?? 1);
-export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vật lí hạt nhân' }) {
-  const off = (bai - BAI_DAU) * TRANG_MOI_BAI + TRANG_DAU - 1;   // + off = số trang trong quyển
+// lop/baiDau cho chương khác (vd L10 Ch.4: lop 10, baiDau 23 → bài 23 = tr.1–12). fig trong btm.dang: khoá của `hinh` hoặc chuỗi SVG/HTML sẵn.
+export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vật lí hạt nhân', lop = 12, baiDau = BAI_DAU }) {
+  const off = (bai - baiDau) * TRANG_MOI_BAI + TRANG_DAU - 1;
+  let TT = false;   // true khi dung() có tuongTu → bố cục bài 14: 8–9 Bài tương tự, 10–11 sửa bài, 12 làm lại + QR   // + off = số trang trong quyển
   const abs = (t) => String(t).replace(/^(\d+)/, (_, a) => Number(a) + off);
   const absAll = (s) => s.replace(/(\d+)(·\d+)/g, (_, a, k) => Number(a) + off + k);
   const LINK = `https://thachlab.id.vn/lop-hoc/bai/?id=${lid}#muc=kiem-tra`;
@@ -65,7 +68,7 @@ export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vậ
   const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
 <b>Xem lại bài ${bai} trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 
-  const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${10 + off})</span></div>${lines(k)}</div>`;
+  const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${(TT ? 12 : 10) + off})</span></div>${lines(k)}</div>`;
   const fixPage = (n, tra, { title, lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
 ${head(title)}
 <div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
@@ -91,9 +94,11 @@ ${wl('Ghi chú của thầy về đề:', 2)}
   const f = (w) => fill(w);
   const ansRow = (labels) => `<div class="ans${labels.length === 3 ? ' c3' : ''}">${labels.map((l) => `<div><b>${l})</b>${f(10)}</div>`).join('')}</div>`;
   const tu = '<span><span class="ck"></span>tự làm &nbsp;<span class="ck"></span>cần gợi ý</span>';
-  const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${hinh[fig]()}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
+  const figOf = (fig) => typeof fig === 'function' ? fig() : hinh[fig] ? hinh[fig]() : fig;
+  const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${figOf(fig)}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
   const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div>${d.bang ?? ''}<div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ansRow(d.a)}</div>`;
-  const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
+  const kq = (ds) => TT ? `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự (tr. ${8 + off}–${9 + off}):</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`
+    : `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
   const btmTrang = (n, btm) => {
     const [a, b] = btm.tach, cuoi = btm.dang.length;
     return `<section class="page">
@@ -156,15 +161,37 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .exp{display:inline-block;width:9mm;height:3.8mm;border:.3mm solid var(--navy);border-radius:.6mm;background:#fff;vertical-align:1.3mm;margin:0 .5mm}
 .trap{display:flex;gap:2mm;align-items:flex-start;margin:1mm 0}
 .tbl-ct td{height:6.5mm}
-${btmCss}`;
+${btmCss}
+${ttCss}`;
 
-  async function dung({ trang1to5, btm, tra, out = resolve(HERE, `out/ruot-tap-vl12-bai${bai}.pdf`), fix2 = {} }) {
-    const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài ${bai}</title>
+  // tuongTu (bố cục bài 14, thầy chốt 10/11): { trang: [[bài…], [bài…]], dap: ['đáp số tr.8', 'đáp số tr.9'], tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'] },
+  // mỗi bài { t: 'Dạng 1 · Bài 1', de: 'đề (đủ hằng số)', k: số dòng kẻ ≈ số ý }; MỖI DẠNG 2 bài, đáp số tính bằng Python, in lật ngược.
+  const ok = '<span><span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai, đã sửa</span>';
+  const ttTrang = (n, tt) => tt.trang.map((ds, i) => `<section class="page">
+${head(`BÀI TƯƠNG TỰ · ${tt.tieuDe[i]}`, i === 0 ? 'Làm tại chỗ, không nhìn trang Bài tập mẫu; xong mới tick và đối chiếu đáp số' : 'Chỗ trống còn lại dùng làm nháp')}
+${ds.map((b) => `<div class="tt"><div class="hd"><span>${b.t}</span>${ok}</div><div class="de">${b.de}</div>${lines(b.k)}</div>`).join('\n')}
+<div class="dap"><b>Đáp số (lật ngược trang để đọc, làm xong mới xem):</b> ${tt.dap[i]}</div>
+${foot(n + i)}</section>`).join('\n');
+  const lamLai = (n, k) => `<section class="page">
+${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
+<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${n - 2 + off} (câu ……………) · trang ${n - 1 + off} (câu ……………)</div>
+${Array.from({ length: k[0] }, (_, i) => `<h3><i>${i + 1}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(k[1]))}`).join('')}
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
+${TT ? gioiThieu : ''}
+${foot(n)}</section>`;
+
+  async function dung({ trang1to5, btm, tra, tuongTu, out = resolve(HERE, `out/ruot-tap-vl${lop}-bai${bai}.pdf`), fix2 = {} }) {
+    TT = !!tuongTu;
+    const sau = TT ? `${ttTrang(8, tuongTu)}
+${fixPage(10, tra, { title: 'SỬA BÀI TRÊN LỚP' })}
+${fixPage(11, tra, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4], ...fix2 })}
+${lamLai(12, [5, 3])}` : null;
+    const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí ${lop} – Bài ${bai}</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
 <style>${css}</style></head><body${TRANG_DAU % 2 === 0 ? ' class="flip"' : ''}>
 ${trang1to5}
 ${btmTrang(6, btm)}
-${fixPage(8, tra, { title: 'SỬA BÀI TRÊN LỚP' })}
+${sau ?? `${fixPage(8, tra, { title: 'SỬA BÀI TRÊN LỚP' })}
 ${fixPage(9, tra, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4], ...fix2 })}
 <section class="page">
 ${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
@@ -175,7 +202,7 @@ ${foot(10)}</section>
 ${[11, 12].map((n) => `<section class="page dots">
 ${head('GHI CHÚ')}
 ${n === 12 ? gioiThieu : ''}
-${foot(n)}</section>`).join('')}
+${foot(n)}</section>`).join('')}`}
 </body></html>`;
     mkdirSync(dirname(out), { recursive: true });
     writeFileSync(out + '.html', html);
