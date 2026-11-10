@@ -40,11 +40,11 @@ const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
 const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
-const g10 = m('g=10\\ \\mathrm{m/s^2}');
+const g10 = nw(m('g=10\\ \\mathrm{m/s^2}'));
 const vF = m('\\vec F'), vd = m('\\vec d'), al = m('\\alpha');
 
 // Bài tương tự xếp 2 cột (khung xếp .tt dọc, 10 bài không vừa 2 trang khi mỗi ý một dòng) — đề xuất đưa vào khung.
-const ttHaiCot = '<style>.page:has(>.tt){display:flex;flex-wrap:wrap;column-gap:2mm;align-content:flex-start}.page:has(>.tt)>*{flex:1 1 100%}.page:has(>.tt)>.tt{flex:0 0 calc(50% - 1mm);min-width:0;display:flex;flex-direction:column}.tt .de{flex:1}</style>';
+const ttHaiCot = '<style>.bt>.gi{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}.page:has(>.tt){display:flex;flex-wrap:wrap;column-gap:2mm;align-content:flex-start}.page:has(>.tt)>*{flex:1 1 100%}.page:has(>.tt)>.tt{flex:0 0 calc(50% - 1mm);min-width:0;display:flex;flex-direction:column}.tt .de{flex:1}</style>';
 const p1 = `${ttHaiCot}<section class="page">
 ${head('BÀI 23 · NĂNG LƯỢNG · CÔNG CƠ HỌC', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
@@ -57,27 +57,28 @@ ${dong(`${ck}Nhận ra khi nào một lực <b>không sinh công</b>`)}
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Theo vật lí, ai đã thực hiện công lên vật mình tác dụng lực?</p>
-<div class="fig-side" style="${fs(50)}"><div>
+<div class="fig-side" style="${fs(48)}"><div>
 ${opt('A', 'Chỉ Minh, vì giữ ba lô lâu và mỏi tay hơn')}
 ${opt('B', 'Chỉ Lan, vì Hà dịch chuyển theo hướng lực')}
 ${opt('C', 'Cả hai như nhau, vì cả hai đều dùng lực tay')}
 ${opt('D', 'Không ai, vì không có vật nào nóng lên')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
-${H.sanBang()}</div>
+${H.sanBang('Minh giữ ba lô 5 phút. Lan đẩy Hà 0,5 m rồi buông; Hà lướt tiếp 3 m.')}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Năng lượng: nhiều dạng, không tự mất', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Năng lượng tồn tại ở nhiều ${f(12)}; ${f(16)} từ dạng này sang dạng khác hoặc ${f(14)} từ vật này sang vật khác.</div>
-<div><b>Bảo toàn:</b> năng lượng không tự ${f(14)}, không tự ${f(14)}.</div>
-<div>Đại lượng ${f(10)} hướng, đơn vị ${f(10)}; ${m('1\\ \\mathrm{cal}=')} ${nw(`${f(12)}&nbsp;J`)}</div>
-<div>Hai nhóm lớn: ${f(12)} năng (do chuyển động) · ${f(12)} năng (do vị trí, trạng thái).</div>
-<div>Tên dạng: dây cung căng ${f(12)} · than đỏ ${f(12)} · dòng điện sạc ${f(12)} · nắng chiếu pin ${f(12)}</div></div>
+<div>Năng lượng tồn tại ở nhiều ${f(25)}; ${f(25)} từ dạng này sang dạng khác hoặc ${f(25)} từ vật này sang vật khác.</div>
+<div><b>Bảo toàn:</b> năng lượng không tự ${f(25)}, không tự ${f(25)}.</div>
+<div>Đại lượng ${f(25)} hướng, đơn vị ${f(12)}; ${nw(`${m('1\\ \\mathrm{cal}=')} ${f(12)}&nbsp;J`)}</div>
+<div>Hai nhóm: ${f(25)} năng (chuyển động) · ${f(25)} năng (vị trí)</div>
+<div><b>Dạng năng lượng chủ yếu:</b> dây cung căng ${f(25)} · than đỏ ${f(25)}</div>
+<div>dòng điện sạc pin ${f(25)} · nắng chiếu vào pin mặt trời ${f(25)}</div></div>
 ${h3(5, 'Thí nghiệm: quả bóng nảy thấp dần', '1·5')}
 <div class="card fig-side" style="${fs(37)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> thả bóng tennis từ cao 1 m xuống sàn gạch, nhìn độ cao mỗi lần nảy.</div>
-<div><b>Rút ra:</b> thế năng ${m('\\leftrightarrow')} ${f(14)} năng; mỗi lần chạm sàn, một phần thành ${f(12)} năng và ${f(12)}.</div>
+<div><b>Rút ra:</b> thế năng ${m('\\leftrightarrow')} ${f(25)} năng; mỗi lần chạm sàn, một phần thành ${f(25)} năng và ${f(25)}.</div>
 ${wl('Bóng nằm yên. Năng lượng lúc thả đi đâu?', 2)}</div>
 ${H.bongNay()}</div>
 ${foot(1)}</section>`;
@@ -86,27 +87,27 @@ const p2 = `<section class="page">
 ${head('CÔNG CƠ HỌC · DẤU CỦA CÔNG · TRỌNG LỰC, MA SÁT')}
 ${h3(1, 'II.2 · Công cơ học', '2·1')}
 <div class="card fig-side" style="${fs(50)};padding:1.2mm 3mm"><div>
-<div>Lực làm vật ${f(16)} thì lực thực hiện công, tức là ${f(14)} năng lượng cho vật.</div>
-<div style="margin:.6mm 0">${m('A=')} ${f(8)} · ${f(8)} · ${f(12)} &nbsp;(vật đi thẳng một chiều: ${m('d=s')})</div>
-<div>${al} là góc giữa ${f(8)} và ${f(8)}. &nbsp;${m('1\\ \\mathrm{J}=1')} ${nw(f(12))}</div>
+<div>Lực làm vật ${f(25)} thì lực thực hiện công, tức là ${f(25)} năng lượng cho vật.</div>
+<div style="margin:.6mm 0">${m('A=')} ${f(12)} · ${f(12)} · ${f(14)} &nbsp;(vật đi thẳng một chiều: ${m('d=s')})</div>
+<div>${al} là góc giữa ${f(12)} và ${f(12)}. &nbsp;${m('1\\ \\mathrm{J}=1')} ${nw(f(12))}</div>
 <div>Chỉ phần lực dọc đường đi, ${f(14)}, mới sinh công.</div></div>
 ${H.phanTichLuc()}</div>
 ${h3(2, 'Dấu của công', '2·2')}
-<div class="fig-side" style="${fs(56)}"><table>
-<tr><th style="width:37mm">Góc ${al}</th><th style="width:16mm">Dấu ${m('A')}</th><th>Tên gọi</th></tr>
+<div class="fig-side" style="${fs(48)}"><table>
+<tr><th style="width:37mm">Góc ${al}</th><th style="width:13mm">Dấu ${m('A')}</th><th>Tên gọi</th></tr>
 <tr><td>${m('0^\\circ\\le\\alpha\\lt 90^\\circ')}</td><td></td><td></td></tr>
 <tr><td>${m('\\alpha=90^\\circ')}</td><td></td><td></td></tr>
 <tr><td>${m('90^\\circ\\lt\\alpha\\le 180^\\circ')}</td><td></td><td></td></tr></table>
 ${H.dauCong()}</div>
 <div style="margin-top:1mm">${vF} cùng hướng ${vd}: ${m('A=')} ${f(14)} &nbsp;·&nbsp; ${vF} ngược hướng ${vd}: ${m('A=')} ${f(14)}</div>
-<div>Chuyển động đều vẫn có dịch chuyển, nên từng lực ${f(16)} sinh công.</div>
+<div>Chuyển động đều vẫn có dịch chuyển, nên từng lực vẫn ${ck}có thể &nbsp;${ck}không thể sinh công <span class="hint">(tick một ô)</span>.</div>
 ${h3(3, 'II.3 · Trọng lực và ma sát trượt', '2·3')}
 <div class="card fig-side" style="${fs(50)};padding:1.2mm 3mm"><div>
 <div>Vật đi xuống, độ cao giảm ${m('h')}: ${m('A_P=')} ${f(14)}</div>
 <div>Vật đi lên, độ cao tăng ${m('h')}: ${m('A_P=')} ${f(14)}</div>
-<div>Vật đi ngang: ${m('A_P=')} ${f(10)}</div>
+<div>Vật đi ngang: ${m('A_P=')} ${f(12)}</div>
 <div>Lên dốc dài ${m('s')}, nghiêng ${m('\\theta')}: ${m('h=')} ${f(14)}</div>
-<div>Ma sát trượt, quãng đường ${m('s')}: ${m('A_{\\mathrm{ms}}=')} ${f(14)} &nbsp;(góc ${al} = ${nw(f(10))}, công luôn ${f(10)})</div></div>
+<div>Ma sát trượt, quãng đường ${m('s')}: ${m('A_{\\mathrm{ms}}=')} ${f(14)} &nbsp;(góc ${nw(`${al} = ${f(12)}`)}, công luôn ${f(25)})</div></div>
 ${H.docTrongLuc()}</div>
 ${h3(4, 'Làm nhanh', '2·4')}
 ${box(cau(`<b>Câu 1.</b> Kéo vali bằng lực 50 N, dây hợp với phương ngang ${m('60^\\circ')}, vali đi thẳng 20 m trên sàn ngang. Công của lực kéo?`, 2)
@@ -125,22 +126,21 @@ ${h3(1, 'Thí nghiệm: đưa xe lên cùng độ cao bằng nhiều đường',
 </div>
 ${H.keoXe()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
-<div>So cột cuối với ${m('Ph=')} ${nw(`${f(10)}&nbsp;J`)}. Lệch nhiều nhất ở ${m('s=')} ${nw(`${f(10)}&nbsp;m`)}; phần dôi ra đi đâu?</div>${lines(1)}
-<div><b>Rút ra:</b> mặt nghiêng lợi về ${f(12)}, thiệt về ${f(14)}, không lợi về ${f(10)}.</div></div>
+<div>So cột cuối với ${nw(`${m('Ph=')} ${f(12)}&nbsp;J`)}. Lệch nhiều nhất ở ${nw(`${m('s=')} ${f(12)}&nbsp;m`)}; phần dôi ra đi đâu?</div>${lines(1)}
+<div><b>Rút ra:</b> mặt nghiêng lợi về ${f(25)}, thiệt về ${f(25)}, không lợi về ${f(25)}.</div></div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
-<div class="card fig-side" style="${fs(34)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Mỏi tay là có công.”</b> Cầm vật đứng yên: ${m('d=0')}. Xách xô đi ngang: lực tay vuông góc đường đi. Cả hai ${m('A=0')}.</span></div>
-<div class="trap">${ck}<span><b>“Lấy quãng đường của người đẩy.”</b> Lấy ${m('s')} của vật nhận lực: đẩy xe tải đứng yên thì ${m('A=0')}.</span></div>
+<div class="card" style="padding:1mm 3mm">
+<div class="trap">${ck}<span><b>“Mỏi tay là có công.”</b> Cầm vật đứng yên (${m('d=0')}), xách xô đi ngang (${m('\\vec F\\perp\\vec d')}): ${m('A=0')}.</span></div>
+<div class="trap">${ck}<span><b>“Lấy ${m('s')} của người đẩy.”</b> Lấy ${m('s')} của vật nhận lực: đẩy xe tải đứng yên thì ${m('A=0')}.</span></div>
 <div class="trap">${ck}<span><b>“${al} là góc dốc.”</b> ${al} là góc giữa ${vF} và ${vd}: kéo song song dốc thì ${m('\\alpha=0^\\circ')}.</span></div></div>
-${H.xachXo()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
-${box(`${tb('1. Kể 5 dạng năng lượng, mỗi dạng một ví dụ.')}${lines(2)}
+${box(`${tb('1. Kể 5 dạng năng lượng, mỗi dạng một ví dụ.')}${lines(3)}
 ${tb('2. Phát biểu định luật bảo toàn năng lượng.')}${lines(1)}
-${tb('3. Công thức công, ý nghĩa từng kí hiệu, đơn vị.')}${lines(2)}
+${tb('3. Công thức công, ý nghĩa từng kí hiệu, đơn vị.')}${lines(3)}
 ${tb('4. Khi nào công dương, âm, bằng 0? Gọi tên.')}${lines(2)}
 ${tb('5. Công của trọng lực và của ma sát trượt tính thế nào?')}${lines(2)}
 ${tb('6. Hai trường hợp mỏi tay mà công bằng 0?')}${lines(1)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(24)} → đọc lại Tập ${f(12)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -148,7 +148,7 @@ ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
 ${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(2, 'V · Bài toán mẫu: kéo ván trượt trên sân băng', '4·2')}
-<div class="card soft" style="padding:1.2mm 3mm">Trên sân băng nằm ngang, Lan kéo ván trượt chở em nhỏ, tổng khối lượng ${m('30\\ \\mathrm{kg}')}, bằng dây chếch lên hợp với phương ngang ${m('30^\\circ')}, lực kéo ${m('40\\ \\mathrm N')}. Ván đi thẳng ${m('15\\ \\mathrm m')}. Hệ số ma sát trượt ${m('0{,}05')}, lấy ${m('g=10\\ \\mathrm{m/s^2}')}.
+<div class="card soft" style="padding:1.2mm 3mm">Trên sân băng nằm ngang, Lan kéo ván trượt chở em nhỏ, tổng khối lượng ${m('30\\ \\mathrm{kg}')}, bằng dây chếch lên hợp với phương ngang ${m('30^\\circ')}, lực kéo ${m('40\\ \\mathrm N')}. Ván đi thẳng ${m('15\\ \\mathrm m')}. Hệ số ma sát trượt ${m('0{,}05')}, lấy ${g10}.
 <div>Tính công của lực kéo, trọng lực, phản lực và lực ma sát.</div></div>
 ${h3(3, 'Phân tích đề')}
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
@@ -170,31 +170,31 @@ const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
 ${K.btvn()}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
-<div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Nâng đều hộp 2 kg lên kệ cao 1,5 m (${g10}). Công của lực nâng?`, 3)
- + wl(`${m('\\bigstar\\bigstar')} Sô-cô-la ghi 200 kcal (1 kcal = 1000 cal): bao nhiêu J? Đủ nâng người 50 kg lên cao bao nhiêu?`, 3)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Vật 2 kg trượt xuống hết dốc dài 4 m nghiêng 30°, ${m('\\mu=0{,}1')}: công của trọng lực, phản lực, ma sát?`, 5))}${H.docTruot()}</div>
+<div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Nâng đều hộp ${nw('2 kg')} lên kệ cao ${nw('1,5 m')} (${g10}). Công của lực nâng?`, 3)
+ + wl(`${m('\\bigstar\\bigstar')} Sô-cô-la ghi ${nw('200 kcal')} (${nw('1 kcal = 1000 cal')}, ${nw('1 cal = 4,18 J')}): bao nhiêu J? Đủ nâng người ${nw('50 kg')} lên cao bao nhiêu?`, 3)
+ + wl(`${m('\\bigstar\\bigstar\\bigstar')} Vật ${nw('2 kg')} trượt xuống hết dốc dài ${nw('4 m')} nghiêng ${nw('30°')}, ${m('\\mu=0{,}1')}: công của trọng lực, phản lực, ma sát?`, 5))}${H.docTruot()}</div>
 ${h3(3, 'Câu đổi chiều (bài toán mẫu)', '5·3')}
-${box(wl('Cùng đề, Lan đẩy ván từ phía sau, lực 40 N chếch <b>xuống</b> 30°. Tính N, F<sub>ms</sub>, công ma sát. Đẩy chếch xuống có lợi không?', 5))}
+${box(wl(`Cùng đề, Lan đẩy ván từ phía sau, lực ${nw('40 N')} chếch <b>xuống</b> ${nw('30°')}. Tính N, F<sub>ms</sub>, công ma sát. Tổng công các lực lên ván lớn hơn hay nhỏ hơn ở bài toán mẫu (${nw('309,6 J')})?`, 5))}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
 ${box(wl('1.', 3) + wl('2.', 3) + wl('3.', 3))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Chuyển hoá và bảo toàn năng lượng',
-    de: `Máy xay sinh tố nhận ${m('300\\ \\mathrm J')} điện năng mỗi giây; lưỡi dao và hoa quả nhận ${m('240\\ \\mathrm J')} động năng mỗi giây, phần còn lại làm nóng động cơ và thành tiếng ồn.<br><b>a)</b> điện năng chuyển thành những dạng nào<br><b>b)</b> phần thành nhiệt và âm mỗi giây<br><b>c)</b> phần đó trong ${m('20\\ \\mathrm s')}<br><b>d)</b> An nói “tắt máy thì phần ấy mất hẳn”: đúng hay sai`,
-    nd: `Năng lượng vào bằng ${f(14)} các phần năng lượng ra; phần nhiệt, âm tản vào ${f(14)}`, a: ['a', 'b', 'c', 'd'], gi: 0 },
+    de: `Mỗi giây, máy xay sinh tố nhận ${m('300\\ \\mathrm J')} điện năng, cho dao và hoa quả ${m('240\\ \\mathrm J')} động năng.<br><b>a)</b> điện năng chuyển thành những dạng nào<br><b>b)</b> phần thành nhiệt và âm mỗi giây<br><b>c)</b> phần đó trong ${m('20\\ \\mathrm s')}<br><b>d)</b> An nói “tắt máy thì phần ấy mất hẳn”: đúng hay sai`,
+    nd: `Năng lượng vào = ${f(25)} các phần ra; nhiệt, âm tản vào ${f(25)}`, a: ['a', 'b', 'c', 'd'], gi: 4, cot: 2 },
   { t: 'Dạng 2 · Dễ · Lực cùng phương với dịch chuyển',
-    de: `Nam đẩy xe siêu thị đi thẳng <b>đều</b> ${m('12\\ \\mathrm m')} trên sàn ngang, lực đẩy ${m('25\\ \\mathrm N')} theo chiều chuyển động; sàn tác dụng lực cản dọc đường đi.<br><b>a)</b> công của lực đẩy<br><b>b)</b> công của lực cản<br><b>c)</b> tổng công của hai lực`,
-    nd: `Đi đều ⇒ hợp lực ${f(8)} ⇒ ${m('F_c=')} ${f(8)}; cùng hướng: ${m('A=+Fs')}, ngược hướng: ${nw(`${m('A=')} ${f(10)}`)}`, a: ['a', 'b', 'c'], gi: 0 },
+    de: `Nam đẩy xe siêu thị đi thẳng <b>đều</b> ${m('12\\ \\mathrm m')} trên sàn ngang, lực ${m('25\\ \\mathrm N')} cùng chiều đi.<br><b>a)</b> công của lực đẩy<br><b>b)</b> công của lực cản của sàn (dọc đường đi)<br><b>c)</b> tổng công của hai lực`,
+    nd: `Đi đều ⇒ hợp lực ${f(12)} ⇒ ${nw(`${m('F_c=')} ${f(12)}`)}; ngược hướng ⇒ ${nw(`${m('A=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Lực xiên góc và dấu của công',
-    de: `Thùng trượt thẳng ${m('8{,}0\\ \\mathrm m')} trên sàn ngang; lực ${m('F=70\\ \\mathrm N')} trong ba tình huống:<br><b>a)</b> ${vF} hợp với hướng chuyển động ${m('60^\\circ')}<br><b>b)</b> ${vF} thẳng đứng, hướng lên<br><b>c)</b> ${vF} hợp với hướng chuyển động ${m('120^\\circ')}<br>Tính công và gọi tên: phát động, cản hay không sinh công.`,
-    nd: `${m('A=Fs\\cos\\alpha')}; dấu của ${f(12)} quyết định loại công; lực thẳng đứng, đường ngang ⇒ ${nw(`${m('\\alpha=')} ${f(8)}`)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.baGoc3() },
+    de: `Thùng trượt ${m('8{,}0\\ \\mathrm m')} trên sàn ngang, lực ${m('F=70\\ \\mathrm N')}. Tính công, gọi tên loại công khi:<br><b>a)</b> ${vF} hợp với hướng chuyển động ${m('60^\\circ')}<br><b>b)</b> ${vF} thẳng đứng, hướng lên<br><b>c)</b> ${vF} hợp với hướng chuyển động ${m('120^\\circ')}`,
+    nd: `dấu của ${f(14)} cho biết loại công; F thẳng đứng, đường ngang ⇒ ${nw(`${m('\\alpha=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.baGoc3('') },
   { t: 'Dạng 4 · Trung bình · Trọng lực lên, xuống dốc và ma sát',
-    de: `Kéo đều thùng ${m('40\\ \\mathrm{kg}')} lên dốc nghiêng ${m('30^\\circ')}, đi ${m('6{,}0\\ \\mathrm m')} dọc dốc; ma sát trượt ${m('40\\ \\mathrm N')}; ${m('g=10\\ \\mathrm{m/s^2}')}.<br><b>a)</b> độ cao nâng lên ${m('h')} và công của trọng lực<br><b>b)</b> công của ma sát lúc kéo lên<br><b>c)</b> thùng trượt xuống đúng ${m('6{,}0\\ \\mathrm m')} về chỗ cũ: công của trọng lực và của ma sát`,
-    nd: `Trọng lực tính theo ${f(10)} (${m('h=s\\sin\\theta')}), dấu theo lên/xuống; ma sát tính theo ${f(10)}, luôn ${f(8)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.docD4() },
+    de: `Kéo đều thùng ${m('40\\ \\mathrm{kg}')} lên dốc nghiêng ${m('30^\\circ')}, đi ${m('6{,}0\\ \\mathrm m')} dọc dốc; ma sát trượt ${m('40\\ \\mathrm N')}; ${g10}.<br><b>a)</b> độ cao nâng lên ${m('h')} và công của trọng lực<br><b>b)</b> công của ma sát lúc kéo lên<br><b>c)</b> thùng trượt xuống đúng ${m('6{,}0\\ \\mathrm m')} về chỗ cũ: công của trọng lực và của ma sát`,
+    nd: `${m('A_P')} theo ${f(25)}, dấu theo lên/xuống; ${m('A_{\\mathrm{ms}}')} theo ${f(25)}, luôn ${ck}âm ${ck}dương`, a: ['a', 'b', 'c'], gi: 5, fig: H.docD4(''), cot: 2 },
   { t: 'Dạng 5 · Khó · Nhiều lực: tìm N, lực ma sát rồi công từng lực',
-    de: `Kéo thùng ${m('25\\ \\mathrm{kg}')} trên nền ngang bằng dây chếch lên ${m('30^\\circ')}, lực ${m('100\\ \\mathrm N')}; thùng đi thẳng ${m('12\\ \\mathrm m')}; hệ số ma sát trượt ${m('0{,}20')}; ${m('g=10\\ \\mathrm{m/s^2}')}.<br><b>a)</b> công của lực kéo<br><b>b)</b> công của trọng lực và phản lực<br><b>c)</b> công của lực ma sát<br><b>d)</b> tổng công`,
-    nd: `Lực kéo chếch lên nâng bớt thùng: ${m('N=P-')} ${f(14)}, không lấy ${m('N=mg')}; ${nw(m('F_{\\mathrm{ms}}=\\mu N'))}`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.thungKeo() },
+    de: `Kéo thùng ${m('25\\ \\mathrm{kg}')} trên nền ngang bằng dây chếch lên ${m('30^\\circ')}, lực ${m('100\\ \\mathrm N')}; thùng đi thẳng ${m('12\\ \\mathrm m')}; hệ số ma sát trượt ${m('0{,}20')}; ${g10}.<br><b>a)</b> công của lực kéo<br><b>b)</b> công của trọng lực và phản lực<br><b>c)</b> công của lực ma sát<br><b>d)</b> tổng công`,
+    nd: `Dây chếch lên nâng bớt thùng: ${m('N=P-')} ${f(14)} (không phải ${m('mg')}); ${nw(m('F_{\\mathrm{ms}}=\\mu N'))}`, a: ['a', 'b', 'c', 'd'], gi: 8, fig: H.thungKeo(), cot: 2 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python (python3, math.cos/sin theo radian), làm tròn 3 chữ số có nghĩa.
@@ -210,7 +210,7 @@ const tuongTu = {
     { t: 'Dạng 3 · Bài 2', de: `Kéo xe trượt tuyết đi ${m('25\\ \\mathrm m')} trên mặt ngang bằng dây hợp với phương ngang ${m('45^\\circ')}, lực ${m('60\\ \\mathrm N')}.<br><b>a)</b> công lực kéo<br><b>b)</b> công nếu dây nằm ngang<br><b>c)</b> dây hợp góc bao nhiêu thì công còn ${m('750\\ \\mathrm J')}`, k: 3 },
   ], [
     { t: 'Dạng 4 · Bài 1', de: de(`Vật ${m('5{,}0\\ \\mathrm{kg}')} trượt xuống hết dốc dài ${m('8{,}0\\ \\mathrm m')} nghiêng ${m('30^\\circ')}; ma sát trượt ${m('6{,}0\\ \\mathrm N')}; ${g10}.<br><b>a)</b> độ cao ${m('h')} của dốc<br><b>b)</b> công của trọng lực<br><b>c)</b> công của lực ma sát`, H.docTT('Trượt xuống: dấu của từng công?'), 48), k: 5 },
-    { t: 'Dạng 4 · Bài 2', de: `Kéo đều thùng ${m('20\\ \\mathrm{kg}')} lên hết dốc dài ${m('10\\ \\mathrm m')}, đỉnh dốc cao ${m('2{,}0\\ \\mathrm m')}; ma sát trượt ${m('30\\ \\mathrm N')}; ${g10}.<br><b>a)</b> công của trọng lực khi lên<br><b>b)</b> công của ma sát khi lên<br><b>c)</b> thùng trượt xuống về chỗ cũ (ma sát vẫn ${m('30\\ \\mathrm N')}): công của trọng lực, của ma sát<br><b>d)</b> tổng công trọng lực cả đi lẫn về`, k: 7 },
+    { t: 'Dạng 4 · Bài 2', de: `Kéo đều thùng ${m('20\\ \\mathrm{kg}')} lên hết dốc dài ${m('10\\ \\mathrm m')}, đỉnh dốc cao ${m('2{,}0\\ \\mathrm m')}; ma sát trượt ${m('30\\ \\mathrm N')}; ${g10}.<br><b>a)</b> công của trọng lực khi lên<br><b>b)</b> công của ma sát khi lên<br><b>c)</b> thùng trượt xuống về chỗ cũ (ma sát vẫn ${nw(`${m('30\\ \\mathrm N')}):`)} công của trọng lực, của ma sát<br><b>d)</b> tổng công trọng lực cả đi lẫn về`, k: 7 },
     { t: 'Dạng 5 · Bài 1', de: `Kéo thùng ${m('20\\ \\mathrm{kg}')} trên nền ngang bằng dây chếch lên ${m('30^\\circ')}, lực ${m('80\\ \\mathrm N')}; thùng đi ${m('10\\ \\mathrm m')}; ${m('\\mu=0{,}25')}; ${g10}.<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực kéo<br><b>c)</b> công của ${m('P')}, ${m('N')}, ma sát<br><b>d)</b> tổng công`, k: 8 },
     { t: 'Dạng 5 · Bài 2', de: `Đẩy xe ${m('30\\ \\mathrm{kg}')} trên nền ngang từ phía sau, lực ${m('100\\ \\mathrm N')} chếch <b>xuống</b> ${m('30^\\circ')} so với phương ngang; xe đi ${m('8{,}0\\ \\mathrm m')}; ${m('\\mu=0{,}10')}; ${g10}.<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực đẩy<br><b>c)</b> công lực ma sát<br><b>d)</b> tổng công`, k: 8 },
   ]],
@@ -224,6 +224,6 @@ await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]], khoNhat: false },
   tuongTu,
-  tra: 'năng lượng 1·4 · bóng nảy 2·1 · công 2·2 · dấu của công 2·3 · trọng lực, ma sát 3·1 · mặt nghiêng 3·2 · bẫy 3·3 · bài toán mẫu 5·1 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
+  tra: 'năng lượng 1·4 · bóng nảy 1·5 · công 2·1 · dấu của công 2·2 · trọng lực, ma sát 2·3 · mặt nghiêng 3·1 · bẫy 3·2 · bài toán mẫu 4·2 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
   out: process.argv[2],
 });
