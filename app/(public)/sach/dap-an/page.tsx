@@ -11,6 +11,10 @@ import ContentHtml from "@/components/exams/ContentHtml";
  * Đáp án & gợi ý đi kèm SÁCH IN (book/): quét mã QR cuối bài trong sách → /sach/dap-an/?bai=<lesson id>.
  * Dữ liệu là file tĩnh public/sach-data/dap-an-<id>.json do `book/build.py` sinh ra (cùng số thứ tự
  * với các ô "đáp án số n" in trong sách). Trang công khai, không cần đăng nhập, không gọi Supabase.
+ *
+ * Số bản sách (`&b=<bản>`, có từ bản 7 — 11/2026): sách dựng lại mà số ô điền/câu/Dạng đổi thì tăng bản; file
+ * `dap-an-<id>-b<bản>.json` của bản cũ được giữ nên sách đã phát vẫn khớp số. QR in trước đó không có `b` →
+ * đọc `dap-an-<id>.json` (bản mới nhất). Thiết kế: docs/THIET-KE-SKILL-SACH-DONG-BO.md mục 2.4.
  */
 
 type KeyItem = {
@@ -28,6 +32,8 @@ type Formula = { n: number; tex: string; display: boolean };
 type Worked = { n: number; label: string; title: string; solution: string };
 type Answers = {
   lessonId: number;
+  /** Số bản sách (thiếu ở dữ liệu trước bản 7). */
+  ban?: number;
   title: string;
   chapter: string;
   formulas: Formula[];
@@ -55,23 +61,29 @@ function Section({ title, hint, children }: { title: string; hint?: string; chil
   );
 }
 
-function AnswersView({ id }: { id: string }) {
+function getJson(url: string): Promise<Answers> {
+  return fetch(url).then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))));
+}
+
+function AnswersView({ id, ban }: { id: string; ban: string }) {
   const [data, setData] = useState<Answers | null>(null);
   const [failedId, setFailedId] = useState<string | null>(null);
   const validId = /^\d+$/.test(id);
+  const wantBan = /^\d+$/.test(ban) ? Number(ban) : null;
   const failed = !validId || failedId === id;
 
   useEffect(() => {
     if (!validId) return;
     let alive = true;
-    fetch(`/sach-data/dap-an-${id}.json`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
-      .then((d: Answers) => alive && setData(d))
+    // Có số bản → đúng file của bản đó; không còn file bản đó thì lùi về bản mới nhất (báo ở đầu trang).
+    const latest = () => getJson(`/sach-data/dap-an-${id}.json`);
+    (wantBan != null ? getJson(`/sach-data/dap-an-${id}-b${wantBan}.json`).catch(latest) : latest())
+      .then((d) => alive && setData(d))
       .catch(() => alive && setFailedId(id));
     return () => {
       alive = false;
     };
-  }, [id, validId]);
+  }, [id, validId, wantBan]);
 
   if (failed) {
     return (
@@ -95,8 +107,14 @@ function AnswersView({ id }: { id: string }) {
       <h1 className="mt-1 font-display text-3xl font-bold text-ink sm:text-4xl">{data.title}</h1>
       <p className="mt-3 text-muted">
         Đáp án & gợi ý cho các ô trống và câu hỏi in trong sách. Làm xong trên giấy rồi hãy mở. Số thứ tự trùng với số in
-        trong sách.
+        trong sách{data.ban ? ` (sách bản ${data.ban})` : ""}.
       </p>
+      {wantBan != null && data.ban != null && data.ban !== wantBan && (
+        <p className="mt-3 rounded-xl border border-line bg-panel p-4 text-sm text-ink">
+          Sách của em là bản {wantBan}, trang này đang hiện đáp án bản {data.ban}. Nếu số thứ tự không khớp với số in trong
+          sách, hỏi thầy cô bản đáp án đúng.
+        </p>
+      )}
       <Link
         href={`/lop-hoc/bai?id=${data.lessonId}`}
         className="mt-4 inline-block rounded-lg border border-line-strong px-4 py-2 text-sm text-ink hover:bg-surface-2"
@@ -176,8 +194,8 @@ function AnswersView({ id }: { id: string }) {
 }
 
 function Inner() {
-  const id = useSearchParams().get("bai") ?? "";
-  return <AnswersView id={id} />;
+  const sp = useSearchParams();
+  return <AnswersView id={sp.get("bai") ?? ""} ban={sp.get("b") ?? ""} />;
 }
 
 export default function BookAnswersPage() {

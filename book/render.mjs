@@ -16,6 +16,15 @@ const err = await page.evaluate('window.__bookError || null');
 if (err) { console.log('LỖI:', err); }
 const pages = await page.evaluate('document.querySelectorAll(".pagedjs_page").length');
 console.log('PAGES', pages);
+// Neo: trang (tính trong PDF này, từ 1) đầu tiên chứa mỗi phần tử [data-neo] — mục La Mã, Dạng, Bài tập mẫu, Luyện thêm.
+const neo = await page.evaluate(() => {
+  const o = {};
+  document.querySelectorAll('.pagedjs_page').forEach((pg, i) =>
+    pg.querySelectorAll('[data-neo]').forEach(el => {   // bỏ mảnh rỗng Paged.js để lại khi tách khối sang trang sau
+      if (!(el.dataset.neo in o) && (el.innerText || '').trim()) o[el.dataset.neo] = i + 1; }));
+  return o;
+});
+console.log('NEO', JSON.stringify(neo));
 const diag = await page.evaluate(() => {
   const out = { katexErr: document.querySelectorAll('.katex-error').length, overflow: [], dollars: 0 };
   document.querySelectorAll('.pagedjs_page').forEach((pg, i) => {

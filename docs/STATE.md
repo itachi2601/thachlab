@@ -37,7 +37,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Casio: mini-test WP-01 lặp bài luyện, kiểm `suggestedAnswer` markdown trên trang HS.
 - Sự cố 23/10 (CF chậm, Disk IO): chưa xác nhận lớp thật; 30/10 đo lại CPU + mean_ms `rank_my_status` (mốc 80 % / 272 ms).
 - Lint 0 lỗi: thầy thử `/lop-hoc` trên điện thoại; bật CI gate eslint/tsc (P0 #4).
-- Sách in Ch.2 L10 v6: chờ thầy chỉnh `book/src/dang-chung.json`, `tiet.json`.
+- Sách in Ch.2 L10: bản 7 (134 trang, dựng từ DB 10/11) chờ thầy xem + chỉnh `book/sach/l10-ch2-dong-hoc.json` (Dạng chung, vạch tiết); `public/sach-data` bản 7 CHƯA commit/deploy; chặng C–E theo `docs/THIET-KE-SKILL-SACH-DONG-BO.md` chưa làm.
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
@@ -63,7 +63,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
-- **L10 Bài 6 Thực hành đo tốc độ (lesson 51) soạn lại 10/11**: lý thuyết + bài tập mẫu 4 dạng + quiz 20 câu, thầy duyệt, **đã ghi DB 10/11 08:25** (lý thuyết item 287, mục bài tập mẫu mới id 456, quiz exam 1352; đề quiz cũ 1227 còn nguyên chờ thầy dọn) — **CHƯA deploy** — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`.
+- **L10 Bài 6 Thực hành đo tốc độ (lesson 51) soạn lại 10/11**: lý thuyết + bài tập mẫu 4 dạng + quiz 20 câu, thầy duyệt, **đã ghi DB 10/11 08:25** (lý thuyết item 287, mục bài tập mẫu mới id 456, quiz exam 1352; đề quiz cũ 1227 còn nguyên chờ thầy dọn), đã deploy 08:50 và xem trên web; còn 4 điểm chờ thầy quyết — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.

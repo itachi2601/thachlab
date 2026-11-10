@@ -6,6 +6,7 @@
 #   hien_tuong_hay_sai[0]: "luc manh la cong huong" -> canh Bay (cung mo-to, chi doi f: 2,7 -> 6,0 cm).
 # Doan ngay sau hop trong bai: cau tu kiem "Dinh o 2,0 Hz; chenh 1,8 cm vuot nguong 0,4 cm" -> clip KHONG tinh hieu
 #   dinh / nguong 0,4 cm, khong nhan manh "1,5 va 2,5 Hz bang nhau" (phuong an C), khong noi tan so vat (phuong an D).
+# Soat 10/11 (xem mp4): net dut cu ve toi 3,5 Hz (~1,9 cm) -> tra loi san cau chot; cat ve 1,0-3,0 Hz.
 # Cau chot: f = 3,5 Hz (tham_so max, chua tung hien): A lon hon hay nho hon 2,7 cm? (dung: nho hon, ~1,9 cm khong hien).
 # Canh: Du doan (K10: chi cau hoi) -> Tien hanh (quet 5 tan so, cham len do thi) -> Dap an + Rut ra + Chua noi duoc
 #       -> Bay -> Chot + cau hoi.
@@ -92,9 +93,10 @@ def s_hook(img, d, t, sc):
     M = sc["M"]
     rig(d, 0.0, 0.0, "? Hz")
     kf = appear(t, 0.6, 0.4)
-    card(d, (650, 570, 1010, 690), fill=A((236, 253, 243), kf), outline=A(GREEN, kf), r=20, w=4)
+    # soat 10/11: o f0 cung mau trung tinh nhu o tan so luc (khong to xanh lam noi bat 2,0 Hz luc Du doan)
+    card(d, (650, 570, 1010, 690), fill=A(WHITE, kf), outline=A(NAVY, kf), r=20, w=4)
     text(d, (830, 604), "tần số riêng", 40, MUTED, alpha=kf)
-    rich(d, 830, 656, "f_{0} = 2,0 Hz", 46, GREEN, alpha=kf)
+    rich(d, 830, 656, "f_{0} = 2,0 Hz", 46, NAVY, alpha=kf)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 860 + (1 - a) * 40
@@ -138,7 +140,7 @@ def s_do(img, d, t, sc):
 def curve(d, k, ar=AR, b=B, col=ORANGE, w=5, dash=True):
     n = 90; pts = []
     for j in range(int(n * k) + 1):
-        f = 0.5 + 3.0 * j / n
+        f = 1.0 + 2.0 * j / n          # soat 10/11: chi trong mien so lieu 1,0-3,0 Hz (khong ve san A o 3,5 Hz)
         pts.append((gx(f), gy(ar * b / math.sqrt((f - F0) ** 2 + b * b))))
     if len(pts) < 2: return
     if dash:
@@ -216,7 +218,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (110, 1260, 970, 1460), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1310), "Gợi ý", 40, INK, alpha=kh)
-        text(d, (W / 2, 1395), "Nhìn lại đồ thị vừa quét", 44, ORANGE, alpha=kh)
+        rich(d, W / 2, 1395, "3,0 hay 3,5 Hz xa f_{0} hơn?", 44, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

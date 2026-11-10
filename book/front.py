@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Phần đầu sách (8 trang) + trang cuối: bìa, lời ngỏ, ký hiệu, cách đọc hình, mục lục, bản đồ chương,
-mở chương, trang nháp; và các trang đệm.
+"""Phần đầu sách (5 trang: bìa, cách dùng, mục lục, cách đọc hình, bản đồ chương) + phần cuối (tổng kết, tự đánh giá,
+bảng đáp án). Chữ riêng của từng cuốn lấy từ hồ sơ book/sach/<mã>.json (build.SACH), không viết cứng ở đây.
    python3 front.py <pages.json>   → src/front.html, src/back.html
 pages.json: {"49": {"start": 9, "n": 36}, ...}  (từ make.py)
 """
@@ -27,39 +27,69 @@ def toc_rows(pages):
     return ''.join(rows)
 
 
+SO_CHU = ['', 'Một', 'Hai', 'Ba', 'Bốn', 'Năm', 'Sáu', 'Bảy', 'Tám', 'Chín', 'Mười', 'Mười một', 'Mười hai',
+          'Mười ba', 'Mười bốn', 'Mười lăm', 'Mười sáu']
+
+
+def so_chu(n):
+    return SO_CHU[n] if 0 < n < len(SO_CHU) else str(n)
+
+
+def ten_ga(name, width=14, rows=3):
+    """Tên ga mặc định khi hồ sơ không đặt: ngắt tên bài thành ≤ 3 dòng ngắn."""
+    out, cur = [], ''
+    for w in name.split():
+        if cur and len(cur) + 1 + len(w) > width: out.append(cur); cur = w
+        else: cur = f'{cur} {w}'.strip()
+    out.append(cur)
+    if len(out) > rows: out = out[:rows - 1] + [' '.join(out[rows - 1:])[:width + 2].rstrip() + '…']
+    return '\n'.join(out)
+
+
 def metro(pages):
-    """Bản đồ chương kiểu sơ đồ tàu điện: 9 ga, ga thực hành là hình vuông."""
-    names = {49: 'Độ dịch chuyển\n& quãng đường', 50: 'Tốc độ\n& vận tốc', 51: 'Thực hành\nđo tốc độ',
-             52: 'Đồ thị\nđộ dịch chuyển\n– thời gian', 53: 'Chuyển động\nbiến đổi\n& gia tốc',
-             54: 'Thẳng biến\nđổi đều', 55: 'Rơi\ntự do', 56: 'Thực hành\nđo g', 57: 'Chuyển động\nném'}
-    W, H = 174, 150
+    """Bản đồ chương kiểu sơ đồ tàu điện: mỗi bài một ga, 4 ga một hàng, đi kiểu chữ chi; ga thực hành là hình vuông."""
+    lessons = CHAPTER['lessons']; n = len(lessons)
+    names = {int(k): v for k, v in ((build.SACH.get('ban_do_chuong') or {}).get('ga') or {}).items()}
     xs = [18, 60, 102, 144]
-    pts = [(xs[0], 14), (xs[1], 14), (xs[2], 14), (xs[3], 14),
-           (xs[3], 78), (xs[2], 78), (xs[1], 78), (xs[0], 78),
-           (xs[0], 132)]
-    path = f'M{xs[0]} 14 L166 14 L166 78 L{xs[0]} 78 L{xs[0]} 132'
+    nrow = (n + 3) // 4
+    ys = [14, 78] + [132 + 54 * i for i in range(max(0, nrow - 2))]
+    pts = []
+    for i in range(n):
+        r, c = divmod(i, 4)
+        pts.append((xs[c] if r % 2 == 0 else xs[3 - c], ys[r]))
+    last_alone = n % 4 == 1 and n > 1
+    W, H = 174, ys[nrow - 1] + (18 if last_alone else 30)
+    d = [f'M{xs[0]} {ys[0]}']
+    for r in range(nrow):
+        last = r == nrow - 1
+        if last: d.append(f'L{pts[-1][0]} {ys[r]}')
+        else:
+            edge = 166 if r % 2 == 0 else xs[0]
+            d.append(f'L{edge} {ys[r]} L{edge} {ys[r + 1]}')
+    path = ' '.join(d)
     s = [f'<svg viewBox="0 0 {W} {H}" class="metro">',
          f'<path d="{path}" fill="none" stroke="#0d0d0d" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>',
          f'<path d="{path}" fill="none" stroke="#fff" stroke-width="0.7" stroke-dasharray="2 3" stroke-linejoin="round"/>']
-    for idx, ((x, y), lid) in enumerate(zip(pts, CHAPTER['lessons'])):
+    for idx, ((x, y), lid) in enumerate(zip(pts, lessons)):
         L = load_lesson(lid); prac = 'Thực hành' in L['name']
         if prac:
             s.append(f'<rect x="{x-4.6}" y="{y-4.6}" width="9.2" height="9.2" fill="#fff" stroke="#0d0d0d" stroke-width="1.5"/>')
         else:
             s.append(f'<circle cx="{x}" cy="{y}" r="5" fill="#0d0d0d"/>')
         s.append(f'<text x="{x}" y="{y+1.9}" text-anchor="middle" font-size="5.2" font-weight="800" fill="{"#0d0d0d" if prac else "#fff"}" font-family="Bricolage Grotesque">{L["num"]}</text>')
-        lines = names[lid].split('\n')
+        lines = (names.get(lid) or ten_ga(L['name'])).split('\n')
         st = pages.get(str(lid), {}).get('start', '')
         rows = [(ln, 700 if k == 0 else 500, '#0d0d0d', 4.2) for k, ln in enumerate(lines)] + [(f'tr. {st}', 700, '#6a6a6a', 3.7)]
-        if idx == 8:                      # ga cuối: nhãn bên phải
+        if last_alone and idx == n - 1:   # ga cuối đứng một mình: nhãn bên phải
             anchor, tx, ty0 = 'start', x + 9, y - 2
         elif y < 40:                      # hàng 1: nhãn dưới ga
             anchor, tx, ty0 = 'middle', x, y + 11
-        else:                             # hàng 2: nhãn trên ga
+        else:                             # các hàng sau: nhãn trên ga
             anchor, tx, ty0 = 'middle', x, y - 9 - (len(rows) - 1) * 5
         for k, (txt, w, col, fs) in enumerate(rows):
             s.append(f'<text x="{tx}" y="{ty0 + k*5}" text-anchor="{anchor}" font-size="{fs}" font-weight="{w}" fill="{col}">{txt}</text>')
-    s.append('<text x="60" y="134" font-size="4.2" font-weight="700" fill="#0d0d0d">■ ga thực hành   ● ga lý thuyết + bài tập</text>')
+    lx, ly = (60, ys[nrow - 1] + 2) if last_alone else (xs[0], H - 4)
+    s.append(f'<text x="{lx}" y="{ly}" font-size="4.2" font-weight="700" fill="#0d0d0d">■ ga thực hành   ● ga lý thuyết + bài tập</text>')
     s.append('</svg>')
     return ''.join(s)
 
@@ -93,7 +123,7 @@ def toc_full(pages, toc):
            row('', 'Cách dùng sách — tự điền trước, rồi chữa', 2),
            row('', 'Cách đọc hình (nét thay màu)', 4),
            row('', 'Bản đồ chương', 5),
-           '<li class="t-grp">Chín bài</li>']
+           f'<li class="t-grp">{so_chu(len(CHAPTER["lessons"]))} bài</li>']
     for lid in CHAPTER['lessons']:
         L = load_lesson(lid); st = pages.get(str(lid), {}).get('start', '')
         sp = sec.get(lid, {})
@@ -103,8 +133,8 @@ def toc_full(pages, toc):
         practical = 'Thực hành' in L['name']
         out.append(row(f'{L["num"]:02d}', L['name'], st, ' · '.join(parts), 'prac' if practical else ''))
     out.append('<li class="t-grp">Phần cuối</li>')
-    out.append(row('', 'Tổng kết chương — mang về sau 9 bài', back.get('sum', '')))
-    out.append(row('', 'Tự đánh giá', back.get('self', '')))
+    out.append(row('', f'Tổng kết chương — mang về sau {len(CHAPTER["lessons"])} bài', back.get('sum', '')))
+    if build.SACH.get('tu_danh_gia'): out.append(row('', 'Tự đánh giá', back.get('self', '')))
     out.append(row('', 'Bảng đáp án — chỉ đáp án, không phân tích', back.get('ak', '')))
     out.append('</ol>')
     return ''.join(out)
@@ -113,18 +143,21 @@ def toc_full(pages, toc):
 def build_front(pages, toc=None):
     toc = toc or {}
     total = sum(p['n'] for p in pages.values()) if pages else 0
-    html = head_html('Vật lí 10 — Chương 2 · Động học (bản thử)', 1)
+    S = build.SACH; bia = S.get('bia') or {}; bd = S.get('ban_do_chuong') or {}
+    lop, so, ten = S['lop'], CHAPTER['num'], CHAPTER['title']
+    nums = [load_lesson(l)['num'] for l in CHAPTER['lessons']]
+    html = head_html(f'Vật lí {lop} — Chương {so} · {ten}', 1)
     mp = metro(pages)
     # 1 — bìa
     html += f'''<section class="cover">
   <div class="cv-art">{strobe_inline('strobe-big-ink.svg')}</div>
-  <div class="cv-top"><span>VẬT LÍ 10</span><span>SỔ TAY TỰ HỌC</span></div>
-  <div class="cv-num">02</div>
-  <h1 class="cv-title">ĐỘNG<br>HỌC</h1>
-  <p class="cv-sub">Mô tả chuyển động của mọi vật — từ chiếc xe buýt tới quả bóng bay trên sân.</p>
+  <div class="cv-top"><span>VẬT LÍ {lop}</span><span>{bia.get('nhan', 'SỔ TAY TỰ HỌC')}</span></div>
+  <div class="cv-num">{so:02d}</div>
+  <h1 class="cv-title">{bia.get('tieu_de') or ten.upper()}</h1>
+  <p class="cv-sub">{bia.get('phu_de') or CHAPTER['sub']}</p>
   <div class="cv-foot"><div class="cv-rules"><span>VIẾT TAY</span><span>TỰ GIẢI</span><span>ĐỐI CHIẾU</span></div>
   <div class="cv-brand"><b>THẠCH LAB</b><span>thachlab.id.vn</span></div></div>
-  <div class="cv-tag">BẢN THỬ · CHƯƠNG 2</div>
+  <div class="cv-tag">{bia.get('the') or f'CHƯƠNG {so}'}</div>
 </section>'''
     # 2 — cách học + ký hiệu
     html += '''<section class="plain p-learn">
@@ -147,7 +180,7 @@ def build_front(pages, toc=None):
 </section>'''
     # 3 — mục lục (một trang riêng)
     html += f'''<section class="plain p-toc">
-  <h2 class="pg-h"><span class="pg-k">MỤC LỤC</span>Chương 2 · Động học</h2>
+  <h2 class="pg-h"><span class="pg-k">MỤC LỤC</span>Chương {so} · {ten}</h2>
   {toc_full(pages, toc)}
 </section>'''
     # 4 — cách đọc hình
@@ -157,17 +190,13 @@ def build_front(pages, toc=None):
   <p class="lead">Trên web mỗi đại lượng một màu; trong sách mỗi đại lượng một kiểu nét. Gặp hình khó đọc, quét mã QR đầu bài để xem bản màu và mô phỏng.</p>
 </section>'''
     # 5 — bản đồ chương
-    html += f'''<section class="plain p-map">
-  <h2 class="pg-h"><span class="pg-k">BẢN ĐỒ CHƯƠNG</span>Chín ga trên tuyến “Động học”</h2>
-  <p class="lead">Bài này dựng trên bài trước. Đi lần lượt từ ga 4 đến ga 12 — nếu lạc, quay lại ga liền trước.</p>
+    nhom = ''.join(f'<div><b>{a}</b> {b}</div>' for a, b in bd.get('nhom') or [])
+    html += f"""<section class="plain p-map">
+  <h2 class="pg-h"><span class="pg-k">BẢN ĐỒ CHƯƠNG</span>{so_chu(len(nums))} ga trên tuyến “{ten}”</h2>
+  <p class="lead">Bài này dựng trên bài trước. Đi lần lượt từ ga {nums[0]} đến ga {nums[-1]} — nếu lạc, quay lại ga liền trước.</p>
   <div class="metro-wrap">{mp}</div>
-  <div class="map-list">
-    <div><b>Bài 4–5</b> Mô tả vị trí và cách đo nhanh chậm</div>
-    <div><b>Bài 6–7</b> Tự đo, tự vẽ đồ thị chuyển động</div>
-    <div><b>Bài 8–10</b> Khi vận tốc thay đổi: gia tốc</div>
-    <div><b>Bài 11–12</b> Đo g, rồi ghép hai chuyển động: ném</div>
-  </div>
-  <div class="dl-lab">Mục tiêu của em cho chương này (viết ngắn, cụ thể):</div>''' + build.dl(3) + '</section>'
+  {f'<div class="map-list">{nhom}</div>' if nhom else ''}
+  <div class="dl-lab">Mục tiêu của em cho chương này (viết ngắn, cụ thể):</div>""" + build.dl(3) + '</section>'
     html += '</body></html>'
     out = SRC / 'front.html'; out.write_text(html); return out
 
@@ -197,27 +226,24 @@ def answer_table(answers):
 
 
 def build_back(pages, takeaways, answers=None, start=1):
-    html = head_html('Tổng kết chương 2', start)
+    html = head_html(f'Tổng kết chương {CHAPTER["num"]}', start)
     # tổng kết chương
     rows = ''.join(f'<div class="sum-b"><div class="sum-n">{n:02d}</div><div class="sum-c"><h4>{t}</h4>{h}</div></div>' for n, t, h in takeaways)
     html += f'''<section class="plain p-sum">
-  <h2 class="pg-h"><span class="pg-k">TỔNG KẾT CHƯƠNG</span>Mang về sau chương “Động học”</h2>
+  <h2 class="pg-h"><span class="pg-k">TỔNG KẾT CHƯƠNG</span>Mang về sau chương “{CHAPTER['title']}”</h2>
   <div class="sum-grid">{rows}</div>
 </section>'''
-    html += '''<section class="plain p-self">
+    tdg = build.SACH.get('tu_danh_gia') or []
+    if tdg:
+        cb = '<td><span class="cb"></span></td>' * 3
+        trs = ''.join(f'<tr><td>{t}</td>{cb}<td>{b}</td></tr>' for t, b in tdg)
+        html += f"""<section class="plain p-self">
   <h2 class="pg-h"><span class="pg-k">TỰ ĐÁNH GIÁ</span>Em làm được gì sau chương này?</h2>
   <p class="lead">Tô đậm ô thích hợp. Chỗ nào chưa chắc, ghi số bài ở bên phải để quay lại ôn.</p>
   <table class="tbl selfeval"><thead><tr><th>Em có thể…</th><th>Chắc</th><th>Tạm</th><th>Chưa</th><th>Ôn ở bài</th></tr></thead><tbody>
-  <tr><td>Phân biệt độ dịch chuyển và quãng đường, tính được cả hai</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>4</td></tr>
-  <tr><td>Phân biệt tốc độ và vận tốc, tính tốc độ trung bình</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>4, 5</td></tr>
-  <tr><td>Đo tốc độ bằng cổng quang và tính sai số</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>6</td></tr>
-  <tr><td>Đọc và vẽ đồ thị độ dịch chuyển – thời gian; tính vận tốc từ độ dốc</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>7</td></tr>
-  <tr><td>Tính gia tốc; nhận ra nhanh dần, chậm dần</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>8</td></tr>
-  <tr><td>Dùng công thức chuyển động thẳng biến đổi đều và đồ thị v–t</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>9</td></tr>
-  <tr><td>Giải bài rơi tự do (thời gian rơi, vận tốc chạm đất)</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>10, 11</td></tr>
-  <tr><td>Phân tích chuyển động ném thành hai chuyển động độc lập</td><td><span class="cb"></span></td><td><span class="cb"></span></td><td><span class="cb"></span></td><td>12</td></tr>
+  {trs}
   </tbody></table>
-  <div class="dl-lab">Điều em còn băn khoăn sau chương này:</div>''' + build.dl(5) + '</section>'
+  <div class="dl-lab">Điều em còn băn khoăn sau chương này:</div>""" + build.dl(5) + '</section>'
     if answers:
         html += f'''<section class="plain p-ak">
   <h2 class="pg-h"><span class="pg-k">BẢNG ĐÁP ÁN</span>Đối chiếu nhanh — chỉ đáp án, không phân tích</h2>

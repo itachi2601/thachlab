@@ -50,7 +50,7 @@
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
 - [Giải cùng hình + một dạng một hình](project_thachlab_giai_cung_hinh.md) — 46 bài chờ duyệt/đăng
-- [Sách in Chương 2](project_thachlab_sach_in_chuong2.md) — skill sach-in-tu-web; treo
+- [Sách in đồng bộ web](project_thachlab_sach_in_chuong2.md) — hồ sơ sách + soát lệch xong; treo chặng C–E, bản 7 chờ xem
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — thí điểm 20 câu chờ thầy
 - [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — treo deploy 8 điểm UI
