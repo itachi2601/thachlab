@@ -351,12 +351,12 @@
      "answer": true
     },
     {
-     "text": "Đeo liều kế cá nhân giúp làm giảm liều mà kỹ thuật viên nhận được.",
-     "answer": false
-    },
-    {
      "text": "Tấm chắn chì dùng để chặn tia gamma phát ra từ nguồn.",
      "answer": true
+    },
+    {
+     "text": "Đeo liều kế cá nhân giúp làm giảm liều mà kỹ thuật viên nhận được.",
+     "answer": false
     },
     {
      "text": "Rút ngắn thời gian ở gần nguồn không ảnh hưởng đến liều nhận được.",
@@ -366,8 +366,8 @@
    "explanation": "Ba nguyên tắc: giảm thời gian, tăng khoảng cách, che chắn đủ tốt. Liều kế chỉ ghi nhận liều để so với giới hạn, không làm giảm liều; liều tỉ lệ thuận với thời gian.",
    "distractorNotes": {
     "0": "Đứng xa nguồn khi vận hành chính là tăng khoảng cách, làm suất liều giảm theo $1/r^2$, nên phát biểu đúng.",
-    "1": "Liều kế chỉ đo và ghi nhận liều để so với giới hạn, không chặn hay làm yếu tia nên không giảm liều.",
-    "2": "Theo bài, chì là vật liệu chắn tia gamma và tia X, nên đây đúng là vai trò của tấm chắn.",
+    "1": "Theo bài, chì là vật liệu chắn tia gamma và tia X, nên đây đúng là vai trò của tấm chắn.",
+    "2": "Liều kế chỉ đo và ghi nhận liều để so với giới hạn, không chặn hay làm yếu tia nên không giảm liều.",
     "3": "Liều tỉ lệ thuận với thời gian phơi nhiễm, nên rút ngắn thời gian chắc chắn làm giảm liều."
    }
   },
@@ -382,28 +382,28 @@
    "question": "Một bệnh viện có chất thải chứa đồng vị phóng xạ chu kì bán rã ngắn (găng tay, giấy lau), còn một nhà máy điện hạt nhân có thanh nhiên liệu đã dùng là chất thải mức cao. Xét các phát biểu về xử lí chất thải phóng xạ:",
    "statements": [
     {
-     "text": "Chất thải được phân loại theo mức phóng xạ và chu kì bán rã.",
+     "text": "Chất thải chứa đồng vị chu kì ngắn có thể lưu giữ chờ phân rã rồi thải theo quy định.",
      "answer": true
     },
     {
-     "text": "Chất thải chứa đồng vị chu kì ngắn có thể lưu giữ chờ phân rã rồi thải theo quy định.",
+     "text": "Quy trình xử lí là cách li trước, sau đó mới giảm thể tích và cố định.",
+     "answer": false
+    },
+    {
+     "text": "Chất thải được phân loại theo mức phóng xạ và chu kì bán rã.",
      "answer": true
     },
     {
      "text": "Chất thải mức cao có thể pha loãng với nước rồi xả ra sông.",
      "answer": false
-    },
-    {
-     "text": "Quy trình xử lí là cách li trước, sau đó mới giảm thể tích và cố định.",
-     "answer": false
     }
    ],
    "explanation": "Ba bước theo thứ tự: giảm thể tích → cố định → cách li. Đồng vị chu kì ngắn lưu chờ phân rã; đồng vị chu kì dài phải cách li lâu dài, không pha loãng rồi xả ra môi trường.",
    "distractorNotes": {
-    "0": "Bài nêu rõ chất thải được phân loại theo mức phóng xạ và chu kì bán rã, nên phát biểu đúng.",
-    "1": "Đồng vị chu kì ngắn sau khoảng 10 chu kì còn dưới 0,1%, nên lưu giữ chờ phân rã là đúng quy trình.",
-    "2": "Pha loãng không làm mất chất phóng xạ; nó vẫn vào nước rồi tích tụ theo chuỗi thức ăn.",
-    "3": "Đảo thứ tự: phải giảm thể tích, cố định trong khối bền rồi mới đem cách li."
+    "0": "Đồng vị chu kì ngắn sau khoảng 10 chu kì còn dưới 0,1%, nên lưu giữ chờ phân rã là đúng quy trình.",
+    "1": "Đảo thứ tự: phải giảm thể tích, cố định trong khối bền rồi mới đem cách li.",
+    "2": "Bài nêu rõ chất thải được phân loại theo mức phóng xạ và chu kì bán rã, nên phát biểu đúng.",
+    "3": "Pha loãng không làm mất chất phóng xạ; nó vẫn vào nước rồi tích tụ theo chuỗi thức ăn."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Một học sinh lập bảng so sánh liều hấp thụ $D$ và liều tương đương $H$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Liều hấp thụ là năng lượng mô hấp thụ trên mỗi kilôgam, đơn vị Gy.",
-     "answer": true
-    },
-    {
      "text": "Gy và Sv là hai tên gọi của cùng một đại lượng.",
      "answer": false
     },
     {
-     "text": "Liều tương đương đo mức nguy hiểm sinh học, đơn vị Sv.",
+     "text": "Liều hấp thụ phụ thuộc vào hệ số chất lượng $w_R$ của loại tia.",
+     "answer": false
+    },
+    {
+     "text": "Liều hấp thụ là năng lượng mô hấp thụ trên mỗi kilôgam, đơn vị Gy.",
      "answer": true
     },
     {
-     "text": "Liều hấp thụ phụ thuộc vào hệ số chất lượng $w_R$ của loại tia.",
-     "answer": false
+     "text": "Liều tương đương đo mức nguy hiểm sinh học, đơn vị Sv.",
+     "answer": true
     }
    ],
    "explanation": "Gy đo năng lượng mô hấp thụ, không phân biệt loại tia; Sv đo mức nguy hiểm, $H = w_R D$ mới phụ thuộc loại tia.",
    "distractorNotes": {
-    "0": "Đây đúng định nghĩa $D = E/m$ với $1\\ \\text{Gy} = 1\\ \\text{J/kg}$, nên không thể coi là sai.",
-    "1": "Gy đo năng lượng hấp thụ, Sv đo nguy cơ sinh học; hai con số chỉ trùng nhau khi $w_R = 1$.",
-    "2": "Liều tương đương $H = w_R D$ quy mức gây hại về tia X, đơn vị Sv, nên phát biểu đúng.",
-    "3": "Nhầm $D$ với $H$: $w_R$ chỉ xuất hiện trong liều tương đương, còn liều hấp thụ không phân biệt loại tia."
+    "0": "Gy đo năng lượng hấp thụ, Sv đo nguy cơ sinh học; hai con số chỉ trùng nhau khi $w_R = 1$.",
+    "1": "Nhầm $D$ với $H$: $w_R$ chỉ xuất hiện trong liều tương đương, còn liều hấp thụ không phân biệt loại tia.",
+    "2": "Đây đúng định nghĩa $D = E/m$ với $1\\ \\text{Gy} = 1\\ \\text{J/kg}$, nên không thể coi là sai.",
+    "3": "Liều tương đương $H = w_R D$ quy mức gây hại về tia X, đơn vị Sv, nên phát biểu đúng."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": true
     },
     {
+     "text": "Tia gamma có hệ số chất lượng $w_R = 20$.",
+     "answer": false
+    },
+    {
      "text": "Liều tương đương của mẫu chiếu alpha gấp 20 lần mẫu chiếu gamma.",
      "answer": true
     },
     {
      "text": "Liều tương đương của mẫu chiếu alpha bằng $D$ chia cho 20.",
      "answer": false
-    },
-    {
-     "text": "Tia gamma có hệ số chất lượng $w_R = 20$.",
-     "answer": false
     }
    ],
    "explanation": "Alpha có $w_R = 20$, gamma có $w_R = 1$; theo $H = w_R D$ thì cùng $D$, mẫu chiếu alpha có $H$ gấp 20 lần.",
    "distractorNotes": {
     "0": "Đề cho hai mẫu nhận cùng liều hấp thụ $D$, nên giá trị tính theo Gy bằng nhau.",
-    "1": "Tỉ số liều tương đương bằng tỉ số hệ số chất lượng $20/1$, nên đúng là gấp 20 lần.",
-    "2": "Đảo công thức: phải nhân $D$ với $w_R = 20$, không phải chia.",
-    "3": "Gán nhầm hệ số của alpha cho gamma; gamma, tia X và beta có $w_R = 1$."
+    "1": "Gán nhầm hệ số của alpha cho gamma; gamma, tia X và beta có $w_R = 1$.",
+    "2": "Tỉ số liều tương đương bằng tỉ số hệ số chất lượng $20/1$, nên đúng là gấp 20 lần.",
+    "3": "Đảo công thức: phải nhân $D$ với $w_R = 20$, không phải chia."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một kỹ thuật viên đứng ở vị trí cố định gần nguồn phóng xạ; máy đo tại đó hiển thị suất liều $\\dot H$ theo µSv/h. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Suất liều là liều nhận được trong một đơn vị thời gian.",
+     "text": "Liều nhận được bằng suất liều nhân với thời gian phơi nhiễm.",
      "answer": true
     },
     {
-     "text": "Liều nhận được bằng suất liều nhân với thời gian phơi nhiễm.",
-     "answer": true
+     "text": "Giữ nguyên chỗ đứng, giảm thời gian một nửa thì liều giảm 4 lần.",
+     "answer": false
     },
     {
      "text": "Có thể nhân trực tiếp thời gian tính bằng phút với suất liều theo µSv/h để ra liều theo µSv.",
      "answer": false
     },
     {
-     "text": "Giữ nguyên chỗ đứng, giảm thời gian một nửa thì liều giảm 4 lần.",
-     "answer": false
+     "text": "Suất liều là liều nhận được trong một đơn vị thời gian.",
+     "answer": true
     }
    ],
    "explanation": "Liều = suất liều × thời gian; suất liều theo µSv/h thì thời gian phải đổi ra giờ. Liều tỉ lệ bậc nhất với thời gian nên giảm nửa thời gian thì liều giảm một nửa.",
    "distractorNotes": {
-    "0": "Bài định nghĩa suất liều là liều trong một đơn vị thời gian, đo bằng µSv/h, nên phát biểu đúng.",
-    "1": "Quan hệ liều = suất liều × thời gian được nêu trong bài, nên không thể coi là sai.",
+    "0": "Quan hệ liều = suất liều × thời gian được nêu trong bài, nên không thể coi là sai.",
+    "1": "Áp nhầm bình phương cho thời gian; liều tỉ lệ bậc nhất với thời gian nên chỉ giảm một nửa.",
     "2": "Quên đổi đơn vị: suất liều tính theo giờ nên phải đổi phút ra giờ trước khi nhân.",
-    "3": "Áp nhầm bình phương cho thời gian; liều tỉ lệ bậc nhất với thời gian nên chỉ giảm một nửa."
+    "3": "Bài định nghĩa suất liều là liều trong một đơn vị thời gian, đo bằng µSv/h, nên phát biểu đúng."
    }
   }
  ]

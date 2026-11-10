@@ -186,8 +186,8 @@
    "question": "Nối máy phát tín hiệu xoay chiều với hai đèn LED mắc song song, ngược chiều nhau, qua một điện trở bảo vệ. Chỉnh tần số $f=1$ Hz rồi tăng dần lên 50 Hz.",
    "statements": [
     {
-     "text": "Ở 1 Hz, hai LED chớp luân phiên vì dòng điện đổi chiều.",
-     "answer": true
+     "text": "Ở 50 Hz, dòng điện qua mạch không còn đổi chiều nên hai LED sáng liên tục.",
+     "answer": false
     },
     {
      "text": "Trong mỗi chu kì, dòng điện xoay chiều chỉ đổi chiều 1 lần.",
@@ -198,16 +198,16 @@
      "answer": true
     },
     {
-     "text": "Ở 50 Hz, dòng điện qua mạch không còn đổi chiều nên hai LED sáng liên tục.",
-     "answer": false
+     "text": "Ở 1 Hz, hai LED chớp luân phiên vì dòng điện đổi chiều.",
+     "answer": true
     }
    ],
    "explanation": "Mỗi chu kì mỗi LED sáng một lần, tức dòng đổi chiều 2 lần mỗi chu kì. Ở 50 Hz dòng vẫn đổi chiều 100 lần/s, chỉ là mắt không phân biệt được nên thấy đèn sáng đều.",
    "distractorNotes": {
-    "0": "Mỗi LED mắc ngược chiều chỉ sáng khi dòng đi theo chiều thuận của nó, nên chớp luân phiên chứng tỏ dòng có đổi chiều.",
+    "0": "Tăng tần số không làm dòng ngừng đổi chiều; ở 50 Hz dòng vẫn đổi chiều 100 lần/s, chỉ là mắt không phân biệt được.",
     "1": "Mỗi LED sáng một lần mỗi chu kì và hai LED sáng luân phiên, chứng tỏ dòng đổi chiều 2 lần mỗi chu kì.",
     "2": "Ở 50 Hz dòng đổi chiều 100 lần/s, quá nhanh so với mắt nên hai LED mới trông như sáng liên tục.",
-    "3": "Tăng tần số không làm dòng ngừng đổi chiều; ở 50 Hz dòng vẫn đổi chiều 100 lần/s, chỉ là mắt không phân biệt được."
+    "3": "Mỗi LED mắc ngược chiều chỉ sáng khi dòng đi theo chiều thuận của nó, nên chớp luân phiên chứng tỏ dòng có đổi chiều."
    }
   },
   {
@@ -221,28 +221,28 @@
    "question": "Lần lượt nối cùng một bóng đèn sợi đốt 12 V vào nguồn một chiều 12 V, rồi vào nguồn xoay chiều 12 V. Quan sát thấy độ sáng của đèn hai lần như nhau.",
    "statements": [
     {
-     "text": "Con số 12 V của nguồn xoay chiều là giá trị hiệu dụng.",
-     "answer": true
-    },
-    {
-     "text": "Đèn sáng như nhau vì hai nguồn toả nhiệt lượng bằng nhau trên đèn trong cùng thời gian.",
-     "answer": true
-    },
-    {
      "text": "Điện áp cực đại của nguồn xoay chiều cũng bằng 12 V.",
      "answer": false
     },
     {
+     "text": "Con số 12 V của nguồn xoay chiều là giá trị hiệu dụng.",
+     "answer": true
+    },
+    {
      "text": "Điện áp tức thời của nguồn xoay chiều luôn bằng 12 V.",
      "answer": false
+    },
+    {
+     "text": "Đèn sáng như nhau vì hai nguồn toả nhiệt lượng bằng nhau trên đèn trong cùng thời gian.",
+     "answer": true
     }
    ],
    "explanation": "12 V xoay chiều là giá trị hiệu dụng, toả nhiệt bằng 12 V một chiều. Đỉnh của nó là $12\\sqrt{2}$ V, còn điện áp tức thời thì biến thiên liên tục và đảo dấu.",
    "distractorNotes": {
-    "0": "Số ghi trên nguồn xoay chiều là giá trị hiệu dụng, nên đèn mới toả nhiệt bằng khi dùng 12 V một chiều.",
-    "1": "Độ sáng đèn sợi đốt phản ánh nhiệt toả ra; sáng như nhau chính là nội dung định nghĩa giá trị hiệu dụng.",
-    "2": "Đỉnh bằng giá trị hiệu dụng nhân $\\sqrt{2}$, tức khoảng 17 V, nên không thể bằng 12 V.",
-    "3": "Điện áp tức thời biến thiên theo hàm cos, có lúc bằng 0 và đảo dấu, không giữ cố định ở 12 V."
+    "0": "Đỉnh bằng giá trị hiệu dụng nhân $\\sqrt{2}$, tức khoảng 17 V, nên không thể bằng 12 V.",
+    "1": "Số ghi trên nguồn xoay chiều là giá trị hiệu dụng, nên đèn mới toả nhiệt bằng khi dùng 12 V một chiều.",
+    "2": "Điện áp tức thời biến thiên theo hàm cos, có lúc bằng 0 và đảo dấu, không giữ cố định ở 12 V.",
+    "3": "Độ sáng đèn sợi đốt phản ánh nhiệt toả ra; sáng như nhau chính là nội dung định nghĩa giá trị hiệu dụng."
    }
   },
   {
@@ -256,8 +256,8 @@
    "question": "Một khung dây quay đều quanh trục vuông góc với từ trường đều $\\vec{B}$. Từ thông qua khung là $\\Phi$ và suất điện động cảm ứng là $e$.",
    "statements": [
     {
-     "text": "Khi từ thông qua khung đạt cực đại thì $e=0$.",
-     "answer": true
+     "text": "Suất điện động $e$ sớm pha $\\dfrac{\\pi}{2}$ so với từ thông $\\Phi$.",
+     "answer": false
     },
     {
      "text": "Suất điện động $e$ tỉ lệ với độ lớn của từ thông $\\Phi$ tại cùng thời điểm.",
@@ -268,16 +268,16 @@
      "answer": true
     },
     {
-     "text": "Suất điện động $e$ sớm pha $\\dfrac{\\pi}{2}$ so với từ thông $\\Phi$.",
-     "answer": false
+     "text": "Khi từ thông qua khung đạt cực đại thì $e=0$.",
+     "answer": true
     }
    ],
    "explanation": "$e=-\\Phi'$ nên $e$ tỉ lệ với tốc độ biến thiên của $\\Phi$, không tỉ lệ với bản thân $\\Phi$. Hai đại lượng vuông pha, trong đó $e$ chậm pha $\\dfrac{\\pi}{2}$ so với $\\Phi$.",
    "distractorNotes": {
-    "0": "Khi $\\Phi$ cực đại, đồ thị $\\Phi$ nằm ngang và độ dốc bằng 0; vì $e=-\\Phi'$ nên $e=0$.",
+    "0": "Đổi $\\sin x=\\cos\\left(x-\\dfrac{\\pi}{2}\\right)$ cho pha của $e$ là $\\varphi-\\dfrac{\\pi}{2}$, tức $e$ chậm pha chứ không sớm pha.",
     "1": "$e$ tỉ lệ với tốc độ biến thiên của $\\Phi$, nên đúng lúc $\\Phi$ lớn nhất thì $e$ lại bằng 0.",
     "2": "Mặt khung song song $\\vec{B}$ ứng với $\\alpha=90^\\circ$: $\\cos\\alpha=0$ nên $\\Phi=0$, còn $\\sin\\alpha=1$ nên $e$ cực đại.",
-    "3": "Đổi $\\sin x=\\cos\\left(x-\\dfrac{\\pi}{2}\\right)$ cho pha của $e$ là $\\varphi-\\dfrac{\\pi}{2}$, tức $e$ chậm pha chứ không sớm pha."
+    "3": "Khi $\\Phi$ cực đại, đồ thị $\\Phi$ nằm ngang và độ dốc bằng 0; vì $e=-\\Phi'$ nên $e=0$."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": true
     },
     {
+     "text": "Số chỉ của ampe kế xoay chiều là giá trị cực đại $I_0$ của dòng điện.",
+     "answer": false
+    },
+    {
      "text": "Giá trị trung bình của $i$ trong một chu kì bằng 0.",
      "answer": true
     },
     {
      "text": "Công suất toả nhiệt trên $R$ tính bằng $P=I_0^2R$.",
      "answer": false
-    },
-    {
-     "text": "Số chỉ của ampe kế xoay chiều là giá trị cực đại $I_0$ của dòng điện.",
-     "answer": false
     }
    ],
    "explanation": "Theo bẫy 1, công suất và nhiệt tính theo giá trị hiệu dụng: $P=I^2R=\\dfrac{I_0^2R}{2}$. Ampe kế xoay chiều chỉ giá trị hiệu dụng, không phải giá trị cực đại.",
    "distractorNotes": {
     "0": "Định nghĩa theo nhiệt, kết hợp trung bình của $\\cos^2$ bằng $\\dfrac{1}{2}$, cho đúng $I=\\dfrac{I_0}{\\sqrt{2}}$.",
-    "1": "Phần dương và phần âm của hàm cos đối xứng trong một chu kì nên trung bình của $i$ triệt tiêu.",
-    "2": "Dùng nhầm $I_0$ thay cho $I$; công suất trung bình là $I^2R=\\dfrac{I_0^2R}{2}$, chỉ bằng một nửa.",
-    "3": "Ampe kế xoay chiều chỉ giá trị hiệu dụng $I=\\dfrac{I_0}{\\sqrt{2}}$, nhỏ hơn đỉnh sóng, nên coi số chỉ là $I_0$ là sai."
+    "1": "Ampe kế xoay chiều chỉ giá trị hiệu dụng $I=\\dfrac{I_0}{\\sqrt{2}}$, nhỏ hơn đỉnh sóng, nên coi số chỉ là $I_0$ là sai.",
+    "2": "Phần dương và phần âm của hàm cos đối xứng trong một chu kì nên trung bình của $i$ triệt tiêu.",
+    "3": "Dùng nhầm $I_0$ thay cho $I$; công suất trung bình là $I^2R=\\dfrac{I_0^2R}{2}$, chỉ bằng một nửa."
    }
   },
   {
@@ -487,11 +487,11 @@
    "question": "Ổ điện trong một gia đình ghi 220 V – 50 Hz.",
    "statements": [
     {
-     "text": "220 V là giá trị hiệu dụng của điện áp.",
-     "answer": true
+     "text": "Dòng điện do ổ cắm cung cấp đổi chiều $f$ lần mỗi giây.",
+     "answer": false
     },
     {
-     "text": "Điện áp cực đại giữa hai lỗ ổ cắm là $U_0=220\\sqrt{2}$ V.",
+     "text": "220 V là giá trị hiệu dụng của điện áp.",
      "answer": true
     },
     {
@@ -499,16 +499,16 @@
      "answer": false
     },
     {
-     "text": "Dòng điện do ổ cắm cung cấp đổi chiều $f$ lần mỗi giây.",
-     "answer": false
+     "text": "Điện áp cực đại giữa hai lỗ ổ cắm là $U_0=220\\sqrt{2}$ V.",
+     "answer": true
     }
    ],
    "explanation": "Số ghi trên ổ điện là giá trị hiệu dụng, đỉnh bằng $U\\sqrt{2}$. Tần số góc là $\\omega=2\\pi f$, và dòng điện đổi chiều $2f$ lần mỗi giây.",
    "distractorNotes": {
-    "0": "Số ghi trên ổ điện và trên thiết bị luôn là giá trị hiệu dụng.",
-    "1": "Đỉnh bằng giá trị hiệu dụng nhân $\\sqrt{2}$, khoảng 311 V, nên khẳng định này không thể sai.",
+    "0": "Mỗi chu kì dòng đổi chiều 2 lần nên mỗi giây đổi chiều $2f=100$ lần, không phải $f$ lần.",
+    "1": "Số ghi trên ổ điện và trên thiết bị luôn là giá trị hiệu dụng.",
     "2": "Đảo phép tính: tần số góc là $\\omega=2\\pi f$, với 50 Hz cho $100\\pi$ rad/s.",
-    "3": "Mỗi chu kì dòng đổi chiều 2 lần nên mỗi giây đổi chiều $2f=100$ lần, không phải $f$ lần."
+    "3": "Đỉnh bằng giá trị hiệu dụng nhân $\\sqrt{2}$, khoảng 311 V, nên khẳng định này không thể sai."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Cho dòng điện xoay chiều $i=I_0\\cos(\\omega t+\\varphi)$ với $I_0\\gt 0$ và $\\varphi\\neq 0$.",
    "statements": [
     {
-     "text": "$\\varphi$ là pha ban đầu của dòng điện.",
-     "answer": true
-    },
-    {
      "text": "Tại thời điểm $t=0$, cường độ tức thời bằng $I_0$.",
      "answer": false
     },
     {
-     "text": "Cường độ cực đại bằng $I\\sqrt{2}$, với $I$ là cường độ hiệu dụng.",
+     "text": "$\\varphi$ là pha ban đầu của dòng điện.",
      "answer": true
     },
     {
      "text": "Dòng điện $i=I_0\\cos\\left(\\omega t-\\dfrac{\\pi}{3}\\right)$ có pha ban đầu bằng $+\\dfrac{\\pi}{3}$.",
      "answer": false
+    },
+    {
+     "text": "Cường độ cực đại bằng $I\\sqrt{2}$, với $I$ là cường độ hiệu dụng.",
+     "answer": true
     }
    ],
    "explanation": "Thay $t=0$ được $i=I_0\\cos\\varphi$. Giá trị này chỉ bằng $I_0$ khi $\\varphi=0$. Dấu trừ đứng sau $\\omega t$ cho biết pha ban đầu là $-\\dfrac{\\pi}{3}$ (lỗi đọc dấu ở Câu 2, mục II.2).",
    "distractorNotes": {
-    "0": "Pha ban đầu là giá trị của pha $\\omega t+\\varphi$ tại $t=0$, đúng bằng $\\varphi$.",
-    "1": "Thay $t=0$ được $I_0\\cos\\varphi$, chỉ bằng $I_0$ khi $\\varphi=0$, trái với giả thiết $\\varphi\\neq0$.",
-    "2": "Từ $I=\\dfrac{I_0}{\\sqrt{2}}$ suy ra $I_0=I\\sqrt{2}$, tức nhân $\\sqrt{2}$ là ra đỉnh.",
-    "3": "Đọc sai dấu: dấu trừ đứng sau $\\omega t$ nghĩa là pha ban đầu $\\varphi=-\\dfrac{\\pi}{3}$."
+    "0": "Thay $t=0$ được $I_0\\cos\\varphi$, chỉ bằng $I_0$ khi $\\varphi=0$, trái với giả thiết $\\varphi\\neq0$.",
+    "1": "Pha ban đầu là giá trị của pha $\\omega t+\\varphi$ tại $t=0$, đúng bằng $\\varphi$.",
+    "2": "Đọc sai dấu: dấu trừ đứng sau $\\omega t$ nghĩa là pha ban đầu $\\varphi=-\\dfrac{\\pi}{3}$.",
+    "3": "Từ $I=\\dfrac{I_0}{\\sqrt{2}}$ suy ra $I_0=I\\sqrt{2}$, tức nhân $\\sqrt{2}$ là ra đỉnh."
    }
   }
  ]

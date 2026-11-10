@@ -14,18 +14,43 @@
     "dl1.dau_cong"
   ],
   "muc_tieu": "Chứng tỏ nội năng của khối khí tăng khi khí bị nén (nhận công), và phân biệt nguyên nhân nóng lên do nén với nóng lên do cọ xát.",
+  "gia_thuyet": [
+    "Bơm nóng lên vì khí bị nén nhận công (A > 0) nên nội năng khí tăng, không phải chủ yếu do ma sát giữa pit-tông và thành ống."
+  ],
+  "du_doan_neu_dung": [
+    "Đáy ống bơm, gần van — nơi khí bị nén mạnh nhất — nóng nhất; nếu do ma sát thì phải nóng đều dọc đoạn pit-tông trượt.",
+    "Bơm nhanh nóng hơn bơm chậm cùng số lần ấn, vì bơm chậm thì nhiệt kịp thoát ra."
+  ],
+  "khong_chung_minh": [
+    "Không đo được nhiệt độ của khí bên trong ống: tay chỉ cảm nhận thân bơm, nóng ít hơn khí nhiều.",
+    "Không tách được ma sát góp bao nhiêu phần vào độ nóng — chỉ thấy nó không phải nguyên nhân chính."
+  ],
   "dung_cu": [
-    { "ten": "Bơm xe đạp tay (bơm đứng hoặc bơm sàn)", "so_luong": 1 },
-    { "ten": "Bánh xe hoặc săm xe còn non hơi", "so_luong": 1, "ghi_chu": "cần bơm khoảng 30 giây liên tục mới thấy rõ" },
-    { "ten": "Nhiệt kế phòng", "so_luong": 1, "ghi_chu": "để chứng minh nhiệt độ phòng không đổi" },
-    { "ten": "Đồng hồ bấm giây", "so_luong": 1 }
+    {
+      "ten": "Bơm xe đạp tay (bơm đứng hoặc bơm sàn)",
+      "so_luong": 1
+    },
+    {
+      "ten": "Bánh xe hoặc săm xe còn non hơi",
+      "so_luong": 1,
+      "ghi_chu": "cần bơm khoảng 30 giây liên tục mới thấy rõ"
+    },
+    {
+      "ten": "Nhiệt kế phòng",
+      "so_luong": 1,
+      "ghi_chu": "để chứng minh nhiệt độ phòng không đổi"
+    },
+    {
+      "ten": "Đồng hồ bấm giây",
+      "so_luong": 1
+    }
   ],
   "cac_buoc": {
     "lam": [
       "Đọc nhiệt độ phòng, ghi lại. Sờ thân ống bơm lúc chưa bơm để biết nhiệt độ ban đầu.",
       "Bơm liên tục và nhanh khoảng 30 giây vào bánh xe non hơi (khoảng 40–50 lần ấn).",
       "Sờ dọc thân ống bơm ngay sau khi bơm, rồi sờ lại sau khi nghỉ 2 phút.",
-      "Lặp lại nhưng lần này ấn thật chậm, mỗi lần cách nhau vài giây, rồi so cảm giác."
+      "Chờ bơm và tay nguội, lặp lại với cùng số lần ấn nhưng ấn thật chậm, mỗi lần cách nhau vài giây, rồi so cảm giác. Coi rằng mỗi lần ấn nhanh khí không kịp trao đổi nhiệt (Q ≈ 0); bỏ qua nhiệt từ tay truyền sang thân bơm."
     ],
     "quan_sat": [
       "Thân ống bơm nóng rõ rệt sau khi bơm nhanh, nóng nhất ở phần gần van (nơi khí bị nén nhiều nhất).",
@@ -35,17 +60,61 @@
     "rut_ra": [
       "Khí bị nén là khí nhận công từ tay người: A > 0 nên nội năng khí tăng, khí nóng lên.",
       "Sau đó khí nóng truyền nhiệt ra thành ống bơm: Q < 0 đối với khí, còn thân bơm nhận nhiệt nên ta sờ thấy nóng.",
-      "Bơm nhanh thì Q gần như không kịp truyền đi trong lúc nén, nên toàn bộ công dồn vào nội năng; bơm chậm thì nhiệt thoát ra ngay."
+      "Bơm nhanh thì Q gần như không kịp truyền đi trong lúc nén, nên toàn bộ công dồn vào nội năng; bơm chậm thì nhiệt thoát ra ngay.",
+      "Ma sát pit-tông xảy ra dọc cả ống nên không giải thích được vì sao đáy ống (chỗ khí bị nén mạnh nhất) nóng nhất: nguyên nhân chính là công nén."
     ]
   },
   "tham_so": [
-    { "ky_hieu": "n", "ten": "Số lần ấn pit-tông", "don_vi": "lần", "kieu": "dieu_chinh", "min": 5, "max": 60, "mac_dinh": 45, "buoc": 5 },
-    { "ky_hieu": "V0", "ten": "Thể tích khí trong ống bơm trước khi ấn", "don_vi": "cm3", "kieu": "co_dinh", "gia_tri": 200 },
-    { "ky_hieu": "V1", "ten": "Thể tích khí sau khi ấn hết pit-tông", "don_vi": "cm3", "kieu": "co_dinh", "gia_tri": 40 },
-    { "ky_hieu": "p_kq", "ten": "Áp suất khí quyển", "don_vi": "kPa", "kieu": "co_dinh", "gia_tri": 100 },
-    { "ky_hieu": "A1", "ten": "Công một lần ấn (mô hình đẳng nhiệt)", "don_vi": "J", "kieu": "tinh_ra" },
-    { "ky_hieu": "A", "ten": "Tổng công đưa vào khí", "don_vi": "J", "kieu": "tinh_ra" },
-    { "ky_hieu": "t_than", "ten": "Nhiệt độ thân ống bơm đo được", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 1.0 }
+    {
+      "ky_hieu": "n",
+      "ten": "Số lần ấn pit-tông",
+      "don_vi": "lần",
+      "kieu": "dieu_chinh",
+      "min": 5,
+      "max": 60,
+      "mac_dinh": 45,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "V0",
+      "ten": "Thể tích khí trong ống bơm trước khi ấn",
+      "don_vi": "cm3",
+      "kieu": "co_dinh",
+      "gia_tri": 200
+    },
+    {
+      "ky_hieu": "V1",
+      "ten": "Thể tích khí sau khi ấn hết pit-tông",
+      "don_vi": "cm3",
+      "kieu": "co_dinh",
+      "gia_tri": 40
+    },
+    {
+      "ky_hieu": "p_kq",
+      "ten": "Áp suất khí quyển",
+      "don_vi": "kPa",
+      "kieu": "co_dinh",
+      "gia_tri": 100
+    },
+    {
+      "ky_hieu": "A1",
+      "ten": "Công một lần ấn (mô hình đẳng nhiệt)",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "A",
+      "ten": "Tổng công đưa vào khí",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "t_than",
+      "ten": "Nhiệt độ thân ống bơm đo được",
+      "don_vi": "°C",
+      "kieu": "do_duoc",
+      "sai_so_do": 1.0
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -62,14 +131,42 @@
     "ghi_chu": "Mô phỏng nên cho kéo thanh trượt số lần ấn n và vẽ dần nhiệt độ khối khí: bơm nhanh (Q = 0) thì nhiệt độ tăng nhanh; có công tắc 'cho nhiệt thoát ra' thì nhiệt độ tăng chậm hơn — đó là trực giác cho vai trò của Q trong ΔU = A + Q."
   },
   "so_lieu_mau": {
-    "cot": ["Số lần ấn", "Tổng công A (J)", "Nhiệt độ thân bơm (°C)"],
+    "cot": [
+      "Số lần ấn",
+      "Tổng công A (J)",
+      "Nhiệt độ thân bơm (°C)"
+    ],
     "hang": [
-      [0, 0, 26.0],
-      [10, 258, 27.5],
-      [20, 516, 29.0],
-      [30, 774, 31.0],
-      [45, 1161, 34.0],
-      [60, 1548, 37.0]
+      [
+        0,
+        0,
+        26.0
+      ],
+      [
+        10,
+        258,
+        27.5
+      ],
+      [
+        20,
+        516,
+        29.0
+      ],
+      [
+        30,
+        774,
+        31.0
+      ],
+      [
+        45,
+        1161,
+        34.0
+      ],
+      [
+        60,
+        1548,
+        37.0
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ tính từ mô hình với V0 = 200 cm3, V1 = 40 cm3, p = 100 kPa: A1 = 100000 × 200e-6 × ln(5) ≈ 32,2 J. Cột nhiệt độ là số ước lượng theo cảm giác/đo bằng nhiệt kế hồng ngoại trên thân bơm, không phải đo trong lòng khí (trong lòng khí nóng hơn nhiều)."
   },

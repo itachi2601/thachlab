@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { BarChart3, Bug, Lightbulb, ChevronRight, KeyRound, LogOut, QrCode } from "lucide-react";
+import { BarChart3, Bug, Lightbulb, ChevronRight, Inbox, KeyRound, LogOut, QrCode, Trophy, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -16,8 +16,20 @@ const DailyReminderCard = dynamic(() => import("@/components/pwa/DailyReminderCa
 
 const LINKS = [
   { href: "/blog/#vat-ly-quanh-ta", label: "Vật lý quanh ta · đọc cho vui", Icon: Lightbulb },
+  // Xếp hạng chuyển từ thanh đáy vào đây (thầy duyệt 27/10/2026, N2): thanh đáy còn 4 mục, việc học chính lên trước.
+  { href: "/lop-hoc/xep-hang", label: "Xếp hạng", Icon: Trophy },
   { href: "/lop-hoc/ket-qua", label: "Bài đã làm & kết quả", Icon: BarChart3 },
   { href: "/quet-ma", label: "Quét mã QR vào hoạt động lớp", Icon: QrCode },
+  { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },
+  { href: "/bao-loi-cua-toi", label: "Báo lỗi và góp ý", Icon: Bug },
+];
+
+// Sinh viên CTTC (10/11/2026): cùng trang "Thêm" nhưng chỉ các mục của hệ CTTC — không có Xếp hạng/Kết quả/Blog Vật lí
+// của khối THPT (N3: không hiện mục không dùng được). Thay cho menu nổi cũ trên thanh đáy.
+const CTTC_LINKS = [
+  { href: "/quet-ma", label: "Quét mã QR vào đề kiểm tra, hoạt động lớp", Icon: QrCode },
+  { href: "/choi", label: "Vào hoạt động lớp bằng mã", Icon: Users },
+  { href: "/hop-thu", label: "Hộp thư: thông báo, tin nhắn, tin tức", Icon: Inbox },
   { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },
   { href: "/bao-loi-cua-toi", label: "Báo lỗi và góp ý", Icon: Bug },
 ];
@@ -30,25 +42,29 @@ function Content() {
   const router = useRouter();
   const { session, profile, signOut } = useAuth();
   if (!session) return null;
+  const isCttc = profile?.track === "cttc" && profile.role === "student";
+  const links = isCttc ? CTTC_LINKS : LINKS;
   return (
     <div className="mx-auto max-w-xl space-y-4">
       <h1 className="font-display text-2xl font-bold text-ink">Thêm</h1>
       <section className="flex items-center gap-4 rounded-2xl border border-line bg-panel p-4">
         <AvatarUploader studentId={session.user.id} url={profile?.avatar_url} name={profile?.full_name} size={64} />
         <div className="min-w-0">
-          <p className="truncate font-display text-lg font-bold text-ink">{profile?.full_name ?? "Học sinh"}</p>
+          <p className="truncate font-display text-lg font-bold text-ink">{profile?.full_name ?? (isCttc ? "Sinh viên" : "Học sinh")}</p>
           <p className="text-[13px] text-muted">Bấm vào ảnh để đổi ảnh đại diện.</p>
         </div>
       </section>
 
       <ProfileEditCard />
 
-      <LazyErrorBoundary>
-        <DailyReminderCard />
-      </LazyErrorBoundary>
+      {!isCttc && (
+        <LazyErrorBoundary>
+          <DailyReminderCard />
+        </LazyErrorBoundary>
+      )}
 
       <nav aria-label="Mục khác" className="overflow-hidden rounded-2xl border border-line bg-panel">
-        {LINKS.map(({ href, label, Icon }) => (
+        {links.map(({ href, label, Icon }) => (
           <Link key={href} href={href} className="flex min-h-14 items-center gap-3 border-b border-line px-4 text-ink last:border-0 hover:bg-surface-2">
             <Icon size={18} className="shrink-0 text-muted" aria-hidden />
             <span className="flex-1 text-sm font-semibold">{label}</span>

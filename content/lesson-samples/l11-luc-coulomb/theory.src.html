@@ -26,10 +26,11 @@
 <h3>II. Kiến thức: điện tích và lực giữa chúng</h3>
 
 <h4>1. Nhiễm điện và thuyết electron</h4>
+<p class="tl-claim">Thừa electron thì âm, thiếu electron thì dương.</p>
 <p><strong>🔑 Thừa electron: âm · Thiếu electron: dương · $|q| = n|e|$</strong></p>
 <ul>
 <li><strong>Vật nhiễm điện:</strong> hút, đẩy vật khác hoặc phóng tia lửa điện.</li>
-<li><strong>Thuyết electron:</strong> nguyên tử bình thường trung hoà; electron nhẹ, linh động, dễ rời nguyên tử.</li>
+<li><strong>Thuyết electron:</strong> nguyên tử bình thường <span class="tl-term"><input type="checkbox" id="tl35-t1"><label for="tl35-t1">trung hoà</label><span class="tl-def">có tổng điện tích bằng 0, không nhiễm điện.</span></span>; electron nhẹ, linh động, dễ rời nguyên tử.</li>
 <li>Điện tích luôn là bội của $|e| = 1{,}6\cdot10^{-19}$ C.</li>
 </ul>
 <div class="table-scroll"><table class="tl-table">
@@ -84,12 +85,18 @@
 </div>
 
 <h4>2. Định luật Coulomb</h4>
+<p class="tl-claim">Lực tỉ lệ thuận với tích điện tích, nghịch với r².</p>
 <p><strong>🔑 Phương nối hai điện tích · Tỉ lệ tích $|q_1q_2|$ · Nghịch bình phương $r$</strong></p>
 <ul>
 <li><strong>Điện tích điểm:</strong> vật tích điện rất nhỏ so với khoảng cách đang xét. Lực hút, đẩy giữa các điện tích đứng yên gọi là <strong>lực tĩnh điện</strong> (lực Coulomb).</li>
 <li>Cùng dấu thì <strong>đẩy</strong>, trái dấu thì <strong>hút</strong>.</li>
 </ul>
 <p>Lực hút hay đẩy giữa hai điện tích điểm trong chân không có phương trùng đường thẳng nối hai điện tích, độ lớn tỉ lệ thuận với tích độ lớn hai điện tích, tỉ lệ nghịch với bình phương khoảng cách.</p>
+<div class="tl-nums">
+<details class="tl-num"><summary>Hằng số Coulomb $k$</summary><p>$9\cdot10^9\ \text{N·m}^2/\text{C}^2$</p></details>
+<details class="tl-num"><summary>Điện tích nguyên tố $|e|$</summary><p>$1{,}6\cdot10^{-19}\ \text{C}$</p></details>
+<details class="tl-num"><summary>Hằng số điện môi của chân không</summary><p>$\varepsilon = 1$</p></details>
+</div>
 <div class="tl-fx">
 <p class="tl-fx-name">Định luật Coulomb</p>
 <p>$$F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$$</p>
@@ -104,8 +111,8 @@
 </div>
 <ul>
 <li><strong>Vectơ lực:</strong> đặt tại mỗi điện tích · phương nối hai điện tích · chiều đẩy nếu $q_1q_2 \gt 0$, hút nếu $q_1q_2 \lt 0$.</li>
-<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
-<li>Trong điện môi (môi trường cách điện như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
+<li>Chân không ($\varepsilon = 1$), không khí ($\varepsilon \approx 1$<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>): bỏ $\varepsilon$, còn $F = k\dfrac{|q_1q_2|}{r^2}$.</li>
+<li>Trong <span class="tl-term"><input type="checkbox" id="tl35-t2"><label for="tl35-t2">điện môi</label><span class="tl-def">chất cách điện, đặt giữa hai điện tích thì làm lực giảm.</span></span> (như dầu, thuỷ tinh, nước nguyên chất) lực <strong>giảm $\varepsilon$ lần</strong>.</li>
 <li>Chỉ đúng cho điện tích điểm, hoặc quả cầu tích điện đều (coi điện tích đặt ở tâm).</li>
 <li>Ví dụ: $r$ tăng 2 lần, $|q_1|$ giảm 2 lần thì $F$ giảm $2\times2^2 = 8$ lần.</li>
 </ul>
@@ -120,7 +127,7 @@
 <li><strong>Rút ra:</strong> tích $F r^2$ gần như không đổi, nên $F$ tỉ lệ nghịch với $r^2$.</li>
 </ol>
 <div class="table-scroll"><table class="tl-table">
-<thead><tr><th>r (cm)</th><th>Số cân (g)</th><th>F·r² (10⁻⁶ N·m²)</th></tr></thead>
+<thead><tr><th>r (cm)</th><th>Số cân (g)</th><th>F·r² (10<sup>−6</sup> N·m²)</th></tr></thead>
 <tbody>
 <tr><td>2</td><td>0,92</td><td>3,61</td></tr>
 <tr><td>3</td><td>0,41</td><td>3,62</td></tr>
@@ -139,6 +146,14 @@
 </ul>
 </details>
 </div>
+<!--video:tn-l11-coulomb-02-->
+<div class="tl-box tl-box--video tl-box--khung" data-khung="{&quot;id&quot;:&quot;tn-l11-coulomb-02&quot;,&quot;ten&quot;:&quot;Cân điện tử đo lực đẩy giữa hai quả cầu&quot;,&quot;video&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.mp4&quot;,&quot;tong_giay&quot;:47.8,&quot;o&quot;:[{&quot;khoa&quot;:&quot;gia_thuyet&quot;,&quot;giay&quot;:0,&quot;chu&quot;:&quot;Lực đẩy F tỉ lệ nghịch với r²: tích F·r² không đổi khi đổi khoảng cách.&quot;,&quot;kiem&quot;:&quot;Số cân đổi theo khoảng cách r ra sao?&quot;},{&quot;khoa&quot;:&quot;du_doan&quot;,&quot;giay&quot;:3.6,&quot;chu&quot;:&quot;Nâng B từ r = 2 cm lên r = 4 cm, số cân (đang 0,92 g) thay đổi thế nào?&quot;},{&quot;khoa&quot;:&quot;dung_cu&quot;,&quot;giay&quot;:10.4,&quot;chu&quot;:&quot;A trên cân đọc 0,01 g, trừ bì khi B ở rất xa. Hạ B thẳng phía trên; r đo tâm–tâm.&quot;},{&quot;khoa&quot;:&quot;quan_sat&quot;,&quot;giay&quot;:19.3,&quot;chu&quot;:&quot;Số cân giảm nhanh khi r tăng: 0,92; 0,41; 0,23; 0,15; 0,10 g ở r = 2 đến 6 cm.&quot;},{&quot;khoa&quot;:&quot;rut_ra&quot;,&quot;giay&quot;:25.8,&quot;chu&quot;:&quot;Tích F·r² gần như không đổi: r gấp đôi, lực còn một phần tư.\nHai hàng cuối lệch nhất do làm tròn 0,01 g.&quot;},{&quot;khoa&quot;:&quot;chua_noi&quot;,&quot;giay&quot;:34.9,&quot;chu&quot;:&quot;Hai cầu khác dấu thì sao? Ở r rất nhỏ, quả cầu còn là điện tích điểm không?&quot;}],&quot;dung_dua&quot;:{&quot;giay&quot;:10.2,&quot;cau_hoi&quot;:&quot;Nâng B từ r = 2 cm lên r = 4 cm, số cân (đang 0,92 g)…&quot;,&quot;chon&quot;:[&quot;A. còn một nửa&quot;,&quot;B. còn một phần tư&quot;,&quot;C. còn một phần tám&quot;,&quot;D. không đổi&quot;],&quot;dung&quot;:1,&quot;giai_thich_dung&quot;:&quot;Số cân từ 0,92 g ở r = 2 cm còn 0,23 g ở r = 4 cm, đúng một phần tư: lực tỉ lệ nghịch với r², tích F·r² gần như không đổi.&quot;,&quot;giai_thich_sai&quot;:&quot;Xem đồ thị ở đoạn kế: so số cân ở r = 2 cm với r = 4 cm, rồi lấy số lớn chia số nhỏ.&quot;},&quot;poster&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.webp&quot;}">
+<p class="tl-label">🎬 Xem thí nghiệm dựng lại · 48 giây</p>
+<p class="tl-video-ten">Cân điện tử và hai quả cầu tích điện</p>
+<div class="tl-video tl-video--doc"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-coulomb-02-20261030-2.webp" controls preload="none" playsinline title="cân điện tử và hai quả cầu tích điện" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+<p class="tl-video-goi-y"><strong>Nhìn vào:</strong> Nâng quả cầu B lên gấp đôi khoảng cách: số cân đổi thế nào?</p>
+</div>
+
 <p>Hai điện tích trong không khí hút nhau lực 8 N. Đặt vào dầu $\varepsilon = 2$ và giảm khoảng cách còn một nửa, lực là bao nhiêu?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl35-q2" id="tl35-q2a"><label for="tl35-q2a" class="tl-opt tl-ok">A. 16 N</label>
@@ -270,18 +285,18 @@
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 <div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Trả bài (tự đọc to, rồi bấm xem)</p>
-<details class="tl-details tl-more"><summary>1. Ba cách nhiễm điện, mỗi cách cho kết quả gì? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<p class="tl-label">Trả bài</p>
+<details class="tl-details tl-more"><summary>1. Ba cách nhiễm điện, mỗi cách cho kết quả gì?</summary>
 <p>Cọ xát: trái dấu · Tiếp xúc: cùng dấu · Hưởng ứng: hai đầu trái dấu, electron chỉ dời chỗ.</p></details>
-<details class="tl-details tl-more"><summary>2. Vật nhiễm điện âm, dương theo thuyết electron? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>2. Vật nhiễm điện âm, dương theo thuyết electron?</summary>
 <p>Âm: thừa electron · Dương: thiếu electron · $|q| = n|e|$, $|e| = 1{,}6\cdot10^{-19}$ C.</p></details>
-<details class="tl-details tl-more"><summary>3. Phát biểu định luật bảo toàn điện tích; quả cầu giống nhau chạm rồi tách? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>3. Phát biểu định luật bảo toàn điện tích; quả cầu giống nhau chạm rồi tách?</summary>
 <p>Hệ cô lập: tổng đại số không đổi · Chia đều: $q' = \dfrac{q_1 + q_2 + \dots}{n}$, cộng có dấu.</p></details>
-<details class="tl-details tl-more"><summary>4. Phát biểu định luật Coulomb, viết công thức và đơn vị? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>4. Phát biểu định luật Coulomb, viết công thức và đơn vị?</summary>
 <p>Phương nối hai điện tích · tỉ lệ $|q_1q_2|$ · nghịch $r^2$ · $F = k\dfrac{|q_1q_2|}{\varepsilon r^2}$, $k = 9\cdot10^9$ N·m²/C², SI.</p></details>
-<details class="tl-details tl-more"><summary>5. Hai lực vuông góc, hai lực bằng nhau góc $\alpha$: hợp lực? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>5. Hai lực vuông góc, hai lực bằng nhau góc $\alpha$: hợp lực?</summary>
 <p>$F = \sqrt{F_1^2 + F_2^2}$ · $F = 2F_1\cos\dfrac{\alpha}{2}$.</p></details>
-<details class="tl-details tl-more"><summary>6. Đặt $q_0$ ở đâu để cân bằng giữa $q_1$, $q_2$? <small>(nói trước, rồi bấm)</small></summary>
+<details class="tl-details tl-more"><summary>6. Đặt $q_0$ ở đâu để cân bằng giữa $q_1$, $q_2$?</summary>
 <p>Trên đường AB · gần điện tích nhỏ · cùng dấu: giữa · trái dấu: ngoài · $\dfrac{r_1}{r_2} = \sqrt{\dfrac{|q_1|}{|q_2|}}$.</p></details>
 </div>
 
@@ -302,6 +317,13 @@
 </tbody>
 </table></div>
 <!--FIG4-->
+<!--video:sau:tn-l11-coulomb-03-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem video: hai quả cầu cùng nhiễm điện</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/eHMNPcLTtt4?rel=0&start=5&end=30" title="hai quả cầu cùng nhiễm điện" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Hai quả cầu nhiễm điện cùng dấu chuyển động thế nào ngay sau khi chạm thanh nhựa?</p>
+</div>
+
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
@@ -372,3 +394,6 @@
 <li><strong>Cân bằng:</strong> hợp lực bằng 0 · cùng phương, ngược chiều, bằng độ lớn.</li>
 </ul>
 </div>
+<ol class="tl-fns">
+<li id="tl-fn-1">Không khí khô ở điều kiện thường có $\varepsilon \approx 1{,}0006$, nên coi bằng 1.</li>
+</ol>

@@ -1,0 +1,52 @@
+{
+  "id": "tn-l9-congsuat-01",
+  "ten": "Đèn 6 V – 3 W đặt ở 3,0 V: tích U·I bao nhiêu?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-congsuat-01-20261105.mp4",
+  "tong_giay": 49.9,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Tích U·I càng lớn, đèn càng sáng; chỉ ở đúng 6 V, U·I mới bằng 3 W ghi trên đèn.",
+      "kiem": "Đặt U nhỏ hơn 6 V, tích U·I của đèn thế nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.3,
+      "chu": "Đặt U = 3,0 V vào đèn, tích U·I khoảng bao nhiêu oát?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.5,
+      "chu": "Đèn 6 V – 3 W, nguồn chỉnh được, khoá K; ampe kế nối tiếp, vôn kế song song với đèn."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 20.8,
+      "chu": "Đèn từ đỏ mờ tới sáng bình thường. U·I tăng từ 0,33 W lên 3,0 W."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 30.3,
+      "chu": "U·I lớn hơn thì đèn sáng hơn. Đúng 6,0 V: U·I = 3,0 W, khớp số ghi trên đèn (công suất định mức)."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 39.4,
+      "chu": "Số liệu minh hoạ, chưa đo thật.\nĐã bỏ qua điện trở ampe kế, dây nối."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.3,
+    "cau_hoi": "Bóng đèn ghi 6 V – 3 W. Đặt U = 3,0 V vào đèn (ampe kế nối tiếp, vôn kế song song). Tích U·I khi đó khoảng bao nhiêu oát?",
+    "chon": [
+      "A. Khoảng 0,5 W",
+      "B. Khoảng 1 W",
+      "C. Khoảng 1,5 W",
+      "D. Khoảng 3 W"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Ở 3,0 V ampe kế chỉ 0,33 A, nên U·I = 3,0 · 0,33 ≈ 0,99 W, khoảng 1 W. Chỉ ở đúng 6 V đèn mới đạt 3 W ghi trên đèn.",
+    "giai_thich_sai": "3 W ghi trên đèn chỉ đúng khi đặt 6 V. Giảm U còn một nửa thì I cũng giảm (0,50 A còn 0,33 A), nên U·I chưa tới một nửa của 3 W: khoảng 1 W, không phải 1,5 W hay 0,5 W."
+  }
+}

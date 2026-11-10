@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
-"""Dựng HTML in sách từ nội dung thachlab (public/data/lessons + scripts/data/bai-tap-mau).
+"""Dựng HTML in sách từ nội dung web thachlab (book/cache/<lesson>.json, tải bằng book/lay-noi-dung.mts).
+Cuốn nào: biến môi trường BOOK_SACH=<mã hồ sơ trong book/sach/> (mặc định l10-ch2-dong-hoc), hoặc build.use(mã).
 
   python3 build.py lesson 49          → src/lesson-49.html
-  python3 build.py all                → mọi bài của chương
-  python3 build.py front              → src/front.html (bìa, mục lục…)
-Xem make.py để dựng PDF trọn chương.
+  python3 build.py all                → mọi bài của cuốn
+  python3 build.py web                → public/sach-data/dap-an-<id>.json
+Xem make.py để dựng PDF trọn cuốn.
 """
 import os, hashlib, html as htmllib, json, re, subprocess, sys
 from pathlib import Path
 from bs4 import BeautifulSoup, NavigableString, Tag
 from PIL import Image
 
-import bw
+import bw, sach
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
@@ -20,25 +21,26 @@ IMG = ROOT / 'assets' / 'img'
 BASE_URL = 'https://thachlab.id.vn'
 
 CUR = {'lid': 0}
+BAN = {'n': 0}   # số bản sách đang dựng (sổ khoá); >0 thì QR đáp án mang &b=<bản> — make.py đặt trước khi render
 
-CHAPTER = {'num': 2, 'title': 'Động học', 'sub': 'Mô tả chuyển động — chưa cần hỏi vì sao vật chuyển động',
-           'lessons': [49, 50, 51, 52, 53, 54, 55, 56, 57]}
-if os.environ.get('BOOK_CHAPTER') == 'l11-song':   # thử nghiệm lớp 11 · Chương 2 Sóng (bài 8–14 = lesson 27–33)
-    CHAPTER = {'num': 2, 'title': 'Sóng', 'sub': 'Sóng cơ và sóng ánh sáng', 'lessons': [27, 28, 29, 30, 31, 32, 33]}
+SACH = {}        # hồ sơ cuốn đang dựng (book/sach/<mã>.json) — đổi bằng use(mã)
+CHAPTER = {}     # {'num', 'title', 'sub', 'lessons'} rút từ hồ sơ; front.py giữ tham chiếu nên chỉ cập nhật tại chỗ
+DANG_CHUNG = {}  # {lid: [chỉ số Dạng được giảng trên lớp]}; mặc định [1, 2]
+TIET = {}        # {lid: ['muc:II', 'bai-tap-mau', ...]}; mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu
+
+
+def use(ma):
+    """Chọn cuốn sách: nạp hồ sơ book/sach/<mã>.json vào các biến cấu hình của module."""
+    h = sach.ho_so(ma)
+    SACH.clear(); SACH.update(h)
+    CHAPTER.clear(); CHAPTER.update({'num': h['chuong'], 'title': h['ten'], 'sub': h.get('phu_de', ''), 'lessons': h['lessons']})
+    DANG_CHUNG.clear(); DANG_CHUNG.update(h['dang_chung'])
+    TIET.clear(); TIET.update(h['tiet'])
+    return h
 
 
 def lesson_url(lid): return f'{BASE_URL}/lop-hoc/bai?id={lid}'
-def answers_url(lid): return f'{BASE_URL}/sach/dap-an/?bai={lid}'
-
-
-def _cfg(name):
-    p = SRC / name
-    d = json.load(open(p)) if p.exists() else {}
-    return {int(k): v for k, v in d.items() if not k.startswith('_')}
-
-
-DANG_CHUNG = _cfg('dang-chung.json')   # {lid: [chỉ số Dạng được giảng trên lớp]}; mặc định [1, 2]
-TIET = _cfg('tiet.json')               # {lid: ['muc:II', 'bai-tap-mau', ...]}; mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu
+def answers_url(lid): return f'{BASE_URL}/sach/dap-an/?bai={lid}' + (f'&b={BAN["n"]}' if BAN['n'] else '')
 
 
 def dang_chung(lid, n):
@@ -62,16 +64,13 @@ def timer():
 
 # ------------------------------------------------------------------ đọc dữ liệu
 def load_lesson(lid):
-    d = json.load(open(REPO / f'public/data/lessons/{lid}.json'))
-    theory = next(it for it in d['items'] if it['kind'] == 'ly_thuyet')['body_html']
-    bt = None
-    p = REPO / f'scripts/data/bai-tap-mau/{lid}.json'
-    if p.exists():
-        bt = json.load(open(p))
-    title = d['lesson']['title']
+    """Nội dung bài = bản web thật trong book/cache/<lid>.json (do book/lay-noi-dung.mts tải từ DB)."""
+    c = sach.doc_cache(lid)
+    title = c['title']
     m = re.match(r'Bài\s+(\d+)\.\s*(.*)', title)
+    bt = {'dang_bai': c['dang_bai']} if c.get('dang_bai') else None
     return {'id': lid, 'num': int(m.group(1)) if m else 0, 'name': m.group(2) if m else title,
-            'title': title, 'theory': theory, 'bt': bt}
+            'title': title, 'theory': c['theory'], 'bt': bt}
 
 
 # ------------------------------------------------------------------ tiện ích
@@ -336,7 +335,7 @@ def conv_h3(h):
     t = h.decode_contents()
     m = re.match(r'\s*([IVX]+)\.\s*(.*)', t, re.S)
     if m:
-        return f'<h3><span class="rn">{m.group(1)}</span><span class="ht">{m.group(2)}</span></h3>', m.group(1)
+        return f'<h3 data-neo="muc:{m.group(1)}"><span class="rn">{m.group(1)}</span><span class="ht">{m.group(2)}</span></h3>', m.group(1)
     return f'<h3><span class="ht">{t}</span></h3>', ''
 
 
@@ -530,7 +529,7 @@ def render_bt(bt, lid, keys, marks=None):
         ana = re.sub(r'<figure class="fig".*?</figure>', '', clean_fig_caption_bt(x['analysis_html']), flags=re.S)
         ana = blank_table(ana)
         ana = re.sub(r'<p>Mỗi câu của đề:.*?</p>', '<p>Mỗi câu của đề cho dữ liệu gì, gọi kiến thức nào? Điền vào hai cột bên phải. Hàng có ⚠ là <b>điều kiện áp dụng</b>.</p>', ana, flags=re.S)
-        out.append(f'''<article class="dang">
+        out.append(f'''<article class="dang" data-neo="dang:{k}">
 <div class="dang-top"><header class="dang-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span><h3>{title}</h3></header>
 <div class="de"><div class="de-l">Đề bài</div>{prob}</div></div>
 <div class="pt"><div class="pt-l">Phân tích đề — em tự điền</div>{timer()}{ana}</div>
@@ -558,13 +557,13 @@ def render_luyen_them(bt, lid, keys, main):
                 prob = txt
             sim = similar_to(x, bt, main)
             rel = f'<span class="lt-rel">tương tự Dạng {sim}</span>' if sim else '<span class="lt-rel">dạng riêng · lời giải trên web</span>'
-            items.append(f'<div class="lt"><div class="lt-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span>{rel}<span class="lt-k">đáp số: bảng cuối sách</span></div>'
+            items.append(f'<div class="lt" data-neo="dang:{k}"><div class="lt-h"><span class="dang-n">{num}</span><span class="lvl">{stars} {lvl_name}</span>{rel}<span class="lt-k">đáp số: bảng cuối sách</span></div>'
                          f'<div class="lt-t">{title}</div>{prob}</div>')
     for c in keys.challenges:
         items.append(f'<div class="lt lt-ch"><div class="lt-h"><span class="dang-n">THỬ THÁCH</span><span class="lvl">{c["stars"]}</span>'
                      f'<span class="lt-k">đáp số: bảng cuối sách, số <b>{c["n"]}</b></span></div><p>{c["q"]}</p></div>')
     if not items: return ''
-    return bw.to_print(f'<section class="ltsec"><div class="sec-band"><span class="sb-k">LUYỆN THÊM — BÀI TƯƠNG TỰ</span>'
+    return bw.to_print(f'<section class="ltsec" data-neo="luyen-them"><div class="sec-band"><span class="sb-k">LUYỆN THÊM — BÀI TƯƠNG TỰ</span>'
                        f'<span class="sb-t">Làm vào vở · chọn mức ★ vừa sức · đáp số ở bảng cuối sách · lời giải đầy đủ: quét mã QR</span></div>'
                        + ''.join(items) + '</section>')
 
@@ -576,7 +575,12 @@ def fetch_img(url):
     dst = IMG / f'{h}.jpg'
     if not dst.exists():
         raw = IMG / f'{h}.src'
-        r = subprocess.run(['curl', '-sS', '-L', '-m', '40', '-o', str(raw), url], capture_output=True, text=True)
+        if url.startswith('/'):   # ảnh của chính website (public/…): lấy file trong repo, không tải mạng
+            loc = REPO / 'public' / url.lstrip('/')
+            if not loc.exists(): print('  ! thiếu ảnh', url); return None
+            raw.write_bytes(loc.read_bytes())
+        else:
+            subprocess.run(['curl', '-sS', '-L', '-m', '40', '-o', str(raw), url], capture_output=True, text=True)
         try:
             im = Image.open(raw).convert('L')
             if im.width > 1000:
@@ -587,6 +591,20 @@ def fetch_img(url):
         finally:
             raw.unlink(missing_ok=True)
     return f'../assets/img/{h}.jpg'
+
+
+def local_imgs(html):
+    """Mọi <img> trong trang in phải là file cục bộ đen–trắng, không lazy: ảnh đường dẫn web ('/assets/…') mở bằng file://
+    không tải được, và `loading="lazy"` làm img.decode() trong book.js treo vĩnh viễn (Paged.js không bao giờ chạy)."""
+    def rep(m):
+        tag = re.sub(r'\s(?:loading|decoding|srcset|sizes|width|height|style)="[^"]*"', '', m.group(0))
+        src = re.search(r'\ssrc="([^"]*)"', tag)
+        if src and (src.group(1).startswith('/') or src.group(1).startswith('http')):
+            loc = fetch_img(src.group(1))
+            if not loc: return ''
+            tag = tag.replace(src.group(0), f' src="{loc}"')
+        return tag
+    return re.sub(r'<img\b[^>]*>', rep, html)
 
 
 def strip_attrs(el):
@@ -755,7 +773,7 @@ def build_lesson(lid, start=1, filler=False):
 <div class="theory">{theory}</div>
 </section>'''
     if bt_html:
-        html += f'<section class="btsec"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức · ghi lời giải cùng thầy cô</span></div>{bt_html}</section>'
+        html += f'<section class="btsec" data-neo="bai-tap-mau"><div class="sec-band"><span class="sb-k">BÀI TẬP MẪU</span><span class="sb-t">Đọc đề · tách dữ liệu · chọn công thức · ghi lời giải cùng thầy cô</span></div>{bt_html}</section>'
     html += lt_html
     web = (f'<div class="websec"><div class="ws-i"><span class="qr" data-url="{lesson_url(lid)}"></span><div><div class="ws-h">Ở nhà: luyện tập &amp; giải đề</div>'
            '<p>Trắc nghiệm, tự luận ba mức, lời giải chi tiết, theo dõi tiến độ.</p></div></div>'
@@ -769,13 +787,12 @@ def build_lesson(lid, start=1, filler=False):
         html += front.filler()
     html += '</body></html>'
     out = SRC / f'lesson-{lid}.html'
-    out.write_text(html)
+    out.write_text(local_imgs(html))
     return out, keys
 
 
-def export_web(lid):
-    """Đáp án & gợi ý cho trang /sach/dap-an/?bai=<id> (public/data/sach/dap-an-<id>.json)."""
-    import json as _json
+def answers_data(lid):
+    """Đáp án & gợi ý của một bài (cùng số thứ tự với sách) — không ghi file."""
     bw.WEB = True
     try:
         L = load_lesson(lid); keys = Keys(); CUR['lid'] = lid
@@ -796,15 +813,27 @@ def export_web(lid):
                            'inClass': i in main, 'similarTo': 0 if i in main else similar_to(x, bt, main)})
     finally:
         bw.WEB = False
-    data = {'lessonId': lid, 'title': L['title'], 'num': L['num'], 'name': L['name'],
+    return {'lessonId': lid, 'title': L['title'], 'num': L['num'], 'name': L['name'],
             'chapter': f'CHƯƠNG {CHAPTER["num"]} · {CHAPTER["title"].upper()}',
             'formulas': [{'n': i, 'tex': f['tex'], 'display': f['display']} for i, f in enumerate(keys.formulas, 1)],
             'items': items, 'worked': worked}
-    out = REPO / 'public' / 'sach-data' / f'dap-an-{lid}.json'
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(_json.dumps(data, ensure_ascii=False))
+
+
+def export_web(lid):
+    """Ghi đáp án cho trang /sach/dap-an/?bai=<id>&b=<bản>: public/sach-data/dap-an-<id>-b<bản>.json (giữ file
+    bản cũ cho sách đã phát) + dap-an-<id>.json = bản mới nhất (QR sách in trước khi có số bản, không có &b)."""
+    data = answers_data(lid)
+    d = REPO / 'public' / 'sach-data'
+    d.mkdir(parents=True, exist_ok=True)
+    if BAN['n']:
+        data = {**data, 'ban': BAN['n'], 'sach': SACH['ma']}
+        (d / f'dap-an-{lid}-b{BAN["n"]}.json').write_text(json.dumps(data, ensure_ascii=False))
+    out = d / f'dap-an-{lid}.json'
+    out.write_text(json.dumps(data, ensure_ascii=False))
     return out, data
 
+
+use(os.environ.get('BOOK_SACH', 'l10-ch2-dong-hoc'))
 
 if __name__ == '__main__':
     cmd = sys.argv[1]
@@ -812,6 +841,7 @@ if __name__ == '__main__':
         p, k = build_lesson(int(sys.argv[2]), int(sys.argv[3]) if len(sys.argv) > 3 else 1)
         print(p, len(k.items), 'đáp án')
     elif cmd == 'web':
+        BAN['n'] = sach.doc_khoa(SACH['ma']).get('ban', 0)
         for lid in CHAPTER['lessons']:
             print(export_web(lid)[0])
     elif cmd == 'all':

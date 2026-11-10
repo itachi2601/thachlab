@@ -6,7 +6,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import RED, BLUE, ORG, GRN, text, wrap, chevron, arrow
 
-PHUT = 12   # điền theo lint_do_dai.py (làm tròn lên)
+PHUT = 13   # điền theo lint_do_dai.py (làm tròn lên)
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):

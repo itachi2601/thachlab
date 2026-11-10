@@ -1,0 +1,47 @@
+{
+  "_ghi_chu": "Hồ sơ sách — thầy chỉnh ở đây rồi chạy `cd book && python3 make.py l10-ch2-dong-hoc`. dang_chung: Dạng CHUNG NHẤT được giảng trên lớp (có ô Lời giải), thiếu thì mặc định [1, 2]; các Dạng còn lại thành Luyện thêm. tiet: vạch lề 'hết tiết n' — anchor 'muc:<La Mã>' = hết mục đó của lý thuyết, 'dang:<k>' = hết Dạng k, 'bai-tap-mau' = hết các Dạng chung; thiếu thì tiết 1 hết mục II, tiết 2 hết Bài tập mẫu (bài không có bài tập mẫu: hết mục V). ban_do_chuong.ga: tên ga ngắn (\\n = xuống dòng), thiếu thì lấy tên bài. tu_danh_gia thiếu thì bỏ trang Tự đánh giá.",
+  "lop": 10,
+  "chuong": 2,
+  "ten": "Động học",
+  "phu_de": "Mô tả chuyển động — chưa cần hỏi vì sao vật chuyển động",
+  "tep": "vat-li-10-chuong-2-dong-hoc",
+  "ban_khoi_dau": 7,
+  "lessons": [49, 50, 51, 52, 53, 54, 55, 56, 57],
+  "bia": {
+    "nhan": "SỔ TAY TỰ HỌC",
+    "tieu_de": "ĐỘNG<br>HỌC",
+    "phu_de": "Mô tả chuyển động của mọi vật — từ chiếc xe buýt tới quả bóng bay trên sân.",
+    "the": "BẢN THỬ · CHƯƠNG 2"
+  },
+  "dang_chung": {
+    "49": [1, 2], "50": [1, 2], "52": [1, 2], "53": [1, 2], "54": [1, 2], "55": [1, 2], "57": [1, 2]
+  },
+  "tiet": {
+    "49": ["muc:II", "bai-tap-mau"], "50": ["muc:II", "bai-tap-mau"], "51": ["muc:II", "muc:V"],
+    "52": ["muc:II", "bai-tap-mau"], "53": ["muc:II", "bai-tap-mau"], "54": ["muc:II", "bai-tap-mau"],
+    "55": ["muc:II", "bai-tap-mau"], "56": ["muc:II", "muc:V"], "57": ["muc:II", "bai-tap-mau"]
+  },
+  "ban_do_chuong": {
+    "ga": {
+      "49": "Độ dịch chuyển\n& quãng đường", "50": "Tốc độ\n& vận tốc", "51": "Thực hành\nđo tốc độ",
+      "52": "Đồ thị\nđộ dịch chuyển\n– thời gian", "53": "Chuyển động\nbiến đổi\n& gia tốc",
+      "54": "Thẳng biến\nđổi đều", "55": "Rơi\ntự do", "56": "Thực hành\nđo g", "57": "Chuyển động\nném"
+    },
+    "nhom": [
+      ["Bài 4–5", "Mô tả vị trí và cách đo nhanh chậm"],
+      ["Bài 6–7", "Tự đo, tự vẽ đồ thị chuyển động"],
+      ["Bài 8–10", "Khi vận tốc thay đổi: gia tốc"],
+      ["Bài 11–12", "Đo g, rồi ghép hai chuyển động: ném"]
+    ]
+  },
+  "tu_danh_gia": [
+    ["Phân biệt độ dịch chuyển và quãng đường, tính được cả hai", "4"],
+    ["Phân biệt tốc độ và vận tốc, tính tốc độ trung bình", "4, 5"],
+    ["Đo tốc độ bằng cổng quang và tính sai số", "6"],
+    ["Đọc và vẽ đồ thị độ dịch chuyển – thời gian; tính vận tốc từ độ dốc", "7"],
+    ["Tính gia tốc; nhận ra nhanh dần, chậm dần", "8"],
+    ["Dùng công thức chuyển động thẳng biến đổi đều và đồ thị v–t", "9"],
+    ["Giải bài rơi tự do (thời gian rơi, vận tốc chạm đất)", "10, 11"],
+    ["Phân tích chuyển động ném thành hai chuyển động độc lập", "12"]
+  ]
+}

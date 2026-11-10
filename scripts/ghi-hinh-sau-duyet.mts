@@ -13,13 +13,16 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const scriptDir = path.dirname(fileURLToPath(import.meta.url));
-const root = path.join(scriptDir, "data", "gemini-hinh");
+const di = process.argv.indexOf("--thu-muc"); // mặc định data/gemini-hinh; vd: --thu-muc hinh-cau-hoi
+const root = path.join(scriptDir, "data", di > 0 ? process.argv[di + 1] : "gemini-hinh");
 const ghi = process.argv.includes("--ghi");
 function readEnvLocal(key: string): string | undefined {
-  const p = path.resolve(scriptDir, "..", ".env.local");
-  if (!fs.existsSync(p)) return undefined;
-  const line = fs.readFileSync(p, "utf8").split("\n").find((l) => l.startsWith(`${key}=`));
-  return line ? line.slice(key.length + 1).trim() : undefined;
+  for (const p of [path.resolve(scriptDir, "..", ".env.local"), "/Users/MAC/Projects/thachlab/.env.local"]) {
+    if (!fs.existsSync(p)) continue;
+    const line = fs.readFileSync(p, "utf8").split("\n").find((l) => l.startsWith(`${key}=`));
+    if (line) return line.slice(key.length + 1).trim();
+  }
+  return undefined;
 }
 const fail = (m: string): never => { console.error(m); process.exit(1); };
 
@@ -64,8 +67,12 @@ const bak = path.join(logDir, `hinh-gemini-sao-luu-${new Date().toISOString().re
 fs.writeFileSync(bak, JSON.stringify(rows, null, 1));
 console.log(`đã sao lưu ${rows?.length} câu → ${path.relative(process.cwd(), bak)}`);
 
+// Chạy lại được: câu đã có <svg trong đề (lượt trước đã ghi) thì bỏ qua — RPC chỉ NỐI hình vào cuối đề, ghi hai lần sẽ nhân đôi.
+const daCoSvg = new Set((rows ?? []).filter((r) => /<svg[\s>]/i.test(String((r.question as { question?: string })?.question ?? ""))).map((r) => r.id as number));
+if (daCoSvg.size) console.log(`bỏ qua ${daCoSvg.size} câu đã có <svg: ${[...daCoSvg].join(", ")}`);
 let ok = 0;
 for (const [id, svg] of svgs) {
+  if (daCoSvg.has(id)) continue;
   const { error } = await supabase.rpc("bank_set_question_figure_svc", { p_bank_id: id, p_img_html: svg });
   if (error) { console.error(`#${id}: LỖI ${error.message}`); continue; }
   ok++; console.log(`#${id}: đã ghi`);

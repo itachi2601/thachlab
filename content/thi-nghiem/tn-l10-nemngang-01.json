@@ -65,8 +65,8 @@
    "don_vi": "m/s",
    "kieu": "dieu_chinh",
    "min": 0.5,
-   "max": 6.0,
-   "mac_dinh": 2.0,
+   "max": 6,
+   "mac_dinh": 2,
    "buoc": 0.1
   },
   {
@@ -118,10 +118,30 @@
    "L (m)"
   ],
   "hang": [
-   [0.5, 2.0, 0.319, 0.64],
-   [0.8, 2.0, 0.404, 0.81],
-   [0.8, 5.0, 0.404, 2.02],
-   [1.25, 5.0, 0.505, 2.53]
+   [
+    0.5,
+    2,
+    0.319,
+    0.64
+   ],
+   [
+    0.8,
+    2,
+    0.404,
+    0.81
+   ],
+   [
+    0.8,
+    5,
+    0.404,
+    2.02
+   ],
+   [
+    1.25,
+    5,
+    0.505,
+    2.53
+   ]
   ],
   "ghi_chu": "Số liệu mẫu tính từ chính các hệ thức trong mo_hinh với g = 9,8 m/s²; hàng 2 và hàng 3 cùng h nên cùng t, chỉ khác L — đó là điểm cần cho học sinh thấy."
  },
@@ -137,5 +157,10 @@
   "loai": "2d_dong_hoc+bang_so_lieu",
   "y_tuong": "Hai viên bi rơi song song trên cùng khung hình; thanh trượt h và v₀; vẽ vệt mờ ở mỗi 0,1 s để thấy các chấm của hai viên luôn cùng hàng.",
   "diem_nhan": "Kéo v₀ từ 0,5 tới 6 m/s: bi A bay xa hơn hẳn mà các chấm vẫn cùng hàng với bi B; kéo h thì cả hai cùng rơi lâu hơn."
+ },
+ "video": {
+  "youtube_id": "AVISpejCt0k",
+  "nhan": "thả bi và ném ngang cùng lúc",
+  "nhin_vao": "Hai bi chạm đất cùng lúc hay lệch?"
  }
 }

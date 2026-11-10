@@ -213,24 +213,24 @@
      "answer": true
     },
     {
-     "text": "Cọ xát đã tạo ra điện tích mới trên thước nhựa.",
-     "answer": false
-    },
-    {
      "text": "Lon nhôm nhiễm điện do hưởng ứng, đầu gần thước nhiễm điện trái dấu với thước.",
      "answer": true
     },
     {
      "text": "Lon nhôm lăn về phía thước vì tổng điện tích của lon khác không.",
      "answer": false
+    },
+    {
+     "text": "Cọ xát đã tạo ra điện tích mới trên thước nhựa.",
+     "answer": false
     }
    ],
    "explanation": "Cọ xát chỉ làm electron dời chỗ, hai vật nhiễm điện trái dấu. Lon nhôm nhiễm điện do hưởng ứng, tổng điện tích vẫn bằng không; đầu gần trái dấu ở gần hơn nên bị hút mạnh hơn đầu xa bị đẩy.",
    "distractorNotes": {
     "0": "Cọ xát làm electron chuyển từ vật này sang vật kia nên hai vật luôn nhiễm điện trái dấu.",
-    "1": "Điện tích không tự sinh ra; cọ xát chỉ làm electron dời chỗ theo bảo toàn điện tích.",
-    "2": "Thước không chạm lon nên lon nhiễm điện hưởng ứng, đầu gần mang dấu ngược với thước.",
-    "3": "Hưởng ứng không thêm bớt electron nên tổng điện tích lon vẫn bằng không; lon bị hút vì đầu trái dấu ở gần hơn."
+    "1": "Thước không chạm lon nên lon nhiễm điện hưởng ứng, đầu gần mang dấu ngược với thước.",
+    "2": "Hưởng ứng không thêm bớt electron nên tổng điện tích lon vẫn bằng không; lon bị hút vì đầu trái dấu ở gần hơn.",
+    "3": "Điện tích không tự sinh ra; cọ xát chỉ làm electron dời chỗ theo bảo toàn điện tích."
    }
   },
   {
@@ -244,11 +244,11 @@
    "question": "Đặt điện tích $q_1 = +q$ tại A và $q_2 = -9q$ tại B. Xét vị trí C đặt điện tích $q_0$ để $q_0$ cân bằng dưới tác dụng của hai lực điện.",
    "statements": [
     {
-     "text": "Điểm C nằm trên đường thẳng AB.",
-     "answer": true
+     "text": "Điểm C nằm trong đoạn AB.",
+     "answer": false
     },
     {
-     "text": "Điểm C nằm trong đoạn AB.",
+     "text": "Nếu đổi dấu $q_0$ thì vị trí điểm C thay đổi.",
      "answer": false
     },
     {
@@ -256,16 +256,16 @@
      "answer": true
     },
     {
-     "text": "Nếu đổi dấu $q_0$ thì vị trí điểm C thay đổi.",
-     "answer": false
+     "text": "Điểm C nằm trên đường thẳng AB.",
+     "answer": true
     }
    ],
    "explanation": "Hai lực phải cùng phương, ngược chiều nên C nằm trên đường AB; hai điện tích trái dấu thì C ở ngoài đoạn AB, gần điện tích độ lớn nhỏ hơn (A). Kết quả không phụ thuộc dấu và độ lớn của $q_0$.",
    "distractorNotes": {
-    "0": "Hai lực chỉ triệt tiêu khi cùng phương, nên C bắt buộc nằm trên đường thẳng AB.",
-    "1": "Trong đoạn AB, lực hút và lực đẩy của hai điện tích trái dấu cùng chiều nhau nên không triệt tiêu.",
+    "0": "Trong đoạn AB, lực hút và lực đẩy của hai điện tích trái dấu cùng chiều nhau nên không triệt tiêu.",
+    "1": "Đổi dấu $q_0$ thì cả hai lực cùng đổi chiều, vẫn triệt tiêu nên vị trí C giữ nguyên.",
     "2": "Điểm cân bằng luôn gần điện tích có độ lớn nhỏ hơn, ở đây là $+q$ tại A.",
-    "3": "Đổi dấu $q_0$ thì cả hai lực cùng đổi chiều, vẫn triệt tiêu nên vị trí C giữ nguyên."
+    "3": "Hai lực chỉ triệt tiêu khi cùng phương, nên C bắt buộc nằm trên đường thẳng AB."
    }
   },
   {
@@ -417,11 +417,11 @@
    "question": "Hai điện tích điểm $q_1$, $q_2$ đặt cách nhau khoảng $r$ trong không khí, tương tác với nhau bằng lực có độ lớn $F$.",
    "statements": [
     {
-     "text": "Trong không khí lấy $\\varepsilon \\approx 1$, nên $F = k\\dfrac{|q_1q_2|}{r^2}$.",
-     "answer": true
+     "text": "Khi tính $F$, phải thay $\\varepsilon_0 = 8{,}85\\cdot10^{-12}$ vào chỗ $\\varepsilon$ trong công thức.",
+     "answer": false
     },
     {
-     "text": "Khi tính $F$, phải thay $\\varepsilon_0 = 8{,}85\\cdot10^{-12}$ vào chỗ $\\varepsilon$ trong công thức.",
+     "text": "Khoảng cách tăng 2 lần và $|q_1|$ giảm 2 lần thì $F$ giảm 4 lần.",
      "answer": false
     },
     {
@@ -429,16 +429,16 @@
      "answer": true
     },
     {
-     "text": "Khoảng cách tăng 2 lần và $|q_1|$ giảm 2 lần thì $F$ giảm 4 lần.",
-     "answer": false
+     "text": "Trong không khí lấy $\\varepsilon \\approx 1$, nên $F = k\\dfrac{|q_1q_2|}{r^2}$.",
+     "answer": true
     }
    ],
    "explanation": "Không khí có $\\varepsilon \\approx 1$; $\\varepsilon_0$ chỉ dùng để tính ra $k$. $F$ tỉ lệ với $|q_1q_2|$ và nghịch với $r^2$: $r$ tăng 2 lần, $|q_1|$ giảm 2 lần thì $F$ giảm $2\\cdot2^2 = 8$ lần.",
    "distractorNotes": {
-    "0": "Bài nêu rõ không khí có $\\varepsilon \\approx 1$ nên bỏ được $\\varepsilon$ khỏi công thức.",
-    "1": "$\\varepsilon_0$ chỉ dùng để tính $k = \\dfrac{1}{4\\pi\\varepsilon_0}$; $\\varepsilon$ là hằng số điện môi không đơn vị, $\\varepsilon \\ge 1$.",
+    "0": "$\\varepsilon_0$ chỉ dùng để tính $k = \\dfrac{1}{4\\pi\\varepsilon_0}$; $\\varepsilon$ là hằng số điện môi không đơn vị, $\\varepsilon \\ge 1$.",
+    "1": "Chỉ tính phần do khoảng cách mà quên điện tích giảm 2 lần; lực giảm $2\\times2^2 = 8$ lần.",
     "2": "$F$ tỉ lệ thuận với tích $|q_1q_2|$, nên một điện tích gấp đôi thì lực gấp đôi.",
-    "3": "Chỉ tính phần do khoảng cách mà quên điện tích giảm 2 lần; lực giảm $2\\times2^2 = 8$ lần."
+    "3": "Bài nêu rõ không khí có $\\varepsilon \\approx 1$ nên bỏ được $\\varepsilon$ khỏi công thức."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Hai quả cầu nhỏ giống hệt nhau mang điện tích $+6\\ \\mu$C và $-2\\ \\mu$C. Cho chúng chạm nhau rồi tách ra, đặt lại đúng khoảng cách cũ.",
    "statements": [
     {
-     "text": "Sau khi tách, mỗi quả mang điện tích $+2\\ \\mu$C.",
-     "answer": true
-    },
-    {
      "text": "Sau khi tách, mỗi quả mang điện tích $+4\\ \\mu$C.",
      "answer": false
     },
     {
-     "text": "Sau khi tách, hai quả đẩy nhau.",
+     "text": "Lực tương tác sau khi tách lớn hơn lúc đầu.",
+     "answer": false
+    },
+    {
+     "text": "Sau khi tách, mỗi quả mang điện tích $+2\\ \\mu$C.",
      "answer": true
     },
     {
-     "text": "Lực tương tác sau khi tách lớn hơn lúc đầu.",
-     "answer": false
+     "text": "Sau khi tách, hai quả đẩy nhau.",
+     "answer": true
     }
    ],
    "explanation": "Theo $q' = \\dfrac{q_1 + q_2}{2}$ cộng có dấu: $\\dfrac{6 + (-2)}{2} = +2\\ \\mu$C, cùng dấu nên đẩy nhau. Tích độ lớn từ 12 còn 4 nên lực giảm 3 lần.",
    "distractorNotes": {
-    "0": "Cộng có dấu $6 + (-2) = 4$ rồi chia đều cho hai quả giống hệt được đúng $+2\\ \\mu$C.",
-    "1": "Cộng độ lớn $6 + 2$ rồi chia đôi là bỏ mất dấu âm của điện tích.",
-    "2": "Sau khi tách hai quả cùng mang điện dương nên đẩy nhau, không còn hút.",
-    "3": "Ở cùng khoảng cách, tích độ lớn điện tích giảm từ $6\\cdot2$ xuống $2\\cdot2$ nên lực nhỏ đi."
+    "0": "Cộng độ lớn $6 + 2$ rồi chia đôi là bỏ mất dấu âm của điện tích.",
+    "1": "Ở cùng khoảng cách, tích độ lớn điện tích giảm từ $6\\cdot2$ xuống $2\\cdot2$ nên lực nhỏ đi.",
+    "2": "Cộng có dấu $6 + (-2) = 4$ rồi chia đều cho hai quả giống hệt được đúng $+2\\ \\mu$C.",
+    "3": "Sau khi tách hai quả cùng mang điện dương nên đẩy nhau, không còn hút."
    }
   },
   {
@@ -491,7 +491,7 @@
      "answer": true
     },
     {
-     "text": "Hai lực cùng chiều thì $F = |F_1 - F_2|$.",
+     "text": "Với góc $\\alpha$ bất kì, $F^2 = F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha$.",
      "answer": false
     },
     {
@@ -499,16 +499,16 @@
      "answer": true
     },
     {
-     "text": "Với góc $\\alpha$ bất kì, $F^2 = F_1^2 + F_2^2 - 2F_1F_2\\cos\\alpha$.",
+     "text": "Hai lực cùng chiều thì $F = |F_1 - F_2|$.",
      "answer": false
     }
    ],
    "explanation": "Bài nêu nguyên lí chồng chất và bảng hợp lực: cùng chiều $F = F_1 + F_2$; góc bất kì $F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$; hai lực bằng nhau $F = 2F_1\\cos\\dfrac{\\alpha}{2}$.",
    "distractorNotes": {
     "0": "Các lực điện cộng theo quy tắc vectơ, đó chính là nguyên lí chồng chất nêu trong bài.",
-    "1": "Lấy hiệu độ lớn chỉ dùng khi hai lực ngược chiều; cùng chiều thì cộng độ lớn.",
+    "1": "Sai dấu: với $\\alpha$ là góc giữa hai lực chung gốc, số hạng $2F_1F_2\\cos\\alpha$ mang dấu cộng.",
     "2": "Đây là trường hợp riêng của công thức góc bất kì khi $F_1 = F_2$, bài đã nêu rõ.",
-    "3": "Sai dấu: với $\\alpha$ là góc giữa hai lực chung gốc, số hạng $2F_1F_2\\cos\\alpha$ mang dấu cộng."
+    "3": "Lấy hiệu độ lớn chỉ dùng khi hai lực ngược chiều; cùng chiều thì cộng độ lớn."
    }
   },
   {
@@ -522,6 +522,10 @@
    "question": "Hai quả cầu nhỏ giống nhau, tích điện bằng nhau, treo vào cùng một điểm bằng hai dây mảnh cách điện dài bằng nhau. Chúng đẩy nhau; khi cân bằng, mỗi dây lệch góc $\\alpha$ so với phương thẳng đứng.",
    "statements": [
     {
+     "text": "Từ $|q| = r\\sqrt{F/k}$, giữ nguyên $r$ mà lực điện tăng 4 lần thì $|q|$ tăng 4 lần.",
+     "answer": false
+    },
+    {
      "text": "Mỗi quả chịu trọng lực $\\vec P$, lực điện $\\vec F$ nằm ngang và lực căng $\\vec T$ dọc dây.",
      "answer": true
     },
@@ -532,18 +536,14 @@
     {
      "text": "Góc lệch thoả mãn $\\tan\\alpha = \\dfrac{F}{P}$.",
      "answer": true
-    },
-    {
-     "text": "Từ $|q| = r\\sqrt{F/k}$, giữ nguyên $r$ mà lực điện tăng 4 lần thì $|q|$ tăng 4 lần.",
-     "answer": false
     }
    ],
    "explanation": "Cân bằng $\\vec P + \\vec T + \\vec F = \\vec 0$, tam giác lực vuông cho $\\tan\\alpha = \\dfrac{F}{P}$. Hai quả đẩy nhau nên cùng dấu; $|q|$ tỉ lệ với $\\sqrt{F}$ nên lực gấp 4 thì $q$ chỉ gấp 2.",
    "distractorNotes": {
-    "0": "Lời giải mẫu liệt kê đúng ba lực này; lực điện nằm ngang theo đường nối hai quả.",
-    "1": "Hai quả đẩy nhau nên phải cùng dấu; trái dấu thì hút nhau và chạm vào nhau.",
-    "2": "Trong tam giác lực, cạnh đối góc $\\alpha$ là $F$, cạnh kề là $P$, nên $\\tan\\alpha = F/P$.",
-    "3": "Quên căn bậc hai: $|q|$ tỉ lệ với $\\sqrt{F}$, lực gấp 4 lần thì $|q|$ chỉ gấp 2 lần."
+    "0": "Quên căn bậc hai: $|q|$ tỉ lệ với $\\sqrt{F}$, lực gấp 4 lần thì $|q|$ chỉ gấp 2 lần.",
+    "1": "Lời giải mẫu liệt kê đúng ba lực này; lực điện nằm ngang theo đường nối hai quả.",
+    "2": "Hai quả đẩy nhau nên phải cùng dấu; trái dấu thì hút nhau và chạm vào nhau.",
+    "3": "Trong tam giác lực, cạnh đối góc $\\alpha$ là $F$, cạnh kề là $P$, nên $\\tan\\alpha = F/P$."
    }
   }
  ]

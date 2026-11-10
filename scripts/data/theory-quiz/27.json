@@ -351,23 +351,23 @@
      "answer": true
     },
     {
-     "text": "Miếng xốp C trôi dần ra xa theo gợn sóng.",
-     "answer": false
-    },
-    {
      "text": "Ngừng chấm thì mọi gợn sóng trên mặt nước biến mất ngay lập tức.",
      "answer": false
     },
     {
      "text": "Sóng mang năng lượng từ O lan ra xa.",
      "answer": true
+    },
+    {
+     "text": "Miếng xốp C trôi dần ra xa theo gợn sóng.",
+     "answer": false
     }
    ],
    "distractorNotes": {
     "0": "Nước tại chỗ miếng xốp không chảy đi mà gợn vẫn lan, nên thứ lan ra xa phải là pha dao động.",
-    "1": "Sóng không truyền vật chất; miếng xốp chỉ nhấp nhô quanh vị trí cân bằng chứ không trôi đi.",
-    "2": "Thí nghiệm cho thấy ngừng chấm thì gợn vẫn lan tiếp rồi yếu dần, không biến mất ngay.",
-    "3": "Sóng truyền pha và năng lượng, nên năng lượng chắc chắn được mang từ O ra xa."
+    "1": "Thí nghiệm cho thấy ngừng chấm thì gợn vẫn lan tiếp rồi yếu dần, không biến mất ngay.",
+    "2": "Sóng truyền pha và năng lượng, nên năng lượng chắc chắn được mang từ O ra xa.",
+    "3": "Sóng không truyền vật chất; miếng xốp chỉ nhấp nhô quanh vị trí cân bằng chứ không trôi đi."
    },
    "explanation": "Thí nghiệm cho thấy C chỉ nhấp nhô tại chỗ, sóng truyền pha và năng lượng chứ không truyền nước. Ngừng chấm, gợn vẫn lan tiếp rồi yếu dần."
   },
@@ -382,27 +382,27 @@
    "question": "Một sóng âm truyền từ nước ra không khí, nguồn vẫn dao động đúng nhịp cũ. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tần số sóng không thay đổi.",
+     "text": "Tốc độ truyền sóng thay đổi.",
      "answer": true
     },
     {
-     "text": "Chu kì sóng giảm khi sang không khí.",
-     "answer": false
-    },
-    {
-     "text": "Tốc độ truyền sóng thay đổi.",
+     "text": "Tần số sóng không thay đổi.",
      "answer": true
     },
     {
      "text": "Bước sóng giữ nguyên như khi truyền trong nước.",
      "answer": false
+    },
+    {
+     "text": "Chu kì sóng giảm khi sang không khí.",
+     "answer": false
     }
    ],
    "distractorNotes": {
-    "0": "Tần số do nguồn quyết định; nguồn giữ nhịp cũ thì tần số không thể thay đổi.",
-    "1": "Chu kì $T = \\dfrac{1}{f}$ bị khoá theo nguồn giống tần số, nên không đổi khi đổi môi trường.",
-    "2": "Tốc độ truyền do môi trường quyết định, đổi môi trường thì tốc độ phải đổi.",
-    "3": "$v$ đổi còn $f$ giữ nguyên nên $\\lambda = \\dfrac{v}{f}$ bắt buộc đổi theo."
+    "0": "Tốc độ truyền do môi trường quyết định, đổi môi trường thì tốc độ phải đổi.",
+    "1": "Tần số do nguồn quyết định; nguồn giữ nhịp cũ thì tần số không thể thay đổi.",
+    "2": "$v$ đổi còn $f$ giữ nguyên nên $\\lambda = \\dfrac{v}{f}$ bắt buộc đổi theo.",
+    "3": "Chu kì $T = \\dfrac{1}{f}$ bị khoá theo nguồn giống tần số, nên không đổi khi đổi môi trường."
    },
    "explanation": "Khi đổi môi trường, $f$ và $T$ bị khoá theo nguồn; $v$ đổi theo môi trường nên $\\lambda = \\dfrac{v}{f}$ cũng đổi."
   },
@@ -417,27 +417,27 @@
    "question": "Một sóng cơ do nguồn có biên độ $A$, tần số góc $\\omega$ tạo ra, truyền trong môi trường với tốc độ $v$. Xét các phát biểu về tốc độ truyền sóng và tốc độ dao động của phần tử:",
    "statements": [
     {
-     "text": "Tốc độ truyền sóng $v$ do môi trường quyết định.",
-     "answer": true
+     "text": "Tốc độ dao động cực đại của phần tử luôn nhỏ hơn tốc độ truyền sóng.",
+     "answer": false
     },
     {
      "text": "Tốc độ dao động cực đại của phần tử là $v_{max} = \\omega A$.",
      "answer": true
     },
     {
-     "text": "Tốc độ dao động cực đại của phần tử luôn nhỏ hơn tốc độ truyền sóng.",
+     "text": "Tăng biên độ của nguồn thì tốc độ truyền sóng tăng theo.",
      "answer": false
     },
     {
-     "text": "Tăng biên độ của nguồn thì tốc độ truyền sóng tăng theo.",
-     "answer": false
+     "text": "Tốc độ truyền sóng $v$ do môi trường quyết định.",
+     "answer": true
     }
    ],
    "distractorNotes": {
-    "0": "Mỗi môi trường cho $v$ một giá trị xác định, nên không thể coi tốc độ truyền do nguồn quyết định.",
+    "0": "Hai đại lượng đo hai chuyện khác nhau, không có quy luật cái nào luôn nhỏ hơn.",
     "1": "Tốc độ lớn nhất của phần tử khi qua vị trí cân bằng đúng là $\\omega A$, phụ thuộc biên độ và tần số.",
-    "2": "Hai đại lượng đo hai chuyện khác nhau, không có quy luật cái nào luôn nhỏ hơn.",
-    "3": "Lẫn hai chữ $v$; biên độ chỉ làm tăng $v_{max}$, còn tốc độ truyền do môi trường quyết định."
+    "2": "Lẫn hai chữ $v$; biên độ chỉ làm tăng $v_{max}$, còn tốc độ truyền do môi trường quyết định.",
+    "3": "Mỗi môi trường cho $v$ một giá trị xác định, nên không thể coi tốc độ truyền do nguồn quyết định."
    },
    "explanation": "Tốc độ truyền sóng $v$ theo môi trường, còn $v_{max} = \\omega A$ theo nguồn. Đây là hai đại lượng khác nhau, chỉ tình cờ cùng ký hiệu $v$."
   },
@@ -452,6 +452,10 @@
    "question": "Nguồn O dao động $u_O = A\\cos(\\omega t)$ bắt đầu từ $t = 0$, sóng truyền theo chiều dương với tốc độ $v$, bước sóng $\\lambda$. Điểm M cách O đoạn $d$ trên phương truyền. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "M bắt đầu dao động ngay tại thời điểm $t = 0$ cùng với O.",
+     "answer": false
+    },
+    {
      "text": "Nếu $d = \\lambda$ thì M dao động cùng pha với O.",
      "answer": true
     },
@@ -462,17 +466,13 @@
     {
      "text": "Nếu $d = \\dfrac{\\lambda}{4}$ thì M dao động vuông pha với O.",
      "answer": true
-    },
-    {
-     "text": "M bắt đầu dao động ngay tại thời điểm $t = 0$ cùng với O.",
-     "answer": false
     }
    ],
    "distractorNotes": {
-    "0": "Cách nhau một bước sóng thì trễ pha đúng $2\\pi$, trùng một vòng pha nên cùng pha.",
-    "1": "Đảo tỉ lệ; $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$ tăng theo $d$, càng xa nguồn càng trễ pha.",
-    "2": "Thay $d = \\dfrac{\\lambda}{4}$ được $\\Delta\\varphi = \\dfrac{\\pi}{2}$, đúng điều kiện vuông pha.",
-    "3": "Quên sóng cần thời gian $\\dfrac{d}{v}$ mới tới M; trước lúc đó M còn đứng yên."
+    "0": "Quên sóng cần thời gian $\\dfrac{d}{v}$ mới tới M; trước lúc đó M còn đứng yên.",
+    "1": "Cách nhau một bước sóng thì trễ pha đúng $2\\pi$, trùng một vòng pha nên cùng pha.",
+    "2": "Đảo tỉ lệ; $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$ tăng theo $d$, càng xa nguồn càng trễ pha.",
+    "3": "Thay $d = \\dfrac{\\lambda}{4}$ được $\\Delta\\varphi = \\dfrac{\\pi}{2}$, đúng điều kiện vuông pha."
    },
    "explanation": "Độ trễ pha $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda}$ tăng theo $d$. Sóng cần thời gian $\\dfrac{d}{v}$ mới tới M."
   },
@@ -487,27 +487,27 @@
    "question": "Xét một sóng cơ với các hệ thức $\\lambda = vT = \\dfrac{v}{f}$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Giữ nguyên tần số, nếu tốc độ truyền tăng gấp đôi thì bước sóng tăng gấp đôi.",
-     "answer": true
-    },
-    {
      "text": "Giữ nguyên tốc độ truyền, nếu chu kì tăng gấp đôi thì bước sóng giảm một nửa.",
      "answer": false
     },
     {
-     "text": "Trong một chu kì, sóng truyền được quãng đường bằng một bước sóng.",
+     "text": "Từ $v = \\lambda f$ suy ra tần số $f = v\\lambda$.",
+     "answer": false
+    },
+    {
+     "text": "Giữ nguyên tần số, nếu tốc độ truyền tăng gấp đôi thì bước sóng tăng gấp đôi.",
      "answer": true
     },
     {
-     "text": "Từ $v = \\lambda f$ suy ra tần số $f = v\\lambda$.",
-     "answer": false
+     "text": "Trong một chu kì, sóng truyền được quãng đường bằng một bước sóng.",
+     "answer": true
     }
    ],
    "distractorNotes": {
-    "0": "Khi $f$ cố định, $\\lambda = \\dfrac{v}{f}$ tỉ lệ thuận với $v$, nên $v$ gấp đôi thì $\\lambda$ gấp đôi.",
-    "1": "Đảo tỉ lệ; $\\lambda = vT$ tỉ lệ thuận với $T$, chu kì gấp đôi thì bước sóng gấp đôi.",
-    "2": "Đây chính là định nghĩa thứ nhất của bước sóng: một chu kì, một bước sóng.",
-    "3": "Biến đổi sai khi chuyển vế; chia hai vế cho $\\lambda$ phải được $f = \\dfrac{v}{\\lambda}$."
+    "0": "Đảo tỉ lệ; $\\lambda = vT$ tỉ lệ thuận với $T$, chu kì gấp đôi thì bước sóng gấp đôi.",
+    "1": "Biến đổi sai khi chuyển vế; chia hai vế cho $\\lambda$ phải được $f = \\dfrac{v}{\\lambda}$.",
+    "2": "Khi $f$ cố định, $\\lambda = \\dfrac{v}{f}$ tỉ lệ thuận với $v$, nên $v$ gấp đôi thì $\\lambda$ gấp đôi.",
+    "3": "Đây chính là định nghĩa thứ nhất của bước sóng: một chu kì, một bước sóng."
    },
    "explanation": "Từ $\\lambda = vT$: $\\lambda$ tỉ lệ thuận với $v$ và với $T$. Từ $v = \\lambda f$ suy ra $f = \\dfrac{v}{\\lambda}$."
   },
@@ -522,11 +522,7 @@
    "question": "Thí nghiệm đo bước sóng trên lò xo: căng lò xo mềm trên sàn, giữ chặt một đầu, gảy đầu kia theo nhịp đều tay và quay chậm để đo bước sóng và chu kì. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Bước sóng được đo bằng khoảng cách giữa hai đỉnh sóng liên tiếp.",
-     "answer": true
-    },
-    {
-     "text": "Tốc độ truyền sóng tính bằng $v = \\lambda T$.",
+     "text": "Kéo căng lò xo hơn thì chu kì sóng tăng theo.",
      "answer": false
     },
     {
@@ -534,15 +530,19 @@
      "answer": true
     },
     {
-     "text": "Kéo căng lò xo hơn thì chu kì sóng tăng theo.",
+     "text": "Tốc độ truyền sóng tính bằng $v = \\lambda T$.",
      "answer": false
+    },
+    {
+     "text": "Bước sóng được đo bằng khoảng cách giữa hai đỉnh sóng liên tiếp.",
+     "answer": true
     }
    ],
    "distractorNotes": {
-    "0": "Hai đỉnh liên tiếp là hai điểm gần nhất cùng pha, nên khoảng cách giữa chúng đúng bằng bước sóng.",
-    "1": "Nhân thay vì chia; tích $\\lambda T$ không có đơn vị tốc độ, đúng là $v = \\dfrac{\\lambda}{T}$.",
-    "2": "Sức căng làm $v$ tăng, nhịp tay giữ $T$ gần như không đổi, nên $\\lambda = vT$ phải tăng.",
-    "3": "Lẫn vai trò môi trường và nguồn; chu kì do nhịp gảy tay quyết định, không do sức căng."
+    "0": "Lẫn vai trò môi trường và nguồn; chu kì do nhịp gảy tay quyết định, không do sức căng.",
+    "1": "Sức căng làm $v$ tăng, nhịp tay giữ $T$ gần như không đổi, nên $\\lambda = vT$ phải tăng.",
+    "2": "Nhân thay vì chia; tích $\\lambda T$ không có đơn vị tốc độ, đúng là $v = \\dfrac{\\lambda}{T}$.",
+    "3": "Hai đỉnh liên tiếp là hai điểm gần nhất cùng pha, nên khoảng cách giữa chúng đúng bằng bước sóng."
    },
    "explanation": "Thí nghiệm rút ra $v = \\dfrac{\\lambda}{T}$; sức căng đổi làm $v$ và $\\lambda$ đổi, còn $T$ do nhịp tay nên gần như không đổi."
   }

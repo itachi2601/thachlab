@@ -4,8 +4,10 @@
 /** Bỏ mọi khối `.tl-box--video` (kể cả marker `<!--video:…-->`) khỏi HTML. */
 export function boKhoiVideoHtml(html: string): string {
   let out = html;
+  // Hộp có khung 6 ô mang thêm class + data-khung: `<div class="tl-box tl-box--video tl-box--khung" data-khung="…">`.
+  const moRe = /<div class="tl-box tl-box--video(?: [^"]*)?"[^>]*>/;
   for (;;) {
-    const i = out.indexOf('<div class="tl-box tl-box--video">');
+    const i = out.search(moRe);
     if (i === -1) break;
     const divRe = /<div\b[^>]*>|<\/div>/g;
     divRe.lastIndex = i;

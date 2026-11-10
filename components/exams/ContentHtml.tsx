@@ -1,5 +1,6 @@
 "use client";
 
+import KhungPortals from "@/components/lessons/KhungPortals";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { withQuestionTables } from "@/lib/question-table";
 import { quizSpeakText } from "@/lib/quiz-speak";
@@ -477,12 +478,15 @@ export default function ContentHtml({
   const innerHtml = useMemo(() => ({ __html: renderedWithVideo }), [renderedWithVideo]);
 
   return (
-    <span
-      ref={rootRef}
-      className={`exam-content ${className}`}
-      onClick={handleClick}
-      onChange={handleChange}
-      dangerouslySetInnerHTML={innerHtml}
-    />
+    <>
+      <span
+        ref={rootRef}
+        className={`exam-content ${className}`}
+        onClick={handleClick}
+        onChange={handleChange}
+        dangerouslySetInnerHTML={innerHtml}
+      />
+      {renderedWithVideo.includes("tl-box--khung") && <KhungPortals rootRef={rootRef} version={renderedWithVideo} />}
+    </>
   );
 }

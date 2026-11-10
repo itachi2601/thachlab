@@ -1,6 +1,6 @@
 ---
 name: hoc-phong-cach
-description: Ghi lại phong cách học và dạy của thầy Thạch (cách gọi kiến thức trước khi giải, nguyên tắc nền tảng, retrieval practice, cách thầy hỏi lại học sinh khi chữa bài) vào docs/AI-TUTOR.md mục 9 + memory, thành quy tắc dùng được cho prompt và eval của AI Tutor (GĐ 4). Dùng khi thầy kể một triết lý học, một trải nghiệm học (trượt băng, học toán…), một nghiên cứu giáo dục thầy tâm đắc, hoặc một tình huống chữa bài cụ thể; khi thầy nói "ghi phong cách này", "học phong cách của tôi", "lưu cách dạy này cho AI tutor", "tôi chữa bài thế này…". KHÔNG dùng để xây tutor hay sửa prompt — chỉ ghi và chuẩn hoá nguồn phong cách.
+description: Ghi phong cách học và dạy của thầy Thạch (triết lý học, trải nghiệm, nghiên cứu tâm đắc, cách chữa bài) vào docs/AI-TUTOR.md mục 9 + memory thành quy tắc cho AI Tutor. Dùng khi thầy nói "ghi phong cách này", "học phong cách của tôi", "lưu cách dạy này cho AI tutor", "tôi chữa bài thế này…". KHÔNG dùng để xây tutor hay sửa prompt.
 ---
 
 # Học phong cách của thầy — ghi vào nguồn, không "học bằng trò chuyện"

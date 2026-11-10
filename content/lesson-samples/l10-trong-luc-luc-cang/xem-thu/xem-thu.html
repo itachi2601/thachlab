@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-hoc-lop-10-11-46760c/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
 }
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
@@ -130,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -140,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -149,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -158,19 +182,152 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-quiz > input:checked + .tl-opt.tl-no { border-color: #f87171; background: rgba(248,113,113,.16); }
 .exam-content .tl-fb { display: none; padding: 10px 14px; border-radius: 10px; }
 .exam-content .tl-fb p { margin: 0; text-align: left; }
+.exam-content .tl-fb p + p, .exam-content .tl-fb ul + p, .exam-content .tl-fb p + ul { margin-top: 6px; }
+.exam-content .tl-fb ul.tl-fb-list { margin: 6px 0 0; padding-left: 1.3em; list-style: disc; text-align: left; }
+.exam-content .tl-fb ul.tl-fb-list > li { margin: 0 0 4px; padding-left: 2px; }
+.exam-content .tl-fb ul.tl-fb-list > li::marker { color: currentColor; }
 .exam-content .tl-fb--ok { background: rgba(52,211,153,.14); }
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Clip thí nghiệm tự dựng 9:16 (chen-video-thi-nghiem.mts): khung DỌC thay vì ép vào 16:9 (hết hai dải đen),
+   tên thí nghiệm là tiêu đề, nhãn "Video thí nghiệm" chỉ là dòng phụ. Màn hẹp: xếp chồng, video rộng tối đa 340px
+   (cao ~600px, vừa một màn điện thoại — D1). Màn ≥640px: video cột trái, chữ cột phải (B1, N1). */
+.exam-content .tl-box--video:has(> .tl-video--doc) { display: grid; grid-template-columns: minmax(0, 1fr); align-items: start; column-gap: 20px; }
+.exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin: 0 0 2px; font-size: 12.5px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; }
+.exam-content .tl-video-ten { margin: 0 0 12px; font-size: 1.12em; font-weight: 700; line-height: 1.35; color: #f1f5f9; }
+.exam-content .tl-video--doc { aspect-ratio: 9 / 16; width: 100%; max-width: 340px; justify-self: center; margin: 0; border-radius: 12px; box-shadow: 0 6px 20px rgba(2,6,23,.28); }
+.exam-content .tl-video--doc video { display: block; object-fit: contain; }
+.exam-content .tl-video-goi-y { margin: 12px 0 0; padding: 8px 12px; border-left: 3px solid rgba(167,139,250,.6); border-radius: 0 6px 6px 0; background: rgba(167,139,250,.1); font-size: .94em; line-height: 1.5; }
+html[data-theme="light"] .exam-content .tl-video-ten { color: #1e1b4b; }
+html[data-theme="light"] .exam-content .tl-video-goi-y { border-left-color: #7c3aed; background: rgba(124,58,237,.07); }
+/* Khung video tương tác (components/lessons/VideoThiNghiemKhung.tsx, gắn bằng KhungPortals): mount xong mới ẩn hộp
+   tĩnh (label, <video>, "Nhìn vào") và bỏ viền/nền hộp để khung tự có thẻ riêng. Chunk lỗi thì hộp tĩnh còn nguyên. */
+.exam-content .tl-box--khung.tl-khung-on { display: block; padding: 0; border: 0; background: none; box-shadow: none; }
+.exam-content .tl-box--khung.tl-khung-on > :not(.tl-khung-host) { display: none; }
+.exam-content .tl-khung-host ol { list-style: none; margin: 0; padding: 0; }
+.exam-content .tl-khung-host li { margin: 0; padding-left: 0; }
+.exam-content .tl-khung-host li::marker { content: none; }
+.exam-content .tl-khung-host :is(p, h3), .lesson-page .exam-content .tl-khung-host :is(p, h3) { margin: 0; line-height: inherit; } /* .lesson-page đặt `p`/`h3` cùng độ ưu tiên, đứng sau; lề/cỡ riêng của khung đặt inline trong component (CSS không phân lớp thắng tiện ích Tailwind) */
+.exam-content .tl-khung-host button { font: inherit; }
+@media (min-width: 640px) {
+  .exam-content .tl-box--video:has(> .tl-video--doc) { grid-template-columns: minmax(220px, 300px) minmax(0, 1fr); grid-template-rows: auto auto 1fr; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-video--doc { grid-column: 1; grid-row: 1 / span 3; max-width: none; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > :not(.tl-video--doc) { grid-column: 2; }
+  .exam-content .tl-box--video:has(> .tl-video--doc) > .tl-label { margin-top: 4px; }
+  .exam-content .tl-video-goi-y { margin-top: 4px; }
+}
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +341,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,30 +350,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -263,6 +438,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -274,6 +453,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -321,7 +502,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -376,6 +559,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -436,6 +657,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -557,12 +787,724 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
+/* ============================================================================================
+   KHUNG ĐỒNG BỘ TRANG CHƯƠNG ↔ TRANG BÀI (thầy duyệt 26/10/2026, bản xem thử "Trang chương và trang bài")
+   Rail trái luôn là "mình đang ở đâu" (B5): trang chương = danh sách chương, trang bài = mục lục bài.
+   Đầu trang cùng mẫu: đường dẫn + công cụ một hàng, H1 cùng cỡ (C3), một dòng meta. Một điểm nổi mỗi trang (B2).
+   4 cỡ: ≥1024 (máy tính, iPad ngang) 2 cột · 640–1023 (iPad dọc) 1 cột + thanh đáy + ngăn kéo trái · <640 điện thoại.
+   ============================================================================================ */
+
+/* ---- Đầu trang bài: một lưới cho mọi cỡ ---- */
+.lesson-page .lesson-head {
+  position: relative; display: grid; align-items: center; column-gap: 8px; row-gap: 2px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+  grid-template-areas: "back crumb present aa drawer" "title title title title title" "meta meta meta meta meta";
+}
+.lesson-page .lesson-head-text { display: contents; }
+.lesson-page .lesson-head-back { grid-area: back; }
+.lesson-page .lesson-head .lesson-breadcrumb { grid-area: crumb; min-width: 0; align-self: center; }
+.lesson-page .lesson-head h1 { grid-area: title; margin-top: 4px; }
+.lesson-page .lesson-head .lesson-meta { grid-area: meta; }
+.lesson-page .lesson-head .lesson-tool-toggle { grid-area: aa; display: inline-flex; width: 44px; height: 44px; }
+.lesson-page .lesson-head .lesson-drawer-toggle { display: none; }
+.lesson-present-btn { grid-area: present; display: inline-flex; height: 44px; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; padding: 0 12px; color: var(--color-ink); font-size: 14px; font-weight: 600; cursor: pointer; }
+.lesson-present-btn:hover { border-color: var(--lesson-accent-line); }
+/* Cỡ chữ, Dịu mắt, Toàn màn hình gom vào bảng Aa (N2): bảng nổi ngay dưới nút. */
+.lesson-page .lesson-head .lesson-tools { position: absolute; top: 48px; right: 0; z-index: 30; display: none; min-width: 200px; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(15,23,42,.45); }
+.lesson-page .lesson-head .lesson-tools.is-open { display: flex; }
+.lesson-page .lesson-head .lesson-tools .lesson-tool { justify-content: flex-start; min-height: 44px; }
+.lesson-page .lesson-head .lesson-fonttools button { min-height: 44px; }
+
+/* ---- Bài trước / Bài sau ở cuối bài ---- */
+.lesson-pager { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 8px; }
+.lesson-pager-link { display: grid; gap: 2px; min-height: 56px; align-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 16px; color: var(--color-ink); font-size: 15px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-pager-link small { color: var(--color-muted); font-size: 13px; font-weight: 500; }
+.lesson-pager-link:hover { border-color: var(--lesson-accent-line); }
+.lesson-pager-link--next { grid-column: 2; border-color: var(--lesson-accent-line); text-align: right; color: var(--lesson-accent-text); }
+
+/* ---- Rail trái trang bài ---- */
+.lesson-rail-back { display: flex; min-height: 44px; align-items: center; gap: 6px; color: var(--color-muted); font-size: 14px; font-weight: 600; line-height: 1.35; text-decoration: none; }
+.lesson-rail-back:hover { color: var(--lesson-accent-text); }
+.lesson-nav--rail { display: grid; gap: 12px; align-content: start; }
+.lesson-nav--rail .lesson-toc ol { max-height: none; }
+.lesson-nav--rail .lesson-toc a { min-height: 40px; align-content: center; padding: 8px 10px; border-radius: 0 8px 8px 0; font-size: 14px; }
+
+/* Cột chữ ≤ ~62 ký tự (C2): giới hạn đoạn văn, không giới hạn hình/bảng. */
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 36em; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail { grid-template-columns: 248px minmax(0, 1fr); gap: 40px; max-width: 1200px; }
+  .lesson-layout--rail .lesson-nav--rail { position: sticky; top: 92px; max-height: calc(100vh - 112px); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; padding-bottom: 72px; }
+  .lesson-layout--rail .lesson-main { max-width: 760px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 760px; max-width: 760px; }
+  .lesson-page .lesson-head { margin: 0 0 16px; }
+  .lesson-page .lesson-head-back { display: none; }
+  .lesson-page .lesson-head h1, .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 32px; line-height: 1.2; }
+}
+/* iPad ngang (1024–1279): rail hẹp lại, nút Trình chiếu chỉ còn icon. */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-layout--rail { grid-template-columns: 220px minmax(0, 1fr); gap: 28px; padding-inline: 24px; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+
+/* ---- < 1024 (iPad dọc + điện thoại): thanh bài thay thanh site, thanh đáy + ngăn kéo ---- */
+@media (max-width: 1023px) {
+  body:has(.lesson-page) header[data-site-navbar] { display: none; }
+  /* Chỉ khi bài đã dựng (.lesson-page có mặt) — lúc tải/lỗi navbar vẫn hiện nên phải giữ khoảng đệm. */
+  body:has(.lesson-page) main.lesson-page-main { padding-top: 0 !important; }
+  .lesson-layout--rail .lesson-nav--rail { display: none; }
+  .lesson-page .lesson-tabs { top: 0; }
+  .lesson-page .lesson-review-banner { top: 56px; }
+  .lesson-page .lesson-head { padding-top: 8px; }
+  .lesson-page .lesson-head .lesson-tools { top: 56px; }
+  .lesson-page .lesson-head-back { display: inline-flex; width: 44px; height: 44px; }
+  /* Tên chương nhỏ ở hàng đầu thay cho cả đường dẫn (biết mình ở chương nào, không lặp tên bài — N4). */
+  .lesson-page .lesson-breadcrumb { display: flex; flex-wrap: nowrap; overflow: hidden; }
+  .lesson-page .lesson-crumb-class { display: none !important; }
+  .lesson-page .lesson-crumb-chapter { display: block !important; overflow: hidden; color: var(--color-muted); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-pager { display: none; }
+  .lesson-present-btn { width: 44px; justify-content: center; padding: 0; }
+  .lesson-present-btn .lesson-tool-text { display: none; }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trước đây Bài trước/Bài sau treo ở đầu trang tablet; giờ là thanh đáy giống điện thoại, rộng tối đa 560px (D3/B6). */
+  .lesson-page .lesson-head h1 { font-size: 26px; }
+  .lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-tabs ol { justify-content: center; }
+  body:has(.lesson-page) { padding-bottom: calc(var(--lesson-bottombar-h, 72px) + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottombar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 48px repeat(3, minmax(0, 1fr)); align-items: center; gap: 10px; border-top: 1px solid var(--lesson-line); background: var(--color-panel); padding: 10px max(16px, calc((100vw - 600px) / 2)) calc(10px + env(safe-area-inset-bottom, 0px)); }
+  .lesson-page .lesson-bottom-link, .lesson-page .lesson-bottom-done { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+  .lesson-page .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+  .lesson-page .lesson-bottom-done { border-color: var(--lesson-accent-line); background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-page .lesson-bottom-done.is-done { color: var(--color-ok, #047857); }
+  .lesson-page .lesson-checkbox { width: 17px; height: 17px; border: 2px solid currentColor; border-radius: 5px; }
+  .lesson-page .lesson-bottom-step { display: none; }
+  .lesson-page.is-drawer-open .lesson-bottombar { display: none; }
+  /* Đề kiểm tra: Bài trước/Bài sau đã ở thanh đáy — bỏ hàng lặp ở đầu trang (D3). */
+  .lesson-layout--exam .lesson-nav--compact { display: none; }
+  /* Ngăn kéo mục lục trượt từ cạnh TRÁI — đúng cạnh của rail trên máy tính (B5/B7). */
+  .lesson-page .lesson-drawer { display: block; position: fixed; inset: 0; z-index: 60; }
+  .lesson-page .lesson-drawer-scrim { position: absolute; inset: 0; width: 100%; border: 0; background: rgba(2, 6, 15, .45); cursor: pointer; }
+  .lesson-page .lesson-drawer-sheet { position: absolute; inset: 0 auto 0 0; display: flex; width: min(380px, 86vw); flex-direction: column; border-right: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-drawer-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid var(--lesson-line); padding: 14px 16px 12px; }
+  .lesson-page .lesson-drawer-title { margin: 0; color: var(--color-ink); font-size: 16px; font-weight: 700; }
+  .lesson-page .lesson-drawer-head small { display: block; margin-top: 3px; color: var(--color-muted); font-size: 13px; }
+  .lesson-page .lesson-drawer-head button { display: inline-flex; width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 12px; background: none; color: var(--color-ink); cursor: pointer; }
+  .lesson-page .lesson-drawer-body { overflow-y: auto; overscroll-behavior: contain; padding: 14px 16px 24px; }
+  .lesson-page .lesson-bottom-link.is-empty { opacity: .35; }
+  body:has(.lesson-bottombar) .bug-fab { bottom: calc(var(--lesson-bottombar-h, 72px) + 12px); z-index: 46; }
+  .lesson-page .lesson-drawer-body .lesson-toc ol { max-height: none; }
+  .lesson-page .lesson-drawer-body .lesson-toc a { min-height: 44px; align-content: center; font-size: 15px; }
+}
+@media (max-width: 639px) {
+  .lesson-page .lesson-head h1 { font-size: 22px; }
+}
+
+/* Cây chương, ô tìm, thẻ tiến độ trong ngăn kéo: dùng chung điện thoại + iPad dọc (ngăn kéo có ở mọi cỡ < 1024px từ 26/10/2026). */
+@media (max-width: 1023px) {
+  /* Hộp trong ngăn kéo (mục lục bài, mức nắm vững, cây khoá) cách nhau đều 14px. */
+  .lesson-page .lesson-drawer-body { display: grid; gap: 14px; align-content: start; }
+  .lesson-drawer-body .lesson-panel { border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 14px; }
+  .lesson-drawer-body .lesson-nav-search { display: flex; align-items: center; gap: 8px; margin: 10px 0; border: 1px solid var(--lesson-line); border-radius: 10px; background: var(--lesson-surface); padding: 8px 10px; color: var(--color-muted); }
+  .lesson-drawer-body .lesson-nav-search input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-ink); font-size: 16px; }
+  .lesson-drawer-body .lesson-toc a { font-size: 13.5px; }
+  .lesson-drawer-body .lesson-progress-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-surface); padding: 12px; }
+  .lesson-drawer-body .lesson-progress-summary > div:last-child { flex: 1 1 140px; min-width: 0; }
+  .lesson-drawer-body .lesson-continue-btn { display: flex; width: max-content; max-width: 100%; min-height: 36px; align-items: center; gap: 6px; margin-top: 10px; border-radius: 9px; background: var(--lesson-accent); padding: 8px 12px; color: #fff; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+  .lesson-drawer-body .lesson-progress-summary p { margin: 0; color: var(--color-ink); font-size: 14px; font-weight: 700; }
+  .lesson-drawer-body .lesson-progress-summary small { display: block; margin-top: 2px; color: var(--color-muted); font-size: 12px; }
+  .lesson-drawer-body .lesson-tree-chapter { width: 100%; display: grid; grid-template-columns: auto minmax(0,1fr) auto auto; align-items: center; gap: 6px; border: 0; background: none; padding: 10px 2px; color: var(--color-ink); font-family: var(--font-display), sans-serif; font-size: 14px; font-weight: 600; text-align: left; cursor: pointer; }
+  .lesson-drawer-body .lesson-tree-chapter em { display: flex; width: 22px; height: 22px; align-items: center; justify-content: center; border: 1px solid var(--lesson-line); border-radius: 50%; color: var(--color-muted); font-size: 12px; font-style: normal; font-weight: 700; }
+  .lesson-drawer-body .lesson-tree-chapter small { color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .lesson-drawer-body .lesson-tree-chapter.is-current { background: var(--lesson-accent-soft); color: var(--lesson-accent-text); }
+  .lesson-drawer-body .lesson-tree ol { display: grid; gap: 1px; margin: 2px 0 8px; padding: 0; list-style: none; }
+  .lesson-drawer-body .lesson-tree a, .lesson-drawer-body .lesson-tree .lesson-tree-current { display: grid; min-height: 44px; grid-template-columns: 18px minmax(0,1fr); align-items: center; gap: 8px; border-left: 2px solid transparent; border-radius: 0 8px 8px 0; padding: 8px; color: var(--color-muted); font-size: 13.5px; line-height: 1.35; text-decoration: none; }
+  .lesson-drawer-body .lesson-tree .is-current { border-left-color: var(--lesson-accent); background: var(--lesson-accent-soft); color: var(--color-ink); font-weight: 700; }
+  .lesson-drawer-body .lesson-tree .is-done i { color: #34d399; }
+  .lesson-drawer-body .lesson-tree .is-exam i { font-size: 12px; font-weight: 700; letter-spacing: .02em; }
+  .lesson-drawer-body .lesson-section h2 { font-size: 14px; }
+  .lesson-drawer-body .lesson-note-panel { padding: 0; }
+}
+
+/* ---- Trang chương ---- */
+/* "Học tiếp": khối màu đặc, điểm nổi duy nhất (B2/L5). */
+.lesson-shell .class-next-line:not(.class-next-line--done) { min-height: 64px; gap: 14px; border: 0; background: var(--color-primary, #1d4ed8); padding: 14px 18px; color: #fff; }
+.lesson-shell .class-next-line:not(.class-next-line--done):hover { background: var(--color-primary-dark, #1e40af); }
+.class-next-line-text { display: grid; flex: 1 1 auto; min-width: 0; gap: 1px; }
+.lesson-shell .class-next-line-label { color: rgba(255,255,255,.85); font-size: 12px; letter-spacing: .08em; }
+.lesson-shell .class-next-line-title { color: #fff; font-size: 17px; }
+.lesson-shell .class-next-line-why { color: rgba(255,255,255,.9); font-size: 14px; white-space: normal; }
+.class-next-line-go { display: inline-flex; flex: 0 0 auto; min-height: 44px; align-items: center; gap: 6px; border-radius: 10px; background: #fff; padding: 0 14px; color: var(--color-primary, #1d4ed8); font-size: 15px; font-weight: 700; }
+.lesson-shell .class-next-line:not(.class-next-line--done) svg { color: inherit; }
+/* Buổi ôn ở nhà: một dòng phụ, hạn nộp màu cần-chú-ý. */
+.class-task-row { display: flex; flex-wrap: wrap; min-height: 48px; align-items: center; gap: 4px 10px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 10px 14px; color: var(--color-ink); font-size: 14px; text-decoration: none; }
+.class-task-row:hover { border-color: var(--lesson-accent-line); }
+.class-task-title { font-weight: 600; }
+.class-task-sub { color: var(--color-muted); }
+.class-task-due { margin-left: auto; color: var(--color-warn, #b45309); font-weight: 600; white-space: nowrap; }
+/* "Ôn thêm:" — lối tắt cuối danh sách; tự ẩn khi không còn chip. */
+.class-more { align-items: center; }
+.class-more-label { color: var(--color-muted); font-size: 14px; }
+.class-more:not(:has(.class-chip, a, button)) { display: none; }
+/* Dải chương cho iPad dọc. */
+.class-chapter-chips { display: none; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  /* Trang chương iPad dọc: dải chương thay thanh đáy site, như bản duyệt (B1/N3). */
+  body:has(.lesson-layout--pick) .mobile-tabbar { display: none; }
+  body:has(.lesson-layout--pick) { padding-bottom: 0; }
+  body:has(.lesson-layout--pick) .bug-fab { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); }
+  .class-chapter-chips { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+  .class-chapter-chips button { flex: 0 0 auto; min-height: 44px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--lesson-panel); padding: 0 14px; color: var(--color-ink); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; }
+  .class-chapter-chips button.is-active { border-color: transparent; background: var(--lesson-accent-soft); color: var(--lesson-accent-text); font-weight: 700; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
+  .lesson-layout--pick .class-pick-mobile { display: none; }
+  .lesson-layout--pick .class-toc-toolbar { display: none; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 28px; }
+}
+
+/* ============================================================================================
+   VÙNG ĐỌC LÝ THUYẾT — 6 cách trình bày lấy từ trang iPad mini của Apple (thầy duyệt 26/10/2026)
+   Khối mới chỉ cần HTML + CSS (không JS, lọt qua DOMPurify). Cách soạn: skill soan-bai-ly-thuyet-tuong-tac.
+   ============================================================================================ */
+/* (5) Nhịp: giữa hai mục (mốc h3) ~56px, giữa hai đoạn ~14px — tỉ lệ ≥ 1:3 (B3). */
+.lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 56px; }
+@media (max-width: 639px) { .lesson-page .theory-section[data-open="1"] + .theory-section[data-open="1"] { margin-top: 40px; } }
+
+/* (1) Câu chốt đầu mục: <p class="tl-claim"> ngay sau <h3>. h3 thu thành nhãn nhỏ, câu chốt là chữ to (N5, G3). */
+.exam-content h3:has(+ .tl-claim) { margin-bottom: 4px; color: var(--color-primary, #1d4ed8); font-size: .82rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.exam-content .tl-claim, .lesson-body .lesson-prose .exam-content p.tl-claim { margin: 0 0 16px; color: var(--color-ink); font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; line-height: 1.3; text-wrap: balance; }
+
+/* (2) Một chỗ in đậm mỗi đoạn — không có CSS, kiểm bằng scripts/kiem-dam-moi-doan.mts. */
+
+/* (3) Ô "Số cần nhớ": <div class="tl-nums"><details class="tl-num"><summary>nhãn</summary><b>giá trị</b></details>…</div>
+   Che sẵn, học sinh nhớ lại rồi bấm để kiểm (L1 — truy xuất). */
+.exam-content .tl-nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 12px 0 16px; }
+.exam-content .tl-num { display: flex; min-height: 96px; flex-direction: column; justify-content: space-between; gap: 6px; border: 1px solid var(--lesson-line, rgba(15,23,42,.1)); border-radius: 12px; background: var(--color-bg); padding: 12px 14px; }
+.exam-content .tl-num > summary { list-style: none; cursor: pointer; color: var(--color-muted); font-size: .9rem; line-height: 1.4; }
+.exam-content .tl-num > summary::-webkit-details-marker { display: none; }
+.exam-content .tl-num > summary::after { content: "Bấm để hiện"; display: block; margin-top: 8px; color: var(--color-primary, #1d4ed8); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-num[open] > summary::after { content: none; }
+.exam-content .tl-num > :not(summary) { margin: 0; color: var(--color-ink); font-size: 1.4rem; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.25; }
+.exam-content .tl-num:hover { border-color: var(--lesson-accent-line, #1d4ed8); }
+
+/* (4) Bảng đặt cạnh nhau cho bẫy: <table class="tl-table tl-cmp">, ô khác nhau <td class="tl-diff">. */
+.exam-content .tl-cmp tbody th { width: 30%; color: var(--color-muted); font-size: .9rem; font-weight: 600; }
+.exam-content .tl-cmp .tl-diff { background: rgba(245, 158, 11, .12); }
+.exam-content .tl-cmp :is(th, td) { padding: 10px 12px; }
+
+/* (6) Thuật ngữ mở tại chỗ (N8): <span class="tl-term"><input type="checkbox" id="…"><label for="…">từ</label><span class="tl-def">định nghĩa</span></span>
+   Chú thích số mũ chỉ cho nguồn/điều kiện: <sup class="tl-fn"><a href="#tl-fn-1">1</a></sup> … <ol class="tl-fns"><li id="tl-fn-1">…</li></ol> */
+.exam-content .tl-term > input { position: absolute; opacity: 0; pointer-events: none; }
+.exam-content .tl-term > label { border-bottom: 1.5px dashed currentColor; color: var(--color-primary, #1d4ed8); font-weight: 500; cursor: pointer; }
+.exam-content .tl-term > input:focus-visible + label { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; border-radius: 3px; }
+.exam-content .tl-term > .tl-def { display: none; }
+.exam-content .tl-term > input:checked ~ .tl-def { display: block; margin: 8px 0 4px; border-radius: 10px; background: var(--color-surface-2, rgba(15,23,42,.05)); padding: 10px 14px; color: var(--color-ink); font-size: .92em; line-height: 1.6; }
+.exam-content .tl-fn { margin-left: 1px; font-size: .7em; font-weight: 700; line-height: 0; }
+.exam-content .tl-fn a { color: var(--color-primary, #1d4ed8); text-decoration: none; }
+.exam-content .tl-fns { margin: 36px 0 0; border-top: 1px solid var(--lesson-line, rgba(15,23,42,.1)); padding: 12px 0 0 20px; color: var(--color-muted); font-size: .82rem; line-height: 1.6; }
+
+/* ============================================================================================
+   TRANG BÀI KHỚP BẢN DUYỆT 26/10/2026 (đợt 2) — số đo lấy đúng CSS của bản xem thử "Trang chương và trang bài".
+   ============================================================================================ */
+/* Thân bài 17px (iPad dọc 18px), dòng ≤ 62 ký tự (C1/C2). */
+.lesson-page .lesson-body { font-size: calc(1.0625rem * var(--lesson-read-scale, 1)); }
+.lesson-page .lesson-prose :is(p, li, h3, h4) { max-width: 62ch; }
+/* .lesson-page .exam-content đặt 1rem cứng (16px, bỏ qua cả nút A−/A+) — trong thẻ lý thuyết theo cỡ của thân bài. */
+.lesson-page .lesson-prose .exam-content { font-size: 1em; }
+/* Hộp mục tiêu: viền trái màu nhấn, nhãn in hoa, không in đậm bên trong (N7); dòng ⏱ đã bỏ lúc render (N4). */
+.lesson-page .exam-content .tl-box.tl-goal { margin: 0 0 24px; border: 0; border-left: 3px solid var(--color-primary, #1d4ed8); border-radius: 0 10px 10px 0; background: var(--color-primary-soft, #eef2ff); padding: 12px 16px; font-size: 1rem; line-height: 1.65; }
+.lesson-page .exam-content .tl-goal > .tl-label { display: block; margin: 0 0 4px; color: var(--color-primary, #1d4ed8); font-size: .875rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.lesson-page .exam-content .tl-goal :is(strong, b) { font-weight: inherit; }
+.lesson-page .exam-content .tl-goal ul { margin: 0; padding-left: 18px; }
+/* Nhịp B3 khi vẫn giữ mốc gập: nút "Tiếp" (đầu mục sau) cách cuối mục đang mở như khoảng giữa hai mục mở. */
+.lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 56px; }
+/* Dòng meta: ngay dưới H1; bản dưới dải tab chỉ dùng < 1024. */
+.lesson-page .lesson-meta { gap: 6px 10px; font-size: 14px; }
+.lesson-page .lesson-meta--below-tabs { display: none; }
+/* Rail mục lục: khung, tiêu đề in hoa + số đếm, ✓ mục đã đọc, tô mục đang đọc (B5/B7). */
+.lesson-page .lesson-toc { border: 1px solid var(--lesson-line); border-radius: 14px; background: var(--color-panel); padding: 10px; }
+.lesson-page .lesson-toc-title { display: flex; justify-content: space-between; margin: 0; padding: 6px 10px 8px; color: var(--color-slate-500, #64748b); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
+.lesson-page .lesson-toc-title span { font-variant-numeric: tabular-nums; letter-spacing: 0; }
+.lesson-page .lesson-toc a, .lesson-nav--rail .lesson-toc a { display: grid; grid-template-columns: 22px minmax(0, 1fr); align-items: start; gap: 8px; border: 0; border-radius: 9px; padding: 9px 10px; color: var(--color-ink); font-size: 14px; line-height: 1.4; }
+.lesson-page .lesson-toc-n { padding-top: 1px; color: var(--color-slate-500, #64748b); font-size: 12px; font-style: normal; font-variant-numeric: tabular-nums; }
+.lesson-page .lesson-toc a.is-done .lesson-toc-n { color: var(--color-ok, #047857); }
+.lesson-page .lesson-toc a.is-active { background: var(--color-primary-soft, #eef2ff); color: var(--color-primary, #1d4ed8); font-weight: 600; }
+.lesson-page .lesson-toc a.is-active .lesson-toc-n { color: inherit; }
+.lesson-page .lesson-toc .lesson-toc-item { display: block; color: var(--color-muted); font-size: 12px; font-weight: 500; }
+.lesson-page .lesson-nav--rail .lesson-side-link { min-height: 32px; padding: 0 10px; color: var(--color-primary, #1d4ed8); font-size: 14px; font-weight: 500; }
+/* Cuối bài: Mức độ thành thạo + Ghi chú của em (dời khỏi rail). */
+.lesson-endpanels { display: grid; gap: 12px; margin: 28px 0 0; }
+
+@media (min-width: 1024px) {
+  .lesson-layout--rail .lesson-main { max-width: 720px; }
+  .lesson-layout--rail .lesson-body { --lesson-read-width: 720px; max-width: 720px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 28px 36px 32px; }
+}
+.lesson-page .lesson-meta-time { color: var(--color-muted); }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { padding: 26px 30px 30px; }
+}
+
+/* < 1024: tên bài nằm trong thanh bài (2 dòng: tên chương nhỏ / tên bài), bỏ H1 lớn (B1/B6). */
+@media (max-width: 1023px) {
+  .lesson-page .lesson-head { grid-template-areas: "back crumb present aa drawer" "back title present aa drawer"; row-gap: 0; align-items: center; border-bottom: 1px solid var(--lesson-line); background: var(--color-panel); }
+  .lesson-page .lesson-head-back { grid-area: back; grid-row: 1 / 3; border: 0; }
+  .lesson-page .lesson-head .lesson-breadcrumb { align-self: end; }
+  .lesson-page .lesson-head h1 { overflow: hidden; margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+  .lesson-page .lesson-crumb-chapter { font-size: 12px; line-height: 1.3; }
+  .lesson-page .lesson-head > .lesson-head-text > .lesson-meta { display: none; }
+  .lesson-page .lesson-meta--below-tabs { display: flex; margin: 0; padding: 12px 0 0; }
+  .lesson-page .lesson-tabs { top: 56px; background: var(--color-panel); }
+  /* Thanh bài dính trên cùng như bản duyệt (thanh site đã ẩn) — luôn biết đang ở bài nào; dải tab dính ngay dưới. */
+  .lesson-page .lesson-head { position: sticky; top: 0; z-index: 8; }
+  .lesson-page .lesson-layout--rail { padding-top: 0; }
+  .lesson-page .lesson-progressbar { margin-top: 0; border-radius: 0; }
+  .lesson-page .lesson-bottombar--3 { grid-template-columns: 1fr 1fr 1.3fr; }
+  .lesson-page .lesson-bottombar--3 .lesson-bottom-link--next { border-color: var(--lesson-accent); background: var(--lesson-accent); color: #fff; }
+}
+.lesson-page .lesson-progressbar > small { font-variant-numeric: tabular-nums; }
+@media (min-width: 640px) and (max-width: 1023px) {
+  .lesson-page .lesson-body { font-size: calc(1.125rem * var(--lesson-read-scale, 1)); }
+  .lesson-page .lesson-head { min-height: 60px; padding: 0 16px 0 8px; }
+  .lesson-page .lesson-tabs { top: 60px; }
+  .lesson-page .lesson-meta--below-tabs { padding-inline: 4px; }
+  .lesson-page .lesson-head h1 { font-size: 17px; }
+  .lesson-page .lesson-crumb-chapter { font-size: 13px; }
+  .lesson-page .lesson-head-back { width: 48px; height: 48px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { border-radius: 16px; padding: 30px 40px 34px; }
+}
+.lesson-page .lesson-endpanels:empty { display: none; }
+@media (max-width: 639px) {
+  .lesson-page .lesson-head { min-height: 56px; padding: 0 6px; }
+  .lesson-page .lesson-meta--below-tabs { padding-top: 12px; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-inline: -16px; border-inline: 0; border-radius: 0; padding: 18px 16px; }
+  .lesson-page .theory-section[data-open="1"] > .theory-next { margin-top: 40px; }
+}
+/* Màn cảm ứng (iPad ngang 1024–1279 vẫn có rail): đích chạm ≥ 44px cho mục lục, lối về, link phụ (D2). */
+@media (pointer: coarse) {
+  .lesson-page .lesson-toc a, .lesson-rail-back, .lesson-page .lesson-nav--rail .lesson-side-link, .class-rail-item, .class-rail .lesson-rail-back { min-height: 44px; }
+}
+
+/* ============================================================================================
+   MÀN RỘNG ≥ 1280px (27/10/2026): chữ giữ cột ≤ 62 ký tự (C2), còn bảng, mô phỏng, video, hình khổ rộng
+   lan sang khoảng trống bên phải — ngay tại chỗ câu nhắc tới chúng (N8). Rail và vị trí cột chữ không đổi.
+   Mép phải chung của phần lan = 100vw − 72px (trang bài và trang chương cùng mép; chừa nút Báo lỗi nổi ở góc phải). < 1280 không đổi gì.
+   ============================================================================================ */
+.lesson-layout--rail { --wide-bleed: 0px; }
+@media (min-width: 1280px) {
+  /* Cột giữa bắt đầu ở (100vw − 1200)/2 + 24 + 248 + 40, rộng 720 → phần thêm = 50vw − 504, tối đa 320px. */
+  .lesson-layout--rail { --wide-bleed: clamp(0px, calc(50vw - 504px), 320px); }
+  /* Thẻ lý thuyết nới sang phải nhưng vùng chữ bên trong giữ nguyên bề rộng (padding phải nuốt phần nới). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .lesson-block { margin-right: calc(-1 * var(--wide-bleed)); padding-right: calc(36px + var(--wide-bleed)); }
+  /* Chỉ khối media đứng trực tiếp trong mạch bài mới lan; nằm trong hộp (.tl-box, .tl-quiz…) thì theo hộp.
+     Hình .fig vẽ ở khổ 420–460 giữ 420px (phóng to chữ trong hình sẽ to hơn chữ bài); chỉ hình vẽ khổ ≥ 600 lan —
+     liệt kê đúng bề rộng kèm dấu cách để "0 0 60 40" không khớp nhầm; khổ khác thì gắn .fig--wide khi soạn. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > :is(.tl-video, iframe, details.tl-details:has(> iframe), .tl-box--khung.tl-khung-on) { width: calc(100% + var(--wide-bleed)); max-width: none; }
+  /* Bảng (ContentHtml bọc mọi <table> trong .table-scroll): chỉ nới khi nội dung cần — bảng ngắn 3 cột vẫn
+     rộng bằng cột chữ như cũ, bảng nhiều cột/câu dài/có ảnh mới lan, tránh ô trống dàn ngang 900px. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll { width: max-content; min-width: 100%; max-width: calc(100% + var(--wide-bleed)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .table-scroll > table { width: auto; min-width: 100%; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > figure.fig:is(.fig--wide, :has(> svg:is([viewBox^="0 0 600 "], [viewBox^="0 0 640 "], [viewBox^="0 0 700 "], [viewBox^="0 0 720 "], [viewBox^="0 0 750 "], [viewBox^="0 0 800 "], [viewBox^="0 0 900 "], [viewBox^="0 0 960 "], [viewBox^="0 0 1000 "], [viewBox^="0 0 1200 "]))) { width: min(calc(100% + var(--wide-bleed)), 860px); max-width: none; margin-left: 0; }
+}
+
+/* ============================================================================================
+   CỘT LỀ PHẢI ≥ 1280px (thầy duyệt 27/10/2026, trang mẫu https://claude.ai/artifact/BXikspAiK5RZ9EteMUEc8C).
+   features/lessons/margin-notes.ts chép chú thích số, định nghĩa thuật ngữ và ô "Số cần nhớ" của mỗi đoạn cấp đầu
+   vào <div class="tl-sn"> đặt ngay trước đoạn. ≥ 1280: khối đó float sang phần thẻ đã nới (--wide-bleed), bản gốc
+   trong bài ẩn; < 1280: khối lề ẩn, bài như cũ. Chữ 13,5px màu phụ, kẻ mảnh trái, không nền, không màu nhấn (N1, G1, M3).
+   ============================================================================================ */
+.exam-content .tl-sn { display: none; }
+@media (min-width: 1280px) {
+  /* flow-root chỉ cho mục có ghi chú lề (giữ float trong mục); mục khác không đổi gộp lề so với trước. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content { --sn-w: min(240px, calc(var(--wide-bleed) + 4px)); }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn, > details.tl-more > .tl-sn) { display: flow-root; }
+  /* Hộp lề có bề rộng lề âm bằng chính nó → chiếm 0px trong dòng, chữ đoạn văn không bị ép hẹp (kỹ thuật Tufte). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] :is(.exam-content, .exam-content > details.tl-more) > .tl-sn { display: grid; gap: 10px; float: right; clear: right; width: var(--sn-w); margin: 4px calc(-1 * (var(--sn-w) + 24px)) 14px 0; border-left: 1px solid var(--lesson-line); padding-left: 12px; color: var(--color-muted); font-size: 13.5px; font-weight: 400; line-height: 1.55; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn:has(+ p:hover) { color: var(--color-ink); }
+  .lesson-page .exam-content .tl-sn-n { margin-right: 5px; color: var(--color-muted); font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; }
+  .lesson-page .exam-content .tl-sn-item b { color: var(--color-ink); font-weight: 600; }
+  /* Ô số ở lề: mỗi ô một dòng, không khung (cột lề 1280px chỉ ~140px) — vẫn che, bấm nhãn để hiện giá trị (L1). */
+  .lesson-page .exam-content .tl-sn-nums { display: grid; gap: 2px; margin-top: 4px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num { display: block; min-height: 0; border: 0; border-radius: 0; background: none; padding: 2px 0; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { display: inline-block; min-height: 28px; padding-top: 4px; color: var(--color-ink); font-size: 13px; line-height: 1.5; text-decoration: underline dotted var(--color-muted); text-underline-offset: 3px; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary::after { content: none; }
+  .lesson-page .exam-content .tl-sn-nums .tl-num > :not(summary) { display: block; font-size: 15px; }
+  /* Bản gốc trong bài: đã có ở lề thì ẩn (mỗi cỡ màn chỉ đúng một bản, trình đọc màn hình không nghe lặp). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content :is(.tl-nums--sn, .tl-fn--placed, .tl-fns--placed) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > :is(input, .tl-def) { display: none; }
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content .tl-term--sn > label { border-bottom-color: var(--color-muted); color: inherit; cursor: default; }
+  /* Số mũ đã có chữ ngay bên lề: không còn là liên kết (đích trong danh sách cuối bài đang ẩn). */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content > .tl-sn + p .tl-fn a { color: var(--color-muted); pointer-events: none; }
+  /* Mốc mục và khối lan rộng bắt đầu dưới ghi chú lề, không bao giờ đè lên nhau. */
+  /* Chỉ trong mục có ghi chú lề (đã flow-root): mục khác có float sẵn của thẻ (nút Thu gọn) sẽ bị đẩy xuống nếu clear. */
+  .lesson-page .lesson-section[data-kind="ly_thuyet"] .exam-content:has(> .tl-sn, > details.tl-more > .tl-sn) > :is(h3, h4, .table-scroll, .tl-video, iframe, details.tl-details:has(> iframe), figure.fig--wide, .tl-box--khung) { clear: right; }
+}
+/* iPad ngang / laptop cảm ứng ≥ 1280: nhãn ô số ở lề đủ đích chạm 44px (D2). */
+@media (min-width: 1280px) and (pointer: coarse) {
+  .lesson-page .exam-content .tl-sn-nums .tl-num > summary { min-height: 44px; padding-top: 11px; }
+}
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Nêu đủ bốn đặc điểm của <strong>trọng lực</strong> (điểm đặt, phương, chiều, độ lớn $P = mg$) và tìm được <strong>trọng tâm</strong> của vật phẳng.</li>
@@ -570,78 +1512,135 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <li>Vẽ đúng <strong>lực căng</strong> $\vec T$ của dây: điểm đặt, phương, chiều.</li>
 <li>Giải bài <strong>hệ vật nối dây qua ròng rọc</strong>: tìm gia tốc và lực căng.</li>
 </ul>
-<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở sách. Đọc khoảng 17 phút.</p>
+<p>Cuối bài, tự trả lời được <strong>6 câu Trả bài</strong> mà không mở sách. Đọc khoảng 19 phút.</p>
 </div>
 
-<h3>I. Mở bài: chiếc vòng đệm treo trong xưởng</h3>
+<h3>I. Mở bài: chiếc đĩa CD treo trên tường</h3>
 
-<p>Trong xưởng cơ khí, một vòng đệm thép lớn (hình tròn, khoét lỗ ở giữa) được treo lên móc cầu trục bằng một sợi cáp móc vào vành. Thả ra, vòng đệm lắc vài cái rồi đứng yên. Lúc đó, sợi cáp kéo dài xuống luôn đi qua <strong>đúng tâm lỗ</strong>, chỗ không hề có thép.</p>
+<p>Một chiếc đĩa CD (hình tròn, khoét lỗ ở giữa) được treo lên đinh trên tường bằng một sợi dây buộc vào mép đĩa. Thả ra, đĩa lắc vài cái rồi đứng yên. Lúc đó, sợi dây kéo dài xuống luôn đi qua <strong>đúng tâm lỗ</strong>, chỗ không hề có nhựa.</p>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Trọng lực tác dụng lên vòng đệm đặt ở đâu?</p>
+<p>Trọng lực tác dụng lên chiếc đĩa CD đặt ở đâu?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl62-q1" id="tl62-q1a"><label for="tl62-q1a" class="tl-opt tl-no">A. Ở điểm móc cáp trên vành, vì cáp giữ vật ở đó</label>
-<input type="radio" name="tl62-q1" id="tl62-q1b"><label for="tl62-q1b" class="tl-opt tl-ok">B. Ở tâm lỗ, dù chỗ đó không có thép</label>
-<input type="radio" name="tl62-q1" id="tl62-q1c"><label for="tl62-q1c" class="tl-opt tl-no">C. Rải đều trên vành, nên vòng đệm không có một điểm đặt nào</label>
-<input type="radio" name="tl62-q1" id="tl62-q1d"><label for="tl62-q1d" class="tl-opt tl-no">D. Ở điểm thấp nhất của vành, vì đó là chỗ gần đất nhất</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Mỗi mẩu thép đều bị Trái Đất hút; gộp lại, ta coi như một lực duy nhất đặt tại <strong>trọng tâm</strong>. Vòng đệm đối xứng nên trọng tâm ở tâm đối xứng, tức tâm lỗ. Trọng tâm có thể nằm <strong>ngoài</strong> phần vật chất của vật.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Điểm móc cáp là chỗ đặt <em>lực căng</em>, không phải trọng lực. Còn "rải đều" là đúng với từng mẩu thép, nhưng tác dụng tổng của chúng giống hệt một lực đặt tại một điểm. Gợi ý: vòng đệm đứng yên khi cáp kéo dài đi qua điểm nào? Chọn lại nhé.</p></div>
+<input type="radio" name="tl62-q1" id="tl62-q1a"><label for="tl62-q1a" class="tl-opt tl-no">A. Ở điểm buộc dây trên mép đĩa, vì dây giữ đĩa ở đó</label>
+<input type="radio" name="tl62-q1" id="tl62-q1b"><label for="tl62-q1b" class="tl-opt tl-ok">B. Ở tâm lỗ, dù chỗ đó không có nhựa</label>
+<input type="radio" name="tl62-q1" id="tl62-q1c"><label for="tl62-q1c" class="tl-opt tl-no">C. Rải đều trên vành, nên đĩa không có một điểm đặt nào</label>
+<input type="radio" name="tl62-q1" id="tl62-q1d"><label for="tl62-q1d" class="tl-opt tl-no">D. Ở điểm thấp nhất của mép đĩa, vì đó là chỗ gần đất nhất</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Mỗi mẩu nhựa của đĩa đều bị Trái Đất hút; gộp lại, ta coi như một lực duy nhất đặt tại <strong>trọng tâm</strong>. Đĩa đối xứng nên trọng tâm ở tâm đối xứng, tức tâm lỗ. Trọng tâm có thể nằm <strong>ngoài</strong> phần vật chất của vật.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A: điểm buộc dây là chỗ đặt <em>lực căng</em>, không phải trọng lực.<br>C: "rải đều" đúng với từng mẩu nhựa, nhưng tác dụng tổng giống hệt một lực đặt tại một điểm.<br>D: chỗ gần đất nhất không phải điểm đặt trọng lực.<br>Gợi ý: đĩa đứng yên khi dây kéo dài đi qua điểm nào? Chọn lại nhé.</p></div>
 </div>
 </div>
+
+<!--hanh-trang-->
+<div class="tl-box tl-box--think tl-hanh-trang">
+<p class="tl-label">🧰 Kiểm tra hành trang</p>
+<p>Sai câu nào thì mở <strong>Nhắc nhanh</strong> ngay dưới.</p>
+<p><strong>Câu 1.</strong> Một quả cam có khối lượng $200$ g. Lấy $g = 9{,}8\ \text{m/s}^2$. Trọng lượng của quả cam là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="ht62-q1" id="ht62-q1a"><label for="ht62-q1a" class="tl-opt tl-no">A. $1960$ N</label>
+<input type="radio" name="ht62-q1" id="ht62-q1b"><label for="ht62-q1b" class="tl-opt tl-no">B. $0{,}2$ N</label>
+<input type="radio" name="ht62-q1" id="ht62-q1c"><label for="ht62-q1c" class="tl-opt tl-ok">C. $1{,}96$ N</label>
+<input type="radio" name="ht62-q1" id="ht62-q1d"><label for="ht62-q1d" class="tl-opt tl-no">D. $20{,}4$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Đổi $200$ g $= 0{,}2$ kg; $P = mg = 0{,}2 \cdot 9{,}8 = 1{,}96$ N.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>Ra $1960$ N là để nguyên đơn vị gam.<br>Ra $0{,}2$ N là nhầm khối lượng (kg) với trọng lượng (N).<br>Ra $20{,}4$ N là chia $200$ cho $9{,}8$.</p></div>
+</div>
+<p><strong>Câu 2.</strong> Hai vật nối với nhau chuyển động cùng gia tốc. Tổng khối lượng $3$ kg, hợp lực tác dụng lên cả hệ là $12$ N. Gia tốc của hệ là bao nhiêu?</p>
+<div class="tl-quiz">
+<input type="radio" name="ht62-q2" id="ht62-q2a"><label for="ht62-q2a" class="tl-opt tl-ok">A. $4\ \text{m/s}^2$</label>
+<input type="radio" name="ht62-q2" id="ht62-q2b"><label for="ht62-q2b" class="tl-opt tl-no">B. $36\ \text{m/s}^2$</label>
+<input type="radio" name="ht62-q2" id="ht62-q2c"><label for="ht62-q2c" class="tl-opt tl-no">C. $0{,}25\ \text{m/s}^2$</label>
+<input type="radio" name="ht62-q2" id="ht62-q2d"><label for="ht62-q2d" class="tl-opt tl-no">D. $9\ \text{m/s}^2$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Chính xác.</strong> Coi cả hệ như một vật: $a = \dfrac{F}{m} = \dfrac{12}{3} = 4\ \text{m/s}^2$. Bài mẫu viết $F = ma$ cho từng vật rồi cộng lại: lực căng triệt tiêu, hợp lực chỉ còn trọng lượng vật treo.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>Ra $36$ là nhân $F$ với $m$.<br>Ra $0{,}25$ là lấy $m$ chia $F$.<br>Ra $9$ là trừ $12 - 3$.</p></div>
+</div>
+<details class="tl-details tl-more">
+<summary>📌 Nhắc nhanh kiến thức cần dùng</summary>
+<ul><li>Trọng lượng: $P = mg$, $m$ tính bằng kg, $P$ tính bằng N.</li><li>Định luật 2 Newton: $a = \dfrac{F}{m}$, $F$ là hợp lực.</li><li>Vật đứng yên hoặc thẳng đều: hợp lực bằng $\vec 0$ (định luật 1).</li></ul>
+<p>Xem lại: Vật lí 10 Bài 14 (Định luật 1 Newton), Bài 15 (Định luật 2 Newton); KHTN 6 (khối lượng và trọng lượng).</p>
+</details>
+</div>
+<!--/hanh-trang-->
 
 <h3>II. Kiến thức: trọng lực, trọng lượng, lực căng</h3>
 
 <h4>1. Trọng lực</h4>
 
+<p class="tl-claim">Trọng lực thẳng đứng, hướng xuống, bằng khối lượng nhân g.</p>
+
 <p><strong>🔑 Trái Đất hút · thẳng đứng · hướng xuống · $P = mg$</strong></p>
 
 <ul>
-<li><strong>Trọng lực</strong> là lực hấp dẫn giữa Trái Đất và vật — một trường hợp riêng của lực hấp dẫn. Kí hiệu $\vec P$.</li>
+<li><strong>Trọng lực</strong> là lực hấp dẫn giữa Trái Đất và vật. Kí hiệu $\vec P$.</li>
 <li><strong>Điểm đặt:</strong> trọng tâm $G$ của vật.</li>
 <li><strong>Phương:</strong> thẳng đứng.</li>
 <li><strong>Chiều:</strong> hướng về tâm Trái Đất (từ trên xuống).</li>
-<li><strong>Độ lớn:</strong> $P = mg$; $m$ (kg), $g$ (m/s²) là gia tốc rơi tự do, $P$ (N).</li>
+<li><strong>Độ lớn:</strong> công thức ở khối dưới.</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 400 290" role="img" aria-label="Trái Đất và bốn vật ở bốn nơi, trọng lực của mỗi vật đều hướng về tâm Trái Đất"><defs><marker id="f1-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><circle cx="200" cy="160" r="82" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.2"/><circle cx="200.0" cy="160.0" r="4" fill="currentColor"/><text x="200.0" y="182.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">Tâm Trái Đất</text><rect x="190.0" y="54.0" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(0.0 200.0 64.0)"/><line x1="200.0" y1="64.0" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="200.0" y1="64.0" x2="200.0" y2="99.0" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="211.0" y="92.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="281.3" y="120.3" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(72.0 291.3 130.3)"/><line x1="291.3" y1="130.3" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="291.3" y1="130.3" x2="258.0" y2="141.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="269.4" y="157.7" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="98.7" y="120.3" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-72.0 108.7 130.3)"/><line x1="108.7" y1="130.3" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="108.7" y1="130.3" x2="142.0" y2="141.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="130.5" y="127.2" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="130.9" y="225.6" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-142.0 140.9 235.6)"/><line x1="140.9" y1="235.6" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="140.9" y1="235.6" x2="162.4" y2="208.1" stroke="#f87171" stroke-width="3" marker-end="url(#f1-r11)"/><text x="137.4" y="212.7" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><text x="16.0" y="24.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">Mọi nơi: P hướng về tâm Trái Đất</text></svg><figcaption>Hình 1. Ở bất kì đâu, trọng lực <em>P</em> cũng có phương thẳng đứng tại chỗ đó và hướng về tâm Trái Đất (hình không theo tỉ lệ).</figcaption></figure>
+<div class="tl-fx">
+<p class="tl-fx-name">Độ lớn trọng lực</p>
+<p>$$P = mg$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$P$</span><span>độ lớn trọng lực (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng của vật (kg)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do ($\text{m/s}^2$)</span></li>
+</ul>
+</div>
 
-<p>Ví dụ: thợ xây thả <strong>dây dọi</strong> (dây treo quả nặng) để dựng tường. Quả nặng đứng yên thì dây chỉ đúng phương thẳng đứng.</p>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 290" role="img" aria-label="Trái Đất và bốn vật ở bốn nơi, trọng lực của mỗi vật đều hướng về tâm Trái Đất"><circle cx="200" cy="160" r="92" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.2"/><circle cx="200.0" cy="160.0" r="4" fill="currentColor"/><text x="212.0" y="184.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Tâm</text><text x="212.0" y="202.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Trái Đất</text><rect x="190.0" y="44.0" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(0.0 200.0 54.0)"/><line x1="200.0" y1="54.0" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="200.0" y1="54.0" x2="200.0" y2="100.0" stroke="#f87171" stroke-width="2.8"/><path d="M205.8,90.0 L200.0,100.0 L194.2,90.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="211.0" y="97.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="290.8" y="117.2" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(72.0 300.8 127.2)"/><line x1="300.8" y1="127.2" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="300.8" y1="127.2" x2="257.1" y2="141.5" stroke="#f87171" stroke-width="2.8"/><path d="M268.3,143.9 L257.1,141.5 L264.8,132.9" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="264.6" y="159.2" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="89.2" y="117.2" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-72.0 99.2 127.2)"/><line x1="99.2" y1="127.2" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="99.2" y1="127.2" x2="142.9" y2="141.5" stroke="#f87171" stroke-width="2.8"/><path d="M135.2,132.9 L142.9,141.5 L131.7,143.9" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="135.3" y="128.8" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><rect x="124.7" y="233.5" width="20" height="20" fill="rgba(251,146,60,.35)" stroke="currentColor" stroke-width="1.8" transform="rotate(-142.0 134.7 243.5)"/><line x1="134.7" y1="243.5" x2="200.0" y2="160.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity="0.45"/><line x1="134.7" y1="243.5" x2="163.1" y2="207.3" stroke="#f87171" stroke-width="2.8"/><path d="M152.4,211.6 L163.1,207.3 L161.5,218.7" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="140.5" y="208.7" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><text x="16.0" y="24.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Mọi nơi: P hướng về tâm Trái Đất</text></svg><figcaption>Hình 1. Ở bất kì đâu, trọng lực <em>P</em> cũng có phương thẳng đứng tại chỗ đó và hướng về tâm Trái Đất (hình không theo tỉ lệ).</figcaption></figure>
+
+<p>Ví dụ: <strong>dây dọi</strong> (dây treo quả nặng) của thợ xây chỉ đúng phương thẳng đứng.</p>
 
 <h4>2. Trọng tâm</h4>
+
+<p class="tl-claim">Trọng tâm là điểm đặt của trọng lực.</p>
 
 <p><strong>🔑 Điểm đặt trọng lực · có thể ngoài vật</strong></p>
 
 <ul>
-<li>Vật phẳng, mỏng, có dạng <strong>đối xứng</strong>: trọng tâm ở <strong>tâm đối xứng</strong> (thước thẳng: giữa thước; đĩa tròn: tâm đĩa).</li>
+<li>Vật phẳng, mỏng, <strong>đồng chất</strong>, có dạng <strong>đối xứng</strong>: trọng tâm ở <strong>tâm đối xứng</strong> (thước thẳng: giữa thước; đĩa tròn: tâm đĩa).</li>
 <li>Vị trí trọng tâm phụ thuộc <strong>sự phân bố khối lượng</strong> của vật.</li>
-<li>Trọng tâm có thể nằm <strong>trong</strong> vật hoặc <strong>ngoài</strong> vật (vòng đệm, chiếc nhẫn, khung chữ U).</li>
+<li>Trọng tâm có thể nằm <strong>trong</strong> vật hoặc <strong>ngoài</strong> vật (đĩa CD, chiếc nhẫn, khung chữ U).</li>
 </ul>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-trong-luc-luc-cang-01">
 <p class="tl-label">🔬 Thí nghiệm: tìm trọng tâm tấm bìa bằng dây dọi</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> đục ba lỗ nhỏ $A$, $B$, $C$ gần mép tấm bìa hình bất kì. Treo bìa bằng lỗ $A$ lên đinh, buộc dây dọi cùng đinh, kẻ theo dây. Làm lại với $B$, rồi $C$. Sau cùng treo vòng đệm ở vành.</li>
-<li><strong>Quan sát:</strong> ba đường kẻ cắt nhau tại một điểm $G$; đặt $G$ lên đầu bút chì, bìa nằm thăng bằng. Dây dọi của vòng đệm đi qua tâm lỗ (Hình 2c).</li>
+<li><strong>Làm:</strong> đục ba lỗ nhỏ $A$, $B$, $C$ gần mép tấm bìa hình bất kì. Treo bìa bằng lỗ $A$ lên đinh, buộc dây dọi cùng đinh, kẻ theo dây. Làm lại với $B$ (hai đường đã đủ xác định $G$), rồi với $C$ để kiểm tra.</li>
+<li><strong>Quan sát:</strong> ba đường kẻ cắt nhau tại một điểm $G$; đặt $G$ lên đầu bút chì, bìa nằm thăng bằng. Treo đĩa CD ở mép: dây dọi đi qua tâm lỗ (Hình 2c).</li>
 <li><strong>Rút ra:</strong> vật treo đứng yên khi trọng tâm nằm <strong>ngay dưới</strong> điểm treo. Giao điểm các đường dây dọi là trọng tâm.</li>
 </ol>
 </div>
 
-<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-01"><svg viewBox="0 0 440 250" role="img" aria-label="Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; vòng đệm có trọng tâm ở tâm lỗ"><defs></defs><polygon points="37.9,33.6 126.9,49.4 127.8,99.4 81.4,140.7 35.9,109.7 21.3,64.3" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="62.0" y1="30.0" x2="90.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="76.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="76.0" y1="46.0" x2="76.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><path d="M70.0,205.0 L82.0,205.0 L76.0,219.0 Z" fill="#38bdf8"/><circle cx="76.0" cy="81.9" r="4.5" fill="#f87171"/><text x="85.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">A</text><text x="85.0" y="99.9" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="76.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(a) treo ở A</text><polygon points="210.2,147.0 169.5,66.3 208.9,35.6 269.8,47.9 272.3,102.9 244.8,141.9" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="212.0" y1="30.0" x2="240.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="226.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="226.0" y1="46.0" x2="226.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><path d="M220.0,205.0 L232.0,205.0 L226.0,219.0 Z" fill="#38bdf8"/><circle cx="226.0" cy="87.6" r="4.5" fill="#f87171"/><text x="235.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">B</text><line x1="197.3" y1="109.1" x2="250.0" y2="69.6" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="197.3" cy="109.1" r="3" fill="currentColor"/><text x="189.3" y="113.1" fill="currentColor" font-size="14" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">A</text><text x="236.0" y="105.6" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="226.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(b) treo ở B</text><line x1="358.0" y1="30.0" x2="386.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="372.0" y1="30.0" x2="372.0" y2="78.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M332,118 a40,40 0 1,0 80,0 a40,40 0 1,0 -80,0 Z M352,118 a20,20 0 1,1 40,0 a20,20 0 1,1 -40,0 Z" fill="rgba(148,163,184,.35)" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/><line x1="372.0" y1="78.0" x2="372.0" y2="205.0" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="372.0" cy="118.0" r="4.5" fill="#f87171"/><text x="379.0" y="123.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="372.0" y="240.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="middle">(c) vòng đệm</text></svg><figcaption>Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm vòng đệm ở tâm lỗ, ngoài phần vật chất.</figcaption></figure>
+<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-01"><svg viewBox="0 0 440 250" role="img" aria-label="Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; đĩa CD có trọng tâm ở tâm lỗ"><polygon points="37.9,33.6 126.9,49.4 127.8,99.4 81.4,140.7 35.9,109.7 21.3,64.3" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="62.0" y1="30.0" x2="90.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="76.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="76.0" y1="46.0" x2="76.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><circle cx="76.0" cy="212.0" r="7" fill="#38bdf8" stroke="currentColor" stroke-width="1.2"/><circle cx="76.0" cy="81.9" r="4.5" fill="#f87171"/><text x="85.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">A</text><text x="85.0" y="99.9" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="76.0" y="240.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">(a) treo ở A</text><polygon points="210.2,147.0 169.5,66.3 208.9,35.6 269.8,47.9 272.3,102.9 244.8,141.9" fill="rgba(251,146,60,.22)" stroke="currentColor" stroke-width="2"/><line x1="212.0" y1="30.0" x2="240.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><circle cx="226.0" cy="46.0" r="3.5" fill="currentColor"/><line x1="226.0" y1="46.0" x2="226.0" y2="205.0" stroke="#38bdf8" stroke-width="2" opacity="1"/><circle cx="226.0" cy="212.0" r="7" fill="#38bdf8" stroke="currentColor" stroke-width="1.2"/><circle cx="226.0" cy="87.6" r="4.5" fill="#f87171"/><text x="235.0" y="61.0" fill="currentColor" font-size="14" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">B</text><line x1="197.3" y1="109.1" x2="250.0" y2="69.6" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="197.3" cy="109.1" r="3" fill="currentColor"/><text x="184.3" y="115.1" fill="currentColor" font-size="14" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">A</text><text x="236.0" y="105.6" fill="#f87171" font-size="15" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">G</text><text x="226.0" y="240.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">(b) treo ở B</text><line x1="358.0" y1="30.0" x2="386.0" y2="30.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="372.0" y1="30.0" x2="372.0" y2="74.0" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M328,118 a44,44 0 1,0 88,0 a44,44 0 1,0 -88,0 Z M346,118 a26,26 0 1,1 52,0 a26,26 0 1,1 -52,0 Z" fill="rgba(148,163,184,.35)" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/><line x1="372.0" y1="74.0" x2="372.0" y2="205.0" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4" opacity="0.8"/><circle cx="372.0" cy="118.0" r="4.5" fill="#f87171"/><text x="366.0" y="123.0" fill="#f87171" font-size="15" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">G</text><text x="372.0" y="240.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">(c) đĩa CD</text></svg><figcaption>Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm đĩa CD ở tâm lỗ, ngoài phần vật chất.</figcaption></figure>
 
 <h4>3. Trọng lượng</h4>
+
+<p class="tl-claim">Khối lượng không đổi; trọng lượng đổi theo g.</p>
 
 <p><strong>🔑 Độ lớn trọng lực · $m$ không đổi · $P$ đổi theo $g$</strong></p>
 
 <ul>
-<li>Khi vật <strong>đứng yên trên mặt đất</strong>, <strong>trọng lượng</strong> của vật bằng độ lớn trọng lực tác dụng lên vật: $P = mg$.</li>
+<li>Vật <strong>đứng yên trên mặt đất</strong>: <strong>trọng lượng</strong> bằng độ lớn trọng lực.</li>
 <li>Gần mặt đất, $g \approx 9{,}8$ m/s²; $g$ hơi khác nhau theo vĩ độ, độ cao.</li>
-<li>Đo trọng lượng bằng <strong>lực kế</strong> (N); đo khối lượng bằng <strong>cân</strong> (kg).</li>
 </ul>
 
-<p>Ví dụ: ở nơi $g = 9{,}8$ m/s², lực kế chỉ $P = 9{,}8$ N nên $m = 1$ kg. Mang vật tới nơi $g = 9{,}78$ m/s²: khối lượng vẫn $1$ kg, trọng lượng còn $9{,}78$ N.</p>
+<div class="tl-fx">
+<p class="tl-fx-name">Trọng lượng</p>
+<p>$$P = mg$$</p>
+<p class="tl-fx-cond">Vật đứng yên trên mặt đất</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$P$</span><span>trọng lượng của vật (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng, không đổi theo nơi đặt vật (kg)</span></li>
+<li><span class="tl-sym">$g$</span><span>gia tốc rơi tự do, gần mặt đất $\approx 9{,}8\ \text{m/s}^2$</span></li>
+</ul>
+</div>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-02">
+<p>Ví dụ: vật $1$ kg có $P = 9{,}8$ N ở nơi $g = 9{,}8$ m/s². Tới nơi $g = 9{,}78$ m/s²: khối lượng vẫn $1$ kg, trọng lượng còn $9{,}78$ N<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>.</p>
+<div class="tl-nums"><details class="tl-num"><summary>Gia tốc rơi tự do g</summary><p>9,8 m/s² (làm tròn 10)</p></details><details class="tl-num"><summary>Trọng lượng của vật 1 kg</summary><p>≈ 9,8 N</p></details></div>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-trong-luc-luc-cang-02">
 <p class="tl-label">🔬 Thí nghiệm: đo trọng lượng các quả nặng</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> lần lượt treo 1, 2, 3, 4 quả nặng $50$ g vào lực kế $0$–$2{,}5$ N (vạch chia $0{,}05$ N), đợi đứng yên rồi đọc.</li>
@@ -664,28 +1663,30 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>📊 Đọc bảng: vì sao hàng đầu kém tin cậy nhất? (tự trả lời rồi bấm)</summary>
-<p>Mỗi số đọc sai tới $\pm 0{,}05$ N (một vạch). Với $0{,}50$ N, một vạch là $10\,\%$; với $1{,}95$ N chỉ còn khoảng $2{,}6\,\%$. Sai số tương đối lớn nhất ở hàng đầu, nên <strong>vật nặng hơn cho $P/m$ tin cậy hơn</strong> (hàng 2 lệch nhiều hơn chỉ là tình cờ, vẫn trong sai số). Trung bình bốn hàng $\approx 9{,}7$ N/kg, khớp $g \approx 9{,}8$ m/s² trong sai số. Nguồn sai khác: lò xo chưa chỉnh về 0, mắt đọc lệch vạch, quả nặng còn đung đưa.</p>
+<p>Mỗi số đọc sai tới $\pm 0{,}05$ N (một vạch). Với $0{,}50$ N, một vạch là $10\,\%$; với $1{,}95$ N chỉ còn khoảng $2{,}6\,\%$. Sai số tương đối lớn nhất ở hàng đầu, nên <strong>vật nặng hơn cho $P/m$ tin cậy hơn</strong> (hàng 2 lệch nhiều hơn chỉ là tình cờ, vẫn trong sai số). Trung bình bốn hàng $\approx 9{,}73$ N/kg (tính từ $P/m$ chưa làm tròn), khớp $g \approx 9{,}8$ m/s² trong sai số. Hai đơn vị này là một: $1$ N/kg $= 1$ (kg·m/s²)/kg $= 1$ m/s². Nguồn sai khác: lò xo chưa chỉnh về 0, mắt đọc lệch vạch, quả nặng còn đung đưa.</p>
 </details>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl62-q2-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl62-q2-conf" value="khong"> Không chắc</label></p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 1.</strong> Một phôi thép $2$ kg đưa từ xưởng ($g = 9{,}8$ m/s²) lên đỉnh núi ($g = 9{,}7$ m/s²). Nhận xét đúng là:</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Một bao gạo $2$ kg đưa từ chân núi ($g = 9{,}8$ m/s²) lên đỉnh núi ($g = 9{,}7$ m/s²). Nhận xét đúng là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl62-q2" id="tl62-q2a"><label for="tl62-q2a" class="tl-opt tl-no">A. Khối lượng và trọng lượng đều giảm</label>
 <input type="radio" name="tl62-q2" id="tl62-q2b"><label for="tl62-q2b" class="tl-opt tl-no">B. Khối lượng giảm, trọng lượng giữ nguyên $19{,}6$ N</label>
-<input type="radio" name="tl62-q2" id="tl62-q2c"><label for="tl62-q2c" class="tl-opt tl-no">C. Cả hai giữ nguyên, vì vẫn là phôi đó</label>
+<input type="radio" name="tl62-q2" id="tl62-q2c"><label for="tl62-q2c" class="tl-opt tl-no">C. Cả hai giữ nguyên, vì vẫn là bao gạo đó</label>
 <input type="radio" name="tl62-q2" id="tl62-q2d"><label for="tl62-q2d" class="tl-opt tl-ok">D. Khối lượng giữ nguyên $2$ kg, trọng lượng giảm từ $19{,}6$ N còn $19{,}4$ N</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Khối lượng là lượng chất, không đổi khi đổi chỗ. Trọng lượng $P = mg$ đổi theo $g$: $2 \cdot 9{,}8 = 19{,}6$ N thành $2 \cdot 9{,}7 = 19{,}4$ N.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A và B cho khối lượng giảm — nhưng phôi không mất mẩu thép nào. Phương án C quên rằng $P = mg$ có $g$ thay đổi theo nơi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phương án A và B cho khối lượng giảm — nhưng bao gạo không mất hạt gạo nào. Phương án C quên rằng $P = mg$ có $g$ thay đổi theo nơi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
 
 <h4>4. Lực căng dây</h4>
+
+<p class="tl-claim">Lực căng dọc theo dây, kéo vật về phía dây.</p>
 
 <p><strong>🔑 Dây bị kéo · dọc theo dây · kéo vật về phía dây</strong></p>
 
@@ -693,16 +1694,17 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <li>Dây bị kéo thì tại <strong>mọi điểm</strong> trên dây, kể cả hai đầu, xuất hiện lực chống lại sự kéo: <strong>lực căng</strong>, kí hiệu $\vec T$.</li>
 <li><strong>Điểm đặt:</strong> điểm đầu dây tiếp xúc với vật.</li>
 <li><strong>Phương:</strong> trùng với chính sợi dây.</li>
-<li><strong>Chiều:</strong> từ hai đầu dây hướng vào phần giữa dây — tức là <strong>kéo vật về phía dây</strong>.</li>
-<li>Dây <strong>chỉ kéo, không đẩy</strong>. Dây nhẹ, không dãn: $T$ như nhau ở mọi điểm của đoạn dây (và qua ròng rọc nhẹ, nhẵn).</li>
+<li><strong>Chiều:</strong> từ hai đầu dây hướng vào phần giữa dây — tức là <strong>kéo vật về phía dây</strong> (vẽ trên vật: mũi tên đi ra khỏi vật).</li>
+<li>Dây <strong>chỉ kéo, không đẩy</strong>. Dây nhẹ (khối lượng không đáng kể): $T$ như nhau ở mọi điểm của đoạn dây, kể cả khi vắt qua ròng rọc nhẹ, nhẵn (không ma sát).</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 400 320" role="img" aria-label="Vật treo dưới trần bằng dây: lực căng T đặt lên vật hướng lên, lực căng T phẩy đặt lên trần hướng xuống, trọng lực P hướng xuống"><defs><marker id="f3-b11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><line x1="80.0" y1="34.0" x2="260.0" y2="34.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="86.0" y1="34.0" x2="78.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="106.0" y1="34.0" x2="98.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="126.0" y1="34.0" x2="118.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="146.0" y1="34.0" x2="138.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="166.0" y1="34.0" x2="158.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="186.0" y1="34.0" x2="178.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="206.0" y1="34.0" x2="198.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="226.0" y1="34.0" x2="218.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="246.0" y1="34.0" x2="238.0" y2="24.0" stroke="currentColor" stroke-width="1.5" opacity="0.55"/><line x1="170.0" y1="34.0" x2="170.0" y2="196.0" stroke="currentColor" stroke-width="2" opacity="0.55"/><rect x="140" y="196" width="60" height="48" rx="4" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2.2"/><line x1="170.0" y1="196.0" x2="170.0" y2="145.0" stroke="#38bdf8" stroke-width="3.4" marker-end="url(#f3-b11)"/><line x1="170.0" y1="34.0" x2="170.0" y2="85.0" stroke="#38bdf8" stroke-width="3.4" marker-end="url(#f3-b11)"/><circle cx="170.0" cy="220.0" r="4" fill="currentColor"/><line x1="170.0" y1="220.0" x2="170.0" y2="271.0" stroke="#f87171" stroke-width="3.4" marker-end="url(#f3-r11)"/><text x="182.0" y="170.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T</text><text x="196.0" y="170.0" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">: dây kéo vật</text><text x="182.0" y="74.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T′</text><text x="203.0" y="74.0" fill="#38bdf8" font-size="13" font-weight="600" text-anchor="start">: dây kéo trần</text><text x="182.0" y="270.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P</text><text x="196.0" y="270.0" fill="#f87171" font-size="13" font-weight="600" text-anchor="start">: Trái Đất hút vật</text><text x="130.0" y="138.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">hai đầu dây:</text><text x="130.0" y="156.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">T hướng vào</text><text x="130.0" y="174.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="end">giữa dây</text></svg><figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây: <em>T</em> kéo vật lên, <em>T</em>′ kéo móc trần xuống. Vật đứng yên nên <em>T</em> = <em>P</em> (mũi tên dài bằng nhau).</figcaption></figure>
+<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-trong-luc-luc-cang/hinh-luc-cang-day.webp" alt="Tay giữ dây treo một vật nặng: lực căng T ở hai đầu dây đều hướng vào giữa dây, kéo vật lên và kéo tay xuống, trọng lực w hướng xuống" loading="lazy" width="539" height="750"><figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây:<br><em>T</em> kéo vật lên, <em>T</em> kéo tay xuống.<br>Vật đứng yên: <em>T</em> = <em>w</em> (<em>w</em> là <em>P</em> của bài).<br>Free-body diagram = sơ đồ lực.</figcaption></figure>
+<ol class="tl-fns"><li id="tl-fn-h3">Hình: OpenStax, College Physics 2e, Hình 4.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</li></ol>
 
-<p>Ví dụ: đèn treo trần. Ở đầu dưới, dây kéo đèn <strong>lên</strong>; ở đầu trên, dây kéo móc trần <strong>xuống</strong>. Hai lực này cùng độ lớn $T$, ngược chiều, và đều hướng vào giữa dây.</p>
+<p>Ví dụ: đèn treo trần. Dây kéo đèn <strong>lên</strong> và kéo móc trần <strong>xuống</strong>: hai lực cùng độ lớn $T$, đều hướng vào giữa dây.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Một bạn kéo xe trượt trên băng bằng sợi dây buộc vào đầu xe, dây chếch lên phía trước. Lực căng do dây tác dụng lên <strong>xe</strong>:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl62-q3" id="tl62-q3a"><label for="tl62-q3a" class="tl-opt tl-ok">A. Đặt ở chỗ buộc dây trên xe, dọc theo dây, hướng về phía người kéo</label>
@@ -716,16 +1718,30 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h4>5. Hệ vật nối dây qua ròng rọc</h4>
 
+<p class="tl-claim">Dây nhẹ không dãn: cùng gia tốc, cùng lực căng.</p>
+
 <p><strong>🔑 Dây nhẹ không dãn · cùng gia tốc · cùng $T$</strong></p>
 
 <ul>
-<li>Dây <strong>không dãn</strong>: các vật nối với nhau đi được cùng quãng đường, nên có <strong>cùng độ lớn gia tốc</strong> $a$.</li>
-<li>Dây và ròng rọc <strong>nhẹ</strong>, bỏ qua ma sát ở ròng rọc: lực căng ở hai bên ròng rọc <strong>bằng nhau</strong>.</li>
-<li>Ròng rọc cố định chỉ <strong>đổi hướng</strong> lực căng, không đổi độ lớn.</li>
-<li>Cách giải: viết $\vec F = m\vec a$ <strong>riêng cho từng vật</strong>, mỗi vật một chiều dương theo chiều chuyển động.</li>
+<li>Dây <strong>không dãn</strong>: các vật đi cùng quãng đường nên có <strong>cùng độ lớn gia tốc</strong> $a$.</li>
+<li>Dây nhẹ, ròng rọc <strong>nhẹ, nhẵn</strong>: lực căng hai bên ròng rọc <strong>bằng nhau</strong>.</li>
+<li>Cách giải: viết phương trình chuyển động <strong>riêng cho từng vật</strong>, mỗi vật một chiều dương theo chiều chuyển động.</li>
 </ul>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l10-trong-luc-luc-cang-03">
+<div class="tl-fx">
+<p class="tl-fx-name">Phương trình cho từng vật</p>
+<p>$$\vec F = m\vec a$$</p>
+<p class="tl-fx-cond">Dây nhẹ không dãn, ròng rọc nhẹ nhẵn</p>
+<p>$$T_1 = T_2 = T$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$\vec F$</span><span>hợp lực tác dụng lên vật đó (N)</span></li>
+<li><span class="tl-sym">$m$</span><span>khối lượng của vật (kg)</span></li>
+<li><span class="tl-sym">$\vec a$</span><span>gia tốc của vật ($\text{m/s}^2$); các vật nối dây có cùng độ lớn $a$</span></li>
+<li><span class="tl-sym">$T_1$, $T_2$</span><span>lực căng dây ở hai bên ròng rọc (N)</span></li>
+</ul>
+</div>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l10-trong-luc-luc-cang-03">
 <p class="tl-label">🔬 Thí nghiệm: lực kế kéo dây vắt qua ròng rọc</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> treo quả nặng $1{,}0$ N vào một đầu dây vắt qua ròng rọc cố định; đầu kia móc lực kế, giữ cho quả nặng đứng yên. Kéo lực kế theo phương thẳng đứng, chếch $45^\circ$, rồi nằm ngang.</li>
@@ -734,10 +1750,11 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </ol>
 </div>
 
-<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-04"><svg viewBox="0 0 400 312" role="img" aria-label="Khối A trên bàn nhẵn nối qua ròng rọc ở mép bàn với vật B treo; lực căng T kéo A về phía ròng rọc và kéo B lên, trọng lực PB kéo B xuống"><defs><marker id="f4-b11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-g11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker><marker id="f4-r11" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker></defs><rect x="20" y="132" width="270" height="14" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><line x1="40.0" y1="146.0" x2="40.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="250.0" y1="146.0" x2="250.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><rect x="96" y="82" width="80" height="50" rx="3" fill="rgba(251,146,60,.28)" stroke="currentColor" stroke-width="2.2"/><text x="136.0" y="114.0" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">A</text><line x1="284.0" y1="132.0" x2="304.0" y2="114.0" stroke="currentColor" stroke-width="2.4" opacity="1"/><circle cx="304" cy="114" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="304.0" cy="114.0" r="3" fill="currentColor"/><rect x="296" y="214" width="44" height="40" rx="3" fill="rgba(56,189,248,.22)" stroke="currentColor" stroke-width="2.2"/><text x="306.0" y="240.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">B</text><line x1="176.0" y1="100.0" x2="304.0" y2="100.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><line x1="318.0" y1="114.0" x2="318.0" y2="214.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><path d="M304,100 A14,14 0 0 1 318,114" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".6"/><line x1="176.0" y1="100.0" x2="213.0" y2="100.0" stroke="#38bdf8" stroke-width="3.2" marker-end="url(#f4-b11)"/><line x1="318.0" y1="214.0" x2="318.0" y2="177.0" stroke="#38bdf8" stroke-width="3.2" marker-end="url(#f4-b11)"/><circle cx="318.0" cy="234.0" r="3.5" fill="currentColor"/><line x1="318.0" y1="234.0" x2="318.0" y2="283.0" stroke="#f87171" stroke-width="3.2" marker-end="url(#f4-r11)"/><text x="190.0" y="90.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T</text><text x="306.0" y="188.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">T</text><text x="328.0" y="284.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P<tspan baseline-shift="sub" font-size="12">B</tspan></text><line x1="106.0" y1="66.0" x2="143.0" y2="66.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f4-g11)"/><text x="160.0" y="71.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">a</text><line x1="278.0" y1="218.0" x2="278.0" y2="251.0" stroke="#34d399" stroke-width="2.6" marker-end="url(#f4-g11)"/><text x="268.0" y="246.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">a</text><text x="30.0" y="24.0" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">Bàn nhẵn · dây nhẹ, không dãn</text></svg><figcaption>Hình 4. Hệ vật nối dây qua ròng rọc: cùng gia tốc <em>a</em>, cùng lực căng <em>T</em>. Vật B đi xuống nhanh dần nên <em>T</em> &lt; <em>P</em><sub>B</sub> (mũi tên đỏ dài hơn).</figcaption></figure>
+<figure class="fig" data-tl="1" data-exp="tn-l10-trong-luc-luc-cang-04"><svg viewBox="0 0 400 312" role="img" aria-label="Khối A trên bàn nhẵn nối qua ròng rọc ở mép bàn với vật B treo; lực căng T kéo A về phía ròng rọc và kéo B lên, trọng lực PB kéo B xuống"><rect x="20" y="132" width="270" height="14" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><line x1="40.0" y1="146.0" x2="40.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="250.0" y1="146.0" x2="250.0" y2="300.0" stroke="currentColor" stroke-width="3" opacity="1"/><rect x="96" y="82" width="80" height="50" rx="3" fill="rgba(251,146,60,.28)" stroke="currentColor" stroke-width="2.2"/><text x="136.0" y="114.0" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">A</text><line x1="284.0" y1="132.0" x2="304.0" y2="114.0" stroke="currentColor" stroke-width="2.4" opacity="1"/><circle cx="304" cy="114" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="304.0" cy="114.0" r="3" fill="currentColor"/><rect x="296" y="214" width="44" height="40" rx="3" fill="rgba(56,189,248,.22)" stroke="currentColor" stroke-width="2.2"/><text x="306.0" y="240.0" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">B</text><line x1="176.0" y1="100.0" x2="304.0" y2="100.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><line x1="318.0" y1="114.0" x2="318.0" y2="214.0" stroke="currentColor" stroke-width="1.8" opacity="0.6"/><path d="M304,100 A14,14 0 0 1 318,114" fill="none" stroke="currentColor" stroke-width="1.8" opacity=".6"/><line x1="176.0" y1="100.0" x2="224.0" y2="100.0" stroke="#38bdf8" stroke-width="2.8"/><path d="M214.0,94.2 L224.0,100.0 L214.0,105.8" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="318.0" y1="214.0" x2="318.0" y2="166.0" stroke="#38bdf8" stroke-width="2.8"/><path d="M312.2,176.0 L318.0,166.0 L323.8,176.0" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="318.0" cy="234.0" r="3.5" fill="currentColor"/><line x1="318.0" y1="234.0" x2="318.0" y2="294.0" stroke="#f87171" stroke-width="2.8"/><path d="M323.8,284.0 L318.0,294.0 L312.2,284.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="190.0" y="90.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">T</text><text x="306.0" y="188.0" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">T</text><text x="328.0" y="284.0" fill="#f87171" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">P<tspan baseline-shift="sub" font-size="14">B</tspan></text><line x1="106.0" y1="66.0" x2="154.0" y2="66.0" stroke="#34d399" stroke-width="2.6"/><path d="M144.6,60.6 L154.0,66.0 L144.6,71.4" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="160.0" y="71.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">a</text><line x1="278.0" y1="218.0" x2="278.0" y2="262.0" stroke="#34d399" stroke-width="2.6"/><path d="M283.4,252.6 L278.0,262.0 L272.6,252.6" fill="none" stroke="#34d399" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="268.0" y="246.0" fill="#34d399" font-size="16" font-weight="700" text-anchor="end" font-style="italic" font-family="serif">a</text><text x="30.0" y="22.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Bàn nhẵn</text><text x="30.0" y="42.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Dây nhẹ, không dãn</text></svg><figcaption>Hình 4. Hệ vật nối dây qua ròng rọc: cùng gia tốc <em>a</em>, cùng lực căng <em>T</em>. Vật B đi xuống nhanh dần nên <em>T</em> &lt; <em>P</em><sub>B</sub> (mũi tên đỏ dài hơn).</figcaption></figure>
 
 <h3>III. Ba cái bẫy của bài này</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "Em nặng 50 kg"</h4>
 
 <p>Ngoài đời ai cũng nói "nặng 50 kg". Trong vật lí, kg là đơn vị của <strong>khối lượng</strong>; "nặng" (trọng lượng) phải tính bằng <strong>N</strong>.</p>
@@ -756,9 +1773,10 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </div>
 
 <p><strong>🔑 kg là lượng chất · N là lực hút</strong></p>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Một nhà du hành có khối lượng $60$ kg. Trên Mặt Trăng ($g = 1{,}6$ m/s²), số đo nào là đúng?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl62-q4" id="tl62-q4a"><label for="tl62-q4a" class="tl-opt tl-no">A. Khối lượng $10$ kg, trọng lượng $96$ N</label>
@@ -770,9 +1788,10 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: lực căng luôn bằng trọng lượng vật treo</h4>
 
-<p>$T = P$ chỉ đúng khi vật treo <strong>đứng yên hoặc chuyển động thẳng đều</strong>. Cầu trục vừa giật phôi đi lên nhanh dần thì cáp phải kéo <strong>mạnh hơn</strong> trọng lượng phôi.</p>
+<p>$T = P$ chỉ đúng khi vật treo <strong>đứng yên hoặc chuyển động thẳng đều</strong>.</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -781,35 +1800,38 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </thead>
 <tbody>
 <tr><td>Đứng yên / đi thẳng đều</td><td>$T = P$</td></tr>
-<tr><td>Gia tốc $a$ hướng lên (đi lên nhanh dần)</td><td>$T \gt P$</td></tr>
-<tr><td>Gia tốc $a$ hướng xuống (đi xuống nhanh dần)</td><td>$T \lt P$</td></tr>
+<tr><td>Gia tốc $a$ hướng lên (đi lên nhanh dần hoặc đi xuống chậm dần)</td><td>$T \gt P$</td></tr>
+<tr><td>Gia tốc $a$ hướng xuống (đi xuống nhanh dần hoặc đi lên chậm dần)</td><td>$T \lt P$</td></tr>
 </tbody>
 </table>
 </div>
 
-<p>Công thức: $a$ hướng lên thì $T = m(g + a)$; $a$ hướng xuống thì $T = m(g - a)$.</p>
+<p>Chọn chiều dương theo hướng gia tốc rồi viết định luật 2 Newton:<br>$a$ hướng lên: $T - P = ma$, nên $T = m(g + a)$.<br>$a$ hướng xuống: $P - T = ma$, nên $T = m(g - a)$.</p>
 
 <p><strong>🔑 Có gia tốc · $T \neq P$</strong></p>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl62-q5-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl62-q5-conf" value="khong"> Không chắc</label></p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Cầu trục nâng phôi $200$ kg lên, nhanh dần với $a = 0{,}5$ m/s² (lấy $g = 10$ m/s²). Lực căng của cáp là:</p>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Thang máy chung cư chở người, tổng khối lượng $500$ kg, đi lên nhanh dần với $a = 0{,}5$ m/s² (lấy $g = 10$ m/s²). Lực căng của cáp là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl62-q5" id="tl62-q5a"><label for="tl62-q5a" class="tl-opt tl-no">A. $2\,000$ N</label>
-<input type="radio" name="tl62-q5" id="tl62-q5b"><label for="tl62-q5b" class="tl-opt tl-ok">B. $2\,100$ N</label>
-<input type="radio" name="tl62-q5" id="tl62-q5c"><label for="tl62-q5c" class="tl-opt tl-no">C. $1\,900$ N</label>
-<input type="radio" name="tl62-q5" id="tl62-q5d"><label for="tl62-q5d" class="tl-opt tl-no">D. $100$ N</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương hướng lên: $T - P = ma$ nên $T = 200 \cdot (10 + 0{,}5) = 2\,100$ N. Em giải thích được cho bạn ngồi cạnh vì sao cáp hay đứt lúc <em>bắt đầu</em> nâng chưa?</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $2\,000$ N là coi $T = P$, quên gia tốc. $1\,900$ N là lấy nhầm $g - a$ (trường hợp đi xuống nhanh dần). $100$ N chỉ là $ma$, quên trọng lực. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy đọc lại bảng ngay trên.</p></div>
+<input type="radio" name="tl62-q5" id="tl62-q5a"><label for="tl62-q5a" class="tl-opt tl-no">A. $5\,000$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5b"><label for="tl62-q5b" class="tl-opt tl-ok">B. $5\,250$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5c"><label for="tl62-q5c" class="tl-opt tl-no">C. $4\,750$ N</label>
+<input type="radio" name="tl62-q5" id="tl62-q5d"><label for="tl62-q5d" class="tl-opt tl-no">D. $250$ N</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều dương hướng lên: $T - P = ma$ nên $T = 500 \cdot (10 + 0{,}5) = 5\,250$ N.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $5\,000$ N là coi $T = P$, quên gia tốc. $4\,750$ N là lấy nhầm $g - a$ (trường hợp đi xuống nhanh dần). $250$ N chỉ là $ma$, quên trọng lực. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy đọc lại bảng ngay trên.</p></div>
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: vẽ lực căng chĩa vào trong vật</h4>
 
-<p>Khi vẽ hình, nhiều bạn cho $\vec T$ chĩa từ dây <em>đâm vào</em> vật, như dây đang đẩy. Dây mềm không đẩy được: lực căng lên vật luôn <strong>đi ra khỏi vật, dọc theo dây</strong>.</p>
+<p>Nhiều bạn vẽ $\vec T$ <em>đâm vào</em> vật như dây đang đẩy, nhưng dây mềm chỉ kéo được.</p>
 
 <div class="table-scroll">
 <table class="tl-table">
@@ -824,9 +1846,10 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </div>
 
 <p><strong>🔑 Gốc ở chỗ buộc · mũi theo dây</strong></p>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Con lắc gồm quả cầu treo dưới sợi dây, đang ở vị trí lệch sang phải. Lực căng dây tác dụng lên quả cầu hướng:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl62-q6" id="tl62-q6a"><label for="tl62-q6a" class="tl-opt tl-no">A. Thẳng đứng lên trên</label>
@@ -840,38 +1863,37 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <h3>IV. Trả bài</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài — nhớ lại trước khi giải</p>
-<p>Với mỗi câu: nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
-<details class="tl-details">
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài — nhớ lại trước khi giải</p>
+<details class="tl-details tl-more">
 <summary>1. Trọng lực là gì? Nêu bốn đặc điểm. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Lực hấp dẫn Trái Đất – vật. <strong>Điểm đặt:</strong> trọng tâm · <strong>Phương:</strong> thẳng đứng · <strong>Chiều:</strong> về tâm Trái Đất · <strong>Độ lớn:</strong> $P = mg$.</p>
+<p>Lực hấp dẫn Trái Đất – vật.<br><strong>Điểm đặt:</strong> trọng tâm.<br><strong>Phương:</strong> thẳng đứng.<br><strong>Chiều:</strong> về tâm Trái Đất.<br><strong>Độ lớn:</strong> $P = mg$.</p>
 </details>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>2. Trọng tâm vật phẳng đối xứng ở đâu? Có luôn nằm trên vật không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Tâm đối xứng. Phụ thuộc phân bố khối lượng · <strong>có thể ở ngoài vật</strong> (vòng đệm, nhẫn).</p>
+<p>Ở tâm đối xứng (nếu vật đồng chất).<br>Vị trí phụ thuộc phân bố khối lượng.<br><strong>Có thể ở ngoài vật</strong> (đĩa CD, nhẫn).</p>
 </details>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>3. Cách tìm trọng tâm tấm bìa bằng dây dọi? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Treo ở hai điểm khác nhau · kẻ theo dây dọi · giao điểm là $G$. Vật đứng yên: $G$ ngay dưới điểm treo.</p>
+<p>Treo bìa ở hai điểm khác nhau, mỗi lần kẻ theo dây dọi.<br>Giao điểm hai đường là $G$ (lần treo thứ ba chỉ để kiểm tra).<br>Vật đứng yên: $G$ ngay dưới điểm treo.</p>
 </details>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>4. Trọng lượng khác khối lượng ở những điểm nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>$m$: kg · cân · không đổi. $P$: N · lực kế · $P = mg$, đổi theo $g$.</p>
+<p>Khối lượng $m$: đơn vị kg, đo bằng cân, không đổi.<br>Trọng lượng $P$: đơn vị N, đo bằng lực kế, $P = mg$ đổi theo $g$.</p>
 </details>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>5. Lực căng dây: điểm đặt, phương, chiều? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Đặt ở chỗ dây chạm vật · dọc theo dây · hướng vào giữa dây (kéo vật về phía dây) · chỉ kéo, không đẩy.</p>
+<p><strong>Điểm đặt:</strong> chỗ dây chạm vật.<br><strong>Phương:</strong> dọc theo dây.<br><strong>Chiều:</strong> hướng vào giữa dây (kéo vật về phía dây).<br>Dây chỉ kéo, không đẩy.</p>
 </details>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>6. Hệ vật nối dây nhẹ không dãn qua ròng rọc nhẹ: điều gì giống nhau giữa hai vật? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p>Cùng độ lớn gia tốc $a$ · cùng lực căng $T$ · viết $F = ma$ riêng cho từng vật. $T = P$ chỉ khi không có gia tốc.</p>
+<p>Cùng độ lớn gia tốc $a$.<br>Cùng lực căng $T$.<br>Viết $F = ma$ riêng cho từng vật.<br>$T = P$ chỉ khi không có gia tốc.</p>
 </details>
 </div>
 
 <h3>V. Bài toán mẫu</h3>
 
-<div class="tl-box">
+<div class="tl-box tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Khối $A$ khối lượng $2$ kg nằm trên mặt bàn nằm ngang nhẵn, được nối bằng sợi dây nhẹ, không dãn vắt qua ròng rọc nhẹ ở mép bàn với vật $B$ khối lượng $0{,}5$ kg treo thẳng đứng (Hình 4). Thả cho hệ chuyển động từ nghỉ. Bỏ qua mọi ma sát, lấy $g = 10$ m/s². Tính gia tốc của hệ và lực căng dây.</p>
 </div>
@@ -883,7 +1905,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </thead>
 <tbody>
 <tr><td>"khối $A$ … $2$ kg"</td><td>$m_A = 2$ kg</td><td>vật 1 của hệ</td></tr>
-<tr><td>"mặt bàn nằm ngang nhẵn"</td><td>không ma sát</td><td>$P_A$ cân bằng $N$</td></tr>
+<tr><td>"mặt bàn nằm ngang nhẵn"</td><td>không ma sát</td><td>$P_A$ cân bằng phản lực $\vec N$ của bàn (lực đỡ, hướng lên)</td></tr>
 <tr><td>"dây nhẹ, không dãn … ròng rọc nhẹ"</td><td>cùng $a$, cùng $T$</td><td>hệ vật nối dây</td></tr>
 <tr><td>"vật $B$ … $0{,}5$ kg treo"</td><td>$P_B = 5$ N</td><td>$P = mg$</td></tr>
 <tr><td>"gia tốc … lực căng"</td><td>$a = ?$; $T = ?$</td><td>$F = ma$ cho từng vật</td></tr>
@@ -891,65 +1913,67 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải</summary>
 <ol class="tl-steps">
 <li><strong>Vật A</strong> (chiều dương về phía ròng rọc): theo phương ngang chỉ có $T$, nên $T = m_A a$.</li>
 <li><strong>Vật B</strong> (chiều dương hướng xuống): $P_B - T = m_B a$.</li>
-<li><strong>Cộng hai phương trình:</strong> $P_B = (m_A + m_B)a$, suy ra $a = \dfrac{5}{2{,}5} = 2$ m/s².</li>
+<li><strong>Cộng hai phương trình:</strong> $T + (P_B - T) = m_A a + m_B a$, $T$ triệt tiêu, còn $P_B = (m_A + m_B)a$, suy ra $a = \dfrac{5}{2{,}5} = 2$ m/s².</li>
 <li><strong>Lực căng:</strong> $T = m_A a = 2 \cdot 2 = 4$ N.</li>
 <li><strong>Kiểm tra:</strong> với B, $5 - 4 = 1$ N $= 0{,}5 \cdot 2$ ✓. $T = 4$ N $\lt P_B = 5$ N, đúng vì B đi xuống nhanh dần (Bẫy 2).</li>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu</p>
 <p>Cùng hình, đổi số: $m_A = 3$ kg, $m_B = 1$ kg.</p>
 <ol class="tl-steps">
 <li>$P_B = m_B g = 10$ N.</li>
 <li><strong>Bước 2 (em điền):</strong> $a = \dfrac{P_B}{m_A + m_B} = \;?$</li>
-<li><strong>Bước 3 (em điền):</strong> $T = \;?$ — gợi ý: dùng phương trình của vật nào thì gọn hơn?</li>
+<li><strong>Bước 3 (em điền):</strong> $T = \;?$ — gợi ý: tính số thì chọn phương trình ít số hạng hơn.</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Xem bước 2–3</summary>
 <p>$a = \dfrac{10}{4} = 2{,}5$ m/s²; $T = m_A a = 3 \cdot 2{,}5 = 7{,}5$ N. Kiểm: $10 - 7{,}5 = 2{,}5 = 1 \cdot 2{,}5$ ✓.</p>
 </details>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🔁 Thử sức đổi điều kiện: giữ chặt khối A</summary>
 <p>Đề gốc, nhưng tay giữ khối A đứng yên. Cả hệ đứng yên, $a = 0$: với B, $T = P_B = 5$ N. So với $4$ N khi thả tay: lực căng <strong>lớn hơn</strong> khi hệ đứng yên.</p>
 </details>
 
+<p>⚠ Khi đổi $m_A$, đừng xét $T = m_A a$: cả $m_A$ lẫn $a$ cùng đổi. Hãy xét phương trình của vật B, nơi chỉ có $a$ đổi.</p>
+
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tl62-q7-conf" value="chac"> Chắc</label>
 <label><input type="radio" name="tl62-q7-conf" value="khong"> Không chắc</label></p>
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 6.</strong> Giữ nguyên vật B $0{,}5$ kg, thay khối A bằng khối <strong>nặng hơn nhiều</strong> (vẫn trên bàn nhẵn). Lực căng dây khi hệ chuyển động sẽ:</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 6.</strong> Giữ nguyên vật B $0{,}5$ kg, thay khối A bằng những khối <strong>ngày càng nặng</strong> (vẫn trên bàn nhẵn). Khối A càng nặng thì lực căng dây khi hệ chuyển động:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl62-q7" id="tl62-q7a"><label for="tl62-q7a" class="tl-opt tl-ok">A. Tăng dần, tiến gần tới $5$ N nhưng không vượt</label>
-<input type="radio" name="tl62-q7" id="tl62-q7b"><label for="tl62-q7b" class="tl-opt tl-no">B. Giảm dần, vì gia tốc nhỏ đi</label>
+<input type="radio" name="tl62-q7" id="tl62-q7a"><label for="tl62-q7a" class="tl-opt tl-ok">A. Càng lớn, tiến gần tới $5$ N nhưng không vượt</label>
+<input type="radio" name="tl62-q7" id="tl62-q7b"><label for="tl62-q7b" class="tl-opt tl-no">B. Càng nhỏ, vì gia tốc nhỏ đi</label>
 <input type="radio" name="tl62-q7" id="tl62-q7c"><label for="tl62-q7c" class="tl-opt tl-no">C. Luôn bằng $5$ N, vì bằng trọng lượng B</label>
-<input type="radio" name="tl62-q7" id="tl62-q7d"><label for="tl62-q7d" class="tl-opt tl-no">D. Tăng mãi, vượt quá $5$ N, vì A nặng thêm</label>
+<input type="radio" name="tl62-q7" id="tl62-q7d"><label for="tl62-q7d" class="tl-opt tl-no">D. Càng lớn và vượt quá $5$ N, vì A nặng thêm</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Từ phương trình của B: $T = P_B - m_B a$. A càng nặng, $a$ càng nhỏ, nên $T$ càng gần $P_B = 5$ N. Khi $a \to 0$, B gần như "treo đứng yên".</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B nhìn mỗi $T = m_A a$ mà quên $m_A$ đang tăng — dùng phương trình của B gọn hơn: $T = P_B - m_B a$. C coi $T = P_B$ dù hệ vẫn có gia tốc (Bẫy 2). D bỏ qua rằng B đi xuống nhanh dần thì $T \lt P_B$. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 2 của lời giải.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B nhìn mỗi $T = m_A a$ mà quên $m_A$ đang tăng. C coi $T = P_B$ dù hệ vẫn có gia tốc (Bẫy 2). D bỏ qua rằng B đi xuống nhanh dần thì $T \lt P_B$. Nếu đã chọn <em>Chắc</em> mà vẫn sai, xem lại bước 2 (phương trình của vật B) trong 🧮 lời giải bài mẫu.</p></div>
 </div>
 </div>
 
 <h3>VI. Đời sống và tổng kết</h3>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🏗️ Bấm xem: bốn nơi đang dùng bài này</summary>
 <ul>
-<li><strong>Dây dọi thợ xây:</strong> chỉ phương thẳng đứng, tức phương trọng lực tại chỗ đó.</li>
-<li><strong>Cầu trục, cáp nâng trong xưởng CNC:</strong> cáp chọn theo lực căng lúc <em>khởi động</em> nâng, $T = m(g + a)$, chứ không chỉ theo trọng lượng phôi.</li>
+<li><strong>Dây dọi khi xây nhà:</strong> chỉ phương thẳng đứng, tức phương trọng lực tại chỗ đó.</li>
+<li><strong>Thang máy chung cư:</strong> cáp chọn theo lực căng lúc <em>khởi động</em> đi lên, $T = m(g + a)$, chứ không chỉ theo trọng lượng thang và người.</li>
 <li><strong>Xe tải chở hàng cao:</strong> trọng tâm lên cao, vào cua dễ lật; hàng nặng luôn xếp dưới.</li>
 <li><strong>Trượt băng đôi:</strong> khi nâng bạn diễn, người nâng giữ trọng tâm chung ngay trên lưỡi giày trụ thì mới đứng vững.</li>
 </ul>
 </details>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>⭐ Thử thách phân tầng</summary>
 <ul>
 <li><strong>⭐</strong> Vật $5$ kg ở nơi $g = 9{,}8$ m/s²: trọng lượng bao nhiêu? <em>($49$ N)</em></li>
@@ -958,21 +1982,25 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </ul>
 </details>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Trọng lực</strong>: đặt ở $G$ · thẳng đứng · xuống · $P = mg$.</li>
-<li><strong>Trọng tâm</strong>: tâm đối xứng · có thể ngoài vật · dây dọi tìm được.</li>
+<li><strong>Trọng tâm</strong>: vật đồng chất, đối xứng thì ở tâm đối xứng · có thể ngoài vật · dây dọi tìm được.</li>
 <li><strong>kg ≠ N</strong>: $m$ không đổi · $P$ đổi theo $g$.</li>
 <li><strong>Lực căng</strong>: chỗ buộc · dọc dây · kéo vật về phía dây.</li>
 <li><strong>Dây nhẹ không dãn</strong>: cùng $a$ · cùng $T$ · ròng rọc đổi hướng.</li>
 <li>$T = P$ <strong>chỉ khi</strong> không có gia tốc.</li>
-<li>Đọc đề: gạch "nhẹ", "không dãn", "nhẵn", "từ nghỉ" — đó là dữ kiện ngầm.</li>
+<li>Đọc đề, gạch dữ kiện ngầm: "nhẹ", "không dãn", "nhẵn", "từ nghỉ" ($v_0 = 0$).</li>
 </ul>
 </div>
+
+<ol class="tl-fns">
+<li id="tl-fn-1">$9{,}78\ \text{m/s}^2$ là giá trị gần xích đạo; $9{,}8\ \text{m/s}^2$ là giá trị làm tròn thường dùng.</li>
+</ol>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-hoc-lop-10-11-46760c/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/bai-hoc-lop-10-11-46760c/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

@@ -352,6 +352,10 @@
    "question": "So sánh bếp điện có mâm nóng và bếp từ khi cùng đun một nồi nước. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Đặt nồi nhôm trên bếp từ thì trong đáy nồi không có dòng Foucault nào.",
+     "answer": false
+    },
+    {
      "text": "Ở bếp từ, cuộn dây dưới mặt kính tạo ra từ trường biến thiên.",
      "answer": true
     },
@@ -362,18 +366,14 @@
     {
      "text": "Bếp từ chỉ đun hiệu quả nồi có đáy nhiễm từ như gang, thép.",
      "answer": true
-    },
-    {
-     "text": "Đặt nồi nhôm trên bếp từ thì trong đáy nồi không có dòng Foucault nào.",
-     "answer": false
     }
    ],
    "explanation": "Bếp từ không có mâm nóng: nhiệt sinh trong đáy nồi, còn mặt kính chỉ ấm nhờ nồi. Nồi nhôm vẫn có dòng Foucault, nhưng nhôm không nhiễm từ và có điện trở suất thấp nên toả nhiệt rất ít.",
    "distractorNotes": {
-    "0": "Không thể coi sai vì bếp từ không có mâm nóng; cuộn dây nuôi dòng xoay chiều tần số cao chính là nguồn tạo từ trường biến thiên.",
-    "1": "Coi đúng là nhầm với bếp điện mâm nóng; mặt kính cách điện, không sinh dòng, chỉ ấm nhờ nồi truyền ngược lại.",
-    "2": "Coi sai là quên vật liệu nhiễm từ như gang, thép tập trung từ thông; nồi nhôm, sứ, thủy tinh đun rất kém hoặc không đun được.",
-    "3": "Coi đúng là nhầm \"toả nhiệt rất ít\" với \"không có dòng\"; nhôm dẫn điện nên vẫn có dòng Foucault."
+    "0": "Coi đúng là nhầm \"toả nhiệt rất ít\" với \"không có dòng\"; nhôm dẫn điện nên vẫn có dòng Foucault.",
+    "1": "Không thể coi sai vì bếp từ không có mâm nóng; cuộn dây nuôi dòng xoay chiều tần số cao chính là nguồn tạo từ trường biến thiên.",
+    "2": "Coi đúng là nhầm với bếp điện mâm nóng; mặt kính cách điện, không sinh dòng, chỉ ấm nhờ nồi truyền ngược lại.",
+    "3": "Coi sai là quên vật liệu nhiễm từ như gang, thép tập trung từ thông; nồi nhôm, sứ, thủy tinh đun rất kém hoặc không đun được."
    }
   },
   {
@@ -387,28 +387,28 @@
    "question": "Căng một dây thép trên giá gỗ, đặt sát dưới dây một nam châm và một cuộn dây nối với điện kế nhạy, rồi gảy dây (mô hình bộ cảm ứng của đàn ghi ta điện). Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Kim điện kế rung đúng nhịp dao động của dây thép.",
-     "answer": true
-    },
-    {
-     "text": "Khi dây đã tắt dao động, kim vẫn lệch vì nam châm vẫn còn ở đó.",
-     "answer": false
-    },
-    {
      "text": "Trong cuộn dây có dòng cảm ứng dù dây thép không chạm vào cuộn dây.",
      "answer": true
     },
     {
      "text": "Dòng cảm ứng ở đàn ghi ta điện đủ lớn để chạy thẳng loa, không cần máy tăng âm.",
      "answer": false
+    },
+    {
+     "text": "Kim điện kế rung đúng nhịp dao động của dây thép.",
+     "answer": true
+    },
+    {
+     "text": "Khi dây đã tắt dao động, kim vẫn lệch vì nam châm vẫn còn ở đó.",
+     "answer": false
     }
    ],
    "explanation": "Dây thép bị từ hoá dao động làm từ thông qua cuộn dây biến thiên, sinh dòng cảm ứng cùng tần số. Dây đứng yên thì từ thông không đổi và không có dòng; dòng này rất nhỏ nên phải qua máy tăng âm.",
    "distractorNotes": {
-    "0": "Coi sai là bỏ qua việc dây dao động làm từ thông biến thiên đúng nhịp, nên dòng cảm ứng có cùng tần số với dây.",
-    "1": "Coi đúng là nhầm \"có từ trường\" với \"từ thông biến thiên\"; dây đứng yên thì $\\Delta\\Phi/\\Delta t = 0$, kim đứng yên.",
-    "2": "Coi sai là buộc dòng cảm ứng vào sự tiếp xúc; điều kiện chỉ cần từ thông qua cuộn dây biến thiên.",
-    "3": "Coi đúng là quên dòng cảm ứng ở bộ cảm ứng rất nhỏ, phải qua máy tăng âm mới làm loa kêu được."
+    "0": "Coi sai là buộc dòng cảm ứng vào sự tiếp xúc; điều kiện chỉ cần từ thông qua cuộn dây biến thiên.",
+    "1": "Coi đúng là quên dòng cảm ứng ở bộ cảm ứng rất nhỏ, phải qua máy tăng âm mới làm loa kêu được.",
+    "2": "Coi sai là bỏ qua việc dây dao động làm từ thông biến thiên đúng nhịp, nên dòng cảm ứng có cùng tần số với dây.",
+    "3": "Coi đúng là nhầm \"có từ trường\" với \"từ thông biến thiên\"; dây đứng yên thì $\\Delta\\Phi/\\Delta t = 0$, kim đứng yên."
    }
   },
   {
@@ -426,24 +426,24 @@
      "answer": true
     },
     {
-     "text": "Nếu từ thông qua cuộn dây không đổi thì $e_c = 0$.",
-     "answer": true
+     "text": "Đơn vị của $e_c$ là vêbe (Wb).",
+     "answer": false
     },
     {
      "text": "Với cùng $\\Delta\\Phi$, khoảng thời gian $\\Delta t$ càng dài thì $e_c$ càng lớn.",
      "answer": false
     },
     {
-     "text": "Đơn vị của $e_c$ là vêbe (Wb).",
-     "answer": false
+     "text": "Nếu từ thông qua cuộn dây không đổi thì $e_c = 0$.",
+     "answer": true
     }
    ],
    "explanation": "$e_c$ tỉ lệ với $N$ và với tốc độ biến thiên từ thông, nên $\\Delta t$ dài hơn thì $e_c$ nhỏ hơn. Từ thông không đổi cho $\\Delta\\Phi/\\Delta t = 0$; đơn vị của $e_c$ là vôn, còn Wb là đơn vị của từ thông.",
    "distractorNotes": {
     "0": "Coi sai là bỏ quên hệ số $N$; mỗi vòng góp một suất điện động nên $e_c$ tỉ lệ thuận với số vòng.",
-    "1": "Coi sai là nhầm có từ thông với từ thông biến thiên; $\\Delta\\Phi = 0$ thì $e_c = 0$.",
+    "1": "Coi đúng là nhầm đơn vị từ thông (Wb) với đơn vị suất điện động là vôn (V).",
     "2": "Coi đúng là đảo tỉ lệ; với cùng $\\Delta\\Phi$, $e_c$ tỉ lệ nghịch với $\\Delta t$ nên thời gian dài thì $e_c$ nhỏ.",
-    "3": "Coi đúng là nhầm đơn vị từ thông (Wb) với đơn vị suất điện động là vôn (V)."
+    "3": "Coi sai là nhầm có từ thông với từ thông biến thiên; $\\Delta\\Phi = 0$ thì $e_c = 0$."
    }
   },
   {
@@ -465,11 +465,11 @@
      "answer": true
     },
     {
-     "text": "Điện áp đo được trên cuộn thứ cấp lớn hơn giá trị tính theo máy biến áp lí tưởng.",
+     "text": "Nếu nối cuộn sơ cấp với nguồn điện không đổi thì đế vẫn sạc được điện thoại.",
      "answer": false
     },
     {
-     "text": "Nếu nối cuộn sơ cấp với nguồn điện không đổi thì đế vẫn sạc được điện thoại.",
+     "text": "Điện áp đo được trên cuộn thứ cấp lớn hơn giá trị tính theo máy biến áp lí tưởng.",
      "answer": false
     }
    ],
@@ -477,8 +477,8 @@
    "distractorNotes": {
     "0": "Coi sai là đảo tỉ số vòng; thực tế $U_2 = 12 \\times 15/20 = 9{,}0$ V, nhỏ hơn 12 V.",
     "1": "Coi sai là đảo vai hai cuộn; $N_2$ luôn là cuộn nối thiết bị cần nạp, ở đây là pin điện thoại.",
-    "2": "Coi đúng là quên từ thông rò và điện trở dây khiến số đo luôn nhỏ hơn lí tưởng.",
-    "3": "Coi đúng là quên dòng không đổi không tạo từ thông biến thiên nên cuộn thứ cấp không có suất điện động cảm ứng."
+    "2": "Coi đúng là quên dòng không đổi không tạo từ thông biến thiên nên cuộn thứ cấp không có suất điện động cảm ứng.",
+    "3": "Coi đúng là quên từ thông rò và điện trở dây khiến số đo luôn nhỏ hơn lí tưởng."
    }
   },
   {
@@ -492,28 +492,28 @@
    "question": "Phanh điện từ của xe tải nặng hãm xe bằng lực hãm của dòng Foucault. Suất điện động cảm ứng tỉ lệ với tốc độ biến thiên từ thông, và tốc độ này tỉ lệ với tốc độ của xe. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi tốc độ xe giảm một nửa thì lực hãm điện từ cũng giảm theo.",
-     "answer": true
-    },
-    {
-     "text": "Lực hãm của phanh điện từ gần như không đổi ở mọi tốc độ.",
-     "answer": false
-    },
-    {
      "text": "Khi xe gần dừng hẳn, lực hãm điện từ tiến dần về 0.",
      "answer": true
     },
     {
      "text": "Chỉ cần phanh điện từ là giữ được xe đứng yên trên dốc.",
      "answer": false
+    },
+    {
+     "text": "Lực hãm của phanh điện từ gần như không đổi ở mọi tốc độ.",
+     "answer": false
+    },
+    {
+     "text": "Khi tốc độ xe giảm một nửa thì lực hãm điện từ cũng giảm theo.",
+     "answer": true
     }
    ],
    "explanation": "Dòng Foucault và lực hãm tỉ lệ với tốc độ, nên xe càng chậm thì lực hãm càng yếu và về 0 khi xe dừng. Vì vậy xe vẫn cần phanh ma sát để dừng hẳn và giữ xe.",
    "distractorNotes": {
-    "0": "Coi sai là quên lực hãm tỉ lệ dòng Foucault, mà dòng tỉ lệ tốc độ xe, nên $F \\sim v$ giảm theo.",
-    "1": "Coi đúng là gán đặc điểm của phanh ma sát cho phanh điện từ; lực hãm điện từ phụ thuộc tốc độ.",
-    "2": "Coi sai là quên khi $v \\to 0$ thì tốc độ biến thiên từ thông về 0, dòng Foucault và lực hãm triệt tiêu.",
-    "3": "Coi đúng là quên xe đứng yên thì từ thông không biến thiên, không có lực hãm nào giữ xe trên dốc."
+    "0": "Coi sai là quên khi $v \\to 0$ thì tốc độ biến thiên từ thông về 0, dòng Foucault và lực hãm triệt tiêu.",
+    "1": "Coi đúng là quên xe đứng yên thì từ thông không biến thiên, không có lực hãm nào giữ xe trên dốc.",
+    "2": "Coi đúng là gán đặc điểm của phanh ma sát cho phanh điện từ; lực hãm điện từ phụ thuộc tốc độ.",
+    "3": "Coi sai là quên lực hãm tỉ lệ dòng Foucault, mà dòng tỉ lệ tốc độ xe, nên $F \\sim v$ giảm theo."
    }
   }
  ]

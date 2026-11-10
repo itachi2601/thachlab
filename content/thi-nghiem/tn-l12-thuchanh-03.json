@@ -1,0 +1,208 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
+  "lesson_id": 5,
+  "nguon_trong_bai": "content/lesson-samples/l12-thuc-hanh-nhiet/theory.html",
+  "id": "tn-l12-thuchanh-03",
+  "ten": "Đo nhiệt nóng chảy riêng của nước đá bằng phễu và dây điện trở, hai giai đoạn (đối chứng môi trường)",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "thuchanh.do_nhiet_luong_gian_tiep",
+    "chuyenthe.nhiet_nong_chay_rieng",
+    "thuchanh.giam_sai_so_doi_chung"
+  ],
+  "muc_tieu": "Đo nhiệt nóng chảy riêng của nước đá theo phương án hai giai đoạn (chưa cấp điện / cấp điện) để trừ phần đá tan do nhiệt từ môi trường; nêu được giả thiết 'coi rằng', chiều sai số và cách giảm (khung T1–T7, docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md; đề TN THPT 2025 câu II.1).",
+  "gia_thuyet": [
+    "Nếu xác định được càng chính xác khối lượng nước đá tan chảy vào cốc do nhiệt lượng nhận từ môi trường thì sẽ giảm được càng nhiều ảnh hưởng của sự trao đổi nhiệt giữa nước đá với môi trường."
+  ],
+  "du_doan_neu_dung": [
+    "Trừ phần nước đá tan do môi trường (m₁) đi, λ = UIτ/(m₂ − m₁) gần giá trị tra bảng hơn hẳn so với λ = UIτ/m₂ khi bỏ qua phần đó."
+  ],
+  "khong_chung_minh": [
+    "Không đo được phần nhiệt của dây điện trở làm ấm phễu và không khí; phần này làm m₂ − m₁ nhỏ đi nên λ đo được vẫn lớn hơn thật một chút.",
+    "Không kiểm được giả thiết 'phần đá tan do môi trường trong hai khoảng τ bằng nhau là như nhau' — nếu phòng ấm dần hoặc đá vơi đi thì giả thiết này lệch."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Phễu chứa nước đá đang tan (đã ở 0 °C)",
+      "so_luong": 1,
+      "ghi_chu": "(1) trong đề"
+    },
+    {
+      "ten": "Dây điện trở vùi trong đá, nối nguồn có U, I không đổi (oát kế hoặc vôn kế + ampe kế)",
+      "so_luong": 1,
+      "ghi_chu": "(2)"
+    },
+    {
+      "ten": "Cốc hứng nước dưới phễu",
+      "so_luong": 1,
+      "ghi_chu": "(3)"
+    },
+    {
+      "ten": "Cân điện tử",
+      "so_luong": 1,
+      "ghi_chu": "(4); sai số ±0,1 g"
+    },
+    {
+      "ten": "Đồng hồ bấm giây",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Giai đoạn 1 — chưa cấp điện cho dây điện trở: xác định khối lượng m₁ của nước đá tan và đã chảy từ phễu vào cốc trong khoảng thời gian τ.",
+      "Giai đoạn 2 — cấp điện cho dây điện trở: xác định khối lượng m₂ của nước đá tan và đã chảy từ phễu vào cốc trong cùng khoảng thời gian τ.",
+      "Coi rằng khối lượng nước đá tan do nhiệt lượng nhận từ môi trường trong những khoảng thời gian bằng nhau là như nhau; bỏ qua bay hơi, ngưng tụ của nước.",
+      "Tính λ = UIτ/(m₂ − m₁)."
+    ],
+    "quan_sat": [
+      "Giai đoạn 1: nước đá vẫn tan, nước nhỏ giọt chậm vào cốc (m₁ = 5,0 g sau 300 s).",
+      "Giai đoạn 2: nước chảy vào cốc nhanh hơn hẳn (m₂ = 36,4 g sau 300 s), gấp nhiều lần m₁."
+    ],
+    "rut_ra": [
+      "Giai đoạn 1 nước đá tan do nhận nhiệt lượng từ môi trường; giai đoạn 2 do nhận nhiệt lượng từ dây điện trở và từ môi trường.",
+      "Khối lượng nước đá tan do nhiệt từ dây điện trở là m₂ − m₁, nên λ = UIτ/(m₂ − m₁) ≈ 3,44.10⁵ J/kg.",
+      "Bỏ giai đoạn 1 mà chia cho m₂ thì λ ≈ 2,97.10⁵ J/kg, nhỏ hơn giá trị thật 11%: phương án hai giai đoạn làm giảm ảnh hưởng của sự trao đổi nhiệt với môi trường."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "U",
+      "ten": "Hiệu điện thế giữa hai đầu dây",
+      "don_vi": "V",
+      "kieu": "dieu_chinh",
+      "min": 6,
+      "max": 24,
+      "mac_dinh": 12,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "I",
+      "ten": "Cường độ dòng điện qua dây",
+      "don_vi": "A",
+      "kieu": "dieu_chinh",
+      "min": 1,
+      "max": 5,
+      "mac_dinh": 3,
+      "buoc": 0.5
+    },
+    {
+      "ky_hieu": "tau",
+      "ten": "Thời gian mỗi giai đoạn",
+      "don_vi": "s",
+      "kieu": "dieu_chinh",
+      "min": 60,
+      "max": 600,
+      "mac_dinh": 300,
+      "buoc": 30
+    },
+    {
+      "ky_hieu": "r_mt",
+      "ten": "Tốc độ đá tan do môi trường",
+      "don_vi": "g/s",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 0.05,
+      "mac_dinh": 0.0167,
+      "buoc": 0.005
+    },
+    {
+      "ky_hieu": "hieu_suat",
+      "ten": "Phần nhiệt của dây đi vào đá",
+      "don_vi": "—",
+      "kieu": "dieu_chinh",
+      "min": 0.8,
+      "max": 1,
+      "mac_dinh": 0.97,
+      "buoc": 0.01
+    },
+    {
+      "ky_hieu": "lambda_that",
+      "ten": "Nhiệt nóng chảy riêng thật của nước đá",
+      "don_vi": "J/kg",
+      "kieu": "co_dinh",
+      "gia_tri": 334000
+    },
+    {
+      "ky_hieu": "m1",
+      "ten": "Khối lượng nước vào cốc ở giai đoạn 1",
+      "don_vi": "g",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "m2",
+      "ten": "Khối lượng nước vào cốc ở giai đoạn 2",
+      "don_vi": "g",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "lambda_do",
+      "ten": "Nhiệt nóng chảy riêng tính từ số đo",
+      "don_vi": "J/kg",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Giai đoạn 1: m₁ = r_mt·τ",
+      "Giai đoạn 2: m₂ = r_mt·τ + hieu_suat·U·I·τ/λ",
+      "λ_đo = U·I·τ/(m₂ − m₁) = λ/hieu_suat (lớn hơn λ khi hieu_suat < 1)",
+      "Bỏ giai đoạn 1: λ' = U·I·τ/m₂ (nhỏ hơn λ)"
+    ],
+    "gia_thiet": [
+      "U, I không đổi trong cả giai đoạn 2",
+      "nước đá đã ở 0 °C (đang tan) trước khi đo",
+      "tốc độ đá tan do môi trường như nhau ở hai giai đoạn",
+      "bỏ qua bay hơi, ngưng tụ; nước tan ra chảy hết xuống cốc trong khoảng τ"
+    ],
+    "ghi_chu": "Mô phỏng nên cho kéo hieu_suat và r_mt để học sinh thấy: bỏ giai đoạn 1 làm λ lệch xuống, còn nhiệt dây thất thoát làm λ lệch lên — hai nguồn sai số ngược chiều."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Giai đoạn",
+      "Cấp điện",
+      "Thời gian τ (s)",
+      "Khối lượng nước vào cốc (g)"
+    ],
+    "hang": [
+      [
+        "1",
+        "không",
+        300,
+        5.0
+      ],
+      [
+        "2",
+        "có, U = 12 V, I = 3,0 A",
+        300,
+        36.4
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình: λ = 3,34.10⁵ J/kg, môi trường làm tan 5,0 g mỗi 300 s, 97% nhiệt của dây vào đá. UIτ = 10800 J; m₂ − m₁ = 31.4 g; λ = UIτ/(m₂ − m₁) ≈ 3.44.10⁵ J/kg (lớn hơn thật 3%); nếu chia cho m₂: ≈ 2.97.10⁵ J/kg (nhỏ hơn thật 11%)."
+  },
+  "ket_qua_ky_vong": "λ = UIτ/(m₂ − m₁) khoảng 3,4.10⁵ J/kg, lệch vài phần trăm về phía lớn hơn; bỏ giai đoạn đối chứng thì λ ra nhỏ hơn rõ (khoảng 3,0.10⁵ J/kg).",
+  "hien_tuong_hay_sai": [
+    "Cho rằng ở giai đoạn 2 đá chỉ tan do dây điện trở — thực ra môi trường vẫn truyền nhiệt cho đá như ở giai đoạn 1.",
+    "Cho rằng giai đoạn 1 không cần vì chưa cấp điện thì 'không có gì xảy ra' — đá vẫn tan do nhiệt từ môi trường.",
+    "Lấy m₂ (không trừ m₁) để tính λ."
+  ],
+  "sai_so_thuong_gap": [
+    "Bỏ giai đoạn 1, chia cho cả m₂: λ NHỎ HƠN giá trị thật (khoảng 11% với số liệu mẫu). Giảm: luôn đo giai đoạn đối chứng rồi trừ.",
+    "Một phần nhiệt của dây làm ấm phễu, không khí: m₂ − m₁ nhỏ đi → λ LỚN HƠN thật. Giảm: vùi dây sâu trong đá, bọc phễu cách nhiệt, lặp lại vài lần.",
+    "Đá lạnh dưới 0 °C: một phần nhiệt làm đá ấm lên 0 °C chứ chưa làm tan → λ LỚN HƠN thật. Giảm: để đá đang tan (có nước) một lúc trước khi đo.",
+    "Hai giai đoạn không cùng τ, hoặc phòng ấm dần làm tốc độ tan do môi trường đổi: giả thiết 'coi rằng' bị phá. Giảm: đo giai đoạn 1 cả trước và sau giai đoạn 2 rồi lấy trung bình."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "bang_so_lieu+do_thi",
+    "y_tuong": "Phễu nước đá có dây điện trở, cốc trên cân; nút chuyển giai đoạn 1/2; đồ thị khối lượng nước trong cốc theo thời gian cho hai đường dốc khác nhau.",
+    "diem_nhan": "Hai đường thẳng: độ dốc giai đoạn 1 là phần do môi trường, hiệu hai độ dốc là phần do dây — học sinh thấy vì sao phải trừ m₁."
+  },
+  "an_toan": [
+    "Dây điện trở chỉ cấp điện khi đã vùi trong đá; không để dây đỏ trong không khí.",
+    "Giữ nguồn điện và dây nối khô, tránh nước tan nhỏ vào ổ cắm."
+  ]
+}

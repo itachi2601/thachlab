@@ -1,0 +1,105 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 14. Hạt nhân và mô hình nguyên tử",
+  "lesson_id": 15,
+  "nguon_trong_bai": "content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.html",
+  "id": "tn-l12-hatnhan-03",
+  "ten": "Thí nghiệm tán xạ hạt alpha trên lá vàng của Rutherford (Geiger – Marsden 1909–1913)",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "kien_thuc": [
+    "hatnhan.mo_hinh_rutherford",
+    "hatnhan.mo_hinh_thomson_bac_bo",
+    "hatnhan.cau_tao"
+  ],
+  "muc_tieu": "Kể lại được thí nghiệm kinh điển theo khung đề thi: giả thuyết cần kiểm – dự đoán – dụng cụ – các bước – quan sát – kết luận – cơ chế – điều thí nghiệm không chứng minh (T1–T6, docs/QUY-TAC-THI-NGHIEM-TRONG-BAI.md).",
+  "gia_thuyet": [
+    "Mô hình Thomson (1904): nguyên tử là khối cầu điện dương phân bố đều, êlectron nằm rải rác bên trong."
+  ],
+  "du_doan_neu_dung": [
+    "Điện dương loãng khắp nguyên tử chỉ đẩy nhẹ hạt alpha: mọi hạt đi gần thẳng, góc lệch không quá vài độ, không hạt nào bật ngược."
+  ],
+  "khong_chung_minh": [
+    "Không nói gì về chuyển động của êlectron quanh hạt nhân; quỹ đạo có năng lượng xác định là bổ sung của Bohr (1913).",
+    "Không cho biết hạt nhân gồm những hạt gì (nơtron chỉ được tìm ra năm 1932)."
+  ],
+  "dung_cu": [
+    { "ten": "Nguồn phóng xạ phát hạt alpha (radi) trong hộp chì có khe hẹp", "so_luong": 1, "ghi_chu": "(1) trong hình" },
+    { "ten": "Lá vàng mỏng cỡ vài nghìn lớp nguyên tử (~0,4 µm)", "so_luong": 1, "ghi_chu": "(2)" },
+    { "ten": "Màn kẽm sunfua (ZnS) phát chớp sáng khi hạt alpha đập vào", "so_luong": 1, "ghi_chu": "(3)" },
+    { "ten": "Kính hiển vi đếm chớp, xoay được quanh lá vàng", "so_luong": 1, "ghi_chu": "(4)" },
+    { "ten": "Buồng chân không bao cả hệ", "so_luong": 1 }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đặt kính hiển vi ở góc θ so với phương chùm tới, đếm số chớp sáng trên màn trong cùng một khoảng thời gian.",
+      "Lặp lại ở nhiều góc từ 15° tới 150°.",
+      "Coi rằng mỗi chớp là một hạt alpha; bỏ qua va chạm của hạt alpha với không khí (nhờ chân không) và tán xạ nhiều lần trong lá mỏng."
+    ],
+    "quan_sat": [
+      "Phần lớn hạt alpha đi thẳng qua lá vàng.",
+      "Một số ít hạt bị lệch với các góc khác nhau; số hạt đếm được giảm rất nhanh khi góc tăng.",
+      "Cứ khoảng 8 000 hạt mới có một hạt lệch quá 90°; vài hạt bật ngược gần 180°."
+    ],
+    "rut_ra": [
+      "Mô hình Thomson bị bác bỏ: điện dương rải đều không tạo được lực đủ lớn để hạt alpha bật ngược.",
+      "Điện dương và gần hết khối lượng nguyên tử tập trung ở một vùng rất nhỏ (hạt nhân); phần còn lại gần như trống rỗng nên phần lớn hạt đi thẳng.",
+      "Cơ chế lệch là lực điện (Coulomb) đẩy giữa hạt alpha và hạt nhân; êlectron nhẹ hơn hạt alpha hơn 7 000 lần nên không làm nó đổi hướng được.",
+      "Số hạt đếm được ở góc θ thoả N·sin⁴(θ/2) ≈ hằng số — đúng công thức Rutherford cho hạt nhân điểm."
+    ]
+  },
+  "tham_so": [
+    { "ky_hieu": "Z", "ten": "Số prôtôn của hạt nhân bia", "don_vi": "—", "kieu": "dieu_chinh", "min": 1, "max": 92, "mac_dinh": 79, "buoc": 1 },
+    { "ky_hieu": "E", "ten": "Động năng hạt alpha", "don_vi": "MeV", "kieu": "dieu_chinh", "min": 2, "max": 10, "mac_dinh": 5.5, "buoc": 0.5 },
+    { "ky_hieu": "theta", "ten": "Góc tán xạ", "don_vi": "độ", "kieu": "dieu_chinh", "min": 15, "max": 150, "mac_dinh": 60, "buoc": 15 },
+    { "ky_hieu": "N", "ten": "Số chớp đếm được ở góc theta trong cùng thời gian", "don_vi": "chớp", "kieu": "do_duoc", "sai_so_do": "√N (thống kê đếm)" },
+    { "ky_hieu": "K", "ten": "Tích N·sin⁴(theta/2)", "don_vi": "chớp", "kieu": "tinh_ra" },
+    { "ky_hieu": "b_min", "ten": "Khoảng cách gần nhất khi bật ngược (θ = 180°)", "don_vi": "m", "kieu": "tinh_ra" },
+    { "ky_hieu": "k_e", "ten": "Hằng số Coulomb", "don_vi": "N·m²/C²", "kieu": "co_dinh", "gia_tri": 8.99e9 }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "N(theta) ∝ Z²/(E²·sin⁴(theta/2)) — công thức tán xạ Rutherford cho hạt nhân điểm; suy ra K = N·sin⁴(theta/2) không phụ thuộc theta.",
+      "b_min = k_e·(2e)(Ze)/E — bảo toàn năng lượng khi hạt alpha dừng lại trước hạt nhân rồi bật ngược; với vàng (Z = 79) và E = 5,5 MeV cho b_min ≈ 4,1·10⁻¹⁴ m, lớn hơn bán kính hạt nhân vàng (7·10⁻¹⁵ m) nên hạt alpha chưa chạm hạt nhân.",
+      "Mô hình Thomson: điện dương rải trong bán kính nguyên tử 1,4·10⁻¹⁰ m, góc lệch mỗi lần qua một nguyên tử cỡ 10⁻⁴ rad; qua vài nghìn lớp cũng chỉ tích luỹ cỡ 1° — không giải thích được hạt lệch quá 90°."
+    ],
+    "gia_thiet": [
+      "hạt nhân coi là điện tích điểm đứng yên (vàng nặng hơn hạt alpha ~50 lần)",
+      "mỗi hạt alpha chỉ tán xạ một lần trong lá mỏng",
+      "lực tác dụng chỉ là lực điện Coulomb; bỏ qua lực hạt nhân vì b_min lớn hơn bán kính hạt nhân"
+    ],
+    "ghi_chu": "Mô phỏng nên có hai màn đối chứng (Thomson / Rutherford) và bắt học sinh chạy màn Thomson trước (T12); thanh trượt Z và E đổi độ lệch; đếm N theo góc rồi hiện tích K để thấy gần hằng số."
+  },
+  "so_lieu_mau": {
+    "cot": ["Góc θ (độ)", "Số chớp N", "sin⁴(θ/2)", "N·sin⁴(θ/2)"],
+    "hang": [
+      [15, 132000, 0.00029, 38.3],
+      [30, 7800, 0.0045, 35.0],
+      [60, 477, 0.0625, 29.8],
+      [120, 51.9, 0.5625, 29.2],
+      [150, 33.1, 0.8705, 28.8]
+    ],
+    "ghi_chu": "SỐ ĐO THẬT: H. Geiger & E. Marsden, Philosophical Magazine 25 (1913) 604, cột lá vàng, đã quy về cùng thời gian đếm (số lẻ do lấy trung bình nhiều lượt). Tích K lệch dần ở góc nhỏ (38 so với 29) vì tán xạ nhiều lần và sai số đếm; trong bài chỉ dùng 4 hàng từ 30° để bảng vừa 375 px."
+  },
+  "ket_qua_ky_vong": "Học sinh viết lại được thí nghiệm thành 4 ý Đúng/Sai kiểu đề thi: a) hiện tượng, b) bác bỏ Thomson, c) cơ chế là lực điện với hạt nhân (không phải êlectron), d) không chứng minh quỹ đạo dừng; và kiểm được tích N·sin⁴(θ/2) gần hằng số từ bảng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng hạt alpha lệch là do va vào êlectron (đề 2026 II.2 ý c).",
+    "Cho rằng thí nghiệm chứng minh êlectron chuyển động trên quỹ đạo dừng (đề 2026 II.2 ý d).",
+    "Cho rằng hạt bật ngược vì chạm trực diện vào hạt nhân (thực ra dừng ở b_min ≈ 4·10⁻¹⁴ m rồi bị đẩy lại).",
+    "Cho rằng 'phần lớn đi thẳng' nghĩa là nguyên tử không có gì bên trong."
+  ],
+  "sai_so_thuong_gap": [
+    "Số chớp ở góc lớn rất ít (vài chục) nên sai số thống kê √N tới 15–20 %; phải đếm lâu hơn ở góc lớn.",
+    "Lá dày hơn làm tán xạ nhiều lần, tích K ở góc nhỏ bị đẩy lên.",
+    "Mắt người đếm chớp bị mỏi, bỏ sót chớp mờ — Geiger và Marsden đổi người đếm luân phiên."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Hai màn đối chứng: nguyên tử Thomson (điện dương rải đều) và nguyên tử Rutherford (hạt nhân điểm). Người dùng bắn chùm alpha, hệ vẽ quỹ đạo, đếm N theo từng khoảng góc và hiện tích N·sin⁴(θ/2).",
+    "diem_nhan": "Chạy màn Thomson trước để thấy không có hạt bật ngược; sang màn Rutherford thấy hạt đi gần hạt nhân mới lệch mạnh; kéo Z lên thì góc lệch tăng, kéo E lên thì giảm."
+  },
+  "an_toan": [
+    "Thí nghiệm gốc dùng nguồn phóng xạ radi, không làm lại ở trường; ở lớp dùng mô hình 'bắn bi mù' (tn-l12-hatnhan-01) hoặc PhET Rutherford Scattering."
+  ]
+}

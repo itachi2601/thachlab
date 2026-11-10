@@ -1,6 +1,6 @@
 ---
 name: project-thachlab-chuong4-hat-nhan-ly-thuyet
-description: "Sửa lý thuyết Chương 4: Vật lí hạt nhân lớp 12 (Bài 14-18) từ file GV mới — đã xong và deploy nội dung lên Supabase 2026-09-24"
+description: "Lý thuyết Chương 4 Vật lí hạt nhân L12 (Bài 14-18, lesson 15-19) — 30/10/2026 vẽ lại 10 hình SVG, lịch đăng DB 22h05 30/10"
 metadata:
   node_type: memory
   type: project
@@ -68,3 +68,15 @@ anon key: cả 5 `body_html` đều đổi độ dài/nội dung, ảnh (`lesson
 
 Xem thêm [[project_thachlab_dang_ly_thuyet_only]], [[feedback_lesson_item_edit_via_rest]],
 [[project_thachlab_latex_skill]].
+
+## Đợt 2026-10-30: rà nội dung + vẽ lại hình SVG (nhánh claude/laughing-wozniak-3cb1e2, đã vào main)
+
+**Mục tiêu:** rà nội dung 5 bài `content/lesson-samples/l12-{hat-nhan-mo-hinh-nguyen-tu,nang-luong-lien-ket,phan-hach-nhiet-hach,phong-xa,an-toan-phong-xa}`, vẽ lại hình SVG chưa đạt (`build_figs.py` từng bài).
+- Commit 01922f3c0 (Bài 14 + 17), 3af7486c9 (Bài 15), cb8f4ab17 (Bài 16), b41231a40 (Bài 18). 10/21 hình vẽ lại; kiem-code soát độc lập, 4 hình sửa vòng 2 (vòng 2 chưa soát lại độc lập).
+- Sửa nội dung: Bài 14 số hình 1→3→4→2 thành 1→2→3→4; Bài 15 nhãn "nguyên tử heli-4" (4,002603 u là khối lượng nguyên tử); Bài 18 phản hồi câu 6 + thử thách ⭐ (5 µSv = liều kỹ thuật viên một ca).
+- Map lesson_id: 15=Bài 14 Hạt nhân, 16=Bài 15 NL liên kết, 17=Bài 16 Phân hạch–nhiệt hạch, 18=Bài 17 Phóng xạ, 19=Bài 18 An toàn phóng xạ (từ ghi chú 24/9, chưa đối chiếu DB lần này).
+- Bẫy: chạy lại `build_figs.py` bài 15 làm mất `<sup class="tl-fn">` H3 sau "Mẹo nhớ" (`_margin_fig.py` cần `<p>` sát trước hình) → chèn tay lại sau mỗi lần build.
+
+**Còn chờ:**
+- Lịch `dang-ly-thuyet-l12-ch4-30-10` (scheduled task, chế độ Auto) chạy 22h05 2026-10-30: `cap-nhat-ly-thuyet.sh <bundle.json> <15..19> --yes`, curl kiểm chuỗi mới, deploy nếu bản tĩnh còn cũ, ghi STATE-archive. Phiên sau: xem kết quả lượt chạy (Scheduled ở thanh bên); app tắt lúc 22h05 thì việc đăng chạy khi mở lại app.
+- Thầy chưa chốt 2 chỗ nghi ngờ: Bài 14 "lá vàng dày vài nghìn lớp nguyên tử" (thực ~1 000–2 000); Bài 17 "phần đã phân rã" cho độ phóng xạ → "độ giảm độ phóng xạ".

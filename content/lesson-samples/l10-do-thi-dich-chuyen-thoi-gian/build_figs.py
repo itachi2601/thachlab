@@ -4,7 +4,11 @@ hộp nhãn không chồng nhau, không vượt viewBox, không bị đường/�
 bảng số liệu thí nghiệm trong theory.src.html khớp mô hình.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
 import math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
+import importlib.util as _iu
+_sp = _iu.spec_from_file_location("svg_lib_skill", pathlib.Path(__file__).resolve().parents[3]
+                                  / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/svg_lib.py")
+_svg = _iu.module_from_spec(_sp); _sp.loader.exec_module(_svg)
+RED, BLUE, ORG, GRN, wrap, chevron = _svg.RED, _svg.BLUE, _svg.ORG, _svg.GRN, _svg.wrap, _svg.chevron
 
 HERE = pathlib.Path(__file__).resolve().parent
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
@@ -35,13 +39,9 @@ class Canvas:
         self.segs.append((x, y - r, x, y + r))
 
     def arr(self, c, x1, y1, x2, y2, w=2, head=10):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}" '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        """Mũi tên có ĐỈNH đúng tại (x2,y2), đầu chữ V 30° (chevron của svg_lib skill, không marker tam giác)."""
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, head))
         self.segs.append((x1, y1, x2, y2))
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -53,17 +53,13 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""
 
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
-            if a[5] < 13:
-                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
+            if a[5] < 14:
+                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 14")
             if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {[round(v) for v in a[1:5]]}")
             for b in self.labels[i + 1:]:
@@ -151,7 +147,7 @@ DATA = [(0, 0), (2.1, 10), (3.9, 20), (6.1, 30), (7.9, 40), (10.0, 50)]
 g = Graph("f2", 400, 290, 60, 245, 28, 4)
 g.axes(11.4, 56, tticks=(2, 4, 6, 8, 10), dticks=(10, 20, 30, 40, 50), dlab="d (cm)")
 g.poly([(0, 0), (10.6, V_BOT * 10.6)], BLUE, 2.4)
-for t, d in DATA:
+for t, d in DATA[1:]:                     # 5 lần đo như bảng; gốc O là lúc bấm đồng hồ, không phải điểm đo
     x, y = g.P(t, d)
     g.dot(x, y, 4.5, ORG)
     if abs(t - d / V_BOT) > 0.1 + 1e-9:

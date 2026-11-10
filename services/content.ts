@@ -1,3 +1,4 @@
+import { ACADEMIC_SUBJECTS } from "@/services/academic-subjects";
 import type { Difficulty } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 
@@ -63,10 +64,12 @@ function displayPostField(text: string) {
 }
 
 /** Đầu đề + lớp của các bài mới nhất (không tải thân bài) — Hộp thư chỉ cần tiêu đề, tránh kéo cả HTML mọi bài. */
-export async function fetchRecentPostHeads(limit: number): Promise<Pick<PostMeta, "id" | "created_at" | "title" | "classIds">[]> {
+export async function fetchRecentPostHeads(
+  limit: number,
+): Promise<Pick<PostMeta, "id" | "created_at" | "title" | "classIds" | "courseIds" | "subjectCode">[]> {
   const { data } = await getSupabase()
     .from("posts")
-    .select("id, created_at, title, post_classes(class_id)")
+    .select("id, created_at, title, subject_code, post_classes(class_id), post_courses(course_id)")
     .eq("published", true)
     .order("created_at", { ascending: false })
     .limit(limit);
@@ -75,6 +78,8 @@ export async function fetchRecentPostHeads(limit: number): Promise<Pick<PostMeta
     created_at: p.created_at as string,
     title: displayPostField((p.title as string) ?? ""),
     classIds: ((p.post_classes as ClassRef[]) ?? []).map((c) => c.class_id),
+    courseIds: ((p.post_courses as CourseRef[]) ?? []).map((c) => c.course_id),
+    subjectCode: (p.subject_code as string | null) ?? "vat-ly",
   }));
 }
 
@@ -113,9 +118,29 @@ export function visibleToCourse(
   itemCourseIds: number[],
   itemClassIds: number[],
   myCourseId: number | null,
+  itemSubjectCode?: string,
 ) {
   if (myCourseId !== null && itemCourseIds.includes(myCourseId)) return true;
+  // Bài không gán gì mà thuộc môn THPT (tin Vật lí, HSG, Hóa, Sinh…) không phải thông báo của sinh viên CTTC.
+  if (itemSubjectCode && itemSubjectCode !== "avcn" && ACADEMIC_SUBJECTS.some((s) => s.code === itemSubjectCode)) return false;
   return itemCourseIds.length === 0 && itemClassIds.length === 0;
+}
+
+/**
+ * Bài đăng cho sinh viên CTTC ở Hộp thư / Tin tức (SV có thể học nhiều học phần và vài lớp vào tự do như AVCN).
+ * Cùng nguyên tắc với visibleToCourse: bài không gán gì mà thuộc môn THPT (tin Vật lí, HSG lớp 9–12…) không phải
+ * của sinh viên — trước 10/11/2026 hai trang này dùng visibleTo nên tin THPT "toàn trường" lẫn vào hộp thư CTTC.
+ */
+export function visibleToCttcStudent(
+  post: { classIds: number[]; courseIds: number[]; subjectCode?: string },
+  myCourseIds: number[],
+  myClassIds: number[],
+) {
+  if (post.courseIds.some((id) => myCourseIds.includes(id))) return true;
+  if (post.classIds.some((id) => myClassIds.includes(id))) return true;
+  if (post.courseIds.length > 0 || post.classIds.length > 0) return false;
+  const code = post.subjectCode;
+  return !code || code === "avcn" || !ACADEMIC_SUBJECTS.some((s) => s.code === code);
 }
 
 interface PostTargetsInput {

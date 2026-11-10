@@ -351,7 +351,7 @@
      "answer": true
     },
     {
-     "text": "Tốc độ qua cổng tăng gấp đôi thì quãng trượt tăng gấp đôi.",
+     "text": "Khi khúc gỗ dừng lại, động năng của nó mang giá trị âm.",
      "answer": false
     },
     {
@@ -359,16 +359,16 @@
      "answer": true
     },
     {
-     "text": "Khi khúc gỗ dừng lại, động năng của nó mang giá trị âm.",
+     "text": "Tốc độ qua cổng tăng gấp đôi thì quãng trượt tăng gấp đôi.",
      "answer": false
     }
    ],
    "explanation": "Ma sát ngược chiều chuyển động nên công âm, đúng bằng phần động năng mất đi (trọng lực, phản lực vuông góc đường đi không sinh công); $s$ tỉ lệ với $v^2$; khi dừng $W_\\text{d}=0$.",
    "distractorNotes": {
     "0": "Coi ý này sai thì không giải thích được vì sao khúc gỗ dừng, vì ma sát ngược chiều trượt nên sinh công âm.",
-    "1": "Coi ý này đúng là nghĩ $s$ tỉ lệ với $v$, trong khi thí nghiệm cho $s$ tỉ lệ $v^2$ nên quãng trượt gấp bốn.",
+    "1": "Động năng $\\frac{1}{2}mv^2$ không thể âm, và khi dừng thì $v=0$ nên động năng bằng 0.",
     "2": "Trọng lực và phản lực vuông góc đường đi không sinh công, nên chỉ ma sát làm động năng giảm.",
-    "3": "Động năng $\\frac{1}{2}mv^2$ không thể âm, và khi dừng thì $v=0$ nên động năng bằng 0."
+    "3": "Coi ý này đúng là nghĩ $s$ tỉ lệ với $v$, trong khi thí nghiệm cho $s$ tỉ lệ $v^2$ nên quãng trượt gấp bốn."
    }
   },
   {
@@ -382,11 +382,11 @@
    "question": "Một cuốn sách nằm yên trên giá cao hơn sàn, thấp hơn trần nhà. Thế năng trọng trường của sách tính theo $W_\\text{t}=mgz$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "$z$ là toạ độ của sách trên trục thẳng đứng hướng lên, gốc tại mốc thế năng.",
+     "text": "Chọn mốc thế năng tại trần nhà thì thế năng của sách âm.",
      "answer": true
     },
     {
-     "text": "Chọn mốc thế năng tại trần nhà thì thế năng của sách âm.",
+     "text": "Chọn mốc tại sàn thì $z=h$ với $h$ là độ cao của sách so với sàn.",
      "answer": true
     },
     {
@@ -394,16 +394,16 @@
      "answer": false
     },
     {
-     "text": "Chọn mốc tại sàn thì $z=h$ với $h$ là độ cao của sách so với sàn.",
+     "text": "$z$ là toạ độ của sách trên trục thẳng đứng hướng lên, gốc tại mốc thế năng.",
      "answer": true
     }
    ],
    "explanation": "$W_\\text{t}=mgz$ với $z$ tính từ mốc, trục hướng lên; mốc trần thì sách ở dưới mốc nên $W_\\text{t}\\lt 0$; đổi mốc thì $W_\\text{t}$ đổi dù sách nằm yên.",
    "distractorNotes": {
-    "0": "Theo định nghĩa, $z$ đo từ mốc trên trục thẳng đứng hướng lên, nên ý này không thể coi là sai.",
-    "1": "Sách thấp hơn trần nên khi mốc ở trần thì $z<0$ và thế năng âm, bác bỏ ý này là quên dấu.",
+    "0": "Sách thấp hơn trần nên khi mốc ở trần thì $z<0$ và thế năng âm, bác bỏ ý này là quên dấu.",
+    "1": "Mốc ở sàn thì gốc trục $z$ trùng sàn, nên toạ độ của sách chính bằng độ cao so với sàn.",
     "2": "Coi ý này đúng là nhầm thế năng với hiệu thế năng, vì thế năng đổi theo mốc dù sách nằm yên.",
-    "3": "Mốc ở sàn thì gốc trục $z$ trùng sàn, nên toạ độ của sách chính bằng độ cao so với sàn."
+    "3": "Theo định nghĩa, $z$ đo từ mốc trên trục thẳng đứng hướng lên, nên ý này không thể coi là sai."
    }
   },
   {
@@ -417,16 +417,16 @@
    "question": "Một toa tàu lượn chạy trên đường ray cong, lúc lao xuống dốc, lúc leo lên đỉnh. Bỏ qua ma sát. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Công của trọng lực phụ thuộc hình dạng đường ray giữa hai điểm.",
-     "answer": false
+     "text": "Phản lực của ray vuông góc với đường đi nên không sinh công.",
+     "answer": true
     },
     {
      "text": "Khi toa đi xuống, trọng lực sinh công dương và thế năng giảm.",
      "answer": true
     },
     {
-     "text": "Phản lực của ray vuông góc với đường đi nên không sinh công.",
-     "answer": true
+     "text": "Công của trọng lực phụ thuộc hình dạng đường ray giữa hai điểm.",
+     "answer": false
     },
     {
      "text": "Khi toa leo lên đỉnh, trọng lực sinh công dương.",
@@ -435,9 +435,9 @@
    ],
    "explanation": "Trọng lực là lực thế, công chỉ phụ thuộc điểm đầu và cuối; đi xuống $A_P\\gt 0$, thế năng giảm; đi lên $A_P\\lt 0$; phản lực vuông góc đường đi không sinh công.",
    "distractorNotes": {
-    "0": "Coi ý này đúng là quên trọng lực là lực thế, có công chỉ phụ thuộc độ cao đầu và cuối.",
+    "0": "Lực vuông góc với đường đi có công bằng 0, bác bỏ ý này là coi phản lực cũng sinh công.",
     "1": "Đi xuống thì thế năng đầu lớn hơn cuối, nên $A_P=W_{\\text{t}M}-W_{\\text{t}N}>0$.",
-    "2": "Lực vuông góc với đường đi có công bằng 0, bác bỏ ý này là coi phản lực cũng sinh công.",
+    "2": "Coi ý này đúng là quên trọng lực là lực thế, có công chỉ phụ thuộc độ cao đầu và cuối.",
     "3": "Coi ý này đúng là quên rằng khi đi lên thế năng tăng, nên trọng lực sinh công cản mang dấu âm."
    }
   },
@@ -452,7 +452,7 @@
    "question": "Toa tàu lượn khối lượng $m$ qua điểm $A$ (độ cao $z_A$) với tốc độ $v_A$ rồi xuống điểm $B$ (độ cao $z_B$), bỏ qua ma sát. Áp dụng định lí động năng: $\\frac{1}{2}mv_B^2-\\frac{1}{2}mv_A^2=mg(z_A-z_B)$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chia hai vế cho $\\frac{1}{2}m$ được $v_B^2=v_A^2+2g(z_A-z_B)$.",
+     "text": "Nếu có ma sát, phải cộng thêm công âm của ma sát vào vế phải.",
      "answer": true
     },
     {
@@ -460,20 +460,20 @@
      "answer": false
     },
     {
-     "text": "Nếu có ma sát, phải cộng thêm công âm của ma sát vào vế phải.",
-     "answer": true
-    },
-    {
      "text": "Chọn lại mốc thế năng tại $B$ thì tốc độ tính được tại $B$ thay đổi.",
      "answer": false
+    },
+    {
+     "text": "Chia hai vế cho $\\frac{1}{2}m$ được $v_B^2=v_A^2+2g(z_A-z_B)$.",
+     "answer": true
     }
    ],
    "explanation": "Khối lượng triệt tiêu nên $v_B$ không phụ thuộc $m$; công trọng lực là hiệu thế năng nên không phụ thuộc mốc; có ma sát thì tổng công gồm cả công âm của ma sát.",
    "distractorNotes": {
-    "0": "Mọi số hạng đều chứa $m$, nên chia cho $\\frac{1}{2}m$ là hợp lệ và cho đúng biểu thức này.",
+    "0": "Định lí động năng cần tổng công mọi ngoại lực, nên có ma sát thì phải cộng cả công âm của nó.",
     "1": "Coi ý này đúng là quên $m$ đã triệt tiêu, nên $v_B$ không phụ thuộc khối lượng.",
-    "2": "Định lí động năng cần tổng công mọi ngoại lực, nên có ma sát thì phải cộng cả công âm của nó.",
-    "3": "Coi ý này đúng là nhầm thế năng với hiệu thế năng, vì công trọng lực không đổi theo mốc nên $v_B$ không đổi."
+    "2": "Coi ý này đúng là nhầm thế năng với hiệu thế năng, vì công trọng lực không đổi theo mốc nên $v_B$ không đổi.",
+    "3": "Mọi số hạng đều chứa $m$, nên chia cho $\\frac{1}{2}m$ là hợp lệ và cho đúng biểu thức này."
    }
   },
   {
@@ -487,7 +487,7 @@
    "question": "Kéo một thùng hàng từ nghỉ trên sàn nằm ngang bằng lực kéo nằm ngang; giữa thùng và sàn có ma sát. Dùng định lí động năng để tìm tốc độ của thùng sau một quãng đường. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chỉ cần tính công của lực kéo vì đó là lực làm thùng chuyển động.",
+     "text": "Phản lực của sàn sinh công dương vì nó hướng lên đỡ thùng.",
      "answer": false
     },
     {
@@ -499,16 +499,16 @@
      "answer": true
     },
     {
-     "text": "Phản lực của sàn sinh công dương vì nó hướng lên đỡ thùng.",
+     "text": "Chỉ cần tính công của lực kéo vì đó là lực làm thùng chuyển động.",
      "answer": false
     }
    ],
    "explanation": "Định lí động năng phải cộng công mọi ngoại lực; trên sàn ngang, trọng lực và phản lực vuông góc đường đi nên công bằng 0; ma sát cho công âm.",
    "distractorNotes": {
-    "0": "Coi ý này đúng là bỏ sót công âm của ma sát, khiến tốc độ tính ra lớn hơn thực tế.",
+    "0": "Coi ý này đúng là nhầm lực đỡ với lực sinh công, vì phản lực vuông góc đường đi ngang nên công bằng 0.",
     "1": "Thùng đi theo phương ngang còn trọng lực thẳng đứng, vuông góc đường đi nên công bằng 0.",
     "2": "Ma sát ngược chiều chuyển động nên công của nó là công cản, mang dấu âm.",
-    "3": "Coi ý này đúng là nhầm lực đỡ với lực sinh công, vì phản lực vuông góc đường đi ngang nên công bằng 0."
+    "3": "Coi ý này đúng là bỏ sót công âm của ma sát, khiến tốc độ tính ra lớn hơn thực tế."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một vận động viên trượt băng lấy đà trên sân băng trước cú nhảy. Động năng của người đó tính theo $W_\\text{d}=\\frac{1}{2}mv^2$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tốc độ tăng từ $3\\ \\text{m/s}$ lên $9\\ \\text{m/s}$ thì động năng tăng $9$ lần.",
-     "answer": true
+     "text": "Một người có khối lượng gấp đôi, cùng tốc độ, có động năng gấp bốn.",
+     "answer": false
     },
     {
      "text": "Tốc độ tăng gấp ba thì động năng chỉ tăng gấp ba.",
      "answer": false
     },
     {
-     "text": "Cùng tốc độ, lướt sang trái hay sang phải thì động năng như nhau.",
+     "text": "Tốc độ tăng từ $3\\ \\text{m/s}$ lên $9\\ \\text{m/s}$ thì động năng tăng $9$ lần.",
      "answer": true
     },
     {
-     "text": "Một người có khối lượng gấp đôi, cùng tốc độ, có động năng gấp bốn.",
-     "answer": false
+     "text": "Cùng tốc độ, lướt sang trái hay sang phải thì động năng như nhau.",
+     "answer": true
     }
    ],
    "explanation": "$W_\\text{d}$ tỉ lệ với $v^2$: tỉ số tốc độ 3 cho tỉ số động năng 9; $W_\\text{d}$ tỉ lệ bậc nhất với $m$ và không phụ thuộc hướng vận tốc.",
    "distractorNotes": {
-    "0": "Tỉ số tốc độ $9/3=3$, bình phương được 9, bác bỏ ý này là coi động năng tỉ lệ với $v$.",
+    "0": "Coi ý này đúng là bình phương nhầm khối lượng, trong khi động năng tỉ lệ bậc nhất với $m$ nên chỉ gấp đôi.",
     "1": "Coi ý này đúng là quên động năng tỉ lệ với bình phương tốc độ, nên tốc độ gấp ba thì động năng gấp chín.",
-    "2": "Động năng chỉ phụ thuộc độ lớn vận tốc, bác bỏ ý này là coi động năng có hướng.",
-    "3": "Coi ý này đúng là bình phương nhầm khối lượng, trong khi động năng tỉ lệ bậc nhất với $m$ nên chỉ gấp đôi."
+    "2": "Tỉ số tốc độ $9/3=3$, bình phương được 9, bác bỏ ý này là coi động năng tỉ lệ với $v$.",
+    "3": "Động năng chỉ phụ thuộc độ lớn vận tốc, bác bỏ ý này là coi động năng có hướng."
    }
   }
  ]

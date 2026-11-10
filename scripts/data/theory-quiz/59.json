@@ -351,24 +351,24 @@
      "answer": true
     },
     {
+     "text": "Sách đang ở trạng thái cân bằng.",
+     "answer": true
+    },
+    {
      "text": "Sách đứng yên vì không có lực nào tác dụng lên nó.",
      "answer": false
     },
     {
      "text": "Lực đỡ của bàn lớn hơn trọng lực của sách.",
      "answer": false
-    },
-    {
-     "text": "Sách đang ở trạng thái cân bằng.",
-     "answer": true
     }
    ],
    "explanation": "Sách chịu trọng lực và lực đỡ cân bằng nhau, hợp lực bằng 0 nên đứng yên (trạng thái cân bằng); cân bằng không phải là không có lực.",
    "distractorNotes": {
     "0": "Trái Đất luôn hút sách và bàn luôn đỡ sách, bằng chứng là rút bàn đi thì sách rơi ngay.",
-    "1": "Sách đứng yên là do các lực cân bằng nhau, không phải do không có lực nào.",
-    "2": "Nếu lực đỡ lớn hơn trọng lực thì hợp lực hướng lên và sách phải bắt đầu bay lên.",
-    "3": "Đứng yên là một trường hợp của trạng thái cân bằng, ứng với hợp lực bằng không."
+    "1": "Đứng yên là một trường hợp của trạng thái cân bằng, ứng với hợp lực bằng không.",
+    "2": "Sách đứng yên là do các lực cân bằng nhau, không phải do không có lực nào.",
+    "3": "Nếu lực đỡ lớn hơn trọng lực thì hợp lực hướng lên và sách phải bắt đầu bay lên."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Xe tải chạy thẳng đều trên đường nằm ngang, chịu lực kéo $\\vec F_k$, lực cản $\\vec F_c$, lực đỡ $\\vec N$ và trọng lực $\\vec P$.",
    "statements": [
     {
+     "text": "$F_k \\gt F_c$ vì xe đang chạy về phía trước.",
+     "answer": false
+    },
+    {
      "text": "$\\vec F_k+\\vec F_c+\\vec N+\\vec P=\\vec 0$.",
      "answer": true
     },
@@ -462,18 +466,14 @@
     {
      "text": "Muốn tính lực kéo $F_k$ phải biết tốc độ của xe.",
      "answer": false
-    },
-    {
-     "text": "$F_k \\gt F_c$ vì xe đang chạy về phía trước.",
-     "answer": false
     }
    ],
    "explanation": "Thẳng đều nên hợp lực bằng $\\vec 0$, các lực cân bằng từng cặp: $F_k = F_c$, $N = P$; tốc độ là dữ kiện thừa.",
    "distractorNotes": {
-    "0": "Thẳng đều nghĩa là vận tốc không đổi, nên tổng các lực phải bằng vectơ không.",
-    "1": "Hai lực theo phương ngang phải cân bằng thì hợp lực theo phương ngang mới bằng không.",
-    "2": "Điều kiện thẳng đều $F_k = F_c$ không chứa vận tốc, nên tốc độ là dữ kiện thừa.",
-    "3": "Mắc lỗi chạy thì phải có lực theo chiều chạy, trong khi lực kéo lớn hơn sẽ làm xe nhanh dần."
+    "0": "Mắc lỗi chạy thì phải có lực theo chiều chạy, trong khi lực kéo lớn hơn sẽ làm xe nhanh dần.",
+    "1": "Thẳng đều nghĩa là vận tốc không đổi, nên tổng các lực phải bằng vectơ không.",
+    "2": "Hai lực theo phương ngang phải cân bằng thì hợp lực theo phương ngang mới bằng không.",
+    "3": "Điều kiện thẳng đều $F_k = F_c$ không chứa vận tốc, nên tốc độ là dữ kiện thừa."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một người đứng trên sàn thang máy đang đi lên thẳng đều, chịu trọng lực $P$ và lực đỡ $N$ của sàn.",
    "statements": [
     {
-     "text": "Lực đỡ của sàn có độ lớn $N = P$.",
+     "text": "Nếu người có khối lượng gấp đôi thì lực đỡ cũng gấp đôi.",
      "answer": true
     },
     {
-     "text": "$N \\gt P$ vì thang máy đang đi lên.",
-     "answer": false
+     "text": "Lực đỡ của sàn có độ lớn $N = P$.",
+     "answer": true
     },
     {
      "text": "Hợp lực tác dụng lên người bằng $\\vec 0$.",
      "answer": true
     },
     {
-     "text": "Nếu người có khối lượng gấp đôi thì lực đỡ cũng gấp đôi.",
-     "answer": true
+     "text": "$N \\gt P$ vì thang máy đang đi lên.",
+     "answer": false
     }
    ],
    "explanation": "Thang đi lên thẳng đều nên hợp lực bằng 0 và $N = P = mg$; khối lượng gấp đôi thì $P$ và $N$ gấp đôi.",
    "distractorNotes": {
-    "0": "Đi lên thẳng đều là trạng thái cân bằng, nên lực đỡ phải bằng trọng lực.",
-    "1": "Đi lên đều không cần lực đỡ thắng trọng lực, vì lực đỡ lớn hơn sẽ làm người nhanh dần.",
+    "0": "$N = P = mg$ tỉ lệ với khối lượng, nên khối lượng gấp đôi thì lực đỡ gấp đôi.",
+    "1": "Đi lên thẳng đều là trạng thái cân bằng, nên lực đỡ phải bằng trọng lực.",
     "2": "Đi lên thẳng đều nghĩa là vận tốc không đổi, nên hợp lực phải bằng không.",
-    "3": "$N = P = mg$ tỉ lệ với khối lượng, nên khối lượng gấp đôi thì lực đỡ gấp đôi."
+    "3": "Đi lên đều không cần lực đỡ thắng trọng lực, vì lực đỡ lớn hơn sẽ làm người nhanh dần."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một vật chịu tác dụng của hai lực cùng đặt lên vật, cùng độ lớn, cùng phương, ngược chiều.",
    "statements": [
     {
-     "text": "Hợp lực tác dụng lên vật bằng $\\vec 0$.",
-     "answer": true
+     "text": "Nếu vật đang chuyển động thì vật chậm dần rồi dừng lại.",
+     "answer": false
     },
     {
      "text": "Nếu vật đang đứng yên thì vật tiếp tục đứng yên.",
      "answer": true
     },
     {
-     "text": "Nếu vật đang chuyển động thì vật chậm dần rồi dừng lại.",
+     "text": "Nếu bất ngờ mất một lực thì vận tốc của vật đổi ngay tức thời sang giá trị mới.",
      "answer": false
     },
     {
-     "text": "Nếu bất ngờ mất một lực thì vận tốc của vật đổi ngay tức thời sang giá trị mới.",
-     "answer": false
+     "text": "Hợp lực tác dụng lên vật bằng $\\vec 0$.",
+     "answer": true
     }
    ],
    "explanation": "Hai lực cân bằng cho hợp lực bằng $\\vec 0$ nên vật đứng yên tiếp tục đứng yên, vật chuyển động tiếp tục thẳng đều; do quán tính vận tốc không thể đổi tức thời.",
    "distractorNotes": {
-    "0": "Hai lực cùng độ lớn, cùng phương, ngược chiều và cùng đặt lên vật thì triệt tiêu nhau.",
+    "0": "Hợp lực bằng không thì vật đang chuyển động tiếp tục thẳng đều, không có gì làm nó chậm lại.",
     "1": "Hợp lực bằng không thì vật đang đứng yên sẽ tiếp tục đứng yên theo định luật 1.",
-    "2": "Hợp lực bằng không thì vật đang chuyển động tiếp tục thẳng đều, không có gì làm nó chậm lại.",
-    "3": "Vì có quán tính, lực phải tác dụng trong một khoảng thời gian thì vận tốc mới đổi dần."
+    "2": "Vì có quán tính, lực phải tác dụng trong một khoảng thời gian thì vận tốc mới đổi dần.",
+    "3": "Hai lực cùng độ lớn, cùng phương, ngược chiều và cùng đặt lên vật thì triệt tiêu nhau."
    }
   }
  ]

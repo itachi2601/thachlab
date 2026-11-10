@@ -310,8 +310,8 @@
    "question": "Lan trượt ván trong lòng chảo: đứng ở mép trái, thả mình xuống, không đạp, không nhún, vút qua đáy rồi leo lên thành bên kia. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Nếu không có ma sát và lực cản, lượt đầu Lan lên thành bên kia đúng ngang độ cao mép xuất phát.",
-     "answer": true
+     "text": "Khi không có ma sát, thành bên kia càng dốc thì Lan lên được càng cao.",
+     "answer": false
     },
     {
      "text": "Vì ở đáy Lan có tốc độ lớn nhất nên Lan lên được thành bên kia cao hơn mép xuất phát.",
@@ -322,16 +322,16 @@
      "answer": true
     },
     {
-     "text": "Khi không có ma sát, thành bên kia càng dốc thì Lan lên được càng cao.",
-     "answer": false
+     "text": "Nếu không có ma sát và lực cản, lượt đầu Lan lên thành bên kia đúng ngang độ cao mép xuất phát.",
+     "answer": true
     }
    ],
    "explanation": "Không ma sát thì cơ năng bảo toàn, Lan lên đúng độ cao cũ bất kể độ dốc; có ma sát thì cơ năng giảm, các đỉnh thấp dần.",
    "distractorNotes": {
-    "0": "Không ma sát thì cơ năng bảo toàn, thế năng ở đỉnh bên kia bằng thế năng ban đầu nên độ cao phải bằng nhau.",
+    "0": "Độ dốc chỉ đổi đường đi và thời gian; cơ năng như nhau nên độ cao lên được không đổi.",
     "1": "Tốc độ ở đáy có được nhờ mất độ cao, không phải năng lượng thêm vào, nên không thể vượt độ cao xuất phát.",
     "2": "Các đỉnh thấp dần chứng tỏ cơ năng giảm, và chỉ ma sát, lực cản sinh công âm mới biến cơ năng thành nhiệt.",
-    "3": "Độ dốc chỉ đổi đường đi và thời gian; cơ năng như nhau nên độ cao lên được không đổi."
+    "3": "Không ma sát thì cơ năng bảo toàn, thế năng ở đỉnh bên kia bằng thế năng ban đầu nên độ cao phải bằng nhau."
    }
   },
   {
@@ -345,28 +345,28 @@
    "question": "Một con lắc đơn dao động, bỏ qua lực cản. Chọn mốc thế năng ở vị trí thấp nhất. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Cơ năng của con lắc như nhau ở mọi vị trí.",
-     "answer": true
-    },
-    {
      "text": "Vì cơ năng được bảo toàn nên động năng của con lắc không đổi.",
      "answer": false
+    },
+    {
+     "text": "Động năng tăng bao nhiêu thì thế năng giảm bấy nhiêu.",
+     "answer": true
     },
     {
      "text": "Ở vị trí cao nhất vật dừng lại nên cơ năng bằng 0.",
      "answer": false
     },
     {
-     "text": "Động năng tăng bao nhiêu thì thế năng giảm bấy nhiêu.",
+     "text": "Cơ năng của con lắc như nhau ở mọi vị trí.",
      "answer": true
     }
    ],
    "explanation": "Bảo toàn là giữ tổng, không giữ từng phần: động năng và thế năng đổi qua lại; ở vị trí cao nhất cơ năng bằng thế năng, không bằng 0.",
    "distractorNotes": {
-    "0": "Lực căng dây không sinh công, chỉ trọng lực sinh công nên cơ năng không đổi suốt chuyển động.",
-    "1": "Lẫn tổng không đổi với từng phần không đổi; tốc độ thay đổi liên tục nên động năng thay đổi.",
+    "0": "Lẫn tổng không đổi với từng phần không đổi; tốc độ thay đổi liên tục nên động năng thay đổi.",
+    "1": "Tổng động năng và thế năng không đổi thì phần này tăng bao nhiêu, phần kia phải giảm bấy nhiêu.",
     "2": "Quên thế năng: vật dừng nhưng đang ở cao nên cơ năng bằng thế năng, khác 0.",
-    "3": "Tổng động năng và thế năng không đổi thì phần này tăng bao nhiêu, phần kia phải giảm bấy nhiêu."
+    "3": "Lực căng dây không sinh công, chỉ trọng lực sinh công nên cơ năng không đổi suốt chuyển động."
    }
   },
   {
@@ -380,28 +380,28 @@
    "question": "Thí nghiệm kiểm chứng: kéo con lắc lên độ cao $h$ rồi thả, cổng quang ở vị trí thấp nhất đo tốc độ $v$. Làm 4 lần, tỉ số $W_\\text{d}$ đáy / $W_\\text{t}$ đầu đều đạt khoảng 96–97 %. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Lực căng dây không sinh công trong quá trình con lắc chuyển động.",
-     "answer": true
-    },
-    {
-     "text": "Tỉ số dưới 100 % một phần do lực cản không khí và ma sát ở điểm treo lấy đi một ít cơ năng.",
-     "answer": true
+     "text": "Việc cả 4 lần đều dưới 100 % là do sai số ngẫu nhiên khi đọc độ cao.",
+     "answer": false
     },
     {
      "text": "Kết quả chứng tỏ cơ năng của con lắc được bảo toàn tuyệt đối.",
      "answer": false
     },
     {
-     "text": "Việc cả 4 lần đều dưới 100 % là do sai số ngẫu nhiên khi đọc độ cao.",
-     "answer": false
+     "text": "Lực căng dây không sinh công trong quá trình con lắc chuyển động.",
+     "answer": true
+    },
+    {
+     "text": "Tỉ số dưới 100 % một phần do lực cản không khí và ma sát ở điểm treo lấy đi một ít cơ năng.",
+     "answer": true
     }
    ],
    "explanation": "Cơ năng chỉ bảo toàn gần đúng; cả 4 lần đều lệch về một phía là sai số hệ thống do lực cản, ma sát và cách đo tốc độ.",
    "distractorNotes": {
-    "0": "Lực căng dây luôn vuông góc với đường đi của quả nặng nên công của nó bằng 0.",
-    "1": "Lực cản và ma sát ở điểm treo sinh công âm, làm động năng ở đáy nhỏ hơn thế năng ban đầu.",
-    "2": "Tỉ số chỉ đạt 96–97 %, chưa tới 100 %, nên cơ năng chỉ bảo toàn gần đúng.",
-    "3": "Sai số ngẫu nhiên lệch lên hoặc xuống; cả 4 lần cùng dưới 100 % là dấu hiệu sai số hệ thống."
+    "0": "Sai số ngẫu nhiên lệch lên hoặc xuống; cả 4 lần cùng dưới 100 % là dấu hiệu sai số hệ thống.",
+    "1": "Tỉ số chỉ đạt 96–97 %, chưa tới 100 %, nên cơ năng chỉ bảo toàn gần đúng.",
+    "2": "Lực căng dây luôn vuông góc với đường đi của quả nặng nên công của nó bằng 0.",
+    "3": "Lực cản và ma sát ở điểm treo sinh công âm, làm động năng ở đáy nhỏ hơn thế năng ban đầu."
    }
   },
   {
@@ -415,11 +415,11 @@
    "question": "Một quả táo khối lượng $m$ treo yên trên cành ở độ cao $z$ so với mặt đất, sau đó rụng xuống, bỏ qua lực cản. Cơ năng tính theo $W = \\frac{1}{2}mv^2 + mgz$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Chọn mốc ở mặt đất, khi táo còn treo yên trên cành thì cơ năng của táo bằng $mgz$.",
-     "answer": true
+     "text": "Động năng của táo khi đang rơi với tốc độ $v$ bằng $mv^2$.",
+     "answer": false
     },
     {
-     "text": "Nếu đổi mốc thế năng lên ngang cành thì giá trị cơ năng của táo thay đổi.",
+     "text": "Chọn mốc ở mặt đất, khi táo còn treo yên trên cành thì cơ năng của táo bằng $mgz$.",
      "answer": true
     },
     {
@@ -427,16 +427,16 @@
      "answer": false
     },
     {
-     "text": "Động năng của táo khi đang rơi với tốc độ $v$ bằng $mv^2$.",
-     "answer": false
+     "text": "Nếu đổi mốc thế năng lên ngang cành thì giá trị cơ năng của táo thay đổi.",
+     "answer": true
     }
    ],
    "explanation": "Táo treo yên có $W_\\text{d} = 0$ nên $W = mgz$; cơ năng phụ thuộc mốc nhưng tốc độ thì không; động năng là $\\frac{1}{2}mv^2$.",
    "distractorNotes": {
-    "0": "Táo đứng yên nên động năng bằng 0, cơ năng chỉ còn thế năng $mgz$ so với mặt đất.",
-    "1": "Thế năng phụ thuộc mốc nên cơ năng cũng phụ thuộc mốc; mốc ở cành thì cơ năng ban đầu bằng 0.",
+    "0": "Quên hệ số $\\frac{1}{2}$ trong động năng nên giá trị bị gấp đôi.",
+    "1": "Táo đứng yên nên động năng bằng 0, cơ năng chỉ còn thế năng $mgz$ so với mặt đất.",
     "2": "Đổi mốc không đổi hiệu thế năng giữa hai vị trí nên tốc độ chạm đất tính ra không đổi.",
-    "3": "Quên hệ số $\\frac{1}{2}$ trong động năng nên giá trị bị gấp đôi."
+    "3": "Thế năng phụ thuộc mốc nên cơ năng cũng phụ thuộc mốc; mốc ở cành thì cơ năng ban đầu bằng 0."
    }
   },
   {
@@ -454,24 +454,24 @@
      "answer": true
     },
     {
+     "text": "Nếu thay ma sát bằng một lực kéo cùng chiều chuyển động thì công của lực đó dương và cơ năng tăng.",
+     "answer": true
+    },
+    {
      "text": "Công $A_\\text{c} \\gt 0$ nên cơ năng của em bé tăng khi xuống dốc.",
      "answer": false
     },
     {
      "text": "Có thể viết $A_\\text{c} = W_1 - W_2$ vì cơ năng ban đầu lớn hơn.",
      "answer": false
-    },
-    {
-     "text": "Nếu thay ma sát bằng một lực kéo cùng chiều chuyển động thì công của lực đó dương và cơ năng tăng.",
-     "answer": true
     }
    ],
    "explanation": "$\\Delta W = W_2 - W_1 = A_\\text{c}$; ma sát ngược chiều chuyển động nên $A_\\text{c} \\lt 0$, cơ năng giảm; lực kéo cùng chiều chuyển động có công dương làm cơ năng tăng.",
    "distractorNotes": {
     "0": "Độ biến thiên cơ năng, tức sau trừ đầu, bằng công của ma sát và lực cản theo đúng hệ thức của bài.",
-    "1": "Ma sát, lực cản ngược chiều chuyển động nên sinh công âm, làm cơ năng giảm chứ không tăng.",
-    "2": "Lấy đầu trừ sau làm mất dấu âm của công; phải viết $A_\\text{c} = W_\\text{sau} - W_\\text{đầu}$.",
-    "3": "Theo $\\Delta W = A_\\text{khác}$, lực kéo cùng chiều chuyển động sinh công dương nên cơ năng tăng."
+    "1": "Theo $\\Delta W = A_\\text{khác}$, lực kéo cùng chiều chuyển động sinh công dương nên cơ năng tăng.",
+    "2": "Ma sát, lực cản ngược chiều chuyển động nên sinh công âm, làm cơ năng giảm chứ không tăng.",
+    "3": "Lấy đầu trừ sau làm mất dấu âm của công; phải viết $A_\\text{c} = W_\\text{sau} - W_\\text{đầu}$."
    }
   },
   {
@@ -485,11 +485,11 @@
    "question": "Từ ban công cao $h$ so với mặt đất, ném quả bóng thẳng đứng lên với tốc độ $v_0$, bỏ qua lực cản. Dùng định luật bảo toàn cơ năng để tìm tốc độ khi chạm đất. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Phải chọn một mốc thế năng duy nhất cho mọi vị trí trong bài.",
-     "answer": true
+     "text": "Tốc độ chạm đất tính được phụ thuộc vào việc chọn mốc ở ban công hay ở mặt đất.",
+     "answer": false
     },
     {
-     "text": "Nếu chọn mốc ở ban công thì mặt đất có độ cao $z = -h$.",
+     "text": "Phải chọn một mốc thế năng duy nhất cho mọi vị trí trong bài.",
      "answer": true
     },
     {
@@ -497,16 +497,16 @@
      "answer": false
     },
     {
-     "text": "Tốc độ chạm đất tính được phụ thuộc vào việc chọn mốc ở ban công hay ở mặt đất.",
-     "answer": false
+     "text": "Nếu chọn mốc ở ban công thì mặt đất có độ cao $z = -h$.",
+     "answer": true
     }
    ],
    "explanation": "Chọn một mốc giữ đến hết, vị trí dưới mốc có $z \\lt 0$; động năng lúc ném vẫn có trong $W_1$; cơ năng tuỳ mốc nhưng tốc độ thì không.",
    "distractorNotes": {
-    "0": "Đổi mốc giữa chừng làm hai vế dùng hai gốc độ cao khác nhau, phương trình bảo toàn trở nên sai.",
-    "1": "Mọi độ cao đo từ mốc theo trục hướng lên, nên mặt đất nằm dưới ban công có $z$ âm.",
+    "0": "Đổi mốc chỉ đổi giá trị cơ năng, hiệu thế năng không đổi nên tốc độ chạm đất như nhau.",
+    "1": "Đổi mốc giữa chừng làm hai vế dùng hai gốc độ cao khác nhau, phương trình bảo toàn trở nên sai.",
     "2": "Lúc ném bóng đã có tốc độ $v_0$, nên động năng $\\frac{1}{2}mv_0^2$ phải nằm trong cơ năng ban đầu.",
-    "3": "Đổi mốc chỉ đổi giá trị cơ năng, hiệu thế năng không đổi nên tốc độ chạm đất như nhau."
+    "3": "Mọi độ cao đo từ mốc theo trục hướng lên, nên mặt đất nằm dưới ban công có $z$ âm."
    }
   }
  ]

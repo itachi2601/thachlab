@@ -13,6 +13,9 @@
     "dttruong.dien_truong_xoay"
   ],
   "muc_tieu": "Chứng tỏ điện trường trong dây xuất hiện chỉ khi từ trường biến thiên theo thời gian: nam châm chuyển động càng nhanh thì suất điện động càng lớn, nam châm nằm yên thì suất điện động bằng 0 dù từ trường tại đó mạnh nhất.",
+  "gia_thuyet": ["Điện trường làm điện tích trong dây chuyển động là do từ trường biến thiên sinh ra, không phải do từ trường mạnh."],
+  "du_doan_neu_dung": ["Kim chỉ lệch khi nam châm đang chuyển động qua ống; thả nhanh hơn thì lệch mạnh hơn.", "Giữ nam châm đứng yên giữa lòng ống, nơi từ trường mạnh nhất, thì kim chỉ 0."],
+  "khong_chung_minh": ["Kim chỉ cho biết có dòng và mạnh hay yếu, không cho giá trị suất điện động e.", "Không cho thấy hình dạng đường sức của điện trường xoáy (khép kín là kết luận của mô hình)."],
   "dung_cu": [
     { "ten": "Ống dây đồng quấn trên lõi nhựa, đường kính 3 cm, dài 20 cm", "so_luong": 1, "ghi_chu": "khoảng 1000 vòng, điện trở cuộn dây ~10 Ω" },
     { "ten": "Điện kế xung hoặc đồng hồ vạn năng ở thang đo điện áp một chiều nhỏ nhất", "so_luong": 1, "ghi_chu": "sai số ±(0,5% + 3 số cuối)" },
@@ -85,8 +88,8 @@
     "Nghĩ rằng chỉ cần có từ trường là có dòng điện, không cần từ trường biến thiên."
   ],
   "sai_so_thuong_gap": [
-    "Không giữ nam châm rơi thẳng: nam châm chạm thành ống, tốc độ thay đổi bất thường.",
-    "Điện kế quá chậm nên không đọc được đỉnh lệch; phải dùng điện kế xung hoặc đồng hồ có chức năng lưu giá trị lớn nhất.",
+    "Không giữ nam châm rơi thẳng: nam châm chạm thành ống, ma sát làm nó qua ống chậm hơn nên độ lệch đo được NHỎ HƠN so với rơi tự do cùng độ cao; giảm bằng ống dẫn nhựa thẳng đứng và lặp lại 3 lần lấy trung bình.",
+    "Điện kế có quán tính nên số chỉ lớn nhất đọc được NHỎ HƠN đỉnh thật, nhất là khi thả nhanh; giảm bằng điện kế xung hoặc đồng hồ có chức năng lưu giá trị lớn nhất.",
     "Điện trở mạch quá nhỏ làm dòng lớn, kim lệch kịch trần và không đọc được tỉ lệ."
   ],
   "goi_y_mo_phong": {

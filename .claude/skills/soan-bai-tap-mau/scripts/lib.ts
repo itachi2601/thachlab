@@ -44,6 +44,27 @@ export interface Dang {
   cap_do?: number;
   fading?: Fading;
   go_roi?: { buoc_hay_sai: number };
+  // 💡 Mẹo nhìn (1/11/2026) — docs/KE-HOACH-MEO-GIAI-BAI-TAP.md
+  meo?: { ten: string; dieu_kien: string; html: string };
+  // 🧪 Công cụ giải tương tác (thử 2/11/2026) — features/lessons/types.ts WorkedTool
+  cong_cu?: { loai: string; [k: string]: number | string };
+  // 🧪 Tóm đề (thử 3/11/2026) — features/lessons/types.ts WorkedTomDe
+  tom_de?: { cho: string[]; tim: string[] };
+}
+
+function validateMeo(m: Dang["meo"], at: string, errors: string[], warnings: string[]) {
+  if (!m) return;
+  if (!m.ten?.trim() || countWords(m.ten) > 4) errors.push(`${at}: meo.ten cần 1–4 chữ`);
+  if (!m.dieu_kien?.trim()) errors.push(`${at}: meo.dieu_kien trống — mẹo phải nói khi nào đúng (⚠)`);
+  if (!m.html?.trim()) return void errors.push(`${at}: meo.html trống`);
+  if (/<script/i.test(m.html)) errors.push(`${at}: meo.html không được có <script> (dùng SMIL)`);
+  const kb = Buffer.byteLength(m.html, "utf8") / 1024;
+  if (kb > 15) errors.push(`${at}: meo.html ${kb.toFixed(1)} KB > 15 KB`);
+  const nAnim = (m.html.match(/<animate/g) ?? []).length, nCho = (m.html.match(/begin="indefinite"/g) ?? []).length;
+  if (nAnim > nCho) errors.push(`${at}: meo.html có ${nAnim - nCho} hoạt hình tự chạy — mọi <animate…> cần begin="indefinite" (B4)`);
+  if (!dollarsBalanced(m.html + m.dieu_kien)) errors.push(`${at}: meo có số dấu $ lẻ`);
+  if (ROLE_THAY.test(m.html + m.dieu_kien)) errors.push(`${at}: meo có vai "thầy/cô"`);
+  if (countWords(m.dieu_kien) > 40) warnings.push(`${at}: meo.dieu_kien dài ${countWords(m.dieu_kien)} chữ (> 40)`);
 }
 
 /** Bước nào bị giấu theo `fading` (0-based). Dùng chung cho validator và UI (components/lessons/StepwiseSolution.tsx chép lại logic này). */
@@ -119,7 +140,9 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
     if (typeof d.analysis_html !== "string" || !/tl-table--data/.test(d.analysis_html))
       errors.push(`${at}: thiếu analysis_html (bảng Câu trong đề | Dữ liệu | Kiến thức liên quan, class tl-table--data)`);
     else if (!/⚠/.test(d.analysis_html)) errors.push(`${at}: bảng phân tích chưa có hàng ⚠ điều kiện áp dụng (AI-TUTOR 9.1)`);
-    if (!/<svg[\s\S]*<animate/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có mô phỏng chuyển động ngay dưới đề`);
+    // "một dạng — một hình" (5/11/2026): hình dưới đề là lớp 0 của cong_cu (`de: true`), không cần mô phỏng SVG riêng
+    const coHinhDe = (d as { cong_cu?: { de?: boolean } }).cong_cu?.de === true;
+    if (!coHinhDe && !/<svg[\s\S]*<animate/.test(d.problem_html ?? "")) warnings.push(`${at}: đề chưa có mô phỏng chuyển động ngay dưới đề`);
     const all = [d.problem_html, d.solution_html, d.analysis_html].join("\n");
     if (!dollarsBalanced(all)) errors.push(`${at}: số dấu $ lẻ`);
     if (/[<>]/.test((all.match(/\$[^$]*\$/g) ?? []).join(""))) errors.push(`${at}: công thức có < hoặc > — viết \\lt / \\gt`);
@@ -127,6 +150,7 @@ export function validate(data: any, topics: Topic[] | null): { errors: string[];
     if (d.buoc || d.nhan_dang || d.cap_do || data.tu_giai_tung_buoc) validateSteps(d, at, errors, warnings);
     else warnings.push(`${at}: chưa có buoc[]/nhan_dang (tự giải từng bước) — bài soạn mới phải có`);
     if (ROLE_THAY.test(JSON.stringify(d.buoc ?? "") + (d.nhan_dang ?? ""))) errors.push(`${at}: buoc/nhan_dang có vai "thầy/cô"`);
+    validateMeo(d.meo, at, errors, warnings);
     if (topics) {
       const hit = topics.find((t) => t.name.trim() === d.topic?.trim());
       if (!hit) errors.push(`${at}: topic "${d.topic}" không có trong question-topics.json`);

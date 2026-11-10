@@ -347,28 +347,28 @@
    "question": "Thí nghiệm: dùng lực kế kéo đều một xe gỗ lên ván nghiêng để nâng xe lên cao $h$. Lặp lại với các góc nghiêng $15^\\circ$, $25^\\circ$, $35^\\circ$, $45^\\circ$; hiệu suất đo được tăng dần theo góc nghiêng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Công có ích là công nâng xe lên độ cao $h$, tức $W_{ci}=mgh$.",
+     "text": "Công toàn phần là $W_{tp}=F\\cdot s$, gồm cả phần dùng để thắng ma sát.",
      "answer": true
     },
     {
-     "text": "Công toàn phần là $W_{tp}=F\\cdot s$, gồm cả phần dùng để thắng ma sát.",
-     "answer": true
+     "text": "Dùng ván nghiêng giúp ta được lợi về công so với nâng thẳng vật lên.",
+     "answer": false
     },
     {
      "text": "Ván càng thoải thì quãng đường trượt càng dài nên hao phí do ma sát càng nhỏ.",
      "answer": false
     },
     {
-     "text": "Dùng ván nghiêng giúp ta được lợi về công so với nâng thẳng vật lên.",
-     "answer": false
+     "text": "Công có ích là công nâng xe lên độ cao $h$, tức $W_{ci}=mgh$.",
+     "answer": true
     }
    ],
    "explanation": "Việc cần là nâng xe lên cao $h$ nên $W_{ci}=mgh$; ván thoải làm quãng đường dài, công ma sát lớn, hao phí tăng; mặt phẳng nghiêng giảm lực nhưng không lợi về công.",
    "distractorNotes": {
-    "0": "Việc cần làm là nâng xe lên cao $h$, nên công có ích đúng là $mgh$, không thể coi là sai.",
-    "1": "Lực kéo vừa nâng xe vừa thắng ma sát, nên $F\\cdot s$ đúng là toàn phần gồm cả phần hao phí.",
+    "0": "Lực kéo vừa nâng xe vừa thắng ma sát, nên $F\\cdot s$ đúng là toàn phần gồm cả phần hao phí.",
+    "1": "Ván nghiêng giảm lực nhưng phải kéo quãng đường dài hơn, thêm ma sát nên $W_{tp} \\gt W_{ci}$, không lợi về công.",
     "2": "Công ma sát tăng theo quãng đường trượt, nên ván thoải hao phí nhiều hơn chứ không ít hơn.",
-    "3": "Ván nghiêng giảm lực nhưng phải kéo quãng đường dài hơn, thêm ma sát nên $W_{tp} \\gt W_{ci}$, không lợi về công."
+    "3": "Việc cần làm là nâng xe lên cao $h$, nên công có ích đúng là $mgh$, không thể coi là sai."
    }
   },
   {
@@ -382,6 +382,10 @@
    "question": "Thí nghiệm: bật quạt bàn chạy 10 phút rồi áp mu bàn tay lên vỏ động cơ, thấy vỏ ấm hơn chân đế rõ rệt và nghe tiếng ù nhẹ. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Cơ năng của cánh quạt cộng với nhiệt và âm toả ra bằng điện năng quạt nhận vào.",
+     "answer": true
+    },
+    {
      "text": "Vỏ động cơ ấm lên chứng tỏ một phần điện năng đã chuyển thành nhiệt.",
      "answer": true
     },
@@ -390,19 +394,15 @@
      "answer": false
     },
     {
-     "text": "Cơ năng của cánh quạt cộng với nhiệt và âm toả ra bằng điện năng quạt nhận vào.",
-     "answer": true
-    },
-    {
      "text": "Nếu bôi trơn thật tốt thì xoá hết được hao phí và hiệu suất đạt $100\\,\\%$.",
      "answer": false
     }
    ],
    "explanation": "Năng lượng bảo toàn: $W_{tp}=W_{ci}+W_{hp}$; hao phí chỉ chuyển sang nhiệt, âm, rung. Bôi trơn giảm được hao phí nhưng không xoá hết.",
    "distractorNotes": {
-    "0": "Vỏ nóng lên phải nhận năng lượng từ điện năng của quạt, nên phát biểu không thể coi là sai.",
-    "1": "Năng lượng không tự mất đi; hao phí chỉ chuyển sang nhiệt và âm mà ta không dùng được.",
-    "2": "Phát biểu chính là $W_{tp}=W_{ci}+W_{hp}$ theo bảo toàn năng lượng, nên không thể sai.",
+    "0": "Phát biểu chính là $W_{tp}=W_{ci}+W_{hp}$ theo bảo toàn năng lượng, nên không thể sai.",
+    "1": "Vỏ nóng lên phải nhận năng lượng từ điện năng của quạt, nên phát biểu không thể coi là sai.",
+    "2": "Năng lượng không tự mất đi; hao phí chỉ chuyển sang nhiệt và âm mà ta không dùng được.",
     "3": "Bôi trơn chỉ giảm được ma sát chứ không xoá hết hao phí, nên máy thật luôn có $H \\lt 100\\,\\%$."
    }
   },
@@ -452,28 +452,28 @@
    "question": "Một học sinh so sánh hai đại lượng công suất $P$ và hiệu suất $H$ của các máy điện trong gia đình. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Công suất cho biết máy làm việc nhanh hay chậm, đo bằng oát (W).",
-     "answer": true
-    },
-    {
-     "text": "Hiệu suất cho biết bao nhiêu phần năng lượng nhận vào chuyển thành có ích.",
-     "answer": true
+     "text": "Hiệu suất là một số cố định của máy, không thay đổi theo tải và tốc độ làm việc.",
+     "answer": false
     },
     {
      "text": "Máy mạnh hơn, tức có công suất có ích lớn hơn, thì chắc chắn có hiệu suất cao hơn.",
      "answer": false
     },
     {
-     "text": "Hiệu suất là một số cố định của máy, không thay đổi theo tải và tốc độ làm việc.",
-     "answer": false
+     "text": "Công suất cho biết máy làm việc nhanh hay chậm, đo bằng oát (W).",
+     "answer": true
+    },
+    {
+     "text": "Hiệu suất cho biết bao nhiêu phần năng lượng nhận vào chuyển thành có ích.",
+     "answer": true
     }
    ],
    "explanation": "Hiệu suất khác công suất: $P$ đo nhanh chậm (W), $H$ là tỉ lệ có ích (không đơn vị). Cùng một thang máy, tải và tốc độ khác thì $H$ có thể khác.",
    "distractorNotes": {
-    "0": "Đây đúng là ý nghĩa và đơn vị của công suất trong bài, nên không thể coi là sai.",
-    "1": "Đây đúng là định nghĩa hiệu suất: phần có ích so với toàn phần nhận vào.",
-    "2": "Công suất có ích lớn có thể do công suất toàn phần lớn, nên máy mạnh chưa chắc hiệu suất cao.",
-    "3": "Ví dụ thang máy cho thấy cùng một máy, tải và tốc độ khác thì $H$ khác, nên $H$ không cố định."
+    "0": "Ví dụ thang máy cho thấy cùng một máy, tải và tốc độ khác thì $H$ khác, nên $H$ không cố định.",
+    "1": "Công suất có ích lớn có thể do công suất toàn phần lớn, nên máy mạnh chưa chắc hiệu suất cao.",
+    "2": "Đây đúng là ý nghĩa và đơn vị của công suất trong bài, nên không thể coi là sai.",
+    "3": "Đây đúng là định nghĩa hiệu suất: phần có ích so với toàn phần nhận vào."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
-     "text": "Công suất có ích của thang máy là $P_{ci}=\\dfrac{mgh}{t}$.",
-     "answer": true
-    },
-    {
      "text": "Nhiệt hao phí toả ra trong thời gian $t$ là $W_{hp}=P_{tp}\\,t+mgh$.",
      "answer": false
     },
     {
      "text": "Hiệu suất của thang máy là $H=\\dfrac{mgh}{P_{tp}\\,t}\\cdot 100\\,\\%$.",
      "answer": true
+    },
+    {
+     "text": "Công suất có ích của thang máy là $P_{ci}=\\dfrac{mgh}{t}$.",
+     "answer": true
     }
    ],
    "explanation": "$W_{ci}=mgh$, $P_{ci}=W_{ci}/t$, $W_{tp}=P_{tp}t$; hao phí là $W_{tp}-W_{ci}$ và $H=W_{ci}/W_{tp}$.",
    "distractorNotes": {
     "0": "Nâng đều nên động năng không đổi, phần năng lượng ta cần chỉ là thế năng tăng thêm $mgh$.",
-    "1": "Chia công có ích cho thời gian theo $P=W/t$ đúng là công suất có ích.",
-    "2": "Hao phí phải lấy toàn phần trừ có ích; cộng hai đại lượng là nhầm phép tính.",
-    "3": "Lấy có ích $mgh$ chia toàn phần $P_{tp}t$ đúng là định nghĩa hiệu suất theo năng lượng."
+    "1": "Hao phí phải lấy toàn phần trừ có ích; cộng hai đại lượng là nhầm phép tính.",
+    "2": "Lấy có ích $mgh$ chia toàn phần $P_{tp}t$ đúng là định nghĩa hiệu suất theo năng lượng.",
+    "3": "Chia công có ích cho thời gian theo $P=W/t$ đúng là công suất có ích."
    }
   },
   {
@@ -530,11 +530,11 @@
      "answer": true
     },
     {
-     "text": "Dùng ròng rọc giảm được lực kéo nên được lợi về công khi nâng vật.",
+     "text": "Ghép thêm nhiều khâu truyền động nối tiếp làm hiệu suất cả hệ tăng lên.",
      "answer": false
     },
     {
-     "text": "Ghép thêm nhiều khâu truyền động nối tiếp làm hiệu suất cả hệ tăng lên.",
+     "text": "Dùng ròng rọc giảm được lực kéo nên được lợi về công khi nâng vật.",
      "answer": false
     }
    ],
@@ -542,8 +542,8 @@
    "distractorNotes": {
     "0": "LED có hiệu suất cao hơn nên cùng độ sáng thì tiêu thụ ít điện năng hơn, phát biểu đúng.",
     "1": "Bôi trơn làm giảm ma sát, nên giảm phần cơ năng bị biến thành nhiệt, phát biểu đúng.",
-    "2": "Ròng rọc giảm lực nhưng phải kéo quãng đường dài hơn và còn ma sát, nên không lợi về công.",
-    "3": "Hiệu suất nối tiếp là tích các hiệu suất nhỏ hơn 1, nên thêm khâu làm hiệu suất cả hệ giảm."
+    "2": "Hiệu suất nối tiếp là tích các hiệu suất nhỏ hơn 1, nên thêm khâu làm hiệu suất cả hệ giảm.",
+    "3": "Ròng rọc giảm lực nhưng phải kéo quãng đường dài hơn và còn ma sát, nên không lợi về công."
    }
   }
  ]

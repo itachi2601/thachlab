@@ -1,0 +1,68 @@
+{
+  "id": 1322,
+  "cnc_key": "prep-12",
+  "title": "Chuẩn bị buổi 12 — Dự án nhóm",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Tâm mặt đầu của phôi thô, trước khi tiện mặt đầu",
+        "Mặt mâm cặp",
+        "Tâm mặt đầu của chi tiết thành phẩm",
+        "Gốc máy M"
+      ],
+      "question": "Giải bài tiện tổng hợp: gốc W nên chọn ở đâu?",
+      "explanation": "Bài 6 mục 5: chọn W ở tâm mặt đầu thành phẩm; tọa độ X theo đường kính, Z tính từ mặt đầu này."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 3,
+      "options": [
+        "Tính tọa độ → đọc bản vẽ → chọn gốc W → xếp thứ tự → kiểm tra",
+        "Đọc bản vẽ → xếp thứ tự → tính tọa độ → chọn gốc W → kiểm tra",
+        "Chọn gốc W → tính tọa độ → đọc bản vẽ → kiểm tra → xếp thứ tự",
+        "Đọc bản vẽ → chọn gốc W → xếp thứ tự → tính tọa độ → kiểm tra"
+      ],
+      "question": "Năm bước giải bài gia công tổng hợp theo đúng thứ tự là:",
+      "explanation": "Bài 6 mục 5: đọc bản vẽ → gốc W → thứ tự → tọa độ → kiểm tra. Chưa có W thì chưa tính được tọa độ."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Tinh trước, thô sau để giữ mặt chuẩn đẹp",
+        "Gia công trọn trong một lần gá để W không đổi; thô trước, tinh sau; gom nguyên công cùng dao",
+        "Tarô trước, khoan sau cho ren đều",
+        "Gá lại phôi sau mỗi nguyên công cho chắc"
+      ],
+      "question": "Nguyên tắc sắp thứ tự nguyên công phay nào đúng?",
+      "explanation": "Bài 7 mục 5: một lần gá để W không đổi; thô trước tinh sau; gom cùng dao; khoan trước, tarô sau."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "Trước khi phay, chạm dao lên mặt phôi thô",
+        "Sau khi khoan xong bốn lỗ",
+        "Sau khi phay mặt phẳng trên, chạm dao trên mặt vừa phay",
+        "Sau khi tarô xong, trước khi tháo phôi"
+      ],
+      "question": "Theo thứ tự mẫu cho tấm đế ở bài phay, đặt Z0 vào lúc nào?",
+      "explanation": "Bài 7 mục 5 (thứ tự mẫu): gá phôi, X0 Y0 ở góc → phay mặt phẳng trên → chạm dao trên mặt vừa phay để đặt Z0 → biên dạng → lỗ → kiểm tra."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "Cộng lại các đoạn chiều dài cho khớp bản vẽ, tính lại tan α",
+        "Chạy tự động chương trình trên phôi thật để xem",
+        "Đo lại đường kính phôi thô",
+        "Dời gốc W sang mặt mâm cặp rồi tính lại tọa độ"
+      ],
+      "question": "Bước 5 \"Kiểm tra\" trong năm bước giải bài tiện tổng hợp gồm việc gì?",
+      "explanation": "Bài 6 mục 5: kiểm tra = cộng chiều dài (như 20 + 30 + 15 = 65 ở bài mẫu) và tính lại tan α, trước khi đưa lên máy."
+    }
+  ]
+}

@@ -28,6 +28,7 @@
 <h3>II. Động năng, thế năng và cơ năng</h3>
 
 <h4>1. Thế năng — mốc ở vị trí cân bằng</h4>
+<p class="tl-claim">Mốc ở VTCB, thế năng lớn nhất ở biên.</p>
 <p><strong>🔑 Mốc ở VTCB · Lớn ở biên</strong></p>
 <p>Li độ tính từ vị trí cân bằng (VTCB):</p>
 <p>$$x=A\cos(\omega t+\varphi)$$</p>
@@ -61,6 +62,7 @@
 </details>
 
 <h4>2. Động năng — lớn ở giữa</h4>
+<p class="tl-claim">Động năng lớn nhất ở giữa, bằng không ở biên.</p>
 <p><strong>🔑 Lớn ở giữa · Bằng không ở biên</strong></p>
 <ul>
 <li>Động năng phụ thuộc vận tốc: vật càng nhanh, $E_d$ càng lớn.</li>
@@ -100,7 +102,10 @@
 <p>Ở $x=\pm A$ vật đổi chiều, vận tốc bằng không trong một khoảnh khắc. $E_d=\dfrac{1}{2}mv^2$ nên bằng không. Năng lượng không mất: nó đang nằm hết ở $E_t$.</p>
 </details>
 
+<!--FIGOS-->
+
 <h4>3. Hai cái đổi chỗ — đồ thị theo li độ</h4>
+<p class="tl-claim">Một cái tăng thì cái kia giảm.</p>
 <p><strong>🔑 Một tăng · Cái kia giảm</strong></p>
 <table class="tl-table">
 <thead><tr><th>Thế năng $E_t$</th><th>Động năng $E_d$</th></tr></thead>
@@ -118,7 +123,7 @@
 <li>Hai đường cắt nhau tại $x=\pm\dfrac{A}{\sqrt{2}}$, nơi $E_t=E_d$, tức $x^2=A^2-x^2$.</li>
 </ul>
 <!--FIG2-->
-<p>Xét theo thời gian $t$ (không phải theo $x$): $E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $T/2$, và <strong>ngược pha</strong> nhau.</p>
+<p>Xét theo thời gian $t$ (không phải theo $x$): $E_t$ và $E_d$ biến thiên tuần hoàn với tần số góc $2\omega$, tần số $2f$, chu kì $T/2$, và <strong><span class="tl-term"><input type="checkbox" id="tl24-t1"><label for="tl24-t1">ngược pha</label><span class="tl-def">lệch nhau π: cái này cực đại thì cái kia cực tiểu.</span></span></strong> nhau.</p>
 <details class="tl-details tl-more">
 <summary>Vì sao chu kì năng lượng là $T/2$?</summary>
 <p>$\cos^2\alpha=\dfrac{1+\cos 2\alpha}{2}$ và $\sin^2\alpha=\dfrac{1-\cos 2\alpha}{2}$. Trong $E_t$, $E_d$ xuất hiện góc $2(\omega t+\varphi)$: tần số góc gấp đôi, chu kì còn một nửa. Dấu trước $\cos 2\alpha$ ngược nhau nên hai đại lượng ngược pha.</p>
@@ -137,8 +142,9 @@
 </div>
 
 <h4>4. Cơ năng — tổng không đổi</h4>
+<p class="tl-claim">Cơ năng không đổi và tỉ lệ với A².</p>
 <p><strong>🔑 Tổng không đổi · Tỉ lệ $A^2$</strong></p>
-<p>Bỏ qua ma sát, cơ năng là hằng số:</p>
+<p>Bỏ qua ma sát<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup>, cơ năng là hằng số:</p>
 <div class="tl-fx">
 <p class="tl-fx-name">Cơ năng</p>
 <p class="tl-fx-cond">Bỏ qua ma sát, cơ năng không đổi</p>
@@ -163,6 +169,7 @@
 <!--FIG3-->
 
 <h4>5. Năm chỗ trên một chu kì</h4>
+<p class="tl-claim">Đếm số lần đi qua, không chỉ đếm số chỗ.</p>
 <p><strong>🔑 Đếm lần qua · Không chỉ đếm chỗ</strong></p>
 <p>Mẹo: <strong>giữa nhanh, biên chậm</strong>. Chỗ $E_d=E_t$ là chia căn hai, không phải một nửa biên độ.</p>
 <ul>
@@ -206,8 +213,9 @@
 </div>
 
 <h4>6. Con lắc lò xo nằm ngang — đo để kiểm</h4>
+<p class="tl-claim">Chu kì chỉ theo m và k, không theo A.</p>
 <p><strong>🔑 Chu kì theo $m$, $k$ · Không theo $A$</strong></p>
-<p>Lò xo nhẹ độ cứng $k$, vật $m$, nằm ngang, bỏ ma sát:</p>
+<p>Lò xo nhẹ<sup class="tl-fn"><a href="#tl-fn-2">2</a></sup> độ cứng $k$, vật $m$, nằm ngang, bỏ ma sát:</p>
 <ul>
 <li>$\omega=\sqrt{k/m}$ (rad/s)</li>
 <li>$T=2\pi\sqrt{m/k}$ (s)</li>
@@ -222,6 +230,14 @@
 <li><strong>Rút ra:</strong> Bỏ ma sát thì cơ năng không đổi; $E_t$ và $E_d$ chỉ đổi chỗ cho nhau. Muốn kiểm thật phải đo $v$ độc lập (cổng quang) rồi tính $E_d=\dfrac{1}{2}mv^2$.</li>
 </ol>
 </div>
+<!--video:tn-l11-conangdddh-01-->
+<div class="tl-box tl-box--video tl-box--khung" data-khung="{&quot;id&quot;:&quot;tn-l11-conangdddh-01&quot;,&quot;ten&quot;:&quot;Con lắc lò xo ở nửa biên độ: động năng và thế năng so nhau thế nào?&quot;,&quot;video&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261031-2.mp4&quot;,&quot;tong_giay&quot;:49.1,&quot;o&quot;:[{&quot;khoa&quot;:&quot;gia_thuyet&quot;,&quot;giay&quot;:0,&quot;chu&quot;:&quot;Đo k, tính Et, Ed, W tại các li độ: tổng không đổi.&quot;,&quot;kiem&quot;:&quot;Ở nửa biên độ: hai năng lượng so sao?&quot;},{&quot;khoa&quot;:&quot;du_doan&quot;,&quot;giay&quot;:3,&quot;chu&quot;:&quot;Con lắc lò xo nằm ngang, bỏ qua ma sát, A = 8,0 cm. Vật qua x = 4,0 cm: động năng và thế năng so với nhau?&quot;},{&quot;khoa&quot;:&quot;dung_cu&quot;,&quot;giay&quot;:9.4,&quot;chu&quot;:&quot;Lò xo, quả 200 g, thước mm, giá.&quot;},{&quot;khoa&quot;:&quot;quan_sat&quot;,&quot;giay&quot;:22.6,&quot;chu&quot;:&quot;Mỗi hàng W = 0,128 J; Et giảm, Ed tăng bù.&quot;},{&quot;khoa&quot;:&quot;rut_ra&quot;,&quot;giay&quot;:26.2,&quot;chu&quot;:&quot;Tại x = 4,0 cm: Et = 0,032 J, Ed = 0,096 J = 3 Et; Et chỉ một phần tư W.&quot;},{&quot;khoa&quot;:&quot;chua_noi&quot;,&quot;giay&quot;:38.3,&quot;chu&quot;:&quot;Treo đứng, mốc ở chỗ chưa dãn: tại VTCB Et = 0,04802 J chứ không bằng 0. Ed chỉ tính, chưa đo v. Ma sát chưa xét.&quot;}],&quot;dung_dua&quot;:{&quot;giay&quot;:9.2,&quot;cau_hoi&quot;:&quot;Vật qua x = 4,0 cm, nửa biên độ. Động năng và thế năng so với nhau…&quot;,&quot;chon&quot;:[&quot;A. Bằng nhau&quot;,&quot;B. Động năng gấp 2 thế năng&quot;,&quot;C. Động năng gấp 3 thế năng&quot;,&quot;D. Thế năng gấp 3 động năng&quot;],&quot;dung&quot;:2,&quot;giai_thich_dung&quot;:&quot;Et = ½kx² tỉ lệ x², nên ở nửa biên độ Et chỉ bằng W/4 = 0,032 J; Ed là phần còn lại 0,096 J, gấp 3 lần Et.&quot;,&quot;giai_thich_sai&quot;:&quot;Thế năng tỉ lệ x² chứ không tỉ lệ x: nửa biên độ chỉ cho một phần tư cơ năng, phần còn lại là động năng. Xem đoạn kế: bảng các vạch.&quot;},&quot;poster&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261031-2.webp&quot;}">
+<p class="tl-label">🎬 Xem thí nghiệm dựng lại · 49 giây</p>
+<p class="tl-video-ten">Đo độ cứng rồi tính năng lượng con lắc</p>
+<div class="tl-video tl-video--doc"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-01-20261031-2.webp" controls preload="none" playsinline title="đo độ cứng rồi tính năng lượng con lắc" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+<p class="tl-video-goi-y"><strong>Nhìn vào:</strong> Ở nửa biên độ, động năng và thế năng so với nhau thế nào?</p>
+</div>
+
 <table class="tl-table">
 <thead><tr><th>Vạch $x$</th><th>$E_t$ · $E_d$ · $W$ (J)</th></tr></thead>
 <tbody>
@@ -333,32 +349,32 @@
 
 <h3>IV. Trả bài</h3>
 <div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Trả bài — nói bằng lời của em trước, rồi mới bấm xem</p>
+<p class="tl-label">Trả bài</p>
 <details class="tl-details tl-more">
-<summary>Mốc thế năng đặt ở đâu? Viết $E_t$. <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>Mốc thế năng đặt ở đâu? Viết $E_t$.</summary>
 <p>Mốc tại VTCB. $x=A\cos(\omega t+\varphi)$.</p>
 <p>$E_t=\dfrac{1}{2}kx^2=\dfrac{1}{2}m\omega^2 x^2=\dfrac{1}{2}m\omega^2 A^2\cos^2(\omega t+\varphi)$.</p>
 </details>
 <details class="tl-details tl-more">
-<summary>$E_t$ và $E_d$ cực đại, cực tiểu ở đâu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>$E_t$ và $E_d$ cực đại, cực tiểu ở đâu?</summary>
 <p>$E_{t,\max}=\dfrac{1}{2}kA^2$ tại $x=\pm A$; $E_{t,\min}=0$ tại VTCB.</p>
 <p>$E_{d,\max}=\dfrac{1}{2}m\omega^2 A^2$ tại VTCB; $E_{d,\min}=0$ tại hai biên.</p>
 </details>
 <details class="tl-details tl-more">
-<summary>$W$ bằng gì? Con lắc lò xo có phụ thuộc $m$ không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>$W$ bằng gì? Con lắc lò xo có phụ thuộc $m$ không?</summary>
 <p>$W=\dfrac{1}{2}kA^2=\dfrac{1}{2}m\omega^2 A^2$, hằng số khi bỏ ma sát. Phụ thuộc $k$ và $A$, không phụ thuộc $m$.</p>
 </details>
 <details class="tl-details tl-more">
-<summary>$E_t$ và $E_d$ biến thiên với chu kì nào? Có cùng pha không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>$E_t$ và $E_d$ biến thiên với chu kì nào? Có cùng pha không?</summary>
 <p>Tần số góc $2\omega$, tần số $2f$, chu kì $T/2$. Ngược pha. Không cùng tăng, không cùng giảm.</p>
 </details>
 <details class="tl-details tl-more">
-<summary>Khi $E_d=E_t$ và khi $E_d=3E_t$ thì $x$, $v$ bằng bao nhiêu? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>Khi $E_d=E_t$ và khi $E_d=3E_t$ thì $x$, $v$ bằng bao nhiêu?</summary>
 <p>$E_d=E_t$: $x=\pm A/\sqrt{2}$, $|v|=v_{\max}/\sqrt{2}$, 4 lần mỗi chu kì.</p>
 <p>$E_d=3E_t$: $x=\pm A/2$, $|v|=v_{\max}\sqrt{3}/2$, 4 lần.</p>
 </details>
 <details class="tl-details tl-more">
-<summary>$\omega$, $T$, $f$ của con lắc lò xo? Có phụ thuộc $A$ không? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<summary>$\omega$, $T$, $f$ của con lắc lò xo? Có phụ thuộc $A$ không?</summary>
 <p>$\omega=\sqrt{k/m}$, $T=2\pi\sqrt{m/k}$, $f=\dfrac{1}{2\pi}\sqrt{k/m}$. Chỉ phụ thuộc $m$, $k$. Không phụ thuộc biên độ hay cách kích thích.</p>
 </details>
 </div>
@@ -457,3 +473,16 @@
 <li><strong>Rút ra:</strong> Năng lượng không mất ở chỗ dừng. Nó đổi từ thế năng sang động năng. Xích đu thật còn mất dần vì ma sát. Khác con lắc lò xo, ở đây $W=mgh$ tỉ lệ với $m$.</li>
 </ol>
 </div>
+<!--video:tn-l11-conangdddh-02-->
+<div class="tl-box tl-box--video tl-box--khung" data-khung="{&quot;id&quot;:&quot;tn-l11-conangdddh-02&quot;,&quot;ten&quot;:&quot;Xích đu thả từ 0,50 m: năng lượng ở từng độ cao&quot;,&quot;video&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-02-20261110-2.mp4&quot;,&quot;tong_giay&quot;:49.7,&quot;o&quot;:[{&quot;khoa&quot;:&quot;gia_thuyet&quot;,&quot;giay&quot;:0,&quot;chu&quot;:&quot;Bỏ ma sát: thế năng mất đi bao nhiêu thì động năng tăng bấy nhiêu; ở nửa độ cao, động năng bằng nửa thế năng lúc trên cao.&quot;,&quot;kiem&quot;:&quot;Đi xuống, năng lượng đổi dạng thế nào?&quot;},{&quot;khoa&quot;:&quot;du_doan&quot;,&quot;giay&quot;:4,&quot;chu&quot;:&quot;Ghế xuống tới nửa độ cao (0,25 m). Động năng lúc đó bằng mấy phần thế năng lúc ở trên cao?&quot;},{&quot;khoa&quot;:&quot;dung_cu&quot;,&quot;giay&quot;:10.7,&quot;chu&quot;:&quot;Xích đu, bạn 40 kg, thước đo độ cao.&quot;},{&quot;khoa&quot;:&quot;quan_sat&quot;,&quot;giay&quot;:15.6,&quot;chu&quot;:&quot;Trên cao: v = 0, Et = 196 J. Ở 0,25 m: v = 2,21 m/s. Ở đáy: Eđ = 196 J, v = 3,13 m/s.&quot;},{&quot;khoa&quot;:&quot;rut_ra&quot;,&quot;giay&quot;:25.5,&quot;chu&quot;:&quot;Ở nửa độ cao, Eđ = 98 J, bằng một nửa. Thế năng giảm bao nhiêu, động năng tăng bấy nhiêu: tổng vẫn 196 J.&quot;},{&quot;khoa&quot;:&quot;chua_noi&quot;,&quot;giay&quot;:35.6,&quot;chu&quot;:&quot;Đã bỏ ma sát và lực cản; không coi xích đu là dao động điều hoà; số minh hoạ.&quot;}],&quot;dung_dua&quot;:{&quot;giay&quot;:10.5,&quot;cau_hoi&quot;:&quot;Ghế xuống tới nửa độ cao (0,25 m). Động năng lúc đó bằng mấy phần thế năng lúc ở trên cao?&quot;,&quot;chon&quot;:[&quot;A. Một phần tư&quot;,&quot;B. Một nửa&quot;,&quot;C. Ba phần tư&quot;,&quot;D. Toàn bộ&quot;],&quot;dung&quot;:1,&quot;giai_thich_dung&quot;:&quot;Thế năng mgh tỉ lệ bậc nhất với độ cao: xuống nửa độ cao thì mất nửa thế năng, phần đó thành động năng, 98 J trong 196 J.&quot;,&quot;giai_thich_sai&quot;:&quot;Ở xích đu, thế năng là mgh, tỉ lệ bậc nhất với h, không phải ½kx² như lò xo. Xuống nửa độ cao thì Eđ = 98 J, đúng một nửa 196 J. Toàn bộ chỉ đúng khi ghế tới đáy. Xem đoạn kế: hai cột năng lượng.&quot;},&quot;poster&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-02-20261110-2.webp&quot;}">
+<p class="tl-label">🎬 Xem thí nghiệm dựng lại · 49 giây</p>
+<p class="tl-video-ten">Xích đu thả từ 0,50 m (minh hoạ)</p>
+<div class="tl-video tl-video--doc"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-02-20261110-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-conangdddh-02-20261110-2.webp" controls preload="none" playsinline title="xích đu thả từ 0,50 m (minh hoạ)" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+<p class="tl-video-goi-y"><strong>Nhìn vào:</strong> Ghế xuống nửa độ cao thì động năng bằng mấy phần?</p>
+</div>
+
+
+<ol class="tl-fns">
+<li id="tl-fn-1">Cơ năng chỉ giữ nguyên khi bỏ qua ma sát và lực cản. Thực tế chúng làm biên độ giảm dần (xem bài dao động tắt dần).</li>
+<li id="tl-fn-2">Lò xo nhẹ là lò xo coi như không có khối lượng, nên chỉ vật nặng mang động năng.</li>
+</ol>

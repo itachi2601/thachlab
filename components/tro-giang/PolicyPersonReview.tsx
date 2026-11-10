@@ -12,6 +12,7 @@ import { getSupabase } from "@/services/supabase";
 import FlagLegend from "./FlagLegend";
 import PolicyMonthSummary from "./PolicyMonthSummary";
 import PolicyReviewForm from "./PolicyReviewForm";
+import TaAppeals from "./TaAppeals";
 import PolicySessionEditor from "./PolicySessionEditor";
 
 interface Item {
@@ -369,7 +370,8 @@ export default function PolicyPersonReview({ id, month }: { id: string; month: s
         <PolicyMonthSummary score={score} />
       </section>
 
-      <section id="cham-chot" className="scroll-mt-28">
+      <section id="cham-chot" className="scroll-mt-28 space-y-4">
+        <TaAppeals assistantId={id} month={month} admin />
         <PolicyReviewForm key={revision} score={score} onSaved={reload} />
       </section>
 

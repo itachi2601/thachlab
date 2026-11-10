@@ -10,7 +10,8 @@ import { useAuth } from "@/components/auth/AuthProvider";
 import EmptyState from "@/components/ui/EmptyState";
 import { timeAgo } from "@/lib/time-ago";
 import { fetchMyClassIds } from "@/services/classes";
-import { fetchRecentPostHeads, visibleTo } from "@/services/content";
+import { fetchRecentPostHeads, visibleTo, visibleToCttcStudent } from "@/services/content";
+import { fetchMyEnrollments } from "@/services/course-enrollments";
 import { fetchNotifications, markAllRead, markRead } from "@/services/notifications";
 import { getSupabase } from "@/services/supabase";
 
@@ -51,16 +52,22 @@ const KIND_META: Record<Kind, { label: string; Icon: typeof Bell; tone: string }
 const LIMIT = 40;
 
 function Feed() {
-  const { session } = useAuth();
+  const { session, profile, previewMode } = useAuth();
   const [items, setItems] = useState<Item[] | null>(null);
   const [filter, setFilter] = useState<Filter>("tat_ca");
   const [open, setOpen] = useState<string | null>(null);
+  // Sinh viên CTTC: tin tức lọc theo học phần đang ghi danh, không lấy tin "toàn trường" của khối THPT.
+  const isCttc = profile?.role === "student" && profile.track === "cttc";
+  // Admin đang "Xem như học sinh/SV": thông báo và tin nhắn theo lớp thuộc tài khoản quản trị (RLS trả hết),
+  // không phải thứ học sinh thấy → không trộn vào bản xem thử.
+  const previewing = previewMode !== null;
 
   useEffect(() => {
     if (!session) return;
     let alive = true;
+    const me = session.user.id;
     Promise.all([
-      fetchNotifications(LIMIT).catch(() => []),
+      previewing ? Promise.resolve([]) : fetchNotifications(LIMIT).catch(() => []),
       Promise.resolve(
         getSupabase()
           .from("messages")
@@ -71,9 +78,15 @@ function Feed() {
         .then(({ data }) => data ?? [])
         .catch(() => []),
       fetchRecentPostHeads(LIMIT).catch(() => []),
-      fetchMyClassIds(session.user.id).catch(() => null),
-    ]).then(([notis, msgs, posts, classIds]) => {
+      fetchMyClassIds(me).catch(() => null),
+      isCttc
+        ? fetchMyEnrollments(me)
+            .then((rows) => rows.filter((r) => r.status === "active").map((r) => r.course.id))
+            .catch(() => [] as number[])
+        : Promise.resolve([] as number[]),
+    ]).then(([notis, allMsgs, posts, classIds, courseIds]) => {
       if (!alive) return;
+      const msgs = previewing ? allMsgs.filter((m) => m.recipient_id === me || (!m.recipient_id && !m.class_name)) : allMsgs;
       const out: Item[] = [
         ...notis.map((n): Item => ({
           key: `n${n.id}`,
@@ -95,7 +108,7 @@ function Feed() {
           unread: false,
         })),
         ...posts
-          .filter((p) => visibleTo(p.classIds, classIds))
+          .filter((p) => (isCttc ? visibleToCttcStudent(p, courseIds, classIds ?? []) : visibleTo(p.classIds, classIds)))
           .map((p): Item => ({
             key: `p${p.id}`,
             kind: "tin_tuc",
@@ -112,7 +125,7 @@ function Feed() {
     return () => {
       alive = false;
     };
-  }, [session]);
+  }, [session, isCttc, previewing]);
 
   const shown = useMemo(() => (items ?? []).filter((i) => filter === "tat_ca" || i.kind === filter), [items, filter]);
   const unread = (items ?? []).filter((i) => i.unread).length;
@@ -157,6 +170,11 @@ function Feed() {
         ))}
       </div>
 
+      {previewing && (
+        <p className="mb-3 rounded-xl border border-line bg-surface-2 px-4 py-3 text-[13px] text-muted">
+          Đang xem thử: thông báo riêng của tài khoản quản trị không hiện ở đây. Học sinh chỉ thấy thông báo của chính mình.
+        </p>
+      )}
       {items === null ? (
         <p className="text-muted">Đang tải…</p>
       ) : shown.length === 0 ? (

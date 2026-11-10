@@ -28,6 +28,8 @@ import {
   type NeedStatus,
   type TutoringNeed,
 } from "@/services/tutoring";
+import { clipsForNeed } from "@/lib/clip-bay";
+import { ClipBayCard } from "@/components/results/ClipBayCard";
 import { fetchMyClassIds } from "@/services/classes";
 import RankCard from "@/components/rank/RankCard";
 import type { RankStatus } from "@/features/rank/types";
@@ -547,7 +549,7 @@ const NEED_NOTE: Record<ResultsViewer, Record<NeedStatus, string>> = {
   },
 };
 
-function NeedRow({
+export function NeedRow({
   need,
   lessonHref,
   outcomes,
@@ -585,6 +587,9 @@ function NeedRow({
         </ul>
       )}
       <p className="mt-1 text-[13px] text-muted">{NEED_NOTE[viewer][need.status]}</p>
+      {/* Chặng C (1/11/2026): clip bẫy của đúng YCCĐ em đang sai — chỉ học sinh, chỉ khi mục còn mở. V5, V9 */}
+      {viewer === "student" && need.status !== "cleared" && need.status !== "dismissed" &&
+        clipsForNeed(need.topicId, outcomes.map((o) => o.topicId)).map((c) => <ClipBayCard key={c.id} clip={c} />)}
     </div>
   );
 }

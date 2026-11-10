@@ -1,0 +1,233 @@
+[
+ {
+  "id": 1549418,
+  "grade": "12",
+  "topic_name": "Định luật phóng xạ và chu kì bán rã",
+  "qtype": "multiple_choice",
+  "figure_not_needed": false,
+  "question": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "answer": 0,
+   "options": [
+    "T.",
+    "0,5T.",
+    "$\\ln\\frac{T}{2}$",
+    "ln𝑇"
+   ],
+   "question": "<p class=\"text-base leading-relaxed my-2\">Các đồ thị trên hình biểu diễn sự phóng xạ của một mẫu chất phóng xạ X vừa được chế tạo biến thành đồng vị bền Y. Chu kì bán rã của X bằng T. Đường cong biểu diễn số nguyên tử X và số nguyên tử Y phụ thuộc thời gian cắt nhau ở thời điểm 𝜏. Giá trị của 𝜏 tính theo chu kì T là:</p>",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Mẫu vừa chế tạo nên ban đầu chỉ có X: $N_X=N_02^{-t/T}$, $N_Y=N_0(1-2^{-t/T})$.</p><p class=\"text-base leading-relaxed my-2\">Hai đường cắt nhau khi $N_X=N_Y$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow2^{-\\tau/T}=\\dfrac12$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow\\tau=T$. Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 735961,
+  "grade": "12",
+  "topic_name": "Năng lượng liên kết riêng và độ bền hạt nhân",
+  "qtype": "true_false",
+  "figure_not_needed": false,
+  "question": {
+   "form": "ly_thuyet",
+   "type": "true_false",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "question": "Xét đường cong năng lượng liên kết riêng:",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Hạt nhân nhẹ có năng lượng liên kết riêng tăng nhanh theo $A$.",
+     "answer": true
+    },
+    {
+     "text": "Cực đại cỡ $8{,}8$ MeV/nuclôn ở vùng $A$ khoảng 50–80.",
+     "answer": true
+    },
+    {
+     "text": "Urani-235 có năng lượng liên kết riêng lớn hơn sắt-56.",
+     "answer": false
+    },
+    {
+     "text": "Hạt nhân rất nặng vỡ ra cũng toả năng lượng.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) Đúng. Với hạt nhân nhẹ, năng lượng liên kết riêng tăng nhanh khi $A$ tăng.</p><p class=\"text-base leading-relaxed my-2\">b) Đúng. Đường cong đạt cực đại cỡ $8{,}8\\ \\text{MeV/nuclôn}$ ở vùng $A$ khoảng $50$ đến $80$.</p><p class=\"text-base leading-relaxed my-2\">c) Sai. $^{235}\\text{U}$ có năng lượng liên kết riêng khoảng $7{,}6\\ \\text{MeV/nuclôn}$, nhỏ hơn $^{56}\\text{Fe}$ (khoảng $8{,}8\\ \\text{MeV/nuclôn}$) chứ không lớn hơn.</p><p class=\"text-base leading-relaxed my-2\">d) Đúng. Hạt nhân rất nặng vỡ thành hai hạt nhân trung bình có năng lượng liên kết riêng lớn hơn nên toả năng lượng.</p>",
+   "theorySection": 1,
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1550727,
+  "grade": "12",
+  "topic_name": "Năng lượng liên kết riêng và độ bền hạt nhân",
+  "qtype": "true_false",
+  "figure_not_needed": false,
+  "question": {
+   "form": "ly_thuyet",
+   "type": "true_false",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "question": "Xét đồ thị năng lượng liên kết riêng của các hạt nhân theo số khối A. Xét các phát biểu sau:",
+   "difficulty": "de",
+   "statements": [
+    {
+     "text": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn quanh sắt-56.",
+     "answer": true
+    },
+    {
+     "text": "Với hạt nhân nhẹ, năng lượng liên kết riêng tăng nhanh theo A.",
+     "answer": true
+    },
+    {
+     "text": "Với hạt nhân nặng, số khối càng lớn thì hạt nhân càng bền.",
+     "answer": false
+    },
+    {
+     "text": "Hạt nhân rất nặng vỡ thành các hạt nhân trung bình thì thu năng lượng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đường cong tăng nhanh ở vùng nhẹ, đạt đỉnh quanh sắt-56 rồi giảm dần ở vùng nặng. Vì vậy hạt nhân nhẹ hợp lại hoặc hạt nhân nặng vỡ ra đều toả năng lượng.",
+   "theorySection": 1,
+   "distractorNotes": {
+    "0": "Đường cong đạt đỉnh cỡ 8,8 MeV/nuclôn ở vùng quanh sắt-56, nên không thể coi là sai.",
+    "1": "Bên trái đỉnh, $E_{lkr}$ tăng rất nhanh theo $A$, như heli-4 chỉ 4 nuclôn đã đạt 7,07 MeV.",
+    "2": "Sau vùng sắt, $E_{lkr}$ giảm dần theo $A$ nên hạt nhân càng nặng càng kém bền.",
+    "3": "Vỡ ra làm $E_{lkr}$ tăng, tổng năng lượng liên kết tăng nên phần chênh lệch toả ra chứ không thu."
+   },
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 458568,
+  "grade": "12",
+  "topic_name": "Các tia phóng xạ α, β, γ",
+  "qtype": "multiple_choice",
+  "figure_not_needed": false,
+  "question": {
+   "form": "ly_thuyet",
+   "type": "multiple_choice",
+   "topic": "Các tia phóng xạ α, β, γ",
+   "answer": 3,
+   "options": [
+    "Tia α phát ra từ nguồn phóng xạ chuyển động tròn xoắn ốc trong khoảng giữa hai bản kim loại.",
+    "Tia α phát ra từ nguồn phóng xạ chuyển động song song với hai bản kim loại tích điện trái dấu.",
+    "Tia α phát ra từ nguồn phóng xạ bị lệch về phía bản kim loại nhiễm điện dương.",
+    "Tia α phát ra từ nguồn phóng xạ bị lệch về phía bản kim loại nhiễm điện âm."
+   ],
+   "question": "Hình bên biểu diễn sơ đồ hoạt động của cảm biến báo khói ion hóa. Nguồn phóng xạ α Americium  ${}_{95}^{241}{Am}$  được đặt giữa hai bản kim loại nối với một pin. Các hạt α được phóng ra làm ion hóa không khí giữa hai bản kim loại đặt song song và nối vào hai cực của nguồn điện, cho phép một dòng điện nhỏ chạy giữa hai bản kim loại đó và chuông báo không kêu. Nếu có khói bay vào giữa hai bản kim loại, các ion trong này sẽ kết hợp với các phân tử khói và dịch chuyển chậm hơn làm cường độ dòng điện giữa hai bản kim loại giảm đi. Khi dòng điện giảm tới mức nhất định thì cảm biến báo khói sẽ gửi tín hiệu kích hoạt đến chuông báo cháy.",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Tia α phát ra từ nguồn phóng xạ sẽ bị lệch về phía bản kim loại nhiễm điện âm. Vì tia α là dòng các hạt nhân helium ((_2^4)He) mang điện dương sẽ bị lực điện của từ trường tạo bởi hai bản kim loại đặt song song và tích điện trái dấu hút về phía bản kim loại nhiễm điện âm.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1552351,
+  "grade": "12",
+  "topic_name": "Năng lượng liên kết riêng và độ bền hạt nhân",
+  "qtype": "true_false",
+  "figure_not_needed": false,
+  "question": {
+   "form": "ly_thuyet",
+   "type": "true_false",
+   "topic": "Năng lượng liên kết riêng và độ bền hạt nhân",
+   "question": "Xét đồ thị năng lượng liên kết riêng của các hạt nhân theo số khối A. Xét các phát biểu sau:",
+   "difficulty": "de",
+   "statements": [
+    {
+     "text": "Với hạt nhân nhẹ, năng lượng liên kết riêng tăng nhanh theo A.",
+     "answer": true
+    },
+    {
+     "text": "Với hạt nhân nặng, số khối càng lớn thì hạt nhân càng bền.",
+     "answer": false
+    },
+    {
+     "text": "Năng lượng liên kết riêng đạt cực đại cỡ 8,8 MeV/nuclôn quanh sắt-56.",
+     "answer": true
+    },
+    {
+     "text": "Hạt nhân rất nặng vỡ thành các hạt nhân trung bình thì thu năng lượng.",
+     "answer": false
+    }
+   ],
+   "explanation": "Đường cong tăng nhanh ở vùng nhẹ, đạt đỉnh quanh sắt-56 rồi giảm dần ở vùng nặng. Vì vậy hạt nhân nhẹ hợp lại hoặc hạt nhân nặng vỡ ra đều toả năng lượng.",
+   "theorySection": 1,
+   "distractorNotes": {
+    "0": "Bên trái đỉnh, $E_{lkr}$ tăng rất nhanh theo $A$, như heli-4 chỉ 4 nuclôn đã đạt 7,07 MeV.",
+    "1": "Sau vùng sắt, $E_{lkr}$ giảm dần theo $A$ nên hạt nhân càng nặng càng kém bền.",
+    "2": "Đường cong đạt đỉnh cỡ 8,8 MeV/nuclôn ở vùng quanh sắt-56, nên không thể coi là sai.",
+    "3": "Vỡ ra làm $E_{lkr}$ tăng, tổng năng lượng liên kết tăng nên phần chênh lệch toả ra chứ không thu."
+   },
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 638927,
+  "grade": "12",
+  "topic_name": "Hiện tượng phóng xạ. Chu kì bán rã",
+  "qtype": "true_false",
+  "figure_not_needed": false,
+  "question": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Hiện tượng phóng xạ. Chu kì bán rã",
+   "question": "Đồng vị americium ( ${}_{95}^{241}Am$ ) là chất phóng xạ α có hằng số phóng xạ 5,086.10<sup>−11</sup>s-1. Trong cảm biến báo khói ion hóa, một lượng  ${}_{95}^{241}Am$  được đặt giữa hai bản kim loại được nối với hai cực của pin. Các hạt α phóng ra làm ion hóa không khí giữa hai bản kim loại, tạo ra một dòng điện chạy giữa hai bản kim loại đó và chuông báo không kêu. Nếu có khói bay vào giữa hai bản kim loại thì cường độ dòng điện qua cảm biến giảm đi. Cảm biến sẽ phát hiện sự suy giảm dòng điện và kích hoạt chuông báo cháy. Biết khối lượng mol nguyên tử của americium là 241 g/mol và một năm có 365 ngày.",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Hạt α là hạt nhân ${}_2^4He$ .",
+     "answer": true
+    },
+    {
+     "text": "Chu kì bán rã của  ${}_{95}^{241}Am$ là 4322 năm.",
+     "answer": false
+    },
+    {
+     "text": "Giả sử nguồn  ${}_{95}^{241}Am$ ban đầu có khối lượng 0,125 µg, độ phóng xạ ban đầu là 1,59.10<sup>4</sup> Bq.",
+     "answer": true
+    },
+    {
+     "text": "Để đảm bảo cho cảm biến hoạt động tốt thì sau 10 năm người ta phải thay cảm biến mới. Khi đó độ phóng xạ của nguồn  ${}_{95}^{241}Am$ trong cảm biến cũ đã giảm 98,4% so với độ phóng xạ ban đầu.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) Đúng. Hạt $\\alpha$ là hạt nhân helium ${}_2^4He$.</p><p class=\"text-base leading-relaxed my-2\">b) Sai. $T=\\dfrac{\\ln 2}{\\lambda}=\\dfrac{\\ln 2}{5{,}086\\cdot 10^{-11}}\\approx 1{,}363\\cdot 10^{10}$ s $\\approx 432$ năm chứ không phải $4322$ năm.</p><p class=\"text-base leading-relaxed my-2\">c) Đúng. $N_0=\\dfrac{m}{M}N_A=\\dfrac{0{,}125\\cdot 10^{-6}}{241}\\cdot 6{,}02\\cdot 10^{23}\\approx 3{,}12\\cdot 10^{14}$ hạt, $H_0=\\lambda N_0\\approx 1{,}59\\cdot 10^4$ Bq.</p><p class=\"text-base leading-relaxed my-2\">d) Sai. Sau $10$ năm: $\\dfrac{H}{H_0}=2^{-10/432}\\approx 0{,}984$, tức độ phóng xạ chỉ giảm khoảng $1{,}6\\%$ chứ không phải $98{,}4\\%$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 672712,
+  "grade": "12",
+  "topic_name": "Định luật phóng xạ và chu kì bán rã",
+  "qtype": "true_false",
+  "figure_not_needed": false,
+  "question": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật phóng xạ và chu kì bán rã",
+   "question": "Nguồn phóng xạ α americium  ${}_{95}^{241}Am$  có hằng số phóng xạ 5,081.10<sup>−11</sup> (1/s) được đặt giữa hai bản kim loại kết nối với một pin. Các hạt α phóng ra làm ion hóa không khí giữa hai bản kim loại, cho phép một dòng điện nhỏ chạy giữa hai bản kim loại đó và chuông báo không kêu. Nếu có khói bay vào giữa hai bản kim loại, các ion trong này sẽ kết hợp với những phân tử khói và dịch chuyển chậm hơn làm cường độ dòng điện chạy giữa hai bản kim loại giảm đi. Khi dòng điện giảm tới mức nhất định thì cảm biến báo khói sẽ gửi tín hiệu kích hoạt chuông báo cháy.",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Tia α phát ra từ nguồn phóng xạ bị lệch về phía bản kim loại nhiễm điện dương.",
+     "answer": false
+    },
+    {
+     "text": "Chu kì bán rã của americium  ${}_{95}^{241}Am$  là 1,58.10<sup>5</sup> ngày.",
+     "answer": true
+    },
+    {
+     "text": "Độ phóng xạ của nguồn americium  ${}_{95}^{241}Am$  có khối lượng 0,125 μg là 25,7 kBq.",
+     "answer": false
+    },
+    {
+     "text": "Sau khi sử dụng 15 năm, độ phóng xạ của nguồn americium  ${}_{95}^{241}Am$  trong cảm biến giảm còn 3,47% so với độ phóng xạ ban đâu lúc mới mua.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) Sai. Tia α mang điện dương nên bị lệch về phía bản âm, chứ không phải bản dương.</p><p class=\"text-base leading-relaxed my-2\">b) Đúng. $T=\\frac{\\ln 2}{\\lambda}=\\frac{0{,}693}{5{,}081\\cdot 10^{-11}}\\approx 1{,}364\\cdot 10^{10}\\ \\text{s}\\approx 1{,}58\\cdot 10^{5}$ ngày.</p><p class=\"text-base leading-relaxed my-2\">c) Sai. $N_0=\\frac{0{,}125\\cdot 10^{-6}}{241}\\cdot 6{,}02\\cdot 10^{23}\\approx 3{,}12\\cdot 10^{17}$ hạt; $H_0=\\lambda N_0\\approx 5{,}081\\cdot 10^{-11}\\cdot 3{,}12\\cdot 10^{17}\\approx 1{,}59\\cdot 10^{7}\\ \\text{Bq}\\approx 15{,}9\\ \\text{MBq}$, chứ không phải 25,7 kBq.</p><p class=\"text-base leading-relaxed my-2\">d) Sai. $\\frac{H}{H_0}=e^{-\\lambda t}$ với $t=15$ năm $\\approx 4{,}73\\cdot 10^8\\ \\text{s}$: $\\lambda t\\approx 0{,}024$, $\\frac{H}{H_0}\\approx 97{,}6\\%$, chứ không phải 3,47%.</p>",
+   "difficultySource": "ai"
+  }
+ }
+]

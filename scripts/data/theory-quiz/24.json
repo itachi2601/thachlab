@@ -329,10 +329,6 @@
    "question": "Một con lắc lò xo nằm ngang dao động điều hoà, bỏ qua ma sát, mốc thế năng tại VTCB. Xét lúc vật đang đi từ VTCB ra biên.",
    "statements": [
     {
-     "text": "Thế năng của vật đang tăng.",
-     "answer": true
-    },
-    {
      "text": "Động năng của vật đang tăng.",
      "answer": false
     },
@@ -341,15 +337,19 @@
      "answer": false
     },
     {
+     "text": "Thế năng của vật đang tăng.",
+     "answer": true
+    },
+    {
      "text": "Khi vật tới biên, vận tốc bằng không nên động năng bằng không.",
      "answer": true
     }
    ],
    "explanation": "Từ VTCB ra biên, $|x|$ tăng nên $E_t$ tăng, $E_d$ giảm; tổng $W$ không đổi. Ở biên $v=0$ nên $E_d=0$.",
    "distractorNotes": {
-    "0": "$E_t=\\frac{1}{2}kx^2$ tăng khi $|x|$ tăng lúc ra biên, nên không thể coi là đang giảm.",
-    "1": "Vật chậm dần khi ra biên; động năng và thế năng không bao giờ cùng tăng.",
-    "2": "Bỏ qua ma sát thì cơ năng không đổi; chỉ có động năng chuyển dần thành thế năng.",
+    "0": "Vật chậm dần khi ra biên; động năng và thế năng không bao giờ cùng tăng.",
+    "1": "Bỏ qua ma sát thì cơ năng không đổi; chỉ có động năng chuyển dần thành thế năng.",
+    "2": "$E_t=\\frac{1}{2}kx^2$ tăng khi $|x|$ tăng lúc ra biên, nên không thể coi là đang giảm.",
     "3": "Ở biên vật đổi chiều, $v=0$ nên $\\frac{1}{2}mv^2=0$, không thể coi là sai."
    }
   },
@@ -364,28 +364,28 @@
    "question": "Một vật dao động điều hoà với tần số $f$, bỏ qua ma sát. Xét sự biến thiên theo thời gian của thế năng $E_t$ và động năng $E_d$.",
    "statements": [
     {
-     "text": "$E_t$ và $E_d$ biến thiên tuần hoàn với tần số $2f$.",
-     "answer": true
-    },
-    {
      "text": "$E_t$ và $E_d$ biến thiên cùng pha với nhau.",
      "answer": false
     },
     {
-     "text": "Có những khoảng thời gian $E_t$ và $E_d$ cùng tăng.",
-     "answer": false
+     "text": "$E_t$ và $E_d$ biến thiên tuần hoàn với tần số $2f$.",
+     "answer": true
     },
     {
      "text": "Tổng $E_t+E_d$ không đổi theo thời gian.",
      "answer": true
+    },
+    {
+     "text": "Có những khoảng thời gian $E_t$ và $E_d$ cùng tăng.",
+     "answer": false
     }
    ],
    "explanation": "Năng lượng có tần số góc $2\\omega$, tần số $2f$, và ngược pha nhau nên không bao giờ cùng tăng; tổng là cơ năng không đổi.",
    "distractorNotes": {
-    "0": "Thế năng cực đại ở cả hai biên trong một chu kì nên tần số năng lượng là $2f$, không thể coi là sai.",
-    "1": "Dấu trước $\\cos2\\alpha$ trong hai biểu thức ngược nhau nên chúng ngược pha, không cùng pha.",
-    "2": "Tổng hai đại lượng không đổi nên một cái tăng thì cái kia buộc phải giảm.",
-    "3": "Bỏ qua ma sát thì cơ năng bảo toàn, đồ thị $W(t)$ nằm ngang, không thể coi là sai."
+    "0": "Dấu trước $\\cos2\\alpha$ trong hai biểu thức ngược nhau nên chúng ngược pha, không cùng pha.",
+    "1": "Thế năng cực đại ở cả hai biên trong một chu kì nên tần số năng lượng là $2f$, không thể coi là sai.",
+    "2": "Bỏ qua ma sát thì cơ năng bảo toàn, đồ thị $W(t)$ nằm ngang, không thể coi là sai.",
+    "3": "Tổng hai đại lượng không đổi nên một cái tăng thì cái kia buộc phải giảm."
    }
   },
   {
@@ -403,24 +403,24 @@
      "answer": true
     },
     {
-     "text": "$E_d=\\frac{1}{2}m\\omega^2A^2\\sin^2(\\omega t+\\varphi)$.",
-     "answer": true
+     "text": "Động năng cực đại bằng $\\frac{1}{2}m\\omega A$.",
+     "answer": false
     },
     {
      "text": "$E_d=\\frac{1}{2}k(A^2+x^2)$.",
      "answer": false
     },
     {
-     "text": "Động năng cực đại bằng $\\frac{1}{2}m\\omega A$.",
-     "answer": false
+     "text": "$E_d=\\frac{1}{2}m\\omega^2A^2\\sin^2(\\omega t+\\varphi)$.",
+     "answer": true
     }
    ],
    "explanation": "$E_d=\\frac{1}{2}mv^2$ với $v=-\\omega A\\sin(\\omega t+\\varphi)$; đổi theo $x$ được $\\frac{1}{2}k(A^2-x^2)$; $E_{d\\,max}=\\frac{1}{2}m\\omega^2A^2$.",
    "distractorNotes": {
     "0": "Đây chính là định nghĩa động năng của vật, không thể coi là sai.",
-    "1": "Thay $v=-\\omega A\\sin(\\omega t+\\varphi)$ rồi bình phương làm mất dấu trừ, ra đúng biểu thức này.",
+    "1": "Thiếu bình phương của $\\omega$ và $A$, vì $E_{d\\,max}=\\frac{1}{2}mv_{max}^2$ với $v_{max}=\\omega A$.",
     "2": "Sai dấu: động năng giảm khi $|x|$ tăng nên phải là $A^2-x^2$, không phải cộng.",
-    "3": "Thiếu bình phương của $\\omega$ và $A$, vì $E_{d\\,max}=\\frac{1}{2}mv_{max}^2$ với $v_{max}=\\omega A$."
+    "3": "Thay $v=-\\omega A\\sin(\\omega t+\\varphi)$ rồi bình phương làm mất dấu trừ, ra đúng biểu thức này."
    }
   },
   {
@@ -434,10 +434,6 @@
    "question": "Lần lượt gắn hai vật có khối lượng khác nhau vào cùng một lò xo nằm ngang, kéo cùng biên độ $A$ rồi thả nhẹ, bỏ qua ma sát.",
    "statements": [
     {
-     "text": "Cơ năng của hai con lắc bằng nhau.",
-     "answer": true
-    },
-    {
      "text": "Con lắc có vật nặng hơn dao động với chu kì lớn hơn.",
      "answer": true
     },
@@ -446,15 +442,19 @@
      "answer": false
     },
     {
+     "text": "Cơ năng của hai con lắc bằng nhau.",
+     "answer": true
+    },
+    {
      "text": "Vì $W=\\frac{1}{2}m\\omega^2A^2$ có chứa $m$ nên vật nặng hơn có cơ năng lớn hơn.",
      "answer": false
     }
    ],
    "explanation": "$W=\\frac{1}{2}kA^2$ không phụ thuộc $m$; $T=2\\pi\\sqrt{m/k}$ tăng theo $m$; $\\omega$ giảm nên $v_{max}=\\omega A$ giảm.",
    "distractorNotes": {
-    "0": "Cùng lò xo và cùng biên độ thì $\\frac{1}{2}kA^2$ như nhau, không thể khác nhau.",
-    "1": "$T=2\\pi\\sqrt{m/k}$ tăng khi $m$ tăng, nên không thể coi vật nặng có chu kì nhỏ hơn hay bằng.",
-    "2": "Vật nặng có $\\omega=\\sqrt{k/m}$ nhỏ hơn nên $v_{max}=\\omega A$ nhỏ hơn, không lớn hơn.",
+    "0": "$T=2\\pi\\sqrt{m/k}$ tăng khi $m$ tăng, nên không thể coi vật nặng có chu kì nhỏ hơn hay bằng.",
+    "1": "Vật nặng có $\\omega=\\sqrt{k/m}$ nhỏ hơn nên $v_{max}=\\omega A$ nhỏ hơn, không lớn hơn.",
+    "2": "Cùng lò xo và cùng biên độ thì $\\frac{1}{2}kA^2$ như nhau, không thể khác nhau.",
     "3": "Quên $\\omega^2=k/m$ nên $m\\omega^2=k$, khối lượng bị triệt khỏi biểu thức cơ năng."
    }
   },
@@ -469,10 +469,6 @@
    "question": "Một vật dao động điều hoà với biên độ $A$, chu kì $T$, mốc thế năng tại VTCB. Xét các vị trí đặc biệt trong một chu kì.",
    "statements": [
     {
-     "text": "Trong một chu kì, động năng bằng thế năng 4 lần.",
-     "answer": true
-    },
-    {
      "text": "Trong một chu kì, động năng đạt cực đại 2 lần.",
      "answer": true
     },
@@ -481,15 +477,19 @@
      "answer": false
     },
     {
+     "text": "Trong một chu kì, động năng bằng thế năng 4 lần.",
+     "answer": true
+    },
+    {
      "text": "Tại $x=\\pm A/2$, động năng bằng ba lần thế năng.",
      "answer": true
     }
    ],
    "explanation": "$E_d=E_t$ tại $\\pm A/\\sqrt{2}$, mỗi li độ qua 2 lần nên 4 lần; $E_d$ cực đại khi qua VTCB, 2 lần; tại $\\pm A/2$ thì $E_d=3E_t$.",
    "distractorNotes": {
-    "0": "Có hai li độ $\\pm A/\\sqrt{2}$, mỗi li độ vật đi qua hai lần nên tổng là 4 lần.",
-    "1": "Mỗi chu kì vật qua VTCB hai lần, mỗi lần động năng cực đại, không thể coi là sai.",
-    "2": "Lẫn $A/2$ với $A/\\sqrt{2}$; tại $x=A/2$ thì $E_t=W/4$, chưa bằng nửa cơ năng.",
+    "0": "Mỗi chu kì vật qua VTCB hai lần, mỗi lần động năng cực đại, không thể coi là sai.",
+    "1": "Lẫn $A/2$ với $A/\\sqrt{2}$; tại $x=A/2$ thì $E_t=W/4$, chưa bằng nửa cơ năng.",
+    "2": "Có hai li độ $\\pm A/\\sqrt{2}$, mỗi li độ vật đi qua hai lần nên tổng là 4 lần.",
     "3": "$E_t/W=(1/2)^2=1/4$ nên $E_d=3W/4=3E_t$, không thể coi là sai."
    }
   },
@@ -504,28 +504,28 @@
    "question": "Một con lắc lò xo nằm ngang có độ cứng $k$ (N/m). Kéo vật lệch khỏi VTCB một đoạn rồi thả nhẹ, bỏ qua ma sát.",
    "statements": [
     {
-     "text": "Biên độ dao động bằng đoạn kéo lệch ban đầu.",
-     "answer": true
-    },
-    {
-     "text": "Để $W=\\frac{1}{2}kA^2$ ra đơn vị jun, biên độ phải đổi sang mét.",
-     "answer": true
-    },
-    {
      "text": "Kéo lệch xa hơn thì chu kì dao động lớn hơn.",
      "answer": false
     },
     {
      "text": "Tốc độ cực đại của vật tỉ lệ với bình phương biên độ.",
      "answer": false
+    },
+    {
+     "text": "Biên độ dao động bằng đoạn kéo lệch ban đầu.",
+     "answer": true
+    },
+    {
+     "text": "Để $W=\\frac{1}{2}kA^2$ ra đơn vị jun, biên độ phải đổi sang mét.",
+     "answer": true
     }
    ],
    "explanation": "Thả nhẹ tại li độ kéo nên đó là biên độ; $k$ tính theo N/m thì $A$ phải theo m; chu kì không phụ thuộc $A$; $v_{max}=\\omega A$ tỉ lệ bậc nhất với $A$.",
    "distractorNotes": {
-    "0": "Thả nhẹ nghĩa là $v=0$ tại vị trí kéo, nên đó chính là biên, không thể coi là sai.",
-    "1": "$k$ có đơn vị N/m nên phải dùng $A$ theo mét thì $\\frac{1}{2}kA^2$ mới ra jun.",
-    "2": "Chu kì chỉ phụ thuộc $m$ và $k$, không phụ thuộc biên độ hay cách kích thích.",
-    "3": "Lẫn với cơ năng tỉ lệ $A^2$; tốc độ cực đại $\\omega A$ chỉ tỉ lệ bậc nhất với $A$."
+    "0": "Chu kì chỉ phụ thuộc $m$ và $k$, không phụ thuộc biên độ hay cách kích thích.",
+    "1": "Lẫn với cơ năng tỉ lệ $A^2$; tốc độ cực đại $\\omega A$ chỉ tỉ lệ bậc nhất với $A$.",
+    "2": "Thả nhẹ nghĩa là $v=0$ tại vị trí kéo, nên đó chính là biên, không thể coi là sai.",
+    "3": "$k$ có đơn vị N/m nên phải dùng $A$ theo mét thì $\\frac{1}{2}kA^2$ mới ra jun."
    }
   }
  ]

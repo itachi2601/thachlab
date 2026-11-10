@@ -172,23 +172,23 @@
      "answer": true
     },
     {
-     "text": "Ở mọi máy phát, phần cảm luôn là rô-to còn phần ứng luôn là stato.",
-     "answer": false
-    },
-    {
      "text": "Máy phát này biến đổi cơ năng thành điện năng.",
      "answer": true
+    },
+    {
+     "text": "Ở mọi máy phát, phần cảm luôn là rô-to còn phần ứng luôn là stato.",
+     "answer": false
     },
     {
      "text": "Máy này phải dùng vành khuyên và chổi quét để lấy điện ra mạch ngoài.",
      "answer": false
     }
    ],
-   "explanation": "Tên phần cảm, phần ứng dựa vào nhiệm vụ, mỗi phần đều có thể là rô-to hoặc stato nên ý b sai. Cuộn dây đứng yên thì lấy điện trực tiếp, không cần vành khuyên nên ý d sai.",
+   "explanation": "Tên phần cảm, phần ứng dựa vào nhiệm vụ, mỗi phần đều có thể là rô-to hoặc stato nên ý c sai. Cuộn dây đứng yên thì lấy điện trực tiếp, không cần vành khuyên nên ý d sai.",
    "distractorNotes": {
     "0": "Phần ứng được gọi theo nhiệm vụ sinh suất điện động, và ở máy này cuộn dây làm đúng nhiệm vụ đó.",
-    "1": "Khái quát sai từ một máy: tên gọi theo nhiệm vụ, có máy cho khung dây phần ứng quay làm rô-to.",
-    "2": "Máy phát nhận cơ năng để làm quay rô-to rồi chuyển thành điện năng, nên phát biểu không thể sai.",
+    "1": "Máy phát nhận cơ năng để làm quay rô-to rồi chuyển thành điện năng, nên phát biểu không thể sai.",
+    "2": "Khái quát sai từ một máy: tên gọi theo nhiệm vụ, có máy cho khung dây phần ứng quay làm rô-to.",
     "3": "Vành khuyên chỉ cần khi phần ứng quay; ở máy này cuộn dây đứng yên nên lấy điện trực tiếp."
    }
   },
@@ -203,11 +203,11 @@
    "question": "Một học sinh tự quấn máy biến áp. Cuộn sơ cấp 200 vòng nối nguồn xoay chiều 12 V. Học sinh thay đổi số vòng cuộn thứ cấp rồi đo $U_2$ bằng vôn kế xoay chiều. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Tăng số vòng cuộn thứ cấp thì $U_2$ đo được tăng.",
-     "answer": true
+     "text": "Thay bằng nguồn một chiều 12 V không đổi thì vôn kế vẫn chỉ giá trị $U_2$ như cũ.",
+     "answer": false
     },
     {
-     "text": "$U_2$ đo được hơi thấp hơn giá trị tính toán, một phần do từ thông rò và điện trở cuộn dây.",
+     "text": "Tăng số vòng cuộn thứ cấp thì $U_2$ đo được tăng.",
      "answer": true
     },
     {
@@ -215,16 +215,16 @@
      "answer": false
     },
     {
-     "text": "Thay bằng nguồn một chiều 12 V không đổi thì vôn kế vẫn chỉ giá trị $U_2$ như cũ.",
-     "answer": false
+     "text": "$U_2$ đo được hơi thấp hơn giá trị tính toán, một phần do từ thông rò và điện trở cuộn dây.",
+     "answer": true
     }
    ],
    "explanation": "Máy biến áp chỉ đổi điện áp, không sinh thêm điện năng: $U$ tăng thì $I$ giảm. Với nguồn một chiều không đổi, từ thông trong lõi không biến thiên nên cuộn thứ cấp không có suất điện động.",
    "distractorNotes": {
-    "0": "$U_2 = U_1 N_2/N_1$ tỉ lệ thuận với $N_2$, nên tăng số vòng thứ cấp thì $U_2$ chắc chắn tăng.",
-    "1": "$U_2$ đo được thấp hơn lí thuyết là đúng do từ thông rò và sụt áp trên điện trở cuộn dây.",
+    "0": "Nguồn một chiều không đổi cho từ thông không biến thiên, nên cuộn thứ cấp không có suất điện động và vôn kế chỉ 0.",
+    "1": "$U_2 = U_1 N_2/N_1$ tỉ lệ thuận với $N_2$, nên tăng số vòng thứ cấp thì $U_2$ chắc chắn tăng.",
     "2": "Nhầm tăng điện áp với tăng năng lượng: $U$ tăng thì $I$ giảm tương ứng, công suất ra không vượt $P_1$.",
-    "3": "Nguồn một chiều không đổi cho từ thông không biến thiên, nên cuộn thứ cấp không có suất điện động và vôn kế chỉ 0."
+    "3": "$U_2$ đo được thấp hơn lí thuyết là đúng do từ thông rò và sụt áp trên điện trở cuộn dây."
    }
   },
   {
@@ -238,11 +238,7 @@
    "question": "Thí nghiệm: ba cuộn dây giống nhau quấn lệch nhau $120^\\circ$ trên một vòng nhựa, mỗi cuộn nối với một đèn LED. Cho nam châm quay đều, chậm ở tâm vòng. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Ba đèn lần lượt sáng mạnh nhất vì ba suất điện động lệch pha nhau một phần ba chu kì.",
-     "answer": true
-    },
-    {
-     "text": "Ba suất điện động có tần số khác nhau vì ba cuộn dây đặt ở ba vị trí khác nhau.",
+     "text": "Ba suất điện động có biên độ khác nhau, cuộn nào có suất điện động trước thì biên độ lớn nhất.",
      "answer": false
     },
     {
@@ -250,16 +246,20 @@
      "answer": true
     },
     {
-     "text": "Ba suất điện động có biên độ khác nhau, cuộn nào có suất điện động trước thì biên độ lớn nhất.",
+     "text": "Ba suất điện động có tần số khác nhau vì ba cuộn dây đặt ở ba vị trí khác nhau.",
      "answer": false
+    },
+    {
+     "text": "Ba đèn lần lượt sáng mạnh nhất vì ba suất điện động lệch pha nhau một phần ba chu kì.",
+     "answer": true
     }
    ],
-   "explanation": "Ba cuộn giống nhau và cùng chịu một rô-to quay đều, nên ba suất điện động cùng tần số và cùng biên độ, chỉ lệch pha $\\frac{2\\pi}{3}$. Vì vậy ý b và ý d sai.",
+   "explanation": "Ba cuộn giống nhau và cùng chịu một rô-to quay đều, nên ba suất điện động cùng tần số và cùng biên độ, chỉ lệch pha $\\frac{2\\pi}{3}$. Vì vậy ý c và ý a sai.",
    "distractorNotes": {
-    "0": "Ba cuộn lệch $120^\\circ$ nên từ thông lần lượt cực đại qua từng cuộn, cách nhau một phần ba chu kì; phát biểu đúng.",
-    "1": "Nhầm lệch vị trí với khác tần số: cùng một nam châm quay đều nên mọi cuộn có cùng tần số.",
-    "2": "Mô hình có đúng cấu tạo máy phát ba pha: ba cuộn đứng yên lệch $120^\\circ$, nam châm quay ở giữa.",
-    "3": "Nhầm thứ tự pha với biên độ: ba cuộn giống nhau, cùng một nam châm nên biên độ bằng nhau, chỉ lệch pha."
+    "0": "Nhầm thứ tự pha với biên độ: ba cuộn giống nhau, cùng một nam châm nên biên độ bằng nhau, chỉ lệch pha.",
+    "1": "Mô hình có đúng cấu tạo máy phát ba pha: ba cuộn đứng yên lệch $120^\\circ$, nam châm quay ở giữa.",
+    "2": "Nhầm lệch vị trí với khác tần số: cùng một nam châm quay đều nên mọi cuộn có cùng tần số.",
+    "3": "Ba cuộn lệch $120^\\circ$ nên từ thông lần lượt cực đại qua từng cuộn, cách nhau một phần ba chu kì; phát biểu đúng."
    }
   },
   {
@@ -434,27 +434,27 @@
    "question": "Nối một máy phát mini có rô-to hai cặp cực với tần số kế. Quay đều rô-to với tốc độ $n$ từ 5 đến 25 vòng/s và ghi tần số $f$ đo được. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Tỉ số $f/n$ đo được xấp xỉ bằng 2, đúng bằng số cặp cực $p$.",
-     "answer": true
+     "text": "Tăng tốc độ quay lên gấp đôi thì tần số đo được giảm một nửa.",
+     "answer": false
     },
     {
      "text": "Nếu tốc độ quay cho theo vòng/phút thì tần số tính bằng $f = \\frac{np}{60}$.",
      "answer": true
     },
     {
-     "text": "Tăng tốc độ quay lên gấp đôi thì tần số đo được giảm một nửa.",
-     "answer": false
+     "text": "Tỉ số $f/n$ đo được xấp xỉ bằng 2, đúng bằng số cặp cực $p$.",
+     "answer": true
     },
     {
      "text": "Đại lượng $p$ trong $f = np$ là tổng số cực của nam châm, ở đây $p = 4$.",
      "answer": false
     }
    ],
-   "explanation": "Theo $f = np$, $f$ tỉ lệ thuận với $n$ nên ý c sai. $p$ là số cặp cực ($p = 2$), không phải số cực, nên ý d sai.",
+   "explanation": "Theo $f = np$, $f$ tỉ lệ thuận với $n$ nên ý a sai. $p$ là số cặp cực ($p = 2$), không phải số cực, nên ý d sai.",
    "distractorNotes": {
-    "0": "Tần số tỉ lệ thuận với tốc độ quay, $f/n = p = 2$; độ lệch nhỏ khi đo chỉ là sai số, nên phát biểu đúng.",
+    "0": "Đảo tỉ lệ: $f = np$ tỉ lệ thuận với $n$, quay nhanh gấp đôi thì tần số gấp đôi.",
     "1": "Công thức $f = np$ cần $n$ tính theo vòng/s, nên với vòng/phút phải chia 60; phát biểu đúng.",
-    "2": "Đảo tỉ lệ: $f = np$ tỉ lệ thuận với $n$, quay nhanh gấp đôi thì tần số gấp đôi.",
+    "2": "Tần số tỉ lệ thuận với tốc độ quay, $f/n = p = 2$; độ lệch nhỏ khi đo chỉ là sai số, nên phát biểu đúng.",
     "3": "Nhầm số cực với số cặp cực: rô-to hai cặp cực có $p = 2$."
    }
   },

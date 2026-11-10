@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
 }
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
@@ -130,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -140,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -149,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -162,15 +186,117 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +310,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,30 +319,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -263,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -274,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -321,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -376,6 +528,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -436,6 +626,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -557,40 +756,399 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Chỉ ra <strong>cảm ứng điện từ</strong> trong đàn ghi ta điện, sạc không dây, bếp từ.</li>
 <li>Phát biểu <strong>dòng điện Foucault</strong> và hai tác dụng: lực hãm, toả nhiệt Joule.</li>
-<li>Vận dụng $e_c = -N\dfrac{\Delta\Phi}{\Delta t}$ và $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$ để giải thích, tính toán.</li>
+<li>Dùng $e_c = -N\Delta\Phi/\Delta t$ để giải thích, $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$ để tính toán.</li>
 </ul>
-<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. 12 phút · 7 câu tự kiểm tra.</p>
+<p>Cuối bài, em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 17 phút · 7 câu tự kiểm tra.</p>
 </div>
 
-<h3>I. Mở bài: mặt bếp lạnh, đáy nồi bỏng</h3>
+<h3>I. Mở bài: bếp không lửa, nồi vẫn sôi</h3>
 
-<p>Bếp từ: đặt nồi gang lên, bật công tắc, bốn phút sau nước đã sôi. Nhưng vùng kính ngay cạnh nồi chỉ hơi ấm, mảnh giấy trên mặt bếp không bén lửa.</p>
+<p>Bếp từ không lửa, không mâm nóng đỏ, vậy mà nồi gang chừng bốn phút đã sôi.</p>
 
-<p>Chiếc điện thoại đặt lên đế sạc: không dây nào nối vào máy, pin vẫn đầy. Vậy <strong>năng lượng đi từ bộ phận này sang vật kia bằng cách nào?</strong></p>
+<p>Điện thoại đặt lên đế sạc: không dây nào nối vào máy, pin vẫn đầy. Vậy <strong>năng lượng truyền sang bằng cách nào?</strong></p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Mặt cắt bếp từ: cuộn dây dưới mặt kính tạo từ trường biến thiên xuyên vào đáy nồi gang, sinh dòng Foucault và toả nhiệt trong đáy nồi"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="20" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Bếp từ: nhiệt sinh ngay trong đáy nồi</text><rect x="130" y="50" width="180" height="54" rx="0" fill="rgba(56,189,248,.18)" stroke="none" stroke-width="0"/><text x="140" y="76" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="start">nước</text><rect x="120" y="44" width="10" height="66" rx="3" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2"/><rect x="310" y="44" width="10" height="66" rx="3" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2"/><rect x="120" y="104" width="200" height="16" rx="6" fill="rgba(251,146,60,.30)" stroke="#fb923c" stroke-width="2"/><text x="326" y="116" fill="#fb923c" font-size="11" font-weight="600" text-anchor="start">đáy nồi gang</text><rect x="60" y="124" width="320" height="9" rx="3" fill="rgba(148,163,184,.28)" stroke="currentColor" stroke-width="1.2"/><polyline points="160,146 174,158 188,146 202,158 216,146 230,158 244,146 258,158 272,146 286,158" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="296" y="156" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">cuộn dây</text><text x="296" y="169" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">dòng xoay chiều</text><line x1="170" y1="142" x2="170" y2="102" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#f1-b)"/><line x1="220" y1="142" x2="220" y2="102" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#f1-b)"/><line x1="270" y1="142" x2="270" y2="102" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="5 4" marker-end="url(#f1-b)"/><text x="14" y="150" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">mặt kính (cách điện)</text><ellipse cx="170" cy="112" rx="12" ry="7" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><line x1="162" y1="116" x2="177" y2="116" stroke="#34d399" stroke-width="1.8" marker-end="url(#f1-g)"/><ellipse cx="270" cy="112" rx="12" ry="7" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><line x1="262" y1="116" x2="277" y2="116" stroke="#34d399" stroke-width="1.8" marker-end="url(#f1-g)"/><line x1="205" y1="100" x2="205" y2="82" stroke="#f87171" stroke-width="2" marker-end="url(#f1-r)"/><line x1="250" y1="100" x2="250" y2="82" stroke="#f87171" stroke-width="2" marker-end="url(#f1-r)"/><text x="14" y="196" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="start">từ trường biến thiên xuyên qua mặt kính</text><text x="14" y="214" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">dòng Foucault sinh ra trong đáy nồi</text><text x="14" y="232" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">dòng đó toả nhiệt (Joule) làm nồi nóng lên</text></svg><figcaption>Hình 1. Từ trường biến thiên của cuộn dây xuyên qua mặt kính vào đáy nồi gang, sinh dòng Foucault toả nhiệt ngay trong đáy nồi.</figcaption></figure>
-
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Trong bếp từ, cái gì nóng lên <em>trước tiên</em>?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl126-q1" id="tl126-q1a" checked><label for="tl126-q1a" class="tl-opt tl-no">A. Mặt kính, rồi dẫn nhiệt sang đáy nồi</label>
-<input type="radio" name="tl126-q1" id="tl126-q1b"><label for="tl126-q1b" class="tl-opt tl-ok">B. Đáy nồi, vì dòng cảm ứng toả nhiệt ngay trong kim loại</label>
-<input type="radio" name="tl126-q1" id="tl126-q1c"><label for="tl126-q1c" class="tl-opt tl-no">C. Đáy nồi, vì bị hút rồi cọ xát với mặt kính</label>
-<input type="radio" name="tl126-q1" id="tl126-q1d"><label for="tl126-q1d" class="tl-opt tl-no">D. Cuộn dây, rồi chiếu tia hồng ngoại vào nồi</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bếp từ không có mâm nóng nào để truyền nhiệt. Cuộn dây dưới mặt kính tạo từ trường biến thiên; từ trường xuyên qua đáy nồi gang và sinh dòng điện cảm ứng ngay trong đáy nồi — chính dòng đó toả nhiệt làm nồi nóng lên.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Để ý hai chi tiết trong bài: vùng kính cạnh nồi chỉ hơi ấm, mảnh giấy không cháy — vậy mặt kính đâu có nóng để truyền nhiệt. Còn nếu nồi nóng vì cọ xát thì nồi nhôm cũng phải nóng như nồi gang, thực tế không phải. Nghĩ lại theo hướng: từ trường biến thiên sinh dòng điện cảm ứng trong đáy nồi.</p></div>
+<input type="radio" name="tl126-q1" id="tl126-q1b"><label for="tl126-q1b" class="tl-opt tl-ok">B. Đáy nồi, do dòng cảm ứng toả nhiệt</label>
+<input type="radio" name="tl126-q1" id="tl126-q1c"><label for="tl126-q1c" class="tl-opt tl-no">C. Đáy nồi, do cọ xát với mặt kính</label>
+<input type="radio" name="tl126-q1" id="tl126-q1d"><label for="tl126-q1d" class="tl-opt tl-no">D. Cuộn dây, rồi chiếu hồng ngoại vào nồi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Bếp từ không có mâm nóng nào để truyền nhiệt. Cuộn dây dưới mặt kính tạo từ trường biến thiên; từ trường xuyên qua mặt kính vào đáy nồi gang và sinh dòng điện cảm ứng ngay trong đáy nồi — chính dòng đó toả nhiệt làm nồi nóng lên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Bếp từ không có mâm nóng nào, còn mặt kính là chất cách điện. Nếu nồi nóng vì cọ xát thì nồi nhôm cũng phải nóng như nồi gang, thực tế không phải. Phương án nói cuộn dây chiếu tia hồng ngoại là nhầm với bếp hồng ngoại — loại bếp đó mới nung nóng mặt kính trước rồi truyền nhiệt vào nồi. Nghĩ lại theo hướng: từ trường biến thiên sinh dòng điện cảm ứng trong đáy nồi.</p></div>
 </div>
+</div>
+
+<!--video:mo_bai-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thực tế: nồi nước sôi, tay sờ mặt kính</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/8SQyN0tOYw4?rel=0&start=6&end=96" title="nồi nước sôi, tay sờ mặt kính" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> nồi đang sôi, tay đặt lên đâu?</p>
 </div>
 
 <h3>II. Kiến thức</h3>
@@ -600,34 +1158,55 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <p><strong>🔑 Dây thép rung · Từ thông đổi · Dòng cùng tần số</strong></p>
 
 <ul>
-<li>Dây đàn thép nằm ngay trên nam châm nhỏ quấn cuộn dây — bộ cảm ứng.</li>
+<li>Dây thép nằm ngay trên nam châm có cuộn dây — bộ cảm ứng.</li>
 <li>Dây bị từ hoá; dây dao động làm từ thông qua cuộn dây biến thiên.</li>
-<li>Suất điện động cảm ứng trong cuộn dây: $e_c = -N\dfrac{\Delta\Phi}{\Delta t}$.</li>
-<li>Dòng cảm ứng rất nhỏ, phải qua máy tăng âm rồi ra loa.</li>
+<li>Suất điện động cảm ứng trong cuộn dây:</li>
+</ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Suất điện động cảm ứng trong cuộn dây</p>
+<p>$$e_c = -N\dfrac{\Delta\Phi}{\Delta t}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$e_c$</span><span>suất điện động cảm ứng (V)</span></li>
+<li><span class="tl-sym">$N$</span><span>số vòng dây (không đơn vị)</span></li>
+<li><span class="tl-sym">$\Delta\Phi$</span><span>độ biến thiên từ thông qua một vòng dây (Wb)</span></li>
+<li><span class="tl-sym">$\Delta t$</span><span>khoảng thời gian (s)</span></li>
+</ul>
+</div>
+<ul>
+<li>Dòng cảm ứng rất nhỏ, phải qua máy tăng âm ra loa.</li>
 </ul>
 
-<p>Tần số dòng cảm ứng <strong>đúng bằng tần số dao động của dây</strong> nên loa phát đúng nốt vừa gảy; gảy mạnh thì tiếng to.</p>
-
-<div class="tl-box tl-box--exp" data-exp="tn-l12-ungdungcutu-01">
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-ungdungcutu-01">
 <p class="tl-label">🔬 Thí nghiệm: dây thép rung trên cuộn dây</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> căng dây thép 60 cm trên giá gỗ, đặt nam châm và cuộn dây 1 000 vòng sát dưới dây, nối vào điện kế nhạy; gảy rồi kéo căng dây.</li>
-<li><strong>Quan sát:</strong> kim rung đúng nhịp dây, đứng yên khi dây tắt; gảy mạnh kim lệch xa hơn.</li>
-<li><strong>Rút ra:</strong> dao động cơ đã thành dòng cảm ứng <em>cùng tần số</em> — đúng nguyên lí bộ cảm ứng của đàn.</li>
+<li><strong>Làm:</strong> căng dây thép 60 cm trên giá gỗ, kẹp nam châm và cuộn dây 1 000 vòng sát dưới dây, nối điện kế nhạy; gảy dây, kéo căng thêm rồi gảy lại.</li>
+<li><strong>Quan sát:</strong> kim rung đúng nhịp dây, dây căng hơn thì kim rung nhanh hơn; kim đứng yên khi dây tắt; gảy mạnh kim lệch xa hơn.</li>
+<li><strong>Rút ra:</strong> dao động cơ đã thành dòng cảm ứng <em>cùng tần số</em>.</li>
 </ol>
 </div>
+<!--video:tn-l12-ungdungcutu-01-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật: cận cảnh dây đàn và pickup của đàn ghi ta điện</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/TvbfvmeILwo?rel=0&start=76&end=131" title="cận cảnh dây đàn và pickup của đàn ghi ta điện" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Sáu dây đàn nằm ngay trên sáu nam châm nhỏ có cuộn dây — dây rung thì cái gì biến đổi?</p>
+</div>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 200" role="img" aria-label="Sơ đồ đàn ghi ta điện: dây thép dao động trên nam châm và cuộn dây cảm ứng, dòng điện cảm ứng cùng tần số đi ra máy tăng âm và loa"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">Đàn ghi ta điện: dao động thành dòng điện</text><line x1="40" y1="52" x2="400" y2="52" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="140" y1="66" x2="140" y2="38" stroke="#f87171" stroke-width="1.8" marker-end="url(#f2-r)"/><line x1="158" y1="38" x2="158" y2="66" stroke="#f87171" stroke-width="1.8" marker-end="url(#f2-r)"/><text x="164" y="44" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">dây thép dao động</text><rect x="196" y="76" width="64" height="40" rx="6" fill="rgba(148,163,184,.12)" stroke="currentColor" stroke-width="2"/><ellipse cx="228" cy="96" rx="30" ry="15" fill="none" stroke="#f87171" stroke-width="1.6"/><ellipse cx="228" cy="96" rx="30" ry="21" fill="none" stroke="#f87171" stroke-width="1.6"/><rect x="206" y="96" width="44" height="14" rx="3" fill="rgba(248,113,113,.22)" stroke="#f87171" stroke-width="1.4"/><text x="214" y="107" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">N</text><text x="240" y="107" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="start">S</text><line x1="140" y1="116" x2="194" y2="100" stroke="currentColor" stroke-width="1" stroke-dasharray="4 3" opacity="0.8"/><text x="14" y="122" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">nam châm + cuộn dây</text><line x1="206" y1="74" x2="206" y2="58" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f2-b)"/><line x1="228" y1="74" x2="228" y2="58" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f2-b)"/><line x1="250" y1="74" x2="250" y2="58" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f2-b)"/><text x="14" y="100" fill="#38bdf8" font-size="11" font-weight="600" text-anchor="start">từ trường biến thiên</text><line x1="286" y1="96" x2="392" y2="96" stroke="#f87171" stroke-width="2.4" marker-end="url(#f2-r)"/><text x="290" y="86" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">dòng cảm ứng</text><text x="290" y="116" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">máy tăng âm → loa</text><polyline points="30,160 35,157 40,153 45,150 50,148 55,147 60,147 65,148 70,150 75,153 80,157 85,160 90,163 95,167 100,170 105,172 110,173 115,173 120,172 125,170 130,167 135,163 140,160 145,157 150,153 155,150 160,148 165,147 170,147 175,148 180,150 185,153 190,157 195,160 200,163 205,167 210,170 215,172 220,173 225,173 230,172 235,170 240,167 245,163 250,160" fill="none" stroke="#34d399" stroke-width="2.2"/><text x="258" y="166" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">ra loa: cùng tần số dây</text></svg><figcaption>Hình 2. Bộ cảm ứng: dây thép dao động trong từ trường của nam châm, cuộn dây cho dòng cảm ứng cùng tần số, đưa qua máy tăng âm rồi ra loa.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+
+
+
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 258" role="img" aria-label="Sơ đồ đàn ghi ta điện: nam châm trục dọc có một cực sát dây thép, cuộn dây quấn quanh nam châm, hai đầu cuộn nối ra máy tăng âm và loa; dây dao động làm từ thông qua cuộn biến thiên nên có dòng cảm ứng cùng tần số"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Đàn ghi ta điện: dao động thành dòng điện</text><line x1="30" y1="64" x2="250" y2="64" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="44" y1="76" x2="44" y2="50" stroke="#f87171" stroke-width="1.8"/><path d="M39.9,57.0 L44.0,50.0 L48.1,57.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60" y1="50" x2="60" y2="76" stroke="#f87171" stroke-width="1.8"/><path d="M64.1,69.0 L60.0,76.0 L55.9,69.0" fill="none" stroke="#f87171" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="268" y="56" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">dây thép dao động</text><rect x="130" y="92" width="40" height="30" rx="2" fill="rgba(248,113,113,.22)" stroke="#f87171" stroke-width="2"/><rect x="130" y="122" width="40" height="30" rx="2" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="2"/><text x="150" y="112" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">N</text><text x="150" y="144" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">S</text><ellipse cx="150" cy="118.5" rx="26" ry="2.8" fill="none" stroke="#f87171" stroke-width="2"/><ellipse cx="150" cy="123.0" rx="26" ry="2.8" fill="none" stroke="#f87171" stroke-width="2"/><ellipse cx="150" cy="127.5" rx="26" ry="2.8" fill="none" stroke="#f87171" stroke-width="2"/><path d="M138,92 C70,-30 20,200 130,148" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M118.3,145.2 L130.0,148.0 L121.8,156.7" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M162,92 C230,-30 280,200 170,148" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M178.2,156.7 L170.0,148.0 L181.7,145.2" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="150" y1="90" x2="150" y2="38" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M144.0,48.4 L150.0,38.0 L156.0,48.4" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="268" y="100" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">nam châm: trục dọc</text><text x="268" y="118" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cực N sát dây</text><text x="268" y="136" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">cuộn quanh nam châm</text><text x="268" y="80" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">từ trường qua dây</text><line x1="124" y1="127" x2="112" y2="127" stroke="#f87171" stroke-width="2" opacity="1"/><line x1="112" y1="127" x2="112" y2="196" stroke="#f87171" stroke-width="2" opacity="1"/><line x1="112" y1="196" x2="270" y2="196" stroke="#f87171" stroke-width="2" opacity="1"/><line x1="176" y1="118.5" x2="196" y2="118.5" stroke="#f87171" stroke-width="2" opacity="1"/><line x1="196" y1="118.5" x2="196" y2="178" stroke="#f87171" stroke-width="2" opacity="1"/><line x1="196" y1="178" x2="270" y2="178" stroke="#f87171" stroke-width="2" opacity="1"/><rect x="270" y="168" width="160" height="38" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><text x="350" y="192" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">máy tăng âm → loa</text><line x1="224" y1="178" x2="254" y2="178" stroke="#f87171" stroke-width="2.2"/><path d="M245.8,173.3 L254.0,178.0 L245.8,182.7" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="12" y="226" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">dây dao động: từ thông qua cuộn biến thiên</text><text x="12" y="244" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">cuộn dây cho dòng cảm ứng cùng tần số dây</text></svg><figcaption>Hình 2. Bộ cảm ứng: dây thép dao động trên nam châm, cuộn dây cho dòng cảm ứng cùng tần số ra loa.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Dây thép của đàn ghi ta điện dao động trên cuộn dây cảm ứng. Trong cuộn dây có gì?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl126-q2" id="tl126-q2a"><label for="tl126-q2a" class="tl-opt tl-no">A. Không có gì, vì cuộn dây đứng yên</label>
 <input type="radio" name="tl126-q2" id="tl126-q2b"><label for="tl126-q2b" class="tl-opt tl-ok">B. Dòng điện cảm ứng cùng tần số với dao động của dây</label>
 <input type="radio" name="tl126-q2" id="tl126-q2c"><label for="tl126-q2c" class="tl-opt tl-no">C. Dòng điện không đổi, vì dây luôn bị nam châm hút</label>
 <input type="radio" name="tl126-q2" id="tl126-q2d"><label for="tl126-q2d" class="tl-opt tl-no">D. Dòng điện chỉ có trong lúc dây chạm vào cuộn dây</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vật dẫn đứng yên vẫn có dòng cảm ứng, miễn là từ thông qua nó biến thiên. Dây thép dao động làm từ thông qua cuộn dây thay đổi liên tục, nên trong cuộn dây có dòng xoay chiều đúng bằng tần số dao động của dây. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vật dẫn đứng yên vẫn có dòng cảm ứng, miễn là từ thông qua nó biến thiên. Dây thép dao động làm từ thông qua cuộn dây thay đổi liên tục, nên trong cuộn dây có dòng xoay chiều đúng bằng tần số dao động của dây.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang buộc dòng cảm ứng vào chuyển động của <em>cuộn dây</em>, nhưng điều kiện là <em>từ thông biến thiên</em>. Ở đây dây thép dao động nên khoảng cách dây – cuộn dây đổi liên tục, từ thông qua cuộn dây đổi liên tục. Dây đàn không hề chạm vào cuộn dây mà vẫn có tín hiệu. Chọn lại nhé.</p></div>
 </div>
 </div>
@@ -637,18 +1216,39 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <p><strong>🔑 Hai cuộn rời · Ghép qua từ trường · Cần dòng biến thiên</strong></p>
 
 <ul>
-<li>Đế sạc có cuộn <strong>sơ cấp</strong> nối dòng xoay chiều; sau lưng điện thoại có cuộn <strong>thứ cấp</strong> nối pin. Hai cuộn không chạm nhau.</li>
-<li>Từ trường biến thiên của cuộn sơ cấp sinh suất điện động cảm ứng trong cuộn thứ cấp để nạp pin.</li>
-<li>Coi gần đúng máy biến áp lí tưởng: $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$.</li>
-<li>Không có lõi sắt chung nên từ thông rò nhiều, hiệu suất thấp hơn.</li>
+<li>Đế sạc có cuộn <strong>sơ cấp</strong> nối dòng xoay chiều; sau lưng điện thoại là cuộn <strong>thứ cấp</strong> nối pin. Hai cuộn không chạm nhau.</li>
+<li>Từ trường biến thiên của cuộn sơ cấp sinh suất điện động cảm ứng trong cuộn thứ cấp.</li>
+<li>Coi gần đúng máy biến áp lí tưởng:</li>
+</ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Máy biến áp lí tưởng</p>
+<p>$$\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$U_1,\ U_2$</span><span>điện áp hiệu dụng ở cuộn sơ cấp, thứ cấp (V)</span></li>
+<li><span class="tl-sym">$N_1,\ N_2$</span><span>số vòng dây của cuộn sơ cấp, thứ cấp (không đơn vị)</span></li>
+</ul>
+</div>
+<ul>
+<li>Không có lõi sắt chung nên nhiều từ thông rò (không qua cuộn thứ cấp), hiệu suất thấp hơn.</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 240" role="img" aria-label="Sạc không dây: hai cuộn dây rời nhau ghép qua từ trường, và đồ thị điện áp cuộn thứ cấp giảm dần khi tăng khoảng cách"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">a) Hai cuộn rời nhau</text><rect x="30" y="36" width="142" height="62" rx="8" fill="rgba(56,189,248,.12)" stroke="#38bdf8" stroke-width="2"/><text x="38" y="54" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">điện thoại</text><polyline points="46,84 55,93 64,84 73,93 82,84 91,93 100,84 109,93 118,84" fill="none" stroke="#f87171" stroke-width="2"/><text x="126" y="74" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">cuộn</text><text x="126" y="86" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">thứ cấp</text><rect x="30" y="150" width="142" height="26" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><polyline points="46,160 55,168 64,160 73,168 82,160 91,168 100,160 109,168 118,160" fill="none" stroke="#f87171" stroke-width="2"/><text x="30" y="192" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">đế sạc: cuộn sơ cấp</text><line x1="70" y1="148" x2="70" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f3-b)"/><line x1="100" y1="148" x2="100" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f3-b)"/><line x1="130" y1="148" x2="130" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#f3-b)"/><text x="12" y="222" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">~ xoay chiều → từ trường → dòng cảm ứng</text><text x="228" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">b) Điện áp giảm theo khoảng cách</text><line x1="280" y1="205" x2="280" y2="56" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="280" y1="205" x2="424" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="286" y="48" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">U (V)</text><text x="424" y="236" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">d (cm)</text><line x1="280" y1="66" x2="420" y2="66" stroke="#34d399" stroke-width="1.4" stroke-dasharray="6 5" opacity="1"/><text x="302" y="62" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">lí tưởng 9,0 V</text><circle cx="280" cy="76" r="4" fill="#34d399"/><text x="280" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">0</text><circle cx="315" cy="96" r="4" fill="#34d399"/><text x="315" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">1</text><circle cx="350" cy="114" r="4" fill="#34d399"/><text x="350" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">2</text><circle cx="385" cy="131" r="4" fill="#34d399"/><text x="385" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">3</text><circle cx="420" cy="145" r="4" fill="#34d399"/><text x="420" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">4</text><polyline points="280,76 315,96 350,114 385,131 420,145" fill="none" stroke="#34d399" stroke-width="2.2"/></svg><figcaption>Hình 3. Sạc không dây là máy biến áp không lõi: hai cuộn rời ghép qua từ trường. Đồ thị vẽ số đo ở mục II.2, luôn thấp hơn đường lí tưởng 9,0 V.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 240" role="img" aria-label="Sạc không dây: hai cuộn dây rời nhau ghép qua từ trường, và đồ thị điện áp cuộn thứ cấp giảm dần khi tăng khoảng cách"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">a) Hai cuộn rời nhau</text><rect x="30" y="36" width="142" height="62" rx="8" fill="rgba(56,189,248,.12)" stroke="#38bdf8" stroke-width="2"/><text x="38" y="54" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">điện thoại</text><polyline points="46,84 55,93 64,84 73,93 82,84 91,93 100,84 109,93 118,84" fill="none" stroke="#f87171" stroke-width="2"/><text x="126" y="74" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">cuộn</text><text x="126" y="86" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">thứ cấp</text><rect x="30" y="150" width="142" height="26" rx="6" fill="rgba(148,163,184,.16)" stroke="currentColor" stroke-width="2"/><polyline points="46,160 55,168 64,160 73,168 82,160 91,168 100,160 109,168 118,160" fill="none" stroke="#f87171" stroke-width="2"/><text x="30" y="192" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">đế sạc: cuộn sơ cấp</text><line x1="70" y1="148" x2="70" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M66.3,106.4 L70.0,100.0 L73.7,106.4" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="100" y1="148" x2="100" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M96.3,106.4 L100.0,100.0 L103.7,106.4" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="130" y1="148" x2="130" y2="100" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="4 3"/><path d="M126.3,106.4 L130.0,100.0 L133.7,106.4" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="12" y="222" fill="#f87171" font-size="11" font-weight="600" text-anchor="start">~ xoay chiều → từ trường → dòng cảm ứng</text><text x="228" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">b) Điện áp giảm theo khoảng cách</text><line x1="280" y1="205" x2="280" y2="56" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="280" y1="205" x2="424" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="286" y="48" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">U (V)</text><text x="424" y="236" fill="currentColor" font-size="11" font-weight="600" text-anchor="end">d (cm)</text><line x1="280" y1="66" x2="420" y2="66" stroke="#34d399" stroke-width="1.4" stroke-dasharray="6 5" opacity="1"/><text x="302" y="62" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">lí tưởng 9,0 V</text><circle cx="280" cy="76" r="4" fill="#34d399"/><text x="280" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">0</text><circle cx="315" cy="96" r="4" fill="#34d399"/><text x="315" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">1</text><circle cx="350" cy="114" r="4" fill="#34d399"/><text x="350" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">2</text><circle cx="385" cy="131" r="4" fill="#34d399"/><text x="385" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">3</text><circle cx="420" cy="145" r="4" fill="#34d399"/><text x="420" y="220" fill="currentColor" font-size="11" font-weight="600" text-anchor="middle">4</text><polyline points="280,76 315,96 350,114 385,131 420,145" fill="none" stroke="#34d399" stroke-width="2.2"/></svg><figcaption>Hình 3. Sạc không dây = máy biến áp không lõi: hai cuộn rời ghép qua từ trường; số đo luôn thấp hơn lí tưởng 9,0 V.</figcaption></figure>
 
 <details class="tl-details" data-exp="tn-l12-ungdungcutu-02">
-<summary>🔬 Bấm xem thí nghiệm đo: điện áp thứ cấp giảm theo khoảng cách</summary>
+<summary>🔬 Bấm xem: điện áp thứ cấp giảm theo khoảng cách</summary>
 <p><strong>Làm:</strong> quấn cuộn sơ cấp 200 vòng và cuộn thứ cấp 150 vòng trên hai ống nhựa cùng đường kính, đặt đồng trục; nối cuộn sơ cấp với máy phát xoay chiều $U_1 = 12$ V, cuộn thứ cấp với vôn kế xoay chiều; lần lượt chèn 1, 2, 3, 4 tấm bìa cứng dày 1 cm vào giữa hai cuộn. <strong>Quan sát:</strong> số đo ở bảng dưới; hai cuộn càng xa, điện áp càng tụt nhanh. <strong>Rút ra:</strong> từ thông rò tăng theo khe hở nên suất điện động cảm ứng trong cuộn thứ cấp nhỏ đi — đó là lí do sạc không dây phải áp sát.</p>
 </details>
+<!--video:tn-l12-ungdungcutu-02-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật: cuộn dây này sáng bóng đèn kia, không dây nối</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/J45EjAyInPU?rel=0&start=141&end=191" title="cuộn dây này sáng bóng đèn kia, không dây nối" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Hai cuộn dây không nối nhau bằng dây nào, vì sao bóng đèn vẫn sáng?</p>
+</div>
+
+
+
+
+
 
 <table class="tl-table">
 <thead>
@@ -663,20 +1263,22 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </tbody>
 </table>
 
-<details class="tl-details" open>
-<summary>🤏 Câu hỏi về sai số: vì sao đo được 8,4 V mà tính ra 9,0 V?</summary>
+<details class="tl-details tl-more">
+<summary>🤏 Vì sao đo 8,4 V mà tính ra 9,0 V?</summary>
 <p>Tỉ số vòng là $150/200 = 0{,}75$, nên máy biến áp lí tưởng phải cho $U_2 = 0{,}75 \times 12 = 9{,}0$ V. Đo được 8,4 V, lệch 0,6 V (khoảng 7%) — khoảng lệch này <em>có thật</em>, không phải làm sai: hai cuộn không có lõi sắt chung nên một phần từ thông của cuộn sơ cấp rò ra ngoài, không móc vòng qua cuộn thứ cấp. Thêm nữa, cuộn dây có điện trở, mối nối có điện trở tiếp xúc, và vôn kế xoay chiều có sai số ±0,1 V. Kết quả đo phải ghi kèm sai số: $U_2 = 8{,}4 \pm 0{,}1$ V. Giá trị lí tưởng 9,0 V nằm ngoài khoảng sai số, nghĩa là mô hình "máy biến áp lí tưởng" chỉ còn đúng gần đúng ở đây.</p>
 </details>
 
-<p><strong>Câu 2.</strong> Với $N_1 = 20$ vòng, $N_2 = 15$ vòng và $U_1 = 12$ V, coi hai cuộn ghép lí tưởng thì điện áp trên cuộn thứ cấp là:</p>
+<p>⚠ Lỗi hay gặp: đảo tỉ số vòng — $N_2$ là cuộn nối thiết bị cần nạp.</p>
+
+<p><strong>Câu 2.</strong> $N_1 = 20$ vòng, $N_2 = 15$ vòng, $U_1 = 12$ V; coi hai cuộn ghép lí tưởng thì điện áp thứ cấp là:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl126-q3c" value="chac"> Chắc</label> <label><input type="radio" name="tl126-q3c" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
 <input type="radio" name="tl126-q3" id="tl126-q3a"><label for="tl126-q3a" class="tl-opt tl-ok">A. 9,0 V</label>
 <input type="radio" name="tl126-q3" id="tl126-q3b"><label for="tl126-q3b" class="tl-opt tl-no">B. 16 V</label>
 <input type="radio" name="tl126-q3" id="tl126-q3c"><label for="tl126-q3c" class="tl-opt tl-no">C. 12 V</label>
 <input type="radio" name="tl126-q3" id="tl126-q3d"><label for="tl126-q3d" class="tl-opt tl-no">D. 3 V</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $U_2 = U_1\dfrac{N_2}{N_1} = 12 \times \dfrac{15}{20} = 9{,}0$ V — đúng bộ số của thí nghiệm vừa đọc.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai ứng với ba lỗi: <em>đảo tỉ số vòng</em> ($12 \times 20/15 = 16$ V), <em>tưởng máy biến áp không đổi điện áp</em> (12 V), và <em>lấy hiệu số vòng</em> ($12 \times 5/20 = 3$ V). Công thức đúng luôn là $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$, với $N_2$ là cuộn nối với thiết bị cần nạp. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $U_2 = U_1\dfrac{N_2}{N_1} = 12 \times \dfrac{15}{20} = 9{,}0$ V — cùng tỉ số vòng 0,75 với thí nghiệm vừa đọc (200 và 150 vòng).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai ứng với ba lỗi: <em>đảo tỉ số vòng</em> ($12 \times 20/15 = 16$ V), <em>tưởng máy biến áp không đổi điện áp</em> (12 V), và <em>lấy hiệu số vòng</em> ($12 \times 5/20 = 3$ V). Công thức đúng luôn là $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 
 <h4>3. Dòng điện Foucault — dòng xoáy trong khối kim loại</h4>
@@ -684,86 +1286,137 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <p><strong>🔑 Khép kín trong khối · Hãm chuyển động · Toả nhiệt Joule</strong></p>
 
 <ul>
-<li><strong>Dòng điện Foucault</strong> (dòng xoáy) là dòng điện cảm ứng sinh ra <em>trong lòng một khối vật dẫn</em> khi khối đó chuyển động trong từ trường, hoặc đặt trong từ trường biến thiên.</li>
-<li>Dòng khép kín trong khối, cường độ lớn vì điện trở khối rất nhỏ.</li>
-<li>Hai tác dụng đi cùng nhau: <strong>lực hãm điện từ</strong> (Lenz: chống chuyển động) và <strong>toả nhiệt Joule</strong> $Q = I^2Rt$.</li>
+<li><strong>Dòng điện Foucault</strong> (dòng xoáy) là dòng cảm ứng sinh ra trong lòng khối vật dẫn chuyển động trong từ trường hoặc nằm trong từ trường biến thiên.</li>
+<li>Dòng khép kín trong khối, cường độ lớn vì điện trở nhỏ.</li>
+<li>Hai tác dụng đi cùng nhau: <strong>lực hãm điện từ</strong> (Lenz: chống chuyển động) và <strong>toả nhiệt Joule</strong>:</li>
+</ul>
+<div class="tl-fx">
+<p class="tl-fx-name">Nhiệt Joule của dòng Foucault</p>
+<p>$$Q = I^2Rt$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$Q$</span><span>nhiệt lượng toả ra (J)</span></li>
+<li><span class="tl-sym">$I$</span><span>cường độ dòng điện (A)</span></li>
+<li><span class="tl-sym">$R$</span><span>điện trở của khối vật dẫn (Ω)</span></li>
+<li><span class="tl-sym">$t$</span><span>thời gian (s)</span></li>
+</ul>
+</div>
+<ul>
+<li>Muốn giảm dòng Foucault có hại, lõi máy biến áp và lõi động cơ ghép từ lá thép mỏng sơn cách điện.</li>
 </ul>
 
 <details class="tl-details" data-exp="tn-l12-ungdungcutu-04">
 <summary>🔬 Bấm xem thí nghiệm: tấm liền khối và tấm có rãnh xẻ</summary>
-<p><strong>Làm:</strong> treo tấm nhôm $100 \times 60 \times 3$ mm bằng hai sợi dây mảnh dài 40 cm cho dao động như con lắc; đếm số lần tấm qua vị trí thấp nhất (mỗi lần tính là một dao động) tới khi tắt hẳn, bấm đồng hồ đo thời gian trong ba trường hợp: không có nam châm, bị hai cực nam châm kẹp hai bên, và thay bằng tấm cùng cỡ có rãnh xẻ. <strong>Quan sát:</strong> không nam châm: 42 dao động, gần 27 s; tấm liền khối: 6 dao động, 3,8 s; tấm có rãnh xẻ: 21 dao động, 13,3 s. Ba trường hợp đều cho khoảng 0,63 s mỗi dao động — đúng bằng nửa chu kì con lắc dài 40 cm ($T \approx 1{,}27$ s), vì chu kì không đổi khi dao động tắt dần. <strong>Rút ra:</strong> rãnh xẻ cắt các đường dòng Foucault, làm điện trở mạch dòng tăng, dòng nhỏ đi nên lực hãm yếu hẳn.</p>
+<p><strong>Làm:</strong> treo tấm nhôm $100 \times 60 \times 3$ mm bằng hai sợi dây mảnh dài 40 cm cho dao động như con lắc; đếm số lần tấm qua vị trí thấp nhất tới khi tắt hẳn, bấm đồng hồ đo thời gian trong ba trường hợp: không có nam châm, bị hai cực nam châm kẹp hai bên, và thay bằng tấm cùng cỡ có rãnh xẻ. <strong>Quan sát:</strong> không nam châm: 42 lần qua, gần 27 s; tấm liền khối: 6 lần qua, 3,8 s; tấm có rãnh xẻ: 21 lần qua, 13,3 s. Ba trường hợp đều cho khoảng 0,63 s giữa hai lần qua liên tiếp — đúng bằng nửa chu kì con lắc dài 40 cm ($T \approx 1{,}27$ s), vì chu kì gần như không đổi khi dao động tắt dần. <strong>Rút ra:</strong> rãnh xẻ cắt các đường dòng Foucault, làm điện trở mạch dòng tăng, dòng nhỏ đi nên lực hãm yếu hẳn.</p>
 </details>
+<!--video:tn-l12-ungdungcutu-04-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật: tấm liền khối, tấm có rãnh và tấm rãnh tới đáy</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/MglUIiBy2lQ?rel=0&start=51&end=111" title="tấm liền khối, tấm có rãnh và tấm rãnh tới đáy" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Tấm nào tắt dao động trước: tấm liền khối hay tấm có rãnh xẻ?</p>
+</div>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 224" role="img" aria-label="Hai tấm nhôm dao động giữa hai cực nam châm: tấm liền khối có dòng Foucault khép kín lớn nên tắt nhanh, tấm có rãnh xẻ bị cắt đường dòng nên dao động lâu hơn"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">a) Tấm liền khối</text><text x="12" y="36" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">6 dao động · tắt sau 3,8 s</text><line x1="60" y1="40" x2="150" y2="40" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="105" y1="40" x2="105" y2="58" stroke="currentColor" stroke-width="1.5" opacity="1"/><rect x="75" y="58" width="60" height="80" rx="6" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><ellipse cx="105" cy="98" rx="20" ry="28" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><line x1="105" y1="124" x2="122" y2="118" stroke="#34d399" stroke-width="1.8" marker-end="url(#f4-g)"/><rect x="30" y="76" width="32" height="44" rx="4" fill="rgba(248,113,113,.22)" stroke="#f87171" stroke-width="2"/><text x="46" y="102" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">N</text><rect x="148" y="76" width="32" height="44" rx="4" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="2"/><text x="164" y="102" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">S</text><text x="14" y="196" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">dòng khép kín lớn</text><text x="14" y="214" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">→ hãm mạnh</text><text x="228" y="20" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">b) Tấm có rãnh xẻ</text><text x="228" y="36" fill="#34d399" font-size="11" font-weight="700" text-anchor="start">21 dao động · tắt sau 13,3 s</text><line x1="270" y1="40" x2="370" y2="40" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="320" y1="40" x2="320" y2="58" stroke="currentColor" stroke-width="1.5" opacity="1"/><rect x="290" y="58" width="12" height="80" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="1.6"/><ellipse cx="296" cy="98" rx="5" ry="24" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><rect x="306" y="58" width="12" height="80" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="1.6"/><ellipse cx="312" cy="98" rx="5" ry="24" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><rect x="322" y="58" width="12" height="80" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="1.6"/><ellipse cx="328" cy="98" rx="5" ry="24" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><rect x="338" y="58" width="12" height="80" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="1.6"/><ellipse cx="344" cy="98" rx="5" ry="24" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><text x="228" y="196" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">rãnh cắt đường dòng</text><text x="228" y="214" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">→ dòng nhỏ → hãm yếu</text><rect x="246" y="76" width="30" height="44" rx="4" fill="rgba(248,113,113,.22)" stroke="#f87171" stroke-width="2"/><text x="261" y="102" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">N</text><rect x="360" y="76" width="30" height="44" rx="4" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="2"/><text x="375" y="102" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle">S</text></svg><figcaption>Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối có dòng khép kín lớn nên tắt sau vài giây; rãnh xẻ cắt đường dòng nên dao động lâu hơn.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 3.</strong> Tấm nhôm liền khối dao động giữa hai cực nam châm thì tắt rất nhanh; thay bằng tấm có rãnh xẻ thì dao động lâu hơn. Vì sao?</p>
+
+
+
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 296" role="img" aria-label="Hai tấm nhôm dao động qua vùng từ trường vuông góc mặt tấm: tấm liền khối có dòng Foucault khép kín lớn nên tắt nhanh, tấm có rãnh xẻ bị cắt đường dòng nên dao động lâu hơn"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="12" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">a) Tấm liền khối</text><line x1="110" y1="30" x2="110" y2="52" stroke="currentColor" stroke-width="1.5" opacity="1"/><rect x="50" y="52" width="120" height="110" rx="3" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><circle cx="110" cy="112" r="30" fill="rgba(56,189,248,.10)" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4"/><circle cx="96" cy="98" r="2.4" fill="#38bdf8"/><circle cx="96" cy="112" r="2.4" fill="#38bdf8"/><circle cx="96" cy="126" r="2.4" fill="#38bdf8"/><circle cx="110" cy="98" r="2.4" fill="#38bdf8"/><circle cx="110" cy="112" r="2.4" fill="#38bdf8"/><circle cx="110" cy="126" r="2.4" fill="#38bdf8"/><circle cx="124" cy="98" r="2.4" fill="#38bdf8"/><circle cx="124" cy="112" r="2.4" fill="#38bdf8"/><circle cx="124" cy="126" r="2.4" fill="#38bdf8"/><ellipse cx="126" cy="112" rx="34" ry="30" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5 4"/><path d="M96.5,104.2 L92.0,112.0 L87.5,104.2" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M155.5,119.8 L160.0,112.0 L164.5,119.8" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60" y1="182" x2="150" y2="182" stroke="#fb923c" stroke-width="2.4"/><path d="M141.2,176.9 L150.0,182.0 L141.2,187.1" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="12" y="212" fill="#fb923c" font-size="14" font-weight="600" text-anchor="start">tấm chuyển động sang phải</text><text x="12" y="230" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">chấm: B vuông góc mặt tấm</text><text x="12" y="248" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">vòng dòng khép kín lớn</text><text x="12" y="266" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">→ hãm mạnh</text><text x="12" y="284" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">qua 6 lần · tắt 3,8 s</text><text x="232" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">b) Tấm có rãnh xẻ</text><line x1="330" y1="30" x2="330" y2="52" stroke="currentColor" stroke-width="1.5" opacity="1"/><rect x="272" y="52" width="116" height="50" rx="3" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><rect x="272" y="102" width="20" height="60" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><rect x="296" y="102" width="20" height="60" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><rect x="320" y="102" width="20" height="60" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><rect x="344" y="102" width="20" height="60" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><rect x="368" y="102" width="20" height="60" rx="2" fill="rgba(148,163,184,.22)" stroke="currentColor" stroke-width="2"/><circle cx="330" cy="112" r="30" fill="rgba(56,189,248,.10)" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="5 4"/><circle cx="316" cy="98" r="2.4" fill="#38bdf8"/><circle cx="316" cy="112" r="2.4" fill="#38bdf8"/><circle cx="316" cy="126" r="2.4" fill="#38bdf8"/><circle cx="330" cy="98" r="2.4" fill="#38bdf8"/><circle cx="330" cy="112" r="2.4" fill="#38bdf8"/><circle cx="330" cy="126" r="2.4" fill="#38bdf8"/><circle cx="344" cy="98" r="2.4" fill="#38bdf8"/><circle cx="344" cy="112" r="2.4" fill="#38bdf8"/><circle cx="344" cy="126" r="2.4" fill="#38bdf8"/><ellipse cx="306.0" cy="132" rx="7" ry="20" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5 4"/><path d="M302.0,126.8 L299.0,132.0 L296.0,126.8" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M310.0,137.2 L313.0,132.0 L316.0,137.2" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><ellipse cx="330.0" cy="132" rx="7" ry="20" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5 4"/><path d="M326.0,126.8 L323.0,132.0 L320.0,126.8" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M334.0,137.2 L337.0,132.0 L340.0,137.2" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><ellipse cx="354.0" cy="132" rx="7" ry="20" fill="none" stroke="#34d399" stroke-width="2" stroke-dasharray="5 4"/><path d="M350.0,126.8 L347.0,132.0 L344.0,126.8" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M358.0,137.2 L361.0,132.0 L364.0,137.2" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="282" y1="182" x2="372" y2="182" stroke="#fb923c" stroke-width="2.4"/><path d="M363.2,176.9 L372.0,182.0 L363.2,187.1" fill="none" stroke="#fb923c" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="232" y="212" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cùng khối lượng,</text><text x="232" y="230" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">cùng từ trường</text><text x="232" y="248" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">rãnh cắt đường dòng</text><text x="232" y="266" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">→ dòng nhỏ → hãm yếu</text><text x="232" y="284" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">qua 21 lần · tắt 13,3 s</text></svg><figcaption>Hình 4. Cùng khối lượng, cùng từ trường: tấm liền khối tắt nhanh, tấm có rãnh xẻ lâu hơn.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Tấm nhôm liền khối dao động giữa hai cực nam châm tắt rất nhanh; thay bằng tấm có rãnh xẻ thì lâu hơn. Vì sao?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl126-q4" id="tl126-q4a"><label for="tl126-q4a" class="tl-opt tl-no">A. Tấm có rãnh xẻ nhẹ hơn nên ít bị lực hãm hơn</label>
 <input type="radio" name="tl126-q4" id="tl126-q4b"><label for="tl126-q4b" class="tl-opt tl-ok">B. Rãnh cắt đường dòng Foucault, điện trở tăng nên dòng nhỏ, lực hãm yếu</label>
 <input type="radio" name="tl126-q4" id="tl126-q4c"><label for="tl126-q4c" class="tl-opt tl-no">C. Rãnh làm tấm nhôm không còn nằm trong từ trường nữa</label>
 <input type="radio" name="tl126-q4" id="tl126-q4d"><label for="tl126-q4d" class="tl-opt tl-no">D. Rãnh làm tấm dẫn điện tốt hơn nên dòng lớn hơn</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực hãm đến từ dòng điện cảm ứng, không đến từ khối lượng. Rãnh xẻ cắt đường dòng khép kín, làm điện trở tăng, dòng giảm, nên lực hãm yếu đi rõ rệt.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng quy cho khối lượng: rãnh xẻ chỉ lấy đi vài gam nhôm, không thể đổi kết quả từ 6 dao động lên 21 dao động. Cũng không phải tấm "ra khỏi từ trường" — phần nhôm giữa hai cực vẫn nằm nguyên trong đó. Chìa khoá là <em>điện trở của mạch dòng Foucault</em>: rãnh cắt đường dòng thì điện trở tăng, dòng giảm, lực hãm yếu. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng quy cho khối lượng: rãnh xẻ chỉ lấy đi vài gam nhôm, không thể làm dao động kéo dài gấp hơn ba lần. Cũng không phải tấm "ra khỏi từ trường" — phần nhôm giữa hai cực vẫn nằm nguyên trong đó. Chìa khoá là <em>điện trở của mạch dòng Foucault</em>: rãnh cắt đường dòng thì điện trở tăng, dòng giảm, lực hãm yếu. Chọn lại nhé.</p></div>
 </div>
 </div>
 
-<h4>4. Bếp từ, lò cảm ứng — nhiệt sinh ngay trong vật</h4>
+<h4>4. Bếp từ — đun nóng không cần ngọn lửa</h4>
 
-<p><strong>🔑 Từ trường đổi nhanh · Đáy nồi tự nóng · Mặt kính vẫn mát</strong></p>
+<p><strong>🔑 Từ trường đổi nhanh · Dòng xoáy trong đáy · Toả nhiệt Joule</strong></p>
 
 <ul>
-<li>Cuộn dây dưới mặt kính nuôi bằng dòng xoay chiều <strong>tần số cao</strong> (20–30 kHz).</li>
-<li>Mặt kính cách điện nên hầu như không sinh dòng; từ trường xuyên qua kính vào đáy nồi gang.</li>
-<li>Đáy nồi có dòng Foucault: nồi <strong>tự nóng lên</strong> rồi truyền nhiệt vào thức ăn; mặt kính chỉ ấm nhờ nồi.</li>
-<li>Nồi nhôm, thuỷ tinh, sứ không nhiễm từ nên gần như không nóng.</li>
+<li>Cuộn dây dưới mặt kính cách điện nuôi bằng dòng xoay chiều <strong>tần số cao</strong> (20–30 kHz).</li>
 </ul>
 
-<p>Trong xưởng, <strong>lò cảm ứng</strong> nấu chảy kim loại theo đúng cách đó.</p>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-ungdungcutu-03">
-<p class="tl-label">🔬 Thí nghiệm đo: đun 1,0 lít nước bằng bếp từ</p>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-ungdungcutu-03">
+<p class="tl-label">🔬 Thí nghiệm đo: hiệu suất bếp từ khi đun 1 lít nước</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> rót 1,0 lít nước 25,0 °C vào nồi gang, bật bếp mức 2 000 W, mỗi phút đọc nhiệt kế; làm lại với nồi nhôm.</li>
-<li><strong>Quan sát:</strong> nước sôi sau 4 phút; mặt kính cạnh nồi chỉ 45–50 °C; nồi nhôm sau 4 phút nước mới ấm khoảng 35 °C.</li>
-<li><strong>Rút ra:</strong> đáy nồi tự sinh dòng Foucault và tự nóng, không nhờ mặt kính truyền nhiệt.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> nhiệt sinh ngay trong đáy nồi kim loại do dòng điện xoáy (dòng Foucault), mặt kính chỉ ấm do nồi truyền xuống, nên bếp từ có hiệu suất cao hơn bếp điện trở.</li>
+<li><strong>Dự đoán nếu đúng:</strong> cùng nồi, cùng công suất và thời gian, nước trên bếp từ nóng hơn; mặt bếp từ sát mép nồi mát hơn hẳn bếp điện trở.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Bếp từ và bếp điện trở cùng ghi 2 000 W, oát kế cắm giữa ổ điện và bếp, nồi thép đáy nhiễm từ có nắp, 1,0 lít nước, nhiệt kế que, nhiệt kế hồng ngoại, đồng hồ bấm giây.</p>
+<p><strong>Làm:</strong> (1) Rót 1,0 lít nước ở nhiệt độ $t_1$ vào nồi, đậy nắp, bật bếp từ, đọc công suất $P$ trên oát kế. (2) Sau $\tau = 120$ s, khuấy rồi đọc nhiệt độ $t_2$ của nước, đo mặt kính sát mép nồi. (3) Đối chứng: để nồi nguội, thay nước mới, đặt lên bếp điện trở và làm lại (1), (2). Tính hiệu suất $H = \dfrac{mc\Delta t}{P\tau}$ cho mỗi bếp.</p>
+</details>
+<strong>Coi rằng</strong> $c = 4\,180$ J/(kg·K) không đổi. <strong>Bỏ qua</strong> nhiệt làm nóng nồi và nhiệt mất ra không khí.</li>
+<li><strong>Quan sát:</strong> sau 120 s, nước lên 72,6 °C (bếp từ) và 60,2 °C (bếp điện trở); mặt bếp sát mép nồi 38 °C và 260 °C.</li>
+<li><strong>Rút ra:</strong> kết quả <strong>ủng hộ giả thuyết</strong>. Từ trường biến thiên xuyên qua mặt kính sinh dòng Foucault trong đáy nồi, dòng này toả nhiệt Joule.</li>
+<li><strong>Chưa nói được gì:</strong> hiệu suất đo được là con số gộp, không tách được nhiệt nồi giữ và nhiệt mất ra không khí; chưa thử nồi nhôm, thuỷ tinh.</li>
 </ol>
 </div>
+<!--video:tn-l12-ungdungcutu-03-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem thí nghiệm thật: đun nước trên tờ giấy đặt giữa nồi và mặt bếp</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/IaQTpaY40fA?rel=0&start=8&end=62" title="đun nước trên tờ giấy đặt giữa nồi và mặt bếp" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Nước sôi mà tờ giấy dưới đáy nồi vẫn nguyên — nhiệt sinh ra ở đâu?</p>
+</div>
 
-<table class="tl-table">
+
+
+
+
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu, tự tính hiệu suất và sai số</summary>
+<p>Nước $m = 1{,}0$ kg, đun 120 s, cùng nồi thép có nắp:</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
 <thead>
-<tr><th>Thời gian (phút)</th><th>Nhiệt độ nước (°C)</th></tr>
+<tr><th>Bếp</th><th>$P$ đo (W)</th><th>$t_1$ (°C)</th><th>$t_2$ (°C)</th><th>Mặt bếp sát mép nồi (°C)</th><th>$H$</th></tr>
 </thead>
 <tbody>
-<tr><td>0</td><td>25,0</td></tr>
-<tr><td>1</td><td>46,0</td></tr>
-<tr><td>2</td><td>66,6</td></tr>
-<tr><td>3</td><td>86,4</td></tr>
-<tr><td>4</td><td>100,0</td></tr>
+<tr><td>Bếp từ</td><td>1 950</td><td>25,0</td><td>72,6</td><td>38</td><td>em tự tính</td></tr>
+<tr><td>Bếp điện trở</td><td>1 980</td><td>25,0</td><td>60,2</td><td>260</td><td>0,62</td></tr>
 </tbody>
-</table>
-
-<details class="tl-details" open>
-<summary>🤏 Câu hỏi về sai số: phút đầu nước nhận bao nhiêu nhiệt, hiệu suất bếp bằng bao nhiêu?</summary>
-<p>Khối lượng nước $m = 1{,}0$ kg, nhiệt dung riêng $c = 4\,200$ J/(kg·K), độ tăng nhiệt độ phút đầu $\Delta t = 21{,}0$ °C. Nhiệt nước nhận $Q = mc\Delta t = 1{,}0 \times 4\,200 \times 21{,}0 = 88\,200$ J, tức khoảng 88 kJ trong 60 s — công suất hữu ích gần 1 470 W, hiệu suất khoảng 74% so với 2 000 W ghi trên bếp. Nhiệt kế có sai số ±0,5 °C nên $\Delta t = 21{,}0 \pm 1{,}0$ °C, kéo theo $Q = (88 \pm 4)$ kJ và hiệu suất $73{,}5\% \pm 3{,}5\%$. Chỗ hao là: nung nóng thân nồi gang, toả ra không khí, hơi nước mang đi. Cũng đừng quên 2 000 W là công suất điện bếp <em>tiêu thụ</em>, không phải công suất truyền hết vào nồi.</p>
+</table></div>
+<p>Em tự tính ô $H$ của bếp từ rồi so với bếp điện trở.</p>
+<p><strong>Sai số có chiều:</strong></p>
+<ul>
+<li>Lấy 2 000 W ghi trên bếp thay cho 1 950 W đo được: tích $P\tau$ bị tính lớn nên hiệu suất tính ra <em>nhỏ hơn</em> thật (bếp chạy cao hơn định mức thì ngược lại).</li>
+<li>Bỏ qua nhiệt làm nóng thân nồi: nhiệt có ích bị tính thiếu nên hiệu suất ra <em>nhỏ hơn</em> hiệu suất thật của bếp với nồi.</li>
+<li>Đun lâu cho nước rất nóng: nước càng nóng hơn phòng càng mất nhiệt ra không khí nhanh, hiệu suất ra <em>nhỏ hơn</em>.</li>
+<li>Cách giảm: đo công suất bằng oát kế, đậy nắp, chỉ đun tăng vừa phải (khoảng 30–50 °C), cộng thêm nhiệt nồi nhận vào nhiệt có ích.</li>
+</ul>
+<p><small>Số liệu minh hoạ, không phải số đo thật: nhiệt độ nước tính từ mô hình $mc\Delta t = H P\tau$ với $c = 4\,180$ J/(kg·K), mỗi bếp một giá trị $H$ cố định; nhiệt độ mặt bếp lấy theo giá trị tiêu biểu.</small></p>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Sau vài phút đun trên bếp từ, mặt kính quanh nồi chỉ hơi ấm còn đáy nồi thì nóng bỏng. Điều đó cho thấy:</p>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 252" role="img" aria-label="Mặt cắt bếp từ: cuộn dây dưới mặt kính tạo từ trường biến thiên xuyên vào đáy nồi gang, sinh dòng Foucault dạng vòng đồng tâm và toả nhiệt trong đáy nồi"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="20" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Bếp từ: nhiệt sinh ngay trong đáy nồi</text><rect x="130" y="50" width="180" height="54" rx="0" fill="rgba(56,189,248,.18)" stroke="none" stroke-width="0"/><text x="170" y="72" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">nước</text><rect x="120" y="44" width="10" height="66" rx="3" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2"/><rect x="310" y="44" width="10" height="66" rx="3" fill="rgba(251,146,60,.20)" stroke="#fb923c" stroke-width="2"/><rect x="120" y="104" width="200" height="16" rx="6" fill="rgba(251,146,60,.30)" stroke="#fb923c" stroke-width="2"/><text x="326" y="116" fill="#fb923c" font-size="14" font-weight="600" text-anchor="start">đáy nồi gang</text><rect x="60" y="124" width="320" height="9" rx="3" fill="rgba(148,163,184,.28)" stroke="currentColor" stroke-width="1.2"/><text x="14" y="150" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">mặt kính</text><text x="14" y="166" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">(cách điện)</text><circle cx="167.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><line x1="164.0" y1="146.5" x2="171.0" y2="153.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="164.0" y1="153.5" x2="171.0" y2="146.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><circle cx="182.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><line x1="179.0" y1="146.5" x2="186.0" y2="153.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="179.0" y1="153.5" x2="186.0" y2="146.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><circle cx="197.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><line x1="194.0" y1="146.5" x2="201.0" y2="153.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="194.0" y1="153.5" x2="201.0" y2="146.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><circle cx="212.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><line x1="209.0" y1="146.5" x2="216.0" y2="153.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><line x1="209.0" y1="153.5" x2="216.0" y2="146.5" stroke="#f87171" stroke-width="1.6" opacity="1"/><circle cx="227.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="227.5" cy="150" r="2.2" fill="#f87171"/><circle cx="242.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="242.5" cy="150" r="2.2" fill="#f87171"/><circle cx="257.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="257.5" cy="150" r="2.2" fill="#f87171"/><circle cx="272.5" cy="150" r="6" fill="none" stroke="#f87171" stroke-width="2"/><circle cx="272.5" cy="150" r="2.2" fill="#f87171"/><text x="296" y="160" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">cuộn dây</text><text x="296" y="176" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">dòng xoay chiều</text><line x1="190" y1="138" x2="190" y2="100" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M185.0,108.7 L190.0,100.0 L195.0,108.7" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M195.0,129.3 L190.0,138.0 L185.0,129.3" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="220" y1="138" x2="220" y2="100" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M215.0,108.7 L220.0,100.0 L225.0,108.7" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M225.0,129.3 L220.0,138.0 L215.0,129.3" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="250" y1="138" x2="250" y2="100" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M245.0,108.7 L250.0,100.0 L255.0,108.7" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M255.0,129.3 L250.0,138.0 L245.0,129.3" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="262" y="94" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">B(t)</text><ellipse cx="220" cy="112" rx="86" ry="6" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><path d="M309.5,105.9 L306.0,112.0 L302.5,105.9" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M130.5,118.1 L134.0,112.0 L137.5,118.1" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><ellipse cx="220" cy="112" rx="46" ry="6" fill="none" stroke="#34d399" stroke-width="1.8" stroke-dasharray="5 4"/><path d="M269.5,105.9 L266.0,112.0 L262.5,105.9" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M170.5,118.1 L174.0,112.0 L177.5,118.1" fill="none" stroke="#34d399" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="142" y1="100" x2="142" y2="82" stroke="#f87171" stroke-width="2"/><path d="M137.6,89.6 L142.0,82.0 L146.4,89.6" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="298" y1="100" x2="298" y2="82" stroke="#f87171" stroke-width="2"/><path d="M293.6,89.6 L298.0,82.0 L302.4,89.6" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="14" y="200" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">từ trường biến thiên xuyên qua mặt kính</text><text x="14" y="220" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">dòng Foucault: vòng tròn đồng tâm trong đáy nồi</text><text x="14" y="240" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">dòng đó toả nhiệt (Joule) làm nồi nóng lên</text></svg><figcaption>Hình 1. Từ trường biến thiên xuyên qua mặt kính, sinh dòng Foucault toả nhiệt ngay trong đáy nồi gang.</figcaption></figure>
+
+
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
 <div class="tl-quiz">
-<input type="radio" name="tl126-q5" id="tl126-q5a"><label for="tl126-q5a" class="tl-opt tl-ok">A. Nhiệt sinh ngay trong đáy nồi; mặt kính chỉ nhận lại một phần nhiệt</label>
-<input type="radio" name="tl126-q5" id="tl126-q5b"><label for="tl126-q5b" class="tl-opt tl-no">B. Mặt kính dẫn điện nên chính nó sinh dòng rồi truyền cho nồi</label>
-<input type="radio" name="tl126-q5" id="tl126-q5c"><label for="tl126-q5c" class="tl-opt tl-no">C. Mặt kính cách nhiệt hoàn toàn, nhiệt truyền bằng tia hồng ngoại</label>
-<input type="radio" name="tl126-q5" id="tl126-q5d"><label for="tl126-q5d" class="tl-opt tl-no">D. Trong nồi gang có sẵn một điện trở đốt nóng</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nhiệt sinh ra ở nơi có dòng Foucault, tức ngay trong đáy nồi. Mặt kính chỉ nóng lên vì nồi nóng truyền ngược lại — nên nó mát hơn hẳn và mảnh giấy trên mặt kính không cháy.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mặt kính là chất cách điện nên không có dòng cảm ứng trong kính; bếp từ cũng không dùng hồng ngoại — nếu chiếu hồng ngoại thì chính mặt kính phải nóng trước. Nồi gang cũng không có điện trở bên trong. Chỗ sinh nhiệt chính là đáy nồi. Chọn lại nhé.</p></div>
+<input type="radio" name="tl126-q5" id="tl126-q5a"><label for="tl126-q5a" class="tl-opt tl-no">A. Cùng 120 s, nước trên bếp từ nóng hơn trên bếp điện trở</label>
+<input type="radio" name="tl126-q5" id="tl126-q5b"><label for="tl126-q5b" class="tl-opt tl-no">B. Kết quả ủng hộ giả thuyết: nhiệt sinh ngay trong đáy nồi</label>
+<input type="radio" name="tl126-q5" id="tl126-q5c"><label for="tl126-q5c" class="tl-opt tl-ok">C. Từ trường không đổi cũng sinh được dòng xoáy trong đáy nồi</label>
+<input type="radio" name="tl126-q5" id="tl126-q5d"><label for="tl126-q5d" class="tl-opt tl-no">D. Phép đo không tách được nhiệt nồi giữ và nhiệt mất ra ngoài</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Dòng Foucault chỉ sinh ra khi từ thông qua đáy nồi <em>biến thiên</em>, nên cuộn dây phải nuôi bằng dòng xoay chiều tần số cao; từ trường không đổi không sinh dòng nào. A là hiện tượng đọc từ bảng, B là kết luận, D là giới hạn của phép đo: cả ba đúng, đúng kiểu bốn ý a)–d) của một câu Phần II trong đề thi tốt nghiệp.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng: 72,6 °C so với 60,2 °C trong bảng. B là kết luận rút từ hiện tượng đó và nhiệt độ mặt bếp. D là giới hạn: hiệu suất đo được là con số gộp. Ý sai nằm ở <em>cơ chế</em>: muốn có dòng cảm ứng thì từ thông phải thế nào? Chọn lại nhé.</p></div>
 </div>
 </div>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "bếp từ truyền nhiệt từ mặt bếp sang nồi"</h4>
 
 <p>Cách nghĩ này đúng với bếp điện, sai với bếp từ: bếp từ không có mâm nóng.</p>
@@ -778,23 +1431,25 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <tr><td>Dùng được mọi loại nồi</td><td>Chỉ nồi đáy nhiễm từ: gang, thép</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details" open>
-<summary>👀 Tự kiểm tra: lon nước ngọt bằng nhôm trên bếp từ, vì sao mãi không sôi?</summary>
-<p>Nhôm không phải vật liệu nhiễm từ nên từ trường biến thiên của bếp hầu như không ghép được vào thành lon; dòng Foucault sinh ra quá nhỏ để đun nóng đáng kể. Muốn đun nồi nhôm trên bếp từ phải lót thêm một tấm thép mỏng dưới đáy để tấm thép hứng từ trường và nóng lên.</p>
+<details class="tl-details tl-more">
+<summary>👀 Tự kiểm tra: lon nhôm, vì sao mãi không sôi?</summary>
+<p>Nhôm không nhiễm từ (không tập trung được từ thông) và có điện trở suất thấp. Dòng Foucault vẫn sinh ra trong nhôm, nhưng công suất toả nhiệt rất nhỏ so với nồi gang, thép từ, nên không đun nóng đáng kể. Muốn đun nồi nhôm trên bếp từ phải lót thêm một tấm thép mỏng dưới đáy để tấm thép hứng từ trường và nóng lên.</p>
 </details>
 
+<div class="tl-trap">
 <h4>Bẫy 2: "cứ ở trong từ trường là có dòng Foucault"</h4>
 
-<p>Điều kiện là <strong>từ thông qua khối phải biến thiên</strong>: nam châm mạnh mà đứng yên cạnh tấm nhôm thì cũng không có dòng.</p>
+<p>Điều kiện là <strong>từ thông qua khối phải biến thiên</strong>: nam châm mạnh đứng yên cạnh tấm nhôm cũng không gây dòng.</p>
 
 <table class="tl-table">
 <thead>
 <tr><th>Từ thông không đổi</th><th>Từ thông biến thiên</th></tr>
 </thead>
 <tbody>
-<tr><td>Nam châm đứng yên, tấm nhôm đứng yên</td><td>Tấm nhôm chuyển động trong từ trường, hoặc từ trường biến thiên</td></tr>
-<tr><td>Không có dòng cảm ứng, không có lực hãm; $\dfrac{\Delta\Phi}{\Delta t} = 0$</td><td>Có dòng Foucault: có lực hãm, toả nhiệt; $\dfrac{\Delta\Phi}{\Delta t} \ne 0$</td></tr>
+<tr><td>Nam châm đứng yên, tấm nhôm đứng yên</td><td>Tấm nhôm chuyển động trong từ trường (hoặc từ trường biến thiên)</td></tr>
+<tr><td>Không có dòng cảm ứng; $\Delta\Phi/\Delta t = 0$</td><td>Có dòng Foucault: lực hãm, toả nhiệt; $\Delta\Phi/\Delta t \ne 0$</td></tr>
 </tbody>
 </table>
 
@@ -808,72 +1463,75 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Tấm nhôm rơi qua từ trường thì từ thông qua nó biến thiên liên tục, sinh dòng Foucault và lực hãm hướng lên — tấm nhôm rơi chậm hẳn so với tấm bìa cùng kích thước.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Điều kiện là <em>từ thông biến thiên</em>, chứ không phải "có mặt trong từ trường". A: từ thông không đổi nên không có dòng. C: nóng là do truyền nhiệt, không liên quan cảm ứng. D: đó là dòng do pin đẩy qua, không phải dòng cảm ứng. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: "phanh điện từ dừng được xe ở mọi tốc độ"</h4>
 
-<p>Suất điện động cảm ứng tỉ lệ với <em>tốc độ biến thiên</em> từ thông, nên lực hãm mạnh khi xe nhanh, yếu dần khi xe chậm.</p>
+<p>Suất điện động cảm ứng tỉ lệ với <em>tốc độ biến thiên</em> từ thông, nên lực hãm yếu dần khi xe chậm.</p>
 
 <table class="tl-table">
 <thead>
 <tr><th>Phanh điện từ</th><th>Phanh ma sát</th></tr>
 </thead>
 <tbody>
-<tr><td>Mạnh ở tốc độ cao, yếu dần khi chậm</td><td>Gần như không đổi ở mọi tốc độ</td></tr>
-<tr><td>Không cọ vào nhau — gần như không mòn</td><td>Má phanh mòn, nóng, phải thay định kì</td></tr>
+<tr><td>Mạnh khi nhanh, yếu khi chậm</td><td>Gần như không đổi ở mọi tốc độ</td></tr>
+<tr><td>Không cọ vào nhau, không mòn</td><td>Má phanh mòn, nóng, phải thay</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details" open>
-<summary>👀 Tự kiểm tra: vì sao xe tải nặng vẫn cần phanh ma sát bên cạnh phanh điện từ?</summary>
+<details class="tl-details tl-more">
+<summary>👀 Tự kiểm tra: vì sao xe tải nặng vẫn cần phanh ma sát?</summary>
 <p>Phanh điện từ chỉ hãm mạnh khi tốc độ biến thiên từ thông còn lớn; khi xe gần dừng, lực hãm gần như triệt tiêu nên không thể giữ xe đứng yên trên dốc. Nó được dùng để hãm bớt tốc độ trên đường đèo dài (đỡ nóng má phanh), còn việc dừng hẳn và giữ xe là của phanh ma sát.</p>
 </details>
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
 <p>Nói bằng lời của em trước, rồi mới bấm xem.</p>
 
-<details class="tl-details" open>
-<summary>1. Dây đàn thép dao động thành dòng điện thế nào? <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>1. Dây đàn thép dao động thành dòng điện thế nào?</summary>
 <p><strong>Dây thép rung · Từ thông đổi · Dòng cùng tần số.</strong> Dây thép bị nam châm từ hoá và dao động ngay trên cuộn dây; từ thông qua cuộn dây biến thiên nên xuất hiện suất điện động cảm ứng, tạo dòng điện xoay chiều đúng bằng tần số dao động của dây.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>2. Sạc không dây theo nguyên lí nào? Hai cuộn dây tên gì? <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>2. Sạc không dây theo nguyên lí nào? Hai cuộn dây tên gì?</summary>
 <p><strong>Nguyên lí máy biến áp.</strong> Cuộn sơ cấp nằm trong đế sạc, nối với dòng điện xoay chiều; cuộn thứ cấp nằm sau lưng điện thoại, nối với pin. Từ trường biến thiên của cuộn sơ cấp làm từ thông qua cuộn thứ cấp biến thiên, sinh suất điện động cảm ứng nạp pin.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>3. Viết công thức suất điện động cảm ứng và máy biến áp lí tưởng. <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>3. Viết công thức suất điện động cảm ứng và máy biến áp lí tưởng.</summary>
 <p>$e_c = -N\dfrac{\Delta\Phi}{\Delta t}$: $e_c$ là suất điện động cảm ứng (V), $N$ là số vòng dây, $\Delta\Phi$ là độ biến thiên từ thông (Wb), $\Delta t$ là khoảng thời gian (s). Máy biến áp lí tưởng: $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$, với $U_1, U_2$ là điện áp hiệu dụng hai cuộn.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>4. Dòng điện Foucault là gì? Hai tác dụng của nó? <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>4. Dòng điện Foucault là gì? Hai tác dụng của nó?</summary>
 <p><strong>Khép kín trong khối · Hãm chuyển động · Toả nhiệt Joule.</strong> Là dòng điện cảm ứng sinh ra trong lòng một khối vật dẫn khi khối đó chuyển động trong từ trường hoặc đặt trong từ trường biến thiên. Hai tác dụng: lực hãm điện từ chống lại chuyển động và toả nhiệt Joule $Q = I^2Rt$.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>5. Vì sao tấm có rãnh xẻ dao động lâu hơn tấm liền khối? <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>5. Vì sao tấm có rãnh xẻ dao động lâu hơn tấm liền khối?</summary>
 <p>Rãnh xẻ cắt các đường dòng Foucault khép kín, làm điện trở của mạch dòng tăng lên; cùng một suất điện động cảm ứng nhưng dòng nhỏ hơn, nên lực hãm yếu hơn và dao động tắt chậm hơn.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>6. Vì sao lõi máy biến áp phải ghép từ lá thép mỏng cách điện? <small>(nói bằng lời của em rồi mới xem)</small></summary>
+<details class="tl-details tl-more">
+<summary>6. Vì sao lõi máy biến áp phải ghép từ lá thép mỏng cách điện?</summary>
 <p>Lõi nằm trong từ trường biến thiên. Nếu lõi đặc, trong lõi sinh dòng Foucault lớn gây nóng và mất năng lượng. Ghép nhiều lá thép mỏng sơn cách điện làm các đường dòng khép kín bị cắt ngắn, điện trở tăng, dòng Foucault nhỏ đi rất nhiều, tổn hao giảm.</p>
 </details>
 </div>
 
 <h3>V. Bài toán mẫu: đế sạc không dây của điện thoại</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
-<p>Đế sạc có cuộn sơ cấp $N_1 = 20$ vòng nối nguồn xoay chiều $U_1 = 12$ V; cuộn sau lưng điện thoại có $N_2 = 15$ vòng. Áp sát, vôn kế đo cuộn thứ cấp được 8,4 V; kê thêm bìa cứng 1 cm mỗi tấm, thu được $(d; U_2)$ = (0; 8,4), (1; 7,1), (2; 5,9), (3; 4,8), (4; 3,9).</p>
-<p>a) Coi hai cuộn ghép lí tưởng, $U_2$ bằng bao nhiêu? Số đo 8,4 V lệch bao nhiêu %?</p>
-<p>b) Vì sao $U_2$ giảm nhanh khi tăng $d$? Năng lượng mất đi đã thành gì?</p>
-<p>c) Ở $d = 2$ cm, điện áp còn bao nhiêu phần trăm so với lí tưởng?</p>
-<p>d) Pin cần nhận 3 600 J, công suất nhận ở $d = 0$ là 8 W. Nạp đầy mất bao lâu?</p>
+<p>Đế sạc: cuộn sơ cấp $N_1 = 20$ vòng nối nguồn xoay chiều $U_1 = 12$ V; cuộn sau lưng điện thoại $N_2 = 15$ vòng. Áp sát, vôn kế (±0,1 V) đo được 8,4 V; kê thêm bìa cứng 1 cm mỗi tấm (bảng số liệu ở mục II.2).</p>
+<p>a) Coi hai cuộn ghép lí tưởng, $U_2$ bằng bao nhiêu? Số đo 8,4 V lệch mấy %?</p>
+<p>b) Vì sao $U_2$ giảm nhanh khi tăng $d$? Năng lượng mất thành gì?</p>
+<p>c) Ở $d = 2$ cm, điện áp còn mấy phần trăm so với lí tưởng?</p>
+<p>d) Pin cần nhận 3 600 J, công suất nạp 8 W. Nạp đầy mất bao lâu?</p>
 </div>
 
 <div class="table-scroll">
@@ -883,14 +1541,13 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </thead>
 <tbody>
 <tr><td>"sơ cấp 20 vòng; thứ cấp 15 vòng"</td><td>$N_1 = 20$; $N_2 = 15$; $U_1 = 12$ V</td><td>tỉ số vòng $N_2/N_1 = 0{,}75$</td></tr>
-<tr><td>"áp sát 8,4 V; kê bìa $d$ = 1…4 cm"</td><td>$U_2^{đo} = 8{,}4$ V ± 0,1 V; năm cặp $(d; U_2)$</td><td>so với lí tưởng; từ thông rò tăng</td></tr>
+<tr><td>"áp sát 8,4 V; kê bìa $d$ = 1…4 cm"</td><td>$U_2 = 8{,}4 \pm 0{,}1$ V; $(d; U_2)$ ở mục II.2</td><td>so với lí tưởng; từ thông rò tăng</td></tr>
 <tr><td>"cần nhận 3 600 J", "8 W"</td><td>$A = 3\,600$ J; $P = 8$ W</td><td>$t = A/P$</td></tr>
-<tr><td>"hai cuộn không chạm" (ngầm hiểu)</td><td>khe hở không khí</td><td>ghép qua từ trường, hiệu suất thấp</td></tr>
 </tbody>
 </table>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
 <li>Câu a: lí tưởng thì $U_2 = U_1\dfrac{N_2}{N_1} = 12 \times \dfrac{15}{20} = 9{,}0$ V. Đo được 8,4 V, lệch $9{,}0 - 8{,}4 = 0{,}6$ V, tức $\dfrac{0{,}6}{9{,}0} \approx 6{,}7\%$.</li>
@@ -901,75 +1558,77 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
-<p>Vẫn đế sạc đó, nhưng $N_1' = 25$ vòng, $U_1' = 10$ V, $N_2 = 10$ vòng; áp sát, vôn kế chỉ 3,6 V.</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy trước)</p>
+<p>Một đế sạc khác: $N_1' = 25$ vòng, $U_1' = 10$ V, $N_2' = 10$ vòng; áp sát, vôn kế chỉ 3,6 V.</p>
 <ol class="tl-steps">
-<li>Bước 1: tỉ số vòng $\dfrac{N_2}{N_1'} = \dfrac{10}{25} = 0{,}4$.</li>
-<li><strong>Em điền:</strong> điện áp lí tưởng trên cuộn thứ cấp bằng bao nhiêu?</li>
-<li><strong>Em điền:</strong> số đo 3,6 V đạt bao nhiêu phần trăm giá trị lí tưởng?</li>
+<li>Bước 1: tỉ số vòng $\dfrac{N_2'}{N_1'} = \dfrac{10}{25} = 0{,}4$.</li>
+<li><strong>Em điền:</strong> điện áp lí tưởng trên cuộn thứ cấp?</li>
+<li><strong>Em điền:</strong> 3,6 V đạt bao nhiêu phần trăm giá trị lí tưởng?</li>
 </ol>
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>Bấm xem bước 2–3</summary>
-<p>$U_2 = 0{,}4 \times 10 = 4{,}0$ V. Số đo 3,6 V đạt $\dfrac{3{,}6}{4{,}0} = 90\%$ giá trị lí tưởng. Nhận xét: hai cuộn áp sát, tỉ số vòng nhỏ mà hiệu suất ghép vẫn cao — điều quyết định là khe hở và cách đặt hai cuộn đồng trục.</p>
+<p>$U_2' = 0{,}4 \times 10 = 4{,}0$ V. Số đo 3,6 V đạt $\dfrac{3{,}6}{4{,}0} = 90\%$ giá trị lí tưởng.<br>Nhận xét: tỉ lệ điện áp đo/lí tưởng này (không phải hiệu suất năng lượng) gần với 93% ở bài mẫu vì hai cuộn cũng áp sát.<br>Tỉ lệ đó chủ yếu do khe hở và cách đặt hai cuộn đồng trục quyết định, không do tỉ số vòng.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: biến thể</p>
-<p><strong>Câu 6.</strong> Máy biến áp trong bộ sạc có cuộn sơ cấp 600 vòng nối điện áp xoay chiều 220 V, cuộn thứ cấp 150 vòng. Coi gần đúng lí tưởng, điện áp ra là:</p>
+<p>⚠ Kiểm tra chiều: $N_2 \lt N_1$ thì $U_2 \lt U_1$.</p>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: biến thể</p>
+<p><strong>Câu 6.</strong> Máy biến áp của bộ sạc: sơ cấp 600 vòng nối 220 V, thứ cấp 150 vòng. Coi gần đúng lí tưởng, $U_2$ là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl126-q7" id="tl126-q7a"><label for="tl126-q7a" class="tl-opt tl-ok">A. 55 V</label>
 <input type="radio" name="tl126-q7" id="tl126-q7b"><label for="tl126-q7b" class="tl-opt tl-no">B. 880 V</label>
-<input type="radio" name="tl126-q7" id="tl126-q7c"><label for="tl126-q7c" class="tl-opt tl-no">C. 110 V</label>
+<input type="radio" name="tl126-q7" id="tl126-q7c"><label for="tl126-q7c" class="tl-opt tl-no">C. 165 V</label>
 <input type="radio" name="tl126-q7" id="tl126-q7d"><label for="tl126-q7d" class="tl-opt tl-no">D. 220 V</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $U_2 = U_1\dfrac{N_2}{N_1} = 220 \times \dfrac{150}{600} = 220 \times 0{,}25 = 55$ V. Cuộn thứ cấp ít vòng hơn nên điện áp ra nhỏ hơn điện áp vào — đây là máy hạ áp.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai là ba lỗi: đảo tỉ số vòng ($220 \times 600/150 = 880$ V), chia nhầm thành một nửa (110 V), và tưởng máy biến áp giữ nguyên điện áp (220 V). Tỉ số đúng là $\dfrac{N_2}{N_1} = \dfrac{150}{600} = 0{,}25$. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai là ba lỗi: đảo tỉ số vòng ($220 \times 600/150 = 880$ V), lấy hiệu số vòng ($220 \times 450/600 = 165$ V), và tưởng máy biến áp giữ nguyên điện áp (220 V). Tỉ số đúng là $\dfrac{N_2}{N_1} = \dfrac{150}{600} = 0{,}25$. Chọn lại nhé.</p></div>
 </div>
 </div>
 
 <h3>VI. Đời sống, thử thách và mang về</h3>
 
 <ul>
-<li><strong>Ghi ta điện, micrô điện từ:</strong> dao động cơ → dòng cảm ứng cùng tần số → loa.</li>
-<li><strong>Sạc không dây:</strong> điện thoại, đồng hồ, bàn chải điện; xe buýt điện sạc qua tấm cảm ứng.</li>
-<li><strong>Bếp từ, lò cảm ứng:</strong> nhiệt sinh ngay trong đáy nồi hoặc trong kim loại.</li>
-<li><strong>Phanh điện từ, công tơ điện:</strong> xe tải nặng, tàu hoả hãm bằng lực hãm điện từ; công tơ có đĩa nhôm quay trong từ trường, dòng Foucault hãm đĩa.</li>
+<li><strong>Ghi ta điện, micrô điện từ:</strong> dao động cơ → dòng cảm ứng cùng tần số.</li>
+<li><strong>Sạc không dây:</strong> điện thoại, đồng hồ, bàn chải điện, xe buýt điện.</li>
+<li><strong>Bếp từ, nồi cơm cảm ứng:</strong> nhiệt sinh ngay trong đáy nồi kim loại.</li>
+<li><strong>Phanh điện từ:</strong> xe tải nặng, tàu hoả hãm bằng lực hãm điện từ. <strong>Công tơ điện:</strong> đĩa nhôm quay trong từ trường, dòng Foucault hãm đĩa.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details" open>
-<summary>⭐ Cơ bản: cuộn sơ cấp 100 vòng nối nguồn 24 V, cuộn thứ cấp 25 vòng. $U_2$ bằng bao nhiêu?</summary>
+<details class="tl-details tl-more">
+<summary>⭐ Cơ bản: sơ cấp 100 vòng nối 24 V, thứ cấp 25 vòng. $U_2$ bằng bao nhiêu?</summary>
 <p>$U_2 = U_1\dfrac{N_2}{N_1} = 24 \times \dfrac{25}{100} = 6$ V. Ít vòng hơn thì điện áp nhỏ hơn.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>⭐⭐ Khá: vì sao phanh điện từ hãm mạnh lúc xe nhanh mà yếu hẳn khi xe chậm?</summary>
+<details class="tl-details tl-more">
+<summary>⭐⭐ Khá: vì sao phanh điện từ yếu hẳn khi xe chậm?</summary>
 <p>Suất điện động cảm ứng tỉ lệ với tốc độ biến thiên từ thông, mà tốc độ này tỉ lệ với vận tốc của tấm kim loại. Dòng Foucault vì thế cũng tỉ lệ với vận tốc: $I \sim v$. Lực hãm điện từ tỉ lệ với dòng điện nên $F \sim v$ — xe càng chậm, lực hãm càng nhỏ và tiến dần về 0 khi $v \to 0$. Vì vậy phanh điện từ không thể dừng hẳn xe, phải có phanh ma sát làm nốt việc đó.</p>
 </details>
 
-<details class="tl-details" open>
-<summary>⭐⭐⭐ Thách đấu: vì sao lõi máy biến áp và lõi động cơ phải ghép từ nhiều lá thép mỏng sơn cách điện?</summary>
-<p>Vì lõi nằm trong từ trường biến thiên. Nếu lõi đặc, trong lòng khối thép sinh dòng Foucault rất lớn vì điện trở khối nhỏ; dòng này vừa làm lõi nóng lên vừa lấy mất năng lượng vô ích, thậm chí làm hỏng cách điện dây quấn. Ghép nhiều lá thép mỏng sơn cách điện (dày cỡ 0,35–0,5 mm) làm mỗi đường dòng khép kín bị cắt ngắn trong một lá, điện trở tăng vọt nên dòng Foucault nhỏ đi rất nhiều; lõi vẫn dẫn từ tốt vì các lá ghép sát nhau. Ở tần số rất cao, người ta còn dùng lõi ferit — vật liệu dẫn từ tốt nhưng dẫn điện rất kém. Cùng lí do đó, lõi máy biến áp và lõi động cơ đều phải ghép từ lá thép mỏng (hoặc ferit).</p>
+<details class="tl-details tl-more">
+<summary>⭐⭐⭐ Thách đấu: vì sao lõi máy biến áp ghép từ lá thép mỏng cách điện?</summary>
+<p>Vì lõi nằm trong từ trường biến thiên. Nếu lõi đặc, trong lòng khối thép sinh dòng Foucault rất lớn vì điện trở khối nhỏ; dòng này vừa làm lõi nóng lên vừa lấy mất năng lượng vô ích, thậm chí làm hỏng cách điện dây quấn. Ghép nhiều lá thép mỏng sơn cách điện (dày cỡ 0,35–0,5 mm) làm mỗi đường dòng khép kín bị cắt ngắn trong một lá, điện trở tăng vọt nên dòng Foucault nhỏ đi rất nhiều; lõi vẫn dẫn từ tốt vì các lá ghép sát nhau. Ở tần số rất cao, người ta còn dùng lõi ferit — vật liệu dẫn từ tốt nhưng dẫn điện rất kém.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Ghi ta điện:</strong> dây thép rung · từ thông đổi · dòng cùng tần số.</li>
-<li><strong>Sạc không dây:</strong> hai cuộn rời · ghép qua từ trường · $\dfrac{U_2}{U_1} = \dfrac{N_2}{N_1}$.</li>
-<li><strong>Dòng Foucault:</strong> trong lòng khối dẫn · từ thông biến thiên · hãm + toả nhiệt Joule · chống tổn hao ở lõi máy biến áp và lõi động cơ bằng lá thép mỏng hoặc ferit.</li>
-<li><strong>Bếp từ:</strong> từ trường đổi nhanh · đáy nồi tự nóng · mặt kính mát.</li>
+<li><strong>Sạc không dây:</strong> hai cuộn rời · ghép qua từ trường · $U_2/U_1 = N_2/N_1$.</li>
+<li><strong>Dòng Foucault:</strong> trong khối dẫn · hãm chuyển động · toả nhiệt Joule · giảm tổn hao bằng lõi lá thép mỏng.</li>
+<li><strong>Bếp từ:</strong> đáy nồi tự nóng · mặt kính vẫn mát.</li>
 <li><strong>Phanh điện từ:</strong> mạnh khi nhanh, yếu khi chậm — cần thêm phanh ma sát.</li>
-<li><strong>Đọc đề:</strong> "sạc không dây, bếp từ, máy biến áp" → nghĩ tới <em>từ thông biến thiên</em>; "khối kim loại chuyển động trong từ trường" → <em>dòng Foucault</em>.</li>
+<li><strong>Đọc đề:</strong> "bếp từ, máy biến áp" → <em>từ thông biến thiên</em>; "khối kim loại chuyển động" → <em>dòng Foucault</em>.</li>
 </ul>
 </div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

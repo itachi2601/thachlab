@@ -347,11 +347,7 @@
    "question": "Thả một nút chai vào chậu nước rộng, gõ nhịp đều một đầu thước xuống mặt nước để tạo sóng. Bấm giờ dao động của nút chai và đo khoảng cách các ngọn sóng liên tiếp. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Bước sóng liên hệ với tốc độ và chu kỳ theo $\\lambda=vT$.",
-     "answer": true
-    },
-    {
-     "text": "Khoảng cách giữa 5 ngọn sóng liên tiếp bằng $5\\lambda$.",
+     "text": "Một điểm M trên mặt nước cách nguồn khoảng $x$ dao động sớm pha hơn nguồn $\\dfrac{2\\pi x}{\\lambda}$.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Một điểm M trên mặt nước cách nguồn khoảng $x$ dao động sớm pha hơn nguồn $\\dfrac{2\\pi x}{\\lambda}$.",
+     "text": "Khoảng cách giữa 5 ngọn sóng liên tiếp bằng $5\\lambda$.",
      "answer": false
+    },
+    {
+     "text": "Bước sóng liên hệ với tốc độ và chu kỳ theo $\\lambda=vT$.",
+     "answer": true
     }
    ],
    "explanation": "$\\lambda=vT=\\dfrac{v}{f}$; 5 ngọn liên tiếp chỉ có 4 khoảng nên cách nhau $4\\lambda$; M trễ pha (không sớm pha) $\\dfrac{2\\pi x}{\\lambda}$ so với nguồn.",
    "distractorNotes": {
-    "0": "Bước sóng là quãng đường sóng truyền trong một chu kỳ, nên $\\lambda=vT$ không thể sai.",
-    "1": "Đếm số ngọn thay cho số khoảng, trong khi 5 mốc chỉ tạo ra 4 khoảng, tức $4\\lambda$.",
-    "2": "Từ $\\lambda=\\dfrac{v}{f}$, khi $v$ không đổi mà $f$ tăng thì $\\lambda$ phải giảm.",
-    "3": "Sóng tới M sau khi rời nguồn nên M trễ pha, ứng với dấu trừ trong phương trình $u_M$."
+    "0": "Sóng tới M sau khi rời nguồn nên M trễ pha, ứng với dấu trừ trong phương trình $u_M$.",
+    "1": "Từ $\\lambda=\\dfrac{v}{f}$, khi $v$ không đổi mà $f$ tăng thì $\\lambda$ phải giảm.",
+    "2": "Đếm số ngọn thay cho số khoảng, trong khi 5 mốc chỉ tạo ra 4 khoảng, tức $4\\lambda$.",
+    "3": "Bước sóng là quãng đường sóng truyền trong một chu kỳ, nên $\\lambda=vT$ không thể sai."
    }
   },
   {
@@ -382,11 +382,11 @@
    "question": "Chiếu laser đỏ qua hai khe Young cách nhau $a$, màn đặt cách khe $D$. Học sinh đo khoảng cách $\\ell$ của 6 vân sáng liên tiếp rồi suy ra khoảng vân. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khoảng cách 6 vân sáng liên tiếp bằng $5i$.",
-     "answer": true
+     "text": "Đo gộp 5 khoảng vân rồi chia 5 làm giá trị thật của $i$ lớn hơn.",
+     "answer": false
     },
     {
-     "text": "Dời màn ra xa để $D$ tăng gấp đôi thì khoảng vân tăng gấp đôi.",
+     "text": "Khoảng cách 6 vân sáng liên tiếp bằng $5i$.",
      "answer": true
     },
     {
@@ -394,16 +394,16 @@
      "answer": false
     },
     {
-     "text": "Đo gộp 5 khoảng vân rồi chia 5 làm giá trị thật của $i$ lớn hơn.",
-     "answer": false
+     "text": "Dời màn ra xa để $D$ tăng gấp đôi thì khoảng vân tăng gấp đôi.",
+     "answer": true
     }
    ],
    "explanation": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ với $D$; vân tối ở $x=(k+\\tfrac12)i$; đo gộp chỉ giảm sai số tương đối, không đổi giá trị $i$.",
    "distractorNotes": {
-    "0": "6 vân sáng liên tiếp là 6 mốc, tạo ra đúng 5 khoảng vân.",
-    "1": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ thuận với $D$, nên $D$ gấp đôi thì $i$ gấp đôi.",
+    "0": "Giá trị $i$ do $\\lambda$, $D$, $a$ quyết định; cách đo gộp chỉ làm giảm sai số.",
+    "1": "6 vân sáng liên tiếp là 6 mốc, tạo ra đúng 5 khoảng vân.",
     "2": "$x=ki$ là vị trí vân sáng, còn vân tối nằm tại $x=(k+\\tfrac12)i$.",
-    "3": "Giá trị $i$ do $\\lambda$, $D$, $a$ quyết định; cách đo gộp chỉ làm giảm sai số."
+    "3": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ thuận với $D$, nên $D$ gấp đôi thì $i$ gấp đôi."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Bịt kín một đầu ống nhựa rồi thổi ngang miệng đầu còn lại, ống kêu một nốt ổn định do có sóng dừng trong cột khí. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Đầu kín của ống là nút sóng, miệng hở là bụng sóng.",
-     "answer": true
-    },
-    {
-     "text": "Chiều dài ống thoả mãn $L=(2n+1)\\dfrac{\\lambda}{4}$.",
-     "answer": true
+     "text": "Các tần số cộng hưởng của ống là bội số nguyên bất kì của $f_1=\\dfrac{v}{4L}$.",
+     "answer": false
     },
     {
      "text": "Với $n$ trong biểu thức trên, cột khí có $n$ bụng và $n+1$ nút.",
      "answer": false
     },
     {
-     "text": "Các tần số cộng hưởng của ống là bội số nguyên bất kì của $f_1=\\dfrac{v}{4L}$.",
-     "answer": false
+     "text": "Đầu kín của ống là nút sóng, miệng hở là bụng sóng.",
+     "answer": true
+    },
+    {
+     "text": "Chiều dài ống thoả mãn $L=(2n+1)\\dfrac{\\lambda}{4}$.",
+     "answer": true
     }
    ],
    "explanation": "Một đầu nút, một đầu bụng: $L=(2n+1)\\dfrac{\\lambda}{4}$, có $n+1$ bụng và $n+1$ nút; tần số $f_m=mf_1$ với $m$ lẻ.",
    "distractorNotes": {
-    "0": "Đầu kín tương ứng đầu cố định nên là nút, miệng hở tương ứng đầu tự do nên là bụng.",
-    "1": "Một đầu nút, một đầu bụng thì $L$ bằng số lẻ lần $\\dfrac{\\lambda}{4}$.",
-    "2": "Đếm theo kiểu dây hai đầu cố định, quên rằng miệng hở cũng là bụng nên có $n+1$ bụng.",
-    "3": "Chỉ các bội số lẻ của $f_1$ mới thỏa điều kiện một đầu nút, một đầu bụng."
+    "0": "Chỉ các bội số lẻ của $f_1$ mới thỏa điều kiện một đầu nút, một đầu bụng.",
+    "1": "Đếm theo kiểu dây hai đầu cố định, quên rằng miệng hở cũng là bụng nên có $n+1$ bụng.",
+    "2": "Đầu kín tương ứng đầu cố định nên là nút, miệng hở tương ứng đầu tự do nên là bụng.",
+    "3": "Một đầu nút, một đầu bụng thì $L$ bằng số lẻ lần $\\dfrac{\\lambda}{4}$."
    }
   },
   {
@@ -487,28 +487,28 @@
    "question": "Một đài phát thanh FM phát sóng điện từ có tần số $f$ truyền trong không khí. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Bước sóng và tần số liên hệ theo $f=\\dfrac{c}{\\lambda}$.",
-     "answer": true
-    },
-    {
      "text": "Tốc độ $c$ trong công thức lấy bằng $3\\cdot10^8\\ \\text{m/s}$.",
      "answer": true
     },
     {
-     "text": "Theo bước sóng giảm dần, thang sóng là vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại.",
+     "text": "Bước sóng và tần số liên hệ theo $f=\\dfrac{c}{\\lambda}$.",
      "answer": true
     },
     {
      "text": "Đài phát tần số càng cao thì bước sóng của sóng càng dài.",
      "answer": false
+    },
+    {
+     "text": "Theo bước sóng giảm dần, thang sóng là vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại.",
+     "answer": true
     }
    ],
    "explanation": "$f=\\dfrac{c}{\\lambda}$ với $c=3\\cdot10^8$ m/s nên $f$ tăng thì $\\lambda$ giảm; thang sóng theo $\\lambda$ giảm dần như phần ghi chú họ A.",
    "distractorNotes": {
-    "0": "Đây là công thức Dạng 5 áp dụng cho sóng điện từ.",
-    "1": "Tốc độ sóng điện từ trong không khí lấy đúng bằng $c=3\\cdot10^8$ m/s như bài đã cho.",
-    "2": "Thứ tự này khớp với thang sóng theo bước sóng giảm dần trong ghi chú họ A.",
-    "3": "Từ $\\lambda=\\dfrac{c}{f}$, bước sóng tỉ lệ nghịch với tần số nên tần số cao thì bước sóng ngắn."
+    "0": "Tốc độ sóng điện từ trong không khí lấy đúng bằng $c=3\\cdot10^8$ m/s như bài đã cho.",
+    "1": "Đây là công thức Dạng 5 áp dụng cho sóng điện từ.",
+    "2": "Từ $\\lambda=\\dfrac{c}{f}$, bước sóng tỉ lệ nghịch với tần số nên tần số cao thì bước sóng ngắn.",
+    "3": "Thứ tự này khớp với thang sóng theo bước sóng giảm dần trong ghi chú họ A."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Trong thí nghiệm khe Young, chiếu đồng thời hai bức xạ có bước sóng $\\lambda_1$ và $\\lambda_2$. Trên màn có những vị trí vân sáng của hai bức xạ trùng nhau. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Hai vân sáng trùng nhau khi $k_1\\lambda_1=k_2\\lambda_2$.",
-     "answer": true
-    },
-    {
-     "text": "Tại vị trí trùng, tỉ số $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_1}{\\lambda_2}$.",
-     "answer": false
-    },
-    {
      "text": "Vân trung tâm là vân sáng chung của cả hai bức xạ.",
      "answer": true
     },
     {
      "text": "Thay đổi khoảng cách hai khe $a$ thì tỉ số $\\dfrac{k_1}{k_2}$ tại vị trí trùng thay đổi.",
      "answer": false
+    },
+    {
+     "text": "Hai vân sáng trùng nhau khi $k_1\\lambda_1=k_2\\lambda_2$.",
+     "answer": true
+    },
+    {
+     "text": "Tại vị trí trùng, tỉ số $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_1}{\\lambda_2}$.",
+     "answer": false
     }
    ],
    "explanation": "Từ $k_1\\lambda_1=k_2\\lambda_2$ suy ra $\\dfrac{k_1}{k_2}=\\dfrac{\\lambda_2}{\\lambda_1}$, chỉ phụ thuộc bước sóng; tại $x=0$ cả hai đều có $k=0$.",
    "distractorNotes": {
-    "0": "Từ $k_1i_1=k_2i_2$, rút gọn thừa số $\\dfrac{D}{a}$ thu được đúng điều kiện $k_1\\lambda_1=k_2\\lambda_2$.",
-    "1": "Chuyển vế bị đảo tỉ số: bức xạ có bước sóng lớn hơn ứng với bậc vân nhỏ hơn.",
-    "2": "Tại $x=0$, cả hai bức xạ đều cho vân sáng bậc $k=0$ nên chúng trùng nhau.",
-    "3": "Khoảng cách $a$ triệt tiêu khi rút gọn, tỉ số $\\dfrac{k_1}{k_2}$ chỉ phụ thuộc hai bước sóng."
+    "0": "Tại $x=0$, cả hai bức xạ đều cho vân sáng bậc $k=0$ nên chúng trùng nhau.",
+    "1": "Khoảng cách $a$ triệt tiêu khi rút gọn, tỉ số $\\dfrac{k_1}{k_2}$ chỉ phụ thuộc hai bước sóng.",
+    "2": "Từ $k_1i_1=k_2i_2$, rút gọn thừa số $\\dfrac{D}{a}$ thu được đúng điều kiện $k_1\\lambda_1=k_2\\lambda_2$.",
+    "3": "Chuyển vế bị đảo tỉ số: bức xạ có bước sóng lớn hơn ứng với bậc vân nhỏ hơn."
    }
   }
  ]

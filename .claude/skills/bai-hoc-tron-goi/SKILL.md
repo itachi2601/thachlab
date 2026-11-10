@@ -1,12 +1,12 @@
 ---
 name: bai-hoc-tron-goi
-description: Điều phối làm MỘT bài học thachlab từ đầu đến cuối (lý thuyết tương tác → tài nguyên hình/PhET/video → bài tập mẫu → rà và cập nhật → đăng) hoặc chỉ các chặng cần thiết của bài đã đăng. Skill mỏng, chỉ chọn chặng và trỏ tới skill chuyên trách; mỗi chặng chỉ đọc phần của mình. Dùng khi thầy nói "làm trọn bài X", "làm bài mới đủ lý thuyết + bài tập mẫu", "nâng cấp bài X", "bài này còn thiếu gì", "/bai-hoc-tron-goi". Việc lẻ một chặng (sửa một chữ, chỉ soạn quiz) thì gọi thẳng skill chặng đó, không qua đây.
+description: Điều phối làm MỘT bài học thachlab từ đầu đến cuối (lý thuyết → tài nguyên → bài tập mẫu → rà → đăng) hoặc các chặng còn thiếu, trỏ tới skill chuyên trách. Dùng khi thầy nói "làm trọn bài X", "nâng cấp bài X", "bài này còn thiếu gì", "/bai-hoc-tron-goi". Việc lẻ một chặng thì gọi thẳng skill chặng đó.
 ---
 
 # Điều phối bài học trọn gói (thầy chốt 11/10/2026)
 
 **Skill này không chứa quy trình.** Quy trình nằm ở bốn skill chuyên trách; ở đây chỉ có: hỏi bối cảnh → chọn chặng → đọc ĐÚNG phần của chặng → ghi nhận bàn giao giữa chặng.
-**Quy tắc nạp (tiết kiệm token): không đọc SKILL.md của chặng chưa tới lượt.** `soan-bai-ly-thuyet-tuong-tac` ~85 KB, `soan-bai-tap-mau` ~43 KB — mở bằng `grep -n '^## '` rồi đọc đoạn cần, không đọc cả file trừ khi lần đầu soạn bài mới.
+**Quy tắc nạp (tiết kiệm token): không đọc SKILL.md của chặng chưa tới lượt.** `soan-bai-ly-thuyet-tuong-tac` ~40 KB (nhật ký ở `references/nhat-ky.md`), `soan-bai-tap-mau` ~45 KB — mở bằng `grep -n '^## '` rồi đọc đoạn cần, không đọc cả file trừ khi lần đầu soạn bài mới.
 
 ## Bước 0 — Hỏi bối cảnh (một lần, ngắn)
 1. Bài nào (Lớp → Chương → Bài, `public/data/catalog.json`); **mới hay đã đăng?** Đã đăng → đọc `lesson_items` hiện có và `content/lesson-samples/<bài>/` trước; xem còn thiếu mục nào (lý thuyết / bài tập mẫu / video / mô phỏng).

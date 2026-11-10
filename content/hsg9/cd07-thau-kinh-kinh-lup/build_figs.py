@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import text, wrap, chevron
 
-PHUT = 17
+PHUT = 18
 # màu tầm trung: đọc được cả nền sáng (mặc định) lẫn nền tối
 RAY, OBJ, IMG, AUX = "#dc2626", "#0284c7", "#059669", "#ea580c"
 GRID = "rgba(148,163,184,.30)"

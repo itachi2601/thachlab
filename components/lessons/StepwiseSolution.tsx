@@ -30,10 +30,78 @@ export function splitSolution(html: string): { head: string; steps: string[]; ta
   return { head: inner.slice(0, a), steps, tail: inner.slice(b) };
 }
 
-/** Lấy số đầu tiên em gõ: "10,5 m" → 10.5 (D6: bàn phím số, dấu phẩy thập phân). */
-function parseNumber(s: string): number | null {
-  const m = s.replace(/\s+/g, "").match(/-?\d+(?:[.,]\d+)?/);
-  return m ? Number(m[0].replace(",", ".")) : null;
+/**
+ * Đọc đáp số em gõ (D6: bàn phím số, dấu phẩy thập phân): "10,5 m" → 10.5, và cả biểu thức ngắn như trên giấy —
+ * "13/3", "-1/24", "2√3", "π/3", "2√(3)/3", "3.10^8" (HS ảo 3/11/2026: trước chỉ đọc số đầu nên "1/24" bị chấm là 1).
+ * Đơn vị cuối chuỗi bị bỏ qua; chuỗi đọc không trọn (vd "1/") → null để nút Kiểm tra còn tắt.
+ */
+export function parseNumber(raw: string): number | null {
+  let s = raw.replace(/\s+/g, "").replace(/[−–]/g, "-").replace(/[×·]/g, "*").replace(/:/g, "/");
+  s = s.replace(/(\d),(\d)/g, "$1.$2").replace(/pi/gi, "π").replace(/sqrt/gi, "√");
+  s = s.replace(/(\d)\.10\^/g, "$1*10^"); // cách viết lớp học: 3.10^8 = 3×10⁸
+  s = s.replace(/[a-zA-Zµμ°Ω%][a-zA-Zµμ°Ω%/²³0-9.]*$/, ""); // bỏ đơn vị cuối: "m/s", "cm", "rad"
+  let i = 0;
+  const peek = () => s[i];
+  const expr = (): number | null => {
+    let v = term();
+    while (v !== null && (peek() === "+" || peek() === "-")) {
+      const op = s[i++], r = term();
+      if (r === null) return null;
+      v = op === "+" ? v + r : v - r;
+    }
+    return v;
+  };
+  const term = (): number | null => {
+    let v = power();
+    while (v !== null && i < s.length) {
+      const c = peek();
+      if (c === "*" || c === "/") {
+        i++;
+        const r = power();
+        if (r === null) return null;
+        v = c === "*" ? v * r : v / r;
+      } else if (c === "√" || c === "π" || c === "(") {
+        const r = power(); // nhân ngầm: 2√3, 2π, 3(…)
+        if (r === null) return null;
+        v *= r;
+      } else break;
+    }
+    return v;
+  };
+  const power = (): number | null => {
+    const b = unary();
+    if (b === null || peek() !== "^") return b;
+    i++;
+    const e = unary();
+    return e === null ? null : b ** e;
+  };
+  const unary = (): number | null => {
+    if (peek() === "-") {
+      i++;
+      const u = unary();
+      return u === null ? null : -u;
+    }
+    if (peek() === "+") return (i++, unary());
+    if (peek() === "√") {
+      i++;
+      const u = unary();
+      return u === null || u < 0 ? null : Math.sqrt(u);
+    }
+    if (peek() === "π") return i++, Math.PI;
+    if (peek() === "(") {
+      i++;
+      const v = expr();
+      if (v === null || peek() !== ")") return null;
+      i++;
+      return v;
+    }
+    const m = s.slice(i).match(/^\d+(?:\.\d*)?|^\.\d+/);
+    if (!m) return null;
+    i += m[0].length;
+    return Number(m[0]);
+  };
+  const v = expr();
+  return v !== null && i === s.length && Number.isFinite(v) ? v : null;
 }
 
 /** Đảo thứ tự lựa chọn ổn định theo nội dung (không để đáp án đúng luôn ở đầu, nhưng không nhảy mỗi lần render). */
@@ -115,7 +183,9 @@ function StepAsk({
     }
   }
 
+  // đã chọn đúng thì khoá: chạm nhầm lựa chọn khác không mở lại bước (HS ảo Đ5)
   function pickChoice(c: WorkedChoice) {
+    if (pick?.dung) return;
     setPick(c);
     if (c.dung) onDone();
     else {
@@ -135,7 +205,7 @@ function StepAsk({
       {needNext && (
         <div className="bt-ask">
           <p className="bt-ask-q">Bước tiếp theo làm gì?</p>
-          <Choices choices={step.chon_buoc_ke!} onPick={setNextPick} picked={nextPick} color={color} />
+          <Choices choices={step.chon_buoc_ke!} onPick={(c) => !nextPick?.dung && setNextPick(c)} picked={nextPick} color={color} />
         </div>
       )}
       {nextOk && (
@@ -198,6 +268,9 @@ export default function StepwiseSolution({
   color,
   jump,
   onAllOpen,
+  onProgress,
+  only,
+  fading,
 }: {
   q: LessonWorkedQuestion;
   color: string;
@@ -205,11 +278,17 @@ export default function StepwiseSolution({
   jump?: { idx: number; n: number } | null;
   /** Gọi một lần khi mọi bước đã mở — cha mới hiện "Làm bài tương tự" (ví dụ mẫu đi trước, retrieval đi sau). */
   onAllOpen?: () => void;
+  /** Số bước đầu đã mở liên tiếp — công cụ tương tác dưới đề vẽ lớp phủ tới đúng bước đó (không lộ bước còn giấu). */
+  onProgress?: (opened: number) => void;
+  /** Chỉ hiện một bước (giải cùng hình: cha lật bước bằng ◀ ▶, lời giải đầy đủ để riêng bên dưới). */
+  only?: number;
+  /** Đè mức mờ dần của dạng (giải cùng hình: mọi bước có câu hỏi đều tự làm, thầy chốt 2/11/2026). */
+  fading?: LessonWorkedQuestion["fading"];
 }) {
   const parts = useMemo(() => splitSolution(q.solution_html ?? ""), [q.solution_html]);
   const steps = useMemo(() => q.buoc ?? [], [q.buoc]);
   const usable = !!parts && parts.steps.length === steps.length && steps.length > 0;
-  const hidden = useMemo(() => hiddenSteps(q.fading, steps), [q.fading, steps]);
+  const hidden = useMemo(() => hiddenSteps(fading ?? q.fading, steps), [fading, q.fading, steps]);
   const [revealed, setRevealed] = useState<boolean[]>(() => hidden.map((h) => !h));
   const [flash, setFlash] = useState<number | null>(null);
   const refs = useRef<(HTMLDivElement | null)[]>([]);
@@ -226,19 +305,24 @@ export default function StepwiseSolution({
   }
   useEffect(() => {
     if (flash === null) return;
-    const t = setTimeout(() => refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
+    // giải cùng hình (`only`): cha (GiaiCungHinh) cuộn sao cho đỉnh bước nằm ngay dưới hình dính; block:"center" ở đây đặt tiêu đề bước khuất sau hình
+    const t = setTimeout(() => only === undefined && refs.current[flash]?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     const t2 = setTimeout(() => setFlash(null), 2500);
     return () => {
       clearTimeout(t);
       clearTimeout(t2);
     };
-  }, [flash]);
+  }, [flash, only]);
 
   const current = revealed.findIndex((v) => !v); // bước đầu tiên chưa mở
   const allOpen = !usable || current < 0;
   useEffect(() => {
     if (allOpen) onAllOpen?.();
   }, [allOpen, onAllOpen]);
+  const opened = current < 0 ? steps.length : current;
+  useEffect(() => {
+    onProgress?.(usable ? opened : steps.length);
+  }, [usable, opened, steps.length, onProgress]);
 
   if (!usable) return <ContentHtml html={q.solution_html ?? ""} className="block leading-relaxed" />;
 
@@ -247,8 +331,8 @@ export default function StepwiseSolution({
   return (
     <div className="exam-content block leading-relaxed">
      <div className="bt-sol">
-      <ContentHtml html={parts!.head} className="block" />
-      {steps.map((s, i) => (
+      {only === undefined && <ContentHtml html={parts!.head} className="block" />}
+      {steps.map((s, i) => only !== undefined && i !== only ? null : (
         <div key={i} ref={(el) => { refs.current[i] = el; }} className={flash === i ? "bt-flash" : undefined}>
           {revealed[i] ? (
             <ContentHtml html={parts!.steps[i]} className="block" />
@@ -264,7 +348,7 @@ export default function StepwiseSolution({
           )}
         </div>
       ))}
-      {allOpen ? (
+      {only !== undefined ? null : allOpen ? (
         <ContentHtml html={parts!.tail} className="block" />
       ) : (
         <button type="button" className="bt-show-all" onClick={() => setRevealed(steps.map(() => true))}>

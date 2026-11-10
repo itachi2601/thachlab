@@ -36,11 +36,19 @@ class Canvas:
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
         L = math.hypot(x2 - x1, y2 - y1)
         ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        # đầu V 30° (hai vạch, không marker tam giác) — thân dừng sát đỉnh để nét không lòi qua mũi
+        ex, ey = x2 - ux * w * 0.9, y2 - uy * w * 0.9
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        self.body += f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+        t = math.radians(30)
+        pts = []
+        for sgn in (1, -1):
+            bx = ux * math.cos(t) - uy * math.sin(sgn * t)
+            by = ux * math.sin(sgn * t) + uy * math.cos(t)
+            pts.append((x2 - head * bx, y2 - head * by))
+        (ax, ay), (bx2, by2) = pts
+        self.body += (f'<path d="M{ax:.1f},{ay:.1f} L{x2:.1f},{y2:.1f} L{bx2:.1f},{by2:.1f}" fill="none" stroke="{COL[c]}" '
+                      f'stroke-width="{w}" stroke-linejoin="miter" stroke-miterlimit="10"/>')
         self.arrows[tag] = (x1, y1, x2, y2)
         self.segs.append((x1, y1, x2, y2))
 
@@ -217,6 +225,7 @@ c.line(75, 111, 75, 121, "currentColor", 1.6, obstacle=False)
 c.text(80, 122, "s", size=18, italic=True)
 c.text(16, 82, "tấm cản", size=17)
 c.text(16, 100, "quang", size=17)
+c.line(36, 106, 60, 132, "currentColor", 1.4)
 for gx, nm, lx in ((140, "cổng 1", 148), (300, "cổng 2", 308)):
     c.add(f'<rect x="{gx - 14}" y="60" width="28" height="18" rx="3" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/>')
     c.line(gx, 78, gx, 190, RED, 2.4, "6 4", obstacle=False)
@@ -229,13 +238,13 @@ c.segs += [(140, 60, 140, 40), (140, 40, 330, 40)]
 c.add('<polyline points="314,69 330,69" fill="none" stroke="currentColor" stroke-width="1.8"/>')
 c.segs += [(314, 69, 330, 69)]
 c.arr("v1", "g", 40, 222, 104, 222, 3, 11)
-c.text(112, 227, 'v<tspan font-size="13" dy="4">1</tspan>', size=18, italic=True)
+c.text(112, 227, 'v<tspan font-size="14" dy="4">1</tspan>', size=18, italic=True)
 c.text(186, 228, "xe 2 đứng yên", size=17)
 c.text(404, 256, "băng đệm khí", size=17, anchor="end")
 ok(c.arrows["v1"][2] > c.arrows["v1"][0], "f1: mũi tên v1 phải hướng sang phải (tới cổng 1)")
 ok(68 < 140 < 218 - 28 + 28 and 218 < 300, "f1: xe 1 ở ngoài cổng 1, xe 2 giữa hai cổng")
 fig1 = c.svg("Sơ đồ bố trí thí nghiệm va chạm mềm trên băng đệm khí: xe 1 ở bên trái cổng 1, xe 2 đứng yên giữa hai cổng, mỗi xe có một tấm cản quang rộng s dựng thẳng; cổng 1 và cổng 2 phát tia sáng nét đứt đỏ, nối dây tới đồng hồ hiện số; mũi tên v1 chỉ xe 1 chạy sang phải",
-             "Hình 1. Bố trí thí nghiệm 1. Xe 1 chạy qua cổng 1 (đo $t_1$), va vào xe 2 đứng yên rồi hai xe dính nhau chạy qua cổng 2 (đo $t_1'$). $s$ là bề rộng tấm cản quang.".replace("$t_1$", "<em>t</em><sub>1</sub>").replace("$t_1'$", "<em>t</em><sub>1</sub>′"))
+             "Hình 1. Bố trí thí nghiệm 1.<br>Xe 1 chạy qua cổng 1: đo $t_1$.<br>Xe 1 va vào xe 2 đứng yên, hai xe dính nhau.<br>Cặp xe chạy qua cổng 2: đo $t_1'$.<br>$s$ là bề rộng tấm cản quang.".replace("$t_1$", "<em>t</em><sub>1</sub>").replace("$t_1'$", "<em>t</em><sub>1</sub>′"))
 ERR += c.check()
 
 # ================= Hình 2: tỉ số p'/p từng lần, kèm khoảng sai số ±ε
@@ -245,6 +254,7 @@ Y = lambda v: OY - K * (v - 0.94)
 c.arr("tx", "k", OX, OY, 408, OY, 1.8, 9)
 c.arr("vy", "k", OX, OY, OX, 22, 1.8, 9)
 c.text(70, 24, "p′/p", size=18, italic=True)
+c.text(OX - 8, Y(0.94) + 5, vn(0.94, 2), size=17, anchor="end", weight="600")
 for tv in (0.96, 0.98, 1.00, 1.02):
     c.line(OX - 4, Y(tv), OX + 4, Y(tv), "currentColor", 1.5, obstacle=False)
     c.text(OX - 8, Y(tv) + 5, vn(tv, 2), size=17, anchor="end", weight="600")
@@ -263,7 +273,7 @@ ok(float(A[0]["ratio"] + A[0]["eps"]) >= 1 and float(A[1]["ratio"] + A[1]["eps"]
    "f2: thanh sai số lần 1,2 chạm p'/p = 1; lần 3 không")
 ok(Y(0.94) == OY and Y(1.02) > 22, "f2: trục")
 fig2 = c.svg("Đồ thị tỉ số p phẩy trên p cho ba lần đo va chạm mềm: ba điểm cam đều nằm dưới đường nét đứt xanh p phẩy bằng p; thanh đứng là khoảng sai số cộng trừ epsilon, thanh lần 1 và lần 2 chạm đường nét đứt, thanh lần 3 nằm hẳn dưới",
-             "Hình 2. Tỉ số <em>p</em>′/<em>p</em> của ba lần đo (số liệu minh hoạ); thanh đứng là khoảng sai số ±<em>ε</em>. Trục đứng bắt đầu từ 0,94, không phải từ 0.",
+             "Hình 2. Tỉ số <em>p</em>′/<em>p</em> của ba lần đo (số liệu minh hoạ).<br>Thanh đứng là khoảng sai số ±<em>ε</em>.<br>Trục đứng bắt đầu từ 0,94, không phải từ 0.",
              exp="tn-l10-thuchanhdl-01")
 ERR += c.check()
 
@@ -284,14 +294,14 @@ c.arr("pos", "k", 150, 40, 270, 40, 2.4, 10)
 c.text(278, 45, "chiều dương", size=17)
 c.arr("v1", "g", 150, 222, 90, 222, 3, 11)
 c.arr("v2", "g", 290, 222, 350, 222, 3, 11)
-c.text(48, 227, 'v<tspan font-size="13" dy="4">1</tspan><tspan font-size="17" dy="-4">′</tspan>', size=18, italic=True)
-c.text(356, 227, 'v<tspan font-size="13" dy="4">2</tspan><tspan font-size="17" dy="-4">′</tspan>', size=18, italic=True)
+c.text(48, 227, 'v<tspan font-size="14" dy="4">1</tspan><tspan font-size="17" dy="-4">′</tspan>', size=18, italic=True)
+c.text(356, 227, 'v<tspan font-size="14" dy="4">2</tspan><tspan font-size="17" dy="-4">′</tspan>', size=18, italic=True)
 c.text(160, 247, "băng đệm khí", size=17)
 ok(c.arrows["pos"][2] > c.arrows["pos"][0], "f3: chiều dương sang phải")
 ok(c.arrows["v1"][2] < c.arrows["v1"][0] and c.arrows["v2"][2] > c.arrows["v2"][0], "f3: v1' sang trái, v2' sang phải")
 ok(c.arrows["v1"][2] > 70 and c.arrows["v2"][2] < 370, "f3: mũi tên chưa tới cổng")
 fig3 = c.svg("Sơ đồ bố trí thí nghiệm hai xe đẩy nhau: hai xe đứng yên giữa cổng 1 và cổng 2 với lò xo nén ở giữa; mũi tên chiều dương hướng sang phải; sau khi cắt dây, xe 1 chạy sang trái với vận tốc v1 phẩy, xe 2 chạy sang phải với v2 phẩy",
-             "Hình 3. Bố trí thí nghiệm 2, hai xe cùng khối lượng nên hai mũi tên dài bằng nhau. Chiều dương sang phải: <em>v</em><sub>1</sub>′ ngược chiều dương nên <em>p</em><sub>1</sub>′ &lt; 0, còn <em>p</em><sub>2</sub>′ &gt; 0.",
+             "Hình 3. Bố trí thí nghiệm 2.<br>Hai xe cùng khối lượng nên hai mũi tên dài bằng nhau.<br>Chiều dương sang phải: <em>v</em><sub>1</sub>′ ngược chiều dương nên <em>p</em><sub>1</sub>′ &lt; 0.<br><em>v</em><sub>2</sub>′ cùng chiều dương nên <em>p</em><sub>2</sub>′ &gt; 0.",
              exp="tn-l10-thuchanhdl-02")
 ERR += c.check()
 

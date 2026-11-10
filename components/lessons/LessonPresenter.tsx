@@ -96,6 +96,25 @@ interface DeckPage {
   tap?: string;
 }
 
+/**
+ * Vị trí bài trong SÁCH IN (book/, file tĩnh public/sach-data/trang-bai.json do `book/make.py` ghi theo sổ khoá):
+ * thầy đang chiếu mục II nói ngay được "mở sách trang 8". Chỉ đọc file tĩnh, không gọi Supabase.
+ */
+interface BookPages {
+  sach: string;
+  ban: number;
+  trang: [number, number];
+  muc: Record<string, number>;
+  bai_tap_mau: number;
+  dap_an: number;
+}
+
+/** Mục La Mã của tiêu đề trang chiếu ("II. …", "II.1. …") → trang sách của mục đó. */
+function bookPageOf(book: BookPages | null, heading: string): number | null {
+  const m = /^\s*([IVX]+)\./.exec(heading);
+  return (book && m && book.muc[m[1]]) || null;
+}
+
 /** Tiêu đề chung của cả mục, không phải nội dung: "LÝ THUYẾT", "LÍ THUYẾT". */
 const GENERIC_INTRO_RE = /^l[ýí]thuy[ếe]t$/i;
 
@@ -285,6 +304,19 @@ export default function LessonPresenter({
    * vừa vẽ" / "xoá hết" — nên giữ thêm bản đếm trong state, KHÔNG đọc ref lúc render.
    */
   const [strokeCounts, setStrokeCounts] = useState<Record<number, number>>({});
+  const [book, setBook] = useState<BookPages | null>(null);
+
+  useEffect(() => {
+    if (lessonId == null) return;
+    let alive = true;
+    fetch("/sach-data/trang-bai.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((all: Record<string, BookPages> | null) => alive && setBook(all?.[String(lessonId)] ?? null))
+      .catch(() => {});
+    return () => {
+      alive = false;
+    };
+  }, [lessonId]);
 
   const rootRef = useRef<HTMLDivElement | null>(null);
   const stageRef = useRef<HTMLDivElement | null>(null);
@@ -741,6 +773,13 @@ export default function LessonPresenter({
               <p className="presenter-cover-sub">
                 {pages.length - 1} trang nội dung · lật trang bằng <kbd>←</kbd> <kbd>→</kbd> hoặc <kbd>Space</kbd>
               </p>
+              {book && (
+                <p className="presenter-tap">
+                  <span aria-hidden>📖</span> Sách in (bản {book.ban}): tr. {book.trang[0]}–{book.trang[1]}
+                  {book.bai_tap_mau ? ` · bài tập mẫu tr. ${book.bai_tap_mau}` : ""}
+                  {book.dap_an ? ` · bảng đáp án tr. ${book.dap_an}` : ""}
+                </p>
+              )}
               <button type="button" className="presenter-cover-start" onClick={() => go(1)}>
                 Bắt đầu <ChevronRight size={18} aria-hidden />
               </button>
@@ -751,6 +790,11 @@ export default function LessonPresenter({
               {formatTapLabel(page.tap) && (
                 <p className="presenter-tap">
                   <span aria-hidden>✍</span> {formatTapLabel(page.tap)}
+                </p>
+              )}
+              {bookPageOf(book, page.heading) && (
+                <p className="presenter-tap">
+                  <span aria-hidden>📖</span> Sách tr. {bookPageOf(book, page.heading)}
                 </p>
               )}
               {page.heading && <h2 className="presenter-heading">{page.heading}</h2>}

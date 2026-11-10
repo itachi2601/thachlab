@@ -105,20 +105,37 @@ def arc(cx, cy, r, a0, a1, c="currentColor", w=2, op=1, n=24):
 # =====================================================================
 f1 = Fig("f1", 256)
 # ukulele nằm ngang, đầu đàn về bên phải
-f1.add('<ellipse cx="62" cy="150" rx="50" ry="44" fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f1.add('<ellipse cx="116" cy="150" rx="34" ry="31" fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f1.add('<circle cx="86" cy="150" r="14" fill="rgba(0,0,0,.25)" stroke="currentColor" stroke-width="2"/>')
+# thân đàn = hợp của hai elip (bầu dưới to, bầu trên nhỏ), vẽ MỘT đường viền ngoài, không lộ nét elip chồng nhau
+BODY = ((62, 150, 50, 44), (116, 150, 34, 31))
+HOLE = (100, 150, 12)                                # lỗ thoát âm ở bầu trên, sát chân cần đàn
+def _ray(cx, cy, rx, ry, ox, oy, ux, uy):           # khoảng cách từ (ox,oy) theo hướng u tới biên elip
+    a = (ux / rx) ** 2 + (uy / ry) ** 2
+    b = 2 * ((ox - cx) * ux / rx ** 2 + (oy - cy) * uy / ry ** 2)
+    c = ((ox - cx) / rx) ** 2 + ((oy - cy) / ry) ** 2 - 1
+    assert c < 0
+    return (-b + math.sqrt(b * b - 4 * a * c)) / (2 * a)
+_O = (88, 150)                                       # điểm nằm trong cả hai elip -> hợp là hình sao quanh _O
+_body = []
+for i in range(240):
+    th = 2 * math.pi * i / 240
+    ux, uy = math.cos(th), math.sin(th)
+    r = max(_ray(*e, *_O, ux, uy) for e in BODY)
+    _body.append((_O[0] + r * ux, _O[1] + r * uy))
+f1.add('<polygon fill="rgba(251,146,60,.16)" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" points="'
+       + " ".join(f"{x:.1f},{y:.1f}" for x, y in _body) + '"/>')
+f1.add(f'<circle cx="{HOLE[0]}" cy="{HOLE[1]}" r="{HOLE[2]}" fill="rgba(0,0,0,.25)" stroke="currentColor" stroke-width="2"/>')
+f1.add('<rect x="40" y="139" width="8" height="22" rx="2" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.6"/>')   # ngựa đàn
 NECK_Y0, NECK_Y1, NECK_X1 = 141, 159, 238
 f1.add(f'<rect x="146" y="{NECK_Y0}" width="{NECK_X1 - 146}" height="{NECK_Y1 - NECK_Y0}" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>')
 f1.add(f'<rect x="{NECK_X1}" y="{NECK_Y0 - 5}" width="30" height="{NECK_Y1 - NECK_Y0 + 10}" rx="4" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>')
 for k in range(4):                                   # 4 dây A, E, C, G (vẽ đều nhau)
     y = NECK_Y0 + 3 + k * 4
-    f1.add(line(72, y, NECK_X1 + 10, y, "currentColor", 1.2, op=.8))
+    f1.add(line(48, y, NECK_X1 + 10, y, "currentColor", 1.2, op=.8))
 for x in (176, 204):                                  # phím đàn
     f1.add(line(x, NECK_Y0, x, NECK_Y1, "currentColor", 1.2, op=.6))
 # sóng âm từ lỗ thoát âm đi lên-phải (cung quanh tâm lỗ thoát âm, phía trên cần đàn)
-for r in (64, 80, 96):
-    f1.add(arc(86, 150, r, -80, -30, BLUE, 2.2, op=.9))
+for r in (58, 74, 90):
+    f1.add(arc(HOLE[0], HOLE[1], r, -78, -28, BLUE, 2.2, op=.9))
 # điện thoại
 PX0, PX1, PY0, PY1 = 308, 412, 36, 226
 f1.add(f'<rect x="{PX0}" y="{PY0}" width="{PX1 - PX0}" height="{PY1 - PY0}" rx="14" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.4"/>')
@@ -145,7 +162,7 @@ fig1 = fig(f1, "Cây ukulele nằm ngang, sóng âm toả lên phía trên cần
 # =====================================================================
 # Hình 2: sơ đồ nối âm thoa - micro - dao động kí
 # =====================================================================
-f2 = Fig("f2", 252)
+f2 = Fig("f2", 266)
 # âm thoa (chữ U) + hộp cộng hưởng
 f2.add('<path d="M42,34 L42,92 Q42,106 52,106 Q62,106 62,92 L62,34" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/>')
 f2.add(line(52, 106, 52, 138, "currentColor", 3))
@@ -154,15 +171,17 @@ f2.T(12, 214, "Âm thoa", "currentColor", FS, "start", "700")
 # sóng âm từ âm thoa tới micro (cung quanh nhánh phải)
 for r in (26, 44, 62):
     f2.add(arc(62, 64, r, -34, 34, BLUE, 2.2, op=.9))
-f2.T(96, 26, "sóng âm", BLUE, FS, "start", "700")
+f2.T(80, 18, "sóng âm", BLUE, FS, "start", "700")   # đặt trên-trái cung ngoài (đỉnh cung y≈29)
 # micro
 MX, MY0, MY1 = 190, 50, 92
 f2.add(f'<rect x="{MX - 13}" y="{MY0}" width="26" height="{MY1 - MY0}" rx="13" fill="rgba(56,189,248,.16)" stroke="currentColor" stroke-width="2.2"/>')
-f2.add(line(MX, MY1, MX, 128, "currentColor", 2.2))
-f2.add(line(MX - 16, 128, MX + 16, 128, "currentColor", 2.6))
+# giá micro: thanh đứng + đế; dây tín hiệu đi riêng từ đáy micro sang phải, không xuyên qua đế
+STAND_Y = 140
+f2.add(line(MX, MY1, MX, STAND_Y, "currentColor", 2.6))
+f2.add(f'<rect x="{MX - 20}" y="{STAND_Y}" width="40" height="7" rx="3" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="1.8"/>')
 f2.T(MX - 20, 118, "Micro", "currentColor", FS, "end", "700")
 # dao động kí
-SX0, SX1, SY0, SY1 = 262, 428, 14, 228
+SX0, SX1, SY0, SY1 = 262, 428, 14, 248
 f2.add(f'<rect x="{SX0}" y="{SY0}" width="{SX1 - SX0}" height="{SY1 - SY0}" rx="8" fill="rgba(148,163,184,.18)" stroke="currentColor" stroke-width="2.4"/>')
 gx0, gy0, gw, gh = SX0 + 12, SY0 + 12, 142, 78
 f2.add(f'<rect x="{gx0}" y="{gy0}" width="{gw}" height="{gh}" fill="rgba(0,0,0,.2)" stroke="currentColor" stroke-width="1.4" stroke-opacity=".7"/>')
@@ -176,15 +195,15 @@ f2.T(SX0 + (SX1 - SX0) / 2, SY0 + 12 + gh + 26, "Dao động kí", "currentColor
 # đầu vào CH1 + dây
 JX, JY = SX0, 160
 f2.add(f'<circle cx="{JX}" cy="{JY}" r="6" fill="currentColor"/>')
-f2.add(poly([(MX, 128), (MX, JY), (JX - 6, JY)], "currentColor", 2.2))
+f2.add(poly([(MX + 6, MY1 - 3), (MX + 30, MY1 + 10), (MX + 30, JY), (JX - 6, JY)], "currentColor", 2.2))
 f2.T(JX + 12, JY + 6, "CH1", "currentColor", FS, "start", "700")
 # hai núm
 for k, name in enumerate(("TIME/DIV", "VOLT/DIV")):
-    ky = 188 + k * 28
+    ky = 194 + k * 32
     f2.add(f'<circle cx="{SX0 + 24}" cy="{ky}" r="10" fill="none" stroke="{ORG if k == 0 else BLUE}" stroke-width="2.4"/>')
     f2.add(line(SX0 + 24, ky, SX0 + 24, ky - 8, ORG if k == 0 else BLUE, 2.4))
     f2.T(SX0 + 42, ky + 6, name, ORG if k == 0 else BLUE, FS, "start", "700")
-assert JX == SX0 and JY > gy0 + gh
+assert JX == SX0 and JY > gy0 + gh and 194 + 32 + 10 <= SY1 - 8 and MX + 30 < SX0 - 10
 fig2 = fig(f2, "Âm thoa trên hộp cộng hưởng phát sóng âm tới micro; dây tín hiệu từ micro nối vào đầu vào CH1 của dao động kí, bên cạnh có hai núm TIME/DIV và VOLT/DIV.",
            "Hình 2. Sơ đồ nối: nguồn âm đơn, micro, dao động kí.")
 
@@ -261,7 +280,8 @@ for yc, fq, col in ((Y1C, 440.0, BLUE), (Y2C, 880.0, RED)):
     assert abs(ups - fq * TMAX * 1e-3) <= 1.01, (fq, ups)
 f4.T(X0_, 30, "440 Hz", BLUE, FS, "start", "700")
 f4.T(X0_, 124, "880 Hz (cao hơn)", RED, FS, "start", "700")
-f4.add(line(X0_, AXY, X1_ + 10, AXY, "currentColor", 1.8))
+f4.add(line(X0_, AXY, X1_ + 22, AXY, "currentColor", 1.8))
+f4.add(chevron(X1_ + 22, AXY, 1, 0, "currentColor", 1.8, 10))   # đầu V cho trục thời gian
 for t in (0, 2, 4, 6, 8):
     f4.add(line(tx(t), AXY, tx(t), AXY + 6, "currentColor", 1.6))
     f4.T(tx(t), AXY + 28, str(t), "currentColor", FS, "middle", "600")

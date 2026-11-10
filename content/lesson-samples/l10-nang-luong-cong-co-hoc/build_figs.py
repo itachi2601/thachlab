@@ -2,11 +2,14 @@
 theory.src.html -> theory.html. Chạy: python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Tự kiểm bằng toạ độ: nhãn không chồng nhau, không vượt viewBox, không bị nét vẽ cắt xuyên; góc giữa F và d
 tính lại từ toạ độ mũi tên và so dấu cos với nhãn A > 0 / = 0 / < 0; góc dây kéo hình 4 đúng 30°."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -17,11 +20,8 @@ VB = {}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="11" markerHeight="11" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ đầu V 30° bằng chevron (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def seg(x1, y1, x2, y2):
@@ -31,8 +31,10 @@ def seg(x1, y1, x2, y2):
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
     seg(x1, y1, x2, y2)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    L = max(5, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
@@ -43,7 +45,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, track=True):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="12">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -81,40 +83,19 @@ def angle_between(ux, uy, vx, vy):
     return math.degrees(math.acos(max(-1.0, min(1.0, c))))
 
 
-# ---------------- Hình 1: hai cảnh ở sân băng (mở bài, không ghi kết luận) ----------------
-CUR["fig"] = 1
-VB[1] = (440, 230)
-G1 = 200
-b = defs("f1")
-b += line(10, G1, 430, G1, "currentColor", 2, track=False)
-b += line(212, 20, 212, G1 - 4, "currentColor", 1.2, "4 5", .45, track=False)
-# Trái: Minh ôm ba lô đứng yên
-pm, shm = person(70, G1, arm_to=(104, 120))
-b += pm
-b += f'<rect x="100" y="106" width="34" height="40" rx="6" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
-seg(100, 106, 134, 106); seg(100, 146, 134, 146); seg(100, 106, 100, 146); seg(134, 106, 134, 146)
-b += arrow("f1", "r", 117, 106, 117, 56, 3)          # lực tay lên ba lô, đặt tại ba lô, hướng lên
-b += text(126, 66, sub("F", "tay"), RED, 15, "start", "700", True)
-b += text(20, 30, "Minh giữ ba lô", "currentColor", 14, "start")
-b += text(20, 222, "đứng yên 5 phút", "currentColor", 13, "start", "600")
-# Phải: Lan đẩy lưng Hà, Hà lướt sang phải
-XH = 330
-contact = (XH - 4, G1 - 78)
-pl, _ = person(262, G1, arm_to=contact)
-ph, _ = person(XH, G1)
-b += pl + ph
-b += f'<circle cx="{contact[0]}" cy="{contact[1]}" r="3.5" fill="{RED}"/>'
-b += arrow("f1", "r", contact[0], contact[1], contact[0] + 52, contact[1], 3)   # lực đẩy đặt tại lưng Hà, chiều sang phải
-b += text(contact[0] + 58, contact[1] + 5, "F", RED, 16, "start", "700", True)
-b += text(228, 30, "Lan đẩy lưng Hà", "currentColor", 14, "start")
-b += arrow("f1", "g", XH - 20, 214, XH + 80, 214, 2.6, "6 4")
-b += text(XH - 24, 220, "Hà lướt 3 m", GRN, 13, "end", "600")
-b += text(244, 150, "Lan", "currentColor", 13, "end", "600")
-b += text(XH + 18, 162, "Hà", "currentColor", 13, "start", "600")
-expect(contact[0] + 52 > contact[0], "Hình 1: lực đẩy của Lan phải hướng sang phải (chiều Hà lướt)")
-fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
-            "Bên trái Minh đứng yên ôm ba lô, lực tay hướng lên; bên phải Lan đẩy lưng Hà, Hà lướt sang phải 3 m", b,
-            "Hình 1. Trái: Minh giữ ba lô đứng yên, lực tay hướng lên. Phải: Lan đẩy lưng Hà, Hà lướt đi $3$ m.")
+# ---------------- Hình 1: ảnh OpenStax College Physics 2e, Hình 7.2 (a, c, e) (đợt 1 + đợt 2, 28/10/2026) ----------------
+fig1 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-nang-luong-cong-co-hoc/hinh-cong-luc-goc.webp" '
+        'alt="Ba tình huống: (a) người đẩy máy cắt cỏ bằng lực F chếch góc θ so với độ dịch chuyển d, (c) người xách cặp đi ngang, F vuông góc d, (e) cặp được máy phát điện hạ xuống, lực F hướng lên còn d hướng xuống" '
+        'loading="lazy" width="875" height="910">'
+        '<figcaption>Hình 1. Ba tình huống về công:<br>'
+        '(a) đẩy xe cắt cỏ, như Lan đẩy Hà: <em>F</em>·<em>d</em>·cosθ.<br>'
+        '(c) xách cặp đi ngang: θ = 90°, không sinh công.<br>'
+        '(e) hạ cặp xuống: <em>F</em> ngược <em>d</em>, công âm.<br>'
+        'Nhãn: <em>F</em>: lực.<br>'
+        '<em>d</em>: độ dịch chuyển.<br>'
+        'θ: góc giữa <em>F</em> và <em>d</em> (trong bài là α).<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 7.2 (a, c, e) — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 2: ba trường hợp góc α ----------------
 CUR["fig"] = 2
@@ -146,12 +127,14 @@ for x0, a, title, sign, name, sgn in cases:
         b += f'<path d="M{ox+r},{OY} A{r},{r} 0 {large} 0 {ex:.1f},{ey:.1f}" fill="none" stroke="currentColor" stroke-width="1.6"/>'
         hx, hy = ox + 36 * math.cos(math.radians(a / 2)), OY - 36 * math.sin(math.radians(a / 2))
         b += text(hx - 4, hy + 5, "α", "currentColor", 15, "start", "700", True)
-    b += text(fx + (8 if a < 90 else (-8 if a > 90 else 9)), fy + (4 if a != 90 else 10), "F", RED, 16,
-              "start" if a <= 90 else "end", "700", True)
+    if a > 90:   # góc tù: nhãn trên đầu mũi tên, khỏi chạm vạch ngăn cột
+        b += text(fx + 8, fy - 10, "F", RED, 16, "middle", "700", True)
+    else:
+        b += text(fx + (8 if a < 90 else 9), fy + (4 if a != 90 else 10), "F", RED, 16, "start", "700", True)
     b += text(ox + DL - 4, OY + 22, "d", GRN, 16, "middle", "700", True)
     b += text(x0 + 73, 26, title, "currentColor", 14, "middle")
     b += text(x0 + 73, 160, sign, "currentColor", 15, "middle")
-    b += text(x0 + 73, 182, name, RED if sgn > 0 else (BLUE if sgn < 0 else "currentColor"), 13, "middle", "600")
+    b += text(x0 + 73, 182, name, RED if sgn > 0 else (BLUE if sgn < 0 else "currentColor"), 14, "middle", "600")
 for xs in (146, 294):
     b += line(xs, 14, xs, 190, "currentColor", 1, "3 5", .4, track=False)
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
@@ -160,11 +143,11 @@ fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
 
 # ---------------- Hình 3: thí nghiệm mặt phẳng nghiêng ----------------
 CUR["fig"] = 3
-VB[3] = (440, 230)
+VB[3] = (440, 186)
 PXM = 360 / 0.80
 S3, H3 = 0.80, 0.20
 th = math.asin(H3 / S3)
-Ax, Ay = 20, 196                      # chân dốc
+Ax, Ay = 20, 152                      # chân dốc
 Tx, Ty = Ax + S3 * PXM * math.cos(th), Ay - S3 * PXM * math.sin(th)
 expect(abs((Ay - Ty) / PXM - H3) < 1e-9, "Hình 3: chiều cao h sai tỉ lệ")
 b = defs("f3")
@@ -192,13 +175,21 @@ FLEN = 48
 b += arrow("f3", "r", front[0], front[1], front[0] + FLEN * u[0], front[1] + FLEN * u[1], 3)
 ang = angle_between(FLEN * u[0], FLEN * u[1], u[0], u[1])
 expect(abs(ang) < 1e-6, "Hình 3: lực kéo phải song song mặt dốc (α = 0)")
-b += text(front[0] + 18, front[1] - 26, "F", RED, 16, "start", "700", True)
-b += text(ex_ - 8, ey_ - 18, "lực kế", BLUE, 13, "start", "600")
+b += text(front[0] + 0.5 * FLEN * u[0] + 14 * nrm[0], front[1] + 0.5 * FLEN * u[1] + 14 * nrm[1], "F", RED, 16, "middle", "700", True)
+b += text(ex_ + 50, ey_ - 18, "lực kế", BLUE, 14, "start", "600")   # bên phải thân lực kế, không chạm thân
 b += text(Tx + 8, (Ay + Ty) / 2 + 5, "h", "currentColor", 16, "start", "700", True)
-b += text(Tx + 8, (Ay + Ty) / 2 + 24, "0,20 m", "currentColor", 13, "start", "600")
-mx, my = Ax + 0.16 * S3 * PXM * u[0], Ay + 0.16 * S3 * PXM * u[1]
-b += text(mx - 6, my - 14, "s", "currentColor", 16, "end", "700", True)
-b += text(130, 220, "xe lăn P = 2,0 N, kéo đều", "currentColor", 13, "start", "600")
+b += text(Tx + 8, (Ay + Ty) / 2 + 24, "0,20 m", "currentColor", 14, "start", "600")
+# đường kích thước s song song mặt dốc, cách mặt dốc DN px về phía ngoài, vạch hai đầu
+DN = 46
+d0 = (Ax + DN * nrm[0], Ay + DN * nrm[1])
+d1 = (Tx + DN * nrm[0], Ty + DN * nrm[1])
+expect(abs(math.dist(d0, d1) - S3 * PXM) < 1e-6, "Hình 3: đoạn đo s phải dài đúng mặt dốc")
+b += line(*d0, *d1, "currentColor", 1.3)
+for q in (d0, d1):
+    b += line(q[0] - 6 * nrm[0], q[1] - 6 * nrm[1], q[0] + 6 * nrm[0], q[1] + 6 * nrm[1], "currentColor", 1.5)
+tm = 0.22 * S3 * PXM
+b += text(d0[0] + tm * u[0] + 22 * nrm[0], d0[1] + tm * u[1] + 22 * nrm[1], "s = 0,80 m", "currentColor", 14, "middle", "700")
+b += text(130, Ay + 24, "xe lăn P = 2,0 N, kéo đều", "currentColor", 14, "start", "600")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Xe lăn được kéo đều lên mặt nghiêng bằng lực kế, lực kéo song song mặt dốc; độ cao h bằng 0,20 m", b,
             "Hình 3. Kéo đều xe lên độ cao $h$ bằng lực kế song song mặt nghiêng dài $s$ (hình vẽ lần $s = 0{,}80$ m).")
@@ -212,9 +203,26 @@ b = defs("f4")
 b += line(10, G4, 430, G4, "currentColor", 2, track=False)
 b += f'<rect x="150" y="{G4-14}" width="110" height="12" rx="5" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2"/>'
 seg(150, G4 - 14, 260, G4 - 14); seg(150, G4 - 2, 260, G4 - 2)
-# em nhỏ ngồi trên ván
-b += f'<circle cx="176" cy="{G4-56}" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/>'
-b += line(176, G4 - 47, 176, G4 - 22, w=2.2) + line(176, G4 - 22, 198, G4 - 16, w=2.2)
+def limb(pts, w=3.2, c="currentColor"):
+    out = ""
+    for (xa, ya), (xb, yb) in zip(pts, pts[1:]):
+        seg(xa, ya, xb, yb)
+        out += (f'<line x1="{xa:.1f}" y1="{ya:.1f}" x2="{xb:.1f}" y2="{yb:.1f}" stroke="{c}" stroke-width="{w}" '
+                f'stroke-linecap="round" stroke-linejoin="round"/>')
+    return out
+
+
+def head(x, y, r):
+    seg(x - r, y - r, x + r, y + r); seg(x - r, y + r, x + r, y - r)
+    return (f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="currentColor" fill-opacity=".12" '
+            f'stroke="currentColor" stroke-width="2.4"/>')
+
+
+# em nhỏ ngồi trên ván: lưng thẳng, chân duỗi về trước, tay đặt lên gối
+b += head(165, G4 - 60, 9)
+b += limb([(165, G4 - 50), (161, G4 - 17)], 3.6)                          # thân
+b += limb([(161, G4 - 17), (177, G4 - 33), (191, G4 - 17)], 3.2)           # chân: ngồi bó gối
+b += limb([(164, G4 - 42), (176, G4 - 33)], 2.6)                           # tay ôm gối
 # dây kéo 30°
 A30 = math.radians(30)
 rope0 = (260, G4 - 10)
@@ -222,17 +230,22 @@ RL = 116
 rope1 = (rope0[0] + RL * math.cos(A30), rope0[1] - RL * math.sin(A30))
 expect(abs(math.degrees(math.atan2(rope0[1] - rope1[1], rope1[0] - rope0[0])) - 30) < 1e-6, "Hình 4: dây phải chếch 30°")
 b += line(*rope0, *rope1, "currentColor", 1.4, track=False)
-pl, _ = person(398, G4, arm_to=rope1)
-b += pl
+# Lan ngả người ra sau, hai tay kéo dây, chân trước đạp lưỡi trượt
+b += limb([(384, G4 - 2), (392, G4 - 28), (402, G4 - 52)], 3.6)            # chân trước
+b += limb([(402, G4 - 52), (412, G4 - 28), (418, G4 - 2)], 3.6)            # chân sau
+b += limb([(402, G4 - 52), (410, G4 - 92)], 4.2)                           # thân ngả sau
+b += limb([(408, G4 - 84), (386, G4 - 76), rope1], 3.0)                    # tay nắm dây
+b += head(414, G4 - 105, 11)
+b += limb([(372, G4 - 2), (396, G4 - 2)], 3, BLUE) + limb([(406, G4 - 2), (430, G4 - 2)], 3, BLUE)
 FL4 = 62
 fe = (rope0[0] + FL4 * math.cos(A30), rope0[1] - FL4 * math.sin(A30))
 b += arrow("f4", "r", *rope0, *fe, 3)
 b += f'<path d="M{rope0[0]+30},{rope0[1]} A30,30 0 0 0 {rope0[0]+30*math.cos(A30):.1f},{rope0[1]-30*math.sin(A30):.1f}" fill="none" stroke="currentColor" stroke-width="1.5"/>'
 b += line(rope0[0], rope0[1], rope0[0] + 44, rope0[1], "currentColor", 1.2, "3 3", .7, track=False)
-b += text(rope0[0] + 36, rope0[1] - 4, "30°", "currentColor", 13, "start", "600")
+b += text(rope0[0] + 36, rope0[1] - 4, "30°", "currentColor", 14, "start", "600")
 b += text(fe[0] - 6, fe[1] - 10, "F", RED, 16, "end", "700", True)
 # N (lên), P (xuống) tại giữa ván; ma sát ngược chiều chuyển động
-XC = 218
+XC = 205                         # tâm ván (x = 150..260)
 YC = G4 - 8                      # tâm ván
 LN, LP = 280 * 0.2, 300 * 0.2    # 0,2 px/N: N = 280 N ngắn hơn P = 300 N
 b += arrow("f4", "b", XC, YC, XC, YC - LN, 3)
@@ -240,12 +253,12 @@ b += text(XC + 8, YC - LN + 12, "N", BLUE, 16, "start", "700", True)
 b += arrow("f4", "o", XC, YC, XC, YC + LP, 3)
 b += text(XC + 8, YC + LP - 4, "P", ORG, 16, "start", "700", True)
 b += f'<circle cx="{XC}" cy="{YC}" r="3" fill="currentColor"/>'
-b += arrow("f4", "k", 160, G4 - 1, 122, G4 - 1, 3)
-b += text(116, G4 - 16, sub("F", "ms"), "currentColor", 15, "end", "700", True)
+b += arrow("f4", "k", 150, YC, 104, YC, 3)        # ma sát ở mặt tiếp xúc, ngược hướng chuyển động
+b += text(118, YC - 14, sub("F", "ms"), "currentColor", 16, "middle", "700", True)
 # độ dịch chuyển
 b += arrow("f4", "g", 262, 210, 372, 210, 2.6, "6 4")
-b += text(318, 232, "s = 15 m", GRN, 13, "middle", "600")
-b += text(398, 52, "Lan", "currentColor", 13, "middle", "600")
+b += text(318, 232, "s = 15 m", GRN, 14, "middle", "600")
+b += text(394, 62, "Lan", "currentColor", 14, "end", "600")
 expect(YC - LN > 10 and YC + LP < VB[4][1] - 4, "Hình 4: N/P vượt viewBox")
 expect(LN < LP and abs(LN / LP - 280 / 300) < 1e-9, "Hình 4: N phải ngắn hơn P theo tỉ lệ 280/300")
 fig4 = wrap(f"0 0 {VB[4][0]} {VB[4][1]}",
@@ -295,13 +308,13 @@ for n, f in enumerate(figs, 1):
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout) or re.search(r'"minutes"\s*:\s*([\d.]+)', r.stdout)
 phut = round(float(m.group(1))) if m else None
 if phut is None:
     print("KHÔNG đọc được số phút từ lint_do_dai:", r.stdout[:300])
     phut = "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut)
 sys.exit(1 if BAD else 0)

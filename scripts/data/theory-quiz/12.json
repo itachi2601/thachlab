@@ -347,6 +347,10 @@
    "question": "Một nhóm đặt nam châm chữ U lên đĩa cân điện tử rồi bấm TARE. Khung dây treo trên giá riêng, cạnh dưới nằm ngang trong khe nam châm, vuông góc với đường sức và không chạm vào nam châm hay cân. Đóng mạch cho dòng điện một chiều qua khung thì số cân tăng lên.",
    "statements": [
     {
+     "text": "Ngắt mạch thì số cân trở về 0,00 g.",
+     "answer": true
+    },
+    {
      "text": "Số cân tăng vì khối lượng của nam châm tăng lên khi có dòng điện chạy qua dây.",
      "answer": false
     },
@@ -355,19 +359,15 @@
      "answer": true
     },
     {
-     "text": "Ngắt mạch thì số cân trở về 0,00 g.",
-     "answer": true
-    },
-    {
      "text": "Vì dây nằm ngang, vuông góc với đường sức nên lực từ lên dây có phương nằm ngang.",
      "answer": false
     }
    ],
-   "explanation": "a) Sai: khối lượng nam châm không đổi; cân tăng vì nam châm chịu phản lực của lực từ. b) Đúng: đây là cặp lực – phản lực theo định luật III Newton. c) Đúng: không có dòng thì không có lực từ. d) Sai: dây nằm ngang và vuông góc với đường sức thì lực từ có phương thẳng đứng.",
+   "explanation": "a) Đúng: không có dòng thì không có lực từ. b) Sai: khối lượng nam châm không đổi; cân tăng vì nam châm chịu phản lực của lực từ. c) Đúng: đây là cặp lực – phản lực theo định luật III Newton. d) Sai: dây nằm ngang và vuông góc với đường sức thì lực từ có phương thẳng đứng.",
    "distractorNotes": {
-    "0": "Khối lượng nam châm không đổi; cân tăng do nam châm chịu phản lực ép xuống, nên ý này không thể đúng.",
-    "1": "Đây là cặp lực – phản lực theo định luật III Newton nên luôn cùng độ lớn, ngược chiều; không thể coi là sai.",
-    "2": "Không có dòng thì không có lực từ, nam châm hết bị ép thêm nên cân về 0,00 g như lúc TARE.",
+    "0": "Không có dòng thì không có lực từ, nam châm hết bị ép thêm nên cân về 0,00 g như lúc TARE.",
+    "1": "Khối lượng nam châm không đổi; cân tăng do nam châm chịu phản lực ép xuống, nên ý này không thể đúng.",
+    "2": "Đây là cặp lực – phản lực theo định luật III Newton nên luôn cùng độ lớn, ngược chiều; không thể coi là sai.",
     "3": "Lực từ vuông góc với cả dây lẫn đường sức nằm ngang nên phải thẳng đứng, không thể nằm ngang."
    }
   },
@@ -382,6 +382,10 @@
    "question": "Hai nhóm làm thí nghiệm cân dòng điện và đều mắc lỗi. Nhóm 1 để chân giá đỡ khung dây tựa lên bệ cân cùng với nam châm. Nhóm 2 đặt dây lệch, không vuông góc với đường sức, nhưng vẫn tính $B = \\dfrac{\\Delta m\\, g}{Il}$.",
    "statements": [
     {
+     "text": "Nhóm 2 nên chỉnh cho dây song song với đường sức để lực từ lớn nhất.",
+     "answer": false
+    },
+    {
      "text": "Ở nhóm 1, cân gần như không đổi khi đóng mạch vì hai lực bằng nhau, ngược chiều cùng tác dụng lên hệ nằm trên bệ cân.",
      "answer": true
     },
@@ -392,18 +396,14 @@
     {
      "text": "Ở nhóm 2, cảm ứng từ của nam châm bị giảm do dây đặt lệch đường sức.",
      "answer": false
-    },
-    {
-     "text": "Nhóm 2 nên chỉnh cho dây song song với đường sức để lực từ lớn nhất.",
-     "answer": false
     }
    ],
-   "explanation": "a) Đúng và b) Đúng: cân đo tổng lực lên các vật trên bệ, nên giá đỡ phải đặt ngoài cân. c) Sai: $B$ của nam châm không đổi, chỉ có lực đo được nhỏ đi. d) Sai: lực lớn nhất khi dây vuông góc với đường sức; dây song song thì $\\sin 0^\\circ = 0$, lực bằng 0.",
+   "explanation": "a) Sai: lực lớn nhất khi dây vuông góc với đường sức; dây song song thì $\\sin 0^\\circ = 0$, lực bằng 0. b) Đúng và c) Đúng: cân đo tổng lực lên các vật trên bệ, nên giá đỡ phải đặt ngoài cân. d) Sai: $B$ của nam châm không đổi, chỉ có lực đo được nhỏ đi.",
    "distractorNotes": {
-    "0": "Lực lên dây truyền qua giá xuống bệ, ngược chiều phản lực lên nam châm, nên hai lực triệt tiêu trên cân.",
-    "1": "Giá đứng ngoài cân thì lực lên dây không truyền vào bệ, cân chỉ còn đọc phản lực lên nam châm.",
-    "2": "$B$ là đặc trưng của nam châm, không đổi; chỉ lực đo được giảm theo $\\sin\\theta$.",
-    "3": "Dây song song đường sức có $\\sin 0^\\circ = 0$ nên lực bằng 0; lực lớn nhất khi dây vuông góc."
+    "0": "Dây song song đường sức có $\\sin 0^\\circ = 0$ nên lực bằng 0; lực lớn nhất khi dây vuông góc.",
+    "1": "Lực lên dây truyền qua giá xuống bệ, ngược chiều phản lực lên nam châm, nên hai lực triệt tiêu trên cân.",
+    "2": "Giá đứng ngoài cân thì lực lên dây không truyền vào bệ, cân chỉ còn đọc phản lực lên nam châm.",
+    "3": "$B$ là đặc trưng của nam châm, không đổi; chỉ lực đo được giảm theo $\\sin\\theta$."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Do giá đỡ bị lệch, đoạn dây trong khe hợp với đường sức góc $60^\\circ$ thay vì $90^\\circ$. Nhóm vẫn dùng công thức $B = \\dfrac{\\Delta m\\, g}{Il}$ để tính cảm ứng từ (cho $\\sin 60^\\circ \\approx 0{,}87$).",
    "statements": [
     {
-     "text": "Lực từ đo được bằng $\\sin 60^\\circ$ lần lực khi dây vuông góc với đường sức.",
+     "text": "Giá trị $B$ tính ra nhỏ hơn giá trị thật khoảng 13%.",
      "answer": true
     },
     {
-     "text": "Giá trị $B$ tính ra nhỏ hơn giá trị thật khoảng 13%.",
-     "answer": true
+     "text": "Công thức $F = BIl$ đúng với mọi góc giữa dây và đường sức.",
+     "answer": false
     },
     {
      "text": "Giá trị $B$ tính ra nhỏ hơn giá trị thật khoảng 50%, vì lực chỉ bằng $\\cos 60^\\circ$ lần lực khi dây vuông góc.",
      "answer": false
     },
     {
-     "text": "Công thức $F = BIl$ đúng với mọi góc giữa dây và đường sức.",
-     "answer": false
+     "text": "Lực từ đo được bằng $\\sin 60^\\circ$ lần lực khi dây vuông góc với đường sức.",
+     "answer": true
     }
    ],
-   "explanation": "a) Đúng: $F = BIl\\sin\\theta$. b) Đúng: lực chỉ bằng khoảng 0,87 lần nên $B$ tính ra nhỏ hơn thật khoảng 13%. c) Sai: dùng $\\cos$ là nhầm $\\cos$ với $\\sin$. d) Sai: $F = BIl$ chỉ đúng khi $\\theta = 90^\\circ$.",
+   "explanation": "a) Đúng: lực chỉ bằng khoảng 0,87 lần nên $B$ tính ra nhỏ hơn thật khoảng 13%. b) Sai: $F = BIl$ chỉ đúng khi $\\theta = 90^\\circ$. c) Sai: dùng $\\cos$ là nhầm $\\cos$ với $\\sin$. d) Đúng: $F = BIl\\sin\\theta$.",
    "distractorNotes": {
-    "0": "Theo $F = BIl\\sin\\theta$, ở $60^\\circ$ lực bằng đúng $\\sin 60^\\circ$ lần lực khi dây vuông góc.",
-    "1": "Lực chỉ còn 0,87 lần mà vẫn chia cho $Il$, nên $B$ tính ra nhỏ hơn thật khoảng 13%.",
+    "0": "Lực chỉ còn 0,87 lần mà vẫn chia cho $Il$, nên $B$ tính ra nhỏ hơn thật khoảng 13%.",
+    "1": "$F = BIl$ chỉ là trường hợp riêng $\\theta = 90^\\circ$ của $F = BIl\\sin\\theta$.",
     "2": "Lấy $\\cos 60^\\circ = 0{,}5$ là nhầm $\\cos$ với $\\sin$; hệ số đúng là 0,87.",
-    "3": "$F = BIl$ chỉ là trường hợp riêng $\\theta = 90^\\circ$ của $F = BIl\\sin\\theta$."
+    "3": "Theo $F = BIl\\sin\\theta$, ở $60^\\circ$ lực bằng đúng $\\sin 60^\\circ$ lần lực khi dây vuông góc."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Trong thí nghiệm cân dòng điện, cảm ứng từ được tính bằng công thức $B = \\dfrac{\\Delta m\\, g}{Il}$, với dây vuông góc đường sức.",
    "statements": [
     {
-     "text": "$\\Delta m$ là độ tăng số chỉ của cân khi có dòng điện, sau khi đã bấm TARE.",
+     "text": "Khi đảo chiều dòng điện, cân chỉ âm; lúc tính $B$ ta lấy $|\\Delta m|$.",
      "answer": true
     },
     {
-     "text": "Khi đảo chiều dòng điện, cân chỉ âm; lúc tính $B$ ta lấy $|\\Delta m|$.",
-     "answer": true
+     "text": "Đại lượng $\\Delta m\\, g$ là trọng lượng của khung dây.",
+     "answer": false
     },
     {
      "text": "Với cùng $B$ và $l$, $\\Delta m$ tỉ lệ nghịch với $I$.",
      "answer": false
     },
     {
-     "text": "Đại lượng $\\Delta m\\, g$ là trọng lượng của khung dây.",
-     "answer": false
+     "text": "$\\Delta m$ là độ tăng số chỉ của cân khi có dòng điện, sau khi đã bấm TARE.",
+     "answer": true
     }
    ],
-   "explanation": "a) Đúng và b) Đúng theo quy trình và cách tính trong bài. c) Sai: $\\Delta m = \\dfrac{BIl}{g}$ tỉ lệ thuận với $I$. d) Sai: $\\Delta m\\, g$ là độ lớn lực từ $F$; trọng lực của dây rất nhỏ nên được bỏ qua.",
+   "explanation": "a) Đúng theo quy trình và cách tính trong bài. b) Sai: $\\Delta m\\, g$ là độ lớn lực từ $F$; trọng lực của dây rất nhỏ nên được bỏ qua. c) Sai: $\\Delta m = \\dfrac{BIl}{g}$ tỉ lệ thuận với $I$. d) Đúng và",
    "distractorNotes": {
-    "0": "TARE khi chưa có dòng nên số đọc sau khi đóng mạch chính là phần tăng do lực từ.",
-    "1": "Đảo chiều chỉ đổi chiều lực, độ lớn giữ nguyên, nên khi tính $B$ dùng trị tuyệt đối.",
+    "0": "Đảo chiều chỉ đổi chiều lực, độ lớn giữ nguyên, nên khi tính $B$ dùng trị tuyệt đối.",
+    "1": "$\\Delta m\\,g$ là lực từ đọc qua phản lực lên nam châm; trọng lượng khung do giá gánh, không đè lên cân.",
     "2": "Từ $\\Delta m = BIl/g$ thấy $\\Delta m$ tỉ lệ thuận với $I$, không tỉ lệ nghịch.",
-    "3": "$\\Delta m\\,g$ là lực từ đọc qua phản lực lên nam châm; trọng lượng khung do giá gánh, không đè lên cân."
+    "3": "TARE khi chưa có dòng nên số đọc sau khi đóng mạch chính là phần tăng do lực từ."
    }
   },
   {
@@ -487,6 +487,10 @@
    "question": "Một nhóm đo $\\Delta m$ ở năm giá trị dòng điện $I$, rồi vẽ đồ thị $\\Delta m$ theo $I$. Kết quả là một đường thẳng qua gốc toạ độ có độ dốc $k$.",
    "statements": [
     {
+     "text": "Giữ nguyên nam châm nhưng dùng khung có $l$ lớn hơn thì đường thẳng thoải hơn.",
+     "answer": false
+    },
+    {
      "text": "Độ dốc của đường thẳng là $k = \\dfrac{Bl}{g}$.",
      "answer": true
     },
@@ -497,18 +501,14 @@
     {
      "text": "Cảm ứng từ được suy ra bằng $B = \\dfrac{k\\, l}{g}$.",
      "answer": false
-    },
-    {
-     "text": "Giữ nguyên nam châm nhưng dùng khung có $l$ lớn hơn thì đường thẳng thoải hơn.",
-     "answer": false
     }
    ],
-   "explanation": "a) Đúng và b) Đúng: từ $\\Delta m = \\dfrac{Bl}{g}I$ suy ra $B = \\dfrac{k g}{l}$. c) Sai: đây là lỗi đảo $g$ và $l$ khi biến đổi. d) Sai: $k$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn.",
+   "explanation": "a) Sai: $k$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn. b) Đúng và c) Đúng: từ $\\Delta m = \\dfrac{Bl}{g}I$ suy ra $B = \\dfrac{k g}{l}$. d) Sai: đây là lỗi đảo $g$ và $l$ khi biến đổi.",
    "distractorNotes": {
-    "0": "Từ $\\Delta m = \\frac{Bl}{g}I$, hệ số đứng trước $I$ chính là độ dốc $Bl/g$.",
-    "1": "Giải $k = Bl/g$ theo $B$: nhân hai vế với $g$ rồi chia cho $l$, ra đúng biểu thức này.",
-    "2": "Đảo vị trí $g$ và $l$ khi biến đổi; từ $k = Bl/g$ phải ra $B = kg/l$.",
-    "3": "$k = Bl/g$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn."
+    "0": "$k = Bl/g$ tỉ lệ thuận với $l$, nên $l$ lớn hơn thì đường thẳng dốc hơn.",
+    "1": "Từ $\\Delta m = \\frac{Bl}{g}I$, hệ số đứng trước $I$ chính là độ dốc $Bl/g$.",
+    "2": "Giải $k = Bl/g$ theo $B$: nhân hai vế với $g$ rồi chia cho $l$, ra đúng biểu thức này.",
+    "3": "Đảo vị trí $g$ và $l$ khi biến đổi; từ $k = Bl/g$ phải ra $B = kg/l$."
    }
   },
   {
@@ -522,6 +522,10 @@
    "question": "Dùng cân chia 0,01 g, ampe kế có sai số $\\pm 0{,}05\\ \\text{A}$ và thước kẹp có sai số $\\pm 0{,}5\\ \\text{mm}$. Nhóm so sánh hai lần đo: một lần ở dòng nhỏ, một lần ở dòng lớn.",
    "statements": [
     {
+     "text": "Lần đo ở dòng lớn hơn cho $B$ có sai số tương đối nhỏ hơn.",
+     "answer": true
+    },
+    {
      "text": "Sai số tương đối của $B$ bằng tổng các sai số tương đối của $\\Delta m$, $I$ và $l$.",
      "answer": true
     },
@@ -530,19 +534,15 @@
      "answer": false
     },
     {
-     "text": "Lần đo ở dòng lớn hơn cho $B$ có sai số tương đối nhỏ hơn.",
-     "answer": true
-    },
-    {
      "text": "Số đọc $\\Delta m$ càng nhỏ thì $\\dfrac{\\Delta(\\Delta m)}{\\Delta m}$ càng nhỏ.",
      "answer": false
     }
    ],
-   "explanation": "a) Đúng: đây là công thức cộng sai số tương đối trong bài. b) Sai: sai số tương đối $\\dfrac{\\Delta I}{I}$ giảm khi $I$ tăng. c) Đúng: $I$ và $\\Delta m$ lớn hơn nên các tỉ số $\\dfrac{\\Delta I}{I}$ và $\\dfrac{\\Delta(\\Delta m)}{\\Delta m}$ đều nhỏ hơn. d) Sai: $\\Delta(\\Delta m)$ cố định, nên $\\Delta m$ càng nhỏ thì tỉ số càng lớn.",
+   "explanation": "a) Đúng: $I$ và $\\Delta m$ lớn hơn nên các tỉ số $\\dfrac{\\Delta I}{I}$ và $\\dfrac{\\Delta(\\Delta m)}{\\Delta m}$ đều nhỏ hơn. b) Đúng: đây là công thức cộng sai số tương đối trong bài. c) Sai: sai số tương đối $\\dfrac{\\Delta I}{I}$ giảm khi $I$ tăng. d) Sai: $\\Delta(\\Delta m)$ cố định, nên $\\Delta m$ càng nhỏ thì tỉ số càng lớn.",
    "distractorNotes": {
-    "0": "Đây đúng quy tắc trong bài: sai số tương đối của $B$ bằng tổng các sai số tương đối thành phần.",
-    "1": "Sai số tuyệt đối như nhau nhưng chia cho các giá trị $I$ khác nhau nên tỉ số $\\Delta I/I$ khác nhau.",
-    "2": "Dòng lớn làm $I$ và $\\Delta m$ lớn hơn, nên các tỉ số $\\Delta I/I$ và $\\Delta(\\Delta m)/\\Delta m$ đều nhỏ đi.",
+    "0": "Dòng lớn làm $I$ và $\\Delta m$ lớn hơn, nên các tỉ số $\\Delta I/I$ và $\\Delta(\\Delta m)/\\Delta m$ đều nhỏ đi.",
+    "1": "Đây đúng quy tắc trong bài: sai số tương đối của $B$ bằng tổng các sai số tương đối thành phần.",
+    "2": "Sai số tuyệt đối như nhau nhưng chia cho các giá trị $I$ khác nhau nên tỉ số $\\Delta I/I$ khác nhau.",
     "3": "Tử số $\\Delta(\\Delta m)$ cố định nên mẫu số $\\Delta m$ càng nhỏ thì tỉ số càng lớn."
    }
   }

@@ -1,0 +1,186 @@
+<p>Nguồn: <code>WSC2026_TP01_MA2_actual_en</code> (30.07.26, v1.0, 2 trang). Người ra đề: Jim Ackert, FESTO (ITPD). Người thẩm định: Craig Brazil (ITPV). Chấm theo Tiêu chí <strong>G</strong> (G1), <strong>2.5 điểm</strong>, 7 mục. Thời gian: 0.5 giờ (nằm trong 4 giờ của Module A).</p>
+<div class="tl-box">
+<p><strong>Dùng để huấn luyện</strong></p>
+<ul>
+<li><strong>Điểm tối đa: 2.5</strong> — 3 lỗi xác định (3 × 0.3) + 3 lỗi sửa (3 × 0.3) + tổng thời gian (0.7, xếp hạng theo tốc độ).</li>
+<li><strong>Điểm dễ lấy:</strong> 1.8 điểm cho việc tìm và sửa đủ 3 lỗi, không cần nhanh. Mạch là <strong>đúng mạch của Module D</strong> (chuỗi MM1+, MM2+ &amp; MM3+, MM4+ …), nên ai đã thuộc sơ đồ file 07 thì nhìn ra lỗi rất nhanh.</li>
+<li><strong>Bẫy mất điểm:</strong> không gọi chuyên gia <strong>ký và ghi giờ</strong> sau khi <em>xác định</em> xong, rồi lại sau khi <em>sửa</em> xong (2 lần ký) → mất điểm G1; sửa lỗi mà không mô phỏng chạy lại đủ chuỗi → chuyên gia không công nhận &quot;restored to full operational condition&quot;.</li>
+</ul>
+</div>
+<h3 id="1-gioi-thieu-introduction">1. Giới thiệu (Introduction)</h3>
+<div class="tl-bi"><div class="tl-bi-en" lang="en"><span class="tl-bi-tag">EN</span>Competitors will complete a timed pneumatic troubleshooting speed challenge by diagnozing and correcting faults within a FluidSim schematic. Competitors who successfully restore the pneumatic system to full operational condition will be ranked from the fastest aggregate troubleshooting time to the slowest. Bonus marks will be awarded based on this final ranking.</p>
+<p></div><div class="tl-bi-vi" lang="vi"><span class="tl-bi-tag">VI</span>Thí sinh thực hiện một <strong>thử thách tốc độ sửa lỗi khí nén có tính giờ</strong>: chẩn đoán và sửa các lỗi trong một <strong>sơ đồ FluidSIM</strong> (phần mềm mô phỏng Festo, không phải mạch vật lý). Những thí sinh <strong>khôi phục được hệ khí nén về trạng thái vận hành hoàn toàn</strong> sẽ được xếp hạng theo <strong>tổng thời gian sửa lỗi</strong> (aggregate troubleshooting time) từ nhanh nhất đến chậm nhất. <strong>Điểm thưởng</strong> (bonus marks) được trao theo thứ hạng cuối cùng này. [Ứng với mục &quot;Total aggregate time&quot; 0.7 điểm trong thang điểm G1.]</div></div>
+<h3 id="2-huong-dan-thi-sinh-instructions-to-the-competitor">2. Hướng dẫn thí sinh (Instructions to the Competitor)</h3>
+<div class="tl-bi"><div class="tl-bi-en" lang="en"><span class="tl-bi-tag">EN</span>READ THE ENTIRE DOCUMENT BEFORE PROCEDING. REMEMBER: Experts MUST sign off at designated module points in the documentation. If a sign off point is missed all marks for that section of the project will be deducted from the overall project total.</p>
+<p></div><div class="tl-bi-vi" lang="vi"><span class="tl-bi-tag">VI</span>ĐỌC HẾT TÀI LIỆU TRƯỚC KHI BẮT ĐẦU. NHỚ: Chuyên gia PHẢI ký xác nhận tại các điểm quy định. Bỏ sót một điểm ký thì toàn bộ điểm phần đó bị trừ khỏi tổng.</div></div>
+<p>[Ghi chú dịch: đề A2 <strong>không</strong> có đoạn trừ 0.5 điểm an toàn vì làm trên máy tính; luật an toàn chung vẫn áp dụng cho cả ngày thi.]</p>
+<h3 id="3-chuoi-hoat-dong-va-nhiem-vu-circuit-sequence">3. Chuỗi hoạt động và nhiệm vụ (Circuit Sequence)</h3>
+<p><strong>Circuit Sequence: (MM1+, MM2+ &amp; MM3+, MM4+) (MM1−, MM2− &amp; MM3−, MM4−)</strong></p>
+<p>Đọc: xi lanh <strong>MM1 đi ra</strong> (kẹp phôi) → <strong>MM2 và MM3 cùng đi ra</strong> (hai xi lanh uốn) → <strong>MM4 đi ra</strong> (đột) → <strong>MM1 đi về</strong> → <strong>MM2 và MM3 cùng đi về</strong> → <strong>MM4 đi về</strong>. Giải thích chi tiết từng phần tử ở <code>07-so-do-khi-nen.md</code>.</p>
+<div class="tl-scroll"><table class="tl-table">
+<thead>
+<tr>
+<th>EN</th>
+<th>VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Identify and rectify the three faults on the supplied FluidSim schematic.</td>
+<td>Xác định và sửa <strong>ba lỗi</strong> trên sơ đồ FluidSIM được cấp.</td>
+</tr>
+<tr>
+<td>Fault&#39;s 1, 2, and 3 identified: YES / NO — Time: _________</td>
+<td>Đã xác định lỗi 1, 2, 3: CÓ / KHÔNG — Thời gian: ______</td>
+</tr>
+<tr>
+<td>Experts sign off: _____________</td>
+<td>Chuyên gia ký xác nhận: ______</td>
+</tr>
+<tr>
+<td>Fault&#39;s 1, 2, and 3 rectified: YES / NO — Time: _________</td>
+<td>Đã sửa lỗi 1, 2, 3: CÓ / KHÔNG — Thời gian: ______</td>
+</tr>
+<tr>
+<td>Experts sign off: _____________</td>
+<td>Chuyên gia ký xác nhận: ______</td>
+</tr>
+</tbody></table></div>
+<p>Quy trình nên tập:</p>
+<ol>
+<li>Mở sơ đồ, <strong>chạy mô phỏng</strong> ngay để xem chuỗi dừng ở bước nào.</li>
+<li>So với sơ đồ chuẩn (file 07): kiểm tra nguồn khí – van hai tay – van phân phối 5/2 – cổng 14/12 – cảm biến đầu/cuối hành trình (QMA8…QMA19) – phần tử AND/OR (KHB1…KHB5) – tiết lưu.</li>
+<li>Lỗi điển hình trên FluidSIM: ống nối nhầm cổng (2↔4, 12↔14), van đổi loại (thường đóng ↔ thường mở), thiếu dây tín hiệu, cảm biến gắn sai xi lanh, tiết lưu ngược chiều, nguồn khí không nối.</li>
+<li>Ghi lại <strong>3 lỗi đã xác định</strong>, gọi chuyên gia <strong>ký + ghi giờ</strong>. Rồi sửa, chạy lại đủ một chu trình, gọi chuyên gia <strong>ký + ghi giờ</strong> lần 2.</li>
+</ol>
+<h3 id="4-thang-diem-tieu-chi-g">4. Thang điểm Tiêu chí G</h3>
+<div class="tl-scroll"><table class="tl-table">
+<thead>
+<tr>
+<th>Mục chấm (EN)</th>
+<th>VI</th>
+<th>Điểm</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Fault 1 / 2 / 3 Identified</td>
+<td>Đã xác định lỗi 1 / 2 / 3</td>
+<td>3 × 0.3</td>
+</tr>
+<tr>
+<td>Fault 1 / 2 / 3 Rectified</td>
+<td>Đã sửa lỗi 1 / 2 / 3</td>
+<td>3 × 0.3</td>
+</tr>
+<tr>
+<td>Total aggregate time</td>
+<td>Tổng thời gian (xếp hạng tốc độ)</td>
+<td>0.7</td>
+</tr>
+<tr>
+<td><strong>Tổng</strong></td>
+<td></td>
+<td><strong>2.5</strong></td>
+</tr>
+</tbody></table></div>
+<h3 id="ghi-chu-ban-goc">Ghi chú bản gốc</h3>
+<ul>
+<li>&quot;diagnozing&quot; (đúng: diagnosing), &quot;PROCEDING&quot; — lỗi chính tả, bỏ qua.</li>
+<li>&quot;Fault&#39;s 1, 2, and 3&quot; — dấu nháy sai (<code>loi-ban-goc.md</code> #9), bỏ qua.</li>
+<li>Đề viết &quot;FluidSim&quot;, phần mềm chính thức viết &quot;FluidSIM&quot; — giữ tên hãng.</li>
+<li>Tiêu đề trang 1 là &quot;Module A2&quot;, trang 2 ghi file <code>WSC2026_TP01_MA2_actual_en</code> — nhất quán.</li>
+</ul>
+<h3 id="phieu-G">Phiếu tự chấm G — Sửa lỗi khí nén trên FluidSIM (Module A2) — Điểm tối đa 2.5</h3><p class="tl-note">In ra hoặc tick ngay trên màn hình. Mỗi lần thử ghi số tự đo vào cột "Tự đo" rồi so với miền đạt.</p>
+<p>Họ tên: ____________________ Ngày tập: ____________ Lần thử: ____ Tổng tự chấm: ______ / 2.5</p>
+<p>Chuỗi đúng: (MM1+, MM2+ &amp; MM3+, MM4+) (MM1−, MM2− &amp; MM3−, MM4−). Giờ bắt đầu: ______</p>
+<div class="tl-scroll"><table class="tl-table">
+<thead>
+<tr>
+<th class="tl-nw">Tick</th>
+<th>Mục chấm</th>
+<th>Yêu cầu</th>
+<th>Điểm</th>
+<th>Ghi</th>
+<th>Đạt?</th>
+</tr>
+</thead>
+<tbody><tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 1 xác định</td>
+<td>mô tả: phần tử + sai gì</td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 2 xác định</td>
+<td></td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 3 xác định</td>
+<td></td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>→ Gọi chuyên gia <strong>ký + ghi giờ</strong> lần 1</td>
+<td></td>
+<td>—</td>
+<td>giờ: ____</td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 1 sửa</td>
+<td>mô phỏng chạy qua bước đó</td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 2 sửa</td>
+<td></td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Lỗi 3 sửa</td>
+<td></td>
+<td>0.3</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>→ Chạy đủ <strong>một chu trình</strong> trên FluidSIM, gọi chuyên gia <strong>ký + ghi giờ</strong> lần 2</td>
+<td></td>
+<td>—</td>
+<td>giờ: ____</td>
+<td></td>
+</tr>
+<tr>
+<td class="tl-nw"><input type="checkbox" aria-label="Đạt"></td>
+<td>Tổng thời gian (xếp hạng với thí sinh khác)</td>
+<td>càng nhanh càng cao</td>
+<td>0.7</td>
+<td>____ phút</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p>Checklist dò lỗi nhanh: nguồn khí nối chưa · van hai tay ZSB · cổng 12/14 mỗi van VUWG · cảm biến SMPO-8E đúng xi lanh, đúng đầu · AND (ZK-PK-3) / OR (OS-PK-3) đúng chỗ · tiết lưu đúng chiều · van 5/3 P53C cấp xi lanh · công tắc cửa và van báo phôi trong mạch.</p>
+<div class="tl-box tl-trap"><h4>Bẫy mất điểm</h4>
+<ul>
+<li><input type="checkbox"> Hai lần ký, hai lần ghi giờ — bỏ một lần = mất điểm G1.</li>
+<li><input type="checkbox"> Sửa lỗi mà không chạy lại đủ chuỗi → không được tính &quot;khôi phục vận hành hoàn toàn&quot; → không có thứ hạng (0.7).</li>
+<li><input type="checkbox"> Hết 0.5 giờ mà chưa xong → ghi lại những lỗi đã xác định/sửa để lấy điểm từng phần.</li>
+</ul>
+</div><h3 id="thang-diem-G">Thang điểm tiêu chí G — Sửa lỗi khí nén — 2.5 điểm</h3><p class="tl-note">Bảng rộng: vuốt ngang trên điện thoại. M = chấm đo: đạt trọn điểm hoặc 0 (trừ mục ghi nửa điểm). J = chấm đánh giá 0–3: 0 dưới chuẩn công nghiệp, 1 đạt, 2 vượt, 3 xuất sắc; điểm = mức/3 × điểm mục.</p><details class="tl-details"><summary><strong>Mở bảng thang điểm G (1 tiêu chí con)</strong></summary><div class="tl-scroll tl-scroll--bi"><table class="tl-table tl-table--bi"><thead><tr><th class="tl-nw" rowspan="2">Mã</th><th colspan="2">Mục chấm (Aspect)</th><th colspan="2">Yêu cầu / cách cho điểm</th><th class="tl-nw" rowspan="2">Điểm</th></tr><tr><th lang="en">EN</th><th lang="vi">VI</th><th lang="en">EN</th><th lang="vi">VI</th></tr></thead><tbody><tr class="tl-sub"><td class="tl-nw"><strong>G1</strong></td><td lang="en"><strong>Pneumatic Troubleshooting</strong></td><td lang="vi"><strong>Sửa lỗi khí nén</strong></td><td colspan="2"></td><td class="tl-nw"><strong>2.50</strong></td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 1 Identified</td><td lang="vi">Đã xác định lỗi 1</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 2 Identified</td><td lang="vi">Đã xác định lỗi 2</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 3 Identified</td><td lang="vi">Đã xác định lỗi 3</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 1 Rectified</td><td lang="vi">Đã sửa lỗi 1</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 2 Rectified</td><td lang="vi">Đã sửa lỗi 2</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Fault 3 Rectified</td><td lang="vi">Đã sửa lỗi 3</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.30</td></tr><tr><td class="tl-nw">M</td><td lang="en">Total aggregate time</td><td lang="vi">Tổng thời gian (xếp hạng tốc độ)</td><td lang="en"></td><td lang="vi"></td><td class="tl-nw">0.70</td></tr></tbody></table></div></details>

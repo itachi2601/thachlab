@@ -1,0 +1,247 @@
+{
+  "cnc_key": "test-3",
+  "title": "Kiểm tra cuối Bài 3 — Lập trình phay CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Trong năm điểm chuẩn trên máy phay, điểm nào là gốc tọa độ của máy?",
+      "options": [
+        "Điểm W",
+        "Điểm P",
+        "Điểm M",
+        "Điểm T/N"
+      ],
+      "answer": 2,
+      "explanation": "M (Machine zero) là gốc tọa độ máy, cố định; W là gốc phôi, P là mũi dao, T/N là điểm chuẩn dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Điểm P trên máy phay CNC là điểm nào?",
+      "options": [
+        "Đỉnh mũi dao cắt gọt, đổi theo từng dụng cụ",
+        "Gốc tọa độ của phôi, xác lập khi gá",
+        "Điểm tham chiếu cố định của máy",
+        "Điểm chuẩn dao, không đổi khi thay dao"
+      ],
+      "answer": 0,
+      "explanation": "P (Cutter point) là đỉnh mũi dao, thay dao thì P đổi theo."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn chọn mặt phẳng làm việc YOZ, ta dùng lệnh nào?",
+      "options": [
+        "G17",
+        "G18",
+        "G19",
+        "G71"
+      ],
+      "answer": 2,
+      "explanation": "G17 là XOY, G18 là XOZ, G19 là YOZ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi máy ở chế độ G95, giá trị F được hiểu theo đơn vị nào?",
+      "options": [
+        "mm/vòng",
+        "mm/phút",
+        "vòng/phút",
+        "inch/phút"
+      ],
+      "answer": 0,
+      "explanation": "G95 tính tốc độ chạy dao theo mm/vòng; G94 theo mm/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã M nào dừng trục chính?",
+      "options": [
+        "M03",
+        "M04",
+        "M05",
+        "M09"
+      ],
+      "answer": 2,
+      "explanation": "M03 quay thuận, M04 quay nghịch, M05 dừng trục chính; M09 tắt tưới nguội."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chu trình nào khoan cao tốc, rút dao một đoạn ngắn để bẻ và thoát phoi?",
+      "options": [
+        "G81",
+        "G73",
+        "G89",
+        "G84"
+      ],
+      "answer": 1,
+      "explanation": "G73 khoan cao tốc với các lần rút ngắn để bẻ phoi; G81 khoan một lần, G89 doa, G84 tarô."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong chu trình khoan, lệnh G98 cho dao rút về đâu sau mỗi lỗ?",
+      "options": [
+        "Mặt phẳng R",
+        "Gốc phôi W",
+        "Đáy lỗ Z",
+        "Mặt phẳng ban đầu"
+      ],
+      "answer": 3,
+      "explanation": "G98 rút về mặt phẳng ban đầu; G99 chỉ rút về mặt phẳng R."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong khối G81 X30 Y10 Z-8 R3 F120; địa chỉ R3 cho biết gì?",
+      "options": [
+        "Mặt phẳng an toàn phía trên mặt phôi",
+        "Bán kính của lỗ khoan",
+        "Số lần lặp lại chu trình",
+        "Điểm tham chiếu cố định của máy"
+      ],
+      "answer": 0,
+      "explanation": "Trong chu trình khoan, R là mặt phẳng an toàn phía trên mặt phôi, còn Z là đáy lỗ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tháo phôi ra rồi gá lại ở vị trí khác trên ê-tô, dao giữ nguyên. Điểm chuẩn nào phải xác lập lại?",
+      "options": [
+        "Điểm M",
+        "Điểm R",
+        "Điểm P",
+        "Điểm W"
+      ],
+      "answer": 3,
+      "explanation": "W gắn với phôi nên đổi khi gá lại; M, R thuộc máy, P chỉ đổi khi thay dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay biên dạng ngoài, nhìn từ trên xuống dao đi ngược chiều kim đồng hồ quanh chi tiết và phải nằm phía ngoài. Cần gọi lệnh bù nào?",
+      "options": [
+        "G41",
+        "G42",
+        "G43",
+        "G44"
+      ],
+      "answer": 1,
+      "explanation": "Trên cạnh dưới dao đi theo chiều +X, phía ngoài là phía -Y, nằm bên phải hướng chạy dao nên dùng G42."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao nên gọi G41/G42 khi dao còn ở ngoài phôi?",
+      "options": [
+        "Ở khối gọi bù, tâm dao bị dời ra một bán kính; gọi trên biên dạng dễ ăn lẹm",
+        "Để máy kịp đo bán kính dao trước khi bắt đầu cắt biên dạng",
+        "Để dao được chạy nhanh G00 tới thẳng điểm cắt đầu tiên",
+        "Để mặt phẳng an toàn R luôn nằm cao hơn mặt phôi"
+      ],
+      "answer": 0,
+      "explanation": "Ở khối gọi bù, tâm dao được dời ra một khoảng bằng bán kính; nếu gọi ngay trên biên dạng dao có thể ăn lẹm vào chi tiết."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cần khoan một lỗ sâu gấp nhiều lần đường kính, phoi dễ kẹt. Nên chọn chu trình nào thay cho G81?",
+      "options": [
+        "G84",
+        "G89",
+        "G83",
+        "G99"
+      ],
+      "answer": 2,
+      "explanation": "G83 khoan từng lát sâu Q rồi rút để thoát phoi, hợp với lỗ sâu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khoan bốn lỗ trên mặt phôi phẳng, không có bậc hay đồ gá nhô cao giữa các lỗ. Cách rút dao nào phù hợp?",
+      "options": [
+        "G99, rút về mặt phẳng R",
+        "G98, rút về mặt phẳng ban đầu",
+        "G98, rút về mặt phẳng R",
+        "G99, rút về mặt phẳng ban đầu"
+      ],
+      "answer": 0,
+      "explanation": "G99 rút về mặt phẳng R, G98 rút về mặt phẳng ban đầu; không có vật cản thì rút về R là đủ an toàn và quãng đi ngắn hơn."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chương trình biên dạng có G41 đã chạy đúng. Đổi sang dao bán kính lớn hơn mà vẫn muốn mép chi tiết đúng bản vẽ thì làm gì?",
+      "options": [
+        "Tính lại toàn bộ tọa độ biên dạng theo tâm dao mới",
+        "Dời gốc W ra thêm một khoảng bằng hiệu hai bán kính",
+        "Giữ chương trình, nhập bán kính dao mới vào ô bù",
+        "Giữ chương trình, chỉ giảm tốc độ chạy dao F"
+      ],
+      "answer": 2,
+      "explanation": "Chương trình tả biên dạng chi tiết; máy tự dời tâm dao theo bán kính trong ô bù."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bài, lệnh hủy chu trình cố định G80 được đặt ở đâu trong chương trình?",
+      "options": [
+        "Ngay trước khi gọi chu trình khoan đầu tiên",
+        "Ngay sau mỗi khối gọi bù bán kính G41/G42",
+        "Ở khối cuối cùng, thay cho lệnh M30",
+        "Sau nhóm khoan, tarô, doa, trước chuyển động khác"
+      ],
+      "answer": 3,
+      "explanation": "Chu trình cố định giữ hiệu lực cho các khối sau, nên xong nhóm khoan, tarô, doa phải hủy bằng G80 rồi mới chuyển sang chuyển động khác."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G41 H2 và khối G43 H12 đều có địa chỉ H. Hai chữ H này khác nhau thế nào?",
+      "options": [
+        "Cả hai cùng chọn ô bù bán kính, chỉ khác bên trái hay phải",
+        "Ở G41, H chọn ô bù bán kính; ở G43, H chọn ô bù chiều dài theo Z",
+        "Ở G41, H chọn ô bù chiều dài; ở G43, H chọn ô bù bán kính",
+        "Cả hai cùng chọn ô bù chiều dài, chỉ khác hướng dương hay âm"
+      ],
+      "answer": 1,
+      "explanation": "G41/G42 bù bán kính trong mặt phẳng XY, G43/G44 bù chiều dài theo trục Z; H chọn ô bù tương ứng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi 60 × 40 mm, W ở tâm phôi, dao đang ở góc X30 Y20. Khối tiếp theo là G91 G01 X-60 F150; Dao dừng ở đâu?",
+      "options": [
+        "X-60 Y20",
+        "X-30 Y0",
+        "X-90 Y20",
+        "X-30 Y20"
+      ],
+      "answer": 3,
+      "explanation": "G91: 30 + (-60) = -30; Y không ghi nên giữ 20, dao tới góc X-30 Y20."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tarô ren M8 × 1,25 (bước ren 1,25 mm), trục chính S400, máy ở G94. Giá trị F đúng là:",
+      "options": [
+        "F320",
+        "F400",
+        "F500",
+        "F1.25"
+      ],
+      "answer": 2,
+      "explanation": "Mỗi vòng dao tiến một bước ren: F = 400 × 1,25 = 500 mm/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi 80 × 50 mm, W ở tâm và trên mặt phôi, phay viền sâu 3 mm. Tọa độ G90 của góc trên bên phải ở đáy đường cắt là:",
+      "options": [
+        "X80 Y50 Z-3",
+        "X40 Y25 Z3",
+        "X-40 Y-25 Z-3",
+        "X40 Y25 Z-3"
+      ],
+      "answer": 3,
+      "explanation": "Nửa cạnh là 40 và 25, góc trên phải mang dấu dương; đáy nằm dưới mặt phôi nên Z = -3."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo G90, dao cắt thẳng từ điểm X10 Y5 tới điểm X25 Y-10. Viết đoạn này bằng G91 thì khối lệnh là:",
+      "options": [
+        "G91 G01 X25 Y-10",
+        "G91 G01 X15 Y-15",
+        "G91 G01 X35 Y-5",
+        "G91 G01 X-15 Y15"
+      ],
+      "answer": 1,
+      "explanation": "Lượng dịch G91 = điểm sau trừ điểm trước: 25 - 10 = 15 theo X, -10 - 5 = -15 theo Y."
+    }
+  ]
+}

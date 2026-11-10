@@ -17,7 +17,10 @@ VI_TRI = re.compile(r"^(mo_bai|truoc:.+|sau:.+)$")
 def kiem_video(v, ten_truong, w):
     """Kiểm một mục video (dùng cho cả tn-*.json và video-theo-bai.json)."""
     yid = v.get("youtube_id", "")
-    if not re.fullmatch(r"[\w-]{11}", str(yid)): w(f"{ten_truong}.youtube_id '{yid}' phải là 11 ký tự YouTube")
+    if v.get("mp4"):  # clip tự dựng lưu ở Storage (scripts/tai-clip-len-storage.mts), V9
+        if not str(v["mp4"]).startswith("https://"): w(f"{ten_truong}.mp4 phải là URL https công khai")
+        if not v.get("poster"): w(f"{ten_truong}.poster trống — clip mp4 cần ảnh bìa")
+    elif not re.fullmatch(r"[\w-]{11}", str(yid)): w(f"{ten_truong}.youtube_id '{yid}' phải là 11 ký tự YouTube")
     if not v.get("nhin_vao"): w(f"{ten_truong}.nhin_vao trống — phải có câu hướng chú ý cho học sinh")
     elif len(str(v["nhin_vao"]).split()) > 40: w(f"{ten_truong}.nhin_vao dài quá 40 từ")
     st, en = v.get("giay_bat_dau"), v.get("giay_ket_thuc")

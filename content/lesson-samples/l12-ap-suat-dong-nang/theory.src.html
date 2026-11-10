@@ -2,8 +2,8 @@
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Phát biểu <strong>mô hình động học phân tử</strong> của khí lí tưởng và giải thích vì sao khí gây <strong>áp suất</strong> lên thành bình.</li>
-<li>Viết công thức áp suất do một phân tử và do $N$ phân tử; nhớ $\overline{E_d} = \dfrac{3}{2}kT$ và hằng số Boltzmann $k = 1{,}38\cdot10^{-23}$ J/K.</li>
-<li>Giải thích vì sao <strong>$\overline{E_d}$ tỉ lệ thuận với nhiệt độ tuyệt đối</strong>.</li>
+<li>Viết công thức áp suất do một và do $N$ phân tử; nhớ hằng số Boltzmann $k$.</li>
+<li>Tìm <strong>động năng tịnh tiến trung bình</strong> của phân tử phụ thuộc nhiệt độ thế nào, rồi kiểm bằng thí nghiệm bình kín.</li>
 <li>Cuối bài, em tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 18 phút · 8 câu tự kiểm tra.</li>
 </ul>
 </div>
@@ -12,51 +12,61 @@
 
 <p>Quả bóng bàn bị giẫm bẹp. Nhúng vào cốc nước nóng $80\ ^\circ\text{C}$, vỏ bóng phồng lại. Nước nóng không chạm mặt trong vỏ — vậy cái gì đã đẩy vỏ bóng ra?</p>
 
-<!--FIG1-->
-
 <div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
-<p>Vì sao áp suất khí trong bóng tăng khi bóng gặp nước nóng?</p>
+<p>Khi khí trong bóng nóng lên, các phân tử khí đập vào mặt trong vỏ bóng thay đổi thế nào?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl9-q0" id="tl9-q0a"><label for="tl9-q0a" class="tl-opt tl-no">A. Phân tử khí nặng lên vì nóng nên va chạm mạnh hơn.</label>
-<input type="radio" name="tl9-q0" id="tl9-q0b"><label for="tl9-q0b" class="tl-opt tl-ok">B. Phân tử bay nhanh hơn: mỗi va chạm truyền động lượng lớn hơn, lại thêm nhiều va chạm.</label>
-<input type="radio" name="tl9-q0" id="tl9-q0c"><label for="tl9-q0c" class="tl-opt tl-no">C. Hơi nước nóng thấm qua vỏ bóng, làm số phân tử khí tăng lên.</label>
-<input type="radio" name="tl9-q0" id="tl9-q0d"><label for="tl9-q0d" class="tl-opt tl-no">D. Vỏ bóng gặp nóng mềm ra và tự phồng lại.</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Với cùng một lượng khí đó, nung nóng thì phân tử bay nhanh hơn, nên mỗi va chạm truyền động lượng lớn hơn và số va chạm mỗi giây cũng nhiều hơn — hai lí do cộng lại làm áp suất tăng, đẩy vỏ bóng phồng lại.</p></div>
+<input type="radio" name="tl9-q0" id="tl9-q0a"><label for="tl9-q0a" class="tl-opt tl-no">A. Đập mạnh hơn vì phân tử nóng lên thì nặng thêm.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0b"><label for="tl9-q0b" class="tl-opt tl-ok">B. Bay nhanh hơn: mỗi cú đập truyền động lượng lớn hơn, lại đập dày hơn.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0c"><label for="tl9-q0c" class="tl-opt tl-no">C. Không đổi; hơi nước thấm qua vỏ làm số phân tử tăng.</label>
+<input type="radio" name="tl9-q0" id="tl9-q0d"><label for="tl9-q0d" class="tl-opt tl-no">D. Không đổi; vỏ bóng gặp nóng mềm ra và tự phồng lại.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Nóng lên thì phân tử bay nhanh hơn: mỗi va chạm truyền động lượng lớn hơn và va chạm dày hơn, nên áp suất tăng, đẩy vỏ bóng phồng lại.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A: nóng lên không làm phân tử nặng thêm.<br>C: vỏ bóng bàn kín nên hơi nước không lọt vào.<br>D: vỏ bóng chỉ mềm ra thì không tự phồng.<br>Chỗ thay đổi thật sự là <em>tốc độ</em> của phân tử. Chọn lại nhé.</p></div>
 </div>
+</div>
+
+<!--FIG1-->
+<!--video:sau:tn-l12-apsuatdongnang-03-->
+<div class="tl-box tl-box--video">
+<p class="tl-label">🎬 Xem video: bóng bàn bẹp phồng lại trong nước nóng</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/7M2ih9l6eGE?rel=0&start=5&end=35" title="bóng bàn bẹp phồng lại trong nước nóng" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nhìn vào:</strong> Vì sao bóng phồng lại khi nhúng vào nước nóng? (An toàn: dùng kẹp, không dùng tay.)</p>
 </div>
 
 <h3>II. Kiến thức</h3>
 
 <h4>1. Mô hình khí lí tưởng nhìn từ thành bình</h4>
 
-<p><strong>🔑 Phân tử nhỏ · Hỗn loạn · Va chạm đàn hồi</strong></p>
+<p class="tl-meo">🧠 <b>Nhỏ – Loạn – Đập – Nảy</b></p>
+<p><strong>🔑 Kích thước bé xíu · Hỗn loạn không ngừng · Va chạm gây áp suất · Nảy lại đàn hồi</strong></p>
 
 <ul>
-<li>Chất khí gồm <strong>rất nhiều phân tử</strong>, kích thước rất nhỏ so với khoảng cách giữa chúng; chúng <strong>chuyển động hỗn loạn, không ngừng</strong> và giữa hai va chạm thì bay thẳng đều.</li>
-<li>Chưa va chạm, lực tương tác giữa các phân tử rất yếu nên <strong>bỏ qua</strong> — mô hình khí lí tưởng.</li>
-<li>Chạm thành, phân tử <strong>truyền động lượng</strong> cho thành rồi bật ngược; va chạm hoàn toàn đàn hồi.</li>
-<li>Cộng vô số va chạm mỗi giây thành lực đẩy đều lên thành — đó là <strong>áp suất khí</strong>.</li>
+<li><strong>Nhỏ, Loạn:</strong> rất nhiều phân tử bé xíu, hỗn loạn không ngừng. Mô hình khí lí tưởng (bài trước): bỏ lực tương tác, giữa hai va chạm bay thẳng đều.</li>
+<li><strong>Đập, Nảy:</strong> chạm thành, phân tử <strong>truyền động lượng</strong> rồi bật ngược (va chạm hoàn toàn đàn hồi); vô số va chạm mỗi giây thành lực đẩy đều — <strong>áp suất khí</strong>.</li>
 </ul>
 
-<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-apsuatdongnang-01">
-<p class="tl-label">🔬 Thí nghiệm: hạt đập vào thành hộp</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> cho nắm gạo vào hộp nhựa trong có nắp, lắc mạnh rồi áp tai vào thành hộp.</li>
-<li><strong>Quan sát:</strong> từng hạt đập lộp bộp vào thành; lắc càng mạnh thì tiếng đập càng dày.</li>
-<li><strong>Rút ra:</strong> một hạt đập một cái, nhưng vô số hạt đập liên tục thành lực đều — như phân tử khí.</li>
-</ol>
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem thí nghiệm nhỏ: hạt gạo đập vào thành hộp</summary>
+<!--video:tn-l12-apsuatdongnang-01-->
+<div class="tl-box tl-box--video tl-box--khung" data-khung="{&quot;id&quot;:&quot;tn-l12-apsuatdongnang-01&quot;,&quot;ten&quot;:&quot;Lắc hộp hạt gạo, áp tai vào thành hộp&quot;,&quot;video&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-01-20261028-2.mp4&quot;,&quot;tong_giay&quot;:52.6,&quot;o&quot;:[{&quot;khoa&quot;:&quot;gia_thuyet&quot;,&quot;giay&quot;:0,&quot;chu&quot;:&quot;Vô số va chạm nhỏ cộng lại thành một lực đều.&quot;,&quot;kiem&quot;:&quot;Số cú đập vào thành hộp phụ thuộc gì?&quot;},{&quot;khoa&quot;:&quot;du_doan&quot;,&quot;giay&quot;:3.8,&quot;chu&quot;:&quot;Hộp có 200 hạt, lắc 1 Hz rồi 3 Hz. Số cú đập vào thành cam mỗi giây sẽ thế nào?&quot;},{&quot;khoa&quot;:&quot;dung_cu&quot;,&quot;giay&quot;:11.4,&quot;chu&quot;:&quot;Hộp nhựa trong có nắp, nắm gạo (200 hạt); lắc theo tần số đã chọn, áp tai vào thành hộp.&quot;},{&quot;khoa&quot;:&quot;quan_sat&quot;,&quot;giay&quot;:21.8,&quot;chu&quot;:&quot;200 hạt: 1 Hz được 250 cú đập/giây, 3 Hz được 750 (từ mô hình).&quot;},{&quot;khoa&quot;:&quot;rut_ra&quot;,&quot;giay&quot;:28.2,&quot;chu&quot;:&quot;Lắc nhanh gấp 3 thì cú đập gấp 3.\nMột hạt chỉ đập một cái; vô số hạt đập liên tục mới thành lực đều, như phân tử khí.&quot;},{&quot;khoa&quot;:&quot;chua_noi&quot;,&quot;giay&quot;:41.6,&quot;chu&quot;:&quot;Số cú đập tính từ mô hình, không đo; chưa biết độ lớn một cú đập; lắc tay không đều.&quot;}],&quot;dung_dua&quot;:{&quot;giay&quot;:10.7,&quot;cau_hoi&quot;:&quot;Lắc từ 1 Hz lên 3 Hz, số cú đập vào thành cam sẽ…&quot;,&quot;chon&quot;:[&quot;A. Không đổi, vẫn 200 hạt&quot;,&quot;B. Tăng gấp ba lần&quot;,&quot;C. Tăng gấp chín lần&quot;,&quot;D. Giảm, hạt bay nhanh&quot;],&quot;dung&quot;:1,&quot;giai_thich_dung&quot;:&quot;Hạt bay nhanh gấp ba nên số cú đập mỗi giây tăng gấp ba: từ 250 lên 750.&quot;,&quot;giai_thich_sai&quot;:&quot;Xem bảng số cú đập ở đoạn kế, so lúc lắc 1 Hz với 3 Hz.&quot;},&quot;poster&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-01-20261028-2.webp&quot;}">
+<p class="tl-label">🎬 Xem thí nghiệm dựng lại · 50 giây</p>
+<p class="tl-video-ten">Hạt đập vào thành hộp</p>
+<div class="tl-video tl-video--doc"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-01-20261028-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-01-20261028-2.webp" controls preload="none" playsinline title="hạt đập vào thành hộp" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+<p class="tl-video-goi-y"><strong>Nhìn vào:</strong> Thêm hạt hoặc lắc nhanh hơn thì tiếng đập vào thành hộp đổi thế nào?</p>
 </div>
+
+
+
+</details>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Trong mô hình khí lí tưởng, điều nào mô tả đúng một phân tử khí?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl9-q1" id="tl9-q1a"><label for="tl9-q1a" class="tl-opt tl-no">A. Đứng yên ở đáy bình và đè lên thành như một vật nặng.</label>
-<input type="radio" name="tl9-q1" id="tl9-q1b"><label for="tl9-q1b" class="tl-opt tl-ok">B. Giữa hai va chạm thì bay thẳng đều; chạm thành thì truyền động lượng rồi bật ra.</label>
-<input type="radio" name="tl9-q1" id="tl9-q1c"><label for="tl9-q1c" class="tl-opt tl-no">C. Bị các phân tử xung quanh hút mạnh nên dính chặt vào thành.</label>
-<input type="radio" name="tl9-q1" id="tl9-q1d"><label for="tl9-q1d" class="tl-opt tl-no">D. Có kích thước lớn, chiếm gần hết thể tích bình.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1a"><label for="tl9-q1a" class="tl-opt tl-no">A. Đứng yên ở đáy bình, đè lên thành.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1b"><label for="tl9-q1b" class="tl-opt tl-ok">B. Bay thẳng đều giữa hai va chạm; chạm thành thì bật ra.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1c"><label for="tl9-q1c" class="tl-opt tl-no">C. Bị hút mạnh nên dính chặt vào thành.</label>
+<input type="radio" name="tl9-q1" id="tl9-q1d"><label for="tl9-q1d" class="tl-opt tl-no">D. Rất lớn, chiếm gần hết thể tích bình.</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mô hình bỏ qua kích thước phân tử và lực tương tác khi chưa va chạm, nên giữa hai va chạm phân tử bay thẳng đều; va chạm với thành là đàn hồi và truyền động lượng cho thành.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A: nếu phân tử đứng yên thì đã không có va chạm nào và bình không có áp suất.<br>C: mô hình bỏ qua lực hút giữa các phân tử, nên không có chuyện dính chặt vào thành.<br>D: mô hình bỏ qua cả kích thước phân tử (coi là rất nhỏ so với khoảng cách).<br>Đọc lại gạch đầu dòng đầu rồi chọn lại nhé.</p></div>
 </div>
@@ -70,7 +80,7 @@
 <li>Bình lập phương cạnh $l$, thể tích $V = l^3$. Phân tử khối lượng $m$ bay song song $Ox$ tốc độ $v$, đập vuông góc vào thành.</li>
 <li>Trước va chạm động lượng là $+mv$, sau là $-mv$ (bật ngược, tốc độ vẫn $v$). Độ biến thiên: $\left|\Delta p\right| = 2mv$.</li>
 <li>Mỗi vòng sang thành đối diện rồi quay lại mất $\Delta t = \dfrac{2l}{v}$, nên mỗi giây có $\dfrac{v}{2l}$ va chạm.</li>
-<li>Lực trung bình lên thành = động lượng mỗi va chạm × số va chạm mỗi giây: $F = 2mv\cdot\dfrac{v}{2l} = \dfrac{mv^2}{l}$; chia cho $S = l^2$ được áp suất do <strong>một</strong> phân tử:</li>
+<li>Lực trung bình = động lượng mỗi va chạm × số va chạm mỗi giây: $F = 2mv\cdot\dfrac{v}{2l} = \dfrac{mv^2}{l}$; chia cho $S = l^2$ được áp suất do <strong>một</strong> phân tử:</li>
 </ul>
 
 <div class="tl-fx">
@@ -128,10 +138,10 @@
 </ul>
 </div>
 
-<ul>
-<li>Áp suất do <strong>va chạm liên tục</strong>, không do phân tử "đứng đè": tăng $\mu$ hoặc tăng $\overline{v^2}$ thì $p$ tăng.</li>
-<li>Ví dụ: bình $2{,}0$ lít ($2{,}0\cdot10^{-3}\ \text{m}^3$) chứa $6{,}02\cdot10^{22}$ phân tử N₂ ($m = 4{,}65\cdot10^{-26}$ kg) có $\rho \approx 1{,}4\ \text{kg/m}^3$; với $\overline{v^2} = 2{,}5\cdot10^5\ \text{m}^2/\text{s}^2$ thì $p = \dfrac{1}{3}\rho\overline{v^2} \approx 1{,}2\cdot10^5\ \text{Pa}$.</li>
-</ul>
+<details class="tl-details tl-more">
+<summary>👀 Bấm xem ví dụ số: bình 2 lít khí N₂</summary>
+<p>Bình $2{,}0$ lít ($2{,}0\cdot10^{-3}\ \text{m}^3$) chứa $6{,}02\cdot10^{22}$ phân tử N₂ ($m = 4{,}65\cdot10^{-26}$ kg) có $\rho \approx 1{,}4\ \text{kg/m}^3$; với $\overline{v^2} = 2{,}5\cdot10^5\ \text{m}^2/\text{s}^2$ thì $p = \dfrac{1}{3}\rho\overline{v^2} \approx 1{,}2\cdot10^5\ \text{Pa}$.</p>
+</details>
 
 <!--FIG3-->
 
@@ -140,7 +150,7 @@
 <p><strong>Câu 3.</strong> Trong công thức $p = \dfrac{2}{3}\mu\overline{E_d}$, đại lượng $\mu$ là</p>
 <div class="tl-quiz">
 <input type="radio" name="tl9-q3" id="tl9-q3a"><label for="tl9-q3a" class="tl-opt tl-no">A. Khối lượng riêng của khí (kg/m³).</label>
-<input type="radio" name="tl9-q3" id="tl9-q3b"><label for="tl9-q3b" class="tl-opt tl-ok">B. Mật độ phân tử — số phân tử trong một mét khối.</label>
+<input type="radio" name="tl9-q3" id="tl9-q3b"><label for="tl9-q3b" class="tl-opt tl-ok">B. Mật độ phân tử: số phân tử trong 1 m³.</label>
 <input type="radio" name="tl9-q3" id="tl9-q3c"><label for="tl9-q3c" class="tl-opt tl-no">C. Khối lượng một phân tử (kg).</label>
 <input type="radio" name="tl9-q3" id="tl9-q3d"><label for="tl9-q3d" class="tl-opt tl-no">D. Số mol khí trong bình.</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\mu = \dfrac{N}{V}$ đếm số phân tử trong một mét khối. Nhân thêm khối lượng một phân tử mới ra khối lượng riêng: $\rho = \mu m$.</p></div>
@@ -170,55 +180,64 @@
 </div>
 
 <ul>
-<li>Hệ số $\dfrac{3}{2}$ ứng với <strong>ba phương tịnh tiến</strong>, mỗi phương góp $\dfrac{1}{2}kT$.</li>
+<li>Hệ số $\dfrac{3}{2}$: ba phương tịnh tiến, mỗi phương góp $\dfrac{1}{2}kT$ vào động năng.</li>
 <li><strong>Chỉ phụ thuộc $T$:</strong> mọi khí ở cùng nhiệt độ có cùng $\overline{E_d}$. Khối lượng chỉ quyết định <strong>tốc độ căn quân phương</strong> $v_{rms} = \sqrt{\overline{v^2}} = \sqrt{\dfrac{3kT}{m}}$.</li>
-<li><strong>Kelvin bắt buộc:</strong> $T$ là nhiệt độ tuyệt đối — số đo động năng trung bình của phân tử.</li>
+<li><strong>Nhiệt độ cao:</strong> tốc độ trung bình của phân tử lớn hơn (Hình 5).</li>
 </ul>
 
 <!--FIG4-->
 
-<div class="tl-box tl-box--think tl-check">
-<p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Ở $27\ ^\circ\text{C}$, động năng tịnh tiến trung bình của một phân tử xấp xỉ</p>
-<div class="tl-quiz">
-<input type="radio" name="tl9-q4" id="tl9-q4a"><label for="tl9-q4a" class="tl-opt tl-ok">A. $6{,}2\cdot10^{-21}$ J.</label>
-<input type="radio" name="tl9-q4" id="tl9-q4b"><label for="tl9-q4b" class="tl-opt tl-no">B. $4{,}1\cdot10^{-21}$ J.</label>
-<input type="radio" name="tl9-q4" id="tl9-q4c"><label for="tl9-q4c" class="tl-opt tl-no">C. $5{,}6\cdot10^{-22}$ J.</label>
-<input type="radio" name="tl9-q4" id="tl9-q4d"><label for="tl9-q4d" class="tl-opt tl-no">D. Không xác định được, vì còn cần khối lượng phân tử.</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\overline{E_d} = \dfrac{3}{2}kT$ chỉ phụ thuộc nhiệt độ, không cần khối lượng phân tử: $1{,}5 \times 1{,}38\cdot10^{-23} \times 300 \approx 6{,}2\cdot10^{-21}\ \text{J}$. Em giải thích được cho bạn ngồi cạnh chưa?</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>B: quên hệ số $\dfrac{3}{2}$ (chỉ lấy $kT$).<br>C: dùng số 27 như thể đó là nhiệt độ Kelvin.<br>D: nhầm rằng phải biết khí gì — thực ra $\overline{E_d}$ chỉ phụ thuộc $T$.<br>Nhớ mẹo: <em>đổi sang Kelvin trước, rồi nhân $\dfrac{3}{2}kT$</em>. Chọn lại nhé.</p></div>
-</div>
-</div>
+<!--FIG5-->
 
 <h4>5. Thực nghiệm: đo áp suất khí theo nhiệt độ</h4>
 
-<p><strong>🔑 V không đổi · p tỉ lệ với T</strong></p>
-
-<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-apsuatdongnang-02">
-<p class="tl-label">🔬 Thí nghiệm đo: áp suất khí trong bình kín khi đổi nhiệt độ</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> nối bình kim loại kín ($0{,}25$ lít) với áp kế, ngâm vào nồi nước; đun dần, đọc áp suất ở $20$, $40$, $60$, $80$, $100\ ^\circ\text{C}$ và chờ cân bằng nhiệt.</li>
-<li><strong>Quan sát:</strong> áp suất tăng đều theo nhiệt độ; chia mỗi áp suất cho nhiệt độ tuyệt đối đều được khoảng $0{,}342\ \text{kPa/K}$.</li>
-<li><strong>Rút ra:</strong> với $V$ và lượng khí không đổi thì $\dfrac{p}{T}$ không đổi, tức $p$ tỉ lệ thuận $T$. Vì $\mu$ không đổi nên $\overline{E_d}$ cũng tỉ lệ thuận $T$.</li>
-</ol>
+<!--video:tn-l12-apsuatdongnang-02-->
+<div class="tl-box tl-box--video tl-box--khung" data-khung="{&quot;id&quot;:&quot;tn-l12-apsuatdongnang-02&quot;,&quot;ten&quot;:&quot;Đun nóng bình khí kín: áp kế chỉ bao nhiêu?&quot;,&quot;video&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261028-2.mp4&quot;,&quot;tong_giay&quot;:52.6,&quot;o&quot;:[{&quot;khoa&quot;:&quot;gia_thuyet&quot;,&quot;giay&quot;:0,&quot;chu&quot;:&quot;Khí kín: áp suất tỉ lệ thuận với nhiệt độ tuyệt đối T.&quot;,&quot;kiem&quot;:&quot;Đun nóng bình kín thì áp suất ra sao?&quot;},{&quot;khoa&quot;:&quot;du_doan&quot;,&quot;giay&quot;:3.3,&quot;chu&quot;:&quot;Bình kín đang ở 10 °C, áp kế chỉ 96 kPa. Đun lên 90 °C thì áp kế chỉ bao nhiêu?&quot;},{&quot;khoa&quot;:&quot;dung_cu&quot;,&quot;giay&quot;:8.9,&quot;chu&quot;:&quot;Bình kim loại kín 0,25 lít nối áp kế điện tử qua ống ngắn; nồi nước trên bếp có que khuấy; nhiệt kế sát bình.\nNgâm ngập bình, đun dần; ở mỗi mốc 10, 30, 50, 70, 90 °C khuấy, đợi áp kế đứng yên rồi đọc p và t.\nCoi khí là khí lí tưởng, thể tích bình không đổi, khí cùng nhiệt độ với nước; bỏ qua rò khí.&quot;},{&quot;khoa&quot;:&quot;quan_sat&quot;,&quot;giay&quot;:14.8,&quot;chu&quot;:&quot;Áp suất tăng đều theo nhiệt độ: từ 96,0 kPa ở 10 °C lên 123,0 kPa ở 90 °C.&quot;},{&quot;khoa&quot;:&quot;rut_ra&quot;,&quot;giay&quot;:21.8,&quot;chu&quot;:&quot;Thể tích và lượng khí không đổi: p/T là hằng số, nên áp suất tỉ lệ thuận với nhiệt độ tuyệt đối T (kelvin).\np/T ở các mốc đo cùng xấp xỉ 0,339 kPa/K; em kiểm ô cuối trong bảng.\nCơ chế: T tăng thì phân tử nhanh hơn, va chạm mạnh hơn và dày hơn.&quot;},{&quot;khoa&quot;:&quot;chua_noi&quot;,&quot;giay&quot;:34.2,&quot;chu&quot;:&quot;Thí nghiệm chỉ đo p và t. Tốc độ và động năng phân tử chỉ suy ra từ mô hình. Chỉ đo trong khoảng 283–363 K.&quot;}],&quot;dung_dua&quot;:{&quot;giay&quot;:8.75,&quot;cau_hoi&quot;:&quot;Đun từ 10 °C lên 90 °C. Áp kế chỉ bao nhiêu?&quot;,&quot;chon&quot;:[&quot;A. 96 kPa&quot;,&quot;B. 123 kPa&quot;,&quot;C. 192 kPa&quot;,&quot;D. 864 kPa&quot;],&quot;dung&quot;:1,&quot;giai_thich_dung&quot;:&quot;Đổi sang kelvin: 283 K lên 363 K, áp suất tăng theo tỉ lệ đó, từ 96 lên khoảng 123 kPa.&quot;,&quot;giai_thich_sai&quot;:&quot;Thử lập tỉ số p/T với T là nhiệt độ tuyệt đối rồi so lại với số trên áp kế.&quot;},&quot;poster&quot;:&quot;https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261028-2.webp&quot;}">
+<p class="tl-label">🎬 Xem thí nghiệm dựng lại · 50 giây</p>
+<p class="tl-video-ten">Áp suất bình kín theo nhiệt độ</p>
+<div class="tl-video tl-video--doc"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261028-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261028-2.webp" controls preload="none" playsinline title="áp suất bình kín theo nhiệt độ" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>
+<p class="tl-video-goi-y"><strong>Nhìn vào:</strong> Các điểm (T, p) xếp thành hình gì khi T tính bằng kelvin?</p>
 </div>
 
-<table class="tl-table">
-<thead>
-<tr><th>Nhiệt độ T (K)</th><th>Áp suất p (kPa)</th></tr>
-</thead>
-<tbody>
-<tr><td>293</td><td>100,2</td></tr>
-<tr><td>313</td><td>107,1</td></tr>
-<tr><td>333</td><td>113,9</td></tr>
-<tr><td>353</td><td>120,5</td></tr>
-<tr><td>373</td><td>127,6</td></tr>
-</tbody>
-</table>
+
+
 
 <details class="tl-details tl-more">
-<summary>🤏 Sai số: vì sao tỉ số p/T không giống hệt nhau ở năm lần đọc?</summary>
-<p>Chia ra được $0{,}3420$; $0{,}3422$; $0{,}3420$; $0{,}3414$; $0{,}3421\ \text{kPa/K}$ — dao động quanh $0{,}342$. Ba nguồn lệch: áp kế có sai số $\pm0{,}5\ \text{kPa}$ (khoảng $0{,}5\%$); nhiệt kế có sai số $\pm0{,}5\ ^\circ\text{C}$; và bình kim loại <em>giãn nở</em> chút ít khi nóng nên thể tích không còn đúng $0{,}25$ lít, làm áp suất đo được thấp hơn tính toán. Thêm nữa, nếu chưa chờ đủ lâu, nhiệt độ khí trong bình còn thấp hơn nhiệt độ nước. Sai số $0{,}5\%$ của áp kế ($\pm0{,}5$ kPa trên khoảng $100$ kPa) chuyển sang tỉ số thành $0{,}5\% \times 0{,}342 \approx 0{,}002\ \text{kPa/K}$, nên kết quả ghi kèm sai số: $\dfrac{p}{T} = 0{,}342 \pm 0{,}002\ \text{kPa/K}$.</p>
+<summary>📊 Bấm xem: bảng số đo</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$t$ (°C)</th><th>$T$ (K)</th><th>$p$ (kPa)</th><th>$p/T$ (kPa/K)</th></tr>
+</thead>
+<tbody>
+<tr><td>$10$</td><td>$283$</td><td>$96{,}0$</td><td>$0{,}3392$</td></tr>
+<tr><td>$30$</td><td>$303$</td><td>$102{,}8$</td><td>$0{,}3393$</td></tr>
+<tr><td>$50$</td><td>$323$</td><td>$109{,}5$</td><td>$0{,}3390$</td></tr>
+<tr><td>$70$</td><td>$343$</td><td>$116{,}4$</td><td>$0{,}3394$</td></tr>
+<tr><td>$90$</td><td>$363$</td><td>$123{,}0$</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p><small>Số liệu minh hoạ: tính từ mô hình $p/T$ không đổi, cộng sai lệch nhỏ của áp kế; khác bộ số ở bài Phương trình trạng thái. Em tự tính ô $p/T$ ở $90\ ^\circ\text{C}$: có gần các ô trên không?</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Về thí nghiệm bình kín trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl9-q4" id="tl9-q4a"><label for="tl9-q4a" class="tl-opt tl-no">A. Nước càng nóng, áp kế chỉ càng lớn.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4b"><label for="tl9-q4b" class="tl-opt tl-no">B. $p/T$ gần không đổi nên $p$ tỉ lệ thuận với nhiệt độ tuyệt đối.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4c"><label for="tl9-q4c" class="tl-opt tl-no">C. Phân tử nhanh hơn, va chạm mạnh hơn và dày hơn.</label>
+<input type="radio" name="tl9-q4" id="tl9-q4d"><label for="tl9-q4d" class="tl-opt tl-ok">D. Thí nghiệm đo trực tiếp động năng phân tử.</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý D sai.</strong> Dụng cụ chỉ đọc được áp suất và nhiệt độ; tốc độ và động năng của phân tử là suy ra từ mô hình động học, không phải số đo.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A là hiện tượng đọc trên áp kế — đúng.<br>B là kết luận rút từ bảng — đúng.<br>C là cơ chế theo mô hình động học — đúng.<br>D vượt quá điều thí nghiệm đo được (giới hạn). Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<p><strong>🔑 V không đổi · p tỉ lệ với T</strong></p>
+
+<details class="tl-details tl-more">
+<summary>🤏 Sai số: đọc sớm hay bình nở làm $p/T$ lệch về phía nào?</summary>
+<p>Đọc $p$ khi khí chưa kịp nóng bằng nước: khí còn nguội hơn số chỉ nhiệt kế, nên khi đun áp suất đọc được <em>thấp hơn</em>, tỉ số $p/T$ <em>nhỏ hơn</em> giá trị thật.<br>Bình kim loại nở ra khi nóng: thể tích tăng chút ít nên áp suất cũng thấp hơn, $p/T$ ở mốc nóng <em>nhỏ hơn</em> ở mốc nguội.<br>Áp kế sai $\pm 0{,}3$ kPa làm $p/T$ dao động ở chữ số thứ tư sau dấu phẩy, không theo chiều nào cố định.<br><strong>Cách giảm:</strong> khuấy nước, đợi số chỉ áp kế đứng yên mới đọc; đo thêm lượt để nguội dần rồi lấy trung bình hai lượt.</p>
 </details>
 
 <details class="tl-details tl-more">
@@ -247,7 +266,6 @@
 <tbody>
 <tr><td>$0\ ^\circ\text{C}$ trông như "không còn nóng"</td><td>$273\ \text{K}$ — vẫn còn nguyên động năng phân tử</td></tr>
 <tr><td>$20\ ^\circ\text{C} \to 40\ ^\circ\text{C}$: trông như gấp đôi</td><td>$293\ \text{K} \to 313\ \text{K}$: chỉ tăng $1{,}07$ lần</td></tr>
-<tr><td>Không dùng được trong hệ thức tỉ lệ thuận</td><td>$\overline{E_d} = \frac{3}{2}kT$ tỉ lệ thuận với $T$</td></tr>
 </tbody>
 </table>
 </div>
@@ -292,11 +310,11 @@
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Trả bài</p>
-<p>Nói bằng lời của em trước, rồi bấm xem đáp án.</p>
+
 
 <details class="tl-details tl-more">
 <summary>1. Mô hình động học phân tử nói gì, và vì sao có áp suất?</summary>
-<p><strong>Phân tử nhỏ · Hỗn loạn · Thẳng đều giữa hai va chạm · Va chạm đàn hồi với thành.</strong> Mỗi va chạm, phân tử truyền động lượng cho thành rồi bật ngược; vô số va chạm mỗi giây cộng thành lực đẩy đều lên thành — đó là áp suất.</p>
+<p><strong>Nhỏ – Loạn – Đập – Nảy.</strong> Nhỏ: phân tử bé xíu so với khoảng cách. Loạn: hỗn loạn không ngừng. Đập: va vào thành gây áp suất. Nảy: va chạm đàn hồi, bật ngược. Giữa hai va chạm, phân tử bay thẳng đều. Mỗi va chạm, phân tử truyền động lượng cho thành rồi bật ngược; vô số va chạm mỗi giây cộng thành lực đẩy đều lên thành — đó là áp suất.</p>
 </details>
 
 <details class="tl-details tl-more">
@@ -409,9 +427,6 @@
 
 <ul>
 <li><strong>Bơm lốp xe:</strong> mỗi nhát bơm dồn thêm phân tử, mật độ $\mu$ tăng nên $p$ tăng; để ngoài nắng, lốp nóng cũng tăng $p$ theo $T$.</li>
-<li><strong>Lon xịt, bình ga mini:</strong> áp suất vài bar nhờ mật độ phân tử rất lớn; để ngoài nắng thì áp suất tăng, nên vỏ lon dặn tránh nơi nóng.</li>
-<li><strong>Nồi áp suất:</strong> hơi nước tạo áp suất cao nên nước sôi trên $100\ ^\circ\text{C}$, thức ăn chín nhanh hơn.</li>
-<li><strong>Bóng bay heli:</strong> phân tử heli nhẹ nên bay nhanh hơn phân tử không khí, thoát qua vỏ nhanh hơn.</li>
 </ul>
 
 <div class="tl-box tl-box--think tl-check">
@@ -428,7 +443,7 @@
 </details>
 
 <details class="tl-details tl-more">
-<summary>⭐⭐⭐ Thách đấu: bình kín giữ nguyên nhiệt độ, hút bớt một nửa số phân tử. Áp suất đổi thế nào? Giải thích hai cách.</summary>
+<summary>⭐⭐⭐ Thách đấu: bình kín giữ nguyên nhiệt độ, hút bớt một nửa số phân tử. Áp suất đổi thế nào?</summary>
 <p>Áp suất giảm còn một nửa. <strong>Cách 1 — theo mật độ:</strong> $p = \dfrac{2}{3}\mu\overline{E_d}$; $T$ không đổi nên $\overline{E_d}$ không đổi, còn $\mu$ giảm 2 lần nên $p$ giảm 2 lần. <strong>Cách 2 — theo phương trình trạng thái:</strong> $p = \dfrac{N}{V}kT = \mu kT$, cùng kết quả.</p>
 </details>
 </div>
@@ -436,12 +451,11 @@
 <div class="tl-box tl-box--rule tl-keep">
 <p class="tl-label">Mang về sau bài học</p>
 <ul>
-<li><strong>Mô hình khí:</strong> phân tử nhỏ · hỗn loạn · thẳng đều giữa hai va chạm · va chạm đàn hồi.</li>
+<li><strong>Nhỏ – Loạn – Đập – Nảy:</strong> mô hình khí nhìn từ thành bình.</li>
 <li><strong>Một va chạm:</strong> động lượng đổi chiều · truyền cho thành $2mv$.</li>
 <li><strong>Một phân tử:</strong> $p_m = \dfrac{mv^2}{V}$ · lực trung bình $F = \dfrac{mv^2}{l}$.</li>
 <li><strong>$N$ phân tử:</strong> $p = \dfrac{1}{3}\rho\overline{v^2} = \dfrac{2}{3}\mu\overline{E_d}$ · $\mu = \dfrac{N}{V}$ · $\rho = \mu m$.</li>
-<li><strong>Động năng tịnh tiến:</strong> $\overline{E_d} = \dfrac{3}{2}kT$ · ba phương, mỗi phương $\dfrac{1}{2}kT$.</li>
-<li><strong>Boltzmann:</strong> $k = \dfrac{R}{N_A} = 1{,}38\cdot10^{-23}\ \text{J/K}$.</li>
+<li><strong>Động năng tịnh tiến:</strong> $\overline{E_d} = \dfrac{3}{2}kT$, $k = \dfrac{R}{N_A} = 1{,}38\cdot10^{-23}\ \text{J/K}$.</li>
 <li><strong>Nhiệt độ:</strong> $\overline{E_d}$ tỉ lệ thuận $T$ · cùng $T$ thì mọi khí cùng $\overline{E_d}$ · khí nhẹ có $v_{rms}$ lớn.</li>
 <li><strong>Đọc đề:</strong> gặp "nhiệt độ" thì đổi ngay sang Kelvin; hỏi "tăng mấy lần" thì lấy $T_2/T_1$, đừng lấy $t_2/t_1$.</li>
 </ul>

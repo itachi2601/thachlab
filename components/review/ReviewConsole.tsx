@@ -12,11 +12,13 @@ import {
   extendReviewStage,
   fetchQuestionSnippets,
   getReviewBoard,
+  getReviewMeta,
   getWrongStudents,
   reviewErrorText,
   setReviewStage,
   type BoardStudent,
   type ReviewBoard,
+  type ReviewMeta,
   type StageState,
   type WrongStudentRow,
 } from "@/services/review-session";
@@ -96,6 +98,15 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
   /** null = theo chặng đang mở; số = đang xem lại chặng đó. */
   const [view, setView] = useState<number | null>(null);
   const [wrongRows, setWrongRows] = useState<{ stage: number; rows: WrongStudentRow[] } | null>(null);
+  const [meta, setMeta] = useState<ReviewMeta | null>(null);
+  useEffect(() => {
+    let alive = true;
+    void getReviewMeta(sessionId).then((m) => alive && setMeta(m));
+    return () => {
+      alive = false;
+    };
+  }, [sessionId]);
+  const homework = meta?.mode === "self";
   const [openKeys, setOpenKeys] = useState<Set<string>>(new Set());
   const [showAllQ, setShowAllQ] = useState(false);
   const [snippets, setSnippets] = useState<{ exam: number; list: string[] } | null>(null);
@@ -285,7 +296,7 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
       {/* Dải chặng */}
       <ol className="flex flex-wrap gap-2" aria-label="Các chặng — bấm để xem số liệu chặng đó">
         {sess.stages.map((s, i) => {
-          const state = sess.status === "finished" || i < idx ? "done" : i === idx ? "now" : "next";
+          const state = homework ? "next" : sess.status === "finished" || i < idx ? "done" : i === idx ? "now" : "next";
           const opened = i <= idx; // chặng chưa mở thì chưa có số liệu
           const watching = i === viewed;
           return (
@@ -317,6 +328,17 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
       <section className="rounded-2xl border border-line bg-panel p-4 sm:p-5" aria-label="Điều khiển">
         {sess.status === "finished" ? (
           <p className="font-semibold text-ink">Buổi ôn đã kết thúc.</p>
+        ) : homework ? (
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="flex-1 basis-60 text-ink">
+              <strong>Tự học ở nhà</strong> · hạn nộp{" "}
+              {meta?.due_at
+                ? new Date(meta.due_at).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" })
+                : "—"}
+              {meta?.sequential ? " · làm lần lượt từng chặng" : ""}. Bấm từng chặng ở trên để xem em nào chưa làm và dạng cả lớp vướng.
+            </p>
+            <Button variant="outline" onClick={() => setConfirmNext(n)} disabled={busy}>Kết thúc buổi</Button>
+          </div>
         ) : idx < 0 ? (
           <div className="flex flex-wrap items-center gap-3">
             <p className="flex-1 basis-60 text-ink">
@@ -359,7 +381,7 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
 
       {viewed >= 0 && (
         <>
-          {reviewing && (
+          {reviewing && !homework && (
             <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-primary bg-primary-soft px-4 py-3">
               <p className="flex-1 basis-60 text-ink">
                 Đang xem lại <strong>Chặng {viewed + 1}</strong> — số liệu tính đến bây giờ, các em vẫn có thể nộp thêm.
@@ -562,9 +584,9 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
 
       <ConfirmDialog
         open={confirmNext !== null}
-        title={last ? "Kết thúc buổi ôn?" : `Mở chặng ${idx + 2}?`}
-        description={`Còn ${counts.doing} em đang làm dở. Các em vẫn nộp được bài đang làm, nhưng màn hình của lớp sẽ chuyển sang ${last ? "kết thúc" : "chặng mới"}.`}
-        confirmLabel={last ? "Kết thúc" : "Mở chặng mới"}
+        title={last || homework ? "Kết thúc buổi ôn?" : `Mở chặng ${idx + 2}?`}
+        description={`Còn ${counts.doing} em đang làm dở. Các em vẫn nộp được bài đang làm, nhưng màn hình của lớp sẽ chuyển sang ${last || homework ? "kết thúc" : "chặng mới"}.`}
+        confirmLabel={last || homework ? "Kết thúc" : "Mở chặng mới"}
         onConfirm={() => confirmNext !== null && void go(confirmNext)}
         onCancel={() => setConfirmNext(null)}
       />

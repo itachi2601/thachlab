@@ -140,6 +140,10 @@
    "question": "Bên trong một ống dây có dòng điện biến thiên, dù không có điện tích nào, vẫn xuất hiện điện trường. Người ta so sánh điện trường này với điện trường tĩnh quanh một điện tích đứng yên. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Đường sức của điện trường tĩnh là đường không khép kín.",
+     "answer": true
+    },
+    {
      "text": "Điện trường trong ống dây là điện trường xoáy, do từ trường biến thiên sinh ra.",
      "answer": true
     },
@@ -148,19 +152,15 @@
      "answer": false
     },
     {
-     "text": "Đường sức của điện trường tĩnh là đường không khép kín.",
-     "answer": true
-    },
-    {
      "text": "Đường sức của hai loại điện trường này có thể cắt nhau.",
      "answer": false
     }
    ],
    "explanation": "Điện trường xoáy do từ trường biến thiên sinh ra, có đường sức kín và không gắn với điện tích nào, nên b sai. Bài nêu điểm giống nhau của hai loại là đường sức không cắt nhau, nên d sai.",
    "distractorNotes": {
-    "0": "Trong ống không có điện tích nào, nên điện trường ở đó chỉ có thể do từ trường biến thiên sinh ra, tức điện trường xoáy.",
-    "1": "Đây là đặc điểm điện trường tĩnh; đường sức điện trường xoáy khép kín, không gắn với điện tích dương hay âm nào.",
-    "2": "Đường sức điện trường tĩnh đi từ điện tích dương sang điện tích âm nên không thể khép kín.",
+    "0": "Đường sức điện trường tĩnh đi từ điện tích dương sang điện tích âm nên không thể khép kín.",
+    "1": "Trong ống không có điện tích nào, nên điện trường ở đó chỉ có thể do từ trường biến thiên sinh ra, tức điện trường xoáy.",
+    "2": "Đây là đặc điểm điện trường tĩnh; đường sức điện trường xoáy khép kín, không gắn với điện tích dương hay âm nào.",
     "3": "Bài nêu điểm giống nhau của hai loại điện trường chính là đường sức không bao giờ cắt nhau."
    }
   },
@@ -221,7 +221,7 @@
    "question": "Mỗi khi bếp từ chạy dòng xoay chiều, một chiếc radio chạy pin đặt cách đó 2 m bị rè, dù không có dây nào nối hai thiết bị. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Dòng điện biến thiên trong bếp từ sinh ra điện từ trường lan tới ăng ten radio.",
+     "text": "Sóng điện từ mang năng lượng nên có thể gây nhiễu thiết bị điện.",
      "answer": true
     },
     {
@@ -229,20 +229,20 @@
      "answer": false
     },
     {
-     "text": "Sóng điện từ mang năng lượng nên có thể gây nhiễu thiết bị điện.",
-     "answer": true
-    },
-    {
      "text": "Giống sóng cơ, sóng điện từ không truyền được trong chân không.",
      "answer": false
+    },
+    {
+     "text": "Dòng điện biến thiên trong bếp từ sinh ra điện từ trường lan tới ăng ten radio.",
+     "answer": true
     }
    ],
    "explanation": "Sóng điện từ là sóng ngang, $\\vec{E} \\perp \\vec{B}$ và cả hai vuông góc với phương truyền, nên b sai. Sóng điện từ truyền được cả trong chân không với tốc độ $c$, nên d sai.",
    "distractorNotes": {
-    "0": "Radio chạy pin, không có dây nối, nên chỉ điện từ trường do dòng biến thiên lan tới ăng ten mới gây rè.",
+    "0": "Tiếng rè chính là bằng chứng sóng điện từ mang năng lượng tới ăng ten và gây nhiễu thiết bị.",
     "1": "Sóng điện từ là sóng ngang: $\\vec{E} \\perp \\vec{B}$ và cả hai vuông góc với phương truyền.",
-    "2": "Tiếng rè chính là bằng chứng sóng điện từ mang năng lượng tới ăng ten và gây nhiễu thiết bị.",
-    "3": "Mang thói quen của sóng cơ sang; ánh sáng Mặt Trời tới Trái Đất qua chân không chứng tỏ sóng điện từ truyền được."
+    "2": "Mang thói quen của sóng cơ sang; ánh sáng Mặt Trời tới Trái Đất qua chân không chứng tỏ sóng điện từ truyền được.",
+    "3": "Radio chạy pin, không có dây nối, nên chỉ điện từ trường do dòng biến thiên lan tới ăng ten mới gây rè."
    }
   },
   {
@@ -325,28 +325,28 @@
    "question": "Một đài phát sóng điện từ có tần số $f$, chu kì $T$. Sóng truyền trong chân không với tốc độ $c$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Bước sóng của sóng là $\\lambda = cT$.",
-     "answer": true
+     "text": "Sóng có tần số càng lớn thì bước sóng trong chân không càng lớn.",
+     "answer": false
     },
     {
      "text": "Bước sóng của sóng là $\\lambda = \\dfrac{c}{f}$.",
      "answer": true
     },
     {
-     "text": "Sóng có tần số càng lớn thì bước sóng trong chân không càng lớn.",
+     "text": "Trong chân không, sóng có tần số lớn hơn thì truyền nhanh hơn.",
      "answer": false
     },
     {
-     "text": "Trong chân không, sóng có tần số lớn hơn thì truyền nhanh hơn.",
-     "answer": false
+     "text": "Bước sóng của sóng là $\\lambda = cT$.",
+     "answer": true
     }
    ],
    "explanation": "Theo $\\lambda = cT = \\dfrac{c}{f}$, bước sóng tỉ lệ nghịch với tần số, nên c sai. Trong chân không mọi sóng điện từ truyền cùng tốc độ $c$, nên d sai.",
    "distractorNotes": {
-    "0": "Bước sóng là quãng đường sóng đi được trong một chu kì nên đúng bằng $cT$.",
+    "0": "Nhầm tỉ lệ thuận; theo $\\lambda = c/f$ thì tần số càng lớn, bước sóng càng nhỏ.",
     "1": "Vì $T = 1/f$ nên $\\lambda = cT$ viết lại được thành $\\lambda = c/f$.",
-    "2": "Nhầm tỉ lệ thuận; theo $\\lambda = c/f$ thì tần số càng lớn, bước sóng càng nhỏ.",
-    "3": "Trong chân không mọi sóng điện từ truyền cùng tốc độ $c$, không phụ thuộc tần số."
+    "2": "Trong chân không mọi sóng điện từ truyền cùng tốc độ $c$, không phụ thuộc tần số.",
+    "3": "Bước sóng là quãng đường sóng đi được trong một chu kì nên đúng bằng $cT$."
    }
   },
   {
@@ -464,28 +464,28 @@
    "question": "Một sóng điện từ tần số 100 MHz truyền trong chân không rồi đi vào một cáp dẫn, trong đó tốc độ truyền là $v \\lt c$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tần số của sóng trong cáp bằng tần số của sóng trong chân không.",
-     "answer": true
-    },
-    {
-     "text": "Bước sóng trong cáp được tính bằng $\\lambda = \\dfrac{v}{f}$.",
-     "answer": true
-    },
-    {
      "text": "Bước sóng trong cáp dài hơn bước sóng trong chân không.",
      "answer": false
     },
     {
      "text": "Bước sóng trong cáp vẫn được tính bằng $\\lambda = \\dfrac{c}{f}$.",
      "answer": false
+    },
+    {
+     "text": "Tần số của sóng trong cáp bằng tần số của sóng trong chân không.",
+     "answer": true
+    },
+    {
+     "text": "Bước sóng trong cáp được tính bằng $\\lambda = \\dfrac{v}{f}$.",
+     "answer": true
     }
    ],
    "explanation": "Theo bài, trong cáp sóng chậm hơn nên bước sóng ngắn lại, còn tần số vẫn là 100 MHz, nên c sai. Dùng $c$ thay cho $v$ là lỗi quên đổi tốc độ theo môi trường, nên d sai.",
    "distractorNotes": {
-    "0": "Tần số do nguồn quyết định; nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu.",
-    "1": "Trong môi trường, công thức giữ nguyên dạng, chỉ thay tốc độ $c$ bằng tốc độ $v$ của môi trường.",
-    "2": "Đảo chiều: $v \\lt c$ mà $f$ không đổi thì $\\lambda = v/f$ phải ngắn hơn trong chân không.",
-    "3": "Quên đổi tốc độ theo môi trường; trong cáp phải dùng $v$ chứ không dùng $c$."
+    "0": "Đảo chiều: $v \\lt c$ mà $f$ không đổi thì $\\lambda = v/f$ phải ngắn hơn trong chân không.",
+    "1": "Quên đổi tốc độ theo môi trường; trong cáp phải dùng $v$ chứ không dùng $c$.",
+    "2": "Tần số do nguồn quyết định; nguồn phát bao nhiêu dao động mỗi giây thì môi trường nhận bấy nhiêu.",
+    "3": "Trong môi trường, công thức giữ nguyên dạng, chỉ thay tốc độ $c$ bằng tốc độ $v$ của môi trường."
    }
   },
   {
@@ -522,11 +522,11 @@
    "question": "Thang sóng điện từ gồm sáu vùng: sóng vô tuyến, tia hồng ngoại, ánh sáng nhìn thấy, tia tử ngoại, tia X và tia gamma. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau về bước sóng.",
+     "text": "Theo bước sóng giảm dần, thứ tự là: vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.",
      "answer": true
     },
     {
-     "text": "Theo bước sóng giảm dần, thứ tự là: vô tuyến → hồng ngoại → nhìn thấy → tử ngoại → tia X → tia gamma.",
+     "text": "Sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau về bước sóng.",
      "answer": true
     },
     {
@@ -540,8 +540,8 @@
    ],
    "explanation": "Hồng ngoại nằm phía bước sóng dài hơn ánh sáng nhìn thấy, còn tử ngoại nằm phía ngắn hơn, nên c sai. Trong chân không mọi vùng truyền cùng tốc độ $c$, nên d sai.",
    "distractorNotes": {
-    "0": "Bài khẳng định sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau bước sóng.",
-    "1": "Thứ tự khớp mẹo \"Vô-Hồng-Nhìn-Tử-X-Gam\", đọc xuôi là bước sóng giảm dần.",
+    "0": "Thứ tự khớp mẹo \"Vô-Hồng-Nhìn-Tử-X-Gam\", đọc xuôi là bước sóng giảm dần.",
+    "1": "Bài khẳng định sáu vùng đều là sóng điện từ, cùng bản chất, chỉ khác nhau bước sóng.",
     "2": "Đảo vị trí hai vùng; hồng ngoại nằm phía bước sóng dài hơn ánh sáng nhìn thấy, tử ngoại phía ngắn hơn.",
     "3": "Nhầm năng lượng lớn với truyền nhanh; trong chân không mọi vùng đều truyền cùng tốc độ $c$."
    }

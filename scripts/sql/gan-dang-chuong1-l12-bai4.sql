@@ -1,0 +1,55 @@
+-- Gán dạng bài tập cho câu ngân hàng (sinh bởi skill on-tap-dang-bai-tap). Rollback: delete from public.question_dang where source = 'claude-2026-11-05-chuong1-l12-bai4';
+begin;
+insert into public.question_dang (question_id, lesson_id, dang_label, unsure, source)
+select v.qid, v.lid, v.label, v.unsure, 'claude-2026-11-05-chuong1-l12-bai4'
+from (values
+  (673497, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (1478399, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', false),
+  (673800, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', false),
+  (571990, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (1480246, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (673180, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (456471, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (571243, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (619505, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (1476052, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', false),
+  (673264, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (396568, 5, 'Dạng 2 · Trung bình · Đọc đồ thị t–τ có hai đoạn nằm ngang', true),
+  (1482178, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', true),
+  (455461, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (580780, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (387796, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (1479167, 5, 'Dạng 4 · Khó · So hai cách tính c và nhận xét hướng lệch', true),
+  (427527, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (455471, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (425, 5, 'Dạng 4 · Khó · So hai cách tính c và nhận xét hướng lệch', false),
+  (458028, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (599181, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (456564, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (674264, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (668693, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (1477650, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (1495962, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (674235, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (457767, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', true),
+  (615832, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (426, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (673392, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (455479, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (1481105, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (597210, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (673121, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (663917, 5, 'Dạng 4 · Khó · So hai cách tính c và nhận xét hướng lệch', true),
+  (571258, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (673760, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', true),
+  (626479, 5, 'Dạng 4 · Khó · So hai cách tính c và nhận xét hướng lệch', false),
+  (673175, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (280390, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (287973, 5, 'Dạng 3 · Khó · Phễu nước đá hai giai đoạn: tìm cường độ dòng điện', false),
+  (568452, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false),
+  (1478736, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', true),
+  (430017, 5, 'Dạng 1 · Dễ · Tính nhiệt dung riêng từ số đo P, τ, m, t', false)
+) as v(qid, lid, label, unsure)
+join public.question_bank qb on qb.id = v.qid
+on conflict (question_id, lesson_id) do update set dang_label = excluded.dang_label, unsure = excluded.unsure, source = 'claude-2026-11-05-chuong1-l12-bai4';
+commit;

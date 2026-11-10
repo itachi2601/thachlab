@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -10,9 +10,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ChevronRight,
-  CirclePlay,
   ClipboardCheck,
-  Clock3,
   Download,
   FileQuestion,
   FileText,
@@ -20,27 +18,32 @@ import {
   LockKeyhole,
   MonitorPlay,
   Paperclip,
-  Presentation,
   Search,
   Send,
   ShieldCheck,
   UploadCloud,
   Users,
-  Wrench,
 } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
 import CrossCheckChecklist from "@/components/lessons/CrossCheckChecklist";
 import RubricSelfAssessment from "@/components/lessons/RubricSelfAssessment";
 import CncCourseAnnouncements from "@/components/lessons/CncCourseAnnouncements";
+import dynamic from "next/dynamic";
+import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
+import { hasCncWorkedExamples } from "@/services/cnc-worked-examples";
 import { fetchCncQuizBanks, type CncQuizQuestion } from "@/services/cnc-exam-bank";
+
+const CncPrepQuiz = dynamic(() => import("@/components/lessons/CncPrepQuiz"), { ssr: false });
+const CncWorkedExamples = dynamic(() => import("@/components/lessons/CncWorkedExamples"), { ssr: false });
 
 const CNC_ACTIVE_QUIZ_BANK_KEYS = [
   "lesson-1", "lesson-2", "lesson-3",
   "turn-translate", "mill-translate",
   "operation-turn", "operation-mill",
   "tool-setup-turn", "tool-setup-mill",
+  "test-2", "test-3", "test-4-turn", "test-4-mill", "test-5", "test-6",
 ];
 import {
   fetchCncLessonFiles,
@@ -61,11 +64,14 @@ import { saveCncMillingQuizAttempt } from "@/services/cnc-milling-quiz-attempts"
 import { fetchCncLearningRecords, recordCncLearningResult } from "@/services/cnc-learning-records";
 import turningExercises from "@/data/cnc/tien_bai345.json";
 import millingExercises from "@/data/cnc/phay_bai345.json";
-import { CNC_TOTAL_ASSESSMENTS, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
-import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyPermission } from "@/services/cnc-competencies";
+import { CNC_CHAPTERS, CNC_FINAL_TEST_BANK, CNC_LESSON_COUNT, CNC_TOTAL_ASSESSMENTS, cncChapterOf, cncGateStates, cncLessonSections, completedCncLessons, passedAssessmentKeys } from "@/services/cnc-progress";
+import CncGateStrip from "@/components/lessons/CncGateStrip";
+import "./class-overview.css"; // khuôn trang lớp (rail chương, dòng bài) dùng chung với các môn khác
+import { cncCompetencyStates, fetchCourseCompetencyPermissions, type CompetencyId, type CompetencyPermission } from "@/services/cnc-competencies";
 import { fetchOpenCncLessons } from "@/services/course-lesson-release";
 
 const subscribeStorageNoop = () => () => {};
+const readBaiParam = () => new URLSearchParams(window.location.search).get("bai") ?? "";
 function readSavedLiveName() {
   try { return window.localStorage.getItem("cnc-live-name") ?? ""; } catch { return ""; }
 }
@@ -83,13 +89,23 @@ const lessonMeta: Record<string, { theory: number; practice: number; test: numbe
   "lesson-6": { theory: 1, practice: 15, test: 1, operation: true },
 };
 
+// Khuôn tab chung với các môn khác (SECTION_ORDER của /lop-hoc/bai): Lý thuyết → Video → Luyện tập → BTVN → Kiểm tra.
+// Bài mẫu (chương trình giải sẵn, N6) chỉ hiện ở bài có ví dụ — Bài 2, 3 (N3: không hiện tab rỗng). Khoá đánh giá → tab: CNC_ASSESSMENT_SECTION.
 const tabs = [
-  { id: "outcomes", label: "Chuẩn đầu ra", short: "CĐR", description: "Năng lực cần đạt sau bài học", icon: GraduationCap },
-  { id: "slides", label: "Nội dung bài học", short: "Bài giảng", description: "PowerPoint và nội dung trọng tâm", icon: Presentation },
-  { id: "video", label: "Video bài giảng", short: "Video", description: "Video hướng dẫn và bài giảng bổ trợ", icon: MonitorPlay },
-  { id: "test", label: "Kiểm tra", short: "Kiểm tra", description: "Đánh giá kết quả và điều kiện mở khóa", icon: FileQuestion },
-  { id: "resources", label: "Tài liệu", short: "Tài liệu", description: "Tệp học tập và checklist thực hành", icon: FileText },
+  { id: "ly_thuyet", label: "Lý thuyết", description: "Mục tiêu, nội dung bài, chuẩn bị trước buổi, tài liệu", icon: BookOpen },
+  { id: "video", label: "Video", description: "Video bài giảng của giảng viên", icon: MonitorPlay },
+  { id: "bai_tap_mau", label: "Bài mẫu", description: "Chương trình giải sẵn từng block", icon: FileText },
+  { id: "luyen_tap", label: "Luyện tập", description: "Làm lại nhiều lần; cần đạt để mở bước sau", icon: ClipboardCheck },
+  { id: "bai_tap_ve_nha", label: "BTVN", description: "Điền khuyết, viết chương trình, mô phỏng", icon: FileText },
+  { id: "kiem_tra", label: "Kiểm tra", description: "Kiểm tra cuối bài, chấm tại xưởng", icon: FileQuestion },
 ] as const;
+
+const lessonTabs = (lessonId: string) => {
+  const kinds = new Set<string>(["ly_thuyet", "video", ...(hasCncWorkedExamples(lessonId) ? ["bai_tap_mau"] : []), ...cncLessonSections(lessonId)]);
+  return tabs.filter((item) => kinds.has(item.id));
+};
+// Tên bài trong DB có thể còn tiền tố số cũ ("Bài 4T: …"); số bài hiển thị lấy theo thứ tự 1–7.
+const plainLessonTitle = (title: string) => title.replace(/^Bài\s+\S+?\s*[:·.–-]\s*/, "");
 
 export const millingChecklistSections: MillingChecklistSection[] = [
   {
@@ -368,30 +384,39 @@ export const cncChecklistConfig: Record<
   "lesson-6": { sections: millingMachiningChecklistSections, zeroTolerance: millingMachiningZeroTolerance, title: "Check list kiểm tra thực hành gia công phay", description: "An toàn, quy trình gia công và đo kiểm sản phẩm trên bài tập tổng hợp phay CNC." },
 };
 
-export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId }: { embedded?: boolean; courseId?: number; initialLessonId?: string }) {
+// demo: chỉ dùng ở trang xem thử /dev (không courseId) để thấy dải cổng ở các trạng thái đạt / chờ duyệt / đang làm.
+export default function CncCourseWorkspace({ embedded = false, courseId, initialLessonId, demo }: { embedded?: boolean; courseId?: number; initialLessonId?: string; demo?: { passed: string[]; approved: CompetencyId[] } }) {
   const { profile: viewerProfile, session } = useAuth();
   const [lessons, setLessons] = useState<CncLesson[]>([]);
   useEffect(() => {
     let cancelled = false;
     fetchCncLessons()
       .then((rows) => {
-        if (!cancelled) setLessons(rows.filter((row) => row.id !== "intro"));
+        if (!cancelled) setLessons(rows.filter((row) => row.id !== "intro" && !row.id.startsWith("flip-"))); // flip-N = phiếu buổi, trang /lop-hoc/cnc/buoi
       })
       .catch(() => undefined);
     return () => {
       cancelled = true;
     };
   }, []);
-  const validInitialLessonId = initialLessonId && lessons.some((item) => item.id === initialLessonId) ? initialLessonId : undefined;
+  // Bài đang mở: prop (trang /lop-hoc/cnc/<id>) hoặc ?bai= trên URL (server trả "" để không lệch hydrate).
+  const urlLessonId = useSyncExternalStore(subscribeStorageNoop, readBaiParam, () => "");
+  const requestedLessonId = initialLessonId || urlLessonId;
+  const validInitialLessonId = requestedLessonId && lessons.some((item) => item.id === requestedLessonId) ? requestedLessonId : undefined;
   const [lessonId, setLessonId] = useState(validInitialLessonId ?? "lesson-1");
   const [expandedLessonId, setExpandedLessonId] = useState<string | null>(validInitialLessonId ?? null);
-  const [tab, setTab] = useState<TabId | null>(validInitialLessonId ? "outcomes" : null);
+  const [tab, setTab] = useState<TabId | null>(validInitialLessonId ? "ly_thuyet" : null);
   const [lessonSearch, setLessonSearch] = useState("");
+  // Trang khoá học theo khuôn trang lớp các môn khác: chương đang chọn (≥640) + chương đang gấp (<640).
+  const [pickedChapter, setPickedChapter] = useState(0);
+  const [collapsedChapters, setCollapsedChapters] = useState<Set<number>>(() => new Set());
   const [completed, setCompleted] = useState<Record<string, boolean>>({});
-  const [passedAssessments, setPassedAssessments] = useState<Set<string>>(new Set());
+  const [passedAssessments, setPassedAssessments] = useState<Set<string>>(() => new Set(demo?.passed ?? []));
   const [assessmentAttempts, setAssessmentAttempts] = useState<Record<string, number>>({});
-  const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>([]);
+  const [competencyPermissions, setCompetencyPermissions] = useState<CompetencyPermission[]>(() => (demo?.approved ?? []).map((competency_id) => ({ course_id: 0, student_id: "", competency_id, status: "approved", note: "", approved_at: null, updated_at: "", approved_by: null })));
   const [openLessonIds, setOpenLessonIds] = useState<string[]>([]);
+  // Dải cổng chỉ hiện khi đã tải xong kết quả + quyền năng lực (tránh nháy "Chưa làm").
+  const [gateDataLoaded, setGateDataLoaded] = useState({ records: false, permissions: false });
   const [lessonFiles, setLessonFiles] = useState<CncLessonFile[]>([]);
   const [lessonVideos, setLessonVideos] = useState<CncLessonVideo[]>([]);
   const [quizBanks, setQuizBanks] = useState<Record<string, CncQuizQuestion[]>>({});
@@ -414,7 +439,6 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   const lesson = lessons.find((item) => item.id === lessonId) ?? lessons[0];
-  const progress = Math.round((passedAssessments.size / CNC_TOTAL_ASSESSMENTS) * 100);
   const matchingLessons = lessons.filter((item) =>
     `${item.title} ${item.shortTitle}`.toLocaleLowerCase("vi-VN").includes(
       lessonSearch.trim().toLocaleLowerCase("vi-VN"),
@@ -433,30 +457,48 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
         setPassedAssessments(passedAssessmentKeys(rows));
         setAssessmentAttempts(Object.fromEntries(rows.map((row) => [`${row.lesson_id}:${row.assessment_id}`, row.attempt_count])));
       }
-    }).catch(() => undefined);
+    }).catch(() => undefined).finally(() => { if (!cancelled) setGateDataLoaded((current) => ({ ...current, records: true })); });
     return () => { cancelled = true; };
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   useEffect(() => {
     if (!courseId || viewerProfile?.role === "admin") return;
-    void fetchOpenCncLessons(courseId).then(setOpenLessonIds).catch(() => setOpenLessonIds([]));
+    void fetchOpenCncLessons(courseId).then((ids) => {
+      setOpenLessonIds(ids);
+      // Mặc định mở chương có bài giảng viên mới mở (chương cuối còn bài mở) để SV không phải tự bấm tìm.
+      let last = 0;
+      CNC_CHAPTERS.forEach((chapter, index) => { if (chapter.lessonIds.some((id) => ids.includes(id))) last = index; });
+      setPickedChapter(last);
+    }).catch(() => setOpenLessonIds([]));
   }, [courseId, viewerProfile?.role]);
 
   useEffect(() => {
     if (!courseId || !session?.user.id || viewerProfile?.role === "admin") return;
-    void fetchCourseCompetencyPermissions(courseId, session.user.id).then(setCompetencyPermissions).catch(() => setCompetencyPermissions([]));
+    void fetchCourseCompetencyPermissions(courseId, session.user.id).then(setCompetencyPermissions).catch(() => setCompetencyPermissions([])).finally(() => setGateDataLoaded((current) => ({ ...current, permissions: true })));
   }, [courseId, session?.user.id, viewerProfile?.role]);
 
   useEffect(() => {
-    if (validInitialLessonId) return;
-    const requestedLesson = new URLSearchParams(window.location.search).get("bai");
-    if (!requestedLesson || !lessons.some((item) => item.id === requestedLesson)) return;
+    const requestedLesson = validInitialLessonId;
+    if (!requestedLesson) return;
+    // ?bai=…#tab-luyen_tap (dải cổng ở trang khoá học): mở thẳng tab đó rồi cuộn tới.
+    const hash = decodeURIComponent(window.location.hash.slice(1));
+    const tabHash = /^tab-([a-z_]+)$/.exec(hash)?.[1];
+    const openTab = lessonTabs(requestedLesson).find((t) => t.id === tabHash)?.id;
     const timer = window.setTimeout(() => {
       setLessonId(requestedLesson);
       setExpandedLessonId(requestedLesson);
-      setTab("outcomes");
+      setTab(openTab ?? "ly_thuyet");
     }, 0);
-    return () => window.clearTimeout(timer);
+    // ?bai=…#muc-N (link quiz chuẩn bị / phiếu buổi): đợi tab Lý thuyết vẽ xong body_html rồi cuộn tới mục (tối đa ~10 s).
+    const anchor = openTab ? `cnc-section-${requestedLesson}-${openTab}` : hash;
+    let tries = 0;
+    const poll = /^[\w-]+$/.test(anchor) ? window.setInterval(() => {
+      const target = document.getElementById(anchor);
+      if (target || ++tries > 66) window.clearInterval(poll);
+      // window.scrollTo (không scrollIntoView: nó cuộn ngang cả khung bài overflow); "instant" vì html có scroll-behavior smooth.
+      if (target) window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 92, behavior: "instant" });
+    }, 150) : 0;
+    return () => { window.clearTimeout(timer); window.clearInterval(poll); };
   }, [validInitialLessonId, lessons]);
 
   useEffect(() => {
@@ -487,6 +529,8 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
     };
   }, [lessonId]);
 
+  const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
+
   if (!lesson) {
     return (
       <div className={`cnc-shell lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
@@ -496,116 +540,217 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
   }
   const meta = lessonMeta[lesson.id] ?? { theory: 0, practice: 0, test: 0 };
 
-  const selectLesson = (id: string) => {
-    if (expandedLessonId === id) {
-      setExpandedLessonId(null);
-      setTab(null);
-      return;
-    }
-    setLessonId(id);
-    setExpandedLessonId(id);
-    setTab("outcomes");
+
+  const isLessonLocked = (id: string) => {
+    const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(id);
+    return viewerProfile?.role !== "admin" && (teacherLocked||(id === "lesson-5" && !competencyStates["turn-machining"].approved) || (id === "lesson-6" && !competencyStates["mill-machining"].approved));
   };
+  // Bài 6–7 chỉ khoá vì chưa duyệt năng lực (giảng viên đã mở bài): vẫn cho đọc tab Lý thuyết để chuẩn bị buổi 8–11
+  // (thầy chốt 9/11/2026); các tab thực hành/kiểm tra mở khi được duyệt.
+  const isTheoryOnly = (id: string) => isLessonLocked(id) && !(openLessonIds.length>0&&!openLessonIds.includes(id));
+  // Giảng viên (admin) không có tiến độ riêng → không hiện dải; trang /dev không courseId thì hiện ngay.
+  const showGates = viewerProfile?.role !== "admin" && (!courseId || (gateDataLoaded.records && gateDataLoaded.permissions));
+  const gateStates = cncGateStates(passedAssessments, (id) => competencyStates[id].approved, isLessonLocked);
+
+  const record = (assessmentId: string, value: number, total: number, didPass: boolean) => recordQuiz(lesson.id, assessmentId, value, total, didPass);
+  const isProgramming = lesson.id === "lesson-2" || lesson.id === "lesson-3";
+  const isOperation = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
+  const isMachining = lesson.id === "lesson-5" || lesson.id === "lesson-6";
+  const machineName = lesson.id === "lesson-4-turn" || lesson.id === "lesson-5" ? "tiện" : "phay";
+  const showPrep = Boolean(courseId && session?.user.id && viewerProfile?.role !== "admin");
 
   const renderSectionContent = (sectionId: TabId) => {
-    if (sectionId === "outcomes") return <Outcomes lesson={lesson} meta={meta} />;
-    if (sectionId === "slides") return <Slides lesson={lesson} files={lessonFiles.filter((file) => file.kind === "powerpoint")} />;
+    if (sectionId === "ly_thuyet") return <>
+      <Outcomes lesson={lesson} meta={meta} />
+      <LessonBody lesson={lesson} />
+      {showPrep && courseId && session && <LazyErrorBoundary fallback={null}><div id="cnc-chuan-bi" className="mt-8"><CncPrepQuiz courseId={courseId} studentId={session.user.id} lessonId={lesson.id} /></div></LazyErrorBoundary>}
+      <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />
+    </>;
     if (sectionId === "video") return <Video lesson={lesson} videos={lessonVideos} />;
-    if (sectionId === "test") {
-      if (meta.safetyGate) {
-        return <OperationTestSuite key={lesson.id} machine={lesson.id === "lesson-4-turn" ? "tiện" : "phay"} courseId={courseId} quizBanks={quizBanks} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onCompleted={() => setCompleted(current=>({...current,[lesson.id]:true}))} passed={passedAssessments} attempts={assessmentAttempts} />;
-      }
-      if (lesson.id === "lesson-5" || lesson.id === "lesson-6") {
-        const rubricMachine = lesson.id === "lesson-5" ? "tien" : "phay";
+    if (sectionId === "bai_tap_mau") return <LazyErrorBoundary fallback={null}><CncWorkedExamples lessonId={lesson.id} onDone={() => setTab("luyen_tap")} /></LazyErrorBoundary>;
+    if (sectionId === "luyen_tap") {
+      if (isProgramming) return <ProgrammingTestSuite key={`${lesson.id}-lt`} lessonId={lesson.id as "lesson-2" | "lesson-3"} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} only={["exercise-1", "exercise-2", "exercise-3-short"]} kicker="LUYỆN TẬP · LÀM LẠI NHIỀU LẦN" title="Nhận biết và dịch lệnh" description="Mỗi lượt rút câu ngẫu nhiên; làm tới khi đạt rồi chuyển sang BTVN." onResult={record} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
+      if (isOperation) {
+        const enabled = viewerProfile?.role === "admin" || ["machine-operation", "tool-setup"].every((assessmentId) => passedAssessments.has(`${lesson.id}:${assessmentId}`));
         return <>
-          <SectionHeading icon={FileQuestion} kicker="MỤC 04" title="Thi thực hành tổng hợp" description="Tự đánh giá theo rubric mà giảng viên sẽ dùng để chấm chính thức: lập trình, mô phỏng, cài đặt dao/phôi và gia công." />
-          <RubricSelfAssessment key={lesson.id} machine={rubricMachine} courseId={courseId} />
+          <OperationTestSuite key={lesson.id} machine={machineName} courseId={courseId} quizBanks={quizBanks} onResult={record} onCompleted={() => setCompleted(current=>({...current,[lesson.id]:true}))} passed={passedAssessments} attempts={assessmentAttempts} />
+          <h3 className="cnc-subheading">Checklist tự luyện</h3>
+          <PracticalChecklistPanel fixedMode="practice" machine={machineName} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled={enabled} lockedMessage={`Đạt cả hai bài Vận hành máy và Cài đặt dao ${machineName} ở trên để mở checklist tự luyện.`} courseId={courseId} onResult={record} />
         </>;
       }
-      if (lesson.id === "lesson-2" || lesson.id === "lesson-3") {
-        return <ProgrammingTestSuite key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
-      }
-      return <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} quizBanks={quizBanks} onResult={(value,total,didPass)=>recordQuiz(lesson.id,"final",value,total,didPass)} onPassed={() => markCompleted(lesson.id)} />;
+      if (isMachining) return <PracticalChecklistPanel fixedMode="practice" machine={machineName} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled lockedMessage="" courseId={courseId} onResult={record} />;
+      return null;
     }
-    const isOperationChecklist = lesson.id === "lesson-4-turn" || lesson.id === "lesson-4-mill";
-    const isMachiningChecklist = lesson.id === "lesson-5" || lesson.id === "lesson-6";
-    if (isOperationChecklist) {
-      const machine = lesson.id === "lesson-4-turn" ? "tiện" : "phay";
-      const enabled = viewerProfile?.role === "admin" || ["machine-operation", "tool-setup"].every((assessmentId) => passedAssessments.has(`${lesson.id}:${assessmentId}`));
-      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled={enabled} lockedMessage={`Sinh viên phải hoàn thành và đạt cả hai bài Kiểm tra vận hành máy và Cài đặt dao ${machine} để mở checklist thực hành.`} courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
+    if (sectionId === "bai_tap_ve_nha") {
+      if (isProgramming) return <ProgrammingTestSuite key={`${lesson.id}-btvn`} lessonId={lesson.id as "lesson-2" | "lesson-3"} lessonTitle={lesson.shortTitle} courseId={courseId} quizBanks={quizBanks} only={["exercise-3", "exercise-4", "exercise-5"]} kicker="BÀI TẬP VỀ NHÀ" title="Viết và kiểm chứng chương trình" description="Điền khuyết, viết chương trình từ bản vẽ, mô phỏng rồi nộp minh chứng cho giảng viên." onResult={record} onPassed={() => undefined} passed={passedAssessments} attempts={assessmentAttempts} />;
+      return null;
     }
-    if (isMachiningChecklist) {
-      const machine = lesson.id === "lesson-5" ? "tiện" : "phay";
-      return <PracticalChecklistPanel machine={machine} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled lockedMessage="" courseId={courseId} onResult={(assessmentId,value,total,didPass)=>recordQuiz(lesson.id,assessmentId,value,total,didPass)} />;
-    }
-    return <Resources lesson={lesson} files={lessonFiles.filter((file) => file.kind === "material")} />;
+    const finalTest = (heading: boolean, completesLesson: boolean) => <StandardTest key={lesson.id} lessonId={lesson.id} lessonTitle={lesson.shortTitle} quizBanks={quizBanks} showHeading={heading} onResult={(value,total,didPass)=>record("final",value,total,didPass)} onPassed={() => { if (completesLesson) markCompleted(lesson.id); }} />;
+    if (isOperation) return <>
+      {finalTest(true, false)}
+      <h3 className="cnc-subheading">Checklist thực hành (chấm chéo)</h3>
+      <PracticalChecklistPanel fixedMode="cross-check" machine={machineName} lessonId={lesson.id as "lesson-4-turn" | "lesson-4-mill"} enabled lockedMessage="" courseId={courseId} onResult={record} />
+    </>;
+    if (isMachining) return <>
+      {finalTest(true, false)}
+      <h3 className="cnc-subheading">Checklist thực hành (chấm chéo)</h3>
+      <PracticalChecklistPanel fixedMode="cross-check" machine={machineName} lessonId={lesson.id as "lesson-5" | "lesson-6"} enabled lockedMessage="" courseId={courseId} onResult={record} />
+      <SectionHeading icon={FileQuestion} kicker="THI THỰC HÀNH" title="Thi thực hành tổng hợp" description="Tự đánh giá theo rubric mà giảng viên sẽ dùng để chấm chính thức: lập trình, mô phỏng, cài đặt dao/phôi và gia công." />
+      <RubricSelfAssessment key={lesson.id} machine={lesson.id === "lesson-5" ? "tien" : "phay"} courseId={courseId} />
+    </>;
+    return finalTest(true, true);
   };
+
+  // Trang khoá học (chưa chọn bài): cùng khuôn trang lớp AVCN/Vật lí — rail chương ≥1024, dải chương 640–1023,
+  // accordion chương <640; mỗi bài một dòng .class-lesson dẫn vào /lop-hoc/cnc/?bai= (B5, N2, N4).
+  if (!requestedLessonId || (lessons.length > 0 && !validInitialLessonId)) {
+    const chapterName = (title: string) => title.replace(/^[IVX]+\.\s*/, "");
+    const lessonNo = (id: string) => CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(id as never) + 1;
+    const renderChapter = (chapterIndex: number, desktop: boolean) => {
+      const chapter = CNC_CHAPTERS[chapterIndex];
+      const items = chapter.lessonIds.map((id) => lessons.find((l) => l.id === id)).filter((l): l is CncLesson => Boolean(l));
+      const done = items.filter((l) => completed[l.id]).length;
+      const collapsed = !desktop && collapsedChapters.has(chapterIndex);
+      const title = <span className="class-chapter-title"><span className="class-chapter-num">Chương {chapterIndex + 1}</span> · {chapterName(chapter.title)}</span>;
+      return (
+        <section key={chapter.title} className="class-chapter">
+          {desktop ? <div className="class-chapter-head class-chapter-head--static">{title}</div> : (
+            <button type="button" className="class-chapter-head" aria-expanded={!collapsed} onClick={() => setCollapsedChapters((cur) => { const next = new Set(cur); if (next.has(chapterIndex)) next.delete(chapterIndex); else next.add(chapterIndex); return next; })}>
+              {title}
+              {done > 0 && <small className={`class-chapter-count ${done === items.length ? "is-done" : ""}`}>{done === items.length ? <Check size={13} aria-label="Xong" /> : `${done}/${items.length}`}</small>}
+              <ChevronDown size={17} className={collapsed ? "" : "rotate-180"} />
+            </button>
+          )}
+          {!collapsed && (
+            <ol className="class-lessons">
+              {items.map((item) => {
+                const theoryOnly = isTheoryOnly(item.id);
+                const locked = isLessonLocked(item.id) && !theoryOnly;
+                const isDone = Boolean(completed[item.id]);
+                const m = lessonMeta[item.id];
+                const inner = <>
+                  <span className="class-num">{isDone ? <Check size={13} /> : lessonNo(item.id)}</span>
+                  <span className="class-lesson-title">{plainLessonTitle(item.title)}<small>{item.duration}{m?.practice ? ` · ${m.practice} thực hành` : ""}</small></span>
+                  <span className={`class-meta ${!isDone && !locked && !theoryOnly ? "class-meta--idle" : ""}`}>{locked ? <><LockKeyhole size={13} aria-hidden /> Đang khoá</> : theoryOnly ? "Đọc trước" : isDone ? "Hoàn thành" : null}</span>
+                </>;
+                return <li key={item.id}>{locked
+                  ? <div className="class-lesson class-lesson--static" aria-disabled>{inner}</div>
+                  : <a href={`/lop-hoc/cnc/?bai=${item.id}`} className={`class-lesson ${isDone ? "is-complete" : ""}`}>{inner}</a>}</li>;
+              })}
+            </ol>
+          )}
+        </section>
+      );
+    };
+    return (
+      <div className={`cnc-shell cnc-course-toc lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
+        <div className="lesson-layout lesson-layout--pick">
+          <aside className="lesson-nav class-rail" aria-label="Chương trình học phần">
+            <Link prefetch={false} href="/lop-hoc/cttc" className="lesson-rail-back"><ChevronRight size={15} className="rotate-180" aria-hidden /><span>CTTC</span></Link>
+            <nav className="class-rail-box" aria-label="Chương">
+              <p className="class-rail-title">Gia công CNC<span>Chương</span></p>
+              <ol>
+                {CNC_CHAPTERS.map((chapter, i) => {
+                  const done = chapter.lessonIds.filter((id) => completed[id]).length;
+                  return <li key={chapter.title}><button type="button" className={`class-rail-item ${i === pickedChapter ? "is-active" : ""}`} aria-current={i === pickedChapter ? "true" : undefined} onClick={() => setPickedChapter(i)}>
+                    <span className="class-rail-n">{i + 1}</span><span>{chapterName(chapter.title)}</span><span className="class-rail-st">{done > 0 ? `${done}/${chapter.lessonIds.length}` : "—"}</span>
+                  </button></li>;
+                })}
+              </ol>
+            </nav>
+          </aside>
+          <div className="lesson-main lesson-main--single">
+            <header className="lesson-head class-head">
+              <div className="class-crumb-row">
+                <nav className="lesson-breadcrumb" aria-label="Đường dẫn">
+                  <Link prefetch={false} href="/lop-hoc/cttc">CTTC</Link><span aria-hidden className="lesson-crumb-sep">›</span><span>Gia công CNC</span>
+                </nav>
+              </div>
+              <h1>Gia công CNC</h1>
+              <p className="lesson-meta class-head-meta">
+                <span className="class-head-desc">Thực tập tiện, phay CNC · 70 tiết · {CNC_LESSON_COUNT} bài</span>
+                {viewerProfile?.role !== "admin" && <span>Đã đạt {passedAssessments.size}/{CNC_TOTAL_ASSESSMENTS} bài kiểm tra</span>}
+              </p>
+            </header>
+            <div className="class-toc">
+              {showGates && <CncGateStrip states={gateStates} onOpen={(id, section) => { window.location.href = `/lop-hoc/cnc/?bai=${id}${isTheoryOnly(id) ? "" : `#tab-${section}`}`; }} />}
+              {courseId && <CncCourseAnnouncements courseId={courseId} />}
+              {courseId && session?.user.id && viewerProfile?.role !== "admin" && <LazyErrorBoundary fallback={null}><CncPrepQuiz courseId={courseId} studentId={session.user.id} variant="line" /></LazyErrorBoundary>}
+              <div className="class-chapter-chips" role="tablist" aria-label="Chọn chương">
+                {CNC_CHAPTERS.map((chapter, i) => <button key={chapter.title} type="button" role="tab" aria-selected={i === pickedChapter} className={i === pickedChapter ? "is-active" : ""} onClick={() => setPickedChapter(i)}>Ch. {i + 1} · {chapterName(chapter.title)}</button>)}
+              </div>
+              <div className="class-pick-mobile">{CNC_CHAPTERS.map((_, i) => renderChapter(i, false))}</div>
+              <div className="class-pick-desktop">{renderChapter(pickedChapter, true)}</div>
+              <div className="class-chips class-more" aria-label="Thêm">
+                <span className="class-more-label">Theo buổi:</span>
+                <Link prefetch={false} href="/lop-hoc/cnc/buoi/" className="class-chip">Phiếu 12 buổi học</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={`cnc-shell lesson-shell lesson-shell--cttc ${embedded ? "cnc-embedded" : ""}`}>
-      <header className="cnc-course-header">
-        <div className="cnc-breadcrumb">
-          <Link href="/lop-hoc/cttc">Lớp học</Link><ChevronRight size={14} /><Link href="/lop-hoc/cttc">CTTC</Link><ChevronRight size={14} />Gia công CNC
-        </div>
-        <div className="cnc-header-grid">
-          <div>
-            <span className="cnc-kicker"><Wrench size={14} /> Học phần chuyên ngành</span>
-            <h1>Gia công <em>CNC</em></h1>
-            <p>Thực tập máy tiện, máy phay điều khiển theo chương trình số</p>
-          </div>
-          <div className="cnc-progress-card" aria-label={`Tiến độ ${progress}%`}>
-            <div><span>Tiến độ học phần</span><strong>{progress}%</strong></div>
-            <div className="cnc-progress-track"><i style={{ width: `${progress}%` }} /></div>
-            <small>{passedAssessments.size}/{CNC_TOTAL_ASSESSMENTS} bài kiểm tra đã đạt</small>
-          </div>
-        </div>
-        <div className="cnc-stats">
-          <span><Clock3 />70 tiết</span><span><BookOpen />7 bài học</span><span><ShieldCheck />2 cổng an toàn vận hành</span>
-        </div>
-      </header>
+      {/* Trang bài theo khuôn các môn khác: rail bài bên trái (≥1024), đường dẫn ngắn thay đầu trang học phần (B5, N4). */}
+      <div className="lesson-layout lesson-layout--pick">
+      <aside className="lesson-nav class-rail" aria-label="Bài trong học phần">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cùng route, chỉ khác ?bai= */}
+        <a href="/lop-hoc/cnc/" className="lesson-rail-back"><ChevronRight size={15} className="rotate-180" aria-hidden /><span>Gia công CNC</span></a>
+        <nav className="class-rail-box" aria-label="Bài">
+          <p className="class-rail-title">Gia công CNC<span>Bài</span></p>
+          <ol>
+            {CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).map((id, i) => {
+              const item = lessons.find((l) => l.id === id);
+              if (!item) return null;
+              const theoryOnly = isTheoryOnly(id);
+              const locked = isLessonLocked(id) && !theoryOnly;
+              const current = id === validInitialLessonId;
+              const inner = <><span className="class-rail-n">{completed[id] ? <Check size={13} aria-label="Xong" /> : i + 1}</span><span>{plainLessonTitle(item.shortTitle)}</span><span className="class-rail-st">{locked ? <LockKeyhole size={13} aria-label="Đang khoá" /> : theoryOnly ? "Đọc" : ""}</span></>;
+              return <li key={id}>{current || locked
+                ? <span className={`class-rail-item ${current ? "is-active" : ""}`} aria-current={current ? "page" : undefined}>{inner}</span>
+                : <a href={`/lop-hoc/cnc/?bai=${id}`} className="class-rail-item">{inner}</a>}</li>;
+            })}
+          </ol>
+        </nav>
+        <Link prefetch={false} href="/lop-hoc/cnc/buoi/" className="lesson-rail-back"><span>Phiếu 12 buổi học</span></Link>
+      </aside>
+      <div className="lesson-main lesson-main--single">
+      <nav className="lesson-breadcrumb cnc-lesson-crumb" aria-label="Đường dẫn">
+        <Link prefetch={false} href="/lop-hoc/cttc">CTTC</Link><span aria-hidden className="lesson-crumb-sep">›</span>
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- cùng route, chỉ khác ?bai= */}
+        <a href="/lop-hoc/cnc/">Gia công CNC</a><span aria-hidden className="lesson-crumb-sep">›</span>
+        <span>Bài {Math.max(1, CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(lesson.id as never) + 1)}</span>
+      </nav>
 
-      {courseId && <CncCourseAnnouncements courseId={courseId} />}
+      {/* Thông báo học phần chỉ ở trang mục lục, không chen vào trang bài (thầy báo 9/11: lẫn vào nội dung bài, N3). */}
+      {courseId && !validInitialLessonId && <CncCourseAnnouncements courseId={courseId} />}
+      {courseId && session?.user.id && viewerProfile?.role !== "admin" && !validInitialLessonId && <LazyErrorBoundary fallback={null}><CncPrepQuiz courseId={courseId} studentId={session.user.id} variant="line" /></LazyErrorBoundary>}
 
       <div className="cnc-workspace cnc-accordion-workspace">
         <section className="cnc-course-outline">
-          <div className="cnc-nav-heading"><span>{validInitialLessonId ? "Nội dung bài học" : "Chương trình Gia công CNC"}</span><small>{validInitialLessonId ? lesson.shortTitle : "7 BÀI HỌC"}</small></div>
-          {validInitialLessonId && <Link href="/lop-hoc/cnc" className="lesson-link mb-4">← Tất cả bài học</Link>}
+          {!validInitialLessonId && <Link href="/lop-hoc/cnc/buoi/" className="lesson-link mb-2 min-h-[44px]">Phiếu 12 buổi học →</Link>}
           {!validInitialLessonId && <label className="cnc-lesson-search">
             <Search size={20} />
             <input value={lessonSearch} onChange={(event) => setLessonSearch(event.target.value)} placeholder="Tìm bài học…" />
           </label>}
           <div className="cnc-lesson-stack">
-            {visibleLessons.map((item) => {
+            {visibleLessons.map((item, visibleIndex) => {
               const index = lessons.findIndex((candidate) => candidate.id === item.id);
+              const chapter = cncChapterOf(item.id);
+              const chapterStart = !validInitialLessonId && chapter && (visibleIndex === 0 || cncChapterOf(visibleLessons[visibleIndex - 1].id) !== chapter);
+              const theoryOnly = isTheoryOnly(item.id);
+              const itemTabs = theoryOnly ? lessonTabs(item.id).filter((t) => t.id === "ly_thuyet") : lessonTabs(item.id);
               const itemMeta = lessonMeta[item.id] ?? { theory: 0, practice: 0, test: 0 };
               const active = expandedLessonId === item.id;
-              const competencyStates = cncCompetencyStates(Array.from(passedAssessments).map(key => { const separator=key.lastIndexOf(":"); return {course_id:courseId??0,student_id:session?.user.id??"",lesson_id:key.slice(0,separator),assessment_id:key.slice(separator+1),completed:true,latest_score:null,best_score:null,total_questions:null,attempt_count:1,last_activity_at:""}; }),competencyPermissions);
-              const teacherLocked = openLessonIds.length>0&&!openLessonIds.includes(item.id);
-              const locked = viewerProfile?.role !== "admin" && (teacherLocked||(item.id === "lesson-5" && !competencyStates["turn-machining"].approved) || (item.id === "lesson-6" && !competencyStates["mill-machining"].approved));
+              const locked = isLessonLocked(item.id) && !theoryOnly;
               return (
-                <article key={item.id} className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
-                  {validInitialLessonId ? <button
-                    type="button"
-                    disabled={locked}
-                    onClick={() => selectLesson(item.id)}
-                    className="cnc-lesson-toggle"
-                    aria-expanded={active}
-                    aria-controls={`cnc-lesson-panel-${item.id}`}
-                    aria-label={`${active ? "Thu gọn" : "Mở"} ${item.shortTitle}`}
-                  >
-                    <span className={`cnc-lesson-number ${completed[item.id] ? "done" : ""}`}>
-                      {completed[item.id] ? <Check size={15} /> : index + 1}
-                    </span>
-                    <span className="cnc-lesson-copy">
-                      <strong>{item.shortTitle}</strong>
-                      <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
-                    </span>
-                    {locked ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
-                    <span className={`cnc-lesson-collapse-label ${active ? "active" : ""}`}>
-                      {active ? "Thu gọn" : "Mở bài"}
-                    </span>
-                    <ChevronDown className="cnc-accordion-chevron" size={18} />
-                  </button> : <Link
+                <Fragment key={item.id}>
+                {chapterStart && <h3 className="cnc-chapter-label">Chương {chapter.title}</h3>}
+                <article className={`cnc-lesson-accordion ${active ? "expanded" : ""} ${locked ? "locked" : ""}`}>
+                  {validInitialLessonId ? null /* trang bài: tên bài ở hero + rail trái, không thêm thanh gấp (N4) */ : <Link
                     href={locked ? "/lop-hoc/cnc" : `/lop-hoc/cnc/?bai=${item.id}`}
                     aria-disabled={locked}
                     className="cnc-lesson-toggle"
@@ -614,39 +759,36 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                       {completed[item.id] ? <Check size={15} /> : index + 1}
                     </span>
                     <span className="cnc-lesson-copy">
-                      <strong>{item.shortTitle}</strong>
+                      <strong>{plainLessonTitle(item.shortTitle)}</strong>
                       <small>{item.duration} · {itemMeta.practice ? `${itemMeta.practice} thực hành` : "Lý thuyết"}</small>
                     </span>
-                    {locked ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
-                    <span className="cnc-lesson-collapse-label">{locked ? "Đang khóa" : "Vào bài"}</span>
+                    {locked || theoryOnly ? <LockKeyhole className="safety-icon" size={15} /> : itemMeta.safetyGate && <ShieldCheck className="safety-icon" size={16} />}
+                    <span className="cnc-lesson-collapse-label">{locked ? "Đang khóa" : theoryOnly ? "Đọc trước" : "Vào bài"}</span>
                     <ChevronRight className="cnc-accordion-chevron" size={18} />
                   </Link>}
 
                   {active && !locked && (
                     <div id={`cnc-lesson-panel-${item.id}`} className="cnc-lesson-panel">
+                      {theoryOnly && <p className="cnc-theory-only-note"><LockKeyhole size={16} aria-hidden /> Em đọc trước phần Lý thuyết. Video, luyện tập và kiểm tra của bài mở khi giảng viên duyệt năng lực {item.id === "lesson-5" ? "gia công tiện" : "gia công phay"}.</p>}
                       <div className="cnc-lesson-hero">
                         <div className="cnc-title-row">
                           <div>
-                            <span className="cnc-eyebrow">CTTC · GIA CÔNG CNC · BÀI {index + 1}</span>
-                            <h2>{item.title.replace(/^Bài \d+: /, "")}</h2>
+                            <span className="cnc-eyebrow">GIA CÔNG CNC · {chapter ? `CHƯƠNG ${chapter.title.split(".")[0]} · ` : ""}BÀI {index + 1}</span>
+                            <h2>{plainLessonTitle(item.title)}</h2>
                             {"emphasis" in item && item.emphasis && <p>{item.emphasis}</p>}
                           </div>
                           {itemMeta.operation && <span className="cnc-operation-badge"><ShieldCheck size={16} /> {itemMeta.safetyGate ? "Bài vận hành" : "Bài gia công"}</span>}
                         </div>
                         <div className="cnc-lesson-progress-row">
-                          <div className="cnc-section-progress-ring"><strong>{completed[lesson.id] ? 5 : tabs.findIndex((itemTab) => itemTab.id === tab) + 1}<small>/5</small></strong></div>
+                          <div className="cnc-section-progress-ring"><strong>{completed[lesson.id] ? itemTabs.length : Math.max(1, itemTabs.findIndex((itemTab) => itemTab.id === tab) + 1)}<small>/{itemTabs.length}</small></strong></div>
                           <nav className="cnc-section-pills" aria-label="Đi nhanh đến phần bài học">
-                            {tabs.map(({ id, label }, tabIndex) => {
-                              const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill" || item.id === "lesson-5" || item.id === "lesson-6") && id === "resources" ? "Check list" : label;
-                              return <button key={id} type="button" onClick={() => setTab(id)} className={`${id} ${tab === id ? "active" : ""}`}><i />{tabIndex + 1}. {displayLabel}</button>;
-                            })}
+                            {itemTabs.map(({ id, label }, tabIndex) => <button key={id} type="button" onClick={() => setTab(id)} className={`${id} ${tab === id ? "active" : ""}`}><i />{tabIndex + 1}. {label}</button>)}
                           </nav>
                         </div>
                       </div>
 
                       <div className="cnc-learning-sections">
-                        {tabs.map(({ id, label, description, icon: Icon }, tabIndex) => {
-                          const displayLabel = (item.id === "lesson-4-turn" || item.id === "lesson-4-mill" || item.id === "lesson-5" || item.id === "lesson-6") && id === "resources" ? "Check list" : label;
+                        {itemTabs.map(({ id, label: displayLabel, description, icon: Icon }, tabIndex) => {
                           const isActive = tab === id;
                           return <section key={id} className={`cnc-learning-section ${id} ${isActive ? "active" : ""}`}>
                             <header>
@@ -666,7 +808,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                             >
                               <span><Icon size={22} /></span>
                               <div><strong>{displayLabel}</strong><small>{description}</small></div>
-                              <b>{isActive ? "Thu gọn" : id === "test" ? "Làm bài" : "Xem"}<ChevronDown size={17} /></b>
+                              <b>{isActive ? "Thu gọn" : id === "ly_thuyet" || id === "video" || id === "bai_tap_mau" ? "Xem" : "Làm bài"}<ChevronDown size={17} /></b>
                             </button>
                             {isActive && <div id={`cnc-section-${lesson.id}-${id}`} className="cnc-section-body cnc-content">{renderSectionContent(id)}</div>}
                           </section>;
@@ -679,12 +821,15 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                     </div>
                   )}
                 </article>
+                </Fragment>
               );
             })}
             {visibleLessons.length === 0 && <div className="cnc-search-empty">Không tìm thấy bài học phù hợp.</div>}
           </div>
           <div className="cnc-support"><ShieldCheck size={20} /><div><strong>An toàn là ưu tiên</strong><p>Bài vận hành phải đạt đúng ngưỡng kiểm tra trước máy của từng bài.</p></div></div>
         </section>
+      </div>
+      </div>
       </div>
     </div>
   );
@@ -791,7 +936,7 @@ function Outcomes({ lesson, meta }: { lesson: CncLesson; meta: (typeof lessonMet
     "Tự kiểm tra kết quả, phát hiện sai hỏng và đề xuất biện pháp khắc phục.",
   ];
   return <>
-    <SectionHeading icon={GraduationCap} kicker="MỤC 01" title="Chuẩn đầu ra bài học" description="Sau khi hoàn thành bài học, sinh viên có thể:" />
+    <SectionHeading icon={GraduationCap} kicker="MỤC TIÊU" title="Chuẩn đầu ra bài học" description="Sau khi hoàn thành bài học, sinh viên có thể:" />
     <div className="cnc-outcomes">
       {outcomes.map((item, index) => <div key={item}><span>CĐR {index + 1}</span><p>{item}</p><Check size={18} /></div>)}
     </div>
@@ -802,37 +947,18 @@ function Outcomes({ lesson, meta }: { lesson: CncLesson; meta: (typeof lessonMet
   </>;
 }
 
-function Slides({ lesson, files }: { lesson: CncLesson; files: CncLessonFile[] }) {
+// Bài giảng PowerPoint đã ẩn (thầy chốt 9/11/2026: slide lỗi thời); file vẫn lưu ở cnc_lesson_files, chỉ không hiện cho SV.
+function LessonBody({ lesson }: { lesson: CncLesson }) {
+  if (!lesson.bodyHtml) return null;
   return <>
-    <SectionHeading icon={Presentation} kicker="MỤC 02" title="Nội dung bài học" description="Bài giảng PowerPoint và các nội dung trọng tâm của bài." />
-    {files.length === 0 ? (
-      <div className="cnc-file-empty"><Presentation size={28} /><div><strong>Chưa có PowerPoint</strong><p>Giảng viên chưa tải bài giảng PowerPoint cho bài học này.</p></div></div>
-    ) : files.map((file, index) => (
-      <article className="cnc-ppt-viewer-card" key={file.id}>
-        <div className="cnc-ppt-viewer-frame">
-          <iframe
-            src={`https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(file.file_url)}`}
-            title={`Bài giảng ${file.title}`}
-            loading="lazy"
-            allowFullScreen
-          />
-        </div>
-        <div className="cnc-ppt-viewer-info">
-          <div><span>{index === 0 ? "BÀI GIẢNG CHÍNH" : `BÀI GIẢNG BỔ SUNG ${index}`}</span><h3>{file.title}</h3><p>{file.file_name} · {formatFileSize(file.size_bytes)}</p></div>
-          <small><CirclePlay size={14} /> Xem trực tiếp trên trang · Không cung cấp nút tải xuống</small>
-        </div>
-      </article>
-    ))}
-    {lesson.bodyHtml && <>
-      <h3 className="cnc-subheading">Giáo trình nội dung chi tiết</h3>
-      <ContentHtml html={lesson.bodyHtml} className="cnc-detailed-content" />
-    </>}
+    <SectionHeading icon={BookOpen} kicker="NỘI DUNG" title="Nội dung bài học" description="Các nội dung trọng tâm của bài, đọc theo từng mục." />
+    <ContentHtml html={lesson.bodyHtml} className="cnc-detailed-content" />
   </>;
 }
 
 function Video({ lesson, videos }: { lesson: CncLesson; videos: CncLessonVideo[] }) {
   return <>
-    <SectionHeading icon={MonitorPlay} kicker="MỤC 03" title="Video bài giảng" description={`${videos.length || "Chưa có"} video YouTube · Giảng viên Nguyễn Văn Toàn`} />
+    <SectionHeading icon={MonitorPlay} kicker="VIDEO" title="Video bài giảng" description={`${videos.length || "Chưa có"} video YouTube · Giảng viên Nguyễn Văn Toàn`} />
     {videos.length === 0 ? (
       <div className="cnc-file-empty"><MonitorPlay size={28} /><div><strong>Chưa có video bài giảng</strong><p>Giảng viên chưa đăng video YouTube cho bài học này.</p></div></div>
     ) : (
@@ -856,10 +982,21 @@ function Video({ lesson, videos }: { lesson: CncLesson; videos: CncLessonVideo[]
   </>;
 }
 
+const FINAL_TEST_DESCRIPTION: Record<string, string> = {
+  "lesson-1": "Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC.",
+  "lesson-2": "Đề trắc nghiệm lập trình tiện CNC trên hệ Win-NC32.",
+  "lesson-3": "Đề trắc nghiệm lập trình phay CNC trên hệ Win-NC32.",
+  "lesson-4-turn": "Đề trắc nghiệm vận hành máy tiện CNC: an toàn, gốc phôi, cài dao, chạy thử.",
+  "lesson-4-mill": "Đề trắc nghiệm vận hành máy phay CNC: an toàn, gốc phôi, bù dao, chạy thử.",
+  "lesson-5": "Đề trắc nghiệm gia công tiện CNC: chế độ cắt, chọn dao, kiểm tra kích thước.",
+  "lesson-6": "Đề trắc nghiệm gia công phay CNC: chế độ cắt, chọn dao, kiểm tra kích thước.",
+};
+
 function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, showHeading = true }: { lessonId: string; lessonTitle: string; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (score:number,total:number,passed:boolean)=>void; showHeading?: boolean }) {
-  const bankKey = lessonId === "lesson-1" ? "lesson-1" : lessonId === "lesson-2" ? "lesson-2" : lessonId === "lesson-3" ? "lesson-3" : null;
+  const bankKey = CNC_FINAL_TEST_BANK[lessonId] ?? null;
   const quiz = bankKey ? (quizBanks[bankKey] ?? null) : null;
-  const lessonNumber = lessonId.replace("lesson-", "");
+  const lessonNumber = CNC_CHAPTERS.flatMap((c) => [...c.lessonIds]).indexOf(lessonId as never) + 1;
+  const total = quiz?.length ?? 0;
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [submitted, setSubmitted] = useState(false);
   const score = quiz?.filter((question) => answers[question.id] === question.correctIndex).length ?? 0;
@@ -874,11 +1011,11 @@ function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, sh
   </>;
 
   return <>
-    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description={lessonId === "lesson-1" ? "Đề trắc nghiệm tổng quan về máy tiện, máy phay CNC." : lessonId === "lesson-2" ? "Đề trắc nghiệm lập trình tiện CNC trên hệ Fanuc 21T." : "Đề trắc nghiệm lập trình phay CNC trên hệ Fanuc 21M."} />}
+    {showHeading && <SectionHeading icon={FileQuestion} kicker="MỤC 04" title={`Kiểm tra cuối Bài ${lessonNumber}`} description={FINAL_TEST_DESCRIPTION[lessonId] ?? "Đề trắc nghiệm cuối bài."} />}
     <div className="cnc-gate-banner">
       <FileQuestion size={26} />
-      <div><span>BÀI KIỂM TRA KIẾN THỨC</span><h3>{lessonTitle}</h3><p><strong>20 câu trắc nghiệm</strong> · 30 phút · Đạt từ <strong>16/20 câu (80%)</strong></p></div>
-      <b className={passed ? "passed" : ""}>{submitted ? `${score}/20` : "80%"}<small>{passed ? "ĐÃ ĐẠT" : "YÊU CẦU"}</small></b>
+      <div><span>BÀI KIỂM TRA KIẾN THỨC</span><h3>{lessonTitle}</h3><p><strong>{total} câu trắc nghiệm</strong> · 30 phút · Đạt từ <strong>{requiredScore}/{total} câu (80%)</strong></p></div>
+      <b className={passed ? "passed" : ""}>{submitted ? `${score}/${total}` : "80%"}<small>{passed ? "ĐÃ ĐẠT" : "YÊU CẦU"}</small></b>
     </div>
     <div className="cnc-quiz">
       {quiz.map((question, questionIndex) => (
@@ -903,12 +1040,13 @@ function StandardTest({ lessonId, lessonTitle, quizBanks, onPassed, onResult, sh
       ))}
     </div>
     <button className="cnc-submit" disabled={Object.keys(answers).length < quiz.length} onClick={() => { const didPass=score>=requiredScore; setSubmitted(true); onResult?.(score,quiz.length,didPass); if (didPass) onPassed(); }}><FileQuestion size={18} /> Nộp bài kiểm tra Bài {lessonNumber}</button>
-    {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đạt — Bạn trả lời đúng ${score}/20 câu và đã hoàn thành bài kiểm tra.` : `Chưa đạt — Bạn trả lời đúng ${score}/20 câu. Cần ít nhất 16 câu đúng; hãy xem giải thích và làm lại.`}</div>}
+    {submitted && <div className={`cnc-result ${passed ? "passed" : ""}`}>{passed ? `Đạt — Bạn trả lời đúng ${score}/${total} câu và đã hoàn thành bài kiểm tra.` : `Chưa đạt — Bạn trả lời đúng ${score}/${total} câu. Cần ít nhất ${requiredScore} câu đúng; hãy xem giải thích và làm lại.`}</div>}
   </>;
 }
 
-function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, quizBanks, onPassed, onResult, passed, attempts }: { lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
-  const [level, setLevel] = useState<"exercise-1"|"exercise-2"|"exercise-3-short"|"exercise-3"|"exercise-4"|"exercise-5">("exercise-1");
+type ProgrammingLevelId = "exercise-1"|"exercise-2"|"exercise-3-short"|"exercise-3"|"exercise-4"|"exercise-5";
+function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, quizBanks, onPassed, onResult, passed, attempts, only, kicker = "BỘ 6 BÀI TẬP LẬP TRÌNH CNC", title, description = "Từ nhận biết câu lệnh đến viết, mô phỏng và kiểm chứng chương trình NC." }: { only?: ProgrammingLevelId[]; kicker?: string; title?: string; description?: string; lessonId: "lesson-2" | "lesson-3"; lessonTitle: string; courseId?: number; quizBanks: Record<string, QuizQuestion[]>; onPassed: () => void; onResult?: (assessmentId:string,score:number,total:number,passed:boolean)=>void; passed: Set<string>; attempts: Record<string, number> }) {
+
   const machine = lessonId === "lesson-2" ? "turn" : "mill";
   const lessonQuiz = quizBanks[lessonId] ?? null;
   const translateBankKey = machine === "turn" ? "turn-translate" : "mill-translate";
@@ -922,9 +1060,10 @@ function ProgrammingTestSuite({ lessonId, lessonTitle, courseId, quizBanks, onPa
     { id: "exercise-3" as const, note: "Điền khuyết chương trình" },
     { id: "exercise-4" as const, note: "Viết chương trình từ bản vẽ" },
     { id: "exercise-5" as const, note: "Mô phỏng và kiểm chứng" },
-  ].map((item, index) => ({ ...item, name: `Bài tập ${index + 1}` }));
+  ].map((item, index) => ({ ...item, name: `Bài tập ${index + 1}` })).filter((item) => !only || only.includes(item.id));
+  const [level, setLevel] = useState<ProgrammingLevelId>(levels[0].id);
   return <div className="cnc-programming-suite space-y-5">
-    <SectionHeading icon={FileQuestion} kicker="BỘ 6 BÀI TẬP LẬP TRÌNH CNC" title={`Kiểm tra ${lessonTitle}`} description="Từ nhận biết câu lệnh đến viết, mô phỏng và kiểm chứng chương trình NC." />
+    <SectionHeading icon={FileQuestion} kicker={kicker} title={title ?? `Kiểm tra ${lessonTitle}`} description={description} />
     <div className="cnc-programming-tabs grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">{levels.map((item)=><button key={item.id} type="button" onClick={()=>setLevel(item.id)} className={level===item.id?"active":""}><ExerciseStatusBadge status={exerciseStatus(passed,attempts,lessonId,item.id)} attempts={attempts[`${lessonId}:${item.id}`]}/><strong>{item.name}</strong><small>{item.note}</small></button>)}</div>
     {level === "exercise-1" && (lessonQuiz ? <RandomMcQuiz quiz={lessonQuiz} kicker="BÀI TẬP 1 · NHẬN BIẾT CÂU LỆNH" title="Nhận biết câu lệnh G-code/M-code" onResult={(score,total,didPass)=>onResult?.("exercise-1",score,total,didPass)} /> : <p className="lesson-muted">Đang tải câu hỏi…</p>)}
     {level === "exercise-2" && (translateQuiz ? <RandomMcQuiz quiz={translateQuiz} kicker="BÀI TẬP 2 · DỊCH LỆNH (TRẮC NGHIỆM)" title="Đọc hiểu và dịch block lệnh" onResult={(score,total,didPass)=>onResult?.("exercise-2",score,total,didPass)} /> : <p className="lesson-muted">Đang tải câu hỏi…</p>)}
@@ -1306,13 +1445,14 @@ function SafetyGate({ quiz, answers, setAnswers, submitted, setSubmitted, score,
   </>;
 }
 
-function PracticalChecklistPanel({ machine, lessonId, enabled, lockedMessage, courseId, onResult }: { machine: "tiện" | "phay"; lessonId: PracticalChecklistLessonId; enabled: boolean; lockedMessage: string; courseId?: number; onResult?: (assessmentId: string, score: number, total: number, passed: boolean) => void }) {
-  const [mode, setMode] = useState<"practice" | "cross-check">("practice");
+function PracticalChecklistPanel({ machine, lessonId, enabled, lockedMessage, courseId, onResult, fixedMode }: { fixedMode?: "practice" | "cross-check"; machine: "tiện" | "phay"; lessonId: PracticalChecklistLessonId; enabled: boolean; lockedMessage: string; courseId?: number; onResult?: (assessmentId: string, score: number, total: number, passed: boolean) => void }) {
+  const [pickedMode, setMode] = useState<"practice" | "cross-check">("practice");
+  const mode = fixedMode ?? pickedMode;
   return <>
-    <div className="cnc-checklist-mode-toggle">
+    {!fixedMode && <div className="cnc-checklist-mode-toggle">
       <button type="button" className={mode === "practice" ? "active" : ""} onClick={() => setMode("practice")}><ClipboardCheck size={15} /> Tự luyện tập</button>
       <button type="button" className={mode === "cross-check" ? "active" : ""} onClick={() => setMode("cross-check")}><Users size={15} /> Chấm chéo (thi)</button>
-    </div>
+    </div>}
     {mode === "practice"
       ? <><p className="cnc-checklist-hint">Chế độ tự luyện tập — tự đánh dấu để ôn lại quy trình, nộp để ghi nhận điểm và số lần làm vào Điểm &amp; tiến độ.</p><OperationChecklist lessonId={lessonId} machine={machine} enabled={enabled} lockedMessage={lockedMessage} onPassed={() => undefined} onResult={(score, total, didPass) => onResult?.("checklist-practice", score, total, didPass)} /></>
       : <CrossCheckChecklist machine={machine} lessonId={lessonId} courseId={courseId} />}
@@ -1387,7 +1527,7 @@ function OperationChecklist({ lessonId, machine, enabled, lockedMessage, onPasse
 function Resources({ lesson, files }: { lesson: CncLesson; files: CncLessonFile[] }) {
   const resources = lesson.resources.length ? lesson.resources : ["Giáo trình Gia công CNC", "Phiếu hướng dẫn thực hành", "Bản vẽ và dữ liệu bài tập"];
   return <>
-    <SectionHeading icon={FileText} kicker="MỤC 05" title="Tài liệu học tập" description="Tài liệu bắt buộc và tài nguyên hỗ trợ cho bài học." />
+    <SectionHeading icon={FileText} kicker="TÀI LIỆU" title="Tài liệu học tập" description="Tài liệu bắt buộc và tài nguyên hỗ trợ cho bài học." />
     <div className="cnc-resources">
       {files.map((file) => <div key={file.id}><span className="doc">{file.file_name.split(".").pop()?.slice(0, 4).toUpperCase() || "FILE"}</span><div><strong>{file.title}</strong><small>{formatFileSize(file.size_bytes)} · Tài liệu tải lên</small></div><a href={file.file_url} target="_blank" rel="noreferrer" aria-label={`Tải ${file.title}`}><Download size={18} /></a></div>)}
       {resources.map((resource, i) => <div key={resource}><span className={i % 2 ? "doc" : "pdf"}>{i % 2 ? "DOC" : "PDF"}</span><div><strong>{resource}</strong><small>Tài liệu tham khảo</small></div><button aria-label={`Tải ${resource}`} disabled><Download size={18} /></button></div>)}

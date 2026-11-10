@@ -4104,7 +4104,7 @@
  },
  {
   "id": "tn-l12-hatnhan-02",
-  "ten": "Đo bề dày lá nhôm để suy ra bán kính hạt nhân",
+  "ten": "Đo bề dày lá nhôm: đếm lớp nguyên tử, so cỡ hạt nhân",
   "loai": "thi_nghiem",
   "muc_do": "trung_binh",
   "lop": 12,
@@ -4124,8 +4124,29 @@
   ]
  },
  {
+  "id": "tn-l12-hatnhan-03",
+  "ten": "Thí nghiệm tán xạ hạt alpha trên lá vàng của Rutherford (Geiger – Marsden 1909–1913)",
+  "loai": "vi_du",
+  "muc_do": "co_ban",
+  "lop": 12,
+  "bai": "Bài 14. Hạt nhân và mô hình nguyên tử",
+  "lesson_id": 15,
+  "kien_thuc": [
+   "hatnhan.mo_hinh_rutherford",
+   "hatnhan.mo_hinh_thomson_bac_bo",
+   "hatnhan.cau_tao"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "Z",
+   "E",
+   "theta"
+  ]
+ },
+ {
   "id": "tn-l12-luctu-01",
-  "ten": "Đo lực từ theo cường độ dòng điện bằng lực kế điện tử",
+  "ten": "Cân dòng điện: đo lực từ lên dây MN bằng cân (kiểu đề TN THPT 2025 câu II.2)",
   "loai": "thi_nghiem",
   "muc_do": "trung_binh",
   "lop": 12,
@@ -4136,10 +4157,11 @@
    "luctu.dinh_luat_ampe",
    "luctu.cam_ung_tu"
   ],
-  "mo_phong": "do_thi+bang_so_lieu",
+  "mo_phong": "2d_dong_hoc+so_do_luc",
   "co_video": false,
   "tham_so_dieu_chinh": [
-   "I"
+   "I",
+   "alpha"
   ]
  },
  {
@@ -4302,8 +4324,8 @@
  },
  {
   "id": "tn-l12-nllk-02",
-  "ten": "Đo khối lượng nguyên tử heli-4 bằng phổ kế khối lượng để tìm độ hụt khối",
-  "loai": "thi_nghiem",
+  "ten": "Phổ kế khối lượng đo khối lượng nguyên tử heli-4: kiểm giả thuyết khối lượng hạt nhân bằng tổng khối lượng nuclôn",
+  "loai": "vi_du",
   "muc_do": "trung_binh",
   "lop": 12,
   "bai": "Bài 15. Năng lượng liên kết hạt nhân",
@@ -4381,6 +4403,27 @@
   ]
  },
  {
+  "id": "tn-l12-noinang-03",
+  "ten": "Thí nghiệm Joule: quả nặng rơi quay cánh khuấy làm nóng nước",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "kien_thuc": [
+   "noinang.thuc_hien_cong",
+   "nhietluong.cong_thuc_q_mcdt",
+   "dl1.do_bien_thien_noi_nang"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "M",
+   "h",
+   "n"
+  ]
+ },
+ {
   "id": "tn-l12-phanbach-01",
   "ten": "Bàn ghim mô hình phản ứng dây chuyền: đổi khoảng cách để đổi hệ số nhân",
   "loai": "thi_nghiem",
@@ -4437,7 +4480,7 @@
  },
  {
   "id": "tn-l12-phanbach-04",
-  "ten": "Cân khối lượng bằng phổ kế khối lượng để tính năng lượng một phân hạch",
+  "ten": "Ví dụ: từ bảng khối lượng tính năng lượng toả ra của một phản ứng phân hạch",
   "loai": "vi_du",
   "muc_do": "nang_cao",
   "lop": 12,
@@ -4645,7 +4688,7 @@
    "tdhphantu.nhiet_do_va_toc_do"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T_nong",
    "T_lanh"
@@ -4776,6 +4819,29 @@
   ]
  },
  {
+  "id": "tn-l12-thuchanh-03",
+  "ten": "Đo nhiệt nóng chảy riêng của nước đá bằng phễu và dây điện trở, hai giai đoạn (đối chứng môi trường)",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 4. Thực hành đo nhiệt dung riêng, nhiệt nóng chảy riêng, nhiệt hoá hơi riêng",
+  "lesson_id": 5,
+  "kien_thuc": [
+   "thuchanh.do_nhiet_luong_gian_tiep",
+   "chuyenthe.nhiet_nong_chay_rieng",
+   "thuchanh.giam_sai_so_doi_chung"
+  ],
+  "mo_phong": "bang_so_lieu+do_thi",
+  "co_video": false,
+  "tham_so_dieu_chinh": [
+   "U",
+   "I",
+   "tau",
+   "r_mt",
+   "hieu_suat"
+  ]
+ },
+ {
   "id": "tn-l12-thuchanhtu-01",
   "ten": "Đo cảm ứng từ bằng cân dòng điện (cân điện tử đo phản lực)",
   "loai": "thi_nghiem",
@@ -4851,7 +4917,7 @@
  },
  {
   "id": "tn-l12-tutruong-01",
-  "ten": "Dòng điện tác dụng lực từ lên kim la bàn",
+  "ten": "Thí nghiệm Oersted (1820): dòng điện làm lệch kim nam châm",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 12,
@@ -5075,7 +5141,7 @@
  },
  {
   "id": "tn-l12-ungdungcutu-03",
-  "ten": "Bếp từ: đáy nồi gang tự nóng lên, mặt kính vẫn mát",
+  "ten": "Bếp từ: đo hiệu suất khi đun 1 lít nước, đối chứng với bếp điện trở",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 12,

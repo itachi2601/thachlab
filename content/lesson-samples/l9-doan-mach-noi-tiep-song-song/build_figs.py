@@ -8,7 +8,7 @@ from svg_lib import *
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-PHUT = 15          # số phút đọc: lấy từ lint_do_dai.py, làm tròn lên
+PHUT = 16          # số phút đọc: lấy từ lint_do_dai.py, làm tròn lên
 
 def vn(x, nd=1):
     return f"{x:.{nd}f}".replace(".", "{,}")

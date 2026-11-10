@@ -347,11 +347,7 @@
    "question": "Một cân điện tử chưa được chỉnh về số 0 nên lần cân nào cũng chỉ thừa $0{,}3\\ \\text{g}$. Một học sinh cân một vật 5 lần rồi lấy giá trị trung bình.",
    "statements": [
     {
-     "text": "Độ lệch $0{,}3\\ \\text{g}$ này là sai số hệ thống.",
-     "answer": true
-    },
-    {
-     "text": "Lấy trung bình 5 lần cân thì độ lệch giảm còn khoảng một phần năm.",
+     "text": "Nếu cân thêm thật nhiều lần thì độ lệch $0{,}3\\ \\text{g}$ sẽ tự triệt tiêu.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Nếu cân thêm thật nhiều lần thì độ lệch $0{,}3\\ \\text{g}$ sẽ tự triệt tiêu.",
+     "text": "Lấy trung bình 5 lần cân thì độ lệch giảm còn khoảng một phần năm.",
      "answer": false
+    },
+    {
+     "text": "Độ lệch $0{,}3\\ \\text{g}$ này là sai số hệ thống.",
+     "answer": true
     }
    ],
    "explanation": "Độ lệch lặp lại và cùng phía ở mọi lần nên là sai số hệ thống; trung bình vẫn thừa $0{,}3\\ \\text{g}$, chỉ chỉnh cân về 0 mới sửa được.",
    "distractorNotes": {
-    "0": "Độ lệch do dụng cụ, lặp lại cùng phía ở mọi lần nên không thể xếp vào sai số ngẫu nhiên.",
-    "1": "Cả 5 lần đều thừa $0{,}3\\ \\text{g}$ nên trung bình vẫn thừa $0{,}3\\ \\text{g}$; không có lí do gì để chia cho 5.",
-    "2": "Nguồn lệch chính là cân chưa về 0, nên chỉnh cân về 0 là cách duy nhất xoá được nó.",
-    "3": "Đo nhiều lần chỉ làm nhỏ sai số tản hai phía; độ lệch một phía vẫn giữ nguyên dù đo bao nhiêu lần."
+    "0": "Đo nhiều lần chỉ làm nhỏ sai số tản hai phía; độ lệch một phía vẫn giữ nguyên dù đo bao nhiêu lần.",
+    "1": "Nguồn lệch chính là cân chưa về 0, nên chỉnh cân về 0 là cách duy nhất xoá được nó.",
+    "2": "Cả 5 lần đều thừa $0{,}3\\ \\text{g}$ nên trung bình vẫn thừa $0{,}3\\ \\text{g}$; không có lí do gì để chia cho 5.",
+    "3": "Độ lệch do dụng cụ, lặp lại cùng phía ở mọi lần nên không thể xếp vào sai số ngẫu nhiên."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Ba bạn ghi chiều dài cùng một chiếc bàn lần lượt là $1{,}5\\ \\text{m}$; $1{,}50\\ \\text{m}$ và $1{,}500\\ \\text{m}$.",
    "statements": [
     {
-     "text": "Số $1{,}5$ có 2 chữ số có nghĩa.",
-     "answer": true
-    },
-    {
-     "text": "Số 0 ở cuối $1{,}50$ không có nghĩa nên $1{,}50\\ \\text{m}$ và $1{,}5\\ \\text{m}$ cho biết như nhau.",
-     "answer": false
-    },
-    {
      "text": "Cách ghi $1{,}500\\ \\text{m}$ cho biết phép đo chính xác tới milimét.",
      "answer": true
     },
     {
      "text": "Theo cùng quy tắc, số $0{,}0350$ có 2 chữ số có nghĩa.",
      "answer": false
+    },
+    {
+     "text": "Số 0 ở cuối $1{,}50$ không có nghĩa nên $1{,}50\\ \\text{m}$ và $1{,}5\\ \\text{m}$ cho biết như nhau.",
+     "answer": false
+    },
+    {
+     "text": "Số $1{,}5$ có 2 chữ số có nghĩa.",
+     "answer": true
     }
    ],
    "explanation": "Số 0 cuối phần thập phân có nghĩa và cho biết dụng cụ đo tới đâu; số 0 đứng đầu không có nghĩa nên $0{,}0350$ có 3 chữ số có nghĩa.",
    "distractorNotes": {
-    "0": "Hai chữ số 1 và 5 đều khác 0 nên đều có nghĩa, cho đúng 2 chữ số có nghĩa.",
-    "1": "Số 0 cuối phần thập phân có nghĩa: $1{,}50$ cho biết đo tới cm, còn $1{,}5$ chỉ tới dm.",
-    "2": "Chữ số cuối của $1{,}500\\ \\text{m}$ ở hàng phần nghìn mét, tức hàng milimét.",
-    "3": "Chỉ bỏ các số 0 đứng đầu; còn lại 3, 5 và số 0 cuối thập phân là 3 chữ số có nghĩa."
+    "0": "Chữ số cuối của $1{,}500\\ \\text{m}$ ở hàng phần nghìn mét, tức hàng milimét.",
+    "1": "Chỉ bỏ các số 0 đứng đầu; còn lại 3, 5 và số 0 cuối thập phân là 3 chữ số có nghĩa.",
+    "2": "Số 0 cuối phần thập phân có nghĩa: $1{,}50$ cho biết đo tới cm, còn $1{,}5$ chỉ tới dm.",
+    "3": "Hai chữ số 1 và 5 đều khác 0 nên đều có nghĩa, cho đúng 2 chữ số có nghĩa."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Dùng thước kẻ có độ chia nhỏ nhất $1\\ \\text{mm}$ đo một lần độ dày cục tẩy; mép cục tẩy nằm đúng vạch $12$.",
    "statements": [
     {
-     "text": "Sai số dụng cụ của thước có vạch chia thường lấy bằng nửa ĐCNN, tức $0{,}5\\ \\text{mm}$.",
-     "answer": true
-    },
-    {
      "text": "Vì chỉ đo một lần nên sai số tuyệt đối của phép đo bằng sai số dụng cụ.",
      "answer": true
     },
     {
-     "text": "Có thể ghi kết quả là $12{,}00\\ \\text{mm}$ để chính xác ngang thước điện tử.",
-     "answer": false
+     "text": "Sai số dụng cụ của thước có vạch chia thường lấy bằng nửa ĐCNN, tức $0{,}5\\ \\text{mm}$.",
+     "answer": true
     },
     {
      "text": "Đây là phép đo gián tiếp vì phải so mép cục tẩy với vạch chia.",
+     "answer": false
+    },
+    {
+     "text": "Có thể ghi kết quả là $12{,}00\\ \\text{mm}$ để chính xác ngang thước điện tử.",
      "answer": false
     }
    ],
    "explanation": "Đo một lần thì $\\Delta A = \\Delta A_{\\text{dc}} = 0{,}5\\ \\text{mm}$, kết quả $(12{,}0 \\pm 0{,}5)\\ \\text{mm}$; số chữ số do dụng cụ quyết định, và đọc ngay trên thước là đo trực tiếp.",
    "distractorNotes": {
-    "0": "Thước có vạch chia nên theo quy ước lấy nửa ĐCNN, đúng bằng $0{,}5\\ \\text{mm}$.",
-    "1": "Đo một lần thì không có sai số trung bình các lần, chỉ còn lại sai số dụng cụ.",
-    "2": "Nhầm số chữ số với độ chính xác: tự thêm số 0 không làm phép đo chính xác hơn.",
-    "3": "Đọc giá trị ngay trên dụng cụ là đo trực tiếp; đo gián tiếp phải tính qua công thức."
+    "0": "Đo một lần thì không có sai số trung bình các lần, chỉ còn lại sai số dụng cụ.",
+    "1": "Thước có vạch chia nên theo quy ước lấy nửa ĐCNN, đúng bằng $0{,}5\\ \\text{mm}$.",
+    "2": "Đọc giá trị ngay trên dụng cụ là đo trực tiếp; đo gián tiếp phải tính qua công thức.",
+    "3": "Nhầm số chữ số với độ chính xác: tự thêm số 0 không làm phép đo chính xác hơn."
    }
   },
   {
@@ -452,10 +452,6 @@
    "question": "Đo thời gian $t$ của 10 dao động con lắc đơn 5 lần bằng đồng hồ số có ĐCNN $0{,}01\\ \\text{s}$; năm giá trị đo không trùng nhau.",
    "statements": [
     {
-     "text": "Giá trị trung bình là $\\overline{t} = \\dfrac{t_1 + t_2 + t_3 + t_4 + t_5}{5}$.",
-     "answer": true
-    },
-    {
      "text": "Sai số tuyệt đối của phép đo là độ lệch $|\\overline{t} - t_i|$ lớn nhất trong 5 lần.",
      "answer": false
     },
@@ -466,14 +462,18 @@
     {
      "text": "Nếu $\\Delta t$ giữ nguyên mà $\\overline{t}$ lớn gấp đôi thì sai số tỉ đối $\\delta t$ cũng tăng gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Giá trị trung bình là $\\overline{t} = \\dfrac{t_1 + t_2 + t_3 + t_4 + t_5}{5}$.",
+     "answer": true
     }
    ],
    "explanation": "$\\Delta t = \\overline{\\Delta t} + \\Delta t_{\\text{dc}}$ dùng trung bình các độ lệch, không lấy độ lệch lớn nhất; $\\delta t = \\Delta t/\\overline{t}$ nên $\\overline{t}$ gấp đôi thì $\\delta t$ giảm một nửa.",
    "distractorNotes": {
-    "0": "Giá trị trung bình đúng là tổng các lần đo chia cho số lần đo, như công thức đã nêu.",
-    "1": "Sai số của phép đo lấy trung bình các độ lệch cộng sai số dụng cụ, không lấy độ lệch lớn nhất.",
-    "2": "Đồng hồ hiện số lấy sai số dụng cụ bằng một ĐCNN, tức đúng $0{,}01\\ \\text{s}$.",
-    "3": "Đảo tỉ lệ: $\\overline{t}$ nằm ở mẫu của $\\delta t$, nên tăng gấp đôi thì $\\delta t$ giảm một nửa."
+    "0": "Sai số của phép đo lấy trung bình các độ lệch cộng sai số dụng cụ, không lấy độ lệch lớn nhất.",
+    "1": "Đồng hồ hiện số lấy sai số dụng cụ bằng một ĐCNN, tức đúng $0{,}01\\ \\text{s}$.",
+    "2": "Đảo tỉ lệ: $\\overline{t}$ nằm ở mẫu của $\\delta t$, nên tăng gấp đôi thì $\\delta t$ giảm một nửa.",
+    "3": "Giá trị trung bình đúng là tổng các lần đo chia cho số lần đo, như công thức đã nêu."
    }
   },
   {

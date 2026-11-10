@@ -347,11 +347,7 @@
    "question": "Kẹp một bút chì đã gọt giữa ngón cái (chạm đầu bằng) và ngón trỏ (chạm đầu nhọn), giữ bút nằm yên và ép nhẹ.",
    "statements": [
     {
-     "text": "Ngón chạm đầu nhọn cảm thấy đau hơn ngón chạm đầu bằng.",
-     "answer": true
-    },
-    {
-     "text": "Ngón chạm đầu nhọn chịu áp lực lớn hơn ngón chạm đầu bằng.",
+     "text": "Bút đứng yên nên áp suất ở hai đầu bút bằng nhau.",
      "answer": false
     },
     {
@@ -359,16 +355,20 @@
      "answer": true
     },
     {
-     "text": "Bút đứng yên nên áp suất ở hai đầu bút bằng nhau.",
+     "text": "Ngón chạm đầu nhọn cảm thấy đau hơn ngón chạm đầu bằng.",
+     "answer": true
+    },
+    {
+     "text": "Ngón chạm đầu nhọn chịu áp lực lớn hơn ngón chạm đầu bằng.",
      "answer": false
     }
    ],
    "explanation": "Bút đứng yên nên hai ngón chịu áp lực bằng nhau; đầu nhọn có $S$ nhỏ nên $p = F/S$ lớn hơn, ngón đó đau hơn.",
    "distractorNotes": {
-    "0": "Đây là quan sát trực tiếp của thí nghiệm, do áp suất ở đầu nhọn lớn hơn.",
-    "1": "Bút đứng yên nên hai lực ép từ hai ngón cân bằng, áp lực bằng nhau.",
-    "2": "Cùng áp lực, diện tích nhỏ hơn thì $p = F/S$ lớn hơn, nên ý này đúng.",
-    "3": "Đứng yên chỉ cho áp lực bằng nhau; diện tích hai đầu khác nhau nên áp suất khác nhau."
+    "0": "Đứng yên chỉ cho áp lực bằng nhau; diện tích hai đầu khác nhau nên áp suất khác nhau.",
+    "1": "Cùng áp lực, diện tích nhỏ hơn thì $p = F/S$ lớn hơn, nên ý này đúng.",
+    "2": "Đây là quan sát trực tiếp của thí nghiệm, do áp suất ở đầu nhọn lớn hơn.",
+    "3": "Bút đứng yên nên hai lực ép từ hai ngón cân bằng, áp lực bằng nhau."
    }
   },
   {
@@ -382,16 +382,16 @@
    "question": "Một bạn lặn xuống độ sâu 2 m ở một bể bơi hẹp, rồi lặn xuống độ sâu 2 m ở một hồ rộng. Nước ở hai nơi đều đứng yên.",
    "statements": [
     {
-     "text": "Ở hồ rộng, tai bị ép mạnh hơn vì phía trên có nhiều nước hơn.",
-     "answer": false
+     "text": "Tại mỗi điểm, nước ép lên tai theo mọi phương.",
+     "answer": true
     },
     {
      "text": "Áp suất tại hai điểm như nhau vì cùng độ sâu và cùng là nước.",
      "answer": true
     },
     {
-     "text": "Tại mỗi điểm, nước ép lên tai theo mọi phương.",
-     "answer": true
+     "text": "Ở hồ rộng, tai bị ép mạnh hơn vì phía trên có nhiều nước hơn.",
+     "answer": false
     },
     {
      "text": "Lặn sâu thêm trong hồ, áp suất tại tai không đổi vì lượng nước trong hồ không đổi.",
@@ -400,9 +400,9 @@
    ],
    "explanation": "Áp suất chất lỏng $p = p_a + \\rho g h$ chỉ phụ thuộc độ sâu và loại chất lỏng, tác dụng theo mọi phương, không phụ thuộc lượng nước.",
    "distractorNotes": {
-    "0": "Nước ở xa hai bên không đè lên tai; lượng nước không có trong công thức áp suất.",
+    "0": "Chất lỏng truyền áp suất theo mọi phương, như bốn tia nước mạnh như nhau ở chai đục lỗ quanh thân.",
     "1": "Cùng chất lỏng, cùng độ sâu thì $\\rho g h$ bằng nhau, nên ý này đúng.",
-    "2": "Chất lỏng truyền áp suất theo mọi phương, như bốn tia nước mạnh như nhau ở chai đục lỗ quanh thân.",
+    "2": "Nước ở xa hai bên không đè lên tai; lượng nước không có trong công thức áp suất.",
     "3": "Áp suất tăng theo độ sâu $h$, không phụ thuộc lượng nước trong hồ."
    }
   },
@@ -417,6 +417,10 @@
    "question": "Một thợ lặn ở độ sâu $h$ trong hồ nước có khối lượng riêng $\\rho$; mặt hồ chịu áp suất khí quyển $p_a$. Đồng hồ áp suất loại dùng để bơm lốp chỉ áp suất dư.",
    "statements": [
     {
+     "text": "Ở mặt thoáng, áp suất dư bằng $p_a$.",
+     "answer": false
+    },
+    {
      "text": "Áp suất tuyệt đối tại chỗ thợ lặn là $p_a + \\rho g h$.",
      "answer": true
     },
@@ -425,19 +429,15 @@
      "answer": true
     },
     {
-     "text": "Ở mặt thoáng, áp suất dư bằng $p_a$.",
-     "answer": false
-    },
-    {
      "text": "Áp suất tuyệt đối tại chỗ thợ lặn chỉ gồm phần do nước gây ra.",
      "answer": false
     }
    ],
    "explanation": "Bẫy 2: áp suất tuyệt đối $p = p_a + \\rho g h$; áp suất dư $p - p_a = \\rho g h$, ở mặt thoáng bằng $0$.",
    "distractorNotes": {
-    "0": "Áp suất thật tại điểm gồm cả khí quyển ép lên mặt hồ lẫn cột nước.",
-    "1": "Áp suất dư là phần vượt trên khí quyển, đúng bằng phần do nước $\\rho g h$.",
-    "2": "Ở mặt thoáng áp suất tuyệt đối bằng $p_a$ nên phần vượt trên khí quyển bằng $0$.",
+    "0": "Ở mặt thoáng áp suất tuyệt đối bằng $p_a$ nên phần vượt trên khí quyển bằng $0$.",
+    "1": "Áp suất thật tại điểm gồm cả khí quyển ép lên mặt hồ lẫn cột nước.",
+    "2": "Áp suất dư là phần vượt trên khí quyển, đúng bằng phần do nước $\\rho g h$.",
     "3": "Không khí phía trên mặt hồ cũng ép xuống, phải cộng $p_a$ vào áp suất tuyệt đối."
    }
   },
@@ -456,12 +456,12 @@
      "answer": true
     },
     {
-     "text": "$\\rho_{\\text{dầu}}\\, h_1 = \\rho_{\\text{nước}}\\, h_2$.",
-     "answer": true
-    },
-    {
      "text": "Vì dầu nhẹ hơn nước nên $h_1 \\lt h_2$.",
      "answer": false
+    },
+    {
+     "text": "$\\rho_{\\text{dầu}}\\, h_1 = \\rho_{\\text{nước}}\\, h_2$.",
+     "answer": true
     },
     {
      "text": "Hai điểm ngang mức nhau phía trên A, một điểm trong dầu và một điểm trong nước, có áp suất bằng nhau.",
@@ -471,8 +471,8 @@
    "explanation": "Mục II.5: $p_a + \\rho_1 g h_1 = p_a + \\rho_2 g h_2$ nên $\\rho_1 h_1 = \\rho_2 h_2$; dầu có $\\rho$ nhỏ hơn nên cột dầu cao hơn. Phía trên mức A, hai điểm ngang mức ở hai chất lỏng khác nhau có áp suất khác nhau.",
    "distractorNotes": {
     "0": "A và B cùng nằm trong nước liên thông, đứng yên, cùng mức ngang nên áp suất bằng nhau.",
-    "1": "Viết $p_A = p_B$ rồi giản ước $p_a$ và $g$ là ra đúng hệ thức này.",
-    "2": "Từ $\\rho_1 h_1 = \\rho_2 h_2$, chất lỏng nhẹ hơn phải có cột cao hơn mới cân bằng.",
+    "1": "Từ $\\rho_1 h_1 = \\rho_2 h_2$, chất lỏng nhẹ hơn phải có cột cao hơn mới cân bằng.",
+    "2": "Viết $p_A = p_B$ rồi giản ước $p_a$ và $g$ là ra đúng hệ thức này.",
     "3": "Quy tắc cùng mức ngang cùng áp suất chỉ áp dụng khi hai điểm nằm trong cùng một chất lỏng."
    }
   },
@@ -495,11 +495,11 @@
      "answer": true
     },
     {
-     "text": "Điểm M cách đáy một đoạn $x$ chịu áp suất do nước là $\\rho g x$.",
+     "text": "Áp lực của nước lên đáy lớn hơn trọng lượng nước trong bể.",
      "answer": false
     },
     {
-     "text": "Áp lực của nước lên đáy lớn hơn trọng lượng nước trong bể.",
+     "text": "Điểm M cách đáy một đoạn $x$ chịu áp suất do nước là $\\rho g x$.",
      "answer": false
     }
    ],
@@ -507,8 +507,8 @@
    "distractorNotes": {
     "0": "Đáy nằm ở độ sâu $h$ dưới mặt thoáng nên phần áp suất do nước đúng là $\\rho g h$.",
     "1": "Áp lực bằng áp suất nhân diện tích, $F = pS$, nên ý này đúng.",
-    "2": "Độ sâu đo từ mặt thoáng xuống, nên M sâu $h - x$ chứ không phải $x$.",
-    "3": "Với bể thành thẳng đứng, $\\rho g h S = \\rho V g$ đúng bằng trọng lượng nước, không lớn hơn."
+    "2": "Với bể thành thẳng đứng, $\\rho g h S = \\rho V g$ đúng bằng trọng lượng nước, không lớn hơn.",
+    "3": "Độ sâu đo từ mặt thoáng xuống, nên M sâu $h - x$ chứ không phải $x$."
    }
   },
   {
@@ -522,8 +522,8 @@
    "question": "Một chai chứa nước có thể tích $V$, khối lượng riêng của nước là $\\rho$, gia tốc rơi tự do là $g$.",
    "statements": [
     {
-     "text": "Khối lượng nước trong chai là $m = \\rho V$.",
-     "answer": true
+     "text": "Chai $1{,}5$ lít có thể tích $1{,}5\\cdot 10^{-2}\\ \\text{m}^3$.",
+     "answer": false
     },
     {
      "text": "Trọng lượng nước trong chai là $P = \\rho V g$.",
@@ -534,16 +534,16 @@
      "answer": false
     },
     {
-     "text": "Chai $1{,}5$ lít có thể tích $1{,}5\\cdot 10^{-2}\\ \\text{m}^3$.",
-     "answer": false
+     "text": "Khối lượng nước trong chai là $m = \\rho V$.",
+     "answer": true
     }
    ],
    "explanation": "Mục II.1: $m = \\rho V$, $d = \\rho g$, $P = \\rho V g$; 1 lít $= 10^{-3}\\ \\text{m}^3$ nên $1{,}5$ lít $= 1{,}5\\cdot 10^{-3}\\ \\text{m}^3$.",
    "distractorNotes": {
-    "0": "Từ $\\rho = m/V$ nhân hai vế với $V$ được đúng $m = \\rho V$.",
+    "0": "1 lít $= 10^{-3}\\ \\text{m}^3$, viết $10^{-2}$ là sai một bậc.",
     "1": "Trọng lượng $P = mg$ với $m = \\rho V$, nên $P = \\rho V g$ là đúng.",
     "2": "Trọng lượng riêng là $\\rho$ nhân $g$, chia cho $g$ là đảo phép tính.",
-    "3": "1 lít $= 10^{-3}\\ \\text{m}^3$, viết $10^{-2}$ là sai một bậc."
+    "3": "Từ $\\rho = m/V$ nhân hai vế với $V$ được đúng $m = \\rho V$."
    }
   }
  ]

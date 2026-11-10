@@ -7,6 +7,12 @@ export interface ReviewStageDef {
   item_id: number | null;
   title: string;
   minutes: number;
+  /** Chế độ tự học: chặng khoá tới giờ này (ISO). Bộ bài tập mỗi ngày dùng để mở từng ngày vào 6:00. */
+  open_at?: string;
+  /** Dòng giới thiệu ngắn gửi kèm chuông khi chặng mở (ví dụ "4 bài · 30–45 phút"). */
+  brief?: string;
+  /** Máy chủ đã gửi chuông mở chặng (cờ nội bộ). */
+  opened?: boolean;
   /** Chặng "ôn dạng": nhãn dạng của từng câu theo thứ tự trong đề (dùng cho thống kê sai theo dạng). */
   dang_by_index?: string[];
 }
@@ -78,10 +84,21 @@ export interface ReviewListItem {
   current_stage: number;
   stage_count: number;
   created_at: string;
+  /** Bản máy chủ cũ không có: coi là buổi trên lớp. */
+  mode?: ReviewMode;
+  due_at?: string | null;
 }
+
+/** live = ôn trên lớp (đồng hồ chung, thầy mở từng chặng) · self = tự học ở nhà (mở sẵn, có hạn nộp, không đồng hồ). */
+export type ReviewMode = "live" | "self";
 
 export interface MyStage extends ReviewStageDef {
   mine: StageProgress | null;
+  /** Chế độ tự học nối tiếp: chặng trước chưa đạt (và em nộp chưa đủ 2 lượt) thì chặng này đang khoá. */
+  locked?: boolean;
+  /** Chế độ tự học: số bạn đã nộp chặng này (ẩn danh). */
+  class_submitted?: number;
+  class_total?: number;
 }
 
 export interface MyReviewState {
@@ -90,6 +107,9 @@ export interface MyReviewState {
   title: string;
   threshold: number;
   status: "ready" | "running" | "finished";
+  mode?: ReviewMode;
+  due_at?: string | null;
+  sequential?: boolean;
   current_stage: number;
   secs_left: number | null;
   stages: MyStage[];
@@ -105,6 +125,36 @@ async function rpc<T>(fn: string, args: Record<string, unknown>): Promise<T> {
 
 export const createReviewSession = (classId: number, title: string, threshold: number, stages: ReviewStageDef[]) =>
   rpc<number>("review_create", { p_class: classId, p_title: title, p_threshold: threshold, p_stages: stages });
+
+/** Buổi tự học ở nhà: mọi chặng mở sẵn, hạn nộp `dueAt` (ISO), `sequential` = chặng sau chờ chặng trước đạt. */
+export const createReviewSelfSession = (
+  classId: number,
+  title: string,
+  threshold: number,
+  stages: ReviewStageDef[],
+  dueAt: string,
+  sequential: boolean,
+) =>
+  rpc<number>("review_create_self", {
+    p_class: classId,
+    p_title: title,
+    p_threshold: threshold,
+    p_stages: stages,
+    p_due_at: dueAt,
+    p_sequential: sequential,
+  });
+
+export interface ReviewMeta {
+  mode: ReviewMode;
+  due_at: string | null;
+  sequential: boolean;
+}
+
+/** Chế độ của một buổi ôn (máy chủ chưa chạy migration tự học thì lỗi → coi là buổi trên lớp). */
+export const getReviewMeta = (sessionId: number) =>
+  rpc<ReviewMeta>("review_session_meta", { p_session: sessionId }).catch(
+    (): ReviewMeta => ({ mode: "live", due_at: null, sequential: false }),
+  );
 
 export const listReviewSessions = (classId: number | null = null) =>
   rpc<ReviewListItem[]>("review_list", { p_class: classId });
@@ -137,6 +187,18 @@ export const getWrongStudents = (sessionId: number, stage: number | null = null)
   rpc<WrongStudentRow[]>("review_wrong_students", { p_session: sessionId, p_stage: stage });
 
 /** Buổi ôn đang diễn ra của lớp em (null nếu không có). */
+export interface RosterStudent {
+  id: string;
+  name: string;
+  me: boolean;
+  /** Mỗi chặng một trạng thái: done = đã nộp · doing = đang làm · none = chưa làm. Không có điểm. */
+  st: ("done" | "doing" | "none")[];
+}
+
+/** Bảng tên bạn đã nộp / chưa nộp từng chặng của buổi tự học (em trong lớp hoặc nhân sự). */
+export const getReviewRoster = (sessionId: number) =>
+  rpc<{ now: string; students: RosterStudent[] } | null>("review_roster", { p_session: sessionId });
+
 export const getMyReviewState = (sessionId: number | null = null) =>
   rpc<MyReviewState | null>("review_my_state", { p_session: sessionId });
 
@@ -165,6 +227,7 @@ export function reviewErrorText(e: unknown): string {
   if (/forbidden/.test(m)) return "Tài khoản này không có quyền với buổi ôn.";
   if (/not_found/.test(m)) return "Không tìm thấy buổi ôn (có thể đã bị xoá).";
   if (/exam_not_found/.test(m)) return "Có đề trong danh sách không còn tồn tại.";
+  if (/due_invalid/.test(m)) return "Hạn nộp phải là một thời điểm trong tương lai.";
   if (/stage_invalid/.test(m)) return "Chặng này không có trong buổi ôn.";
   if (/stages_invalid/.test(m)) return "Buổi ôn cần từ 1 đến 12 chặng.";
   if (/no_dang/.test(m)) return "Bài này chưa có câu nào được gán dạng nên chưa dựng được đề ôn dạng.";

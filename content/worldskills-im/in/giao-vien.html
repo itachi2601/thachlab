@@ -1,0 +1,2987 @@
+<!doctype html><html lang="vi"><meta charset="utf-8"><title>WorldSkills 2026 Industrial Mechanics — Tài liệu giáo viên</title><style>
+@page { size: A4; margin: 18mm 15mm 20mm; @bottom-center { content: "WorldSkills 2026 · Industrial Mechanics — Tài liệu giáo viên · trang " counter(page) " / " counter(pages); font: 8.5pt system-ui, sans-serif; color: #444; } }
+body { font: 10.5pt/1.5 "Be Vietnam Pro", system-ui, sans-serif; color: #000; margin: 0; }
+h1 { font-size: 16pt; border-bottom: 2px solid #000; padding-bottom: 4px; margin: 0 0 10px; break-before: page; }
+.cover + section h1, section:first-of-type h1 { break-before: auto; }
+h2 { font-size: 12.5pt; margin: 16px 0 6px; break-after: avoid; } h3 { font-size: 11pt; margin: 12px 0 4px; break-after: avoid; }
+table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 9.5pt; } th, td { border: 1px solid #000; padding: 3px 6px; vertical-align: top; text-align: left; } th { background: #e5e5e5; }
+tr { break-inside: avoid; }
+.tl-bi { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 6px 0; break-inside: avoid; } .tl-bi--vi { grid-template-columns: 1fr; }
+.tl-bi-en { border-left: 2px solid #000; padding-left: 8px; font-style: normal; } .tl-bi-vi { border-left: 2px dashed #000; padding-left: 8px; }
+.tl-bi-tag { display: block; font-size: 7.5pt; font-weight: 700; letter-spacing: .06em; }
+li.tl-bi-li { list-style: none; margin-left: -1.2em; } .tl-box { border: 1px solid #000; padding: 6px 10px; margin: 8px 0; break-inside: avoid; }
+.cover { text-align: center; padding-top: 70mm; } .cover h1 { border: 0; font-size: 24pt; break-before: auto; } .cover p { font-size: 12pt; } .toc { margin: 24px auto; display: inline-block; text-align: left; }
+img { max-width: 100%; } a { color: #000; text-decoration: none; }</style>
+<div class="cover"><h1>WorldSkills Shanghai 2026<br>Skill 01 — Industrial Mechanics</h1><p><strong>Tài liệu tham khảo cho giáo viên huấn luyện</strong><br>Song ngữ Anh – Việt · EN bên trái, VI bên phải</p><ol class="toc"><li>1. Tổng quan đề thi — Overview of the test project</li><li>2. Mô tả nghề và chuẩn WSOS — Technical description and WSOS</li><li>3. Yêu cầu thiết kế đề thi — Test project design requirements</li><li>4. Cách chấm, trừ điểm và thẩm định đề — Marking, penalties, validation</li><li>5. Trang bị bảo hộ và luật riêng của nghề — PPE and skill-specific rules</li><li>6. Máy phay M5 và danh mục file gốc — M5 mill and source files</li><li>7. Ghi chú lỗi trong bản gốc — Errata in the source documents</li><li>8. Thuật ngữ Anh – Việt — Glossary</li></ol>
+<p style="font-size:9pt">Bản dịch phục vụ huấn luyện, không thay thế bản gốc. Lỗi bản gốc được dịch nguyên và ghi chú ở mục 7. Thang điểm đầy đủ 198 mục xem bài "Thang điểm đầy đủ A–G" trên web.</p></div><section><h1>1. Tổng quan đề thi — Overview of the test project</h1><p>Nguồn: <code>WSC2026_TP01_skill_sets_pre_en</code> (bản pre-release, 24.06.2026, v1.1), phần Criteria của thang điểm (Marking Scheme), và trang &quot;Instructions to the Competitor&quot; của các đề thật Module A1, A2, B, C, D (30.07.26, v1.0).</p>
+<div class="tl-box">
+<p><strong>Dùng để huấn luyện</strong></p>
+<ul>
+<li><strong>Điểm tối đa toàn bài: 100.</strong> Gia công (C) 26.0 + Lắp ráp cơ khí (D) 22.1 = <strong>48.1 điểm</strong>, gần nửa bài. Tập tiện–phay và lắp ráp trước, kỹ hơn mọi phần khác.</li>
+<li><strong>Điểm dễ lấy:</strong> mọi điểm &quot;ký xác nhận&quot; (Expert sign off) trong Module A — chỉ cần gọi chuyên gia đúng lúc; áp suất 8.0 bar (0.5 điểm, F1); nộp chi tiết đúng giờ; tự ghi báo cáo đủ 5 mục ở A9 (1.5 điểm).</li>
+<li><strong>Bẫy mất điểm (áp dụng mọi module):</strong><ol>
+<li>Vi phạm an toàn: <strong>−0.5 điểm mỗi lần</strong>, lần thứ 3 <strong>bị dừng thi</strong>, chấm trên phần đã làm.</li>
+<li>Bỏ sót một điểm ký xác nhận (sign off point) → <strong>mất toàn bộ điểm của mục đó</strong>.</li>
+<li>Không nộp chi tiết <strong>ngay khi hết giờ</strong> (Module B, C, D) → <strong>0 điểm</strong> mục đó.</li>
+<li>Module D: chạy thử chức năng được <strong>1 lượt miễn phí</strong>, mỗi lượt thêm <strong>−2 điểm</strong>, tối đa <strong>3 lượt</strong>; sửa lỗi khi vận hành cũng vậy.</li>
+<li>Module D: <strong>không được bắt đầu lắp khí nén</strong> trước khi chuyên gia chấm xong phần cơ khí.</li>
+</ol>
+</li>
+</ul>
+</div>
+<h2 id="1-thoi-gian-va-4-module-modules-overview">1. Thời gian và 4 module (Modules Overview)</h2>
+<p>Tổng thời gian thi (Total Competition Time): <strong>20 giờ</strong>.</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Module (đề thật)</th>
+<th>Module (pre-release)</th>
+<th>Giờ</th>
+<th>Nội dung EN</th>
+<th>Nội dung VI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>A1</strong> + <strong>A2</strong></td>
+<td>Module 1</td>
+<td>4 h</td>
+<td>Predictive Maintenance (3.5 h) and Pneumatics Troubleshooting (0.5 h)</td>
+<td>Bảo trì dự đoán (3.5 h) và sửa lỗi khí nén (0.5 h, trên FluidSIM)</td>
+</tr>
+<tr>
+<td><strong>B1</strong> + <strong>B2</strong></td>
+<td>Module 2</td>
+<td>4 h</td>
+<td>Fabrication, Welding (3 h) and Precision Layout (1 h)</td>
+<td>Chế tạo, hàn (3 h) và lấy dấu chính xác (1 h)</td>
+</tr>
+<tr>
+<td><strong>C1</strong> + <strong>C2</strong></td>
+<td>Module 3</td>
+<td>5 h</td>
+<td>Machining (Turning 2.5 h – Milling 2.5 h)</td>
+<td>Gia công: tiện (2.5 h) và phay (2.5 h)</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>Module 4</td>
+<td>7 h</td>
+<td>Mechanical and Pneumatic Systems Assembly</td>
+<td>Lắp ráp hệ cơ khí và khí nén, vận hành</td>
+</tr>
+</tbody></table></div>
+<p>Ghi chú chung của đề (General notes):</p>
+<ul>
+<li>Sản phẩm Module 2 và 3 được <strong>dùng tiếp trong Module 4</strong> (Modules 2 and 3 are incorporated into Module 4 build and assembly). Làm hỏng chi tiết ở B/C thì D cũng khó chạy.</li>
+<li>Bản vẽ chi tiết và bản vẽ lắp cấp theo <strong>cả hai phép chiếu góc thứ nhất và góc thứ ba</strong> (first-angle and third-angle projections) — nội dung giống nhau, chọn bản quen dùng.</li>
+<li>Toàn bộ ghi kích thước <strong>hệ mét</strong> (metric).</li>
+<li>Máy tiện và máy phay đứng có <strong>bộ hiển thị toạ độ số</strong> (Digital Readout, DRO).</li>
+<li>Phải thể hiện <strong>quy trình làm việc an toàn và thực hành tốt</strong> (safe working procedures and best practices) <strong>mọi lúc</strong>.</li>
+</ul>
+<h2 id="2-trong-so-diem-that-marking-scheme-criteria">2. Trọng số điểm thật (Marking Scheme — Criteria)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Tiêu chí (Criterion)</th>
+<th>Tên EN</th>
+<th>Tên VI</th>
+<th>Điểm</th>
+<th>Số mục chấm</th>
+<th>Thuộc module</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>Predictive Maintenance</td>
+<td>Bảo trì dự đoán</td>
+<td><strong>17.5</strong></td>
+<td>47</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>B</td>
+<td>Fabrication, Welding and Precision Layout</td>
+<td>Chế tạo, hàn và lấy dấu chính xác</td>
+<td><strong>14.0</strong></td>
+<td>54</td>
+<td>B1 (B2 lấy dấu chấm ở D1)</td>
+</tr>
+<tr>
+<td>C</td>
+<td>Machining – Turning – Milling</td>
+<td>Gia công tiện – phay</td>
+<td><strong>26.0</strong></td>
+<td>44</td>
+<td>C1 (405), C2 (404), C3 (401)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>Mechanical Assembly</td>
+<td>Lắp ráp cơ khí</td>
+<td><strong>22.1</strong></td>
+<td>28</td>
+<td>D1 (Detail 301), D2 (lắp ráp)</td>
+</tr>
+<tr>
+<td>E</td>
+<td>Pneumatic Assembly</td>
+<td>Lắp ráp khí nén (đi ống)</td>
+<td><strong>10.4</strong></td>
+<td>12</td>
+<td>D</td>
+</tr>
+<tr>
+<td>F</td>
+<td>Final Project Functionality</td>
+<td>Vận hành cuối cùng</td>
+<td><strong>7.5</strong></td>
+<td>6</td>
+<td>D</td>
+</tr>
+<tr>
+<td>G</td>
+<td>Pneumatic Troubleshooting</td>
+<td>Sửa lỗi khí nén (FluidSIM)</td>
+<td><strong>2.5</strong></td>
+<td>7</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>H, I</td>
+<td>—</td>
+<td>(không dùng)</td>
+<td>0</td>
+<td>0</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Tổng</strong></td>
+<td></td>
+<td></td>
+<td><strong>100.0</strong></td>
+<td>198</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p>Chi tiết từng tiêu chí con (Sub Criterion):</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Sub</th>
+<th>Tên EN</th>
+<th>Tên VI</th>
+<th>Điểm</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>Data Collection</td>
+<td>Thu thập dữ liệu (ban đầu)</td>
+<td>1.6</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Flatness Check</td>
+<td>Kiểm tra độ phẳng</td>
+<td>1.2</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>Level Check</td>
+<td>Kiểm tra cân bằng (thuỷ)</td>
+<td>1.3</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>Shaft Alignment (Pre-Alignment)</td>
+<td>Cân chỉnh trục — kiểm tra trước cân chỉnh</td>
+<td>2.75</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>Precision Alignment</td>
+<td>Cân chỉnh chính xác (laser)</td>
+<td>2.95</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>Thermal Growth Measurement</td>
+<td>Đo giãn nở nhiệt</td>
+<td>2.8</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>Balancing</td>
+<td>Cân bằng động</td>
+<td>1.7</td>
+</tr>
+<tr>
+<td>A8</td>
+<td>Data Collection</td>
+<td>Thu thập dữ liệu (cuối)</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>Reporting</td>
+<td>Báo cáo</td>
+<td>1.5</td>
+</tr>
+<tr>
+<td>A10</td>
+<td>Belt Alignment</td>
+<td>Căn đai</td>
+<td>0.9</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>Fabrication and Welding</td>
+<td>Chế tạo và hàn (khung 200)</td>
+<td>14.0</td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Detail 405</td>
+<td>Chi tiết 405 (tiện: trục ren M24)</td>
+<td>9.1</td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Detail 404</td>
+<td>Chi tiết 404 (tiện: đầu giữ chày, nhôm)</td>
+<td>3.5</td>
+</tr>
+<tr>
+<td>C3</td>
+<td>Detail 401</td>
+<td>Chi tiết 401 (phay: khối cối)</td>
+<td>13.4</td>
+</tr>
+<tr>
+<td>D1</td>
+<td>Detail 301</td>
+<td>Chi tiết 301 (tấm lưng: lấy dấu, khoan, ta-rô, siết)</td>
+<td>7.65</td>
+</tr>
+<tr>
+<td>D2</td>
+<td>Mechanical Assembly</td>
+<td>Lắp ráp cơ khí</td>
+<td>14.45</td>
+</tr>
+<tr>
+<td>E1</td>
+<td>Pneumatic Assembly</td>
+<td>Lắp ráp khí nén</td>
+<td>10.4</td>
+</tr>
+<tr>
+<td>F1</td>
+<td>Final Project Functionality</td>
+<td>Vận hành cuối cùng</td>
+<td>7.5</td>
+</tr>
+<tr>
+<td>G1</td>
+<td>Pneumatic Troubleshooting</td>
+<td>Sửa lỗi khí nén</td>
+<td>2.5</td>
+</tr>
+</tbody></table></div>
+<p>Hai kiểu mục chấm (Aspect):</p>
+<ul>
+<li><strong>M — Measurement (chấm đo):</strong> đạt/không đạt theo số đo hoặc có/không; đa số mục. Nhiều mục kiểu &quot;nhập số lượng đúng&quot; (Enter the number…), điểm chia đều theo số lượng.</li>
+<li><strong>J — Judgement (chấm đánh giá):</strong> chỉ có ở B1 (chất lượng mối hàn), 15 mục × 0.2 điểm, thang 0–3: 0 = phải làm lại, 1 = chuẩn công nghiệp (trung bình), 2 = tốt, 3 = xuất sắc.</li>
+</ul>
+<h2 id="3-luat-tru-diem-va-diem-ky-xac-nhan-chung-cho-moi-de-that">3. Luật trừ điểm và điểm ký xác nhận (chung cho mọi đề thật)</h2>
+<p>Nguyên văn (có ở đầu đề A1, B, C, D; đề A2 chỉ có đoạn &quot;REMEMBER&quot;):</p>
+<div class="tl-box">
+<p>READ THE ENTIRE DOCUMENT BEFORE PROCEDING. ALL PROPER SAFETY PROCEDURES MUST BE DEMONSTRATED AS YOU WOULD ON THE JOB SITE. YOU ARE BEING OBSERVED AT ALL TIMES. IF YOU HAVE TO BE ADVISED OF SAFETY INFRACTIONS DURING THIS MODULE, 0.5 MARKS WILL BE DEDUCTED FOR EACH INFRACTION. Experts will not intervene unless there is a safety concern. On the 3rd infraction, the Competitor will be stopped, evaluation will be based on the work already completed. REMEMBER: Experts MUST sign off at designated module points in the documentation. If a sign off point is missed all marks for that section of the project will be deducted from the overall project total.</p>
+</div>
+<p>Dịch:</p>
+<div class="tl-box">
+<p>ĐỌC HẾT TÀI LIỆU TRƯỚC KHI BẮT ĐẦU. PHẢI THỂ HIỆN MỌI QUY TRÌNH AN TOÀN ĐÚNG NHƯ KHI LÀM VIỆC THẬT TẠI HIỆN TRƯỜNG. BẠN BỊ QUAN SÁT MỌI LÚC. NẾU BỊ NHẮC VI PHẠM AN TOÀN TRONG MODULE NÀY, <strong>TRỪ 0.5 ĐIỂM MỖI LẦN VI PHẠM.</strong> Chuyên gia sẽ không can thiệp trừ khi có vấn đề an toàn. <strong>Đến lần vi phạm thứ 3, thí sinh bị dừng thi</strong>, chấm điểm trên phần việc đã hoàn thành. NHỚ: Chuyên gia <strong>PHẢI ký xác nhận</strong> tại các điểm quy định trong tài liệu. <strong>Bỏ sót một điểm ký xác nhận thì toàn bộ điểm của phần đó bị trừ khỏi tổng điểm.</strong></p>
+</div>
+<p>Ý nghĩa khi luyện tập:</p>
+<ul>
+<li>&quot;Vi phạm an toàn&quot; gồm: không đeo kính/giày/găng đúng lúc, tay gần dao đang quay, không khoá khí trước khi sửa ống, đứng sai vị trí khi máy chạy, để phoi/dầu trên sàn, dùng khí nén thổi người… Hãy tập phản xạ an toàn như một thói quen, vì chuyên gia <strong>không nhắc trước</strong>, chỉ ghi trừ điểm.</li>
+<li>Ở mỗi phiếu nhiệm vụ đều có dòng <code>Expert sign off: ____</code> hoặc <code>Expert Initials: ____</code>. <strong>Thí sinh phải chủ động gọi chuyên gia đến ký</strong>. Không ký = mất điểm cả phần.</li>
+</ul>
+<h2 id="4-diem-ky-xac-nhan-va-thu-tu-nop-bai-theo-de-that">4. Điểm ký xác nhận và thứ tự nộp bài (theo đề thật)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Module</th>
+<th>Việc</th>
+<th>Nộp / ký khi nào</th>
+<th>Hậu quả nếu bỏ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>Mỗi Task 1–9</td>
+<td><code>Expert sign off</code> sau mỗi task (có cả &quot;Calculation&quot; ở Task 3)</td>
+<td>Mất điểm mục đó</td>
+</tr>
+<tr>
+<td>A1</td>
+<td>Các mục thang điểm có &quot;Expert Sign Off&quot;: xác nhận tốc độ, số đo tình trạng ban đầu, soft foot trước/sau, báo cáo kết quả cân chỉnh, báo cáo số đo cuối, cân bằng cuối, báo cáo cuối, căn đai đã sửa</td>
+<td>Gọi ký ngay khi làm xong bước đó</td>
+<td>0 điểm mục đó</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>Xác định 3 lỗi → ký + ghi giờ; sửa 3 lỗi → ký + ghi giờ</td>
+<td>Hai lần ký</td>
+<td>Mất điểm G1, mất xếp hạng thưởng</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>Cụm hàn 201–207</td>
+<td><strong>Ngay khi hết 3 giờ</strong> trình chuyên gia; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>B2</td>
+<td>Detail 301 (lấy dấu)</td>
+<td><strong>Ngay khi hoàn thành</strong> (trong 1 giờ); <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>C1</td>
+<td>Detail 404 + 405 (tiện)</td>
+<td><strong>Ngay khi xong hoặc hết 2.5 giờ</strong>; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>C2</td>
+<td>Detail 401 (phay)</td>
+<td><strong>Ngay khi xong hoặc hết 2.5 giờ</strong>; <code>Expert Initials</code></td>
+<td><strong>0 điểm</strong></td>
+</tr>
+<tr>
+<td>D-1</td>
+<td>Detail 301 khoan/ta-rô hoàn thiện</td>
+<td>Nộp ngay khi xong; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-2</td>
+<td>Lắp ráp cơ khí xong</td>
+<td>Báo chuyên gia; <strong>chưa được lắp khí nén</strong> cho đến khi chấm xong; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-3</td>
+<td>Lắp khí nén xong, đặt 8.0 bar, chạy thử chuỗi</td>
+<td>Báo chuyên gia; 1 lượt thử miễn phí, −2/lượt thêm, tối đa 3; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+<tr>
+<td>D-4</td>
+<td>Nghiệm thu: ra 1 sản phẩm, rồi thêm 2</td>
+<td>Báo chuyên gia ngay khi xong; sửa lỗi 1 lượt miễn phí, −2/lượt thêm, tối đa 3; <code>Expert Initials</code></td>
+<td>0 điểm mục</td>
+</tr>
+</tbody></table></div>
+<p>Thứ tự thi dự kiến (theo logic &quot;B, C làm ra chi tiết cho D&quot;): A1/A2 → B → C → D, hoặc B → C → A → D tuỳ ban tổ chức xếp lịch. Trong Module D, thí sinh <strong>được làm theo thứ tự tuỳ chọn</strong> (You may perform the work in any order you prefer), nhưng ba mốc ký D-2 → D-3 → D-4 phải theo đúng trình tự.</p>
+<h2 id="5-noi-dung-pre-release-tung-module-skill-sets-dich-kem-ghi-c">5. Nội dung pre-release từng module (skill sets) — dịch kèm ghi chú thay thế</h2>
+<h3>Module 1 — Predictive Maintenance (Bảo trì dự đoán)</h3>
+<p>Thực hiện các hoạt động bảo trì dự đoán bằng dụng cụ chẩn đoán và thiết bị giám sát được cấp:</p>
+<ul>
+<li>Kiểm tra thiết bị tìm dấu hiệu mòn và/hoặc hư hỏng (Inspect equipment for signs of wear and/or malfunction)</li>
+<li>Dùng dụng cụ chẩn đoán đo bất thường trong thông số vận hành</li>
+<li>Ghi và diễn giải dữ liệu (Record and interpret data)</li>
+<li>Áp dụng biện pháp khắc phục khi cần</li>
+</ul>
+<p>[Ghi chú dịch: đề thật A1 nêu rõ kịch bản quạt thông gió tháp Oriental Pearl, thiết bị AT-400 Ultimate, WBT-400, Machine Defender, Run-Out Probe, Stroboscope, OL2R, PAT; quạt 10 kg, 3600 rpm — xem file 01. Phần 0.5 giờ &quot;Pneumatics Troubleshooting&quot; thành Module A2 trên <strong>phần mềm FluidSIM</strong>, không phải mạch vật lý — xem file 02.]</p>
+<h3>Module 2 — Fabrication, Welding and Precision Layout (Chế tạo, hàn và lấy dấu chính xác)</h3>
+<ul>
+<li>Vật liệu: thép hộp vuông hoặc chữ nhật thép cacbon thấp (mild steel square or rectangular tubing), thành dày 2 mm – 4 mm. [Ghi chú dịch: đề thật dùng hộp vuông 50 × 50 × 2 (SHS), xem file 06.]</li>
+<li>Dây hàn: Merit Pro6 Premium MIG Wire, 1.0 mm</li>
+<li>Khí bảo vệ: 80% Argon / 20% CO₂</li>
+<li>Tiêu chuẩn hàn: ISO 2553:2019, Hệ A (System A)</li>
+</ul>
+<p>Lấy dấu chính xác và dụng cụ cầm tay (Precision Layout and Hand Tools): thước ê-ke tổ hợp (combination squares), thước cuộn (measuring tape), thước lá 300 mm (steel rule), tay quay ta-rô (tap handle), mũi vạch (scribing tools), đột tâm (centre punches), thiết bị khoan, giũa (files), búa đầu tròn (ball-peen hammers), máy khoan điện cầm tay (portable electric drills).</p>
+<p>Yêu cầu dung sai (pre-release): ±1.0 mm với chiều dài ≤ 150 mm; ±1.5 mm với 150–300 mm; ±2 mm với &gt; 300 mm.
+[Ghi chú dịch: thang điểm thật B1 dùng ±2 mm cho kích thước bao 500/400/675, ±1 mm cho vị trí 130 mm, ±2° cho góc vuông, ±2 mm hiệu đường chéo; D1 dùng ±0.5 mm cho vị trí lỗ trên Detail 301. Lấy số của thang điểm thật làm chuẩn luyện tập.]</p>
+<p>Nhiệm vụ (Tasks): lấy dấu và vạch dấu chính xác các chi tiết; khoan, giũa và chuẩn bị chi tiết đúng kích thước; chế tạo và hàn ra chi tiết chính xác cho Module 4.</p>
+<h3>Module 3 — Machining (Gia công)</h3>
+<p><strong>Phần 1: Tiện (Turning – Centre Lathe – 4 Jaw Independent Chuck, máy tiện vạn năng, mâm cặp 4 chấu độc lập).</strong> Các nguyên công: tiện mặt đầu, tiện trụ, tiện côn, tiện vai (facing, parallel turning, taper turning, shoulder turning); tiện rãnh thoát dao, vát mép, tiện lỗ (undercutting, chamfering, boring); tiện ren ngoài (external thread cutting); khoan và ta-rô; làm ra chi tiết chính xác cho Module 4. Vật liệu: thép cacbon thấp cán nguội 1020 (Cold Rolled Mild Steel 1020); nhôm 6160 T6 [Ghi chú dịch: đúng là 6061-T6, link kèm theo trong bản gốc cũng dẫn tới 6061]. Yêu cầu dung sai (pre-release): kích thước ±0.025 mm.</p>
+<p><strong>Phần 2: Phay (Milling – Vertical Milling Machine, máy phay đứng).</strong> Các nguyên công: rãnh then, rãnh, hốc (keyways, slots, pockets); khoan, ta-rô, doa (drilling, tapping, reaming); khoét bậc, khoét côn (counterboring, countersinking); làm ra chi tiết chính xác cho Module 4. Vật liệu: thép 1020; nhôm 6160 T6 [Ghi chú dịch: 6061-T6]; đồng thau C36000 (Brass C36000); Acetyl (Delrin) [Ghi chú dịch: đúng là Acetal/POM]. Yêu cầu dung sai (pre-release): kích thước ±0.025 mm, vị trí ±0.01 mm.</p>
+<p>[Ghi chú dịch — <strong>đã bị thang điểm thật thay thế</strong>: thực tế chấm theo lắp ghép ISO ghi trên bản vẽ: Ø85 f8 (84.910–84.964), Ø58 (57.97–58.00), Ø20 H8 (20.000–20.033), Ø12 H8 (12.000–12.027), ren M24×3 6g (đường kính trung bình 21.803–22.003), rãnh 25.1–25.2 và 25.15–25.35; các kích thước còn lại ±0.15 hoặc ±0.3 (dung sai chung ISO 2768-1 fK); <strong>chỉ</strong> khoảng tâm lỗ 75 là ±0.01 và tâm lỗ 20 là ±0.02. Xem file 04 và CSV 08. Dung sai ±0.025 &quot;cho mọi kích thước&quot; của pre-release không còn hiệu lực.]</p>
+<h3>Module 4 — Mechanical and Pneumatic Systems Assembly (Lắp ráp hệ cơ khí và khí nén)</h3>
+<p>Các việc sau có thể làm theo thứ tự bất kỳ:</p>
+<ul>
+<li>Lắp một hệ cơ khí và hệ truyền động khí nén (fluid power system)</li>
+<li>Dùng linh kiện khí nén được cấp, gồm phần tử đầu vào, phần tử xử lý, phần tử điều khiển cuối và cơ cấu chấp hành (input elements, processing elements, final control elements, actuators) cho mạch tầng hoặc mạch tuần tự nhiều xi lanh (multi-cylinder cascade or sequential circuit)</li>
+<li>Thiết kế mạch được lập bằng phần mềm thiết kế chuẩn công nghiệp và ghi nhãn theo chuẩn an toàn và vận hành [Ghi chú dịch: đề thật cấp sẵn sơ đồ khí nén Festo rev 13, thí sinh <strong>lắp theo sơ đồ</strong>, không tự thiết kế — xem file 07]</li>
+<li>Lấy dấu chính xác và lắp các chi tiết gia công sẵn, chi tiết chế tạo và chi tiết do thí sinh làm ra (pre-machined, fabricated, and competitor-produced parts)</li>
+<li>Sản phẩm phải đúng bản vẽ và bản thiết kế được cấp (blueprints and drawings)</li>
+<li>Tiêu chuẩn: ISO 1219-1:2012, ISO 1219-2:2012(E/F), EN81346-2:2019, ISO 4414, NFPA 79.</li>
+</ul>
+<p>[Ghi chú dịch: đề thật D chia 4 bước có ký xác nhận (lấy dấu 301 → lắp cơ khí → lắp khí nén + chạy thử → nghiệm thu ra 3 sản phẩm), áp suất làm việc 8.0 bar (800 kPa), điều khiển hai tay — xem file 05.]</p>
+<h2 id="6-nhung-diem-pre-release-da-bi-de-that-thay-the-tom-tat">6. Những điểm pre-release đã bị đề thật thay thế (tóm tắt)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>Pre-release nói</th>
+<th>Đề thật / thang điểm thật</th>
+<th>Xem</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Module 1–4</td>
+<td>Đổi tên thành Module A1, A2, B1/B2, C1/C2, D; tiêu chí chấm A–G</td>
+<td>file này, mục 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Dung sai gia công ±0.025 mm, vị trí ±0.01 mm</td>
+<td>Lắp ghép ISO (f8, H8, 6g) + ±0.15/±0.3; chỉ tâm lỗ 75 ±0.01, tâm 20 ±0.02</td>
+<td><code>loi-ban-goc.md</code> #3, file 04</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Dung sai lấy dấu ±1.0/±1.5/±2 theo chiều dài</td>
+<td>B1: ±2 mm kích thước bao, ±1 mm vị trí 130, ±2°; D1: ±0.5 mm vị trí lỗ</td>
+<td>file 03, 05</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thép hộp 2–4 mm</td>
+<td>50 × 50 × 2 SHS, chiều dài cắt sẵn 201–207</td>
+<td>file 06</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&quot;Pneumatics Troubleshooting&quot; 0.5 h</td>
+<td>Module A2 sửa 3 lỗi trên <strong>FluidSIM</strong>, tính giờ, xếp hạng thưởng</td>
+<td>file 02</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&quot;Circuit design will be created using design software&quot;</td>
+<td>Sơ đồ cấp sẵn (Festo, rev 13), thí sinh lắp ống theo sơ đồ</td>
+<td>file 07</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Nhôm &quot;6160 T6&quot;, &quot;Acetyl&quot;</td>
+<td>6061-T6, Acetal</td>
+<td><code>loi-ban-goc.md</code> #1, #2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Chưa có trọng số điểm</td>
+<td>A 17.5 / B 14.0 / C 26.0 / D 22.1 / E 10.4 / F 7.5 / G 2.5</td>
+<td>mục 2</td>
+</tr>
+</tbody></table></div>
+<h2 id="ghi-chu-ban-goc">Ghi chú bản gốc</h2>
+<ul>
+<li><code>loi-ban-goc.md</code> #1, #2: &quot;Aluminum 6160 T6&quot;, &quot;Acetyl (Delrin)&quot; — đã chú thích tại chỗ.</li>
+<li><code>loi-ban-goc.md</code> #3: dung sai pre-release ±0.025/±0.01 đã bị thang điểm thật thay thế — đã chú thích.</li>
+<li>Pre-release viết giờ bằng dấu phẩy thập phân (&quot;3,5 hours&quot;, &quot;0,5 hour&quot;); bản dịch viết 3.5 h, 0.5 h theo quy ước dấu chấm.</li>
+<li>Đề thật Module C viết &quot;.5 MARKS&quot; (thiếu số 0) thay cho &quot;0.5 MARKS&quot; — cùng nghĩa.</li>
+<li>Đề thật dùng &quot;PROCEDING&quot; (đúng: PROCEEDING) ở mọi module — lỗi chính tả, bỏ qua.</li>
+</ul></section><section><h1>2. Mô tả nghề và chuẩn WSOS — Technical description and WSOS</h1><div class="tl-box">
+<p>Nguồn: WSC2026_TD01_en, tr. 3–12 (cập nhật 05.03.2026). Bậc 2 — dành cho giáo viên huấn luyện. Thuật ngữ theo <code>00-dung-chung/thuat-ngu.md</code>.</p>
+</div>
+<p><strong>Dùng để huấn luyện.</strong> Mục 2.2 là <em>chuẩn năng lực</em> để lập giáo án: mỗi gạch đầu dòng &quot;needs to know and understand&quot; (cần biết và hiểu) và &quot;shall be able to&quot; (phải có khả năng) là một đơn vị năng lực. Thi thật không có bài kiểm tra lý thuyết riêng — kiến thức được đánh giá <strong>qua thao tác thực hành</strong> (mục 2.1). Trọng số quan trọng nhất: <strong>Installations 35% theo TD (thang điểm thật: 40)</strong>, rồi Testing/commissioning và Maintenance/fault finding (mỗi mục 15).</p>
+<hr>
+<h2 id="1-gioi-thieu-introduction">1. Giới thiệu (Introduction)</h2>
+<h3>1.1 Tên và mô tả nghề (Name and description of the skill competition)</h3>
+<p><strong>1.1.1 Tên nghề</strong> — Industrial Mechanics (Cơ khí công nghiệp).</p>
+<p><strong>1.1.2 Mô tả vai trò / nghề nghiệp liên quan</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Industrial mechanics design and plan, install and commission, maintain, repair, and decommission, industrial plant. They work in a large range of industrial settings and production plants and may either have specialist knowledge about one particular industry or work across several. They may be employed within a large single plant, installing and maintaining production equipment, or work for subcontractors across a number of industrial settings. They normally work both indoors and outdoors, on small and large projects.</td>
+<td>Thợ cơ khí công nghiệp thiết kế và lập kế hoạch, lắp đặt và đưa vào vận hành, bảo trì, sửa chữa và tháo dỡ (decommission) nhà máy công nghiệp. Họ làm việc trong nhiều môi trường công nghiệp và nhà máy sản xuất khác nhau; có thể chuyên sâu một ngành hoặc làm nhiều ngành. Họ có thể làm trong một nhà máy lớn — lắp đặt và bảo trì thiết bị sản xuất — hoặc làm cho nhà thầu phụ ở nhiều cơ sở công nghiệp. Thường làm việc cả trong nhà lẫn ngoài trời, ở dự án nhỏ lẫn lớn.</td>
+</tr>
+<tr>
+<td>Industrial mechanics may manufacture parts and equipment, improve, modify, maintain, troubleshoot, and repair industrial machinery, mechanical equipment, and, increasingly, automated and robotics systems. They work in teams, or alone, according to each project and circumstance. They are likely to have ongoing contact with other trades, professions, and stakeholders such as customers and employers. The working environment may well be hazardous; therefore, industrial mechanics need proactively to promote best practice, with rigorous adherence to health and safety legislation, as a minimum.</td>
+<td>Thợ cơ khí công nghiệp có thể chế tạo chi tiết và thiết bị; cải tiến, sửa đổi, bảo trì, chẩn đoán lỗi và sửa chữa máy công nghiệp, thiết bị cơ khí và ngày càng nhiều là hệ thống tự động hoá và robot. Họ làm việc theo nhóm hoặc một mình tuỳ dự án và hoàn cảnh. Thường xuyên tiếp xúc với các nghề khác và các bên liên quan như khách hàng, chủ sử dụng lao động. Môi trường làm việc có thể nguy hiểm, nên họ phải chủ động thúc đẩy thực hành tốt (best practice), tối thiểu là tuân thủ nghiêm luật an toàn – sức khoẻ lao động.</td>
+</tr>
+<tr>
+<td>Industrial mechanics must take on a high level of personal responsibility and autonomy. The role is wide-ranging, and every step is important. They must design, plan and provide a safe mechanical installation and maintenance service, in accordance with relevant standards; diagnose and correct malfunctions; and commission stand-alone industrial mechanical and automated systems.</td>
+<td>Phải đảm nhận mức độ tự chịu trách nhiệm và tự chủ cao. Vai trò rộng và bước nào cũng quan trọng. Phải thiết kế, lập kế hoạch và cung cấp dịch vụ lắp đặt, bảo trì cơ khí an toàn theo tiêu chuẩn liên quan; chẩn đoán và khắc phục sự cố; và nghiệm thu đưa vào vận hành các hệ thống cơ khí công nghiệp và hệ thống tự động độc lập.</td>
+</tr>
+<tr>
+<td>Concentration, precision, accuracy, and attention to detail are all essential because mistakes are largely irreversible, costly, and potentially life threatening.</td>
+<td>Tập trung, chính xác, tỉ mỉ đều thiết yếu vì sai sót phần lớn không thể đảo ngược, tốn kém và có thể nguy hiểm đến tính mạng.</td>
+</tr>
+<tr>
+<td>Industrial mechanics must recognize the implications, both financially and for businesses&#39; reputations, of delays in production as a result of reliability issues on production lines. They therefore need to work logically and flexibly to find solutions that meet time constraints. They also need to provide Expert technical advice and guidance and provide innovative and cost-effective solutions to production issues. Therefore, in addition to their specialist and technical expertise, the industrial mechanic must have strong work organization, communication and interpersonal skills, and be self-managing. With the accelerating pace of industrial change and growing environmental concerns, industrial mechanics need to maintain a high level of awareness and a commitment to ongoing professional development.</td>
+<td>Phải nhận thức hậu quả tài chính và uy tín doanh nghiệp khi sản xuất bị chậm vì sự cố độ tin cậy trên dây chuyền. Do đó cần làm việc logic, linh hoạt để tìm giải pháp đáp ứng thời hạn; đồng thời tư vấn kỹ thuật chuyên môn và đưa ra giải pháp sáng tạo, hiệu quả chi phí cho các vấn đề sản xuất. Vì vậy, ngoài chuyên môn kỹ thuật, thợ cơ khí công nghiệp phải có kỹ năng tổ chức công việc, giao tiếp, quan hệ liên cá nhân tốt và biết tự quản lý. Trước nhịp thay đổi công nghiệp ngày càng nhanh và mối quan tâm môi trường ngày càng lớn, họ cần duy trì nhận thức cao và cam kết phát triển nghề nghiệp liên tục.</td>
+</tr>
+<tr>
+<td>This is critical as artificial intelligence (AI), Industry 4.0 and the Internet of Things (IOT) continue to reshape the industrial landscape they work in, transforming maintenance practices, predictive diagnostics, and automation. Embracing these technologies will be essential for trades professionals to remain relevant, adaptiable, and effective in increasingly data-driven and intelligent work environments.</td>
+<td>Điều này then chốt vì trí tuệ nhân tạo (AI), Công nghiệp 4.0 và Internet vạn vật (IoT) đang tiếp tục định hình lại môi trường công nghiệp, làm thay đổi thực hành bảo trì, chẩn đoán dự đoán và tự động hoá. Tiếp nhận các công nghệ này là thiết yếu để người làm nghề giữ được tính phù hợp, khả năng thích ứng [Ghi chú dịch: bản gốc viết &quot;adaptiable&quot;] và hiệu quả trong môi trường làm việc ngày càng dựa trên dữ liệu và thông minh.</td>
+</tr>
+</tbody></table></div>
+<p><strong>1.1.3 Số thí sinh mỗi đội</strong> — Industrial Mechanics là nghề thi <strong>đơn</strong> (single Competitor): 1 thí sinh.</p>
+<p><strong>1.1.4 Giới hạn tuổi</strong> — Thí sinh <strong>không quá 22 tuổi</strong> trong năm diễn ra kỳ thi (not older than 22 years in the year of the Competition).</p>
+<h3>1.2 Ý nghĩa của tài liệu (The relevance and significance of this document)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>This document contains information about the standards required to compete in this skill competition, and the assessment principles, methods, and procedures that govern the competition.</td>
+<td>Tài liệu này chứa thông tin về các chuẩn cần có để thi nghề này, cùng nguyên tắc, phương pháp và quy trình đánh giá chi phối kỳ thi.</td>
+</tr>
+<tr>
+<td>Every Expert and Competitor must know and understand this Technical Description.</td>
+<td>Mọi Expert và Competitor phải biết và hiểu Mô tả kỹ thuật này.</td>
+</tr>
+<tr>
+<td>In the event of any conflict within the different languages of the Technical Descriptions, the English version takes precedence.</td>
+<td>Nếu các bản ngôn ngữ của Mô tả kỹ thuật mâu thuẫn nhau, <strong>bản tiếng Anh được ưu tiên</strong>. (Hệ quả: bản dịch này chỉ để học; khi nghi ngờ, theo bản tiếng Anh.)</td>
+</tr>
+</tbody></table></div>
+<h3>1.3 Tài liệu liên quan (Associated documents)</h3>
+<p>TD chỉ chứa thông tin riêng của nghề, nên phải dùng cùng với:</p>
+<ul>
+<li>WSI – Code of Ethics and Conduct (Quy tắc đạo đức và ứng xử)</li>
+<li>WSI – Competition Rules (Luật thi)</li>
+<li>WSI – WorldSkills Occupational Standards framework (Khung chuẩn nghề)</li>
+<li>WSI – WorldSkills Assessment Strategy (Chiến lược đánh giá)</li>
+<li>WSI online resources as indicated in this document (Tài nguyên trực tuyến của WSI như chỉ dẫn trong tài liệu)</li>
+<li>WorldSkills Health, Safety, and Environment Policy and Regulations (Chính sách và quy định về sức khoẻ, an toàn, môi trường)</li>
+<li>WorldSkills Standards and Assessment Guide (skill-specific) (Hướng dẫn chuẩn và đánh giá theo nghề)</li>
+</ul>
+<hr>
+<h2 id="2-chuan-nghe-worldskills-wsos">2. Chuẩn nghề WorldSkills (WSOS)</h2>
+<h3>2.1 Ghi chú chung về WSOS (General notes on the WSOS)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The WSOS specifies the knowledge, understanding, skills, and capabilities that underpin international best practice in technical and vocational performance. These are both specific to an occupational role and also transversal. Together they should reflect a shared global understanding of what the associated work role(s) or occupation(s) represent for industry and business.</td>
+<td>WSOS quy định kiến thức, hiểu biết, kỹ năng và năng lực làm nền cho thực hành tốt quốc tế trong hiệu suất kỹ thuật – nghề. Chúng vừa đặc thù theo vai trò nghề, vừa mang tính xuyên suốt (transversal). Gộp lại, chúng phản ánh cách hiểu chung toàn cầu về vai trò/nghề đó đối với công nghiệp và doanh nghiệp.</td>
+</tr>
+<tr>
+<td>The skill competition is intended to reflect international best practice as described by the WSOS, to the extent that it can. The Standard is therefore a guide to the required training and preparation for the skill competition.</td>
+<td>Kỳ thi nhằm phản ánh thực hành tốt quốc tế theo WSOS trong chừng mực có thể. Vì vậy chuẩn này là <strong>kim chỉ nam cho việc đào tạo và chuẩn bị</strong> thi.</td>
+</tr>
+<tr>
+<td>In the skill competition the assessment of knowledge and understanding will take place through the assessment of performance. There will only be separate tests of knowledge and understanding where there is an overwhelming reason for these.</td>
+<td>Kiến thức và hiểu biết được đánh giá <strong>thông qua đánh giá thao tác thực hiện</strong>. Chỉ có bài kiểm tra kiến thức riêng khi có lý do rất thuyết phục.</td>
+</tr>
+<tr>
+<td>The Standard is divided into distinct sections with headings and reference numbers added.</td>
+<td>Chuẩn được chia thành các section riêng, có tiêu đề và số tham chiếu.</td>
+</tr>
+<tr>
+<td>Each section is assigned a percentage of the total marks to indicate its relative importance within the Standards. This is often referred to as the &quot;weighting&quot;. The sum of all the percentage marks is 100. The weightings determine the distribution of marks within the Marking Scheme.</td>
+<td>Mỗi section được gán một tỷ lệ phần trăm tổng điểm để thể hiện tầm quan trọng tương đối (&quot;trọng số&quot;, weighting). Tổng các phần trăm là 100. Trọng số quyết định cách phân bổ điểm trong Thang điểm.</td>
+</tr>
+<tr>
+<td>Through the Test Project, the Marking Scheme will assess only those skills and capabilities that are set out in the WorldSkills Occupational Standards. They will reflect the Standards as comprehensively as possible within the constraints of the skill competition.</td>
+<td>Thông qua Đề thi, Thang điểm chỉ đánh giá những kỹ năng và năng lực nêu trong WSOS, phản ánh chuẩn đầy đủ nhất có thể trong giới hạn của kỳ thi.</td>
+</tr>
+<tr>
+<td>The Marking Scheme will follow the allocation of marks within the Standards to the extent practically possible. A variation of up to five percent is allowed, if this does not distort the weightings assigned by the Standards.</td>
+<td>Thang điểm bám theo phân bổ điểm trong Chuẩn trong chừng mực thực tế cho phép. <strong>Cho phép lệch tới 5%</strong>, nếu không làm méo trọng số của Chuẩn.</td>
+</tr>
+</tbody></table></div>
+<h3>2.2 Chuẩn nghề WorldSkills (WorldSkills Occupational Standards)</h3>
+<p><strong>Bảng trọng số (Relative importance)</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Section</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+<th>% theo TD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Work organization and management</td>
+<td>Tổ chức và quản lý công việc</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Communication and interpersonal skills</td>
+<td>Giao tiếp và kỹ năng liên cá nhân</td>
+<td>5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Planning and design</td>
+<td>Lập kế hoạch và thiết kế</td>
+<td>10</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Installations</td>
+<td>Lắp đặt</td>
+<td>35</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Problem solving, innovation, creativity</td>
+<td>Giải quyết vấn đề, đổi mới, sáng tạo</td>
+<td>15</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Testing, reporting, and commissioning</td>
+<td>Kiểm tra, báo cáo và nghiệm thu đưa vào vận hành</td>
+<td>15</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Maintenance, fault finding, repair, and decommissioning</td>
+<td>Bảo trì, tìm lỗi, sửa chữa và tháo dỡ</td>
+<td>15</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Total / Tổng</strong></td>
+<td></td>
+<td><strong>100</strong></td>
+</tr>
+</tbody></table></div>
+<div class="tl-box">
+<p><strong>Chú thích quan trọng (thang điểm thật 2026).</strong> Sheet WSOS trong thang điểm thật (marking scheme) dùng <strong>Installations = 40</strong> và <strong>Problem solving, innovation and creativity = 10</strong>, các section còn lại giữ nguyên (5 / 5 / 10 / 15 / 15), tổng vẫn 100. Lệch 5 điểm so với TD (35 và 15) nằm trong mức cho phép &quot;≤ 5%&quot; của TD mục 2.1. Khi lập giáo án, <strong>dùng trọng số thật 40/10</strong> để phân bổ thời gian luyện. Xem <code>00-dung-chung/loi-ban-goc.md</code> #7.</p>
+</div>
+<p>Cách đọc các bảng dưới: cột trái là nguyên văn, cột phải là bản dịch. &quot;Needs to know and understand&quot; = <strong>cần biết và hiểu</strong> (nền tảng kiến thức); &quot;shall be able to&quot; = <strong>phải có khả năng</strong> (năng lực thực hiện).</p>
+<hr>
+<h5>Section 1 — Work organization and management / Tổ chức và quản lý công việc (5%)</h5>
+<p><strong>The individual needs to know and understand / Cá nhân cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Health and safety legislation, obligations, and documentation</td>
+<td>Luật an toàn – sức khoẻ lao động, nghĩa vụ và hồ sơ tài liệu</td>
+</tr>
+<tr>
+<td>Principles of risk management</td>
+<td>Nguyên tắc quản lý rủi ro</td>
+</tr>
+<tr>
+<td>Principles of energy isolation and the need for verification</td>
+<td>Nguyên tắc cách ly năng lượng và sự cần thiết phải kiểm chứng</td>
+</tr>
+<tr>
+<td>Principles for safe working with all forms of industrial equipment and settings</td>
+<td>Nguyên tắc làm việc an toàn với mọi dạng thiết bị và môi trường công nghiệp</td>
+</tr>
+<tr>
+<td>Hazardous area work permit regulations</td>
+<td>Quy định giấy phép làm việc trong khu vực nguy hiểm</td>
+</tr>
+<tr>
+<td>The situations when personal protective equipment must or should be used</td>
+<td>Các tình huống phải hoặc nên dùng trang bị bảo hộ cá nhân (PPE)</td>
+</tr>
+<tr>
+<td>The purposes, uses, care, maintenance, and storage of all tools and equipment together with their safety implications</td>
+<td>Mục đích, cách dùng, chăm sóc, bảo dưỡng và cất giữ mọi dụng cụ, thiết bị, cùng các hệ quả về an toàn</td>
+</tr>
+<tr>
+<td>The importance of keeping a tidy and organized work area</td>
+<td>Tầm quan trọng của việc giữ khu vực làm việc gọn gàng, ngăn nắp</td>
+</tr>
+<tr>
+<td>Sustainability measures applying to the use of &quot;green&quot; materials and recycling</td>
+<td>Biện pháp bền vững khi dùng vật liệu &quot;xanh&quot; và tái chế</td>
+</tr>
+<tr>
+<td>The ways in which working practices can minimize waste and help to manage costs whilst maintaining quality</td>
+<td>Cách thức làm việc giúp giảm lãng phí, kiểm soát chi phí mà vẫn giữ chất lượng</td>
+</tr>
+<tr>
+<td>Principles of workflow and measurement</td>
+<td>Nguyên tắc quy trình làm việc và đo lường</td>
+</tr>
+<tr>
+<td>The significance of planning, quality, accuracy, checking, and attention to detail in all working practices</td>
+<td>Ý nghĩa của lập kế hoạch, chất lượng, độ chính xác, kiểm tra và sự tỉ mỉ trong mọi thao tác</td>
+</tr>
+<tr>
+<td>The impacts of new technology (e.g. AI)</td>
+<td>Tác động của công nghệ mới (ví dụ AI)</td>
+</tr>
+<tr>
+<td>The financial and business implications of faulty engineering equipment or plant</td>
+<td>Hệ quả tài chính và kinh doanh khi thiết bị, nhà máy kỹ thuật bị lỗi</td>
+</tr>
+</tbody></table></div>
+<p><strong>The individual shall be able to / Cá nhân phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Follow health and safety standards, rules, and regulations</td>
+<td>Tuân thủ tiêu chuẩn, nội quy, quy định về an toàn – sức khoẻ</td>
+</tr>
+<tr>
+<td>Apply Risk Management techniques</td>
+<td>Áp dụng kỹ thuật quản lý rủi ro</td>
+</tr>
+<tr>
+<td>Apply and verify (test for &quot;zero&quot;) energy isolation</td>
+<td>Thực hiện và kiểm chứng (thử &quot;không&quot;) việc cách ly năng lượng</td>
+</tr>
+<tr>
+<td>Diligently follow industrial safety procedures</td>
+<td>Tuân thủ cẩn trọng các quy trình an toàn công nghiệp</td>
+</tr>
+<tr>
+<td>Apply Hazardous Work Area requirements</td>
+<td>Áp dụng yêu cầu của khu vực làm việc nguy hiểm</td>
+</tr>
+<tr>
+<td>Identify and use the appropriate personal protective equipment including safety footwear, ear, and eye protection</td>
+<td>Nhận biết và dùng PPE phù hợp, gồm giày bảo hộ, bảo vệ tai và bảo vệ mắt</td>
+</tr>
+<tr>
+<td>Select, use, clean, maintain, and store all tools and equipment safely</td>
+<td>Chọn, dùng, vệ sinh, bảo dưỡng và cất giữ mọi dụng cụ, thiết bị một cách an toàn</td>
+</tr>
+<tr>
+<td>Select, use, and store all materials safely</td>
+<td>Chọn, dùng và cất giữ mọi vật liệu một cách an toàn</td>
+</tr>
+<tr>
+<td>Identify and take care of industrial equipment</td>
+<td>Nhận biết và chăm sóc thiết bị công nghiệp</td>
+</tr>
+<tr>
+<td>Plan the work area to maximize efficiency and maintain the discipline of regular tidying</td>
+<td>Bố trí khu vực làm việc để đạt hiệu quả tối đa và giữ kỷ luật dọn dẹp thường xuyên</td>
+</tr>
+<tr>
+<td>Prioritize work and manage time effectively</td>
+<td>Ưu tiên công việc và quản lý thời gian hiệu quả</td>
+</tr>
+<tr>
+<td>Work efficiently and check progress and outcomes regularly</td>
+<td>Làm việc hiệu quả, thường xuyên kiểm tra tiến độ và kết quả</td>
+</tr>
+<tr>
+<td>Establish and consistently maintain high quality standards and working processes</td>
+<td>Thiết lập và duy trì nhất quán chuẩn chất lượng cao và quy trình làm việc</td>
+</tr>
+<tr>
+<td>Proactively engage in continuous professional development to keep abreast of new technologies, working practices, and environmental concerns (e.g. AI)</td>
+<td>Chủ động phát triển nghề nghiệp liên tục để theo kịp công nghệ mới, cách làm việc mới và mối quan tâm về môi trường (ví dụ AI)</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 2 — Communication and interpersonal skills / Giao tiếp và kỹ năng liên cá nhân (5%)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The importance of maintaining and updating one&#39;s knowledge, understanding and skills</td>
+<td>Tầm quan trọng của việc duy trì và cập nhật kiến thức, hiểu biết, kỹ năng của bản thân</td>
+</tr>
+<tr>
+<td>The significance of establishing and maintaining the confidence and trust of customers, employers, and stakeholders</td>
+<td>Ý nghĩa của việc tạo dựng và giữ lòng tin của khách hàng, chủ sử dụng lao động và các bên liên quan</td>
+</tr>
+<tr>
+<td>Customers&#39; business environments and needs</td>
+<td>Môi trường kinh doanh và nhu cầu của khách hàng</td>
+</tr>
+<tr>
+<td>The roles and requirements of related trades</td>
+<td>Vai trò và yêu cầu của các nghề liên quan</td>
+</tr>
+<tr>
+<td>The value of building and maintaining productive working relationships</td>
+<td>Giá trị của việc xây dựng và duy trì quan hệ làm việc hiệu quả</td>
+</tr>
+<tr>
+<td>Techniques of effective teamwork</td>
+<td>Kỹ thuật làm việc nhóm hiệu quả</td>
+</tr>
+<tr>
+<td>The importance of swiftly resolving misunderstandings and conflicting demands</td>
+<td>Tầm quan trọng của việc giải quyết nhanh hiểu lầm và các yêu cầu mâu thuẫn</td>
+</tr>
+<tr>
+<td>The importance of accurate and concise reporting</td>
+<td>Tầm quan trọng của báo cáo chính xác, súc tích</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Research the nature of each assignment and customer, and prepare accordingly</td>
+<td>Tìm hiểu bản chất từng công việc và khách hàng, rồi chuẩn bị tương ứng</td>
+</tr>
+<tr>
+<td>Represent the employer or contractor and one&#39;s personal authority within each assignment</td>
+<td>Đại diện cho chủ sử dụng lao động/nhà thầu và thẩm quyền cá nhân trong từng công việc</td>
+</tr>
+<tr>
+<td>Clarify customers&#39; and employers&#39; wishes, preferences, and limitations</td>
+<td>Làm rõ mong muốn, ưu tiên và giới hạn của khách hàng, chủ sử dụng lao động</td>
+</tr>
+<tr>
+<td>Provide advice and guidance on products, options and/or solutions, while explaining the cost-benefits of each</td>
+<td>Tư vấn, hướng dẫn về sản phẩm, phương án và/hoặc giải pháp, kèm giải thích chi phí – lợi ích của từng cái</td>
+</tr>
+<tr>
+<td>Visualize and translate customer/employer wishes into recommendations which meet and/or optimize their design and budgetary requirements</td>
+<td>Hình dung và chuyển mong muốn của khách hàng/chủ sử dụng lao động thành đề xuất đáp ứng và/hoặc tối ưu yêu cầu thiết kế, ngân sách</td>
+</tr>
+<tr>
+<td>Produce cost and time estimates for customers and employers or contractors, and adapt as required</td>
+<td>Lập dự toán chi phí và thời gian cho khách hàng, chủ sử dụng lao động hoặc nhà thầu, và điều chỉnh khi cần</td>
+</tr>
+<tr>
+<td>Provide clear instructions and guidance within the given reporting and support structures</td>
+<td>Đưa chỉ dẫn, hướng dẫn rõ ràng trong cơ cấu báo cáo và hỗ trợ đã định</td>
+</tr>
+<tr>
+<td>Introduce related trades to support customer/employer requirements</td>
+<td>Giới thiệu các nghề liên quan để đáp ứng yêu cầu của khách hàng/chủ sử dụng lao động</td>
+</tr>
+<tr>
+<td>Keep supervisors, peers and subordinates informed as required, by various methods</td>
+<td>Thông tin cho cấp trên, đồng nghiệp và cấp dưới khi cần, bằng nhiều phương thức</td>
+</tr>
+<tr>
+<td>Provide oral and detailed written reports for work completed</td>
+<td>Báo cáo miệng và báo cáo viết chi tiết về công việc đã hoàn thành</td>
+</tr>
+<tr>
+<td>Recognize and adapt to the changing needs of related trades</td>
+<td>Nhận ra và thích ứng với nhu cầu thay đổi của các nghề liên quan</td>
+</tr>
+<tr>
+<td>Work effectively individually and as a member of teams</td>
+<td>Làm việc hiệu quả cả riêng lẻ lẫn trong nhóm</td>
+</tr>
+<tr>
+<td>Use oral communication to avoid misunderstandings</td>
+<td>Dùng giao tiếp bằng lời để tránh hiểu lầm</td>
+</tr>
+<tr>
+<td>Control personal conflicts in the workplace</td>
+<td>Kiểm soát xung đột cá nhân nơi làm việc</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 3 — Planning and design / Lập kế hoạch và thiết kế (10%)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Principles, techniques, procedures, and equipment for the design and production of goods and services</td>
+<td>Nguyên tắc, kỹ thuật, quy trình và thiết bị để thiết kế và sản xuất hàng hoá, dịch vụ</td>
+</tr>
+<tr>
+<td>Principles for work organization, planning, and prioritization</td>
+<td>Nguyên tắc tổ chức, lập kế hoạch và ưu tiên công việc</td>
+</tr>
+<tr>
+<td>Raw materials, production processes, quality control, costs and other considerations for efficient manufacturing and distribution of goods</td>
+<td>Nguyên vật liệu, quy trình sản xuất, kiểm soát chất lượng, chi phí và các yếu tố khác cho sản xuất và phân phối hiệu quả</td>
+</tr>
+<tr>
+<td>Standards, blueprints, and schematics</td>
+<td>Tiêu chuẩn, bản vẽ (blueprint) và sơ đồ nguyên lý (schematic)</td>
+</tr>
+<tr>
+<td>Procedures and technical manuals</td>
+<td>Quy trình và tài liệu kỹ thuật</td>
+</tr>
+<tr>
+<td>The management of equipment and materials, depending on their nature and environment</td>
+<td>Quản lý thiết bị và vật liệu tuỳ theo bản chất và môi trường</td>
+</tr>
+<tr>
+<td>Installation techniques and practices for different environments and purposes</td>
+<td>Kỹ thuật và thực hành lắp đặt cho các môi trường và mục đích khác nhau</td>
+</tr>
+<tr>
+<td>Principles and techniques for setting and incorporating goals</td>
+<td>Nguyên tắc và kỹ thuật đặt và đưa mục tiêu vào kế hoạch</td>
+</tr>
+<tr>
+<td>Evaluation principles and techniques for determining compliance with standards and goals</td>
+<td>Nguyên tắc và kỹ thuật đánh giá để xác định mức tuân thủ tiêu chuẩn và mục tiêu</td>
+</tr>
+<tr>
+<td>Relevant equipment, policies, procedures, and strategies for the protection of people, data, property, and installations</td>
+<td>Thiết bị, chính sách, quy trình và chiến lược liên quan để bảo vệ con người, dữ liệu, tài sản và công trình lắp đặt</td>
+</tr>
+<tr>
+<td>Principles, requirements, and best practice for selecting, using, maintaining, disposing, and recycling of materials</td>
+<td>Nguyên tắc, yêu cầu và thực hành tốt khi chọn, dùng, bảo quản, thải bỏ và tái chế vật liệu</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Apply best practice principles, techniques, and procedures to production design</td>
+<td>Áp dụng nguyên tắc, kỹ thuật, quy trình thực hành tốt vào thiết kế sản xuất</td>
+</tr>
+<tr>
+<td>Read, interpret, and revise drawings/blueprints and documentation including layout and schematic drawings</td>
+<td>Đọc, diễn giải và hiệu chỉnh bản vẽ/blueprint và tài liệu, gồm bản vẽ bố trí và sơ đồ nguyên lý</td>
+</tr>
+<tr>
+<td>Plan work using blueprints, schematics, and technical documentation</td>
+<td>Lập kế hoạch công việc dựa trên bản vẽ, sơ đồ nguyên lý và tài liệu kỹ thuật</td>
+</tr>
+<tr>
+<td>Plan work for optimal efficiency and economy of installation and production</td>
+<td>Lập kế hoạch để lắp đặt và sản xuất đạt hiệu quả và tiết kiệm tối ưu</td>
+</tr>
+<tr>
+<td>Plan work to optimize safety and security, and create least environmental damage</td>
+<td>Lập kế hoạch để tối ưu an toàn, an ninh và gây ít thiệt hại môi trường nhất</td>
+</tr>
+<tr>
+<td>Design and incorporate milestones, checks and assessment points to ensure compliance with plan or better</td>
+<td>Thiết kế và đưa vào các mốc, điểm kiểm tra và điểm đánh giá để bảo đảm đạt hoặc vượt kế hoạch</td>
+</tr>
+<tr>
+<td>Prepare documentation, including written instructions and work procedures, and briefings</td>
+<td>Chuẩn bị tài liệu, gồm hướng dẫn viết, quy trình làm việc và buổi phổ biến (briefing)</td>
+</tr>
+<tr>
+<td>Identify and source equipment, tools and materials, and store appropriately prior to and during use</td>
+<td>Xác định và tìm nguồn thiết bị, dụng cụ, vật liệu, và cất giữ đúng cách trước và trong khi dùng</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 4 — Installations / Lắp đặt (35% theo TD; 40 theo thang điểm thật)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Units of measurement, and the skilled use of measuring devices</td>
+<td>Đơn vị đo và cách dùng thành thạo dụng cụ đo</td>
+</tr>
+<tr>
+<td>Machining operations of milling machines and centre lathes to produce component parts to prescribed tolerances and standards</td>
+<td>Nguyên công trên máy phay và máy tiện vạn năng để chế tạo chi tiết đạt dung sai và tiêu chuẩn quy định</td>
+</tr>
+<tr>
+<td>The applications and correct use of fasteners</td>
+<td>Ứng dụng và cách dùng đúng các chi tiết kẹp chặt (fastener)</td>
+</tr>
+<tr>
+<td>Different types of lubricants: their properties, applications, and effects</td>
+<td>Các loại chất bôi trơn: tính chất, ứng dụng và tác dụng</td>
+</tr>
+<tr>
+<td>Rigging and hoisting procedures, and SWL calculations for the removal and installation of mechanical industrial equipment</td>
+<td>Quy trình móc cáp (rigging), nâng hạ (hoisting) và tính SWL (tải trọng làm việc an toàn) khi tháo, lắp thiết bị cơ khí công nghiệp</td>
+</tr>
+<tr>
+<td>How to set-up and operate MIG (MAG) welding equipment</td>
+<td>Cách cài đặt và vận hành thiết bị hàn MIG (MAG)</td>
+</tr>
+<tr>
+<td>How to fabricate components together to specification, and weld</td>
+<td>Cách chế tạo, ghép các chi tiết đúng yêu cầu kỹ thuật và hàn</td>
+</tr>
+<tr>
+<td>The principles of foundation preparation and installation of machine bases or sole plates</td>
+<td>Nguyên tắc chuẩn bị móng và lắp đặt đế máy hoặc tấm đệm (sole plate)</td>
+</tr>
+<tr>
+<td>Basic Electrical and electronic theory and principles</td>
+<td>Lý thuyết và nguyên lý điện – điện tử cơ bản</td>
+</tr>
+<tr>
+<td>Basic 24V Electric and electronic terminology, schematics, applications, associated tools, installation, wiring and troubleshooting techniques</td>
+<td>Thuật ngữ, sơ đồ, ứng dụng, dụng cụ, lắp đặt, đấu dây và kỹ thuật tìm lỗi điện – điện tử 24V cơ bản</td>
+</tr>
+<tr>
+<td>Electrical and programable logic controller (PLC) or VFD systems and their use in automation and the manufacturing process</td>
+<td>Hệ thống điện và PLC (bộ điều khiển logic khả trình) hoặc VFD (biến tần) và vai trò trong tự động hoá, sản xuất</td>
+</tr>
+<tr>
+<td>Simple functional Programming of PLCs or VFDs</td>
+<td>Lập trình chức năng đơn giản cho PLC hoặc VFD</td>
+</tr>
+<tr>
+<td>Engineering drawings/blueprints, schematics, and manufacturers&#39; manuals</td>
+<td>Bản vẽ kỹ thuật/blueprint, sơ đồ nguyên lý và tài liệu hướng dẫn của nhà sản xuất</td>
+</tr>
+<tr>
+<td>How to select, remove, install, and maintain plain and anti-friction bearings and interpret ISO charts and bearing catalogues</td>
+<td>Cách chọn, tháo, lắp, bảo trì ổ trượt và ổ lăn (anti-friction), đọc bảng ISO và catalogue ổ</td>
+</tr>
+<tr>
+<td>How to identify, remove, select, and install appropriate power transmission systems and/or components for specific applications</td>
+<td>Cách nhận biết, tháo, chọn và lắp hệ truyền động/chi tiết truyền động phù hợp cho ứng dụng cụ thể</td>
+</tr>
+<tr>
+<td>The use of precision measuring equipment relative to part sizes, machine installation, set-up, alignment, and preventative maintenance</td>
+<td>Dùng dụng cụ đo chính xác tương ứng kích thước chi tiết, lắp đặt máy, cài đặt, cân chỉnh và bảo trì phòng ngừa</td>
+</tr>
+<tr>
+<td>Types and principles of operation of various material handling systems</td>
+<td>Các loại và nguyên lý hoạt động của hệ thống vận chuyển vật liệu</td>
+</tr>
+<tr>
+<td>The principles and applications of hydraulics/pneumatics and safety as they relate to fluid power systems</td>
+<td>Nguyên lý, ứng dụng của thuỷ lực/khí nén và an toàn liên quan đến hệ thống truyền động chất lưu</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Select and install equipment from blueprints, plans and documentation</td>
+<td>Chọn và lắp đặt thiết bị theo bản vẽ, kế hoạch và tài liệu</td>
+</tr>
+<tr>
+<td>Apply all machinery and equipment isolation (lock-out) and de-energizing procedures (mechanical and fluid power) before commencing any work procedures</td>
+<td>Thực hiện mọi quy trình cách ly (khoá cách ly – lock-out) và ngắt năng lượng (cơ khí và truyền động chất lưu) cho máy, thiết bị trước khi bắt đầu bất kỳ công việc nào</td>
+</tr>
+<tr>
+<td>Select and use hand cutting tools for shaping components to specifications</td>
+<td>Chọn và dùng dụng cụ cắt cầm tay để tạo hình chi tiết theo yêu cầu</td>
+</tr>
+<tr>
+<td>Use and interpret readings from a range of devices</td>
+<td>Dùng và đọc, diễn giải số đo từ nhiều thiết bị</td>
+</tr>
+<tr>
+<td>Set up and safely operate the required machine tools to produce components to given units of tolerance</td>
+<td>Cài đặt và vận hành an toàn các máy công cụ cần thiết để chế tạo chi tiết đạt dung sai cho trước</td>
+</tr>
+<tr>
+<td>Identify and select the correct fasteners for specific applications</td>
+<td>Nhận biết và chọn đúng chi tiết kẹp chặt cho ứng dụng cụ thể</td>
+</tr>
+<tr>
+<td>Comply with all safety rules, proper usage protocols&#39; and environmental legislation when handling and storing lubricants</td>
+<td>Tuân thủ mọi quy tắc an toàn, quy trình sử dụng đúng và luật môi trường khi xử lý, cất giữ chất bôi trơn [Ghi chú dịch: bản gốc có dấu nháy thừa sau &quot;protocols&quot;]</td>
+</tr>
+<tr>
+<td>Select, inspect, and use the correct hoisting and rigging equipment and SWL calculations for specific lifting applications</td>
+<td>Chọn, kiểm tra và dùng đúng thiết bị nâng, móc cáp và tính SWL cho từng ứng dụng nâng cụ thể</td>
+</tr>
+<tr>
+<td>Use MIG (MAG) welding equipment and fabrication techniques, including layout and joint preparation to join various metal types</td>
+<td>Dùng thiết bị hàn MIG (MAG) và kỹ thuật chế tạo, gồm lấy dấu và chuẩn bị mối ghép, để ghép các loại kim loại khác nhau</td>
+</tr>
+<tr>
+<td>Apply correct lockout and tag-out and use multi-meters to ensure electrical components are not &quot;live&quot; or &quot;zero energy&quot; state</td>
+<td>Thực hiện đúng khoá cách ly/treo thẻ (LOTO) và dùng đồng hồ vạn năng để bảo đảm linh kiện điện không &quot;có điện&quot; mà ở trạng thái &quot;không năng lượng&quot;</td>
+</tr>
+<tr>
+<td>Troubleshoot, remove, and reset electrical and electronic overload devices, safely using electrical testing instruments</td>
+<td>Tìm lỗi, tháo và đặt lại thiết bị bảo vệ quá tải điện – điện tử, dùng dụng cụ thử điện an toàn</td>
+</tr>
+<tr>
+<td>Read and interpret 1st and 3rd orthographic projections, and interpret assembly and detail drawings of machines</td>
+<td>Đọc và diễn giải phép chiếu vuông góc thứ nhất và thứ ba, và đọc bản vẽ lắp, bản vẽ chi tiết của máy</td>
+</tr>
+<tr>
+<td>Install and maintain plain and anti-friction bearings, using standard industry practices</td>
+<td>Lắp và bảo trì ổ trượt, ổ lăn theo thực hành chuẩn công nghiệp</td>
+</tr>
+<tr>
+<td>Remove, inspect, repair, or replace and install, components on power transmission systems and pumps</td>
+<td>Tháo, kiểm tra, sửa hoặc thay và lắp các chi tiết của hệ truyền động và bơm</td>
+</tr>
+<tr>
+<td>Remove and install devices on material handling systems</td>
+<td>Tháo và lắp các thiết bị trên hệ thống vận chuyển vật liệu</td>
+</tr>
+<tr>
+<td>Use the appropriate measuring/alignment devices to align equipment and take appropriate readings/measurements</td>
+<td>Dùng thiết bị đo/cân chỉnh phù hợp để cân chỉnh thiết bị và lấy số đo thích hợp</td>
+</tr>
+<tr>
+<td>Service or replace as required the correct fluid power (pneumatic/hydraulic) devices/pieces of equipment</td>
+<td>Bảo dưỡng hoặc thay khi cần đúng thiết bị truyền động chất lưu (khí nén/thuỷ lực)</td>
+</tr>
+<tr>
+<td>Create and initialize simple functional PLC or VFD programs for control and motion</td>
+<td>Tạo và khởi chạy chương trình PLC hoặc VFD chức năng đơn giản để điều khiển và chuyển động</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 5 — Problem solving, innovation, creativity / Giải quyết vấn đề, đổi mới, sáng tạo (15% theo TD; 10 theo thang điểm thật)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Principles and techniques for: critical thinking; judgement and decision-making; troubleshooting; monitoring and assessment; quality control analysis; complex problem-solving</td>
+<td>Nguyên tắc và kỹ thuật về: tư duy phản biện; phán đoán và ra quyết định; tìm lỗi (troubleshooting); giám sát và đánh giá; phân tích kiểm soát chất lượng; giải quyết vấn đề phức tạp</td>
+</tr>
+<tr>
+<td>The common types of problem that can occur within work processes</td>
+<td>Các dạng vấn đề thường gặp trong quá trình làm việc</td>
+</tr>
+<tr>
+<td>New expectations and standards, including environmental considerations, that impact on decision making, efficiency, and quality</td>
+<td>Kỳ vọng và tiêu chuẩn mới, gồm yếu tố môi trường, ảnh hưởng đến ra quyết định, hiệu quả và chất lượng</td>
+</tr>
+<tr>
+<td>New technologies affecting equipment, tools, methods, monitoring and assessment</td>
+<td>Công nghệ mới tác động lên thiết bị, dụng cụ, phương pháp, giám sát và đánh giá</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Use logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, and approaches to problems</td>
+<td>Dùng logic và suy luận để nhận ra ưu – nhược của các giải pháp, kết luận, cách tiếp cận thay thế</td>
+</tr>
+<tr>
+<td>Observe, receive, and otherwise obtain information from all relevant sources</td>
+<td>Quan sát, tiếp nhận và thu thập thông tin từ mọi nguồn liên quan</td>
+</tr>
+<tr>
+<td>Consider the relative costs and benefits of potential actions to choose the most suitable one</td>
+<td>Cân nhắc chi phí – lợi ích tương đối của các hành động khả dĩ để chọn cái phù hợp nhất</td>
+</tr>
+<tr>
+<td>Check work regularly to minimize problems at a later stage in the process</td>
+<td>Thường xuyên kiểm tra công việc để giảm vấn đề ở giai đoạn sau</td>
+</tr>
+<tr>
+<td>Monitor and review information from materials, events, or the environment, to detect or assess problems</td>
+<td>Theo dõi và xem xét thông tin từ vật liệu, sự kiện hoặc môi trường để phát hiện, đánh giá vấn đề</td>
+</tr>
+<tr>
+<td>Identify problems originating from the work of related trades</td>
+<td>Nhận ra vấn đề phát sinh từ công việc của các nghề liên quan</td>
+</tr>
+<tr>
+<td>Challenge incorrect technical information to forestall problems</td>
+<td>Chất vấn thông tin kỹ thuật sai để ngăn vấn đề</td>
+</tr>
+<tr>
+<td>Recognize and troubleshoot problems swiftly by following a self-managed logical process</td>
+<td>Nhận ra và xử lý nhanh vấn đề bằng quy trình logic tự quản lý</td>
+</tr>
+<tr>
+<td>Respond to opportunities to contribute ideas to improve solutions and overall level of customer/employer satisfaction</td>
+<td>Nắm bắt cơ hội đóng góp ý tưởng để cải thiện giải pháp và mức hài lòng chung của khách hàng/chủ sử dụng lao động</td>
+</tr>
+<tr>
+<td>Demonstrate a willingness to try new methods and embrace change</td>
+<td>Thể hiện sẵn sàng thử phương pháp mới và đón nhận thay đổi</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 6 — Testing, reporting, and commissioning / Kiểm tra, báo cáo và nghiệm thu đưa vào vận hành (15%)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The essential features of quality assurance</td>
+<td>Các đặc điểm cốt lõi của đảm bảo chất lượng</td>
+</tr>
+<tr>
+<td>Industrial regulations and standards applicable to different types of machinery</td>
+<td>Quy định và tiêu chuẩn công nghiệp áp dụng cho từng loại máy</td>
+</tr>
+<tr>
+<td>Installation standards</td>
+<td>Tiêu chuẩn lắp đặt</td>
+</tr>
+<tr>
+<td>Verification standards, methods, and reports for verification results</td>
+<td>Tiêu chuẩn, phương pháp kiểm chứng và báo cáo kết quả kiểm chứng</td>
+</tr>
+<tr>
+<td>Types of measuring instruments such as Micrometres and Vernier Callipers</td>
+<td>Các loại dụng cụ đo như panme và thước cặp</td>
+</tr>
+<tr>
+<td>Laser alignment/measuring tools/vibration analysis/thermography</td>
+<td>Dụng cụ cân chỉnh/đo bằng laser, phân tích rung động, chụp ảnh nhiệt (thermography)</td>
+</tr>
+<tr>
+<td>Tools and software used for programming and commissioning</td>
+<td>Dụng cụ và phần mềm dùng để lập trình và nghiệm thu</td>
+</tr>
+<tr>
+<td>The correct operation of the machine installations in accordance with planned specifications and customer/employer requirements</td>
+<td>Vận hành đúng của hệ máy đã lắp theo thông số kế hoạch và yêu cầu của khách hàng/chủ sử dụng lao động</td>
+</tr>
+<tr>
+<td>Test equipment and safe work instructions</td>
+<td>Thiết bị thử và hướng dẫn làm việc an toàn</td>
+</tr>
+<tr>
+<td>Principles and applications for optimizing production processes</td>
+<td>Nguyên tắc và ứng dụng để tối ưu quy trình sản xuất</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cordon off work areas in order to conduct tests safely</td>
+<td>Rào chắn khu vực làm việc để thử nghiệm an toàn</td>
+</tr>
+<tr>
+<td>Test installations and complete visual inspections before energizing to ensure personal, electrical, and mechanical safety</td>
+<td>Thử hệ thống lắp đặt và kiểm tra bằng mắt trước khi cấp năng lượng để bảo đảm an toàn cho người, điện và cơ khí</td>
+</tr>
+<tr>
+<td>Test installations when energized by checking complete function on all equipment installed to ensure correct operation of new/repaired or refurbished installations as per instructions</td>
+<td>Thử hệ thống khi đã cấp năng lượng, kiểm tra đầy đủ chức năng mọi thiết bị đã lắp để bảo đảm hệ lắp mới/sửa/tân trang vận hành đúng theo hướng dẫn</td>
+</tr>
+<tr>
+<td>Set installations to fully functioning and ensure operators can safely, effectively, and efficiently perform required functions to meet customer/employer satisfaction</td>
+<td>Đưa hệ thống vào trạng thái hoạt động đầy đủ và bảo đảm người vận hành thực hiện được các chức năng cần thiết một cách an toàn, hiệu quả, làm hài lòng khách hàng/chủ sử dụng lao động</td>
+</tr>
+<tr>
+<td>Adjust equipment and machinery to ensure optimal performance</td>
+<td>Hiệu chỉnh thiết bị, máy móc để đạt hiệu suất tối ưu</td>
+</tr>
+<tr>
+<td>Brief and advise operators to maintain optimal usage</td>
+<td>Phổ biến và tư vấn cho người vận hành để duy trì cách dùng tối ưu</td>
+</tr>
+<tr>
+<td>Complete detailed commissioning reports, including recommendations on optimization</td>
+<td>Hoàn thành báo cáo nghiệm thu chi tiết, gồm khuyến nghị tối ưu hoá</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h5>Section 7 — Maintenance, fault finding, repair, and decommissioning / Bảo trì, tìm lỗi, sửa chữa và tháo dỡ (15%)</h5>
+<p><strong>Needs to know and understand / Cần biết và hiểu:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Different types of installations and equipment for specific environments</td>
+<td>Các loại hệ thống lắp đặt và thiết bị cho từng môi trường cụ thể</td>
+</tr>
+<tr>
+<td>Different generations of installations and equipment</td>
+<td>Các thế hệ khác nhau của hệ thống lắp đặt và thiết bị</td>
+</tr>
+<tr>
+<td>The purpose of specific installations and equipment</td>
+<td>Mục đích của từng hệ thống lắp đặt, thiết bị cụ thể</td>
+</tr>
+<tr>
+<td>Customers&#39;/employers&#39; needs for various functions of installations and equipment</td>
+<td>Nhu cầu của khách hàng/chủ sử dụng lao động đối với các chức năng của hệ thống và thiết bị</td>
+</tr>
+<tr>
+<td>Diagnostic approaches to problem solving (Failure Modes and Root Causes analogies)</td>
+<td>Cách tiếp cận chẩn đoán để giải quyết vấn đề (phân tích dạng hỏng và nguyên nhân gốc) [Ghi chú dịch: bản gốc viết &quot;analogies&quot; (phép loại suy); ngữ cảnh gợi ý ý là &quot;analysis&quot; — dịch theo nghĩa phân tích]</td>
+</tr>
+<tr>
+<td>Principles and methods for estimating the costs of restoration</td>
+<td>Nguyên tắc và phương pháp ước tính chi phí khôi phục</td>
+</tr>
+<tr>
+<td>Legislation and best practice for: Sustainability; Waste disposal and recycling</td>
+<td>Luật và thực hành tốt về: tính bền vững; xử lý chất thải và tái chế</td>
+</tr>
+</tbody></table></div>
+<p><strong>Shall be able to / Phải có khả năng:</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Adapt to changing circumstances in &quot;real time&quot;</td>
+<td>Thích ứng với hoàn cảnh thay đổi theo &quot;thời gian thực&quot;</td>
+</tr>
+<tr>
+<td>Disassemble equipment for maintenance and/or repair</td>
+<td>Tháo rời thiết bị để bảo trì và/hoặc sửa chữa</td>
+</tr>
+<tr>
+<td>Troubleshoot basic electrical faults, mechanical, power transmission and fluid power installations/systems</td>
+<td>Tìm lỗi điện cơ bản, và lỗi các hệ thống cơ khí, truyền động, truyền động chất lưu</td>
+</tr>
+<tr>
+<td>Use, test, and calibrate measuring and diagnostic equipment to find and locate faults during regular maintenance and troubleshooting actions</td>
+<td>Dùng, thử và hiệu chuẩn thiết bị đo, chẩn đoán để phát hiện và định vị lỗi trong bảo trì định kỳ và khi tìm lỗi</td>
+</tr>
+<tr>
+<td>Repair or replace worn, damaged, or defective parts</td>
+<td>Sửa hoặc thay chi tiết mòn, hỏng, lỗi</td>
+</tr>
+<tr>
+<td>Enter simple codes and/or instructions to re-program computer-controlled machinery</td>
+<td>Nhập mã và/hoặc lệnh đơn giản để lập trình lại máy điều khiển bằng máy tính</td>
+</tr>
+<tr>
+<td>Set up and oversee test runs to ensure the adequacy of repairs and replacements</td>
+<td>Thiết lập và giám sát chạy thử để bảo đảm việc sửa, thay đạt yêu cầu</td>
+</tr>
+<tr>
+<td>Verify that existing installations and equipment still meet current standards</td>
+<td>Kiểm chứng hệ thống, thiết bị hiện có còn đạt tiêu chuẩn hiện hành</td>
+</tr>
+<tr>
+<td>Identify and advise on improvements to efficiency and sustainable practice</td>
+<td>Nhận ra và tư vấn cải tiến hiệu quả và thực hành bền vững</td>
+</tr>
+<tr>
+<td>Complete digital reports including all required data e.g. photos; vibration analysis; machine or equipment history; maintenance protocols</td>
+<td>Hoàn thành báo cáo số có đủ dữ liệu yêu cầu, ví dụ ảnh; phân tích rung động; lịch sử máy/thiết bị; biên bản bảo trì</td>
+</tr>
+<tr>
+<td>Arrange for the safe disposal of hazardous and other waste products, and recycling where possible</td>
+<td>Sắp xếp việc thải bỏ an toàn chất thải nguy hại và chất thải khác, và tái chế khi có thể</td>
+</tr>
+</tbody></table></div>
+<p><strong>Tổng / Total: 100%</strong></p>
+<hr>
+<h2 id="section-wsos-module-de-thi-2026-nao-kiem-tra">Section WSOS → Module đề thi 2026 nào kiểm tra</h2>
+<p>Cột điểm là <strong>điểm tối đa của module</strong> theo thang điểm thật (tổng 100). Cột &quot;số mục chấm theo section&quot; đếm số Aspect trong thang điểm thật (sheet marking scheme, cột <em>WSOS Section</em>) gắn với từng section — đây là <strong>số dòng chấm, không phải số điểm</strong>; dùng để biết module nào &quot;nặng&quot; về kiến thức section nào. Section 2 (giao tiếp) chỉ được gắn ở Module A và C trong thang điểm thật — xem ghi chú 6.</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Module</th>
+<th>Điểm</th>
+<th>Tên</th>
+<th>Số mục chấm theo WSOS Section (S1…S7)</th>
+<th>Section nổi bật</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A</td>
+<td>17.5</td>
+<td>Predictive Maintenance (Bảo trì dự đoán)</td>
+<td>S1: 4 · S2: 13 · S3: 12 · S4: 11 · S5: 3 · S7: 4</td>
+<td>S2, S3, S4</td>
+</tr>
+<tr>
+<td>B</td>
+<td>14</td>
+<td>Fabrication, Welding and Precision Layout (Chế tạo, hàn, lấy dấu)</td>
+<td>S3: 26 · S4: 13 · S6: 15</td>
+<td>S3, S6, S4</td>
+</tr>
+<tr>
+<td>C</td>
+<td>26</td>
+<td>Machining – Turning – Milling (Tiện – phay)</td>
+<td>S2: 6 · S4: 35 · S5: 3</td>
+<td>S4</td>
+</tr>
+<tr>
+<td>D</td>
+<td>22.1</td>
+<td>Mechanical Assembly (Lắp ráp cơ khí)</td>
+<td>S1: 1 · S4: 6 · S5: 6 · S6: 11 · S7: 4</td>
+<td>S6, S4, S5</td>
+</tr>
+<tr>
+<td>E</td>
+<td>10.4</td>
+<td>Pneumatic Assembly (Lắp mạch khí nén)</td>
+<td>S1: 2 · S5: 3 · S7: 7</td>
+<td>S7</td>
+</tr>
+<tr>
+<td>F</td>
+<td>7.5</td>
+<td>Final Project Functionality (Chạy thử chức năng toàn đề)</td>
+<td>S4: 3 · S6: 1 · S7: 2</td>
+<td>S4, S7</td>
+</tr>
+<tr>
+<td>G</td>
+<td>2.5</td>
+<td>Pneumatic Troubleshooting (Tìm lỗi khí nén)</td>
+<td>S1: 1 · S7: 6</td>
+<td>S7</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>100</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p>Kiểm: 17.5 + 14 + 26 + 22.1 + 10.4 + 7.5 + 2.5 = <strong>100.0</strong>.</p>
+<p>Hệ quả cho giáo án:</p>
+<ul>
+<li><strong>Section 4 (Installations, 40 điểm)</strong> dồn vào Module C (tiện–phay) và D (lắp ráp), nên thời lượng luyện gia công phải lớn nhất.</li>
+<li><strong>Section 7 (bảo trì, tìm lỗi)</strong> nằm chủ yếu ở E, G, A — tức khí nén và bảo trì dự đoán; <strong>Section 6 (nghiệm thu)</strong> ở B và D.</li>
+<li>Section 1 (an toàn, tổ chức) chỉ có vài mục chấm riêng nhưng còn là <strong>luật trừ điểm</strong> xuyên suốt (xem file 02).</li>
+</ul>
+<hr>
+<h2 id="ghi-chu-ban-goc">Ghi chú bản gốc</h2>
+<ol>
+<li><strong>Trọng số Section 4 và 5 lệch giữa TD và thang điểm thật</strong> (35/15 ↔ 40/10) — TD 2.1 cho phép lệch ≤ 5%. Ghi ở bảng 2.2; xem <code>loi-ban-goc.md</code> #7.</li>
+<li><strong>TD 1.1.2</strong> viết sai chính tả &quot;adaptiable&quot; (= adaptable) — #12; đã chú thích tại chỗ.</li>
+<li><strong>Section 4, &quot;shall be able to&quot;</strong>: có dấu nháy thừa trong &quot;proper usage protocols&#39;&quot; — dịch theo nghĩa.</li>
+<li><strong>Section 7, &quot;Failure Modes and Root Causes analogies&quot;</strong>: có thể là lỗi dùng từ (analysis/analyses); dịch theo nghĩa &quot;phân tích&quot; và chú thích tại chỗ.</li>
+<li><strong>Section 3, bullet cuối &quot;shall be able to&quot;</strong> bắt đầu bằng chữ thường &quot;identify&quot; — bỏ qua. Section 4 có &quot;programable&quot; (= programmable) — bỏ qua.</li>
+<li><strong>Bảng ánh xạ WSOS → Module</strong> là do người dịch tổng hợp từ file thang điểm thật (<code>marking_scheme_rows.tsv</code>), không phải nội dung của TD. Cột WSOS Section của thang điểm gán theo <em>aspect</em> nên một số gán trông không khớp tên section (ví dụ Section 2 &quot;giao tiếp&quot; xuất hiện ở Module C, Section 3 &quot;lập kế hoạch&quot; chiếm nhiều mục ở Module B); người dịch không suy đoán lý do, chỉ ghi lại số đếm. Khi cần số điểm chính xác theo section, cộng lại từ thang điểm thật.</li>
+<li>Phần TD mục 3 (chiến lược đánh giá) không dịch theo phạm vi đã chốt; nội dung tương ứng nằm ở file 02.</li>
+</ol></section><section><h1>3. Yêu cầu thiết kế đề thi — Test project design requirements</h1><div class="tl-box">
+<p>Nguồn: WSC2026_TD01_en, tr. 18–20. Bậc 2 — dành cho giáo viên huấn luyện. Bỏ mục 5.1, 5.4–5.6, 5.8.</p>
+</div>
+<h2 id="y-nghia-cho-huan-luyen">Ý nghĩa cho huấn luyện</h2>
+<ul>
+<li><strong>Tổng thời gian thi 20 giờ</strong>; đề là chuỗi module kết thúc bằng lắp ráp cuối ở ngày thi cuối. Thi thử phải đủ 20 giờ, chia module như đề thật (xem <code>01-bac1</code>).</li>
+<li><strong>Đề không được phát trước.</strong> Chỉ công bố trước <em>lĩnh vực, bộ kỹ năng (skills sets) và thông số</em> (9 tháng trước kỳ thi theo 5.7; mục 5.4.3 ghi tối thiểu 8 tháng — xem Ghi chú bản gốc). Đề thật được phát cho Expert ở C−3 và cho thí sinh <strong>mỗi sáng</strong> sau buổi trao đổi nội bộ đoàn (Compatriot Communication). Vì vậy không thể &quot;học tủ&quot; — phải luyện năng lực.</li>
+<li><strong>Gia công (tiện + phay) tối đa 5–6 giờ</strong>, và số kích thước bị chấm trên mỗi chi tiết bị giới hạn: <strong>IT7 6–10 kích thước, IT8 5–8, ISO 2768-1 fK 3–5, độ nhám 3–5.</strong> Giáo viên dùng làm khung khi tự ra đề thi thử: chi tiết nào cũng chỉ ~17–28 kích thước được chấm; luyện sinh viên ưu tiên các kích thước IT7 (dung sai chặt nhất, nhiều nhất).</li>
+<li><strong>Dung sai phải theo định dạng ISO hoặc được cấp kèm</strong> và <strong>phải kiểm được bằng dụng cụ đo có trong IL</strong> (Infrastructure List) — đề không đòi dụng cụ mà sinh viên không có.</li>
+<li><strong>Hệ quả về ngôn ngữ:</strong> TD và đề có thể được dịch sang ngôn ngữ thí sinh, nhưng <strong>Member (nước thành viên) tự lo việc dịch</strong> (phiên dịch cùng đoàn hoặc Expert). <strong>Bản vẽ khi thi vẫn bằng tiếng Anh</strong> — đề gốc, ghi chú bản vẽ, BOM, tên tiêu chuẩn đều tiếng Anh. Sinh viên cần thuộc từ vựng bản vẽ tiếng Anh (xem <code>01-bac1/06-ban-ve-chu-giai.md</code>), không được trông chờ vào bản dịch. Phiên dịch <strong>được dùng từ điển chuyên ngành</strong> (xem file 05, mục 6.5).</li>
+</ul>
+<hr>
+<h2 id="5-2-dinh-dang-cau-truc-de-thi-format-structure-of-the-test-p">5.2 Định dạng/cấu trúc đề thi (Format/structure of the Test Project)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The Test Project is a series of modules culminating in a final assembly on the last day of the competition.</td>
+<td>Đề thi là một chuỗi module, kết thúc bằng một <strong>lắp ráp cuối</strong> vào ngày thi cuối cùng.</td>
+</tr>
+</tbody></table></div>
+<h2 id="5-3-yeu-cau-thiet-ke-de-thi-test-project-design-requirements">5.3 Yêu cầu thiết kế đề thi (Test Project design requirements)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Test Projects should reflect the purposes, structures, processes, and outcomes of the occupational role they are based on. They should aim to be a small-scale version of that role. Before focusing on practicalities, SMTs should show how the Test Project design will provide full, balanced, and authentic opportunities for assessment and marking across the Standards, as set out in Section 5.1.</td>
+<td>Đề thi nên phản ánh mục đích, cấu trúc, quy trình và kết quả của vai trò nghề mà nó dựa trên; nên là <strong>phiên bản thu nhỏ</strong> của vai trò đó. Trước khi bàn đến chi tiết thực tế, các SMT (Skill Management Team — Nhóm quản lý nghề) phải chỉ ra đề thi sẽ tạo cơ hội đánh giá, chấm điểm <strong>đầy đủ, cân bằng và thực tế</strong> trên toàn bộ Chuẩn, như nêu ở mục 5.1.</td>
+</tr>
+<tr>
+<td>Test Project design requirements are as stated. All work must be done using the materials and the infrastructure in normal use in the Host Country/region. An exception is those parts which the Independent Test Project Designer has brought or which are provided;</td>
+<td>Các yêu cầu thiết kế đề thi như sau. Mọi công việc phải thực hiện bằng vật liệu và hạ tầng thường dùng ở nước/khu vực chủ nhà. Ngoại lệ là những chi tiết do Người thiết kế đề độc lập mang đến hoặc được cấp;</td>
+</tr>
+</tbody></table></div>
+<p>Các yêu cầu (gạch đầu dòng gốc):</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Tolerance range specification;</td>
+<td>Quy định khoảng dung sai;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Competitor must produce components and/or project as per supplied technical and/or schematic drawings/diagrams;</td>
+<td>Thí sinh phải chế tạo chi tiết và/hoặc sản phẩm <strong>đúng bản vẽ kỹ thuật và/hoặc sơ đồ nguyên lý được cấp</strong>;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Any tolerance used on the drawing must be ISO format or be supplied;</td>
+<td>Mọi dung sai dùng trên bản vẽ phải theo <strong>định dạng ISO</strong> hoặc được cấp kèm;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Mechanical - all items produced by the Competitor are utilized;</td>
+<td>Cơ khí: mọi chi tiết thí sinh chế tạo đều <strong>được sử dụng</strong> (đưa vào lắp ráp);</td>
+</tr>
+<tr>
+<td>5</td>
+<td>The tolerances must be able to be inspected with the measuring tools that are listed on the IL;</td>
+<td>Các dung sai phải <strong>kiểm được bằng dụng cụ đo có trong IL</strong> (Danh mục thiết bị do ban tổ chức cấp);</td>
+</tr>
+<tr>
+<td>6</td>
+<td>The choice of surface finish must reflect the desired results keeping in mind the material type;</td>
+<td>Việc chọn độ bóng bề mặt phải phản ánh kết quả mong muốn, có xét loại vật liệu;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The Test Project/modules will include separate modules involving multiple tasks, to be assessed according to the WSOS applicable to each task;</td>
+<td>Đề/các module gồm các module riêng, mỗi module nhiều nhiệm vụ, đánh giá theo WSOS áp dụng cho từng nhiệm vụ;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Competitors must be able to work with the materials specified and must be able to comply with environmental requirements;</td>
+<td>Thí sinh phải làm việc được với vật liệu chỉ định và tuân thủ yêu cầu môi trường;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Machining: Centre Lathe and Milling Machine (<strong>Maximum time: 5 to 6 hours</strong>)</td>
+<td>Gia công: máy tiện vạn năng (centre lathe) và máy phay (<strong>thời gian tối đa: 5 đến 6 giờ</strong>)</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The total working time is <strong>20 hours</strong>.</td>
+<td>Tổng thời gian làm việc là <strong>20 giờ</strong>.</td>
+</tr>
+</tbody></table></div>
+<p><strong>Giới hạn số kích thước bị chấm trên mỗi chi tiết gia công (mục 9 ở trên):</strong></p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+<th>Số lượng</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Primary dimensions IT 7</td>
+<td>Kích thước chính, cấp chính xác <strong>IT7</strong></td>
+<td>từ 6 đến 10</td>
+</tr>
+<tr>
+<td>Secondary Dimensions IT 8</td>
+<td>Kích thước phụ, cấp chính xác <strong>IT8</strong></td>
+<td>từ 5 đến 8</td>
+</tr>
+<tr>
+<td>General ISO 2768-1fk</td>
+<td>Dung sai chung <strong>ISO 2768-1 fK</strong> (nguyên văn &quot;fk&quot;)</td>
+<td>từ 3 đến 5</td>
+</tr>
+<tr>
+<td>Surface roughness</td>
+<td>Độ nhám bề mặt</td>
+<td>từ 3 đến 5</td>
+</tr>
+</tbody></table></div>
+<p>[Ghi chú dịch: bản gốc viết &quot;ISO 2768-1fk&quot; (k thường); thuật ngữ trong <code>thuat-ngu.md</code> là &quot;ISO 2768-1 fK&quot; (cấp f cho kích thước, K cho hình học). Giữ nguyên chữ của bản gốc ở bảng; cách viết chuẩn của tiêu chuẩn là &quot;fK&quot;.]</p>
+<hr>
+<h2 id="5-7-phat-de-test-project-circulation">5.7 Phát đề (Test Project circulation)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The Test Project/modules are not circulated prior to the Competition. The Test Project/modules are presented to Experts on C-3 and to Competitors every morning after Compatriot Communication.</td>
+<td>Đề thi/các module <strong>không được phát trước kỳ thi</strong>. Đề được trình bày cho Expert vào <strong>C−3</strong> và cho thí sinh <strong>mỗi buổi sáng sau Compatriot Communication</strong> (buổi trao đổi giữa các thành viên cùng quốc gia).</td>
+</tr>
+<tr>
+<td>Test Project skill areas, skills sets, and parameters are circulated via the WorldSkills website nine (9) months prior to the Competition.</td>
+<td>Các lĩnh vực của đề, bộ kỹ năng (skills sets) và thông số được công bố trên website WorldSkills <strong>chín (9) tháng</strong> trước kỳ thi.</td>
+</tr>
+</tbody></table></div>
+<h2 id="5-9-dich-de-va-dung-phien-dich-test-project-translation-and-">5.9 Dịch đề và dùng phiên dịch (Test Project translation and use of Interpreters)</h2>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The Test Project documentation and the Mark Summary Form may be translated into the language of the Competitors&#39; choice, however, it is the Member&#39;s responsibility to translate the Test Project documents, either by a compatriot Interpreter or by the Expert. Refer to the Skill Management Plan for time allocation for translation.</td>
+<td>Tài liệu đề thi và Phiếu tổng hợp điểm (Mark Summary Form) <strong>có thể</strong> được dịch sang ngôn ngữ thí sinh chọn; tuy nhiên <strong>Member chịu trách nhiệm dịch</strong> tài liệu đề thi, bằng Phiên dịch cùng quốc gia hoặc bằng Expert. Xem Kế hoạch quản lý nghề (Skill Management Plan — SMP) để biết thời gian dành cho việc dịch.</td>
+</tr>
+<tr>
+<td>For more information refer to Competition Rule 10.12.</td>
+<td>Thông tin thêm: xem Luật thi (Competition Rule) 10.12.</td>
+</tr>
+</tbody></table></div>
+<p>Hệ quả thực hành: mỗi sáng đề tới → có thời gian dành cho phiên dịch (theo SMP) → thí sinh nhận bản dịch; <strong>bản vẽ và đề gốc vẫn bằng tiếng Anh</strong>, nên sinh viên phải đọc được bản gốc để tự kiểm tra bản dịch.</p>
+<hr>
+<h2 id="ghi-chu-ban-goc">Ghi chú bản gốc</h2>
+<ol>
+<li><strong>8 tháng hay 9 tháng</strong>: 5.4.3 (không dịch ở đây) ghi &quot;tối thiểu 8 tháng trước kỳ thi&quot; công bố lĩnh vực/skills sets/thông số; 5.7 ghi &quot;9 tháng&quot;. Dịch theo 5.7 ở trên, ghi để biết có lệch giữa hai mục.</li>
+<li><strong>5.3 &quot;SMTs&quot;</strong> là viết tắt chưa định nghĩa trong TD; hiểu theo ngữ cảnh là Skill Management Team (có định nghĩa ở mục 6.4).</li>
+<li><strong>5.3 &quot;ISO 2768-1fk&quot;</strong> viết thường &quot;k&quot; — xem chú thích tại chỗ.</li>
+<li><strong>5.3 gạch &quot;Mechanical - all items produced by the Competitor are utilized&quot;</strong>: câu cụt, dịch sát nghĩa; hiểu là mọi chi tiết thí sinh làm đều được dùng vào lắp ráp, không có chi tiết thừa.</li>
+<li><strong>5.3 gạch &quot;Tolerance range specification;&quot;</strong> chỉ là cụm danh từ đứng đầu danh sách, không có động từ; dịch nguyên.</li>
+<li><strong>5.9</strong> nói &quot;Mark Summary Form may be translated&quot; nhưng không nói thời điểm; chỉ dẫn tới SMP.</li>
+</ol></section><section><h1>4. Cách chấm, trừ điểm và thẩm định đề — Marking, penalties, validation</h1><h2 id="cach-cham">Mục 4 — Cách chấm và trừ điểm</h2>
+<div class="tl-box">
+<p>Nguồn: WSC2026_TD01_en, tr. 14–17. Bậc 2 — dành cho giáo viên huấn luyện. Bỏ mục 4.1 (hướng dẫn chung dành cho người thiết kế thang điểm) theo phạm vi đã chốt.</p>
+</div>
+<h3>Ý nghĩa cho huấn luyện</h3>
+<ol>
+<li><strong>Chấm theo từng Aspect, mỗi tiêu chí có đội chấm riêng.</strong> Mỗi Sub Criterion do một đội chấm cố định chấm cho <em>tất cả</em> thí sinh → tiêu chuẩn chấm nhất quán; thí sinh không &quot;lách&quot; bằng cách chọn giám khảo dễ.</li>
+<li><strong>Chấm Measurement (đo): chỉ có điểm tối đa hoặc 0</strong> (trừ khi Aspect ghi rõ mức điểm một phần). Dung sai là ranh giới cứng: lệch 0.001 mm vẫn mất cả điểm → luyện đo và nhắm vào giữa dải dung sai.</li>
+<li><strong>Chấm Judgement (đánh giá) thang 0–3, mốc 1 = &quot;đạt chuẩn công nghiệp&quot;.</strong> Điểm 0 = dưới chuẩn; muốn 2–3 phải vượt chuẩn. Dạy sinh viên nhìn vào <em>mô tả mốc</em> trong thang điểm thật (xem phiếu tự chấm bậc 1).</li>
+<li><strong>Chi tiết phải nộp trước khi lắp ráp.</strong> Chi tiết nào chưa nộp để chấm mà đem lắp là vi phạm quy trình; xây thói quen nộp đúng giờ biểu.</li>
+<li><strong>Dụng cụ đo của thí sinh chính là dụng cụ chấm.</strong> Hiệu chỉnh/kiểm tra panme, thước cặp của mình là hết sức quan trọng — nếu dụng cụ đó đo sai, giám khảo cũng đo ra sai như vậy.</li>
+<li><strong>Xin thêm vật tư bị phạt tối đa 2 điểm mỗi lần</strong>, và phải có hai Expert ký (không phải Expert cùng quốc gia). Phôi hỏng không phải là &quot;miễn phí&quot;.</li>
+<li><strong>Dùng thiết bị sai/không an toàn bị trừ 0.5 điểm mỗi lần</strong>, cũng cần hai Expert ký. Các lần vi phạm cộng dồn.</li>
+<li><strong>Không Expert nào chấm thí sinh cùng quốc gia</strong> → khi thi thử ở trường, giáo viên huấn luyện trực tiếp <em>không nên</em> tham gia chấm sinh viên của chính mình nếu muốn mô phỏng đúng.</li>
+</ol>
+<hr>
+<h3>4.2 Tiêu chí chấm (Assessment Criteria)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>The main headings of the Marking Scheme are the Assessment Criteria. These headings are derived before, or in conjunction with, the Test Project. In some skill competitions the Assessment Criteria may be similar to the section headings in the Standards; in others they may be different. There will normally be between five and nine Assessment Criteria. Whether or not the headings match, the Marking Scheme as a whole must reflect the weightings in the Standards.</td>
+<td>Các đề mục chính của Thang điểm là Tiêu chí chấm (Assessment Criteria). Các đề mục này được xác định trước hoặc song song với Đề thi. Ở một số nghề, Tiêu chí chấm giống tiêu đề các section trong Chuẩn; ở nghề khác thì khác. Thường có <strong>từ năm đến chín</strong> Tiêu chí chấm. Dù tiêu đề có trùng hay không, toàn bộ Thang điểm phải phản ánh trọng số trong Chuẩn.</td>
+</tr>
+<tr>
+<td>Assessment Criteria are created by the person or people developing the Marking Scheme, who are free to define the Criteria that they consider most suited to the assessment and marking of the Test Project. Each Assessment Criterion is defined by a letter (A-I). The Assessment Criteria, the allocation of marks, and the assessment methods, should not be set out within this Technical Description. This is because the Criteria, allocation of marks, and assessment methods all depend on the nature of the Marking Scheme and Test Project, which is decided after this Technical Description is published.</td>
+<td>Tiêu chí chấm do người xây dựng Thang điểm tạo ra, được tự do định nghĩa tiêu chí họ thấy phù hợp nhất với việc đánh giá, chấm Đề thi. Mỗi Tiêu chí được ký hiệu bằng một chữ cái (A–I). Tiêu chí, phân bổ điểm và phương pháp đánh giá <strong>không</strong> được nêu trong TD này, vì chúng phụ thuộc vào bản chất của Thang điểm và Đề thi, vốn được quyết định sau khi TD được công bố. <em>(Với 2026: 7 tiêu chí A–G, xem file 01.)</em></td>
+</tr>
+<tr>
+<td>The Mark Summary Form generated by the CIS will comprise a list of the Assessment Criteria and Sub Criteria.</td>
+<td>Phiếu tổng hợp điểm (Mark Summary Form) do CIS tạo ra gồm danh sách các Tiêu chí và Tiêu chí con.</td>
+</tr>
+<tr>
+<td>The marks allocated to each Criterion will be calculated by the CIS. These will be the cumulative sum of marks given to each Aspect within that Assessment Criterion.</td>
+<td>Điểm của mỗi Tiêu chí do CIS tính, bằng tổng cộng dồn điểm của từng Aspect thuộc Tiêu chí đó.</td>
+</tr>
+</tbody></table></div>
+<h3>4.3 Tiêu chí con (Sub Criteria)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Each Assessment Criterion is divided into one or more Sub Criteria. Each Sub Criterion becomes the heading for a WorldSkills marking form. Each marking form (Sub Criterion) contains Aspects to be assessed and marked by Measurement or Judgement, or both Measurement and Judgement.</td>
+<td>Mỗi Tiêu chí được chia thành một hoặc nhiều Tiêu chí con. Mỗi Tiêu chí con là tiêu đề của một phiếu chấm WorldSkills. Mỗi phiếu chấm (Tiêu chí con) chứa các Aspect được đánh giá và chấm bằng Measurement hoặc Judgement, hoặc cả hai.</td>
+</tr>
+<tr>
+<td>Each marking form (Sub Criterion) specifies both the day on which it will be marked, and the identity of the marking team.</td>
+<td>Mỗi phiếu chấm nêu rõ <strong>ngày chấm</strong> và <strong>đội chấm</strong> (marking team).</td>
+</tr>
+</tbody></table></div>
+<h3>4.4 Aspect (Mục chấm)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Each Aspect defines, in detail, a single item to be assessed and marked, together with the marks, and detailed descriptors or instructions as a guide to marking. Each Aspect is assessed either by Measurement or by Judgement.</td>
+<td>Mỗi Aspect xác định chi tiết <strong>một</strong> hạng mục được đánh giá và chấm, kèm số điểm và mô tả/chỉ dẫn chi tiết làm hướng dẫn chấm. Mỗi Aspect chỉ chấm bằng Measurement <strong>hoặc</strong> Judgement.</td>
+</tr>
+<tr>
+<td>The marking form lists, in detail, every Aspect to be marked together with the mark allocated to it.</td>
+<td>Phiếu chấm liệt kê chi tiết mọi Aspect cần chấm cùng điểm được phân bổ.</td>
+</tr>
+<tr>
+<td>The sum of the marks allocated to each Aspect must fall within the range of marks specified for that section of the Standards. This will be displayed in the Mark Allocation Table of the CIS, in the following format, when the Marking Scheme is reviewed from C-8 weeks. (Section 4.1 refers.)</td>
+<td>Tổng điểm các Aspect phải nằm trong khoảng điểm quy định cho section đó của Chuẩn. Điều này hiển thị trong Bảng phân bổ điểm (Mark Allocation Table) của CIS theo định dạng sau, khi Thang điểm được rà soát từ C−8 tuần. (Tham chiếu mục 4.1.) [Ghi chú dịch: bản gốc có chỗ trống sau câu này — bảng ví dụ của CIS không hiện trong file; xem Ghi chú bản gốc.]</td>
+</tr>
+</tbody></table></div>
+<h3>4.5 Đánh giá và chấm điểm (Assessment and marking)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>There is to be one marking team for each Sub Criterion, whether it is assessed and marked by Judgement, Measurement, or both. The same marking team must assess and mark all Competitors. Where this is impracticable (for example where an action must be done by every Competitor simultaneously, and must be observed doing so), a second tier of assessment and marking will be put in place, with the approval of the Competitions Committee Management Team.</td>
+<td>Mỗi Tiêu chí con có <strong>một</strong> đội chấm, dù chấm Judgement, Measurement hay cả hai. <strong>Cùng một đội</strong> phải đánh giá và chấm tất cả thí sinh. Khi không khả thi (ví dụ một thao tác mọi thí sinh phải làm đồng thời và phải được quan sát), sẽ lập tầng chấm thứ hai, với sự chấp thuận của Ban quản lý Uỷ ban Thi đấu (Competitions Committee Management Team).</td>
+</tr>
+<tr>
+<td>The marking teams must be organized to ensure that there is no compatriot marking in any circumstances. (Section 4.6 refers.)</td>
+<td>Các đội chấm phải được tổ chức sao cho <strong>không có chấm điểm người cùng quốc gia</strong> trong mọi trường hợp. (Tham chiếu mục 4.6.)</td>
+</tr>
+</tbody></table></div>
+<h3>4.6 Chấm bằng Judgement — thang 0–3</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Judgement uses a scale of 0-3. To apply the scale with rigour and consistency, Judgement must be conducted using:</td>
+<td>Judgement dùng thang <strong>0–3</strong>. Để áp dụng thang chặt chẽ và nhất quán, phải thực hiện Judgement bằng:</td>
+</tr>
+<tr>
+<td>• benchmarks (criteria) for detailed guidance for each Aspect (in words, images, artefacts, or separate guidance notes). This is documented in the Standards and Assessment Guide.</td>
+<td>• các chuẩn tham chiếu (benchmark/tiêu chí) hướng dẫn chi tiết cho từng Aspect (bằng lời, hình ảnh, mẫu vật hoặc ghi chú hướng dẫn riêng). Được ghi trong Hướng dẫn chuẩn và đánh giá.</td>
+</tr>
+<tr>
+<td>• the 0-3 scale to indicate:</td>
+<td>• thang 0–3 với nghĩa:</td>
+</tr>
+</tbody></table></div>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Điểm</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td>performance below industry standard</td>
+<td>Kết quả <strong>dưới</strong> chuẩn công nghiệp</td>
+</tr>
+<tr>
+<td>1</td>
+<td>performance meets industry standard</td>
+<td>Kết quả <strong>đạt</strong> chuẩn công nghiệp</td>
+</tr>
+<tr>
+<td>2</td>
+<td>performance meets and, in specific respects, exceeds industry standard</td>
+<td>Đạt chuẩn và, ở một số khía cạnh cụ thể, <strong>vượt</strong> chuẩn công nghiệp</td>
+</tr>
+<tr>
+<td>3</td>
+<td>performance wholly exceeds industry standard and is judged as excellent</td>
+<td><strong>Vượt toàn diện</strong> chuẩn công nghiệp và được đánh giá là xuất sắc</td>
+</tr>
+</tbody></table></div>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Three Experts will judge each Aspect, normally simultaneously, and record their scores. A fourth Expert coordinates and supervises the scoring, and checks their validity. They also act as a judge when required to prevent compatriot marking.</td>
+<td><strong>Ba</strong> Expert chấm mỗi Aspect, thường đồng thời, và ghi điểm. Expert thứ <strong>tư</strong> điều phối, giám sát việc chấm và kiểm tra tính hợp lệ; cũng làm giám khảo khi cần để tránh chấm người cùng quốc gia.</td>
+</tr>
+</tbody></table></div>
+<h3>4.7 Chấm bằng Measurement</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Normally three Experts will be used to assess each Aspect, with a fourth Expert supervising. In some circumstances the team may organize itself as two pairs, for dual marking. Unless otherwise stated, only the maximum mark or zero will be awarded. Where they are used, the benchmarks for awarding partial marks will be clearly defined within the Aspect. To avoid errors in calculation or transmission, the CIS provides a large number of automated calculation options, the use of which is mandated.</td>
+<td>Thường dùng <strong>ba</strong> Expert đánh giá mỗi Aspect, với Expert thứ tư giám sát. Trong một số trường hợp đội có thể chia thành hai cặp để chấm kép. <strong>Trừ khi ghi khác, chỉ cho điểm tối đa hoặc 0.</strong> Khi có dùng điểm một phần, các mốc cho điểm một phần được định rõ ngay trong Aspect. Để tránh sai sót khi tính và chuyển số liệu, CIS có nhiều tuỳ chọn tính tự động, và <strong>bắt buộc</strong> dùng chúng.</td>
+</tr>
+</tbody></table></div>
+<h3>4.8 Dùng Measurement và Judgement</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Decisions regarding the choice of criteria and assessment methods will be made during the design of the competition through the Marking Scheme and Test Project.</td>
+<td>Quyết định chọn tiêu chí và phương pháp đánh giá được đưa ra trong quá trình thiết kế cuộc thi, thông qua Thang điểm và Đề thi.</td>
+</tr>
+</tbody></table></div>
+<h3>4.9 Chiến lược và quy trình đánh giá của nghề (Skill assessment strategy and procedures)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WorldSkills is committed to continuous improvement including reviewing past limitations and building on good practice. The following skill assessment strategy and procedures for this skill competition take this into account and explain how the marking process will be managed.</td>
+<td>WorldSkills cam kết cải tiến liên tục, gồm rà soát hạn chế quá khứ và phát huy thực hành tốt. Chiến lược và quy trình đánh giá nghề dưới đây tính đến điều đó và giải thích cách quản lý quá trình chấm.</td>
+</tr>
+<tr>
+<td>The Test Project and Marking Scheme will reflect the WorldSkills Occupational Standards. The Judgement and Measurement forms are formalized by the Independent Test Project Designer in consultation with the Skill Competition Manager and Skill Advisor to make sure the Marking Scheme accurately reflects the WSOS.</td>
+<td>Đề thi và Thang điểm phản ánh WSOS. Các phiếu Judgement và Measurement do Người thiết kế đề độc lập (ITPD) chính thức hoá, sau khi tham vấn Quản lý thi nghề (SCM) và Cố vấn nghề, để bảo đảm Thang điểm phản ánh đúng WSOS.</td>
+</tr>
+</tbody></table></div>
+<p>Các luật cụ thể (mỗi gạch đầu dòng của 4.9):</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>The Experts will split into Marking Teams and assigned projects of work to mark. These Marking Teams will mark the same criteria for all Competitors;</td>
+<td>Các Expert chia thành các đội chấm và được giao phần việc để chấm. Mỗi đội chấm <strong>cùng các tiêu chí</strong> cho tất cả thí sinh;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A timetable to be prepared by the Experts as to when the projects must be handed in by the Competitor for marking;</td>
+<td>Các Expert lập <strong>lịch</strong> quy định khi nào thí sinh phải <strong>nộp</strong> các phần việc để chấm;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>These projects are marked in process and when they are completed are presented back to the Competitor;</td>
+<td>Các phần việc được chấm <strong>trong tiến trình</strong> và khi chấm xong thì <strong>trả lại</strong> cho thí sinh;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>An Expert must not mark their compatriot Competitor&#39;s work;</td>
+<td>Expert <strong>không được</strong> chấm bài của thí sinh cùng quốc gia;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Parts must be handed in for marking before final assembly of a project as per instructions;</td>
+<td>Các chi tiết <strong>phải được nộp để chấm trước khi lắp ráp cuối cùng</strong> theo hướng dẫn;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Expert teams to be selected by the Chief Expert and Skill Competition Manager;</td>
+<td>Các đội Expert do Chuyên gia trưởng và Quản lý thi nghề chọn;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>A mix of experience is required in each Expert team;</td>
+<td>Mỗi đội Expert cần có sự đa dạng kinh nghiệm;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>The manual measuring tools that are used by the Competitors for manual measuring will be the same ones used in module evaluation by the Marking Team.</td>
+<td>Dụng cụ đo thủ công thí sinh dùng để đo <strong>sẽ chính là dụng cụ</strong> đội chấm dùng khi chấm module.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Competitors&#39; standards;</td>
+<td><em>(Gạch đầu dòng chỉ có hai chữ &quot;Competitors&#39; standards&quot; — &quot;chuẩn của thí sinh&quot;; không rõ nghĩa, xem Ghi chú bản gốc.)</em></td>
+</tr>
+<tr>
+<td>10</td>
+<td>If a Competitor is issued with additional material/equipment it is agreed that a penalty is incurred in the marking scale. This needs to be confirmed on the drawing to ensure consistency for Competitors and Experts. Maximum penalty of two marks for each additional piece of material or equipment;</td>
+<td>Nếu thí sinh được cấp <strong>thêm</strong> vật tư/thiết bị thì thống nhất có <strong>phạt</strong> trong thang điểm. Điều này cần được xác nhận trên bản vẽ để nhất quán giữa thí sinh và Expert. <strong>Phạt tối đa 2 điểm cho mỗi vật tư hoặc thiết bị cấp thêm</strong>;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Any additional material given to a Competitor must be signed off by two Experts (not compatriot Expert) to ensure consistency;</td>
+<td>Mọi vật tư cấp thêm cho thí sinh phải có <strong>hai Expert ký</strong> (không phải Expert cùng quốc gia);</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Any details to be manufactured by the Competitor must be manufactured as per the supplied drawing with the specified process/equipment supplied and to industry standard with the correct usage of equipment at all times during the process;</td>
+<td>Mọi chi tiết thí sinh phải chế tạo phải làm <strong>đúng bản vẽ cấp</strong>, bằng quy trình/thiết bị được chỉ định, đạt chuẩn công nghiệp, và <strong>dùng thiết bị đúng cách trong suốt quá trình</strong>;</td>
+</tr>
+<tr>
+<td>13</td>
+<td>If equipment is used inappropriately/unsafely there is a penalty of 0.5 marks per infringement due to the unsafe/incorrect use of equipment, this is to be signed off by two Experts (not compatriot Expert) to ensure consistency</td>
+<td>Nếu dùng thiết bị không phù hợp/không an toàn thì <strong>phạt 0.5 điểm cho mỗi lần vi phạm</strong> do dùng thiết bị sai/không an toàn; cần <strong>hai Expert ký</strong> (không phải Expert cùng quốc gia) để bảo đảm nhất quán.</td>
+</tr>
+</tbody></table></div>
+<h5>Bảng tóm tắt các luật trừ điểm cần dạy sinh viên</h5>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Tình huống</th>
+<th>Mức phạt</th>
+<th>Điều kiện</th>
+<th>Nguồn</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Cấp thêm vật tư hoặc thiết bị (phôi hỏng, thiếu...)</td>
+<td><strong>Tối đa 2 điểm</strong> / mỗi vật tư hoặc thiết bị</td>
+<td>Hai Expert ký (không cùng quốc gia); xác nhận trên bản vẽ</td>
+<td>4.9 #10, #11</td>
+</tr>
+<tr>
+<td>Dùng thiết bị không phù hợp / không an toàn</td>
+<td><strong>0.5 điểm</strong> / mỗi lần</td>
+<td>Hai Expert ký (không cùng quốc gia)</td>
+<td>4.9 #13</td>
+</tr>
+<tr>
+<td>Chi tiết chưa nộp chấm đã lắp ráp</td>
+<td>Không nêu mức phạt trong TD; chi tiết phải nộp trước khi lắp cuối</td>
+<td>Theo hướng dẫn trong đề</td>
+<td>4.9 #5</td>
+</tr>
+<tr>
+<td>Dụng cụ đo</td>
+<td>Dụng cụ thí sinh dùng cũng là dụng cụ chấm</td>
+<td>—</td>
+<td>4.9 #8</td>
+</tr>
+</tbody></table></div>
+<div class="tl-box">
+<p>Mức &quot;lần 3 dừng thi&quot; ghi trong <code>thuat-ngu.md</code> cho <em>Safety infraction</em> thuộc luật thi chung/đề thi, <strong>không có</strong> trong TD mục 4.9. Phiếu thang điểm thật của bậc 1 xử lý các luật đó; ở đây chỉ dịch đúng TD.</p>
+</div>
+<hr>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li><strong>4.4 — bảng ví dụ của CIS bị thiếu</strong>: câu &quot;…in the following format…&quot; kết thúc mà không có bảng (khoảng trống trong PDF, tr. 15). Không ảnh hưởng đến luật chấm.</li>
+<li><strong>4.9 gạch đầu dòng &quot;Competitors&#39; standards;&quot;</strong> là một cụm treo, không có động từ hay nội dung; dịch nguyên, không suy đoán. Có thể là tiêu đề mục còn sót khi soạn, nằm trước các luật về vật tư/thiết bị.</li>
+<li><strong>4.9 — chữ &quot;mark&quot; và &quot;marks&quot;</strong>: bản gốc viết &quot;penalty of two marks for each additional piece&quot; — chưa nói rõ phạt trừ vào <em>tiêu chí nào</em>. &quot;Tối đa 2&quot; nghĩa là mức phạt do thang điểm/bản vẽ định, có thể thấp hơn.</li>
+<li><strong>4.9 #13</strong> thiếu dấu chấm cuối câu; <strong>4.5/4.6</strong> tham chiếu chéo &quot;Section 4.6 refers&quot; — đúng với mục tiếp theo, không lỗi.</li>
+<li><strong>Tiêu đề &quot;C-8 weeks&quot;</strong> (4.4): &quot;C−8 tuần&quot; nghĩa là 8 tuần trước ngày thi (C = Competition). Ghi theo quy ước <code>thuat-ngu.md</code> (C-3, C+1).</li>
+<li>Mục 4.1 (hướng dẫn chung) không dịch theo phạm vi đã chốt.</li>
+</ol>
+<h2 id="tham-dinh">Thẩm định đề (Statement of Validation)</h2>
+<p>Nguồn: 5 file <code>WSC2026_statement_of_TP_validation_01_*_ITPV.pdf</code> (mỗi file 1 trang, cùng mẫu &quot;Version 1.0, 24.06.25&quot;). 3 file (CB, FB, SS) không có text vì là ảnh scan/ảnh chụp; đã xem ảnh để đọc chữ ký.</p>
+<h3>Quy trình</h3>
+<p>ITPV (Independent Test Project Validator — chuyên gia thẩm định độc lập đề thi) được cấp một bảng câu hỏi để đi qua ba bước. <strong>Review (rà soát):</strong> xem toàn bộ tài liệu kỹ thuật của đề so với WSOS và các chỉ dẫn riêng trong Technical Description, để dự báo vấn đề và sửa sớm. <strong>Verification (kiểm chứng):</strong> chứng minh đề chạy được, chế tạo/hoàn thành được trong khung thời gian phù hợp của cuộc thi, gồm cả làm thử thực tế. <strong>Validation (xác nhận):</strong> bảo đảm chất lượng cuối cùng của đề và thang điểm, mọi vật tư và phần hỗ trợ sẵn sàng đúng yêu cầu Technical Description; Skill Advisor tham gia bước này. Bảng câu hỏi đã hoàn thành được nộp cho Director of Skills Competitions (không có trong bộ tài liệu).</p>
+<h3>5 người thẩm định</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>ITPV</th>
+<th>Tổ chức</th>
+<th>Ngày ký</th>
+<th>File</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>Alex Le Comte</td>
+<td>không ghi</td>
+<td>6/8/2026 (August 6th 2026)</td>
+<td>ALC</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Colin Buddin</td>
+<td>không ghi</td>
+<td>10/8/2026 (Aug 10th, 2026)</td>
+<td>CB</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Fabian Burguera</td>
+<td>không ghi</td>
+<td>08/10/2026 (viết tay; theo mốc file 11/8 nhiều khả năng 10/8)</td>
+<td>FB</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Emerson Costa Santos</td>
+<td>không ghi</td>
+<td>10/08/2026 (nhiều khả năng 10/8)</td>
+<td>ECS</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Shannon Savoy</td>
+<td>không ghi</td>
+<td>&quot;august 30/2026&quot; hoặc 20/2026 (chữ viết tay khó đọc; file tạo 31/8)</td>
+<td>SS</td>
+</tr>
+</tbody></table></div>
+<p>Tên skill ghi: Industrial Mechanics (#01). Mẫu không có ô tổ chức/quốc gia.</p>
+<h3>Hệ quả cho huấn luyện</h3>
+<ul>
+<li>Đề đã được 5 chuyên gia độc lập xác nhận <strong>làm được trọn vẹn trong thời gian thi (20 giờ)</strong> và khớp WSOS; nếu SV không kịp, nguyên nhân là kỹ năng/quản lý thời gian, không phải đề quá tải.</li>
+<li>Đề và thang điểm <strong>không đổi khi thi</strong>, chỉ sửa lỗi kỹ thuật (ví dụ lỗi đánh máy trong <code>loi-ban-goc.md</code>). Có thể luyện sát đề thật.</li>
+<li>Không có chữ ký của Skill Advisor hay chi tiết đề đã được chỉnh sau thẩm định trong tài liệu này.</li>
+</ul>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li>File ALC và ECS có text; CB, FB, SS là ảnh (SS là ảnh chụp bằng điện thoại, nền nghiêng).</li>
+<li>Định dạng ngày không thống nhất (tháng/ngày và ngày/tháng); các ngày ở bảng đối chiếu thêm với ngày tạo file trong zip.</li>
+<li>Chữ ký trên SS rất khó đọc, ghi &quot;30&quot; hay &quot;20&quot; là không chắc chắn.</li>
+<li>Cả 5 người ký cùng một mẫu &quot;1 of 1&quot; và cùng mốc phiên bản 24.06.25.</li>
+</ol></section><section><h1>5. Trang bị bảo hộ và luật riêng của nghề — PPE and skill-specific rules</h1><h2 id="ppe">Mục 7 — Trang bị bảo hộ (PPE)</h2>
+<div class="tl-box">
+<p>Nguồn: WSC2026_TD01_en, mục 7.1, tr. 23–24. <strong>Bảng dựng lại từ PDF gốc</strong> (đã đối chiếu từng ô bằng hình trang 23–24) vì bản text trích bị vỡ cột. Bậc 2 — dành cho giáo viên huấn luyện.</p>
+</div>
+<h3>Ý nghĩa cho huấn luyện</h3>
+<ul>
+<li><strong>Thí sinh tự mang PPE</strong> (TD 8.4); Expert và phiên dịch cũng tự mang (8.5–8.6, xem file 05). Trường chuẩn bị đủ bộ khi thi thử.</li>
+<li><strong>Kính bảo hộ có chắn bên hông, giày bảo hộ mũi thép (có mũi bảo vệ) và quần áo bó sát, quần dài</strong> bắt buộc ở <strong>cả 5 loại công việc</strong>, kể cả khu vực an toàn thông thường.</li>
+<li><strong>Mũ/lưới trùm tóc và bảo vệ thính giác</strong> bắt buộc khi hàn–chế tạo, gia công, nâng hạ, dụng cụ cầm tay — chỉ <em>khu vực an toàn chung</em> là không yêu cầu.</li>
+<li><strong>Hàn–chế tạo là loại đòi hỏi PPE nhiều nhất</strong>: mặt nạ hàn + găng hàn + găng chống cắt (khi không hàn) + quần áo chống cháy, cùng toàn bộ PPE chung.</li>
+<li><strong>Nâng hạ thiết bị</strong>: thêm găng chống cắt, không cần găng hàn.</li>
+<li>Cột &quot;giày chắc chắn, kín mũi, không gót&quot; (Sturdy shoes) <strong>không có dấu ✓ ở hàng nào</strong> (xem Ghi chú bản gốc #2); loại giày bắt buộc ở mọi hàng là <em>giày bảo hộ có mũi bảo vệ</em>.</li>
+</ul>
+<hr>
+<h3>Bảng PPE theo loại công việc</h3>
+<p>Chú giải: ✓ = bắt buộc theo TD (ô trống = TD không yêu cầu).</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Loại công việc / Task</th>
+<th>Kính bảo hộ có chắn bên hông (Safety glasses with side protection)</th>
+<th>Mặt nạ hàn (Welding mask)</th>
+<th>Găng hàn (Welding gloves)</th>
+<th>Găng chống cắt (Cut protection gloves)</th>
+<th>Giày bảo hộ có mũi bảo vệ (Safety shoes with protective cap)</th>
+<th>Giày chắc chắn, kín mũi, không gót (Sturdy shoes with closed toe and no heel)</th>
+<th>Quần áo bó sát, quần dài (Tight fitting work clothes – long trousers/pants)</th>
+<th>Quần áo chống cháy (Fire resistant protective clothes)</th>
+<th>Lưới/mũ trùm tóc (Hairnet/hat)</th>
+<th>Bảo vệ thính giác (Hearing protection)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Khu vực an toàn chung (General PPE for safe areas)</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Hàn và chế tạo (Welding and Fabrication)</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓ <em>(khi không hàn / when not welding)</em></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Gia công — tiện/phay đứng (Machining – Lathe/Vertical Milling M/C)</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Cẩu/nâng thiết bị (Rigging/Lifting of equipment)</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Dụng cụ cầm tay, khoan tay, cưa lỗ… (Hand tools/hand drills/hole saws etc.)</td>
+<td>✓</td>
+<td></td>
+<td></td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td></td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody></table></div>
+<p>Cách dùng khi lập danh sách PPE cho từng module:</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Module</th>
+<th>Công việc chính</th>
+<th>PPE cần có (ngoài PPE chung: kính, giày bảo hộ, quần áo bó sát)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>B (hàn, lấy dấu)</td>
+<td>Hàn và chế tạo; dụng cụ cầm tay</td>
+<td>+ mặt nạ hàn, găng hàn, găng chống cắt (khi không hàn), quần áo chống cháy, lưới/mũ, bảo vệ tai</td>
+</tr>
+<tr>
+<td>C (tiện, phay)</td>
+<td>Gia công</td>
+<td>+ lưới/mũ trùm tóc, bảo vệ tai (không găng)</td>
+</tr>
+<tr>
+<td>A, D, E, G (lắp ráp, bảo trì)</td>
+<td>Dụng cụ cầm tay; nâng hạ khi cần</td>
+<td>+ lưới/mũ, bảo vệ tai; găng chống cắt khi nâng hạ</td>
+</tr>
+</tbody></table></div>
+<p>[Ghi chú dịch: cột &quot;Module → công việc&quot; ở bảng thứ hai là gợi ý của người dịch để giáo viên dùng nhanh, <strong>không phải nội dung TD</strong>. TD chỉ phân theo 5 loại công việc ở bảng trên.]</p>
+<hr>
+<h3>Nguyên văn đối chiếu (đề mục TD)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Skill-specific safety requirements</td>
+<td>Yêu cầu an toàn riêng của nghề</td>
+</tr>
+<tr>
+<td>7.1 Personal Protective Equipment</td>
+<td>7.1 Trang bị bảo hộ cá nhân</td>
+</tr>
+<tr>
+<td>Refer to WorldSkills Safety Policy and Regulations for Host country or region regulations.</td>
+<td>Xem Chính sách và quy định an toàn của WorldSkills cho quy định của nước/khu vực chủ nhà.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li><strong>Bản text trích (pdftotext) vỡ cột</strong>: PPE ở mục 7.1 chia thành <strong>bốn</strong> bảng nhỏ theo cột (4 → 3 → 3 → 2 cột PPE) và ngắt trang giữa chừng (bảng thứ ba tách qua tr. 23–24). Bảng trên là gộp lại và đã đối chiếu từng ô với PDF gốc.</li>
+<li><strong>Cột &quot;Sturdy shoes with closed toe and no heel&quot; trống hoàn toàn</strong> ở cả 5 hàng. Có thể là cột thừa còn sót từ bản TD cũ, hoặc nghĩa là loại giày này không phải PPE bắt buộc khi đã có giày mũi thép. Dịch nguyên, không suy đoán.</li>
+<li><strong>Hàng &quot;General PPE for safe areas&quot; không có ✓ ở &quot;Hairnet/hat&quot; và &quot;Hearing protection&quot;</strong> — đúng theo bản gốc; hai ô này trống.</li>
+<li>TD ghi dấu &quot;√&quot; (căn bậc hai) thay cho &quot;✓&quot;; chuyển sang ✓ cho dễ đọc, ý nghĩa như nhau.</li>
+<li><strong>&quot;Cut protection gloves&quot; ở hàng Welding and Fabrication</strong> có điều kiện &quot;(When not welding)&quot; — găng chống cắt dùng khi không hàn (khi hàn dùng găng hàn).</li>
+</ol>
+<h2 id="luat-rieng">Mục 9 — Luật riêng của nghề</h2>
+<div class="tl-box">
+<p>Nguồn: WSC2026_TD01_en, mục 6.5 (tr. 21–22), 8.3–8.6 (tr. 25–26), 9 (tr. 27). Bậc 2 — dành cho giáo viên huấn luyện.</p>
+</div>
+<h3>Ý nghĩa cho huấn luyện</h3>
+<ul>
+<li>Vi phạm luật mục 9 xử theo thủ tục giải quyết khiếu nại và hệ thống phạt của Code of Ethics (9.1); được giải quyết bằng thủ tục khiếu nại và hệ thống phạt của Code of Ethics, không phải bằng khoản trừ điểm trong thang điểm.</li>
+<li><strong>Không mang</strong> USB/thẻ nhớ, laptop, máy tính bảng, điện thoại, máy chụp ảnh/quay phim; <strong>không chụp ảnh</strong> bài của mình; <strong>không mang bản vẽ, tài liệu chuẩn bị sẵn, mẫu (template), chi tiết gia công trước</strong>.</li>
+<li><strong>Không mang hộp dụng cụ</strong> — mọi dụng cụ do ban tổ chức cấp. <strong>Chỉ tự mang PPE</strong> (xem file 04).</li>
+<li>Thời hạn cấm công nghệ: <strong>từ C−6 đến C+1</strong> (6 ngày trước đến 1 ngày sau ngày thi).</li>
+<li>Mục 6.5 là <strong>thực hành tốt (best practice)</strong>, <em>không</em> phạt như luật; một số có thể phản ánh trong thang điểm.</li>
+</ul>
+<hr>
+<h3>6.5 Thủ tục thực hành tốt chung (General best practice procedures)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>General best practice procedures clearly delineate the difference between what is a best practice procedure and skill-specific rules (section 9). General best practice procedures are those where Experts and Competitors CANNOT be held accountable as a breach to the Competition Rules or skill-specific rules which would have a penalty applied as part of the Issue and Dispute Resolution procedure including the Code of Ethics and Conduct Penalty System. In some cases, general best practice procedures for Competitors may be reflected in the Marking Scheme.</td>
+<td>Thủ tục thực hành tốt chung phân định rõ đâu là thực hành tốt, đâu là luật riêng của nghề (mục 9). Thực hành tốt là những việc mà Expert và thí sinh <strong>KHÔNG thể</strong> bị coi là vi phạm Luật thi hay luật riêng của nghề (vốn có phạt trong thủ tục giải quyết khiếu nại, gồm Hệ thống phạt của Code of Ethics and Conduct). Trong một số trường hợp, thực hành tốt dành cho thí sinh có thể được phản ánh trong Thang điểm.</td>
+</tr>
+</tbody></table></div>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Chủ đề / Task</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Phát đề (Release of Test Project modules)</td>
+<td>Test Project documentation is released to the Competitors at the beginning of each competition day.</td>
+<td>Tài liệu đề thi được phát cho thí sinh <strong>vào đầu mỗi ngày thi</strong>.</td>
+</tr>
+<tr>
+<td>Dịch (Translation work)</td>
+<td>Interpreters will translate beginning on C-3 and on each day of the competition as per SMP and the use of pre-competition posted documents (Test Project skill areas, skills sets, and parameters) will be used to complete this work.</td>
+<td>Phiên dịch dịch <strong>bắt đầu từ C−3 và mỗi ngày thi</strong> theo SMP, dùng các tài liệu đã đăng trước kỳ thi (lĩnh vực đề, skills sets, thông số) để hoàn tất công việc này.</td>
+</tr>
+<tr>
+<td>Công cụ phiên dịch được dùng (Tools an Interpreter may use)</td>
+<td>Interpreters may use a trade specific technology dictionary and a translation device.</td>
+<td>Phiên dịch <strong>được dùng từ điển chuyên ngành kỹ thuật</strong> và <strong>thiết bị dịch</strong>.</td>
+</tr>
+<tr>
+<td>Ai được tiếp cận thí sinh và khi nào (Who can attend to a Competitor and when)</td>
+<td>Competitors will advise the appropriate marking team Expert they require assistance. Where an Interpreter is required, ONLY the Interpreter is summoned to answer any questions arising. If the compatriot Expert is part of the marking team they must step aside and observe only, interaction with their Competitor is not allowed.</td>
+<td>Thí sinh báo cho Expert của đội chấm phù hợp khi cần hỗ trợ. Khi cần Phiên dịch thì <strong>CHỈ</strong> Phiên dịch được gọi để trả lời các câu hỏi phát sinh. Nếu Expert cùng quốc gia nằm trong đội chấm thì phải <strong>đứng ra ngoài và chỉ quan sát</strong>, <strong>không được tương tác</strong> với thí sinh của mình.</td>
+</tr>
+<tr>
+<td>Ghi lại các điểm ký xác nhận (Recording sign-off points)</td>
+<td>If required designated Experts will record the Competitors work at each sign off point using a device allocated to them by the Skill Competition Manager.</td>
+<td>Khi cần, các Expert được chỉ định ghi lại (quay/chụp) công việc của thí sinh tại mỗi điểm ký xác nhận bằng thiết bị do Quản lý thi nghề (SCM) cấp.</td>
+</tr>
+<tr>
+<td>Thông tin chấm cung cấp cho thí sinh (Marking information provided to Competitors)</td>
+<td>At each workstation the Competitor will receive from the Expert/Industry Marking Team brief but clear descriptions/direction of the range of skills, equipment, and tolerances required to compete the given project/module.</td>
+<td>Tại mỗi vị trí làm việc, thí sinh nhận từ Expert/Đội chấm ngành công nghiệp (Industry Marking Team) mô tả/hướng dẫn <strong>ngắn gọn nhưng rõ ràng</strong> về phạm vi kỹ năng, thiết bị và dung sai cần có để hoàn thành đề/module.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3>8.3–8.6 Vật liệu và thiết bị</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Mục</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>8.3 Hộp dụng cụ thí sinh (Competitors toolbox)</td>
+<td>Competitors are not allowed to send a toolbox to the Competition. All tools are provided by the Competition Organizer.</td>
+<td>Thí sinh <strong>không được gửi hộp dụng cụ</strong> đến kỳ thi. Mọi dụng cụ do Ban tổ chức (Competition Organizer) cấp.</td>
+</tr>
+<tr>
+<td>8.4 Vật liệu, thiết bị, dụng cụ do thí sinh mang (Materials, equipment, and tools supplied by Competitors)</td>
+<td>It is not applicable for the Industrial Mechanics skill competition for Competitors to bring materials, equipment, and tools to the Competition. However, Competitors are required to supply their own Personal Protective Equipment (PPE) as specified in section 7 skill-specific safety requirements.</td>
+<td>Nghề Industrial Mechanics <strong>không áp dụng</strong> việc thí sinh mang vật liệu, thiết bị, dụng cụ đến kỳ thi. Tuy nhiên thí sinh <strong>phải tự cung cấp PPE</strong> theo quy định ở mục 7 (yêu cầu an toàn riêng của nghề).</td>
+</tr>
+<tr>
+<td>8.5 Do Expert mang (Materials, equipment, and tools supplied by Experts)</td>
+<td>Experts are required to supply their own Personal Protective Equipment as specified in section 7 skill-specific safety requirements. Experts are responsible that Interpreters bring their own PPE.</td>
+<td>Expert phải tự cung cấp PPE theo mục 7. Expert <strong>chịu trách nhiệm</strong> bảo đảm Phiên dịch mang PPE của họ.</td>
+</tr>
+<tr>
+<td>8.6 Vật liệu, thiết bị bị cấm (Materials and equipment prohibited in the skill area)</td>
+<td>Competitors and Experts are prohibited to bring any materials or equipment not listed in section 8.3 and section 8.4.</td>
+<td>Thí sinh và Expert <strong>bị cấm mang</strong> bất kỳ vật liệu hoặc thiết bị nào không được liệt kê ở mục 8.3 và 8.4.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3>9. Luật riêng của nghề (Skill-specific rules)</h3>
+<h5>9.1 Ghi chú chung</h5>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Skill-specific rules cannot contradict or take priority over the Competition Rules. They do provide specific details and clarity in areas that may vary from skill competition to skill competition. This includes but is not limited to personal IT equipment, data storage devices, Internet access, procedures and workflow, and documentation management and distribution. Breaches of these rules will be solved according to the Issue and Dispute Resolution procedure including the Code of Ethics and Conduct Penalty System.</td>
+<td>Luật riêng của nghề không được mâu thuẫn hay ưu tiên hơn Luật thi. Chúng bổ sung chi tiết và làm rõ những lĩnh vực có thể khác nhau giữa các nghề, gồm nhưng không giới hạn: thiết bị CNTT cá nhân, thiết bị lưu trữ dữ liệu, truy cập Internet, quy trình và luồng công việc, quản lý và phân phối tài liệu. Vi phạm các luật này được giải quyết theo thủ tục giải quyết vấn đề và khiếu nại, gồm Hệ thống phạt của Code of Ethics and Conduct.</td>
+</tr>
+</tbody></table></div>
+<h5>9.2 Bảng luật riêng</h5>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Chủ đề / Task</th>
+<th>English</th>
+<th>Tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>USB, thẻ nhớ (Use of technology – USB, memory sticks)</td>
+<td>Competitors, Chief Expert, Experts, and Interpreters are not allowed to bring memory sticks into the workshop. The Skill Competition Manager is exempt from this rule. From C-6 to C+1.</td>
+<td>Thí sinh, Chuyên gia trưởng, Expert và Phiên dịch <strong>không được mang thẻ nhớ/USB</strong> vào xưởng. SCM được miễn. <strong>Từ C−6 đến C+1.</strong></td>
+</tr>
+<tr>
+<td>Laptop, máy tính bảng, điện thoại (Use of technology – personal laptops, tablets and mobile phones)</td>
+<td>• Competitors are not allowed to bring personal laptops, tablets, or mobile phones into the workshop. • Chief Expert, Experts, and Interpreters are allowed to bring laptops or tablets for translation work only, the devices MUST be kept in the locker for the duration of the competition C-6 to C+1. The Skill Competition Manager is exempt from this rule. From C-6 to C+1.</td>
+<td>• <strong>Thí sinh không được</strong> mang laptop, máy tính bảng hoặc điện thoại cá nhân vào xưởng. • Chuyên gia trưởng, Expert và Phiên dịch được mang laptop hoặc máy tính bảng <strong>chỉ để dịch</strong>; thiết bị <strong>PHẢI để trong tủ khoá (locker)</strong> suốt thời gian thi, C−6 đến C+1. SCM được miễn. Từ C−6 đến C+1.</td>
+</tr>
+<tr>
+<td>Máy chụp ảnh, quay phim cá nhân (Use of technology – personal photo and video taking devices)</td>
+<td>• Competitors, Chief Expert, Experts, and Interpreters are not allowed to use personal photo and video taking devices in the workshop from C-6 until C+1. The Skill Competition Manager is exempt from this rule. • Competitors are not allowed to take photographs as they progress through their project work.</td>
+<td>• Thí sinh, Chuyên gia trưởng, Expert và Phiên dịch <strong>không được dùng</strong> thiết bị chụp ảnh, quay phim cá nhân trong xưởng từ C−6 đến C+1. SCM được miễn. • <strong>Thí sinh không được chụp ảnh</strong> khi đang làm bài.</td>
+</tr>
+<tr>
+<td>Bản vẽ, ghi chép (Drawings, recording information)</td>
+<td>Competitors, Chief Expert, Experts, and Interpreters are not permitted to bring drawings or prepared information into the workshop. The Skill Competition Manager is exempt from this rule.</td>
+<td>Thí sinh, Chuyên gia trưởng, Expert và Phiên dịch <strong>không được mang bản vẽ hoặc thông tin đã chuẩn bị sẵn</strong> vào xưởng. SCM được miễn.</td>
+</tr>
+<tr>
+<td>Mẫu, dưỡng, phôi chuẩn bị sẵn (Templates, aids, etc.)</td>
+<td>Competitors are not permitted to bring or use templates/patterns and prepared parts. Expert marking teams will be given the required templates or patterns by the Skill Competition Manager only.</td>
+<td>Thí sinh <strong>không được mang hoặc dùng</strong> mẫu/dưỡng (template/pattern) và chi tiết chuẩn bị sẵn. Đội chấm Expert chỉ nhận các mẫu/dưỡng cần thiết <strong>từ SCM</strong>.</td>
+</tr>
+</tbody></table></div>
+<hr>
+<h3>Áp dụng khi thi thử ở trường</h3>
+<ol>
+<li><strong>Quy ước thi thử như thi thật:</strong> cất điện thoại, laptop, USB vào tủ khoá trước khi vào xưởng; không chụp ảnh bài đang làm (muốn lưu hình bài sau khi thi xong thì chụp ngoài giờ thi, do giáo viên thực hiện).</li>
+<li><strong>Không cho sinh viên mang bản vẽ/chú thích tự chuẩn bị</strong>; phát đề mỗi sáng đúng như quy định (5.7) để tập thói quen đọc đề mới.</li>
+<li><strong>Không cho mang hộp dụng cụ riêng</strong> — dùng dụng cụ của xưởng để làm quen việc &quot;lấy dụng cụ từ bộ cấp sẵn&quot;; PPE sinh viên tự mang đủ (file 04).</li>
+<li><strong>Giáo viên huấn luyện</strong> nên đứng ngoài khi người đóng vai Expert chấm bài sinh viên của mình (mô phỏng cấm chấm người cùng quốc gia, và 6.5 &quot;đứng ra ngoài, chỉ quan sát&quot;).</li>
+<li><strong>Phiên dịch / hỗ trợ ngôn ngữ</strong>: nếu cho phép tra từ, chỉ dùng từ điển chuyên ngành trong tủ khoá hoặc do giáo viên đóng vai Phiên dịch giữ; trong lúc thi sinh viên hỏi qua giáo viên đóng vai phiên dịch, không tự dùng điện thoại tra.</li>
+</ol>
+<hr>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li><strong>Lặp &quot;From C-6 to C+1&quot;</strong> ở hàng laptop/máy tính bảng: câu &quot;…kept in the locker for the duration of the competition C-6 to C+1&quot; đã có mốc, rồi lặp &quot;From C-6 to C+1&quot; — dịch nguyên, nghĩa không đổi.</li>
+<li><strong>Hàng USB, laptop</strong> chỉ ghi &quot;Chief Expert, Experts, Interpreters&quot; được mang laptop/tablet &quot;for translation work only&quot;, không nêu phải mở mã hay xin phép; thực hành chi tiết nằm ở Skill Management Plan.</li>
+<li><strong>Tiêu đề bảng 6.5</strong> nguyên văn &quot;Tools an Interpreter may use&quot; (dịch: dụng cụ Phiên dịch được dùng); tiêu đề ô bảng bị xuống dòng &quot;Tools an&quot; / &quot;Interpreter may use&quot; trong PDF, không có lỗi nội dung.</li>
+<li><strong>&quot;Locker&quot;</strong> (tủ khoá) chỉ được nhắc cho thiết bị của Chuyên gia trưởng/Expert/Phiên dịch; TD không nói thí sinh cất điện thoại ở đâu (vì thí sinh không được mang vào xưởng).</li>
+<li><strong>9.2 &quot;Competitors, Chief Expert, Experts, and Interpreters&quot;</strong> không nêu Skill Advisor, Skill Management Team; chỉ SCM được miễn.</li>
+<li>Phần &quot;Áp dụng khi thi thử ở trường&quot; là gợi ý của người dịch, không phải nội dung TD.</li>
+<li>Mục 6.5: &quot;Industry Marking Team&quot; xuất hiện ở hàng cuối nhưng TD không định nghĩa; dịch &quot;Đội chấm ngành công nghiệp&quot;.</li>
+</ol></section><section><h1>6. Máy phay M5 và danh mục file gốc — M5 mill and source files</h1><h2 id="may-phay">Máy phay M5 — thông số</h2>
+<p>Nguồn: <code>WSC2026_TP01_milling_machine_info_pre_en.pdf</code> (46 trang, ~856 từ, còn lại là ảnh máy), <code>..._vise_info_pre_en.pdf</code> (1 trang, ảnh ê-tô). Text gốc là bản dịch máy từ tiếng Trung. Đây là máy dùng cho <strong>Module C (tiện–phay)</strong>; thí sinh thi trên máy này nên cần làm quen trước.</p>
+<h3>1. Thông số chính (Technical data)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Hạng mục (EN)</th>
+<th>Giá trị</th>
+<th>Ghi chú tiếng Việt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Model</td>
+<td>M5</td>
+<td>Máy phay đứng đầu xoay (turret)</td>
+</tr>
+<tr>
+<td>Electrical connection</td>
+<td>2.2 kW / 3Ph / 50 Hz / 400 V</td>
+<td>Điện 3 pha 400 V — khác lưới 380 V ở VN, xem mục ý nghĩa</td>
+</tr>
+<tr>
+<td>Motor coolant pump</td>
+<td>90 W</td>
+<td>Bơm dung dịch làm mát</td>
+</tr>
+<tr>
+<td>Drilling capacity (max.)</td>
+<td>Ø24 mm</td>
+<td>Khoan tối đa; khoan liên tục trên thép Ø20 mm</td>
+</tr>
+<tr>
+<td>Milling head max. / End mill max.</td>
+<td>Ø75 mm / Ø25 mm</td>
+<td>Dao phay mặt đầu tối đa / dao phay ngón tối đa</td>
+</tr>
+<tr>
+<td>Spindle taper</td>
+<td>NT40</td>
+<td>Côn trục chính NT40</td>
+</tr>
+<tr>
+<td>Quill (sleeve) diameter / travel</td>
+<td>Ø86 mm / 127 mm</td>
+<td>Đường kính / hành trình ống trục chính</td>
+</tr>
+<tr>
+<td>Automatic quill feed</td>
+<td>3 cấp: 0.038 / 0.076 / 0.152 mm/vòng</td>
+<td>Chạy dao quill tự động</td>
+</tr>
+<tr>
+<td>Spindle speed</td>
+<td>60–4200 rpm, 2 dải, vô cấp cơ khí</td>
+<td>Đổi dải bằng cơ khí, trong dải chỉnh vô cấp</td>
+</tr>
+<tr>
+<td>Spindle → cross table (max.)</td>
+<td>405 mm</td>
+<td></td>
+</tr>
+<tr>
+<td>Spindle → machine body</td>
+<td>420 mm</td>
+<td>Khoảng cách trục chính đến thân máy (throat)</td>
+</tr>
+<tr>
+<td>Head tilt</td>
+<td>±90° (trái–phải); ±45° (trước–sau)</td>
+<td>Nghiêng đầu phay</td>
+</tr>
+<tr>
+<td>Table (L×W)</td>
+<td>1370 × 305 mm</td>
+<td>Bàn máy</td>
+</tr>
+<tr>
+<td>T-slot (size / pitch / number)</td>
+<td>16 mm / 63 mm / 3</td>
+<td>Rãnh chữ T</td>
+</tr>
+<tr>
+<td>Max. load of table</td>
+<td>300 kg</td>
+<td></td>
+</tr>
+<tr>
+<td>X travel</td>
+<td>920 mm tay / 820 mm tự động</td>
+<td>Dọc bàn</td>
+</tr>
+<tr>
+<td>Y travel</td>
+<td>380 mm tay / 380 mm tự động</td>
+<td>Ngang</td>
+</tr>
+<tr>
+<td>Z travel</td>
+<td>400 mm tay / 380 mm tự động</td>
+<td>Nâng hạ bàn</td>
+</tr>
+<tr>
+<td>Accuracy</td>
+<td>0.02 / 300 mm</td>
+<td>Độ chính xác máy</td>
+</tr>
+<tr>
+<td>Dimensions (L×W×H)</td>
+<td>2400 × 2100 × 2300 mm</td>
+<td></td>
+</tr>
+</tbody></table></div>
+<p>Cấu hình: thước số (digital scale — DRO) hãng Changchun Qihai; trục chính côn NT40; ray X/Y/Z tôi cao tần, mài tinh, có bôi trơn cưỡng bức (bơm tay); bàn có chạy dao tự động trục X kèm chạy nhanh; nâng hạ Z bằng tay hoặc động cơ, hai chế độ có khóa liên động; tay điều khiển treo trên cánh tay bên trái; có nút dừng khẩn cấp.</p>
+<h3>2. Phụ kiện kèm máy (Attachments)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>Bản gốc</th>
+<th>Nghĩa đúng (suy luận)</th>
+<th>Số lượng</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>water pump</td>
+<td>Bơm nước làm mát</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Cutting tool</td>
+<td>Dụng cụ cắt (không nêu loại)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&quot;6-inch flat pliers&quot;</td>
+<td>Ê-tô máy phay 6 inch (xem bên dưới)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&quot;58 combination pressing plates&quot;</td>
+<td>Bộ đồ kẹp phôi 58 chi tiết (T-nut, bu-lông, thanh kê, má kẹp)</td>
+<td>1 bộ</td>
+</tr>
+<tr>
+<td>R8 Clamping Set</td>
+<td>Bộ collet R8 (kẹp dao)</td>
+<td>1 bộ</td>
+</tr>
+<tr>
+<td>bar</td>
+<td>Thanh/cần (không rõ)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>work light</td>
+<td>Đèn chiếu sáng làm việc</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Tool Box</td>
+<td>Hộp dụng cụ</td>
+<td>1</td>
+</tr>
+<tr>
+<td>&quot;defrosting pan&quot;</td>
+<td>Có lẽ là khay hứng phoi/dầu (chip/drip tray)</td>
+<td>1 bộ</td>
+</tr>
+<tr>
+<td>Tài liệu: hướng dẫn vận hành, danh mục phụ tùng, chứng nhận, packing list</td>
+<td></td>
+<td>mỗi loại 1 bản (tiếng Trung)</td>
+</tr>
+</tbody></table></div>
+<p><strong>Ê-tô 6&quot; (extended milling vise, xoay được):</strong> mở má tối đa 205 mm; dài 450, cao 151 mm; má rộng 160, cao 45 mm; khoảng cách lỗ bắt đế 290 mm; nặng 32 kg. Ảnh gốc ghi &quot;all parameters manually measured, for reference only&quot;.</p>
+<h3>3. Ý nghĩa khi luyện tập ở trường</h3>
+<ul>
+<li><strong>Máy ở trường có thể khác M5:</strong> kiểm tra côn trục chính (NT40 vs BT/ISO40, R8), kích thước bàn, hành trình, và có DRO hay không. Nếu khác, bù lại bằng buổi làm quen ngắn trên máy giống nhất trước khi thi thử.</li>
+<li><strong>DRO (thước số):</strong> M5 có thước số; SV quen đọc du xích tay sẽ chậm. Luyện đặt gốc (zero), preset, chuyển mm/inch và cách kiểm tra lại bằng đồng hồ so.</li>
+<li><strong>Quill feed tự động 3 cấp (0.038/0.076/0.152 mm/vòng):</strong> dùng cho khoan, doa, khoét; luyện chọn cấp theo đường kính và vật liệu, và biết tay gạt đóng/ngắt tự động.</li>
+<li><strong>Bàn chạy tự động trục X + chạy nhanh:</strong> phay mặt, phay rãnh dài đều tay hơn; cần luyện an toàn (hành trình dừng, không với tay vào khi chạy nhanh).</li>
+<li><strong>Tốc độ 60–4200 rpm, 2 dải vô cấp cơ khí:</strong> chỉ đổi tốc độ khi trục đang quay theo hướng dẫn máy; luyện tính n = 1000·v/(π·D) và đổi dải đúng.</li>
+<li><strong>Đầu nghiêng ±90°/±45°, hạ Z có khóa liên động:</strong> luyện về lại 0° chính xác (kiểm bằng đồng hồ so) sau khi nghiêng, trước khi phay mặt phẳng chuẩn.</li>
+<li><strong>Kẹp phôi:</strong> ê-tô 6&quot; mở tối đa 205 mm và bộ kẹp 58 chi tiết; rãnh T 16 mm, bước 63 mm, chỉ 3 rãnh — lập phương án kẹp theo bố trí này.</li>
+<li><strong>Điện 400 V/3 pha và độ chính xác máy 0.02/300:</strong> dung sai thang điểm mịn hơn độ chính xác máy ở một số kích thước, nên phải đo kiểm bằng dụng cụ, không tin DRO tuyệt đối.</li>
+</ul>
+<h3>4. Phần không dịch</h3>
+<p>Các mục hợp đồng mua bán (Bên A/Bên B), điều khoản lắp đặt–chạy thử–đào tạo của nhà cung cấp, danh sách nhà sản xuất linh kiện và ảnh sản phẩm <strong>không dịch</strong> vì không liên quan thí sinh.</p>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li>Toàn văn là dịch máy từ tiếng Trung; lỗi chính tả (&quot;Tabel&quot;, &quot;infi nitely&quot;, &quot;lincline&quot;, &quot;electricalequipment&quot;).</li>
+<li><strong>&quot;defrosting pan&quot;</strong> = nghĩa gốc có lẽ là khay hứng (dầu/phoi), không phải khay xả đông. Suy luận, không có ảnh xác nhận.</li>
+<li><strong>&quot;6-inch flat pliers&quot;</strong> = ê-tô máy phay 6 inch (khớp với file vise); &quot;flat pliers&quot; là cách dịch máy của &quot;平口钳&quot;.</li>
+<li><strong>&quot;58 combination pressing plates&quot;</strong> = bộ đồ kẹp tổ hợp 58 chi tiết.</li>
+<li>&quot;bar&quot; (mục 6) và &quot;Cutting tool&quot; (mục 2) không nêu rõ loại; không suy diễn.</li>
+<li><strong>Hành trình X không nhất quán:</strong> bảng ghi 920 mm tay / 820 mm tự động, mục 4.1.5 ghi &quot;maximum 810 mm&quot;. Dùng 920/820 theo bảng.</li>
+<li>Mục 4.1.2 nói đầu nghiêng ±45° mặt phẳng đứng và 180° ngang; bảng ghi ±90° trái–phải, ±45° trước–sau. Chỉ trích bảng.</li>
+<li>&quot;Sleeve&quot; trong bản gốc = quill; &quot;Segmentless&quot; ở tiêu đề không có nghĩa kỹ thuật rõ.</li>
+<li>Ghi nhận chung ở <code>00-dung-chung/loi-ban-goc.md</code> #13.</li>
+</ol>
+<h2 id="danh-muc">Danh mục file gốc</h2>
+<p>Kiểm đếm bằng <code>find . -type f -not -path &#39;./dich/*&#39;</code>: <strong>27 file</strong> (không phải 29 như ghi ban đầu): 2 zip + 2 file ở gốc + 18 file trong <code>WSC2026_TP01_actual_en/</code> + 5 file trong <code>WSC2026_TP01_skill_sets_pre_en/WSC2026_TP01_pre/</code>. Bậc dịch: 1 = song ngữ cho SV, 2 = cho giáo viên, 3 = tóm tắt, bỏ = không dịch.</p>
+<h3>Thư mục gốc</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>File</th>
+<th>Trang / dung lượng</th>
+<th>Nội dung</th>
+<th>Bậc</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Industrial_Mechanics_WorldSkills_2026.pdf</code></td>
+<td>18 tr / 316 KB</td>
+<td>Bản phân tích tiếng Việt có sẵn</td>
+<td>bỏ</td>
+<td>Dựa trên skill sets pre-release nên lỗi thời (<code>loi-ban-goc.md</code> #11): sai dung sai, coi A2 là sửa mạch vật lý, thiếu bộ dụng cụ Module A và trọng số điểm. <strong>Khuyến nghị thay bằng bộ <code>dich/01-...</code>.</strong></td>
+</tr>
+<tr>
+<td><code>WSC2026_TD01_en.pdf</code></td>
+<td>32 tr / 714 KB</td>
+<td>Technical Description của Skill 01</td>
+<td>2</td>
+<td>Luật chấm, thiết kế đề, PPE, luật riêng nghề → <code>dich/02-...</code></td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_actual_en.zip</code></td>
+<td>6.4 MB</td>
+<td>Nén của thư mục <code>WSC2026_TP01_actual_en/</code></td>
+<td>bỏ</td>
+<td><strong>Trùng</strong>: 18 file bên trong giống hệt thư mục đã giải nén (cùng tên, cùng dung lượng)</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_skill_sets_pre_en.zip</code></td>
+<td>7.0 MB</td>
+<td>Nén của thư mục <code>WSC2026_TP01_skill_sets_pre_en/</code></td>
+<td>bỏ</td>
+<td><strong>Trùng</strong>: 5 file PDF bên trong có cùng tên/dung lượng với bản giải nén</td>
+</tr>
+</tbody></table></div>
+<h3><code>WSC2026_TP01_actual_en/</code> (đề thật, 18 file)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>File</th>
+<th>Trang / dung lượng</th>
+<th>Nội dung</th>
+<th>Bậc</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WSC2026_TP01_MA1_actual_en.pdf</code></td>
+<td>12 tr / 309 KB</td>
+<td>Module A1: bảo trì dự đoán (cân chỉnh, rung, cân bằng)</td>
+<td>1</td>
+<td>Đề thật</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_MA2_actual_en.pdf</code></td>
+<td>2 tr / 219 KB</td>
+<td>Module A2: sửa lỗi trên FluidSIM</td>
+<td>1</td>
+<td>Đề thật</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_MB_1_2_actual_en.pdf</code></td>
+<td>2 tr / 200 KB</td>
+<td>Module B: hàn và lấy dấu</td>
+<td>1</td>
+<td>Đề thật</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_MC_1_2_actual_en.pdf</code></td>
+<td>2 tr / 226 KB</td>
+<td>Module C: tiện–phay</td>
+<td>1</td>
+<td>Đề thật</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_MD_actual_en.pdf</code></td>
+<td>3 tr / 256 KB</td>
+<td>Module D: lắp ráp và vận hành</td>
+<td>1</td>
+<td>Đề thật</td>
+</tr>
+<tr>
+<td><code>WSC2026_01_Industrial_Mechanics_marking_scheme.xlsx</code></td>
+<td>203 KB</td>
+<td>Thang điểm đầy đủ các Aspect</td>
+<td>1</td>
+<td>Chuyển thành <code>08-thang-diem-song-ngu.csv</code></td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_1st Assembly and Machining.pdf</code></td>
+<td>13 tr / 1.4 MB</td>
+<td>Bản vẽ lắp và gia công, phép chiếu góc phần tư I</td>
+<td>1</td>
+<td>Bản vẽ chính cho chú giải</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_3rd Assembly and Machining.pdf</code></td>
+<td>13 tr / 1.4 MB</td>
+<td>Cùng bộ, phép chiếu góc III</td>
+<td>bỏ</td>
+<td><strong>Trùng nội dung 1st angle</strong>, chỉ khác phép chiếu</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_1st Angle Machining Aid + Machining Detail Parts.pdf</code></td>
+<td>4 tr / 359 KB</td>
+<td>Bản vẽ chi tiết gia công/dưỡng, góc I</td>
+<td>1</td>
+<td>Bản vẽ chính</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_3rd Angle Machining Aid + Machining Detail Parts.pdf</code></td>
+<td>4 tr / 353 KB</td>
+<td>Cùng bộ, góc III</td>
+<td>bỏ</td>
+<td>Trùng 1st angle</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_200 Fab and Welding Series 1st angle.pdf</code></td>
+<td>4 tr / 365 KB</td>
+<td>Bản vẽ chế tạo–hàn series 200, góc I</td>
+<td>1</td>
+<td>Dùng cho Module B</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_200 Fab and Welding Series 3rd angle.pdf</code></td>
+<td>4 tr / 357 KB</td>
+<td>Cùng bộ, góc III</td>
+<td>bỏ</td>
+<td>Trùng 1st angle</td>
+</tr>
+<tr>
+<td><code>WS2026_TP01_Pneumatics Build.pdf</code></td>
+<td>6 tr / 401 KB</td>
+<td>Sơ đồ khí nén, danh sách linh kiện và ống</td>
+<td>1</td>
+<td>Mã MM1…MM4 (Rev 11)</td>
+</tr>
+<tr>
+<td><code>WSC2026_statement_of_TP_validation_01_ALC_ITPV.pdf</code></td>
+<td>1 tr / 139 KB</td>
+<td>Xác nhận ITPV — Alex Le Comte</td>
+<td>3</td>
+<td>Gộp vào <code>statement-of-validation.md</code></td>
+</tr>
+<tr>
+<td><code>..._01_CB_ITPV.pdf</code></td>
+<td>1 tr / 167 KB</td>
+<td>Xác nhận ITPV — Colin Buddin (scan)</td>
+<td>3</td>
+<td>Như trên</td>
+</tr>
+<tr>
+<td><code>..._01_ECS_ITPV.pdf</code></td>
+<td>1 tr / 279 KB</td>
+<td>Xác nhận ITPV — Emerson Costa Santos</td>
+<td>3</td>
+<td>Như trên</td>
+</tr>
+<tr>
+<td><code>..._01_FB_ITPV.pdf</code></td>
+<td>1 tr / 40 KB</td>
+<td>Xác nhận ITPV — Fabian Burguera (scan)</td>
+<td>3</td>
+<td>Như trên</td>
+</tr>
+<tr>
+<td><code>..._01_SS_ITPV.pdf</code></td>
+<td>1 tr / 294 KB</td>
+<td>Xác nhận ITPV — Shannon Savoy (ảnh chụp)</td>
+<td>3</td>
+<td>Như trên</td>
+</tr>
+</tbody></table></div>
+<h3><code>WSC2026_TP01_skill_sets_pre_en/WSC2026_TP01_pre/</code> (bản pre-release, 5 file)</h3>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>File</th>
+<th>Trang / dung lượng</th>
+<th>Nội dung</th>
+<th>Bậc</th>
+<th>Lý do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>WSC2026_TP01_skill_sets_pre_en.pdf</code></td>
+<td>4 tr / 295 KB</td>
+<td>Mô tả nội dung đề phát hành trước</td>
+<td>2</td>
+<td>Chỉ tham khảo; dung sai và vật liệu bị thang điểm thật thay thế (<code>loi-ban-goc.md</code> #1–3)</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_milling_machine_info_pre_en.pdf</code></td>
+<td>46 tr / 17.9 MB</td>
+<td>Thông số máy phay M5 (dịch máy từ tiếng Trung, phần lớn ảnh)</td>
+<td>3</td>
+<td>→ <code>may-phay-M5-thong-so.md</code></td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_milling_machine_vise_info_pre_en.pdf</code></td>
+<td>1 tr / 79 KB</td>
+<td>Ảnh và thông số ê-tô 6&quot;</td>
+<td>3</td>
+<td>Gộp vào file máy phay</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_1st_angle_pre_en.pdf</code></td>
+<td>15 tr / 784 KB</td>
+<td>Bản vẽ pre-release, góc I</td>
+<td>bỏ</td>
+<td>Bị bản vẽ đề thật thay thế</td>
+</tr>
+<tr>
+<td><code>WSC2026_TP01_3rd_angle_pre_en.pdf</code></td>
+<td>15 tr / 801 KB</td>
+<td>Bản vẽ pre-release, góc III</td>
+<td>bỏ</td>
+<td>Trùng 1st angle và bị bản thật thay thế</td>
+</tr>
+</tbody></table></div>
+<h3>Tóm tắt</h3>
+<ul>
+<li><strong>Trùng:</strong> 2 file .zip trùng thư mục đã giải nén; bộ bản vẽ 3rd angle (3 file thật + 1 pre) trùng nội dung 1st angle, chỉ khác phép chiếu. Dịch bản 1st angle (hệ ISO/châu Âu, khớp với cách dạy ở VN).</li>
+<li><strong>Bỏ qua:</strong> zip (2), 3rd angle (4), 1st angle pre-release (1), bản phân tích VN cũ (1).</li>
+<li><strong>Khuyến nghị:</strong> thay <code>Industrial_Mechanics_WorldSkills_2026.pdf</code> bằng bộ <code>dich/01-...</code>; không dùng bản cũ làm nguồn.</li>
+</ul>
+<h3>Ghi chú bản gốc</h3>
+<ol>
+<li>Số trang lấy từ <code>pdfinfo</code>; dung lượng làm tròn từ <code>ls -l</code>.</li>
+<li>Tên file thiếu một số hậu tố rút gọn ở bảng ITPV (&quot;...&quot; thay phần <code>WSC2026_statement_of_TP_validation_01</code>).</li>
+<li>Mốc ngày trong zip: actual từ 6/8 đến 28/9/2026 (thang điểm sửa ngày 28/9 mới nhất); pre-release 24/6–29/7/2026. Thang điểm xlsx là bản sau cùng.</li>
+<li>Chưa so nội dung bản vẽ 3rd/1st từng nét; kết luận &quot;trùng&quot; dựa trên tên, số trang, dung lượng gần nhau và quy ước của bộ đề.</li>
+</ol></section><section><h1>7. Ghi chú lỗi trong bản gốc — Errata in the source documents</h1><h2 id="loi-ban-goc">19 chỗ lỗi hoặc chưa nhất quán trong bản gốc</h2><p>Nguyên tắc: dịch đúng bản gốc, chú thích <code>[Ghi chú dịch: …]</code>, không tự sửa. Bảng này để giáo viên biết chỗ nào đề/bản vẽ tự mâu thuẫn và huấn luyện theo giá trị nào.</p>
+<div><table class="tl-table">
+<thead>
+<tr>
+<th>#</th>
+<th>File</th>
+<th>Nguyên văn</th>
+<th>Vấn đề</th>
+<th>Cách xử lý khi dịch</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>skill_sets_pre (tr. 3)</td>
+<td>&quot;Aluminum 6160 T6&quot;</td>
+<td>Mác đúng là 6061-T6 (link đi kèm cũng dẫn tới 6061)</td>
+<td>Dịch &quot;nhôm 6160 T6 [Ghi chú dịch: đúng là 6061-T6]&quot;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>skill_sets_pre (tr. 3)</td>
+<td>&quot;Acetyl (Delrin)&quot;</td>
+<td>Đúng là Acetal (POM)</td>
+<td>Chú thích</td>
+</tr>
+<tr>
+<td>3</td>
+<td>skill_sets_pre</td>
+<td>±0.025 mm, positional ±0.01 mm</td>
+<td>Thang điểm thật dùng lắp ghép ISO (85 f8, 20 H8, 12 H8, M24×3 6g) và ±0.15 / ±0.3 cho kích thước khác; chỉ tâm lỗ 75 là ±0.01</td>
+<td>Khi dịch skill sets ghi chú &quot;đã bị thang điểm thật thay thế&quot;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>marking_scheme B1</td>
+<td>&quot;498 to 502mm = 0.35 marks, smaller than 498 or above <strong>500</strong>mm = 0 marks&quot;</td>
+<td>Lỗi đánh máy, phải là 502</td>
+<td>Dịch nguyên, chú thích</td>
+</tr>
+<tr>
+<td>5</td>
+<td>marking_scheme C3</td>
+<td>&quot;M4 x .07 tapped holes&quot;</td>
+<td>Đúng là M4×0.7</td>
+<td>Chú thích</td>
+</tr>
+<tr>
+<td>6</td>
+<td>marking_scheme C1</td>
+<td>&quot;85 dia f8: Above 84.910 or below 84.964 = zero&quot;</td>
+<td>Viết ngược (trên 84.964 hoặc dưới 84.910 = 0); miền đúng 84.910–84.964</td>
+<td>Chú thích</td>
+</tr>
+<tr>
+<td>7</td>
+<td>marking_scheme, sheet WSOS</td>
+<td>Installations 40, Problem solving 10</td>
+<td>TD ghi 35 và 15; TD mục 2.1 cho phép lệch ≤5%</td>
+<td>Ghi chú ở bản dịch TD mục 2.2</td>
+</tr>
+<tr>
+<td>8</td>
+<td>marking_scheme A</td>
+<td>&quot;measurent&quot;, &quot;Alignement&quot;, &quot;Sin Off&quot;, &quot;Tigntened&quot;, &quot;approperiately&quot;, &quot;routered&quot;</td>
+<td>Lỗi chính tả tiếng Anh</td>
+<td>Bỏ qua, dịch theo nghĩa</td>
+</tr>
+<tr>
+<td>9</td>
+<td>MA2</td>
+<td>&quot;Fault&#39;s 1, 2, and 3&quot;</td>
+<td>Lỗi dấu nháy</td>
+<td>Bỏ qua</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Pneumatics Build</td>
+<td>Rev 11: đổi từ mã 2 chữ sang 3 chữ (EN IEC 81346-2:2019)</td>
+<td>Tài liệu phân tích tiếng Việt cũ còn dùng &quot;A+, B+&quot;; đề thật dùng MM1+, MM2+…</td>
+<td>Dùng MM1…MM4 trong mọi bản dịch</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Industrial_Mechanics_WorldSkills_2026.pdf (bản phân tích VN có sẵn)</td>
+<td>Dựa trên skill sets pre-release</td>
+<td>Lỗi thời: sai dung sai (xem #3), coi A2 là sửa lỗi mạch vật lý (thực tế trên FluidSIM), chưa biết bộ dụng cụ Module A, chưa có trọng số điểm</td>
+<td>Không dùng làm nguồn; chỉ tham khảo cách diễn đạt</td>
+</tr>
+<tr>
+<td>12</td>
+<td>TD 1.1.2</td>
+<td>&quot;adaptiable&quot;</td>
+<td>Lỗi chính tả</td>
+<td>Bỏ qua</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Milling machine info</td>
+<td>Dịch máy từ tiếng Trung (&quot;defrosting pan&quot;, &quot;6-inch flat pliers&quot; = ê-tô 6 inch, &quot;58 combination pressing plates&quot; = bộ 58 chi tiết kẹp)</td>
+<td>Không dịch nguyên, chỉ tóm tắt thông số</td>
+<td>Bậc 3</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Drawings</td>
+<td>Ngày &quot;Date: 26_08_2026&quot; và &quot;JANUARY 2026&quot; trộn; &quot;Dwg No: XX of XX&quot; chưa điền</td>
+<td>Không ảnh hưởng kỹ thuật</td>
+<td>Bỏ qua</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Drawings 201–207 pre-release vs <code>WSC2026_TP01_CA_200_EN</code> thật</td>
+<td>201 = 350, 202 = 350, 205 = 310, 206 = 450 (pre)</td>
+<td>Bản thật: 201 = 300, 202 = 300, 205 = 275, 206 = 375</td>
+<td>Dùng bản thật; ghi chú ở 03 và 06</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Drawings 401, 404, 405 ghi chú 3</td>
+<td>&quot;TOLERANCE CLASS IS m (MEDIUM) ISO2768-1fk&quot;</td>
+<td>Chữ m (medium) mâu thuẫn với ký hiệu f (fine) K</td>
+<td>Dịch nguyên, chú thích; luyện theo ±0.15/±0.3 của thang điểm</td>
+</tr>
+<tr>
+<td>17</td>
+<td>BOM bản vẽ 400</td>
+<td>Item 1 &quot;401 DIE BLOCK&quot; và item 12 &quot;401 STROKE POSITIONING SCREW&quot;; item 2 &quot;402 CLAMP&quot; và item 7 &quot;402 SPACER&quot;</td>
+<td>Trùng mã chi tiết; vít định vị hành trình là Detail 405 theo bản vẽ chi tiết</td>
+<td>Chú thích trong 06; bản dịch dùng 405 cho vít</td>
+</tr>
+<tr>
+<td>18</td>
+<td>BOM 300, thang điểm D2, bản vẽ pre-release 303–305</td>
+<td>BOM 300 &quot;304 + 305 BENDING PUNCH&quot;; D2 &quot;304 bending wiper left / 305 right&quot;; pre-release: 303 + 304 acetal là má uốn, 305 steel là khối định vị (lỗ Ø24.5)</td>
+<td>Số hiệu má uốn không nhất quán</td>
+<td>Dịch nguyên theo từng nguồn, chú thích trong 06 và CSV</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Pneumatics Build tờ 4 vs tờ 1 / đề A2 / thang điểm F1</td>
+<td>Xi lanh ghi -MMB1…-MMB4 (tờ 4) nhưng chuỗi ghi MM1…MM4</td>
+<td>Cùng phần tử, khác độ dài mã (rev 13)</td>
+<td>Dùng MM1…MM4 cho chuỗi, -MMB khi tra bảng linh kiện</td>
+</tr>
+</tbody></table></div></section><section><h1>8. Thuật ngữ Anh – Việt — Glossary</h1><p>Quy ước dùng chung cho mọi bản dịch (bậc 1, 2, 3):</p>
+<ul>
+<li>Dịch <strong>song ngữ</strong>: tiếng Việt, kèm thuật ngữ Anh trong ngoặc ở lần đầu xuất hiện trong mỗi file; bảng thì hai cột Anh | Việt.</li>
+<li><strong>Giữ nguyên, không dịch</strong>: số liệu và dung sai (giữ dấu chấm thập phân như bản gốc: 19.98, không viết 19,98), mã chi tiết (Detail 301, 404…), mã McMaster-Carr (91290A129…), mã Festo (ADN-32-30-A-P-A, VUWG-L10-B52-M5…), mã tham chiếu EN IEC 81346-2 (-MM1, -QMA1, -KHB1, -XMA1, WQG…), tên tiêu chuẩn (ISO 2553, ISO 1219-1, ISO 4414, NFPA 79, EN IEC 81346-2:2019).</li>
+<li>Lỗi trong bản gốc: <strong>không sửa im lặng</strong>. Dịch đúng theo bản gốc, thêm chú thích <code>[Ghi chú dịch: …]</code> tại chỗ, và liệt kê trong mục &quot;Ghi chú bản gốc&quot; cuối file. Danh sách lỗi đã biết: <code>loi-ban-goc.md</code>.</li>
+<li>Đơn vị: mm, N·m, bar/kPa, rpm, µm giữ nguyên ký hiệu quốc tế.</li>
+</ul>
+<h2 id="tn-1">1. Tổ chức thi và chấm điểm (36)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>WorldSkills Competition (WSC)</td><td>Kỳ thi Kỹ năng nghề thế giới</td></tr><tr><td>Skill 01 Industrial Mechanics</td><td>Nghề 01 Cơ khí công nghiệp (bảo trì cơ khí công nghiệp)</td></tr><tr><td>Technical Description (TD)</td><td>Mô tả kỹ thuật nghề</td></tr><tr><td>WorldSkills Occupational Standards (WSOS)</td><td>Chuẩn nghề WorldSkills</td></tr><tr><td>Test Project (TP)</td><td>Đề thi</td></tr><tr><td>Module</td><td>Mô-đun (giữ chữ &quot;Module A/B/C/D&quot;)</td></tr><tr><td>Marking Scheme</td><td>Thang điểm</td></tr><tr><td>Assessment Criterion (A–I)</td><td>Tiêu chí chấm (A–I)</td></tr><tr><td>Sub Criterion</td><td>Tiêu chí con (A1, B1, C1…)</td></tr><tr><td>Aspect</td><td>Mục chấm</td></tr><tr><td>Measurement (M)</td><td>Chấm đo (đạt/không đạt theo số đo)</td></tr><tr><td>Judgement (J)</td><td>Chấm đánh giá (thang 0–3)</td></tr><tr><td>Competitor</td><td>Thí sinh</td></tr><tr><td>Expert</td><td>Chuyên gia chấm (giám khảo)</td></tr><tr><td>Chief Expert</td><td>Chuyên gia trưởng</td></tr><tr><td>Compatriot Expert</td><td>Chuyên gia cùng quốc gia</td></tr><tr><td>Skill Competition Manager (SCM)</td><td>Quản lý thi nghề</td></tr><tr><td>Independent Test Project Designer (ITPD)</td><td>Người thiết kế đề độc lập</td></tr><tr><td>Independent Test Project Validator (ITPV)</td><td>Người thẩm định đề độc lập</td></tr><tr><td>Skill Advisor</td><td>Cố vấn nghề</td></tr><tr><td>Interpreter</td><td>Phiên dịch</td></tr><tr><td>Expert sign off / sign-off point</td><td>Ký xác nhận của chuyên gia / điểm ký xác nhận</td></tr><tr><td>Hand in / submit for evaluation</td><td>Nộp để chấm</td></tr><tr><td>Safety infraction</td><td>Vi phạm an toàn (trừ 0.5 điểm/lần, lần 3 dừng thi)</td></tr><tr><td>Deduction</td><td>Trừ điểm</td></tr><tr><td>Bonus marks</td><td>Điểm thưởng</td></tr><tr><td>Functional test</td><td>Chạy thử chức năng</td></tr><tr><td>Attempt</td><td>Lượt thử</td></tr><tr><td>Infrastructure List (IL)</td><td>Danh mục thiết bị do ban tổ chức cấp</td></tr><tr><td>Competition Information System (CIS)</td><td>Hệ thống thông tin thi (phần mềm nhập điểm)</td></tr><tr><td>C-3, C+1</td><td>Ngày thi −3, ngày thi +1</td></tr><tr><td>Personal Protective Equipment (PPE)</td><td>Trang bị bảo hộ cá nhân</td></tr><tr><td>Lock-out / tag-out (LOTO)</td><td>Khoá cách ly / treo thẻ cách ly năng lượng</td></tr><tr><td>Best practice</td><td>Thực hành tốt</td></tr><tr><td>Blueprint / drawing</td><td>Bản vẽ</td></tr><tr><td>Industry standard</td><td>Chuẩn công nghiệp (mốc điểm 1 trong thang 0–3)</td></tr></tbody></table><h2 id="tn-2">2. Bản vẽ và lắp ghép (53)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>First-angle / third-angle projection</td><td>Phép chiếu góc thứ nhất / góc thứ ba</td></tr><tr><td>Detail (part) drawing</td><td>Bản vẽ chi tiết</td></tr><tr><td>Assembly drawing</td><td>Bản vẽ lắp</td></tr><tr><td>Detail # 301</td><td>Chi tiết số 301 (giữ &quot;Detail 301&quot;)</td></tr><tr><td>Item no. / Part number / Qty</td><td>Số thứ tự / Mã chi tiết / Số lượng</td></tr><tr><td>BOM (bill of materials)</td><td>Bảng kê vật tư</td></tr><tr><td>NTS (not to scale)</td><td>Không theo tỷ lệ</td></tr><tr><td>TYP (typical)</td><td>Điển hình (áp dụng cho mọi vị trí tương tự)</td></tr><tr><td>THRU ALL</td><td>Xuyên suốt</td></tr><tr><td>NEAR SIDE ONLY</td><td>Chỉ mặt gần</td></tr><tr><td>BOTH SIDES</td><td>Cả hai mặt</td></tr><tr><td>Datum A/B</td><td>Chuẩn A/B</td></tr><tr><td>Tolerance</td><td>Dung sai</td></tr><tr><td>Dimensional tolerance</td><td>Dung sai kích thước</td></tr><tr><td>Positional tolerance</td><td>Dung sai vị trí</td></tr><tr><td>Concentricity</td><td>Độ đồng tâm</td></tr><tr><td>Perpendicularity</td><td>Độ vuông góc</td></tr><tr><td>Flatness</td><td>Độ phẳng</td></tr><tr><td>Surface finish Ra 1.6</td><td>Độ nhám bề mặt Ra 1.6 µm</td></tr><tr><td>ISO fit H8 / f8 / 6H / 6g</td><td>Lắp ghép ISO: lỗ H8, trục f8, ren trong 6H, ren ngoài 6g</td></tr><tr><td>IT7 / IT8</td><td>Cấp chính xác IT7 / IT8</td></tr><tr><td>ISO 2768-1 fK</td><td>Dung sai chung ISO 2768-1, cấp f (kích thước) K (hình học)</td></tr><tr><td>Reamed hole</td><td>Lỗ doa</td></tr><tr><td>Tapped hole</td><td>Lỗ ren (ta-rô)</td></tr><tr><td>Counterbore / countersink</td><td>Khoét bậc / khoét côn miệng lỗ</td></tr><tr><td>Dowel pin</td><td>Chốt định vị</td></tr><tr><td>Clevis / clevis mount</td><td>Khớp chạc chữ U / đế chạc</td></tr><tr><td>Shoulder</td><td>Vai (bậc) trục</td></tr><tr><td>Undercut</td><td>Rãnh thoát dao</td></tr><tr><td>Chamfer</td><td>Vát mép</td></tr><tr><td>Keyway / slot / pocket</td><td>Rãnh then / rãnh / hốc</td></tr><tr><td>Deburr</td><td>Mài (vê) bavia</td></tr><tr><td>SHCS (socket head cap screw)</td><td>Vít lục giác chìm đầu trụ</td></tr><tr><td>HHCS (hex head cap screw)</td><td>Bu-lông đầu lục giác</td></tr><tr><td>Button head hex drive screw</td><td>Vít đầu tròn lục giác chìm</td></tr><tr><td>Nylon-insert locknut (Nylock)</td><td>Đai ốc khoá hãm lõi nylon</td></tr><tr><td>Washer</td><td>Vòng đệm</td></tr><tr><td>Torque (37–65 N·m)</td><td>Mô-men siết</td></tr><tr><td>Shim</td><td>Căn đệm (lá căn)</td></tr><tr><td>Weldment</td><td>Cụm hàn</td></tr><tr><td>Back plate</td><td>Tấm lưng (Detail 301)</td></tr><tr><td>Heel slide</td><td>Con trượt gót (Detail 302)</td></tr><tr><td>Bending punch / bending wiper</td><td>Chày uốn / má uốn (Detail 304, 305)</td></tr><tr><td>Punch plate</td><td>Tấm mang chày đột (Detail 403)</td></tr><tr><td>Punch / die button</td><td>Chày đột / cối đột</td></tr><tr><td>Guide pin / glide pin</td><td>Chốt dẫn hướng</td></tr><tr><td>Shut height</td><td>Chiều cao đóng (khoảng cách chày–cối ở điểm chết dưới)</td></tr><tr><td>Safety shield / machine guard</td><td>Tấm chắn an toàn / rào che máy</td></tr><tr><td>Safety switch / striker</td><td>Công tắc an toàn / vấu tác động</td></tr><tr><td>Part present check pin / roller valve</td><td>Chốt báo có phôi / van con lăn</td></tr><tr><td>Workpiece blank / piece part</td><td>Phôi / sản phẩm (chi tiết ra lò)</td></tr><tr><td>Two-hand safety control</td><td>Điều khiển hai tay an toàn</td></tr><tr><td>Fastener</td><td>Chi tiết kẹp chặt (bu-lông, vít, đai ốc)</td></tr></tbody></table><h2 id="tn-3">3. Gia công (Module C) (18)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Centre lathe</td><td>Máy tiện vạn năng</td></tr><tr><td>4-jaw independent chuck</td><td>Mâm cặp 4 chấu độc lập</td></tr><tr><td>Vertical milling machine</td><td>Máy phay đứng</td></tr><tr><td>Digital readout (DRO)</td><td>Bộ hiển thị toạ độ số</td></tr><tr><td>Facing / parallel turning / taper turning / shoulder turning</td><td>Tiện mặt đầu / tiện trụ / tiện côn / tiện vai</td></tr><tr><td>Boring</td><td>Tiện lỗ</td></tr><tr><td>External thread cutting M24×3 6g</td><td>Tiện ren ngoài M24×3 cấp 6g</td></tr><tr><td>Drilling / tapping / reaming</td><td>Khoan / ta-rô / doa</td></tr><tr><td>Milling cutter / end mill</td><td>Dao phay / dao phay ngón</td></tr><tr><td>Spindle taper NT40 (ISO 40)</td><td>Côn trục chính NT40</td></tr><tr><td>Vise</td><td>Ê-tô</td></tr><tr><td>Cold rolled mild steel 1020</td><td>Thép cacbon thấp cán nguội 1020</td></tr><tr><td>Aluminium 6061-T6</td><td>Nhôm 6061-T6 (bản gốc ghi 6160, xem loi-ban-goc.md)</td></tr><tr><td>Brass C36000</td><td>Đồng thau dễ cắt C36000</td></tr><tr><td>Acetal (Delrin)</td><td>Nhựa acetal (POM, Delrin)</td></tr><tr><td>Lexan</td><td>Polycarbonate (Lexan)</td></tr><tr><td>Micrometer / vernier calliper / dial indicator</td><td>Panme / thước cặp / đồng hồ so</td></tr><tr><td>Thread pitch diameter</td><td>Đường kính trung bình ren</td></tr></tbody></table><h2 id="tn-4">4. Hàn và chế tạo (Module B) (17)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Fabrication</td><td>Chế tạo kết cấu (gia công nguội + lắp + hàn)</td></tr><tr><td>MIG/MAG welding (GMAW)</td><td>Hàn MAG (dây 1.0 mm, khí 80% Ar / 20% CO₂)</td></tr><tr><td>Mild steel square/rectangular tubing</td><td>Thép hộp vuông / chữ nhật</td></tr><tr><td>Wall thickness</td><td>Chiều dày thành</td></tr><tr><td>Fillet weld, leg length Z 3 mm</td><td>Mối hàn góc, cạnh (chân) mối hàn Z = 3 mm</td></tr><tr><td>Weld profile: flat / radius (convex)</td><td>Biên dạng mối hàn: phẳng / lồi bán kính</td></tr><tr><td>Toe of weld</td><td>Chân (mép) mối hàn</td></tr><tr><td>Tack weld</td><td>Hàn đính</td></tr><tr><td>Distortion</td><td>Biến dạng (do hàn)</td></tr><tr><td>Square at 90° ±2°</td><td>Vuông góc 90° ±2°</td></tr><tr><td>Across the diagonals ±2 mm</td><td>Hiệu hai đường chéo ±2 mm</td></tr><tr><td>Flush at bottom</td><td>Phẳng đáy (bằng mặt)</td></tr><tr><td>Precision layout</td><td>Lấy dấu chính xác</td></tr><tr><td>Combination square / scriber / centre punch</td><td>Thước ê-ke tổ hợp / mũi vạch / đột tâm</td></tr><tr><td>Ball-peen hammer</td><td>Búa đầu tròn</td></tr><tr><td>Tap handle</td><td>Tay quay ta-rô</td></tr><tr><td>Hole cluster</td><td>Cụm lỗ</td></tr></tbody></table><h2 id="tn-5">5. Khí nén (Module A2, D, E, F) (23)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Pneumatic schematic / circuit</td><td>Sơ đồ mạch khí nén</td></tr><tr><td>FluidSIM</td><td>Phần mềm FluidSIM (Festo) — giữ tên</td></tr><tr><td>Air preparation unit (FRL)</td><td>Bộ xử lý khí (lọc – điều áp – bôi trơn)</td></tr><tr><td>Operating pressure 8.0 bar (800 kPa)</td><td>Áp suất làm việc 8.0 bar</td></tr><tr><td>Input / processing / final control elements / actuators</td><td>Phần tử đầu vào / xử lý / điều khiển cuối / cơ cấu chấp hành</td></tr><tr><td>Directional control valve 5/2, 3/2</td><td>Van phân phối 5/2, 3/2</td></tr><tr><td>Roller lever valve</td><td>Van cần con lăn (van hành trình)</td></tr><tr><td>Shuttle valve (OR) / two-pressure valve (AND)</td><td>Van con thoi (OR) / van hai áp (AND)</td></tr><tr><td>Flow control valve / one-way flow control</td><td>Van tiết lưu / tiết lưu một chiều</td></tr><tr><td>Cylinder: extend (+) / retract (−)</td><td>Xi lanh: đi ra (+) / đi về (−)</td></tr><tr><td>Double-acting cylinder</td><td>Xi lanh tác động kép</td></tr><tr><td>Cascade / sequential circuit</td><td>Mạch tầng / mạch tuần tự</td></tr><tr><td>Circuit sequence (MM1+, MM2+ &amp; MM3+, MM4+)…</td><td>Chuỗi hoạt động (giữ nguyên ký hiệu)</td></tr><tr><td>Reference designation (EN IEC 81346-2) -MM, -QMA, -KHB, -XMA, -GQA, -AZA</td><td>Mã tham chiếu phần tử (giữ nguyên)</td></tr><tr><td>Tubing / fitting / push-in fitting</td><td>Ống khí / đầu nối / đầu nối cắm nhanh</td></tr><tr><td>Tubing routed, supported, bundled</td><td>Đi ống gọn, có đỡ, bó ống</td></tr><tr><td>Zip tie / cable tie</td><td>Dây rút</td></tr><tr><td>Kink / flattening / bend radius</td><td>Gập ống / bẹp ống / bán kính uốn</td></tr><tr><td>Clear of moving parts</td><td>Không chạm chi tiết chuyển động</td></tr><tr><td>Safety interlock</td><td>Khoá liên động an toàn</td></tr><tr><td>Gate switch</td><td>Công tắc cửa chắn</td></tr><tr><td>Fault identified / rectified</td><td>Lỗi đã xác định / đã khắc phục</td></tr><tr><td>Commissioning</td><td>Nghiệm thu đưa vào vận hành</td></tr></tbody></table><h2 id="tn-6">6. Bảo trì dự đoán (Module A) (20)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Predictive maintenance</td><td>Bảo trì dự đoán</td></tr><tr><td>Condition monitoring</td><td>Giám sát tình trạng</td></tr><tr><td>Vibration analysis</td><td>Phân tích rung động</td></tr><tr><td>Shaft alignment (laser)</td><td>Cân chỉnh đồng trục (bằng laser)</td></tr><tr><td>Angular / offset misalignment, vertical / horizontal</td><td>Lệch góc / lệch tâm, phương đứng / phương ngang</td></tr><tr><td>Soft foot</td><td>Chân máy hở (soft foot)</td></tr><tr><td>Run-out (shaft / coupling, radial / axial)</td><td>Độ đảo (trục / khớp nối, hướng kính / dọc trục)</td></tr><tr><td>Axial float / bearing clearance</td><td>Độ rơ dọc trục / khe hở ổ lăn</td></tr><tr><td>Jack bolt</td><td>Bu-lông đẩy (chỉnh ngang)</td></tr><tr><td>Thermal growth</td><td>Giãn nở nhiệt (ΔL = α·L₀·ΔT)</td></tr><tr><td>OL2R (off-line to running)</td><td>Đo giãn nở nhiệt từ trạng thái nguội sang chạy (giữ &quot;OL2R&quot;)</td></tr><tr><td>Balancing (single-plane)</td><td>Cân bằng động (một mặt phẳng)</td></tr><tr><td>Trial weight / correction weight</td><td>Khối lượng thử / khối lượng hiệu chỉnh</td></tr><tr><td>Stroboscope</td><td>Đèn hoạt nghiệm (stroboscope)</td></tr><tr><td>Belt / pulley alignment</td><td>Căn đai / căn puli</td></tr><tr><td>Level check / flatness check</td><td>Kiểm tra cân bằng (thuỷ) / kiểm tra độ phẳng</td></tr><tr><td>Reference points</td><td>Điểm chuẩn đo</td></tr><tr><td>Condition reading before / after</td><td>Số đo tình trạng trước / sau</td></tr><tr><td>Digital report</td><td>Báo cáo số (có ảnh, số đo)</td></tr><tr><td>AT-400 Ultimate, WBT-400, Machine Defender, Run-Out Probe, PAT</td><td>Tên thiết bị hãng — giữ nguyên</td></tr></tbody></table><h2 id="tn-7">7. Thiết bị (6)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Turret milling head</td><td>Đầu phay xoay (turret)</td></tr><tr><td>Sleeve / quill travel</td><td>Hành trình ống trục chính (quill)</td></tr><tr><td>Cross table, T-slot</td><td>Bàn máy, rãnh chữ T</td></tr><tr><td>Coolant pump</td><td>Bơm dung dịch làm mát</td></tr><tr><td>Emergency stop</td><td>Dừng khẩn cấp</td></tr><tr><td>Power feed</td><td>Chạy dao tự động</td></tr></tbody></table><h2 id="tn-8">8. Bổ sung từ TD (bậc 2) (15)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Rigging / hoisting</td><td>Móc cáp, cẩu / nâng hạ</td></tr><tr><td>SWL (safe working load)</td><td>Tải trọng làm việc an toàn</td></tr><tr><td>PLC (programmable logic controller) / VFD (variable frequency drive)</td><td>Bộ điều khiển logic khả trình / biến tần</td></tr><tr><td>Thermography</td><td>Chụp ảnh nhiệt</td></tr><tr><td>Sole plate</td><td>Tấm đệm đế máy</td></tr><tr><td>Hazardous area work permit</td><td>Giấy phép làm việc trong khu vực nguy hiểm</td></tr><tr><td>Cordon off</td><td>Rào chắn khu vực</td></tr><tr><td>Decommission</td><td>Tháo dỡ, ngừng vận hành thiết bị</td></tr><tr><td>Member</td><td>Nước thành viên (đoàn dự thi)</td></tr><tr><td>Skill Management Team (SMT) / Skill Management Plan (SMP)</td><td>Nhóm quản lý nghề / Kế hoạch quản lý nghề</td></tr><tr><td>Compatriot Communication</td><td>Buổi trao đổi nội bộ đoàn cùng quốc gia (đầu mỗi ngày thi)</td></tr><tr><td>Mark Summary Form</td><td>Phiếu tổng hợp điểm</td></tr><tr><td>Marking team</td><td>Đội chấm</td></tr><tr><td>Industry Marking Team</td><td>Đội chấm ngành công nghiệp</td></tr><tr><td>Compatriot marking</td><td>Chấm điểm người cùng quốc gia (bị cấm)</td></tr></tbody></table><h2 id="tn-9">8. Bổ sung từ bậc 1 (đề thật, bản vẽ, sơ đồ khí nén) — chỉ thêm dòng (43)</h2><table class="tl-table"><thead><tr><th>English</th><th>Tiếng Việt</th></tr></thead><tbody><tr><td>Expert Initials</td><td>Chuyên gia ký tắt (mốc nộp bài Module B, C, D)</td></tr><tr><td>Hand in immediately upon completion or timed window expiring</td><td>Nộp ngay khi hoàn thành hoặc ngay khi hết khung giờ</td></tr><tr><td>Timed speed challenge / aggregate troubleshooting time</td><td>Thử thách tốc độ có tính giờ / tổng thời gian sửa lỗi (A2)</td></tr><tr><td>Axially secured bearing</td><td>Ổ lăn chặn dọc trục (ổ định vị)</td></tr><tr><td>Belt driven equipment</td><td>Thiết bị truyền động đai</td></tr><tr><td>Bubbles are level</td><td>Bọt thuỷ ở vị trí cân</td></tr><tr><td>Judgement scale: Needs re-work / Average / Good / Excellent</td><td>Thang chấm đánh giá: 0 phải làm lại / 1 trung bình / 2 tốt / 3 xuất sắc</td></tr><tr><td>Full radius contour (weld)</td><td>Biên dạng mối hàn lồi tròn đầy</td></tr><tr><td>Fillet (weld) gauge</td><td>Dưỡng đo mối hàn góc</td></tr><tr><td>Square hollow section (SHS) 50 × 50 × 2</td><td>Thép hộp vuông 50 × 50 × 2</td></tr><tr><td>Angle (L)</td><td>Thép góc chữ L</td></tr><tr><td>Die block (Detail 401)</td><td>Khối cối</td></tr><tr><td>Punch holder (Detail 404)</td><td>Đầu giữ chày</td></tr><tr><td>Stroke positioning screw (Detail 405) / stroke positioning block (305)</td><td>Vít định vị hành trình / khối định vị hành trình (chỉnh shut height)</td></tr><tr><td>Clamp / spacer (Detail 402)</td><td>Kẹp / căn đệm</td></tr><tr><td>Flanged sleeve bearing (bushing)</td><td>Bạc trượt có vai</td></tr><tr><td>Misalignment coupler / self-aligning rod coupler (FK)</td><td>Khớp nối tự lựa cần piston</td></tr><tr><td>Clevis foot (LBG) / swivel flange (SNCS)</td><td>Đế chạc / mặt bích xoay (gá xi lanh lắc)</td></tr><tr><td>Compact cylinder (ADN, AEN, ADN-S)</td><td>Xi lanh compact tác động kép</td></tr><tr><td>Proximity sensor (pneumatic, SMPO-8E) / mounting kit (SMB-8E)</td><td>Cảm biến tiệm cận khí nén báo vị trí piston / bộ gá cảm biến</td></tr><tr><td>Service unit (MS4)</td><td>Bộ xử lý khí (van đóng/mở – lọc – điều áp)</td></tr><tr><td>Manifold rail (VABM) / seal (VABD)</td><td>Thanh gom van / tấm đệm kín</td></tr><tr><td>Silencer</td><td>Bộ giảm thanh</td></tr><tr><td>Blanking plug</td><td>Nút bịt cổng</td></tr><tr><td>Push-in L / T / Y fitting (QSL, QST, QSY, QSM)</td><td>Đầu nối cắm nhanh chữ L / T / Y / thẳng</td></tr><tr><td>Quick coupling plug / socket (KS3 / KD3)</td><td>Đầu cắm / ổ cắm khớp nối nhanh</td></tr><tr><td>Front panel valve (SV-3-M5, SV-5-M5-B)</td><td>Van gắn mặt máy 3/2, 5/2</td></tr><tr><td>Pushbutton actuator (T-22) / selector switch (N-22)</td><td>Nút nhấn / công tắc chọn (xoay)</td></tr><tr><td>Control block for two-hand start (ZSB)</td><td>Khối điều khiển khởi động hai tay</td></tr><tr><td>5/3 valve, mid-position closed (P53C)</td><td>Van 5/3 vị trí giữa đóng</td></tr><tr><td>Spring return (M52) / pneumatically operated both sides (B52)</td><td>Hồi lò xo / tác động khí hai phía</td></tr><tr><td>Port 1, 2, 4, 3, 5, 12, 14</td><td>Cổng cấp 1, cổng ra 2 và 4, cổng xả 3 và 5, cổng điều khiển 12 và 14</td></tr><tr><td>Page connector (P1…P9, /3.A2)</td><td>Mối nối liên trang (tờ.hàng.cột trên sơ đồ)</td></tr><tr><td>Reference designation -MMB, -SGC, -SGA, -RNB, -RND, -RQC, -UQA, -UPA/-UPB, -KHA, WQG</td><td>Mã tham chiếu: xi lanh, nút nhấn, công tắc chọn, tiết lưu, nút bịt, giảm thanh, gá cảm biến, phụ kiện gá, điều áp, ống (xem 07-so-do-khi-nen.md)</td></tr><tr><td>Revision table</td><td>Bảng lịch sử sửa đổi bản vẽ</td></tr><tr><td>Component plate (Detail 500) / hole chart (X LOC, Y LOC, SIZE)</td><td>Tấm linh kiện / bảng toạ độ lỗ</td></tr><tr><td>Blanchard grind both faces</td><td>Mài phẳng hai mặt</td></tr><tr><td>Section view / detail view / removed section</td><td>Hình cắt / hình trích / mặt cắt tách rời</td></tr><tr><td>Title block</td><td>Khung tên bản vẽ</td></tr><tr><td>Pitch circle diameter (P.C.D.)</td><td>Đường kính vòng tròn chia</td></tr><tr><td>Nylock nut — do not tighten</td><td>Đai ốc Nylock — không siết chặt</td></tr><tr><td>Torque wrench</td><td>Cần siết lực</td></tr><tr><td>Workpiece 0.5 thick, DOWN 70° R5, 110° ±15°</td><td>Phôi dày 0.5, uốn xuống 70° R5, góc sản phẩm 110° ±15°</td></tr></tbody></table></section></html>

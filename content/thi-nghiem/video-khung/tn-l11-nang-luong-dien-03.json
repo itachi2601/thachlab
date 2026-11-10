@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-nang-luong-dien-03",
+  "ten": "Hai pin AA và hộp điện trở: đo hiệu suất nguồn",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nang-luong-dien-03-20261031-2.mp4",
+  "tong_giay": 49.6,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "H = U/E = R/(R + r): R càng lớn so với r, H càng gần 1 nhưng không chạm.",
+      "kiem": "Đổi R thì hiệu suất pin thay đổi ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 4.6,
+      "chu": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.7,
+      "chu": "Hai pin AA (E = 3,0 V, r = 1,0 Ω), hộp điện trở R, ampe kế nối tiếp, vôn kế song song với R, khoá K."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 20.0,
+      "chu": "R tăng: I giảm, U tăng; H = U/E: 0,50 → 0,667 → 0,80 → 0,90."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 24.2,
+      "chu": "Bốn điểm nằm trên đường H = R/(R + r). Luôn có r > 0 (hao phí I²r trong pin) nên H không chạm 1 (100 phần trăm)."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 37.0,
+      "chu": "Chưa biết đo r của pin thế nào; pin dùng lâu thì E, r có đổi không. Lưu ý: R = r cho P = UI lớn nhất, nhưng H chỉ 0,50."
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.55,
+    "cau_hoi": "Lần lượt đặt R = 1,0; 2,0; 4,0; 9,0 Ω. Ở R nào, hiệu suất H của pin lớn nhất?",
+    "chon": [
+      "A. R = 1,0 Ω (bằng r)",
+      "B. R = 2,0 Ω",
+      "C. R = 9,0 Ω",
+      "D. Như nhau ở cả bốn giá trị R"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "H đo được 50 %; 66,7 %; 80 %; 90 %: R càng lớn so với r = 1,0 Ω thì phần hao phí trong pin càng nhỏ, H = R/(R + r) càng gần 100 %.",
+    "giai_thich_sai": "R = r là lúc công suất mạch ngoài P = UI lớn nhất (2,25 W), không phải lúc H lớn nhất; khi đó H chỉ 50 %. H = U/E đi theo U, mà U tăng khi R tăng."
+  }
+}

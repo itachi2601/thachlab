@@ -1,0 +1,52 @@
+{
+  "id": "tn-l10-trondeu-03",
+  "ten": "Đĩa xoay lò vi sóng: đo chu kì, suy ra tốc độ góc",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trondeu-03-20261101.mp4",
+  "tong_giay": 49.9,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Đo 3 vòng rồi chia 3 ra T; ω = 2π/T.",
+      "kiem": "Đĩa xoay có tốc độ góc bao nhiêu?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.0,
+      "chu": "3 vòng hết khoảng 30 s: tốc độ góc ω khoảng bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.8,
+      "chu": "Đĩa xoay, băng dính cách tâm 14,0 cm, mốc đỏ, đồng hồ bấm giây."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 22.3,
+      "chu": "Thời gian 3 vòng: 30,2; 29,8; 30,1; 30,4; 29,9 s."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 28.7,
+      "chu": "Δt trung bình 30,08 s, T ≈ 10,03 s, ω ≈ 0,627 rad/s."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 32.3,
+      "chu": "Chỉ có T trung bình: đĩa có quay đều trong từng vòng không?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.65,
+    "cau_hoi": "Đĩa xoay lò vi sóng quay đều, 3 vòng hết khoảng 30 s. Tốc độ góc ω của đĩa khoảng bao nhiêu?",
+    "chon": [
+      "A. khoảng 0,1 rad/s",
+      "B. khoảng 0,2 rad/s",
+      "C. khoảng 0,3 rad/s",
+      "D. khoảng 0,6 rad/s"
+    ],
+    "dung": 3,
+    "giai_thich_dung": "1 vòng hết khoảng 30 : 3 = 10 s; một vòng là 2π ≈ 6,28 rad, nên mỗi giây đĩa quét khoảng 0,6 rad.",
+    "giai_thich_sai": "Xem đoạn kế: T là thời gian MỘT vòng (chia cho 3), rồi ω = 2π/T. Số 0,1 là số vòng mỗi giây (tần số f), chưa nhân 2π."
+  }
+}

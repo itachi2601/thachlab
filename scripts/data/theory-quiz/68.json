@@ -347,28 +347,28 @@
    "question": "Một quạt điện đang chạy: nhận điện năng, cánh quạt quay làm không khí chuyển động, ổ trục và động cơ nóng lên, quạt phát ra tiếng kêu. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Điện năng được chuyển hoá thành động năng của cánh quạt và không khí.",
+     "text": "Một phần năng lượng chuyển thành nhiệt năng ở ổ trục, động cơ và thành âm thanh.",
      "answer": true
     },
     {
-     "text": "Năng lượng là đại lượng có hướng, hướng theo chiều quay của cánh quạt.",
-     "answer": false
-    },
-    {
-     "text": "Một phần năng lượng chuyển thành nhiệt năng ở ổ trục, động cơ và thành âm thanh.",
+     "text": "Điện năng được chuyển hoá thành động năng của cánh quạt và không khí.",
      "answer": true
     },
     {
      "text": "Tổng năng lượng các dạng quạt tạo ra lớn hơn điện năng quạt nhận vào.",
      "answer": false
+    },
+    {
+     "text": "Năng lượng là đại lượng có hướng, hướng theo chiều quay của cánh quạt.",
+     "answer": false
     }
    ],
    "explanation": "Bài lấy quạt điện làm ví dụ chuyển hoá: điện năng thành động năng, nhiệt năng và âm thanh. Năng lượng là đại lượng vô hướng và không tự sinh ra nên tổng không thể vượt điện năng nhận vào.",
    "distractorNotes": {
-    "0": "Cánh quạt và không khí chuyển động có động năng, lấy từ điện năng nhận vào, nên ý này đúng.",
-    "1": "Năng lượng là đại lượng vô hướng, không có hướng theo chiều quay của cánh quạt.",
-    "2": "Ổ trục nóng lên và quạt có tiếng kêu chứng tỏ có nhiệt năng và âm thanh, nên ý này đúng.",
-    "3": "Năng lượng không tự sinh ra, nên tổng các dạng tạo ra không thể vượt điện năng nhận vào."
+    "0": "Ổ trục nóng lên và quạt có tiếng kêu chứng tỏ có nhiệt năng và âm thanh, nên ý này đúng.",
+    "1": "Cánh quạt và không khí chuyển động có động năng, lấy từ điện năng nhận vào, nên ý này đúng.",
+    "2": "Năng lượng không tự sinh ra, nên tổng các dạng tạo ra không thể vượt điện năng nhận vào.",
+    "3": "Năng lượng là đại lượng vô hướng, không có hướng theo chiều quay của cánh quạt."
    }
   },
   {
@@ -382,7 +382,11 @@
    "question": "Ở sân băng: Minh đứng yên ôm ba lô suốt 5 phút, mỏi tay. Lan đẩy lưng Hà đang đứng trên giày trượt, Hà lướt đi theo hướng lực đẩy. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Minh mỏi tay nên lực tay Minh đã sinh công lên ba lô.",
+     "text": "Lực đẩy của Lan sinh công dương lên Hà.",
+     "answer": true
+    },
+    {
+     "text": "Công cơ học được đo bằng mức độ mỏi cơ bắp của người tác dụng lực.",
      "answer": false
     },
     {
@@ -390,20 +394,16 @@
      "answer": true
     },
     {
-     "text": "Lực đẩy của Lan sinh công dương lên Hà.",
-     "answer": true
-    },
-    {
-     "text": "Công cơ học được đo bằng mức độ mỏi cơ bắp của người tác dụng lực.",
+     "text": "Minh mỏi tay nên lực tay Minh đã sinh công lên ba lô.",
      "answer": false
     }
    ],
    "explanation": "Công cần có lực và vật nhận lực dịch chuyển theo hướng có thành phần của lực. Ba lô đứng yên nên $A = 0$; Hà dịch chuyển theo hướng lực đẩy nên công dương.",
    "distractorNotes": {
-    "0": "Mỏi chỉ là chuyện cơ bắp; ba lô đứng yên nên $d = 0$, lực tay không sinh công.",
-    "1": "Độ dịch chuyển bằng 0 thì $A = Fd\\cos\\alpha = 0$ dù lực lớn, nên ý này đúng.",
-    "2": "Hà dịch chuyển cùng hướng lực đẩy, góc nhọn nên công dương, ý này đúng.",
-    "3": "Công tính bằng lực, độ dịch chuyển và góc giữa chúng, không đo bằng cảm giác mỏi."
+    "0": "Hà dịch chuyển cùng hướng lực đẩy, góc nhọn nên công dương, ý này đúng.",
+    "1": "Công tính bằng lực, độ dịch chuyển và góc giữa chúng, không đo bằng cảm giác mỏi.",
+    "2": "Độ dịch chuyển bằng 0 thì $A = Fd\\cos\\alpha = 0$ dù lực lớn, nên ý này đúng.",
+    "3": "Mỏi chỉ là chuyện cơ bắp; ba lô đứng yên nên $d = 0$, lực tay không sinh công."
    }
   },
   {
@@ -425,11 +425,11 @@
      "answer": true
     },
     {
-     "text": "Dây cung kéo căng có động năng vì nó đang bị biến dạng.",
+     "text": "1 cal là năng lượng làm 1 kg nước nóng thêm 1 °C.",
      "answer": false
     },
     {
-     "text": "1 cal là năng lượng làm 1 kg nước nóng thêm 1 °C.",
+     "text": "Dây cung kéo căng có động năng vì nó đang bị biến dạng.",
      "answer": false
     }
    ],
@@ -437,8 +437,8 @@
    "distractorNotes": {
     "0": "Bài định nghĩa nhiệt năng đúng theo chuyển động hỗn loạn của phân tử, than nóng đỏ là ví dụ của bài.",
     "1": "Bài định nghĩa điện năng đúng theo chuyển động có hướng của điện tích, có ví dụ dây sạc.",
-    "2": "Dây cung căng có năng lượng dự trữ do trạng thái, đó là thế năng; động năng cần vật chuyển động.",
-    "3": "Định nghĩa calo ứng với 1 g nước, đọc thành 1 kg là phóng đại nghìn lần."
+    "2": "Định nghĩa calo ứng với 1 g nước, đọc thành 1 kg là phóng đại nghìn lần.",
+    "3": "Dây cung căng có năng lượng dự trữ do trạng thái, đó là thế năng; động năng cần vật chuyển động."
    }
   },
   {
@@ -452,28 +452,28 @@
    "question": "Kéo vali đi thẳng trên sàn ngang bằng lực $F$, dây kéo hợp với phương ngang góc $60^\\circ$, vali đi được quãng $s$. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Công của lực kéo là công dương vì góc giữa lực và đường đi là góc nhọn.",
+     "text": "Nếu dây kéo vuông góc với đường đi thì lực kéo không sinh công.",
      "answer": true
     },
     {
-     "text": "Công của lực kéo được tính bằng $A = Fs\\sin 60^\\circ$.",
-     "answer": false
-    },
-    {
-     "text": "Nếu dây kéo vuông góc với đường đi thì lực kéo không sinh công.",
+     "text": "Công của lực kéo là công dương vì góc giữa lực và đường đi là góc nhọn.",
      "answer": true
     },
     {
      "text": "Công là đại lượng vectơ, cùng hướng với lực kéo.",
      "answer": false
+    },
+    {
+     "text": "Công của lực kéo được tính bằng $A = Fs\\sin 60^\\circ$.",
+     "answer": false
     }
    ],
    "explanation": "Góc giữa lực và đường đi là $60^\\circ$ nên $A = Fs\\cos 60^\\circ \\gt 0$; $\\alpha = 90^\\circ$ thì $A = 0$. Công là đại lượng vô hướng.",
    "distractorNotes": {
-    "0": "$\\cos 60^\\circ \\gt 0$ nên công dương, là công phát động, vì vậy ý này đúng.",
-    "1": "Dùng sin là lấy phần lực vuông góc đường đi, trong khi phần lực sinh công là $F\\cos\\alpha$.",
-    "2": "$\\cos 90^\\circ = 0$ nên lực vuông góc đường đi không sinh công, ý này đúng.",
-    "3": "Công là đại lượng vô hướng, có thể dương, âm hoặc bằng 0, không có hướng."
+    "0": "$\\cos 90^\\circ = 0$ nên lực vuông góc đường đi không sinh công, ý này đúng.",
+    "1": "$\\cos 60^\\circ \\gt 0$ nên công dương, là công phát động, vì vậy ý này đúng.",
+    "2": "Công là đại lượng vô hướng, có thể dương, âm hoặc bằng 0, không có hướng.",
+    "3": "Dùng sin là lấy phần lực vuông góc đường đi, trong khi phần lực sinh công là $F\\cos\\alpha$."
    }
   },
   {
@@ -487,12 +487,12 @@
    "question": "Thang máy hạ cabin trọng lượng $P$ thẳng đứng xuống chậm đều một quãng $s$; lực căng dây cáp $\\vec T$ hướng lên. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Công của lực căng dây cáp là $A_T = -Ts$.",
-     "answer": true
-    },
-    {
      "text": "Cabin chuyển động đều nên công của lực căng bằng 0.",
      "answer": false
+    },
+    {
+     "text": "Công của lực căng dây cáp là $A_T = -Ts$.",
+     "answer": true
     },
     {
      "text": "Công của trọng lực lên cabin là $A_P = Ps$.",
@@ -505,8 +505,8 @@
    ],
    "explanation": "$\\vec T$ hướng lên, $\\vec d$ hướng xuống: $\\alpha = 180^\\circ$, $A_T = -Ts$ là công cản. Trọng lực cùng hướng dịch chuyển nên $A_P = Ps$.",
    "distractorNotes": {
-    "0": "Lực căng hướng lên ngược hướng dịch chuyển, $\\cos 180^\\circ = -1$ nên $A_T = -Ts$, ý này đúng.",
-    "1": "Chuyển động đều vẫn có dịch chuyển, nên lực căng vẫn sinh công.",
+    "0": "Chuyển động đều vẫn có dịch chuyển, nên lực căng vẫn sinh công.",
+    "1": "Lực căng hướng lên ngược hướng dịch chuyển, $\\cos 180^\\circ = -1$ nên $A_T = -Ts$, ý này đúng.",
     "2": "Cabin đi xuống cùng hướng trọng lực, độ cao giảm $s$ nên công trọng lực dương, ý này đúng.",
     "3": "Lực căng ngược hướng dịch chuyển nên lấy bớt năng lượng của cabin, đó là công cản."
    }
@@ -522,8 +522,8 @@
    "question": "Trên sân băng nằm ngang, Lan kéo ván trượt trọng lượng $P$ bằng dây chếch lên hợp với phương ngang góc $30^\\circ$, lực kéo $F$, ván đi thẳng quãng $s$; hệ số ma sát trượt là $\\mu$. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Công của lực kéo là $A_F = Fs\\cos 30^\\circ$.",
-     "answer": true
+     "text": "So với kéo dây nằm ngang, kéo dây chếch lên làm lực ma sát lớn hơn.",
+     "answer": false
     },
     {
      "text": "Trọng lực và phản lực của mặt băng không sinh công lên ván.",
@@ -534,16 +534,16 @@
      "answer": false
     },
     {
-     "text": "So với kéo dây nằm ngang, kéo dây chếch lên làm lực ma sát lớn hơn.",
-     "answer": false
+     "text": "Công của lực kéo là $A_F = Fs\\cos 30^\\circ$.",
+     "answer": true
     }
    ],
    "explanation": "Phần lực kéo hướng lên $F\\sin 30^\\circ$ làm giảm áp lực nên $N = P - F\\sin 30^\\circ$, ma sát $\\mu N$ nhỏ hơn khi kéo ngang. $\\vec P$, $\\vec N$ vuông góc đường đi nên không sinh công.",
    "distractorNotes": {
-    "0": "Góc giữa lực kéo và đường đi nằm ngang đúng bằng $30^\\circ$, nên dùng $\\cos 30^\\circ$ là đúng.",
+    "0": "Kéo chếch lên làm $N$ nhỏ hơn $P$, nên ma sát $\\mu N$ nhỏ hơn so với kéo ngang.",
     "1": "$\\vec P$ và $\\vec N$ thẳng đứng, vuông góc đường đi ngang nên công bằng 0, ý này đúng.",
     "2": "Phần lực kéo hướng lên làm giảm áp lực, nên phải trừ $F\\sin 30^\\circ$ chứ không cộng.",
-    "3": "Kéo chếch lên làm $N$ nhỏ hơn $P$, nên ma sát $\\mu N$ nhỏ hơn so với kéo ngang."
+    "3": "Góc giữa lực kéo và đường đi nằm ngang đúng bằng $30^\\circ$, nên dùng $\\cos 30^\\circ$ là đúng."
    }
   }
  ]

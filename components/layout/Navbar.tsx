@@ -113,7 +113,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-panel-deep/90 backdrop-blur-md">
+    <header data-site-navbar className="fixed inset-x-0 top-0 z-50 border-b border-line bg-panel-deep/90 backdrop-blur-md">
       <nav className="relative mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
         <Link prefetch={false} href="/" className="flex items-center gap-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white font-display">
@@ -229,13 +229,13 @@ export default function Navbar() {
                     {/* Cùng tên với tab "Hôm nay" trên thanh đáy điện thoại (17/10/2026, N1). */}
                     <User size={16} /> {profile?.role === "student" && profile.track !== "cttc" ? "Hôm nay" : "Tài khoản của tôi"}
                   </Link>
-                  {profile?.role === "student" && profile.track !== "cttc" && (
+                  {profile?.role === "student" && (
                     <Link prefetch={false}
                       href="/tai-khoan/them"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
-                      <User size={16} /> Hồ sơ và nhắc học
+                      <User size={16} /> {profile.track === "cttc" ? "Hồ sơ tài khoản" : "Hồ sơ và nhắc học"}
                     </Link>
                   )}
                   {profile?.role === "parent" && (

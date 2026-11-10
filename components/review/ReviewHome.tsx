@@ -10,6 +10,7 @@ import type { SchoolClass } from "@/features/exams/types";
 import { fetchClasses } from "@/services/classes";
 import {
   createReviewSession,
+  createReviewSelfSession,
   buildDangExam,
   fetchChapterLessons,
   getDangPool,
@@ -20,6 +21,7 @@ import {
   reviewErrorText,
   suggestedMinutes,
   type DangPoolItem,
+  type ReviewMode,
   type PickerChapter,
   type ReviewStageDef,
   type PickerExam,
@@ -41,6 +43,19 @@ interface DangLesson {
 }
 
 const MIN_PER_DANG = 3;
+
+/** Mặc định hạn nộp: 21:00 ngày mai (giờ máy), dạng `datetime-local`. */
+function defaultDue(): string {
+  const d = new Date();
+  d.setDate(d.getDate() + 1);
+  d.setHours(21, 0, 0, 0);
+  const pad = (n: number) => String(n).padStart(2, "0");
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`;
+}
+
+function dueText(iso: string): string {
+  return new Date(iso).toLocaleString("vi-VN", { hour: "2-digit", minute: "2-digit", day: "2-digit", month: "2-digit" });
+}
 
 const STATUS_TEXT: Record<ReviewListItem["status"], string> = {
   ready: "Chưa bắt đầu",
@@ -65,6 +80,9 @@ export default function ReviewHome() {
   const [threshold, setThreshold] = useState(80);
   const [manualId, setManualId] = useState("");
   const [busy, setBusy] = useState(false);
+  const [mode, setMode] = useState<ReviewMode>("live");
+  const [due, setDue] = useState(defaultDue);
+  const [sequential, setSequential] = useState(true);
 
   useEffect(() => {
     let off = false;
@@ -184,7 +202,17 @@ export default function ReviewHome() {
           defs.push({ exam_id: s.pick.examId, item_id: s.pick.itemId, title: s.pick.title.replace(/^Kiểm tra nhanh\s*[—-]\s*/i, ""), minutes: s.minutes });
         }
       }
-      const id = await createReviewSession(classId, title.trim() || "Buổi ôn tập", threshold, defs);
+      const name = title.trim() || (mode === "self" ? "Ôn tập ở nhà" : "Buổi ôn tập");
+      const dueMs = Date.parse(due);
+      if (mode === "self" && !(dueMs > Date.now())) {
+        toast("error", "Hạn nộp phải là một thời điểm trong tương lai.");
+        setBusy(false);
+        return;
+      }
+      const id =
+        mode === "self"
+          ? await createReviewSelfSession(classId, name, threshold, defs, new Date(dueMs).toISOString(), sequential)
+          : await createReviewSession(classId, name, threshold, defs);
       router.push(reviewConsolePath(id));
     } catch (e) {
       toast("error", reviewErrorText(e));
@@ -221,8 +249,12 @@ export default function ReviewHome() {
                   <span className="min-w-0 flex-1 font-semibold text-ink">{s.title}</span>
                   <span className="text-sm text-muted">Lớp {s.class_name} · {s.stage_count} chặng</span>
                   <span className="text-sm font-semibold text-primary">
-                    {STATUS_TEXT[s.status]}
-                    {s.status === "running" ? ` · chặng ${s.current_stage + 1}` : ""}
+                    {s.mode === "self"
+                      ? s.status === "finished"
+                        ? "Tự học · đã kết thúc"
+                        : `Tự học · hạn ${s.due_at ? dueText(s.due_at) : "—"}`
+                      : STATUS_TEXT[s.status]}
+                    {s.mode !== "self" && s.status === "running" ? ` · chặng ${s.current_stage + 1}` : ""}
                   </span>
                 </Link>
               </li>
@@ -233,6 +265,27 @@ export default function ReviewHome() {
 
       <section aria-labelledby="tao-moi" className="space-y-4 rounded-2xl border border-line bg-panel p-4 sm:p-5">
         <h2 id="tao-moi" className="text-lg font-bold text-ink">Tạo buổi ôn mới</h2>
+
+        <fieldset className="space-y-2">
+          <legend className="text-sm font-semibold text-ink">Hình thức</legend>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {([
+              ["live", "Ôn trên lớp", "Cả lớp cùng nhịp: thầy mở từng chặng, có đồng hồ chung và màn hình chiếu."],
+              ["self", "Tự học ở nhà", "Mọi chặng mở sẵn, không đồng hồ, có hạn nộp. Thầy xem tiến độ và dạng cả lớp vướng vào hôm sau."],
+            ] as const).map(([key, label, hint]) => (
+              <label
+                key={key}
+                className={`flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border px-3 py-2 ${mode === key ? "border-primary bg-primary-soft" : "border-line hover:bg-surface-2"}`}
+              >
+                <input type="radio" name="review-mode" checked={mode === key} onChange={() => setMode(key)} className="mt-1 size-5 shrink-0" />
+                <span className="text-sm text-ink">
+                  <span className="font-semibold">{label}</span>
+                  <span className="block text-muted">{hint}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
 
         <div className="grid gap-3 sm:grid-cols-2">
           <label className="block text-sm font-semibold text-ink">
@@ -412,8 +465,29 @@ export default function ReviewHome() {
           </label>
         </div>
 
+        {mode === "self" && (
+          <div className="grid gap-3 sm:grid-cols-2">
+            <label className="block text-sm font-semibold text-ink">
+              Hạn nộp
+              <input
+                type="datetime-local"
+                value={due}
+                onChange={(e) => setDue(e.target.value)}
+                className="mt-1 block min-h-11 w-full rounded-xl border border-line-strong bg-panel px-3 text-base text-ink"
+              />
+            </label>
+            <label className="flex min-h-11 cursor-pointer items-start gap-3 text-sm text-ink sm:pt-6">
+              <input type="checkbox" checked={sequential} onChange={(e) => setSequential(e.target.checked)} className="mt-1 size-5 shrink-0" />
+              <span>
+                <span className="font-semibold">Làm lần lượt từng chặng</span>
+                <span className="block text-muted">Chặng sau mở khi chặng trước đạt; em nộp 2 lượt chưa đạt vẫn được qua để không kẹt.</span>
+              </span>
+            </label>
+          </div>
+        )}
+
         <Button onClick={() => void create()} disabled={!classId || stages.length === 0 || busy}>
-          {busy ? "Đang tạo…" : "Tạo buổi ôn"}
+          {busy ? "Đang tạo…" : mode === "self" ? "Giao về nhà" : "Tạo buổi ôn"}
         </Button>
       </section>
     </div>

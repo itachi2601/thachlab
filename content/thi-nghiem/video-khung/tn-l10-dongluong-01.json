@@ -1,0 +1,52 @@
+{
+  "id": "tn-l10-dongluong-01",
+  "ten": "Đo độ biến thiên động lượng và xung lượng khi xe bật vào đệm lò xo",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dongluong-01-20261031.mp4",
+  "tong_giay": 49.33,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Xung lượng của lực bằng Δp.",
+      "kiem": "Δp và xung lượng cảm biến so nhau ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Độ biến thiên động lượng của xe có độ lớn bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.2,
+      "chu": "Ray đệm khí, xe 0,250 kg, cổng quang, cảm biến lực."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 19.4,
+      "chu": "v2 ngược dấu v1 và nhỏ hơn về độ lớn."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 23.2,
+      "chu": "Độ lớn m(v2 − v1) khớp xung lượng cảm biến (lệch 1,5–2,2 %): Δp = F·Δt."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 31.8,
+      "chu": "Chưa kiểm: ray có ma sát không?\nXe khối lượng khác thì sao?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.0,
+    "cau_hoi": "Độ biến thiên động lượng của xe có độ lớn bao nhiêu?",
+    "chon": [
+      "A. khoảng 0,02 kg·m/s",
+      "B. khoảng 0,08 kg·m/s",
+      "C. khoảng 0,10 kg·m/s",
+      "D. khoảng 0,18 kg·m/s"
+    ],
+    "dung": 3,
+    "giai_thich_dung": "Chọn chiều dương là chiều tới: Δp = 0,250·(−0,32 − 0,40) ≈ −0,18, độ lớn khoảng 0,18 kg·m/s.",
+    "giai_thich_sai": "Xem phần kế: chú ý dấu của v2 so với v1 khi lấy hiệu."
+  }
+}

@@ -31,6 +31,7 @@ phiên khác dọn. Mọi quy tắc dưới đây đều rút từ sự cố th�
   worktree phải nằm TRONG thư mục dự án và `cp -al node_modules` (hardlink; symlink hay /tmp làm
   Turbopack báo "points out of the filesystem root"). Xem lại `git log -1` sau build — phiên khác có
   thể vừa commit thêm.
+- 2026-10-30 · `deploy-tree` có file sửa dở → `checkout` bị huỷ, lệnh deploy chạy riêng ở bước sau vẫn build bản cũ + WIP lên production (5 phút). → Luôn gói `checkout && merge-base --is-ancestor <commit> HEAD && git diff --quiet && deploy.sh` trong MỘT dòng; deploy-tree bẩn thì tạo worktree mới (`git worktree add --detach … origin/main` + `cp -cR node_modules`), không thử lại lệnh rời.
 - Lỗi build "next/font/google queries have exactly one entry" ở deploy-tree = cache `.next` hỏng →
   `rm -rf .next out` rồi chạy lại.
 - Không chạy được `next dev` thứ hai trong cùng thư mục dù khác cổng (khoá theo thư mục) → dev server
@@ -71,3 +72,5 @@ Thầy hỏi "làm sao cloud liền mạch như main", chọn phương án GitHu
 - Bộ lọc quyền auto-mode chặn commit workflow có `contents: write` → phải xin thầy "duyệt commit"; tách Write / commit / push
   thành ba bước, đừng gộp một lệnh.
 - Nhánh `claude/*` tạo trước 8/10 không có file workflow → không tự gộp, vẫn merge tay.
+
+- 2026-11-02 · Hai phiên cùng nối dòng vào CUỐI `docs/STATE-archive.md` → workflow gộp đỏ, phải merge tay (giữ cả hai bên). → Trước khi push lần cuối chạy `git fetch origin && git merge origin/main`; mục archive mới chèn ngay sau tiêu đề ngày tương ứng thay vì cuối file.

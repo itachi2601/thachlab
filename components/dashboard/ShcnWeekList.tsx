@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BookOpenCheck, ChevronDown, ClipboardList, ExternalLink, Target, Users } from "lucide-react";
+import Link from "next/link";
+import { BookOpenCheck, ChevronDown, ChevronRight, ClipboardList, ExternalLink, Target, Users } from "lucide-react";
 import { fetchWeeklySessions, weekRange, type WeeklySession } from "@/services/homeroom-shcn";
 import { GDDD_DOCS_URL, selfStudyItems } from "@/lib/shcn/gddd-topics";
+import { baiDocHref, findBaiDoc } from "@/lib/shcn/bai-doc";
 
 const dateFormat = new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit" });
 
@@ -43,6 +45,7 @@ function WeekCard({ week, defaultOpen }: { week: WeeklySession; defaultOpen: boo
   const [open, setOpen] = useState(defaultOpen);
   const range = week.met_on ? weekRange(week.met_on) : null;
   const selfStudy = selfStudyItems(week.ethics_topic, week.ethics_taught);
+  const baiDoc = findBaiDoc(week.lesson_key);
 
   return (
     <article className="rounded-2xl border border-white/10 bg-[#0B1020] p-5">
@@ -67,6 +70,15 @@ function WeekCard({ week, defaultOpen }: { week: WeeklySession; defaultOpen: boo
 
       {open && (
       <>
+      {baiDoc && (
+        <Link
+          href={baiDocHref(baiDoc.key)}
+          className="mt-4 flex min-h-11 items-center justify-between gap-3 rounded-xl bg-blue-500/10 px-4 py-3 text-sm font-bold text-blue-200 hover:bg-blue-500/15"
+        >
+          <span className="flex items-center gap-2"><BookOpenCheck size={16} />Đọc bài tuần này: {baiDoc.ten}</span>
+          <ChevronRight size={16} />
+        </Link>
+      )}
       {week.announcements.length > 0 && (
         <section className="mt-4">
           <div className="flex items-center gap-2 text-sm font-bold text-white"><ClipboardList size={16} className="text-blue-300" />Nội dung phổ biến</div>

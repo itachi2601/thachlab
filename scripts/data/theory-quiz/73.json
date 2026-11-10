@@ -347,28 +347,28 @@
    "question": "Hai lần, cùng một người rơi từ cùng độ cao: lần thứ nhất xuống đệm hơi cứu hộ, lần thứ hai xuống sàn bê tông; cả hai lần người đều dừng hẳn. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Độ biến thiên động lượng của người trong hai lần là như nhau.",
+     "text": "Thời gian dừng lại trên đệm hơi dài hơn nhiều so với trên sàn bê tông.",
      "answer": true
     },
     {
-     "text": "Đệm hơi làm giảm độ biến thiên động lượng của người nên an toàn hơn.",
-     "answer": false
-    },
-    {
-     "text": "Thời gian dừng lại trên đệm hơi dài hơn nhiều so với trên sàn bê tông.",
+     "text": "Độ biến thiên động lượng của người trong hai lần là như nhau.",
      "answer": true
     },
     {
      "text": "Hợp lực tác dụng lên người khi rơi xuống đệm hơi lớn hơn khi rơi xuống bê tông.",
      "answer": false
+    },
+    {
+     "text": "Đệm hơi làm giảm độ biến thiên động lượng của người nên an toàn hơn.",
+     "answer": false
     }
    ],
    "explanation": "Cùng $m$, cùng tốc độ chạm, cùng dừng hẳn nên $\\Delta p$ như nhau; đệm kéo dài $\\Delta t$ nên hợp lực $F = \\Delta p/\\Delta t$ nhỏ hơn (Bẫy 3).",
    "distractorNotes": {
-    "0": "Không thể coi là sai: cùng khối lượng, cùng tốc độ chạm và cùng dừng hẳn thì $\\Delta p$ bằng nhau.",
-    "1": "Không thể coi là đúng: đệm không làm thay đổi $\\Delta p$, chỉ kéo dài thời gian dừng.",
-    "2": "Không thể coi là sai: đệm mềm lún dần nên người dừng chậm hơn hẳn so với sàn cứng.",
-    "3": "Không thể coi là đúng: cùng $\\Delta p$ mà $\\Delta t$ dài hơn thì hợp lực phải nhỏ hơn."
+    "0": "Không thể coi là sai: đệm mềm lún dần nên người dừng chậm hơn hẳn so với sàn cứng.",
+    "1": "Không thể coi là sai: cùng khối lượng, cùng tốc độ chạm và cùng dừng hẳn thì $\\Delta p$ bằng nhau.",
+    "2": "Không thể coi là đúng: cùng $\\Delta p$ mà $\\Delta t$ dài hơn thì hợp lực phải nhỏ hơn.",
+    "3": "Không thể coi là đúng: đệm không làm thay đổi $\\Delta p$, chỉ kéo dài thời gian dừng."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Hai xe giống nhau, mỗi xe khối lượng $m$, chạy ngược chiều nhau trên cùng một đường thẳng với cùng tốc độ $v$ đối với mặt đường. Xét các phát biểu sau (trong hệ quy chiếu gắn với mặt đường):",
    "statements": [
     {
-     "text": "Động lượng của hệ hai xe có độ lớn $2mv$.",
-     "answer": false
+     "text": "Mỗi xe có động lượng độ lớn $mv$.",
+     "answer": true
     },
     {
      "text": "Động lượng của hệ hai xe bằng vector không.",
      "answer": true
     },
     {
-     "text": "Mỗi xe có động lượng độ lớn $mv$.",
-     "answer": true
+     "text": "Động lượng của hệ được tính bằng tổng độ lớn động lượng của hai xe.",
+     "answer": false
     },
     {
-     "text": "Động lượng của hệ được tính bằng tổng độ lớn động lượng của hai xe.",
+     "text": "Động lượng của hệ hai xe có độ lớn $2mv$.",
      "answer": false
     }
    ],
    "explanation": "Động lượng hệ là tổng vector: hai vector cùng độ lớn $mv$, ngược hướng nên triệt tiêu, $\\vec p_{\\text{hệ}} = \\vec 0$ (Bẫy 2).",
    "distractorNotes": {
-    "0": "Không thể coi là đúng: $2mv$ là kết quả khi cộng độ lớn như thể hai vector cùng hướng.",
+    "0": "Không thể coi là sai: mỗi xe có khối lượng $m$, tốc độ $v$ nên có $p = mv$.",
     "1": "Không thể coi là sai: hai vector cùng độ lớn, ngược hướng thì tổng vector bằng không.",
-    "2": "Không thể coi là sai: mỗi xe có khối lượng $m$, tốc độ $v$ nên có $p = mv$.",
-    "3": "Không thể coi là đúng: động lượng hệ cộng theo quy tắc vector, không cộng như cộng số."
+    "2": "Không thể coi là đúng: động lượng hệ cộng theo quy tắc vector, không cộng như cộng số.",
+    "3": "Không thể coi là đúng: $2mv$ là kết quả khi cộng độ lớn như thể hai vector cùng hướng."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Lực của đệm lò xo tác dụng lên xe cùng chiều với chiều xe chạy tới.",
-     "answer": false
-    },
-    {
      "text": "Độ lớn độ biến thiên động lượng của xe là $m(|v_1| - |v_2|)$.",
      "answer": false
     },
     {
      "text": "$|\\Delta p|$ tính từ cổng quang xấp xỉ bằng xung lượng cảm biến đo được, phù hợp với $\\Delta\\vec p = \\vec F\\Delta t$.",
      "answer": true
+    },
+    {
+     "text": "Lực của đệm lò xo tác dụng lên xe cùng chiều với chiều xe chạy tới.",
+     "answer": false
     }
    ],
    "explanation": "$v_2 \\lt 0$ nên $|\\Delta p| = m|v_2 - v_1| = m(|v_1| + |v_2|)$; lực đệm đẩy xe ngược chiều tới và kết quả đo khớp $\\Delta\\vec p = \\vec F\\Delta t$.",
    "distractorNotes": {
     "0": "Không thể coi là sai: xe chuyển động ngược chiều dương đã chọn nên vận tốc mang dấu âm.",
-    "1": "Không thể coi là đúng: lực đệm cùng hướng với $\\Delta\\vec p$, tức ngược chiều xe chạy tới.",
-    "2": "Không thể coi là đúng: hai vận tốc trái dấu nên độ lớn $\\Delta p$ là tổng hai độ lớn, không phải hiệu.",
-    "3": "Không thể coi là sai: số liệu chỉ chênh vài phần trăm, nằm trong phạm vi sai số dụng cụ."
+    "1": "Không thể coi là đúng: hai vận tốc trái dấu nên độ lớn $\\Delta p$ là tổng hai độ lớn, không phải hiệu.",
+    "2": "Không thể coi là sai: số liệu chỉ chênh vài phần trăm, nằm trong phạm vi sai số dụng cụ.",
+    "3": "Không thể coi là đúng: lực đệm cùng hướng với $\\Delta\\vec p$, tức ngược chiều xe chạy tới."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một lực $\\vec F$ không đổi tác dụng lên vật trong khoảng thời gian $\\Delta t$. Xét các phát biểu sau về xung lượng của lực:",
    "statements": [
     {
-     "text": "Xung lượng của lực trong khoảng thời gian đó là tích $\\vec F\\Delta t$.",
+     "text": "$1\\ \\text{N}\\cdot\\text{s}$ tương đương $1\\ \\text{kg}\\cdot\\text{m/s}$.",
      "answer": true
     },
     {
-     "text": "Đơn vị của xung lượng trong hệ SI là $\\text{N/s}$.",
-     "answer": false
-    },
-    {
-     "text": "$1\\ \\text{N}\\cdot\\text{s}$ tương đương $1\\ \\text{kg}\\cdot\\text{m/s}$.",
+     "text": "Xung lượng của lực trong khoảng thời gian đó là tích $\\vec F\\Delta t$.",
      "answer": true
     },
     {
      "text": "Xung lượng của lực là đại lượng vô hướng.",
      "answer": false
+    },
+    {
+     "text": "Đơn vị của xung lượng trong hệ SI là $\\text{N/s}$.",
+     "answer": false
     }
    ],
    "explanation": "Xung lượng là vector $\\vec F\\Delta t$, đơn vị $\\text{N}\\cdot\\text{s} = \\text{kg}\\cdot\\text{m/s}$, bằng độ biến thiên động lượng.",
    "distractorNotes": {
-    "0": "Không thể coi là sai: bài định nghĩa xung lượng đúng bằng tích lực với thời gian tác dụng.",
-    "1": "Không thể coi là đúng: xung lượng là lực nhân thời gian nên đơn vị là $\\text{N}\\cdot\\text{s}$, không phải phép chia.",
-    "2": "Không thể coi là sai: $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nhân với giây được $\\text{kg}\\cdot\\text{m/s}$.",
-    "3": "Không thể coi là đúng: $\\vec F\\Delta t$ là vector cùng hướng lực và bằng vector $\\Delta\\vec p$."
+    "0": "Không thể coi là sai: $1\\ \\text{N} = 1\\ \\text{kg}\\cdot\\text{m/s}^2$, nhân với giây được $\\text{kg}\\cdot\\text{m/s}$.",
+    "1": "Không thể coi là sai: bài định nghĩa xung lượng đúng bằng tích lực với thời gian tác dụng.",
+    "2": "Không thể coi là đúng: $\\vec F\\Delta t$ là vector cùng hướng lực và bằng vector $\\Delta\\vec p$.",
+    "3": "Không thể coi là đúng: xung lượng là lực nhân thời gian nên đơn vị là $\\text{N}\\cdot\\text{s}$, không phải phép chia."
    }
   }
  ]

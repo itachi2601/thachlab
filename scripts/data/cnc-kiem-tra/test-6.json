@@ -1,0 +1,247 @@
+{
+  "cnc_key": "test-6",
+  "title": "Kiểm tra cuối Bài 7 — Gia công phay CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Thứ tự gia công hợp lý cho một tấm phay có biên dạng và lỗ ren là:",
+      "options": [
+        "Mặt phẳng → bậc và biên dạng → khoan → tarô",
+        "Khoan → tarô → mặt phẳng → bậc và biên dạng",
+        "Bậc và biên dạng → mặt phẳng → tarô → khoan",
+        "Mặt phẳng → bậc và biên dạng → tarô → khoan"
+      ],
+      "answer": 0,
+      "explanation": "Mặt phẳng làm chuẩn trước, rồi biên dạng; lỗ ren khoan trước, tarô là nguyên công cuối của lỗ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Nhìn từ trên xuống mặt phẳng XY, lệnh G02 dùng để:",
+      "options": [
+        "Chạy dao nhanh tới điểm mà không cắt",
+        "Cắt đường thẳng với lượng chạy dao F",
+        "Cắt cung tròn ngược chiều kim đồng hồ",
+        "Cắt cung tròn cùng chiều kim đồng hồ"
+      ],
+      "answer": 3,
+      "explanation": "G01 cắt thẳng, G02 cung cùng chiều kim đồng hồ, G03 cung ngược chiều kim đồng hồ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh G40 trong chương trình phay có tác dụng:",
+      "options": [
+        "Bật bù bán kính, dao bên trái hướng chạy",
+        "Hủy bù bán kính, dao về đường lập trình",
+        "Bật bù bán kính, dao bên phải hướng chạy",
+        "Hủy chu trình khoan đã gọi trước đó"
+      ],
+      "answer": 1,
+      "explanation": "G41 và G42 bật bù bán kính dao (trái/phải hướng chạy), G40 hủy bù để tâm dao trở về đường lập trình."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi bật bù bán kính bằng G41, dao nằm ở đâu so với đường chạy?",
+      "options": [
+        "Bên trái so với hướng chạy",
+        "Bên phải so với hướng chạy",
+        "Ngay trên đường biên dạng",
+        "Phía trên so với mặt phôi"
+      ],
+      "answer": 0,
+      "explanation": "Đứng trên đường chạy nhìn theo hướng đi: G41 dao ở bên trái, G42 dao ở bên phải."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi tạo lỗ ren, bước khoan tâm đầu tiên dùng để:",
+      "options": [
+        "Tạo sẵn ren sơ bộ cho mũi tarô sau",
+        "Mở rộng lỗ tới đúng đường kính ren",
+        "Định vị để mũi khoan không trượt",
+        "Làm mát vùng cắt trước khi khoan"
+      ],
+      "answer": 2,
+      "explanation": "Thứ tự lỗ ren là khoan tâm định vị → khoan đúng cỡ → tarô tạo ren trong."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi phay một tấm phôi, Z0 của gốc W thường đặt ở đâu?",
+      "options": [
+        "Mặt bàn máy nằm ngay dưới phôi",
+        "Mặt trên của phôi đã phay phẳng",
+        "Đáy của lỗ sâu nhất trên bản vẽ",
+        "Đầu mũi dao lúc vừa mới gọi dao ra"
+      ],
+      "answer": 1,
+      "explanation": "Phay mặt phẳng xong thì chạm dao trên mặt vừa phay để đặt Z0; X0 Y0 đặt ở một góc hoặc tâm phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi khai báo cung bằng I và J, hai trị số này là:",
+      "options": [
+        "Tọa độ điểm cuối cung theo X và theo Y",
+        "Bán kính cung theo phương X và phương Y",
+        "Tọa độ tâm cung tính từ gốc W của phôi",
+        "Hiệu tọa độ tâm trừ điểm đầu theo X, Y"
+      ],
+      "answer": 3,
+      "explanation": "I = X tâm − X điểm đầu, J = Y tâm − Y điểm đầu; ngoài ra có thể cho tâm bằng bán kính R."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao nên gia công trọn chi tiết trong một lần gá khi có thể?",
+      "options": [
+        "Để gốc W giữ nguyên mọi nguyên công",
+        "Để dùng được tốc độ trục chính cao hơn",
+        "Để không phải dùng bù bán kính dao nữa",
+        "Để mũi khoan khỏi bị mòn nhanh hơn"
+      ],
+      "answer": 0,
+      "explanation": "Mọi tọa độ tính từ W; tháo ra gá lại phải xác lập W lại, chỉ lệch một chút là cả nhóm nguyên công sau lệch theo."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Biên dạng phay đúng, nhưng sau khi tháo ra gá lại để khoan, cả bốn lỗ cùng lệch 2 mm theo Y so với biên dạng. Cần kiểm tra trước tiên:",
+      "options": [
+        "Độ mòn của mũi khoan đang dùng",
+        "Tốc độ quay trục chính khi khoan",
+        "Việc xác lập lại gốc W sau khi gá",
+        "Tọa độ từng lỗ trong chương trình"
+      ],
+      "answer": 2,
+      "explanation": "Cả nhóm lỗ dịch cùng một lượng, cùng một hướng là dấu hiệu W bị lệch; mũi mòn hay nhập sai từng lỗ không cho độ lệch đều như vậy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay mặt phẳng bằng dao Ø40. Khoảng cách giữa hai đường chạy kề nhau nên chọn:",
+      "options": [
+        "30 mm",
+        "40 mm",
+        "45 mm",
+        "60 mm"
+      ],
+      "answer": 0,
+      "explanation": "Bước chạy phải nhỏ hơn đường kính dao để các vệt cắt chồng lên nhau, không sót dải chưa cắt."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao đang ở (0; 10), cần cắt cung bán kính 10 mm tới (10; 0), tâm cung ở (0; 0), nhìn từ trên xuống. Lệnh đúng là:",
+      "options": [
+        "G03, vì cung đi từ trên xuống dưới",
+        "G01, vì hai điểm cùng mặt phẳng XY",
+        "G02, vì đi cùng chiều kim đồng hồ",
+        "G03, vì tâm cung nằm ở gốc tọa độ"
+      ],
+      "answer": 2,
+      "explanation": "So với tâm, điểm đầu ở vị trí 12 giờ, điểm cuối ở 3 giờ: đi cùng chiều kim đồng hồ nên G02."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao đang ở (30; 0), chạy dòng lệnh G03 X20 Y10 I-10 J0. Tâm cung có tọa độ:",
+      "options": [
+        "(40; 0)",
+        "(20; 10)",
+        "(−10; 0)",
+        "(20; 0)"
+      ],
+      "answer": 3,
+      "explanation": "Tâm = điểm đầu cộng (I; J) = (30 − 10; 0 + 0) = (20; 0)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay ngoài một biên dạng, nhìn từ trên xuống, dao chạy cùng chiều kim đồng hồ quanh chi tiết. Cần bật bù bán kính bằng:",
+      "options": [
+        "G42",
+        "G41",
+        "G40",
+        "G02"
+      ],
+      "answer": 1,
+      "explanation": "Đi cùng chiều kim đồng hồ thì chi tiết nằm bên phải hướng chạy, dao ở ngoài nên nằm bên trái: G41."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay ngoài biên dạng có bù bán kính, dùng dao Ø10, nhưng bảng bù dao lại khai bán kính 10 mm. Kết quả đo chi tiết là:",
+      "options": [
+        "Đúng kích thước bản vẽ",
+        "Nhỏ hơn bản vẽ 5 mm mỗi phía",
+        "To hơn bản vẽ 5 mm mỗi phía",
+        "To hơn bản vẽ 10 mm mỗi phía"
+      ],
+      "answer": 2,
+      "explanation": "Máy dời tâm dao ra 10 mm thay vì 5 mm, nên lưỡi dao cách biên dạng 5 mm và còn thừa 5 mm vật liệu mỗi phía."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Rãnh trong có góc lượn lõm bán kính 7 mm. Dao phay ngón nào phay hết được góc đó?",
+      "options": [
+        "Dao Ø16",
+        "Dao Ø12",
+        "Dao Ø18",
+        "Dao Ø20"
+      ],
+      "answer": 1,
+      "explanation": "Cung lõm cần bán kính dao không lớn hơn bán kính cung: dao Ø12 có bán kính 6 mm ≤ 7 mm, các dao còn lại đều lớn hơn."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mũi tarô M8×1,25 bị gãy giữa chừng; lỗ khoan trước đó dùng mũi Ø6. Nguyên nhân hợp lý nhất là:",
+      "options": [
+        "Lỗ quá to nên ren nông và bị lỏng",
+        "Lỗ quá bé, tarô chịu lực quá lớn",
+        "Chưa khoan tâm trước khi tarô lỗ",
+        "Tarô làm trước cả bước khoan lỗ"
+      ],
+      "answer": 1,
+      "explanation": "Mũi khoan đúng là D − P = 6,75, chọn Ø6,8; khoan Ø6 thì lỗ quá bé, mũi tarô phải cắt nhiều kim loại nên dễ gãy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cần tarô ren hệ mét bước thô M20×2,5. Đường kính mũi khoan trước khi tarô là:",
+      "options": [
+        "20 mm",
+        "22,5 mm",
+        "17,5 mm",
+        "18,75 mm"
+      ],
+      "answer": 2,
+      "explanation": "Mũi khoan ≈ D − P = 20 − 2,5 = 17,5 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tarô cứng ren M10×1,5 với tốc độ trục chính 500 vòng/phút. Tốc độ tiến dọc Z phải đặt là:",
+      "options": [
+        "333 mm/phút",
+        "500 mm/phút",
+        "1500 mm/phút",
+        "750 mm/phút"
+      ],
+      "answer": 3,
+      "explanation": "Tarô cứng: tốc độ tiến = tốc độ quay × bước ren = 500 × 1,5 = 750 mm/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Tấm 120 × 80 mm, bốn góc lượn bán kính 12 mm, gốc W ở góc dưới trái. Đi ngược chiều kim đồng hồ, điểm đầu của cung góc trên phải có tọa độ:",
+      "options": [
+        "(120; 68)",
+        "(108; 68)",
+        "(120; 80)",
+        "(108; 80)"
+      ],
+      "answer": 0,
+      "explanation": "Cạnh phải X = 120 đi lên tới chỗ cách đỉnh một bán kính: (120; 80 − 12) = (120; 68); tâm cung ở (108; 68), điểm cuối ở (108; 80)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay ngoài biên dạng có góc lượn bán kính 10 mm bằng dao Ø16. Ở góc đó, đường tâm dao là cung bán kính bao nhiêu?",
+      "options": [
+        "10 mm",
+        "26 mm",
+        "2 mm",
+        "18 mm"
+      ],
+      "answer": 3,
+      "explanation": "Đường tâm dao dời ra ngoài một bán kính dao 8 mm, nên cung tâm dao có bán kính 10 + 8 = 18 mm, cùng tâm với cung biên dạng."
+    }
+  ]
+}

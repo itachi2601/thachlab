@@ -382,28 +382,28 @@
    "question": "Một xe đang chạy thẳng, chậm dần đều. Chọn chiều dương ngược với chiều chuyển động của xe.",
    "statements": [
     {
-     "text": "Vận tốc của xe có giá trị $v \\lt 0$.",
-     "answer": true
-    },
-    {
-     "text": "Gia tốc của xe có giá trị $a \\gt 0$.",
-     "answer": true
-    },
-    {
      "text": "Vì $a \\gt 0$ nên xe đang chuyển động nhanh dần.",
      "answer": false
     },
     {
      "text": "Tích $a \\cdot v$ của xe có giá trị dương.",
      "answer": false
+    },
+    {
+     "text": "Gia tốc của xe có giá trị $a \\gt 0$.",
+     "answer": true
+    },
+    {
+     "text": "Vận tốc của xe có giá trị $v \\lt 0$.",
+     "answer": true
     }
    ],
    "explanation": "Xe đi ngược chiều dương nên $v \\lt 0$; chậm dần thì $\\vec a$ ngược $\\vec v$ nên $a \\gt 0$, và $a \\cdot v \\lt 0$. Gia tốc dương mà xe vẫn chậm dần.",
    "distractorNotes": {
-    "0": "Xe đi ngược chiều dương đã chọn nên giá trị vận tốc mang dấu âm, không thể là dương.",
-    "1": "Chậm dần thì $\\vec a$ ngược $\\vec v$, tức hướng theo chiều dương; cho $a$ âm là gán sai \"âm là chậm dần\".",
-    "2": "Mắc bẫy xét riêng dấu $a$: ở đây $a \\cdot v \\lt 0$ nên xe vẫn chậm dần dù $a \\gt 0$.",
-    "3": "$a$ dương còn $v$ âm nên tích âm; tích dương sẽ ứng với nhanh dần, mâu thuẫn với đề."
+    "0": "Mắc bẫy xét riêng dấu $a$: ở đây $a \\cdot v \\lt 0$ nên xe vẫn chậm dần dù $a \\gt 0$.",
+    "1": "$a$ dương còn $v$ âm nên tích âm; tích dương sẽ ứng với nhanh dần, mâu thuẫn với đề.",
+    "2": "Chậm dần thì $\\vec a$ ngược $\\vec v$, tức hướng theo chiều dương; cho $a$ âm là gán sai \"âm là chậm dần\".",
+    "3": "Xe đi ngược chiều dương đã chọn nên giá trị vận tốc mang dấu âm, không thể là dương."
    }
   },
   {
@@ -417,6 +417,10 @@
    "question": "So sánh vận tốc và gia tốc qua các tình huống: máy bay bay thẳng đều, xe máy vừa rời vạch dừng, xe chạy qua khúc cua với tốc độ không đổi.",
    "statements": [
     {
+     "text": "Tốc độ của vật không đổi thì gia tốc của vật chắc chắn bằng 0.",
+     "answer": false
+    },
+    {
      "text": "Vật có vận tốc càng lớn thì gia tốc của vật càng lớn.",
      "answer": false
     },
@@ -425,19 +429,15 @@
      "answer": true
     },
     {
-     "text": "Tốc độ của vật không đổi thì gia tốc của vật chắc chắn bằng 0.",
-     "answer": false
-    },
-    {
      "text": "Vận tốc cho biết vật đi nhanh hay chậm, gia tốc cho biết vận tốc thay đổi nhanh hay chậm.",
      "answer": true
     }
    ],
    "explanation": "Vận tốc và gia tốc trả lời hai câu hỏi khác nhau; máy bay bay đều có $a = 0$, còn xe vào cua với tốc độ không đổi vẫn có gia tốc do hướng vận tốc đổi.",
    "distractorNotes": {
-    "0": "Mắc bẫy \"nhanh thì gia tốc lớn\": máy bay bay đều $250\\ \\text{m/s}$ vẫn có $a = 0$.",
-    "1": "Vận tốc bằng 0 nhưng đang tăng thì vẫn có gia tốc; coi \"$v = 0$\" là \"$a = 0$\" là nhầm đại lượng.",
-    "2": "Chỉ xét độ lớn: xe vào cua với tốc độ không đổi nhưng hướng vận tốc đổi nên vẫn có gia tốc.",
+    "0": "Chỉ xét độ lớn: xe vào cua với tốc độ không đổi nhưng hướng vận tốc đổi nên vẫn có gia tốc.",
+    "1": "Mắc bẫy \"nhanh thì gia tốc lớn\": máy bay bay đều $250\\ \\text{m/s}$ vẫn có $a = 0$.",
+    "2": "Vận tốc bằng 0 nhưng đang tăng thì vẫn có gia tốc; coi \"$v = 0$\" là \"$a = 0$\" là nhầm đại lượng.",
     "3": "Đây là phân biệt cốt lõi của bài; phủ nhận nó tức là đồng nhất vận tốc với gia tốc."
    }
   },
@@ -487,28 +487,28 @@
    "question": "Dùng công thức $a = \\frac{\\Delta v}{\\Delta t}$ để so sánh gia tốc của các xe chuyển động thẳng biến đổi đều.",
    "statements": [
     {
-     "text": "Cùng thời gian $\\Delta t$, độ biến thiên vận tốc $\\Delta v$ gấp đôi thì gia tốc gấp đôi.",
-     "answer": true
-    },
-    {
      "text": "Cùng $\\Delta v$, thời gian $\\Delta t$ gấp đôi thì gia tốc cũng gấp đôi.",
      "answer": false
     },
     {
-     "text": "Nếu $\\Delta v$ và $\\Delta t$ cùng tăng gấp ba thì gia tốc không đổi.",
+     "text": "Đồ thị $v$–$t$ càng dốc thì gia tốc của xe càng nhỏ.",
+     "answer": false
+    },
+    {
+     "text": "Cùng thời gian $\\Delta t$, độ biến thiên vận tốc $\\Delta v$ gấp đôi thì gia tốc gấp đôi.",
      "answer": true
     },
     {
-     "text": "Đồ thị $v$–$t$ càng dốc thì gia tốc của xe càng nhỏ.",
-     "answer": false
+     "text": "Nếu $\\Delta v$ và $\\Delta t$ cùng tăng gấp ba thì gia tốc không đổi.",
+     "answer": true
     }
    ],
    "explanation": "$a$ tỉ lệ thuận với $\\Delta v$ và tỉ lệ nghịch với $\\Delta t$; độ dốc đồ thị $v$–$t$ càng lớn thì gia tốc càng lớn.",
    "distractorNotes": {
-    "0": "$\\Delta v$ ở tử số nên gia tốc tỉ lệ thuận với $\\Delta v$ khi giữ nguyên $\\Delta t$.",
-    "1": "Đảo tỉ lệ: $\\Delta t$ ở mẫu số nên thời gian gấp đôi thì gia tốc giảm còn một nửa.",
-    "2": "Tử và mẫu cùng nhân 3 thì tỉ số không đổi; nghĩ gia tốc thay đổi là chỉ nhìn một trong hai đại lượng.",
-    "3": "Đảo quan hệ: độ dốc chính là gia tốc, đồ thị càng dốc thì gia tốc càng lớn."
+    "0": "Đảo tỉ lệ: $\\Delta t$ ở mẫu số nên thời gian gấp đôi thì gia tốc giảm còn một nửa.",
+    "1": "Đảo quan hệ: độ dốc chính là gia tốc, đồ thị càng dốc thì gia tốc càng lớn.",
+    "2": "$\\Delta v$ ở tử số nên gia tốc tỉ lệ thuận với $\\Delta v$ khi giữ nguyên $\\Delta t$.",
+    "3": "Tử và mẫu cùng nhân 3 thì tỉ số không đổi; nghĩ gia tốc thay đổi là chỉ nhìn một trong hai đại lượng."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một ô tô đang chạy thẳng với vận tốc $v_1$ (cho bằng km/h) thì hãm phanh, chuyển động chậm dần đều và dừng lại sau thời gian $\\Delta t$. Chọn chiều dương là chiều chuyển động.",
    "statements": [
     {
-     "text": "Để đổi vận tốc từ $\\text{km/h}$ sang $\\text{m/s}$, ta chia cho $3{,}6$.",
-     "answer": true
-    },
-    {
-     "text": "Cụm từ \"dừng lại\" cho biết vận tốc cuối $v_2 = 0$.",
-     "answer": true
+     "text": "Quãng đường hãm phanh bằng $v_1 \\cdot \\Delta t$.",
+     "answer": false
     },
     {
      "text": "Gia tốc của ô tô có giá trị dương.",
      "answer": false
     },
     {
-     "text": "Quãng đường hãm phanh bằng $v_1 \\cdot \\Delta t$.",
-     "answer": false
+     "text": "Để đổi vận tốc từ $\\text{km/h}$ sang $\\text{m/s}$, ta chia cho $3{,}6$.",
+     "answer": true
+    },
+    {
+     "text": "Cụm từ \"dừng lại\" cho biết vận tốc cuối $v_2 = 0$.",
+     "answer": true
     }
    ],
    "explanation": "Đổi đơn vị chia $3{,}6$; dừng lại thì $v_2 = 0$; $v \\gt 0$ và chậm dần nên $a \\lt 0$; quãng đường là diện tích tam giác $\\frac{1}{2} v_1 \\Delta t$.",
    "distractorNotes": {
-    "0": "$1\\ \\text{m/s} = 3{,}6\\ \\text{km/h}$ nên đổi km/h ra m/s phải chia cho $3{,}6$; nhân là đổi ngược chiều.",
-    "1": "\"Dừng lại\" là dữ kiện ngầm $v_2 = 0$; bỏ qua nó thì không tính được $\\Delta v$.",
-    "2": "Chiều dương là chiều chuyển động nên $v \\gt 0$; chậm dần đòi hỏi $a$ trái dấu với $v$, tức $a \\lt 0$.",
-    "3": "Coi vận tốc giữ nguyên $v_1$ suốt lúc hãm; đồ thị là tam giác nên quãng đường bằng $\\frac{1}{2} v_1 \\Delta t$."
+    "0": "Coi vận tốc giữ nguyên $v_1$ suốt lúc hãm; đồ thị là tam giác nên quãng đường bằng $\\frac{1}{2} v_1 \\Delta t$.",
+    "1": "Chiều dương là chiều chuyển động nên $v \\gt 0$; chậm dần đòi hỏi $a$ trái dấu với $v$, tức $a \\lt 0$.",
+    "2": "$1\\ \\text{m/s} = 3{,}6\\ \\text{km/h}$ nên đổi km/h ra m/s phải chia cho $3{,}6$; nhân là đổi ngược chiều.",
+    "3": "\"Dừng lại\" là dữ kiện ngầm $v_2 = 0$; bỏ qua nó thì không tính được $\\Delta v$."
    }
   }
  ]

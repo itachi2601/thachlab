@@ -352,11 +352,7 @@
    "question": "Trong máy in phun liên tục, một giọt mực tích điện âm bay ngang vào khe giữa hai bản nằm ngang: bản trên tích điện dương, bản dưới tích điện âm. Bỏ qua trọng lực. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Đường sức điện giữa hai bản hướng từ bản trên xuống bản dưới.",
-     "answer": true
-    },
-    {
-     "text": "Lực điện tác dụng lên giọt mực cùng chiều với đường sức.",
+     "text": "Giọt mực bay vuông góc với đường sức nên không chịu lực điện.",
      "answer": false
     },
     {
@@ -364,16 +360,20 @@
      "answer": true
     },
     {
-     "text": "Giọt mực bay vuông góc với đường sức nên không chịu lực điện.",
+     "text": "Lực điện tác dụng lên giọt mực cùng chiều với đường sức.",
      "answer": false
+    },
+    {
+     "text": "Đường sức điện giữa hai bản hướng từ bản trên xuống bản dưới.",
+     "answer": true
     }
    ],
    "explanation": "Đường sức đi từ bản dương (trên) sang bản âm (dưới); giọt mực âm chịu lực ngược chiều $\\vec E$, hướng lên, nên lệch về bản dương.",
    "distractorNotes": {
-    "0": "Đường sức luôn đi từ bản dương sang bản âm, ở đây là từ bản trên xuống bản dưới.",
-    "1": "Lực cùng chiều đường sức chỉ đúng với điện tích dương; giọt mực âm chịu lực ngược chiều $\\vec E$.",
-    "2": "Giọt âm bị bản dương hút, bản âm đẩy, nên lực hướng lên và giọt lệch về bản trên.",
-    "3": "Lực điện $|q|E$ không phụ thuộc hướng bay, bay vuông góc đường sức vẫn chịu lực."
+    "0": "Lực điện $|q|E$ không phụ thuộc hướng bay, bay vuông góc đường sức vẫn chịu lực.",
+    "1": "Giọt âm bị bản dương hút, bản âm đẩy, nên lực hướng lên và giọt lệch về bản trên.",
+    "2": "Lực cùng chiều đường sức chỉ đúng với điện tích dương; giọt mực âm chịu lực ngược chiều $\\vec E$.",
+    "3": "Đường sức luôn đi từ bản dương sang bản âm, ở đây là từ bản trên xuống bản dưới."
    }
   },
   {
@@ -387,11 +387,11 @@
    "question": "Cường độ điện trường giữa hai bản phẳng song song tích điện trái dấu được tính bằng $E = \\dfrac{U}{d}$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "$U$ là hiệu điện thế giữa hai bản, $d$ là khoảng cách giữa hai bản.",
+     "text": "Khi thay số, $d$ phải đổi ra mét thì $E$ mới có đơn vị V/m.",
      "answer": true
     },
     {
-     "text": "Khi thay số, $d$ phải đổi ra mét thì $E$ mới có đơn vị V/m.",
+     "text": "$U$ là hiệu điện thế giữa hai bản, $d$ là khoảng cách giữa hai bản.",
      "answer": true
     },
     {
@@ -405,8 +405,8 @@
    ],
    "explanation": "$E = U/d$ chỉ dùng cho điện trường đều xa mép bản, với $d$ tính bằng mét; $E$ tỉ lệ nghịch với $d$ khi $U$ không đổi.",
    "distractorNotes": {
-    "0": "Trong $E = U/d$, $U$ là hiệu điện thế và $d$ là khoảng cách giữa hai bản, đúng như bài định nghĩa.",
-    "1": "Để nguyên cm hay mm sẽ sai hàng chục, hàng nghìn lần; muốn ra V/m thì $d$ phải tính bằng mét.",
+    "0": "Để nguyên cm hay mm sẽ sai hàng chục, hàng nghìn lần; muốn ra V/m thì $d$ phải tính bằng mét.",
+    "1": "Trong $E = U/d$, $U$ là hiệu điện thế và $d$ là khoảng cách giữa hai bản, đúng như bài định nghĩa.",
     "2": "Điện trường điện tích điểm không đều, mà $E = U/d$ chỉ áp dụng cho trường đều xa mép bản.",
     "3": "$d$ nằm ở mẫu số nên khi $U$ không đổi, tăng $d$ gấp đôi thì $E$ giảm một nửa."
    }
@@ -422,10 +422,6 @@
    "question": "Trong thí nghiệm ống lệch tia điện tử, tia electron bay ngang qua giữa hai bản, có thể thay đổi hiệu điện thế $U$ giữa hai bản. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Khi $U = 0$, tia electron đi thẳng.",
-     "answer": true
-    },
-    {
      "text": "Khi $U$ tăng gấp đôi, độ lệch của tia tăng gấp đôi.",
      "answer": true
     },
@@ -436,14 +432,18 @@
     {
      "text": "Khi tăng tốc độ ban đầu $v_0$ của electron, độ lệch của tia tăng lên.",
      "answer": false
+    },
+    {
+     "text": "Khi $U = 0$, tia electron đi thẳng.",
+     "answer": true
     }
    ],
    "explanation": "Độ lệch $y = \\dfrac{|q|U}{2mdv_0^2}x^2$ tỉ lệ thuận với $U$, tỉ lệ nghịch với $v_0^2$; đảo cực làm đổi chiều $\\vec E$ nên tia cong sang phía kia.",
    "distractorNotes": {
-    "0": "$U = 0$ thì không có điện trường, không có lực điện nên tia không lệch.",
-    "1": "Độ lệch tỉ lệ thuận với $U$ theo phương trình quỹ đạo, khớp với quan sát thí nghiệm.",
-    "2": "Đảo cực làm $\\vec E$ đổi chiều, lực lên electron đổi chiều nên tia cong sang phía kia.",
-    "3": "$v_0^2$ nằm ở mẫu số phương trình quỹ đạo, nên bay nhanh hơn thì độ lệch giảm."
+    "0": "Độ lệch tỉ lệ thuận với $U$ theo phương trình quỹ đạo, khớp với quan sát thí nghiệm.",
+    "1": "Đảo cực làm $\\vec E$ đổi chiều, lực lên electron đổi chiều nên tia cong sang phía kia.",
+    "2": "$v_0^2$ nằm ở mẫu số phương trình quỹ đạo, nên bay nhanh hơn thì độ lệch giảm.",
+    "3": "$U = 0$ thì không có điện trường, không có lực điện nên tia không lệch."
    }
   },
   {
@@ -457,28 +457,28 @@
    "question": "Điện tích $q$, khối lượng $m$ bay vào điện trường đều $E$ với $\\vec v_0$ vuông góc đường sức, bỏ qua trọng lực. Chọn gốc O tại điểm vào trường, $Ox$ theo $\\vec v_0$, $Oy$ cùng chiều lực điện. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Theo trục $Ox$: $x = v_0 t$.",
-     "answer": true
-    },
-    {
      "text": "Theo trục $Oy$: $y = \\tfrac12 at^2$ với $a = \\dfrac{|q|E}{m}$.",
      "answer": true
     },
     {
-     "text": "Thay $t = x/v_0$ vào biểu thức của $y$ thì $y$ tỉ lệ bậc nhất với $x$.",
-     "answer": false
+     "text": "Theo trục $Ox$: $x = v_0 t$.",
+     "answer": true
     },
     {
      "text": "Độ lớn lực điện $F = |q|E$ thay đổi theo vị trí của hạt giữa hai bản.",
+     "answer": false
+    },
+    {
+     "text": "Thay $t = x/v_0$ vào biểu thức của $y$ thì $y$ tỉ lệ bậc nhất với $x$.",
      "answer": false
     }
    ],
    "explanation": "Ngang thẳng đều, dọc nhanh dần đều với $a = |q|E/m$; thay $t = x/v_0$ được $y \\propto x^2$ (parabol); trong trường đều lực không đổi.",
    "distractorNotes": {
-    "0": "Theo $Ox$ không có lực, hạt chuyển động thẳng đều nên đúng là $x = v_0 t$.",
-    "1": "Theo $Oy$ lực $|q|E$ không đổi gây gia tốc không đổi $a = |q|E/m$, giống ném ngang thay $g$ bằng $a$.",
-    "2": "Thay $t = x/v_0$ được $t^2 = x^2/v_0^2$, nên $y$ tỉ lệ với $x^2$ và quỹ đạo là parabol.",
-    "3": "Trong trường đều $E$ như nhau mọi điểm, nên $F = |q|E$ không đổi theo vị trí."
+    "0": "Theo $Oy$ lực $|q|E$ không đổi gây gia tốc không đổi $a = |q|E/m$, giống ném ngang thay $g$ bằng $a$.",
+    "1": "Theo $Ox$ không có lực, hạt chuyển động thẳng đều nên đúng là $x = v_0 t$.",
+    "2": "Trong trường đều $E$ như nhau mọi điểm, nên $F = |q|E$ không đổi theo vị trí.",
+    "3": "Thay $t = x/v_0$ được $t^2 = x^2/v_0^2$, nên $y$ tỉ lệ với $x^2$ và quỹ đạo là parabol."
    }
   },
   {
@@ -492,11 +492,11 @@
    "question": "Dán hai thanh đồng song song cách nhau $d$ lên giấy dẫn điện, nối với nguồn có hiệu điện thế $U$. Dùng vôn kế đo hiệu điện thế $V$ giữa thanh âm và điểm cách thanh âm một đoạn $x$ (ở giữa tờ giấy). Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Số đọc $V$ tăng đều theo $x$.",
-     "answer": true
+     "text": "Đơn vị của $V/x$ là V/m, tương đương với N·C.",
+     "answer": false
     },
     {
-     "text": "Tỉ số $V/x$ (với $x$ đổi ra mét) bằng $U/d$.",
+     "text": "Số đọc $V$ tăng đều theo $x$.",
      "answer": true
     },
     {
@@ -504,16 +504,16 @@
      "answer": false
     },
     {
-     "text": "Đơn vị của $V/x$ là V/m, tương đương với N·C.",
-     "answer": false
+     "text": "Tỉ số $V/x$ (với $x$ đổi ra mét) bằng $U/d$.",
+     "answer": true
     }
    ],
    "explanation": "Thí nghiệm cho thấy mọi đoạn đều cho cùng $E = U/d$, chứng tỏ điện trường đều; đơn vị V/m tương đương N/C.",
    "distractorNotes": {
-    "0": "Bảng số liệu cho $V$ tăng thêm $1{,}5$ V sau mỗi cm, tức tăng đều theo $x$.",
-    "1": "Mọi hàng đều cho $V/x = 150$ V/m, khớp với $U/d = 9{,}0/0{,}060$.",
+    "0": "V/m tương đương N/C, tức lực chia cho điện tích, không phải N nhân C.",
+    "1": "Bảng số liệu cho $V$ tăng thêm $1{,}5$ V sau mỗi cm, tức tăng đều theo $x$.",
     "2": "Trường đều nên $V/x$ như nhau ở mọi vị trí, không lớn dần khi tới gần thanh dương.",
-    "3": "V/m tương đương N/C, tức lực chia cho điện tích, không phải N nhân C."
+    "3": "Mọi hàng đều cho $V/x = 150$ V/m, khớp với $U/d = 9{,}0/0{,}060$."
    }
   }
  ]

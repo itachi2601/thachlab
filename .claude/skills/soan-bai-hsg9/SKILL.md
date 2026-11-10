@@ -1,6 +1,6 @@
 ---
 name: soan-bai-hsg9
-description: Soạn trọn MỘT chuyên đề của khoá "Vật lí HSG & chuyên" KHTN 9 (môn hsg-vat-ly, lớp 19) theo lịch `scripts/data/btvn-hsg9/lich-soan-bai.md` — chọn chuyên đề tới hạn, dàn ý nguon.md, lý thuyết nâng cao + bài tập mẫu (subagent song song) + ≥6 câu luyện tập tự chấm, kiểm chéo 2×kiem-code, ghi DB bằng cap-nhat-ly-thuyet.sh + publish-bai-tap-mau.mts + upload-lesson.mts, cập nhật lịch/memory; bật Hiện chỉ sau khi thầy duyệt và trước ngày gửi BTVN. Dùng khi thầy nói "soạn bài HSG 9", "soạn chuyên đề tiếp theo của khoá HSG", "làm CĐ12/CĐ16/CĐ07…", "bổ sung luyện tập cho khoá HSG", "/soan-bai-hsg9". KHÁC soan-bai-tap-tu-luan-hsg (bộ tự luận in PDF, không ghi DB) và bai-hoc-tron-goi (bài lớp 10–12). Soạn + kiểm chạy được trên cloud; ghi DB và deploy chạy trên Mac.
+description: Soạn trọn MỘT chuyên đề khoá "Vật lí HSG & chuyên" KHTN 9 theo lịch scripts/data/btvn-hsg9/lich-soan-bai.md — lý thuyết nâng cao, bài tập mẫu, ≥6 câu luyện tập, kiểm chéo 2×kiem-code, ghi DB. Dùng khi thầy nói "soạn bài HSG 9", "soạn chuyên đề tiếp theo của khoá HSG", "làm CĐ12…", "/soan-bai-hsg9". KHÁC soan-bai-tap-tu-luan-hsg, bai-hoc-tron-goi. Ghi DB chạy trên Mac.
 ---
 
 # Soạn chuyên đề khoá HSG Vật lí 9
@@ -78,3 +78,4 @@ Mẫu đã chạy: bài 167 "Bài tập tuần này" (Cơ học VD–VDC, 11/10)
 - 2026-10-16 · CĐ15: chia bài tập mẫu cho 3 agent theo module + main gom, chạy thử riêng bằng biến môi trường để không ghi đè nhau; mục rỗng phải có trên DB trước khi ghi (migration tạo mục).
 - 2026-10-16 · Lịch dạy 17 buổi: nội dung web phải Hiện trước ngày gửi BTVN; các bài đang Hiện còn thiếu luyện tập tự chấm → mỗi CĐ mới soạn luôn ≥6 câu luyện tập, không để đợt sau.
 - 2026-10-17 · Bổ sung chỉ luyện tập cho bài đã Hiện (CĐ03/04): 2 agent soạn + 2 kiem-code, nhẹ hơn cả quy trình. `dang-hsg9-dot4.sh --yes <cặp>` vẫn ghi lại lý thuyết + bài tập mẫu (nội dung y hệt, có sao lưu) — chấp nhận được, không cần deploy nếu bài tập mẫu không đổi. Bắt agent in distractorNotes trước khi kiểm chéo làm lộ đáp án: dặn kiem-code tự giải từ phần đề rồi mới đối chiếu.
+- 2026-10-27 · Đăng lại lý thuyết 18 CĐ (CĐ00–CĐ17) sau khi thêm khối cột lề: id lesson theo `docs/HSG9-KHUNG.md` (CĐ17=178), dùng `cap-nhat-ly-thuyet.sh content/hsg9/<cd>/theory.html <id> --yes` (chỉ ghi mục ly_thuyet, giữ nguyên Hiện/Ẩn). Worktree không có `.env.local` → symlink từ repo chính (gitignore) rồi chạy trong tab terminal. CĐ06/CĐ08/CĐ09/CĐ17 sát/quá trần 2500 từ: chỉ thêm câu chốt; muốn đủ khối phải tách bài. Chi tiết kỹ thuật: nhật ký skill `soan-bai-ly-thuyet-tuong-tac` cùng ngày.

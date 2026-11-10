@@ -1,6 +1,6 @@
 ---
 name: phet
-description: Chọn, kiểm và nhúng mô phỏng PhET (iframe) vào bài lý thuyết/bài tập mẫu thachlab — tìm sim khớp bài, kiểm URL sống + có tiếng Việt, mở thật để xác nhận màn hình/điều khiển trước khi viết bước "Thử", viết 2–3 nhiệm vụ có câu dự đoán, nhúng trong <details> không tràn 375px, ghi nguồn CC BY 4.0. Dùng khi thầy nói "thêm PhET cho bài X", "bài này có sim nào", "kiểm lại các PhET đã nhúng", "/phet", hoặc khi chặng 2 của bai-hoc-tron-goi cần mô phỏng. KHÁC tai-nguyen-bai-hoc (kế hoạch hình/video tổng thể) — skill này chỉ lo PhET.
+description: Chọn, kiểm và nhúng mô phỏng PhET vào bài lý thuyết/bài tập mẫu — kiểm URL + tiếng Việt, mở thật trước khi viết bước "Thử", 2–3 nhiệm vụ có dự đoán, ghi nguồn CC BY 4.0. Dùng khi thầy nói "thêm PhET cho bài X", "bài này có sim nào", "kiểm lại các PhET đã nhúng", "/phet".
 ---
 
 # PhET cho bài học thachlab

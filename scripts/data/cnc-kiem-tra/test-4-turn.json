@@ -1,0 +1,247 @@
+{
+  "cnc_key": "test-4-turn",
+  "title": "Kiểm tra cuối Bài 4 — Vận hành máy tiện CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Trong bài, câu lệnh chạy thử đầu tiên để đưa dao tới trước mặt đầu phôi là câu nào?",
+      "options": [
+        "G1 X20 Z0 F0.2;",
+        "T0202 M6;",
+        "G0 X20 Z5;",
+        "M3 S500;"
+      ],
+      "answer": 2,
+      "explanation": "G0 X20 Z5; đưa nhanh mũi dao tới trước mặt đầu phôi 5 mm; sau đó mới G1 X20 Z0 F0.2;."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sau câu G1 X20 Z0 F0.2; khi cài đặt đúng, mũi dao phải ở đâu?",
+      "options": [
+        "Cách mặt đầu phôi 5 mm",
+        "Vừa tới mặt đầu phôi",
+        "Ở tâm mặt đầu phôi",
+        "Ở điểm tham chiếu R"
+      ],
+      "answer": 1,
+      "explanation": "Z0 là mặt đầu phôi (gốc W), nên sau câu này mũi dao phải vừa tới mặt đầu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trước khi cấp điện, vùng quay của mâm cặp phải ở trạng thái nào?",
+      "options": [
+        "Có sẵn chìa khóa để kẹp phôi nhanh hơn",
+        "Có sẵn dụng cụ đo để đo nhanh khi cần",
+        "Không còn chìa khóa, dụng cụ, vật lạ",
+        "Có phôi đã kẹp và đang quay ở tốc độ thấp"
+      ],
+      "answer": 2,
+      "explanation": "Kiểm tra trước cấp điện luôn có mục vùng quay trống: không còn chìa khóa mâm cặp, dụng cụ, vật lạ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Kí hiệu M trên máy tiện là điểm nào?",
+      "options": [
+        "Gốc phôi",
+        "Đỉnh mũi dao",
+        "Chuẩn dao",
+        "Gốc máy"
+      ],
+      "answer": 3,
+      "explanation": "M là gốc máy, cố định theo máy; W mới là gốc phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chạy thử để kiểm tra cài đặt nên làm theo cách nào?",
+      "options": [
+        "Trong MDI, từng khối, bước tiến thấp",
+        "Chạy tự động cả chương trình ngay",
+        "JOG với % bước tiến đặt ở mức cao",
+        "Về Reference rồi chạy tự động luôn"
+      ],
+      "answer": 0,
+      "explanation": "Chạy thử trong MDI từng khối với bước tiến thấp để kịp thấy lệch và dừng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gốc phôi W phải cài lại khi nào?",
+      "options": [
+        "Mỗi lần mở máy lên lại",
+        "Mỗi lần gá lại phôi mới",
+        "Mỗi lần thay một con dao",
+        "Mỗi lần đổi % bước tiến JOG"
+      ],
+      "answer": 1,
+      "explanation": "W do em cài ở Work Shift, gắn với mỗi lần gá phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Điểm R và M được xác lập lại lúc nào?",
+      "options": [
+        "Khi em nhập Work Shift vào máy",
+        "Khi em nhấn Measure đo dao",
+        "Khi gọi dao bằng lệnh T0202 M6;",
+        "Khi về Reference sau mở máy"
+      ],
+      "answer": 3,
+      "explanation": "R và M do máy tự xác lập lại khi về Reference sau mỗi lần mở máy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Nhập xong Work Shift, em kiểm lại gốc phôi W ở trang nào?",
+      "options": [
+        "Position",
+        "Offset Geometry",
+        "Program MDI",
+        "Reference"
+      ],
+      "answer": 0,
+      "explanation": "Nhập xong rút dao về chỗ an toàn rồi xem lại W ở Position."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Quên chìa khóa trên mâm cặp rồi cho trục chính quay, điều nguy hiểm nhất là gì?",
+      "options": [
+        "Tọa độ trên màn hình bị sai lệch",
+        "Máy mất điểm tham chiếu đã về",
+        "Chìa khóa văng ra trúng người",
+        "Ụ động bị kẹt không di chuyển được"
+      ],
+      "answer": 2,
+      "explanation": "Khi trục chính quay, chìa khóa văng ra theo phương tiếp tuyến, có thể trúng người hoặc kính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao phải chạy thử từng khối với bước tiến thấp trước khi chạy tự động?",
+      "options": [
+        "Để máy tự sửa lại offset bị sai",
+        "Để kịp thấy lệch rồi dừng máy",
+        "Để trục chính quay đều hơn lúc cắt",
+        "Để khỏi phải về Reference lần nữa"
+      ],
+      "answer": 1,
+      "explanation": "Chạy thử chậm từng khối cho em thời gian so vị trí thật với tọa độ dự kiến và dừng khi lệch."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi nào mới được chuyển sang chạy tự động cả chương trình?",
+      "options": [
+        "Ngay sau khi vừa về Reference xong",
+        "Sau khi đã nhập xong Work Shift",
+        "Khi đã gọi đủ các dao trong MDI",
+        "Sau khi chạy thử thấy tọa độ khớp"
+      ],
+      "answer": 3,
+      "explanation": "Chỉ chạy tự động khi chạy thử đã khớp; lệch mà chạy tự động sẽ va dao, hỏng phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Nhóm nào nằm trong danh sách phải nhìn trước khi cấp điện?",
+      "options": [
+        "Số chương trình, tốc độ S, bước tiến F, M3",
+        "Dừng khẩn cấp, cửa che chắn, hành trình dao",
+        "Work Shift, Geometry, trang Position, Offset",
+        "Chiều quay M3, M4, dao đang gọi, tốc độ S"
+      ],
+      "answer": 1,
+      "explanation": "Trước khi cấp điện phải nhìn dừng khẩn cấp, cửa che chắn, vùng hành trình dao; các mục còn lại chỉ xem được sau khi mở máy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ca chiều nhận máy sau nhóm khác, phôi mới, trang offset còn số của nhóm trước. Cần xử lý dữ liệu thế nào?",
+      "options": [
+        "Giữ nguyên vì vẫn là cùng một máy",
+        "Chỉ xóa Geometry, giữ lại Work Shift",
+        "Xóa cả Work Shift và Geometry, đo lại",
+        "Chỉ cần về Reference lại các trục là đủ"
+      ],
+      "answer": 2,
+      "explanation": "Phôi và cách gá đã khác nên phải xóa Work Shift (X, Z) và Offset Geometry (X, Z, R, T) cũ rồi đo lại."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cùng phôi đang kẹp, em gá thêm mũi khoan vào vị trí số 6. Cần cài gì cho mũi khoan?",
+      "options": [
+        "Cài lại Work Shift của phôi",
+        "Đo Geometry ở hàng dao số 6",
+        "Về Reference rồi dùng số cũ",
+        "Không cần cài, dùng số dao 2"
+      ],
+      "answer": 1,
+      "explanation": "Mỗi dao một hàng Geometry nên dao mới ở vị trí 6 phải đo hàng 6; phôi giữ nguyên thì W giữ nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bản vẽ ghi kích thước tính từ mặt đầu phôi. Chương trình viết theo bản vẽ lấy gốc tọa độ là điểm nào?",
+      "options": [
+        "Gốc máy M cố định",
+        "Điểm tham chiếu R",
+        "Điểm chuẩn dao N/T",
+        "Gốc phôi W ở mặt đầu"
+      ],
+      "answer": 3,
+      "explanation": "Chương trình viết theo gốc phôi W đặt ở mặt đầu phôi; M, R, N/T cố định theo máy nên phải cài Work Shift để máy biết W."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao vạt mặt còn sót một chấm lõi nhỏ ở tâm mặt đầu?",
+      "options": [
+        "Mũi dao gá thấp hơn tâm phôi",
+        "Mũi dao gá cao hơn tâm của phôi",
+        "% bước tiến đặt quá thấp lúc vạt",
+        "Trục chính đang quay chiều M3"
+      ],
+      "answer": 0,
+      "explanation": "Mũi dao thấp hơn tâm thì khi vạt mặt không đi qua đúng tâm nên còn sót lõi; chỉnh lại bằng căn chêm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chạy thử G0 X20 Z5;, dao đứng đúng đường kính Ø20 nhưng cách mặt đầu khoảng 30 mm thay vì 5 mm. Kiểm lại gì trước?",
+      "options": [
+        "Các giá trị X đã nhập",
+        "Tốc độ S500 của trục chính",
+        "Các giá trị Z đã nhập",
+        "Điểm tham chiếu R của máy"
+      ],
+      "answer": 2,
+      "explanation": "X khớp, chỉ lệch theo chiều dài nên lỗi nằm ở dữ liệu Z: Work Shift Z và Geometry Z của dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang chạy thử G1 X20 Z0 F0.2;, em thấy mũi dao sắp chạm vào mâm cặp. Việc đầu tiên là gì?",
+      "options": [
+        "Giảm % bước tiến rồi chạy tiếp",
+        "Dừng ngay, rút dao, kiểm lại cài đặt",
+        "Chuyển sang chạy tự động để máy tự bù",
+        "Nhấn Reference lại rồi chạy tiếp"
+      ],
+      "answer": 1,
+      "explanation": "Vị trí thật lệch tọa độ dự kiến là dấu hiệu cài đặt sai; lệch là phải dừng, chạy chậm vẫn đi tới tọa độ sai đó."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Yêu cầu Ø18 ± 0,1 mm, em đo trụ được 17,85 mm. Kết luận nào đúng?",
+      "options": [
+        "Đạt, vì chỉ lệch 0,15 mm so với kích thước 18",
+        "Chưa đạt, còn dư nên tiện thêm một nhát nhỏ",
+        "Đạt, vì nằm giữa 17,8 và 18,2 mm theo bản vẽ",
+        "Không đạt, đường kính nhỏ hơn mức cho phép"
+      ],
+      "answer": 3,
+      "explanation": "Giới hạn dưới là 17,9 mm; 17,85 mm đã nhỏ hơn, tiện không thể bù thêm vật liệu nên chi tiết không đạt."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chạy thử dao 2 khớp đúng vị trí, nhưng dao 4 cùng phôi lại lệch theo Z. Dữ liệu nào nhiều khả năng sai?",
+      "options": [
+        "Work Shift Z của phôi",
+        "Geometry Z hàng 2",
+        "Geometry Z hàng 4",
+        "Điểm tham chiếu R"
+      ],
+      "answer": 2,
+      "explanation": "Dao 2 khớp chứng tỏ Work Shift đúng; chỉ dao 4 lệch nên lỗi nằm ở hàng Geometry của dao 4."
+    }
+  ]
+}

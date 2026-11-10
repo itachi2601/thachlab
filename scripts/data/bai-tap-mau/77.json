@@ -11,9 +11,9 @@
    "form": "ly_thuyet",
    "label": "Dạng 1 · Dễ · Khái niệm: vận tốc đổi hướng nên có gia tốc hướng tâm",
    "topic": "Lực hướng tâm và gia tốc hướng tâm",
-   "problem_html": "<p>Một hòn bi buộc vào đầu sợi dây nhẹ, đầu kia giữ cố định tại $O$. Hòn bi chuyển động tròn đều trên mặt bàn nhẵn nằm ngang với tốc độ $2{,}0\\ \\text{m/s}$, bán kính quỹ đạo $r=0{,}50\\ \\text{m}$. Gọi $A$ và $B$ là hai vị trí của bi ở hai đầu một đường kính.</p>\n<ol type=\"a\"><li>Vận tốc của bi tại $A$ và tại $B$ có giống nhau không?</li>\n<li>Hòn bi có gia tốc không?</li>\n<li>Gia tốc của bi tại $A$ hướng như thế nào?</li>\n<li>Tính độ lớn gia tốc của bi.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Nhìn từ trên xuống: hòn bi buộc dây chuyển động tròn đều quanh O trên mặt bàn nhẵn, đi từ A đúng một vòng\"><circle cx=\"125\" cy=\"118\" r=\"80.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><circle cx=\"125.0\" cy=\"118.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"115\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"45.0\" cy=\"118.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"37.0\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"215.0\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"255\" y=\"96\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 2,0 m/s</text><text x=\"255\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 0,50 m</text><line x1=\"125\" y1=\"118\" x2=\"205.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"x2\" values=\"205.0;204.3;202.3;198.9;194.3;188.5;181.6;173.7;165.0;155.6;145.7;135.4;125.0;114.6;104.3;94.4;85.0;76.3;68.4;61.5;55.7;51.1;47.7;45.7;45.0;45.7;47.7;51.1;55.7;61.5;68.4;76.3;85.0;94.4;104.3;114.6;125.0;135.4;145.7;155.6;165.0;173.7;181.6;188.5;194.3;198.9;202.3;204.3;205.0\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y2\" values=\"118.0;107.6;97.3;87.4;78.0;69.3;61.4;54.5;48.7;44.1;40.7;38.7;38.0;38.7;40.7;44.1;48.7;54.5;61.4;69.3;78.0;87.4;97.3;107.6;118.0;128.4;138.7;148.6;158.0;166.7;174.6;181.5;187.3;191.9;195.3;197.3;198.0;197.3;195.3;191.9;187.3;181.5;174.6;166.7;158.0;148.6;138.7;128.4;118.0\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/></line><circle cx=\"205.0\" cy=\"118.0\" r=\"7\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"205.0;204.3;202.3;198.9;194.3;188.5;181.6;173.7;165.0;155.6;145.7;135.4;125.0;114.6;104.3;94.4;85.0;76.3;68.4;61.5;55.7;51.1;47.7;45.7;45.0;45.7;47.7;51.1;55.7;61.5;68.4;76.3;85.0;94.4;104.3;114.6;125.0;135.4;145.7;155.6;165.0;173.7;181.6;188.5;194.3;198.9;202.3;204.3;205.0\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"118.0;107.6;97.3;87.4;78.0;69.3;61.4;54.5;48.7;44.1;40.7;38.7;38.0;38.7;40.7;44.1;48.7;54.5;61.4;69.3;78.0;87.4;97.3;107.6;118.0;128.4;138.7;148.6;158.0;166.7;174.6;181.5;187.3;191.9;195.3;197.3;198.0;197.3;195.3;191.9;187.3;181.5;174.6;166.7;158.0;148.6;138.7;128.4;118.0\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống: bi đi đúng một vòng từ A, tốc độ không đổi (chạy chậm 2 lần, khoảng 3 s). Không vẽ vectơ nào.</figcaption></figure>",
+   "problem_html": "<p>Một hòn bi buộc vào đầu sợi dây nhẹ, đầu kia giữ cố định tại $O$. Hòn bi chuyển động tròn đều trên mặt bàn nhẵn nằm ngang với tốc độ $2{,}0\\ \\text{m/s}$, bán kính quỹ đạo $r=0{,}50\\ \\text{m}$. Gọi $A$ và $B$ là hai vị trí của bi ở hai đầu một đường kính.</p>\n<ol type=\"a\"><li>Vận tốc của bi tại $A$ và tại $B$ có giống nhau không?</li>\n<li>Hòn bi có gia tốc không?</li>\n<li>Gia tốc của bi tại $A$ hướng như thế nào?</li>\n<li>Tính độ lớn gia tốc của bi.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> vận tốc là vectơ (độ lớn và hướng); gia tốc đo sự thay đổi của vận tốc, cả độ lớn lẫn hướng.</li><li>Chuyển động tròn đều: độ lớn vận tốc không đổi, hướng vận tốc đổi liên tục.</li><li><strong>Gia tốc hướng tâm:</strong> gốc tại vật, phương trùng bán kính, chiều vào tâm.</li><li>$a_{\\text{ht}}=\\dfrac{v^2}{r}=\\omega^2 r$.</li><li>⚠ <strong>Điều kiện:</strong> chuyển động tròn đều.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Vận tốc tại $A$ và $B$</span></p><p>Tại $A$ và $B$ vận tốc đều có độ lớn $2{,}0\\ \\text{m/s}$, vuông góc với bán kính.</p><p>Hai vận tốc có hướng ngược nhau nên là hai vectơ khác nhau: <strong>vận tốc thay đổi</strong> dù tốc độ không đổi.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Bi có gia tốc không</span></p><p>Gia tốc đo sự thay đổi của vectơ vận tốc, kể cả khi chỉ đổi hướng.</p><p>Hướng vận tốc đổi liên tục nên bi <strong>có gia tốc</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Phương và chiều tại $A$</span></p><p>Vận tốc đổi hướng về phía trong vòng tròn nên gia tốc có gốc tại bi, phương trùng bán kính $OA$, chiều từ $A$ về $O$.</p><p>Gia tốc vuông góc với vận tốc nên không làm đổi độ lớn vận tốc.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ lớn gia tốc</span></p>$$a_{\\text{ht}}=\\dfrac{v^2}{r}=\\dfrac{2{,}0^2}{0{,}50}$$<div class=\"bt-ans\">$$a_{\\text{ht}}=8{,}0\\ \\text{m/s}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đơn vị: $\\dfrac{(\\text{m/s})^2}{\\text{m}}=\\text{m/s}^2$ ✓.</p><p>Tại mọi vị trí gia tốc đều chĩa vào $O$, nên hướng của nó đổi cùng với bi.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Hai vận tốc khác nhau (cùng độ lớn, khác hướng)</p><p>b) Có gia tốc</p><p>c) Phương $OA$, chiều từ $A$ về $O$</p><p>d) $a_{\\text{ht}}=8{,}0\\ \\text{m/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: <strong>tốc độ không đổi nhưng quỹ đạo tròn</strong> → vận tốc đổi hướng nên có gia tốc hướng tâm, chĩa vào tâm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Hòn bi ở vị trí A trên quỹ đạo tròn tâm O, dây OA\"><circle cx=\"125\" cy=\"118\" r=\"80.0\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"5 4\"/><circle cx=\"125.0\" cy=\"118.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"115\" y=\"140\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><circle cx=\"45.0\" cy=\"118.0\" r=\"3.5\" fill=\"currentColor\"/><text x=\"37.0\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">B</text><text x=\"215.0\" y=\"106\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">A</text><text x=\"255\" y=\"96\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 2,0 m/s</text><text x=\"255\" y=\"120\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 0,50 m</text><line x1=\"125.0\" y1=\"118.0\" x2=\"205.0\" y2=\"118.0\" stroke=\"currentColor\" stroke-width=\"1.8\" opacity=\"1\"/><circle cx=\"205.0\" cy=\"118\" r=\"7\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"/><text x=\"219.0\" y=\"140\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">a = ?</text></svg><figcaption>Dữ kiện: quỹ đạo tròn tâm O, bán kính 0,50 m; bi đang ở A. Chưa vẽ vectơ vận tốc hay gia tốc.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“hòn bi buộc vào đầu sợi dây nhẹ … chuyển động tròn đều”</td><td>Tâm quỹ đạo là $O$</td><td>⚠ Điều kiện: chuyển động tròn đều (tốc độ không đổi, quỹ đạo tròn)</td></tr><tr><td>“với tốc độ $2{,}0\\ \\text{m/s}$”</td><td>$v=2{,}0\\ \\text{m/s}$</td><td>Phân biệt tốc độ và vận tốc</td></tr><tr><td>“bán kính quỹ đạo $r=0{,}50\\ \\text{m}$”</td><td>$r=0{,}50\\ \\text{m}$</td><td>Đại lượng cùng $v$ quyết định độ lớn gia tốc</td></tr><tr><td>“a) vận tốc của bi tại $A$ và tại $B$ có giống nhau không?”</td><td>So hai vectơ ở hai đầu đường kính</td><td>Phân biệt tốc độ và vận tốc</td></tr><tr><td>“b) hòn bi có gia tốc không?”</td><td>Cần kết luận có / không</td><td>Gia tốc đo sự thay đổi của đại lượng nào?</td></tr><tr><td>“c) gia tốc của bi tại $A$ hướng như thế nào?”</td><td>Cần phương và chiều</td><td>Gốc, phương, chiều của gia tốc hướng tâm</td></tr><tr><td>“d) độ lớn gia tốc”</td><td>Cần $a_{\\text{ht}}$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“hòn bi buộc vào đầu sợi dây nhẹ … chuyển động tròn đều”</td><td>Tâm quỹ đạo là $O$</td><td>⚠ Điều kiện: chuyển động tròn đều (tốc độ không đổi, quỹ đạo tròn)</td></tr><tr><td>“với tốc độ $2{,}0\\ \\text{m/s}$”</td><td>$v=2{,}0\\ \\text{m/s}$</td><td>Phân biệt tốc độ và vận tốc</td></tr><tr><td>“bán kính quỹ đạo $r=0{,}50\\ \\text{m}$”</td><td>$r=0{,}50\\ \\text{m}$</td><td>Đại lượng cùng $v$ quyết định độ lớn gia tốc</td></tr><tr><td>“a) vận tốc của bi tại $A$ và tại $B$ có giống nhau không?”</td><td>So hai vectơ ở hai đầu đường kính</td><td>Phân biệt tốc độ và vận tốc</td></tr><tr><td>“b) hòn bi có gia tốc không?”</td><td>Cần kết luận có / không</td><td>Gia tốc đo sự thay đổi của đại lượng nào?</td></tr><tr><td>“c) gia tốc của bi tại $A$ hướng như thế nào?”</td><td>Cần phương và chiều</td><td>Gốc, phương, chiều của gia tốc hướng tâm</td></tr><tr><td>“d) độ lớn gia tốc”</td><td>Cần $a_{\\text{ht}}$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>tốc độ không đổi nhưng quỹ đạo tròn</b> → nghĩ tới <b>gia tốc hướng tâm</b> chĩa vào tâm.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -143,15 +143,209 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Bi buộc dây, chuyển động tròn đều trên bàn nhẵn",
+     "$v=2{,}0\\ \\text{m/s}$, $r=0{,}50\\ \\text{m}$; $A$, $B$ hai đầu đường kính"
+    ],
+    "tim": [
+     "$\\vec v_A$, $\\vec v_B$ có giống nhau không",
+     "Bi có gia tốc không; hướng tại $A$",
+     "Độ lớn gia tốc"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vong",
+      "x": 7,
+      "y": 5.5,
+      "r": 4,
+      "mau": "chu"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        7,
+        5.5
+       ],
+       [
+        11,
+        5.5
+       ]
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "diem",
+      "x": 7,
+      "y": 5.5,
+      "ten": "O",
+      "vi": "trai"
+     },
+     {
+      "loai": "diem",
+      "x": 11,
+      "y": 5.5,
+      "ten": "A",
+      "vi": "duoi"
+     },
+     {
+      "loai": "diem",
+      "x": 3,
+      "y": 5.5,
+      "ten": "B",
+      "vi": "trai"
+     },
+     {
+      "loai": "chu",
+      "x": 13.6,
+      "y": 8.6,
+      "text": "v = 2,0 m/s",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 13.6,
+      "y": 6.9,
+      "text": "r = 0,50 m",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.5,
+       "mau": "b"
+      },
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.5,
+       "mau": "b",
+       "nhan": "v_A"
+      },
+      {
+       "loai": "vec",
+       "x": 3,
+       "y": 5.5,
+       "goc": 270,
+       "dai": 2.5,
+       "mau": "b",
+       "nhan": "v_B",
+       "trai": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Cùng độ lớn, ngược hướng ⇒ v_A ≠ v_B"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Vận tốc đổi hướng liên tục ⇒ có gia tốc"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 5.5,
+       "goc": 180,
+       "dai": 2.0,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.4,
+       "y": 6.4,
+       "text": "a_{ht}",
+       "mau": "luc"
+      },
+      {
+       "loai": "ghi",
+       "text": "Tại A: a dọc AO, hướng vào tâm O"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a_{ht} = v²/r = 2,0²/0,50 = 8,0 m/s²"
+      }
+     ],
+     []
+    ],
+    "dong": [
+     {
+      "nut": "▶ Xem vectơ vận tốc khi bi đi một vòng",
+      "giay": 3,
+      "buoc": 2,
+      "doi": [
+       {
+        "p": "lop.0.0.x",
+        "cac": [
+         11.0,
+         9.83,
+         7.0,
+         4.17,
+         3.0,
+         4.17,
+         7.0,
+         9.83,
+         11.0
+        ]
+       },
+       {
+        "p": "lop.0.0.y",
+        "cac": [
+         5.5,
+         8.33,
+         9.5,
+         8.33,
+         5.5,
+         2.67,
+         1.5,
+         2.67,
+         5.5
+        ]
+       },
+       {
+        "p": "lop.0.0.goc",
+        "cac": [
+         90,
+         135,
+         180,
+         225,
+         270,
+         315,
+         360,
+         405,
+         450
+        ]
+       }
+      ]
+     }
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Dễ · Tính gia tốc hướng tâm từ chu kì và bán kính",
    "topic": "Tính gia tốc hướng tâm",
-   "problem_html": "<p>Một vòng quay công viên bán kính $15\\ \\text{m}$ quay đều, mỗi vòng hết $40\\ \\text{s}$. Một khách ngồi trong cabin ở mép vòng. Tính:</p>\n<ol type=\"a\"><li>tốc độ góc của vòng quay;</li><li>tốc độ dài của khách;</li><li>gia tốc hướng tâm của khách.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Vòng quay công viên bán kính 15 m quay đều, mỗi vòng 40 giây; khách ngồi cabin ở mép vòng\"><g><line x1=\"130.0\" y1=\"118.0\" x2=\"215.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"190.1\" y2=\"57.9\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"130.0\" y2=\"33.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"69.9\" y2=\"57.9\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"45.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"69.9\" y2=\"178.1\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"130.0\" y2=\"203.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"190.1\" y2=\"178.1\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><circle cx=\"130\" cy=\"118\" r=\"85.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"190.1\" cy=\"57.9\" r=\"4\" fill=\"currentColor\"/><circle cx=\"130.0\" cy=\"33.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"69.9\" cy=\"57.9\" r=\"4\" fill=\"currentColor\"/><circle cx=\"45.0\" cy=\"118.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"69.9\" cy=\"178.1\" r=\"4\" fill=\"currentColor\"/><circle cx=\"130.0\" cy=\"203.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"190.1\" cy=\"178.1\" r=\"4\" fill=\"currentColor\"/><circle cx=\"215.0\" cy=\"118\" r=\"7\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 130 118;360 130 118\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"130.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = 40 s</text><text x=\"255\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 15 m</text><text x=\"255\" y=\"140\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">khách ở mép vòng</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: vòng quay đúng một vòng (chạy nhanh 8 lần, khoảng 5 s). Cabin xanh là chỗ khách ngồi.</figcaption></figure>",
+   "problem_html": "<p>Một vòng quay công viên bán kính $15\\ \\text{m}$ quay đều, mỗi vòng hết $40\\ \\text{s}$. Một khách ngồi trong cabin ở mép vòng. Tính:</p>\n<ol type=\"a\"><li>tốc độ góc của vòng quay;</li><li>tốc độ dài của khách;</li><li>gia tốc hướng tâm của khách.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> quay đều thì $\\omega$ và $v$ không đổi.</li><li>$\\omega=\\dfrac{2\\pi}{T}$ và $v=\\omega r$ (Bài 31).</li><li>$a_{\\text{ht}}=\\dfrac{v^2}{r}=\\omega^2 r$.</li><li>⚠ <strong>Điều kiện:</strong> chuyển động tròn đều; $r$ là khoảng cách từ vật tới trục quay.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ góc</span></p>$$\\omega=\\dfrac{2\\pi}{T}=\\dfrac{2\\pi}{40}$$<div class=\"bt-ans\">$$\\omega\\approx0{,}1571\\ \\text{rad/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tốc độ dài</span></p><p>Khách ở mép vòng nên cách trục đúng $r=15\\ \\text{m}$:</p>$$v=\\omega r=\\dfrac{2\\pi}{40}\\cdot15$$<div class=\"bt-ans\">$$v\\approx2{,}356\\ \\text{m/s}$$</div><p>Khoảng $8{,}5\\ \\text{km/h}$: hợp lí với vòng quay.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Gia tốc hướng tâm</span></p>$$a_{\\text{ht}}=\\omega^2 r=\\left(\\dfrac{2\\pi}{40}\\right)^2\\cdot15$$<div class=\"bt-ans\">$$a_{\\text{ht}}\\approx0{,}370\\ \\text{m/s}^2$$</div><p>Hướng từ cabin vào trục quay.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p>$$a_{\\text{ht}}=\\dfrac{v^2}{r}=\\dfrac{2{,}356^2}{15}\\approx0{,}370\\ \\text{m/s}^2$$<p>Hai công thức cho cùng kết quả ✓.</p><p>Bằng khoảng $4\\,\\%$ gia tốc rơi tự do: khách chỉ thấy bị ép rất nhẹ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\omega\\approx0{,}1571\\ \\text{rad/s}$</p><p>b) $v\\approx2{,}356\\ \\text{m/s}$</p><p>c) $a_{\\text{ht}}\\approx0{,}370\\ \\text{m/s}^2$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>chu kì và bán kính</strong> → $\\omega=2\\pi/T$, rồi $a_{\\text{ht}}=\\omega^2 r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Vòng quay bán kính r = 15 m; khách ngồi ở mép vòng, cách tâm đúng r\"><line x1=\"130.0\" y1=\"118.0\" x2=\"215.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"190.1\" y2=\"57.9\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"130.0\" y2=\"33.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"69.9\" y2=\"57.9\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"45.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"69.9\" y2=\"178.1\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"130.0\" y2=\"203.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"118.0\" x2=\"190.1\" y2=\"178.1\" stroke=\"#94a3b8\" stroke-width=\"1.2\" opacity=\"1\"/><circle cx=\"130\" cy=\"118\" r=\"85.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><circle cx=\"190.1\" cy=\"57.9\" r=\"4\" fill=\"currentColor\"/><circle cx=\"130.0\" cy=\"33.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"69.9\" cy=\"57.9\" r=\"4\" fill=\"currentColor\"/><circle cx=\"45.0\" cy=\"118.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"69.9\" cy=\"178.1\" r=\"4\" fill=\"currentColor\"/><circle cx=\"130.0\" cy=\"203.0\" r=\"4\" fill=\"currentColor\"/><circle cx=\"190.1\" cy=\"178.1\" r=\"4\" fill=\"currentColor\"/><circle cx=\"215.0\" cy=\"118\" r=\"7\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"130.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">T = 40 s</text><text x=\"255\" y=\"116\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 15 m</text><text x=\"255\" y=\"140\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">khách ở mép vòng</text><line x1=\"130.0\" y1=\"118.0\" x2=\"215.0\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"2.4\" opacity=\"1\"/><text x=\"172.5\" y=\"110\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r</text></svg><figcaption>Dữ kiện: khách ngồi ở mép vòng, cách trục quay đúng bán kính r. Chưa vẽ vectơ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vòng quay công viên bán kính $15\\ \\text{m}$”</td><td>$r=15\\ \\text{m}$</td><td>Quỹ đạo của khách là đường tròn tâm ở trục quay</td></tr><tr><td>“quay đều”</td><td>Tròn đều</td><td>⚠ Điều kiện: quay đều thì $\\omega$ và $v$ không đổi</td></tr><tr><td>“mỗi vòng hết $40\\ \\text{s}$”</td><td>$T=40\\ \\text{s}$</td><td>Liên hệ chu kì với tốc độ góc</td></tr><tr><td>“khách ngồi trong cabin ở mép vòng”</td><td>Khách cách trục đúng $r$</td><td>Bán kính quỹ đạo của khách</td></tr><tr><td>“a) tốc độ góc”</td><td>Cần $\\omega$ (rad/s)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) tốc độ dài”</td><td>Cần $v$ (m/s)</td><td>Liên hệ $v$, $\\omega$, $r$ (Bài 31)</td></tr><tr><td>“c) gia tốc hướng tâm của khách”</td><td>Cần $a_{\\text{ht}}$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vòng quay công viên bán kính $15\\ \\text{m}$”</td><td>$r=15\\ \\text{m}$</td><td>Quỹ đạo của khách là đường tròn tâm ở trục quay</td></tr><tr><td>“quay đều”</td><td>Tròn đều</td><td>⚠ Điều kiện: quay đều thì $\\omega$ và $v$ không đổi</td></tr><tr><td>“mỗi vòng hết $40\\ \\text{s}$”</td><td>$T=40\\ \\text{s}$</td><td>Liên hệ chu kì với tốc độ góc</td></tr><tr><td>“khách ngồi trong cabin ở mép vòng”</td><td>Khách cách trục đúng $r$</td><td>Bán kính quỹ đạo của khách</td></tr><tr><td>“a) tốc độ góc”</td><td>Cần $\\omega$ (rad/s)</td><td>Đại lượng cần tìm</td></tr><tr><td>“b) tốc độ dài”</td><td>Cần $v$ (m/s)</td><td>Liên hệ $v$, $\\omega$, $r$ (Bài 31)</td></tr><tr><td>“c) gia tốc hướng tâm của khách”</td><td>Cần $a_{\\text{ht}}$ (m/s²)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>chu kì và bán kính</b> → nghĩ tới <b>ω = 2π/T</b>, rồi <b>a = ω²r</b>.",
    "cap_do": 1,
    "fading": "giau_buoc_cuoi",
@@ -218,15 +412,137 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vòng quay $r=15\\ \\text{m}$, $T=40\\ \\text{s}$",
+     "Khách ngồi ở mép vòng"
+    ],
+    "tim": [
+     "$\\omega$",
+     "$v$ của khách",
+     "$a_{ht}$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vong",
+      "x": 7,
+      "y": 5.5,
+      "r": 4.5,
+      "mau": "chu",
+      "chieu": "nguoc"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        7,
+        5.5
+       ],
+       [
+        11.5,
+        5.5
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "diem",
+      "x": 7,
+      "y": 5.5,
+      "ten": "trục",
+      "vi": "trai"
+     },
+     {
+      "loai": "diem",
+      "x": 11.5,
+      "y": 5.5,
+      "ten": "khách",
+      "vi": "phai"
+     },
+     {
+      "loai": "chu",
+      "x": 14.2,
+      "y": 9.2,
+      "text": "T = 40 s",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 14.2,
+      "y": 7.7,
+      "text": "r = 15 m",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "goc",
+       "x": 7,
+       "y": 5.5,
+       "tu": 0,
+       "den": -80,
+       "nhan": "ω"
+      },
+      {
+       "loai": "ghi",
+       "text": "ω = 2π/T = 2π/40 ≈ 0,157 rad/s"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 11.5,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.4,
+       "mau": "b",
+       "nhan": "v"
+      },
+      {
+       "loai": "ghi",
+       "text": "v = ωr ≈ 0,157·15 ≈ 2,36 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 11.5,
+       "y": 5.5,
+       "goc": 180,
+       "dai": 2.0,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.9,
+       "y": 6.4,
+       "text": "a_{ht}",
+       "mau": "luc"
+      },
+      {
+       "loai": "ghi",
+       "text": "a_{ht} = ω²r ≈ 0,157²·15 ≈ 0,37 m/s²"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · So sánh gia tốc hướng tâm khi giữ nguyên ω hoặc v",
    "topic": "Tính gia tốc hướng tâm",
-   "problem_html": "<p>Một quạt trần quay đều với tốc độ góc $\\omega=20\\ \\text{rad/s}$. Điểm $A$ cách trục quay $10\\ \\text{cm}$, điểm $B$ ở đầu cánh quạt cách trục $30\\ \\text{cm}$.</p>\n<ol type=\"a\"><li>Tính gia tốc hướng tâm của $A$ và của $B$.</li>\n<li>Hai xe máy cùng chạy với tốc độ $10\\ \\text{m/s}$ qua hai khúc cua tròn có bán kính $r_1=20\\ \\text{m}$ và $r_2=40\\ \\text{m}$. Tính gia tốc hướng tâm của mỗi xe.</li>\n<li>Xe thứ nhất tăng tốc độ lên $12\\ \\text{m/s}$ trên khúc cua $r_1$ (vẫn chạy đều). Tính gia tốc hướng tâm lúc này và cho biết nó gấp mấy lần lúc trước.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Quạt trần nhìn từ dưới lên quay đều quanh trục; điểm A cách trục 10 cm, điểm B cách trục 30 cm trên cùng một cánh\"><g><line x1=\"120.0\" y1=\"112.0\" x2=\"228.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><line x1=\"120.0\" y1=\"112.0\" x2=\"66.0\" y2=\"18.5\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><line x1=\"120.0\" y1=\"112.0\" x2=\"66.0\" y2=\"205.5\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><circle cx=\"147.0\" cy=\"112\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"201.0\" cy=\"112\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 120 112;360 120 112\" dur=\"3.14s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"120.0\" cy=\"112.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"147.0\" y=\"100\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"201.0\" y=\"100\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"120\" y1=\"142\" x2=\"147.0\" y2=\"142\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M140.0,137.9 L147.0,142.0 L140.0,146.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"147.0\" y1=\"142\" x2=\"120\" y2=\"142\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M127.0,146.1 L120.0,142.0 L127.0,137.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"155.0\" y=\"146\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">10 cm</text><line x1=\"120\" y1=\"166\" x2=\"201.0\" y2=\"166\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M194.0,161.9 L201.0,166.0 L194.0,170.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"201.0\" y1=\"166\" x2=\"120\" y2=\"166\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M127.0,170.1 L120.0,166.0 L127.0,161.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"209.0\" y=\"170\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">30 cm</text><text x=\"255\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = 20 rad/s</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: quạt quay đúng một vòng (chạy chậm 10 lần, khoảng 3 s). A, B ghi ở vị trí lúc đầu.</figcaption></figure>",
+   "problem_html": "<p>Một quạt trần quay đều với tốc độ góc $\\omega=20\\ \\text{rad/s}$. Điểm $A$ cách trục quay $10\\ \\text{cm}$, điểm $B$ ở đầu cánh quạt cách trục $30\\ \\text{cm}$.</p>\n<ol type=\"a\"><li>Tính gia tốc hướng tâm của $A$ và của $B$.</li>\n<li>Hai xe máy cùng chạy với tốc độ $10\\ \\text{m/s}$ qua hai khúc cua tròn có bán kính $r_1=20\\ \\text{m}$ và $r_2=40\\ \\text{m}$. Tính gia tốc hướng tâm của mỗi xe.</li>\n<li>Xe thứ nhất tăng tốc độ lên $12\\ \\text{m/s}$ trên khúc cua $r_1$ (vẫn chạy đều). Tính gia tốc hướng tâm lúc này và cho biết nó gấp mấy lần lúc trước.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> các điểm của một vật rắn quay quanh trục có cùng $\\omega$; hai xe cùng tốc độ thì cùng $v$.</li><li>Cùng $\\omega$: $a_{\\text{ht}}=\\omega^2 r$ · cùng $v$: $a_{\\text{ht}}=\\dfrac{v^2}{r}$.</li><li>Đổi đơn vị về m, s trước khi thế.</li><li>⚠ <strong>Điều kiện:</strong> chọn công thức theo đại lượng được giữ nguyên.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đại lượng giữ nguyên với $A$ và $B$</span></p><p>$A$ và $B$ nằm trên cùng một cánh nên trong cùng một chu kì cùng quay được một vòng: <strong>cùng tốc độ góc</strong> $\\omega$.</p><p>Quãng đường mỗi điểm đi được khác nhau (bán kính khác nhau) nên tốc độ dài khác nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Gia tốc của $A$ và $B$ (cùng $\\omega$)</span></p><p>Đổi: $r_A=0{,}10\\ \\text{m}$, $r_B=0{,}30\\ \\text{m}$.</p>$$a_A=\\omega^2 r_A=20^2\\cdot0{,}10$$<div class=\"bt-ans\">$$a_A=40\\ \\text{m/s}^2$$</div>$$a_B=\\omega^2 r_B=20^2\\cdot0{,}30$$<div class=\"bt-ans\">$$a_B=120\\ \\text{m/s}^2$$</div><p>Cùng $\\omega$ thì $a_{\\text{ht}}$ tỉ lệ thuận với $r$: $B$ xa trục gấp ba lần nên $a_B$ gấp ba lần ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hai xe cùng tốc độ</span></p><p>Hai xe cùng $v=10\\ \\text{m/s}$, bán kính khác nhau, nên dùng $a_{\\text{ht}}=v^2/r$:</p>$$a_1=\\dfrac{v^2}{r_1}=\\dfrac{10^2}{20}$$<div class=\"bt-ans\">$$a_1=5{,}0\\ \\text{m/s}^2$$</div>$$a_2=\\dfrac{v^2}{r_2}=\\dfrac{10^2}{40}$$<div class=\"bt-ans\">$$a_2=2{,}5\\ \\text{m/s}^2$$</div><p>Cùng $v$ thì $a_{\\text{ht}}$ tỉ lệ nghịch với $r$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tăng tốc độ trên khúc cua $r_1$</span></p>$$a_1'=\\dfrac{v'^2}{r_1}=\\dfrac{12^2}{20}$$<div class=\"bt-ans\">$$a_1'=7{,}2\\ \\text{m/s}^2$$</div>$$\\dfrac{a_1'}{a_1}=\\dfrac{7{,}2}{5{,}0}$$<div class=\"bt-ans\">$$\\dfrac{a_1'}{a_1}\\approx1{,}44$$</div><p>$v$ tăng $1{,}2$ lần nên $a_{\\text{ht}}$ tăng $1{,}2^2=1{,}44$ lần ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đã đổi cm sang m trước khi thế ✓.</p><p>Cùng $\\omega$: xa trục thì $a$ lớn hơn. Cùng $v$: cua rộng thì $a$ nhỏ hơn.</p><p>Hai kết luận không mâu thuẫn vì giữ nguyên hai đại lượng khác nhau.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $a_A=40\\ \\text{m/s}^2$ · $a_B=120\\ \\text{m/s}^2$</p><p>b) $a_1=5{,}0\\ \\text{m/s}^2$ · $a_2=2{,}5\\ \\text{m/s}^2$</p><p>c) $a_1'=7{,}2\\ \\text{m/s}^2$ · gấp $1{,}44$ lần</p></div><p class=\"bt-note\">Nhận dạng: đề <strong>so sánh gia tốc</strong> của nhiều điểm hay nhiều xe → hỏi đại lượng nào giữ nguyên ($\\omega$ hay $v$) rồi chọn công thức.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Cánh quạt trần với hai điểm A (cách trục 10 cm) và B (cách trục 30 cm) trên cùng một cánh\"><line x1=\"120.0\" y1=\"112.0\" x2=\"228.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><line x1=\"120.0\" y1=\"112.0\" x2=\"66.0\" y2=\"18.5\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><line x1=\"120.0\" y1=\"112.0\" x2=\"66.0\" y2=\"205.5\" stroke=\"currentColor\" stroke-width=\"6\" opacity=\"0.55\"/><circle cx=\"147.0\" cy=\"112\" r=\"5.5\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"201.0\" cy=\"112\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"/><circle cx=\"120.0\" cy=\"112.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"147.0\" y=\"100\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A</text><text x=\"201.0\" y=\"100\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">B</text><line x1=\"120\" y1=\"142\" x2=\"147.0\" y2=\"142\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M140.0,137.9 L147.0,142.0 L140.0,146.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"147.0\" y1=\"142\" x2=\"120\" y2=\"142\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M127.0,146.1 L120.0,142.0 L127.0,137.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"155.0\" y=\"146\" fill=\"#fb923c\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">10 cm</text><line x1=\"120\" y1=\"166\" x2=\"201.0\" y2=\"166\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M194.0,161.9 L201.0,166.0 L194.0,170.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"201.0\" y1=\"166\" x2=\"120\" y2=\"166\" stroke=\"#34d399\" stroke-width=\"1.8\"/><path d=\"M127.0,170.1 L120.0,166.0 L127.0,161.9\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"0\" y=\"0\" fill=\"#34d399\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\"></text><text x=\"209.0\" y=\"170\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">30 cm</text><text x=\"255\" y=\"30\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">ω = 20 rad/s</text></svg><figcaption>Dữ kiện: A và B nằm trên cùng một cánh quạt, cách trục lần lượt 10 cm và 30 cm.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“quạt trần quay đều, $\\omega=20\\ \\text{rad/s}$”</td><td>$\\omega=20\\ \\text{rad/s}$</td><td>⚠ Quay đều: các điểm trên quạt có chung đại lượng nào?</td></tr><tr><td>“$A$ cách trục $10\\ \\text{cm}$, $B$ cách trục $30\\ \\text{cm}$”</td><td>$r_A=0{,}10\\ \\text{m}$; $r_B=0{,}30\\ \\text{m}$</td><td>Đổi cm sang m</td></tr><tr><td>“a) gia tốc hướng tâm của $A$ và của $B$”</td><td>Cần $a_A$, $a_B$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“hai xe máy cùng chạy với tốc độ $10\\ \\text{m/s}$”</td><td>$v=10\\ \\text{m/s}$ cho cả hai xe</td><td>⚠ Đề giữ nguyên đại lượng nào? Chọn công thức theo đại lượng đó</td></tr><tr><td>“hai khúc cua $r_1=20\\ \\text{m}$ và $r_2=40\\ \\text{m}$”</td><td>$r_1=20\\ \\text{m}$; $r_2=40\\ \\text{m}$</td><td>Hai khúc cua có bán kính khác nhau</td></tr><tr><td>“b) gia tốc hướng tâm của mỗi xe”</td><td>Cần $a_1$, $a_2$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) tăng tốc độ lên $12\\ \\text{m/s}$ trên khúc cua $r_1$”</td><td>$v'=12\\ \\text{m/s}$; $r_1$ giữ nguyên</td><td>Đổi tốc độ, giữ bán kính</td></tr><tr><td>“gấp mấy lần lúc trước”</td><td>Cần tỉ số $a_1'/a_1$</td><td>Hai giá trị cùng đơn vị mới so sánh được</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“quạt trần quay đều, $\\omega=20\\ \\text{rad/s}$”</td><td>$\\omega=20\\ \\text{rad/s}$</td><td>⚠ Quay đều: các điểm trên quạt có chung đại lượng nào?</td></tr><tr><td>“$A$ cách trục $10\\ \\text{cm}$, $B$ cách trục $30\\ \\text{cm}$”</td><td>$r_A=0{,}10\\ \\text{m}$; $r_B=0{,}30\\ \\text{m}$</td><td>Đổi cm sang m</td></tr><tr><td>“a) gia tốc hướng tâm của $A$ và của $B$”</td><td>Cần $a_A$, $a_B$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“hai xe máy cùng chạy với tốc độ $10\\ \\text{m/s}$”</td><td>$v=10\\ \\text{m/s}$ cho cả hai xe</td><td>⚠ Đề giữ nguyên đại lượng nào? Chọn công thức theo đại lượng đó</td></tr><tr><td>“hai khúc cua $r_1=20\\ \\text{m}$ và $r_2=40\\ \\text{m}$”</td><td>$r_1=20\\ \\text{m}$; $r_2=40\\ \\text{m}$</td><td>Hai khúc cua có bán kính khác nhau</td></tr><tr><td>“b) gia tốc hướng tâm của mỗi xe”</td><td>Cần $a_1$, $a_2$ (m/s²)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) tăng tốc độ lên $12\\ \\text{m/s}$ trên khúc cua $r_1$”</td><td>$v'=12\\ \\text{m/s}$; $r_1$ giữ nguyên</td><td>Đổi tốc độ, giữ bán kính</td></tr><tr><td>“gấp mấy lần lúc trước”</td><td>Cần tỉ số $a_1'/a_1$</td><td>Hai giá trị cùng đơn vị mới so sánh được</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>so sánh gia tốc</b> của nhiều điểm hay nhiều xe → hỏi <b>đại lượng nào giữ nguyên</b>.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -330,15 +646,464 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Quạt: $\\omega=20\\ \\text{rad/s}$; $A$ cách trục $10\\ \\text{cm}$, $B$ cách $30\\ \\text{cm}$",
+     "Hai xe $10\\ \\text{m/s}$, khúc cua $r_1=20\\ \\text{m}$, $r_2=40\\ \\text{m}$",
+     "Xe 1 tăng lên $12\\ \\text{m/s}$"
+    ],
+    "tim": [
+     "$a_{ht}$ của $A$, $B$",
+     "$a_{ht}$ của mỗi xe",
+     "$a_{ht}$ mới, gấp mấy lần"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        1,
+        8.4
+       ],
+       [
+        12,
+        8.4
+       ]
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "diem",
+      "x": 1,
+      "y": 8.4,
+      "ten": "trục",
+      "vi": "duoi"
+     },
+     {
+      "loai": "diem",
+      "x": 4.67,
+      "y": 8.4,
+      "ten": "A"
+     },
+     {
+      "loai": "diem",
+      "x": 12,
+      "y": 8.4,
+      "ten": "B"
+     },
+     {
+      "loai": "chu",
+      "x": 4.67,
+      "y": 6.8,
+      "text": "10 cm"
+     },
+     {
+      "loai": "chu",
+      "x": 12,
+      "y": 6.8,
+      "text": "30 cm"
+     },
+     {
+      "loai": "chu",
+      "x": 13.2,
+      "y": 9.6,
+      "text": "ω = 20 rad/s",
+      "a": "start"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        10.69,
+        2.22
+       ],
+       [
+        10.62,
+        2.38
+       ],
+       [
+        10.53,
+        2.54
+       ],
+       [
+        10.43,
+        2.7
+       ],
+       [
+        10.31,
+        2.84
+       ],
+       [
+        10.18,
+        2.96
+       ],
+       [
+        10.03,
+        3.07
+       ],
+       [
+        9.88,
+        3.17
+       ],
+       [
+        9.71,
+        3.25
+       ],
+       [
+        9.54,
+        3.32
+       ],
+       [
+        9.36,
+        3.36
+       ],
+       [
+        9.18,
+        3.39
+       ],
+       [
+        9.0,
+        3.4
+       ],
+       [
+        8.82,
+        3.39
+       ],
+       [
+        8.64,
+        3.36
+       ],
+       [
+        8.46,
+        3.32
+       ],
+       [
+        8.29,
+        3.25
+       ],
+       [
+        8.12,
+        3.17
+       ],
+       [
+        7.97,
+        3.07
+       ],
+       [
+        7.82,
+        2.96
+       ],
+       [
+        7.69,
+        2.84
+       ],
+       [
+        7.57,
+        2.7
+       ],
+       [
+        7.47,
+        2.54
+       ],
+       [
+        7.38,
+        2.38
+       ],
+       [
+        7.31,
+        2.22
+       ]
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        18.95,
+        3.66
+       ],
+       [
+        18.77,
+        3.89
+       ],
+       [
+        18.58,
+        4.11
+       ],
+       [
+        18.37,
+        4.31
+       ],
+       [
+        18.15,
+        4.49
+       ],
+       [
+        17.91,
+        4.65
+       ],
+       [
+        17.66,
+        4.79
+       ],
+       [
+        17.4,
+        4.92
+       ],
+       [
+        17.13,
+        5.02
+       ],
+       [
+        16.86,
+        5.1
+       ],
+       [
+        16.57,
+        5.15
+       ],
+       [
+        16.29,
+        5.19
+       ],
+       [
+        16.0,
+        5.2
+       ],
+       [
+        15.71,
+        5.19
+       ],
+       [
+        15.43,
+        5.15
+       ],
+       [
+        15.14,
+        5.1
+       ],
+       [
+        14.87,
+        5.02
+       ],
+       [
+        14.6,
+        4.92
+       ],
+       [
+        14.34,
+        4.79
+       ],
+       [
+        14.09,
+        4.65
+       ],
+       [
+        13.85,
+        4.49
+       ],
+       [
+        13.63,
+        4.31
+       ],
+       [
+        13.42,
+        4.11
+       ],
+       [
+        13.23,
+        3.89
+       ],
+       [
+        13.05,
+        3.66
+       ]
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        9,
+        1.6
+       ],
+       [
+        9,
+        3.4
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        16,
+        1.6
+       ],
+       [
+        16,
+        5.2
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "diem",
+      "x": 9,
+      "y": 3.4,
+      "ten": "xe 1"
+     },
+     {
+      "loai": "diem",
+      "x": 16,
+      "y": 5.2,
+      "ten": "xe 2"
+     },
+     {
+      "loai": "diem",
+      "x": 9,
+      "y": 1.6
+     },
+     {
+      "loai": "diem",
+      "x": 16,
+      "y": 1.6
+     },
+     {
+      "loai": "chu",
+      "x": 9.45,
+      "y": 1.1,
+      "text": "20 m",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 16.45,
+      "y": 2.6,
+      "text": "40 m",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 3.0,
+      "text": "v = 10 m/s",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Cùng cánh quạt ⇒ A, B cùng ω"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 4.67,
+       "y": 8.4,
+       "goc": 180,
+       "dai": 1.0,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 8.4,
+       "goc": 180,
+       "dai": 3.0,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 3.2,
+       "y": 9.4,
+       "text": "a_A",
+       "mau": "luc"
+      },
+      {
+       "loai": "chu",
+       "x": 10.0,
+       "y": 9.4,
+       "text": "a_B",
+       "mau": "luc"
+      },
+      {
+       "loai": "ghi",
+       "text": "a = ω²r: a_A = 40 m/s², a_B = 120 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 9,
+       "y": 3.4,
+       "goc": 270,
+       "dai": 1.8,
+       "mau": "luc",
+       "nhan": "",
+       "trai": true
+      },
+      {
+       "loai": "vec",
+       "x": 16,
+       "y": 5.2,
+       "goc": 270,
+       "dai": 0.9,
+       "mau": "luc",
+       "nhan": "",
+       "trai": true
+      },
+      {
+       "loai": "chu",
+       "x": 8.3,
+       "y": 1.2,
+       "text": "a_1",
+       "mau": "luc"
+      },
+      {
+       "loai": "chu",
+       "x": 15.4,
+       "y": 3.9,
+       "text": "a_2",
+       "mau": "luc",
+       "a": "end"
+      },
+      {
+       "loai": "ghi",
+       "text": "a = v²/r: a_1 = 5,0 m/s², a_2 = 2,5 m/s²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "a' = 12²/20 = 7,2 m/s² = 1,44 lần a_1"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Trung bình · Xác định lực đóng vai lực hướng tâm",
    "topic": "Lực hướng tâm trong các tình huống thực tế",
-   "problem_html": "<p>Một vật nhỏ khối lượng $50\\ \\text{g}$ đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$. Đĩa quay đều $60$ vòng/phút, vật nằm yên so với đĩa (không trượt).</p>\n<ol type=\"a\"><li>Lực nào đóng vai lực hướng tâm của vật?</li>\n<li>Tính độ lớn lực hướng tâm.</li>\n<li>Nêu lực đóng vai lực hướng tâm của (i) ô tô chạy đều qua khúc cua nằm ngang; (ii) vệ tinh nhân tạo chuyển động tròn đều quanh Trái Đất.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Nhìn từ trên xuống: đĩa nằm ngang quay đều 60 vòng/phút, vật nhỏ 50 g nằm yên trên đĩa cách trục 20 cm\"><g><circle cx=\"125\" cy=\"118\" r=\"99.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"125.0\" y1=\"118.0\" x2=\"26.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><rect x=\"178.0\" y=\"111\" width=\"14\" height=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 125 118;360 125 118\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"125.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 50 g</text><text x=\"255\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 20 cm</text><text x=\"255\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">60 vòng/phút</text><text x=\"197.0\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống: đĩa quay đúng một vòng (chạy chậm 4 lần, khoảng 4 s); vật nằm yên so với đĩa. Vạch xám trên đĩa chỉ để thấy đĩa quay.</figcaption></figure>",
-   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hướng tâm là tên một vai: hợp lực hướng vào tâm, không phải lực mới.</li><li>Chỉ tính lực do một vật cụ thể tác dụng lên vật.</li><li>$F_{\\text{ht}}=m\\omega^2 r$ và $\\omega=2\\pi f$.</li><li>⚠ <strong>Điều kiện:</strong> vật chuyển động tròn đều trong hệ gắn với mặt đất; không vẽ thêm lực hướng tâm, không có lực li tâm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Các lực theo phương thẳng đứng</span></p><p>Vật không chuyển động theo phương đứng nên hợp lực theo phương đó bằng $0$.</p><p>Trọng lực $\\vec P$ và phản lực $\\vec N$ của đĩa cân bằng nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đóng vai lực hướng tâm</span></p><p>Lực nằm ngang duy nhất còn lại là <strong>lực ma sát nghỉ</strong> của đĩa tác dụng lên vật.</p><p>Vật chuyển động tròn đều nên hợp lực hướng vào trục: ma sát nghỉ chính là lực hướng tâm, không thêm lực nào khác.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn lực hướng tâm</span></p><p>Đổi: $m=50\\ \\text{g}=0{,}050\\ \\text{kg}$, $r=20\\ \\text{cm}=0{,}20\\ \\text{m}$, $60$ vòng/phút $=1$ vòng/s.</p>$$\\omega=2\\pi f=2\\pi\\cdot1\\approx6{,}283\\ \\text{rad/s}$$$$F_{\\text{ht}}=m\\omega^2 r=0{,}050\\cdot(2\\pi)^2\\cdot0{,}20$$<div class=\"bt-ans\">$$F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$$</div><p>Lực ma sát nghỉ tác dụng lên vật có đúng độ lớn này.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ô tô qua khúc cua nằm ngang</span></p><p>Trọng lực và phản lực của mặt đường cân bằng nhau theo phương đứng.</p><p>Lực chĩa vào tâm cua là <strong>lực ma sát nghỉ</strong> giữa lốp xe và mặt đường.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vệ tinh quanh Trái Đất</span></p><p>Lực đáng kể duy nhất tác dụng lên vệ tinh là lực hấp dẫn của Trái Đất.</p><p>Lực này chĩa vào tâm Trái Đất nên chính là <strong>lực hướng tâm</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$a_{\\text{ht}}=\\omega^2 r=(2\\pi)^2\\cdot0{,}20\\approx7{,}90\\ \\text{m/s}^2$$$$F_{\\text{ht}}=m a_{\\text{ht}}=0{,}050\\cdot7{,}90\\approx0{,}395\\ \\text{N}$$<p>Khớp ✓. Không vẽ thêm lực hướng tâm bên cạnh ma sát nghỉ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Lực ma sát nghỉ của đĩa</p><p>b) $F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$</p><p>c) (i) ma sát nghỉ giữa lốp và mặt đường · (ii) lực hấp dẫn của Trái Đất</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật quay cùng đĩa, không trượt</strong> → mỗi lực do một vật gây ra; lực nằm ngang chĩa vào tâm đóng vai lực hướng tâm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 236\" role=\"img\" aria-label=\"Vật nhỏ trên đĩa nằm ngang cách trục quay r = 20 cm\"><circle cx=\"125\" cy=\"118\" r=\"99.0\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><line x1=\"125.0\" y1=\"118.0\" x2=\"26.0\" y2=\"118.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><rect x=\"178.0\" y=\"111\" width=\"14\" height=\"14\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/><circle cx=\"125.0\" cy=\"118.0\" r=\"4.5\" fill=\"currentColor\"/><text x=\"255\" y=\"86\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 50 g</text><text x=\"255\" y=\"110\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 20 cm</text><text x=\"255\" y=\"134\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">60 vòng/phút</text><line x1=\"125.0\" y1=\"118.0\" x2=\"185.0\" y2=\"118.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><text x=\"155.0\" y=\"109\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">r</text><text x=\"197.0\" y=\"106\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">vật</text></svg><figcaption>Dữ kiện: vật cách trục quay r = 20 cm và nằm yên so với đĩa. Chưa vẽ lực nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vật nhỏ khối lượng $50\\ \\text{g}$”</td><td>$m=0{,}050\\ \\text{kg}$</td><td>Đổi g sang kg</td></tr><tr><td>“đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$”</td><td>$r=0{,}20\\ \\text{m}$</td><td>Quỹ đạo của vật là đường tròn tâm ở trục quay</td></tr><tr><td>“đĩa quay đều $60$ vòng/phút”</td><td>$f=1$ vòng/s</td><td>⚠ Đổi sang tốc độ góc (rad/s) trước khi dùng công thức</td></tr><tr><td>“vật nằm yên so với đĩa (không trượt)”</td><td>Vật quay cùng đĩa, cùng $\\omega$</td><td>⚠ Vật chuyển động tròn đều: hợp lực phải hướng vào đâu?</td></tr><tr><td>“a) lực nào đóng vai lực hướng tâm”</td><td>Liệt kê các lực do vật cụ thể tác dụng lên vật</td><td>Mỗi lực do một vật gây ra; lực hướng tâm có phải một lực riêng?</td></tr><tr><td>“b) độ lớn lực hướng tâm”</td><td>Cần $F_{\\text{ht}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) ô tô qua khúc cua nằm ngang; vệ tinh quanh Trái Đất”</td><td>Hai tình huống khác</td><td>Tìm lực đang chĩa vào tâm trong mỗi trường hợp</td></tr></tbody></table></div>",
+   "problem_html": "<p>Một vật nhỏ khối lượng $50\\ \\text{g}$ đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$. Đĩa quay đều $60$ vòng/phút, vật nằm yên so với đĩa (không trượt).</p>\n<ol type=\"a\"><li>Lực nào đóng vai lực hướng tâm của vật?</li>\n<li>Tính độ lớn lực hướng tâm.</li>\n<li>Nêu lực đóng vai lực hướng tâm của (i) ô tô chạy đều qua khúc cua nằm ngang; (ii) vệ tinh nhân tạo chuyển động tròn đều quanh Trái Đất.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> lực hướng tâm là tên một vai: hợp lực hướng vào tâm, không phải lực mới.</li><li>Chỉ tính lực do một vật cụ thể tác dụng lên vật.</li><li>$F_{\\text{ht}}=m\\omega^2 r$ và $\\omega=2\\pi f$.</li><li>⚠ <strong>Điều kiện:</strong> vật chuyển động tròn đều trong hệ gắn với mặt đất; không vẽ thêm lực hướng tâm, không có lực li tâm.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Các lực theo phương thẳng đứng</span></p><p>Vật không chuyển động theo phương đứng nên hợp lực theo phương đó bằng $0$.</p><p>Trọng lực $\\vec P$ và phản lực $\\vec N$ của đĩa cân bằng nhau.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Lực đóng vai lực hướng tâm</span></p><p>Lực nằm ngang duy nhất còn lại là <strong>lực ma sát nghỉ</strong> của đĩa tác dụng lên vật.</p><p>Vật chuyển động tròn đều nên hợp lực hướng vào trục: ma sát nghỉ chính là lực hướng tâm, không thêm lực nào khác.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn lực hướng tâm</span></p><p>Đổi: $m=50\\ \\text{g}=0{,}050\\ \\text{kg}$, $r=20\\ \\text{cm}=0{,}20\\ \\text{m}$, $60$ vòng/phút $=1$ vòng/s.</p>$$\\omega=2\\pi f=2\\pi\\cdot1\\approx6{,}283\\ \\text{rad/s}$$$$F_{\\text{ht}}=m\\omega^2 r=0{,}050\\cdot(2\\pi)^2\\cdot0{,}20$$<div class=\"bt-ans\">$$F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$$</div><p>Lực ma sát nghỉ tác dụng lên vật có đúng độ lớn này.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ô tô qua khúc cua nằm ngang</span></p><p>Trọng lực và phản lực của mặt đường cân bằng nhau theo phương đứng.</p><p>Lực chĩa vào tâm cua là <strong>lực ma sát nghỉ</strong> giữa lốp xe và mặt đường.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vệ tinh quanh Trái Đất</span></p><p>Lực đáng kể duy nhất tác dụng lên vệ tinh là lực hấp dẫn của Trái Đất.</p><p>Lực này chĩa vào tâm Trái Đất nên chính là <strong>lực hướng tâm</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p>$$a_{\\text{ht}}=(2\\pi)^2\\cdot0{,}20\\approx7{,}9\\ \\text{m/s}^2$$$$F_{\\text{ht}}=0{,}050\\cdot7{,}9\\approx0{,}395\\ \\text{N}$$<p>Khớp ✓. Không vẽ thêm lực hướng tâm bên cạnh ma sát nghỉ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Lực ma sát nghỉ của đĩa</p><p>b) $F_{\\text{ht}}\\approx0{,}395\\ \\text{N}$</p><p>c) (i) ma sát nghỉ giữa lốp và mặt đường · (ii) lực hấp dẫn của Trái Đất</p></div><p class=\"bt-note\">Nhận dạng: <strong>vật quay cùng đĩa, không trượt</strong> → mỗi lực do một vật gây ra; lực nằm ngang chĩa vào tâm đóng vai lực hướng tâm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“vật nhỏ khối lượng $50\\ \\text{g}$”</td><td>$m=0{,}050\\ \\text{kg}$</td><td>Đổi g sang kg</td></tr><tr><td>“đặt trên đĩa nằm ngang, cách trục quay $20\\ \\text{cm}$”</td><td>$r=0{,}20\\ \\text{m}$</td><td>Quỹ đạo của vật là đường tròn tâm ở trục quay</td></tr><tr><td>“đĩa quay đều $60$ vòng/phút”</td><td>$f=1$ vòng/s</td><td>⚠ Đổi sang tốc độ góc (rad/s) trước khi dùng công thức</td></tr><tr><td>“vật nằm yên so với đĩa (không trượt)”</td><td>Vật quay cùng đĩa, cùng $\\omega$</td><td>⚠ Vật chuyển động tròn đều: hợp lực phải hướng vào đâu?</td></tr><tr><td>“a) lực nào đóng vai lực hướng tâm”</td><td>Liệt kê các lực do vật cụ thể tác dụng lên vật</td><td>Mỗi lực do một vật gây ra; lực hướng tâm có phải một lực riêng?</td></tr><tr><td>“b) độ lớn lực hướng tâm”</td><td>Cần $F_{\\text{ht}}$ (N)</td><td>Đại lượng cần tìm</td></tr><tr><td>“c) ô tô qua khúc cua nằm ngang; vệ tinh quanh Trái Đất”</td><td>Hai tình huống khác</td><td>Tìm lực đang chĩa vào tâm trong mỗi trường hợp</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>vật quay cùng đĩa, không trượt</b> → nghĩ tới <b>lực do vật cụ thể</b> đóng vai lực hướng tâm.",
    "cap_do": 2,
    "fading": "giau_tu_buoc_2",
@@ -389,16 +1154,16 @@
      "loi_hay_gap": "Vẽ thêm một “lực hướng tâm” riêng hoặc dùng “lực li tâm” để cân bằng.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm lực nằm ngang duy nhất còn lại sau khi $\\vec P$ và $\\vec N$ cân bằng",
+       "text": "Tìm lực nằm ngang duy nhất còn lại khi $\\vec P$, $\\vec N$ cân bằng",
        "dung": true
       },
       {
-       "text": "Thêm một lực hướng vào trục để vật đi vòng",
+       "text": "Thêm một lực hướng vào trục để vật đi vòng quanh tâm",
        "dung": false,
        "vi_sao": "Mọi lực phải do một vật cụ thể tác dụng lên vật; không được vẽ thêm lực cho đủ."
       },
       {
-       "text": "Lấy lực li tâm cân bằng với lực kéo vào trục",
+       "text": "Lấy lực li tâm hướng ra ngoài cân bằng với lực kéo vào",
        "dung": false,
        "vi_sao": "Lực li tâm không do vật nào gây ra; bài này xét trong hệ gắn với mặt đất."
       }
@@ -437,12 +1202,12 @@
        "dung": true
       },
       {
-       "text": "Lực kéo của động cơ",
+       "text": "Lực kéo của động cơ hướng về phía trước",
        "dung": false,
        "vi_sao": "Lực kéo của động cơ nằm dọc theo hướng chạy, không chĩa vào tâm khúc cua."
       },
       {
-       "text": "Phản lực của mặt đường",
+       "text": "Phản lực của mặt đường lên các bánh xe",
        "dung": false,
        "vi_sao": "Phản lực vuông góc với mặt đường, cân bằng với trọng lực theo phương đứng."
       }
@@ -470,16 +1235,16 @@
      "hoi": "Lực nào đóng vai lực hướng tâm của vệ tinh chuyển động tròn đều quanh Trái Đất?",
      "lua_chon": [
       {
-       "text": "Lực hấp dẫn của Trái Đất tác dụng lên vệ tinh",
+       "text": "Lực hấp dẫn của Trái Đất lên vệ tinh",
        "dung": true
       },
       {
-       "text": "Lực đẩy của động cơ vệ tinh",
+       "text": "Lực đẩy của động cơ vệ tinh về phía trước",
        "dung": false,
        "vi_sao": "Vệ tinh bay vòng khi không bật động cơ; lực đẩy không phải lực chĩa vào tâm Trái Đất."
       },
       {
-       "text": "Lực li tâm do vệ tinh sinh ra",
+       "text": "Lực li tâm do chính vệ tinh sinh ra",
        "dung": false,
        "vi_sao": "Không vật nào gây ra lực li tâm lên vệ tinh."
       }
@@ -487,16 +1252,16 @@
      "loi_hay_gap": "Cho rằng cần lực đẩy của động cơ, hoặc “lực li tâm” cân bằng với hấp dẫn.",
      "chon_buoc_ke": [
       {
-       "text": "Tìm lực do một vật cụ thể tác dụng lên vệ tinh và chĩa vào tâm quỹ đạo",
+       "text": "Tìm lực của một vật cụ thể chĩa vào tâm quỹ đạo",
        "dung": true
       },
       {
-       "text": "Tìm lực làm vệ tinh tiến về phía trước",
+       "text": "Tìm lực làm vệ tinh tiến về phía trước trên quỹ đạo",
        "dung": false,
        "vi_sao": "Vệ tinh đi vòng đều nên không cần lực dọc theo hướng chuyển động; lực hướng tâm vuông góc với hướng đó."
       },
       {
-       "text": "Coi vệ tinh chỉ chuyển động theo quán tính",
+       "text": "Coi vệ tinh chỉ chuyển động theo quán tính, không cần lực",
        "dung": false,
        "vi_sao": "Chỉ có quán tính thì vệ tinh bay thẳng; muốn đi vòng phải có lực chĩa vào tâm."
       }
@@ -505,15 +1270,230 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "elip",
+      "x": 7,
+      "y": 4,
+      "rx": 6,
+      "ry": 1.4,
+      "mau": "chu"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        7,
+        0.4
+       ],
+       [
+        7,
+        8.6
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        5.68,
+        7.52
+       ],
+       [
+        5.81,
+        7.27
+       ],
+       [
+        5.98,
+        7.04
+       ],
+       [
+        6.2,
+        6.85
+       ],
+       [
+        6.45,
+        6.71
+       ],
+       [
+        6.72,
+        6.63
+       ],
+       [
+        7.0,
+        6.6
+       ],
+       [
+        7.28,
+        6.63
+       ],
+       [
+        7.55,
+        6.71
+       ],
+       [
+        7.8,
+        6.85
+       ],
+       [
+        8.02,
+        7.04
+       ],
+       [
+        8.19,
+        7.27
+       ],
+       [
+        8.32,
+        7.52
+       ]
+      ],
+      "mau": "chu",
+      "mui": 1
+     },
+     {
+      "loai": "chu",
+      "x": 9.0,
+      "y": 9.3,
+      "text": "60 vòng/phút",
+      "a": "start"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        7,
+        4
+       ],
+       [
+        11,
+        4
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "diem",
+      "x": 11,
+      "y": 4
+     },
+     {
+      "loai": "chu",
+      "x": 6.6,
+      "y": 1.0,
+      "text": "r = 20 cm",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 14.2,
+      "y": 6.4,
+      "text": "m = 50 g",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 14.2,
+      "y": 4.9,
+      "text": "vật",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 4,
+       "goc": 90,
+       "dai": 1.8,
+       "mau": "luc",
+       "nhan": "N",
+       "dut": true
+      },
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 4,
+       "goc": 270,
+       "dai": 1.8,
+       "mau": "luc",
+       "nhan": "P"
+      },
+      {
+       "loai": "ghi",
+       "text": "Thẳng đứng: P và N cân bằng"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 11,
+       "y": 4,
+       "goc": 180,
+       "dai": 2.0,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 9.2,
+       "y": 1.7,
+       "text": "F_{ms}",
+       "mau": "luc"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ma sát nghỉ hướng vào trục đóng vai F_{ht}"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "ω = 2π rad/s ⇒ F = mω²r ≈ 0,395 N"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Ô tô qua cua: ma sát nghỉ của mặt đường"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Vệ tinh: lực hấp dẫn của Trái Đất"
+      }
+     ],
+     []
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Vật $50\\ \\text{g}$ cách trục $20\\ \\text{cm}$, đĩa quay đều $60$ vòng/phút",
+     "Vật nằm yên so với đĩa"
+    ],
+    "tim": [
+     "Lực đóng vai lực hướng tâm",
+     "Độ lớn lực hướng tâm",
+     "Lực hướng tâm của ô tô, của vệ tinh"
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Khó · Lực hướng tâm so với lực ma sát nghỉ cực đại",
    "topic": "Lực hướng tâm trong các tình huống thực tế",
-   "problem_html": "<p>Một mô tô cùng người lái có tổng khối lượng $200\\ \\text{kg}$ chạy đều $54\\ \\text{km/h}$ vào một đoạn đường vòng nằm ngang. Lực ma sát nghỉ cực đại giữa lốp và mặt đường bằng $0{,}60$ lần trọng lượng khi đường khô và $0{,}30$ lần trọng lượng khi đường ướt. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Đường vòng có bán kính $50\\ \\text{m}$. Tính lực hướng tâm cần có và cho biết xe có trượt không trên đường khô, trên đường ướt.</li>\n<li>Tính bán kính cong nhỏ nhất của đường vòng để xe không trượt khi đường khô, khi đường ướt.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Nhìn từ trên xuống: mô tô chạy đều 54 km/h qua đoạn đường vòng nằm ngang bán kính 50 m\"><path d=\"M56.6,141.0 A154.0,154.0 0 0 1 267.0,84.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M80.9,155.0 A126.0,126.0 0 0 1 253.0,108.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M68.8,148.0 A140.0,140.0 0 0 1 260.0,96.8\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\"/><line x1=\"190.0\" y1=\"218.0\" x2=\"190.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"190.0\" cy=\"218.0\" r=\"4\" fill=\"currentColor\"/><text x=\"180.0\" y=\"234.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"198.0\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 50 m (ý a)</text><text x=\"285\" y=\"150\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 54 km/h</text><text x=\"285\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 200 kg</text><circle cx=\"68.8\" cy=\"148.0\" r=\"7\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"><animate attributeName=\"cx\" values=\"68.8;71.3;73.9;76.7;79.7;82.8;86.0;89.3;92.7;96.3;100.0;103.8;107.7;111.7;115.8;120.0;124.3;128.6;133.1;137.6;142.1;146.7;151.4;156.1;160.9;165.7;170.5;175.4;180.2;185.1;190.0;194.9;199.8;204.6;209.5;214.3;219.1;223.9;228.6;233.3;237.9;242.4;246.9;251.4;255.7;260.0\" dur=\"5.24s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"148.0;143.8;139.7;135.7;131.8;128.0;124.3;120.7;117.3;114.0;110.8;107.7;104.7;101.9;99.3;96.8;94.4;92.2;90.1;88.2;86.4;84.9;83.4;82.2;81.1;80.1;79.4;78.8;78.3;78.1;78.0;78.1;78.3;78.8;79.4;80.1;81.1;82.2;83.4;84.9;86.4;88.2;90.1;92.2;94.4;96.8\" dur=\"5.24s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng nhìn từ trên xuống: mô tô đi hết một phần tư đường vòng, tốc độ không đổi, đúng thời gian thật (khoảng 5 s). Không vẽ lực nào.</figcaption></figure>",
+   "problem_html": "<p>Một mô tô cùng người lái có tổng khối lượng $200\\ \\text{kg}$ chạy đều $54\\ \\text{km/h}$ vào một đoạn đường vòng nằm ngang. Lực ma sát nghỉ cực đại giữa lốp và mặt đường bằng $0{,}60$ lần trọng lượng khi đường khô và $0{,}30$ lần trọng lượng khi đường ướt. Lấy $g=10\\ \\text{m/s}^2$.</p>\n<ol type=\"a\"><li>Đường vòng có bán kính $50\\ \\text{m}$. Tính lực hướng tâm cần có và cho biết xe có trượt không trên đường khô, trên đường ướt.</li>\n<li>Tính bán kính cong nhỏ nhất của đường vòng để xe không trượt khi đường khô, khi đường ướt.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên đường nằm ngang, ma sát nghỉ là lực đóng vai lực hướng tâm.</li><li>$F_{\\text{ht}}=m\\dfrac{v^2}{r}$ · trọng lượng $P=mg$.</li><li>Không trượt khi $F_{\\text{ht}}\\le F_{\\text{max}}$; giới hạn ứng với $F_{\\text{ht}}=F_{\\text{max}}$.</li><li>⚠ <strong>Điều kiện:</strong> đổi km/h sang m/s trước khi thế.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Lực hướng tâm cần có</span></p><p>Đổi $54\\ \\text{km/h}=15\\ \\text{m/s}$.</p>$$F_{\\text{ht}}=m\\dfrac{v^2}{r}=200\\cdot\\dfrac{15^2}{50}$$<div class=\"bt-ans\">$$F_{\\text{ht}}=900\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>So với lực ma sát nghỉ cực đại</span></p>$$P=mg=200\\cdot10=2000\\ \\text{N}$$$$F_{\\text{max,khô}}=0{,}60\\,P=1200\\ \\text{N}$$$$F_{\\text{max,ướt}}=0{,}30\\,P=600\\ \\text{N}$$<p>Đường khô: $900\\ \\text{N}\\lt1200\\ \\text{N}$ nên <strong>không trượt</strong>.</p><p>Đường ướt: $900\\ \\text{N}\\gt600\\ \\text{N}$ nên <strong>trượt</strong>.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Bán kính nhỏ nhất, đường khô</span></p><p>Giới hạn không trượt: lực hướng tâm bằng lực ma sát nghỉ cực đại.</p>$$m\\dfrac{v^2}{r_{\\text{min}}}=F_{\\text{max}}$$$$r_{\\text{min}}=\\dfrac{mv^2}{F_{\\text{max}}}=\\dfrac{200\\cdot15^2}{1200}$$<div class=\"bt-ans\">$$r_{\\text{min}}=37{,}5\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Bán kính nhỏ nhất, đường ướt</span></p>$$r_{\\text{min}}=\\dfrac{mv^2}{F_{\\text{max}}}=\\dfrac{200\\cdot15^2}{600}$$<div class=\"bt-ans\">$$r_{\\text{min}}=75\\ \\text{m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thế ngược: $r=37{,}5\\ \\text{m}$ cho $F_{\\text{ht}}=1200\\ \\text{N}=F_{\\text{max,khô}}$; $r=75\\ \\text{m}$ cho $F_{\\text{ht}}=600\\ \\text{N}=F_{\\text{max,ướt}}$ ✓.</p><p>Bán kính $50\\ \\text{m}$ của ý a nằm giữa hai giá trị, khớp với kết luận: đường khô qua được, đường ướt trượt ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $F_{\\text{ht}}=900\\ \\text{N}$ · đường khô: không trượt · đường ướt: trượt</p><p>b) $r_{\\text{min}}=37{,}5\\ \\text{m}$ (khô) · $r_{\\text{min}}=75\\ \\text{m}$ (ướt)</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>không trượt</strong> hay <strong>tốc độ, bán kính giới hạn</strong> → so $F_{\\text{ht}}$ với lực ma sát nghỉ cực đại.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Đoạn đường vòng nằm ngang tâm O, bán kính 50 m; mô tô chạy trên đường\"><path d=\"M56.6,141.0 A154.0,154.0 0 0 1 267.0,84.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M80.9,155.0 A126.0,126.0 0 0 1 253.0,108.9\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\"/><path d=\"M68.8,148.0 A140.0,140.0 0 0 1 260.0,96.8\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.4\" stroke-dasharray=\"6 5\"/><line x1=\"190.0\" y1=\"218.0\" x2=\"190.0\" y2=\"92.0\" stroke=\"#94a3b8\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.9\"/><circle cx=\"190.0\" cy=\"218.0\" r=\"4\" fill=\"currentColor\"/><text x=\"180.0\" y=\"234.0\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><text x=\"198.0\" y=\"150\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 50 m (ý a)</text><text x=\"285\" y=\"150\" fill=\"#38bdf8\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">v = 54 km/h</text><text x=\"285\" y=\"174\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">m = 200 kg</text><circle cx=\"153.8\" cy=\"82.8\" r=\"7\" fill=\"#fb923c\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg><figcaption>Dữ kiện: đường vòng nằm ngang, tâm O; ý a xét bán kính 50 m, ý b hỏi bán kính nhỏ nhất. Chưa vẽ lực nào.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“tổng khối lượng $200\\ \\text{kg}$”</td><td>$m=200\\ \\text{kg}$</td><td>Khối lượng của cả hệ chuyển động</td></tr><tr><td>“chạy đều $54\\ \\text{km/h}$”</td><td>$v=54\\ \\text{km/h}$</td><td>Đổi sang đơn vị chuẩn; chuyển động tròn đều</td></tr><tr><td>“đoạn đường vòng nằm ngang”</td><td>Đường phẳng</td><td>⚠ Trọng lực và phản lực theo phương đứng thế nào? Lực nằm ngang còn lại là lực nào?</td></tr><tr><td>“ma sát nghỉ cực đại … $0{,}60$ lần trọng lượng (khô), $0{,}30$ lần (ướt)”</td><td>$F_{\\text{max}}=0{,}60\\,mg$; $0{,}30\\,mg$</td><td>⚠ Ma sát nghỉ có giá trị lớn nhất; vượt giới hạn thì lốp trượt</td></tr><tr><td>“a) bán kính $50\\ \\text{m}$ … lực hướng tâm cần có … có trượt không”</td><td>$r=50\\ \\text{m}$; cần $F_{\\text{ht}}$ và kết luận</td><td>So hai lực cùng loại</td></tr><tr><td>“b) bán kính cong nhỏ nhất để xe không trượt”</td><td>Cần $r_{\\text{min}}$ (m) cho hai loại đường</td><td>Giới hạn không trượt ứng với quan hệ nào giữa hai lực?</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“tổng khối lượng $200\\ \\text{kg}$”</td><td>$m=200\\ \\text{kg}$</td><td>Khối lượng của cả hệ chuyển động</td></tr><tr><td>“chạy đều $54\\ \\text{km/h}$”</td><td>$v=54\\ \\text{km/h}$</td><td>Đổi sang đơn vị chuẩn; chuyển động tròn đều</td></tr><tr><td>“đoạn đường vòng nằm ngang”</td><td>Đường phẳng</td><td>⚠ Trọng lực và phản lực theo phương đứng thế nào? Lực nằm ngang còn lại là lực nào?</td></tr><tr><td>“ma sát nghỉ cực đại … $0{,}60$ lần trọng lượng (khô), $0{,}30$ lần (ướt)”</td><td>$F_{\\text{max}}=0{,}60\\,mg$; $0{,}30\\,mg$</td><td>⚠ Ma sát nghỉ có giá trị lớn nhất; vượt giới hạn thì lốp trượt</td></tr><tr><td>“a) bán kính $50\\ \\text{m}$ … lực hướng tâm cần có … có trượt không”</td><td>$r=50\\ \\text{m}$; cần $F_{\\text{ht}}$ và kết luận</td><td>So hai lực cùng loại</td></tr><tr><td>“b) bán kính cong nhỏ nhất để xe không trượt”</td><td>Cần $r_{\\text{min}}$ (m) cho hai loại đường</td><td>Giới hạn không trượt ứng với quan hệ nào giữa hai lực?</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>không trượt</b> hay <b>giá trị giới hạn</b> → so lực hướng tâm với <b>ma sát nghỉ cực đại</b>.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -580,16 +1560,16 @@
      "loi_hay_gap": "Dùng $r=v^2/g$ như thể gia tốc hướng tâm bằng $g$, hoặc giữ $r=50\\ \\text{m}$.",
      "chon_buoc_ke": [
       {
-       "text": "Cho lực hướng tâm bằng lực ma sát nghỉ cực đại rồi rút $r$",
+       "text": "Cho lực hướng tâm bằng ma sát nghỉ cực đại rồi rút $r$",
        "dung": true
       },
       {
-       "text": "Dùng $r=v^2/g$",
+       "text": "Dùng $r=v^2/g$ vì lực hướng tâm bằng trọng lực",
        "dung": false,
        "vi_sao": "Gia tốc hướng tâm tối đa của xe là $F_{\\text{max}}/m$, không phải $g$."
       },
       {
-       "text": "Giữ $r=50\\ \\text{m}$ vì đề đã cho",
+       "text": "Giữ $r=50\\ \\text{m}$ vì đề đã cho, chỉ đổi tốc độ",
        "dung": false,
        "vi_sao": "$50\\ \\text{m}$ chỉ là bán kính ở ý a; ý b hỏi bán kính nhỏ nhất để không trượt."
       }
@@ -622,7 +1602,443 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        13.63,
+        3.09
+       ],
+       [
+        13.45,
+        3.43
+       ],
+       [
+        13.24,
+        3.74
+       ],
+       [
+        13.01,
+        4.04
+       ],
+       [
+        12.74,
+        4.31
+       ],
+       [
+        12.46,
+        4.56
+       ],
+       [
+        12.15,
+        4.77
+       ],
+       [
+        11.82,
+        4.96
+       ],
+       [
+        11.48,
+        5.12
+       ],
+       [
+        11.12,
+        5.24
+       ],
+       [
+        10.75,
+        5.33
+       ],
+       [
+        10.38,
+        5.38
+       ],
+       [
+        10.0,
+        5.4
+       ],
+       [
+        9.62,
+        5.38
+       ],
+       [
+        9.25,
+        5.33
+       ],
+       [
+        8.88,
+        5.24
+       ],
+       [
+        8.52,
+        5.12
+       ],
+       [
+        8.18,
+        4.96
+       ],
+       [
+        7.85,
+        4.77
+       ],
+       [
+        7.54,
+        4.56
+       ],
+       [
+        7.26,
+        4.31
+       ],
+       [
+        6.99,
+        4.04
+       ],
+       [
+        6.76,
+        3.74
+       ],
+       [
+        6.55,
+        3.43
+       ],
+       [
+        6.37,
+        3.09
+       ]
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "diem",
+      "x": 10,
+      "y": 1.4,
+      "ten": "O",
+      "vi": "phai"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        10,
+        1.4
+       ],
+       [
+        6.54,
+        3.4
+       ]
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "chu",
+      "x": 7.2,
+      "y": 1.6,
+      "text": "r = 50 m",
+      "a": "end"
+     },
+     {
+      "loai": "diem",
+      "x": 10,
+      "y": 5.4,
+      "ten": ""
+     },
+     {
+      "loai": "chu",
+      "x": 11.3,
+      "y": 5.5,
+      "text": "xe",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 10.0,
+      "text": "m = 200 kg; v = 54 km/h",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 8.5,
+      "text": "F_{max}: khô 0,60P; ướt 0,30P",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 10,
+       "y": 5.4,
+       "goc": 270,
+       "dai": 2.5,
+       "mau": "luc",
+       "nhan": ""
+      },
+      {
+       "loai": "chu",
+       "x": 10.4,
+       "y": 2.95,
+       "text": "F_{ht}",
+       "mau": "luc",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "F_{ht} = mv²/r = 200·15²/50 = 900 N"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Khô 1200 N ≥ 900 N: không trượt; ướt 600 N: trượt"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         12.72,
+         2.67
+        ],
+        [
+         12.59,
+         2.92
+        ],
+        [
+         12.43,
+         3.16
+        ],
+        [
+         12.26,
+         3.38
+        ],
+        [
+         12.06,
+         3.58
+        ],
+        [
+         11.84,
+         3.77
+        ],
+        [
+         11.61,
+         3.93
+        ],
+        [
+         11.37,
+         4.07
+        ],
+        [
+         11.11,
+         4.19
+        ],
+        [
+         10.84,
+         4.28
+        ],
+        [
+         10.56,
+         4.35
+        ],
+        [
+         10.28,
+         4.39
+        ],
+        [
+         10.0,
+         4.4
+        ],
+        [
+         9.72,
+         4.39
+        ],
+        [
+         9.44,
+         4.35
+        ],
+        [
+         9.16,
+         4.28
+        ],
+        [
+         8.89,
+         4.19
+        ],
+        [
+         8.63,
+         4.07
+        ],
+        [
+         8.39,
+         3.93
+        ],
+        [
+         8.16,
+         3.77
+        ],
+        [
+         7.94,
+         3.58
+        ],
+        [
+         7.74,
+         3.38
+        ],
+        [
+         7.57,
+         3.16
+        ],
+        [
+         7.41,
+         2.92
+        ],
+        [
+         7.28,
+         2.67
+        ]
+       ],
+       "mau": "luc",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Khô: r_{min} = mv²/F_{max} = 37,5 m"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         14.6,
+         5.26
+        ],
+        [
+         14.3,
+         5.58
+        ],
+        [
+         13.99,
+         5.88
+        ],
+        [
+         13.65,
+         6.16
+        ],
+        [
+         13.3,
+         6.41
+        ],
+        [
+         12.92,
+         6.64
+        ],
+        [
+         12.54,
+         6.84
+        ],
+        [
+         12.13,
+         7.01
+        ],
+        [
+         11.72,
+         7.15
+        ],
+        [
+         11.3,
+         7.26
+        ],
+        [
+         10.87,
+         7.34
+        ],
+        [
+         10.44,
+         7.38
+        ],
+        [
+         10.0,
+         7.4
+        ],
+        [
+         9.56,
+         7.38
+        ],
+        [
+         9.13,
+         7.34
+        ],
+        [
+         8.7,
+         7.26
+        ],
+        [
+         8.28,
+         7.15
+        ],
+        [
+         7.87,
+         7.01
+        ],
+        [
+         7.46,
+         6.84
+        ],
+        [
+         7.08,
+         6.64
+        ],
+        [
+         6.7,
+         6.41
+        ],
+        [
+         6.35,
+         6.16
+        ],
+        [
+         6.01,
+         5.88
+        ],
+        [
+         5.7,
+         5.58
+        ],
+        [
+         5.4,
+         5.26
+        ]
+       ],
+       "mau": "b",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Ướt: r_{min} = 45000/600 = 75 m"
+      }
+     ],
+     []
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "Mô tô + người $200\\ \\text{kg}$, $54\\ \\text{km/h}$, $r=50\\ \\text{m}$",
+     "$F_{ms\\,max}$: $0{,}60P$ (khô), $0{,}30P$ (ướt); $g=10\\ \\text{m/s}^2$"
+    ],
+    "tim": [
+     "$F_{ht}$; có trượt không (khô, ướt)",
+     "$r_{min}$ khi khô, khi ướt"
+    ]
+   }
   }
  ],
  "tu_luan": {

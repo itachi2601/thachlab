@@ -148,6 +148,8 @@ function StepControl({ step, className, children, onUnlock, onQuickPractice }: {
 }
 
 const KIND_TAG: Record<NextStep["kind"], { label: string; cls: string }> = {
+  resume: { label: "Đang làm dở", cls: "bg-warn/10 text-warn" },
+  session: { label: "Ôn tập", cls: "bg-primary-soft text-primary" },
   homework: { label: "Bài về nhà", cls: "bg-primary-soft text-primary" },
   assigned: { label: "Kiểm tra lớp", cls: "bg-warn/10 text-warn" },
   unlock: { label: "Phụ đạo", cls: "bg-warn/10 text-warn" },

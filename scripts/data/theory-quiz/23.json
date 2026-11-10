@@ -347,28 +347,28 @@
    "question": "Gắn bút vào quả nặng treo lò xo, kéo đều tờ giấy dưới đầu bút, bút vẽ ra đồ thị li độ – thời gian dạng côsin. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Khoảng cách theo phương li độ giữa đỉnh cao nhất và đáy thấp nhất bằng $2A$.",
+     "text": "Hai đỉnh liền kề trên đồ thị cách nhau một chu kì $T$.",
      "answer": true
     },
     {
-     "text": "Hai đỉnh liền kề trên đồ thị cách nhau một chu kì $T$.",
+     "text": "Biên độ bằng khoảng cách từ đỉnh cao nhất tới đáy thấp nhất.",
+     "answer": false
+    },
+    {
+     "text": "Khoảng cách theo phương li độ giữa đỉnh cao nhất và đáy thấp nhất bằng $2A$.",
      "answer": true
     },
     {
      "text": "Một đỉnh và đáy kế tiếp cách nhau về thời gian bằng một chu kì $T$.",
      "answer": false
-    },
-    {
-     "text": "Biên độ bằng khoảng cách từ đỉnh cao nhất tới đáy thấp nhất.",
-     "answer": false
     }
    ],
    "explanation": "Đồ thị: đỉnh–đáy cao $2A$, cách nhau $\\frac{T}{2}$; hai đỉnh liền kề cách nhau $T$. Biên độ chỉ đo từ trục tới đỉnh.",
    "distractorNotes": {
-    "0": "Đỉnh ở $+A$, đáy ở $-A$ nên khoảng cách theo phương li độ chắc chắn là $2A$.",
-    "1": "Từ đỉnh tới đỉnh kế tiếp vật về đúng chỗ cũ theo chiều cũ, đó chính là một chu kì.",
-    "2": "Đỉnh tới đáy chỉ là nửa dao động, nên hai điểm cách nhau $\\frac{T}{2}$ chứ không phải $T$.",
-    "3": "Khoảng đỉnh–đáy bằng $2A$; biên độ chỉ đo từ trục thời gian tới đỉnh."
+    "0": "Từ đỉnh tới đỉnh kế tiếp vật về đúng chỗ cũ theo chiều cũ, đó chính là một chu kì.",
+    "1": "Khoảng đỉnh–đáy bằng $2A$; biên độ chỉ đo từ trục thời gian tới đỉnh.",
+    "2": "Đỉnh ở $+A$, đáy ở $-A$ nên khoảng cách theo phương li độ chắc chắn là $2A$.",
+    "3": "Đỉnh tới đáy chỉ là nửa dao động, nên hai điểm cách nhau $\\frac{T}{2}$ chứ không phải $T$."
    }
   },
   {
@@ -382,10 +382,6 @@
    "question": "Một vật dao động điều hoà theo phương trình $x=A\\cos(\\omega t+\\varphi)$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Vận tốc của vật là $v=-A\\omega\\sin(\\omega t+\\varphi)$.",
-     "answer": true
-    },
-    {
      "text": "Độ lớn gia tốc cực đại là $|a|_{max}=\\omega^2A$.",
      "answer": true
     },
@@ -396,14 +392,18 @@
     {
      "text": "Giữ nguyên $A$, tăng $\\omega$ gấp đôi thì độ lớn gia tốc cực đại tăng gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Vận tốc của vật là $v=-A\\omega\\sin(\\omega t+\\varphi)$.",
+     "answer": true
     }
    ],
    "explanation": "Theo Họ 2: $v_{max}=A\\omega$ khi qua O, $|a|_{max}=\\omega^2A$ ở biên. Vì $|a|_{max}$ tỉ lệ $\\omega^2$ nên $\\omega$ gấp đôi thì nó gấp bốn.",
    "distractorNotes": {
-    "0": "Đạo hàm $x=A\\cos(\\omega t+\\varphi)$ theo thời gian cho đúng $v=-A\\omega\\sin(\\omega t+\\varphi)$.",
-    "1": "Từ $a=-\\omega^2x$ với $|x|_{max}=A$ suy ra đúng $|a|_{max}=\\omega^2A$.",
-    "2": "Ở biên vật dừng lại để đổi chiều; tốc độ cực đại khi vật qua vị trí cân bằng.",
-    "3": "Quên bình phương: $|a|_{max}$ tỉ lệ với $\\omega^2$ nên $\\omega$ gấp đôi thì nó gấp bốn."
+    "0": "Từ $a=-\\omega^2x$ với $|x|_{max}=A$ suy ra đúng $|a|_{max}=\\omega^2A$.",
+    "1": "Ở biên vật dừng lại để đổi chiều; tốc độ cực đại khi vật qua vị trí cân bằng.",
+    "2": "Quên bình phương: $|a|_{max}$ tỉ lệ với $\\omega^2$ nên $\\omega$ gấp đôi thì nó gấp bốn.",
+    "3": "Đạo hàm $x=A\\cos(\\omega t+\\varphi)$ theo thời gian cho đúng $v=-A\\omega\\sin(\\omega t+\\varphi)$."
    }
   },
   {
@@ -417,7 +417,11 @@
    "question": "Dùng vòng tròn pha bán kính $A$ để giải bài toán thời gian và quãng đường của vật dao động điều hoà chu kì $T$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Điểm M quét góc $2\\pi$ trong thời gian $T$.",
+     "text": "Thời gian ngắn nhất từ li độ $\\frac{A}{2}$ ra biên là $\\frac{T}{12}$.",
+     "answer": false
+    },
+    {
+     "text": "Trong nửa chu kì, xuất phát ở đâu vật cũng đi được quãng đường $2A$.",
      "answer": true
     },
     {
@@ -425,20 +429,16 @@
      "answer": true
     },
     {
-     "text": "Thời gian ngắn nhất từ li độ $\\frac{A}{2}$ ra biên là $\\frac{T}{12}$.",
-     "answer": false
-    },
-    {
-     "text": "Trong nửa chu kì, xuất phát ở đâu vật cũng đi được quãng đường $2A$.",
+     "text": "Điểm M quét góc $2\\pi$ trong thời gian $T$.",
      "answer": true
     }
    ],
    "explanation": "Góc $2\\pi$ ứng $T$, $\\Delta t=\\Delta\\varphi/\\omega$. Từ $\\frac{A}{2}$ ra biên M quét $60^\\circ$ nên mất $\\frac{T}{6}$. Trong $\\frac{T}{2}$ luôn đi $2A$.",
    "distractorNotes": {
-    "0": "Một vòng tròn ứng với một dao động toàn phần, nên góc $2\\pi$ chắc chắn ứng với thời gian $T$.",
-    "1": "M quay đều với tốc độ góc $\\omega$, nên thời gian bằng góc quét chia cho $\\omega$.",
-    "2": "$\\frac{T}{12}$ là đoạn từ O tới $\\frac{A}{2}$; gần biên vật chậm, M quét $60^\\circ$ nên mất $\\frac{T}{6}$.",
-    "3": "Trong nửa chu kì M quét nửa vòng, hình chiếu luôn đi hết $2A$ dù xuất phát ở đâu."
+    "0": "$\\frac{T}{12}$ là đoạn từ O tới $\\frac{A}{2}$; gần biên vật chậm, M quét $60^\\circ$ nên mất $\\frac{T}{6}$.",
+    "1": "Trong nửa chu kì M quét nửa vòng, hình chiếu luôn đi hết $2A$ dù xuất phát ở đâu.",
+    "2": "M quay đều với tốc độ góc $\\omega$, nên thời gian bằng góc quét chia cho $\\omega$.",
+    "3": "Một vòng tròn ứng với một dao động toàn phần, nên góc $2\\pi$ chắc chắn ứng với thời gian $T$."
    }
   },
   {
@@ -452,6 +452,10 @@
    "question": "Biểu diễn dao động điều hoà bằng điểm M chuyển động trên vòng tròn pha, góc pha $\\omega t+\\varphi$ đo từ bán trục $Ox$ dương. Xét các phát biểu:",
    "statements": [
     {
+     "text": "Khi M ở nửa trên vòng tròn thì vận tốc của vật dương.",
+     "answer": false
+    },
+    {
      "text": "Điểm M quay ngược chiều kim đồng hồ.",
      "answer": true
     },
@@ -460,19 +464,15 @@
      "answer": true
     },
     {
-     "text": "Khi M ở nửa trên vòng tròn thì vận tốc của vật dương.",
-     "answer": false
-    },
-    {
      "text": "Khi pha bằng $0$ hoặc $\\pi$ thì vật đi qua vị trí cân bằng.",
      "answer": false
     }
    ],
    "explanation": "M quay ngược chiều kim đồng hồ, hình chiếu là li độ. Nửa trên: $v\\lt 0$; nửa dưới: $v\\gt 0$. Pha $0$, $\\pi$ là ở biên; pha $\\pm\\frac{\\pi}{2}$ mới qua O.",
    "distractorNotes": {
-    "0": "Bài quy ước pha tăng theo chiều ngược kim đồng hồ, nên đây đúng là chiều quay của M.",
-    "1": "Li độ chính là hình chiếu của M lên $Ox$, đó là cơ sở của phương pháp vòng tròn pha.",
-    "2": "Ở nửa trên, M quay sang trái nên hình chiếu chạy về phía âm, tức $v\\lt 0$.",
+    "0": "Ở nửa trên, M quay sang trái nên hình chiếu chạy về phía âm, tức $v\\lt 0$.",
+    "1": "Bài quy ước pha tăng theo chiều ngược kim đồng hồ, nên đây đúng là chiều quay của M.",
+    "2": "Li độ chính là hình chiếu của M lên $Ox$, đó là cơ sở của phương pháp vòng tròn pha.",
     "3": "Pha $0$ hoặc $\\pi$ cho $x=\\pm A$, tức vật ở biên; vật qua O ứng với pha $\\pm\\frac{\\pi}{2}$."
    }
   },
@@ -487,7 +487,7 @@
    "question": "Một vật dao động điều hoà biên độ $A$ đi từ vị trí cân bằng O ra biên $+A$ rồi quay về O trong thời gian $\\Delta t$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Quãng đường vật đi được là $2A$.",
+     "text": "Quãng đường luôn dương, còn độ dời có dấu.",
      "answer": true
     },
     {
@@ -499,16 +499,16 @@
      "answer": false
     },
     {
-     "text": "Quãng đường luôn dương, còn độ dời có dấu.",
+     "text": "Quãng đường vật đi được là $2A$.",
      "answer": true
     }
    ],
    "explanation": "Quãng đường cộng từng đoạn: $A+A=2A$. Độ dời cuối trừ đầu: $0-0=0$, nên vận tốc trung bình bằng 0; $\\frac{2A}{\\Delta t}$ là tốc độ trung bình.",
    "distractorNotes": {
-    "0": "Cộng từng đoạn: đi ra $A$ rồi quay về $A$, tổng quãng đường chắc chắn là $2A$.",
+    "0": "Quãng đường là tổng độ dài các đoạn nên luôn dương, còn độ dời lấy cuối trừ đầu nên có dấu.",
     "1": "Điểm đầu và điểm cuối đều là O nên độ dời bằng 0, không phụ thuộc đường đi.",
     "2": "$\\frac{2A}{\\Delta t}$ là tốc độ trung bình; vận tốc trung bình dùng độ dời bằng 0 nên bằng 0.",
-    "3": "Quãng đường là tổng độ dài các đoạn nên luôn dương, còn độ dời lấy cuối trừ đầu nên có dấu."
+    "3": "Cộng từng đoạn: đi ra $A$ rồi quay về $A$, tổng quãng đường chắc chắn là $2A$."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Viết phương trình $x=A\\cos(\\omega t+\\varphi)$ của một vật khi biết li độ $x_0$ và chiều chuyển động lúc $t=0$, với $\\varphi\\in(-\\pi;\\pi]$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Pha ban đầu thoả mãn $\\cos\\varphi=\\frac{x_0}{A}$.",
-     "answer": true
-    },
-    {
-     "text": "Vận tốc ban đầu là $v_0=-A\\omega\\sin\\varphi$.",
-     "answer": true
-    },
-    {
      "text": "Nếu lúc $t=0$ vật ở biên âm thì $\\varphi=\\pi$.",
+     "answer": true
+    },
+    {
+     "text": "Pha ban đầu thoả mãn $\\cos\\varphi=\\frac{x_0}{A}$.",
      "answer": true
     },
     {
      "text": "Nếu $v_0\\lt 0$ thì phải chọn $\\varphi\\lt 0$.",
      "answer": false
+    },
+    {
+     "text": "Vận tốc ban đầu là $v_0=-A\\omega\\sin\\varphi$.",
+     "answer": true
     }
    ],
    "explanation": "$\\cos\\varphi=x_0/A$ cho hai giá trị $\\pm$; dấu chọn theo $v_0=-A\\omega\\sin\\varphi$: $v_0\\lt 0$ thì $\\varphi\\gt 0$. Biên âm: $\\varphi=\\pi$.",
    "distractorNotes": {
-    "0": "Thay $t=0$ vào $x=A\\cos(\\omega t+\\varphi)$ được ngay $x_0=A\\cos\\varphi$.",
-    "1": "Thay $t=0$ vào $v=-A\\omega\\sin(\\omega t+\\varphi)$ được đúng biểu thức này.",
-    "2": "Biên âm có $x_0=-A$ nên $\\cos\\varphi=-1$; trong khoảng $(-\\pi;\\pi]$ chỉ có $\\varphi=\\pi$.",
-    "3": "Ngược quy tắc: $v_0=-A\\omega\\sin\\varphi\\lt 0$ đòi hỏi $\\sin\\varphi\\gt 0$, tức $\\varphi\\gt 0$."
+    "0": "Biên âm có $x_0=-A$ nên $\\cos\\varphi=-1$; trong khoảng $(-\\pi;\\pi]$ chỉ có $\\varphi=\\pi$.",
+    "1": "Thay $t=0$ vào $x=A\\cos(\\omega t+\\varphi)$ được ngay $x_0=A\\cos\\varphi$.",
+    "2": "Ngược quy tắc: $v_0=-A\\omega\\sin\\varphi\\lt 0$ đòi hỏi $\\sin\\varphi\\gt 0$, tức $\\varphi\\gt 0$.",
+    "3": "Thay $t=0$ vào $v=-A\\omega\\sin(\\omega t+\\varphi)$ được đúng biểu thức này."
    }
   }
  ]

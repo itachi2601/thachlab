@@ -122,16 +122,16 @@
    "question": "Đặt khung dây diện tích $S$ giữa hai cực nam châm chữ U (từ trường đều $B$), rồi quay từ từ khung. Từ thông qua khung được tính bằng $\\Phi = BS\\cos\\alpha$.",
    "statements": [
     {
-     "text": "Từ thông lớn nhất, bằng $BS$, khi mặt khung vuông góc với đường sức từ.",
-     "answer": true
+     "text": "Vì $B$ và $S$ giữ nguyên nên từ thông qua khung không đổi trong lúc quay.",
+     "answer": false
     },
     {
      "text": "Khi pháp tuyến vuông góc với $\\vec{B}$ ($\\alpha = 90^\\circ$) thì từ thông bằng $BS$.",
      "answer": false
     },
     {
-     "text": "Vì $B$ và $S$ giữ nguyên nên từ thông qua khung không đổi trong lúc quay.",
-     "answer": false
+     "text": "Từ thông lớn nhất, bằng $BS$, khi mặt khung vuông góc với đường sức từ.",
+     "answer": true
     },
     {
      "text": "Từ thông qua khung được đo bằng đơn vị vê-be (Wb).",
@@ -140,9 +140,9 @@
    ],
    "explanation": "Mặt khung vuông góc đường sức thì $\\alpha = 0^\\circ$, $\\Phi = BS$ lớn nhất; $\\alpha = 90^\\circ$ thì $\\Phi = 0$. Quay khung làm $\\alpha$ đổi nên $\\Phi$ đổi dù $B$, $S$ không đổi.",
    "distractorNotes": {
-    "0": "Mặt khung vuông góc đường sức nghĩa là pháp tuyến song song $\\vec{B}$, $\\alpha = 0^\\circ$, $\\cos\\alpha = 1$ nên $\\Phi = BS$ lớn nhất thật.",
+    "0": "Quay khung làm $\\alpha$ đổi nên $\\Phi = BS\\cos\\alpha$ đổi dù $B$, $S$ giữ nguyên.",
     "1": "Với $\\alpha = 90^\\circ$ thì $\\cos\\alpha = 0$ nên $\\Phi = 0$; nhầm pháp tuyến vuông góc $\\vec{B}$ với mặt khung vuông góc đường sức.",
-    "2": "Quay khung làm $\\alpha$ đổi nên $\\Phi = BS\\cos\\alpha$ đổi dù $B$, $S$ giữ nguyên.",
+    "2": "Mặt khung vuông góc đường sức nghĩa là pháp tuyến song song $\\vec{B}$, $\\alpha = 0^\\circ$, $\\cos\\alpha = 1$ nên $\\Phi = BS$ lớn nhất thật.",
     "3": "Đơn vị từ thông trong SI đúng là vê-be, $1\\ \\text{Wb} = 1\\ \\text{T}\\cdot\\text{m}^2$, không có cơ sở coi ý này sai."
    }
   },
@@ -203,28 +203,28 @@
    "question": "Nối cuộn dây 600 vòng với điện kế nhạy. Đưa cực Bắc của thanh nam châm vào cuộn dây với các tốc độ khác nhau, giữ yên một lúc, rồi rút ra.",
    "statements": [
     {
-     "text": "Khi đưa nam châm vào và khi rút ra, kim điện kế lệch về hai phía ngược nhau.",
-     "answer": true
-    },
-    {
-     "text": "Đưa nam châm vào càng nhanh thì kim điện kế lệch càng ít.",
-     "answer": false
-    },
-    {
      "text": "Khi giữ yên nam châm trong cuộn dây, kim điện kế chỉ số 0.",
      "answer": true
     },
     {
      "text": "Đổi cực nam châm rồi làm lại thì chiều lệch của kim không thay đổi.",
      "answer": false
+    },
+    {
+     "text": "Khi đưa nam châm vào và khi rút ra, kim điện kế lệch về hai phía ngược nhau.",
+     "answer": true
+    },
+    {
+     "text": "Đưa nam châm vào càng nhanh thì kim điện kế lệch càng ít.",
+     "answer": false
     }
    ],
    "explanation": "Thí nghiệm cho thấy: đưa vào và rút ra cho dòng ngược chiều; đưa nhanh thì từ thông biến thiên nhanh nên kim lệch nhiều hơn; giữ yên thì kim về 0; đổi cực thì đổi chiều lệch.",
    "distractorNotes": {
-    "0": "Đưa vào làm từ thông tăng, rút ra làm từ thông giảm, nên theo Lenz dòng cảm ứng ngược chiều, kim lệch về hai phía.",
-    "1": "Đảo tỉ lệ: đưa nhanh thì từ thông biến thiên nhanh nên dòng mạnh hơn.",
-    "2": "Giữ yên thì từ thông không biến thiên nên không có dòng cảm ứng; chỉ có từ trường thì không đủ làm kim lệch.",
-    "3": "Đổi cực làm đổi chiều từ trường qua cuộn dây nên chiều dòng cảm ứng và chiều lệch kim cũng đổi theo."
+    "0": "Giữ yên thì từ thông không biến thiên nên không có dòng cảm ứng; chỉ có từ trường thì không đủ làm kim lệch.",
+    "1": "Đổi cực làm đổi chiều từ trường qua cuộn dây nên chiều dòng cảm ứng và chiều lệch kim cũng đổi theo.",
+    "2": "Đưa vào làm từ thông tăng, rút ra làm từ thông giảm, nên theo Lenz dòng cảm ứng ngược chiều, kim lệch về hai phía.",
+    "3": "Đảo tỉ lệ: đưa nhanh thì từ thông biến thiên nhanh nên dòng mạnh hơn."
    }
   },
   {
@@ -330,11 +330,7 @@
    "question": "Đẩy thanh nam châm về phía một cuộn dây kín, người làm thí nghiệm thấy nặng tay.",
    "statements": [
     {
-     "text": "Cảm giác nặng tay là do từ trường của dòng cảm ứng chống lại sự tăng từ thông qua cuộn dây.",
-     "answer": true
-    },
-    {
-     "text": "Đẩy nam châm vào càng nhanh thì người đẩy càng thấy nhẹ tay.",
+     "text": "Khi kéo nam châm ra xa, cuộn dây cũng đẩy nam châm ra xa hơn.",
      "answer": false
     },
     {
@@ -342,16 +338,20 @@
      "answer": true
     },
     {
-     "text": "Khi kéo nam châm ra xa, cuộn dây cũng đẩy nam châm ra xa hơn.",
+     "text": "Đẩy nam châm vào càng nhanh thì người đẩy càng thấy nhẹ tay.",
      "answer": false
+    },
+    {
+     "text": "Cảm giác nặng tay là do từ trường của dòng cảm ứng chống lại sự tăng từ thông qua cuộn dây.",
+     "answer": true
     }
    ],
    "explanation": "Mạch luôn cản trở sự thay đổi: đẩy càng nhanh càng nặng tay, công thắng lực cản chuyển thành điện năng. Khi kéo ra, từ thông giảm nên cuộn dây kéo nam châm lại (lùi thì kéo).",
    "distractorNotes": {
-    "0": "Nam châm tiến lại làm từ thông tăng, dòng cảm ứng tạo từ trường cản sự tăng nên tay phải thắng lực đẩy.",
-    "1": "Đảo tỉ lệ: đẩy nhanh thì từ thông biến thiên nhanh, dòng cảm ứng mạnh hơn nên lực cản và cảm giác nặng tay tăng.",
-    "2": "Theo bảo toàn năng lượng, điện năng trong cuộn dây không tự sinh ra mà do công thắng lực cản chuyển thành.",
-    "3": "Kéo ra làm từ thông giảm nên cuộn dây kéo nam châm lại để bù; áp nhầm \"tiến thì đẩy\" cho trường hợp lùi."
+    "0": "Kéo ra làm từ thông giảm nên cuộn dây kéo nam châm lại để bù; áp nhầm \"tiến thì đẩy\" cho trường hợp lùi.",
+    "1": "Theo bảo toàn năng lượng, điện năng trong cuộn dây không tự sinh ra mà do công thắng lực cản chuyển thành.",
+    "2": "Đảo tỉ lệ: đẩy nhanh thì từ thông biến thiên nhanh, dòng cảm ứng mạnh hơn nên lực cản và cảm giác nặng tay tăng.",
+    "3": "Nam châm tiến lại làm từ thông tăng, dòng cảm ứng tạo từ trường cản sự tăng nên tay phải thắng lực đẩy."
    }
   },
   {
@@ -457,7 +457,11 @@
    "question": "Một khung dây kín có điện trở $R$ đặt trong từ trường đều, cảm ứng từ tăng đều theo thời gian làm từ thông qua khung biến thiên.",
    "statements": [
     {
-     "text": "Độ lớn suất điện động cảm ứng trong khung là $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$.",
+     "text": "Cường độ dòng điện cảm ứng trong khung là $i = \\dfrac{|e_c|}{R}$.",
+     "answer": true
+    },
+    {
+     "text": "Dấu trừ trong $e_c = -\\dfrac{\\Delta\\Phi}{\\Delta t}$ thể hiện định luật Lenz.",
      "answer": true
     },
     {
@@ -465,20 +469,16 @@
      "answer": false
     },
     {
-     "text": "Cường độ dòng điện cảm ứng trong khung là $i = \\dfrac{|e_c|}{R}$.",
-     "answer": true
-    },
-    {
-     "text": "Dấu trừ trong $e_c = -\\dfrac{\\Delta\\Phi}{\\Delta t}$ thể hiện định luật Lenz.",
+     "text": "Độ lớn suất điện động cảm ứng trong khung là $|e_c| = \\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$.",
      "answer": true
     }
    ],
    "explanation": "$|e_c|$ tỉ lệ nghịch với $\\Delta t$ nên thời gian gấp đôi thì $|e_c|$ giảm một nửa. Các ý còn lại đúng theo định luật Faraday, $i = |e_c|/R$ và ý nghĩa dấu trừ là định luật Lenz.",
    "distractorNotes": {
-    "0": "Đây chính là định luật Faraday cho khung một vòng: độ lớn $e_c$ bằng tốc độ biến thiên từ thông.",
-    "1": "Đảo tỉ lệ: $|e_c|$ tỉ lệ nghịch với $\\Delta t$ nên thời gian gấp đôi thì $|e_c|$ giảm một nửa.",
-    "2": "Khung kín có điện trở $R$ thì dòng cảm ứng tính theo $i = |e_c|/R$ đúng như bài nêu.",
-    "3": "Dấu trừ biểu thị suất điện động chống lại sự biến thiên từ thông, đúng nội dung định luật Lenz."
+    "0": "Khung kín có điện trở $R$ thì dòng cảm ứng tính theo $i = |e_c|/R$ đúng như bài nêu.",
+    "1": "Dấu trừ biểu thị suất điện động chống lại sự biến thiên từ thông, đúng nội dung định luật Lenz.",
+    "2": "Đảo tỉ lệ: $|e_c|$ tỉ lệ nghịch với $\\Delta t$ nên thời gian gấp đôi thì $|e_c|$ giảm một nửa.",
+    "3": "Đây chính là định luật Faraday cho khung một vòng: độ lớn $e_c$ bằng tốc độ biến thiên từ thông."
    }
   },
   {
@@ -496,12 +496,12 @@
      "answer": true
     },
     {
-     "text": "Giữ nguyên $|e_c|$, dùng cuộn dây có điện trở gấp đôi thì $i$ giảm một nửa.",
-     "answer": true
-    },
-    {
      "text": "Trong công thức, $\\Phi$ là từ thông qua cả cuộn dây chứ không phải qua một vòng.",
      "answer": false
+    },
+    {
+     "text": "Giữ nguyên $|e_c|$, dùng cuộn dây có điện trở gấp đôi thì $i$ giảm một nửa.",
+     "answer": true
     },
     {
      "text": "Từ thông qua mỗi vòng lớn gấp đôi nhưng không đổi theo thời gian thì $|e_c|$ tăng gấp đôi.",
@@ -511,8 +511,8 @@
    "explanation": "$|e_c|$ tỉ lệ với $N$, $i$ tỉ lệ nghịch với $R$. Bài ghi rõ $\\Phi$ là từ thông qua một vòng; từ thông không đổi thì $\\Delta\\Phi = 0$ nên $e_c = 0$ dù từ thông lớn.",
    "distractorNotes": {
     "0": "$|e_c|$ tỉ lệ thuận với $N$ khi tốc độ biến thiên qua mỗi vòng giữ nguyên, nên $N$ gấp đôi thì $|e_c|$ gấp đôi.",
-    "1": "Với $|e_c|$ cố định, $i = |e_c|/R$ tỉ lệ nghịch với $R$, nên $R$ gấp đôi thì $i$ giảm một nửa.",
-    "2": "Nếu $\\Phi$ đã là của cả cuộn thì nhân $N$ thêm lần nữa sẽ tính trùng; bài ghi rõ $\\Phi$ qua một vòng.",
+    "1": "Nếu $\\Phi$ đã là của cả cuộn thì nhân $N$ thêm lần nữa sẽ tính trùng; bài ghi rõ $\\Phi$ qua một vòng.",
+    "2": "Với $|e_c|$ cố định, $i = |e_c|/R$ tỉ lệ nghịch với $R$, nên $R$ gấp đôi thì $i$ giảm một nửa.",
     "3": "Nhầm từ thông lớn với từ thông biến thiên; $\\Phi$ không đổi thì $\\Delta\\Phi = 0$ nên $e_c = 0$ dù $\\Phi$ lớn."
    }
   }

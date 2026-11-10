@@ -1,6 +1,6 @@
 ---
 name: tai-nguyen-bai-hoc
-description: Lập kế hoạch tài nguyên trực quan (hình minh hoạ, hình vẽ kỹ thuật, mô phỏng PhET, video thí nghiệm) cho một bài lý thuyết/bài tập thachlab từ file .tex, đứng ở vị trí học sinh để chọn công cụ phù hợp cho từng chỗ khó hình dung; xuất sẵn prompt cho Gemini, chèn tài nguyên vào bài, rồi chuyển sang dang-bai-hoc-thachlab để đăng. Dùng khi người dùng nói "lập kế hoạch tài nguyên cho bài này", "bài này cần hình/mô phỏng/video gì", "tạo hình cho bài", "thêm mô phỏng PhET", "tìm video thí nghiệm cho bài", hoặc đưa file .tex bài giảng Vật lý/CNC và muốn bài sinh động hơn trước khi đăng.
+description: Lập kế hoạch tài nguyên trực quan (hình, hình kỹ thuật, PhET, video thí nghiệm) cho bài thachlab từ file .tex, xuất prompt Gemini, chèn vào bài rồi chuyển dang-bai-hoc-thachlab. Dùng khi nói "lập kế hoạch tài nguyên cho bài này", "bài này cần hình/mô phỏng/video gì", "tìm video thí nghiệm cho bài".
 ---
 
 # Tài nguyên trực quan cho bài học thachlab

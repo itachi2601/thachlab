@@ -1,7 +1,10 @@
 """Sinh 4 hình SVG cho bài 'Định luật 1 Newton' (lesson 59), thay mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Kèm lớp kiểm hộp nhãn: không vượt viewBox, không chồng nhau (ước lượng bề rộng chữ 0,58·cỡ chữ/ký tự)."""
-import math, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
+import math, pathlib, sys
+
+ROOT = pathlib.Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 PHUT = "15"   # lấy từ lint_do_dai.py
 
@@ -9,12 +12,8 @@ LABELS = []   # (hình, x0, y0, x1, y1, nội dung) để kiểm chồng/vượt
 
 
 def defs(p):
-    """Marker cố định theo đơn vị viewBox (userSpaceOnUse) — nét dày không làm đầu mũi phình."""
-    out = "<defs>"
-    for n, c in (("r", RED), ("b", BLUE), ("o", ORG), ("g", GRN)):
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker: mũi tên vẽ bằng thân + đầu V 30° (chevron của svg_lib skill)."""
+    return ""
 
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
@@ -22,8 +21,10 @@ COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
 
 def arrow(p, c, x1, y1, x2, y2, w=3, dash=""):
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    ww = min(w, 2.8)
+    L = max(6, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1):
@@ -40,7 +41,7 @@ def text(fig, x, y, s, c="currentColor", size=14, anchor="start", weight="600", 
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="11">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def ball(x, y, r=7, c=ORG):
@@ -140,22 +141,26 @@ fig3 = wrap("0 0 440 232", "Búng nhanh tấm bìa: bìa bay ra, đồng xu rơi
             b, "Hình 3. Búng nhanh: bìa bay ra, đồng xu giữ vận tốc ngang bằng 0 nên rơi thẳng vào cốc.")
 
 # ---------------------------------------------------------------- Hình 4: xe buýt phanh gấp
+# Xe chạy sang PHẢI rồi phanh. Người que có gối, hông; thân nghiêng về trước (sang phải) vì giữ vận tốc cũ.
 b = defs("f4")
-b += '<rect x="30" y="60" width="390" height="130" rx="12" fill="none" stroke="currentColor" stroke-width="2.4"/>'
+b += '<rect x="30" y="52" width="390" height="138" rx="12" fill="none" stroke="currentColor" stroke-width="2.4"/>'
 b += line(10, 214, 432, 214, "currentColor", 2.2, "", .7)
 b += '<circle cx="100" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="350" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="2.4"/>'
-FOOT1, FOOT2, HIP, NECK, HEAD = (205, 188), (221, 188), (222, 146), (250, 106), (258, 93)
-st = 'stroke="currentColor" stroke-width="2.6" stroke-linecap="round"'
-b += f'<line x1="{FOOT1[0]}" y1="{FOOT1[1]}" x2="{HIP[0]}" y2="{HIP[1]}" {st}/><line x1="{FOOT2[0]}" y1="{FOOT2[1]}" x2="{HIP[0]}" y2="{HIP[1]}" {st}/>'
+FOOT1, KNEE1, FOOT2, KNEE2 = (196, 188), (206, 158), (214, 188), (220, 158)
+HIP, NECK, SHO, HAND, HEAD = (222, 128), (250, 94), (247, 98), (270, 120), (258, 82)
+st = 'stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"'
+b += f'<polyline points="{FOOT1[0]},{FOOT1[1]} {KNEE1[0]},{KNEE1[1]} {HIP[0]},{HIP[1]}" {st}/>'
+b += f'<polyline points="{FOOT2[0]},{FOOT2[1]} {KNEE2[0]},{KNEE2[1]} {HIP[0]},{HIP[1]}" {st}/>'
+b += f'<line x1="{FOOT1[0]-6}" y1="188" x2="{FOOT1[0]+6}" y2="188" {st}/><line x1="{FOOT2[0]-4}" y1="188" x2="{FOOT2[0]+8}" y2="188" {st}/>'
 b += f'<line x1="{HIP[0]}" y1="{HIP[1]}" x2="{NECK[0]}" y2="{NECK[1]}" {st}/>'
-b += f'<line x1="246" y1="114" x2="272" y2="134" {st}/>'
-b += f'<circle cx="{HEAD[0]}" cy="{HEAD[1]}" r="11" fill="none" {st}/>'
+b += f'<polyline points="{SHO[0]},{SHO[1]} 262,106 {HAND[0]},{HAND[1]}" {st}/>'
+b += f'<circle cx="{HEAD[0]}" cy="{HEAD[1]}" r="11" {st}/>'
 b += arrow("f4", "g", 50, 36, 150, 36, 3)
 b += text(4, 160, 41, "xe phanh: v giảm", GRN, 14, weight="700")
-b += arrow("f4", "b", 213, 182, 150, 182, 3.2)
-b += text(4, 44, 170, "sàn giữ chân lại", BLUE, 14, weight="700")
-b += arrow("f4", "o", 273, 93, 350, 93, 3, "6 4")
-b += text(4, 262, 80, "thân giữ vận tốc cũ", ORG, 14, weight="700")
+b += arrow("f4", "b", 205, 182, 145, 182, 3.2)
+b += text(4, 44, 168, "sàn giữ chân lại", BLUE, 14, weight="700")
+b += arrow("f4", "o", 272, 82, 350, 82, 3, "6 4")
+b += text(4, 272, 70, "thân giữ vận tốc cũ", ORG, 14, weight="700")
 fig4 = wrap("0 0 440 224", "Xe buýt phanh gấp: sàn giữ chân hành khách chậm lại, thân người giữ vận tốc cũ nên chúi về phía trước",
             b, "Hình 4. Phanh gấp: sàn chỉ giữ <em>chân</em> chậm lại cùng xe; phần thân trên (không có gì giữ riêng) có xu hướng giữ vận tốc cũ nên vẫn đi tới. Không có \"lực quán tính\" nào đẩy người.")
 

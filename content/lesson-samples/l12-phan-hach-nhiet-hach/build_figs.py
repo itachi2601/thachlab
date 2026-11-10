@@ -2,6 +2,9 @@
 (Vật lí 12) và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy từ thư mục này: python3 build_figs.py
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 import pathlib
 import sys
@@ -39,104 +42,117 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: nhà máy điện hạt nhân (mở bài)
-b = defs("f1")
-b += text(14, 22, "Nhà máy điện hạt nhân: không đốt gì cả", "currentColor", 13, "start", "700")
-b += text(3, 50, "nhiên liệu + thanh điều khiển", ORG, 12.5, "start", "600")
-for x, nhan in ((3, "Lò phản ứng"), (117, "Bộ trao đổi nhiệt"), (231, "Tua bin"), (345, "Máy phát điện")):
-    b += rect(x, 60, 92, 80, "rgba(148,163,184,.10)")
-    if nhan == "Bộ trao đổi nhiệt":
-        b += text(x + 46, 96, "Bộ trao", "currentColor", 12.5, "middle", "700")
-        b += text(x + 46, 114, "đổi nhiệt", "currentColor", 12.5, "middle", "700")
-    else:
-        b += text(x + 46, 104, nhan, "currentColor", 11.5 if len(nhan) > 11 else 12.5, "middle", "700")
-for x in (95, 209, 323):
-    b += arrow("f1", "r", x, 100, x + 20, 100, 2.4)
-b += text(3, 168, "nhiệt của phản ứng → hơi nước → tua bin → điện năng", ORG, 12.5, "start", "700")
-b += text(3, 192, "nguồn nhiệt nằm trong lòng thanh nhiên liệu, không có ngọn lửa nào", "currentColor", 12)
-fig1 = wrap("0 0 440 210",
-            "Sơ đồ nhà máy điện hạt nhân: lò phản ứng cấp nhiệt cho bộ trao đổi nhiệt, hơi nước chạy tua bin rồi máy phát điện",
-            b, "Hình 1. Nhà máy điện hạt nhân: nhiệt từ thanh urani, không đốt gì.")
+# ------------------------------------------------- Hình 1, 2: ảnh OpenStax (đợt 2, 27/10/2026)
+def anh(file, alt, w, h, cap):
+    return (f'<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-phan-hach-nhiet-hach/{file}" alt="{alt}" '
+            f'loading="lazy" width="{w}" height="{h}"><figcaption>{cap}</figcaption></figure>')
 
-# ------------------------------------------------- Hình 2: phân hạch U-235
-b = defs("f2")
-b += text(14, 22, "Phân hạch U-235", "currentColor", 13, "start", "700")
-b += circ(78, 112, 36, "rgba(248,113,113,.18)", RED)
-b += text(78, 117, "U-235", RED, 13, "middle", "700")
-b += circ(24, 74, 8, BLUE, BLUE)
-b += text(24, 58, "n", BLUE, 13, "middle", "700")
-b += arrow("f2", "b", 36, 80, 50, 92, 2.4)
-b += arrow("f2", "r", 116, 112, 166, 112, 2.6)
-b += text(141, 102, "vỡ ra", RED, 12.5, "middle", "700")
-b += circ(230, 84, 28, "rgba(251,146,60,.18)", ORG)
-b += text(230, 89, "Ba-144", ORG, 12.5, "middle", "700")
-b += circ(222, 160, 26, "rgba(56,189,248,.18)", BLUE)
-b += text(222, 165, "Kr-89", BLUE, 12.5, "middle", "700")
-for ny in (56, 100, 144):
-    b += circ(306, ny, 8, BLUE, BLUE)
-    b += text(320, ny + 4, "n", BLUE, 13, "start", "700")
-b += arrow("f2", "b", 256, 74, 290, 62, 2)
-b += arrow("f2", "b", 246, 148, 290, 140, 2)
-b += text(296, 178, "2–3 nơtron mới", BLUE, 12.5, "start", "700")
-b += text(432, 200, "toả ≈ 173 MeV", ORG, 13, "end", "700")
-fig2 = wrap("0 0 440 210",
-            "Một nơtron chậm bị U-235 hấp thụ, hạt nhân vỡ thành hai mảnh Ba-144 và Kr-89, nhả thêm 2 đến 3 nơtron và toả năng lượng",
-            b, "Hình 2. Nơtron chậm làm U-235 vỡ thành hai mảnh và nhả thêm nơtron.")
+
+fig1 = anh(
+    "hinh-lo-ap-luc-d2.webp",
+    "Sơ đồ nhà máy điện hạt nhân lò nước áp lực: thanh nhiên liệu và thanh điều khiển trong lò, bộ trao đổi nhiệt, tua bin hơi, máy phát điện, bình ngưng",
+    1000, 611,
+    "Hình 1. Nhà máy điện hạt nhân: nhiệt sinh ra trong lò.<br>"
+    "Nhãn: control rods = thanh điều khiển; fuel rods = nhiên liệu; heat exchanger = bộ trao đổi nhiệt; steam turbine = tua bin hơi; condenser = bình ngưng; electric generator = máy phát; primary/secondary system = vòng sơ cấp/thứ cấp.<br>"
+    "<small>Hình: OpenStax, College Physics 2e, Hình 32.23 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
+
+fig2 = anh(
+    "hinh-phan-hach-4-buoc-d2.webp",
+    "Bốn bước phân hạch: nơtron đến gần hạt nhân nặng, hạt nhân biến dạng thắt ở giữa, tách thành hai mảnh mang điện dương đẩy nhau, rồi hai mảnh vỡ bay ra cùng nơtron mới",
+    661, 1000,
+    "Hình 2. Phân hạch: hạt nhân thắt giữa rồi vỡ thành hai mảnh (FF).<br>"
+    "<small>Hình: OpenStax, College Physics 2e, Hình 32.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền
+# Số liệu thật trên trục tuyến tính (16 px / nơtron, gốc y0 = 220):
+#   k = 1,5: 4 -> 6 -> 9 ; k = 1: 4 -> 4 -> 4 ; k = 0,5: 4 -> 2 -> 1
+Y0, KY = 220, 16
+GX = (110, 200, 290)
+F = 14
+
+
+def yv(v):
+    return Y0 - KY * v
+
+
 b = defs("f3")
-b += text(14, 22, "Số nơtron theo từng thế hệ", "currentColor", 13, "start", "700")
-b += text(56, 38, "số nơtron", "currentColor", 12, "middle", "600")
-b += line(56, 190, 420, 190, "currentColor", 2)
-b += line(56, 190, 56, 46, "currentColor", 2)
-b += arrow("f3", "g", 56, 62, 56, 46, 2)
-b += arrow("f3", "g", 400, 190, 418, 190, 2)
-b += text(432, 212, "thế hệ", "currentColor", 12.5, "end", "600")
-for gx, nhan in ((100, "1"), (200, "2"), (300, "3")):
-    b += text(gx, 208, nhan, "currentColor", 12.5, "middle", "600")
-    b += dot(gx, 192, 2, "currentColor")
-b += text(48, 154, "4", "currentColor", 12.5, "end", "600")
-b += f'<polyline fill="none" stroke="{RED}" stroke-width="2.6" points="100,150 200,130 300,100"/>'
-for x, y in ((100, 150), (200, 130), (300, 100)):
-    b += dot(x, y, 4, RED)
-b += f'<polyline fill="none" stroke="{GRN}" stroke-width="2.6" points="100,150 200,150 300,150"/>'
-for x in (200, 300):
-    b += dot(x, 150, 4, GRN)
-b += f'<polyline fill="none" stroke="{BLUE}" stroke-width="2.6" points="100,150 200,166 300,176"/>'
-for x, y in ((200, 166), (300, 176)):
-    b += dot(x, y, 4, BLUE)
-b += text(310, 96, "k &gt; 1: tăng nhanh", RED, 12.5, "start", "700")
-b += text(310, 146, "k = 1: giữ nguyên", GRN, 12.5, "start", "700")
-b += text(310, 180, "k &lt; 1: tắt dần", BLUE, 12.5, "start", "700")
-b += text(56, 232, "mỗi điểm là một thế hệ nơtron; k = tỉ số hai thế hệ liền nhau", "currentColor", 11.5)
-fig3 = wrap("0 0 440 240",
-            "Đồ thị số nơtron theo thế hệ với ba trường hợp: k nhỏ hơn 1 giảm dần, k bằng 1 giữ nguyên, k lớn hơn 1 tăng nhanh",
+b += text(14, 22, "Số nơtron theo từng thế hệ", "currentColor", 15, "start", "700")
+b += line(60, Y0, 300, Y0, "currentColor", 2)
+b += line(60, Y0, 60, 56, "currentColor", 2)
+b += line(60, 56, 60, 48, "currentColor", 2)
+b += chevron(60, 48, 0, -1, "currentColor", 2, 9)
+b += line(300, Y0, 306, Y0, "currentColor", 2)
+b += chevron(306, Y0, 1, 0, "currentColor", 2, 9)
+b += text(70, 54, "số nơtron", "currentColor", F, "start", "600")
+for v in (2, 4, 6, 8):
+    b += line(56, yv(v), 60, yv(v), "currentColor", 1.6)
+    b += line(60, yv(v), 290, yv(v), "currentColor", 1, "3 4", .25)
+    b += text(50, yv(v) + 5, str(v), "currentColor", F, "end", "600")
+b += text(50, Y0 + 5, "0", "currentColor", F, "end", "600")
+for gx, nhan in zip(GX, ("1", "2", "3")):
+    b += line(gx, Y0, gx, Y0 + 4, "currentColor", 1.6)
+    b += text(gx, Y0 + 21, nhan, "currentColor", F, "middle", "600")
+b += text(316, Y0 + 21, "thế hệ", "currentColor", F, "start", "600")
+for col, vals in ((RED, (4, 6, 9)), (GRN, (4, 4, 4)), (BLUE, (4, 2, 1))):
+    pts = " ".join(f"{x},{yv(v)}" for x, v in zip(GX, vals))
+    b += f'<polyline fill="none" stroke="{col}" stroke-width="2.6" points="{pts}"/>'
+    for x, v in zip(GX, vals):
+        b += dot(x, yv(v), 4, col)
+b += dot(GX[0], yv(4), 4.5, "currentColor")
+b += text(316, yv(9) + 5, "k = 1,5", RED, F, "start", "700")
+b += text(316, yv(9) + 23, "tăng nhanh", RED, F, "start", "600")
+b += text(316, yv(4) - 4, "k = 1", GRN, F, "start", "700")
+b += text(316, yv(4) + 14, "giữ nguyên", GRN, F, "start", "600")
+b += text(316, yv(1) - 8, "k = 0,5", BLUE, F, "start", "700")
+b += text(316, yv(1) + 10, "tắt dần", BLUE, F, "start", "600")
+b += text(14, 268, "Mỗi chấm: số nơtron của một thế hệ.", "currentColor", F, "start", "500")
+b += text(14, 288, "k = số nơtron thế hệ sau ÷ thế hệ trước.", "currentColor", F, "start", "500")
+fig3 = wrap("0 0 440 298",
+            "Đồ thị số nơtron theo thế hệ, cùng xuất phát 4 nơtron: k bằng 1,5 tăng 4, 6, 9; k bằng 1 giữ 4; k bằng 0,5 giảm 4, 2, 1",
             b, "Hình 3. Số nơtron theo từng thế hệ: ba kiểu phát triển.")
 
 # ------------------------------------------------- Hình 4: nhiệt hạch và Mặt trời
+GREY = "#94a3b8"
+
+
+def nuc(x, y, kind):
+    c, f, lab = (BLUE, "rgba(56,189,248,.22)", "p") if kind == "p" else (GREY, "rgba(148,163,184,.25)", "n")
+    return circ(x, y, 11, f, c, 1.8) + text(x, y + 5, lab, c, 13, "middle", "700")
+
+
 b = defs("f4")
-b += text(14, 22, "a) Một phản ứng nhiệt hạch", "currentColor", 13, "start", "700")
-for px, py in ((32, 80), (60, 80), (32, 112), (60, 112)):
-    b += circ(px, py, 11, "rgba(56,189,248,.18)", BLUE)
-    b += text(px, py + 4, "p", BLUE, 13, "middle", "700")
-b += arrow("f4", "r", 80, 96, 124, 96, 2.4)
-b += text(106, 84, "kết hợp", RED, 12.5, "middle", "700")
-b += circ(162, 96, 30, "rgba(52,211,153,.18)", GRN)
-b += text(162, 101, "He-4", GRN, 13, "middle", "700")
-b += text(200, 88, '2e<tspan baseline-shift="super" font-size="10">+</tspan>', BLUE, 12.5, "start", "700")
-b += text(200, 108, "2 nơtrinô", BLUE, 12.5, "start", "700")
-b += text(162, 156, "toả 26,7 MeV", ORG, 12.5, "middle", "700")
-b += text(240, 22, "b) Lò nhiệt hạch tự nhiên", "currentColor", 13, "start", "700")
-b += circ(330, 105, 48, "rgba(251,146,60,.16)", ORG)
+b += text(14, 22, "a) Phản ứng nhiệt hạch", "currentColor", 15, "start", "700")
+for px, py in ((24, 84), (50, 84), (24, 110), (50, 110)):
+    b += nuc(px, py, "p")
+b += arrow("f4", "r", 68, 97, 108, 97, 2.4)
+b += text(88, 62, "kết hợp", RED, 14, "middle", "700")
+b += circ(146, 97, 31, "rgba(52,211,153,.12)", GRN, 2)
+for (dx, dy), k in (((-12, -12), "p"), ((12, -12), "n"), ((-12, 12), "n"), ((12, 12), "p")):
+    b += nuc(146 + dx, 97 + dy, k)
+b += text(146, 150, "He-4 = 2p + 2n", GRN, 14, "middle", "700")
+b += arrow("f4", "b", 179, 84, 198, 70, 2.2)
+b += text(202, 74, '2e<tspan baseline-shift="super" font-size="11">+</tspan>', BLUE, 14, "start", "700")
+b += arrow("f4", "b", 179, 110, 198, 124, 2.2)
+b += text(202, 130, "2 nơtrinô", BLUE, 14, "start", "700")
+b += text(14, 182, "toả 26,7 MeV", ORG, 14, "start", "700")
+b += text(14, 202, "điện tích: 4 = 2 (He) + 2 (e⁺)", "currentColor", 14, "start", "600")
+SX, SY, SR = 366, 100, 42
+b += text(SX, 22, "b) Mặt trời", "currentColor", 15, "middle", "700")
+b += circ(SX, SY, SR, "rgba(251,146,60,.16)", ORG)
 for k in range(8):
-    a = k * math.pi / 4
-    b += line(round(330 + 52 * math.cos(a), 1), round(105 + 52 * math.sin(a), 1),
-              round(330 + 62 * math.cos(a), 1), round(105 + 62 * math.sin(a), 1), ORG, 2.4)
-b += text(330, 111, "Mặt trời", ORG, 13, "middle", "700")
-b += text(330, 186, "lõi ~15 triệu K", "currentColor", 12, "middle")
-b += text(330, 202, "giam bằng lực hấp dẫn", "currentColor", 12, "middle")
-fig4 = wrap("0 0 440 216",
-            "Nhiệt hạch: bốn prôtôn kết hợp thành hạt nhân heli và toả năng lượng; Mặt trời là lò nhiệt hạch tự nhiên",
+    a = k * math.pi / 4 + math.pi / 8
+    b += line(round(SX + 47 * math.cos(a), 1), round(SY + 47 * math.sin(a), 1),
+              round(SX + 56 * math.cos(a), 1), round(SY + 56 * math.sin(a), 1), ORG, 2.4)
+b += circ(SX, SY, 16, "rgba(251,146,60,.40)", ORG, 1.8)
+b += text(SX, SY + 5, "lõi", "currentColor", 13, "middle", "700")
+for k in range(4):
+    a = k * math.pi / 2 + math.pi / 4
+    b += arrow("f4", "r", round(SX + 39 * math.cos(a), 1), round(SY + 39 * math.sin(a), 1),
+               round(SX + 21 * math.cos(a), 1), round(SY + 21 * math.sin(a), 1), 2.2)
+b += text(SX, 182, "lõi ~15 triệu K", "currentColor", 14, "middle", "600")
+b += text(SX, 202, "hấp dẫn ép vào lõi", RED, 14, "middle", "700")
+fig4 = wrap("0 0 440 212",
+            "a) Bốn prôtôn kết hợp thành hạt nhân heli gồm 2 prôtôn và 2 nơtron, phát ra 2 pôzitron và 2 nơtrinô, toả 26,7 MeV. b) Mặt trời: lõi khoảng 15 triệu K, lực hấp dẫn ép khối khí vào lõi",
             b, "Hình 4. Nhiệt hạch: hạt nhân nhẹ kết hợp lại; Mặt trời là lò tự nhiên.")
 
 # ------------------------------------------------- thay vào theory.html
@@ -144,5 +160,5 @@ src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")

@@ -329,28 +329,28 @@
    "question": "Xét hai phản ứng: phân hạch ${}^{235}_{92}\\text{U}$ khi hấp thụ nơtron chậm và nhiệt hạch ${}^{2}_{1}\\text{H} + {}^{3}_{1}\\text{H} \\to {}^{4}_{2}\\text{He} + {}^{1}_{0}\\text{n}$. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Phân hạch là hạt nhân nặng vỡ ra, nhiệt hạch là các hạt nhân nhẹ kết hợp lại.",
-     "answer": true
-    },
-    {
-     "text": "Phân hạch toả năng lượng, còn nhiệt hạch thu năng lượng.",
-     "answer": false
-    },
-    {
      "text": "Phân hạch được mồi bằng nơtron chậm, còn nhiệt hạch cần nhiệt độ cỡ $10^8$–$10^9$ K.",
      "answer": true
     },
     {
      "text": "Mặt trời và các sao là những lò phân hạch tự nhiên.",
      "answer": false
+    },
+    {
+     "text": "Phân hạch là hạt nhân nặng vỡ ra, nhiệt hạch là các hạt nhân nhẹ kết hợp lại.",
+     "answer": true
+    },
+    {
+     "text": "Phân hạch toả năng lượng, còn nhiệt hạch thu năng lượng.",
+     "answer": false
     }
    ],
    "explanation": "Bảng ở bẫy 3: phân hạch là vỡ ra, mồi bằng nơtron chậm; nhiệt hạch là kết hợp, cần nhiệt độ rất cao, xảy ra trong Mặt trời, các sao. Cả hai đều toả năng lượng.",
    "distractorNotes": {
-    "0": "Đây đúng là định nghĩa của hai phản ứng trong bài: một bên vỡ ra, một bên kết hợp, nên không thể coi là sai.",
-    "1": "Cả hai phản ứng đều toả năng lượng vì đi về phía hạt nhân bền hơn; nhiệt hạch không thu năng lượng.",
-    "2": "Bài nêu rõ phân hạch mồi bằng nơtron chậm, nhiệt hạch cần $10^8$–$10^9$ K, nên không thể coi là sai.",
-    "3": "Mặt trời và các sao kết hợp hiđrô thành heli, tức là lò nhiệt hạch tự nhiên chứ không phải lò phân hạch."
+    "0": "Bài nêu rõ phân hạch mồi bằng nơtron chậm, nhiệt hạch cần $10^8$–$10^9$ K, nên không thể coi là sai.",
+    "1": "Mặt trời và các sao kết hợp hiđrô thành heli, tức là lò nhiệt hạch tự nhiên chứ không phải lò phân hạch.",
+    "2": "Đây đúng là định nghĩa của hai phản ứng trong bài: một bên vỡ ra, một bên kết hợp, nên không thể coi là sai.",
+    "3": "Cả hai phản ứng đều toả năng lượng vì đi về phía hạt nhân bền hơn; nhiệt hạch không thu năng lượng."
    }
   },
   {
@@ -364,28 +364,28 @@
    "question": "Một nhà máy điện hạt nhân gồm lò phản ứng (thanh nhiên liệu urani, thanh điều khiển, chất tải nhiệt), bộ trao đổi nhiệt, tua bin và máy phát điện. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Nhiệt trong lò sinh ra do urani cháy trong oxi.",
+     "text": "Rút hết thanh điều khiển ra khỏi lò thì $k$ giảm xuống dưới 1 và lò tắt.",
      "answer": false
     },
     {
-     "text": "Chất tải nhiệt mang nhiệt sang bộ trao đổi nhiệt để đun nước thành hơi làm quay tua bin.",
-     "answer": true
+     "text": "Nhiệt trong lò sinh ra do urani cháy trong oxi.",
+     "answer": false
     },
     {
      "text": "Khi lò chạy ổn định với công suất không đổi thì hệ số nhân nơtron $k = 1$.",
      "answer": true
     },
     {
-     "text": "Rút hết thanh điều khiển ra khỏi lò thì $k$ giảm xuống dưới 1 và lò tắt.",
-     "answer": false
+     "text": "Chất tải nhiệt mang nhiệt sang bộ trao đổi nhiệt để đun nước thành hơi làm quay tua bin.",
+     "answer": true
     }
    ],
    "explanation": "Nhiệt đến từ phân hạch hạt nhân, không có ngọn lửa. Thanh điều khiển hấp thụ nơtron giữ $k = 1$; rút ra thì $k$ vượt trên 1, công suất tăng vọt.",
    "distractorNotes": {
-    "0": "Nhiệt trong lò đến từ phân hạch hạt nhân, không phải phản ứng hoá học đốt cháy urani trong oxi.",
-    "1": "Chuỗi chất tải nhiệt, bộ trao đổi nhiệt, hơi nước, tua bin đúng như bài mô tả, nên không thể coi là sai.",
+    "0": "Rút thanh điều khiển ra thì nơtron bị hấp thụ ít hơn, nên $k$ tăng vượt 1 chứ không giảm.",
+    "1": "Nhiệt trong lò đến từ phân hạch hạt nhân, không phải phản ứng hoá học đốt cháy urani trong oxi.",
     "2": "$k = 1$ nghĩa là số nơtron mỗi thế hệ không đổi, nên công suất không đổi; không thể coi là sai.",
-    "3": "Rút thanh điều khiển ra thì nơtron bị hấp thụ ít hơn, nên $k$ tăng vượt 1 chứ không giảm."
+    "3": "Chuỗi chất tải nhiệt, bộ trao đổi nhiệt, hơi nước, tua bin đúng như bài mô tả, nên không thể coi là sai."
    }
   },
   {
@@ -403,12 +403,12 @@
      "answer": true
     },
     {
-     "text": "Tổng điện tích (tính theo $Z$) ở hai vế đều bằng 2.",
-     "answer": true
-    },
-    {
      "text": "Vì số nuclôn được bảo toàn nên tổng khối lượng nghỉ hai vế bằng nhau.",
      "answer": false
+    },
+    {
+     "text": "Tổng điện tích (tính theo $Z$) ở hai vế đều bằng 2.",
+     "answer": true
     },
     {
      "text": "Phản ứng không bảo toàn năng lượng toàn phần vì có năng lượng toả ra.",
@@ -418,8 +418,8 @@
    "explanation": "$2 + 3 = 4 + 1$ và $1 + 1 = 2 + 0$. Khối lượng nghỉ không bảo toàn, phần hụt chuyển thành động năng các hạt và bức xạ, nên năng lượng toàn phần vẫn bảo toàn.",
    "distractorNotes": {
     "0": "Vế trái $2 + 3 = 5$ và vế phải $4 + 1 = 5$, khớp bảo toàn số nuclôn nên không thể coi là sai.",
-    "1": "Vế trái $1 + 1 = 2$ và vế phải $2 + 0 = 2$ vì nơtron không mang điện, nên không thể coi là sai.",
-    "2": "Bảo toàn số nuclôn không kéo theo bảo toàn khối lượng nghỉ; phần khối lượng hụt chính là năng lượng toả ra.",
+    "1": "Bảo toàn số nuclôn không kéo theo bảo toàn khối lượng nghỉ; phần khối lượng hụt chính là năng lượng toả ra.",
+    "2": "Vế trái $1 + 1 = 2$ và vế phải $2 + 0 = 2$ vì nơtron không mang điện, nên không thể coi là sai.",
     "3": "Năng lượng toả ra lấy từ phần khối lượng nghỉ hụt, nên năng lượng toàn phần vẫn được bảo toàn."
    }
   },
@@ -434,28 +434,28 @@
    "question": "Năng lượng của phản ứng $A + B \\to C + D$ được tính bằng $W = (m_A + m_B - m_C - m_D)c^2$. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Nếu $W \\gt 0$ thì phản ứng toả năng lượng.",
-     "answer": true
+     "text": "Phân hạch U-235 có $W \\lt 0$ vì hạt nhân nặng bị vỡ ra.",
+     "answer": false
     },
     {
-     "text": "Nếu tổng khối lượng nghỉ các hạt sau lớn hơn các hạt trước thì phản ứng toả năng lượng.",
-     "answer": false
+     "text": "Nếu $W \\gt 0$ thì phản ứng toả năng lượng.",
+     "answer": true
     },
     {
      "text": "Nếu $W \\lt 0$ thì phản ứng thu năng lượng, phải cấp thêm năng lượng cho phản ứng.",
      "answer": true
     },
     {
-     "text": "Phân hạch U-235 có $W \\lt 0$ vì hạt nhân nặng bị vỡ ra.",
+     "text": "Nếu tổng khối lượng nghỉ các hạt sau lớn hơn các hạt trước thì phản ứng toả năng lượng.",
      "answer": false
     }
    ],
    "explanation": "Trước nặng hơn thì toả ($W \\gt 0$); sau nặng hơn thì thu ($W \\lt 0$). Phân hạch U-235 làm tổng khối lượng nghỉ giảm nên toả năng lượng.",
    "distractorNotes": {
-    "0": "$W \\gt 0$ nghĩa là khối lượng nghỉ giảm, phần hụt biến thành năng lượng toả ra, nên không thể coi là sai.",
-    "1": "Khối lượng sau lớn hơn thì $W \\lt 0$, phản ứng thu năng lượng; cho là toả là đọc ngược dấu.",
+    "0": "Hai mảnh vỡ bền hơn nên tổng khối lượng nghỉ giảm; phân hạch U-235 có $W \\gt 0$ và toả năng lượng.",
+    "1": "$W \\gt 0$ nghĩa là khối lượng nghỉ giảm, phần hụt biến thành năng lượng toả ra, nên không thể coi là sai.",
     "2": "Khối lượng nghỉ tăng phải lấy từ năng lượng cấp vào, đúng nghĩa phản ứng thu, nên không thể coi là sai.",
-    "3": "Hai mảnh vỡ bền hơn nên tổng khối lượng nghỉ giảm; phân hạch U-235 có $W \\gt 0$ và toả năng lượng."
+    "3": "Khối lượng sau lớn hơn thì $W \\lt 0$, phản ứng thu năng lượng; cho là toả là đọc ngược dấu."
    }
   },
   {
@@ -504,8 +504,8 @@
    "question": "Để tính năng lượng toả ra của phản ứng ${}^{235}_{92}\\text{U} + {}^{1}_{0}\\text{n} \\to {}^{144}_{56}\\text{Ba} + {}^{89}_{36}\\text{Kr} + 3\\,{}^{1}_{0}\\text{n}$, một học sinh dùng khối lượng các hạt đo bằng u. Mỗi phát biểu sau đúng hay sai?",
    "statements": [
     {
-     "text": "Tổng khối lượng các hạt sau phản ứng là $m_{\\text{Ba}} + m_{\\text{Kr}} + 3m_{\\text{n}}$.",
-     "answer": true
+     "text": "Muốn đổi $W$ từ MeV sang jun thì chia cho $1{,}6\\cdot10^{-13}$.",
+     "answer": false
     },
     {
      "text": "Độ hụt khối của phản ứng chính là độ hụt khối của hạt nhân U-235.",
@@ -516,16 +516,16 @@
      "answer": true
     },
     {
-     "text": "Muốn đổi $W$ từ MeV sang jun thì chia cho $1{,}6\\cdot10^{-13}$.",
-     "answer": false
+     "text": "Tổng khối lượng các hạt sau phản ứng là $m_{\\text{Ba}} + m_{\\text{Kr}} + 3m_{\\text{n}}$.",
+     "answer": true
     }
    ],
    "explanation": "$\\Delta m = \\sum m_{\\text{trước}} - \\sum m_{\\text{sau}}$, cộng đủ cả nơtron, khác độ hụt khối một hạt nhân. Dùng $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$ và nhân $1{,}6\\cdot10^{-13}$ để đổi MeV ra J.",
    "distractorNotes": {
-    "0": "Vế sau có nhiều hạt thì phải cộng đủ, kể cả ba nơtron sinh ra, nên không thể coi là sai.",
+    "0": "Vì $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}$ J, đổi MeV ra jun phải nhân với hệ số này, không phải chia.",
     "1": "Độ hụt khối của phản ứng là chênh khối lượng giữa hai vế, khác độ hụt khối của riêng một hạt nhân.",
     "2": "Thay $1\\ \\text{u} = 931{,}5\\ \\text{MeV}/c^2$ vào $W = \\Delta m\\,c^2$ thì $c^2$ triệt tiêu, nên không thể coi là sai.",
-    "3": "Vì $1\\ \\text{MeV} = 1{,}6\\cdot10^{-13}$ J, đổi MeV ra jun phải nhân với hệ số này, không phải chia."
+    "3": "Vế sau có nhiều hạt thì phải cộng đủ, kể cả ba nơtron sinh ra, nên không thể coi là sai."
    }
   }
  ]

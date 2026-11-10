@@ -329,7 +329,7 @@
    "question": "Ba chai nhựa giống hệt nhau chứa lượng nước khác nhau. Thổi ngang miệng từng chai, mỗi chai hú lên một nốt khác nhau. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Thổi ngang miệng chai làm cột không khí trong chai dao động.",
+     "text": "Cột không khí trong chai càng ngắn thì tần số cộng hưởng càng lớn.",
      "answer": true
     },
     {
@@ -337,7 +337,7 @@
      "answer": false
     },
     {
-     "text": "Cột không khí trong chai càng ngắn thì tần số cộng hưởng càng lớn.",
+     "text": "Thổi ngang miệng chai làm cột không khí trong chai dao động.",
      "answer": true
     },
     {
@@ -347,9 +347,9 @@
    ],
    "explanation": "Cột khí trên mặt nước rung; cột càng ngắn tần số càng lớn nên nghe càng cao. Khác biệt chính là độ cao, không phải khối lượng hay độ to.",
    "distractorNotes": {
-    "0": "Thân chai không bị gõ; chính luồng hơi làm cột không khí rung nên ý này đúng.",
+    "0": "Cột khí ngắn thì bước sóng cộng hưởng ngắn, tần số lớn, nên ý này đúng.",
     "1": "Khối lượng nước không quyết định cao độ; chai nhiều nước có cột khí ngắn nên kêu cao hơn.",
-    "2": "Cột khí ngắn thì bước sóng cộng hưởng ngắn, tần số lớn, nên ý này đúng.",
+    "2": "Thân chai không bị gõ; chính luồng hơi làm cột không khí rung nên ý này đúng.",
     "3": "Mỗi chai một nốt khác nghĩa là khác tần số, tức khác độ cao."
    }
   },
@@ -368,24 +368,24 @@
      "answer": true
     },
     {
+     "text": "Hai âm cùng tần số cơ bản thì chắc chắn có cùng âm sắc.",
+     "answer": false
+    },
+    {
      "text": "Âm có tần số càng lớn thì nghe càng trầm.",
      "answer": false
     },
     {
      "text": "Nhạc cụ phát âm cơ bản tần số $f_0$ kèm các hoạ âm $2f_0$, $3f_0$, ... với tỉ lệ riêng.",
      "answer": true
-    },
-    {
-     "text": "Hai âm cùng tần số cơ bản thì chắc chắn có cùng âm sắc.",
-     "answer": false
     }
    ],
    "explanation": "Tần số lớn nghe thanh, cao. Âm sắc phụ thuộc dạng đồ thị dao động, tức tỉ lệ các hoạ âm, nên cùng $f_0$ vẫn có thể khác âm sắc.",
    "distractorNotes": {
     "0": "Bài nêu đúng giới hạn nghe của tai từ khoảng $16\\ \\text{Hz}$ đến $20\\,000\\ \\text{Hz}$.",
-    "1": "Đảo quan hệ: tần số lớn thì nghe thanh, cao chứ không trầm.",
-    "2": "Đây đúng là cách bài mô tả âm của nhạc cụ gồm âm cơ bản và các hoạ âm.",
-    "3": "Tỉ lệ hoạ âm khác nhau làm đồ thị khác, nên cùng $f_0$ vẫn có thể khác âm sắc."
+    "1": "Tỉ lệ hoạ âm khác nhau làm đồ thị khác, nên cùng $f_0$ vẫn có thể khác âm sắc.",
+    "2": "Đảo quan hệ: tần số lớn thì nghe thanh, cao chứ không trầm.",
+    "3": "Đây đúng là cách bài mô tả âm của nhạc cụ gồm âm cơ bản và các hoạ âm."
    }
   },
   {
@@ -399,12 +399,12 @@
    "question": "Một nhóm đo tốc độ truyền âm bằng ống trong suốt có thước, đáy nối ống mềm với bình nước, loa nối máy phát tần số đặt sát miệng ống. Xét các phát biểu về cách tiến hành:",
    "statements": [
     {
-     "text": "Hạ từ từ bình nước và dừng lại ở chỗ âm nghe to nhất.",
-     "answer": true
-    },
-    {
      "text": "Chiều dài cột khí được đọc tại mép trên của bình nước.",
      "answer": false
+    },
+    {
+     "text": "Hạ từ từ bình nước và dừng lại ở chỗ âm nghe to nhất.",
+     "answer": true
     },
     {
      "text": "Mặt nước trong ống và trong bình luôn ở cùng một độ cao.",
@@ -417,8 +417,8 @@
    ],
    "explanation": "Phải hạ chậm, đọc $l$ ngay tại mặt nước trong ống với mắt ngang mặt nước; bình và ống nối thông nhau nên cùng mực.",
    "distractorNotes": {
-    "0": "Vị trí nghe to nhất chính là vị trí cộng hưởng cần tìm, nên ý này đúng.",
-    "1": "Đọc ở mép bình là nhầm mốc; phải đọc ngay tại mặt nước trong ống.",
+    "0": "Đọc ở mép bình là nhầm mốc; phải đọc ngay tại mặt nước trong ống.",
+    "1": "Vị trí nghe to nhất chính là vị trí cộng hưởng cần tìm, nên ý này đúng.",
     "2": "Ống và bình nối thông nhau nên mực nước luôn bằng nhau, ý này đúng.",
     "3": "Hạ nước nhanh dễ bỏ qua chỗ to nhất, đây là nguồn sai số thao tác."
    }
@@ -438,12 +438,12 @@
      "answer": true
     },
     {
-     "text": "Trong không khí, $v \\approx 331 + 0{,}6\\,t$ (m/s) với $t$ tính bằng °C.",
-     "answer": true
-    },
-    {
      "text": "Ở $30\\ ^\\circ\\text{C}$, âm truyền chậm hơn ở $20\\ ^\\circ\\text{C}$.",
      "answer": false
+    },
+    {
+     "text": "Trong không khí, $v \\approx 331 + 0{,}6\\,t$ (m/s) với $t$ tính bằng °C.",
+     "answer": true
     },
     {
      "text": "Tăng tần số máy phát lên gấp đôi thì $v$ tăng gấp đôi.",
@@ -453,8 +453,8 @@
    "explanation": "Theo $v \\approx 331 + 0{,}6\\,t$, nhiệt độ cao thì $v$ lớn hơn. Đổi $f$ chỉ làm $\\lambda$ đổi, $v$ giữ nguyên.",
    "distractorNotes": {
     "0": "Trong một chu kì sóng đi được một bước sóng, nên $v = \\lambda f$ là đúng.",
-    "1": "Đây là công thức gần đúng bài đưa ra cho không khí, nên ý này đúng.",
-    "2": "Hệ số $0{,}6$ dương nên nhiệt độ tăng thì $v$ tăng, âm truyền nhanh hơn.",
+    "1": "Hệ số $0{,}6$ dương nên nhiệt độ tăng thì $v$ tăng, âm truyền nhanh hơn.",
+    "2": "Đây là công thức gần đúng bài đưa ra cho không khí, nên ý này đúng.",
     "3": "$v$ do môi trường quyết định; $f$ gấp đôi thì $\\lambda$ giảm một nửa, $v$ không đổi."
    }
   },
@@ -469,6 +469,10 @@
    "question": "Hai bạn cùng đo được $l_1$, $l_2$ ở hai lần nghe to đầu tiên trong ống cộng hưởng. An tính $\\lambda = 4l_1$, Bình tính $\\lambda = 2(l_2 - l_1)$. Xét các phát biểu:",
    "statements": [
     {
+     "text": "Hiệu $l_2 - l_1$ bằng đúng một bước sóng.",
+     "answer": false
+    },
+    {
      "text": "Ở lần nghe to đầu tiên, $l_1 + e = \\dfrac{\\lambda}{4}$.",
      "answer": true
     },
@@ -479,18 +483,14 @@
     {
      "text": "Chiều dài $l_1$ bằng đúng một phần tư bước sóng.",
      "answer": false
-    },
-    {
-     "text": "Hiệu $l_2 - l_1$ bằng đúng một bước sóng.",
-     "answer": false
     }
    ],
    "explanation": "$l_1 = \\lambda/4 - e$ nên $4l_1$ thiếu $4e$. Trừ hai điều kiện cộng hưởng được $l_2 - l_1 = \\lambda/2$.",
    "distractorNotes": {
-    "0": "Lần đầu ứng với $k = 0$ trong $l + e = (2k+1)\\lambda/4$, nên ý này đúng.",
-    "1": "$4l_1 = \\lambda - 4e$ nên luôn nhỏ hơn $\\lambda$ thật, ý này đúng.",
-    "2": "Bụng nằm cao hơn miệng ống một đoạn $e$, nên $l_1$ ngắn hơn $\\lambda/4$.",
-    "3": "Hai lần to liên tiếp cách nhau nửa bước sóng, không phải một bước sóng."
+    "0": "Hai lần to liên tiếp cách nhau nửa bước sóng, không phải một bước sóng.",
+    "1": "Lần đầu ứng với $k = 0$ trong $l + e = (2k+1)\\lambda/4$, nên ý này đúng.",
+    "2": "$4l_1 = \\lambda - 4e$ nên luôn nhỏ hơn $\\lambda$ thật, ý này đúng.",
+    "3": "Bụng nằm cao hơn miệng ống một đoạn $e$, nên $l_1$ ngắn hơn $\\lambda/4$."
    }
   },
   {
@@ -504,10 +504,6 @@
    "question": "Sau 5 lần đo bằng ống cộng hưởng, một nhóm xử lí số liệu để viết kết quả tốc độ truyền âm và so với giá trị tham khảo. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Kết quả được trình bày dưới dạng $v = \\bar v \\pm \\Delta v$.",
-     "answer": true
-    },
-    {
      "text": "Sai số tỉ đối của $v$ bằng $\\dfrac{\\Delta \\lambda}{\\bar\\lambda} - \\dfrac{\\Delta f}{\\bar f}$.",
      "answer": false
     },
@@ -516,15 +512,19 @@
      "answer": false
     },
     {
+     "text": "Kết quả được trình bày dưới dạng $v = \\bar v \\pm \\Delta v$.",
+     "answer": true
+    },
+    {
      "text": "Khi tính $v$ ra m/s, bước sóng đo bằng cm phải đổi ra mét trước.",
      "answer": true
     }
    ],
    "explanation": "$\\dfrac{\\Delta v}{\\bar v} = \\dfrac{\\Delta\\lambda}{\\bar\\lambda} + \\dfrac{\\Delta f}{\\bar f}$; phép đo phù hợp khi giá trị tham khảo nằm trong khoảng $\\bar v \\pm \\Delta v$.",
    "distractorNotes": {
-    "0": "Bài yêu cầu viết kết quả kèm sai số dạng $\\bar v \\pm \\Delta v$, nên ý này đúng.",
-    "1": "Với tích $\\lambda f$, các sai số tỉ đối cộng lại chứ không trừ nhau.",
-    "2": "Mọi phép đo đều có sai số; chỉ cần giá trị tham khảo nằm trong khoảng $\\bar v \\pm \\Delta v$.",
+    "0": "Với tích $\\lambda f$, các sai số tỉ đối cộng lại chứ không trừ nhau.",
+    "1": "Mọi phép đo đều có sai số; chỉ cần giá trị tham khảo nằm trong khoảng $\\bar v \\pm \\Delta v$.",
+    "2": "Bài yêu cầu viết kết quả kèm sai số dạng $\\bar v \\pm \\Delta v$, nên ý này đúng.",
     "3": "Chiều dài cột khí đo bằng cm, muốn $v$ ra m/s thì phải đổi $\\lambda$ ra mét."
    }
   }

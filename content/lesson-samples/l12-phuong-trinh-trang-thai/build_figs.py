@@ -2,6 +2,9 @@
 và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy từ thư mục này: python3 build_figs.py
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 import pathlib
 import sys
@@ -30,36 +33,14 @@ def wrap(vb, label, body, cap, exp=""):
             f'<figcaption>{cap}</figcaption></figure>')
 
 
-# ------------------------------------------------- Hình 1: bình kín để ngoài nắng
-b = defs("f1")
-b += text(14, 24, "Bình kín để ngoài nắng", "currentColor", 13, "start", "700")
-for x, ten in ((68, "sáng"), (372, "trưa")):
-    b += rect(x - 32, 68, 64, 92, "rgba(148,163,184,.10)", "currentColor", 2.5, 10)
-    b += f'<circle cx="{x}" cy="54" r="17" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2"/>'
-    for a in (-30, 0, 30):                       # vạch chia áp kế để đọc được góc kim
-        rad = math.radians(a)
-        dx, dy = math.sin(rad), -math.cos(rad)
-        b += line(x + 13 * dx, 54 + 13 * dy, x + 17 * dx, 54 + 17 * dy, "currentColor", 1.2, "", .45)
-# 5,0 bar (sáng) → 5,3 bar (trưa): kim nhích lên ~16°; kim mờ = vị trí buổi sáng
-b += line(68, 54, 78, 39, RED, 2.2)
-b += line(372, 54, 382, 39, RED, 1.6, "2 2", .5)
-b += line(372, 54, 377, 37, RED, 2.2)
-b += text(436, 22, "kim: 5,0 → 5,3 bar", ORG, 11, "end", "700")
-b += f'<circle cx="220" cy="48" r="14" fill="{ORG}" opacity="0.9"/>'
-for dx, dy in ((0, -24), (17, -17), (24, 0), (17, 17), (0, 24), (-17, 17), (-24, 0), (-17, -17)):
-    b += line(220 + dx * 0.75, 48 + dy * 0.75, 220 + dx, 48 + dy, ORG, 2.2)
-b += text(220, 96, "trời nắng", ORG, 12, "middle", "700")
-b += arrow("f1", "o", 112, 112, 328, 112, 2.6)
-b += text(220, 134, "nhiệt độ tăng, áp suất tăng", ORG, 12, "middle", "700")
-b += text(68, 180, "sáng", "currentColor", 12, "middle", "700")
-b += text(68, 198, "27 °C · 5,0 bar", RED, 12, "middle", "700")
-b += text(372, 180, "trưa", "currentColor", 12, "middle", "700")
-b += text(372, 198, "47 °C · 5,3 bar", RED, 12, "middle", "700")
-b += text(220, 216, "thể tích bình không đổi", GRN, 11, "middle", "700")
-fig1 = wrap("0 0 440 228",
-            "Bình khí nén mini kín để ngoài nắng: nhiệt độ tăng từ 27 lên 47 độ C làm áp suất tăng từ 5,0 lên 5,3 bar, kim áp kế nhích lên, thể tích bình không đổi",
-            b, "Hình 1. Bình kín, lượng khí không đổi, thể tích không đổi: chỉ nhiệt độ tăng mà kim áp kế đã nhích từ 5,0 lên 5,3 bar — đó là quá trình đẳng tích.",
-            exp="tn-l12-pttrangthai-03")
+# ------------------------------------------------- Hình 1: ảnh OpenStax (đợt 2, 27/10/2026) - lốp xe, tăng nhiệt độ
+fig1 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-pttrangthai-03">'
+        '<img src="/assets/openstax/l12-phuong-trinh-trang-thai/hinh-lop-tang-nhiet-do.webp" '
+        'alt="Hai lốp xe nối với áp kế: sau khi nhiệt độ tăng, kim áp kế quay sang số lớn hơn, lốp không phồng thêm" '
+        'loading="lazy" width="712" height="540">'
+        '<figcaption>Hình 1. Nhiệt độ tăng, thể tích không đổi: kim lên.<br>Nhãn: increase temperature = tăng nhiệt độ.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 13.19c — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- Hình 2: bóng bàn bẹp phồng lại
 b = defs("f2")
@@ -79,7 +60,7 @@ b += f'<circle cx="315" cy="128" r="30" fill="rgba(52,211,153,.18)" stroke="{GRN
 b += text(315, 205, "vỏ phồng trở lại", GRN, 11, "middle", "700")
 fig2 = wrap("0 0 440 214",
             "Quả bóng bàn bẹp được nhúng vào cốc nước nóng: khí bên trong nóng lên, áp suất tăng và đẩy vỏ bóng phồng trở lại",
-            b, "Hình 2. Khí trong bóng nóng lên: cả ba thông số đều đổi (nhiệt độ tăng, áp suất tăng, vỏ bóng phồng ra) — vì thế cần một phương trình cho cả ba.")
+            b, "Hình 2. Khí trong bóng nóng lên: nhiệt độ, áp suất và thể tích cùng đổi.")
 
 # ------------------------------------------------- Hình 3: hai đường đẳng tích trên đồ thị p - T
 b = defs("f3")
@@ -101,7 +82,7 @@ b += text(208, 84, "p lớn hơn", RED, 11, "start", "700")
 b += text(208, 192, "p nhỏ hơn", BLUE, 11, "start", "700")
 fig3 = wrap("0 0 440 240",
             "Đồ thị áp suất theo nhiệt độ tuyệt đối của hai quá trình đẳng tích: hai đường thẳng kéo dài qua gốc tọa độ, đường dốc hơn ứng với thể tích nhỏ hơn",
-            b, "Hình 3. Đường đẳng tích là đường thẳng kéo dài qua gốc toạ độ. Kẻ một đường thẳng đứng tại một giá trị T: đường nằm trên cho p lớn hơn, tức thể tích nhỏ hơn.")
+            b, "Hình 3. Đường đẳng tích kéo dài qua gốc toạ độ. Cùng một T, đường nằm trên có p lớn hơn, tức thể tích nhỏ hơn.")
 
 # ------------------------------------------------- Hình 4: ba định luật là ba trường hợp riêng
 b = defs("f4")
@@ -133,5 +114,5 @@ src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")

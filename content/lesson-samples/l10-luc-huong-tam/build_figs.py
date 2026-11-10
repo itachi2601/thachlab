@@ -2,11 +2,14 @@
 theory.src.html -> theory.html. Chạy: python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Mọi toạ độ tính từ hình học (tâm O, bán kính, góc); in kiểm: nhãn không chồng nhau, không vượt viewBox,
 không bị nét đã đăng ký cắt xuyên; mũi tên gia tốc/lực hướng tâm phải chĩa đúng vào tâm."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS = []   # (fig, x0, y0, x1, y1, text)
@@ -17,19 +20,20 @@ VB = {}
 
 
 def defs(p):
-    out = "<defs>"
-    for n, c in COL.items():
-        out += (f'<marker id="{p}-{n}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="12" markerHeight="12" '
-                f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{c}"/></marker>')
-    return out + "</defs>"
+    """Không còn marker tam giác: mũi tên vẽ đầu V 30° bằng chevron (thầy chốt 7/10/2026)."""
+    return ""
 
 
 def arrow(p, c, x1, y1, x2, y2, w=3, name="", dash=""):
     if name:
         SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
+    w = min(w, 2.8)
     d = f' stroke-dasharray="{dash}"' if dash else ""
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-            f'marker-end="url(#{p}-{c})"/>')
+    # thân dừng sớm 1 px để đầu nhọn chữ V không bị nét thân làm tù
+    n = math.hypot(x2 - x1, y2 - y1) or 1
+    ex, ey = x2 - (x2 - x1) / n, y2 - (y2 - y1) / n
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d}/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w=w, L=12))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name=""):
@@ -40,7 +44,7 @@ def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name=""):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def text(x, y, s, c="currentColor", size=17, anchor="start", weight="700", italic=False):
@@ -109,11 +113,11 @@ def road(O, r_in, r_out, a0, a1):
 
 # ---------------- Hình 1: ô tô qua khúc cua (mở bài, chỉ vận tốc) ----------------
 CUR["fig"] = 1
-VB[1] = (400, 250)
-O1 = (200, 238)
+VB[1] = (420, 266)
+O1 = (210, 254)   # rộng/cao thêm để nhãn v1, v2 nằm hẳn ngoài đường
 b = defs("f1") + road(O1, 150, 190, 162, 18)
 b += f'<circle cx="{O1[0]}" cy="{O1[1]}" r="3.5" fill="currentColor"/>' + text(O1[0] + 10, O1[1] + 4, "O", size=17)
-for th, lab, dx, dy in ((132, "1", 10, -2), (52, "2", 8, 16)):
+for th, lab in ((128, "1"), (52, "2")):   # đối xứng qua trục đứng
     cx, cy = P(O1, 170, th)
     b += line(O1[0], O1[1], cx, cy, "currentColor", 1.2, "4 5", .5)
     b += car(cx, cy, th)
@@ -121,9 +125,15 @@ for th, lab, dx, dy in ((132, "1", 10, -2), (52, "2", 8, 16)):
     x2, y2 = cx + 62 * ux, cy + 62 * uy
     b += arrow("f1", "b", cx, cy, x2, y2, 3.2, name=f"v{lab}")
     perp_to_radius(1, f"v{lab}", cx, cy, x2, y2, O1)
-    b += text(x2 + dx, y2 + dy, sub('<tspan font-style="italic" font-family="serif">v</tspan>', lab), BLUE, 19)
+    assert abs(math.hypot(cx - O1[0], cy - O1[1]) - 170) < 0.01, "Hình 1: xe không ở giữa làn (R=170)"
+    assert abs(math.hypot(x2 - cx, y2 - cy) - 62) < 0.01, "Hình 1: hai mũi tên v phải dài bằng nhau (62)"
+    print(f"Hình 1 xe {lab}: tâm ({cx:.1f},{cy:.1f}) R={math.hypot(cx-O1[0], cy-O1[1]):.2f} | v dài {math.hypot(x2-cx, y2-cy):.2f}")
+    # nhãn đặt ngoài mép đường (bán kính 208), cùng góc với đầu mũi tên -> không đè nét đường
+    tip = math.degrees(math.atan2(O1[1] - y2, x2 - O1[0]))
+    lx, ly = P(O1, 222, tip)
+    b += text(lx, ly + 7, sub('<tspan font-style="italic" font-family="serif">v</tspan>', lab), BLUE, 19, "middle")
 b += text(12, 22, "nhìn từ trên xuống", size=17, weight="600")
-b += text(388, 22, "tốc độ: 36 km/h", BLUE, 17, "end", "600")
+b += text(408, 22, "tốc độ: 36 km/h", "#0284c7", 17, "end", "700")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "Ô tô qua khúc cua tròn tâm O nhìn từ trên xuống; vận tốc ở hai vị trí có cùng độ dài nhưng khác hướng",
             b, "Hình 1. Hai mũi tên vận tốc dài bằng nhau (cùng tốc độ) nhưng chĩa hai hướng khác nhau.")
@@ -177,8 +187,21 @@ VB[3] = (400, 250)
 TX, TY, RR, RY = 190, 96, 140, 14      # đỉnh ống, bán kính quỹ đạo (px), bán trục nhỏ elip
 SX = TX + RR                           # vị trí nút cao su
 b = defs("f3")
-b += (f'<ellipse cx="{TX}" cy="{TY}" rx="{RR}" ry="{RY}" fill="none" stroke="currentColor" '
-      f'stroke-width="1.4" stroke-dasharray="6 6" opacity=".6"/>')
+# quỹ đạo elip, ngắt đoạn đi qua thân ống (|x - TX| < 10, nửa dưới) để không đè lên ống
+_seg, _segs = [], []
+for _i in range(181):
+    _t = 2 * math.pi * _i / 180
+    _x, _y = TX + RR * math.cos(_t), TY + RY * math.sin(_t)
+    if abs(_x - TX) < 10 and _y > TY:
+        if _seg: _segs.append(_seg); _seg = []
+    else:
+        _seg.append((_x, _y))
+if _seg: _segs.append(_seg)
+if len(_segs) > 1 and _segs[0][0] == _segs[-1][-1] or (len(_segs) > 1 and abs(_segs[0][0][0] - _segs[-1][-1][0]) < 1e-6):
+    _segs[0] = _segs.pop() + _segs[0]
+for _sg in _segs:
+    b += ('<path d="M' + " L".join(f"{x:.1f},{y:.1f}" for x, y in _sg) + '" fill="none" stroke="currentColor" '
+          'stroke-width="1.4" stroke-dasharray="6 6" opacity=".6"/>')
 b += f'<rect x="{TX-6}" y="{TY}" width="12" height="80" rx="2" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
 b += line(TX, TY, SX - 9, TY, "currentColor", 1.6)                       # dây ngang tới nút
 b += f'<rect x="{SX-9}" y="{TY-9}" width="20" height="18" rx="4" fill="{ORG}" stroke="currentColor" stroke-width="2"/>'
@@ -192,9 +215,9 @@ b += text(SX - 46, TY - 26, '<tspan font-style="italic" font-family="serif">T</t
 # kích thước r
 b += line(TX, 42, SX, 42, "currentColor", 1.3) + line(TX, 36, TX, 48, "currentColor", 1.3) + line(SX, 36, SX, 48, "currentColor", 1.3)
 b += text((TX + SX) / 2, 32, '<tspan font-style="italic" font-family="serif">r</tspan> = 0,50 m', size=17, anchor="middle")
-b += text(SX + 2, 128, "nút cao su", ORG, 17, "middle", "600")
+b += text(SX + 2, 128, "nút cao su", "#c2410c", 17, "middle", "700")
 b += text(TX - 14, 150, "ống nhựa", size=17, anchor="end", weight="600")
-b += text(TX + 12, 194, "kẹp", ORG, 17, "start", "600")
+b += text(TX + 12, 194, "kẹp", "#c2410c", 17, "start", "700")
 b += text(TX + 22, 224, 'quả nặng <tspan font-style="italic" font-family="serif">M</tspan>', size=17, weight="600")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Nút cao su quay tròn nằm ngang bán kính r quanh đầu ống nhựa; dây luồn qua ống treo quả nặng M, lực căng dây bằng Mg kéo nút về tâm",
@@ -219,7 +242,8 @@ f2x, f2y = fx + 38 * (O4[0] - fx) / RB, fy + 38 * (O4[1] - fy) / RB
 b += f'<circle cx="{fx:.1f}" cy="{fy:.1f}" r="7" fill="rgba(56,189,248,.45)" stroke="currentColor" stroke-width="1.8"/>'
 b += arrow("f4", "r", fx - 6 * (fx - O4[0]) / RB, fy - 6 * (fy - O4[1]) / RB, f2x, f2y, 3, name="F")
 points_to(4, "lực của thành", fx, fy, f2x, f2y, O4)
-b += text(fx + 30, fy + 26, "lực của thành", RED, 17, "start", "600")
+b += text(f2x - 6, f2y + 18, "lực của", RED, 17, "end", "600")
+b += text(f2x - 6, f2y + 35, "thành", RED, 17, "end", "600")
 # đường thật: theo tiếp tuyến (góc tăng -> hướng (−sin, −cos) = lên trên tại 0°)
 ty_end = 30
 b += arrow("f4", "g", BX, BY - 9, BX, ty_end, 3, name="tiep tuyen", dash="7 5")
@@ -294,6 +318,14 @@ for i, (f, x0, y0, x1, y1, s) in enumerate(LABELS):
 print("\n".join(bad) if bad else "kiểm toạ độ: ok")
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG vẽ lại bằng ảnh sách, xem nguon.md
+fig2 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-luc-huong-tam/hinh-delta-v-huong-tam.webp" alt="Vật chuyển động tròn tâm A, vận tốc v1 tại B và v2 tại C đều tiếp tuyến; vẽ chung gốc thì hiệu vận tốc Δv chĩa về phía tâm" loading="lazy" width="748" height="748">'
+        '<figcaption>Hình 2. Vận tốc đổi hướng nên có gia tốc:<br><em>v</em><sub>1</sub>, <em>v</em><sub>2</sub> tiếp tuyến tại B, C.<br>Δ<em>v</em> = <em>v</em><sub>2</sub> − <em>v</em><sub>1</sub> chĩa vào tâm.<br>Sách ghi tâm là A; bài này ghi O.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+fig5 = (
+        '<figure class="fig" data-exp="tn-l10-huongtam-01"><img src="/assets/openstax/l10-luc-huong-tam/hinh-ma-sat-khuc-cua.webp" alt="Ô tô nhìn từ phía sau khi rẽ trên đường nằm ngang: trọng lực w xuống, phản lực N lên, ma sát nghỉ f hướng vào tâm cung cua là lực hướng tâm" loading="lazy" width="947" height="763">'
+        '<figcaption>Hình 5. Xe qua cua, nhìn từ phía sau:<br>w và N triệt tiêu.<br>f = μ<sub>s</sub>N (ma sát nghỉ) là lực hướng tâm F<sub>c</sub>.<br>F<sub>net</sub> = hợp lực. Sách ghi w, f, F<sub>c</sub>; bài này ghi <em>P</em>, <em>F</em><sub>ms</sub>, <em>F</em><sub>ht</sub>.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.10 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 figs = (fig1, fig2, fig3, fig4, fig5)
 order = [int(n) for n in re.findall(r"<!--FIG(\d)-->", src)]
 assert order == list(range(1, len(figs) + 1)), order
@@ -303,9 +335,9 @@ for n, f in enumerate(figs, 1):
 
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 m = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = int(float(m.group(1)) + 0.5) if m else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut)

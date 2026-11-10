@@ -1,12 +1,15 @@
 """Sinh 4 hình SVG cho bài 'Sóng điện từ' (Vật lí 11, lesson 30), dựng bảng thí nghiệm đo từ
 content/thi-nghiem/tn-l11-songdientu-02.json, thay các mốc trong theory.src.html -> theory.html.
 Chạy: python3 build_figs.py   (tự gọi build_thi_nghiem.py trước; chạy lại được)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, subprocess, sys
 from svg_lib import *
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
-PHUT = 19   # = làm tròn LÊN số phút do lint_do_dai.py đo trên theory.html (script kiểm ở cuối)
+PHUT = 20   # = làm tròn LÊN số phút do lint_do_dai.py đo trên theory.html (script kiểm ở cuối)
 
 subprocess.run([sys.executable, str(HERE / "build_thi_nghiem.py")], check=True, cwd=HERE)
 
@@ -84,21 +87,36 @@ SX0, SX1 = 178, 228
 b += seg(SX0, BT, SX0, GR, "currentColor", 1.4, "5 4", .7) + seg(SX1, BT, SX1, GR, "currentColor", 1.4, "5 4", .7)
 CY0, CY1 = 172, 244
 b += f'<rect x="{SX0+3}" y="{CY0}" width="{SX1-SX0-6}" height="{CY1-CY0}" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2.6"/>'
-PX = 203
-b += f'<circle cx="{PX}" cy="{CY0+16}" r="7" fill="none" stroke="currentColor" stroke-width="2"/>'
-b += seg(PX, CY0 + 23, PX, CY0 + 48, "currentColor", 2) + seg(PX, CY0 + 48, PX - 8, CY1 - 3, "currentColor", 2) + seg(PX, CY0 + 48, PX + 8, CY1 - 3, "currentColor", 2)
-b += seg(PX, CY0 + 30, PX + 11, CY0 + 24, "currentColor", 2)
-b += f'<rect x="{PX+10}" y="{CY0+14}" width="6" height="11" rx="1.5" fill="{ORG}"/>'
+PX = 203   # người trong cabin: đầu, áo (thân có vai), hai chân, tay đưa điện thoại lên tai
+b += f'<circle cx="{PX}" cy="{CY0+15}" r="7.5" fill="rgba(148,163,184,.9)" stroke="currentColor" stroke-width="2"/>'
+b += (f'<path d="M{PX-9},{CY0+46} L{PX-9},{CY0+30} Q{PX-9},{CY0+24} {PX-3},{CY0+24} L{PX+3},{CY0+24} '
+      f'Q{PX+9},{CY0+24} {PX+9},{CY0+30} L{PX+9},{CY0+46} Z" fill="{BLUE}" fill-opacity=".75" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>')
+for dx0, dx1 in ((-4, -5), (4, 5)):
+    b += f'<line x1="{PX+dx0}" y1="{CY0+46}" x2="{PX+dx1}" y2="{CY1-4}" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>'
+b += f'<polyline points="{PX+8},{CY0+28} {PX+14},{CY0+36} {PX+11},{CY0+20}" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
+b += f'<rect x="{PX+8}" y="{CY0+9}" width="6" height="12" rx="1.5" fill="{ORG}" stroke="currentColor" stroke-width="1"/>'
+b += f'<line x1="{PX-8}" y1="{CY0+28}" x2="{PX-11}" y2="{CY0+44}" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>'
 b += seg(SX1 + 2, 206, 276, 206, "currentColor", 1.2, "", .8)
 lab1.append(("thang máy", 280, 212, "start"))
-# chảo thu trên mái
+# chảo thu trên mái — lòng chảo hướng về vệ tinh (VX, VY khai báo ngay dưới)
+VX, VY = 378, 38
 DX, DY = 248, BT
-b += seg(DX, DY, DX, DY - 12, "currentColor", 2)
-b += f'<path d="M{DX-14},{DY-24} Q{DX-6},{DY-6} {DX+10},{DY-12}" fill="none" stroke="currentColor" stroke-width="2.4"/>'
-b += seg(DX - 3, DY - 17, DX + 8, DY - 30, "currentColor", 1.4)
+DC = (DX, DY - 14)                                   # đáy chảo
+ux, uy = VX - DC[0], VY - DC[1]
+nn = math.hypot(ux, uy); ux, uy = ux / nn, uy / nn   # hướng tới vệ tinh
+px_, py_ = -uy, ux                                   # vuông góc
+R1 = (DC[0] + 14 * px_ + 7 * ux, DC[1] + 14 * py_ + 7 * uy)
+R2 = (DC[0] - 14 * px_ + 7 * ux, DC[1] - 14 * py_ + 7 * uy)
+Q_ = (DC[0] - 7 * ux, DC[1] - 7 * uy)
+F_ = (DC[0] + 17 * ux, DC[1] + 17 * uy)              # đầu thu ở tiêu điểm, phía lòng chảo
+assert (F_[0] - DC[0]) * (VX - DC[0]) > 0 and (F_[1] - DC[1]) * (VY - DC[1]) > 0
+b += seg(DX - 6, DY, DX, DC[1] + 2, "currentColor", 2.2) + seg(DX + 6, DY, DX, DC[1] + 2, "currentColor", 2.2)
+b += (f'<path d="M{R1[0]:.1f},{R1[1]:.1f} Q{Q_[0]:.1f},{Q_[1]:.1f} {R2[0]:.1f},{R2[1]:.1f}" '
+      f'fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2.4"/>')
+b += seg(R1[0], R1[1], F_[0], F_[1], "currentColor", 1.3) + seg(R2[0], R2[1], F_[0], F_[1], "currentColor", 1.3)
+b += f'<circle cx="{F_[0]:.1f}" cy="{F_[1]:.1f}" r="2.6" fill="currentColor"/>'
 lab1.append(("chảo thu", 276, 108, "start"))
 # vệ tinh
-VX, VY = 378, 38
 b += f'<rect x="{VX-9}" y="{VY-9}" width="18" height="18" fill="rgba(148,163,184,.35)" stroke="currentColor" stroke-width="2"/>'
 b += f'<rect x="{VX-36}" y="{VY-6}" width="24" height="12" fill="rgba(56,189,248,.45)" stroke="currentColor" stroke-width="1.2"/>'
 b += f'<rect x="{VX+12}" y="{VY-6}" width="24" height="12" fill="rgba(56,189,248,.45)" stroke="currentColor" stroke-width="1.2"/>'
@@ -111,48 +129,10 @@ fig1 = wrap(f"0 0 {W1} {H1}",
             b,
             "Hình 1. Trạm phát sóng, thang máy, chảo thu và vệ tinh.")
 
-# ---------------- Hình 2: sóng điện từ — E (đỏ, thẳng đứng) ⊥ B (xanh, phương xiên vào trong) ⊥ phương truyền (trục ngang)
-W2, H2 = 420, 192
-X0, X1, Y0, LAM = 40, 340, 118, 200.0
-AE, AB = 62, 56
-ZX, ZY = -0.6, 0.6                     # phương "vào trong trang" vẽ xiên xuống – sang trái
-ZN = math.hypot(ZX, ZY)
-ZX, ZY = ZX / ZN, ZY / ZN
-# Chiều: x phải (truyền), y lên (E), z ra phía người xem vẽ xiên xuống–trái. E×B = ŷ×ẑ = +x̂ khớp chiều truyền.
-_E, _B = (0, 1, 0), (0, 0, 1)
-_c = (_E[1]*_B[2]-_E[2]*_B[1], _E[2]*_B[0]-_E[0]*_B[2], _E[0]*_B[1]-_E[1]*_B[0])
-assert _c == (1, 0, 0) and ZX < 0 and ZY > 0
-s_ = lambda x: math.sin(2 * math.pi * (x - X0) / LAM)
-b = vec(18, Y0, 404, Y0, "currentColor", 2, 12)
-for k in range(1, 24):                 # các vạch nối trục → đường cong (mỗi λ/16)
-    x = X0 + LAM / 16 * k
-    if x > X1:
-        break
-    v = s_(x)
-    b += seg(x, Y0, x, Y0 - AE * v, RED, 1.2, "", .55)
-    b += seg(x, Y0, x + ZX * AB * v, Y0 + ZY * AB * v, BLUE, 1.2, "", .55)
-xs = [X0 + i for i in range(0, int(X1 - X0) + 1, 2)]
-b += poly([(x + ZX * AB * s_(x), Y0 + ZY * AB * s_(x)) for x in xs], BLUE, 2.6)
-b += poly([(x, Y0 - AE * s_(x)) for x in xs], RED, 2.6)
-XM = X0 + LAM / 4                      # chỗ E, B cực đại (cùng pha)
-assert abs(s_(XM) - 1) < 1e-9 and abs(s_(X0 + LAM / 2)) < 1e-9
-b += vec(XM, Y0, XM, Y0 - AE, RED, 3)
-bx, by = XM + ZX * AB, Y0 + ZY * AB
-b += vec(XM, Y0, bx, by, BLUE, 3)
-lab2 = [("E", XM, Y0 - AE - 10, "middle", RED), ("B", bx - 6, by + 20, "end", BLUE),
-        ("phương", 412, Y0 + 30, "end", "currentColor"), ("truyền", 412, Y0 + 50, "end", "currentColor")]
-for s, x, y, a, c in lab2:
-    b += f'<text x="{x:.1f}" y="{y:.1f}" fill="{c}" font-size="{FS+2 if len(s)==1 else FS}" font-weight="700" text-anchor="{a}"' + (' font-style="italic" font-family="serif"' if len(s) == 1 else "") + f'>{s}</text>'
-# nhãn sát vật: E cách đầu vectơ E ≤ 30 px, B cách đầu vectơ B ≤ 30 px
-assert math.hypot(0, 10) < 30 and math.hypot((bx - 6) - bx, (by + 20) - by) < 30
-# nhãn "phương truyền" không chạm đường cong: các đường cong kết thúc ở X1 < hộp nhãn
-assert X1 + ZX * 0 < hop(412, Y0 + 30, "phương", "end")[0] - 4
-kiem_nhan([hop(x, y, s, a) for s, x, y, a, c in lab2], W2)
-fig2 = wrap(f"0 0 {W2} {H2}",
-            "Sóng điện từ truyền theo trục nằm ngang: vectơ E màu đỏ dao động theo phương thẳng đứng, vectơ B màu xanh dao động theo phương vuông góc với trang giấy, vẽ xiên hướng ra phía người xem, hai đường cong cùng đạt cực đại và cùng qua số 0 tại một chỗ",
-            b,
-            "Hình 2. E (đỏ) vuông góc với B (xanh, vẽ xiên, hướng ra phía người xem).<br>"
-            "Cả hai vuông góc với phương truyền, cùng pha.")
+# ---------------- Hình 2: ảnh OpenStax College Physics 2e, Hình 24.7 (28/10/2026) — thay SVG tự vẽ
+fig2 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l11-song-dien-tu/hinh-song-dien-tu-E-B.webp" '
+        'alt="Sóng điện từ truyền theo mũi tên xanh lá c: vectơ điện trường E (xanh dương) thẳng đứng, vectơ từ trường B (hồng) nằm ngang, cả hai vuông góc nhau và vuông góc phương truyền, cùng pha" loading="lazy" width="875" height="602">'
+        '<figcaption>Hình 2. E (xanh dương) vuông góc B (hồng).<br>Cả hai vuông góc phương truyền, cùng pha.<br><small>Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 # ---------------- Hình 3: thanh sô-cô-la nhìn từ trên, các vệt chảy cách đều d (= λ/2)
 W3, H3 = 420, 178
@@ -165,7 +145,7 @@ b = f'<rect x="{BAR0}" y="{BY0}" width="{BAR1-BAR0}" height="{BY1-BY0}" rx="6" f
 for x in range(BAR0 + 40, BAR1, 40):
     b += seg(x, BY0 + 4, x, BY1 - 4, "currentColor", 1, "", .3)
 for x in spots:
-    b += f'<ellipse cx="{x:.1f}" cy="{(BY0+BY1)/2}" rx="9" ry="13" fill="rgba(251,146,60,.85)" stroke="{ORG}" stroke-width="2"/>'
+    b += f'<ellipse cx="{x:.1f}" cy="{(BY0+BY1)/2}" rx="9" ry="13" fill="#fb923c" stroke="{ORG}" stroke-width="2"/>'
     b += seg(x, BY1 + 2, x, 136, "currentColor", 1.2, "3 3", .7)
 b += dbl(spots[0], 132, spots[1], 132, GRN, 2.4)
 lab3 = [("d", (spots[0] + spots[1]) / 2, 158, "middle", GRN), ("vệt chảy", spots[2] + 6, 40, "middle", ORG),
@@ -240,7 +220,7 @@ for lg, s in ten_l.items():
     e = round(math.log10(C) - lg - math.log10(3))
     assert abs(C / 10 ** lg - 3 * 10 ** e) / (3 * 10 ** e) < 1e-9
     b += (f'<text x="{x:.1f}" y="156" fill="currentColor" font-size="{FS}" font-weight="600" text-anchor="middle">3·10'
-          f'<tspan baseline-shift="super" font-size="13">{e}</tspan></text>')
+          f'<tspan baseline-shift="super" font-size="14">{e}</tspan></text>')
 b += t(10, 132, "λ", "currentColor", "start", "700") + t(10, 156, "f", "currentColor", "start", "700")
 b += vec(AX0, 176, AX1, 176, GRN, 2.2)
 b += t((AX0 + AX1) / 2, 198, "λ giảm dần, f (Hz) tăng dần", GRN, "middle", "700")
@@ -282,7 +262,7 @@ for k, v in (("__BANG_TN__", bang), ("__LECH_NHIEU__", lech_txt), ("__PHUT__", s
 import re
 so = [int(m) for m in re.findall(r"<figcaption>Hình (\d+)\.", h)]
 assert so == sorted(so) == list(range(1, len(so) + 1)), so
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình")
 
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"

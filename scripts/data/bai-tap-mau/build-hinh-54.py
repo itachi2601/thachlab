@@ -29,10 +29,16 @@ def move_g(content, dxs, dur):
             f'begin="indefinite" fill="freeze"/>{content}</g>')
 
 def varrow(p, c, xs, y, lens, dur):
-    """Mũi tên vận tốc chạy theo xe (xs: x mũi xe theo mẫu; lens: độ dài mũi tên px theo mẫu)."""
+    """Mũi tên vận tốc chạy theo xe: thân line + đầu V 30° (chevron) cùng chạy bằng SMIL (không dùng marker — thầy chốt 10/10/2026)."""
     col = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}[c]
-    return (f'<line y1="{y}" y2="{y}" stroke="{col}" stroke-width="3" marker-end="url(#{p}-{c})" x1="{xs[0]:.1f}" x2="{xs[0] + lens[0]:.1f}">'
-            f'{smil("x1", xs, dur)}{smil("x2", [x + l for x, l in zip(xs, lens)], dur)}</line>')
+    L = 9.0; dx = L * math.cos(math.radians(30)); dy = L * math.sin(math.radians(30))
+    tips = [x + l for x, l in zip(xs, lens)]
+    pts = ";".join(f"{t - dx:.1f},{y - dy:.1f} {t:.1f},{y} {t - dx:.1f},{y + dy:.1f}" for t in tips)
+    return (f'<line y1="{y}" y2="{y}" stroke="{col}" stroke-width="2.8" x1="{xs[0]:.1f}" x2="{tips[0]:.1f}">'
+            f'{smil("x1", xs, dur)}{smil("x2", tips, dur)}</line>'
+            f'<polyline fill="none" stroke="{col}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" '
+            f'points="{tips[0] - dx:.1f},{y - dy:.1f} {tips[0]:.1f},{y} {tips[0] - dx:.1f},{y + dy:.1f}">'
+            f'<animate attributeName="points" values="{pts}" dur="{dur:.2f}s" begin="indefinite" fill="freeze"/></polyline>')
 
 def ruler(x0, x1, y, step_px, labels, size=12):
     s = seg(x0 - 10, y, x1, y, "currentColor", 2)
@@ -99,7 +105,7 @@ def d2(k):
         b += (f'<line stroke="{ORG}" stroke-width="2" stroke-dasharray="4 4" x1="{X[0]:.1f}" x2="{X[0]:.1f}" y1="{Y[0]:.1f}" y2="{GV0}">'
               f'{smil("x1", X, dur)}{smil("x2", X, dur)}{smil("y1", Y, dur)}</line>')
         b += (f'<circle cx="{X[0]:.1f}" cy="{Y[0]:.1f}" r="5.5" fill="{GRN}" stroke="currentColor" stroke-width="1.5">{smil("cx", X, dur)}{smil("cy", Y, dur)}</circle>')
-        b += lbl(236, 70, "a = ?  (mỗi giai đoạn)", ORG, 13, "start", "700") + lbl(236, 90, "quãng đường 14 s = ?", ORG, 13, "start", "700")
+        b += lbl(150, 26, "a = ?  (mỗi giai đoạn)", ORG, 13, "start", "700") + lbl(150, 44, "quãng đường 14 s = ?", ORG, 13, "start", "700")
         return fig("d2-0", "0 0 420 232", "Đồ thị vận tốc theo thời gian gồm ba đoạn: tăng đều từ 4 lên 16 m/s trong 6 s, giữ 16 m/s đến 10 s, giảm đều về 0 lúc 14 s; điểm chạy trên đồ thị", b,
                    "Đồ thị v – t của xe (đề cho); điểm xanh là xe tại từng thời điểm, đúng đồ thị (chạy nhanh 2 lần, 7 s; bấm Chạy mô phỏng).")
     b += (f'<polygon points="{gx(0):.1f},{GV0} {gx(0):.1f},{gy_(4):.1f} {gx(6):.1f},{gy_(16):.1f} {gx(6):.1f},{GV0}" fill="{ORG}" opacity=".28"/>'
@@ -379,3 +385,144 @@ for a_, b_ in ((r"\Delta t}5=", r"\Delta t}=5="), ("5^{5}", "5^{2}"), ("m/h = 10
     TU_LUAN["body_html"] = TU_LUAN["body_html"].replace(a_, b_)
 
 write(J, 54, "Bài 9. Chuyển động thẳng biến đổi đều", DANG, BUILD, ANALYSIS, SOLS, TU_LUAN)
+
+# Tự giải từng bước (thầy chốt 9/10/2026): mỗi dạng = nhan_dang + cấp bắc cầu + fading + buoc[] khớp 1-1 với các bước trong SOLS.
+STEPS = [
+ dict(nhan_dang="Thấy <b>$v_0$, $a$, $t$</b> và hỏi vận tốc hoặc quãng đường → $v=v_0+at$ rồi $d=v_0t+\\tfrac12at^2$.",
+  cap_do=1, fading="mo_het", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Chọn chiều dương và đọc dữ kiện", "Tàu đang chuyển động nhanh dần hay chậm dần đều?",
+       lua_chon=[("Nhanh dần đều", True),
+                 ("Chậm dần đều", "Gia tốc cùng dấu với vận tốc đầu (cùng chiều dương đã chọn) thì vận tốc tăng, không giảm."),
+                 ("Chuyển động đều", "Đề cho gia tốc khác $0$ nên vận tốc có thay đổi.")],
+       loi="Nhầm kiểu chuyển động: nhanh dần hay chậm dần được quyết định bởi $a$ cùng dấu hay ngược dấu với $v_0$."),
+  buoc("Vận tốc sau 30 s", "Vận tốc của tàu sau thời gian đó bằng bao nhiêu?", 35, "m/s", 0.5,
+       loi="Quên cộng $v_0$ (lấy $v=at$) hoặc đổi chỗ các số trong $v=v_0+at$.",
+       ke=[("Dùng $v=v_0+at$ vì đề cho $v_0$, $a$, $t$", True),
+           ("Dùng $v=at$", "Bỏ mất vận tốc đầu: lúc bắt đầu tăng tốc tàu đã chạy sẵn, không đứng yên."),
+           ("Dùng $v^2-v_0^2=2ad$", "Công thức này cần quãng đường $d$, mà $d$ chưa biết.")]),
+  buoc("Quãng đường", "Quãng đường tàu đi được trong thời gian đó?", 825, "m", 8,
+       loi="Lấy $d=v\\,t$ với $v$ là vận tốc cuối (coi như chuyển động đều) hoặc quên hệ số $\\dfrac12$ ở số hạng $at^2$.",
+       ke=[("Dùng $d=v_0t+\\dfrac12at^2$", True),
+           ("Dùng $d=v\\,t$ với $v$ vừa tìm ở bước trước", "Vận tốc thay đổi suốt quá trình nên không nhân thẳng vận tốc cuối với thời gian."),
+           ("Dùng $d=v_0t$", "Bỏ phần quãng đường tăng thêm do gia tốc.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang="Thấy <b>đồ thị $v$–$t$</b> → độ dốc là gia tốc, diện tích dưới đồ thị là quãng đường.",
+  cap_do=1, fading="mo_het", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Đọc đồ thị theo ba giai đoạn", "Giai đoạn nào xe chuyển động thẳng đều?",
+       lua_chon=[("Giai đoạn $6\\to10$ s, đường nằm ngang", True),
+                 ("Giai đoạn $0\\to6$ s", "Ở đây $v$ thay đổi theo thời gian nên không phải chuyển động đều."),
+                 ("Giai đoạn $10\\to14$ s", "Ở đây $v$ cũng thay đổi theo thời gian.")],
+       loi="Nhầm đồ thị đi lên hoặc đi xuống với chuyển động đều; chuyển động đều có $v$ không đổi, đồ thị nằm ngang."),
+  buoc("Gia tốc từng giai đoạn", "Gia tốc ở giai đoạn đầu ($0\\to6$ s) bằng bao nhiêu?", 2, "m/s²", 0.05,
+       loi="Lấy $a=\\dfrac{v}{t}$ với $v$ là vận tốc cuối, quên trừ vận tốc ở đầu giai đoạn; gia tốc là $\\dfrac{\\Delta v}{\\Delta t}$.",
+       ke=[("Lấy $a=\\dfrac{\\Delta v}{\\Delta t}$ cho từng giai đoạn (độ dốc)", True),
+           ("Lấy $a=\\dfrac{v}{t}$ với $v$ ở cuối giai đoạn", "Bỏ qua vận tốc ở đầu giai đoạn: $v$ không bắt đầu từ $0$."),
+           ("Lấy $a$ bằng diện tích dưới đồ thị", "Diện tích cho quãng đường, không phải gia tốc.")]),
+  buoc("Quãng đường bằng diện tích", "Quãng đường xe đi được trong cả thời gian trên đồ thị?", 156, "m", 2,
+       loi="Dùng một công thức $d=v_0t+\\dfrac12at^2$ cho cả giai đoạn dù gia tốc đổi; hoặc bỏ sót một hình khi cộng diện tích.",
+       ke=[("Tính diện tích ba phần dưới đồ thị rồi cộng lại", True),
+           ("Dùng $d=v_0t+\\dfrac12at^2$ một lần cho cả thời gian với $a$ của giai đoạn đầu", "Gia tốc thay đổi giữa các giai đoạn, không dùng chung một $a$."),
+           ("Trừ phần diện tích giai đoạn chậm dần vì xe đang giảm tốc", "Vận tốc vẫn dương nên xe vẫn tiến về phía trước; diện tích đó phải cộng.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang="Thấy <b>phanh gấp, dừng lại</b> → tính lúc dừng trước, rồi so thời gian của đề với lúc dừng.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 4}, buoc=[
+  buoc("Đổi đơn vị và đọc dữ kiện", "Tốc độ ban đầu của xe, đổi ra m/s, bằng bao nhiêu?", 15, "m/s", 0.2,
+       loi="Nhân với $3{,}6$ thay vì chia; hoặc để nguyên km/h khi các đại lượng khác tính bằng m và s."),
+  buoc("Gia tốc", "Gia tốc của xe (m/s², lấy dấu theo chiều chuyển động)?", -3, "m/s²", 0.05,
+       loi="Thế $v_0$ vào chỗ $v$ cuối, hoặc quên $v=0$ khi xe dừng.",
+       ke=[("Đề không cho $t$ nên dùng $v^2-v_0^2=2ad$", True),
+           ("Dùng $d=v_0t+\\dfrac12at^2$", "Chưa biết $t$ nên phương trình có hai ẩn."),
+           ("Dùng $a=\\dfrac{v-v_0}{d}$", "Không có công thức này: mẫu số phải là thời gian, không phải quãng đường.")]),
+  buoc("Thời gian phanh", "Xe dừng lại sau bao lâu kể từ lúc phanh?", 5, "s", 0.1,
+       loi="Tính theo chuyển động đều $t=\\dfrac{d}{v_0}$, bỏ qua việc vận tốc giảm dần.",
+       ke=[("Dùng $t_d=\\dfrac{v-v_0}{a}$ với $v=0$", True),
+           ("Dùng $t_d=\\dfrac{d}{v_0}$", "Đó là thời gian nếu xe chạy đều với vận tốc đầu, nhưng xe chậm dần."),
+           ("Bỏ qua $t_d$, thế luôn $t=7$ s của câu c vào các công thức", "Cần biết xe còn chuyển động hay đã dừng ở thời điểm đó trước khi áp dụng công thức.")]),
+  buoc("Vận tốc sau 2 s", "Vận tốc của xe sau $2$ s kể từ lúc phanh?", 9, "m/s", 0.1,
+       loi="Cho $v=0$ vì đề nói xe dừng lại, hoặc dùng $v=at$ và quên vận tốc đầu.",
+       ke=[("So $2$ s với thời gian phanh rồi chọn công thức phù hợp", True),
+           ("Lấy $v=0$ vì xe phanh gấp", "Xe chỉ dừng khi hết thời gian phanh; trước đó xe vẫn còn chuyển động."),
+           ("Dùng $v=at$", "Bỏ mất vận tốc đầu: lúc bắt đầu phanh xe không đứng yên.")]),
+  buoc("Quãng đường trong 7 s", "Quãng đường xe đi được trong $7$ s kể từ lúc phanh?", 37.5, "m", 0.5,
+       loi="Thế thẳng $t=7$ s vào $d=v_0t+\\dfrac12at^2$ mà không kiểm tra xe đã dừng chưa, như thể xe quay đầu chạy lùi.",
+       ke=[("So $7$ s với thời gian phanh rồi chọn công thức phù hợp", True),
+           ("Thế $t=7$ s vào $d=v_0t+\\dfrac12at^2$", "Sau khi dừng xe đứng yên; công thức này sẽ coi như xe quay đầu chạy lùi."),
+           ("Dùng $s=v_0t$", "Bỏ gia tốc: xe đang phanh chứ không chạy đều.")])]),
+ dict(nhan_dang="Thấy <b>quãng đường trong giây thứ $n$</b> → lấy hiệu hai quãng đường tích luỹ $s_n-s_{n-1}$.",
+  cap_do=2, fading="giau_buoc_cuoi", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Đọc dữ kiện", "Giây thứ $5$ ứng với khoảng thời gian nào kể từ lúc bắt đầu chuyển động?",
+       lua_chon=[("Từ $t=4$ s đến $t=5$ s", True),
+                 ("Từ $t=0$ đến $t=5$ s", "Đó là $5$ giây đầu, tức quãng đường tích luỹ; giây thứ $5$ chỉ là một giây."),
+                 ("Từ $t=5$ s đến $t=6$ s", "Đó là giây thứ $6$; giây thứ $5$ kết thúc tại $t=5$ s.")],
+       loi="Nhầm giây thứ $n$ với $n$ giây đầu tiên."),
+  buoc("Quãng đường đi trong 5 s và 4 s", "Viết $s_4=3\\cdot4+k\\,a$. Hệ số $k$ bằng bao nhiêu?", 8, None, 0.01,
+       loi="Quên hệ số $\\dfrac12$ hoặc không bình phương thời gian khi tính $\\dfrac12at^2$.",
+       ke=[("Viết $s=v_0t+\\dfrac12at^2$ với $t=5$ và $t=4$", True),
+           ("Viết $s=v_0t+\\dfrac12at^2$ với $t=1$ cho giây đang xét", "Công thức tính từ lúc bắt đầu chuyển động; $t$ là thời điểm tính từ gốc, không phải độ dài một giây."),
+           ("Dùng $v^2-v_0^2=2ad$", "Không biết vận tốc cuối hay quãng đường nên không dùng được.")]),
+  buoc("Lập phương trình tìm $a$", "Gia tốc $a$ của vật bằng bao nhiêu?", 2, "m/s²", 0.05,
+       loi="Cho $s_5=12$ (nhầm quãng đường tích luỹ với quãng đường của riêng giây thứ $5$) hoặc sai khi trừ $s_5-s_4$.",
+       ke=[("Cho $s_5-s_4=12$ rồi giải ra $a$", True),
+           ("Cho $s_5=12$ rồi giải ra $a$", "$12$ m là riêng giây thứ $5$, không phải cả $5$ giây đầu."),
+           ("Lấy $a=\\dfrac{12-3}{5}$", "$12$ m là quãng đường trong $1$ s, tức vận tốc trung bình, bằng vận tốc tại $t=4{,}5$ s chứ không phải $t=5$ s.")]),
+  buoc("Quãng đường trong giây thứ 8", "Quãng đường vật đi được trong giây thứ $8$?", 18, "m", 0.2,
+       loi="Tính $s_8$ (tám giây đầu) mà quên trừ $s_7$.",
+       ke=[("Lấy $s_8-s_7$ với $a$ vừa tìm", True),
+           ("Lấy $s_8$ làm quãng đường giây thứ $8$", "$s_8$ gồm cả $8$ giây đầu; phải trừ phần của $7$ giây trước."),
+           ("Lấy $\\dfrac{8}{5}\\cdot12$ theo tỉ lệ số giây", "Chuyển động nhanh dần nên quãng đường mỗi giây tăng dần, không tỉ lệ với số thứ tự giây.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang="Thấy <b>chuyển động nhiều giai đoạn</b> → làm từng giai đoạn, vận tốc cuối giai đoạn này là vận tốc đầu giai đoạn sau.",
+  cap_do=3, fading="giau_tu_buoc_2", go_roi={"buoc_hay_sai": 2}, buoc=[
+  buoc("Giai đoạn ①: xuống dốc", "Gia tốc $a_1$ trên dốc bằng bao nhiêu?", 2, "m/s²", 0.05,
+       loi="Quên hệ số $\\dfrac12$ hoặc lấy $a=\\dfrac{d}{t^2}$; quả cầu xuất phát từ nghỉ nên $d=\\dfrac12at^2$."),
+  buoc("Vận tốc ở chân dốc", "Vận tốc $v_B$ ở chân dốc bằng bao nhiêu?", 16, "m/s", 0.2,
+       loi="Lấy vận tốc trung bình $\\dfrac{d_1}{t_1}$ làm vận tốc ở chân dốc, hoặc cho $v_B=0$ vì quả cầu xuất phát từ nghỉ.",
+       ke=[("Dùng $v_B=v_A+a_1t_1$ với $v_A=0$", True),
+           ("Lấy $v_B=\\dfrac{d_1}{t_1}$", "Đó là vận tốc trung bình trên dốc, không phải vận tốc tức thời ở chân dốc."),
+           ("Cho $v_B=0$ vì quả cầu lăn từ nghỉ", "Quả cầu chỉ nghỉ ở A; sau khi lăn xuống nó đã có vận tốc.")]),
+  buoc("Giai đoạn ②: mặt ngang", "Gia tốc $a_2$ trên mặt ngang (m/s², lấy dấu theo chiều lăn)?", -4, "m/s²", 0.05,
+       loi="Lấy vận tốc đầu bằng $0$ như giai đoạn ①, hoặc bỏ sót dấu của gia tốc khi quả cầu dừng dần.",
+       ke=[("Dùng $v_B$ làm vận tốc đầu, $v_C=0$, rồi $v_C^2-v_B^2=2a_2d_2$", True),
+           ("Dùng lại $a_1$ vì vẫn là quả cầu đó", "Gia tốc phụ thuộc đoạn đường; mặt ngang khác dốc nên $a$ khác."),
+           ("Dùng $d_2=\\dfrac12a_2t_2^2$ như giai đoạn ①", "Giai đoạn ② có vận tốc đầu khác $0$; công thức đó bỏ mất $v_B$.")]),
+  buoc("Vận tốc trung bình cả hành trình", "Vận tốc trung bình của quả cầu trên cả hành trình AC?", 8, "m/s", 0.1,
+       loi="Cộng sai hoặc bỏ sót một giai đoạn khi lấy tổng quãng đường và tổng thời gian.",
+       ke=[("Lấy tổng quãng đường chia tổng thời gian", True),
+           ("Lấy $\\dfrac{d_1}{t_1+t_2}$", "Thiếu quãng đường $d_2$ ở tử số."),
+           ("Lấy $v_B$ làm vận tốc trung bình", "$v_B$ chỉ là vận tốc tại chân dốc, không đại diện cho cả hành trình.")]),
+  buoc("Kiểm tra")]),
+ dict(nhan_dang="Thấy <b>hai xe cùng xuất phát</b>, hỏi lúc và nơi gặp → một hệ quy chiếu, hai phương trình $x(t)$, giải $x_1=x_2$.",
+  cap_do=4, fading="giau_het", go_roi={"buoc_hay_sai": 3}, buoc=[
+  buoc("Chọn hệ quy chiếu", "Chọn chiều dương hướng lên đỉnh dốc. Vận tốc đầu của xe đạp (đi xuống dốc) mang dấu gì?",
+       lua_chon=[("Dấu âm", True),
+                 ("Dấu dương vì xe đạp chạy nhanh dần", "Dấu của $v$ chỉ phụ thuộc chiều chuyển động so với chiều dương, không phụ thuộc nhanh dần hay chậm dần."),
+                 ("Dấu dương vì tốc độ luôn là số dương", "Tốc độ dương, nhưng vận tốc có dấu theo chiều dương đã chọn.")],
+       loi="Quên rằng vận tốc có dấu theo chiều dương đã chọn."),
+  buoc("Ô tô (lên dốc)", "Gia tốc $a_1$ của ô tô (m/s², có dấu)?", -0.4, "m/s²", 0.01,
+       loi="Lấy dấu dương vì đề chỉ cho độ lớn của gia tốc; dấu của $a$ phải xác định từ việc chậm dần hay nhanh dần.",
+       ke=[("Viết $x_1=x_{01}+v_{01}t+\\dfrac12a_1t^2$ rồi xác định dấu $a_1$ theo $v_{01}$", True),
+           ("Lấy $a_1$ dương vì đề cho giá trị $0{,}4$", "Đề chỉ cho độ lớn; chậm dần đều thì $a$ ngược dấu với $v$."),
+           ("Viết $x_1=v_{01}t$ vì ô tô xuất phát từ gốc", "Ô tô có gia tốc nên thiếu số hạng $\\dfrac12at^2$.")]),
+  buoc("Xe đạp (xuống dốc)", "Gia tốc $a_2$ của xe đạp (m/s², có dấu)?", -0.2, "m/s²", 0.01,
+       loi="Cho $a_2$ cùng dấu với chiều dương mà không đối chiếu chiều chuyển động của xe đạp.",
+       ke=[("Lập $x_2$ với $x_{02}$ là vị trí xe đạp trong hệ đã chọn, rồi xác định dấu của $v_{02}$ và $a_2$", True),
+           ("Lấy $x_{02}=0$ vì xe đạp xuất phát cùng lúc với ô tô", "Hai xe dùng chung một gốc toạ độ; xe đạp ở đỉnh dốc nên $x_{02}$ khác $0$."),
+           ("Tính $s_2=2t+0{,}1t^2$ theo quãng đường rồi cho bằng $x_1$", "Muốn lập $x_1=x_2$ cần cùng hệ toạ độ; quãng đường không cho biết xe đang ở đâu.")]),
+  buoc("Thời điểm gặp nhau", "Hai xe gặp nhau sau bao lâu?", 30, "s", 0.5,
+       loi="Không kiểm nghiệm nghiệm: một nghiệm của phương trình bậc hai có thể ứng với lúc ô tô đã đổi chiều và công thức không còn đúng.",
+       ke=[("Cho $x_1=x_2$, giải phương trình bậc hai, kiểm nghiệm nghiệm", True),
+           ("Cho $v_1=v_2$", "Hai xe cùng vận tốc không có nghĩa là cùng vị trí."),
+           ("Lấy $t=\\dfrac{570}{20+2}$", "Công thức đó chỉ đúng khi hai xe chuyển động đều; ở đây vận tốc thay đổi.")]),
+  buoc("Vị trí gặp nhau", "Chỗ gặp nhau cách chân dốc bao nhiêu mét?", 420, "m", 5,
+       loi="Dùng $s=v_{01}t$ bỏ qua gia tốc, hoặc tính $x_2$ nhưng quên số hạng $x_{02}$.",
+       ke=[("Thế $t$ vừa tìm vào $x_1$ (kiểm bằng $x_2$)", True),
+           ("Lấy $x=\\dfrac{570}{2}$ vì gặp nhau ở giữa dốc", "Hai xe không chuyển động giống nhau nên không gặp ở giữa dốc."),
+           ("Lấy $x=v_{01}t$", "Bỏ qua gia tốc của ô tô.")]),
+  buoc("Vận tốc mỗi xe lúc gặp", "Vận tốc của ô tô lúc gặp nhau?", 8, "m/s", 0.1,
+       loi="Lấy $v=v_{01}$ hoặc thế sai dấu của $a_1$ khi tính $v_{01}+a_1t$.",
+       ke=[("Dùng $v=v_0+at$ cho từng xe, giữ nguyên dấu", True),
+           ("Dùng $v=\\dfrac{x}{t}$", "Đó là vận tốc trung bình từ gốc, không phải vận tốc tức thời lúc gặp."),
+           ("Dùng $v^2=v_{01}^2+2a_1\\cdot570$", "$570$ m là chiều dài dốc, không phải quãng đường ô tô đã đi.")])]),
+]
+
+inject(J, BUILD, ANALYSIS, SOLS, STEPS)

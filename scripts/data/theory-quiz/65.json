@@ -347,10 +347,6 @@
    "question": "Viên đá trượt lên một con dốc phủ băng nghiêng góc $\\alpha$ (bỏ qua ma sát), dừng lại rồi trượt xuống. Chọn chiều dương hướng lên dốc và giữ nguyên suốt bài.",
    "statements": [
     {
-     "text": "Lực duy nhất dọc dốc là $P\\sin\\alpha$, luôn hướng xuống dốc.",
-     "answer": true
-    },
-    {
      "text": "Khi viên đá quay đầu đi xuống, phải đổi chiều dương theo chiều chuyển động mới.",
      "answer": false
     },
@@ -359,15 +355,19 @@
      "answer": false
     },
     {
+     "text": "Lực duy nhất dọc dốc là $P\\sin\\alpha$, luôn hướng xuống dốc.",
+     "answer": true
+    },
+    {
      "text": "Lúc đi xuống, $v \\lt 0$ và $a \\lt 0$: viên đá nhanh dần theo chiều âm.",
      "answer": true
     }
    ],
    "explanation": "Chiều dương giữ nguyên nên $a = -g\\sin\\alpha$ suốt; $v$ đổi dấu còn $a$ thì không, kể cả ở điểm cao nhất.",
    "distractorNotes": {
-    "0": "Không thể coi ý này sai: đã bỏ ma sát và $N$ vuông góc mặt dốc, nên dọc dốc chỉ còn $P\\sin\\alpha$ hướng xuống.",
-    "1": "Không thể coi ý này đúng: chiều dương chọn một lần và giữ đến hết bài; khi quay đầu chỉ $v$ đổi dấu.",
-    "2": "Không thể coi ý này đúng: ở điểm cao nhất $v = 0$ nhưng $P\\sin\\alpha$ vẫn tác dụng, nên $a \\ne 0$.",
+    "0": "Không thể coi ý này đúng: chiều dương chọn một lần và giữ đến hết bài; khi quay đầu chỉ $v$ đổi dấu.",
+    "1": "Không thể coi ý này đúng: ở điểm cao nhất $v = 0$ nhưng $P\\sin\\alpha$ vẫn tác dụng, nên $a \\ne 0$.",
+    "2": "Không thể coi ý này sai: đã bỏ ma sát và $N$ vuông góc mặt dốc, nên dọc dốc chỉ còn $P\\sin\\alpha$ hướng xuống.",
     "3": "Không thể coi ý này sai: lúc đi xuống $v$ và $a$ cùng dấu âm, tức vật nhanh dần theo chiều âm."
    }
   },
@@ -386,12 +386,12 @@
      "answer": true
     },
     {
-     "text": "Lực ma sát của sàn lên tủ bằng $\\mu_n N$.",
-     "answer": false
-    },
-    {
      "text": "$\\mu_n N$ là giá trị lớn nhất mà ma sát nghỉ có thể đạt được.",
      "answer": true
+    },
+    {
+     "text": "Lực ma sát của sàn lên tủ bằng $\\mu_n N$.",
+     "answer": false
     },
     {
      "text": "Khi tủ đã trượt, ma sát vẫn tìm từ điều kiện cân bằng như lúc đứng yên.",
@@ -401,8 +401,8 @@
    "explanation": "Tủ đứng yên nên $a = 0$, ma sát nghỉ vừa đủ bằng lực đẩy và không vượt mức trần $\\mu_n N$; khi trượt mới dùng $\\mu N$.",
    "distractorNotes": {
     "0": "Không thể coi ý này sai: tủ đứng yên nên $a = 0$, chiếu Ox cho ma sát nghỉ bằng đúng lực đẩy.",
-    "1": "Không thể coi ý này đúng: $\\mu_n N$ chỉ là mức trần, ma sát nghỉ chỉ lớn vừa đủ để giữ tủ.",
-    "2": "Không thể coi ý này sai: ma sát nghỉ không vượt quá $\\mu_n N$; cần lớn hơn mức đó thì vật bắt đầu trượt.",
+    "1": "Không thể coi ý này sai: ma sát nghỉ không vượt quá $\\mu_n N$; cần lớn hơn mức đó thì vật bắt đầu trượt.",
+    "2": "Không thể coi ý này đúng: $\\mu_n N$ chỉ là mức trần, ma sát nghỉ chỉ lớn vừa đủ để giữ tủ.",
     "3": "Không thể coi ý này đúng: tủ đã trượt thì ma sát là ma sát trượt, bằng $\\mu N$, không tìm từ cân bằng."
    }
   },
@@ -417,28 +417,28 @@
    "question": "Kéo một thùng khối lượng $m$ trượt trên sàn nằm ngang bằng lực $F$, hệ số ma sát trượt $\\mu$. Chọn Ox theo chiều kéo, Oy hướng lên.",
    "statements": [
     {
-     "text": "Khi lực kéo nằm ngang, chiếu Oy cho $N = mg$.",
-     "answer": true
-    },
-    {
-     "text": "Khi kéo xiên lên góc $\\alpha$, áp lực là $N = mg + F\\sin\\alpha$.",
-     "answer": false
-    },
-    {
      "text": "Khi kéo xiên lên góc $\\alpha$, chiếu Ox cho $F\\cos\\alpha - \\mu N = ma$.",
      "answer": true
     },
     {
      "text": "Kéo xiên với góc càng lớn thì càng nhẹ tay hơn kéo ngang.",
      "answer": false
+    },
+    {
+     "text": "Khi kéo xiên lên góc $\\alpha$, áp lực là $N = mg + F\\sin\\alpha$.",
+     "answer": false
+    },
+    {
+     "text": "Khi lực kéo nằm ngang, chiếu Oy cho $N = mg$.",
+     "answer": true
     }
    ],
    "explanation": "Oy: $N + F\\sin\\alpha - P = 0$ nên $N = mg - F\\sin\\alpha$; kéo hơi xiên nhẹ tay hơn chỉ đúng với góc nhỏ vì $F\\cos\\alpha$ giảm khi góc lớn.",
    "distractorNotes": {
-    "0": "Không thể coi ý này sai: kéo ngang thì phương thẳng đứng chỉ có $N$ và $P$, nên hai lực cân bằng.",
-    "1": "Không thể coi ý này đúng: dây xiên lên nhấc bớt thùng, nên áp lực phải trừ chứ không cộng $F\\sin\\alpha$.",
-    "2": "Không thể coi ý này sai: dọc sàn có thành phần kéo $F\\cos\\alpha$ và ma sát $\\mu N$ ngược chiều kéo.",
-    "3": "Không thể coi ý này đúng: kéo xiên chỉ nhẹ tay khi góc nhỏ; góc lớn thì $F\\cos\\alpha$ giảm nhiều."
+    "0": "Không thể coi ý này sai: dọc sàn có thành phần kéo $F\\cos\\alpha$ và ma sát $\\mu N$ ngược chiều kéo.",
+    "1": "Không thể coi ý này đúng: kéo xiên chỉ nhẹ tay khi góc nhỏ; góc lớn thì $F\\cos\\alpha$ giảm nhiều.",
+    "2": "Không thể coi ý này đúng: dây xiên lên nhấc bớt thùng, nên áp lực phải trừ chứ không cộng $F\\sin\\alpha$.",
+    "3": "Không thể coi ý này sai: kéo ngang thì phương thẳng đứng chỉ có $N$ và $P$, nên hai lực cân bằng."
    }
   },
   {
@@ -487,6 +487,10 @@
    "question": "Hộp khối lượng $m$ trượt xuống mặt phẳng nghiêng góc $\\alpha$, hệ số ma sát trượt $\\mu$. Chọn Ox dọc mặt nghiêng hướng xuống, Oy vuông góc mặt nghiêng.",
    "statements": [
     {
+     "text": "Lực ma sát trượt tác dụng lên hộp hướng xuống dốc.",
+     "answer": false
+    },
+    {
      "text": "Với cách chọn trục này, chỉ có trọng lực phải phân tích thành hai thành phần.",
      "answer": true
     },
@@ -497,18 +501,14 @@
     {
      "text": "Bỏ qua ma sát, gia tốc của hộp là $a = g\\cos\\alpha$.",
      "answer": false
-    },
-    {
-     "text": "Lực ma sát trượt tác dụng lên hộp hướng xuống dốc.",
-     "answer": false
     }
    ],
    "explanation": "Oy: $N = mg\\cos\\alpha$; Ox: thành phần dọc dốc là $P\\sin\\alpha$ nên bỏ ma sát $a = g\\sin\\alpha$; ma sát ngược chiều trượt, tức hướng lên dốc.",
    "distractorNotes": {
-    "0": "Không thể coi ý này sai: $\\vec N$ nằm trên Oy, ma sát nằm trên Ox, chỉ $\\vec P$ xiên so với hai trục.",
-    "1": "Không thể coi ý này sai: $N$ cân bằng với $P\\cos\\alpha$, mà $\\cos\\alpha \\lt 1$ nên $N$ nhỏ hơn $mg$.",
-    "2": "Không thể coi ý này đúng: ý này nhầm sin với cos, vì thành phần dọc dốc là $P\\sin\\alpha$.",
-    "3": "Không thể coi ý này đúng: hộp trượt xuống thì ma sát trượt ngược chiều trượt, tức hướng lên dốc."
+    "0": "Không thể coi ý này đúng: hộp trượt xuống thì ma sát trượt ngược chiều trượt, tức hướng lên dốc.",
+    "1": "Không thể coi ý này sai: $\\vec N$ nằm trên Oy, ma sát nằm trên Ox, chỉ $\\vec P$ xiên so với hai trục.",
+    "2": "Không thể coi ý này sai: $N$ cân bằng với $P\\cos\\alpha$, mà $\\cos\\alpha \\lt 1$ nên $N$ nhỏ hơn $mg$.",
+    "3": "Không thể coi ý này đúng: ý này nhầm sin với cos, vì thành phần dọc dốc là $P\\sin\\alpha$."
    }
   },
   {
@@ -526,24 +526,24 @@
      "answer": true
     },
     {
-     "text": "Bỏ ma sát, gia tốc lí thuyết là $a = \\dfrac{m_2 g}{m_1}$.",
-     "answer": false
+     "text": "Với cùng quãng đường $s$, nếu thời gian đo được gấp đôi thì gia tốc tính ra giảm 4 lần.",
+     "answer": true
     },
     {
      "text": "Cả 5 lần đo đều nhỏ hơn giá trị lí thuyết; độ lệch một phía này là sai số ngẫu nhiên.",
      "answer": false
     },
     {
-     "text": "Với cùng quãng đường $s$, nếu thời gian đo được gấp đôi thì gia tốc tính ra giảm 4 lần.",
-     "answer": true
+     "text": "Bỏ ma sát, gia tốc lí thuyết là $a = \\dfrac{m_2 g}{m_1}$.",
+     "answer": false
     }
    ],
    "explanation": "Cộng $T = m_1 a$ và $m_2 g - T = m_2 a$ được $a = \\dfrac{m_2 g}{m_1 + m_2}$; lệch về một phía là sai số hệ thống do ma sát trục, ròng rọc.",
    "distractorNotes": {
     "0": "Không thể coi ý này sai: thả từ nghỉ nên $v_0 = 0$, biến đổi $s = \\tfrac12 at^2$ được đúng $a = 2s/t^2$.",
-    "1": "Không thể coi ý này đúng: trọng lực quả nặng phải tăng tốc cả hai vật, nên mẫu số là $m_1 + m_2$.",
+    "1": "Không thể coi ý này sai: $a$ tỉ lệ nghịch với $t^2$, nên $t$ gấp đôi thì $a$ giảm bốn lần.",
     "2": "Không thể coi ý này đúng: lệch luôn về một phía là sai số hệ thống; sai số ngẫu nhiên lệch lúc lớn lúc nhỏ.",
-    "3": "Không thể coi ý này sai: $a$ tỉ lệ nghịch với $t^2$, nên $t$ gấp đôi thì $a$ giảm bốn lần."
+    "3": "Không thể coi ý này đúng: trọng lực quả nặng phải tăng tốc cả hai vật, nên mẫu số là $m_1 + m_2$."
    }
   }
  ]

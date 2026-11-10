@@ -43,7 +43,12 @@ const khoDir = path.resolve(root, opt("--kho") || "content/thi-nghiem");
 const lessonRoot = path.resolve(root, opt("--root") || "content/lesson-samples");
 
 type Video = {
-  youtube_id: string;
+  /** Clip YouTube có sẵn (11 ký tự) — hoặc dùng `mp4` cho clip tự dựng lưu ở Storage. */
+  youtube_id?: string;
+  /** Clip tự dựng/tự quay: URL công khai ở bucket lesson-clips (scripts/tai-clip-len-storage.mts ghi). */
+  mp4?: string;
+  /** Ảnh bìa .webp của clip mp4 (hiện trước khi bấm; video không tải gì khi chưa bấm). */
+  poster?: string;
   ten?: string;
   kenh?: string;
   nhan?: string;
@@ -52,8 +57,17 @@ type Video = {
   giay_bat_dau?: number;
   giay_ket_thuc?: number;
   da_kiem?: string;
+  /** Độ dài clip tự dựng (giây), tai-clip-len-storage.mts ghi. */
+  giay?: number;
+  /** Clip mp4 khung NGANG 16:9 (clip hiện tượng V9) — mặc định clip tự dựng là dọc 9:16. */
+  ngang?: boolean;
 };
 type KhoEntry = { expTen: string; lessonId?: number | string; video: Video };
+
+/** Khoá nhận diện một video: youtube_id, hoặc URL mp4 với clip tự dựng. */
+function khoaVideo(v: Video | undefined): string {
+  return v?.youtube_id || v?.mp4 || "";
+}
 
 function docKho(): Map<string, KhoEntry> {
   const map = new Map<string, KhoEntry>();
@@ -64,7 +78,7 @@ function docKho(): Map<string, KhoEntry> {
   for (const name of fs.readdirSync(khoDir).sort()) {
     if (!/^tn-.*\.json$/.test(name)) continue;
     const data = JSON.parse(fs.readFileSync(path.join(khoDir, name), "utf8"));
-    if (!data?.video?.youtube_id) continue;
+    if (!khoaVideo(data?.video)) continue;
     map.set(data.id, { expTen: data.ten ?? data.id, lessonId: data.lesson_id, video: data.video });
   }
   return map;
@@ -96,27 +110,55 @@ function ghiJsonGiuDinhDang(file: string, obj: unknown): void {
   fs.writeFileSync(file, JSON.stringify(obj, null, indent) + (raw.endsWith("\n") ? "\n" : ""), "utf8");
 }
 
+/** Khung sáu ô + dừng ở câu Dự đoán (content/thi-nghiem/video-khung/<id>.json, do scripts/video-thi-nghiem/xuat-khung.py ra).
+ *  Có file thì hộp video nhận data-khung (JSON gọn, URL clip/ảnh bìa lấy từ kho video) và ContentHtml gắn trình phát tương tác. */
+function dataKhung(marker: string, v: Video): string {
+  const f = path.join(khoDir, "video-khung", marker + ".json");
+  if (!v.mp4 || !fs.existsSync(f)) return "";
+  const d = JSON.parse(fs.readFileSync(f, "utf8"));
+  d.video = v.mp4;
+  if (v.poster) d.poster = v.poster;
+  return escapeHtml(JSON.stringify(d)).replace(/"/g, "&quot;");
+}
+
 function renderBlock(marker: string, tieuDeHop: string, nhan: string, v: Video): string {
   const params = new URLSearchParams({ rel: "0" });
   if (typeof v.giay_bat_dau === "number") params.set("start", String(v.giay_bat_dau));
   if (typeof v.giay_ket_thuc === "number") params.set("end", String(v.giay_ket_thuc));
+  const khung = v.mp4 && !v.ngang ? dataKhung(marker, v) : "";
   const lines = [
     `<!--video:${marker}-->`,
-    `<div class="tl-box tl-box--video">`,
-    `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
-    `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
+    `<div class="tl-box tl-box--video${khung ? " tl-box--khung" : ""}"${khung ? ` data-khung="${khung}"` : ""}>`,
   ];
-  if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
+  if (v.mp4 && !v.ngang) {
+    // Clip tự dựng 9:16: nhãn nhỏ + TÊN thí nghiệm làm tiêu đề, khung dọc (tl-video--doc) thay vì
+    // ép vào 16:9 để hai bên đen. Thẻ <video> thuần, preload="none" → chỉ tải ảnh bìa (V5, V9).
+    const giay = typeof v.giay === "number" ? ` · ${Math.round(v.giay)} giây` : "";
+    lines.push(
+      `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}${giay}</p>`,
+      `<p class="tl-video-ten">${escapeHtml(nhan.charAt(0).toLocaleUpperCase("vi") + nhan.slice(1))}</p>`,
+      `<div class="tl-video tl-video--doc"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`,
+      `<p class="tl-video-goi-y">${v.nhin_vao?.trim() ? `<strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}` : `Gặp ô <strong>Thử nghĩ</strong>: dừng video, tự trả lời rồi mới xem tiếp.`}</p>`,
+    );
+  } else {
+    lines.push(
+      `<p class="tl-label">🎬 ${escapeHtml(tieuDeHop)}: ${escapeHtml(nhan)}</p>`,
+      v.mp4
+        ? `<div class="tl-video"><video src="${escapeHtml(v.mp4)}"${v.poster ? ` poster="${escapeHtml(v.poster)}"` : ""} controls preload="none" playsinline title="${escapeHtml(nhan)}" style="position:absolute;inset:0;width:100%;height:100%;background:#000"></video></div>`
+        : `<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/${v.youtube_id}?${params.toString()}" title="${escapeHtml(nhan)}" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`,
+    );
+    if (v.nhin_vao?.trim()) lines.push(`<p><strong>Nhìn vào:</strong> ${escapeHtml(v.nhin_vao.trim())}</p>`);
+  }
   lines.push(`</div>`, ``);
   return lines.join("\n");
 }
 
 /** Tên hộp + nhãn của một khối video, theo vị trí chèn. */
 function nhanCuaVideo(v: Video, pool: Map<string, Video>, macDinh: string): { tieuDeHop: string; nhan: string } {
-  const shared = pool.get(v.youtube_id);
+  const shared = pool.get(khoaVideo(v));
   return {
     tieuDeHop: v.tieu_de_hop?.trim() || macDinh,
-    nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "video").trim(),
+    nhan: (v.nhan ?? v.ten ?? shared?.ten ?? "").trim(),
   };
 }
 
@@ -133,7 +175,7 @@ function docVideoTheoBai(): Map<string, ViTriBai[]> {
   const data = JSON.parse(fs.readFileSync(f, "utf8")) as { bai?: { slug?: string; videos?: ViTriBai[] }[] };
   for (const b of data?.bai ?? []) {
     if (!b?.slug || !Array.isArray(b.videos)) continue;
-    map.set(b.slug, b.videos.filter((v) => v?.video?.youtube_id));
+    map.set(b.slug, b.videos.filter((v) => khoaVideo(v?.video)));
   }
   return map;
 }
@@ -225,7 +267,7 @@ function boKhoiDaChen(html: string): { html: string; soKhoi: number } {
   for (const m of out.matchAll(/<!--video:[^>]*-->/g)) if (m.index !== undefined) marks.push(m.index);
   for (const idx of marks.reverse()) {
     const endMark = out.indexOf("-->", idx) + 3;
-    const startBlock = out.indexOf('<div class="tl-box tl-box--video">', endMark);
+    const startBlock = out.indexOf('<div class="tl-box tl-box--video', endMark);
     if (startBlock === -1 || startBlock > endMark + 200) continue;
     const divRe = /<div\b[^>]*>|<\/div>/g;
     divRe.lastIndex = startBlock;
@@ -301,8 +343,8 @@ function chenVaoHtml(
       boQua.push(`${id} (đã chèn trước đó)`);
       continue;
     }
-    if (html.includes(video.youtube_id)) {
-      boQua.push(`${id} (bài đã có video ${video.youtube_id} chèn tay)`);
+    if (html.includes(khoaVideo(video))) {
+      boQua.push(`${id} (bài đã có video ${khoaVideo(video)} chèn tay)`);
       continue;
     }
     const anchor = findAnchor(html, id);
@@ -318,7 +360,7 @@ function chenVaoHtml(
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, "Xem thí nghiệm thật");
     inserts.push({ pos, block: renderBlock(id, tieuDeHop, nhan || entry.expTen, video) });
-    chen.push(`${id} → ${video.youtube_id}${quaFig ? " (qua mốc <!--FIGn-->, khớp hình trong theory.html)" : ""}`);
+    chen.push(`${id} → ${khoaVideo(video)}${quaFig ? " (qua mốc <!--FIGn-->, khớp hình trong theory.html)" : ""}`);
   }
 
   // Video gắn theo BÀI (mở bài / trước-sau một mốc) — khai ở video-theo-bai.json
@@ -327,8 +369,8 @@ function chenVaoHtml(
       boQua.push(`${viTri} (đã chèn trước đó)`);
       continue;
     }
-    if (html.includes(video.youtube_id)) {
-      boQua.push(`${viTri} (bài đã có video ${video.youtube_id} chèn tay)`);
+    if (html.includes(khoaVideo(video))) {
+      boQua.push(`${viTri} (bài đã có video ${khoaVideo(video)} chèn tay)`);
       continue;
     }
     const pos = viTriChon(html, viTri);
@@ -337,8 +379,8 @@ function chenVaoHtml(
       continue;
     }
     const { tieuDeHop, nhan } = nhanCuaVideo(video, pool, viTri === "mo_bai" ? "Xem thực tế" : "Xem video");
-    inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan, video) });
-    chen.push(`${viTri} → ${video.youtube_id}`);
+    inserts.push({ pos, block: renderBlock(viTri, tieuDeHop, nhan || "video", video) });
+    chen.push(`${viTri} → ${khoaVideo(video)}`);
   }
 
   let out = html;

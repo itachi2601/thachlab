@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///private/tmp/l12wt/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,22 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
 }
 /* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
    16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
@@ -135,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -145,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -154,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -167,17 +186,38 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
 /* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
    --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
 .exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
 .exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
-.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: .95rem; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
 .exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
 .exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
@@ -188,7 +228,7 @@ html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25
 .exam-content .tl-sim__st p { margin: 2px 0; }
 .exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
 .exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
-.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: .95rem; line-height: 1.55; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
 .exam-content .tl-sim__leg li { margin: 2px 0; }
 .exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
 .exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
@@ -288,47 +328,39 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
   .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
 }
 
-/* Điện thoại: thẻ "Nên làm tiếp" chỉ nói bài nào. Nút nằm ở thanh đáy (vùng ngón cái). */
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
 @media (max-width: 639px) {
-  .lesson-layout--pick .lesson-main--single { padding: 12px 16px 24px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 12px; }
-  .lesson-layout--pick .lesson-main--single > .lesson-head h1 { font-size: 22px; }
-  .lesson-layout--pick .lesson-lead { margin-top: 4px; font-size: 14px; }
-  .lesson-layout--pick .class-continue--main {
-    gap: 2px;
-    border: 0;
-    border-radius: 0;
-    background: none;
-    padding: 0;
-  }
-  .lesson-layout--pick .class-continue--main .lesson-btn { display: none; }
-  .lesson-layout--pick .class-toc-toolbar { display: none; }
-  .lesson-bottombar--pick .lesson-bottom-link { font-size: 14px; }
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
   .lesson-layout--pick .class-lesson {
     display: grid;
-    grid-template-columns: 26px minmax(0, 1fr);
-    column-gap: 12px;
-    row-gap: 2px;
-    align-items: start;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
   }
-  .lesson-layout--pick .class-num { grid-row: 1 / span 2; align-self: center; }
-  .lesson-layout--pick .class-lesson-title,
-  .lesson-layout--pick .class-meta { grid-column: 2; }
-  .lesson-layout--pick .class-meta { justify-self: start; }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương xếp NGAY TRÊN tabbar toàn site ----------
-   Giữ tabbar để học sinh luôn quay về được 5 nút chính; thanh chương nằm trên nó (56px). */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .lesson-bottombar--pick { bottom: calc(56px + env(safe-area-inset-bottom, 0px)); padding-bottom: 6px; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(118px + env(safe-area-inset-bottom, 0px)); }
-  body:has(.lesson-bottombar--pick) .mobile-more-backdrop { z-index: 46; }
-  body:has(.lesson-bottombar--pick) .mobile-more { z-index: 47; }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -375,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -386,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -433,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -488,6 +528,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -548,6 +626,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -697,12 +784,338 @@ html[data-theme="light"] .exam-content .bt-note { color: #475569; }
 .exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
 html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
 
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Nêu <strong>ba thông số trạng thái</strong> của một lượng khí và thế nào là <strong>đẳng quá trình</strong>.</li>
@@ -719,9 +1132,9 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 
 <p>Bên trong thân bơm là một lượng khí bị nhốt lại. Vì sao ấn mãi thì nặng tay hơn, và vì sao thân bơm nóng lên?</p>
 
-<figure class="fig" data-tl="1" data-exp="tn-l12-boylecharles-04"><svg viewBox="0 0 460 254" role="img" aria-label="Bơm xe: pittông đi xuống làm thể tích khí trong thân bơm nhỏ lại, áp suất tăng lên; thể tích còn một phần tư thì áp suất gấp bốn lần"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="22" fill="currentColor" font-size="12.5" font-weight="700" text-anchor="start">Nén khí trong bơm, nhiệt độ không đổi</text><rect x="100" y="40" width="130" height="196" rx="14" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="2.5"/><line x1="100" y1="236" x2="230" y2="236" stroke="currentColor" stroke-width="2.5" opacity="1"/><rect x="104" y="136" width="122" height="100" rx="8" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.6"/><line x1="104" y1="136" x2="226" y2="136" stroke="#34d399" stroke-width="3" opacity="1"/><rect x="104" y="210" width="122" height="26" rx="8" fill="rgba(248,113,113,.20)" stroke="#f87171" stroke-width="1.6"/><line x1="104" y1="210" x2="226" y2="210" stroke="#f87171" stroke-width="3" opacity="1"/><line x1="165" y1="118" x2="165" y2="136" stroke="currentColor" stroke-width="3" opacity="1"/><rect x="149" y="106" width="32" height="12" rx="3" fill="currentColor" stroke="currentColor" stroke-width="0"/><line x1="165" y1="44" x2="165" y2="104" stroke="#f87171" stroke-width="2.6" marker-end="url(#f1-r)"/><text x="108" y="190" fill="#34d399" font-size="12.5" font-weight="700" text-anchor="start">V</text><text x="108" y="228" fill="#f87171" font-size="12.5" font-weight="700" text-anchor="start">V/4</text><text x="240" y="70" fill="currentColor" font-size="11" font-weight="700" text-anchor="start">Ấn pittông xuống:</text><text x="240" y="88" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">thể tích khí nhỏ lại</text><text x="240" y="112" fill="#34d399" font-size="11.5" font-weight="700" text-anchor="start">ban đầu: V, p</text><text x="240" y="132" fill="#f87171" font-size="11.5" font-weight="700" text-anchor="start">bị nén: V/4, p′</text><text x="240" y="152" fill="#f87171" font-size="11" font-weight="700" text-anchor="start">⇒ p′ = 4p (pV không đổi)</text><text x="240" y="176" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">vì nhiệt độ không đổi</text><text x="240" y="196" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">nên tay em ấn nặng hơn</text></svg><figcaption>Hình 1. Bơm xe: cán bơm đi xuống làm thể tích khí nhỏ lại, áp suất tăng lên. Khi thể tích còn một phần tư thì áp suất gấp bốn lần — tích $pV$ không đổi vì nhiệt độ không đổi.</figcaption></figure>
+<figure class="fig" data-tl="1" data-exp="tn-l12-boylecharles-04"><svg viewBox="0 0 460 262" role="img" aria-label="Bơm xe: pittông đi xuống làm thể tích khí trong thân bơm nhỏ lại, áp suất tăng lên; thể tích còn một phần tư thì áp suất gấp bốn lần"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Nén khí trong bơm, nhiệt độ không đổi</text><line x1="40" y1="62" x2="40" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="140" y1="62" x2="140" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="40" y1="230" x2="140" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><rect x="43" y="94" width="94" height="134" rx="4" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="1.6"/><rect x="43" y="84" width="94" height="10" rx="2" fill="currentColor" stroke="currentColor" stroke-width="0"/><line x1="90" y1="40" x2="90" y2="84" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="76" y1="40" x2="104" y2="40" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="260" y1="62" x2="260" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="360" y1="62" x2="360" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="260" y1="230" x2="360" y2="230" stroke="currentColor" stroke-width="2.5" opacity="1"/><rect x="263" y="194.5" width="94" height="33.5" rx="4" fill="rgba(248,113,113,.20)" stroke="#f87171" stroke-width="1.6"/><rect x="263" y="184.5" width="94" height="10" rx="2" fill="currentColor" stroke="currentColor" stroke-width="0"/><line x1="310" y1="140.5" x2="310" y2="184.5" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="296" y1="140.5" x2="324" y2="140.5" stroke="currentColor" stroke-width="3" opacity="1"/><text x="90" y="170" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">V, p</text><text x="310" y="220" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">V/4</text><text x="372" y="214" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">p′ = 4p</text><line x1="158" y1="128" x2="240" y2="128" stroke="#f87171" stroke-width="2.6"/><path d="M230.6,122.6 L240.0,128.0 L230.6,133.4" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="199" y="112" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">ấn xuống</text><text x="230" y="252" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">nhiệt độ không đổi ⇒ pV không đổi</text></svg><figcaption>Hình 1. Bơm xe: cán bơm đi xuống làm thể tích khí nhỏ lại, áp suất tăng lên. Khi thể tích còn một phần tư thì áp suất gấp bốn lần — tích $pV$ không đổi vì nhiệt độ không đổi.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Ấn pittông thật chậm (nhiệt độ coi như không đổi) cho thể tích khí trong bơm giảm còn một nửa. Áp suất khí:</p>
 <div class="tl-quiz">
@@ -747,10 +1160,17 @@ html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3)
 <li>Các định luật chất khí dùng <strong>nhiệt độ tuyệt đối</strong> $T$, đơn vị kenvin (K):</li>
 </ul>
 
-$$T(\text{K}) = t(^\circ\text{C}) + 273$$
+<div class="tl-fx">
+<p class="tl-fx-name">Nhiệt độ tuyệt đối</p>
+<p>$$T = t + 273$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$T$</span><span>nhiệt độ tuyệt đối (K, kenvin)</span></li>
+<li><span class="tl-sym">$t$</span><span>nhiệt độ trong thang Celsius (°C)</span></li>
+</ul>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 1.</strong> Nhiệt độ $27\ ^\circ\text{C}$ ứng với bao nhiêu kenvin?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl7-q1" id="tl7-q1a"><label for="tl7-q1a" class="tl-opt tl-no">A. $27\ \text{K}$, vì hai thang chỉ khác tên gọi</label>
@@ -764,48 +1184,73 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 
 <h4>2. Định luật Boyle — quá trình đẳng nhiệt</h4>
 
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-boylecharles-01">
+<p class="tl-label">🔬 Thí nghiệm: nén khí trong xilanh kín (kiểm định luật Boyle)</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> ở nhiệt độ không đổi, $p$ của khí nhốt kín tỉ lệ nghịch với $V$.</li>
+<li><strong>Dự đoán nếu đúng:</strong> $V$ giảm 2 lần thì $p$ tăng 2 lần; $pV$ không đổi.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem 4 dụng cụ và các bước</summary>
+<p>(1) Xilanh 20 ml có pittông kín, nhốt sẵn $8{,}0$ ml không khí; (2) áp kế nối với đầu xilanh; (3) giá kẹp giữ xilanh; (4) nhiệt kế kiểm tra nhiệt độ phòng.</p>
+<p><strong>Làm:</strong> ấn pittông <em>từ từ</em> tới $6{,}0$; $5{,}0$; $4{,}0$; $3{,}0$ ml, mỗi lần đợi vài giây cho số chỉ áp kế ổn định rồi đọc.</p>
+</details>
+<strong>Coi rằng</strong> khí không lọt và luôn ở nhiệt độ phòng.</li>
+<li><strong>Quan sát:</strong> $V$ giảm từ $8{,}0$ xuống $3{,}0$ ml thì áp kế tăng từ $100$ lên $267$ kPa.</li>
+<li><strong>Rút ra:</strong> ủng hộ giả thuyết: $p_1V_1 = p_2V_2;$ $V$ nhỏ → mật độ phân tử tăng → mỗi giây va chạm lên thành nhiều hơn → $p$ tăng. Ấn nhanh làm khí nóng, $pV$ <em>lớn hơn</em>; khí lọt làm $pV$ <em>nhỏ dần</em>.</li>
+<li><strong>Chưa nói được gì:</strong> chỉ đúng trong sai số (khoảng $5\%$); không cho biết $p$ phụ thuộc nhiệt độ ra sao.</li>
+</ol>
+</div>
+<!--video:sau:tn-l12-boylecharles-01-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem video: nén khí trong xilanh, đọc áp kế</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/mz43xUAit4c?rel=0&start=40&end=160" title="nén khí trong xilanh, đọc áp kế" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng số đo và vì sao $pV$ lệch tới $8\%$ mà vẫn gọi là không đổi</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>Lần đo</th><th>$V$ (ml)</th><th>$p$ (kPa)</th><th>$pV$ (kPa·ml)</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td>$8{,}0$</td><td>$100$</td><td>$800$</td></tr>
+<tr><td>2</td><td>$6{,}0$</td><td>$142$</td><td>$852$</td></tr>
+<tr><td>3</td><td>$5{,}0$</td><td>$170$</td><td>$850$</td></tr>
+<tr><td>4</td><td>$4{,}0$</td><td>$215$</td><td>$860$</td></tr>
+<tr><td>5</td><td>$3{,}0$</td><td>$267$</td><td>em tự tính</td></tr>
+</tbody>
+</table></div>
+<p><small>Số liệu minh hoạ tính từ mô hình $p = 800/V$ rồi cộng sai số đọc.</small></p>
+<p>Ô cuối có gần các ô trên không? Bốn ô đầu trong khoảng $800$–$860$, lệch tối đa $8\%$: <strong>đọc vạch chia</strong> sai $\pm 0{,}2$ ml (ở $3{,}0$ ml đã là $7\%$); <strong>ma sát pittông</strong> làm áp suất khí khác số chỉ áp kế; <strong>hơi nóng từ tay</strong> làm nhiệt độ khí tăng. Nên chỉ ghi $pV = 8{,}3 \cdot 10^2$ kPa·ml với sai số $5\%$.</p>
+</details>
+
 <p><strong>🔑 Nhiệt độ không đổi · $p$ tỉ lệ nghịch $V$ · $pV$ không đổi</strong></p>
 
 <ul>
-<li><strong>Quá trình đẳng nhiệt:</strong> <strong>nhiệt độ</strong> của một khối lượng khí xác định <strong>không đổi</strong>.</li>
-<li><strong>Định luật Boyle:</strong> khi nhiệt độ của một khối lượng khí xác định giữ không đổi thì áp suất <strong>tỉ lệ nghịch</strong> với thể tích của nó.</li>
-<li>Hệ thức: $pV = \text{hằng số}$, viết cho hai trạng thái: $p_1V_1 = p_2V_2$.</li>
-<li>Đơn vị: $p$ (Pa, mmHg, atm), $V$ ($\text{m}^3$, lít, $\text{cm}^3$). Chỉ cần $p_1$, $p_2$ <em>cùng đơn vị</em> và $V_1$, $V_2$ <em>cùng đơn vị</em>.</li>
+<li><strong>Quá trình đẳng nhiệt:</strong> <strong>nhiệt độ</strong> của khí <strong>không đổi</strong>.</li>
+<li><strong>Định luật Boyle:</strong> nhiệt độ không đổi thì áp suất <strong>tỉ lệ nghịch</strong> với thể tích.</li>
+<li>$p_1$, $p_2$ cùng đơn vị; $V_1$, $V_2$ cùng đơn vị.</li>
 </ul>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-boylecharles-01">
-<p class="tl-label">🔬 Thí nghiệm: nén khí trong xilanh kín</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> xilanh 20 ml kín nhốt sẵn $8{,}0$ ml không khí, nối áp kế. Giữ nhiệt độ phòng, đẩy pittông tới $6{,}0$; $5{,}0$; $4{,}0$; $3{,}0$ ml, đọc áp kế.</li>
-<li><strong>Quan sát:</strong> thể tích càng nhỏ thì áp kế chỉ càng lớn; tích $pV$ gần như đứng yên quanh $8{,}3 \cdot 10^2$ kPa·ml.</li>
-<li><strong>Rút ra:</strong> ở nhiệt độ không đổi, $p$ và $V$ tỉ lệ nghịch: $p_1V_1 = p_2V_2$.</li>
-</ol>
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật Boyle</p>
+<p class="tl-fx-cond">Nhiệt độ và khối lượng khí không đổi</p>
+<p>$$pV = \mathrm{const}$$</p>
+<p>$$p_1V_1 = p_2V_2$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$p$</span><span>áp suất khí</span></li>
+<li><span class="tl-sym">$V$</span><span>thể tích khí</span></li>
+<li><span class="tl-sym">$1,\,2$</span><span>trạng thái đầu, trạng thái sau</span></li>
+</ul>
 </div>
 
-<table class="tl-table">
-<thead>
-<tr><th>Lần đo</th><th>$V$ (ml) · $p$ (kPa) · $pV$ (kPa·ml)</th></tr>
-</thead>
-<tbody>
-<tr><td>1</td><td>$V = 8{,}0$; $p = 100$; $pV = 800$</td></tr>
-<tr><td>2</td><td>$V = 6{,}0$; $p = 142$; $pV = 852$</td></tr>
-<tr><td>3</td><td>$V = 5{,}0$; $p = 170$; $pV = 850$</td></tr>
-<tr><td>4</td><td>$V = 4{,}0$; $p = 215$; $pV = 860$</td></tr>
-<tr><td>5</td><td>$V = 3{,}0$; $p = 267$; $pV = 801$</td></tr>
-</tbody>
-</table>
-
-<details class="tl-details" open>
-<summary>🤏 Vì sao $pV$ lệch tới $8\%$ mà vẫn gọi là không đổi?</summary>
-<p>Năm giá trị $pV$ trong khoảng $800$–$860$, lệch tối đa $8\%$: <strong>đọc vạch chia</strong> sai $\pm 0{,}2$ ml (ở $3{,}0$ ml đã là $7\%$); <strong>ma sát pittông</strong> làm áp suất khí khác số chỉ áp kế; <strong>hơi nóng từ tay</strong> làm nhiệt độ khí tăng. Nên chỉ ghi $pV = 8{,}3 \cdot 10^2$ kPa·ml với sai số $5\%$.</p>
-</details>
-
-<p><strong>Đường đẳng nhiệt</strong> (nhiệt độ không đổi) trên hệ toạ độ $(p,V)$ là một <strong>nhánh hypebol</strong>; nhiệt độ càng cao, đường càng <strong>xa gốc</strong>.</p>
+<p><strong>Đường đẳng nhiệt</strong> trên hệ $(p,V)$ là một <strong>nhánh hypebol</strong>; nhiệt độ càng cao, đường càng <strong>xa gốc</strong>.</p>
 
 <figure class="fig" data-tl="1" data-exp="tn-l12-boylecharles-03"><svg viewBox="0 0 400 242" role="img" aria-label="Đồ thị áp suất theo thể tích ở nhiệt độ không đổi: hai nhánh hypebol, đường ứng với nhiệt độ cao hơn nằm xa gốc toạ độ hơn"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="60" y1="216" x2="380" y2="216" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="60" y1="216" x2="60" y2="34" stroke="currentColor" stroke-width="2" opacity="1"/><text x="384" y="220" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">V</text><text x="18" y="40" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">p</text><text x="60" y="236" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">O</text><polyline points="102.5,42.0 105.5,53.5 108.5,63.5 111.5,72.4 114.5,80.3 117.5,87.4 120.5,93.8 123.5,99.5 126.5,104.8 129.5,109.6 132.5,114.0 135.5,118.0 138.5,121.8 141.5,125.3 144.5,128.5 147.5,131.5 150.5,134.3 153.5,136.9 156.5,139.4 159.5,141.7 162.5,143.8 165.5,145.9 168.5,147.8 171.5,149.7 174.5,151.4 177.5,153.1 180.5,154.6 183.5,156.1 186.5,157.5 189.5,158.9 192.5,160.2 195.5,161.4 198.5,162.6 201.5,163.7 204.5,164.8 207.5,165.9 210.5,166.9 213.5,167.8 216.5,168.7 219.5,169.6 222.5,170.5 225.5,171.3 228.5,172.1 231.5,172.9 234.5,173.6 237.5,174.3 240.5,175.0 243.5,175.7 246.5,176.3 249.5,177.0 252.5,177.6 255.5,178.2 258.5,178.7 261.5,179.3 264.5,179.8 267.5,180.4 270.5,180.9 273.5,181.4 276.5,181.8 279.5,182.3 282.5,182.8 285.5,183.2 288.5,183.6 291.5,184.1 294.5,184.5 297.5,184.9 300.5,185.2 303.5,185.6 306.5,186.0 309.5,186.4 312.5,186.7 315.5,187.1 318.5,187.4 321.5,187.7 324.5,188.0 327.5,188.4 330.5,188.7 333.5,189.0 336.5,189.3 339.5,189.5 342.5,189.8 345.5,190.1 348.5,190.4 351.5,190.6 354.5,190.9 357.5,191.1 360.5,191.4 363.5,191.6 366.5,191.9 369.5,192.1 372.0,192.3" fill="none" stroke="#38bdf8" stroke-width="3" stroke-linejoin="round"/><polyline points="121.3,42.0 124.3,50.1 127.3,57.5 130.3,64.3 133.3,70.5 136.3,76.2 139.3,81.5 142.3,86.4 145.3,91.0 148.3,95.2 151.3,99.2 154.3,102.9 157.3,106.4 160.3,109.7 163.3,112.8 166.3,115.7 169.3,118.4 172.3,121.0 175.3,123.5 178.3,125.8 181.3,128.1 184.3,130.2 187.3,132.2 190.3,134.2 193.3,136.0 196.3,137.8 199.3,139.4 202.3,141.1 205.3,142.6 208.3,144.1 211.3,145.5 214.3,146.9 217.3,148.2 220.3,149.5 223.3,150.7 226.3,151.9 229.3,153.0 232.3,154.1 235.3,155.2 238.3,156.2 241.3,157.2 244.3,158.1 247.3,159.1 250.3,160.0 253.3,160.8 256.3,161.7 259.3,162.5 262.3,163.3 265.3,164.1 268.3,164.8 271.3,165.5 274.3,166.2 277.3,166.9 280.3,167.6 283.3,168.2 286.3,168.9 289.3,169.5 292.3,170.1 295.3,170.7 298.3,171.2 301.3,171.8 304.3,172.3 307.3,172.9 310.3,173.4 313.3,173.9 316.3,174.4 319.3,174.9 322.3,175.3 325.3,175.8 328.3,176.3 331.3,176.7 334.3,177.1 337.3,177.5 340.3,178.0 343.3,178.4 346.3,178.8 349.3,179.1 352.3,179.5 355.3,179.9 358.3,180.2 361.3,180.6 364.3,181.0 367.3,181.3 370.3,181.6 372.0,181.8" fill="none" stroke="#f87171" stroke-width="3" stroke-linejoin="round"/><line x1="232.0" y1="216" x2="232.0" y2="173.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5"/><line x1="232.0" y1="173.0" x2="308.0" y2="173.0" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5"/><circle cx="232.0" cy="173.0" r="4" fill="#38bdf8"/><circle cx="308.0" cy="173.0" r="4" fill="#f87171"/><text x="240" y="58" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">cùng một p:</text><text x="240" y="74" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">đường đỏ cho V lớn hơn</text><text x="240" y="92" fill="#f87171" font-size="10.5" font-weight="700" text-anchor="start">→ khí nóng hơn</text><text x="240" y="122" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">hai nhiệt độ khác nhau,</text><text x="240" y="138" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">cùng một lượng khí</text><text x="344" y="172" fill="#f87171" font-size="12" font-weight="700" text-anchor="start">T<tspan dy="4" font-size="9">2</tspan></text><text x="344" y="210" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="start">T<tspan dy="4" font-size="9">1</tspan></text></svg><figcaption>Hình 2. Đường đẳng nhiệt trên đồ thị $p$–$V$ là một nhánh hypebol. Cùng một lượng khí, đường ứng với nhiệt độ cao hơn ($T_2$) nằm xa gốc toạ độ hơn.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 2.</strong> Khí ở $p_1 = 2{,}0$ atm, $V_1 = 3{,}0$ lít. Nén đẳng nhiệt cho thể tích còn $1{,}5$ lít thì $p_2$ bằng:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl7-q2conf" value="chac"> Chắc</label> <label><input type="radio" name="tl7-q2conf" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -813,33 +1258,34 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <input type="radio" name="tl7-q2" id="tl7-q2b"><label for="tl7-q2b" class="tl-opt tl-no">B. $2{,}0$ atm, vì khối lượng khí không đổi</label>
 <input type="radio" name="tl7-q2" id="tl7-q2c"><label for="tl7-q2c" class="tl-opt tl-ok">C. $4{,}0$ atm</label>
 <input type="radio" name="tl7-q2" id="tl7-q2d"><label for="tl7-q2d" class="tl-opt tl-no">D. $6{,}0$ atm</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $p_1V_1 = 2{,}0 \times 3{,}0 = 6{,}0$ atm·lít, nên $p_2 = 6{,}0 \div 1{,}5 = 4{,}0$ atm: thể tích giảm $2$ lần thì áp suất tăng $2$ lần.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Nhốt khí vào chỗ chật hơn thì áp suất <em>tăng</em>, nên A và B sai. Cách làm chắc: tính $p_1V_1$ rồi chia cho thể tích mới.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $p_1V_1 = 2{,}0 \times 3{,}0 = 6{,}0$ atm·lít, nên $p_2 = 6{,}0 \div 1{,}5 = 4{,}0$ atm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Khí bị nén thì $p$ <em>tăng</em>, nên A, B sai. Tính $p_1V_1$ rồi chia cho thể tích mới.</p></div>
 </div>
 </div>
 
 <h4>3. Định luật Charles — quá trình đẳng áp</h4>
 
-<p><strong>🔑 Áp suất không đổi · $V$ tỉ lệ thuận $T$ · $V/T$ không đổi</strong></p>
-
-<ul>
-<li><strong>Quá trình đẳng áp:</strong> <strong>áp suất</strong> của một khối lượng khí xác định <strong>không đổi</strong>.</li>
-<li><strong>Định luật Charles:</strong> khi áp suất giữ không đổi thì thể tích <strong>tỉ lệ thuận</strong> với <strong>nhiệt độ tuyệt đối</strong>.</li>
-<li>Hệ thức: $\dfrac{V}{T} = \text{hằng số}$, hay $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$.</li>
-<li>Bắt buộc dùng $T$ đo bằng kenvin: ở $0\ ^\circ\text{C}$ khí vẫn có thể tích khác $0$, nên $V$ chỉ tỉ lệ thuận với $T$ khi tính từ $0$ K.</li>
-<li>Ví dụ đẳng áp: quả bóng bay phơi nắng căng phồng lên.</li>
-</ul>
-
-<div class="tl-box tl-box--exp" data-exp="tn-l12-boylecharles-02">
-<p class="tl-label">🔬 Thí nghiệm: cột khí trong ống, áp suất không đổi</p>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-boylecharles-02">
+<p class="tl-label">🔬 Thí nghiệm: cột khí trong ống, áp suất không đổi (kiểm định luật Charles)</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> nhốt một giọt dầu trong ống thuỷ tinh hẹp, giữ cột khí dài $10{,}0$ cm; đầu hở thông khí trời. Ống tiết diện đều nên $V$ tỉ lệ với chiều dài $\ell$ của cột khí. Ngâm lần lượt vào nước đá đang tan, nước phòng, nước $50\ ^\circ\text{C}$, $75\ ^\circ\text{C}$; đợi hai phút rồi đo.</li>
-<li><strong>Quan sát:</strong> nước càng nóng, cột khí càng dài; tỉ số $\ell/T$ gần như không đổi.</li>
-<li><strong>Rút ra:</strong> áp suất không đổi thì thể tích tỉ lệ thuận với nhiệt độ tuyệt đối.</li>
+<li><strong>Giả thuyết cần kiểm:</strong> ở $p$ không đổi, $V$ tỉ lệ thuận với nhiệt độ tuyệt đối.</li>
+<li><strong>Dự đoán nếu đúng:</strong> nước càng nóng, cột khí càng dài; $\ell/T$ không đổi.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem 4 dụng cụ và các bước</summary>
+<p>(1) Ống thuỷ tinh hẹp, một đầu kín, đầu hở thông khí trời; (2) giọt dầu nhốt cột khí dài $10{,}0$ cm; (3) thước chia mm; (4) cốc nước đá, nước phòng, nước $50\ ^\circ\text{C}$, $75\ ^\circ\text{C}$ cùng nhiệt kế.</p>
+<p><strong>Làm:</strong> ngâm ống lần lượt vào từng cốc, đợi hai phút rồi đo $\ell$.</p>
+</details>
+<strong>Coi rằng</strong> $p$ khí luôn bằng áp suất khí quyển, ống đều nên $V$ tỉ lệ $\ell$, khí cùng nhiệt độ với nước.</li>
+<li><strong>Quan sát:</strong> cột khí dài dần từ $10{,}0$ cm ở $0\ ^\circ\text{C}$ lên $12{,}9$ cm ở $75\ ^\circ\text{C}$; $\ell/T$ lệch nhau khoảng $1{,}2\%$.</li>
+<li><strong>Rút ra:</strong> ủng hộ giả thuyết: $V_1/T_1 = V_2/T_2;$ $T$ tăng → phân tử chạy nhanh hơn → khí dãn để $p$ vẫn bằng áp suất ngoài. Đợi chưa đủ thì $\ell$ <em>ngắn hơn</em> dự đoán.</li>
+<li><strong>Chưa nói được gì:</strong> chỉ đo từ $273$ K tới $348$ K; $V = 0$ ở $0$ K là kéo dài đường thẳng, không phải số đo.</li>
 </ol>
 </div>
 
-<table class="tl-table">
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: bảng số đo</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
 <thead>
 <tr><th>$t$ (°C)</th><th>$\ell$ (cm)</th><th>$\ell/T$ (cm/K)</th></tr>
 </thead>
@@ -847,33 +1293,54 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <tr><td>$0$</td><td>$10{,}0$</td><td>$0{,}0366$</td></tr>
 <tr><td>$25$</td><td>$10{,}9$</td><td>$0{,}0366$</td></tr>
 <tr><td>$50$</td><td>$11{,}9$</td><td>$0{,}0368$</td></tr>
-<tr><td>$75$</td><td>$12{,}9$</td><td>$0{,}0371$</td></tr>
+<tr><td>$75$</td><td>$12{,}9$</td><td>em tự tính</td></tr>
 </tbody>
-</table>
-
-<details class="tl-details" open>
-<summary>🤏 Câu hỏi về sai số: vì sao $\ell/T$ nhích lên $0{,}0371$?</summary>
-<p>Lệch khoảng $1{,}4\%$ so với lần đo đầu. Nguyên nhân có thể:<br>thước chia $1$ mm nên $12{,}9$ cm đã là $\pm 0{,}1$ cm (khoảng $0{,}8\%$)<br>ống không đặt thật thẳng đứng<br>giọt dầu bị đẩy lệch khỏi vạch.<br>Còn cột khí chưa nóng đều thì cột <em>ngắn hơn</em> dự đoán, nên nguyên nhân này không giải thích được việc $\ell/T$ nhích lên.</p>
+</table></div>
+<p><small>Số liệu minh hoạ. Ô cuối có gần các ô trên không?</small></p>
 </details>
 
-<p><strong>Đường đẳng áp</strong> (áp suất không đổi) trên hệ toạ độ $(V,T)$ là một <strong>đoạn thẳng kéo dài qua gốc toạ độ</strong>; áp suất càng nhỏ, đường càng <strong>cao</strong>.</p>
+<details class="tl-details tl-more">
+<summary>🤏 Vì sao $\ell/T$ ở $75\ ^\circ\text{C}$ nhích lên?</summary>
+<p>Lệch khoảng $1{,}2\%$ so với lần đo đầu. Nguyên nhân có thể:<br>thước chia $1$ mm nên mỗi lần đọc sai $\pm 0{,}1$ cm: $10{,}0$ cm sai tới $1\%$, $12{,}9$ cm sai $0{,}8\%$, cộng lại tỉ số có thể lệch tới gần $2\%$<br>ống không đặt thật thẳng đứng<br>giọt dầu bị đẩy lệch khỏi vạch.<br>Còn cột khí chưa nóng đều thì cột <em>ngắn hơn</em> dự đoán, nên nguyên nhân này không giải thích được việc $\ell/T$ nhích lên.</p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<div class="tl-quiz">
+<input type="radio" name="tl7-q3" id="tl7-q3a"><label for="tl7-q3a" class="tl-opt tl-no">A. Nước nóng hơn thì cột khí dài hơn</label>
+<input type="radio" name="tl7-q3" id="tl7-q3b"><label for="tl7-q3b" class="tl-opt tl-no">B. $\ell/T$ gần không đổi, nên $V$ tỉ lệ thuận với $T$</label>
+<input type="radio" name="tl7-q3" id="tl7-q3c"><label for="tl7-q3c" class="tl-opt tl-no">C. Phân tử chạy nhanh hơn nên khí dãn, giữ $p$ bằng áp suất ngoài</label>
+<input type="radio" name="tl7-q3" id="tl7-q3d"><label for="tl7-q3d" class="tl-opt tl-ok">D. Thí nghiệm chứng minh $V = 0$ khi $T = 0$ K</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng, D sai.</strong> Chỉ đo từ $273$ K tới $348$ K; đoạn qua gốc là phần <em>kéo dài</em>, khí thật hoá lỏng trước $0$ K.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng, B là kết luận, C là cơ chế — đều đúng. D vượt quá điều thí nghiệm nói được (giới hạn).</p></div>
+</div>
+</div>
+
+<p><strong>🔑 Áp suất không đổi · $V$ tỉ lệ thuận $T$ · $V/T$ không đổi</strong></p>
+
+<ul>
+<li><strong>Quá trình đẳng áp:</strong> <strong>áp suất</strong> của khí <strong>không đổi</strong>.</li>
+<li><strong>Định luật Charles:</strong> áp suất không đổi thì thể tích <strong>tỉ lệ thuận</strong> với <strong>nhiệt độ tuyệt đối</strong>.</li>
+<li>$T$ tính bằng kenvin, không dùng $^\circ\text{C}$.</li>
+</ul>
+
+<div class="tl-fx">
+<p class="tl-fx-name">Định luật Charles</p>
+<p class="tl-fx-cond">Áp suất và khối lượng khí không đổi</p>
+<p>$$\dfrac{V}{T} = \mathrm{const}$$</p>
+<p>$$\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$V$</span><span>thể tích khí (hai trạng thái cùng đơn vị)</span></li>
+<li><span class="tl-sym">$T$</span><span>nhiệt độ tuyệt đối (K)</span></li>
+</ul>
+</div>
+
+<p><strong>Đường đẳng áp</strong> trên hệ $(V,T)$ là <strong>đoạn thẳng kéo dài qua gốc</strong>; áp suất càng nhỏ, đường càng <strong>cao</strong>.</p>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 400 252" role="img" aria-label="Đồ thị thể tích theo nhiệt độ tuyệt đối ở áp suất không đổi: hai đường thẳng kéo dài đều đi qua gốc toạ độ, đường ứng với áp suất nhỏ hơn nằm cao hơn"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="64" y1="206" x2="372" y2="206" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="64" y1="206" x2="64" y2="30" stroke="currentColor" stroke-width="2" opacity="1"/><text x="376" y="210" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">T</text><text x="16" y="38" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">V</text><text x="64" y="226" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">O</text><line x1="274.2" y1="206" x2="274.2" y2="211" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="274.2" y="226" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="end">273</text><line x1="295.0" y1="206" x2="295.0" y2="211" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="295.0" y="226" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">300</text><line x1="341.2" y1="206" x2="341.2" y2="211" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="341.2" y="226" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="middle">360</text><line x1="64.0" y1="206.0" x2="372.0" y2="43.9" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="64.0" y1="206.0" x2="372.0" y2="90.2" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="295.0" y1="206" x2="295.0" y2="84.4" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5"/><circle cx="295.0" cy="84.4" r="4" fill="#fb923c"/><circle cx="295.0" cy="119.2" r="4" fill="#38bdf8"/><line x1="341.2" y1="206" x2="341.2" y2="60.1" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.5"/><circle cx="341.2" cy="60.1" r="4" fill="#fb923c"/><circle cx="341.2" cy="101.8" r="4" fill="#38bdf8"/><text x="196.7" y="128.2" fill="#fb923c" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-27.76 196.7 128.2)">p<tspan dy="4" font-size="8">1</tspan><tspan dy="-4"> (nhỏ hơn)</tspan></text><text x="259.2" y="145.4" fill="#38bdf8" font-size="11" font-weight="700" text-anchor="middle" transform="rotate(-20.60 259.2 145.4)">p<tspan dy="4" font-size="8">2</tspan><tspan dy="-4"> &gt; p</tspan><tspan dy="4" font-size="8">1</tspan></text><text x="100" y="44" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">cùng một T: đường cam cho V lớn hơn</text><text x="64" y="244" fill="currentColor" font-size="10.5" font-weight="600" text-anchor="start">kéo dài: cả hai đường đi qua gốc O</text></svg><figcaption>Hình 3. Đường đẳng áp trên đồ thị $V$–$T$ là đoạn thẳng, kéo dài thì đi qua gốc $O$. Cùng một lượng khí, đường ứng với áp suất nhỏ hơn ($p_1$) nằm cao hơn.</figcaption></figure>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 3.</strong> Khí ở $27\ ^\circ\text{C}$ có thể tích $1{,}0$ lít, áp suất giữ không đổi. Nung nóng tới $87\ ^\circ\text{C}$ thì thể tích là:</p>
-<div class="tl-quiz">
-<input type="radio" name="tl7-q3" id="tl7-q3a"><label for="tl7-q3a" class="tl-opt tl-no">A. $3{,}2$ lít, vì nhiệt độ tăng hơn ba lần</label>
-<input type="radio" name="tl7-q3" id="tl7-q3b"><label for="tl7-q3b" class="tl-opt tl-no">B. $0{,}8$ lít</label>
-<input type="radio" name="tl7-q3" id="tl7-q3c"><label for="tl7-q3c" class="tl-opt tl-no">C. $1{,}0$ lít, vì áp suất không đổi thì thể tích không đổi</label>
-<input type="radio" name="tl7-q3" id="tl7-q3d"><label for="tl7-q3d" class="tl-opt tl-ok">D. $1{,}2$ lít</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $T_1 = 300$ K, $T_2 = 360$ K, nên $V_2 = 1{,}0 \times \dfrac{360}{300} = 1{,}2$ lít.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A lấy $\dfrac{87}{27} \approx 3{,}2$, nhưng $87$ và $27$ là nhiệt độ Celsius — tỉ lệ thuận chỉ đúng với nhiệt độ tuyệt đối. Đổi sang kenvin trước đã: $300$ K và $360$ K.</p></div>
-</div>
-</div>
-
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>📘 Mở rộng: đơn vị áp suất, cột thuỷ ngân và cột nước</summary>
 <p><strong>Đổi đơn vị:</strong> $1\ \text{atm} = 760\ \text{mmHg} = 1{,}013 \cdot 10^5\ \text{Pa} = 1{,}013 \cdot 10^5\ \text{N/m}^2$; $1\ \text{bar} = 10^5\ \text{Pa}$; $1\ \text{m}^3 = 10^3\ \text{dm}^3 = 10^3$ lít $= 10^6\ \text{cm}^3 = 10^9\ \text{mm}^3$. Ghi nhớ: $1$ ml $= 1\ \text{cm}^3$, $1$ lít $= 1\ \text{dm}^3$.</p>
 <p><strong>Áp suất theo độ cao cột thuỷ ngân.</strong> Cột thuỷ ngân cao $h$ (mm) gây thêm áp suất $h$ mmHg. Ba trường hợp thường gặp, cùng đơn vị mmHg:<br><em>bịt kín hai đầu</em>: cột thuỷ ngân nằm giữa hai lượng khí, khí ở dưới chịu thêm cột đó nên $p_{\text{dưới}} = p_{\text{trên}} + h$<br><em>đầu hở phía trên</em>: $p = p_0 + h$<br><em>đầu hở phía dưới</em>: $p = p_0 - h$.<br>Áp suất khí quyển trung bình $p_0 = 760$ mmHg.</p>
@@ -881,13 +1348,26 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <p><strong>Ngoại lực tác dụng lên bình:</strong> nếu pittông diện tích $S$ chịu lực $F$ thì $p = p_0 \pm \dfrac{F}{S}$ — nén thêm lấy dấu $+$, kéo ra lấy dấu $-$. Đây là cách tạo áp suất lớn trong bơm xe đạp.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🧮 Ví dụ: ống hở phía trên, cột thuỷ ngân $50$ mm</summary>
 <p>Áp suất khí quyển $p_0 = 760$ mmHg. Khí bị nhốt ở đáy ống còn phải "gánh" thêm cột thuỷ ngân nên $p = p_0 + h = 810$ mmHg — không phải $760 - 50 = 710$ mmHg, vì $710$ mmHg mới là kết quả của ống hở phía dưới.</p>
 </details>
 
+<details class="tl-details tl-more">
+<summary>🧪 Thử với mô phỏng: nén khí, đo áp suất</summary>
+<iframe src="https://phet.colorado.edu/sims/html/gas-properties/latest/gas-properties_all.html?locale=vi" width="100%" height="520" style="border:1px solid #ddd;border-radius:8px;box-sizing:border-box;max-width:100%;display:block" allowfullscreen loading="lazy" title="Mô phỏng PhET: Tính chất của chất khí"></iframe>
+<p><strong>Thử:</strong></p>
+<ol class="tl-steps">
+<li>Chọn màn hình <strong>Khí lý tưởng</strong>. Bơm khoảng 50 hạt (mũi tên <strong>▶▶</strong> cạnh ô <strong>Nhẹ</strong>). Ở mục <strong>Đại lượng không đổi</strong>, chọn <strong>Nhiệt độ (T)</strong>. Tích ô <strong>Bề rộng</strong> để hiện bề rộng bình.</li>
+<li>Theo em, nếu kéo thành trái của bình sang phải để thu nhỏ một nửa bề rộng thì áp suất thay đổi bao nhiêu lần? Dự đoán rồi kéo tay cầm bên trái và đọc áp kế.</li>
+<li>Lặp lại với vài bề rộng khác. Ghi áp suất và bề rộng, nhân hai số với nhau. Rút ra điều gì? Đối chiếu với định luật Boyle $pV=\text{hằng số}$.</li>
+</ol>
+<p><small>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</small></p>
+</details>
+
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
+<div class="tl-trap">
 <h4>Bẫy 1: "đẳng nhiệt thì thể tích không đổi"</h4>
 
 <p>Tên các đẳng quá trình rất dễ lẫn: <em>đẳng nhiệt</em> giữ nhiệt độ, <em>đẳng áp</em> giữ áp suất, <em>đẳng tích</em> giữ thể tích. Đọc lệch một chữ là chọn sai cả công thức lẫn đồ thị.</p>
@@ -902,9 +1382,10 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <tr><td>Đồ thị $p$–$V$: nhánh hypebol</td><td>Đồ thị $p$–$V$: đoạn thẳng đứng</td></tr>
 </tbody>
 </table>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 4.</strong> Cho một lượng khí biến đổi sao cho $pV$ luôn không đổi. Đó là quá trình nào?</p>
 <div class="tl-quiz">
 <input type="radio" name="tl7-q4" id="tl7-q4a"><label for="tl7-q4a" class="tl-opt tl-ok">A. Đẳng nhiệt, vì nhiệt độ được giữ không đổi</label>
@@ -915,6 +1396,7 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: lấy tỉ số hai nhiệt độ Celsius</h4>
 
 <p>Định luật Charles là hệ thức tỉ lệ thuận, nên nhiệt độ trong đó phải là nhiệt độ tuyệt đối.</p>
@@ -929,16 +1411,17 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <tr><td>Dùng được trong mọi hệ thức tỉ lệ</td><td>Chỉ dùng để đổi ra K rồi mới tính</td></tr>
 </tbody>
 </table>
+</div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>👀 Bấm xem: cùng một biến đổi, hai cách tính cho hai kết quả khác nhau</summary>
 <p>Cách đúng: $V_2 = 1{,}0 \times \dfrac{360}{300} = 1{,}2$ lít. Cách sai (dùng Celsius): $1{,}0 \times \dfrac{87}{27} \approx 3{,}2$ lít — vô lí, vì nhiệt độ tuyệt đối chỉ tăng $20\%$ nên thể tích cũng chỉ tăng $20\%$. Con số vô lí như thế chính là dấu hiệu em đã dùng nhầm thang nhiệt độ.</p>
 </details>
 
 <p>⚠ Đổi ra kenvin xong, nhớ lấy $\dfrac{T_2}{T_1}$ với $T_2$ là nhiệt độ <em>sau</em>: nóng lên thì thể tích tăng.</p>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Nung nóng đẳng áp một lượng khí từ $20\ ^\circ\text{C}$ lên $40\ ^\circ\text{C}$ thì thể tích:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl7-q5conf" value="chac"> Chắc</label> <label><input type="radio" name="tl7-q5conf" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -951,6 +1434,7 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 </div>
 </div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: đọc nhầm hai đường trên đồ thị</h4>
 
 <p>Việc đầu tiên khi đọc đồ thị là đọc tên hai trục.</p>
@@ -965,9 +1449,10 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <tr><td>Nhiệt độ càng cao, đường càng xa gốc</td><td>Áp suất càng nhỏ, đường càng cao</td></tr>
 </tbody>
 </table>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 6.</strong> Trên đồ thị $p$–$V$, hai đường đẳng nhiệt của cùng một lượng khí nằm cạnh nhau. Đường nằm xa gốc toạ độ hơn ứng với:</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl7-q6conf" value="chac"> Chắc</label> <label><input type="radio" name="tl7-q6conf" value="khong"> Không chắc</label></p>
 <div class="tl-quiz">
@@ -981,29 +1466,29 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
-<details class="tl-details" open>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
+<details class="tl-details tl-more">
 <summary>1. Ba thông số trạng thái của một lượng khí là gì? Thế nào là đẳng quá trình?</summary>
 <p><strong>Áp suất $p$ · Thể tích $V$ · Nhiệt độ $T$.</strong> Quá trình giữ <em>một</em> trong ba thông số không đổi gọi là đẳng quá trình: đẳng nhiệt, đẳng áp, đẳng tích.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>2. Phát biểu định luật Boyle. Viết hệ thức cho hai trạng thái.</summary>
 <p><strong>Nhiệt độ không đổi · $p$ tỉ lệ nghịch $V$ · $pV$ không đổi.</strong> Khi nhiệt độ của một khối lượng khí xác định giữ không đổi thì áp suất tỉ lệ nghịch với thể tích. Hệ thức: $p_1V_1 = p_2V_2$.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>3. Phát biểu định luật Charles. Vì sao bắt buộc dùng kenvin?</summary>
 <p><strong>Áp suất không đổi · $V$ tỉ lệ thuận $T$ · $V/T$ không đổi.</strong> Khi áp suất giữ không đổi thì $\dfrac{V_1}{T_1} = \dfrac{V_2}{T_2}$. Phải dùng kenvin vì ở $0\ ^\circ\text{C}$ khí vẫn có thể tích khác $0$: chỉ khi tính nhiệt độ từ độ không tuyệt đối thì $V$ mới tỉ lệ thuận với $T$.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>4. Đường đẳng nhiệt và đường đẳng áp có dạng thế nào trên đồ thị?</summary>
 <p><strong>Đẳng nhiệt: hypebol trên $p$–$V$</strong>, nhiệt độ càng cao đường càng xa gốc. <strong>Đẳng áp: đường thẳng trên $V$–$T$</strong>, kéo dài thì qua gốc toạ độ; áp suất càng nhỏ đường càng cao.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>5. Đổi $1$ atm ra Pa và mmHg. Khí bị nhốt dưới cột thuỷ ngân cao $200$ mm trong ống hở phía trên, $p_0 = 760$ mmHg. Tính áp suất khí.</summary>
 <p>$1\ \text{atm} = 760\ \text{mmHg} = 1{,}013 \cdot 10^5\ \text{Pa}$. Ống hở phía trên: $p = p_0 + h = 760 + 200 = 960$ mmHg.</p>
 </details>
@@ -1011,7 +1496,7 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 
 <h3>V. Bài toán mẫu: nén khí trong xilanh y tế</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
 <p>Một xilanh y tế nhốt $60$ ml không khí ở $1{,}0 \cdot 10^5$ Pa và $27\ ^\circ\text{C}$.</p>
 <p>a) Bịt kín đầu xilanh rồi ấn pittông từ từ cho thể tích khí còn $25$ ml. Nhiệt độ không đổi. Tính áp suất khí lúc này.</p>
@@ -1033,7 +1518,7 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 </table>
 </div>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải từng bước (câu a, b, c)</summary>
 <ol class="tl-steps">
 <li><strong>Câu a — đẳng nhiệt.</strong> $p_1V_1 = p_2V_2$, suy ra $p_2 = \dfrac{p_1V_1}{V_2} = \dfrac{1{,}0 \cdot 10^5 \times 60}{25} = 2{,}4 \cdot 10^5$ Pa. Thể tích giảm $2{,}4$ lần nên áp suất tăng $2{,}4$ lần.</li>
@@ -1044,18 +1529,18 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p><strong>✍️ Điền bước còn thiếu</strong> — đề câu a, nhưng nén từ $60$ ml xuống $15$ ml.</p>
 <ol class="tl-steps">
 <li>$p_1V_1 = 6{,}0 \cdot 10^6$ Pa·ml.</li>
 <li><strong>Bước 2 (em điền):</strong> $p_2 = \;?$ — gợi ý: chia hằng số cho $15$ ml.</li>
 <li>Kết luận: áp suất tăng mấy lần?</li>
 </ol>
-<details class="tl-details" open><summary>Xem bước 2–3</summary><p>$p_2 = 4{,}0 \cdot 10^5$ Pa; thể tích giảm $4$ lần nên $p$ tăng $4$ lần.</p></details>
+<details class="tl-details tl-more"><summary>Xem bước 2–3</summary><p>$p_2 = 4{,}0 \cdot 10^5$ Pa; thể tích giảm $4$ lần nên $p$ tăng $4$ lần.</p></details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi quá trình</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số, đổi quá trình</p>
 <p><strong>Dạng biến thể.</strong> Một xilanh kín có pittông trượt tự do nên áp suất khí luôn giữ $1{,}5$ atm; ban đầu khí có thể tích $4{,}0$ lít, nhiệt độ $300$ K. Nung nóng khí tới $400$ K rồi để khí nguội trở lại $300$ K. Cuối cùng khí có thể tích:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl7-q7" id="tl7-q7a"><label for="tl7-q7a" class="tl-opt tl-no">A. $5{,}3$ lít, vì lấy $4{,}0 \times \dfrac{400}{300}$</label>
@@ -1064,7 +1549,7 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <input type="radio" name="tl7-q7" id="tl7-q7d"><label for="tl7-q7d" class="tl-opt tl-no">D. $2{,}0$ lít</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Cùng một lượng khí, cùng áp suất $1{,}5$ atm và cùng nhiệt độ $300$ K thì thể tích cũng bằng nhau: $4{,}0$ lít.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A mới là thể tích lúc khí đang ở $400$ K; khí đã nguội <em>trở lại</em> $300$ K nên thể tích về $4{,}0$ lít. Cách nghĩ gọn: cùng lượng khí, cùng $p$ và cùng $T$ thì cùng $V$.</p></div>
-<details class="tl-details" open><summary>🧮 Bấm xem cách giải bài biến thể</summary>
+<details class="tl-details tl-more"><summary>🧮 Bấm xem cách giải bài biến thể</summary>
 <ol class="tl-steps">
 <li>Nung ở áp suất không đổi: $V = 4{,}0 \times \dfrac{400}{300} = 5{,}3$ lít — đó mới là thể tích lúc khí đang ở $400$ K.</li>
 <li>Để khí nguội về $300$ K, vẫn áp suất đó: thể tích trở lại $4{,}0$ lít.</li>
@@ -1083,28 +1568,28 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 <li><strong>Nồi áp suất:</strong> giữ áp suất cao nên nước sôi trên $100\ ^\circ\text{C}$.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>⭐ Nén đẳng nhiệt: khí ở $1{,}0 \cdot 10^5$ Pa, $300$ K, $V = 6{,}0$ lít → còn $2{,}0$ lít, áp suất bằng bao nhiêu?</summary>
 <p>$p_2 = \dfrac{p_1V_1}{V_2} = \dfrac{1{,}0 \cdot 10^5 \times 6{,}0}{2{,}0} = 3{,}0 \cdot 10^5$ Pa. Thể tích giảm $3$ lần thì áp suất tăng $3$ lần.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>⭐⭐ Khá: giữ áp suất $3{,}0 \cdot 10^5$ Pa, nung lượng khí đó ($2{,}0$ lít) từ $300$ K lên $360$ K, thể tích bằng bao nhiêu?</summary>
 <p>Đẳng áp: $V_2 = V_1 \dfrac{T_2}{T_1} = 2{,}0 \times \dfrac{360}{300} = 2{,}4$ lít. Nhiệt độ tuyệt đối tăng $1{,}2$ lần nên thể tích tăng $1{,}2$ lần.</p>
 </details>
 
-<details class="tl-details" open>
+<details class="tl-details tl-more">
 <summary>⭐⭐⭐ Thách đấu: bơm xe bằng tay, ấn vài chục lần thì thân bơm nóng lên và cán bơm nặng tay hơn hẳn. Vì sao?</summary>
 <p>Nén <em>nhanh</em>, công em thực hiện thành nội năng của khí mà khí chưa kịp truyền nhiệt ra ngoài: nhiệt độ khí tăng, nên áp suất vượt mức định luật Boyle dự đoán.<br>Quá trình khí không kịp trao đổi nhiệt với bên ngoài như vậy gọi là <em>đoạn nhiệt</em>.</p>
 </details>
 
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Trạng thái khí:</strong> $p$ · $V$ · $T$ — khí đổi trạng thái là một quá trình.</li>
 <li><strong>Đẳng quá trình:</strong> đẳng nhiệt · đẳng áp · đẳng tích — giữ đúng <em>một</em> thông số.</li>
@@ -1117,8 +1602,8 @@ $$T(\text{K}) = t(^\circ\text{C}) + 273$$
 </ul>
 </div>
 </span></div></div>
-<script src="file:///private/tmp/l12wt/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///private/tmp/l12wt/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

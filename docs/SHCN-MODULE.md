@@ -11,6 +11,8 @@ Ba việc của lớp chủ nhiệm CTTC, tách bạch nhau:
 GVCN theo dõi điểm danh hàng ngày trước tiết SHCN ở `/dashboard` → tab "Sinh hoạt lớp" →
 "Điểm danh hàng ngày" (bảng theo tuần, cảnh báo vắng nhiều, nút điền sẵn sĩ số cho biên bản).
 
+Chương trình nội dung 6 học kì (thứ tự bài từng tuần, khung 20', đối chiếu 12 chủ đề): `docs/SHCN-CHUONG-TRINH-3-NAM.md`.
+
 Module này **không** thay quy trình nộp biên bản .docx lên portal.caothang.edu.vn — nó chỉ hiển
 thị lại nội dung cho sinh viên và gom số liệu để soạn `tuan-XX.json` đỡ phải gõ tay.
 

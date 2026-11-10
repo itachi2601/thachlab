@@ -291,6 +291,21 @@ export default function ExamRunner({
     return () => clearInterval(timer);
   }, [phase, flushProgress]);
 
+  // Đồng hồ ngừng đếm khi em thoát khỏi bài: ghi ngay số giây còn lại chính xác lúc đóng tab / quay về trang
+  // trước / chuyển trang trong app (unmount), thay vì chờ nhịp lưu 30s–2 phút. Vào lại thì beginExam dựng
+  // lại mốc từ seconds_left này nên thời gian vắng mặt không bị tính. Đã nộp thì không ghi (seconds_left đã xoá).
+  useEffect(() => {
+    if (phase !== "running") return;
+    const saveOnExit = () => {
+      if (!submittedRef.current) flushProgress(true);
+    };
+    window.addEventListener("pagehide", saveOnExit);
+    return () => {
+      window.removeEventListener("pagehide", saveOnExit);
+      saveOnExit();
+    };
+  }, [phase, flushProgress]);
+
   // Ghi nhận rời tab / thoát fullscreen lúc đang làm bài — chỉ log + cảnh báo,
   // không tự nộp bài, không chặn thao tác gì khác.
   useEffect(() => {
@@ -373,8 +388,14 @@ export default function ExamRunner({
         res = await checkPracticeAnswer(exam.id, idx, resp);
       }
       setChecked((prev) => new Map(prev).set(idx, res));
-    } catch {
-      setCheckError("Chưa kiểm tra được câu này — kiểm tra mạng rồi bấm Kiểm tra lại. Đáp án của em vẫn được giữ.");
+    } catch (e) {
+      // Lỗi quyền (42501) / không thấy đề (P0002) không phải do mạng: nói thật để em không loay hoay bấm lại.
+      const code = (e as { code?: string } | null)?.code;
+      setCheckError(
+        code === "42501" || code === "P0002"
+          ? "Đề này chưa mở xem đáp án từng câu. Em tải lại bài học và mở quiz từ mục lý thuyết nhé. Đáp án của em vẫn được giữ."
+          : "Chưa kiểm tra được câu này — kiểm tra mạng rồi bấm Kiểm tra lại. Đáp án của em vẫn được giữ.",
+      );
     } finally {
       setCheckBusy(false);
     }
@@ -800,6 +821,8 @@ export default function ExamRunner({
         score10={result.score10}
         correctCount={result.correct_count}
         usedSeconds={usedSeconds}
+        resultId={result.result_id}
+        passScore={exam.pass_score}
       />
     );
   }

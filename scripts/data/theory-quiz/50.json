@@ -347,8 +347,8 @@
    "question": "Bạn A kéo đều một dải giấy dọc mép bàn. Bạn B đưa đều bút dạ dọc theo một thước đặt vuông góc với mép bàn, ngòi bút vạch lên dải giấy. Gọi (1) là ngòi bút, (2) là dải giấy, (3) là mặt bàn.",
    "statements": [
     {
-     "text": "So với mặt bàn, ngòi bút chuyển động thẳng dọc theo thước.",
-     "answer": true
+     "text": "Vận tốc của ngòi bút so với dải giấy là vận tốc tuyệt đối.",
+     "answer": false
     },
     {
      "text": "Vệt mực để lại trên dải giấy là một đường xiên so với mép bàn.",
@@ -359,16 +359,16 @@
      "answer": false
     },
     {
-     "text": "Vận tốc của ngòi bút so với dải giấy là vận tốc tuyệt đối.",
-     "answer": false
+     "text": "So với mặt bàn, ngòi bút chuyển động thẳng dọc theo thước.",
+     "answer": true
     }
    ],
    "explanation": "So với bàn, ngòi bút đi thẳng dọc thước; vệt mực trên giấy lại xiên. Hai hệ quy chiếu cho hai quỹ đạo khác nhau, đó là tính tương đối. Vận tốc của bút so với giấy (hệ chuyển động) là $\\vec v_{12}$, tức vận tốc tương đối.",
    "distractorNotes": {
-    "0": "Bút được đưa đều dọc thước cố định trên bàn, nên so với bàn bút đi thẳng; không thể coi ý này sai.",
+    "0": "Giấy là hệ chuyển động (2), nên vận tốc của bút so với giấy là vận tốc tương đối $\\vec v_{12}$.",
     "1": "Giấy bị kéo ngang trong lúc bút đi dọc thước nên vết mực lệch xiên; cho là sai là bỏ qua chuyển động của giấy.",
     "2": "Quỹ đạo phụ thuộc hệ quy chiếu: so với bàn là đường dọc thước, so với giấy là đường xiên.",
-    "3": "Giấy là hệ chuyển động (2), nên vận tốc của bút so với giấy là vận tốc tương đối $\\vec v_{12}$."
+    "3": "Bút được đưa đều dọc thước cố định trên bàn, nên so với bàn bút đi thẳng; không thể coi ý này sai."
    }
   },
   {
@@ -382,28 +382,28 @@
    "question": "Một xe đồ chơi chạy dọc nửa đường tròn tâm $O$, bán kính $R$, từ điểm $A$ tới điểm $B$ ở hai đầu một đường kính.",
    "statements": [
     {
-     "text": "Quãng đường xe đi được bằng $\\pi R$.",
-     "answer": true
-    },
-    {
      "text": "Độ dịch chuyển của xe hướng từ $A$ đến $B$ và có độ lớn $2R$.",
      "answer": true
     },
     {
-     "text": "Tốc độ trung bình của xe bằng độ lớn vận tốc trung bình của xe.",
-     "answer": false
+     "text": "Quãng đường xe đi được bằng $\\pi R$.",
+     "answer": true
     },
     {
      "text": "Vectơ vận tốc trung bình của xe có gốc đặt tại tâm $O$.",
+     "answer": false
+    },
+    {
+     "text": "Tốc độ trung bình của xe bằng độ lớn vận tốc trung bình của xe.",
      "answer": false
     }
    ],
    "explanation": "Quãng đường là độ dài cung, bằng $\\pi R$. Độ dịch chuyển là đoạn thẳng nối $A$ tới $B$, bằng $2R$. Vì $d\\lt s$ nên tốc độ trung bình lớn hơn độ lớn vận tốc trung bình. Vectơ vận tốc trung bình có gốc ở vị trí đầu $A$.",
    "distractorNotes": {
-    "0": "Quãng đường là độ dài đường đi thật, ở đây là nửa chu vi đường tròn, bằng $\\pi R$; không thể coi là sai.",
-    "1": "Độ dịch chuyển là mũi tên nối thẳng điểm đầu $A$ tới điểm cuối $B$, đúng bằng đường kính $2R$.",
-    "2": "Trên cung tròn có $s = \\pi R \\gt d = 2R$, nên tốc độ trung bình lớn hơn độ lớn vận tốc trung bình.",
-    "3": "Gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật, tức điểm $A$, không phải tâm $O$."
+    "0": "Độ dịch chuyển là mũi tên nối thẳng điểm đầu $A$ tới điểm cuối $B$, đúng bằng đường kính $2R$.",
+    "1": "Quãng đường là độ dài đường đi thật, ở đây là nửa chu vi đường tròn, bằng $\\pi R$; không thể coi là sai.",
+    "2": "Gốc vectơ vận tốc trung bình đặt ở vị trí đầu của vật, tức điểm $A$, không phải tâm $O$.",
+    "3": "Trên cung tròn có $s = \\pi R \\gt d = 2R$, nên tốc độ trung bình lớn hơn độ lớn vận tốc trung bình."
    }
   },
   {
@@ -421,24 +421,24 @@
      "answer": true
     },
     {
-     "text": "Độ lớn vận tốc của ca nô so với bờ là $v_{13}=v_{12}+v_{23}$.",
-     "answer": false
-    },
-    {
      "text": "Thời gian ca nô sang sông là $t=\\frac{AB}{v_{12}}$.",
      "answer": true
     },
     {
      "text": "Nếu nước chảy nhanh hơn thì thời gian sang sông dài hơn.",
      "answer": false
+    },
+    {
+     "text": "Độ lớn vận tốc của ca nô so với bờ là $v_{13}=v_{12}+v_{23}$.",
+     "answer": false
     }
    ],
    "explanation": "Hai vectơ $\\vec v_{12}$ và $\\vec v_{23}$ vuông góc nên dùng Pythagore. Chỉ $\\vec v_{12}$ (vuông góc bờ) đưa ca nô sang bờ kia, nên $t=\\frac{AB}{v_{12}}$. Nước chảy mạnh hơn chỉ làm ca nô cập bến xa hơn, không làm thời gian sang sông thay đổi.",
    "distractorNotes": {
     "0": "Hai vectơ vuông góc nên độ lớn vectơ tổng là cạnh huyền tính theo Pythagore; cho là sai là quên cộng vectơ.",
-    "1": "Cộng thẳng hai độ lớn chỉ đúng khi hai vectơ cùng chiều, còn ở đây chúng vuông góc.",
-    "2": "Nước chảy dọc bờ không đưa ca nô lại gần bờ kia, chỉ $v_{12}$ quyết định thời gian sang sông.",
-    "3": "Nhầm \"trôi xa hơn\" với \"lâu hơn\": nước mạnh chỉ làm ca nô cập bến xa hơn, còn $t = \\frac{AB}{v_{12}}$ không đổi."
+    "1": "Nước chảy dọc bờ không đưa ca nô lại gần bờ kia, chỉ $v_{12}$ quyết định thời gian sang sông.",
+    "2": "Nhầm \"trôi xa hơn\" với \"lâu hơn\": nước mạnh chỉ làm ca nô cập bến xa hơn, còn $t = \\frac{AB}{v_{12}}$ không đổi.",
+    "3": "Cộng thẳng hai độ lớn chỉ đúng khi hai vectơ cùng chiều, còn ở đây chúng vuông góc."
    }
   },
   {
@@ -452,10 +452,6 @@
    "question": "Xét công thức tốc độ trung bình $v_{tb}=\\frac{s}{t}$, với $s$ là quãng đường đi được trong thời gian $t$.",
    "statements": [
     {
-     "text": "Cùng thời gian $t$, quãng đường đi được gấp đôi thì tốc độ trung bình gấp đôi.",
-     "answer": true
-    },
-    {
      "text": "Cùng quãng đường $s$, thời gian đi gấp đôi thì tốc độ trung bình gấp đôi.",
      "answer": false
     },
@@ -466,14 +462,18 @@
     {
      "text": "Từ công thức trên suy ra quãng đường là $s=\\frac{v_{tb}}{t}$.",
      "answer": false
+    },
+    {
+     "text": "Cùng thời gian $t$, quãng đường đi được gấp đôi thì tốc độ trung bình gấp đôi.",
+     "answer": true
     }
    ],
    "explanation": "$v_{tb}$ tỉ lệ thuận với $s$ và tỉ lệ nghịch với $t$. Biến đổi đúng: $t=\\frac{s}{v_{tb}}$ và $s=v_{tb}\\cdot t$.",
    "distractorNotes": {
-    "0": "Giữ nguyên $t$ thì $v_{tb}$ tỉ lệ thuận với $s$, nên quãng đường gấp đôi thì tốc độ gấp đôi.",
-    "1": "$t$ nằm ở mẫu số nên tỉ lệ nghịch: thời gian gấp đôi thì tốc độ trung bình giảm một nửa.",
-    "2": "Nhân hai vế của $v_{tb} = \\frac{s}{t}$ với $t$ rồi chia cho $v_{tb}$ thì được đúng $t = \\frac{s}{v_{tb}}$.",
-    "3": "Biến đổi sai, vì từ $v_{tb} = \\frac{s}{t}$ phải suy ra $s = v_{tb} \\cdot t$, không phải chia cho $t$."
+    "0": "$t$ nằm ở mẫu số nên tỉ lệ nghịch: thời gian gấp đôi thì tốc độ trung bình giảm một nửa.",
+    "1": "Nhân hai vế của $v_{tb} = \\frac{s}{t}$ với $t$ rồi chia cho $v_{tb}$ thì được đúng $t = \\frac{s}{v_{tb}}$.",
+    "2": "Biến đổi sai, vì từ $v_{tb} = \\frac{s}{t}$ phải suy ra $s = v_{tb} \\cdot t$, không phải chia cho $t$.",
+    "3": "Giữ nguyên $t$ thì $v_{tb}$ tỉ lệ thuận với $s$, nên quãng đường gấp đôi thì tốc độ gấp đôi."
    }
   },
   {
@@ -487,10 +487,6 @@
    "question": "Một người đi trên toa tàu đang chạy thẳng đều. Gọi (1) là người, (2) là toa tàu, (3) là đường ray. Vận tốc của người so với toa có độ lớn $v_{12}$, vận tốc của tàu so với đường ray có độ lớn $v_{23}$, với $v_{12}\\lt v_{23}$.",
    "statements": [
     {
-     "text": "Người đi về phía đầu tàu (cùng chiều tàu chạy) thì $v_{13}=v_{12}+v_{23}$.",
-     "answer": true
-    },
-    {
      "text": "Người đi về phía cuối tàu (ngược chiều tàu chạy) thì $v_{13}=|v_{12}-v_{23}|$.",
      "answer": true
     },
@@ -501,14 +497,18 @@
     {
      "text": "Vận tốc tuyệt đối luôn lớn hơn vận tốc tương đối.",
      "answer": false
+    },
+    {
+     "text": "Người đi về phía đầu tàu (cùng chiều tàu chạy) thì $v_{13}=v_{12}+v_{23}$.",
+     "answer": true
     }
    ],
    "explanation": "Hai vectơ cùng chiều thì cộng độ lớn, ngược chiều thì lấy trị tuyệt đối của hiệu, chiều theo vận tốc lớn hơn. Khi người đi ngược chiều tàu với $v_{12}\\lt v_{23}$, người vẫn chuyển động theo chiều tàu so với đường ray. Lúc đó $v_{13}$ có thể nhỏ hơn $v_{12}$.",
    "distractorNotes": {
-    "0": "Đi về đầu tàu thì hai vectơ cùng chiều, độ lớn vectơ tổng bằng tổng hai độ lớn; ý này không thể sai.",
-    "1": "Đi về cuối tàu thì hai vectơ ngược chiều, độ lớn vectơ tổng là trị tuyệt đối của hiệu.",
-    "2": "Khi ngược chiều, $\\vec v_{13}$ theo vận tốc lớn hơn là $\\vec v_{23}$, nên người vẫn đi theo chiều tàu chạy.",
-    "3": "Khi hai vận tốc ngược chiều, $v_{13} = |v_{12} - v_{23}|$ có thể nhỏ hơn $v_{12}$, nên không phải luôn lớn hơn."
+    "0": "Đi về cuối tàu thì hai vectơ ngược chiều, độ lớn vectơ tổng là trị tuyệt đối của hiệu.",
+    "1": "Khi ngược chiều, $\\vec v_{13}$ theo vận tốc lớn hơn là $\\vec v_{23}$, nên người vẫn đi theo chiều tàu chạy.",
+    "2": "Khi hai vận tốc ngược chiều, $v_{13} = |v_{12} - v_{23}|$ có thể nhỏ hơn $v_{12}$, nên không phải luôn lớn hơn.",
+    "3": "Đi về đầu tàu thì hai vectơ cùng chiều, độ lớn vectơ tổng bằng tổng hai độ lớn; ý này không thể sai."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một bạn chạy đúng 2 vòng quanh sân rồi dừng lại đúng ở chỗ xuất phát.",
    "statements": [
     {
-     "text": "Tốc độ trung bình bằng tổng quãng đường 2 vòng chia cho thời gian chạy.",
-     "answer": true
-    },
-    {
-     "text": "Vận tốc trung bình bằng $0$ vì độ dịch chuyển bằng $0$.",
-     "answer": true
-    },
-    {
      "text": "Đơn vị của tốc độ trong hệ SI là km/h.",
      "answer": false
     },
     {
      "text": "Tốc độ trung bình có thể nhận giá trị âm khi vật quay về chỗ cũ.",
      "answer": false
+    },
+    {
+     "text": "Vận tốc trung bình bằng $0$ vì độ dịch chuyển bằng $0$.",
+     "answer": true
+    },
+    {
+     "text": "Tốc độ trung bình bằng tổng quãng đường 2 vòng chia cho thời gian chạy.",
+     "answer": true
     }
    ],
    "explanation": "Tốc độ trung bình bằng $s/t$, vô hướng và không âm. Vận tốc trung bình bằng $\\vec d/t$, ở đây bằng $0$ vì bạn về đúng chỗ cũ. Đơn vị SI của tốc độ là m/s.",
    "distractorNotes": {
-    "0": "Tốc độ trung bình dùng toàn bộ quãng đường đã chạy, tức cả 2 vòng, chia cho thời gian; ý này đúng.",
-    "1": "Điểm đầu trùng điểm cuối nên độ dịch chuyển bằng $0$, kéo theo vận tốc trung bình bằng $0$.",
-    "2": "Nhầm đơn vị thông dụng trong đời sống với đơn vị SI, trong khi đơn vị SI của tốc độ là m/s.",
-    "3": "Tốc độ là đại lượng vô hướng, không âm; về chỗ cũ chỉ làm vận tốc trung bình bằng $0$."
+    "0": "Nhầm đơn vị thông dụng trong đời sống với đơn vị SI, trong khi đơn vị SI của tốc độ là m/s.",
+    "1": "Tốc độ là đại lượng vô hướng, không âm; về chỗ cũ chỉ làm vận tốc trung bình bằng $0$.",
+    "2": "Điểm đầu trùng điểm cuối nên độ dịch chuyển bằng $0$, kéo theo vận tốc trung bình bằng $0$.",
+    "3": "Tốc độ trung bình dùng toàn bộ quãng đường đã chạy, tức cả 2 vòng, chia cho thời gian; ý này đúng."
    }
   }
  ]

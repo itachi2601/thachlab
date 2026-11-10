@@ -417,12 +417,12 @@
    "question": "Một quả bóng bay được thổi căng vừa rồi buộc chặt. Nhúng bóng vào nước nóng thì bóng căng phồng; nhúng vào nước lạnh có đá thì bóng xẹp bớt.",
    "statements": [
     {
-     "text": "Trong nước nóng, phân tử khí chuyển động nhanh hơn, va đập mạnh hơn nên bóng căng ra.",
-     "answer": true
-    },
-    {
      "text": "Trong nước lạnh, các phân tử khí ngừng chuyển động nên bóng xẹp.",
      "answer": false
+    },
+    {
+     "text": "Trong nước nóng, phân tử khí chuyển động nhanh hơn, va đập mạnh hơn nên bóng căng ra.",
+     "answer": true
     },
     {
      "text": "Áp suất khí trong bóng sinh ra do phân tử khí va chạm vào thành bóng.",
@@ -435,8 +435,8 @@
    ],
    "explanation": "Nhiệt độ cao thì phân tử chuyển động nhanh, va chạm vào thành mạnh hơn nên áp suất tăng. Phân tử không bao giờ ngừng chuyển động; trong mô hình khí lí tưởng, va chạm là hoàn toàn đàn hồi.",
    "distractorNotes": {
-    "0": "Nhiệt độ cao làm phân tử nhanh hơn, va đập thành mạnh hơn, đó đúng là lí do bóng căng.",
-    "1": "Lạnh chỉ làm phân tử chậm lại, phân tử khí không bao giờ ngừng chuyển động.",
+    "0": "Lạnh chỉ làm phân tử chậm lại, phân tử khí không bao giờ ngừng chuyển động.",
+    "1": "Nhiệt độ cao làm phân tử nhanh hơn, va đập thành mạnh hơn, đó đúng là lí do bóng căng.",
     "2": "Đây là nội dung thứ ba của thuyết: va chạm của phân tử vào thành tạo ra áp suất khí.",
     "3": "Mô hình khí lí tưởng coi va chạm với thành là hoàn toàn đàn hồi, phân tử bật ngược lại."
    }
@@ -452,28 +452,28 @@
    "question": "Lượng chất của một mẫu khí được tính theo hệ thức $n = \\frac{N}{N_A} = \\frac{m}{M}$.",
    "statements": [
     {
-     "text": "$N$ là số phân tử trong mẫu, $N_A$ là số Avogadro.",
-     "answer": true
+     "text": "Số mol $n$ tỉ lệ nghịch với số phân tử $N$ trong mẫu.",
+     "answer": false
     },
     {
      "text": "$M$ là khối lượng của cả mẫu khí đang xét.",
      "answer": false
     },
     {
-     "text": "Với cùng số mol, khí có khối lượng mol lớn hơn thì khối lượng mẫu lớn hơn.",
+     "text": "$N$ là số phân tử trong mẫu, $N_A$ là số Avogadro.",
      "answer": true
     },
     {
-     "text": "Số mol $n$ tỉ lệ nghịch với số phân tử $N$ trong mẫu.",
-     "answer": false
+     "text": "Với cùng số mol, khí có khối lượng mol lớn hơn thì khối lượng mẫu lớn hơn.",
+     "answer": true
     }
    ],
    "explanation": "Trong hệ thức, $m$ là khối lượng mẫu, còn $M$ là khối lượng mol; từ $m = nM$, cùng $n$ thì $M$ lớn cho $m$ lớn. Số mol tỉ lệ thuận với $N$.",
    "distractorNotes": {
-    "0": "Đúng ý nghĩa ký hiệu trong bài: $N$ là số phân tử, $N_A$ là số phân tử trong 1 mol.",
+    "0": "$N$ nằm ở tử số của $n = N/N_A$ nên $n$ tỉ lệ thuận chứ không nghịch với $N$.",
     "1": "Lẫn $M$ với $m$: khối lượng mẫu là $m$, còn $M$ là khối lượng của 1 mol chất.",
-    "2": "Từ $m = nM$, cùng $n$ thì $m$ tỉ lệ thuận với $M$.",
-    "3": "$N$ nằm ở tử số của $n = N/N_A$ nên $n$ tỉ lệ thuận chứ không nghịch với $N$."
+    "2": "Đúng ý nghĩa ký hiệu trong bài: $N$ là số phân tử, $N_A$ là số phân tử trong 1 mol.",
+    "3": "Từ $m = nM$, cùng $n$ thì $m$ tỉ lệ thuận với $M$."
    }
   },
   {
@@ -491,24 +491,24 @@
      "answer": true
     },
     {
-     "text": "Thể tích túi được tính bằng $V = n \\times 22{,}4$ lít.",
-     "answer": true
+     "text": "Một túi cùng thể tích, cùng điều kiện nhưng chứa CO₂ ($M = 44$ g/mol) sẽ có cùng khối lượng khí.",
+     "answer": false
     },
     {
      "text": "Số phân tử N₂ trong túi được tính bằng $N = \\frac{n}{N_A}$.",
      "answer": false
     },
     {
-     "text": "Một túi cùng thể tích, cùng điều kiện nhưng chứa CO₂ ($M = 44$ g/mol) sẽ có cùng khối lượng khí.",
-     "answer": false
+     "text": "Thể tích túi được tính bằng $V = n \\times 22{,}4$ lít.",
+     "answer": true
     }
    ],
    "explanation": "Ta tính $n = m/M$, rồi $V = n \\times 22{,}4$ lít và $N = nN_A$. Túi CO₂ cùng thể tích ở đktc có cùng số mol, nhưng khối lượng mol lớn hơn nên khối lượng khí lớn hơn.",
    "distractorNotes": {
     "0": "Đề cho khối lượng và khối lượng mol nên số mol tính đúng bằng $m/M$.",
-    "1": "Ở đktc mỗi mol khí chiếm 22,4 lít nên thể tích bằng $n$ nhân 22,4 lít.",
+    "1": "Cùng thể tích ở đktc chỉ cho cùng số mol, còn khối lượng tỉ lệ với khối lượng mol.",
     "2": "Biến đổi ngược chiều, vì số phân tử bằng số mol nhân $N_A$ chứ không phải chia.",
-    "3": "Cùng thể tích ở đktc chỉ cho cùng số mol, còn khối lượng tỉ lệ với khối lượng mol."
+    "3": "Ở đktc mỗi mol khí chiếm 22,4 lít nên thể tích bằng $n$ nhân 22,4 lít."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Ba bình lần lượt chứa 1 mol N₂, 1 mol O₂ và 1 mol CO₂, đều ở điều kiện tiêu chuẩn (0 °C, 1 atm).",
    "statements": [
     {
-     "text": "Ba bình có cùng thể tích 22,4 lít.",
-     "answer": true
-    },
-    {
-     "text": "Mỗi bình chứa khoảng $6{,}02 \\times 10^{23}$ phân tử khí.",
-     "answer": true
+     "text": "Thể tích 22,4 lít bằng $0{,}224\\ \\text{m}^3$.",
+     "answer": false
     },
     {
      "text": "Khí trong ba bình có cùng khối lượng 22,4 g.",
      "answer": false
     },
     {
-     "text": "Thể tích 22,4 lít bằng $0{,}224\\ \\text{m}^3$.",
-     "answer": false
+     "text": "Mỗi bình chứa khoảng $6{,}02 \\times 10^{23}$ phân tử khí.",
+     "answer": true
+    },
+    {
+     "text": "Ba bình có cùng thể tích 22,4 lít.",
+     "answer": true
     }
    ],
    "explanation": "Ở đktc, 1 mol khí nào cũng chiếm 22,4 lít $= 0{,}0224\\ \\text{m}^3$ và chứa $N_A$ phân tử. Khối lượng khác nhau vì khối lượng mol khác nhau.",
    "distractorNotes": {
-    "0": "Thể tích mol ở đktc bằng 22,4 lít với mọi chất khí, nên ba bình cùng thể tích.",
-    "1": "1 mol chất nào cũng chứa $N_A \\approx 6{,}02 \\times 10^{23}$ phân tử.",
-    "2": "Lẫn thể tích mol với khối lượng, trong khi mỗi khí có khối lượng mol riêng 28, 32, 44 g/mol.",
-    "3": "Đổi đơn vị sai: 1 lít bằng $10^{-3}\\ \\text{m}^3$ nên 22,4 lít bằng $0{,}0224\\ \\text{m}^3$."
+    "0": "Đổi đơn vị sai: 1 lít bằng $10^{-3}\\ \\text{m}^3$ nên 22,4 lít bằng $0{,}0224\\ \\text{m}^3$.",
+    "1": "Lẫn thể tích mol với khối lượng, trong khi mỗi khí có khối lượng mol riêng 28, 32, 44 g/mol.",
+    "2": "1 mol chất nào cũng chứa $N_A \\approx 6{,}02 \\times 10^{23}$ phân tử.",
+    "3": "Thể tích mol ở đktc bằng 22,4 lít với mọi chất khí, nên ba bình cùng thể tích."
    }
   }
  ]

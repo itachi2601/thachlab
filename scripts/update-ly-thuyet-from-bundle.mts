@@ -71,6 +71,15 @@ const lessonId = li >= 0 ? Number(argv[li + 1]) : NaN;
 const dry = argv.includes("--dry-run");
 const chiVideo = argv.includes("--chi-video");
 const choPhepKhac = argv.includes("--cho-phep-khac");
+// --bo-qua-nhac: khi so ngoài video, bỏ qua câu nhắc "<small>(nói bằng lời của em…)</small>" ở mục Trả bài —
+// commit 991c422cc đã gỡ khỏi 305 file nhưng DB còn giữ, nên bài nào cũng "khác" chỉ vì câu này.
+const boQuaNhac = argv.includes("--bo-qua-nhac");
+const boNhac = (h: string) =>
+  boQuaNhac
+    ? h
+        .replace(/\s*<small>\((?:nói|nghĩ|bấm|trả lời)[^)<]*\)<\/small>/g, "")
+        .replace(/(tl-label">(?:🎤 )?Trả bài)[^<]*</g, "$1<") // "Trả bài — nói bằng lời của em…" → "Trả bài"
+    : h;
 if (!file || !lessonId) fail("cần <bundle.json> và --lesson <id>");
 
 /**
@@ -124,8 +133,8 @@ fs.writeFileSync(bak, JSON.stringify(cur, null, 1));
 console.log(`Sao lưu: ${bak} (${(cur.body_html ?? "").length} → ${rows.lyThuyet.body_html.length} ký tự)`);
 
 // 2b. So phần NGOÀI khối video: DB đang có bản khác file không (bản sửa trực tiếp trên web)?
-const aNgoai = chuanHoaNgoaiVideo(cur.body_html ?? "");
-const bNgoai = chuanHoaNgoaiVideo(rows.lyThuyet.body_html);
+const aNgoai = chuanHoaNgoaiVideo(boNhac(cur.body_html ?? ""));
+const bNgoai = chuanHoaNgoaiVideo(boNhac(rows.lyThuyet.body_html));
 const soKhoiMoi = demKhoiVideo(rows.lyThuyet.body_html);
 const soKhoiCu = demKhoiVideo(cur.body_html ?? "");
 if (aNgoai === bNgoai) {

@@ -1,12 +1,12 @@
-<!doctype html><html lang="vi"><meta charset="utf-8">
+<!doctype html><html lang="vi" data-theme="light"><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.css">
+<link rel="stylesheet" href="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.css">
 <style>
-:root{color-scheme:dark}
-body{margin:0;background:#0f172a;color:#e2e8f0;font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{color-scheme:light}
+body{margin:0;background:var(--color-bg,#fff);color:var(--color-ink,#0f172a);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:720px;margin:0 auto;padding:20px 16px 64px}
 .exam-content{display:block}
-h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 16px}
+h1{font-size:20px;margin:0 0 4px} .sub{color:var(--color-ink-muted,#475569);font-size:13px;margin:0 0 16px}
 /* ---------- Nội dung đề thi (chuyển từ Azota/Word) ---------- */
 /* Cỡ chữ lớn hơn mặc định để câu hỏi/bài tập dễ đọc hơn */
 .exam-content {
@@ -14,6 +14,27 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:#94a3b8;font-size:13px;margin:0 0 1
   line-height: 1.65;
   overflow-wrap: break-word;
   word-break: break-word;
+}
+/* Vùng ĐỀ giống đề giấy (thầy chốt 11/10/2026): serif Tinos (= Times New Roman về số đo), chữ ≥ 17px, dòng ≥ 1,6.
+   Chỉ bọc câu hỏi + phương án + lời giải (ExamRunner, xem trước Đăng đề), KHÔNG bọc thanh điều hướng/nút. KaTeX giữ font riêng.
+   Quy tắc: C1 (chữ 17–18px, line-height ≥ 1,55), C3 (không thêm cỡ chữ: 17px mobile / 18px desktop như thang cũ). */
+.exam-paper .exam-content { font-family: var(--font-exam); }
+/* KaTeX mặc định phóng công thức 1,21em (chữ Latin Modern cao hơn Times) ⇒ ở vùng đề dùng Times, $R = 20\,\Omega$ to hơn chữ quanh nó
+   (17px → 20,6px). 1,05em cho công thức cùng cỡ chữ với Times của đề giấy. (E4) */
+.exam-paper .exam-content .katex { font-size: 1.05em; }
+/* Hộp "Đề bài" của bài toán mẫu trong lý thuyết: riêng phần đề dùng font đề thi thật (E4); nhãn, bảng phân tích, lời giải giữ Inter. */
+.exam-content .tl-box--de > :not(.tl-label) { font-family: var(--font-exam); font-size: 1rem; line-height: 1.65; }
+.exam-content .tl-box--de .katex { font-size: 1.05em; }
+/* Lý thuyết (nền Inter): công thức cùng cỡ chữ quanh nó — 1,1em để chỉ số dưới còn đọc được ở 375px. (C3) */
+.lesson-page .exam-content .katex { font-size: 1.1em; }
+.exam-paper .exam-content { font-size: 1.125rem; line-height: 1.65; }
+@media (max-width: 640px) {
+  .exam-paper .exam-content { font-size: 1.0625rem; line-height: 1.6; }
+}
+/* Điện thoại: 18px + KaTeX 1,21em ≈ 22px cho công thức là quá to trên màn 375px (dòng ngắn, xuống dòng nhiều).
+   16px khớp chữ đáp án (text-base) và bài lý thuyết; công thức còn ≈ 19px, vẫn đọc rõ. */
+@media (max-width: 640px) {
+  .exam-content { font-size: 1rem; line-height: 1.6; }
 }
 
 /* Công thức khối ($$...$$) có khung riêng để tách khỏi văn xuôi, cuộn ngang
@@ -130,7 +151,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 }
 .exam-content figure.fig figcaption {
   margin-top: 0.35rem;
-  font-size: 0.85em;
+  font-size: var(--fs-sm);
   color: #94a3b8;
   text-align: center;
 }
@@ -140,7 +161,7 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-box { margin: 16px 0; padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(34,211,238,.3); background: rgba(34,211,238,.07); }
 .exam-content .tl-box--rule { border-color: rgba(250,204,21,.35); background: rgba(250,204,21,.08); }
 .exam-content .tl-box > p:last-child, .exam-content .tl-box > ul:last-child { margin-bottom: 0; }
-.exam-content .tl-label { margin: 0 0 8px; font-size: var(--fs-cap); font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
+.exam-content .tl-label { margin: 0 0 8px; font-size: 1rem; font-weight: 700; letter-spacing: .02em; color: #22d3ee; text-align: left; }
 .exam-content .tl-box--rule .tl-label { color: #fbbf24; }
 .exam-content .tl-details { margin: 14px 0; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; background: rgba(148,163,184,.08); }
 .exam-content .tl-details > summary { cursor: pointer; padding: 11px 14px; font-weight: 700; list-style: none; }
@@ -149,6 +170,9 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-details[open] > summary::after { transform: rotate(180deg); }
 .exam-content .tl-details > :not(summary) { margin-left: 14px; margin-right: 14px; }
 .exam-content .tl-details > :last-child { margin-bottom: 14px; }
+.exam-content .tl-conf { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin: 10px 0 4px; color: var(--color-muted, #475569); font-size: .92em; }
+.exam-content .tl-conf label { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; cursor: pointer; }
+.exam-content .tl-conf input { width: 18px; height: 18px; accent-color: var(--color-primary, #1d4ed8); }
 .exam-content .tl-quiz { display: grid; gap: 8px; margin-top: 10px; }
 .exam-content .tl-quiz > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
 .exam-content .tl-opt { display: block; padding: 10px 14px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; cursor: pointer; line-height: 1.5; transition: background-color .15s, border-color .15s; }
@@ -162,15 +186,117 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .exam-content .tl-fb--no { background: rgba(248,113,113,.12); }
 .exam-content .tl-quiz:has(input:checked + .tl-ok) > .tl-fb--ok { display: block; }
 .exam-content .tl-quiz:has(input:checked + .tl-no) > .tl-fb--no { display: block; }
-.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95em; }
+.exam-content .tl-quiz[data-answered="ok"] > .tl-fb--ok { display: block; }
+.exam-content .tl-quiz[data-answered="no"] > .tl-fb--no { display: block; }
+.exam-content .tl-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 1rem; }
 .exam-content .tl-table :is(th, td) { padding: 8px 10px; border: 1px solid rgba(148,163,184,.4); text-align: left; vertical-align: top; }
 .exam-content .tl-table th { background: rgba(148,163,184,.14); }
 html[data-theme="light"] .exam-content .tl-label { color: #0e7490; }
 html[data-theme="light"] .exam-content .tl-box--rule .tl-label { color: #b45309; }
-html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.25); }
+/* Mẹo vài chữ 🧠 ngay trên dòng 🔑 (G1: 3–5 khối nhớ; C-nhóm: hoa chữ đầu, không viết HOA cả dòng).
+   1.05rem (không 1.1rem): đo 375px, mẹo 4–5 chữ có dấu " – " mới nằm một dòng. Danh sách mẹo: docs/BANG-MEO-TU-KHOA.md. */
+.exam-content .tl-meo, .lesson-body .lesson-prose p.tl-meo { margin: 0 0 2px; font-size: 1.05rem; letter-spacing: .02em; color: #93c5fd; text-align: left; }
+.exam-content .tl-meo b { font-weight: 800; }
+html[data-theme="light"] .exam-content .tl-meo, .lesson-presenter[data-bg="light"] .presenter-prose .tl-meo { color: var(--color-primary); }
+/* K5 (14/10/2026, B2/B3): hộp Mục tiêu · hộp Dự đoán · nút TIẾP từng cùng một tông xanh lơ nên không cái nào nổi.
+   Mục tiêu = nền trung tính; Dự đoán = tông primary nhạt (điểm nhấn duy nhất của hộp); nút TIẾP = primary đặc, chữ trắng. */
+.exam-content .tl-box:not([class*="tl-box--"]) { border-color: var(--color-line); background: var(--color-surface-2); }
+html .exam-content .tl-box:not([class*="tl-box--"]) .tl-label { color: var(--color-ink); }
+.exam-content .tl-box--think { border-color: rgba(37,99,235,.35); background: rgba(37,99,235,.07); }
+html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
+html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
+html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
+html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
+html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
+html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
+html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
+html[data-theme="light"] .exam-content .tl-details { border-color: rgba(15,23,42,.3); }
+html[data-theme="light"] .lesson-shell :is(.theory-section-toggle, .theory-next) { border-color: rgba(15,23,42,.3); }
+/* Mô phỏng cân dòng điện (bài L12 Thực hành cảm ứng từ): chỉ radio + CSS, không JS.
+   --i: cường độ (A), --s: +1/−1 theo chiều dòng; mỗi mũi tên có --L (độ dài có dấu, + là hướng lên) và --sg (dấu). */
+.exam-content .tl-sim { --i: 0; --s: 1; margin: 14px 0; padding: 12px; border: 1px solid rgba(148,163,184,.4); border-radius: 12px; }
+.exam-content .tl-sim__row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0; }
+.exam-content .tl-sim__row > b { flex: 0 0 100%; font-size: 1rem; }
+.exam-content .tl-sim__row > input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-sim__chip { display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; padding: 0 14px; border: 1px solid rgba(148,163,184,.5); border-radius: 10px; cursor: pointer; font-weight: 600; }
+.exam-content .tl-sim__chip:hover { border-color: #22d3ee; }
+.exam-content .tl-sim__row > input:checked + .tl-sim__chip { border-color: #22d3ee; background: rgba(34,211,238,.16); }
+.exam-content .tl-sim__row > input:focus-visible + .tl-sim__chip { outline: 2px solid #22d3ee; outline-offset: 2px; }
+.exam-content .tl-sim svg { display: block; width: 100%; max-width: 420px; margin: 0 auto; height: auto; }
+.exam-content .tl-sim__st { display: none; margin-top: 8px; }
+.exam-content .tl-sim__st p { margin: 2px 0; }
+.exam-content .tl-sim__fbd { display: none; margin-top: 10px; }
+.exam-content .tl-sim:has(.tls-force:checked) .tl-sim__fbd { display: block; }
+.exam-content .tl-sim__leg { margin: 6px 0 0; padding-left: 0; list-style: none; font-size: 1rem; line-height: 1.55; }
+.exam-content .tl-sim__leg li { margin: 2px 0; }
+.exam-content .tl-sim .lg-F { color: #f87171; } .exam-content .tl-sim .lg-Fp { color: #fb923c; } .exam-content .tl-sim .lg-Q { color: #a78bfa; }
+.exam-content .tl-sim .lg-N { color: #34d399; } .exam-content .tl-sim .lg-B { color: #38bdf8; } .exam-content .tl-sim .lg-P { color: #94a3b8; }
+.exam-content .tl-sim .sim-sh { transform: scaleY(calc(var(--L) / 120)); transform-box: fill-box; transform-origin: 50% 100%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-hd { transform: translateY(calc(var(--L) * -1px)) rotate(calc(90deg * (1 - var(--sg)))); transform-box: fill-box; transform-origin: 50% 0; opacity: clamp(0, calc(var(--L) * var(--L)), 1); transition: transform .25s ease, opacity .25s ease; }
+.exam-content .tl-sim .a-F { --L: calc(9 * var(--i) * var(--s)); --sg: var(--s); }
+.exam-content .tl-sim .a-Q { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Fp { --L: calc(-9 * var(--i) * var(--s)); --sg: calc(-1 * var(--s)); }
+.exam-content .tl-sim .a-Pm { --L: -60; --sg: -1; }
+.exam-content .tl-sim .a-N { --L: calc(60 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .a-Pc { --L: -40; --sg: -1; }
+.exam-content .tl-sim .a-Np { --L: calc(-60 - 9 * var(--i) * var(--s)); --sg: -1; }
+.exam-content .tl-sim .a-Qb { --L: calc(100 + 9 * var(--i) * var(--s)); --sg: 1; }
+.exam-content .tl-sim .sim-bar { transform: scaleX(calc(var(--i) * var(--s) / 5)); transform-box: fill-box; transform-origin: 0% 50%; transition: transform .25s ease; }
+.exam-content .tl-sim .sim-wn { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) { --s: -1; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wp { display: none; }
+.exam-content .tl-sim:has(.tls-dir-r:checked) .sim-wn { display: inline; }
+@media (prefers-reduced-motion: reduce) { .exam-content .tl-sim :is(.sim-sh, .sim-hd, .sim-bar) { transition: none; } }
+.exam-content .tl-sim:has(.tls-i0:checked) { --i: 0; }
+.exam-content .tl-sim:has(.tls-i1:checked) { --i: 1; }
+.exam-content .tl-sim:has(.tls-i2:checked) { --i: 2; }
+.exam-content .tl-sim:has(.tls-i3:checked) { --i: 3; }
+.exam-content .tl-sim:has(.tls-i4:checked) { --i: 4; }
+.exam-content .tl-sim:has(.tls-i5:checked) { --i: 5; }
+.exam-content .tl-sim:has(.tls-i0:checked) .st-0 { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-f:checked) .st-1p { display: block; }
+.exam-content .tl-sim:has(.tls-i1:checked):has(.tls-dir-r:checked) .st-1n { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-f:checked) .st-2p { display: block; }
+.exam-content .tl-sim:has(.tls-i2:checked):has(.tls-dir-r:checked) .st-2n { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-f:checked) .st-3p { display: block; }
+.exam-content .tl-sim:has(.tls-i3:checked):has(.tls-dir-r:checked) .st-3n { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-f:checked) .st-4p { display: block; }
+.exam-content .tl-sim:has(.tls-i4:checked):has(.tls-dir-r:checked) .st-4n { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-f:checked) .st-5p { display: block; }
+.exam-content .tl-sim:has(.tls-i5:checked):has(.tls-dir-r:checked) .st-5n { display: block; }
+html[data-theme="light"] .exam-content .tl-sim, html[data-theme="light"] .exam-content .tl-sim__chip { border-color: rgba(15,23,42,.28); }
+/* Mô phỏng bài Tổng hợp lực (L10): hai dây kéo xe + lực kế trên dốc. Chỉ radio + CSS. */
+.exam-content .tl-sim--keo > svg,
+.exam-content .tl-sim--doc > svg { display: none; }
+.exam-content .tl-sim--keo:has(.k-a0:checked) > svg.k-a0,
+.exam-content .tl-sim--keo:has(.k-a60:checked) > svg.k-a60,
+.exam-content .tl-sim--keo:has(.k-a90:checked) > svg.k-a90,
+.exam-content .tl-sim--keo:has(.k-a120:checked) > svg.k-a120,
+.exam-content .tl-sim--keo:has(.k-a180:checked) > svg.k-a180,
+.exam-content .tl-sim--doc:has(.n-a0:checked) > svg.n-a0,
+.exam-content .tl-sim--doc:has(.n-a15:checked) > svg.n-a15,
+.exam-content .tl-sim--doc:has(.n-a30:checked) > svg.n-a30,
+.exam-content .tl-sim--doc:has(.n-a45:checked) > svg.n-a45,
+.exam-content .tl-sim--doc:has(.n-a60:checked) > svg.n-a60 { display: block; }
 /* Bài lý thuyết tương tác — thí nghiệm/ví dụ (Làm–Quan sát–Rút ra), bảng "đề → dữ liệu → kiến thức", danh sách bước */
 .exam-content .tl-box--exp { border-color: rgba(52,211,153,.4); background: rgba(52,211,153,.08); }
 .exam-content .tl-box--exp .tl-label { color: #34d399; }
+/* Khối video YouTube nhúng trong bài lý thuyết (khung 16:9, tải lười) */
+.exam-content .tl-box--video { border-color: rgba(167,139,250,.4); background: rgba(167,139,250,.08); }
+.exam-content .tl-box--video .tl-label { color: #a78bfa; }
+html[data-theme="light"] .exam-content .tl-box--video .tl-label { color: #6d28d9; }
+.exam-content .tl-video { position: relative; width: 100%; aspect-ratio: 16 / 9; margin: 0 0 10px; border-radius: 8px; overflow: hidden; background: #000; }
+.exam-content .tl-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+/* Ảnh bìa + nút phát: chỉ nhúng player YouTube khi học sinh bấm (ContentHtml.tsx) —
+   trang bài không cõng ~1 MB JS player cho mỗi video mà em không xem. */
+.exam-content .tl-video--facade .tl-video-play { position: absolute; inset: 0; display: block; width: 100%; height: 100%; padding: 0; border: 0; background: #000; cursor: pointer; }
+.exam-content .tl-video--facade .tl-video-play img { display: block; width: 100%; height: 100%; object-fit: cover; opacity: .72; }
+.exam-content .tl-video--facade .tl-video-play:hover img { opacity: .86; }
+.exam-content .tl-video-play:focus-visible { outline: 3px solid #a78bfa; outline-offset: -3px; }
+.exam-content .tl-video-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 54px; height: 54px; padding-left: 4px; border: 2px solid rgba(255,255,255,.85); border-radius: 50%; background: rgba(2,6,23,.66); color: #fff; font-size: 18px; }
+.exam-content .tl-video-play-title { position: absolute; right: 0; bottom: 0; left: 0; padding: 10px 12px 8px; background: linear-gradient(transparent, rgba(2,6,23,.88)); color: #e2e8f0; text-align: left; font-size: 12.5px; font-weight: 600; line-height: 1.35; }
+.exam-content .tl-video-play-time { position: absolute; top: 0; right: 0; padding: 6px 12px 10px; background: linear-gradient(rgba(2,6,23,.82), transparent); color: #e2e8f0; font-size: 12px; font-weight: 600; }
 .exam-content .tl-steps { margin: 0 0 12px; padding-left: 22px; }
 .exam-content .tl-steps > li { margin-bottom: 8px; }
 .exam-content .tl-table--data td:nth-child(2) { color: #fbbf24; font-weight: 600; }
@@ -184,7 +310,7 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
      >= 1024px  cột trái 272px là cây chương, cột giữa chỉ hiện chương đang chọn
    ============================================================ */
 .class-pick-desktop { display: none; }
-.class-pick-mobile { display: grid; gap: 28px; }
+.class-pick-mobile { display: grid; gap: 16px; }
 
 @media (max-width: 1023px) {
   /* Giữ nguyên hình học cũ: .lesson-main--single vẫn tự căn 760px và giữ padding của nó. */
@@ -193,30 +319,48 @@ html[data-theme="light"] .exam-content .tl-table--data td:nth-child(2) { color: 
 }
 
 @media (min-width: 1024px) {
-  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 28px; }
+  .lesson-layout--pick .class-pick-desktop { display: grid; gap: 20px; }
   .lesson-layout--pick .class-pick-mobile { display: none; }
   /* Cột giữa chỉ còn một chương nên "Mở tất cả / Thu gọn" không còn việc. */
   .lesson-layout--pick .class-toc-toolbar { display: none; }
-  /* Thẻ "Tiếp tục học" đã chuyển sang cột trái. */
-  .lesson-layout--pick .class-continue--main { display: none; }
   /* Cột giữa rộng đúng bằng cột giữa trang bài: bỏ padding/max-width của .lesson-main--single. */
   .lesson-layout--pick > .lesson-main { margin: 0; max-width: none; padding: 0; }
-  /* Cột trái 272px: thẻ "Tiếp tục học" xếp dọc cho vừa. */
-  .lesson-layout--pick .lesson-nav .class-continue { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px; }
-  .lesson-layout--pick .lesson-nav .class-continue .lesson-btn { justify-content: center; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 16px; }
+}
+
+/* Tiêu đề trang lớp: không dùng nền/lề tràn của đầu trang bài học (nền đen lệch với nền trang) — chỉ là chữ trên nền chung. */
+.lesson-layout--pick .lesson-main--single > .lesson-head { margin-inline: 0; background: none; padding: 4px 0 0; }
+.lesson-layout--pick .lesson-main--single > .lesson-head h1 { margin-top: 0; font-size: 26px; }
+.lesson-layout--pick .class-streak-chip { padding: 2px 10px; border-radius: 999px; background: rgba(251,191,36,.12); }
+
+/* Điện thoại: học sinh vào đây để TÌM bài — phần đầu gọn (tiêu đề, bài nên làm tiếp, ô tìm), mục lục chương → bài lên ngay màn đầu.
+   "Tiếp theo" là một dòng bấm được; mỗi bài một hàng: số · tên · trạng thái. */
+@media (max-width: 639px) {
+  .lesson-layout--pick .lesson-main--single { padding: 8px 16px 24px; }
+  .lesson-layout--pick .lesson-main--single > .lesson-head { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+    .lesson-layout--pick .lesson-main--single > .lesson-head .lesson-lead { display: none; }
+  .lesson-layout--pick .class-toc { gap: 12px; }
+  /* Không còn thanh đáy riêng (18/10/2026): "Mở tất cả / Thu gọn" về lại toolbar nhỏ trên mục lục. */
+  .lesson-layout--pick .class-toc-toolbar { display: flex; }
+  .lesson-layout--pick .class-chapter-progress small { display: none; }
+  .lesson-layout--pick .class-chapter-progress { margin-top: 2px; }
+  .lesson-layout--pick .class-chapter-progress-bar { max-width: none; }
+  .lesson-layout--pick .class-lessons { gap: 6px; margin-top: 8px; }
+  .lesson-layout--pick .class-lesson {
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    column-gap: 10px;
+    align-items: center;
+    padding: 8px 12px;
+  }
+  .lesson-layout--pick .class-lesson-title small { display: none; }
+  .lesson-layout--pick .class-meta { font-size: 13px; }
+  .lesson-layout--pick .class-meta--idle { display: none; }
 }
 
 /* Chưa có rail bên phải (đợt 4) -> giữ 2 cột kể cả >= 1320px, không để trống cột 3. */
 @media (min-width: 1320px) {
   .lesson-layout--pick { grid-template-columns: 272px minmax(0, 1fr); }
-}
-
-/* ---------- < 640px: thanh đáy 3 nút của trang chương thay tabbar toàn site ----------
-   Hai thanh đều position:fixed ở đáy nên không thể cùng hiện; chọn thanh của trang chương
-   (giống trang bài: nơi có thanh riêng thì tabbar tự ẩn). Chừa đúng 62px như trang bài. */
-@media (max-width: 639px) {
-  body:has(.lesson-bottombar--pick) .mobile-tabbar { display: none; }
-  body:has(.lesson-bottombar--pick) { padding-bottom: calc(62px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Trang bài học (tối) — phong cách đọc phẳng theo trang mẫu: nền xanh đen #0f172a không quầng sáng,
@@ -263,6 +407,10 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(148,163,184,.24);
   --pres-surface: rgba(15,23,42,.86);
   --pres-panel: #101a2e;
+  /* Token site đặt lại theo nền chiếu, không theo theme của trang: khung .tl-trap/.tl-check/.tl-fx
+     dùng color-mix(var(--color-panel)) nên theme tối của trang + nền chiếu sáng = hộp đen chữ mờ. */
+  --color-panel: #101a2e; --color-ink: #f1f5f9; --color-warn: #fbbf24; --color-primary: #60a5fa;
+  --color-surface-2: rgba(255,255,255,.06); --color-line-strong: rgba(255,255,255,.34);
   position: fixed; inset: 0; z-index: 120; display: flex; flex-direction: column; overflow: hidden;
   background: #0b1220; color: var(--pres-text); font-family: var(--font-body);
 }
@@ -274,6 +422,8 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
   --pres-line: rgba(15,23,42,.16);
   --pres-surface: rgba(255,255,255,.92);
   --pres-panel: #fff;
+  --color-panel: #fff; --color-ink: #0f172a; --color-warn: #b45309; --color-primary: #1d4ed8;
+  --color-surface-2: #eef1f6; --color-line-strong: #8b93a1;
   background: #f4f6fb;
 }
 
@@ -321,7 +471,9 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 @keyframes presenter-slide-in { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .presenter-slide { animation: none; } }
 
-.presenter-kicker { margin: 0 0 8px; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-kicker { margin: 0 0 .7em; line-height: 1.4; color: var(--pres-muted); font-family: var(--font-mono), monospace; font-size: .7em; letter-spacing: .12em; text-transform: uppercase; }
+.presenter-tap { display: inline-block; margin: 0 0 .5em; border: 1px solid var(--pres-line); border-radius: 999px; padding: .1em .75em; color: var(--pres-muted); font-size: .62em; font-weight: 600; line-height: 1.5; }
+.presenter-tap span { color: var(--pres-accent); }
 .presenter-heading { margin: 0 0 .62em; color: var(--pres-heading); font-family: var(--font-display), sans-serif; font-size: 1.5em; font-weight: 700; letter-spacing: -.015em; line-height: 1.24; }
 
 /* Nội dung lý thuyết trong trang chiếu. Ghi đè .exam-content (1,125rem, ảnh công thức đảo màu,
@@ -376,6 +528,44 @@ html:not([data-theme="light"]) .lesson-shell::before { display: none; }
 .presenter-keys dd { margin: 0; font-size: 13.5px; line-height: 1.45; }
 .presenter-keys kbd { border: 1px solid var(--pres-line); border-bottom-width: 2px; border-radius: 6px; background: rgba(148,163,184,.14); padding: 2px 7px; font-family: var(--font-mono), monospace; font-size: 12px; }
 .presenter-help-note { margin: 14px 0 0; border-top: 1px solid var(--pres-line); padding-top: 12px; color: var(--pres-muted); font-size: 12px; line-height: 1.55; }
+
+/* Ghi chú nhanh ngay trên trang bài học (nút nổi, chỉ giáo viên): mượn bộ kiểu của hộp ghi chú trình chiếu. */
+.lesson-note-float { --pres-text: #17233a; --pres-muted: #59678a; --pres-accent: #1d4ed8; --pres-line: rgba(15,23,42,.18); --pres-surface: rgba(255,255,255,.96); position: fixed; z-index: 45; right: 76px; bottom: 20px; }
+.lesson-note-float .presenter-note, .lesson-note-float .presenter-note-saved { right: 0; bottom: 0; }
+.lesson-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 6px; border: 1px solid var(--pres-line); border-radius: 999px; background: var(--pres-surface); padding: 0 14px; color: var(--pres-text); font-family: inherit; font-size: 13px; font-weight: 700; box-shadow: 0 6px 18px rgba(0,0,0,.18); cursor: pointer; }
+.lesson-note-fab:hover { border-color: var(--pres-accent); color: var(--pres-accent); }
+/* Ghi chú của HỌC SINH (StudentNoteFab): góc TRÁI để cách xa nút Báo lỗi ở góc phải (D3); nền theo token site. */
+.lesson-note-open { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: space-between; padding: 0 14px; color: var(--color-ink); font-family: inherit; font-size: 13px; font-weight: 700; cursor: pointer; text-align: left; }
+.lesson-note-open::after { content: "›"; color: var(--color-muted); font-size: 16px; }
+.student-note-float { position: fixed; z-index: 45; left: 12px; bottom: 20px; max-width: calc(100vw - 24px); }
+body:has(.lesson-bottombar) .student-note-float { bottom: calc(var(--lesson-bottombar-h, 62px) + 12px + env(safe-area-inset-bottom, 0px)); }
+.student-note-fab { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; border: 2px solid var(--color-primary, #1d4ed8); border-radius: 999px; background: var(--color-panel, #fff); padding: 0 16px 0 13px; color: var(--color-primary, #1d4ed8); font-family: inherit; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 18px -8px rgba(15,23,42,.35); }
+.student-note { width: min(360px, calc(100vw - 24px)); border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 16px; background: var(--color-panel, #fff); padding: 12px 14px 14px; color: var(--color-ink, #0f172a); box-shadow: 0 16px 40px -16px rgba(15,23,42,.45); }
+.student-note-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.student-note-head p { display: grid; gap: 2px; min-width: 0; margin: 0; font-size: 15px; }
+.student-note-head p span { overflow: hidden; color: var(--color-muted, #475569); font-size: 13px; text-overflow: ellipsis; white-space: nowrap; }
+.student-note-head button { display: grid; width: 44px; height: 44px; margin: -8px -8px 0 0; place-items: center; border: 0; background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.student-note-label { display: block; margin-bottom: 4px; font-size: 14px; font-weight: 700; }
+.student-note-body { width: 100%; min-height: 96px; resize: vertical; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px; background: var(--color-bg, #f5f7fa); padding: 9px 10px; color: var(--color-ink, #0f172a); font: inherit; font-size: 16px; line-height: 1.5; }
+.student-note-status { margin: 6px 0 0; color: var(--color-muted, #475569); font-size: 12.5px; }
+.student-note-others { display: grid; gap: 4px; margin: 10px 0 0; padding: 0; list-style: none; }
+.student-note-others button { display: grid; width: 100%; min-height: 44px; gap: 1px; border: 1px solid var(--color-line, rgba(15,23,42,.1)); border-radius: 10px; background: none; padding: 6px 10px; color: var(--color-ink, #0f172a); font-family: inherit; font-size: 13px; text-align: left; cursor: pointer; }
+.student-note-others button span { overflow: hidden; color: var(--color-muted, #475569); text-overflow: ellipsis; white-space: nowrap; }
+@media (max-width: 767px) { .lesson-note-float { bottom: 78px; right: 12px; } .lesson-note-fab span { display: none; } .lesson-note-fab { width: 44px; justify-content: center; padding: 0; } }
+
+/* Ghi chú nhanh lúc dạy (phím N) — góc phải dưới, không che giữa trang chiếu. */
+.presenter-note { position: absolute; z-index: 40; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); display: flex; width: min(420px, calc(100vw - 24px)); flex-direction: column; gap: 8px; border: 1px solid var(--pres-line); border-radius: 14px; background: var(--pres-surface); backdrop-filter: blur(10px); padding: 12px; color: var(--pres-text); box-shadow: 0 10px 30px rgba(0,0,0,.28); }
+.presenter-note-where { margin: 0; color: var(--pres-muted); font-size: 12px; line-height: 1.4; }
+.presenter-note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.presenter-note button { min-height: 36px; border: 1px solid var(--pres-line); border-radius: 999px; background: transparent; padding: 0 11px; color: var(--pres-text); font-family: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; }
+.presenter-note button:hover:not(:disabled) { border-color: var(--pres-accent); color: var(--pres-accent); }
+.presenter-note button.is-on { border-color: var(--pres-accent); background: rgba(96,165,250,.18); color: var(--pres-accent); }
+.presenter-note button:disabled { opacity: .4; cursor: default; }
+.presenter-note textarea { width: 100%; resize: none; border: 1px solid var(--pres-line); border-radius: 10px; background: transparent; padding: 8px 10px; color: var(--pres-text); font-family: inherit; font-size: 15px; line-height: 1.45; }
+.presenter-note textarea:focus { outline: 2px solid var(--pres-accent); outline-offset: 1px; }
+.presenter-note-error { margin: 0; color: #f87171; font-size: 12.5px; }
+.presenter-note-actions { display: flex; justify-content: flex-end; gap: 8px; }
+.presenter-note-saved { position: absolute; z-index: 41; right: clamp(12px, 2vw, 28px); bottom: clamp(76px, 11vh, 100px); margin: 0; border: 1px solid var(--pres-accent); border-radius: 999px; background: var(--pres-surface); padding: 6px 14px; color: var(--pres-accent); font-size: 13px; font-weight: 600; }
 
 .presenter-progress { position: absolute; z-index: 25; inset: auto 0 0; height: 3px; background: var(--pres-line); }
 .presenter-progress > span { display: block; height: 100%; background: var(--pres-accent); transition: width .2s; }
@@ -436,6 +626,15 @@ html[data-theme="light"] .read-zone-tools { --lesson-line: rgba(15,23,42,.18); -
 /* Dịu mắt TOÀN TRANG (khác .lesson-page.is-dim chỉ phủ khối nội dung): ReadingZone bật theme sáng
    rồi phủ tông kem/nâu lên biến — cùng bộ màu với bài học: #33291a/#f5efe0 = 12,4:1, #6b5a3e = 5,8:1. */
 html.is-dim[data-theme="light"] { --color-bg: #f5efe0; --color-panel: #fbf7ea; --color-panel-deep: #fbf7ea; --color-ink: #33291a; --color-muted: #6b5a3e; --color-line: rgba(120,96,40,.24); }
+/* Trang phụ huynh + Dịu mắt: giữ AAA 7:1 trên nền kem #f5efe0 (token chung chỉ 5,8:1; khối `html:not(.is-dim) .parent-page` không áp khi Dịu mắt bật). */
+html.is-dim[data-theme="light"] .parent-page {
+  --color-muted: #57492f;
+  --color-primary: #1e40af;
+  --color-primary-dark: #1e3a8a;
+  --color-ok: #064e3b;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
 html.is-dim[data-theme="light"] body { background-color: #f5efe0; color: #33291a; }
 html.is-dim[data-theme="light"] .text-white { color: #33291a; }
 html.is-dim[data-theme="light"] :is(.text-slate-200, .text-slate-300, .text-slate-400, .text-slate-500) { color: #6b5a3e; }
@@ -557,35 +756,387 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 /* P17 nội dung quan trọng không nằm ở rìa: giới hạn bề ngang cột đọc của khối phụ huynh. */
 .parent-page .parent-copy { max-width: 44rem; }
 
+/* Lời giải bài tập mẫu (skill soan-bai-tap-mau): C1 dòng ≥1.6 · C4 đoạn ngắn · H5 mỗi công thức một dòng, thở ≥12px ·
+   B3 khoảng cách trong bước < giữa các bước · N7 một cấp nhấn (tiêu đề bước đậm; kết quả có nền nhạt). */
+.exam-content .bt-sol { display: block; line-height: 1.7; }
+.exam-content .bt-sol .tl-box { margin: 0 0 22px; }
+.exam-content .bt-sol .tl-box ol { margin: 6px 0 0; padding-left: 20px; }
+.exam-content .bt-sol .tl-box li { margin-bottom: 6px; }
+.exam-content .bt-step { margin: 0 0 22px; }
+.exam-content .bt-step-title { display: flex; align-items: center; gap: 10px; margin: 0 0 8px; font-weight: 700; }
+.exam-content .bt-step-n { display: inline-flex; width: 26px; height: 26px; flex: 0 0 auto; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,.28); border-radius: 50%; font-size: 13px; font-weight: 700; color: #94a3b8; }
+.exam-content .bt-step > p { margin: 0 0 6px; padding-left: 36px; }
+.exam-content .bt-step .katex-display { margin: 10px 0 10px 36px; text-align: left; overflow-x: auto; overflow-y: hidden; }
+.exam-content .bt-step .katex-display > .katex { text-align: left; }
+.exam-content .bt-ans { margin: 8px 0 0 36px; padding: 8px 12px; border-radius: 8px; background: rgba(52,211,153,.10); }
+.exam-content .bt-ans .katex-display { margin: 0; }
+.exam-content .bt-final { margin: 0 0 18px; padding: 12px 14px; border-radius: 10px; background: rgba(251,191,36,.10); }
+.exam-content .bt-final p { margin: 0 0 6px; }
+.exam-content .bt-final p:last-child { margin-bottom: 0; }
+.exam-content .bt-note { margin: 0 0 6px; font-size: 14px; color: #94a3b8; }
+html[data-theme="light"] .exam-content .bt-step-n { border-color: rgba(15,23,42,.3); color: #475569; }
+html[data-theme="light"] .exam-content .bt-ans { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .exam-content .bt-final { background: rgba(217,119,6,.10); }
+html[data-theme="light"] .exam-content .bt-note { color: #475569; }
+/* Nút chạy mô phỏng dưới hình SVG có hoạt hình (skill soan-bai-tap-mau): D — đích chạm ≥44px; B4 — chỉ chạy khi bấm. */
+.exam-content .bt-run { display: block; margin: 8px auto 0; min-height: 44px; padding: 0 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 10px; background: rgba(255,255,255,.04); color: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+.exam-content .bt-run:hover { background: rgba(255,255,255,.09); }
+.exam-content .bt-run:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+html[data-theme="light"] .exam-content .bt-run { border-color: rgba(15,23,42,.3); background: rgba(15,23,42,.04); }
+
+/* Bài tập mẫu — tự giải từng bước (components/lessons/StepwiseSolution.tsx, 9/10/2026). D2 đích chạm ≥ 44px, L1 phản hồi tức thì, N7 một kiểu nhấn. */
+.exam-content .bt-step--ask { padding: 12px 12px 12px; border: 1px dashed rgba(255,255,255,.22); border-radius: 10px; }
+.exam-content .bt-step--locked { opacity: .45; margin: 0 0 14px; }
+.exam-content .bt-ask { margin: 8px 0 0 36px; }
+.exam-content .bt-ask + .bt-ask { margin-top: 14px; }
+.exam-content .bt-ask-q { margin: 0 0 8px; font-weight: 600; }
+.exam-content .bt-ask-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.exam-content .bt-ask-input { min-height: 44px; width: 7.5em; max-width: 100%; padding: 0 12px; border: 1px solid rgba(255,255,255,.28); border-radius: 9px; background: rgba(255,255,255,.04); color: inherit; font-size: 16px; }
+.exam-content .bt-ask-input:focus-visible { outline: 3px solid #38bdf8; outline-offset: 1px; }
+.exam-content .bt-ask-unit { color: #94a3b8; }
+.exam-content .bt-ask-row .lesson-btn-ghost { min-height: 44px; }
+.exam-content .bt-choice { display: block; width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.22); border-radius: 9px; background: rgba(255,255,255,.03); color: inherit; font-size: inherit; text-align: left; cursor: pointer; }
+.exam-content .bt-choice:hover { background: rgba(255,255,255,.07); }
+.exam-content .bt-choice:focus-visible { outline: 3px solid #38bdf8; outline-offset: 2px; }
+.exam-content .bt-feedback { margin: 8px 0 0; padding: 8px 12px; border-radius: 8px; font-size: 15px; }
+.exam-content .bt-feedback--wrong { background: rgba(248,113,113,.12); }
+.exam-content .bt-feedback--ok { background: rgba(52,211,153,.10); }
+.exam-content .bt-show-all { display: block; margin: 4px 0 18px 36px; min-height: 44px; padding: 0; border: 0; background: none; color: #94a3b8; font-size: 14px; text-decoration: underline; cursor: pointer; }
+.exam-content .bt-flash { border-radius: 10px; box-shadow: 0 0 0 3px rgba(251,191,36,.6); transition: box-shadow .4s; }
+.bt-goroi-btn { display: block; width: 100%; min-height: 44px; white-space: normal; text-align: left; }
+.bt-nhan-dang { margin: 0 0 10px; padding: 8px 12px; border-left: 3px solid currentColor; border-radius: 0 8px 8px 0; background: rgba(255,255,255,.04); font-size: 15px; line-height: 1.6; }
+.bt-nhan-dang .exam-content { display: inline; font-size: inherit; }
+html[data-theme="light"] .exam-content :is(.bt-step--ask, .bt-ask-input, .bt-choice) { border-color: rgba(15,23,42,.28); background: rgba(15,23,42,.03); }
+html[data-theme="light"] .exam-content .bt-choice:hover { background: rgba(15,23,42,.07); }
+html[data-theme="light"] .exam-content :is(.bt-ask-unit, .bt-show-all) { color: #475569; }
+html[data-theme="light"] .exam-content .bt-feedback--wrong { background: rgba(220,38,38,.10); }
+html[data-theme="light"] .exam-content .bt-feedback--ok { background: rgba(5,150,105,.10); }
+html[data-theme="light"] .bt-nhan-dang { background: rgba(15,23,42,.04); }
+
+/* ==========================================================================
+   NỀN SÁNG — QUÉT NỐT MÀU TỐI / NEON HARD-CODE TRONG JSX (11/10/2026)
+   ==========================================================================
+   Vì sao có khối này: trước đây theme TỐI là mặc định, nên hàng trăm chỗ trong JSX viết
+   thẳng class màu của nền tối — `bg-[#0B1020]`, `bg-white/5` (ô sáng mờ trên nền đen),
+   `border-white/10`, gradient `from-[#172c46]`, quầng sáng `shadow-[0_0_24px_…]`. Bật nền
+   sáng lên thì những chỗ đó thành mảng xám bết hoặc mảng tối lẫn trong trang trắng — đúng
+   cảm giác "màu không đẹp" mà thầy thấy.
+
+   Cách xử lý ở đây là LƯỚI AN TOÀN theo token, không phải nguồn màu:
+   · quét bằng attribute selector KHÔNG phân biệt hoa/thường (`i`) vì JSX viết lẫn
+     `bg-[#0B1020]` và `bg-[#0b1020]`, kèm cả biến thể mờ `/80`, `/[0.98]`;
+   · `[class~="…"]` (khớp ĐÚNG một token class) cho các idiom `bg-white/10` để KHÔNG đụng
+     `hover:bg-white/20` — biến thể hover xử riêng, nếu không nút mất phản hồi khi trỏ;
+   · mọi giá trị lấy từ token ở @theme, nên đổi bảng màu chỉ sửa một nơi.
+   Sửa gốc vẫn phải làm ở component (bỏ hex, dùng bg-panel/text-ink/border-line) — lưới này
+   chỉ để không còn ô tối nào lọt ra ngoài. Khi component đã sạch thì các rule dưới thành vô hại.
+   ========================================================================== */
+
+/* (1) Nền tối hard-code → mặt thẻ. Mọi biến thể hoa/thường + độ mờ đều khớp. */
+html[data-theme="light"] [class*="bg-[#04060a]" i],
+html[data-theme="light"] [class*="bg-[#05070b]" i],
+html[data-theme="light"] [class*="bg-[#050914]" i],
+html[data-theme="light"] [class*="bg-[#070b16]" i],
+html[data-theme="light"] [class*="bg-[#080d18]" i],
+html[data-theme="light"] [class*="bg-[#080d1a]" i],
+html[data-theme="light"] [class*="bg-[#080d1d]" i],
+html[data-theme="light"] [class*="bg-[#0a1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1020]" i],
+html[data-theme="light"] [class*="bg-[#0b1220]" i],
+html[data-theme="light"] [class*="bg-[#0b1324]" i],
+html[data-theme="light"] [class*="bg-[#10192a]" i],
+html[data-theme="light"] [class*="bg-[#111a2e]" i],
+html[data-theme="light"] [class*="bg-[#172033]" i] {
+  background-color: var(--color-panel) !important;
+}
+
+/* (2) Ô sáng mờ trên nền tối (`bg-white/5`) → ô xám nhạt trên nền sáng. Giữ nguyên thứ bậc
+   đậm/nhạt giữa các mức để chỗ nào đậm hơn vẫn nổi hơn. */
+html[data-theme="light"] [class~="bg-white/5"],
+html[data-theme="light"] [class~="hover:bg-white/5"]:hover,
+html[data-theme="light"] [class~="bg-white/[.01]"],
+html[data-theme="light"] [class~="bg-white/[0.01]"] { background-color: rgba(15, 23, 42, .035) !important; }
+html[data-theme="light"] [class~="bg-white/[.02]"],
+html[data-theme="light"] [class~="bg-white/[0.02]"],
+html[data-theme="light"] [class~="bg-white/[.025]"],
+html[data-theme="light"] [class~="bg-white/[0.025]"],
+html[data-theme="light"] [class~="bg-white/[.03]"],
+html[data-theme="light"] [class~="bg-white/[0.03]"],
+html[data-theme="light"] [class~="bg-white/[.035]"],
+html[data-theme="light"] [class~="bg-white/[0.035]"],
+html[data-theme="light"] [class~="bg-white/[.04]"],
+html[data-theme="light"] [class~="bg-white/[0.04]"],
+html[data-theme="light"] [class~="bg-white/[.05]"],
+html[data-theme="light"] [class~="bg-white/[0.05]"],
+html[data-theme="light"] [class~="bg-white/[.06]"],
+html[data-theme="light"] [class~="bg-white/[0.06]"],
+html[data-theme="light"] [class~="bg-white/[.07]"],
+html[data-theme="light"] [class~="bg-white/[0.07]"],
+html[data-theme="light"] [class~="bg-white/[.08]"],
+html[data-theme="light"] [class~="bg-white/[0.08]"] { background-color: rgba(15, 23, 42, .05) !important; }
+html[data-theme="light"] [class~="bg-white/10"],
+html[data-theme="light"] [class~="hover:bg-white/10"]:hover { background-color: rgba(15, 23, 42, .055) !important; }
+html[data-theme="light"] [class~="bg-white/[0.14]"],
+html[data-theme="light"] [class~="bg-white/15"],
+html[data-theme="light"] [class~="hover:bg-white/15"]:hover { background-color: rgba(15, 23, 42, .075) !important; }
+html[data-theme="light"] [class~="bg-white/20"],
+html[data-theme="light"] [class~="hover:bg-white/20"]:hover { background-color: rgba(15, 23, 42, .09) !important; }
+
+/* (3) Viền trắng mờ trên nền tối → viền xám trên nền sáng. Không đụng /60 và /70: đó là khung
+   trắng cố ý đè LÊN ảnh/camera (QrScannerCard), phải giữ trắng. */
+html[data-theme="light"] [class~="border-white/5"],
+html[data-theme="light"] [class~="hover:border-white/5"]:hover { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="border-white/10"],
+html[data-theme="light"] [class~="hover:border-white/10"]:hover { border-color: rgba(15, 23, 42, .10) !important; }
+html[data-theme="light"] [class~="border-white/15"],
+html[data-theme="light"] [class~="hover:border-white/15"]:hover { border-color: rgba(15, 23, 42, .14) !important; }
+html[data-theme="light"] [class~="border-white/20"],
+html[data-theme="light"] [class~="hover:border-white/20"]:hover { border-color: rgba(15, 23, 42, .18) !important; }
+html[data-theme="light"] [class~="border-white/25"],
+html[data-theme="light"] [class~="hover:border-white/25"]:hover { border-color: rgba(15, 23, 42, .22) !important; }
+html[data-theme="light"] [class~="border-white/30"],
+html[data-theme="light"] [class~="hover:border-white/30"]:hover { border-color: rgba(15, 23, 42, .26) !important; }
+html[data-theme="light"] [class~="border-white/40"],
+html[data-theme="light"] [class~="hover:border-white/40"]:hover { border-color: rgba(15, 23, 42, .34) !important; }
+html[data-theme="light"] [class~="divide-white/5"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .06) !important; }
+html[data-theme="light"] [class~="divide-white/10"] > :not([hidden]) ~ :not([hidden]) { border-color: rgba(15, 23, 42, .10) !important; }
+
+/* (4) Gradient nền tối + quầng sáng neon (M6: không gradient/glow ở vùng đọc và làm bài).
+   `background-image: none` là cách chắc nhất vì Tailwind dựng gradient qua biến --tw-gradient-*. */
+html[data-theme="light"] [class*="from-[#172c46]" i],
+html[data-theme="light"] [class*="via-[#0e1c32]" i],
+html[data-theme="light"] [class*="to-[#071426]" i],
+html[data-theme="light"] [class*="to-[#091627]" i],
+html[data-theme="light"] [class*="to-[#101a3a]" i],
+html[data-theme="light"] [class*="from-[#183a4a]" i],
+html[data-theme="light"] [class*="from-[#0b1020]" i],
+html[data-theme="light"] [class*="to-[#0b1020]" i] { background-image: none !important; }
+html[data-theme="light"] [class*="shadow-[0_0_"],
+html[data-theme="light"] [class*="shadow-[0_2px_4px_rgba(0,0,0"] { box-shadow: 0 1px 2px rgb(15 23 42 / .06) !important; }
+
+/* (5) Hai chỗ đặc biệt, phải đổi cả nền lẫn chữ vì chữ thừa hưởng màu của nền tối:
+   · badge 📖 của bài học (nền navy đậm, không đặt màu chữ) → chip nhấn nhạt;
+   · dải cảnh báo rời trang khi làm bài (nền nâu đậm + chữ amber) → nền amber rất nhạt. */
+html[data-theme="light"] [class*="bg-[#1d3461]" i] {
+  background-color: var(--color-primary-soft) !important;
+  color: var(--color-primary-dark) !important;
+}
+html[data-theme="light"] [class*="bg-[#2a2210]" i] {
+  background-color: #fffbeb !important;
+  border-color: #fcd34d !important;
+}
+/* Nút đặc màu teal đậm ở trang chủ (bg-[#155e75] + chữ trắng, hover bg-[#0e7490]): theo M3 chỉ
+   giữ MỘT màu nhấn cho hành động, nên đưa về primary thay vì thêm sắc độ bão hoà thứ hai. */
+html[data-theme="light"] [class*="bg-[#155e75]" i],
+html[data-theme="light"] [class*="bg-[#0e7490]" i] { background-color: var(--color-primary) !important; }
+
+/* (6) Không gian học CNC: vài mảng tối viết trong CSS (không phải class JSX) nên lưới ở trên
+   không với tới. Khung code thì CỐ Ý giữ tối (như trình soạn thảo) — chỉ đổi các mảng UI. */
+html[data-theme="light"] .cnc-embedded .cnc-programming-tabs button,
+html[data-theme="light"] .cnc-embedded .cnc-programming-suite > div.grid > div.bg-white,
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group {
+  border-color: var(--color-line) !important;
+  background: var(--color-panel) !important;
+  color: var(--color-muted);
+}
+html[data-theme="light"] .cnc-embedded .cnc-rubric-group > header { background: var(--color-surface-2) !important; color: var(--color-ink); }
+
+/* ==========================================================================
+   PHẠM VI THEO NHÓM NGƯỜI XEM — cùng một bảng màu, khác số đo thị giác
+   ==========================================================================
+   Không phải "mỗi trang một bộ màu" (như vậy là phá N4/M3 và làm site rối), mà là: cùng hệ
+   thần, đổi đúng những chỗ nghiên cứu nói phải đổi cho từng lứa tuổi. */
+
+/* PHỤ HUYNH 45–60 — docs/QUY-TAC-THIET-KE-PHU-HUYNH.md (P1, P2, P5, P6).
+   Nền hơi ngả ấm (không dùng trắng tinh để giảm chói với người lão thị), chữ phụ tối hơn để
+   đạt ≥7:1 (AAA), nhấn dùng xanh navy đậm cho trang trọng và đủ tương phản. Cỡ chữ và đích
+   chạm đã có ở khối "P1/P2/P4 — khối PHỤ HUYNH" phía trên.
+
+   `html:not(.is-dim)` là BẮT BUỘC: "Dịu mắt" đặt token trên <html>, mà token khai ở phần tử con
+   luôn thắng token thừa hưởng — thiếu điều kiện này thì bật Dịu mắt ở /phu-huynh vẫn ra nền trắng
+   ấm thay vì nền kem, tức là vô hiệu hoá đúng tính năng dành cho người lão thị. */
+html:not(.is-dim) .parent-page {
+  --color-bg: #f7f7f4;
+  --color-panel: #ffffff;
+  --color-surface-2: #f1f1ec;
+  --color-ink: #14181f;          /* 15,9:1 trên #f7f7f4 */
+  --color-muted: #3d4653;        /* 8,9:1 trên #f7f7f4, 9,8:1 trên trắng — vượt AAA 7:1 */
+  --color-line: rgba(20, 24, 31, .14);
+  /* Phụ huynh phải thấy rõ ô nhập/viền hơn học sinh ⇒ viền đậm hơn (4,2:1 trên trắng). */
+  --color-line-strong: #767f8d;
+  --color-primary: #1e40af;      /* 8,7:1 với chữ trắng */
+  --color-primary-dark: #1e3a8a;
+  --color-primary-soft: #eef1f8;
+  /* P2 đòi 7:1 (AAA) cho khối phụ huynh, mà tông chung của ba màu trạng thái chỉ đạt
+     5,1 / 4,7 / 6,0 trên nền ấm #f7f7f4 — vẫn qua AA nhưng hụt mức tài liệu đặt ra. Ba mã dưới
+     đây là bản đậm hơn, đo lại trên #f7f7f4: ok 7,4 · warn 8,5 · danger 7,7:1. */
+  --color-ok: #065f46;
+  --color-warn: #78350f;
+  --color-danger: #991b1b;
+}
+/* Nền ấm của trang phụ huynh phải phủ hết chiều cao màn hình, nếu không mép dưới lộ nền trung
+   tính của site và trang trông "lai" hai tông. Để RIÊNG ngoài khối token trên, nhờ vậy chế độ
+   Dịu mắt vẫn đổi được nền sang kem. */
+.parent-page { background: var(--color-bg); }
+
+/* KHU GIÁO VIÊN / QUẢN TRỊ — mật độ cao, nhiều bảng, không cần "không khí" của trang học sinh:
+   nền xám trung tính hơn một bậc để vùng dữ liệu (bảng trắng) tách khỏi nền, và cỡ chữ gốc
+   nhỏ hơn (14px, đã đặt ở .admin-shell) vì người dùng là giáo viên trên laptop. */
+html[data-theme="light"] .teacher-dashboard {
+  --color-bg: #f4f5f7;
+  --color-panel: #ffffff;
+  --color-surface-2: #eceef2;
+  --color-line: rgba(15, 23, 42, .12);
+}
+
+/* RP bài lý thuyết: thanh nộp câu tự chấm (đích chạm >=44px) */
+.theory-rp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-size: var(--fs-sm); color: #cbd5e1; }
+.theory-rp-bar .lesson-done { min-height: 44px; color: #6ee7b7; border-color: rgba(16,185,129,.5); }
+.theory-rp-bar .lesson-done:disabled { opacity: .5; cursor: not-allowed; }
+html[data-theme="light"] .theory-rp-bar { color: #334155; }
+
+/* Bảng dữ liệu trong câu hỏi (lib/question-table.ts): kẻ ô, giãn ô, cuộn ngang trên điện thoại (N1, M2). */
+.q-table-wrap { overflow-x: auto; margin: 10px 0; max-width: 100%; }
+.q-table { border-collapse: collapse; font-size: .95em; min-width: 50%; }
+.q-table :is(th, td) { border: 1px solid rgba(100,116,139,.55); padding: 7px 14px; text-align: center; vertical-align: middle; white-space: nowrap; }
+.q-table th { background: rgba(148,163,184,.18); font-weight: 600; }
+.q-table :is(th, td):has(br) { white-space: normal; }
+
+/* Bài Anh văn chuyên ngành (AVCN, lớp avcn): thẻ từ vựng có ảnh, câu đọc chạm hiện dịch, nút nghe 🔊
+   (<button data-tl-speak> — trang bài học xử lý uỷ quyền, HTML lưu DB không chứa JS). Mẫu: content/lesson-samples/avcn-*. */
+.exam-content .avcn-photo img { display: block; width: 100%; max-width: 520px; height: auto; margin: 0 auto; border-radius: 12px; }
+.exam-content .avcn-photo figcaption { opacity: .85; }
+.exam-content .avcn-cards { display: grid; gap: 10px; margin: 10px 0 14px; }
+.exam-content .avcn-card { display: grid; grid-template-columns: 112px 1fr; gap: 12px; align-items: start; padding: 10px; border: 1px solid rgba(148,163,184,.35); border-radius: 12px; }
+.exam-content .avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-card img { width: 112px; height: 84px; object-fit: cover; border-radius: 8px; }
+.exam-content .avcn-card__body p { margin: 0 0 4px; text-align: left; }
+.exam-content .avcn-term { font-weight: 700; font-size: 1.1rem; }
+.exam-content .avcn-term small { font-weight: 400; font-size: .9rem; opacity: .8; }
+.exam-content .avcn-star { font-size: .8rem; }
+.exam-content .avcn-vi { color: #22d3ee; font-weight: 600; }
+html[data-theme="light"] .exam-content .avcn-vi { color: #0e7490; }
+.exam-content .avcn-def { font-size: .95rem; }
+.exam-content .tl-speak { display: inline-flex; align-items: center; justify-content: center; min-width: 32px; min-height: 32px; padding: 0 6px; border: 1px solid rgba(148,163,184,.4); border-radius: 8px; background: transparent; color: inherit; cursor: pointer; font-size: 1rem; vertical-align: middle; }
+.exam-content .tl-speak:hover { border-color: #22d3ee; }
+.exam-content .avcn-sent { margin: 6px 0; }
+.exam-content .avcn-sent > summary { font-weight: 400; line-height: 1.6; }
+.exam-content .avcn-n { font-weight: 700; opacity: .7; margin-right: 4px; }
+.exam-content .avcn-trans { opacity: .9; }
+.exam-content .avcn-list { padding-left: 18px; }
+.exam-content .avcn-list li { margin: 6px 0; text-align: left; }
+.exam-content .avcn-box { padding: 8px 12px; border: 1px dashed rgba(148,163,184,.6); border-radius: 10px; text-align: left; }
+.exam-content .avcn-passage { padding: 12px 14px; border-left: 3px solid #22d3ee; background: rgba(148,163,184,.08); border-radius: 0 10px 10px 0; margin: 10px 0; }
+.exam-content .avcn-passage p { margin: 0; text-align: left; line-height: 1.7; }
+@media (max-width: 420px) { .exam-content .avcn-card { grid-template-columns: 88px 1fr; } .exam-content .avcn-card img { width: 88px; height: 66px; } }
+.exam-content .avcn-card.avcn-card--noimg { grid-template-columns: 1fr; }
+.exam-content .avcn-tbl :is(th, td):first-child { white-space: nowrap; }
+.exam-content .avcn-sent > summary::after { font-size: 1.3rem; line-height: 1; }
+.exam-content .avcn-term .tl-speak { margin-left: 2px; }
+.exam-content .avcn-photo figcaption { font-size: .9rem; }
+
+/* Vinh danh tuần: hiệu ứng chạy MỘT lần khi cuộn tới bục (sao băng + pháo hoa quanh hạng 1); tắt khi giảm chuyển động (B4). */
+.honor-fx { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .honor-fx { display: block; }
+  .honor-play .honor-shoot { animation: honor-shoot 1.4s ease-out 0.3s 1 both; }
+  .honor-play .honor-shoot-2 { animation-delay: 1.1s; }
+  .honor-play .honor-spark { animation: honor-spark 1.6s ease-out 0.5s 1 both; }
+  .honor-play .honor-glint { animation: honor-glint 1.2s ease-in-out 0.4s 2 both; }
+}
+@keyframes honor-shoot {
+  0% { transform: translate(0, 0) rotate(35deg); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: translate(190px, 130px) rotate(35deg); opacity: 0; }
+}
+@keyframes honor-spark {
+  0% { transform: rotate(var(--a)) translateX(0) scale(1); opacity: 0; }
+  15% { opacity: 1; }
+  100% { transform: rotate(var(--a)) translateX(var(--d)) scale(0.2); opacity: 0; }
+}
+@keyframes honor-glint {
+  0%, 100% { opacity: 0; transform: scale(0.4); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Nhãn đã làm/điểm cao nhất dưới tên đề ở kệ đề lớp (ExamShelf, 17/10/2026, N3). */
+.class-done-tag { display: block; margin-top: 2px; color: #94a3b8; font-size: 13px; font-weight: 600; }
+.class-done-tag.is-pass { color: #6ee7b7; }
+.class-done-tag.is-fail { color: #fbbf24; }
+html[data-theme="light"] .class-done-tag { color: #475569; }
+html[data-theme="light"] .class-done-tag.is-pass { color: #047857; }
+html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
+
+/* Danh sách "Dạng" trong bài lý thuyết: mỗi dạng một khối, mỗi ý một dòng, có khoảng thở giữa các dạng (N1, N5, B2) */
+.exam-content ul.tl-dang { padding-left: 1.1em; }
+.exam-content ul.tl-dang > li { margin: 0 0 1em; line-height: 1.7; }
+.exam-content ul.tl-dang > li:last-child { margin-bottom: 0; }
+
+/* Khối công thức của bài lý thuyết (.tl-fx): tên → công thức giữa khung → bảng "trong đó" canh cột (thầy chốt 21/10/2026).
+   Mayer: tiệm cận không gian (công thức và chú giải liền nhau), báo hiệu một cấp (N1, N7, B2). */
+.exam-content .tl-fx > p { margin: 0; }
+.exam-content .tl-fx-name { font-weight: 700; margin-bottom: 6px !important; text-align: left; }
+.exam-content .tl-fx-cond { margin-top: 10px !important; font-size: .9em; opacity: .85; text-align: center; }
+.exam-content .tl-fx .katex-display { margin: 4px 0; padding: 6px 0; border: 0; background: none; text-align: center; overflow-x: auto; overflow-y: hidden; }
+.exam-content .tl-fx .katex-display > .katex { display: block; }
+.exam-content ul.tl-fx-def { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--color-line, rgba(148,163,184,.4)); display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: baseline; text-align: left; }
+.exam-content ul.tl-fx-def > li { display: contents; }
+.exam-content ul.tl-fx-def .tl-sym { text-align: right; white-space: nowrap; }
+.exam-content ul.tl-fx-def .tl-sym::after { content: " :"; }
+.exam-content .tl-fx-note { margin-top: 10px !important; font-size: .95em; text-align: left; }
+/* Dòng có công thức nội dòng cần dòng cao hơn để phân số (cao ~2,4 dòng chữ) không đè dòng kề */
+.lesson-page .exam-content :where(p, li):has(.katex) { line-height: 2; }
+.lesson-page .exam-content :where(p, li) .katex { line-height: 1.3; }
+
+/* Hệ khung có nghĩa (thầy chốt 21/10/2026, bài mới chọn dùng bằng cách thêm lớp; bài cũ không đổi).
+   CHỈ BA loại khung, icon tròn ở góc phải trên, màu theo ĐÚNG token của docs/MAU-NEN-SANG.md (M3):
+     📌 phải nhớ (.tl-fx công thức, .tl-keep mang về) — viền trung tính đậm (màu mực), KHÔNG dùng màu nhấn/trạng thái
+     ⚠️ bẫy mất điểm (.tl-trap) — --color-warn (cần chú ý); không dùng đỏ vì đỏ chỉ để "sai" ở phản hồi quiz bên trong
+     ✍️ tự kiểm tra (.tl-check) — --color-primary (khối có thứ bấm được)
+   Mọi thứ còn lại là ghi chú: .tl-note (vạch trái mỏng trung tính), .tl-more (mục bấm xem). Không để khung nằm trong khung.
+   Tương phản viền ≥ 3:1 ở cả hai theme (WCAG 1.4.11); nghĩa nằm ở icon + nhãn, không chỉ ở màu (M4). */
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) { --kc: var(--color-ink, #0f172a); position: relative; margin: 30px 0 18px; padding: 16px 14px 14px; border: 2px solid var(--kc); border-radius: 16px; background: var(--color-surface-2, rgba(148,163,184,.08)); }
+.exam-content :is(.tl-fx, .tl-keep)::before { content: "📌"; }
+.exam-content .tl-trap { --kc: var(--color-warn, #b45309); background: color-mix(in srgb, var(--kc) 7%, var(--color-panel, #fff)); }
+.exam-content .tl-trap::before { content: "⚠️"; }
+.exam-content .tl-check { --kc: var(--color-primary, #1d4ed8); background: color-mix(in srgb, var(--kc) 6%, var(--color-panel, #fff)); }
+.exam-content .tl-check::before { content: "✍️"; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check)::before { position: absolute; top: -17px; right: 14px; width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: var(--color-panel, #fff); border: 2px solid var(--kc); font-size: 17px; line-height: 1; transform: rotate(8deg); }
+.exam-content :is(.tl-trap, .tl-check) > :is(h4, .tl-label):first-child { margin-top: 0; }
+.exam-content .tl-box.tl-note { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; padding: 2px 0 2px 14px; margin: 18px 0; }
+.exam-content .tl-details.tl-more { border: 0; border-left: 3px solid var(--color-line-strong, #8b93a1); border-radius: 0; background: none; margin: 12px 0; }
+.exam-content .tl-more > summary { padding: 6px 12px; }
+.exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
+.exam-content .tl-more > :last-child { margin-bottom: 6px; }
+.exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+
 .exam-content figure.fig{max-width:min(100%,420px);margin:.9rem auto}
 .exam-content figure.fig svg{display:block;width:100%;height:auto}
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box">
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
 <li>Nêu được <strong>ý nghĩa của nhiệt độ</strong>: trạng thái cân bằng nhiệt và chiều truyền nhiệt năng.</li>
-<li>Đọc nhiệt độ trên ba thang <strong>Celsius – Kelvin – Fahrenheit</strong>; nhớ hai mốc thang Celsius và ý nghĩa của <strong>0 K</strong>.</li>
-<li>Đổi nhiệt độ giữa ba thang; phân biệt <strong>nhiệt độ</strong> với <strong>khoảng chênh nhiệt độ</strong>.</li>
-<li>Kể được nguyên lí của <strong>bốn loại nhiệt kế</strong>.</li>
+<li>Đọc nhiệt độ trên ba thang <strong>Celsius – Kelvin – Fahrenheit</strong>; nhớ ý nghĩa của <strong>0 K</strong>.</li>
+<li>Đổi nhiệt độ giữa ba thang; phân biệt <strong>nhiệt độ</strong> với <strong>khoảng chênh</strong>.</li>
+<li>Kể được nguyên lí <strong>năm loại nhiệt kế</strong>.</li>
 </ul>
-<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong>. Khoảng 12 phút · 6 mục · 8 câu tự kiểm tra.</p>
+<p>⏱ Khoảng 18 phút · 6 mục · 8 câu tự kiểm — học 2 mục rồi quay lại cũng được.</p>
 </div>
 
-<h3>I. Mở bài: cơn sốt và ba con số</h3>
+<h3>I. Mở bài: cơn sốt và ba thang đo</h3>
 
-<p>Đêm qua em sốt. Nhiệt kế ở nhà hiện <strong>38,5 °C</strong>. Bác sĩ bên Mỹ đọc kết quả em gửi: <strong>101,3 °F</strong>. Phòng thí nghiệm của trường ghi <strong>311,5 K</strong>.</p>
+<p>Đêm qua em sốt. Nhiệt kế ở nhà hiện <strong>38,5 °C</strong>. Bác sĩ bên Mỹ đọc kết quả em gửi: <strong>101,3 °F</strong>. Phòng thí nghiệm của trường lại dùng <strong>thang Kelvin</strong>.</p>
 
-<p>Cùng một cơn sốt, ba con số khác nhau. Con số nào mới là "nhiệt độ thật" của em?</p>
+<p>Cùng một cơn sốt, trên thang Kelvin con số sẽ là bao nhiêu?</p>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 420 240" role="img" aria-label="Một nhiệt kế với ba nhãn nhiệt độ theo ba thang đo cho cùng một mức nhiệt độ"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="26" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Ba thang đo, một nhiệt độ</text><rect x="196" y="46" width="30" height="132" rx="15" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.5"/><rect x="205" y="86" width="12" height="96" rx="6" fill="#f87171" stroke="#f87171" stroke-width="0"/><circle cx="211" cy="190" r="17" fill="rgba(248,113,113,.35)" stroke="#f87171" stroke-width="2"/><circle cx="211" cy="190" r="11" fill="#f87171"/><rect x="14" y="52" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#34d399" stroke-width="1.6"/><text x="24" y="74" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">38,5 °C</text><text x="24" y="89" fill="#34d399" font-size="11" font-weight="500" text-anchor="start">thang Celsius</text><line x1="156" y1="73" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><rect x="14" y="110" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#38bdf8" stroke-width="1.6"/><text x="24" y="132" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">311,5 K</text><text x="24" y="147" fill="#38bdf8" font-size="11" font-weight="500" text-anchor="start">thang Kelvin</text><line x1="156" y1="131" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><rect x="14" y="168" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#f87171" stroke-width="1.6"/><text x="24" y="190" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">101,3 °F</text><text x="24" y="205" fill="#f87171" font-size="11" font-weight="500" text-anchor="start">thang Fahrenheit</text><line x1="156" y1="189" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><text x="240" y="84" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">cùng một mức</text><text x="240" y="100" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">nhiệt độ</text></svg><figcaption>Hình 1. Ba thang đo, một nhiệt độ: 38,5 °C = 311,5 K = 101,3 °F — chỉ khác cách chia thang.</figcaption></figure>
-
-<div class="tl-box tl-box--think">
+<div class="tl-box tl-box--think tl-note">
 <p class="tl-label">🤔 Dự đoán trước khi học</p>
 <p>Thân nhiệt 38,5 °C, nếu đọc bằng nhiệt kế Kelvin thì được:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q0" id="tl3-q0a"><label for="tl3-q0a" class="tl-opt tl-no">A. 38,5 K — đổi ký hiệu, giữ nguyên số</label>
+<input type="radio" name="tl3-q0" id="tl3-q0a"><label for="tl3-q0a" class="tl-opt tl-no">A. 38,5 K</label>
 <input type="radio" name="tl3-q0" id="tl3-q0b"><label for="tl3-q0b" class="tl-opt tl-ok">B. 311,5 K</label>
 <input type="radio" name="tl3-q0" id="tl3-q0c"><label for="tl3-q0c" class="tl-opt tl-no">C. 234,5 K</label>
 <input type="radio" name="tl3-q0" id="tl3-q0d"><label for="tl3-q0d" class="tl-opt tl-no">D. 273 K</label>
@@ -594,40 +1145,72 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </div>
 </div>
 
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 240" role="img" aria-label="Một nhiệt kế với ba nhãn nhiệt độ theo ba thang đo cho cùng một mức nhiệt độ"><defs><marker id="f1-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f1-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f1-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f1-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="16" y="26" fill="currentColor" font-size="13" font-weight="700" text-anchor="start">Ba thang đo, một nhiệt độ</text><rect x="196" y="46" width="30" height="132" rx="15" fill="rgba(148,163,184,.14)" stroke="currentColor" stroke-width="2.5"/><rect x="205" y="86" width="12" height="96" rx="6" fill="#f87171" stroke="#f87171" stroke-width="0"/><circle cx="211" cy="190" r="17" fill="rgba(248,113,113,.35)" stroke="#f87171" stroke-width="2"/><circle cx="211" cy="190" r="11" fill="#f87171"/><rect x="14" y="52" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#34d399" stroke-width="1.6"/><text x="24" y="74" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">38,5 °C</text><text x="24" y="89" fill="#34d399" font-size="11" font-weight="500" text-anchor="start">thang Celsius</text><line x1="156" y1="73" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><rect x="14" y="110" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#38bdf8" stroke-width="1.6"/><text x="24" y="132" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">311,5 K</text><text x="24" y="147" fill="#38bdf8" font-size="11" font-weight="500" text-anchor="start">thang Kelvin</text><line x1="156" y1="131" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><rect x="14" y="168" width="140" height="42" rx="8" fill="rgba(148,163,184,.10)" stroke="#f87171" stroke-width="1.6"/><text x="24" y="190" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">101,3 °F</text><text x="24" y="205" fill="#f87171" font-size="11" font-weight="500" text-anchor="start">thang Fahrenheit</text><line x1="156" y1="189" x2="208" y2="90" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.7"/><text x="240" y="84" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">cùng một mức</text><text x="240" y="100" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">nhiệt độ</text></svg><figcaption>Hình 1. Ba thang đo, một nhiệt độ: 38,5 °C = 311,5 K = 101,3 °F — chỉ khác cách chia thang.</figcaption></figure>
+
 <h3>II. Kiến thức</h3>
 
 <h4>1. Nhiệt độ và cân bằng nhiệt</h4>
+
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thangnhietdo-01">
+<p class="tl-label">🔬 Thí nghiệm: trộn nước nóng với nước lạnh</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> trộn hai lượng nước, nhiệt độ cân bằng nằm giữa hai nhiệt độ ban đầu, gần phía phần nước nhiều hơn.</li>
+<li><strong>Dự đoán nếu đúng:</strong> nước lạnh gấp đôi nước nóng thì hỗn hợp dừng gần phía nước lạnh.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Ca xốp có nắp, cốc đựng nước nóng, cân, nhiệt kế chia 0,1 °C, que khuấy.</p>
+<p><strong>Làm:</strong> (1) Cân $m_2$ nước lạnh rót vào ca, đo nhiệt độ $t_2$; cân $m_1$ nước nóng, đo nhiệt độ $t_1$. (2) Đổ nước nóng vào ca, đậy nắp, khuấy đều; đọc nhiệt kế mỗi 30 s tới khi số đọc đứng yên, ghi lại nhiệt độ cân bằng $t_{cb}$. (3) Lặp lại với khối lượng và nhiệt độ khác.</p>
+</details>
+<strong>Bỏ qua</strong> nhiệt làm nóng ca và nhiệt mất ra không khí.</li>
+<li><strong>Quan sát:</strong> 100 g nước 60 °C trộn 100 g nước 20 °C: 39,1 °C; trộn 200 g nước 20 °C: 32,9 °C.</li>
+<li><strong>Rút ra:</strong> <strong>phù hợp giả thuyết</strong>. Nhiệt năng truyền từ phần nóng sang phần lạnh tới khi cùng nhiệt độ; phần nước nhiều hơn cần nhiều nhiệt lượng hơn cho mỗi độ nên ít đổi nhiệt độ.</li>
+<li><strong>Chưa nói được gì:</strong> phần nhiệt mất ra ca và không khí là bao nhiêu.</li>
+</ol>
+</div>
+
+<details class="tl-details tl-more">
+<summary>📊 Bấm xem: số liệu bốn lần trộn, tự kiểm mô hình</summary>
+<p>Mô hình khi bỏ qua nhiệt làm nóng ca: $t_{cb} = \dfrac{m_1t_1 + m_2t_2}{m_1 + m_2}$</p>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead>
+<tr><th>$m_1$ (g)</th><th>$t_1$ (°C)</th><th>$m_2$ (g)</th><th>$t_2$ (°C)</th><th>$t_{cb}$ mô hình (°C)</th><th>$t_{cb}$ đo (°C)</th></tr>
+</thead>
+<tbody>
+<tr><td>100</td><td>60</td><td>100</td><td>20</td><td>40,0</td><td>39,1</td></tr>
+<tr><td>100</td><td>60</td><td>200</td><td>20</td><td>33,3</td><td>32,9</td></tr>
+<tr><td>200</td><td>60</td><td>100</td><td>20</td><td>46,7</td><td>45,8</td></tr>
+<tr><td>100</td><td>80</td><td>300</td><td>20</td><td>em tự tính</td><td>34,6</td></tr>
+</tbody>
+</table></div>
+<p>Em tự tính ô "$t_{cb}$ mô hình" ở hàng cuối, rồi so với số đo cùng hàng: số đo cao hơn hay thấp hơn mô hình?</p>
+<p>Ca và không khí cũng nhận nhiệt nên số đo <em>thấp hơn</em> mô hình. Giảm: ca xốp có nắp, tráng ca bằng nước lạnh trước, đọc ngay khi số đứng yên.</p>
+<p><small>Số liệu minh hoạ, không phải số đo thật: tính từ $m_1c\,(t_1 - t_{cb}) = (m_2c + 40)(t_{cb} - t_2)$ với $c = 4180$ J/(kg·K) và $m$ tính bằng kg; 40 J/K là nhiệt dung của ca (số minh hoạ, đã gộp cả phần hao ra không khí).</small></p>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
+<div class="tl-quiz">
+<input type="radio" name="tl3-q1" id="tl3-q1a"><label for="tl3-q1a" class="tl-opt tl-no">A. Hỗn hợp dừng ở một nhiệt độ giữa hai nhiệt độ ban đầu</label>
+<input type="radio" name="tl3-q1" id="tl3-q1b"><label for="tl3-q1b" class="tl-opt tl-no">B. Kết quả phù hợp giả thuyết đã nêu</label>
+<input type="radio" name="tl3-q1" id="tl3-q1c"><label for="tl3-q1c" class="tl-opt tl-ok">C. Nhiệt năng truyền từ phần nước nhiều hơn sang phần ít hơn</label>
+<input type="radio" name="tl3-q1" id="tl3-q1d"><label for="tl3-q1d" class="tl-opt tl-no">D. Phép đo không tách được phần nhiệt mất ra ca và không khí</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Chiều truyền do <em>nhiệt độ</em> quyết định, không do lượng nước: nhiệt năng luôn đi từ phần nóng hơn sang phần lạnh hơn. Nhiệt độ cân bằng gần phần nước nhiều hơn vì phần đó cần nhiều nhiệt lượng hơn cho mỗi độ thay đổi. A là hiện tượng, B là kết luận, D là giới hạn: cả ba đúng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc trên nhiệt kế; B là kết luận so với giả thuyết; D là giới hạn của phép đo. Ý sai nằm ở <em>cơ chế</em>: chiều truyền nhiệt năng do nhiệt độ hay do lượng nước quyết định? Chọn lại nhé.</p></div>
+</div>
+</div>
 
 <p><strong>🔑 Nóng truyền sang lạnh · Bằng nhau thì dừng</strong></p>
 
 <ul>
 <li><strong>Nhiệt độ</strong> cho biết trạng thái cân bằng nhiệt và chiều truyền nhiệt năng.</li>
-<li>Hai vật tiếp xúc mà chênh nhiệt độ: nhiệt năng truyền từ vật <em>nóng hơn</em> sang vật <em>lạnh hơn</em>.</li>
+<li>Hai vật tiếp xúc mà chênh nhiệt độ: nhiệt năng (tổng động năng và thế năng của các phân tử) truyền từ vật <em>nóng hơn</em> sang vật <em>lạnh hơn</em>. Phần truyền đi gọi là <strong>nhiệt lượng</strong>.</li>
 <li>Bằng nhau thì không truyền nữa — hai vật ở <strong>trạng thái cân bằng nhiệt</strong>.</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 186" role="img" aria-label="Hai vật A nóng và B lạnh tiếp xúc nhau: nhiệt năng truyền từ A sang B cho tới khi hai vật cùng nhiệt độ"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="24" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">a) Vừa tiếp xúc</text><rect x="30" y="50" width="80" height="64" rx="8" fill="rgba(248,113,113,.18)" stroke="#f87171" stroke-width="2"/><rect x="110" y="50" width="80" height="64" rx="8" fill="rgba(56,189,248,.18)" stroke="#38bdf8" stroke-width="2"/><text x="70" y="72" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">A</text><text x="150" y="72" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">B</text><text x="70" y="134" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">80 °C</text><text x="150" y="134" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">20 °C</text><line x1="74" y1="100" x2="146" y2="100" stroke="#f87171" stroke-width="2.6" marker-end="url(#f2-r)"/><text x="110" y="168" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">nhiệt năng truyền A → B</text><text x="240" y="24" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">b) Một lúc sau</text><rect x="250" y="50" width="80" height="64" rx="8" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2"/><rect x="330" y="50" width="80" height="64" rx="8" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2"/><text x="290" y="72" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">A</text><text x="370" y="72" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">B</text><text x="290" y="134" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">50 °C</text><text x="370" y="134" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">50 °C</text><text x="330" y="168" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">cân bằng nhiệt — hết truyền</text></svg><figcaption>Hình 2. Hai vật tiếp xúc: nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn cho tới khi hai nhiệt độ bằng nhau — lúc đó hai vật ở trạng thái cân bằng nhiệt.</figcaption></figure>
-
-<div class="tl-box tl-box--exp" data-exp="tn-l12-thangnhietdo-01">
-<p class="tl-label">🔬 Thí nghiệm: trộn nước nóng với nước lạnh</p>
-<ol class="tl-steps">
-<li><strong>Làm:</strong> rót 100 ml nước ~60 °C và 100 ml nước ~20 °C vào hai cốc, cắm nhiệt kế; đổ chung vào một ca, khuấy nhẹ, đọc nhiệt kế mỗi phút.</li>
-<li><strong>Quan sát:</strong> nhiệt độ hỗn hợp đứng gần 40 °C và gần như không đổi sau ba phút.</li>
-<li><strong>Rút ra:</strong> nhiệt năng truyền từ phần nóng sang phần lạnh cho tới khi cả ca cùng nhiệt độ.</li>
-</ol>
-</div>
-
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 1.</strong> Một miếng nhôm 100 °C thả vào chậu nước 30 °C. Nhiệt năng truyền theo chiều nào?</p>
-<div class="tl-quiz">
-<input type="radio" name="tl3-q1" id="tl3-q1a"><label for="tl3-q1a" class="tl-opt tl-ok">A. Từ nhôm sang nước, vì nhôm có nhiệt độ cao hơn</label>
-<input type="radio" name="tl3-q1" id="tl3-q1b"><label for="tl3-q1b" class="tl-opt tl-no">B. Từ chậu nước sang nhôm, vì chậu nhiều nước hơn</label>
-<input type="radio" name="tl3-q1" id="tl3-q1c"><label for="tl3-q1c" class="tl-opt tl-no">C. Không truyền theo chiều nào, vì hai vật khác chất</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chiều truyền do <em>nhiệt độ</em> quyết định, không do khối lượng hay chất liệu: nhôm 100 °C nóng hơn nước 30 °C nên nhiệt năng đi từ nhôm sang nước, tới khi hai bên bằng nhiệt độ.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chậu nước to hơn thật, nhưng to chưa chắc đã nóng hơn. Nhớ lại: nhiệt năng luôn truyền từ vật có <em>nhiệt độ cao hơn</em> xuống vật có nhiệt độ thấp hơn. Ở đây 100 °C lớn hơn 30 °C. Chọn lại nhé.</p></div>
-</div>
-</div>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 186" role="img" aria-label="Hai vật A nóng và B lạnh tiếp xúc nhau: nhiệt năng truyền từ A sang B cho tới khi hai vật cùng nhiệt độ"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="24" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">a) Vừa tiếp xúc</text><rect x="30" y="50" width="80" height="64" rx="8" fill="rgba(248,113,113,.18)" stroke="#f87171" stroke-width="2"/><rect x="110" y="50" width="80" height="64" rx="8" fill="rgba(56,189,248,.18)" stroke="#38bdf8" stroke-width="2"/><text x="70" y="72" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">A</text><text x="150" y="72" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">B</text><text x="70" y="134" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">80 °C</text><text x="150" y="134" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="middle">20 °C</text><line x1="74" y1="100" x2="146" y2="100" stroke="#f87171" stroke-width="2.6"/><path d="M136.6,94.6 L146.0,100.0 L136.6,105.4" fill="none" stroke="#f87171" stroke-width="2.6" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="110" y="168" fill="#f87171" font-size="11" font-weight="700" text-anchor="middle">nhiệt năng truyền A → B</text><text x="240" y="24" fill="currentColor" font-size="12" font-weight="700" text-anchor="start">b) Một lúc sau</text><rect x="250" y="50" width="80" height="64" rx="8" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2"/><rect x="330" y="50" width="80" height="64" rx="8" fill="rgba(52,211,153,.18)" stroke="#34d399" stroke-width="2"/><text x="290" y="72" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">A</text><text x="370" y="72" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">B</text><text x="290" y="134" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">50 °C</text><text x="370" y="134" fill="#34d399" font-size="12" font-weight="700" text-anchor="middle">50 °C</text><text x="330" y="168" fill="#34d399" font-size="11" font-weight="700" text-anchor="middle">cân bằng nhiệt — hết truyền</text></svg><figcaption>Hình 2. Hai vật tiếp xúc: nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn cho tới khi hai nhiệt độ bằng nhau — lúc đó hai vật ở trạng thái cân bằng nhiệt.</figcaption></figure>
 
 <h4>2. Thang Celsius</h4>
 
@@ -636,60 +1219,92 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <ul>
 <li><strong>Mốc 1:</strong> nhiệt độ nóng chảy của nước đá tinh khiết — quy ước $0\ ^\circ\text{C}$.</li>
 <li><strong>Mốc 2:</strong> nhiệt độ sôi của nước tinh khiết ở áp suất tiêu chuẩn — quy ước $100\ ^\circ\text{C}$.</li>
-<li>Khoảng giữa hai mốc chia thành <strong>100 phần bằng nhau</strong>; kí hiệu $t$, đơn vị $^\circ\text{C}$; dưới 0 là số âm.</li>
+<li>Khoảng giữa chia thành <strong>100 phần bằng nhau</strong>; kí hiệu $t$, đơn vị $^\circ\text{C}$; dưới 0 là số âm.</li>
 </ul>
 
-<details class="tl-details" data-exp="tn-l12-thangnhietdo-02">
-<summary>🔬 Bấm xem thí nghiệm: kiểm tra hai mốc 0 °C và 100 °C</summary>
-<p><strong>Làm:</strong> cắm nhiệt kế vào cốc nước đá đang tan (bầu ngập, không chạm đáy), đọc ba lần cách nhau một phút; làm lại với nước đang sôi. <strong>Quan sát:</strong> số đọc ghi ở bảng dưới. <strong>Rút ra:</strong> hai mốc quy ước đúng là 0 °C và 100 °C; số lệch chút ít là sai số dụng cụ.</p>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thangnhietdo-02">
+<p class="tl-label">🔬 Thí nghiệm: kiểm tra hai mốc 0 °C và 100 °C</p>
+<ol class="tl-steps">
+<li><strong>Giả thuyết cần kiểm:</strong> nhiệt kế đã được chia độ đúng ở hai mốc 0 °C và 100 °C.</li>
+<li><strong>Dự đoán nếu đúng:</strong> trong nước đá đang tan và hơi nước đang sôi, số đọc lệch mốc không quá ±0,5 °C.</li>
+<li><strong>Dụng cụ và cách đo:</strong>
+<details class="tl-details tl-more">
+<summary>Bấm xem dụng cụ và 3 bước</summary>
+<p>Nhiệt kế (sai số ±0,5 °C), cốc nước đá đập nhỏ trộn nước cất, bình đun nước cất, bếp, áp kế.</p>
+<p><strong>Làm:</strong> (1) Cắm bầu nhiệt kế vào giữa hỗn hợp nước đá và nước, không chạm đáy và thành cốc; khuấy, đọc khi số đứng yên, ba lần cách nhau một phút. (2) Đun nước tới khi sôi đều, giữ bầu nhiệt kế trong hơi nước ngay trên mặt nước, đọc ba lần. (3) Ghi áp suất khí quyển lúc đo.</p>
 </details>
+<strong>Coi rằng</strong> nước tinh khiết, áp suất khí quyển đúng 1 atm.</li>
+<li><strong>Quan sát:</strong> nước đá đang tan: 0,1 đến 0,3 °C; hơi nước đang sôi: 99,6 đến 100,1 °C.</li>
+<li><strong>Rút ra:</strong> lệch dưới 0,5 °C nên <strong>phù hợp giả thuyết</strong>. Hai trạng thái này làm được mốc vì nhiệt nhận thêm chỉ dùng để chuyển thể.</li>
+<li><strong>Chưa nói được gì:</strong> nhiệt kế có chia đều ở khoảng giữa hai mốc không.</li>
+</ol>
+</div>
 
+<details class="tl-details tl-more">
+<summary>🤏 Bấm xem: bảng số đọc và chiều sai số</summary>
 <table class="tl-table">
 <thead>
-<tr><th>Trường hợp</th><th>Ba lần đọc (°C)</th></tr>
+<tr><th>Trường hợp</th><th>Ba lần đọc (°C)</th><th>Trung bình (°C)</th></tr>
 </thead>
 <tbody>
-<tr><td>Nước đá đang tan</td><td>0,2 · 0,1 · 0,3</td></tr>
-<tr><td>Hơi nước đang sôi</td><td>99,6 · 99,8 · 100,1</td></tr>
+<tr><td>Nước đá đang tan</td><td>0,2 · 0,1 · 0,3</td><td>0,2</td></tr>
+<tr><td>Hơi nước đang sôi</td><td>99,6 · 99,7 · 100,1</td><td>em tự tính</td></tr>
 </tbody>
 </table>
-
-<details class="tl-details">
-<summary>🤏 Câu hỏi về sai số: vì sao đọc 0,2 °C mà không đúng 0 °C?</summary>
-<p>Nước đá nguyên chất nóng chảy ở đúng 0 °C, nhưng nhiệt kế phòng thí nghiệm có <strong>sai số ±0,5 °C</strong>. Đọc 0,2 °C nghĩa là kết quả $0{,}2 \pm 0{,}5\ ^\circ\text{C}$ — khoảng này chứa 0 °C, nên vẫn <em>phù hợp</em> với lí thuyết. Ba nguồn lệch nhỏ khác: bầu nhiệt kế chạm đáy cốc, nước đá không tinh khiết tuyệt đối, và áp suất khí quyển lúc làm thí nghiệm khác 1 atm. Ghi kết quả đo bao giờ cũng phải kèm sai số.</p>
+<p>Đọc 0,2 °C nghĩa là $0{,}2 \pm 0{,}5\ ^\circ\text{C}$ — khoảng này chứa 0 °C nên vẫn phù hợp mốc quy ước. Em tự tính ô trung bình của hơi nước đang sôi rồi so với 100 °C.</p>
+<ul>
+<li>Áp suất khí quyển dưới 1 atm: nước sôi dưới 100 °C, mốc trên đọc <em>thấp hơn</em>. Giảm: đo áp suất rồi hiệu chỉnh mốc sôi.</li>
+<li>Nước đá lẫn muối, tạp chất: mốc dưới đọc <em>thấp hơn</em> 0 °C. Giảm: nước đá đập nhỏ trộn nước cất.</li>
+<li>Bầu nhiệt kế chạm đáy bình đang đun: mốc trên đọc <em>cao hơn</em>. Giảm: giữ bầu trong hơi nước, không chạm bình.</li>
+<li>Đọc khi số chưa đứng yên: mốc dưới đọc cao hơn, mốc trên đọc thấp hơn. Giảm: khuấy, chờ số ổn định, đọc ba lần.</li>
+</ul>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
-<p><strong>Câu 2.</strong> Hai mốc quy ước của thang nhiệt độ Celsius là:</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Về thí nghiệm trên, phát biểu nào <strong>sai</strong>?</p>
+<p>⚠ Khung: hiện tượng – kết luận – cơ chế – giới hạn.</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q2" id="tl3-q2a"><label for="tl3-q2a" class="tl-opt tl-no">A. Nước đá đang tan 0 °C và nước đá đông đặc 100 °C</label>
-<input type="radio" name="tl3-q2" id="tl3-q2b"><label for="tl3-q2b" class="tl-opt tl-ok">B. Nước đá đang tan 0 °C và hơi nước đang sôi 100 °C</label>
-<input type="radio" name="tl3-q2" id="tl3-q2c"><label for="tl3-q2c" class="tl-opt tl-no">C. Nhiệt độ thấp nhất 0 °C và cao nhất 100 °C</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai mốc là <em>nước đá đang tan</em> (0 °C) và <em>hơi nước đang sôi</em> ở áp suất tiêu chuẩn (100 °C); khoảng giữa chia 100 phần bằng nhau.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Để ý hai chữ: "đang tan" và "đông đặc" chỉ khác chiều quá trình, nhưng mốc thứ hai của thang Celsius là <em>hơi nước đang sôi</em>, không phải nước đá. Và Celsius không có giới hạn trên hay dưới — chỉ có hai mốc quy ước. Chọn lại nhé.</p></div>
+<input type="radio" name="tl3-q2" id="tl3-q2a"><label for="tl3-q2a" class="tl-opt tl-no">A. Số đọc ở nước đá đang tan lệch 0 °C dưới 0,5 °C</label>
+<input type="radio" name="tl3-q2" id="tl3-q2b"><label for="tl3-q2b" class="tl-opt tl-no">B. Kết quả phù hợp giả thuyết đã nêu</label>
+<input type="radio" name="tl3-q2" id="tl3-q2c"><label for="tl3-q2c" class="tl-opt tl-ok">C. Nước đang sôi đứng nhiệt độ vì không nhận thêm nhiệt lượng</label>
+<input type="radio" name="tl3-q2" id="tl3-q2d"><label for="tl3-q2d" class="tl-opt tl-no">D. Thí nghiệm chưa cho biết nhiệt kế chia đều giữa hai mốc</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng: ý C sai.</strong> Nước đang sôi vẫn nhận nhiệt lượng từ bếp, nhưng phần nhiệt đó dùng để hoá hơi nên nhiệt độ đứng yên — vì thế hơi nước đang sôi và nước đá đang tan làm được hai mốc 0 °C và 100 °C. A là hiện tượng, B là kết luận, D là giới hạn: cả ba đúng.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là hiện tượng đọc từ số đo; B là kết luận so với giả thuyết; D là giới hạn: thí nghiệm chỉ kiểm hai điểm. Ý sai nằm ở <em>cơ chế</em>: tắt bếp thì nước còn sôi không — vậy lúc sôi nước có nhận nhiệt lượng không? Chọn lại nhé.</p></div>
 </div>
 </div>
 
 <h4>3. Thang Kelvin — mốc 0 tuyệt đối</h4>
 
-<p><strong>🔑 0 K là gốc · 1 K bằng 1 °C · Không viết °K</strong></p>
+<p><strong>🔑 0 K là gốc · Khoảng chênh 1 K = 1 °C · Không viết °K</strong></p>
 
 <ul>
-<li>Thang Kelvin (thang nhiệt động) lấy <strong>độ không tuyệt đối</strong> làm gốc: $0\ \text{K}$ là nhiệt độ thấp nhất vật có thể có.</li>
-<li>Mốc còn lại: <strong>nhiệt độ điểm ba của nước</strong> — nước tinh khiết ở đồng thời cả ba thể, quy ước $273{,}15\ \text{K}$ (tương đương $0{,}01\ ^\circ\text{C}$).</li>
-<li>Kí hiệu $T$, đơn vị $\text{K}$: viết $300\ \text{K}$, <em>không</em> viết $300\ ^\circ\text{K}$; nhiệt độ Kelvin không bao giờ âm.</li>
-<li>Khoảng chia hai thang bằng nhau: $1\ \text{K} = 1\ ^\circ\text{C}$.</li>
+<li>Thang Kelvin lấy <strong>độ không tuyệt đối</strong> làm gốc: $0\ \text{K}$ là nhiệt độ thấp nhất vật có thể có.</li>
+<li>Mốc còn lại: <strong>nhiệt độ điểm ba của nước</strong> — nước tinh khiết ở đồng thời cả ba thể, quy ước $273{,}16\ \text{K}$ (tương đương $0{,}01\ ^\circ\text{C}$). Đổi °C sang K vẫn cộng 273,15, không cộng 273,16.</li>
+<li>Kí hiệu $T$, đơn vị $\text{K}$: viết $300\ \text{K}$, <em>không</em> viết $300\ ^\circ\text{K}$; không bao giờ âm.</li>
+<li>Khoảng chia hai thang bằng nhau: <em>khoảng chênh</em> $1\ \text{K}$ bằng khoảng chênh $1\ ^\circ\text{C}$.</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="70" y1="205" x2="420" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="70" y1="205" x2="70" y2="40" stroke="currentColor" stroke-width="2" opacity="1"/><text x="412" y="240" fill="currentColor" font-size="12" font-weight="600" text-anchor="end">t (°C)</text><text x="24" y="40" fill="currentColor" font-size="12" font-weight="600" text-anchor="start">p (kPa)</text><line x1="95" y1="205" x2="307" y2="91" stroke="#34d399" stroke-width="2" stroke-dasharray="6 5" opacity="0.9"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" points="307,91 384.5,49"/><circle cx="307" cy="91" r="4" fill="#34d399"/><circle cx="326" cy="80" r="4" fill="#34d399"/><circle cx="346" cy="70" r="4" fill="#34d399"/><circle cx="365" cy="59" r="4" fill="#34d399"/><circle cx="384" cy="49" r="4" fill="#34d399"/><line x1="95" y1="205" x2="95" y2="62" stroke="#f87171" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><text x="100" y="50" fill="#34d399" font-size="12" font-weight="700" text-anchor="start">0 K</text><text x="95" y="224" fill="#f87171" font-size="12" font-weight="700" text-anchor="middle">-273</text><text x="307" y="224" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">0</text><text x="384" y="224" fill="currentColor" font-size="12" font-weight="600" text-anchor="middle">100</text><text x="150" y="62" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">kéo dài đường thẳng</text><text x="150" y="80" fill="#34d399" font-size="11" font-weight="600" text-anchor="start">→ cắt trục ở -273 °C</text></svg><figcaption>Hình 4. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ. Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.</figcaption></figure>
+<div class="tl-fx">
+<p class="tl-fx-name">Đổi giữa thang Kelvin và Celsius</p>
+<p>$$T = t + 273{,}15$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$T$</span><span>nhiệt độ tuyệt đối (K)</span></li>
+<li><span class="tl-sym">$t$</span><span>nhiệt độ Celsius (°C)</span></li>
+</ul>
+<p class="tl-fx-note">Bài tập thường làm tròn: $T = t + 273$.</p>
+</div>
 
-<div class="tl-box tl-box--exp" data-exp="tn-l12-thangnhietdo-03">
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Đồ thị áp suất khí theo nhiệt độ Celsius: các điểm nằm trên một đường thẳng, kéo dài cắt trục hoành ở -273 °C"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><line x1="70" y1="205" x2="420" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="70" y1="205" x2="70" y2="40" stroke="currentColor" stroke-width="2" opacity="1"/><text x="430" y="190" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">t (°C)</text><text x="24" y="22" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">p (kPa)</text><line x1="95" y1="205" x2="307" y2="91" stroke="#34d399" stroke-width="2" stroke-dasharray="6 5" opacity="0.9"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" points="307,91 384.5,49"/><circle cx="307" cy="91" r="4" fill="#34d399"/><circle cx="326" cy="80" r="4" fill="#34d399"/><circle cx="346" cy="70" r="4" fill="#34d399"/><circle cx="365" cy="59" r="4" fill="#34d399"/><circle cx="384" cy="49" r="4" fill="#34d399"/><line x1="95" y1="205" x2="95" y2="62" stroke="#f87171" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.8"/><line x1="64" y1="91" x2="76" y2="91" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="64" y1="49" x2="76" y2="49" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="64" y1="205" x2="76" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><text x="60" y="96" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">p₀</text><text x="60" y="54" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">1,37 p₀</text><text x="60" y="210" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">p = 0</text><text x="100" y="50" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">0 K</text><text x="95" y="224" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">-273</text><text x="307" y="224" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">0</text><text x="384" y="224" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">100</text><text x="140" y="56" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">kéo dài đường thẳng</text><text x="140" y="74" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">→ cắt trục ở -273 °C</text></svg><figcaption>Hình 3. Áp suất một lượng khí không đổi tăng đều theo nhiệt độ (p₀ là áp suất ở 0 °C). Kéo dài đường biểu diễn, nó cắt trục nhiệt độ ở −273 °C — đó là gốc 0 K của thang Kelvin.</figcaption></figure>
+
+<details class="tl-details tl-more">
+<summary>🔬 Thí nghiệm: kéo dài đường biểu diễn để tìm 0 K — bấm xem</summary>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thangnhietdo-03">
 <p class="tl-label">🔬 Thí nghiệm: kéo dài đường biểu diễn để tìm 0 K</p>
 <ol class="tl-steps">
 <li><strong>Làm:</strong> giữ thể tích một lượng khí không đổi, ngâm bình lần lượt vào nước đá đang tan, nước phòng, nước ấm, nước sôi; đọc áp suất khí mỗi lần.</li>
 <li><strong>Quan sát:</strong> áp suất tăng đều theo nhiệt độ; kéo dài đường thẳng qua các điểm, nó cắt trục nhiệt độ ở <strong>−273 °C</strong>.</li>
-<li><strong>Rút ra:</strong> mọi chất khí đều cho cùng một điểm cắt — gốc 0 K, tức <strong>−273,15 °C</strong>.</li>
+<li><strong>Rút ra:</strong> mọi chất khí đều cho cùng điểm cắt — gốc 0 K, chính xác là <strong>−273,15 °C</strong>.</li>
 </ol>
 </div>
 
@@ -705,16 +1320,20 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <tr><td>100</td><td>136,6</td></tr>
 </tbody>
 </table>
+<p>Cứ tăng 25 °C, áp suất tăng khoảng 9,15 kPa, tức khoảng 0,366 kPa mỗi độ.<br>
+Ở 0 °C áp suất là 100,0 kPa, muốn áp suất giảm về 0 phải hạ thêm $100{,}0 \div 0{,}366 \approx 273$ độ.<br>
+Vậy đường thẳng cắt trục nhiệt độ ở khoảng −273 °C.</p>
+</details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 3.</strong> Điều nào đúng khi nói về $0\ \text{K}$?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q3" id="tl3-q3a"><label for="tl3-q3a" class="tl-opt tl-no">A. Là nhiệt độ nước đá đang tan, tức $0\ ^\circ\text{C}$</label>
-<input type="radio" name="tl3-q3" id="tl3-q3b"><label for="tl3-q3b" class="tl-opt tl-ok">B. Là nhiệt độ thấp nhất có thể có, tức $-273{,}15\ ^\circ\text{C}$</label>
-<input type="radio" name="tl3-q3" id="tl3-q3c"><label for="tl3-q3c" class="tl-opt tl-no">C. Là nhiệt độ thấp nhất có thể có, tức $0\ ^\circ\text{C}$</label>
+<input type="radio" name="tl3-q3" id="tl3-q3a"><label for="tl3-q3a" class="tl-opt tl-no">A. Nhiệt độ nước đá đang tan, tức $0\ ^\circ\text{C}$</label>
+<input type="radio" name="tl3-q3" id="tl3-q3b"><label for="tl3-q3b" class="tl-opt tl-ok">B. Nhiệt độ thấp nhất có thể có, tức $-273{,}15\ ^\circ\text{C}$</label>
+<input type="radio" name="tl3-q3" id="tl3-q3c"><label for="tl3-q3c" class="tl-opt tl-no">C. Nhiệt độ thấp nhất có thể có, tức $0\ ^\circ\text{C}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Hai thang khác gốc: nước đá đang tan là $0\ ^\circ\text{C} = 273\ \text{K}$, còn $0\ \text{K} = -273{,}15\ ^\circ\text{C}$ là độ không tuyệt đối.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang cho hai thang dùng chung một gốc. Thang Celsius lấy <em>nước đá đang tan</em> làm 0; thang Kelvin lấy <em>độ không tuyệt đối</em> làm 0. Hai điểm này cách nhau 273 độ. Đọc lại gạch đầu dòng đầu của mục 3 rồi chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Em đang cho hai thang dùng chung một gốc. Thang Celsius lấy <em>nước đá đang tan</em> làm 0; thang Kelvin lấy <em>độ không tuyệt đối</em> làm 0. Hai điểm này cách nhau 273 độ. Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -723,13 +1342,23 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <p><strong>🔑 32 và 212 · Chia 180 khoảng · ×1,8 rồi +32</strong></p>
 
 <ul>
-<li>Daniel Fahrenheit (1724) chọn hai mốc: nước đá đang tan $32\ ^\circ\text{F}$ và hơi nước đang sôi $212\ ^\circ\text{F}$; khoảng giữa chia thành <strong>180 khoảng</strong>.</li>
-<li>Đổi từ Celsius: $t(^\circ\text{F}) = 1{,}8\,t(^\circ\text{C}) + 32$; đổi ngược: $t(^\circ\text{C}) = \dfrac{t(^\circ\text{F}) - 32}{1{,}8}$.</li>
-<li>Thang này dùng phổ biến ở các nước phương Tây: bản tin thời tiết Mỹ, lò nướng, nhiệt kế y tế cũ.</li>
+<li>Daniel Fahrenheit (1724) chọn hai mốc: nước đá đang tan $32\ ^\circ\text{F}$ và hơi nước đang sôi $212\ ^\circ\text{F}$; khoảng giữa chia thành <strong>180 khoảng</strong>, nên 1 độ chia °C ứng với $180 : 100 = 1{,}8$ độ chia °F.</li>
 </ul>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 440 250" role="img" aria-label="Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="100" y="24" fill="#f87171" font-size="13" font-weight="700" text-anchor="middle">Celsius</text><text x="230" y="24" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">Kelvin</text><text x="360" y="24" fill="#fb923c" font-size="13" font-weight="700" text-anchor="middle">Fahrenheit</text><line x1="40" y1="74" x2="422" y2="74" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35"/><line x1="40" y1="190" x2="422" y2="190" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35"/><line x1="100" y1="44" x2="100" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="92" y1="74" x2="108" y2="74" stroke="#f87171" stroke-width="3" opacity="1"/><line x1="92" y1="190" x2="108" y2="190" stroke="#f87171" stroke-width="3" opacity="1"/><line x1="230" y1="44" x2="230" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="222" y1="74" x2="238" y2="74" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="222" y1="190" x2="238" y2="190" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="360" y1="44" x2="360" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="352" y1="74" x2="368" y2="74" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="352" y1="190" x2="368" y2="190" stroke="#fb923c" stroke-width="3" opacity="1"/><text x="88" y="78" fill="#f87171" font-size="12" font-weight="700" text-anchor="end">100 °C</text><text x="88" y="194" fill="#f87171" font-size="12" font-weight="700" text-anchor="end">0 °C</text><text x="218" y="78" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="end">373 K</text><text x="218" y="194" fill="#38bdf8" font-size="12" font-weight="700" text-anchor="end">273 K</text><text x="348" y="78" fill="#fb923c" font-size="12" font-weight="700" text-anchor="end">212 °F</text><text x="348" y="194" fill="#fb923c" font-size="12" font-weight="700" text-anchor="end">32 °F</text><text x="88" y="138" fill="#34d399" font-size="11" font-weight="600" text-anchor="end">100 khoảng</text><text x="218" y="138" fill="#34d399" font-size="11" font-weight="600" text-anchor="end">100 khoảng</text><text x="348" y="138" fill="#fb923c" font-size="11" font-weight="600" text-anchor="end">180 khoảng</text><text x="16" y="238" fill="currentColor" font-size="11" font-weight="600" text-anchor="start">mốc dưới: nước đá đang tan · mốc trên: hơi nước đang sôi</text></svg><figcaption>Hình 3. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.</figcaption></figure>
+<div class="tl-fx">
+<p class="tl-fx-name">Đổi giữa thang Celsius và Fahrenheit</p>
+<p>$$t_F = 1{,}8\,t_C + 32$$</p>
+<p>$$t_C = \dfrac{t_F - 32}{1{,}8}$$</p>
+<ul class="tl-fx-def">
+<li><span class="tl-sym">$t_F$</span><span>nhiệt độ Fahrenheit (°F)</span></li>
+<li><span class="tl-sym">$t_C$</span><span>nhiệt độ Celsius (°C)</span></li>
+</ul>
+</div>
 
+<figure class="fig" data-tl="1"><svg viewBox="0 0 440 288" role="img" aria-label="Ba thang nhiệt độ đặt cạnh nhau: Celsius 0 đến 100, Kelvin 273 đến 373, Fahrenheit 32 đến 212"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="100" y="24" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">Celsius</text><text x="230" y="24" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">Kelvin</text><text x="360" y="24" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">Fahrenheit</text><line x1="40" y1="74" x2="422" y2="74" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35"/><line x1="40" y1="190" x2="422" y2="190" stroke="currentColor" stroke-width="1.2" stroke-dasharray="6 5" opacity="0.35"/><line x1="100" y1="44" x2="100" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="92" y1="74" x2="108" y2="74" stroke="#f87171" stroke-width="3" opacity="1"/><line x1="92" y1="190" x2="108" y2="190" stroke="#f87171" stroke-width="3" opacity="1"/><line x1="230" y1="44" x2="230" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="222" y1="74" x2="238" y2="74" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="222" y1="190" x2="238" y2="190" stroke="#38bdf8" stroke-width="3" opacity="1"/><line x1="360" y1="44" x2="360" y2="214" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="352" y1="74" x2="368" y2="74" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="352" y1="190" x2="368" y2="190" stroke="#fb923c" stroke-width="3" opacity="1"/><line x1="100" y1="178.4" x2="107" y2="178.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="166.8" x2="107" y2="166.8" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="155.2" x2="107" y2="155.2" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="143.6" x2="107" y2="143.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="132.0" x2="107" y2="132.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="120.4" x2="107" y2="120.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="108.8" x2="107" y2="108.8" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="97.2" x2="107" y2="97.2" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="100" y1="85.6" x2="107" y2="85.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="178.4" x2="237" y2="178.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="166.8" x2="237" y2="166.8" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="155.2" x2="237" y2="155.2" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="143.6" x2="237" y2="143.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="132.0" x2="237" y2="132.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="120.4" x2="237" y2="120.4" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="108.8" x2="237" y2="108.8" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="97.2" x2="237" y2="97.2" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="230" y1="85.6" x2="237" y2="85.6" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="183.55555555555554" x2="367" y2="183.55555555555554" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="177.11111111111111" x2="367" y2="177.11111111111111" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="170.66666666666666" x2="367" y2="170.66666666666666" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="164.22222222222223" x2="367" y2="164.22222222222223" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="157.77777777777777" x2="367" y2="157.77777777777777" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="151.33333333333334" x2="367" y2="151.33333333333334" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="144.88888888888889" x2="367" y2="144.88888888888889" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="138.44444444444446" x2="367" y2="138.44444444444446" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="132.0" x2="367" y2="132.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="125.55555555555556" x2="367" y2="125.55555555555556" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="119.11111111111111" x2="367" y2="119.11111111111111" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="112.66666666666667" x2="367" y2="112.66666666666667" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="106.22222222222223" x2="367" y2="106.22222222222223" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="99.77777777777777" x2="367" y2="99.77777777777777" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="93.33333333333333" x2="367" y2="93.33333333333333" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="86.88888888888889" x2="367" y2="86.88888888888889" stroke="currentColor" stroke-width="1.4" opacity="1"/><line x1="360" y1="80.44444444444444" x2="367" y2="80.44444444444444" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="88" y="66" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">100 °C</text><text x="88" y="182" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">0 °C</text><text x="218" y="66" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="end">373 K</text><text x="218" y="182" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="end">273 K</text><text x="348" y="66" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">212 °F</text><text x="348" y="182" fill="#fb923c" font-size="14" font-weight="700" text-anchor="end">32 °F</text><text x="88" y="138" fill="#34d399" font-size="14" font-weight="600" text-anchor="end">100 khoảng</text><text x="218" y="138" fill="#34d399" font-size="14" font-weight="600" text-anchor="end">100 khoảng</text><text x="348" y="138" fill="#fb923c" font-size="14" font-weight="600" text-anchor="end">180 khoảng</text><text x="16" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">mốc dưới: nước đá đang tan</text><text x="16" y="258" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">mốc trên: hơi nước đang sôi</text><text x="16" y="278" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">mỗi vạch nhỏ = 10 độ</text></svg><figcaption>Hình 4. Ba thang đo cùng hai mốc nước: Celsius 0 °C – 100 °C chia 100 khoảng, Kelvin 273 K – 373 K cũng 100 khoảng, Fahrenheit 32 °F – 212 °F chia 180 khoảng.</figcaption></figure>
+
+<details class="tl-details tl-more">
+<summary>📋 Bấm xem: bảng tóm tắt cách đổi giữa ba thang</summary>
 <table class="tl-table">
 <thead>
 <tr><th>Muốn đổi</th><th>Làm gì</th></tr>
@@ -742,17 +1371,18 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <tr><td>Khoảng chênh $\Delta t$</td><td>$\Delta t(^\circ\text{C}) = \Delta T(\text{K})$; $\Delta t(^\circ\text{F}) = 1{,}8\,\Delta t(^\circ\text{C})$</td></tr>
 </tbody>
 </table>
+</details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl3-q4c" value="chac"> Chắc</label> <label><input type="radio" name="tl3-q4c" value="khong"> Không chắc</label></p>
 <p><strong>Câu 4.</strong> Nhiệt độ phòng là $25\ ^\circ\text{C}$. Trên thang Fahrenheit, đó là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q4" id="tl3-q4a"><label for="tl3-q4a" class="tl-opt tl-no">A. $25\ ^\circ\text{F}$, vì hai thang chỉ khác ký hiệu</label>
+<input type="radio" name="tl3-q4" id="tl3-q4a"><label for="tl3-q4a" class="tl-opt tl-no">A. $25\ ^\circ\text{F}$</label>
 <input type="radio" name="tl3-q4" id="tl3-q4b"><label for="tl3-q4b" class="tl-opt tl-no">B. $57\ ^\circ\text{F}$</label>
 <input type="radio" name="tl3-q4" id="tl3-q4c"><label for="tl3-q4c" class="tl-opt tl-ok">C. $77\ ^\circ\text{F}$</label>
 <input type="radio" name="tl3-q4" id="tl3-q4d"><label for="tl3-q4d" class="tl-opt tl-no">D. $298\ ^\circ\text{F}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1{,}8 \times 25 + 32 = 45 + 32 = 77\ ^\circ\text{F}$. Đúng bằng nhiệt độ phòng dễ chịu mà người Mỹ vẫn nói.</p></div>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $1{,}8 \times 25 + 32 = 45 + 32 = 77\ ^\circ\text{F}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba lỗi hay gặp nằm ngay trong ba phương án còn lại: giữ nguyên con số (A), quên nhân 1,8 nên chỉ cộng 32 (B), và cộng 273 của thang Kelvin (D). Công thức đúng đi hai bước: <em>nhân 1,8 trước, cộng 32 sau</em>. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
@@ -769,34 +1399,54 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </thead>
 <tbody>
 <tr><td>Chất lỏng (rượu, thuỷ ngân, dầu)</td><td>cột chất lỏng nở dài trong ống thuỷ tinh</td></tr>
-<tr><td>Kim loại</td><td>thanh kim loại mỏng (thẳng hoặc xoắn ốc) nở dài</td></tr>
-<tr><td>Khí</td><td>thể tích một lượng khí xác định nở ra khi áp suất không đổi</td></tr>
-<tr><td>Hồng ngoại điện tử</td><td>cảm biến nhận bức xạ điện từ do vật phát ra (vật trên −273 °C đều phát bức xạ)</td></tr>
+<tr><td>Kim loại</td><td>thanh kim loại mỏng nở dài</td></tr>
+<tr><td>Khí</td><td>áp suất (giữ thể tích)<br>hoặc thể tích (giữ áp suất)<br>thay đổi theo nhiệt độ</td></tr>
+<tr><td>Điện trở (nhiệt điện trở)</td><td>điện trở vật liệu bán dẫn hoặc kim loại thay đổi theo nhiệt độ</td></tr>
+<tr><td>Hồng ngoại điện tử</td><td>cảm biến nhận bức xạ điện từ do vật phát ra (mọi vật đều phát bức xạ)</td></tr>
 </tbody>
 </table>
 
-<details class="tl-details" data-exp="tn-l12-thangnhietdo-04">
-<summary>🔬 Bấm xem thí nghiệm: ba nhiệt kế đo cùng một cốc nước</summary>
-<p><strong>Làm:</strong> rót nước ấm vào cốc sứ, đo lần lượt bằng nhiệt kế thuỷ ngân (ngâm trong nước), nhiệt kế điện tử (que đo trong nước) và nhiệt kế hồng ngoại (bắn vào mặt nước, rồi bắn vào thành cốc). <strong>Quan sát:</strong> hai nhiệt kế tiếp xúc cho kết quả sát nhau, lệch trong khoảng ±0,5 °C; nhiệt kế hồng ngoại cho số thấp hơn 1–2 °C khi bắn vào mặt nước, và lệch hẳn khi bắn vào mảnh giấy bạc dán ngoài thành cốc. <strong>Rút ra:</strong> hồng ngoại đo <em>nhiệt độ bề mặt qua bức xạ</em>, không đo nhiệt độ bên trong vật — bề mặt bóng, phản xạ mạnh làm số đọc sai lệch. Còn <strong>nhiệt kế điện trở</strong> (trong tủ lạnh, nồi cơm điện) dựa vào điện trở thay đổi theo nhiệt độ.</p>
+<details class="tl-details tl-more">
+<summary>🔬 Thí nghiệm: ba nhiệt kế đo cùng một cốc nước — bấm xem</summary>
+<div class="tl-box tl-box--exp tl-note" data-exp="tn-l12-thangnhietdo-04">
+<p class="tl-label">🔬 Thí nghiệm: ba nhiệt kế đo cùng một cốc nước</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đo cùng cốc nước ấm bằng nhiệt kế thuỷ ngân, điện trở và hồng ngoại.</li>
+<li><strong>Quan sát:</strong> hai nhiệt kế tiếp xúc lệch nhau dưới 0,5 °C; hồng ngoại thấp hơn 1–2 °C, bắn vào giấy bạc thì lệch hẳn.</li>
+<li><strong>Rút ra:</strong> hồng ngoại đo <em>bức xạ bề mặt</em>; bề mặt bóng phản xạ mạnh nên số đọc sai.</li>
+</ol>
+<p><strong>Chi tiết cách làm:</strong> rót nước ấm vào cốc sứ, đo lần lượt bằng nhiệt kế thuỷ ngân (ngâm trong nước), nhiệt kế điện tử loại điện trở (que đo trong nước) và nhiệt kế hồng ngoại (bắn vào mặt nước, rồi bắn vào mảnh giấy bạc dán ngoài thành cốc). Các số lệch trong hộp là số minh hoạ. Mặt nước bay hơi nên nguội hơn lòng nước: hồng ngoại đọc <em>thấp hơn</em> nhiệt kế ngâm. Còn <strong>nhiệt kế điện trở</strong> (trong tủ lạnh, nồi cơm điện) dựa vào điện trở thay đổi theo nhiệt độ.</p>
+</div>
 </details>
+<!--video:sau:tn-l12-thangnhietdo-04-->
+<div class="tl-box tl-box--video tl-note">
+<p class="tl-label">🎬 Xem video: nhiệt kế hồng ngoại và nhiệt kế thuỷ ngân</p>
+<div class="tl-video"><iframe src="https://www.youtube-nocookie.com/embed/P8RhASqg_VE?rel=0&start=315&end=380" title="nhiệt kế hồng ngoại và nhiệt kế thuỷ ngân" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+<p><strong>Nếu không xem được video:</strong><br>
+Nhiệt kế hồng ngoại hiện số ngay, khoảng 38,2 °C.<br>
+Nhiệt kế thuỷ ngân phải chờ cột chất lỏng dừng, khoảng 38,5 °C.</p>
+<p><strong>Nhìn vào:</strong> Nhiệt kế nào cho số đo ngay, nhiệt kế nào phải đợi cột chất lỏng ổn định?</p>
+</div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p><strong>Câu 5.</strong> Nhiệt kế hồng ngoại bắn vào trán em cho số đo nhiệt độ. Nó đo được gì?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q5" id="tl3-q5a"><label for="tl3-q5a" class="tl-opt tl-ok">A. Bức xạ điện từ phát ra từ bề mặt da, từ đó suy ra nhiệt độ bề mặt</label>
-<input type="radio" name="tl3-q5" id="tl3-q5b"><label for="tl3-q5b" class="tl-opt tl-no">B. Nhiệt độ bên trong cơ thể, đo trực tiếp qua da</label>
-<input type="radio" name="tl3-q5" id="tl3-q5c"><label for="tl3-q5c" class="tl-opt tl-no">C. Thời gian để trán nóng lên, rồi so với mốc 0 °C</label>
+<input type="radio" name="tl3-q5" id="tl3-q5a"><label for="tl3-q5a" class="tl-opt tl-ok">A. Bức xạ điện từ từ bề mặt da, suy ra nhiệt độ bề mặt</label>
+<input type="radio" name="tl3-q5" id="tl3-q5b"><label for="tl3-q5b" class="tl-opt tl-no">B. Nhiệt độ bên trong cơ thể</label>
+<input type="radio" name="tl3-q5" id="tl3-q5c"><label for="tl3-q5c" class="tl-opt tl-no">C. Thời gian để trán nóng lên</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Vật nào trên −273 °C cũng phát bức xạ điện từ; cảm biến hồng ngoại đo mức năng lượng bức xạ đó rồi tính ra nhiệt độ <em>bề mặt</em>.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hồng ngoại không chạm vào vật và cũng không đo bên trong. Nó <em>nhận bức xạ</em> mà vật phát ra rồi suy ra nhiệt độ bề mặt. Vì thế mới có chuyện đo mặt bóng, phản xạ tốt thì số đọc sai. Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Hồng ngoại không chạm vào vật và cũng không đo bên trong. Nó <em>nhận bức xạ</em> mà vật phát ra rồi suy ra nhiệt độ bề mặt. Chọn lại nhé.</p></div>
 </div>
 </div>
 
 <h3>III. Ba cái bẫy sập nhiều nhất</h3>
 
-<h4>Bẫy 1: "nhiệt truyền từ vật nhiều nhiệt lượng hơn"</h4>
+<div class="tl-trap">
+<h4>Bẫy 1: "nhiệt truyền từ vật nhiều nhiệt năng hơn"</h4>
 
-<p>Gốc của lỗi này là lẫn <strong>nhiệt độ</strong> với <strong>nhiệt lượng</strong>. Chiều truyền do nhiệt độ quyết định, không do lượng năng lượng đang chứa.</p>
+<p>Lỗi này do lẫn <strong>nhiệt độ</strong> với <strong>nhiệt năng</strong>, <strong>nhiệt lượng</strong>. Chiều truyền do nhiệt độ quyết định, không do lượng năng lượng đang chứa.</p>
 
 <table class="tl-table">
 <thead>
@@ -809,14 +1459,13 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </tbody>
 </table>
 
-<details class="tl-details">
-<summary>👀 Bấm xem: giọt nước 100 °C rơi vào chậu nước 40 °C</summary>
-<p>Chậu chứa nhiều nhiệt lượng hơn hẳn giọt nước, nhưng nhiệt năng vẫn truyền từ <em>giọt</em> sang <em>chậu</em> — vì giọt có nhiệt độ cao hơn. Nếu chiều truyền theo "ai nhiều năng lượng hơn" thì giọt nước sôi đã làm chậu nóng thêm, còn thực tế giọt nguội đi rất nhanh.</p>
-</details>
+<p>Ví dụ: giọt nước 100 °C rơi vào chậu 40 °C vẫn nguội đi, dù chậu nhiều nhiệt năng hơn hẳn.</p>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 2: "0 °C là 0 K"</h4>
 
-<p>Hai thang Celsius và Kelvin lệch nhau đúng ở chỗ gốc. Đặt cạnh nhau sẽ thấy ngay:</p>
+<p>Hai thang Celsius và Kelvin lệch nhau đúng ở chỗ gốc:</p>
 
 <table class="tl-table">
 <thead>
@@ -829,14 +1478,13 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 </tbody>
 </table>
 
-<details class="tl-details">
-<summary>👀 Bấm xem: vì sao 20 °C không "gấp đôi" 10 °C</summary>
-<p>Muốn so tỉ số hai nhiệt độ, thang đo phải có gốc 0 thật — nghĩa là mức 0 ứng với <em>không có</em> đại lượng đang đo. Thang Kelvin có gốc đó: $0\ \text{K}$ là mức năng lượng chuyển động của phân tử thấp nhất. Thang Celsius thì không: 0 °C vẫn còn rất nhiều năng lượng. Vì vậy "20 °C gấp đôi 10 °C" là câu vô nghĩa; nhưng $293\ \text{K}$ so với $283\ \text{K}$ là so được.</p>
-</details>
+<p>Vì vậy "20 °C gấp đôi 10 °C" là câu vô nghĩa: ở 0 °C phân tử vẫn chuyển động mạnh. Muốn so tỉ số nhiệt độ phải đổi sang kelvin ($293\ \text{K}$ với $283\ \text{K}$).</p>
+</div>
 
+<div class="tl-trap">
 <h4>Bẫy 3: "đổi thang chỉ cần cộng trừ"</h4>
 
-<p>Celsius và Fahrenheit chia khoảng khác nhau: 100 khoảng Celsius ứng với 180 khoảng Fahrenheit.</p>
+<p>Hai thang chia khoảng khác nhau: 100 khoảng Celsius ứng với 180 khoảng Fahrenheit.</p>
 
 <table class="tl-table">
 <thead>
@@ -845,69 +1493,62 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <tbody>
 <tr><td>Hai mốc nước: 0 °C và 100 °C</td><td>Hai mốc nước: 32 °F và 212 °F</td></tr>
 <tr><td>Khoảng giữa: 100 phần</td><td>Khoảng giữa: 180 phần</td></tr>
-<tr><td>Một độ chia: 1 °C</td><td>Một độ chia: 1 °F; tức $1\ ^\circ\text{C} = 1{,}8\ ^\circ\text{F}$</td></tr>
+<tr><td>Một độ chia: 1 °C</td><td>Một độ chia: 1 °F<br>Khoảng chênh 1 °C ứng với 1,8 °F</td></tr>
 </tbody>
 </table>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Tự kiểm tra ngay</p>
+<p>⚠ Gặp <em>khoảng chênh</em> thì đừng cộng 273.<br>273 chỉ dùng khi đổi một giá trị nhiệt độ.</p>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
 <p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl3-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl3-q6c" value="khong"> Không chắc</label></p>
-<p><strong>Câu 6.</strong> Một chi tiết thép nguội từ 200 °C xuống 30 °C. Độ giảm nhiệt độ đó là:</p>
+<p><strong>Câu 6.</strong> Một khay bánh vừa ra lò nguội từ 180 °C xuống 25 °C. Độ giảm nhiệt độ đó là:</p>
 <div class="tl-quiz">
-<input type="radio" name="tl3-q6" id="tl3-q6a"><label for="tl3-q6a" class="tl-opt tl-ok">A. $170\ ^\circ\text{C}$, tức $170\ \text{K}$ và $306\ ^\circ\text{F}$</label>
-<input type="radio" name="tl3-q6" id="tl3-q6b"><label for="tl3-q6b" class="tl-opt tl-no">B. $170\ ^\circ\text{C}$, tức $443\ \text{K}$ và $306\ ^\circ\text{F}$</label>
-<input type="radio" name="tl3-q6" id="tl3-q6c"><label for="tl3-q6c" class="tl-opt tl-no">C. $170\ ^\circ\text{C}$, tức $170\ \text{K}$ và $170\ ^\circ\text{F}$</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đây là <em>khoảng chênh</em>, không phải một giá trị nhiệt độ. Khoảng chênh trên thang Kelvin bằng đúng khoảng chênh trên thang Celsius ($1\ \text{K} = 1\ ^\circ\text{C}$), còn trên thang Fahrenheit thì nhân 1,8: $1{,}8 \times 170 = 306\ ^\circ\text{F}$.</p></div>
+<input type="radio" name="tl3-q6" id="tl3-q6a"><label for="tl3-q6a" class="tl-opt tl-ok">A. $155\ ^\circ\text{C}$, tức $155\ \text{K}$ và $279\ ^\circ\text{F}$</label>
+<input type="radio" name="tl3-q6" id="tl3-q6b"><label for="tl3-q6b" class="tl-opt tl-no">B. $155\ ^\circ\text{C}$, tức $428\ \text{K}$ và $279\ ^\circ\text{F}$</label>
+<input type="radio" name="tl3-q6" id="tl3-q6c"><label for="tl3-q6c" class="tl-opt tl-no">C. $155\ ^\circ\text{C}$, tức $155\ \text{K}$ và $155\ ^\circ\text{F}$</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đây là <em>khoảng chênh</em>, không phải một giá trị nhiệt độ. Khoảng chênh trên thang Kelvin bằng đúng khoảng chênh trên thang Celsius ($1\ \text{K} = 1\ ^\circ\text{C}$), còn trên thang Fahrenheit thì nhân 1,8: $1{,}8 \times 155 = 279\ ^\circ\text{F}$.</p></div>
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Đừng cộng 273 vào một <em>khoảng chênh</em>: 273 là độ lệch giữa hai gốc, chỉ dùng khi đổi một giá trị nhiệt độ. Còn quên nhân 1,8 là lỗi của phương án C — mỗi 1 °C chênh ứng với 1,8 °F chênh. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
 </div>
 </div>
 
 <h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎤 Trả bài</p>
-<p>Nói bằng lời của em trước, rồi mới bấm xem đáp án.</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài — nói bằng lời của em trước</p>
 
-<details class="tl-details">
-<summary>1. Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p><strong>Cân bằng nhiệt · Chiều truyền nhiệt năng.</strong> Hai vật tiếp xúc mà chênh nhiệt độ thì nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn, cho tới khi hai nhiệt độ bằng nhau — hai vật ở trạng thái cân bằng nhiệt.</p>
-</details>
+<ol>
+<li>Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào?</li>
+<li>Hai mốc quy ước của thang Celsius? Khoảng giữa chia thế nào?</li>
+<li>Độ không tuyệt đối là gì, bằng bao nhiêu °C? Nhiệt độ điểm ba của nước?</li>
+<li>Viết công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết "°K"?</li>
+<li>Khoảng chênh 10 °C bằng bao nhiêu K, bao nhiêu °F? Vì sao khác nhau?</li>
+<li>Kể tên năm loại nhiệt kế và tính chất vật lí mà mỗi loại dựa vào.</li>
+</ol>
 
-<details class="tl-details">
-<summary>2. Hai mốc quy ước của thang Celsius? Khoảng giữa chia thế nào? <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
-<p><strong>Nước đá đang tan 0 °C · Hơi nước đang sôi 100 °C.</strong> Khoảng giữa chia thành 100 khoảng bằng nhau; kí hiệu $t$, đơn vị $^\circ\text{C}$; cao hơn 0 là số dương, thấp hơn 0 là số âm.</p>
-</details>
-
-<details class="tl-details">
-<summary>3. Độ không tuyệt đối là gì, bằng bao nhiêu °C? Nhiệt độ điểm ba của nước?</summary>
-<p><strong>Độ không tuyệt đối = 0 K = −273,15 °C</strong> — nhiệt độ thấp nhất mà vật có thể có. Nhiệt độ điểm ba của nước: nước tinh khiết tồn tại đồng thời ở cả ba thể, quy ước $273{,}15\ \text{K}$.</p>
-</details>
-
-<details class="tl-details">
-<summary>4. Viết công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết "°K"?</summary>
-<p>$T(\text{K}) = t(^\circ\text{C}) + 273{,}15$ và $t(^\circ\text{C}) = T(\text{K}) - 273{,}15$; thường làm tròn 273. $t(^\circ\text{F}) = 1{,}8\,t(^\circ\text{C}) + 32$. Kí hiệu đúng là $\text{K}$, không có dấu độ, vì Kelvin không chia theo quy ước hai mốc nước như một "độ" thông thường mà là đơn vị của nhiệt độ nhiệt động.</p>
-</details>
-
-<details class="tl-details">
-<summary>5. Khoảng chênh 10 °C bằng bao nhiêu K, bao nhiêu °F? Vì sao khác nhau?</summary>
-<p><strong>10 K và 18 °F.</strong> Khoảng chia Celsius và Kelvin bằng nhau nên chênh bao nhiêu °C là chênh bấy nhiêu K. Celsius và Fahrenheit chia khoảng khác nhau — 100 khoảng Celsius ứng 180 khoảng Fahrenheit — nên chênh trên thang Fahrenheit phải nhân 1,8.</p>
-</details>
-
-<details class="tl-details">
-<summary>6. Kể tên bốn loại nhiệt kế và tính chất vật lí mà mỗi loại dựa vào.</summary>
-<p><strong>Chất lỏng:</strong> cột chất lỏng nở dài. <strong>Kim loại:</strong> thanh kim loại nở dài. <strong>Khí:</strong> thể tích khí nở ra ở áp suất không đổi. <strong>Hồng ngoại điện tử:</strong> nhận bức xạ điện từ vật phát ra. Hay gặp thêm trong thiết bị gia dụng: <strong>điện trở</strong> thay đổi theo nhiệt độ.</p>
+<details class="tl-details tl-more">
+<summary>🔑 Nói xong cả 6 câu rồi mới bấm xem gợi ý đáp án</summary>
+<ol>
+<li><strong>Cân bằng nhiệt · Chiều truyền nhiệt năng.</strong> Hai vật tiếp xúc mà chênh nhiệt độ thì nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn, cho tới khi hai nhiệt độ bằng nhau — hai vật ở trạng thái cân bằng nhiệt.</li>
+<li><strong>Nước đá đang tan 0 °C · Hơi nước đang sôi 100 °C.</strong> Khoảng giữa chia thành 100 khoảng bằng nhau; kí hiệu $t$, đơn vị $^\circ\text{C}$; cao hơn 0 là số dương, thấp hơn 0 là số âm.</li>
+<li><strong>Độ không tuyệt đối = 0 K = −273,15 °C</strong> — nhiệt độ thấp nhất mà vật có thể có. Nhiệt độ điểm ba của nước: nước tinh khiết tồn tại đồng thời ở cả ba thể, quy ước $273{,}16\ \text{K}$ (tức $0{,}01\ ^\circ\text{C}$).</li>
+<li>$T(\text{K}) = t(^\circ\text{C}) + 273{,}15$ và $t(^\circ\text{C}) = T(\text{K}) - 273{,}15$; thường làm tròn 273. $t(^\circ\text{F}) = 1{,}8\,t(^\circ\text{C}) + 32$. Kí hiệu đúng là $\text{K}$, không có dấu độ, vì kelvin là đơn vị SI cơ bản của nhiệt độ, không phải một "độ" (quy ước từ năm 1967).</li>
+<li><strong>10 K và 18 °F.</strong> Khoảng chia Celsius và Kelvin bằng nhau nên chênh bao nhiêu °C là chênh bấy nhiêu K. Celsius và Fahrenheit chia khoảng khác nhau — 100 khoảng Celsius ứng 180 khoảng Fahrenheit — nên chênh trên thang Fahrenheit phải nhân 1,8.</li>
+<li><strong>Chất lỏng:</strong> cột chất lỏng nở dài. <strong>Kim loại:</strong> thanh kim loại nở dài. <strong>Khí:</strong> thể tích khí nở ra ở áp suất không đổi. <strong>Hồng ngoại điện tử:</strong> nhận bức xạ điện từ vật phát ra. <strong>Điện trở:</strong> điện trở của vật liệu thay đổi theo nhiệt độ.</li>
+</ol>
 </details>
 </div>
 
-<h3>V. Bài toán mẫu: lò ram dao phay ghi 392 °F</h3>
+<h3>V. Bài toán mẫu: lò nướng bánh ghi 392 °F</h3>
 
-<div class="tl-box tl-box--rule">
+<div class="tl-box tl-box--rule tl-note">
 <p class="tl-label">📝 Đề bài</p>
-<p>Lò ram dao phay được đặt ở <strong>200 °C</strong>. Đồng hồ của lò — chia theo thang Fahrenheit — hiện <strong>392 °F</strong>. Nhiệt độ ram hợp lí là <strong>180 °C đến 220 °C</strong>. Ram xong, chi tiết nguội dần trong xưởng ở <strong>30 °C</strong>.</p>
+<p>Lò nướng bánh được đặt ở <strong>200 °C</strong>. Mặt số của lò — chia theo thang Fahrenheit — hiện <strong>392 °F</strong>. Nhiệt độ nướng hợp lí là <strong>180 °C đến 220 °C</strong>. Nướng xong, khay bánh nguội trong bếp ở <strong>30 °C</strong>.</p>
 <p>a) 392 °F có đúng bằng 200 °C không?</p>
-<p>b) Đổi khoảng nhiệt độ ram ra °F.</p>
-<p>c) Chi tiết nguội từ 200 °C xuống 30 °C: độ giảm là bao nhiêu °C, bao nhiêu K, bao nhiêu °F?</p>
-<p>d) Nhiệt độ xưởng 30 °C là bao nhiêu K?</p>
+<p>b) Đổi khoảng nhiệt độ nướng ra °F.</p>
+<p>c) Khay bánh nguội từ 200 °C xuống 30 °C: độ giảm là bao nhiêu °C, bao nhiêu K, bao nhiêu °F?</p>
+<p>d) Nhiệt độ gian bếp 30 °C là bao nhiêu K?</p>
 </div>
 
 <div class="table-scroll">
@@ -916,42 +1557,42 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 </thead>
 <tbody>
-<tr><td>"lò ram 200 °C"</td><td>$200\ ^\circ\text{C}$</td><td>đổi °C → °F: nhân 1,8 rồi cộng 32</td></tr>
-<tr><td>"đồng hồ 392 °F"</td><td>$392\ ^\circ\text{F}$</td><td>đổi °F → °C: trừ 32 rồi chia 1,8</td></tr>
-<tr><td>"180 °C – 220 °C"</td><td>khoảng giá trị, không phải một giá trị</td><td>đổi từng đầu mút; khoảng chênh giữ nguyên</td></tr>
+<tr><td>"lò nướng 200 °C"</td><td>$200\ ^\circ\text{C}$</td><td>đổi °C → °F: nhân 1,8 rồi cộng 32</td></tr>
+<tr><td>"mặt số 392 °F"</td><td>$392\ ^\circ\text{F}$</td><td>đổi °F → °C: trừ 32 rồi chia 1,8</td></tr>
+<tr><td>"180 °C – 220 °C"</td><td>khoảng giá trị, không phải một giá trị</td><td>đổi từng đầu mút (độ rộng 40 °C thành 72 °F)</td></tr>
 <tr><td>"nguội 200 °C → 30 °C"</td><td>$\Delta t = 170\ ^\circ\text{C}$</td><td>độ chênh: cùng số trên °C và K; nhân 1,8 khi ra °F</td></tr>
-<tr><td>"xưởng 30 °C"</td><td>$30\ ^\circ\text{C}$</td><td>cộng thêm 273 để ra Kelvin</td></tr>
+<tr><td>"gian bếp 30 °C"</td><td>$30\ ^\circ\text{C}$</td><td>cộng 273 ra Kelvin</td></tr>
 </tbody>
 </table>
 </div>
 
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>🧮 Bấm xem: lời giải</summary>
 <ol class="tl-steps">
-<li>Câu a: $t(^\circ\text{F}) = 1{,}8 \times 200 + 32 = 392\ ^\circ\text{F}$ — khớp đúng con số trên đồng hồ, vậy lò đang đúng nhiệt độ cần ram.</li>
-<li>Câu b: $1{,}8 \times 180 + 32 = 356\ ^\circ\text{F}$ và $1{,}8 \times 220 + 32 = 428\ ^\circ\text{F}$. Khoảng ram tương ứng $356\ ^\circ\text{F}$ – $428\ ^\circ\text{F}$.</li>
+<li>Câu a: $t(^\circ\text{F}) = 1{,}8 \times 200 + 32 = 392\ ^\circ\text{F}$ — khớp đúng con số trên đồng hồ, vậy lò đang đúng nhiệt độ cần nướng.</li>
+<li>Câu b: $1{,}8 \times 180 + 32 = 356\ ^\circ\text{F}$ và $1{,}8 \times 220 + 32 = 428\ ^\circ\text{F}$. Khoảng nướng tương ứng $356\ ^\circ\text{F}$ – $428\ ^\circ\text{F}$.</li>
 <li>Câu c: độ giảm $\Delta t = 200 - 30 = 170\ ^\circ\text{C}$. Trên thang Kelvin, khoảng chia bằng nhau nên $\Delta T = 170\ \text{K}$. Trên thang Fahrenheit: $\Delta t = 1{,}8 \times 170 = 306\ ^\circ\text{F}$.</li>
 <li>Câu d: $T = 30 + 273 = 303\ \text{K}$ (chính xác hơn: $303{,}15\ \text{K}$).</li>
 <li>Kiểm tra kết quả: đổi ngược $392\ ^\circ\text{F}$ ra Celsius được $(392 - 32) \div 1{,}8 = 200\ ^\circ\text{C}$, khớp câu a. Và $200\ ^\circ\text{C} = 473\ \text{K}$, $30\ ^\circ\text{C} = 303\ \text{K}$, hiệu $473 - 303 = 170\ \text{K}$ — đúng bằng $170\ ^\circ\text{C}$ ở câu c.</li>
 </ol>
 </details>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
-<p>Vẫn chi tiết đó, nhưng lần này chỉ có tấm ảnh đồng hồ ghi $392\ ^\circ\text{F}$ và em phải tìm nhiệt độ Celsius.</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Lần này chỉ có tấm ảnh mặt số ghi $392\ ^\circ\text{F}$, em tìm nhiệt độ Celsius.</p>
 <ol class="tl-steps">
 <li>Bước 1: trừ 32 trước — $392 - 32 = 360$.</li>
 <li><strong>Em điền:</strong> bước tiếp theo làm gì với con số 360?</li>
 <li><strong>Em điền:</strong> kết quả có khớp với $200\ ^\circ\text{C}$ không?</li>
 </ol>
-<details class="tl-details">
+<details class="tl-details tl-more">
 <summary>Bấm xem bước 2–3</summary>
-<p>Chia cho 1,8: $360 \div 1{,}8 = 200\ ^\circ\text{C}$ — khớp đúng nhiệt độ ram đã đặt. Ghi nhớ thứ tự hai bước: <strong>trừ 32 rồi chia 1,8</strong> khi đi từ °F sang °C; <strong>nhân 1,8 rồi cộng 32</strong> khi đi từ °C sang °F.</p>
+<p>Chia cho 1,8: $360 \div 1{,}8 = 200\ ^\circ\text{C}$ — khớp đúng nhiệt độ nướng đã đặt. Ghi nhớ thứ tự hai bước: <strong>trừ 32 rồi chia 1,8</strong> khi đi từ °F sang °C; <strong>nhân 1,8 rồi cộng 32</strong> khi đi từ °C sang °F.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">✍️ Thử sức: đổi số, đổi chất</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số, đổi chất</p>
 <p><strong>Câu 7.</strong> Nhôm nóng chảy ở $660\ ^\circ\text{C}$. Trên hai thang còn lại, con số đó là:</p>
 <div class="tl-quiz">
 <input type="radio" name="tl3-q7" id="tl3-q7a"><label for="tl3-q7a" class="tl-opt tl-ok">A. $933\ \text{K}$ và $1220\ ^\circ\text{F}$</label>
@@ -959,7 +1600,7 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 <input type="radio" name="tl3-q7" id="tl3-q7c"><label for="tl3-q7c" class="tl-opt tl-no">C. $933\ \text{K}$ và $692\ ^\circ\text{F}$</label>
 <input type="radio" name="tl3-q7" id="tl3-q7d"><label for="tl3-q7d" class="tl-opt tl-no">D. $387\ \text{K}$ và $1220\ ^\circ\text{F}$</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $660 + 273 = 933\ \text{K}$ và $1{,}8 \times 660 + 32 = 1220\ ^\circ\text{F}$. Hai thang, hai phép tính khác nhau — không dùng chung một cách đổi.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai ứng với ba lỗi: giữ nguyên số khi đổi sang K (B), quên nhân 1,8 nên chỉ cộng 32 khi đổi sang °F (C), và trừ 273 thay vì cộng khi đổi sang K (D). Chọn lại nhé.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Ba phương án sai ứng với ba lỗi: giữ nguyên số khi đổi sang K (B; B còn quên $+32$ ở cột °F nên ra $1188\ ^\circ\text{F}$), quên nhân 1,8 nên chỉ cộng 32 khi đổi sang °F (C), và trừ 273 thay vì cộng khi đổi sang K (D). Chọn lại nhé.</p></div>
 </div>
 </div>
 
@@ -967,46 +1608,39 @@ html[data-theme="light"] .parent-page :is(.text-amber-300, .text-amber-200) { co
 
 <ul>
 <li><strong>Bản tin thời tiết:</strong> Mỹ nói $95\ ^\circ\text{F}$, đổi ra khoảng $35\ ^\circ\text{C}$ — một ngày nắng nóng.</li>
-<li><strong>Nhiệt kế hồng ngoại:</strong> cửa hàng, sân bay đo thân nhiệt trong một giây, không cần chạm.</li>
-<li><strong>Thiết bị gia dụng:</strong> nồi chiên không dầu, tủ lạnh dùng cảm biến điện trở; bảng điều khiển ghi cả °C lẫn °F.</li>
-<li><strong>Xưởng cơ khí:</strong> ram dao phay $200\ ^\circ\text{C} = 392\ ^\circ\text{F}$; hàn, tôi thép đều phải đọc đúng thang trước khi đặt lò.</li>
 </ul>
 
-<div class="tl-box tl-box--think">
-<p class="tl-label">🎯 Thử thách phân tầng</p>
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
 
-<details class="tl-details">
-<summary>⭐ Cơ bản: nước đá đang tan ở 0 °C. Đổi sang K và °F.</summary>
-<p>$0\ ^\circ\text{C} = 273\ \text{K}$ và $1{,}8 \times 0 + 32 = 32\ ^\circ\text{F}$.</p>
+<details class="tl-details tl-more">
+<summary>⭐ Cơ bản và ⭐⭐ Khá — bấm xem đề và lời giải</summary>
+<p><strong>⭐ Cơ bản:</strong> nước đá đang tan ở 0 °C. Đổi sang K và °F.<br>$0\ ^\circ\text{C} = 273\ \text{K}$ và $1{,}8 \times 0 + 32 = 32\ ^\circ\text{F}$.</p>
+<p><strong>⭐⭐ Khá:</strong> vì sao công thức chất khí phải dùng Kelvin mà không dùng Celsius?<br>Vì các định luật chất khí là những hệ thức <em>tỉ lệ thuận</em> với nhiệt độ, mà muốn nói tỉ lệ thuận thì thang đo phải có gốc 0 thật. Thang Kelvin có gốc đó: $0\ \text{K}$ ứng với mức năng lượng chuyển động thấp nhất của phân tử. Dùng Kelvin, áp suất khí tỉ lệ thuận với $T$; dùng Celsius thì đường biểu diễn không đi qua gốc, phải viết thêm số hạng $+273$ vào mọi công thức.</p>
 </details>
 
-<details class="tl-details">
-<summary>⭐⭐ Khá: vì sao công thức về chất khí bắt buộc dùng Kelvin mà không dùng Celsius?</summary>
-<p>Vì các định luật chất khí là những hệ thức <em>tỉ lệ thuận</em> với nhiệt độ, mà muốn nói tỉ lệ thuận thì thang đo phải có gốc 0 thật. Thang Kelvin có gốc đó: $0\ \text{K}$ ứng với mức năng lượng chuyển động thấp nhất của phân tử. Dùng Kelvin, áp suất khí tỉ lệ thuận với $T$; dùng Celsius thì đường biểu diễn không đi qua gốc, phải viết thêm số hạng $+273$ vào mọi công thức.</p>
-</details>
-
-<details class="tl-details">
-<summary>⭐⭐⭐ Thách đấu: nhiệt kế hồng ngoại đo trán bạn được 36,5 °C, nhưng bắn vào mảnh giấy bạc dán trên trán chỉ được khoảng 30 °C. Vì sao?</summary>
-<p>Vì hồng ngoại đo <em>bức xạ</em> mà bề mặt phát ra, không đo trực tiếp nhiệt độ. Giấy bạc phản xạ rất mạnh và phát xạ yếu, nên cảm biến nhận được ít năng lượng hơn thực tế và hiển thị nhiệt độ thấp giả — dù mảnh giấy bạc đang ấm đúng bằng da trán. Vì vậy khi đo bằng hồng ngoại, phải tránh bề mặt bóng và đo ở nơi thoáng như trán, cổ tay.</p>
+<details class="tl-details tl-more">
+<summary>⭐⭐⭐ Thách đấu: hồng ngoại và mảnh giấy bạc — bấm xem đề và lời giải</summary>
+<p>Nhiệt kế hồng ngoại đo trán được 36,5 °C, nhưng bắn vào giấy bạc dán trên trán chỉ được 30 °C. Vì sao?<br>Vì hồng ngoại đo <em>bức xạ</em> mà bề mặt phát ra, không đo trực tiếp nhiệt độ. Giấy bạc phản xạ rất mạnh và phát xạ yếu, nên cảm biến nhận được ít năng lượng hơn thực tế và hiển thị nhiệt độ thấp giả — dù mảnh giấy bạc đang ấm đúng bằng da trán. Vì vậy khi đo bằng hồng ngoại, phải tránh bề mặt bóng và đo ở nơi thoáng như trán, cổ tay.</p>
 </details>
 </div>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">✅ Mang về sau bài học</p>
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
 <ul>
 <li><strong>Nhiệt độ:</strong> nóng truyền sang lạnh · bằng nhau thì dừng.</li>
 <li><strong>Celsius:</strong> 0 nước đá tan · 100 hơi nước sôi · chia 100 khoảng.</li>
-<li><strong>Kelvin:</strong> 0 K là gốc · 1 K = 1 °C · luôn dương · viết K, không viết °K.</li>
+<li><strong>Kelvin:</strong> 0 K là gốc · độ chia 1 K = 1 °C · luôn dương · viết K, không viết °K.</li>
 <li><strong>Fahrenheit:</strong> 32 và 212 · chia 180 khoảng · ×1,8 rồi +32.</li>
 <li><strong>Đổi giá trị:</strong> °C ↔ K cộng/trừ 273,15 · °C ↔ °F nhân 1,8 rồi cộng 32.</li>
 <li><strong>Đổi khoảng chênh:</strong> $\Delta(^\circ\text{C}) = \Delta(\text{K})$ · $\Delta(^\circ\text{F}) = 1{,}8\,\Delta(^\circ\text{C})$.</li>
 <li><strong>Nhiệt kế:</strong> nở vì nhiệt · điện trở · bức xạ hồng ngoại.</li>
-<li><strong>Đọc đề:</strong> gặp "°F" thì tự hỏi ngay — đề đang đổi một <em>giá trị nhiệt độ</em> hay một <em>khoảng chênh</em>?</li>
+<li><strong>Đọc đề:</strong> gặp °F thì tự hỏi — đang đổi một <em>giá trị nhiệt độ</em> hay một <em>khoảng chênh</em>?</li>
 </ul>
 </div>
 </span></div></div>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/katex.min.js"></script>
-<script src="file:///Users/MAC/Projects/thachlab/node_modules/katex/dist/contrib/auto-render.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/katex.min.js"></script>
+<script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/kind-satoshi-913de4/node_modules/katex/dist/contrib/auto-render.min.js"></script>
 <script>
 renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:true},{left:"$",right:"$",display:false}]});
 </script>

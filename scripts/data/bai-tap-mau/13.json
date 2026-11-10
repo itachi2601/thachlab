@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Dễ · Từ thông qua khung dây: góc của pháp tuyến",
    "topic": "Từ thông qua khung dây",
-   "problem_html": "<p>Một khung dây dẫn phẳng hình tròn, bán kính $5{,}0\\ \\text{cm}$, đặt trong từ trường đều có cảm ứng từ $B=0{,}40\\ \\text{T}$. Mặt phẳng khung hợp với đường sức từ góc $30^\\circ$.</p><ol type=\"a\"><li>Tính từ thông qua khung.</li><li>Quay khung tới vị trí nào thì từ thông qua khung lớn nhất? Tính giá trị lớn nhất đó.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-0\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Khung tròn quay trong từ trường đều tới vị trí mặt khung hợp với đường sức góc 30 độ\"><line x1=\"30\" y1=\"40\" x2=\"392\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,34.5 L392.0,40.0 L382.5,45.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"80\" x2=\"392\" y2=\"80\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,74.5 L392.0,80.0 L382.5,85.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"144\" x2=\"392\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,138.5 L392.0,144.0 L382.5,149.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"184\" x2=\"392\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,178.5 L392.0,184.0 L382.5,189.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"22\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><line x1=\"153.2\" y1=\"139.0\" x2=\"246.8\" y2=\"85.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"200.0\" y1=\"112.0\" x2=\"278.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"1\"/><path d=\"M262.0,112.0 A62,62 0 0 0 253.7,81.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.9\"/><text x=\"266\" y=\"103\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 200 112;85.0 200 112\" dur=\"4.00s\" begin=\"indefinite\" fill=\"freeze\"/><g transform=\"rotate(-25 200 112)\"><ellipse cx=\"200\" cy=\"112\" rx=\"7\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><line x1=\"200\" y1=\"112\" x2=\"246\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2.4\"/><path d=\"M237.2,106.9 L246.0,112.0 L237.2,117.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g></g><circle cx=\"200.0\" cy=\"112.0\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 5,0 cm · B = 0,40 T</text><text x=\"30\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">xanh lá: pháp tuyến n · chấm ở tâm: trục quay</text><text x=\"318\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Φ = ?</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: khung quay đều trong 4 s tới vị trí đề cho (nét đứt xám). Nhìn ngang, khung tròn hiện thành elip hẹp. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một khung dây dẫn phẳng hình tròn, bán kính $5{,}0\\ \\text{cm}$, đặt trong từ trường đều có cảm ứng từ $B=0{,}40\\ \\text{T}$. Mặt phẳng khung hợp với đường sức từ góc $30^\\circ$.</p><ol type=\"a\"><li>Tính từ thông qua khung.</li><li>Quay khung tới vị trí nào thì từ thông qua khung lớn nhất? Tính giá trị lớn nhất đó.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> từ thông qua khung phẳng trong từ trường đều, đơn vị Wb.</li><li><strong>Công thức:</strong> $\\Phi=BS\\cos\\alpha$; khung tròn $S=\\pi r^2$.</li><li><strong>Góc:</strong> $\\alpha$ là góc giữa pháp tuyến $\\vec n$ và $\\vec B$, không phải góc của mặt khung.</li><li>⚠ <strong>Điều kiện:</strong> từ trường đều, khung phẳng; $S$ phải ở m².</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Diện tích khung</span></p><p>Khung tròn bán kính $r=5{,}0\\ \\text{cm}=0{,}050\\ \\text{m}$:</p>$$S=\\pi r^2=\\pi\\cdot0{,}050^2$$<div class=\"bt-ans\">$$S\\approx7{,}85\\cdot10^{-3}\\ \\text{m}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc α của pháp tuyến</span></p><p>Đề cho góc giữa mặt khung và đường sức là $30^\\circ$. Pháp tuyến vuông góc với mặt khung nên:</p>$$\\alpha=90^\\circ-30^\\circ$$<div class=\"bt-ans\">$$\\alpha=60^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Từ thông qua khung (câu a)</span></p>$$\\Phi=BS\\cos\\alpha$$$$\\Phi=0{,}40\\cdot7{,}85\\cdot10^{-3}\\cdot\\cos60^\\circ$$<div class=\"bt-ans\">$$\\Phi\\approx1{,}57\\cdot10^{-3}\\ \\text{Wb}=1{,}57\\ \\text{mWb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Từ thông lớn nhất (câu b)</span></p><p>$\\Phi$ lớn nhất khi $\\cos\\alpha=1$, tức $\\alpha=0^\\circ$: pháp tuyến song song $\\vec B$, mặt khung vuông góc đường sức.</p>$$\\Phi_{\\max}=BS=0{,}40\\cdot7{,}85\\cdot10^{-3}$$<div class=\"bt-ans\">$$\\Phi_{\\max}\\approx3{,}14\\cdot10^{-3}\\ \\text{Wb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>$1{,}57\\ \\text{mWb}\\lt3{,}14\\ \\text{mWb}$: hợp lí vì $\\cos60^\\circ=0{,}5$.</p><p>Nếu thế nhầm $\\cos30^\\circ$ thì ra $2{,}72\\ \\text{mWb}$, lớn hơn đúng. Đơn vị: $\\text{T}\\cdot\\text{m}^2=\\text{Wb}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\Phi\\approx1{,}57\\ \\text{mWb}$</p><p>b) Khung vuông góc đường sức; $\\Phi_{\\max}\\approx3{,}14\\ \\text{mWb}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>góc giữa mặt khung và đường sức</strong> → đổi sang góc của pháp tuyến rồi dùng $\\Phi=BS\\cos\\alpha$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d1-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Khung ở vị trí đề cho, góc 30 độ của mặt khung và góc alpha chưa biết giữa pháp tuyến và cảm ứng từ\"><line x1=\"30\" y1=\"40\" x2=\"392\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,34.5 L392.0,40.0 L382.5,45.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"80\" x2=\"392\" y2=\"80\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,74.5 L392.0,80.0 L382.5,85.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"144\" x2=\"392\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,138.5 L392.0,144.0 L382.5,149.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"184\" x2=\"392\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,178.5 L392.0,184.0 L382.5,189.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"22\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><line x1=\"200.0\" y1=\"112.0\" x2=\"278.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"1\"/><path d=\"M262.0,112.0 A62,62 0 0 0 253.7,81.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.9\"/><text x=\"266\" y=\"103\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><g transform=\"rotate(60.0 200 112)\"><ellipse cx=\"200\" cy=\"112\" rx=\"7\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/></g><line x1=\"200\" y1=\"112\" x2=\"223.0\" y2=\"151.83716857408416\" stroke=\"#34d399\" stroke-width=\"2.4\"/><path d=\"M223.0,141.7 L223.0,151.8 L214.2,146.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"200.0\" cy=\"112.0\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M213.0,134.5 A26,26 0 0 0 226.0,112.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.9\"/><text x=\"232\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = ?</text><text x=\"229.0\" y=\"165.8\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n</text><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">r = 5,0 cm · B = 0,40 T</text><text x=\"30\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">30°: góc của MẶT khung (đề cho) · α: góc của pháp tuyến</text><text x=\"318\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">Φ = ?</text></svg><figcaption>Dữ kiện: khung ở vị trí đề cho; 30° là góc của mặt khung, α cần tìm là góc của pháp tuyến. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"khung dây dẫn phẳng hình tròn, bán kính $5{,}0\\ \\text{cm}$\\\"</td><td>$r=5{,}0\\ \\text{cm}$</td><td>Diện tích khung tròn; đổi sang m²</td></tr><tr><td>\\\"từ trường đều có cảm ứng từ $B=0{,}40\\ \\text{T}$\\\"</td><td>$B=0{,}40\\ \\text{T}$</td><td>Từ trường đều, khung phẳng: dùng được công thức từ thông</td></tr><tr><td>\\\"Mặt phẳng khung hợp với đường sức từ góc $30^\\circ$\\\"</td><td>Góc giữa MẶT khung và đường sức: $30^\\circ$</td><td>⚠ Kiểm tra đề cho góc của mặt khung hay của pháp tuyến; công thức dùng góc của pháp tuyến</td></tr><tr><td>\\\"a) Tính từ thông qua khung\\\"</td><td>Cần $\\Phi$ (Wb)</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) Quay khung tới vị trí nào thì từ thông lớn nhất? Tính giá trị lớn nhất\\\"</td><td>Cần vị trí khung và $\\Phi_{\\max}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"khung dây dẫn phẳng hình tròn, bán kính $5{,}0\\ \\text{cm}$\\\"</td><td>$r=5{,}0\\ \\text{cm}$</td><td>Diện tích khung tròn; đổi sang m²</td></tr><tr><td>\\\"từ trường đều có cảm ứng từ $B=0{,}40\\ \\text{T}$\\\"</td><td>$B=0{,}40\\ \\text{T}$</td><td>Từ trường đều, khung phẳng: dùng được công thức từ thông</td></tr><tr><td>\\\"Mặt phẳng khung hợp với đường sức từ góc $30^\\circ$\\\"</td><td>Góc giữa MẶT khung và đường sức: $30^\\circ$</td><td>⚠ Kiểm tra đề cho góc của mặt khung hay của pháp tuyến; công thức dùng góc của pháp tuyến</td></tr><tr><td>\\\"a) Tính từ thông qua khung\\\"</td><td>Cần $\\Phi$ (Wb)</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) Quay khung tới vị trí nào thì từ thông lớn nhất? Tính giá trị lớn nhất\\\"</td><td>Cần vị trí khung và $\\Phi_{\\max}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>mặt khung hợp với đường sức góc …</b> → chú ý <b>góc của pháp tuyến</b> trong <b>Φ = BS cos α</b>.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -104,15 +104,178 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khung tròn $R=5{,}0\\ \\text{cm}$, $B=0{,}40\\ \\text{T}$",
+     "Mặt phẳng khung hợp đường sức góc $30^\\circ$"
+    ],
+    "tim": [
+     "a) từ thông qua khung",
+     "b) vị trí để từ thông lớn nhất, giá trị đó"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "nhan": "B",
+     "hang": [
+      1,
+      2.2,
+      8.8,
+      10
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       12,
+       5.5
+      ],
+      "den": [
+       16.8,
+       5.5
+      ],
+      "mau": "b",
+      "dut": true
+     },
+     {
+      "loai": "thanh",
+      "x": 12,
+      "y": 5.5,
+      "goc": 30,
+      "dai": 7,
+      "mau": "chu"
+     },
+     {
+      "loai": "goc",
+      "x": 12,
+      "y": 5.5,
+      "tu": 0,
+      "den": 30,
+      "nhan": "30°"
+     },
+     {
+      "loai": "diem",
+      "x": 12,
+      "y": 5.5
+     },
+     {
+      "loai": "chu",
+      "x": 15.2,
+      "y": 7.9,
+      "text": "mặt khung",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 3.8,
+      "y": 6.6,
+      "text": "r = 5,0 cm",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 3.8,
+      "y": 4.4,
+      "text": "B = 0,40 T",
+      "a": "middle",
+      "mau": "b"
+     }
+    ],
+    "dong": [
+     {
+      "nut": "▶ Xem khung quay tới vị trí đề",
+      "giay": 3,
+      "doi": [
+       {
+        "p": "hinh.1.goc",
+        "tu": 90,
+        "den": 30
+       },
+       {
+        "p": "hinh.2.den",
+        "tu": 90,
+        "den": 30
+       },
+       {
+        "p": "hinh.2.nhan",
+        "cac": [
+         "",
+         "",
+         "",
+         "30°"
+        ]
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "S = πr² = π·0,050² ≈ 7,85·10⁻³ m²"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 5.5,
+       "goc": -60,
+       "dai": 3.6,
+       "nhan": "n",
+       "mau": "chu"
+      },
+      {
+       "loai": "goc",
+       "x": 12,
+       "y": 5.5,
+       "tu": -60,
+       "den": 0,
+       "nhan": "α"
+      },
+      {
+       "loai": "ghi",
+       "text": "n ⊥ mặt khung ⇒ α = 90° − 30° = 60°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Φ = BS cos 60° ≈ 1,57 mWb"
+      }
+     ],
+     [
+      {
+       "loai": "thanh",
+       "x": 12,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 6.4,
+       "mau": "chu",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Mặt khung ⊥ B: Φ_{max} = BS ≈ 3,14 mWb"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Trung bình · Chiều dòng điện cảm ứng theo định luật Lenz",
    "topic": "Định luật Faraday và định luật Lenz",
-   "problem_html": "<p>Một vòng dây dẫn kín nằm trong mặt phẳng tờ giấy. Từ trường đều vuông góc với tờ giấy và hướng vào trong tờ giấy (kí hiệu ⊗; hướng ra khỏi tờ giấy kí hiệu ⊙). Chiều quay của kim đồng hồ được xét khi nhìn từ phía người đọc vào tờ giấy.</p><ol type=\"a\"><li>Độ lớn của $\\vec B$ tăng đều theo thời gian. Dòng điện cảm ứng trong vòng dây cùng chiều hay ngược chiều kim đồng hồ?</li><li>Nếu độ lớn của $\\vec B$ giảm đều thì chiều dòng điện cảm ứng đổi thế nào?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-0\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Vòng dây kín nằm trong mặt giấy, từ trường đều hướng vào giấy có độ lớn tăng dần, số dấu nhân tăng lên\"><circle cx=\"40\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"92\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.06;0.26;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"144\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.10;0.30;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"196\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"248\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.15;0.35;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"40\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.20;0.40;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"92\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"144\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.24;0.44;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"196\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.28;0.48;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"248\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"40\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.33;0.53;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"92\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.38;0.57;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"144\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"196\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.42;0.62;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"248\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.46;0.67;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"40\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"92\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.51;0.71;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"144\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.55;0.75;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"196\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"248\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.60;0.80;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"40\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.65;0.84;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"92\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"0\"><circle cx=\"144\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.69;0.89;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"0\"><circle cx=\"196\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"0;0;1;1\" keyTimes=\"0;0.73;0.93;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"248\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144.0\" cy=\"114.0\" r=\"66\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\"/><rect x=\"352\" y=\"168\" width=\"22\" height=\"40\" fill=\"#38bdf8\" opacity=\".8\"><animate attributeName=\"height\" values=\"40.0;130.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"168.0;78.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"352.0\" y1=\"208.0\" x2=\"374.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"363\" y=\"224\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"292\" y=\"24\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">⊗: B vào giấy</text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: B tăng đều trong 5 s (dấu ⊗ nhiều dần, cột xanh cao dần). Hình không vẽ dòng cảm ứng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một vòng dây dẫn kín nằm trong mặt phẳng tờ giấy. Từ trường đều vuông góc với tờ giấy và hướng vào trong tờ giấy (kí hiệu ⊗; hướng ra khỏi tờ giấy kí hiệu ⊙). Chiều quay của kim đồng hồ được xét khi nhìn từ phía người đọc vào tờ giấy.</p><ol type=\"a\"><li>Độ lớn của $\\vec B$ tăng đều theo thời gian. Dòng điện cảm ứng trong vòng dây cùng chiều hay ngược chiều kim đồng hồ?</li><li>Nếu độ lớn của $\\vec B$ giảm đều thì chiều dòng điện cảm ứng đổi thế nào?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> dòng cảm ứng chỉ có khi mạch kín và từ thông qua mạch biến thiên.</li><li><strong>Định luật Lenz:</strong> từ trường cảm ứng chống lại sự biến thiên của từ thông.</li><li>Từ thông tăng: $\\vec B_c$ ngược chiều $\\vec B$ ngoài; từ thông giảm: cùng chiều.</li><li><strong>Nắm tay phải:</strong> ngón cái chỉ chiều $\\vec B_c$, các ngón khum chỉ chiều dòng.</li><li>⚠ <strong>Điều kiện:</strong> vòng dây kín; chiều quay phải nói rõ nhìn từ phía nào.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Từ thông tăng hay giảm</span></p><p>Mạch kín; $S$ và $\\alpha$ không đổi, $B$ tăng nên $\\Phi=BS\\cos\\alpha$ tăng. Từ thông biến thiên nên có dòng cảm ứng.</p><div class=\"bt-ans\"><p>Từ thông qua vòng dây <strong>tăng</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều từ trường cảm ứng</span></p><p>Từ thông tăng nên $\\vec B_c$ ngược chiều $\\vec B$ ngoài (chống lại sự tăng).</p><p>$\\vec B$ ngoài hướng vào giấy (⊗) nên trong lòng vòng dây $\\vec B_c$ hướng ra khỏi giấy (⊙).</p><div class=\"bt-ans\"><p>$\\vec B_c$ hướng <strong>ra khỏi giấy</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều dòng điện (câu a)</span></p><p>Nắm tay phải: ngón cái chỉ ra phía người đọc, các ngón khum chỉ chiều dòng. Nhìn từ phía người đọc, mặt vòng dây hướng về người đọc có đường sức đi ra (mặt Bắc).</p><div class=\"bt-ans\"><p>Câu a: dòng cảm ứng <strong>ngược chiều kim đồng hồ</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Trường hợp B giảm (câu b)</span></p><p>$B$ giảm nên $\\Phi$ giảm: $\\vec B_c$ cùng chiều $\\vec B$ ngoài, hướng vào giấy (⊗).</p><p>Nắm tay phải: ngón cái chỉ vào trong giấy, nhìn từ phía người đọc các ngón khum cùng chiều kim đồng hồ.</p><div class=\"bt-ans\"><p>Câu b: dòng cảm ứng <strong>cùng chiều kim đồng hồ</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Hai trường hợp ngược nhau: chiều dòng do từ thông tăng hay giảm quyết định, không do hướng của $\\vec B$ ngoài.</p><p>Nếu vòng dây bị cắt hở một chỗ thì vẫn có suất điện động nhưng không có dòng điện (mạch không kín).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Ngược chiều kim đồng hồ</p><p>b) Cùng chiều kim đồng hồ</p></div><p class=\"bt-note\">Nhận dạng: đề hỏi <strong>chiều dòng điện cảm ứng</strong> → xét từ thông tăng hay giảm, dùng Lenz rồi nắm tay phải.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d2-2\"><svg viewBox=\"0 0 420 232\" role=\"img\" aria-label=\"Dữ kiện: vòng dây kín trong mặt giấy, từ trường đều vuông góc và hướng vào giấy, chiều quay theo người đọc\"><circle cx=\"40\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"196\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"248\" cy=\"30\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,26.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"40\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"196\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"248\" cy=\"72\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,68.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"40\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"196\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"248\" cy=\"114\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,110.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"40\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"196\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"248\" cy=\"156\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,152.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"40\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M36.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M140.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"196\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M192.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"248\" cy=\"198\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M244.4,194.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"144.0\" cy=\"114.0\" r=\"66\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"3.2\"/><rect x=\"352\" y=\"168\" width=\"22\" height=\"40\" fill=\"#38bdf8\" opacity=\".35\"/><line x1=\"352.0\" y1=\"208.0\" x2=\"374.0\" y2=\"208.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"363\" y=\"224\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"292\" y=\"24\" fill=\"#38bdf8\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">⊗: B vào giấy</text><text x=\"292\" y=\"64\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">Chiều quay: nhìn từ</text><text x=\"292\" y=\"80\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">phía người đọc</text></svg><figcaption>Dữ kiện: vòng dây kín, B vuông góc mặt giấy hướng vào. Cột xanh: B lớn dần theo thời gian. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"vòng dây dẫn kín nằm trong mặt phẳng tờ giấy\\\"</td><td>Mạch kín; mặt vòng song song mặt giấy</td><td>⚠ Dòng cảm ứng chỉ có khi mạch kín và từ thông biến thiên</td></tr><tr><td>\\\"Từ trường đều vuông góc với tờ giấy, hướng vào trong (⊗)\\\"</td><td>$\\vec B$ hướng vào giấy</td><td>Từ thông qua vòng dây tính theo $B$, $S$, $\\alpha$</td></tr><tr><td>\\\"nhìn từ phía người đọc vào tờ giấy\\\"</td><td>Quy ước chiều quay kim đồng hồ theo người đọc</td><td>⚠ Chiều quay chỉ có nghĩa khi nói rõ nhìn từ phía nào</td></tr><tr><td>\\\"Độ lớn của $\\vec B$ tăng đều theo thời gian\\\"</td><td>$B$ tăng; $S$, $\\alpha$ giữ nguyên</td><td>Xét từ thông đổi thế nào, rồi áp dụng định luật Lenz</td></tr><tr><td>\\\"a) cùng chiều hay ngược chiều kim đồng hồ?\\\"</td><td>Cần chiều dòng cảm ứng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) Nếu độ lớn của $\\vec B$ giảm đều\\\"</td><td>Cần so sánh với câu a</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"vòng dây dẫn kín nằm trong mặt phẳng tờ giấy\\\"</td><td>Mạch kín; mặt vòng song song mặt giấy</td><td>⚠ Dòng cảm ứng chỉ có khi mạch kín và từ thông biến thiên</td></tr><tr><td>\\\"Từ trường đều vuông góc với tờ giấy, hướng vào trong (⊗)\\\"</td><td>$\\vec B$ hướng vào giấy</td><td>Từ thông qua vòng dây tính theo $B$, $S$, $\\alpha$</td></tr><tr><td>\\\"nhìn từ phía người đọc vào tờ giấy\\\"</td><td>Quy ước chiều quay kim đồng hồ theo người đọc</td><td>⚠ Chiều quay chỉ có nghĩa khi nói rõ nhìn từ phía nào</td></tr><tr><td>\\\"Độ lớn của $\\vec B$ tăng đều theo thời gian\\\"</td><td>$B$ tăng; $S$, $\\alpha$ giữ nguyên</td><td>Xét từ thông đổi thế nào, rồi áp dụng định luật Lenz</td></tr><tr><td>\\\"a) cùng chiều hay ngược chiều kim đồng hồ?\\\"</td><td>Cần chiều dòng cảm ứng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) Nếu độ lớn của $\\vec B$ giảm đều\\\"</td><td>Cần so sánh với câu a</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>hỏi chiều dòng cảm ứng</b> → nghĩ tới <b>Lenz: chống lại sự biến thiên</b>, rồi nắm tay phải.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -255,15 +418,143 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Vòng dây kín nằm trong mặt phẳng giấy",
+     "$\\vec B$ vuông góc giấy, hướng vào (⊗)",
+     "Chiều quay kim đồng hồ xét từ phía người đọc"
+    ],
+    "tim": [
+     "a) $B$ tăng đều: dòng cảm ứng cùng hay ngược chiều kim đồng hồ",
+     "b) $B$ giảm đều: chiều dòng đổi thế nào"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "vao",
+     "nhan": "B"
+    },
+    "hinh": [
+     {
+      "loai": "vong",
+      "x": 9,
+      "y": 5.0,
+      "r": 3,
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 9,
+      "y": 9.0,
+      "text": "vòng dây kín",
+      "a": "middle"
+     },
+     {
+      "loai": "thanh",
+      "x": 17.6,
+      "y": 5.1,
+      "goc": 90,
+      "dai": 7,
+      "mau": "b"
+     },
+     {
+      "loai": "chu",
+      "x": 17.6,
+      "y": 0.5,
+      "text": "độ lớn B",
+      "a": "middle",
+      "mau": "b"
+     }
+    ],
+    "dong": [
+     {
+      "nut": "▶ Xem B tăng đều",
+      "giay": 3,
+      "doi": [
+       {
+        "p": "hinh.2.dai",
+        "tu": 1,
+        "den": 7
+       },
+       {
+        "p": "hinh.2.y",
+        "tu": 2.1,
+        "den": 5.1
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "B tăng, S và α giữ nguyên ⇒ Φ tăng"
+      }
+     ],
+     [
+      {
+       "loai": "tiet_dien",
+       "x": 9,
+       "y": 5.0,
+       "chieu": "ra",
+       "ten": "B_c",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ tăng ⇒ B_c ngược B: hướng ra ⊙"
+      }
+     ],
+     [
+      {
+       "loai": "vong",
+       "x": 9,
+       "y": 5.0,
+       "r": 3,
+       "chieu": "nguoc",
+       "mau": "i",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "B_c ra ⇒ I ngược chiều kim đồng hồ"
+      }
+     ],
+     [
+      {
+       "loai": "tiet_dien",
+       "x": 9,
+       "y": 5.0,
+       "chieu": "vao",
+       "ten": "B_c"
+      },
+      {
+       "loai": "vong",
+       "x": 9,
+       "y": 5.0,
+       "r": 3,
+       "chieu": "cung",
+       "mau": "i"
+      },
+      {
+       "loai": "ghi",
+       "text": "B giảm ⇒ I cùng chiều kim đồng hồ"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Suất điện động và dòng cảm ứng khi B biến thiên",
    "topic": "Định luật Faraday và định luật Lenz",
-   "problem_html": "<p>Một khung dây dẫn kín hình vuông cạnh $6{,}0\\ \\text{cm}$, điện trở $0{,}30\\ \\Omega$, đặt trong từ trường đều sao cho mặt khung vuông góc với đường sức từ. Cảm ứng từ giảm đều từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$ trong $15\\ \\text{ms}$.</p><ol type=\"a\"><li>Tính độ lớn suất điện động cảm ứng và cường độ dòng điện cảm ứng trong khung.</li><li>Nếu cảm ứng từ cũng giảm từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$ nhưng trong thời gian chỉ bằng một nửa thì cường độ dòng điện cảm ứng là bao nhiêu?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-0\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Khung dây vuông trong từ trường đều hướng vào giấy; cảm ứng từ giảm từ 0,50 xuống 0,20 tesla, các dấu nhân thưa dần\"><circle cx=\"44\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"92\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.05;0.25;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><circle cx=\"140\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.10;0.30;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><circle cx=\"188\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.15;0.35;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"236\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"44\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.20;0.40;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><circle cx=\"92\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.25;0.45;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"140\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"188\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.30;0.50;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"236\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"44\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.35;0.55;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><circle cx=\"92\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.40;0.60;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"140\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"188\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.45;0.65;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><g opacity=\"1\"><circle cx=\"236\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.50;0.70;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"44\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"92\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.55;0.75;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"140\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><g opacity=\"1\"><circle cx=\"188\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><animate attributeName=\"opacity\" values=\"1;1;0;0\" keyTimes=\"0;0.60;0.80;1\" dur=\"5s\" begin=\"indefinite\" fill=\"freeze\"/></g><circle cx=\"236\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><rect x=\"80\" y=\"60\" width=\"96\" height=\"96\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"80\" y1=\"204\" x2=\"176\" y2=\"204\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M169.0,199.9 L176.0,204.0 L169.0,208.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"176\" y1=\"204\" x2=\"80\" y2=\"204\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M87.0,208.1 L80.0,204.0 L87.0,199.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"128\" y=\"222\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">a = 6,0 cm</text><rect x=\"300\" y=\"40\" width=\"26\" height=\"150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\" opacity=\".6\"/><rect x=\"300\" y=\"40\" width=\"26\" height=\"150\" fill=\"#38bdf8\" opacity=\".8\"><animate attributeName=\"height\" values=\"150.0;60.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"y\" values=\"40.0;130.0\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/></rect><line x1=\"326.0\" y1=\"40.0\" x2=\"336.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"340\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,50 T</text><line x1=\"326.0\" y1=\"130.0\" x2=\"336.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"340\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,20 T</text><line x1=\"300.0\" y1=\"190.0\" x2=\"326.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"313\" y=\"208\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = 0,30 Ω · Δt = 15 ms</text><text x=\"410\" y=\"236\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?   i = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: B giảm đều từ 0,50 T xuống 0,20 T, chạy 5 s thay cho 15 ms (dấu ⊗ thưa dần, cột xanh thấp dần). Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một khung dây dẫn kín hình vuông cạnh $6{,}0\\ \\text{cm}$, điện trở $0{,}30\\ \\Omega$, đặt trong từ trường đều sao cho mặt khung vuông góc với đường sức từ. Cảm ứng từ giảm đều từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$ trong $15\\ \\text{ms}$.</p><ol type=\"a\"><li>Tính độ lớn suất điện động cảm ứng và cường độ dòng điện cảm ứng trong khung.</li><li>Nếu cảm ứng từ cũng giảm từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$ nhưng trong thời gian chỉ bằng một nửa thì cường độ dòng điện cảm ứng là bao nhiêu?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> suất điện động cảm ứng là tốc độ biến thiên từ thông qua mạch.</li><li><strong>Định luật Faraday:</strong> $|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$; mạch kín có $R$: $i=\\dfrac{|e_c|}{R}$.</li><li><strong>Từ thông:</strong> $\\Phi=BS\\cos\\alpha$; chỉ $B$ đổi thì $\\Delta\\Phi=\\Delta B\\cdot S\\cos\\alpha$.</li><li>⚠ <strong>Điều kiện:</strong> mạch kín; lấy độ lớn $\\Delta\\Phi$; $S$ ra m², $\\Delta t$ ra giây.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đổi sang đơn vị SI</span></p>$$a=6{,}0\\ \\text{cm}=0{,}060\\ \\text{m}$$$$S=a^2=0{,}060^2$$<div class=\"bt-ans\">$$S=3{,}6\\cdot10^{-3}\\ \\text{m}^2$$</div><p>$\\Delta t=15\\ \\text{ms}=0{,}015\\ \\text{s}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ biến thiên từ thông</span></p><p>Mặt khung vuông góc đường sức nên $\\cos\\alpha=1$; chỉ $B$ đổi.</p>$$|\\Delta\\Phi|=|B_2-B_1|\\,S=|0{,}20-0{,}50|\\cdot3{,}6\\cdot10^{-3}$$<div class=\"bt-ans\">$$|\\Delta\\Phi|=1{,}08\\cdot10^{-3}\\ \\text{Wb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động cảm ứng (câu a)</span></p>$$|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|=\\dfrac{1{,}08\\cdot10^{-3}}{0{,}015}$$<div class=\"bt-ans\">$$|e_c|=0{,}072\\ \\text{V}=72\\ \\text{mV}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cường độ dòng điện (câu a)</span></p>$$i=\\dfrac{|e_c|}{R}=\\dfrac{0{,}072}{0{,}30}$$<div class=\"bt-ans\">$$i=0{,}24\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Rút ngắn thời gian (câu b)</span></p><p>$\\Delta\\Phi$ không đổi, $\\Delta t'=0{,}0075\\ \\text{s}$:</p>$$|e'_c|=\\dfrac{1{,}08\\cdot10^{-3}}{0{,}0075}=0{,}144\\ \\text{V}$$$$i'=\\dfrac{0{,}144}{0{,}30}$$<div class=\"bt-ans\">$$i'=0{,}48\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{Wb/s}=\\text{V}$; $\\text{V}/\\Omega=\\text{A}$.</p><p>$\\Delta t$ giảm một nửa, $\\Delta\\Phi$ không đổi nên $i'=2i=2\\cdot0{,}24=0{,}48\\ \\text{A}$, khớp.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $|e_c|=0{,}072\\ \\text{V}$; $i=0{,}24\\ \\text{A}$</p><p>b) $i'=0{,}48\\ \\text{A}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>cảm ứng từ đổi đều trong khoảng thời gian Δt</strong> → $|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, rồi chia cho $R$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d3-2\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Dữ kiện: khung vuông cạnh 6,0 cm trong từ trường đều vuông góc mặt khung; cảm ứng từ giảm từ 0,50 xuống 0,20 tesla\"><circle cx=\"44\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"140\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"188\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"236\" cy=\"36\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,32.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"44\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"140\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"188\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"236\" cy=\"84\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,80.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"44\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"140\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"188\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"236\" cy=\"132\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,128.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"44\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M40.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"92\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M88.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"140\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M136.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"188\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M184.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><circle cx=\"236\" cy=\"180\" r=\"6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\"/><path d=\"M232.4,176.4l7.2,7.2m0,-7.2l-7.2,7.2\" stroke=\"#38bdf8\" stroke-width=\"1.8\" fill=\"none\"/><rect x=\"80\" y=\"60\" width=\"96\" height=\"96\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"/><line x1=\"80\" y1=\"204\" x2=\"176\" y2=\"204\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M169.0,199.9 L176.0,204.0 L169.0,208.1\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"176\" y1=\"204\" x2=\"80\" y2=\"204\" stroke=\"#fb923c\" stroke-width=\"1.8\"/><path d=\"M87.0,208.1 L80.0,204.0 L87.0,199.9\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"128\" y=\"222\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">a = 6,0 cm</text><rect x=\"300\" y=\"40\" width=\"26\" height=\"150\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\" opacity=\".6\"/><rect x=\"300\" y=\"40\" width=\"26\" height=\"150\" fill=\"#38bdf8\" opacity=\".35\"/><rect x=\"300\" y=\"130\" width=\"26\" height=\"60\" fill=\"#38bdf8\" opacity=\".8\"/><line x1=\"326.0\" y1=\"40.0\" x2=\"336.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"340\" y=\"44\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,50 T</text><line x1=\"326.0\" y1=\"130.0\" x2=\"336.0\" y2=\"130.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><text x=\"340\" y=\"134\" fill=\"currentColor\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">0,20 T</text><line x1=\"300.0\" y1=\"190.0\" x2=\"326.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"313\" y=\"208\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">B</text><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = 0,30 Ω · Δt = 15 ms</text><text x=\"410\" y=\"236\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?   i = ?</tspan></text></svg><figcaption>Dữ kiện: mặt khung vuông góc đường sức; cột xanh nhạt là B lúc đầu, cột đậm là B lúc sau. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"khung dây dẫn kín hình vuông cạnh $6{,}0\\ \\text{cm}$, điện trở $0{,}30\\ \\Omega$\\\"</td><td>$a=6{,}0\\ \\text{cm}$; $R=0{,}30\\ \\Omega$</td><td>Diện tích khung vuông, đổi cm² sang m²; $R$ dùng cho dòng điện</td></tr><tr><td>\\\"mặt khung vuông góc với đường sức từ\\\"</td><td>Pháp tuyến và $\\vec B$ cùng phương</td><td>Cho biết góc $\\alpha$ giữa pháp tuyến và $\\vec B$</td></tr><tr><td>\\\"Cảm ứng từ giảm đều từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$\\\"</td><td>$B_1=0{,}50\\ \\text{T}$; $B_2=0{,}20\\ \\text{T}$</td><td>Từ thông biến thiên do $B$ đổi; $S$ không đổi</td></tr><tr><td>\\\"trong $15\\ \\text{ms}$\\\"</td><td>$\\Delta t=15\\ \\text{ms}$</td><td>⚠ Đổi ms ra giây trước khi dùng; mạch kín nên có dòng cảm ứng</td></tr><tr><td>\\\"a) Tính độ lớn suất điện động cảm ứng và cường độ dòng điện\\\"</td><td>Cần $|e_c|$ và $i$</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) trong thời gian chỉ bằng một nửa\\\"</td><td>$\\Delta t'=\\Delta t/2$; $\\Delta\\Phi$ như cũ</td><td>So sánh với câu a</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"khung dây dẫn kín hình vuông cạnh $6{,}0\\ \\text{cm}$, điện trở $0{,}30\\ \\Omega$\\\"</td><td>$a=6{,}0\\ \\text{cm}$; $R=0{,}30\\ \\Omega$</td><td>Diện tích khung vuông, đổi cm² sang m²; $R$ dùng cho dòng điện</td></tr><tr><td>\\\"mặt khung vuông góc với đường sức từ\\\"</td><td>Pháp tuyến và $\\vec B$ cùng phương</td><td>Cho biết góc $\\alpha$ giữa pháp tuyến và $\\vec B$</td></tr><tr><td>\\\"Cảm ứng từ giảm đều từ $0{,}50\\ \\text{T}$ xuống $0{,}20\\ \\text{T}$\\\"</td><td>$B_1=0{,}50\\ \\text{T}$; $B_2=0{,}20\\ \\text{T}$</td><td>Từ thông biến thiên do $B$ đổi; $S$ không đổi</td></tr><tr><td>\\\"trong $15\\ \\text{ms}$\\\"</td><td>$\\Delta t=15\\ \\text{ms}$</td><td>⚠ Đổi ms ra giây trước khi dùng; mạch kín nên có dòng cảm ứng</td></tr><tr><td>\\\"a) Tính độ lớn suất điện động cảm ứng và cường độ dòng điện\\\"</td><td>Cần $|e_c|$ và $i$</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) trong thời gian chỉ bằng một nửa\\\"</td><td>$\\Delta t'=\\Delta t/2$; $\\Delta\\Phi$ như cũ</td><td>So sánh với câu a</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>cảm ứng từ đổi đều trong Δt</b> → nghĩ tới <b>|e_c| = |ΔΦ|/Δt</b>, rồi i = |e_c|/R.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -378,15 +669,115 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Khung vuông cạnh $6{,}0\\ \\text{cm}$, $R=0{,}30\\ \\Omega$, mặt khung vuông góc đường sức",
+     "$B$ giảm đều $0{,}50\\ \\text{T}$ → $0{,}20\\ \\text{T}$ trong $15\\ \\text{ms}$",
+     "Câu b: thời gian chỉ bằng một nửa"
+    ],
+    "tim": [
+     "a) $|e_c|$ và $I$",
+     "b) $I$ khi thời gian giảm một nửa"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "vao",
+     "nhan": "B"
+    },
+    "hinh": [
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        6,
+        2.6
+       ],
+       [
+        11.4,
+        2.6
+       ],
+       [
+        11.4,
+        8
+       ],
+       [
+        6,
+        8
+       ]
+      ],
+      "kin": true,
+      "mau": "chu",
+      "mui": 0
+     },
+     {
+      "loai": "chu",
+      "x": 8.7,
+      "y": 1.2,
+      "text": "a = 6,0 cm",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 12.1,
+      "y": 5.0,
+      "text": "R = 0,30 Ω",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 10.8,
+      "y": 9.5,
+      "text": "B: 0,50 T → 0,20 T trong 15 ms",
+      "a": "middle",
+      "mau": "b"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "S = a² = 0,060² = 3,6·10⁻³ m²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|ΔΦ| = |B_2 − B_1|·S ≈ 1,08 mWb"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e_c| = 1,08 mWb : 0,015 s = 72 mV"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "i = |e_c| : R = 0,072 : 0,30 = 0,24 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Δt còn một nửa ⇒ i gấp đôi: 0,48 A"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Khó · Cuộn N vòng, quay khung đổi góc α",
    "topic": "Định luật Faraday và định luật Lenz",
-   "problem_html": "<p>Một cuộn dây dẹt gồm $100$ vòng, diện tích mỗi vòng $50\\ \\text{cm}^2$, điện trở của cả cuộn $4{,}0\\ \\Omega$, đặt trong từ trường đều $B=0{,}40\\ \\text{T}$. Ban đầu mặt cuộn dây vuông góc với đường sức từ. Quay đều cuộn dây quanh trục nằm trong mặt phẳng cuộn dây và vuông góc với đường sức từ, trong $0{,}050\\ \\text{s}$, tới khi mặt cuộn dây hợp với đường sức từ góc $30^\\circ$.</p><ol type=\"a\"><li>Tính suất điện động cảm ứng trung bình và cường độ dòng điện trung bình trong cuộn dây.</li><li>Trong lúc quay, từ trường do dòng cảm ứng sinh ra cùng chiều hay ngược chiều với từ trường ngoài?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-0\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Cuộn dây dẹt quay trong từ trường đều tới vị trí mặt cuộn dây hợp với đường sức góc 30 độ\"><line x1=\"30\" y1=\"40\" x2=\"392\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,34.5 L392.0,40.0 L382.5,45.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"80\" x2=\"392\" y2=\"80\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,74.5 L392.0,80.0 L382.5,85.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"144\" x2=\"392\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,138.5 L392.0,144.0 L382.5,149.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"184\" x2=\"392\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,178.5 L392.0,184.0 L382.5,189.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"22\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><line x1=\"153.2\" y1=\"139.0\" x2=\"246.8\" y2=\"85.0\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"200.0\" y1=\"112.0\" x2=\"278.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"1\"/><path d=\"M262.0,112.0 A62,62 0 0 0 253.7,81.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.9\"/><text x=\"266\" y=\"103\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><g><animateTransform attributeName=\"transform\" type=\"rotate\" values=\"0 200 112;60.0 200 112\" dur=\"5.00s\" begin=\"indefinite\" fill=\"freeze\"/><ellipse cx=\"195\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><ellipse cx=\"200\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><ellipse cx=\"205\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><line x1=\"200\" y1=\"112\" x2=\"246\" y2=\"112\" stroke=\"#34d399\" stroke-width=\"2.4\"/><path d=\"M237.2,106.9 L246.0,112.0 L237.2,117.1\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/></g><circle cx=\"200.0\" cy=\"112.0\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N = 100 vòng · B = 0,40 T</text><text x=\"30\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">xanh lá: pháp tuyến n · chấm ở tâm: trục quay</text><text x=\"318\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?   i = ?</tspan></text></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: cuộn dây quay đều trong 5 s thay cho 0,050 s (chậm 100 lần) từ vị trí mặt cuộn dây vuông góc đường sức tới vị trí đề cho (nét đứt xám). Cuộn dẹt 100 vòng vẽ thu gọn thành 3 vòng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure>",
+   "problem_html": "<p>Một cuộn dây dẹt gồm $100$ vòng, diện tích mỗi vòng $50\\ \\text{cm}^2$, điện trở của cả cuộn $4{,}0\\ \\Omega$, đặt trong từ trường đều $B=0{,}40\\ \\text{T}$. Ban đầu mặt cuộn dây vuông góc với đường sức từ. Quay đều cuộn dây quanh trục nằm trong mặt phẳng cuộn dây và vuông góc với đường sức từ, trong $0{,}050\\ \\text{s}$, tới khi mặt cuộn dây hợp với đường sức từ góc $30^\\circ$.</p><ol type=\"a\"><li>Tính suất điện động cảm ứng trung bình và cường độ dòng điện trung bình trong cuộn dây.</li><li>Trong lúc quay, từ trường do dòng cảm ứng sinh ra cùng chiều hay ngược chiều với từ trường ngoài?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Từ thông một vòng:</strong> $\\Phi=BS\\cos\\alpha$, $\\alpha$ là góc của pháp tuyến.</li><li><strong>Faraday cho cuộn $N$ vòng:</strong> $|e_c|=N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$ với $\\Phi$ qua một vòng; $i=\\dfrac{|e_c|}{R}$.</li><li><strong>Lenz:</strong> từ thông giảm: $\\vec B_c$ cùng chiều $\\vec B$ ngoài; tăng: ngược chiều.</li><li>⚠ <strong>Điều kiện:</strong> $\\Delta\\Phi$ tính cho một vòng; $S$ ra m²; $\\alpha$ là góc của pháp tuyến.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc α lúc sau</span></p><p>Ban đầu mặt cuộn vuông góc đường sức nên pháp tuyến song song $\\vec B$: $\\alpha_1=0^\\circ$. Lúc sau mặt hợp đường sức $30^\\circ$ nên:</p>$$\\alpha_2=90^\\circ-30^\\circ$$<div class=\"bt-ans\">$$\\alpha_2=60^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ biến thiên từ thông qua một vòng</span></p>$$S=50\\ \\text{cm}^2=5{,}0\\cdot10^{-3}\\ \\text{m}^2$$$$\\Phi_1=BS\\cos0^\\circ=0{,}40\\cdot5{,}0\\cdot10^{-3}=2{,}0\\cdot10^{-3}\\ \\text{Wb}$$$$\\Phi_2=BS\\cos60^\\circ=1{,}0\\cdot10^{-3}\\ \\text{Wb}$$<div class=\"bt-ans\">$$|\\Delta\\Phi|=|\\Phi_2-\\Phi_1|=1{,}0\\cdot10^{-3}\\ \\text{Wb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Suất điện động của cả cuộn (câu a)</span></p><p>Cuộn $N=100$ vòng:</p>$$|e_c|=N\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|=100\\cdot\\dfrac{1{,}0\\cdot10^{-3}}{0{,}050}$$<div class=\"bt-ans\">$$|e_c|=2{,}0\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cường độ dòng điện (câu a)</span></p>$$i=\\dfrac{|e_c|}{R}=\\dfrac{2{,}0}{4{,}0}$$<div class=\"bt-ans\">$$i=0{,}50\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Chiều từ trường cảm ứng (câu b)</span></p><p>$\\Phi$ giảm từ $2{,}0\\ \\text{mWb}$ xuống $1{,}0\\ \\text{mWb}$ nên theo Lenz, dòng cảm ứng bù lại phần giảm:</p><div class=\"bt-ans\"><p>$\\vec B_c$ <strong>cùng chiều</strong> $\\vec B$ ngoài.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Một vòng cho $\\dfrac{1{,}0\\cdot10^{-3}}{0{,}050}=0{,}020\\ \\text{V}$; nhân $100$ vòng ra $2{,}0\\ \\text{V}$, khớp.</p><p>Nếu thế nhầm $\\alpha_2=30^\\circ$ thì $\\Delta\\Phi$ chỉ còn khoảng $0{,}27\\ \\text{mWb}$ và $e_c$ nhỏ hơn nhiều so với đúng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $|e_c|=2{,}0\\ \\text{V}$; $i=0{,}50\\ \\text{A}$</p><p>b) $\\vec B_c$ cùng chiều $\\vec B$ ngoài</p></div><p class=\"bt-note\">Nhận dạng: đề có <strong>cuộn N vòng quay, đổi góc</strong> → $\\Delta\\Phi=BS(\\cos\\alpha_2-\\cos\\alpha_1)$ cho một vòng, nhân $N$ ở suất điện động.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d4-2\"><svg viewBox=\"0 0 420 224\" role=\"img\" aria-label=\"Cuộn dây ở vị trí cuối, góc 30 độ của mặt cuộn dây và góc alpha chưa biết giữa pháp tuyến và cảm ứng từ\"><line x1=\"30\" y1=\"40\" x2=\"392\" y2=\"40\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,34.5 L392.0,40.0 L382.5,45.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"80\" x2=\"392\" y2=\"80\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,74.5 L392.0,80.0 L382.5,85.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"144\" x2=\"392\" y2=\"144\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,138.5 L392.0,144.0 L382.5,149.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"30\" y1=\"184\" x2=\"392\" y2=\"184\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-dasharray=\"6 4\"/><path d=\"M382.5,178.5 L392.0,184.0 L382.5,189.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.5\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"396\" y=\"22\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"end\">B</text><line x1=\"200.0\" y1=\"112.0\" x2=\"278.0\" y2=\"112.0\" stroke=\"#94a3b8\" stroke-width=\"1.3\" stroke-dasharray=\"4 4\" opacity=\"1\"/><path d=\"M262.0,112.0 A62,62 0 0 0 253.7,81.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"1.9\"/><text x=\"266\" y=\"103\" fill=\"#f87171\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">30°</text><g transform=\"rotate(60.0 200 112)\"><ellipse cx=\"195\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><ellipse cx=\"200\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/><ellipse cx=\"205\" cy=\"112\" rx=\"5\" ry=\"44\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.4\"/></g><line x1=\"200\" y1=\"112\" x2=\"223.0\" y2=\"151.83716857408416\" stroke=\"#34d399\" stroke-width=\"2.4\"/><path d=\"M223.0,141.7 L223.0,151.8 L214.2,146.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.4\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"200.0\" cy=\"112.0\" r=\"3\" fill=\"currentColor\" stroke=\"currentColor\" stroke-width=\"1.5\"/><path d=\"M213.0,134.5 A26,26 0 0 0 226.0,112.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.9\"/><text x=\"232\" y=\"134\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">α = ?</text><text x=\"229.0\" y=\"165.8\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">n</text><text x=\"30\" y=\"22\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">N = 100 vòng · B = 0,40 T</text><text x=\"30\" y=\"214\" fill=\"currentColor\" font-size=\"11\" font-weight=\"400\" text-anchor=\"start\">30°: góc của MẶT khung (đề cho) · α: góc của pháp tuyến</text><text x=\"318\" y=\"168\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">e<tspan dy=\"4\" font-size=\"10\">c</tspan><tspan dy=\"-4\"> = ?   i = ?</tspan></text></svg><figcaption>Dữ kiện: cuộn dây ở vị trí cuối; 30° là góc của MẶT cuộn dây, α cần tìm là góc của pháp tuyến. Cuộn dẹt 100 vòng vẽ thu gọn. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"cuộn dây dẹt gồm $100$ vòng, diện tích mỗi vòng $50\\ \\text{cm}^2$, điện trở của cả cuộn $4{,}0\\ \\Omega$\\\"</td><td>$N=100$; $S=50\\ \\text{cm}^2$ (một vòng); $R=4{,}0\\ \\Omega$</td><td>⚠ $S$ và $\\Phi$ là của MỘT vòng; cả cuộn có $N$ vòng nối tiếp; đổi cm² sang m²</td></tr><tr><td>\\\"từ trường đều $B=0{,}40\\ \\text{T}$\\\"</td><td>$B=0{,}40\\ \\text{T}$</td><td>Từ trường đều</td></tr><tr><td>\\\"Ban đầu mặt cuộn dây vuông góc với đường sức từ\\\"</td><td>Trạng thái 1: mặt vuông góc đường sức</td><td>Xác định góc $\\alpha_1$ của pháp tuyến</td></tr><tr><td>\\\"quay đều … trong $0{,}050\\ \\text{s}$, tới khi mặt cuộn dây hợp với đường sức từ góc $30^\\circ$\\\"</td><td>$\\Delta t=0{,}050\\ \\text{s}$; trạng thái 2: mặt hợp đường sức $30^\\circ$</td><td>⚠ $30^\\circ$ là góc của MẶT cuộn dây, không phải của pháp tuyến; $B$, $S$ không đổi, chỉ $\\alpha$ đổi</td></tr><tr><td>\\\"a) Tính suất điện động cảm ứng trung bình và cường độ dòng điện trung bình\\\"</td><td>Cần $e_c$ và $i$</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) từ trường do dòng cảm ứng sinh ra cùng chiều hay ngược chiều với từ trường ngoài\\\"</td><td>Cần so sánh chiều $\\vec B_c$ với $\\vec B$</td><td>Xét từ thông tăng hay giảm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"cuộn dây dẹt gồm $100$ vòng, diện tích mỗi vòng $50\\ \\text{cm}^2$, điện trở của cả cuộn $4{,}0\\ \\Omega$\\\"</td><td>$N=100$; $S=50\\ \\text{cm}^2$ (một vòng); $R=4{,}0\\ \\Omega$</td><td>⚠ $S$ và $\\Phi$ là của MỘT vòng; cả cuộn có $N$ vòng nối tiếp; đổi cm² sang m²</td></tr><tr><td>\\\"từ trường đều $B=0{,}40\\ \\text{T}$\\\"</td><td>$B=0{,}40\\ \\text{T}$</td><td>Từ trường đều</td></tr><tr><td>\\\"Ban đầu mặt cuộn dây vuông góc với đường sức từ\\\"</td><td>Trạng thái 1: mặt vuông góc đường sức</td><td>Xác định góc $\\alpha_1$ của pháp tuyến</td></tr><tr><td>\\\"quay đều … trong $0{,}050\\ \\text{s}$, tới khi mặt cuộn dây hợp với đường sức từ góc $30^\\circ$\\\"</td><td>$\\Delta t=0{,}050\\ \\text{s}$; trạng thái 2: mặt hợp đường sức $30^\\circ$</td><td>⚠ $30^\\circ$ là góc của MẶT cuộn dây, không phải của pháp tuyến; $B$, $S$ không đổi, chỉ $\\alpha$ đổi</td></tr><tr><td>\\\"a) Tính suất điện động cảm ứng trung bình và cường độ dòng điện trung bình\\\"</td><td>Cần $e_c$ và $i$</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) từ trường do dòng cảm ứng sinh ra cùng chiều hay ngược chiều với từ trường ngoài\\\"</td><td>Cần so sánh chiều $\\vec B_c$ với $\\vec B$</td><td>Xét từ thông tăng hay giảm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>cuộn N vòng quay, đổi góc</b> → nghĩ tới <b>ΔΦ = BS(cos α₂ − cos α₁)</b> một vòng, nhân N.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -514,15 +905,202 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "Cuộn $N=100$ vòng, $S=50\\ \\text{cm}^2$ mỗi vòng, $R=4{,}0\\ \\Omega$, $B=0{,}40\\ \\text{T}$",
+     "Ban đầu mặt cuộn vuông góc $\\vec B$; quay đều trong $0{,}050\\ \\text{s}$ tới khi mặt hợp $\\vec B$ góc $30^\\circ$"
+    ],
+    "tim": [
+     "a) $|e_c|$ trung bình và $I$ trung bình",
+     "b) $\\vec B_c$ cùng hay ngược chiều $\\vec B$ ngoài"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "nhan": "B",
+     "hang": [
+      1,
+      2.2,
+      8.8,
+      10
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       12,
+       5.5
+      ],
+      "den": [
+       16.8,
+       5.5
+      ],
+      "mau": "b",
+      "dut": true
+     },
+     {
+      "loai": "thanh",
+      "x": 12,
+      "y": 5.5,
+      "goc": 90,
+      "dai": 6,
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "goc",
+      "x": 12,
+      "y": 5.5,
+      "tu": 0,
+      "den": 30,
+      "nhan": "30°"
+     },
+     {
+      "loai": "thanh",
+      "x": 12,
+      "y": 5.5,
+      "goc": 30,
+      "dai": 6.4,
+      "mau": "chu"
+     },
+     {
+      "loai": "diem",
+      "x": 12,
+      "y": 5.5
+     },
+     {
+      "loai": "chu",
+      "x": 11.6,
+      "y": 8.1,
+      "text": "lúc đầu",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 15.1,
+      "y": 7.3,
+      "text": "lúc sau",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 4.0,
+      "y": 5.6,
+      "text": "N = 100 vòng",
+      "a": "middle"
+     }
+    ],
+    "dong": [
+     {
+      "nut": "▶ Xem cuộn dây quay từ lúc đầu tới lúc sau",
+      "giay": 3,
+      "doi": [
+       {
+        "p": "hinh.3.goc",
+        "tu": 90,
+        "den": 30
+       },
+       {
+        "p": "hinh.2.den",
+        "tu": 90,
+        "den": 30
+       },
+       {
+        "p": "hinh.2.nhan",
+        "cac": [
+         "",
+         "",
+         "",
+         "30°"
+        ]
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 5.5,
+       "goc": -60,
+       "dai": 3.6,
+       "nhan": "n",
+       "mau": "chu"
+      },
+      {
+       "loai": "goc",
+       "x": 12,
+       "y": 5.5,
+       "tu": -60,
+       "den": 0,
+       "nhan": "α_2"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mặt hợp B 30° ⇒ α_2 = 60°"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 5.5,
+       "goc": 0,
+       "dai": 3.4,
+       "nhan": "n_1",
+       "mau": "chu",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "|ΔΦ| = BS(1 − cos 60°) = 1,0 mWb"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 100·1,0·10⁻³ : 0,050 = 2,0 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "i = |e| : R = 2,0 : 4,0 = 0,50 A"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 2.2,
+       "y": 3.3,
+       "goc": 0,
+       "dai": 3.2,
+       "nhan": "B_c",
+       "mau": "b"
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ giảm ⇒ B_c cùng chiều B"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Khó · Đọc đồ thị từ thông theo thời gian",
    "topic": "Định luật Faraday và định luật Lenz",
-   "problem_html": "<p>Một vòng dây dẫn kín có điện trở $0{,}50\\ \\Omega$ đặt trong từ trường vuông góc với mặt phẳng vòng dây, hướng vào trong tờ giấy (⊗); chọn pháp tuyến cùng chiều từ trường nên từ thông luôn dương. Từ thông qua vòng dây biến thiên theo thời gian như đồ thị: tăng đều từ $0$ đến $20\\ \\text{mWb}$ trong khoảng $0$ – $0{,}10\\ \\text{s}$ (đoạn 1); giữ nguyên $20\\ \\text{mWb}$ trong khoảng $0{,}10$ – $0{,}30\\ \\text{s}$ (đoạn 2); giảm đều về $0$ trong khoảng $0{,}30$ – $0{,}35\\ \\text{s}$ (đoạn 3).</p><ol type=\"a\"><li>Trong những đoạn nào có dòng điện cảm ứng?</li><li>Tính cường độ dòng điện cảm ứng ở mỗi đoạn có dòng điện.</li><li>Nhìn từ phía người đọc vào tờ giấy, dòng điện cảm ứng ở mỗi đoạn đó chạy cùng chiều hay ngược chiều kim đồng hồ?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-0\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Điểm biểu diễn từ thông chạy dọc đồ thị: tăng đều, giữ nguyên, rồi giảm đều về không\"><line x1=\"56\" y1=\"188\" x2=\"400\" y2=\"188\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,183.6 L400.0,188.0 L392.4,192.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56\" y1=\"188\" x2=\"56\" y2=\"44\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,51.6 L56.0,44.0 L60.4,51.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"206\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><text x=\"62\" y=\"44\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Φ (mWb)</text><text x=\"48\" y=\"202\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1\" points=\"56.0,188.0 136.0,58.0 296.0,58.0 336.0,188.0\"/><line x1=\"56.0\" y1=\"58.0\" x2=\"136.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"136.0\" y1=\"58.0\" x2=\"136.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"136.0\" y1=\"184.0\" x2=\"136.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"136.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,10</text><line x1=\"296.0\" y1=\"58.0\" x2=\"296.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"296.0\" y1=\"184.0\" x2=\"296.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"296.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,30</text><line x1=\"336.0\" y1=\"184.0\" x2=\"336.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"336.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,35</text><line x1=\"52.0\" y1=\"58.0\" x2=\"60.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"48\" y=\"62.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">20</text><text x=\"92.0\" y=\"111.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">(1)</text><text x=\"216.0\" y=\"50.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">(2)</text><text x=\"342.0\" y=\"123.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(3)</text><text x=\"160\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = 0,50 Ω</text><text x=\"160\" y=\"120\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">B ⊗ vào giấy,</text><text x=\"160\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">n cùng chiều B</text><circle cx=\"56.0\" cy=\"188.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.5\"><animate attributeName=\"cx\" values=\"56.0;64.0;72.0;80.0;88.0;96.0;104.0;112.0;120.0;128.0;136.0;144.0;152.0;160.0;168.0;176.0;184.0;192.0;200.0;208.0;216.0;224.0;232.0;240.0;248.0;256.0;264.0;272.0;280.0;288.0;296.0;304.0;312.0;320.0;328.0;336.0\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"188.0;175.0;162.0;149.0;136.0;123.0;110.0;97.0;84.0;71.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;58.0;84.0;110.0;136.0;162.0;188.0\" dur=\"7.00s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mô phỏng: điểm chạy dọc đồ thị Φ–t trong 7 s thay cho 0,35 s (chậm 20 lần). Hình vẽ theo tỉ lệ. </figcaption></figure>",
+   "problem_html": "<p>Một vòng dây dẫn kín có điện trở $0{,}50\\ \\Omega$ đặt trong từ trường vuông góc với mặt phẳng vòng dây, hướng vào trong tờ giấy (⊗); chọn pháp tuyến cùng chiều từ trường nên từ thông luôn dương. Từ thông qua vòng dây biến thiên theo thời gian như đồ thị: tăng đều từ $0$ đến $20\\ \\text{mWb}$ trong khoảng $0$ – $0{,}10\\ \\text{s}$ (đoạn 1); giữ nguyên $20\\ \\text{mWb}$ trong khoảng $0{,}10$ – $0{,}30\\ \\text{s}$ (đoạn 2); giảm đều về $0$ trong khoảng $0{,}30$ – $0{,}35\\ \\text{s}$ (đoạn 3).</p><ol type=\"a\"><li>Trong những đoạn nào có dòng điện cảm ứng?</li><li>Tính cường độ dòng điện cảm ứng ở mỗi đoạn có dòng điện.</li><li>Nhìn từ phía người đọc vào tờ giấy, dòng điện cảm ứng ở mỗi đoạn đó chạy cùng chiều hay ngược chiều kim đồng hồ?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trên đồ thị $\\Phi$–$t$, độ dốc đoạn thẳng là tốc độ biến thiên từ thông.</li><li><strong>Faraday:</strong> $|e_c|=\\left|\\dfrac{\\Delta\\Phi}{\\Delta t}\\right|$, $i=\\dfrac{|e_c|}{R}$.</li><li><strong>Lenz:</strong> $\\Phi$ tăng: $\\vec B_c$ ngược chiều $\\vec B$ ngoài; $\\Phi$ giảm: cùng chiều; rồi nắm tay phải.</li><li>⚠ <strong>Điều kiện:</strong> đoạn nằm ngang ($\\Phi$ không đổi) không có dòng dù $\\Phi$ lớn; đổi mWb ra Wb.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đoạn có dòng cảm ứng (câu a)</span></p><p>Đoạn (1): $\\Phi$ tăng; đoạn (3): $\\Phi$ giảm. Mạch kín, từ thông biến thiên nên có dòng.</p><p>Đoạn (2): $\\Phi$ giữ $20\\ \\text{mWb}$, $\\Delta\\Phi=0$ nên $e_c=0$, không có dòng dù $\\Phi$ đang lớn nhất.</p><div class=\"bt-ans\"><p>Có dòng ở <strong>đoạn (1) và đoạn (3)</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đoạn (1) (câu b)</span></p>$$|e_1|=\\dfrac{\\Delta\\Phi}{\\Delta t}=\\dfrac{20\\cdot10^{-3}}{0{,}10}=0{,}20\\ \\text{V}$$$$i_1=\\dfrac{|e_1|}{R}=\\dfrac{0{,}20}{0{,}50}$$<div class=\"bt-ans\">$$i_1=0{,}40\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đoạn (3) (câu b)</span></p>$$|e_3|=\\dfrac{20\\cdot10^{-3}}{0{,}35-0{,}30}=\\dfrac{20\\cdot10^{-3}}{0{,}050}=0{,}40\\ \\text{V}$$$$i_3=\\dfrac{0{,}40}{0{,}50}$$<div class=\"bt-ans\">$$i_3=0{,}80\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều dòng điện (câu c)</span></p><p>Đoạn (1): $\\Phi$ tăng, $\\vec B$ ngoài hướng vào giấy (⊗) nên $\\vec B_c$ hướng ra (⊙): dòng ngược chiều kim đồng hồ.</p><p>Đoạn (3): $\\Phi$ giảm nên $\\vec B_c$ cùng chiều $\\vec B$ ngoài, hướng vào (⊗): dòng cùng chiều kim đồng hồ.</p><div class=\"bt-ans\"><p>Hai đoạn có dòng <strong>ngược chiều nhau</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cùng $\\Delta\\Phi=20\\ \\text{mWb}$ nhưng $\\Delta t$ đoạn (3) nhỏ hơn đoạn (1) $2$ lần nên $i_3=2i_1=2\\cdot0{,}40=0{,}80\\ \\text{A}$, khớp.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Đoạn (1) và đoạn (3)</p><p>b) $i_1=0{,}40\\ \\text{A}$; $i_3=0{,}80\\ \\text{A}$</p><p>c) Ngược chiều nhau: đoạn (1) ngược chiều kim đồng hồ, đoạn (3) cùng chiều kim đồng hồ</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đồ thị Φ–t nhiều đoạn</strong> → độ dốc từng đoạn là $e_c$; độ dốc từng đoạn là $e_c$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d5-2\"><svg viewBox=\"0 0 420 214\" role=\"img\" aria-label=\"Dữ kiện: đồ thị từ thông theo thời gian gồm ba đoạn (1), (2), (3)\"><line x1=\"56\" y1=\"188\" x2=\"400\" y2=\"188\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M392.4,183.6 L400.0,188.0 L392.4,192.4\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"56\" y1=\"188\" x2=\"56\" y2=\"44\" stroke=\"#34d399\" stroke-width=\"2\"/><path d=\"M51.6,51.6 L56.0,44.0 L60.4,51.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"398\" y=\"206\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"end\">t (s)</text><text x=\"62\" y=\"44\" fill=\"#34d399\" font-size=\"12\" font-weight=\"700\" text-anchor=\"start\">Φ (mWb)</text><text x=\"48\" y=\"202\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">O</text><polyline fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" opacity=\"1\" points=\"56.0,188.0 136.0,58.0 296.0,58.0 336.0,188.0\"/><line x1=\"56.0\" y1=\"58.0\" x2=\"136.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"136.0\" y1=\"58.0\" x2=\"136.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"136.0\" y1=\"184.0\" x2=\"136.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"136.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,10</text><line x1=\"296.0\" y1=\"58.0\" x2=\"296.0\" y2=\"188.0\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-dasharray=\"4 4\" opacity=\"0.6\"/><line x1=\"296.0\" y1=\"184.0\" x2=\"296.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"296.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,30</text><line x1=\"336.0\" y1=\"184.0\" x2=\"336.0\" y2=\"192.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"336.0\" y=\"206\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"middle\">0,35</text><line x1=\"52.0\" y1=\"58.0\" x2=\"60.0\" y2=\"58.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"48\" y=\"62.0\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"end\">20</text><text x=\"92.0\" y=\"111.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"end\">(1)</text><text x=\"216.0\" y=\"50.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">(2)</text><text x=\"342.0\" y=\"123.0\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">(3)</text><text x=\"160\" y=\"100\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R = 0,50 Ω</text><text x=\"160\" y=\"120\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">B ⊗ vào giấy,</text><text x=\"160\" y=\"136\" fill=\"currentColor\" font-size=\"12\" font-weight=\"400\" text-anchor=\"start\">n cùng chiều B</text><text x=\"160\" y=\"160\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">i = ?</text></svg><figcaption>Dữ kiện: đồ thị Φ–t của vòng dây, chia thành ba đoạn (1), (2), (3). Hình vẽ theo tỉ lệ. </figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"vòng dây dẫn kín có điện trở $0{,}50\\ \\Omega$\\\"</td><td>$R=0{,}50\\ \\Omega$; mạch kín</td><td>Dòng cảm ứng chỉ có khi mạch kín và từ thông biến thiên</td></tr><tr><td>\\\"hướng vào trong tờ giấy (⊗); chọn pháp tuyến cùng chiều từ trường\\\"</td><td>$\\vec B$ vào giấy; $\\Phi\\ge0$</td><td>⚠ Chiều quay kim đồng hồ xét khi nhìn từ phía người đọc</td></tr><tr><td>\\\"đoạn 1: tăng đều từ $0$ đến $20\\ \\text{mWb}$ trong $0$ – $0{,}10\\ \\text{s}$\\\"</td><td>$\\Delta\\Phi_1=20\\ \\text{mWb}$; $\\Delta t_1=0{,}10\\ \\text{s}$</td><td>Đổi mWb ra Wb</td></tr><tr><td>\\\"đoạn 2: giữ nguyên $20\\ \\text{mWb}$\\\"</td><td>$\\Phi$ không đổi</td><td>Cho biết $\\Phi$ có biến thiên không</td></tr><tr><td>\\\"đoạn 3: giảm đều về $0$ trong $0{,}30$ – $0{,}35\\ \\text{s}$\\\"</td><td>$\\Delta\\Phi_3=20\\ \\text{mWb}$; $\\Delta t_3=0{,}05\\ \\text{s}$</td><td>Độ biến thiên từ thông trong đoạn này</td></tr><tr><td>\\\"a) Trong những đoạn nào có dòng điện cảm ứng?\\\"</td><td>Cần nhận ra đoạn có dòng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) cường độ dòng điện ở mỗi đoạn\\\"</td><td>Cần $i$ của từng đoạn có dòng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"c) cùng chiều hay ngược chiều kim đồng hồ\\\"</td><td>Cần chiều dòng (nhìn từ người đọc)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\\\"vòng dây dẫn kín có điện trở $0{,}50\\ \\Omega$\\\"</td><td>$R=0{,}50\\ \\Omega$; mạch kín</td><td>Dòng cảm ứng chỉ có khi mạch kín và từ thông biến thiên</td></tr><tr><td>\\\"hướng vào trong tờ giấy (⊗); chọn pháp tuyến cùng chiều từ trường\\\"</td><td>$\\vec B$ vào giấy; $\\Phi\\ge0$</td><td>⚠ Chiều quay kim đồng hồ xét khi nhìn từ phía người đọc</td></tr><tr><td>\\\"đoạn 1: tăng đều từ $0$ đến $20\\ \\text{mWb}$ trong $0$ – $0{,}10\\ \\text{s}$\\\"</td><td>$\\Delta\\Phi_1=20\\ \\text{mWb}$; $\\Delta t_1=0{,}10\\ \\text{s}$</td><td>Đổi mWb ra Wb</td></tr><tr><td>\\\"đoạn 2: giữ nguyên $20\\ \\text{mWb}$\\\"</td><td>$\\Phi$ không đổi</td><td>Cho biết $\\Phi$ có biến thiên không</td></tr><tr><td>\\\"đoạn 3: giảm đều về $0$ trong $0{,}30$ – $0{,}35\\ \\text{s}$\\\"</td><td>$\\Delta\\Phi_3=20\\ \\text{mWb}$; $\\Delta t_3=0{,}05\\ \\text{s}$</td><td>Độ biến thiên từ thông trong đoạn này</td></tr><tr><td>\\\"a) Trong những đoạn nào có dòng điện cảm ứng?\\\"</td><td>Cần nhận ra đoạn có dòng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"b) cường độ dòng điện ở mỗi đoạn\\\"</td><td>Cần $i$ của từng đoạn có dòng</td><td>Đại lượng cần tìm</td></tr><tr><td>\\\"c) cùng chiều hay ngược chiều kim đồng hồ\\\"</td><td>Cần chiều dòng (nhìn từ người đọc)</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>đồ thị Φ–t nhiều đoạn</b> → nghĩ tới <b>độ dốc từng đoạn là e_c</b>.",
    "cap_do": 4,
    "fading": "giau_het",
@@ -639,7 +1217,112 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "x": {
+     "min": 0,
+     "max": 0.4,
+     "ten": "t (s)",
+     "vach": [
+      0,
+      0.1,
+      0.3,
+      0.35
+     ],
+     "luoi": 0.05
+    },
+    "y": {
+     "min": 0,
+     "max": 24,
+     "ten": "Φ (mWb)",
+     "vach": [
+      0,
+      20
+     ],
+     "luoi": 5
+    },
+    "duong": [
+     {
+      "diem": [
+       [
+        0,
+        0
+       ],
+       [
+        0.1,
+        20
+       ],
+       [
+        0.3,
+        20
+       ],
+       [
+        0.35,
+        0
+       ]
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doan",
+       "tu": 0,
+       "den": 0.1
+      },
+      {
+       "loai": "doan",
+       "tu": 0.3,
+       "den": 0.35
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ đổi ở (1), (3); (2) giữ nguyên ⇒ không có dòng"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 20 mWb : 0,10 s = 0,20 V ⇒ I = 0,20 : 0,50 = 0,4 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|e| = 20 mWb : 0,05 s = 0,40 V ⇒ I = 0,40 : 0,50 = 0,8 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(1) Φ tăng: ngược chiều kim đồng hồ · (3) Φ giảm: cùng chiều"
+      }
+     ],
+     []
+    ],
+    "de": true,
+    "diem": [
+     {
+      "x": 0.05,
+      "y": 10,
+      "ten": "(1)",
+      "vi": "tl"
+     },
+     {
+      "x": 0.2,
+      "y": 20,
+      "ten": "(2)",
+      "vi": "t"
+     },
+     {
+      "x": 0.325,
+      "y": 10,
+      "ten": "(3)",
+      "vi": "tr"
+     }
+    ]
+   }
   }
  ],
  "tu_luan": {

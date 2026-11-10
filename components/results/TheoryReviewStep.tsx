@@ -113,7 +113,7 @@ export default function TheoryReviewStep({
         const state = await startTheoryReview(need.id, {
           sections: total,
           quizTotal: quizGroupNames(loaded.bodyHtml).length,
-          estSeconds: estimateTheoryTime(loaded.bodyHtml).minutes * 60,
+          estSeconds: estimateTheoryTime(loaded.bodyHtml).paceMinutes * 60,
         });
         if (cancelled) return;
         if (!state.required) {

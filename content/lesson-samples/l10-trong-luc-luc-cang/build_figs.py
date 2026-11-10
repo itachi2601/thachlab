@@ -1,14 +1,18 @@
 """Sinh 4 hình SVG cho bài 'Trọng lực và lực căng' (lesson 62), thay mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Có lớp kiểm hình học: hộp nhãn không chồng nhau, không vượt viewBox; mũi tên đúng chiều vật lí; trọng tâm tính từ đa giác.
 Chạy: python3 build_figs.py   (sau đó: python3 build_bundle.py)"""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib, re, subprocess, sys
-from svg_lib import RED, BLUE, ORG, GRN, wrap
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # svg_lib của skill (đầu V 30°), không dùng bản cục bộ
 
 HERE = pathlib.Path(__file__).resolve().parent
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}
 
 
-def sub(base, s, size=11):
+def sub(base, s, size=14):
     return f'{base}<tspan baseline-shift="sub" font-size="{size}">{s}</tspan>'
 
 
@@ -28,14 +32,12 @@ class Canvas:
         self.body += f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{r}" fill="{c}"/>'
 
     def arr(self, tag, c, x1, y1, x2, y2, w=3, head=11, dash=""):
-        """Mũi tên có ĐỈNH đúng tại (x2,y2); marker cỡ cố định (userSpaceOnUse)."""
-        L = math.hypot(x2 - x1, y2 - y1)
-        ux, uy = (x2 - x1) / L, (y2 - y1) / L
-        ex, ey = x2 - ux * head, y2 - uy * head
-        self.markers.add((c, head))
+        """Mũi tên có ĐỈNH đúng tại (x2,y2): thân + đầu V 30° (chevron), không marker tam giác."""
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{ex:.1f}" y2="{ey:.1f}" stroke="{COL[c]}" stroke-width="{w}"{d} '
-                      f'marker-end="url(#{self.name}-{c}{head})"/>')
+        ww = min(w, 2.8)
+        L = max(6, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+        self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{ww}"{d}/>'
+                      + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], ww, L))
         self.arrows[tag] = (x1, y1, x2, y2)
 
     def text(self, x, y, s, c="currentColor", size=14, anchor="start", weight="700", italic=False):
@@ -47,17 +49,13 @@ class Canvas:
         self.labels.append((plain, x0, y - 0.78 * size, x0 + wdt, y + 0.22 * size, size))
 
     def defs(self):
-        out = "<defs>"
-        for c, hd in sorted(self.markers):
-            out += (f'<marker id="{self.name}-{c}{hd}" viewBox="0 0 10 10" refX="0" refY="5" markerWidth="{hd}" markerHeight="{hd}" '
-                    f'markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="{COL[c]}"/></marker>')
-        return out + "</defs>"
+        return ""
 
     def check(self):
         errs = []
         for i, a in enumerate(self.labels):
-            if a[5] < 13 and not a[0].isdigit():
-                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 13")
+            if a[5] < 14 and not a[0].isdigit():
+                errs.append(f"{self.name}: nhãn '{a[0]}' cỡ {a[5]} < 14")
             if a[1] < 2 or a[3] > self.w - 2 or a[2] < 0 or a[4] > self.h:
                 errs.append(f"{self.name}: nhãn '{a[0]}' vượt viewBox {a[1:5]}")
             for b in self.labels[i + 1:]:
@@ -76,10 +74,11 @@ ERR = []
 
 # ---------------- Hình 1: trọng lực hướng về tâm Trái Đất ở mọi nơi
 c = Canvas("f1", 400, 290)
-EX, EY, R = 200, 160, 82
+EX, EY, R = 200, 160, 92
 c.add(f'<circle cx="{EX}" cy="{EY}" r="{R}" fill="rgba(56,189,248,.12)" stroke="currentColor" stroke-width="2.2"/>')
 c.dot(EX, EY, 4)
-c.text(EX, EY + 22, "Tâm Trái Đất", size=13, anchor="middle", weight="600")
+c.text(EX + 12, EY + 24, "Tâm", size=14, weight="600")          # góc dưới-phải tâm: không có đường nét đứt nào đi qua
+c.text(EX + 12, EY + 42, "Trái Đất", size=14, weight="600")
 LP = 46
 for k, ang in enumerate((90, 18, 162, 232)):
     a = math.radians(ang)
@@ -95,9 +94,10 @@ for k, ang in enumerate((90, 18, 162, 232)):
         ERR.append("f1: mũi tên P không hướng về tâm")
     # nhãn P đặt bên cạnh mũi tên, lệch theo pháp tuyến
     nx, ny = -uy, ux
-    mx, my = (sx + tx) / 2, (sy + ty) / 2
+    dl = R - 24                                         # nhãn nằm hẳn trong đĩa, giữa thân mũi tên và đỉnh
+    mx, my = EX + dl * ux, EY + dl * uy
     c.text(mx + 16 * nx - 5, my + 16 * ny + 5, "P", RED, 16, "start", italic=True)
-c.text(16, 24, "Mọi nơi: P hướng về tâm Trái Đất", size=13, weight="600")
+c.text(16, 24, "Mọi nơi: P hướng về tâm Trái Đất", size=14, weight="600")
 fig1 = c.svg("Trái Đất và bốn vật ở bốn nơi, trọng lực của mỗi vật đều hướng về tâm Trái Đất",
              "Hình 1. Ở bất kì đâu, trọng lực <em>P</em> cũng có phương thẳng đứng tại chỗ đó và hướng về tâm Trái Đất (hình không theo tỉ lệ).")
 ERR += c.check()
@@ -145,7 +145,8 @@ for panel, (hole, hole2, ox) in enumerate(((HA, None, 76), (HB, HA, 226))):
     c.dot(h[0], h[1], 3.5)
     yb = 205
     c.line(h[0], h[1], h[0], yb, BLUE, 2)
-    c.add(f'<path d="M{h[0]-6:.1f},{yb:.1f} L{h[0]+6:.1f},{yb:.1f} L{h[0]:.1f},{yb+14:.1f} Z" fill="{BLUE}"/>')
+    # quả dọi: khối tròn đặc (không vẽ tam giác để khỏi lẫn với đầu mũi tên vectơ)
+    c.add(f'<circle cx="{h[0]:.1f}" cy="{yb+7:.1f}" r="7" fill="{BLUE}" stroke="currentColor" stroke-width="1.2"/>')
     c.dot(g[0], g[1], 4.5, RED)
     lab = "A" if hole is HA else "B"
     c.text(h[0] + 9, h[1] + 15, lab, size=14, italic=True)
@@ -156,61 +157,38 @@ for panel, (hole, hole2, ox) in enumerate(((HA, None, 76), (HB, HA, 226))):
         e2 = (a2[0] + vx / Lv * (Lv + 30), a2[1] + vy / Lv * (Lv + 30))
         c.line(a2[0], a2[1], e2[0], e2[1], BLUE, 1.6, "5 4", .8)
         c.dot(a2[0], a2[1], 3)
-        c.text(a2[0] - 8, a2[1] + 4, "A", size=14, anchor="end", italic=True)
+        c.text(a2[0] - 13, a2[1] + 6, "A", size=14, anchor="end", italic=True)
         # kiểm: G nằm trên đường AG (đã kẻ lần trước)
         cross = (g[0] - a2[0]) * (e2[1] - a2[1]) - (g[1] - a2[1]) * (e2[0] - a2[0])
         if abs(cross) > 1:
             ERR.append("f2: G không nằm trên đường kẻ lần 1")
     gx_lab = g[0] + 9 if panel == 0 else g[0] + 10
     c.text(gx_lab, g[1] + 18, "G", RED, 15, italic=True)
-    c.text(ox, 240, "(a) treo ở A" if panel == 0 else "(b) treo ở B", size=13, anchor="middle", weight="600")
+    c.text(ox, 240, "(a) treo ở A" if panel == 0 else "(b) treo ở B", size=14, anchor="middle", weight="600")
 # (c) đĩa CD: G ở tâm lỗ
-vx0, vy0, Ro, Ri = 372, 118, 40, 20
+vx0, vy0, Ro, Ri = 372, 118, 44, 26
 c.line(vx0 - 14, 30, vx0 + 14, 30, "currentColor", 3)
 c.line(vx0, 30, vx0, vy0 - Ro, "currentColor", 1.8)
 c.add(f'<path d="M{vx0-Ro},{vy0} a{Ro},{Ro} 0 1,0 {2*Ro},0 a{Ro},{Ro} 0 1,0 {-2*Ro},0 Z M{vx0-Ri},{vy0} a{Ri},{Ri} 0 1,1 {2*Ri},0 a{Ri},{Ri} 0 1,1 {-2*Ri},0 Z" '
       f'fill="rgba(148,163,184,.35)" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>')
 c.line(vx0, vy0 - Ro, vx0, 205, BLUE, 1.6, "5 4", .8)
 c.dot(vx0, vy0, 4.5, RED)
-c.text(vx0 + 7, vy0 + 5, "G", RED, 15, italic=True)
-c.text(vx0, 240, "(c) đĩa CD", size=13, anchor="middle", weight="600")
+c.text(vx0 - 6, vy0 + 5, "G", RED, 15, anchor="end", italic=True)   # trong lỗ, không chạm vành
+c.text(vx0, 240, "(c) đĩa CD", size=14, anchor="middle", weight="600")
 fig2 = c.svg("Tìm trọng tâm tấm bìa: treo ở A rồi ở B, hai đường dây dọi cắt nhau tại G; đĩa CD có trọng tâm ở tâm lỗ",
              "Hình 2. (a), (b): treo bìa ở hai lỗ khác nhau, hai đường dây dọi (xanh) cắt nhau tại trọng tâm <em>G</em>. (c): trọng tâm đĩa CD ở tâm lỗ, ngoài phần vật chất.",
              exp="tn-l10-trong-luc-luc-cang-01")
 ERR += c.check()
 
-# ---------------- Hình 3: lực căng ở hai đầu dây treo vật
-c = Canvas("f3", 400, 320)
-X, YC, YT = 170, 34, 196                # trần ở y=34, đầu dưới dây (chỗ buộc vật) ở y=196
-c.line(80, YC, 260, YC, "currentColor", 3)
-for k in range(9):
-    c.line(86 + k * 20, YC, 78 + k * 20, YC - 10, "currentColor", 1.5, "", .55)
-c.line(X, YC, X, YT, "currentColor", 2, "", .55)          # sợi dây
-c.add(f'<rect x="{X-30}" y="{YT}" width="60" height="48" rx="4" fill="rgba(251,146,60,.25)" stroke="currentColor" stroke-width="2.2"/>')
-GYc = YT + 24
-L_T = 62
-c.arr("T", "b", X, YT, X, YT - L_T, 3.4)                 # dây kéo vật: đặt ở chỗ buộc, hướng LÊN (vào giữa dây)
-c.arr("T2", "b", X, YC, X, YC + L_T, 3.4)                # dây kéo trần: đặt ở móc, hướng XUỐNG (vào giữa dây)
-c.dot(X, GYc, 4)
-c.arr("P", "r", X, GYc, X, GYc + L_T, 3.4)               # trọng lực, vật đứng yên nên P = T (dài bằng nhau)
-c.text(X + 12, YT - 26, "T", BLUE, 16, italic=True)
-c.text(X + 26, YT - 26, ": dây kéo vật", BLUE, 13, weight="600")
-c.text(X + 12, YC + 40, "T′", BLUE, 16, italic=True)
-c.text(X + 33, YC + 40, ": dây kéo trần", BLUE, 13, weight="600")
-c.text(X + 12, GYc + 50, "P", RED, 16, italic=True)
-c.text(X + 26, GYc + 50, ": Trái Đất hút vật", RED, 13, weight="600")
-c.text(X - 40, YC + 104, "hai đầu dây:", size=13, anchor="end", weight="600")
-c.text(X - 40, YC + 122, "T hướng vào", size=13, anchor="end", weight="600")
-c.text(X - 40, YC + 140, "giữa dây", size=13, anchor="end", weight="600")
-# kiểm chiều: T (đặt ở đầu dưới) phải hướng lên trên; T' (đặt ở đầu trên) hướng xuống; cả hai đều hướng VÀO giữa dây
-mid = (YC + YT) / 2
-for tag in ("T", "T2"):
-    x1, y1, x2, y2 = c.arrows[tag]
-    if abs(y2 - mid) >= abs(y1 - mid):
-        ERR.append(f"f3: {tag} không hướng vào giữa dây")
-fig3 = c.svg("Vật treo dưới trần bằng dây: lực căng T đặt lên vật hướng lên, lực căng T phẩy đặt lên trần hướng xuống, trọng lực P hướng xuống",
-             "Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây: <em>T</em> kéo vật lên, <em>T</em>′ kéo móc trần xuống. Vật đứng yên nên <em>T</em> = <em>P</em> (mũi tên dài bằng nhau).")
-ERR += c.check()
+# ---------------- Hình 3: ảnh OpenStax College Physics 2e, Hình 4.14 (đợt 28/10/2026) ----------------
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l10-trong-luc-luc-cang/hinh-luc-cang-day.webp" '
+        'alt="Tay giữ dây treo một vật nặng: lực căng T ở hai đầu dây đều hướng vào giữa dây, kéo vật lên và kéo tay xuống, trọng lực w hướng xuống" '
+        'loading="lazy" width="539" height="750">'
+        '<figcaption>Hình 3. Lực căng ở hai đầu dây đều hướng vào giữa dây:<br>'
+        '<em>T</em> kéo vật lên, <em>T</em> kéo tay xuống.<br>'
+        'Vật đứng yên: <em>T</em> = <em>w</em> (<em>w</em> là <em>P</em> của bài).<br>Free-body diagram = sơ đồ lực.<br>'
+        '<small>Hình: OpenStax, College Physics 2e, Hình 4.14 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
+        '</figcaption></figure>')
 
 # ---------------- Hình 4: hệ vật nối dây qua ròng rọc (dùng cho bài toán mẫu: mA = 2 kg, mB = 0,5 kg, T = 4 N, PB = 5 N, a = 2 m/s²)
 c = Canvas("f4", 400, 312)
@@ -246,13 +224,14 @@ c.dot(xs, GBy, 3.5)
 c.arr("PB", "r", xs, GBy, xs, GBy + 5 * K, 3.2)                       # trọng lực B, gốc tại trọng tâm B
 c.text(Ax1 + 14, ys - 10, "T", BLUE, 16, italic=True)
 c.text(xs - 12, By0 - 26, "T", BLUE, 16, anchor="end", italic=True)
-c.text(xs + 10, GBy + 50, sub("P", "B", 12), RED, 16, italic=True)
+c.text(xs + 10, GBy + 50, sub("P", "B", 14), RED, 16, italic=True)
 # gia tốc (xanh lá)
 c.arr("aA", "g", Ax0 + 10, Ay0 - 16, Ax0 + 58, Ay0 - 16, 2.6)
 c.text(Ax0 + 64, Ay0 - 11, "a", GRN, 16, italic=True)
 c.arr("aB", "g", xs - 40, By0 + 4, xs - 40, By0 + 48, 2.6)
 c.text(xs - 50, By0 + 32, "a", GRN, 16, anchor="end", italic=True)
-c.text(30, 24, "Bàn nhẵn · dây nhẹ, không dãn", size=13, weight="600")
+c.text(30, 22, "Bàn nhẵn", size=14, weight="600")
+c.text(30, 42, "Dây nhẹ, không dãn", size=14, weight="600")
 # kiểm chiều: TA hướng về ròng rọc (sang phải), TB hướng lên, PB hướng xuống; tỉ lệ PB/T = 5/4
 x1, y1, x2, y2 = c.arrows["TA"]; ERR += [] if x2 > x1 and abs(y2 - y1) < .1 else ["f4: TA sai chiều"]
 x1, y1, x2, y2 = c.arrows["TB"]; ERR += [] if y2 < y1 else ["f4: TB sai chiều"]
@@ -271,7 +250,7 @@ for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
     h = h.replace(f"<!--FIG{n}-->", fg)
 # số phút: điền từ lint_do_dai (đo trên chính bản đã chèn hình)
 tmp = HERE / ".theory.tmp.html"
-tmp.write_text(h.replace("__PHUT__", "15"), encoding="utf8")
+tmp.write_text(margin_figs(h.replace("__PHUT__", "15")), encoding="utf8")
 lint = HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = subprocess.run([sys.executable, str(lint), str(tmp)], capture_output=True, text=True).stdout
 tmp.unlink()
@@ -280,5 +259,5 @@ phut = round(float(m.group(1).replace(",", "."))) if m else None
 if phut is None:
     print("! không đọc được số phút từ lint_do_dai:\n" + out[:600]); sys.exit(1)
 h = h.replace("__PHUT__", str(phut))
-(HERE / "theory.html").write_text(h, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(h), encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 4 hình · {phut} phút")

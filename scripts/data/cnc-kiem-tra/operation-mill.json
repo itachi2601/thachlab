@@ -1,0 +1,247 @@
+{
+  "cnc_key": "operation-mill",
+  "title": "Kiểm tra vận hành máy phay",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Theo bài, máy phay EMCO MILL 55 gồm hai phần chính nào?",
+      "options": [
+        "Phần điều khiển xử lý chương trình và phần chấp hành",
+        "Phần cơ khí chịu lực và phần cấp dung dịch làm mát cho dao",
+        "Phần trục chính mang dao và phần bàn máy mang ê-tô kẹp phôi",
+        "Phần mềm WinNC trên máy tính và phần ổ tích dao 8 vị trí"
+      ],
+      "answer": 0,
+      "explanation": "Bài chia máy thành phần điều khiển (tủ điều khiển, màn hình, bàn phím, CPU) và phần chấp hành tạo chuyển động tương đối dao – phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bộ phận nào thuộc phần chấp hành tạo chuyển động tương đối giữa dao và phôi?",
+      "options": [
+        "Thùng CPU máy tính điều khiển",
+        "Màn hình của tủ điều khiển",
+        "Ổ tích dao và cơ cấu thay dao",
+        "Bàn phím và chuột của máy tính"
+      ],
+      "answer": 2,
+      "explanation": "Ổ tích dao, cơ cấu thay dao, trục chính, bàn máy, động cơ dẫn động thuộc phần chấp hành; CPU, màn hình, bàn phím thuộc phần điều khiển."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trình tự mở máy phay MILL 55 đúng theo bài là:",
+      "options": [
+        "Power máy tính → WinNC → JOG → CP → Reference",
+        "CP → Power máy tính → WinNC → Reference → JOG",
+        "CP → WinNC → JOG → Reference → Power máy tính",
+        "WinNC → CP → Reference → Power máy tính → JOG"
+      ],
+      "answer": 1,
+      "explanation": "Đóng CP của máy, bật máy tính, mở WinNC FANUC 21M, về Reference rồi mới chuyển JOG."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Lệnh M03 trong dòng MDI có tác dụng gì?",
+      "options": [
+        "Cho trục chính quay nghịch",
+        "Dừng trục chính ngay lập tức",
+        "Thay dao số 3 vào trục chính",
+        "Cho trục chính quay thuận"
+      ],
+      "answer": 3,
+      "explanation": "M03 quay thuận, M04 quay nghịch; việc thay dao do T kèm M6 đảm nhận."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong dòng MDI \"T02 M6;\", phần M6 có tác dụng gì?",
+      "options": [
+        "Đặt số vòng quay trục chính là 6",
+        "Thay dao đã chọn vào trục chính",
+        "Gọi bù chiều dài của dao số 6",
+        "Chọn dao số 6 trong ổ tích dao"
+      ],
+      "answer": 1,
+      "explanation": "T02 chọn dao số 2, M6 là lệnh thay dao đó vào trục chính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ổ dao của máy phay MILL 55 trong bài có bao nhiêu vị trí?",
+      "options": [
+        "6 vị trí",
+        "10 vị trí",
+        "8 vị trí",
+        "12 vị trí"
+      ],
+      "answer": 2,
+      "explanation": "Ổ dao có 8 vị trí cho dao phay mặt đầu, dao phay ngón, mũi khoan, mũi tarô."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Thứ tự gá phôi lên ê-tô đúng theo bài là:",
+      "options": [
+        "Định vị đủ 6 bậc tự do → siết ê-tô chắc → vệ sinh ê-tô và phôi",
+        "Siết ê-tô chắc → vệ sinh ê-tô và phôi → định vị đủ 6 bậc tự do",
+        "Vệ sinh ê-tô và phôi → siết ê-tô chắc → định vị đủ 6 bậc tự do",
+        "Vệ sinh ê-tô và phôi → định vị đủ 6 bậc tự do → siết ê-tô chắc"
+      ],
+      "answer": 3,
+      "explanation": "Làm sạch trước để phôi tựa đúng mặt chuẩn, định vị đủ sáu bậc tự do rồi mới siết chắc."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ở chế độ JOG, người vận hành di chuyển dao bằng cách nào?",
+      "options": [
+        "Nhấn các phím +X, −X, +Y, −Y, +Z, −Z",
+        "Gõ lệnh G0 X Y Z trong Program MDI",
+        "Chạy chương trình gia công đã nạp",
+        "Nhập tọa độ đích vào bảng Work Shift"
+      ],
+      "answer": 0,
+      "explanation": "JOG là di chuyển bằng tay theo từng trục qua các phím +X, −X, +Y, −Y, +Z, −Z."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao nên đi kiểm tra quanh máy khi chưa cấp điện thay vì sau khi đã bật máy?",
+      "options": [
+        "Khi có điện thì màn hình WinNC che mất vùng gia công nên rất khó nhìn thấy",
+        "Máy chỉ cho phép siết ê-tô và tháo dao khi tủ điều khiển chưa bật công tắc CP",
+        "Chưa có điện thì không trục nào chạy bất ngờ nên dọn vật cản an toàn nhất",
+        "Kiểm sau khi bật máy sẽ làm mất toàn bộ tọa độ Reference đã lưu từ ca trước"
+      ],
+      "answer": 2,
+      "explanation": "Lúc chưa đóng điện không có chuyển động nào bất ngờ, nên đây là lúc an toàn nhất để dọn vật để quên và kiểm dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao phải về Reference trước khi gọi dao, cài đặt phôi hay chạy chương trình?",
+      "options": [
+        "Để máy xác lập lại tọa độ, mọi vị trí sau có căn cứ",
+        "Để máy tự đo lại chiều dài tất cả các dao trong ổ dao",
+        "Để xóa hết dữ liệu Work Shift của nhóm làm trước đó",
+        "Để trục chính được làm nóng đều trước khi cắt gọt"
+      ],
+      "answer": 0,
+      "explanation": "Khi chưa về Reference, máy chưa có tọa độ tham chiếu, chạy hay dò gốc lúc đó chỉ là đoán vị trí."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đang chạy JOG, dao đã tới gần phôi và ê-tô. Cách làm đúng là:",
+      "options": [
+        "Giữ bước tiến, chỉ giảm số vòng quay trục chính",
+        "Giảm bước tiến, đi từng bước ngắn và quan sát",
+        "Chuyển sang MDI, gõ G0 đưa dao tới sát phôi",
+        "Về Reference rồi JOG lại với bước tiến cũ"
+      ],
+      "answer": 1,
+      "explanation": "Gần phôi, ê-tô hoặc đồng hồ đo phải giảm bước tiến, đi từng bước để kịp dừng, tránh va chạm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao trong MDI phải nhập T02 M6; trước rồi mới nhập M3 S500;?",
+      "options": [
+        "Vì máy sẽ không đọc được lệnh M3 khi chưa có lệnh T",
+        "Để số vòng quay S500 được ghi vào hàng của dao số 2",
+        "Vì lệnh M6 sẽ tự đổi chiều quay của trục chính",
+        "Để trục chính chỉ quay khi đã có đúng dao cần dùng"
+      ],
+      "answer": 3,
+      "explanation": "Thay dao trước, quay sau: quay trục chính khi chưa lắp dao cần dùng là sai trình tự."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi nhấn nút tháo dao, vì sao phải giữ chắc chuôi dao và không đứng dưới dụng cụ?",
+      "options": [
+        "Nút tháo dao làm trục chính quay nhanh trong vài giây",
+        "Dao còn nóng nên cần giữ chắc để tản nhiệt bớt cho tay",
+        "Dao được nhả khỏi trục chính, không giữ có thể rơi xuống",
+        "Giữ chuôi dao giúp máy ghi lại chiều dài dao vừa tháo"
+      ],
+      "answer": 2,
+      "explanation": "Nhấn nút là dao nhả khỏi trục chính; không giữ chuôi thì lưỡi cắt có thể rơi vào bàn máy hoặc người đứng dưới."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cuối ca kiểm đếm dụng cụ thấy thiếu một collet. Cách xử lý hợp lý nhất là:",
+      "options": [
+        "Báo ngay để cả nhóm cùng tìm khi hiện trường còn nguyên",
+        "Ghi vào phiếu bàn giao rồi nhờ ca sau tìm giúp",
+        "Đợi đầu ca sau, khi bàn máy đã dọn sạch, mới tìm",
+        "Báo vào buổi kiểm kê tủ dụng cụ định kỳ cuối tuần"
+      ],
+      "answer": 0,
+      "explanation": "Báo ngay thì còn tìm được, ví dụ trong phoi trên bàn máy; để sang ca sau thì không ai biết rơi ở đâu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bản vẽ ghi kích thước 60 ± 0,1 mm. Khoảng kích thước đạt là:",
+      "options": [
+        "Từ 59,0 mm đến 61,0 mm",
+        "Từ 59,9 mm đến 60,1 mm",
+        "Từ 60,0 mm đến 60,1 mm",
+        "Từ 59,99 mm đến 60,01 mm"
+      ],
+      "answer": 1,
+      "explanation": "60 ± 0,1 nghĩa là nhỏ nhất 60 − 0,1 = 59,9 mm và lớn nhất 60 + 0,1 = 60,1 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong dòng MDI \"M3 S500;\", con số 500 cho biết điều gì?",
+      "options": [
+        "Bước tiến của dao là 500 mm/phút khi phay",
+        "Dao số 500 được gọi ra từ ổ tích dao",
+        "Dao sẽ dừng cách mặt phôi đúng 500 mm",
+        "Tốc độ quay trục chính là 500 vòng/phút"
+      ],
+      "answer": 3,
+      "explanation": "S đi với số vòng quay (vòng/phút); M3 cho quay thuận."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Nhóm em vừa gá vào ổ dao một mũi tarô nhô dài, phôi trên ê-tô lại cao hơn mọi hôm. Trước lần đầu gọi dao tự động, cần kiểm điều gì?",
+      "options": [
+        "Khoảng hở của dao với phôi và ê-tô khi ổ dao thay dao",
+        "Chiều quay trục chính đã đặt đúng là M3 hay M4 hay chưa",
+        "Bước tiến JOG đã đặt ở mức 100 % hay chưa trên màn hình",
+        "Ổ tích dao còn trống đủ vị trí cho dao mới hay không"
+      ],
+      "answer": 0,
+      "explanation": "Dao nhô dài cộng phôi cao làm khoảng hở nhỏ lại, lúc thay dao tự động dao có thể quệt vào phôi hoặc ê-tô."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn gọi dao số 5 và cho trục chính quay thuận 1000 vòng/phút trong MDI, dòng nhập đúng là:",
+      "options": [
+        "T05 M6; M4 S1000;",
+        "T1000 M6; M3 S05;",
+        "T05 M6; M3 S1000;",
+        "M3 S1000; T05 M6;"
+      ],
+      "answer": 2,
+      "explanation": "Thay dao trước, quay sau: T05 M6 lắp dao 5, M3 S1000 quay thuận 1000 vòng/phút."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phay mặt đầu yêu cầu 60 ± 0,1 mm, đo được 59,85 mm. Kết luận đúng là:",
+      "options": [
+        "Đạt vì chỉ lệch 0,15 mm so với kích thước danh nghĩa",
+        "Chưa đạt, phay thêm khoảng 0,15 mm là về đúng 60 mm",
+        "Đạt vì phần lệch nhỏ hơn tổng dung sai cho phép 0,2 mm",
+        "Chưa đạt, đã cắt quá, không sửa bằng cách phay thêm"
+      ],
+      "answer": 3,
+      "explanation": "59,85 mm nhỏ hơn giới hạn dưới 59,9 mm, vật liệu đã bị cắt quá nên phay thêm chỉ làm nhỏ hơn; ghi nguyên nhân sai lệch."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chuẩn bị đóng CP, em thấy cờ lê siết ê-tô còn nằm trên bàn máy. Việc nên làm là:",
+      "options": [
+        "Đóng điện rồi cất sau, vì chưa có trục nào chạy",
+        "Cất cờ lê vào tủ dụng cụ rồi mới đóng điện CP",
+        "Để lại, ghi nhớ tránh chỗ đó khi chạy JOG",
+        "Đẩy cờ lê ra sát mép bàn máy rồi đóng điện"
+      ],
+      "answer": 1,
+      "explanation": "Vật để quên trên bàn máy nằm trên đường đi của dao; dọn lúc chưa có điện là an toàn nhất."
+    }
+  ]
+}

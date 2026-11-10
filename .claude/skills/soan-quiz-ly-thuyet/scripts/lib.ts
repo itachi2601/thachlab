@@ -7,16 +7,26 @@ import { wrapTheorySections } from "../../../../features/lessons/theory-sections
 const here = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(here, "../../../..");
 export const QUIZ_DIR = path.join(ROOT, "scripts/data/theory-quiz");
+/** Bài khoá không có trong public/data/lessons (build-content chỉ xuất bài xem thử) → fetch-lessons.mts tải từ DB về đây. */
+export const LESSON_CACHE_DIR = path.join(ROOT, "scripts/data/.lesson-cache");
 export const TOPICS_FILE = path.join(ROOT, "scripts/data/question-topics.json");
 
 export interface SectionInfo { index: number; heading: string; length: number }
 export interface TheoryItemInfo { itemId: number; title: string; sections: SectionInfo[]; existingExamIds: number[] }
 export interface LessonInfo { id: number; title: string; items: TheoryItemInfo[] }
 
-/** Đọc public/data/lessons/<id>.json và chia đoạn bằng ĐÚNG wrapTheorySections (nguồn duy nhất cho theorySection). */
+export function lessonFile(lessonId: number): string | null {
+  for (const dir of [path.join(ROOT, "public/data/lessons"), LESSON_CACHE_DIR]) {
+    const f = path.join(dir, `${lessonId}.json`);
+    if (fs.existsSync(f)) return f;
+  }
+  return null;
+}
+
+/** Đọc public/data/lessons/<id>.json (hoặc scripts/data/.lesson-cache/<id>.json) và chia đoạn bằng ĐÚNG wrapTheorySections (nguồn duy nhất cho theorySection). */
 export function getLessonInfo(lessonId: number): LessonInfo {
-  const file = path.join(ROOT, "public/data/lessons", `${lessonId}.json`);
-  if (!fs.existsSync(file)) throw new Error(`không có ${path.relative(ROOT, file)}`);
+  const file = lessonFile(lessonId);
+  if (!file) throw new Error(`không có public/data/lessons/${lessonId}.json (bài khoá: chạy npx tsx .claude/skills/soan-quiz-ly-thuyet/scripts/fetch-lessons.mts ${lessonId})`);
   const data = JSON.parse(fs.readFileSync(file, "utf8"));
   const items: TheoryItemInfo[] = (data.items ?? [])
     .filter((it: { kind: string }) => it.kind === "ly_thuyet")

@@ -1,0 +1,247 @@
+{
+  "cnc_key": "tool-setup-mill",
+  "title": "Kiểm tra cài đặt dao phay",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Trong các điểm chuẩn của máy phay, điểm W là:",
+      "options": [
+        "Gốc máy",
+        "Gốc phôi",
+        "Điểm tham chiếu",
+        "Điểm chuẩn dao"
+      ],
+      "answer": 1,
+      "explanation": "M là gốc máy, W là gốc phôi, R là điểm tham chiếu, N là điểm chuẩn dao, P là đỉnh mũi dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong các điểm chuẩn của máy phay, điểm P là:",
+      "options": [
+        "Đỉnh mũi dao",
+        "Gốc phôi",
+        "Điểm tham chiếu",
+        "Gốc máy"
+      ],
+      "answer": 0,
+      "explanation": "P là đỉnh mũi dao; N là điểm chuẩn dao trên trục chính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn xóa tọa độ X, Y, Z của phôi do nhóm trước cài, em vào mục nào?",
+      "options": [
+        "Offset Setting → Offset ở hàng dao đang dùng",
+        "Màn hình POS → trang Position tuyệt đối của máy",
+        "Program MDI → gõ G54 rồi bấm chạy lệnh",
+        "Offset Setting → Work Shift/Work Coordinates"
+      ],
+      "answer": 3,
+      "explanation": "Work Shift/Work Coordinates lưu tọa độ gốc phôi; mục Offset lưu chiều dài và bán kính dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Muốn xóa chiều dài và bán kính dao cũ, em vào mục nào?",
+      "options": [
+        "Offset Setting → Work Shift/Work Coordinates",
+        "Màn hình POS → trang Position tuyệt đối",
+        "Offset Setting → Offset, hàng chiều dài dao",
+        "Chế độ Reference → về điểm tham chiếu"
+      ],
+      "answer": 2,
+      "explanation": "Chiều dài và bán kính dao nằm trong mục Offset của Offset Setting."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đồng hồ chuẩn dùng để đo chiều dài dao trong bài cao bao nhiêu?",
+      "options": [
+        "28 mm",
+        "50 mm",
+        "60 mm",
+        "78 mm"
+      ],
+      "answer": 1,
+      "explanation": "Đồng hồ chuẩn cao 50 mm, nên Zphôi tạm khi đo dao là 50 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Công thức tính chiều dài dao khi đo bằng đồng hồ chuẩn là:",
+      "options": [
+        "Zdao = Zmachine − Zphôi",
+        "Zdao = Zmachine + Zphôi",
+        "Zdao = Zphôi − Zmachine",
+        "Zdao = Zmachine + Rdao"
+      ],
+      "answer": 0,
+      "explanation": "Lấy tọa độ Machine lúc dao chạm mặt đồng hồ trừ đi Zphôi tạm (chiều cao đồng hồ)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi chạm dao vào cạnh trái phôi để cài gốc X, công thức đúng là:",
+      "options": [
+        "Xphôi = Xmachine − Rdao (bán kính)",
+        "Xphôi = Xmachine + đường kính dao",
+        "Xphôi = Xmachine, giữ nguyên số",
+        "Xphôi = Xmachine + Rdao (bán kính)"
+      ],
+      "answer": 3,
+      "explanation": "Màn hình báo vị trí tâm dao, tâm nằm bên trái cạnh một bán kính nên phải cộng Rdao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong dòng kiểm tra \"G43 H2;\", lệnh G43 có tác dụng gì?",
+      "options": [
+        "Gọi bù bán kính dao bên trái biên dạng",
+        "Chọn hệ tọa độ phôi G54 cho dao số 2",
+        "Gọi bù chiều dài dao theo số sau chữ H",
+        "Cho dao chạy nhanh thẳng tới gốc phôi"
+      ],
+      "answer": 2,
+      "explanation": "G43 là bù chiều dài dao, số sau H cho biết lấy chiều dài ở hàng nào."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi đo chiều dài dao, vì sao nhập Zphôi tạm bằng 50 mm vào Work Shift?",
+      "options": [
+        "Vì mọi phôi trong xưởng đều cao đúng bằng 50 mm",
+        "Vì đồng hồ chuẩn cao 50 mm đóng vai phôi lúc đo",
+        "Vì dao sẽ dừng cách mặt phôi 50 mm khi kiểm tra",
+        "Vì 50 mm là chiều dài chuẩn quy định của dao số 2"
+      ],
+      "answer": 1,
+      "explanation": "Khi đo dao, mặt trên đồng hồ chuẩn đóng vai mặt phôi nên Zphôi tạm = 50 + 0 = 50 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao khi dò cạnh phôi phải cộng bán kính dao vào tọa độ Machine?",
+      "options": [
+        "Màn hình báo tâm dao, còn cạnh phôi cách tâm một bán kính",
+        "Để bù phần mòn của dao sau mỗi lần cắt gọt trước đó",
+        "Vì máy luôn hiển thị vị trí mép trái của dao đang quay",
+        "Để gốc phôi nằm lùi ra ngoài phôi cho an toàn khi chạy"
+      ],
+      "answer": 0,
+      "explanation": "Khi lưỡi dao chạm cạnh, tâm dao còn cách cạnh đúng Rdao; quên cộng thì W lệch ra ngoài phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao số sau chữ H trong lệnh G43 phải trùng với số dao đang lắp?",
+      "options": [
+        "Vì máy sẽ báo lỗi và dừng ngay nếu hai số khác nhau",
+        "Vì H còn quyết định luôn cả chiều quay của trục chính",
+        "Vì H dùng để gọi dao tương ứng ra từ ổ tích dao",
+        "Vì H chọn hàng chiều dài; sai số thì bù nhầm dao khác"
+      ],
+      "answer": 3,
+      "explanation": "Máy không tự sửa số H; dùng nhầm hàng thì mũi dao xuống thấp hoặc cao hơn dự kiến."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong dòng kiểm tra, vì sao dao chạy G0 tới Z50 trước rồi mới G1 F200 xuống Z0?",
+      "options": [
+        "Vì lệnh G0 không thể đưa dao xuống tới Z0 trên máy phay",
+        "Để trục chính có đủ thời gian đạt số vòng quay S500",
+        "Để kiểm X0 Y0 bằng mắt khi dao còn xa rồi mới xuống chậm",
+        "Vì Z50 là vị trí thay dao tự động của ổ tích dao"
+      ],
+      "answer": 2,
+      "explanation": "G0 chạy nhanh nên dừng cách mặt phôi 50 mm để kiểm vị trí; đoạn xuống Z0 dùng G1 F200 chậm, kịp dừng nếu sai độ cao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong công thức Zphôi = ZMA + ZAW1, đại lượng ZAW1 là:",
+      "options": [
+        "Chiều cao của phôi đang gá",
+        "Chiều dài dao số 2 vừa đo",
+        "Chiều cao của đồng hồ chuẩn",
+        "Bán kính dao dùng để dò cạnh"
+      ],
+      "answer": 0,
+      "explanation": "ZAW1 là chiều cao phôi, cộng với ZMA để ra Zphôi nhập vào Work Shift."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đo xong chiều dài và bán kính của một dao, bước tiếp theo theo bài là gì?",
+      "options": [
+        "Chạy ngay chương trình gia công",
+        "Rút dao lên rồi về Reference",
+        "Xóa lại toàn bộ mục Work Shift",
+        "Đo tiếp dao kế bằng tọa độ đang có"
+      ],
+      "answer": 1,
+      "explanation": "Mỗi dao đo xong đều rút dao, về Reference rồi mới đo dao khác hoặc cài gốc phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trước khi nhập số mới vào mục Offset, cần xác nhận điều gì?",
+      "options": [
+        "Trục chính đang quay thuận với tốc độ S500",
+        "Bước tiến JOG đang đặt ở mức 100 % trên máy",
+        "Chương trình gia công đã được nạp sẵn vào máy",
+        "Đúng hàng của dao và hệ tọa độ phôi đang cài"
+      ],
+      "answer": 3,
+      "explanation": "Nhập đúng số nhưng sai hàng dao hoặc sai hệ tọa độ phôi thì máy vẫn đọc sai."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chạy MDI kiểm tra, thấy dao đang đi tới sai chỗ. Việc làm đúng là:",
+      "options": [
+        "Dừng máy, kiểm lại Work Shift và số liệu dao",
+        "Để dao chạy hết dòng lệnh rồi mới dừng xem lại",
+        "Tăng bước tiến để dao đi qua chỗ sai nhanh hơn",
+        "Về Reference rồi chạy lại đúng dòng lệnh đó"
+      ],
+      "answer": 0,
+      "explanation": "Dao tới sai chỗ hoặc sắp va chạm thì dừng máy ngay, rồi tìm số cài sai."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đo dao số 2 trên đồng hồ chuẩn, POS báo Zmachine = 136,5 mm (số minh hoạ), Zphôi tạm 50 mm. Chiều dài dao 2 cần nhập là:",
+      "options": [
+        "186,5 mm",
+        "136,5 mm",
+        "86,5 mm",
+        "50,0 mm"
+      ],
+      "answer": 2,
+      "explanation": "Zdao2 = 136,5 − 50 = 86,5 mm; cộng thay vì trừ hoặc quên trừ chiều cao đồng hồ đều sai."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao phay ngón Ø12 chạm cạnh trái phôi, POS báo Xmachine = 105,0 mm (số minh hoạ). Xphôi cần nhập là:",
+      "options": [
+        "111,0 mm",
+        "117,0 mm",
+        "99,0 mm",
+        "105,0 mm"
+      ],
+      "answer": 0,
+      "explanation": "Ø12 nên Rdao = 6 mm; Xphôi = 105,0 + 6 = 111,0 mm. Cộng cả đường kính hay trừ bán kính đều sai."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Giả sử ZMA = 28 mm, phôi mới cao 45 mm. Zphôi nhập vào Work Shift là:",
+      "options": [
+        "17 mm",
+        "45 mm",
+        "28 mm",
+        "73 mm"
+      ],
+      "answer": 3,
+      "explanation": "Zphôi = ZMA + ZAW1 = 28 + 45 = 73 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Kiểm dao Ø8 tại gốc phôi, Position báo đúng X0 Y0 nhưng dao dừng lệch cạnh phôi khoảng 4 mm. Nên nghi số nào trước?",
+      "options": [
+        "Nhập sai chiều dài dao ở mục Offset",
+        "Quên cộng Rdao khi tính Xphôi, Yphôi",
+        "Đặt sai số vòng quay trục chính S500",
+        "Gõ nhầm G0 thành G1 ở dòng kiểm tra"
+      ],
+      "answer": 1,
+      "explanation": "4 mm đúng bằng bán kính dao Ø8, nên nghi quên cộng Rdao khi dò cạnh; dừng máy, kiểm lại Work Shift."
+    }
+  ]
+}

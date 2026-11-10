@@ -1,5 +1,7 @@
 # Chương trình CNC theo lớp đảo ngược (flipped) — đề xuất 18/10/2026
 
+> Bản rà + thiết kế lại 8/11/2026 (phiếu buổi trỏ vào bài, 5 cổng, quiz tối trước có bảng kết quả): `docs/CNC-FLIPPED-THIET-KE-LAI-2026-11-08.md`.
+
 Đối tượng: sinh viên CĐ đã học tiện, phay cơ bản (máy vạn năng). Bản mẫu buổi 1: `content/lesson-samples/cnc-flipped-buoi-1/` (đã ghi DB, `cnc_lessons.id = flip-1`).
 Lịch (thầy nói 18/10/2026): **buổi 5 tiếng (300 phút), giảng viên dạy lý thuyết 1–2 giờ đầu buổi, 6 buổi/tuần, học liên tục 2 tuần = 12 buổi** (60 giờ). Bản trước ghi nhầm 180 phút, đã sửa.
 
@@ -57,3 +59,4 @@ Thứ tự theo chương trình của thầy: nhập môn → lập trình tiệ
 - Buổi 1 đã ghi `cnc_lessons` (flip-1); buổi 2–12 chưa soạn trang flipped.
 - Chương trình O0001 chưa chạy thử trên WinNC FANUC 21T thật của xưởng; cú pháp (nhất là `T0202 M6;`, `M5;`, F giữ hiệu lực ở khối sau) cần thầy chạy thử trước khi dùng.
 - Chưa có chỗ để sinh viên gửi "câu chưa rõ" trên web (hiện nhờ nhóm lớp); chưa thử với sinh viên thật.
+- Cấu trúc bài theo khuôn các môn khác (6 tab, 4 chương, chặng A/B): `docs/CNC-CAU-TRUC-BAI-THEO-MON-KHAC-2026-11-08.md` (chờ duyệt).

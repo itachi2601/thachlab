@@ -15,13 +15,39 @@
   ],
   "muc_tieu": "Đo được tốc độ lan thực tế của phân tử trong ống kín (không có gió) và đối chiếu với tốc độ trung bình cỡ vài trăm m/s (N₂ ở 0 °C: khoảng 455 m/s) của một phân tử khí, qua đó phân biệt tốc độ của một phân tử với tốc độ lan của cả đám phân tử.",
   "dung_cu": [
-    { "ten": "Ống thuỷ tinh dài 40 cm, đường kính trong khoảng 1 cm", "so_luong": 1, "ghi_chu": "hai đầu có nút cao su hoặc bông" },
-    { "ten": "Thước chia đến milimét", "so_luong": 1 },
-    { "ten": "Dung dịch amoniac đậm đặc (NH₃)", "so_luong": 1, "ghi_chu": "mở nắp trong tủ hút hoặc nơi thoáng" },
-    { "ten": "Dung dịch axit clohiđric đậm đặc (HCl)", "so_luong": 1, "ghi_chu": "dùng găng tay, kính bảo hộ" },
-    { "ten": "Bông thấm", "so_luong": 4 },
-    { "ten": "Đồng hồ bấm giây", "so_luong": 1, "ghi_chu": "sai số bấm tay khoảng ±0,5 s" },
-    { "ten": "Nhiệt kế phòng", "so_luong": 1, "ghi_chu": "sai số ±0,5 °C" }
+    {
+      "ten": "Ống thuỷ tinh dài 40 cm, đường kính trong khoảng 1 cm",
+      "so_luong": 1,
+      "ghi_chu": "hai đầu có nút cao su hoặc bông"
+    },
+    {
+      "ten": "Thước chia đến milimét",
+      "so_luong": 1
+    },
+    {
+      "ten": "Dung dịch amoniac đậm đặc (NH₃)",
+      "so_luong": 1,
+      "ghi_chu": "mở nắp trong tủ hút hoặc nơi thoáng"
+    },
+    {
+      "ten": "Dung dịch axit clohiđric đậm đặc (HCl)",
+      "so_luong": 1,
+      "ghi_chu": "dùng găng tay, kính bảo hộ"
+    },
+    {
+      "ten": "Bông thấm",
+      "so_luong": 4
+    },
+    {
+      "ten": "Đồng hồ bấm giây",
+      "so_luong": 1,
+      "ghi_chu": "sai số bấm tay khoảng ±0,5 s"
+    },
+    {
+      "ten": "Nhiệt kế phòng",
+      "so_luong": 1,
+      "ghi_chu": "sai số ±0,5 °C"
+    }
   ],
   "cac_buoc": {
     "lam": [
@@ -41,13 +67,60 @@
     ]
   },
   "tham_so": [
-    { "ky_hieu": "L", "ten": "Chiều dài ống", "don_vi": "cm", "kieu": "dieu_chinh", "min": 20, "max": 60, "mac_dinh": 40, "buoc": 5 },
-    { "ky_hieu": "T", "ten": "Nhiệt độ phòng", "don_vi": "°C", "kieu": "dieu_chinh", "min": 10, "max": 40, "mac_dinh": 27, "buoc": 1 },
-    { "ky_hieu": "M_NH3", "ten": "Khối lượng mol của NH₃", "don_vi": "g/mol", "kieu": "co_dinh", "gia_tri": 17 },
-    { "ky_hieu": "M_HCl", "ten": "Khối lượng mol của HCl", "don_vi": "g/mol", "kieu": "co_dinh", "gia_tri": 36.5 },
-    { "ky_hieu": "x", "ten": "Khoảng cách từ vòng khói tới đầu NH₃", "don_vi": "cm", "kieu": "do_duoc", "sai_so_do": 0.5 },
-    { "ky_hieu": "t", "ten": "Thời gian tới lúc thấy vòng khói", "don_vi": "s", "kieu": "do_duoc", "sai_so_do": 5 },
-    { "ky_hieu": "v_lan", "ten": "Tốc độ lan đo được", "don_vi": "cm/s", "kieu": "tinh_ra" }
+    {
+      "ky_hieu": "L",
+      "ten": "Chiều dài ống",
+      "don_vi": "cm",
+      "kieu": "dieu_chinh",
+      "min": 20,
+      "max": 60,
+      "mac_dinh": 40,
+      "buoc": 5
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Nhiệt độ phòng",
+      "don_vi": "°C",
+      "kieu": "dieu_chinh",
+      "min": 10,
+      "max": 40,
+      "mac_dinh": 27,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "M_NH3",
+      "ten": "Khối lượng mol của NH₃",
+      "don_vi": "g/mol",
+      "kieu": "co_dinh",
+      "gia_tri": 17
+    },
+    {
+      "ky_hieu": "M_HCl",
+      "ten": "Khối lượng mol của HCl",
+      "don_vi": "g/mol",
+      "kieu": "co_dinh",
+      "gia_tri": 36.5
+    },
+    {
+      "ky_hieu": "x",
+      "ten": "Khoảng cách từ vòng khói tới đầu NH₃",
+      "don_vi": "cm",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.5
+    },
+    {
+      "ky_hieu": "t",
+      "ten": "Thời gian tới lúc thấy vòng khói",
+      "don_vi": "s",
+      "kieu": "do_duoc",
+      "sai_so_do": 5
+    },
+    {
+      "ky_hieu": "v_lan",
+      "ten": "Tốc độ lan đo được",
+      "don_vi": "cm/s",
+      "kieu": "tinh_ra"
+    }
   ],
   "mo_hinh": {
     "phuong_trinh": [
@@ -63,11 +136,27 @@
     "ghi_chu": "Mô phỏng nên cho chọn chất ở hai đầu ống, hiện vòng khói dịch chuyển theo thời gian và tự tính vị trí gặp nhau từ tỉ lệ căn bậc hai khối lượng mol."
   },
   "so_lieu_mau": {
-    "cot": ["Lần đo", "Chỗ vòng khói cách đầu NH₃ (cm)", "Thời gian (s)"],
+    "cot": [
+      "Lần đo",
+      "Chỗ vòng khói cách đầu NH₃ (cm)",
+      "Thời gian (s)"
+    ],
     "hang": [
-      [1, 23.5, 180],
-      [2, 24.0, 177],
-      [3, 24.2, 188]
+      [
+        1,
+        23.5,
+        180
+      ],
+      [
+        2,
+        24,
+        177
+      ],
+      [
+        3,
+        24.2,
+        188
+      ]
     ],
     "ghi_chu": "Số liệu minh hoạ tính từ mô hình với ống dài 40 cm ở nhiệt độ phòng khoảng 27 °C; giá trị trung bình x ≈ 23,9 cm, t ≈ 182 s, v_lan ≈ 0,13 cm/s. Thời gian là SỐ MINH HOẠ chọn cho hợp lí cỡ vài phút, chưa phải số đo thật. Kết quả thực đo phụ thuộc nhiệt độ phòng và thời điểm quan sát vòng khói."
   },
@@ -90,5 +179,10 @@
   "an_toan": [
     "NH₃ và HCl đậm đặc đều có mùi và gây bỏng: mở nắp trong tủ hút hoặc phòng thoáng, đeo găng tay và kính bảo hộ.",
     "Rửa ống và lau khô giữa hai lần đo để khói cũ không làm sai vị trí quan sát."
-  ]
+  ],
+  "video": {
+    "youtube_id": "6GHpmPNPetg",
+    "nhan": "NH3 và HCl trong ống thuỷ tinh",
+    "nhin_vao": "Vòng trắng hình thành gần đầu nào?"
+  }
 }

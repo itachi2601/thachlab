@@ -40,10 +40,10 @@ EXAM = {
         },
         {
             "type": "multiple_choice",
-            "question": "Một ống dây dài có 1000 vòng dây trên mỗi mét, mang dòng điện 1 A. Cảm ứng từ trong lòng ống dây bằng",
-            "options": ["1,26·10⁻⁵ T.", "12,6·10⁻³ T.", "0,126·10⁻³ T.", "1,26·10⁻³ T."],
-            "answer": 3,
-            "explanation": "B = 4π·10⁻⁷·n·I = 4π·10⁻⁷ × 1000 × 1 ≈ 1,26·10⁻³ T = 1,26 mT. Trong lòng ống dây dài, cảm ứng từ chỉ phụ thuộc số vòng trên một mét và cường độ dòng điện, không phụ thuộc bán kính ống.",
+            "question": "Một ống dây nằm ngang. Nhìn từ đầu bên phải vào ống, dòng điện trong các vòng dây chạy ngược chiều kim đồng hồ. Cảm ứng từ trong lòng ống có hướng",
+            "options": ["dọc trục ống, sang phải (về phía người nhìn).", "dọc trục ống, sang trái (ra xa người nhìn).", "theo những vòng tròn quanh trục ống.", "bằng 0 vì từ trường các vòng dây triệt tiêu nhau."],
+            "answer": 0,
+            "explanation": "Theo quy tắc nắm tay phải cho ống dây: khum bốn ngón tay theo chiều dòng điện (ngược chiều kim đồng hồ khi nhìn từ bên phải) thì ngón cái chỉ về phía người nhìn, nên cảm ứng từ trong lòng ống hướng dọc trục sang phải. Đường sức tròn quanh dây là của dây thẳng; trong lòng ống từ trường đều và mạnh, không bằng 0.",
         },
         {
             "type": "multiple_choice",

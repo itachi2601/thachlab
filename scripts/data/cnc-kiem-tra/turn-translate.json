@@ -1,0 +1,247 @@
+{
+  "cnc_key": "turn-translate",
+  "title": "Dịch lệnh G-code — Tiện",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "W ở tâm mặt đầu phải, chế độ G90. Khối N10 G00 X32.0 Z2.0; có nghĩa gì?",
+      "options": [
+        "Chạy nhanh tới bán kính 32, sâu vào phôi 2 mm",
+        "Chạy nhanh không cắt tới Ø32, cách đầu 2 mm",
+        "Cắt cung tròn tới Ø32, cách mặt đầu 2 mm",
+        "Cắt thẳng tới Ø32 rồi dừng cách mặt đầu 2 mm"
+      ],
+      "answer": 1,
+      "explanation": "G00 là chạy nhanh không cắt; X32.0 là đường kính 32, Z2.0 là điểm nằm ngoài mặt đầu 2 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chế độ G90 G95, dao đang ở X20.0 Z0. Khối N20 G01 Z-25.0 F0.1; có nghĩa gì?",
+      "options": [
+        "Tiện mặt đầu vào sâu 25 mm, F = 0,1 mm/vòng",
+        "Chạy nhanh dọc trục tới Z-25, bỏ qua F = 0,1",
+        "Tiện trụ Ø20 dọc trục tới Z-25, F = 0,1 mm/vòng",
+        "Tiện côn từ Ø20 về Ø0 dài 25 mm, F = 0,1 mm/vòng"
+      ],
+      "answer": 2,
+      "explanation": "G01 cắt thẳng theo F; chỉ Z thay đổi nên dao chạy dọc trục, giữ Ø20, tới Z-25 với F = 0,1 mm/vòng (G95)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chế độ G90, dao đang ở X20.0 Z-15.0 sau khi tiện xong đoạn Ø20. Khối N30 G01 X30.0 F0.1; có nghĩa gì?",
+      "options": [
+        "Chạy nhanh lên Ø30 để chuẩn bị rút dao khỏi phôi",
+        "Tiện dọc trục một đoạn Ø30 dài thêm 15 mm",
+        "Cắt thẳng theo phương X lên Ø30, Z giữ nguyên",
+        "Tiện côn từ Ø20 lên Ø30 dọc theo trục Z"
+      ],
+      "answer": 2,
+      "explanation": "Khối chỉ ghi X nên Z giữ -15.0; G01 cắt theo phương đường kính từ Ø20 lên Ø30, tạo mặt bậc."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Chế độ G90, dao đang ở X20.0 Z0. Khối G01 X30.0 Z-20.0 F0.1; tạo ra bề mặt gì?",
+      "options": [
+        "Mặt côn từ Ø20 tới Ø30 dài 20 mm",
+        "Cung tròn nối Ø20 với Ø30 dài 20 mm",
+        "Mặt bậc từ Ø20 lên Ø30 tại Z-20",
+        "Mặt trụ Ø30 dài 20 mm tính từ mặt đầu"
+      ],
+      "answer": 0,
+      "explanation": "X và Z cùng thay đổi trong một khối G01 nên dao đi đường xiên, tạo mặt côn từ Ø20 tới Ø30 trên chiều dài 20 mm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G02 X30.0 Z-20.0 R5.0 F0.1; có nghĩa gì?",
+      "options": [
+        "Cung tròn ngược chiều kim đồng hồ R5 tới X30.0 Z-20.0",
+        "Cắt thẳng tới X30.0 Z-20.0 rồi bo góc R5 ở cuối",
+        "Cung tròn cùng chiều kim đồng hồ R5 tới X30.0 Z-20.0",
+        "Chạy nhanh tới X30.0 Z-20.0 với bán kính mũi dao 5"
+      ],
+      "answer": 2,
+      "explanation": "G02 là cung tròn cùng chiều kim đồng hồ; R5.0 là bán kính cung, X30.0 Z-20.0 là điểm cuối cung."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G03 X24.0 Z-12.0 R3.0 F0.1; có nghĩa gì?",
+      "options": [
+        "Cắt cung ngược chiều kim đồng hồ bán kính 3 tới X24.0 Z-12.0",
+        "Cắt cung tròn cùng chiều kim đồng hồ bán kính 3 tới X24.0 Z-12.0",
+        "Cắt thẳng tới X24.0 Z-12.0, rồi vát góc cạnh 3 mm ở điểm cuối",
+        "Chạy nhanh tới X24.0 Z-12.0, rồi dừng chờ đúng 3 giây ở đó"
+      ],
+      "answer": 0,
+      "explanation": "G03 là cung tròn ngược chiều kim đồng hồ; R3.0 là bán kính, X24.0 Z-12.0 là điểm cuối cung."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao đang ở X24.0 Z-10.0. Khối G01 U6.0 W-10.0 F0.1; đưa dao tới đâu?",
+      "options": [
+        "X30.0 Z-10.0",
+        "X36.0 Z-20.0",
+        "X6.0 Z-10.0",
+        "X30.0 Z-20.0"
+      ],
+      "answer": 3,
+      "explanation": "U, W là lượng dịch so với điểm trước: X = 24 + 6 = 30 (U cũng tính theo đường kính), Z = -10 - 10 = -20."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối đầu chương trình tiện N10 G90 G71 G18 G95; đặt những chế độ nào (theo bảng mã Win-NC32)?",
+      "options": [
+        "Tọa độ tương đối, chu trình thô, mặt phẳng XOY, F theo mm/phút",
+        "Tọa độ tuyệt đối, hệ inch, mặt phẳng YOZ, F theo mm/vòng",
+        "Tọa độ tuyệt đối, chu trình thô, mặt phẳng XOZ, F theo mm/phút",
+        "Tọa độ tuyệt đối, hệ mét, mặt phẳng XOZ, F theo mm/vòng"
+      ],
+      "answer": 3,
+      "explanation": "G90 tuyệt đối, G71 hệ mét (bảng mã Win-NC32), G18 mặt phẳng XOZ của máy tiện, G95 lượng chạy dao mm/vòng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối M03 S800; có nghĩa gì?",
+      "options": [
+        "Trục chính quay nghịch với 800 vòng/phút",
+        "Lượng chạy dao F là 800 mm/phút khi cắt",
+        "Trục chính quay thuận với 800 vòng/phút",
+        "Gọi chương trình con số 800 để chạy ngay"
+      ],
+      "answer": 2,
+      "explanation": "M03 cho trục chính quay thuận, S800 là tốc độ trục chính 800 vòng/phút; M04 mới là quay nghịch."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Ba khối cuối chương trình M09; M05; M30; lần lượt làm gì?",
+      "options": [
+        "Tắt thổi phoi, dừng trục chính, rồi gọi chương trình con",
+        "Tắt tưới nguội, quay nghịch trục chính, rồi dừng có điều kiện chờ lệnh",
+        "Bật tưới nguội, dừng trục chính, thay dao rồi chạy lại từ đầu",
+        "Tắt tưới nguội, dừng trục chính, kết thúc và về đầu chương trình"
+      ],
+      "answer": 3,
+      "explanation": "M09 tắt dung dịch tưới nguội, M05 dừng trục chính, M30 kết thúc chương trình và trở về đầu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối M08; có nghĩa gì?",
+      "options": [
+        "Bật dung dịch tưới nguội",
+        "Bật thổi phoi ở vùng cắt",
+        "Thay dao ở vị trí tiếp theo",
+        "Đóng chấu mâm cặp kẹp phôi"
+      ],
+      "answer": 0,
+      "explanation": "M08 bật và M09 tắt dung dịch tưới nguội; thổi phoi là M71/M72, thay dao là M06."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G42 G01 X20.0 Z0 F0.1; có nghĩa gì?",
+      "options": [
+        "Hủy bù bán kính mũi dao hiện tại rồi cắt thẳng tới X20.0 Z0",
+        "Bật bù bán kính mũi dao bên trái quỹ đạo, rồi cắt thẳng tới X20.0 Z0",
+        "Bật chu trình tiện tinh biên dạng, bắt đầu cắt tại X20.0 Z0",
+        "Bật bù bán kính mũi dao bên phải quỹ đạo, cắt thẳng tới X20.0 Z0"
+      ],
+      "answer": 3,
+      "explanation": "G42 bù bán kính mũi dao về bên phải quỹ đạo, đặt trước khi vào biên dạng; G01 cắt thẳng tới điểm đích."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G40 G00 X42.0; đặt sau khối cuối của biên dạng tinh có nghĩa gì?",
+      "options": [
+        "Bật bù bán kính mũi dao, rồi cắt thẳng lên tới Ø42 luôn",
+        "Hủy bù bán kính mũi dao, rồi chạy nhanh rút ra Ø42",
+        "Hủy chu trình khoan đã gọi, rồi chạy nhanh ra Ø42",
+        "Dừng trục chính lại, rồi chạy nhanh rút dao ra Ø42"
+      ],
+      "answer": 1,
+      "explanation": "G40 hủy bù trước khi rút dao để đường rút không bị dịch theo bán kính dao; G00 rút nhanh ra Ø42."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32, khối G72 P50 Q100; có nghĩa gì?",
+      "options": [
+        "Chu trình tiện tinh theo biên dạng từ khối N50 đến N100",
+        "Chu trình cắt rãnh theo biên dạng từ khối N50 đến N100",
+        "Gọi chương trình con chạy từ khối N50 đến khối N100 một lần",
+        "Chu trình tiện thô theo biên dạng từ khối N50 đến N100"
+      ],
+      "answer": 0,
+      "explanation": "G72 là chu trình tiện tinh dọc trục; P, Q là số khối đầu và khối cuối của biên dạng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32, một khối G73 có P50 Q100 và lượng dư tinh U0.5 W0.5 dùng để làm gì?",
+      "options": [
+        "Tiện ren theo biên dạng N50–N100 với bước ren 0,5 mm",
+        "Tiện thô biên dạng N50–N100, chừa lượng dư để tiện tinh",
+        "Cắt rãnh theo X trên đoạn biên dạng N50–N100, sâu 0,5 mm",
+        "Tiện tinh biên dạng N50–N100 tới kích thước cuối cùng"
+      ],
+      "answer": 1,
+      "explanation": "G73 là chu trình tiện thô dọc trục theo biên dạng P–Q; U/W là lượng dư để lại cho lần tiện tinh."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32, một khối G77 X(U) Z(W) P Q R F dùng để làm gì?",
+      "options": [
+        "Chu trình tiện ren ngoài theo bước F",
+        "Chu trình khoan lỗ sâu theo từng lần",
+        "Chu trình cắt rãnh theo phương X",
+        "Chu trình tiện thô dọc theo trục Z"
+      ],
+      "answer": 2,
+      "explanation": "G77 là chu trình cắt rãnh theo X: P là sâu cắt, Q là bước theo Z, R là dịch ngang."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo bảng mã Win-NC32, khối G78 kèm góc ren, chiều sâu ren và bước F dùng để làm gì?",
+      "options": [
+        "Chu trình khoan lỗ rồi doa tinh lỗ",
+        "Chu trình tiện ren (ngoài, lỗ, côn)",
+        "Chu trình cắt rãnh thoát dao bên ngoài",
+        "Chu trình tiện tinh biên dạng chi tiết"
+      ],
+      "answer": 1,
+      "explanation": "G78 là chu trình tiện ren ngoài, ren lỗ, ren côn; khai báo số lần cắt tinh, góc ren, sâu ren và bước F."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G83 X0 Z-30.0 R2.0 Q5.0 F0.1; có nghĩa gì?",
+      "options": [
+        "Khoan lỗ sâu tại tâm tới Z-30.0, mỗi lần 5 mm",
+        "Tiện mặt đầu tới sâu 30 mm, mỗi lát ăn 5 mm",
+        "Khoan một lần tới Z-30.0 rồi dừng chờ 5 giây",
+        "Cắt rãnh ở Ø0 sâu 30 mm, mỗi bước cắt 5 mm"
+      ],
+      "answer": 0,
+      "explanation": "G83 là chu trình khoan lỗ sâu; Q là chiều sâu mỗi lần cắt nên dao khoan từng bước 5 mm tới Z-30.0."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối G80; đặt sau các lỗ khoan có nghĩa gì?",
+      "options": [
+        "Dừng trục chính khi cần",
+        "Hủy bù bán kính mũi dao",
+        "Kết thúc chương trình con",
+        "Hủy chu trình khoan lỗ"
+      ],
+      "answer": 3,
+      "explanation": "G80 hủy chu trình khoan để các khối sau không còn khoan nữa; hủy bù bán kính mũi dao là G40."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khối M99; ở cuối một chương trình con có nghĩa gì?",
+      "options": [
+        "Dừng vô điều kiện, chờ người vận hành bấm tiếp",
+        "Kết thúc chương trình con, về chương trình chính",
+        "Gọi thêm một chương trình con khác nữa để chạy",
+        "Kết thúc toàn bộ chương trình rồi trở về đầu"
+      ],
+      "answer": 1,
+      "explanation": "M99 kết thúc chương trình con và quay về chương trình chính; M98 gọi chương trình con, M30 kết thúc chương trình chính."
+    }
+  ]
+}

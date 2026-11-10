@@ -11,9 +11,9 @@
    "form": "bai_tap",
    "label": "Dạng 1 · Cơ bản · Mạch hỗn hợp R1 nối tiếp (R2 // R3): bốn bước và tính ngược",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Điện trở $R_1=4\\ \\Omega$ nối tiếp với đoạn song song gồm $R_2=15\\ \\Omega$ và $R_3=10\\ \\Omega$, mắc vào nguồn $U=30\\ \\text{V}$. Ampe kế lí tưởng ở nhánh chính; vôn kế lí tưởng song song với đoạn song song.</p><ol type=\"a\"><li>Tính điện trở tương đương của cả mạch và số chỉ ampe kế.</li><li>Tính số chỉ vôn kế và cường độ dòng điện qua $R_2$, $R_3$.</li><li>Giữ nguyên $U$, $R_2$, $R_3$; thay $R_1$ bằng $R_{1}^{\\prime}$ để ampe kế chỉ $2\\ \\text{A}$. Tính $R_{1}^{\\prime}$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-1-0\"><svg viewBox=\"0 0 450 190\" role=\"img\" aria-label=\"Mạch R1 nối tiếp với R2 song song R3, ampe kế ở nhánh chính, vôn kế song song đoạn song song\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">30 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(101.0 40.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><line x1=\"112.0\" y1=\"40.0\" x2=\"152.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(171.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"171.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"171.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">4 Ω</text><line x1=\"190.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">15 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"310.0\" y1=\"40.0\" x2=\"310.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(310.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"326\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"326\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">10 Ω</text><line x1=\"310.0\" y1=\"119.0\" x2=\"310.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"410.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"410.0\" y1=\"40.0\" x2=\"410.0\" y2=\"89.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(410.0 100.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">V</text></g><line x1=\"410.0\" y1=\"111.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"310.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"310.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"50.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"0.73s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;40.0\" dur=\"0.73s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;230.0\" dur=\"1.09s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;40.0\" dur=\"1.09s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;230.0\" dur=\"1.82s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"1.82s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;50.0\" dur=\"1.09s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;160.0\" dur=\"1.09s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"310.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"310.0;310.0\" dur=\"1.21s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"1.21s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài. Chấm xanh là điện tích dương đi từ cực + của nguồn ra ngoài.<br>Chấm đi càng nhanh ở nhánh nào, dòng điện nhánh đó càng lớn (chạy chậm, không đúng thời gian thật).</figcaption></figure>",
+   "problem_html": "<p>Điện trở $R_1=4\\ \\Omega$ nối tiếp với đoạn song song gồm $R_2=15\\ \\Omega$ và $R_3=10\\ \\Omega$, mắc vào nguồn $U=30\\ \\text{V}$. Ampe kế lí tưởng ở nhánh chính; vôn kế lí tưởng song song với đoạn song song.</p><ol type=\"a\"><li>Tính điện trở tương đương của cả mạch và số chỉ ampe kế.</li><li>Tính số chỉ vôn kế và cường độ dòng điện qua $R_2$, $R_3$.</li><li>Giữ nguyên $U$, $R_2$, $R_3$; thay $R_1$ bằng $R_{1}^{\\prime}$ để ampe kế chỉ $2\\ \\text{A}$. Tính $R_{1}^{\\prime}$.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> nối tiếp thì $I$ chung ; song song thì $U$ chung.</li><li><strong>Công thức:</strong> $R_{23}=\\dfrac{R_2R_3}{R_2+R_3}$ ; $R_{td}=R_1+R_{23}$ ; $I=\\dfrac U{R_{td}}$ ; $I_k=\\dfrac{U_{23}}{R_k}$.</li><li>⚠ <strong>Điều kiện:</strong> ampe kế, vôn kế lí tưởng ; thu gọn từ trong ra ngoài, tính ngược từ ngoài vào trong.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Thu gọn đoạn song song</span></p><p>$R_2$ và $R_3$ cùng nối vào hai nút M, N nên song song :</p>$$R_{23}=\\dfrac{R_2R_3}{R_2+R_3}$$$$R_{23}=\\dfrac{15\\cdot10}{15+10}$$<div class=\"bt-ans\">$$R_{23}=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Dòng điện mạch chính</span></p><p>$R_1$ nối tiếp với $R_{23}$ :</p>$$R_{td}=R_1+R_{23}=4+6=10\\ \\Omega$$$$I=\\dfrac U{R_{td}}=\\dfrac{30}{10}$$<div class=\"bt-ans\">$$I=3\\ \\text{A}$$</div><p>Ampe kế lí tưởng chỉ đúng $I$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hiệu điện thế đoạn song song</span></p><p>Tính $U_1$ trước rồi suy ra $U_{23}$ :</p>$$U_1=IR_1=3\\cdot4=12\\ \\text{V}$$$$U_{23}=U-U_1=30-12$$<div class=\"bt-ans\">$$U_{23}=18\\ \\text{V}$$</div><p>Vôn kế lí tưởng chỉ $U_{23}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng qua từng nhánh</span></p>$$I_2=\\dfrac{U_{23}}{R_2}=\\dfrac{18}{15}$$<div class=\"bt-ans\">$$I_2=1{,}2\\ \\text{A}$$</div>$$I_3=\\dfrac{U_{23}}{R_3}=\\dfrac{18}{10}$$<div class=\"bt-ans\">$$I_3=1{,}8\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tính ngược: đổi $R_1$</span></p><p>Ampe kế chỉ $2\\ \\text{A}$ thì điện trở cả mạch là :</p>$$R_{td}'=\\dfrac U{I'}=\\dfrac{30}2=15\\ \\Omega$$<p>$R_{23}$ vẫn nằm trong mạch nên :</p>$$R_1'=R_{td}'-R_{23}=15-6$$<div class=\"bt-ans\">$$R_1'=9\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$I_2+I_3=1{,}2+1{,}8=3\\ \\text{A}=I$ ✓ ; $U_1+U_{23}=12+18=30\\ \\text{V}=U$ ✓.</p><p>Câu c : $U_1'=2\\cdot9=18\\ \\text{V}$ nên $U_{23}'=12\\ \\text{V}=2\\cdot6$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_{td}=10\\ \\Omega$ ; ampe kế chỉ $3\\ \\text{A}$.</p><p>b) Vôn kế chỉ $18\\ \\text{V}$ ; $I_2=1{,}2\\ \\text{A}$, $I_3=1{,}8\\ \\text{A}$.</p><p>c) $R_1'=9\\ \\Omega$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>nối tiếp với đoạn song song</strong> → thu gọn $R_{23}$ trước, cộng $R_1$, rồi tính ngược bằng $U_1=IR_1$ và $U_{23}=U-U_1$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-1-2\"><svg viewBox=\"0 0 480 190\" role=\"img\" aria-label=\"Mạch đã thu gọn: R1 nối tiếp R23\"><line x1=\"50.0\" y1=\"40.0\" x2=\"121.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(140.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"140.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"140.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">4 Ω</text><line x1=\"159.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">23</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"105.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><text x=\"292\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"10\">23</tspan><tspan dy=\"-4\">=R</tspan><tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">R</tspan><tspan dy=\"4\" font-size=\"10\">3</tspan><tspan dy=\"-4\">/(R</tspan><tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">+R</tspan><tspan dy=\"4\" font-size=\"10\">3</tspan><tspan dy=\"-4\">)</tspan></text><text x=\"292\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"10\">td</tspan><tspan dy=\"-4\">=R</tspan><tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\">+R</tspan><tspan dy=\"4\" font-size=\"10\">23</tspan></text></svg><figcaption>Sau bước 1: chỉ còn $R_1$ nối tiếp $R_{23}$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp với đoạn song song gồm $R_2$ và $R_3$”</td><td>$R_1=4$, $R_2=15$, $R_3=10\\ \\Omega$</td><td>⚠ Nối tiếp: $I$ chung · song song: $U$ chung · $R_{td}=R_1+R_{23}$</td></tr><tr><td>“mắc vào nguồn $U=30\\ \\text{V}$”</td><td>$U=30\\ \\text{V}$</td><td>⚠ Nguồn lí tưởng: $U$ là hiệu điện thế hai đầu cả mạch</td></tr><tr><td>“ampe kế, vôn kế lí tưởng”</td><td>$R_A=0$, $R_V=\\infty$</td><td>Ampe kế chỉ $I$ chính · vôn kế chỉ $U_{23}$</td></tr><tr><td>a) “điện trở tương đương, số chỉ ampe kế”</td><td>cần tìm $R_{td}$, $I$</td><td>$R_{td}=R_1+\\dfrac{R_2R_3}{R_2+R_3}$ · $I=\\dfrac U{R_{td}}$</td></tr><tr><td>b) “số chỉ vôn kế, dòng qua $R_2$, $R_3$”</td><td>cần tìm $U_{23}$, $I_2$, $I_3$</td><td>$U_{23}=U-IR_1$ · $I_k=\\dfrac{U_{23}}{R_k}$</td></tr><tr><td>c) “thay $R_1$ để ampe kế chỉ $2\\ \\text{A}$”</td><td>$I'=2\\ \\text{A}$</td><td>$R_{td}'=\\dfrac U{I'}$ · $R_1'=R_{td}'-R_{23}$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp với đoạn song song gồm $R_2$ và $R_3$”</td><td>$R_1=4$, $R_2=15$, $R_3=10\\ \\Omega$</td><td>⚠ Nối tiếp: $I$ chung · song song: $U$ chung · $R_{td}=R_1+R_{23}$</td></tr><tr><td>“mắc vào nguồn $U=30\\ \\text{V}$”</td><td>$U=30\\ \\text{V}$</td><td>⚠ Nguồn lí tưởng: $U$ là hiệu điện thế hai đầu cả mạch</td></tr><tr><td>“ampe kế, vôn kế lí tưởng”</td><td>$R_A=0$, $R_V=\\infty$</td><td>Ampe kế chỉ $I$ chính · vôn kế chỉ $U_{23}$</td></tr><tr><td>a) “điện trở tương đương, số chỉ ampe kế”</td><td>cần tìm $R_{td}$, $I$</td><td>$R_{td}=R_1+\\dfrac{R_2R_3}{R_2+R_3}$ · $I=\\dfrac U{R_{td}}$</td></tr><tr><td>b) “số chỉ vôn kế, dòng qua $R_2$, $R_3$”</td><td>cần tìm $U_{23}$, $I_2$, $I_3$</td><td>$U_{23}=U-IR_1$ · $I_k=\\dfrac{U_{23}}{R_k}$</td></tr><tr><td>c) “thay $R_1$ để ampe kế chỉ $2\\ \\text{A}$”</td><td>$I'=2\\ \\text{A}$</td><td>$R_{td}'=\\dfrac U{I'}$ · $R_1'=R_{td}'-R_{23}$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>nối tiếp với đoạn song song</b> → thu gọn <b>$R_{23}$</b> trước, rồi <b>$I=U/R_{td}$</b> và tính ngược.",
    "cap_do": 1,
    "fading": "mo_het",
@@ -64,15 +64,315 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$R_1=4\\ \\Omega$ nối tiếp $(R_2=15\\ \\Omega\\ //\\ R_3=10\\ \\Omega)$",
+     "$U=30\\ \\text{V}$; vôn kế song song đoạn song song"
+    ],
+    "tim": [
+     "a) $R_{td}$, số chỉ ampe kế",
+     "b) số chỉ vôn kế, $I_2$, $I_3$",
+     "c) $R_1'$ để ampe kế chỉ $2\\ \\text{A}$"
+    ]
+   },
+   "meo": {
+    "ten": "Cổng soát vé",
+    "dieu_kien": "Mạch ở trạng thái dừng (không đóng, ngắt hay nạp tụ), điện trở thuần $R$ không đổi theo dòng (bóng dây tóc nóng lên thì không đúng) và dây nối coi như $R=0$. Chỉ dòng một chiều hoặc mạch thuần trở (có tụ, cuộn cảm hay xoay chiều phải dùng $Z$ thay $R$), mỗi nhánh chỉ có điện trở, không có nguồn riêng, và mạch phải rút được thành một hàng hoặc các làn (không phải cầu, tam giác). Mẹo chỉ nói về dòng điện, không nói về hiệu điện thế; nguồn có điện trở trong đáng kể thì thêm nhánh làm U của cả cụm giảm.",
+    "html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"meo-cong\"><svg viewBox=\"0 0 320 316\" role=\"img\" aria-label=\"Cổng soát vé: một hàng qua hai cổng nối tiếp, và hai làn song song chung sảnh vào, sảnh ra\"><text x=\"10\" y=\"20\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">Nối tiếp: một hàng, hai cổng</text><line x1=\"10\" y1=\"58\" x2=\"310\" y2=\"58\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><polygon points=\"300,52 312,58 300,64\" fill=\"currentColor\" opacity=\".5\"/><rect x=\"97\" y=\"33.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"97\" y=\"69.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"207\" y=\"38.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><rect x=\"207\" y=\"64.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><text x=\"90\" y=\"46\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">R</text><text x=\"200\" y=\"46\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">2R</text><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.1291\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1291;0.2829\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2829;0.4368\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"110\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.4368\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.245\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.245;0.3988\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3988;0.5527\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"220\" y=\"44\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.5527\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.0385;0.3462;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0385;0.3462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.1923;0.5;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.1923;0.5\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(306,58)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"14,58;14,58;306,58;306,58\" keyTimes=\"0;0.3462;0.6538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3462;0.6538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><text x=\"10\" y=\"112\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">Song song: hai làn, chung sảnh</text><rect x=\"8\" y=\"132\" width=\"42\" height=\"92\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\".5\"/><text x=\"29\" y=\"216\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">vào</text><rect x=\"270\" y=\"132\" width=\"42\" height=\"92\" rx=\"8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\".5\"/><text x=\"291\" y=\"216\" font-size=\"15\" font-weight=\"500\" text-anchor=\"middle\" fill=\"currentColor\">ra</text><polyline points=\"50,170 100,152 220,152 270,170\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><polyline points=\"50,186 100,204 220,204 270,186\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-dasharray=\"2 5\" opacity=\".45\"/><rect x=\"157\" y=\"127.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"157\" y=\"163.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#38bdf8\"/><rect x=\"157\" y=\"184.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><rect x=\"157\" y=\"210.0\" width=\"6\" height=\"14\" rx=\"2\" fill=\"#f87171\"/><text x=\"150\" y=\"140\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">R</text><text x=\"150\" y=\"192\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">2R</text><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.0769;0.1541;0.2766;0.3538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0769;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.2692;0.3464;0.469;0.5462;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2692;0.5462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.4615;0.5387;0.6613;0.7385;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4615;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,152;220,152;291,178;291,178\" keyTimes=\"0;0.6538;0.731;0.8536;0.9308;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6538;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,204;220,204;291,178;291,178\" keyTimes=\"0;0.0769;0.1541;0.2766;0.3538;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.0769;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\" transform=\"translate(291,178)\"><circle r=\"4.5\" fill=\"currentColor\"/><animateTransform attributeName=\"transform\" type=\"translate\" values=\"29,178;29,178;100,204;220,204;291,178;291,178\" keyTimes=\"0;0.4615;0.5387;0.6613;0.7385;1\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4615;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2154\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2154;0.4077\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.4077;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 3</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6;0.7923\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"172\" y=\"138\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 4</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.7923\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2154\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2154;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"172\" y=\"190\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" fill=\"currentColor\">qua: 2</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.6\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 0</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 1</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3538;0.3538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 2</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.3538;0.5462\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 3</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.5462;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 4</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7385;0.7385\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 5</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.7385;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"312\" y=\"246\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" fill=\"currentColor\">lối chính: 6</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.9308\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Mỗi chấm là một người. Cổng R dễ qua,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">cổng 2R khó qua gấp đôi.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0;0.2692\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Nối tiếp: mỗi cổng đếm cùng số người,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">không ai ứ lại giữa hai cổng.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.2692;0.6538\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"0\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Song song: cổng 2R qua ít đi một nửa,</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">R qua 4 người thì 2R qua 2 người.</text><animate attributeName=\"opacity\" values=\"0;1;0\" keyTimes=\"0;0.6538;0.8846\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g><g opacity=\"1\"><text x=\"10\" y=\"276\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Lối chính = tổng hai làn: 4 + 2 = 6.</text><text x=\"10\" y=\"295\" font-size=\"15\" font-weight=\"500\" text-anchor=\"start\" fill=\"currentColor\">Cổng càng khó, qua càng ít.</text><animate attributeName=\"opacity\" values=\"0;1\" keyTimes=\"0;0.8846\" dur=\"13s\" begin=\"indefinite\" fill=\"freeze\" calcMode=\"discrete\"/></g></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Người qua mỗi phút = dòng $I$, cổng khó qua = điện trở $R$ lớn. Nối tiếp: $I$ như nhau; song song: $I=I_1+I_2$, $\\dfrac{I_1}{I_2}=\\dfrac{R_2}{R_1}$.</figcaption></figure><p>Ở dạng này: mọi người qua cổng $R_1$ rồi mới rẽ hai làn $R_2$, $R_3$, nên dòng qua $R_1$ bằng dòng mạch chính; tới đoạn song song thì dòng chia tỉ lệ nghịch với điện trở. Gộp hai làn thành một cổng $R_{23}$ trước, rồi mới coi cả mạch là một hàng nối tiếp.</p>"
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        1.5,
+        9.4
+       ],
+       [
+        1.5,
+        1.0
+       ],
+       [
+        19.2,
+        1.0
+       ],
+       [
+        19.2,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        9.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        9.5,
+        2.6
+       ],
+       [
+        17.5,
+        2.6
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        6.0
+       ],
+       [
+        17.5,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 6.0
+     },
+     {
+      "loai": "chu",
+      "x": 9.9,
+      "y": 8.3,
+      "text": "M",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 17.9,
+      "y": 8.3,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 1.5,
+      "y": 5.0,
+      "huong": "doc",
+      "ten": "U = 30 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.6,
+      "y": 9.4,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.8,
+      "y": 9.4,
+      "ten": "R₁ = 4 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 9.4,
+      "ten": "R₂ = 15 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 6.0,
+      "ten": "R₃ = 10 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 13.5,
+      "y": 2.6,
+      "kieu": "V"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "R₂₃ = 6 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "R₂₃ = 15·10 : 25 = 6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        7.5,
+        1.0
+       ],
+       "den": [
+        4.5,
+        1.0
+       ],
+       "nhan": "3 A",
+       "vi": "t",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 30 : (4 + 6) = 3 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14.5,
+       "y": 2.2,
+       "text": "18 V",
+       "a": "start",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V = 30 − 3·4 = 18 V"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        15.0,
+        9.4
+       ],
+       "den": [
+        16.6,
+        9.4
+       ],
+       "nhan": "1,2 A",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        15.0,
+        6.0
+       ],
+       "den": [
+        16.6,
+        6.0
+       ],
+       "nhan": "1,8 A",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I₂ = 18 : 15 = 1,2 A · I₃ = 18 : 10 = 1,8 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.8,
+       "y": 7.8,
+       "text": "R₁′ = 9 Ω",
+       "a": "middle",
+       "mau": "min"
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        7.5,
+        1.0
+       ],
+       "den": [
+        4.5,
+        1.0
+       ],
+       "nhan": "2 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "R′ = 30 : 2 = 15 Ω ⇒ R₁′ = 15 − 6 = 9 Ω"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 2 · Trung bình · Ampe kế, vôn kế thực: sai số và điều kiện chọn dụng cụ",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Nguồn $U=12\\ \\text{V}$; $R_1=30\\ \\Omega$ nối tiếp $R_2=60\\ \\Omega$. Ampe kế mắc nối tiếp trong mạch, vôn kế mắc song song với $R_2$.</p><ol type=\"a\"><li>Dụng cụ lí tưởng: tính số chỉ ampe kế và vôn kế.</li><li>Vôn kế có $R_V=60\\ \\Omega$, ampe kế lí tưởng. Tính số chỉ hai dụng cụ và sai số tương đối của số chỉ vôn kế so với câu a.</li><li>Giữ vôn kế câu b, ampe kế có $R_A=3\\ \\Omega$. Tính số chỉ hai dụng cụ.</li><li>Ampe kế lí tưởng. Vôn kế phải có $R_V$ tối thiểu bao nhiêu để sai số tương đối của số chỉ vôn kế không quá $1\\%$?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-2-0\"><svg viewBox=\"0 0 450 190\" role=\"img\" aria-label=\"R1 nối tiếp R2, ampe kế ở nhánh chính, vôn kế song song với R2\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(101.0 40.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><line x1=\"112.0\" y1=\"40.0\" x2=\"152.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(171.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"171.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"171.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">30 Ω</text><line x1=\"190.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">60 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"330.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"330.0\" y1=\"40.0\" x2=\"330.0\" y2=\"89.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(330.0 100.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">V</text></g><line x1=\"330.0\" y1=\"111.0\" x2=\"330.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"330.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"50.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"16.36s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;40.0\" dur=\"16.36s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;230.0\" dur=\"24.55s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;40.0\" dur=\"24.55s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;230.0\" dur=\"16.36s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"16.36s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;50.0\" dur=\"24.55s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;160.0\" dur=\"24.55s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài. Chấm xanh đi từ cực + của nguồn ra ngoài (chạy chậm, không đúng thời gian thật).</figcaption></figure>",
+   "problem_html": "<p>Nguồn $U=12\\ \\text{V}$; $R_1=30\\ \\Omega$ nối tiếp $R_2=60\\ \\Omega$. Ampe kế mắc nối tiếp trong mạch, vôn kế mắc song song với $R_2$.</p><ol type=\"a\"><li>Dụng cụ lí tưởng: tính số chỉ ampe kế và vôn kế.</li><li>Vôn kế có $R_V=60\\ \\Omega$, ampe kế lí tưởng. Tính số chỉ hai dụng cụ và sai số tương đối của số chỉ vôn kế so với câu a.</li><li>Giữ vôn kế câu b, ampe kế có $R_A=3\\ \\Omega$. Tính số chỉ hai dụng cụ.</li><li>Ampe kế lí tưởng. Vôn kế phải có $R_V$ tối thiểu bao nhiêu để sai số tương đối của số chỉ vôn kế không quá $1\\%$?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> ampe kế thực có điện trở $R_A$ mắc nối tiếp ; vôn kế thực có điện trở $R_V$ mắc song song với đoạn đo.</li><li><strong>Công thức:</strong> $R_{doan}=\\dfrac{R_2R_V}{R_2+R_V}$ ; $\\delta=\\dfrac{U_{that}-U_{do}}{U_{that}}\\cdot100\\%$.</li><li>⚠ <strong>Điều kiện:</strong> $U_{that}$ là số chỉ của vôn kế lí tưởng (câu a) ; câu b, d ampe kế lí tưởng ; $R_V$ lớn thì sai số nhỏ.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Dụng cụ lí tưởng</span></p>$$I=\\dfrac U{R_1+R_2}=\\dfrac{12}{90}=\\dfrac2{15}\\ \\text{A}$$<p>Ampe kế chỉ khoảng $0{,}133\\ \\text{A}$ ; vôn kế chỉ :</p>$$U_V=IR_2=\\dfrac2{15}\\cdot60$$<div class=\"bt-ans\">$$U_V=8\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Đưa $R_V$ vào sơ đồ</span></p><p>Vôn kế thực song song với $R_2$ :</p>$$R_{doan}=\\dfrac{R_2R_V}{R_2+R_V}=\\dfrac{60\\cdot60}{120}$$<div class=\"bt-ans\">$$R_{doan}=30\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số chỉ khi vôn kế thực</span></p>$$R_{td}=R_1+R_{doan}=30+30=60\\ \\Omega$$$$I=\\dfrac{12}{60}=0{,}2\\ \\text{A}$$$$U_V=IR_{doan}=0{,}2\\cdot30$$<div class=\"bt-ans\">$$U_V=6\\ \\text{V}$$</div>$$\\delta=\\dfrac{8-6}8\\cdot100\\%=25\\%$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Thêm điện trở ampe kế</span></p>$$R_{td}=R_A+R_1+R_{doan}=3+30+30=63\\ \\Omega$$$$I=\\dfrac{12}{63}\\approx0{,}190\\ \\text{A}$$$$U_V=IR_{doan}=\\dfrac4{21}\\cdot30$$<div class=\"bt-ans\">$$U_V\\approx5{,}71\\ \\text{V}$$</div><p>Sai số $\\approx28{,}6\\%$ : ampe kế thực cũng làm vôn kế chỉ thấp đi.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Tìm $R_V$ tối thiểu</span></p><p>$\\delta\\le1\\%$ nghĩa là $U_V\\ge0{,}99\\cdot8=7{,}92\\ \\text{V}$ (ampe kế lí tưởng) :</p>$$U_1=12-7{,}92=4{,}08\\ \\text{V}$$$$R_{doan}=R_1\\dfrac{U_V}{U_1}=30\\cdot\\dfrac{7{,}92}{4{,}08}\\approx58{,}24\\ \\Omega$$<p>Rồi đảo công thức song song :</p>$$\\dfrac1{R_V}=\\dfrac1{R_{doan}}-\\dfrac1{R_2}=\\dfrac1{58{,}24}-\\dfrac1{60}$$<div class=\"bt-ans\">$$R_V\\approx1\\,980\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Với $R_V=1\\,980\\ \\Omega$ : $R_{doan}=\\dfrac{60\\cdot1980}{2040}\\approx58{,}24\\ \\Omega$ ; $I=\\dfrac{12}{88{,}24}\\approx0{,}136\\ \\text{A}$ ; $U_V\\approx7{,}92\\ \\text{V}$ ✓.</p><p>Vôn kế phải có điện trở cỡ $33$ lần $R_2$ mới sai số dưới $1\\%$ : $R_V$ càng lớn càng chính xác.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Ampe kế $\\approx0{,}133\\ \\text{A}$ ; vôn kế $8\\ \\text{V}$.</p><p>b) Ampe kế $0{,}2\\ \\text{A}$ ; vôn kế $6\\ \\text{V}$ ; $\\delta=25\\%$.</p><p>c) Ampe kế $\\approx0{,}190\\ \\text{A}$ ; vôn kế $\\approx5{,}71\\ \\text{V}$.</p><p>d) $R_V\\ge1\\,980\\ \\Omega$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>vôn kế, ampe kế có điện trở</strong> → vẽ $R_A$ nối tiếp, $R_V$ song song vào sơ đồ rồi giải như mạch thường.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-2-2\"><svg viewBox=\"0 0 450 190\" role=\"img\" aria-label=\"Mạch thực: ampe kế thành điện trở RA nối tiếp, vôn kế thành điện trở RV song song với R2\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"88.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(102.0 40.0)\"><rect x=\"-14\" y=\"-7\" width=\"28\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"102.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">A</tspan></text><line x1=\"116.0\" y1=\"40.0\" x2=\"154.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(173.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"173.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"173.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">30 Ω</text><line x1=\"192.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">60 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"330.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"330.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"330.0\" y1=\"40.0\" x2=\"330.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(330.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"346\" y=\"105.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">V</tspan></text><line x1=\"330.0\" y1=\"119.0\" x2=\"330.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"330.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"330.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/></svg><figcaption>Đưa dụng cụ vào sơ đồ: $R_A$ nối tiếp, $R_V$ song song với $R_2$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp $R_2$; vôn kế song song với $R_2$”</td><td>$R_1=30$, $R_2=60\\ \\Omega$</td><td>⚠ Vôn kế đo $U_2$ ; thực thì $R_V$ song song $R_2$</td></tr><tr><td>“ampe kế nối tiếp”</td><td>vị trí nhánh chính</td><td>⚠ Ampe kế thực: $R_A$ nối tiếp trong mạch</td></tr><tr><td>a) “dụng cụ lí tưởng”</td><td>$R_A=0$, $R_V=\\infty$</td><td>$I=\\dfrac U{R_1+R_2}$ · $U_V=IR_2$</td></tr><tr><td>b) “$R_V=60\\ \\Omega$”, “sai số tương đối”</td><td>$R_V=60\\ \\Omega$</td><td>$R_{doan}=\\dfrac{R_2R_V}{R_2+R_V}$ · $\\delta=\\dfrac{U_{that}-U_{do}}{U_{that}}$</td></tr><tr><td>c) “$R_A=3\\ \\Omega$”</td><td>$R_A=3\\ \\Omega$</td><td>$R_{td}=R_A+R_1+R_{doan}$</td></tr><tr><td>d) “$R_V$ tối thiểu”, “không quá $1\\%$”</td><td>$\\delta\\le1\\%$</td><td>$U_V\\ge0{,}99\\,U_{that}$ ⇒ tìm $R_{doan}$ ⇒ tìm $R_V$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp $R_2$; vôn kế song song với $R_2$”</td><td>$R_1=30$, $R_2=60\\ \\Omega$</td><td>⚠ Vôn kế đo $U_2$ ; thực thì $R_V$ song song $R_2$</td></tr><tr><td>“ampe kế nối tiếp”</td><td>vị trí nhánh chính</td><td>⚠ Ampe kế thực: $R_A$ nối tiếp trong mạch</td></tr><tr><td>a) “dụng cụ lí tưởng”</td><td>$R_A=0$, $R_V=\\infty$</td><td>$I=\\dfrac U{R_1+R_2}$ · $U_V=IR_2$</td></tr><tr><td>b) “$R_V=60\\ \\Omega$”, “sai số tương đối”</td><td>$R_V=60\\ \\Omega$</td><td>$R_{doan}=\\dfrac{R_2R_V}{R_2+R_V}$ · $\\delta=\\dfrac{U_{that}-U_{do}}{U_{that}}$</td></tr><tr><td>c) “$R_A=3\\ \\Omega$”</td><td>$R_A=3\\ \\Omega$</td><td>$R_{td}=R_A+R_1+R_{doan}$</td></tr><tr><td>d) “$R_V$ tối thiểu”, “không quá $1\\%$”</td><td>$\\delta\\le1\\%$</td><td>$U_V\\ge0{,}99\\,U_{that}$ ⇒ tìm $R_{doan}$ ⇒ tìm $R_V$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>vôn kế, ampe kế có điện trở</b> → vẽ <b>$R_A$ nối tiếp, $R_V$ song song</b> vào sơ đồ rồi giải.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -121,16 +421,16 @@
      "loi_hay_gap": "Giải ngược sai: lấy $U_V=0{,}99\\,U$ (bỏ $R_1$) hoặc quên đảo công thức song song khi tìm $R_V$.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt $U_V\\ge0{,}99$ lần số chỉ lí tưởng, suy $U_1$, $R_{doan}$, rồi đảo công thức song song tìm $R_V$",
+       "text": "Đặt $U_V\\ge0{,}99$ lần số chỉ lí tưởng, đảo song song tìm $R_V$",
        "dung": true
       },
       {
-       "text": "Cho $R_V=\\infty$ vì sai số nhỏ nhất",
+       "text": "Cho $R_V=\\infty$ vì khi đó sai số nhỏ nhất, không cần tính thêm",
        "dung": false,
        "vi_sao": "$R_V=\\infty$ là vôn kế lí tưởng chứ không phải giá trị cần tìm ; đề hỏi $R_V$ nhỏ nhất vẫn đạt $1\\%$."
       },
       {
-       "text": "Cho $R_V=100\\,R_2$ vì $1\\%=\\tfrac1{100}$",
+       "text": "Cho $R_V=100\\,R_2$ vì $1\\%=\\tfrac1{100}$, tức lớn gấp trăm lần $R_2$",
        "dung": false,
        "vi_sao": "Đó chỉ là điều kiện đủ ước chừng, không phải giá trị tối thiểu ; phải tính từ $U_V=0{,}99$ lần giá trị thật."
       }
@@ -139,15 +439,245 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=12\\ \\text{V}$; $R_1=30\\ \\Omega$ nối tiếp $R_2=60\\ \\Omega$",
+     "Vôn kế song song $R_2$"
+    ],
+    "tim": [
+     "a) số chỉ khi dụng cụ lí tưởng",
+     "b) số chỉ khi $R_V=60\\ \\Omega$, sai số tương đối",
+     "c) số chỉ khi thêm $R_A=3\\ \\Omega$",
+     "d) $R_V$ tối thiểu để sai số $\\le1\\%$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9
+       ],
+       [
+        1.5,
+        9
+       ],
+       [
+        1.5,
+        1.0
+       ],
+       [
+        19.2,
+        1.0
+       ],
+       [
+        19.2,
+        9
+       ],
+       [
+        17.5,
+        9
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9
+       ],
+       [
+        10.5,
+        9
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10.5,
+        9
+       ],
+       [
+        17.5,
+        9
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10.5,
+        9
+       ],
+       [
+        10.5,
+        4.4
+       ],
+       [
+        17.5,
+        4.4
+       ],
+       [
+        17.5,
+        9
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 10.5,
+      "y": 9
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 9
+     },
+     {
+      "loai": "nguon",
+      "x": 1.5,
+      "y": 5.0,
+      "huong": "doc",
+      "ten": "U = 12 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.6,
+      "y": 9,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 7.0,
+      "y": 9,
+      "ten": "R₁ = 30 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 14,
+      "y": 9,
+      "ten": "R₂ = 60 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 14,
+      "y": 4.4,
+      "kieu": "V"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 14,
+       "y": 2.3,
+       "text": "U_V = 8 V",
+       "a": "middle",
+       "mau": "max",
+       "het": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V = 12·60 : (30 + 60) = 8 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.0,
+       "y": 7.0,
+       "text": "R_V = 60 Ω",
+       "a": "middle",
+       "het": 5
+      },
+      {
+       "loai": "chu",
+       "x": 14,
+       "y": 6.5,
+       "text": "R_{2V} = 30 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{2V} = 60·60 : 120 = 30 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14,
+       "y": 2.3,
+       "text": "U_V = 6 V",
+       "a": "middle",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V = 12·30 : (30 + 30) = 6 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.0,
+       "y": 2.6,
+       "text": "R_A = 3 Ω",
+       "a": "middle",
+       "het": 5
+      },
+      {
+       "loai": "chu",
+       "x": 14,
+       "y": 2.3,
+       "text": "U_V ≈ 5,71 V",
+       "a": "middle",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V = 12·30 : 63 ≈ 5,71 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.0,
+       "y": 7.0,
+       "text": "R_V ≥ 1980 Ω",
+       "a": "middle",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "R_{2V} ≥ 58,2 Ω ⇒ R_V ≥ 1980 Ω"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 3 · Trung bình · Khoá K nối tắt đoạn song song và ẩn số điện trở",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Nguồn $U=12\\ \\text{V}$ không đổi. Điện trở $R_1$ chưa biết nối tiếp với đoạn song song gồm $R_2=12\\ \\Omega$ và $R_3$ chưa biết. Khoá K mắc song song với $R_2$. Ampe kế lí tưởng ở nhánh chính chỉ $2\\ \\text{A}$ khi K đóng và $1{,}2\\ \\text{A}$ khi K mở.</p><ol type=\"a\"><li>Khi K đóng, những điện trở nào còn có dòng điện? Tính $R_1$.</li><li>Tính $R_3$.</li><li>Khi K mở, tính hiệu điện thế giữa hai đầu $R_3$ và cường độ dòng điện qua $R_2$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-3-0\"><svg viewBox=\"0 0 450 200\" role=\"img\" aria-label=\"R1 nối tiếp đoạn song song R2, R3; khoá K song song với R2; ampe kế ở nhánh chính\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(101.0 40.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><line x1=\"112.0\" y1=\"40.0\" x2=\"152.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(171.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"171.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"171.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">?</text><line x1=\"190.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"285.0\" y1=\"40.0\" x2=\"285.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(285.0 100.0) rotate(90)\"><circle cx=\"-16\" cy=\"0\" r=\"2.6\" fill=\"currentColor\"/><circle cx=\"16\" cy=\"0\" r=\"2.6\" fill=\"currentColor\"/><line x1=\"-16\" y1=\"0\" x2=\"12\" y2=\"-13\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"303\" y=\"105.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">K</text><line x1=\"285.0\" y1=\"116.0\" x2=\"285.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"345.0\" y1=\"40.0\" x2=\"345.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"361\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"361\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"345.0\" y1=\"119.0\" x2=\"345.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"345.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"345.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"285.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"285.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"345.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"345.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"50.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;40.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;230.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;40.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;230.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"345.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"345.0;345.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;50.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;160.0\" dur=\"3.60s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài, K đang mở. Chấm xanh chỉ chiều dòng điện, mọi chấm cùng tốc độ (không biểu diễn độ lớn).</figcaption></figure>",
+   "problem_html": "<p>Nguồn $U=12\\ \\text{V}$ không đổi. Điện trở $R_1$ chưa biết nối tiếp với đoạn song song gồm $R_2=12\\ \\Omega$ và $R_3$ chưa biết. Khoá K mắc song song với $R_2$. Ampe kế lí tưởng ở nhánh chính chỉ $2\\ \\text{A}$ khi K đóng và $1{,}2\\ \\text{A}$ khi K mở.</p><ol type=\"a\"><li>Khi K đóng, những điện trở nào còn có dòng điện? Tính $R_1$.</li><li>Tính $R_3$.</li><li>Khi K mở, tính hiệu điện thế giữa hai đầu $R_3$ và cường độ dòng điện qua $R_2$.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> khoá K đóng là dây dẫn : hai đầu K cùng điện thế (chập lại).</li><li><strong>Công thức:</strong> $R_1=\\dfrac U{I_{dong}}$ ; $R_{23}=\\dfrac U{I_{mo}}-R_1$ ; $\\dfrac1{R_3}=\\dfrac1{R_{23}}-\\dfrac1{R_2}$.</li><li>⚠ <strong>Điều kiện:</strong> K song song $R_2$ mà $R_2\\parallel R_3$ thì K nối tắt cả đoạn song song, không chỉ $R_2$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>K đóng nối tắt những gì</span></p><p>K nối hai đầu $R_2$, mà hai đầu $R_2$ cũng là hai nút M, N của đoạn song song.</p><p>K đóng : M và N cùng điện thế, nên $R_2$ và $R_3$ đều không có dòng ; chỉ $R_1$ còn trong mạch.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính $R_1$</span></p>$$R_{td}=R_1,\\quad I_{dong}=\\dfrac U{R_1}$$$$R_1=\\dfrac U{I_{dong}}=\\dfrac{12}2$$<div class=\"bt-ans\">$$R_1=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đoạn song song khi K mở</span></p>$$R_{td}=\\dfrac U{I_{mo}}=\\dfrac{12}{1{,}2}=10\\ \\Omega$$$$R_{23}=R_{td}-R_1=10-6$$<div class=\"bt-ans\">$$R_{23}=4\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tính $R_3$</span></p><p>$R_{23}=4\\ \\Omega$ nhỏ hơn $R_2=12\\ \\Omega$ : hợp lí vì song song. Đảo công thức :</p>$$\\dfrac1{R_3}=\\dfrac1{R_{23}}-\\dfrac1{R_2}=\\dfrac14-\\dfrac1{12}=\\dfrac16$$<div class=\"bt-ans\">$$R_3=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Số liệu khi K mở</span></p>$$U_{23}=I_{mo}R_{23}=1{,}2\\cdot4$$<div class=\"bt-ans\">$$U_{23}=4{,}8\\ \\text{V}$$</div>$$I_2=\\dfrac{U_{23}}{R_2}=\\dfrac{4{,}8}{12}=0{,}4\\ \\text{A}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$I_3=\\dfrac{4{,}8}6=0{,}8\\ \\text{A}$ ; $I_2+I_3=1{,}2\\ \\text{A}=I_{mo}$ ✓.</p><p>$U_1=1{,}2\\cdot6=7{,}2\\ \\text{V}$ ; $U_1+U_{23}=12\\ \\text{V}=U$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Chỉ $R_1$ còn dòng ; $R_1=6\\ \\Omega$.</p><p>b) $R_3=6\\ \\Omega$.</p><p>c) $U_3=4{,}8\\ \\text{V}$ ; $I_2=0{,}4\\ \\text{A}$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>khoá K nối hai nút</strong> → K đóng chập hai nút, nối tắt mọi thứ nằm giữa hai nút ; hai số chỉ ở hai trạng thái cho hai phương trình.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-3-2\"><svg viewBox=\"0 0 450 200\" role=\"img\" aria-label=\"Khoá K đóng nối M với N: R2 và R3 bị nối tắt, chỉ còn R1\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(101.0 40.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><line x1=\"112.0\" y1=\"40.0\" x2=\"152.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(171.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"171.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"171.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">?</text><line x1=\"190.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"#94a3b8\" stroke-width=\"2.2\" opacity=\"0.38\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"#94a3b8\" stroke-width=\"2.2\" fill=\"none\" opacity=\"0.38\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"#94a3b8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"246\" y=\"113.0\" fill=\"#94a3b8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"2.2\" opacity=\"0.38\" stroke-linecap=\"round\"/><line x1=\"285.0\" y1=\"40.0\" x2=\"285.0\" y2=\"84.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(285.0 100.0) rotate(90)\"><line x1=\"-16\" y1=\"0\" x2=\"16\" y2=\"0\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"-16\" cy=\"0\" r=\"2.6\" fill=\"currentColor\"/><circle cx=\"16\" cy=\"0\" r=\"2.6\" fill=\"currentColor\"/></g><text x=\"303\" y=\"105.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">K</text><line x1=\"285.0\" y1=\"116.0\" x2=\"285.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"345.0\" y1=\"40.0\" x2=\"345.0\" y2=\"81.0\" stroke=\"#94a3b8\" stroke-width=\"2.2\" opacity=\"0.38\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"#94a3b8\" stroke-width=\"2.2\" fill=\"none\" opacity=\"0.38\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"361\" y=\"97.0\" fill=\"#94a3b8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"361\" y=\"113.0\" fill=\"#94a3b8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"345.0\" y1=\"119.0\" x2=\"345.0\" y2=\"160.0\" stroke=\"#94a3b8\" stroke-width=\"2.2\" opacity=\"0.38\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"345.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"345.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"285.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"285.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"345.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"345.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/></svg><figcaption>K đóng: M và N cùng điện thế, $R_2$ và $R_3$ (màu nhạt) không có dòng. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“K song song với $R_2$”</td><td>K nối hai đầu $R_2$</td><td>⚠ Hai đầu $R_2$ cũng là hai nút M, N của đoạn song song</td></tr><tr><td>“K đóng chỉ $2\\ \\text{A}$”</td><td>$I_{dong}=2\\ \\text{A}$</td><td>K đóng: dây nối M với N ⇒ $R_{td}=R_1$ ⇒ $R_1=\\dfrac U{I_{dong}}$</td></tr><tr><td>“K mở chỉ $1{,}2\\ \\text{A}$”</td><td>$I_{mo}=1{,}2\\ \\text{A}$</td><td>$R_{td}=\\dfrac U{I_{mo}}$ ⇒ $R_{23}=R_{td}-R_1$</td></tr><tr><td>“$R_2=12\\ \\Omega$, $R_3$ chưa biết”</td><td>$R_2=12\\ \\Omega$</td><td>$\\dfrac1{R_3}=\\dfrac1{R_{23}}-\\dfrac1{R_2}$</td></tr><tr><td>c) “hiệu điện thế hai đầu $R_3$, dòng qua $R_2$”</td><td>K mở</td><td>$U_{23}=I_{mo}R_{23}$ · $I_2=\\dfrac{U_{23}}{R_2}$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“K song song với $R_2$”</td><td>K nối hai đầu $R_2$</td><td>⚠ Hai đầu $R_2$ cũng là hai nút M, N của đoạn song song</td></tr><tr><td>“K đóng chỉ $2\\ \\text{A}$”</td><td>$I_{dong}=2\\ \\text{A}$</td><td>K đóng: dây nối M với N ⇒ $R_{td}=R_1$ ⇒ $R_1=\\dfrac U{I_{dong}}$</td></tr><tr><td>“K mở chỉ $1{,}2\\ \\text{A}$”</td><td>$I_{mo}=1{,}2\\ \\text{A}$</td><td>$R_{td}=\\dfrac U{I_{mo}}$ ⇒ $R_{23}=R_{td}-R_1$</td></tr><tr><td>“$R_2=12\\ \\Omega$, $R_3$ chưa biết”</td><td>$R_2=12\\ \\Omega$</td><td>$\\dfrac1{R_3}=\\dfrac1{R_{23}}-\\dfrac1{R_2}$</td></tr><tr><td>c) “hiệu điện thế hai đầu $R_3$, dòng qua $R_2$”</td><td>K mở</td><td>$U_{23}=I_{mo}R_{23}$ · $I_2=\\dfrac{U_{23}}{R_2}$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>khoá K nối hai nút của đoạn song song</b> → K đóng <b>nối tắt cả đoạn</b> ; hai số chỉ cho hai phương trình.",
    "cap_do": 2,
    "fading": "giau_buoc_cuoi",
@@ -221,12 +751,12 @@
        "dung": true
       },
       {
-       "text": "$R_3=R_{23}-R_2$",
+       "text": "Coi hai điện trở nối tiếp : $R_3=R_{23}-R_2$",
        "dung": false,
-       "vi_sao": "Công thức nối tiếp : đoạn này là song song nên điện trở thành phần lớn hơn $R_{23}$."
+       "vi_sao": "Đoạn này là song song nên điện trở thành phần lớn hơn $R_{23}$."
       },
       {
-       "text": "$R_3=R_{23}\\cdot R_2$",
+       "text": "Dùng tích hai điện trở : $R_3=R_{23}\\cdot R_2$ cho gọn",
        "dung": false,
        "vi_sao": "Không có công thức nhân đó ; điện trở song song là tích chia tổng."
       }
@@ -259,15 +789,343 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=12\\ \\text{V}$; $R_1$ nối tiếp $(R_2=12\\ \\Omega\\ //\\ R_3)$",
+     "K song song $R_2$",
+     "K đóng: $I=2\\ \\text{A}$; K mở: $I=1{,}2\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) điện trở có dòng khi K đóng, $R_1$",
+     "b) $R_3$",
+     "c) $U_3$, $I_2$ khi K mở"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        1.5,
+        9.4
+       ],
+       [
+        1.5,
+        1.0
+       ],
+       [
+        19.2,
+        1.0
+       ],
+       [
+        19.2,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        9.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        9.5,
+        2.6
+       ],
+       [
+        17.5,
+        2.6
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        6.0
+       ],
+       [
+        17.5,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 2.6
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 2.6
+     },
+     {
+      "loai": "chu",
+      "x": 9.9,
+      "y": 8.3,
+      "text": "M",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 17.9,
+      "y": 8.3,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 1.5,
+      "y": 6.0,
+      "huong": "doc",
+      "ten": "U = 12 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.6,
+      "y": 9.4,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.8,
+      "y": 9.4
+     },
+     {
+      "loai": "chu",
+      "x": 6.8,
+      "y": 10.125,
+      "text": "R₁ = ?",
+      "a": "middle",
+      "het": 2
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 9.4,
+      "ten": "R₂ = 12 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 6.0
+     },
+     {
+      "loai": "chu",
+      "x": 13.5,
+      "y": 6.725,
+      "text": "R₃ = ?",
+      "a": "middle",
+      "het": 4
+     },
+     {
+      "loai": "khoa",
+      "x": 13.5,
+      "y": 2.6,
+      "mo": true,
+      "het": 1
+     },
+     {
+      "loai": "chu",
+      "x": 14.6,
+      "y": 3.0,
+      "text": "K",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 2.3,
+      "y": 3.4,
+      "text": "K đóng: 2 A",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 2.3,
+      "y": 2.0,
+      "text": "K mở: 1,2 A",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "khoa",
+       "x": 13.5,
+       "y": 2.6,
+       "mo": false,
+       "het": 3
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        10.0,
+        2.6
+       ],
+       "den": [
+        11.8,
+        2.6
+       ],
+       "nhan": "2 A",
+       "vi": "b",
+       "het": 3
+      },
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "I₂ = I₃ = 0",
+       "a": "middle",
+       "mau": "min",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "K đóng nối tắt M với N: chỉ còn R₁"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 6.8,
+       "y": 10.125,
+       "text": "R₁ = 6 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R₁ = 12 : 2 = 6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "khoa",
+       "x": 13.5,
+       "y": 2.6,
+       "mo": true
+      },
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "R₂₃ = 4 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "12 : 1,2 = 10 Ω ⇒ R₂₃ = 10 − 6 = 4 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 6.725,
+       "text": "R₃ = 6 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "1/R₃ = 1/4 − 1/12 ⇒ R₃ = 6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "U₃ = 4,8 V",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "U₃ = 1,2·4 = 4,8 V · I₂ = 0,4 A"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 4 · Kết hợp · Biến trở trong mạch hỗn hợp: giá trị cần chỉnh và miền số chỉ",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Nguồn $U=18\\ \\text{V}$; $R_1=6\\ \\Omega$ nối tiếp với đoạn song song gồm biến trở $R_b$ (từ $0$ đến $24\\ \\Omega$) và $R_2=12\\ \\Omega$. Ampe kế lí tưởng ở nhánh chính; vôn kế lí tưởng song song với đoạn song song.</p><ol type=\"a\"><li>Với $R_b=12\\ \\Omega$, tính số chỉ ampe kế và vôn kế.</li><li>Điều chỉnh $R_b$ bằng bao nhiêu để vôn kế chỉ $8\\ \\text{V}$?</li><li>Khi $R_b$ chạy hết dải, số chỉ ampe kế biến thiên trong khoảng nào?</li><li>Có thể làm vôn kế chỉ $11\\ \\text{V}$ không? Vì sao?</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-4-0\"><svg viewBox=\"0 0 450 190\" role=\"img\" aria-label=\"R1 nối tiếp với biến trở Rb song song R2, ampe kế nhánh chính, vôn kế song song đoạn song song\"><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">18 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"90.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(101.0 40.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><line x1=\"112.0\" y1=\"40.0\" x2=\"152.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(171.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"171.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"171.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">6 Ω</text><line x1=\"190.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"-13\" y1=\"13\" x2=\"13\" y2=\"-13\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M7,-14 L13,-13 L12,-7\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">b</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">0–24 Ω</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"310.0\" y1=\"40.0\" x2=\"310.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(310.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"326\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"326\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"310.0\" y1=\"119.0\" x2=\"310.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"410.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"410.0\" y1=\"40.0\" x2=\"410.0\" y2=\"89.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(410.0 100.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">V</text></g><line x1=\"410.0\" y1=\"111.0\" x2=\"410.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"230.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"30\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"230.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"228\" y=\"180\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"310.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"310.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"40.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"160.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"50.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"1.45s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;40.0\" dur=\"1.45s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;230.0\" dur=\"2.18s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;40.0\" dur=\"2.18s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;230.0\" dur=\"2.91s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"2.91s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"230.0\" cy=\"160.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"230.0;50.0\" dur=\"2.18s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"160.0;160.0\" dur=\"2.18s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"310.0\" cy=\"40.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"310.0;310.0\" dur=\"2.91s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"40.0;160.0\" dur=\"2.91s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài (minh hoạ lúc $R_b=12\\ \\Omega$). Chấm xanh đi từ cực + của nguồn (chạy chậm, không đúng thời gian thật).</figcaption></figure>",
+   "problem_html": "<p>Nguồn $U=18\\ \\text{V}$; $R_1=6\\ \\Omega$ nối tiếp với đoạn song song gồm biến trở $R_b$ (từ $0$ đến $24\\ \\Omega$) và $R_2=12\\ \\Omega$. Ampe kế lí tưởng ở nhánh chính; vôn kế lí tưởng song song với đoạn song song.</p><ol type=\"a\"><li>Với $R_b=12\\ \\Omega$, tính số chỉ ampe kế và vôn kế.</li><li>Điều chỉnh $R_b$ bằng bao nhiêu để vôn kế chỉ $8\\ \\text{V}$?</li><li>Khi $R_b$ chạy hết dải, số chỉ ampe kế biến thiên trong khoảng nào?</li><li>Có thể làm vôn kế chỉ $11\\ \\text{V}$ không? Vì sao?</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $R_b$ và $R_2$ chung hai nút nên song song ; $U_{ss}=U-IR_1$.</li><li><strong>Công thức:</strong> $R_{ss}=\\dfrac{R_bR_2}{R_b+R_2}$ ; $I=\\dfrac U{R_1+R_{ss}}$ ; $\\dfrac1{R_b}=\\dfrac1{R_{ss}}-\\dfrac1{R_2}$.</li><li>⚠ <strong>Điều kiện:</strong> nghiệm $R_b$ phải thoả $0\\le R_b\\le24\\ \\Omega$ ; $R_{ss}$ tăng khi $R_b$ tăng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Đoạn song song khi $R_b=12$</span></p>$$R_{ss}=\\dfrac{12\\cdot12}{12+12}$$<div class=\"bt-ans\">$$R_{ss}=6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chỉ hai dụng cụ</span></p>$$R_{td}=R_1+R_{ss}=6+6=12\\ \\Omega$$$$I=\\dfrac{18}{12}$$<div class=\"bt-ans\">$$I=1{,}5\\ \\text{A}$$</div>$$U_{ss}=IR_{ss}=1{,}5\\cdot6=9\\ \\text{V}$$<p>Ampe kế chỉ $1{,}5\\ \\text{A}$ ; vôn kế chỉ $9\\ \\text{V}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tính ngược cho vôn kế $8\\ \\text{V}$</span></p>$$U_1=U-U_{ss}=18-8=10\\ \\text{V}$$$$I=\\dfrac{U_1}{R_1}=\\dfrac{10}6=\\dfrac53\\ \\text{A}$$$$R_{ss}=\\dfrac{U_{ss}}I=\\dfrac{8}{5/3}=4{,}8\\ \\Omega$$$$\\dfrac1{R_b}=\\dfrac1{4{,}8}-\\dfrac1{12}=\\dfrac18$$<div class=\"bt-ans\">$$R_b=8\\ \\Omega$$</div><p>Nằm trong $0\\ldots24\\ \\Omega$ nên nhận.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng nhỏ nhất</span></p><p>$R_b$ càng lớn, $R_{ss}$ càng lớn, $R_{td}$ càng lớn, dòng càng nhỏ. Nhỏ nhất khi $R_b=24\\ \\Omega$ :</p>$$R_{ss}=\\dfrac{24\\cdot12}{36}=8\\ \\Omega,\\quad R_{td}=14\\ \\Omega$$$$I_{min}=\\dfrac{18}{14}$$<div class=\"bt-ans\">$$I_{min}\\approx1{,}29\\ \\text{A}$$</div><p>Lớn nhất khi $R_b=0$ (nối tắt đoạn song song) : $I_{max}=\\dfrac{18}6=3\\ \\text{A}$. Vậy $1{,}29\\ \\text{A}\\le I\\le3\\ \\text{A}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Vôn kế lớn nhất</span></p><p>$U_{ss}$ lớn nhất khi $R_{ss}$ lớn nhất, tức $R_b=24\\ \\Omega$ :</p>$$U_{ss,max}=U\\dfrac{R_{ss}}{R_1+R_{ss}}=18\\cdot\\dfrac8{14}$$<div class=\"bt-ans\">$$U_{ss,max}\\approx10{,}29\\ \\text{V}$$</div><p>Nhỏ hơn $11\\ \\text{V}$ nên <strong>không thể</strong> : $R_b\\le24\\ \\Omega$ giới hạn $R_{ss}\\le8\\ \\Omega$, phần còn lại của $U$ rơi trên $R_1$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Với $R_b=8\\ \\Omega$ : $R_{ss}=\\dfrac{8\\cdot12}{20}=4{,}8\\ \\Omega$ ; $I=\\dfrac{18}{10{,}8}=\\dfrac53\\ \\text{A}$ ; $U_{ss}=\\dfrac53\\cdot4{,}8=8\\ \\text{V}$ ✓.</p><p>$R_b=0$ cho vôn kế $0\\ \\text{V}$ ; $R_b=24$ cho $10{,}29\\ \\text{V}$ : vôn kế chỉ trong khoảng $0\\ldots10{,}29\\ \\text{V}$.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Ampe kế $1{,}5\\ \\text{A}$ ; vôn kế $9\\ \\text{V}$.</p><p>b) $R_b=8\\ \\Omega$.</p><p>c) $\\dfrac97\\ \\text{A}\\approx1{,}29\\ \\text{A}$ đến $3\\ \\text{A}$.</p><p>d) Không : vôn kế chỉ tối đa $\\dfrac{72}7\\approx10{,}29\\ \\text{V}$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>biến trở chạy trong dải</strong> → xét hai đầu mút, nghiệm phải thuộc dải cho phép.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-4-2\"><svg viewBox=\"0 0 480 190\" role=\"img\" aria-label=\"Mạch thu gọn: R1 nối tiếp Rss, với Rss là điện trở của Rb song song R2\"><line x1=\"50.0\" y1=\"40.0\" x2=\"121.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(140.0 40.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"140.0\" y=\"11\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"140.0\" y=\"26\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">6 Ω</text><line x1=\"159.0\" y1=\"40.0\" x2=\"230.0\" y2=\"40.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"230.0\" y1=\"40.0\" x2=\"230.0\" y2=\"81.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(230.0 100.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"246\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">ss</tspan></text><text x=\"246\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"230.0\" y1=\"119.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"40.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"105.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"160.0\" x2=\"230.0\" y2=\"160.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><text x=\"292\" y=\"92\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"10\">ss</tspan><tspan dy=\"-4\">=R</tspan><tspan dy=\"4\" font-size=\"10\">b</tspan><tspan dy=\"-4\">R</tspan><tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">/(R</tspan><tspan dy=\"4\" font-size=\"10\">b</tspan><tspan dy=\"-4\">+R</tspan><tspan dy=\"4\" font-size=\"10\">2</tspan><tspan dy=\"-4\">)</tspan></text><text x=\"292\" y=\"118\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"10\">td</tspan><tspan dy=\"-4\">=R</tspan><tspan dy=\"4\" font-size=\"10\">1</tspan><tspan dy=\"-4\">+R</tspan><tspan dy=\"4\" font-size=\"10\">ss</tspan></text><text x=\"292\" y=\"144\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">U<tspan dy=\"4\" font-size=\"10\">ss</tspan><tspan dy=\"-4\">=U-IR</tspan><tspan dy=\"4\" font-size=\"10\">1</tspan></text></svg><figcaption>Biến trở và $R_2$ thu gọn thành $R_{ss}$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp đoạn song song gồm $R_b$ và $R_2$”</td><td>$R_1=6$, $R_2=12\\ \\Omega$</td><td>⚠ $R_b$ và $R_2$ chung hai nút nên song song</td></tr><tr><td>“$R_b$ từ $0$ đến $24\\ \\Omega$”</td><td>$0\\le R_b\\le24\\ \\Omega$</td><td>⚠ Nghiệm tìm được phải nằm trong khoảng này</td></tr><tr><td>a) “$R_b=12\\ \\Omega$”</td><td>$R_b=12\\ \\Omega$</td><td>$R_{ss}=\\dfrac{R_bR_2}{R_b+R_2}$ · $I=\\dfrac U{R_1+R_{ss}}$</td></tr><tr><td>b) “vôn kế chỉ $8\\ \\text{V}$”</td><td>$U_{ss}=8\\ \\text{V}$</td><td>$I=\\dfrac{U-U_{ss}}{R_1}$ · $R_{ss}=\\dfrac{U_{ss}}I$ · $\\dfrac1{R_b}=\\dfrac1{R_{ss}}-\\dfrac1{R_2}$</td></tr><tr><td>c) “biến thiên trong khoảng nào”</td><td>hai đầu mút của $R_b$</td><td>$I$ nhỏ nhất khi $R_{td}$ lớn nhất ($R_b$ lớn nhất)</td></tr><tr><td>d) “vôn kế chỉ $11\\ \\text{V}$ được không”</td><td>$U_{ss,max}=?$</td><td>$U_{ss}$ lớn nhất khi $R_{ss}$ lớn nhất</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp đoạn song song gồm $R_b$ và $R_2$”</td><td>$R_1=6$, $R_2=12\\ \\Omega$</td><td>⚠ $R_b$ và $R_2$ chung hai nút nên song song</td></tr><tr><td>“$R_b$ từ $0$ đến $24\\ \\Omega$”</td><td>$0\\le R_b\\le24\\ \\Omega$</td><td>⚠ Nghiệm tìm được phải nằm trong khoảng này</td></tr><tr><td>a) “$R_b=12\\ \\Omega$”</td><td>$R_b=12\\ \\Omega$</td><td>$R_{ss}=\\dfrac{R_bR_2}{R_b+R_2}$ · $I=\\dfrac U{R_1+R_{ss}}$</td></tr><tr><td>b) “vôn kế chỉ $8\\ \\text{V}$”</td><td>$U_{ss}=8\\ \\text{V}$</td><td>$I=\\dfrac{U-U_{ss}}{R_1}$ · $R_{ss}=\\dfrac{U_{ss}}I$ · $\\dfrac1{R_b}=\\dfrac1{R_{ss}}-\\dfrac1{R_2}$</td></tr><tr><td>c) “biến thiên trong khoảng nào”</td><td>hai đầu mút của $R_b$</td><td>$I$ nhỏ nhất khi $R_{td}$ lớn nhất ($R_b$ lớn nhất)</td></tr><tr><td>d) “vôn kế chỉ $11\\ \\text{V}$ được không”</td><td>$U_{ss,max}=?$</td><td>$U_{ss}$ lớn nhất khi $R_{ss}$ lớn nhất</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>biến trở chạy trong dải</b> → thu gọn <b>$R_{ss}$</b>, xét hai đầu mút, nghiệm phải thuộc dải cho phép.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -296,12 +1154,12 @@
        "dung": true
       },
       {
-       "text": "$R_{td}=R_1+R_b+R_2$",
+       "text": "$R_{td}=R_1+R_b+R_2$ rồi tính $I$ theo $U$",
        "dung": false,
        "vi_sao": "$R_b$ và $R_2$ chung hai nút nên song song, không cộng."
       },
       {
-       "text": "$I=\\dfrac U{R_{ss}}$",
+       "text": "$I=\\dfrac U{R_{ss}}$ không cần xét thêm $R_1$",
        "dung": false,
        "vi_sao": "$R_{ss}$ chỉ là một phần của mạch ; hiệu điện thế hai đầu nó nhỏ hơn $U$ vì còn $R_1$."
       }
@@ -316,16 +1174,16 @@
      "loi_hay_gap": "Cho $I=\\dfrac U{R_1}$ rồi $R_b=\\dfrac{U_{ss}}I$ : quên $R_2$ song song và $U_1$ chỉ là $U-U_{ss}$.",
      "chon_buoc_ke": [
       {
-       "text": "$U_1=U-U_{ss}$, rồi $I$, rồi $R_{ss}=\\dfrac{U_{ss}}I$, rồi đảo công thức song song tìm $R_b$",
+       "text": "$I=\\dfrac{U-U_{ss}}{R_1}$ rồi $R_{ss}$, rồi đảo song song tìm $R_b$",
        "dung": true
       },
       {
-       "text": "Cho $I=\\dfrac U{R_1}$",
+       "text": "Cho $I=\\dfrac U{R_1}$ rồi $R_{ss}$, rồi $R_b$ theo công thức song song",
        "dung": false,
        "vi_sao": "$R_1$ chỉ chịu $U-U_{ss}$ chứ không chịu toàn bộ $U$."
       },
       {
-       "text": "Cho $R_b=R_{ss}$",
+       "text": "Cho $R_b=R_{ss}$ rồi lấy luôn làm kết quả của $R_b$",
        "dung": false,
        "vi_sao": "$R_{ss}$ là điện trở của $R_b$ song song $R_2$, nhỏ hơn $R_b$ ; phải đảo công thức song song."
       }
@@ -340,11 +1198,11 @@
      "loi_hay_gap": "Chọn $R_b=0$ cho dòng nhỏ nhất : đó là lúc đoạn song song bị nối tắt và dòng lớn nhất.",
      "chon_buoc_ke": [
       {
-       "text": "Dòng nhỏ nhất khi $R_{td}$ lớn nhất, tức $R_b$ lớn nhất",
+       "text": "Dòng nhỏ nhất khi $R_{td}$ lớn, tức $R_b$ lớn nhất",
        "dung": true
       },
       {
-       "text": "Dòng nhỏ nhất khi $R_b=0$",
+       "text": "Dòng nhỏ nhất khi $R_{td}$ nhỏ nhất, tức $R_b=0$",
        "dung": false,
        "vi_sao": "$R_b=0$ làm đoạn song song bị nối tắt, $R_{td}$ nhỏ nhất, dòng lớn nhất."
       },
@@ -364,11 +1222,11 @@
      "loi_hay_gap": "Cho vôn kế chỉ tới $U$ của nguồn : quên $R_1$ còn chịu một phần hiệu điện thế.",
      "chon_buoc_ke": [
       {
-       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ lớn nhất, tức $R_b=24\\ \\Omega$",
+       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ lớn, tức $R_b=24\\ \\Omega$",
        "dung": true
       },
       {
-       "text": "$U_{ss}$ lớn nhất khi $R_b=0$",
+       "text": "$U_{ss}$ lớn nhất khi $R_{ss}$ nhỏ, tức $R_b=0$",
        "dung": false,
        "vi_sao": "$R_b=0$ nối tắt đoạn song song nên $U_{ss}=0$."
       },
@@ -382,15 +1240,323 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "tom_de": {
+    "cho": [
+     "$U=18\\ \\text{V}$; $R_1=6\\ \\Omega$ nối tiếp $(R_b\\ //\\ R_2=12\\ \\Omega)$",
+     "$R_b$ từ $0$ đến $24\\ \\Omega$"
+    ],
+    "tim": [
+     "a) số chỉ ampe kế, vôn kế khi $R_b=12\\ \\Omega$",
+     "b) $R_b$ để vôn kế chỉ $8\\ \\text{V}$",
+     "c) khoảng số chỉ ampe kế",
+     "d) vôn kế chỉ $11\\ \\text{V}$ được không"
+    ]
+   },
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        1.5,
+        9.4
+       ],
+       [
+        1.5,
+        1.0
+       ],
+       [
+        19.2,
+        1.0
+       ],
+       [
+        19.2,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.8,
+        9.4
+       ],
+       [
+        9.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        9.4
+       ],
+       [
+        9.5,
+        2.6
+       ],
+       [
+        17.5,
+        2.6
+       ],
+       [
+        17.5,
+        9.4
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.5,
+        6.0
+       ],
+       [
+        17.5,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 9.4
+     },
+     {
+      "loai": "nut",
+      "x": 9.5,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 17.5,
+      "y": 6.0
+     },
+     {
+      "loai": "chu",
+      "x": 9.9,
+      "y": 8.3,
+      "text": "M",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 17.9,
+      "y": 8.3,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 1.5,
+      "y": 5.0,
+      "huong": "doc",
+      "ten": "U = 18 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.6,
+      "y": 9.4,
+      "kieu": "A"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.8,
+      "y": 9.4,
+      "ten": "R₁ = 6 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 9.4
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        12.4,
+        8.8
+       ],
+       [
+        14.6,
+        10.0
+       ]
+      ]
+     },
+     {
+      "loai": "chu",
+      "x": 13.5,
+      "y": 10.45,
+      "text": "R_b: 0 → 24 Ω",
+      "a": "middle"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 6.0,
+      "ten": "R₂ = 12 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 13.5,
+      "y": 2.6,
+      "kieu": "V"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "R_{ss} = 6 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "R_b = 12 Ω ⇒ R_{ss} = 6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        7.5,
+        1.0
+       ],
+       "den": [
+        4.5,
+        1.0
+       ],
+       "nhan": "1,5 A",
+       "vi": "t",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "I = 18 : (6 + 6) = 1,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14.5,
+       "y": 2.2,
+       "text": "8 V",
+       "a": "start",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "R_b = 8 Ω",
+       "a": "middle",
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "I = (18 − 8) : 6 = 5/3 A ⇒ R_{ss} = 4,8 Ω"
+      },
+      {
+       "loai": "ghi",
+       "text": "⇒ R_b = 8 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 4.4,
+       "text": "R_b = 24 Ω",
+       "a": "middle",
+       "mau": "min"
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        7.5,
+        1.0
+       ],
+       "den": [
+        4.5,
+        1.0
+       ],
+       "nhan": "1,29 A",
+       "vi": "t",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I_{min} = 18 : (6 + 8) ≈ 1,29 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 14.5,
+       "y": 2.2,
+       "text": "10,29 V",
+       "a": "start",
+       "mau": "min"
+      },
+      {
+       "loai": "ghi",
+       "text": "U_V ≤ 1,29·8 ≈ 10,29 V < 11 V"
+      }
+     ],
+     []
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 5 · Kết hợp · Mạch cầu cân bằng, chập hai điểm cùng điện thế",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Giữa hai điểm M, N có hiệu điện thế không đổi $U=30\\ \\text{V}$ mắc hai nhánh song song: nhánh trái gồm $R_1=6\\ \\Omega$ nối tiếp $R_3=10\\ \\Omega$ (điểm nối P), nhánh phải gồm $R_2=9\\ \\Omega$ nối tiếp $R_4$ chưa biết (điểm nối Q). Vôn kế lí tưởng mắc giữa P và Q chỉ $0\\ \\text{V}$.</p><ol type=\"a\"><li>Tìm $R_4$.</li><li>Tính điện trở tương đương, cường độ dòng điện mạch chính và ở mỗi nhánh.</li><li>Thay vôn kế bằng điện trở $R_5=20\\ \\Omega$. Dòng điện qua $R_5$ bằng bao nhiêu? Điện trở tương đương có đổi không?</li><li>Tính lại điện trở tương đương bằng cách chập P với Q và so sánh.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-5-0\"><svg viewBox=\"0 0 400 200\" role=\"img\" aria-label=\"Cầu: nhánh trái R1 rồi R3, nhánh phải R2 rồi R4 chưa biết, vôn kế lí tưởng giữa P và Q chỉ 0\"><line x1=\"50.0\" y1=\"30.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">30 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"30.0\" x2=\"300.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"170.0\" x2=\"300.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"30.0\" x2=\"170.0\" y2=\"51.3\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(170.0 70.3) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"186\" y=\"67.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"186\" y=\"83.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">6 Ω</text><line x1=\"170.0\" y1=\"89.3\" x2=\"170.0\" y2=\"110.7\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(170.0 129.7) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"186\" y=\"126.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"186\" y=\"142.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">10 Ω</text><line x1=\"170.0\" y1=\"148.7\" x2=\"170.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"300.0\" y1=\"30.0\" x2=\"300.0\" y2=\"51.3\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(300.0 70.3) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"316\" y=\"67.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"316\" y=\"83.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">9 Ω</text><line x1=\"300.0\" y1=\"89.3\" x2=\"300.0\" y2=\"110.7\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(300.0 129.7) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"316\" y=\"126.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">4</tspan></text><text x=\"316\" y=\"142.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"300.0\" y1=\"148.7\" x2=\"300.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"100.0\" x2=\"224.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(235.0 100.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">V</text></g><line x1=\"246.0\" y1=\"100.0\" x2=\"300.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"170.0\" cy=\"30.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"300.0\" cy=\"30.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"170.0\" cy=\"170.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"300.0\" cy=\"170.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"170.0\" cy=\"100.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"157\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P</text><circle cx=\"300.0\" cy=\"100.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"312\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q</text><text x=\"175.0\" y=\"21\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"175.0\" y=\"190\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"50.0\" cy=\"170.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"170.0;30.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"30.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;170.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"30.0;30.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"170.0\" cy=\"30.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"170.0;170.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"30.0;170.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"300.0\" cy=\"30.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"300.0;300.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"30.0;170.0\" dur=\"2.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"170.0\" cy=\"170.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"170.0;50.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"170.0;170.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài. Chấm xanh chỉ chiều dòng điện, mọi chấm cùng tốc độ (không biểu diễn độ lớn).</figcaption></figure>",
+   "problem_html": "<p>Giữa hai điểm M, N có hiệu điện thế không đổi $U=30\\ \\text{V}$ mắc hai nhánh song song: nhánh trái gồm $R_1=6\\ \\Omega$ nối tiếp $R_3=10\\ \\Omega$ (điểm nối P), nhánh phải gồm $R_2=9\\ \\Omega$ nối tiếp $R_4$ chưa biết (điểm nối Q). Vôn kế lí tưởng mắc giữa P và Q chỉ $0\\ \\text{V}$.</p><ol type=\"a\"><li>Tìm $R_4$.</li><li>Tính điện trở tương đương, cường độ dòng điện mạch chính và ở mỗi nhánh.</li><li>Thay vôn kế bằng điện trở $R_5=20\\ \\Omega$. Dòng điện qua $R_5$ bằng bao nhiêu? Điện trở tương đương có đổi không?</li><li>Tính lại điện trở tương đương bằng cách chập P với Q và so sánh.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hai điểm cùng điện thế thì dòng qua phần tử nối giữa chúng bằng $0$ ; có thể bỏ nó hoặc chập hai điểm.</li><li><strong>Công thức:</strong> cầu cân bằng khi $R_1R_4=R_2R_3$ ; $R_{td}=\\dfrac{(R_1+R_3)(R_2+R_4)}{R_1+R_2+R_3+R_4}$.</li><li>⚠ <strong>Điều kiện:</strong> vôn kế lí tưởng chỉ $0$ nghĩa là $V_P=V_Q$, tức cầu cân bằng.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Điều kiện cầu cân bằng</span></p>$$R_1R_4=R_2R_3\\ \\Rightarrow\\ R_4=\\dfrac{R_2R_3}{R_1}=\\dfrac{9\\cdot10}6$$<div class=\"bt-ans\">$$R_4=15\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Điện trở mỗi nhánh</span></p><p>Hai điện trở cùng nhánh nối tiếp ; hai nhánh song song :</p>$$R_{trai}=R_1+R_3=16\\ \\Omega$$$$R_{phai}=R_2+R_4=9+15$$<div class=\"bt-ans\">$$R_{phai}=24\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Điện trở tương đương</span></p>$$R_{td}=\\dfrac{R_{trai}R_{phai}}{R_{trai}+R_{phai}}=\\dfrac{16\\cdot24}{40}$$<div class=\"bt-ans\">$$R_{td}=9{,}6\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Dòng điện ở mỗi nhánh</span></p><p>Cả nhánh chịu hiệu điện thế $U$ :</p>$$I_{trai}=\\dfrac U{R_{trai}}=\\dfrac{30}{16}$$<div class=\"bt-ans\">$$I_{trai}=1{,}875\\ \\text{A}$$</div>$$I_{phai}=\\dfrac{30}{24}=1{,}25\\ \\text{A}$$$$I=I_{trai}+I_{phai}=\\dfrac{30}{9{,}6}=3{,}125\\ \\text{A}$$</div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thay vôn kế bằng $R_5$</span></p><p>$U_{PQ}=0$ vì cầu cân bằng ; cân bằng chỉ phụ thuộc $R_1\\ldots R_4$, không phụ thuộc phần tử giữa P và Q :</p><div class=\"bt-ans\">$$I_5=0$$</div><p>Điện trở tương đương vẫn là $9{,}6\\ \\Omega$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra bằng cách chập P với Q</span></p><p>$(R_1\\parallel R_2)+(R_3\\parallel R_4)=\\dfrac{6\\cdot9}{15}+\\dfrac{10\\cdot15}{25}=3{,}6+6=9{,}6\\ \\Omega$ ✓.</p><p>Điện thế hai điểm P, Q so với N : $1{,}875\\cdot10=18{,}75\\ \\text{V}$ và $1{,}25\\cdot15=18{,}75\\ \\text{V}$ : bằng nhau ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_4=15\\ \\Omega$.</p><p>b) $R_{td}=9{,}6\\ \\Omega$ ; $I=3{,}125\\ \\text{A}$ ; $I_{trai}=1{,}875\\ \\text{A}$, $I_{phai}=1{,}25\\ \\text{A}$.</p><p>c) $I_5=0$ ; $R_{td}$ không đổi.</p><p>d) Chập P với Q cho $9{,}6\\ \\Omega$, trùng câu b.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>vôn kế chỉ 0 giữa hai điểm giữa của hai nhánh</strong> → cầu cân bằng, nhân chéo $R_1R_4=R_2R_3$ rồi bỏ nhánh PQ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-5-2\"><svg viewBox=\"0 0 400 200\" role=\"img\" aria-label=\"Cầu cân bằng: chập P với Q thì còn hai khối song song nối tiếp nhau\"><line x1=\"50.0\" y1=\"30.0\" x2=\"50.0\" y2=\"90.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 100.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"97.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"113.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">30 V</text><line x1=\"50.0\" y1=\"110.0\" x2=\"50.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"30.0\" x2=\"300.0\" y2=\"30.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"170.0\" x2=\"300.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"30.0\" x2=\"170.0\" y2=\"51.3\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(170.0 70.3) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"186\" y=\"67.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"186\" y=\"83.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">6 Ω</text><line x1=\"170.0\" y1=\"89.3\" x2=\"170.0\" y2=\"110.7\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(170.0 129.7) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"186\" y=\"126.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"186\" y=\"142.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">10 Ω</text><line x1=\"170.0\" y1=\"148.7\" x2=\"170.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"300.0\" y1=\"30.0\" x2=\"300.0\" y2=\"51.3\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(300.0 70.3) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"316\" y=\"67.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"316\" y=\"83.3\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">9 Ω</text><line x1=\"300.0\" y1=\"89.3\" x2=\"300.0\" y2=\"110.7\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(300.0 129.7) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"316\" y=\"126.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">4</tspan></text><text x=\"316\" y=\"142.7\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"300.0\" y1=\"148.7\" x2=\"300.0\" y2=\"170.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"100.0\" x2=\"300.0\" y2=\"100.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"170.0\" cy=\"30.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"300.0\" cy=\"30.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"170.0\" cy=\"170.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"300.0\" cy=\"170.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"170.0\" cy=\"100.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"157\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">P</text><circle cx=\"300.0\" cy=\"100.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"312\" y=\"104\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Q</text><text x=\"175.0\" y=\"21\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">M</text><text x=\"175.0\" y=\"190\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">N</text><text x=\"335\" y=\"105\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"start\">P ≡ Q</text></svg><figcaption>Cầu cân bằng: P và Q cùng điện thế, chập lại được. Còn $(R_1\\parallel R_2)$ nối tiếp $(R_3\\parallel R_4)$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“hai nhánh song song M–N; vôn kế giữa P và Q”</td><td>$R_1=6$, $R_3=10$, $R_2=9\\ \\Omega$</td><td>⚠ Cầu: nhánh trái $R_1\\to P\\to R_3$, nhánh phải $R_2\\to Q\\to R_4$</td></tr><tr><td>“vôn kế lí tưởng chỉ $0\\ \\text{V}$”</td><td>$U_{PQ}=0$</td><td>⚠ Cầu cân bằng: $R_1R_4=R_2R_3$</td></tr><tr><td>a) “tìm $R_4$”</td><td>$R_4=?$</td><td>$R_4=\\dfrac{R_2R_3}{R_1}$</td></tr><tr><td>b) “điện trở tương đương, dòng mỗi nhánh”</td><td>cần tìm $R_{td}$, $I_1$, $I_2$</td><td>$R_{td}=\\dfrac{(R_1+R_3)(R_2+R_4)}{R_1+R_2+R_3+R_4}$ · $I_k=\\dfrac U{R_{nhanh}}$</td></tr><tr><td>c) “thay vôn kế bằng $R_5=20\\ \\Omega$”</td><td>$R_5=20\\ \\Omega$</td><td>$V_P=V_Q$ ⇒ $I_5=0$ ⇒ $R_{td}$ không đổi</td></tr><tr><td>d) “chập P với Q”</td><td>P ≡ Q</td><td>$(R_1\\parallel R_2)+(R_3\\parallel R_4)$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“hai nhánh song song M–N; vôn kế giữa P và Q”</td><td>$R_1=6$, $R_3=10$, $R_2=9\\ \\Omega$</td><td>⚠ Cầu: nhánh trái $R_1\\to P\\to R_3$, nhánh phải $R_2\\to Q\\to R_4$</td></tr><tr><td>“vôn kế lí tưởng chỉ $0\\ \\text{V}$”</td><td>$U_{PQ}=0$</td><td>⚠ Cầu cân bằng: $R_1R_4=R_2R_3$</td></tr><tr><td>a) “tìm $R_4$”</td><td>$R_4=?$</td><td>$R_4=\\dfrac{R_2R_3}{R_1}$</td></tr><tr><td>b) “điện trở tương đương, dòng mỗi nhánh”</td><td>cần tìm $R_{td}$, $I_1$, $I_2$</td><td>$R_{td}=\\dfrac{(R_1+R_3)(R_2+R_4)}{R_1+R_2+R_3+R_4}$ · $I_k=\\dfrac U{R_{nhanh}}$</td></tr><tr><td>c) “thay vôn kế bằng $R_5=20\\ \\Omega$”</td><td>$R_5=20\\ \\Omega$</td><td>$V_P=V_Q$ ⇒ $I_5=0$ ⇒ $R_{td}$ không đổi</td></tr><tr><td>d) “chập P với Q”</td><td>P ≡ Q</td><td>$(R_1\\parallel R_2)+(R_3\\parallel R_4)$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>vôn kế chỉ 0 giữa hai điểm giữa của hai nhánh</b> → cầu cân bằng, nhân chéo, <b>bỏ nhánh PQ</b>.",
    "cap_do": 3,
    "fading": "giau_tu_buoc_2",
@@ -419,12 +1585,12 @@
        "dung": true
       },
       {
-       "text": "$R_2$ và $R_4$ song song : tích chia tổng",
+       "text": "$R_2$ và $R_4$ song song : lấy tích chia tổng",
        "dung": false,
        "vi_sao": "Cùng nhánh thì dòng đi qua lần lượt cả hai điện trở, tức nối tiếp."
       },
       {
-       "text": "Chỉ lấy $R_4$",
+       "text": "Chỉ lấy $R_4$ vì dòng đi qua nhánh cuối cùng",
        "dung": false,
        "vi_sao": "Dòng đi qua cả $R_2$ lẫn $R_4$ nên phải cộng cả hai."
       }
@@ -439,16 +1605,16 @@
      "loi_hay_gap": "Cộng cả bốn điện trở hoặc tính $(R_1\\parallel R_3)+(R_2\\parallel R_4)$.",
      "chon_buoc_ke": [
       {
-       "text": "Hai nhánh (mỗi nhánh nối tiếp) song song nhau, bỏ nhánh PQ",
+       "text": "Mỗi nhánh nối tiếp, hai nhánh song song, bỏ PQ",
        "dung": true
       },
       {
-       "text": "Cộng cả bốn : $R_1+R_2+R_3+R_4$",
+       "text": "Cộng cả bốn : $R_1+R_2+R_3+R_4$ vì cùng chung nguồn",
        "dung": false,
        "vi_sao": "Đó là nối tiếp cả bốn ; hai nhánh có chung hai nút M, N nên song song."
       },
       {
-       "text": "$(R_1\\parallel R_3)+(R_2\\parallel R_4)$",
+       "text": "$(R_1\\parallel R_3)+(R_2\\parallel R_4)$ vì cùng nút là song song",
        "dung": false,
        "vi_sao": "$R_1$ và $R_3$ cùng nhánh nên nối tiếp, không song song."
       }
@@ -487,16 +1653,16 @@
      "loi_hay_gap": "Dùng $\\dfrac U{R_5}$ hoặc hiệu hai dòng nhánh : dòng qua $R_5$ chỉ phụ thuộc hiệu điện thế giữa P và Q.",
      "chon_buoc_ke": [
       {
-       "text": "$V_P=V_Q$ vì cầu cân bằng nên không có dòng qua $R_5$",
+       "text": "$V_P=V_Q$ vì cầu cân bằng nên $I_5=0$",
        "dung": true
       },
       {
-       "text": "$I_5=\\dfrac U{R_5}$",
+       "text": "$I_5=\\dfrac U{R_5}$ vì $R_5$ mắc vào nguồn",
        "dung": false,
        "vi_sao": "$R_5$ không nối trực tiếp vào hai cực nguồn ; nó chỉ chịu $U_{PQ}$."
       },
       {
-       "text": "$I_5=I_{trai}-I_{phai}$",
+       "text": "$I_5=I_{trai}-I_{phai}$ vì hiệu hai nhánh",
        "dung": false,
        "vi_sao": "Hiệu hai dòng nhánh không phải dòng qua $R_5$ ; dòng qua $R_5$ do $U_{PQ}$ quyết định."
       }
@@ -505,15 +1671,304 @@
     {
      "tieu_de": "Kiểm tra bằng cách chập P với Q"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        4.5
+       ],
+       [
+        3,
+        9.5
+       ],
+       [
+        17,
+        9.5
+       ],
+       [
+        17,
+        4.5
+       ],
+       [
+        3,
+        4.5
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        3,
+        7
+       ],
+       [
+        1.2,
+        7
+       ],
+       [
+        1.2,
+        1.2
+       ],
+       [
+        18.8,
+        1.2
+       ],
+       [
+        18.8,
+        7
+       ],
+       [
+        17,
+        7
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 3,
+      "y": 7
+     },
+     {
+      "loai": "nut",
+      "x": 17,
+      "y": 7
+     },
+     {
+      "loai": "chu",
+      "x": 2.6,
+      "y": 7.5,
+      "text": "M",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 17.4,
+      "y": 6.0,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 5.5,
+      "y": 1.2,
+      "huong": "ngang",
+      "ten": "U = 30 V",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.5,
+      "y": 9.5,
+      "ten": "R₁ = 6 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 9.5,
+      "ten": "R₃ = 10 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.5,
+      "y": 4.5,
+      "ten": "R₂ = 9 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 4.5
+     },
+     {
+      "loai": "chu",
+      "x": 13.5,
+      "y": 5.225,
+      "text": "R₄ = ?",
+      "a": "middle",
+      "het": 1
+     },
+     {
+      "loai": "nut",
+      "x": 10,
+      "y": 9.5
+     },
+     {
+      "loai": "nut",
+      "x": 10,
+      "y": 4.5
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "y": 10.25,
+      "text": "P",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "y": 3.3,
+      "text": "Q",
+      "a": "middle"
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        10,
+        9.5
+       ],
+       [
+        10,
+        4.5
+       ]
+      ]
+     },
+     {
+      "loai": "dong_ho",
+      "x": 10,
+      "y": 7,
+      "kieu": "V",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 11.0,
+      "y": 6.8,
+      "text": "0 V",
+      "a": "start",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 11.0,
+      "y": 2.0,
+      "text": "c) R₅ = 20 Ω",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "chu",
+       "x": 13.5,
+       "y": 5.225,
+       "text": "R₄ = 15 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "R₁R₄ = R₂R₃ ⇒ R₄ = 9·10 : 6 = 15 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R₁₃ = 6 + 10 = 16 Ω ; R₂₄ = 9 + 15 = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R_{td} = 16·24 : 40 = 9,6 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        15.0,
+        9.5
+       ],
+       "den": [
+        16.5,
+        9.5
+       ],
+       "nhan": "1,875 A",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "dong",
+       "tu": [
+        15.0,
+        4.5
+       ],
+       "den": [
+        16.5,
+        4.5
+       ],
+       "nhan": "1,25 A",
+       "vi": "b",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "I₁₃ = 30 : 16 = 1,875 A ; I₂₄ = 1,25 A"
+      }
+     ],
+     [
+      {
+       "loai": "dien_tro",
+       "x": 10,
+       "y": 7,
+       "huong": "doc",
+       "ten": "R₅",
+       "vi": "l"
+      },
+      {
+       "loai": "chu",
+       "x": 11.0,
+       "y": 7.4,
+       "text": "I₅ = 0",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_P = V_Q ⇒ I₅ = 0, R_{td} không đổi"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Chập P, Q: 3,6 + 6 = 9,6 Ω ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$U_{MN}=30\\ \\text{V}$",
+     "Trái: $R_1=6\\ \\Omega$, $R_3=10\\ \\Omega$ (nối ở P)",
+     "Phải: $R_2=9\\ \\Omega$, $R_4$ (nối ở Q)",
+     "Vôn kế P–Q chỉ $0$"
+    ],
+    "tim": [
+     "a) $R_4$",
+     "b) $R_{td}$, $I$ chính và mỗi nhánh",
+     "c) $I_5$ khi thay vôn kế bằng $R_5=20\\ \\Omega$",
+     "d) $R_{td}$ khi chập P với Q"
+    ]
+   }
   },
   {
    "form": "bai_tap",
    "label": "Dạng 6 · Nâng cao · Mạch ba tầng, đọc ampe kế nhánh trong, tính ngược tìm điện trở chưa biết",
    "topic": "Điện trở. Định luật Ohm",
-   "problem_html": "<p>Nguồn $U=24\\ \\text{V}$; $R_1=2\\ \\Omega$ nối tiếp đoạn X. Đoạn X gồm $R_2=12\\ \\Omega$ song song đoạn Y; đoạn Y gồm $R_3=4\\ \\Omega$ nối tiếp đoạn gồm $R_4=12\\ \\Omega$ song song $R_5$ chưa biết. Ampe kế lí tưởng $A_1$ mắc nối tiếp $R_4$ chỉ $1\\ \\text{A}$; ampe kế lí tưởng $A_2$ ở nhánh chính.</p><ol type=\"a\"><li>Tính $R_5$.</li><li>Tính số chỉ ampe kế $A_2$.</li></ol><figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-6-0\"><svg viewBox=\"0 0 490 250\" role=\"img\" aria-label=\"R1 nối tiếp (R2 song song với (R3 nối tiếp (R4 song song R5))), hai ampe kế A1 và A2\"><line x1=\"50.0\" y1=\"54.0\" x2=\"50.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 134.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"131.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"147.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">24 V</text><line x1=\"50.0\" y1=\"144.0\" x2=\"50.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"54.0\" x2=\"70.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(81.0 54.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><text x=\"81.0\" y=\"37\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"12\">2</tspan></text><line x1=\"92.0\" y1=\"54.0\" x2=\"112.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(131.0 54.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"131.0\" y=\"25\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"131.0\" y=\"40\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">2 Ω</text><line x1=\"150.0\" y1=\"54.0\" x2=\"170.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"54.0\" x2=\"280.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"214.0\" x2=\"410.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"215.0\" y1=\"54.0\" x2=\"215.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(215.0 134.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"231\" y=\"131.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"231\" y=\"147.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"215.0\" y1=\"153.0\" x2=\"215.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"280.0\" y1=\"54.0\" x2=\"280.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(280.0 89.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"296\" y=\"86.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"296\" y=\"102.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">4 Ω</text><line x1=\"280.0\" y1=\"108.0\" x2=\"280.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"280.0\" y1=\"124.0\" x2=\"410.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"345.0\" y1=\"124.0\" x2=\"345.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 145.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><text x=\"363\" y=\"150.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"12\">1</tspan></text><line x1=\"345.0\" y1=\"156.0\" x2=\"345.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 185.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"361\" y=\"182.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">4</tspan></text><text x=\"361\" y=\"198.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"345.0\" y1=\"204.0\" x2=\"345.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"410.0\" y1=\"124.0\" x2=\"410.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(410.0 169.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"426\" y=\"166.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">5</tspan></text><text x=\"426\" y=\"182.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"410.0\" y1=\"188.0\" x2=\"410.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"170.0\" cy=\"54.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"168\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"215.0\" cy=\"54.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"280.0\" cy=\"124.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"268\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">S</text><circle cx=\"345.0\" cy=\"124.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"215.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"215\" y=\"234\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"345.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"50.0\" cy=\"214.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;50.0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"214.0;54.0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"50.0\" cy=\"54.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"50.0;170.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"54.0;54.0\" dur=\"2.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"215.0\" cy=\"54.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"215.0;215.0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"54.0;214.0\" dur=\"3.20s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"280.0\" cy=\"54.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"280.0;280.0\" dur=\"1.40s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"54.0;124.0\" dur=\"1.40s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"345.0\" cy=\"124.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"345.0;345.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"124.0;214.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"410.0\" cy=\"124.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"410.0;410.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"124.0;214.0\" dur=\"1.80s\" begin=\"indefinite\" fill=\"freeze\"/></circle><circle cx=\"215.0\" cy=\"214.0\" r=\"5.5\" fill=\"#34d399\" stroke=\"currentColor\" stroke-width=\"1.4\"><animate attributeName=\"cx\" values=\"215.0;50.0\" dur=\"3.30s\" begin=\"indefinite\" fill=\"freeze\"/><animate attributeName=\"cy\" values=\"214.0;214.0\" dur=\"3.30s\" begin=\"indefinite\" fill=\"freeze\"/></circle></svg><button type=\"button\" class=\"bt-run\" data-bt-run=\"1\">▶ Chạy mô phỏng</button><figcaption>Mạch của bài. Chấm xanh chỉ chiều dòng điện, mọi chấm cùng tốc độ (không biểu diễn độ lớn).</figcaption></figure>",
+   "problem_html": "<p>Nguồn $U=24\\ \\text{V}$; $R_1=2\\ \\Omega$ nối tiếp đoạn X. Đoạn X gồm $R_2=12\\ \\Omega$ song song đoạn Y; đoạn Y gồm $R_3=4\\ \\Omega$ nối tiếp đoạn gồm $R_4=12\\ \\Omega$ song song $R_5$ chưa biết. Ampe kế lí tưởng $A_1$ mắc nối tiếp $R_4$ chỉ $1\\ \\text{A}$; ampe kế lí tưởng $A_2$ ở nhánh chính.</p><ol type=\"a\"><li>Tính $R_5$.</li><li>Tính số chỉ ampe kế $A_2$.</li></ol>",
    "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thu gọn từ trong ra : $R_{45}\\to Y\\to X\\to R_{td}$ ; ampe kế lí tưởng là dây nối.</li><li><strong>Công thức:</strong> $U_{45}=I_4R_4$ ; $I_Y=\\dfrac{U_X-U_{45}}{R_3}$ ; $I=\\dfrac{U_X}{R_2}+I_Y$ ; $U-U_X=IR_1$.</li><li>⚠ <strong>Điều kiện:</strong> $A_1$ chỉ dòng qua $R_4$ (không phải dòng qua cả nhánh Y và không phải dòng chính) ; $U_X$ là ẩn, giải một phương trình bậc nhất.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hiệu điện thế hai đầu $R_4$</span></p>$$U_{45}=I_4R_4=1\\cdot12$$<div class=\"bt-ans\">$$U_{45}=12\\ \\text{V}$$</div><p>$R_5$ song song $R_4$ nên cũng có $12\\ \\text{V}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Giải ẩn $U_X$</span></p><p>Đặt $U_X$ là hiệu điện thế hai đầu $R_2$ (hai nút M, N). $R_3$ chịu $U_X-12$ :</p>$$I=\\dfrac{U_X}{12}+\\dfrac{U_X-12}4$$$$U-U_X=IR_1\\ \\Rightarrow\\ 24-U_X=2\\left(\\dfrac{U_X}{12}+\\dfrac{U_X-12}4\\right)$$$$24-U_X=\\dfrac23U_X-6\\ \\Rightarrow\\ \\dfrac53U_X=30$$<div class=\"bt-ans\">$$U_X=18\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng qua $R_3$</span></p>$$I_Y=\\dfrac{U_X-U_{45}}{R_3}=\\dfrac{18-12}4$$<div class=\"bt-ans\">$$I_Y=1{,}5\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tìm $R_5$</span></p><p>Dòng $I_Y$ chia cho $R_4$ và $R_5$ :</p>$$I_5=I_Y-I_4=1{,}5-1=0{,}5\\ \\text{A}$$$$R_5=\\dfrac{U_{45}}{I_5}=\\dfrac{12}{0{,}5}$$<div class=\"bt-ans\">$$R_5=24\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Số chỉ $A_2$</span></p>$$I_2=\\dfrac{U_X}{R_2}=\\dfrac{18}{12}=1{,}5\\ \\text{A}$$$$I=I_2+I_Y=1{,}5+1{,}5$$<div class=\"bt-ans\">$$I=3\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>$U_1=IR_1=3\\cdot2=6\\ \\text{V}$ ; $U_1+U_X=6+18=24\\ \\text{V}=U$ ✓.</p><p>Thu gọn lại : $R_{45}=\\dfrac{12\\cdot24}{36}=8\\ \\Omega$ ; $Y=4+8=12\\ \\Omega$ ; $X=\\dfrac{12\\cdot12}{24}=6\\ \\Omega$ ; $R_{td}=2+6=8\\ \\Omega$ ; $I=\\dfrac{24}8=3\\ \\text{A}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $R_5=24\\ \\Omega$.</p><p>b) Ampe kế $A_2$ chỉ $3\\ \\text{A}$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <strong>số chỉ ampe kế ở nhánh trong và một điện trở chưa biết</strong> → đặt hiệu điện thế một đoạn làm ẩn, lập phương trình dòng ở nút.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
-   "analysis_html": "<figure class=\"fig\" data-tl=\"1\" data-bt=\"d157-6-2\"><svg viewBox=\"0 0 490 250\" role=\"img\" aria-label=\"Ba tầng: R45 là R4 song song R5; Y là R3 nối tiếp R45; Y song song R2; rồi nối tiếp R1\"><line x1=\"50.0\" y1=\"54.0\" x2=\"50.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(50.0 134.0) rotate(90)\"><line x1=\"-4\" y1=\"-11\" x2=\"-4\" y2=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><line x1=\"4\" y1=\"-6\" x2=\"4\" y2=\"6\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"3.2\"/></g><text x=\"68\" y=\"131.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">U</text><text x=\"68\" y=\"147.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">24 V</text><line x1=\"50.0\" y1=\"144.0\" x2=\"50.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"54.0\" x2=\"70.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(81.0 54.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><text x=\"81.0\" y=\"37\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">A<tspan dy=\"4\" font-size=\"12\">2</tspan></text><line x1=\"92.0\" y1=\"54.0\" x2=\"112.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(131.0 54.0)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"131.0\" y=\"25\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"12\">1</tspan></text><text x=\"131.0\" y=\"40\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"middle\">2 Ω</text><line x1=\"150.0\" y1=\"54.0\" x2=\"170.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"170.0\" y1=\"54.0\" x2=\"280.0\" y2=\"54.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"50.0\" y1=\"214.0\" x2=\"410.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"215.0\" y1=\"54.0\" x2=\"215.0\" y2=\"115.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(215.0 134.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"231\" y=\"131.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">2</tspan></text><text x=\"231\" y=\"147.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"215.0\" y1=\"153.0\" x2=\"215.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"280.0\" y1=\"54.0\" x2=\"280.0\" y2=\"70.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(280.0 89.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"296\" y=\"86.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">3</tspan></text><text x=\"296\" y=\"102.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">4 Ω</text><line x1=\"280.0\" y1=\"108.0\" x2=\"280.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"280.0\" y1=\"124.0\" x2=\"410.0\" y2=\"124.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"345.0\" y1=\"124.0\" x2=\"345.0\" y2=\"134.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 145.0)\"><circle cx=\"0\" cy=\"0\" r=\"11\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><text x=\"0\" y=\"5\" text-anchor=\"middle\" font-size=\"13\" font-weight=\"800\" fill=\"currentColor\" stroke=\"none\" opacity=\"1\">A</text></g><text x=\"363\" y=\"150.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">A<tspan dy=\"4\" font-size=\"12\">1</tspan></text><line x1=\"345.0\" y1=\"156.0\" x2=\"345.0\" y2=\"166.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(345.0 185.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"361\" y=\"182.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">4</tspan></text><text x=\"361\" y=\"198.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">12 Ω</text><line x1=\"345.0\" y1=\"204.0\" x2=\"345.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><line x1=\"410.0\" y1=\"124.0\" x2=\"410.0\" y2=\"150.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><g transform=\"translate(410.0 169.0) rotate(90)\"><rect x=\"-19\" y=\"-7\" width=\"38\" height=\"14\" stroke=\"currentColor\" stroke-width=\"2.2\" fill=\"none\" opacity=\"1\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></g><text x=\"426\" y=\"166.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">R<tspan dy=\"4\" font-size=\"12\">5</tspan></text><text x=\"426\" y=\"182.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">?</text><line x1=\"410.0\" y1=\"188.0\" x2=\"410.0\" y2=\"214.0\" stroke=\"currentColor\" stroke-width=\"2.2\" opacity=\"1\" stroke-linecap=\"round\"/><circle cx=\"170.0\" cy=\"54.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"168\" y=\"44\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">M</text><circle cx=\"215.0\" cy=\"54.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"280.0\" cy=\"124.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"268\" y=\"128\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">S</text><circle cx=\"345.0\" cy=\"124.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"215.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><text x=\"215\" y=\"234\" fill=\"currentColor\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">N</text><circle cx=\"345.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><circle cx=\"410.0\" cy=\"214.0\" r=\"3.8\" fill=\"currentColor\"/><rect x=\"321\" y=\"110\" width=\"141\" height=\"120\" rx=\"8\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><text x=\"341\" y=\"104\" fill=\"#fb923c\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">R<tspan dy=\"4\" font-size=\"10\">45</tspan></text><rect x=\"240\" y=\"34\" width=\"250\" height=\"208\" rx=\"10\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"1.8\" stroke-dasharray=\"5 4\"/><text x=\"256\" y=\"28\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">Y</text></svg><figcaption>Thu gọn từ trong ra: $R_{45}$, rồi $Y=R_3+R_{45}$, rồi $R_2\\parallel Y$, cuối cùng nối tiếp $R_1$. Hình minh hoạ, không đúng tỉ lệ.</figcaption></figure><p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp X; X = $R_2$ // Y; Y = $R_3$ nối tiếp ($R_4$ // $R_5$)”</td><td>$R_1=2$, $R_2=12$, $R_3=4$, $R_4=12\\ \\Omega$</td><td>⚠ Thu gọn từ trong ra: $R_{45}\\to Y\\to X\\to R_{td}$</td></tr><tr><td>“$A_1$ nối tiếp $R_4$ chỉ $1\\ \\text{A}$”</td><td>$I_4=1\\ \\text{A}$</td><td>$U_{45}=I_4R_4$ (cũng là hiệu điện thế hai đầu $R_5$)</td></tr><tr><td>“$R_5$ chưa biết”</td><td>$R_5=?$</td><td>⚠ Đặt $U_X$ là ẩn: $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$ và $U-U_X=IR_1$</td></tr><tr><td>a) “tính $R_5$”</td><td>$R_5=?$</td><td>$I_5=I_Y-I_4$ · $R_5=\\dfrac{U_{45}}{I_5}$</td></tr><tr><td>b) “$A_2$ ở nhánh chính”</td><td>$A_2$ chỉ $I$</td><td>$I=I_2+I_Y$</td></tr></tbody></table></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>“$R_1$ nối tiếp X; X = $R_2$ // Y; Y = $R_3$ nối tiếp ($R_4$ // $R_5$)”</td><td>$R_1=2$, $R_2=12$, $R_3=4$, $R_4=12\\ \\Omega$</td><td>⚠ Thu gọn từ trong ra: $R_{45}\\to Y\\to X\\to R_{td}$</td></tr><tr><td>“$A_1$ nối tiếp $R_4$ chỉ $1\\ \\text{A}$”</td><td>$I_4=1\\ \\text{A}$</td><td>$U_{45}=I_4R_4$ (cũng là hiệu điện thế hai đầu $R_5$)</td></tr><tr><td>“$R_5$ chưa biết”</td><td>$R_5=?$</td><td>⚠ Đặt $U_X$ là ẩn: $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$ và $U-U_X=IR_1$</td></tr><tr><td>a) “tính $R_5$”</td><td>$R_5=?$</td><td>$I_5=I_Y-I_4$ · $R_5=\\dfrac{U_{45}}{I_5}$</td></tr><tr><td>b) “$A_2$ ở nhánh chính”</td><td>$A_2$ chỉ $I$</td><td>$I=I_2+I_Y$</td></tr></tbody></table></div>",
    "nhan_dang": "Thấy <b>ampe kế ở nhánh trong, điện trở chưa biết</b> → lấy <b>hiệu điện thế một đoạn làm ẩn</b>, lập phương trình dòng.",
    "cap_do": 4,
    "fading": "giau_het",
@@ -538,7 +1993,7 @@
      "loi_hay_gap": "Coi dòng chính bằng số chỉ $A_1$ : thiếu dòng qua $R_2$ và qua $R_5$.",
      "chon_buoc_ke": [
       {
-       "text": "Đặt $U_X$ làm ẩn : $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$ và $U-U_X=IR_1$",
+       "text": "Đặt $U_X$ làm ẩn : $I=\\dfrac{U_X}{R_2}+\\dfrac{U_X-U_{45}}{R_3}$",
        "dung": true
       },
       {
@@ -547,7 +2002,7 @@
        "vi_sao": "$A_1$ chỉ dòng qua $R_4$, chỉ là một phần của dòng nhánh Y ; dòng chính còn gồm cả nhánh $R_2$."
       },
       {
-       "text": "Cho $U_X=U-U_{45}$",
+       "text": "Cho $U_X=U-U_{45}$ vì $U_{45}$ là hiệu điện thế trên $R_1$",
        "dung": false,
        "vi_sao": "$U_{45}$ là hiệu điện thế hai đầu $R_4$ chứ không phải hiệu điện thế rơi trên $R_1$."
       }
@@ -566,12 +2021,12 @@
        "dung": true
       },
       {
-       "text": "$I_Y=\\dfrac{U_X}{R_3}$",
+       "text": "$I_Y=\\dfrac{U_X}{R_3}$ cho cả $U_X$",
        "dung": false,
        "vi_sao": "$R_3$ chỉ chịu một phần của $U_X$ ; phần còn lại nằm trên $R_4\\parallel R_5$."
       },
       {
-       "text": "$I_Y=I_4$",
+       "text": "$I_Y=I_4$ vì cùng nhánh",
        "dung": false,
        "vi_sao": "Dòng qua $R_3$ gồm cả dòng qua $R_4$ lẫn dòng qua $R_5$."
       }
@@ -628,7 +2083,310 @@
     {
      "tieu_de": "Kiểm tra"
     }
-   ]
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.2,
+        10.2
+       ],
+       [
+        1.2,
+        10.2
+       ],
+       [
+        1.2,
+        1.2
+       ],
+       [
+        19.2,
+        1.2
+       ],
+       [
+        19.2,
+        10.2
+       ],
+       [
+        9.0,
+        10.2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        2.2,
+        10.2
+       ],
+       [
+        9.0,
+        10.2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        9.0,
+        10.2
+       ],
+       [
+        9.0,
+        6.0
+       ],
+       [
+        12.9,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        12.9,
+        6.0
+       ],
+       [
+        12.9,
+        8.0
+       ],
+       [
+        18.4,
+        8.0
+       ],
+       [
+        18.4,
+        4.0
+       ],
+       [
+        12.9,
+        4.0
+       ],
+       [
+        12.9,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        18.4,
+        6.0
+       ],
+       [
+        19.2,
+        6.0
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 9.0,
+      "y": 10.2
+     },
+     {
+      "loai": "nut",
+      "x": 12.9,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 18.4,
+      "y": 6.0
+     },
+     {
+      "loai": "nut",
+      "x": 19.2,
+      "y": 6.0
+     },
+     {
+      "loai": "chu",
+      "x": 9.0,
+      "y": 10.75,
+      "text": "M",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 19.5,
+      "y": 5.0,
+      "text": "N",
+      "a": "start"
+     },
+     {
+      "loai": "nguon",
+      "x": 1.2,
+      "y": 6.0,
+      "huong": "doc",
+      "ten": "U = 24 V",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 3.0,
+      "y": 10.2,
+      "kieu": "A",
+      "ten": "A₂",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 6.4,
+      "y": 10.2,
+      "ten": "R₁ = 2 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.8,
+      "y": 10.2,
+      "ten": "R₂ = 12 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 11.0,
+      "y": 6.0,
+      "ten": "R₃ = 4 Ω",
+      "vi": "b"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 13.9,
+      "y": 8.0,
+      "kieu": "A",
+      "ten": "A₁: 1 A",
+      "vi": "b"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 17.1,
+      "y": 8.0,
+      "ten": "R₄ = 12 Ω",
+      "vi": "t"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 15.3,
+      "y": 4.0
+     },
+     {
+      "loai": "chu",
+      "x": 15.3,
+      "y": 2.575,
+      "text": "R₅ = ?",
+      "a": "middle",
+      "het": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "U₄ = U₅ = I₄R₄ = 1·12 = 12 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "(24 − Uₓ)/2 = Uₓ/12 + (Uₓ − 12)/4 ⇒ Uₓ = 18 V"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        9.1,
+        6.0
+       ],
+       "den": [
+        9.9,
+        6.0
+       ],
+       "nhan": "1,5 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₃ = (18 − 12) : 4 = 1,5 A"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        16.6,
+        4.0
+       ],
+       "den": [
+        17.9,
+        4.0
+       ],
+       "nhan": "0,5 A",
+       "vi": "t"
+      },
+      {
+       "loai": "chu",
+       "x": 15.3,
+       "y": 2.575,
+       "text": "R₅ = 24 Ω",
+       "a": "middle",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₅ = 1,5 − 1 = 0,5 A ⇒ R₅ = 12 : 0,5 = 24 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        12,
+        1.2
+       ],
+       "den": [
+        8,
+        1.2
+       ],
+       "nhan": "I = 3 A",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "I₂ = 18 : 12 = 1,5 A ⇒ I = 1,5 + 1,5 = 3 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Kiểm: U₁ = 3·2 = 6 V · 6 + 18 = 24 V ✓"
+      }
+     ]
+    ]
+   },
+   "tom_de": {
+    "cho": [
+     "$U=24\\ \\text{V}$; $R_1=2\\ \\Omega$ nối tiếp X",
+     "X: $R_2=12\\ \\Omega$ // Y",
+     "Y: $R_3=4\\ \\Omega$ nối tiếp $(R_4=12\\ \\Omega\\ //\\ R_5)$",
+     "$A_1$ nối tiếp $R_4$ chỉ $1\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) $R_5$",
+     "b) số chỉ $A_2$"
+    ]
+   }
   }
  ],
  "tu_luan": {

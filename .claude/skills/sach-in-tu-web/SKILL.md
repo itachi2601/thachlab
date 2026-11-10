@@ -1,6 +1,6 @@
 ---
 name: sach-in-tu-web
-description: Dựng SÁCH IN A4 đen–trắng (PDF) từ nội dung đã đăng trên thachlab (bài lý thuyết tương tác + bài tập mẫu) bằng pipeline `book/` (HTML → Paged.js → Chrome → PDF, KaTeX + SVG + QR), kèm bảng đáp án thuần cuối sách và dữ liệu đáp án cho trang web /sach/dap-an. Dùng khi thầy nói "in sách chương X", "làm bản in cho lớp", "dựng lại sách sau khi sửa bài", "đổi Dạng được giảng trên lớp", "chia tiết trong sách", "thêm chương vào sách in". Sách dùng TRÊN LỚP có thầy (không phải tự học) — hỏi bối cảnh dùng trước khi bỏ/thêm lời giải, đáp án. Chạy được trên Mac (cần Chrome + node_modules trong book/); không ghi DB.
+description: Dựng SÁCH IN A4 đen–trắng (PDF) từ bài lý thuyết + bài tập mẫu đã đăng bằng pipeline book/ (Paged.js → Chrome), kèm bảng đáp án và dữ liệu /sach/dap-an. Dùng khi thầy nói "in sách chương X", "làm bản in cho lớp", "dựng lại sách", "chia tiết trong sách". Sách dùng trên lớp có thầy — hỏi bối cảnh trước khi bỏ/thêm lời giải. Chạy trên Mac.
 ---
 
 # Sách in từ web — pipeline `book/`
@@ -13,24 +13,38 @@ phân tích) mới dùng web qua mã QR cuối bài. Mọi quyết định thi�
 - Không in lời giải đầy đủ / tự luyện (đã ở web), nhưng **phải có đáp án thuần** trong sách cho câu thầy không kịp chữa.
 - Không nền đen chữ trắng, không cột ghi chú cả trang, cỡ chữ 5 mức (7,6 / 8,4 / 9,6 / 11,6 / 13,6 pt).
 
-## Chạy
+## Chạy — luôn soát lệch với web trước, rồi mới dựng
+Mỗi cuốn một **hồ sơ** `book/sach/<mã>.json`; nội dung lấy từ **web thật (DB, chỉ đọc)** về `book/cache/`, không đọc file nháp trong repo.
+Dùng `/usr/bin/python3` (có bs4, PyMuPDF, PIL; `python3` của Homebrew thiếu). Worktree mới chưa có `book/node_modules` →
+`ln -sfn /Users/MAC/Projects/thachlab/book/node_modules book/node_modules`.
 ```bash
-cd book && python3 make.py            # cả chương, ~30–60 s → out/vat-li-10-chuong-2-dong-hoc.pdf + public/sach-data/dap-an-<id>.json
-cd book && python3 make.py 49 50      # thử vài bài
-cd book && python3 build.py lesson 49 5 && node render.mjs src/lesson-49.html out/_t.pdf   # một bài, xem nhanh
+cd book && /usr/bin/python3 sach.py list                      # các cuốn + bản đang có
+cd book && /usr/bin/python3 sach.py lech l10-ch2-dong-hoc     # tải web → so với sổ khoá (cần mạng: tab terminal)
+cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc          # cả cuốn ~1–2 phút → out/<tep>.pdf + sổ khoá + public/sach-data
+cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài → out/<tep>-thu.pdf (không ghi sổ khoá)
 ```
-Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo dõi; `build.py`/`render.mjs` một bài thì `Bash` được.
+- `sach.py lech` báo từng bài: **khớp** (không làm gì) · **chữ** (nội dung đổi, số ô điền/câu/Dạng giữ nguyên → dựng lại, sách đã
+  phát vẫn dùng được) · **đánh số** (bộ đếm đổi → dựng lại sẽ tăng số bản, sách đã phát lệch số với đáp án mới) · **mới**.
+  Khớp hết thì DỪNG, không dựng lại. Dòng "repo có bản bài tập mẫu KHÁC bản đã đăng" = có nháp chưa đăng; sách vẫn theo web.
+- **Sổ khoá** `book/sach/<mã>.lock.json` (commit vào git) do `make.py` ghi sau khi dựng trọn cuốn: số bản, ngày, dấu vân tay
+  lý thuyết + bài tập mẫu từng bài, bộ đếm, trang bắt đầu. Không sửa tay.
+- Cuốn mới: `npx tsx book/lay-noi-dung.mts --moi <mã> <lớp> <lesson_id bất kỳ trong chương>` → hồ sơ nháp + cache; thầy sửa chữ.
+- Lệnh > 30 s hoặc cần mạng chạy trong tab terminal (`run_in_terminal`); `build.py lesson`/`render.mjs` một bài thì `Bash` được
+  (`BOOK_SACH=<mã>` chọn cuốn cho `build.py`).
 
-## Cấu hình thầy chỉnh (JSON trong `book/src/`, không sửa tay HTML)
-- `dang-chung.json` `{lesson_id: [chỉ số Dạng]}` — Dạng CHUNG NHẤT được giảng trên lớp (có ô "Lời giải — ghi cùng thầy cô").
+## Hồ sơ sách thầy chỉnh (`book/sach/<mã>.json`, không sửa tay HTML/Python)
+- Bắt buộc: `lop`, `chuong`, `ten`, `lessons` (id bài theo thứ tự). `tep` = tên file PDF. `bia` = chữ trên bìa.
+- `dang_chung` `{lesson_id: [chỉ số Dạng]}` — Dạng CHUNG NHẤT được giảng trên lớp (có ô "Lời giải — ghi cùng thầy cô").
   Mặc định `[1, 2]`; các Dạng còn lại + thử thách phân tầng tự thành mục "Luyện thêm — bài tương tự" (chỉ đề).
-- `tiet.json` `{lesson_id: [anchor]}` — vạch lề "hết tiết n". Anchor: `muc:II` (hết mục II lý thuyết), `dang:2`, `bai-tap-mau`.
-  Mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu (bài thực hành: hết mục V).
+- `tiet` `{lesson_id: [anchor]}` — vạch lề "hết tiết n". Anchor: `muc:II` (hết mục II lý thuyết), `dang:2`, `bai-tap-mau`.
+  Mặc định tiết 1 hết mục II, tiết 2 hết Bài tập mẫu (bài không có bài tập mẫu: hết mục V).
+- `ban_do_chuong.ga` (tên ga ngắn, thiếu thì lấy tên bài), `ban_do_chuong.nhom`, `tu_danh_gia` (thiếu thì bỏ trang Tự đánh giá).
 - Mục lục (`front.toc_full`) sinh tự động, một trang riêng, đủ phần đầu + mục con từng bài + phần cuối; số trang mục con
   đọc từ PDF con đã dựng bằng `make.page_of`. Phần đầu sách cố định `FRONT_PAGES` trang — `make.py` tự dừng nếu lệch.
-- Thêm chương: sửa `CHAPTER` trong `build.py` + tên ga/tổng kết/tự đánh giá trong `front.py` (đang viết riêng cho chương 2 lớp 10).
+- Còn chờ làm (thiết kế `docs/THIET-KE-SKILL-SACH-DONG-BO.md` chặng C–E): số bản trong QR, web → "Sách tr. X", bản Word.
 
 ## Kiểm sau mỗi lần dựng (bắt buộc, trước khi đưa thầy xem)
+0. `make.py` in `! CẢNH BÁO` (trang < 60 từ, bài thiếu hộp "Mang về") → xử lý hết hoặc ghi rõ khi giao.
 1. `render.mjs` tự in `CHẨN ĐOÁN` nếu có `.katex-error`, phần tử tràn khung, trang còn `$` — phải trống.
 2. PyMuPDF: đếm trang; trang < 60 từ phải ≈ 0; thống kê cỡ chữ (chỉ 5 mức + lẻ của KaTeX); không Dạng nào in 2 lần
    (Paged.js có thể nhân đôi nội dung mà không báo lỗi — xem nhật ký).
@@ -40,9 +54,49 @@ Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo d�
    Tổng kết, Tự đánh giá, Bảng đáp án) phải trỏ tới trang có đúng tiêu đề đó (so chuỗi đã bỏ khoảng trắng). Số 0 hoặc
    trống = tìm không ra, không được giao.
 
+## Ruột tập theo bài (`scripts/ruot-tap/`) — chuẩn chất lượng từ bài 14 VL12 (thầy chốt 25/10/2026)
+Khác sách A4 cả chương: ruột tập là 12 trang 165×240 mm cho MỘT bài, đóng **lò xo**, dùng hai buổi theo nhịp L12. Bài sau
+chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy ước sau (không hạ chuẩn):
+- **Lề đóng lò xo**: gáy 20 mm, mép ngoài 10 mm, đổi bên theo trang chẵn/lẻ (`--pl/--pr` + `.page:nth-of-type(even)`);
+  ô ly, chân trang, nhãn Tập đều bám `--pl/--pr`. Không còn ràng buộc "số trang chia hết cho 4".
+- **Font Source Sans 3** (OFL, `scripts/ruot-tap/fonts/`, thầy chốt 25/10 để tiết kiệm trang: hẹp hơn Noto Sans ~10%, x-height cao)
+  với **cỡ chữ 4 mức** (C3): `--fs-h1` 4,4 · `--fs-h3` 3,7 · `--fs-body` 3,3 (≈9,4 pt) · `--fs-sm` 2,95 mm (≈8,4 pt, sàn — C1);
+  không đặt mm lẻ trong component; chỉ nạp 2 độ đậm (400/700). Thân chữ line-height 1,45; dòng kẻ viết tay giữ 5 mm.
+- **Mỗi ý của câu hỏi một dòng** (a), b), c)… và A. B. C. D.), không nối bằng “ · ” để tiết kiệm chỗ — thầy chốt 25/10.
+- **Không xoay ảnh** để vừa cột; ảnh dọc thì thu cột (≈30 mm) và đặt cạnh khối cao tương đương.
+- **Không giải thích quy trình trên giấy** (thầy chốt 25/10: thầy tự điều phối): không ô nhịp buổi, không phụ đề "điền khi nghe
+  giảng"/"làm cùng thầy", không hint trong ngoặc sau tiêu đề mục; chỉ giữ nhãn cho biết ghi gì. Không Ngày/Tên đầu trang (tờ đóng
+  thành sách).
+- **QR chỉ ở trang cuối, chỉ để xem lại bài** (thầy chốt 25/10 tối): không in tên web ở đầu/chân trang, không QR giữa tập, không
+  câu giới thiệu/quảng cáo kiểu "mượn tập của bạn". Trang ghi chú cuối có một ô mảnh viền xám (`gioiThieu`): 2 QR nhỏ 22 mm
+  (bài học này · trang chủ) + 1–2 dòng chữ phụ "Xem lại bài này trên thachlab.id.vn: quét mã…".
+- **Hình minh hoạ bắt buộc** (thầy 25/10: trang không hình là thiếu): mỗi trang học/bài tập có ≥1 hình SVG tự vẽ trong
+  `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
+  chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
+  ≥ 20 đơn vị viewBox (≈3 mm khi in rộng 46 mm) — kiểm bằng `node scripts/ruot-tap/xem-hinh.mjs` trước khi dựng.
+  Ảnh sách tham khảo: ruột tập lưu hành nội bộ nên thầy chốt 25/10 **được lấy hình từ Halliday "Fundamentals of Physics 12th"**
+  (`/Users/MAC/Documents/THPT/số hoá THPT/Fundamentals of Physics 12th/`, 2 PDF) mà không xét giấy phép: `pdftotext` tìm
+  "Figure NN.N.N" → số trang, `pdftoppm -r 200 -f N -l N` → cắt bằng PIL bỏ chữ Anh thừa, xoay nếu cần để hình nằm ngang,
+  lưu `scripts/ruot-tap/anh/*.png` ≤150 KB, chèn bằng `hinh.anh(file, chú thích Việt dịch nhãn)`. Hình cao (dọc) tốn chỗ gấp
+  đôi hình ngang — chọn hình ngang hoặc xoay; cột ảnh ≤ 24 mm chỉ còn đọc được nhờ chú thích.
+  **Nguồn + hình đã dùng (cắt bằng `python3 scripts/ruot-tap/cat-anh.py`, bảng `ANH` trong script ghi pdf/trang/bbox, chạy lại là có đủ):**
+  PDF = `/Users/MAC/Documents/THPT/số hoá THPT/Fundamentals of Physics 12th/Fundamentals of Physics 12th Volume 2.pdf` (chương 42 Nuclear Physics, 43 Energy from the Nucleus; trang PDF = trang in + 384).
+  Bài 14: Fig 42.1.1 (tr.737) `rutherford-bo-thi-nghiem.png`, Fig 42.1.3 (tr.737) `rutherford-alpha-qua-la-vang.png`; bài 15: Fig 42.2.3 (tr.743) `nang-luong-lien-ket-rieng.png`;
+  bài 16: Fig 43.2.2 (tr.778) `lo-phan-ung-nuoc-ap-luc.png`, Fig 43.5.1 (tr.784) `chu-trinh-proton-proton.png`; bài 17: Fig 42.3.1 (tr.748) `phong-xa-do-thi-ln-r.png`;
+  bài 18 (an toàn phóng xạ): Halliday không có hình phù hợp (chỉ ảnh chụp), dùng SVG tự vẽ. Bản sao ảnh ngoài repo: `/Users/MAC/Documents/THPT/số hoá THPT/ruot-tap-anh/`.
+  Hình Halliday chữ nhỏ (≈ 8 pt gốc) → thu còn 52–62 mm thì chữ trong hình không đọc được: chú thích tiếng Việt PHẢI nêu ý chính; muốn đọc được nhãn thì để rộng ≥ 84 mm (chu trình p–p).
+  **Ảnh cắt từ sách và PDF chứa chúng chỉ giữ trên Mac, không đẩy lên GitHub** (`scripts/ruot-tap/anh/` và `out/*.pdf` đã
+  gitignore từ 25/10) — có bản sao ở ngoài repo vì mất là phải cắt lại.
+- **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
+  Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
+- **Bài 15–18 (lesson 16–19) dùng khung chung** `scripts/ruot-tap/khung.mjs` (CSS, trang 8–12 sinh tự động, bài tập mẫu `btm.dang`, chẩn đoán dư mm) + `hinh-ch4.mjs` (hình): chạy `node scripts/ruot-tap/bai15.mjs` … `bai18.mjs`. Bài 14 giữ bản riêng `bai14.mjs`. Bài mới: chép `bai18.mjs`, đổi `khoiTao({bai, lid})`, nội dung 5 trang đầu + mảng `dang`, thêm hình vào `hinh-ch4.mjs`.
+- **Quyển = chương, đánh số trang liền mạch** (thầy chốt 26/10): bài 14 = tr.1–12, 15 = 13–24 … 18 = 49–60; chân trang "Bài N · tr. X", nhãn "Tập X·ô" và mọi tham chiếu (tr.10, trang 8, "Xem lại ở Tập") dùng số tuyệt đối (`khung.mjs`: `off`). Dựng cả quyển: `bash scripts/ruot-tap/dung-chuong4.sh` → `out/ruot-tap-vl12-chuong4.pdf` (60 trang, `pdfunite`). Nối tiếp chương liền kề: `BOOK_PAGE_START=61 bash …` (cả bài 14–18 theo; số bắt đầu chẵn thì lề gáy đổi bên; lưu ý data-tap trên web của bài 14 dùng số 1–12 nên chỉ khớp khi START=1).
+- Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
+  `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
+
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
-- Commit `book/` (code + `src/*.json`; HTML/PDF sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
+- Commit `book/` (code + `sach/*.json` gồm cả sổ khoá `.lock.json`; HTML/PDF/cache sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
   chỉ commit/deploy khi đã kiểm trang web thật; chưa thì ghi "ĐANG CHỜ" trong `docs/STATE.md`.
 - Rút kinh nghiệm vào mục dưới.
 
@@ -60,3 +114,18 @@ Lệnh > 30 s chạy trong tab terminal (`run_in_terminal`) để thầy theo d�
 - 2026-10-07 · Số trang mục con/phần cuối lấy bằng cách tìm chữ trong PDF con: chữ có `letter-spacing` (nhãn `.pg-k`, `.sb-k`) bị PyMuPDF trích thành "T Ổ N G  K Ế T" → tìm không ra, mục lục in số 0 → **so chuỗi đã bỏ hết khoảng trắng** (`re.sub(r'\s+','',…)` cả hai vế); kiểm tự động phải báo lỗi khi mục lục có số 0.
 - 2026-10-07 · Trang nào cần số trang của trang khác (mục lục ↔ phần cuối) thì dựng theo thứ tự: bài → phần cuối → phần đầu; `make.py` giữ `FRONT_PAGES` cố định và tự kiểm số trang phần đầu sau render, lệch thì dừng chứ không ghép PDF sai số.
 - 2026-10-07 · Mỗi lần thêm/bớt trang ở phần đầu phải xem lại ảnh trang mẫu gửi thầy: gửi đủ trang Cách dùng, mục lục, một trang Dạng, một trang vạch tiết, trang đáp án — thầy chỉ nhìn ảnh, không mở PDF.
+- 2026-10-25 · Ruột tập bài 14: xếp bố cục theo bài web thay vì theo nhịp buổi của thầy (10′ ôn → 20′ KT → 30′ sửa → bài mới) và đoán "BTVN = phần web mang về" → thiếu ô đề BTVN, trang sửa bài ghi "trong 24 giờ". **Giấy dùng trên lớp phải hỏi nhịp buổi + BTVN là gì trước khi xếp trang**; quy ước đã ghi `docs/memory/project_thachlab_ruot_tap_bai14.md`.
+- 2026-10-25 · Bảng sửa bài nhiều cột tick (chắc/đoán, 5 loại lỗi, dạng, ô Tập) là thiết kế cho người phân tích sau, HS trung bình không kịp điền khi thầy chữa → giấy điền TRONG giờ: lưới đáp án em–đúng để dò nhanh + ô chép rộng + ≤4 tick; tự hỏi "em có kịp điền không" trước khi thêm cột. Đề xuất bảng phân tích đề in sẵn cũng bị thầy bỏ (phân tích trong ô giải khi học) → chỗ trống rộng hơn khuôn in sẵn.
+- 2026-10-25 · Số + đơn vị bị tách dòng ("14 / g") → đưa đơn vị vào KaTeX (`14\ \mathrm{g}`) hoặc bọc `.nw{white-space:nowrap}`; ô đáp số có thể là phân số thì cao ≥ 9 mm. Nhãn yêu cầu ghi gọn ("Phân tích và giải"), không ghi cách làm trong ngoặc.
+- 2026-10-25 · Cân trang bằng chỉ số "dư … mm" script in ra, chỉ nhìn ảnh một lần cuối và cắt dải đầu trang bằng `pdftoppm -x -y -W -H`; đọc `.pdf.html` trung gian thay vì ảnh PDF khi cần nội dung. Trước khi sửa script ở worktree khác: `diff` với bản mình (bản kia mới hơn một commit font chưa vào main → cherry-pick).
+- 2026-10-25 · Hình SVG vẽ với chữ 10–11 đơn vị viewBox (như hình trên web) in ra chỉ 1,5 mm, không đọc được; `figure` còn
+  mang margin mặc định 40px của trình duyệt làm cột hình bị bóp → chữ trong SVG ≥ 20 đơn vị, `.fig{margin:0}`, và chụp
+  từng hình ở cỡ in bằng `xem-hinh.mjs` trước khi ghép vào trang. Hình đặt cạnh khối chữ (`.fig-side`) thay vì xếp dưới:
+  5 hình thêm vào mà tổng số trang không đổi.
+- 2026-10-25 · Lưới đáp án em–đúng trên trang sửa bài là chép lại thứ web đã hiện → với đề làm trên web, chỉ ghi số câu
+  sai; hỏi "đề làm ở đâu" trước khi vẽ bảng điền.
+- 2026-10-25 · Ruột tập bài 15–18: tách KaTeX giữa chừng để chen ô trống (`m('…{')+fill+m('}')`) làm KaTeX báo lỗi → viết lại công thức bằng chỉ số riêng (`A_Y=` ô trống); hình trong SVG có `viewBox` rộng (>320) thì cột hình phải ≥ 52–56 mm mới giữ chữ ≈ 2,9 mm; hình chỉ hiện trong ô giải khi `gi > 0` (dạng `gi: 0` + `fig` thì mất hình, đã gặp ở Dạng 5 bài 18) → với dạng có hình luôn đặt `gi ≥ 1`; trang 7 tràn thì hạ `gi` các dạng không có hình trước, rồi mới rút hình.
+- 2026-11-10 · Pipeline đọc `public/data/lessons` (chỉ có bài xem thử, gitignore) + bài tập mẫu trong repo nên sách không theo web thật và không dựng lại được ở máy/worktree khác → nguồn duy nhất là `book/cache` tải từ DB (`sach.py lech`), kèm sổ khoá để biết sách lệch web ở mức chữ hay mức đánh số.
+- 2026-11-10 · Ba bài treo 10 phút rồi "render lỗi" không rõ lý do: bài trên web có thêm `<img loading="lazy" src="/assets/…">`; mở bằng file:// ảnh không tải, `img.decode()` của ảnh lazy không bao giờ xong nên Paged.js không chạy → `build.local_imgs` đổi mọi ảnh thành file cục bộ đen–trắng và bỏ `loading/width/height`. Bài treo thì so thẻ/lớp CSS với bài dựng được (đếm bằng regex) trước khi đoán Paged.js.
+- 2026-11-10 · Web đổi lớp CSS (`tl-box--rule` thêm `tl-keep`) làm regex khớp nguyên chuỗi `class="…"` trượt → trang Tổng kết chương rỗng mà không báo lỗi; ảnh nguồn mở cao 880px chiếm trọn trang và để lại trang trống trước nó → regex lớp dùng `[^"]*`, ảnh giới hạn `max-height:62mm`, và `make.py` tự in CẢNH BÁO trang < 60 từ / bài thiếu hộp "Mang về". Sách dựng từ web sống thì mỗi kiểm tra bằng mắt cũ phải thành kiểm tự động.
+- 2026-11-10 · `make.render` nuốt stdout của `render.mjs` nên dòng `CHẨN ĐOÁN` (KaTeX lỗi, tràn khung) không hiện khi dựng cả cuốn → muốn xem thì dựng lẻ `build.py lesson <id>` + `node render.mjs`; còn chờ sửa cho in ra.

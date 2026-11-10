@@ -329,11 +329,11 @@
    "question": "Thả lần lượt chồng 1, 2, 3, 4 phễu giấy lồng khít (trọng lượng gấp 1, 2, 3, 4 lần) từ cùng một độ cao. Ở đoạn cuối quãng rơi, các phễu đều đã rơi đều. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi phễu rơi đều, lực cản của không khí bằng trọng lượng chồng phễu.",
-     "answer": true
+     "text": "Chồng phễu nặng hơn thì rơi đều với tốc độ nhỏ hơn.",
+     "answer": false
     },
     {
-     "text": "Chồng phễu nặng hơn thì rơi đều với tốc độ nhỏ hơn.",
+     "text": "Khi phễu đã rơi đều, trọng lực không còn tác dụng lên phễu.",
      "answer": false
     },
     {
@@ -341,16 +341,16 @@
      "answer": true
     },
     {
-     "text": "Khi phễu đã rơi đều, trọng lực không còn tác dụng lên phễu.",
-     "answer": false
+     "text": "Khi phễu rơi đều, lực cản của không khí bằng trọng lượng chồng phễu.",
+     "answer": true
     }
    ],
    "explanation": "Rơi đều thì hợp lực bằng 0, nên lực cản bằng trọng lượng. Chồng càng nặng rơi đều càng nhanh, chứng tỏ lực cản tăng theo tốc độ; trọng lực vẫn luôn tác dụng.",
    "distractorNotes": {
-    "0": "Rơi đều thì gia tốc bằng 0, hợp lực bằng 0, nên lực cản phải đúng bằng trọng lượng.",
-    "1": "Số liệu cho thấy chồng càng nhiều phễu thì $t$ càng ngắn, tức rơi đều càng nhanh.",
+    "0": "Số liệu cho thấy chồng càng nhiều phễu thì $t$ càng ngắn, tức rơi đều càng nhanh.",
+    "1": "Nhầm hợp lực bằng 0 với hết lực; Trái Đất vẫn hút phễu suốt quá trình rơi.",
     "2": "Trọng lượng lớn hơn cần tốc độ lớn hơn mới có lực cản cân bằng, chứng tỏ lực cản tăng theo tốc độ.",
-    "3": "Nhầm hợp lực bằng 0 với hết lực; Trái Đất vẫn hút phễu suốt quá trình rơi."
+    "3": "Rơi đều thì gia tốc bằng 0, hợp lực bằng 0, nên lực cản phải đúng bằng trọng lượng."
    }
   },
   {
@@ -368,24 +368,24 @@
      "answer": true
     },
     {
+     "text": "Mở dù làm lực cản tăng chủ yếu vì dù làm tăng khối lượng của hệ người và dù.",
+     "answer": false
+    },
+    {
      "text": "Ngay sau khi dù bung, lực cản lớn hơn trọng lượng nên người chuyển động chậm dần.",
      "answer": true
     },
     {
      "text": "Khi đã rơi đều trở lại sau khi mở dù, tốc độ giới hạn lớn hơn lúc chưa mở dù.",
      "answer": false
-    },
-    {
-     "text": "Mở dù làm lực cản tăng chủ yếu vì dù làm tăng khối lượng của hệ người và dù.",
-     "answer": false
     }
    ],
    "explanation": "Lực cản tăng theo tốc độ và phụ thuộc hình dạng. Dù rộng làm lực cản tăng vọt, vượt trọng lượng nên người chậm dần, đến khi cân bằng lại thì rơi đều với tốc độ giới hạn nhỏ hơn.",
    "distractorNotes": {
     "0": "Tốc độ tăng làm lực cản tăng, chính điều đó khiến gia tốc giảm dần đến khi rơi đều.",
-    "1": "Dù bung làm lực cản vượt trọng lượng, hợp lực hướng lên nên người phải chậm dần.",
-    "2": "Dù rộng làm lực cản cân bằng trọng lượng ở tốc độ thấp hơn, nên tốc độ giới hạn nhỏ đi.",
-    "3": "Lực cản tăng do hình dạng hứng gió rộng hơn, không phải do khối lượng; khối lượng hệ gần như không đổi."
+    "1": "Lực cản tăng do hình dạng hứng gió rộng hơn, không phải do khối lượng; khối lượng hệ gần như không đổi.",
+    "2": "Dù bung làm lực cản vượt trọng lượng, hợp lực hướng lên nên người phải chậm dần.",
+    "3": "Dù rộng làm lực cản cân bằng trọng lượng ở tốc độ thấp hơn, nên tốc độ giới hạn nhỏ đi."
    }
   },
   {
@@ -399,6 +399,10 @@
    "question": "Treo một khối kim loại vào lực kế rồi nhúng dần vào bình tràn đầy nước, hứng nước tràn ra vào cốc. Xét các phát biểu sau:",
    "statements": [
     {
+     "text": "Trong công thức $F_A = \\rho g V$ áp dụng cho thí nghiệm này, $\\rho$ là khối lượng riêng của kim loại.",
+     "answer": false
+    },
+    {
      "text": "Số chỉ lực kế giảm dần khi phần thể tích chìm trong nước tăng.",
      "answer": true
     },
@@ -409,18 +413,14 @@
     {
      "text": "Khi khối kim loại đã chìm hẳn, hạ sâu thêm thì số chỉ lực kế tiếp tục giảm.",
      "answer": false
-    },
-    {
-     "text": "Trong công thức $F_A = \\rho g V$ áp dụng cho thí nghiệm này, $\\rho$ là khối lượng riêng của kim loại.",
-     "answer": false
     }
    ],
    "explanation": "Lực đẩy bằng trọng lượng nước bị chiếm chỗ và tăng theo phần chìm, không tăng theo độ sâu. Trong công thức, $\\rho$ là khối lượng riêng của nước.",
    "distractorNotes": {
-    "0": "Phần chìm tăng thì thể tích nước bị chiếm chỗ tăng, lực đẩy lớn hơn nên lực kế chỉ ít đi.",
-    "1": "Lực đẩy bằng trọng lượng chất lỏng bị chiếm chỗ, chính là trọng lượng nước tràn ra.",
-    "2": "Đã chìm hẳn thì thể tích chiếm chỗ không đổi, lực đẩy không tăng theo độ sâu nên số chỉ giữ nguyên.",
-    "3": "Nhầm khối lượng riêng của vật với khối lượng riêng của chất lỏng trong công thức."
+    "0": "Nhầm khối lượng riêng của vật với khối lượng riêng của chất lỏng trong công thức.",
+    "1": "Phần chìm tăng thì thể tích nước bị chiếm chỗ tăng, lực đẩy lớn hơn nên lực kế chỉ ít đi.",
+    "2": "Lực đẩy bằng trọng lượng chất lỏng bị chiếm chỗ, chính là trọng lượng nước tràn ra.",
+    "3": "Đã chìm hẳn thì thể tích chiếm chỗ không đổi, lực đẩy không tăng theo độ sâu nên số chỉ giữ nguyên."
    }
   },
   {
@@ -438,12 +438,12 @@
      "answer": true
     },
     {
-     "text": "Độ chênh áp suất giữa mặt dưới và mặt trên là $\\Delta p = \\rho g \\Delta h$.",
-     "answer": true
-    },
-    {
      "text": "Độ chênh áp suất giữa hai mặt tăng khi áp suất khí quyển $p_0$ tăng.",
      "answer": false
+    },
+    {
+     "text": "Độ chênh áp suất giữa mặt dưới và mặt trên là $\\Delta p = \\rho g \\Delta h$.",
+     "answer": true
     },
     {
      "text": "Hiệu $F_2 - F_1$ tăng khi đưa khối hộp xuống sâu hơn.",
@@ -453,8 +453,8 @@
    "explanation": "$\\Delta p = \\rho g \\Delta h$ chỉ phụ thuộc $\\rho$ và $\\Delta h$, không phụ thuộc $p_0$. Do đó $F_2 - F_1 = \\rho g S \\Delta h = \\rho g V$ không đổi theo độ sâu.",
    "distractorNotes": {
     "0": "Áp suất tăng theo độ sâu nên mặt dưới bị ép mạnh hơn mặt trên cùng diện tích.",
-    "1": "Lấy hiệu $p_0 + \\rho g h$ ở hai mặt, $p_0$ triệt tiêu và còn đúng $\\rho g \\Delta h$.",
-    "2": "$p_0$ ép lên cả hai mặt như nhau nên triệt tiêu, độ chênh áp suất không phụ thuộc $p_0$.",
+    "1": "$p_0$ ép lên cả hai mặt như nhau nên triệt tiêu, độ chênh áp suất không phụ thuộc $p_0$.",
+    "2": "Lấy hiệu $p_0 + \\rho g h$ ở hai mặt, $p_0$ triệt tiêu và còn đúng $\\rho g \\Delta h$.",
     "3": "Nhầm $\\Delta h$ với quãng hạ thêm; $\\Delta h$ là chiều cao hộp nên hiệu áp lực không đổi."
    }
   },
@@ -473,24 +473,24 @@
      "answer": true
     },
     {
-     "text": "Nếu $P = F_A$ thì vật lơ lửng trong chất lỏng.",
-     "answer": true
+     "text": "Tàu thép nổi được vì thép đóng tàu có khối lượng riêng nhỏ hơn nước.",
+     "answer": false
     },
     {
      "text": "Khi vật đã nổi yên trên mặt chất lỏng thì lực đẩy Archimedes lớn hơn trọng lượng của vật.",
      "answer": false
     },
     {
-     "text": "Tàu thép nổi được vì thép đóng tàu có khối lượng riêng nhỏ hơn nước.",
-     "answer": false
+     "text": "Nếu $P = F_A$ thì vật lơ lửng trong chất lỏng.",
+     "answer": true
     }
    ],
    "explanation": "So $P$ với $F_A$ khi chìm hẳn sẽ biết vật chìm, lơ lửng hay nổi lên. Khi nổi yên, $F_A$ của phần chìm bằng $P$. Tàu thép nổi nhờ thân rỗng chiếm chỗ nhiều nước.",
    "distractorNotes": {
     "0": "Trọng lượng lớn hơn lực đẩy thì hợp lực hướng xuống, vật không thể nổi hay đứng yên.",
-    "1": "Hai lực bằng nhau thì hợp lực bằng 0, vật đứng yên lơ lửng trong lòng chất lỏng.",
+    "1": "Thép nào cũng nặng hơn nước; tàu nổi nhờ thân rỗng chiếm chỗ rất nhiều nước.",
     "2": "Nếu $F_A \\gt P$ thì vật còn đang nổi lên; nổi yên thì lực đẩy phần chìm bằng trọng lượng.",
-    "3": "Thép nào cũng nặng hơn nước; tàu nổi nhờ thân rỗng chiếm chỗ rất nhiều nước."
+    "3": "Hai lực bằng nhau thì hợp lực bằng 0, vật đứng yên lơ lửng trong lòng chất lỏng."
    }
   },
   {
@@ -504,16 +504,16 @@
    "question": "Một vật đặc treo dưới lực kế: ngoài không khí lực kế chỉ $P$. Nhúng vật chìm hoàn toàn trong một chất lỏng, vật đứng yên và lực kế chỉ $T$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Vì vật đứng yên nên $T + F_A = P$.",
-     "answer": true
+     "text": "Nhúng vật chìm hẳn trong chất lỏng có khối lượng riêng nhỏ hơn thì $T$ nhỏ hơn.",
+     "answer": false
     },
     {
      "text": "Số chỉ lực kế khi nhúng vật nhỏ hơn $P$.",
      "answer": true
     },
     {
-     "text": "Nhúng vật chìm hẳn trong chất lỏng có khối lượng riêng nhỏ hơn thì $T$ nhỏ hơn.",
-     "answer": false
+     "text": "Vì vật đứng yên nên $T + F_A = P$.",
+     "answer": true
     },
     {
      "text": "Nếu chỉ nhúng một nửa thể tích vật thì $T = P - F_A$, với $F_A$ tính theo thể tích cả vật.",
@@ -522,9 +522,9 @@
    ],
    "explanation": "$T$ và $F_A$ hướng lên, $P$ hướng xuống, vật đứng yên nên $T = P - F_A$. Chất lỏng nhẹ hơn đẩy yếu hơn nên $T$ lớn hơn. Khi chỉ nhúng một phần, $F_A$ tính theo phần chìm.",
    "distractorNotes": {
-    "0": "Vật đứng yên nên hợp lực bằng 0: tổng hai lực hướng lên bằng trọng lực hướng xuống.",
+    "0": "Chất lỏng có $\\rho$ nhỏ hơn cho $F_A$ nhỏ hơn, nên $T = P - F_A$ lớn hơn chứ không nhỏ hơn.",
     "1": "Lực đẩy hướng lên gánh bớt trọng lượng nên lực kế phải chỉ ít hơn $P$.",
-    "2": "Chất lỏng có $\\rho$ nhỏ hơn cho $F_A$ nhỏ hơn, nên $T = P - F_A$ lớn hơn chứ không nhỏ hơn.",
+    "2": "Vật đứng yên nên hợp lực bằng 0: tổng hai lực hướng lên bằng trọng lực hướng xuống.",
     "3": "Lấy nhầm thể tích cả vật; lực đẩy chỉ tính theo phần chìm, ở đây là một nửa thể tích."
    }
   }

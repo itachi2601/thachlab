@@ -225,7 +225,7 @@
      "answer": true
     },
     {
-     "text": "Lực xe 1 tác dụng lên xe 2 lúc va chạm là ngoại lực của hệ hai xe.",
+     "text": "Sau va chạm, hai xe dính nhau đi nhanh hơn xe 1 lúc đầu.",
      "answer": false
     },
     {
@@ -233,16 +233,16 @@
      "answer": true
     },
     {
-     "text": "Sau va chạm, hai xe dính nhau đi nhanh hơn xe 1 lúc đầu.",
+     "text": "Lực xe 1 tác dụng lên xe 2 lúc va chạm là ngoại lực của hệ hai xe.",
      "answer": false
     }
    ],
    "explanation": "Lực giữa hai xe là nội lực; hệ kín nên tổng động lượng không đổi. Khối lượng chuyển động tăng nên vận tốc chung nhỏ hơn $v_1$.",
    "distractorNotes": {
     "0": "Đệm khí làm ma sát gần như bằng 0 và trọng lực được cân bằng, đúng điều kiện của hệ kín.",
-    "1": "Lực giữa hai vật cùng nằm trong hệ là nội lực; ngoại lực phải do vật ngoài hệ gây ra.",
+    "1": "Cùng một động lượng chia cho khối lượng lớn hơn thì vận tốc chung phải nhỏ hơn $v_1$.",
     "2": "Bảo toàn áp dụng cho tổng chứ không cho từng xe: xe 1 chậm lại còn xe 2 nhanh lên.",
-    "3": "Cùng một động lượng chia cho khối lượng lớn hơn thì vận tốc chung phải nhỏ hơn $v_1$."
+    "3": "Lực giữa hai vật cùng nằm trong hệ là nội lực; ngoại lực phải do vật ngoài hệ gây ra."
    }
   },
   {
@@ -260,24 +260,24 @@
      "answer": true
     },
     {
-     "text": "Cú ôm là một va chạm mềm.",
-     "answer": true
-    },
-    {
      "text": "Động năng của hệ ngay sau cú ôm bằng động năng trước cú ôm.",
      "answer": false
     },
     {
      "text": "Có thể dùng bảo toàn động lượng để tìm vận tốc hai bạn suốt quãng lướt đến khi dừng.",
      "answer": false
+    },
+    {
+     "text": "Cú ôm là một va chạm mềm.",
+     "answer": true
     }
    ],
    "explanation": "Hai bạn dính nhau nên là va chạm mềm: động lượng bảo toàn, động năng giảm. Bảo toàn chỉ dùng cho ngay trước và ngay sau cú ôm, sau đó ma sát tác dụng lâu.",
    "distractorNotes": {
     "0": "Khối lượng chuyển động tăng gấp đôi mà động lượng giữ nguyên nên tốc độ chung phải giảm.",
-    "1": "Hai bạn ôm dính lấy nhau và chuyển động cùng vận tốc, đúng dấu hiệu của va chạm mềm.",
-    "2": "Va chạm mềm làm mất một phần động năng thành biến dạng, nhiệt; đại lượng giữ nguyên là động lượng.",
-    "3": "Trên quãng lướt dài, ma sát tuy nhỏ nhưng tác dụng lâu nên động lượng giảm dần về 0."
+    "1": "Va chạm mềm làm mất một phần động năng thành biến dạng, nhiệt; đại lượng giữ nguyên là động lượng.",
+    "2": "Trên quãng lướt dài, ma sát tuy nhỏ nhưng tác dụng lâu nên động lượng giảm dần về 0.",
+    "3": "Hai bạn ôm dính lấy nhau và chuyển động cùng vận tốc, đúng dấu hiệu của va chạm mềm."
    }
   },
   {
@@ -456,24 +456,24 @@
      "answer": true
     },
     {
+     "text": "Nếu tính ra $v \\lt 0$ thì sau va chạm hai vật chuyển động theo chiều dương đã chọn.",
+     "answer": false
+    },
+    {
      "text": "$v_1$, $v_2$, $v$ là giá trị đại số, mang dấu theo chiều dương đã chọn.",
      "answer": true
     },
     {
      "text": "Khi hai vật chạy ngược chiều nhau, luôn thế cả $v_1$ và $v_2$ là số dương.",
      "answer": false
-    },
-    {
-     "text": "Nếu tính ra $v \\lt 0$ thì sau va chạm hai vật chuyển động theo chiều dương đã chọn.",
-     "answer": false
     }
    ],
    "explanation": "Công thức suy từ bảo toàn động lượng với hai vật dính nhau; các vận tốc là đại số. Vật ngược chiều dương mang dấu âm, và $v \\lt 0$ nghĩa là đi ngược chiều dương.",
    "distractorNotes": {
     "0": "Sau va chạm mềm hai vật chung vận tốc $v$ nên tổng động lượng sau đúng là $(m_1 + m_2)v$.",
-    "1": "Bài ghi rõ cả ba vận tốc là giá trị đại số: cùng chiều dương thì dương, ngược chiều thì âm.",
-    "2": "Khi chạy ngược chiều, một vật đi ngược chiều dương nên vận tốc của nó phải mang dấu âm.",
-    "3": "Dấu âm của kết quả cho biết hai vật chuyển động ngược với chiều dương đã chọn."
+    "1": "Dấu âm của kết quả cho biết hai vật chuyển động ngược với chiều dương đã chọn.",
+    "2": "Bài ghi rõ cả ba vận tốc là giá trị đại số: cùng chiều dương thì dương, ngược chiều thì âm.",
+    "3": "Khi chạy ngược chiều, một vật đi ngược chiều dương nên vận tốc của nó phải mang dấu âm."
    }
   },
   {
@@ -522,6 +522,10 @@
    "question": "Trên sân băng, hai cầu thủ A và B lao vào nhau ngược chiều trên cùng một đường thẳng rồi ôm dính lấy nhau; bỏ qua ma sát trong lúc va chạm. Chọn chiều dương theo chiều chạy của A.",
    "statements": [
     {
+     "text": "Nếu quên dấu vận tốc của B thì kết quả vẫn trùng với cách làm đúng.",
+     "answer": false
+    },
+    {
      "text": "Vận tốc của B phải được thế vào phương trình với dấu âm.",
      "answer": true
     },
@@ -532,18 +536,14 @@
     {
      "text": "Nếu $m_Av_A = m_B|v_B|$ thì sau va chạm hai người vẫn trượt theo chiều của A.",
      "answer": false
-    },
-    {
-     "text": "Nếu quên dấu vận tốc của B thì kết quả vẫn trùng với cách làm đúng.",
-     "answer": false
     }
    ],
    "explanation": "Tổng động lượng $m_Av_A + m_Bv_B$ quyết định dấu của $v$. Hai động lượng bằng độ lớn thì tổng bằng 0, hai người đứng yên; quên dấu biến bài thành bài cùng chiều.",
    "distractorNotes": {
-    "0": "B chạy ngược chiều dương đã chọn nên vận tốc của B phải mang dấu âm khi thế vào phương trình.",
-    "1": "Tổng động lượng dương thì vận tốc chung $v \\gt 0$, hai người đi theo chiều của A.",
-    "2": "Hai động lượng bằng độ lớn, ngược chiều thì tổng bằng 0, vận tốc chung bằng 0 và hai người đứng sững.",
-    "3": "Bỏ dấu thì động lượng hai người cộng dồn, cho đáp số của bài cùng chiều, sai cả độ lớn lẫn ý nghĩa."
+    "0": "Bỏ dấu thì động lượng hai người cộng dồn, cho đáp số của bài cùng chiều, sai cả độ lớn lẫn ý nghĩa.",
+    "1": "B chạy ngược chiều dương đã chọn nên vận tốc của B phải mang dấu âm khi thế vào phương trình.",
+    "2": "Tổng động lượng dương thì vận tốc chung $v \\gt 0$, hai người đi theo chiều của A.",
+    "3": "Hai động lượng bằng độ lớn, ngược chiều thì tổng bằng 0, vận tốc chung bằng 0 và hai người đứng sững."
    }
   }
  ]

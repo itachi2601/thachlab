@@ -382,7 +382,7 @@
    "question": "Người lái xe dùng hai tay tác dụng một ngẫu lực lên vô lăng (vô lăng có trục quay cố định). Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tổng hai lực tác dụng lên vô lăng bằng 0.",
+     "text": "Vô lăng quay quanh chính trục cố định của nó.",
      "answer": true
     },
     {
@@ -390,20 +390,20 @@
      "answer": false
     },
     {
-     "text": "Vô lăng quay quanh chính trục cố định của nó.",
-     "answer": true
-    },
-    {
      "text": "Ngẫu lực làm vô lăng chuyển động tịnh tiến theo chiều một trong hai lực.",
      "answer": false
+    },
+    {
+     "text": "Tổng hai lực tác dụng lên vô lăng bằng 0.",
+     "answer": true
     }
    ],
    "explanation": "Hai lực ngẫu lực ngược chiều, bằng nhau nên tổng bằng 0, nhưng moment khác 0 làm vô lăng quay quanh trục cố định; ngẫu lực chỉ làm quay.",
    "distractorNotes": {
-    "0": "Hai lực song song, ngược chiều, cùng độ lớn nên tổng chắc chắn bằng 0, không thể coi là sai.",
+    "0": "Vật có trục cố định chịu ngẫu lực thì quay quanh chính trục đó, nên không thể coi là sai.",
     "1": "Tổng lực bằng 0 chưa đủ để cân bằng, vì moment ngẫu lực khác 0 vẫn làm vô lăng quay.",
-    "2": "Vật có trục cố định chịu ngẫu lực thì quay quanh chính trục đó, nên không thể coi là sai.",
-    "3": "Tổng hai lực bằng 0 nên ngẫu lực không gây tịnh tiến mà chỉ làm quay."
+    "2": "Tổng hai lực bằng 0 nên ngẫu lực không gây tịnh tiến mà chỉ làm quay.",
+    "3": "Hai lực song song, ngược chiều, cùng độ lớn nên tổng chắc chắn bằng 0, không thể coi là sai."
    }
   },
   {
@@ -417,28 +417,28 @@
    "question": "Một ngẫu lực gồm hai lực có cùng độ lớn $F$, khoảng cách giữa hai giá là $d$, tác dụng lên một vật. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Moment của ngẫu lực là $M = F\\cdot d$.",
-     "answer": true
-    },
-    {
-     "text": "Moment của ngẫu lực thay đổi khi dời vị trí trục quay vuông góc với mặt phẳng ngẫu lực.",
-     "answer": false
-    },
-    {
      "text": "Khi trục nằm giữa hai giá, $M = F d_1 + F d_2$ với $d_1 + d_2 = d$.",
      "answer": true
     },
     {
      "text": "Giữ nguyên $d$, tăng $F$ gấp đôi thì moment ngẫu lực tăng gấp bốn.",
      "answer": false
+    },
+    {
+     "text": "Moment của ngẫu lực thay đổi khi dời vị trí trục quay vuông góc với mặt phẳng ngẫu lực.",
+     "answer": false
+    },
+    {
+     "text": "Moment của ngẫu lực là $M = F\\cdot d$.",
+     "answer": true
     }
    ],
    "explanation": "$M = F d_1 + F d_2 = F d$ và không phụ thuộc vị trí trục; $M$ tỉ lệ bậc nhất với $F$ nên $F$ gấp đôi thì $M$ gấp đôi.",
    "distractorNotes": {
-    "0": "Đây đúng là công thức moment ngẫu lực với $d$ là khoảng cách giữa hai giá, không thể coi là sai.",
-    "1": "Khi tính moment, vị trí trục bị triệt tiêu, nên trục đặt ở đâu cũng ra $F d$.",
-    "2": "Trục nằm giữa hai giá thì cả hai lực cùng làm quay một chiều, cộng hai moment ra đúng $F d$.",
-    "3": "Moment tỉ lệ bậc nhất với $F$, không phải bình phương, nên chỉ tăng gấp đôi."
+    "0": "Trục nằm giữa hai giá thì cả hai lực cùng làm quay một chiều, cộng hai moment ra đúng $F d$.",
+    "1": "Moment tỉ lệ bậc nhất với $F$, không phải bình phương, nên chỉ tăng gấp đôi.",
+    "2": "Khi tính moment, vị trí trục bị triệt tiêu, nên trục đặt ở đâu cũng ra $F d$.",
+    "3": "Đây đúng là công thức moment ngẫu lực với $d$ là khoảng cách giữa hai giá, không thể coi là sai."
    }
   },
   {
@@ -456,12 +456,12 @@
      "answer": true
     },
     {
-     "text": "Quy tắc moment quanh $O$ cho $P_1\\cdot OA = P\\cdot OG$.",
-     "answer": true
-    },
-    {
      "text": "Từ điều kiện tổng lực bằng 0 suy ra $N = P - P_1$.",
      "answer": false
+    },
+    {
+     "text": "Quy tắc moment quanh $O$ cho $P_1\\cdot OA = P\\cdot OG$.",
+     "answer": true
     },
     {
      "text": "Vì thanh đồng chất nên trọng tâm $G$ nằm tại đầu $B$.",
@@ -471,8 +471,8 @@
    "explanation": "Giá của $N$ qua $O$ nên $d = 0$; $P_1$ và $P$ làm quay ngược chiều nhau nên $P_1 \\cdot OA = P\\cdot OG$. Hai lực đều hướng xuống nên $N = P_1 + P$; thanh đồng chất có trọng tâm ở giữa.",
    "distractorNotes": {
     "0": "Lực có giá đi qua trục có cánh tay đòn bằng 0, nên moment chắc chắn bằng 0.",
-    "1": "$P_1$ làm quay ngược kim, $P$ làm quay thuận kim, nên cân bằng hai moment này là đúng quy tắc.",
-    "2": "$P_1$ và $P$ cùng hướng xuống nên $N$ phải bằng tổng của chúng chứ không phải hiệu.",
+    "1": "$P_1$ và $P$ cùng hướng xuống nên $N$ phải bằng tổng của chúng chứ không phải hiệu.",
+    "2": "$P_1$ làm quay ngược kim, $P$ làm quay thuận kim, nên cân bằng hai moment này là đúng quy tắc.",
     "3": "Thanh đồng chất có trọng tâm ở trung điểm, không nằm ở đầu thanh."
    }
   },
@@ -487,16 +487,16 @@
    "question": "Dùng búa nhổ đinh: một người ấn sát đầu búa, gần điểm tì; người khác ấn ở cuối cán, xa điểm tì. Cả hai ấn vuông góc với cán. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Tác dụng làm quay của lực chỉ phụ thuộc độ lớn của lực.",
-     "answer": false
+     "text": "Cùng độ lớn lực, ấn xa điểm tì cho moment lớn hơn ấn gần điểm tì.",
+     "answer": true
     },
     {
      "text": "Cầm ở cuối cán thì cánh tay đòn của lực lớn hơn.",
      "answer": true
     },
     {
-     "text": "Cùng độ lớn lực, ấn xa điểm tì cho moment lớn hơn ấn gần điểm tì.",
-     "answer": true
+     "text": "Tác dụng làm quay của lực chỉ phụ thuộc độ lớn của lực.",
+     "answer": false
     },
     {
      "text": "Khối lượng của búa là yếu tố quyết định người nào nhổ được đinh.",
@@ -505,9 +505,9 @@
    ],
    "explanation": "Tác dụng làm quay do tích $F\\cdot d$ quyết định; lực vuông góc cán nên $d$ là khoảng cách tới chỗ đặt tay, cầm cuối cán cho $d$ lớn.",
    "distractorNotes": {
-    "0": "Lực nhỏ đặt xa vẫn nhổ được đinh, chứng tỏ cánh tay đòn cũng quyết định tác dụng làm quay.",
+    "0": "Theo $M=F\\cdot d$, cùng $F$ mà $d$ lớn hơn thì moment lớn hơn, nên không thể coi là sai.",
     "1": "Lực vuông góc cán nên cánh tay đòn bằng khoảng cách tới chỗ đặt tay, mà cuối cán xa điểm tì hơn.",
-    "2": "Theo $M=F\\cdot d$, cùng $F$ mà $d$ lớn hơn thì moment lớn hơn, nên không thể coi là sai.",
+    "2": "Lực nhỏ đặt xa vẫn nhổ được đinh, chứng tỏ cánh tay đòn cũng quyết định tác dụng làm quay.",
     "3": "Hai người dùng cùng một cái búa, khác biệt chỉ nằm ở chỗ đặt tay, tức là cánh tay đòn."
    }
   },
@@ -522,28 +522,28 @@
    "question": "Bập bênh có trục quay ở giữa, bỏ qua khối lượng ván. Hai bạn có trọng lượng $P_1$, $P_2$ ngồi ở hai bên, cách trục lần lượt $d_1$, $d_2$, bập bênh nằm cân bằng. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Khi cân bằng, $P_1 d_1 = P_2 d_2$.",
-     "answer": true
-    },
-    {
      "text": "Bạn nặng hơn phải ngồi xa trục hơn.",
      "answer": false
     },
     {
-     "text": "Hai bạn nặng như nhau thì phải ngồi cách trục bằng nhau.",
+     "text": "Bạn có trọng lượng gấp đôi thì phải ngồi cách trục xa gấp đôi.",
+     "answer": false
+    },
+    {
+     "text": "Khi cân bằng, $P_1 d_1 = P_2 d_2$.",
      "answer": true
     },
     {
-     "text": "Bạn có trọng lượng gấp đôi thì phải ngồi cách trục xa gấp đôi.",
-     "answer": false
+     "text": "Hai bạn nặng như nhau thì phải ngồi cách trục bằng nhau.",
+     "answer": true
     }
    ],
    "explanation": "Quy tắc moment cho $P_1 d_1 = P_2 d_2$, nên khoảng cách tỉ lệ nghịch với trọng lượng: người nặng gấp đôi ngồi cách trục bằng một nửa.",
    "distractorNotes": {
-    "0": "Hai bạn làm bập bênh quay ngược chiều nhau, nên cân bằng moment đúng quy tắc, không thể coi là sai.",
-    "1": "Đây là làm ngược tỉ lệ, vì người nặng phải có cánh tay đòn nhỏ hơn để hai moment bằng nhau.",
-    "2": "Khi $P_1=P_2$, từ $P_1 d_1=P_2 d_2$ suy ra $d_1=d_2$, nên không thể coi là sai.",
-    "3": "Khoảng cách tỉ lệ nghịch với trọng lượng, nên người nặng gấp đôi chỉ ngồi cách trục một nửa."
+    "0": "Đây là làm ngược tỉ lệ, vì người nặng phải có cánh tay đòn nhỏ hơn để hai moment bằng nhau.",
+    "1": "Khoảng cách tỉ lệ nghịch với trọng lượng, nên người nặng gấp đôi chỉ ngồi cách trục một nửa.",
+    "2": "Hai bạn làm bập bênh quay ngược chiều nhau, nên cân bằng moment đúng quy tắc, không thể coi là sai.",
+    "3": "Khi $P_1=P_2$, từ $P_1 d_1=P_2 d_2$ suy ra $d_1=d_2$, nên không thể coi là sai."
    }
   }
  ]

@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { CheckCircle2, Clock3, KeyRound, LogIn, ShieldCheck } from "lucide-react";
 import { useAuth } from "@/components/auth/AuthProvider";
@@ -13,7 +12,7 @@ export default function CncEnrollmentGate({ lessonId }: { lessonId?: string }){
   const reload=useCallback(async()=>{if(!session)return;try{setAccess(await fetchMyActiveCncCourse(session.user.id));}catch(e){setMessage(e instanceof Error?e.message:"Không kiểm tra được khóa học.");}finally{setLoaded(true);}},[session]);
   useEffect(()=>{const timer=setTimeout(()=>void reload(),0);return()=>clearTimeout(timer);},[reload]);
   if(authLoading)return <Shell>Đang kiểm tra khóa học…</Shell>;
-  if(!session)return <Shell><LogIn className="cnc-gate-icon" size={36}/><h1>Đăng nhập để học CNC</h1><p>Đăng nhập rồi nhập mã khóa do giáo viên cung cấp.</p><Link href="/dang-nhap" className="lesson-btn">Đăng nhập</Link></Shell>;
+  if(!session)return <Shell><LogIn className="cnc-gate-icon" size={36}/><h1>Đăng nhập để học CNC</h1><p>Đăng nhập rồi nhập mã khóa do giáo viên cung cấp.</p><a href="/dang-nhap" onClick={(e)=>{e.preventDefault();const here=window.location.pathname+window.location.search+window.location.hash;window.location.assign(`/dang-nhap?next=${encodeURIComponent(here)}&lop=cnc`);}} className="lesson-btn">Đăng nhập</a></Shell>;
   if(profile?.role==="admin")return <CncCourseWorkspace embedded initialLessonId={lessonId}/>;
   if(!loaded)return <Shell>Đang tải thông tin khóa…</Shell>;
   if(access?.status==="active")return <><div className="cnc-enrolled-note cnc-enrolled-note--page"><CheckCircle2 size={18}/><strong>{access.course.name}</strong><span>· {access.course.school_year}</span></div><CncCourseWorkspace embedded courseId={access.course.id} initialLessonId={lessonId}/></>;

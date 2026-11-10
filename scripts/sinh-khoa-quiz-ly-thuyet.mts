@@ -64,7 +64,7 @@ for (const it of items ?? []) {
   if (err) { skipped++; console.log(`✗ item ${it.id} (bài ${it.lesson_id}) bỏ qua: ${err}`); continue; }
   if (haveSet.has(Number(it.id)) && !de) { kept++; continue; }
   const est = estimateTheoryTime(String(it.body_html));
-  rows.push({ item_id: Number(it.id), enabled: true, answers, challenge: {}, est_read_seconds: est.minutes * 60 });
+  rows.push({ item_id: Number(it.id), enabled: true, answers, challenge: {}, est_read_seconds: est.paceMinutes * 60 });
 }
 console.log(`Mục lý thuyết có quiz: ${items?.length ?? 0} · sẽ ghi: ${rows.length} · giữ khoá cũ: ${kept} · bỏ qua lỗi: ${skipped}`);
 for (const r of rows.slice(0, 8)) console.log(`  item ${r.item_id}: ${Object.keys(r.answers).length} câu, đọc ~${r.est_read_seconds / 60} phút`);

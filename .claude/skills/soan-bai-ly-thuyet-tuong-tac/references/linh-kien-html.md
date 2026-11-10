@@ -63,7 +63,7 @@ Hộp `tl-box tl-box--think`, nhãn "🎤 Trả bài", bên trong 4–6 `<detail
 
 **Tự giải thích trước khi xem** — trong mục Trả bài, `<summary>` kết bằng dòng nhỏ:
 ```html
-<details class="tl-details"><summary>Phát biểu định luật… <small>(nói bằng lời của em trước, rồi mới bấm xem)</small></summary>
+<details class="tl-details"><summary>Phát biểu định luật…</summary>
 <p>Đáp án từ khoá…</p></details>
 ```
 

@@ -9,7 +9,10 @@ export type LearningEventKind = "open" | "leave" | "submit";
 interface PendingEvent {
   lessonId?: number;
   itemId?: number;
-  kind: LearningEventKind | "read_depth";
+  kind: LearningEventKind | "read_depth" | "clip_choice";
+  tnId?: string;
+  choice?: number | null;
+  correct?: boolean | null;
   durationS?: number;
   h3Max?: number;
   h3Total?: number;
@@ -86,4 +89,24 @@ export function logReadDepth(input: { itemId: number; h3Max: number; h3Total: nu
   });
   // Gọi lúc rời mục/ẩn tab: gửi ngay (không chờ hẹn giờ 60 giây kẻo tab đóng mất lô); microtask để N mục cùng ẩn tab đi chung một lô.
   queueMicrotask(flush);
+}
+
+/**
+ * Lựa chọn ở điểm dừng Dự đoán của khung video thí nghiệm (migration clip_choice). Không chấm điểm, không RP:
+ * chỉ để thầy xem tỉ lệ chọn A–D của từng clip. `choice` null = bấm "Chưa muốn đoán, xem luôn".
+ * Đi chung lô 60 giây với open/leave nên không thêm round-trip.
+ */
+export function logClipChoice(input: { lessonId: number; tnId: string; choice: number | null; correct: boolean | null }) {
+  if (typeof window === "undefined") return;
+  ensureListening();
+  queue.push({
+    kind: "clip_choice",
+    lessonId: input.lessonId,
+    tnId: input.tnId.slice(0, 60),
+    choice: input.choice,
+    correct: input.correct,
+    at: new Date().toISOString(),
+  });
+  if (queue.length >= MAX_QUEUE) flush();
+  else if (timer === null) timer = window.setTimeout(flush, FLUSH_MS);
 }

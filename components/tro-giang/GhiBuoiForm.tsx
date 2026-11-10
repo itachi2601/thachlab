@@ -604,7 +604,7 @@ export default function GhiBuoiForm({
               coverage={draft.phudaoCoverage}
               onCoverageChange={(phudaoCoverage) => patch({ phudaoCoverage })}
               demo={demo}
-              badge={`hệ số ×${formatMultiplier(newPolicy ? tutoringFactor(draft.phudaoStudents.length) ?? 0 : phudaoMultiplier(draft.phudaoStudents.length))}`}
+              badge={`hệ số ×${formatMultiplier(newPolicy ? tutoringFactor(draft.phudaoStudents.length, draft.workDate) ?? 0 : phudaoMultiplier(draft.phudaoStudents.length))}`}
             />
             <div>
               <label className="mb-2 block text-xs font-semibold uppercase tracking-wide text-slate-400">

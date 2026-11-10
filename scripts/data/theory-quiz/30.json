@@ -347,28 +347,28 @@
    "question": "Một học sinh đặt điện thoại A vào hộp giấy đậy nắp, dùng máy B gọi vào thì A đổ chuông. Chuyển A sang hộp bánh quy bằng sắt đậy kín, gọi lại thì máy báo không liên lạc được. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Điện thoại trong hộp giấy nhận được cuộc gọi vì sóng điện từ truyền qua được giấy.",
-     "answer": true
-    },
-    {
-     "text": "Vỏ kim loại kín phản xạ gần hết sóng điện từ nên điện thoại bên trong khó nhận cuộc gọi.",
-     "answer": true
-    },
-    {
      "text": "Điện thoại mất sóng trong cabin thang máy kín vì sóng điện từ cần không khí để truyền.",
      "answer": false
     },
     {
      "text": "Tín hiệu từ vệ tinh tới chảo thu được là nhờ sóng âm có tần số rất cao.",
      "answer": false
+    },
+    {
+     "text": "Vỏ kim loại kín phản xạ gần hết sóng điện từ nên điện thoại bên trong khó nhận cuộc gọi.",
+     "answer": true
+    },
+    {
+     "text": "Điện thoại trong hộp giấy nhận được cuộc gọi vì sóng điện từ truyền qua được giấy.",
+     "answer": true
     }
    ],
    "explanation": "Sóng điện từ đi qua giấy nhưng bị vỏ kim loại kín (lồng Faraday) phản xạ; cabin thang máy cũng vậy. Sóng điện từ truyền được trong chân không, còn sóng âm thì không.",
    "distractorNotes": {
-    "0": "Thí nghiệm cho thấy máy trong hộp giấy vẫn đổ chuông, chứng tỏ sóng điện từ đi qua giấy.",
-    "1": "Hộp sắt kín làm mất liên lạc chính vì vỏ kim loại phản xạ gần hết sóng, như lồng Faraday.",
-    "2": "Cabin vẫn có không khí; sóng bị vỏ kim loại chặn, còn sóng điện từ vốn không cần không khí.",
-    "3": "Sóng âm là sóng cơ nên không thể truyền qua khoảng gần như chân không giữa vệ tinh và mặt đất."
+    "0": "Cabin vẫn có không khí; sóng bị vỏ kim loại chặn, còn sóng điện từ vốn không cần không khí.",
+    "1": "Sóng âm là sóng cơ nên không thể truyền qua khoảng gần như chân không giữa vệ tinh và mặt đất.",
+    "2": "Hộp sắt kín làm mất liên lạc chính vì vỏ kim loại phản xạ gần hết sóng, như lồng Faraday.",
+    "3": "Thí nghiệm cho thấy máy trong hộp giấy vẫn đổ chuông, chứng tỏ sóng điện từ đi qua giấy."
    }
   },
   {
@@ -382,11 +382,7 @@
    "question": "Một đài phát thanh gửi chương trình tới máy thu của người nghe bằng sóng điện từ. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Máy phát tạo ra sóng mang là sóng điện từ cao tần.",
-     "answer": true
-    },
-    {
-     "text": "Biến điệu AM là làm tần số của sóng mang biến đổi theo tín hiệu.",
+     "text": "Liên lạc qua wifi, 4G và GPS dùng tia hồng ngoại.",
      "answer": false
     },
     {
@@ -394,16 +390,20 @@
      "answer": true
     },
     {
-     "text": "Liên lạc qua wifi, 4G và GPS dùng tia hồng ngoại.",
+     "text": "Máy phát tạo ra sóng mang là sóng điện từ cao tần.",
+     "answer": true
+    },
+    {
+     "text": "Biến điệu AM là làm tần số của sóng mang biến đổi theo tín hiệu.",
      "answer": false
     }
    ],
    "explanation": "Sóng mang là sóng cao tần; AM làm biên độ biến đổi, FM làm tần số biến đổi. Wifi, 4G, GPS dùng vi sóng (sóng vô tuyến hiểu rộng), không dùng hồng ngoại.",
    "distractorNotes": {
-    "0": "Bài nêu rõ máy phát tạo sóng mang là sóng điện từ cao tần rồi mới biến điệu theo tín hiệu.",
-    "1": "Nhầm AM với FM; AM làm biên độ sóng mang biến đổi, FM mới làm tần số biến đổi.",
-    "2": "Vệ tinh địa tĩnh quay cùng nhịp Trái Đất nên đứng yên so với mặt đất, dùng để phát lại sóng.",
-    "3": "Hồng ngoại dùng cho điều khiển ti vi, sưởi; wifi, 4G, GPS dùng vi sóng thuộc sóng vô tuyến."
+    "0": "Hồng ngoại dùng cho điều khiển ti vi, sưởi; wifi, 4G, GPS dùng vi sóng thuộc sóng vô tuyến.",
+    "1": "Vệ tinh địa tĩnh quay cùng nhịp Trái Đất nên đứng yên so với mặt đất, dùng để phát lại sóng.",
+    "2": "Bài nêu rõ máy phát tạo sóng mang là sóng điện từ cao tần rồi mới biến điệu theo tín hiệu.",
+    "3": "Nhầm AM với FM; AM làm biên độ sóng mang biến đổi, FM mới làm tần số biến đổi."
    }
   },
   {
@@ -417,10 +417,6 @@
    "question": "Đặt thanh sô-cô-la không quay trong lò vi sóng có tần số $f$ đã biết. Sau khi bật lò, sô-cô-la chảy thành các vệt cách đều; $d$ là khoảng cách giữa tâm hai vệt chảy liền nhau. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Hai vệt chảy liền nhau cách nhau nửa bước sóng nên $\\lambda = 2d$.",
-     "answer": true
-    },
-    {
      "text": "Tốc độ sóng điện từ được tính bằng $c = \\lambda f$.",
      "answer": true
     },
@@ -431,14 +427,18 @@
     {
      "text": "Nếu đo $d$ bằng cm thì phải đổi ra m trước khi tính $c$ theo đơn vị m/s.",
      "answer": true
+    },
+    {
+     "text": "Hai vệt chảy liền nhau cách nhau nửa bước sóng nên $\\lambda = 2d$.",
+     "answer": true
     }
    ],
    "explanation": "Khoảng cách hai vệt là $\\lambda/2$ nên $\\lambda = 2d$, rồi $c = \\lambda f$ với $\\lambda$ tính bằng mét. Chia $\\lambda$ cho $f$ là biến đổi sai công thức.",
    "distractorNotes": {
-    "0": "Hai vệt chảy liền nhau cách nhau $\\lambda/2$, nên bước sóng đúng bằng hai lần $d$.",
-    "1": "Từ $\\lambda = c/f$ nhân hai vế với $f$ được ngay $c = \\lambda f$.",
-    "2": "Biến đổi sai từ $\\lambda = c/f$; phải nhân $\\lambda$ với $f$, chia sẽ ra số cực nhỏ vô lí.",
-    "3": "Không đổi cm ra m thì tốc độ tính được lệch $10^{2}$ lần so với đơn vị m/s."
+    "0": "Từ $\\lambda = c/f$ nhân hai vế với $f$ được ngay $c = \\lambda f$.",
+    "1": "Biến đổi sai từ $\\lambda = c/f$; phải nhân $\\lambda$ với $f$, chia sẽ ra số cực nhỏ vô lí.",
+    "2": "Không đổi cm ra m thì tốc độ tính được lệch $10^{2}$ lần so với đơn vị m/s.",
+    "3": "Hai vệt chảy liền nhau cách nhau $\\lambda/2$, nên bước sóng đúng bằng hai lần $d$."
    }
   },
   {
@@ -456,7 +456,7 @@
      "answer": true
     },
     {
-     "text": "Khoảng cách từ ra-đa tới vật là $s = \\dfrac{ct}{2}$.",
+     "text": "Nếu thời gian $t$ tăng gấp đôi thì khoảng cách tới vật tăng gấp đôi.",
      "answer": true
     },
     {
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Nếu thời gian $t$ tăng gấp đôi thì khoảng cách tới vật tăng gấp đôi.",
+     "text": "Khoảng cách từ ra-đa tới vật là $s = \\dfrac{ct}{2}$.",
      "answer": true
     }
    ],
    "explanation": "Sóng đi tới vật rồi về, quãng đường $ct$ gấp đôi khoảng cách, nên $s = ct/2$ và $s$ tỉ lệ thuận với $t$.",
    "distractorNotes": {
     "0": "Sóng đi với tốc độ $c$ trong suốt thời gian $t$ nên quãng đường đúng bằng $ct$.",
-    "1": "Quãng đường $ct$ gồm cả lượt đi và lượt về, nên khoảng cách bằng một nửa.",
+    "1": "Từ $s = ct/2$ với $c$ không đổi, khoảng cách tỉ lệ thuận với thời gian.",
     "2": "Quên chia đôi; $ct$ là cả đi lẫn về, gấp đôi khoảng cách thật tới vật.",
-    "3": "Từ $s = ct/2$ với $c$ không đổi, khoảng cách tỉ lệ thuận với thời gian."
+    "3": "Quãng đường $ct$ gồm cả lượt đi và lượt về, nên khoảng cách bằng một nửa."
    }
   },
   {
@@ -487,7 +487,7 @@
    "question": "Xét công thức bước sóng của sóng điện từ trong chân không $\\lambda = \\dfrac{c}{f} = cT$. Xét các phát biểu:",
    "statements": [
     {
-     "text": "Vì $T = \\dfrac{1}{f}$ nên hai cách viết $\\lambda = \\dfrac{c}{f}$ và $\\lambda = cT$ là như nhau.",
+     "text": "Tần số cho bằng MHz phải nhân với $10^{6}$ để đổi ra Hz trước khi dùng công thức.",
      "answer": true
     },
     {
@@ -495,20 +495,20 @@
      "answer": false
     },
     {
-     "text": "Trong chân không, tích $\\lambda f$ có cùng giá trị cho mọi sóng điện từ.",
+     "text": "Vì $T = \\dfrac{1}{f}$ nên hai cách viết $\\lambda = \\dfrac{c}{f}$ và $\\lambda = cT$ là như nhau.",
      "answer": true
     },
     {
-     "text": "Tần số cho bằng MHz phải nhân với $10^{6}$ để đổi ra Hz trước khi dùng công thức.",
+     "text": "Trong chân không, tích $\\lambda f$ có cùng giá trị cho mọi sóng điện từ.",
      "answer": true
     }
    ],
    "explanation": "$T = 1/f$ nên hai dạng tương đương; $\\lambda f = c$ như nhau với mọi sóng điện từ trong chân không, nên $\\lambda$ tỉ lệ nghịch với $f$. 1 MHz $= 10^{6}$ Hz.",
    "distractorNotes": {
-    "0": "Chu kì là nghịch đảo tần số, thay $T = 1/f$ vào thì $cT$ chính là $c/f$.",
+    "0": "Công thức dùng $f$ theo Hz; giữ nguyên số MHz thì kết quả sai $10^{6}$ lần.",
     "1": "Với $c$ cố định, $\\lambda = c/f$ nên bước sóng tỉ lệ nghịch chứ không tỉ lệ thuận với tần số.",
-    "2": "Tích $\\lambda f$ chính là tốc độ $c$, như nhau cho mọi sóng điện từ trong chân không.",
-    "3": "Công thức dùng $f$ theo Hz; giữ nguyên số MHz thì kết quả sai $10^{6}$ lần."
+    "2": "Chu kì là nghịch đảo tần số, thay $T = 1/f$ vào thì $cT$ chính là $c/f$.",
+    "3": "Tích $\\lambda f$ chính là tốc độ $c$, như nhau cho mọi sóng điện từ trong chân không."
    }
   },
   {
@@ -522,28 +522,28 @@
    "question": "Một radio bắt được đài AM tần số 600 kHz và đài FM tần số 100 MHz. Xét sóng của hai đài trong chân không:",
    "statements": [
     {
-     "text": "Tần số 600 kHz bằng $6\\cdot10^{5}$ Hz.",
-     "answer": true
+     "text": "Bước sóng của hai đài tỉ lệ thuận với tần số của chúng.",
+     "answer": false
     },
     {
      "text": "Đài FM có tần số lớn hơn nên có bước sóng ngắn hơn đài AM.",
      "answer": true
     },
     {
-     "text": "Bước sóng của hai đài tỉ lệ thuận với tần số của chúng.",
+     "text": "Sóng của đài FM truyền nhanh hơn sóng của đài AM.",
      "answer": false
     },
     {
-     "text": "Sóng của đài FM truyền nhanh hơn sóng của đài AM.",
-     "answer": false
+     "text": "Tần số 600 kHz bằng $6\\cdot10^{5}$ Hz.",
+     "answer": true
     }
    ],
    "explanation": "1 kHz $= 10^{3}$ Hz. Theo $\\lambda = c/f$, bước sóng tỉ lệ nghịch với tần số; mọi sóng điện từ trong chân không có cùng tốc độ $c$.",
    "distractorNotes": {
-    "0": "Tiền tố k ứng với $10^{3}$, nên 600 kHz đúng bằng $6\\cdot10^{5}$ Hz.",
+    "0": "Nhầm chiều tỉ lệ; với $c$ cố định, bước sóng tỉ lệ nghịch với tần số.",
     "1": "Theo $\\lambda = c/f$, tần số lớn hơn thì bước sóng ngắn hơn, nên đài FM có bước sóng ngắn hơn.",
-    "2": "Nhầm chiều tỉ lệ; với $c$ cố định, bước sóng tỉ lệ nghịch với tần số.",
-    "3": "Tần số lớn không làm sóng nhanh hơn, vì trong chân không mọi sóng điện từ cùng tốc độ $c$."
+    "2": "Tần số lớn không làm sóng nhanh hơn, vì trong chân không mọi sóng điện từ cùng tốc độ $c$.",
+    "3": "Tiền tố k ứng với $10^{3}$, nên 600 kHz đúng bằng $6\\cdot10^{5}$ Hz."
    }
   }
  ]

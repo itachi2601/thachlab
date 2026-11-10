@@ -3,13 +3,16 @@ __BANG__ / __NHANXET__ / __DIENBUOC__ / __DOICHIEU__ / __S1..3__ / __PHUT__ tron
 Chạy: python3 build_thi_nghiem.py rồi python3 build_figs.py (từ thư mục bài hoặc gốc repo).
 Tự kiểm: mọi số trong quiz/lời giải tính lại bằng Python (assert); hình tính từ vật lí (mực nước, độ dài mũi tên
 tỉ lệ độ sâu, mũi tên chĩa đúng vào điểm); nhãn không chồng, không vượt viewBox, không bị nét cắt xuyên;
-chữ ≥ 17, chỉ số dưới ≥ 13 (viewBox ≤ 420 rộng)."""
+chữ ≥ 17, chỉ số dưới ≥ 14 (viewBox ≤ 420 rộng)."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import json, math, pathlib, re, subprocess, sys
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[1].parent
 sys.path.insert(0, str(ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
-from svg_lib import RED, BLUE, ORG, GRN, wrap  # noqa: E402
+from svg_lib import RED, BLUE, ORG, GRN, wrap, chevron  # noqa: E402
 
 COL = {"r": RED, "b": BLUE, "o": ORG, "g": GRN, "k": "currentColor"}
 LABELS, SEGS, VB, bad = [], [], {}, []
@@ -41,8 +44,8 @@ def defs(p):
 
 def arrow(p, c, x1, y1, x2, y2, w=2.6, name="mũi tên"):
     SEGS.append((CUR["fig"], x1, y1, x2, y2, name))
-    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}" '
-            f'marker-end="url(#{p}-{c})"/>')
+    return (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{COL[c]}" stroke-width="{w}"/>'
+            + chevron(x2, y2, x2 - x1, y2 - y1, COL[c], w, 11))
 
 
 def line(x1, y1, x2, y2, c="currentColor", w=2, dash="", op=1, name="nét", check=True):
@@ -67,7 +70,7 @@ def path(pts, w=2.4, check=True, name="thành bình"):
 
 
 def sub(base, s):
-    return f'{base}<tspan baseline-shift="sub" font-size="13">{s}</tspan>'
+    return f'{base}<tspan baseline-shift="sub" font-size="14">{s}</tspan>'
 
 
 def it(s):
@@ -372,13 +375,23 @@ for k, f in enumerate(figs, 1):
     src = src.replace(f"<!--FIG{k}-->", f)
 assert "__" not in src.replace("__PHUT__", ""), re.findall(r"__\w+__", src)
 
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): hình THÊM, đánh số lại theo thứ tự trong bài, xem nguon.md
+figx = (
+        '<figure class="fig"><img src="/assets/openstax/l10-khoi-luong-rieng-ap-suat/hinh-luc-dien-tich-ap-suat.webp" alt="Cùng một lực: ngón tay ấn lên vai (diện tích lớn, áp suất nhỏ) và mũi kim tiêm (diện tích nhỏ, áp suất lớn)" loading="lazy" width="1000" height="464">'
+        '<figcaption>Hình 9. (a) <em>S</em> lớn, <em>p</em> nhỏ;<br>(b) <em>S</em> nhỏ, <em>p</em> lớn.<br><small>Hình: OpenStax, College Physics 2e, Hình 11.5 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>'
+)
+assert src.count("<!--FIGX-->") == 1
+src = src.replace("<!--FIGX-->", figx)
+_k = iter(range(1, 20))
+src = re.sub(r"<figcaption>Hình \d+\.", lambda m: f"<figcaption>Hình {next(_k)}.", src)
+
 lint = ROOT / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/lint_do_dai.py"
 out = HERE / "theory.html"
-out.write_text(src.replace("__PHUT__", "?"), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", "?")), encoding="utf8")
 r = subprocess.run([sys.executable, str(lint), str(out), "--json"], capture_output=True, text=True)
 mm = re.search(r'"phut"\s*:\s*([\d.]+)', r.stdout)
 phut = math.ceil(float(mm.group(1))) if mm else "?"
-out.write_text(src.replace("__PHUT__", str(phut)), encoding="utf8")
+out.write_text(margin_figs(src.replace("__PHUT__", str(phut))), encoding="utf8")
 print("ok", len(src), "ký tự; phút =", phut, "(lint:", mm.group(1) if mm else "?", ")")
 if bad:
     sys.exit(1)

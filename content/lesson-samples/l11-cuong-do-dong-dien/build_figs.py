@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 """Sinh 4 hình SVG cho bài Cường độ dòng điện (lesson 41) và thay <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy lại được. Toạ độ/đồ thị tính từ phương trình và kiểm bằng assert; nhãn kiểm không chồng, không vượt viewBox."""
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, pathlib
-from svg_lib import *
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts"))
+from svg_lib import *   # svg_lib của skill (đầu V 30°), không dùng bản cục bộ cũ
 
 HERE = pathlib.Path(__file__).resolve().parent
 CC = "currentColor"
@@ -12,7 +16,7 @@ class Fig:
     """Gom phần tử + ghi lại khung chữ (ước lượng 0,55·cỡ chữ·số ký tự) để kiểm chồng/tràn."""
     def __init__(self, prefix, w, h):
         self.p, self.w, self.h, self.boxes = prefix, w, h, []
-        self.parts = [defs(prefix) + self._k()]
+        self.parts = []
 
     def _k(self):
         return (f'<defs><marker id="{self.p}-k" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" '
@@ -24,20 +28,26 @@ class Fig:
     def line(self, x1, y1, x2, y2, c=CC, w=2, dash="", op=1, marker="", start=""):
         d = f' stroke-dasharray="{dash}"' if dash else ""
         o = f' opacity="{op}"' if op != 1 else ""
-        m = f' marker-end="url(#{self.p}-{marker})"' if marker else ""
-        m += f' marker-start="url(#{self.p}-{start})"' if start else ""
-        self.add(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="{w}"{d}{o}{m}/>')
+        self.add(f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{c}" stroke-width="{w}"{d}{o}/>')
+        # đầu mũi tên V 30° (chevron) thay marker tam giác — thầy chốt 7/10/2026
+        col = {"r": RED, "b": BLUE, "g": GRN, "o": ORG, "k": CC}
+        ww = min(w, 2.8)
+        L = max(5, min(3.4 * ww + 2, 0.6 * math.hypot(x2 - x1, y2 - y1)))
+        if marker:
+            self.add(chevron(x2, y2, x2 - x1, y2 - y1, col[marker], ww, L))
+        if start:
+            self.add(chevron(x1, y1, x1 - x2, y1 - y2, col[start], ww, L))
 
     def text(self, x, y, segs, c=CC, size=11, anchor="start", weight="600", italic=False, reg=True, serif=False):
-        size = max(size, 13)
+        size = max(size, 14)
         """segs: chuỗi hoặc danh sách [chuỗi | ("sub", chuỗi)]."""
         if isinstance(segs, str):
             segs = [segs]
         inner, width = "", 0.0
         for sg in segs:
             if isinstance(sg, tuple):
-                inner += f'<tspan baseline-shift="sub" font-size="11">{sg[1]}</tspan>'
-                width += 0.55 * 11 * len(sg[1])
+                inner += f'<tspan baseline-shift="sub" font-size="14">{sg[1]}</tspan>'
+                width += 0.55 * 12 * len(sg[1])
             else:
                 inner += sg
                 width += 0.55 * size * len(sg)
@@ -77,7 +87,7 @@ def poly(f, pts, c, w=2.5, dash="", op=1):
 
 
 # ============================================================ Hình 1: mạch kín, chiều I và chiều electron
-f = Fig("f1", 420, 230)
+f = Fig("f1", 420, 240)
 TOP, BOT, LX, RX = 50, 180, 60, 360
 PIN_L, PIN_S = 108, 122            # vạch dài (cực +) nằm trên vạch ngắn (cực −)
 AX, AR = 210, 20                   # ampe kế
@@ -115,7 +125,8 @@ for a in BLU_ARR.values():
     f.dot(a[0], a[1], 6, BLUE)
     f.text(a[0], a[1] + 4, "−", "#fff", 11, "middle", "700", reg=False)
 f.text(135, 82, "electron", BLUE, 11, "middle", "600")
-f.text(12, 215, "đỏ: chiều dòng điện · xanh: chiều electron", CC, 11, "start", "600")
+f.text(12, 212, "đỏ: chiều dòng điện", RED, 14, "start", "600")
+f.text(12, 230, "xanh: chiều electron", BLUE, 14, "start", "600")
 # kiểm hướng
 r, b_ = RED_ARR, BLU_ARR
 assert r["top"][2] > r["top"][0] and r["right"][3] > r["right"][1] and r["bottom"][2] < r["bottom"][0] and r["left"][3] < r["left"][1]
@@ -149,7 +160,7 @@ for q, y in zip(qs, py):
     f.text(54 - 4, y + 4, str(int(q)), CC, 11, "end")
 T_END = 52
 f.line(OX, OY, OX + PX_T * T_END, OY - PX_Q * SLOPE * T_END, RED, 2)
-f.text(200, 60, "độ dốc = I = 1,50 A", RED, 11, "start", "600")
+f.text(215, 172, "độ dốc 90 C/phút = 1,50 A", RED, 14, "start", "600")
 for x, y in zip(px, py):
     f.dot(x, y, 5, GRN, CC, 1)
 # kiểm
@@ -164,7 +175,7 @@ fig2 = f.html("Đồ thị điện lượng theo thời gian: năm chấm số l
               "tn-l11-cuong-do-dong-dien-02")
 
 # ============================================================ Hình 3: hai đồ thị I–t
-f = Fig("f3", 420, 192)
+f = Fig("f3", 420, 204)
 Y0, Y_TOP, IY = 130, 70, 70
 for ox, tt, title, tx in ((40, "Không đổi", None, 110), (240, "Một chiều", None, 320)):
     f.line(ox, Y0, ox + 160, Y0, CC, 2, marker="k")
@@ -179,8 +190,8 @@ poly(f, left, RED, 2.5)
 f.line(240, IY, 400, IY, CC, 1, "3 3", .4)
 bump = [(240 + s, Y0 - 60 * abs(math.sin(math.pi * s / 40))) for s in range(0, 161, 2)]
 poly(f, bump, RED, 2.5)
-f.text(12, 168, "cả hai: chiều không đổi", CC, 13, "start", "600")
-f.text(12, 186, "chỉ bên trái cường độ cũng không đổi", CC, 13, "start", "600")
+f.text(12, 176, "cả hai: chiều không đổi", CC, 13, "start", "600")
+f.text(12, 196, "chỉ bên trái cường độ cũng không đổi", CC, 13, "start", "600")
 # kiểm
 assert all(y == IY for _, y in left)
 assert all(IY - 1e-9 <= y <= Y0 + 1e-9 for _, y in bump)                    # không bao giờ xuống dưới trục t
@@ -234,14 +245,16 @@ assert min(c for c, _ in IN) - 7 >= X0 and X0 < XS                              
 for i, (a, b) in enumerate(IN + OUT):
     for c, d in (IN + OUT)[i + 1:]:
         assert math.hypot(a - c, b - d) >= 16, ((a, b), (c, d))                 # hạt không chồng nhau
-fig4 = f.html("Đoạn dây dẫn hình trụ, tiết diện S vẽ nét đứt; các hạt tải điện dương nằm trong đoạn dài v nhân delta t phía trước S đang trôi sang phải sẽ đi qua S; mũi tên I cùng chiều với v.",
-              "Hình 4. Hạt trong hình trụ dài v·Δt trước tiết diện S đi qua S trong Δt: N = nSvΔt.",
-              "tn-l11-cuong-do-dong-dien-03")
+# Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG Hình 4, xem nguon.md
+fig4 = (
+    '<figure class="fig" data-exp="tn-l11-cuong-do-dong-dien-03"><img src="/assets/openstax/l11-cuong-do-dong-dien/hinh-hat-tai-dien-trong-day.webp" alt="Đoạn dây dẫn hình trụ: các hạt tải q trong vùng dài x = v_d·t trước tiết diện A, thể tích A·x, đều trôi qua A trong thời gian t với vận tốc trôi v_d" loading="lazy" width="625" height="329">'
+    '<figcaption>Hình 4. Sách: A = S, v<sub>d</sub> = v, t = Δt, x = vΔt.<br>'
+    '<small>Hình: OpenStax, College Physics 2e, Hình 20.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
 for n, fg in enumerate((fig1, fig2, fig3, fig4), 1):
     assert src.count(f"<!--FIG{n}-->") == 1, n
     src = src.replace(f"<!--FIG{n}-->", fg)
 assert "<!--FIG" not in src
-(HERE / "theory.html").write_text(src, encoding="utf8")
+(HERE / "theory.html").write_text(margin_figs(src), encoding="utf8")
 print("ok", len(src))

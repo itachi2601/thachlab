@@ -1,0 +1,68 @@
+{
+  "id": 1302,
+  "cnc_key": "prep-2",
+  "title": "Chuẩn bị buổi 2 — Lập trình tiện (1)",
+  "duration_minutes": 20,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "answer": 2,
+      "options": [
+        "M, gốc máy",
+        "R, điểm tham chiếu",
+        "W, gốc phôi",
+        "T/N, điểm chuẩn dao"
+      ],
+      "question": "Chương trình NC tiện ghi tọa độ so với điểm nào?",
+      "explanation": "M, R, T/N cố định theo máy. W do người lập trình chọn theo bản vẽ và cách gá; mọi tọa độ trong chương trình tính từ W."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Z30",
+        "Z-30",
+        "Z0",
+        "Z-60"
+      ],
+      "question": "W đặt ở tâm mặt đầu bên phải của phôi (như các ví dụ trong bài). Một điểm trên trục, nằm về phía mâm cặp và cách mặt đầu 30 mm, có tọa độ Z bằng bao nhiêu?",
+      "explanation": "Mặt đầu là Z0; phần phôi phía mâm cặp có Z âm, nên cách mặt đầu 30 mm là Z-30."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "O1601",
+        "N1601",
+        "P1601",
+        "1601"
+      ],
+      "question": "Tên chương trình nào viết đúng quy tắc FANUC 21T dùng ở xưởng?",
+      "explanation": "Tên chương trình là chữ O kèm bốn chữ số, ví dụ O1601. N là số thứ tự khối, không phải tên chương trình."
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 1,
+      "options": [
+        "Tốc độ trục chính",
+        "Lượng chạy dao",
+        "Số dao cần gọi",
+        "Số thứ tự khối"
+      ],
+      "question": "Trong khối N40 G01 X20 Z-15 F0.2; phần F0.2 cho máy biết điều gì?",
+      "explanation": "F là lượng chạy dao; S là tốc độ trục chính, T chọn dao, N là số thứ tự khối. Mỗi khối kết thúc bằng dấu ;"
+    },
+    {
+      "type": "multiple_choice",
+      "answer": 0,
+      "options": [
+        "G90 tọa độ tuyệt đối (so với W), G91 tọa độ tương đối (so với điểm trước)",
+        "G90 tọa độ tương đối, G91 tọa độ tuyệt đối",
+        "G90 chạy nhanh, G91 chạy cắt",
+        "G90 đơn vị mm, G91 đơn vị inch"
+      ],
+      "question": "G90 và G91 khác nhau thế nào?",
+      "explanation": "G90: tọa độ tính từ gốc phôi W. G91: tọa độ tính từ vị trí dao ngay trước đó."
+    }
+  ]
+}

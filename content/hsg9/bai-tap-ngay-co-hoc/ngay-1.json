@@ -1,0 +1,70 @@
+{
+ "ngay": 1,
+ "chu_de": "Chuyển động đều, vận tốc trung bình, gặp nhau – đuổi nhau, chuyển động tương đối (dòng nước, tàu, thang cuốn)",
+ "questions": [
+  {
+   "type": "short_answer",
+   "question": "<p>Ở một trung tâm thương mại, thang cuốn chạy đều lên tầng trên. Một người đứng yên trên bậc thang thì được đưa lên hết $80\\ \\text{s}$. Người đó bước đều trên thang đang chạy thì lên hết $48\\ \\text{s}$.</p><p>Nếu thang cuốn bị dừng thì người đó vẫn bước đều như vậy (so với bậc thang) sẽ lên hết bao nhiêu giây? Điền số giây.</p>",
+   "answer": "120",
+   "explanation": "<p>Gọi $L$ là chiều dài thang. Thang chạy, người đứng yên: tốc độ của thang là $v_t=\\dfrac{L}{80}$. Người bước trên thang đang chạy: tốc độ so với mặt đất là $v_t+v_n=\\dfrac{L}{48}$.</p><p>Suy ra tốc độ người bước so với bậc thang: $v_n=\\dfrac{L}{48}-\\dfrac{L}{80}=\\dfrac{L}{120}$.</p><p>Thang dừng, người đi hết chiều dài $L$ trong $t=\\dfrac{L}{v_n}=120\\ \\text{s}$.</p><p>Bẫy: lấy $80-48=32\\ \\text{s}$ (trừ thời gian) hoặc trung bình cộng hai thời gian. Cách phát hiện: các tốc độ cộng được, các thời gian thì không; hãy đổi hết sang tốc độ (hoặc $\\dfrac{1}{t}$) rồi mới cộng, trừ. Kiểm tra nhanh: $v_n$ nhỏ hơn tốc độ thang kết hợp nên $t$ phải lớn hơn $48\\ \\text{s}$ và còn lớn hơn $80\\ \\text{s}$ vì $v_n<v_t$.</p>",
+   "topic": "Chuyển động tương đối: thang cuốn",
+   "form": "bai_tap",
+   "difficulty": "trung-binh"
+  },
+  {
+   "type": "short_answer",
+   "question": "<p>Đường thẳng $AB$ dài $60\\ \\text{km}$. Lúc $6$ giờ, một xe đạp xuất phát từ $A$ đi về $B$ với tốc độ $15\\ \\text{km/h}$. Lúc $7$ giờ, một xe máy cũng xuất phát từ $A$ đi về $B$ với tốc độ $45\\ \\text{km/h}$. Đến $B$, xe máy nghỉ $12$ phút rồi quay về $A$ với tốc độ $45\\ \\text{km/h}$ như cũ.</p><p>Xe máy gặp xe đạp lần thứ hai (tính cả lần xe máy đuổi kịp xe đạp là lần thứ nhất) tại chỗ cách $A$ bao nhiêu km? Làm tròn đến $0{,}1\\ \\text{km}$, điền số km.</p>",
+   "answer": "43,5",
+   "explanation": "<p>Lần gặp thứ nhất (đuổi kịp) nằm trước $B$, không ảnh hưởng đến lần gặp thứ hai: xe máy đuổi kịp sau $\\dfrac{15}{45-15}=0{,}5\\ \\text{h}$ kể từ $7$ giờ, tại $22{,}5\\ \\text{km}$.</p><p>Xe máy tới $B$ sau $\\dfrac{60}{45}=\\dfrac{4}{3}\\ \\text{h}$ kể từ $7$ giờ. Lúc đó xe đạp đã đi được $15\\cdot\\dfrac{4}{3}+15=35\\ \\text{km}$ (có $15\\ \\text{km}$ đi trước lúc $7$ giờ).</p><p>Xe máy nghỉ $12$ phút $=0{,}2\\ \\text{h}$, xe đạp đi thêm $15\\cdot0{,}2=3\\ \\text{km}$ nên lúc xe máy quay về, xe đạp ở $38\\ \\text{km}$, cách $B$ còn $22\\ \\text{km}$.</p><p>Hai xe đi ngược chiều, tốc độ lại gần nhau $15+45=60\\ \\text{km/h}$ nên gặp sau $\\dfrac{22}{60}\\ \\text{h}$. Khi đó xe máy cách $B$ là $45\\cdot\\dfrac{22}{60}=16{,}5\\ \\text{km}$, tức cách $A$ là $60-16{,}5=43{,}5\\ \\text{km}$.</p><p>Kiểm tra bằng xe đạp: $38+15\\cdot\\dfrac{22}{60}=43{,}5\\ \\text{km}$. Khớp.</p><p>Bẫy: quên rằng xe đạp vẫn đi trong lúc xe máy nghỉ (hoặc quên $15\\ \\text{km}$ đi trước lúc $7$ giờ). Cách phát hiện: luôn đặt cả hai xe lên cùng một mốc thời gian trước khi trừ, cộng khoảng cách.</p>",
+   "topic": "Gặp nhau – đuổi nhau",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "true_false",
+   "question": "<p>Mưa rơi thẳng đứng với tốc độ $6\\ \\text{m/s}$ so với mặt đường (không có gió). Một xe tải chạy thẳng đều trên đường ngang với tốc độ $8\\ \\text{m/s}$. Xét chuyển động của giọt mưa so với xe tải. Chọn đúng hoặc sai cho mỗi phát biểu.</p>",
+   "statements": [
+    {
+     "text": "Tốc độ của giọt mưa so với xe tải là $10\\ \\text{m/s}$.",
+     "answer": true
+    },
+    {
+     "text": "Đối với xe tải, giọt mưa rơi nghiêng về phía sau xe và hợp với phương thẳng đứng một góc $37^\\circ$.",
+     "answer": false
+    },
+    {
+     "text": "Nếu xe tải tăng tốc độ lên $12\\ \\text{m/s}$ thì tốc độ của giọt mưa so với xe tải tăng gấp rưỡi, lên $15\\ \\text{m/s}$.",
+     "answer": false
+    },
+    {
+     "text": "Một giọt mưa rơi từ độ cao $3\\ \\text{m}$ xuống mặt đường; trong thời gian đó, quãng đường giọt mưa đi được so với xe tải là $5\\ \\text{m}$.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p>Chọn hệ quy chiếu gắn với xe: vận tốc giọt mưa so với xe là tổng của vận tốc giọt mưa so với đất ($6\\ \\text{m/s}$ hướng xuống) và vận tốc ngược của xe ($8\\ \\text{m/s}$ hướng về phía sau). Hai vận tốc này vuông góc.</p><p>a) Đúng: $v=\\sqrt{6^2+8^2}=10\\ \\text{m/s}$.</p><p>b) Sai: giọt mưa nghiêng về phía sau xe (đúng), nhưng $\\tan\\alpha=\\dfrac{8}{6}$ nên góc so với phương thẳng đứng là $\\alpha\\approx53^\\circ$. Góc $37^\\circ$ là góc với phương ngang. Bẫy: nhầm hai góc phụ nhau.</p><p>c) Sai: $v'=\\sqrt{6^2+12^2}=\\sqrt{180}\\approx13{,}4\\ \\text{m/s}$, không phải $15\\ \\text{m/s}$. Bẫy: coi tốc độ tổng hợp tỉ lệ với tốc độ xe, trong khi hai vận tốc vuông góc nên phải dùng định lí Pytago, không cộng đại số.</p><p>d) Đúng: thời gian rơi $t=\\dfrac{3}{6}=0{,}5\\ \\text{s}$ (tính theo chuyển động thẳng đứng, không phụ thuộc xe). Quãng đường so với xe: $10\\cdot0{,}5=5\\ \\text{m}$ (cũng là cạnh huyền của tam giác có hai cạnh $3\\ \\text{m}$ và $4\\ \\text{m}$).</p>",
+   "topic": "Tổng hợp vận tốc: mưa và xe",
+   "form": "bai_tap",
+   "difficulty": "kho"
+  },
+  {
+   "type": "multiple_choice",
+   "question": "<p>Một vận động viên chạy đều với tốc độ $5\\ \\text{m/s}$ quanh sân hình chữ nhật $ABCD$ có $AB=40\\ \\text{m}$, $BC=30\\ \\text{m}$. Người đó xuất phát từ $A$, chạy theo đường $A\\to B\\to C$ và dừng lại ở $C$. Nhận xét nào sau đây về cả quá trình chạy là đúng?</p>",
+   "options": [
+    "Tốc độ trung bình bằng $5\\ \\text{m/s}$, còn độ lớn vận tốc trung bình bằng $\\dfrac{50}{14}\\approx3{,}57\\ \\text{m/s}$.",
+    "Tốc độ trung bình và độ lớn vận tốc trung bình đều bằng $5\\ \\text{m/s}$ vì vận động viên chạy đều.",
+    "Tốc độ trung bình bằng $\\dfrac{50}{14}\\approx3{,}57\\ \\text{m/s}$ vì phải tính theo đoạn thẳng $AC$.",
+    "Độ lớn vận tốc trung bình bằng $\\dfrac{40-30}{14}\\approx0{,}71\\ \\text{m/s}$ vì hai đoạn $AB$ và $BC$ có chiều khác nhau."
+   ],
+   "answer": 0,
+   "explanation": "<p>Quãng đường đi được: $s=AB+BC=70\\ \\text{m}$, thời gian $t=\\dfrac{70}{5}=14\\ \\text{s}$. Tốc độ trung bình $=\\dfrac{70}{14}=5\\ \\text{m/s}$.</p><p>Độ dời là đoạn thẳng nối $A$ đến $C$: $AC=\\sqrt{40^2+30^2}=50\\ \\text{m}$ (tam giác vuông tại $B$). Độ lớn vận tốc trung bình $=\\dfrac{50}{14}\\approx3{,}57\\ \\text{m/s}$. Đáp án A.</p><p>Bẫy: tốc độ trung bình lấy theo quãng đường đã đi, vận tốc trung bình lấy theo độ dời. Chỉ khi vật chuyển động thẳng và không đổi chiều thì hai giá trị mới bằng nhau; ở đây quỹ đạo gấp khúc nên vận tốc trung bình nhỏ hơn.</p>",
+   "distractorNotes": {
+    "B": "Cho rằng chạy đều thì hai đại lượng luôn bằng nhau; thực tế chỉ bằng nhau khi đi thẳng, không đổi chiều.",
+    "C": "Lấy độ dời $AC$ làm quãng đường để tính tốc độ trung bình, nhầm độ dời với quãng đường.",
+    "D": "Trừ hai độ dài $AB$ và $BC$ như thể ngược chiều; hai đoạn này vuông góc nên phải dùng Pytago."
+   },
+   "topic": "Tốc độ trung bình và vận tốc trung bình",
+   "form": "ly_thuyet",
+   "difficulty": "trung-binh"
+  }
+ ]
+}

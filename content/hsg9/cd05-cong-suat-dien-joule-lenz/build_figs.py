@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import RED, BLUE, ORG, GRN, text, wrap, chevron, arrow
 
-PHUT = 12
+PHUT = 13
 
 import re as _re
 def rich(s, size=13):

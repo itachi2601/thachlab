@@ -1,0 +1,247 @@
+{
+  "cnc_key": "test-2",
+  "title": "Kiểm tra cuối Bài 2 — Lập trình tiện CNC",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Trong chương trình tiện, mã M nào ra lệnh thay dao?",
+      "options": [
+        "M05",
+        "M08",
+        "M06",
+        "M30"
+      ],
+      "answer": 2,
+      "explanation": "M06 là thay dao; M05 dừng trục chính, M08 bật tưới nguội, M30 kết thúc chương trình."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã M nào đóng chấu mâm cặp để kẹp phôi?",
+      "options": [
+        "M26",
+        "M21",
+        "M25",
+        "M20"
+      ],
+      "answer": 0,
+      "explanation": "M25 mở và M26 đóng chấu mâm cặp; M20, M21 là lùi, đẩy nòng ụ động."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã M21 trong chương trình tiện điều khiển việc gì?",
+      "options": [
+        "Mở chấu mâm cặp",
+        "Đẩy nòng ụ động",
+        "Bật thổi phoi",
+        "Lùi nòng ụ động"
+      ],
+      "answer": 1,
+      "explanation": "M20 lùi và M21 đẩy nòng ụ động."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã M nào bật thổi phoi?",
+      "options": [
+        "M71",
+        "M72",
+        "M08",
+        "M09"
+      ],
+      "answer": 0,
+      "explanation": "M71 bật và M72 tắt thổi phoi; M08, M09 là bật, tắt dung dịch tưới nguội."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "M00 và M01 đều làm chương trình dừng. Điểm khác nhau là gì?",
+      "options": [
+        "M00 dừng trục chính, M01 dừng tưới nguội",
+        "M00 kết thúc chương trình, M01 kết thúc chương trình con",
+        "M00 dừng vô điều kiện, M01 dừng có điều kiện",
+        "M00 dừng có điều kiện, M01 dừng vô điều kiện"
+      ],
+      "answer": 2,
+      "explanation": "M00 dừng vô điều kiện; M01 chỉ dừng khi điều kiện dừng được bật."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong chu trình khoan trên máy tiện, mã G99 quy định điều gì?",
+      "options": [
+        "Hủy chu trình khoan",
+        "Khoan lỗ sâu theo từng bước",
+        "Khoan xong dao về mặt phẳng ban đầu",
+        "Khoan xong dao về mặt phẳng R"
+      ],
+      "answer": 3,
+      "explanation": "G99 cho dao về mặt phẳng R sau khi khoan; G98 về mặt phẳng ban đầu, G80 hủy chu trình, G83 khoan lỗ sâu."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mã G nào chọn mặt phẳng làm việc XOY?",
+      "options": [
+        "G71",
+        "G19",
+        "G18",
+        "G17"
+      ],
+      "answer": 3,
+      "explanation": "G17 chọn XOY, G18 chọn XOZ (dùng khi tiện), G19 chọn YOZ."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trên máy tiện, hai chữ địa chỉ U và W biểu thị gì?",
+      "options": [
+        "Tọa độ tuyệt đối theo X và Z, tính so với W",
+        "Bán kính cung tròn theo X và Z",
+        "Tốc độ quay của dao theo X và Z",
+        "Tọa độ tương đối theo X và Z, tính so với điểm trước"
+      ],
+      "answer": 3,
+      "explanation": "Trong các lệnh dịch chuyển, X, Z là tọa độ tuyệt đối còn U, W là lượng dịch tương đối theo X và Z; U cũng tính theo đường kính."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Bản vẽ ghi một đoạn trục Ø44. Trong khối lệnh tiện đoạn trục này, tọa độ X phải ghi là bao nhiêu?",
+      "options": [
+        "X44.0",
+        "Z-44.0",
+        "X88.0",
+        "X22.0"
+      ],
+      "answer": 0,
+      "explanation": "Trên máy tiện X ghi theo đường kính, nên Ø44 ghi thẳng là X44.0."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao đang tiện mặt trụ, nay cần ăn sâu thêm 2 mm (tính theo bán kính). Giá trị X trong chương trình thay đổi thế nào?",
+      "options": [
+        "Tăng 4",
+        "Tăng 2",
+        "Giảm 4",
+        "Giảm 2"
+      ],
+      "answer": 2,
+      "explanation": "Ăn sâu 2 mm mỗi bên bán kính làm đường kính giảm 2 × 2 = 4 mm, nên X giảm 4."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "W đặt ở tâm mặt đầu bên phải của phôi. Một đoạn trục kết thúc cách mặt đầu 25 mm về phía mâm cặp. Tọa độ Z của điểm cuối đoạn là bao nhiêu?",
+      "options": [
+        "Z-12.5",
+        "Z-50.0",
+        "Z-25.0",
+        "Z25.0"
+      ],
+      "answer": 2,
+      "explanation": "Mặt đầu là Z0, phần phôi phía mâm cặp có Z âm, và Z không nhân đôi như X, nên ghi Z-25.0."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi chạy thử, một bạn tăng giá trị F trong khối G00 nhưng thấy tốc độ dao không đổi. Vì sao?",
+      "options": [
+        "Vì phải đổi G95 sang G94 thì F mới có tác dụng với G00",
+        "Vì F chỉ được máy đọc ở khối đầu tiên của chương trình",
+        "Vì F chỉ có tác dụng khi đã bật dung dịch tưới nguội",
+        "Vì tốc độ G00 do máy quyết định, F chỉ điều khiển G01"
+      ],
+      "answer": 3,
+      "explanation": "G00 chạy nhanh với tốc độ do máy quyết định; tốc độ của G01 (và cung tròn) mới do F trong chương trình quyết định."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Sau khối G01 Z-15.0 F0.1; khối tiếp theo chỉ ghi X30.0; máy hiểu khối này thế nào?",
+      "options": [
+        "Vẫn cắt thẳng G01 với F0.1 lên Ø30",
+        "Chạy nhanh G00 lên Ø30 vì thiếu mã G",
+        "Chỉ ghi nhận Ø30, dao chưa di chuyển",
+        "Báo lỗi vì khối thiếu mã G và F"
+      ],
+      "answer": 0,
+      "explanation": "G01 và F giữ hiệu lực cho các khối sau cho tới khi có lệnh khác, nên không cần ghi lại."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao khi lập trình, khối M30 phải đặt ở cuối cùng của chương trình chính?",
+      "options": [
+        "Vì M30 chỉ có tác dụng khi trục chính đã dừng hẳn",
+        "Vì gặp M30 chương trình kết thúc, các khối sau không chạy",
+        "Vì M30 phải đứng sau M99 của mọi chương trình con",
+        "Vì máy luôn đọc M30 trước rồi mới đọc các khối khác"
+      ],
+      "answer": 1,
+      "explanation": "Các khối chạy tuần tự; tới M30 chương trình kết thúc và trở về đầu, nên mọi khối phía sau bị bỏ qua."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong chương trình tiện mẫu, chu trình G72 được gọi sau G73 với cùng P và Q. Lý do là gì?",
+      "options": [
+        "Hai chu trình chạy song song trên biên dạng đó để rút ngắn thời gian",
+        "G72 bóc dư thô chừa lượng dư, G73 chạy tinh lại đúng biên dạng đó",
+        "G73 bóc dư thô chừa lượng dư, G72 chạy tinh lại đúng biên dạng đó",
+        "G72 cắt rãnh thoát dao, G73 tiện ren trên cùng đoạn biên dạng đó"
+      ],
+      "answer": 2,
+      "explanation": "Theo bảng mã Win-NC32, G73 tiện thô theo biên dạng P–Q và để lại lượng dư; G72 tiện tinh theo đúng biên dạng P–Q ấy."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao trước và sau chu trình G73 cần một khối G00 đưa dao tới điểm an toàn?",
+      "options": [
+        "Để trục chính kịp đạt đủ tốc độ quay trước khi cắt",
+        "Để dao bắt đầu ngoài phôi và rút ra chỗ trống khi xong",
+        "Để bật bù bán kính mũi dao trước khi vào biên dạng",
+        "Để máy kịp chuyển đơn vị đo sang hệ mét trước khi cắt"
+      ],
+      "answer": 1,
+      "explanation": "Chu trình phải bắt đầu từ một điểm ngoài phôi và khi xong dao rút ra chỗ trống, tránh va chạm với phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trục Ø30 cần vát 1,5×45° ở mặt đầu (Z0). Điểm bắt đầu đường vát có tọa độ X bằng bao nhiêu?",
+      "options": [
+        "X33.0",
+        "X28.5",
+        "X13.5",
+        "X27.0"
+      ],
+      "answer": 3,
+      "explanation": "Vát 1,5 mm mỗi bên bán kính làm đường kính giảm 2 × 1,5 = 3, nên X = 30 - 3 = 27.0."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao đang ở X30.0 Z-12.0. Khối G01 U-6.0 W-8.0 F0.1; đưa dao tới đâu?",
+      "options": [
+        "X-6.0 Z-8.0",
+        "X24.0 Z-20.0",
+        "X27.0 Z-20.0",
+        "X24.0 Z-8.0"
+      ],
+      "answer": 1,
+      "explanation": "U, W là lượng dịch so với điểm trước: X = 30 - 6 = 24, Z = -12 - 8 = -20; U tính theo đường kính nên không chia đôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "W ở tâm mặt đầu phải. Đoạn chương trình: N10 G00 X22.0 Z2.0; N20 G01 Z0 F0.1; N30 X26.0 Z-2.0; N40 Z-20.0; Khối N30 tạo ra chi tiết gì?",
+      "options": [
+        "Vát 2×45° ở đầu đoạn trục Ø26",
+        "Vát 4×45° ở đầu đoạn trục Ø26",
+        "Mặt bậc từ Ø22 lên Ø26",
+        "Cung tròn bán kính 2 mm nối vào đoạn Ø26"
+      ],
+      "answer": 0,
+      "explanation": "Từ X22.0 Z0 tới X26.0 Z-2.0: bán kính tăng 2 mm đúng bằng quãng Z 2 mm, nên là vát 2×45° trước đoạn Ø26 dài tới Z-20."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi Ø36, dao đứng tại X40.0 Z2.0, cách mặt đầu phôi 2 mm. Một bạn viết khối tiếp theo là G00 Z0; G00 X-1.0; để tiện mặt đầu. Nhận xét và cách sửa đúng là gì?",
+      "options": [
+        "Sai, máy chưa biết mặt phẳng cắt; phải thêm G18 trước khối X-1.0",
+        "Sai, G00 lao vào phôi gây va chạm; khối X-1.0 phải dùng G01 có F",
+        "Sai, tiện mặt đầu cần F theo mm/phút; phải đổi G95 thành G94",
+        "Đúng, dao chỉ cách phôi 2 mm nên G00 vào tâm vẫn an toàn"
+      ],
+      "answer": 1,
+      "explanation": "Đoạn từ Ø40 vào tâm là cắt gọt; G00 lao vào phôi sẽ va chạm, nên khối X-1.0 phải dùng G01 với lượng chạy dao F."
+    }
+  ]
+}

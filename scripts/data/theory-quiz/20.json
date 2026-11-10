@@ -329,8 +329,8 @@
    "question": "Một em ngồi trên đu, bạn đẩy nhẹ. Đu đi tới, dừng lại, quay về, sang phía bên kia; cứ 3 giây đu lại về đúng chỗ cũ và đi theo hướng cũ. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chuyển động của đu là một dao động cơ.",
-     "answer": true
+     "text": "Nếu đu được đẩy mạnh dần rồi yếu dần thì chuyển động vẫn là tuần hoàn.",
+     "answer": false
     },
     {
      "text": "Chuyển động của đu là tuần hoàn vì lặp lại sau những khoảng thời gian bằng nhau.",
@@ -341,16 +341,16 @@
      "answer": false
     },
     {
-     "text": "Nếu đu được đẩy mạnh dần rồi yếu dần thì chuyển động vẫn là tuần hoàn.",
-     "answer": false
+     "text": "Chuyển động của đu là một dao động cơ.",
+     "answer": true
     }
    ],
    "explanation": "Đu đi qua lại quanh VTCB nên là dao động cơ; lặp lại sau mỗi 3 s nên tuần hoàn. Tuần hoàn không phụ thuộc nhanh chậm; đẩy mạnh yếu thất thường thì không lặp đều nên không tuần hoàn.",
    "distractorNotes": {
-    "0": "Đu đi qua lại quanh chỗ đứng yên ban đầu, đúng định nghĩa dao động cơ nên không thể coi là sai.",
+    "0": "Mạnh dần rồi yếu dần thì chuyển động không lặp lại đều đặn, nên không tuần hoàn.",
     "1": "Cứ 3 giây đu về chỗ cũ theo hướng cũ, đúng định nghĩa tuần hoàn nên không thể coi là sai.",
     "2": "Tuần hoàn chỉ cần lặp lại sau những khoảng thời gian bằng nhau; nhanh hay chậm không quan trọng.",
-    "3": "Mạnh dần rồi yếu dần thì chuyển động không lặp lại đều đặn, nên không tuần hoàn."
+    "3": "Đu đi qua lại quanh chỗ đứng yên ban đầu, đúng định nghĩa dao động cơ nên không thể coi là sai."
    }
   },
   {
@@ -364,28 +364,28 @@
    "question": "Một vật dao động điều hoà theo phương trình $x = 5\\cos\\left(2\\pi t + \\dfrac{\\pi}{3}\\right)$ cm. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Biên độ dao động là $5$ cm.",
-     "answer": true
+     "text": "Lúc $t = 0$, vật ở biên dương, li độ bằng $5$ cm.",
+     "answer": false
     },
     {
      "text": "Tần số góc là $2\\pi$ rad/s.",
      "answer": true
     },
     {
-     "text": "Pha ban đầu của dao động là $2\\pi t + \\dfrac{\\pi}{3}$.",
-     "answer": false
+     "text": "Biên độ dao động là $5$ cm.",
+     "answer": true
     },
     {
-     "text": "Lúc $t = 0$, vật ở biên dương, li độ bằng $5$ cm.",
+     "text": "Pha ban đầu của dao động là $2\\pi t + \\dfrac{\\pi}{3}$.",
      "answer": false
     }
    ],
    "explanation": "Đối chiếu với $x = A\\cos(\\omega t + \\varphi)$: $A = 5$ cm, $\\omega = 2\\pi$ rad/s, $\\varphi = \\dfrac{\\pi}{3}$. Lúc $t = 0$, $x = 5\\cos\\dfrac{\\pi}{3}$, nhỏ hơn 5 cm.",
    "distractorNotes": {
-    "0": "Số đứng trước côsin chính là biên độ, và nó dương nên ý này đúng.",
+    "0": "Lúc $t = 0$, $x = A\\cos\\varphi$ với $\\cos\\dfrac{\\pi}{3}$ khác 1, nên vật chưa ở biên.",
     "1": "Hệ số nhân với $t$ trong côsin là tần số góc, nên ý này đúng.",
-    "2": "$2\\pi t + \\dfrac{\\pi}{3}$ là pha dao động; pha ban đầu chỉ là $\\dfrac{\\pi}{3}$, pha lúc $t = 0$.",
-    "3": "Lúc $t = 0$, $x = A\\cos\\varphi$ với $\\cos\\dfrac{\\pi}{3}$ khác 1, nên vật chưa ở biên."
+    "2": "Số đứng trước côsin chính là biên độ, và nó dương nên ý này đúng.",
+    "3": "$2\\pi t + \\dfrac{\\pi}{3}$ là pha dao động; pha ban đầu chỉ là $\\dfrac{\\pi}{3}$, pha lúc $t = 0$."
    }
   },
   {
@@ -399,28 +399,28 @@
    "question": "Thí nghiệm con lắc lò xo: một vật gắn vào lò xo đang đứng yên. Kéo vật lệch ra rồi thả tay, vật đi qua lại hai bên chỗ đứng yên ban đầu O, giữa hai biên $-A$ và $+A$. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Chỗ vật đứng yên ban đầu O là vị trí cân bằng.",
-     "answer": true
-    },
-    {
-     "text": "Khi vật ở O, li độ của vật bằng 0.",
-     "answer": true
+     "text": "Li độ của vật cho biết quãng đường vật đã đi được từ lúc thả tay.",
+     "answer": false
     },
     {
      "text": "Khi vật ở biên phía âm, li độ của vật bằng $A$.",
      "answer": false
     },
     {
-     "text": "Li độ của vật cho biết quãng đường vật đã đi được từ lúc thả tay.",
-     "answer": false
+     "text": "Chỗ vật đứng yên ban đầu O là vị trí cân bằng.",
+     "answer": true
+    },
+    {
+     "text": "Khi vật ở O, li độ của vật bằng 0.",
+     "answer": true
     }
    ],
    "explanation": "O là VTCB, li độ đo từ O nên tại O thì $x = 0$, tại biên âm $x = -A$. Li độ là vị trí có dấu, không phải quãng đường.",
    "distractorNotes": {
-    "0": "Bài rút ra từ thí nghiệm: chỗ đứng yên ban đầu chính là vị trí cân bằng, nên ý đúng.",
-    "1": "Li độ đo từ vị trí cân bằng, vật ở đúng O thì li độ bằng 0.",
-    "2": "Li độ có dấu; biên phía âm nằm bên âm của O nên $x = -A$, không phải $A$.",
-    "3": "Quãng đường luôn tăng và dương, còn li độ là vị trí so với O, có thể âm."
+    "0": "Quãng đường luôn tăng và dương, còn li độ là vị trí so với O, có thể âm.",
+    "1": "Li độ có dấu; biên phía âm nằm bên âm của O nên $x = -A$, không phải $A$.",
+    "2": "Bài rút ra từ thí nghiệm: chỗ đứng yên ban đầu chính là vị trí cân bằng, nên ý đúng.",
+    "3": "Li độ đo từ vị trí cân bằng, vật ở đúng O thì li độ bằng 0."
    }
   },
   {
@@ -438,24 +438,24 @@
      "answer": true
     },
     {
-     "text": "Độ cao lớn nhất của nét bút so với trục thời gian ứng với biên độ $A$.",
-     "answer": true
-    },
-    {
      "text": "Khoảng thời gian để đồ thị lặp lại một dao động là chu kì $T$.",
      "answer": true
     },
     {
      "text": "Đổi pha ban đầu $\\varphi$ thì biên độ của đồ thị thay đổi.",
      "answer": false
+    },
+    {
+     "text": "Độ cao lớn nhất của nét bút so với trục thời gian ứng với biên độ $A$.",
+     "answer": true
     }
    ],
    "explanation": "Đồ thị li độ – thời gian là đường hình sin, biên độ $A$ là li độ lớn nhất, $T$ là thời gian lặp lại một dao động. Đổi $\\varphi$ chỉ làm đồ thị dịch sang trái hoặc phải.",
    "distractorNotes": {
     "0": "Thí nghiệm trong bài cho đường lượn sóng đều, chính là đường hình sin, nên ý đúng.",
-    "1": "Biên độ là giá trị lớn nhất của li độ, đúng là đỉnh cao nhất của đồ thị.",
-    "2": "Bài định nghĩa $T$ là khoảng thời gian để vật lặp lại một dao động, nên ý đúng.",
-    "3": "Pha ban đầu không ảnh hưởng biên độ; đổi $\\varphi$ đồ thị giữ hình dạng, chỉ dịch ngang."
+    "1": "Bài định nghĩa $T$ là khoảng thời gian để vật lặp lại một dao động, nên ý đúng.",
+    "2": "Pha ban đầu không ảnh hưởng biên độ; đổi $\\varphi$ đồ thị giữ hình dạng, chỉ dịch ngang.",
+    "3": "Biên độ là giá trị lớn nhất của li độ, đúng là đỉnh cao nhất của đồ thị."
    }
   },
   {
@@ -477,20 +477,20 @@
      "answer": true
     },
     {
-     "text": "Biên độ của dao động điều hoà luôn là số dương.",
-     "answer": true
-    },
-    {
      "text": "Sau đúng một chu kì kể từ lúc $t = 0$, li độ của vật luôn bằng 0.",
      "answer": false
+    },
+    {
+     "text": "Biên độ của dao động điều hoà luôn là số dương.",
+     "answer": true
     }
    ],
    "explanation": "Biên độ luôn dương, dấu trừ đưa vào pha: $-\\cos\\alpha = \\cos(\\alpha + \\pi)$, nên $A = 4$ cm. Hết một chu kì vật trở về đúng trạng thái cũ chứ không phải về $x = 0$.",
    "distractorNotes": {
     "0": "Biên độ là giá trị lớn nhất của li độ nên không thể âm; dấu trừ nằm ở pha.",
     "1": "Dùng $-\\cos\\alpha = \\cos(\\alpha + \\pi)$ cho đúng dạng này, nên ý đúng.",
-    "2": "Bài khẳng định $A \\gt 0$, không đổi trong quá trình dao động, nên ý đúng.",
-    "3": "Hết một chu kì vật về trạng thái lúc $t = 0$, tức $x = -4$ cm ở đây, không phải 0."
+    "2": "Hết một chu kì vật về trạng thái lúc $t = 0$, tức $x = -4$ cm ở đây, không phải 0.",
+    "3": "Bài khẳng định $A \\gt 0$, không đổi trong quá trình dao động, nên ý đúng."
    }
   },
   {
@@ -504,8 +504,8 @@
    "question": "Một vật dao động điều hoà theo phương trình $x = 6\\cos\\left(5\\pi t + \\dfrac{\\pi}{2}\\right)$ cm ($t$ tính bằng giây). Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Pha ban đầu của dao động là $\\dfrac{\\pi}{2}$ rad.",
-     "answer": true
+     "text": "Khi thay số vào phương trình, phải để máy tính ở chế độ độ.",
+     "answer": false
     },
     {
      "text": "Lúc $t = 0$, vật đang ở vị trí cân bằng.",
@@ -516,16 +516,16 @@
      "answer": true
     },
     {
-     "text": "Khi thay số vào phương trình, phải để máy tính ở chế độ độ.",
-     "answer": false
+     "text": "Pha ban đầu của dao động là $\\dfrac{\\pi}{2}$ rad.",
+     "answer": true
     }
    ],
    "explanation": "$\\varphi = \\dfrac{\\pi}{2}$ nên lúc $t = 0$, $x = 6\\cos\\dfrac{\\pi}{2} = 0$. Lúc $t = 0{,}1$ s pha bằng $\\pi$, $x = -6$ cm. Góc $\\omega t + \\varphi$ đo bằng rad nên máy tính để chế độ radian.",
    "distractorNotes": {
-    "0": "Đối chiếu với $x = A\\cos(\\omega t + \\varphi)$, hằng số cộng vào là $\\dfrac{\\pi}{2}$, nên ý đúng.",
+    "0": "$\\omega$ và $\\varphi$ đo bằng rad, để chế độ độ sẽ cho côsin sai.",
     "1": "Lúc $t = 0$, $x = A\\cos\\dfrac{\\pi}{2} = 0$, đúng là vị trí cân bằng.",
     "2": "Pha $5\\pi \\cdot 0{,}1 + \\dfrac{\\pi}{2} = \\pi$, $\\cos\\pi = -1$ nên $x = -A$, ý đúng.",
-    "3": "$\\omega$ và $\\varphi$ đo bằng rad, để chế độ độ sẽ cho côsin sai."
+    "3": "Đối chiếu với $x = A\\cos(\\omega t + \\varphi)$, hằng số cộng vào là $\\dfrac{\\pi}{2}$, nên ý đúng."
    }
   }
  ]

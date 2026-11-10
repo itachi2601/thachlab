@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "..", "..", "..", ".claude", "skills", "soan-bai-ly-thuyet-tuong-tac", "scripts"))
 from svg_lib import RED, BLUE, ORG, GRN, text, wrap, chevron
 
-PHUT = 16
+PHUT = 17
 TOI = "rgba(51,65,85,.85)"
 NUATOI = "rgba(148,163,184,.35)"
 T_B, T_O, T_R, T_G = "#0369a1", "#c2410c", "#b91c1c", "#047857"   # màu CHỮ (đậm, đọc rõ trên nền sáng)

@@ -9,6 +9,8 @@ import fs from "node:fs";
 import path from "node:path";
 import readline from "node:readline";
 import { fileURLToPath } from "node:url";
+import { checkTemplate } from "../lib/bien-the";
+import type { WorkedVariant } from "../features/lessons/types";
 import { composeBody, DATA_DIR, loadTopics, validate, type Dang } from "../.claude/skills/soan-bai-tap-mau/scripts/lib";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -33,6 +35,10 @@ const topics = loadTopics();
 const { errors, warnings } = validate(data, topics);
 warnings.forEach((w) => console.warn("  ! " + w));
 if (errors.length) fail("không qua validate:\n   - " + errors.join("\n   - "));
+for (const d of data.dang_bai as (Dang & { bien_the?: WorkedVariant })[]) { // khuôn đổi số hỏng → dừng (chạy kiem-bien-the.mts để xem 200 bộ số)
+  const e = d.bien_the ? checkTemplate(d.bien_the) : [];
+  if (e.length) fail(`${d.label}: bien_the lỗi:\n   - ` + e.join("\n   - "));
+}
 
 const questions = (data.dang_bai as Dang[]).map((d) => ({
   label: d.label,
@@ -45,6 +51,10 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   form: d.form ?? "bai_tap",
   // tự giải từng bước (9/10/2026) — bỏ qua khi dạng chưa có
   ...(d.buoc ? { buoc: d.buoc, nhan_dang: d.nhan_dang, cap_do: d.cap_do, fading: d.fading, go_roi: d.go_roi } : {}),
+  ...(d.meo ? { meo: d.meo } : {}), // 💡 Mẹo nhìn (1/11/2026)
+  ...(d.cong_cu ? { cong_cu: d.cong_cu } : {}), // 🧪 công cụ giải tương tác (2/11/2026)
+  ...(d.tom_de ? { tom_de: d.tom_de } : {}), // 🧪 tóm đề dính (3/11/2026)
+  ...((d as { bien_the?: WorkedVariant }).bien_the ? { bien_the: (d as { bien_the?: WorkedVariant }).bien_the } : {}), // 🧪 biến thể đổi số (5/11/2026, lib/bien-the.ts)
 }));
 if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối
 console.log(`Bài ${lessonId} "${data.lesson_title ?? ""}": ${questions.length} dạng → chỉ ghi lesson_items.questions (kind=bai_tap_mau)`);
@@ -53,6 +63,7 @@ if (argv.includes("--xem-thu")) { // xem UI ở http://localhost:3000/dev/btm tr
   const out = path.join(root, "public/xem-thu/btm.json");
   fs.mkdirSync(path.dirname(out), { recursive: true });
   fs.writeFileSync(out, JSON.stringify({ lesson_id: lessonId, lesson_title: data.lesson_title, questions }));
+  fs.writeFileSync(path.join(root, `public/xem-thu/btm-${lessonId}.json`), JSON.stringify({ lesson_id: lessonId, lesson_title: data.lesson_title, questions })); // bản theo bài: /dev/btm?f=btm-<id>, /dev/btm-hinh?f=btm-<id> (nhiều phiên/agent cùng lúc)
   console.log(`[XEM-THU] đã ghi ${path.relative(root, out)} → mở /dev/btm trên dev server.`);
   process.exit(0);
 }
@@ -78,9 +89,16 @@ if (!yes) {
 let finalQ: unknown[] = questions;
 if (keepOld || fromBackup) {
   const old = (fromBackup ? JSON.parse(fs.readFileSync(fromBackup, "utf8")).questions : item.questions) as { problem_html?: string }[];
-  finalQ = [...questions, ...old.filter((q) => !q.problem_html)];
+  const newLabels = new Set(questions.map((q) => (q as { label?: string }).label));
+  finalQ = [...questions, ...old.filter((q) => !q.problem_html && !newLabels.has((q as { label?: string }).label))]; // không nhân đôi mục (vd tự luận) đã có trong JSON mới
   console.log(`Giữ ${finalQ.length - questions.length} dạng cũ sau ${questions.length} dạng mới.`);
 }
-const upd = await sb.from("lesson_items").update({ questions: finalQ, subtitle: `${finalQ.length} dạng bài kèm lời giải` }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
+// Chỉ dạng có cấu trúc (problem_html) mới là "dạng"; mục tự luận/dạng cũ đếm riêng (khớp workedSubtitle ở app/lop-hoc/bai/page.tsx).
+function workedSubtitle(qs: { problem_html?: string }[]): string {
+  const dang = qs.filter((q) => q.problem_html).length;
+  const them = qs.length - dang;
+  return dang && them ? `${dang} dạng bài kèm lời giải · ${them} mục bài tập thêm` : `${qs.length} dạng bài kèm lời giải`;
+}
+const upd = await sb.from("lesson_items").update({ questions: finalQ, subtitle: workedSubtitle(finalQ) }).eq("id", item.id).eq("kind", "bai_tap_mau").select("id");
 if (upd.error || upd.data?.length !== 1) fail(upd.error?.message ?? "UPDATE không đúng 1 dòng");
 console.log(`✓ Đã ghi. Hoàn tác: cập nhật lại questions từ ${path.relative(root, backup)}. Rồi: bash scripts/deploy.sh`);

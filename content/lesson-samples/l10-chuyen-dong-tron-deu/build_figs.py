@@ -6,8 +6,18 @@ Màu dùng chung cả bài: RED = vectơ vận tốc · GRN = quỹ đạo / cun
 chữ và nét phụ dùng currentColor. Mọi toạ độ tính từ phương trình đường tròn; cuối mỗi hình có lớp
 kiểm hộp nhãn ↔ nét vẽ (không chồng, không vượt viewBox) — sai là dừng, không sinh hình.
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math, re
-from svg_lib import RED, BLUE, ORG, GRN, defs
+from svg_lib import RED, BLUE, ORG, GRN
+# Đầu mũi tên chữ V 30° (thầy chốt 7/10/2026) lấy từ thư viện của skill — không dùng marker tam giác
+import importlib.util as _iu
+_sp = _iu.spec_from_file_location("svg_lib_skill", _pl.Path(__file__).resolve().parents[3]
+                                  / ".claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts/svg_lib.py")
+_sk = _iu.module_from_spec(_sp)
+_sp.loader.exec_module(_sk)
+chevron = _sk.chevron
 
 FS = 17      # cỡ nhãn (viewBox 420 thu ~0,78 ở 360px → ≥13px hiển thị)
 FS_SUB = 13  # chỉ số dưới (≥13)
@@ -16,7 +26,7 @@ FS_SUB = 13  # chỉ số dưới (≥13)
 class Fig:
     def __init__(self, prefix, w, h):
         self.p, self.w, self.h = prefix, w, h
-        self.body = defs(prefix)
+        self.body = ""
         self.segs = []    # (x1, y1, x2, y2) nét vẽ mà nhãn không được đè
         self.boxes = []   # (x0, y0, x1, y1, chữ)
 
@@ -31,11 +41,8 @@ class Fig:
     def arrow(self, x1, y1, x2, y2, c="r", w=3):
         col = {"r": RED, "b": BLUE, "o": ORG, "g": GRN}[c]
         self.body += (f'<line x1="{x1:.1f}" y1="{y1:.1f}" x2="{x2:.1f}" y2="{y2:.1f}" stroke="{col}" '
-                      f'stroke-width="{w}" marker-end="url(#{self.p}-{c})"/>')
-        # đầu mũi tên nhô thêm ~ 6 đơn vị theo hướng mũi tên
-        L = math.hypot(x2 - x1, y2 - y1)
-        ex, ey = x2 + 6 * (x2 - x1) / L, y2 + 6 * (y2 - y1) / L
-        self.segs.append((x1, y1, ex, ey))
+                      f'stroke-width="{w}"/>' + chevron(x2, y2, x2 - x1, y2 - y1, col, 2.6, 13))
+        self.segs.append((x1, y1, x2, y2))
 
     def arc(self, cx, cy, r, a0, a1, c=GRN, w=3, dash="", op=1, head=None):
         """Cung tròn tâm (cx,cy), bán kính r, từ góc a0 tới a1 (độ, chiều dương = ngược kim đồng hồ
@@ -44,9 +51,11 @@ class Fig:
         pts = [(cx + r * math.cos(math.radians(a0 + (a1 - a0) * k / n)),
                 cy - r * math.sin(math.radians(a0 + (a1 - a0) * k / n))) for k in range(n + 1)]
         d = f' stroke-dasharray="{dash}"' if dash else ""
-        mk = f' marker-end="url(#{self.p}-{head})"' if head else ""
-        self.body += (f'<polyline fill="none" stroke="{c}" stroke-width="{w}"{d} opacity="{op}"{mk} points="'
+        self.body += (f'<polyline fill="none" stroke="{c}" stroke-width="{w}"{d} opacity="{op}" points="'
                       + " ".join(f"{x:.1f},{y:.1f}" for x, y in pts) + '"/>')
+        if head:   # đầu V tại điểm cuối, theo tiếp tuyến chiều đi của cung
+            (xa, ya), (xb, yb) = pts[-2], pts[-1]
+            self.body += chevron(xb, yb, xb - xa, yb - ya, c, max(2.2, w), 12)
         for a, b in zip(pts, pts[1:]):
             self.segs.append((*a, *b))
         return pts
@@ -133,25 +142,43 @@ def P(cx, cy, r, deg):
 
 
 # ================= Hình 1: đội hình xoay trên sân băng (nhìn từ trên) =================
-f = Fig("f1", 420, 250)
-O = (120, 150)
-PHI = 22                       # góc của hàng người so với phương ngang (chỉ là một thời điểm)
-RS = (0, 62, 124, 186)         # khoảng cách từng người tới tâm
-f.raw('<rect x="8" y="30" width="404" height="212" rx="40" fill="none" stroke="currentColor" '
+f = Fig("f1", 420, 222)
+O = (62, 160)
+PHI, PHI0 = 22, -6             # vị trí hiện tại của hàng và vị trí lúc trước (mờ); quay ngược chiều kim đồng hồ
+RS = (0, 67, 134, 201)         # khoảng cách từng người tới tâm
+f.raw('<rect x="8" y="30" width="404" height="184" rx="34" fill="none" stroke="currentColor" '
       'stroke-width="1.5" stroke-dasharray="6 5" opacity="0.4"/>')
-f.segs += [(8, 30, 412, 30), (8, 242, 412, 242), (8, 30, 8, 242), (412, 30, 412, 242)]
+f.segs += [(8, 30, 412, 30), (8, 214, 412, 214), (8, 30, 8, 214), (412, 30, 412, 214)]
+
+
+def skater(x, y, ang, op=1.0, guard=True):
+    """Người nhìn từ trên xuống: vai (elip) dọc theo hàng tay, đầu tròn ở giữa."""
+    f.raw(f'<g opacity="{op}" transform="rotate({-ang:.1f} {x:.1f} {y:.1f})">'
+          f'<ellipse cx="{x:.1f}" cy="{y:.1f}" rx="19" ry="10" fill="{ORG}" stroke="currentColor" stroke-width="1.5"/>'
+          f'<circle cx="{x:.1f}" cy="{y:.1f}" r="8.5" fill="#fde68a" stroke="currentColor" stroke-width="1.5"/></g>')
+    if guard:
+        f.segs += [(x - 19, y - 19, x + 19, y + 19), (x - 19, y + 19, x + 19, y - 19)]
+
+
+# hàng lúc trước: vẫn thẳng (mờ)
+xg, yg = P(*O, RS[-1], PHI0)
+f.line(*O, xg, yg, "currentColor", 3, "", 0.25)
+for r in RS[1:]:
+    skater(*P(*O, r, PHI0), PHI0, 0.3)
+# hàng hiện tại: tay nắm tay thành một đường thẳng nối các vai
 xe, ye = P(*O, RS[-1], PHI)
-f.line(*O, xe, ye, "currentColor", 2.5)                       # tay nắm tay thành một hàng thẳng
+f.line(*O, xe, ye, "currentColor", 3.5)
 for r in RS:
-    f.dot(*P(*O, r, PHI), 10, ORG)
-f.arc(*O, 44, 200, 320, "currentColor", 2, head="g")        # chiều xoay: ngược chiều kim đồng hồ
+    skater(*P(*O, r, PHI), PHI)
+f.arc(*O, 180, PHI0 + 4, PHI - 4, GRN, 2.6, head="g")          # chiều xoay: ngược chiều kim đồng hồ
 f.text(20, 22, "Sân băng nhìn từ trên xuống", "currentColor", FS, "start", "400")
-f.text(O[0] - 18, O[1] - 16, "người trụ", "currentColor", FS, "end", "700")
-xo, yo = P(*O, RS[-1], PHI)
-f.text(xo + 4, yo - 20, "người ngoài cùng", "currentColor", FS, "middle", "700")
-f.text(O[0], O[1] + 76, "chiều xoay của cả hàng", "currentColor", FS, "middle", "400")
+f.text(O[0], O[1] + 38, "người trụ", "currentColor", FS, "middle", "700")
+f.text(xe, ye - 28, "người ngoài cùng", "currentColor", FS, "middle", "700")
+mx, my = P(*O, 180, (PHI0 + PHI) / 2)
+f.text(mx + 14, my + 2, "chiều xoay", GRN, FS, "start", "700")
+f.text(xg + 27, yg + 6, "lúc trước", "currentColor", FS, "start", "400")
 f.check("Hình 1")
-fig1 = f.svg("Sân băng nhìn từ trên: bốn người nắm tay thành một hàng thẳng, người trụ ở tâm, cả hàng xoay quanh tâm ngược chiều kim đồng hồ",
+fig1 = f.svg("Sân băng nhìn từ trên: bốn người nắm tay thành một hàng thẳng, người trụ ở tâm, bốn người nhìn từ trên (vai và đầu) nắm tay thành hàng thẳng xoay ngược chiều kim đồng hồ quanh người trụ; vị trí lúc trước của hàng vẽ mờ, vẫn thẳng",
              "Hình 1. Đội hình xoay: cả hàng luôn thẳng, quay quanh người trụ.",
              "tn-l10-trondeu-01")
 
@@ -244,6 +271,11 @@ for k, phi in enumerate((90, 205, 330)):
     if phi == 205:
         tx, ty = x + LV * ux - 16, y + LV * uy + 16
     f.text(tx, ty + 5, "v", RED, FS + 2, "middle", "700", True)
+    ay = ty + 5 - 0.78 * (FS + 2) - 4          # mũi tên nhỏ trên chữ v: nhãn là vectơ v⃗
+    f.raw(f'<line x1="{tx - 6:.1f}" y1="{ay:.1f}" x2="{tx + 6:.1f}" y2="{ay:.1f}" stroke="{RED}" stroke-width="1.6"/>'
+          + chevron(tx + 6, ay, 1, 0, RED, 1.6, 5))
+    x0, y0, x1, y1, lab = f.boxes[-1]
+    f.boxes[-1] = (x0 - 2, ay - 4, x1 + 2, y1, lab)
 f.text(236, 36, "v vuông góc", "currentColor", FS, "start", "700")
 f.text(236, 56, "với bán kính", "currentColor", FS, "start", "700")
 f.text(236, 168, "Mũi tên cùng dài:", "currentColor", FS, "start", "400")
@@ -265,6 +297,14 @@ def vn(x, nd):
 
 kq = xu_li_do()
 bang = "\n".join(f"<tr><td>{i}</td><td>{t:.1f}</td></tr>".replace(".", ",") for i, t in enumerate(DO_3_VONG, 1))
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026): thay SVG vẽ lại bằng ảnh sách, xem nguon.md
+fig2 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-tron-deu/hinh-radian.webp" alt="Đường tròn tâm O bán kính r; bán kính quay từ A tới B được góc delta theta chắn cung delta s, delta theta bằng delta s chia r" loading="lazy" width="414" height="345">'
+        '<figcaption>Hình 2. Góc quay chắn cung: Δθ = Δ<em>s</em>/<em>r</em>.<br>Bài này ghi θ = <em>s</em>/<em>r</em>.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.3 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+fig3 = (
+        '<figure class="fig"><img src="/assets/openstax/l10-chuyen-dong-tron-deu/hinh-hai-diem-cung-goc.webp" alt="Hai điểm 1 và 2 trên cùng một bán kính, cách tâm r1 và r2, cùng quay góc delta theta; cung của điểm ngoài dài hơn" loading="lazy" width="750" height="734">'
+        '<figcaption>Hình 3. Cùng quay góc Δθ:<br>điểm ngoài đi cung dài hơn (Δ<em>s</em><sub>2</sub> &gt; Δ<em>s</em><sub>1</sub>),<br>nên <em>v</em> = <em>ωr</em> lớn hơn.<br><small>Hình: OpenStax, College Physics 2e, Hình 6.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+
 h = open("theory.src.html", encoding="utf8").read()
 h = (h.replace("__BANG_DO__", bang)
       .replace("__TB__", vn(kq["tb"], 2))
@@ -282,9 +322,9 @@ lint = pathlib.Path(__file__).resolve().parents[3] / ".claude/skills/soan-bai-ly
 spec = importlib.util.spec_from_file_location("lint_do_dai", lint)
 mod = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(mod)
-open("theory.html", "w", encoding="utf8").write(h.replace("__PHUT__", "99"))
+open("theory.html", "w", encoding="utf8").write(margin_figs(h.replace("__PHUT__", "99")))
 phut = math.ceil(mod.kiem("theory.html")["phut"])
 h = h.replace("__PHUT__", str(phut))
 assert not re.search(r"__[A-Z_]+__", h), "còn mốc __X__ chưa điền"
-open("theory.html", "w", encoding="utf8").write(h)
+open("theory.html", "w", encoding="utf8").write(margin_figs(h))
 print("ok", len(h), "bytes,", h.count('<figure class="fig"'), "hình, đọc khoảng", phut, "phút")

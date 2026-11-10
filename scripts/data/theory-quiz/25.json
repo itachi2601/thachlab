@@ -352,6 +352,10 @@
    "question": "Cùng một con lắc được kéo lệch $5{,}0$ cm rồi thả, lần lượt trong không khí, trong nước và trong dầu nhớt. Sau 2 s, trong không khí còn dao động rõ, trong nước yếu, trong dầu gần như hết.",
    "statements": [
     {
+     "text": "Trong không khí con lắc tắt chậm nên vẫn là dao động điều hoà.",
+     "answer": false
+    },
+    {
      "text": "Biên độ giảm nhanh nhất khi con lắc dao động trong dầu nhớt.",
      "answer": true
     },
@@ -360,19 +364,15 @@
      "answer": true
     },
     {
-     "text": "Trong không khí con lắc tắt chậm nên vẫn là dao động điều hoà.",
-     "answer": false
-    },
-    {
      "text": "Lực cản của nước sinh công dương làm cơ năng con lắc tăng.",
      "answer": false
     }
    ],
    "explanation": "Môi trường càng nhớt biên độ giảm càng nhanh; ma sát, lực cản sinh công âm biến cơ năng thành nhiệt. Biên độ giảm thì không còn điều hoà, dù tắt chậm.",
    "distractorNotes": {
-    "0": "Bảng thí nghiệm cho thấy môi trường càng nhớt biên độ tụt càng nhanh, và dầu là môi trường nhớt nhất.",
-    "1": "Ma sát và lực cản sinh công âm, cơ năng không biến mất mà chuyển thành nhiệt.",
-    "2": "Tắt chậm chỉ khiến dao động trông gần đều; biên độ vẫn giảm nên không thể coi là điều hoà.",
+    "0": "Tắt chậm chỉ khiến dao động trông gần đều; biên độ vẫn giảm nên không thể coi là điều hoà.",
+    "1": "Bảng thí nghiệm cho thấy môi trường càng nhớt biên độ tụt càng nhanh, và dầu là môi trường nhớt nhất.",
+    "2": "Ma sát và lực cản sinh công âm, cơ năng không biến mất mà chuyển thành nhiệt.",
     "3": "Lực cản sinh công âm làm cơ năng giảm, nên không thể làm cơ năng tăng."
    }
   },
@@ -387,28 +387,28 @@
    "question": "Một em ngồi xích đu. Lần 1 em ngồi yên. Lần 2 em nhún cùng chiều chuyển động, chỉ vào lúc đu đang đi xuống, thì độ cao mỗi nhịp gần như giữ nguyên.",
    "statements": [
     {
-     "text": "Ở lần 2, lực nhún chỉ tác dụng trong một phần của mỗi nhịp.",
-     "answer": true
-    },
-    {
-     "text": "Ở lần 2, vì có ngoại lực nên dao động của xích đu là dao động cưỡng bức.",
-     "answer": false
-    },
-    {
      "text": "Ở lần 2, chu kì dao động của xích đu bằng chu kì riêng của nó.",
      "answer": true
     },
     {
      "text": "Ở lần 1, biên độ dao động của xích đu không đổi theo thời gian.",
      "answer": false
+    },
+    {
+     "text": "Ở lần 2, vì có ngoại lực nên dao động của xích đu là dao động cưỡng bức.",
+     "answer": false
+    },
+    {
+     "text": "Ở lần 2, lực nhún chỉ tác dụng trong một phần của mỗi nhịp.",
+     "answer": true
     }
    ],
    "explanation": "Nhún đúng nhịp chỉ bù phần năng lượng mất trong một phần nhịp, chu kì vẫn là chu kì riêng: đó là dao động duy trì. Ngồi yên thì ma sát làm biên độ giảm dần.",
    "distractorNotes": {
-    "0": "Đề nói rõ chỉ nhún lúc đu đi xuống, tức lực không đẩy suốt cả nhịp.",
-    "1": "Có ngoại lực chưa đủ để gọi là cưỡng bức; lực chỉ bù một phần nhịp và chu kì vẫn theo hệ, nên đây là duy trì.",
-    "2": "Dao động duy trì chỉ được bù năng lượng, không bị thay đổi chu kì riêng.",
-    "3": "Ngồi yên thì không có gì bù năng lượng, ma sát và lực cản làm biên độ giảm dần."
+    "0": "Dao động duy trì chỉ được bù năng lượng, không bị thay đổi chu kì riêng.",
+    "1": "Ngồi yên thì không có gì bù năng lượng, ma sát và lực cản làm biên độ giảm dần.",
+    "2": "Có ngoại lực chưa đủ để gọi là cưỡng bức; lực chỉ bù một phần nhịp và chu kì vẫn theo hệ, nên đây là duy trì.",
+    "3": "Đề nói rõ chỉ nhún lúc đu đi xuống, tức lực không đẩy suốt cả nhịp."
    }
   },
   {
@@ -426,24 +426,24 @@
      "answer": true
     },
     {
-     "text": "Tần số riêng của bệ máy là $12$ Hz.",
-     "answer": true
-    },
-    {
      "text": "Khi $f = 16$ Hz, bệ dao động ổn định với tần số $12$ Hz.",
      "answer": false
     },
     {
      "text": "Khi $f = 10$ Hz, biên độ bệ lớn hơn khi $f = 12$ Hz.",
      "answer": false
+    },
+    {
+     "text": "Tần số riêng của bệ máy là $12$ Hz.",
+     "answer": true
     }
    ],
    "explanation": "So với $F = F_0\\cos(\\omega t + \\varphi_0)$ thì $F_0 = 20$ N; biên độ cực đại tại $f = f_0$ nên $f_0 = 12$ Hz. Khi ổn định tần số bệ bằng tần số lực.",
    "distractorNotes": {
     "0": "So với dạng $F = F_0\\cos(\\omega t+\\varphi_0)$, hệ số đứng trước hàm cos chính là $F_0 = 20$ N.",
-    "1": "Biên độ cưỡng bức cực đại khi $f = f_0$, nên tần số cho biên độ lớn nhất chính là tần số riêng.",
-    "2": "Tưởng vật giữ tần số riêng; khi ổn định, bệ dao động theo tần số lực $16$ Hz.",
-    "3": "Tại $12$ Hz đang cộng hưởng nên biên độ lớn nhất; lệch sang $10$ Hz thì biên độ nhỏ hơn."
+    "1": "Tưởng vật giữ tần số riêng; khi ổn định, bệ dao động theo tần số lực $16$ Hz.",
+    "2": "Tại $12$ Hz đang cộng hưởng nên biên độ lớn nhất; lệch sang $10$ Hz thì biên độ nhỏ hơn.",
+    "3": "Biên độ cưỡng bức cực đại khi $f = f_0$, nên tần số cho biên độ lớn nhất chính là tần số riêng."
    }
   },
   {
@@ -461,24 +461,24 @@
      "answer": true
     },
     {
-     "text": "Tần số góc riêng là $\\omega_0 = 2\\pi f_0$.",
-     "answer": true
-    },
-    {
      "text": "Cộng hưởng xảy ra khi $\\omega = 2\\pi\\omega_0$.",
      "answer": false
     },
     {
      "text": "Khi $f \\neq f_0$, hệ dao động ổn định với tần số $f_0$.",
      "answer": false
+    },
+    {
+     "text": "Tần số góc riêng là $\\omega_0 = 2\\pi f_0$.",
+     "answer": true
     }
    ],
    "explanation": "Theo bài, $f_0 = 1/T_0$, $\\omega_0 = 2\\pi f_0$; cộng hưởng khi $f = f_0$ hay $\\omega = \\omega_0$. Khi ổn định, tần số vật bằng tần số lực.",
    "distractorNotes": {
     "0": "Tần số là nghịch đảo của chu kì, đúng như định nghĩa trong bài.",
-    "1": "Đây đúng là liên hệ giữa tần số góc riêng và tần số riêng mà bài nêu.",
-    "2": "Nhân thừa $2\\pi$ vào tần số góc; điều kiện cộng hưởng chỉ là $\\omega = \\omega_0$.",
-    "3": "Tưởng hệ luôn giữ tần số riêng; khi ổn định, vật dao động theo tần số của lực."
+    "1": "Nhân thừa $2\\pi$ vào tần số góc; điều kiện cộng hưởng chỉ là $\\omega = \\omega_0$.",
+    "2": "Tưởng hệ luôn giữ tần số riêng; khi ổn định, vật dao động theo tần số của lực.",
+    "3": "Đây đúng là liên hệ giữa tần số góc riêng và tần số riêng mà bài nêu."
    }
   },
   {
@@ -492,28 +492,28 @@
    "question": "Một động cơ khi chạy tác dụng lên bệ đỡ một lực cưỡng bức có tần số $25$ Hz. Người kĩ sư cần chọn tần số riêng $f_0$ của bệ và loại dầu giảm chấn.",
    "statements": [
     {
-     "text": "Nên chọn bệ có $f_0 = 25$ Hz để bệ chạy an toàn.",
-     "answer": false
-    },
-    {
      "text": "Nên chọn bệ có $f_0$ lệch xa $25$ Hz, chẳng hạn $8$ Hz, để tránh cộng hưởng.",
      "answer": true
     },
     {
-     "text": "Dầu nhớt nhiều (lực cản lớn) làm đỉnh cộng hưởng thấp hơn.",
-     "answer": true
+     "text": "Nên chọn bệ có $f_0 = 25$ Hz để bệ chạy an toàn.",
+     "answer": false
     },
     {
      "text": "Với bệ có $f_0 = 8$ Hz, khi máy chạy ổn định bệ dao động với tần số $8$ Hz.",
      "answer": false
+    },
+    {
+     "text": "Dầu nhớt nhiều (lực cản lớn) làm đỉnh cộng hưởng thấp hơn.",
+     "answer": true
     }
    ],
    "explanation": "Bệ phải có tần số riêng khác xa tần số lực để tránh cộng hưởng; lực cản lớn hạ đỉnh cộng hưởng. Khi ổn định bệ dao động theo tần số lực $25$ Hz.",
    "distractorNotes": {
-    "0": "Chọn $f_0$ trùng tần số lực sẽ gây cộng hưởng, bệ dao động mạnh và dễ hỏng, nên không thể an toàn.",
-    "1": "$f_0$ lệch xa tần số lực làm $|f-f_0|$ lớn, biên độ nhỏ, nên tránh được cộng hưởng.",
-    "2": "Theo đồ thị cộng hưởng, lực cản lớn cho đỉnh thấp và thoải, nên không thể coi phát biểu là sai.",
-    "3": "Tưởng bệ dao động theo tần số riêng; khi ổn định, bệ dao động theo tần số lực $25$ Hz."
+    "0": "$f_0$ lệch xa tần số lực làm $|f-f_0|$ lớn, biên độ nhỏ, nên tránh được cộng hưởng.",
+    "1": "Chọn $f_0$ trùng tần số lực sẽ gây cộng hưởng, bệ dao động mạnh và dễ hỏng, nên không thể an toàn.",
+    "2": "Tưởng bệ dao động theo tần số riêng; khi ổn định, bệ dao động theo tần số lực $25$ Hz.",
+    "3": "Theo đồ thị cộng hưởng, lực cản lớn cho đỉnh thấp và thoải, nên không thể coi phát biểu là sai."
    }
   }
  ]

@@ -185,7 +185,7 @@ export default function InlineLessonAccordion({
   }
 
   return (
-    <article ref={articleRef} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-primary/40 bg-panel" : "border-line bg-panel"}`}>
+    <article ref={articleRef} data-lesson-id={isStudent ? lesson.id : undefined} style={{ scrollMarginTop: "104px" }} className={`overflow-hidden rounded-xl border transition-colors duration-200 ${open ? "border-primary/40 bg-panel" : "border-line bg-panel"}`}>
       <button
         type="button"
         onClick={onToggle}
@@ -264,7 +264,7 @@ export default function InlineLessonAccordion({
                                 {item.exam_ids.length > 0 && (
                                   <SampleQuestionsGrid examIds={item.exam_ids} color={meta.color} />
                                 )}
-                                <WorkedQuestionsGrid questions={item.questions} color={meta.color} />
+                                <WorkedQuestionsGrid questions={item.questions} color={meta.color} lessonId={item.lesson_id} />
                               </div>
                             )}
                             {item.kind === "luyen_tap" && (

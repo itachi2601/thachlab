@@ -1,6 +1,6 @@
 ---
 name: bao-cao-hoc-tap-tuan
-description: Báo cáo tình hình học tập hằng tuần theo lớp (hoạt động, điểm, chủ đề hay sai, phụ đạo), phân nhóm học sinh không làm bài để thúc đẩy (nhắc trong web, danh sách cho trợ giảng gọi, phụ huynh khi thầy đồng ý), và dọn tài khoản không hoạt động quá 30 ngày theo 3 bước (cảnh báo → vô hiệu hoá → xoá định danh). Dùng khi thầy nói "báo cáo học tập tuần này", "em nào bỏ học", "nhắc học sinh không làm bài", "dọn tài khoản không hoạt động", "/bao-cao-hoc-tap-tuan".
+description: Báo cáo học tập tuần theo lớp, phân nhóm HS không làm bài để nhắc (web, trợ giảng gọi, phụ huynh khi thầy đồng ý), dọn tài khoản bỏ >30 ngày. Dùng khi thầy nói "báo cáo học tập tuần này", "em nào bỏ học", "nhắc học sinh không làm bài", "dọn tài khoản không hoạt động", "/bao-cao-hoc-tap-tuan".
 ---
 
 # Báo cáo học tập tuần + kéo học sinh quay lại + dọn tài khoản bỏ

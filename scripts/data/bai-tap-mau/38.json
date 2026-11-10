@@ -1,0 +1,1248 @@
+{
+ "lesson_id": 38,
+ "lesson_title": "Bài 19. Thế năng điện",
+ "generated_at": "2026-11-02",
+ "review": {
+  "checked": true,
+  "notes": "kiem-code tự giải độc lập 2 vòng 2/11/2026: 4 dạng khớp; đã sửa lộ dấu/hướng giải, D3 làm lại thành bài ngược, nhãn hình"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Công của lực điện A = qEd: hình chiếu có dấu của đoạn đi và dấu của điện tích",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Điện trường đều có cường độ $E=5000\\ \\text{V/m}$, đường sức nằm ngang hướng sang phải. Một electron ($q=-1{,}6\\cdot10^{-19}\\ \\text{C}$) đi thẳng từ điểm M đến điểm N, đoạn $MN=8{,}0\\ \\text{cm}$ hợp với chiều đường sức góc $120^\\circ$ (từ M, MN hướng lên trên và chếch sang trái). Chỉ xét lực điện.</p><ol type=\"a\"><li>Tìm độ dài đại số $d$ của hình chiếu MN lên đường sức.</li><li>Tính công $A_{MN}$ của lực điện.</li><li>Electron quay lại, đi thẳng từ N về M. Công $A_{NM}$ so với $A_{MN}$ thế nào?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> điện trường đều: lực $\\vec F=q\\vec E$ không đổi; công phụ thuộc hình chiếu của đoạn đi lên đường sức.</li><li>Công: $A_{MN}=qEd$ · $d$ = hình chiếu có dấu của MN lên chiều đường sức · $d=MN\\cos\\alpha$ ($\\alpha$: góc giữa MN và chiều $\\vec E$)</li><li>$q$ lấy cả dấu; $d\\gt0$ nếu hình chiếu cùng chiều đường sức, $d\\lt0$ nếu ngược chiều.</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện; đổi cm ra m.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hình chiếu có dấu của MN</span></p><p>Góc giữa MN và chiều đường sức là $120^\\circ$.</p>$$d=MN\\cos120^\\circ=0{,}080\\cdot(-0{,}5)$$<div class=\"bt-ans\">$$d=-0{,}040\\ \\text{m}=-4{,}0\\ \\text{cm}$$</div><p>$d\\lt0$: hình chiếu ngược chiều đường sức.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công của lực điện</span></p>$$A_{MN}=qEd$$$$A_{MN}=(-1{,}6\\cdot10^{-19})\\cdot5000\\cdot(-0{,}040)$$<div class=\"bt-ans\">$$A_{MN}=+3{,}2\\cdot10^{-17}\\ \\text{J}$$</div><p>Hai dấu âm nhân nhau cho công dương: lực điện lên electron ngược chiều $\\vec E$, tức hướng sang trái, cùng phía với thành phần chuyển động sang trái của MN.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Đi ngược từ N về M</span></p><p>Đổi chiều đi thì hình chiếu có dấu đổi dấu: $d'=+0{,}040$ m.</p>$$A_{NM}=(-1{,}6\\cdot10^{-19})\\cdot5000\\cdot0{,}040=-3{,}2\\cdot10^{-17}\\ \\text{J}$$<div class=\"bt-ans\"><p>$A_{NM}=-A_{MN}$: cùng độ lớn, trái dấu.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Đơn vị: $\\text{C}\\cdot\\text{V/m}\\cdot\\text{m}=\\text{C}\\cdot\\text{V}=\\text{J}$ ✓</p><p>$A_{MN}+A_{NM}=0$: đi một vòng kín về chỗ cũ thì công bằng 0 ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d=-4{,}0\\ \\text{cm}$</p><p>b) $A_{MN}=+3{,}2\\cdot10^{-17}\\ \\text{J}$</p><p>c) $A_{NM}=-A_{MN}=-3{,}2\\cdot10^{-17}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>đoạn đi hợp với đường sức một góc</strong> → $d=MN\\cos\\alpha$ có dấu, rồi $A=qEd$ với $q$ có dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trường đều có cường độ $E=5000$ V/m, đường sức nằm ngang hướng sang phải\"</td><td>$E=5000$ V/m; $\\vec E$ sang phải</td><td>⚠ Công thức $A=qEd$ chỉ dùng cho điện trường đều; chỉ xét lực điện</td></tr><tr><td>\"electron ($q=-1{,}6\\cdot10^{-19}$ C)\"</td><td>$q=-1{,}6\\cdot10^{-19}$ C</td><td>Lấy cả dấu của $q$ vào công thức</td></tr><tr><td>\"đoạn $MN=8{,}0$ cm hợp với chiều đường sức góc $120^\\circ$\"</td><td>$MN=8{,}0$ cm; góc giữa MN và $\\vec E$ là $120^\\circ$</td><td>$d$ là hình chiếu có dấu của MN lên đường sức, không phải độ dài đường đi. Góc tù thì dấu của $d$ thế nào?</td></tr><tr><td>\"tìm độ dài đại số $d$ của hình chiếu\"</td><td>Cần $d$</td><td>Đại lượng cần tìm: chiếu MN lên đường sức</td></tr><tr><td>\"tính công $A_{MN}$\"</td><td>Cần $A_{MN}$</td><td>Công của lực điện trong điện trường đều</td></tr><tr><td>\"quay lại, đi thẳng từ N về M … so với $A_{MN}$\"</td><td>Cần so sánh $A_{NM}$ với $A_{MN}$</td><td>Đổi chiều đi thì hình chiếu có dấu đổi thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>đoạn đi hợp với đường sức một góc</b> → nghĩ tới <b>d = MN·cosα có dấu</b>, rồi <b>A = qEd</b>.",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hình chiếu có dấu của MN",
+     "hoi": "Độ dài đại số d của hình chiếu MN lên đường sức bằng bao nhiêu cm?",
+     "dap_so": -4.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d$ bằng cả độ dài MN, hoặc chiếu bằng $\\sin$ thay vì $\\cos$, hoặc thế sai dấu của $d$."
+    },
+    {
+     "tieu_de": "Công của lực điện",
+     "hoi": "Công $A_{MN}$ của lực điện bằng bao nhiêu? (nhập số, đơn vị $10^{-17}$ J)",
+     "dap_so": 3.2,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻¹⁷ J",
+     "loi_hay_gap": "Thế sai dấu của $q$ hoặc của $d$; hoặc quên đổi cm ra m.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $q$ và $d$ cùng dấu của chúng vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $|q|\\cdot E\\cdot MN$ vì MN là quãng đường electron đi",
+       "dung": false,
+       "vi_sao": "$d$ là hình chiếu có dấu lên đường sức, không phải độ dài đường đi, và $q$ phải mang dấu."
+      },
+      {
+       "text": "Lấy $qEd$ với $d=MN\\sin\\alpha$",
+       "dung": false,
+       "vi_sao": "Hình chiếu lên đường sức là $MN\\cos\\alpha$; $\\sin\\alpha$ là thành phần vuông góc đường sức, không sinh công."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đi ngược từ N về M",
+     "hoi": "Công $A_{NM}$ so với $A_{MN}$ thế nào?",
+     "lua_chon": [
+      {
+       "text": "Cùng độ lớn, trái dấu",
+       "dung": true
+      },
+      {
+       "text": "Giống hệt $A_{MN}$ vì cùng đoạn MN",
+       "dung": false,
+       "vi_sao": "Đổi chiều đi thì hình chiếu có dấu đổi dấu, nên công đổi dấu."
+      },
+      {
+       "text": "Bằng không vì electron về lại điểm cũ",
+       "dung": false,
+       "vi_sao": "Chỉ cả vòng M → N → M mới bằng không; riêng đoạn N → M vẫn có công khác không."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng công không đổi khi đảo chiều đi, hoặc cho rằng quay về chỗ cũ là công của đoạn về bằng không.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại hình chiếu có dấu cho chiều đi N → M rồi thay vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Dùng lại đúng $d$ và $q$ của câu trước rồi thế vào $qEd$ như cũ",
+       "dung": false,
+       "vi_sao": "Đi ngược lại thì hình chiếu có dấu đổi dấu; dùng lại $d$ cũ sẽ sai dấu."
+      },
+      {
+       "text": "Tính lại $E$ vì electron đi theo chiều ngược với lúc trước",
+       "dung": false,
+       "vi_sao": "$E$ là của điện trường, không đổi theo chiều đi của hạt."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "$E=5000$ V/m, đường sức nằm ngang sang phải",
+     "Electron $q=-1{,}6\\cdot10^{-19}$ C đi thẳng M → N",
+     "$MN=8{,}0$ cm hợp với đường sức góc $120^\\circ$"
+    ],
+    "tim": [
+     "a) Độ dài đại số $d$ của hình chiếu MN",
+     "b) $A_{MN}$",
+     "c) $A_{NM}$ so với $A_{MN}$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "hang": [
+      0.8,
+      3.4,
+      7.5,
+      10.9
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 9.6,
+      "text": "E = 5000 V/m",
+      "a": "start",
+      "mau": "b"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 8.2,
+      "text": "q = −1,6·10⁻¹⁹ C",
+      "a": "start"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        14,
+        3.4
+       ],
+       [
+        10.8,
+        8.94
+       ]
+      ],
+      "mau": "chu",
+      "mui": 1
+     },
+     {
+      "loai": "diem",
+      "x": 14,
+      "y": 3.4,
+      "ten": "M",
+      "vi": "phai"
+     },
+     {
+      "loai": "diem",
+      "x": 10.8,
+      "y": 8.94,
+      "ten": "N",
+      "vi": "tren"
+     },
+     {
+      "loai": "goc",
+      "x": 14,
+      "y": 3.4,
+      "tu": 0,
+      "den": 120,
+      "nhan": "120°"
+     },
+     {
+      "loai": "chu",
+      "x": 10.9,
+      "y": 6.0,
+      "text": "MN = 8,0 cm",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "day",
+       "tu": [
+        10.8,
+        8.94
+       ],
+       "den": [
+        10.8,
+        3.4
+       ],
+       "mau": "chu",
+       "dut": true
+      },
+      {
+       "loai": "diem",
+       "x": 10.8,
+       "y": 3.4,
+       "ten": "H",
+       "vi": "trai"
+      },
+      {
+       "loai": "vec",
+       "x": 14,
+       "y": 3.4,
+       "goc": 180,
+       "dai": 3.2,
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 12.4,
+       "y": 1.5,
+       "text": "d = −4,0 cm",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d = MN·cos120° = 8,0·(−0,5) = −4,0 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A_{MN} = qEd = (−1,6·10⁻¹⁹)·5000·(−0,040) = 3,2·10⁻¹⁷ J"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         11.19,
+         9.16
+        ],
+        [
+         14.39,
+         3.62
+        ]
+       ],
+       "mau": "max",
+       "dut": true,
+       "mui": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "N → M: d' = +4,0 cm ⇒ A_{NM} = −A_{MN} = −3,2·10⁻¹⁷ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "q < 0, d < 0 ⇒ A > 0; đi ngược lại đổi dấu d ⇒ đổi dấu A ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Công không phụ thuộc đường đi: đường gấp khúc, đường cong, vòng kín",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Điện trường đều $E=3000\\ \\text{V/m}$, đường sức nằm ngang hướng từ A sang B. Một hạt mang điện $q=-2{,}0\\ \\mu\\text{C}$ đi từ A đến B theo đoạn thẳng $AB=6{,}0\\ \\text{cm}$ dọc đường sức, rồi từ B đến C theo đoạn thẳng $BC=10\\ \\text{cm}$ hợp với chiều đường sức góc $60^\\circ$. Chỉ xét lực điện.</p><ol type=\"a\"><li>Tính công của lực điện trên đường A → B → C.</li><li>Cũng hạt đó đi từ A tới điểm D theo một đường cong dài $25\\ \\text{cm}$. D nằm ngay dưới C, đoạn $CD=4{,}0\\ \\text{cm}$ vuông góc với đường sức. Tính công của lực điện.</li><li>Hạt đi hết đường A → B → C rồi trở về A theo đoạn thẳng CA. Tính công của lực điện trên cả vòng.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> công của lực điện chỉ phụ thuộc điểm đầu và điểm cuối, không phụ thuộc đường đi (lực thế); đi một vòng kín thì $A=0$.</li><li>Mỗi đoạn: $A=qEd$ với $d$ là hình chiếu có dấu lên đường sức · công cả đường = tổng công các đoạn</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện; $q$ lấy cả dấu, đổi $\\mu$C ra C.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công trên đoạn AB</span></p><p>Đổi $q=-2{,}0\\cdot10^{-6}\\ \\text{C}$. AB dọc đường sức, cùng chiều $\\vec E$: $d_{AB}=+0{,}060\\ \\text{m}$.</p>$$A_{AB}=qEd_{AB}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}060$$<div class=\"bt-ans\">$$A_{AB}=-3{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}36\\ \\text{mJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Công trên cả đường A → B → C</span></p><p>Hình chiếu của BC lên đường sức: $d_{BC}=BC\\cos60^\\circ=0{,}10\\cdot0{,}5=0{,}050\\ \\text{m}$.</p>$$A_{BC}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}050=-3{,}0\\cdot10^{-4}\\ \\text{J}$$$$A_{ABC}=A_{AB}+A_{BC}=-3{,}6\\cdot10^{-4}-3{,}0\\cdot10^{-4}$$<div class=\"bt-ans\">$$A_{ABC}=-6{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}66\\ \\text{mJ}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công trên đường cong từ A tới D</span></p><p>Công của lực điện chỉ phụ thuộc điểm đầu A và điểm cuối D, không phụ thuộc hình dạng hay độ dài đường đi.</p><p>CD vuông góc đường sức nên D và C có cùng hình chiếu lên đường sức: $d_{AD}=d_{AC}=d_{AB}+d_{BC}=0{,}060+0{,}050=0{,}110\\ \\text{m}$.</p>$$A_{AD}=qEd_{AD}=(-2{,}0\\cdot10^{-6})\\cdot3000\\cdot0{,}110$$<div class=\"bt-ans\">$$A_{AD}=-6{,}6\\cdot10^{-4}\\ \\text{J}=-0{,}66\\ \\text{mJ}$$</div><p>Bằng công trên đường gấp khúc A → B → C ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Công trên cả vòng kín</span></p><p>Cả vòng A → B → C → A có điểm cuối trùng điểm đầu: hình chiếu tổng cộng của cả vòng bằng 0.</p>$$A_{\\text{vòng}}=A_{ABC}+A_{CA}=-6{,}6\\cdot10^{-4}+6{,}6\\cdot10^{-4}$$<div class=\"bt-ans\">$$A_{\\text{vòng}}=0$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Đường cong dài 25 cm nhưng độ dài không đi vào công thức; nếu nhân $qE$ với 0,25 m sẽ ra công khác (sai), vì lực điện không phải lực ma sát.</p><p>Đơn vị: $\\text{C}\\cdot\\text{V/m}\\cdot\\text{m}=\\text{J}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A_{ABC}=-0{,}66\\ \\text{mJ}$</p><p>b) $A_{AD}=-0{,}66\\ \\text{mJ}$ (đường cong dài 25 cm cho cùng kết quả)</p><p>c) $A_{\\text{vòng}}=0$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>nhiều đường đi cùng điểm đầu, điểm cuối</strong> (hoặc vòng kín) → công như nhau; chỉ tính một lần theo hình chiếu của đoạn nối hai đầu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"điện trường đều $E=3000$ V/m, đường sức từ A sang B\"</td><td>$E=3000$ V/m; $\\vec E$ từ A sang B</td><td>⚠ Điện trường đều; chỉ xét lực điện</td></tr><tr><td>\"hạt mang điện $q=-2{,}0\\ \\mu$C\"</td><td>$q=-2{,}0\\ \\mu\\text{C}=-2{,}0\\cdot10^{-6}$ C</td><td>Lấy cả dấu của $q$; đổi $\\mu$C ra C</td></tr><tr><td>\"$AB=6{,}0$ cm dọc đường sức\"</td><td>$AB=6{,}0$ cm, cùng chiều $\\vec E$</td><td>Hình chiếu có dấu của đoạn dọc đường sức</td></tr><tr><td>\"$BC=10$ cm hợp với chiều đường sức góc $60^\\circ$\"</td><td>$BC=10$ cm; góc với $\\vec E$: $60^\\circ$</td><td>Chiếu BC lên đường sức; độ dài BC chưa phải $d$</td></tr><tr><td>\"từ A tới D theo đường cong dài 25 cm … $CD=4{,}0$ cm vuông góc với đường sức\"</td><td>Đường dài 25 cm; $CD=4{,}0$ cm, $CD\\perp\\vec E$</td><td>Công của lực điện có phụ thuộc hình dạng và độ dài đường đi không? Hình chiếu của AD lên đường sức so với của AC?</td></tr><tr><td>\"trở về A theo CA … cả vòng\"</td><td>Điểm đầu và điểm cuối của cả vòng</td><td>Cả vòng đi qua những điểm nào? Điểm đầu và điểm cuối có gì đặc biệt?</td></tr><tr><td>\"công trên A → B → C … đường cong … cả vòng\"</td><td>Cần $A_{ABC}$, $A_{AD}$ (đường cong), $A_{\\text{vòng}}$</td><td>Đại lượng cần tìm</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nhiều đường đi cùng điểm đầu, điểm cuối</b> hoặc <b>vòng kín</b> → nghĩ tới <b>công không phụ thuộc đường đi</b>.",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công trên đoạn AB",
+     "hoi": "Công của lực điện trên đoạn AB bằng bao nhiêu mJ?",
+     "dap_so": -0.36,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Thế sai dấu của $q$; hoặc đổi $\\mu$C ra C sai luỹ thừa mười."
+    },
+    {
+     "tieu_de": "Công trên cả đường A → B → C",
+     "hoi": "Công của lực điện trên cả đường A → B → C bằng bao nhiêu mJ?",
+     "dap_so": -0.66,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Lấy cả độ dài BC (hoặc $\\sin$ của góc) làm hình chiếu lên đường sức; hoặc quên cộng công của một đoạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính công đoạn BC theo hình chiếu của BC lên đường sức, rồi cộng với đoạn AB",
+       "dung": true
+      },
+      {
+       "text": "Lấy cả độ dài BC làm $d$ trong công thức $qEd$ rồi cộng với công của đoạn AB, đổi ra mJ như đề yêu cầu",
+       "dung": false,
+       "vi_sao": "$d$ là hình chiếu lên đường sức; BC hợp với đường sức một góc nên chỉ một phần của nó dọc đường sức."
+      },
+      {
+       "text": "Chỉ tính công đoạn BC vì AB nằm dọc đường sức nên công của AB bằng không",
+       "dung": false,
+       "vi_sao": "AB dọc đường sức nên hình chiếu của nó là đầy đủ, công khác không; phải cộng cả hai đoạn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công trên đường cong từ A tới D",
+     "hoi": "Công của lực điện trên đường cong dài 25 cm từ A tới D bằng bao nhiêu mJ?",
+     "dap_so": -0.66,
+     "sai_so": 0.01,
+     "don_vi": "mJ",
+     "loi_hay_gap": "Nhân $qE$ với độ dài đường cong, coi lực điện như lực ma sát (công tỉ lệ quãng đường đi).",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng điểm đầu A và điểm cuối D: hình chiếu của đoạn nối hai điểm lên đường sức",
+       "dung": true
+      },
+      {
+       "text": "Nhân $qE$ với độ dài đường cong 25 cm rồi đổi sang mJ để ra công của cả đường",
+       "dung": false,
+       "vi_sao": "Độ dài quãng đường không phải $d$: lực điện là lực thế, công không tỉ lệ quãng đường đi."
+      },
+      {
+       "text": "Phải biết hình dạng chính xác của đường cong mới tính được công của lực điện",
+       "dung": false,
+       "vi_sao": "Công của lực điện không phụ thuộc hình dạng đường đi, chỉ phụ thuộc điểm đầu và điểm cuối."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công trên cả vòng kín",
+     "hoi": "Công của lực điện trên cả vòng A → B → C → A thế nào?",
+     "lua_chon": [
+      {
+       "text": "Bằng không",
+       "dung": true
+      },
+      {
+       "text": "Bằng công trên A → B → C vì chỉ lúc đi mới có công",
+       "dung": false,
+       "vi_sao": "Đoạn trở về C → A cũng có công, cùng độ lớn và trái dấu với công lúc đi."
+      },
+      {
+       "text": "Âm, vì hạt mang điện âm",
+       "dung": false,
+       "vi_sao": "Dấu của công không do dấu của $q$ riêng quyết định; cả vòng cho tổng bằng không."
+      }
+     ],
+     "loi_hay_gap": "Chỉ cộng công của các đoạn lúc đi, quên đoạn trở về, hoặc nhân $qE$ với chu vi của vòng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét điểm đầu và điểm cuối của cả vòng",
+       "dung": true
+      },
+      {
+       "text": "Nhân $qE$ với chu vi tam giác ABC",
+       "dung": false,
+       "vi_sao": "Chu vi là độ dài đường đi; công của lực điện không tỉ lệ độ dài đường đi."
+      },
+      {
+       "text": "Cộng $A_{ABC}$ với $A_{CA}$, lấy $d_{CA}$ dương",
+       "dung": false,
+       "vi_sao": "Đi từ C về A là ngược chiều đường sức nên hình chiếu có dấu $d_{CA}$ âm, không phải dương."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "$E=3000$ V/m, đường sức nằm ngang từ A sang B",
+     "Hạt $q=-2{,}0\\ \\mu$C: $AB=6{,}0$ cm dọc đường sức, rồi $BC=10$ cm hợp đường sức $60^\\circ$",
+     "A → D theo đường cong dài $25$ cm; $CD=4{,}0$ cm vuông góc đường sức",
+     "Rồi A → B → C → A"
+    ],
+    "tim": [
+     "a) Công trên A → B → C",
+     "b) Công trên đường cong A → D",
+     "c) Công trên cả vòng kín"
+    ]
+   },
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "duong_suc",
+     "goc": 0,
+     "hang": [
+      2.5,
+      10.7
+     ]
+    },
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 9.6,
+      "text": "E = 3000 V/m",
+      "a": "start",
+      "mau": "b"
+     },
+     {
+      "loai": "chu",
+      "x": 0.4,
+      "y": 8.1,
+      "text": "q = −2,0 µC",
+      "a": "start"
+     },
+     {
+      "loai": "vec",
+      "x": 2,
+      "y": 2.5,
+      "goc": 0,
+      "dai": 4.8,
+      "mau": "chu"
+     },
+     {
+      "loai": "vec",
+      "x": 6.800000000000001,
+      "y": 2.5,
+      "goc": 60,
+      "dai": 8.0,
+      "mau": "chu"
+     },
+     {
+      "loai": "diem",
+      "x": 2,
+      "y": 2.5,
+      "ten": "A",
+      "vi": "trai"
+     },
+     {
+      "loai": "diem",
+      "x": 6.800000000000001,
+      "y": 2.5,
+      "ten": "B",
+      "vi": "duoi"
+     },
+     {
+      "loai": "diem",
+      "x": 10.8,
+      "y": 9.43,
+      "ten": "C",
+      "vi": "phai"
+     },
+     {
+      "loai": "diem",
+      "x": 10.8,
+      "y": 6.23,
+      "ten": "D",
+      "vi": "phai"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       10.8,
+       9.43
+      ],
+      "den": [
+       10.8,
+       6.23
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "goc",
+      "x": 6.800000000000001,
+      "y": 2.5,
+      "tu": 0,
+      "den": 60,
+      "nhan": "60°"
+     },
+     {
+      "loai": "chu",
+      "x": 4.4,
+      "y": 3.0,
+      "text": "6,0 cm"
+     },
+     {
+      "loai": "chu",
+      "x": 8.4,
+      "y": 6.6,
+      "text": "BC = 10 cm",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 11.3,
+      "y": 7.3,
+      "text": "CD = 4,0 cm",
+      "a": "start"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        2.0,
+        2.5
+       ],
+       [
+        2.18,
+        2.08
+       ],
+       [
+        2.45,
+        1.7
+       ],
+       [
+        2.82,
+        1.37
+       ],
+       [
+        3.26,
+        1.07
+       ],
+       [
+        3.76,
+        0.82
+       ],
+       [
+        4.32,
+        0.62
+       ],
+       [
+        4.92,
+        0.46
+       ],
+       [
+        5.55,
+        0.35
+       ],
+       [
+        6.2,
+        0.29
+       ],
+       [
+        6.86,
+        0.28
+       ],
+       [
+        7.52,
+        0.32
+       ],
+       [
+        8.16,
+        0.42
+       ],
+       [
+        8.78,
+        0.57
+       ],
+       [
+        9.37,
+        0.77
+       ],
+       [
+        9.91,
+        1.04
+       ],
+       [
+        10.39,
+        1.36
+       ],
+       [
+        10.8,
+        1.74
+       ],
+       [
+        11.13,
+        2.19
+       ],
+       [
+        11.37,
+        2.7
+       ],
+       [
+        11.5,
+        3.27
+       ],
+       [
+        11.53,
+        3.91
+       ],
+       [
+        11.42,
+        4.61
+       ],
+       [
+        11.19,
+        5.39
+       ],
+       [
+        10.8,
+        6.23
+       ]
+      ],
+      "mau": "chu",
+      "dut": true,
+      "mui": 2
+     },
+     {
+      "loai": "chu",
+      "x": 13.2,
+      "y": 3.0,
+      "text": "dài 25 cm",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vec",
+       "x": 2,
+       "y": 2.5,
+       "goc": 0,
+       "dai": 4.8,
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "A_{AB} = qE·AB = (−2,0·10⁻⁶)·3000·0,060 = −0,36 mJ"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "tu": [
+        10.8,
+        6.23
+       ],
+       "den": [
+        10.8,
+        2.5
+       ],
+       "mau": "chu",
+       "dut": true
+      },
+      {
+       "loai": "diem",
+       "x": 10.8,
+       "y": 2.5,
+       "ten": "H",
+       "vi": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "d_{AC} = 6,0 + 10·cos 60° = 11 cm ⇒ A = −0,66 mJ"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         2.0,
+         2.5
+        ],
+        [
+         2.18,
+         2.08
+        ],
+        [
+         2.45,
+         1.7
+        ],
+        [
+         2.82,
+         1.37
+        ],
+        [
+         3.26,
+         1.07
+        ],
+        [
+         3.76,
+         0.82
+        ],
+        [
+         4.32,
+         0.62
+        ],
+        [
+         4.92,
+         0.46
+        ],
+        [
+         5.55,
+         0.35
+        ],
+        [
+         6.2,
+         0.29
+        ],
+        [
+         6.86,
+         0.28
+        ],
+        [
+         7.52,
+         0.32
+        ],
+        [
+         8.16,
+         0.42
+        ],
+        [
+         8.78,
+         0.57
+        ],
+        [
+         9.37,
+         0.77
+        ],
+        [
+         9.91,
+         1.04
+        ],
+        [
+         10.39,
+         1.36
+        ],
+        [
+         10.8,
+         1.74
+        ],
+        [
+         11.13,
+         2.19
+        ],
+        [
+         11.37,
+         2.7
+        ],
+        [
+         11.5,
+         3.27
+        ],
+        [
+         11.53,
+         3.91
+        ],
+        [
+         11.42,
+         4.61
+        ],
+        [
+         11.19,
+         5.39
+        ],
+        [
+         10.8,
+         6.23
+        ]
+       ],
+       "mau": "max",
+       "dut": true,
+       "mui": 2
+      },
+      {
+       "loai": "ghi",
+       "text": "CD ⊥ E ⇒ D cũng chiếu xuống H ⇒ A_{AD} = −0,66 mJ"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         10.8,
+         9.43
+        ],
+        [
+         2,
+         2.5
+        ]
+       ],
+       "mau": "max",
+       "dut": true,
+       "mui": 1
+      },
+      {
+       "loai": "ghi",
+       "text": "Về lại A: d = 0 ⇒ A_{vòng} = 0"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Công chỉ phụ thuộc hình chiếu d, không phụ thuộc đường đi ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Thế năng điện có mốc: từ W_M và công tìm E, vị trí N, rồi đổi mốc",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Hai bản kim loại phẳng nằm ngang, song song, cách nhau $5{,}0\\ \\text{cm}$; bản trên tích điện âm, bản dưới tích điện dương; điện trường giữa hai bản là đều. Một hạt bụi mang điện $q=-5{,}0\\ \\text{nC}$. Chọn mốc thế năng ở bản trên. Tại điểm M cách bản trên $1{,}0\\ \\text{cm}$, thế năng của hạt là $W_M=-2{,}0\\cdot10^{-7}\\ \\text{J}$. Hạt đi (theo một đường bất kì) từ M tới điểm N nằm dưới M; lực điện sinh công $A_{MN}=+6{,}0\\cdot10^{-7}\\ \\text{J}$. Bỏ qua trọng lực.</p><ol type=\"a\"><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính thế năng $W_N$ của hạt tại N.</li><li>Tính khoảng cách từ N tới bản trên.</li><li>Đổi mốc sang bản dưới (bản dương). Tính thế năng của hạt tại N với mốc mới.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> thế năng điện tại M = công của lực điện khi $q$ đi từ M tới mốc; phải chọn mốc.</li><li>Điện trường đều: $W_M=qEd$, $d$ = hình chiếu có dấu của đoạn từ M tới mốc lên đường sức</li><li>Công và thế năng: $A_{MN}=W_M-W_N$; công dương thì thế năng giảm</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; chỉ xét lực điện. Đổi mốc thì từng $W$ đổi, hiệu $W_M-W_N$ không đổi.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Cường độ điện trường</span></p><p>Bản trên âm, bản dưới dương nên $\\vec E$ hướng từ dưới lên trên.</p><p>Từ M lên mốc (bản trên) là xuôi chiều $\\vec E$: $d_M=+0{,}010\\ \\text{m}$.</p>$$W_M=qEd_M\\Rightarrow E=\\dfrac{W_M}{qd_M}=\\dfrac{-2{,}0\\cdot10^{-7}}{(-5{,}0\\cdot10^{-9})\\cdot0{,}010}$$<div class=\"bt-ans\">$$E=4000\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Thế năng tại N</span></p><p>Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$.</p>$$W_N=W_M-A_{MN}=-2{,}0\\cdot10^{-7}-6{,}0\\cdot10^{-7}$$<div class=\"bt-ans\">$$W_N=-8{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Khoảng cách từ N tới bản trên</span></p><p>N cũng ở dưới mốc: từ N lên mốc là xuôi chiều $\\vec E$, $d_N\\gt0$.</p>$$W_N=qEd_N\\Rightarrow d_N=\\dfrac{W_N}{qE}=\\dfrac{-8{,}0\\cdot10^{-7}}{(-5{,}0\\cdot10^{-9})\\cdot4000}$$<div class=\"bt-ans\">$$d_N=0{,}040\\ \\text{m}=4{,}0\\ \\text{cm}$$</div><p>$4{,}0\\ \\text{cm}\\lt5{,}0\\ \\text{cm}$: N nằm giữa hai bản ✓.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Đổi mốc sang bản dưới</span></p><p>N cách bản dưới $5{,}0-4{,}0=1{,}0\\ \\text{cm}$. Từ N xuống mốc mới là ngược chiều $\\vec E$: $d'_N=-0{,}010\\ \\text{m}$.</p>$$W'_N=qEd'_N=(-5{,}0\\cdot10^{-9})\\cdot4000\\cdot(-0{,}010)$$<div class=\"bt-ans\">$$W'_N=+2{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Với mốc mới, M cách bản dưới $4{,}0$ cm nên $W'_M=+8{,}0\\cdot10^{-7}$ J.</p><p>$W'_M-W'_N=8{,}0\\cdot10^{-7}-2{,}0\\cdot10^{-7}=6{,}0\\cdot10^{-7}\\ \\text{J}$: bằng $A_{MN}$, hiệu không đổi khi đổi mốc ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $E=4000\\ \\text{V/m}$</p><p>b) $W_N=-8{,}0\\cdot10^{-7}\\ \\text{J}$</p><p>c) $d_N=4{,}0\\ \\text{cm}$</p><p>d) $W'_N=+2{,}0\\cdot10^{-7}\\ \\text{J}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>thế năng hoặc công, hỏi E hay vị trí</strong> → $W=qEd$ với $d$ tới mốc có dấu; đổi mốc thì $W$ đổi, hiệu $W_M-W_N$ không đổi.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hai bản … cách nhau 5,0 cm; bản trên âm, bản dưới dương; điện trường đều\"</td><td>Bản trên $-$; $\\vec E$ hướng lên</td><td>⚠ Điện trường đều giữa hai bản; mốc ở bản nào thì $d$ tính tới bản đó</td></tr><tr><td>\"hạt bụi $q=-5{,}0$ nC\"</td><td>$q=-5{,}0\\cdot10^{-9}$ C</td><td>Lấy cả dấu của $q$</td></tr><tr><td>\"chọn mốc thế năng ở bản trên … M cách bản trên 1,0 cm … $W_M=-2{,}0\\cdot10^{-7}$ J\"</td><td>M cách bản trên 1,0 cm; $W_M=-2{,}0\\cdot10^{-7}$ J</td><td>Thế năng bằng công của lực điện từ điểm đó tới mốc. Từ M về mốc là xuôi hay ngược chiều $\\vec E$? Dấu của $d$?</td></tr><tr><td>\"đi từ M tới N nằm dưới M; $A_{MN}=+6{,}0\\cdot10^{-7}$ J\"</td><td>$A_{MN}=+6{,}0\\cdot10^{-7}$ J</td><td>Công và độ biến thiên thế năng liên hệ thế nào?</td></tr><tr><td>\"bỏ qua trọng lực\"</td><td>Chỉ có lực điện</td><td>⚠ Chỉ xét lực điện</td></tr><tr><td>\"cường độ điện trường … thế năng $W_N$ … khoảng cách từ N tới bản trên\"</td><td>Cần $E$, $W_N$, $d_N$</td><td>Đại lượng cần tìm: $W=qEd$ với $d$ tính tới mốc</td></tr><tr><td>\"đổi mốc sang bản dưới … thế năng tại N với mốc mới\"</td><td>Mốc mới ở bản dưới; cần $W'_N$</td><td>Từ N xuống mốc mới là xuôi hay ngược chiều $\\vec E$? Khoảng cách tới bản dưới là bao nhiêu?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>cho thế năng hoặc công, hỏi E hay vị trí</b> → nghĩ tới <b>W = qEd</b>, <b>A = W_M − W_N</b>.",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "buoc": [
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường E bằng bao nhiêu V/m?",
+     "dap_so": 4000,
+     "sai_so": 20,
+     "don_vi": "V/m",
+     "loi_hay_gap": "Thế sai dấu của $q$ hoặc của $d$; hoặc để nguyên $d$ tính bằng cm."
+    },
+    {
+     "tieu_de": "Thế năng tại N",
+     "hoi": "Thế năng điện tại N bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": -8.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Cộng công vào $W_M$ thay vì trừ, hoặc coi $W_N$ bằng $W_M$ vì cùng một hạt.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ liên hệ giữa công và hiệu hai thế năng, giải ra $W_N$",
+       "dung": true
+      },
+      {
+       "text": "Cộng công đã cho vào $W_M$ vì thế năng tăng thêm phần công đó",
+       "dung": false,
+       "vi_sao": "Công bằng độ giảm thế năng: $A_{MN}=W_M-W_N$, nên $W_N=W_M-A_{MN}$, không phải $W_M+A_{MN}$."
+      },
+      {
+       "text": "Coi $W_N=W_M$ vì cùng một hạt nên thế năng không đổi",
+       "dung": false,
+       "vi_sao": "Thế năng phụ thuộc vị trí: hai điểm cách mốc khác nhau thì thế năng khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách từ N tới bản trên",
+     "hoi": "Khoảng cách từ N tới bản trên bằng bao nhiêu cm?",
+     "dap_so": 4.0,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $d_N$ bằng công chia $qE$ (đó là hình chiếu của đoạn MN), hoặc dùng $W_M$ thay cho $W_N$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng $W_N=qEd_N$ với $E$ đã tìm, rồi giải ra $d_N$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d_N=\\dfrac{A_{MN}}{qE}$ rồi đổi sang cm làm đáp số",
+       "dung": false,
+       "vi_sao": "$A_{MN}/(qE)$ là hình chiếu của đoạn MN lên đường sức, không phải khoảng cách từ N tới mốc."
+      },
+      {
+       "text": "Lấy $d_N=\\dfrac{W_M}{qE}$ rồi đổi sang cm làm đáp số",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách của điểm M (đề đã cho), không phải của N."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi mốc sang bản dưới",
+     "hoi": "Với mốc ở bản dưới, thế năng tại N bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": 2.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Thế sai dấu của $d$ khi đổi mốc, hoặc tính khoảng cách từ N tới bản trên thay vì tới bản dưới.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính khoảng cách từ N tới bản dưới, xét chiều so với $\\vec E$, rồi thay vào $qEd$",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $W_N$ vì hạt không đổi vị trí nên thế năng không đổi khi đổi mốc sang bản dưới",
+       "dung": false,
+       "vi_sao": "Thế năng đo bằng công tới mốc; đổi mốc thì giá trị $W_N$ đổi."
+      },
+      {
+       "text": "Lấy $d$ là khoảng cách từ N tới bản trên như mốc cũ rồi thay vào $qEd$ để tính",
+       "dung": false,
+       "vi_sao": "Mốc mới ở bản dưới; $d$ tính từ N tới bản dưới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "Hai bản phẳng nằm ngang cách nhau $5{,}0$ cm; bản trên âm, bản dưới dương",
+     "Hạt $q=-5{,}0$ nC; mốc thế năng ở bản trên",
+     "M cách bản trên $1{,}0$ cm: $W_M=-2{,}0\\cdot10^{-7}$ J",
+     "M → N (N dưới M): $A_{MN}=+6{,}0\\cdot10^{-7}$ J"
+    ],
+    "tim": [
+     "a) $E$ giữa hai bản",
+     "b) $W_N$",
+     "c) Khoảng cách từ N tới bản trên",
+     "d) $W_N$ khi đổi mốc sang bản dưới"
+    ]
+   },
+   "cong_cu": {
+    "loai": "dien_truong_deu",
+    "L": 12,
+    "d": 5,
+    "duong": "duoi",
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 3,
+      "y": 1.5,
+      "text": "● M",
+      "a": "start"
+     },
+     {
+      "loai": "thuoc_doc",
+      "x": 2,
+      "tu": 2.5,
+      "den": 1.5,
+      "nhan": "",
+      "ben": "trai"
+     },
+     {
+      "loai": "chu",
+      "x": 1.65,
+      "y": 0.8,
+      "text": "1,0 cm",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 5.6,
+      "y": 1.5,
+      "text": "W_M = −2,0·10⁻⁷ J",
+      "a": "start"
+     },
+     {
+      "loai": "thuoc_doc",
+      "x": 12.6,
+      "tu": -2.5,
+      "den": 2.5,
+      "nhan": "5,0 cm",
+      "ben": "phai",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": -3.2,
+      "y": 4.25,
+      "text": "q = −5,0 nC · mốc: bản trên",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": -3.2,
+      "y": -4.67,
+      "text": "A_{MN} = +6,0·10⁻⁷ J; N ở dưới M",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong_suc",
+       "nhan": "E"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_M = 40 V ⇒ E = 4000 V/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W_N = W_M − A_{MN} = −8,0·10⁻⁷ J"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 7.5,
+       "y": -1.5,
+       "text": "● N",
+       "a": "start"
+      },
+      {
+       "loai": "thuoc_doc",
+       "x": 9.9,
+       "tu": 2.5,
+       "den": -1.5,
+       "nhan": "4,0 cm",
+       "ben": "trai"
+      },
+      {
+       "loai": "ghi",
+       "text": "V_N = 160 V ⇒ d = 4,0 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc_doc",
+       "x": 12.6,
+       "tu": -1.5,
+       "den": -2.5,
+       "nhan": "1,0 cm",
+       "ben": "phai"
+      },
+      {
+       "loai": "ghi",
+       "text": "Mốc dưới: W_N = qV_N = +2,0·10⁻⁷ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "W_N − W'_N = qEd = −1,0·10⁻⁶ J ✓"
+      }
+     ]
+    ],
+    "an_hat": true,
+    "de": true
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Từ nghỉ, chỉ có lực điện: công = độ tăng động năng, bài ngược tìm cường độ điện trường",
+   "topic": "Công của lực điện và thế năng điện",
+   "problem_html": "<p>Một hạt bụi mang điện $q=+4{,}0\\ \\text{nC}$, khối lượng $m=2{,}0\\cdot10^{-8}\\ \\text{kg}$, được thả từ trạng thái nghỉ tại điểm M trong điện trường đều giữa hai bản kim loại phẳng song song nằm ngang (bản trên dương, bản dưới âm). M cách bản âm $5{,}0\\ \\text{cm}$. Hạt đi thẳng xuống theo đường sức và tới bản âm với tốc độ $10\\ \\text{m/s}$. Chỉ có lực điện tác dụng lên hạt.</p><ol type=\"a\"><li>Tính công của lực điện từ M tới bản âm.</li><li>Tính cường độ điện trường giữa hai bản.</li><li>Tính tốc độ của hạt khi nó đi qua điểm P, cách bản âm $2{,}0\\ \\text{cm}$.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> chỉ có lực điện: thế năng giảm bao nhiêu, động năng tăng bấy nhiêu; từ nghỉ nên công = động năng cuối.</li><li>Công: $A=qEd$ ($d$ hình chiếu của đoạn đi) · $A=\\tfrac12mv^2$ khi từ nghỉ</li><li>⚠ <strong>Điều kiện:</strong> điện trường đều; không có lực nào khác (bỏ qua trọng lực).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Công của lực điện từ M tới bản âm</span></p><p>Thả từ nghỉ, chỉ có lực điện nên công của lực điện bằng động năng ở bản âm.</p>$$A=\\tfrac12mv^2=\\tfrac12\\cdot2{,}0\\cdot10^{-8}\\cdot10^2$$<div class=\"bt-ans\">$$A=1{,}0\\cdot10^{-6}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ điện trường</span></p><p>Đoạn đi dọc đường sức, xuôi chiều $\\vec E$: $d=+0{,}050$ m.</p>$$A=qEd\\Rightarrow E=\\dfrac{A}{qd}=\\dfrac{1{,}0\\cdot10^{-6}}{4{,}0\\cdot10^{-9}\\cdot0{,}050}$$<div class=\"bt-ans\">$$E=5000\\ \\text{V/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Công của lực điện từ M tới P</span></p><p>Hình chiếu của MP lên đường sức: $d_{MP}=5{,}0-2{,}0=3{,}0\\ \\text{cm}=0{,}030\\ \\text{m}$ (xuôi chiều $\\vec E$).</p>$$A_{MP}=qEd_{MP}=4{,}0\\cdot10^{-9}\\cdot5000\\cdot0{,}030$$<div class=\"bt-ans\">$$A_{MP}=6{,}0\\cdot10^{-7}\\ \\text{J}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tốc độ tại P</span></p><p>Từ nghỉ, chỉ có lực điện: công bằng động năng tại P.</p>$$\\tfrac12mv_P^2=A_{MP}\\Rightarrow v_P=\\sqrt{\\dfrac{2A_{MP}}{m}}=\\sqrt{\\dfrac{2\\cdot6{,}0\\cdot10^{-7}}{2{,}0\\cdot10^{-8}}}$$<div class=\"bt-ans\">$$v_P\\approx7{,}7\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thế năng tại P (chọn mốc ở bản âm): $W_P=qE\\cdot0{,}020=4{,}0\\cdot10^{-7}$ J; $W_M-W_P=1{,}0\\cdot10^{-6}-4{,}0\\cdot10^{-7}=6{,}0\\cdot10^{-7}$ J = động năng tại P ✓</p><p>$v_P\\lt10\\ \\text{m/s}$: hạt mới đi được một phần đường ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $A=1{,}0\\cdot10^{-6}\\ \\text{J}$</p><p>b) $E=5000\\ \\text{V/m}$</p><p>c) $v_P\\approx7{,}7\\ \\text{m/s}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hạt thả từ nghỉ, chỉ có lực điện</strong> và một tốc độ → công = động năng; thế năng giảm bao nhiêu thì động năng tăng bấy nhiêu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hạt bụi $q=+4{,}0$ nC, $m=2{,}0\\cdot10^{-8}$ kg, thả từ trạng thái nghỉ tại M\"</td><td>$q=+4{,}0\\cdot10^{-9}$ C; $m=2{,}0\\cdot10^{-8}$ kg; $v_M=0$</td><td>Động năng ban đầu của hạt</td></tr><tr><td>\"bản trên dương, bản dưới âm; M cách bản âm 5,0 cm\"</td><td>M cách bản âm 5,0 cm; đường sức đi xuống</td><td>Chiều lực lên $q\\gt0$; hạt đi dọc đường sức</td></tr><tr><td>\"đi thẳng xuống theo đường sức, tới bản âm với tốc độ 10 m/s\"</td><td>$v=10$ m/s tại bản âm</td><td>Quan hệ giữa công và động năng</td></tr><tr><td>\"chỉ có lực điện tác dụng\"</td><td>Không còn lực nào khác</td><td>⚠ Chỉ có lực điện tác dụng</td></tr><tr><td>\"công của lực điện từ M tới bản âm\"</td><td>Cần $A$</td><td>Đại lượng cần tìm</td></tr><tr><td>\"cường độ điện trường\"</td><td>Cần $E$</td><td>Công và hình chiếu của đoạn đi lên đường sức</td></tr><tr><td>\"tốc độ khi đi qua P, cách bản âm 2,0 cm\"</td><td>Cần $v_P$</td><td>Đoạn từ M tới P có hình chiếu bao nhiêu? Từ nghỉ nên công bằng gì?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thả từ nghỉ, chỉ có lực điện</b> và <b>tốc độ</b> → nghĩ tới <b>công = động năng</b>.",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Công của lực điện từ M tới bản âm",
+     "hoi": "Công của lực điện từ M tới bản âm bằng bao nhiêu? (nhập số, đơn vị $10^{-6}$ J)",
+     "dap_so": 1.0,
+     "sai_so": 0.02,
+     "don_vi": "×10⁻⁶ J",
+     "loi_hay_gap": "Dùng $mv^2$ (thiếu hệ số một nửa) hoặc dùng $mgh$ cho lực điện."
+    },
+    {
+     "tieu_de": "Cường độ điện trường",
+     "hoi": "Cường độ điện trường E bằng bao nhiêu V/m?",
+     "dap_so": 5000,
+     "sai_so": 50,
+     "don_vi": "V/m",
+     "loi_hay_gap": "Dùng khoảng cách đổi sai (cm thay vì m) nên $E$ lệch $100$ lần; hoặc lấy công chia cho $q$ mà quên chia cho $d$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đặt công bằng $qEd$ với $d$ là khoảng từ M tới bản âm",
+       "dung": true
+      },
+      {
+       "text": "Lấy $E=\\dfrac{A}{q}$ với $A=\\tfrac12mv^2$ là công của lực điện",
+       "dung": false,
+       "vi_sao": "$A/q$ là hiệu điện thế, đơn vị V; cần chia thêm cho $d$ (công $A=qEd$) mới ra cường độ điện trường."
+      },
+      {
+       "text": "Lấy $E=\\dfrac{mv^2}{qd}$ với $d$ là khoảng từ M tới bản âm",
+       "dung": false,
+       "vi_sao": "Công bằng $\\tfrac12mv^2$, có hệ số một nửa; thiếu hệ số này làm $E$ gấp đôi."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công của lực điện từ M tới P",
+     "hoi": "Công của lực điện từ M tới P bằng bao nhiêu? (nhập số, đơn vị $10^{-7}$ J)",
+     "dap_so": 6.0,
+     "sai_so": 0.05,
+     "don_vi": "×10⁻⁷ J",
+     "loi_hay_gap": "Lấy $d$ là khoảng cách từ P tới bản âm (đoạn P tới mốc) thay vì hình chiếu của đoạn MP.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hình chiếu của đoạn MP lên đường sức nhân $qE$",
+       "dung": true
+      },
+      {
+       "text": "Lấy khoảng cách từ P tới bản âm làm $d$ rồi nhân $qE$",
+       "dung": false,
+       "vi_sao": "Đó là $d$ của đoạn từ P tới mốc, cho thế năng $W_P$; công của đoạn MP dùng hình chiếu của MP."
+      },
+      {
+       "text": "Lấy luôn công của cả đoạn từ M tới bản âm rồi chia theo tỉ lệ",
+       "dung": false,
+       "vi_sao": "Hạt mới tới P, chưa tới bản âm; công của đoạn MP nhỏ hơn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tốc độ tại P",
+     "hoi": "Tốc độ của hạt tại P bằng bao nhiêu m/s?",
+     "dap_so": 7.7,
+     "sai_so": 0.1,
+     "don_vi": "m/s",
+     "loi_hay_gap": "Cho rằng tốc độ tỉ lệ thuận với quãng đường đã đi, hoặc dùng $d$ của đoạn P tới bản âm làm công.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ nghỉ: đặt công bằng động năng tại P rồi giải ra $v_P$",
+       "dung": true
+      },
+      {
+       "text": "Tốc độ tỉ lệ thuận với quãng đường đã đi nên lấy theo tỉ lệ so với tốc độ ở bản âm",
+       "dung": false,
+       "vi_sao": "Lực điện không đổi nên $v^2$ tỉ lệ quãng đường, không phải $v$."
+      },
+      {
+       "text": "Dùng lại tốc độ ở bản âm vì hạt chỉ chịu lực điện",
+       "dung": false,
+       "vi_sao": "Tốc độ tăng dần theo quãng đường; tốc độ ở bản âm là giá trị cuối, không phải tại P."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "Hạt $q=+4{,}0$ nC, $m=2{,}0\\cdot10^{-8}$ kg, thả nghỉ tại M",
+     "Hai bản nằm ngang (trên dương, dưới âm); M cách bản âm $5{,}0$ cm",
+     "Tới bản âm với $v=10$ m/s; chỉ có lực điện"
+    ],
+    "tim": [
+     "a) Công của lực điện từ M tới bản âm",
+     "b) $E$",
+     "c) Tốc độ tại P cách bản âm $2{,}0$ cm"
+    ]
+   },
+   "cong_cu": {
+    "loai": "dien_truong_deu",
+    "L": 12,
+    "d": 8,
+    "duong": "tren",
+    "hinh": [
+     {
+      "loai": "chu",
+      "x": 4,
+      "y": 1,
+      "text": "● M",
+      "a": "start"
+     },
+     {
+      "loai": "duong_suc",
+      "nhan": "E"
+     },
+     {
+      "loai": "luc",
+      "huong": "xuong",
+      "nhan": "F"
+     },
+     {
+      "loai": "thuoc_doc",
+      "x": 11,
+      "tu": -4,
+      "den": 1,
+      "nhan": "5,0 cm",
+      "ben": "phai"
+     },
+     {
+      "loai": "chu",
+      "x": 7,
+      "y": -2,
+      "text": "● P",
+      "a": "start"
+     },
+     {
+      "loai": "thuoc_doc",
+      "x": 8,
+      "tu": -4,
+      "den": -2,
+      "ben": "phai",
+      "nhan": ""
+     },
+     {
+      "loai": "chu",
+      "x": 7.6,
+      "y": -3.6,
+      "text": "2,0 cm",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": -3.2,
+      "y": 6.8,
+      "text": "q = +4,0 nC;  m = 2,0·10⁻⁸ kg",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": -3.2,
+      "y": -7.33,
+      "text": "v_M = 0;  tới bản âm v = 10 m/s",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "A = ½mv² = 1,0·10⁻⁶ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "E = A/(q·d) = 5000 V/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A_{MP} = qE·0,03 = 6,0·10⁻⁷ J"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "½mv² = A_{MP} ⇒ v_P ≈ 7,7 m/s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "v_P = 10·√0,6 ≈ 7,7 m/s ✓"
+      }
+     ]
+    ],
+    "an_hat": true,
+    "de": true
+   }
+  }
+ ]
+}

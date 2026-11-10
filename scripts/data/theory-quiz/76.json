@@ -347,28 +347,28 @@
    "question": "Trên sân băng, một nhóm người nắm tay thành một hàng thẳng, cả hàng quay đều quanh người đứng trụ ở đầu hàng. Xét người thứ hai (gần tâm) và người ngoài cùng.",
    "statements": [
     {
-     "text": "Hai người có cùng tốc độ góc.",
-     "answer": true
-    },
-    {
      "text": "Người ngoài cùng có chu kì quay nhỏ hơn người thứ hai.",
      "answer": false
     },
     {
-     "text": "Người ngoài cùng có tốc độ lớn hơn người thứ hai.",
+     "text": "Vì nắm tay nhau nên hai người có cùng tốc độ.",
+     "answer": false
+    },
+    {
+     "text": "Hai người có cùng tốc độ góc.",
      "answer": true
     },
     {
-     "text": "Vì nắm tay nhau nên hai người có cùng tốc độ.",
-     "answer": false
+     "text": "Người ngoài cùng có tốc độ lớn hơn người thứ hai.",
+     "answer": true
     }
    ],
    "explanation": "Hàng luôn thẳng nên mọi người quét cùng góc trong cùng thời gian: cùng $\\omega$, cùng $T$. Theo $v = \\omega r$, người xa tâm hơn có tốc độ lớn hơn.",
    "distractorNotes": {
-    "0": "Hàng luôn thẳng nên mọi người quét cùng góc trong cùng thời gian; tốc độ góc không thể khác nhau.",
-    "1": "Cả hàng quay hết một vòng cùng lúc nên chu kì như nhau, không phụ thuộc vị trí trong hàng.",
-    "2": "Vòng tròn ngoài dài hơn nhưng đi hết trong cùng thời gian, nên tốc độ người ngoài chắc chắn lớn hơn.",
-    "3": "Nắm tay chỉ làm chung tốc độ góc; tốc độ $v = \\omega r$ vẫn khác theo khoảng cách tới tâm."
+    "0": "Cả hàng quay hết một vòng cùng lúc nên chu kì như nhau, không phụ thuộc vị trí trong hàng.",
+    "1": "Nắm tay chỉ làm chung tốc độ góc; tốc độ $v = \\omega r$ vẫn khác theo khoảng cách tới tâm.",
+    "2": "Hàng luôn thẳng nên mọi người quét cùng góc trong cùng thời gian; tốc độ góc không thể khác nhau.",
+    "3": "Vòng tròn ngoài dài hơn nhưng đi hết trong cùng thời gian, nên tốc độ người ngoài chắc chắn lớn hơn."
    }
   },
   {
@@ -386,7 +386,7 @@
      "answer": true
     },
     {
-     "text": "Vectơ vận tốc của xe không đổi vì tốc độ không đổi.",
+     "text": "Vận tốc chỉ đổi hướng nên xe không có gia tốc.",
      "answer": false
     },
     {
@@ -394,16 +394,16 @@
      "answer": true
     },
     {
-     "text": "Vận tốc chỉ đổi hướng nên xe không có gia tốc.",
+     "text": "Vectơ vận tốc của xe không đổi vì tốc độ không đổi.",
      "answer": false
     }
    ],
    "explanation": "Tốc độ (độ lớn) không đổi nhưng vectơ vận tốc tiếp tuyến nên đổi hướng liên tục. Bài nêu: vận tốc đổi, dù chỉ đổi hướng, thì vật có gia tốc.",
    "distractorNotes": {
     "0": "Đồng hồ tốc độ đọc độ lớn vận tốc, mà độ lớn này không đổi khi xe chạy tròn đều.",
-    "1": "Vận tốc có hướng; hướng tiếp tuyến thay đổi theo vị trí nên vectơ vận tốc không thể giữ nguyên.",
+    "1": "Vectơ vận tốc thay đổi, dù chỉ thay đổi hướng, nên xe nhất định có gia tốc.",
     "2": "Vận tốc có phương tiếp tuyến, mà tiếp tuyến tại mỗi điểm luôn vuông góc với bán kính tại đó.",
-    "3": "Vectơ vận tốc thay đổi, dù chỉ thay đổi hướng, nên xe nhất định có gia tốc."
+    "3": "Vận tốc có hướng; hướng tiếp tuyến thay đổi theo vị trí nên vectơ vận tốc không thể giữ nguyên."
    }
   },
   {
@@ -417,11 +417,11 @@
    "question": "Một vật chuyển động tròn đều trên đường tròn bán kính $r$, có chu kì $T$, tần số $f$, tốc độ góc $\\omega$ và tốc độ $v$.",
    "statements": [
     {
-     "text": "$\\omega = \\dfrac{2\\pi}{T}$",
+     "text": "$f = \\dfrac{1}{T}$",
      "answer": true
     },
     {
-     "text": "$f = \\dfrac{1}{T}$",
+     "text": "$\\omega = \\dfrac{2\\pi}{T}$",
      "answer": true
     },
     {
@@ -435,8 +435,8 @@
    ],
    "explanation": "Một vòng $2\\pi$ rad đi hết trong $T$: $\\omega = 2\\pi/T = 2\\pi f$, $f = 1/T$, $v = 2\\pi r/T = 2\\pi f r$.",
    "distractorNotes": {
-    "0": "Một vòng ứng với $2\\pi$ rad đi hết trong thời gian $T$, nên góc quét mỗi giây đúng bằng $2\\pi/T$.",
-    "1": "Tần số là số vòng mỗi giây, chính là nghịch đảo của thời gian đi một vòng, nên hệ thức đúng.",
+    "0": "Tần số là số vòng mỗi giây, chính là nghịch đảo của thời gian đi một vòng, nên hệ thức đúng.",
+    "1": "Một vòng ứng với $2\\pi$ rad đi hết trong thời gian $T$, nên góc quét mỗi giây đúng bằng $2\\pi/T$.",
     "2": "Nhầm $f$ với $T$: tốc độ góc tỉ lệ thuận với tần số, phải là $\\omega = 2\\pi f$.",
     "3": "Chia cho $f$ là nhầm với chia cho $T$; đúng phải là $v = 2\\pi r/T = 2\\pi f r$."
    }
@@ -452,10 +452,6 @@
    "question": "Xét một điểm trên vành một bánh xe quay đều; bán kính quỹ đạo $r$ của điểm đó giữ nguyên.",
    "statements": [
     {
-     "text": "Tần số quay tăng gấp đôi thì tốc độ góc tăng gấp đôi.",
-     "answer": true
-    },
-    {
      "text": "Chu kì quay tăng gấp đôi thì tốc độ góc tăng gấp đôi.",
      "answer": false
     },
@@ -466,14 +462,18 @@
     {
      "text": "Tốc độ góc tăng gấp đôi thì chu kì cũng tăng gấp đôi.",
      "answer": false
+    },
+    {
+     "text": "Tần số quay tăng gấp đôi thì tốc độ góc tăng gấp đôi.",
+     "answer": true
     }
    ],
    "explanation": "$\\omega = 2\\pi f$ tỉ lệ thuận với $f$ và tỉ lệ nghịch với $T$; với $r$ không đổi, $v = \\omega r = 2\\pi f r$ tỉ lệ thuận với $f$.",
    "distractorNotes": {
-    "0": "$\\omega = 2\\pi f$ là quan hệ tỉ lệ thuận, nên tần số gấp đôi thì tốc độ góc chắc chắn gấp đôi.",
-    "1": "Đảo tỉ lệ: $\\omega = 2\\pi/T$ tỉ lệ nghịch với $T$, chu kì gấp đôi thì tốc độ góc giảm một nửa.",
-    "2": "Với $r$ giữ nguyên, $v = 2\\pi f r$ tỉ lệ thuận với $f$, nên tốc độ đúng là gấp đôi.",
-    "3": "Quay nhanh hơn thì một vòng tốn ít thời gian hơn; $T = 2\\pi/\\omega$ giảm một nửa chứ không tăng."
+    "0": "Đảo tỉ lệ: $\\omega = 2\\pi/T$ tỉ lệ nghịch với $T$, chu kì gấp đôi thì tốc độ góc giảm một nửa.",
+    "1": "Với $r$ giữ nguyên, $v = 2\\pi f r$ tỉ lệ thuận với $f$, nên tốc độ đúng là gấp đôi.",
+    "2": "Quay nhanh hơn thì một vòng tốn ít thời gian hơn; $T = 2\\pi/\\omega$ giảm một nửa chứ không tăng.",
+    "3": "$\\omega = 2\\pi f$ là quan hệ tỉ lệ thuận, nên tần số gấp đôi thì tốc độ góc chắc chắn gấp đôi."
    }
   },
   {
@@ -487,12 +487,12 @@
    "question": "Khi mô tả vị trí vật trong chuyển động tròn, ta cần đổi đơn vị góc giữa độ và radian.",
    "statements": [
     {
-     "text": "$180^\\circ = \\pi\\ \\text{rad}$",
-     "answer": true
-    },
-    {
      "text": "Đổi từ độ sang rad, ta nhân số đo độ với $\\dfrac{180}{\\pi}$.",
      "answer": false
+    },
+    {
+     "text": "$180^\\circ = \\pi\\ \\text{rad}$",
+     "answer": true
     },
     {
      "text": "Một vòng tròn ứng với góc $2\\pi\\ \\text{rad}$.",
@@ -505,8 +505,8 @@
    ],
    "explanation": "Từ $180^\\circ = \\pi$ rad: độ sang rad nhân $\\pi/180$; cả vòng dài $2\\pi r$ ứng với $2\\pi$ rad; $90^\\circ = \\pi/2$ rad.",
    "distractorNotes": {
-    "0": "Nửa vòng có cung $\\pi r$, chia cho $r$ được $\\pi$ rad, nên hệ thức này đúng.",
-    "1": "Nhân $180/\\pi$ là chiều đổi rad sang độ; đổi độ sang rad phải nhân $\\pi/180$.",
+    "0": "Nhân $180/\\pi$ là chiều đổi rad sang độ; đổi độ sang rad phải nhân $\\pi/180$.",
+    "1": "Nửa vòng có cung $\\pi r$, chia cho $r$ được $\\pi$ rad, nên hệ thức này đúng.",
     "2": "Cả vòng có cung $2\\pi r$, chia cho bán kính $r$ được đúng $2\\pi$ rad.",
     "3": "$\\pi/4$ ứng với $45^\\circ$; góc vuông là nửa của $180^\\circ$, tức $\\pi/2$ rad."
    }
@@ -522,10 +522,6 @@
    "question": "Một bánh xe đạp có đường kính $d$, quay đều $n$ vòng/phút quanh trục. Xét một điểm trên vành bánh.",
    "statements": [
     {
-     "text": "Bán kính quỹ đạo của điểm đó là $r = \\dfrac{d}{2}$.",
-     "answer": true
-    },
-    {
      "text": "Tần số quay của bánh là $f = \\dfrac{n}{60}$ (Hz).",
      "answer": true
     },
@@ -536,14 +532,18 @@
     {
      "text": "Muốn giữ nguyên tốc độ điểm trên vành, bánh có đường kính bằng một nửa phải quay chậm đi một nửa.",
      "answer": false
+    },
+    {
+     "text": "Bán kính quỹ đạo của điểm đó là $r = \\dfrac{d}{2}$.",
+     "answer": true
     }
    ],
    "explanation": "Gặp đường kính thì chia đôi, gặp vòng/phút thì chia 60 rồi nhân $2\\pi$: $\\omega = 2\\pi n/60$. Giữ $v = \\omega r$ mà $r$ giảm một nửa thì $\\omega$ phải gấp đôi.",
    "distractorNotes": {
-    "0": "Điểm trên vành cách trục đúng một nửa đường kính, nên bán kính quỹ đạo chắc chắn là $d/2$.",
-    "1": "Một phút có 60 giây, chia số vòng mỗi phút cho 60 được đúng số vòng mỗi giây, tức tần số.",
-    "2": "Quên chia 60: $n$ là số vòng mỗi phút, phải đổi ra vòng/s rồi mới nhân $2\\pi$.",
-    "3": "Làm ngược: giữ $v = \\omega r$ không đổi mà $r$ giảm một nửa thì $\\omega$ phải gấp đôi."
+    "0": "Một phút có 60 giây, chia số vòng mỗi phút cho 60 được đúng số vòng mỗi giây, tức tần số.",
+    "1": "Quên chia 60: $n$ là số vòng mỗi phút, phải đổi ra vòng/s rồi mới nhân $2\\pi$.",
+    "2": "Làm ngược: giữ $v = \\omega r$ không đổi mà $r$ giảm một nửa thì $\\omega$ phải gấp đôi.",
+    "3": "Điểm trên vành cách trục đúng một nửa đường kính, nên bán kính quỹ đạo chắc chắn là $d/2$."
    }
   }
  ]

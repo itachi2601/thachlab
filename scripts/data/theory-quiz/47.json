@@ -347,12 +347,12 @@
    "question": "Nhãn một bộ nguồn trong phòng thực hành ghi: Input 220 V ~; Output 3–12 V DC, có hai cực ra màu đỏ và màu xanh. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Input là chỗ bộ nguồn nhận điện từ ổ cắm.",
-     "answer": true
-    },
-    {
      "text": "Output của bộ nguồn này cấp dòng điện xoay chiều cho mạch.",
      "answer": false
+    },
+    {
+     "text": "Input là chỗ bộ nguồn nhận điện từ ổ cắm.",
+     "answer": true
     },
     {
      "text": "Có thể nối dụng cụ 6 V vào chỗ Input vì đó là chỗ có điện.",
@@ -365,8 +365,8 @@
    ],
    "explanation": "Input nhận 220 V ~ từ ổ cắm; Output ghi DC nên cấp dòng một chiều; nối dụng cụ vào Input là sai chỗ; đỏ là cực dương, xanh là cực âm.",
    "distractorNotes": {
-    "0": "Input nghĩa là đầu vào, nơi điện từ ổ cắm đi vào bộ nguồn, nên không thể coi là sai.",
-    "1": "Output ghi DC, tức dòng một chiều; dấu ~ chỉ xuất hiện ở phía Input.",
+    "0": "Output ghi DC, tức dòng một chiều; dấu ~ chỉ xuất hiện ở phía Input.",
+    "1": "Input nghĩa là đầu vào, nơi điện từ ổ cắm đi vào bộ nguồn, nên không thể coi là sai.",
     "2": "Input là chỗ bộ nguồn nhận 220 V, nối dụng cụ 6 V vào đó là sai chỗ và nguy hiểm.",
     "3": "Theo quy ước màu, đỏ ứng với cực dương nên không thể coi phát biểu này là sai."
    }
@@ -417,11 +417,11 @@
    "question": "Trong một tiết thực hành có thí nghiệm dùng tia laser và thí nghiệm nung nóng bằng đèn cồn. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Nên hướng tia laser vào màn chắn thấp hơn tầm mắt và không nhìn vào tia.",
-     "answer": true
+     "text": "Tia laser sau khi phản xạ qua gương thì không còn hại mắt.",
+     "answer": false
     },
     {
-     "text": "Tia laser sau khi phản xạ qua gương thì không còn hại mắt.",
+     "text": "Nếu chưa có dụng cụ hỗ trợ, có thể chạm thật nhanh vào vật nóng.",
      "answer": false
     },
     {
@@ -429,16 +429,16 @@
      "answer": true
     },
     {
-     "text": "Nếu chưa có dụng cụ hỗ trợ, có thể chạm thật nhanh vào vật nóng.",
-     "answer": false
+     "text": "Nên hướng tia laser vào màn chắn thấp hơn tầm mắt và không nhìn vào tia.",
+     "answer": true
     }
    ],
    "explanation": "Tia laser rất tập trung, tia phản xạ vẫn hại mắt như tia thẳng; càng xa nguồn nhiệt càng bớt nóng nên phải giữ khoảng cách; không chạm vật nóng khi chưa có dụng cụ hỗ trợ.",
    "distractorNotes": {
-    "0": "Cho tia dừng ở màn chắn thấp hơn tầm mắt thì tia không vào mắt ai, nên đây là cách làm đúng.",
-    "1": "Tưởng phản xạ làm tia yếu đi; thực tế tia phản xạ qua gương vẫn hại mắt như tia thẳng.",
+    "0": "Tưởng phản xạ làm tia yếu đi; thực tế tia phản xạ qua gương vẫn hại mắt như tia thẳng.",
+    "1": "Chạm nhanh vẫn gây bỏng; quy tắc là không chạm vật nóng khi chưa có dụng cụ hỗ trợ.",
     "2": "Quy tắc yêu cầu giữ khoảng cách an toàn khi nung nóng hoặc có vật bắn ra, nên không thể coi là sai.",
-    "3": "Chạm nhanh vẫn gây bỏng; quy tắc là không chạm vật nóng khi chưa có dụng cụ hỗ trợ."
+    "3": "Cho tia dừng ở màn chắn thấp hơn tầm mắt thì tia không vào mắt ai, nên đây là cách làm đúng."
    }
   },
   {
@@ -452,11 +452,11 @@
    "question": "Nhóm thực hành mắc bóng đèn ghi 6 V, DC vào Output DC của bộ nguồn, núm đang ở vạch 12 V. Một cốc nước đặt sát ổ cắm, dây nguồn vắt ngang lối đi, bạn Nam định tháo bóng khi nguồn còn bật, giáo viên chưa cho phép bắt đầu. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Để núm ở vạch 12 V cho bóng 6 V là lỗi về hiệu điện thế.",
-     "answer": true
+     "text": "Sửa xong các lỗi, nhóm có thể tự bật nguồn mà không cần giáo viên.",
+     "answer": false
     },
     {
-     "text": "Cốc nước đặt sát ổ cắm vi phạm quy tắc an toàn điện.",
+     "text": "Để núm ở vạch 12 V cho bóng 6 V là lỗi về hiệu điện thế.",
      "answer": true
     },
     {
@@ -464,16 +464,16 @@
      "answer": false
     },
     {
-     "text": "Sửa xong các lỗi, nhóm có thể tự bật nguồn mà không cần giáo viên.",
-     "answer": false
+     "text": "Cốc nước đặt sát ổ cắm vi phạm quy tắc an toàn điện.",
+     "answer": true
     }
    ],
    "explanation": "Vạch 12 V gấp đôi định mức 6 V; nước phải để xa thiết bị điện; phải tắt nguồn trước khi tháo; chỉ bật nguồn khi giáo viên kiểm tra và cho phép.",
    "distractorNotes": {
-    "0": "12 V gấp đôi định mức 6 V ghi trên nhãn bóng, đây chắc chắn là lỗi quá áp.",
-    "1": "Quy tắc cấm để nước hay dung dịch dẫn điện gần thiết bị điện, nên đây đúng là vi phạm.",
+    "0": "Sửa lỗi là cần nhưng chưa đủ; chỉ được bật nguồn khi giáo viên kiểm tra và cho phép.",
+    "1": "12 V gấp đôi định mức 6 V ghi trên nhãn bóng, đây chắc chắn là lỗi quá áp.",
     "2": "Thao tác nhanh không làm dây hết điện; phải tắt công tắc nguồn trước khi cầm hoặc tháo.",
-    "3": "Sửa lỗi là cần nhưng chưa đủ; chỉ được bật nguồn khi giáo viên kiểm tra và cho phép."
+    "3": "Quy tắc cấm để nước hay dung dịch dẫn điện gần thiết bị điện, nên đây đúng là vi phạm."
    }
   },
   {
@@ -487,15 +487,15 @@
    "question": "Được giáo viên cho phép, học sinh đặt núm bộ nguồn lần lượt ở các vạch 3; 6; 9; 12 V và mắc vôn kế một chiều vào hai cực Output. Số chỉ vôn kế luôn cao hơn vạch một chút. Xét các phát biểu sau:",
    "statements": [
     {
-     "text": "Giá trị ghi ở vạch núm bộ nguồn chỉ là giá trị gần đúng.",
-     "answer": true
-    },
-    {
      "text": "Số chỉ cao hơn vạch chứng tỏ học sinh đã thao tác đo sai.",
      "answer": false
     },
     {
      "text": "Khi mắc vôn kế, cực đỏ của vôn kế được nối với cực + của nguồn.",
+     "answer": true
+    },
+    {
+     "text": "Giá trị ghi ở vạch núm bộ nguồn chỉ là giá trị gần đúng.",
      "answer": true
     },
     {
@@ -505,9 +505,9 @@
    ],
    "explanation": "Độ lệch đều theo vạch là sai số của chính bộ nguồn, nên vạch chỉ là gần đúng; vôn kế nối cực đỏ vào cực +; vạch 12 V gấp đôi định mức 6 V.",
    "distractorNotes": {
-    "0": "Số đo luôn lệch khỏi vạch ở mọi mức, chứng tỏ vạch chỉ là giá trị gần đúng.",
-    "1": "Độ lệch tăng đều theo vạch, khoảng 3 %, là sai số của chính bộ nguồn chứ không phải lỗi thao tác.",
-    "2": "Màu đỏ là cực dương, nên cực đỏ của vôn kế phải nối với cực + của nguồn; không thể coi là sai.",
+    "0": "Độ lệch tăng đều theo vạch, khoảng 3 %, là sai số của chính bộ nguồn chứ không phải lỗi thao tác.",
+    "1": "Màu đỏ là cực dương, nên cực đỏ của vôn kế phải nối với cực + của nguồn; không thể coi là sai.",
+    "2": "Số đo luôn lệch khỏi vạch ở mọi mức, chứng tỏ vạch chỉ là giá trị gần đúng.",
     "3": "Nguồn ở vạch 12 V cho khoảng 12,4 V, gấp đôi định mức 6 V của bóng, nên không thể coi là sai."
    }
   },
@@ -522,28 +522,28 @@
    "question": "Trong lúc thực hành, đèn cồn bị đổ, cồn cháy lan trên mặt bàn gần bộ nguồn. Xét các phát biểu sau về cách xử lí và các quy tắc liên quan:",
    "statements": [
     {
-     "text": "Cần báo ngay cho giáo viên và làm theo hướng dẫn của giáo viên.",
+     "text": "Sau mỗi thí nghiệm phải vệ sinh, sắp gọn thiết bị và bỏ chất thải đúng nơi.",
      "answer": true
-    },
-    {
-     "text": "Phải tắt nguồn điện ngay, kể cả khi phải đi qua chỗ đang cháy.",
-     "answer": false
     },
     {
      "text": "Nên tạt nước ngay vì nước luôn dập tắt được cồn đang cháy.",
      "answer": false
     },
     {
-     "text": "Sau mỗi thí nghiệm phải vệ sinh, sắp gọn thiết bị và bỏ chất thải đúng nơi.",
+     "text": "Phải tắt nguồn điện ngay, kể cả khi phải đi qua chỗ đang cháy.",
+     "answer": false
+    },
+    {
+     "text": "Cần báo ngay cho giáo viên và làm theo hướng dẫn của giáo viên.",
      "answer": true
     }
    ],
    "explanation": "Khi có sự cố: dừng, lùi ra → tắt nguồn nếu an toàn → báo giáo viên → làm theo hướng dẫn; không tạt nước vội vì cồn tan trong nước, loang theo và cháy lan; làm xong phải dọn sạch.",
    "distractorNotes": {
-    "0": "Báo giáo viên và làm theo hướng dẫn là hai bước bắt buộc khi có sự cố, nên không thể coi là sai.",
-    "1": "Chỉ tắt nguồn khi việc đó an toàn; không được đi qua chỗ cồn đổ hay chỗ đang cháy.",
-    "2": "Tin nước luôn dập được lửa; thực tế cồn tan trong nước, loang theo và làm cháy lan rộng hơn.",
-    "3": "Đây là quy tắc của nhóm sau khi làm: vệ sinh, sắp gọn, bỏ chất thải đúng nơi."
+    "0": "Đây là quy tắc của nhóm sau khi làm: vệ sinh, sắp gọn, bỏ chất thải đúng nơi.",
+    "1": "Tin nước luôn dập được lửa; thực tế cồn tan trong nước, loang theo và làm cháy lan rộng hơn.",
+    "2": "Chỉ tắt nguồn khi việc đó an toàn; không được đi qua chỗ cồn đổ hay chỗ đang cháy.",
+    "3": "Báo giáo viên và làm theo hướng dẫn là hai bước bắt buộc khi có sự cố, nên không thể coi là sai."
    }
   }
  ]

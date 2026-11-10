@@ -1,0 +1,247 @@
+{
+  "cnc_key": "tool-setup-turn",
+  "title": "Kiểm tra cài đặt dao tiện",
+  "duration_minutes": 30,
+  "questions": [
+    {
+      "type": "multiple_choice",
+      "question": "Trong năm điểm chuẩn của máy tiện, W là điểm nào?",
+      "options": [
+        "Gốc máy",
+        "Gốc phôi",
+        "Điểm tham chiếu",
+        "Đỉnh mũi dao"
+      ],
+      "answer": 1,
+      "explanation": "M là gốc máy, W là gốc phôi, R là điểm tham chiếu, N/T là chuẩn dao, P là đỉnh mũi dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong năm điểm chuẩn của máy tiện, P là điểm nào?",
+      "options": [
+        "Gốc phôi",
+        "Chuẩn dao",
+        "Đỉnh mũi dao",
+        "Gốc máy"
+      ],
+      "answer": 2,
+      "explanation": "P là đỉnh mũi dao, điểm thực sự cắt vào phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong năm điểm chuẩn của máy tiện, R là điểm nào?",
+      "options": [
+        "Điểm tham chiếu",
+        "Gốc máy",
+        "Gốc phôi",
+        "Chuẩn dao"
+      ],
+      "answer": 0,
+      "explanation": "R là điểm tham chiếu, máy về R khi nhấn Reference."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Gốc phôi W được cài ở trang nào?",
+      "options": [
+        "Offset Setting, Offset Geometry",
+        "Offset Setting, Work Shift",
+        "Trang Position",
+        "Trang Program MDI"
+      ],
+      "answer": 1,
+      "explanation": "Work Shift lưu độ dời gốc từ M sang W; Offset Geometry lưu độ dời của từng dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Một hàng trong Offset Geometry lưu những giá trị nào của dao?",
+      "options": [
+        "S và F của dao",
+        "X, Z của gốc phôi",
+        "Số hiệu chương trình",
+        "X, Z, R, T"
+      ],
+      "answer": 3,
+      "explanation": "Mỗi dao một hàng gồm X, Z, R (bán kính mũi dao) và T (hướng mũi dao)."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Khi gá dao, mũi dao phải đặt ở độ cao nào so với phôi?",
+      "options": [
+        "Cao hơn tâm phôi một chút",
+        "Thấp hơn tâm phôi một chút",
+        "Ngang tâm phôi",
+        "Tùy loại dao, không cần chỉnh"
+      ],
+      "answer": 2,
+      "explanation": "Mũi dao phải ngang tâm phôi; cao hay thấp hơn đều làm cắt kém."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dụng cụ dùng để chỉnh mũi dao về đúng độ cao tâm là gì?",
+      "options": [
+        "Căn chêm",
+        "Thước cặp",
+        "Chìa khóa mâm cặp",
+        "Cờ lê lục giác"
+      ],
+      "answer": 0,
+      "explanation": "Căn chêm kê dưới thân dao để nâng mũi dao về đúng độ cao tâm; lục giác chỉ dùng để siết."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trong hàng Geometry, hai giá trị R và T có nghĩa gì?",
+      "options": [
+        "Bán kính phôi và số dao",
+        "Điểm tham chiếu và số dao",
+        "Bán kính mũi dao và hướng mũi dao",
+        "Bước tiến và tốc độ quay"
+      ],
+      "answer": 2,
+      "explanation": "Khi có bù bán kính mũi dao, nhập R là bán kính mũi dao và T là hướng mũi dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Mũi dao gá cao hơn tâm phôi sẽ gây ra hiện tượng gì?",
+      "options": [
+        "Vạt mặt còn sót lõi ở tâm",
+        "Góc sau giảm, dao cọ vào phôi",
+        "Phôi bị lệch khỏi mâm cặp",
+        "Không ảnh hưởng tới việc cắt"
+      ],
+      "answer": 1,
+      "explanation": "Mũi dao cao hơn tâm làm góc sau giảm nên mặt sau dao cọ vào phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Vì sao phải xóa Work Shift và Geometry cũ trước khi cài cho phôi, dao mới?",
+      "options": [
+        "Để máy chạy nhanh hơn",
+        "Để máy tự đo lại gốc phôi",
+        "Để không phải về Reference",
+        "Tránh dùng nhầm số của lần gá trước"
+      ],
+      "answer": 3,
+      "explanation": "Số cũ là của lần gá khác; để lại dễ nhập lẫn hoặc dùng nhầm, dẫn tới dao đi sai vị trí."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đo Geometry Z cho dao 2, em chạm mũi dao vào mặt đầu phôi rồi nhập Z0. Vì sao là Z0?",
+      "options": [
+        "Mặt đầu là gốc W nên mũi dao đang ở Z0",
+        "Vì máy luôn nhận Z0 cho mọi dao",
+        "Vì điểm R nằm trên mặt đầu phôi",
+        "Vì dao số 2 là dao chuẩn của máy"
+      ],
+      "answer": 0,
+      "explanation": "Gốc W đặt ở mặt đầu phôi, nên khi P chạm mặt đầu thì P đang ở Z = 0 của phôi."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Đo Geometry X cho một dao, cách làm đúng theo bài là gì?",
+      "options": [
+        "Chạm tâm phôi, nhập X0, nhấn Measure",
+        "Chạm mặt đầu, nhập X0, nhấn Measure",
+        "Đọc X ở POS, đổi dấu, nhập Shift Value",
+        "Chạm nhẹ đường kính đã biết, nhập X đó, nhấn Measure"
+      ],
+      "answer": 3,
+      "explanation": "Mũi dao chạm đường kính đã biết thì P đang ở X bằng đường kính đó; nhập giá trị này rồi Measure."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cài Work Shift bằng cách chạm dao, sau khi đọc Z máy ở POS em làm gì?",
+      "options": [
+        "Nhập nguyên dấu vào Geometry Z",
+        "Đổi dấu rồi nhập vào Z của Shift Value",
+        "Nhập vào X của Shift Value",
+        "Cộng thêm MA rồi nhập vào Geometry"
+      ],
+      "answer": 1,
+      "explanation": "Theo cách 2: chạm mặt đầu, đọc Z machine ở POS, đổi dấu, nhập vào Z của Shift Value."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Câu nào nói đúng sự khác nhau giữa Work Shift và Geometry Offset?",
+      "options": [
+        "Work Shift: mỗi dao một hàng; Geometry: một giá trị cho phôi",
+        "Cả hai đều chỉ cài một lần khi mua máy",
+        "Work Shift gắn với phôi; Geometry gắn với từng dao",
+        "Cả hai đều do máy tự xác lập khi về Reference"
+      ],
+      "answer": 2,
+      "explanation": "Work Shift là gốc phôi W, một giá trị cho cả lần gá; Geometry là mũi dao P, mỗi dao một hàng."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Trước khi chạm dao đo Geometry cho dao số 2, trong MDI em chạy những câu nào?",
+      "options": [
+        "M3 S500; rồi nhấn Reference",
+        "T0202 M6; rồi nhấn Measure ngay",
+        "T0202 M6; rồi M3 hoặc M4 S500;",
+        "Nhập Work Shift rồi T0202 M6;"
+      ],
+      "answer": 2,
+      "explanation": "Gọi dao 2 ra vị trí cắt, cho trục chính quay đúng chiều, sau đó mới về JOG chạm dao."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao được siết chặt trên mâm dao bằng dụng cụ nào?",
+      "options": [
+        "Căn chêm",
+        "Chìa khóa mâm cặp",
+        "Thước cặp",
+        "Cờ lê lục giác"
+      ],
+      "answer": 3,
+      "explanation": "Dao gá đúng chiều rồi siết bằng lục giác; căn chêm chỉ dùng để canh độ cao tâm."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Cài gốc phôi bằng cách đo trực tiếp với MA = 60 mm, AW = 35 mm. Độ lớn MW là bao nhiêu?",
+      "options": [
+        "25 mm",
+        "95 mm",
+        "60 mm",
+        "35 mm"
+      ],
+      "answer": 1,
+      "explanation": "MW = MA + AW = 60 + 35 = 95 mm; sau đó xác định dấu theo quy ước máy rồi mới nhập."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Theo công thức Zdao2 = Zmachine2 − Zphôi, nếu Zmachine2 = 120 mm và Zphôi = 90 mm thì Zdao2 bằng bao nhiêu?",
+      "options": [
+        "30 mm",
+        "210 mm",
+        "−30 mm",
+        "90 mm"
+      ],
+      "answer": 0,
+      "explanation": "Zdao2 = 120 − 90 = 30 mm, đó là độ dời riêng của dao số 2 theo Z."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Phôi vẫn kẹp nguyên, em nới dao số 3 để chỉnh lại độ nhô. Cần đo lại gì?",
+      "options": [
+        "Work Shift Z của phôi",
+        "Về Reference lại các trục",
+        "Geometry hàng 3",
+        "Không cần đo lại gì"
+      ],
+      "answer": 2,
+      "explanation": "Nới dao, chỉnh độ nhô làm mũi P dịch chuyển nên phải đo lại hàng của dao đó; phôi không đổi thì W giữ nguyên."
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Dao giữ nguyên trên mâm dao, em tháo phôi cũ và gá phôi của đơn hàng khác. Cần cài lại gì?",
+      "options": [
+        "Geometry của tất cả các dao",
+        "Work Shift của phôi mới",
+        "Điểm tham chiếu R",
+        "Hướng mũi dao T"
+      ],
+      "answer": 1,
+      "explanation": "Work Shift gắn với lần gá phôi; dao không động tới thì Geometry giữ nguyên."
+    }
+  ]
+}

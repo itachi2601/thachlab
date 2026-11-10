@@ -2,6 +2,9 @@
 và thay các mốc <!--FIGn--> trong theory.src.html -> theory.html.
 Chạy từ thư mục này: python3 build_figs.py
 """
+import sys as _sys, pathlib as _pl
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
+from _margin_fig import margin_figs
 import math
 import pathlib
 import sys
@@ -40,93 +43,102 @@ def wrap(vb, label, body, cap, exp=""):
 
 # ------------------------------------------------- Hình 1: tiếng rè bên bếp từ
 b = defs("f1")
-b += text(14, 22, "Không có dây nối, radio vẫn rè", "currentColor", 12.5, "start", "700")
-b += rect(14, 62, 96, 74)
-b += text(62, 92, "bếp từ", "currentColor", 12, "middle", "700")
-b += text(62, 110, "dòng xoay chiều", "currentColor", 9.5, "middle", "600")
-b += text(62, 124, "biến thiên", "currentColor", 9.5, "middle", "600")
-for r, op in ((26, .95), (44, .7), (62, .45)):
-    b += arc(125, 100, r, -52, 52, BLUE, 2.2, op)
-b += rect(250, 64, 88, 72)
-b += text(294, 96, "radio", "currentColor", 12, "middle", "700")
-b += text(294, 114, "chạy pin", "currentColor", 9.5, "middle", "600")
-b += text(294, 128, "cách 2 m", "currentColor", 9.5, "middle", "600")
-b += line(294, 64, 282, 30, "currentColor", 2.4)
-fig1 = wrap("0 0 420 158", "Bếp từ chạy dòng xoay chiều đặt cạnh một radio chạy pin: sóng điện từ lan từ bếp từ tới ăng ten radio",
+b += text(14, 24, "Không có dây nối, radio vẫn rè", "currentColor", 15, "start", "700")
+# bếp từ: mặt bếp + nồi
+b += rect(14, 104, 124, 16, rx=4)
+b += f'<ellipse cx="76" cy="112" rx="34" ry="4" fill="none" stroke="{ORG}" stroke-width="1.6"/>'
+b += rect(40, 70, 72, 34, rx=4)
+b += line(30, 76, 40, 76, "currentColor", 3)
+b += line(112, 76, 122, 76, "currentColor", 3)
+b += text(76, 146, "bếp từ", "currentColor", 15, "middle", "700")
+b += text(76, 166, "dòng xoay chiều", "currentColor", 14, "middle", "600")
+# sóng lan ra
+for r, op in ((28, .95), (52, .7), (76, .45)):
+    b += arc(140, 96, r, -48, 48, BLUE, 2.4, op)
+# radio + ăng ten
+b += rect(262, 72, 136, 58, rx=8)
+b += f'<circle cx="294" cy="101" r="17" fill="none" stroke="currentColor" stroke-width="2"/>'
+for dy in (-8, 0, 8):
+    b += line(282, 101 + dy, 306, 101 + dy, "currentColor", 1.6)
+b += rect(326, 88, 56, 14, fill="none", sw=1.6, rx=3)
+b += f'<circle cx="368" cy="117" r="5" fill="none" stroke="currentColor" stroke-width="1.8"/>'
+b += line(380, 72, 398, 38, "currentColor", 2.4)
+b += f'<circle cx="398" cy="38" r="3" fill="currentColor"/>'
+b += text(330, 152, "radio chạy pin", "currentColor", 15, "middle", "700")
+# khoảng cách 2 m
+b += line(76, 188, 180, 188, "currentColor", 1.4) + line(226, 188, 330, 188, "currentColor", 1.4)
+b += chevron(76, 188, -1, 0, "currentColor", 1.4, 9) + chevron(330, 188, 1, 0, "currentColor", 1.4, 9)
+b += line(76, 180, 76, 196, "currentColor", 1.4) + line(330, 180, 330, 196, "currentColor", 1.4)
+b += text(203, 193, "2 m", "currentColor", 15, "middle", "700")
+fig1 = wrap("0 0 420 206", "Bếp từ chạy dòng xoay chiều đặt cách một radio chạy pin hai mét: sóng điện từ lan từ bếp từ tới ăng ten radio",
             b, "Hình 1. Bếp từ chạy dòng xoay chiều: điện từ trường lan tới ăng ten radio cách hai mét.",
             exp="tn-l12-dttruong-03")
 
 # ------------------------------------------------- Hình 2: điện trường xoáy
+# Vòng E nằm ngang nhìn xiên (ellipse). B hướng lên, đang tăng -> E xoáy chiều kim đồng hồ nhìn từ trên xuống
+# (định luật Lenz): nửa sau (trên hình) đi sang phải, nửa trước (dưới hình) đi sang trái; t tăng đúng chiều này.
 b = defs("f2")
-b += text(14, 22, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 12.5, "start", "700")
-b += f'<ellipse cx="210" cy="118" rx="96" ry="56" fill="none" stroke="{BLUE}" stroke-width="2.6"/>'
-b += line(210, 52, 210, 184, RED, 3)
-b += f'<path d="M210,56 L204,68 L216,68 z" fill="{RED}"/>'
-b += arrow("f2", "b", 176, 62, 244, 62, 2.4)
-b += arrow("f2", "b", 244, 174, 176, 174, 2.4)
-b += text(222, 46, "đường sức từ biến thiên (B)", RED, 10.5, "start", "600")
-b += text(22, 214, "đường sức điện trường xoáy: đường cong kín bao quanh đường cảm ứng từ", BLUE, 10.5, "start", "600")
-fig2 = wrap("0 0 420 226", "Đường sức từ thẳng đứng có một mũi tên ở đầu trên chỉ chiều, bao quanh là một đường cong kín của điện trường xoáy với hai mũi tên chỉ chiều",
-            b, "Hình 2. Từ trường biến thiên sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
+b += text(14, 24, "Điện trường xoáy bao quanh đường sức từ", "currentColor", 15, "start", "700")
+CX, CY, RX, RY = 200, 126, 120, 34
+XS = (164, 200, 236)          # ba đường sức từ
+GAP = 6
+# nửa sau: bị đường sức từ (ở giữa vòng) che -> ngắt khe
+seg, segs = [], []
+for x, y in arc_pts(CX, CY, RX, RY, 180, 360, 160):
+    if any(abs(x - xl) < GAP for xl in XS):
+        if len(seg) > 1:
+            segs.append(seg)
+        seg = []
+    else:
+        seg.append((x, y))
+segs.append(seg)
+for sg in segs:
+    b += pts_path(sg, BLUE, 2.6)
+# đường sức từ: nét đứt, ngắt ở chỗ nửa trước của vòng đi qua phía trước
+YT, YB = 50, 204
+for xl in XS:
+    yf = CY + RY * math.sqrt(1 - ((xl - CX) / RX) ** 2)
+    b += line(xl, YB, xl, yf + GAP, RED, 2.2, "6 4")
+    b += field_line(xl, yf - GAP, xl, YT, RED, 2.2)
+# nửa trước: nét liền đè lên
+b += pts_path(arc_pts(CX, CY, RX, RY, 0, 180, 80), BLUE, 2.6)
+for t in (120, 300):
+    x, y = ell_pt(CX, CY, RX, RY, t)
+    b += chevron(x, y, *ell_tan(RX, RY, t, 1), BLUE, 2.6, 13)
+b += text(250, 60, "B đang tăng", RED, 15, "start", "700")
+b += text(330, 132, "E xoáy", BLUE, 15, "start", "700")
+b += text(14, 234, "Nét đứt đỏ: đường sức từ, B hướng lên.", RED, 14, "start", "600")
+b += text(14, 254, "Vòng xanh: đường sức điện trường xoáy.", BLUE, 14, "start", "600")
+b += text(14, 274, "Vòng khép kín, bao quanh các đường sức từ.", "currentColor", 14, "start", "600")
+fig2 = wrap("0 0 420 286", "Ba đường sức từ nét đứt hướng lên, đang tăng; một vòng kín nằm ngang của điện trường xoáy bao quanh chúng, mũi tên chỉ chiều kim đồng hồ khi nhìn từ trên xuống",
+            b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
-# ------------------------------------------------- Hình 3: sóng điện từ
-b = defs("f3")
-b += text(14, 20, "Sóng điện từ: sóng ngang, E và B cùng pha", "currentColor", 12.5, "start", "700")
-b += text(410, 136, "phương truyền sóng", "currentColor", 10.5, "end", "600")
-AX, AMP, LAM = 146, 42, 185.0
-b += line(30, AX, 404, AX, "currentColor", 2)
-b += '<path d="M404,140 L415,146 L404,152 z" fill="currentColor"/>'
-e_pts, b_pts = [], []
-x = 30.0
-while x <= 30 + 1.5 * LAM:
-    s = math.sin(2 * math.pi * (x - 30) / LAM)
-    e_pts.append((x, AX - AMP * s))
-    bb = 40 * s
-    b_pts.append((x + 0.28 * bb, AX + 0.55 * bb))
-    x += 2
-b += poly(b_pts, BLUE, 2.4)
-b += poly(e_pts, RED, 2.6)
-x0 = 30 + LAM / 4
-b += arrow("f3", "r", x0, AX, x0, AX - AMP, 2.6)
-b += arrow("f3", "b", x0, AX, x0 + 0.28 * 40, AX + 0.55 * 40, 2.6)
-b += text(x0, AX - AMP - 10, "E", RED, 12.5, "middle", "700")
-b += text(x0 + 26, AX + 34, "B", BLUE, 12.5, "start", "700")
-b += text(14, 216, "E vuông góc với B, cả hai cùng vuông góc với phương truyền", "currentColor", 10.5, "start", "600")
-b += text(14, 232, "E và B cùng pha: hai đường cong cùng cắt trục tại một chỗ", "currentColor", 10.5, "start", "600")
-fig3 = wrap("0 0 420 243", "Sóng điện từ lan truyền theo trục ngang: vectơ E dao động thẳng đứng, vectơ B dao động theo phương xiên, hai đường cong cùng pha",
-            b, "Hình 3. Sóng điện từ là sóng ngang: E vuông góc với B, cả hai vuông góc phương truyền và luôn cùng pha.")
+# ------------------------------------------------- Hình 3: sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp" '
+        'alt="Một đoạn sóng điện từ truyền sang phải: các mũi tên xanh của vectơ E dao động thẳng đứng, các mũi tên hồng của vectơ B dao động trong mặt phẳng nằm ngang, hai đường cong cùng pha và cùng vuông góc phương truyền" '
+        'loading="lazy" width="875" height="602"><figcaption>'
+        'Hình 3. Sóng điện từ: E vuông góc B, cả hai vuông góc phương truyền, cùng pha.<br>'
+        'Mũi tên xanh: vectơ điện trường E.<br>'
+        'Mũi tên hồng: vectơ cảm ứng từ B.<br>'
+        'Mũi tên xanh lá c: phương truyền sóng.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.7 — CC BY\u2011NC\u2011SA 4.0 — openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
-# ------------------------------------------------- Hình 4: thang sóng điện từ
-b = defs("f4")
-b += text(14, 18, "Thang sóng điện từ", "currentColor", 12.5, "start", "700")
-b += text(406, 18, "bước sóng giảm dần", "currentColor", 10.5, "end", "600")
-edges = [30, 125, 180, 225, 280, 335, 400]
-names = ["sóng vô tuyến", "hồng ngoại", "ánh sáng nhìn thấy", "tử ngoại", "tia X", "tia gamma"]
-for i in range(6):
-    x1, x2 = edges[i], edges[i + 1]
-    col = BLUE if i == 0 else "currentColor"
-    fill = "rgba(56,189,248,.20)" if i == 0 else "rgba(148,163,184,.14)"
-    b += rect(x1, 82, x2 - x1, 22, fill, col, 1.6, 3)
-cen = [(edges[i] + edges[i + 1]) / 2 for i in range(6)]
-for i in (0, 2, 4):
-    col = BLUE if i == 0 else "currentColor"
-    b += line(cen[i], 56, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 50, names[i], col, 10.5, "middle", "700")
-for i in (1, 3, 5):
-    b += line(cen[i], 72, cen[i], 82, "currentColor", 1, "3 3", .55)
-    b += text(cen[i], 66, names[i], "currentColor", 10.5, "middle", "700")
-b += text(14, 126, "Ranh giới các vùng: 1 mm · 0,76 μm · 0,38 μm · 10 nm · 0,01 nm", "currentColor", 10, "start", "600")
-b += text(14, 144, "Sơ đồ bậc thang: độ rộng các vùng không theo tỉ lệ bước sóng", "currentColor", 10, "start", "600")
-b += text(14, 164, "mọi vùng đều là sóng điện từ, truyền trong chân không với cùng tốc độ c", "currentColor", 10.5, "start", "600")
-b += text(14, 180, "bước sóng càng nhỏ thì tần số và năng lượng càng lớn", "currentColor", 10.5, "start", "600")
-fig4 = wrap("0 0 420 194", "Thang sóng điện từ vẽ theo sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ bước sóng: sáu vùng xếp theo bước sóng giảm dần gồm vô tuyến, hồng ngoại, ánh sáng nhìn thấy, tử ngoại, tia X, tia gamma",
-            b, "Hình 4. Thang sóng điện từ: sáu vùng xếp theo bước sóng giảm dần (sơ đồ bậc thang, độ rộng các vùng không theo tỉ lệ); vùng tô xanh là sóng vô tuyến.",
-            exp="tn-l12-dttruong-04")
+# ------------------------------------------------- Hình 4: thang sóng điện từ (ảnh OpenStax, chèn trực tiếp)
+fig4 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-dttruong-04"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-pho-dien-tu.webp" '
+        'alt="Thang sóng điện từ theo bước sóng (trục trên) và tần số (trục dưới): sóng vô tuyến gồm vi ba, TV, FM, AM ở tần số thấp, tiếp đến hồng ngoại, dải ánh sáng nhìn thấy rất hẹp, tử ngoại, tia X, tia gamma ở tần số cao" '
+        'loading="lazy" width="1000" height="377"><figcaption>'
+        'Hình 4. Thang sóng điện từ: bước sóng giảm dần từ sóng vô tuyến tới tia gamma; ánh sáng nhìn thấy là dải rất hẹp.<br>'
+        'Nhãn: Wavelength = bước sóng; Frequency = tần số; Radio waves = sóng vô tuyến; Microwaves = vi ba.<br>'
+        'Nhãn: Infrared = hồng ngoại; Visible light = nhìn thấy; Ultraviolet = tử ngoại; X rays = tia X; \u03b3 rays = tia gamma.<br>'
+        'Nhãn: \u00c5 = $10^{-10}$ m; fermis = $10^{-15}$ m.<br>'
+        'Hình: OpenStax, College Physics 2e, Hình 24.8 \u2014 CC BY\u2011NC\u2011SA 4.0 \u2014 openstax.org/books/college-physics-2e'
+        '</figcaption></figure>')
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
 for n, f in enumerate((fig1, fig2, fig3, fig4), 1):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
-open("theory.html", "w", encoding="utf8").write(src)
+open("theory.html", "w", encoding="utf8").write(margin_figs(src))
 print("ok", len(src), "bytes")

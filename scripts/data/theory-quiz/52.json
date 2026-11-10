@@ -352,28 +352,28 @@
    "question": "Thí nghiệm đi bộ \"vẽ\" đồ thị: một bạn đi chậm từ vạch $0$ ra xa tới vạch $5\\ \\text{m}$ trên thước dây đặt dọc hành lang, đứng lại $3\\ \\text{s}$, rồi bước nhanh về vạch $0$. Chiều dương từ vạch $0$ ra xa. Xét đồ thị độ dịch chuyển – thời gian của bạn đó.",
    "statements": [
     {
-     "text": "Đoạn đầu của đồ thị xiên lên với độ dốc nhỏ.",
-     "answer": true
-    },
-    {
-     "text": "Khoảng thời gian bạn đứng lại ứng với một đoạn nằm ngang.",
-     "answer": true
+     "text": "Quãng đường của cả lượt đọc ngay ở điểm cuối đồ thị nên bằng không.",
+     "answer": false
     },
     {
      "text": "Đoạn quay về xiên xuống và thoải hơn đoạn đầu.",
      "answer": false
     },
     {
-     "text": "Quãng đường của cả lượt đọc ngay ở điểm cuối đồ thị nên bằng không.",
-     "answer": false
+     "text": "Đoạn đầu của đồ thị xiên lên với độ dốc nhỏ.",
+     "answer": true
+    },
+    {
+     "text": "Khoảng thời gian bạn đứng lại ứng với một đoạn nằm ngang.",
+     "answer": true
     }
    ],
    "explanation": "Đi chậm ra xa: dốc dương, ít; đứng: nằm ngang; về nhanh: dốc âm, nhiều. Quãng đường phải cộng từng đoạn: $5 + 5 = 10\\ \\text{m}$, chỉ độ dịch chuyển bằng không.",
    "distractorNotes": {
-    "0": "Đi ra xa làm $d$ tăng nên đồ thị đi lên, đi chậm nên độ dốc nhỏ; không thể coi là sai.",
-    "1": "Đứng lại thì $d$ không đổi theo thời gian, đồ thị chắc chắn là đoạn nằm ngang.",
-    "2": "Bước nhanh nghĩa là độ lớn độ dốc lớn hơn, nên đoạn về phải dốc hơn, không thể thoải hơn.",
-    "3": "Điểm cuối chỉ cho độ dịch chuyển; quãng đường cộng độ lớn từng đoạn nên bằng $10\\ \\text{m}$, không bằng không."
+    "0": "Điểm cuối chỉ cho độ dịch chuyển; quãng đường cộng độ lớn từng đoạn nên bằng $10\\ \\text{m}$, không bằng không.",
+    "1": "Bước nhanh nghĩa là độ lớn độ dốc lớn hơn, nên đoạn về phải dốc hơn, không thể thoải hơn.",
+    "2": "Đi ra xa làm $d$ tăng nên đồ thị đi lên, đi chậm nên độ dốc nhỏ; không thể coi là sai.",
+    "3": "Đứng lại thì $d$ không đổi theo thời gian, đồ thị chắc chắn là đoạn nằm ngang."
    }
   },
   {
@@ -387,28 +387,28 @@
    "question": "Một xe chạy trên một con đường thẳng, nằm ngang. Xét quỹ đạo và đồ thị độ dịch chuyển – thời gian của xe.",
    "statements": [
     {
-     "text": "Quỹ đạo của xe là một đường thẳng.",
-     "answer": true
-    },
-    {
      "text": "Đồ thị độ dịch chuyển – thời gian của xe luôn là một đường thẳng giống quỹ đạo.",
      "answer": false
     },
     {
-     "text": "Trục đứng của đồ thị cho biết độ cao của xe so với mặt đất.",
-     "answer": false
+     "text": "Quỹ đạo của xe là một đường thẳng.",
+     "answer": true
     },
     {
      "text": "Nếu xe chuyển động thẳng đều thì đồ thị độ dịch chuyển – thời gian là một đường thẳng.",
      "answer": true
+    },
+    {
+     "text": "Trục đứng của đồ thị cho biết độ cao của xe so với mặt đất.",
+     "answer": false
     }
    ],
    "explanation": "Chuyển động thẳng có quỹ đạo thẳng, nhưng đồ thị $d$–$t$ có thể gãy khúc, nằm ngang, đi xuống. Trục đứng là vị trí, không phải độ cao. Thẳng đều thì $d = vt$ nên đồ thị là đường thẳng.",
    "distractorNotes": {
-    "0": "Xe chạy trên con đường thẳng nên đường xe vạch ra trong không gian chắc chắn là đường thẳng.",
-    "1": "Quỹ đạo thẳng nhưng xe có thể dừng hay quay đầu, làm đồ thị $d$–$t$ gãy khúc hoặc nằm ngang.",
-    "2": "Trục đứng là độ dịch chuyển tính từ gốc, tức vị trí trên đường, không phải độ cao.",
-    "3": "Thẳng đều có $d = vt$ dạng $y = ax$, nên đồ thị chắc chắn là đường thẳng."
+    "0": "Quỹ đạo thẳng nhưng xe có thể dừng hay quay đầu, làm đồ thị $d$–$t$ gãy khúc hoặc nằm ngang.",
+    "1": "Xe chạy trên con đường thẳng nên đường xe vạch ra trong không gian chắc chắn là đường thẳng.",
+    "2": "Thẳng đều có $d = vt$ dạng $y = ax$, nên đồ thị chắc chắn là đường thẳng.",
+    "3": "Trục đứng là độ dịch chuyển tính từ gốc, tức vị trí trên đường, không phải độ cao."
    }
   },
   {
@@ -422,7 +422,7 @@
    "question": "Một vật chuyển động thẳng đều có phương trình $x = x_0 + vt$ (chọn $t_0 = 0$).",
    "statements": [
     {
-     "text": "$x_0$ là toạ độ của vật tại thời điểm $t_0 = 0$.",
+     "text": "Đặt gốc toạ độ ở chỗ xuất phát thì $x = d = vt$.",
      "answer": true
     },
     {
@@ -430,20 +430,20 @@
      "answer": false
     },
     {
-     "text": "Đặt gốc toạ độ ở chỗ xuất phát thì $x = d = vt$.",
-     "answer": true
-    },
-    {
      "text": "Hệ số góc của đồ thị $x$ theo $t$ bằng $x_0$.",
      "answer": false
+    },
+    {
+     "text": "$x_0$ là toạ độ của vật tại thời điểm $t_0 = 0$.",
+     "answer": true
     }
    ],
    "explanation": "$x_0$ là toạ độ ban đầu; $v \\lt 0$ là đi ngược chiều dương; gốc ở chỗ xuất phát thì $x_0 = 0$, $x = d = vt$; hệ số góc của đồ thị là $v$.",
    "distractorNotes": {
-    "0": "Thay $t = 0$ vào phương trình được $x = x_0$, nên $x_0$ đúng là toạ độ ban đầu.",
+    "0": "Gốc ở chỗ xuất phát thì $x_0 = 0$, khi đó toạ độ trùng độ dịch chuyển và bằng $vt$.",
     "1": "Dấu của $v$ cho chiều đi: $v \\lt 0$ là đi ngược chiều dương, không thể theo chiều dương.",
-    "2": "Gốc ở chỗ xuất phát thì $x_0 = 0$, khi đó toạ độ trùng độ dịch chuyển và bằng $vt$.",
-    "3": "$x_0$ chỉ là điểm cắt trục đứng lúc $t = 0$; hệ số góc của đồ thị là vận tốc $v$."
+    "2": "$x_0$ chỉ là điểm cắt trục đứng lúc $t = 0$; hệ số góc của đồ thị là vận tốc $v$.",
+    "3": "Thay $t = 0$ vào phương trình được $x = x_0$, nên $x_0$ đúng là toạ độ ban đầu."
    }
   },
   {
@@ -461,7 +461,7 @@
      "answer": true
     },
     {
-     "text": "Vận tốc của xe trên đoạn $BC$ mang dấu âm.",
+     "text": "Vận tốc trung bình của cả chuyến bằng không.",
      "answer": true
     },
     {
@@ -469,16 +469,16 @@
      "answer": false
     },
     {
-     "text": "Vận tốc trung bình của cả chuyến bằng không.",
+     "text": "Vận tốc của xe trên đoạn $BC$ mang dấu âm.",
      "answer": true
     }
    ],
    "explanation": "$AB$ nằm ngang: $v = 0$; $BC$ đi xuống: $v \\lt 0$. Xe về đúng $d = 0$ nên độ dịch chuyển bằng không, vận tốc trung bình $\\frac{d}{t} = 0$; tổng hai đoạn là quãng đường.",
    "distractorNotes": {
     "0": "Đoạn nằm ngang có $\\Delta d = 0$ nên độ dốc, tức vận tốc, chắc chắn bằng không.",
-    "1": "Đoạn đi xuống có $\\Delta d \\lt 0$ nên độ dốc âm, vận tốc mang dấu âm.",
+    "1": "Xe về đúng $d = 0$ nên độ dịch chuyển bằng không, vận tốc trung bình $\\frac{d}{t}$ cũng bằng không.",
     "2": "Cộng hai đoạn là quãng đường; độ dịch chuyển là cuối trừ đầu, ở đây bằng không.",
-    "3": "Xe về đúng $d = 0$ nên độ dịch chuyển bằng không, vận tốc trung bình $\\frac{d}{t}$ cũng bằng không."
+    "3": "Đoạn đi xuống có $\\Delta d \\lt 0$ nên độ dốc âm, vận tốc mang dấu âm."
    }
   },
   {
@@ -492,28 +492,28 @@
    "question": "Một vật chuyển động trên đường thẳng, có lúc quay đầu. Từ đồ thị độ dịch chuyển – thời gian, xét cách xác định độ dịch chuyển $d$ và quãng đường $s$.",
    "statements": [
     {
-     "text": "Độ dịch chuyển bằng $d$ ở điểm cuối trừ $d$ ở điểm đầu.",
-     "answer": true
-    },
-    {
-     "text": "Quãng đường bằng tổng độ lớn $\\lvert\\Delta d\\rvert$ của từng đoạn.",
-     "answer": true
+     "text": "Khi vật quay đầu, quãng đường đi được giảm dần.",
+     "answer": false
     },
     {
      "text": "Vận tốc trung bình $\\frac{d}{t}$ luôn không âm.",
      "answer": false
     },
     {
-     "text": "Khi vật quay đầu, quãng đường đi được giảm dần.",
-     "answer": false
+     "text": "Quãng đường bằng tổng độ lớn $\\lvert\\Delta d\\rvert$ của từng đoạn.",
+     "answer": true
+    },
+    {
+     "text": "Độ dịch chuyển bằng $d$ ở điểm cuối trừ $d$ ở điểm đầu.",
+     "answer": true
     }
    ],
    "explanation": "Theo Bẫy 3: cuối trừ đầu cho $d$, cộng từng đoạn cho $s$. $d$ có thể âm nên vận tốc trung bình có dấu; quãng đường không âm và chỉ tăng.",
    "distractorNotes": {
-    "0": "Độ dịch chuyển chỉ so điểm cuối với điểm đầu, đúng quy tắc cuối trừ đầu của bài.",
-    "1": "Quãng đường gồm mọi đoạn đã đi, mỗi đoạn lấy độ lớn, nên phải cộng $\\lvert\\Delta d\\rvert$ từng đoạn.",
-    "2": "Không âm là tính chất của tốc độ trung bình; $d$ có thể âm nên vận tốc trung bình có thể âm.",
-    "3": "Đoạn quay về vẫn là đoạn đã đi nên quãng đường cộng thêm; chỉ độ dịch chuyển mới giảm."
+    "0": "Đoạn quay về vẫn là đoạn đã đi nên quãng đường cộng thêm; chỉ độ dịch chuyển mới giảm.",
+    "1": "Không âm là tính chất của tốc độ trung bình; $d$ có thể âm nên vận tốc trung bình có thể âm.",
+    "2": "Quãng đường gồm mọi đoạn đã đi, mỗi đoạn lấy độ lớn, nên phải cộng $\\lvert\\Delta d\\rvert$ từng đoạn.",
+    "3": "Độ dịch chuyển chỉ so điểm cuối với điểm đầu, đúng quy tắc cuối trừ đầu của bài."
    }
   }
  ]

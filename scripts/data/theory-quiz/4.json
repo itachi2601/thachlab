@@ -329,28 +329,28 @@
    "question": "Hai ấm nước đều ở 60 °C: ấm A chứa 200 g nước, ấm B chứa 2 kg nước. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Nhiệt độ cho biết mức chuyển động trung bình của mỗi phân tử nước.",
-     "answer": true
+     "text": "Vật có nội năng lớn hơn thì luôn có nhiệt độ cao hơn.",
+     "answer": false
     },
     {
-     "text": "Hai ấm có nội năng bằng nhau vì nước ở cùng nhiệt độ.",
-     "answer": false
+     "text": "Nhiệt độ cho biết mức chuyển động trung bình của mỗi phân tử nước.",
+     "answer": true
     },
     {
      "text": "Nước trong ấm B có nội năng lớn hơn vì có nhiều phân tử hơn.",
      "answer": true
     },
     {
-     "text": "Vật có nội năng lớn hơn thì luôn có nhiệt độ cao hơn.",
+     "text": "Hai ấm có nội năng bằng nhau vì nước ở cùng nhiệt độ.",
      "answer": false
     }
    ],
    "explanation": "Nhiệt độ là mức trung bình mỗi phân tử, nội năng là tổng của mọi phân tử; cùng nhiệt độ, khối lượng lớn hơn thì nội năng lớn hơn, nên không so nội năng chỉ bằng nhiệt độ.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì nhiệt độ đúng là chỉ mức chuyển động trung bình của mỗi phân tử.",
-    "1": "Không thể coi là đúng, vì cùng nhiệt độ chưa đủ; nội năng còn tăng theo số phân tử, tức khối lượng.",
+    "0": "Không thể coi là đúng, vì bể nước 30 °C có thể có nội năng lớn hơn miếng sắt 1000 °C.",
+    "1": "Không thể coi là sai, vì nhiệt độ đúng là chỉ mức chuyển động trung bình của mỗi phân tử.",
     "2": "Không thể coi là sai, vì cùng chất, cùng nhiệt độ, khối lượng lớn hơn thì tổng năng lượng phân tử lớn hơn.",
-    "3": "Không thể coi là đúng, vì bể nước 30 °C có thể có nội năng lớn hơn miếng sắt 1000 °C."
+    "3": "Không thể coi là đúng, vì cùng nhiệt độ chưa đủ; nội năng còn tăng theo số phân tử, tức khối lượng."
    }
   },
   {
@@ -364,28 +364,28 @@
    "question": "Thí nghiệm 1: ấn pit-tông nén khí trong xilanh. Thí nghiệm 2: hơ ống nghiệm chứa khí trên ngọn lửa. Trong cả hai, khí đều nóng lên. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Ở thí nghiệm 1, nội năng của khí thay đổi bằng cách thực hiện công.",
-     "answer": true
-    },
-    {
-     "text": "Ở thí nghiệm 2, nội năng của khí thay đổi bằng cách thực hiện công vì khí nóng lên.",
-     "answer": false
-    },
-    {
      "text": "Trong cả hai thí nghiệm, nội năng của khí đều tăng.",
      "answer": true
     },
     {
      "text": "Công và nhiệt lượng là những dạng năng lượng chứa sẵn trong khối khí.",
      "answer": false
+    },
+    {
+     "text": "Ở thí nghiệm 2, nội năng của khí thay đổi bằng cách thực hiện công vì khí nóng lên.",
+     "answer": false
+    },
+    {
+     "text": "Ở thí nghiệm 1, nội năng của khí thay đổi bằng cách thực hiện công.",
+     "answer": true
     }
    ],
    "explanation": "Nén khí có lực làm đổi thể tích nên là thực hiện công; hơ trên lửa chỉ có chênh nhiệt độ nên là truyền nhiệt; cả hai làm nội năng tăng. Công và nhiệt lượng là năng lượng đã truyền đi, không chứa trong vật.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì lực đẩy pit-tông làm khí đổi thể tích, đó chính là thực hiện công.",
-    "1": "Không thể coi là đúng, vì hơ trên lửa không có lực làm dịch chuyển, chỉ có chênh nhiệt độ nên là truyền nhiệt.",
-    "2": "Không thể coi là sai, vì khí nóng lên ở cả hai thí nghiệm chứng tỏ nội năng đều tăng.",
-    "3": "Không thể coi là đúng, vì vật chỉ chứa nội năng; công và nhiệt lượng là năng lượng đang truyền đi."
+    "0": "Không thể coi là sai, vì khí nóng lên ở cả hai thí nghiệm chứng tỏ nội năng đều tăng.",
+    "1": "Không thể coi là đúng, vì vật chỉ chứa nội năng; công và nhiệt lượng là năng lượng đang truyền đi.",
+    "2": "Không thể coi là đúng, vì hơ trên lửa không có lực làm dịch chuyển, chỉ có chênh nhiệt độ nên là truyền nhiệt.",
+    "3": "Không thể coi là sai, vì lực đẩy pit-tông làm khí đổi thể tích, đó chính là thực hiện công."
    }
   },
   {
@@ -399,28 +399,28 @@
    "question": "Đặt một hộp sữa ấm vào tủ lạnh; sau một thời gian, sữa có nhiệt độ bằng nhiệt độ trong tủ. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Trong quá trình làm lạnh, sữa toả nhiệt nên nội năng của sữa giảm.",
-     "answer": true
+     "text": "Khi đã bằng nhiệt độ trong tủ, sữa không còn nội năng.",
+     "answer": false
     },
     {
      "text": "Khi sữa đã bằng nhiệt độ trong tủ thì sự truyền nhiệt dừng lại.",
      "answer": true
     },
     {
-     "text": "Sau khi làm lạnh, sữa chứa một lượng \"nhiệt lượng lạnh\".",
-     "answer": false
+     "text": "Trong quá trình làm lạnh, sữa toả nhiệt nên nội năng của sữa giảm.",
+     "answer": true
     },
     {
-     "text": "Khi đã bằng nhiệt độ trong tủ, sữa không còn nội năng.",
+     "text": "Sau khi làm lạnh, sữa chứa một lượng \"nhiệt lượng lạnh\".",
      "answer": false
     }
    ],
    "explanation": "Sữa toả nhiệt tới khi bằng nhiệt độ tủ rồi dừng; cái còn lại là nội năng nhỏ hơn lúc đầu. Vật không chứa nhiệt lượng, còn nội năng thì vật luôn có.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì vật toả nhiệt thì Q âm nên nội năng phải giảm.",
+    "0": "Không thể coi là đúng, vì vật luôn có nội năng, sữa chỉ có nội năng nhỏ hơn lúc đầu.",
     "1": "Không thể coi là sai, vì truyền nhiệt chỉ xảy ra khi còn chênh nhiệt độ; hết chênh lệch thì dừng.",
-    "2": "Không thể coi là đúng, vì vật không chứa nhiệt lượng; nhiệt lượng chỉ tồn tại trong lúc truyền.",
-    "3": "Không thể coi là đúng, vì vật luôn có nội năng, sữa chỉ có nội năng nhỏ hơn lúc đầu."
+    "2": "Không thể coi là sai, vì vật toả nhiệt thì Q âm nên nội năng phải giảm.",
+    "3": "Không thể coi là đúng, vì vật không chứa nhiệt lượng; nhiệt lượng chỉ tồn tại trong lúc truyền."
    }
   },
   {
@@ -434,10 +434,6 @@
    "question": "Trong một lần ấn pit-tông bơm xe đạp, người bơm thực hiện công 60 J lên khối khí trong bơm; cùng lúc khối khí truyền ra ngoài 15 J nhiệt lượng qua thành ống bơm. Xét hệ là khối khí, áp dụng $\\Delta U = A + Q$.",
    "statements": [
     {
-     "text": "Công khối khí nhận được là $A = +60$ J.",
-     "answer": true
-    },
-    {
      "text": "Nhiệt lượng trong hệ thức là $Q = +15$ J vì có nhiệt trao đổi.",
      "answer": false
     },
@@ -448,14 +444,18 @@
     {
      "text": "$\\Delta U \\gt 0$ nên khối khí nóng lên.",
      "answer": true
+    },
+    {
+     "text": "Công khối khí nhận được là $A = +60$ J.",
+     "answer": true
     }
    ],
    "explanation": "Khí nhận công nên $A = +60$ J, khí toả nhiệt nên $Q = -15$ J; $\\Delta U = 60 + (-15) = +45$ J, dương nên khí nóng lên.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì tay truyền công cho khí, khí là bên nhận nên A mang dấu dương.",
-    "1": "Không thể coi là đúng, vì khí truyền nhiệt ra ngoài là mất năng lượng nên Q phải âm.",
-    "2": "Không thể coi là đúng, vì ra 75 J là đã quên dấu âm của nhiệt lượng khí toả ra.",
-    "3": "Không thể coi là sai, vì công vào lớn hơn nhiệt mất nên $\\Delta U$ dương, nội năng khí tăng."
+    "0": "Không thể coi là đúng, vì khí truyền nhiệt ra ngoài là mất năng lượng nên Q phải âm.",
+    "1": "Không thể coi là đúng, vì ra 75 J là đã quên dấu âm của nhiệt lượng khí toả ra.",
+    "2": "Không thể coi là sai, vì công vào lớn hơn nhiệt mất nên $\\Delta U$ dương, nội năng khí tăng.",
+    "3": "Không thể coi là sai, vì tay truyền công cho khí, khí là bên nhận nên A mang dấu dương."
    }
   },
   {
@@ -469,11 +469,11 @@
    "question": "Đo nhiệt dung riêng của nước: đun một lượng nước khối lượng $m$ trong nhiệt lượng kế bằng bếp điện có công suất $P$, đo độ tăng nhiệt độ $\\Delta t$ sau thời gian $\\tau$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Nhiệt lượng bếp đưa vào trong thời gian $\\tau$ là $Q = P\\tau$.",
-     "answer": true
+     "text": "Do có mất nhiệt ra môi trường, giá trị $c$ tính được nhỏ hơn giá trị thật.",
+     "answer": false
     },
     {
-     "text": "Nhiệt dung riêng tính từ số liệu là $c = \\dfrac{P\\tau}{m\\Delta t}$.",
+     "text": "Nhiệt lượng bếp đưa vào trong thời gian $\\tau$ là $Q = P\\tau$.",
      "answer": true
     },
     {
@@ -481,16 +481,16 @@
      "answer": false
     },
     {
-     "text": "Do có mất nhiệt ra môi trường, giá trị $c$ tính được nhỏ hơn giá trị thật.",
-     "answer": false
+     "text": "Nhiệt dung riêng tính từ số liệu là $c = \\dfrac{P\\tau}{m\\Delta t}$.",
+     "answer": true
     }
    ],
    "explanation": "Bếp đưa vào $Q = P\\tau$, nên $c = \\dfrac{P\\tau}{m\\Delta t}$. Một phần nhiệt mất ra môi trường, làm nóng bình nên $\\Delta t$ đo được nhỏ hơn lí tưởng, kéo $c$ tính được lên cao hơn giá trị thật.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì công suất là năng lượng mỗi giây, nhân với thời gian đun ra nhiệt lượng bếp đưa vào.",
-    "1": "Không thể coi là sai, vì thay $Q = P\\tau$ vào $c = Q/(m\\Delta t)$ được đúng biểu thức này.",
+    "0": "Không thể coi là đúng, vì mất nhiệt làm $\\Delta t$ đo được nhỏ đi, mà $\\Delta t$ ở mẫu số nên c tính ra lớn hơn.",
+    "1": "Không thể coi là sai, vì công suất là năng lượng mỗi giây, nhân với thời gian đun ra nhiệt lượng bếp đưa vào.",
     "2": "Không thể coi là đúng, vì một phần nhiệt mất ra môi trường và làm nóng bình, không vào nước.",
-    "3": "Không thể coi là đúng, vì mất nhiệt làm $\\Delta t$ đo được nhỏ đi, mà $\\Delta t$ ở mẫu số nên c tính ra lớn hơn."
+    "3": "Không thể coi là sai, vì thay $Q = P\\tau$ vào $c = Q/(m\\Delta t)$ được đúng biểu thức này."
    }
   },
   {
@@ -504,28 +504,28 @@
    "question": "Xét một khối khí và định luật I của nhiệt động lực học $\\Delta U = A + Q$. Xét các phát biểu sau.",
    "statements": [
     {
-     "text": "Đun khí trong bình kín có thể tích không đổi thì $A = 0$ và $\\Delta U = Q$.",
-     "answer": true
+     "text": "Khí toả nhiệt ra ngoài thì $Q \\gt 0$ vì có nhiệt đi qua.",
+     "answer": false
     },
     {
-     "text": "Khí giãn nở mà không trao đổi nhiệt thì $\\Delta U \\gt 0$, khí nóng lên.",
-     "answer": false
+     "text": "Đun khí trong bình kín có thể tích không đổi thì $A = 0$ và $\\Delta U = Q$.",
+     "answer": true
     },
     {
      "text": "Khí thu nhiệt từ bên ngoài thì $Q \\gt 0$.",
      "answer": true
     },
     {
-     "text": "Khí toả nhiệt ra ngoài thì $Q \\gt 0$ vì có nhiệt đi qua.",
+     "text": "Khí giãn nở mà không trao đổi nhiệt thì $\\Delta U \\gt 0$, khí nóng lên.",
      "answer": false
     }
    ],
    "explanation": "Thể tích không đổi thì không có công, $\\Delta U = Q$. Khí giãn nở không trao đổi nhiệt thì $A \\lt 0$, $Q = 0$ nên $\\Delta U \\lt 0$, khí lạnh đi. Thu nhiệt $Q \\gt 0$, toả nhiệt $Q \\lt 0$.",
    "distractorNotes": {
-    "0": "Không thể coi là sai, vì thể tích không đổi thì không có công, nội năng chỉ đổi do nhiệt lượng.",
-    "1": "Không thể coi là đúng, vì giãn nở là sinh công, A âm và Q bằng 0 nên nội năng giảm, khí lạnh đi.",
+    "0": "Không thể coi là đúng, vì toả nhiệt là hệ mất năng lượng nên Q phải âm.",
+    "1": "Không thể coi là sai, vì thể tích không đổi thì không có công, nội năng chỉ đổi do nhiệt lượng.",
     "2": "Không thể coi là sai, vì theo quy ước hệ thu nhiệt là nhận năng lượng nên Q dương.",
-    "3": "Không thể coi là đúng, vì toả nhiệt là hệ mất năng lượng nên Q phải âm."
+    "3": "Không thể coi là đúng, vì giãn nở là sinh công, A âm và Q bằng 0 nên nội năng giảm, khí lạnh đi."
    }
   }
  ]

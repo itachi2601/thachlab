@@ -1,0 +1,690 @@
+{
+ "lesson_id": 45,
+ "lesson_title": "Bài 26. Thực hành: Đo suất điện động và điện trở trong của pin điện hoá",
+ "generated_at": "2026-10-07",
+ "review": {
+  "checked": true,
+  "notes": "kiểm chéo bằng kiem-code 2/11/2026: tự giải độc lập khớp, đã sửa lỗi hình/lộ gợi ý"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Hai cặp (I, U) của pin: tìm điện trở trong và suất điện động",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Một nhóm đo một viên pin: mắc pin với điện trở bảo vệ, biến trở, ampe kế nối tiếp và vôn kế song song hai cực pin. Vặn biến trở hai lần, đọc được:</p><ul><li>Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$;</li><li>Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$.</li></ul><p>$U$ là số chỉ vôn kế (hiệu điện thế hai cực pin). Hai lần đo cùng một pin, $\\mathcal{E}$ và $r$ không đổi.</p><p>a) Tính điện trở trong $r$ của pin.</p><p>b) Tính suất điện động $\\mathcal{E}$ của pin.</p>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> hiệu điện thế hai cực pin khi có dòng: $U = \\mathcal{E} - Ir$; chỉ khi $I = 0$ mới có $U = \\mathcal{E}$.</li><li><strong>Định luật:</strong> hai cặp $(I, U)$ của cùng một pin cùng thoả hệ thức này.</li><li><strong>Công thức:</strong> $r = \\dfrac{U_1 - U_2}{I_2 - I_1}$ · $\\mathcal{E} = U + Ir$.</li><li>⚠ <strong>Điều kiện:</strong> hai lần đo cùng một pin; $\\mathcal{E}$ và $r$ không đổi giữa hai lần.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tìm điện trở trong $r$</span></p><p>Viết $U = \\mathcal{E} - Ir$ cho hai lần đo rồi trừ vế, $\\mathcal{E}$ mất đi:</p>$$U_1 - U_2 = (I_2 - I_1)\\,r$$$$r = \\dfrac{U_1 - U_2}{I_2 - I_1}$$$$r = \\dfrac{1{,}36 - 1{,}00}{0{,}60 - 0{,}20}$$<div class=\"bt-ans\">$$r = 0{,}90\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tìm suất điện động $\\mathcal{E}$</span></p><p>Thế lần 1 vào $U_1 = \\mathcal{E} - I_1 r$:</p>$$\\mathcal{E} = U_1 + I_1 r$$$$\\mathcal{E} = 1{,}36 + 0{,}20 \\cdot 0{,}90$$<div class=\"bt-ans\">$$\\mathcal{E} = 1{,}54\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kiểm tra</span></p><p>Thế vào lần 2 phải ra đúng số đo:</p>$$U_2 = 1{,}54 - 0{,}60 \\cdot 0{,}90 = 1{,}00\\ \\text{V}$$<p>Khớp. $\\mathcal{E}$ lớn hơn cả hai số vôn kế đọc vì có dòng chạy; $r \\approx 1\\ \\Omega$ là cỡ của một viên pin AA đã dùng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $r = 0{,}90\\ \\Omega$</p><p>b) $\\mathcal{E} = 1{,}54\\ \\text{V}$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>hai cặp $(I, U)$ của cùng một pin</strong> → trừ vế hai hệ thức $U = \\mathcal{E} - Ir$ để tìm $r$, rồi thế lại tìm $\\mathcal{E}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"vôn kế song song hai cực pin\"</td><td>$U$ là hiệu điện thế hai cực pin</td><td>⚠ Có dòng $I \\gt 0$ chạy thì $U \\lt \\mathcal{E}$: số vôn kế chỉ không phải $\\mathcal{E}$ (chỉ khi mạch hở mới bằng nhau).</td></tr><tr><td>\"Lần 1: $I_1 = 0{,}20\\ \\text{A}$, $U_1 = 1{,}36\\ \\text{V}$\"</td><td>Điểm $(0{,}20\\ \\text{A};\\ 1{,}36\\ \\text{V})$</td><td>Mỗi cặp $(I, U)$ thoả hệ thức $U = \\mathcal{E} - Ir$.</td></tr><tr><td>\"Lần 2: $I_2 = 0{,}60\\ \\text{A}$, $U_2 = 1{,}00\\ \\text{V}$\"</td><td>Điểm $(0{,}60\\ \\text{A};\\ 1{,}00\\ \\text{V})$</td><td>Hai cặp cho hai phương trình cùng $\\mathcal{E}$, $r$: trừ vế thì mất đại lượng nào?</td></tr><tr><td>\"Tính điện trở trong $r$\"</td><td>Cần tìm $r$</td><td>$r = \\dfrac{U_1 - U_2}{I_2 - I_1}$</td></tr><tr><td>\"Tính suất điện động $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Thế một cặp $(I, U)$ và $r$ vừa tìm: $\\mathcal{E} = U + Ir$.</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai cặp (I, U) của cùng một pin</b> → nghĩ tới <b>trừ vế hai hệ thức</b> U = ℰ − Ir để tìm r",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tìm điện trở trong r",
+     "hoi": "Điện trở trong r của pin bằng bao nhiêu (Ω)?",
+     "dap_so": 0.9,
+     "sai_so": 0.03,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $U_1/I_1$ của một lần đo: đó là điện trở mạch ngoài, không phải điện trở trong."
+    },
+    {
+     "tieu_de": "Tìm suất điện động ℰ",
+     "hoi": "Suất điện động ℰ của pin bằng bao nhiêu (V)?",
+     "dap_so": 1.54,
+     "sai_so": 0.02,
+     "don_vi": "V",
+     "loi_hay_gap": "Lấy ℰ bằng số vôn kế đọc lớn hơn, quên cộng phần $Ir$ mất trong pin; hoặc trừ $Ir$ thay vì cộng.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế một cặp (I, U) và r vừa tìm vào U = ℰ − Ir rồi giải ra ℰ",
+       "dung": true
+      },
+      {
+       "text": "Lấy ℰ bằng số vôn kế đọc ở lần có dòng nhỏ hơn",
+       "dung": false,
+       "vi_sao": "Cả hai lần đều có dòng I > 0 nên U < ℰ; ℰ chỉ bằng U khi I = 0."
+      },
+      {
+       "text": "Lấy ℰ bằng trung bình cộng của hai số vôn kế đọc",
+       "dung": false,
+       "vi_sao": "Trung bình hai U không ứng với I = 0 nên không phải ℰ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 0.8,
+     "ten": "I (A)",
+     "vach": [
+      0.2,
+      0.6
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 0,
+     "max": 1.8,
+     "ten": "U (V)",
+     "vach": [
+      1.0,
+      1.36
+     ],
+     "luoi": 0.2
+    },
+    "hinh": [
+     {
+      "loai": "diem",
+      "x": 0.2,
+      "y": 1.36,
+      "ten": "lần 1",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.6,
+      "y": 1.0,
+      "ten": "lần 2",
+      "vi": "tr"
+     },
+     {
+      "loai": "chu",
+      "x": 0.42,
+      "y": 0.45,
+      "text": "ℰ = ? ; r = ?",
+      "a": "middle",
+      "het": 2
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0.6,
+        1.0
+       ],
+       "den": [
+        0.2,
+        1.36
+       ],
+       "nhan_x": "ΔI = 0,40 A",
+       "nhan_y": "ΔU = 0,36 V"
+      },
+      {
+       "loai": "ghi",
+       "text": "r = ΔU : ΔI = 0,36 : 0,40 = 0,90 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0,
+          1.54
+         ],
+         [
+          0.2,
+          1.36
+         ]
+        ],
+        "mau": "max"
+       }
+      },
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 1.54
+      },
+      {
+       "loai": "chu",
+       "x": 0.45,
+       "y": 1.62,
+       "text": "ℰ = 1,54 V (I = 0)",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℰ = U₁ + I₁r = 1,36 + 0,20·0,90 = 1,54 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Lần 2: 1,54 − 0,60·0,90 = 1,00 V ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Dự đoán số chỉ ampe kế, vôn kế và vai trò điện trở bảo vệ",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Mạch đo như hình: pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$; điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, đang vặn ở $R_x = 3{,}0\\ \\Omega$. Ampe kế có điện trở không đáng kể, vôn kế mắc song song hai cực pin có điện trở rất lớn. Khoá K đóng.</p><p>a) Ampe kế chỉ bao nhiêu?</p><p>b) Vôn kế chỉ bao nhiêu?</p><p>c) Giả sử bạn học sinh bỏ $R_0$ rồi vặn $R_x$ về $0$. Dòng qua pin lúc đó là bao nhiêu? Ampe kế thang $2\\ \\text{A}$ có chịu được không?</p>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> $\\mathcal{E}$ là suất điện động của pin; $r$ là điện trở trong; dòng chạy qua cả mạch ngoài và $r$.</li><li><strong>Định luật Ohm toàn mạch:</strong> $I = \\dfrac{\\mathcal{E}}{R_{\\text{ngoài}} + r}$.</li><li><strong>Hiệu điện thế hai cực pin:</strong> $U = \\mathcal{E} - Ir$.</li><li>⚠ <strong>Điều kiện:</strong> ampe kế điện trở không đáng kể (nối tiếp); vôn kế điện trở rất lớn (song song, không kéo dòng).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tính dòng điện qua mạch</span></p><p>Mạch ngoài $R_0 + R_x$ nối tiếp, cộng thêm $r$ của pin:</p>$$I = \\dfrac{\\mathcal{E}}{R_0 + R_x + r}$$$$I = \\dfrac{1{,}55}{2{,}0 + 3{,}0 + 0{,}60}$$<div class=\"bt-ans\">$$I \\approx 0{,}277\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Số chỉ vôn kế</span></p><p>Vôn kế đo hiệu điện thế hai cực pin, nhỏ hơn $\\mathcal{E}$ vì có dòng chạy:</p>$$U = \\mathcal{E} - Ir$$$$U = 1{,}55 - 0{,}277 \\cdot 0{,}60$$<div class=\"bt-ans\">$$U \\approx 1{,}38\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Dòng khi bỏ $R_0$ và vặn $R_x$ về $0$</span></p><p>Mạch ngoài chỉ còn dây nối, điện trở coi bằng $0$, toàn mạch chỉ còn $r$:</p>$$I = \\dfrac{\\mathcal{E}}{r}$$$$I = \\dfrac{1{,}55}{0{,}60}$$<div class=\"bt-ans\">$$I \\approx 2{,}58\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra với thang ampe kế</span></p><p>$2{,}58\\ \\text{A}$ vượt thang $2\\ \\text{A}$: ampe kế quá tải, pin nóng nhanh.</p><p>Khi có $R_0$ và $R_x = 0$: $I = \\dfrac{1{,}55}{2{,}0 + 0{,}60} \\approx 0{,}596\\ \\text{A}$, an toàn. Đó là lí do mắc điện trở bảo vệ.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $I \\approx 0{,}277\\ \\text{A}$</p><p>b) $U \\approx 1{,}38\\ \\text{V}$</p><p>c) $I \\approx 2{,}58\\ \\text{A}$, vượt thang $2\\ \\text{A}$: không chịu được</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>pin có điện trở trong và các điện trở nối tiếp</strong> → định luật Ohm toàn mạch tìm $I$, rồi $U = \\mathcal{E} - Ir$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"pin cũ có $\\mathcal{E} = 1{,}55\\ \\text{V}$, $r = 0{,}60\\ \\Omega$\"</td><td>$\\mathcal{E}$, $r$ đã biết</td><td>Hai đại lượng có mặt trong định luật Ohm toàn mạch.</td></tr><tr><td>\"$R_0 = 2{,}0\\ \\Omega$ nối tiếp biến trở, $R_x = 3{,}0\\ \\Omega$\"</td><td>Mạch ngoài $R_0 + R_x$</td><td>Điện trở mắc nối tiếp: điện trở tương đương? Điện trở trong $r$ cũng nằm nối tiếp trong toàn mạch.</td></tr><tr><td>\"ampe kế điện trở không đáng kể; vôn kế điện trở rất lớn\"</td><td>$R_A \\approx 0$, $R_V \\to \\infty$</td><td>⚠ Ampe kế nối tiếp, vôn kế song song: ampe kế có làm đổi điện trở toàn mạch không? Vôn kế có kéo dòng không?</td></tr><tr><td>\"Ampe kế chỉ bao nhiêu?\"</td><td>Cần tìm $I$</td><td>Định luật Ohm toàn mạch: $I = \\dfrac{\\mathcal{E}}{R_{\\text{ngoài}} + r}$</td></tr><tr><td>\"Vôn kế chỉ bao nhiêu?\"</td><td>Cần tìm $U$</td><td>Hệ thức giữa $U$, $\\mathcal{E}$, $I$, $r$.</td></tr><tr><td>\"bỏ $R_0$, vặn $R_x$ về $0$\"</td><td>Điện trở ngoài thay đổi</td><td>Điện trở ngoài thay đổi thì dòng trong mạch đổi thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>pin có r và điện trở nối tiếp</b> → nghĩ tới <b>Ohm toàn mạch</b>, rồi U = ℰ − Ir",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tính dòng điện qua mạch",
+     "hoi": "Ampe kế chỉ bao nhiêu (A)?",
+     "dap_so": 0.277,
+     "sai_so": 0.003,
+     "don_vi": "A",
+     "loi_hay_gap": "Quên cộng điện trở trong $r$ vào mẫu số, chỉ chia cho $R_0 + R_x$."
+    },
+    {
+     "tieu_de": "Số chỉ vôn kế",
+     "hoi": "Vôn kế (hai cực pin) chỉ bao nhiêu (V)?",
+     "dap_so": 1.38,
+     "sai_so": 0.02,
+     "don_vi": "V",
+     "loi_hay_gap": "Cho rằng vôn kế đọc đúng ℰ của pin dù đang có dòng chạy.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hiệu điện thế hai cực pin: U = ℰ − Ir",
+       "dung": true
+      },
+      {
+       "text": "Vôn kế mắc ở hai cực pin nên chỉ đúng ℰ",
+       "dung": false,
+       "vi_sao": "Có dòng I > 0 thì một phần Ir mất ngay trong pin; vôn kế chỉ đọc ℰ khi hở mạch."
+      },
+      {
+       "text": "Hiệu điện thế hai cực pin là U = I·r",
+       "dung": false,
+       "vi_sao": "I·r là phần sụt bên trong pin, không phải hiệu điện thế giữa hai cực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dòng khi bỏ R₀ và vặn Rₓ về 0",
+     "hoi": "Dòng qua pin lúc đó bằng bao nhiêu (A)?",
+     "dap_so": 2.58,
+     "sai_so": 0.05,
+     "don_vi": "A",
+     "loi_hay_gap": "Cho dòng không đổi vì pin không đổi, hoặc cho dòng bằng 0 vì \\\"không còn điện trở\\\".",
+     "chon_buoc_ke": [
+      {
+       "text": "Mạch ngoài chỉ còn dây nối nên toàn mạch chỉ còn r: I = ℰ/r",
+       "dung": true
+      },
+      {
+       "text": "Dòng vẫn như ở câu a vì pin không đổi",
+       "dung": false,
+       "vi_sao": "Dòng phụ thuộc điện trở toàn mạch; bỏ hai điện trở ngoài thì mạch chỉ còn r."
+      },
+      {
+       "text": "Dòng bằng 0 vì không còn điện trở ngoài",
+       "dung": false,
+       "vi_sao": "Điện trở ngoài càng nhỏ thì dòng càng lớn; I = ℰ/(R + r) không bằng 0."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra với thang ampe kế"
+    }
+   ],
+   "cong_cu": {
+    "loai": "mach_dien",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "diem": [
+       [
+        4,
+        2
+       ],
+       [
+        16,
+        2
+       ],
+       [
+        16,
+        8
+       ],
+       [
+        4,
+        8
+       ],
+       [
+        4,
+        2
+       ]
+      ]
+     },
+     {
+      "loai": "day",
+      "diem": [
+       [
+        4,
+        7
+       ],
+       [
+        1.3,
+        7
+       ],
+       [
+        1.3,
+        3
+       ],
+       [
+        4,
+        3
+       ]
+      ]
+     },
+     {
+      "loai": "nut",
+      "x": 4,
+      "y": 7
+     },
+     {
+      "loai": "nut",
+      "x": 4,
+      "y": 3
+     },
+     {
+      "loai": "nguon",
+      "x": 4,
+      "y": 5,
+      "huong": "doc",
+      "ten": "pin",
+      "vi": "r"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 1.3,
+      "y": 5,
+      "kieu": "V"
+     },
+     {
+      "loai": "dong_ho",
+      "x": 8,
+      "y": 8,
+      "kieu": "A"
+     },
+     {
+      "loai": "khoa",
+      "x": 14.5,
+      "y": 8
+     },
+     {
+      "loai": "chu",
+      "x": 14.5,
+      "y": 9.1,
+      "text": "K"
+     },
+     {
+      "loai": "dien_tro",
+      "x": 7,
+      "y": 2,
+      "ten": "R₀ = 2,0 Ω",
+      "vi": "b",
+      "het": 3
+     },
+     {
+      "loai": "dien_tro",
+      "x": 13.5,
+      "y": 2,
+      "ten": "Rₓ = 3,0 Ω",
+      "vi": "b",
+      "het": 3
+     },
+     {
+      "loai": "chu",
+      "x": 10.5,
+      "y": 6.1,
+      "text": "ℰ = 1,55 V"
+     },
+     {
+      "loai": "chu",
+      "x": 10.5,
+      "y": 4.9,
+      "text": "r = 0,60 Ω"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        10,
+        8
+       ],
+       "den": [
+        12.3,
+        8
+       ]
+      },
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 9.6,
+       "text": "I ≈ 0,277 A",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "I = ℰ : (R₀ + Rₓ + r) = 1,55 : 5,6 ≈ 0,277 A"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 3.5,
+       "text": "V chỉ U ≈ 1,38 V",
+       "mau": "max",
+       "het": 3
+      },
+      {
+       "loai": "ghi",
+       "text": "U = ℰ − Ir = 1,55 − 0,277·0,60 ≈ 1,38 V"
+      }
+     ],
+     [
+      {
+       "loai": "chu",
+       "x": 10.5,
+       "y": 0.8,
+       "text": "bỏ R₀, Rₓ = 0",
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 8,
+       "y": 9.6,
+       "text": "I ≈ 2,58 A",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "Chỉ còn r: I = ℰ : r = 1,55 : 0,60 ≈ 2,58 A"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "2,58 A > 2 A: quá thang; có R₀ chỉ ≈ 0,596 A"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Khó · Xử lý bảng số liệu: chọn cặp điểm, tính r, ℰ và sai số",
+   "topic": "Suất điện động và điện trở trong của nguồn",
+   "problem_html": "<p>Bảng số liệu đo một viên pin AA, điện trở bảo vệ $R_0 = 2{,}0\\ \\Omega$; vôn kế sai số $\\pm 0{,}01\\ \\text{V}$, ampe kế sai số $\\pm 0{,}002\\ \\text{A}$:</p><div class=\"table-scroll\"><table class=\"tl-table\"><thead><tr><th>Lần</th><th>$R_x\\ (\\Omega)$</th><th>$I$ (A)</th><th>$U$ (V)</th></tr></thead><tbody><tr><td>1</td><td>100</td><td>0,015</td><td>1,54</td></tr><tr><td>2</td><td>20</td><td>0,069</td><td>1,52</td></tr><tr><td>3</td><td>10</td><td>0,124</td><td>1,49</td></tr><tr><td>4</td><td>5</td><td>0,208</td><td>1,46</td></tr><tr><td>5</td><td>2</td><td>0,348</td><td>1,39</td></tr><tr><td>6</td><td>0</td><td>0,633</td><td>1,27</td></tr></tbody></table></div><p>a) Chọn hai lần đo cho giá trị $r$ đáng tin nhất (không vẽ đồ thị) và tính $r$.</p><p>b) Tính suất điện động $\\mathcal{E}$.</p><p>c) Coi $r$ là thương của hai hiệu; ước lượng $\\Delta r$ bằng cách cộng sai số tỉ đối của tử số và mẫu số, rồi ghi kết quả $r = \\ldots \\pm \\ldots$</p>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> sai số của hiệu hai số đo bằng tổng hai sai số; sai số tỉ đối của thương bằng tổng sai số tỉ đối của tử và mẫu.</li><li><strong>Hệ thức:</strong> $U = \\mathcal{E} - Ir$ ⇒ $r = \\dfrac{U_1 - U_2}{I_2 - I_1}$, $\\mathcal{E} = U + Ir$.</li><li><strong>Sai số tỉ đối:</strong> $\\dfrac{\\Delta r}{r} = \\dfrac{\\Delta(U_1 - U_2)}{U_1 - U_2} + \\dfrac{\\Delta(I_2 - I_1)}{I_2 - I_1}$.</li><li>⚠ <strong>Điều kiện:</strong> hai lần đo xa nhau thì hiệu lớn, sai số tỉ đối nhỏ. Không dùng $U/I$ của một cặp (đó là điện trở mạch ngoài).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chọn hai lần đo</span></p><p>Sai số mỗi số đo cố định, nên hiệu hai số càng lớn thì sai số tỉ đối của hiệu càng nhỏ. Chọn lần 1 và lần 6 (xa nhau nhất):</p><div class=\"bt-ans\"><p>Hiệu $U$: $1{,}54 - 1{,}27 = 0{,}27\\ \\text{V}$; hiệu $I$: $0{,}633 - 0{,}015 = 0{,}618\\ \\text{A}$.</p></div><p>Hai lần liền kề, chẳng hạn lần 3 và 4, có hiệu $U$ chỉ $0{,}03\\ \\text{V}$ so với sai số $0{,}02\\ \\text{V}$: không dùng được.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính $r$</span></p>$$r = \\dfrac{U_1 - U_6}{I_6 - I_1}$$$$r = \\dfrac{1{,}54 - 1{,}27}{0{,}633 - 0{,}015}$$<div class=\"bt-ans\">$$r \\approx 0{,}44\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tính $\\mathcal{E}$</span></p><p>Thế lần 1 và $r$ vừa tìm vào $U = \\mathcal{E} - Ir$:</p>$$\\mathcal{E} = U_1 + I_1 r$$$$\\mathcal{E} = 1{,}54 + 0{,}015 \\cdot 0{,}437$$<div class=\"bt-ans\">$$\\mathcal{E} \\approx 1{,}55\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Sai số của $r$</span></p><p>Tử $U_1 - U_6$ mang sai số $0{,}01 + 0{,}01$ V; mẫu $I_6 - I_1$ mang $0{,}002 + 0{,}002$ A:</p>$$\\dfrac{\\Delta r}{r} = \\dfrac{0{,}01 + 0{,}01}{0{,}27} + \\dfrac{0{,}002 + 0{,}002}{0{,}618} \\approx 0{,}081$$$$\\Delta r = 0{,}437 \\cdot 0{,}081$$<div class=\"bt-ans\">$$\\Delta r \\approx 0{,}04\\ \\Omega$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Ghi kết quả và kiểm tra</span></p><p>$\\Delta r$ giữ 1 chữ số có nghĩa, $r$ viết cùng bậc thập phân với $\\Delta r$:</p><div class=\"bt-ans\">$$r = (0{,}44 \\pm 0{,}04)\\ \\Omega$$</div><p>Kiểm tra bằng lần 4: $U = 1{,}55 - 0{,}208 \\cdot 0{,}44 \\approx 1{,}46\\ \\text{V}$, khớp bảng.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Chọn lần 1 và lần 6; $r \\approx 0{,}44\\ \\Omega$</p><p>b) $\\mathcal{E} \\approx 1{,}55\\ \\text{V}$</p><p>c) $\\Delta r \\approx 0{,}04\\ \\Omega$; $r = (0{,}44 \\pm 0{,}04)\\ \\Omega$</p></div><p class=\"bt-note\">Nhận dạng: đề cho <strong>bảng $(I, U)$ kèm sai số dụng cụ</strong> → chọn hai điểm xa nhau, trừ vế tìm $r$, thế tìm $\\mathcal{E}$, cộng sai số tỉ đối của tử và mẫu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"bảng 6 lần đo, $R_x$ từ $100\\ \\Omega$ về $0$\"</td><td>$I$ tăng, $U$ giảm dần</td><td>Đồ thị $U$–$I$ của pin có dạng gì? Hệ thức nào mô tả?</td></tr><tr><td>\"vôn kế $\\pm 0{,}01\\ \\text{V}$, ampe kế $\\pm 0{,}002\\ \\text{A}$\"</td><td>$\\Delta U$, $\\Delta I$ của mỗi số đọc</td><td>⚠ Một hiệu hai số đo mang sai số của cả hai số: hiệu càng nhỏ so với sai số thì sai số tỉ đối càng lớn.</td></tr><tr><td>\"chọn hai lần đo cho $r$ đáng tin nhất\"</td><td>Hai lần đo nào?</td><td>So sai số tỉ đối của hiệu $U$ ở một cặp xa nhau và một cặp gần nhau.</td></tr><tr><td>\"tính $r$\"</td><td>Cần tìm $r$</td><td>Hai cặp $(I, U)$ cho hệ thức nào chứa $r$ mà không cần biết $\\mathcal{E}$?</td></tr><tr><td>\"tính $\\mathcal{E}$\"</td><td>Cần tìm $\\mathcal{E}$</td><td>Đã biết $r$, dùng một cặp $(I, U)$ với hệ thức nào? Số hạng $Ir$ mang dấu gì?</td></tr><tr><td>\"ước lượng $\\Delta r$ ... ghi kết quả\"</td><td>Cần tìm $\\Delta r$</td><td>$r$ là thương của hai hiệu: sai số tỉ đối của một thương tính thế nào? $\\Delta r$ giữ mấy chữ số có nghĩa?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>bảng (I, U) kèm sai số</b> → nghĩ tới <b>hai điểm xa nhau</b>, trừ vế tìm r, cộng sai số tỉ đối",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chọn hai lần đo",
+     "hoi": "Chọn cặp lần đo nào để tính r đáng tin nhất?",
+     "lua_chon": [
+      {
+       "text": "Lần 1 và lần 6 (xa nhau nhất)",
+       "dung": true
+      },
+      {
+       "text": "Lần 3 và lần 4 (ở giữa bảng)",
+       "dung": false,
+       "vi_sao": "Hiệu U của hai lần này chỉ 0,03 V so với sai số 0,02 V của hiệu, nên r sai số rất lớn."
+      },
+      {
+       "text": "Lần 2 và lần 3 (liền kề)",
+       "dung": false,
+       "vi_sao": "Hiệu U của hai lần liền kề chỉ 0,03 V, so với sai số 0,02 V thì sai số tỉ đối của hiệu rất lớn."
+      }
+     ],
+     "loi_hay_gap": "Chọn hai lần liền kề cho \\\"gần nhau, sát đường thẳng\\\": hiệu hai số quá nhỏ so với sai số."
+    },
+    {
+     "tieu_de": "Tính r",
+     "hoi": "Điện trở trong r bằng bao nhiêu (Ω)?",
+     "dap_so": 0.44,
+     "sai_so": 0.02,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $U_6/I_6$ của một lần đo: đó là điện trở mạch ngoài $R_0 + R_x$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu hai U chia hiệu hai I (vôn tụt chia ampe tăng)",
+       "dung": true
+      },
+      {
+       "text": "Lấy U₆ chia I₆ của lần đo cuối",
+       "dung": false,
+       "vi_sao": "U/I của một cặp là điện trở mạch ngoài, không phải điện trở trong."
+      },
+      {
+       "text": "Lấy hiệu hai U chia tổng hai I",
+       "dung": false,
+       "vi_sao": "Mẫu số phải là hiệu hai dòng I₆ − I₁, không phải tổng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tính ℰ",
+     "hoi": "Suất điện động ℰ bằng bao nhiêu (V)?",
+     "dap_so": 1.55,
+     "sai_so": 0.01,
+     "don_vi": "V",
+     "loi_hay_gap": "Trừ $Ir$ thay vì cộng, hoặc lấy ℰ bằng trung bình hai số vôn kế.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế một cặp (I, U) và r vừa tìm vào U = ℰ − Ir",
+       "dung": true
+      },
+      {
+       "text": "Lấy ℰ bằng trung bình cộng U₁ và U₆",
+       "dung": false,
+       "vi_sao": "Trung bình hai U không ứng với I = 0 nên không phải ℰ."
+      },
+      {
+       "text": "Lấy ℰ = U₁ − I₁·r",
+       "dung": false,
+       "vi_sao": "Sai dấu: U = ℰ − Ir nên ℰ = U + Ir, phần Ir phải cộng thêm."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Sai số của r",
+     "hoi": "Sai số tuyệt đối Δr bằng bao nhiêu (Ω)?",
+     "dap_so": 0.04,
+     "sai_so": 0.01,
+     "don_vi": "Ω",
+     "loi_hay_gap": "Lấy $\\Delta r$ bằng luôn sai số của vôn kế, quên rằng tử và mẫu đều là hiệu hai số đo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Cộng sai số tỉ đối của tử và mẫu: Δr/r = ΔX/X + ΔY/Y",
+       "dung": true
+      },
+      {
+       "text": "Lấy Δr bằng ΔU chia ΔI của dụng cụ",
+       "dung": false,
+       "vi_sao": "Tử và mẫu là hiệu hai số đo nên mang sai số của cả hai số; phải cộng sai số tỉ đối chứ không chia sai số tuyệt đối."
+      },
+      {
+       "text": "Lấy Δr bằng sai số của vôn kế",
+       "dung": false,
+       "vi_sao": "r phụ thuộc cả U lẫN I; đơn vị V cũng không phải Ω."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ghi kết quả và kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "do_thi",
+    "de": true,
+    "x": {
+     "min": 0,
+     "max": 0.7,
+     "ten": "I (A)",
+     "vach": [
+      0.2,
+      0.4,
+      0.6
+     ],
+     "luoi": 0.1
+    },
+    "y": {
+     "min": 1.2,
+     "max": 1.6,
+     "ten": "U (V)",
+     "vach": [
+      1.3,
+      1.4,
+      1.5
+     ],
+     "luoi": 0.05
+    },
+    "hinh": [
+     {
+      "loai": "diem",
+      "x": 0.015,
+      "y": 1.54,
+      "ten": "1",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.069,
+      "y": 1.52,
+      "ten": "2",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.124,
+      "y": 1.49,
+      "ten": "3",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.208,
+      "y": 1.46,
+      "ten": "4",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.348,
+      "y": 1.39,
+      "ten": "5",
+      "vi": "tr"
+     },
+     {
+      "loai": "diem",
+      "x": 0.633,
+      "y": 1.27,
+      "ten": "6",
+      "vi": "tr"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "duong",
+       "duong": {
+        "diem": [
+         [
+          0.015,
+          1.54
+         ],
+         [
+          0.633,
+          1.27
+         ]
+        ],
+        "mau": "min"
+       }
+      },
+      {
+       "loai": "ghi",
+       "text": "Lần 1 và 6 xa nhau nhất: hiệu lớn nhất"
+      }
+     ],
+     [
+      {
+       "loai": "doc",
+       "tu": [
+        0.633,
+        1.27
+       ],
+       "den": [
+        0.015,
+        1.54
+       ],
+       "nhan_x": "ΔI = 0,618 A",
+       "nhan_y": "ΔU = 0,27 V"
+      },
+      {
+       "loai": "ghi",
+       "text": "r = 0,27 : 0,618 ≈ 0,44 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 1.547
+      },
+      {
+       "loai": "chu",
+       "x": 0.45,
+       "y": 1.565,
+       "text": "ℰ ≈ 1,55 V (I = 0)",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "ℰ = U₁ + I₁r = 1,54 + 0,015·0,437 ≈ 1,55 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Δr/r ≈ 0,081 ⇒ Δr = 0,437·0,081 ≈ 0,04 Ω"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "r = (0,44 ± 0,04) Ω; lần 4 khớp ✓"
+      }
+     ]
+    ]
+   }
+  }
+ ]
+}

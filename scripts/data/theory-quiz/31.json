@@ -352,15 +352,15 @@
    "question": "Thí nghiệm khay sóng: gắn hai mũi nhọn vào cùng một cần rung, cho chạm mặt nước rồi bật rung. Sau đó nhấc một mũi lên.",
    "statements": [
     {
-     "text": "Khi hai mũi cùng rung, mặt nước xuất hiện các đường cong mạnh, yếu xen kẽ và đứng yên.",
-     "answer": true
-    },
-    {
      "text": "Khi nhấc một mũi lên, các đường vân giao thoa vẫn còn nguyên trên mặt nước.",
      "answer": false
     },
     {
      "text": "Hai mũi gắn cùng một cần rung nên là hai nguồn kết hợp.",
+     "answer": true
+    },
+    {
+     "text": "Khi hai mũi cùng rung, mặt nước xuất hiện các đường cong mạnh, yếu xen kẽ và đứng yên.",
      "answer": true
     },
     {
@@ -370,9 +370,9 @@
    ],
    "explanation": "Vân chỉ có khi hai nguồn kết hợp cùng hoạt động; nhấc một mũi thì chỉ còn sóng tròn. Tại cực tiểu cả hai sóng vẫn tới nhưng ngược pha nên triệt tiêu.",
    "distractorNotes": {
-    "0": "Đây đúng là quan sát trong bài: hai nguồn kết hợp cùng hoạt động cho các đường mạnh, yếu xen kẽ, đứng yên.",
-    "1": "Nhấc một mũi thì chỉ còn một sóng tròn, không còn hai sóng chồng lên nhau nên vân biến mất.",
-    "2": "Cùng một cần rung nên hai mũi cùng phương, cùng tần số, độ lệch pha không đổi, thỏa điều kiện kết hợp.",
+    "0": "Nhấc một mũi thì chỉ còn một sóng tròn, không còn hai sóng chồng lên nhau nên vân biến mất.",
+    "1": "Cùng một cần rung nên hai mũi cùng phương, cùng tần số, độ lệch pha không đổi, thỏa điều kiện kết hợp.",
+    "2": "Đây đúng là quan sát trong bài: hai nguồn kết hợp cùng hoạt động cho các đường mạnh, yếu xen kẽ, đứng yên.",
     "3": "Sóng của cả hai mũi vẫn tới cực tiểu; điểm đó đứng yên vì hai sóng ngược pha triệt tiêu."
    }
   },
@@ -387,10 +387,6 @@
    "question": "Hai loa nối cùng một máy phát âm. Một bạn đứng ở chỗ nghe \"nhỏ xíu\", rồi nhờ người khác bịt kín một loa.",
    "statements": [
     {
-     "text": "Tại chỗ nghe nhỏ xíu, sóng âm của cả hai loa đều truyền tới.",
-     "answer": true
-    },
-    {
      "text": "Khi bịt kín một loa, bạn đó nghe tiếng to lên.",
      "answer": true
     },
@@ -399,15 +395,19 @@
      "answer": false
     },
     {
+     "text": "Tại chỗ nghe nhỏ xíu, sóng âm của cả hai loa đều truyền tới.",
+     "answer": true
+    },
+    {
      "text": "Các chỗ nghe to và nghe nhỏ thay đổi vị trí liên tục theo thời gian.",
      "answer": false
     }
    ],
    "explanation": "Ở chỗ nhỏ, hai sóng tới ngược pha nên triệt tiêu; bịt một loa thì hết triệt tiêu và tiếng to lên, nhưng chỉ còn biên độ một sóng. Các vị trí to, nhỏ là cố định.",
    "distractorNotes": {
-    "0": "Chỗ nhỏ xíu là do hai sóng ngược pha triệt tiêu, nên phải có cả hai sóng truyền tới đó.",
-    "1": "Bịt một loa thì không còn sóng thứ hai để triệt tiêu, nên tiếng tại đó mạnh lên so với trước.",
-    "2": "Sau khi bịt chỉ còn biên độ một sóng $a$, nhỏ hơn biên độ $2a$ tại chỗ cực đại.",
+    "0": "Bịt một loa thì không còn sóng thứ hai để triệt tiêu, nên tiếng tại đó mạnh lên so với trước.",
+    "1": "Sau khi bịt chỉ còn biên độ một sóng $a$, nhỏ hơn biên độ $2a$ tại chỗ cực đại.",
+    "2": "Chỗ nhỏ xíu là do hai sóng ngược pha triệt tiêu, nên phải có cả hai sóng truyền tới đó.",
     "3": "Hai loa nối cùng máy phát là nguồn kết hợp, nên các vị trí to, nhỏ cố định theo thời gian."
    }
   },
@@ -422,11 +422,11 @@
    "question": "Hai nguồn A, B dao động cùng pha trên mặt nước, mỗi sóng tới điểm M có biên độ $a$ (coi như bằng nhau).",
    "statements": [
     {
-     "text": "Nếu M là cực đại thì hai sóng tới M dao động cùng pha.",
-     "answer": true
+     "text": "Đường trung trực của AB là một đường cực tiểu.",
+     "answer": false
     },
     {
-     "text": "Nếu M là cực đại thì M dao động với biên độ $2a$.",
+     "text": "Nếu M là cực đại thì hai sóng tới M dao động cùng pha.",
      "answer": true
     },
     {
@@ -434,16 +434,16 @@
      "answer": false
     },
     {
-     "text": "Đường trung trực của AB là một đường cực tiểu.",
-     "answer": false
+     "text": "Nếu M là cực đại thì M dao động với biên độ $2a$.",
+     "answer": true
     }
    ],
    "explanation": "Cực đại: hai sóng cùng pha, biên độ $2a$. Cực tiểu: ngược pha, biên độ 0. Với hai nguồn cùng pha, trung trực AB là cực đại $k=0$.",
    "distractorNotes": {
-    "0": "Hiệu đường đi $k\\lambda$ làm sóng tới trễ đúng $k$ chu kì, nên hai sóng tới M vẫn cùng pha.",
-    "1": "Hai sóng cùng pha, mỗi sóng biên độ $a$, cộng lại cho biên độ lớn nhất $2a$.",
+    "0": "Mọi điểm trên trung trực có $d_2-d_1=0$, với hai nguồn cùng pha đó là cực đại $k=0$.",
+    "1": "Hiệu đường đi $k\\lambda$ làm sóng tới trễ đúng $k$ chu kì, nên hai sóng tới M vẫn cùng pha.",
     "2": "Hai sóng ngược pha, cùng biên độ $a$ triệt tiêu hoàn toàn, nên biên độ tại cực tiểu bằng 0.",
-    "3": "Mọi điểm trên trung trực có $d_2-d_1=0$, với hai nguồn cùng pha đó là cực đại $k=0$."
+    "3": "Hai sóng cùng pha, mỗi sóng biên độ $a$, cộng lại cho biên độ lớn nhất $2a$."
    }
   },
   {
@@ -461,24 +461,24 @@
      "answer": true
     },
     {
+     "text": "Chỉ cần hiệu đường đi $d_2-d_1$ (tính bằng cm) là số nguyên thì M là cực đại.",
+     "answer": false
+    },
+    {
      "text": "Hai nguồn cùng pha, tỉ số bằng số nguyên cộng $\\tfrac12$ thì M là cực tiểu.",
      "answer": true
     },
     {
      "text": "Mẹo này dùng được y hệt khi hai nguồn dao động ngược pha.",
      "answer": false
-    },
-    {
-     "text": "Chỉ cần hiệu đường đi $d_2-d_1$ (tính bằng cm) là số nguyên thì M là cực đại.",
-     "answer": false
     }
    ],
    "explanation": "Từ $d_2-d_1=k\\lambda$ và $d_2-d_1=(k+\\tfrac12)\\lambda$, chia cho $\\lambda$ ra mẹo nguyên/nguyên cộng ½; bài nói rõ mẹo chỉ dùng khi hai nguồn cùng pha và phải chia cho $\\lambda$ trước.",
    "distractorNotes": {
     "0": "Tỉ số nguyên nghĩa là $d_2-d_1=k\\lambda$, đúng điều kiện cực đại với hai nguồn cùng pha.",
-    "1": "Tỉ số bằng $k+\\tfrac12$ nghĩa là $d_2-d_1=(k+\\tfrac12)\\lambda$, đúng điều kiện cực tiểu.",
-    "2": "Áp mẹo ngoài điều kiện: hai nguồn ngược pha đã lệch nửa chu kì từ đầu nên cực đại, cực tiểu đổi chỗ.",
-    "3": "Quên chia cho $\\lambda$: hiệu đường đi là số nguyên cm chưa chắc bằng số nguyên lần bước sóng."
+    "1": "Quên chia cho $\\lambda$: hiệu đường đi là số nguyên cm chưa chắc bằng số nguyên lần bước sóng.",
+    "2": "Tỉ số bằng $k+\\tfrac12$ nghĩa là $d_2-d_1=(k+\\tfrac12)\\lambda$, đúng điều kiện cực tiểu.",
+    "3": "Áp mẹo ngoài điều kiện: hai nguồn ngược pha đã lệch nửa chu kì từ đầu nên cực đại, cực tiểu đổi chỗ."
    }
   },
   {
@@ -492,28 +492,28 @@
    "question": "Chiếu laser đỏ qua hai khe hẹp rất gần nhau, khoảng cách hai khe là $a$, màn đặt cách hai khe một khoảng $D$. Trên màn có các vạch sáng, tối xen kẽ, cách đều.",
    "statements": [
     {
-     "text": "Khoảng vân được tính bằng $i=\\dfrac{\\lambda D}{a}$.",
-     "answer": true
-    },
-    {
-     "text": "Đặt màn xa hai khe hơn thì các vạch sáng, tối giãn ra.",
-     "answer": true
-    },
-    {
      "text": "Một vân sáng và một vân tối liền kề cách nhau đúng bằng khoảng vân $i$.",
      "answer": false
     },
     {
+     "text": "Khoảng vân được tính bằng $i=\\dfrac{\\lambda D}{a}$.",
+     "answer": true
+    },
+    {
      "text": "Trong công thức khoảng vân, $a$ là biên độ của sóng ánh sáng.",
      "answer": false
+    },
+    {
+     "text": "Đặt màn xa hai khe hơn thì các vạch sáng, tối giãn ra.",
+     "answer": true
     }
    ],
    "explanation": "$i=\\dfrac{\\lambda D}{a}$ tỉ lệ thuận với $D$ nên màn xa thì vân giãn ra; vân sáng và vân tối liền kề cách nhau $i/2$; $a$ ở đây là khoảng cách hai khe.",
    "distractorNotes": {
-    "0": "Đây đúng là công thức bài nêu, với $a$ là khoảng cách hai khe, $D$ là khoảng cách từ khe đến màn.",
-    "1": "Khoảng vân tỉ lệ thuận với $D$, nên đưa màn ra xa thì khoảng vân tăng, các vạch giãn ra.",
-    "2": "Khoảng $i$ là giữa hai vân sáng liên tiếp; vân tối nằm chính giữa nên chỉ cách vân sáng $i/2$.",
-    "3": "Nhầm hai kí hiệu $a$: trong khe Young $a$ là khoảng cách hai khe, không phải biên độ sóng."
+    "0": "Khoảng $i$ là giữa hai vân sáng liên tiếp; vân tối nằm chính giữa nên chỉ cách vân sáng $i/2$.",
+    "1": "Đây đúng là công thức bài nêu, với $a$ là khoảng cách hai khe, $D$ là khoảng cách từ khe đến màn.",
+    "2": "Nhầm hai kí hiệu $a$: trong khe Young $a$ là khoảng cách hai khe, không phải biên độ sóng.",
+    "3": "Khoảng vân tỉ lệ thuận với $D$, nên đưa màn ra xa thì khoảng vân tăng, các vạch giãn ra."
    }
   }
  ]

@@ -1,0 +1,52 @@
+{
+  "id": "tn-l10-do-g-03",
+  "ten": "Đếm khung hình: đo t bằng camera quay chậm chính xác tới đâu?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-03-20261101.mp4",
+  "tong_giay": 49.9,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Đếm khung thì t lệch tới 1 khung = 1/fps. Ở 240 khung/s, 1 khung ≈ 0,0042 s, lớn hơn độ chia 0,001 s của đồng hồ.",
+      "kiem": "Đo t bằng cách đếm khung chính xác tới đâu?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "240 khung/s: thời gian giữa 2 khung so với 0,001 s?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.2,
+      "chu": "Camera 240 khung/s quay bi rơi cạnh thước, bộ đếm khung."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 15.2,
+      "chu": "Khung 77: bi chạm mốc 0,500 m."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 26.9,
+      "chu": "t = 77/240 ≈ 0,321 s. Lệch 1 khung = 1/240 ≈ 0,0042 s, lớn hơn độ chia 0,001 s."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 33.6,
+      "chu": "Bi chạm mốc lúc nào giữa khung 76 và 77? Chưa biết."
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.05,
+    "cau_hoi": "Camera quay 240 khung/s. Thời gian giữa 2 khung liền nhau so với độ chia 0,001 s của đồng hồ hiện số thế nào?",
+    "chon": [
+      "A. Nhỏ hơn 0,001 s",
+      "B. Bằng 0,001 s",
+      "C. Lớn hơn 0,001 s",
+      "D. Bằng 0, vì quay rất chậm"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Giữa 2 khung là 1/240 s ≈ 0,0042 s, lớn hơn 0,001 s: đếm khung kém chính xác hơn đồng hồ hiện số.",
+    "giai_thich_sai": "Xem đoạn kế: hai khung 76 và 77 cách nhau 1/240 s ≈ 0,0042 s, lớn hơn độ chia 0,001 s; quay chậm vẫn còn sai số."
+  }
+}

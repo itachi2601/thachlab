@@ -17,6 +17,14 @@ export const AVCN_SUBJECT_CODE = "avcn";
 export const CASIO_CLASS_SLUG = "casio-vat-ly";
 export const CASIO_SUBJECT_CODE = "casio-vat-ly";
 
+/** Học phần CTTC "WorldSkills — Industrial Mechanics" (2/11/2026): bộ dịch song ngữ đề thi, thang điểm, phiếu tự chấm. */
+export const WORLDSKILLS_CLASS_SLUG = "worldskills-im";
+export const WORLDSKILLS_SUBJECT_CODE = "worldskills-im";
+
+/** Các lớp thuộc không gian CTTC: gốc đường dẫn về /lop-hoc/cttc, không về bộ chọn lớp THPT. */
+export const CTTC_CLASS_SLUGS: ReadonlySet<string> = new Set([AVCN_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG]);
+export const isCttcClassSlug = (slug: string | null | undefined) => !!slug && CTTC_CLASS_SLUGS.has(slug);
+
 export const MANAGED_CLASSES: ManagedClassSeed[] = [
   {
     name: "KHTN 9",
@@ -61,6 +69,14 @@ export const MANAGED_CLASSES: ManagedClassSeed[] = [
     color: "#F59E0B",
     icon: "🧮",
     sort_order: 7,
+  },
+  // Học phần CTTC "WorldSkills — Industrial Mechanics" (2/11/2026): vào tự do; nội dung = môn 'worldskills-im'.
+  {
+    name: "WorldSkills — Industrial Mechanics",
+    slug: WORLDSKILLS_CLASS_SLUG,
+    color: "#C2410C",
+    icon: "🛠️",
+    sort_order: 8,
   },
 ];
 

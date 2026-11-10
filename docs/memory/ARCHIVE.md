@@ -24,7 +24,6 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Trang chủ redesign](project_thachlab_home_redesign.md) — 22/9/2026 (06866fcb); thiếu ảnh thầy + ảnh 3 câu hỏi phụ
 - [CNC kiểm tra redesign](project_thachlab_cnc_kiem_tra_redesign.md) — bài học CNC hardcode→DB; f75023fe + 2 migration; đã push
 - [4 chương HK2 lớp 10](project_thachlab_hk2_lop10_4chuong.md) — 12/12 bài đăng 24/9/2026 (exam 102-113); vài lưu ý cần rà
-- [Chương 4 hạt nhân lớp 12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — thay lý thuyết Bài 14-18; Supabase 24/9/2026; bundle JSON gốc repo lỗi thời
 - [Khôi phục bài làm dở](project_thachlab_exam_resume.md) — ExamRunner tự lưu 15s; deploy 24/9/2026, chưa test thoát giữa chừng
 - [Bài tập mẫu lẫn lý thuyết](project_thachlab_mixed_worked_examples_audit.md) — sửa xong 2 bài (83, 131) 25/9/2026
 - [Vá lỗ hổng /kiem-tra/lam](project_thachlab_exam_class_access_fix.md) — XONG 27/9/2026, không còn treo
@@ -94,3 +93,18 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — 12 buổi; flip-1 lên web; treo duyệt bảng 12 buổi
 - [Thẻ Vật lý quanh ta](project_thachlab_vat_ly_quanh_ta_the.md) — xong 14/10; treo Gemini tìm ảnh, chưa deploy
 - [Casio Vật lí (MTCT)](project_thachlab_casio_vat_ly.md) — WP-01,03..06 xong 18/10
+- [Mobile PWA](project_thachlab_mobile_pwa.md) — push thông báo + nhắc lùi dần đã deploy 18/10 (chuyển 30/10)
+- [Cải tiến chương 1 L12 + toàn site](project_thachlab_cai_tien_chuong1_l12.md) — đo 112 bài 18/10 (chuyển 30/10)
+- [Rà soát 22/10 + dọn lint](project_thachlab_ra_soat_22_10_lint.md) — lint 0 lỗi; còn CI gate (chuyển 30/10)
+- [Decoder MTEF v2](project_thachlab_mtef_decoder_v2.md) — dùng công cụ có sẵn
+- [Đăng lý thuyết riêng](project_thachlab_dang_ly_thuyet_only.md) — /quan-tri/bai-hoc, click phải qua JS
+- [L10 Ch.4 lý thuyết rà soát](project_thachlab_l10_ly_thuyet_ch4.md) — B23–27 lesson 68–72, đã đăng 30/10 (chuyển 31/10)
+- [Video khung bán tương tác](project_thachlab_video_khung_tuong_tac.md) — khung 6 ô; 14 bài L12 đã đăng (chuyển 31/10)
+
+## Chuyển từ MEMORY.md 2026-11-05 (đã xong/đã deploy, chi tiết trong file)
+- [AVCN Cơ khí](project_thachlab_avcn.md) — lớp avcn vào tự do; Chapter 8 đăng 13/10
+- [Kho bẫy trộn câu ok](project_thachlab_kho_bay_tron_cau_ok.md) — chưa thử HS thật
+- [Lịch công tác tuần](project_thachlab_lich_tuan.md) — skill lich-tuan + /tai-khoan
+- [Nền SÁNG mặc định](project_thachlab_nen_sang.md) — `docs/MAU-NEN-SANG.md`
+- [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat chỉ ở lý thuyết
+- [Hình OpenStax cho L12](project_thachlab_hinh_openstax.md) — chèn ảnh thẳng, không vẽ lại SVG
