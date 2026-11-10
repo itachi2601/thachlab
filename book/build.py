@@ -373,6 +373,32 @@ def final_pass(body, keys):
     return str(soup)
 
 
+def sim_one_frame(html):
+    """Mô phỏng CSS (.tl-sim: hàng nút radio + mỗi lựa chọn một SVG) in ra thành N hình chồng nhau tràn 2 trang
+    → giữ đúng hình của lựa chọn đang `checked`, bỏ hàng nút, thêm nhãn 'mô phỏng trên web'."""
+    out, pos = [], 0
+    for m in re.finditer(r'<div class="tl-box[^"]*\btl-sim\b[^"]*"[^>]*>', html):
+        if m.start() < pos: continue
+        depth, j = 0, m.start()
+        for t in re.finditer(r'<(/?)div\b[^>]*>', html[m.start():]):
+            depth += -1 if t.group(1) else 1
+            if depth == 0: j = m.start() + t.end(); break
+        seg = soup_of(html[m.start():j])
+        box = seg.find('div')
+        chk = box.find('input', checked=True)
+        keep = (chk.get('class') or [None])[0] if chk else None
+        svgs = box.find_all('svg', recursive=False) or box.find_all('svg')
+        for k, s in enumerate(svgs):
+            if (keep and keep not in (s.get('class') or [])) or (not keep and k > 0): s.decompose()
+        for r in box.find_all('div', class_='tl-sim__row'): r.decompose()
+        for x in box.find_all(['input', 'label']): x.decompose()
+        box['class'] = [c for c in box['class'] if not c.startswith('tl-sim')]
+        lab = box.find('p', class_='tl-label')
+        if lab: lab.append(BeautifulSoup('<span class="simtag">▶ có mô phỏng trên web</span>', 'html.parser'))
+        out += [html[pos:m.start()], str(seg)]; pos = j
+    return ''.join(out) + html[pos:]
+
+
 def convert_theory(raw, lid, keys, marks=None):
     marks = marks or {}
     html = raw
@@ -386,6 +412,20 @@ def convert_theory(raw, lid, keys, marks=None):
     # video chỉ chiếu trên lớp: iframe không in được → một dòng nhắc + giữ câu "Nhìn vào" để HS ghi
     html = re.sub(r'<div class="tl-box tl-box--video">\s*<p class="tl-label">[^<]*?:\s*([^<]*)</p>.*?</div>\s*(<p><strong>Nhìn vào:.*?</p>)\s*</div>',
                   r'<p class="vidnote"><b>▶ Video thầy chiếu trên lớp:</b> \1.</p>\2', html, flags=re.S)
+    # hộp video kiểu mới (clip dựng lại, thẻ <video>, tên ở .tl-video-ten, gợi ý ở .tl-video-goi-y)
+    html = re.sub(r'<div class="tl-box tl-box--video[^"]*"[^>]*>\s*<p class="tl-label">[^<]*</p>\s*'
+                  r'<p class="tl-video-ten">(.*?)</p>\s*<div class="tl-video[^"]*">.*?</div>\s*'
+                  r'<p class="tl-video-goi-y">(.*?)</p>\s*</div>',
+                  r'<p class="vidnote"><b>▶ Video thầy chiếu trên lớp:</b> \1.</p><p>\2</p>', html, flags=re.S)
+    html = re.sub(r'<video[^>]*>.*?</video>', '', html, flags=re.S)
+    html = sim_one_frame(html)
+    # thuật ngữ bấm-xem-nghĩa (.tl-term: checkbox + label + .tl-def) → "thuật ngữ (nghĩa)" in liền
+    html = re.sub(r'<span class="tl-term">\s*<input[^>]*>\s*<label[^>]*>(.*?)</label>\s*<span class="tl-def">(.*?)\.?\s*</span>\s*</span>',
+                  lambda m: f'<b>{m.group(1)}</b> ({m.group(2)[:1].lower()}{m.group(2)[1:]})', html, flags=re.S)
+    # iframe còn lại (mô phỏng PhET trong details…) cũng không in được → dòng nhắc theo title
+    html = re.sub(r'<iframe[^>]*?title="(?:Mô phỏng PhET:\s*)?([^"]*)"[^>]*>\s*</iframe>',
+                  r'<p class="vidnote"><b>▶ Mô phỏng thầy chiếu trên lớp:</b> \1.</p>', html, flags=re.S)
+    html = re.sub(r'<iframe[^>]*>\s*</iframe>', '<p class="vidnote"><b>▶ Mô phỏng thầy chiếu trên lớp.</b></p>', html, flags=re.S)
     html = bw.to_print(html)
     html, store = protect_svgs(html)
     soup = soup_of(html)
