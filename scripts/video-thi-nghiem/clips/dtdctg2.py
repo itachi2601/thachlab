@@ -48,7 +48,7 @@ def walker(d, dm, v, phase, alpha=1.0):
     d.line([(x, fy - 125), (x + sw * 0.8, fy - 80)], fill=c, width=8)
     d.ellipse([x - 24, fy - 192, x + 24, fy - 144], fill=A(WHITE, alpha), outline=c, width=7)
     if v != 0:                                                     # mui ten van toc tren dau, dai ti le |v|
-        L = 55 * abs(v); sgn = 1 if v > 0 else -1; y = fy - 222
+        L = 55 * abs(v); sgn = 1 if v > 0 else -1; y = fy - 209
         arrow(d, (x, y), (x + sgn * L, y), A(RED_D, alpha), w=7, head=20)
 
 def corridor(d, t_run, flash=None):
@@ -85,7 +85,7 @@ def axes(d, box=(40, 715, 1040, 1300), alpha=1.0):
         d.line([(GX0, Y(dm)), (GX1, Y(dm))], fill=c((242, 238, 230)), width=2)
         text(d, (GX0 - 18, Y(dm)), str(dm), 36, INK, bold=False, anchor="rm", alpha=alpha)
     text(d, (GX0 - 18, GYB + 6), "0", 36, INK, bold=False, anchor="rm", alpha=alpha)
-    text(d, (1030, GYB - 34), "t (s)", 38, INK, anchor="rm", alpha=alpha)
+    text(d, (1030, GYB - 50), "t (s)", 38, INK, anchor="rm", alpha=alpha)
     text(d, (GX0 + 22, GYT - 22), "d (m)", 38, BLUE, anchor="lm", alpha=alpha)
 
 def trail(d, t_upto, colored=False, width=6, segs_on=(1, 1, 1)):
@@ -219,7 +219,7 @@ def s_bay(img, d, t, sc):
     dots(d, T_END)
     a1 = appear(t, 0.15, 0.4)
     ex, ey = X(T_END), Y(0)
-    if a1 > 0: d.ellipse([ex - 30, ey - 30, ex + 30, ey + 30], outline=A(RED, a1), width=6)
+    if a1 > 0: d.ellipse([ex - 24, ey - 24, ex + 24, ey + 24], outline=A(RED, a1), width=6)
     card(d, (40, 265, 1040, 690), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
     pw = tw(d, "BẪY", F(38)) + 52
     card(d, (W / 2 - pw / 2, 290, W / 2 + pw / 2, 354), fill=A(RED, a1), r=32)
@@ -251,7 +251,7 @@ def s_end(img, d, t, sc):
         kh = appear(t, M[0] + 3.0, 0.5)
         if kh <= 0: return
         card(d, (110, 1260, 970, 1420), fill=A((255, 247, 237), kh), r=24)
-        text(d, (W / 2, 1340), "Vẽ nháp đồ thị d–t ra giấy", 44, ORANGE, alpha=kh)
+        text(d, (W / 2, 1340), "Chia hành trình thành từng đoạn", 44, ORANGE, alpha=kh)
     chot_hoi(d, t, sc, "Độ dốc d–t là vận tốc;\nd cuối khác quãng đường", "", body=body)
 
 def _cues(clip):

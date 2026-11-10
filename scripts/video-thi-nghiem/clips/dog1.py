@@ -94,22 +94,23 @@ def chip(d, s, y, col=PURPLE, bg=PURPLE_BG, tc=None):
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    rig(d, 0.0, hook=True); clock(d, 0.0, lit=False); table(d, 0)
+    rig(d, 0.0, hook=True); clock(d, 0.0, lit=False)
+    card(d, (440, 440, 1040, 1290), fill=WHITE, outline=LIGHT, w=3)          # thong tin (bang chua dien)
+    for i, s in enumerate(("Thả bi 5 lần,", "cùng s = 0,500 m.", "", "Đồng hồ chia", "tới 0,001 s.")):
+        if s: text(d, (740, 600 + i * 90), s, 46, INK, alpha=appear(t, 0.3 + 0.4 * (i // 3), 0.4))
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 940 + (1 - a) * 40
-    card(d, (40, y0, 1040, y0 + 655), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    y0 = 1310 + (1 - a) * 30
+    card(d, (40, y0, 1040, y0 + 285), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
-    text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    ctext(d, y0 + 165, "Thả bi 5 lần, cùng s = 0,500 m.", 46, INK, maxw=920, alpha=a)
-    ctext(d, y0 + 240, "Đồng hồ chia tới 0,001 s.", 46, INK, maxw=920, alpha=a)
-    ctext(d, y0 + 390, "5 số t đo được sẽ thế nào?", 54, INK, maxw=920, alpha=a)
+    card(d, (W / 2 - pw / 2, y0 + 20, W / 2 + pw / 2, y0 + 80), fill=A(PURPLE, a), r=30)
+    text(d, (W / 2, y0 + 50), "DỰ ĐOÁN", 36, WHITE, alpha=a)
+    ctext(d, y0 + 145, "5 số t đo được sẽ thế nào?", 52, INK, maxw=920, alpha=a)
     tc, tend = M[1] + 0.6, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 545, 940, y0 + 559], radius=7, fill=A(LIGHT, a))
-        if p < 1: d.rounded_rectangle([140, y0 + 545, 140 + 800 * (1 - p), y0 + 559], radius=7, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 232, 940, y0 + 246], radius=7, fill=A(LIGHT, a))
+        if p < 1: d.rounded_rectangle([140, y0 + 232, 140 + 800 * (1 - p), y0 + 246], radius=7, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh (5 lan tha, chieu cham 3 lan) ----------------
 SLOW, PAUSE, HOLD, RUN0 = 3.0, 0.35, 0.4, 0.4
@@ -171,12 +172,12 @@ def s_rutra(img, d, t, sc):
     segs(d, W / 2, 1535, [("Kết quả: ", INK), ("g = 9,70 ± 0,15 m/s²", GREEN)], 48, alpha=k2)
     kc = appear(t, M[2] - 0.1, 0.45)
     if kc > 0:
-        y0 = 700 + (1 - kc) * 30
-        card(d, (40, y0, 1040, y0 + 470), fill=A((254, 242, 242), kc), outline=A(NAVY, kc), w=5)
-        text(d, (W / 2, y0 + 75), "Chưa nói được", 46, NAVY, alpha=kc)
+        y0 = 262 + (1 - kc) * 20                                    # chi che dong ho + dau bang, khong che so
+        card(d, (40, y0, 1040, y0 + 285), fill=A((254, 242, 242), kc), outline=A(NAVY, kc), w=5)
+        text(d, (W / 2, y0 + 55), "Chưa nói được", 42, NAVY, alpha=kc)
         kk = kc * appear(t, M[2] + 0.3, 0.4)
-        text(d, (W / 2, y0 + 210), "Mới thả ở một độ cao.", 46, RED_D, alpha=kk)
-        text(d, (W / 2, y0 + 320), "Độ cao khác có cùng g?", 46, RED_D, alpha=kk)
+        text(d, (W / 2, y0 + 140), "Mới thả ở một độ cao.", 44, RED_D, alpha=kk)
+        text(d, (W / 2, y0 + 220), "Độ cao khác có cùng g?", 44, RED_D, alpha=kk)
 
 # ---------------- canh 5: Bay (khac 9,8 la hong) ----------------
 NX0, NPX, NY = 150, 1900.0, 1150                 # truc so g: x(9,5) ; px / (m/s^2) ; y
@@ -229,7 +230,7 @@ def s_end(img, d, t, sc):
         kh = appear(t, M[0] + 3.0, 0.5)
         if kh <= 0: return
         card(d, (110, 1220, 970, 1380), fill=A(HL, kh), r=24)
-        segs(d, W / 2, 1300, [("So 0,322 s với ", ORANGE), ("t", ORANGE, True)], 44, alpha=kh)
+        segs(d, W / 2, 1300, [("Nhớ g = 2s/t²", ORANGE)], 44, alpha=kh)
     chot_hoi(d, t, sc, "Kết quả đo là một khoảng:\ng = ḡ ± Δg", "", body=body)
 
 def _cues(clip):
