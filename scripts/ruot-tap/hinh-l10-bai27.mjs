@@ -98,9 +98,9 @@ export const hinhBai27 = {
   noiTiep: (cap = 'Hai khâu nối tiếp (số minh hoạ). Khâu sau nhận phần ra của khâu trước.') => {
     let b = bandH(4, 46, 60, 40, { tip: false }) + box(46, 26, 74, 68) + T(83, 56, 'động', { a: 'middle' }) + T(83, 78, 'cơ', { a: 'middle' });
     b += bandH(120, 190, 49, 12, { tip: false }) + box(190, 26, 76, 68) + T(228, 56, 'truyền', { a: 'middle' }) + T(228, 78, 'động', { a: 'middle' });
-    b += bandH(266, 316, 48.5, 11) + bandV(90, 94, 160, 28) + bandV(236, 94, 150, 4);
-    b += T(4, 20, '100 kJ') + T(150, 34, '30 kJ', { a: 'middle' }) + T(316, 24, '?', { a: 'end', w: 700, c: RED });
-    b += T(108, 146, '70 kJ', { c: RED }) + T(248, 140, '?', { c: RED, w: 700 });
+    b += bandH(266, 316, 49, 9.6) + bandV(90, 94, 160, 28) + bandV(236, 94, 150, 3);
+    b += T(4, 20, '100 kJ') + T(150, 34, '30 kJ', { a: 'middle' }) + T(316, 24, '24 kJ', { a: 'end' });
+    b += T(108, 146, '70 kJ', { c: RED }) + T(254, 140, '6 kJ', { c: RED });
     return wrap('0 0 320 166', b, cap, 'Hai khâu nối tiếp');
   },
   // Trang 3 · Bẫy 1: hiệu suất khác công suất
