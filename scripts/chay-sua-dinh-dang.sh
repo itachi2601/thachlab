@@ -10,6 +10,7 @@ if (( 10#$h >= 6 && 10#$h < 22 )); then echo "Đang $h giờ — chỉ chạy sa
 for f in "$dir"/apply-*.sql; do
   n=$(basename "$f" .sql); n=${n#apply-}
   (( 10#$n < from )) && continue
+  h=$(date +%H); if (( 10#$h >= 6 && 10#$h < 22 )); then echo "Đã $h giờ — dừng trước $(basename "$f"). Tối nay chạy tiếp: thêm tham số $((10#$n))"; exit 0; fi
   echo "== $(date +%H:%M:%S) $(basename "$f") ($(wc -c <"$f" | tr -d ' ') byte)"
   supabase db query --linked -f "$f" || { echo "LỖI ở $f — dừng. Chạy tiếp từ file này: thêm tham số $((10#$n))"; exit 1; }
   sleep 3

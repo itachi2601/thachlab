@@ -49,7 +49,7 @@ export function suaChuoi(input: string, ngu?: { canhNhiet?: boolean; dauCau?: bo
         return `${a} °C`;
       });
       // "t0C" / "t(0C)" / "(0C)" — đơn vị độ C mất dấu trong nhãn
-      if (canhNhiet) t = rep(t, /(?<![A-Za-z\d])(t\s?)?\(?0C\)?(?![A-Za-z0-9])/g, (_m, tt) => `${tt ? "t " : ""}(°C)`, "doC");
+      if (canhNhiet) t = rep(t, /(?<![A-Za-z\d])(t\s?)?(\()?0C(\))?(?![A-Za-z0-9])/g, (_m, tt, mo, dg) => (tt ? "t (°C)" : mo && dg ? "(°C)" : `${mo ?? ""}°C${dg ?? ""}`), "doC");
       // Thầy đã duyệt từng câu (ep): "100 C" có dấu cách là 100 °C; "105 Pa" không hệ số là 10⁵ Pa
       if (ngu?.ep) {
         t = rep(t, /(?<![\d.,])(\d+(?:,\d+)?) C(?![A-Za-z0-9])/g, (_m, a) => `${a} °C`, "doC");
