@@ -11,6 +11,7 @@ import { fetchMyClassIds } from "@/services/classes";
 import {
   fetchPublishedPosts,
   visibleTo,
+  visibleToCttcStudent,
   type PostMeta,
 } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
@@ -81,11 +82,22 @@ export default function NewsPage() {
   }, []);
 
   const isStudent = Boolean(session) && profile?.role !== "admin";
+  // Sinh viên CTTC: lọc theo học phần đang ghi danh, bỏ tin "toàn trường" của khối THPT (tin Vật lí, HSG…).
+  const isCttc = profile?.role === "student" && profile.track === "cttc";
+  const [myCourseIds, setMyCourseIds] = useState<number[]>([]);
 
   useEffect(() => {
     if (!isStudent || !session) return;
     fetchMyClassIds(session.user.id).then(setMyClassIds);
   }, [isStudent, session]);
+
+  useEffect(() => {
+    if (!isCttc || !session) return;
+    import("@/services/course-enrollments")
+      .then(({ fetchMyEnrollments }) => fetchMyEnrollments(session.user.id))
+      .then((rows) => setMyCourseIds(rows.filter((r) => r.status === "active").map((r) => r.course.id)))
+      .catch(() => undefined);
+  }, [isCttc, session]);
 
   // khách/quản trị thấy tất cả; học sinh chỉ thấy lớp mình
   const effectiveClassIds = isStudent ? myClassIds : null;
@@ -94,10 +106,10 @@ export default function NewsPage() {
     () =>
       (posts ?? []).filter(
         (p) =>
-          visibleTo(p.classIds, effectiveClassIds) &&
+          (isCttc ? visibleToCttcStudent(p, myCourseIds, myClassIds ?? []) : visibleTo(p.classIds, effectiveClassIds)) &&
           p.title.toLowerCase().includes(search.toLowerCase()),
       ),
-    [posts, effectiveClassIds, search],
+    [posts, effectiveClassIds, search, isCttc, myCourseIds, myClassIds],
   );
 
   return (
