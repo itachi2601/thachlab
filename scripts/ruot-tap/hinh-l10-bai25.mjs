@@ -20,15 +20,17 @@ const xe = (x, g) => `<circle cx="${x}" cy="${g - 12}" r="12" fill="#fff" stroke
 
 export const hinhB25 = {
   // Trang 1 · Dự đoán: cùng xe, cùng lực phanh, tốc độ gấp đôi
-  xeDap: (cap = 'Cùng xe, cùng lực phanh. Mũi tên vận tốc vẽ theo tỉ lệ; vạch lết hôm sau chưa biết dài bao nhiêu.') => {
+  xeDap: (cap = 'Cùng xe, cùng lực phanh. Mũi tên vận tốc vẽ theo tỉ lệ; vạch lết hôm sau vẽ ngắt quãng, không theo tỉ lệ.') => {
     const row = (g, ten, vl, vlab, sk, sklab, dash) => {
       let b = T(4, g - 8, ten, { w: 700 }) + xe(96, g);
       b += arr(116, g - 54, 116 + vl, g - 54, 'xd') + T(124 + vl, g - 47, vlab);
-      b += `<line x1="140" y1="${g + 5}" x2="${140 + sk}" y2="${g + 5}" stroke="${dash ? RED : INK}" stroke-width="6"${dash ? ' stroke-dasharray="10 6"' : ''}/>`;
+      // hôm sau: vạch ngắt quãng (không theo tỉ lệ) để không đo được tỉ số bằng thước — HS ảo 10/11 đo ra đáp án
+      b += dash ? `<line x1="140" y1="${g + 5}" x2="196" y2="${g + 5}" stroke="${RED}" stroke-width="6"/><path d="M200 ${g + 14} L210 ${g - 4} M210 ${g + 14} L220 ${g - 4}" stroke="${RED}" stroke-width="2.4"/><line x1="224" y1="${g + 5}" x2="${140 + sk}" y2="${g + 5}" stroke="${RED}" stroke-width="6"/>`
+        : `<line x1="140" y1="${g + 5}" x2="${140 + sk}" y2="${g + 5}" stroke="${INK}" stroke-width="6"/>`;
       b += T(140 + sk / 2, g + 30, sklab, { a: 'middle', c: dash ? RED : INK, w: dash ? 700 : 400 });
       return b + `<line x1="0" y1="${g}" x2="320" y2="${g}" stroke="${GREY}" stroke-width="1.6"/>`;
     };
-    const b = defs('xd') + row(84, 'hôm qua', 40, '10 km/h', 40, '2 m', false) + row(184, 'hôm sau', 80, '20 km/h', 170, '? m', true);
+    const b = defs('xd') + row(84, 'hôm qua', 40, '10 km/h', 40, '2 m', false) + row(184, 'hôm sau', 80, '20 km/h', 120, '? m', true);
     return wrap('0 0 320 222', b, cap, 'Hai lần phanh xe đạp với hai tốc độ');
   },
   // Trang 2 · Thí nghiệm: khúc gỗ qua cổng quang rồi trượt tới khi dừng
@@ -85,12 +87,12 @@ export const hinhB25 = {
     const Y = (z) => 180 - 8 * z;
     let b = defs('tl') + ground(4, 316, 180);
     b += `<path d="M8 ${Y(18)} L48 ${Y(18)} C98 ${Y(18)} 120 ${Y(3)} 160 ${Y(3)} C200 ${Y(3)} 226 ${Y(13)} 266 ${Y(13)} C286 ${Y(13)} 300 ${Y(12)} 314 ${Y(10)}" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
-    [[48, 18, 'A'], [160, 3, 'B'], [266, 13, 'D']].forEach(([x, z, n]) => {
+    [[48, 18, 'A'], [160, 3, 'B']].forEach(([x, z, n]) => {
       b += dashG(x, Y(z), x, 180) + `<circle cx="${x}" cy="${Y(z)}" r="6" fill="${RED}"/>` + T(x, Y(z) - 12, n, { a: 'middle', w: 700 });
       b += T(x + 8, z > 5 ? Y(z / 2) + 7 : 172, `${z} m`);
     });
     b += arr(58, Y(18) - 30, 108, Y(18) - 30, 'tl', RED) + T(114, Y(18) - 23, '10 m/s', { c: RED });
-    return wrap('0 0 320 194', b, cap, 'Ray tàu lượn qua A, B, D');
+    return wrap('0 0 320 194', b, cap, 'Ray tàu lượn qua A và B');
   },
   // Trang 5 · Thử thách ★★★: ném đá từ mép vực theo ba hướng
   vuc: (cap = 'Ném cùng tốc độ đầu theo ba hướng. Tốc độ lúc chạm nước có khác nhau không?') => {
