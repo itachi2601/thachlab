@@ -10,7 +10,7 @@
 from engine import *
 
 MS = [0.10, 0.20, 0.30]; MG = [0.98, 1.96, 2.94]; T10 = [10.2, 7.0, 5.7]; FHT = [0.95, 2.01, 3.04]
-SPD = 3.0                                          # tua nhanh x3 khi bam gio
+SPD = 2.5                                          # tua nhanh x2,5 khi bam gio (lan 3: 53 do/khung < 60)
 RUBBER = (234, 88, 12); TUBE = (203, 213, 225); TUBE_D = (71, 85, 105); BLOCK = (148, 163, 184)
 
 def vn(x, nd): return f"{x:.{nd}f}".replace(".", ",")
@@ -46,7 +46,7 @@ def dashed(d, p, q, color, w=4, on=14, off=10):
 
 # ---------------- dung cu nhin nghieng ----------------
 TX, TT, TB = 380, 520, 760                         # truc ong: dinh, day
-RX, RY = 270, 62                                   # quy dao (r = 0,50 m -> 270 px), nhin nghieng
+RX, RY = 270, 105                                  # quy dao (r = 0,50 m -> 270 px), nhin nghieng
 def nut_xy(ph): return (TX + RX * math.cos(ph), TT + RY * math.sin(ph))
 
 def rig(d, ph, nblk, f_k=1.0, ften=None, r_bar=True, trail=0.0):
@@ -61,8 +61,9 @@ def rig(d, ph, nblk, f_k=1.0, ften=None, r_bar=True, trail=0.0):
         d.rounded_rectangle([x - 22, y - 18, x + 22, y + 18], radius=7, fill=RUBBER, outline=(124, 45, 18), width=3)
         if ften:                                     # luc cang chi vao truc ong, chieu nghieng (phuong sau-truoc thu RY/RX)
             ux, uy = -math.cos(ph), -math.sin(ph) * RY / RX
-            nn = math.hypot(ux, uy); ux, uy = ux / nn, uy / nn   # do dai co dinh 62.Mg, chi huong theo phoi canh
-            L = 62 * ften; x0, y0 = x + ux * 26, y + uy * 26
+            nn = math.hypot(ux, uy); ux, uy = ux / nn, uy / nn   # do dai 40.Mg doc theo day
+            L = min(40 * ften, math.hypot(TX - x, TT - y) - 60)  # khong vuot qua truc ong (chi co gan truoc/sau)
+            x0, y0 = x + ux * 26, y + uy * 26
             arrow(d, (x0, y0), (x0 + ux * L, y0 + uy * L), RED, w=7, head=18)
     if trail:                                        # vet mo sau nut (chong giat khi quay nhanh)
         for i in range(4, 0, -1):
@@ -136,7 +137,7 @@ def s_hook(img, d, t, sc):
         d.rounded_rectangle([140, y0 + 470, 140 + 800 * (1 - p), y0 + 484], radius=7, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
-TR = [0.4, 4.3, 7.1]                               # luc bat dau bam gio tung lan
+TR = [0.4, 4.7, 7.7]                               # luc bat dau bam gio tung lan
 def trial(t):
     """-> (lan j, thoi gian that R da quay, so dong ho, so vong, da xong?)"""
     j = 0
@@ -160,9 +161,9 @@ def s_do(img, d, t, sc):
     text(d, (855, 720), "M = " + vn(MS[j], 2) + " kg", 40, INK)
     arrow(d, (720, 820), (790, 820), RED, w=6, head=18)
     text(d, (805, 820), "lực căng", 40, RED, anchor="lm")
-    cw = tw(d, "tua nhanh ×3", F(40)) + 40
+    cw = tw(d, "tua nhanh ×2,5", F(40)) + 40
     card(d, (855 - cw / 2, 890, 855 + cw / 2, 950), fill=(241, 245, 249), outline=TUBE_D, r=30, w=3)
-    text(d, (855, 920), "tua nhanh ×3", 40, MUTED)
+    text(d, (855, 920), "tua nhanh ×2,5", 40, MUTED)
     nrow = [j + 1, j + (1 if done else 0)]
     table(d, nrow)
 
@@ -281,8 +282,8 @@ CLIP = dict(id="tn-l10-huongtam-03", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Dây luồn qua ống.", 2.6),
    ("Dừng video, chọn đáp án.", 6.3)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("Bấm giờ 10 vòng, giữ kẹp yên.", 3.9),
-   ("Thêm quả nặng, đo lại.", 2.9),
+   ("Bấm giờ 10 vòng, giữ kẹp yên.", 4.3),
+   ("Thêm quả nặng, đo lại.", 3.0),
    ("Lần ba: ba quả nặng.", 2.7)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
    ("So thanh dưới với vạch đỏ.", 5.0)]),
@@ -291,6 +292,6 @@ CLIP = dict(id="tn-l10-huongtam-03", header="VẬT LÍ 10 · THÍ NGHIỆM", foo
    ("Còn điều chưa biết.", 3.4)]),
  dict(key="bay", title="Bẫy thường gặp", draw=s_bay, tail=0.4, caps=[
    ("Đo bán kính từ đâu?", 5.4)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=1.0, caps=[
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
    ("Dừng video, tự trả lời.", 6.0)]),
 ])
