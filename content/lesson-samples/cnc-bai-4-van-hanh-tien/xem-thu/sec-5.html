@@ -1642,63 +1642,36 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content figure.fig figcaption{margin-top:.35rem;font-size:.85em;color:#94a3b8;text-align:center}
 
 </style>
-<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>V. Tình huống mẫu: nhận máy đến lúc sẵn sàng cắt</h3>
+<div class="lesson-page"><div class="wrap"><h1>Bài lý thuyết (bản xem thử)</h1><p class="sub">BẢN XEM THỬ — chưa đăng lên web.</p><span class="exam-content"><h3>VI. Ứng dụng tại xưởng và tổng kết</h3>
 
-<div class="tl-box tl-box--rule">
-<p class="tl-label">📘 Tình huống</p>
-<p>Ca chiều, em nhận máy EMCO TURN 55 sau một nhóm khác: phôi tròn mới, <strong>dao số 2</strong>, làm bài tập ở mục II.6. Máy đang tắt, trang offset còn số của nhóm trước. Liệt kê các bước đến lúc sẵn sàng cắt.</p>
-</div>
-
-<div class="table-scroll"><table class="tl-table tl-table--data">
-<thead><tr><th>Câu trong tình huống</th><th>Dữ kiện → quy tắc gọi ra</th></tr></thead>
-<tbody>
-<tr><td>"nhận máy sau nhóm khác"</td><td>Kiểm tra trước cấp điện</td></tr>
-<tr><td>"máy đang tắt"</td><td>CP → Power → WinNC → Reference</td></tr>
-<tr><td>"phôi tròn mới"</td><td>Chọn chấu, độ nhô; cài lại W</td></tr>
-<tr><td>"dao số 2"</td><td>Gá dao, T0202, Geometry hàng 2</td></tr>
-<tr><td>"còn số của nhóm trước"</td><td>Xóa Work Shift, Offset Geometry cũ</td></tr>
-<tr><td>"sẵn sàng cắt"</td><td>Chạy thử MDI trước</td></tr>
-</tbody></table></div>
+<p><strong>Tại xưởng:</strong> nhận ca thì xóa, đo lại; chạy loạt thì chạy thử chi tiết đầu.</p>
 
 <details class="tl-details" open>
-<summary>🧭 Bấm xem các bước xử lý</summary>
-<ol class="tl-steps">
-<li><strong>Kiểm tra:</strong> đi một vòng máy; dừng khẩn, cửa, vùng quay trống, không còn chìa khóa mâm cặp.</li>
-<li><strong>Mở máy:</strong> đóng CP → Power máy tính → mở WinNC FANUC 21T.</li>
-<li><strong>Reference:</strong> chọn Reference, đặt % bước tiến, nhấn Reference; sau đó mới JOG.</li>
-<li><strong>Gá phôi, gá dao:</strong> chọn chấu theo cỡ phôi, độ nhô vừa đủ; gá dao số 2 đúng chiều, siết lục giác, căn chêm canh tâm.</li>
-<li><strong>MDI:</strong> <code>T0202 M6;</code> gọi dao, <code>M3 S500;</code> quay thử, xem chiều quay và khoảng hở.</li>
-<li><strong>Xóa dữ liệu cũ:</strong> Work Shift (X, Z) và Offset Geometry (X, Z, R, T).</li>
-<li><strong>Gốc phôi W:</strong> chạm nhẹ mặt đầu theo Z, POS đọc $Z_{\text{machine}}$, đổi dấu, nhập Shift Value Z; kiểm lại ở Position.</li>
-<li><strong>Geometry hàng 2:</strong> chạm mặt đầu → <code>Z0</code> Measure; chạm đường kính đã biết → X Measure.</li>
-<li><strong>Kiểm tra:</strong> <code>G0 X20 Z5;</code> rồi <code>G1 X20 Z0 F0.2;</code>, từng khối, bước tiến thấp; khớp mới bắt đầu cắt.</li>
-</ol>
-<p><strong>Tự soát lại:</strong> Reference đứng trước mọi lần chạy dao; xóa số cũ đứng trước khi nhập số mới; chạy thử đứng trước gia công.</p>
+<summary>⭐ Thử thách 1: quên chìa khóa trên mâm cặp nguy hiểm thế nào?</summary>
+<p>Khi trục chính quay, chìa khóa văng ra theo phương tiếp tuyến, trúng người hoặc kính. Vì thế bước kiểm tra trước cấp điện luôn có "vùng quay trống".</p>
 </details>
 
-<div class="tl-box tl-box--think"><p><strong>✍️ Điền bước còn thiếu</strong>: cùng phôi, gá thêm dao cắt rãnh vào vị trí số 4.</p>
-<ol class="tl-steps">
-<li>Gọi dao 4 trong MDI, cho trục chính quay.</li>
-<li><strong>Bước 2 (em điền):</strong> đo gì, ghi vào đâu?</li>
-<li>Bước 3: có phải cài lại Work Shift không?</li>
-</ol>
-<details class="tl-details" open><summary>Xem bước 2–3</summary><p>Bước 2: chạm mặt đầu → Z0 Measure, chạm đường kính → X Measure, ghi vào Geometry <strong>hàng 4</strong>. Bước 3: không, phôi giữ nguyên nên W giữ nguyên.</p></details></div>
+<details class="tl-details" open>
+<summary>⭐⭐ Thử thách 2: đo chiều dài được $59{,}92\ \text{mm}$, yêu cầu $60 \pm 0{,}1\ \text{mm}$. Đạt chưa?</summary>
+<p>Giới hạn $59{,}9$ đến $60{,}1\ \text{mm}$; $59{,}92 \ge 59{,}9$ nên <strong>đạt</strong>, nhưng sát giới hạn dưới; nhát cuối lần sau nên nhỏ hơn.</p>
+</details>
 
-<h4>Thử sức đổi tình huống</h4>
+<details class="tl-details" open>
+<summary>⭐⭐⭐ Thử thách 3: Cách 1, $MA = 50\ \text{mm}$, $AW = 40\ \text{mm}$ (số giả định). MW bằng bao nhiêu, còn thiếu gì?</summary>
+<p>$MW = 50 + 40 = 90\ \text{mm}$. Còn phải xác định <strong>dấu</strong> theo quy ước tọa độ của máy rồi mới nhập vào Z của Work Shift, sau đó kiểm lại ở Position.</p>
+</details>
 
-<p class="tl-conf">Em chắc bao nhiêu?
-<label><input type="radio" name="cnc4t-c8" value="chac"> Chắc</label>
-<label><input type="radio" name="cnc4t-c8" value="khong"> Không chắc</label></p>
-<div class="tl-quiz">
-<p>Chạy thử <code>G1 X20 Z0 F0.2;</code>, mũi dao dừng đúng mặt đầu phôi nhưng cách tâm xa hơn hẳn so với $\varnothing 20$. Dữ liệu nào cần kiểm lại trước?</p>
-<input type="radio" name="cnc4t-q8" id="cnc4t-q8a"><label for="cnc4t-q8a" class="tl-opt tl-no">A. Work Shift Z của phôi</label>
-<input type="radio" name="cnc4t-q8" id="cnc4t-q8b" checked><label for="cnc4t-q8b" class="tl-opt tl-ok">B. Các giá trị X đã nhập</label>
-<input type="radio" name="cnc4t-q8" id="cnc4t-q8c"><label for="cnc4t-q8c" class="tl-opt tl-no">C. Điểm tham chiếu R của máy</label>
-<input type="radio" name="cnc4t-q8" id="cnc4t-q8d"><label for="cnc4t-q8d" class="tl-opt tl-no">D. Tốc độ S500 của trục chính</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Z khớp (dừng đúng mặt đầu), chỉ lệch theo đường kính, nên lỗi nằm ở trục <strong>X</strong>: Geometry X hàng 2 và Work Shift X đã xóa chưa.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Mũi dao đã tới đúng mặt đầu nên dữ liệu Z ổn. R do máy tự xác lập khi về Reference; tốc độ S không làm dao đổi vị trí. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, hãy tách lỗi theo từng trục.</p></div>
+<div class="tl-box tl-box--rule">
+<p class="tl-label">✅ Mang về sau bài học</p>
+<ul>
+<li>Nhìn hết, vùng quay trống rồi mới cấp điện.</li>
+<li>CP → Power → WinNC → Reference → JOG.</li>
+<li>MDI: <code>T0202 M6;</code> · <code>M3 S500;</code></li>
+<li>Xóa số cũ → Work Shift (phôi) → Geometry (từng dao).</li>
+<li>Chạy thử từng khối; lệch là dừng.</li>
+<li>Đọc tình huống: cái gì đổi thì cài lại đúng cái đó.</li>
+</ul>
 </div>
-
 </span></div></div>
 <script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/geometry-offset-dao-ve-2a554b/node_modules/katex/dist/katex.min.js"></script>
 <script src="file:///Users/MAC/Projects/thachlab/.claude/worktrees/geometry-offset-dao-ve-2a554b/node_modules/katex/dist/contrib/auto-render.min.js"></script>

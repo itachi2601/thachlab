@@ -28,7 +28,7 @@
 
 <h3>II. Kiến thức</h3>
 
-<h4>1. Cấu tạo máy EMCO TURN 55</h4>
+<h4 id="muc-1">1. Cấu tạo máy EMCO TURN 55</h4>
 
 <p><strong>🔑 Điều khiển nhận lệnh · Chấp hành cắt gọt</strong></p>
 
@@ -45,7 +45,7 @@ __FIG1__
 <p>Băng máy, trục chính, mâm dao, động cơ bàn dao ngang, động cơ xoay dao, động cơ bàn dao dọc, cơ cấu phân độ trục chính, động cơ trục chính, bàn dao ngang, ụ động.</p>
 </details>
 
-<h4>2. Kiểm tra máy trước khi cấp điện</h4>
+<h4 id="muc-2">2. Kiểm tra máy trước khi cấp điện</h4>
 
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="cnc4t-c2" value="chac"> Chắc</label>
@@ -70,7 +70,7 @@ __FIG1__
 <li>Không còn chìa khóa mâm cặp, dụng cụ, vật lạ.</li>
 </ul>
 
-<h4>3. Mở máy, về Reference, di chuyển JOG</h4>
+<h4 id="muc-3">3. Mở máy, về Reference, di chuyển JOG</h4>
 
 <p><strong>🔑 CP → Power máy tính → WinNC → Reference → JOG</strong></p>
 
@@ -92,7 +92,7 @@ __FIG2__
 </ol>
 </div>
 
-<h4>4. MDI: gõ lệnh, chạy từng câu</h4>
+<h4 id="muc-4">4. MDI: gõ lệnh, chạy từng câu</h4>
 
 <p><strong>🔑 M3 thuận · M4 ngược · MDI từng câu</strong></p>
 
@@ -113,7 +113,7 @@ __FIG2__
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> B là lệnh quay trục chính ngược chiều (M4) với tốc độ S; C vẫn gọi dao 2 và thêm M4 quay ngược; D dùng chữ S là tốc độ, không phải dao. Chữ cái đầu của mỗi lệnh cho biết nó điều khiển cái gì.</p></div>
 </div>
 
-<h4>5. Gá phôi và gá dao</h4>
+<h4 id="muc-5">5. Gá phôi và gá dao</h4>
 
 <p><strong>🔑 Chắc · Đúng tâm · Không vướng hành trình</strong></p>
 
@@ -131,7 +131,7 @@ __FIG4__
 <p>Cao hơn tâm: góc sau giảm, dao cọ vào phôi. Thấp hơn tâm: vạt mặt còn sót lõi ở tâm. Căn chêm dùng để chỉnh mũi dao về đúng độ cao tâm.</p>
 </details>
 
-<h4>6. Bài tập tiện bằng tay</h4>
+<h4 id="muc-6">6. Bài tập tiện bằng tay</h4>
 
 <p><strong>🔑 Nhìn tọa độ · Gần phôi chậm · Đo rồi sửa</strong></p>
 
@@ -154,7 +154,7 @@ __FIG4__
 <div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A và C lấy sai biên: ±0,1 nghĩa là trên tối đa $18{,}1\ \text{mm}$. B nhầm chiều: $18{,}15 \gt 18$, đường kính còn dư chứ không thiếu. Viết hai biên ra giấy rồi so lại.</p></div>
 </div>
 
-<h4>7. Điểm chuẩn và xóa dữ liệu cũ</h4>
+<h4 id="muc-7">7. Điểm chuẩn và xóa dữ liệu cũ</h4>
 
 <p><strong>🔑 M máy · W phôi · R tham chiếu · N/T chuẩn dao · P mũi dao</strong></p>
 
@@ -170,7 +170,7 @@ __FIG4__
 <p>M: gốc máy · W: gốc phôi · R: điểm tham chiếu · N/T: chuẩn dao · P: đỉnh mũi dao.</p>
 </details>
 
-<h4>8. Cài gốc phôi W (Work Shift)</h4>
+<h4 id="muc-8">8. Cài gốc phôi W (Work Shift)</h4>
 
 <p><strong>🔑 Dời gốc: M → W · Đo trực tiếp hoặc chạm dao</strong></p>
 
@@ -184,7 +184,7 @@ $$Z_{\text{phôi}} = MW = MA + AW$$
 
 __FIG3__
 
-<h4>9. Geometry Offset cho từng dao</h4>
+<h4 id="muc-9">9. Geometry Offset cho từng dao</h4>
 
 <p><strong>🔑 Mỗi dao một hàng · Dời N → P · Chạm rồi Measure</strong></p>
 
@@ -215,7 +215,7 @@ __SIM_DAO__
 <p>Mặt đầu phôi chính là nơi đặt gốc W, nên mũi dao chạm mặt đầu nghĩa là P đang ở $Z = 0$ của phôi. Máy lấy tọa độ máy lúc đó trừ đi gốc phôi để ra độ dời của riêng dao số 2.</p>
 </details>
 
-<h4>10. Kiểm tra trước khi chạy</h4>
+<h4 id="muc-10">10. Kiểm tra trước khi chạy</h4>
 
 <p><strong>🔑 MDI · Từng khối · Bước tiến thấp · Lệch là dừng</strong></p>
 
@@ -305,7 +305,7 @@ __SIM_DAO__
 <details class="tl-details"><summary>5. Kiểm tra cài đặt bằng hai câu lệnh nào? Lệch thì sao?</summary><p><code>G0 X20 Z5;</code> → <code>G1 X20 Z0 F0.2;</code>. Lệch: dừng, rút dao, kiểm lại offset.</p></details>
 </div>
 
-<h3>V. Tình huống mẫu: nhận máy đến lúc sẵn sàng cắt</h3>
+<h3 id="bai-mau">V. Tình huống mẫu: nhận máy đến lúc sẵn sàng cắt</h3>
 
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Tình huống</p>
