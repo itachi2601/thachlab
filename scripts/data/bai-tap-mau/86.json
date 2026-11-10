@@ -1,0 +1,2009 @@
+{
+ "lesson_id": 86,
+ "lesson_title": "Bài 8. Thấu kính",
+ "generated_at": "2026-11-10",
+ "review": {
+  "checked": false,
+  "notes": "chờ kiểm chéo"
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Nhận biết loại thấu kính và tiêu cự từ chùm tia song song",
+   "topic": "Đặc điểm thấu kính hội tụ, phân kì và tiêu cự",
+   "problem_html": "<p>Một hộp đèn phát ba tia sáng song song với trục chính tới thấu kính $L$ (chưa biết loại); tia trên cùng cách trục chính $3\\ \\text{cm}$. Sau $L$, ba tia loe ra; đường kéo dài của các tia ló gặp nhau tại điểm $S$ trên trục chính, cách $L$ một đoạn $12\\ \\text{cm}$ và nằm cùng phía với chùm tia tới.</p><ol type=\"a\"><li>$L$ là thấu kính loại nào? Tiêu cự $f$ của $L$ bằng bao nhiêu (theo quy ước dấu)?</li><li>Tại điểm cách $L$ $8\\ \\text{cm}$ về phía sau kính, tia ló trên cùng cách trục chính bao nhiêu cm?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ba tia sáng song song với trục chính tới thấu kính $L$\"</td><td>Chùm tới song song trục</td><td>Tia song song trục qua thấu kính thì tia ló đi thế nào, tuỳ loại kính?</td></tr><tr><td>\"Sau $L$, ba tia loe ra\"</td><td>Chùm ló phân kì</td><td>Chùm song song gom lại hay toả ra thì là loại kính nào?</td></tr><tr><td>\"đường kéo dài ... gặp nhau tại $S$ ... cùng phía với chùm tia tới\"</td><td>$OS=12$ cm</td><td>⚠ $S$ nằm trước hay sau kính? Điểm đó có tên gì, và dấu của $f$ theo quy ước là gì?</td></tr><tr><td>\"tia trên cùng cách trục chính $3\\ \\text{cm}$\"</td><td>Độ cao tia tới $=3$ cm</td><td>Tia ló trên cùng nằm trên đường thẳng nối hai điểm nào?</td></tr><tr><td>\"cách $L$ $8\\ \\text{cm}$ về phía sau ... cách trục chính bao nhiêu cm\"</td><td>Cần độ cao $y$ tại $8$ cm sau kính</td><td>Hai tam giác nào có chung đỉnh $S$ để so sánh độ cao?</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><b>Thấu kính phân kì</b>: chùm song song loe ra; đường kéo dài tia ló qua $F'$ (cùng phía chùm tới), $OF'=OF=|f|$.</li><li><b>Quy ước dấu</b>: $f\\gt0$ kính hội tụ, $f\\lt0$ kính phân kì.</li><li><b>Tam giác đồng dạng</b>: độ cao tia ló tỉ lệ với khoảng cách tới $F'$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận biết loại thấu kính</span></p><p>Chùm tới song song trục, chùm ló <b>loe ra</b>, nên $L$ là thấu kính phân kì (rìa dày).</p><div class=\"bt-ans\"><p>Thấu kính phân kì.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tiêu cự và dấu của f</span></p><p>Tia tới song song trục, tia ló có đường kéo dài qua tiêu điểm $F'$. Vậy $S$ chính là $F'$, nên $OF'=OS=12\\ \\text{cm}$.</p><p>Kính phân kì: lấy $f$ âm.</p><div class=\"bt-ans\">$$f=-12\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ cao tia ló tại điểm cách kính 8 cm</span></p><p>Tia ló trên cùng nằm trên đường thẳng qua $S$ và điểm tới kính (cách trục $3$ cm). Hai tam giác vuông chung đỉnh $S$ đồng dạng:</p>$$\\dfrac{y}{3}=\\dfrac{OS+8}{OS}$$$$y=3\\cdot\\dfrac{12+8}{12}$$<div class=\"bt-ans\">$$y=5\\ \\text{cm}$$</div><p>Kiểm tra: tia ló loe ra nên $y\\gt3$ cm. Hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Thấu kính phân kì, $f=-12\\ \\text{cm}$</p><p>b) Tia ló trên cùng cách trục $5\\ \\text{cm}$</p></div><p class=\"bt-note\">Dạng này nhận ra khi: chùm song song trục tới một kính chưa biết loại → xem chùm ló gom hay loe, rồi đọc $OF'$ và gán dấu.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>chùm song song loe ra sau kính</b> → nghĩ tới <b>thấu kính phân kì, $f\\lt0$</b>",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận biết loại thấu kính",
+     "hoi": "Thấu kính L thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Thấu kính phân kì: chùm song song loe ra sau kính",
+       "dung": true
+      },
+      {
+       "text": "Thấu kính hội tụ",
+       "dung": false,
+       "vi_sao": "Thấu kính hội tụ làm chùm song song gom lại, các tia ló gặp nhau thật phía sau kính; ở đây chỉ đường kéo dài mới gặp nhau."
+      },
+      {
+       "text": "Chưa kết luận được vì chưa biết rìa kính dày hay mỏng",
+       "dung": false,
+       "vi_sao": "Nhận biết bằng chùm song song cũng đủ: loe ra là phân kì, gom lại là hội tụ."
+      }
+     ],
+     "loi_hay_gap": "Thấy có một điểm gặp nhau ($S$) nên cho là hội tụ, quên rằng ở đây chỉ đường kéo dài của tia ló gặp nhau."
+    },
+    {
+     "tieu_de": "Tiêu cự và dấu của f",
+     "hoi": "Tiêu cự f của L bằng bao nhiêu cm (có dấu)?",
+     "dap_so": -12,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy $f=+12$ cm vì tiêu cự là một độ dài, quên rằng phân kì phải thay $f$ âm vào công thức.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đọc $OS$ là độ dài $OF'$, rồi gán dấu theo loại kính",
+       "dung": true
+      },
+      {
+       "text": "Lấy $f$ dương vì tiêu cự là một độ dài",
+       "dung": false,
+       "vi_sao": "Độ dài thì dương, nhưng dấu của $f$ trong công thức mang thông tin loại kính: phân kì thì $f\\lt0$."
+      },
+      {
+       "text": "Lấy $f$ bằng độ cao $3$ cm của tia tới",
+       "dung": false,
+       "vi_sao": "$3$ cm là khoảng cách từ tia tới đến trục, không phải khoảng cách $OS$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ cao tia ló tại điểm cách kính 8 cm",
+     "hoi": "Tại điểm cách L 8 cm phía sau, tia ló trên cùng cách trục bao nhiêu cm?",
+     "dap_so": 5,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Coi tia ló vẫn song song trục nên vẫn cách trục $3$ cm, hoặc cộng thẳng $3+8$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hai tam giác chung đỉnh $S$: độ cao tỉ lệ với khoảng cách tới $S$, tức $\\dfrac{y}{3}=\\dfrac{OS+8}{OS}$",
+       "dung": true
+      },
+      {
+       "text": "Tia ló cũng song song trục nên $y=3$ cm",
+       "dung": false,
+       "vi_sao": "Chỉ tia tới song song trục; tia ló của kính phân kì loe ra, càng xa kính càng cách trục nhiều."
+      },
+      {
+       "text": "Cộng thẳng $y=3+8$",
+       "dung": false,
+       "vi_sao": "Độ cao tăng tỉ lệ với khoảng cách tới $S$; không cộng được độ cao (cm) với quãng đường đi thêm theo phương khác."
+      }
+     ]
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "3 tia song song trục chính; tia trên cùng cách trục $3$ cm",
+     "đường kéo dài tia ló cắt trục tại $S$, $OS=12$ cm, cùng phía chùm tới"
+    ],
+    "tim": [
+     "a) loại kính, $f$ (có dấu)",
+     "b) tia ló trên cùng cách trục bao nhiêu cm tại điểm cách kính $8$ cm phía sau"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -28,
+      "x_max": 22,
+      "y_tren": 7.5,
+      "y_duoi": -7.5,
+      "hinh": [
+       {
+        "loai": "thuoc",
+        "tu": -7.2,
+        "den": 7.2,
+        "o": 0,
+        "nhan": "L",
+        "doc": true,
+        "ben": "phai",
+        "het": 1
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          -26,
+          3
+         ],
+         [
+          0,
+          3
+         ]
+        ]
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          -26,
+          0
+         ],
+         [
+          0,
+          0
+         ]
+        ]
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          -26,
+          -3
+         ],
+         [
+          0,
+          -3
+         ]
+        ]
+       },
+       {
+        "loai": "diem",
+        "x": -12,
+        "y": 0,
+        "ten": "S",
+        "vi": "b"
+       },
+       {
+        "loai": "thuoc",
+        "tu": -12,
+        "den": 0,
+        "o": -4.5,
+        "nhan": "12 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -27,
+        "y": 4.4,
+        "text": "cách trục 3 cm",
+        "a": "start"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tk",
+       "x": 0,
+       "kieu": "phan_ki",
+       "ten": "L",
+       "ten_ben": "phai"
+      },
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 0,
+       "ten": "O",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "Chùm loe ra sau kính: thấu kính phân kì"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "S là tiêu điểm F′ (cùng phía chùm tới): f = −12 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         3
+        ],
+        [
+         14,
+         6.5
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         -12,
+         0
+        ],
+        [
+         0,
+         3
+        ]
+       ]
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         -3
+        ],
+        [
+         14,
+         -6.5
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         -12,
+         0
+        ],
+        [
+         0,
+         -3
+        ]
+       ]
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         0,
+         0
+        ],
+        [
+         14,
+         0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 5,
+       "o": 8,
+       "nhan": "5 cm",
+       "doc": true,
+       "ben": "phai"
+      },
+      {
+       "loai": "ghi",
+       "text": "Tia ló loe ra: cách trục 5 cm tại 8 cm sau kính"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 2 · Trung bình · Dựng ảnh bằng hai tia đặc biệt, nêu tính chất ảnh theo vị trí vật",
+   "topic": "Dựng ảnh của vật qua thấu kính",
+   "problem_html": "<p>Thấu kính hội tụ có tiêu cự $f=6\\ \\text{cm}$. Vật sáng $AB$ cao $2\\ \\text{cm}$ đặt vuông góc với trục chính, $A$ nằm trên trục chính.</p><ol type=\"a\"><li>$AB$ cách thấu kính $15\\ \\text{cm}$. Dựng ảnh $A'B'$ bằng hai tia đặc biệt và nêu tính chất ảnh.</li><li>Dịch $AB$ lại gần, cách thấu kính $4\\ \\text{cm}$. Nêu tính chất ảnh và cách xác định ảnh trên hình vẽ.</li><li>Thay thấu kính hội tụ bằng thấu kính phân kì có $|f|=6\\ \\text{cm}$, đặt $AB$ cách thấu kính $15\\ \\text{cm}$. Nêu tính chất ảnh và vị trí của ảnh so với $O$ và $F'$.</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"hội tụ có tiêu cự $f=6\\ \\text{cm}$\"</td><td>$f=6$ cm; $2f=12$ cm</td><td>⚠ Điều kiện để dùng bảng tính chất ảnh: cần so $d$ với những giá trị nào của kính?</td></tr><tr><td>\"$AB$ cách thấu kính $15\\ \\text{cm}$\"</td><td>$d=15$ cm</td><td>$d$ nằm ngoài $2f$, giữa $f$ và $2f$, hay trong $f$?</td></tr><tr><td>\"Dựng ảnh ... bằng hai tia đặc biệt\"</td><td>Hai trong ba tia</td><td>Chọn hai tia nào dễ vẽ nhất? Hai tia ló cắt nhau ở đâu?</td></tr><tr><td>\"Dịch $AB$ lại gần, cách thấu kính $4\\ \\text{cm}$\"</td><td>$d=4$ cm</td><td>So lại $d$ với $f$: hai tia ló lúc này còn cắt nhau sau kính không?</td></tr><tr><td>\"Thay bằng thấu kính phân kì ... $|f|=6\\ \\text{cm}$\"</td><td>phân kì, $d=15$ cm</td><td>Tia song song trục qua kính phân kì có đường kéo dài đi qua điểm nào?</td></tr><tr><td>\"vị trí của ảnh so với $O$ và $F'$\"</td><td>Cần so $|d'|$ với $|f|$</td><td>Vật thật qua kính phân kì cho ảnh loại nào, lớn hay nhỏ hơn vật?</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><b>Ảnh thật</b>: tia ló gặp nhau; <b>ảnh ảo</b>: đường kéo dài gặp nhau (nét đứt).</li><li><b>Kính hội tụ</b>: $d\\gt2f$ thật, ngược, nhỏ; $f\\lt d\\lt2f$ thật, ngược, lớn; $d\\lt f$ ảo, cùng chiều, lớn.</li><li><b>Kính phân kì</b>: luôn ảo, cùng chiều, nhỏ hơn vật, giữa $O$ và $F'$.</li><li><b>Hai tia</b>: qua $O$ đi thẳng; song song trục ló qua $F'$ (phân kì: kéo dài qua $F'$).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Câu a: tính chất ảnh</span></p><p>So sánh: $f=6\\ \\text{cm}$, $2f=12\\ \\text{cm}$, $d=15\\ \\text{cm}$ nên $d\\gt2f$.</p><p>Dựng: tia từ $B$ qua $O$ đi thẳng; tia từ $B$ song song trục ló qua $F'$. Hai tia ló cắt nhau thật sau kính tại $B'$, hạ vuông góc xuống trục được $A'$.</p><div class=\"bt-ans\"><p>Ảnh thật, ngược chiều, nhỏ hơn vật.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Câu b: vật trong tiêu cự</span></p><p>$d=4\\ \\text{cm}\\lt f=6\\ \\text{cm}$: vật nằm trong khoảng $OF$. Tia từ $B$ qua $O$ đi thẳng; tia song song trục vẫn ló qua $F'$. Hai tia ló <b>loe ra</b>.</p><div class=\"bt-ans\"><p>Ảnh ảo, cùng chiều, lớn hơn vật.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Câu b: xác định ảnh ảo trên hình</span></p><p>Các tia ló không gặp nhau; <b>đường kéo dài ngược</b> của chúng (nét đứt) gặp nhau tại $B'$. Hạ vuông góc từ $B'$ xuống trục được $A'$.</p><div class=\"bt-ans\"><p>Ảnh ảo vẽ nét đứt, nằm cùng phía với vật.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Câu c: tia song song trục qua kính phân kì</span></p><p>Kính phân kì: tia tới song song trục có tia ló loe ra, đường kéo dài ngược đi qua $F'$ nằm <b>cùng phía với vật</b>.</p><div class=\"bt-ans\"><p>Kéo dài tia ló (nét đứt) qua $F'$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Câu c: tính chất ảnh qua kính phân kì</span></p><p>Hai tia ló loe ra; đường kéo dài ngược gặp nhau tại $B'$ nằm trong khoảng từ $O$ đến $F'$.</p><div class=\"bt-ans\"><p>Ảnh ảo, cùng chiều, nhỏ hơn vật, nằm giữa $O$ và $F'$.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Ảnh thật, ngược chiều, nhỏ hơn vật</p><p>b) Ảnh ảo, cùng chiều, lớn hơn vật; B′ là giao của hai đường kéo dài</p><p>c) Ảnh ảo, cùng chiều, nhỏ hơn vật, nằm giữa $O$ và $F'$</p></div><p class=\"bt-note\">Dạng này nhận ra khi: đề hỏi 'tính chất ảnh' hoặc 'dựng ảnh' → so $d$ với $f$, $2f$ của kính hội tụ; kính phân kì luôn ảnh ảo nhỏ.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>nêu tính chất ảnh theo vị trí vật</b> → so <b>$d$ với $f$ và $2f$</b>, rồi dựng hai tia từ $B$",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Câu a: tính chất ảnh",
+     "hoi": "Câu a, ảnh A′B′ có tính chất gì?",
+     "lua_chon": [
+      {
+       "text": "Ảnh thật, ngược chiều, nhỏ hơn vật",
+       "dung": true
+      },
+      {
+       "text": "Ảnh thật, ngược chiều, lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh thật lớn hơn vật chỉ khi $f\\lt d\\lt2f$; ở đây $d$ lớn hơn $2f$."
+      },
+      {
+       "text": "Ảnh ảo, cùng chiều, lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh ảo chỉ có khi vật trong khoảng $OF$ ($d\\lt f$); ở đây vật ngoài $F$."
+      }
+     ],
+     "loi_hay_gap": "Thấy $d\\gt f$ rồi kết luận 'lớn hơn' mà chưa so $d$ với $2f$."
+    },
+    {
+     "tieu_de": "Câu b: vật trong tiêu cự",
+     "hoi": "Câu b, ảnh A′B′ có tính chất gì?",
+     "lua_chon": [
+      {
+       "text": "Ảnh ảo, cùng chiều, lớn hơn vật",
+       "dung": true
+      },
+      {
+       "text": "Ảnh thật, ngược chiều, lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Hai tia ló loe ra, không cắt nhau thật nên không có ảnh thật."
+      },
+      {
+       "text": "Không có ảnh vì vật quá gần kính",
+       "dung": false,
+       "vi_sao": "Chỉ không có ảnh khi vật đúng tại $F$ ($d=f$); vật trong $OF$ vẫn cho ảnh ảo."
+      }
+     ],
+     "loi_hay_gap": "Vẫn vẽ hai tia ló cắt nhau sau kính như câu a, không so lại $d$ với $f$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $d$ với $f$ trước: $d\\lt f$ nên hai tia ló loe ra",
+       "dung": true
+      },
+      {
+       "text": "Vẽ hai tia ló cắt nhau sau kính như câu a",
+       "dung": false,
+       "vi_sao": "Ở câu a hai tia ló cắt nhau vì $d\\gt f$; câu b tia ló loe ra, không cắt nhau thật."
+      },
+      {
+       "text": "Vẽ thêm tia thứ ba rồi tìm giao điểm ba tia ló",
+       "dung": false,
+       "vi_sao": "Dù vẽ thêm tia nào, các tia ló vẫn loe ra; không có giao điểm thật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu b: xác định ảnh ảo trên hình",
+     "hoi": "Trên hình, điểm B′ được xác định thế nào?",
+     "lua_chon": [
+      {
+       "text": "Kéo dài ngược hai tia ló (nét đứt); giao điểm là B′",
+       "dung": true
+      },
+      {
+       "text": "Lấy giao điểm hai tia ló sau kính",
+       "dung": false,
+       "vi_sao": "Hai tia ló loe ra, không có giao điểm sau kính."
+      },
+      {
+       "text": "Lấy điểm đối xứng của B qua O",
+       "dung": false,
+       "vi_sao": "Đối xứng chỉ đúng với gương phẳng; với thấu kính vị trí ảnh phụ thuộc $f$ và $d$."
+      }
+     ],
+     "loi_hay_gap": "Vẽ ảnh ảo bằng nét liền hoặc lấy điểm đối xứng của vật qua $O$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Kéo dài ngược các tia ló về phía vật bằng nét đứt",
+       "dung": true
+      },
+      {
+       "text": "Vẽ thêm tia ló dài hơn về phía sau kính",
+       "dung": false,
+       "vi_sao": "Kéo dài về phía sau kính vẫn không cắt nhau; phải kéo dài ngược về phía vật."
+      },
+      {
+       "text": "Dùng thước đo từ $B$ sang bên kia $O$ cùng khoảng",
+       "dung": false,
+       "vi_sao": "Đó là cách vẽ ảnh qua gương phẳng, không áp dụng cho thấu kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu c: tia song song trục qua kính phân kì",
+     "hoi": "Tia tới song song trục qua kính phân kì, đường kéo dài của tia ló đi qua điểm nào?",
+     "lua_chon": [
+      {
+       "text": "Tiêu điểm F′ nằm cùng phía với vật",
+       "dung": true
+      },
+      {
+       "text": "Tiêu điểm nằm phía sau kính",
+       "dung": false,
+       "vi_sao": "Kính phân kì làm tia ló loe ra, nên chỉ đường kéo dài ngược về phía vật mới gặp trục; $F'$ nằm phía có vật."
+      },
+      {
+       "text": "Quang tâm O",
+       "dung": false,
+       "vi_sao": "Tia qua $O$ mới đi thẳng; tia song song trục ló theo hướng đường kéo dài qua $F'$."
+      }
+     ],
+     "loi_hay_gap": "Vẽ tia ló của kính phân kì đi qua tiêu điểm phía sau kính như kính hội tụ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Nhớ lại: kính phân kì làm chùm song song loe ra",
+       "dung": true
+      },
+      {
+       "text": "Dùng ngay cách vẽ của kính hội tụ cho tia này",
+       "dung": false,
+       "vi_sao": "Kính hội tụ gom tia ló qua tiêu điểm phía sau; kính phân kì làm tia ló loe ra."
+      },
+      {
+       "text": "Coi tia ló song song với trục",
+       "dung": false,
+       "vi_sao": "Tia ló song song trục là tia tới đi qua tiêu điểm của kính hội tụ, không phải trường hợp này."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu c: tính chất ảnh qua kính phân kì",
+     "hoi": "Câu c, ảnh có tính chất và vị trí thế nào?",
+     "lua_chon": [
+      {
+       "text": "Ảnh ảo, cùng chiều, nhỏ hơn vật, nằm giữa O và F′",
+       "dung": true
+      },
+      {
+       "text": "Ảnh thật, ngược chiều, nhỏ hơn vật",
+       "dung": false,
+       "vi_sao": "Với vật thật, thấu kính phân kì không cho ảnh thật."
+      },
+      {
+       "text": "Ảnh ảo, cùng chiều, lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh ảo lớn hơn vật là của kính hội tụ khi vật trong $OF$; kính phân kì luôn cho ảnh nhỏ hơn vật."
+      }
+     ],
+     "loi_hay_gap": "Dùng kết luận 'ảnh ảo thì lớn hơn vật' của kính hội tụ cho kính phân kì.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dựng hai tia như trước, nhưng kéo dài ngược tia ló qua $F'$",
+       "dung": true
+      },
+      {
+       "text": "So $d$ với $2f$ rồi áp bảng của kính hội tụ",
+       "dung": false,
+       "vi_sao": "Bảng theo $d$ và $2f$ chỉ dành cho kính hội tụ; kính phân kì luôn cho một loại ảnh."
+      },
+      {
+       "text": "Chỉ dựa vào việc $d$ lớn để kết luận ảnh thật",
+       "dung": false,
+       "vi_sao": "Ảnh thật cần tia ló gặp nhau thật; kính phân kì không làm được điều đó."
+      }
+     ]
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=6$ cm; $AB=2$ cm",
+     "a) $d=15$ cm · b) $d=4$ cm",
+     "c) phân kì $|f|=6$ cm, $d=15$ cm"
+    ],
+    "tim": [
+     "a) tính chất ảnh",
+     "b) tính chất ảnh, cách xác định ảnh",
+     "c) tính chất ảnh, vị trí so với $O$ và $F'$"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -20,
+      "x_max": 20,
+      "y_tren": 3,
+      "y_duoi": -4,
+      "phong_doc": 2,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 6,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -15,
+        "h": 2
+       },
+       {
+        "loai": "thuoc",
+        "tu": -15,
+        "den": 0,
+        "o": -2.2,
+        "nhan": "d = 15 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -13.6,
+        "y": 1.0,
+        "text": "AB = 2 cm",
+        "a": "start"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 1,
+      "x_min": -18,
+      "x_max": 14,
+      "y_tren": 7.5,
+      "y_duoi": -3.2,
+      "phong_doc": 1,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 6,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -4,
+        "h": 2
+       },
+       {
+        "loai": "thuoc",
+        "tu": -4,
+        "den": 0,
+        "o": -2.0,
+        "nhan": "d = 4 cm",
+        "ben": "duoi"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "x_min": -20,
+      "x_max": 12,
+      "y_tren": 3,
+      "y_duoi": -2.4,
+      "phong_doc": 1.6,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "phan_ki",
+        "f": 6,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -15,
+        "h": 2
+       },
+       {
+        "loai": "thuoc",
+        "tu": -15,
+        "den": 0,
+        "o": -1.6,
+        "nhan": "d = 15 cm",
+        "ben": "duoi"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -15,
+         2
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         14,
+         -1.8666666666666667
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -15,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         10.0,
+         -1.3333333333333333
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": 10.0,
+       "h": -1.3333333333333333,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Ảnh thật, ngược chiều, nhỏ hơn vật"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -4,
+         2
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         14,
+         -7
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         0,
+         0
+        ],
+        [
+         -12,
+         6
+        ]
+       ]
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -4,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         10,
+         -1.3333333333333335
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         0,
+         2
+        ],
+        [
+         -12,
+         6
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Hai tia ló loe ra, không cắt nhau sau kính"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -12,
+       "h": 6,
+       "ao": true,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Ảnh ảo, cùng chiều, lớn hơn vật (B′ ở nét đứt)"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -15,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         10,
+         5.333333333333334
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         -6,
+         0
+        ],
+        [
+         0,
+         2
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Tia ló có đường kéo dài đi qua F′ (cùng phía với vật)"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -15,
+         2
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         10,
+         -1.3333333333333333
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": -4.285714285714286,
+       "h": 0.5714285714285714,
+       "ao": true,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Ảnh ảo, cùng chiều, nhỏ hơn vật, nằm giữa O và F′"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Cho f và d, tìm vị trí, độ cao và tính chất ảnh (vật ngoài rồi trong tiêu cự)",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Thấu kính hội tụ có tiêu cự $16\\ \\text{cm}$. Vật sáng $AB$ cao $3\\ \\text{cm}$ đặt vuông góc với trục chính, $A$ nằm trên trục chính. Dùng quy ước: $d'\\gt0$ ảnh thật, $d'\\lt0$ ảnh ảo.</p><ol type=\"a\"><li>$AB$ cách thấu kính $24\\ \\text{cm}$. Tìm vị trí và chiều cao của ảnh.</li><li>Dịch $AB$ lại cách thấu kính $10\\ \\text{cm}$. Tìm vị trí (có dấu) và chiều cao của ảnh; ảnh có tính chất gì?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Dùng quy ước: $d'\\gt0$ ảnh thật, $d'\\lt0$ ảnh ảo\"</td><td>Quy ước dấu</td><td>⚠ Công thức thấu kính chỉ đúng khi $f$ và $d'$ mang dấu theo quy ước nào?</td></tr><tr><td>\"thấu kính hội tụ có tiêu cự $16\\ \\text{cm}$\"</td><td>$f=+16$ cm</td><td>Kính hội tụ thì $f$ mang dấu gì?</td></tr><tr><td>\"$AB$ cao $3\\ \\text{cm}$\"</td><td>$h=3$ cm</td><td>$h'$ tính từ đại lượng nào của đề?</td></tr><tr><td>\"cách thấu kính $24\\ \\text{cm}$. Tìm vị trí và chiều cao của ảnh\"</td><td>$d=24$ cm</td><td>$d$ so với $f$ thì ảnh thuộc loại nào? Tìm $d'$ rồi $h'$ theo thứ tự nào?</td></tr><tr><td>\"cách thấu kính $10\\ \\text{cm}$ ... (có dấu)\"</td><td>$d=10$ cm</td><td>Đổi $d$ thì $f$ có đổi không? Dấu của $d'$ lần này cho biết điều gì?</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><b>Công thức thấu kính</b>: $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$; $f\\gt0$ hội tụ, $f\\lt0$ phân kì; $d\\gt0$.</li><li><b>Dấu của $d'$</b>: $d'\\gt0$ ảnh thật; $d'\\lt0$ ảnh ảo (cùng phía vật).</li><li><b>Số phóng đại</b>: $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$; $k\\gt1$ ảnh lớn hơn vật.</li><li>Cùng đơn vị độ dài cho $f$, $d$, $d'$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Câu a: loại ảnh</span></p><p>$d=24\\ \\text{cm}\\gt f=16\\ \\text{cm}$: vật ngoài tiêu điểm nên ảnh thật, $d'\\gt0$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Câu a: vị trí ảnh</span></p>$$\\dfrac{1}{d'}=\\dfrac1f-\\dfrac1d$$$$\\dfrac{1}{d'}=\\dfrac1{16}-\\dfrac1{24}=\\dfrac{1}{48}$$<div class=\"bt-ans\">$$d'=48\\ \\text{cm}$$</div><p>Kiểm tra: $d'\\gt0$ khớp bước 1.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Câu a: chiều cao ảnh</span></p>$$k=\\dfrac{|d'|}{d}=\\dfrac{48}{24}=2$$$$h'=kh=2\\cdot3$$<div class=\"bt-ans\">$$h'=6\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Câu b: loại ảnh khi đổi d</span></p><p>$d=10\\ \\text{cm}\\lt f=16\\ \\text{cm}$: vật trong tiêu điểm nên ảnh ảo, cùng chiều, lớn hơn vật; dự đoán $d'\\lt0$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Câu b: vị trí ảnh (có dấu)</span></p>$$\\dfrac{1}{d'}=\\dfrac1{16}-\\dfrac1{10}=-\\dfrac{3}{80}$$<div class=\"bt-ans\">$$d'=-\\dfrac{80}{3}\\approx-26{,}7\\ \\text{cm}$$</div><p>$d'\\lt0$: ảnh ảo, nằm cùng phía với vật, khớp bước 4.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Câu b: chiều cao ảnh</span></p>$$k=\\dfrac{|d'|}{d}=\\dfrac{80/3}{10}=\\dfrac83$$$$h'=kh=\\dfrac83\\cdot3$$<div class=\"bt-ans\">$$h'=8\\ \\text{cm}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d'=48\\ \\text{cm}$ (ảnh thật), $h'=6\\ \\text{cm}$</p><p>b) $d'\\approx-26{,}7\\ \\text{cm}$ (ảnh ảo, cùng chiều, lớn hơn vật), $h'=8\\ \\text{cm}$</p></div><p class=\"bt-note\">Dạng này nhận ra khi: đề cho $f$, $d$, $h$ → so $d$ với $f$ để đoán loại ảnh, tìm $d'$ bằng nghịch đảo, rồi $k=\\dfrac{|d'|}{d}$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>cho $f$, $d$, $h$; tìm ảnh</b> → <b>$\\dfrac1{d'}=\\dfrac1f-\\dfrac1d$</b>, rồi $k=\\dfrac{|d'|}{d}$ và đọc dấu $d'$",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 4
+   },
+   "buoc": [
+    {
+     "tieu_de": "Câu a: loại ảnh",
+     "hoi": "Câu a: vật ngoài hay trong tiêu điểm, ảnh thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Vật ngoài tiêu điểm ($d\\gt f$): ảnh thật, $d'\\gt0$",
+       "dung": true
+      },
+      {
+       "text": "Vật trong tiêu điểm ($d\\lt f$): ảnh ảo, $d'\\lt0$",
+       "dung": false,
+       "vi_sao": "Vật cách kính $24\\ \\text{cm}$, lớn hơn $f=16\\ \\text{cm}$, nên vật ở ngoài tiêu điểm."
+      },
+      {
+       "text": "Vật đúng tại tiêu điểm: không có ảnh",
+       "dung": false,
+       "vi_sao": "Chỉ không có ảnh khi $d=f$; ở đây $d\\ne f$."
+      }
+     ],
+     "loi_hay_gap": "Không so $d$ với $f$ trước, nên không dự đoán được dấu của $d'$ để kiểm tra kết quả."
+    },
+    {
+     "tieu_de": "Câu a: vị trí ảnh",
+     "hoi": "Câu a: ảnh cách thấu kính bao nhiêu cm?",
+     "dap_so": 48,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Cộng $\\dfrac1f+\\dfrac1d$ thay vì trừ, ra $d'=9{,}6\\ \\text{cm}$ nhỏ hơn $f$, trái với ảnh thật đã nhận ở bước 1.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chuyển vế $\\dfrac1{d'}=\\dfrac1f-\\dfrac1d$ rồi lấy nghịch đảo",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d'=f-d$",
+       "dung": false,
+       "vi_sao": "Công thức làm việc với nghịch đảo; trừ thẳng hai khoảng cách không cho vị trí ảnh."
+      },
+      {
+       "text": "Cộng hai nghịch đảo: $\\dfrac1{d'}=\\dfrac1f+\\dfrac1d$",
+       "dung": false,
+       "vi_sao": "Chuyển vế $\\dfrac1d$ sang vế kia phải đổi dấu thành phép trừ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu a: chiều cao ảnh",
+     "hoi": "Câu a: ảnh cao bao nhiêu cm?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy tỉ số ngược $\\dfrac{d}{|d'|}$ nên ra ảnh nhỏ hơn vật ($1{,}5\\ \\text{cm}$).",
+     "chon_buoc_ke": [
+      {
+       "text": "$h'=h\\cdot\\dfrac{|d'|}{d}$",
+       "dung": true
+      },
+      {
+       "text": "$h'=h\\cdot\\dfrac{d}{|d'|}$",
+       "dung": false,
+       "vi_sao": "Tỉ số bị đảo ngược; ảnh thật ở xa kính hơn vật phải lớn hơn vật."
+      },
+      {
+       "text": "$h'=h\\cdot\\dfrac{d'}{f}$",
+       "dung": false,
+       "vi_sao": "$\\dfrac{d'}{f}$ không phải số phóng đại; $k=\\dfrac{|d'|}{d}$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu b: loại ảnh khi đổi d",
+     "hoi": "Câu b: vật cách kính 10 cm, ảnh có tính chất gì?",
+     "lua_chon": [
+      {
+       "text": "Vật trong tiêu điểm: ảnh ảo, cùng chiều, lớn hơn vật",
+       "dung": true
+      },
+      {
+       "text": "Vật trong tiêu điểm: ảnh thật, ngược chiều",
+       "dung": false,
+       "vi_sao": "Vật trong $OF$ cho tia ló loe ra, không gặp nhau thật nên không có ảnh thật."
+      },
+      {
+       "text": "Vật ngoài tiêu điểm: ảnh thật như câu a",
+       "dung": false,
+       "vi_sao": "$d=10\\ \\text{cm}$ nhỏ hơn $f=16\\ \\text{cm}$ nên vật đã vào trong tiêu điểm."
+      }
+     ],
+     "loi_hay_gap": "Dùng lại kết luận 'ảnh thật' của câu a, không so lại $d$ mới với $f$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Đổi $d$ rồi so lại $d$ với $f$ trước khi tính",
+       "dung": true
+      },
+      {
+       "text": "Dùng luôn $d'$ của câu a vì cùng một thấu kính",
+       "dung": false,
+       "vi_sao": "$d'$ phụ thuộc $d$; đổi $d$ thì ảnh đổi vị trí."
+      },
+      {
+       "text": "Đổi $f$ thành $10\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "$f$ là đặc trưng của kính, không đổi; cái đổi là $d$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu b: vị trí ảnh (có dấu)",
+     "hoi": "Câu b: d′ (có dấu) bằng bao nhiêu cm?",
+     "dap_so": -26.7,
+     "sai_so": 0.3,
+     "don_vi": "cm",
+     "loi_hay_gap": "Bỏ dấu âm vì cho rằng khoảng cách không thể âm, rồi kết luận ảnh thật.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải $\\dfrac1{d'}=\\dfrac1f-\\dfrac1d$ và giữ nguyên dấu âm của kết quả",
+       "dung": true
+      },
+      {
+       "text": "Bỏ dấu âm vì khoảng cách không thể âm",
+       "dung": false,
+       "vi_sao": "Dấu âm của $d'$ cho biết ảnh ảo; bỏ dấu là mất thông tin này (chỉ lấy $|d'|$ khi tính $k$)."
+      },
+      {
+       "text": "Dừng lại vì mẫu số ra âm",
+       "dung": false,
+       "vi_sao": "Mẫu âm vẫn giải được; $d'\\lt0$ là kết quả hợp lệ cho ảnh ảo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Câu b: chiều cao ảnh",
+     "hoi": "Câu b: ảnh cao bao nhiêu cm?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng $k=\\dfrac{d'}{d}$ giữ dấu âm rồi kết luận 'ảnh ngược chiều'; thực ra $d'\\lt0$ là ảnh ảo, cùng chiều.",
+     "chon_buoc_ke": [
+      {
+       "text": "$k=\\dfrac{|d'|}{d}$ với $|d'|$ lấy trị tuyệt đối",
+       "dung": true
+      },
+      {
+       "text": "$k=\\dfrac{d'}{d}$ giữ dấu âm rồi kết luận ảnh ngược chiều",
+       "dung": false,
+       "vi_sao": "Dấu âm của $d'$ báo ảnh ảo (cùng chiều), không phải 'ngược chiều'; số phóng đại viết theo $|d'|$."
+      },
+      {
+       "text": "$k=\\dfrac fd$",
+       "dung": false,
+       "vi_sao": "$\\dfrac fd$ không phải số phóng đại; $k=\\dfrac{|d'|}{d}$."
+      }
+     ]
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=16$ cm; $AB=3$ cm",
+     "a) $d=24$ cm · b) $d=10$ cm"
+    ],
+    "tim": [
+     "a) $d'$, $h'$",
+     "b) $d'$ (có dấu), $h'$, tính chất ảnh"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -32,
+      "x_max": 78,
+      "y_tren": 4.2,
+      "y_duoi": -7.5,
+      "phong_doc": 3.5,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 16,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -24,
+        "h": 3
+       },
+       {
+        "loai": "thuoc",
+        "tu": -24,
+        "den": 0,
+        "o": -3.4,
+        "nhan": "d = 24 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -22.5,
+        "y": 2.2,
+        "text": "h = 3 cm",
+        "a": "start"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "x_min": -48,
+      "x_max": 26,
+      "y_tren": 9.8,
+      "y_duoi": -6.5,
+      "phong_doc": 1.8,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 16,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -10,
+        "h": 3
+       },
+       {
+        "loai": "thuoc",
+        "tu": -10,
+        "den": 0,
+        "o": -4,
+        "nhan": "d = 10 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -8.6,
+        "y": 2.0,
+        "text": "h = 3 cm",
+        "a": "start"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "d lớn hơn f: vật ngoài tiêu điểm → ảnh thật, d′ dương"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -24,
+         3
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         48,
+         -6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -24,
+         3
+        ],
+        [
+         0,
+         3
+        ],
+        [
+         48,
+         -6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": 48,
+       "h": -6,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = 48 cm · ảnh thật, ngược chiều"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": -6,
+       "o": 52,
+       "nhan": "h′ = 6 cm",
+       "doc": true,
+       "ben": "phai"
+      },
+      {
+       "loai": "ghi",
+       "text": "k = 2 → h′ = 6 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "d nhỏ hơn f: ảnh ảo, cùng chiều, lớn hơn vật"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -10,
+         3
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         14,
+         -4.2
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         0,
+         0
+        ],
+        [
+         -26.666666666666668,
+         8
+        ]
+       ]
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -10,
+         3
+        ],
+        [
+         0,
+         3
+        ],
+        [
+         16,
+         0
+        ],
+        [
+         22,
+         -1.125
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         0,
+         3
+        ],
+        [
+         -26.666666666666668,
+         8
+        ]
+       ]
+      },
+      {
+       "loai": "vat",
+       "x": -26.666666666666668,
+       "h": 8,
+       "ao": true,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ ≈ −26,7 cm: ảnh ảo, cách kính 26,7 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 8,
+       "o": -29.666666666666668,
+       "nhan": "h′ = 8 cm",
+       "doc": true,
+       "ben": "trai"
+      },
+      {
+       "loai": "ghi",
+       "text": "k = 8/3 → h′ = 8 cm"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Bài ngược: biết d và độ cao ảnh, tìm loại kính, d′ và f",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Vật sáng $AB$ cao $6\\ \\text{cm}$ đặt vuông góc với trục chính của thấu kính $L$ (chưa biết loại), $A$ nằm trên trục chính và cách $L$ một đoạn $36\\ \\text{cm}$. Ảnh $A'B'$ của $AB$ qua $L$ là ảnh ảo, cao $2\\ \\text{cm}$.</p><ol type=\"a\"><li>$L$ là thấu kính loại nào? Giải thích.</li><li>Tìm vị trí ảnh $d'$ (có dấu) và tiêu cự $f$ (có dấu) của $L$.</li><li>Ảnh có nằm trong khoảng $OF'$ không?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thấu kính $L$ (chưa biết loại)\"</td><td>Cần xác định loại</td><td>Hai loại kính cho ảnh ảo khác nhau ở điểm nào về độ lớn so với vật?</td></tr><tr><td>\"$AB$ cao $6\\ \\text{cm}$ ... cách $L$ $36\\ \\text{cm}$\"</td><td>$h=6$ cm; $d=36$ cm</td><td>⚠ Vật có phải vật thật không? $d$ mang dấu gì?</td></tr><tr><td>\"ảnh ảo, cao $2\\ \\text{cm}$\"</td><td>$h'=2$ cm; ảnh ảo nên $d'\\lt0$</td><td>Từ $h'$ và $h$ suy ra đại lượng nào? Độ lớn của $d'$ lấy từ đâu?</td></tr><tr><td>\"Tìm ... tiêu cự $f$ (có dấu)\"</td><td>Đã có $d$ và $d'$</td><td>Thế $d$ và $d'$ có dấu vào công thức nào để ra $f$?</td></tr><tr><td>\"Ảnh có nằm trong khoảng $OF'$ không?\"</td><td>So $|d'|$ với $|f|$</td><td>Hai độ dài nào cần so sánh?</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><b>Số phóng đại</b>: $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$.</li><li><b>Loại kính theo ảnh</b>: ảnh ảo nhỏ hơn vật là kính phân kì ($f\\lt0$); ảnh ảo lớn hơn vật là kính hội tụ.</li><li><b>Dấu</b>: $d'\\lt0$ ảnh ảo. Công thức $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ phải thế đúng dấu.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Nhận ra loại kính</span></p><p>Ảnh ảo <b>nhỏ hơn</b> vật ($2\\ \\text{cm}\\lt6\\ \\text{cm}$). Kính hội tụ cho ảnh ảo thì ảnh lớn hơn vật, nên $L$ là kính phân kì, $f\\lt0$.</p><div class=\"bt-ans\"><p>Thấu kính phân kì.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vị trí ảnh</span></p>$$k=\\dfrac{h'}{h}=\\dfrac26=\\dfrac13$$$$|d'|=k\\,d=\\dfrac13\\cdot36$$<p>Ảnh ảo nên $d'\\lt0$.</p><div class=\"bt-ans\">$$d'=-12\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Tiêu cự có dấu</span></p>$$\\dfrac1f=\\dfrac1d+\\dfrac1{d'}=\\dfrac1{36}-\\dfrac1{12}=-\\dfrac1{18}$$<div class=\"bt-ans\">$$f=-18\\ \\text{cm}$$</div><p>Kiểm tra: $f\\lt0$ khớp kính phân kì.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra vị trí ảnh</span></p><p>$|d'|=12\\ \\text{cm}\\lt|f|=18\\ \\text{cm}$: ảnh nằm giữa $O$ và $F'$, khớp tính chất ảnh qua kính phân kì.</p><div class=\"bt-ans\"><p>Có.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Thấu kính phân kì</p><p>b) $d'=-12\\ \\text{cm}$; $f=-18\\ \\text{cm}$</p><p>c) Có, vì $|d'|\\lt|f|$</p></div><p class=\"bt-note\">Dạng này nhận ra khi: đề cho độ cao ảnh (hoặc 'nhỏ hơn/lớn hơn vật') và tính chất ảnh → $|d'|=kd$ trước, gán dấu theo ảnh thật/ảo, rồi mới tìm $f$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>cho độ cao ảnh, ảnh ảo nhỏ hơn vật</b> → <b>phân kì</b>; tìm <b>$|d'|=kd$</b> rồi <b>$f$ có dấu</b>",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "buoc": [
+    {
+     "tieu_de": "Nhận ra loại kính",
+     "hoi": "Thấu kính L thuộc loại nào?",
+     "lua_chon": [
+      {
+       "text": "Phân kì: ảnh ảo nhỏ hơn vật",
+       "dung": true
+      },
+      {
+       "text": "Hội tụ: vật ngoài tiêu điểm cho ảnh ảo",
+       "dung": false,
+       "vi_sao": "Kính hội tụ cho ảnh ảo chỉ khi vật trong $OF$, và khi đó ảnh lớn hơn vật."
+      },
+      {
+       "text": "Chưa kết luận được khi chưa biết $f$",
+       "dung": false,
+       "vi_sao": "Tính chất ảnh (ảo và nhỏ hơn vật) đã đủ để phân biệt hai loại kính."
+      }
+     ],
+     "loi_hay_gap": "Thấy 'ảnh ảo' nên nghĩ ngay kính hội tụ (kính lúp), bỏ qua dữ kiện ảnh nhỏ hơn vật."
+    },
+    {
+     "tieu_de": "Vị trí ảnh",
+     "hoi": "d′ (có dấu) bằng bao nhiêu cm?",
+     "dap_so": -12,
+     "sai_so": 0.3,
+     "don_vi": "cm",
+     "loi_hay_gap": "Tính đúng độ lớn nhưng lấy $d'$ dương vì là khoảng cách, nên mất thông tin ảnh ảo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Từ $k=\\dfrac{|d'|}{d}$ tính $|d'|$, rồi gán dấu âm vì ảnh ảo",
+       "dung": true
+      },
+      {
+       "text": "Tính $|d'|$ từ $k$ rồi lấy $d'$ dương vì là khoảng cách",
+       "dung": false,
+       "vi_sao": "Ảnh ảo thì $d'\\lt0$; $|d'|$ chỉ là độ lớn."
+      },
+      {
+       "text": "Thế vào $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ ngay",
+       "dung": false,
+       "vi_sao": "Công thức có hai ẩn $f$ và $d'$; cần tìm $d'$ từ $k$ trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tiêu cự có dấu",
+     "hoi": "Tiêu cự f (có dấu) bằng bao nhiêu cm?",
+     "dap_so": -18,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Thế $d'=+12$ (bỏ dấu âm) nên ra $f=+9\\ \\text{cm}$, trái với loại kính đã nhận ở bước 1.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $d$ và $d'$ có dấu vào $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$",
+       "dung": true
+      },
+      {
+       "text": "Thế $d'$ dương vì là khoảng cách",
+       "dung": false,
+       "vi_sao": "Ảnh ảo phải thế $d'\\lt0$; thế dương cho $f\\gt0$, mâu thuẫn với kính phân kì."
+      },
+      {
+       "text": "Dùng $f=\\dfrac{d\\,d'}{d-d'}$",
+       "dung": false,
+       "vi_sao": "Quy đồng $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ cho $f=\\dfrac{d\\,d'}{d+d'}$ (cộng, không trừ)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra vị trí ảnh",
+     "hoi": "Ảnh A′B′ có nằm trong khoảng OF′ không?",
+     "lua_chon": [
+      {
+       "text": "Có, vì $|d'|\\lt|f|$",
+       "dung": true
+      },
+      {
+       "text": "Không, vì ảnh ảo luôn nằm ngoài tiêu điểm",
+       "dung": false,
+       "vi_sao": "Với kính phân kì, ảnh ảo của vật thật luôn nằm giữa $O$ và $F'$."
+      },
+      {
+       "text": "Không kiểm tra được vì $f$ âm",
+       "dung": false,
+       "vi_sao": "So sánh độ dài $|d'|$ với $|f|$; dấu chỉ để nhận loại ảnh và loại kính."
+      }
+     ],
+     "loi_hay_gap": "So sánh $d'$ với $f$ khi còn mang dấu âm, nên cho rằng $-12\\lt-18$ là sai.",
+     "chon_buoc_ke": [
+      {
+       "text": "So hai độ dài $|d'|$ và $|f|$",
+       "dung": true
+      },
+      {
+       "text": "So thẳng $d'$ với $f$ cùng dấu âm",
+       "dung": false,
+       "vi_sao": "Khi còn dấu âm, số nào lớn hơn dễ nhầm; vị trí trên trục được so bằng độ dài."
+      },
+      {
+       "text": "Dựa vào dấu của $f$ để kết luận",
+       "dung": false,
+       "vi_sao": "Dấu của $f$ chỉ cho biết loại kính, không cho biết ảnh nằm trong hay ngoài $OF'$."
+      }
+     ]
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "vật $AB=6$ cm, $d=36$ cm",
+     "ảnh ảo cao $2$ cm",
+     "kính L chưa biết loại"
+    ],
+    "tim": [
+     "a) loại kính L",
+     "b) $d'$ (có dấu), $f$ (có dấu)",
+     "c) ảnh có nằm trong khoảng $OF'$ không?"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -44,
+      "x_max": 24,
+      "y_tren": 9.8,
+      "y_duoi": -6.5,
+      "phong_doc": 1.8,
+      "hinh": [
+       {
+        "loai": "thuoc",
+        "tu": -3.8,
+        "den": 9.6,
+        "o": 0,
+        "nhan": "L",
+        "doc": true,
+        "ben": "phai",
+        "het": 1
+       },
+       {
+        "loai": "vat",
+        "x": -36,
+        "h": 6
+       },
+       {
+        "loai": "thuoc",
+        "tu": -36,
+        "den": 0,
+        "o": -4,
+        "nhan": "d = 36 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -34.5,
+        "y": 3.0,
+        "text": "AB = 6 cm",
+        "a": "start"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tk",
+       "x": 0,
+       "kieu": "phan_ki",
+       "ten": "L",
+       "ten_ben": "phai"
+      },
+      {
+       "loai": "diem",
+       "x": 0,
+       "y": 0,
+       "ten": "O",
+       "vi": "t"
+      },
+      {
+       "loai": "ghi",
+       "text": "Ảnh ảo nhỏ hơn vật: thấu kính phân kì"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -36,
+         6
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         14,
+         -2.3333333333333335
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": -12,
+       "h": 2,
+       "ao": true,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = −12 cm: ảnh ảo, cùng phía vật"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "x": -18,
+       "y": 0,
+       "ten": "F′",
+       "vi": "b"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -36,
+         6
+        ],
+        [
+         0,
+         6
+        ],
+        [
+         6,
+         8
+        ]
+       ],
+       "mau": "max",
+       "keo": [
+        [
+         -18,
+         0
+        ],
+        [
+         0,
+         6
+        ]
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "f = −18 cm: F′ cùng phía vật"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|d′| = 12 cm nhỏ hơn |f| = 18 cm: ảnh nằm giữa O và F′"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Kết hợp: tìm vị trí vật cho ảnh cho trước, rồi vật dịch chuyển",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Thấu kính hội tụ có tiêu cự $18\\ \\text{cm}$. Vật sáng $AB$ cao $1{,}5\\ \\text{cm}$ đặt vuông góc với trục chính, $A$ nằm trên trục chính. Đưa $AB$ từ rất xa lại gần thấu kính cho tới vị trí $P$ mà ảnh $A'B'$ hiện rõ trên màn và cao gấp $3$ lần vật.</p><ol type=\"a\"><li>Khi vật ở $P$, vật và màn cách thấu kính bao nhiêu cm?</li><li>Từ $P$, dịch $AB$ ra xa thấu kính thêm $6\\ \\text{cm}$. Phải dịch màn đi bao nhiêu cm, về phía nào, để lại thu được ảnh rõ? Ảnh khi đó cao bao nhiêu?</li></ol>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thấu kính hội tụ có tiêu cự $18\\ \\text{cm}$\"</td><td>$f=+18$ cm</td><td>⚠ Quy ước dấu của $f$, $d$, $d'$ dùng thống nhất cho cả hai vị trí vật không?</td></tr><tr><td>\"$AB$ cao $1{,}5\\ \\text{cm}$\"</td><td>$h=1{,}5$ cm</td><td>Chiều cao ảnh tính từ đại lượng nào?</td></tr><tr><td>\"ảnh $A'B'$ hiện rõ trên màn\"</td><td>ảnh thật, $d'\\gt0$</td><td>Ảnh hứng được trên màn là ảnh loại nào?</td></tr><tr><td>\"cao gấp $3$ lần vật\"</td><td>$k=3$</td><td>Từ $k$ viết được hệ thức nào giữa $d'$ và $d$?</td></tr><tr><td>\"dịch $AB$ ra xa thấu kính thêm $6\\ \\text{cm}$\"</td><td>$d_2=d+6$</td><td>Khoảng cách mới là bao nhiêu? $d'$ cũ còn dùng được không?</td></tr><tr><td>\"Phải dịch màn đi bao nhiêu cm, về phía nào\"</td><td>So $d_2'$ với $d'$</td><td>Ảnh thật dịch lại gần hay ra xa kính khi vật ra xa?</td></tr></tbody></table></div>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><b>Ảnh thật</b> hứng được trên màn: $d'\\gt0$. <b>Số phóng đại</b> $k=\\dfrac{|d'|}{d}$.</li><li><b>Công thức thấu kính</b>: $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ — dùng riêng cho từng vị trí vật.</li><li><b>Vật xa kính hơn</b> thì ảnh thật gần kính hơn và nhỏ hơn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Hệ thức giữa d′ và d tại P</span></p><p>Hứng được trên màn là ảnh thật, nên $d'\\gt0$.</p>$$k=\\dfrac{d'}{d}=3\\ \\Rightarrow\\ d'=3d$$<div class=\"bt-ans\"><p>$d'=3d$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vị trí vật P</span></p>$$\\dfrac1f=\\dfrac1d+\\dfrac1{3d}=\\dfrac{4}{3d}$$$$d=\\dfrac{4f}{3}=\\dfrac{4\\cdot18}{3}$$<div class=\"bt-ans\">$$d=24\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí màn</span></p>$$d'=3d=3\\cdot24$$<div class=\"bt-ans\">$$d'=72\\ \\text{cm}$$</div><p>Kiểm tra: $\\dfrac1{24}+\\dfrac1{72}=\\dfrac{4}{72}=\\dfrac1{18}$ đúng; $h'=3\\cdot1{,}5=4{,}5\\ \\text{cm}$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khoảng cách vật sau khi dịch</span></p>$$d_2=d+6$$<div class=\"bt-ans\">$$d_2=30\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Ảnh mới ở đâu</span></p>$$\\dfrac1{d_2'}=\\dfrac1f-\\dfrac1{d_2}=\\dfrac1{18}-\\dfrac1{30}=\\dfrac1{45}$$<div class=\"bt-ans\">$$d_2'=45\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Chiều dịch của màn</span></p><p>$d_2'=45\\ \\text{cm}\\lt d'=72\\ \\text{cm}$: ảnh thật lại gần thấu kính hơn.</p><div class=\"bt-ans\"><p>Dịch màn lại gần thấu kính.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Màn dịch bao nhiêu</span></p>$$\\Delta=d'-d_2'=72-45$$<div class=\"bt-ans\">$$\\Delta=27\\ \\text{cm (lại gần thấu kính)}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Chiều cao ảnh mới</span></p>$$k_2=\\dfrac{d_2'}{d_2}=\\dfrac{45}{30}=1{,}5$$$$h_2'=k_2h=1{,}5\\cdot1{,}5$$<div class=\"bt-ans\">$$h_2'=2{,}25\\ \\text{cm}$$</div><p>Kiểm tra: vật ra xa nên ảnh nhỏ đi ($4{,}5\\to2{,}25\\ \\text{cm}$). Hợp lí.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d=24\\ \\text{cm}$; màn cách kính $72\\ \\text{cm}$</p><p>b) Dịch màn lại gần kính $27\\ \\text{cm}$; ảnh cao $2{,}25\\ \\text{cm}$</p></div><p class=\"bt-note\">Dạng này nhận ra khi: đề cho tỉ số ảnh/vật rồi dịch vật → dùng $d'=kd$ cho vị trí đầu; mỗi vị trí mới phải tính lại $d'$ và $k$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "nhan_dang": "Thấy <b>ảnh rõ trên màn cao gấp k lần, rồi vật dịch</b> → <b>$d'=kd$</b> cho vị trí đầu; mỗi vị trí mới <b>tính lại $d'$</b>",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "buoc": [
+    {
+     "tieu_de": "Hệ thức giữa d′ và d tại P",
+     "hoi": "Điều kiện 'ảnh rõ trên màn, cao gấp 3 lần vật' cho hệ thức nào?",
+     "lua_chon": [
+      {
+       "text": "Ảnh thật nên $d'\\gt0$ và $d'=3d$",
+       "dung": true
+      },
+      {
+       "text": "$d'=-3d$ vì ảnh lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh hứng được trên màn là ảnh thật, $d'\\gt0$; ảnh ảo mới có $d'\\lt0$."
+      },
+      {
+       "text": "$d'=\\dfrac d3$ vì $k=3$",
+       "dung": false,
+       "vi_sao": "$k=\\dfrac{|d'|}{d}$ nên $|d'|=kd$, không phải $\\dfrac d3$."
+      }
+     ],
+     "loi_hay_gap": "Thấy 'lớn gấp 3' nên chọn dấu âm hoặc chia cho 3, không dùng $k=|d'|/d$."
+    },
+    {
+     "tieu_de": "Vị trí vật P",
+     "hoi": "Ở vị trí P, vật cách thấu kính bao nhiêu cm?",
+     "dap_so": 24,
+     "sai_so": 0.3,
+     "don_vi": "cm",
+     "loi_hay_gap": "Dùng $d=f(1+3)$: đó là công thức của $d'$, không phải $d$; hoặc lấy $d=\\dfrac f3$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $d'=3d$ vào $\\dfrac1f=\\dfrac1d+\\dfrac1{d'}$ rồi giải ra $d$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $d=f\\,(1+3)$",
+       "dung": false,
+       "vi_sao": "$f(1+k)$ cho vị trí ảnh $d'$, không phải vị trí vật; từ $d'=3d$ phải giải ra $d$."
+      },
+      {
+       "text": "Lấy $d=\\dfrac f3$ vì ảnh gấp $3$ lần",
+       "dung": false,
+       "vi_sao": "Số $3$ là tỉ số $\\dfrac{|d'|}{d}$, không phải $\\dfrac fd$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí màn",
+     "hoi": "Màn cách thấu kính bao nhiêu cm?",
+     "dap_so": 72,
+     "sai_so": 1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Tính $\\dfrac1f-\\dfrac1d$ rồi lấy luôn kết quả làm $d'$, quên lấy nghịch đảo.",
+     "chon_buoc_ke": [
+      {
+       "text": "Dùng hệ thức đã có $d'=3d$",
+       "dung": true
+      },
+      {
+       "text": "Tính $\\dfrac1f-\\dfrac1d$ rồi lấy kết quả làm $d'$",
+       "dung": false,
+       "vi_sao": "Hiệu đó là $\\dfrac1{d'}$; phải lấy nghịch đảo."
+      },
+      {
+       "text": "Lấy $d'=d+f$",
+       "dung": false,
+       "vi_sao": "Tổng hai khoảng cách không cho vị trí ảnh; phải dùng công thức thấu kính hoặc $d'=3d$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách vật sau khi dịch",
+     "hoi": "Sau khi dịch ra xa 6 cm, vật cách thấu kính bao nhiêu cm?",
+     "dap_so": 30,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy hiệu thay vì tổng, hoặc lấy $d_2=6$ (quãng đường dịch) làm khoảng cách mới.",
+     "chon_buoc_ke": [
+      {
+       "text": "$d_2=d+6$ vì dịch ra xa thì khoảng cách tăng",
+       "dung": true
+      },
+      {
+       "text": "$d_2=d-6$",
+       "dung": false,
+       "vi_sao": "Dịch ra xa nghĩa là khoảng cách tăng, không giảm."
+      },
+      {
+       "text": "$d_2=6$",
+       "dung": false,
+       "vi_sao": "$6\\ \\text{cm}$ là quãng đường dịch thêm, không phải khoảng cách mới tới thấu kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ảnh mới ở đâu",
+     "hoi": "Ảnh mới cách thấu kính bao nhiêu cm?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Giữ $d'=3d$ như ở P, hoặc cộng $d'+6$ vì tưởng ảnh dịch cùng quãng với vật.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giải lại $\\dfrac1{d_2'}=\\dfrac1f-\\dfrac1{d_2}$ với $d_2$ mới",
+       "dung": true
+      },
+      {
+       "text": "Giữ $d'=3d_2$ như ở P",
+       "dung": false,
+       "vi_sao": "Hệ thức $d'=3d$ chỉ đúng ở P; khi vật dịch thì $k$ đã đổi."
+      },
+      {
+       "text": "Cộng $d_2'=d'+6$",
+       "dung": false,
+       "vi_sao": "Ảnh không dịch cùng quãng và cùng chiều với vật; phải tính lại bằng công thức thấu kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dịch của màn",
+     "hoi": "Màn phải dịch về phía nào so với thấu kính?",
+     "lua_chon": [
+      {
+       "text": "Lại gần thấu kính",
+       "dung": true
+      },
+      {
+       "text": "Ra xa thấu kính",
+       "dung": false,
+       "vi_sao": "Vật ra xa thấu kính thì ảnh thật lại gần kính hơn; so $d_2'$ với $d'$ sẽ thấy ảnh gần kính hơn."
+      },
+      {
+       "text": "Không cần dịch",
+       "dung": false,
+       "vi_sao": "Ảnh đã đổi vị trí, màn đứng yên thì ảnh trên màn bị nhòe."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ vật ra xa thì ảnh cũng ra xa theo, giống chuyển động của vật.",
+     "chon_buoc_ke": [
+      {
+       "text": "So vị trí ảnh mới với vị trí ảnh cũ",
+       "dung": true
+      },
+      {
+       "text": "Cho rằng ảnh dịch cùng chiều với vật",
+       "dung": false,
+       "vi_sao": "Ảnh thật dịch ngược lại: vật ra xa thì ảnh lại gần kính."
+      },
+      {
+       "text": "Chỉ dựa vào $d$ tăng mà kết luận ngay",
+       "dung": false,
+       "vi_sao": "Phải so $d_2'$ với $d'$ đã tính, không đoán theo chiều dịch của vật."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Màn dịch bao nhiêu",
+     "hoi": "Màn phải dịch một đoạn bao nhiêu cm?",
+     "dap_so": 27,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy độ dịch của màn bằng độ dịch của vật ($6$ cm).",
+     "chon_buoc_ke": [
+      {
+       "text": "Lấy hiệu hai vị trí ảnh $d'-d_2'$",
+       "dung": true
+      },
+      {
+       "text": "Lấy độ dịch của vật làm độ dịch của màn",
+       "dung": false,
+       "vi_sao": "Ảnh không dịch cùng quãng với vật; độ dịch của màn là hiệu hai vị trí ảnh."
+      },
+      {
+       "text": "Lấy tổng $d'+d_2'$",
+       "dung": false,
+       "vi_sao": "Tổng hai khoảng cách tới kính không phải độ dịch; màn đi từ vị trí này sang vị trí kia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều cao ảnh mới",
+     "hoi": "Ảnh mới cao bao nhiêu cm?",
+     "dap_so": 2.25,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Giữ $k=3$ như ở P nên ra ảnh cao 4,5 cm; số phóng đại đã đổi khi vật dịch.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính lại $k=\\dfrac{d_2'}{d_2}$ rồi $h_2'=kh$",
+       "dung": true
+      },
+      {
+       "text": "Giữ $k=3$ như ở P",
+       "dung": false,
+       "vi_sao": "Số phóng đại phụ thuộc vị trí vật; vật dịch thì $k$ đổi."
+      },
+      {
+       "text": "Lấy $h_2'=h\\cdot\\dfrac{d_2}{d_2'}$",
+       "dung": false,
+       "vi_sao": "Tỉ số bị đảo ngược; ảnh thật ở xa kính hơn vật mới lớn hơn vật."
+      }
+     ]
+    }
+   ],
+   "tom_de": {
+    "cho": [
+     "hội tụ $f=18$ cm; $AB=1{,}5$ cm",
+     "ảnh thật trên màn, cao gấp $3$ lần vật (vị trí $P$)",
+     "từ $P$ dịch vật ra xa $6$ cm"
+    ],
+    "tim": [
+     "a) $d$, $d'$ tại $P$",
+     "b) màn dịch bao nhiêu cm, chiều nào; chiều cao ảnh mới"
+    ]
+   },
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -50,
+      "x_max": 82,
+      "y_tren": 3.4,
+      "y_duoi": -7,
+      "phong_doc": 5,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 18,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -44,
+        "h": 1.5,
+        "het": 2
+       },
+       {
+        "loai": "chu",
+        "x": -49,
+        "y": -3.2,
+        "text": "AB = 1,5 cm",
+        "a": "start",
+        "het": 2
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Ảnh rõ trên màn là ảnh thật: d′ dương, d′ = 3d"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -24,
+       "h": 1.5,
+       "ten": [
+        "A",
+        "B"
+       ],
+       "het": 4
+      },
+      {
+       "loai": "thuoc",
+       "tu": -24,
+       "den": 0,
+       "o": -3.4,
+       "nhan": "d = 24 cm",
+       "ben": "duoi",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Vật ở P cách kính 24 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -24,
+         1.5
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         78,
+         -4.875
+        ]
+       ],
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -24,
+         1.5
+        ],
+        [
+         0,
+         1.5
+        ],
+        [
+         72,
+         -4.5
+        ]
+       ],
+       "mau": "max",
+       "het": 4
+      },
+      {
+       "loai": "vat",
+       "x": 72,
+       "h": -4.5,
+       "mau": "max",
+       "ten": [
+        "A′",
+        "B′"
+       ],
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "Màn cách kính 72 cm · ảnh cao 4,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -30,
+       "h": 1.5,
+       "ten": [
+        "A_2",
+        "B_2"
+       ]
+      },
+      {
+       "loai": "thuoc",
+       "tu": -30,
+       "den": 0,
+       "o": -3.4,
+       "nhan": "d_2 = 30 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "Vật dịch ra xa 6 cm: d_2 = 30 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -30,
+         1.5
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         78,
+         -3.9
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -30,
+         1.5
+        ],
+        [
+         0,
+         1.5
+        ],
+        [
+         45,
+         -2.25
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "vat",
+       "x": 45,
+       "h": -2.25,
+       "mau": "max",
+       "ten": [
+        "A_2′",
+        "B_2′"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Ảnh mới ở 45 cm sau kính"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": 72,
+       "h": -4.5,
+       "ao": true,
+       "mau": "min",
+       "ten": [
+        "",
+        ""
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "Vật ra xa → ảnh thật lại gần kính (màn dịch lại gần)"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 45,
+       "den": 72,
+       "o": 2.4,
+       "nhan": "27 cm",
+       "ben": "tren"
+      },
+      {
+       "loai": "ghi",
+       "text": "Màn dịch lại gần kính 27 cm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": -2.25,
+       "o": 49,
+       "nhan": "2,25 cm",
+       "doc": true,
+       "ben": "phai"
+      },
+      {
+       "loai": "ghi",
+       "text": "h_2′ = 2,25 cm"
+      }
+     ]
+    ]
+   }
+  }
+ ]
+}
