@@ -1,0 +1,2210 @@
+{
+ "lesson_id": 85,
+ "lesson_title": "Bài 7. Lăng kính",
+ "generated_at": "2026-11-10",
+ "review": {
+  "checked": false,
+  "notes": "chờ kiểm chéo"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Tia vuông góc mặt bên: góc ló, góc lệch và chiều lệch",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "problem_html": "<p>Một lăng kính thuỷ tinh có tiết diện thẳng là tam giác $ABC$ vuông tại $B$, góc chiết quang $A=25^\\circ$, chiết suất $n=1{,}52$, đặt trong không khí. Lăng kính được đặt sao cho mặt bên $AB$ thẳng đứng và đáy $BC$ nằm ở phía <strong>trên</strong>. Một tia laser đỏ hẹp nằm ngang chiếu vuông góc vào mặt $AB$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Tính góc tới của tia sáng ở mặt $AC$ và góc ló $r$ (góc giữa tia ló và pháp tuyến của $AC$).</li><li>Tính góc lệch $D$ giữa tia ló và phương tia tới. Tia ló lệch lên trên hay xuống dưới so với phương nằm ngang?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tia vuông góc mặt bên</strong> không bị gãy khúc ở mặt đó.</li><li><strong>Khúc xạ ra không khí:</strong> $n\\sin i=\\sin r$ ($i$ trong thuỷ tinh, $r$ trong không khí).</li><li><strong>Góc lệch</strong> $D$: góc giữa tia ló và phương tia tới ; lăng kính luôn bẻ tia về phía đáy.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới ở mặt $AC$</span></p><p>Tia vuông góc $AB$ nên đi thẳng. Pháp tuyến của $AC$ vuông góc $AC$, tia vuông góc $AB$, nên góc giữa chúng bằng góc giữa $AB$ và $AC$ :</p><div class=\"bt-ans\">$$i=A=25^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Góc ló</span></p><p>Tia đi từ thuỷ tinh ra không khí :</p>$$\\sin r=n\\sin i$$$$\\sin r=1{,}52\\cdot\\sin25^\\circ\\approx0{,}642$$<div class=\"bt-ans\">$$r\\approx40{,}0^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc lệch</span></p><p>Phần kéo dài của tia trong thuỷ tinh và tia ló cùng nằm một phía pháp tuyến tại điểm ló, nên góc giữa chúng là hiệu hai góc :</p>$$D=r-i=40{,}0^\\circ-25^\\circ$$<div class=\"bt-ans\">$$D\\approx15{,}0^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều lệch</span></p><p>Lăng kính bẻ tia về phía đáy. Đáy $BC$ nằm ở phía trên nên tia ló chếch lên so với phương nằm ngang.</p><div class=\"bt-ans\"><p>Lệch <strong>lên trên</strong>, về phía đáy $BC$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thay ngược vào định luật khúc xạ :</p>$$\\dfrac{\\sin40{,}0^\\circ}{\\sin25^\\circ}\\approx\\dfrac{0{,}643}{0{,}423}\\approx1{,}52=n$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i=25^\\circ$ ; $r\\approx40{,}0^\\circ$</p><p>b) $D\\approx15{,}0^\\circ$ ; tia ló lệch <strong>lên trên</strong> (về phía đáy)</p></div><p class=\"bt-note\">Nhận dạng: tia vuông góc một mặt bên thì góc tới ở mặt kia bằng $A$ ; chiều lệch luôn theo vị trí đáy, không theo trên – dưới.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"góc chiết quang $A=25^\\circ$, chiết suất $n=1{,}52$\"</td><td>$A=25^\\circ$ ; $n=1{,}52$</td><td>Góc chiết quang là góc giữa hai mặt nào của lăng kính ?</td></tr><tr><td>\"đáy $BC$ nằm ở phía <strong>trên</strong>\"</td><td>lăng kính đặt ngược</td><td>Đáy nằm đối diện đỉnh nào ? Lăng kính bẻ tia về phía nào ?</td></tr><tr><td>\"tia laser … chiếu vuông góc vào mặt $AB$\"</td><td>tia tới $\\perp AB$</td><td>⚠ Tia có gãy khúc ở $AB$ không ? Góc giữa tia trong thuỷ tinh và pháp tuyến của $AC$ bằng góc nào của hình ?</td></tr><tr><td>\"góc ló $r$\"</td><td>$r=\\,?$</td><td>Ở mặt $AC$ tia đi từ môi trường nào sang môi trường nào ? Định luật khúc xạ viết cho chiều ấy thế nào ?</td></tr><tr><td>\"góc lệch $D$ … lên trên hay xuống dưới\"</td><td>$D=\\,?$ ; chiều lệch</td><td>Góc lệch đo giữa hai tia nào ? $r$ đo so với đường nào ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>tia chiếu vuông góc mặt bên</b> → <b>góc tới ở mặt kia bằng A</b>, tia ló lệch về phía đáy",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "lăng kính $A=25^\\circ$, $n=1{,}52$, đáy $BC$ ở trên",
+     "tia laser nằm ngang, vuông góc $AB$"
+    ],
+    "tim": [
+     "a) góc tới ở $AC$ ; góc ló $r$",
+     "b) góc lệch $D$ ; tia ló lệch lên hay xuống"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới ở mặt AC",
+     "hoi": "Góc tới của tia sáng ở mặt AC bằng bao nhiêu độ?",
+     "dap_so": 25,
+     "sai_so": 0.5,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy góc tới bằng $0^\\circ$ vì thấy chữ “vuông góc”, hoặc lấy $90^\\circ-A$ : tia vuông góc với mặt $AB$, không phải với $AC$."
+    },
+    {
+     "tieu_de": "Góc ló",
+     "hoi": "Góc ló r ra khỏi mặt AC bằng bao nhiêu độ?",
+     "dap_so": 39.97,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Viết $\\sin r=\\dfrac{\\sin i}{n}$ (chiều từ không khí vào thuỷ tinh) nên ra góc nhỏ hơn góc tới, trái với “ra không khí thì xa pháp tuyến”.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin r=n\\sin i$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin r=\\dfrac{\\sin i}{n}$",
+       "dung": false,
+       "vi_sao": "Đó là chiều từ không khí vào thuỷ tinh. Ở mặt AC tia đi từ thuỷ tinh ra không khí nên nhân với n."
+      },
+      {
+       "text": "$r=n\\cdot i$",
+       "dung": false,
+       "vi_sao": "Định luật khúc xạ liên hệ sin của các góc, không phải chính các góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch",
+     "hoi": "Góc lệch D của tia ló bằng bao nhiêu độ?",
+     "dap_so": 14.97,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy $D=r$ : $r$ đo từ pháp tuyến của $AC$, còn $D$ đo từ phương tia tới.",
+     "chon_buoc_ke": [
+      {
+       "text": "$D=r-i$",
+       "dung": true
+      },
+      {
+       "text": "$D=r$",
+       "dung": false,
+       "vi_sao": "$r$ đo từ pháp tuyến của $AC$ ; pháp tuyến này nghiêng một góc bằng $A$ so với phương tia tới."
+      },
+      {
+       "text": "$D=r+i$",
+       "dung": false,
+       "vi_sao": "Phần kéo dài của tia trong thuỷ tinh và tia ló cùng một phía pháp tuyến nên hai góc trừ nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều lệch",
+     "hoi": "Tia ló lệch về phía nào so với phương nằm ngang?",
+     "lua_chon": [
+      {
+       "text": "Lệch lên trên, về phía đáy BC",
+       "dung": true
+      },
+      {
+       "text": "Lệch xuống dưới, về phía đỉnh A",
+       "dung": false,
+       "vi_sao": "Lăng kính luôn bẻ tia về phía đáy ; ở đây đáy BC nằm ở trên."
+      },
+      {
+       "text": "Không lệch, vì tia tới vuông góc mặt AB",
+       "dung": false,
+       "vi_sao": "Tia không gãy ở AB nhưng gãy ở AC (góc tới ở AC khác 0) nên vẫn lệch."
+      }
+     ],
+     "loi_hay_gap": "Nhớ máy móc “tia ló đi xuống” từ hình lăng kính đáy dưới, quên rằng đáy bây giờ ở trên.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xem đáy BC đang ở phía nào",
+       "dung": true
+      },
+      {
+       "text": "Xem đỉnh A đang ở phía nào",
+       "dung": false,
+       "vi_sao": "Lăng kính bẻ tia về phía đáy, không về phía đỉnh."
+      },
+      {
+       "text": "Lấy chiều quen thuộc: tia ló luôn đi xuống",
+       "dung": false,
+       "vi_sao": "Chiều lệch theo vị trí đáy, không cố định trên – dưới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra: thay ngược vào định luật khúc xạ"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 12.2,
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        6.5,
+        10.6
+       ],
+       [
+        6.5,
+        3.4
+       ],
+       [
+        9.86,
+        3.4
+       ]
+      ],
+      "dam": 0.22,
+      "vien": true
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       6.5,
+       10.6
+      ],
+      "vi": "b",
+      "ten": "A"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       6.5,
+       3.4
+      ],
+      "vi": "t",
+      "ten": "B"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       9.86,
+       3.4
+      ],
+      "vi": "r",
+      "ten": "C"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 1.2,
+      "text": "A = 25°",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 2.7,
+      "text": "n = 1,52",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 8.4,
+      "y": 1.5,
+      "text": "đáy BC",
+      "a": "middle"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        0.3,
+        6.0
+       ],
+       [
+        6.5,
+        6.0
+       ]
+      ],
+      "mau": "max"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 7.4,
+      "text": "laser đỏ",
+      "a": "start",
+      "mau": "max"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6.5,
+         6.0
+        ],
+        [
+         8.65,
+         6.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        8.65,
+        6.0
+       ],
+       "huong": -25,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        8.65,
+        6.0
+       ],
+       "tu": -180,
+       "den": -205,
+       "nhan": "i",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "i = A = 25°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.65,
+         6.0
+        ],
+        [
+         19.4,
+         2.73
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        8.65,
+        6.0
+       ],
+       "tu": -25,
+       "den": 16.89,
+       "nhan": "r",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "sin r = 1,52·sin 25° ⇒ r ≈ 40,0°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.65,
+         6.0
+        ],
+        [
+         19.4,
+         6.0
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        8.65,
+        6.0
+       ],
+       "tu": 0,
+       "den": 16.89,
+       "nhan": "D",
+       "r": 2.7,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "D = r − i ≈ 15,0°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "lệch về phía đáy BC: lên trên"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "sin 40,0° / sin 25° ≈ 1,52 = n"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Tia có ló ra không? So góc tới với góc tới hạn",
+   "topic": "Đường truyền tia sáng qua lăng kính",
+   "problem_html": "<p>Một loại thuỷ tinh có chiết suất $n=1{,}60$ đối với một ánh sáng đơn sắc. Lăng kính làm bằng thuỷ tinh này có tiết diện thẳng là tam giác $ABC$ vuông tại $B$, đặt trong không khí. Chiếu tia sáng đơn sắc đó vuông góc vào mặt bên $AB$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Tính góc tới hạn $i_{th}$ khi ánh sáng đi từ thuỷ tinh này ra không khí.</li><li>Góc chiết quang $A=35^\\circ$. Tia sáng có ló ra khỏi mặt $AC$ không? Nếu có, tính góc ló $r$ và góc lệch $D$.</li><li>Thay bằng lăng kính cùng loại thuỷ tinh, góc chiết quang $A=40^\\circ$. Tia sáng có ló ra khỏi mặt $AC$ không?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Góc tới hạn</strong> (thuỷ tinh ra không khí): $\\sin i_{th}=\\dfrac1n$.</li><li><strong>Phản xạ toàn phần</strong> khi $i\\ge i_{th}$ ; nếu $i\\lt i_{th}$ tia ló ra theo $\\sin r=n\\sin i$.</li><li><strong>Tia vuông góc $AB$:</strong> góc tới ở $AC$ bằng $A$ ; góc lệch $D=r-A$.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới hạn</span></p>$$\\sin i_{th}=\\dfrac1n=\\dfrac1{1{,}60}=0{,}625$$<div class=\"bt-ans\">$$i_{th}\\approx38{,}7^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Với $A=35^\\circ$: tia có ló ra không ?</span></p><p>Tia vuông góc $AB$ nên góc tới ở $AC$ bằng $A$ :</p>$$i=35^\\circ\\lt i_{th}\\approx38{,}7^\\circ$$<div class=\"bt-ans\"><p>Tia <strong>ló ra</strong> khỏi $AC$.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc ló</span></p>$$\\sin r=n\\sin i=1{,}60\\cdot\\sin35^\\circ\\approx0{,}918$$<div class=\"bt-ans\">$$r\\approx66{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc lệch</span></p>$$D=r-A=66{,}6^\\circ-35^\\circ$$<div class=\"bt-ans\">$$D\\approx31{,}6^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Với $A=40^\\circ$: tia có ló ra không ?</span></p>$$i=40^\\circ\\gt i_{th}\\approx38{,}7^\\circ$$<p>Thử khúc xạ : $1{,}60\\cdot\\sin40^\\circ\\approx1{,}03\\gt1$, không có góc $r$ nào thoả mãn.</p><div class=\"bt-ans\"><p>Phản xạ toàn phần ở $AC$, tia <strong>không ló</strong> ra khỏi $AC$.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $i_{th}\\approx38{,}7^\\circ$</p><p>b) tia <strong>ló ra</strong> ; $r\\approx66{,}6^\\circ$, $D\\approx31{,}6^\\circ$</p><p>c) $A=40^\\circ$ : <strong>không ló</strong> (phản xạ toàn phần)</p></div><p class=\"bt-note\">Nhận dạng: trước khi tính góc ló, so góc tới $i=A$ với $i_{th}$ ; nếu $n\\sin i$ vượt $1$ thì không có tia ló.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chiết suất $n=1{,}60$ … đặt trong không khí\"</td><td>$n=1{,}60$ ; ngoài là không khí</td><td>Ở mặt $AC$, tia đi từ môi trường chiết quang hơn hay kém hơn ?</td></tr><tr><td>\"góc tới hạn $i_{th}$\"</td><td>$i_{th}=\\,?$</td><td>Khi góc tới bằng góc tới hạn, góc khúc xạ bằng bao nhiêu ?</td></tr><tr><td>\"chiếu … vuông góc vào mặt bên $AB$\"</td><td>tia tới $\\perp AB$</td><td>⚠ Góc tới ở $AC$ bằng góc nào của lăng kính ?</td></tr><tr><td>\"$A=35^\\circ$ … có ló ra … góc ló $r$ và góc lệch $D$\"</td><td>$A=35^\\circ$ ; $r=\\,?$ ; $D=\\,?$</td><td>⚠ Trước khi dùng định luật khúc xạ ở $AC$, cần so góc tới với đại lượng nào ?</td></tr><tr><td>\"cùng loại thuỷ tinh, góc chiết quang $A=40^\\circ$\"</td><td>$A=40^\\circ$ ; cùng $n$</td><td>Góc tới ở $AC$ đổi thế nào ? Góc tới hạn có đổi không ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy hỏi <b>tia có ló ra không</b> → so <b>góc tới ở mặt ra</b> với <b>góc tới hạn</b> trước khi tính",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "tom_de": {
+    "cho": [
+     "thuỷ tinh $n=1{,}60$, tia tới vuông góc $AB$",
+     "lăng kính $A=35^\\circ$, rồi $A=40^\\circ$"
+    ],
+    "tim": [
+     "a) góc tới hạn $i_{th}$",
+     "b) $A=35^\\circ$ : ló không ? $r$, $D$",
+     "c) $A=40^\\circ$ : ló không ?"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới hạn",
+     "hoi": "Góc tới hạn $i_{th}$ khi ánh sáng đi từ thuỷ tinh ra không khí bằng bao nhiêu độ?",
+     "dap_so": 38.68,
+     "sai_so": 0.2,
+     "don_vi": "°",
+     "loi_hay_gap": "Viết $\\sin i_{th}=n$ (lớn hơn 1, máy báo lỗi) thay vì $\\sin i_{th}=\\dfrac1n$ ; hoặc quên bấm $\\sin^{-1}$ để đổi ra góc."
+    },
+    {
+     "tieu_de": "Với $A=35^\\circ$: ló ra không?",
+     "hoi": "Với $A=35^\\circ$, tia sáng có ló ra khỏi mặt $AC$ không?",
+     "lua_chon": [
+      {
+       "text": "Ló ra, vì góc tới ở AC nhỏ hơn góc tới hạn",
+       "dung": true
+      },
+      {
+       "text": "Không ló, vì góc tới ở $AC$ bằng $90^\\circ-A$, lớn hơn góc tới hạn",
+       "dung": false,
+       "vi_sao": "Tia vuông góc $AB$ nên góc tới ở $AC$ bằng $A$, không phải $90^\\circ-A$."
+      },
+      {
+       "text": "Không ló, vì tia đi từ thuỷ tinh ra không khí luôn bị phản xạ toàn phần",
+       "dung": false,
+       "vi_sao": "Phản xạ toàn phần còn cần góc tới lớn hơn hoặc bằng góc tới hạn."
+      }
+     ],
+     "loi_hay_gap": "Lấy góc tới ở $AC$ bằng $90^\\circ-A$ (nhầm góc với mặt và góc với pháp tuyến), hoặc tính luôn góc ló mà chưa so góc tới với góc tới hạn.",
+     "chon_buoc_ke": [
+      {
+       "text": "So góc tới $i=A$ ở $AC$ với $i_{th}$",
+       "dung": true
+      },
+      {
+       "text": "So góc $90^\\circ-A$ với $i_{th}$",
+       "dung": false,
+       "vi_sao": "$90^\\circ-A$ là góc giữa tia và mặt $AC$, không phải góc tới (góc với pháp tuyến)."
+      },
+      {
+       "text": "So góc chiết quang $A$ với $90^\\circ$",
+       "dung": false,
+       "vi_sao": "Góc tới nhỏ hơn 90° chưa đủ để ló ; phải nhỏ hơn góc tới hạn."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc ló",
+     "hoi": "Góc ló r ra khỏi mặt AC bằng bao nhiêu độ?",
+     "dap_so": 66.6,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Dùng $\\sin r=\\dfrac{\\sin A}{n}$ nên ra góc ló nhỏ hơn góc tới, trái với “ra không khí thì xa pháp tuyến”.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin r=n\\sin A$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin r=\\dfrac{\\sin A}{n}$",
+       "dung": false,
+       "vi_sao": "Đó là chiều từ không khí vào thuỷ tinh ; ở AC tia đi từ thuỷ tinh ra."
+      },
+      {
+       "text": "$r=n\\cdot A$",
+       "dung": false,
+       "vi_sao": "Định luật khúc xạ liên hệ sin của các góc, không phải chính các góc."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch",
+     "hoi": "Góc lệch D bằng bao nhiêu độ?",
+     "dap_so": 31.6,
+     "sai_so": 0.3,
+     "don_vi": "°",
+     "loi_hay_gap": "Dừng ở góc ló $r$ và coi đó là góc lệch, quên rằng $r$ đo từ pháp tuyến của $AC$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$D=r-A$",
+       "dung": true
+      },
+      {
+       "text": "$D=r$",
+       "dung": false,
+       "vi_sao": "$r$ đo từ pháp tuyến của $AC$, pháp tuyến này đã nghiêng góc $A$ so với phương tia tới."
+      },
+      {
+       "text": "$D=r+A$",
+       "dung": false,
+       "vi_sao": "Phần kéo dài của tia trong thuỷ tinh và tia ló cùng một phía pháp tuyến nên hai góc trừ nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Với $A=40^\\circ$: ló ra không?",
+     "hoi": "Với $A=40^\\circ$, tia sáng có ló ra khỏi mặt $AC$ không?",
+     "lua_chon": [
+      {
+       "text": "Không ló: tia bị phản xạ toàn phần ở AC",
+       "dung": true
+      },
+      {
+       "text": "Ló ra và lệch nhiều hơn, vì A lớn hơn",
+       "dung": false,
+       "vi_sao": "Góc tới đã vượt góc tới hạn ; thử tính thì n·sin A lớn hơn 1, không có góc ló."
+      },
+      {
+       "text": "Ló ra, đi sát mặt AC",
+       "dung": false,
+       "vi_sao": "Tia chỉ đi sát mặt khi góc tới đúng bằng góc tới hạn ; ở đây góc tới lớn hơn."
+      }
+     ],
+     "loi_hay_gap": "Giữ kết luận của câu b vì cùng thuỷ tinh : chưa so lại góc tới mới với góc tới hạn, chưa thử $n\\sin A$ với $1$.",
+     "chon_buoc_ke": [
+      {
+       "text": "So góc tới mới $i=A$ với $i_{th}$",
+       "dung": true
+      },
+      {
+       "text": "So góc mới $90^\\circ-A$ với $i_{th}$",
+       "dung": false,
+       "vi_sao": "$90^\\circ-A$ là góc giữa tia và mặt $AC$ ; góc tới đo từ pháp tuyến, bằng $A$."
+      },
+      {
+       "text": "So góc lệch $D$ của câu b với $i_{th}$",
+       "dung": false,
+       "vi_sao": "Góc lệch đo từ phương tia tới, không phải góc tới ở AC ; điều kiện ló chỉ phụ thuộc góc tới."
+      }
+     ]
+    }
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 12.2,
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          7.0,
+          2.2
+         ],
+         [
+          7.0,
+          10.6
+         ],
+         [
+          12.88,
+          10.6
+         ]
+        ],
+        "dam": 0.22,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         7.0,
+         2.2
+        ],
+        "vi": "t",
+        "ten": "A"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         7.0,
+         10.6
+        ],
+        "vi": "b",
+        "ten": "B"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         12.88,
+         10.6
+        ],
+        "vi": "r",
+        "ten": "C"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 1.2,
+        "text": "A = 35°",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 2.7,
+        "text": "n = 1,60",
+        "a": "start"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          0.3,
+          5.2
+         ],
+         [
+          7.0,
+          5.2
+         ]
+        ],
+        "mau": "max"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 4.5,
+        "text": "tia sáng",
+        "a": "start"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 4,
+      "hinh": [
+       {
+        "loai": "vung",
+        "diem": [
+         [
+          7.0,
+          2.2
+         ],
+         [
+          7.0,
+          10.6
+         ],
+         [
+          14.05,
+          10.6
+         ]
+        ],
+        "dam": 0.22,
+        "vien": true
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         7.0,
+         2.2
+        ],
+        "vi": "t",
+        "ten": "A"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         7.0,
+         10.6
+        ],
+        "vi": "b",
+        "ten": "B"
+       },
+       {
+        "loai": "diem",
+        "tai": [
+         14.05,
+         10.6
+        ],
+        "vi": "r",
+        "ten": "C"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 1.2,
+        "text": "A = 40°",
+        "a": "start"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 2.7,
+        "text": "n = 1,60",
+        "a": "start"
+       },
+       {
+        "loai": "tia",
+        "qua": [
+         [
+          0.3,
+          5.2
+         ],
+         [
+          7.0,
+          5.2
+         ]
+        ],
+        "mau": "max"
+       },
+       {
+        "loai": "chu",
+        "x": 0.3,
+        "y": 4.5,
+        "text": "tia sáng",
+        "a": "start"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "sin i_{th} = 1/n ⇒ i_{th} ≈ 38,7°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.0,
+         5.2
+        ],
+        [
+         9.1,
+         5.2
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        9.1,
+        5.2
+       ],
+       "huong": 35,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.1,
+        5.2
+       ],
+       "tu": 180,
+       "den": 215,
+       "nhan": "i",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "i = 35° < i_{th}: tia ló ra"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         9.1,
+         5.2
+        ],
+        [
+         19.4,
+         11.14
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.1,
+        5.2
+       ],
+       "tu": 35,
+       "den": -29.99,
+       "nhan": "r",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "sin r = 1,60·sin 35° ⇒ r ≈ 66,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         9.1,
+         5.2
+        ],
+        [
+         19.4,
+         5.2
+        ]
+       ],
+       "dut": true,
+       "mui": false
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.1,
+        5.2
+       ],
+       "tu": 0,
+       "den": -29.99,
+       "nhan": "D",
+       "r": 2.7,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "D = r − A ≈ 31,6°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.0,
+         5.2
+        ],
+        [
+         9.52,
+         5.2
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        9.52,
+        5.2
+       ],
+       "huong": 40,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.52,
+        5.2
+       ],
+       "tu": 180,
+       "den": 220,
+       "nhan": "i",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         9.52,
+         5.2
+        ],
+        [
+         8.57,
+         10.6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "góc tới quá lớn: phản xạ toàn phần"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 3 · Trung bình · Đọc thứ tự vệt màu trên màn: đoán vị trí đáy lăng kính",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "problem_html": "<p>Trong phòng tối, một chùm sáng hẹp gồm ba ánh sáng đơn sắc đỏ, lục, tím (trộn từ ba đèn LED) đi theo phương nằm ngang, chiếu vào một mặt bên của lăng kính thuỷ tinh. Lăng kính bị một tấm bìa che khuất; chỉ biết cạnh của nó nằm ngang, đáy hoặc quay lên trên, hoặc quay xuống dưới. Cả ba màu đều ló ra và rọi lên một màn thẳng đứng. Trên màn, ba vệt sáng xếp thành một cột: trên cùng là vệt tím, ở giữa là vệt lục, dưới cùng là vệt đỏ.</p><ol type=\"a\"><li>Màu nào bị lăng kính làm lệch nhiều nhất? Đáy lăng kính quay lên trên hay xuống dưới?</li><li>Giữ nguyên lăng kính, thay chùm ba màu bằng một chùm sáng trắng hẹp đi đúng đường cũ. Trên màn, ánh sáng vàng nằm ở đâu so với chỗ ba vệt cũ?</li><li>Đặt thêm một kính lọc màu vàng chắn chùm sáng trắng ngay trước lăng kính. Trên màn còn thấy gì, ở đâu?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tán sắc:</strong> chiết suất của thuỷ tinh tăng dần theo dãy đỏ, cam, vàng, lục, lam, chàm, tím.</li><li><strong>Lăng kính</strong> bẻ mọi tia về phía đáy ; chiết suất càng lớn tia càng lệch nhiều.</li><li><strong>Kính lọc màu</strong> chỉ cho ánh sáng cùng màu đi qua ; lăng kính không tạo ra màu.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Màu lệch nhiều nhất</span></p><p>Ba màu cùng góc tới. Tím có chiết suất lớn nhất trong ba màu nên bị bẻ mạnh nhất :</p><div class=\"bt-ans\"><p><strong>Tím</strong> lệch nhiều nhất, đỏ lệch ít nhất.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vị trí đáy</span></p><p>Màu lệch nhiều nhất nằm gần đáy nhất. Vệt tím ở trên cùng, vệt đỏ (lệch ít nhất) ở dưới cùng :</p><div class=\"bt-ans\"><p>Đáy lăng kính quay <strong>lên trên</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí ánh sáng vàng</span></p><p>Trong dãy màu, vàng đứng sau đỏ và trước lục : $n_{\\text{đ}}\\lt n_{\\text{vàng}}\\lt n_{\\text{lục}}$. Vàng lệch nhiều hơn đỏ, ít hơn lục :</p><div class=\"bt-ans\"><p>Vàng nằm <strong>giữa chỗ vệt đỏ và vệt lục</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kính lọc vàng</span></p><p>Kính lọc chỉ cho ánh sáng vàng đi qua. Ánh sáng vàng vẫn khúc xạ hai lần như trước, lệch đúng góc của nó ở câu b :</p><div class=\"bt-ans\"><p>Chỉ còn <strong>một vệt vàng</strong>, giữa chỗ vệt đỏ và vệt lục cũ.</p></div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) <strong>tím</strong> lệch nhiều nhất ; đáy quay <strong>lên trên</strong></p><p>b) vàng nằm giữa chỗ vệt đỏ và vệt lục</p><p>c) chỉ một vệt vàng, đúng chỗ vàng ở câu b (giữa vệt đỏ và vệt lục cũ)</p></div><p class=\"bt-note\">Nhận dạng: từ thứ tự vệt màu suy ra đáy — màu có chiết suất lớn nhất luôn nằm phía đáy, dù đáy ở trên hay ở dưới.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ba ánh sáng đơn sắc đỏ, lục, tím … đi theo phương nằm ngang\"</td><td>ba màu, cùng đường tới</td><td>Cùng góc tới, ba màu khác nhau ở đại lượng nào của thuỷ tinh ?</td></tr><tr><td>\"đáy hoặc quay lên trên, hoặc quay xuống dưới\"</td><td>chưa biết vị trí đáy</td><td>⚠ Lăng kính bẻ mọi tia về phía cạnh hay phía đáy ?</td></tr><tr><td>\"trên cùng là vệt tím … dưới cùng là vệt đỏ\"</td><td>từ trên xuống : tím, lục, đỏ</td><td>Màu nào có chiết suất lớn nhất ? Nó bị bẻ nhiều nhất về phía nào ?</td></tr><tr><td>\"chùm sáng trắng hẹp đi đúng đường cũ\"</td><td>ánh sáng trắng</td><td>Ánh sáng trắng gồm những màu nào ? Chiết suất của vàng đứng ở đâu trong dãy màu ?</td></tr><tr><td>\"kính lọc màu vàng … ngay trước lăng kính\"</td><td>lọc vàng</td><td>Ánh sáng nào qua được kính lọc ? Qua lăng kính nó còn bị lệch không ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thứ tự các vệt màu</b> trên màn → màu <b>lệch nhiều nhất nằm phía đáy</b>",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "tom_de": {
+    "cho": [
+     "chùm đỏ + lục + tím nằm ngang, lăng kính bị che",
+     "trên màn từ trên xuống : tím, lục, đỏ"
+    ],
+    "tim": [
+     "a) màu lệch nhiều nhất ; đáy ở trên hay dưới",
+     "b) chùm trắng : vàng nằm ở đâu",
+     "c) thêm kính lọc vàng : còn thấy gì"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Màu lệch nhiều nhất",
+     "hoi": "Màu nào bị lăng kính làm lệch nhiều nhất?",
+     "lua_chon": [
+      {
+       "text": "Tím",
+       "dung": true
+      },
+      {
+       "text": "Đỏ",
+       "dung": false,
+       "vi_sao": "Đỏ có chiết suất nhỏ nhất nên lệch ít nhất."
+      },
+      {
+       "text": "Ba màu lệch như nhau vì cùng góc tới",
+       "dung": false,
+       "vi_sao": "Cùng góc tới nhưng chiết suất mỗi màu khác nhau nên lệch khác nhau."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ đỏ là màu “mạnh” nên lệch nhiều nhất ; thật ra đỏ có chiết suất nhỏ nhất nên lệch ít nhất."
+    },
+    {
+     "tieu_de": "Vị trí đáy",
+     "hoi": "Đáy lăng kính quay lên trên hay xuống dưới?",
+     "lua_chon": [
+      {
+       "text": "Quay lên trên",
+       "dung": true
+      },
+      {
+       "text": "Quay xuống dưới",
+       "dung": false,
+       "vi_sao": "Nếu đáy ở dưới thì tím (lệch nhiều nhất) phải nằm dưới cùng ; ở đây tím nằm trên cùng."
+      },
+      {
+       "text": "Không xác định được",
+       "dung": false,
+       "vi_sao": "Thứ tự màu đủ để biết : màu lệch nhiều nhất luôn nằm phía đáy."
+      }
+     ],
+     "loi_hay_gap": "Đọc theo hình quen thuộc “đỏ trên, tím dưới thì đáy dưới” rồi áp ngược ; phải hỏi màu nào lệch nhiều nhất và nó nằm phía nào.",
+     "chon_buoc_ke": [
+      {
+       "text": "Màu lệch nhiều nhất nằm phía đáy",
+       "dung": true
+      },
+      {
+       "text": "Màu lệch nhiều nhất nằm phía cạnh (đỉnh)",
+       "dung": false,
+       "vi_sao": "Lăng kính bẻ tia về phía đáy, không về phía cạnh."
+      },
+      {
+       "text": "Đỏ luôn nằm trên cùng",
+       "dung": false,
+       "vi_sao": "Thứ tự trên – dưới phụ thuộc vị trí đáy ; đỏ chỉ ở trên cùng khi đáy ở dưới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí ánh sáng vàng",
+     "hoi": "Trên màn, ánh sáng vàng nằm ở đâu?",
+     "lua_chon": [
+      {
+       "text": "Giữa chỗ vệt đỏ và vệt lục",
+       "dung": true
+      },
+      {
+       "text": "Giữa chỗ vệt lục và vệt tím",
+       "dung": false,
+       "vi_sao": "Vàng đứng trước lục trong dãy Đỏ Cam Vàng Lục Lam Chàm Tím, chiết suất nhỏ hơn lục nên lệch ít hơn lục."
+      },
+      {
+       "text": "Dưới chỗ vệt đỏ",
+       "dung": false,
+       "vi_sao": "Vàng có chiết suất lớn hơn đỏ nên lệch nhiều hơn đỏ, tức nằm gần đáy hơn vệt đỏ."
+      }
+     ],
+     "loi_hay_gap": "Đặt vàng ở giữa dải vì “vàng là màu giữa” ; phải xếp theo chiết suất : vàng đứng giữa đỏ và lục.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xếp chiết suất của vàng vào dãy đỏ – lục – tím",
+       "dung": true
+      },
+      {
+       "text": "Coi lăng kính tạo thêm màu vàng ở chính giữa dải",
+       "dung": false,
+       "vi_sao": "Lăng kính không tạo màu ; vàng có sẵn trong ánh sáng trắng và lệch theo chiết suất riêng."
+      },
+      {
+       "text": "Coi vàng nằm ngoài cùng vì là màu sáng nhất",
+       "dung": false,
+       "vi_sao": "Độ sáng không quyết định độ lệch ; chiết suất mới quyết định."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thêm kính lọc vàng",
+     "hoi": "Trên màn còn thấy gì?",
+     "lua_chon": [
+      {
+       "text": "Một vệt vàng, giữa chỗ vệt đỏ và vệt lục cũ",
+       "dung": true
+      },
+      {
+       "text": "Một vệt vàng ngang tầm chùm tới, không bị lệch",
+       "dung": false,
+       "vi_sao": "Ánh sáng vàng qua lăng kính vẫn khúc xạ hai lần và lệch về đáy như ở câu b."
+      },
+      {
+       "text": "Đủ dải màu nhưng ngả vàng",
+       "dung": false,
+       "vi_sao": "Sau kính lọc chỉ còn ánh sáng vàng ; lăng kính không có màu khác để tách."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ ánh sáng đã lọc không bị lệch nữa, hoặc lăng kính vẫn tách ra đủ màu ; lăng kính chỉ tách màu có sẵn và vẫn bẻ tia vàng như ở câu b.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét ánh sáng nào qua được kính lọc, rồi nó lệch thế nào",
+       "dung": true
+      },
+      {
+       "text": "Coi lăng kính nhuộm lại đủ các màu",
+       "dung": false,
+       "vi_sao": "Lăng kính không tạo màu ; chùm tới chỉ còn vàng thì sau lăng kính chỉ có vàng."
+      },
+      {
+       "text": "Coi kính lọc chặn hết ánh sáng",
+       "dung": false,
+       "vi_sao": "Kính lọc vàng cho phần ánh sáng vàng trong chùm trắng đi qua."
+      }
+     ]
+    }
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 10.8,
+    "de": true,
+    "hinh": [
+     {
+      "loai": "tron",
+      "tam": [
+       1.2,
+       4.6
+      ],
+      "r": 0.6,
+      "dam": 0.8,
+      "mau": "vang"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 3.5,
+      "text": "đèn 3 màu",
+      "a": "start"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        1.9,
+        4.6
+       ],
+       [
+        6.2,
+        4.6
+       ]
+      ]
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        6.2,
+        1.6
+       ],
+       [
+        11.0,
+        1.6
+       ],
+       [
+        11.0,
+        7.8
+       ],
+       [
+        6.2,
+        7.8
+       ]
+      ],
+      "dam": 0.55,
+      "vien": true
+     },
+     {
+      "loai": "chu",
+      "x": 8.6,
+      "y": 5.1,
+      "text": "?",
+      "a": "middle",
+      "het": 2
+     },
+     {
+      "loai": "chu",
+      "x": 8.6,
+      "y": 9.1,
+      "text": "tấm bìa",
+      "a": "middle"
+     },
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        14.0,
+        1.0
+       ],
+       [
+        18.6,
+        1.0
+       ],
+       [
+        18.6,
+        8.8
+       ],
+       [
+        14.0,
+        8.8
+       ]
+      ],
+      "dam": 0.04,
+      "vien": true
+     },
+     {
+      "loai": "chu",
+      "x": 16.3,
+      "y": 10.1,
+      "text": "màn",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 13.7,
+      "y": 1.6,
+      "text": "trên",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 13.7,
+      "y": 8.6,
+      "text": "dưới",
+      "a": "end"
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       15.7,
+       2.4
+      ],
+      "r": 0.42,
+      "dam": 0.9,
+      "mau": "min",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 16.5,
+      "y": 2.75,
+      "text": "tím",
+      "a": "start",
+      "mau": "min",
+      "het": 4
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       15.7,
+       4.4
+      ],
+      "r": 0.42,
+      "dam": 0.9,
+      "mau": "chu",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 16.5,
+      "y": 4.75,
+      "text": "lục",
+      "a": "start",
+      "het": 4
+     },
+     {
+      "loai": "tron",
+      "tam": [
+       15.7,
+       7.2
+      ],
+      "r": 0.42,
+      "dam": 0.9,
+      "mau": "max",
+      "het": 4
+     },
+     {
+      "loai": "chu",
+      "x": 16.5,
+      "y": 7.55,
+      "text": "đỏ",
+      "a": "start",
+      "mau": "max",
+      "het": 4
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "tím: chiết suất lớn nhất, lệch nhiều nhất"
+      }
+     ],
+     [
+      {
+       "loai": "doan",
+       "tu": [
+        6.8,
+        2.2
+       ],
+       "den": [
+        10.4,
+        2.2
+       ],
+       "kieu": "mat"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        10.4,
+        2.2
+       ],
+       "den": [
+        8.6,
+        7.3
+       ],
+       "kieu": "mat"
+      },
+      {
+       "loai": "doan",
+       "tu": [
+        8.6,
+        7.3
+       ],
+       "den": [
+        6.8,
+        2.2
+       ],
+       "kieu": "mat"
+      },
+      {
+       "loai": "chu",
+       "x": 8.6,
+       "y": 3.2,
+       "text": "đáy",
+       "a": "middle"
+      },
+      {
+       "loai": "ghi",
+       "text": "tím gần đáy nhất: đáy ở trên"
+      }
+     ],
+     [
+      {
+       "loai": "tron",
+       "tam": [
+        15.7,
+        5.8
+       ],
+       "r": 0.42,
+       "dam": 0.9,
+       "mau": "vang",
+       "het": 4
+      },
+      {
+       "loai": "chu",
+       "x": 16.5,
+       "y": 6.15,
+       "text": "vàng",
+       "a": "start",
+       "het": 4
+      },
+      {
+       "loai": "ghi",
+       "text": "vàng: chiết suất giữa đỏ và lục"
+      }
+     ],
+     [
+      {
+       "loai": "vung",
+       "diem": [
+        [
+         3.6,
+         3.3
+        ],
+        [
+         4.1,
+         3.3
+        ],
+        [
+         4.1,
+         5.9
+        ],
+        [
+         3.6,
+         5.9
+        ]
+       ],
+       "dam": 0.7,
+       "vien": true,
+       "mau": "vang"
+      },
+      {
+       "loai": "chu",
+       "x": 3.85,
+       "y": 7.0,
+       "text": "lọc vàng",
+       "a": "middle"
+      },
+      {
+       "loai": "tron",
+       "tam": [
+        15.7,
+        5.8
+       ],
+       "r": 0.42,
+       "dam": 0.9,
+       "mau": "vang"
+      },
+      {
+       "loai": "chu",
+       "x": 16.5,
+       "y": 6.15,
+       "text": "vàng",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "chỉ còn vệt vàng, đúng chỗ ở câu b"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khá · Hai màu qua lăng kính: góc lệch từng màu và khoảng cách hai vệt",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "problem_html": "<p>Một khối thuỷ tinh trang trí đặt trên bậu cửa sổ có tiết diện thẳng là tam giác $ABC$ vuông tại $B$, góc chiết quang $A=32^\\circ$, đáy $BC$ nằm ngang ở phía dưới. Chiết suất của thuỷ tinh này (giả định) với ánh sáng đỏ là $n_{\\text{đ}}=1{,}620$, với ánh sáng tím là $n_t=1{,}660$. Một chùm nắng hẹp nằm ngang chiếu vuông góc vào mặt $AB$. Coi các tia ló ra khỏi mặt $AC$ cùng xuất phát từ điểm $I$ trên $AC$. Một bức tường thẳng đứng, vuông góc với phương chùm tia tới, cách $I$ một đoạn $L=1{,}50\\ \\text{m}$ (đo theo phương tia tới). Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Tia đỏ và tia tím có cùng ló ra khỏi mặt $AC$ không? Tính góc lệch của mỗi tia và góc hợp bởi hai tia ló.</li><li>Tính khoảng cách $\\ell$ giữa vệt đỏ và vệt tím trên tường (theo cm).</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tia vuông góc $AB$:</strong> góc tới ở $AC$ bằng $A$ cho mọi màu ; màu ló ra khi $A\\lt i_{th}$ của màu đó, $\\sin i_{th}=\\dfrac1n$.</li><li><strong>Ra không khí:</strong> $\\sin r=n\\sin A$ ; góc lệch $D=r-A$, mỗi màu một giá trị.</li><li><strong>Tam giác vuông:</strong> cạnh đối $=$ cạnh kề $\\times\\tan$ góc.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Góc tới hạn của tia tím</span></p><p>Chiết suất lớn nhất thì góc tới hạn nhỏ nhất, nên tím khó ló nhất :</p>$$\\sin i_{th,t}=\\dfrac1{1{,}660}$$<div class=\"bt-ans\">$$i_{th,t}\\approx37{,}0^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Hai tia có ló ra không ?</span></p>$$i=A=32^\\circ\\lt i_{th,t}\\approx37{,}0^\\circ$$<p>Tím ló được thì đỏ (góc tới hạn lớn hơn) cũng ló :</p><div class=\"bt-ans\"><p>Cả tia đỏ và tia tím <strong>đều ló ra</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Góc lệch của tia đỏ</span></p>$$\\sin r_{\\text{đ}}=1{,}620\\cdot\\sin32^\\circ\\approx0{,}8585\\ \\Rightarrow\\ r_{\\text{đ}}\\approx59{,}15^\\circ$$$$D_{\\text{đ}}=r_{\\text{đ}}-A=59{,}15^\\circ-32^\\circ$$<div class=\"bt-ans\">$$D_{\\text{đ}}\\approx27{,}15^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Góc lệch của tia tím</span></p>$$\\sin r_t=1{,}660\\cdot\\sin32^\\circ\\approx0{,}8797\\ \\Rightarrow\\ r_t\\approx61{,}60^\\circ$$$$D_t=r_t-A=61{,}60^\\circ-32^\\circ$$<div class=\"bt-ans\">$$D_t\\approx29{,}60^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Góc hợp bởi hai tia ló</span></p><p>Hai tia cùng lệch về phía đáy so với phương tia tới :</p>$$\\Delta=D_t-D_{\\text{đ}}$$<p>Lấy hiệu từ các giá trị chưa làm tròn ($29{,}602^\\circ-27{,}145^\\circ$) :</p><div class=\"bt-ans\">$$\\Delta\\approx2{,}46^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Khoảng cách hai vệt</span></p><p>Mỗi vệt nằm dưới đường kéo dài của tia tới một đoạn $L\\tan D$ ($L$ là cạnh kề). Hai vệt cùng phía nên lấy hiệu :</p>$$\\ell=L\\,(\\tan D_t-\\tan D_{\\text{đ}})$$$$\\ell\\approx1{,}50\\cdot(0{,}5681-0{,}5128)\\approx0{,}083\\ \\text{m}$$<div class=\"bt-ans\">$$\\ell\\approx8{,}3\\ \\text{cm}$$</div></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) cả hai ló ra ; $D_{\\text{đ}}\\approx27{,}15^\\circ$, $D_t\\approx29{,}60^\\circ$ ; góc giữa hai tia $\\approx2{,}46^\\circ$</p><p>b) $\\ell\\approx8{,}3\\ \\text{cm}$ (vệt tím ở dưới, gần phía đáy hơn)</p></div><p class=\"bt-note\">Nhận dạng: hai màu cùng góc tới nhưng khác chiết suất → tính riêng góc lệch từng màu ; khoảng cách trên tường là hiệu hai đoạn $L\\tan D$, không phải $L\\tan\\Delta$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"$A=32^\\circ$ … chiếu vuông góc vào mặt $AB$\"</td><td>$A=32^\\circ$ ; tia tới $\\perp AB$</td><td>⚠ Góc tới ở $AC$ bằng bao nhiêu ? Có khác nhau giữa đỏ và tím không ?</td></tr><tr><td>\"$n_{\\text{đ}}=1{,}620$ … $n_t=1{,}660$\"</td><td>$n_{\\text{đ}}=1{,}620$ ; $n_t=1{,}660$</td><td>Màu nào có góc tới hạn nhỏ hơn, tức khó ló ra hơn ?</td></tr><tr><td>\"có cùng ló ra khỏi mặt $AC$ không\"</td><td>điều kiện ló</td><td>⚠ So góc tới với góc tới hạn của màu nào thì đủ kết luận cho cả hai ?</td></tr><tr><td>\"góc lệch của mỗi tia và góc hợp bởi hai tia ló\"</td><td>$D_{\\text{đ}}=\\,?$ ; $D_t=\\,?$ ; $\\Delta=\\,?$</td><td>Hai tia lệch về cùng một phía hay hai phía của phương tia tới ?</td></tr><tr><td>\"cách $I$ một đoạn $L=1{,}50\\ \\text{m}$ (đo theo phương tia tới)\"</td><td>$L=1{,}50\\ \\text{m}$</td><td>Trong tam giác vuông tạo bởi tia ló, phương tia tới và tường, $L$ là cạnh nào ?</td></tr><tr><td>\"khoảng cách $\\ell$ giữa vệt đỏ và vệt tím (theo cm)\"</td><td>$\\ell=\\,?$ (cm)</td><td>Hai vệt nằm cùng phía so với đường kéo dài của tia tới không ? Đổi đơn vị lúc nào ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai màu, chiết suất khác nhau</b>, hỏi <b>vệt trên tường</b> → tính <b>riêng từng màu</b> rồi mới so",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 5
+   },
+   "tom_de": {
+    "cho": [
+     "$A=32^\\circ$, tia nắng vuông góc $AB$",
+     "$n_{\\text{đ}}=1{,}620$ ; $n_t=1{,}660$",
+     "tường cách $I$ : $L=1{,}50\\ \\text{m}$ theo phương tia tới"
+    ],
+    "tim": [
+     "a) cả hai ló không ? $D_{\\text{đ}}$, $D_t$, góc giữa hai tia",
+     "b) khoảng cách $\\ell$ giữa hai vệt (cm)"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Góc tới hạn của tia tím",
+     "hoi": "Góc tới hạn của ánh sáng tím (thuỷ tinh ra không khí) bằng bao nhiêu độ?",
+     "dap_so": 37.04,
+     "sai_so": 0.15,
+     "don_vi": "°",
+     "loi_hay_gap": "Viết $\\sin i_{th}=n$ (lớn hơn 1, máy báo lỗi) thay vì $\\dfrac1n$."
+    },
+    {
+     "tieu_de": "Hai tia có ló ra không?",
+     "hoi": "Tia đỏ và tia tím có cùng ló ra khỏi mặt AC không?",
+     "lua_chon": [
+      {
+       "text": "Cả hai cùng ló ra",
+       "dung": true
+      },
+      {
+       "text": "Chỉ tia đỏ ló, tia tím phản xạ toàn phần",
+       "dung": false,
+       "vi_sao": "Góc tới ở AC nhỏ hơn cả góc tới hạn của tím vừa tính, nên tím cũng ló."
+      },
+      {
+       "text": "Cả hai phản xạ toàn phần vì thuỷ tinh có n > 1",
+       "dung": false,
+       "vi_sao": "n > 1 chỉ cho biết chiều đi ra môi trường kém chiết quang ; còn phải so góc tới với góc tới hạn."
+      }
+     ],
+     "loi_hay_gap": "So góc tới với góc tới hạn của đỏ (dễ ló nhất) rồi kết luận cho cả hai ; phải xét màu khó ló nhất là tím.",
+     "chon_buoc_ke": [
+      {
+       "text": "So góc tới $i=A$ với góc tới hạn của tím",
+       "dung": true
+      },
+      {
+       "text": "So góc tới $i=A$ với góc tới hạn của đỏ",
+       "dung": false,
+       "vi_sao": "Đỏ có góc tới hạn lớn nhất, dễ ló nhất ; đỏ ló chưa chắc tím ló."
+      },
+      {
+       "text": "So góc $90^\\circ-A$ với góc tới hạn của tím",
+       "dung": false,
+       "vi_sao": "$90^\\circ-A$ là góc giữa tia và mặt $AC$ ; góc tới đo từ pháp tuyến, bằng $A$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch của tia đỏ",
+     "hoi": "Góc lệch của tia đỏ bằng bao nhiêu độ?",
+     "dap_so": 27.15,
+     "sai_so": 0.15,
+     "don_vi": "°",
+     "loi_hay_gap": "Dừng ở góc ló $r_{\\text{đ}}$ (đo từ pháp tuyến), quên trừ $A$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin r_{\\text{đ}}=n_{\\text{đ}}\\sin A$, rồi $D_{\\text{đ}}=r_{\\text{đ}}-A$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin r_{\\text{đ}}=\\dfrac{\\sin A}{n_{\\text{đ}}}$, rồi $D_{\\text{đ}}=r_{\\text{đ}}-A$",
+       "dung": false,
+       "vi_sao": "Đó là chiều từ không khí vào thuỷ tinh ; ở AC tia đi từ thuỷ tinh ra."
+      },
+      {
+       "text": "$D_{\\text{đ}}=r_{\\text{đ}}$",
+       "dung": false,
+       "vi_sao": "Góc ló đo từ pháp tuyến của AC, góc lệch đo từ phương tia tới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc lệch của tia tím",
+     "hoi": "Góc lệch của tia tím bằng bao nhiêu độ?",
+     "dap_so": 29.6,
+     "sai_so": 0.15,
+     "don_vi": "°",
+     "loi_hay_gap": "Nhân góc lệch của đỏ với tỉ số $\\dfrac{n_t}{n_{\\text{đ}}}$ ; góc lệch không tỉ lệ với chiết suất, phải tính lại qua sin.",
+     "chon_buoc_ke": [
+      {
+       "text": "Làm như tia đỏ, thay $n_t$ vào $\\sin r_t=n_t\\sin A$",
+       "dung": true
+      },
+      {
+       "text": "$D_t=D_{\\text{đ}}\\cdot\\dfrac{n_t}{n_{\\text{đ}}}$",
+       "dung": false,
+       "vi_sao": "Góc lệch không tỉ lệ với chiết suất ; định luật khúc xạ đi qua sin của các góc."
+      },
+      {
+       "text": "$D_t=D_{\\text{đ}}$ vì cùng góc tới",
+       "dung": false,
+       "vi_sao": "Cùng góc tới nhưng chiết suất khác nhau nên góc ló khác nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Góc hợp bởi hai tia ló",
+     "hoi": "Góc hợp bởi tia đỏ và tia tím bằng bao nhiêu độ?",
+     "dap_so": 2.457,
+     "sai_so": 0.06,
+     "don_vi": "°",
+     "loi_hay_gap": "Cộng hai góc lệch ; hai tia cùng lệch về phía đáy nên góc giữa chúng là hiệu.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Delta=D_t-D_{\\text{đ}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\Delta=D_t+D_{\\text{đ}}$",
+       "dung": false,
+       "vi_sao": "Hai tia lệch cùng một phía (về đáy) so với phương tia tới nên góc giữa chúng là hiệu, không phải tổng."
+      },
+      {
+       "text": "$\\Delta=D_t$",
+       "dung": false,
+       "vi_sao": "D_t là góc giữa tia tím và phương tia tới, không phải góc giữa tia tím và tia đỏ."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách hai vệt",
+     "hoi": "Khoảng cách giữa vệt đỏ và vệt tím trên tường bằng bao nhiêu cm?",
+     "dap_so": 8.3,
+     "sai_so": 0.2,
+     "don_vi": "cm",
+     "loi_hay_gap": "Tính $L\\tan\\Delta$ như thể tia đỏ đi thẳng theo phương tia tới, hoặc quên đổi m ra cm.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\ell=L\\,(\\tan D_t-\\tan D_{\\text{đ}})$",
+       "dung": true
+      },
+      {
+       "text": "$\\ell=L\\tan\\Delta$",
+       "dung": false,
+       "vi_sao": "Đó là khoảng cách khi một tia đi dọc phương tia tới ; tia đỏ cũng lệch nên phải lấy hiệu hai đoạn."
+      },
+      {
+       "text": "$\\ell=L\\,(\\sin D_t-\\sin D_{\\text{đ}})$",
+       "dung": false,
+       "vi_sao": "L là cạnh kề (đo theo phương tia tới), không phải cạnh huyền dọc tia ló, nên dùng tan."
+      }
+     ]
+    }
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 13.6,
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        7.0,
+        1.8
+       ],
+       [
+        7.0,
+        9.4
+       ],
+       [
+        11.75,
+        9.4
+       ]
+      ],
+      "dam": 0.22,
+      "vien": true
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       7.0,
+       1.8
+      ],
+      "vi": "t",
+      "ten": "A"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       7.0,
+       9.4
+      ],
+      "vi": "b",
+      "ten": "B"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       11.75,
+       9.4
+      ],
+      "vi": "r",
+      "ten": "C"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 1.2,
+      "text": "A = 32°",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 8.6,
+      "text": "n_đ = 1,620",
+      "a": "start",
+      "mau": "max"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 10.2,
+      "text": "n_t = 1,660",
+      "a": "start",
+      "mau": "min"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        0.3,
+        5.8
+       ],
+       [
+        7.0,
+        5.8
+       ]
+      ]
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 5.1,
+      "text": "chùm nắng",
+      "a": "start"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       9.5,
+       5.8
+      ],
+      "vi": "b",
+      "ten": "I"
+     },
+     {
+      "loai": "doan",
+      "tu": [
+       18.2,
+       2.4
+      ],
+      "den": [
+       18.2,
+       13.0
+      ],
+      "kieu": "vat"
+     },
+     {
+      "loai": "chu",
+      "x": 18.2,
+      "y": 1.8,
+      "text": "tường",
+      "a": "middle"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        9.5,
+        5.8
+       ],
+       [
+        18.2,
+        5.8
+       ]
+      ],
+      "dut": true,
+      "mui": false
+     },
+     {
+      "loai": "thuoc",
+      "tu": [
+       9.5,
+       3.6
+      ],
+      "den": [
+       18.2,
+       3.6
+      ],
+      "nhan": "1,50 m",
+      "lech": 0
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 12.8,
+      "text": "hình không theo tỉ lệ",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "tím: i_{th,t} ≈ 37,0°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         7.0,
+         5.8
+        ],
+        [
+         9.5,
+         5.8
+        ]
+       ]
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        9.5,
+        5.8
+       ],
+       "huong": 32,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.5,
+        5.8
+       ],
+       "tu": 180,
+       "den": 212,
+       "nhan": "i",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "i = 32° < i_{th,t}: cả hai ló"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         9.5,
+         5.8
+        ],
+        [
+         18.2,
+         8.91
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.5,
+        5.8
+       ],
+       "tu": 0,
+       "den": -19.65,
+       "nhan": "D_đ",
+       "r": 2.4,
+       "r_nhan": 1.1
+      },
+      {
+       "loai": "ghi",
+       "text": "D_đ ≈ 27,15°"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         9.5,
+         5.8
+        ],
+        [
+         18.2,
+         10.49
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        9.5,
+        5.8
+       ],
+       "tu": 0,
+       "den": -28.35,
+       "nhan": "D_t",
+       "r": 4.6,
+       "r_nhan": 1.1
+      },
+      {
+       "loai": "ghi",
+       "text": "D_t ≈ 29,60°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Δ = D_t − D_đ ≈ 2,46°"
+      }
+     ],
+     [
+      {
+       "loai": "diem",
+       "tai": [
+        18.2,
+        8.91
+       ],
+       "vi": "r",
+       "ten": "",
+       "mau": "max"
+      },
+      {
+       "loai": "diem",
+       "tai": [
+        18.2,
+        10.49
+       ],
+       "vi": "r",
+       "ten": "",
+       "mau": "min"
+      },
+      {
+       "loai": "chu",
+       "x": 18.6,
+       "y": 9.26,
+       "text": "đỏ",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 18.6,
+       "y": 10.84,
+       "text": "tím",
+       "a": "start",
+       "mau": "min"
+      },
+      {
+       "loai": "thuoc",
+       "tu": [
+        17.6,
+        8.91
+       ],
+       "den": [
+        17.6,
+        10.49
+       ],
+       "nhan": "ℓ",
+       "lech": 0
+      },
+      {
+       "loai": "ghi",
+       "text": "ℓ ≈ 8,3 cm"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Nâng cao · Chùm nhiều màu: màu nào ló ra, chọn góc chiết quang để chỉ một màu ló",
+   "topic": "Tán sắc ánh sáng qua lăng kính",
+   "problem_html": "<p>Một đèn trang trí trộn ánh sáng của năm đèn LED đơn sắc đỏ, vàng, lục, lam, tím thành một chùm hẹp. Chùm này chiếu vuông góc vào mặt $AB$ của một lăng kính có tiết diện thẳng là tam giác $ABC$ vuông tại $B$, đặt trong không khí. Chiết suất của thuỷ tinh (giả định) với năm ánh sáng là: đỏ $1{,}48$; vàng $1{,}50$; lục $1{,}52$; lam $1{,}55$; tím $1{,}58$. Dùng máy tính cầm tay.</p><ol type=\"a\"><li>Với góc chiết quang $A=41{,}5^\\circ$, những ánh sáng nào ló ra khỏi mặt $AC$?</li><li>Người ta muốn chọn góc chiết quang $A$ sao cho chỉ ánh sáng đỏ ló ra khỏi mặt $AC$, bốn màu còn lại đều bị phản xạ toàn phần ở $AC$. Góc $A$ phải nằm trong khoảng nào?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tia vuông góc $AB$:</strong> góc tới ở $AC$ bằng $A$, như nhau với mọi màu.</li><li><strong>Một màu ló ra</strong> khi $A\\lt i_{th}$ của màu đó, tức $n\\sin A\\lt1$ ; ngược lại thì phản xạ toàn phần.</li><li><strong>Chiết suất càng lớn</strong> thì $\\sin i_{th}=\\dfrac1n$ càng nhỏ: màu đó phản xạ toàn phần sớm hơn.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiết suất lớn nhất còn ló ra</span></p>$$n\\sin41{,}5^\\circ\\lt1\\ \\Rightarrow\\ n\\lt\\dfrac1{\\sin41{,}5^\\circ}$$<div class=\"bt-ans\">$$n\\lt1{,}509$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Những màu ló ra</span></p><p>Đỏ $1{,}48$ và vàng $1{,}50$ nhỏ hơn $1{,}509$ : ló ra. Lục $1{,}52$, lam $1{,}55$, tím $1{,}58$ lớn hơn : phản xạ toàn phần.</p><div class=\"bt-ans\"><p>Ló ra : <strong>đỏ và vàng</strong>.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cận dưới của $A$</span></p><p>Bốn màu cần chặn, màu khó phản xạ toàn phần nhất là màu có chiết suất nhỏ nhất trong chúng : vàng. Vàng phản xạ toàn phần thì lục, lam, tím cũng vậy :</p>$$A\\ge i_{th,\\text{vàng}},\\quad \\sin i_{th,\\text{vàng}}=\\dfrac1{1{,}50}$$<div class=\"bt-ans\">$$A\\ge41{,}81^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Cận trên của $A$</span></p><p>Đỏ phải ló ra :</p>$$A\\lt i_{th,\\text{đ}},\\quad \\sin i_{th,\\text{đ}}=\\dfrac1{1{,}48}$$<div class=\"bt-ans\">$$A\\lt42{,}51^\\circ$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thử $A=42^\\circ$ (nằm trong khoảng) :</p>$$1{,}48\\cdot\\sin42^\\circ\\approx0{,}990\\lt1\\ \\text{(đỏ ló)}$$$$1{,}50\\cdot\\sin42^\\circ\\approx1{,}004\\gt1\\ \\text{(vàng phản xạ)}$$</div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) ló ra : <strong>đỏ và vàng</strong> ; lục, lam, tím phản xạ toàn phần</p><p>b) $41{,}81^\\circ\\le A\\lt42{,}51^\\circ$</p></div><p class=\"bt-note\">Nhận dạng: chùm nhiều màu và hỏi màu nào ló → mỗi màu một góc tới hạn ; muốn chặn một nhóm màu thì xét màu khó chặn nhất trong nhóm.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"chiếu vuông góc vào mặt $AB$\"</td><td>tia tới $\\perp AB$</td><td>⚠ Góc tới ở $AC$ của năm màu có bằng nhau không, bằng góc nào ?</td></tr><tr><td>\"đỏ $1{,}48$ ; … tím $1{,}58$\"</td><td>năm chiết suất</td><td>Chiết suất càng lớn thì góc tới hạn lớn hay nhỏ ?</td></tr><tr><td>\"$A=41{,}5^\\circ$, những ánh sáng nào ló ra\"</td><td>$A=41{,}5^\\circ$</td><td>⚠ Một màu ló ra khi góc tới thoả điều kiện gì so với góc tới hạn của chính màu đó ?</td></tr><tr><td>\"chỉ ánh sáng đỏ ló ra\"</td><td>đỏ : ló ra</td><td>Điều kiện để một màu ló ra viết thế nào theo $A$ ?</td></tr><tr><td>\"bốn màu còn lại đều bị phản xạ toàn phần\"</td><td>vàng, lục, lam, tím : phản xạ</td><td>⚠ Muốn chặn cả nhóm màu, ta kiểm tra màu nào trong nhóm ?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>chùm nhiều màu</b>, hỏi <b>màu nào ló ra</b> → so góc tới với <b>góc tới hạn của từng màu</b>",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "chùm 5 màu vuông góc $AB$",
+     "$n$ : đỏ $1{,}48$ ; vàng $1{,}50$ ; lục $1{,}52$ ; lam $1{,}55$ ; tím $1{,}58$"
+    ],
+    "tim": [
+     "a) $A=41{,}5^\\circ$ : màu nào ló ra",
+     "b) khoảng $A$ để chỉ đỏ ló ra"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chiết suất lớn nhất còn ló ra",
+     "hoi": "Với $A=41{,}5^\\circ$, một màu ló ra khỏi AC khi chiết suất của nó nhỏ hơn giá trị nào?",
+     "dap_so": 1.509,
+     "sai_so": 0.003,
+     "loi_hay_gap": "Viết điều kiện ló là $n\\lt\\sin A$ (quên nghịch đảo), hoặc đảo chiều thành $n\\gt\\dfrac1{\\sin A}$."
+    },
+    {
+     "tieu_de": "Những màu ló ra",
+     "hoi": "Với $A=41{,}5^\\circ$, những màu nào ló ra khỏi mặt AC?",
+     "lua_chon": [
+      {
+       "text": "Đỏ và vàng",
+       "dung": true
+      },
+      {
+       "text": "Chỉ đỏ",
+       "dung": false,
+       "vi_sao": "Làm tròn ngưỡng thành 1,5 quá sớm ; giữ ba chữ số thập phân thì chiết suất của vàng vẫn nhỏ hơn ngưỡng."
+      },
+      {
+       "text": "Lục, lam và tím",
+       "dung": false,
+       "vi_sao": "Ngược chiều : chiết suất lớn thì góc tới hạn nhỏ, dễ bị phản xạ toàn phần hơn."
+      }
+     ],
+     "loi_hay_gap": "Làm tròn $\\dfrac1{\\sin41{,}5^\\circ}$ thành $1{,}5$ quá sớm nên tưởng vàng ($1{,}50$) bị phản xạ toàn phần.",
+     "chon_buoc_ke": [
+      {
+       "text": "So chiết suất từng màu với giá trị vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "So góc tới $41{,}5^\\circ$ với $90^\\circ$",
+       "dung": false,
+       "vi_sao": "Góc tới nhỏ hơn 90° chưa đủ để ló ; phải nhỏ hơn góc tới hạn của từng màu."
+      },
+      {
+       "text": "Tính góc lệch D của từng màu rồi so",
+       "dung": false,
+       "vi_sao": "Chưa biết màu nào ló thì chưa tính được D ; với màu phản xạ toàn phần, n·sin A vượt 1."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cận dưới của A",
+     "hoi": "Để bốn màu kia đều phản xạ toàn phần, A phải lớn hơn hoặc bằng bao nhiêu độ?",
+     "dap_so": 41.81,
+     "sai_so": 0.1,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy góc tới hạn của tím (màu phản xạ toàn phần sớm nhất) : khi đó vàng, lục vẫn còn ló ra.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét màu vàng : chiết suất nhỏ nhất trong bốn màu cần chặn",
+       "dung": true
+      },
+      {
+       "text": "Xét màu tím : chiết suất lớn nhất",
+       "dung": false,
+       "vi_sao": "Tím phản xạ toàn phần sớm nhất ; chặn được tím chưa chắc chặn được vàng, lục."
+      },
+      {
+       "text": "Xét màu đỏ",
+       "dung": false,
+       "vi_sao": "Đỏ là màu cần cho ló ra ; điều kiện của đỏ chặn A từ phía trên, không phải từ phía dưới."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cận trên của A",
+     "hoi": "Để ánh sáng đỏ vẫn ló ra, A phải nhỏ hơn bao nhiêu độ?",
+     "dap_so": 42.51,
+     "sai_so": 0.1,
+     "don_vi": "°",
+     "loi_hay_gap": "Lấy $A\\le90^\\circ$ (chặn hình học) hoặc dùng chiết suất của vàng ; phải dùng góc tới hạn của chính màu đỏ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\sin A\\lt\\dfrac1{n_{\\text{đ}}}$",
+       "dung": true
+      },
+      {
+       "text": "$\\sin A\\lt\\dfrac1{n_{\\text{vàng}}}$",
+       "dung": false,
+       "vi_sao": "Vàng phải bị phản xạ toàn phần nên A không được nhỏ hơn góc tới hạn của vàng ; điều kiện này ngược với yêu cầu."
+      },
+      {
+       "text": "$A\\lt90^\\circ$",
+       "dung": false,
+       "vi_sao": "Đó chỉ là chặn hình học ; đỏ có thể đã phản xạ toàn phần từ trước."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra: thử một giá trị A trong khoảng"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tia_sang",
+    "canh": "tu_do",
+    "cao": 13.4,
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vung",
+      "diem": [
+       [
+        6.0,
+        2.4
+       ],
+       [
+        6.0,
+        9.4
+       ],
+       [
+        12.19,
+        9.4
+       ]
+      ],
+      "dam": 0.22,
+      "vien": true
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       6.0,
+       2.4
+      ],
+      "vi": "t",
+      "ten": "A"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       6.0,
+       9.4
+      ],
+      "vi": "b",
+      "ten": "B"
+     },
+     {
+      "loai": "diem",
+      "tai": [
+       12.19,
+       9.4
+      ],
+      "vi": "r",
+      "ten": "C"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 1.2,
+      "text": "A = 41,5°",
+      "a": "start"
+     },
+     {
+      "loai": "tia",
+      "qua": [
+       [
+        0.3,
+        5.0
+       ],
+       [
+        6.0,
+        5.0
+       ]
+      ]
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 4.3,
+      "text": "5 màu",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 14.6,
+      "y": 1.0,
+      "text": "n: đỏ 1,48",
+      "a": "start",
+      "mau": "max"
+     },
+     {
+      "loai": "chu",
+      "x": 15.6,
+      "y": 2.2,
+      "text": "vàng 1,50",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 15.6,
+      "y": 3.4,
+      "text": "lục 1,52",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 15.6,
+      "y": 4.6,
+      "text": "lam 1,55",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 15.6,
+      "y": 5.8,
+      "text": "tím 1,58",
+      "a": "start",
+      "mau": "min"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 12.9,
+      "text": "hình không theo tỉ lệ",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         6.0,
+         5.0
+        ],
+        [
+         8.3,
+         5.0
+        ]
+       ]
+      },
+      {
+       "loai": "phap_tuyen",
+       "tai": [
+        8.3,
+        5.0
+       ],
+       "huong": 41.5,
+       "dai": 2.4
+      },
+      {
+       "loai": "goc",
+       "tai": [
+        8.3,
+        5.0
+       ],
+       "tu": 180,
+       "den": 221.5,
+       "nhan": "i",
+       "r": 1.5,
+       "r_nhan": 1.0
+      },
+      {
+       "loai": "ghi",
+       "text": "ló ra khi n < 1/sin 41,5° ≈ 1,509"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.3,
+         5.0
+        ],
+        [
+         16.8,
+         7.76
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.3,
+         5.0
+        ],
+        [
+         16.8,
+         8.9
+        ]
+       ],
+       "mau": "vang"
+      },
+      {
+       "loai": "chu",
+       "x": 17.1,
+       "y": 8.26,
+       "text": "đỏ",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "chu",
+       "x": 17.1,
+       "y": 9.6,
+       "text": "vàng",
+       "a": "start"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         8.3,
+         5.0
+        ],
+        [
+         7.76,
+         9.4
+        ],
+        [
+         7.46,
+         11.0
+        ]
+       ]
+      },
+      {
+       "loai": "chu",
+       "x": 8.06,
+       "y": 11.1,
+       "text": "lục, lam, tím",
+       "a": "start"
+      },
+      {
+       "loai": "ghi",
+       "text": "ló: đỏ, vàng · phản xạ: lục, lam, tím"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A ≥ i_{th,vàng} ≈ 41,81°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A < i_{th,đỏ} ≈ 42,51°"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "A = 42°: đỏ ló, vàng phản xạ"
+      }
+     ]
+    ]
+   }
+  }
+ ]
+}
