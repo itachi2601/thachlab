@@ -44,20 +44,20 @@ export const btmPages = (n, { m, head, foot, tag, lines, wl, hinh }) => {
     {
       t: 'Dạng 4 · Khó · Đếm hạt trong một khối lượng chất',
       de: `${m('14\\ \\mathrm{g}')} sắt ${m('{}^{56}_{26}\\mathrm{Fe}')}, ${m('M\\approx56\\ \\mathrm{g/mol}')}:<br><b>a)</b> số mol<br><b>b)</b> số hạt nhân<br><b>c)</b> số nơtron<br><b>d)</b> tổng điện tích các prôtôn (C).`,
-      nd: `Cho khối lượng, hỏi số hạt → ${m('n=')} ${f(10)}, ${m('N=')} ${f(10)}, × số ${f(10)} mỗi hạt nhân`,
+      nd: `Cho khối lượng, hỏi số hạt → ${m('n=')} ${f(10)}, rồi ${f(14)}`,
       a: ['a', 'b', 'c', 'd'], gi: 7,
     },
     {
       t: 'Dạng 5 · Nâng cao · Khối lượng nguyên tử trung bình',
       de: `Bo: ${m('{}^{10}_{5}\\mathrm{B}')} (${m('10{,}013\\ \\mathrm{u}')}), ${m('{}^{11}_{5}\\mathrm{B}')} (${m('11{,}009\\ \\mathrm{u}')}), trung bình ${m('10{,}811\\ \\mathrm{u}')}:<br><b>a)</b> % mỗi đồng vị<br><b>b)</b> khối lượng một nguyên tử ${m('{}^{11}_{5}\\mathrm{B}')} ra kg<br><b>c)</b> ra ${m('\\mathrm{MeV}/c^2')}.`,
-      nd: `Cho khối lượng từng đồng vị và trung bình → ${f(20)}, ${m('x_1+x_2=')} ${f(6)}`,
+      nd: `Cho khối lượng từng đồng vị và trung bình → lập ${f(24)}`,
       a: ['a', 'b', 'c'], gi: 8, fig: 'canDongVi',
     },
   ];
   // Ô giải (phân tích đề + giải trong cùng ô): chỉ với dạng có gi > 0
   // Có hình: ô giải bên trái, hình bên phải (46 mm) — hình là gợi ý nhìn trước khi tính, không chiếm thêm chiều cao
   const gi = (k, fig) => !k ? '' : fig ? `<div class="fig-side" style="grid-template-columns:1fr 46mm;margin-bottom:.8mm"><div class="gi" style="margin:0">${wl('Phân tích và giải:', k)}</div>${hinh[fig]()}</div>` : `<div class="gi">${wl('Phân tích và giải:', k)}</div>`;
-  const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Ba bài tương tự:</b> đúng ${ds.map((i) => `D${i} ……/3`).join(' · ')}</div>`;
+  const kq = (ds) => `<div class="card soft" style="padding:1.2mm 3mm"><b>Bài tương tự ở các trang sau:</b> đúng ${ds.map((i) => `D${i} ……/2`).join(' · ')}</div>`;
   const block = (d) => `<div class="bt"><div class="hd"><span>${d.t}</span>${tu}</div><div class="de">${d.de}</div><div class="nd"><b>Mấu chốt:</b> ${d.nd}</div>${gi(d.gi, d.fig)}${ans(d.a)}</div>`;
   return `<section class="page">
 ${head('BÀI TẬP MẪU · DẠNG 1–3')}
