@@ -1,5 +1,5 @@
 // Dựng ruột tập Vật lí 12 – Bài 14 (12 trang 165×240 mm, ô ly 5 mm; đóng lò xo: lề gáy 20 mm đổi bên theo trang chẵn/lẻ). Theo nhịp buổi L12 (2 h): buổi N dạy hết bài web trên lớp 60′ (trang 1–5) + cuối giờ giao ĐỀ BTVN (ô trang 5);
-// buổi N+1: 10′ ôn (trang 3) → 20′ kiểm tra → 30′ sửa bài trên lớp (trang 8); trang 9 sửa bài kiểm tra chương, trang 10 làm lại câu sai sau 1 tuần; trang 6–7 Bài tập mẫu 5 dạng bán cấu trúc (module bai14-btm.mjs); trang 11–12 ghi chú tự do (đúng 2 trang/bài, không ô hỏi trợ giảng). Hình minh hoạ: module hinh.mjs. Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
+// buổi N+1: 10′ ôn (trang 3) → 20′ kiểm tra → 30′ sửa bài trên lớp (trang 10); trang 11 sửa bài kiểm tra chương, trang 12 làm lại câu sai sau 1 tuần + mã QR; trang 6–7 Bài tập mẫu 5 dạng bán cấu trúc (module bai14-btm.mjs); trang 8–9 Bài tương tự (2 bài/dạng, làm tại chỗ, module bai14-tuongtu.mjs; thầy chốt 10/11/2026, thay 2 trang ghi chú tự do để giữ 12 trang). Hình minh hoạ: module hinh.mjs. Chạy: node scripts/ruot-tap/bai14.mjs [file.pdf]
 // Mặc định ghi scripts/ruot-tap/out/ruot-tap-vl12-bai14.pdf. Cần book/node_modules (katex, qrcode-generator, puppeteer-core):
 // worktree không có thì dùng book/ của bản chính ~/Projects/thachlab.
 // Mã ô "Tập: trang · ô" (nhãn Web … trên giấy = tên mục trên web) trùng data-tap trong content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/theory.src.html.
@@ -8,6 +8,7 @@ import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { btmCss, btmPages } from './bai14-btm.mjs';
+import { ttCss, ttPages } from './bai14-tuongtu.mjs';
 import { hinh } from './hinh.mjs';
 import { TRANG_DAU } from './khung.mjs';
 const OFF = TRANG_DAU - 1;   // đánh số liền mạch cả quyển: BOOK_PAGE_START (mặc định 1) = số trang của trang đầu bài 14
@@ -56,7 +57,7 @@ const rkTable = (rows) => `<table class="rk"><tr><th style="width:9mm">Câu</th>
 // (web đã hiện em–đúng từng câu; thầy chốt 25/10 bỏ lưới) — chỉ ghi số câu sai ở dòng đầu, rồi 5 ô "Thầy chữa" rộng, mỗi ô một câu,
 // 4 tick lí do + ☐ làm lại; hai dòng ghi nhớ; dưới cùng dòng tra ô Tập để xem lại.
 const traNhanh = `<div class="tra"><b>Xem lại ở Tập:</b> ${ABS('kí hiệu, lực hạt nhân 1·4 · đồng vị 2·1 · mô hình 2·2 · R, u, khối lượng 2·3 · bẫy 3·1 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1')}</div>`;
-const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${10 + OFF})</span></div>${lines(k)}</div>`;
+const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${12 + OFF})</span></div>${lines(k)}</div>`;
 const fixPage = (n, { title, sub = '', lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
 ${head(title, sub)}
 <div class="card soft" style="padding:1mm 3mm"><div style="display:flex;gap:4mm;flex-wrap:wrap"><span>Đề: ……………………………</span><span>Điểm: ……/……</span>${lap ? '<span>Lần trước: ……/……</span>' : '<span>Làm trên: <span class="ck"></span>thachlab <span class="ck"></span>Azota</span>'}</div>
@@ -125,7 +126,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .trap{display:flex;gap:2mm;align-items:flex-start;margin:1mm 0}
 .nhip{background:var(--soft);border:.3mm solid var(--grid);border-radius:1.2mm;padding:.8mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:1.5mm}
 .nhip b{color:var(--navy)}
-${btmCss}
+${btmCss}${ttCss}
 body.flip .page:nth-of-type(odd){--pl:10mm;--pr:20mm}body.flip .page:nth-of-type(even){--pl:20mm;--pr:10mm}
 </style></head><body${TRANG_DAU % 2 === 0 ? ' class="flip"' : ''}>
 
@@ -256,21 +257,18 @@ ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 ${foot(5)}</section>
 
 ${btmPages(6, { m, head, foot, tag, lines, wl, hinh })}
-${fixPage(8, { title: 'SỬA BÀI TRÊN LỚP' })}
-${fixPage(9, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4] })}
+${ttPages(8, { m, head, foot, lines })}
+${fixPage(10, { title: 'SỬA BÀI TRÊN LỚP' })}
+${fixPage(11, { title: 'SỬA BÀI KIỂM TRA CHƯƠNG', lap: true, ks: [5, 5, 4, 4, 4] })}
 <!-- TRANG 10: làm lại câu sai sau 1 tuần (retrieval cách quãng) -->
 <section class="page">
 ${head('LÀM LẠI CÂU SAI · SAU 1 TUẦN')}
-<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${8 + OFF} (câu ……………) · trang ${9 + OFF} (câu ……………)</div>
-${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(6))}`).join('')}
+<div class="card soft" style="padding:1mm 3mm"><b>Câu lấy từ:</b> trang ${10 + OFF} (câu ……………) · trang ${11 + OFF} (câu ……………)</div>
+${[1, 2, 3, 4].map((i) => `<h3><i>${i}</i>Câu …… <span class="hint">(từ trang ……)</span> &nbsp;<span class="ck"></span>lần này đúng</h3>${box(lines(4))}`).join('')}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Kết quả:</b> đúng ……/…… &nbsp;<span class="ck"></span>đã hỏi thầy câu còn sai</div>
-${foot(10)}</section>
+${gioiThieu}
+${foot(12)}</section>
 
-<!-- TRANG 11–12: ghi chú tự do -->
-${[11, 12].map((n) => `<section class="page dots">
-${head('GHI CHÚ')}
-${n === 12 ? gioiThieu : ''}
-${foot(n)}</section>`).join('')}
 </body></html>`;
 
 const out = process.argv[2] ?? resolve(HERE, 'out/ruot-tap-vl12-bai14.pdf');
