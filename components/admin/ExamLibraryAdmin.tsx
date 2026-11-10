@@ -22,8 +22,12 @@ const inputCls =
 const selectCls = `${inputCls} bg-panel`;
 const pageSize = 12;
 
+/** Môn của hệ CTTC trong bảng academic_subjects; ngân hàng CNC thì nhận ra bằng cnc_key (subject_code của chúng là mặc định). */
+const CTTC_SUBJECT_CODES = ["avcn", "worldskills-im"];
+
 interface ExamListRow {
   id: number;
+  cnc_key: string | null;
   title: string;
   published: boolean;
   duration_minutes: number;
@@ -56,7 +60,10 @@ function fmtDate(iso: string): string {
 export default function ExamLibraryAdmin({
   initialExamId = null,
   initialQuestionIndex = null,
+  area = "thpt",
 }: {
+  /** "cttc": chỉ liệt kê đề của hệ CTTC (ngân hàng CNC, AVCN, WorldSkills), ẩn bộ lọc lớp/khối của THPT. */
+  area?: "thpt" | "cttc";
   /** Mở sẵn đúng đề này (link từ mục "Báo lỗi & góp ý" của một câu cụ thể). */
   initialExamId?: number | null;
   /** Tô đậm + cuộn tới đúng câu này (0-based) sau khi đề đã tải xong. */
@@ -95,7 +102,9 @@ export default function ExamLibraryAdmin({
   const [lessonFilter, setLessonFilter] = useState(sp.get("ls") ?? "");
   // Mặc định chỉ hiện đề đăng 30 ngày gần đây (945 đề / 79 trang quá dài); tắt để xem hết.
   // Đang tìm theo tên/mã hoặc đã chọn bài thì không cắt theo ngày.
-  const [recentOnly, setRecentOnly] = useState(sp.get("recent") !== "0");
+  // CTTC chỉ có vài chục đề nên mặc định hiện hết.
+  const isCttc = area === "cttc";
+  const [recentOnly, setRecentOnly] = useState(isCttc ? sp.get("recent") === "1" : sp.get("recent") !== "0");
   const [chapters, setChapters] = useState<Array<{ id: number; title: string; subject_code: string | null; classIds: number[] }>>([]);
   const [lessonsAll, setLessonsAll] = useState<Array<{ id: number; title: string; chapter_id: number }>>([]);
   useEffect(() => {
@@ -116,8 +125,13 @@ export default function ExamLibraryAdmin({
     });
   }, []);
   const chapterOptions = useMemo(
-    () => chapters.filter((ch) => !classFilter || ch.classIds.length === 0 || ch.classIds.includes(Number(classFilter))),
-    [chapters, classFilter],
+    () =>
+      chapters.filter((ch) =>
+        isCttc
+          ? CTTC_SUBJECT_CODES.includes(ch.subject_code ?? "")
+          : !classFilter || ch.classIds.length === 0 || ch.classIds.includes(Number(classFilter)),
+      ),
+    [chapters, classFilter, isCttc],
   );
   const lessonOptions = useMemo(
     () => lessonsAll.filter((l) => chapterFilter && l.chapter_id === Number(chapterFilter)),
@@ -131,11 +145,11 @@ export default function ExamLibraryAdmin({
     set("cls", classFilter);
     set("ch", chapterFilter);
     set("ls", lessonFilter);
-    if (recentOnly) u.delete("recent");
-    else u.set("recent", "0");
+    if (recentOnly !== isCttc) u.delete("recent");
+    else u.set("recent", isCttc ? "1" : "0");
     const qs = u.toString();
     window.history.replaceState(null, "", qs ? `${pathname}?${qs}` : pathname);
-  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, pathname]);
+  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, pathname, isCttc]);
   // Danh sách đề thu lại khi đang sửa một đề (đỡ chiếm màn hình); mở lại bằng "Chọn đề khác".
   const [listOpen, setListOpen] = useState(true);
   const [page, setPage] = useState(0);
@@ -154,9 +168,10 @@ export default function ExamLibraryAdmin({
           .from("exams")
           .select(
             // Lọc theo lớp: nối thêm một bản exam_classes!inner để chỉ giữ đề có gán lớp đó, mà cột lớp vẫn liệt kê đủ.
-            `id, title, published, duration_minutes, question_count, created_at, exam_classes(class_id)${classFilter ? ", filter_cls:exam_classes!inner(class_id)" : ""}`,
+            `id, title, published, duration_minutes, question_count, created_at, cnc_key, exam_classes(class_id)${classFilter ? ", filter_cls:exam_classes!inner(class_id)" : ""}`,
             { count: "exact" },
           );
+        if (isCttc) q = q.or(`cnc_key.not.is.null,subject_code.in.(${CTTC_SUBJECT_CODES.join(",")})`);
         const term = search.trim();
         // Lọc theo Chương/Bài: đề gắn vào bài qua lesson_items.exam_ids.
         if (lessonFilter || chapterFilter) {
@@ -179,8 +194,9 @@ export default function ExamLibraryAdmin({
           .range(page * pageSize, (page + 1) * pageSize - 1);
         if (error) throw error;
         if (cancelled) return;
-        const rows = ((data ?? []) as Array<{ id: number; title: string; published: boolean; duration_minutes: number; question_count: number; created_at: string; exam_classes: { class_id: number }[] | null }>).map((r) => ({
+        const rows = ((data ?? []) as Array<{ id: number; title: string; published: boolean; duration_minutes: number; question_count: number; created_at: string; cnc_key: string | null; exam_classes: { class_id: number }[] | null }>).map((r) => ({
           id: r.id,
+          cnc_key: r.cnc_key ?? null,
           title: r.title,
           published: r.published,
           duration_minutes: r.duration_minutes,
@@ -199,7 +215,7 @@ export default function ExamLibraryAdmin({
       cancelled = true;
       clearTimeout(timer);
     };
-  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, lessonsAll, page, listRetry, requestKey]);
+  }, [search, status, classFilter, chapterFilter, lessonFilter, recentOnly, lessonsAll, page, listRetry, requestKey, isCttc]);
 
   const listError = failure?.key === requestKey ? failure.message : null;
   const listBusy = result?.key !== requestKey && !listError;
@@ -401,6 +417,7 @@ export default function ExamLibraryAdmin({
         <p className="admin-lead" style={{ marginTop: 0 }}>
           Tìm một đề đã đăng, sửa trực tiếp nội dung, đáp án, lời giải hoặc nhãn Chủ đề/Dạng của từng câu, rồi bấm Lưu.
           Đề vẫn giữ nguyên mã số nên mọi bài học đã gắn đề này không cần đổi gì.
+          {isCttc && " Ở đây chỉ liệt kê đề của hệ CTTC: ngân hàng trắc nghiệm CNC, Anh văn chuyên ngành, WorldSkills."}
         </p>
       </header>
 
@@ -441,7 +458,7 @@ export default function ExamLibraryAdmin({
             <option value="published">Đã xuất bản</option>
             <option value="draft">Bản nháp</option>
           </select>
-          <select
+          {!isCttc && <select
             value={classFilter}
             onChange={(e) => {
               setClassFilter(e.target.value);
@@ -458,7 +475,7 @@ export default function ExamLibraryAdmin({
                 {c.name}
               </option>
             ))}
-          </select>
+          </select>}
           <select
             value={chapterFilter}
             onChange={(e) => {
@@ -536,6 +553,7 @@ export default function ExamLibraryAdmin({
                 <span className="block truncate text-ink">{r.title}</span>
                 <span className="block text-xs text-muted">
                   #{r.id} · {r.question_count} câu · {r.duration_minutes} phút
+                  {r.cnc_key && ` · ngân hàng CNC (${r.cnc_key})`}
                   {r.classIds.length > 0 && ` · ${classNames(r.classIds)}`} · {fmtDate(r.created_at)}
                 </span>
               </span>
@@ -616,7 +634,7 @@ export default function ExamLibraryAdmin({
                     <span className="ml-2 text-xs font-normal text-muted">
                       {[
                         passScoreInput.trim() ? `đạt ≥ ${passScoreInput}` : "chưa đặt điểm đạt",
-                        grade ? `khối ${grade}` : "chưa chọn khối",
+                        ...(isCttc ? [] : [grade ? `khối ${grade}` : "chưa chọn khối"]),
                         classIdsInput.length ? classNames(classIdsInput) : "toàn trường",
                       ].join(" · ")}
                     </span>
@@ -637,7 +655,7 @@ export default function ExamLibraryAdmin({
                     className={`${inputCls} mt-1`}
                   />
                 </label>
-                <label className="text-xs font-semibold text-muted">
+                {!isCttc && <label className="text-xs font-semibold text-muted">
                   Khối lớp (để tra yêu cầu cần đạt khi gắn nhãn Chủ đề)
                   <select value={grade ?? ""} onChange={(e) => setGradeOverride(e.target.value || null)} className={`${selectCls} mt-1`}>
                     <option value="">— chọn khối —</option>
@@ -647,7 +665,7 @@ export default function ExamLibraryAdmin({
                       </option>
                     ))}
                   </select>
-                </label>
+                </label>}
               </div>
 
               <ClassPicker selected={classIdsInput} onChange={setClassIdsInput} />

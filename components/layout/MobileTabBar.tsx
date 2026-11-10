@@ -6,7 +6,7 @@
  * Thanh đáy kiểu app cho điện thoại/tablet, mỗi vai một bộ nút (thầy chốt 7/10/2026):
  *   khách        Trang chủ · Học thử · Luyện tập · Đăng nhập
  *   HS THPT      Hôm nay · Bài học · Luyện tập · Thêm                   (chấm đỏ "Hôm nay", số chưa đọc ở "Thêm"; Xếp hạng nằm trong Thêm từ 27/10/2026 — N2)
- *   SV CTTC      Khoá học · Bài học · Thông báo · Thêm
+ *   SV CTTC      Khoá học · Bài học · Hộp thư · Thêm                    (10/11/2026: Hộp thư gộp thông báo/tin nhắn/tin tức đã lọc theo CTTC; Thêm là trang như THPT — N2, C2)
  *   phụ huynh    Kết quả của con · Thông báo · Thêm                     (nút cao 64px, chữ 14px — P-quy tắc tuổi 45–60)
  *   trợ giảng    Việc của tôi · Phụ đạo · Ghi buổi · Thông báo · Thêm
  *   GV/admin     Lớp của tôi · Thông báo · [Quản trị] · Thêm
@@ -170,6 +170,12 @@ function useUnreadCount(enabled: boolean) {
     if (!enabled) return;
     const refresh = () => {
       if (document.visibilityState === "hidden") return;
+      // Admin đang "Xem như học sinh/SV" (AuthProvider lưu cờ ở sessionStorage): số chưa đọc là của tài khoản quản trị.
+      try {
+        if (window.sessionStorage.getItem("thachlab_preview_as_student")) return setCount(0);
+      } catch {
+        /* sessionStorage bị chặn — đếm bình thường */
+      }
       import("@/services/notifications").then(({ fetchUnreadCount }) => fetchUnreadCount().then(setCount).catch(() => undefined));
     };
     refresh();
@@ -320,13 +326,21 @@ export default function MobileTabBar() {
       },
     ];
   } else if (kind === "cttc") {
+    // Cùng khuôn 4 mục với HS THPT (N2, C2): Hộp thư gộp thông báo + tin nhắn + tin tức (đã lọc theo CTTC),
+    // "Thêm" là trang /tai-khoan/them (hồ sơ, quét mã, vào hoạt động lớp, đổi mật khẩu, đăng xuất) thay cho menu nổi.
+    const onInbox = onNotice || match("/hop-thu") || match("/tin-nhan") || match("/tin-tuc");
     items = [
       { key: "course", label: "Khoá học", href: "/tai-khoan", icon: "today", active: pathname === "/tai-khoan" },
       { key: "class", label: "Bài học", href: "/lop-hoc/cttc", icon: "class", active: match("/lop-hoc") },
-      { key: "notice", label: "Thông báo", href: "/thong-bao", icon: "bell", active: onNotice, badge: countBadge },
+      { key: "inbox", label: "Hộp thư", href: "/hop-thu", icon: "bell", active: onInbox, badge: countBadge },
+      {
+        key: "more",
+        label: "Thêm",
+        href: "/tai-khoan/them",
+        icon: "more",
+        active: match("/tai-khoan/them") || match("/tai-khoan/doi-mat-khau") || match("/quet-ma") || match("/choi") || match("/bao-loi-cua-toi"),
+      },
     ];
-    // Quét mã: đề kiểm tra chương của CTTC (AVCN) có mã QR + số đề, chiếu ở trang bài (22/10/2026).
-    more = [{ href: "/quet-ma", label: "Quét mã QR" }, { href: "/choi", label: "Vào hoạt động lớp" }, { href: "/tin-nhan", label: "Tin nhắn" }, { href: "/tin-tuc", label: "Tin tức" }, LOGOUT_LINKS.password];
   } else if (kind === "parent") {
     items = [
       { key: "child", label: "Kết quả của con", href: "/phu-huynh", icon: "family", active: match("/phu-huynh") },
@@ -363,8 +377,7 @@ export default function MobileTabBar() {
   const moreBadge = kind === "thpt" || kind === "ta" ? dotIfUnread : undefined;
   const onMore =
     moreOpen ||
-    (kind === "thpt" && (match("/quet-ma") || match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc"))) ||
-    (kind === "cttc" && match("/quet-ma"));
+    (kind === "thpt" && (match("/quet-ma") || match("/lop-hoc/ket-qua") || match("/thong-bao") || match("/tin-nhan") || match("/tin-tuc")));
   const columns = items.length + (hasMore ? 1 : 0);
 
   return (

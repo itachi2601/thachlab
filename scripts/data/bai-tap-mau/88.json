@@ -1,0 +1,1326 @@
+{
+ "lesson_id": 88,
+ "lesson_title": "Bài 10. Kính lúp. Bài tập thấu kính",
+ "generated_at": "2026-11-10",
+ "review": {
+  "checked": true,
+  "notes": "chờ kiểm chéo (kiem-code) + soát ảnh /dev/btm Kiểm chéo kiem-code độc lập 10/11/2026 đạt; thầy duyệt đăng."
+ },
+ "dang_bai": [
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 1 · Dễ · Kính lúp: đọc số bội giác, tìm tiêu cự, tính chất ảnh và so sánh hai kính",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Vành một kính lúp ghi $2\\times$. Lan đặt một bông hoa nhỏ cách kính $7{,}5\\ \\text{cm}$ rồi nhìn qua kính.</p><ol type=\"a\"><li>Tính tiêu cự của kính.</li><li>Ảnh của bông hoa có tính chất nào?</li><li>Một kính lúp thứ hai ghi $5\\times$. Tiêu cự của kính thứ hai ngắn hơn kính này bao nhiêu xentimét?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Kính lúp:</strong> thấu kính hội tụ tiêu cự ngắn ; vật trong tiêu cự ($d\\lt f$) cho ảnh ảo, cùng chiều, lớn hơn.</li><li><strong>Số bội giác:</strong> $G=\\dfrac{25}{f}$ với $f$ tính bằng cm.</li><li><strong>Công thức thấu kính:</strong> $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$ ; $d'\\lt0$ là ảnh ảo.</li><li><strong>Điều kiện:</strong> so $d$ với $f$ trước khi kết luận ảnh thật hay ảo.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tiêu cự</span></p><p>Số ghi trên vành là $G$ :</p>$$G=\\dfrac{25}{f}\\ \\Rightarrow\\ f=\\dfrac{25}{G}=\\dfrac{25}{2}$$<div class=\"bt-ans\">$$f=12{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tính chất ảnh</span></p><p>So $d$ với $f$ :</p>$$d=7{,}5\\ \\text{cm}\\ \\lt\\ f=12{,}5\\ \\text{cm}$$<div class=\"bt-ans\"><p>Ảnh ảo, cùng chiều, lớn hơn bông hoa (nhìn qua kính, không hứng được trên màn).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Kính thứ hai</span></p><p>Kính ghi $5\\times$ có tiêu cự :</p>$$f_2=\\dfrac{25}{G_2}=\\dfrac{25}{5}=5\\ \\text{cm}$$$$f-f_2=12{,}5-5$$<div class=\"bt-ans\">$$f-f_2=7{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Kiểm tra</span></p><p>Thế lại : $\\dfrac{1}{d'}=\\dfrac{2}{25}-\\dfrac{2}{15}=-\\dfrac{4}{75}$, nên $d'=-18{,}75\\ \\text{cm}$ : $d'\\lt0$ khớp ảnh ảo.</p><p>$k=\\dfrac{18{,}75}{7{,}5}=2{,}5$, khác $G=2$ vì $G$ ứng với ảnh ở rất xa.</p><p>Kính thứ hai ghi số lớn hơn nên $f$ ngắn hơn ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f=12{,}5\\ \\text{cm}$.</p><p>b) Ảnh ảo, cùng chiều, lớn hơn bông hoa.</p><p>c) Ngắn hơn $7{,}5\\ \\text{cm}$ (kính $5\\times$ có $f=5\\ \\text{cm}$).</p></div><p class=\"bt-note\">Nhận dạng : thấy <b>kính lúp ghi n×</b> → $f=25/G$, rồi so $d$ với $f$ để biết ảnh ảo hay thật.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Vành một kính lúp ghi $2\\times$\"</td><td>$G=2$</td><td>Số ghi trên vành là đại lượng nào, liên hệ với $f$ ra sao?</td></tr><tr><td>\"đặt một bông hoa nhỏ cách kính $7{,}5\\ \\text{cm}$\"</td><td>$d=7{,}5\\ \\text{cm}$</td><td>⚠ Muốn biết ảnh thật hay ảo, $d$ được so với đại lượng nào của kính?</td></tr><tr><td>\"Ảnh của bông hoa có tính chất nào?\"</td><td>thật hay ảo ; chiều ; lớn hay nhỏ</td><td>Mỗi vùng của $d$ so với $f$ cho ảnh gì?</td></tr><tr><td>\"Một kính lúp thứ hai ghi $5\\times$\"</td><td>$G_2=5$</td><td>Từ số ghi trên vành tìm được đại lượng nào của kính thứ hai?</td></tr><tr><td>\"ngắn hơn kính này bao nhiêu xentimét\"</td><td>$f-f_2=\\ ?$</td><td>Hai tiêu cự được so sánh bằng phép tính nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>kính lúp ghi n×</b> → nghĩ tới <b>f = 25/G</b>, rồi so <b>d với f</b> để biết ảnh ảo hay thật",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "tom_de": {
+    "cho": [
+     "kính lúp ghi $2\\times$",
+     "hoa cách kính $d=7{,}5\\ \\text{cm}$",
+     "kính thứ hai ghi $5\\times$"
+    ],
+    "tim": [
+     "a) $f$",
+     "b) tính chất ảnh",
+     "c) $f_2$ ngắn hơn $f$ bao nhiêu cm"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tiêu cự",
+     "hoi": "Tiêu cự của kính bằng bao nhiêu cm?",
+     "dap_so": 12.5,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $0{,}08$ là chia ngược $f=\\dfrac{G}{25}$ ; ra $50$ là nhân $25\\cdot2$ ; ra $23$ là lấy $25-2$. Nhớ $G=\\dfrac{25}{f}$."
+    },
+    {
+     "tieu_de": "Tính chất ảnh",
+     "hoi": "So $d$ với $f$: ảnh của bông hoa là ảnh nào?",
+     "lua_chon": [
+      {
+       "text": "Ảnh ảo, cùng chiều, lớn hơn vật",
+       "dung": true
+      },
+      {
+       "text": "Ảnh thật, ngược chiều, lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh thật chỉ có khi $d\\gt f$ ; ở đây hoa nằm gần kính hơn tiêu điểm."
+      },
+      {
+       "text": "Ảnh thật, ngược chiều, nhỏ hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh nhỏ hơn vật cần $d\\gt2f$ ; ở đây vật gần kính hơn tiêu điểm."
+      }
+     ],
+     "loi_hay_gap": "Áp “kính lúp thì ảnh ảo” mà không so $d$ với $f$ ; hoặc nhầm sang vùng cho ảnh thật, lớn hơn vật.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $d$ với $f$ để biết vật nằm vùng nào",
+       "dung": true
+      },
+      {
+       "text": "Dùng $k=G$ để biết ảnh ảo hay thật",
+       "dung": false,
+       "vi_sao": "$k$ và $G$ cho độ lớn của ảnh, không cho biết ảnh thật hay ảo ; phải so $d$ với $f$."
+      },
+      {
+       "text": "Xem ảnh có to hơn vật không",
+       "dung": false,
+       "vi_sao": "Ảnh to hơn vật có ở cả ảnh thật ($f\\lt d\\lt2f$) lẫn ảnh ảo ; phải so $d$ với $f$ và $2f$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kính thứ hai",
+     "hoi": "Tiêu cự kính ghi $5\\times$ ngắn hơn kính này bao nhiêu cm?",
+     "dap_so": 7.5,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $5$ là dừng ở $f_2$, chưa lấy hiệu ; ra $2{,}5$ là chia $12{,}5:5$ (tỉ số, không phải hiệu) ; ra $17{,}5$ là cộng thay vì trừ.",
+     "chon_buoc_ke": [
+      {
+       "text": "Tính $f_2=\\dfrac{25}{G_2}$ rồi lấy $f-f_2$",
+       "dung": true
+      },
+      {
+       "text": "Số bội giác tăng $3$ nên tiêu cự giảm $3\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "$G$ tỉ lệ nghịch với $f$, không tăng giảm đều ; phải tính $f_2$ từ $G_2=5$."
+      },
+      {
+       "text": "Chia $f:f_2$ để ra độ chênh",
+       "dung": false,
+       "vi_sao": "Phép chia cho tỉ số hai tiêu cự, không phải hiệu của chúng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -22,
+      "x_max": 16,
+      "y_tren": 4.0,
+      "y_duoi": -3.13,
+      "phong_doc": 2,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "ten": "2×"
+       },
+       {
+        "loai": "vat",
+        "x": -7.5,
+        "h": 1,
+        "ten": [
+         "A",
+         "B"
+        ]
+       },
+       {
+        "loai": "thuoc",
+        "tu": -7.5,
+        "den": 0,
+        "o": -1.8,
+        "nhan": "7,5 cm",
+        "ben": "duoi"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tk",
+       "x": 0,
+       "kieu": "hoi_tu",
+       "f": 12.5,
+       "vi_tieu": [
+        "l",
+        "b"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "f = 25 : G = 25 : 2 = 12,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -7.5,
+         1
+        ],
+        [
+         0,
+         1
+        ],
+        [
+         16,
+         -0.28
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         1
+        ],
+        [
+         -18.75,
+         2.5
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -7.5,
+         1
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "keo": [
+        [
+         -7.5,
+         1
+        ],
+        [
+         -18.75,
+         2.5
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "vat",
+       "x": -18.75,
+       "h": 2.5,
+       "ao": true,
+       "ten": [
+        "",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d = 7,5 cm < f = 12,5 cm: ảnh ảo, cùng chiều, lớn hơn"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "kính 5×: f₂ = 25 : 5 = 5 cm ⇒ ngắn hơn 12,5 − 5 = 7,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "d′ = −18,75 cm · k = 2,5 (khác G = 2)"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 2 · Trung bình · Kính lúp: biết chỗ ảnh ảo hiện ra, tìm chỗ đặt vật và độ lớn ảnh",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Kính lúp ghi $12{,}5\\times$ được dùng để soi một con kiến cao $1{,}5\\ \\text{mm}$. Để mắt thấy ảnh ảo của con kiến hiện ra cách kính $6\\ \\text{cm}$ (cùng phía con kiến), hãy tính:</p><ol type=\"a\"><li>tiêu cự của kính;</li><li>khoảng cách từ con kiến đến kính;</li><li>ảnh cao gấp mấy lần con kiến và cao bao nhiêu milimét.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Kính lúp:</strong> $G=\\dfrac{25}{f}$, $f$ tính bằng cm.</li><li><strong>Công thức thấu kính:</strong> $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$ ; <strong>số phóng đại:</strong> $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$.</li><li><strong>Điều kiện:</strong> ảnh ảo nằm cùng phía vật nên $d'\\lt0$ : thế $d'=-6\\ \\text{cm}$, không phải $+6$.</li><li>$k$ khác $G$ : $G$ ứng với ảnh ở rất xa.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tiêu cự</span></p>$$G=\\dfrac{25}{f}\\ \\Rightarrow\\ f=\\dfrac{25}{12{,}5}$$<div class=\"bt-ans\">$$f=2\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Vị trí đặt vật</span></p><p>Ảnh ảo cùng phía vật nên $d'=-6\\ \\text{cm}$ :</p>$$\\dfrac{1}{d}=\\dfrac{1}{f}-\\dfrac{1}{d'}=\\dfrac{1}{2}+\\dfrac{1}{6}=\\dfrac{2}{3}$$<div class=\"bt-ans\">$$d=1{,}5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Số phóng đại</span></p>$$k=\\dfrac{|d'|}{d}=\\dfrac{6}{1{,}5}$$<div class=\"bt-ans\">$$k=4\\ \\text{lần}$$</div><p>Khác $G=12{,}5$ : $G$ ứng với ảnh ở rất xa, còn ảnh ở $6\\ \\text{cm}$ thì $k$ tính từ $d$ và $d'$.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều cao ảnh</span></p>$$h'=k\\,h=4\\cdot1{,}5$$<div class=\"bt-ans\">$$h'=6\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Thế lại : $\\dfrac{1}{1{,}5}-\\dfrac16=\\dfrac12$ ✓.</p><p>$d=1{,}5\\ \\text{cm}\\lt f=2\\ \\text{cm}$ nên ảnh ảo, đúng như đề.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f=2\\ \\text{cm}$.</p><p>b) Con kiến cách kính $1{,}5\\ \\text{cm}$.</p><p>c) Ảnh cao gấp $4$ lần, cao $6\\ \\text{mm}$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <b>ảnh ảo hiện cách kính … cm</b> → thế <b>d′ âm</b> vào công thức thấu kính để tìm $d$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Kính lúp ghi $12{,}5\\times$\"</td><td>$G=12{,}5$</td><td>Từ $G$ tìm được đại lượng nào của kính?</td></tr><tr><td>\"con kiến cao $1{,}5\\ \\text{mm}$\"</td><td>$h=1{,}5\\ \\text{mm}$</td><td>Chiều cao vật dùng ở bước nào?</td></tr><tr><td>\"ảnh ảo … cách kính $6\\ \\text{cm}$ (cùng phía con kiến)\"</td><td>$|d'|=6\\ \\text{cm}$</td><td>⚠ Ảnh ảo thì $d'$ mang dấu gì khi thế vào công thức thấu kính?</td></tr><tr><td>\"khoảng cách từ con kiến đến kính\"</td><td>$d=\\ ?$</td><td>Công thức thấu kính nối $f$, $d$, $d'$ thế nào?</td></tr><tr><td>\"ảnh cao gấp mấy lần … cao bao nhiêu milimét\"</td><td>$k=\\ ?$ ; $h'=\\ ?$</td><td>Số phóng đại tính từ hai đại lượng nào? $h'$ liên hệ $h$ ra sao?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ảnh ảo hiện cách kính … cm</b> → nghĩ tới <b>d′ âm</b>, thế vào công thức thấu kính để tìm <b>d</b>",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "tom_de": {
+    "cho": [
+     "kính lúp $12{,}5\\times$",
+     "kiến cao $1{,}5\\ \\text{mm}$",
+     "ảnh ảo cách kính $6\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $f$",
+     "b) khoảng cách kiến–kính",
+     "c) ảnh gấp mấy lần ; cao bao nhiêu mm"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tiêu cự",
+     "hoi": "Tiêu cự của kính bằng bao nhiêu cm?",
+     "dap_so": 2,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $0{,}5$ là chia ngược $f=\\dfrac{G}{25}$ ; ra $312{,}5$ là nhân $25\\cdot12{,}5$ ; ra $12{,}5$ là lấy luôn $G$."
+    },
+    {
+     "tieu_de": "Vị trí đặt vật",
+     "hoi": "Con kiến cách kính bao nhiêu cm?",
+     "dap_so": 1.5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Thế $d'=+6\\ \\text{cm}$ ra $d=3\\ \\text{cm}$ : sai dấu vì ảnh ảo có $d'\\lt0$. Lấy $d=6\\ \\text{cm}$ là nhầm vị trí vật với vị trí ảnh.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ảnh ảo nên thế $d'=-6\\ \\text{cm}$ vào $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$",
+       "dung": true
+      },
+      {
+       "text": "Thế $d'=+6\\ \\text{cm}$ vì ảnh cách kính $6\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "Ảnh ảo nằm cùng phía vật nên $d'\\lt0$ ; dấu dương chỉ dành cho ảnh thật."
+      },
+      {
+       "text": "Lấy luôn $d=6\\ \\text{cm}$ vì đề cho khoảng $6\\ \\text{cm}$",
+       "dung": false,
+       "vi_sao": "$6\\ \\text{cm}$ là khoảng từ ảnh tới kính, không phải từ vật tới kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Số phóng đại",
+     "hoi": "Ảnh cao gấp mấy lần con kiến?",
+     "dap_so": 4,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Ra $0{,}25$ là đảo thành $\\dfrac{d}{|d'|}$ ; ra $12{,}5$ là lấy luôn $G$ ghi trên kính, nhưng $G$ ứng với ảnh ở rất xa chứ không phải ảnh cách kính $6\\ \\text{cm}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$k=\\dfrac{|d'|}{d}$",
+       "dung": true
+      },
+      {
+       "text": "$k=G=12{,}5$",
+       "dung": false,
+       "vi_sao": "$G$ chỉ ứng với ảnh ở rất xa ; ở đây ảnh cách kính $6\\ \\text{cm}$ nên phải tính $\\dfrac{|d'|}{d}$."
+      },
+      {
+       "text": "$k=\\dfrac{d}{|d'|}$",
+       "dung": false,
+       "vi_sao": "Ảnh ảo qua kính lúp lớn hơn vật nên $k\\gt1$ ; công thức bị đảo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều cao ảnh",
+     "hoi": "Ảnh cao bao nhiêu mm?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "mm",
+     "loi_hay_gap": "Ra $18{,}75$ là nhân với $G=12{,}5$ ; ra $0{,}375$ là chia cho $k$ thay vì nhân.",
+     "chon_buoc_ke": [
+      {
+       "text": "$h'=k\\,h$",
+       "dung": true
+      },
+      {
+       "text": "$h'=\\dfrac{h}{k}$",
+       "dung": false,
+       "vi_sao": "Ảnh lớn hơn vật nên $h'\\gt h$ : phải nhân với $k$."
+      },
+      {
+       "text": "$h'=|d'|\\cdot h$",
+       "dung": false,
+       "vi_sao": "Số phóng đại là tỉ số $\\dfrac{|d'|}{d}$, không phải $|d'|$ ; công thức này không có nghĩa vật lí."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -11,
+      "x_max": 5,
+      "y_tren": 0.95,
+      "y_duoi": -0.98,
+      "phong_doc": 4,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "ten": "12,5×"
+       },
+       {
+        "loai": "diem",
+        "x": -6,
+        "ten": "A′",
+        "vi": "b"
+       },
+       {
+        "loai": "thuoc",
+        "tu": -6,
+        "den": 0,
+        "o": -0.7,
+        "nhan": "6 cm",
+        "ben": "duoi"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tk",
+       "x": 0,
+       "kieu": "hoi_tu",
+       "f": 2,
+       "vi_tieu": [
+        "l",
+        "b"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "f = 25 : 12,5 = 2 cm"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -1.5,
+       "h": 0.15,
+       "ten": [
+        "A",
+        "B"
+       ]
+      },
+      {
+       "loai": "thuoc",
+       "tu": -1.5,
+       "den": 0,
+       "o": -0.38,
+       "nhan": "1,5 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = −6 cm ⇒ 1/d = 1/2 + 1/6 ⇒ d = 1,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -1.5,
+         0.15
+        ],
+        [
+         0,
+         0.15
+        ],
+        [
+         5,
+         -0.225
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         0.15
+        ],
+        [
+         -6.0,
+         0.6
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -1.5,
+         0.15
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "keo": [
+        [
+         -1.5,
+         0.15
+        ],
+        [
+         -6.0,
+         0.6
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "vat",
+       "x": -6,
+       "h": 0.6,
+       "ao": true,
+       "ten": [
+        "",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "k = |d′| : d = 6 : 1,5 = 4 lần"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": 0,
+       "den": 0.6,
+       "o": -7.6,
+       "doc": true,
+       "nhan": "6 mm",
+       "ben": "trai"
+      },
+      {
+       "loai": "ghi",
+       "text": "h′ = k·h = 4·1,5 = 6 mm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1/2 = 1/1,5 − 1/6 ✓ · k = 4 khác G = 12,5"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "ly_thuyet",
+   "label": "Dạng 3 · Trung bình · Nâng kính lúp lên: ảnh đổi thế nào và nâng thêm tối đa bao nhiêu",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Kính lúp ghi $5\\times$ đặt trên một đầu đinh ghim cao $2\\ \\text{mm}$, kính cách đầu đinh $3\\ \\text{cm}$. Giữ đinh đứng yên, Nam nâng kính lên thêm $1{,}5\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính tiêu cự của kính.</li><li>Trước khi nâng, ảnh của đầu đinh cao bao nhiêu milimét?</li><li>Sau khi nâng, ảnh cách kính bao nhiêu cm và cao bao nhiêu milimét?</li><li>Từ vị trí sau khi nâng, nâng kính thêm quá bao nhiêu cm nữa thì không còn thấy ảnh ảo, cùng chiều?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Kính lúp:</strong> $G=\\dfrac{25}{f}$ ; vật trong tiêu cự ($d\\lt f$) cho ảnh ảo, cùng chiều, lớn hơn.</li><li><strong>Công thức thấu kính:</strong> $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$ ; <strong>số phóng đại:</strong> $k=\\dfrac{|d'|}{d}$.</li><li><strong>Điều kiện:</strong> mỗi vị trí của kính là một giá trị $d$ khác, tính lại $d'$ và $k$ từ đầu.</li><li>Vượt $d=f$ thì ảnh ảo biến mất (ảnh ở rất xa, rồi lộn ngược).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tiêu cự</span></p>$$f=\\dfrac{25}{G}=\\dfrac{25}{5}$$<div class=\"bt-ans\">$$f=5\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ảnh trước khi nâng</span></p><p>$d_1=3\\ \\text{cm}\\lt f$ nên ảnh ảo, $d_1'\\lt0$ :</p>$$\\dfrac{1}{d_1'}=\\dfrac{1}{f}-\\dfrac{1}{d_1}=\\dfrac{1}{5}-\\dfrac{1}{3}=-\\dfrac{2}{15}$$$$k_1=\\dfrac{|d_1'|}{d_1}=\\dfrac{7{,}5}{3}=2{,}5$$<div class=\"bt-ans\">$$h_1'=k_1\\,h=2{,}5\\cdot2=5\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Ảnh sau khi nâng</span></p><p>Kính cách đinh thêm $1{,}5\\ \\text{cm}$ : $d_2=3+1{,}5=4{,}5\\ \\text{cm}$, vẫn $\\lt f$ nên vẫn ảnh ảo :</p>$$\\dfrac{1}{d_2'}=\\dfrac{1}{5}-\\dfrac{1}{4{,}5}=-\\dfrac{1}{45}$$<div class=\"bt-ans\">$$|d_2'|=45\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều cao ảnh sau</span></p>$$k_2=\\dfrac{|d_2'|}{d_2}=\\dfrac{45}{4{,}5}=10$$<div class=\"bt-ans\">$$h_2'=k_2\\,h=10\\cdot2=20\\ \\text{mm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Giới hạn nâng</span></p><p>Ảnh còn ảo, cùng chiều khi $d\\lt f$. Mốc là $d=f=5\\ \\text{cm}$ :</p>$$f-d_2=5-4{,}5$$<div class=\"bt-ans\"><p>Nâng thêm tối đa $0{,}5\\ \\text{cm}$ nữa ; quá mốc đó ảnh nhoè rồi lộn ngược.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thế lại : $\\dfrac{1}{3}-\\dfrac{2}{15}=\\dfrac{1}{5}$ ✓ ; $\\dfrac{1}{4{,}5}-\\dfrac{1}{45}=\\dfrac{1}{5}$ ✓.</p><p>Nâng kính xa vật hơn thì ảnh ảo vừa xa hơn ($7{,}5\\to45\\ \\text{cm}$) vừa to hơn ($k$ từ $2{,}5$ lên $10$) : đúng như khi soi con tem ở mở bài.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $f=5\\ \\text{cm}$.</p><p>b) Ảnh cao $5\\ \\text{mm}$.</p><p>c) Ảnh cách kính $45\\ \\text{cm}$, cao $20\\ \\text{mm}$.</p><p>d) Nâng thêm tối đa $0{,}5\\ \\text{cm}$.</p></div><p class=\"bt-note\">Nhận dạng : thấy <b>nâng kính / dịch vật</b> → mỗi vị trí là một $d$ mới, tính lại $d'$ và $k$ ; ảnh ảo chỉ còn khi $d\\lt f$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Kính lúp ghi $5\\times$\"</td><td>$G=5$</td><td>Từ $G$ tìm được đại lượng nào của kính?</td></tr><tr><td>\"kính cách đầu đinh $3\\ \\text{cm}$\"</td><td>$d_1=3\\ \\text{cm}$</td><td>⚠ Kính lúp cho ảnh ảo, cùng chiều khi $d$ so với $f$ thế nào?</td></tr><tr><td>\"đầu đinh ghim cao $2\\ \\text{mm}$\"</td><td>$h=2\\ \\text{mm}$</td><td>Chiều cao ảnh tính từ đại lượng nào?</td></tr><tr><td>\"Giữ đinh đứng yên, nâng kính lên thêm $1{,}5\\ \\text{cm}$\"</td><td>$d_2=\\ ?$</td><td>Khoảng cách từ đinh tới kính sau khi nâng là bao nhiêu?</td></tr><tr><td>\"ảnh cách kính bao nhiêu cm và cao bao nhiêu milimét\"</td><td>$d_2'=\\ ?$ ; $h_2'=\\ ?$</td><td>Mỗi vị trí đều dùng chung công thức nào?</td></tr><tr><td>\"không còn thấy ảnh ảo, cùng chiều\"</td><td>$d_{\\max}=\\ ?$</td><td>Mốc nào của $d$ làm ảnh đổi loại?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>nâng kính / dịch vật</b> → <b>d đổi</b>, tính lại <b>d′ và k</b> từng vị trí ; ảnh ảo cần $d\\lt f$",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "kính lúp $5\\times$, cách đinh $3\\ \\text{cm}$",
+     "đầu đinh cao $2\\ \\text{mm}$",
+     "nâng kính thêm $1{,}5\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) $f$",
+     "b) ảnh cao (mm) trước khi nâng",
+     "c) ảnh cách kính ; cao (mm) sau khi nâng",
+     "d) nâng thêm tối đa (cm)"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tiêu cự",
+     "hoi": "Tiêu cự của kính bằng bao nhiêu cm?",
+     "dap_so": 5,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $0{,}2$ là chia ngược $f=\\dfrac{G}{25}$ ; ra $125$ là nhân $25\\cdot5$ ; ra $20$ là lấy $25-5$."
+    },
+    {
+     "tieu_de": "Ảnh trước khi nâng",
+     "hoi": "Trước khi nâng, ảnh cao bao nhiêu mm?",
+     "dap_so": 5,
+     "sai_so": 0.1,
+     "don_vi": "mm",
+     "loi_hay_gap": "Ra $10$ là lấy $k=G=5$ ; ra $3{,}3$ là lấy $k=\\dfrac{f}{d}$. Số phóng đại phải tính từ $d'$ : $k=\\dfrac{|d'|}{d}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $d=3\\ \\text{cm}$ và $f$ vào công thức thấu kính để tìm $d'$, rồi $k=\\dfrac{|d'|}{d}$",
+       "dung": true
+      },
+      {
+       "text": "Lấy $k=G$ rồi $h'=G\\,h$",
+       "dung": false,
+       "vi_sao": "$G=\\dfrac{25}{f}$ ứng với ảnh ở rất xa ; ảnh ở chỗ này có $k$ khác $G$."
+      },
+      {
+       "text": "Lấy $k=\\dfrac{f}{d}$",
+       "dung": false,
+       "vi_sao": "Số phóng đại là $\\dfrac{|d'|}{d}$ ; $\\dfrac{f}{d}$ không phải $k$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ảnh sau khi nâng",
+     "hoi": "Sau khi nâng, ảnh cách kính bao nhiêu cm?",
+     "dap_so": 45,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $7{,}5$ là dùng lại $d$ của lúc đầu ; ra $2{,}1$ là lấy $d=1{,}5\\ \\text{cm}$ (quãng nâng).",
+     "chon_buoc_ke": [
+      {
+       "text": "Vật nay cách kính $d=3+1{,}5$ ; thế $d$ mới vào công thức thấu kính",
+       "dung": true
+      },
+      {
+       "text": "Giữ nguyên $d=3\\ \\text{cm}$ vì đinh đứng yên",
+       "dung": false,
+       "vi_sao": "Đinh đứng yên nhưng kính dịch lên, nên khoảng cách từ đinh tới kính tăng thêm $1{,}5\\ \\text{cm}$."
+      },
+      {
+       "text": "Dùng $d=1{,}5\\ \\text{cm}$, là quãng nâng",
+       "dung": false,
+       "vi_sao": "$1{,}5\\ \\text{cm}$ chỉ là quãng dịch kính ; $d$ là khoảng từ đinh tới kính, gồm cả $3$ lúc đầu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều cao ảnh sau",
+     "hoi": "Sau khi nâng, ảnh cao bao nhiêu mm?",
+     "dap_so": 20,
+     "sai_so": 0.2,
+     "don_vi": "mm",
+     "loi_hay_gap": "Ra $5$ là dùng lại $k$ của lúc đầu ; ra $10$ là lấy $k=G$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$k=\\dfrac{|d'|}{d}$ với $d'$ và $d$ mới",
+       "dung": true
+      },
+      {
+       "text": "$k$ không đổi vì vẫn cùng một kính",
+       "dung": false,
+       "vi_sao": "$d$ đổi thì $d'$ đổi, nên $k$ đổi theo : đó là lý do ảnh to dần khi nâng kính."
+      },
+      {
+       "text": "$k=\\dfrac{d}{|d'|}$",
+       "dung": false,
+       "vi_sao": "Ảnh ảo qua kính lúp lớn hơn vật nên $k\\gt1$ ; công thức bị đảo."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Giới hạn nâng",
+     "hoi": "Từ lúc này, nâng kính thêm quá bao nhiêu cm nữa thì hết ảnh ảo, cùng chiều?",
+     "dap_so": 0.5,
+     "sai_so": 0.02,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $2$ là tính từ vị trí lúc đầu (mốc trừ $d_1$ thay vì $d_2$) ; ra $5$ là lấy luôn tiêu cự.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ảnh còn ảo, cùng chiều khi $d\\lt f$ ; tìm $f-d$ tại vị trí hiện tại",
+       "dung": true
+      },
+      {
+       "text": "Ảnh còn ảo, cùng chiều khi $d\\lt2f$ ; tìm $2f-d$",
+       "dung": false,
+       "vi_sao": "Vùng $f\\lt d\\lt2f$ cho ảnh thật, ngược chiều ; mốc đổi loại ảnh là $f$."
+      },
+      {
+       "text": "Nâng bao nhiêu cũng còn ảnh ảo vì là kính lúp",
+       "dung": false,
+       "vi_sao": "Kính lúp chỉ cho ảnh ảo khi vật trong tiêu cự ; vượt tiêu điểm thì ảnh lộn ngược."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -10,
+      "x_max": 6,
+      "y_tren": 1.1,
+      "y_duoi": -0.33,
+      "phong_doc": 8,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "ten": "5×"
+       },
+       {
+        "loai": "vat",
+        "x": -3,
+        "h": 0.2,
+        "ten": [
+         "A",
+         "B"
+        ]
+       },
+       {
+        "loai": "thuoc",
+        "tu": -3,
+        "den": 0,
+        "o": -0.19,
+        "nhan": "3 cm",
+        "ben": "duoi"
+       },
+       {
+        "loai": "chu",
+        "x": -0.6,
+        "y": 0.9,
+        "text": "nâng thêm 1,5 cm",
+        "a": "end"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 2,
+      "x_min": -12,
+      "x_max": 6,
+      "y_tren": 1.05,
+      "y_duoi": -0.55,
+      "phong_doc": 8,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 5,
+        "vi_tieu": [
+         "l",
+         "b"
+        ]
+       },
+       {
+        "loai": "vat",
+        "x": -4.5,
+        "h": 0.2,
+        "ten": [
+         "A",
+         "B"
+        ]
+       },
+       {
+        "loai": "thuoc",
+        "tu": -4.5,
+        "den": 0,
+        "o": -0.214,
+        "nhan": "4,5 cm",
+        "ben": "duoi"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tk",
+       "x": 0,
+       "kieu": "hoi_tu",
+       "f": 5,
+       "vi_tieu": [
+        "l",
+        "b"
+       ]
+      },
+      {
+       "loai": "ghi",
+       "text": "f = 25 : 5 = 5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -3,
+         0.2
+        ],
+        [
+         0,
+         0.2
+        ],
+        [
+         5,
+         0.0
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         0.2
+        ],
+        [
+         -7.5,
+         0.5
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -3,
+         0.2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "keo": [
+        [
+         -3,
+         0.2
+        ],
+        [
+         -7.5,
+         0.5
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "vat",
+       "x": -7.5,
+       "h": 0.5,
+       "ao": true,
+       "ten": [
+        "",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = −7,5 cm · k = 7,5 : 3 = 2,5 ⇒ h′ = 5 mm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -4.5,
+         0.2
+        ],
+        [
+         0,
+         0.2
+        ],
+        [
+         6,
+         -0.04
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         0.2
+        ],
+        [
+         -12,
+         0.68
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -4.5,
+         0.2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "keo": [
+        [
+         -4.5,
+         0.2
+        ],
+        [
+         -12,
+         0.5333
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "chu",
+       "x": -11.5,
+       "y": 0.9,
+       "text": "ảnh ảo ở xa 45 cm",
+       "a": "start",
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d = 3 + 1,5 = 4,5 cm ⇒ d′ = −45 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "k = 45 : 4,5 = 10 ⇒ h′ = 10·2 = 20 mm"
+      }
+     ],
+     [
+      {
+       "loai": "thuoc",
+       "tu": -4.5,
+       "den": -5,
+       "o": -0.394,
+       "nhan": "0,5 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "d < f = 5 cm: nâng thêm tối đa 0,5 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1/3 − 2/15 = 1/5 ; 1/4,5 − 1/45 = 1/5 ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Cho tỉ lệ ảnh và vật nhưng chưa nói ảnh thật hay ảo: tìm vị trí đặt vật",
+   "topic": "Công thức thấu kính và số phóng đại",
+   "problem_html": "<p>Một thấu kính hội tụ có tiêu cự $9\\ \\text{cm}$. Vật sáng $AB$ cao $2\\ \\text{cm}$, đặt vuông góc với trục chính, cho ảnh cao $6\\ \\text{cm}$.</p><ol type=\"a\"><li>Tính khoảng cách từ vật đến thấu kính.</li><li>Với trường hợp ảnh hứng được trên màn, phải đặt màn cách thấu kính bao nhiêu cm để thấy ảnh rõ?</li><li>Trường hợp nào dùng thấu kính như một kính lúp?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Công thức thấu kính:</strong> $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$ ; <strong>số phóng đại:</strong> $k=\\dfrac{h'}{h}=\\dfrac{|d'|}{d}$.</li><li><strong>Ảnh thật:</strong> $d'\\gt0$, ngược chiều, hứng được trên màn. <strong>Ảnh ảo:</strong> $d'\\lt0$, cùng chiều, không hứng được.</li><li><strong>Điều kiện:</strong> đề chỉ cho $k$ nên $|d'|=k\\,d$ ứng với <strong>cả hai</strong> dấu của $d'$ : xét hai trường hợp.</li><li><strong>Kính lúp:</strong> vật trong tiêu cự ($d\\lt f$), ảnh ảo.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số phóng đại</span></p>$$k=\\dfrac{h'}{h}=\\dfrac{6}{2}$$<div class=\"bt-ans\">$$k=3$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Ảnh thật : vị trí vật</span></p><p>Ảnh thật nên $d'\\gt0$ và $|d'|=k\\,d$, suy ra $d'=3d$ :</p>$$\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{3d}=\\dfrac{4}{3d}$$$$d=\\dfrac{4f}{3}=\\dfrac{4\\cdot9}{3}$$<div class=\"bt-ans\">$$d_1=12\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Vị trí màn</span></p>$$d_1'=3\\,d_1=3\\cdot12$$<div class=\"bt-ans\">$$d_1'=36\\ \\text{cm}$$</div><p>Màn đặt cách thấu kính $36\\ \\text{cm}$ thì hứng được ảnh thật rõ nét.</p></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Ảnh ảo : vị trí vật</span></p><p>Ảnh ảo nên $d'\\lt0$ và $|d'|=k\\,d$, suy ra $d'=-3d$ :</p>$$\\dfrac{1}{f}=\\dfrac{1}{d}-\\dfrac{1}{3d}=\\dfrac{2}{3d}$$$$d=\\dfrac{2f}{3}=\\dfrac{2\\cdot9}{3}$$<div class=\"bt-ans\">$$d_2=6\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Dùng làm kính lúp</span></p><p>Kính lúp cần ảnh ảo, cùng chiều, nên vật phải ở trong tiêu cự :</p>$$d_2=6\\ \\text{cm}\\ \\lt\\ f=9\\ \\text{cm}$$<div class=\"bt-ans\"><p>Dùng vị trí $d_2=6\\ \\text{cm}$ (ảnh ảo) làm kính lúp ; vị trí $d_1=12\\ \\text{cm}$ cho ảnh thật, ngược chiều, hứng được trên màn.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Thế lại : $\\dfrac{1}{12}+\\dfrac{1}{36}=\\dfrac19$ ✓ ; $\\dfrac16-\\dfrac1{18}=\\dfrac19$ ✓.</p><p>Cùng $k=3$ mà hai kiểu ảnh : $d=\\dfrac43f$ cho ảnh thật, $d=\\dfrac23f$ cho ảnh ảo.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $d_1=12\\ \\text{cm}$ (ảnh thật) và $d_2=6\\ \\text{cm}$ (ảnh ảo).</p><p>b) Màn cách thấu kính $36\\ \\text{cm}$.</p><p>c) Vị trí $d_2=6\\ \\text{cm}$ (ảnh ảo).</p></div><p class=\"bt-note\">Nhận dạng : thấy <b>ảnh gấp k lần</b> mà chưa nói thật hay ảo → xét <b>hai trường hợp</b> $d'=+kd$ và $d'=-kd$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"thấu kính hội tụ có tiêu cự $9\\ \\text{cm}$\"</td><td>$f=9\\ \\text{cm}$</td><td>Dấu của $f$ với thấu kính hội tụ?</td></tr><tr><td>\"Vật sáng $AB$ cao $2\\ \\text{cm}$ … ảnh cao $6\\ \\text{cm}$\"</td><td>$h=2\\ \\text{cm}$ ; $h'=6\\ \\text{cm}$</td><td>Hai chiều cao cho biết đại lượng nào?</td></tr><tr><td>\"cho ảnh cao $6\\ \\text{cm}$\"</td><td>chưa nói ảnh thật hay ảo</td><td>⚠ Ảnh thật và ảnh ảo khác nhau ở dấu của đại lượng nào? Cần xét mấy trường hợp?</td></tr><tr><td>\"khoảng cách từ vật đến thấu kính\"</td><td>$d_1=\\ ?$ ; $d_2=\\ ?$</td><td>Mỗi trường hợp, $d'$ liên hệ $d$ thế nào qua $k$?</td></tr><tr><td>\"đặt màn cách thấu kính\"</td><td>$d'=\\ ?$</td><td>Ảnh nào hứng được trên màn?</td></tr><tr><td>\"dùng thấu kính như một kính lúp\"</td><td>vật ở vùng nào</td><td>Kính lúp dùng vật ở vùng nào so với $f$?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ảnh gấp k lần</b> mà chưa nói thật hay ảo → xét <b>hai trường hợp</b> <b>d′ = +kd</b> và <b>d′ = −kd</b>",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 3
+   },
+   "tom_de": {
+    "cho": [
+     "thấu kính hội tụ $f=9\\ \\text{cm}$",
+     "vật cao $2\\ \\text{cm}$, ảnh cao $6\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) khoảng cách vật–kính",
+     "b) màn cách kính (ảnh thật)",
+     "c) vị trí dùng làm kính lúp"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số phóng đại",
+     "hoi": "Ảnh cao gấp mấy lần vật?",
+     "dap_so": 3,
+     "sai_so": 0.05,
+     "don_vi": "lần",
+     "loi_hay_gap": "Ra $\\dfrac13$ là đảo thành $\\dfrac{h}{h'}$ ; ra $4$ là lấy hiệu $6-2$ thay vì tỉ số."
+    },
+    {
+     "tieu_de": "Ảnh thật : vị trí vật",
+     "hoi": "Nếu ảnh là ảnh thật thì vật cách thấu kính bao nhiêu cm?",
+     "dap_so": 12,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Thế $d'=-3d$ ra vị trí khác (ảnh ảo), không phải ảnh thật ; ra $27$ là lấy $d=k\\,f$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ảnh thật : $d'=3d$ ; thế vào $\\dfrac{1}{f}=\\dfrac{1}{d}+\\dfrac{1}{d'}$",
+       "dung": true
+      },
+      {
+       "text": "Ảnh thật : $d'=-3d$",
+       "dung": false,
+       "vi_sao": "Dấu âm của $d'$ là ảnh ảo ; ảnh thật có $d'\\gt0$ và $|d'|=k\\,d$."
+      },
+      {
+       "text": "Ảnh thật : $d'=\\dfrac{d}{3}$",
+       "dung": false,
+       "vi_sao": "$k=\\dfrac{|d'|}{d}=3$ nên $|d'|=3d$, không phải $\\dfrac d3$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Vị trí màn",
+     "hoi": "Màn đặt cách thấu kính bao nhiêu cm?",
+     "dap_so": 36,
+     "sai_so": 0.5,
+     "don_vi": "cm",
+     "loi_hay_gap": "Ra $12$ là lấy luôn khoảng cách vật ; ra $9$ là lấy tiêu cự ; ra $4$ là lấy $\\dfrac{d}{3}$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Màn đặt tại chỗ có ảnh thật : $d'=3d$ với $d$ vừa tìm",
+       "dung": true
+      },
+      {
+       "text": "Màn đặt tại tiêu điểm $F'$",
+       "dung": false,
+       "vi_sao": "Ảnh thật hiện ở $d'$ tính được ; chỉ vật ở rất xa mới cho ảnh tại $F'$."
+      },
+      {
+       "text": "Màn đặt cách kính đúng bằng khoảng cách vật",
+       "dung": false,
+       "vi_sao": "$d'=d$ chỉ khi $d=2f$ ; ở đây ảnh lớn hơn vật nên $d'\\gt d$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Ảnh ảo : vị trí vật",
+     "hoi": "Nếu ảnh là ảnh ảo thì vật cách thấu kính bao nhiêu cm?",
+     "dap_so": 6,
+     "sai_so": 0.1,
+     "don_vi": "cm",
+     "loi_hay_gap": "Thế $d'=+3d$ lại ra đúng vị trí của ảnh thật ; ra $27$ là lấy $d=k\\,f$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Ảnh ảo : $d'=-3d$ ; thế vào công thức thấu kính",
+       "dung": true
+      },
+      {
+       "text": "Ảnh ảo : $d'=+3d$, giống trường hợp trước",
+       "dung": false,
+       "vi_sao": "Ảnh ảo có $d'\\lt0$ ; dùng $d'=+3d$ sẽ ra lại vị trí của ảnh thật."
+      },
+      {
+       "text": "Ảnh ảo : $d=3f$ vì $k=3$",
+       "dung": false,
+       "vi_sao": "Không có công thức $d=k\\,f$ ; phải dùng $|d'|=k\\,d$ rồi thế vào công thức thấu kính."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Dùng làm kính lúp",
+     "hoi": "Dùng thấu kính như kính lúp thì đặt vật ở vị trí nào?",
+     "lua_chon": [
+      {
+       "text": "Vị trí cho ảnh ảo, vật trong tiêu cự",
+       "dung": true
+      },
+      {
+       "text": "Vị trí cho ảnh thật, vì ảnh lớn hơn vật",
+       "dung": false,
+       "vi_sao": "Ảnh thật hứng được trên màn nhưng ngược chiều ; kính lúp dùng ảnh ảo, cùng chiều, nhìn qua kính."
+      },
+      {
+       "text": "Cả hai vị trí đều dùng được",
+       "dung": false,
+       "vi_sao": "Chỉ vật trong tiêu cự ($d\\lt f$) mới cho ảnh ảo, cùng chiều để nhìn qua kính."
+      }
+     ],
+     "loi_hay_gap": "Chọn vị trí cho ảnh thật vì thấy ảnh “lớn hơn vật” ; ảnh thật lộn ngược, không phải cách dùng kính lúp.",
+     "chon_buoc_ke": [
+      {
+       "text": "So $d$ của hai vị trí với $f$",
+       "dung": true
+      },
+      {
+       "text": "Chọn vị trí có $|d'|$ lớn hơn",
+       "dung": false,
+       "vi_sao": "Độ lớn của $d'$ không quyết định có phải kính lúp hay không ; phải xem $d$ so với $f$."
+      },
+      {
+       "text": "Chọn vị trí có ảnh lớn hơn",
+       "dung": false,
+       "vi_sao": "Hai vị trí cho ảnh cao bằng nhau ($6\\ \\text{cm}$)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "thau_kinh",
+    "de": true,
+    "phan": [
+     {
+      "tu_buoc": 0,
+      "x_min": -16,
+      "x_max": 42,
+      "y_tren": 9.5,
+      "y_duoi": -8.1,
+      "phong_doc": 2,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 9,
+        "vi_tieu": [
+         "t",
+         "b"
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": 41,
+        "y": 7.5,
+        "text": "vật cao 2 cm",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 41,
+        "y": 5.1,
+        "text": "ảnh cao 6 cm",
+        "a": "end"
+       }
+      ]
+     },
+     {
+      "tu_buoc": 3,
+      "x_min": -24,
+      "x_max": 16,
+      "y_tren": 11.5,
+      "y_duoi": -6.5,
+      "hinh": [
+       {
+        "loai": "tk",
+        "x": 0,
+        "kieu": "hoi_tu",
+        "f": 9,
+        "vi_tieu": [
+         "b",
+         "b"
+        ]
+       },
+       {
+        "loai": "chu",
+        "x": 15.5,
+        "y": 8.8,
+        "text": "vật cao 2 cm",
+        "a": "end"
+       },
+       {
+        "loai": "chu",
+        "x": 15.5,
+        "y": 5.6,
+        "text": "ảnh cao 6 cm",
+        "a": "end"
+       }
+      ]
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "k = h′ : h = 6 : 2 = 3"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -12,
+       "h": 2,
+       "ten": [
+        "A",
+        "B"
+       ]
+      },
+      {
+       "loai": "thuoc",
+       "tu": -12,
+       "den": 0,
+       "o": -2.75,
+       "nhan": "12 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = 3d ⇒ 1/9 = 4/(3d) ⇒ d = 12 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -12,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         36.0,
+         -6.0
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -12,
+         2
+        ],
+        [
+         0,
+         0
+        ],
+        [
+         36.0,
+         -6.0
+        ]
+       ],
+       "mau": "min"
+      },
+      {
+       "loai": "vat",
+       "x": 36,
+       "h": -6,
+       "ten": [
+        "A′",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = 3d = 36 cm: đặt màn ở đây"
+      }
+     ],
+     [
+      {
+       "loai": "vat",
+       "x": -6,
+       "h": 2,
+       "ten": [
+        "A",
+        "B"
+       ]
+      },
+      {
+       "loai": "thuoc",
+       "tu": -6,
+       "den": 0,
+       "o": -3.8,
+       "nhan": "6 cm",
+       "ben": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "d′ = −3d ⇒ 1/9 = 2/(3d) ⇒ d = 6 cm"
+      }
+     ],
+     [
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -6,
+         2
+        ],
+        [
+         0,
+         2
+        ],
+        [
+         12,
+         -0.6667
+        ]
+       ],
+       "keo": [
+        [
+         0,
+         2
+        ],
+        [
+         -22,
+         6.8889
+        ]
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "tia",
+       "qua": [
+        [
+         -6,
+         2
+        ],
+        [
+         0,
+         0
+        ]
+       ],
+       "keo": [
+        [
+         -6,
+         2
+        ],
+        [
+         -22,
+         7.3333
+        ]
+       ],
+       "mep": true
+      },
+      {
+       "loai": "vat",
+       "x": -18,
+       "h": 6,
+       "ao": true,
+       "ten": [
+        "A′",
+        "B′"
+       ],
+       "mau": "max"
+      },
+      {
+       "loai": "ghi",
+       "text": "d = 6 cm < f = 9 cm: ảnh ảo, cùng chiều → kính lúp"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "1/9 = 1/12 + 1/36 = 1/6 − 1/18 ✓"
+      }
+     ]
+    ]
+   }
+  }
+ ]
+}
