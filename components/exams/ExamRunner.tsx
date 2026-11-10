@@ -821,6 +821,8 @@ export default function ExamRunner({
         score10={result.score10}
         correctCount={result.correct_count}
         usedSeconds={usedSeconds}
+        resultId={result.result_id}
+        passScore={exam.pass_score}
       />
     );
   }

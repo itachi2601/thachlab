@@ -22,7 +22,10 @@ const POLL_MS = 120_000;
  * (session === null, xem dòng "if (!session) return null" bên dưới).
  */
 export default function NotificationBell() {
-  const { session } = useAuth();
+  const { session: realSession, previewMode } = useAuth();
+  // Admin đang "Xem như học sinh/SV": chuông sẽ đếm và liệt kê thông báo của tài khoản quản trị (việc lớp 10, 11…),
+  // làm bản xem thử sai → ẩn chuông tới khi thoát xem thử.
+  const session = previewMode ? null : realSession;
   const [count, setCount] = useState(0);
   const [open, setOpen] = useState(false);
   const [items, setItems] = useState<Notification[] | null>(null);

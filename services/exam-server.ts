@@ -151,3 +151,16 @@ export function toFullExam(
     questions,
   };
 }
+
+/** Gợi ý "vì sao phương án em chọn sai" cho đề đánh giá còn khoá đáp án (câu trắc nghiệm A–D; không kèm đáp án đúng). */
+export interface WrongNote {
+  question_index: number;
+  label: string;
+  note: string;
+}
+
+export async function fetchWrongNotes(resultId: number): Promise<WrongNote[]> {
+  const { data, error } = await getSupabase().rpc("get_exam_wrong_notes", { p_result_id: resultId });
+  if (error) throw error;
+  return (Array.isArray(data) ? data : []) as unknown as WrongNote[];
+}

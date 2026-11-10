@@ -229,13 +229,13 @@ export default function Navbar() {
                     {/* Cùng tên với tab "Hôm nay" trên thanh đáy điện thoại (17/10/2026, N1). */}
                     <User size={16} /> {profile?.role === "student" && profile.track !== "cttc" ? "Hôm nay" : "Tài khoản của tôi"}
                   </Link>
-                  {profile?.role === "student" && profile.track !== "cttc" && (
+                  {profile?.role === "student" && (
                     <Link prefetch={false}
                       href="/tai-khoan/them"
                       onClick={() => setAccountMenuOpen(false)}
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
-                      <User size={16} /> Hồ sơ và nhắc học
+                      <User size={16} /> {profile.track === "cttc" ? "Hồ sơ tài khoản" : "Hồ sơ và nhắc học"}
                     </Link>
                   )}
                   {profile?.role === "parent" && (

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Award, CalendarCheck, Construction, FileSpreadsheet, GraduationCap, LayoutDashboard, NotebookPen, Users2, X } from "lucide-react";
 import { fetchCncLessons, type CncLesson } from "@/services/cnc-lessons";
 import { fetchCncCourses, fetchCourseEnrollments, type CourseOffering, type EnrollmentRow } from "@/services/course-enrollments";
@@ -32,7 +32,7 @@ function lazyTab<P extends object>(loader: () => Promise<{ default: ComponentTyp
 
 const TeacherAttendancePanel = lazyTab(() => import("@/components/attendance/TeacherAttendancePanel"));
 const TeacherCompetencyHub = lazyTab(() => import("@/components/dashboard/TeacherCompetencyHub"));
-const TeacherOverview = lazyTab(() => import("@/components/dashboard/TeacherOverview"));
+const TeacherFlipBoard = lazyTab(() => import("@/components/dashboard/TeacherFlipBoard"));
 const TeacherProgressGradebook = lazyTab(() => import("@/components/dashboard/TeacherProgressGradebook"));
 const TeacherFinalGradebook = lazyTab(() => import("@/components/dashboard/TeacherFinalGradebook"));
 const TeacherStudentProfile = lazyTab(() => import("@/components/dashboard/TeacherStudentProfile"));
@@ -72,6 +72,8 @@ function toDashboardStudent(row: EnrollmentRow, records: CncLearningRecord[], ro
     records: own,
   };
 }
+
+const NO_STUDENTS: DashboardStudent[] = [];
 
 export default function TeacherCourseDashboard() {
   const { profile } = useAuth();
@@ -129,9 +131,12 @@ export default function TeacherCourseDashboard() {
     ? filteredCourses[0]?.id ?? null
     : selectedCourseIdState;
   const studentsMatchSelectedCourse = studentsCourseId === selectedCourseId;
-  const students = studentsMatchSelectedCourse ? loadedStudents : [];
+  const students = studentsMatchSelectedCourse ? loadedStudents : NO_STUDENTS;
   const student = students[studentsMatchSelectedCourse ? activeStudent : 0] ?? null;
   const selectedCourse = courses.find((course) => course.id === selectedCourseId) ?? null;
+
+  // Giữ nguyên tham chiếu giữa các lần render để bảng buổi học không tính lại khi chỉ đổi tab/drawer.
+  const flipStudents = useMemo(() => students.map((item) => ({ id: item.id, name: item.name, records: item.records })), [students]);
 
   const openProfile = (id: string) => {
     const index = students.findIndex((item) => item.id === id);
@@ -220,7 +225,7 @@ export default function TeacherCourseDashboard() {
       </div>}
     </section>
 
-    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${currentTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
+    <nav className="sticky top-20 z-40 flex gap-2 overflow-x-auto rounded-2xl border border-line bg-panel-deep/95 p-2 shadow-xl backdrop-blur">{([{id:"overview",label:subject.hasCurriculum?"Buổi học":"Tổng quan",icon:LayoutDashboard},{id:"grades",label:"Bảng điểm",icon:GraduationCap},{id:"competencies",label:"Chấm & cấp quyền",icon:Award},{id:"attendance",label:"Điểm danh",icon:CalendarCheck},{id:"shcn",label:"Sinh hoạt lớp",icon:NotebookPen},{id:"roster",label:"Danh sách lớp",icon:FileSpreadsheet}] as const).filter(item=>isHomeroom?["attendance","shcn","grades","roster"].includes(item.id):item.id!=="shcn").map(item=>{const Icon=item.icon;return <button key={item.id} onClick={()=>setActiveTab(item.id)} className={`inline-flex shrink-0 items-center gap-2 rounded-xl px-4 py-3 text-sm font-bold ${currentTab===item.id?"bg-blue-600 text-white":"text-muted hover:bg-surface-2 hover:text-primary"}`}><Icon size={17}/>{item.label}</button>})}</nav>
 
     {currentTab==="attendance"&&selectedCourseId&&(isHomeroom
       ? <HomeroomAttendancePanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>
@@ -228,7 +233,7 @@ export default function TeacherCourseDashboard() {
     {currentTab==="shcn"&&selectedCourseId&&<HomeroomShcnPanel courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>}
     {currentTab==="competencies"&&selectedCourseId&&(subject.hasCurriculum?<TeacherCompetencyHub courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,records:item.records}))}/>:<CurriculumPending subjectLabel={subject.label}/>)}
 
-    {currentTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherOverview courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className,pct:item.pct,xp:item.xp,records:item.records}))} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
+    {currentTab==="overview"&&selectedCourseId&&(subject.hasCurriculum?<TeacherFlipBoard courseId={selectedCourseId} students={flipStudents} onOpenTab={setActiveTab} onOpenStudent={openProfile} onOpenLiveExam={()=>setLiveExamOpen(true)}/>:(subjectCode==="avcn"?<TeacherAvcnProgress students={students.map(item=>({id:item.id,name:item.name,className:item.className}))}/>:<CurriculumPending subjectLabel={subject.label}/>))}
 
     {currentTab==="grades"&&selectedCourseId&&isHomeroom&&selectedCourse&&<HomeroomGradebook courseId={selectedCourseId} students={students.map(item=>({id:item.id,name:item.name,className:item.className}))} className={selectedCourse.class_label||selectedCourse.name} schoolYear={selectedCourse.school_year}/>}
 

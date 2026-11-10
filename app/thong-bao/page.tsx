@@ -19,13 +19,20 @@ import {
 } from "@/services/notifications";
 
 function Inbox() {
-  const { session } = useAuth();
+  const { session, previewMode } = useAuth();
   const [items, setItems] = useState<Notification[] | null>(null);
+  // Admin đang "Xem như học sinh/SV": bảng notifications là của tài khoản quản trị (việc lớp 10, 11…),
+  // không phải thứ học sinh thấy → bản xem thử để trống.
+  const previewing = previewMode !== null;
 
   useEffect(() => {
     if (!session) return;
+    if (previewing) {
+      const t = window.setTimeout(() => setItems([]), 0);
+      return () => window.clearTimeout(t);
+    }
     fetchNotifications(200).then(setItems).catch(() => setItems([]));
-  }, [session]);
+  }, [session, previewing]);
 
   async function readAll() {
     await markAllRead().catch(() => undefined);
@@ -61,7 +68,11 @@ function Inbox() {
         <EmptyState
           className="mt-8"
           title="Chưa có thông báo nào"
-          description="Khi có bài mới, kết quả chấm hay tin từ thầy cô, em sẽ thấy ở đây."
+          description={
+            previewing
+              ? "Đang xem thử: thông báo riêng của tài khoản quản trị không hiện ở đây. Học sinh chỉ thấy thông báo của chính mình."
+              : "Khi có bài mới, kết quả chấm hay tin từ thầy cô, em sẽ thấy ở đây."
+          }
         />
       ) : (
         <ul className="mt-6 space-y-2">

@@ -122,6 +122,7 @@ FILES=(
   "supabase/migrations/20261108120000_cnc_prep_responses.sql|CNC lớp đảo ngược: bảng mới cnc_prep_responses (quiz chuẩn bị tối trước + câu chưa rõ); SV ghi/đọc của mình, GV phân công khoá + admin đọc|lúc nào cũng được|drop table if exists public.cnc_prep_responses;"
   "scripts/sql/cnc-prep-buoi-2.sql|Nạp 5 câu quiz chuẩn bị buổi 2 CNC (exams.cnc_key prep-2, published=false; không ghi đè)|lúc nào cũng được|delete from public.exams where cnc_key = 'prep-2';"
   "supabase/migrations/20261109120000_shcn_lesson_key.sql|SHCN: thêm cột lesson_key (bài đọc tuần, dạng hk1/b03) vào homeroom_weekly_sessions|lúc nào cũng được|alter table public.homeroom_weekly_sessions drop column if exists lesson_key;"
+  "supabase/migrations/20261109140000_de_danh_gia_mo_dap_an_sau_2_luot.sql|Đề đánh giá mở đáp án sau 2 lượt (trước 3) + hàm get_exam_wrong_notes (gợi ý vì sao phương án em chọn sai, không lộ đáp án); chỉ thay/thêm hàm|lúc nào cũng được"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
