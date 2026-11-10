@@ -63,7 +63,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
-- **L10 Bài 6 Thực hành đo tốc độ (lesson 51) soạn lại 10/11**: lý thuyết + bài tập mẫu 4 dạng + quiz 20 câu, đã kiểm chéo, chờ thầy duyệt rồi đăng DB (lý thuyết trước, quiz sau) — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`.
+- **L10 Bài 6 Thực hành đo tốc độ (lesson 51) soạn lại 10/11**: lý thuyết + bài tập mẫu 4 dạng + quiz 20 câu, thầy duyệt, **đã ghi DB 10/11 08:25** (lý thuyết item 287, mục bài tập mẫu mới id 456, quiz exam 1352; đề quiz cũ 1227 còn nguyên chờ thầy dọn) — **CHƯA deploy** — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.

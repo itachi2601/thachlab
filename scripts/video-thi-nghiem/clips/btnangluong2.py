@@ -59,8 +59,8 @@ def frame_sw(d, piv=PIV, L=LPX, alpha=1.0):
     c = lambda col: A(col, alpha)
     fy = piv[1] + L + 120                                    # mat san; khung chu A nhin doc xa ngang
     for sgn in (-1, 1):
-        d.line([piv, (piv[0] + sgn * 430, fy)], fill=c(GRAY), width=12)
-    d.line([(0, fy), (piv[0] + 520, fy)], fill=c(MUTED), width=4)
+        d.line([piv, (piv[0] + sgn * 545, fy)], fill=c(GRAY), width=12)   # chan rong ~40 do: ghe 30 do khong cat chan khung
+    d.line([(0, fy), (piv[0] + 600, fy)], fill=c(MUTED), width=4)
     dot(d, piv[0], piv[1], 16, c(GRAY), outline=c(NAVY))
 
 def seat_pos(ang, piv=PIV, L=LPX):
@@ -118,7 +118,7 @@ def s_hook(img, d, t, sc):
     swing(d, math.radians(10), alpha=0.45 * k1, seat_col=DBLUE)
     angle_arc(d, 10, DBLUE, k1, r=200, lab="10°", lab_xy=(425, 915))
     swing(d, math.radians(30) * ease((t - 1.4) / 0.8))
-    angle_arc(d, 30, ORANGE, k2, r=320, lab="30°", lab_xy=(720, 830))
+    angle_arc(d, 30, ORANGE, k2, r=320, lab="30°", lab_xy=(805, 830))
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1040 + (1 - a) * 40
@@ -160,9 +160,10 @@ def s_do(img, d, t, sc):
             angle_arc(d, a0d, ORANGE, 1.0 if not rel else 0.5, r=220)
             if not rel:                                      # h cua lan nay (ghe dang giu o bien)
                 sx, sy = seat_pos(math.radians(a0d))
-                d.line([(sx + 80, sy), (sx + 80, by)], fill=DBLUE, width=5)
-                for yy in (sy, by): d.line([(sx + 66, yy), (sx + 94, yy)], fill=DBLUE, width=5)
-                text(d, (sx + 110, (sy + by) / 2 + 4), "h", 42, DBLUE, anchor="lm")
+                xh = sx - 95                                 # ben trai ghe: khong de chan nguoi ngoi
+                d.line([(xh, sy), (xh, by)], fill=DBLUE, width=5)
+                for yy in (sy, by): d.line([(xh - 14, yy), (xh + 14, yy)], fill=DBLUE, width=5)
+                text(d, (xh - 22, (sy + by) / 2), "h", 42, DBLUE, anchor="rm")
         phone(d, ROWS[i][1] if hold else "…")
     else:
         phone(d, "…")

@@ -16,7 +16,7 @@
 from engine import *
 
 M_KG, G, HM = 40.0, 9.8, 0.50
-PIV = (280, 330); LPX = 520; SCY = 300          # px/m theo phuong dung
+PIV = (220, 330); LPX = 520; SCY = 300          # px/m theo phuong dung
 LM = LPX / SCY                                  # dai day theo thang ve (khong hien)
 A0 = math.acos(1 - HM / LM)
 BOT = PIV[1] + LPX                              # y ghe o day
@@ -55,7 +55,7 @@ def TI(size):
 def eq(d, cx, cy, s, size, color=INK, alpha=1.0, anchor="m"):
     fs = []
     for p in [p for p in re.split(r"(_\{[^}]*\}|\^\{[^}]*\})", s) if p]:
-        if p.startswith("_{"): fs.append((p[2:-1], F(max(36, size * 0.62)), size * 0.26))
+        if p.startswith("_{"): fs.append((p[2:-1], F(max(40, size * 0.8)), size * 0.3))    # chi so "đ" du lon de thay gach ngang
         elif p.startswith("^{"): fs.append((p[2:-1], F(max(36, size * 0.62)), -size * 0.34))
         else: fs.append((p, F(size), 0))
     tot = sum(tw(d, p, f) for p, f, _ in fs)
@@ -114,7 +114,7 @@ def ruler(d, hl=None, alpha=1.0):
         col = ORANGE if hl == hv else INK
         text(d, (RX + 26, BOT - hv * SCY), lab, 38, col, anchor="lm", alpha=alpha)
 
-BX = (935, 1030); BW = 64; BH = 300            # cot Et, Ed: 196 J = 300 px
+BX = (955, 1040); BW = 64; BH = 300            # cot Et, Ed: 196 J = 300 px
 def bars(d, et, nums=None, alpha=1.0):
     ed = 196 - et
     for cx, val, col, lab in ((BX[0], et, CET, "E_{t}"), (BX[1], ed, CED, "E_{đ}")):
@@ -217,7 +217,7 @@ def s_bay(img, d, t, sc):
     M = sc["M"]
     k2 = appear(t, M[1] - 0.1, 0.45)
     a1 = appear(t, 0.0, 0.3) * (1 - k2)
-    kc = appear(t, M[0] + 1.4, 0.5)
+    kc = appear(t, M[0] + 1.6, 0.5)
     frame_sw(d)
     swing(d, A0)
     ruler(d, hl=0.50)
@@ -285,7 +285,7 @@ CLIP = dict(id="tn-l11-conangdddh-02", header="VẬT LÍ 11 · VÍ DỤ", footer
    ("Nửa độ cao: mỗi phần 98 J.", 3.8),
    ("Tổng vẫn là 196 J.", 4.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=1.0, caps=[
-   ("Bẫy: đu dừng là hết năng lượng.", 4.6),
+   ("Bẫy: đu dừng là hết năng lượng.", 5.4),
    ("Số minh hoạ, tính từ mô hình.", 4.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=2.6, caps=[
    ("Dừng video, tự trả lời.", 5.8)]),

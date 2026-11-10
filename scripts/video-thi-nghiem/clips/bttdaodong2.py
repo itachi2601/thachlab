@@ -92,7 +92,7 @@ def h_mark(d, alpha=1.0, lab="6,0 cm"):
     yp, yt = ypx(A_CM), ypx(-A_CM)
     dashed(d, (600, yt), (800, yt), A(ORANGE, alpha), w=3, on=10, off=8)
     bracket_v(d, 800, yp, yt, ORANGE, alpha)
-    text(d, (782, YC + 55), lab, 40, ORANGE, anchor="rm", alpha=alpha)
+    text(d, (782, yt + 38), lab, 40, ORANGE, anchor="rm", alpha=alpha)          # duoi duong day: khong de nét song
 
 def d_mark(d, alpha=1.0, lab="16,0 cm"):
     yb = ypx(A_CM) - 30

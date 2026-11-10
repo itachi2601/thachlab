@@ -1,4 +1,4 @@
-Chặng hiện tại: đã soạn lại + kiểm chéo xong (10/11/2026). Bước kế tiếp: thầy duyệt → đăng DB (lý thuyết, bài tập mẫu, quiz) → deploy.
+Chặng hiện tại: đã soạn lại + kiểm chéo xong (10/11/2026). Thầy duyệt; đã ghi DB 10/11 08:25 (item 287, mục bài tập mẫu 456, exam 1352). Bước kế tiếp: deploy, rồi xem trên web ở 375px; dọn đề quiz cũ 1227.
 
 # L10 Bài 6. Thực hành đo tốc độ — soạn lại 10/11/2026 (lesson_id 51, item lý thuyết 287)
 
