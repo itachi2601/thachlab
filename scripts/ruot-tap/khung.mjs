@@ -34,6 +34,8 @@ const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
 export const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
 export const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 export const fill = (w = 18) => `<span class="fill" style="min-width:${w}mm"></span>`;
+// Ô đáp số cho Bài tương tự giải vào vở (thầy chốt 10/11): o = ['a', 'b', 'c'] → "Đáp số (giải vào vở): a) ▭ b) ▭ c) ▭", ô 25 mm, tự xuống hàng.
+export const dapSo = (o, w = 25) => `<div class="dso"><b>Đáp số:</b>${o.map((l) => `<span class="nw"><b>${l})</b>${fill(w)}</span>`).join('')}</div>`;
 export const nw = (s) => `<span class="nw">${s}</span>`;
 export const exp = '<span class="exp"></span>';
 export const ck = '<span class="ck"></span>';
@@ -163,14 +165,16 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .trap{display:flex;gap:2mm;align-items:flex-start;margin:1mm 0}
 .tbl-ct td{height:6.5mm}
 ${btmCss}
-${ttCss}`;
+${ttCss}
+.dso{display:flex;flex-wrap:wrap;align-items:flex-end;gap:1mm 3.5mm;font-size:var(--fs-sm);line-height:6mm;margin:.4mm 0 1mm}.dso .fill{height:5.5mm}`;
 
   // tuongTu (bố cục bài 14, thầy chốt 10/11): { trang: [[bài…], [bài…]], dap: ['đáp số tr.8', 'đáp số tr.9'], tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'] },
-  // mỗi bài { t: 'Dạng 1 · Bài 1', de: 'đề (đủ hằng số)', k: số dòng kẻ ≈ số ý }; MỖI DẠNG 2 bài, đáp số tính bằng Python, in lật ngược.
+  // mỗi bài { t: 'Dạng 1 · Bài 1', de: 'đề (đủ hằng số)', k: số dòng kẻ ≈ số ý }
+  // Giải vào vở (thầy chốt 10/11, chuẩn mới): tuongTu.vo = true và mỗi bài o: ['a','b','c'] thay k → in ô đáp số 25 mm thay dòng kẻ; MỖI DẠNG 2 bài, đáp số tính bằng Python, in lật ngược.
   const ok = '<span><span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai, đã sửa</span>';
   const ttTrang = (n, tt) => tt.trang.map((ds, i) => `<section class="page">
-${head(`BÀI TƯƠNG TỰ · ${tt.tieuDe[i]}`, i === 0 ? 'Làm tại chỗ, không nhìn trang Bài tập mẫu; xong mới tick và đối chiếu đáp số' : 'Chỗ trống còn lại dùng làm nháp')}
-${ds.map((b) => `<div class="tt"><div class="hd"><span>${b.t}</span>${ok}</div><div class="de">${b.de}</div>${lines(b.k)}</div>`).join('\n')}
+${head(`BÀI TƯƠNG TỰ · ${tt.tieuDe[i]}`, tt.vo ? (i === 0 ? 'Bài về nhà: giải vào vở, ghi đáp số vào ô rồi lật trang dò đáp số' : 'Giải vào vở; chỗ trống còn lại dùng làm nháp') : (i === 0 ? 'Làm tại chỗ, không nhìn trang Bài tập mẫu; xong mới tick và đối chiếu đáp số' : 'Chỗ trống còn lại dùng làm nháp'))}
+${ds.map((b) => `<div class="tt"><div class="hd"><span>${b.t}</span>${ok}</div><div class="de">${b.de}</div>${b.o ? dapSo(b.o) : lines(b.k)}</div>`).join('\n')}
 <div class="dap"><b>Đáp số (lật ngược trang để đọc, làm xong mới xem):</b> ${tt.dap[i]}</div>
 ${foot(n + i)}</section>`).join('\n');
   const lamLai = (n, k) => `<section class="page">

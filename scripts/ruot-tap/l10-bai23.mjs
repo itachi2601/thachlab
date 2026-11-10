@@ -6,7 +6,7 @@
 // Không dùng ảnh Halliday.
 // Chạy: node scripts/ruot-tap/l10-bai23.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl10-bai23.pdf
 //       node scripts/ruot-tap/l10-bai23.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l10-bai23/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai, dapSo } from './khung.mjs';
 import { hinhL10b23 as H } from './hinh-l10-bai23.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -44,7 +44,7 @@ const g10 = nw(m('g=10\\ \\mathrm{m/s^2}'));
 const vF = m('\\vec F'), vd = m('\\vec d'), al = m('\\alpha');
 
 // Bài tương tự xếp 2 cột (khung xếp .tt dọc, 10 bài không vừa 2 trang khi mỗi ý một dòng) — đề xuất đưa vào khung.
-const ttHaiCot = '<style>.bt>.gi{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}.page:has(>.tt){display:flex;flex-wrap:wrap;column-gap:2mm;align-content:flex-start}.page:has(>.tt)>*{flex:1 1 100%}.page:has(>.tt)>.tt{flex:0 0 calc(50% - 1mm);min-width:0;display:flex;flex-direction:column}.tt .de{flex:1}</style>';
+const ttHaiCot = '<style>.bt>.gi{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm}.yo .oo{flex:none;display:flex;gap:3mm}.yo{line-height:1.35}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 const p1 = `${ttHaiCot}<section class="page">
 ${head('BÀI 23 · NĂNG LƯỢNG · CÔNG CƠ HỌC', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
@@ -198,32 +198,45 @@ const dang = [
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python (python3, math.cos/sin theo radian), làm tròn 3 chữ số có nghĩa.
-const de = (s, fig, w = 44) => `${s}<div style="max-width:${w}mm;margin:.8mm auto 0">${fig}</div>`;
+// Bài tương tự giải vào vở (thầy chốt 10/11): xếp 1 cột, hình cạnh đề; ô đáp số theo nhãn ý; cuối trang là vùng nháp.
+// Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm (40 mm khi ý có 2 kết quả) đặt cuối đúng dòng của ý,
+// nhãn ô khớp a) b) c)… (c<sub>1</sub>, c<sub>2</sub> khi ý có 2 kết quả) → không thêm hàng "Đáp số", chỗ tiết kiệm dồn xuống vùng nháp cuối trang.
+const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
+  const y = p.match(/^<b>([a-d])\)<\/b>/);
+  if (!y) return `<div>${p}</div>`;
+  const ls = o.filter((l) => l[0] === y[1]);
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
+}).join('');
+const ttDe = (b) => b.fig ? `<div class="fig-side" style="grid-template-columns:1fr ${b.fw}mm">${`<div>${oY(b.de, b.o, b.ow)}</div>`}${b.fig}</div>` : oY(b.de, b.o, b.ow);
+const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: ttDe(b), k: 0 } : b));
+const nhap = (n) => ({ t: '<span class="nhap-t">Nháp / chỗ em còn vướng</span>', de: lines(n), k: 0 });
 const tuongTu = {
+  vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: `Bóng đèn LED nhận ${m('10\\ \\mathrm J')} điện năng mỗi giây, phát ra ${m('4{,}0\\ \\mathrm J')} quang năng mỗi giây, phần còn lại thành nhiệt.<br><b>a)</b> điện năng chuyển thành những dạng nào<br><b>b)</b> nhiệt năng toả ra mỗi giây<br><b>c)</b> nhiệt năng toả ra trong ${m('60\\ \\mathrm s')}`, k: 3 },
-    { t: 'Dạng 1 · Bài 2', de: `Thả quả bóng có thế năng ${m('12\\ \\mathrm J')} (so với sàn). Sau lần nảy đầu, ở điểm cao nhất bóng còn thế năng ${m('9{,}0\\ \\mathrm J')}.<br><b>a)</b> năng lượng đã thành nhiệt và âm ở lần chạm sàn đầu<br><b>b)</b> lần nảy sau cũng mất ${m('25\\,\\%')} năng lượng đang có: thế năng ở đỉnh lần nảy thứ hai<br><b>c)</b> bóng nằm yên: tổng nhiệt và âm đã sinh ra`, k: 3 },
-    { t: 'Dạng 2 · Bài 1', de: `Kéo vali đi thẳng <b>đều</b> ${m('15\\ \\mathrm m')} trên sàn ngang, lực kéo ${m('40\\ \\mathrm N')} theo chiều chuyển động; sàn cản dọc đường đi.<br><b>a)</b> công lực kéo<br><b>b)</b> công lực cản<br><b>c)</b> tổng công`, k: 3 },
-    { t: 'Dạng 2 · Bài 2', de: `Đẩy xe hàng ${m('20\\ \\mathrm m')} trên sàn ngang, lực đẩy ${m('50\\ \\mathrm N')} theo chiều chuyển động, lực cản ${m('35\\ \\mathrm N')} ngược chiều.<br><b>a)</b> công lực đẩy<br><b>b)</b> công lực cản<br><b>c)</b> tổng công; xe đi đều hay nhanh dần?`, k: 3 },
-    { t: 'Dạng 3 · Bài 1', de: de(`Vật đi thẳng ${m('10\\ \\mathrm m')} trên sàn ngang; lực ${m('F=50\\ \\mathrm N')} hợp với hướng đi:<br><b>a)</b> ${m('30^\\circ')}<br><b>b)</b> ${m('90^\\circ')}<br><b>c)</b> ${m('150^\\circ')}<br>Tính công, gọi tên loại công.`, H.baGocTT('Cùng F, cùng s, đổi góc.'), 48), k: 3 },
-    { t: 'Dạng 3 · Bài 2', de: `Kéo xe trượt tuyết đi ${m('25\\ \\mathrm m')} trên mặt ngang bằng dây hợp với phương ngang ${m('45^\\circ')}, lực ${m('60\\ \\mathrm N')}.<br><b>a)</b> công lực kéo<br><b>b)</b> công nếu dây nằm ngang<br><b>c)</b> dây hợp góc bao nhiêu thì công còn ${m('750\\ \\mathrm J')}`, k: 3 },
+    { t: 'Dạng 1 · Bài 1', de: `Bóng đèn LED nhận ${m('10\\ \\mathrm J')} điện năng mỗi giây, phát ra ${m('4{,}0\\ \\mathrm J')} quang năng mỗi giây, phần còn lại thành nhiệt.<br><b>a)</b> điện năng chuyển thành những dạng nào<br><b>b)</b> nhiệt năng toả ra mỗi giây<br><b>c)</b> nhiệt năng toả ra trong ${m('60\\ \\mathrm s')}`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 1 · Bài 2', de: `Thả quả bóng có thế năng ${m('12\\ \\mathrm J')} (so với sàn). Sau lần nảy đầu, ở điểm cao nhất bóng còn thế năng ${nw(`${m('9{,}0\\ \\mathrm J')}.`)}<br><b>a)</b> năng lượng đã thành nhiệt và âm ở lần chạm sàn đầu<br><b>b)</b> lần nảy sau cũng mất ${m('25\\,\\%')} năng lượng đang có: thế năng ở đỉnh lần nảy thứ hai<br><b>c)</b> bóng nằm yên: tổng nhiệt và âm đã sinh ra`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 2 · Bài 1', de: `Kéo vali đi thẳng <b>đều</b> ${m('15\\ \\mathrm m')} trên sàn ngang, lực kéo ${m('40\\ \\mathrm N')} theo chiều chuyển động; sàn cản dọc đường đi.<br><b>a)</b> công lực kéo<br><b>b)</b> công lực cản<br><b>c)</b> tổng công`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 2 · Bài 2', de: `Đẩy xe hàng ${m('20\\ \\mathrm m')} trên sàn ngang, lực đẩy ${m('50\\ \\mathrm N')} theo chiều chuyển động, lực cản ${m('35\\ \\mathrm N')} ngược chiều.<br><b>a)</b> công lực đẩy<br><b>b)</b> công lực cản<br><b>c)</b> tổng công; xe đi đều hay nhanh dần?`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'] },
+    { t: 'Dạng 3 · Bài 1', de: `Vật đi thẳng ${m('10\\ \\mathrm m')} trên sàn ngang; lực ${m('F=50\\ \\mathrm N')} hợp với hướng đi:<br><b>a)</b> ${m('30^\\circ')}<br><b>b)</b> ${m('90^\\circ')}<br><b>c)</b> ${m('150^\\circ')}<br>Tính công, gọi tên loại công.`, fig: H.baGocTT('Cùng F, cùng s, đổi góc.'), fw: 44, o: ['a', 'b', 'c'], ow: 40 },
+    { t: 'Dạng 3 · Bài 2', de: `Kéo xe trượt tuyết đi ${m('25\\ \\mathrm m')} trên mặt ngang bằng dây hợp với phương ngang ${nw(`${m('45^\\circ')},`)} lực ${nw(`${m('60\\ \\mathrm N')}.`)}<br><b>a)</b> công lực kéo<br><b>b)</b> công nếu dây nằm ngang<br><b>c)</b> dây hợp góc bao nhiêu thì công còn ${m('750\\ \\mathrm J')}`, o: ['a', 'b', 'c'] },
   ], [
-    { t: 'Dạng 4 · Bài 1', de: de(`Vật ${m('5{,}0\\ \\mathrm{kg}')} trượt xuống hết dốc dài ${m('8{,}0\\ \\mathrm m')} nghiêng ${m('30^\\circ')}; ma sát trượt ${m('6{,}0\\ \\mathrm N')}; ${g10}.<br><b>a)</b> độ cao ${m('h')} của dốc<br><b>b)</b> công của trọng lực<br><b>c)</b> công của lực ma sát`, H.docTT('Trượt xuống: dấu của từng công?'), 48), k: 5 },
-    { t: 'Dạng 4 · Bài 2', de: `Kéo đều thùng ${m('20\\ \\mathrm{kg}')} lên hết dốc dài ${m('10\\ \\mathrm m')}, đỉnh dốc cao ${m('2{,}0\\ \\mathrm m')}; ma sát trượt ${m('30\\ \\mathrm N')}; ${g10}.<br><b>a)</b> công của trọng lực khi lên<br><b>b)</b> công của ma sát khi lên<br><b>c)</b> thùng trượt xuống về chỗ cũ (ma sát vẫn ${nw(`${m('30\\ \\mathrm N')}):`)} công của trọng lực, của ma sát<br><b>d)</b> tổng công trọng lực cả đi lẫn về`, k: 7 },
-    { t: 'Dạng 5 · Bài 1', de: `Kéo thùng ${m('20\\ \\mathrm{kg}')} trên nền ngang bằng dây chếch lên ${m('30^\\circ')}, lực ${m('80\\ \\mathrm N')}; thùng đi ${m('10\\ \\mathrm m')}; ${m('\\mu=0{,}25')}; ${g10}.<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực kéo<br><b>c)</b> công của ${m('P')}, ${m('N')}, ma sát<br><b>d)</b> tổng công`, k: 8 },
-    { t: 'Dạng 5 · Bài 2', de: `Đẩy xe ${m('30\\ \\mathrm{kg}')} trên nền ngang từ phía sau, lực ${m('100\\ \\mathrm N')} chếch <b>xuống</b> ${m('30^\\circ')} so với phương ngang; xe đi ${m('8{,}0\\ \\mathrm m')}; ${m('\\mu=0{,}10')}; ${g10}.<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực đẩy<br><b>c)</b> công lực ma sát<br><b>d)</b> tổng công`, k: 8 },
+    { t: 'Dạng 4 · Bài 1', de: `Vật ${m('5{,}0\\ \\mathrm{kg}')} trượt xuống hết dốc dài ${m('8{,}0\\ \\mathrm m')} nghiêng ${nw(`${m('30^\\circ')};`)} ma sát trượt ${nw(`${m('6{,}0\\ \\mathrm N')};`)} ${nw(`${g10}.`)}<br><b>a)</b> độ cao ${m('h')} của dốc<br><b>b)</b> công của trọng lực<br><b>c)</b> công của lực ma sát`, fig: H.docTT('Trượt xuống: dấu của từng công?'), fw: 44, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 4 · Bài 2', de: `Kéo đều thùng ${m('20\\ \\mathrm{kg}')} lên hết dốc dài ${nw(`${m('10\\ \\mathrm m')},`)} đỉnh dốc cao ${nw(`${m('2{,}0\\ \\mathrm m')};`)} ma sát trượt ${nw(`${m('30\\ \\mathrm N')};`)} ${nw(`${g10}.`)}<br><b>a)</b> công của trọng lực khi lên<br><b>b)</b> công của ma sát khi lên<br><b>c)</b> thùng trượt xuống về chỗ cũ (ma sát vẫn ${nw(`${m('30\\ \\mathrm N')}):`)} công của trọng lực, của ma sát<br><b>d)</b> tổng công trọng lực cả đi lẫn về`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>', 'd'] },
+    { t: 'Dạng 5 · Bài 1', de: `Kéo thùng ${m('20\\ \\mathrm{kg}')} trên nền ngang bằng dây chếch lên ${nw(`${m('30^\\circ')},`)} lực ${nw(`${m('80\\ \\mathrm N')};`)} thùng đi ${nw(`${m('10\\ \\mathrm m')};`)} ${nw(`${m('\\mu=0{,}25')};`)} ${nw(`${g10}.`)}<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực kéo<br><b>c)</b> công của ${nw(`${m('P')},`)} ${nw(`${m('N')},`)} ma sát<br><b>d)</b> tổng công`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>', 'c<sub>3</sub>', 'd'] },
+    { t: 'Dạng 5 · Bài 2', de: `Đẩy xe ${m('30\\ \\mathrm{kg}')} trên nền ngang từ phía sau, lực ${m('100\\ \\mathrm N')} chếch <b>xuống</b> ${m('30^\\circ')} so với phương ngang; xe đi ${nw(`${m('8{,}0\\ \\mathrm m')};`)} ${nw(`${m('\\mu=0{,}10')};`)} ${nw(`${g10}.`)}<br><b>a)</b> phản lực ${m('N')} và lực ma sát<br><b>b)</b> công lực đẩy<br><b>c)</b> công lực ma sát<br><b>d)</b> tổng công`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'] },
+    nhap(5),
   ]],
   dap: [
-    `D1·1: a) quang năng và nhiệt năng · b) 6,0 J · c) 360 J &nbsp;|&nbsp; D1·2: a) 3,0 J · b) 6,75 J · c) 12 J &nbsp;|&nbsp; D2·1: a) 600 J · b) −600 J · c) 0 &nbsp;|&nbsp; D2·2: a) 1000 J · b) −700 J · c) 300 J, nhanh dần &nbsp;|&nbsp; D3·1: a) 433 J, phát động · b) 0, không sinh công · c) −433 J, công cản &nbsp;|&nbsp; D3·2: a) 1061 J · b) 1500 J · c) 60°`,
-    `D4·1: a) 4,0 m · b) +200 J · c) −48 J &nbsp;|&nbsp; D4·2: a) −400 J · b) −300 J · c) +400 J; −300 J · d) 0 &nbsp;|&nbsp; D5·1: a) N = 160 N; ${nw('F<sub>ms</sub> = 40 N')} · b) 693 J · c) 0; 0; −400 J · d) 293 J &nbsp;|&nbsp; D5·2: a) N = 350 N; ${nw('F<sub>ms</sub> = 35 N')} · b) 693 J · c) −280 J · d) 413 J`,
+    `D1·1: a) quang năng, nhiệt năng · b) 6,0 J · c) 360 J &nbsp;|&nbsp; D1·2: a) 3,0 J · b) 6,75 J · c) 12 J &nbsp;|&nbsp; D2·1: a) 600 J · b) −600 J · c) 0 &nbsp;|&nbsp; D2·2: a) 1000 J · b) −700 J · c<sub>1</sub>) 300 J · c<sub>2</sub>) nhanh dần &nbsp;|&nbsp; D3·1: a) 433 J, phát động · b) 0, không sinh công · c) −433 J, cản &nbsp;|&nbsp; D3·2: a) 1061 J · b) 1500 J · c) 60°`,
+    `D4·1: a) 4,0 m · b) +200 J · c) −48 J &nbsp;|&nbsp; D4·2: a) −400 J · b) −300 J · c<sub>1</sub>) +400 J · c<sub>2</sub>) −300 J · d) 0 &nbsp;|&nbsp; D5·1: a<sub>1</sub>) N = 160 N · ${nw('a<sub>2</sub>) F<sub>ms</sub> = 40 N')} · b) 693 J · c<sub>1</sub>) A<sub>P</sub> = 0 · c<sub>2</sub>) A<sub>N</sub> = 0 · c<sub>3</sub>) −400 J · d) 293 J &nbsp;|&nbsp; D5·2: a<sub>1</sub>) N = 350 N · ${nw('a<sub>2</sub>) F<sub>ms</sub> = 35 N')} · b) 693 J · c) −280 J · d) 413 J`,
   ],
 };
 
 await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]], khoNhat: false },
-  tuongTu,
+  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
   tra: 'năng lượng 1·4 · bóng nảy 1·5 · công 2·1 · dấu của công 2·2 · trọng lực, ma sát 2·3 · mặt nghiêng 3·1 · bẫy 3·2 · bài toán mẫu 4·2 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
   out: process.argv[2],
 });

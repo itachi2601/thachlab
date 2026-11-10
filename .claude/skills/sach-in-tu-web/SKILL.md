@@ -119,7 +119,10 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   vẽ đúng tỉ lệ, dấu "?" đặt đúng vị trí, cột năng lượng vẽ bằng nhau đều là lộ); (3) mọi hằng số, đơn vị lạ (HP, CV, cal), danh
   sách (lực thế) và thuật ngữ ô hỏi tới đã có trong tập hoặc in sẵn; (4) tham chiếu "Xem lại ở Tập x·y" trỏ đúng ô; (5) số dòng
   kẻ ≥ số ý; (6) số + đơn vị không gãy dòng (`nw()`); (7) chữ trong hình ≥7 pt ở cỡ in; (8) bấm giờ: tr.8–9 (10 bài tương tự)
-  cần ≥40′ với HS trung bình — thầy quyết phần làm trên lớp/ở nhà.
+  cần ≥40′ với HS trung bình. **Thầy chốt 10/11: Bài tương tự là bài về nhà, GIẢI VÀO VỞ** — giấy chỉ in đề + ô đáp số
+  (`tuongTu.vo = true`, mỗi bài `o: ['a','b',…]` thay `k`, hoặc `dapSo([...])` trong bố cục tự làm), đáp số in ngược xếp theo nhãn ô.
+- **Đo chỗ viết bằng số, không ước bằng mắt**: `node scripts/ruot-tap/do-cho-viet.mjs out/<bài>.pdf.html` in số ý, số ô, dòng-130/ý.
+  Giải trên giấy cần ≥ 2 dòng rộng 130 mm mỗi ý (dòng nửa cột 62 mm chỉ tính 0,5); không đạt thì chuyển sang giải vào vở.
 - **Quyển = chương, đánh số trang liền mạch** (thầy chốt 26/10): bài 14 = tr.1–12, 15 = 13–24 … 18 = 49–60; chân trang "Bài N · tr. X", nhãn "Tập X·ô" và mọi tham chiếu (tr.10, trang 8, "Xem lại ở Tập") dùng số tuyệt đối (`khung.mjs`: `off`). Dựng cả quyển: `bash scripts/ruot-tap/dung-chuong4.sh` → `out/ruot-tap-vl12-chuong4.pdf` (60 trang, `pdfunite`). Nối tiếp chương liền kề: `BOOK_PAGE_START=61 bash …` (cả bài 14–18 theo; số bắt đầu chẵn thì lề gáy đổi bên; lưu ý data-tap trên web của bài 14 dùng số 1–12 nên chỉ khớp khi START=1).
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
@@ -129,6 +132,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - 2026-11-10 · `sed -i 's/…/…/' file` trên macOS hỏng (nuốt chuỗi thay làm hậu tố) → sửa chuỗi bằng Python `replace` có `assert count==1`.
 - 2026-11-10 · Nhánh cũ tách từ `main` đã đi xa: `git fetch` + merge `main` TRƯỚC khi sửa ruột tập, nếu không dựng lại bản đã có. Hai QR cạnh nhau thì bỏ QR phụ (chỉ giữ QR bài học).
 - 2026-11-10 · VL10 Ch.4 do 5 phiên song song soạn: đáp số đúng 100 % (Python) nhưng HS ảo vẫn thấy ~40 điểm khó dùng — ô quá hẹp, hình lộ đáp án Dự đoán, hằng số/thuật ngữ chưa có trong tập, 7/9 tham chiếu "Xem lại ở Tập" lệch ở một bài → luôn chạy checklist học sinh ảo ở mục trên trước khi in; tham chiếu Tập lấy từ nhãn thật trong `.pdf.html`, không đoán.
+- 2026-11-10 · Yêu cầu "≥1 dòng mỗi ý" cho Bài tương tự là quá thấp: dòng nửa cột 62 mm chỉ đủ ghi đáp số, đo ra mỗi ý 0–1 dòng rộng trong khi lời giải cần ~2 → 10 bài/2 trang không thể vừa đề vừa lời giải; tính trước tổng mm cần (số ý × 2 dòng × 5 mm + đề) trước khi định số bài trên giấy.
 - 2026-11-10 · 5 nhánh `claude/*` push cùng lúc → workflow tự gộp huỷ lượt chờ (concurrency) → `gh run list --workflow gop-claude-vao-main.yml`, lượt `cancelled` thì `gh run rerun <id>`.
 
 ## Cuối phiên

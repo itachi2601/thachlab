@@ -25,17 +25,17 @@
   @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
   @bottom-center{content:string(map);font:400 7.6pt/1 var(--body);letter-spacing:.2em;color:var(--ink);vertical-align:top;padding-top:6mm}
 }
-@page lesson:right{@bottom-right{content:counter(page);font:800 9.6pt/1 var(--disp);color:var(--ink);text-align:right;vertical-align:top;padding:5mm 0 0 0}}
-@page lesson:left {@bottom-left{content:counter(page);font:800 9.6pt/1 var(--disp);color:var(--ink);text-align:left;vertical-align:top;padding:5mm 0 0 0}}
+@page lesson:right{@bottom-right{content:counter(page);font:800 10.5pt/1 var(--disp);color:var(--ink);text-align:right;vertical-align:top;padding:5mm 0 0 0}}
+@page lesson:left {@bottom-left{content:counter(page);font:800 10.5pt/1 var(--disp);color:var(--ink);text-align:left;vertical-align:top;padding:5mm 0 0 0}}
 @page work{
   @top-left{content:string(chap);font:700 7.6pt/1 var(--body);letter-spacing:.14em;color:var(--g2);vertical-align:bottom;padding-bottom:3mm}
   @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
-  @bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:5mm}
+  @bottom-center{content:counter(page);font:800 10.5pt/1 var(--disp);vertical-align:top;padding-top:5mm}
 }
 @page keys{
   @top-left{content:string(chap);font:700 7.6pt/1 var(--body);letter-spacing:.14em;color:var(--g2);vertical-align:bottom;padding-bottom:3mm}
   @top-right{content:string(lesson);font:500 7.6pt/1 var(--body);color:var(--g1);text-align:right;vertical-align:bottom;padding-bottom:3mm}
-  @bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:4mm}
+  @bottom-center{content:counter(page);font:800 10.5pt/1 var(--disp);vertical-align:top;padding-top:4mm}
 }
 .lesson{string-set:chap attr(data-chap),lesson attr(data-lesson),map attr(data-map)}
 
@@ -51,7 +51,7 @@
 .pagedjs_lesson_page.pagedjs_first_page::before{display:none}
 
 /* ---------- Chữ ---------- */
-html{font-family:var(--body);font-size:9.6pt;line-height:1.62;color:var(--ink);hyphens:manual;text-align:left}
+html{font-family:var(--body);font-size:10.5pt;line-height:1.55;color:var(--ink);hyphens:manual;text-align:left}
 body{margin:0;font-variant-numeric:lining-nums}
 p{margin:0 0 2.4mm;orphans:2;widows:2}
 strong,b{font-weight:700}
@@ -97,7 +97,7 @@ ol>li::marker{font-weight:700}
 h3{display:flex;align-items:center;gap:3.2mm;margin:9mm 0 3.2mm;break-after:avoid;border-bottom:1.6pt solid var(--ink);padding-bottom:2mm;font-size:inherit}
 h3 .rn{flex:none;min-width:9.5mm;height:9.5mm;padding:0 1mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 11.6pt/9.5mm var(--disp);text-align:center}
 h3 .ht{font:800 13.6pt/1.15 var(--disp);letter-spacing:-.005em}
-h4{display:flex;gap:2.4mm;align-items:baseline;margin:6mm 0 2mm;break-after:avoid;font:700 9.6pt/1.3 var(--disp)}
+h4{display:flex;gap:2.4mm;align-items:baseline;margin:6mm 0 2mm;break-after:avoid;font:700 10.5pt/1.3 var(--disp)}
 h4 .n{flex:none;width:6.2mm;height:6.2mm;border-radius:50%;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 8.4pt/6.2mm var(--body);text-align:center;transform:translateY(-.3mm)}
 h4.trap{align-items:center}
 h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:800 7.6pt/1.2 var(--disp);letter-spacing:.16em;transform:rotate(-3deg);background:#fff;box-shadow:.8mm .8mm 0 var(--ink)}
@@ -123,12 +123,12 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .conf{font-size:8.4pt;color:var(--g1);margin:3mm 0 1.2mm;text-align:right}
 
 .think{margin:4mm 0;padding:3mm 3.4mm 1.4mm;border:1.1pt dashed var(--ink)}
-.th-h{font:800 9.6pt/1.3 var(--disp);letter-spacing:.02em;margin-bottom:2mm}
+.th-h{font:800 10.5pt/1.3 var(--disp);letter-spacing:.02em;margin-bottom:2mm}
 .think.trabai{border:1.4pt solid var(--ink);background:var(--g5)}
 .think.trabai .th-h{display:inline-block;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:1.2mm 2.6mm;margin-bottom:2.6mm}
 
 .selfq{margin:3mm 0;padding-left:3.2mm;border-left:2.4pt solid var(--ink);break-inside:avoid}
-.sq-h{display:flex;gap:2.4mm;align-items:flex-start;font-weight:700;font-size:9.6pt;line-height:1.45}
+.sq-h{display:flex;gap:2.4mm;align-items:flex-start;font-weight:700;font-size:10.5pt;line-height:1.45}
 .sq-n{flex:none;min-width:5.2mm;height:5.2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:700 7.6pt/5.2mm var(--body);text-align:center;margin-top:.4mm}
 .sq-k{font-size:7.6pt;color:var(--g2);margin-top:1mm}
 
@@ -141,7 +141,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .challenge{margin:4mm 0;border:1.4pt solid var(--ink);padding:0 3.4mm 1mm;position:relative;break-inside:avoid}
 .ch-h{margin:0 -3.4mm 2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:1.4mm 3.4mm;font:800 8.4pt/1.2 var(--disp);letter-spacing:.16em}
 .ch-i{margin-bottom:2mm;break-inside:avoid}
-.ch-q{font-size:9.6pt}
+.ch-q{font-size:10.5pt}
 
 .exp{margin:4.4mm 0;border:1.5pt solid var(--ink);break-inside:avoid}
 .exp .tbl{margin:2mm 3mm 3mm;width:calc(100% - 6mm)}
@@ -160,7 +160,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .pb-h{font:800 7.6pt/1 var(--disp);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1.6mm}
 
 .takeaway{margin:6mm 0 2mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);padding:4mm 5mm 2.6mm;break-inside:avoid}
-.takeaway .tk-h{font:800 9.6pt/1.1 var(--disp);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2.4mm;border-bottom:.8pt solid #fff;padding-bottom:1.6mm}
+.takeaway .tk-h{font:800 10.5pt/1.1 var(--disp);letter-spacing:.14em;text-transform:uppercase;margin-bottom:2.4mm;border-bottom:.8pt solid #fff;padding-bottom:1.6mm}
 .takeaway ul>li::before{background:#fff}
 .takeaway .katex{font-size:1.02em}
 
@@ -208,7 +208,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .de ol[type=a]{list-style:lower-alpha}
 .sol{border-top:2pt solid var(--ink);padding-top:2.4mm}
 .try .dl{margin-top:0}
-.recall{border:1pt dashed var(--ink);padding:2.2mm 3mm .6mm;margin:0 0 3mm;font-size:9.6pt;break-inside:avoid}
+.recall{border:1pt dashed var(--ink);padding:2.2mm 3mm .6mm;margin:0 0 3mm;font-size:10.5pt;break-inside:avoid}
 .rc-h{font:800 7.6pt/1 var(--disp);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1.4mm}
 .recall ol{margin-bottom:1mm}
 .bt-step{margin:0 0 2.6mm;padding-left:8.6mm;position:relative;break-inside:avoid}
@@ -261,7 +261,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 @page plain{margin:17mm 18mm 18mm 18mm}
 @page chapter{margin:0}
 @page free{margin:17mm 18mm 20mm 18mm}
-@page free{@bottom-center{content:counter(page);font:800 9.6pt/1 var(--disp);vertical-align:top;padding-top:5mm}}
+@page free{@bottom-center{content:counter(page);font:800 10.5pt/1 var(--disp);vertical-align:top;padding-top:5mm}}
 @page plain{@bottom-center{content:counter(page);font:700 8.4pt/1 var(--body);color:var(--g2);vertical-align:top;padding-top:5mm}}
 
 .cover{page:cover;position:relative;width:210mm;height:297mm;background:#000;color:#fff;overflow:hidden;break-after:page}
@@ -270,7 +270,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .cv-top{position:absolute;left:18mm;right:18mm;top:15mm;display:flex;justify-content:space-between;font:700 8.4pt/1 var(--body);letter-spacing:.24em;border-bottom:.9pt solid #fff;padding-bottom:3mm}
 .cv-num{position:absolute;left:12mm;top:26mm;font:800 205pt/1 var(--disp);color:transparent;-webkit-text-stroke:1.1pt #fff;letter-spacing:-.04em}
 .cv-title{position:absolute;left:18mm;top:78mm;margin:0;font:800 74pt/.9 var(--disp);letter-spacing:-.02em;color:#fff}
-.cv-sub{position:absolute;left:18mm;top:130mm;width:105mm;margin:0;font:500 9.6pt/1.45 var(--body);color:#fff}
+.cv-sub{position:absolute;left:18mm;top:130mm;width:105mm;margin:0;font:500 10.5pt/1.45 var(--body);color:#fff}
 .cv-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;justify-content:space-between;align-items:flex-end;border-top:.9pt solid #fff;padding-top:4mm}
 .cv-rules{display:flex;gap:6mm;font:800 8.4pt/1 var(--disp);letter-spacing:.18em}
 .cv-rules span+span::before{content:"→";margin-right:6mm;font-weight:400}
@@ -280,15 +280,15 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .plain{page:plain;break-before:page}
 .pg-h{margin:0 0 6mm;font:800 24pt/1.05 var(--disp);letter-spacing:-.01em;border-bottom:2pt solid var(--ink);padding-bottom:3mm;display:block}
 .pg-k{display:block;font:700 7.6pt/1 var(--body);letter-spacing:.24em;margin-bottom:3mm;color:var(--g1)}
-.lead{font-size:9.6pt;line-height:1.6;margin:0 0 6mm;max-width:150mm}
-.note-box{border:1.4pt solid var(--ink);box-shadow:1.4mm 1.4mm 0 var(--ink);padding:3.4mm 4.4mm;margin:6mm 1.4mm 6mm 0;font-size:9.6pt;line-height:1.55}
+.lead{font-size:10.5pt;line-height:1.6;margin:0 0 6mm;max-width:150mm}
+.note-box{border:1.4pt solid var(--ink);box-shadow:1.4mm 1.4mm 0 var(--ink);padding:3.4mm 4.4mm;margin:6mm 1.4mm 6mm 0;font-size:10.5pt;line-height:1.55}
 .dl-lab{font:800 8.4pt/1.3 var(--disp);letter-spacing:.06em;margin:6mm 0 1mm}
 .steps4{list-style:none;padding:0;margin:0 0 4mm;display:grid;gap:5mm}
 .steps4>li{display:grid;grid-template-columns:11mm 1fr;gap:4mm;margin:0}
 .steps4>li::before{display:none}
 .s4-n{display:inline-block;width:9mm;height:9mm;border-radius:50%;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink);font:800 11.6pt/9mm var(--disp);text-align:center}
 .steps4 h4{margin:0 0 .6mm;font:800 11.6pt/1.2 var(--disp);display:block}
-.steps4 p{margin:0;font-size:9.6pt}
+.steps4 p{margin:0;font-size:10.5pt}
 
 .sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm 7mm;margin-bottom:2mm}
 .sym{break-inside:avoid}
@@ -302,8 +302,8 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .lg-box{display:grid;gap:3.4mm;margin:2mm 0 4mm}
 .lg-r{display:grid;grid-template-columns:44mm 38mm 1fr;align-items:center;gap:4mm;border-bottom:.6pt dotted var(--g2);padding-bottom:2.4mm}
 .lg-s .lg{width:40mm;height:8mm;display:block}
-.lg-n{font:800 9.6pt/1 var(--disp)}
-.lg-d{font-size:9.6pt;color:var(--g1)}
+.lg-n{font:800 10.5pt/1 var(--disp)}
+.lg-d{font-size:10.5pt;color:var(--g1)}
 .dotgrid{height:88mm;margin-top:3mm;background-image:radial-gradient(circle,var(--g2) .5pt,transparent .6pt);background-size:5mm 5mm;background-position:2.5mm 2.5mm;border:.8pt solid var(--ink)}
 .dotgrid.full{height:236mm;margin-top:0}
 
@@ -319,12 +319,12 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .toc-extra{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
 .toc-extra div{border:1.2pt solid var(--ink);padding:3.4mm 4.4mm}
 .toc-extra b{display:block;font:800 8.4pt/1 var(--disp);letter-spacing:.16em;margin-bottom:2mm;text-transform:uppercase}
-.toc-extra span{display:block;font-size:9.6pt;line-height:1.7}
+.toc-extra span{display:block;font-size:10.5pt;line-height:1.7}
 .toc-extra span::before{content:"■ ";font-size:7.6pt;vertical-align:.15em}
 
 .metro-wrap{margin:2mm 0 6mm}
 .metro{width:100%;height:auto;display:block}
-.map-list{display:grid;grid-template-columns:1fr 1fr;gap:3mm 6mm;font-size:9.6pt}
+.map-list{display:grid;grid-template-columns:1fr 1fr;gap:3mm 6mm;font-size:10.5pt}
 .map-list div{border-top:1.4pt solid var(--ink);padding-top:1.6mm}
 .map-list b{display:block;font:800 8.4pt var(--disp);letter-spacing:.06em}
 
@@ -338,7 +338,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .co-q i{font-style:normal;border-bottom:1.4pt solid #fff}
 .co-foot{position:absolute;left:18mm;right:18mm;bottom:14mm;display:flex;gap:8mm;font:800 8.4pt/1 var(--disp);letter-spacing:.18em;border-top:.9pt solid #fff;padding-top:4mm}
 
-.warm-q{display:flex;gap:4mm;align-items:flex-start;margin:7mm 0 0;font-size:9.6pt;line-height:1.45}
+.warm-q{display:flex;gap:4mm;align-items:flex-start;margin:7mm 0 0;font-size:10.5pt;line-height:1.45}
 .warm-q .s4-n{flex:none}
 .free{page:free;break-before:page}
 .free-h{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2pt solid var(--ink);padding-bottom:2.4mm;margin-bottom:4mm}
@@ -347,7 +347,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .sum-grid{display:grid;gap:4mm}
 .sum-b{display:grid;grid-template-columns:16mm 1fr;gap:4mm;border-top:1.4pt solid var(--ink);padding-top:2.6mm;break-inside:avoid}
 .sum-n{font:800 24pt/1 var(--disp);color:transparent;-webkit-text-stroke:.9pt var(--ink)}
-.sum-c h4{margin:0 0 1.4mm;font:800 9.6pt/1.2 var(--disp);display:block}
+.sum-c h4{margin:0 0 1.4mm;font:800 10.5pt/1.2 var(--disp);display:block}
 .sum-c ul{margin:0;font-size:8.4pt;line-height:1.45;columns:2;column-gap:6mm}
 .sum-c li{margin:0 0 .6mm;break-inside:avoid}
 .selfeval td:not(:first-child),.selfeval th:not(:first-child){text-align:center;width:16mm}
@@ -355,7 +355,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
 .selfeval .cb{width:5mm;height:5mm}
 
 .k-q{font-weight:700;font-style:italic;color:var(--g1)}
-.lead-p{font-size:9.6pt;line-height:1.62}
+.lead-p{font-size:10.5pt;line-height:1.62}
 .lead-p::first-letter{font:800 30pt/.8 var(--disp);float:left;margin:1.2mm 1.6mm 0 0;padding:1mm 1.4mm .8mm;background:var(--g5);color:var(--ink);border:1.1pt solid var(--ink)}
 
 
@@ -363,7 +363,7 @@ h4.trap .trap-l{flex:none;border:1.3pt solid var(--ink);padding:.7mm 2.2mm;font:
    v2 — sách mỏng, dùng trên lớp cùng web; không nền đen chữ trắng
    ====================================================================== */
 :root{--pitch:7.5mm}
-html{font-size:9.6pt}
+html{font-size:10.5pt}
 .pagedjs_lesson_page.pagedjs_right_page,.pagedjs_lesson_page.pagedjs_left_page{background:none}
 .pagedjs_lesson_page::before{display:none}
 
@@ -416,7 +416,7 @@ html{font-size:9.6pt}
 .try{margin-bottom:5mm}
 .sq-k{font-size:7.6pt;color:var(--g2);margin-top:1mm}
 
-html{font-size:9.6pt}
+html{font-size:10.5pt}
 @page lesson:right{margin:15mm 18mm 18mm 18mm}
 @page lesson:left{margin:15mm 18mm 18mm 18mm}
 @page lesson:first{margin:15mm 18mm 18mm 18mm}
@@ -433,23 +433,23 @@ h4{margin:4.6mm 0 1.6mm}
 .pt{break-inside:auto}
 
 /* ---------- chữ to hơn, dòng thoáng hơn ---------- */
-html{font-size:9.6pt;line-height:1.72}
+html{font-size:10.5pt;line-height:1.72}
 p{margin:0 0 3mm}
 li{margin:0 0 1.4mm}
 .katex{font-size:1.06em}
 .fig figcaption{font-size:8.4pt}
-.tbl{font-size:9.6pt;line-height:1.55}
+.tbl{font-size:10.5pt;line-height:1.55}
 .q-t p{margin:0 0 2mm}
 .opts li{line-height:1.5}
 .q-k,.sq-k,.q-why{font-size:7.6pt}
 .exp-w,.gn-l{font-size:8.4pt}
 .keys{font-size:8.4pt;line-height:1.55}
 .k-t small{font-size:7.6pt}
-.ob-t{font-size:9.6pt}
+.ob-t{font-size:10.5pt}
 .use-row{font-size:8.4pt}
-.sq-h,.ch-q{font-size:9.6pt}
-.step{font-size:9.6pt}
-.recall{font-size:9.6pt}
+.sq-h,.ch-q{font-size:10.5pt}
+.step{font-size:10.5pt}
+.recall{font-size:10.5pt}
 
 /* ---------- ô điền khuyết ---------- */
 .fb{display:inline-block;position:relative;min-width:16mm;height:1.5em;border-bottom:1.1pt dotted var(--ink);vertical-align:-.45em;margin:0 .6mm;background:linear-gradient(transparent 80%,transparent 0)}
@@ -470,23 +470,23 @@ li{margin:0 0 1.4mm}
 .websec .qr{display:block;flex:none;width:28mm;height:28mm;padding:1.4mm;border:1pt solid var(--ink)}
 .websec .qr svg{width:100%;height:100%;display:block}
 .ws-h{font:800 11.6pt/1.2 var(--disp);margin-bottom:1.4mm}
-.websec p{margin:0;font-size:9.6pt}
+.websec p{margin:0;font-size:10.5pt}
 .pt{break-inside:avoid}
 .tbl.data{break-inside:avoid}
 
-/* ---- v4: chữ nhỏ gọn, thang cỡ đều (7.6 / 8.4 / 9.6 / 11.6 / 13.6) ---- */
-html{font-size:9.6pt;line-height:1.5}
+/* ---- v4: thang cỡ đều (7.6 / 8.4 / 10.5 / 11.6 / 13.6); thân 10,5pt từ 10/11/2026 (cũ 9,6) ---- */
+html{font-size:10.5pt;line-height:1.55}
 p{margin:0 0 2.2mm}
 li{margin:0 0 .8mm}
 .katex{font-size:1em}
 .katex-display{margin:1.6mm 0}
 h3{margin:5mm 0 2mm}
 h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
-.lead-p{font-size:9.6pt;line-height:1.5}
+.lead-p{font-size:10.5pt;line-height:1.5}
 .lead-p::first-letter{font-size:22pt}
 .tbl{font-size:8.4pt;line-height:1.4}
 .keys{font-size:8.4pt;line-height:1.45}
-.opts li,.sq-h,.ch-q,.step,.recall{font-size:9.6pt;line-height:1.45}
+.opts li,.sq-h,.ch-q,.step,.recall{font-size:10.5pt;line-height:1.45}
 .fig figcaption{font-size:8.4pt}
 .fig svg{max-height:56mm}
 .key,.quiz,.think,.exp,.problem,.objectives{margin-top:2.6mm;margin-bottom:2.6mm}
@@ -503,7 +503,7 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 .websec{display:grid;grid-template-columns:1fr 1fr;gap:5mm;border:1.4pt solid var(--ink);box-shadow:1.3mm 1.3mm 0 var(--ink);padding:3.4mm 4mm;margin:4mm 1.3mm 0 0;align-items:start}
 .ws-i{display:flex;gap:3mm;align-items:center}
 .websec .qr{width:23mm;height:23mm;padding:1.2mm;flex:none}
-.ws-h{font:800 9.6pt/1.2 var(--disp);margin-bottom:1mm}
+.ws-h{font:800 10.5pt/1.2 var(--disp);margin-bottom:1mm}
 .websec p{font-size:8.4pt;line-height:1.4}
 
 .pg-h{font-size:19pt;margin-bottom:4mm;padding-bottom:2mm}
@@ -516,7 +516,7 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 .lg-box{gap:2mm;margin:1mm 0 2mm}
 .lg-r{padding-bottom:1.2mm}
 .note-box{margin:4mm 1.4mm 3mm 0}
-.lead{font-size:9.6pt}
+.lead{font-size:10.5pt}
 
 .dang-top{break-inside:auto}
 .dang-h{break-after:avoid}
@@ -568,7 +568,7 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 .lt-h .lvl{padding:1.1mm 2mm}
 .lt-rel{font:700 7.6pt/1 var(--body);color:var(--g1)}
 .lt-k{margin-left:auto;font:400 7.6pt/1 var(--body);color:var(--g2)}
-.lt-t{font:700 9.6pt/1.3 var(--disp);margin-bottom:1.2mm}
+.lt-t{font:700 10.5pt/1.3 var(--disp);margin-bottom:1.2mm}
 .lt p{margin:0 0 1.4mm}
 .lt ol{margin-bottom:1mm}
 .lt .fig-sm{width:62%;margin:1.6mm auto;padding:1.4mm}
@@ -606,10 +606,10 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 .tiet{break-after:auto}   /* break-after:avoid trên vạch cao 0 làm Paged.js dàn lại → trang trùng + trang trống (bài 5, v6) */
 
 /* v6b — mục lục đủ một trang */
-.toc-full li{padding:1.6mm 0;font-size:9.6pt;gap:3mm}
+.toc-full li{padding:1.6mm 0;font-size:10.5pt;gap:3mm}
 .toc-full .t-n{font-size:15pt;width:12mm}
 .toc-full .t-n0{width:12mm}
-.toc-full .t-t{font-size:9.6pt}
+.toc-full .t-t{font-size:10.5pt}
 .toc-full .t-sub{font:400 7.6pt/1.3 var(--body);color:var(--g1);margin-top:.6mm}
 .toc-full .t-sub b{font-weight:700;color:var(--ink)}
 .toc-full .t-p{font-size:11.6pt}
