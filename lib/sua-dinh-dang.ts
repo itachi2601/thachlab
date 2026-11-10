@@ -22,10 +22,10 @@ function tach(s: string, fn: (t: string) => string, fm: (t: string) => string): 
   return out.join("");
 }
 
-export function suaChuoi(input: string, ngu?: { canhNhiet?: boolean; dauCau?: boolean }): KetQua {
+export function suaChuoi(input: string, ngu?: { canhNhiet?: boolean; dauCau?: boolean; ep?: boolean }): KetQua {
   const sua = new Set<MaSua>();
   const nghiNgo: string[] = [];
-  const canhNhiet = ngu?.canhNhiet ?? NHIET.test(input);
+  const canhNhiet = ngu?.ep || (ngu?.canhNhiet ?? NHIET.test(input));
   let s = input;
   const rep = (t: string, re: RegExp, by: string | ((...a: string[]) => string), ma: MaSua) => {
     const n = t.replace(re, by as never);
@@ -48,6 +48,13 @@ export function suaChuoi(input: string, ngu?: { canhNhiet?: boolean; dauCau?: bo
         sua.add("doC");
         return `${a} °C`;
       });
+      // "t0C" / "t(0C)" / "(0C)" — đơn vị độ C mất dấu trong nhãn
+      if (canhNhiet) t = rep(t, /(?<![A-Za-z\d])(t\s?)?\(?0C\)?(?![A-Za-z0-9])/g, (_m, tt) => `${tt ? "t " : ""}(°C)`, "doC");
+      // Thầy đã duyệt từng câu (ep): "100 C" có dấu cách là 100 °C; "105 Pa" không hệ số là 10⁵ Pa
+      if (ngu?.ep) {
+        t = rep(t, /(?<![\d.,])(\d+(?:,\d+)?) C(?![A-Za-z0-9])/g, (_m, a) => `${a} °C`, "doC");
+        t = rep(t, /(?<![\d,.^{$])10([4-9]|1\d|2\d)(\s*)(?=Pa|J|N|W|Hz|kg|eV|electron)/g, (_m, k, sp) => `$10^{${k}}$${sp || " "}`, "muSauDau");
+      }
       // Đơn vị mũ: m/s2, cm3, m2, kg/m3 (đơn vị chiều dài/thời gian ngay sau số hoặc "/")
       t = rep(t, /(?<=\d\s?|\/)(m|cm|dm|mm|km)([23])(?![\d\w])/g, (_m, u, k) => `${u}${k === "2" ? "²" : "³"}`, "donViMu");
       t = rep(t, /(?<=\/)(s|h)2(?![\d\w])/g, (_m, u) => `${u}²`, "donViMu");
@@ -81,13 +88,13 @@ export function suaChuoi(input: string, ngu?: { canhNhiet?: boolean; dauCau?: bo
 const BO_QUA = /^(image|images|img|src|url|figure|svg|id|bank_id|type|qtype|answer|correct|key|level|difficulty)$/i;
 
 /** Sửa mọi chuỗi trong một câu hỏi (question/options/statements/explanation…); trả về bản mới + mã sửa + nghi ngờ. */
-export function suaCau(q: unknown): { q: unknown; sua: MaSua[]; nghiNgo: string[] } {
+export function suaCau(q: unknown, ep = false): { q: unknown; sua: MaSua[]; nghiNgo: string[] } {
   const sua = new Set<MaSua>();
   const nghi: string[] = [];
-  const canhNhiet = NHIET.test(JSON.stringify(q));
+  const canhNhiet = ep || NHIET.test(JSON.stringify(q));
   const walk = (v: unknown, key: string): unknown => {
     if (typeof v === "string") {
-      const r = suaChuoi(v, { canhNhiet, dauCau: key === "question" });
+      const r = suaChuoi(v, { canhNhiet, dauCau: key === "question", ep });
       r.sua.forEach((x) => sua.add(x));
       nghi.push(...r.nghiNgo);
       return r.text;
