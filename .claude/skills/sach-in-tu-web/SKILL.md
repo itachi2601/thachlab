@@ -108,6 +108,18 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - **Học sinh ảo dùng thử trước khi in** (10/11): mở phiên riêng đóng vai HS trung bình làm thử cả quyển, tính lại đáp số bằng Python,
   xếp lỗi A (sai/vô nghĩa) · B (khó dùng) · C (gợi ý); sửa A và B rồi mới in. Phiên con chạy Sonnet dù yêu cầu Opus (không nâng được model).
 - **Bài 15–18 (lesson 16–19) dùng khung chung** `scripts/ruot-tap/khung.mjs` (CSS, trang 8–12 sinh tự động, bài tập mẫu `btm.dang`, chẩn đoán dư mm) + `hinh-ch4.mjs` (hình): chạy `node scripts/ruot-tap/bai15.mjs` … `bai18.mjs`. Bài 14 giữ bản riêng `bai14.mjs`. Bài mới: chép `bai18.mjs`, đổi `khoiTao({bai, lid})`, nội dung 5 trang đầu + mảng `dang`, thêm hình vào `hinh-ch4.mjs`.
+- **Khung chung có bố cục bài 14 cho lớp/chương khác** (VL10 Ch.4, 10/11): `khoiTao({bai, lid, lop: 10, baiDau: 23})` (đánh số trang
+  liền mạch từ `baiDau`) + `dung({…, tuongTu: {trang:[[{t,de,k}…],[…]], dap:[…], tieuDe:[…]}})` → tr.8–9 Bài tương tự (đáp số lật
+  ngược), 10–11 sửa bài, 12 làm lại + QR; không có `tuongTu` thì bố cục cũ. `btm.dang[i].cot: 2` chia ô đáp số 2 cột khi đáp số dài/kép.
+  Mỗi bài một file `l10-baiN.mjs` + hình riêng `hinh-l10-baiN.mjs` (không dùng chung file hình → phiên song song không xung đột);
+  dựng cả quyển `bash scripts/ruot-tap/dung-l10-chuong4.sh`. Soạn cả chương: mỗi bài một phiên song song (nhánh riêng, tự gộp main),
+  phiên chính chỉ giữ `khung.mjs` + script dựng quyển.
+- **Checklist học sinh ảo cho ruột tập** (rút từ đợt VL10 Ch.4 — HS ảo bắt 40+ điểm dù đáp số đúng hết): (1) ô điền có đúng MỘT
+  đáp án, đủ rộng (số ≥12 mm, chữ ≥25 mm, phân số cao ≥9 mm); (2) hình/thước đo/chú thích cạnh ô Dự đoán không lộ đáp án (vạch
+  vẽ đúng tỉ lệ, dấu "?" đặt đúng vị trí, cột năng lượng vẽ bằng nhau đều là lộ); (3) mọi hằng số, đơn vị lạ (HP, CV, cal), danh
+  sách (lực thế) và thuật ngữ ô hỏi tới đã có trong tập hoặc in sẵn; (4) tham chiếu "Xem lại ở Tập x·y" trỏ đúng ô; (5) số dòng
+  kẻ ≥ số ý; (6) số + đơn vị không gãy dòng (`nw()`); (7) chữ trong hình ≥7 pt ở cỡ in; (8) bấm giờ: tr.8–9 (10 bài tương tự)
+  cần ≥40′ với HS trung bình — thầy quyết phần làm trên lớp/ở nhà.
 - **Quyển = chương, đánh số trang liền mạch** (thầy chốt 26/10): bài 14 = tr.1–12, 15 = 13–24 … 18 = 49–60; chân trang "Bài N · tr. X", nhãn "Tập X·ô" và mọi tham chiếu (tr.10, trang 8, "Xem lại ở Tập") dùng số tuyệt đối (`khung.mjs`: `off`). Dựng cả quyển: `bash scripts/ruot-tap/dung-chuong4.sh` → `out/ruot-tap-vl12-chuong4.pdf` (60 trang, `pdfunite`). Nối tiếp chương liền kề: `BOOK_PAGE_START=61 bash …` (cả bài 14–18 theo; số bắt đầu chẵn thì lề gáy đổi bên; lưu ý data-tap trên web của bài 14 dùng số 1–12 nên chỉ khớp khi START=1).
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
@@ -116,6 +128,8 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - 2026-11-10 · Lỗi "chữ đậm lẫn Helvetica": khai báo `@font-face` nhiều tệp con (latin/vietnamese) mà không có `unicode-range` thì tệp sau đè tệp trước, ký tự thiếu rơi về font hệ thống → mỗi tệp con PHẢI kèm `unicode-range` (đã có ở `bai14.mjs`). Kiểm bằng `pdffonts <pdf>`: không được còn Helvetica/Lucida/Hiragino (còn sót ★, φ, chỉ số trên ở bài 14 tr.1/5/6).
 - 2026-11-10 · `sed -i 's/…/…/' file` trên macOS hỏng (nuốt chuỗi thay làm hậu tố) → sửa chuỗi bằng Python `replace` có `assert count==1`.
 - 2026-11-10 · Nhánh cũ tách từ `main` đã đi xa: `git fetch` + merge `main` TRƯỚC khi sửa ruột tập, nếu không dựng lại bản đã có. Hai QR cạnh nhau thì bỏ QR phụ (chỉ giữ QR bài học).
+- 2026-11-10 · VL10 Ch.4 do 5 phiên song song soạn: đáp số đúng 100 % (Python) nhưng HS ảo vẫn thấy ~40 điểm khó dùng — ô quá hẹp, hình lộ đáp án Dự đoán, hằng số/thuật ngữ chưa có trong tập, 7/9 tham chiếu "Xem lại ở Tập" lệch ở một bài → luôn chạy checklist học sinh ảo ở mục trên trước khi in; tham chiếu Tập lấy từ nhãn thật trong `.pdf.html`, không đoán.
+- 2026-11-10 · 5 nhánh `claude/*` push cùng lúc → workflow tự gộp huỷ lượt chờ (concurrency) → `gh run list --workflow gop-claude-vao-main.yml`, lượt `cancelled` thì `gh run rerun <id>`.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
