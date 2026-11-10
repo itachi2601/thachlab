@@ -3,7 +3,7 @@
 #   so_lieu_mau: s = 0,20..1,00 m -> t do = 0,205; 0,289; 0,353; 0,407; 0,455 s -> g = 9,52; 9,58; 9,63; 9,66; 9,66
 #                g trung binh 9,610 (ghi_chu). tham_so: g that 9,8; tau = 0,003 s (KHONG neu tren man: cau sau hop
 #                trong bai hoi "hang nao lech nhieu nhat, vi sao" -> clip khong to sang hang lech, khong noi nguyen nhan).
-#   Cau chot: quen he so 2 (hien_tuong_hay_sai) o hang s = 1,00 m: 1,00/0,455^2 = 4,83 -> chua tung hien tren man.
+#   Cau chot: s = 0,70 m (chua do) -> g ~ 9,645, giua 9,63 va 9,66; dap so chua tung hien tren man.
 # Truc chinh: gia dung + cong quang doi vi tri + dong ho dem/dung + bang s-t, roi truc so g voi vach 9,8
 #   (khac roitudo2: day doi + bong bi moi 0,1 s; khac dog2/dog3: do thi s-t^2, dem khung).
 # Canh: Du doan (K10: chi cau hoi + hinh) -> Tien hanh (5 lan tha) -> Dap an (cot g + truc so) -> Rut ra
@@ -61,7 +61,7 @@ def gate(d, s, beam=True, label=True):
         for x in range(int(BX - 44), int(BX + 44), 14):
             d.line([(x, y), (min(x + 8, BX + 44), y)], fill=RED, width=3)
     if label:
-        text(d, (BX + 92, y), "cổng quang", 36, NAVY, anchor="lm")
+        text(d, (BX + 84, y), "cổng quang", 36, NAVY, anchor="lm")
 
 def sandbox(d):
     d.rectangle([BX - 70, SAND_Y, BX + 70, SAND_Y + 52], fill=SAND, outline=WOOD_D, width=3)
@@ -101,14 +101,17 @@ def s_hook(img, d, t, sc):
         d.rounded_rectangle([QX0 + 40, y0 + 900, QX0 + 40 + (QX1 - QX0 - 80) * (1 - p), y0 + 914], radius=7, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh (5 lan tha) ----------------
-SLOW, C0, MOVE, HOLD = 2.6, 0.5, 0.5, 0.75
+SLOW, C0, MOVE, REST = 2.6, 0.5, 0.4, 0.5
+SMAX = (SAND_Y - BR - Y0) / PXM                       # bi cham mat khay cat
+T_LAND = (2 * SMAX / G_TRUE) ** 0.5 + TAU             # thoi gian that tu luc ngat dien toi khi cham khay
 def plan():
-    """Moi lan i: (c = bat dau doi cong, r = luc ngat dien, e = luc dong ho dung)."""
+    """Moi lan i: (c = bat dau doi cong, r = luc ngat dien, e = luc dong ho dung). Lan sau chi bat dau khi bi
+    da nam yen trong khay >= REST s."""
     out, c = [], C0
     for i, (s, td, g) in enumerate(ROWS):
-        r = c + (MOVE if i else 0.0) + 0.3
+        r = c + (MOVE if i else 0.0) + 0.25
         e = r + td * SLOW
-        out.append((c, r, e)); c = e + HOLD
+        out.append((c, r, e)); c = r + T_LAND * SLOW + REST
     return out
 PLAN = plan()
 
@@ -147,7 +150,7 @@ def table_st(d, nrow, hi=-1, box=(600, 610, 1040, 1300)):
 def s_do(img, d, t, sc):
     i, sg, sb, ka, shown, nrow, off = state(t)
     ruler(d); sandbox(d); gate(d, sg); magnet(d, on=not off)
-    if off and t - PLAN[i][1] < 0.9:
+    if off:                                           # con ngat dien tu luc tha toi luc bi nam trong khay
         text(d, (BX + 62, 322), "ngắt điện", 36, RED, anchor="lm")
     else:
         text(d, (BX + 62, 322), "nam châm điện", 36, NAVY, anchor="lm")
@@ -175,6 +178,7 @@ def numline(d, y, kdots=lambda j: 1.0, alpha=1.0):
     for yy in range(int(y - 250), int(y - 16), 22):
         d.line([(x8, yy), (x8, yy + 12)], fill=A(GREEN, alpha), width=4)
     text(d, (x8, y - 280), "9,8", 40, GREEN, alpha=alpha)
+    text(d, (NX0 - 30, y + 110), "g (m/s²)", 36, MUTED, bold=False, anchor="lm", alpha=alpha)
     seen = {}
     for j, (_, _, g) in enumerate(ROWS):
         k = kdots(j) * alpha
@@ -202,7 +206,6 @@ def s_dapan(img, d, t, sc):
     kn = appear(t, M[1] - 0.1, 0.4)
     if kn > 0:
         numline(d, 1420, kdots=lambda j: appear(t, M[1] + 0.2 + 0.25 * j, 0.3), alpha=kn)
-        text(d, (NX0 - 30, 1530), "g (m/s²)", 36, MUTED, bold=False, anchor="lm", alpha=kn)
     ka = appear(t, M[1] + 1.8, 0.4)
     lb = "ĐÁP ÁN · cả năm đều nhỏ hơn 9,8"
     pw = tw(d, lb, F(38)) + 56
@@ -215,34 +218,34 @@ def s_rutra(img, d, t, sc):
     card(d, (40, 270, 1040, 900), fill=WHITE, outline=LIGHT, w=3)
     numline(d, 700)
     ya = 520; xa, xb = gx(9.52), gx(9.66)                 # ngoac "sat nhau"
-    k1 = appear(t, 0.5, 0.4)
+    k1 = 1.0
     if k1 > 0:
         d.line([(xa, ya + 20), (xa, ya), (xb, ya), (xb, ya + 20)], fill=A(ORANGE, k1), width=4)
         text(d, ((xa + xb) / 2, ya - 40), "sát nhau", 40, ORANGE, alpha=k1)
-    k2 = appear(t, 1.0, 0.45)
+    k2 = 1.0
     card(d, (40, 930, 1040, 1170), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=5)
     ctext(d, 1000, "Cùng một nơi:", 44, INK, alpha=k2)
     ctext(d, 1090, "bi rơi với cùng một gia tốc", 46, GREEN, alpha=k2)
-    k3 = appear(t, M[1] - 0.1, 0.45)
+    k3 = appear(t, M[1] + 0.05, 0.35)
     if k3 > 0:
         y0 = 1200 + (1 - k3) * 30
         card(d, (40, y0, 1040, y0 + 390), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         ctext(d, y0 + 60, "Chưa nói được", 44, NAVY, alpha=k3)
-        kk = k3 * appear(t, M[1] + 0.4, 0.4)
+        kk = k3
         card(d, (80, y0 + 120, 1000, y0 + 350), fill=A((254, 242, 242), kk), outline=A(RED, kk), r=24, w=4)
         ctext(d, y0 + 235, "Vì sao cả năm đều dưới 9,8?", 48, RED, alpha=kk)
 
 # ---------------- canh 5: Bay ----------------
 def s_bay(img, d, t, sc):
-    card(d, (40, 265, 1040, 815), fill=WHITE, outline=LIGHT, w=3)
+    card(d, (40, 265, 1040, 850), fill=WHITE, outline=LIGHT, w=3)
     numline(d, 690)
     kk = appear(t, 1.6, 0.45)
     if kk > 0:                                         # duong trung binh hien CUNG luc chu ket luan
         xm = gx(G_TB)
         d.line([(xm, 400), (xm, 676)], fill=A(BLUE, kk), width=5)
         text(d, (xm, 370), "TB 9,61", 40, BLUE, alpha=kk)
-    a1 = appear(t, 0.2, 0.45); y0 = 845
-    card(d, (40, y0, 1040, y0 + 745), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
+    a1 = 1.0; y0 = 870
+    card(d, (40, y0, 1040, y0 + 720), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
     pw = tw(d, "BẪY", F(38)) + 52
     card(d, (W / 2 - pw / 2, y0 + 30, W / 2 + pw / 2, y0 + 94), fill=A(RED, a1), r=32)
     text(d, (W / 2, y0 + 62), "BẪY", 38, WHITE, alpha=a1)
@@ -253,29 +256,37 @@ def s_bay(img, d, t, sc):
     if ks > 0:
         d.line([(xq - 6, yy + 2), (xq - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=5)
         text(d, (xq - 40, yy), "✗", 52, RED, alpha=ks)
-    card(d, (90, y0 + 320, 990, y0 + 690), fill=A((239, 246, 255), kk), r=24)
-    ctext(d, y0 + 445, "Trung bình 9,61", 54, BLUE, alpha=kk)
-    ctext(d, y0 + 560, "vẫn nhỏ hơn 9,8", 54, NAVY, alpha=kk)
+    card(d, (90, y0 + 310, 990, y0 + 670), fill=A((239, 246, 255), kk), r=24)
+    ctext(d, y0 + 435, "Trung bình 9,61", 54, BLUE, alpha=kk)
+    ctext(d, y0 + 550, "vẫn nhỏ hơn 9,8", 54, NAVY, alpha=kk)
 
 # ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
-    M = sc["M"]
-    def body(d, t, k):
-        ctext(d, 870, "Quên số 2, tính g = s/t² ở hàng s = 1,00 m. Ra khoảng bao nhiêu?", 46, INK,
-              maxw=880, alpha=appear(t, M[0] + 0.4, 0.5))
-        kh = appear(t, M[0] + 2.6, 0.5)
-        if kh <= 0: return
-        card(d, (110, 1180, 970, 1420), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=3)
-        ctext(d, 1240, "Gợi ý", 40, INK, alpha=kh)
-        ctext(d, 1340, "Đồng hồ hàng này: 0,455 s", 42, INK, alpha=kh)
-    chot_hoi(d, t, sc, "5 quãng rơi cho g sát nhau,\ngần 9,8 m/s²", "", body=body)
+    """Tu ve (thay chot_hoi) de hop THU NGHI co theo noi dung. Cau hoi: quang roi chua do (0,70 m, trong mien tham_so) -> mo hinh kho:
+    t = sqrt(1,4/9,8) + 0,003 = 0,381 s -> g = 9,645, nam giua 9,63 va 9,66 (hai so da do), khong noi cong thuc, khong suy ra bang chia doi so tren man."""
+    M = sc["M"]; k0 = appear(t, 0.2, 0.5)
+    card(d, (60, 270, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    ctext(d, 415, "5 quãng rơi cho g sát nhau,\ngần 9,8 m/s²", 52, GREEN, maxw=860, alpha=k0)
+    k1 = appear(t, M[0] + 0.1, 0.5)
+    if k1 <= 0: return
+    card(d, (40, 610, 1040, 1300), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pw = tw(d, "THỬ NGHĨ", F(38)) + 52
+    card(d, (W / 2 - pw / 2, 640, W / 2 + pw / 2, 704), fill=A(ORANGE, k1), r=32)
+    text(d, (W / 2, 672), "THỬ NGHĨ", 38, WHITE, alpha=k1)
+    ctext(d, 840, "Đặt cổng quang ở 0,70 m (chưa đo). g tính ra nằm trong khoảng nào?", 46, INK,
+          maxw=880, alpha=appear(t, M[0] + 0.4, 0.5))
+    kh = appear(t, M[0] + 2.6, 0.5)
+    if kh <= 0: return
+    card(d, (110, 1010, 970, 1250), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=3)
+    ctext(d, 1070, "Gợi ý", 40, INK, alpha=kh)
+    ctext(d, 1170, "Xem hai hàng kề 0,70 m", 42, INK, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, r, b, e = sc["hook"], sc["do"], sc["dapan"], sc["rutra"], sc["bay"], sc["end"]
     cs = [(h["t0"] + h["M"][0] + 0.4, "open"), (h["t0"] + h["T"] - 0.8, "ding")]
     for c, rr, ee in PLAN: cs.append((do["t0"] + rr, "tap"))
-    cs += [(da["t0"] + da["M"][1] + 1.8, "ding"), (r["t0"] + r["M"][1] - 0.1, "tap"),
+    cs += [(da["t0"] + da["M"][1] + 1.8, "ding"), (r["t0"] + r["M"][1] + 0.05, "tap"),
            (b["t0"] + 0.2, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
     return cs
 
