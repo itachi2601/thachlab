@@ -56,15 +56,14 @@ export function khoiTao({ bai, lid, ten, sub = 'Vật lí 12 · Chương 4: Vậ
   const abs = (t) => String(t).replace(/^(\d+)/, (_, a) => Number(a) + off);
   const absAll = (s) => s.replace(/(\d+)(·\d+)/g, (_, a, k) => Number(a) + off + k);
   const LINK = `https://thachlab.id.vn/lop-hoc/bai/?id=${lid}#muc=kiem-tra`;
-  const qrSvg = qrSvgOf(LINK), qrHome = qrSvgOf('https://thachlab.id.vn/');
+  const qrSvg = qrSvgOf(LINK);
   const tag = (t) => `<span class="tag">Tập ${abs(t)}</span>`;
   const foot = (n) => `<div class="foot"><span></span><span>Bài ${bai} · tr. ${n + off}</span></div>`;
   const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
   const h3 = (i, t, tg = '') => `<h3><i>${i}</i>${t}</h3>${tg ? tag(tg) : ''}`;
   const card = (inner, extra = '', cls = '') => `<div class="card ${cls}" style="${extra}">${inner}</div>`;
-  const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div><small>Bài học này</small></div><div class="gtq"><div class="qr">${qrHome}</div><small>Trang chủ</small></div><div>
-<b>Xem lại bài này trên thachlab.id.vn:</b> quét mã <b>Bài học này</b> để mở lý thuyết, thí nghiệm, mô phỏng, tự kiểm tra và bài tập mẫu
-đúng bài ${bai}; mã <b>Trang chủ</b> để vào các bài khác.</div></div>`;
+  const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
+<b>Xem lại bài ${bai} trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 
   const chua = (k) => `<div class="chb"><div class="chh"><b>Câu ……</b> <span>sai vì: <span class="ck"></span>đọc đề <span class="ck"></span>công thức <span class="ck"></span>tính <span class="ck"></span>đơn vị</span><span><span class="ck"></span>làm lại (tr.${10 + off})</span></div>${lines(k)}</div>`;
   const fixPage = (n, tra, { title, lap = false, ks = [5, 5, 5, 4, 4] }) => `<section class="page">
@@ -150,7 +149,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
 .gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
-.gtq{text-align:center;flex:none}.gtq .qr{width:22mm;height:22mm;padding:1.5mm;border:0}.gtq .qr svg{width:19mm;height:19mm}.gtq small{display:block;font-size:var(--fs-sm)}
+.gtq{text-align:center;flex:none}.gtq .qr{width:34mm;height:34mm;padding:2mm;border:0}.gtq .qr svg{width:30mm;height:30mm}.gtq small{display:block;font-size:var(--fs-sm)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
 .chh{display:flex;justify-content:space-between;gap:2mm;align-items:center;font-size:var(--fs-sm);line-height:5mm;white-space:nowrap}.chh .ck{width:3.6mm;height:3.6mm;border-radius:.5mm;vertical-align:-.7mm;margin:0 .4mm 0 1mm}

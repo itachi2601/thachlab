@@ -68,8 +68,9 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   giảng"/"làm cùng thầy", không hint trong ngoặc sau tiêu đề mục; chỉ giữ nhãn cho biết ghi gì. Không Ngày/Tên đầu trang (tờ đóng
   thành sách).
 - **QR chỉ ở trang cuối, chỉ để xem lại bài** (thầy chốt 25/10 tối): không in tên web ở đầu/chân trang, không QR giữa tập, không
-  câu giới thiệu/quảng cáo kiểu "mượn tập của bạn". Trang ghi chú cuối có một ô mảnh viền xám (`gioiThieu`): 2 QR nhỏ 22 mm
-  (bài học này · trang chủ) + 1–2 dòng chữ phụ "Xem lại bài này trên thachlab.id.vn: quét mã…".
+  câu giới thiệu/quảng cáo kiểu "mượn tập của bạn". Ô cuối trang cuối (`gioiThieu`, mảnh viền xám) có **MỘT mã QR 34 mm = đúng bài học này** + 1 dòng "Xem lại bài N trên
+  thachlab.id.vn: quét mã bên…". **Không QR Trang chủ** (thầy chốt 10/11: hai mã cạnh nhau, máy quét dễ trúng nhầm mã cần dùng). Kiểm QR
+  bằng `pdftoppm -r 300 -f 12 -l 12` + `npx tsx scripts/ruot-tap/giai-ma-qr.mts`.
 - **Hình minh hoạ bắt buộc** (thầy 25/10: trang không hình là thiếu): mỗi trang học/bài tập có ≥1 hình SVG tự vẽ trong
   `hinh.mjs`, mỗi hình trả lời một câu hỏi (H1), đặt CẠNH khối chữ bằng `.fig-side` (grid `1fr 40–46mm`) để không tốn
   chiều cao; hình ở ô giải dạng khó là gợi ý nhìn trước khi tính (để trống tỉ số/kết quả cho HS điền). Chữ trong SVG
@@ -87,12 +88,34 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   Hình Halliday chữ nhỏ (≈ 8 pt gốc) → thu còn 52–62 mm thì chữ trong hình không đọc được: chú thích tiếng Việt PHẢI nêu ý chính; muốn đọc được nhãn thì để rộng ≥ 84 mm (chu trình p–p).
   **Ảnh cắt từ sách và PDF chứa chúng chỉ giữ trên Mac, không đẩy lên GitHub** (`scripts/ruot-tap/anh/` và `out/*.pdf` đã
   gitignore từ 25/10) — có bản sao ở ngoài repo vì mất là phải cắt lại.
-- **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 5 ô Thầy chữa.
-  Ghi chú tự do đúng 2 trang/bài; không ô "câu hỏi cho trợ giảng".
+- **Trang sửa bài không có lưới đáp án**: đề làm trên web nên chỉ dòng "Câu sai P.I/P.II/P.III" + 4–5 ô Thầy chữa, mỗi ô có tick lí do
+  và dòng "Mẹo nhớ" (ghi mẹo ngắn, không chép lại lời giải). Hai trang sửa bài phải KHÁC nhau: trang kiểm tra chương có thêm ô
+  "Kế hoạch ôn chương" + "Lần trước". Không ô "câu hỏi cho trợ giảng".
+- **Nhịp buổi thầy áp dụng (10/11/2026)**: 10′ ôn bài trước → 20′ kiểm tra → 30′ sửa bài → bài mới → giao BTVN. Giấy chỉ giữ việc phải
+  viết tay (ghi bài, bài mẫu, bài tương tự, sửa bài); trắc nghiệm và bài nhiều câu luyện trên web có đáp án ngay — không chép đề
+  trắc nghiệm ra giấy.
+- **Bài tương tự trên giấy (bài 14, `bai14-tuongtu.mjs`, thầy chốt 10/11)**: sau Bài tập mẫu có 2 trang, MỖI DẠNG 2 bài cùng dạng
+  làm tại chỗ (không dạng nào bị rút — 5 dạng thì 10 bài), đề ngắn, số dòng kẻ ≈ số ý, đáp số tính bằng Python in ở dải cuối trang
+  **lật ngược 180°** (`transform:rotate(180deg)`) để HS không liếc thấy trước. Đề bài phải ghi đủ hằng số cần (N_A, e, 1 u) cho
+  CẢ hai bài trong dạng. Dòng "Bài tương tự … /2" ở trang Bài tập mẫu phải khớp số bài thật. Để vẫn 12 trang thì bỏ 2 trang ghi chú
+  tự do (quy ước "ghi chú đúng 2 trang" cũ không còn áp cho bài 14); thứ tự bài 14 hiện nay: 1–5 học bài mới · 6–7 Bài tập mẫu ·
+  8–9 Bài tương tự · 10 sửa bài trên lớp · 11 sửa bài kiểm tra chương · 12 làm lại câu sai + QR. **Bài 15–18 (`khung.mjs`) vẫn
+  bố cục cũ, chưa có trang Bài tương tự** — làm thì chép `bai14-tuongtu.mjs`.
+- **Ảnh raster phải có trên máy dựng**: `scripts/ruot-tap/anh/` bị gitignore nên worktree mới không có → ảnh vỡ chỉ còn chữ alt,
+  script vẫn báo thành công. Chép từ `/Users/MAC/Documents/THPT/số hoá THPT/ruot-tap-anh/` vào `scripts/ruot-tap/anh/` rồi dựng, và
+  kiểm `pdfimages -list <pdf>` (trang có hình Halliday phải có ảnh cỡ hàng trăm px, không phải 14×16 px).
+- **Chú thích hình không lộ đáp án ô Dự đoán** đứng cạnh (học sinh ảo bắt được ở bài 14): chú thích mô tả cái em thấy, không nêu kết luận.
+- **Học sinh ảo dùng thử trước khi in** (10/11): mở phiên riêng đóng vai HS trung bình làm thử cả quyển, tính lại đáp số bằng Python,
+  xếp lỗi A (sai/vô nghĩa) · B (khó dùng) · C (gợi ý); sửa A và B rồi mới in. Phiên con chạy Sonnet dù yêu cầu Opus (không nâng được model).
 - **Bài 15–18 (lesson 16–19) dùng khung chung** `scripts/ruot-tap/khung.mjs` (CSS, trang 8–12 sinh tự động, bài tập mẫu `btm.dang`, chẩn đoán dư mm) + `hinh-ch4.mjs` (hình): chạy `node scripts/ruot-tap/bai15.mjs` … `bai18.mjs`. Bài 14 giữ bản riêng `bai14.mjs`. Bài mới: chép `bai18.mjs`, đổi `khoiTao({bai, lid})`, nội dung 5 trang đầu + mảng `dang`, thêm hình vào `hinh-ch4.mjs`.
 - **Quyển = chương, đánh số trang liền mạch** (thầy chốt 26/10): bài 14 = tr.1–12, 15 = 13–24 … 18 = 49–60; chân trang "Bài N · tr. X", nhãn "Tập X·ô" và mọi tham chiếu (tr.10, trang 8, "Xem lại ở Tập") dùng số tuyệt đối (`khung.mjs`: `off`). Dựng cả quyển: `bash scripts/ruot-tap/dung-chuong4.sh` → `out/ruot-tap-vl12-chuong4.pdf` (60 trang, `pdfunite`). Nối tiếp chương liền kề: `BOOK_PAGE_START=61 bash …` (cả bài 14–18 theo; số bắt đầu chẵn thì lề gáy đổi bên; lưu ý data-tap trên web của bài 14 dùng số 1–12 nên chỉ khớp khi START=1).
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
+
+## Nhật ký rút kinh nghiệm (ruột tập)
+- 2026-11-10 · Lỗi "chữ đậm lẫn Helvetica": khai báo `@font-face` nhiều tệp con (latin/vietnamese) mà không có `unicode-range` thì tệp sau đè tệp trước, ký tự thiếu rơi về font hệ thống → mỗi tệp con PHẢI kèm `unicode-range` (đã có ở `bai14.mjs`). Kiểm bằng `pdffonts <pdf>`: không được còn Helvetica/Lucida/Hiragino (còn sót ★, φ, chỉ số trên ở bài 14 tr.1/5/6).
+- 2026-11-10 · `sed -i 's/…/…/' file` trên macOS hỏng (nuốt chuỗi thay làm hậu tố) → sửa chuỗi bằng Python `replace` có `assert count==1`.
+- 2026-11-10 · Nhánh cũ tách từ `main` đã đi xa: `git fetch` + merge `main` TRƯỚC khi sửa ruột tập, nếu không dựng lại bản đã có. Hai QR cạnh nhau thì bỏ QR phụ (chỉ giữ QR bài học).
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).

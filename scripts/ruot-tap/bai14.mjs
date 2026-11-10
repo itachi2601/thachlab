@@ -23,12 +23,9 @@ const puppeteer = require('puppeteer-core');
 const m = (s) => katex.renderToString(s, { throwOnError: true, output: 'html' });
 const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
-const qr2 = qrcode(0, 'M'); qr2.addData('https://thachlab.id.vn/'); qr2.make();
-const qrHome = qr2.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
-// Ô cuối tập (thầy chốt 25/10 tối): chỉ hướng dẫn xem lại bài trên web bằng QR, không giới thiệu/quảng cáo.
-const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div><small>Bài học này</small></div><div class="gtq"><div class="qr">${qrHome}</div><small>Trang chủ</small></div><div>
-<b>Xem lại bài này trên thachlab.id.vn:</b> quét mã <b>Bài học này</b> để mở lý thuyết, thí nghiệm, tự kiểm tra và bài tập mẫu
-đúng bài 14; mã <b>Trang chủ</b> để vào các bài khác.</div></div>`;
+// Ô cuối tập (thầy chốt 25/10 tối; 10/11: chỉ MỘT mã QR của bài học liên quan — hai mã cạnh nhau, máy quét dễ trúng nhầm): chỉ hướng dẫn xem lại bài trên web, không giới thiệu/quảng cáo.
+const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
+<b>Xem lại bài 14 trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';
@@ -119,7 +116,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
 .gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
-.gtq{text-align:center;flex:none}.gtq .qr{width:27mm;height:27mm;padding:1.5mm;border:0}.gtq .qr svg{width:24mm;height:24mm}.gtq small{display:block;font-size:var(--fs-sm)}
+.gtq{text-align:center;flex:none}.gtq .qr{width:34mm;height:34mm;padding:2mm;border:0}.gtq .qr svg{width:30mm;height:30mm}.gtq small{display:block;font-size:var(--fs-sm)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
 .chh{display:flex;justify-content:space-between;gap:2mm;align-items:center;font-size:var(--fs-sm);line-height:5mm;white-space:nowrap}.chh .ck{width:3.6mm;height:3.6mm;border-radius:.5mm;vertical-align:-.7mm;margin:0 .4mm 0 1mm}
