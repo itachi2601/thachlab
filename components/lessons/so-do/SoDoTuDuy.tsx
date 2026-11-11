@@ -21,14 +21,27 @@ import type { SoDoChuong, SoDoNhanh } from "@/features/lessons/so-do-tu-duy/type
 import s from "./SoDoTuDuy.module.css";
 
 const MAU = [s.c1, s.c2, s.c3, s.c4, s.c5];
-/** vị trí nút trên sơ đồ toả tròn (% khung), đọc theo chiều kim đồng hồ từ đỉnh */
-const VI_TRI = [
-  { x: 50, y: 13 },
-  { x: 84, y: 39 },
-  { x: 73, y: 86 },
-  { x: 27, y: 86 },
-  { x: 16, y: 39 },
-];
+/** vị trí nút trên sơ đồ toả tròn (% khung), đọc theo chiều kim đồng hồ từ đỉnh — theo số nhánh (3, 4 hoặc 5) */
+const VI_TRI_THEO_SO: Record<number, { x: number; y: number }[]> = {
+  3: [
+    { x: 50, y: 13 },
+    { x: 80, y: 80 },
+    { x: 20, y: 80 },
+  ],
+  4: [
+    { x: 22, y: 20 },
+    { x: 78, y: 20 },
+    { x: 78, y: 84 },
+    { x: 22, y: 84 },
+  ],
+  5: [
+    { x: 50, y: 13 },
+    { x: 84, y: 39 },
+    { x: 73, y: 86 },
+    { x: 27, y: 86 },
+    { x: 16, y: 39 },
+  ],
+};
 
 function CongThuc({
   tex,
@@ -175,6 +188,7 @@ export default function SoDoTuDuy({ data }: { data: SoDoChuong }) {
   };
   const dangMo = data.nhanh.find((n) => n.id === mo) ?? null;
   const iMo = dangMo ? data.nhanh.indexOf(dangMo) : -1;
+  const VI_TRI = VI_TRI_THEO_SO[data.nhanh.length] ?? VI_TRI_THEO_SO[5];
 
   return (
     <section className="mx-auto w-full max-w-6xl px-4 pb-16 pt-4 text-ink">

@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Network, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -39,6 +39,7 @@ import {
   type LessonWithItemRefs,
   type MyProgressMarks,
 } from "@/services/lessons";
+import { coSoDoChuong, soDoHref } from "@/features/lessons/so-do-tu-duy";
 import { fetchChaptersStatic, fetchClassesStatic, fetchLessonsStatic } from "@/services/static-content";
 import { unassignedExamFitsGrade } from "@/features/exams/exam-grade";
 import {
@@ -571,6 +572,24 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
             ? `Đang học · ${onlyP?.completed ?? 0}/${onlyP?.total ?? 0} mục`
             : "";
     let lessonNumber = 0;
+    // Sơ đồ tư duy chương: một dòng ở cuối danh sách bài, ngay TRƯỚC bài kiểm tra chương (ôn rồi mới kiểm tra — L1, G1).
+    // Chỉ hiện khi chương đã có sơ đồ trong sổ đăng ký; phụ huynh không có dòng này (trang phụ huynh chỉ xem tiến độ).
+    let soDoShown = false;
+    const soDoRow =
+      !isParent && effectiveSlug && coSoDoChuong(ch.id) ? (
+        <li key="so-do">
+          <Link prefetch={false} href={soDoHref(ch.id, effectiveSlug)} className="class-lesson">
+            <span className="class-num class-num--exam" aria-hidden>
+              <Network size={13} />
+            </span>
+            <span className="class-lesson-title">
+              Sơ đồ tư duy chương
+              <small>Cả chương trên một trang, có ô tự kiểm công thức</small>
+            </span>
+            <span className="class-meta">Ôn tập</span>
+          </Link>
+        </li>
+      ) : null;
     return (
       <Fragment key={ch.id}>
         <section id={desktop ? `chapter-pick-${ch.id}` : `chapter-${ch.id}`} className="class-chapter">
@@ -663,8 +682,12 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       </span>
                   </>
                 );
+                const soDoTruoc = periodic && !soDoShown ? soDoRow : null;
+                if (periodic) soDoShown = true;
                 return (
-                  <li key={lesson.id}>
+                  <Fragment key={lesson.id}>
+                  {soDoTruoc}
+                  <li>
                     {isParent ? (
                       <div className={`${rowClass} class-lesson--static`}>{rowInner}</div>
                     ) : (
@@ -673,8 +696,10 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                       </Link>
                     )}
                   </li>
+                  </Fragment>
                 );
               })}
+              {!soDoShown && chapterLessons.length > 0 && soDoRow}
             </ol>
           )}
         </section>
