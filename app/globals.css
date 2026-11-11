@@ -511,6 +511,12 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-learning-sections { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 22px; }
 /* Mở một mục thì ẩn các mục còn lại: hàng Lý thuyết/Video đứng trên Bài mẫu đẩy nội dung xuống dưới màn hình (C1). Pills phía trên vẫn đổi mục được. */
 .cnc-learning-sections.has-active > .cnc-learning-section:not(.active) { display: none; }
+/* Mục đang mở: tên mục đã có ở tab phía trên → bỏ hàng "§ 1 Lý thuyết" và dòng tên trong thẻ, chỉ giữ mô tả + nút Thu gọn (N1, tránh lặp 3 lần). */
+.cnc-learning-sections.has-active > .cnc-learning-section.active > header { display: none; }
+.cnc-learning-sections.has-active > .cnc-learning-section.active .cnc-learning-card > span,
+.cnc-learning-sections.has-active > .cnc-learning-section.active .cnc-learning-card > div { display: none; }
+.cnc-learning-sections.has-active > .cnc-learning-section.active .cnc-learning-card { justify-content: flex-end; padding: 6px 10px; border-radius: 12px; }
+.cnc-learning-sections.has-active > .cnc-learning-section.active .cnc-learning-card > b { margin-left: 0; min-height: 44px; }
 .cnc-learning-section > header { display: grid; grid-template-columns: auto auto minmax(20px, 1fr) auto auto; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--cnc-muted); }
 .cnc-learning-section > header > span { color: var(--cnc-faint); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .12em; }
 .cnc-learning-section > header > div { display: flex; align-items: center; gap: 8px; color: var(--cnc-text); }
