@@ -41,6 +41,13 @@ cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài 
 - `ban_do_chuong.ga` (tên ga ngắn, thiếu thì lấy tên bài), `ban_do_chuong.nhom`, `tu_danh_gia` (thiếu thì bỏ trang Tự đánh giá).
 - Mục lục (`front.toc_full`) sinh tự động, một trang riêng, đủ phần đầu + mục con từng bài + phần cuối; số trang mục con
   đọc từ PDF con đã dựng bằng `make.page_of`. Phần đầu sách cố định `FRONT_PAGES` trang — `make.py` tự dừng nếu lệch.
+- `anh_that` `{lesson_id: [{sau, tep, chu, nguon}]}` — ảnh THỰC TẾ chèn ngay sau phần tử đầu tiên có chữ chứa `sau`
+  (nên neo vào tiêu đề h3/h4). File ở `book/assets/anh-that/` (xám, rộng ≤1200px, ≤150 KB); in ảnh trái 72 mm, chú thích phải.
+  Ưu tiên ảnh thật trên web; thiếu thì cắt từ Halliday *Fundamentals of Physics 12th* (`/Users/MAC/Documents/THPT/số hoá THPT/…`,
+  lưu hành nội bộ, thầy chốt 11/11/2026 bỏ qua bản quyền). Neo không khớp → `build.py` in `! ảnh thực tế … không thấy chỗ neo`.
+- **Hình mô phỏng** (`figure[data-exp|data-bt]`) KHÔNG in thành hình (thầy chốt 11/11/2026: in ra chỉ là khung tĩnh to,
+  vô ích) → `sim_line` thu thành 1 dòng `▶ Hình N · mô phỏng trên web · chú thích`, giữ số hình. Trừ chú thích có
+  đồ thị/điểm đo/số liệu/tỉ lệ xích (`KEEP_SIM_RE`) và đề bài đọc đồ thị/"như hình" (`GRAPH_RE`).
 - Còn chờ làm (thiết kế `docs/THIET-KE-SKILL-SACH-DONG-BO.md` chặng C–E): số bản trong QR, web → "Sách tr. X", bản Word.
 
 ## Kiểm sau mỗi lần dựng (bắt buộc, trước khi đưa thầy xem)
@@ -48,6 +55,8 @@ cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài 
 1. `render.mjs` tự in `CHẨN ĐOÁN` nếu có `.katex-error`, phần tử tràn khung, trang còn `$` — phải trống.
 2. PyMuPDF: đếm trang; trang < 60 từ phải ≈ 0; thống kê cỡ chữ (chỉ 5 mức + lẻ của KaTeX); không Dạng nào in 2 lần
    (Paged.js có thể nhân đôi nội dung mà không báo lỗi — xem nhật ký).
+2b. `/usr/bin/python3 book/do_trong.py out/<tep>.pdf 50` — trang có khoảng trống cuối ≥50 mm. Trống do hết bài là bình
+   thường; trống vì hình/khung to không vừa trang thì thu hình hoặc bỏ hình mô phỏng, báo tổng cm trống trước/sau.
 3. Rasterize 3–4 trang mẫu ở 60 dpi để tự xem, 100 dpi để gửi thầy (`pdftoppm -f N -l N -r 100 -png`).
 4. Có sửa `export_web` → so số thứ tự trong `public/sach-data/*.json` với số in trong sách (cùng dict, không được lệch).
 5. Đối chiếu MỤC LỤC với trang thật: mỗi số trang trong mục lục (phần đầu, Lý thuyết/Bài tập mẫu/Luyện thêm từng bài,
@@ -172,3 +181,6 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - 2026-11-10 · `make.render` nuốt stdout của `render.mjs` nên dòng `CHẨN ĐOÁN` (KaTeX lỗi, tràn khung) không hiện khi dựng cả cuốn → muốn xem thì dựng lẻ `build.py lesson <id>` + `node render.mjs`; còn chờ sửa cho in ra.
 - 2026-11-10 · Chương mới (L10 Ch.3) dùng thành phần web chưa có ở Ch.2: hộp video kiểu clip dựng lại (`<video>` + `.tl-video-ten`), iframe PhET trong `details`, mô phỏng CSS `.tl-sim` (5 SVG cho 5 nút radio → in cả 5 hình, tràn 2 trang gần trống), thuật ngữ `.tl-term` (in dính "Chất điểmVật nhỏ…") → mỗi cuốn mới: đếm `<video|<iframe|tl-sim|tl-term|<input` trong `book/cache/*.json` TRƯỚC khi dựng, thứ nào `build.py` chưa có luật thì thêm luật in (đã thêm `sim_one_frame`, regex video/iframe/term).
 - 2026-11-10 · `--moi` lấy cả bài "Kiểm tra chương" (không có lý thuyết) vào `lessons` → `lay-noi-dung.mts` báo lỗi; bỏ id đó khỏi hồ sơ.
+- 2026-11-11 · Thầy thấy nhiều trang trống lớn + hình mô phỏng in ra to mà vô ích (trên web chạy được, trên giấy chỉ là khung tĩnh) → 30 hình mô phỏng Ch.3 thu thành một dòng chú thích (`sim_line`), giữ đồ thị/số liệu; đo trống bằng `do_trong.py` (155→147 tr., 479→428 cm trống). Mặc định sách in: hình chỉ in khi tự nó mang thông tin (sơ đồ lực, đồ thị, ảnh thật).
+- 2026-11-11 · Sách nên có ảnh THỰC TẾ (hiện tượng đời sống) thay hình mô phỏng; web không có thì cắt Halliday (nội bộ, không xét bản quyền) → khai báo `anh_that` trong hồ sơ sách. File Halliday trong Documents là iCloud `dataless`: sandbox/`cp` báo "Operation timed out", `brctl download` không kéo về được → kiểm `ls -lO` TRƯỚC, dataless thì nhờ thầy bấm Tải về trong Finder ngay đầu việc, đừng chờ vòng lặp.
+- 2026-11-11 · Tăng cỡ chữ thân 9,6→10,5pt: `book.css` có 4 dòng `html{font-size…}` đè nhau (v2, v4…) và giãn dòng thật nằm ở khối v4 → grep mọi chỗ đè trước khi sửa; chữ to hơn đẩy khung QR "Ở nhà" sang trang riêng ở 3 bài (cảnh báo < 60 từ).

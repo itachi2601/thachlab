@@ -327,8 +327,40 @@ def conv_figure(fig):
         c = re.sub(r'\s*[\(（]chạy nhanh[^)）]*[\)）]', '', c)
         c = re.sub(r'\bMô phỏng:', 'Mô phỏng (xem chuyển động trên web):', c)
         cap.clear(); cap.append(frag(c))
+    if simtag and not keep_sim_fig(plain(cap) if cap else ''):
+        return sim_line(cap.decode_contents() if cap else '')
     web = web_note() if simtag else ''
     return f'<figure class="fig">{simtag}{fig.decode_contents()}{web}</figure>'
+
+
+# Hình mô phỏng (data-exp/data-bt) in ra chỉ là một khung tĩnh to, không chạy được — thầy chốt 11/11/2026: bỏ hình,
+# giữ chú thích thành MỘT dòng "▶ Hình N (mô phỏng trên web): …" để số hình và kết luận không mất. Trừ đồ thị/số liệu đo.
+KEEP_SIM_RE = re.compile(r'đồ thị|điểm đo|số liệu|tỉ lệ xích|độ lệch|bảng', re.I)
+def keep_sim_fig(cap_txt): return bool(KEEP_SIM_RE.search(cap_txt))
+def sim_line(cap_html):
+    c = re.sub(r'^\s*(?:<[^>]+>\s*)*', '', cap_html)
+    m = re.match(r'(Hình\s*\d+)\.?\s*', re.sub(r'<[^>]+>', '', cap_html).strip())
+    head = m.group(1) if m else 'Mô phỏng'
+    body = re.sub(r'^(?:\s*<[^>]+>)*\s*Hình\s*\d+\.?\s*', '', cap_html) if m else cap_html
+    body = re.sub(r'\s*Mô phỏng(?: \(xem chuyển động trên web\))?:\s*', '', body)
+    body = re.sub(r'\s*[\(（]\s*bấm[^)）]*[\)）]', '', body, flags=re.I)
+    body = re.sub(r'\s*Hình (?:không|chỉ)[^.]*\.', '', body).strip()   # câu nói về chính hình — bỏ khi không in hình
+    if not m: return f'<p class="simline"><b>▶ Mô phỏng trên web:</b> {body}</p>'
+    return f'<p class="simline"><b>▶ {head}</b> <span class="sl-k">mô phỏng trên web</span> {body}</p>'
+
+
+def photos_after(el, anh, out):
+    """Ảnh thực tế (hồ sơ sách: anh_that[lid] = [{sau, tep, chu, nguon}]) chèn ngay sau phần tử đầu tiên có chữ chứa 'sau'.
+    Ảnh nằm ở book/assets/anh-that/ (xám, ≤1200px); bố cục ảnh trái – chú thích phải để không ăn cả bề ngang trang."""
+    txt = re.sub(r'\s+', ' ', el.get_text(' ')) if hasattr(el, 'get_text') else ''
+    con = []
+    for a in anh:
+        if a['sau'] in txt:
+            nguon = f'<span class="ph-src">{a["nguon"]}</span>' if a.get('nguon') else ''
+            out.append(f'<figure class="fig photo"><img src="../assets/anh-that/{a["tep"]}" alt="">'
+                       f'<figcaption>{a["chu"]}{nguon}</figcaption></figure>')
+        else: con.append(a)
+    return con
 
 
 def conv_h3(h):
@@ -454,6 +486,7 @@ def convert_theory(raw, lid, keys, marks=None):
         box.append(q.extract())
     out = []
     roman = ''
+    anh = list(SACH.get('anh_that', {}).get(str(lid), []))
     for el in list(soup.children):
         if isinstance(el, NavigableString):
             if str(el).strip(): out.append(str(el))
@@ -492,7 +525,9 @@ def convert_theory(raw, lid, keys, marks=None):
             el['class'] = ['tbl']; out.append(str(el))
         else:
             out.append(str(el))
+        if anh: anh = photos_after(el, anh, out)
     if roman and f'muc:{roman}' in marks: out.append(tiet_mark(marks[f'muc:{roman}']))
+    for a in anh: print(f'! ảnh thực tế bài {lid}: không thấy chỗ neo "{a["sau"]}"')
     body = final_pass('\n'.join(out), keys)
     body = re.sub(r'(</h3>\s*)<p>', r'\1<p class="lead-p">', body, count=1)
     body = restore_svgs(body, store)
@@ -519,6 +554,10 @@ def clean_fig_caption_bt(html):
         inner = re.sub(r'\s*Bấm Chạy mô phỏng\.?', '', inner)
         inner = re.sub(r'\s*[\(（]chạy nhanh[^)）]*[\)）]', '', inner)
         inner = re.sub(r'\bMô phỏng:', 'Mô phỏng (xem chuyển động trên web):', inner)
+        cap = re.search(r'<figcaption[^>]*>(.*?)</figcaption>', inner, flags=re.S)
+        cap_html = cap.group(1) if cap else ''
+        if not keep_sim_fig(re.sub(r'<[^>]+>', '', cap_html)) and not GRAPH_RE.search(re.sub(r'<[^>]+>', '', html.replace(m.group(0), ''))):
+            return sim_line(cap_html)
         return (f'<figure class="fig"{m.group(1)}><span class="simtag fig-sim">▶ mô phỏng trên web</span>{inner}</figure>')
     return re.sub(r'<figure class="fig"([^>]*)>(.*?)</figure>', fig, html, flags=re.S)
 
@@ -566,7 +605,7 @@ def render_bt(bt, lid, keys, marks=None):
         x = bt['dang_bai'][k - 1]
         num, stars, lvl_name, title = dang_parts(x, k)
         prob = clean_fig_caption_bt(x['problem_html'])
-        ana = re.sub(r'<figure class="fig".*?</figure>', '', clean_fig_caption_bt(x['analysis_html']), flags=re.S)
+        ana = re.sub(r'<figure class="fig".*?</figure>|<p class="simline">.*?</p>', '', clean_fig_caption_bt(x['analysis_html']), flags=re.S)
         ana = blank_table(ana)
         ana = re.sub(r'<p>Mỗi câu của đề:.*?</p>', '<p>Mỗi câu của đề cho dữ liệu gì, gọi kiến thức nào? Điền vào hai cột bên phải. Hàng có ⚠ là <b>điều kiện áp dụng</b>.</p>', ana, flags=re.S)
         out.append(f'''<article class="dang" data-neo="dang:{k}">
@@ -589,6 +628,7 @@ def render_luyen_them(bt, lid, keys, main):
             if k in main: continue
             num, stars, lvl_name, title = dang_parts(x, k)
             prob = clean_fig_caption_bt(x['problem_html'])
+            prob = re.sub(r'<p class="simline">.*?</p>', '', prob, flags=re.S)
             txt = re.sub(r'<figure.*?</figure>', '', prob, flags=re.S)
             if GRAPH_RE.search(re.sub(r'<[^>]+>', '', txt)):
                 # đề đọc đồ thị: giữ hình (thu nhỏ) vì không có hình thì không làm được
