@@ -787,7 +787,7 @@ export default function CncCourseWorkspace({ embedded = false, courseId, initial
                         </div>
                       </div>
 
-                      <div className="cnc-learning-sections">
+                      <div className={`cnc-learning-sections ${tab ? "has-active" : ""}`}>
                         {itemTabs.map(({ id, label: displayLabel, description, icon: Icon }, tabIndex) => {
                           const isActive = tab === id;
                           return <section key={id} className={`cnc-learning-section ${id} ${isActive ? "active" : ""}`}>
