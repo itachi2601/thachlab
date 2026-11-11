@@ -22,7 +22,17 @@ export type SoDoNhanh = {
   id: string;
   ten: string;
   /** hình khoá của nhánh (vẽ trong components/lessons/so-do/HinhNhanh.tsx) */
-  hinh: "tu_truong" | "luc_tu" | "cam_ung" | "xoay_chieu" | "song_dien_tu";
+  hinh:
+    | "tu_truong"
+    | "luc_tu"
+    | "cam_ung"
+    | "xoay_chieu"
+    | "song_dien_tu"
+    | "hop_luc"
+    | "newton"
+    | "cac_luc"
+    | "dong_luc_hoc"
+    | "moment";
   /** bài học thuộc nhánh: số bài trong SGK + lesson id trên web */
   bai: { so: number; id: number; ten: string }[];
   /** câu chốt ≤ 12 chữ */

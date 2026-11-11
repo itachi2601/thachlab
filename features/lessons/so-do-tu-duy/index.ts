@@ -7,6 +7,7 @@ import type { SoDoChuong } from "@/features/lessons/so-do-tu-duy/types";
  */
 const SO_DO: Record<number, () => Promise<SoDoChuong>> = {
   4: () => import("./l12-chuong-3").then((m) => m.L12_CHUONG_3), // Vật lí 12 · Chương 3. Từ trường
+  12: () => import("./l10-chuong-3").then((m) => m.L10_CHUONG_3), // Vật lí 10 · Chương 3. Động lực học
 };
 
 export function coSoDoChuong(chapterId: number): boolean {
