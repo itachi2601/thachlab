@@ -77,4 +77,4 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
-- Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), CHƯA DEPLOY; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
+- Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
