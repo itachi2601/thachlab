@@ -401,7 +401,7 @@ export async function rejectSession(id: string, reason: string): Promise<void> {
 export async function returnSessionForFix(s: TaPendingSession, reason: string): Promise<void> {
   await rejectSession(s.id, reason);
   if (!s.assistant_user_id) return;
-  const { error } = await getSupabase().rpc("notify_user", {
+  const { error } = await getSupabase().rpc("notify_user_staff", {
     p_user: s.assistant_user_id,
     p_kind: "ta_session_returned",
     p_title: "Phiếu buổi làm việc cần bổ sung",
