@@ -58,13 +58,13 @@ fig1 = anh(
 
 fig2 = anh(
     "hinh-phan-hach-4-buoc-d2.webp",
-    "Bốn bước phân hạch: nơtron đến gần hạt nhân nặng, hạt nhân biến dạng thắt ở giữa, tách thành hai mảnh mang điện dương đẩy nhau, rồi hai mảnh vỡ bay ra cùng nơtron mới",
+    "Bốn bước phân hạch: neutron đến gần hạt nhân nặng, hạt nhân biến dạng thắt ở giữa, tách thành hai mảnh mang điện dương đẩy nhau, rồi hai mảnh vỡ bay ra cùng neutron mới",
     661, 1000,
     "Hình 2. Phân hạch: hạt nhân thắt giữa rồi vỡ thành hai mảnh (FF).<br>"
     "<small>Hình: OpenStax, College Physics 2e, Hình 32.21 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>")
 
 # ------------------------------------------------- Hình 3: ba kiểu phát triển dây chuyền
-# Số liệu thật trên trục tuyến tính (16 px / nơtron, gốc y0 = 220):
+# Số liệu thật trên trục tuyến tính (16 px / neutron, gốc y0 = 220):
 #   k = 1,5: 4 -> 6 -> 9 ; k = 1: 4 -> 4 -> 4 ; k = 0,5: 4 -> 2 -> 1
 Y0, KY = 220, 16
 GX = (110, 200, 290)
@@ -76,14 +76,14 @@ def yv(v):
 
 
 b = defs("f3")
-b += text(14, 22, "Số nơtron theo từng thế hệ", "currentColor", 15, "start", "700")
+b += text(14, 22, "Số neutron theo từng thế hệ", "currentColor", 15, "start", "700")
 b += line(60, Y0, 300, Y0, "currentColor", 2)
 b += line(60, Y0, 60, 56, "currentColor", 2)
 b += line(60, 56, 60, 48, "currentColor", 2)
 b += chevron(60, 48, 0, -1, "currentColor", 2, 9)
 b += line(300, Y0, 306, Y0, "currentColor", 2)
 b += chevron(306, Y0, 1, 0, "currentColor", 2, 9)
-b += text(70, 54, "số nơtron", "currentColor", F, "start", "600")
+b += text(70, 54, "số neutron", "currentColor", F, "start", "600")
 for v in (2, 4, 6, 8):
     b += line(56, yv(v), 60, yv(v), "currentColor", 1.6)
     b += line(60, yv(v), 290, yv(v), "currentColor", 1, "3 4", .25)
@@ -105,11 +105,11 @@ b += text(316, yv(4) - 4, "k = 1", GRN, F, "start", "700")
 b += text(316, yv(4) + 14, "giữ nguyên", GRN, F, "start", "600")
 b += text(316, yv(1) - 8, "k = 0,5", BLUE, F, "start", "700")
 b += text(316, yv(1) + 10, "tắt dần", BLUE, F, "start", "600")
-b += text(14, 268, "Mỗi chấm: số nơtron của một thế hệ.", "currentColor", F, "start", "500")
-b += text(14, 288, "k = số nơtron thế hệ sau ÷ thế hệ trước.", "currentColor", F, "start", "500")
+b += text(14, 268, "Mỗi chấm: số neutron của một thế hệ.", "currentColor", F, "start", "500")
+b += text(14, 288, "k = số neutron thế hệ sau ÷ thế hệ trước.", "currentColor", F, "start", "500")
 fig3 = wrap("0 0 440 298",
-            "Đồ thị số nơtron theo thế hệ, cùng xuất phát 4 nơtron: k bằng 1,5 tăng 4, 6, 9; k bằng 1 giữ 4; k bằng 0,5 giảm 4, 2, 1",
-            b, "Hình 3. Số nơtron theo từng thế hệ: ba kiểu phát triển.")
+            "Đồ thị số neutron theo thế hệ, cùng xuất phát 4 neutron: k bằng 1,5 tăng 4, 6, 9; k bằng 1 giữ 4; k bằng 0,5 giảm 4, 2, 1",
+            b, "Hình 3. Số neutron theo từng thế hệ: ba kiểu phát triển.")
 
 # ------------------------------------------------- Hình 4: nhiệt hạch và Mặt trời
 GREY = "#94a3b8"
@@ -133,7 +133,7 @@ b += text(146, 150, "He-4 = 2p + 2n", GRN, 14, "middle", "700")
 b += arrow("f4", "b", 179, 84, 198, 70, 2.2)
 b += text(202, 74, '2e<tspan baseline-shift="super" font-size="11">+</tspan>', BLUE, 14, "start", "700")
 b += arrow("f4", "b", 179, 110, 198, 124, 2.2)
-b += text(202, 130, "2 nơtrinô", BLUE, 14, "start", "700")
+b += text(202, 130, "2 neutrino", BLUE, 14, "start", "700")
 b += text(14, 182, "toả 26,7 MeV", ORG, 14, "start", "700")
 b += text(14, 202, "điện tích: 4 = 2 (He) + 2 (e⁺)", "currentColor", 14, "start", "600")
 SX, SY, SR = 366, 100, 42
@@ -152,7 +152,7 @@ for k in range(4):
 b += text(SX, 182, "lõi ~15 triệu K", "currentColor", 14, "middle", "600")
 b += text(SX, 202, "hấp dẫn ép vào lõi", RED, 14, "middle", "700")
 fig4 = wrap("0 0 440 212",
-            "a) Bốn prôtôn kết hợp thành hạt nhân heli gồm 2 prôtôn và 2 nơtron, phát ra 2 pôzitron và 2 nơtrinô, toả 26,7 MeV. b) Mặt trời: lõi khoảng 15 triệu K, lực hấp dẫn ép khối khí vào lõi",
+            "a) Bốn proton kết hợp thành hạt nhân heli gồm 2 proton và 2 neutron, phát ra 2 positron và 2 neutrino, toả 26,7 MeV. b) Mặt trời: lõi khoảng 15 triệu K, lực hấp dẫn ép khối khí vào lõi",
             b, "Hình 4. Nhiệt hạch: hạt nhân nhẹ kết hợp lại; Mặt trời là lò tự nhiên.")
 
 # ------------------------------------------------- thay vào theory.html
