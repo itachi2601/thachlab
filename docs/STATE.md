@@ -14,7 +14,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `20261109120000_shcn_lesson_key` (9/11): cột bài đọc tuần SHCN; chạy TRƯỚC khi deploy trang `/sinh-hoat` + editor GVCN. Lúc nào cũng được.
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
-- **Vá bảo mật 11/11**: bước 1 ĐÃ CHẠY 11/11 (hàm mới, client trên main đã gọi) → còn: deploy client (4 file: `TeacherThptAlerts`, `lib/tro-giang/queries`, `cnc-exam-bank`, `cnc-milling-quiz-attempts`) → rồi `20261111200000_va_bao_mat_buoc_2_thu_quyen` sau 22h (= P0 #1 chặng 3, thu quyền `exams.questions`; đã thử trong giao dịch rollback vai HS/anon/admin). Script nào đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
+- **Vá bảo mật 11/11**: bước 1 ĐÃ CHẠY, client ĐÃ DEPLOY 11/11 19:01 (bản 15:16 + đúng 4 file client; chưa bấm thử bằng tài khoản HS/TA/GV) → còn `20261111200000_va_bao_mat_buoc_2_thu_quyen` chạy sau 22h (= P0 #1 chặng 3, thu quyền `exams.questions`; đã thử trong giao dịch rollback vai HS/anon/admin). Script nào đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
 - Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4); `record_cnc_learning_result` nhận điểm từ máy. GitHub: repo công khai, 2 cộng tác viên quyền ghi (`nhmkct1`, `zKdKaidO`), nhánh `deploy`/`main` chưa bảo vệ — chờ thầy xử lý.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
