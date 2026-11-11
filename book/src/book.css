@@ -623,3 +623,14 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 
 /* Ảnh chụp/ảnh nguồn mở trong bài (10/11/2026): không để một ảnh chiếm cả trang hay đẩy trang trước thành trang trống */
 .theory img,.fig img{display:block;max-width:100%;max-height:62mm;width:auto;height:auto;margin:1.5mm auto;break-inside:avoid}
+
+/* ---- 11/11/2026: hình mô phỏng → một dòng; hình tĩnh gọn hơn để bớt khoảng trống cuối trang ---- */
+.simline{font-size:8.4pt;line-height:1.45;color:var(--g1);margin:1.6mm 0 2.4mm;padding-left:2.4mm;border-left:1.6pt solid var(--g3);break-inside:avoid}
+.simline .sl-k{font-size:7.6pt;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);margin-right:1mm}
+/* ảnh thực tế: ảnh trái 72mm, chú thích phải — không chiếm cả bề ngang trang */
+.fig.photo{display:grid;grid-template-columns:72mm 1fr;gap:4mm;align-items:end;text-align:left;padding:2mm}
+.fig.photo img{display:block;width:72mm;max-height:58mm;object-fit:contain;filter:grayscale(1)}
+.fig.photo figcaption{margin:0;padding:0 0 .6mm;border-top:none;font-size:8.4pt;line-height:1.45}
+.fig.photo .ph-src{display:block;margin-top:1.4mm;font-size:7.6pt;color:var(--g2);font-style:italic}
+.theory img,.fig img{max-height:48mm}
+.fig svg{max-height:66mm}
