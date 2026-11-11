@@ -509,6 +509,8 @@ html[data-theme="light"] .cnc-enrolled-note { color: #047857; }
 .cnc-theory-only-note { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 14px; border: 1px solid var(--cnc-warn-line); border-radius: 12px; padding: 10px 12px; color: var(--cnc-text); font-size: 14px; line-height: 1.5; }
 .cnc-theory-only-note svg { flex: 0 0 auto; margin-top: 3px; color: var(--cnc-warn); }
 .cnc-learning-sections { display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; margin-top: 22px; }
+/* Mở một mục thì ẩn các mục còn lại: hàng Lý thuyết/Video đứng trên Bài mẫu đẩy nội dung xuống dưới màn hình (C1). Pills phía trên vẫn đổi mục được. */
+.cnc-learning-sections.has-active > .cnc-learning-section:not(.active) { display: none; }
 .cnc-learning-section > header { display: grid; grid-template-columns: auto auto minmax(20px, 1fr) auto auto; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--cnc-muted); }
 .cnc-learning-section > header > span { color: var(--cnc-faint); font-family: var(--font-mono), monospace; font-size: 12px; letter-spacing: .12em; }
 .cnc-learning-section > header > div { display: flex; align-items: center; gap: 8px; color: var(--cnc-text); }
