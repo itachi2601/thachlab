@@ -132,7 +132,143 @@ function SongDienTu() {
   );
 }
 
+/* ── Vật lí 10 · Chương 3 Động lực học. Màu lực theo build_figs.py của bài (bản đậm cho nền sáng):
+   P đỏ · N xanh · lực kéo F cam · ma sát đỏ · gia tốc lục. ── */
+const GIA_TOC = "#16a34a";
+
+/** chữ có chỉ số dưới; chỉ số vẫn ≥ 10.5 để không dưới 13px ở hình 112px (H4) */
+function ChiSo({ x, y, mau, chinh, duoi }: { x: number; y: number; mau: string; chinh: string; duoi: string }) {
+  return (
+    <text x={x} y={y} fill={mau} {...chu}>
+      {chinh}
+      <tspan fontSize={10.5} dy={3}>
+        {duoi}
+      </tspan>
+    </text>
+  );
+}
+
+function HopLuc() {
+  return (
+    <>
+      <g stroke="currentColor" strokeWidth={1.2} strokeDasharray="3 3" opacity={0.7}>
+        <line x1={56} y1={48} x2={76} y2={12} />
+        <line x1={30} y1={12} x2={76} y2={12} />
+      </g>
+      <Mui x1={10} y1={48} x2={56} y2={48} mau={B} />
+      <Mui x1={10} y1={48} x2={30} y2={12} mau={I} />
+      <Mui x1={10} y1={48} x2={76} y2={12} mau={F} />
+      <ChiSo x={28} y={60} mau={B} chinh="F" duoi="1" />
+      <ChiSo x={3} y={24} mau={I} chinh="F" duoi="2" />
+      <text x={80} y={30} fill={F} {...chu}>
+        F
+      </text>
+    </>
+  );
+}
+
+function Newton() {
+  return (
+    <>
+      <line x1={4} y1={44} x2={92} y2={44} stroke="currentColor" strokeWidth={1.4} opacity={0.6} />
+      <rect x={12} y={20} width={26} height={24} rx={2} fill="none" stroke="currentColor" strokeWidth={2} />
+      <text x={25} y={37} textAnchor="middle" fill="currentColor" {...chu}>
+        m
+      </text>
+      <Mui x1={38} y1={32} x2={74} y2={32} mau={I} />
+      <text x={54} y={26} textAnchor="middle" fill={I} {...chu}>
+        F
+      </text>
+      <Mui x1={12} y1={56} x2={50} y2={56} mau={GIA_TOC} />
+      <text x={55} y={60} fill={GIA_TOC} {...chu}>
+        a
+      </text>
+    </>
+  );
+}
+
+function CacLuc() {
+  return (
+    <>
+      <line x1={6} y1={40} x2={90} y2={40} stroke="currentColor" strokeWidth={1.4} opacity={0.6} />
+      <rect x={38} y={24} width={20} height={16} fill="none" stroke="currentColor" strokeWidth={2} />
+      <Mui x1={48} y1={32} x2={48} y2={5} mau={B} />
+      <Mui x1={48} y1={32} x2={48} y2={61} mau={F} />
+      <Mui x1={58} y1={30} x2={88} y2={30} mau={I} />
+      <Mui x1={38} y1={37} x2={14} y2={37} mau={F} />
+      <text x={53} y={13} fill={B} {...chu}>
+        N
+      </text>
+      <text x={53} y={60} fill={F} {...chu}>
+        P
+      </text>
+      <ChiSo x={10} y={30} mau={F} chinh="F" duoi="ms" />
+    </>
+  );
+}
+
+function DongLucHoc() {
+  // dốc từ (6,58) lên (90,14), góc ≈ 27,65°; toạ độ khối và trục tính sẵn (hằng số, không sin/cos lúc chạy)
+  return (
+    <>
+      <path d="M6 58 H90 V14 Z" fill="none" stroke="currentColor" strokeWidth={1.4} opacity={0.6} />
+      <path d="M20 58 A14 14 0 0 0 18.4 51.5" fill="none" stroke="currentColor" strokeWidth={1.2} />
+      <rect
+        x={34.5}
+        y={23.46}
+        width={18}
+        height={14}
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        transform="rotate(-27.65 43.5 30.46)"
+      />
+      <Mui x1={43.5} y1={30.46} x2={72.2} y2={15.43} mau="currentColor" />
+      <Mui x1={43.5} y1={30.46} x2={33.29} y2={10.97} mau="currentColor" />
+      <text x={75} y={13} fill="currentColor" {...chu}>
+        x
+      </text>
+      <text x={24} y={11} fill="currentColor" {...chu}>
+        y
+      </text>
+      <text x={25} y={56} fontSize={11} fontStyle="italic" fill="currentColor">
+        α
+      </text>
+    </>
+  );
+}
+
+function Moment() {
+  return (
+    <>
+      <line x1={10} y1={24} x2={86} y2={24} stroke="currentColor" strokeWidth={3} strokeLinecap="round" />
+      <path d="M14 24 L8 34 H20 Z" fill="none" stroke="currentColor" strokeWidth={1.4} />
+      <circle cx={14} cy={24} r={2.2} fill="currentColor" />
+      <Mui x1={78} y1={24} x2={78} y2={50} mau={F} />
+      <g stroke="currentColor" strokeWidth={1.2} opacity={0.75}>
+        <line x1={14} y1={58} x2={78} y2={58} />
+        <line x1={14} y1={54} x2={14} y2={62} />
+        <line x1={78} y1={54} x2={78} y2={62} />
+      </g>
+      <text x={2} y={20} fill="currentColor" {...chu}>
+        O
+      </text>
+      <text x={83} y={44} fill={F} {...chu}>
+        F
+      </text>
+      <text x={46} y={54} textAnchor="middle" fill="currentColor" {...chu}>
+        d
+      </text>
+    </>
+  );
+}
+
 const HINH: Record<SoDoNhanh["hinh"], () => React.ReactElement> = {
+  hop_luc: HopLuc,
+  newton: Newton,
+  cac_luc: CacLuc,
+  dong_luc_hoc: DongLucHoc,
+  moment: Moment,
   tu_truong: TuTruong,
   luc_tu: LucTu,
   cam_ung: CamUng,
@@ -141,6 +277,11 @@ const HINH: Record<SoDoNhanh["hinh"], () => React.ReactElement> = {
 };
 
 const MO_TA: Record<SoDoNhanh["hinh"], string> = {
+  hop_luc: "Hai lực F1, F2 chung gốc và hợp lực F là đường chéo hình bình hành",
+  newton: "Vật khối lượng m chịu lực F, gia tốc a cùng hướng lực",
+  cac_luc: "Vật trên sàn chịu trọng lực P, phản lực N, lực kéo và lực ma sát",
+  dong_luc_hoc: "Vật trên mặt nghiêng góc α với trục x dọc dốc, trục y vuông góc dốc",
+  moment: "Thanh quay quanh trục O, lực F cách trục một cánh tay đòn d",
   tu_truong: "Thanh nam châm và đường sức từ đi từ cực Bắc sang cực Nam",
   luc_tu: "Ba vectơ B, I, F vuông góc nhau từng đôi",
   cam_ung: "Nam châm tiến vào cuộn dây, kim điện kế lệch",

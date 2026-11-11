@@ -81,3 +81,5 @@ Lớp 12: Ch.1 Vật lí nhiệt → Ch.2 Khí lí tưởng → Ch.4 Vật lí h
 - 2026-11-11 · Id bài lấy từ ghi chú cũ, suýt gắn link chưa kiểm → luôn đối chiếu `catalog.json` (bước 1) trước khi viết `bai[]`.
 - 2026-11-11 · Công thức lõi nhánh 1 và 4 quá dài, tràn nút 190px ở màn rộng → `ct` chọn dạng gọn nhất, kiểm ở 1280px trước khi viết ý con.
 - 2026-11-11 · Phân số/dấu |…| của KaTeX chạm viền dưới hộp → đã có `.ct { padding-bottom }`; công thức cao bất thường (phân số lồng) thì chụp kiểm riêng.
+- 2026-11-11 · L10 Ch.3: `tam` "Lực → Chuyển động" (158px) tràn nút trung tâm elip ở 1280px → `tam` ≤ ~10 ký tự (đo `span.text-xl` trong `.tam` ≤ 120px) trước khi chụp.
+- 2026-11-11 · Script kiểm 375px bấm mọi `button[aria-expanded]` dính cả nút menu đầu trang, mở menu che trang → lọc trong `main`.
