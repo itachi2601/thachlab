@@ -103,3 +103,4 @@
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
 - [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — 16 bài đã lên; chờ soát bậc 1
+- [Sơ đồ tư duy chương](project_thachlab_so_do_tu_duy_chuong.md) — mẫu L12 Ch.3 ở /dev/so-do-tu-duy, chờ duyệt

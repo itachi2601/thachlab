@@ -1,0 +1,108 @@
+/* Sơ đồ tư duy chương — màu nhánh là MÃ GHI NHỚ (mỗi nhánh một màu, cố ý vượt M3; lý do ở SoDoTuDuy.tsx). */
+.c1 { --nh: #2563eb; }
+.c2 { --nh: #dc2626; }
+.c3 { --nh: #6d28d9; }
+.c4 { --nh: #c2410c; }
+.c5 { --nh: #0e7490; }
+:global(html[data-theme="dark"]) .c1 { --nh: #60a5fa; }
+:global(html[data-theme="dark"]) .c2 { --nh: #f87171; }
+:global(html[data-theme="dark"]) .c3 { --nh: #a78bfa; }
+:global(html[data-theme="dark"]) .c4 { --nh: #fb923c; }
+:global(html[data-theme="dark"]) .c5 { --nh: #22d3ee; }
+
+.so {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--nh);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+:global(html[data-theme="dark"]) .so { color: #05070b; }
+
+/* ---------- Điện thoại: thân cây dọc ---------- */
+.than { position: relative; padding-left: 18px; }
+.than::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  bottom: 28px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--color-line-strong);
+  opacity: 0.55;
+}
+.nut { position: relative; border-left: 5px solid var(--nh); }
+.nut::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 34px;
+  width: 13px;
+  height: 3px;
+  background: var(--nh);
+}
+.noi { position: relative; padding: 6px 0 6px 2px; font-size: 14px; line-height: 1.45; color: var(--color-muted); }
+
+/* ---------- Màn rộng: sơ đồ toả tròn ---------- */
+.banDo { position: relative; width: 100%; aspect-ratio: 10 / 8; }
+.banDo svg.day { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.nhanhDay { fill: none; stroke: var(--nh); stroke-width: 7; stroke-linecap: round; vector-effect: non-scaling-stroke; opacity: 0.85; }
+.mach { fill: none; stroke: var(--color-line-strong); stroke-width: 1.5; stroke-dasharray: 5 5; vector-effect: non-scaling-stroke; }
+.tam {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 24%;
+  aspect-ratio: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-panel);
+  text-align: center;
+  line-height: 1.25;
+}
+.la {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 31%;
+  min-width: 190px;
+  padding: 8px 10px 10px;
+  border: 2px solid var(--nh);
+  border-radius: 16px;
+  background: var(--color-panel);
+  text-align: center;
+  cursor: pointer;
+}
+.la[aria-pressed="true"] { box-shadow: 0 0 0 4px color-mix(in srgb, var(--nh) 28%, transparent); }
+.la:focus-visible, .nut button:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+
+/* ---------- Công thức & ô che (chế độ Tự kiểm) ---------- */
+.ct { padding: 4px 0 10px; white-space: nowrap; } /* phân số/dấu |…| của KaTeX thò xuống dưới hộp dòng → chừa chỗ để không chạm viền dưới */
+.ct :global(.katex) { font-size: 1.08em; }
+.ct :global(p), .dong :global(p) { margin: 0; }
+.che {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  min-width: 132px;
+  padding: 0 14px;
+  border: 2px dashed var(--nh, var(--color-line-strong));
+  border-radius: 10px;
+  background: var(--color-surface-2);
+  color: var(--color-muted);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
