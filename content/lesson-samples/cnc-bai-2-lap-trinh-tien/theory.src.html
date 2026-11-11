@@ -30,7 +30,7 @@ __FIG1__
 
 <h3>II. Kiến thức</h3>
 
-<h4>1. Điểm chuẩn khi lập trình</h4>
+<h4 id="muc-1">1. Điểm chuẩn khi lập trình</h4>
 
 <p><strong>🔑 M máy · W phôi · R tham chiếu · T/N dao · P mũi dao</strong></p>
 
@@ -47,7 +47,7 @@ __FIG1__
 <p>Các ví dụ trong bài đặt W ở <strong>tâm mặt đầu bên phải</strong> của phôi: mặt đầu là Z0, phần phôi phía mâm cặp có Z âm. Vị trí W cụ thể theo bản vẽ và hướng dẫn của giảng viên.</p>
 </details>
 
-<h4>2. Cấu trúc chương trình FANUC 21T</h4>
+<h4 id="muc-2">2. Cấu trúc chương trình FANUC 21T</h4>
 
 <p><strong>🔑 O + 4 số · Khối N…; · Chạy tuần tự · Chính gọi con</strong></p>
 
@@ -75,7 +75,7 @@ __FIG2__
 <li><strong>G90</strong>: tọa độ tuyệt đối (so với W). <strong>G91</strong>: tọa độ tương đối (so với điểm trước).</li>
 </ul>
 
-<h4>3. Mặt phẳng, đơn vị, lệnh dịch chuyển</h4>
+<h4 id="muc-3">3. Mặt phẳng, đơn vị, lệnh dịch chuyển</h4>
 
 <p>Mã G trong bài theo bảng mã Win-NC32 của xưởng.</p>
 
@@ -116,7 +116,7 @@ __FIG2__
 </div>
 
 
-<h4>4. Bù trừ bán kính mũi dao</h4>
+<h4 id="muc-4">4. Bù trừ bán kính mũi dao</h4>
 
 <p><strong>🔑 G41 trái · G42 phải · G40 hủy trước khi rút</strong></p>
 
@@ -132,24 +132,144 @@ __FIG2__
 <p>Đứng sau dao, nhìn theo hướng dao đang chạy: mũi dao nằm bên trái quỹ đạo lập trình là G41, bên phải là G42. Với máy cụ thể trong xưởng, chọn mã nào cho tiện ngoài, tiện trong theo hướng dẫn của giảng viên.</p>
 </details>
 
-<h4>5. Chu trình tiện và khoan</h4>
+<h4 id="muc-5">5. Chu trình tiện thô G73 và tinh G72: vì sao cần?</h4>
 
-<p><strong>🔑 G73 thô · G72 tinh · G77 rãnh · G78 ren</strong></p>
+<p><strong>🔑 Dư nhiều → G73 bóc thô từng lát, chừa dư · G72 tinh một lượt đúng kích thước · Chung biên dạng P–Q</strong></p>
 
-<p>Chu trình rút gọn chương trình, máy tự chia lượt cắt. Mã theo bảng Win-NC32 của xưởng.</p>
+<div class="tl-box tl-box--think">
+<p class="tl-label">🤔 Dự đoán trước khi đọc</p>
+<p>Phôi Ø40, chi tiết Hình 1. Vì sao không cho dao tinh chạy thẳng biên dạng một lượt cho xong?</p>
+<details class="tl-details"><summary>Xem gợi ý</summary><p>Đoạn Ø20 phải bóc 10 mm mỗi bên. Dao tinh ăn 10 mm một lượt sẽ rung, mẻ, gãy. Đọc tiếp để thấy máy chia việc ra sao.</p></details>
+</div>
+
+<p><strong>a) Vì sao không tiện một lần là xong?</strong></p>
+
+<ul>
+<li>Phôi Ø40, chi tiết Hình 1 có đoạn Ø20: mỗi bên phải bóc <strong>10 mm</strong>.</li>
+<li>Dao chỉ ăn sâu khoảng <strong>1–2 mm mỗi lát</strong> (Bài tập 1: 1 mm).</li>
+<li>Ăn 10 mm một lần: lực cắt quá lớn → rung, mẻ hoặc gãy dao, phôi có thể tuột khỏi mâm cặp.</li>
+</ul>
+
+<p>Vậy phải <strong>chia nhiều lát</strong>. Nhưng chia lát xong vẫn chưa đủ.</p>
+
+<p><strong>b) Vì sao phải tách thô và tinh?</strong></p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th></th><th>Tiện thô</th><th>Tiện tinh</th></tr></thead>
+<tbody>
+<tr><td>Mục đích</td><td>Bóc nhanh phần lớn vật liệu</td><td>Đúng kích thước, bề mặt nhẵn</td></tr>
+<tr><td>Dao</td><td>T0202 khoẻ, chịu lực</td><td>T0404 mũi sắc, bán kính nhỏ</td></tr>
+<tr><td>Sâu cắt</td><td>1 mm mỗi lát, nhiều lát</td><td>Chỉ lớp dư mỏng, một lượt</td></tr>
+<tr><td>F · n</td><td>F0,2 · 800 vòng/phút</td><td>F0,1 · 1000 vòng/phút</td></tr>
+<tr><td>Bề mặt để lại</td><td>Nhám, còn bậc giữa các lát</td><td>Nhẵn, đúng Ø trên bản vẽ</td></tr>
+</tbody></table></div>
+
+<ul>
+<li>Thô xong còn bậc, kích thước lệch chút ít (dao bị đẩy, mòn). Vì thế thô cố ý <strong>chừa một lớp dư đều</strong>: U0.5 (0,25 mm mỗi bên) và W0.1.</li>
+<li>Dao tinh cắt lớp mỏng, đều → lực nhỏ, ổn định → ra đúng kích thước.</li>
+<li>Dư bằng 0: dao tinh không còn gì để cắt, vết thô vẫn còn. Dư quá dày: dao tinh quá tải, mẻ mũi.</li>
+</ul>
+
+<p>Giống chà nhám gỗ: giấy thô trước cho nhanh, giấy mịn sau cho bóng.</p>
+
+
+<h4>5b. Chưa có chu trình: tự tính từng điểm</h4>
+
+
+<p>Tiện thô bằng G00/G01, mỗi lát em phải đưa dao tới <strong>4 điểm</strong>: ăn vào → cắt → lùi ra → về (Hình 4).</p>
+
+__FIG4__
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Lát</th><th>Ăn vào (G00)</th><th>Cắt tới (G01)</th><th>Lùi (G00)</th><th>Về (G00)</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>X35.0</td><td>Z-34.9</td><td>X37.0</td><td>Z2.0</td></tr>
+<tr><td>2</td><td>X30.5</td><td>Z-34.9</td><td>X32.5</td><td>Z2.0</td></tr>
+<tr><td>3</td><td>X25.5</td><td>Z-14.9</td><td>X27.5</td><td>Z2.0</td></tr>
+<tr><td>4</td><td>X20.5</td><td>Z-14.9</td><td>X22.5</td><td>Z2.0</td></tr>
+</tbody></table></div>
+
+<ul>
+<li>X30.5 và X20.5 là Ø30, Ø20 <strong>cộng lượng dư</strong> 0,5; Z-34.9, Z-14.9 dừng trước vai 0,1 mm.</li>
+<li>Đổi sâu cắt (khoảng 2,5 → 1 mm) là <strong>tính lại toàn bộ</strong> bảng.</li>
+<li>Gặp vát, côn, cung: mỗi lát dừng ở một Z khác, phải tính giao điểm. Rất dễ sai một số là dao đâm vào chi tiết.</li>
+</ul>
+
+<h4>5c. Dùng G73 và G72: em chỉ khai biên dạng</h4>
+
+__FIG5__
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Khối</th><th>Việc</th></tr></thead>
+<tbody>
+<tr><td><code>N50 G00 X42 Z2</code></td><td>Tới S: ngoài phôi Ø40, trước mặt đầu 2 mm</td></tr>
+<tr><td><code>N60 G73 U1 R0.5</code></td><td>Mỗi lát sâu <strong>1 mm</strong> (bán kính), lùi dao 0,5</td></tr>
+<tr><td><code>N70 G73 P80 Q140 U0.5 W0.1 F0.2</code></td><td>Biên dạng từ khối N80 tới N140, chừa dư U0.5 W0.1, F thô 0,2</td></tr>
+<tr><td><code>N80 G00 X18</code></td><td>Khối đầu P: chỉ đi X</td></tr>
+<tr><td><code>N90 G01 Z0 F0.1</code></td><td>A · F0,1 chỉ dùng cho lượt tinh</td></tr>
+<tr><td><code>N100 X20 Z-1</code></td><td>B · vát 1×45°</td></tr>
+<tr><td><code>N110 Z-15</code></td><td>C · hết đoạn Ø20</td></tr>
+<tr><td><code>N120 X30</code></td><td>D · lên bậc</td></tr>
+<tr><td><code>N130 Z-35</code></td><td>E · hết đoạn Ø30</td></tr>
+<tr><td><code>N140 X42</code></td><td>F · khối cuối Q: ra khỏi phôi</td></tr>
+</tbody></table></div>
+
+<p>Các điểm A…F chính là đường tiện tinh ở Bài toán mẫu (Hình 3). Em tính <strong>một lần</strong> đúng theo bản vẽ, không cộng dư, không chia lát.</p>
+
+<p><strong>Lượt tinh G72: chạy lại đúng biên dạng đó</strong></p>
+
+__FIG6__
+
+<details class="tl-details">
+<summary>📋 Các khối lượt tinh N150–N210</summary>
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Khối</th><th>Việc</th></tr></thead>
+<tbody>
+<tr><td><code>N150 G00 X100</code> · <code>N160 Z100</code></td><td>Rút dao thô về chỗ thay dao</td></tr>
+<tr><td><code>N170 T0404</code> · <code>N180 G97 S1000 M03</code></td><td>Dao tinh, tốc độ tinh</td></tr>
+<tr><td><code>N190 G41 G00 X42 Z2</code></td><td>Gọi bù mũi dao, về <strong>đúng S</strong> của chu trình thô</td></tr>
+<tr><td><code>N200 G72 P80 Q140</code></td><td>Chạy N80–N140 một lượt, F lấy từ N90 (0,1)</td></tr>
+<tr><td><code>N210 G40 G00 X100</code></td><td>Hủy bù, rút dao</td></tr>
+</tbody></table></div>
+</details>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>So sánh</th><th>Tự viết G00/G01</th><th>G73 + G72</th></tr></thead>
+<tbody>
+<tr><td>Khối cho phần thô</td><td>40 khối (sâu 1 mm)</td><td>2 khối G73 + 7 khối biên dạng dùng chung với G72</td></tr>
+<tr><td>Điểm phải tính</td><td>Mỗi lát 4 điểm, cộng dư</td><td>Chỉ S và A…F theo bản vẽ</td></tr>
+<tr><td>Đổi sâu cắt</td><td>Tính lại hết</td><td>Sửa U1 ở N60</td></tr>
+<tr><td>Lượt tinh</td><td>Viết lại biên dạng</td><td>1 khối G72 P Q</td></tr>
+</tbody></table></div>
+
+<p><strong>Ba điều phải đúng khi dùng G73/G72:</strong></p>
+<ul>
+<li><strong>Hai chữ U khác nghĩa:</strong> U1 ở N60 là sâu mỗi lát (bán kính); U0.5 ở N70 là lượng dư (đường kính).</li>
+<li><strong>Biên dạng đi một chiều:</strong> X không giảm, Z không tăng. Khối P chỉ đi theo X.</li>
+<li><strong>G00 an toàn</strong> tới S trước chu trình; dao tinh về <strong>đúng S</strong> rồi mới gọi G72.</li>
+</ul>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="cnc2-c10" value="chac"> Chắc</label>
+<label><input type="radio" name="cnc2-c10" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<p>Phôi cứng hơn, giảng viên bảo giảm sâu cắt thô còn 0,8 mm. Trong chương trình trên, sửa chỗ nào?</p>
+<input type="radio" name="cnc2-q10" id="cnc2-q10a"><label for="cnc2-q10a" class="tl-opt tl-no">A. N70: U0.5 thành U0.8</label>
+<input type="radio" name="cnc2-q10" id="cnc2-q10b"><label for="cnc2-q10b" class="tl-opt tl-no">B. Viết thêm các khối G01 cho lát mới</label>
+<input type="radio" name="cnc2-q10" id="cnc2-q10c"><label for="cnc2-q10c" class="tl-opt tl-ok">C. N60: U1 thành U0.8</label>
+<input type="radio" name="cnc2-q10" id="cnc2-q10d"><label for="cnc2-q10d" class="tl-opt tl-no">D. Thêm U0.8 vào khối G72</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Sâu mỗi lát nằm ở dòng 1 của G73 (N60). Máy tự chia lại số lát; biên dạng N80–N140 giữ nguyên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A sửa lượng dư tinh, không phải sâu cắt. B là cách viết tay, chu trình không cần. D: G72 không chia lát. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, xem lại "hai chữ U khác nghĩa".</p></div>
+</div>
+
+<h4>5d. Chu trình rãnh, ren và khoan</h4>
 
 <div class="table-scroll"><table class="tl-table">
 <thead><tr><th>Mã</th><th>Việc làm và khai báo</th></tr></thead>
 <tbody>
-<tr><td>G73</td><td>Thô dọc trục theo biên dạng P–Q: sâu cắt U, rút dao R, dư tinh U/W</td></tr>
-<tr><td>G72 P Q</td><td>Tiện tinh dọc trục theo biên dạng khối P–Q</td></tr>
 <tr><td>G77</td><td>Rãnh theo X: điểm cuối X(U) Z(W), sâu cắt P, bước Z là Q, dịch ngang R</td></tr>
 <tr><td>G78</td><td>Ren ngoài, ren lỗ, ren côn: số lần cắt tinh, góc ren, lát cắt nhỏ nhất, sâu ren, bước F</td></tr>
 </tbody></table></div>
-
-<ul>
-<li>Dùng G73: tổ chức đúng <strong>khối đầu, khối cuối</strong> vùng biên dạng; có <strong>G00 an toàn</strong> trước và sau chu trình.</li>
-</ul>
 
 <p><strong>Khoan trên máy tiện. 🔑 G83 khoan sâu · G98 về đầu · G99 về R · G80 hủy</strong></p>
 <p>Khai báo: mặt phẳng lùi dao, chiều sâu, ăn dao từng bước, dừng đáy lỗ.</p>
@@ -160,20 +280,9 @@ __FIG2__
 <li><strong>G80</strong>: hủy chu trình khoan.</li>
 </ul>
 
-<p class="tl-conf">Em chắc bao nhiêu?
-<label><input type="radio" name="cnc2-c3" value="chac"> Chắc</label>
-<label><input type="radio" name="cnc2-c3" value="khong"> Không chắc</label></p>
-<div class="tl-quiz">
-<p>Chi tiết cần lần lượt: (1) bóc dư thô theo biên dạng, (2) chạy tinh biên dạng đó, (3) cắt rãnh thoát dao, (4) tiện ren ngoài. Bốn chu trình theo đúng thứ tự là:</p>
-<input type="radio" name="cnc2-q3" id="cnc2-q3a"><label for="cnc2-q3a" class="tl-opt tl-no">A. G72 → G73 → G77 → G78</label>
-<input type="radio" name="cnc2-q3" id="cnc2-q3b"><label for="cnc2-q3b" class="tl-opt tl-no">B. G73 → G72 → G78 → G77</label>
-<input type="radio" name="cnc2-q3" id="cnc2-q3c"><label for="cnc2-q3c" class="tl-opt tl-no">C. G73 → G77 → G72 → G78</label>
-<input type="radio" name="cnc2-q3" id="cnc2-q3d"><label for="cnc2-q3d" class="tl-opt tl-ok">D. G73 → G72 → G77 → G78</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Thô G73, tinh G72 cùng biên dạng P–Q, rãnh G77, ren G78.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A đảo thô với tinh; B đảo rãnh với ren; C đặt rãnh vào giữa thô và tinh. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, nhớ cặp: <em>thô 73 · tinh 72 · rãnh 77 · ren 78</em>.</p></div>
-</div>
+<p><strong>Thứ tự trên một chi tiết:</strong> thô G73 → tinh G72 → rãnh G77 → ren G78. Rãnh thoát dao phải có trước khi tiện ren.</p>
 
-<h4>6. Mã M trong chương trình tiện</h4>
+<h4 id="muc-6">6. Mã M trong chương trình tiện</h4>
 
 <p>Mã M điều khiển chức năng phụ: trục chính, tưới nguội, mâm cặp, ụ động, luồng chương trình.</p>
 
@@ -275,11 +384,11 @@ __FIG2__
 <details class="tl-details"><summary>1. Tên chương trình và một khối lệnh viết thế nào?</summary><p>O + 4 số. N G X Z M S F T, kết thúc bằng dấu chấm phẩy.</p></details>
 <details class="tl-details"><summary>2. G00, G01, G02, G03 khác nhau ra sao?</summary><p>Chạy nhanh không cắt · cắt thẳng theo F · cung cùng chiều · cung ngược chiều kim đồng hồ.</p></details>
 <details class="tl-details"><summary>3. X, Z khác U, W thế nào? X tính theo gì?</summary><p>X, Z tuyệt đối (so với W); U, W tương đối (so với điểm trước). X, U theo đường kính.</p></details>
-<details class="tl-details"><summary>4. Bốn chu trình tiện và cặp mã bù dao?</summary><p>G73 thô · G72 tinh · G77 rãnh · G78 ren. G41 trái · G42 phải · G40 hủy trước khi rút.</p></details>
+<details class="tl-details"><summary>4. Vì sao phải thô G73 rồi mới tinh G72? Chu trình rãnh, ren, bù dao là mã nào?</summary><p>Dư nhiều phải chia lát; thô bóc nhanh, chừa lớp dư đều; tinh một lượt đúng kích thước, nhẵn. Hai chu trình dùng chung biên dạng P–Q. G77 rãnh · G78 ren. G41 trái · G42 phải · G40 hủy trước khi rút.</p></details>
 <details class="tl-details"><summary>5. Kể các cặp mã M bật/tắt và cặp gọi chương trình con.</summary><p>M03/M04/M05 trục chính · M08/M09 tưới nguội · M71/M72 thổi phoi · M20/M21 ụ động · M25/M26 mâm cặp · M98/M99 chương trình con.</p></details>
 </div>
 
-<h3>V. Bài toán mẫu: tiện tinh trục bậc</h3>
+<h3 id="bai-mau">V. Bài toán mẫu: tiện tinh trục bậc</h3>
 
 <div class="tl-box tl-box--rule">
 <p class="tl-label">📘 Đề bài</p>
