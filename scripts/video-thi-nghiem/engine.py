@@ -269,6 +269,7 @@ def frame(clip, gt):
     bw, bh = int(W * SCALE), int((SRC1 - SRC0) * SCALE)
     body = img.crop((0, SRC0, W, SRC1)).resize((bw, bh), Image.LANCZOS)
     img = Image.new("RGB", (W, H), BG); img.paste(body, ((W - bw) // 2, DST0)); d = ImageDraw.Draw(img, "RGBA")
+    IMG_REF[0] = img   # 11/11/2026: chu mo dan cua chrome (phu de, tieu de) phai dan vao anh MOI, khong thi thanh phu de trong 0,25 s
     chrome(d, clip, sc, t, gt)
     if t < 0.25: img = Image.blend(Image.new("RGB", (W, H), BG), img, ease(t / 0.25))
     return img
