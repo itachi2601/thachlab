@@ -44,7 +44,8 @@ cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài 
 - `anh_that` `{lesson_id: [{sau, tep, chu, nguon}]}` — ảnh THỰC TẾ chèn ngay sau phần tử đầu tiên có chữ chứa `sau`
   (nên neo vào tiêu đề h3/h4). File ở `book/assets/anh-that/` (xám, rộng ≤1200px, ≤150 KB); in ảnh trái 72 mm, chú thích phải.
   Ưu tiên ảnh thật trên web; thiếu thì cắt từ Halliday *Fundamentals of Physics 12th* (`/Users/MAC/Documents/THPT/số hoá THPT/…`,
-  lưu hành nội bộ, thầy chốt 11/11/2026 bỏ qua bản quyền). Neo không khớp → `build.py` in `! ảnh thực tế … không thấy chỗ neo`.
+  lưu hành nội bộ, thầy chốt 11/11/2026 bỏ qua bản quyền) hoặc Wikimedia Commons (`book/tim_anh_wikimedia.py`, ghi
+  tác giả + giấy phép trong `nguon`). Đặt ảnh ngay dưới đoạn đầu mục "Mở bài" (neo = vài chữ đầu đoạn) — ảnh là móc vào bài. Neo không khớp → `build.py` in `! ảnh thực tế … không thấy chỗ neo`.
 - **Hình mô phỏng** (`figure[data-exp|data-bt]`) KHÔNG in thành hình (thầy chốt 11/11/2026: in ra chỉ là khung tĩnh to,
   vô ích) → `sim_line` thu thành 1 dòng `▶ Hình N · mô phỏng trên web · chú thích`, giữ số hình. Trừ chú thích có
   đồ thị/điểm đo/số liệu/tỉ lệ xích (`KEEP_SIM_RE`) và đề bài đọc đồ thị/"như hình" (`GRAPH_RE`).
@@ -184,3 +185,4 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - 2026-11-11 · Thầy thấy nhiều trang trống lớn + hình mô phỏng in ra to mà vô ích (trên web chạy được, trên giấy chỉ là khung tĩnh) → 30 hình mô phỏng Ch.3 thu thành một dòng chú thích (`sim_line`), giữ đồ thị/số liệu; đo trống bằng `do_trong.py` (155→147 tr., 479→428 cm trống). Mặc định sách in: hình chỉ in khi tự nó mang thông tin (sơ đồ lực, đồ thị, ảnh thật).
 - 2026-11-11 · Sách nên có ảnh THỰC TẾ (hiện tượng đời sống) thay hình mô phỏng; web không có thì cắt Halliday (nội bộ, không xét bản quyền) → khai báo `anh_that` trong hồ sơ sách. File Halliday trong Documents là iCloud `dataless`: sandbox/`cp` báo "Operation timed out", `brctl download` không kéo về được → kiểm `ls -lO` TRƯỚC, dataless thì nhờ thầy bấm Tải về trong Finder ngay đầu việc, đừng chờ vòng lặp.
 - 2026-11-11 · Tăng cỡ chữ thân 9,6→10,5pt: `book.css` có 4 dòng `html{font-size…}` đè nhau (v2, v4…) và giãn dòng thật nằm ở khối v4 → grep mọi chỗ đè trước khi sửa; chữ to hơn đẩy khung QR "Ở nhà" sang trang riêng ở 3 bài (cảnh báo < 60 từ).
+- 2026-11-11 · Ảnh thực tế từ Wikimedia: tìm cả chương bằng 1 script + 1 tờ ghép 4 ứng viên/bài (xem 1 ảnh thay vì 40), API trả 429 khi gọi dồn → nghỉ 1,5 s/lần + thử lại. Truy vấn tiếng Anh theo hiện tượng (crash test dummy, bobsleigh start push, claw hammer…); chủ đề trừu tượng (khung ảnh treo hai dây) không có ảnh hợp → bỏ, đừng nhét ảnh lạc đề. Neo dưới đoạn đầu "Mở bài" thì ảnh thành móc vào bài và không phá bố cục mục II.
