@@ -69,10 +69,10 @@ for A, B in ((P1, N2), (P2, N2), (P1, N1), (P2, N1)):
         x0, y0 = S[0] + sg * ux * 14.5, S[1] + sg * uy * 14.5
         x1, y1 = S[0] + sg * ux * 26.5, S[1] + sg * uy * 26.5
         b += arrow("f1", "o", round(x0, 1), round(y0, 1), round(x1, 1), round(y1, 1), 2)
-# hai prôtôn đẩy nhau (xanh lá): mũi tên ngang, hướng ra phía ngoài mỗi hạt
+# hai proton đẩy nhau (xanh lá): mũi tên ngang, hướng ra phía ngoài mỗi hạt
 b += arrow("f1", "g", 55, 119, 28, 119, 2.2)
 b += arrow("f1", "g", 171, 119, 198, 119, 2.2)
-b += text(113, 210, "hai prôtôn đẩy nhau", GRN, 14, "middle", "700")
+b += text(113, 210, "hai proton đẩy nhau", GRN, 14, "middle", "700")
 # chú thích: nhãn đặt ngay cạnh khung, cùng màu cam với mũi tên lực hút
 b += text(214, 84, "lực hạt nhân:", ORG, 14, "start", "700")
 b += text(214, 104, "mũi tên cam", ORG, 14, "start", "600")
@@ -80,11 +80,11 @@ b += text(214, 124, "hút các nuclôn", ORG, 14, "start", "600")
 b += text(214, 144, "kề nhau", ORG, 14, "start", "600")
 b += text(214, 172, "mạnh hơn lực đẩy", "currentColor", 14, "start", "600")
 b += text(214, 192, "tầm 10⁻¹⁵ m", "currentColor", 14, "start", "600")
-b += text(14, 232, "4 nuclôn = 2 prôtôn (p) + 2 nơtron (n)", "currentColor", 14, "start", "600")
+b += text(14, 232, "4 nuclôn = 2 proton (p) + 2 neutron (n)", "currentColor", 14, "start", "600")
 fig1 = wrap_fig("0 0 420 244",
-                "Mô hình hạt nhân heli-4 gồm hai prôtôn đẩy nhau và hai nơtron, được lực hạt nhân hút lại",
+                "Mô hình hạt nhân heli-4 gồm hai proton đẩy nhau và hai neutron, được lực hạt nhân hút lại",
                 b,
-                "Hình 1. Hạt nhân heli-4: hai prôtôn đẩy nhau, nhưng lực hạt nhân hút mọi cặp nuclôn mạnh hơn hẳn "
+                "Hình 1. Hạt nhân heli-4: hai proton đẩy nhau, nhưng lực hạt nhân hút mọi cặp nuclôn mạnh hơn hẳn "
                 "nên hạt nhân vẫn đứng vững.", exp="tn-l12-nllk-01")
 
 # ------------------------------------------------- Hình 2: các nuclôn rời kết hợp thành hạt nhân (mục 4)
@@ -98,7 +98,7 @@ b += text(48, 91, "p", "#0f172a", 14, "middle", "700") + text(114, 91, "p", "#0f
 b += text(48, 127, "n", "#0f172a", 14, "middle", "700") + text(114, 127, "n", "#0f172a", 14, "middle", "700")
 b += text(81, 186, "4 nuclôn rời", BLUE, 14, "middle", "700")
 b += text(81, 205, "4,032980 u", BLUE, 14, "middle", "700")
-b += text(81, 224, "kể cả 2 êlectron", "currentColor", 14, "middle", "500")
+b += text(81, 224, "kể cả 2 electron", "currentColor", 14, "middle", "500")
 # mũi tên kết hợp (x 164–256), chữ căn giữa x = 210, cách hai khung ≥ 20 px
 b += arrow("f2", "g", 164, 104, 256, 104, 2.6)
 b += text(210, 90, "kết hợp", GRN, 14, "middle", "700")
@@ -117,16 +117,16 @@ b += text(14, 276, "0,030377 u × 931,5 MeV/u = 28,30 MeV", "currentColor", 14, 
 fig2 = wrap_fig("0 0 420 288",
                 "Bốn nuclôn rời có tổng khối lượng 4,032980 u kết hợp thành hạt nhân heli-4 khối lượng 4,002603 u, hụt 0,030377 u và toả 28,30 MeV",
                 b,
-                "Hình 2. Tổng khối lượng bốn nuclôn rời (kể cả hai êlectron) là 4,032980 u, còn nguyên tử heli-4 chỉ 4,002603 u: phần hụt 0,030377 u đã toả ra 28,30 MeV khi hạt nhân hình thành.")
+                "Hình 2. Tổng khối lượng bốn nuclôn rời (kể cả hai electron) là 4,032980 u, còn nguyên tử heli-4 chỉ 4,002603 u: phần hụt 0,030377 u đã toả ra 28,30 MeV khi hạt nhân hình thành.")
 
 # ------------------------------------------------- Hình 3: ảnh OpenStax Hình 31.24 (đợt 2, 27/10/2026)
 fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-nang-luong-lien-ket/hinh-nang-luong-lk-rieng-theo-so-khoi.webp" '
-        'alt="Đồ thị năng lượng liên kết riêng theo số khối: tăng nhanh ở hạt nhân nhẹ, đạt đỉnh quanh sắt và niken (khoảng 8,8 MeV mỗi nuclôn), rồi giảm chậm tới urani-238 (7,6)" '
+        'alt="Đồ thị năng lượng liên kết riêng theo số khối: tăng nhanh ở hạt nhân nhẹ, đạt đỉnh quanh sắt và niken (khoảng 8,8 MeV mỗi nuclôn), rồi giảm chậm tới uranium-238 (7,6)" '
         'loading="lazy" width="750" height="590"><figcaption>Hình 3. Năng lượng liên kết riêng đạt đỉnh quanh sắt-56 (cỡ 8,8–9 MeV/nuclôn).<br>'
         'Trái đỉnh: hợp hạt nhân nhẹ lại toả năng lượng.<br>'
         'Phải đỉnh: hạt nhân nặng vỡ ra cũng toả năng lượng.<br>'
         'Nhãn: BE/A = năng lượng liên kết riêng (MeV per nucleon = MeV/nuclôn).<br>'
-        'Atomic mass = số khối A. Fe = sắt, Ni = niken, U = urani, He = heli, Li = liti, C = cacbon, O = oxi.<br>'
+        'Atomic mass = số khối A. Fe = sắt, Ni = niken, U = uranium, He = heli, Li = liti, C = cacbon, O = oxi.<br>'
         '<small>Hình: OpenStax, College Physics 2e, Hình 31.24 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'
         '</figcaption></figure>')
 

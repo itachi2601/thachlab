@@ -57,10 +57,11 @@ function toQuizQuestions(key: string, questions: MultipleChoiceQuestion[]): CncQ
 // Nạp nhiều ngân hàng cùng lúc (1 query) — dùng khi mở trang bài học CNC.
 export async function fetchCncQuizBanks(keys: string[]): Promise<Record<string, CncQuizQuestion[]>> {
   if (!keys.length) return {};
-  const { data, error } = await getSupabase().from("exams").select("cnc_key, questions").in("cnc_key", keys);
+  // Đọc qua RPC: cột exams.questions (có đáp án) không còn cấp quyền đọc trực tiếp (migration 20261111200000).
+  const { data, error } = await getSupabase().rpc("get_cnc_quiz_banks", { p_keys: keys });
   if (error) throw error;
   const result: Record<string, CncQuizQuestion[]> = {};
-  for (const row of data ?? []) {
+  for (const row of (data ?? []) as { cnc_key: string | null; questions: unknown }[]) {
     if (!row.cnc_key) continue;
     result[row.cnc_key] = toQuizQuestions(row.cnc_key, (row.questions ?? []) as MultipleChoiceQuestion[]);
   }
