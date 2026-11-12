@@ -81,7 +81,7 @@ export const hinhL11b19 = {
     return wrap('0 0 320 198', b, cap, 'Lưới đồ thị V theo x để học sinh tự chấm điểm');
   },
   // ===== Trang 4: bài toán mẫu =====
-  mau: (cap = 'Electron đi M → P (ngang) rồi P → N (lên). Hai bản cách nhau 4 cm.') => {
+  mau: (cap = 'Electron đi M → P (ngang) rồi P → N (lên). Hai bản cách nhau 4&nbsp;cm.') => {
     let b = defs('mu1') + defs('mu2');
     b += ban(40, 300, 22, '+') + ban(40, 300, 182, '−');
     [70, 270].forEach((x) => { b += arr(x, 32, x, 170, 'mu1', GREY, '', 2); });

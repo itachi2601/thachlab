@@ -52,7 +52,7 @@ const p1 = `${ttCss}<section class="page">
 ${head('BÀI 16 · LỰC TƯƠNG TÁC GIỮA HAI ĐIỆN TÍCH', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
-${dong(`${ck}Giải thích ba cách nhiễm điện bằng <b>thuyết electron</b>; dùng <b>bảo toàn điện tích</b>`)}
+${dong(`${ck}Giải thích ba cách <b>nhiễm điện</b>; dùng <b>bảo toàn điện tích</b>`)}
 ${dong(`${ck}Phát biểu và tính ${m('F=k\\dfrac{|q_1q_2|}{\\varepsilon r^2}')}, đổi đúng đơn vị SI`)}
 ${dong(`${ck}Tổng hợp lực điện lên một điện tích; tìm vị trí để điện tích <b>cân bằng</b>`)}
 </div>
@@ -73,10 +73,10 @@ ${h3(4, 'II.1 · Nhiễm điện và thuyết electron', '1·4')}
 <div>Vật nhiễm điện: ${f(25)} hoặc đẩy vật khác, hoặc phóng ${f(25)}.</div>
 <div>Nguyên tử bình thường trung hoà: tổng điện tích ${f(14)}. Electron nhẹ, linh động, dễ ${f(25)}.</div>
 <div>Thừa electron: vật ${f(16)} · thiếu electron: vật ${f(16)} · ${nw(`${m('|q|=')} ${f(12)}`)}</div>
-<div>Điện tích luôn là bội của ${nw(`${m('|e|=')} ${f(22)}&nbsp;C`)}</div>
+<div>Điện tích luôn là bội của điện tích nguyên tố ${eC} (cho sẵn).</div>
 <div style="margin-top:.6mm"><b>Ví dụ:</b> thanh thuỷ tinh cọ lụa tích điện ${nC('+13')}. Bao nhiêu electron đã rời thanh? Lụa nhiễm điện gì?</div>${lines(2)}</div>
 <table>
-<tr><th style="width:30mm">Cách nhiễm điện</th><th>Kết quả</th><th>Electron đi đâu</th></tr>
+<tr><th style="width:24mm">Cách</th><th style="width:62mm">Kết quả</th><th>Electron đi đâu</th></tr>
 <tr><td style="height:7mm">Cọ xát</td><td></td><td></td></tr>
 <tr><td style="height:7mm">Tiếp xúc</td><td></td><td></td></tr>
 <tr><td style="height:7mm">Hưởng ứng</td><td></td><td></td></tr></table>
@@ -94,15 +94,14 @@ ${h3(2, 'Thí nghiệm: thước nhựa, giấy vụn, lon nhôm', '2·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> cọ thước nhựa vào tóc khô, đưa lại gần giấy vụn; rồi đưa lại gần (không chạm) lon nhôm rỗng nằm ngang.</div>
 <div><b>Quan sát:</b> giấy vụn ${f(32)}; lon nhôm ${f(32)}</div>
-<div><b>Rút ra:</b> thước nhiễm điện do ${f(18)}; lon nhiễm điện do ${f(18)}: đầu gần thước mang điện ${f(14)} dấu, ở gần hơn nên bị hút mạnh hơn đầu xa bị đẩy.</div></div>
+<div><b>Rút ra:</b> thước nhiễm điện do ${f(18)}. Lon nhiễm điện do ${f(18)}: đầu gần thước nhiễm điện ${f(14)} dấu nên bị hút; đầu xa bị đẩy nhưng ở xa hơn nên lực yếu hơn.</div></div>
 ${H.lonNhom()}</div>
 ${h3(3, 'II.2 · Định luật Coulomb', '2·3')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Điện tích điểm: vật tích điện rất ${f(14)} so với khoảng cách đang xét.</div>
-<div>Cùng dấu thì ${f(14)}, trái dấu thì ${f(14)}.</div>
 <div>Lực có phương ${f(40)}; độ lớn tỉ lệ thuận với ${f(16)}, tỉ lệ nghịch với ${f(16)}.</div>
-<div style="margin:.8mm 0">${m('F=')} <span class="fill" style="min-width:24mm;height:10mm"></span> &nbsp; ${m('k=')} ${f(22)}</div>
-<div>${eps}: hằng số ${f(18)}, ${nw(`${m('\\varepsilon\\ge')} ${f(8)}`)}; chân không ${nw(`${m('\\varepsilon=')} ${f(8)}`)}, không khí ${nw(`${m('\\varepsilon\\approx')} ${f(8)}`)}</div>
+<div style="margin:1mm 0;min-height:12mm;display:flex;align-items:flex-end;gap:3mm">${m('F=')} <span class="fill" style="min-width:30mm;height:11mm"></span> <span>với ${kC}</span></div>
+<div>${eps}: hằng số ${f(18)}, ${nw(`${m('\\varepsilon\\ge')} ${f(8)}`)}; chân không ${nw(m('\\varepsilon=1'))}, không khí ${nw(m('\\varepsilon\\approx1'))}</div>
 <div>Trong điện môi (dầu, thuỷ tinh, nước nguyên chất) lực ${f(14)} ${eps} lần.</div>
 <div>Chỉ đúng cho điện tích điểm hoặc quả cầu tích điện đều (coi điện tích đặt ở ${f(12)}).</div></div>
 ${H.haiDienTich()}</div>
@@ -123,10 +122,10 @@ ${h3(1, 'II.3 · Thí nghiệm đo: cân điện tử “cân” lực điện',
 ${H.canDien()}</div>
 ${h3(2, 'II.4 · Tổng hợp lực điện', '3·2')}
 <div class="fig-side" style="${fs(44)}"><div>
-<div>${q0} chịu lực của nhiều điện tích: ${m('\\vec F=')} ${f(30)}. Tính từng lực bằng Coulomb, vẽ đúng chiều hút/đẩy.</div>
+<div>${q0} chịu lực của nhiều điện tích: ${m('\\vec F=')} ${f(30)}.</div>
 <table style="margin-top:.6mm"><tr><th style="width:44mm">Hai lực</th><th>Hợp lực</th></tr>
-<tr><td>Cùng chiều</td><td></td></tr><tr><td>Ngược chiều</td><td></td></tr><tr><td>Vuông góc</td><td></td></tr>
-<tr><td>Góc ${al} bất kì (chung gốc tại ${q0})</td><td></td></tr><tr><td>${m('F_1=F_2')}, góc ${al}</td><td></td></tr></table>
+<tr><td>Cùng chiều</td><td></td></tr><tr><td>Ngược chiều</td><td></td></tr><tr><td style="height:9mm">Vuông góc</td><td></td></tr>
+<tr><td style="height:9mm">Góc ${al} bất kì (chung gốc tại ${q0})</td><td></td></tr><tr><td style="height:9mm">${m('F_1=F_2')}, góc ${al}</td><td></td></tr></table>
 <div style="margin-top:.6mm">Cùng hút/cùng đẩy: ${nw(`${al} = ${f(16)}`)} · một hút, một đẩy: ${nw(`${al} = ${f(24)}`)}</div></div>
 ${H.tongHop()}</div>
 ${h3(3, 'II.5 · Cân bằng của điện tích chịu nhiều lực', '3·3')}
@@ -185,14 +184,14 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Hai quả cầu giống nhau chạm rồi tách',
-    de: `Hai quả cầu kim loại nhỏ giống hệt nhau, đặt trên bàn cách điện, mang ${m('q_1=-8{,}0')} nC và ${m('q_2=+2{,}0')} nC, chạm nhau rồi tách ra (bỏ qua điện tích mất vào không khí; ${eC}).<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> êlectron chuyển từ quả nào sang quả nào; số êlectron chuyển`,
-    nd: `Hệ cô lập: tổng ${f(14)} không đổi; cộng ${f(10)} dấu, chia đều; ${nw(`${m('n=')} ${f(12)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 3, fig: H.chamD1() },
+    de: `Hai quả cầu kim loại nhỏ giống hệt nhau mang ${m('q_1=-8{,}0')} nC và ${m('q_2=+2{,}0')} nC, chạm nhau rồi tách ra (hệ cô lập; ${eC}).<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> electron chuyển từ quả nào sang quả nào; số electron chuyển`,
+    nd: `Hệ cô lập: tổng ${f(14)} không đổi; cộng ${f(10)} dấu, chia đều; ${nw(`${m('n=')} ${f(12)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 4, fig: H.chamD1() },
   { t: 'Dạng 2 · Dễ · Định luật Coulomb: lực, hút hay đẩy, điện tích từ lực',
-    de: `Trong không khí, ${m('q_1=+3{,}0\\ \\mu\\mathrm C')} và ${m('q_2=-5{,}0\\ \\mu\\mathrm C')} cách nhau ${cm('30')} ${nw(`(${kC})`)}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> cặp điện tích khác bằng độ lớn, cách nhau ${cm('10')} trong không khí, đẩy nhau lực ${nw(m('0{,}90\\ \\mathrm N'))}: độ lớn mỗi điện tích`,
+    de: `Trong không khí, ${m('q_1=+3{,}0\\ \\mu\\mathrm C')} và ${m('q_2=-5{,}0\\ \\mu\\mathrm C')} cách nhau ${cm('30')} ${nw(`(${kC})`)}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> hai điện tích khác có độ lớn bằng nhau, cách nhau ${cm('10')}, đẩy nhau ${nw(m('0{,}90\\ \\mathrm N'))}: độ lớn mỗi điện tích`,
     nd: `Đổi ${f(12)} trước, bình phương ${m('r')} sau; dấu chỉ để biết ${f(16)}; ${nw(`${m('|q|=')} ${f(16)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 3 },
   { t: 'Dạng 3 · Trung bình · Đổi môi trường, khoảng cách, điện tích',
     de: `Hai điện tích điểm trong không khí cách nhau ${cm('6{,}0')}, hút nhau lực ${m('F_0=4{,}0')} mN.<br><b>a)</b> nhúng cả hai vào dầu ${nw(m('\\varepsilon=4{,}0'))}, giữ khoảng cách: lực khi đó<br><b>b)</b> vẫn trong dầu, đặt cách nhau bao nhiêu để lực lại bằng ${nw(m('4{,}0'))} mN<br><b>c)</b> về không khí, tăng ${m('|q_1|')} lên 3 lần và giảm khoảng cách còn ${cm('3{,}0')}: lực khi đó`,
-    nd: `Lập tỉ số với tình huống mốc: ${m('F')} tỉ lệ thuận với ${f(14)}, nghịch với ${f(10)} và ${f(10)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `Lập tỉ số với tình huống mốc: ${m('F')} tỉ lệ thuận với ${f(14)}, nghịch với ${f(10)} và ${f(10)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Trung bình · Vị trí cân bằng trên đường nối hai điện tích',
     de: `Trên thanh nhựa thẳng nằm ngang, đủ dài, trong không khí, gắn cố định ${m('q_1=+36')} nC tại A và ${m('q_2=-4{,}0')} nC tại B, ${m('AB=9{,}0')} cm. Hạt ${m('q_0=+2{,}0')} nC xâu vào thanh, trượt không ma sát ${nw(`(${kC})`)}.<br><b>a)</b> đặt ${q0} ở C nào để hợp lực điện lên nó bằng 0: ${m('CA')}, ${m('CB')}<br><b>b)</b> lực do ${q1} và lực do ${q2} lên ${q0} tại C (để kiểm tra)<br><b>c)</b> thay ${q0} bằng hạt ${nC('-2{,}0')}: vị trí cân bằng có đổi không`,
     nd: `Trái dấu ⇒ C ở ${f(18)} đoạn AB, gần điện tích ${f(14)}; ${nw(`${m('\\dfrac{r_1}{r_2}=')} ${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 7, fig: H.mienD4() },
@@ -202,11 +201,11 @@ const dang = [
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
-const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
+const oY = (s, o, w = {}) => s.split('<br>').map((p) => {
   const y = p.match(/^<b>([a-d])\)<\/b>/);
   if (!y) return `<div>${p}</div>`;
   const ls = o.filter((l) => l[0] === y[1]);
-  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(typeof w === 'object' ? (w[l] ?? 25) : w)}</span>`).join('')}</span></div>`;
 }).join('');
 const ttDe = (b) => b.fig ? `<div class="fig-side" style="grid-template-columns:1fr ${b.fw}mm">${`<div>${oY(b.de, b.o, b.ow)}</div>`}${b.fig}</div>` : oY(b.de, b.o, b.ow);
 const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: ttDe(b), k: 0 } : b));
@@ -216,22 +215,22 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: `Hai quả cầu kim loại nhỏ giống hệt nhau mang ${m('q_1=+5{,}0')} nC và ${m('q_2=-9{,}0')} nC, chạm nhau rồi tách ra; hệ cô lập; ${eC}.<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> êlectron chuyển từ quả nào sang quả nào; số êlectron chuyển`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'] },
-    { t: 'Dạng 1 · Bài 2', de: `Ba quả cầu kim loại giống hệt nhau mang ${nC('+6{,}0')}, ${nC('-3{,}0')}, ${nC('+9{,}0')}, cùng chạm nhau rồi tách ra; hệ cô lập; ${eC}.<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> sau khi tách, mỗi quả thừa hay thiếu bao nhiêu êlectron`, fig: H.baQuaTT(), fw: 54, o: ['a', 'b'], ow: 22 },
-    { t: 'Dạng 2 · Bài 1', de: `Trong không khí, ${m('q_1=-2{,}0\\ \\mu\\mathrm C')} và ${m('q_2=-4{,}0\\ \\mu\\mathrm C')} cách nhau ${cm('20')} ${kk}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> hai điện tích bằng độ lớn, cách nhau ${cm('5{,}0')} trong không khí, đẩy nhau lực ${nw(m('3{,}6\\ \\mathrm N'))}: độ lớn mỗi điện tích`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
-    { t: 'Dạng 2 · Bài 2', de: `Trong không khí, ${m('q_1=+2{,}0')} nC và ${m('q_2=-8{,}0')} nC cách nhau ${cm('3{,}0')} ${kk}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> hai điện tích bằng độ lớn, cách nhau ${cm('3{,}0')} trong không khí, đẩy nhau lực ${nw(m('0{,}40\\ \\mathrm N'))}: độ lớn mỗi điện tích`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    { t: 'Dạng 1 · Bài 1', de: `Hai quả cầu kim loại nhỏ giống hệt nhau mang ${m('q_1=+5{,}0')} nC và ${m('q_2=-9{,}0')} nC, chạm nhau rồi tách ra; hệ cô lập; ${eC}.<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> electron chuyển từ quả nào sang quả nào; số electron chuyển`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], ow: { 'b<sub>1</sub>': 30 } },
+    { t: 'Dạng 1 · Bài 2', de: `Ba quả cầu kim loại giống hệt nhau mang ${nC('+6{,}0')}, ${nC('-3{,}0')}, ${nC('+9{,}0')}, cùng chạm nhau rồi tách ra; hệ cô lập; ${eC}.<br><b>a)</b> điện tích mỗi quả sau khi tách<br><b>b)</b> sau khi tách, mỗi quả thừa hay thiếu bao nhiêu electron`, fig: H.baQuaTT(), fw: 54, o: ['a', 'b'], ow: { a: 20, b: 30 } },
+    { t: 'Dạng 2 · Bài 1', de: `Trong không khí, ${m('q_1=-2{,}0\\ \\mu\\mathrm C')} và ${m('q_2=-4{,}0\\ \\mu\\mathrm C')} cách nhau ${cm('20')} ${kk}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> hai điện tích có độ lớn bằng nhau, cách nhau ${cm('5{,}0')} trong không khí, đẩy nhau lực ${nw(m('3{,}6\\ \\mathrm N'))}: độ lớn mỗi điện tích`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    { t: 'Dạng 2 · Bài 2', de: `Trong không khí, ${m('q_1=+2{,}0')} nC và ${m('q_2=-8{,}0')} nC cách nhau ${cm('3{,}0')} ${kk}.<br><b>a)</b> độ lớn lực tương tác; hút hay đẩy<br><b>b)</b> hai điện tích có độ lớn bằng nhau, cách nhau ${cm('3{,}0')} trong không khí, đẩy nhau lực ${nw(m('0{,}40\\ \\mathrm N'))}: độ lớn mỗi điện tích`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
     { t: 'Dạng 3 · Bài 1', de: `Hai điện tích điểm trong không khí cách nhau ${cm('6{,}0')}, hút nhau lực ${m('F_0=9{,}0')} mN.<br><b>a)</b> nhúng vào chất lỏng ${nw(m('\\varepsilon=2{,}25'))}, giữ khoảng cách: lực khi đó<br><b>b)</b> trong chất lỏng đó, cách nhau bao nhiêu để lực lại bằng ${nw(m('9{,}0'))} mN<br><b>c)</b> về không khí, giảm ${m('|q_1|')} 2 lần, tăng khoảng cách lên ${cm('12')}: lực khi đó`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 3 · Bài 2', de: `Hai điện tích điểm trong không khí đẩy nhau lực ${m('F_0=2{,}0')} mN.<br><b>a)</b> tăng độ lớn mỗi điện tích 2 lần và tăng khoảng cách 2 lần: lực khi đó<br><b>b)</b> giữ điện tích ban đầu, đặt vào dầu ${nw(m('\\varepsilon=2{,}0'))}, khoảng cách còn một nửa: lực khi đó<br><b>c)</b> khoảng cách còn một nửa, môi trường có ${eps} bằng bao nhiêu thì lực vẫn bằng ${nw(m('F_0'))}`, o: ['a', 'b', 'c'] },
   ], [
-    { t: 'Dạng 4 · Bài 1', de: `Trong không khí, gắn cố định ${m('q_1=+4{,}0')} nC tại A và ${m('q_2=+9{,}0')} nC tại B, ${m('AB=10')} cm ${kk}. Hạt ${m('q_0=+1{,}0')} nC trượt không ma sát trên thanh thẳng qua A, B.<br><b>a)</b> vị trí C để ${q0} cân bằng: ${m('CA')}, ${m('CB')}<br><b>b)</b> độ lớn lực do ${q1} lên ${q0} tại C<br><b>c)</b> thay ${q0} bằng ${nC('-3{,}0')}: vị trí cân bằng có đổi không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'] },
-    { t: 'Dạng 4 · Bài 2', de: `Trong không khí, gắn cố định ${m('q_1=-1{,}0')} nC tại A và ${m('q_2=+4{,}0')} nC tại B, ${m('AB=6{,}0')} cm ${kk}. Hạt ${m('q_0=+2{,}0')} nC trượt không ma sát trên thanh thẳng qua A, B.<br><b>a)</b> C ở trong hay ngoài đoạn AB, phía nào; ${m('CA')}, ${m('CB')}<br><b>b)</b> độ lớn lực do ${q1} lên ${q0} tại C<br><b>c)</b> nếu ${q2} đổi thành ${nC('+1{,}0')}: còn vị trí cân bằng không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b', 'c'], ow: 22 },
+    { t: 'Dạng 4 · Bài 1', de: `Trong không khí, gắn cố định ${m('q_1=+4{,}0')} nC tại A và ${m('q_2=+9{,}0')} nC tại B, ${m('AB=10')} cm ${kk}. Hạt ${m('q_0=+1{,}0')} nC trượt không ma sát trên thanh thẳng qua A, B.<br><b>a)</b> vị trí C để ${q0} cân bằng: ${m('CA')}, ${m('CB')}<br><b>b)</b> độ lớn lực do ${q1} lên ${q0} tại C<br><b>c)</b> thay ${q0} bằng ${nC('-3{,}0')}: vị trí cân bằng có đổi không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], ow: { 'a<sub>1</sub>': 30 } },
+    { t: 'Dạng 4 · Bài 2', de: `Trong không khí, gắn cố định ${m('q_1=-1{,}0')} nC tại A và ${m('q_2=+4{,}0')} nC tại B, ${m('AB=6{,}0')} cm ${kk}. Hạt ${m('q_0=+2{,}0')} nC trượt không ma sát trên thanh thẳng qua A, B.<br><b>a)</b> C ở trong hay ngoài đoạn AB, phía nào; ${m('CA')}, ${m('CB')}<br><b>b)</b> độ lớn lực do ${q1} lên ${q0} tại C<br><b>c)</b> nếu ${q2} đổi thành ${nC('+1{,}0')}: còn vị trí cân bằng không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b', 'c'], ow: { 'a<sub>1</sub>': 30, 'a<sub>2</sub>': 20, 'a<sub>3</sub>': 20, b: 22, c: 22 } },
     { t: 'Dạng 5 · Bài 1', de: `Trong không khí, ${m('q_1=+6{,}0')} nC tại A, ${m('q_2=+16')} nC tại B, ${m('q_0=+1{,}0')} nC tại C; ${m('CA=3{,}0')} cm, ${m('CB=4{,}0')} cm, CA vuông góc CB ${kk}.<br><b>a)</b> độ lớn ${m('F_1')} do ${q1}, ${m('F_2')} do ${q2} lên ${q0}<br><b>b)</b> độ lớn hợp lực lên ${q0}<br><b>c)</b> góc giữa hợp lực và ${m('\\vec F_1')}`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'] },
     { t: 'Dạng 5 · Bài 2', de: `Trong không khí, ba điện tích ở ba đỉnh tam giác đều cạnh ${cm('6{,}0')}: ${m('q_A=q_B=+4{,}0')} nC, ${m('q_0=+1{,}0')} nC tại C ${kk}.<br><b>a)</b> độ lớn lực do mỗi điện tích A, B lên ${q0}<br><b>b)</b> góc giữa hai lực; độ lớn hợp lực<br><b>c)</b> thay ${m('q_B=-4{,}0')} nC: góc giữa hai lực; hợp lực`, fig: H.deuTT(), fw: 38, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: 20 },
     nhap(5),
   ]],
   dap: [
-    `D1·1: a) −2,0 nC · b<sub>1</sub>) quả 2 → quả 1 · b<sub>2</sub>) 4,4·10<sup>10</sup> &nbsp;|&nbsp; D1·2: a) +4,0 nC · b) thiếu 2,5·10<sup>10</sup> êlectron &nbsp;|&nbsp; D2·1: a<sub>1</sub>) 1,8 N · a<sub>2</sub>) đẩy · b) 1,0 ${m('\\mu')}C &nbsp;|&nbsp; D2·2: a<sub>1</sub>) 1,6·10<sup>−4</sup> N · a<sub>2</sub>) hút · b) 0,20 ${m('\\mu')}C &nbsp;|&nbsp; D3·1: a) 4,0 mN · b) 4,0 cm · c) 1,1 mN &nbsp;|&nbsp; D3·2: a) 2,0 mN · b) 4,0 mN · c) ${m('\\varepsilon')} = 4,0`,
-    `D4·1: a<sub>1</sub>) CA = 4,0 cm · a<sub>2</sub>) CB = 6,0 cm · b) 2,3·10<sup>−5</sup> N · c) không đổi &nbsp;|&nbsp; D4·2: a<sub>1</sub>) ngoài, phía A · a<sub>2</sub>) CA = 6,0 cm · a<sub>3</sub>) CB = 12 cm · b) 5,0·10<sup>−6</sup> N · c) không &nbsp;|&nbsp; D5·1: a<sub>1</sub>) 6,0·10<sup>−5</sup> N · a<sub>2</sub>) 9,0·10<sup>−5</sup> N · b) 1,1·10<sup>−4</sup> N · c) 56° &nbsp;|&nbsp; D5·2: a) 1,0·10<sup>−5</sup> N · b<sub>1</sub>) 60° · b<sub>2</sub>) 1,7·10<sup>−5</sup> N · c<sub>1</sub>) 120° · c<sub>2</sub>) 1,0·10<sup>−5</sup> N`,
+    `D1·1: a) −2,0 nC · b<sub>1</sub>) quả 2 → quả 1 · b<sub>2</sub>) 4,4·10<sup>10</sup> &nbsp;|&nbsp; D1·2: a) +4,0 nC · b) thiếu 2,5·10<sup>10</sup> electron &nbsp;|&nbsp; D2·1: a<sub>1</sub>) 1,8 N · a<sub>2</sub>) đẩy · b) 1,0 ${m('\\mu')}C &nbsp;|&nbsp; D2·2: a<sub>1</sub>) 1,6·10<sup>−4</sup> N · a<sub>2</sub>) hút · b) 0,20 ${m('\\mu')}C &nbsp;|&nbsp; D3·1: a) 4,0 mN · b) 4,0 cm · c) 1,1 mN &nbsp;|&nbsp; D3·2: a) 2,0 mN · b) 4,0 mN · c) ${m('\\varepsilon')} = 4,0`,
+    `D4·1: a<sub>1</sub>) CA = 4,0 cm · a<sub>2</sub>) CB = 6,0 cm · b) 2,25·10<sup>−5</sup> N · c) không đổi &nbsp;|&nbsp; D4·2: a<sub>1</sub>) ngoài, phía A · a<sub>2</sub>) CA = 6,0 cm · a<sub>3</sub>) CB = 12 cm · b) 5,0·10<sup>−6</sup> N · c) không &nbsp;|&nbsp; D5·1: a<sub>1</sub>) 6,0·10<sup>−5</sup> N · a<sub>2</sub>) 9,0·10<sup>−5</sup> N · b) 1,1·10<sup>−4</sup> N · c) 56° &nbsp;|&nbsp; D5·2: a) 1,0·10<sup>−5</sup> N · b<sub>1</sub>) 60° · b<sub>2</sub>) 1,7·10<sup>−5</sup> N · c<sub>1</sub>) 120° · c<sub>2</sub>) 1,0·10<sup>−5</sup> N`,
   ],
 };
 
