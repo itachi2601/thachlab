@@ -41,38 +41,46 @@ def stator(d, cx, cy, r):
         d.line([(cx - 46, y), (cx + 46, y + 5)], fill=(150, 85, 30), width=3)
     return (cx - 24, yt + 18), (cx + 24, yt + 18)    # hai dau day ra
 
-def cable(d, pts, a=1.0):
-    d.line(pts, fill=A(GRAY, a), width=12, joint="curve")
+def cable(d, pts, col, a=1.0):
+    d.line(pts, fill=A(col, a), width=10, joint="curve")
 
+WA, WB = (176, 74, 40), (37, 99, 175)               # day A (nau do), day B (xanh): moi thiet bi noi ca hai day
 RX, RY, RR = 300, 720, 140
+BX, BY = 860, 800                                   # bong den
 def rig(d, t, n, ang, reading, lit):
-    """n: toc do hien tren nhan (None = dung yen); reading: chuoi tren tan so ke; lit: 0..1 do sang den."""
+    """n: toc do hien tren nhan (None = dung yen, "···" = dang tang toc); reading: chuoi tren tan so ke; lit: 0..1."""
     l1, l2 = stator(d, RX, RY, RR)
+    # Mach: cuon day co hai dau l1, l2. Day A va day B moi day noi toi CA tan so ke LAN bong den
+    # -> tan so ke va den mac song song voi nhau, cung song song voi cuon day. Khong day nao cat nhau.
+    cable(d, [l1, (l1[0], 490), (580, 490), (580, 630), (760, 630), (760, 905), (BX - 12, 905), (BX - 12, BY + 88)], WA)
+    cable(d, [(650, 600), (650, 630)], WA)                          # tan so ke, cuc 1 -> day A
+    cable(d, [l2, (l2[0], 515), (550, 515), (550, 965), (1045, 965), (1045, 430), (1010, 430)], WB)
+    cable(d, [(BX + 12, BY + 88), (BX + 12, 965)], WB)              # den, chan 2 -> day B
+    for x, y, c in ((650, 630, WA), (BX + 12, 965, WB)): dot(d, x, y, 11, c)   # diem noi
     rotor(d, RX, RY, RR, ang, mark=True)
     if n: arrow(d, (RX + RR + 70, RY - 70), (RX + RR + 70, RY + 40), ORANGE, w=6, head=18)
     text(d, (RX, RY + RR + 90), "rô-to: p = 2 cặp cực", 36, NAVY)
-    # day noi: cuon day -> tan so ke, song song -> bong den
-    cable(d, [l1, (l1[0], 490), (600, 490)])
-    cable(d, [l2, (l2[0], 520), (580, 520), (580, 660), (805, 660), (805, 690)])
     # nhan toc do
     card(d, (60, 265, 560, 455), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (310, 310), "Tốc độ quay", 36, MUTED, bold=False)
-    text(d, (310, 385), f"n = {n} vòng/s" if n else "n = 0", 54, BLUE)  # n: so (vong/s) hoac "···" khi dang tang toc
-    if n: text(d, (310, 432), "(quay chậm lại)", 36, MUTED, bold=False)
-    # tan so ke
+    if n == "···": text(d, (310, 385), "n đang tăng…", 50, BLUE)
+    else: text(d, (310, 385), f"n = {n} vòng/s" if n else "n = 0", 54, BLUE)
+    if n: text(d, (310, 432), "(quay chậm lại)", 40, MUTED, bold=False)
+    # tan so ke (hai cuc: day duoi trai = A, canh phai = B)
     card(d, (600, 265, 1010, 600), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (805, 310), "Tần số kế", 36, MUTED, bold=False)
     d.rounded_rectangle([630, 350, 980, 470], radius=16, fill=NAVY)
     text(d, (805, 410), reading, 66, (134, 239, 172))
     text(d, (805, 520), "Hz", 40, MUTED)
     text(d, (805, 568), "sai số ±0,1 Hz", 36, MUTED, bold=False)
-    # bong den nho mac song song
+    for x, y, c in ((650, 600, WA), (1010, 430, WB)): dot(d, x, y, 10, c, NAVY)   # hai cuc may do
+    # bong den nho: hai chan o day duoi, chan trai -> day A, chan phai -> day B
     if lit > 0:
         for rr, al in ((120, 0.18), (90, 0.28), (66, 0.4)):
-            dot(d, 805, 770, rr * (0.6 + 0.4 * lit), A(YELLOW, al * lit))
-    dot(d, 805, 770, 52, mix((235, 235, 235), (255, 236, 140), lit), NAVY)
-    d.rectangle([785, 818, 825, 860], fill=GRAY, outline=NAVY, width=3)
-    text(d, (805, 900), "đèn nhỏ", 36, MUTED, bold=False)
+            dot(d, BX, BY, rr * (0.6 + 0.4 * lit), A(YELLOW, al * lit))
+    dot(d, BX, BY, 52, mix((235, 235, 235), (255, 236, 140), lit), NAVY)
+    d.rectangle([BX - 22, BY + 48, BX + 22, BY + 88], fill=GRAY, outline=NAVY, width=3)
+    text(d, (BX, BY - 112), "đèn nhỏ", 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
 OPTS = ("A. 12,5 Hz", "B. 25 Hz", "C. 50 Hz", "D. 100 Hz")
@@ -129,7 +137,7 @@ def s_do(img, d, t, sc):
     # dong ho bam giay: dem vong trong 10 s (kim quay 1 vong tuong trung, truoc khi ghi hang dau)
     kw = appear(t, 0.4, 0.3) * (1 - appear(t, row_at(0, sc) + 0.6, 0.3))
     if kw > 0:
-        q = clamp((t - 1.2) / (row_at(0, sc) - 1.4)); sx, sy, sr = 575, 860, 52
+        q = clamp((t - 1.2) / (row_at(0, sc) - 1.4)); sx, sy, sr = 655, 800, 52
         d.rectangle([sx - 10, sy - sr - 18, sx + 10, sy - sr], fill=A(NAVY, kw))
         dot(d, sx, sy, sr, A(WHITE, kw), A(NAVY, kw))
         if q > 0: d.pieslice([sx - sr + 8, sy - sr + 8, sx + sr - 8, sy + sr - 8], -90, -90 + 360 * q, fill=A((191, 219, 254), kw))
@@ -186,7 +194,7 @@ def s_ans(img, d, t, sc):
     c = appear(t, M[2] + 0.2, 0.3)
     card(d, (130, 1360, 950, 1550), fill=A((220, 252, 231), c), r=24)
     ctext(d, 1415, "f/n ≈ 2 = số cặp cực p", 50, GREEN, alpha=c)
-    ctext(d, 1495, "lệch chút: quay không đều", 40, MUTED, bold=False, alpha=c)
+    ctext(d, 1495, "lệch: quay không đều", 40, MUTED, bold=False, alpha=c)
 
 # ---------------- canh 4: co che - moi vong cho p chu ki ----------------
 WX0, WX1, WY = 150, 950, 1110
@@ -252,7 +260,7 @@ def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "f = n·p (n vòng/s, p cặp cực)",
              "p = 2, quay 900 vòng/phút. Tần số bằng bao nhiêu?",
-             "đổi ra vòng/s")
+             "1 phút = 60 s")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -275,13 +283,13 @@ CLIP = dict(id="tn-l12-mayphatdien-01", header="VẬT LÍ 12 · THÍ NGHIỆM", 
    ("n = 25 → f = 50,3 Hz.", 2.4)]),
  dict(key="ans", title="Đồ thị f theo n", draw=s_ans, tail=0.6, caps=[
    ("C: khoảng 50 Hz.", 2.6),
-   ("Điểm nằm trên đường thẳng.", 2.4),
+   ("Điểm thẳng hàng.", 2.4),
    ("f/n gần bằng p = 2.", 2.8)]),
  dict(key="why", title="Vì sao f = n·p?", draw=s_why, tail=0.6, caps=[
-   ("Mỗi cặp cực qua cuộn: 1 chu kì.", 3.0),
+   ("Mỗi cặp cực: 1 chu kì.", 3.0),
    ("1 vòng = 2 chu kì.", 2.8)]),
  dict(key="trap", title="Giới hạn và cái bẫy", draw=s_trap, tail=0.6, caps=[
-   ("Một máy duy nhất.", 2.4),
+   ("Giới hạn:", 2.4),
    ("Bẫy: đếm cực.", 2.6),
    ("4 cực = 2 cặp.", 2.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
