@@ -55,7 +55,7 @@ ${h3(1, 'Mục tiêu', '1·1')}
 ${dong(`${ck}Kể lại thí nghiệm <b>Oersted</b>; nêu ba cặp <b>tương tác từ</b>`)}
 ${dong(`${ck}Nêu <b>từ trường</b> là gì và cách xác định hướng của nó tại một điểm`)}
 ${dong(`${ck}Nêu tính chất của <b>đường sức từ</b>; nhận ra từ trường đều`)}
-${dong(`${ck}Giải thích vì sao kim la bàn chỉ hướng; tổng hợp hai từ trường vuông góc`)}
+${dong(`${ck}Mô tả độ mạnh từ trường bằng <b>cảm ứng từ</b>; tổng hợp hai từ trường vuông góc`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -146,9 +146,9 @@ ${h3(1, 'Thí nghiệm dựng lại: cảm biến lùi xa nam châm', '4·1')}
 <div class="fig-side" style="${fs(36)}"><div>
 <div style="font-size:var(--fs-sm);line-height:1.35;margin-bottom:.6mm">Lùi cảm biến từ của điện thoại xa dần thanh nam châm; mỗi khoảng cách đọc 3 lần, lấy trung bình.</div>
 <table class="tbl-ct"><tr><th>${m('d')} (cm)</th><th>2</th><th>4</th><th>6</th><th>8</th><th>10</th></tr>
-<tr><td>${m('B')} (${m('\\mu\\mathrm T')})</td><td>1000</td><td>129</td><td>48</td><td>34</td><td>31</td></tr></table>
+<tr><td>${m('B')} (${m('\\mu\\mathrm T')})</td><td>1000</td><td>125</td><td>62</td><td>50</td><td>48</td></tr></table>
 <div style="margin-top:.6mm">${m('d')}: 2 ${m('\\to')} 4 cm, ${m('B')} giảm ${f(12)} lần · 4 ${m('\\to')} 8 cm, giảm ${f(12)} lần</div>
-<div>Ra xa, số đọc chững lại cỡ ${uT('30')} vì ${f(40)}</div></div>
+<div>Ra xa, số đọc chững lại cỡ ${uT('50')} vì ${f(40)}</div></div>
 ${H.camBien()}</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '4·2')}
 <div class="card fig-side" style="${fs(38)};padding:1mm 3mm"><div>
@@ -179,8 +179,8 @@ ${wl(`Bước 2: thành phần bắc = ${f(16)} ; thành phần đông = ${f(16)
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Hai cách biết trong phòng có từ trường khác ngoài từ trường Trái Đất?`, 2)
- + wl(`${m('\\bigstar\\bigstar')} Hai nam châm gần nhau: chỗ nào từ trường mạnh nhất, chỗ nào coi bằng 0?`, 2)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Cực quang ở Bắc Bán Cầu xuất hiện quanh cực từ nào? Vì sao?`, 2))}
+ + wl(`${m('\\bigstar\\bigstar')} Hai thanh nam châm thẳng hàng, hai cực N quay vào nhau: giữa hai cực, chỗ nào từ trường bằng 0, chỗ nào mạnh nhất?`, 2)
+ + wl(`${m('\\bigstar\\bigstar\\bigstar')} Tăng dần dòng điện trong dây đặt trên la bàn: kim lệch tới đâu? Có lệch quá ${dg('90')} được không?`, 2))}
 ${foot(5)}</section>`;
 
 const dang = [
@@ -220,7 +220,7 @@ const tuongTu = {
     nhap(6),
   ], [
     { t: 'Dạng 3 · Bài 1', de: `La bàn nằm ngang; ${BdV('36')} hướng bắc. Dây thẳng dài nằm ngang theo phương bắc – nam, ngay phía trên la bàn; dòng điện chạy từ bắc đến nam thì kim lệch ${dg('30')}. ${chi} Lấy ${nw(m('\\tan30^\\circ\\approx0{,}577'))}, ${nw(m('\\cos30^\\circ\\approx0{,}866'))}.<br><b>a)</b> kim lệch về phía đông hay tây<br><b>b)</b> cảm ứng từ ${Bday} của dây tại la bàn<br><b>c)</b> cảm ứng từ tổng hợp tại kim`, o: ['a', 'b', 'c'], ow: { a: 18 } },
-    { t: 'Dạng 3 · Bài 2', de: `La bàn nằm ngang; ${BdV('30')} hướng bắc. Dây thẳng dài nằm ngang theo phương bắc – nam, ngay phía dưới la bàn, dòng điện chạy từ nam đến bắc; từ trường của dây tại la bàn ${uT('40')}. ${chi}<br><b>a)</b> kim lệch về phía đông hay tây<br><b>b)</b> cảm ứng từ tổng hợp tại kim<br><b>c)</b> góc lệch của kim so với hướng bắc`, o: ['a', 'b', 'c'], ow: { a: 18 } },
+    { t: 'Dạng 3 · Bài 2', de: `La bàn nằm ngang; ${BdV('30')} hướng bắc. Dây thẳng dài nằm ngang theo phương bắc – nam, ngay phía dưới la bàn, dòng điện chạy từ nam đến bắc; từ trường của dây tại la bàn ${uT('40')}. ${chi} Lấy ${m('\\tan 53^\\circ\\approx 1{,}33')}.<br><b>a)</b> kim lệch về phía đông hay tây<br><b>b)</b> cảm ứng từ tổng hợp tại kim<br><b>c)</b> góc lệch của kim so với hướng bắc`, o: ['a', 'b', 'c'], ow: { a: 18 } },
     { t: 'Dạng 4 · Bài 1', de: `Hai dây thẳng dài, nằm ngang theo phương bắc – nam: dây (1) ngay phía trên la bàn, dây (2) ngay phía dưới; cả hai có dòng chạy từ nam đến bắc. ${BdV('40')} hướng bắc; tại la bàn, từ trường của dây (1) là ${uT('50')}, của dây (2) là ${uT('20')}, đều nằm ngang.<br><b>a)</b> chiều từ trường của dây (1), dây (2) tại la bàn (đông/tây)<br><b>b)</b> cảm ứng từ tổng hợp của hai dây; hướng<br><b>c)</b> cảm ứng từ tổng hợp tại kim; kim lệch bao nhiêu độ, về phía nào`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'a<sub>1</sub>': 14, 'a<sub>2</sub>': 14, b: 22, 'c<sub>1</sub>': 18, 'c<sub>2</sub>': 22 } },
     { t: 'Dạng 4 · Bài 2', de: `Như dạng 4: dây (1) ngay phía trên la bàn, dòng nam ${m('\\to')} bắc, từ trường của nó tại la bàn ${uT('20')}; ${BdV('30')} hướng bắc. Thêm dòng vào dây (2) ngay phía dưới, chạy bắc ${m('\\to')} nam: kim lệch ${dg('53')} ${nw(`(${m('\\tan53^\\circ\\approx1{,}33')})`)}. Từ trường mỗi dây tại kim nằm ngang.<br><b>a)</b> chiều từ trường của dây (2) tại la bàn<br><b>b)</b> cảm ứng từ ${m('B_2')} của dây (2) tại la bàn<br><b>c)</b> đổi chiều dòng ở dây (2), độ lớn giữ nguyên: cảm ứng từ tổng hợp tại kim; kim chỉ hướng nào`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { a: 18, b: 20, 'c<sub>1</sub>': 20, 'c<sub>2</sub>': 20 } },
     nhap(3),

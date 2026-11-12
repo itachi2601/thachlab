@@ -193,13 +193,13 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Nhận ra cách biến đổi nội năng',
-    de: `Đĩa phanh nhôm ${kg('0{,}25')} ở ${oC('25{,}0')}, ${nw(m('c=880'))} ${cDv}. Phanh gấp: má phanh thực hiện công ${J('4400')} lên đĩa, coi chưa kịp truyền nhiệt; sau đó đĩa từ ${oC('45{,}0')} nguội về ${oC('25{,}0')}.<br><b>a)</b> lúc phanh: ${hai('thực hiện công', 'truyền nhiệt')}; ${m('\\Delta U_1')}<br><b>b)</b> lúc nguội: ${hai('thực hiện công', 'truyền nhiệt')}; nhiệt lượng ${Q} và ${m('\\Delta U_2')}<br><b>c)</b> ${dU} từ trước lúc phanh đến khi nguội hẳn`,
-    nd: `Nhận công thì ${A} ${f(8)}; toả nhiệt thì ${Q} ${f(8)}; ${nw(`${dt} = ${f(22)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3, fig: H.phanhD1('') },
+    de: `Đĩa phanh nhôm ${kg('0{,}25')} ở ${oC('25{,}0')}, ${nw(m('c=880'))} ${cDv}. Phanh gấp: má phanh thực hiện công ${J('4400')} lên đĩa (chưa kịp truyền nhiệt); rồi đĩa từ ${oC('45{,}0')} nguội về ${oC('25{,}0')}.<br><b>a)</b> lúc phanh: ${hai('thực hiện công', 'truyền nhiệt')}; ${m('\\Delta U_1')}<br><b>b)</b> lúc nguội: ${hai('thực hiện công', 'truyền nhiệt')}; nhiệt lượng ${Q} và ${m('\\Delta U_2')}<br><b>c)</b> ${dU} cả hai giai đoạn`,
+    nd: `Nhận công thì ${A} ${f(8)}; toả nhiệt thì ${Q} ${f(8)}; ${nw(`${dt} = ${f(22)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4, fig: H.phanhD1('') },
   { t: 'Dạng 2 · Trung bình · Đặt dấu A, Q cho từng giai đoạn',
     de: `Giai đoạn 1: nén nhanh, pit-tông thực hiện công ${J('180')} lên khí, khí toả ra ngoài ${J('70')}. Giai đoạn 2: khí giãn nở, thu ${J('130')} từ không khí xung quanh và sinh công ${J('150')}.<br><b>a)</b> ${m('\\Delta U_1')} ở giai đoạn 1<br><b>b)</b> ${m('\\Delta U_2')} ở giai đoạn 2<br><b>c)</b> sau hai giai đoạn, nội năng ${hai('tăng', 'giảm')} bao nhiêu`,
     nd: `Mỗi giai đoạn đặt dấu riêng, rồi cộng ${f(16)} ${m('\\Delta U_1+\\Delta U_2')}`, a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 3 · Trung bình · Bài ngược: biết ΔU, tìm A hoặc Q',
-    de: `Quá trình 1: nén khí, khí nhận công ${J('25')}, nội năng giảm ${J('35')}. Quá trình 2: hơ nóng, khí nhận nhiệt ${J('100')}, nội năng tăng ${J('20')}.<br><b>a)</b> quá trình 1: khí ${hai('toả', 'thu')} nhiệt; ${m('Q_1')}<br><b>b)</b> quá trình 2: khí ${hai('nhận', 'sinh')} công; ${m('A_2')}`,
+    de: `(1) nén khí: nhận công ${J('25')}, nội năng giảm ${J('35')}; (2) hơ nóng: nhận nhiệt ${J('100')}, nội năng tăng ${J('20')}.<br><b>a)</b> quá trình 1: khí ${hai('toả', 'thu')} nhiệt; ${m('Q_1')}<br><b>b)</b> quá trình 2: khí ${hai('nhận', 'sinh')} công; ${m('A_2')}`,
     nd: `Nội năng giảm thì ${dU} ${f(8)}; rút ${nw(`${m('Q=')} ${f(16)}`)}, ${nw(`${m('A=')} ${f(16)}`)}`, a: ['a', 'b'], gi: 2 },
   { t: 'Dạng 4 · Khó · Công làm nóng vật rồi nhiệt truyền sang nước',
     de: `Khoan lỗ trên khối đồng ${kg('0{,}300')} đặt trong cốc cách nhiệt chứa ${kg('0{,}250')} nước ở ${oC('24{,}0')}. Một lượt khoan, mũi khoan thực hiện công ${J('5400')} lên khối đồng; cuối lượt nước ở ${oC('27{,}0')}. Nước chỉ nhận nhiệt từ khối đồng và không nhận công; ${cN}.<br><b>a)</b> nhiệt lượng nước nhận được<br><b>b)</b> khối đồng ${hai('toả', 'thu')} nhiệt; nhiệt lượng ${Q} của khối đồng<br><b>c)</b> ${dU} của khối đồng; nội năng đồng ${hai('tăng', 'giảm')}`,
