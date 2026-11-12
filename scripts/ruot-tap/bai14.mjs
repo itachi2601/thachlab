@@ -115,7 +115,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .fig-side{display:grid;gap:2.5mm;align-items:start}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
-.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
+.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:14mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
 .gtq{text-align:center;flex:none}.gtq .qr{width:34mm;height:34mm;padding:2mm;border:0}.gtq .qr svg{width:30mm;height:30mm}.gtq small{display:block;font-size:var(--fs-sm)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
