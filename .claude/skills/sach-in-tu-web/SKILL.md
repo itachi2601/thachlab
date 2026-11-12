@@ -165,6 +165,10 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
    > `book/cache/37.json` (lý thuyết + mọi dạng bài tập mẫu), đáp số tính bằng Python. Chỉ tạo/sửa 2 file của bài mình — KHÔNG đụng
    > `khung.mjs`, script dựng quyển, skill, STATE. Kiểm: 12 trang, dư 0–15 mm, katexErr=0, `pdffonts` sạch, `xem-hinh`, QR giải mã
    > đúng `?id=37`, `do-cho-viet.mjs`. Commit theo đường dẫn, push nhánh, báo trang nào dư bao nhiêu + điểm cần thầy quyết.
+   **Brief luôn kèm 4 lỗi lặp (HS ảo L11 Ch.3)**: hằng số (k, e, 1 eV, g…) in sẵn trước khi hỏi · Mục tiêu/chú thích hình cạnh
+   Dự đoán không lộ đáp án · ô đủ rộng cho phân số/đáp án dài · số dòng kẻ ≥ số ý ở Dạng 1–3. Bài không có bài tập mẫu (thực hành)
+   → tr.6–9 dùng bảng số liệu + xử lí sai số + câu hỏi báo cáo thay Dạng. **Model**: bài có BTM → Opus; bài thực hành,
+   bài nhập môn → Sonnet. Kế hoạch các chương còn lại: memory `project_thachlab_ruot_tap_con_lai.md`.
    Ảnh Halliday được dùng (L11 Ch.3 ↔ Vol.2 ch.21 Coulomb, 22 điện trường, 24 điện thế, 25 tụ điện) nhưng chỉ trên Mac, thêm vào
    bảng `ANH` của `cat-anh.py` + chép bản sao ra `ruot-tap-anh/`; không bắt buộc (L10 Ch.4 dùng toàn SVG).
 5. **Khi các phiên xong** (phiên chính): merge main, `bash scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh`, rồi MỘT phiên học sinh ảo

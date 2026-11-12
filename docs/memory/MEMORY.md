@@ -91,6 +91,7 @@
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S/tính toán, Ch.3–4
 - [Ruột tập bài 14 + VL10 Ch.4 + VL11 Ch.3](project_thachlab_ruot_tap_bai14.md) — L12 b14, VL10 Ch.4 60 tr, VL11 Ch.3 72 tr chờ in thử
+- [Ruột tập các chương còn lại](project_thachlab_ruot_tap_con_lai.md) — 65 bài, 3 đợt; đợt 1 mở 12/11
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 8 clip chờ đăng
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
