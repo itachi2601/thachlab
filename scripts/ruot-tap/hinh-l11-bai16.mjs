@@ -83,13 +83,12 @@ export const hinhL11b16 = {
     b += `<path d="M184,96 L191,86 L196,104 L205,92" fill="none" stroke="${RED}" stroke-width="3.2"/>` + T(176, 74, 'tách!', { c: RED, w: 700, a: 'middle' });
     return wrap('0 0 300 196', b, cap, 'Người chạm tay vào kệ sắt ở siêu thị');
   },
-  lonNhom: (cap = 'Thước chưa chạm lon. Lon lăn lại gần thước.') => {
+  lonNhom: (cap = 'Thước đưa lại gần, chưa chạm lon.') => {
     let b = defs('ln1') + dat(8, 292, 150);
     b += `<rect x="58" y="22" width="26" height="104" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + [46, 74, 102].map((y) => T(71, y + 7, '−', { a: 'middle', w: 700, size: 24 })).join('');
     b += T(71, 16, 'thước nhựa', { a: 'middle' });
     b += `<circle cx="210" cy="110" r="38" fill="#fff" stroke="${INK}" stroke-width="${SW}"/><circle cx="210" cy="110" r="26" fill="none" stroke="${GREY}" stroke-width="1.8"/>`;
     b += T(210, 117, 'lon', { a: 'middle', w: 700 });
-    b += arr(212, 50, 140, 50, 'ln1', BLUE, '7 4') + T(176, 40, 'lăn', { c: BLUE, a: 'middle', w: 700 });
     return wrap('0 0 300 160', b, cap, 'Thước nhựa đã cọ tóc đưa gần lon nhôm');
   },
   haiDienTich: (cap = 'F<sub>12</sub>: lực q<sub>1</sub> tác dụng lên q<sub>2</sub>; F<sub>21</sub>: lực q<sub>2</sub> lên q<sub>1</sub>.') => {
