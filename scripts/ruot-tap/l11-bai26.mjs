@@ -50,7 +50,7 @@ ${head('BÀI 26 · THỰC HÀNH: ĐO SUẤT ĐIỆN ĐỘNG VÀ ĐIỆN TRỞ TR
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Lắp mạch đo, đọc đúng ampe kế và vôn kế, ghi bảng số liệu ${m('(I,U)')}`)}
-${dong(`${ck}Vẽ đồ thị ${m('U')} theo ${m('I')}, từ đường thẳng suy ra ${E} và ${r}`)}
+${dong(`${ck}Vẽ đồ thị ${m('U')} theo ${m('I')}, từ đường thẳng đọc các đại lượng đặc trưng của pin`)}
 ${dong(`${ck}Ghi kết quả kèm sai số; nêu được nguyên nhân sai số`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
@@ -77,16 +77,16 @@ ${h3(5, 'Làm nhanh', '1·5')}
 ${box(cau(`Đường ${m('U')}–${m('I')} của một pin cắt trục ${m('U')} tại ${V('1{,}50')} và đi qua điểm ${nw(m('(0{,}50\\ \\mathrm A;\\ 1{,}10\\ \\mathrm V)'))}. Điện trở trong ${r} của pin là bao nhiêu?`, 1))}
 ${foot(1)}</section>`;
 
-const bangDc = (rows) => `<table><tr><th style="width:31mm">Dụng cụ</th><th>Mắc thế nào · để làm gì</th></tr>${rows.map((x) => `<tr><td style="height:11mm">${x}</td><td></td></tr>`).join('')}</table>`;
+const bangDc = (rows) => `<table><tr><th style="width:36mm">Dụng cụ</th><th>Mắc thế nào · để làm gì</th></tr>${rows.map((x) => `<tr><td style="height:11mm">${x}</td><td></td></tr>`).join('')}</table>`;
 const p2 = `<section class="page">
 ${head('DỤNG CỤ · SƠ ĐỒ MẠCH ĐO · ĐIỆN TRỞ BẢO VỆ')}
 ${h3(1, 'II.2 · Dụng cụ và sơ đồ mạch', '2·1')}
-<div class="fig-side" style="${fs(62)}"><div>
+<div class="fig-side" style="${fs(58)}"><div>
 ${bangDc(['Pin cần đo: pin AA đã dùng + pin mới cùng loại', `Biến trở ${Rx}: ${nw(m('0\\text{–}100\\ \\Omega'))}`, `Điện trở ${R0} ${nw(m('=2{,}0\\ \\Omega'))}`, 'Ampe kế, thang 2 A', 'Vôn kế, thang 2 V', 'Khoá K'])}
 </div>${H.soDo()}</div>
 ${h3(2, `Vì sao phải mắc điện trở bảo vệ ${m('R_0')}?`, '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Định luật Ohm toàn mạch: ${nw(m('I=\\dfrac{\\mathcal{E}}{R_{\\text{ngoài}}+r}'))}. Pin cũ có ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}8\\ \\Omega'))} (cho sẵn).</div>
+<div>Định luật Ohm toàn mạch: ${nw(m('I=\\dfrac{\\mathcal{E}}{R_{\\text{ngoài}}+r}'))}. Pin mới có ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}30\\ \\Omega'))} (cho sẵn).</div>
 <div style="margin-top:.6mm">Bỏ ${R0}, vặn ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(22)}`)} &nbsp;· Có ${R0} ${nw(m('=2{,}0\\ \\Omega'))}, ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(22)}`)}</div>
 <div style="margin-top:.6mm">Ampe kế thang ${nw(m('2\\ \\mathrm A'))}. Cách nào dòng lớn nhất còn trong thang? ${ck}bỏ ${R0} &nbsp;${ck}có ${R0}</div></div>
 ${h3(3, 'Ampe kế và vôn kế: mắc nhầm là hỏng', '2·3')}
@@ -134,8 +134,8 @@ ${h3(1, 'II.4 · Số liệu nhóm em', '4·1')}
 <div class="hint" style="margin:.8mm 0">Sai số dụng cụ: vôn kế ${nw(m('\\pm0{,}01\\ \\mathrm V'))}; ampe kế ${nw(m('\\pm0{,}002\\ \\mathrm A'))} (theo cấp chính xác của máy, lớn hơn chữ số cuối hiện ${nw(m('0{,}001\\ \\mathrm A'))}).</div>
 <div class="card soft" style="padding:1.2mm 3mm"><div><b>Quan sát:</b> ${Rx} càng nhỏ thì ${I} ${f(14)}, ${U} ${f(14)}. Pin cũ: ${U} từ ${f(10)} V xuống ${f(10)} V; pin mới: từ ${f(10)} V xuống ${f(10)} V.</div></div>
 ${h3(2, 'Sai số đến từ đâu, khắc phục thế nào?', '4·2')}
-<div class="fig-side" style="${fs(50)}"><div>
-<table><tr><th>Nguyên nhân</th><th style="width:38mm">Khắc phục</th></tr>${nguyenNhan.map((x) => `<tr><td style="height:8mm;font-size:var(--fs-sm)">${x}</td><td></td></tr>`).join('')}</table></div>
+<div class="fig-side" style="${fs(44)}"><div>
+<table><tr><th>Nguyên nhân</th><th style="width:44mm">Khắc phục</th></tr>${nguyenNhan.map((x) => `<tr><td style="height:8mm;font-size:var(--fs-sm)">${x}</td><td></td></tr>`).join('')}</table></div>
 ${H.kepVon()}</div>
 <div class="card soft" style="margin-top:1.2mm;padding:1.2mm 3mm">Ampe kế đặt ${ck}trong ${ck}ngoài đoạn M–N (hai điểm vôn kế kẹp). Vì vậy điện trở ampe kế ${ck}có ${ck}không cộng vào ${r} đo được.</div>
 ${h3(3, 'Làm nhanh: chọn hai điểm để tính r', '4·3')}
@@ -168,7 +168,7 @@ const dang = [
     nd: `Hai cặp cùng thoả ${nw(`${m('U=')} ${f(22)}`)}; trừ vế thì mất ${f(10)}; ${nw(`${E} = ${m('U')} + ${f(10)}`)}`, a: ['a', 'b'], gi: 4, fig: H.duongThang() },
   { t: 'Dạng 2 · Trung bình · Dự đoán số chỉ ampe kế, vôn kế và vai trò điện trở bảo vệ',
     de: `Pin cũ ${nw(m('\\mathcal{E}=1{,}55\\ \\mathrm V'))}, ${nw(m('r=0{,}60\\ \\Omega'))}; ${nw(m('R_0=2{,}0\\ \\Omega'))} nối tiếp biến trở đang ở ${nw(m('R_x=3{,}0\\ \\Omega'))}. Ampe kế điện trở không đáng kể, vôn kế điện trở rất lớn, khoá K đóng.<br><b>a)</b> số chỉ ampe kế<br><b>b)</b> số chỉ vôn kế<br><b>c)</b> bạn học sinh bỏ ${R0} rồi vặn ${nw(`${Rx} = 0`)}: dòng qua pin; ampe kế ${nw(`thang ${m('2\\ \\mathrm A')}`)} có chịu được không`,
-    nd: `${nw(`${m('I=')} ${f(24)}`)}; ${nw(`${U} = ${E} − ${f(10)}`)}; bỏ ${R0}, ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(14)}`)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4, fig: H.soDo('Mạch đo của đề: M, N là hai cực pin.') },
+    nd: `${nw(`${m('I=')} ${f(24)}`)}; ${nw(`${U} = ${E} − ${f(10)}`)}; bỏ ${R0}, ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(14)}`)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.soDo('Mạch đo của đề: M, N là hai cực pin.') },
   { t: `Dạng 3 · Khó · Xử lí bảng số liệu: chọn cặp điểm, tính ${r}, ${E} và sai số`,
     de: `Bảng số liệu một viên pin AA, ${nw(m('R_0=2{,}0\\ \\Omega'))}; vôn kế ${nw(m('\\pm0{,}01\\ \\mathrm V'))}, ampe kế ${nw(m('\\pm0{,}002\\ \\mathrm A'))}:
 ${tbDe([100, 20, 10, 5, 2, 0], ['0,015', '0,069', '0,124', '0,208', '0,348', '0,633'], ['1,54', '1,52', '1,49', '1,46', '1,39', '1,27'])}<b>a)</b> chọn hai lần đo cho ${r} đáng tin nhất (không vẽ đồ thị); tính ${r}<br><b>b)</b> tính ${E}<br><b>c)</b> coi ${r} là thương của hai hiệu, ước lượng ${m('\\Delta r')} bằng cách cộng sai số tỉ đối của tử và mẫu; ghi ${m('r=\\ldots\\pm\\ldots')}`,
@@ -193,10 +193,10 @@ const tuongTu = {
     { t: 'Dạng 1 · Bài 2', de: `Một viên pin khác: lần 1 ${nw(m('I_1=0{,}30\\ \\mathrm A'))}, ${nw(m('U_1=1{,}40\\ \\mathrm V'))}; lần 2 ${nw(m('I_2=0{,}90\\ \\mathrm A'))}, ${nw(m('U_2=1{,}04\\ \\mathrm V'))}.<br><b>a)</b> điện trở trong ${r}<br><b>b)</b> suất điện động ${E}`, o: ['a', 'b'] },
     { t: 'Dạng 2 · Bài 1', de: `Pin ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}50\\ \\Omega'))}; ${nw(m('R_0=1{,}0\\ \\Omega'))} nối tiếp biến trở ${nw(m('R_x=4{,}0\\ \\Omega'))}; ampe kế lí tưởng thang ${nw(m('2\\ \\mathrm A'))}, vôn kế song song hai cực pin.<br><b>a)</b> số chỉ ampe kế<br><b>b)</b> số chỉ vôn kế<br><b>c)</b> bỏ ${R0}, vặn ${nw(`${Rx} = 0`)}: dòng qua pin; ampe kế có chịu được không`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'c<sub>2</sub>': 18 } },
     { t: 'Dạng 2 · Bài 2', de: `Pin ${nw(m('\\mathcal{E}=1{,}60\\ \\mathrm V'))}, ${nw(m('r=0{,}40\\ \\Omega'))}; ${nw(m('R_0=2{,}0\\ \\Omega'))} nối tiếp biến trở ${nw(m('R_x=1{,}0\\ \\Omega'))}; ampe kế lí tưởng thang ${nw(m('2\\ \\mathrm A'))}.<br><b>a)</b> số chỉ ampe kế<br><b>b)</b> số chỉ vôn kế<br><b>c)</b> bỏ ${R0}, vặn ${nw(`${Rx} = 0`)}: dòng qua pin; ampe kế có chịu được không`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'c<sub>2</sub>': 18 } },
-    { t: 'Dạng 3 · Bài 1', de: `Bảng số liệu một viên pin, ${nw(m('R_0=2{,}0\\ \\Omega'))}; vôn kế ${nw(m('\\pm0{,}01\\ \\mathrm V'))}, ampe kế ${nw(m('\\pm0{,}002\\ \\mathrm A'))}:${tbDe([50, 10, 5, 2, 0], ['0,030', '0,124', '0,207', '0,343', '0,612'], ['1,54', '1,49', '1,45', '1,37', '1,22'])}<b>a)</b> chọn hai lần đo xa nhau; tính ${r}<br><b>b)</b> tính ${E}<br><b>c)</b> ước lượng ${m('\\Delta r')} (cộng sai số tỉ đối của tử và mẫu); ghi ${m('r=\\ldots\\pm\\ldots')}`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'a<sub>1</sub>': 18, 'c<sub>2</sub>': 34 } },
+    { t: 'Dạng 3 · Bài 1', de: `Bảng số liệu một viên pin, ${nw(m('R_0=2{,}0\\ \\Omega'))}; vôn kế ${nw(m('\\pm0{,}01\\ \\mathrm V'))}, ampe kế ${nw(m('\\pm0{,}002\\ \\mathrm A'))}:${tbDe([50, 10, 5, 2, 0], ['0,030', '0,124', '0,207', '0,343', '0,612'], ['1,54', '1,49', '1,45', '1,37', '1,22'])}<br><b>a)</b> chọn hai lần đo xa nhau; tính ${r}<br><b>b)</b> tính ${E}<br><b>c)</b> ước lượng ${m('\\Delta r')} (cộng sai số tỉ đối của tử và mẫu); ghi ${m('r=\\ldots\\pm\\ldots')}`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'a<sub>1</sub>': 18, 'c<sub>2</sub>': 34 } },
   ], [
-    { t: 'Dạng 3 · Bài 2', de: `Bảng số liệu một viên pin khác, ${nw(m('R_0=2{,}0\\ \\Omega'))}; cùng sai số dụng cụ:${tbDe([50, 10, 5, 2, 0], ['0,028', '0,116', '0,189', '0,304', '0,514'], ['1,46', '1,39', '1,32', '1,22', '1,03'])}<b>a)</b> chọn hai lần đo xa nhau; tính ${r}<br><b>b)</b> tính ${E}<br><b>c)</b> ước lượng ${m('\\Delta r')}; ghi ${m('r=\\ldots\\pm\\ldots')}`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'a<sub>1</sub>': 18, 'c<sub>2</sub>': 34 } },
-    { t: 'Đọc đồ thị', de: `<div class="fig-side" style="grid-template-columns:1fr 44mm"><div>Hai pin cùng ${E}, đường (1) và (2) như hình. Pin nào có ${r} lớn hơn?${lines(3)}</div>${H.haiPin()}</div>`, k: 0 },
+    { t: 'Dạng 3 · Bài 2', de: `Bảng số liệu một viên pin khác, ${nw(m('R_0=2{,}0\\ \\Omega'))}; cùng sai số dụng cụ:${tbDe([50, 10, 5, 2, 0], ['0,028', '0,116', '0,189', '0,304', '0,514'], ['1,46', '1,39', '1,32', '1,22', '1,03'])}<br><b>a)</b> chọn hai lần đo xa nhau; tính ${r}<br><b>b)</b> tính ${E}<br><b>c)</b> ước lượng ${m('\\Delta r')}; ghi ${m('r=\\ldots\\pm\\ldots')}`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { 'a<sub>1</sub>': 18, 'c<sub>2</sub>': 34 } },
+    { t: 'Đọc đồ thị', de: `<div class="fig-side" style="grid-template-columns:1fr 44mm"><div>Hai pin cùng ${E}, đường (1) và (2) như hình. <div class="yo"><span>Pin nào có ${r} lớn hơn? Đường số</span><span class="oo"><span class="nw">${f(14)}</span></span></div><div class="yo" style="margin-top:1.5mm"><span>Vì đường đó</span><span class="oo"><span class="nw">${f(32)}</span></span></div></div>${H.haiPin()}</div>`, k: 0 },
     nhap(16),
   ]],
   dap: [
