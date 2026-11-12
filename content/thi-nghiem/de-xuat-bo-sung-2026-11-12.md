@@ -58,3 +58,32 @@ A3–A7 cần thêm file `tn-l12-*.json` (kèm `gia_thuyet`, `du_doan_neu_dung`,
 - Quy tắc áp dụng: T2 (không lộ kết quả trước hộp Dự đoán), T5, T7, T9, T12 (chạy mô hình sai trước), V7; clip theo cổng A–B + cổng mp4 375 px.
 - Đo: tỉ lệ đúng của câu bẫy tương ứng trong Kiểm tra nhanh / Trả bài trước và sau 30 ngày (cách đã dùng cho `bay-ch3`).
 - L10, L11: không đề xuất thêm thí nghiệm; việc còn lại là soát mắt clip đã dựng (`ra-soat-clip-2026-11-11.md` mục 3).
+
+## C. Tiến độ và phác thảo (12/11/2026)
+
+C1 `components/physics/GasGraphsSimulation.tsx` và C2 `components/physics/ChargeInFieldSimulation.tsx` đã viết, xem thử ở `/dev/mo-phong-tu-keo` (dev server), chưa gắn bài, chưa deploy. Bước đoán dùng chung `components/physics/PredictGate.tsx`; tải lười qua `components/physics/SimulationsLazy.tsx`. C3–C5 dưới đây chỉ là phác thảo, chưa code.
+
+### C3 — Thanh trượt trên ray (L12 bài cảm ứng điện từ, cho A5)
+- Hình nhìn từ trên: hai ray song song cách nhau ℓ, nối điện trở R; thanh MN trượt với v; B⃗ vuông góc mặt phẳng ray (× hoặc •).
+- Thanh trượt: v (0–5 m/s), B (0,1–1 T), R (1–10 Ω), ℓ cố định 0,5 m; nút đổi chiều v và chiều B.
+- Hiện: e = Bℓv, I = e/R, chiều I trên thanh (mũi tên) theo định luật Lenz, lực từ F = BIℓ luôn ngược chiều v, công suất P = e·I = F·v.
+- Đoán trước (T2): "Thanh đang trượt sang phải, lực từ lên thanh hướng…" (cùng chiều v / ngược chiều v / vuông góc ray / bằng 0); khoá mũi tên F và chiều I.
+- Mô hình đối chứng (T12): công tắc "bỏ R (mạch hở)" chạy trước — có e nhưng I = 0, F = 0; rồi đóng mạch.
+- Bẫy lộ ra: F cản chuyển động ở cả hai chiều trượt; công cơ học kéo thanh bằng nhiệt toả ở R (F·v = I²R).
+- Không làm phần thả rơi thẳng đứng / vận tốc giới hạn (vượt Vật lí 12 cơ bản).
+
+### C4 — Phân rã phóng xạ có trừ phông (L12 bài 17, 18; bẫy 2T, bẫy quên trừ phông T7)
+- Lưới N₀ = 400 hạt nhân (chấm), mỗi bước Δt mỗi chấm phân rã với xác suất 1 − 2^(−Δt/T); máy đếm ghi số đếm/phút gồm phông nền ngẫu nhiên (Poisson, trung bình chỉnh được 0–30).
+- Thanh trượt: T (1–10 phút), phông; nút "Chạy 1 chu kì", "Chạy tới 3T" (bấm mới chạy — B4).
+- Đồ thị N(t) và đồ thị số đếm theo thời gian; nút "Trừ phông" vẽ thêm đường số đếm − phông.
+- Đoán trước (T2): "Sau 2T còn lại bao nhiêu phần hạt nhân chưa phân rã?" (1/2, 1/3, 1/4, 0) — bẫy "2T thì hết".
+- Mô hình đối chứng (T12): đọc chu kì bán rã từ số đếm CHƯA trừ phông trước (ra T lớn hơn thật), rồi trừ phông.
+- Hạt ngẫu nhiên dùng bộ sinh số có hạt giống cố định để hai lần bấm cùng kết quả khi thầy chiếu.
+
+### C5 — Cân dòng điện (L12 bài 10, 11; đề 2025 II.2; đã có clip `thuchanhtu3/4`)
+- Khung dây đáy ngang trong lòng nam châm chữ U đặt trên cân điện tử; cân đã TARE khi I = 0.
+- Thanh trượt I (0–3 A), nút đổi chiều I, góc α giữa đoạn dây và B⃗ (90° mặc định; 0–90°), N vòng cố định.
+- Hiện: lực lên dây F = NBIℓ sin α (chiều theo quy tắc bàn tay trái) và lực phản tác dụng lên nam châm (định luật III); số cân Δm = ±F/g.
+- Đoán trước (T2): "Lực từ lên đoạn dây hướng lên. Số chỉ của cân (đặt dưới nam châm) tăng hay giảm?" — bẫy của đề 2025.
+- Mô hình đối chứng (T12): bật "cân đặt dưới khung dây" trước rồi mới chuyển sang "cân đặt dưới nam châm" như đề.
+- Bảng Δm theo I ghi tự động 5 điểm để học sinh thấy Δm ∝ I và tính B từ hệ số góc.
