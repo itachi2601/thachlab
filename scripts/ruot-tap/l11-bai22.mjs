@@ -106,14 +106,14 @@ ${foot(2)}</section>`;
 const p3 = `<section class="page">
 ${head('CHIỀU DÒNG ĐIỆN · HẠT TẢI ĐIỆN')}
 ${h3(1, 'II.3 · Chiều dòng điện. Dòng không đổi, dòng một chiều', '3·1')}
-<div class="card" style="padding:1.2mm 3mm">
+<div class="card" style="padding:.8mm 3mm">
 <div>Chiều dòng điện quy ước: chiều chuyển động của hạt mang điện ${f(18)}. Trong mạch: từ cực ${f(8)} của nguồn qua mạch ngoài về cực ${f(8)}.</div>
 <div>Trong kim loại, ion dương chỉ dao động quanh nút mạng; electron trôi ${f(20)} chiều dòng điện (ngược chiều điện trường).</div></div>
 <div class="fig-side" style="${fs(46)}"><div>
 <table><tr><th style="width:21mm"></th><th>Dòng không đổi</th><th>Dòng một chiều</th></tr>
-<tr><td>Chiều</td><td style="height:6.5mm"></td><td></td></tr>
-<tr><td>Cường độ</td><td style="height:6.5mm"></td><td></td></tr>
-<tr><td>Đồ thị</td><td style="height:6.5mm"></td><td></td></tr></table>
+<tr><td>Chiều</td><td style="height:6mm"></td><td></td></tr>
+<tr><td>Cường độ</td><td style="height:6mm"></td><td></td></tr>
+<tr><td>Đồ thị</td><td style="height:14mm"></td><td></td></tr></table>
 <div style="margin-top:.6mm">Dòng không đổi ${ck}luôn ${ck}không luôn là dòng một chiều. Dòng một chiều ${ck}luôn ${ck}không luôn là dòng không đổi.</div></div>
 ${H.haiDong()}</div>
 ${h3(2, 'II.4 · Cường độ dòng điện và hạt tải điện', '3·2')}
@@ -181,11 +181,11 @@ const dang = [
     de: 'Nạp ắc quy xe máy qua dây đồng: kim ampe kế dao động từ 2 A đến 6 A, luôn ở một phía vạch 0.<br><b>a)</b> ampe kế mắc thế nào với ắc quy<br><b>b)</b> electron trong dây trôi theo chiều nào so với chiều dòng điện quy ước<br><b>c)</b> dòng nạp là dòng không đổi, dòng một chiều hay cả hai',
     nd: `Không đổi: chiều và ${f(20)} đều không đổi; một chiều: chỉ ${f(16)} không đổi`, a: ['a', 'b', 'c'], gi: 4, fig: H.sacD1() },
   { t: 'Dạng 2 · Dễ · Điện lượng, số electron, thời gian',
-    de: `Quạt mini USB đang chạy; ampe kế mắc nối tiếp chỉ ${u('0{,}40\\ \\mathrm A')}, không đổi; ${eC}.<br><b>a)</b> điện lượng qua tiết diện dây trong ${u('50\\ \\mathrm s')}<br><b>b)</b> số electron qua tiết diện trong thời gian đó<br><b>c)</b> thời gian để có ${u('32\\ \\mathrm C')} qua tiết diện`,
-    nd: `Nối ba đại lượng: ${nw(`${m('\\Delta q=')} ${f(14)}`)} và ${nw(`${m('\\Delta q=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Quạt mini USB đang chạy; ampe kế mắc nối tiếp chỉ ${u('0{,}40\\ \\mathrm A')}, không đổi; ${eC}.<br><b>a)</b> điện lượng qua tiết diện dây trong ${u('50\\ \\mathrm s')} &emsp;<b>b)</b> số electron qua tiết diện trong thời gian đó<br><b>c)</b> thời gian để có ${u('32\\ \\mathrm C')} qua tiết diện`,
+    nd: `Nối ba đại lượng: ${nw(`${m('\\Delta q=')} ${f(14)}`)} và ${nw(`${m('\\Delta q=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Đổi mA, phút, mAh',
-    de: `Sạc đồng hồ (đầu ra ${u('5\\ \\mathrm V')}): dòng không đổi ${u('150\\ \\mathrm{mA}')} trong 36 phút; pin ${u('300\\ \\mathrm{mAh}')}; ${mAh}.<br><b>a)</b> điện lượng qua dây sạc, theo C<br><b>b)</b> đổi điện lượng đó ra mAh<br><b>c)</b> pin được nạp thêm bao nhiêu phần trăm dung lượng`,
-    nd: `Đổi ${f(12)} ra A, ${f(12)} ra s trước khi nhân; số ${u('5\\ \\mathrm V')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Sạc đồng hồ (đầu ra ${u('5\\ \\mathrm V')}): dòng không đổi ${u('150\\ \\mathrm{mA}')} trong 36 phút; pin ${u('300\\ \\mathrm{mAh}')}; ${mAh}.<br><b>a)</b> điện lượng qua dây sạc, theo C &emsp;<b>b)</b> đổi điện lượng đó ra mAh<br><b>c)</b> pin được nạp thêm bao nhiêu phần trăm dung lượng`,
+    nd: `Đổi ${f(12)} ra A, ${f(12)} ra s trước khi nhân; số ${u('5\\ \\mathrm V')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Trung bình · Tốc độ trôi khi đổi tiết diện',
     de: `Dây nối bình nước nóng có lõi đồng tiết diện ${u('2{,}5\\ \\mathrm{mm^2}')}, mang dòng không đổi ${u('10\\ \\mathrm A')}; ${nCu}; ${eC}.<br><b>a)</b> tốc độ trôi của electron trong lõi, theo mm/s<br><b>b)</b> nối tiếp thêm đoạn lõi đồng ${u('1{,}0\\ \\mathrm{mm^2}')}, dòng vẫn ${u('10\\ \\mathrm A')}: tốc độ trôi trong đoạn này, theo mm/s`,
     nd: `${nw(`${m('v=')} ${f(22)}`)}; đổi ${u('1\\ \\mathrm{mm^2}=')} ${f(14)} ${m('\\mathrm{m^2}')}; nối tiếp thì ${f(10)} như nhau, ${m('v')} tỉ lệ ${f(14)} với ${m('S')}`, a: ['a', 'b'], gi: 7, fig: H.dayD4() },
@@ -209,7 +209,7 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: 'Đèn LED xe đạp chạy bằng đinamô qua bộ chỉnh lưu. Ampe kế trong mạch chỉ nhấp nhô từ 0 đến 0,3 A, kim không bao giờ lùi về phía âm.<br><b>a)</b> ampe kế mắc thế nào với đèn<br><b>b)</b> electron trong dây trôi theo chiều nào so với chiều dòng điện quy ước<br><b>c)</b> dòng qua đèn là dòng không đổi, dòng một chiều hay cả hai', o: ['a', 'b', 'c'], ow: 30 },
+    { t: 'Dạng 1 · Bài 1', de: 'Đèn LED xe đạp chạy bằng đinamô qua bộ chỉnh lưu. Ampe kế trong mạch chỉ nhấp nhô từ 0 đến 0,3 A, kim không bao giờ lùi về phía âm.<br><b>a)</b> ampe kế mắc thế nào với đèn<br><b>b)</b> electron trong dây trôi theo chiều nào so với chiều dòng điện quy ước<br><b>c)</b> dòng qua đèn là dòng không đổi, dòng một chiều hay cả hai', o: ['a', 'b', 'c'], ow: { c: 72 } },
     { t: 'Dạng 1 · Bài 2', de: `Pin ${u('1{,}5\\ \\mathrm V')} nuôi đồng hồ treo tường; ampe kế số mắc đúng cách chỉ ${u('0{,}20\\ \\mathrm{mA}')}, giữ nguyên nhiều giờ.<br><b>a)</b> dòng này là dòng không đổi, dòng một chiều hay cả hai<br><b>b)</b> ở mạch ngoài, electron đi từ cực nào của pin về cực nào<br><b>c)</b> đảo hai cực pin (ampe kế để nguyên): ampe kế chỉ bao nhiêu`, o: ['a', 'b', 'c'], ow: 30 },
     { t: 'Dạng 2 · Bài 1', de: `Bóng đèn pin có dòng không đổi ${u('0{,}32\\ \\mathrm A')}; ${eC}.<br><b>a)</b> điện lượng qua tiết diện dây trong ${u('25\\ \\mathrm s')}<br><b>b)</b> số electron qua tiết diện trong thời gian đó<br><b>c)</b> thời gian để có ${u('48\\ \\mathrm C')} qua tiết diện`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 2 · Bài 2', de: `Dòng không đổi: trong ${u('20\\ \\mathrm s')} có ${u('2{,}5\\cdot10^{19}')} electron qua tiết diện thẳng của dây; ${eC}.<br><b>a)</b> điện lượng qua tiết diện trong 20 s<br><b>b)</b> cường độ dòng điện<br><b>c)</b> thời gian để ${u('1{,}0\\cdot10^{20}')} electron qua tiết diện`, o: ['a', 'b', 'c'] },

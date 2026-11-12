@@ -34,7 +34,7 @@ const truc = (id, { x0 = 56, y0 = 196, W = 220, H = 170, xs = [], ys = [], xl = 
 
 export const hinhL11b23 = {
   // ===== Trang học bài mới =====
-  denBat: (cap = 'Cùng bóng, cùng ổ 220 V. Bật công tắc: “tạch!”') => {
+  denBat: (cap = 'Cùng bóng, cùng ổ 220 V.') => {
     let b = ln(40, 40, 40, 170) + ln(40, 40, 140, 40) + ln(40, 170, 250, 170);
     b += `<rect x="8" y="84" width="64" height="44" rx="5" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(40, 113, '220 V', { a: 'middle', w: 700 });
     b += ln(140, 40, 178, 22) + cham(140, 40) + cham(186, 40) + ln(186, 40, 250, 40) + T(160, 16, 'công tắc', { a: 'middle' });
