@@ -53,30 +53,18 @@ export async function saveCncMillingQuizAttempt({
   totalQuestions: number;
   status: CncMillingQuizAttemptStatus;
 }) {
-  const supabase = getSupabase();
-  const { data: authData } = await supabase.auth.getUser();
-  const participantKey = getParticipantKey(courseId);
-
-  const now = new Date().toISOString();
-  const { error } = await supabase
-    .from("cnc_milling_quiz_attempts")
-    .upsert(
-      {
-        course_id: courseId ?? null,
-        student_id: authData.user?.id ?? null,
-        participant_key: participantKey,
-        participant_name: participantName.trim() || "Học sinh",
-        class_name: className.trim(),
-        answers,
-        answered_count: Object.keys(answers).length,
-        score,
-        total_questions: totalQuestions,
-        status,
-        last_activity_at: now,
-        submitted_at: status === "in_progress" ? null : now,
-      },
-      { onConflict: "participant_key" },
-    );
+  // Ghi qua RPC theo participant_key: bảng không còn cho ghi thẳng (migration 20261111200000) vì policy cũ
+  // để ai cũng sửa được bài của người khác. student_id do server lấy từ phiên đăng nhập.
+  const { error } = await getSupabase().rpc("cnc_milling_quiz_save", {
+    p_course_id: courseId ?? null,
+    p_participant_key: getParticipantKey(courseId),
+    p_participant_name: participantName,
+    p_class_name: className,
+    p_answers: answers,
+    p_score: score,
+    p_total: totalQuestions,
+    p_status: status,
+  });
   if (error) throw error;
 }
 

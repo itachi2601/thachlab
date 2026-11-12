@@ -14,7 +14,8 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - `20261109120000_shcn_lesson_key` (9/11): cột bài đọc tuần SHCN; chạy TRƯỚC khi deploy trang `/sinh-hoat` + editor GVCN. Lúc nào cũng được.
 - `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
 - `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
-- P0 #1 chặng 3 (thu quyền `exams.questions`): chờ RPC riêng cho CNC (`services/cnc-exam-bank.ts`); sau 22h. Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4).
+- **Vá bảo mật 11/11**: cả 2 bước ĐÃ CHẠY (bước 2 lúc 12/11 06:40), client đã deploy → còn bấm thử giao diện bằng tài khoản HS/TA/GV (quiz CNC, nhắc làm bài, quiz phay). Script đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
+- Còn lỗ `practice_sessions.score`, `question_bank` qua policy exit-quiz (chặng 4); `record_cnc_learning_result` nhận điểm từ máy. GitHub: repo công khai, 2 cộng tác viên quyền ghi (`nhmkct1`, `zKdKaidO`), nhánh `deploy`/`main` chưa bảo vệ — chờ thầy xử lý.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật

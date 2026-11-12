@@ -90,7 +90,7 @@ export default function TeacherThptAlerts({
     setReminding(key);
     const results = await Promise.all(
       group.map((a) =>
-        getSupabase().rpc("notify_user", {
+        getSupabase().rpc("notify_user_staff", {
           p_user: a.studentId,
           p_kind: "assessment_reminder",
           p_title: "Nhắc làm bài kiểm tra",
