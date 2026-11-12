@@ -16,7 +16,7 @@ PXC = 77                    # px moi cm
 def X(dd): return NX + dd * PXC
 RY = 905                    # duong thuoc
 
-def magnet_side(d, xn, cy, w=44, h=110, lbl=True, size=34, bg=False, side=False):
+def magnet_side(d, xn, cy, w=44, h=110, lbl=True, size=36, bg=False, side=False):
     """Nam cham tru nhin ngang: mat N ben phai (do), mat S ben trai (xanh). Truc tu hoa nam ngang."""
     d.rectangle([xn - w, cy - h / 2, xn - w / 2, cy + h / 2], fill=BLUE)
     d.rectangle([xn - w / 2, cy - h / 2, xn, cy + h / 2], fill=RED)
@@ -45,16 +45,16 @@ def rig(d, t, dd, reading, sub, moving=False):
     for k in range(11):
         x = X(k); L = 22 if k % 2 == 0 else 13
         d.line([(x, RY), (x, RY + L)], fill=NAVY, width=4)
-        if k % 2 == 0: text(d, (x, RY + 50), str(k), 34, MUTED, bold=False)
-    text(d, (X(10) + 40, RY + 50), "cm", 34, MUTED, bold=False, anchor="lm")
+        if k % 2 == 0: text(d, (x, RY + 50), str(k), 36, MUTED, bold=False)
+    text(d, (X(10) + 40, RY + 50), "cm", 36, MUTED, bold=False, anchor="lm")
     # gia + nam cham
     d.rectangle([NX - 30, AY + 55, NX - 14, RY], fill=GRAY)
-    magnet_side(d, NX, AY)
+    magnet_side(d, NX, AY, side=True)
     # dien thoai tren gia
     x = X(dd)
     d.rectangle([x + 18, AY + 120, x + 34, RY], fill=GRAY)
     phone(d, x, AY)
-    text(d, (x + 26, AY - 80), "cảm biến", 34, ORANGE)
+    text(d, (x + 26, AY - 80), "cảm biến", 36, ORANGE)
     # khoang cach
     card(d, (60, 270, 500, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (280, 320), "từ cực N", 36, MUTED, bold=False)
@@ -64,25 +64,22 @@ def rig(d, t, dd, reading, sub, moving=False):
     text(d, (790, 320), "Ứng dụng", 36, MUTED, bold=False)
     d.rounded_rectangle([610, 360, 970, 470], radius=16, fill=NAVY)
     text(d, (790, 415), str(reading), 66, (134, 239, 172))
-    text(d, (790, 512), sub, 34, MUTED, bold=False)
+    text(d, (790, 512), sub, 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. 500 µT", "B. 250 µT", "C. 125 µT", "D. 1000 µT")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 2, ROWS[0][2], "µT")
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 990, 1020, 1370), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1040), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1130, f"2 cm: máy đọc {ROWS[0][2]} µT.\nRa 4 cm (xa gấp đôi): đọc khoảng?", 44, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1258 + i * 76
-        card(d, (110, y - 33, 970, y + 33), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=20, w=4)
-        text(d, (150, y), s, 44, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1250), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False,
+         alpha=k * appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1566, 940, 1580], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1566, 140 + 800 * (1 - q), 1580], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1316, 940, 1330], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1316, 140 + 800 * (1 - q), 1330], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: doi dien thoai ra xa dan, ghi bang ----------------
 MOVE = 0.6
@@ -135,12 +132,12 @@ def s_ans(img, d, t, sc):
     card(d, (60, 380, 1020, 1045), fill=WHITE, outline=LIGHT, w=3)
     for b in (250, 500, 750, 1000): d.line([(x0, Yg(b)), (x1, Yg(b))], fill=(240, 236, 228), width=2)
     d.line([(x0, yb), (x1 + 25, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 40)], fill=NAVY, width=5)
-    text(d, (x0 + 18, yt - 52), "B (µT)", 34, MUTED, anchor="lm")
-    text(d, (x1 + 25, yb + 78), "d (cm)", 34, MUTED, anchor="rm")
+    text(d, (x0 + 18, yt - 52), "B (µT)", 36, MUTED, anchor="lm")
+    text(d, (x1 + 25, yb + 78), "d (cm)", 36, MUTED, anchor="rm")
     for v in range(0, 11, 2):
-        d.line([(Xg(v), yb), (Xg(v), yb + 10)], fill=NAVY, width=3); text(d, (Xg(v), yb + 36), str(v), 34, MUTED, bold=False)
+        d.line([(Xg(v), yb), (Xg(v), yb + 10)], fill=NAVY, width=3); text(d, (Xg(v), yb + 36), str(v), 36, MUTED, bold=False)
     for b in (0, 500, 1000):
-        d.line([(x0 - 10, Yg(b)), (x0, Yg(b))], fill=NAVY, width=4); text(d, (x0 - 18, Yg(b)), str(b), 34, MUTED, bold=False, anchor="rm")
+        d.line([(x0 - 10, Yg(b)), (x0, Yg(b))], fill=NAVY, width=4); text(d, (x0 - 18, Yg(b)), str(b), 36, MUTED, bold=False, anchor="rm")
     # hai duong so sanh qua diem 2 cm: "kieu 1/d" (o 4 cm = 500) va "kieu 1/d²" (o 4 cm = 250), net dut, khong in so
     vs = [2 + 8 * j / 80 for j in range(81)]
     for fn, col, at, lbl, lxy in ((lambda v: 2000 / v, GRAY, M[0] + 0.2, "kiểu 1/d", (7.4, 2000 / 7.4, -40, "mm")),
@@ -150,7 +147,7 @@ def s_ans(img, d, t, sc):
         pts = [(Xg(v), Yg(fn(v))) for v in vs][:max(2, int(81 * kc))]
         for j in range(0, len(pts) - 1, 2): d.line([pts[j], pts[j + 1]], fill=A(col, 0.8), width=5)
         lx, ly, dy, anc = lxy
-        text(d, (Xg(lx) + (22 if anc == "lm" else 0), Yg(ly) + dy), lbl, 34, col, anchor=anc, alpha=appear(t, at + 0.6))
+        text(d, (Xg(lx) + (22 if anc == "lm" else 0), Yg(ly) + dy), lbl, 36, col, anchor=anc, alpha=appear(t, at + 0.6))
     # duong cong muot qua cac diem do (mo hinh luong cuc cong vecto voi Trai Dat), chi ve
     ka = ease((t - 0.3) / 0.9)
     if ka > 0:
@@ -171,7 +168,7 @@ def s_ans(img, d, t, sc):
         card(d, (600, 455, 990, 755), fill=A((250, 250, 252), kz), outline=A(GRAY, kz), r=18, w=3)
         text(d, (795, 485), "phóng to", 36, MUTED, alpha=kz)
         d.line([(zx0 - 20, zb), (zx1 + 20, zb)], fill=A(NAVY, kz), width=3)
-        for v in (4, 6, 8, 10): text(d, (Zx(v), zb + 28), str(v), 32, MUTED, bold=False, alpha=kz)
+        for v in (4, 6, 8, 10): text(d, (Zx(v), zb + 28), str(v), 36, MUTED, bold=False, alpha=kz)
         for i in range(1, 5):
             dm, avg = ROWS[i][0], ROWS[i][2]
             dot(d, Zx(dm), Zy(avg), 11, A(ORANGE, kz), WHITE)
@@ -281,14 +278,14 @@ def s_trap(img, d, t, sc):
     x0, x1, yb, yt = 190, 980, 960, 520
     Yb = lambda b: yb - b / 60 * (yb - yt)
     d.line([(x0, yb), (x1, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 30)], fill=NAVY, width=5)
-    text(d, (x0 + 16, yt - 46), "B (µT)", 34, MUTED, anchor="lm")
+    text(d, (x0 + 16, yt - 46), "B (µT)", 36, MUTED, anchor="lm")
     for b in (0, 20, 40, 60):
-        d.line([(x0 - 10, Yb(b)), (x0, Yb(b))], fill=NAVY, width=4); text(d, (x0 - 18, Yb(b)), str(b), 34, MUTED, bold=False, anchor="rm")
+        d.line([(x0 - 10, Yb(b)), (x0, Yb(b))], fill=NAVY, width=4); text(d, (x0 - 18, Yb(b)), str(b), 36, MUTED, bold=False, anchor="rm")
     # duong Trai Dat
     ke = appear(t, 0.1, 0.3)
     for xx in range(x0, x1, 28): d.line([(xx, Yb(B_TD)), (xx + 16, Yb(B_TD))], fill=A(GREEN, ke), width=5)
     for xx in range(600, 660, 28): d.line([(xx, 440), (xx + 16, 440)], fill=A(GREEN, ke), width=5)
-    text(d, (x1, 440), f"Trái Đất ≈ {B_TD} µT", 34, GREEN, anchor="rm", alpha=ke)
+    text(d, (x1, 440), f"Trái Đất ≈ {B_TD} µT", 36, GREEN, anchor="rm", alpha=ke)
     for j, i in enumerate((2, 3, 4)):
         dm, _, avg, lt = ROWS[i]; cx = 330 + j * 250
         g = ease((t - 0.1 - 0.15 * j) / 0.4)
@@ -306,7 +303,7 @@ def s_trap(img, d, t, sc):
         yy = 1045 + 0
         xb = 110 if k2 == 0 else 400
         d.rectangle([xb, yy - 16, xb + 32, yy + 16], fill=A(col, a))
-        text(d, (xb + 46, yy), s, 34, INK, bold=False, anchor="lm", alpha=a)
+        text(d, (xb + 46, yy), s, 36, INK, bold=False, anchor="lm", alpha=a)
     c = appear(t, 0.5)
     card(d, (60, 1140, 1020, 1560), fill=A((254, 242, 242), c), r=28)
     ctext(d, 1260, "Chững ở mức Trái Đất", 48, RED, alpha=appear(t, M[1] + 0.3))
@@ -324,7 +321,7 @@ def s_end(img, d, t, sc):
         d.line([(sx0, ny), (sx0 + 13.5 * px, ny)], fill=A(GRAY, ks), width=4)
         d.rectangle([sx0 - 26, ny - 30, sx0 - 13, ny + 30], fill=A(BLUE, ks))
         d.rectangle([sx0 - 13, ny - 30, sx0, ny + 30], fill=A(RED, ks))
-        text(d, (sx0 - 13, ny - 58), "N", 34, RED, alpha=ks)
+        text(d, (sx0 - 13, ny - 58), "N", 36, RED, alpha=ks)
         for dm, col in ((4, GREEN), (12, ORANGE)):
             x = sx0 + dm * px
             dot(d, x, ny, 12, A(col, ks), WHITE)
@@ -334,7 +331,7 @@ def s_end(img, d, t, sc):
     if kh <= 0: return
     card(d, (110, 1100, 970, 1310), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     text(d, (W / 2, 1155), "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1238, "Nhớ lại: gấp đôi ra 1/8", 46, INK, maxw=820, alpha=kh)
+    ctext(d, 1238, "B giảm theo khoảng cách thế nào?", 46, INK, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

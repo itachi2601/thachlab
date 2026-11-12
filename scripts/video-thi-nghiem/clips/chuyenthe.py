@@ -104,17 +104,17 @@ def plot(d, box, tau, xmax, t, hl=0.0, show_pen=True):
     X = lambda m: x0 + m / xmax * (x1 - x0); Y = lambda T: y0 - (T - YLO) / (YHI - YLO) * (y0 - ytop)
     for T in (0, 50, 100):
         dashed(d, (x0, Y(T)), (x1, Y(T)), LIGHT, 3) if T == 50 else d.line([(x0, Y(T)), (x1, Y(T))], fill=LIGHT, width=3)
-        text(d, (x0 - 16, Y(T)), str(T), 34, MUTED, bold=False, anchor="rm")
+        text(d, (x0 - 16, Y(T)), str(T), 36, MUTED, bold=False, anchor="rm")
     d.line([(x0, y0), (x1 + 10, y0)], fill=NAVY, width=5); d.line([(x0, y0), (x0, ytop - 10)], fill=NAVY, width=5)
     d.polygon([(x1 + 26, y0), (x1 + 8, y0 - 10), (x1 + 8, y0 + 10)], fill=NAVY)
     d.polygon([(x0, ytop - 26), (x0 - 10, ytop - 8), (x0 + 10, ytop - 8)], fill=NAVY)
-    text(d, (x0 + 22, ytop - 6), "T (°C)", 34, INK, anchor="lm")
-    text(d, (x1 + 20, y0 + 50), "t (phút)", 34, INK, anchor="rm")
+    text(d, (x0 + 22, ytop - 6), "T (°C)", 36, INK, anchor="lm")
+    text(d, (x1 + 20, y0 + 50), "t (phút)", 36, INK, anchor="rm")
     am = clamp((20 - xmax) / 6)
     for m in range(0, int(xmax) + 1):
         if m % 5 == 0:
             d.line([(X(m), y0), (X(m), y0 + 12)], fill=NAVY, width=4)
-            if X(m) < x1 - 150 or m == 0: text(d, (X(m), y0 + 34), str(m), 32, MUTED, bold=False)
+            if X(m) < x1 - 150 or m == 0: text(d, (X(m), y0 + 34), str(m), 36, MUTED, bold=False)
         elif am > 0:
             d.line([(X(m), y0), (X(m), y0 + 8)], fill=A(NAVY, am), width=3)
     hls = hl if isinstance(hl, tuple) else (hl, hl)
@@ -148,26 +148,16 @@ def s_hook(img, d, t, sc):
     pill(d, 805, 575, "0,20 kg nước đá", 34, INK, (232, 226, 214), a0)
     a = appear(t, sc["M"][1] - 0.2, 0.5)
     if a <= 0: return
-    card(d, (50, 760, 1030, 1610), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, 760, 1030, 1070), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)      # K10: khong ve the lua chon
     pill(d, W / 2, 815, "DỰ ĐOÁN", 36, WHITE, PURPLE, a)
     text(d, (W / 2, 892), "Đồ thị T theo t có dạng nào?", 46, INK, alpha=a)
-    for i, (lab, pts) in enumerate(OPTS):
-        k = appear(t, sc["M"][1] + 0.15 * i, 0.4)
-        bx = 90 + (i % 2) * 460; by = 950 + (i // 2) * 315
-        card(d, (bx, by, bx + 440, by + 290), fill=A((247, 248, 252), k), outline=A(NAVY, k), r=24, w=4)
-        text(d, (bx + 40, by + 44), lab, 44, NAVY, alpha=k)
-        gx0, gy0, gx1, gy1 = bx + 90, by + 250, bx + 410, by + 40       # truc nho
-        d.line([(gx0, gy1), (gx0, gy0), (gx1, gy0)], fill=A(MUTED, k), width=4)
-        text(d, (gx0 - 10, gy1 + 4), "T", 28, MUTED, anchor="rm", alpha=k)
-        text(d, (gx1, gy0 + 22), "t", 28, MUTED, anchor="rm", alpha=k)
-        P = [(gx0 + 10 + px * (gx1 - gx0 - 20), gy0 - 10 - py * (gy0 - gy1 - 20)) for px, py in pts]
-        d.line(P, fill=A(NAVY, k), width=7, joint="curve")
+    text(d, (W / 2, 966), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a)
     # thanh thoi gian "ngung lai chon"
     tc = sc["M"][1] + 0.8; tend = sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, 1580, 940, 1592], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, 1580, 140 + 800 * p, 1592], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, 1030, 940, 1042], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, 1030, 140 + 800 * p, 1042], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
 def tau_of(t, sc):
@@ -263,8 +253,8 @@ def s_graph(img, d, t, sc):
         text(d, ((bx0 + bx1) / 2, by0 + 34), "Phóng to", 36, INK, alpha=ka)
         ix = lambda m: bx0 + 70 + m / 2 * (bx1 - bx0 - 110); iy = lambda T: by1 - 50 - (T + 8) / 10 * (by1 - by0 - 130)
         dashed(d, (ix(0), iy(0)), (ix(2), iy(0)), A(GREEN, ka), 3)
-        text(d, (ix(0) - 14, iy(0)), "0", 32, GREEN, anchor="rm", alpha=ka)
-        text(d, (ix(0) - 14, iy(-6)), "−6", 32, MUTED, bold=False, anchor="rm", alpha=ka)
+        text(d, (ix(0) - 14, iy(0)), "0", 36, GREEN, anchor="rm", alpha=ka)
+        text(d, (ix(0) - 14, iy(-6)), "−6", 36, MUTED, bold=False, anchor="rm", alpha=ka)
         d.line([(ix(m), iy(Tline(m))) for m in np.linspace(0, 2, 40)], fill=A(BLUE, ka), width=6, joint="curve")
         for m in (0, 1, 2): dot(d, ix(m), iy(Tline(m)), 9, A(ORANGE, ka), outline=A(WHITE, ka))
         d.rectangle([X(0) - 10, Y(2) - 8, X(2) + 10, Y(-8) + 6], outline=A(NAVY, ka), width=3)
@@ -295,9 +285,9 @@ def s_graph(img, d, t, sc):
         if a2 > 0: bar(d, rx, 1342, 400, 1 - clamp((t - M[1]) / (M[2] - M[1] - 0.3)), PURPLE)
         text(d, (rx, 1392), "bị phá dần", 40, PURPLE, anchor="lm", alpha=a2)
     a3 = appear(t, (M[2] if soi else M[1]) + 1.2, 0.5)
-    text(d, (rx, 1466), "Động năng", 40, INK, anchor="lm", alpha=a3)
+    text(d, (rx, 1466), "Động năng TB", 40, INK, anchor="lm", alpha=a3)
     if a3 > 0: bar(d, rx, 1518, 400, 0.45 if not soi else 0.8, BLUE)
-    text(d, (rx, 1566), "không tăng", 40, GREEN, anchor="lm", alpha=a3)
+    text(d, (rx, 1566), "không đổi", 40, GREEN, anchor="lm", alpha=a3)
 
 # ---------------- canh 4: Gioi han + bay ----------------
 def s_limit(img, d, t, sc):
@@ -308,13 +298,14 @@ def s_limit(img, d, t, sc):
     X = lambda m: x0 + (m - 0.3) / 4.4 * (x1 - x0); Y = lambda T: yb - (T + 1) / 2 * (yb - yt)
     for T, lab in ((1, "1"), (0.5, "0,5"), (0, "0"), (-0.5, "−0,5"), (-1, "−1")):
         if T != 0: d.line([(x0, Y(T)), (x1, Y(T))], fill=LIGHT, width=2)
-        text(d, (x0 - 16, Y(T)), lab, 32, MUTED, bold=False, anchor="rm")
+        text(d, (x0 - 16, Y(T)), lab, 36, MUTED, bold=False, anchor="rm")
     d.line([(x0, yt - 10), (x0, yb)], fill=NAVY, width=5)
-    text(d, (x0 + 18, yt - 22), "T (°C)", 32, INK, anchor="lm")
+    text(d, (x0 + 18, yt - 22), "T (°C)", 36, INK, anchor="lm")
     dashed(d, (x0, Y(0)), (x1, Y(0)), GREEN, 5, 22, 12)
-    text(d, (x0 + 18, Y(0) + 30), "0 °C", 34, GREEN, anchor="lm")
+    text(d, (x0 + 18, Y(0) + 30), "0 °C", 36, GREEN, anchor="lm")
     for m in (1, 2, 3, 4):
-        text(d, (X(m), yb + 34), f"{m}", 32, MUTED, bold=False)
+        text(d, (X(m), yb + 34), f"{m}", 36, MUTED, bold=False)
+    text(d, (x1 + 60, yb + 34), "t (phút)", 36, INK, anchor="rm")
     for i, m in enumerate((1, 2, 3, 4)):
         v = dict(ROWS)[m]; k = appear(t, M[0] + 0.25 * i, 0.4)
         if k <= 0: continue
@@ -323,7 +314,7 @@ def s_limit(img, d, t, sc):
             d.line([(X(m), Y(v - e)), (X(m), Y(v + e))], fill=NAVY, width=5)
             for yy in (Y(v - e), Y(v + e)): d.line([(X(m) - 18, yy), (X(m) + 18, yy)], fill=NAVY, width=5)
         dot(d, X(m), Y(v), 13 * k, ORANGE, outline=WHITE)
-        text(d, (X(m) + 26, Y(v) - 4), vn(v), 32, ORANGE, anchor="lm", alpha=k)
+        text(d, (X(m) + 26, Y(v) - 4), vn(v), 36, ORANGE, anchor="lm", alpha=k)
     ka = appear(t, M[0] + 1.6, 0.5)
     text(d, (W / 2, 870), "Thanh dọc: ±0,5 °C", 40, NAVY, alpha=ka)
     # bay
@@ -361,7 +352,7 @@ def s_end(img, d, t, sc):
     ctext(d, 1130, "Vì sao sôi lâu gấp gần 7 lần?", 48, INK, maxw=880, alpha=appear(t, M[0] + 1.0, 0.5))
     kh = appear(t, M[0] + 2.2, 0.5)
     card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-    ctext(d, 1445, "λ = 334 · L = 2 260 kJ/kg", 46, ORANGE, alpha=kh)
+    ctext(d, 1415, "Nhiệt dùng vào đâu?", 46, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}; out = []

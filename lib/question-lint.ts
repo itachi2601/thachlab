@@ -10,7 +10,7 @@ export type LintCode =
   | "nhacHinhKhongCoHinh" | "anhSrcTuongDoi"
   | "phuongAnLanDe" | "soPhuongAnSai" | "phuongAnRong" | "phuongAnMathLoi" | "phuongAnConNhan"
   | "phuongAnCoTab" | "phuongAnNhanNhung" | "phuongAnTrung" | "dapAnNgoaiKhoang"
-  | "matMu";
+  | "matMu" | "doCMatDau" | "muTran" | "chiSoTran" | "latexVo" | "tienToCau";
 
 export type LintFlag = {
   code: LintCode;
@@ -44,11 +44,38 @@ export const LINT_LABEL: Record<LintCode, string> = {
   phuongAnTrung: "Phương án trùng nhau",
   dapAnNgoaiKhoang: "Đáp án ngoài khoảng",
   matMu: "Mất dấu ^ (số mũ/đơn vị)",
+  doCMatDau: "Độ C mất dấu ° (500C, 27^0C)",
+  muTran: "Số mũ dính liền (105 Pa = 10⁵ Pa?)",
+  chiSoTran: "Chỉ số dưới viết liền (v0, t1 =)",
+  latexVo: "LaTeX vỡ (\\vecB, % trong $…$)",
+  tienToCau: "Đề còn số câu/nguồn ở đầu",
 };
 
 // Cờ "canhBao": quy tắc hay bắt nhầm. Đo 10/10/2026 trên 19.577 câu: deCutCuoi 5.792 + deKhongDauKetThuc 8.092 đều là
 // câu dạng "…bước sóng là" + 4 phương án (hợp lệ) nên KHÔNG được chặn; phuongAnTrung có thể là phương án chỉ có ảnh.
-const CANH_BAO = new Set<LintCode>(["deCutCuoi", "deKhongDauKetThuc", "nhacHinhKhongCoHinh", "latexLa", "phuongAnTrung", "phuongAnNhanNhung"]);
+// Quy tắc thêm 10/11/2026 (mẫu 240 câu ngẫu nhiên) đều là cảnh báo: hiện huy hiệu vàng, không chặn Lưu.
+const CANH_BAO = new Set<LintCode>([
+  "deCutCuoi", "deKhongDauKetThuc", "nhacHinhKhongCoHinh", "latexLa", "phuongAnTrung", "phuongAnNhanNhung",
+  "doCMatDau", "muTran", "chiSoTran", "latexVo", "tienToCau",
+]);
+
+/**
+ * Lỗi mất định dạng chỉ số trên/dưới khi chép từ Word (đo trên mẫu 240 câu 10/11/2026: ~1/4 câu dính ít nhất một loại).
+ * Quét chuỗi đã bỏ thẻ HTML; `<sup>`/`$…^{}$` đúng không bị bắt.
+ */
+export const DINH_DANG_RULES: Partial<Record<LintCode, RegExp>> = {
+  // "500C", "2770C", "00C", "27^0C", "27^{0}C", "0$^{o}$C", "^0" sau số/góc (tan28^0); KHÔNG bắt "100 C" (có cách) hay "10C".
+  doCMatDau:
+    /(?<![\d.,A-Za-z^_{])\d{1,3}(?:[.,]\d+)?0C(?![A-Za-z0-9])|(?<![\d.,^_{])\d+(?:[.,]\d+)?\s?\$?\^\s?\{?\s?(?:0|o)\s?\}?\$?\s?C?(?![A-Za-z0-9])/g,
+  // "105 Pa", "1,0. 105Pa", "104 J/kg", "6,023.1023 mol", "1,6.10 – 4 N", "10 5  Pa", "x.105 (J/kg)"
+  muTran:
+    /(?<![\d,^{])10(?:\s?[-−–‒]\s?\d{1,2}|\s?(?:[2-9]|1\d|2\d|3\d))\s*(?:Pa|J|N|W|V|Hz|mol|kg|g|m\/s|m|C|T|Ω|F|K|eV|lít|l)\b(?![\^{])|(?<![\w\\])[a-zA-Z]\s?[.·]\s?10[1-9]\d?(?=[\s(]|$)/g,
+  // "v0 =", "t1 =", "p0 =", "V1 = 24", "Tại thời điểm t0" (ngoài $…$)
+  chiSoTran: /(?<![\w$\\_{])(?:[vtpVTSRxNmqUIEFW]|ℓ)[0-2]\s*=(?!=)|\b(?:thời điểm|vận tốc|tốc độ) [tv][0-2]\b/g,
+  // \vecB, % trần trong công thức (nuốt $ đóng), cos/sin không có \ trong $…$
+  latexVo: /\\vec[A-Za-z]|[^\\]%\s*\$|(?<=\$[^$]*)(?<![\\a-z])(?:cos|sin|tan)\s*\\/g,
+};
+const stripMath = (s: string) => s.replace(/\$[^$]*\$/g, (m) => (/\^\s?\{?\s?(?:0|o)\s?\}?/.test(m) ? m : " ¤ "));
 
 const strip = (h: string) => h.replace(/<img[^>]*>/gi, " [IMG] ").replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/\s+/g, " ").trim();
 const mathOdd = (t: string) => { const n = (t.replace(/\\\$/g, "").match(/\$/g) ?? []).length; return n % 2 === 1; };
@@ -136,6 +163,28 @@ export function lintQuestion(q: any, qtype?: string): LintFlag[] {
       }
     }
   }
+  // Mất định dạng chỉ số (Word → web) — mỗi mã báo tối đa một lần cho cả câu.
+  const daBao = new Set<LintCode>();
+  for (const s0 of strings(q)) {
+    // <sup>/<sub> là định dạng ĐÚNG: đổi sang ^{}/_{} trước khi bỏ thẻ, kẻo 10<sup>5</sup> trông như "105".
+    const s = strip(
+      s0
+        .replace(/<sup>\s*[0oº°]\s*<\/sup>/gi, "°")
+        .replace(/<sup>(.*?)<\/sup>/gi, "^{$1}")
+        .replace(/<sub>(.*?)<\/sub>/gi, "_{$1}"),
+    );
+    for (const [code, re] of Object.entries(DINH_DANG_RULES) as [LintCode, RegExp][]) {
+      if (daBao.has(code)) continue;
+      const hay = code === "latexVo" ? s : stripMath(s);
+      re.lastIndex = 0;
+      const m = re.exec(hay);
+      if (m) {
+        daBao.add(code);
+        add(code, hay.slice(Math.max(0, m.index - 25), m.index + m[0].length + 20));
+      }
+    }
+  }
+  if (/^\s*(?:Câu\s*\d+\s*(?:\([^)]*\))?\s*[.:]|\[(?:NB|TH|VD|VDC)\])/i.test(t) || /CĐTD:/.test(t)) add("tienToCau", t.slice(0, 60));
   return out;
 }
 

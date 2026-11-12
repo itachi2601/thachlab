@@ -16,6 +16,7 @@ const BAI: Record<string, () => Promise<{ default: { theory_html: string } }>> =
   "ap-suat": () => import("@/content/lesson-samples/l12-ap-suat-dong-nang/bundle.json"),
   "thang-nhiet-do": () => import("@/content/lesson-samples/l12-thang-nhiet-do/bundle.json"),
   "phong-xa": () => import("@/content/lesson-samples/l12-phong-xa/bundle.json"),
+  "hat-nhan": () => import("@/content/lesson-samples/l12-hat-nhan-mo-hinh-nguyen-tu/bundle.json"),
   "mo-ta-dd": () => import("@/content/lesson-samples/l11-mo-ta-dao-dong/bundle.json"),
   "van-toc-dd": () => import("@/content/lesson-samples/l11-van-toc-gia-toc/bundle.json"),
   "bai-tap-dd": () => import("@/content/lesson-samples/l11-bai-tap-dao-dong/bundle.json"),

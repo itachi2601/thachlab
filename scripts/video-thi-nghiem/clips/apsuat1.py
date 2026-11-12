@@ -69,45 +69,39 @@ def box(d, dx=0.0):
 
 def counter(d, n, f, c, ccol=ORANGE):
     card(d, (750, WALL[1] - 6, 1040, WALL[3] + 6), fill=WHITE, outline=LIGHT, r=26, w=3)
-    text(d, (895, 400), "Số hạt", 32, MUTED, bold=False); text(d, (895, 452), n, 50, INK)
-    text(d, (895, 540), "Lắc", 32, MUTED, bold=False); text(d, (895, 592), f, 46, INK)
-    text(d, (895, 700), "Cú đập/giây", 32, MUTED, bold=False)
+    text(d, (895, 400), "Số hạt", 36, MUTED, bold=False); text(d, (895, 452), n, 50, INK)
+    text(d, (895, 540), "Lắc", 36, MUTED, bold=False); text(d, (895, 592), f, 46, INK)
+    text(d, (895, 700), "Cú đập/giây", 36, MUTED, bold=False)
     text(d, (895, 810), c, 58 if c[:1].isdigit() else 40, ccol)
 
 def pile(d, alpha=1.0):
     for x, y in PILE: dot(d, x, y, R, A(GRAIN, alpha))
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("không đổi, vẫn 200 hạt", "tăng gấp ba lần", "tăng gấp chín lần",
-        "giảm, hạt bay nhanh")
-
 def s_hook(img, d, t, sc):
     box(d); pile(d)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 940 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 380), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
     text(d, (W / 2, y0 + 170), "Số cú đập vào thành cam sẽ…", 44, INK, alpha=a)
-    for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 270 + j * 76
-        d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
-        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 36, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 265), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a * appear(t, M[1], 0.4))
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 572, 940, y0 + 584], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 572, 140 + 800 * (1 - p), y0 + 584], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 336, 940, y0 + 348], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, y0 + 336, 140 + 800 * (1 - p), y0 + 348], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh (1 hat -> 200 hat 1 Hz -> 3 Hz, lien mach) ----------------
 def chips(d, cur):
     for j, s in enumerate(("1 hạt", "1 Hz", "3 Hz")):
         x0 = 60 + j * 330; bx = (x0, 240, x0 + 300, 296)
-        if j == cur: card(d, bx, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 32, WHITE)
-        elif j < cur: card(d, bx, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 32, INK)
-        else: card(d, bx, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 32, GRAY)
+        if j == cur: card(d, bx, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 36, WHITE)
+        elif j < cur: card(d, bx, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 36, INK)
+        else: card(d, bx, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 36, GRAY)
 
 def dashed(d, pts, color, w=4, seg=14, gap=10):
     acc, on, cur = 0.0, True, [pts[0]]
@@ -120,13 +114,13 @@ def dashed(d, pts, color, w=4, seg=14, gap=10):
 
 def graph(d, tm, t):
     card(d, (40, 930, 1040, 1400), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (80, 968), "Lực lên thành cam", 34, INK, anchor="lm")
+    text(d, (80, 968), "Lực lên thành cam", 36, INK, anchor="lm")
     d.line([(GX0, GTOP - 10), (GX0, GBASE)], fill=NAVY, width=4)
     d.line([(GX0, GBASE), (GX1 + 16, GBASE)], fill=NAVY, width=4)
     arrow(d, (GX0, GTOP + 10), (GX0, GTOP - 12), NAVY, w=4, head=16)
     arrow(d, (GX1, GBASE), (GX1 + 18, GBASE), NAVY, w=4, head=16)
-    text(d, (GX0 + 18, GTOP - 4), "F", 32, INK, anchor="lm")
-    text(d, (GX1 + 10, GBASE + 32), "t · chiếu chậm", 32, MUTED, bold=False, anchor="rm")
+    text(d, (GX0 + 18, GTOP - 4), "F", 36, INK, anchor="lm")
+    text(d, (GX1 + 10, GBASE + 32), "t · chiếu chậm", 36, MUTED, bold=False, anchor="rm")
     X = lambda tau: GX1 - (t - tau) / WIN * (GX1 - GX0)
     ta = max(-0.01, t - WIN)
     for i in range(len(P)):
@@ -134,7 +128,7 @@ def graph(d, tm, t):
             x = X(tau); d.line([(x, GBASE - 2), (x, GBASE - 2 - h)], fill=A(ORANGE, 0.85), width=3)
     # chu giai
     card(d, (40, 1425, 1040, 1530), fill=WHITE, outline=LIGHT, w=3)
-    d.line([(100, 1455), (100, 1500)], fill=ORANGE, width=5); text(d, (124, 1477), "một cú đập", 34, INK, bold=False, anchor="lm")
+    d.line([(100, 1455), (100, 1500)], fill=ORANGE, width=5); text(d, (124, 1477), "một cú đập · vạch cao: hạt nhanh", 36, INK, bold=False, anchor="lm")
 
 def s_do(img, d, t, sc):
     tm = timing(sc); M = sc["M"]
@@ -168,7 +162,7 @@ def s_dapan(img, d, t, sc):
     text(d, (W / 2, 280), "ĐÁP ÁN B", 36, WHITE, alpha=ka)
     card(d, (40, 335, 1040, 905), fill=WHITE, outline=LIGHT, w=3)
     for x, s in ((300, "Số hạt"), (540, "Lắc (Hz)"), (800, "Cú đập/giây")):
-        text(d, (x, 385), s, 32, MUTED, bold=False)
+        text(d, (x, 385), s, 36, MUTED, bold=False)
     d.line([(150, 415), (970, 415)], fill=LIGHT, width=3)
     yr = lambda j: 465 + j * 76
     k3 = appear(t, M[0] + 0.1, 0.4) * (1 - appear(t, M[1] - 0.1, 0.4))
@@ -183,16 +177,17 @@ def s_dapan(img, d, t, sc):
     if ka3 > 0:
         c = A(ORANGE, ka3); y2, y3 = yr(2), yr(3)
         d.line([(962, y2), (985, y2), (985, y3), (962, y3)], fill=c, width=4)
-        text(d, (1012, (y2 + y3) / 2), "×3", 34, ORANGE, alpha=ka3)
+        text(d, (1012, (y2 + y3) / 2), "×3", 36, ORANGE, alpha=ka3)
     if k2 > 0:                                                # ngoac x2 ben trai: 125 -> 250
         c = A(GREEN, k2); y0_, y2 = yr(0), yr(2)
         d.line([(158, y0_), (135, y0_), (135, y2), (158, y2)], fill=c, width=4)
-        text(d, (96, (y0_ + y2) / 2), "×2", 34, GREEN, alpha=k2)
-    text(d, (W / 2, 866), "Số tính từ mô hình", 32, MUTED, bold=False)
+        text(d, (96, (y0_ + y2) / 2), "×2", 36, GREEN, alpha=k2)
+    text(d, (W / 2, 866), "Số tính từ mô hình", 36, MUTED, bold=False)
     # cong thuc + co che
     k1 = appear(t, M[1] + 0.2, 0.5); kc = appear(t, M[1] + 2.4, 0.5)
     card(d, (40, 935, 1040, 1600), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
     rich(d, W / 2, 1010, "n = N · v / (2L)", 58, INK, alpha=k1)
+    text(d, (W / 2, 1090), "N hạt · tốc độ v · hộp cạnh L", 36, MUTED, bold=False, alpha=k1)
     d.line([(120, 1140), (960, 1140)], fill=A(LIGHT, k1), width=3)
     text(d, (W / 2, 1210), "Một cú đập: lực nhỏ", 44, INK, alpha=kc)
     text(d, (W / 2, 1330), "Vô số cú đập → lực đều", 44, INK, alpha=appear(t, M[1] + 3.0, 0.4))
@@ -231,7 +226,7 @@ def s_bay(img, d, t, sc):
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Áp suất khí = vô số va chạm nhỏ",
              "Bơm khí vào lốp, nhiệt độ giữ nguyên. Vì sao lốp căng?",
-             "Số cú đập mỗi giây\nphụ thuộc vào gì?")
+             "Nhớ lại hộp hạt gạo")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -258,5 +253,5 @@ CLIP = dict(id="tn-l12-apsuatdongnang-01", header="VẬT LÍ 12 · THÍ NGHIỆM
    ("Hạt nằm yên thì sao?", 4.0),
    ("Giới hạn.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=1.1, caps=[
-   ("Số cú đập?", 5.0)]),
+   ("Vì sao lốp căng?", 5.0)]),
 ])

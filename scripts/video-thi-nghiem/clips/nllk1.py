@@ -92,9 +92,9 @@ def readout(d, dmm_txt, state, scol=INK, note=None):
     for l in wrap(d, state, f, 240):
         dtext(d, (905, yy), l, f, scol); yy += 44
     if note:
-        f2 = F(32, False); yy += 8
+        f2 = F(36, False); yy += 8
         for l in wrap(d, note, f2, 240):
-            dtext(d, (905, yy), l, f2, INK); yy += 40
+            dtext(d, (905, yy), l, f2, INK); yy += 44
 
 def apparatus(d, dmm, band=0.0, push=False):
     stand(d)
@@ -108,30 +108,22 @@ def apparatus(d, dmm, band=0.0, push=False):
         text(d, (RX + 120, yt - 90), "tay ép", 36, INK, anchor="lm")
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("dính vào vòng dưới",
-        "bật lên, lơ lửng",
-        "bay khỏi que",
-        "trượt xuống sát")
-
 def s_hook(img, d, t, sc):
     apparatus(d, 2, push=True)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1000 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 360), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
     text(d, (W / 2, y0 + 150), "Vòng trên sẽ…", 44, INK, alpha=a)
-    for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 250 + j * 80
-        d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
-        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 36, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 240), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=appear(t, M[1], 0.4))
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 572, 940, y0 + 584], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 572, 140 + 800 * (1 - p), y0 + 584], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 312, 940, y0 + 324], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, y0 + 312, 140 + 800 * (1 - p), y0 + 324], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh (mo hinh d theo "u", truc thoi gian so do) ----------------
 U = (0.04, 0.30, 0.36, 0.42, 0.66, 0.74, 0.84)   # tha / on dinh / bat dau ep / buong / on dinh / bat dau siet / siet xong
@@ -159,9 +151,9 @@ def u_of(t, sc):
 def chips(d, cur):
     for j, s in enumerate(("Thả", "Ép rồi thả", "Siết đai")):
         x0 = 60 + j * 330; box = (x0, 240, x0 + 300, 296)
-        if j == cur: card(d, box, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 32, WHITE)
-        elif j < cur: card(d, box, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 32, INK)
-        else: card(d, box, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 32, MUTED)
+        if j == cur: card(d, box, fill=ORANGE, r=28); text(d, (x0 + 150, 268), s, 36, WHITE)
+        elif j < cur: card(d, box, fill=LIGHT, r=28); text(d, (x0 + 150, 268), s, 36, INK)
+        else: card(d, box, fill=None, outline=LIGHT, r=28, w=3); text(d, (x0 + 150, 268), s, 36, MUTED)
 
 def plot(d, box, u):
     x0, y0, x1, y1 = box
@@ -170,11 +162,11 @@ def plot(d, box, u):
     Y = lambda v: yb - v / 32 * (yb - yt)
     d.line([(x0, yt - 20), (x0, yb)], fill=NAVY, width=4); chevron(d, x0, yt - 20, -math.pi / 2, NAVY, s=16)
     d.line([(x0, yb), (x1 + 14, yb)], fill=NAVY, width=4); chevron(d, x1 + 14, yb, 0, NAVY, s=16)
-    text(d, (x0 + 20, yt - 16), "d (mm)", 32, INK, anchor="lm"); text(d, (x1 + 10, yb + 36), "t", 32, INK, anchor="rm")
-    text(d, (x0 - 14, yb), "0", 32, INK, bold=False, anchor="rm")
+    text(d, (x0 + 20, yt - 16), "d (mm)", 36, INK, anchor="lm"); text(d, (x1 + 10, yb + 36), "t", 36, INK, anchor="rm")
+    text(d, (x0 - 14, yb), "0", 36, INK, bold=False, anchor="rm")
     for v, col in ((D_EQ, GREEN), (D_BAND, (22, 120, 60))):
         dashed(d, (x0, Y(v)), (x1, Y(v)), A(col, 0.7), w=3)
-        text(d, (x0 - 14, Y(v)), str(v), 34, col, anchor="rm")
+        text(d, (x0 - 14, Y(v)), str(v), 36, col, anchor="rm")
     if u > 0:
         us = [k / 500 * u for k in range(501)]
         d.line([(X(v), Y(d_of(v))) for v in us], fill=ORANGE, width=7, joint="curve")
@@ -232,7 +224,7 @@ def s_dapan(img, d, t, sc):
     y = 330
     card(d, (40, y, 1040, y + 330), fill=WHITE, outline=LIGHT, w=3)
     for x, s, an in ((700, "d (mm)", "mm"),):
-        text(d, (x, y + 44), s, 34, INK, anchor=an)
+        text(d, (x, y + 44), s, 36, INK, anchor=an)
     d.line([(70, y + 76), (1010, y + 76)], fill=LIGHT, width=3)
     for j, (nm, dm, st) in enumerate(ROWS):
         k = appear(t, M[0] + 0.3 + 0.25 * j, 0.4); yy = y + 128 + j * 66
@@ -299,7 +291,7 @@ def heli(d, t, k):
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Đẩy nhau mà đứng yên: cần lực giữ",
              "Heli có 2 prôtôn đẩy nhau. Lực nào giữ chúng?",
-             "Lực điện hút hay đẩy?", body=heli)
+             "Nhìn lại chiếc đai trong thí nghiệm", body=heli)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

@@ -4,6 +4,7 @@
  * không tự bịa nhãn ngoài danh mục (server đã lọc, nhưng vẫn coi kết quả là gợi ý cần đối chiếu).
  */
 import type { Difficulty, QuestionForm } from "@/features/exams/types";
+import { edgeFunctionErrorMessage } from "@/services/edge-function-error";
 import { getSupabase } from "@/services/supabase";
 
 export interface AiClassifyItem {
@@ -26,7 +27,7 @@ export async function classifyQuestionTags(
   const { data, error } = await getSupabase().functions.invoke("classify-questions", {
     body: { topics, items },
   });
-  if (error) throw new Error(error.message || "Gọi AI phân loại lỗi.");
+  if (error) throw new Error(await edgeFunctionErrorMessage(error, "Gọi AI phân loại lỗi."));
   const results = (data as { results?: AiClassifyResult[] } | null)?.results;
   return Array.isArray(results) ? results : [];
 }

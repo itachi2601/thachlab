@@ -3,6 +3,7 @@
  * Kết quả chỉ là gợi ý cho giáo viên — không tự sửa câu nào.
  */
 import type { ExamQuestion } from "@/features/exams/types";
+import { edgeFunctionErrorMessage } from "@/services/edge-function-error";
 import { getSupabase } from "@/services/supabase";
 
 export type AiVerdict = "ok" | "nghi_ngo" | "loi";
@@ -71,7 +72,7 @@ export function applyAiFix(q: ExamQuestion, fix: AiFix | undefined): ExamQuestio
 
 async function checkChunk(items: AiCheckItem[]): Promise<AiCheckResult[]> {
   const { data, error } = await getSupabase().functions.invoke("check-exam", { body: { items } });
-  if (error) throw new Error(error.message || "Gọi AI kiểm đề lỗi.");
+  if (error) throw new Error(await edgeFunctionErrorMessage(error, "Gọi AI kiểm đề lỗi."));
   const results = (data as { results?: AiCheckResult[] } | null)?.results;
   return Array.isArray(results) ? results : [];
 }

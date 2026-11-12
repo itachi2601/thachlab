@@ -1,7 +1,7 @@
 """Sinh 4 hình SVG cho bài "Bài 10. Lực từ. Cảm ứng từ" (Vật lí 12) và thay các mốc
 <!--FIGn--> trong theory.src.html -> theory.html. Chạy từ thư mục này: python3 build_figs.py
 
-Quy ước màu dùng chung cả bài: đỏ = lực từ F · cam = dòng điện I · xanh dương = cảm ứng từ B
+Quy ước màu dùng chung cả bài: đỏ = lực từ F · cam = dòng điện I · xanh dương = cảm ứng từ B · xanh lá = vận tốc v
 (chỉ dùng chữ và nét bằng currentColor cho vật thể).
 """
 import sys as _sys, pathlib as _pl
@@ -189,7 +189,35 @@ fig4c = raster("hinh-ong-day-duong-suc.webp",
 
 # ------------------------------------------------- thay vào theory.html
 src = open("theory.src.html", encoding="utf8").read()
-for n, f in (("1", fig1), ("2", fig2), ("3", fig3), ("4A", fig4a), ("4B", fig4b), ("4C", fig4c)):
+# ------------------------------------------------- Hình 5: hạt mang điện dương chuyển động tròn trong từ trường đều
+# B hướng vào trong mặt phẳng (×). Proton ở đáy quỹ đạo bay sang phải: f = q v × B = x × (−z) = +y → hướng lên, về tâm.
+# Vậy hạt dương quay NGƯỢC chiều kim đồng hồ (nhìn từ phía người xem).
+def cheo(x, y, r=6, c=BLUE):
+    return (f'<line x1="{x - r}" y1="{y - r}" x2="{x + r}" y2="{y + r}" stroke="{c}" stroke-width="2"/>'
+            f'<line x1="{x + r}" y1="{y - r}" x2="{x - r}" y2="{y + r}" stroke="{c}" stroke-width="2"/>')
+b = defs("f5")
+for gx in range(40, 361, 64):
+    for gy in range(30, 291, 52):
+        if (gx - 200) ** 2 + (gy - 150) ** 2 < 36 ** 2 or (abs(gx - 200) < 40 and abs(gy - 250) < 34):
+            continue
+        b += cheo(gx, gy)
+b += text(328, 36, "B", "#1d4ed8", 16, "middle", "700")
+b += '<circle cx="200" cy="150" r="100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="7 5"/>'
+b += dot(200, 150, 3.5)
+b += line(200, 150, 200, 250, "currentColor", 1.6, "4 4")
+b += text(207, 205, "r", "currentColor", 15, "start", "700")
+b += chevron(200, 50, -1, 0, "currentColor", 2.2, 11)          # chiều quay: ở đỉnh hạt đi sang trái
+b += chevron(100, 150, 0, 1, "currentColor", 2.2, 11)
+b += arrow("f5", "g", 214, 250, 290, 250, 3)                    # v tiếp tuyến, sang phải
+b += text(296, 256, "v", GRN, 16, "start", "700")
+b += arrow("f5", "r", 200, 236, 200, 186, 3)                    # f hướng về tâm
+b += text(186, 196, "f", RED, 16, "end", "700")
+b += '<circle cx="200" cy="250" r="12" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2.2"/>'
+b += text(200, 256, "+", "currentColor", 17, "middle", "800")
+fig5 = wrap("0 0 400 300", "Hạt mang điện dương bay trong từ trường đều hướng vào trong mặt phẳng hình vẽ: vận tốc tiếp tuyến với quỹ đạo, lực từ hướng vào tâm, hạt chuyển động tròn ngược chiều kim đồng hồ",
+            b, "Hình 5. Hạt dương trong từ trường đều hướng vào trong (×): lực từ f luôn hướng vào tâm, vận tốc v tiếp tuyến, hạt quay tròn đều. Electron sẽ quay theo chiều ngược lại.")
+
+for n, f in (("1", fig1), ("2", fig2), ("3", fig3), ("4A", fig4a), ("4B", fig4b), ("4C", fig4c), ("5", fig5)):
     assert f"<!--FIG{n}-->" in src, f"thiếu mốc FIG{n}"
     src = src.replace(f"<!--FIG{n}-->", f)
 open("theory.html", "w", encoding="utf8").write(margin_figs(src))

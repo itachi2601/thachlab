@@ -1,0 +1,1687 @@
+[
+ {
+  "id": 327707,
+  "ghiChu": "số mũ không hệ số: 107 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "answer": 2,
+   "options": [
+    "1 m.",
+    "2 m.",
+    "4 m.",
+    "6 m."
+   ],
+   "question": "<p class=\"text-base leading-relaxed my-2\">Một vật c&oacute; khối lượng m = 3 kg được k&eacute;o l&ecirc;n tr&ecirc;n mặt phẳng nghi&ecirc;ng một g&oacute;c $30^{\\circ}$ so với phương ngang bởi một lực kh&ocirc;ng đổi F = 70 N dọc theo mặt phẳng nghi&ecirc;ng. Hệ số ma s&aacute;t l&agrave; 0,05, lấy g = 10 m/$s^{2}$. Tổng c&ocirc;ng của tất cả c&aacute;c lực t&aacute;c dụng l&ecirc;n vật l&agrave; 215 J. Qu&atilde;ng đường tương ứng vật đ&atilde; di chuyển bằng</p>",
+   "difficulty": "kho",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Tổng công của các lực bằng công của hợp lực: $A_{\\text{tổng}}=F_{hl}s$. Hợp lực dọc mặt nghiêng gồm F kéo lên, ma sát và thành phần $mg\\sin30^{\\circ}$ kéo xuống.</p><p class=\"text-base leading-relaxed my-2\">$F_{ms}=0{,}05\\cdot3\\cdot10\\cdot\\cos30^{\\circ}\\approx1{,}3\\ \\text{N}$; $mg\\sin30^{\\circ}=15\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">$F_{hl}=70-1{,}3-15\\approx53{,}7\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">$s=\\dfrac{215}{53{,}7}\\approx4\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Sai vì A (1 m), B (2 m), D (6 m): hợp lực 53,7 N cho công 53,7 J, 107 J, 322 J, không bằng 215 J.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 329462,
+  "ghiChu": "số mũ không hệ số: 107 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Công của lực và trường hợp lực xiên góc",
+   "answer": "107",
+   "question": "<p class=\"text-base leading-relaxed my-2\">Một vật c&oacute; khối lượng 3 kg được k&eacute;o l&ecirc;n tr&ecirc;n mặt phẳng nghi&ecirc;ng một g&oacute;c $30^{\\circ}$ so với phương ngang bởi một lực kh&ocirc;ng đổi 70 N dọc theo mặt phẳng nghi&ecirc;ng. Hệ số ma s&aacute;t l&agrave; 0,05, lấy g = 10 m/$s^{2}$. T&iacute;nh tổng c&ocirc;ng của tất cả c&aacute;c lực t&aacute;c dụng l&ecirc;n vật khi vật di chuyển được qu&atilde;ng đường 2 m theo đơn vị J. (kết quả l&agrave;m tr&ograve;n đến h&agrave;ng đơn vị, ghi số)</p>",
+   "difficulty": "kho",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Tổng công bằng tổng công các lực: $A=A_F+A_P+A_N+A_{ms}$ trên quãng đường $s=2$ m.</p><p class=\"text-base leading-relaxed my-2\">$A_F=Fs=70.2=140$ J.</p><p class=\"text-base leading-relaxed my-2\">$A_P=-mgs\\sin30^{\\circ}=-3.10.2.0{,}5=-30$ J.</p><p class=\"text-base leading-relaxed my-2\">$A_N=0$ vì phản lực vuông góc với dịch chuyển.</p><p class=\"text-base leading-relaxed my-2\">$A_{ms}=-\\mu mg\\cos30^{\\circ}.s=-0{,}05.3.10.0{,}866.2\\approx-2{,}6$ J.</p><p class=\"text-base leading-relaxed my-2\">$A=140-30+0-2{,}6\\approx107$ J.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: 107 J.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 369389,
+  "ghiChu": "số mũ không hệ số: 105 N",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Lực đẩy Archimedes và điều kiện nổi",
+   "question": "<p>Khi treo một vật rắn hình trụ ở ngoài không khí vào lực kế thì lực kế chỉ 150 N. Khi thả vật chìm hoàn toàn trong nước thì lực kế chỉ 90 N. Lấy g = 10 m/s²; khối lượng riêng của nước 1000 kg/m³.</p>",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Trọng lượng của vật là 15 N.",
+     "answer": false
+    },
+    {
+     "text": "Số chỉ 90 N của lực kế khi vật chìm trong nước chính là độ lớn của lực đẩy Ác-si-mét.",
+     "answer": false
+    },
+    {
+     "text": "Thể tích của vật là 6 dm³.",
+     "answer": true
+    },
+    {
+     "text": "Thay nước bằng chất lỏng có khối lượng riêng 750 kg/m³ thì lực kế chỉ 105 N.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Lực kế chỉ độ lớn hợp lực: ngoài không khí chỉ $P$; trong chất lỏng chỉ $P-F_{A}$, với $F_{A}=\\rho gV$.</p><p class=\"text-base leading-relaxed my-2\">a) Sai. Trọng lượng của vật là số chỉ ngoài không khí: $P=150\\ \\text{N}$, chứ không phải 15 N.</p><p class=\"text-base leading-relaxed my-2\">b) Sai. Số chỉ 90 N là $P-F_{A}$; lực đẩy Ác-si-mét là $F_{A}=150-90=60\\ \\text{N}$.</p><p class=\"text-base leading-relaxed my-2\">c) Đúng. $V=\\dfrac{F_{A}}{\\rho g}=\\dfrac{60}{1000\\cdot10}=6\\cdot10^{-3}\\ \\text{m}^{3}=6\\ \\text{dm}^{3}$.</p><p class=\"text-base leading-relaxed my-2\">d) Đúng. $F_{A}'=750\\cdot10\\cdot6\\cdot10^{-3}=45\\ \\text{N}$ nên lực kế chỉ $150-45=105\\ \\text{N}$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 393373,
+  "ghiChu": "số mũ không hệ số: 1025 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Tính độ hụt khối và năng lượng liên kết",
+   "answer": "1,71",
+   "question": "Cho khối lượng của hạt nhân  ${}_2^4{He}$ ; proton và neutron lần lượt là 4,0015 amu; 1,0073 amu và 1,0087 amu. Lấy 1 uc2 = 931,5 MeV. Năng lượng tỏa ra khi tạo thành 1 mol  ${}_2^4{He}$  từ các nucleon bằng bao nhiêu 1025 J? (Làm tròn kết quả đến chữ số hàng phần trăm)",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Năng lượng tỏa ra khi tạo thành một hạt nhân  ${}_2^4{He}$  là:</p><p class=\"text-base leading-relaxed my-2\">$E_{lk}=\\Delta m.c^2=\\left[Z.m_p+\\left(A-Z\\right).m_n-m_X\\right].c^2$ .</p><p class=\"text-base leading-relaxed my-2\">Năng lượng tỏa ra khi tạo thành 1 mol  ${}_2^4{He}$  là:</p><p class=\"text-base leading-relaxed my-2\">$E=N.E_{lk}=n.N_A.E_{lk}=n.N_A.\\left[Z.m_p+\\left(A-Z\\right).m_n-m_X\\right].c^2$ .</p><p class=\"text-base leading-relaxed my-2\">$E=1.6,02.{10}^{23}.\\left[2.1,0073+\\left(4-2\\right).1,0087-4,0015\\right].931,5\\approx 1,71.{10}^{25}$  J.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 456959,
+  "ghiChu": "số mũ không hệ số: 106 Pa · số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "answer": "16",
+   "question": "Một bình đựng khí có dung tích 6.10‒3 (m3) đựng khí áp suất 106 Pa. Người ta dùng khí trong bình để thổi các quả bóng bay (bằng van xả khí) sao cho bóng có thể tích tiêu chuẩn là 3,3.10‒3 (m3) và khí trong bóng có áp suất 105 Pa. Nếu coi nhiệt độ của khí không đổi thì số lượng bóng có thể tích tiêu chuẩn thổi được tối đa là bao nhiêu? <img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259648791-hinh-9.png\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Đẳng nhiệt:  $pV=hs\\Rightarrow 10^6.6.10^{−3}=10^5.\\left(6.10^{−3}+3,2.10^{−3}N\\right)\\Rightarrow N=16,36\\Rightarrow$  Làm tròn 16</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 457372,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "question": "Có thể sử dụng bộ thí nghiệm (hình bên) để tìm hiểu về mối liên hệ giữa áp suất và thể tích của một lượng khí xác định ở nhiệt độ không đổi.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790391254602-hinh-10.jpg\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Trình tự thí nghiệm: Nén (giữ nguyên nhiệt độ) khí trong xilanh; Ghi giá trị thể tích và giá trị áp suất khí; Lặp lại các thao tác.",
+     "answer": true
+    },
+    {
+     "text": "Với kết quả thu được ở bảng bên, công thức liên hệ áp suất theo thể tích là  $p=\\frac{23}{V}$ ,  $p$  đo bằng bar (1 bar = 105 Pa), V đo bằng cm3.",
+     "answer": true
+    },
+    {
+     "text": "Lượng khí đã dùng trong thí nghiệm là 8.10<sup>−4</sup> mol.",
+     "answer": false
+    },
+    {
+     "text": "Thí nghiệm này đã chứng minh được định luật Boyle.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bổ sung ý c): pV ≈ 23 bar·cm³ = 23×10⁵×10⁻⁶ = 2,3 J (đổi 1 bar = 10⁵ Pa, 1 cm³ = 10⁻⁶ m³). Áp dụng pV = nRT với T = 23,5 + 273 = 296,5 K: n = 2,3 / (8,31×296,5) ≈ 9,33×10⁻⁴ mol, khác với giá trị 8×10⁻⁴ mol đề nêu → ý c) sai.</p><p class=\"text-base leading-relaxed my-2\">Phương pháp:</p><p class=\"text-base leading-relaxed my-2\">Phân tích thí nghiệm.</p><p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">+ Trình tự thí nghiệm: Nén (giữ nguyên nhiệt độ) khí trong xilanh; Ghi giá trị thể tích và giá trị áp suất khí;</p><p class=\"text-base leading-relaxed my-2\">Lặp lại các thao tác</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">+ Từ bảng kết quả ta có:</p><p class=\"text-base leading-relaxed my-2\">Lần 1: p1V1 = 22.1,04 = 22,88</p><p class=\"text-base leading-relaxed my-2\">Lần 2: p2V2 = 1,14.20 = 22,8</p><p class=\"text-base leading-relaxed my-2\">Lần 3: p2V3 = 1,29.18 = 23,22</p><p class=\"text-base leading-relaxed my-2\">Lần 4: p4V4 = 1,43.16 = 22,88</p><p class=\"text-base leading-relaxed my-2\">Lần 5: p5V5 = 1,64.14 = 22,96</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\Rightarrow pV=\\frac{22,88+22,8+23,22+22,88+22,96}{5}=22,948\\approx 23$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow p=\\frac{23}{V}$  với p đo bằng bar (1bar = 105 Pa); V đo bằng cm3.</p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">+ Lượng khí đã dùng trong thí nghiệm:</p><p class=\"text-base leading-relaxed my-2\">$pV=nRT\\Rightarrow n=\\frac{pV}{RT}=\\frac{23.10^5.10^{−6}}{8,31.\\left(23,5+273\\right)}=9,33.10^{−4}\\left(mol\\right)$</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">Thí nghiệm này để kiểm chứng định luật Boyle.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 457920,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "question": "Bơm tay xe đạp hoạt động nhờ pít-tông và van một chiều. Khi kéo lên, van đầu vào mở, hút không khí (có thể coi là khí lý tưởng) vào ống. Khi đẩy xuống, không khí bị nén, van đầu ra mở, đẩy khí vào lốp. Quá trình lặp lại đến khi đạt áp suất mong muốn.  Giả sử ống bơm có dạng hình trụ thành mỏng, cách nhiệt, với bán kính đáy r và chiều cao 50 cm. Khi tay bơm lên cao nhất,<br>áp suất khí bên trong ống là 105 Pa, nhiệt độ 270C. Khi pit-tông di chuyển xuống một đoạn 35 cm, van đầu ra mở, lúc này nhiệt độ của khí trong ống là 450C. Coi quá trình trong xi-lanh là đẳng nhiệt và bỏ qua kích thước của van và pit-tông, lấy T(K) = t0C + 273.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790401124679-hinh-26.jpg\" alt=\"Hình 26\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Van đầu vào mở khi kéo pít-tông lên là do áp suất khí quyển lớn hơn áp suất bên trong ống bơm.",
+     "answer": true
+    },
+    {
+     "text": "Ta có thể bơm cho khí trong lốp xe đạt áp suất cao tùy thích.",
+     "answer": false
+    },
+    {
+     "text": "Quá trình nén pít-tông xuống sẽ làm tăng áp suất khí trong ống bơm.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất của khối khí khi van đầu ra mở bằng 3,2.10<sup>5</sup> Pa",
+     "answer": false
+    }
+   ],
+   "explanation": "Khi pistog được kéo lên  $V↑;p↓$  ; áp suất giảm đến khỉ nhỏ hơn áp suất khí quyển  $p_0$ . Áp suất khí quyển sẽ đẩy khí vào khí sẽ lọt vào trong  $\\Rightarrow$  Van đóng<br>Khi pistog được đẩy xuống  $V↓;p↑$  khi đó  $p>p_0$  van sẽ bị đóng lại<br>a) đúng<br>Van đầu vào mở khi kéo pít-tông lên là do áp suất khí quyển lớn hơn áp suất bên trong ống bơm.<br>b) sai<br>Chỉ đạt đến 1 áp suất giới hạn, khi áp suất quá lớn không đẩy khí lên được nữa (không sẽ bị nổ)<br>c) đúng<br>Quá trình nén pít-tông xuống sẽ làm tăng áp suất khí trong ống bơm.<br>d) sai<br>van đầu ra mở → piston đi xuống 35cm<br>$\\left\\{\\begin{aligned}V_0=S.50;T_0=\\left(27+273\\right);p_0=10^5Pa <br>V_s=S.\\left(50−35\\right)=S.15;T_S=\\left(45+273\\right);p_s=?\\end{aligned}\\right.$<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790401125366-hinh-27.jpg\" alt=\"Hình 27\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 457987,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "ly_thuyet",
+   "type": "multiple_choice",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "answer": 0,
+   "options": [
+    "tỉ lệ thuận với nhiệt độ tuyệt đối.",
+    "tỉ lệ nghịch với áp suất.",
+    "tỉ lệ nghịch với nhiệt độ tuyệt đối.",
+    "tỉ lệ thuận với áp suất."
+   ],
+   "question": "Trong quá trình đẳng áp của một lượng khí xác định, thể tích của khí Sử dụng các thông tin sau cho câu 6 và câu 7: Một nhóm học sinh tiến hành thí nghiệm kiểm chứng định luật Boyle được bố trí như hình vẽ bên dưới. Kết quả thí nghiệm được nhóm học sinh ghi lại như bảng bên dưới. Lấy 1 Bar = 105 Pa. <img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259794120-hinh-3.png\" alt=\"Hình 3\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Chọn đáp án A</p><p class=\"text-base leading-relaxed my-2\">Trong quá trình đẳng áp của một lượng khí xác định, thể tích của khí tỉ lệ thuận với nhiệt độ tuyệt đối.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 458086,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Mol, số Avogadro và lượng chất khí",
+   "question": "Để khảo sát mối liên hệ giữa áp suất và nhiệt độ của một lượng khí xác định, một nhóm học sinh tiến hành thí nghiệm bố trí như hình bên. Đối tượng khảo sát là một quả cầu kim loại chứa không khí, được nhúng ngập hoàn toàn trong bình chứa nước. Quả cầu khí được nối với một khí áp kế để đo áp suất, đồng thời có gắn một van (nằm che khuất sau khí áp kế) có thể đóng – mở nhằm kết nối hoặc cô lập khí trong quả cầu với khí quyển bên ngoài. Nhiệt độ của hệ được theo dõi bằng nhiệt nguồn nhiệt (bếp điện), nhiệt độ của khí trong quả cầu được điều khiển thông qua quá trình cân bằng nhiệt. Trong suốt quá trình thí nghiệm, bỏ qua sự co giãn không đáng kể của bình khí. Ban đầu, mở van để khí trong bình cân bằng áp suất với khí quyển, sau đó đóng van để cô lập khối khí trong bình. Ghi lại các giá trị nhiệt độ và áp suất ban đầu của khí vào bảng số liệu (nhiệt độ của khí được xác định theo nhiệt độ của nước trong bình). Tiếp theo, bật bếp điện và điều chỉnh công suất ở mức phù hợp để nhiệt độ của nước tăng chậm; đồng thời thường xuyên khuấy nước để đảm bảo nhiệt độ nước trong bình đồng đều, giúp khí trong quả cầu nhanh đạt cân bằng nhiệt với nước. Cứ mỗi khi nhiệt độ tăng thêm 10°C, nhóm học sinh tiến hành ghi lại đồng thời nhiệt độ và áp suất tương ứng của khí vào bảng số liệu. Kết quả thí nghiệm được trình bày trong bảng sau: Nhiệt độ t (°C)\t25,0\t35,0\t45,0\t55,0\t65,0 Áp suất p (105 Pa)\t1,01\t1,04\t1,08\t1,11\t1,15 <img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259972129-hinh-5.jpg\" alt=\"Hình 5\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Quả cầu chứa khí được làm bằng kim loại và nhúng ngập hoàn toàn trong nước nhằm tăng cường trao đổi nhiệt, giúp khí bên trong quả cầu nhanh chóng đạt cân bằng nhiệt với nước, qua đó giảm sai số trong phép đo.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất khí trong quả cầu tăng tỉ lệ thuận với nhiệt độ.",
+     "answer": false
+    },
+    {
+     "text": "Quá trình biến đổi khí trong thí nghiệm là quá trình đẳng tích.",
+     "answer": true
+    },
+    {
+     "text": "Mật độ phân tử trung bình của lượng khí đã sử dụng trong thí nghiệm là 2,46.10<sup>25</sup> phân tử/m3.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Quả cầu kín, thể tích gần như không đổi nên quá trình là đẳng tích; định luật Charles: $\\dfrac pT=\\text{hằng số}$ với $T$ là nhiệt độ tuyệt đối.</p><p class=\"text-base leading-relaxed my-2\">a) Đúng. Kim loại dẫn nhiệt tốt và ngập hoàn toàn trong nước nên khí nhanh cân bằng nhiệt với nước, nhiệt độ đo được chính xác hơn.</p><p class=\"text-base leading-relaxed my-2\">b) Sai. Bảng cho $t$ theo độ C: $\\dfrac pt$ không đổi không đúng ($\\dfrac{1{,}01}{25}\\ne\\dfrac{1{,}04}{35}$). Áp suất chỉ tỉ lệ thuận với nhiệt độ tuyệt đối $T$ (K), không tỉ lệ thuận với $t$ (°C).</p><p class=\"text-base leading-relaxed my-2\">c) Đúng. Thể tích khí trong quả cầu không đổi nên là quá trình đẳng tích.</p><p class=\"text-base leading-relaxed my-2\">d) Đúng. $n=\\dfrac{p}{kT}=\\dfrac{1{,}01\\cdot10^5}{1{,}38\\cdot10^{-23}\\cdot298}\\approx2{,}46\\cdot10^{25}$ phân tử/m$^3$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 465823,
+  "ghiChu": "số mũ không hệ số: 1013 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Năng lượng toả ra của phản ứng hạt nhân",
+   "answer": "7,1",
+   "question": "Đồng vị  ${}_{92}^{235}U$ là nhiên liệu phân hạch theo phản ứng $n+{}_{92}^{235}U\\rightarrow {{}_{92}^{236}U}^*\\rightarrow {}_{36}^{92}{Kr}+{}_{56}^{141}{Ba}+3n.$ Mỗi hạt nhân phân hạch tỏa năng lượng xấp xỉ 173 MeV.  Lấy khối lượng mol tính theo g/mol bằng số khối của hạt nhân. Năng lượng tỏa ra khi sử dụng 1 kg  ${}_{92}^{235}U$ nguyên chất là bao nhiêu? Tính theo đơn vị 1013 J, làm tròn kết quả đến chữ số hàng phần chục.",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Đáp số 7,1</p><p class=\"text-base leading-relaxed my-2\">$E=E_0\\times N=E_0\\times \\frac{m}{M}\\times N_A=173\\times 1,6\\times 10^{−13}\\times \\frac{10^3}{235}\\times 6,02\\times 10^{23}\\approx 7,1\\times 10^{13} J.$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 523801,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "answer": 0,
+   "options": [
+    "8 lít.",
+    "20 lít.",
+    "15 lít.",
+    "10 lít."
+   ],
+   "question": "Người ta biến đổi đẳng nhiệt một khối khí có thể tích là 12 lít ở áp suất 105 Pa sang trạng thái có áp suất 1,5.10<sup>5</sup> Pa. Sau khi biến đổi, thể tích khối khí là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Quá trình biến đổi đẳng nhiệt của một lượng khí xác định tuân theo định luật Boyle–Mariotte: tích áp suất và thể tích không đổi, $p_1V_1 = p_2V_2$.</p><p class=\"text-base leading-relaxed my-2\">Trạng thái đầu: $p_1 = 10^5$ Pa, $V_1 = 12$ lít.</p><p class=\"text-base leading-relaxed my-2\">Trạng thái sau: $p_2 = 1{,}5\\cdot 10^5$ Pa, thể tích $V_2$ cần tìm.</p><p class=\"text-base leading-relaxed my-2\">Công thức: $V_2 = \\dfrac{p_1 V_1}{p_2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow V_2 = \\dfrac{10^5 \\cdot 12}{1{,}5\\cdot 10^5} = 8$ lít.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: thể tích khối khí sau biến đổi là 8 lít, chọn đáp án A.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 523814,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Người ta sử dụng bộ thí nghiệm (hình bên) để tìm hiểu về mối liên hệ giữa áp suất và thể tích của  $1,5.10^{-4}$  mol khí ở nhiệt độ không đổi.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791044611519-hinh-9.png\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "(2) là pit-tông có ống nối khí trong xi lanh với áp kế.",
+     "answer": true
+    },
+    {
+     "text": "Với kết quả thu được ở bảng bên, tích pV trong hệ đơn vị SI bằng 3.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ của lượng khí đã dùng trong thí nghiệm khoảng 301K",
+     "answer": false
+    },
+    {
+     "text": "Thí nghiệm này là thí nghiệm kiểm chứng định luật Boyle.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">(2) là pit-tông có ống nối khí trong xi lanh với áp kế.</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">b) sai</p><p class=\"text-base leading-relaxed my-2\">Ta có tích pV = 3.10-6.10<sup>5</sup> = 0,3</p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">Ta có  $pV=nRT$ ; thay p = 105 Pa; V = 3.10<sup>−6</sup> m3; n =  $1,5.10^{-4}$  mol; R = 8,31 J.mol-1.K-1 ta được</p><p class=\"text-base leading-relaxed my-2\">T = 240,67 K</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">d) đúng</p><p class=\"text-base leading-relaxed my-2\">Thí nghiệm này là thí nghiệm kiểm chứng định luật Boyle.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 523846,
+  "ghiChu": "số mũ không hệ số: 1025 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Áp suất khí quyển theo độ cao (ôn tập)",
+   "answer": "1,1",
+   "question": "Rãnh Marianas (hay Rãnh Mariana) là một rãnh đại dương nằm ở phía tây Thái Bình Dương, cách khoảng 200 km về phía đông của quần đảo Mariana. Đây là điểm sâu nhất được biết đến trên Trái Đất, với độ sâu lớn nhất đạt tới khoảng 10,92 km. Điểm sâu nhất trong rãnh này được gọi là \"Challenger Deep\". Áp suất ở độ sâu này là a.10<sup>8</sup> Pa. Giá trị của a bằng bao nhiêu? (làm tròn đến chữ số thập phân thứ nhất). Biết áp suất khí quyển ở mặt biển là p0 = 10<sup>5</sup> Pa, khối lượng riêng của nước biển khoảng 1025 kg/m<sup>3</sup> và lấy gia tốc trọng trường g = 9,81 $m/s^2$.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791044617387-hinh-14.jpg\" alt=\"Hình 14\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Áp suất tại độ sâu $h$ trong chất lỏng đứng yên bằng áp suất khí quyển cộng áp suất thủy tĩnh: $p=p_0+\\rho gh$, với $h=10{,}92$ km $=10\\,920$ m.</p><p class=\"text-base leading-relaxed my-2\">$p=10^{5}+1025\\cdot9{,}81\\cdot10\\,920\\approx1{,}099\\cdot10^{8}$ Pa.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow a\\approx1{,}1$.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: 1,1.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 578111,
+  "ghiChu": "số mũ không hệ số: 106 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Điện từ trường và sóng điện từ",
+   "answer": 3,
+   "options": [
+    "200 m.",
+    "30 m.",
+    "150 m.",
+    "300 m."
+   ],
+   "question": "Một sóng điện từ có tần số 106 Hz truyền trong một môi trường với tốc độ 3.10<sup>8</sup> m/s. Trong môi trường đó, sóng điện từ này có bước sóng là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bước sóng liên hệ với tần số và tốc độ truyền: $\\lambda = \\dfrac{v}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Đề hiểu là $f = 10^6$ Hz (mất dấu mũ khi chép), $v = 3 \\cdot 10^8$ m/s.</p><p class=\"text-base leading-relaxed my-2\">$\\lambda = \\dfrac{3 \\cdot 10^8}{10^6} = 300$ m.</p><p class=\"text-base leading-relaxed my-2\">Sai vì: B (30 m) ứng với $f = 10^7$ Hz, lệch một bậc luỹ thừa của 10. A (200 m) và C (150 m) không đúng: $3 \\cdot 10^8 / 200 = 1{,}5 \\cdot 10^6$ Hz và $3 \\cdot 10^8 / 150 = 2 \\cdot 10^6$ Hz, đều khác $10^6$ Hz.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 579738,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "answer": "641",
+   "question": "Một bình hình trụ dung tích 10 lít, đặt thẳng đứng, được đậy kín bằng nắp có khối lượng 1 kg, bán kính 10 cm. Trong bình chứa khí lí tưởng ở nhiệt độ 100 C và áp suất bằng áp suất khí quyển 105 Pa. Khi nhiệt độ khối khí trong bình giảm còn 25 C thì cần một lực tối thiểu bằng bao nhiêu newton (N) để mở nắp bình (làm tròn kết quả đến hàng đơn vị)?Lấy g = 10 m/s2.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045417612-hinh-18.png\" alt=\"Hình 18\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Diện tích nắp là  $S=\\pi .R^2=3,14.{0,1}^2=0,0314$  m2.</p><p class=\"text-base leading-relaxed my-2\">Khí trong bình có khối lượng và thể tích không đổi, nên ta có:</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\frac{p_1}{T_1}=\\frac{p_2}{T_2}$    $\\frac{{10}^5}{100+273}=\\frac{p_2}{25+273}$    $p_2=\\frac{298}{373}.{10}^5$  Pa.</p><p class=\"text-base leading-relaxed my-2\">Để mở nắp bình thì cần một lực  $\\vec{F}$  có độ lớn thỏa mãn biểu thức:</p><p class=\"text-base leading-relaxed my-2\">$F\\ge mg+p_0S-p_2S$</p><p class=\"text-base leading-relaxed my-2\">$F_{min}=mg+p_0S-p_2S=1.10+{10}^5.0,0314-\\frac{298}{373}.{10}^5.0,0314\\approx 641$  N.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 594367,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "answer": 3,
+   "options": [
+    "1,48 g.",
+    "0,74 g.",
+    "0,65 g.",
+    "1,29 g."
+   ],
+   "question": "Một bình đựng 10 lít khí hydrogen ở áp suất 50 atm và nhiệt độ 27 C. Do nắp bình không được vặn thật kín nên khi nhiệt độ của khối khí tăng thêm 10 C thì có một lượng khí thoát ra ngoài, nhưng áp suất khí trong bình vẫn không đổi. Lấy 1 atm = 105 Pa, khối lượng phân tử khí hydrogen là 2 amu. Khối lượng khí hydrogen thoát ra ngoài xấp xỉ bằng",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Hydrogen coi là khí lí tưởng; áp suất và thể tích bình không đổi nên số mol khí còn lại phụ thuộc nhiệt độ: $m=\\dfrac{pVM}{RT}$. Lượng khí thoát ra là hiệu khối lượng khí trước và sau khi nóng.</p><p class=\"text-base leading-relaxed my-2\">Đề hiểu là $T_1=27+273=300\\ \\text{K}$, $T_2=300+10=310\\ \\text{K}$ (đề in mất kí hiệu độ), $1\\ \\text{atm}=10^5\\ \\text{Pa}$.</p><p class=\"text-base leading-relaxed my-2\">$p=50\\cdot 10^5\\ \\text{Pa}$, $V=10\\ \\text{lít}=10^{-2}\\ \\text{m}^3$, $M=2\\ \\text{g/mol}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Delta m=\\dfrac{pVM}{R}\\left(\\dfrac{1}{T_1}-\\dfrac{1}{T_2}\\right)=\\dfrac{50\\cdot 10^5\\cdot 10^{-2}\\cdot 2}{8{,}31}\\left(\\dfrac{1}{300}-\\dfrac{1}{310}\\right)\\approx 1{,}29\\ \\text{g}$.</p><p class=\"text-base leading-relaxed my-2\">Sai vì: A (1,48 g), B (0,74 g) và C (0,65 g) không đúng vì thay số cho $\\Delta m=1{,}29\\ \\text{g}$ (với $T_1=300\\ \\text{K}$, $T_2=310\\ \\text{K}$); B và C xấp xỉ một nửa và một phần tư của 1,48 g, không ứng với giá trị nào của $T_1,T_2$ trong đề.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 600503,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Vận dụng ΔU = A + Q",
+   "question": "Hình bên là một máy nén khí pit-tông Puma có dung tích của bình chứa khí là 90 L; không khí được nạp vào bình với lưu lượng 160 L/phút và khi đạt áp suất tới hạn là 8.10<sup>5</sup> Pa thì rơ-le sẽ ngắt động cơ điện.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045689865-hinh-9.jpg\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Rơ-le ngắt động cơ điện khi thể tích của khí bên trong bình tăng đạt ngưỡng tới hạn.",
+     "answer": false
+    },
+    {
+     "text": "Trong không khí có chứa một lượng hơi nước. Nếu không khí được nén ở áp suất cao thì sau một thời gian sử dụng có thể sẽ có một lượng nước tích tụ trong bình chứa khí.",
+     "answer": true
+    },
+    {
+     "text": "Nếu máy nén khí hoạt động rất nhanh làm cho khối khí bị nén không kịp trao đổi nhiệt với môi trường thì có thể coi gần như toàn bộ công do ngoại lực thực hiện để nén khí đã làm tăng nội năng của khối khí.",
+     "answer": true
+    },
+    {
+     "text": "Coi nhiệt lượng tỏa ra môi trường trong thời gian nén khí là không đáng kể và coi không khí nạp vào bình như khí lí tưởng. Ban đầu trong bình chứa không khí ở áp suất khí quyển là 105 Pa và có nhiệt độ là 270C. Sau thời gian nén khí là 3,5 phút thì rơ-le sẽ ngắt động cơ điện. Khi đó nhiệt độ của khí nén trong bình chứa khí là 610C (làm tròn kết quả đến chữ số hàng đơn vị).",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) sai</p><p class=\"text-base leading-relaxed my-2\">Rơ-le ngắt khi áp suất đạt ngưỡng 8.10<sup>5</sup> Pa.</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">Nén khí làm tăng áp suất nên hơi nước có thể ngưng tụ</p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">Không trao đổi nhiệt  $\\Rightarrow Q=0\\Rightarrow \\Delta U=A$</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">$\\frac{pV}{T}=const\\Rightarrow \\frac{10^5.\\left(90+160.3,5\\right)}{27+273}=\\frac{8.10^5.90}{T}\\Rightarrow T\\approx 323K=59^0C$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 602601,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "ly_thuyet",
+   "type": "true_false",
+   "topic": "Phương trình Clapeyron – Mendeleev",
+   "question": "Từ quan sát việc bơm xe, một nhóm học sinh nhận thấy càng bơm thì lốp xe càng căng (1). Nhóm thảo luận và đưa ra nhận định: “Với một bình chứa khí có thể tích không đổi, giữ khí ở một nhiệt độ ổn định thì áp suất tỉ lệ thuận với lượng khí chứa trong bình” (2). Để kiểm tra nhận định này nhóm thiết kế bộ thí nghiệm như hình vẽ, bao gồm các dụng cụ: bình chứa khí có thể tích V2 = 5,0 lít; bơm có thể tích V1 = 0,6 lít, các van k1, k2 là loại van chỉ cho khí truyền theo một chiều; áp kế loại tính theo đơn vị Bar, chỉ 0 khi áp suất bằng áp suất khí quyển, số chỉ của áp kế là phần áp suất tăng thêm so với áp suất khí quyển; nhiệt kế hiện số (3). Ban đầu khi chưa bơm, áp kế chỉ 0. Nhóm thực hiện bơm khí vào bình đảm bảo số chỉ nhiệt kế là 29,00C, ghi lại số chỉ áp kế sau mỗi lần bơm vào bảng (4).<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045716714-hinh-6.jpg\" alt=\"Hình 6\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "(1) là vấn đề xuất phát từ quan sát của học sinh trong thực tiễn, (2) là giả thuyết của học sinh.",
+     "answer": true
+    },
+    {
+     "text": "Việc lựa chọn và lắp ráp thí nghiệm ở (3) là một phần kế hoạch nghiên cứu của học sinh.",
+     "answer": true
+    },
+    {
+     "text": "Từ (4) nhận thấy, số mol khí trong bình tỉ lệ thuận với số chỉ của áp kế.",
+     "answer": false
+    },
+    {
+     "text": "Biết hằng số R = 8,31 J/mol.K, 1 Bar = 105 Pa, số mol khí trong bình khi chưa bơm là 0,3 mol.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">a) Đúng. Các bước nghiên cứu Vật lí bằng phương pháp thực nghiệm:</p><p class=\"text-base leading-relaxed my-2\">Bước 1: Đặt vấn đề cần nghiên cứu.</p><p class=\"text-base leading-relaxed my-2\">Bước 2: Quan sát, thu thập thông tin.</p><p class=\"text-base leading-relaxed my-2\">Bước 3: Đề xuất giả thuyết.</p><p class=\"text-base leading-relaxed my-2\">Bước 4: Thực hiện thí nghiệm để kiểm tra giả thuyết.</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">Bước 5: Kết luận.</p><p class=\"text-base leading-relaxed my-2\">(1) là vấn đề quan sát của học sinh trong thực tiễn thuộc bước 2 trong tiến trình nghiên cứu Vật lí.</p><p class=\"text-base leading-relaxed my-2\">(2) là giả thuyết của nhóm học sinh thuộc bước 3 trong tiến trình nghiên cứu Vật lí.</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">Việc lựa chọn và lắp ráp thí nghiệm ở (3) thuộc bước 4 trong tiến trình nghiên cứu Vật lí nên là một phần trong kế hoạch nghiên cứu của nhóm học sinh.</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">Gọi nó là số mol khí có trong bình lúc ban đầu, khi đó áp suất khí trong bình là po. Khi bơm khí vào trong bình thì suất khí trong bình lúc này là  $p=p_0+\\Delta p$ (với ∆p là số chỉ của áp kế).</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">Áp dụng phương trình C-M, ta có:</p><p class=\"text-base leading-relaxed my-2\">$pV=nRT\\Leftrightarrow \\left(p_0+\\Delta p\\right)V=nRT$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow n=\\frac{V}{RT}\\left(p_0+\\Delta p\\right)=a\\Delta p+b$  (Với  $a=\\frac{V}{RT}$  và  $b=\\frac{Vp_0}{RT}$ )</p><p class=\"text-base leading-relaxed my-2\">Từ hệ thức trên, ta thấy số mol khí tăng tuyến tính theo số chỉ của áp kế chứ không tỉ lệ thuận.</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">Giả sử áp suất ban đầu là  $p_0=10^5Pa$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}n_0=\\frac{Vp_0}{RT}=\\frac{5.10^{−3}.10^5}{8,31.\\left(29+273\\right)}\\approx 0,2\\left(mol\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 603574,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "answer": "3,51",
+   "question": "Bơm tay xe đạp bao gồm một ống chứa, pitton, tay cầm để kéo, đẩy pitton và các van một chiều. Các van một chiều chỉ cho phép không khí di chuyển theo một hướng nhất định. Ống bơm có dạng hình trụ tròn, thành mỏng cách nhiệt, bán kính đáy 2 cm. Chiều cao từ mặt dưới của pitton khi pitton ở vị trí cao nhất đến đáy ống bơm là 50 cm. Khi tay bơm lên cao nhất, van đầu vào mở không khí vào bên trong ống có áp suất bằng 105 Pa, nhiệt độ 350C. Từ vị trí cao nhất, khi tay bơm bắt đầu đi xuống thì van đầu vào đóng và khi pitton đi được một đoạn 35 cm thì van đầu ra bắt đầu mở, lúc này nhiệt độ của khí trong xilanh là 510C. Giả sử khí không bị rò rỉ ở các van. Van đầu ra bắt đầu mở khi áp suất khí tác dụng lên nó bằng X.105 Pa.<br>Giá trị của X bằng bao nhiêu (làm tròn kết quả đến chữ số hàng phần trăm)?<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045728398-hinh-19.jpg\" alt=\"Hình 19\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Vì nhiệt độ độ của khí trong ống thay đổi, áp dụng phương trình trạng thái:</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\frac{pV}{T}=\\frac{p^/V^/}{T^/}\\Leftrightarrow \\frac{10^5.S.50}{35+273}=\\frac{p^/.S.15}{51+273}\\Rightarrow p^/\\approx 3,51.10^5\\left(Pa\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 604410,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Một lọ giác hơi (được cơ sở điều trị bằng phương pháp cổ truyền sử dụng) do chênh lệch áp suất trong và ngoài lọ nên dính vào bề mặt da lưng của người bệnh, điều này được tạo ra bằng cách ban đầu lọ được hơ nóng bên trong và nhanh chóng úp miệng hở của lọ vào vùng da cần tác động. Tại thời điểm áp vào da, không khí trong lọ được làm nóng đến nhiệt độ t = 3530C và nhiệt độ của không khí môi trường xung quanh là t0 = 27,0°C, Áp suất khí quyển po = 1,0.10<sup>3</sup> Pa. Diện tích phần miệng hở của lọ là S = 28,0 cm. Bỏ qua sự thay đổi thể tích không khí trong bình (do sự phồng của bề mặt phần da bên trong miệng hở của lọ).<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045734761-hinh-5.png\" alt=\"Hình 5\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Áp suất khí trong lọ được áp vào da, khi có nhiệt độ bằng nhiệt độ của môi trường gần bằng 4,8.10<sup>4</sup> Pa.",
+     "answer": true
+    },
+    {
+     "text": "Lực hút tối đa lên mặt da là 156 N.",
+     "answer": false
+    },
+    {
+     "text": "Thực tế, do bề mặt da bị phồng lên bên trong miệng của lọ nên thể tích khí trong lọ bị giảm 10%. Chênh lệch áp suất khí trong lọ và ngoài lọ là 5,3.10<sup>4</sup> Pa.",
+     "answer": false
+    },
+    {
+     "text": "Chênh lệch áp suất trong và ngoài lọ giác hơi tạo lực hút làm máu dưới da tăng cường đến nơi miệng lọ giác hơi bám vào, từ đó tạo ra tác dụng lưu thông khí huyết, kích thích hệ thống miễn dịch giúp cơ thể đối phó với vi khuẩn, virus.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">Ban đầu, ở nhiệt độ 353°C thì áp suất của khí trong lọ = áp suất khí quyển = 105 Pa. Giả sử rằng thể tích không khí bên trong lọ không thay đổi, ta có áp suất của khí trong lọ khi bằng nhiệt độ môi trường là:</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$p=\\frac{T_0}{T}p_0=\\frac{27+27}{353+273}.10^5=\\frac{15}{313}.10^6\\approx 4,8.10^4\\left(Pa\\right)$</p><p class=\"text-base leading-relaxed my-2\">b) sai</p><p class=\"text-base leading-relaxed my-2\">Ta có: $F=\\Delta p.S\\Rightarrow F_{max}$  khi  $\\Delta p_{max}$ , tức là lúc áp suất bên trong lọ giác hơi bằng nhiệt độ môi tường</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow F_{max}=\\left(p_0−p\\right)S=\\left(10^5−\\frac{15}{313}.10^6\\right).28.10^{−4}\\approx 145,8\\left(N\\right)$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">Ta có:  $\\frac{pV}{T}=\\frac{p_0V_0}{T_0}\\Leftrightarrow \\frac{p.0,9V}{27+273}=\\frac{10^5V}{353+273}\\Rightarrow p\\approx 5,3.10^4\\left(Pa\\right)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta p=p_0−p=10^5−5,3.10^4=4,7.10^4\\left(Pa\\right)$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">d) đúng</p><p class=\"text-base leading-relaxed my-2\">Chênh lệch áp suất trong và ngoài lọ giác hơi tạo lực hút làm máu dưới da tăng cường đến nơi miệng lọ giác hơi bám vào, từ đó tạo ra tác dụng lưu thông khí huyết, kích thích hệ thống miễn dịch giúp cơ thể đối phó với vi khuẩn, virus.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 604414,
+  "ghiChu": "số mũ không hệ số: 105Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Áp suất khí quyển theo độ cao (ôn tập)",
+   "answer": "31,7",
+   "question": "Bóng thám không như hình bên là một thiết bị được sử dụng phổ biến trong ngành khí tượng để thu thập dữ liệu về các thông số thời tiết như nhiệt độ, độ ẩm, áp suất và hướng gió ở độ cao khác nhau của bầu khí quyển. Trên quả bóng có gắn thiết bị gọi là Radiosonde có chức năng ghi nhận các dữ liệu thông qua các cảm biến và phát tín hiệu radio để truyền dữ liệu trở lại mặt đất để các nhà khoa học và nhà khí tượng có thể thu thập và phân tích. Bóng thám không thường được làm từ cao su hoặc các vật liệu nhẹ có khả năng chịu biến dạng. Bóng được bơm khí nhẹ như hydrogen hoặc helium. Giả sử một quả bóng thám không kín có thể tích ban đầu là 20 m chứa hydrogen và có tổng khối lượng (quả bóng và thiết bị đo) là mb = 6 kg. Biết rằng khi thể tích quả bóng tăng gấp 27 lần thể tích ban đầu thì quả bóng bị nổ,<br>áp suất khí quyển pk giảm theo độ cao h với quy luật $p_k=p_0.e^{−\\frac{M_k.gh}{RT}}$ , nhiệt độ ở độ cao mà bóng bị nổ là 218 K. Áp suất khí quyển ở mặt đất là p0 = 105Pa; khối lượng mol của phân tử không khí là Mk = 29 g/mol; gia tốc trọng là g = 9,8 m/s2. Bỏ qua áp suất phụ do vật liệu làm vỏ bóng gây ra. Độ cao (so với mặt đất) là bao nhiêu kilometer (km) thì quả bóng bị nổ (làm tròn kết quả đến chữ số hàng phần mười)?<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045735166-hinh-7.png\" alt=\"Hình 7\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Khi quả bóng bay lên đến độ cao cực đại h (ngay trước khi bị nổ), nó ở trạng thái cân bằng, trọng lực tác dụng lên quả bóng cân bằng vớ lực đầy Archimedes</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_bg=D_kV_hg\\Rightarrow m_b=D_kV_h$  (mb là tổng khối lượng của quả bóng và thiết bị)</p><p class=\"text-base leading-relaxed my-2\">$p_kV_h=\\frac{m_k}{M_k}.RT\\Rightarrow D_k=\\frac{p_kM_K}{RT}\\Rightarrow m_b=\\frac{p_0.e^{−\\frac{M_k.gh}{RT}}.M_K.V_h}{RT}$</p><p class=\"text-base leading-relaxed my-2\">$\\Leftrightarrow 6=\\frac{10^5.e^{−\\frac{0,029.9,8.h}{8,31.218}}.0,029.27.20}{8,31.218}\\Rightarrow h=31682,4\\left(m\\right)\\approx 31,7\\left(km\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 615838,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Vận dụng ΔU = A + Q",
+   "answer": "250",
+   "question": "Một khối khí có thể tích 3 lít, được cung cấp một nhiệt lượng 400 J thì nó giãn nở ở áp suất không đổi (105 Pa) đến thể tích 4,5 lít. Nội năng của khối khí này tăng thêm bao nhiêu J? (lấy đến chữ số hàng đơn vị).",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Khí giãn nở đẳng áp nên sinh công: $|A|=p\\Delta V=10^5\\cdot(4{,}5-3)\\cdot10^{-3}=150\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Định luật I nhiệt động lực học: $\\Delta U=Q+A$, khí sinh công nên $A=-150\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Delta U=400-150=250\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $250$ (J).</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 615839,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "answer": "21,4",
+   "question": "Một cốc thuỷ tinh hình trụ có đường kính 4,0 cm được dùng để giác (chữa bệnh). Đốt cồn để nung nóng không khí trong cốc lên tới t1 = 80,00C rồi úp vào lưng bệnh nhân cho kín miệng cốc. Khi không khí nguội đi thì da bị hút phồng lên. Nhiệt độ không khí trong phòng là t0 = 20,00C và áp suất khí quyển là 105 Pa. Bỏ qua sự thay đổi thể tích khí trong cốc do da phồng lên. Áp lực mà cốc tác dụng lên da (do chênh lệch áp suất trong và ngoài da) là bao nhiêu N? (lấy đến 1 chữ số sau dấu phẩy).<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045839513-hinh-21.jpg\" alt=\"Hình 21\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">$\\frac{p}{T}=const$</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\Rightarrow \\frac{10^5}{80+273}=\\frac{p_2}{20+273}\\Rightarrow p_2=0,83.10^5\\left(Pa\\right)$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$F=\\Delta p.S=\\left(10^5−0,83.10^5\\right).\\pi .0,02^2=21,4\\left(N\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 629478,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "question": "Có thể sử dụng bộ dụng cụ thí nghiệm như hình bên để tìm hiểu mối liên hệ giữa thể tích và nhiệt độ của một lượng khí xác định khi áp suất không đổi.<br>Lần đo\tNhiệt độ của khí trong xilanh t(0C)\tThể tích khí trong xilanh V (ml)<br>1\t45\t75<br>2\t41\t74<br>3\t37\t73<br>4\t32\t72<br>5\t28\t71<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046110001-hinh-10.jpg\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Khối khí trong xilanh gần đúng với khí lí tưởng.",
+     "answer": true
+    },
+    {
+     "text": "Với kết quả thí nghiệm thu được ở bảng trên, công thức liên hệ giữa thể tích và nhiệt độ tuyệt đối là  V/T = 236.10<sup>−3</sup> (V đo bằng ml).",
+     "answer": true
+    },
+    {
+     "text": "Trình tự thí nghiệm: Nén và giữ áp suất của khí trong xilanh không đổi, ghi lại các giá trị của thể tích và nhiệt độ của khí trong xilanh, lặp lại các thao tác.",
+     "answer": true
+    },
+    {
+     "text": "Biết áp suất của khí trong xi lanh là 105 Pa, số phân tử khí trong xilanh là 1,71.10<sup>24</sup>.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">$pV↓=nRT↓$</p><p class=\"text-base leading-relaxed my-2\">Với 1 lượng khí nhiệt độ không quá cao, áp suất không quá thấp → gần đúng với khí lý tưởng</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">Lần 1:  $45K\\Rightarrow 318K$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\frac{75}{318}=235,85.10^{−3}\\approx 236.10^{−3}$</p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">Trình tự thí nghiệm: Nén và giữ áp suất của khí trong xilanh không đổi, ghi lại các giá trị của thể tích và nhiệt độ của khí trong xilanh, lặp lại các thao tác.</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">$pV=n.R.T\\Rightarrow 10^5.\\frac{V}{T}=n.8,31$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\Rightarrow 10^5.236.10^{−3}.10^{−6}=n.8,31$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow n=2,84.10^3\\left(mol\\right)$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow n.N_A=1,71.10^{21}$  (phân tử)</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 633169,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "question": "Một nhóm học sinh sử dụng bộ thí nghiệm gồm các dụng cụ và lắp đặt như hình vẽ dưới để tìm hiểu mối liên hệ giữa thể tích và nhiệt độ của một lượng khí lí tưởng ở áp suất không đổi.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046162229-hinh-4.jpg\" alt=\"Hình 4\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Trình tự thí nghiệm: Điều chỉnh pít - tông để thể tích khí trong xilanh lớn nhất; Bật nguồn cấp điện để đun nóng nước đến nhiệt độ khoảng 80oC rồi tắt nguồn; Sau đó dịch pít-tông cho đến lúc số chỉ áp kế chỉ 1,0 bar; Đọc giá trị nhiệt độ và thể tích của khí trong xilanh lúc đó; Chờ cho nhiệt độ giảm xuống rồi lại điều chỉnh pít - tông cho đến lúc số chỉ áp kế lại là 1,0 bar; Tiếp tục đọc giá trị nhiệt độ và thể tích của khí trong xilanh. Lặp lại các thao tác thí nghiệm đó 5 lần.",
+     "answer": true
+    },
+    {
+     "text": "Với kết quả thu được ở bảng trên, công thức liên hệ thể tích theo nhiệt độ là  $\\frac{V}{T}=$  0,35; V đo bằng cm3, T đo bằng K.",
+     "answer": true
+    },
+    {
+     "text": "Biết 1bar = 105 Pa, khối lượng mol không khí là 29 g/mol. Lượng khí đã dùng trong thí nghiệm là 0,12 gam.",
+     "answer": true
+    },
+    {
+     "text": "Thí nghiệm này đã chứng minh được định luật Charles.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">Trình tự thí nghiệm: Điều chỉnh pít - tông để thể tích khí trong xilanh lớn nhất; Bật nguồn cấp điện để đun nóng nước đến nhiệt độ khoảng 80oC rồi tắt nguồn; Sau đó dịch pít-tông cho đến lúc số chỉ áp kế chỉ 1,0 bar; Đọc giá trị nhiệt độ và thể tích của khí trong xilanh lúc đó; Chờ cho nhiệt độ giảm xuống rồi lại điều chỉnh pít - tông cho đến lúc số chỉ áp kế lại là 1,0 bar; Tiếp tục đọc giá trị nhiệt độ và thể tích của khí trong xilanh. Lặp lại các thao tác thí nghiệm đó 5 lần.</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\frac{V}{T}=\\frac{1}{5}\\left(\\frac{120}{73+273}+\\frac{118}{65+273}+\\frac{117}{61+273}+\\frac{114,5}{55+273}+\\frac{113,5}{51+273}\\right)\\approx 0,39\\left(cm^3/K\\right)$</p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">$\\frac{pV}{T}=nR\\Rightarrow 10^5.0,349.10^{−6}=n.8,31\\Rightarrow n\\approx 4,2.10^{−3}\\left(mol\\right)$</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}m=n.M=4,2.10^{−3}.29\\approx 0,12g$</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">Thí nghiệm không chứng minh được định luật, chỉ kiểm chứng được định luật</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 634975,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "question": "Sử dụng bộ thí nghiệm hình dưới để tìm mối liên hệ giữa thể tích và nhiệt độ của một lượng khí xác định khi áp suất không đổi. Biết áp kế luôn ở mức 0 ứng với áp suất bằng áp suất khí quyển, đơn vị đo của áp kế là Bar (1Bar = 105 Pa). Đổ nước nóng vào hộp chứa cho ngập hoàn toàn xylanh. Dịch chuyển pittong từ từ sao cho số chỉ của áp kế không đổi. Kết quả đo giá trị của phần thể tích khí và nhiệt độ ghi nhận ở bảng sau:<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046215853-hinh-10.jpg\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Chất khí trong xylanh biến đổi đẳng áp khi thực hiện thí nghiệm ở các lần đo.",
+     "answer": true
+    },
+    {
+     "text": "Với kết quả thu được ở bảng trên, công thức liên hệ giữa thể tích theo nhiệt độ là V = 0,236(t + 273), với V đo bằng ml,t đo bằng 0C.",
+     "answer": true
+    },
+    {
+     "text": "Mật độ phân tử khí trong xylanh tăng từ lần đo thứ 1 đến lần đo thứ 5.",
+     "answer": true
+    },
+    {
+     "text": "Lượng khí đã dùng trong thí nghiệm là 2,8.10<sup>−2</sup> mol.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">Số chỉ áp kế không đổi</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}\\frac{V}{t+273}=\\frac{1}{5}.\\left(\\frac{75}{45+273}+\\frac{74}{41+273}+\\frac{73}{37+273}+\\frac{72}{32+273}+\\frac{71}{28+273}\\right)\\approx 0,236$</p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">$\\mu =\\frac{N}{V}\\overset{V↓}\\rightarrow\\mu ↑$</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">$\\frac{pV}{t+273}=nR\\Rightarrow 10^5.0,236.10^{−6}=n.8,31\\Rightarrow n\\approx 2,8.10^{−3}mol$</p><p class=\"text-base leading-relaxed my-2\"></p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 637348,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Vận dụng phương trình trạng thái",
+   "question": "Một máy phát điện mini sử dụng động cơ nhiệt Stirling gamma để cung cấp điện cho các khu vực nông thôn không có lưới điện. Động cơ này hoạt động bằng cách sử dụng nhiệt từ ánh sáng mặt trời tập trung để tạo ra sự chênh lệch nhiệt độ cần thiết cho chu trình Stirling. Hình vẽ dưới biểu diễn chu trình 1-2-3-4-1 của khí trong xi-lanh, trong đó 1 - 2 và 3 - 4 là quá trình đẳng nhiệt. Trạng thái (2) có nhiệt độ 300 K. Hệ số nén VR và hiệu suất η của động cơ được tính theo công thức $VR=\\frac{v_{max}}{v_{min}};\\eta =1−\\frac{T_{min}}{T_{max}}$ với Vmax, Tmax là thể tích, nhiệt độ lớn nhất trong chu trình và Vmin, Tmin là nhỏ nhất trong chu trình. Hiệu suất của chu trình là 62,5% và 1Bar = 105 Pa<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046235461-hinh-9.png\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046235641-hinh-10.png\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Quá trình 3 - 4 khí trong xi-lanh nhận nhiệt từ bên ngoài.",
+     "answer": true
+    },
+    {
+     "text": "Hệ số nén của độ cơ là VR = 4.",
+     "answer": false
+    },
+    {
+     "text": "Số mol khí trong xi-lanh là 40.10<sup>−3</sup> mol.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt độ trạng thái (4) là 3630C.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">Quá trình (3) – (4) có nhiệt độ không đổi mà thể tích tăng → Thực hiện công → Nhận nhiệt</p><p class=\"text-base leading-relaxed my-2\">b) sai</p><p class=\"text-base leading-relaxed my-2\">$VR=\\frac{V_{max}}{V_{min}}=\\frac{1}{0,5}=2$</p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">$n=\\frac{pV}{RT}=\\frac{2.10^5.0,5.10^{−3}}{8,31.300}\\approx 40.10^{−3}mol$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">$\\begin{aligned}\\end{aligned}H=1−\\frac{T_{min}}{T_{max}}=1−\\frac{T_2}{T_4}\\Rightarrow 0,625=1−\\frac{300}{T_4}\\Rightarrow T_4=800K=527^0C$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 637548,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Một chiếc ghế nâng hạ bằng khí thông qua chuyển động lên xuống của xi lanh nối với mặt ghế. Thanh nén khí cố định trên đế bịt kín một lượng khí trong xi lanh (như hình vẽ). Bỏ qua ma sát giữa thanh nén và xi lanh. Tổng khối lượng của mặt ghế và xi lanh là 5 kg, tiết diện của thanh nén là 20 cm2 . Một học sinh nặng 50 kg ngồi lên ghế (hai chân để lơ lửng không chạm mặt sàn) thì khi ổn định ghế hạ xuống 15 cm. Coi nhiệt độ của khí trong xi lanh không đổi, áp suất khí quyển là 105 Pa và g = 10 m/s2.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046243971-hinh-17.png\" alt=\"Hình 17\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Quá trình ghế hạ xuống, khí trong xi lanh nhận công.",
+     "answer": true
+    },
+    {
+     "text": "Khi ghế để trống, áp suất của khí trong xi lanh là 1,25.10<sup>5</sup> Pa.",
+     "answer": true
+    },
+    {
+     "text": "Khi học sinh ngồi trên ghế, áp suất của khí trong xi lanh là 3,5.10<sup>5</sup> Pa.",
+     "answer": false
+    },
+    {
+     "text": "Khi ghế để trống, cột khí trong xi lanh dài là 23,3 cm.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Khi ghế hạ xuống, thể tích khí trong xi lanh giảm, tức ngoại lực nén khí lại nên khí trong xi lanh nhận công. → Phát biểu đúng (Đ).<br>b) Khi ghế để trống: p1 = p0 + (m_gh.g)/S = 10^5 + (5.10)/(20.10⁻⁴) = 10^5 + 0,25.10^5 = 1,25.10^5 Pa — khớp phát biểu. → Phát biểu đúng (Đ).<br>c) Khi học sinh ngồi lên ghế, tổng khối lượng đè lên là m_gh+m_hs=55kg: p2 = p0 + (m_gh+m_hs).g/S = 10^5 + (55.10)/(20.10⁻⁴) = 3,75.10^5 Pa, không phải 3,5.10^5 Pa như phát biểu nêu. → Phát biểu sai (S).<br>d) Nhiệt độ không đổi: áp dụng định luật Boyle p1.S.l1 = p2.S.l2, với l2 = l1-15. Thay số: 1,25.10^5.l1 = 3,75.10^5.(l1-15) ⇒ l1 = 22,5 cm, không phải 23,3 cm như phát biểu nêu. → Phát biểu sai (S).<br>a) đúng<br>Quá trình ghế hạ xuống, khí trong xi lanh nhận công.<br>b) đúng<br>$p_1=p_0+\\frac{m_{gh}.g}{S}=10^5+\\frac{5.10}{20.10^{−4}}=1,25.10^5Pa$<br>c) sai<br>$\\begin{aligned}\\end{aligned}p_2=p_0+\\frac{\\left(m_{gh}+m_{hs}\\right)g}{S}=10^5+\\frac{\\left(5+50\\right).10}{20.10^{−4}}=3,75.10^5Pa$<br>d) sai<br>$pV=const\\Rightarrow p_1Sℓ_1=p_2Sℓ_2\\Rightarrow 1,25.10^5.ℓ_1=3,75.10^5\\left(ℓ_1−15\\right)\\Rightarrow ℓ_1=22,5\\left(cm\\right)$",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 642763,
+  "ghiChu": "số mũ không hệ số: 104 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+   "answer": "231",
+   "question": "Một học sinh làm thí nghiệm đo nhiệt hóa hơi riêng của nước (cân điện tử, ấm siêu tốc, đồng hồ đo thời gian, chai nước). Biết ấm đun có công suất trung bình là P = 1500 W. Khi nước bắt đầu sôi, khối lượng nước trong ấm đo được bằng cân điện tử là m0 = 300 g, lúc này học sinh mở nắp ấm để nước bay hơi, sau khoảng thời gian 77 giây thì thấy số chỉ trên cân điện tử còn m = 250 g. Bỏ qua sự trao đổi nhiệt với môi trường bên ngoài. Nhiệt hóa hơi riêng của nước bằng bao nhiêu? (đơn vị: 104 J/kg).",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Nhiệt do ấm cung cấp chỉ dùng để hoá hơi phần nước đã bay đi: $Pt=\\Delta m\\,L$.</p><p class=\"text-base leading-relaxed my-2\">$\\Delta m=300-250=50$ g $=0{,}05$ kg.</p><p class=\"text-base leading-relaxed my-2\">$L=\\dfrac{Pt}{\\Delta m}=\\dfrac{1500\\cdot 77}{0{,}05}=2{,}31\\cdot 10^6$ J/kg $=231\\cdot 10^4$ J/kg.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $231$ (đơn vị $10^4$ J/kg).</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 642764,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "answer": "212",
+   "question": "Một bơm xe đạp hình trụ có đường kính trong là 3 cm. Người ta dùng ngón tay bịt kín đầu vòi bơm và ấn pit-tông từ từ để nén không khí trong bơm sao cho nhiệt độ không thay đổi. Lấy áp suất khí quyển là p0 = 105 Pa. Coi không khí là khí lí tưởng, khi thể tích của không khí trong bơm giảm đi 4 lần thì lực tác dụng lên pit-tông bằng bao nhiêu N? (kết quả lấy 0 chữ số sau dấu phẩy thập phân)",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Nén đẳng nhiệt: $p_1V_1=p_2V_2$. Lực tác dụng lên pit-tông cân bằng độ chênh áp suất hai bên: $F=(p_2-p_0)S$.</p><p class=\"text-base leading-relaxed my-2\">$V_2=\\dfrac{V_1}{4}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow p_2=4p_0=4\\cdot 10^5$ Pa.</p><p class=\"text-base leading-relaxed my-2\">$S=\\pi\\left(\\dfrac{d}{2}\\right)^2=\\pi\\cdot(1{,}5\\cdot 10^{-2})^2\\approx 7{,}07\\cdot 10^{-4}\\ \\text{m}^2$.</p><p class=\"text-base leading-relaxed my-2\">$F=(4\\cdot 10^5-10^5)\\cdot 7{,}07\\cdot 10^{-4}\\approx 212$ N.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $212$ N.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 651018,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "answer": "7,3",
+   "question": "Sử dụng bộ thí nghiệm như hình vẽ để tìm hiểu về mối liên hệ giữa áp suất và thể tích của một lượng khí xác định ở nhiệt độ không đổi, người ta thu được bảng kết quả như bảng bên.<br>Biết 1 bar = 105 Pa, với kết quả thu được ở bảng trên thì kết quả đo giá trị trung bình của biểu thức  $\\frac{pV}{T}$  là<br>x.10–3 (Nm/K). Tìm giá trị của x (làm tròn kết quả đến chữ số hàng phần mười).<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046358142-hinh-9.jpg\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">+  $\\begin{aligned}\\end{aligned}pV=\\frac{p_1V_1+p_2V_2+...+p_5V_5}{5}=22,948 Bar.cm^3$</p><p class=\"text-base leading-relaxed my-2\">+  $\\frac{pV}{T}=\\frac{22,948.10^5.10^{−6}}{23,5+273}=x.10^{−3}\\Rightarrow x\\approx 7,3$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 651917,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Một chiếc ghế nâng hạ bằng khí (như hình vẽ dưới đây) thông qua chuyển động lên xuống của xi lanh nối với mặt ghế. Thanh nén khí cố định trên để bịt kín một lượng khí lí tưởng trong xi lanh. Bỏ qua ma sát giữa thanh nén và xi lanh. Tổng khối lượng của mặt ghế và xi lanh là 6 kg, tiết diện của thanh nén là 30cm2. Một học sinh nặng 54 kg ngồi lên ghế (hai chân để lơ lửng không chạm mặt sàn), khi ổn định ghế hạ xuống 12 cm so với lúc đầu. Coi nhiệt độ của khí trong xi lanh không đổi, áp suất khí quyển là 105 Pa, lấy g = 10 m/s2.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046366565-hinh-3.png\" alt=\"Hình 3\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Khi ghế để trống, áp suất của khí trong xi lanh bằng áp suất khí quyển.",
+     "answer": false
+    },
+    {
+     "text": "Khi học sinh ngồi trên ghế, áp suất của khí trong xi lanh là 2.10<sup>5</sup> Pa.",
+     "answer": false
+    },
+    {
+     "text": "Khi ghế để trống, cột khí trong xi lanh dài 20 cm.",
+     "answer": true
+    },
+    {
+     "text": "Quá trình ghế hạ xuống, khí trong xi lanh nhận công.",
+     "answer": true
+    }
+   ],
+   "explanation": "Công thức: cân bằng lực trên cụm ghế + xi lanh khối lượng M treo trên khí nén: p_khí·S = p_khí quyển·S + Mg → p_khí = p0 + Mg/S. Định luật Boyle (đẳng nhiệt): p1L1 = p2L2.<br>a) Ghế trống (M=6kg): p_khí = 10^5 + 6×10/(3.10⁻³) = 10^5 + 2.10^4 = 1,2.10^5 Pa ≠ 10^5 Pa → sai. b) Có học sinh (M=60kg): p_khí' = 10^5 + 60×10/(3.10⁻³) = 10^5 + 2.10^5 = 3.10^5 Pa ≠ 2.10^5 Pa → sai.<br>c) Gọi L là chiều dài cột khí lúc đầu: 1,2.10^5·L = 3.10^5·(L−0,12) → 1,2L = 3L−0,36 → L = 0,36/1,8 = 0,2 m = 20 cm → đúng. d) Khi ghế hạ xuống, thể tích khí giảm (bị nén) nên ngoại lực thực hiện công dương lên khí → khí nhận công → đúng. Kết quả: a) S, b) S, c) Đ, d) Đ.<br>a) sai<br>$p_1=p_0+\\frac{m_{gh}g}{S}=10^5+\\frac{6.10}{30.10^{−4}}=1,2.10^5Pa$<br>b) sai<br>$p_2=p_0+\\frac{\\left(m_{hs}+m_{gh}\\right)}{S}=10^5+\\frac{\\left(54+6\\right).10}{30.10^{−4}}=3.10^5Pa$<br>c) đúng<br>$p_1V_1=p_2V_2\\Rightarrow p_1Sℓ_1=p_2Sℓ_2$<br>$\\begin{aligned}\\end{aligned}\\Rightarrow 1,2.10^5.ℓ_1=3.10^5.\\left(ℓ_1−12\\right)\\Rightarrow ℓ_1=20cm$<br>Thể tích giảm  $\\Rightarrow$  Khí nhận công<br>d) đúng",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 669997,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Một học sinh làm thí nghiệm kiểm tra định luật Charles đối với khối khí lí tưởng chứa trong xi lanh có pit tông đậy kín và di chuyển được như hình bên. Với các dụng cụ gồm:<br>+ Áp kế (1) có mức 0 ứng với áp suất khí quyển, đơn vị đo của áp kế là Bar (1 Bar = 105 Pa).<br>+ Xi lanh (2); Pit tông (3) gắn với tay quay (4); Hộp chứa nước nóng (5): Cảm biến nhiệt độ (6).<br>Bạn học sinh tiến hành thí nghiệm theo các bước sau:<br>+ Đọc giá trị phần thể tích chứa khí của xi lanh ban đầu (V0 = 70 ml).<br>+ Đọc số chỉ của cảm biến nhiệt độ đo nhiệt độ khí trong xi lanh đầu (t0 = 260C).<br>+ Đổ nước nóng vào hộp chứa cho ngập hoàn toàn xi lanh. Quay tay quay để pít tông dịch chuyển từ từ sao cho số chỉ của áp kế không đổi (p0 = 105 Pa). Đọc giá trị của phần thể tích chứa khí và nhiệt độ sau mỗi phút. Bạn học sinh thu được bảng giá trị ở hình 1 sau:<br>Hình 2<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046660097-hinh-12.jpg\" alt=\"Hình 12\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046660271-hinh-13.png\" alt=\"Hình 13\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Định luật Charles được phát biểu như sau: “Khi áp suất của một khối lượng khí xác định giữ không đổi thì thể tích của khí tỉ lệ thuận với nhiệt độ tuyệt đối của nó”.",
+     "answer": true
+    },
+    {
+     "text": "Lượng khí lí tưởng chứa trong xi lanh có số mol xấp xỉ bằng 2,8 mol.",
+     "answer": false
+    },
+    {
+     "text": "Tỉ số  $\\frac{V}{T}$ luôn không đổi và xấp xỉ bằng 0,235.10<sup>−6</sup>  $\\left(\\frac{m^3}{K}\\right)$",
+     "answer": true
+    },
+    {
+     "text": "Đồ thị biểu diễn mối liên hệ giữa nhiệt độ tuyệt đối và thể tích của khối khí trên như Hình 2",
+     "answer": true
+    }
+   ],
+   "explanation": "a) đúng<br>Định luật Charles được phát biểu như sau: “Khi áp suất của một khối lượng khí xác định giữ không đổi thì thể tích của khí tỉ lệ thuận với nhiệt độ tuyệt đối của nó”.<br>b) sai<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046660444-hinh-14.png\" alt=\"Hình 14\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>c) đúng",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 670225,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "answer": "332",
+   "question": "Một học sinh tiến hành thí nghiệm khảo sát sự phụ thuộc của áp suất p theo nhiệt độ tuyệt đối T. Trong đó, bình thủy tinh hình cầu có nút kín, trong có chứa khí được nối thông với áp kế qua một ống nhỏ. Bình thủy tinh được nhúng trong một bình nước, nhiệt độ của nước được đo bởi một nhiệt kế. Đun nóng từ từ nước trong bình rồi ghi lại giá trị nhiệt độ t được chỉ bởi nhiệt kế và áp suất p được chỉ bởi áp kế thu được kết quả ở bảng sau:<br>T (0C)<br>T (K)<br>P (x105 Pa)<br>(Pa/K)<br>1,00<br>1,10<br>1,15<br>Tỉ số p/T có giá trị trung bình xấp xỉ bằng bao nhiêu Pa/K (làm tròn đến phần nguyên, chỉ làm tròn kết quả cuối cùng khi tính giá trị trung bình)?<br>$\\frac{p}{T}\\left(Pa/K\\right)$",
+   "difficulty": "trung-binh",
+   "explanation": "",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 670227,
+  "ghiChu": "số mũ không hệ số: 106J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+   "answer": "2,3",
+   "question": "Nhiệt lượng cần cung cấp để làm bay hơi hoàn toàn 1kg nước ở 1000C là bao nhiêu MJ, 1MJ = 106J? Cho biết nhiệt hoá hơi riêng của nước là 2,3.10<sup>6</sup> J/kg.",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Nhiệt lượng làm hoá hơi hoàn toàn chất lỏng đang ở nhiệt độ sôi: $Q=mL$.</p><p class=\"text-base leading-relaxed my-2\">$Q=1\\cdot 2{,}3\\cdot 10^6=2{,}3\\cdot 10^6$ J $=2{,}3$ MJ.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: 2,3 MJ.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 672413,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Tính nhiệt lượng theo nhiệt dung riêng",
+   "answer": "1,6",
+   "question": "Một nhóm học sinh THPT dùng một ấm điện đun sôi 1 kg nước ở áp suất khí quyển 105 Pa, dùng nhiệt kế đo nhiệt độ của nước theo thời gian thì thu được đồ thị như hình bên. Nhiệt dung riêng của nước là 4180 J/kg.K. Cho rằng có 18,4% nhiệt lượng của ấm tỏa ra môi trường. Coi sự bay hơi ở<br>nhiệt độ thường của nước trong ấm là không đáng kể. Công suất của ấm là bao nhiêu kW? (kết quả lấy đến một con số sau dấu phẩy)<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046811435-hinh-20.jpg\" alt=\"Hình 20\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046811604-hinh-21.jpg\" alt=\"Hình 21\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046811784-hinh-22.png\" alt=\"Hình 22\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "explanation": "<img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046812027-hinh-23.png\" alt=\"Hình 23\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>Theo đề: Hao phí  $18,4%\\Rightarrow H=100%−18,4%=81,6%$<br>$\\Rightarrow P.\\tau .H=mc\\Delta t$<br>$\\Rightarrow P.460.81,6=1.4180.\\left(100−25\\right)=1600\\left(W\\right)=1,6\\left(kW\\right)$",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 672766,
+  "ghiChu": "số mũ không hệ số: 1020 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Vận dụng phương trình trạng thái",
+   "question": "<img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046926115-hinh-5.png\" alt=\"Hình 5\" class=\"mx-auto my-2 max-w-full rounded-lg\" />\tMột lượng khí He lí tưởng đựng trong một xi lanh, pittông nhẹ có thể chuyển động không ma sát dọc theo xi lanh như hình vẽ. Tiết diện của pit-tông là  $8.10^{−3} m^2$ .<br>Một đầu pit-tông được gắn với lò xo có độ cứng  $8.10^3 N/m$ . Ban đầu pit-tông nằm cân bằng, lò xo không biến dạng, khí ở nhiệt độ 300 K và có thể tích  $2,4.10^{−3} m^3$ . Khí được nung nóng cho đến khi pit-tông dịch chuyển chậm ra ngoài một đoạn  $0,15 m$ . Biết áp suất khí quyển là  $10^5 N/m^2$ .",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Áp suất của khí trong xi lanh sau khi bị nung nóng là  $2\\cdot 10^5 N/m^2$ .",
+     "answer": false
+    },
+    {
+     "text": "Thể tích của khối khí sau khi bị nung nóng là  $3,6.10^{−3} m^3$ .",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt độ cuối cùng của khí là 1125 K.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt lượng mà khối khí nhận được 1020 J.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Công thức: ban đầu lò xo không biến dạng nên áp suất khí ban đầu bằng áp suất khí quyển p1 = p0 = 10^5 N/m². Khi pit-tông dịch ra ngoài x = 0,15 m, thể tích tăng thêm ΔV = S.x; áp suất mới cân bằng với cả áp suất khí quyển và lực đàn hồi lò xo: p2 = p0 + kx/S.</p><p class=\"text-base leading-relaxed my-2\">Thay số: ΔV = 8.10^-3·0,15 = 1,2.10^-3 m³ → V2 = 2,4.10^-3+1,2.10^-3 = 3,6.10^-3 m³ (ý b đúng). p2 = 10^5 + (8.10^3·0,15)/8.10^-3 = 10^5 + 1,5.10^5 = 2,5.10^5 N/m² (không phải 2.10^5 nên ý a sai). Theo phương trình trạng thái: p1V1/T1 = p2V2/T2 → T2 = T1·(p2V2)/(p1V1) = 300·(2,5.10^5·3,6.10^-3)/(10^5·2,4.10^-3) = 300·900/240 = 1125 K (ý c đúng).</p><p class=\"text-base leading-relaxed my-2\">Công do khí thực hiện: A = p0ΔV + (1/2)kx² = 10^5·1,2.10^-3 + 0,5·8.10^3·0,15² = 120+90 = 210 J. Độ biến thiên nội năng (khí He đơn nguyên tử): n = p1V1/(RT1) = (10^5·2,4.10^-3)/(8,31·300) ≈ 0,0963 mol; ΔU = (3/2)nRΔT ≈ 1,5·0,0963·8,31·825 ≈ 990 J. Nhiệt lượng khí nhận: Q = ΔU + A ≈ 990+210 ≈ 1200 J (không phải 1020 J nên ý d sai). Kết quả: a) Sai; b) Đúng; c) Đúng; d) Sai.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 672987,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Định luật Boyle. Định luật Charles",
+   "question": "Hình 1 là sơ đồ hoạt động của hệ thống máy lọc nước RO đặt dưới chậu rửa. Sau khi lọc, nước tinh khiết được dẫn vào bình áp để tích trữ trước khi đưa lên vòi sử dụng. Trong bình áp có bóng chứa nước và bóng chứa khí ngăn cách với nhau bằng màng đàn hồi (Hình 2). Tổng thể tích của hai bóng bằng thể tích trong của bình. Coi khối khí trong bóng khí là khí lí tưởng có nhiệt độ không đổi, bỏ qua thể tích ống dẫn nước.<br>Ban đầu trong bình áp chưa có nước, khí trong bóng khí chiếm toàn bộ thể tích trong của bình (khí có nhiệt độ 250C và áp suất 0,75p0 với p0 = 105 Pa ), cho máy bơm hoạt động (vòi nước tinh khiết đóng) thì nước được đẩy vào trong bóng nước.  Khi áp suất khí trong bóng khí tăng đến 6p0 thì máy bơm tự ngắt. Mở vòi sử dụng để nước trong bóng nước chảy ra, khi áp suất khí trong bóng khí giảm đến p0 thì máy bơm lại khởi động để bơm nước vào bóng nước. Biết thể tích trong của bình áp là 20 lít.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046996635-hinh-12.jpg\" alt=\"Hình 12\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046996845-hinh-13.jpg\" alt=\"Hình 13\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Khi bơm nước vào trong bóng nước lần đầu thì thể tích của bóng khí giảm.",
+     "answer": true
+    },
+    {
+     "text": "Số phân tử khí trong bóng khí là 3,65.10<sup>23</sup> phân tử.",
+     "answer": true
+    },
+    {
+     "text": "Quá trình biến đổi trạng thái của khí trong bóng khí tuân theo định luật Charles.",
+     "answer": false
+    },
+    {
+     "text": "Giữa hai lần kế tiếp máy bơm làm việc (từ lúc máy tự ngắt đến lúc máy bắt đầu bơm lại), lượng nước lấy ra từ bình là 12,5 lít.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) đúng</p><p class=\"text-base leading-relaxed my-2\">Khối khí kín, quá trình đẳng nhiệt, p và V tỉ lệ nghịch.</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">Số phân tử khí trong bóng khí là 3,65.10<sup>23</sup> phân tử.</p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">Quá trình biến đổi trạng thái của khí trong bóng khí tuân theo định luật Boyle.</p><p class=\"text-base leading-relaxed my-2\">d) đúng</p><p class=\"text-base leading-relaxed my-2\">- Thể tích khí khi máy bơm tự ngắt là:  $0,75p_0V_0=3p_0V_1\\Rightarrow V_1=\\frac{0,75.V_0}{3}=5ℓ$</p><p class=\"text-base leading-relaxed my-2\">- Thể tích của khí trong bình khi bơm bắt đầu hoạt động lại là:</p><p class=\"text-base leading-relaxed my-2\">$0,75p_0V_0=p_0V_2\\Rightarrow V_2=0,75V_0=15ℓ$</p><p class=\"text-base leading-relaxed my-2\">- Thể tích nước lấy ra lúc này bằng:</p><p class=\"text-base leading-relaxed my-2\">$\\Delta V_{nuoc}=\\Delta V_{khi}=15=2,5=12,5\\left(ℓ\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 673203,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Vận dụng phương trình trạng thái",
+   "question": "Một lượng khí helium (xem là khí lí tưởng) có số mol là 0,1 mol được chứa trong một xi lanh kín, phía trên là pit-tông có thể chuyển động thẳng đứng không ma sát. Ban đầu, khi pit-tông cân bằng, nhiệt độ của khối khí là 27 C. Người ta đặt thêm lên pit-tông một quả nặng có khối lượng 15 kg, làm pit-tông dịch chuyển đi xuống một đoạn d như hình vẽ bên dưới. Quá trình nén khí diễn ra đẳng nhiệt. Biết áp suất khí quyển là 105 Pa, tiết diện ngang của pit tông bằng 1,25 dm2, gia tốc trọng trường g = 10 m/s2. Bỏ qua khối lượng của pit-tông.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791047062752-hinh-10.webp\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Thể tích ban đầu của khối khí helium là 2,493 lít.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất của khối khí helium sau khi đặt quả nặng lên pit-tông là 1,12.10<sup>5</sup> Pa.",
+     "answer": true
+    },
+    {
+     "text": "Độ dịch chuyển của pit-tông d xấp xỉ bằng 2 cm.",
+     "answer": true
+    },
+    {
+     "text": "Trong quá trình nén đẳng nhiệt trên, nội năng của khối khí helium giảm.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng<br>Thể tích ban đầu của khối khí helium là:<br>$p_1.V_1=nRT_1$    $V_1=\\frac{nRT_1}{p_1}=\\frac{nRT_1}{p_0}=\\frac{0,1.8,31.\\left(27+273\\right)}{{10}^5}=2,493.{10}^{-3}$  m3 = 2,493 lít.<br>b) đúng<br>Áp suất của khối khí helium sau khi đặt quả nặng lên pit-tông là:<br>$p_2=p_0+\\frac{P}{S}=p_0+\\frac{mg}{S}={10}^5+\\frac{15.10}{1,25.{10}^{-2}}=1,12.{10}^5$  Pa.<br>c) đúng<br>Do nhiệt độ khối khí helium không đổi nên ta có:<br>$p_1.V_1=p_2.V_2$    $V_2=\\frac{p_1.V_1}{p_2}=\\frac{{10}^5.2,493}{1,12.{10}^5}\\approx 2,226$  lít.<br>Độ dịch chuyển của pit-tông d bằng:<br>$d=\\frac{\\Delta V}{S}=\\frac{V_1-V_2}{S}=\\frac{2,493-2,226}{1,25}=0,2136$  dm  2 cm.<br>d) sai<br>Trong quá trình nén đẳng nhiệt trên, nội năng của khối khí helium không đổi. Vì nội năng của khí lí tưởng chỉ phụ thuộc vào nhiệt độ.",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 673426,
+  "ghiChu": "số mũ không hệ số: 105 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Vận dụng ΔU = A + Q",
+   "answer": "25",
+   "question": "Cung cấp nhiệt lượng 105 J cho một khối khí trong một xi lanh đặt nằm ngang. Chất khí nở ra sinh công 80 J. Độ biến thiên nội năng của khối khí bằng bao nhiêu J?",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Nguyên lí I nhiệt động lực học: $\\Delta U=A+Q$, với $Q\\gt0$ khi khí nhận nhiệt và $A\\lt0$ khi khí sinh công.</p><p class=\"text-base leading-relaxed my-2\">Khí nhận nhiệt $Q=105$ J và sinh công nên $A=-80$ J: $\\Delta U=-80+105=25$ J.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: 25 J.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 673583,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Vận dụng phương trình trạng thái",
+   "question": "Hình bên mô phỏng một thiết bị báo động nhiệt độ đơn giản. Một xi lanh dẫn nhiệt tốt được cố định trên mặt phẳng nằm ngang. Nhiệt độ trong xi lanh và môi trường bằng nhau. Piston mỏng khối lượng m = 1 kg và tiết diện ngang 10 cm3 bịt kín một lượng khí lí tưởng. Vật nặng M = 2 kg treo phía trên piston bằng sợi dây nhẹ, không dãn. Ban đầu, nhiệt độ trong xi lanh là 270C, khoảng cách giữa piston và đáy xi lanh là H = 10 cm, khoảng cách giữa đáy vật piston là h = 1 cm. Nung nóng chậm khí trong xi lanh, piston dịch chuyển đi lên. Khi piston chạm vào vật M và đẩy vật làm lực căng dây treo giảm đi một nửa so với ban đầu thì còi báo động phát âm thanh. Bỏ qua ma sát giữa piston với xi lanh. Áp H suất khí quyển là p0 = 105 Pa và gia tốc rơi tự do là g = 10 m/s2.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791047190966-hinh-13.png\" alt=\"Hình 13\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Áp suất khí trong xi lanh khi còi bắt đầu phát ra âm thanh báo động là 1,3.10<sup>5</sup> Pa.",
+     "answer": true
+    },
+    {
+     "text": "Nhiệt độ trong xi lanh khi còi bắt đầu phát ra âm thanh báo động là 870C.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ trong xi lanh khi piston vừa tiếp xúc với vật nặng M là 470C.",
+     "answer": false
+    },
+    {
+     "text": "Ban đầu áp suất khí trong xi lanh là 1,1.10<sup>5</sup> Pa.",
+     "answer": true
+    }
+   ],
+   "explanation": "",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 673937,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "question": "Hình dưới là thí nghiệm về nhiệt kế khí. Nhiệt kế có bình chứa khí được nhúng vào môi trường cần đo nhiệt độ. Thể tích của khí trong bình được giữ cố định bằng cách nâng hoặc hạ mực nước ở bình B để giữ cho mức nước ở bình A không thay đổi. Ban đầu nhiệt độ T0 = 300 K thì mực nước 2 cột A và B ngang nhau và ở vạch số 0. Sau đó đưa khối khí vào dung dịch cần đo nhiệt độ và đồng thời thực hiện đổ thêm nước vào bình B để mực nước bình A luôn ở vạch số 0. Lúc này đo được độ chênh lệch độ cao nước 2 bình là h = 50 cm. Cho biết khối lượng riêng của nước D = 1000 kg/m3.<br>áp suất khí quyển P0 = 105 Pa, lấy gia tốc trọng trường g = 10 m/s2. Bỏ qua sự trao đổi nhiệt của đường nối bình chứa khí với bình A.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791047293284-hinh-5.jpg\" alt=\"Hình 5\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "trung-binh",
+   "statements": [
+    {
+     "text": "Quá trình biến đổi trạng thái của lượng khí nối với bình A là đẳng tích.",
+     "answer": true
+    },
+    {
+     "text": "Ban đầu áp suất lượng khí nối với bình A bằng 105 Pa.",
+     "answer": true
+    },
+    {
+     "text": "Áp suất sau của lượng khí nối với bình A bằng 1,5.10<sup>5</sup> Pa.",
+     "answer": false
+    },
+    {
+     "text": "Nhiệt độ dung dịch cần đo bằng 450 K.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng<br>Đề bài nêu rõ \"thể tích của khí trong bình được giữ cố định\" bằng cách điều chỉnh mực nước ở bình B sao cho \"mực nước bình A luôn ở vạch số 0 \".  <br>Điều này có nghĩa là thể tích khí không đổi trong suốt quá trình thực hiện thí nghiệm. Do đó, đây là quá trình biến đổi đẳng tích<br>b) đúng<br>Ở trạng thái ban đầu (trạng thái 1), mực nước ở hai nhánh A và B ngang nhau (cùng ở vạch số 0).<br>Khi đó, áp suất của khối lượng khí trong bình cân bằng với áp suất khí quyển tác dụng lên nhánh B.<br>Suy ra:  $p_1=p_0=10^5Pa$<br>c) sai<br>Ở trạng thái sau (trạng thái 2), mực nước ở nhánh B cao hơn nhánh A một đoạn h = 50 cm = 0,5 m.<br>Áp suất của khối khí lúc này bằng áp suất khí quyển cộng với áp suất do trọng lượng của cột nước chênh lệch gây ra:  $p_2=p_0+D.g.h=10^5+1000.10.0,5=1,05.10^5Pa$<br>d) sai<br>Vì khối khí trải qua quá trình đẳng tích, ta áp dụng định luật Sác-lơ giữa trạng thái 1 và trạng thái 2:<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791047293498-hinh-6.png\" alt=\"Hình 6\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 682170,
+  "ghiChu": "số mũ không hệ số: 104N",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Công suất của động cơ, máy kéo",
+   "answer": 1,
+   "options": [
+    "1000N.",
+    "104N.",
+    "2778N.",
+    "360N."
+   ],
+   "question": "Một ô tô có công suất của động cơ là 100kW đang chạy trên đường với vận tốc 36km/h. Lực kéo của động cơ lúc đó là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Công suất của lực kéo khi vật chuyển động đều liên hệ với lực qua $P=Fv$ (công suất tức thời bằng lực nhân vận tốc cùng phương), nên $F=\\dfrac{P}{v}$.</p><p class=\"text-base leading-relaxed my-2\">Đổi $P=100$ kW $=10^5$ W; $v=36$ km/h $=10$ m/s.</p><p class=\"text-base leading-relaxed my-2\">$F=\\dfrac{P}{v}=\\dfrac{10^5}{10}=10^4$ N.</p><p class=\"text-base leading-relaxed my-2\">Đề hiểu là: đáp án B là $10^4$ N (mất dấu mũ khi chuyển từ Word).</p><p class=\"text-base leading-relaxed my-2\">Sai vì: 2778 N ra từ $\\dfrac{10^5}{36}$, tức dùng thẳng $v=36$ mà không đổi km/h sang m/s; 1000 N và 360 N không đúng vì $1000\\cdot 10=10^4\\ne 10^5$ và $360\\cdot 10\\ne 10^5$.</p><p class=\"text-base leading-relaxed my-2\">Chọn B.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 685831,
+  "ghiChu": "số mũ không hệ số: 106 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "ly_thuyet",
+   "type": "multiple_choice",
+   "topic": "Công suất của động cơ, máy kéo",
+   "answer": 2,
+   "options": [
+    "khi máy bơm hoạt động bình thường, nó thực hiện được công 3,6.10<sup>6</sup> J trong thời gian 1 phút.",
+    "khi máy bơm hoạt động bình thường, nó thực hiện được công 106 J trong thời gian 1 giờ.",
+    "khi máy bơm hoạt động bình thường, nó thực hiện được công 3,6.10<sup>6</sup> J trong thời gian 1 giờ.",
+    "khi máy bơm hoạt động bình thường, nó thực hiện được công  106 J trong thời gian 1 ngày."
+   ],
+   "question": "Một máy bơm nước trên nhãn mác có ghi 1kWh. Ý nghĩa của thông số đó là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Đơn vị kWh là đơn vị đo công (điện năng), với $1\\,\\text{kWh} = 1\\,\\text{kW} \\cdot \\text{h}$.</p><p class=\"text-base leading-relaxed my-2\">Công thực hiện bởi máy: $A = P \\cdot t$.</p><p class=\"text-base leading-relaxed my-2\">Đổi đơn vị: $1\\,\\text{kW} = 1000\\,\\text{W}$ và $1\\,\\text{h} = 3600\\,\\text{s}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow A = 1000 \\cdot 3600 = 3{,}6 \\cdot 10^{6}\\,\\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Vậy ý nghĩa của thông số 1 kWh là: khi hoạt động bình thường, máy thực hiện được công $3{,}6 \\cdot 10^{6}\\,\\text{J}$ trong thời gian 1 giờ.</p><p class=\"text-base leading-relaxed my-2\">Kiểm tra các phương án: A sai vì trong 1 phút (thời gian khác) công không bằng $3{,}6 \\cdot 10^{6}\\,\\text{J}$; B và D sai vì $10^{6}\\,\\text{J}$ không tương ứng với 1 kWh.</p><p class=\"text-base leading-relaxed my-2\">Chọn <b>C</b>.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 685930,
+  "ghiChu": "số mũ không hệ số: 107 J · số mũ không hệ số: 109 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Cơ năng và định luật bảo toàn cơ năng",
+   "answer": 0,
+   "options": [
+    "107 J.",
+    "9 J.",
+    "109 J.",
+    "98 J."
+   ],
+   "question": "Một vật khối lượng 2 kg được ném thẳng đứng lên cao từ độ cao 5 m so với mặt đất với vận tốc 3 m/s. Chọn mốc thế năng tại mặt đất. Bỏ qua lực cản không khí, lấy g = 9,8 $m/s^2$. Cơ năng của vật sau khi ném là",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bỏ qua lực cản nên cơ năng được bảo toàn; cơ năng bằng tổng động năng và thế năng (mốc tại mặt đất) ngay lúc ném.</p><p class=\"text-base leading-relaxed my-2\">$W=\\dfrac12 mv^2+mgh=\\dfrac12\\cdot2\\cdot3^2+2\\cdot9{,}8\\cdot5=9+98=107\\ \\text{J}$</p><p class=\"text-base leading-relaxed my-2\">Sai vì: 9 J chỉ là động năng, 98 J chỉ là thế năng, mỗi giá trị thiếu một thành phần. 109 J ra từ $9+2\\cdot10\\cdot5$, tức là dùng $g=10$ thay cho $g=9{,}8$ của đề.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1193592,
+  "ghiChu": "10 - k có dấu cách, không có hệ số: 10- 4",
+  "grade": "11",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Năng lượng của tụ điện",
+   "answer": "1,44",
+   "question": "Một tụ điện có điện dung 2 µF được tích điện ở hiệu điện thế 12 V. Tính năng lượng điện trường dự trữ trong tụ điện. ( tính theo 10- 4 J )",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Năng lượng điện trường của tụ: $W = \\dfrac{1}{2}CU^2$.</p><p class=\"text-base leading-relaxed my-2\">$W = \\dfrac{1}{2}\\cdot 2.10^{-6}\\cdot 12^2 = 1{,}44.10^{-4}\\ \\text{J}$.</p><p class=\"text-base leading-relaxed my-2\">Tính theo đơn vị $10^{-4}$ J thì giá trị cần điền là $1{,}44$.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $1{,}44$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1228662,
+  "ghiChu": "số mũ không hệ số: 1014 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "11",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Đặc điểm và thang sóng điện từ",
+   "answer": 0,
+   "options": [
+    "hồng ngoại.",
+    "tử ngoại",
+    "Rơn-ghen.",
+    "ánh sáng nhìn thấy."
+   ],
+   "question": "Một đèn phát ra bức xạ có tần số f = 1014 Hz, (biết  $c=3.10^8m/s$ ). Bức xạ này thuộc vùng bức xạ",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bước sóng của bức xạ được tính theo công thức $\\lambda = \\dfrac{c}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số: $\\lambda = \\dfrac{3.10^8}{10^{14}} = 3.10^{-6}\\ \\text{m} = 3\\ \\mu\\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">So sánh với thang sóng điện từ: ánh sáng nhìn thấy có $\\lambda \\approx 0{,}38\\ \\mu\\text{m} \\div 0{,}76\\ \\mu\\text{m}$, tử ngoại có $\\lambda$ nhỏ hơn $0{,}38\\ \\mu\\text{m}$, còn hồng ngoại có $\\lambda$ từ $0{,}76\\ \\mu\\text{m}$ đến cỡ $1\\ \\text{mm}$.</p><p class=\"text-base leading-relaxed my-2\">Vì $\\lambda = 3\\ \\mu\\text{m}$ nằm trong khoảng $0{,}76\\ \\mu\\text{m} \\div 1\\ \\text{mm}$ nên bức xạ thuộc vùng <b>hồng ngoại</b>.</p><p class=\"text-base leading-relaxed my-2\">Đáp án đúng: <b>A</b>.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1229394,
+  "ghiChu": "số mũ không hệ số: 108 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "11",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "answer": 0,
+   "options": [
+    "3 m",
+    "1,5 m",
+    "0,33 m",
+    "0,16 m"
+   ],
+   "question": "Một sóng vô tuyến có tần số 108 Hz được truyền trong không trung với tốc độ 3.10<sup>8</sup> m/s. Bước sóng của sóng đó là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bước sóng được tính theo công thức liên hệ giữa tốc độ truyền sóng, tần số và bước sóng: $\\lambda = \\dfrac{v}{f}$, trong đó $v$ là tốc độ truyền sóng (m/s) và $f$ là tần số (Hz).</p><p class=\"text-base leading-relaxed my-2\">Thay số với $v = 3.10^{8}$ m/s và $f = 10^{8}$ Hz:</p><p class=\"text-base leading-relaxed my-2\">$\\lambda = \\dfrac{3.10^{8}}{10^{8}} = 3$ m</p><p class=\"text-base leading-relaxed my-2\">Vậy bước sóng của sóng vô tuyến là 3 m, đáp án A.</p><p class=\"text-base leading-relaxed my-2\">Chọn A.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1237376,
+  "ghiChu": "số mũ không hệ số: 106 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "11",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Bước sóng, chu kì, tần số, tốc độ truyền sóng",
+   "answer": 2,
+   "options": [
+    "λ = 150 m",
+    "λ = 100 m",
+    "λ = 300 m",
+    "λ = 200 m"
+   ],
+   "question": "Sóng AM của đài phát thanh có tần số f = 106 Hz. Bước sóng của sóng này là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Sóng vô tuyến (sóng AM) là sóng điện từ, truyền trong không khí với tốc độ xấp xỉ bằng tốc độ ánh sáng trong chân không: $c = 3\\cdot 10^{8}\\ \\text{m/s}$.</p><p class=\"text-base leading-relaxed my-2\">Liên hệ giữa bước sóng, tốc độ truyền sóng và tần số: $\\lambda = \\dfrac{c}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Thay số với $f = 10^{6}\\ \\text{Hz}$:</p><p class=\"text-base leading-relaxed my-2\">$\\lambda = \\dfrac{3\\cdot 10^{8}}{10^{6}} = 300\\ \\text{m}$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: bước sóng của sóng AM là $\\lambda = 300\\ \\text{m}$, đáp án C.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1248403,
+  "ghiChu": "số mũ không hệ số: 108 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "11",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Đặc điểm và thang sóng điện từ",
+   "question": "Sóng điện từ:",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Tia tử ngoại được dùng để tìm vết nứt trên bề mặt sản phẩm bằng kim loại.",
+     "answer": true
+    },
+    {
+     "text": "Một máy phát sóng vô tuyến AM đẳng hướng trong không gian. Ở khoảng cách 30 km từ máy phát này, ta nhận được sóng có cường độ bằng 4,42.10<sup>−6</sup> W/m2. Máy phát vô tuyến này có công suất bằng  20 kW",
+     "answer": false
+    },
+    {
+     "text": "Một sóng vô tuyến có tần số 108 Hz được truyền trong không trung với tốc độ 3.10<sup>8</sup> m/s. Bước sóng của sóng đó là 3 m",
+     "answer": true
+    },
+    {
+     "text": "Cơ thể con người có thân nhiệt 37oC là một nguồn phát ra tia tử ngoại.",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\"><b>a) Đúng.</b> Tia tử ngoại có khả năng làm phát quang một số chất, nên được dùng trong kiểm tra không phá hủy để phát hiện vết nứt trên bề mặt sản phẩm bằng kim loại (phương pháp thẩm thấu huỳnh quang).</p><p class=\"text-base leading-relaxed my-2\"><b>b) Sai.</b> Máy phát đẳng hướng nên công suất phân bố đều trên mặt cầu bán kính $r$. Cường độ âm/sóng: $I=\\dfrac{P}{4\\pi r^2}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$P=I\\cdot 4\\pi r^2$.</p><p class=\"text-base leading-relaxed my-2\">Đổi $r=30\\text{ km}=3.10^4\\text{ m}$, ta có $4\\pi r^2=4\\pi(3.10^4)^2\\approx 1,131.10^{10}\\text{ m}^2$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$P=4,42.10^{-6}\\cdot 1,131.10^{10}\\approx 5.10^4\\text{ W}=50\\text{ kW}$, khác với 20 kW nêu trong đề.</p><p class=\"text-base leading-relaxed my-2\"><b>c) Đúng.</b> Bước sóng: $\\lambda=\\dfrac{v}{f}=\\dfrac{3.10^8}{10^8}=3\\text{ m}$.</p><p class=\"text-base leading-relaxed my-2\"><b>d) Sai.</b> Vật ở nhiệt độ khoảng 37°C (không quá cao) phát ra chủ yếu bức xạ hồng ngoại, không phải tia tử ngoại.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1477389,
+  "ghiChu": "số mũ không hệ số: 106 Hz",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Điện từ trường và sóng điện từ",
+   "answer": 3,
+   "options": [
+    "200 m.",
+    "30 m.",
+    "150 m.",
+    "300 m."
+   ],
+   "question": "Một sóng điện từ có tần số 106 Hz truyền trong một môi trường với tốc độ 3.10<sup>8</sup> m/s. Trong môi trường đó, sóng điện từ này có bước sóng là:",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Với sóng truyền trong một môi trường, bước sóng là quãng đường sóng đi được trong một chu kì: $\\lambda=\\dfrac{v}{f}$.</p><p class=\"text-base leading-relaxed my-2\">Đề hiểu là $f=10^6$ Hz: $\\lambda=\\dfrac{3\\cdot10^8}{10^6}=300$ m.</p><p class=\"text-base leading-relaxed my-2\">Không đúng vì: 30 m ứng với $f=10^7$ Hz (lệch một bậc 10); 200 m và 150 m ứng với $f=1{,}5\\cdot10^6$ Hz và $2\\cdot10^6$ Hz, không phải $10^6$ Hz (kiểm: $\\frac{3\\cdot10^8}{200}=1{,}5\\cdot10^6\\neq10^6$).</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1478364,
+  "ghiChu": "số mũ không hệ số: 1020 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Nhiệt nóng chảy riêng và nhiệt hoá hơi riêng",
+   "answer": "15,9",
+   "question": "Nước biển chứa 3% muối theo khối lượng và có khối lượng riêng 1020 kg/m³. Để thu được 486 kg muối, cần làm bay hơi hoàn toàn lượng nước có trong bao nhiêu mét khối nước biển? (Làm tròn kết quả đến chữ hàng phần chục).",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Khối lượng muối bằng $3\\%$ khối lượng nước biển: $m_{muối} = 0{,}03\\,m_B$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_B = \\dfrac{486}{0{,}03} = 16\\,200\\ \\text{kg}$.</p><p class=\"text-base leading-relaxed my-2\">Thể tích nước biển: $V = \\dfrac{m_B}{D} = \\dfrac{16\\,200}{1020} \\approx 15{,}88\\ \\text{m}^3$.</p><p class=\"text-base leading-relaxed my-2\">Đáp số: $15{,}9\\ \\text{m}^3$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1480281,
+  "ghiChu": "số mũ không hệ số: 1020 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Vận dụng phương trình trạng thái",
+   "answer": "371",
+   "question": "Một tàu ngầm được dùng để nghiên cứu biển đang lặn ở độ sâu 100 m. Để tàu nổi lên, người ta mở một bình chứa khí có dung tích 50,0 lít, khí ở áp suất 1,00.10<sup>7</sup> Pa và nhiệt độ 270C để đẩy nước ra khỏi khoang chứa nước ở giữa hai lớp vỏ của tàu. Sau khi giãn nở, nhiệt độ của khí là 50C. Coi khối lượng riêng của nước biển là 1020 kg/m3; gia tốc trọng trường là 9,81 m/s2; áp suất khí quyển là 1,01.10<sup>5</sup> Pa.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045706398-hinh-11.jpg\" alt=\"Hình 11\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>Thể tích của lượng nước bị đẩy ra khỏi tàu là bao nhiêu lít (lấy 3 chữ số có nghĩa)?",
+   "difficulty": "trung-binh",
+   "explanation": "Áp dụng phương trình trạng thái ta có:<br>$\\begin{aligned}\\end{aligned}\\frac{P_1V_1}{T_1}=\\frac{P_2V_2}{T_2}\\Rightarrow V_2=\\frac{P_1V_1}{T_1}.\\frac{T_2}{P_2}=\\frac{1,00.10^7.50}{\\left(27+273\\right)}.\\frac{\\left(5+273\\right)}{11,0.10^5}=421,2\\left(lit\\right)$<br>Lượng nước bị đẩy khỏi tàu là:<br>$V=V_2−V_1=421,2−50=371,2\\left(lit\\right)\\approx 371\\left(lit\\right)$",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1480518,
+  "ghiChu": "độ C ngoài ngữ cảnh nhiệt: 200C",
+  "deXuat": "Nếu là nhiệt độ: bỏ số 0 cuối, thêm °C. Nếu là culông thì Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "ly_thuyet",
+   "type": "multiple_choice",
+   "topic": "Điện trở và đơn vị đo",
+   "answer": 3,
+   "options": [
+    "Dây dẫn bằng Cu.",
+    "Dây dẫn bằng Al.",
+    "Dây dẫn bằng Fe.",
+    "Dây dẫn bằng Ag."
+   ],
+   "question": "<br>Kim loại\tĐiện trở suất ở 200C (Ωm)<br>Bạc\t1,62.10<sup>−8</sup><br>Đồng\t1,69.10<sup>−8</sup><br>Vàng\t2,44.10<sup>−8</sup><br>Nhôm\t2,75.10<sup>−8</sup><br>Sắt\t9,68.10<sup>−8</sup><br>Bốn vật dẫn hình trụ có cùng kích thước được chế tạo bằng Bạc (Ag), Đồng (Cu), Nhôm (Al), Sắt (Fe). Lần lượt nối vào hai đầu mỗi vật dẫn cùng một nguồn điện có suất điện động không đổi thì dòng điện chạy trong dây dẫn nào có cường độ lớn nhất?",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Bạc là kim loại dẫn điện rất tốt, điện trở của nó nhỏ tức là cản trở dòng điện đi vào là ít</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1481120,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "answer": 3,
+   "options": [
+    "10 lít.",
+    "20 lít.",
+    "15 lít.",
+    "8 lít."
+   ],
+   "question": "Người ta biến đổi đẳng nhiệt một khối khí có thể tích là 12 lít ở áp suất 105 Pa sang trạng thái có áp suất 1, 5.10<sup>5</sup> Pa. Sau khi biến đổi, thể tích khối khí là",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Biến đổi đẳng nhiệt một lượng khí xác định tuân theo định luật Boyle: $p_1V_1=p_2V_2$.</p><p class=\"text-base leading-relaxed my-2\">Đề hiểu là $p_1=10^5$ Pa, $p_2=1{,}5\\cdot10^5$ Pa: $V_2=\\dfrac{p_1V_1}{p_2}=\\dfrac{10^5\\cdot12}{1{,}5\\cdot10^5}=8$ lít.</p><p class=\"text-base leading-relaxed my-2\">Sai vì: kiểm bằng tích $p_2V_2$ phải bằng $p_1V_1=1{,}2\\cdot10^6$ Pa.lít, mà $1{,}5\\cdot10^5\\cdot10=1{,}5\\cdot10^6$ (A), $1{,}5\\cdot10^5\\cdot20=3\\cdot10^6$ (B) và $1{,}5\\cdot10^5\\cdot15=2{,}25\\cdot10^6$ (C) đều lớn hơn; áp suất tăng thì thể tích phải giảm hơn, nên $V_2\\lt12$ lít và nhỏ hơn 10 lít.</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1481225,
+  "ghiChu": "số mũ không hệ số: 104 J",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Vận dụng ΔU = A + Q",
+   "answer": 2,
+   "options": [
+    "400 J.",
+    "504 J.",
+    "104 J.",
+    "296 J."
+   ],
+   "question": "Một khối khí lí tưởng được chứa trong một xi lanh nằm ngang cố định, được đậy kín bằng một pit tông có thể chuyển động. Khi khối khí trong xi lanh hấp thụ một nhiệt lượng 400 J, nó giãn nở và đẩy pit tông di chuyển đều. Quá trình biến đổi trạng thái của khối khí được biểu diễn bằng một đồ thị như hình bên dưới. Biết áp suất khí quyển là  $p_0={10}^5 Pa$ , tiết diện của pit tông là  $S=50 {cm}^2$ .<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046428161-hinh-2.webp\" alt=\"Hình 2\" class=\"mx-auto my-2 max-w-full rounded-lg\" />\t<img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046428726-hinh-3.png\" alt=\"Hình 3\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>Trong quá trình biến đổi trạng thái của khối khí từ trạng thái (1) sang trạng thái (2), độ biến thiên nội năng của khối khí bằng",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Trong quá trình biến đổi trạng thái của khối khí từ trạng thái (1) sang trạng thái (2), độ biến thiên nội năng của khối khí:</p><p class=\"text-base leading-relaxed my-2\">$\\Delta U=A+Q=-p.\\Delta V+Q=-1,04.p_0.\\left(V_2-V_1\\right)+Q$</p><p class=\"text-base leading-relaxed my-2\">$\\Delta U=-1,04.{10}^5.\\left(2.{10}^{-3}-1.{10}^{-3}\\right)+400=296$  J.</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1481733,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Phương trình trạng thái khí lí tưởng",
+   "question": "Trong hai bình thông nhau có mặt cắt ngang S = 50 cm<sup>2</sup>, chứa nước. Trong một bình, có một piston không trọng lượng, được gắn với một lò xo cố định có độ cứng k = 100 N/m. Không gian dưới piston được chứa đầy không khí (coi là khí lí tưởng). Khi nhiệt độ không khí trong bình là t0 = 27 °C thì khoảng cách giữa piston đến mặt nước là ℓ = 40 cm, lò xo không bị biến dạng và mức nước trong cả hai bình là bằng nhau. Biết áp suất khí quyển là p0 = 105 Pa, khối lượng riêng của nước là ρ = 1000 kg/m<sup>3</sup>, gia tốc trọng trường là g = 10 $m/s^2$. Bỏ qua áp suất hơi nước và ma sát khi di chuyển piston. Cho hằng số khí R = 8,31 (J/mol.K)<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791224541638-hinh-12.png\" alt=\"Hình 12\" class=\"mx-auto my-2 max-w-full rounded-lg\" style=\"width:155.1px;height:auto\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Áp suất khí ban đầu trong piston lớn hơn áp suất khí quyển.",
+     "answer": false
+    },
+    {
+     "text": "Trong piston chứa 0,08 mol khí.",
+     "answer": true
+    },
+    {
+     "text": "Khi tăng nhiệt độ của lượng khí trong piston thì mật độ phân tử khí giảm.",
+     "answer": true
+    },
+    {
+     "text": "Nếu tăng nhiệt độ của không khí trong bình đến T = 459 K thì mực chất lỏng ở hai bình chênh lệch nhau 20 cm.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) Sai. Ban đầu mực nước hai bình bằng nhau nên áp suất khí dưới piston bằng áp suất ở mặt thoáng bình hở: $p_1=p_0$ (lò xo không biến dạng, piston không trọng lượng cũng cho kết quả này). Áp suất khí bằng, không lớn hơn áp suất khí quyển.</p><p class=\"text-base leading-relaxed my-2\">b) Đúng. Phương trình Clapeyron: $n=\\dfrac{p_1V_1}{RT_1}=\\dfrac{10^{5}\\cdot 50\\cdot 10^{-4}\\cdot 0,40}{8,31\\cdot 300}\\approx 0,080$ mol.</p><p class=\"text-base leading-relaxed my-2\">c) Đúng. Khi nung nóng, khí giãn nở (đẩy piston lên, đẩy mực nước bên dưới xuống) nên thể tích tăng mà số phân tử không đổi; mật độ phân tử $\\dfrac{N}{V}$ giảm.</p><p class=\"text-base leading-relaxed my-2\">d) Đúng. Mực nước dưới piston hạ $x$, mực bên hở dâng $x$ (cùng tiết diện) nên chênh lệch $h=2x$; áp suất khí $p_2=p_0+\\rho gh$.</p><p class=\"text-base leading-relaxed my-2\">Với $h=0,20$ m: $x=0,10$ m và $p_2=10^{5}+1000\\cdot 10\\cdot 0,20=1,02\\cdot 10^{5}$ Pa.</p><p class=\"text-base leading-relaxed my-2\">Piston cân bằng: $p_2S=p_0S+k\\Delta\\ell$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\Delta\\ell=\\dfrac{(p_2-p_0)S}{k}=\\dfrac{2000\\cdot 50\\cdot 10^{-4}}{100}=0,10$ m (piston dâng 10 cm).</p><p class=\"text-base leading-relaxed my-2\">Chiều cao cột khí lúc sau: $\\ell_2=\\ell+x+\\Delta\\ell=0,40+0,10+0,10=0,60$ m.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow T_2=T_1\\cdot\\dfrac{p_2\\ell_2}{p_1\\ell}=300\\cdot\\dfrac{1,02\\cdot 10^{5}\\cdot 0,60}{10^{5}\\cdot 0,40}=459$ K, đúng bằng nhiệt độ đề cho.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1496285,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng nhiệt và định luật Boyle",
+   "question": "Hình vẽ bên mô tả sơ đồ một chiếc ghế nâng hạ bằng khí thông qua chuyển động lên xuống của xi lanh nối với mặt ghế. Thanh nén khí cố định trên đế bịt kín một lượng khí lí tưởng trong xi lanh. Bỏ qua ma sát giữa thanh nén và xi lanh. Tổng khối lượng của mặt ghế và xi lanh là 6 kg, tiết diện của thanh nén là 30 cm2. Một học sinh nặng 54 kg ngồi lên ghế (hai chân để lơ lửng không chạm mặt sàn) thì ghế hạ xuống 12 cm khi ổn định. Coi nhiệt độ của khí trong xi lanh không đổi, áp suất khí quyển là 105 Pa và lấy g = 10 m/s2.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046821709-hinh-11.jpg\" alt=\"Hình 11\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Khi ghế để trống, áp suất của khí trong xi lanh bằng áp suất khí quyển.",
+     "answer": false
+    },
+    {
+     "text": "Quá trình ghế hạ xuống, khí trong xi lanh nhận công.",
+     "answer": true
+    },
+    {
+     "text": "Khi ghế để trống, cột khí trong xi lanh dài 20 cm.",
+     "answer": true
+    },
+    {
+     "text": "Khi học sinh ngồi trên ghế, áp suất của khí trong xi lanh là 2.10<sup>5</sup> Pa",
+     "answer": false
+    }
+   ],
+   "explanation": "a) Sai. Khi ghế để trống, khối khí trong xi lanh chịu áp suất khí quyển CỘNG với áp suất do trọng lượng của mặt ghế và xi lanh (6 kg) đè lên pit-tông: p = p0 + mg/S = 10⁵ + (6.10)/(30.10⁻⁴) = 1,2.10⁵ Pa ≠ p0.<br>b) Đúng. Ghế hạ xuống nghĩa là học sinh đã ngồi lên làm thể tích khí trong xi lanh giảm (bị nén lại), nên khối khí nhận công từ bên ngoài.<br>c) Đúng. Gọi ℓ1 là chiều dài cột khí khi ghế trống (p1 = 1,2.10⁵ Pa) và ℓ2 = ℓ1 − 12 (cm) khi có học sinh ngồi, với p2 = 10⁵ + (60.10)/(30.10⁻⁴) = 3.10⁵ Pa. Áp dụng định luật Boyle: ℓ1.p1 = ℓ2.p2 ⇒ ℓ1.1,2 = (ℓ1−12).3 ⇒ ℓ1 = 20 cm.<br>d) Sai. Theo tính toán trên, khi học sinh ngồi lên ghế thì áp suất khí trong xi lanh là p2 = 3.10⁵ Pa, không phải 2.10⁵ Pa.<br>a) sai<br>Khi ghế để trống không có ai ngồi lên ghế chịu áp suất khí quyển và áp suất do trọng lượng của mặt ghế và xi lanh gây ra ở khối khí trong xi lanh<br>$p_k=10^5+\\frac{6.10}{30.10^{−4}}=1,2.10^5\\left(Pa\\right)$   $\\left(p=\\frac{F}{S}\\right)$<br>b) đúng<br>Quá trình ghế hạ xuống → Mình đã ngồi lên rồi → khối khí nhận công và giảm thể tích khí ở trong xi lanh<br>c) đúng<br>Khi ghế để trống:  $ℓ_1;p_1=1,2.10^5\\left(Pa\\right)$<br>Khi ngồi lên ghế:  $ℓ_2=ℓ_1−12cm;p_2=10^5+\\frac{60.10}{30.10^{−4}}=3.10^5\\left(Pa\\right)$<br>$\\Rightarrow Boyle:ℓ_1.p_1=ℓ_2.p_2\\Rightarrow ℓ_1.1,2=\\left(ℓ_1−12\\right).3\\Rightarrow ℓ_1=20cm$<br>d) sai<br>Khi học sinh ngồi lên ghế:  $p_2=3.10^5\\left(Pa\\right)$  (đã tính ở câu c)",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1496313,
+  "ghiChu": "số mũ không hệ số: 105 Pa",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Quá trình đẳng áp và định luật Charles",
+   "question": "Một học sinh sử dụng bộ thí nghiệm như hình 1 để tiến hành thí nghiệm khảo sát thể tích của một lượng khí xác định theo nhiệt độ của nó ở áp suất không đổi 1,5 bar (1 bar = 105 Pa). Học sinh này thu được kết quả như bảng sau:<br>Thể tích V (ml)\t2,8\t2,6\t2,4<br>Nhiệt độ T (K)\t350\t325\t300<br>Hình 1<br>Hình 2<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791046833037-hinh-10.png\" alt=\"Hình 10\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791224525007-hinh-11.png\" alt=\"Hình 11\" class=\"mx-auto my-2 max-w-full rounded-lg\" style=\"width:174.3px;height:auto\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Số mol khí sử dụng trong thí nghiệm là 1,20.10<sup>−4</sup> mol",
+     "answer": false
+    },
+    {
+     "text": "Giá trị trung bình của tỉ số V/T là 6.10<sup>−3</sup> (ml/K).",
+     "answer": false
+    },
+    {
+     "text": "Đồ thị biểu diễn mối liên hệ giữa V và T có dạng như hình 2.",
+     "answer": true
+    },
+    {
+     "text": "Thể tích tỉ lệ thuận với nhiệt độ tuyệt đối.",
+     "answer": true
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) Sai. Từ pV = nRT ⇒ n = pV/(RT); vì áp suất không đổi p = 1,5.10⁵ Pa và tỉ số V/T không đổi (≈ 8.10⁻³ ml/K = 8.10⁻⁹ m³/K) ⇒ n = 1,5.10⁵.8.10⁻⁹/8,31 ≈ 1,44.10⁻⁴ mol, không phải 1,20.10⁻⁴ mol.</p><p class=\"text-base leading-relaxed my-2\">b) Sai. Tính trung bình: (2,8/350 + 2,6/325 + 2,4/300)/3 = (0,008+0,008+0,008)/3 = 8.10⁻³ (ml/K), không phải 6.10⁻³ (ml/K).</p><p class=\"text-base leading-relaxed my-2\">c) Đúng. Ở áp suất không đổi (đẳng áp), đồ thị V theo T tuyệt đối là một đường thẳng đi qua gốc tọa độ, đúng như dạng ở Hình 2.</p><p class=\"text-base leading-relaxed my-2\">d) Đúng. Theo định luật Gay-Lussac (Charles), khi áp suất một khối lượng khí xác định không đổi thì thể tích tỉ lệ thuận với nhiệt độ tuyệt đối: V/T = hằng số.</p><p class=\"text-base leading-relaxed my-2\">a) sai</p><p class=\"text-base leading-relaxed my-2\">$pV=nRT\\Rightarrow p.\\frac{V}{T}:R=n$</p><p class=\"text-base leading-relaxed my-2\">$1,5.10^5.\\frac{1}{125}.10^{−6}:8,31=n\\Rightarrow n=1,44.10^{−4}\\left(mol\\right)$   $\\left(1m^3=10^6mℓ\\right)$</p><p class=\"text-base leading-relaxed my-2\">b) sai</p><p class=\"text-base leading-relaxed my-2\">$\\overline{\\frac{V}{T}}=\\frac{1}{3}.\\left(\\frac{2,8}{350}+\\frac{2,6}{325}+\\frac{2,4}{300}\\right)=\\frac{1}{125}\\left(ml/K\\right)=8.10^{−3}\\left(ml/K\\right)$</p><p class=\"text-base leading-relaxed my-2\"></p><p class=\"text-base leading-relaxed my-2\">c) đúng</p><p class=\"text-base leading-relaxed my-2\">Đẳng áp, V và nhiệt độ tuyệt đối T liên hệ với nhau là đường thẳng đi qua gốc toạ độ O</p><p class=\"text-base leading-relaxed my-2\">d) đúng</p><p class=\"text-base leading-relaxed my-2\">Định luật Charles</p><p class=\"text-base leading-relaxed my-2\">- Khi áp suất của một khối lượng khí xác định giữ không đổi thì thể tích của khí tỉ lệ thuận với nhiệt độ tuyệt đối của nó:  $\\frac{V}{T}=const$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1543232,
+  "ghiChu": "số mũ không hệ số: 108 N",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "ly_thuyet",
+   "type": "multiple_choice",
+   "topic": "Chuyên đề 10. Lực: tổng hợp lực, cân bằng, ma sát, đòn bẩy",
+   "answer": 2,
+   "options": [
+    "21 N",
+    "3 N",
+    "15 N",
+    "108 N"
+   ],
+   "question": "Hai lực 9 N và 12 N vuông góc nhau. Hợp lực có độ lớn:",
+   "difficulty": "de",
+   "explanation": "$R=\\sqrt{9^2+12^2}=15$ N.",
+   "theorySection": 1,
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1544106,
+  "ghiChu": "số mũ không hệ số: 1020 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Lực cản của chất lưu và lực nâng",
+   "answer": "816",
+   "question": "<p class=\"text-base leading-relaxed my-2\">Một tảng băng có phần thể tích chìm dưới nước là 80% tổng thể tích. Khối lượng riêng của nước biển là 1020 kg/m$^{3}$. Tính khối lượng riêng của tảng băng theo đơn vị $kg/m^{3}.$</p>",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Tảng băng nổi cân bằng trong nước nên trọng lực cân bằng với lực đẩy Archimedes: $P = F_A$.</p><p class=\"text-base leading-relaxed my-2\">Gọi $V$ là thể tích tổng của tảng băng, $\\rho_{băng}$ là khối lượng riêng của băng, $\\rho_{nước}$ là khối lượng riêng của nước biển. Phần chìm có thể tích $V_{chìm} = 0{,}8V$.</p><p class=\"text-base leading-relaxed my-2\">Trọng lực: $P = \\rho_{băng} \\cdot V \\cdot g$.</p><p class=\"text-base leading-relaxed my-2\">Lực đẩy Archimedes: $F_A = \\rho_{nước} \\cdot V_{chìm} \\cdot g = \\rho_{nước} \\cdot 0{,}8V \\cdot g$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\rho_{băng} \\cdot V \\cdot g = \\rho_{nước} \\cdot 0{,}8V \\cdot g$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow$$\\rho_{băng} = 0{,}8 \\cdot \\rho_{nước} = 0{,}8 \\cdot 1020 = 816\\ \\text{kg/m}^3$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: khối lượng riêng của tảng băng là $816\\ \\text{kg/m}^3$.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1544108,
+  "ghiChu": "số mũ không hệ số: 1020 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "10",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Lực cản của chất lưu và lực nâng",
+   "answer": "78,4",
+   "question": "<p class=\"text-base leading-relaxed my-2\">Một tảng băng có khối lượng riêng là 800 kg/m$^{3}$ đang lơ lừng trên mặt nước biển. Khối lượng riêng của nước biển là 1020 kg/m$^{3}$. Tính tỉ lệ phần trăm phần thể tích của băng chìm dưới nước. (kết quả làm tròn đến một chữ số thập phân sau dấu phẩy).</p>",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Tảng băng nổi cân bằng trên mặt nước, theo định luật Archimedes và điều kiện cân bằng lực: trọng lực bằng lực đẩy Archimedes.</p><p class=\"text-base leading-relaxed my-2\">Gọi $V$ là thể tích toàn phần của băng và $V_{chìm}$ là phần thể tích chìm dưới nước. Trọng lực: $P = D_{băng} \\cdot V \\cdot g$. Lực đẩy Archimedes: $F_A = D_{nước} \\cdot V_{chìm} \\cdot g$.</p><p class=\"text-base leading-relaxed my-2\">Cân bằng: $P = F_A$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow D_{băng} \\cdot V = D_{nước} \\cdot V_{chìm}$.</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow \\dfrac{V_{chìm}}{V} = \\dfrac{D_{băng}}{D_{nước}} = \\dfrac{800}{1020} \\approx 0{,}7843$.</p><p class=\"text-base leading-relaxed my-2\">Tỉ lệ phần trăm: $0{,}7843 \\cdot 100\\% \\approx 78{,}4\\%$.</p><p class=\"text-base leading-relaxed my-2\">Kết luận: khoảng $78{,}4\\%$ thể tích tảng băng chìm dưới nước.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 1545819,
+  "ghiChu": "số mũ không hệ số: 1020 kg",
+  "deXuat": "Nếu là lũy thừa: 10^k (ví dụ 105 Pa → $10^{5}$ Pa). Nếu đúng là số thường thì chọn Giữ.",
+  "grade": "12",
+  "qtype": "short_answer",
+  "q": {
+   "form": "bai_tap",
+   "type": "short_answer",
+   "topic": "Áp suất khí quyển theo độ cao (ôn tập)",
+   "answer": "11",
+   "question": "Một tàu ngầm được dùng để nghiên cứu biển đang lặn ở độ sâu 100 m. Để tàu nổi lên, người ta mở một bình chứa khí có dung tích 50,0 lít, khí ở áp suất 1,00.10<sup>7</sup> Pa và nhiệt độ 270C để đẩy nước ra khỏi khoang chứa nước ở giữa hai lớp vỏ của tàu. Sau khi giãn nở, nhiệt độ của khí là 50C. Coi khối lượng riêng của nước biển là 1020 kg/m3; gia tốc trọng trường là 9,81 m/s2; áp suất khí quyển là 1,01.10<sup>5</sup> Pa.<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1791045706398-hinh-11.jpg\" alt=\"Hình 11\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>Áp suất của khí sau khi giãn nở là x.10<sup>5</sup> Pa. Giá trị của x là bao nhiêu (lấy 3 chữ số có nghĩa)?",
+   "difficulty": "trung-binh",
+   "explanation": "Áp suất của khí sau khi giãn nở là:<br>$P=Dgh+P_a=1020.9,81.100+1,01.10^5=1101620\\left(Pa\\right)\\approx 11,0.10^5\\left(Pa\\right)$",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 434087,
+  "ghiChu": "bộ sửa tự động làm KaTeX lỗi thêm — cần sửa tay",
+  "grade": "9",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "answer": 2,
+   "options": [
+    "$i<49^{0}.$",
+    "$i>42^{0}.$",
+    "$i>49^{0}.$",
+    "$i>43^{0}.$"
+   ],
+   "question": "<p class=\"text-base leading-relaxed my-2\">Cho một tia sáng đi từ nước $\\left( n=\\frac{4}{3} \\right)$ ra không khí. Sự phản xạ toàn phần xảy ra khi góc tới</p>",
+   "difficulty": "trung-binh",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Ta có $sini_{th}=\\frac{n_{2}}{n_{1}}=\\frac{1}{\\frac{4}{3}}=\\frac{3}{4}\\Rightarrow i_{th}=48^{0}35'.$</p><p class=\"text-base leading-relaxed my-2\">Phản xạ toàn phần khi $i\\ge i_{th}=48^{0}35'.$</p><p class=\"text-base leading-relaxed my-2\">Chọn C.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 434542,
+  "ghiChu": "bộ sửa tự động làm KaTeX lỗi thêm — cần sửa tay",
+  "grade": "9",
+  "qtype": "multiple_choice",
+  "q": {
+   "form": "bai_tap",
+   "type": "multiple_choice",
+   "topic": "Tính góc tới hạn, ứng dụng cáp quang",
+   "answer": 3,
+   "options": [
+    "$D=70^{0}32^{'}.$",
+    "$D=45^{0}.$",
+    "$D=25^{0}32^{'}.$",
+    "$D=12^{0}58^{'}.$"
+   ],
+   "question": "<p class=\"text-base leading-relaxed my-2\">Chiếu một chùm tia sáng song song trong không khí tới mặt nước $\\left( n=\\frac{4}{3} \\right)$ với góc tới là $45^{0}.$ Góc hợp bởi tia khúc xạ và tia tới là</p>",
+   "difficulty": "de",
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">Khi $i=30^{0}$ thì $sinr=\\frac{sini}{n}\\Rightarrow r=32,03^{0}.$ sinr = $\\frac{sini}{n}\\to r$ = 32,03$^\\circ$</p><p class=\"text-base leading-relaxed my-2\">Góc lệch $D=i-r=12^{0}58^{'}.$</p><p class=\"text-base leading-relaxed my-2\">Chọn D.</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 455950,
+  "ghiChu": "bộ sửa tự động làm KaTeX lỗi thêm — cần sửa tay",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "question": "Một học sinh bố trí thí nghiệm như hình vẽ để xác định cảm ứng từ trong lòng nam châm chữ U. Mạch điện được giữ bởi hai giá cố định sao cho đoạn dây dẫn nằm trong từ trường của nam châm có chiều dài 2,0 cm , theo phương vuông góc với các đường sức từ của nam châm. Biết nguồn điện có suất điện động 3,0V , điện trở toàn mạch 2,0Ω. Lấy g = 10 $m/s^2$. <img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259773753-hinh-16.jpg\" alt=\"Hình 16\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Số chỉ của cân là độ lớn của lực từ tác dụng lên đoạn dây dẫn.",
+     "answer": false
+    },
+    {
+     "text": "Lực từ tác dụng lên nam châm có phương thẳng đứng và có chiều hướng lên trên.",
+     "answer": false
+    },
+    {
+     "text": "Số chỉ của ampe kế là 3,0A .",
+     "answer": false
+    },
+    {
+     "text": "Học sinh tiến hành đảo hai cực của nam châm thì thấy số chỉ của cân thay đổi 0,64 g. Học sinh xác định được cảm ứng từ trong lòng của nam châm chữ U trong thí nghiệm này có độ lớn là 0,5T .",
+     "answer": false
+    }
+   ],
+   "explanation": "<p class=\"text-base leading-relaxed my-2\">a) S  b) S  c) S  d) S</p><p class=\"text-base leading-relaxed my-2\">a) sai</p><p class=\"text-base leading-relaxed my-2\">Trước khi có lực từ tác dụng ta có trọng lượng của nam châm (tại ta đang đặt nam châm lên cân)</p><p class=\"text-base leading-relaxed my-2\">→ Số chỉ của cân là độ lớn của lực từ tác dụng lên đoạn dây dẫn và trọng lượng của nam châm</p><p class=\"text-base leading-relaxed my-2\">b) đúng</p><p class=\"text-base leading-relaxed my-2\">⟦ảnh WMF⟧</p><p class=\"text-base leading-relaxed my-2\">Theo định luật III Newton: Nếu nam châm tác dụng lên đây dẫn 1 lực thì dây dẫn tác dụng ngược trở lại nam châm một lực có độ lớn tương tự nhưng ngược chiều. Hai lực này có cùng độ lớn nhưng ngược chiều</p><p class=\"text-base leading-relaxed my-2\">c) sai</p><p class=\"text-base leading-relaxed my-2\">Số chỉ của Ampe kế là số chỉ của dòng điện</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow I=\\frac{E}{R}=\\frac{3}{2}=1,5A$</p><p class=\"text-base leading-relaxed my-2\">d) sai</p><p class=\"text-base leading-relaxed my-2\">⟦ảnh WMF⟧</p><p class=\"text-base leading-relaxed my-2\">Ban đầu  $m_1=m_{nam cham}−\\frac{F_b}{g}$  (Ban đầu nam châm hướng lên trên, cân nhẹ đi;  $m_{hien thi}=\\frac{F}{g}$  )</p><p class=\"text-base leading-relaxed my-2\">Về sau: Đảo chiều nam châm thì lực cũng đảo chiều,  $\\vec{F}_{nc}↓,\\vec{P}↓$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_2=m_{nam cha}m+\\frac{F_B}{g}$</p><p class=\"text-base leading-relaxed my-2\">Đề bài cho độ chênh lệch  $\\Delta m=0,64g$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow m_2−m_1=2.\\frac{F_B}{g}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 0,64.10^{−3}=2.\\frac{B.I.ℓ.sin90^0}{g}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow 0,64.10^{−3}=2.\\frac{B.1,5.2.10^{−2}}{10}$</p><p class=\"text-base leading-relaxed my-2\">$\\Rightarrow B\\approx 0,107\\left(J\\right)$</p>",
+   "difficultySource": "ai"
+  }
+ },
+ {
+  "id": 457856,
+  "ghiChu": "bộ sửa tự động làm KaTeX lỗi thêm — cần sửa tay",
+  "grade": "12",
+  "qtype": "true_false",
+  "q": {
+   "form": "bai_tap",
+   "type": "true_false",
+   "topic": "Suất điện động do thanh dẫn chuyển động",
+   "question": "Trên mặt phẳng nghiêng góc 30° so với mặt ngang, có hai dây dẫn thẳng, song song, điện trở không đáng kể, nằm cố định dọc theo đường dốc chính của mặt nghiêng (coi hai dây dẫn như hai thanh ray); toàn bộ hệ thống trên được đặt trong từ trường đều có cảm ứng từ có độ lớn B = 0,5T, hướng thẳng đứng từ dưới lên (hình bên). Đầu trên A, B của hai dây được nối với điện trở R = 0,4 Ω; phía dưới có thanh dẫn MN có khối lượng bằng 50 g, MN = 20 cm thanh có thể trượt không ma sát trên hai dây sao cho MN luôn vuông góc với hai dây. Ban đầu giữ cổ định thanh MN , sau đó thả cho thanh tự trượt xuống. <img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259949429-hinh-8.png\" alt=\"Hình 8\" class=\"mx-auto my-2 max-w-full rounded-lg\" />",
+   "difficulty": "kho",
+   "statements": [
+    {
+     "text": "Khi thanh chuyển động, trong khung đãy ABMN xảy ra hiện tượng cảm ứng điện tử.",
+     "answer": true
+    },
+    {
+     "text": "Dòng điện cảm ứng qua điện trở R có chiều từ A đến B.",
+     "answer": false
+    },
+    {
+     "text": "Ban đầu thanh chuyển động nhanh dần đều sau đó chuyển động thẳng đều với tốc độ không đổi.",
+     "answer": false
+    },
+    {
+     "text": "Khi thanh đạt trạng thái chuyển động đều, công suất tỏa nhiệt trên điện trở R bằng 2,5 W. Lấy g = 10 $m/s^2$.",
+     "answer": false
+    }
+   ],
+   "explanation": "a) đúng<br><img src=\"https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-media/132/1790259950098-hinh-9.png\" alt=\"Hình 9\" class=\"mx-auto my-2 max-w-full rounded-lg\" /><br>Khi thanh MN trượt, diện tích khung dây tăng làm từ thông biến thiên, sinh ra dòng điện cảm ứng nên phát biểu này đúng.<br>b) sai<br>Áp dụng quy tắc bàn tay phải, từ trường hướng thẳng đứng lên, thanh chuyển động trượt xuống dọc mặt phẳng nghiêng, lực từ sẽ sinh ra dòng điện có chiều từ N đến M trên thanh. Mạch kín nên dòng điện qua điện trở R có chiều từ B đến A, phát biểu này sai.  <br>c) sai<br>Lực từ sinh ra ngược chiều chuyển động và tỉ lệ thuận với vận tốc. Vận tốc tăng làm lực cản tăng, gia tốc giảm dần. Đây là chuyển động nhanh dần (không đều) cho đến khi đạt trạng thái thẳng đều, phát biểu này sai.<br>d) sai<br>Ở trạng thái chuyển động đều (a = 0), thành phần trọng lực cân bằng với thành phần lực từ dọc theo mặt phẳng nghiêng:  $mgsin\\alpha =F_Acos\\alpha =IBℓ.cos\\alpha$   <br>Cường độ dòng điện là  $I=\\frac{mgtan\\alpha }{Bℓ}=\\frac{0,05.10.tan30^0}{0,5.0,2}=\\frac{5}{\\sqrt3}A$<br>Công suất tỏa nhiệt:  $P=I^2R={\\left(\\frac{5}{\\sqrt3}\\right)}^2.0,4\\approx 3,33\\left(W\\right)$",
+   "difficultySource": "ai"
+  }
+ }
+]

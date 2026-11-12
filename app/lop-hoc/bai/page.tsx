@@ -68,6 +68,7 @@ import type { TheoryStatusResult } from "@/features/progress/types";
 import { expandClassIdsByGrade, isCttcClassSlug } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
+import { SGK_L12 } from "@/lib/sgk-l12";
 
 /** Một màu nhấn duy nhất cho cả trang — tránh mỗi mục một màu gây phân tâm. */
 const ACCENT = "#3B82F6";
@@ -1663,7 +1664,10 @@ function LessonLoader() {
   const lessonTypeLabel = LESSON_KIND_META[lessonKind]?.label ?? "Bài học";
   const lessonTheoryPassed = !!session && progress.get(assignmentItem?.id ?? -1)?.theory?.status === "passed";
   // N4: chip "Bài học" và đếm "4 mục · 4 phần" bị bỏ (tab ngay dưới đã cho biết) — chỉ giữ thứ có ích.
-  const hasLessonMeta = lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed || !!theoryMeta;
+  // Bài tương ứng trong SGK thống nhất (chỉ L12) — HS mở đúng trang sách.
+  const sgkRef = SGK_L12[id];
+  const hasLessonMeta =
+    lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed || !!theoryMeta || !!sgkRef;
   // Mục lục: số mục đã đọc (✓). Tab đã xong hết → mọi mục ✓.
   const tocComplete = !!session && !!activeSection && activeSection.items.every(isDone);
   const tocDoneCount = tocComplete ? tocEntries.length : Math.min(tocRead.key === tocStoreKey ? tocRead.max : 0, tocEntries.length);
@@ -2151,6 +2155,7 @@ function LessonLoader() {
             {theoryMeta.quizzes > 0 ? ` · ${theoryMeta.quizzes} câu tự kiểm tra` : ""}
           </span>
         )}
+        {sgkRef && <span className="lesson-meta-sgk">SGK: {sgkRef}</span>}
         {lessonKind !== "bai_hoc" && <span className="lesson-meta-chip">{lessonTypeLabel}</span>}
         {assignmentItem?.due_at && <span>BTVN hạn {formatDue(assignmentItem.due_at)}</span>}
         {lessonTheoryPassed && (

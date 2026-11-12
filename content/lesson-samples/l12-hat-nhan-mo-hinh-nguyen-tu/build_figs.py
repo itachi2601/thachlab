@@ -32,7 +32,7 @@ def hop(x, y, w, h, s, c, size=12, fill="rgba(148,163,184,.10)"):
 
 
 def nuclon(x, y, r=9, kind="p"):
-    """Một nuclôn: prôtôn đỏ có dấu +, nơtron xanh không dấu."""
+    """Một nuclôn: proton đỏ có dấu +, neutron xanh không dấu."""
     if kind == "p":
         return (f'<circle cx="{x}" cy="{y}" r="{r}" fill="rgba(248,113,113,.30)" stroke="{RED}" stroke-width="2"/>'
                 + text(x, y + 4, "+", RED, 11, "middle", "700"))
@@ -61,7 +61,7 @@ b += f'<circle cx="66" cy="112" r="56" fill="rgba(251,146,60,.16)" stroke="{ORG}
 for dx, dy in ((-26, -26), (26, -26), (0, 0), (-26, 26), (26, 26)):
     b += dot(66 + dx, 112 + dy, 4, BLUE)
 b += text(66, 192, "cầu dương đặc", "currentColor", 14, "middle", "500")
-b += text(66, 210, "êlectron rải rác", "currentColor", 14, "middle", "500")
+b += text(66, 210, "electron rải rác", "currentColor", 14, "middle", "500")
 # Rutherford
 b += f'<circle cx="202" cy="112" r="56" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.5"/>'
 b += dot(202, 112, 13, RED)
@@ -69,7 +69,7 @@ b += text(202, 117, "+", "currentColor", 14, "middle", "700")
 b += f'<ellipse cx="202" cy="112" rx="42" ry="42" fill="none" stroke="{BLUE}" stroke-width="1.4" stroke-dasharray="4 4"/>'
 b += dot(160, 112, 4, BLUE) + dot(244, 112, 4, BLUE)
 b += text(202, 192, "hạt nhân nhỏ, nặng", "currentColor", 14, "middle", "500")
-b += text(202, 210, "êlectron quay", "currentColor", 14, "middle", "500")
+b += text(202, 210, "electron quay", "currentColor", 14, "middle", "500")
 b += text(202, 228, "quanh hạt nhân", "currentColor", 14, "middle", "500")
 # Bohr
 b += dot(352, 112, 13, RED)
@@ -95,9 +95,9 @@ b += text(246, 94, "65", RED, 30, "end", "700")
 b += text(246, 146, "29", BLUE, 30, "end", "700")
 # nhãn trái + mũi tên chỉ vào hai chỉ số
 b += text(14, 84, "A = số nuclôn", RED, 15, "start", "700")
-b += text(14, 103, "prôtôn + nơtron", RED, 14, "start", "500")
+b += text(14, 103, "proton + neutron", RED, 14, "start", "500")
 b += arrow("f3", "r", 150, 84, 200, 84, 2)
-b += text(14, 136, "Z = số prôtôn", BLUE, 15, "start", "700")
+b += text(14, 136, "Z = số proton", BLUE, 15, "start", "700")
 b += text(14, 155, "điện tích hạt nhân", BLUE, 14, "start", "500")
 b += arrow("f3", "b", 150, 136, 200, 136, 2)
 # nhãn phải: kí hiệu hoá học
@@ -105,18 +105,18 @@ b += text(352, 104, "kí hiệu", "currentColor", 14, "start", "500")
 b += text(352, 122, "hoá học X", "currentColor", 14, "start", "500")
 # ví dụ trong khung
 b += rect(10, 178, 420, 84, "rgba(148,163,184,.10)", "currentColor", 1.2, 8)
-b += text(22, 200, "Ví dụ: hạt nhân đồng có 29 prôtôn, 65 nuclôn", "currentColor", 14, "start", "600")
-b += text(22, 222, "Số nơtron N = A − Z = 65 − 29 = 36", "currentColor", 14, "start", "600")
+b += text(22, 200, "Ví dụ: hạt nhân đồng có 29 proton, 65 nuclôn", "currentColor", 14, "start", "600")
+b += text(22, 222, "Số neutron N = A − Z = 65 − 29 = 36", "currentColor", 14, "start", "600")
 b += text(22, 246, "Cùng Z = 29, khác N: hai đồng vị của đồng", "currentColor", 14, "start", "600")
-fig3 = wrap2("0 0 440 272", "Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A bằng 65, chỉ số dưới là số prôtôn Z bằng 29, nên có 36 nơtron",
-             b, "Hình 2. Kí hiệu hạt nhân $^A_Z X$: $A$ là số nuclôn, $Z$ là số prôtôn.")
+fig3 = wrap2("0 0 440 272", "Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A bằng 65, chỉ số dưới là số proton Z bằng 29, nên có 36 neutron",
+             b, "Hình 2. Kí hiệu hạt nhân $^A_Z X$: $A$ là số nuclôn, $Z$ là số proton.")
 
 # ---------------------------------------------- FIG4 (hiện là Hình 3): vạch quang phổ của hai đồng vị hiđrô
 # Vẽ lại 30/10/2026: ở thang 400–700 nm độ lệch 0,18 nm chỉ ~0,2 px (không thấy) → thêm khung phóng to quanh Hα.
 # Bước sóng (trong không khí): Hβ 486,13 / Dβ 486,00; Hα 656,28 / Dα 656,10 nm.
 b = defs("f4")
 b += text(14, 22, "Hai đồng vị hiđrô, hai bộ vạch quang phổ", "currentColor", 15, "start", "700")
-b += text(14, 42, "đơteri D có thêm 1 nơtron trong hạt nhân", "currentColor", 14, "start", "500")
+b += text(14, 42, "đơteri D có thêm 1 neutron trong hạt nhân", "currentColor", 14, "start", "500")
 X = lambda wl: 80 + (wl - 400) * 340 / 300          # thang tổng quát: 400 nm → 80, 700 nm → 420
 b += text(14, 86, "λ (nm)", "currentColor", 14, "start", "600")
 b += line(80, 80, 420, 80, "currentColor", 1.6, "", .6)

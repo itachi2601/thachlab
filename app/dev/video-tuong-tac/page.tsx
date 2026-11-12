@@ -22,6 +22,7 @@ import c_tn_l12_chuyenthe_01 from "@/content/thi-nghiem/video-khung/tn-l12-chuye
 import c_tn_l12_dttruong_02 from "@/content/thi-nghiem/video-khung/tn-l12-dttruong-02.json";
 import c_tn_l12_hatnhan_01 from "@/content/thi-nghiem/video-khung/tn-l12-hatnhan-01.json";
 import c_tn_l12_hatnhan_02 from "@/content/thi-nghiem/video-khung/tn-l12-hatnhan-02.json";
+import c_tn_l12_hatnhan_03 from "@/content/thi-nghiem/video-khung/tn-l12-hatnhan-03.json";
 import c_tn_l12_mayphatdien_01 from "@/content/thi-nghiem/video-khung/tn-l12-mayphatdien-01.json";
 import c_tn_l12_mayphatdien_03 from "@/content/thi-nghiem/video-khung/tn-l12-mayphatdien-03.json";
 import c_tn_l12_nllk_01 from "@/content/thi-nghiem/video-khung/tn-l12-nllk-01.json";
@@ -59,6 +60,7 @@ const CLIPS = [
   c_tn_l12_dttruong_02,
   c_tn_l12_hatnhan_01,
   c_tn_l12_hatnhan_02,
+  c_tn_l12_hatnhan_03,
   c_tn_l12_mayphatdien_01,
   c_tn_l12_mayphatdien_03,
   c_tn_l12_nllk_01,
