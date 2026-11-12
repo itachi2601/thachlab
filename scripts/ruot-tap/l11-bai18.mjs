@@ -40,19 +40,20 @@ const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
 const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
+const fT = (w) => `<span class="fill" style="min-width:${w}mm;height:9mm"></span>`;
 const vE = m('\\vec E'), v0 = m('\\vec v_0');
 const eM = nw(`${m('|e|=1{,}6\\cdot10^{-19}\\ \\mathrm C')}`), meM = nw(`${m('m_e=9{,}1\\cdot10^{-31}\\ \\mathrm{kg}')}`);
 const hs = `Cho ${eM}, ${meM}.`;
 
 // Bài tương tự xếp 1 cột, ô đáp số cuối dòng của ý (giống l10-bai23).
-const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm}.yo .oo{flex:none;display:flex;gap:3mm}.yo{line-height:1.35}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}.dap sup{line-height:0;font-size:.75em}</style>';
+const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm}.yo .oo{flex:none;display:flex;gap:3mm}.yo{line-height:1.35}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}.dap sup{line-height:0;font-size:.75em}.tbl-ct.gon td{height:5.5mm}</style>';
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 18 · ĐIỆN TRƯỜNG ĐỀU', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Nêu đặc điểm <b>điện trường đều</b> giữa hai bản phẳng song song tích điện trái dấu`)}
 ${dong(`${ck}Dùng ${m('E=\\dfrac{U}{d}')}, đổi đúng đơn vị ${nw('V/m = N/C')}`)}
-${dong(`${ck}Giải bài điện tích bay vào <b>vuông góc</b> đường sức: ngang đều, dọc nhanh dần đều, quỹ đạo parabol`)}
+${dong(`${ck}Giải bài điện tích bay vào <b>vuông góc</b> đường sức: tìm lực, gia tốc, độ lệch và chiều lệch`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -73,7 +74,7 @@ ${h3(4, 'II.1 · Điện trường đều giữa hai bản song song', '1·4')}
 <div><b>Cách tạo:</b> hai bản kim loại phẳng ${f(22)}, rộng hơn nhiều so với ${m('d')}, tích điện ${f(18)}.</div>
 <div><b>Đường sức:</b> thẳng, ${f(20)}, ${f(20)}.</div>
 <div>Phương ${f(20)} với hai bản; chiều từ bản ${f(12)} sang bản ${f(12)}.</div>
-<div>Gần mép bản, đường sức ${f(16)}: ở đó ${f(22)}.</div></div>
+<div>Gần mép bản: đường sức ${f(18)}; điện trường ở đó ${f(26)}.</div></div>
 ${H.veDuongSuc()}</div>
 ${foot(1)}</section>`;
 
@@ -81,19 +82,19 @@ const p2 = `<section class="page">
 ${head('HẠT BỘT · E = U/d · HẠT BAY VUÔNG GÓC ĐƯỜNG SỨC')}
 ${h3(1, 'Thí nghiệm: hạt bột xếp hàng trong dầu', '2·1')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
-<div><b>Làm:</b> rắc bột semolina vào khay dầu, nhúng hai lá đồng song song cách 4 cm, nối máy phát tĩnh điện rồi quay.</div>
-<div><b>Quan sát:</b> giữa hai lá, hạt bột xếp thành ${f(40)}</div>
-<div>Gần mép lá: ${f(40)}</div>
+<div><b>Làm:</b> rắc bột semolina vào dầu, nhúng hai lá đồng song song cách 4 cm, nối máy phát tĩnh điện.</div>
+<div><b>Quan sát:</b> bột xếp thành</div>
+<div>– giữa hai lá: ${f(48)}</div>
+<div>– gần mép lá: ${f(48)}</div>
 <div><b>Rút ra:</b> giữa hai bản (xa mép) là ${f(30)}</div></div>
 ${H.hatBot()}</div>
 ${h3(2, 'II.2 · Cường độ điện trường giữa hai bản', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
-<div style="display:flex;gap:6mm;align-items:center"><div style="font-size:1.15em">${m('E=')} ${f(16)}</div><div>Đơn vị: ${m('E')} ${f(12)} · ${m('U')} ${f(10)} · ${m('d')} (khoảng cách hai bản) ${f(10)}</div></div>
-<div>${m('1\\ \\mathrm{V/m}=1')} ${f(12)}, vì ${nw(`${m('1\\ \\mathrm V=1')} ${f(12)}`)} ${nw(`${m('=1')} ${f(14)}`)}</div>
-<div><b>Mẹo nhớ:</b> “Vôn trên mét”: đọc tên đơn vị là ra công thức.</div></div>
+<div style="display:flex;gap:6mm;align-items:center"><div style="font-size:1.15em">${m('E=')} ${fT(18)}</div><div>Đơn vị: ${m('E')} ${f(12)} · ${m('U')} ${f(10)} · ${m('d')} (khoảng cách hai bản) ${f(10)}</div></div>
+<div>${m('1\\ \\mathrm{V/m}=1')} ${f(12)}, vì ${nw(`${m('1\\ \\mathrm V=1')} ${f(12)}`)} ${nw(`${m('=1')} ${f(14)}`)}</div></div>
 ${h3(3, 'Thí nghiệm đo: dò điện thế trên giấy dẫn điện', '2·3')}
 <div class="fig-side" style="${fs(44)}"><div>
-<table class="tbl-ct"><tr><th>${m('x\\ (\\mathrm{cm})')}</th><th>${m('V\\ (\\mathrm V)')}</th><th>${m('V/x\\ (\\mathrm{V/m})')}</th></tr>
+<table class="tbl-ct gon"><tr><th>${m('x\\ (\\mathrm{cm})')}</th><th>${m('V\\ (\\mathrm V)')}</th><th>${m('V/x\\ (\\mathrm{V/m})')}</th></tr>
 <tr><td>1,0</td><td>1,5</td><td></td></tr>
 <tr><td>2,0</td><td>3,0</td><td></td></tr>
 <tr><td>3,0</td><td>4,5</td><td></td></tr>
@@ -102,17 +103,16 @@ ${h3(3, 'Thí nghiệm đo: dò điện thế trên giấy dẫn điện', '2·3
 <div>Nhớ đổi ${m('x')} ra mét. So với ${nw(`${m('U/d=')} ${f(16)}&nbsp;V/m`)}</div></div>
 ${H.giayDan()}</div>
 <div class="card" style="margin-top:0;padding:.8mm 3mm">
-<div>Vôn kế sai số ${nw(m('\\pm 0{,}1\\ \\mathrm V'))}. Tính ${m('E')} từ hàng ${nw(`${m('x=')} ${f(12)}&nbsp;cm`)} là chính xác nhất, vì:</div>${lines(1)}</div>
+<div>Vôn kế sai số ${nw(m('\\pm 0{,}1\\ \\mathrm V'))}: hàng ${nw(`${m('x=')} ${f(12)}&nbsp;cm`)} cho ${m('E')} chính xác nhất, vì:</div>${lines(1)}</div>
 ${h3(4, 'II.3 · Điện tích bay vào vuông góc đường sức', '2·4')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>Chân không, bỏ qua trọng lực (khi ${m('mg')} rất nhỏ so với ${m('|q|E')}). Gốc ${m('O')} tại điểm vào; ${m('Oy')} cùng chiều lực điện.</div>
+<div>Bỏ qua trọng lực (${m('mg\\ll|q|E')}). Gốc ${m('O')} tại điểm vào, ${m('Oy')} cùng chiều lực điện. <b>Mẹo:</b> ném ngang, ${m('g\\to a')}.</div>
 <div>Lực điện: ${nw(`${m('F=')} ${f(14)}`)}, không đổi, ${f(16)} ${v0}</div>
-<div>Gia tốc: ${nw(`${m('a=')} ${f(24)}`)}</div>
-<div>Theo ${m('Ox')}: ${f(20)} &nbsp;${nw(`${m('x=')} ${f(12)}`)}</div>
+<div>Gia tốc: ${nw(`${m('a=')} ${fT(26)}`)}</div>
+<div>Theo ${m('Ox')}: ${f(26)} &nbsp;${nw(`${m('x=')} ${f(12)}`)}</div>
 <div>Theo ${m('Oy')}: ${f(26)} &nbsp;${nw(`${m('y=')} ${f(12)}`)}</div>
-<div>Quỹ đạo (parabol): ${m('y=')} ${f(32)} ${m('\\cdot x^2')}</div>
-<div>${m('q\\gt 0')} lệch về bản ${f(12)} · ${m('q\\lt 0')} (electron) lệch về bản ${f(12)}</div>
-<div><b>Mẹo:</b> “Ném ngang, đổi ${m('g')} thành ${m('a')}”.</div></div>
+<div>Quỹ đạo (parabol): ${m('y=')} ${fT(34)} ${m('\\cdot x^2')}</div>
+<div>Lệch về bản: ${m('q\\gt 0')} ${f(12)} · electron ${f(12)}</div></div>
 ${H.hatBay()}</div>
 ${foot(2)}</section>`;
 
@@ -125,7 +125,7 @@ ${h3(1, 'Thí nghiệm: ống lệch tia điện tử', '3·1')}
 <tr><td>Có ${m('U')}</td><td></td></tr>
 <tr><td>${m('U')} gấp đôi</td><td></td></tr>
 <tr><td>Đảo cực</td><td></td></tr></table>
-<div style="margin-top:.6mm"><b>Rút ra:</b> electron lệch về bản ${f(14)} theo ${f(18)}; độ lệch ${f(25)}</div></div>
+<div style="margin-top:.6mm"><b>Rút ra:</b> electron lệch về bản (dương/âm) ${f(14)}; đường đi trong khe có dạng ${f(18)}; ${m('U')} gấp đôi thì độ lệch ${f(20)}</div></div>
 ${H.ongLech()}</div>
 <div class="card soft" style="margin-top:.8mm;padding:1mm 3mm">Bay vào <b>song song</b> với đường sức: hạt đi ${f(18)}; lực cùng chiều vận tốc thì ${f(22)}, ngược chiều thì ${f(22)}.</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
@@ -188,14 +188,14 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Hai bản song song: E, lực điện và chiều của lực',
-    de: `Hai bản phẳng song song nằm ngang cách nhau ${nw(m('d=8{,}0\\ \\mathrm{mm}'))}, ${nw(m('U=240\\ \\mathrm V'))}; bản trên dương. Hạt bụi ${nw(m('q=-2{,}5\\ \\mathrm{nC}'))} ở giữa, xa mép; bỏ qua trọng lực.<br><b>a)</b> cường độ điện trường<br><b>b)</b> độ lớn lực điện lên hạt bụi; lực hướng lên hay xuống<br><b>c)</b> giữ ${m('U')}, giảm ${m('d')} còn một nửa: lực điện thay đổi thế nào`,
-    nd: `đổi ${m('d')} ra ${f(12)}; ${m('q\\lt 0')} nên lực ${f(25)} chiều ${vE}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `Hai bản phẳng song song nằm ngang cách nhau ${nw(m('d=8{,}0\\ \\mathrm{mm}'))}, ${nw(m('U=240\\ \\mathrm V'))}; bản trên dương. Hạt bụi ${nw(m('q=-2{,}5\\ \\mathrm{nC}'))} ở giữa, xa mép; bỏ qua trọng lực. <b>a)</b> Tính cường độ điện trường. <b>b)</b> Độ lớn lực điện lên hạt bụi; lực hướng lên hay xuống? <b>c)</b> Giữ ${m('U')}, giảm ${m('d')} còn một nửa: lực điện thay đổi thế nào?`,
+    nd: `đổi ${m('d')} ra ${f(12)}; ${m('q\\lt 0')} nên lực ${f(25)} chiều ${vE}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Bay dọc đường sức: dừng rồi quay lại',
-    de: `Electron bay vào điện trường đều ${nw(m('E=1820\\ \\mathrm{V/m}'))} dọc đường sức, cùng chiều ${vE}, ${nw(m('v_0=8{,}0\\cdot10^{6}\\ \\mathrm{m/s}'))}. Trường đủ rộng, bỏ qua trọng lực; ${m('|e|')}, ${m('m_e')} như bài toán mẫu.<br><b>a)</b> lực cùng hay ngược chiều vận tốc; độ lớn gia tốc<br><b>b)</b> quãng đường tới khi dừng<br><b>c)</b> sau đó electron đi thế nào; thời gian từ lúc vào tới khi trở lại điểm vào`,
-    nd: `lực ngược chiều ${v0} ⇒ chuyển động ${f(25)}; dùng ${nw(m('v^2-v_0^2=2as'))}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Electron bay vào điện trường đều ${nw(m('E=1820\\ \\mathrm{V/m}'))} dọc đường sức, cùng chiều ${vE}, ${nw(m('v_0=8{,}0\\cdot10^{6}\\ \\mathrm{m/s}'))}. Trường đủ rộng, bỏ qua trọng lực; ${m('|e|')}, ${m('m_e')} như bài toán mẫu. <b>a)</b> Lực cùng hay ngược chiều vận tốc? Độ lớn gia tốc? <b>b)</b> Quãng đường tới khi dừng. <b>c)</b> Sau đó electron đi thế nào? Thời gian từ lúc vào tới khi trở lại điểm vào.`,
+    nd: `lực ngược chiều ${v0} ⇒ chuyển động ${f(25)}; dùng ${nw(m('v^2-v_0^2=2as'))}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Bay vuông góc đường sức: có chạm bản?',
-    de: `Electron bay vào chính giữa hai bản nằm ngang, song song với bản, ${nw(m('v_0=1{,}0\\cdot10^{7}\\ \\mathrm{m/s}'))}. Bản dài ${nw(m('L=4{,}5\\ \\mathrm{cm}'))}, cách nhau ${nw(m('d=1{,}0\\ \\mathrm{cm}'))}, ${nw(m('U=36{,}4\\ \\mathrm V'))}; bản <b>dưới</b> dương; ${m('|e|')}, ${m('m_e')} như bài toán mẫu.<br><b>a)</b> ${m('E')}, gia tốc; lệch về bản nào<br><b>b)</b> electron có ra khỏi hai bản không; nếu không, chạm bản ở điểm cách mép vào bao nhiêu cm`,
-    nd: `tính độ lệch nếu bay hết ${m('L')}, so với ${f(14)}; chạm thì giải ${nw(`${m('\\tfrac12at^2=')} ${f(12)}`)}`, a: ['a', 'b'], gi: 3, fig: H.d3Cham(''), cot: 2 },
+    de: `Electron bay vào chính giữa hai bản nằm ngang, song song với bản, ${nw(m('v_0=1{,}0\\cdot10^{7}\\ \\mathrm{m/s}'))}. Bản dài ${nw(m('L=4{,}5\\ \\mathrm{cm}'))}, cách nhau ${nw(m('d=1{,}0\\ \\mathrm{cm}'))}, ${nw(m('U=36{,}4\\ \\mathrm V'))}; bản <b>dưới</b> dương; ${m('|e|')}, ${m('m_e')} như bài toán mẫu. <b>a)</b> Tính ${m('E')}, gia tốc; electron lệch về bản nào? <b>b)</b> Electron có ra khỏi hai bản không? Nếu không, chạm bản ở điểm cách mép vào bao nhiêu cm?`,
+    nd: `tính độ lệch nếu bay hết ${m('L')}, so với ${f(14)}; chạm thì giải ${nw(`${m('\\tfrac12at^2=')} ${f(12)}`)}`, a: ['a', 'b'], gi: 4, cot: 2 },
   { t: 'Dạng 4 · Khó · Ra khỏi hai bản: góc lệch và vệt trên giấy',
     de: `Giọt mực máy in phun ${nw(m('m=1{,}0\\cdot10^{-10}\\ \\mathrm{kg}'))}, ${nw(m('q=-2{,}0\\cdot10^{-12}\\ \\mathrm C'))} bay ngang vào chính giữa hai bản với ${nw(m('v_0=20\\ \\mathrm{m/s}'))}. Bản dài ${nw(m('L=1{,}0\\ \\mathrm{cm}'))}, cách nhau ${nw(m('d=4{,}0\\ \\mathrm{mm}'))}, ${nw(m('U=1600\\ \\mathrm V'))}, bản trên dương. Ra khỏi bản, giọt bay thêm ${nw(m('D=2{,}0\\ \\mathrm{cm}'))} theo phương ngang rồi chạm giấy. Bỏ qua trọng lực, lực cản.<br><b>a)</b> gia tốc giọt mực giữa hai bản<br><b>b)</b> ${m('v_y')} và góc lệch ${m('\\alpha')} lúc ra khỏi bản<br><b>c)</b> khoảng cách ${m('Y')} từ điểm chạm giấy tới đường bay ban đầu`,
     nd: `${nw(m('\\tan\\alpha=v_y/v_0'))}; ngoài bản hết lực ⇒ đi ${f(16)}; ${nw(`${m('Y=y+')} ${f(18)}`)}`, a: ['a', 'b', 'c'], gi: 6, fig: H.d4Giay(), cot: 3 },

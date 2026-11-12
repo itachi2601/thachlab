@@ -26,7 +26,7 @@ const defs2 = (id) => `<defs><marker id="${id}" markerWidth="7" markerHeight="7"
 // o.hat: dấu hạt bay vào tại giữa mép trái; o.quy: { dy (độ lệch tại x2, + là xuống), man (x màn), dash, c, keo (kéo ngược nét đứt) }
 const haiBan = (o = {}) => {
   const { x1 = 60, x2 = 230, yT = 40, yB = 140, tren = '+', duoi = MINUS, hatS = null, v0 = true, quy = null, man = null,
-    duongSuc = false, L = '', d = '', U = '', hoi = '', id = 'hb', W = 320, H = 190, them = '', manTen = 'màn' } = o;
+    duongSuc = false, L = '', d = '', U = '', hoi = '', id = 'hb', W = 320, H = 190, them = '', manTen = 'màn', truc = true } = o;
   const ym = (yT + yB) / 2;
   let b = defs(id + 'a') + defs(id + 'b') + defs2(id + 'k');
   const ban = (y, s) => {
@@ -51,7 +51,7 @@ const haiBan = (o = {}) => {
     if (keo) b += ln(xm, ym, x2, ym + dy, GREY, 2, '4 4');
   }
   if (hatS) {
-    b += ln(x1 - 2, ym, (man ?? x2 + 40), ym, GREY, 1.8, '3 5');
+    if (truc) b += ln(x1 - 2, ym, (man ?? x2 + 40), ym, GREY, 1.8, '3 5');
     b += hat(x1 - 30, ym, hatS);
     if (v0) b += arr(x1 - 18, ym, x1 + 22, ym, id + 'a', INK) + T(x1 - 40, ym - 16, `v${sb('0')}`, { w: 700 });
   }
@@ -69,7 +69,7 @@ export const hinhL11b18 = {
   mayIn: (cap = 'Giọt mực mang điện âm bay ngang vào khe. Bỏ qua trọng lực.') => {
     let b = defs('mi');
     b += `<rect x="4" y="74" width="40" height="40" rx="4" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(24, 136, 'đầu in', { a: 'middle', size: 18 });
-    const bb = haiBan({ x1: 90, x2: 220, yT: 44, yB: 144, hatS: MINUS, id: 'mi1' }).b;
+    const bb = haiBan({ x1: 90, x2: 220, yT: 44, yB: 144, hatS: MINUS, id: 'mi1', truc: false }).b;
     b += bb;
     b += `<rect x="286" y="34" width="26" height="120" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(299, 178, 'lon', { a: 'middle', size: 18 });
     b += T(254, 102, '?', { a: 'middle', size: 30, w: 700, c: RED });
