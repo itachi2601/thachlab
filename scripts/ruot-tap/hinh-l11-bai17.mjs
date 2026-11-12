@@ -92,7 +92,7 @@ const duong = ({ ds, pts, k = 30, cap, w = 320, h = 110, x0 = 40 }) => {
 
 export const hinhL11b17 = {
   // Trang 1 · Dự đoán: thước nhựa cọ tóc hút giấy vụn chưa chạm
-  thuocGiay: (cap = 'Giấy bật lên khi thước chưa chạm.') => {
+  thuocGiay: (cap = 'Thước vừa cọ vào tóc, đưa lại gần giấy vụn.') => {
     let b = `<g transform="rotate(-6 160 50)"><rect x="40" y="34" width="250" height="30" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += Array.from({ length: 12 }, (_, i) => ln(54 + i * 20, 34, 54 + i * 20, i % 2 ? 44 : 50, INK, 1.8)).join('');
     b += Array.from({ length: 6 }, (_, i) => T(64 + i * 40, 86, '−', { c: BLUE, w: 700, size: 24 })).join('') + '</g>';
