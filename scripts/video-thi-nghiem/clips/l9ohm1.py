@@ -293,8 +293,8 @@ def s_end(img, d, t, sc):
         kh = appear(t, M[0] + 0.4 + 2.5, 0.5)
         card(d, (110, 1250, 970, 1490), fill=A((255, 247, 237), kh), r=24)
         ctext(d, 1305, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        ctext(d, 1405, "Đừng chỉ nhìn ampe kế", 44, ORANGE, maxw=820, alpha=kh)
-    chot_hoi(d, t, sc, "Điện trở: R = U : I",
+        ctext(d, 1405, "R = U : I", 52, ORANGE, maxw=820, alpha=kh)   # cong thuc goc, hien tre: khong loai san lua chon
+    chot_hoi(d, t, sc, "Điện trở: mức dây cản trở dòng điện",
              f"Dây C: đặt {vn(U_C)} V, ampe kế chỉ 0,15 A.\nCản trở như dây A hay dây B?", body=hint)
 
 def _cues(clip):
