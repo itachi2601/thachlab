@@ -102,7 +102,7 @@ ${foot(3)}</section>`;
 
 const bangSo = () => `<table class="tbl-ct" style="text-align:center">
 <tr><th style="width:15mm;padding:.7mm .8mm">${I} (A)</th><th>${dm} thuận lần 1 (g)</th><th>${dm} thuận lần 2 (g)</th><th>${dm} đảo chiều (g)</th><th>${nw(m('|\\Delta m|'))} TB (g)</th><th>${Bm} (T)</th></tr>
-${[0, 1, 2, 3, 4, 5].map((x) => `<tr><td style="height:8.5mm"><b>${x},0</b></td><td></td><td></td><td></td><td></td><td></td></tr>`).join('')}</table>`;
+${[0, 1, 2, 3, 4, 5].map((x) => `<tr><td style="height:8mm"><b>${x},0</b></td><td></td><td></td><td></td><td></td>${x === 0 ? '<td style="text-align:center">—</td>' : '<td></td>'}</tr>`).join('')}</table>`;
 const nguyenNhan = ['Quên TARE: cân lệch +0,02 g', 'Chân giá đỡ tựa lên đĩa cân', `Dây lệch đường sức (${m('\\theta\\ne90^\\circ')})`, 'Đọc khi cân chưa ổn định, dây nóng', 'Quên đổi g sang kg, cm sang m'];
 const p4 = `<section class="page">
 ${head('BẢNG SỐ LIỆU · SAI SỐ')}
@@ -113,7 +113,7 @@ ${bangSo()}
 <div class="card soft" style="padding:1.2mm 3mm"><div><b>Quan sát:</b> ${I} tăng thì ${nw(`${m('|\\Delta m|')} ${f(14)}`)}; tỉ số ${nw(m('\\Delta m/I'))} ${ck}gần không đổi &nbsp;${ck}thay đổi nhiều.</div></div>
 ${h3(2, 'Sai số đến từ đâu, khắc phục thế nào?', '4·2')}
 <div class="fig-side" style="${fs(52)}"><div>
-<table><tr><th>Nguyên nhân</th><th style="width:40mm">Khắc phục</th></tr>${nguyenNhan.map((x) => `<tr><td style="height:8.5mm;font-size:var(--fs-sm)">${x}</td><td></td></tr>`).join('')}</table></div>
+<table><tr><th>Nguyên nhân</th><th style="width:40mm">Khắc phục</th></tr>${nguyenNhan.map((x) => `<tr><td style="height:11mm;font-size:var(--fs-sm)">${x}</td><td></td></tr>`).join('')}</table></div>
 ${H.soDo('Một nhóm bố trí như hình.', true)}</div>
 ${h3(3, 'Làm nhanh: sai số của một lần đo', '4·3')}
 <div class="card" style="padding:1.2mm 3mm">
@@ -145,11 +145,11 @@ const dang = [
     nd: `${nw(`${F} = ${m('\\Delta m')} · ${f(10)}`)} (đổi g sang kg); ${nw(`${Bm} = ${f(20)}`)}; đảo chiều thì ${f(14)}`, a: ['a', 'b', 'c'], gi: 5, fig: H.soDo('Bố trí đo của đề.') },
   { t: 'Dạng 2 · Trung bình · Hai lỗi hệ thống: quên TARE, dây lệch đường sức',
     de: `Nhóm không bấm TARE, cân chỉ ban đầu ${G('+0{,}20')}. Với ${A('4{,}0')}, ${nw(m('l=4{,}0\\ \\mathrm{cm}'))}: đóng mạch cân chỉ ${G('+2{,}17')}; đảo chiều dòng cân chỉ ${G('-1{,}77')}. Lấy ${gg}.<br><b>a)</b> ${Bm} nếu nhóm dùng thẳng số chỉ ${G('2{,}17')}<br><b>b)</b> ${dm} đúng, tính bằng nửa hiệu hai số đọc<br><b>c)</b> ${Bm} đúng<br><b>d)</b> số a) lệch so với c) bao nhiêu phần trăm`,
-    nd: `Nửa hiệu hai số đọc triệt ${f(14)}; ${nw(`${dm} = ${f(14)}`)}; lệch % = ${nw(`(${f(8)} − ${f(8)}) / ${f(8)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 8 },
+    nd: `Nửa hiệu hai số đọc triệt ${f(14)}; ${nw(`${dm} = ${f(14)}`)}; lệch % = ${nw(`(${f(12)} − ${f(12)}) / ${f(12)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 8 },
   { t: `Dạng 3 · Khó · Xử lí bảng số liệu: độ dốc đồ thị và ${Bm}`,
     de: `${nw(m('l=5{,}0\\ \\mathrm{cm}'))}, lấy ${gg}. Bảng số liệu (đã lấy trung bình hai chiều dòng):
 ${tbDe(['1,0', '2,0', '3,0', '4,0', '5,0'], ['0,61', '1,21', '1,84', '2,42', '3,07'])}Đường thẳng qua gốc có độ dốc ${nw(m('k=\\dfrac{\\sum I\\,\\Delta m}{\\sum I^2}'))}.<br><b>a)</b> ${nw(m('\\sum I\\,\\Delta m'))} và ${nw(m('\\sum I^2'))}<br><b>b)</b> độ dốc ${m('k')} (g/A)<br><b>c)</b> ${Bm} từ độ dốc`,
-    nd: `${nw(`${m('k=')} ${f(14)}`)}; ${nw(`${Bm} = ${f(8)} · ${g} / ${f(8)}`)} (đổi g sang kg, cm sang m)`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 4, gi: 21 },
+    nd: `${nw(`${m('k=')} ${f(14)}`)}; ${nw(`${Bm} = ${f(12)} · ${g} / ${f(12)}`)} (đổi g sang kg, cm sang m)`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 4, gi: 21 },
 ];
 
 const oY = (s, o, w = {}) => s.split('<br>').map((p) => {

@@ -51,7 +51,7 @@ const can2 = nw(`(${m('E=E_0/\\sqrt2')})`);
 const doiN = nw(`(1 vòng/s = 60 vòng/phút)`);
 
 // Bài tương tự 1 cột, ô đáp số cuối dòng của ý (cùng cách l11-bai16).
-const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
+const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}.page:nth-of-type(6) .bt .de{line-height:1.3}.page:nth-of-type(6) .bt{margin-bottom:1mm}.page:nth-of-type(6) .bt .ans .fill{height:7.5mm}</style>';
 
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 14 · MÁY PHÁT ĐIỆN XOAY CHIỀU · MÁY BIẾN ÁP', K.sub)}
@@ -59,7 +59,7 @@ ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Nêu nguyên tắc tạo dòng xoay chiều, cấu tạo máy phát và tính tần số ${m('f')}`)}
 ${dong(`${ck}Nắm cấu tạo, công thức <b>máy biến áp</b>; phân biệt tăng áp với hạ áp`)}
-${dong(`${ck}Giải thích vì sao đường dây truyền tải đi xa dùng điện áp rất cao`)}
+${dong(`${ck}Tính công suất toả nhiệt trên dây và hiệu suất truyền tải điện năng đi xa`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -192,10 +192,10 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Tần số dòng điện của máy phát: f = np',
     de: `Rô-to máy phát một pha là nam châm có 4 cặp cực, quay đều ${vp('750')}.<br><b>a)</b> tần số ${m('f')} của dòng điện<br><b>b)</b> tần số góc ${om} của suất điện động<br><b>c)</b> máy khác quay ${vp('300')}, muốn phát ${Hz('50')}: số cặp cực`,
-    nd: `Đổi ${m('n')} ra ${f(14)} trước; ${nw(`${m('f=')} ${f(10)}`)}; ${nw(`${m('\\omega=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `Đổi ${m('n')} ra ${f(14)} trước; ${nw(`${m('f=')} ${f(10)}`)}; ${nw(`${m('\\omega=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Suất điện động của khung quay',
     de: `Khung 400 vòng, mỗi vòng ${nw(m('50\\ \\mathrm{cm^2}'))}, quay ${vp('1200')}, trục vuông góc với từ trường đều ${nw(m('0{,}030\\ \\mathrm T'))}.<br><b>a)</b> tần số góc ${om}<br><b>b)</b> suất điện động cực đại ${E0}<br><b>c)</b> suất điện động hiệu dụng ${m('E')} ${can2}`,
-    nd: `Đổi ${m('S')} ra ${f(10)}, ${m('n')} ra vòng/s; ${nw(`${m('E_0=')} ${f(18)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `Đổi ${m('S')} ra ${f(16)}, ${m('n')} ra vòng/s; ${nw(`${m('E_0=')} ${f(18)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Máy biến áp lí tưởng: U, I, P hai cuộn',
     de: `Máy biến áp lí tưởng ${nw(m('N_1=1100'))}, ${nw(m('N_2=60'))} vòng; ${nw(m('U_1=220\\ \\mathrm V'))}; thứ cấp nối đèn, ${nw(m('I_2=2{,}5\\ \\mathrm A'))}.<br><b>a)</b> tăng áp hay hạ áp; ${U2}<br><b>b)</b> cường độ ${I1} ở cuộn sơ cấp<br><b>c)</b> công suất mạch sơ cấp lấy từ mạng điện`,
     nd: `${m('U')} tỉ lệ ${f(12)} với số vòng, ${m('I')} tỉ lệ ${f(12)}; ${nw(`${m('P_1=')} ${f(12)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4 },

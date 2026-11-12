@@ -130,6 +130,15 @@ export const hinhL12c3b13 = {
     b += T(270, 24, `I${sb('0')} = I${can}2`, { a: 'end' });
     return wrap('0 0 300 98', b, cap, 'Điểm của dòng điện lúc t = 0');
   },
+  // Dạng 2: i (liền) và i² (đứt) — nhiệt theo i², trung bình i² để trống
+  d2: (cap = 'Liền: i. Đứt: i².') => {
+    let b = truc(30, 50, 262, 46, '', 'd21');
+    b += song(30, 50, 240, 38, 120, 0, BLUE, '', 3);
+    const pts = []; for (let x = 0; x <= 240; x += 2) pts.push(`${30 + x},${(50 - 38 * Math.cos(2 * Math.PI * x / 120) ** 2).toFixed(1)}`);
+    b += `<polyline points="${pts.join(' ')}" fill="none" stroke="${RED}" stroke-width="3" stroke-dasharray="7 5"/>`;
+    b += T(44, 18, 'i', { c: BLUE, w: 700 }) + T(62, 18, 'i²', { c: RED, w: 700 });
+    return wrap('0 0 300 98', b, cap, 'Đồ thị cường độ dòng điện và bình phương của nó');
+  },
   // Dạng 4: khung lúc t = 0, pháp tuyến cùng hướng B
   d4: (cap = 'Lúc t = 0: n cùng hướng B.') => {
     let b = defs('d41') + defs('d42');

@@ -47,7 +47,7 @@ const om = m('\\omega'), ph = m('\\varphi'), Phi = m('\\Phi'), r2 = m('\\sqrt2')
 const V = (s) => nw(m(`${s}\\ \\mathrm V`)), A = (s) => nw(m(`${s}\\ \\mathrm A`)), Om = (s) => nw(m(`${s}\\ \\Omega`)), Hz = (s) => nw(m(`${s}\\ \\mathrm{Hz}`));
 
 // Bài tương tự 1 cột, ô đáp số cuối dòng của ý (cùng cách l11-bai16).
-const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
+const ttCss = '<style>.bt{margin-bottom:.9mm}.bt .ans .fill{height:7.5mm}.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 
 const p1 = `${ttCss}<section class="page">
 ${head('BÀI 13 · ĐẠI CƯƠNG VỀ DÒNG ĐIỆN XOAY CHIỀU', K.sub)}
@@ -110,7 +110,7 @@ ${h3(3, 'Tần số góc · chu kì · tần số', '2·3')}
 ${h3(4, 'Làm nhanh', '2·4')}
 ${box(`<div style="padding-top:1mm;line-height:1.35"><b>Câu 1.</b> ${nw(m('i=4\\cos\\left(100\\pi t-\\dfrac{\\pi}{3}\\right)\\ \\mathrm A'))}. Tìm:</div>
 <div class="yo"><span><b>a)</b> tần số ${m('f')} và chu kì ${m('T')}</span><span class="oo"><span class="nw"><b>f =</b>${f(16)}</span><span class="nw"><b>T =</b>${f(16)}</span></span></div>
-<div class="yo"><span><b>b)</b> pha ban đầu; số lần đổi chiều trong 1 s (từ giây thứ hai)</span><span class="oo"><span class="nw"><b>${ph} =</b>${f(14)}</span><span class="nw"><b>số lần</b>${f(12)}</span></span></div>${lines(1)}`)}
+<div class="yo"><span><b>b)</b> pha ban đầu; số lần dòng đổi chiều trong mỗi giây</span><span class="oo"><span class="nw"><b>${ph} =</b>${f(14)}</span><span class="nw"><b>số lần</b>${f(12)}</span></span></div>${lines(1)}`)}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -189,15 +189,15 @@ const dang = [
   { t: 'Dạng 1 · Dễ · Đọc các đại lượng từ biểu thức của điện áp',
     de: `Điện áp tức thời giữa hai đầu một thiết bị là ${nw(m('u=20\\sqrt2\\cos(40\\pi t+\\tfrac{\\pi}{3})\\ \\mathrm V'))} (${m('t')} tính bằng s).<br><b>a)</b> điện áp hiệu dụng ${m('U')} và pha ban đầu ${m('\\varphi_u')}<br><b>b)</b> tần số góc ${om}, tần số ${m('f')}, chu kì ${m('T')}<br><b>c)</b> điện áp tức thời tại ${m('t=0')}`,
     nd: `${nw(`${m('U_0=')} ${f(16)}`)}; ${nw(`${m('U=')} ${f(16)}`)}; ${nw(`${m('f=')} ${f(16)}`)}`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c'], cot: 6, gi: 3 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c'], cot: 3, gi: 4 },
   { t: 'Dạng 2 · Trung bình · Công suất và nhiệt lượng toả ra trên điện trở',
     de: `Dòng điện ${nw(m('i=4\\cos(100\\pi t-\\tfrac{\\pi}{6})\\ \\mathrm A'))} chạy qua điện trở ${Om('R=25')}.<br><b>a)</b> công suất toả nhiệt trung bình của ${m('R')}<br><b>b)</b> nhiệt lượng toả ra trong 2 phút<br><b>c)</b> cường độ dòng không đổi toả cùng nhiệt lượng trên ${m('R')} trong cùng thời gian`,
     nd: `${m('P=I^2R')} với ${m('I')} là giá trị ${f(18)}; 2 phút = ${f(10)} s`,
-    a: ['a', 'b', 'c'], gi: 3 },
+    a: ['a', 'b', 'c'], gi: 4, fig: H.d2 },
   { t: 'Dạng 3 · Khá · Viết biểu thức i từ f, I và giá trị lúc t = 0',
-    de: `Dòng điện xoay chiều có tần số ${Hz('50')}, cường độ hiệu dụng ${A('2')}. Tại ${m('t=0')}, cường độ tức thời là ${nw(m('-\\sqrt2\\ \\mathrm A'))} và đang tăng.<br><b>a)</b> biểu thức của ${m('i')} (dạng hàm cos, ${m('t')} tính bằng s)<br><b>b)</b> cường độ tức thời tại ${nw(m('t=\\tfrac{1}{200}\\ \\mathrm s'))}`,
+    de: `Dòng xoay chiều ${Hz('50')}, hiệu dụng ${A('2')}; lúc ${m('t=0')}, ${nw(m('i=-\\sqrt2\\ \\mathrm A'))} và đang tăng.<br><b>a)</b> biểu thức của ${m('i')} (dạng hàm cos, ${m('t')} tính bằng s)<br><b>b)</b> cường độ tức thời tại ${nw(m('t=\\tfrac{1}{200}\\ \\mathrm s'))}`,
     nd: `${nw(`${m('\\cos\\varphi=')} ${f(16)}`)} ⇒ hai nghiệm ${m('\\pm')}; đang tăng ⇒ ${m("i'(0)>0")} ⇒ ${nw(`${m('\\sin\\varphi')} ${f(10)} 0`)}`,
-    a: ['a', 'b'], cot: 2, gi: 3, fig: H.d3 },
+    a: ['a', 'b'], cot: 2, gi: 3 },
   { t: 'Dạng 4 · Khá · Khung dây quay: từ thông và suất điện động',
     de: `Khung dây ${m('N=200')} vòng, diện tích mỗi vòng ${nw(m('S=100\\ \\mathrm{cm^2}'))}, quay đều 1500 vòng/phút quanh trục vuông góc với đường sức của từ trường đều ${nw(m('B=0{,}04\\ \\mathrm T'))}. Lúc ${m('t=0')}, pháp tuyến của khung cùng hướng ${m('\\vec B')}.<br><b>a)</b> tần số góc ${om} và từ thông cực đại ${m('\\Phi_0')}<br><b>b)</b> suất điện động cực đại ${m('E_0')} và hiệu dụng ${m('E')}<br><b>c)</b> biểu thức suất điện động ${m('e')} (V, s)`,
     nd: `Đổi ${nw(`${m('n=')} ${f(12)} vòng/s`)}, ${nw(`${m('S=')} ${f(14)} ${m('\\mathrm{m^2}')}`)}; ${m('e')} chậm pha ${f(10)} so với ${Phi}`,

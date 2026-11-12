@@ -64,7 +64,7 @@ export const hinhL12b5 = {
     b += doan(32, 190, 112, 'x') + doan(32, 288, 148, '40 cm');
     return wrap('0 0 320 160', b, cap, 'Ống thuỷ tinh khuếch tán NH3 và HCl');
   },
-  vaThanh: (cap = 'Phân tử tới thành (nét liền) và bật ra (nét đứt). v<sub>x</sub> vuông góc thành, v<sub>y</sub> song song thành.') => {
+  vaThanh: (cap = 'Tới: nét liền; bật ra: nét đứt. v<sub>x</sub> vuông góc thành, v<sub>y</sub> dọc thành.') => {
     let b = defs('vt1') + defs('vt2') + defs('vt3');
     b += ln(240, 10, 240, 180, INK, 5) + Array.from({ length: 9 }, (_, i) => ln(240, 18 + i * 18, 254, 8 + i * 18, GREY, 1.8)).join('');
     b += dot(232, 96, 6);
@@ -75,14 +75,14 @@ export const hinhL12b5 = {
     b += T(250, 196, 'thành', { a: 'end' });
     return wrap('0 0 280 204', b, cap, 'Phân tử va chạm đàn hồi với thành bình');
   },
-  thung1mol: (cap = `Ba thùng, mỗi thùng 1 mol khí ở đktc.`) => {
+  thung1mol: (cap = `Cùng 1 mol, cùng điều kiện: thể tích và số phân tử ba thùng so với nhau thế nào?`) => {
     let b = '';
-    [[N2, '28 g'], [O2, '32 g'], [CO2, '… g']].forEach(([s, kg], i) => {
+    [[N2, '28 g'], [O2, '32 g'], [CO2, '44 g']].forEach(([s, kg], i) => {
       const x = 8 + i * 102;
       b += rect(x, 30, 90, 96, { rx: 6 }) + T(x + 45, 72, s, { a: 'middle', w: 700, size: 24 }) + T(x + 45, 108, kg, { a: 'middle' });
     });
-    b += T(155, 20, 'V = 22,4 L mỗi thùng', { a: 'middle' }) + T(155, 154, `N = ${NA} mỗi thùng`, { a: 'middle' });
-    return wrap('0 0 312 164', b, cap, 'Ba thùng 1 mol khí N2, O2, CO2');
+    b += T(155, 20, 'Mỗi thùng: 1 mol khí ở đktc', { a: 'middle' });
+    return wrap('0 0 312 134', b, cap, 'Ba thùng 1 mol khí N2, O2, CO2');
   },
   gapKhuc: (cap = 'Một phân tử: đường đi gấp khúc (nét liền) dài, đoạn dời chỗ (nét đứt) ngắn.') => {
     let b = defs('gk1');
