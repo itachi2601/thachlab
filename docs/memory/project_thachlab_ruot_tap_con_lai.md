@@ -1,0 +1,33 @@
+---
+name: project_thachlab_ruot_tap_con_lai
+description: Kế hoạch ruột tập (sách in theo bài) cho mọi chương còn lại L10/L11/L12 — 65 bài, 3 đợt phiên song song, phân model
+metadata:
+  type: project
+---
+
+Lập 12/11/2026 (nhánh `claude/sach-in-tu-web-chuong-3-5ffba2`). Quy trình: skill `sach-in-tu-web` mục "Ruột tập cả chương bằng phiên song song".
+Đã xong trước đó: L12 Ch.4 (bài 14–18), L10 Ch.4 (23–27), L11 Ch.3 (16–21). Sách A4 cả chương (book/make.py) có L10 Ch.2, Ch.3 — khác ruột tập.
+
+**Đã chuẩn bị (vào main 12/11):** hồ sơ `book/sach/<mã>.json` cho mọi chương (bỏ bài Kiểm tra; `l11-ch2-song` thêm lesson 34) +
+script dựng quyển `scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh` cho 12 chương.
+
+| Đợt | Chương (mã hồ sơ) | Bài · lesson_id | baiDau |
+|---|---|---|---|
+| 1 | L10 Ch.5 `l10-ch5-dong-luong` | 28·73, 29·74, 30·75 (TH) | 28 |
+| 1 | L10 Ch.6 `l10-ch6-chuyen-dong-tron` | 31·76, 32·77 | 31 |
+| 1 | L10 Ch.7 `l10-ch7-bien-dang-ap-suat` | 33·78, 34·79 | 33 |
+| 1 | L11 Ch.4 `l11-ch4-dong-dien` | 22·41, 23·42, 24·43, 25·44, 26·45 (TH) | 22 |
+| 2 | L12 Ch.1 `l12-ch1-vat-li-nhiet` | 1·2, 2·3, 3·4, 4·5 (TH) | 1 |
+| 2 | L12 Ch.2 `l12-ch2-khi-li-tuong` | 5·6, 6·7, 7·8, 8·9 | 5 |
+| 2 | L12 Ch.3 `l12-ch3-tu-truong` | 9·10, 10·11, 11·12 (TH), 12·13, 13·14, 14·125, 15·126, 16·127 — file `l12-c3-bai<N>.mjs`, `out` `ruot-tap-vl12-c3-bai<N>.pdf` (14–16 trùng số Ch.4) | 9 |
+| 3 | L10 Ch.1 `l10-ch1-mo-dau` | 1·46, 2·47, 3·48 (TH) | 1 |
+| 3 | L10 Ch.2 `l10-ch2-dong-hoc` | 4·49 … 12·57 (6·51, 11·56 TH) | 4 |
+| 3 | L10 Ch.3 `l10-ch3-dong-luc-hoc` | 13·58 … 22·67 (20·65 bài giải mẫu, 22·67 TH; không BTM) | 13 |
+| 3 | L11 Ch.1 `l11-ch1-dao-dong` | 1·20 … 7·26 | 1 |
+| 3 | L11 Ch.2 `l11-ch2-song` | 8·27 … 15·34 (10·29 TH không BTM, 15·34 TH) | 8 |
+
+**Phân model:** bài lý thuyết có bài tập mẫu → Opus (soạn nội dung HS, hình SVG, đáp số). Bài thực hành (TH) và L10 bài 1–2
+(làm quen, an toàn) → Sonnet. HS ảo cả quyển sau mỗi chương → một phiên Sonnet đọc các `.pdf.html` (text), giao lỗi về phiên bài bằng `SendMessage`.
+**Vì sao chia đợt:** đợt 1 = nội dung dạy HK2 sắp tới; lỗi lặp HS ảo bắt ở đợt trước đưa vào brief đợt sau (L11 Ch.3: 4 lỗi lặp).
+
+**Trạng thái:** đợt 1 mở 12/11/2026 (12 phiên). Đợt 2, 3 chưa mở — mở sau khi HS ảo đợt 1 xong. Liên quan: [[project_thachlab_ruot_tap_bai14]], [[project_thachlab_sach_in_chuong2]].
