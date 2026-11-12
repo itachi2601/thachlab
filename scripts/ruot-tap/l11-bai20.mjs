@@ -99,7 +99,7 @@ ${h3(3, 'II.3 · Hiệu điện thế', '2·3')}
 <div>Đổi thứ tự hai điểm thì đổi dấu: ${nw(`${m('U_{NM}=')} ${f(16)}`)}</div>
 <div>Theo chiều đường sức, điện thế ${f(18)}.</div>
 <div>Đổi mốc: mọi ${m('V')} ${f(14)}, còn ${m('U')} ${f(18)}.</div>
-<div>${nw(`${m('1\\ \\mathrm{eV}=')} ${f(22)}&nbsp;J`)}: năng lượng electron nhận khi đi qua hiệu điện thế ${f(10)}&nbsp;V.</div>
+<div>${eV}: năng lượng electron nhận khi đi qua hiệu điện thế ${f(10)}&nbsp;V.</div>
 <div>Electron: ${nw(`${m('q=')} ${f(18)}`)} — giữ đủ dấu của ${m('q')} và của ${m('U')}.</div></div>
 ${H.dangThe()}</div>
 ${h3(4, 'III · Bẫy 1: “Đặt electron vào thì điện thế âm”', '2·4')}
@@ -119,7 +119,7 @@ ${h3(1, 'Thí nghiệm: vôn kế chỉ đo được “hiệu”', '3·1')}
 <tr><td>1</td><td>cực (+) · cực (−) của pin 1,5 V</td><td></td></tr>
 <tr><td>2</td><td>đổi hai que cho nhau</td><td></td></tr>
 <tr><td>3</td><td>hai điểm trên cùng một dây đồng nối cực (+)</td><td></td></tr></table>
-<div style="margin-top:.6mm"><b>Rút ra:</b> vôn kế số hiện ${nw(`V<sub>đỏ</sub> ${m('-')} ${f(14)}`)}; nó đo ${f(14)} giữa hai điểm, không đo ${f(14)} của một điểm. Lần 3 giống chuyện ${f(16)}.</div>
+<div style="margin-top:.6mm"><b>Rút ra:</b> vôn kế số hiện ${nw(`V<sub>đỏ</sub> ${m('-')} ${f(14)}`)}; nó đo ${f(14)} giữa hai điểm, không đo ${f(14)} của một điểm. Lần 3 giống chuyện ${f(28)}.</div>
 </div>
 ${H.vonKe()}</div>
 ${box(cau(`<b>Câu 2.</b> Electron đi từ M (${m('V_M=10\\ \\mathrm V')}) đến N (${m('V_N=60\\ \\mathrm V')}), ${e19}. ${nw(`${m('U_{MN}=')} ${f(14)}`)} &nbsp; ${nw(`${m('A_{MN}=')} ${f(22)} J ${m('=')} ${f(12)} eV`)}`, 1), 'margin-top:.8mm')}
@@ -191,17 +191,17 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Công của lực điện và độ giảm thế năng',
-    de: `${m('q=+')}${uC('2{,}0')} đi cong từ M đến N trong điện trường đều ${m('E=')}${Vm('3000')} như hình dưới.<br><b>a)</b> công ${m('A_{MN}')}<br><b>b)</b> thế năng tăng hay giảm, bao nhiêu<br><b>c)</b> ${m('q')} đi thẳng từ N về M: ${m('A_{NM}')}`,
-    nd: `Công không phụ thuộc ${f(20)}; N lệch theo chiều đường sức ⇒ ${nw(`${m('d')} ${f(8)} 0`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.duongD1(''), cot: 3 },
+    de: `${m('q=+')}${uC('2{,}0')} đi cong M → N, điện trường đều ${m('E=')}${Vm('3000')}; hình chiếu MN lên đường sức ${cm('4{,}0')}.<br><b>a)</b> công ${m('A_{MN}')}<br><b>b)</b> thế năng tăng hay giảm, bao nhiêu<br><b>c)</b> ${m('q')} đi thẳng từ N về M: ${m('A_{NM}')}`,
+    nd: `Công không phụ thuộc ${f(30)}; N lệch theo chiều đường sức ⇒ ${nw(`${m('d')} ${f(8)} 0`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.duongD1(''), cot: 3 },
   { t: 'Dạng 2 · Dễ · Điện thế của một điểm, đổi điện tích, thế năng',
     de: `Mốc ở vô cực. ${m('q_1=+')}${nC('2{,}0')} tại M có thế năng ${nw(`${J('3{,}0\\cdot10^{-7}')};`)} ${nw(`${m('V_N=60\\ \\mathrm V')}.`)}<br><b>a)</b> ${m('V_M')}<br><b>b)</b> quả cầu (nguồn) tích điện dương hay âm<br><b>c)</b> bỏ ${m('q_1')}, đặt ${m('q_2=-')}${nC('4{,}0')} vào M: thế năng của ${m('q_2')}<br><b>d)</b> thế năng của ${m('q_2')} tại N`,
-    nd: `${m('V')} là của ${f(16)}, không đổi khi đổi điện tích; ${nw(`${m('W=')} ${f(14)}`)} giữ dấu của ${m('q')}`, a: ['a', 'b', 'c', 'd'], gi: 3 },
+    nd: `${m('V')} là của ${f(16)}, không đổi khi đổi điện tích; ${nw(`${m('W=')} ${f(14)}`)} giữ dấu của ${m('q')}`, a: ['a', 'b', 'c', 'd'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Hiệu điện thế, công A = qU, đơn vị eV',
     de: `Mốc điện thế ở Trái Đất. ${m('V_A=+45\\ \\mathrm V')}, ${nw(`${m('V_B=+15\\ \\mathrm V')};`)} ${e19}, ${nw(`${eV}.`)}<br><b>a)</b> ${m('U_{AB}')}<br><b>b)</b> electron đi từ A đến B: công lực điện theo J và eV<br><b>c)</b> proton đi từ A đến B: công theo eV`,
-    nd: `${nw(`${m('U_{AB}=')} V<sub>đầu</sub> ${m('-')} ${f(12)}`)}; electron ${nw(`${m('q=')} ${f(12)}`)}, proton ${nw(`${m('q=')} ${f(12)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    nd: `${nw(`${m('U_{AB}=')} V<sub>đầu</sub> ${m('-')} ${f(12)}`)}; electron ${nw(`${m('q=')} ${f(20)}`)}, proton ${nw(`${m('q=')} ${f(20)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 2 },
   { t: 'Dạng 4 · Trung bình · U = Ed: hình chiếu dọc đường sức, bài ngược',
     de: `Hai bản phẳng song song cách ${cm('6{,}0')}, hiệu điện thế ${V('240')}; điện trường giữa hai bản coi là đều. Tam giác MNP vuông tại P nằm giữa hai bản: MP dọc đường sức, cùng chiều đường sức khi đi từ M đến P; ${m('MN=5{,}0\\ \\mathrm{cm}')}, ${m('NP=4{,}0\\ \\mathrm{cm}')}.<br><b>a)</b> cường độ điện trường giữa hai bản<br><b>b)</b> hiệu điện thế ${m('U_{MN}')}<br><b>c)</b> khoảng cách từ M tới mặt đẳng thế phía bản âm có hiệu điện thế với M bằng ${V('60')}`,
-    nd: `${m('d_{MN}')} là ${f(16)} (dọc đường sức), không phải ${f(12)}; ngược lại ${nw(`${m('d=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 5, fig: H.tamD4(), cot: 3 },
+    nd: `${m('d_{MN}')} là ${f(16)} (dọc đường sức), không phải ${f(12)}; ngược lại ${nw(`${m('d=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 7, fig: H.tamD4(), cot: 3 },
   { t: 'Dạng 5 · Khó · Hai bản: điện thế, công lên electron, đổi mốc',
     de: `Hai bản phẳng song song cách ${cm('5{,}0')}, nối nguồn ${V('150')}: bản A nối cực dương, bản B nối cực âm. M cách bản B ${cm('1{,}5')}. Chọn mốc điện thế ở bản A. Lấy ${e19}.<br><b>a)</b> cường độ điện trường<br><b>b)</b> điện thế tại M<br><b>c)</b> electron đi từ bản B đến M: công của lực điện theo eV và J<br><b>d)</b> chọn lại mốc ở bản B: ${m('V_M')} bằng bao nhiêu? Công ở c) có đổi không?`,
     nd: `Khoảng cách tính từ M tới đúng bản ${f(16)}; đổi mốc thì ${m('V')} ${f(12)}, ${m('U')} ${f(14)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 7, fig: H.banD5(), cot: 3 },
