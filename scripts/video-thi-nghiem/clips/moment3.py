@@ -135,7 +135,7 @@ def s_moment(img, d, t, sc):
     xf = lerp(XF, XF / 2, k)
     kF = appear(t, 1.4, 0.4)                                # hang 2 (F = 1,0 N) hien: vecto dai gap doi hang 1 (0,5 N)
     alen = lerp(ALEN / 2, ALEN, kF)
-    text(d, (W / 2, 318), "Mỗi lực F = 0,5 N" if kF < 0.5 else "Mỗi lực F = 1,0 N", 44, RED)
+    text(d, (990, 318), "Mỗi lực F = 0,5 N" if kF < 0.5 else "Mỗi lực F = 1,0 N", 44, RED, anchor="rm")  # goc phai tren: xa mui ten F trai
     ruler(img, d, c[0], c[1], 0, s); forces(d, c[0], c[1], 0, s, xf=xf, alen=alen)
     for x in (-xf, xf):                                     # gia cua hai luc (net dut)
         X = c[0] + x * s
@@ -151,7 +151,7 @@ def s_moment(img, d, t, sc):
     for x, h in zip(xs, ("F (N)", "d (m)", "M (N·m)")): text(d, (x, 1105), h, 42, INK)
     d.line([(90, 1145), (990, 1145)], fill=LIGHT, width=4)
     for i, row in enumerate(ROWS):
-        ra = appear(t, 0.6 + i * 0.8, 0.35); y = 1205 + i * 92
+        ra = appear(t, 0.6 + i * 0.8 if i < 2 else M[1] + 1.0, 0.35); y = 1205 + i * 92   # hang d = 0,15 sau khi hinh nhich gia
         if ra <= 0: continue
         if i >= 1 and t >= M[1]:
             d.rounded_rectangle([85, y - 38, 995, y + 38], radius=16, fill=A((225, 236, 255), appear(t, M[1], 0.3)))
@@ -206,13 +206,13 @@ def s_gioihan(img, d, t, sc):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     def hint(d, t, k):                        # tu ve cau hoi (to hon) + goi y chu toi >= 40 px, goi y hien tre ~2,5 s
-        ctext(d, 900, "Mỗi lực 2 N ở hai đầu\nthước 30 cm: moment bao nhiêu?", 56, INK,
+        ctext(d, 900, "Ngẫu lực, mỗi lực 2 N,\nở hai đầu thước 30 cm:\nmoment bao nhiêu?", 56, INK,
               maxw=860, alpha=appear(t, sc["M"][0] + 0.4, 0.5))
         kh = appear(t, sc["M"][0] + 2.5, 0.5)
         if kh <= 0: return
         card(d, (110, 1230, 970, 1530), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=3)
         ctext(d, 1300, "Gợi ý", 44, INK, alpha=kh)
-        ctext(d, 1420, "Đổi cm ra m trước khi tính", 48, (154, 52, 18), maxw=820, alpha=kh)
+        ctext(d, 1420, "M = F · d", 48, (154, 52, 18), maxw=820, alpha=kh)
     chot_hoi(d, t, sc, "Ngẫu lực chỉ làm quay", "", body=hint)
 
 def _cues(clip):
