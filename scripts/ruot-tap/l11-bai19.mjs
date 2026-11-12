@@ -53,7 +53,7 @@ ${head('BÀI 19 · THẾ NĂNG ĐIỆN', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Tính công của lực điện ${m('A=qEd')}, đặt đúng <b>dấu</b> của ${m('q')} và ${m('d')}`)}
-${dong(`${ck}Giải thích vì sao công của lực điện <b>không phụ thuộc đường đi</b>`)}
+${dong(`${ck}Giải thích công của lực điện <b>phụ thuộc vào gì</b> và vì sao`)}
 ${dong(`${ck}Nêu ý nghĩa <b>thế năng điện</b>, biết chọn mốc và tính ${m('W_M')}`)}
 ${dong(`${ck}Dùng ${m('A_{MN}=W_M-W_N')} nối công, thế năng và động năng`)}
 </div>
@@ -95,24 +95,25 @@ ${h3(1, 'Hình chiếu d có dấu', '2·1')}
 <tr><td style="height:7mm">Lực so với ${vE}</td><td>cùng chiều</td><td></td></tr>
 <tr><td style="height:7mm">Dấu của ${m('A')}</td><td></td><td></td></tr>
 <tr><td style="height:7mm">Thế năng tăng/giảm</td><td></td><td></td></tr></table></div>
-${box(cau(`<b>Câu 1.</b> Electron đi ${nw('2 cm')} ngược chiều đường sức, ${nw(m('E=1000\\ \\mathrm{V/m}'))}. Công của lực điện? Dấu?`, 4), 'margin-top:1mm')}
+${box(cau(`<b>Câu 1.</b> Electron đi ${nw('2 cm')} ngược chiều đường sức, ${nw(m('E=1000\\ \\mathrm{V/m}'))}. Công của lực điện? Dấu?`, 3), 'margin-top:1mm')}
 ${h3(2, 'II.2 · Công không phụ thuộc đường đi · lực thế', '2·2')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Đi gấp khúc M → P → N: ${nw(`${m('A_{MP}=')} ${f(10)}`)} vì MP ${f(25)} đường sức;</div>
 <div>${nw(`${m('A_{PN}=')} ${f(16)}`)}. Tổng ${f(12)} công đi thẳng MN.</div>
-<div>Công của lực điện chỉ phụ thuộc ${f(22)} và ${f(22)}, không phụ thuộc ${f(22)}.</div>
+<div>Công của lực điện chỉ phụ thuộc ${f(30)} và ${f(30)},</div>
+<div>không phụ thuộc ${f(30)}.</div>
 <div>Đi một vòng kín về chỗ cũ: ${nw(`${m('A=')} ${f(10)}`)}.</div>
-<div><b>Lực thế:</b> ${f(18)}, ${f(18)}, ${f(18)}. Lực ${f(18)} không phải lực thế.</div></div>
+<div><b>Lực thế</b> là lực có công không phụ thuộc đường đi: trọng lực, lực đàn hồi, lực điện. Lực ma sát ${ck}là ${ck}không là lực thế.</div></div>
 ${H.baDuong()}</div>
 ${h3(3, 'II.3 · Thế năng điện', '2·3')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>${m('W_M')} đặc trưng cho ${f(40)} của điện trường khi đặt ${m('q')} tại M.</div>
 <div>Số đo: công của lực điện khi ${m('q')} đi từ M tới ${f(25)}.</div>
 <div>Điện trường đều, mốc ở bản âm: ${nw(`${m('W_M=')} ${f(16)}`)}, ${m('d')} = khoảng cách từ M tới ${f(16)}.</div>
-<div>Điện tích điểm ${m('Q')}, mốc ở vô cực: ${nw(`${m('W=')} ${f(16)}`)}</div>
+<div>Điện tích điểm ${m('Q')} trong chân không, mốc ở vô cực: ${nw(`${m('W=')} ${f(16)}`)}</div>
 <div class="hint">(${nw(m('k=9\\cdot10^9\\ \\mathrm{N\\,m^2/C^2}'))}; ${m('q')}, ${m('Q')} lấy cả dấu)</div>
 <div><b>“${m('qEd')} như ${m('mgh')}”:</b> ${m('q')} ↔ ${f(10)}, ${m('E')} ↔ ${f(10)}, ${m('d')} ↔ ${f(10)}</div>
-<div>Với ${m('q<0')}: càng xa mốc, ${m('W')} càng ${f(16)}.</div></div>
+<div>Với ${m('q<0')}: càng xa mốc, ${m('W')} (giá trị đại số) càng ${f(16)}.</div></div>
 ${H.haiBan()}</div>
 ${foot(2)}</section>`;
 
@@ -128,7 +129,7 @@ ${h3(1, 'II.4 · Đo thử: khay nước muối, hai lá đồng cách 10,0 cm, 
 <tr><td>8,0</td><td>4,84</td><td></td></tr></table>
 <div style="margin-top:.6mm"><b>Rút ra:</b> ${m('V')} tỉ lệ ${f(10)} với ${m('x')}; ${nw(`${m('E\\approx')} ${f(12)} V/m`)}. Thế năng của 1 C tại đó ${m('W=Ex')}.</div></div>
 ${H.doThi()}</div>
-${box(wl('Lí thuyết 0,60 V/cm, sao bảng lệch tới 2 %? Nêu 2 nguyên nhân:', 2), 'margin-top:1mm')}
+${box(wl('Lí thuyết 0,60 V/cm, sao bảng lệch tới 2 %? Nêu 2 nguyên nhân:', 3), 'margin-top:1mm')}
 ${h3(2, 'II.5 · Công bằng độ giảm thế năng', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>${m('A_{MN}=')} ${f(14)} − ${f(14)} ${m('=-\\Delta W')}</div>
@@ -137,7 +138,7 @@ ${h3(2, 'II.5 · Công bằng độ giảm thế năng', '3·2')}
 <div>Từ nghỉ: ${nw(`${m('A=')} ${f(16)}`)} ⇒ ${nw(`${m('v=')} ${f(25)}`)}</div>
 <div>Đổi mốc thì từng ${m('W')} ${f(14)}; hiệu ${m('W_M-W_N')} ${f(16)}. Điền bảng:</div>
 <table style="margin-top:.6mm"><tr><th>Mốc đặt ở</th><th>${m('W_M')}</th><th>${m('W_N')}</th><th>${m('W_M-W_N')}</th></tr>
-<tr><td>Điểm O</td><td>6 mJ</td><td>2 mJ</td><td></td></tr>
+<tr><td>Điểm O (một điểm khác)</td><td>6 mJ</td><td>2 mJ</td><td></td></tr>
 <tr><td>Điểm N</td><td></td><td>0</td><td></td></tr></table></div>
 ${box(cau(`<b>Câu 2.</b> Mốc ở bản âm. Electron đặt cách bản âm ${nw('2 cm')}: thế năng dương, âm hay bằng 0? Vì sao?`, 2), 'margin-top:1mm')}
 ${h3(3, 'II.6 · Nối sang Bài 20: điện thế', '3·3')}
@@ -201,10 +202,10 @@ const dang = [
     nd: `Đổi ${nw(`${m('\\mu\\mathrm C')} → C`)}; độ dài ${nw('25 cm')} ${ck}có ${ck}không đi vào công thức; ${m('d_{AD}=d_{AC}')} vì<br>${f(60)}`, a: ['a', 'b', 'c'], gi: 7, fig: H.d2(''), cot: 3 },
   { t: 'Dạng 3 · Trung bình · Thế năng có mốc: từ W<sub>M</sub> và công tìm E, vị trí N, rồi đổi mốc',
     de: `Hai bản phẳng nằm ngang cách nhau ${nw('5,0 cm')}; bản trên âm, bản dưới dương; điện trường đều. Hạt bụi ${nw(m('q=-5{,}0\\ \\mathrm{nC}'))}. Mốc thế năng ở bản trên. Tại M cách bản trên ${nw('1,0 cm')}: ${nw(`${m('W_M=-2{,}0\\cdot10^{-7}\\ \\mathrm J')}.`)} Hạt đi tới N nằm dưới M, lực điện sinh công ${nw(`${m('A_{MN}=+6{,}0\\cdot10^{-7}\\ \\mathrm J')}.`)} Bỏ qua trọng lực.<br><b>a)</b> cường độ điện trường<br><b>b)</b> thế năng ${m('W_N')}<br><b>c)</b> khoảng cách từ N tới bản trên<br><b>d)</b> đổi mốc sang bản dưới: thế năng tại N`,
-    nd: `${vE} hướng ${f(12)}; từ M lên mốc là ${ck}xuôi ${ck}ngược ${vE}; ${nw(`${m('W_N=W_M-')} ${f(12)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.d3(''), cot: 2 },
+    nd: `${vE} hướng ${f(12)}; từ M lên mốc là ${ck}xuôi ${ck}ngược ${vE}; ${nw(`${m('W_N=W_M-')} ${f(12)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 6, fig: H.d3(''), cot: 2 },
   { t: 'Dạng 4 · Khó · Từ nghỉ, chỉ có lực điện: công = độ tăng động năng, tìm ngược E',
     de: `Hạt bụi ${nw(m('q=+4{,}0\\ \\mathrm{nC}'))}, ${nw(m('m=2{,}0\\cdot10^{-8}\\ \\mathrm{kg}'))}, thả nghỉ tại M giữa hai bản phẳng nằm ngang (bản trên dương, bản dưới âm), M cách bản âm ${nw('5,0 cm')}. Hạt đi thẳng xuống theo đường sức, tới bản âm với tốc độ ${nw('10 m/s')}. Chỉ có lực điện.<br><b>a)</b> công của lực điện từ M tới bản âm<br><b>b)</b> cường độ điện trường<br><b>c)</b> tốc độ khi qua P, cách bản âm ${nw('2,0 cm')}`,
-    nd: `Từ nghỉ: ${nw(`${m('A=')} ${f(14)}`)}; ${nw(`${m('d_{MP}=')} ${f(12)}`)}, không phải 2,0 cm`, a: ['a', 'b', 'c'], gi: 6, fig: H.d4(''), cot: 3 },
+    nd: `Từ nghỉ: ${nw(`${m('A=')} ${f(14)}`)}; ${nw(`${m('d_{MP}=')} ${f(12)}`)}, không phải 2,0 cm`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4(''), cot: 3 },
 ];
 
 const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
