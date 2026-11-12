@@ -29,13 +29,13 @@ TY, BY, XL, XR = 380, 700, 130, 950
 AX, S0, S1, N1, N2, VX, VY, BX = 330, 580, 800, 520, 860, 690, 540, 540
 KT, KB = 465, 575
 
-def coil(d, cx, cy, name, a=1.0, w=210, h=70, lab=True):
+def coil(d, cx, cy, name, a=1.0, w=210, h=70, lab=True, ls=40):
     col = COL[name]
     card(d, (cx - w / 2, cy - h / 2, cx + w / 2, cy + h / 2), fill=A(mix(WHITE, col, 0.25), a), outline=A(col, a), r=16, w=5)
     for k in range(7):
         x = cx - w / 2 + 22 + k * (w - 44) / 6
         d.line([(x - 10, cy - h / 2 + 8), (x + 10, cy + h / 2 - 8)], fill=A(col, a), width=5)
-    if lab: text(d, (cx, cy - h / 2 - 34), "dây " + name, 40, mix(col, INK, 0.25), alpha=a)
+    if lab: text(d, (cx, cy - h / 2 - ls * 0.85), "dây " + name, ls, mix(col, INK, 0.25), alpha=a)
 
 def circuit(d, wire, closed, wa=1.0):
     """wire = 'A' / 'B' / None (o trong); wa = alpha cuon day (luc thay day)."""
@@ -123,7 +123,7 @@ def s_hook(img, d, t, sc):
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 800 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 700), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (26, y0 - 26, 1054, y0 + 772), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)   # phu kin the dung cu + bang (40..1040, 790..1550)
     pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 40, WHITE, alpha=a)
@@ -202,25 +202,25 @@ def s_dapan(img, d, t, sc):
     text(d, (W / 2, 308), lab, 42, WHITE, alpha=ka)
     for x0, (nm, u, i, r) in zip((40, 560), ROWS):
         cx = x0 + 240
-        card(d, (x0, 390, x0 + 480, 840), fill=WHITE, outline=COL[nm], w=5)
+        card(d, (x0, 390, x0 + 480, 890), fill=WHITE, outline=COL[nm], w=5)
         text(d, (cx, 432), "dây " + nm, 42, mix(COL[nm], INK, 0.25))
-        dial(d, cx, 690, 175, i * appear(t, 0.4, 0.5), vn(i, 2) + " A")
-        text(d, (cx, 800), "vôn kế " + vn(u) + " V", 40, PURPLE)
+        dial(d, cx, 730, 195, i * appear(t, 0.4, 0.5), vn(i, 2) + " A")
+        text(d, (cx, 848), "vôn kế " + vn(u) + " V", 40, PURPLE)
     kb = appear(t, 0.9, 0.4)
     if kb > 0:
-        card(d, (40, 880, 1040, 1260), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
+        card(d, (40, 930, 1040, 1450), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
         L = 620
         for j, (nm, u, i, r) in enumerate(ROWS):
-            yy = 960 + j * 110
+            yy = 1040 + j * 140
             text(d, (90, yy), nm, 46, COL[nm], alpha=kb)
             g = ease((t - 1.0 - 0.3 * j) / 0.5); wbar = L * i / ROWS[0][2] * g
-            if wbar > 2: d.rounded_rectangle([140, yy - 30, 140 + wbar, yy + 30], radius=12, fill=A(COL[nm], kb))
+            if wbar > 2: d.rounded_rectangle([140, yy - 38, 140 + wbar, yy + 38], radius=14, fill=A(COL[nm], kb))
             if g > 0.95: text(d, (140 + L * i / ROWS[0][2] + 30, yy), vn(i, 2) + " A", 44, COL[nm], anchor="lm", alpha=kb)
         k2 = appear(t, M[1] + 0.2, 0.4)
         if k2 > 0:
             xm = 140 + L / 2
-            for y in range(925, 1110, 22): d.line([(xm, y), (xm, y + 12)], fill=A(DGREEN, k2), width=4)
-            text(d, (W / 2, 1205), "0,15 = 0,30 : 2", 46, DGREEN, alpha=k2)
+            for y in range(985, 1220, 22): d.line([(xm, y), (xm, y + 12)], fill=A(DGREEN, k2), width=4)
+            text(d, (W / 2, 1370), "0,15 = 0,30 : 2", 50, DGREEN, alpha=k2)
 
 # ---------------- canh 4: Rut ra (dong manh / yeu -> R = U/I) ----------------
 def s_rutra(img, d, t, sc):
@@ -259,43 +259,53 @@ def s_bay(img, d, t, sc):
     a1 = appear(t, 0.2, 0.45) * (1 - k2)
     if a1 > 0:
         y0 = 600
-        card(d, (40, y0, 1040, y0 + 540), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
+        card(d, (40, y0, 1040, y0 + 860), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pw = tw(d, "BẪY", F(40)) + 52
         card(d, (W / 2 - pw / 2, y0 + 30, W / 2 + pw / 2, y0 + 94), fill=A(DRED, a1), r=32)
         text(d, (W / 2, y0 + 62), "BẪY", 40, WHITE, alpha=a1)
         q = "“Điện trở R = U · I”"
         ks = clamp((t - M[0] - 1.6) / 0.4)
-        f = F(50); lw = tw(d, q, f); yy = y0 + 190
-        text(d, (W / 2, yy), q, 50, mix(INK, MUTED, ks), alpha=a1)
+        f = F(56); lw = tw(d, q, f); yy = y0 + 250
+        text(d, (W / 2, yy), q, 56, mix(INK, MUTED, ks), alpha=a1)
         if ks > 0:
             d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(DRED, 0.85 * a1), width=6)
-            text(d, (W / 2 + lw / 2 + 40, yy), "✗", 50, DRED, alpha=a1 * ks)
+            text(d, (W / 2 + lw / 2 + 40, yy), "✗", 56, DRED, alpha=a1 * ks)
         kk = a1 * appear(t, M[0] + 2.0, 0.4)
-        card(d, (70, y0 + 280, 1010, y0 + 500), fill=A((236, 253, 243), kk), r=24)
-        text(d, (W / 2, y0 + 345), "✓ Phải chia: R = U : I", 44, DGREEN, alpha=kk)
-        text(d, (W / 2, y0 + 435), "cùng U = 3 V: I nhỏ hơn → R lớn hơn", 44, DGREEN, alpha=kk)
+        card(d, (70, y0 + 420, 1010, y0 + 800), fill=A((236, 253, 243), kk), r=24)
+        text(d, (W / 2, y0 + 520), "✓ Phải chia: R = U : I", 48, DGREEN, alpha=kk)
+        ctext(d, y0 + 670, "cùng U = 3 V:\nI nhỏ hơn → R lớn hơn", 46, DGREEN, alpha=kk)
     if k2 > 0:
         y0 = 600 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 75), "Chưa nói được", 46, NAVY, alpha=k2)
+        card(d, (40, y0, 1040, y0 + 780), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
+        text(d, (W / 2, y0 + 95), "Chưa nói được", 52, NAVY, alpha=k2)
         for j, (l1, l2) in enumerate((("• Số liệu minh hoạ,", "chưa đo thật"),
                                       ("• Bỏ qua điện trở", "ampe kế, dây nối"))):
             kk = k2 * appear(t, M[1] + 0.3 + 0.6 * j, 0.4)
-            text(d, (80, y0 + 190 + j * 160), l1, 44, INK, anchor="lm", alpha=kk)
-            text(d, (118, y0 + 250 + j * 160), l2, 44, INK, anchor="lm", alpha=kk)
+            text(d, (90, y0 + 300 + j * 300), l1, 50, INK, anchor="lm", alpha=kk)
+            text(d, (132, y0 + 375 + j * 300), l2, 50, INK, anchor="lm", alpha=kk)
 
 # ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
+T_CHOT = 4.0   # o chot hien sau ~3,5 s nghi (canh dai 7,2 s)
 def s_end(img, d, t, sc):
     M = sc["M"]
-    def hint(d, t, k):
-        kc = appear(t, M[0] + 0.6, 0.5) * k
-        coil(d, 540, 1080, "C", a=kc)
-        kh = appear(t, M[0] + 0.4 + 2.5, 0.5)
-        card(d, (110, 1250, 970, 1490), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1305, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        ctext(d, 1405, "Đừng chỉ nhìn ampe kế", 44, ORANGE, maxw=820, alpha=kh)
-    chot_hoi(d, t, sc, "Điện trở: R = U : I",
-             f"Dây C: đặt {vn(U_C)} V, ampe kế chỉ 0,15 A.\nCản trở như dây A hay dây B?", body=hint)
+    # Khong dung chot_hoi: o chot "R = U : I" chi hien SAU thoi gian nghi (hien cung cau hoi = noi san cach lam).
+    k1 = appear(t, M[0] + 0.1, 0.5)
+    if k1 > 0:
+        card(d, (40, 620, 1040, 1600), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+        pw = tw(d, "THỬ NGHĨ", F(38)) + 52
+        card(d, (W / 2 - pw / 2, 650, W / 2 + pw / 2, 714), fill=A(ORANGE, k1), r=32)
+        text(d, (W / 2, 682), "THỬ NGHĨ", 38, WHITE, alpha=k1)
+        ctext(d, 820, f"Dây C: đặt {vn(U_C)} V, ampe kế chỉ 0,15 A.\nCản trở như dây A hay dây B?", 46, INK, maxw=880,
+              alpha=appear(t, M[0] + 0.4, 0.5))
+        coil(d, 540, 1110, "C", a=appear(t, M[0] + 0.6, 0.5) * k1, w=380, h=120, ls=46)
+        kh = appear(t, M[0] + 2.9, 0.5)
+        card(d, (110, 1270, 970, 1500), fill=A((255, 247, 237), kh), r=24)
+        ctext(d, 1325, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
+        ctext(d, 1420, "Tự trả lời trước khi xem", 44, ORANGE, maxw=820, alpha=kh)
+    k0 = appear(t, M[0] + T_CHOT, 0.5)   # sau thoi gian nghi
+    if k0 > 0:
+        card(d, (60, 260, 1020, 560), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+        ctext(d, 410, "Điện trở: R = U : I", 52, GREEN, maxw=860, alpha=k0)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

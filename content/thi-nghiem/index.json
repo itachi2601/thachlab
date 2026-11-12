@@ -13,7 +13,7 @@
    "antoan.sai_so_nguon"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "vach"
   ]
@@ -31,7 +31,7 @@
    "antoan.vat_nong"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d"
   ]
@@ -103,7 +103,7 @@
    "baotoandl.phan_luc"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "v"
@@ -180,7 +180,7 @@
    "hooke.k_khong_phu_thuoc_luc"
   ],
   "mo_phong": "do_thi+2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "F",
    "k1",
@@ -218,7 +218,7 @@
    "co_nang.v_bang_can_2gh"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h"
   ]
@@ -273,7 +273,7 @@
    "cong_suat.cong_khong_doi_theo_thoi_gian"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "t"
   ]
@@ -328,7 +328,7 @@
    "ctbdd.gia_toc_khong_doi"
   ],
   "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "a",
    "s"
@@ -387,7 +387,7 @@
    "dong_hoc.so_sanh_d_s"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "r",
    "theta"
@@ -466,7 +466,7 @@
    "newton1.van_toc_khong_doi_tuc_thoi"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v_bia"
   ]
@@ -559,7 +559,7 @@
    "doig.sai_so_he_thong"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s",
    "tre_ht",
@@ -580,7 +580,7 @@
    "doig.cong_thuc_g"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s_max",
    "tre_ht"
@@ -599,7 +599,7 @@
    "doig.khung_hinh"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "fps",
    "s"
@@ -607,29 +607,29 @@
  },
  {
   "id": "tn-l10-do-toc-do-01",
-  "ten": "Đo tốc độ xe đồ chơi bằng thước và đồng hồ bấm giây, 5 lần bấm",
+  "ten": "Đo tốc độ trung bình của viên bi trên máng nghiêng bằng hai cổng quang (MODE A↔B)",
   "loai": "thi_nghiem",
   "muc_do": "co_ban",
   "lop": 10,
   "bai": "Bài 6. Thực hành: Đo tốc độ của vật chuyển động",
   "lesson_id": 51,
   "kien_thuc": [
+   "dotocdo.cong_quang",
+   "dotocdo.mode_a_b",
    "dotocdo.v_bang_s_chia_t",
    "dotocdo.sai_so_tuyet_doi",
-   "dotocdo.sai_so_tuong_doi",
-   "dotocdo.do_tre_phan_xa"
+   "dotocdo.sai_so_tuong_doi"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s",
-   "v_that",
-   "tre"
+   "a"
   ]
  },
  {
   "id": "tn-l10-do-toc-do-02",
-  "ten": "Đo tốc độ xe bằng cổng quang và tấm chắn 5,0 cm, 5 lần đo",
+  "ten": "Đo tốc độ tức thời của viên bi tại cổng quang F (MODE B, v = d/t)",
   "loai": "thi_nghiem",
   "muc_do": "trung_binh",
   "lop": 10,
@@ -637,15 +637,17 @@
   "lesson_id": 51,
   "kien_thuc": [
    "dotocdo.cong_quang",
+   "dotocdo.mode_b",
    "dotocdo.v_bang_d_chia_t",
-   "dotocdo.sai_so_tuong_doi",
-   "dotocdo.nguon_sai_so_lon_nhat"
+   "dotocdo.toc_do_tuc_thoi",
+   "dotocdo.tia_qua_tam",
+   "dotocdo.sai_so_tuong_doi"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
-   "v_that"
+   "lech"
   ]
  },
  {
@@ -662,7 +664,7 @@
    "dotocdo.do_phan_giai_dong_ho"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
    "v1",
@@ -682,7 +684,7 @@
    "dong_nang.ti_le_v_binh_phuong"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v"
   ]
@@ -740,7 +742,7 @@
    "dongluong.dinh_ly_xung_luong"
   ],
   "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v1",
    "e"
@@ -759,7 +761,7 @@
    "dongluong.phu_thuoc_m_va_v"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "h"
@@ -797,7 +799,7 @@
    "chuyendong_thang_deu.duong_thang"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v"
   ]
@@ -816,7 +818,7 @@
    "dichchuyen.quang_duong_khac_do_dich_chuyen"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v1",
    "t_dung",
@@ -858,7 +860,7 @@
    "giatoc.nhanh_dan_deu"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "sin_alpha",
    "v0"
@@ -878,7 +880,7 @@
    "giatoc.cham_dan_deu"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "a",
    "v0"
@@ -918,7 +920,7 @@
    "ma_sat.ap_luc_mat_nghieng"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "alpha",
    "mu",
@@ -939,7 +941,7 @@
    "do_luong.sai_so_he_thong"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m1",
    "m2",
@@ -980,7 +982,7 @@
    "hieu_suat.hao_phi_nhiet"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "H"
   ]
@@ -1055,7 +1057,7 @@
    "huong_tam.a_omega2_r"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "r",
    "n"
@@ -1074,7 +1076,7 @@
    "huong_tam.vai_tro_luc_cang"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "M"
   ]
@@ -1092,7 +1094,7 @@
    "huong_tam.bay_theo_tiep_tuyen"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v",
    "goc_ho"
@@ -1111,7 +1113,7 @@
    "khoi_luong_rieng.dac_trung_cho_chat"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "V"
   ]
@@ -1129,7 +1131,7 @@
    "ap_suat.ap_luc_vuong_goc"
   ],
   "mo_phong": "so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "F",
    "S_nhon"
@@ -1205,7 +1207,7 @@
    "lamquen.chuyen_dong_nhiet"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T"
   ]
@@ -1224,7 +1226,7 @@
    "lamquen.sai_so_phep_do"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h",
    "k_can"
@@ -1264,7 +1266,7 @@
    "luc_can.nguoc_chieu_chuyen_dong"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h",
    "S"
@@ -1435,7 +1437,7 @@
    "ngau_luc.quay_quanh_trong_tam"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "F",
    "d"
@@ -1533,7 +1535,7 @@
    "chuyendongnem.thoi_gian_bay"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h",
    "v0"
@@ -1552,7 +1554,7 @@
    "chuyendongnem.thoi_gian_bay"
   ],
   "mo_phong": "2d_dong_hoc+do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h"
   ]
@@ -1632,7 +1634,7 @@
    "newton3.m1a1_bang_m2a2"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m_A",
    "m_B",
@@ -1696,7 +1698,7 @@
    "roitudo.moi_vat_nhu_nhau"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h",
    "v_gh"
@@ -1716,7 +1718,7 @@
    "roitudo.nhanh_dan_deu"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T"
   ]
@@ -1735,7 +1737,7 @@
    "do_luong.sai_so_he_thong"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s",
    "tau"
@@ -1756,7 +1758,7 @@
    "saiso.ngau_nhien"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "l",
    "do_lech_bam_tay"
@@ -1776,7 +1778,7 @@
    "saiso.so_sanh_do_chinh_xac"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
    "dcnn"
@@ -1815,7 +1817,7 @@
    "tocdo.sai_so_do_thoi_gian"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s",
    "v_that"
@@ -1854,7 +1856,7 @@
    "vantoc.cong_van_toc_vuong_goc"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v_but",
    "v_giay"
@@ -1917,7 +1919,7 @@
    "thuchanhdl.chinh_bang_ngang"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h",
    "x"
@@ -1959,7 +1961,7 @@
    "thuchanhthl.quy_tac_momen_hai_luc"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "dA",
    "P"
@@ -2015,7 +2017,7 @@
    "phantichluc.mat_phang_nghieng"
   ],
   "mo_phong": "so_do_luc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "alpha"
   ]
@@ -2070,7 +2072,7 @@
    "trondeu.radian"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "r",
    "s"
@@ -2089,7 +2091,7 @@
    "trondeu.toc_do_goc"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T0",
    "r"
@@ -2143,7 +2145,7 @@
    "trongluc.p_bang_mg"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m"
   ]
@@ -2161,7 +2163,7 @@
    "lucang.day_nhe_cung_t"
   ],
   "mo_phong": "so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "beta"
   ]
@@ -2199,7 +2201,7 @@
    "do_luong.sai_so_ngau_nhien"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "L",
    "A"
@@ -2219,7 +2221,7 @@
    "daodong.chu_ki_tan_so"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T",
@@ -2239,7 +2241,7 @@
    "daodong.thoi_gian_giua_hai_vi_tri"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T",
    "A"
@@ -2259,7 +2261,7 @@
    "do_luong.sai_so_tuong_doi"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A"
   ]
@@ -2277,7 +2279,7 @@
    "daodong.bao_toan_co_nang"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "l",
    "α0"
@@ -2376,7 +2378,7 @@
    "conang.bao_toan"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "x"
@@ -2395,7 +2397,7 @@
    "conang.bao_toan"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "H",
    "h"
@@ -2435,7 +2437,7 @@
    "sai_so.sai_so_tuong_doi"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "q",
    "r"
@@ -2494,7 +2496,7 @@
    "cuongdodongdien.don_vi_mah"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "I",
    "dt"
@@ -2533,7 +2535,7 @@
    "daodong.vi_tri_can_bang"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T"
@@ -2553,7 +2555,7 @@
    "daodong.chu_ki"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T",
@@ -2573,7 +2575,7 @@
    "daodong.hinh_chieu_tron_deu"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "omega",
@@ -2594,7 +2596,7 @@
    "dienthe.giam_theo_duong_suc"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U",
    "d",
@@ -2614,7 +2616,7 @@
    "dienthe.doi_dau_u"
   ],
   "mo_phong": "bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "E_pin"
   ]
@@ -2690,7 +2692,7 @@
    "dientro.phu_thuoc_nhiet_do"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "t"
   ]
@@ -2728,7 +2730,7 @@
    "dien_truong.khong_phu_thuoc_q_thu"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "r",
    "q"
@@ -2747,7 +2749,7 @@
    "dien_truong.dien_pho"
   ],
   "mo_phong": "so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "Q",
    "r"
@@ -2766,7 +2768,7 @@
    "dientruongdeu.duong_suc"
   ],
   "mo_phong": "so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
    "U"
@@ -2785,7 +2787,7 @@
    "dientruongdeu.don_vi"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U",
    "d",
@@ -2845,7 +2847,7 @@
    "nguondien.r_tang_khi_pin_cu"
   ],
   "mo_phong": "do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "E",
    "r",
@@ -3063,7 +3065,7 @@
    "daodong.bien_do"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T"
@@ -3082,7 +3084,7 @@
    "daodong.li_do"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A"
   ]
@@ -3161,7 +3163,7 @@
    "congsuatdien.r_tu_nhan"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U"
   ]
@@ -3180,7 +3182,7 @@
    "congsuatnguon.ei_bang_ui_cong_i2r"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "R",
    "r"
@@ -3199,7 +3201,7 @@
    "nguondien.dinh_nghia"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "C",
    "U0",
@@ -3220,7 +3222,7 @@
    "nguondien.ohm_toan_mach"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "E",
    "r",
@@ -3454,7 +3456,7 @@
    "daodong.cong_huong"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "b"
@@ -3473,7 +3475,7 @@
    "daodong.luc_can"
   ],
   "mo_phong": "do_thi+2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "beta"
   ]
@@ -3491,7 +3493,7 @@
    "daodong.tat_dan"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A0"
   ]
@@ -3510,7 +3512,7 @@
    "thenangdien.cong_luc_dien"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U",
    "D",
@@ -3592,7 +3594,7 @@
    "do_luong.sai_so_tuong_doi"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U"
   ]
@@ -3631,7 +3633,7 @@
    "daodong.he_thuc_doc_lap"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T",
@@ -3651,7 +3653,7 @@
    "daodong.do_thi_van_toc"
   ],
   "mo_phong": "do_thi+2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "A",
    "T",
@@ -3671,7 +3673,7 @@
    "antoanpx.suat_lieu"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "r"
   ]
@@ -3746,7 +3748,7 @@
    "apsuatdongnang.ap_suat_do_va_cham"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "N_hat",
    "f_lac"
@@ -3765,7 +3767,7 @@
    "apsuatdongnang.dong_nang_trung_binh_3_2_kt"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "t_nuoc"
   ]
@@ -3802,7 +3804,7 @@
    "boyle.dinh_luat_boyle"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "V"
   ]
@@ -3879,7 +3881,7 @@
    "camungdt.faraday_toc_do"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "v",
    "cuc"
@@ -3899,7 +3901,7 @@
    "camungdt.bao_toan_nang_luong"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d_ong"
   ]
@@ -3917,7 +3919,7 @@
    "camungdt.goc_phap_tuyen"
   ],
   "mo_phong": "so_do_luc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "B",
    "S",
@@ -3945,6 +3947,25 @@
   ]
  },
  {
+  "id": "tn-l12-camungdt-05",
+  "ten": "Thanh kim loại trượt trên hai ray trong từ trường đều",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Hiện tượng cảm ứng điện từ",
+  "lesson_id": 13,
+  "kien_thuc": [
+   "camungdt.e_bang_blv",
+   "camungdt.dinh_luat_lenz",
+   "camungdt.bao_toan_nang_luong"
+  ],
+  "mo_phong": "2d_dong_hoc+so_do_luc+bang_so_lieu",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "v"
+  ]
+ },
+ {
   "id": "tn-l12-chuyenthe-01",
   "ten": "Đun nước đá, mỗi phút ghi nhiệt độ một lần",
   "loai": "thi_nghiem",
@@ -3957,7 +3978,7 @@
    "chuyenthe.nhiet_do_khong_doi_khi_chuyen_the"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "P",
@@ -4036,7 +4057,7 @@
    "dttruong.dien_truong_bien_thien"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "C",
@@ -4083,6 +4104,25 @@
   ]
  },
  {
+  "id": "tn-l12-dttruong-05",
+  "ten": "Mô hình sóng điện từ: E, B và phương truyền tại một điểm",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "lesson_id": 127,
+  "kien_thuc": [
+   "dttruong.song_dien_tu_tinh_chat",
+   "dttruong.song_ngang",
+   "dttruong.lambda_bang_c_chia_f"
+  ],
+  "mo_phong": "2d_dong_hoc+do_thi",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "f"
+  ]
+ },
+ {
   "id": "tn-l12-hatnhan-01",
   "ten": "Mô hình \"bắn bi mù\": tìm vật chắn bằng chùm hạt bị lệch",
   "loai": "thi_nghiem",
@@ -4095,7 +4135,7 @@
    "hatnhan.mo_hinh_rutherford"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d_bia",
    "b",
@@ -4115,7 +4155,7 @@
    "hatnhan.don_vi_khoi_luong_u"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "a",
    "b",
@@ -4137,7 +4177,7 @@
    "hatnhan.cau_tao"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "Z",
    "E",
@@ -4158,7 +4198,7 @@
    "luctu.cam_ung_tu"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "I",
    "alpha"
@@ -4228,6 +4268,47 @@
   ]
  },
  {
+  "id": "tn-l12-luctu-05",
+  "ten": "Chùm electron trong từ trường đều: quỹ đạo khi đổi tốc độ và đổi B",
+  "loai": "vi_du",
+  "muc_do": "nang_cao",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "kien_thuc": [
+   "luctu.luc_lorentz",
+   "luctu.quy_dao_tron_hat_mang_dien",
+   "luctu.luc_tu_khong_sinh_cong"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "v",
+   "B",
+   "alpha"
+  ]
+ },
+ {
+  "id": "tn-l12-luctu-06",
+  "ten": "Hai lá nhôm song song mang dòng điện",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "kien_thuc": [
+   "luctu.hai_dong_song_song",
+   "luctu.tu_truong_day_thang",
+   "newton3.cung_luc"
+  ],
+  "mo_phong": "so_do_luc+2d_dong_hoc",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "I1",
+   "I2"
+  ]
+ },
+ {
   "id": "tn-l12-mayphatdien-01",
   "ten": "Máy phát mini quay bằng động cơ: đo tần số theo tốc độ quay để kiểm f = np",
   "loai": "thi_nghiem",
@@ -4240,7 +4321,7 @@
    "mayphatdien.cam_ung_dien_tu"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "n",
    "p"
@@ -4279,7 +4360,7 @@
    "maybienap.loi_ghep_la"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "N2"
   ]
@@ -4317,7 +4398,7 @@
    "nangluonglienket.can_bang_luc_day_va_luc_hut"
   ],
   "mo_phong": "so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d_bat_dau"
   ]
@@ -4424,6 +4505,25 @@
   ]
  },
  {
+  "id": "tn-l12-noinang-04",
+  "ten": "Xilanh cách nhiệt: nén khí, cho khí dãn, và hai ngăn có vách ngăn",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "kien_thuc": [
+   "noinang.dinh_luat_1",
+   "noinang.quy_uoc_dau_a_q",
+   "noinang.cach_nhiet_q_bang_0"
+  ],
+  "mo_phong": "2d_dong_hoc+bang_so_lieu",
+  "co_video": true,
+  "tham_so_dieu_chinh": [
+   "V2"
+  ]
+ },
+ {
   "id": "tn-l12-phanbach-01",
   "ten": "Bàn ghim mô hình phản ứng dây chuyền: đổi khoảng cách để đổi hệ số nhân",
   "loai": "thi_nghiem",
@@ -4436,7 +4536,7 @@
    "phanhach.day_chuyen"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
    "h"
@@ -4531,7 +4631,7 @@
    "phongxa.do_phong_xa"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "T",
    "H0"
@@ -4569,7 +4669,7 @@
    "pttrangthai.ap_suat_tang_theo_nhiet_do"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "t_nuoc",
    "d_ban_dau"
@@ -4588,7 +4688,7 @@
    "pttrangthai.ap_suat_ti_le_thuan_nhiet_do_tuyet_doi"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "p0",
    "t_max",
@@ -4649,7 +4749,7 @@
    "tdhphantu.toc_do_phan_tu_va_toc_do_lan"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "L",
    "T"
@@ -4707,7 +4807,7 @@
    "thangnhietdo.chieu_truyen_nhiet_nang"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m1",
    "t1",
@@ -4768,7 +4868,7 @@
    "thangnhietdo.hong_ngoai_do_be_mat"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "t_nuoc",
    "d",
@@ -4789,7 +4889,7 @@
    "thuchanh.doc_do_thi_t_tau"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "P",
@@ -4812,7 +4912,7 @@
    "thuchanh.doc_do_thi_t_tau"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "P"
@@ -4832,7 +4932,7 @@
    "thuchanh.giam_sai_so_doi_chung"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U",
    "I",
@@ -4891,7 +4991,7 @@
    "thuchanhtu.sai_so"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "theta"
   ]
@@ -4909,7 +5009,7 @@
    "thuchanhtu.dao_chieu_dong"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "I",
    "chieu_I"
@@ -4987,7 +5087,7 @@
    "tutruong.tu_truong_giam_theo_khoang_cach"
   ],
   "mo_phong": "do_thi+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "d",
    "m"
@@ -5028,7 +5128,7 @@
    "udcamung.dong_xoay_chieu_can_thiet"
   ],
   "mo_phong": "so_do_luc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "M",
    "I0",
@@ -5070,7 +5170,7 @@
    "udcamung.loi_may_bien_ap"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "n",
    "B"
@@ -5232,7 +5332,7 @@
    "xoaychieu.nhiet_i_binh_phuong"
   ],
   "mo_phong": "do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U"
   ]
@@ -5252,7 +5352,7 @@
    "conang.sai_so_do"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "h"
   ]
@@ -5308,7 +5408,7 @@
    "congco.sai_so_do"
   ],
   "mo_phong": "bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "s"
   ]
@@ -5366,7 +5466,7 @@
    "congsuat.sai_so_do"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U"
   ]
@@ -5404,7 +5504,7 @@
    "congsuat.so_dinh_muc"
   ],
   "mo_phong": "so_do_luc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U",
    "cach_mac"
@@ -5464,7 +5564,7 @@
    "doan_mach.mang_dien_gia_dinh"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "cach_mac"
   ]
@@ -5482,7 +5582,7 @@
    "dongnang.phu_thuoc_m_v"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m",
    "h"
@@ -5502,7 +5602,7 @@
    "dongnang.sai_so_do"
   ],
   "mo_phong": "bang_so_lieu+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "m"
   ]
@@ -5539,7 +5639,7 @@
    "amthanh.do_to_bien_do"
   ],
   "mo_phong": "2d_dong_hoc+do_thi",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "L",
    "A"
@@ -5743,7 +5843,7 @@
    "ohm.ampe_von_ke"
   ],
   "mo_phong": "2d_dong_hoc+bang_so_lieu",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "U"
   ]
@@ -5839,7 +5939,7 @@
    "pxtp.chieu_truyen"
   ],
   "mo_phong": "2d_dong_hoc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "i"
   ]
@@ -5954,7 +6054,7 @@
    "tieucu.d_bang_dp_bang_2f"
   ],
   "mo_phong": "2d_dong_hoc+so_do_luc",
-  "co_video": false,
+  "co_video": true,
   "tham_so_dieu_chinh": [
    "f",
    "sai_L"

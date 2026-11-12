@@ -1,0 +1,209 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-05",
+  "ten": "Chùm electron trong từ trường đều: quỹ đạo khi đổi tốc độ và đổi B",
+  "loai": "vi_du",
+  "muc_do": "nang_cao",
+  "kien_thuc": [
+    "luctu.luc_lorentz",
+    "luctu.quy_dao_tron_hat_mang_dien",
+    "luctu.luc_tu_khong_sinh_cong"
+  ],
+  "muc_tieu": "Thấy lực từ lên hạt mang điện chuyển động vuông góc đường sức làm hạt chuyển động tròn đều: tốc độ không đổi, bán kính r = mv/(|q|B) tỉ lệ với v, chu kì T = 2πm/(|q|B) không phụ thuộc v; hạt đứng yên hoặc bay dọc đường sức không chịu lực từ.",
+  "gia_thuyet": [
+    "Một bạn cho rằng: electron bay nhanh hơn thì đi hết một vòng tròn trong thời gian ngắn hơn."
+  ],
+  "du_doan_neu_dung": [
+    "Tăng tốc độ electron từ 1·10⁷ lên 3·10⁷ m/s thì chu kì quay đo được phải giảm còn khoảng một phần ba."
+  ],
+  "khong_chung_minh": [
+    "Chỉ thấy vệt sáng của cả chùm, không thấy từng electron; tốc độ v lấy từ hiệu điện thế tăng tốc, không đo trực tiếp.",
+    "Không cho biết lực từ lên hạt khi v không vuông góc B (quỹ đạo xoắn ốc — ngoài chương trình)."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Bóng thuỷ tinh chứa khí loãng có súng bắn electron",
+      "so_luong": 1,
+      "ghi_chu": "electron va khí làm vệt quỹ đạo phát sáng"
+    },
+    {
+      "ten": "Cặp cuộn dây tạo từ trường đều",
+      "so_luong": 1,
+      "ghi_chu": "B = 2·10⁻³ T, có thể tăng lên 4·10⁻³ T; đường sức vuông góc mặt phẳng quỹ đạo"
+    },
+    {
+      "ten": "Nguồn tăng tốc electron",
+      "so_luong": 1,
+      "ghi_chu": "đặt tốc độ 1·10⁷; 2·10⁷; 3·10⁷ m/s"
+    },
+    {
+      "ten": "Thước chia mm gắn trong bóng",
+      "so_luong": 1,
+      "ghi_chu": "đọc đường kính vòng sáng"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Chưa bật cuộn dây: bắn chùm electron, quan sát vệt sáng.",
+      "Bật từ trường B = 2·10⁻³ T vuông góc với chùm; đặt v = 1·10⁷ m/s, đọc bán kính vòng sáng.",
+      "Tăng v lên 2·10⁷ rồi 3·10⁷ m/s, mỗi lần đọc bán kính; tính chu kì T = 2πr/v.",
+      "Giữ v = 2·10⁷ m/s, tăng B lên 4·10⁻³ T, đọc bán kính.",
+      "Xoay súng để chùm bay dọc đường sức, quan sát vệt sáng.",
+      "Coi rằng từ trường đều trong vùng quỹ đạo; bỏ qua va chạm với khí loãng, trọng lực và lực điện giữa các electron."
+    ],
+    "quan_sat": [
+      "Chưa có từ trường: vệt sáng thẳng.",
+      "Có B vuông góc chùm: vệt sáng thành đường tròn; v = 1·10⁷; 2·10⁷; 3·10⁷ m/s cho r ≈ 2,8; 5,7; 8,5 cm.",
+      "Tăng B gấp đôi (v = 2·10⁷ m/s): r còn khoảng 2,8 cm.",
+      "Chùm bay dọc đường sức: vệt sáng vẫn thẳng."
+    ],
+    "rut_ra": [
+      "Lực từ f = |q|vB luôn vuông góc vận tốc, đóng vai lực hướng tâm: |q|vB = mv²/r cho r = mv/(|q|B).",
+      "r tăng gấp ba khi v tăng gấp ba, nhưng T = 2πr/v ≈ 1,8·10⁻⁸ s ở cả ba lần: kết quả bác bỏ giả thuyết, T không phụ thuộc v.",
+      "Lực từ không sinh công nên tốc độ electron trên vòng tròn không đổi, chỉ hướng bay đổi.",
+      "Bay dọc đường sức (α = 0): f = 0, chùm đi thẳng. Hạt đứng yên cũng không chịu lực từ.",
+      "Electron mang điện âm: lực ngược chiều ngón cái của quy tắc bàn tay trái."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "v",
+      "ten": "Tốc độ electron",
+      "don_vi": "m/s",
+      "kieu": "dieu_chinh",
+      "min": 5000000,
+      "max": 30000000,
+      "mac_dinh": 20000000,
+      "buoc": 5000000
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ",
+      "don_vi": "T",
+      "kieu": "dieu_chinh",
+      "min": 0.001,
+      "max": 0.004,
+      "mac_dinh": 0.002,
+      "buoc": 0.001
+    },
+    {
+      "ky_hieu": "alpha",
+      "ten": "Góc giữa vận tốc và đường sức",
+      "don_vi": "độ",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 90,
+      "mac_dinh": 90,
+      "buoc": 90
+    },
+    {
+      "ky_hieu": "m",
+      "ten": "Khối lượng electron",
+      "don_vi": "kg",
+      "kieu": "co_dinh",
+      "gia_tri": 9.1e-31
+    },
+    {
+      "ky_hieu": "q",
+      "ten": "Độ lớn điện tích electron",
+      "don_vi": "C",
+      "kieu": "co_dinh",
+      "gia_tri": 1.6e-19
+    },
+    {
+      "ky_hieu": "r",
+      "ten": "Bán kính quỹ đạo",
+      "don_vi": "cm",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Chu kì quay",
+      "don_vi": "s",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "f",
+      "ten": "Lực từ lên electron",
+      "don_vi": "N",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "f = |q|·v·B·sin(alpha), phương vuông góc cả v và B",
+      "alpha = 90°: |q|vB = m·v²/r nên r = m·v/(|q|·B)",
+      "T = 2π·r/v = 2π·m/(|q|·B)",
+      "f vuông góc v nên công của lực từ bằng 0: tốc độ không đổi"
+    ],
+    "gia_thiet": [
+      "từ trường đều trong vùng quỹ đạo",
+      "bỏ qua trọng lực, va chạm với khí loãng, lực điện giữa các electron",
+      "bỏ qua hiệu ứng tương đối tính (v ≤ 0,1c)"
+    ],
+    "ghi_chu": "Số liệu khớp ví dụ trong bài: v = 2·10⁷ m/s, B = 2·10⁻³ T cho r ≈ 5,7 cm, T ≈ 1,8·10⁻⁸ s."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "v (10⁷ m/s)",
+      "B (10⁻³ T)",
+      "r (cm)",
+      "T (10⁻⁸ s)"
+    ],
+    "hang": [
+      [
+        1,
+        2,
+        2.8,
+        1.8
+      ],
+      [
+        2,
+        2,
+        5.7,
+        1.8
+      ],
+      [
+        3,
+        2,
+        8.5,
+        1.8
+      ],
+      [
+        2,
+        4,
+        2.8,
+        0.9
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ r = mv/(|q|B), T = 2πm/(|q|B) với m = 9,1·10⁻³¹ kg, |q| = 1,6·10⁻¹⁹ C, làm tròn. Chùm bay dọc đường sức: không có vòng tròn."
+  },
+  "ket_qua_ky_vong": "Vòng tròn rộng ra tỉ lệ với v, hẹp lại khi B tăng; chu kì giữ nguyên ≈ 1,8·10⁻⁸ s khi đổi v; chùm dọc đường sức đi thẳng.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng lực từ làm electron nhanh dần hoặc chậm dần (thật ra lực vuông góc vận tốc, không sinh công, tốc độ không đổi).",
+    "Cho rằng hạt bay nhanh hơn thì quay một vòng nhanh hơn (thật ra T = 2πm/(|q|B) không chứa v).",
+    "Cho rằng hạt đứng yên hoặc bay dọc đường sức vẫn chịu lực từ.",
+    "Dùng chiều ngón cái cho electron (điện tích âm: lực ngược chiều ngón cái).",
+    "Cho rằng vectơ gia tốc không đổi vì độ lớn không đổi."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Nhìn dọc đường sức (⊗ B); thanh trượt v, B, nút góc 0°/90°; vẽ quỹ đạo, vectơ v và f, đồng hồ đếm thời gian một vòng.",
+    "diem_nhan": "Kéo v tăng: vòng to ra nhưng đồng hồ một vòng vẫn đứng ở 1,8·10⁻⁸ s."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-05-20261112.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-05-20261112.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "chùm electron trong từ trường đều",
+    "nhin_vao": "Electron bay nhanh hơn thì một vòng mất bao lâu?",
+    "giay": 49,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-12"
+  }
+}

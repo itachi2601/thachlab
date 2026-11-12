@@ -1,0 +1,195 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 10. Lực từ. Cảm ứng từ",
+  "lesson_id": 11,
+  "nguon_trong_bai": "content/lesson-samples/l12-luc-tu-cam-ung-tu/theory.html",
+  "id": "tn-l12-luctu-06",
+  "ten": "Hai lá nhôm song song mang dòng điện",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "luctu.hai_dong_song_song",
+    "luctu.tu_truong_day_thang",
+    "newton3.cung_luc"
+  ],
+  "muc_tieu": "Thấy hai dòng điện song song tương tác: cùng chiều thì hút, ngược chiều thì đẩy; mỗi dây nằm trong từ trường của dây kia nên chịu lực từ; hai lực luôn cùng độ lớn dù hai dòng khác nhau.",
+  "gia_thuyet": [
+    "Một bạn cho rằng: giống hai điện tích cùng dấu, hai dòng điện cùng chiều sẽ đẩy nhau."
+  ],
+  "du_doan_neu_dung": [
+    "Cho hai dòng cùng chiều thì hai lá nhôm phải tách xa nhau ra."
+  ],
+  "khong_chung_minh": [
+    "Không đo được độ lớn lực, chỉ thấy chiều lệch; muốn đo cần cân hoặc lực kế.",
+    "Không cho biết lực khi hai dây không song song."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Hai lá nhôm mỏng dài 50 cm treo thẳng đứng, song song, cách nhau 1,0 cm",
+      "so_luong": 2
+    },
+    {
+      "ten": "Nguồn một chiều chịu được 10 A, khoá, ampe kế",
+      "so_luong": 1
+    },
+    {
+      "ten": "Dây nối để đổi chiều dòng trong một lá",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Cho dòng chỉ qua lá 1 (I₁ = 5 A, lá 2 không có dòng): quan sát.",
+      "Nối để hai lá có dòng 5 A cùng chiều (cùng hướng lên): quan sát.",
+      "Đổi chiều dòng trong lá 2 (ngược chiều nhau): quan sát.",
+      "Cho I₁ = 10 A, I₂ = 5 A cùng chiều: so độ lệch của hai lá.",
+      "Coi rằng mỗi lá như một dây thẳng dài; bỏ qua từ trường Trái Đất; khoảng cách 1,0 cm coi như không đổi khi lá lệch ít."
+    ],
+    "quan_sat": [
+      "Chỉ một lá có dòng: hai lá đứng yên.",
+      "Hai dòng cùng chiều: hai lá cong vào sát nhau.",
+      "Hai dòng ngược chiều: hai lá tách ra xa nhau.",
+      "I₁ = 10 A, I₂ = 5 A: hai lá lệch vào nhau như nhau."
+    ],
+    "rut_ra": [
+      "Kết quả bác bỏ giả thuyết: dòng cùng chiều thì HÚT, ngược chiều thì ĐẨY — ngược với hai điện tích.",
+      "Cơ chế: dây 1 tạo từ trường B₁ = 2·10⁻⁷·I₁/r tại dây 2; dây 2 mang dòng I₂ nằm trong B₁ nên chịu lực F = B₁·I₂·ℓ (quy tắc bàn tay trái cho chiều về phía dây 1).",
+      "Lực dây 1 lên dây 2 và lực dây 2 lên dây 1 là cặp lực – phản lực, cùng độ lớn dù I₁ ≠ I₂.",
+      "Một dây không có dòng thì không chịu lực từ của dây kia, và cũng không tạo từ trường."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "I1",
+      "ten": "Dòng điện lá 1",
+      "don_vi": "A",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 10,
+      "mac_dinh": 5,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "I2",
+      "ten": "Dòng điện lá 2 (âm nếu ngược chiều)",
+      "don_vi": "A",
+      "kieu": "dieu_chinh",
+      "min": -10,
+      "max": 10,
+      "mac_dinh": 5,
+      "buoc": 1
+    },
+    {
+      "ky_hieu": "r",
+      "ten": "Khoảng cách hai lá",
+      "don_vi": "m",
+      "kieu": "co_dinh",
+      "gia_tri": 0.01
+    },
+    {
+      "ky_hieu": "l",
+      "ten": "Chiều dài lá",
+      "don_vi": "m",
+      "kieu": "co_dinh",
+      "gia_tri": 0.5
+    },
+    {
+      "ky_hieu": "B1",
+      "ten": "Cảm ứng từ của dây 1 tại dây 2",
+      "don_vi": "T",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "F",
+      "ten": "Lực từ lên mỗi lá",
+      "don_vi": "N",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "B₁ = 2·10⁻⁷·I₁/r tại vị trí dây 2",
+      "F = B₁·I₂·ℓ = 2·10⁻⁷·I₁·I₂·ℓ/r",
+      "Cùng chiều: hút; ngược chiều: đẩy",
+      "F₁₂ = F₂₁ (định luật III Newton)"
+    ],
+    "gia_thiet": [
+      "mỗi lá coi như dây thẳng dài",
+      "bỏ qua từ trường Trái Đất",
+      "khoảng cách coi như không đổi khi lá lệch ít"
+    ],
+    "ghi_chu": "Bài Lực từ đã có B = 2·10⁻⁷·I/r cho dây thẳng dài và đoạn 'Hai dòng điện song song' (commit edc27281d)."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "I₁ (A)",
+      "I₂ (A)",
+      "Chiều",
+      "B₁ tại dây 2 (10⁻⁴ T)",
+      "F mỗi lá (10⁻⁴ N)",
+      "Hiện tượng"
+    ],
+    "hang": [
+      [
+        5,
+        0,
+        "—",
+        1.0,
+        0,
+        "đứng yên"
+      ],
+      [
+        5,
+        5,
+        "cùng chiều",
+        1.0,
+        2.5,
+        "hút"
+      ],
+      [
+        5,
+        5,
+        "ngược chiều",
+        1.0,
+        2.5,
+        "đẩy"
+      ],
+      [
+        10,
+        5,
+        "cùng chiều",
+        2.0,
+        5.0,
+        "hút, hai lá lệch như nhau"
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ F = 2·10⁻⁷·I₁·I₂·ℓ/r với r = 1,0 cm, ℓ = 0,50 m. Ca tự suy cho câu chốt clip: I₁ = 4 A, I₂ = 8 A ngược chiều → B₁ = 0,8·10⁻⁴ T, F ≈ 3,2·10⁻⁴ N mỗi lá, đẩy."
+  },
+  "ket_qua_ky_vong": "Cùng chiều hút, ngược chiều đẩy; một dây không có dòng thì không có lực; hai lực trên hai lá luôn bằng nhau.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng hai dòng cùng chiều đẩy nhau (suy từ 'cùng dấu đẩy nhau' của điện tích).",
+    "Cho rằng dây có dòng lớn hơn chịu lực lớn hơn (thật ra hai lực là cặp lực – phản lực, bằng nhau).",
+    "Cho rằng dây không có dòng vẫn bị dây kia hút như sắt bị nam châm hút (nhôm không bị nam châm hút).",
+    "Dùng quy tắc nắm tay phải để tìm chiều lực (đó là chiều B; chiều lực dùng bàn tay trái)."
+  ],
+  "an_toan": [
+    "Dòng 5–10 A làm lá nhôm nóng nhanh: chỉ đóng khoá 2–3 giây mỗi lần.",
+    "Nguồn dòng lớn: không chạm hai cực, có cầu chì."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "so_do_luc+2d_dong_hoc",
+    "y_tuong": "Hai dây thẳng đứng, nút chiều I₂; vẽ đường sức tròn của dây 1 quanh dây 2, mũi tên B₁, I₂ và lực F theo bàn tay trái; dây cong theo F.",
+    "diem_nhan": "Đổi I₁ gấp đôi: cả hai mũi tên lực cùng dài ra như nhau."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261112.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261112.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "hai lá nhôm mang dòng điện",
+    "nhin_vao": "Hai dòng cùng chiều thì hai lá làm gì?",
+    "giay": 49,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-12"
+  }
+}

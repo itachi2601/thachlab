@@ -130,20 +130,20 @@ def s_moment(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; a = appear(t, 0.1)
     card(d, (60, 270, 1020, 900), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
-    s = 0.92; c = (W / 2, 540)
+    s = 0.92; c = (W / 2, 560)                            # ha thuoc 20 px: dau mui ten F khong cham nhan "Moi luc F"
     k = ease((t - M[1] - 0.2) / 0.8)                          # day gan nhau hon: d 0,3 -> 0,15 m
     xf = lerp(XF, XF / 2, k)
     kF = appear(t, 1.4, 0.4)                                # hang 2 (F = 1,0 N) hien: vecto dai gap doi hang 1 (0,5 N)
     alen = lerp(ALEN / 2, ALEN, kF)
-    text(d, (W / 2, 318), "Mỗi lực F = 0,5 N" if kF < 0.5 else "Mỗi lực F = 1,0 N", 44, RED)
+    text(d, (W / 2, 306), "Mỗi lực F = 0,5 N" if kF < 0.5 else "Mỗi lực F = 1,0 N", 42, RED)
     ruler(img, d, c[0], c[1], 0, s); forces(d, c[0], c[1], 0, s, xf=xf, alen=alen)
     for x in (-xf, xf):                                     # gia cua hai luc (net dut)
         X = c[0] + x * s
-        for yy in range(360, 770, 30): d.line([(X, yy), (X, yy + 16)], fill=GRAY, width=3)
-    yb = 800; xl, xr = c[0] - xf * s, c[0] + xf * s
+        for yy in range(380, 790, 30): d.line([(X, yy), (X, yy + 16)], fill=GRAY, width=3)
+    yb = 818; xl, xr = c[0] - xf * s, c[0] + xf * s
     d.line([(xl, yb), (xr, yb)], fill=NAVY, width=4)
     for X in (xl, xr): d.line([(X, yb - 16), (X, yb + 16)], fill=NAVY, width=4)
-    text(d, (W / 2, yb + 50), "d = 0,3 m (30 cm)" if k < 0.5 else "d = 0,15 m (15 cm)", 44, NAVY)
+    text(d, (W / 2, yb + 44), "d = 0,3 m (30 cm)" if k < 0.5 else "d = 0,15 m (15 cm)", 44, NAVY)
     card(d, (300, 925, 780, 1025), fill=A((239, 246, 255), a), r=26)
     text(d, (W / 2, 975), "M = F · d", 54, BLUE, alpha=a)
     card(d, (60, 1050, 1020, 1490), fill=WHITE, outline=NAVY, w=4)
@@ -151,7 +151,7 @@ def s_moment(img, d, t, sc):
     for x, h in zip(xs, ("F (N)", "d (m)", "M (N·m)")): text(d, (x, 1105), h, 42, INK)
     d.line([(90, 1145), (990, 1145)], fill=LIGHT, width=4)
     for i, row in enumerate(ROWS):
-        ra = appear(t, 0.6 + i * 0.8, 0.35); y = 1205 + i * 92
+        ra = appear(t, 0.6 + i * 0.8 if i < 2 else M[1] + 1.0, 0.35); y = 1205 + i * 92   # hang d = 0,15 hien sau khi hai gia da nhich vao
         if ra <= 0: continue
         if i >= 1 and t >= M[1]:
             d.rounded_rectangle([85, y - 38, 995, y + 38], radius=16, fill=A((225, 236, 255), appear(t, M[1], 0.3)))
@@ -169,12 +169,14 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, yy), q, 62, DRED, alpha=a)
     ks = clamp((t - 1.2) / 0.4)
     if ks > 0: d.line([(W / 2 - lw / 2 - 10, yy + 2), (W / 2 - lw / 2 - 10 + (lw + 20) * ks, yy + 2)], fill=DRED, width=7)
+    bf = appear(t, 1.0, 0.45)                               # khung + thuoc hien som (nua duoi khong trong), ngoac d/2 hien theo phu de 2
+    if bf <= 0: return
+    card(d, (60, 800, 1020, 1560), fill=A(WHITE, bf), outline=A(GREEN, bf), w=5)
+    s = 0.92; c = (W / 2, 1060)
+    ruler(img, d, c[0], c[1], 0, s); forces(d, c[0], c[1], 0, s, alpha=bf, lbl=False)
+    dot(d, c[0], c[1], 12, RED, WHITE)
     b = appear(t, M[1] - 0.2, 0.45)
     if b <= 0: return
-    card(d, (60, 800, 1020, 1560), fill=A(WHITE, b), outline=A(GREEN, b), w=5)
-    s = 0.92; c = (W / 2, 1060)
-    ruler(img, d, c[0], c[1], 0, s); forces(d, c[0], c[1], 0, s, alpha=b, lbl=False)
-    dot(d, c[0], c[1], 12, RED, WHITE)
     yb = 1320                                               # hai ngoac do cung phia duoi, ngoai than thuoc va ngoai vecto
     for X in (c[0] - XF * s, c[0], c[0] + XF * s):          # duong gióng net dut tu thuoc xuong ngoac
         for yy in range(int(c[1] + HW * s + 8), yb - 10, 26): d.line([(X, yy), (X, yy + 12)], fill=A(GRAY, b), width=3)
@@ -193,26 +195,28 @@ def s_gioihan(img, d, t, sc):
     text(d, (W / 2, y1 + 85), "Chưa nói được gì?", 54, NAVY, alpha=k)
     card(d, (110, y1 + 170, 970, y1 + 580), fill=A((239, 246, 255), k), r=24)
     ctext(d, y1 + 250, "Chỉ thử thước tự do.", 50, INK, alpha=k)
-    ctext(d, y1 + 375, "Chưa thử giữ cố định", 50, BLUE, alpha=k)
-    ctext(d, y1 + 470, "một điểm của thước", 50, BLUE, alpha=k)
+    k2 = appear(t, 1.2, 0.4); k3 = appear(t, 2.2, 0.4); k4 = appear(t, 3.0, 0.4)   # hien dan, canh khong dung yen 4,6 s
+    ctext(d, y1 + 375, "Chưa thử giữ cố định", 50, BLUE, alpha=k2)
+    ctext(d, y1 + 470, "một điểm của thước", 50, BLUE, alpha=k2)
     s = 0.85; c = (W / 2, y1 + 840)                         # thuoc co mot diem bi giu (dinh xam) + dau hoi
     ruler(img, d, c[0], c[1], 0, s)
     px = c[0] - 300 * s
-    dot(d, px, c[1], 20, (120, 125, 140), WHITE)
+    if k3 <= 0: return
+    dot(d, px, c[1], 20, A((120, 125, 140), k3), A(WHITE, k3))
     d.line([(px - 11, c[1]), (px + 11, c[1])], fill=WHITE, width=4); d.line([(px, c[1] - 11), (px, c[1] + 11)], fill=WHITE, width=4)
-    text(d, (W / 2, y1 + 1080), "?", 110, PURPLE, alpha=k)
+    text(d, (W / 2, y1 + 1080), "?", 110, PURPLE, alpha=k4)
 
 # ---------------- canh 7: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     def hint(d, t, k):                        # tu ve cau hoi (to hon) + goi y chu toi >= 40 px, goi y hien tre ~2,5 s
-        ctext(d, 900, "Mỗi lực 2 N ở hai đầu\nthước 30 cm: moment bao nhiêu?", 56, INK,
+        ctext(d, 900, "Ngẫu lực, mỗi lực 2 N, ở hai đầu\nthước 30 cm: moment bao nhiêu?", 56, INK,
               maxw=860, alpha=appear(t, sc["M"][0] + 0.4, 0.5))
         kh = appear(t, sc["M"][0] + 2.5, 0.5)
         if kh <= 0: return
         card(d, (110, 1230, 970, 1530), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=3)
         ctext(d, 1300, "Gợi ý", 44, INK, alpha=kh)
-        ctext(d, 1420, "Đổi cm ra m trước khi tính", 48, (154, 52, 18), maxw=820, alpha=kh)
+        ctext(d, 1420, "Nhớ lại bảng F, d, M vừa xem", 48, (154, 52, 18), maxw=820, alpha=kh)
     chot_hoi(d, t, sc, "Ngẫu lực chỉ làm quay", "", body=hint)
 
 def _cues(clip):
