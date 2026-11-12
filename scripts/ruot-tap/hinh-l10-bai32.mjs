@@ -54,9 +54,7 @@ export const hinhL10b32 = {
       const [px, py] = P(x, y, 130, a);
       // xe là hình chữ nhật nhỏ xoay theo tiếp tuyến
       b += `<g transform="rotate(${-a} ${f1(px)} ${f1(py)})"><rect x="${f1(px - 10)}" y="${f1(py - 16)}" width="20" height="32" rx="4" fill="#fff" stroke="${INK}" stroke-width="${SW}"/></g>`;
-      const tx = Math.sin(R(a)), ty = Math.cos(R(a)); // chiều kim đồng hồ: (sin a, -cos a) toán học → SVG (sin a, cos a)
-      b += arr(px + tx * 18, py + ty * 18, px + tx * 74, py + ty * 74, 'kc1', RED);
-      b += T(px + tx * 74 + 8, py + ty * 74 + (a > 45 ? -10 : 4), `${v}${sb(k)}`, { c: RED, w: 700 });
+      // HS ảo 12/11 (B2): bỏ mũi tên v1, v2 — hai vectơ vận tốc đổi hướng gợi sẵn đáp án C
     });
     return wrap('0 0 300 200', b, cap, 'Xe qua khúc cua với tốc độ không đổi');
   },

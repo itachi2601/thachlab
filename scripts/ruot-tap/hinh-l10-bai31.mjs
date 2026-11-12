@@ -29,7 +29,7 @@ const cung = (x, y, r, a1, a2, { c = INK, w = 2.4, id = '', dash = '' } = {}) =>
 };
 
 // Quỹ đạo tròn nhìn từ trên: tâm O, các điểm có tên; v: true vẽ mẫu vectơ vận tốc (ngược chiều kim đồng hồ) tại điểm đó
-const vong = ({ cap, label, id, r = 74, diem = [], nhanR = '', quay = true, banKinh = true, vb = '0 0 300 210', x = 120, y = 104 }) => {
+const vong = ({ cap, label, id, r = 74, diem = [], nhanR = '', nhanRxy = null, quay = true, banKinh = true, vb = '0 0 300 210', x = 120, y = 104 }) => {
   let b = defs(id + 'a') + defs(id + 'b');
   b += tron(x, y, r) + cham(x, y, 4) + T(x - 8, y + 24, 'O', { a: 'end' });
   if (quay) b += cung(x, y, r + 20, 200, 240, { id: id + 'b', c: BLUE, dash: '6 4' });
@@ -39,7 +39,7 @@ const vong = ({ cap, label, id, r = 74, diem = [], nhanR = '', quay = true, banK
     b += cham(px, py, 6) + T(px + dx, py + dy, ten, { w: 700, a });
     if (v) { const [tx, ty] = [-Math.sin(R(g)), -Math.cos(R(g))]; b += arr(px, py, px + 62 * tx, py + 62 * ty, id + 'a', RED) + T(px + 62 * tx - 6, py + 62 * ty - 8, vec('v'), { c: RED, a: 'end' }); }
   });
-  if (nhanR) b += T(x, y - 12, nhanR, { a: 'middle' });
+  if (nhanR) b += nhanRxy ? T(x + nhanRxy[0], y + nhanRxy[1], nhanR, { a: 'start', size: 18 }) : T(x, y - 12, nhanR, { a: 'middle' });
   return wrap(vb, b, cap, label);
 };
 
@@ -156,7 +156,7 @@ export const hinhL10b31 = {
   },
   // Trang 8 · Bài tương tự D1·2: vòng xuyến, điểm D thấp nhất (phía nam)
   vongXuyen: (cap = 'Xe đi ngược chiều kim đồng hồ (nhìn từ trên), đang qua D.') => vong({
-    cap, id: 'vx', label: 'Vòng xuyến, xe qua điểm D', nhanR: 'r = 20 m', r: 62, vb: '0 8 300 186', x: 130, y: 92,
+    cap, id: 'vx', label: 'Vòng xuyến, xe qua điểm D', nhanR: 'r = 20 m', nhanRxy: [6, 40], r: 84, vb: '0 12 300 202', x: 136, y: 100,
     diem: [{ g: 270, ten: 'D', dx: 12, dy: 24 }],
   }),
   // Trang 9 · Bài tương tự D4·1: đĩa CD
