@@ -19,6 +19,9 @@ AMP = 22                              # bien do dich chuyen cua dien tich trong 
 
 LEFT = [(GXW, 600), (GXW, WY), (PL - 26, WY)]
 RIGHT = [(PR + 26, WY), (AXW, WY), (AXW, 600)]
+RY = 395                              # day hoi: cuc phai may phat (470) -> cuc trai dong ho (610), khep kin mach
+BACK = [(610, RY), (470, RY)]         # cung chieu vong: may phat -> tu -> dong ho -> may phat
+TERMS = [(GXW, 600), (470, RY), (AXW, 600), (610, RY)]   # hai cuc may phat + hai cuc dong ho
 
 def _path_len(p): return sum(math.hypot(b[0] - a[0], b[1] - a[1]) for a, b in zip(p, p[1:]))
 def _at(p, s):
@@ -64,7 +67,7 @@ def rig(d, t, f, reading, phase=None, dc=False, label=True):
     charges(d, LEFT, x); charges(d, RIGHT, x)
     if label:
         text(d, ((PL + PR) / 2, 700), f"tụ {C_UF} μF", 40, NAVY)
-        if phase is not None: text(d, ((PL + PR) / 2, 750), "mũi tên cam: E", 40, ORANGE)
+        if phase is not None: text(d, ((PL + PR) / 2, 750), "tụ nạp xong" if dc else "mũi tên cam: E", 40, ORANGE)
     # may phat
     card(d, (70, 270, 470, 600), fill=WHITE, outline=NAVY, r=28, w=5)
     text(d, (270, 305), "Máy phát", 36, MUTED, bold=False)
@@ -84,25 +87,23 @@ def rig(d, t, f, reading, phase=None, dc=False, label=True):
     d.rounded_rectangle([650, 335, 970, 455], radius=14, fill=NAVY)
     text(d, (810, 397), reading, 66, (134, 239, 172))
     text(d, (810, 505), "mA", 40, RED)
+    d.line(BACK, fill=GRAY, width=12)                                  # day hoi giua hai the
+    if phase is not None: charges(d, BACK, x)
+    for tx, ty in TERMS: dot(d, tx, ty, 17, NAVY, WHITE); dot(d, tx, ty, 6, WHITE)   # cuc noi day
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Luôn bằng 0", "B. Giảm khi f tăng", "C. Tăng khi f tăng", "D. Không đổi theo f")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 50, "?", phase=None)
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 990, 1020, 1400), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1045), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1135, "Tăng f: 50 → 800 Hz.\nDòng thay đổi thế nào?", 46, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 100 + (i % 2) * 450; y = 1290 + (i // 2) * 120
-        card(d, (x0, y - 46, x0 + 430, y + 46), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 30, y), s, 38, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1270), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)   # K10: lua chon o khung ben canh
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1552, 940, 1566], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1552, 140 + 800 * (1 - q), 1566], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1342, 940, 1356], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1342, 140 + 800 * (1 - q), 1356], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: tien hanh, ghi bang ----------------
 def row_at(i, sc):
@@ -260,9 +261,9 @@ def s_trap(img, d, t, sc):
 # ---------------- canh 6: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
-    chot_hoi(d, t, sc, "Dòng điện dịch: I tỉ lệ thuận f",
+    chot_hoi(d, t, sc, "Dòng điện dịch qua tụ",
              f"f = 1 600 Hz: đồng hồ chỉ?",
-             "I/f có đổi không?")
+             "Nhớ lại các số đo.")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
