@@ -37,6 +37,7 @@ if (process.argv[2] === '--hinh') {
 
 const K = khoiTao({ bai: 34, lid: 79, ten: 'KHỐI LƯỢNG RIÊNG · ÁP SUẤT CHẤT LỎNG', lop: 10, baiDau: 33, sub: 'Vật lí 10 · Chương 7: Biến dạng của vật rắn. Áp suất chất lỏng' });
 const { head, h3, foot } = K;
+const gap = (w) => `<span style="display:inline-block;width:${w}mm"></span>`;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
@@ -89,7 +90,7 @@ ${h3(1, 'Thí nghiệm: bốn khối nhôm to nhỏ khác nhau', '2·1')}
 <tr><td>40,9</td><td>15</td><td></td></tr>
 <tr><td>67,2</td><td>25</td><td></td></tr>
 <tr><td>99,7</td><td>37</td><td></td></tr></table>
-<div class="hint">Số liệu minh hoạ, chưa phải số đo thật. Nhôm theo bảng: 2,70 g/cm³.</div></div>
+<div class="hint" style="margin-top:1.5mm">Số liệu minh hoạ, chưa phải số đo thật. Nhôm theo bảng: 2,70 g/cm³.</div></div>
 ${H.binhChia()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
 <div><b>Rút ra:</b> khối to hay nhỏ thì ${rho} ${ck}khác nhau nhiều &nbsp;${ck}gần như nhau. Hàng lệch nhiều nhất: ${f(14)} vì:</div>${lines(1)}</div>
@@ -139,7 +140,7 @@ ${h3(4, 'II.5 · Lực đẩy Archimedes', '3·4')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div>Mặt dưới sâu hơn mặt trên nên bị ép ${f(14)}: chất lỏng đẩy vật hướng ${f(14)}.</div>
 <div style="margin:.5mm 0">${m('F_A=')} ${f(25)} &nbsp;(${m('V')} là thể tích phần ${f(14)})</div>
-<div>Vật đặc: ${m('\\rho_{\\text{vật}}\\lt\\rho_\\ell')} thì ${f(14)}; ${m('\\rho_{\\text{vật}}\\gt\\rho_\\ell')} thì ${f(14)}; bằng nhau thì ${f(14)}</div>
+<div>Vật đặc (${m('\\rho_{\\mathrm v}')}: vật, ${m('\\rho_\\ell')}: chất lỏng): ${m('\\rho_{\\mathrm v}\\lt\\rho_\\ell')} thì ${f(14)}; ${m('\\rho_{\\mathrm v}\\gt\\rho_\\ell')} thì ${f(14)}; bằng nhau thì ${f(14)}</div>
 <div>Vật nổi, đứng yên: ${m('F_A=')} ${f(14)}</div></div>
 ${H.archimedes()}</div>
 ${foot(3)}</section>`;
@@ -169,18 +170,18 @@ ${head('BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'V · Bài toán mẫu: bể cá', '5·1')}
 <div class="fig-side" style="${fs(40)}"><div>
 <div class="card soft" style="padding:1.2mm 3mm;margin:0">Bể cá thành thẳng đứng, đáy ${nw('60 cm × 40 cm')}, chứa nước cao ${u('50\\ \\mathrm{cm}')}. Tính:
-<div><b>a)</b> khối lượng nước</div><div><b>b)</b> áp suất do nước gây ra ở đáy và áp suất tại đáy</div><div><b>c)</b> áp lực của nước lên đáy</div><div><b>d)</b> áp suất do nước gây ra tại M cách đáy ${u('20\\ \\mathrm{cm}')}</div></div>
+<div><b>a)</b> khối lượng nước; <b>b)</b> áp suất do nước gây ra ở đáy và áp suất tại đáy; <b>c)</b> áp lực của nước lên đáy; <b>d)</b> áp suất do nước gây ra tại M cách đáy ${u('20\\ \\mathrm{cm}')}</div></div>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
-${wl(`a) ${m('S=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('V=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('m=')}`, 1)}${wl(`b) ${m('\\rho g h=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('p=p_a+\\rho g h=')}`, 1)}${wl('c) Áp lực của nước (dùng phần nào của p?):', 2)}${wl(`d) ${m('h_M=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('p_M=')}`, 1)}${wl(`Kiểm tra: ${m('mg=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; khớp câu c) không? Vì sao?`, 1)}</div></div>
+${wl(`a) ${m('S=')} ${gap(26)} ${m('V=')} ${gap(26)} ${m('m=')}`, 1)}${wl(`b) ${m('\\rho g h=')} ${gap(30)} ${m('p=p_a+\\rho g h=')}`, 1)}${wl('c) Áp lực của nước (dùng phần nào của p?):', 1)}${wl(`d) ${m('h_M=')} ${gap(26)} ${m('p_M=')}`, 1)}${wl(`Kiểm tra: ${m('mg=')} ${gap(22)} khớp c) không? Vì sao?`, 1)}</div></div>
 ${H.beCa()}</div>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
 <div class="ln"><b>Điền tiếp:</b> cùng bể, nước muối ${u('\\rho=1030\\ \\mathrm{kg/m^3}')} cao ${u('30\\ \\mathrm{cm}')}.</div>
-${wl(`Bước 2: áp suất do nước muối ở đáy ${m('=')}`, 1)}${wl(`Bước 3: áp lực của nước muối lên đáy ${m('=')}`, 1)}</div>
+${wl(`Bước 1: áp suất do nước muối ở đáy ${m('=')}`, 1)}${wl(`Bước 2: áp lực của nước muối lên đáy ${m('=')}`, 1)}</div>
 ${K.btvn().replace('<i>1</i>Đề BTVN', '<i>2</i>Đề BTVN')}
 ${h3(3, 'Thử thách phân tầng', '5·3')}
-<div class="fig-side" style="${fs(36)}">${box(wl(`${m('\\bigstar')} Viên sỏi ${nw('54 g')} thả vào bình chia độ, nước dâng thêm ${nw('20 cm³')}. Khối lượng riêng của sỏi (kg/m³)?`, 2)
- + wl(`${m('\\bigstar\\bigstar')} Ống U chứa nước, rót vào một nhánh cột dầu ${u('\\rho=800\\ \\mathrm{kg/m^3}')} cao ${nw('15 cm')}. Mặt dầu cao hơn mặt nước bao nhiêu?`, 3)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Theo hình bên: áp suất dư ở vòi tầng 1 và vòi tầng 6 khi khoá? Máy giặt tầng 6 cần áp suất dư ít nhất ${u('0{,}3\\cdot10^5\\ \\mathrm{Pa}')}: bồn có đủ cao không?`, 3))}${H.bonMai()}</div>
+${box(`<div>${m('\\bigstar')} Sỏi ${nw('54 g')} thả vào bình chia độ, nước dâng thêm ${nw('20 cm³')}. Khối lượng riêng của sỏi: ${m('\\rho=')} ${f(22)} kg/m³</div>`
+ + `<div style="padding-top:.3mm">${m('\\bigstar\\bigstar')} Ống U chứa nước; rót vào một nhánh cột dầu ${u('\\rho=800\\ \\mathrm{kg/m^3}')} cao ${nw('15 cm')}. Mặt dầu cao hơn mặt nước nhánh kia bao nhiêu?</div>` + wl(`${m('\\Delta h=')}`, 1))}
+<div class="fig-side" style="${fs(30)};margin-top:.4mm">${box(`<div>${m('\\bigstar\\bigstar\\bigstar')} Hình bên: mặt nước bồn cao hơn vòi tầng 1 là ${nw('20 m')}; vòi tầng 6 cao hơn vòi tầng 1 là ${nw('15 m')}. Áp suất dư ở hai vòi khi khoá? Máy giặt tầng 6 cần áp suất dư ít nhất ${u('0{,}3\\cdot10^5\\ \\mathrm{Pa}')}: bồn có đủ cao không?</div>` + lines(1) + wl(`${m('p_1=')} ${gap(20)} ${m('p_6=')} ${gap(20)} Đủ?`, 1))}${H.bonMai("")}</div>
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
 ${box(wl('1.', 1) + wl('2.', 1) + wl('3.', 1))}
 ${foot(5)}</section>`;

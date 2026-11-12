@@ -51,7 +51,7 @@ const mach = (cap, o = {}) => {
 export const hinhL11b25 = {
   // ===== Trang học bài mới =====
   // Dự đoán "100 W trong 10 giờ là bao nhiêu số": hình chỉ cho thấy công tơ đếm cộng dồn, không ghi phép đổi.
-  congTo: (cap = 'Công tơ: dãy số chỉ cộng dồn, mỗi đơn vị là một “số điện”.') => {
+  congTo: (cap = 'Công tơ điện: dãy số cộng dồn.') => {
     let b = `<rect x="40" y="14" width="220" height="168" rx="10" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += `<rect x="62" y="46" width="176" height="44" fill="#fff" stroke="${INK}" stroke-width="2.4"/>`;
     ['0', '3', '1', '2', '4', '5'].forEach((d, i) => {
