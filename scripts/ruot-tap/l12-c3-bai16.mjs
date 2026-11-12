@@ -121,23 +121,24 @@ ${h3(1, 'II.4 · Sự tạo thành và lan truyền sóng điện từ', '3·1')
 <div>Tại O có điện trường biến thiên ${m('E_1')}: ${m('E_1')} sinh ra ${f(12)}; ${m('B_1')} biến thiên lại sinh ra ${f(12)}; cứ thế lan ra xa thành ${f(26)}.</div>
 <div>Sóng điện từ là sóng ${f(14)}: ${vE} ${f(16)} ${vB}, cả hai ${f(16)} phương truyền.</div>
 <div>${vE} và ${vB} biến thiên điều hoà, luôn ${f(18)}.</div>
-<div>Chân không: ${cC} (cho sẵn); môi trường khác: tốc độ ${nw(`${m('v')} ${f(8)} ${m('c')}`)}.</div>
+<div>Chân không ${cC}; môi trường khác: ${nw(`${m('v')} ${f(8)} ${m('c')}`)}.</div>
 <div style="display:flex;gap:4mm;align-items:flex-end;margin:.6mm 0">${nw(`Chân không: ${m('\\lambda=')}<span class="fill" style="min-width:22mm;height:10mm"></span>`)} ${nw(`Môi trường: ${m('\\lambda=')}<span class="fill" style="min-width:14mm;height:10mm"></span>`)}</div>
 <div>Mang ${f(18)}: tần số càng cao, ${f(24)}.</div>
-<div>Tuân theo: truyền thẳng, phản xạ, ${f(16)}, ${f(16)}, nhiễu xạ.</div></div>
+<div>Tuân theo: truyền thẳng, phản xạ, ${f(14)}, ${f(14)}, nhiễu xạ.</div></div>
 ${H.songEB()}</div>
 ${h3(2, 'II.5 · Thang sóng điện từ', '3·2')}
 <div class="fig-side" style="${fs(46)}"><div>
-<table class="tsong" style="font-size:var(--fs-sm)"><style>.tsong td{height:6.6mm}</style><tr><th style="width:7mm">Số</th><th style="width:22mm">Tên vùng</th><th style="width:27mm">Bước sóng</th><th>Gặp ở đâu</th></tr>
+<table class="tsong" style="font-size:var(--fs-sm)"><style>.tsong td{height:5.6mm}</style><tr><th style="width:7mm">Số</th><th style="width:22mm">Tên vùng</th><th style="width:27mm">Bước sóng</th><th>Gặp ở đâu</th></tr>
 <tr><td>(1)</td><td></td><td>1 mm – hàng km</td><td></td></tr>
-<tr><td>(2)</td><td></td><td>${m('0{,}76\\ \\mu\\mathrm m')} – 1 mm</td><td></td></tr>
-<tr><td>(3)</td><td></td><td>${m('0{,}38')} – ${m('0{,}76\\ \\mu\\mathrm m')}</td><td></td></tr>
-<tr><td>(4)</td><td></td><td>10 nm – ${m('0{,}38\\ \\mu\\mathrm m')}</td><td></td></tr>
+<tr><td>(2)</td><td></td><td>0,76 µm – 1 mm</td><td></td></tr>
+<tr><td>(3)</td><td></td><td>0,38 – 0,76 µm</td><td></td></tr>
+<tr><td>(4)</td><td></td><td>10 nm – 0,38 µm</td><td></td></tr>
 <tr><td>(5)</td><td></td><td>0,01 – 10 nm</td><td></td></tr>
 <tr><td>(6)</td><td></td><td>dưới 0,01 nm</td><td></td></tr></table>
+<div style="font-size:var(--fs-sm);margin-top:.4mm"><b>Chọn tên:</b> tia X · vô tuyến · gamma · tử ngoại · hồng ngoại · ánh sáng nhìn thấy. <b>Chỗ gặp:</b> đèn diệt khuẩn · wifi, điện thoại · chụp xương · mắt thấy · điều khiển TV · xạ trị</div>
 <div style="font-size:var(--fs-sm);margin-top:.4mm">Đổi: ${nw(m('1\\ \\mathrm{mm}=10^{-3}\\ \\mathrm m'))} · ${nw(m('1\\ \\mu\\mathrm m=10^{-6}\\ \\mathrm m'))} · ${nw(m('1\\ \\mathrm{nm}=10^{-9}\\ \\mathrm m'))}</div>
 <div>Mọi vùng cùng bản chất, trong chân không cùng tốc độ ${f(8)}; bước sóng càng nhỏ, năng lượng càng ${f(12)}.</div>
-<div>Mẹo nhớ thứ tự sáu vùng (bước sóng giảm dần): ${f(50)}</div></div>
+<div>Mẹo nhớ sáu vùng (bước sóng giảm dần): ${f(50)}</div></div>
 ${H.thangSong()}</div>
 ${h3(3, 'Làm nhanh', '3·3')}
 ${box(cau(`<b>Câu 1.</b> Lò vi sóng phát sóng ${u('2{,}45', 'GHz')} ${nw(`(${cC})`)}. Bước sóng bằng bao nhiêu xentimét? Thuộc vùng nào?`, 1)
@@ -181,29 +182,29 @@ ${wl(`Bước 2: ${m('\\lambda=c/f=')}`, 1)}${wl('Bước 3: thời gian qua v�
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(cau(`${m('\\bigstar')} Sóng wifi ${u('2{,}4', 'GHz')} có bước sóng bao nhiêu xentimét?`, 1)
- + cau(`${m('\\bigstar\\bigstar')} Ánh sáng đỏ ${u('0{,}75', '\\mu m')} (chân không) vào thuỷ tinh ${nw(m('n=1{,}5'))}: ${m('f')}, ${m('v')}, ${lam} đổi thế nào?`, 1)
+ + cau(`${m('\\bigstar\\bigstar')} Ánh sáng đỏ ${u('0{,}75', '\\mu m')} (chân không) vào thuỷ tinh ${nw(m('n=1{,}5'))}: ${m('f')}, ${m('v')}, ${lam} đổi thế nào?`, 2)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Gọi nhau qua vệ tinh địa tĩnh: vì sao hai người hay nói chồng lên nhau?`, 1))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Điện trường xoáy: nguồn gây ra và dạng đường sức',
     de: 'Nam châm thẳng rơi vào lòng ống dây nối kín với điện kế nhạy: khi nam châm chuyển động trong lòng ống, kim lệch; khi giữ yên nam châm trong lòng ống, kim chỉ vạch 0.<br><b>a)</b> điện trường trong dây dẫn do nguyên nhân nào gây ra<br><b>b)</b> đường sức của điện trường đó có dạng nào',
-    nd: `Hai lúc khác nhau ở ${f(22)}; không do điện tích sinh ra ⇒ đường sức ${f(14)}`, a: ['a', 'b'], cot: 2, gi: 2 },
+    nd: `Hai lúc khác nhau ở ${f(20)}; không do điện tích sinh ra ⇒ đường sức ${f(15)}`, a: ['a', 'b'], cot: 2, gi: 3 },
   { t: 'Dạng 2 · Dễ · Bước sóng, chu kì và tần số của sóng điện từ',
-    de: `Kênh FM phát sóng tần số ${u('91', 'MHz')}; điều khiển quạt trần dùng LED hồng ngoại bước sóng ${u('940', 'nm')}. Coi không khí như chân không, ${cC}.<br><b>a)</b> bước sóng của sóng FM<br><b>b)</b> chu kì của sóng FM<br><b>c)</b> tần số của sóng hồng ngoại`,
-    nd: `Đổi MHz → Hz, nm → m trước; ${nw(`${m('\\lambda=')} ${f(14)}`)}; ${nw(`${m('T=')} ${f(10)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Kênh FM phát sóng tần số ${u('91', 'MHz')}; điều khiển quạt trần dùng LED hồng ngoại bước sóng ${u('940', 'nm')}. Coi không khí như chân không, ${cC}.<br><b>a)</b> bước sóng của sóng FM; <b>b)</b> chu kì của sóng FM<br><b>c)</b> tần số của sóng hồng ngoại`,
+    nd: `Đổi MHz → Hz, nm → m trước; ${nw(`${m('\\lambda=')} ${f(24)}`)}; ${nw(`${m('T=')} ${f(20)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · E và B cùng pha: tìm giá trị tức thời',
-    de: `Tại M có sóng điện từ truyền qua; giá trị cực đại ${nw(m('E_0=18\\ \\mathrm{V/m}'))}, ${nw(m('B_0=60\\ \\mathrm{nT}'))}.<br><b>a)</b> khi ${nw(m('E=6{,}0\\ \\mathrm{V/m}'))}: độ lớn ${m('B')}<br><b>b)</b> khi ${nw(m('B=45\\ \\mathrm{nT}'))}: độ lớn ${m('E')}<br><b>c)</b> khi ${nw(m('E=0'))}: ${m('B')} bằng bao nhiêu`,
-    nd: `${vE}, ${vB} luôn ${f(16)} ⇒ ${nw(`${m('E/E_0=')} ${f(14)}`)} ở mọi thời điểm`, a: ['a', 'b', 'c'], gi: 4, fig: H.dongPha() },
+    de: `Tại M có sóng điện từ truyền qua; giá trị cực đại ${nw(m('E_0=18\\ \\mathrm{V/m}'))}, ${nw(m('B_0=60\\ \\mathrm{nT}'))}.<br><b>a)</b> khi ${nw(m('E=6{,}0\\ \\mathrm{V/m}'))}: độ lớn ${m('B')}<br><b>b)</b> khi ${nw(m('B=45\\ \\mathrm{nT}'))}: độ lớn ${m('E')}; <b>c)</b> khi ${nw(m('E=0'))}: ${m('B')} bằng bao nhiêu`,
+    nd: `${vE}, ${vB} luôn ${f(16)} ⇒ ${nw(`${m('E/E_0=')} ${f(20)}`)} ở mọi thời điểm`, a: ['a', 'b', 'c'], gi: 5, fig: H.dongPha() },
   { t: 'Dạng 4 · Trung bình · Đổi môi trường: tần số, tốc độ, bước sóng',
-    de: `Ánh sáng lục bước sóng ${u('540', 'nm')} trong chân không đi vào nước chiết suất ${nw(m('n=\\tfrac43'))}; ${cC}.<br><b>a)</b> tần số của ánh sáng<br><b>b)</b> tốc độ truyền trong nước<br><b>c)</b> bước sóng trong nước`,
-    nd: `Đổi môi trường: ${f(10)} giữ nguyên; ${nw(`${m('v=')} ${f(10)}`)}; ${nw(`${m("\\lambda'=")} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Ánh sáng lục bước sóng ${u('540', 'nm')} trong chân không đi vào nước chiết suất ${nw(m('n=\\tfrac43'))}; ${cC}.<br><b>a)</b> tần số của ánh sáng; <b>b)</b> tốc độ truyền trong nước<br><b>c)</b> bước sóng trong nước`,
+    nd: `Đổi môi trường: ${f(18)} giữ nguyên; ${nw(`${m('v=')} ${f(20)}`)}; ${nw(`${m("\\lambda'=")} ${f(24)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 5 · Khó · Thời gian truyền xung vô tuyến: ra-đa – Mặt Trăng',
     de: `Ra-đa phát xung vô tuyến tới Mặt Trăng rồi thu xung phản xạ; chân không, ${cC}.<br><b>a)</b> lần 1, ${nw(m('d=3{,}84\\cdot10^8\\ \\mathrm m'))}: thời gian xung đi tới Mặt Trăng<br><b>b)</b> lần 1: thời gian từ lúc phát đến lúc thu xung phản xạ<br><b>c)</b> lần 2 thu xung phản xạ sau ${u('2{,}50', 's')}: khoảng cách lúc đó`,
-    nd: `Từ lúc phát đến lúc thu: xung đi ${f(16)} quãng đường; ${nw(`${m('d=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.raDa() },
+    nd: `Từ lúc phát đến lúc thu: xung đi ${f(16)} quãng đường; ${nw(`${m('d=')} ${f(22)}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.raDa() },
   { t: 'Dạng 6 · Khó · Thời điểm đầu tiên E bằng 0 hoặc cực đại',
-    de: `Tại một điểm có sóng điện từ, ${nw(m('B=B_0\\cos\\left(2\\pi\\cdot10^8t+\\tfrac{\\pi}{3}\\right)'))}, ${nw(m('B_0>0'))}, ${m('t')} (s).<br><b>a)</b> chu kì của sóng<br><b>b)</b> kể từ ${nw(m('t=0'))}, thời điểm đầu tiên ${m('E')} tại điểm đó bằng 0<br><b>c)</b> kể từ ${nw(m('t=0'))}, thời điểm đầu tiên ${m('E')} đạt cực đại`,
-    nd: `${m('E')}, ${m('B')} ${f(12)}; ${m('E=0')} khi pha ${f(14)}; ${m('E=E_0')} khi pha ${f(12)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.vongPha() },
+    de: `Tại một điểm có sóng điện từ, ${nw(m('B=B_0\\cos\\left(2\\pi\\cdot10^8t+\\tfrac{\\pi}{3}\\right)'))}, ${nw(m('B_0>0'))}, ${m('t')} (s). <b>a)</b> chu kì của sóng<br><b>b)</b> kể từ ${nw(m('t=0'))}, thời điểm đầu tiên ${m('E')} tại điểm đó bằng 0<br><b>c)</b> kể từ ${nw(m('t=0'))}, thời điểm đầu tiên ${m('E')} đạt cực đại`,
+    nd: `${m('E')}, ${m('B')} ${f(20)}; ${m('E=0')} khi pha ${f(20)}; ${m('E=E_0')} khi pha ${f(20)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.vongPha() },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
