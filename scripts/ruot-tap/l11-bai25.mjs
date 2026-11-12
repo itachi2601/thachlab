@@ -183,20 +183,20 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Điện năng tiêu thụ và đổi jun sang kWh',
-    de: `Bình nóng lạnh ${nhan(220, 2000)} bật đúng định mức 45 phút mỗi tối (${kWh}).<br><b>a)</b> điện năng bình tiêu thụ mỗi tối, theo jun<br><b>b)</b> đổi điện năng đó ra kWh<br><b>c)</b> số điện (kWh) trong 30 ngày`,
-    nd: `Ra jun: ${m('P')} theo ${f(8)}, ${m('t')} theo ${f(10)}; ra kWh: ${m('P')} theo ${f(8)}, ${m('t')} theo ${f(10)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Bình nóng lạnh ${nhan(220, 2000)} bật đúng định mức 45 phút mỗi tối (${kWh}). <b>a)</b> Điện năng tiêu thụ mỗi tối, theo jun; <b>b)</b> đổi ra kWh; <b>c)</b> số điện (kWh) trong 30 ngày.`,
+    nd: `Ra jun: ${m('P')} theo ${f(8)}, ${m('t')} theo ${f(10)}; ra kWh: ${m('P')} theo ${f(8)}, ${m('t')} theo ${f(10)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Dễ · Thiết bị dùng ở hiệu điện thế khác định mức',
-    de: `Bàn là ghi ${nhan(220, 1100)}, cắm vào ổ chỉ có ${V('176')}. Coi điện trở bàn là không đổi.<br><b>a)</b> điện trở của bàn là<br><b>b)</b> cường độ dòng điện và công suất thực<br><b>c)</b> chạy liên tục 30 phút: điện năng tiêu thụ theo kWh`,
-    nd: `${m('R=')} ${f(14)} từ nhãn; ${m('P')} tỉ lệ với ${f(10)}, không tỉ lệ với ${m('U')}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `Bàn là ghi ${nhan(220, 1100)}, cắm vào ổ chỉ có ${V('176')}. Coi điện trở bàn là không đổi. <b>a)</b> Điện trở bàn là; <b>b)</b> cường độ dòng điện và công suất thực; <b>c)</b> chạy liên tục 30 phút: điện năng tiêu thụ theo kWh.`,
+    nd: `${m('R=')} ${f(14)} từ nhãn; ${m('P')} tỉ lệ với ${f(10)}, không tỉ lệ với ${m('U')}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 5 },
   { t: 'Dạng 3 · Trung bình · Công suất nguồn và mạch ngoài',
     de: `Bộ pin ${m('\\mathcal E=6{,}0\\ \\mathrm V')}, ${m('r=0{,}40\\ \\Omega')} nối kín với điện trở sưởi ${m('R=2{,}6\\ \\Omega')}; bỏ qua dây nối.<br><b>a)</b> cường độ dòng điện<br><b>b)</b> công suất của nguồn, mạch ngoài nhận, toả nhiệt trong nguồn<br><b>c)</b> công của nguồn trong 5 phút`,
-    nd: `Tìm ${m('I=')} ${f(14)} trước; kiểm ${m('P_{ng}=')} ${f(10)} ${m('+')} ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c'], cot: 5, gi: 5, fig: H.pinD3('Tìm I trước.') },
+    nd: `Tìm ${m('I=')} ${f(14)} trước; kiểm ${m('P_{ng}=')} ${f(10)} ${m('+')} ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c'], cot: 5, gi: 6, fig: H.pinD3('Tìm I trước.') },
   { t: 'Dạng 4 · Khó · Hiệu suất nguồn, năng lượng có ích và hao phí',
     de: `Pin dự phòng ${m('\\mathcal E=12\\ \\mathrm V')}, ${m('r=0{,}75\\ \\Omega')} nối kín với biến trở ${m('R')} cấp điện cho thiết bị sưởi; chỉnh ${m('R')} để hiệu suất nguồn bằng 80 %; bỏ qua dây nối.<br><b>a)</b> giá trị ${m('R')}<br><b>b)</b> cường độ dòng điện; hiệu điện thế hai cực pin<br><b>c)</b> trong 10 phút: năng lượng mạch ngoài nhận; năng lượng toả ra trong pin`,
     nd: `Thuần điện trở: ${m('H=')} ${f(14)} ${m('\\to')} giải ngược ra ${m('R')}; ${nw(`${m('A')}<sub>ích</sub>${m('=')}`)} ${f(12)}, ${m('A_{\\text{hp}}=')} ${f(12)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], cot: 5, gi: 7 },
   { t: 'Dạng 5 · Khó · Đoản mạch và chọn cầu chì',
     de: `Ắc quy xe máy ${m('\\mathcal E=12\\ \\mathrm V')}, ${m('r=0{,}030\\ \\Omega')}; bộ đèn điện trở ${O('2{,}37')} khi sáng, nối tiếp một cầu chì; có ba loại cầu chì ${A_('3')}, ${A_('7{,}5')}, ${A_('30')}; bỏ qua dây nối.<br><b>a)</b> dòng điện khi đèn sáng; chọn cầu chì nào<br><b>b)</b> dây chập nối tắt bộ đèn, điện trở mạch ngoài còn ${O('0{,}010')}: dòng điện và công suất toả nhiệt trong ắc quy<br><b>c)</b> dòng lúc chập gấp bao nhiêu lần dòng định mức cầu chì đã chọn; cầu chì có đứt không`,
-    nd: `Lúc chập, ${m('r')} vẫn ${f(16)}: ${m('I=')} ${f(16)}; cầu chì định mức ${f(20)} dòng làm việc`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], cot: 6, gi: 7, fig: H.chapD5('Lúc chập, r vẫn trong mạch.') },
+    nd: `Lúc chập, ${m('r')} vẫn ${f(16)}: ${m('I=')} ${f(16)}; cầu chì định mức ${f(20)} dòng làm việc`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], cot: 3, gi: 7, fig: H.chapD5('Lúc chập, r vẫn trong mạch.') },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.

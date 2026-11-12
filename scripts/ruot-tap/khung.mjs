@@ -111,7 +111,7 @@ ${btm.dang.slice(0, a).map(block).join('\n')}
 ${kq(btm.kq[0])}
 ${foot(n)}</section>
 <section class="page">
-${head(`BÀI TẬP MẪU · DẠNG ${a + 1}–${cuoi}`)}
+${head(`BÀI TẬP MẪU · DẠNG ${a + 1 === cuoi ? cuoi : `${a + 1}–${cuoi}`}`)}
 ${h3(1, 'Giải', `${n + 1}·1`)}
 ${btm.dang.slice(a).map(block).join('\n')}
 ${kq(btm.kq[1])}
