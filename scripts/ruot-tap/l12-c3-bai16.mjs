@@ -63,8 +63,8 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="fig-side" style="${fs(42)}"><div>
 ${opt('A', 'Nhiệt từ mặt bếp truyền trong không khí làm radio rè')}
 ${opt('B', 'Dòng nhiễu theo dây điện chung sang radio')}
-${opt('C', 'Dòng biến thiên trong bếp từ sinh ra thứ gì đó lan tới ăng ten')}
-${opt('D', 'Sóng âm của bếp biến thành sóng điện từ khi gặp ăng ten')}
+${opt('C', 'Dòng biến thiên trong bếp sinh ra thứ gì đó lan tới ăng ten')}
+${opt('D', 'Sóng âm của bếp biến thành sóng điện từ ở ăng ten')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
 ${H.bepTu()}</div>
 </div>
@@ -97,12 +97,12 @@ ${h3(2, 'Thí nghiệm: dòng xoay chiều qua mạch có tụ', '2·2')}
 <tr><td>${m('I/f')} (mA/Hz)</td><td>0,072</td><td></td><td></td><td></td><td></td></tr></table>
 <div style="margin-top:.6mm"><b>Rút ra:</b> ${m('I/f')} gần như ${f(22)} ⇒ dòng qua tụ tỉ lệ ${f(16)} với ${m('f')}.</div>
 <div>Giữa hai bản là chất cách điện, mạch vẫn có dòng vì giữa hai bản có ${f(46)}.</div>
-<div><b>Đối chiếu</b> (công thức cho sẵn, không cần nhớ): ${m('I=U\\cdot2\\pi fC')} ⇒ ${nw(`${m('I/f=U\\cdot2\\pi C\\approx')} ${f(14)} mA/Hz`)}; số đo thấp hơn vì ${f(36)}</div>
+<div><b>Đối chiếu</b> (công thức cho sẵn, không cần nhớ): ${m('I=U\\cdot2\\pi fC')} ⇒ ${nw(`${m('I/f=U\\cdot2\\pi C\\approx')} ${f(20)} mA/Hz`)}; số đo thấp hơn vì ${f(36)}</div>
 </div>
 ${h3(3, 'II.3 · Điện từ trường', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Maxwell: từ trường biến thiên sinh ${f(28)} và ngược lại; hai trường là hai mặt của một trường thống nhất gọi là ${f(28)}.</div>
-<div>Tại mỗi điểm, ${vE} luôn ${f(22)} với ${vB}.</div>
+<div>Hai trường không tách riêng được: chúng cùng tồn tại và ${f(30)} qua lại.</div>
 <div>Điện trường tĩnh, từ trường của nam châm đứng yên ${f(16)} phải điện từ trường, vì ${f(40)}</div>
 </div>
 ${h3(4, 'Làm nhanh', '2·4')}
@@ -110,7 +110,7 @@ ${box(`<div style="padding-top:1mm"><b>Câu 1.</b> Về thí nghiệm mạch có
 ${opt('A', `Tần số càng lớn, dòng càng mạnh; ${m('I/f')} gần như không đổi`)}
 ${opt('B', 'Mạch vẫn có dòng dù giữa hai bản tụ là chất cách điện')}
 ${opt('C', 'Mạch có dòng vì điện tích chạy xuyên qua lớp cách điện')}
-${opt('D', 'Ampe kế không đo được từ trường của dòng điện dịch')}
+${opt('D', 'Thí nghiệm không cho biết hình dạng từ trường của dòng điện dịch')}
 <div>${chon(10)}</div>`)}
 ${foot(2)}</section>`;
 
@@ -148,8 +148,8 @@ const p4 = `<section class="page">
 ${head('BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="card fig-side" style="${fs(42)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Điện trường xoáy cũng như điện trường tĩnh.”</b> Hình (1): điện trường ${f(14)}, do ${f(26)}; hình (2): điện trường ${f(14)}, do ${f(26)}</span></div>
-<div class="trap">${ck}<span><b>“Sóng điện từ cần môi trường để truyền.”</b> Ánh sáng Mặt Trời đi ${nw(m('1{,}5\\cdot10^{11}\\ \\mathrm m'))} gần như chân không tới Trái Đất mất ${nw(`${m('t=s/c=')} ${f(14)} s`)}.</span></div>
+<div class="trap">${ck}<span><b>“Điện trường xoáy cũng như điện trường tĩnh.”</b> Hình (1): điện trường ${f(14)}, do ${f(42)}; hình (2): điện trường ${f(14)}, do ${f(42)}</span></div>
+<div class="trap">${ck}<span><b>“Sóng điện từ cần môi trường để truyền.”</b> Ánh sáng Mặt Trời đi ${nw(m('1{,}5\\cdot10^{11}\\ \\mathrm m'))} gần như chân không tới Trái Đất ${nw(`(${cC})`)} mất ${nw(`${m('t=s/c=')} ${f(14)} s`)}.</span></div>
 <div class="trap">${ck}<span><b>“${vE}, ${vB} lệch pha như ${m('u')}, ${m('i')} của tụ.”</b> Trong sóng điện từ, khi ${nw(m('E=0'))} thì ${nw(`${m('B=')} ${f(12)}`)}.</span></div></div>
 ${H.duongSuc()}</div>
 ${h3(2, 'IV · Trả bài 5 câu', '4·2')}
@@ -220,11 +220,11 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–6'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: 'Cuộn dây quấn quanh lõi sắt nối nguồn xoay chiều; vòng dây kín bao quanh lõi, không chạm cuộn dây.<br><b>a)</b> vòng dây có điện trường không; do đâu<br><b>b)</b> đường sức điện trường đó dạng nào<br><b>c)</b> đổi sang nguồn một chiều, dòng đã ổn định: còn điện trường không', fig: H.loiSat(), fw: 34, o: ['a', 'b', 'c'], ow: { a: 30, b: 30, c: 16 } },
-    { t: 'Dạng 1 · Bài 2', de: 'Tụ điện phẳng, giữa hai bản là không khí, nối với nguồn xoay chiều.<br><b>a)</b> giữa hai bản có điện trường biến thiên không<br><b>b)</b> điện trường đó sinh ra gì; tên “dòng” tương đương chạy qua tụ<br><b>c)</b> nối tụ vào nguồn một chiều, tụ đã tích đầy: giữa hai bản còn từ trường không', o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: { a: 16, 'b<sub>1</sub>': 20, 'b<sub>2</sub>': 26, c: 16 } },
+    { t: 'Dạng 1 · Bài 1', de: 'Cuộn dây quấn quanh lõi sắt nối nguồn xoay chiều; vòng dây kín bao quanh lõi, không chạm cuộn dây.<br><b>a)</b> vòng dây có điện trường không; do đâu<br><b>b)</b> đường sức điện trường đó dạng nào<br><b>c)</b> đổi sang nguồn một chiều, dòng đã ổn định: còn điện trường không', o: ['a', 'b', 'c'], ow: { a: 45, b: 50, c: 16 } },
+    { t: 'Dạng 1 · Bài 2', de: 'Tụ điện phẳng, giữa hai bản là không khí, nối với nguồn xoay chiều.<br><b>a)</b> giữa hai bản có điện trường biến thiên không<br><b>b)</b> điện trường đó sinh ra gì; tên “dòng” tương đương chạy qua tụ<br><b>c)</b> nối tụ vào nguồn một chiều, tụ đã tích đầy: giữa hai bản còn từ trường không', o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: { a: 16, 'b<sub>1</sub>': 26, 'b<sub>2</sub>': 34, c: 16 } },
     { t: 'Dạng 2 · Bài 1', de: `Đài phát thanh AM phát sóng tần số ${u('600', 'kHz')}; lò vi sóng dùng sóng bước sóng ${u('12{,}2', 'cm')}. Coi không khí như chân không ${kc}.<br><b>a)</b> bước sóng của sóng AM<br><b>b)</b> chu kì của sóng AM<br><b>c)</b> tần số sóng của lò vi sóng`, o: ['a', 'b', 'c'] },
-    { t: 'Dạng 2 · Bài 2', de: `Wifi phát sóng tần số ${u('5{,}0', 'GHz')}; đèn diệt khuẩn phát tia tử ngoại bước sóng ${u('254', 'nm')}. Coi không khí như chân không ${kc}.<br><b>a)</b> bước sóng của sóng wifi<br><b>b)</b> chu kì của sóng wifi<br><b>c)</b> tần số của tia tử ngoại`, o: ['a', 'b', 'c'] },
-    { t: 'Dạng 3 · Bài 1', de: `Tại M có sóng điện từ truyền qua, ${nw(m('E_0=12\\ \\mathrm{V/m}'))}, ${nw(m('B_0=40\\ \\mathrm{nT}'))}.<br><b>a)</b> khi ${nw(m('E=3{,}0\\ \\mathrm{V/m}'))}: độ lớn ${m('B')}<br><b>b)</b> khi ${nw(m('B=30\\ \\mathrm{nT}'))}: độ lớn ${m('E')}<br><b>c)</b> khi ${m('B')} đạt cực đại: ${m('E')} bằng bao nhiêu`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 2 · Bài 2', de: `Wifi phát sóng tần số ${u('5{,}0', 'GHz')}; đèn diệt khuẩn phát tia tử ngoại bước sóng ${u('254', 'nm')}. Coi không khí như chân không ${kc}.<br><b>a)</b> bước sóng của sóng wifi<br><b>b)</b> chu kì của sóng wifi<br><b>c)</b> tần số của tia tử ngoại`, o: ['a', 'b', 'c'], ow: { c: 32 } },
+    { t: 'Dạng 3 · Bài 1', de: `Tại M có sóng điện từ truyền qua, ${nw(m('E_0=12\\ \\mathrm{V/m}'))}, ${nw(m('B_0=40\\ \\mathrm{nT}'))}.<br><b>a)</b> khi ${nw(m('E=3{,}0\\ \\mathrm{V/m}'))}: độ lớn ${m('B')}<br><b>b)</b> khi ${nw(m('B=30\\ \\mathrm{nT}'))}: độ lớn ${m('E')}<br><b>c)</b> khi ${m('B')} đạt cực đại: ${m('E')} bằng bao nhiêu`, fig: H.dongPha('Vạch dọc: lúc E = 3,0 V/m.', '3,0', 1 / 4), fw: 36, o: ['a', 'b', 'c'] },
     { t: 'Dạng 3 · Bài 2', de: `Tại N có sóng điện từ truyền qua, ${nw(m('E_0=150\\ \\mathrm{V/m}'))}, ${nw(m('B_0=0{,}50\\ \\mu\\mathrm T'))}.<br><b>a)</b> khi ${nw(m('E=60\\ \\mathrm{V/m}'))}: độ lớn ${m('B')}<br><b>b)</b> khi ${nw(m('B=0{,}35\\ \\mu\\mathrm T'))}: độ lớn ${m('E')}<br><b>c)</b> khi ${nw(m('B=0'))}: ${m('E')} bằng bao nhiêu`, o: ['a', 'b', 'c'] },
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Ánh sáng đỏ bước sóng ${u('600', 'nm')} trong chân không đi vào thuỷ tinh chiết suất ${nw(m('n=1{,}5'))} ${kc}.<br><b>a)</b> tần số của ánh sáng<br><b>b)</b> tốc độ truyền trong thuỷ tinh<br><b>c)</b> bước sóng trong thuỷ tinh`, o: ['a', 'b', 'c'] },
@@ -240,10 +240,11 @@ const tuongTu = {
   ],
 };
 
+const nbsp = (s) => s.replace(/: /g, ':&nbsp;').replace(/\) /g, ')&nbsp;').replace(/(\d|<\/sup>) (?=[A-Za-zµ<])/g, '$1&nbsp;');
 await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 3], kq: [[1, 2, 3], [4, 5, 6]], khoNhat: false },
-  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
+  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo), dap: tuongTu.dap.map(nbsp) },
   tra: 'điện trường xoáy 1·4 · dòng điện dịch 2·1 · mạch có tụ 2·2 · điện từ trường 2·3 · sóng điện từ 3·1 · thang sóng 3·2 · bẫy 4·1 · bài toán mẫu 5·1 · dạng 1–3 → 6·1 · dạng 4–6 → 7·1',
   out: process.argv[2] ?? resolve(HERE, 'out/ruot-tap-vl12-c3-bai16.pdf'),
 });
