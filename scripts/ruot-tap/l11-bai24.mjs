@@ -142,15 +142,15 @@ ${h3(1, 'II.5 · Ghép nguồn thành bộ', '4·1')}
 <div class="fig-side" style="${fs(46)}"><div>
 <table><tr><th style="width:40mm">Cách ghép</th><th>${m('\\mathcal E_b')}</th><th>${m('r_b')}</th></tr>
 <tr><td>Nối tiếp</td><td></td><td></td></tr>
-<tr><td>Song song ${m('n')} nguồn giống nhau</td><td></td><td></td></tr>
+<tr><td>Song song ${m('n')} nguồn giống nhau</td><td><div style="height:9mm"></div></td><td></td></tr>
 <tr><td>Xung đối, ${m('\\mathcal E_1>\\mathcal E_2')}</td><td></td><td></td></tr>
-<tr><td>${m('n')} dãy, mỗi dãy ${m('m')} nguồn</td><td></td><td></td></tr></table>
+<tr><td>${m('n')} dãy, mỗi dãy ${m('m')} nguồn</td><td><div style="height:9mm"></div></td><td></td></tr></table>
 <div style="margin-top:.6mm">6 pin ${nw(`(${V('1{,}5')}; ${Om('0{,}6')})`)} như hình: ${nw(`${m('\\mathcal E_b=')} ${f(12)}`)} ${nw(`${m('r_b=')} ${f(12)}`)}</div></div>
 ${H.honHop('2 dãy, mỗi dãy 3 pin.', { n: 2, m: 3 })}</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '4·2')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Suất điện động là hiệu điện thế hai cực.”</b> ${E}: công lực lạ, không đổi; ${U}: công lực điện, ${nw(m('U<\\mathcal E'))} khi có dòng.</span></div>
-<div class="trap">${ck}<span><b>“Trong nguồn dòng cũng chạy từ (+) sang (−).”</b> Trong nguồn dòng đi từ (−) lên (+) nhờ lực lạ, như máy bơm nước.</span></div>
+<div class="trap">${ck}<span><b>“Suất điện động là hiệu điện thế hai cực.”</b> Có dòng thì ${nw(m('U<\\mathcal E'))}; ${E} không đổi.</span></div>
+<div class="trap">${ck}<span><b>“Trong nguồn dòng cũng chạy từ (+) sang (−).”</b> Lực lạ đẩy dòng từ (−) lên (+), như bơm nước.</span></div>
 <div class="trap">${ck}<span><b>“Vôn kế chỉ 1,5 V thì pin còn tốt.”</b> Hở mạch pin nào cũng ${V('1{,}5')}. Nối ${Om('3')}: pin mới ${nw(`(${Om('0{,}3')})`)} ${nw(`${m('U\\approx1{,}36\\ \\mathrm V')};`)} pin cũ ${nw(`(${Om('3')})`)} ${nw(`${m('U=')} ${f(10)} V`)}</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '4·3')}
 ${box(`${tb('1. Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn?')}${lines(1)}
@@ -195,10 +195,10 @@ const dang = [
     nd: `Hở mạch ${nw(`${m('I=0')} ⇒ ${m('U=')} ${f(8)}`)}; có ${R}: ${nw(`${m('I=')} ${f(10)}`)}; ${nw(`${m('r=')} ${f(14)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 8, fig: H.mach('K mở rồi K đóng.', { von: true, khoa: true }) },
   { t: 'Dạng 3 · Khó · Hai lần đo cùng một nguồn: lập hệ tìm r và ℰ',
     de: `Nối nguồn lần lượt với ${Om('R_1=3{,}0')} và ${Om('R_2=10')} (bỏ qua điện trở dây nối). Vôn kế lí tưởng ở hai cực nguồn chỉ ${V('U_1=3{,}6')} và ${V('U_2=5{,}0')} tương ứng.<br><b>a)</b> cường độ dòng điện mỗi lần đo<br><b>b)</b> điện trở trong ${r} và suất điện động ${E}<br><b>c)</b> nối tắt hai cực nguồn: dòng điện`,
-    nd: `Mỗi lần: ${nw(`${m('I=')} ${f(8)}`)}, ${nw(`${m('U=')} ${f(14)}`)}; hai ẩn ⇒ hai phương trình, trừ vế khử ${f(8)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 6, cot: 3 },
+    nd: `Mỗi lần: ${nw(`${m('I=')} ${f(8)}`)}, ${nw(`${m('U=')} ${f(14)}`)}; hai ẩn ⇒ hai phương trình, trừ vế khử ${f(8)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 8, cot: 5 },
   { t: 'Dạng 4 · Khó · Bộ nguồn hỗn hợp đối xứng: ℰ<sub>b</sub>, r<sub>b</sub>, I và dòng qua mỗi pin',
     de: `Đèn pin dùng 8 pin giống nhau, mỗi pin ${m('\\mathcal E_0=1{,}5\\ \\mathrm V')}, ${Om('r_0=0{,}50')}, ghép 2 dãy song song, mỗi dãy 4 pin nối tiếp. Bóng đèn coi như ${Om('R=3{,}0')} nối vào hai cực bộ nguồn; bỏ qua điện trở dây nối.<br><b>a)</b> suất điện động và điện trở trong của bộ<br><b>b)</b> cường độ dòng điện qua bóng đèn<br><b>c)</b> hiệu điện thế hai cực bộ nguồn<br><b>d)</b> cường độ dòng điện qua mỗi pin`,
-    nd: `${nw(`${m('\\mathcal E_b=')} ${f(12)}`)}, ${nw(`${m('r_b=')} ${f(12)}`)}; hai dãy giống nhau ⇒ mỗi dãy mang ${f(10)} dòng tổng`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], gi: 5, fig: H.honHop('2 dãy, mỗi dãy 4 pin.', { n: 2, m: 4 }), cot: 3 },
+    nd: `${nw(`${m('\\mathcal E_b=')} ${f(12)}`)}, ${nw(`${m('r_b=')} ${f(12)}`)}; hai dãy giống nhau ⇒ mỗi dãy mang ${f(10)} dòng tổng`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], gi: 7, fig: H.honHop('2 dãy, mỗi dãy 4 pin.', { n: 2, m: 4 }), cot: 5 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
@@ -221,10 +221,10 @@ const tuongTu = {
     { t: 'Dạng 2 · Bài 2', de: `Vôn kế lí tưởng ở hai cực một bộ pin chỉ ${V('4{,}5')} khi mạch hở, chỉ ${V('4{,}0')} khi nối hai cực với ${Om('R=4{,}0')} (bỏ qua điện trở dây nối).<br><b>a)</b> suất điện động<br><b>b)</b> cường độ dòng điện<br><b>c)</b> điện trở trong<br><b>d)</b> dòng khi nối tắt hai cực`, o: ['a', 'b', 'c', 'd'] },
     nhap(10),
   ], [
-    { t: 'Dạng 3 · Bài 1', de: `Nối nguồn lần lượt với ${Om('R_1=2{,}0')} và ${Om('R_2=5{,}0')} (bỏ qua điện trở dây nối); vôn kế lí tưởng ở hai cực chỉ ${V('U_1=4{,}0')} và ${V('U_2=5{,}0')}.<br><b>a)</b> dòng điện mỗi lần đo<br><b>b)</b> điện trở trong ${r} và suất điện động ${E}<br><b>c)</b> dòng khi nối tắt hai cực`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 18 },
-    { t: 'Dạng 3 · Bài 2', de: `Nối nguồn với ${Om('R_1=1{,}0')} thì ampe kế chỉ ${A('I_1=2{,}0')}; nối với ${Om('R_2=4{,}0')} thì ${nw(`${m('I_2=0{,}80\\ \\mathrm A')}`)} (ampe kế lí tưởng, bỏ qua điện trở dây nối).<br><b>a)</b> hiệu điện thế hai cực mỗi lần<br><b>b)</b> điện trở trong ${r} và suất điện động ${E}<br><b>c)</b> dòng khi nối tắt hai cực`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 18 },
-    { t: 'Dạng 4 · Bài 1', de: `6 pin giống nhau, mỗi pin ${m('\\mathcal E_0=2{,}0\\ \\mathrm V')}, ${Om('r_0=0{,}80')}, ghép 2 dãy song song, mỗi dãy 3 pin nối tiếp; mạch ngoài ${Om('R=4{,}8')}.<br><b>a)</b> ${m('\\mathcal E_b')} và ${m('r_b')} của bộ<br><b>b)</b> dòng điện qua ${R}<br><b>c)</b> hiệu điện thế hai cực bộ nguồn<br><b>d)</b> dòng điện qua mỗi pin`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], ow: 20 },
-    { t: 'Dạng 4 · Bài 2', de: `4 pin giống nhau (${V('1{,}5')}; ${Om('0{,}50')}) mắc nối tiếp nhưng pin thứ ba bị lắp ngược; mạch ngoài ${Om('R=4{,}0')}.<br><b>a)</b> ${m('\\mathcal E_b')} và ${m('r_b')} của bộ<br><b>b)</b> dòng điện qua ${R}<br><b>c)</b> hiệu điện thế hai cực bộ nguồn<br><b>d)</b> lắp lại đúng pin thứ ba: dòng qua ${R}`, fig: H.nguoc(), fw: 44, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], ow: 18 },
+    { t: 'Dạng 3 · Bài 1', de: `Nối nguồn lần lượt với ${Om('R_1=2{,}0')} và ${Om('R_2=5{,}0')} (bỏ qua điện trở dây nối); vôn kế lí tưởng ở hai cực chỉ ${V('U_1=4{,}0')} và ${V('U_2=5{,}0')}.<br><b>a)</b> dòng điện mỗi lần đo<br><b>b)</b> điện trở trong ${r} và suất điện động ${E}<br><b>c)</b> dòng khi nối tắt hai cực`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 22 },
+    { t: 'Dạng 3 · Bài 2', de: `Nối nguồn với ${Om('R_1=1{,}0')} thì ampe kế chỉ ${A('I_1=2{,}0')}; nối với ${Om('R_2=4{,}0')} thì ${nw(`${m('I_2=0{,}80\\ \\mathrm A')}`)} (ampe kế lí tưởng, bỏ qua điện trở dây nối).<br><b>a)</b> hiệu điện thế hai cực mỗi lần<br><b>b)</b> điện trở trong ${r} và suất điện động ${E}<br><b>c)</b> dòng khi nối tắt hai cực`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 22 },
+    { t: 'Dạng 4 · Bài 1', de: `6 pin giống nhau, mỗi pin ${m('\\mathcal E_0=2{,}0\\ \\mathrm V')}, ${Om('r_0=0{,}80')}, ghép 2 dãy song song, mỗi dãy 3 pin nối tiếp; mạch ngoài ${Om('R=4{,}8')}.<br><b>a)</b> ${m('\\mathcal E_b')} và ${m('r_b')} của bộ<br><b>b)</b> dòng điện qua ${R}<br><b>c)</b> hiệu điện thế hai cực bộ nguồn<br><b>d)</b> dòng điện qua mỗi pin`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], ow: 22 },
+    { t: 'Dạng 4 · Bài 2', de: `4 pin giống nhau (${V('1{,}5')}; ${Om('0{,}50')}) mắc nối tiếp nhưng pin thứ ba bị lắp ngược; mạch ngoài ${Om('R=4{,}0')}.<br><b>a)</b> ${m('\\mathcal E_b')} và ${m('r_b')} của bộ<br><b>b)</b> dòng điện qua ${R}<br><b>c)</b> hiệu điện thế hai cực bộ nguồn<br><b>d)</b> lắp lại đúng pin thứ ba: dòng qua ${R}`, fig: H.nguoc(), fw: 44, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], ow: 22 },
     nhap(7),
   ]],
   dap: [

@@ -69,8 +69,8 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Biến dạng kéo, nén — đàn hồi, dẻo', '1·4')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Cặp lực ngược chiều, vuông góc bề mặt vật:</div>
-<div><b>Kéo:</b> lực hướng ${f(18)} vật → vật ${f(18)}</div>
-<div><b>Nén:</b> lực hướng ${f(18)} vật → vật ${f(18)}</div>
+<div><b>Kéo:</b> cặp lực hướng ra xa nhau → vật ${f(18)}</div>
+<div><b>Nén:</b> cặp lực hướng vào nhau → vật ${f(18)}</div>
 <div><b>Đàn hồi:</b> thôi lực, vật ${f(42)}</div>
 <div><b>Dẻo:</b> thôi lực, vật ${f(42)}</div>
 <div><b>Giới hạn đàn hồi:</b> mức lực ${f(20)} mà vật còn đàn hồi</div></div>
@@ -105,7 +105,7 @@ ${h3(2, 'II.3 · Định luật Hooke', '2·2')}
 <tr><td>${m('\\Delta l')}</td><td></td><td></td></tr>
 <tr><td>${m('l')}</td><td></td><td></td></tr>
 <tr><td>${l0}</td><td></td><td></td></tr></table>
-<div style="margin-top:.8mm">${m('k')} là của riêng từng lò xo, phụ thuộc: ${f(56)}</div></div>
+<div style="margin-top:.8mm">${m('k')} riêng của từng lò xo, phụ thuộc: ${f(24)}, ${f(24)}, ${f(24)}</div></div>
 ${h3(3, 'Làm nhanh', '2·3')}
 ${box(cau(`<b>Câu 1.</b> Chân ghế khi em ngồi lên, dây chun buộc tóc đang căng, dây cáp treo thang máy: vật nào bị nén? Vì sao?`, 2)
  + cau(`<b>Câu 2.</b> Kéo móc lực kế bằng lực ${u('3\\ N')} thì lò xo bên trong dãn ${u('6\\ cm')}. Tính độ cứng của lò xo.`, 2)
@@ -117,9 +117,9 @@ const p3 = `<section class="page">
 ${head('THÍ NGHIỆM ĐO ĐỘ CỨNG · BA CÁI BẪY')}
 ${h3(1, 'Thí nghiệm: tìm độ cứng k', '3·1')}
 <div class="fig-side" style="${fs(44)}"><div>
-<div style="margin-bottom:.6mm">${nw(`${m('l_0=10{,}0')}&nbsp;cm`)}; treo 1…5 quả ${u('50\\ g')}, mỗi quả nặng ${nw(`${m('0{,}49')}&nbsp;N`)}.</div>
+<div style="margin-bottom:.6mm">${nw(`${m('l_0=10{,}0')}&nbsp;cm`)}; treo 1…5 quả ${u('50\\ g')}, mỗi quả nặng ${nw(`${m('0{,}50')}&nbsp;N`)}.</div>
 <table class="tbl-ct bng"><tr><th>${m('F')} (N)</th><th>${m('l')} (cm)</th><th style="width:14mm">${m('\\Delta l')} (cm)</th><th style="width:20mm">${m('F/|\\Delta l|')} (N/m)</th></tr>
-${row('0,49', '11,9')}${row('0,98', '13,9')}${row('1,47', '15,9')}${row('1,96', '17,9')}${row('2,45', '19,8')}</table>
+${row('0,50', '11,9')}${row('1,00', '14,0')}${row('1,50', '16,0')}${row('2,00', '18,1')}${row('2,50', '20,0')}</table>
 </div>
 ${H.doThi()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
@@ -146,18 +146,18 @@ ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
 ${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(2, 'V · Bài toán mẫu: lò xo treo thẳng đứng', '4·2')}
-<div class="card soft" style="padding:1.2mm 3mm">Một lò xo nhẹ treo thẳng đứng, chiều dài tự nhiên ${u('25\\ cm')}. Treo vật ${u('200\\ g')}, khi vật đứng yên lò xo dài ${u('29\\ cm')}. Lấy ${g10}, lò xo luôn trong giới hạn đàn hồi.
-<div><b>a)</b> Tính độ cứng.</div><div><b>b)</b> Treo thêm vật ${u('300\\ g')} nữa thì lò xo dài bao nhiêu?</div><div><b>c)</b> Muốn lò xo dài ${u('32\\ cm')} phải treo tổng cộng bao nhiêu gam?</div></div>
+<div class="card soft" style="padding:.8mm 3mm">Một lò xo nhẹ treo thẳng đứng, chiều dài tự nhiên ${u('25\\ cm')}. Treo vật ${u('200\\ g')}, khi vật đứng yên lò xo dài ${u('29\\ cm')}. Lấy ${g10}, lò xo luôn trong giới hạn đàn hồi.
+<div><b>a)</b> Tính độ cứng. &nbsp; <b>b)</b> Treo thêm vật ${u('300\\ g')} nữa thì lò xo dài bao nhiêu?</div><div><b>c)</b> Muốn lò xo dài ${u('32\\ cm')} phải treo tổng cộng bao nhiêu gam?</div></div>
 ${h3(3, 'Phân tích đề')}
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“lò xo nhẹ treo thẳng đứng”</td><td>bỏ qua khối lượng lò xo; lực đàn hồi hướng lên</td></tr>
-<tr><td style="height:6.5mm">“vật 200 g … đứng yên”</td><td></td></tr>
-<tr><td style="height:6.5mm">“tự nhiên 25 cm … dài 29 cm”</td><td></td></tr>
-<tr><td style="height:6.5mm">“treo thêm 300 g nữa”</td><td></td></tr>
-<tr><td style="height:6.5mm">“trong giới hạn đàn hồi”</td><td></td></tr></table>
+<tr><td style="height:5mm">“vật 200 g … đứng yên”</td><td></td></tr>
+<tr><td style="height:5mm">“tự nhiên 25 cm … dài 29 cm”</td><td></td></tr>
+<tr><td style="height:5mm">“treo thêm 300 g nữa”</td><td></td></tr>
+<tr><td style="height:5mm">“trong giới hạn đàn hồi”</td><td></td></tr></table>
 ${h3(4, 'Giải')}
 <div class="fig-side" style="${fs(42)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`a) ${Fdh} và ${dl}:`, 2)}${wl(`&nbsp;&nbsp;&nbsp; độ cứng ${m('k')}:`, 1)}${wl('b) Tổng khối lượng, lực, độ dãn:', 2)}${wl(`&nbsp;&nbsp;&nbsp; chiều dài ${m('l')}:`, 1)}${wl(`c) ${dl}, lực, khối lượng:`, 2)}${wl('Kiểm tra: cứ 50 g dãn thêm bao nhiêu cm?', 1)}</div>${H.treo({ l0: '25 cm', l: '29 cm', m: '200 g', h0: 100, h: 116, cap: 'Bên trái (nét đứt): lò xo chưa treo.' })}</div>
+${wl(`a) ${Fdh} và ${dl}:`, 2)}${wl(`&nbsp;&nbsp;&nbsp; độ cứng ${m('k')}:`, 2)}${wl('b) Tổng khối lượng, lực, độ dãn:', 2)}${wl(`&nbsp;&nbsp;&nbsp; chiều dài ${m('l')}:`, 2)}${wl(`c) ${dl}, lực, khối lượng:`, 2)}${wl('Kiểm tra: cứ 50 g dãn thêm bao nhiêu cm?', 1)}</div>${H.treo({ l0: '25 cm', l: '29 cm', m: '200 g', h0: 100, h: 116, cap: 'Bên trái (nét đứt): lò xo chưa treo.' })}</div>
 ${h3(5, 'Điền bước còn thiếu: lò xo bị nén')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div style="padding-top:.8mm;line-height:1.35">Cùng lò xo (${nw(`${m('k=50')}&nbsp;N/m`)}, ${nw(`${m('l_0=25')}&nbsp;cm`)}), dựng đứng trên bàn, đặt vật ${u('300\\ g')} lên đầu trên (${g10}).</div>
@@ -169,13 +169,13 @@ const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
 ${K.btvn()}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
-<div class="fig-side" style="${fs(38)}">${box(wl(`${m('\\bigstar')} Lò xo ${nw(`${m('k=200')}&nbsp;N/m`)} bị kéo dãn ${u('3\\ cm')}. Lực đàn hồi?`, 3)
- + wl(`${m('\\bigstar\\bigstar')} Lò xo ${nw(`${m('k=100')}&nbsp;N/m`)} cắt đôi thành hai nửa giống nhau. Treo ${u('1\\ N')} vào một nửa thì nửa đó dãn bao nhiêu? Độ cứng một nửa?`, 4)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Treo vật ${u('200\\ g')} vào lò xo ${nw(`${m('k=50')}&nbsp;N/m`)} trong thang máy đi lên nhanh dần, ${nw(m('a=2\\ \\mathrm{m/s^2}'))}; ${g10}. Lò xo dãn bao nhiêu? So với lúc thang đứng yên?`, 4))}${H.thangMay()}</div>
+<div class="fig-side" style="${fs(38)}">${box(cau(`${m('\\bigstar')} Lò xo ${nw(`${m('k=200')}&nbsp;N/m`)} bị kéo dãn ${u('3\\ cm')}. Lực đàn hồi?`, 2)
+ + cau(`${m('\\bigstar\\bigstar')} Lò xo ${nw(`${m('k=100')}&nbsp;N/m`)} cắt đôi thành hai nửa giống nhau. Treo ${u('1\\ N')} vào một nửa thì nửa đó dãn bao nhiêu? Độ cứng một nửa?`, 3)
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} Treo vật ${u('200\\ g')} vào lò xo ${nw(`${m('k=50')}&nbsp;N/m`)} trong thang máy đi lên nhanh dần, ${nw(m('a=2\\ \\mathrm{m/s^2}'))}; ${g10}. Lò xo dãn bao nhiêu? So với lúc thang đứng yên?`, 3))}${H.thangMay()}</div>
 ${h3(3, 'Câu đổi chiều: biết hai chiều dài, tìm l<sub>0</sub> và k', '5·3')}
 ${box(wl(`Treo ${u('100\\ g')}, lò xo dài ${u('22\\ cm')}; treo ${u('300\\ g')}, dài ${u('26\\ cm')} (${g10}). Tìm ${m('k')} và ${l0}. Gợi ý: phần lực chênh gây ra phần dài chênh.`, 5))}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
-${box(wl('1.', 3) + wl('2.', 3) + wl('3.', 3))}
+${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 ${foot(5)}</section>`;
 
 const bangD1 = `<table class="bng" style="margin:.2mm 0"><tr><th style="text-align:left">${m('F')} (N)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr>
@@ -217,7 +217,7 @@ const tuongTu = {
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
     { t: 'Dạng 1 · Bài 1', de: `Dây chun dài tự nhiên ${u('10\\ cm')}. Kéo hai đầu bằng lực ${nw(`${m('F=1;\\ 2;\\ 3;\\ 4')}&nbsp;N`)}; sau mỗi lần thôi lực, dây dài lần lượt ${nw(`${m('10;\\ 10;\\ 10;\\ 11{,}5')}&nbsp;cm`)}.<br><b>a)</b> dây bị biến dạng kéo hay nén<br><b>b)</b> lần thử nào dây bị biến dạng dẻo<br><b>c)</b> lực lớn nhất còn đàn hồi; giới hạn đàn hồi trong khoảng nào`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: 25 },
-    { t: 'Dạng 1 · Bài 2', de: `Ghi kéo/nén hoặc đàn hồi/dẻo:<br><b>a)</b> dây cáp cần cẩu đang nâng hàng<br><b>b)</b> cột nhà đỡ mái<br><b>c)</b> lò xo giảm xóc khi xe qua ổ gà<br><b>d)</b> kẹp giấy bị bẻ cong, thả ra không thẳng lại`, o: ['a', 'b', 'c', 'd'] },
+    { t: 'Dạng 1 · Bài 2', de: `a)–c): ghi kéo hay nén; d): ghi đàn hồi hay dẻo.<br><b>a)</b> dây cáp cần cẩu đang nâng hàng<br><b>b)</b> cột nhà đỡ mái<br><b>c)</b> lò xo giảm xóc khi xe qua ổ gà<br><b>d)</b> kẹp giấy bị bẻ cong, thả ra không thẳng lại`, o: ['a', 'b', 'c', 'd'] },
     { t: 'Dạng 2 · Bài 1', de: `Lò xo dãn ${u('2{,}5\\ cm')} khi chịu lực kéo ${u('4{,}0\\ N')}; luôn trong giới hạn đàn hồi.<br><b>a)</b> độ cứng ${m('k')}<br><b>b)</b> kéo bằng ${u('10\\ N')}: dãn bao nhiêu cm<br><b>c)</b> dãn ${u('1{,}5\\ cm')}: lực kéo bao nhiêu`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 2 · Bài 2', de: `Lò xo trong một lực kế có ${nw(`${m('k=200')}&nbsp;N/m`)}.<br><b>a)</b> kéo móc bằng ${u('5{,}0\\ N')}: lò xo dãn bao nhiêu cm<br><b>b)</b> lò xo dãn ${u('4{,}0\\ cm')}: lực kéo bao nhiêu<br><b>c)</b> các vạch chia cách nhau ${u('1\\ cm')}: mỗi vạch ứng với bao nhiêu N`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 3 · Bài 1', de: `Lò xo nằm ngang, một đầu gắn tường, ${nw(`${m('l_0=30')}&nbsp;cm`)}, ${nw(`${m('k=80')}&nbsp;N/m`)}.<br><b>a)</b> kéo đầu tự do bằng ${u('2{,}4\\ N')}: chiều dài<br><b>b)</b> đẩy về phía tường bằng ${u('4{,}0\\ N')}: chiều dài<br><b>c)</b> muốn lò xo dài ${u('27\\ cm')}: kéo hay đẩy, lực bao nhiêu`, fig: H.ngang({ l0: 30 }), fw: 40, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: 16 },
