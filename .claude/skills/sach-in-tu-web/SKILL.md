@@ -177,6 +177,7 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-10 · Nhánh cũ tách từ `main` đã đi xa: `git fetch` + merge `main` TRƯỚC khi sửa ruột tập, nếu không dựng lại bản đã có. Hai QR cạnh nhau thì bỏ QR phụ (chỉ giữ QR bài học).
 - 2026-11-10 · VL10 Ch.4 do 5 phiên song song soạn: đáp số đúng 100 % (Python) nhưng HS ảo vẫn thấy ~40 điểm khó dùng — ô quá hẹp, hình lộ đáp án Dự đoán, hằng số/thuật ngữ chưa có trong tập, 7/9 tham chiếu "Xem lại ở Tập" lệch ở một bài → luôn chạy checklist học sinh ảo ở mục trên trước khi in; tham chiếu Tập lấy từ nhãn thật trong `.pdf.html`, không đoán.
 - 2026-11-10 · Yêu cầu "≥1 dòng mỗi ý" cho Bài tương tự là quá thấp: dòng nửa cột 62 mm chỉ đủ ghi đáp số, đo ra mỗi ý 0–1 dòng rộng trong khi lời giải cần ~2 → 10 bài/2 trang không thể vừa đề vừa lời giải; tính trước tổng mm cần (số ý × 2 dòng × 5 mm + đề) trước khi định số bài trên giấy.
+- 2026-11-12 · VL11 Ch.3 (6 phiên): mỗi phiên tự soát checklist vẫn bỏ sót lỗi lặp cả quyển — hằng số k, e, 1 eV bị hỏi trước khi in, Mục tiêu/chú thích hình cạnh Dự đoán lộ đáp án, ô hẹp cho phân số/đáp án dài, dòng kẻ < số ý ở Dạng 1–3; một HS ảo đọc cả 6 file `.pdf.html` (text, không ảnh, ~90k token) bắt đủ → giao lại từng phiên bằng `SendMessage`, mỗi phiên sửa ~15′. Đưa sẵn 4 lỗi lặp này vào brief phiên bài lần sau.
 - 2026-11-10 · 5 nhánh `claude/*` push cùng lúc → workflow tự gộp huỷ lượt chờ (concurrency) → `gh run list --workflow gop-claude-vao-main.yml`, lượt `cancelled` thì `gh run rerun <id>`.
 
 ## Cuối phiên
