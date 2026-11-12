@@ -61,7 +61,7 @@ def gauge(d, cx, cy, r, p, fs=36, mark=None, out=True):
     for v in (0, 100, 200, 300):
         a = gang(v); rr = r + 36 if out else r - 64
         text(d, (cx + rr * math.cos(a), cy + rr * math.sin(a)), str(v), fs, INK, bold=False)
-    text(d, (cx, cy + r * 0.5), "kPa", fs - 4, MUTED, bold=False)
+    text(d, (cx, cy + r * (0.5 if out else 0.72)), "kPa", max(fs - 4, 36) if not out else fs - 4, MUTED, bold=False)  # trong mat: tach khoi so 300
     if mark is not None:
         a = gang(mark)
         d.line([(cx + (r - 2) * math.cos(a), cy + (r - 2) * math.sin(a)), (cx + (r + 22) * math.cos(a), cy + (r + 22) * math.sin(a))],
@@ -225,7 +225,7 @@ def s_trap(img, d, t, sc):
     heat = ease((t - ts) / 1.2)
     V = lerp(8.0, 4.0, kc)
     syringe(d, t, V, bx0=190, bx1=310, y0=1230, px=34, scale_lbl=False, heat=heat, push=0 < t - ts < 0.4, vmin=4.0)
-    text(d, (250, 1296), "8,0 → 4,0 ml", 34, BLUE)
+    text(d, (250, 1296), "8,0 → 4,0 ml", 36, BLUE)
     # nhiet ke
     tx, tb, tt = 455, 1220, 770
     d.rounded_rectangle([tx - 16, tt, tx + 16, tb], radius=16, fill=WHITE, outline=NAVY, width=4)
@@ -247,8 +247,8 @@ def s_trap(img, d, t, sc):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "T không đổi → p·V không đổi",
-             "Giữ nhiệt độ, ấn tới 2,0 ml thì áp kế chỉ bao nhiêu? Áp kế còn đọc được không?",
-             f"p·V ≈ {P0V0} · thang đo 300 kPa")
+             "Giữ nhiệt độ, ấn tới 2,0 ml: áp kế chỉ bao nhiêu, còn đọc được không?",
+             f"p·V ≈ {P0V0}")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -276,5 +276,5 @@ CLIP = dict(id="tn-l12-boylecharles-01", header="VẬT LÍ 12 · THÍ NGHIỆM",
    ("Giới hạn của kết quả.", 2.6),
    ("Ấn nhanh thì sao?", 5.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.6, caps=[
-   ("Ấn tới 2,0 ml.", 5.0)]),
+   ("Tự nghĩ trước đã.", 5.0)]),
 ])
