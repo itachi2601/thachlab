@@ -125,6 +125,7 @@ FILES=(
   "supabase/migrations/20261109140000_de_danh_gia_mo_dap_an_sau_2_luot.sql|Đề đánh giá mở đáp án sau 2 lượt (trước 3) + hàm get_exam_wrong_notes (gợi ý vì sao phương án em chọn sai, không lộ đáp án); chỉ thay/thêm hàm|lúc nào cũng được"
   "supabase/migrations/20261111190000_va_bao_mat_buoc_1_ham_moi.sql|Vá bảo mật bước 1: thêm notify_user_staff, get_cnc_quiz_banks, cnc_milling_quiz_save, exam_has_essay; xoá rank_fix_quiz_submit(bigint,int) và 2 policy ghi của bảng checklist phay|lúc nào cũng được, TRƯỚC khi deploy client|supabase db query --linked -f perf/rollback/20261111190000_va_bao_mat_buoc_1_ham_moi.down.sql"
   "supabase/migrations/20261111200000_va_bao_mat_buoc_2_thu_quyen.sql|Vá bảo mật bước 2 (= P0 #1 chặng 3): thu quyền đọc exams.questions, thu notify_user + rank_gate_pool_ids về nội bộ, bỏ policy ghi thẳng cnc_milling_quiz_attempts|SAU khi chạy bước 1 VÀ deploy client; sau 22h|supabase db query --linked -f perf/rollback/20261111200000_va_bao_mat_buoc_2_thu_quyen.down.sql"
+  "supabase/migrations/20261112070000_cnc_learning_result_kiem_dau_vao.sql|record_cnc_learning_result: chặn điểm âm / điểm > tổng câu / mã bài rỗng-quá dài, thôi mở cho anon (vẫn nhận điểm từ máy)|Lúc nào cũng được (chỉ thay thân hàm)|supabase db query --linked -f perf/rollback/20261112070000_cnc_learning_result_kiem_dau_vao.down.sql"
 )
 # ĐÃ CHẠY 17/10/2026: 20261017180000_ta_giao_btvn_rieng
 # ĐÃ CHẠY 15/10/2026 19:14: 20261015120000_vinh_danh_hoa_diem_xoay_vong
