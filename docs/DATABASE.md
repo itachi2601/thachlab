@@ -1,4 +1,4 @@
-# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-11
+# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-12
 
 Sinh bằng `node scripts/gen-database-doc.mjs` (chỉ đọc `pg_class`/`pg_attribute`). **Không sửa
 tay** — chạy lại sau khi migration mới đã chạy trên production. Danh sách hàm/RPC ở
@@ -141,7 +141,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **checklist_work_starts** (~-1): session_id:int8*>checklist_sessions, course_id:int8>course_offerings, lesson_id:text, student_id:uuid*>profiles, grader_id:uuid*>profiles, started_at:ts
 - **cnc_competency_permissions** (~176): course_id:int8*>course_offerings, student_id:uuid*>profiles, competency_id:text*, status:text, note:text, approved_by:uuid>profiles, approved_at:ts, updated_at:ts
 - **cnc_drawing_submissions** (~33): id:int8*, created_at:ts, updated_at:ts, student_id:uuid>profiles, lesson_id:text, file_name:text, storage_path:text, mime_type:text, size_bytes:int8, status:text, teacher_feedback:text, reviewed_by:uuid>profiles, reviewed_at:ts, course_id:int8>course_offerings
-- **cnc_learning_records** (~505): course_id:int8*>course_offerings, student_id:uuid*>profiles, lesson_id:text*, assessment_id:text*, completed:bool, latest_score:int, best_score:int, total_questions:int, attempt_count:int, last_activity_at:ts
+- **cnc_learning_records** (~554): course_id:int8*>course_offerings, student_id:uuid*>profiles, lesson_id:text*, assessment_id:text*, completed:bool, latest_score:int, best_score:int, total_questions:int, attempt_count:int, last_activity_at:ts
 - **cnc_lesson_files** (~5): id:int8*, created_at:ts, lesson_id:text, kind:text, title:text, file_name:text, file_url:text, storage_path:text, mime_type:text, size_bytes:int8
 - **cnc_lesson_videos** (~9): id:int8*, created_at:ts, lesson_id:text, title:text, youtube_url:text, youtube_id:text, sort_order:int
 - **cnc_lessons** (~20): id:text*, title:text, short_title:text, duration_label:text, emphasis:text, body_html:text, resources:jsonb, sort_order:int, created_at:ts

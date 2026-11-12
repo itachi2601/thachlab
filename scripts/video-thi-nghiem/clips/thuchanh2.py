@@ -130,7 +130,6 @@ def minh_hoa(d, x, y, alpha=1.0, anchor="rm", full=False):
     text(d, (x, y), "Số liệu minh hoạ" if full else "Minh hoạ", 36, PURPLE, anchor=anchor, alpha=alpha)
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("A. Đá tan", "B. Nóng lên", "C. Sôi tới cạn", "D. Bằng nhau")
 
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
@@ -142,19 +141,15 @@ def s_hook(img, d, t, sc):
     text(d, (810, 770), f"{P_W} W", 60, INK, alpha=appear(t, 0.4))
     a = appear(t, 1.0, 0.5)
     if a <= 0: return
-    card(d, (50, 960, 1030, 1620), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, 960, 1030, 1410), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pill(d, W / 2, 1010, "DỰ ĐOÁN", 36, WHITE, PURPLE, a)
     ctext(d, 1092, "Đun liên tục. Giai đoạn nào dài nhất?", 44, INK, alpha=a)
     rich(d, W / 2, 1175, "λ = 3,34·10^{5} J/kg;  L = 2,26·10^{6} J/kg", 40, INK, alpha=a)
     text(d, (W / 2, 1230), "c = 4 190 J/(kg·K)", 40, INK, alpha=a)
-    for i, s in enumerate(OPTS):
-        k = appear(t, 1.3 + 0.15 * i, 0.4)
-        y = 1300 + i * 72
-        card(d, (110, y - 32, 970, y + 32), fill=A((245, 243, 255), k), outline=A(PURPLE, k), r=20, w=3)
-        text(d, (140, y), s, 42, INK, anchor="lm", alpha=k)
+    text(d, (W / 2, 1300), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a)   # K10: khong ve nut A-D
     tc = 2.3; tend = sc["T"] - 0.1; q = clamp((t - tc) / (tend - tc))
-    d.rounded_rectangle([140, 1580, 940, 1592], radius=6, fill=A(LIGHT, a))
-    if q < 1: d.rounded_rectangle([140, 1580, 140 + 800 * (1 - q), 1592], radius=6, fill=A(PURPLE, a))
+    d.rounded_rectangle([140, 1362, 940, 1374], radius=6, fill=A(LIGHT, a))
+    if q < 1: d.rounded_rectangle([140, 1362, 140 + 800 * (1 - q), 1374], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
 def tau_of(t, sc):
@@ -169,7 +164,7 @@ def s_do(img, d, t, sc):
     panel(d, tau)
     if M[3] + 0.1 < t < M[3] + 2.8:
         blink = 0.65 + 0.35 * math.sin(t * 6)
-        wdt = tw(d, "TUA NHANH", F(32)) + 90
+        wdt = tw(d, "TUA NHANH", F(36)) + 90
     card(d, (40, 950, 1040, 1620), fill=WHITE, outline=LIGHT, w=3)
     if M[3] + 0.1 < t < M[3] + 2.8:
         cxp = 560
@@ -177,7 +172,7 @@ def s_do(img, d, t, sc):
         for j in range(2):
             tx = cxp - wdt / 2 + 22 + j * 16
             d.polygon([(tx, 976), (tx, 1004), (tx + 16, 990)], fill=A(WHITE, blink))
-        text(d, (cxp + 22, 990), "TUA NHANH", 32, WHITE)
+        text(d, (cxp + 22, 990), "TUA NHANH", 36, WHITE)
     minh_hoa(d, 1010, 990, full=True)
     plot(d, (170, 1040, 960, 1520), tau)
 
@@ -247,7 +242,7 @@ def s_ans(img, d, t, sc):
             d.rounded_rectangle([290, y - 26, 290 + max(52, wmax * g), y + 26], radius=26, fill=COL[i])
             text(d, (290 + max(52, wmax * g) + 18, y), f"{sp(dur)} s", 38, INK, anchor="lm", alpha=g)
         k2 = appear(t, 0.2, 0.4)
-        ctext(d, 1500, "Sôi gấp ≈ 5,4 lần", 56, RED, maxw=900, alpha=k2)
+        ctext(d, 1500, "Sôi ≈ 5,4 lần Nóng lên", 56, RED, maxw=900, alpha=k2)
         return
     soi = cur >= 2
     a = appear(t, (M[2] if soi else M[1]) - 0.1, 0.4)
@@ -319,6 +314,7 @@ def s_trap(img, d, t, sc):
     arrow(d, (720, 620), (470, 640), NAVY, w=5, head=18)
     text(d, (735, 620), "đá", 40, INK, anchor="lm")
     arrow(d, (720, 790), (520, 800), BLUE, w=5, head=18)
+    text(d, (735, 790), "nước", 40, BLUE, anchor="lm")
     kr = appear(t, M[0] + 0.8, 0.4)
     text(d, (735, 905), "cân cả vào m", 42, RED, anchor="lm", alpha=kr)
     # cong thuc va chieu sai
@@ -341,8 +337,8 @@ def _body(d, t, k):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
-    chot_hoi(d, t, sc, "Đoạn ngang: nhiệt vào để chuyển thể",
-             "Đun 0,200 kg đá, bếp 100 W. Đoạn ngang dài bao lâu?", body=_body)
+    chot_hoi(d, t, sc, "Đoạn ngang: đang chuyển thể",
+             "0,200 kg đá, bếp 100 W: đoạn ngang ở 0\u00a0°C dài bao lâu?", body=_body)
     kb = appear(t, M[0] + 0.4, 0.5)
     if kb <= 0: return
     card(d, (110, 1300, 970, 1560), fill=A((255, 237, 213), kb), outline=A(ORANGE, kb), r=24, w=4)
@@ -350,7 +346,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 1.2, 0.5)
     if kh <= 0:
         return
-    ctext(d, 1450, "λ = P·τ/m; λ giữ nguyên", 46, INK, maxw=820, alpha=kh)
+    ctext(d, 1450, "Đoạn này là giai đoạn nào?", 46, INK, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

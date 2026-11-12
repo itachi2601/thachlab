@@ -132,7 +132,7 @@ def needle_xy(i, r):
     return GX + r * math.sin(a), GY - r * math.cos(a)
 
 
-def galvo(d, i, ghost=None):
+def galvo(d, i, ghost=None, peak=None):
     card(d, (170, 812, 910, 1240), fill=WHITE, outline=NAVY, r=30, w=5)
     d.arc([GX - GR, GY - GR, GX + GR, GY + GR], 270 - GANG - 3, 270 + GANG + 3, fill=NAVY, width=5)
     for v in range(-5, 6):
@@ -143,26 +143,27 @@ def galvo(d, i, ghost=None):
         if big:
             lx, ly = GX + (GR + 30) * math.sin(a), GY - (GR + 30) * math.cos(a)
             text(d, (lx, ly), str(v).replace("-", "−"), 36, NAVY)
-    text(d, (880, 1212), "mA", 34, MUTED, bold=False, anchor="rm")
+    text(d, (880, 1212), "mA", 36, MUTED, bold=False, anchor="rm")
     if ghost is not None and abs(ghost) > 0.05 and abs(ghost - i) > 0.1:
         d.line([(GX, GY), needle_xy(ghost, GR - 8)], fill=A(GRAY, 0.8), width=5)
     d.line([(GX, GY), needle_xy(i, GR - 8)], fill=RED, width=9)
     dot(d, GX, GY, 16, NAVY)
-    col = RED if i > 0.05 else (BLUE if i < -0.05 else MUTED)
-    text(d, (GX, 1278), f"i = {fmt(i)} mA", 56, col)
+    sh = i if not peak else (peak if abs(i) >= 0.5 * abs(peak) else 0.0)   # so nhay thang 0 <-> dinh
+    col = RED if sh > 0.05 else (BLUE if sh < -0.05 else MUTED)
+    text(d, (GX, 1278), f"i = {fmt(sh)} mA", 56, col)
 
 
 def vlabel(d, s, alpha=1.0):
     if s: text(d, (250, 690), s, 42, BLUE, alpha=alpha)
 
 
-def apparatus(d, tip, i, ghost=None, malpha=1.0, vtxt="", field_on=True):
+def apparatus(d, tip, i, ghost=None, malpha=1.0, vtxt="", field_on=True, peak=None):
     if field_on: field(d, tip, malpha)
     coil_back(d)
     magnet(d, tip, malpha)
     coil_front(d)
     wires(d)
-    galvo(d, i, ghost)
+    galvo(d, i, ghost, peak)
     vlabel(d, vtxt)
 
 
@@ -172,17 +173,14 @@ def s_hook(img, d, t, sc):
     k = appear(t, sc["M"][1] - 0.15, 0.45)
     if k <= 0: return
     y0 = TAB_Y + (1 - k) * 40
-    card(d, (60, y0, 1020, y0 + 350), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
+    card(d, (60, y0, 1020, y0 + 270), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))   # thanh dem thoi gian nghi
-    d.rounded_rectangle([140, y0 + 330, 940, y0 + 340], radius=6, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, y0 + 330, 140 + 800 * (1 - q), y0 + 340], radius=6, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, y0 + 244, 940, y0 + 254], radius=6, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, y0 + 244, 140 + 800 * (1 - q), y0 + 254], radius=6, fill=A(PURPLE, k))
     text(d, (W / 2, y0 + 40), "Dự đoán", 40, PURPLE, alpha=k)
-    text(d, (W / 2, y0 + 92), "Nam châm nằm YÊN trong cuộn dây,", 38, INK, alpha=k)
+    text(d, (W / 2, y0 + 92), "Nam châm nằm yên trong cuộn dây,", 38, INK, alpha=k)
     text(d, (W / 2, y0 + 138), "kim điện kế sẽ…", 38, INK, alpha=k)
-    for j, s in enumerate(("A.  lệch, đứng yên", "B.  chỉ số 0", "C.  lệch qua lại")):
-        yy = y0 + 196 + j * 52
-        d.rounded_rectangle([110, yy - 22, 970, yy + 22], radius=22, outline=A(LIGHT, k), width=3)
-        text(d, (140, yy), s, 36, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 200), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)
 
 
 # ---------------- canh 2: tien hanh ----------------
@@ -194,7 +192,7 @@ PH = [(0, 0.8, 0.75, OUT_TIP, IN_TIP, 3.9, "v = 0,4 m/s →"),
 
 
 def do_state(t, sc):
-    tip, i, ghost, malpha, vt, done = OUT_TIP, 0.0, None, 1.0, "", 0
+    tip, i, ghost, malpha, vt, done, pk = OUT_TIP, 0.0, None, 1.0, "", 0, None
     for n, (k, dl, dur, xa, xb, im, lab) in enumerate(PH):
         m = sc["M"][k]
         if t < m - 0.05: break
@@ -210,27 +208,27 @@ def do_state(t, sc):
             vt = lab; done = n + (1 if t > m + 1.2 else 0); continue
         if t >= t0:
             tip = lerp(xa, xb, clamp((t - t0) / dur))
-            i = im * ease((t - t0) / 0.14) * (1 - ease((t - t1) / 0.16))
+            i = im * ease((t - t0) / 0.14) * (1 - ease((t - t1) / 0.16)); pk = im
             if t <= t1 + 0.05: vt = lab
             if t > t1 + 0.1: ghost = im; done = n + 1
             else: done = n
         else: done = n
-    return tip, i, ghost, malpha, vt, done
+    return tip, i, ghost, malpha, vt, done, pk
 
 
 def chips(d, cur, done):
     names = ("1. Nhanh", "2. Chậm", "3. Nằm yên", "4. Rút ra")
     for j, s in enumerate(names):
         x0 = 60 + j * 245; box = (x0, 236, x0 + 225, 302)
-        if j == cur: card(d, box, fill=ORANGE, r=33); text(d, (x0 + 112, 269), s, 32, WHITE)
-        elif j < done: card(d, box, fill=LIGHT, r=33); text(d, (x0 + 112, 269), s, 32, INK)
-        else: card(d, box, fill=None, outline=LIGHT, r=33, w=3); text(d, (x0 + 112, 269), s, 32, GRAY)
+        if j == cur: card(d, box, fill=ORANGE, r=33); text(d, (x0 + 112, 269), s, 36, WHITE)
+        elif j < done: card(d, box, fill=LIGHT, r=33); text(d, (x0 + 112, 269), s, 36, INK)
+        else: card(d, box, fill=None, outline=LIGHT, r=33, w=3); text(d, (x0 + 112, 269), s, 36, GRAY)
 
 
 def table(d, nrows, hl=-1, y=TAB_Y, alpha=1.0):
     card(d, (60, y, 1020, y + 288), fill=A(WHITE, alpha), outline=A(LIGHT, alpha), w=3)
     for x, s, an in ((110, "Cách làm", "lm"), (600, "v (m/s)", "mm"), (860, "Số chỉ (mA)", "mm")):
-        text(d, (x, y + 38), s, 32, MUTED, bold=False, anchor=an, alpha=alpha)
+        text(d, (x, y + 38), s, 36, MUTED, bold=False, anchor=an, alpha=alpha)
     d.line([(100, y + 66), (980, y + 66)], fill=A(LIGHT, alpha), width=3)
     for j, (nm, v, im) in enumerate(ROWS[:nrows]):
         yy = y + 100 + j * 52
@@ -242,16 +240,16 @@ def table(d, nrows, hl=-1, y=TAB_Y, alpha=1.0):
 
 
 def s_do(img, d, t, sc):
-    tip, i, ghost, malpha, vt, done = do_state(t, sc)
+    tip, i, ghost, malpha, vt, done, pk = do_state(t, sc)
     cur = cur_cap(sc, t)
     chips(d, cur, done)
-    apparatus(d, tip, i, ghost, malpha, vt)
+    apparatus(d, tip, i, ghost, malpha, vt, peak=pk)
     table(d, done, hl=done - 1 if done > 0 and (cur == done - 1) else -1)
     ka = appear(t, sc["M"][2] + 1.0, 0.4) * (1 - appear(t, sc["M"][3] - 0.1, 0.3))   # lo dap an luc nam yen, tat khi rut ra
     if ka > 0:
-        pw = tw(d, "ĐÁP ÁN B", F(32)) + 44
+        pw = tw(d, "ĐÁP ÁN B", F(36)) + 44
         card(d, (880 - pw, 828, 880, 882), fill=A(GREEN, ka), r=27)
-        text(d, (880 - pw / 2, 855), "ĐÁP ÁN B", 32, WHITE, alpha=ka)
+        text(d, (880 - pw / 2, 855), "ĐÁP ÁN B", 36, WHITE, alpha=ka)
 
 
 # ---------------- canh 3: rut ra ----------------
@@ -262,17 +260,17 @@ def chart(d, t, sc):
     d.line([(ox, 330), (ox, 730)], fill=NAVY, width=4)
     d.line([(ox, oy), (ox + 0.45 * sx, oy)], fill=NAVY, width=4)
     chevron(d, ox, 330, -math.pi / 2, NAVY, s=16); chevron(d, ox + 0.45 * sx, oy, 0, NAVY, s=16)
-    text(d, (ox + 22, 336), "i (mA)", 32, MUTED, bold=False, anchor="lm")
-    text(d, (ox + 0.45 * sx, oy + 34), "v (m/s)", 32, MUTED, bold=False, anchor="rm")
+    text(d, (ox + 22, 336), "i (mA)", 36, MUTED, bold=False, anchor="lm")
+    text(d, (ox + 0.45 * sx, oy + 34), "v (m/s)", 36, MUTED, bold=False, anchor="rm")
     for v in (0.1, 0.2, 0.3):
         x = ox + v * sx; d.line([(x, oy - 8), (x, oy + 8)], fill=NAVY, width=3)
-        text(d, (x, oy + 34), fmt(v, sign=False), 32, MUTED, bold=False)
+        text(d, (x, oy + 34), fmt(v, sign=False), 36, MUTED, bold=False)
     for im in (-2, 2, 4):
         y = oy - im * sy; d.line([(ox - 8, y), (ox + 8, y)], fill=NAVY, width=3)
-        text(d, (ox - 18, y), str(im).replace("-", "−"), 32, MUTED, bold=False, anchor="rm")
+        text(d, (ox - 18, y), str(im).replace("-", "−"), 36, MUTED, bold=False, anchor="rm")
     k0 = appear(t, sc["M"][1] - 0.1, 0.8)
     if k0 > 0:  # duong qua goc toa do
-        x1 = lerp(0, 0.43, k0)
+        x1 = lerp(0, 0.4, k0)
         d.line([(ox, oy), (ox + x1 * sx, oy - x1 * 9.75 * sy)], fill=A(ORANGE, 0.45), width=4)
     pts = [(0.0, 0.0, 0), (0.1, 1.0, 1), (0.2, 2.1, 1), (0.4, 3.9, 1)]
     for j, (v, im, cap) in enumerate(pts):
@@ -280,13 +278,13 @@ def chart(d, t, sc):
         if k <= 0: continue
         x, y = ox + v * sx, oy - im * sy
         dot(d, x, y, 13 * k, ORANGE, outline=WHITE)
-        if v == 0.4: text(d, (x + 22, y), fmt(im), 32, ORANGE, anchor="lm", alpha=k)
-        elif v: text(d, (x - 16, y - 30), fmt(im), 32, ORANGE, anchor="rm", alpha=k)
+        if v == 0.4: text(d, (x + 22, y), fmt(im), 36, ORANGE, anchor="lm", alpha=k)
+        elif v: text(d, (x - 16, y - 30), fmt(im), 36, ORANGE, anchor="rm", alpha=k)
     k = appear(t, sc["M"][2] + 0.1, 0.45)
     if k > 0:
         x, y = ox + 0.2 * sx, oy + 2.0 * sy
         dot(d, x, y, 13 * k, PURPLE, outline=WHITE)
-        text(d, (x + 26, y), "−2,0 (rút ra)", 32, PURPLE, anchor="lm", alpha=k)
+        text(d, (x + 26, y), "−2,0 (rút ra)", 36, PURPLE, anchor="lm", alpha=k)
 
 
 def kcard(d, y, title, ev, color, k, h=200):
@@ -296,7 +294,7 @@ def kcard(d, y, title, ev, color, k, h=200):
     f = F(44); ls = wrap(d, title, f, 880)
     for j, l in enumerate(ls):
         text(d, (W / 2, yy + 52 + j * 54), l, 44, color, alpha=k)
-    text(d, (W / 2, yy + h - 38), ev, 34, MUTED, bold=False, alpha=k)
+    text(d, (W / 2, yy + h - 38), ev, 38, MUTED, bold=False, alpha=k)
 
 
 def s_rut(img, d, t, sc):
@@ -331,8 +329,8 @@ def s_bay(img, d, t, sc):
 # ---------------- canh 5: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Từ thông biến thiên → có dòng",
-             "Đổi sang cực S, cắm vào nhanh như lần 1. Kim lệch bao nhiêu, về phía nào?",
-             "Cực S: từ trường ngược cực N")
+             "Đổi sang cực S, cắm vào nhanh như lần 1. Kim lệch về phía nào?",
+             "Nhớ lại bảng số đo")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

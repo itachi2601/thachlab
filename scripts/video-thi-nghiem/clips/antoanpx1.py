@@ -40,8 +40,8 @@ def rig(d, t, dd, reading, sub, lead=0.0):
         v = k * 0.5; x = X(v); L = 22 if k % 2 == 0 else 14
         d.line([(x, RY), (x, RY + L)], fill=NAVY, width=4)
         s = "0" if k == 0 else (str(int(v)) if k % 2 == 0 else fmt(v))
-        text(d, (x, RY + 48), s, 34, MUTED, bold=False)
-    text(d, (1030, RY + 48), "m", 34, MUTED, bold=False, anchor="rm")
+        text(d, (x, RY + 48), s, 36, MUTED, bold=False)
+    text(d, (1030, RY + 48), "m", 36, MUTED, bold=False, anchor="rm")
     # nguon tren gia
     d.rectangle([SX - 8, SY + 34, SX + 8, RY], fill=GRAY)
     d.rounded_rectangle([SX - 34, SY - 34, SX + 34, SY + 34], radius=12, fill=YELLOW, outline=NAVY, width=5)
@@ -49,45 +49,41 @@ def rig(d, t, dd, reading, sub, lead=0.0):
         a = 90 + 120 * k
         d.pieslice([SX - 24, SY - 24, SX + 24, SY + 24], a - 30, a + 30, fill=NAVY)
     dot(d, SX, SY, 6, YELLOW)
-    text(d, (SX, SY - 66), "nguồn", 34, MUTED, bold=False)
+    text(d, (SX, SY - 66), "nguồn", 36, MUTED, bold=False)
     if lead > 0:               # hop chi che nguon khi do phong
         yo = -260 * (1 - lead)
         card(d, (SX - 58, SY - 58 + yo, SX + 58, SY + 58 + yo), fill=A((110, 115, 128), lead), outline=A(NAVY, lead), r=14, w=5)
-        text(d, (SX, SY + yo), "chì", 32, WHITE, alpha=lead)
+        text(d, (SX, SY + yo), "chì", 36, WHITE, alpha=lead)
     # dau do (cua so o dau trai, quay ve nguon) tren gia
     x = X(dd)
     d.rectangle([x + 60, SY + 30, x + 76, RY], fill=GRAY)
     d.rounded_rectangle([x, SY - 30, x + 140, SY + 30], radius=26, fill=(214, 220, 232), outline=NAVY, width=5)
     d.rectangle([x - 4, SY - 24, x + 12, SY + 24], fill=(70, 78, 100))
-    text(d, (x + 70, SY - 62), "đầu dò", 34, NAVY)
+    text(d, (x + 70, SY - 62), "đầu dò", 36, NAVY)
     # khoang cach
     card(d, (60, 270, 500, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (280, 320), "Cách tâm nguồn", 34, MUTED, bold=False)
+    text(d, (280, 320), "Cách tâm nguồn", 36, MUTED, bold=False)
     text(d, (280, 430), f"d = {fmt(dd)} m", 66, BLUE)
     # may dem
     card(d, (560, 270, 1020, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (790, 320), "Máy đếm", 34, MUTED, bold=False)
+    text(d, (790, 320), "Máy đếm", 36, MUTED, bold=False)
     d.rounded_rectangle([610, 360, 970, 470], radius=16, fill=NAVY)
     text(d, (790, 415), str(reading), 66, (134, 239, 172))
-    text(d, (790, 512), sub, 34, MUTED, bold=False)
+    text(d, (790, 512), sub, 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Còn khoảng 1/2", "B. Còn khoảng 1/4", "C. Còn khoảng 1/8", "D. Gần như không đổi")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 1.0, "···", "chưa đếm")
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 990, 1020, 1380), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1040), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1130, f"Ở 1 m: {N1} xung/phút.\nLùi ra 2 m thì còn bao nhiêu?", 40, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1258 + i * 76
-        card(d, (110, y - 33, 970, y + 33), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=20, w=4)
-        text(d, (150, y), s, 38, INK, anchor="lm", alpha=a)
+    ctext(d, 1140, f"Ở 1 m: {N1} xung/phút (đã trừ phông).\nLùi ra 2 m thì còn bao nhiêu?", 40, INK, alpha=k)
+    text(d, (W / 2, 1258), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1566, 940, 1580], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1566, 140 + 800 * (1 - q), 1580], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1326, 940, 1340], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1326, 140 + 800 * (1 - q), 1340], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: do phong, lui dan dau do, ghi bang ----------------
 MOVE = 0.6
@@ -142,8 +138,8 @@ def s_ans(img, d, t, sc):
     card(d, (60, 380, 1020, 1040), fill=WHITE, outline=LIGHT, w=3)
     for n in (500, 1000, 1500): d.line([(x0, Yg(n)), (x1, Yg(n))], fill=(240, 236, 228), width=2)
     d.line([(x0, yb), (x1 + 25, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 40)], fill=NAVY, width=5)
-    text(d, (x0 + 18, yt - 50), "N (xung/phút)", 34, MUTED, anchor="lm")
-    text(d, (x1 + 25, yb + 80), "d (m)", 34, MUTED, anchor="rm")
+    text(d, (x0 + 18, yt - 50), "N (xung/phút)", 36, MUTED, anchor="lm")
+    text(d, (x1 + 25, yb + 80), "d (m)", 36, MUTED, anchor="rm")
     for k2 in range(7):
         v = k2 * 0.5; d.line([(Xg(v), yb), (Xg(v), yb + 10)], fill=NAVY, width=3)
         if k2 % 2 == 0: text(d, (Xg(v), yb + 36), str(int(v)), 36, MUTED, bold=False)
@@ -180,7 +176,7 @@ def s_ans(img, d, t, sc):
     d.line([(90, base), (990, base)], fill=NAVY, width=4)
     for i, (dm, _, _, nd2) in enumerate(ROWS):
         cx = 180 + i * 180; g = ease((t - M[1] - 0.3 - i * 0.25) / 0.5)
-        text(d, (cx, base + 36), f"{fmt(dm)} m", 34, MUTED, bold=False, alpha=a1)
+        text(d, (cx, base + 36), f"{fmt(dm)} m", 36, MUTED, bold=False, alpha=a1)
         if g <= 0: continue
         top = base - nd2 * s_ * g
         d.rectangle([cx - 55, top, cx + 55, base], fill=ORANGE)
@@ -223,7 +219,7 @@ def s_why(img, d, t, sc):
     for r, n, at in ((1, 1, 0.3), (2, 2, 0.9), (3, 3, 1.5)):
         square(d, r, n, ORANGE, appear(t, at), ["d", "2d", "3d"][r - 1], ["1", "1/4", "1/9"][r - 1])
     dot(d, S0[0], S0[1], 16, YELLOW, NAVY)
-    text(d, (S0[0], S0[1] - 50), "nguồn", 34, MUTED, bold=False)
+    text(d, (S0[0], S0[1] - 50), "nguồn", 36, MUTED, bold=False)
     a = appear(t, 0.3)
     card(d, (60, 1030, 1020, 1250), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
     ctext(d, 1095, "Cùng số hạt, diện tích tăng theo d²", 38, INK, alpha=a)
@@ -263,7 +259,7 @@ def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "Nguồn điểm: d gấp đôi → còn 1/4",
              "Từ 0,5 m lùi ra 1,5 m, nhịp thực giảm khoảng bao nhiêu lần?",
-             "Nhớ lại cột N·d²")
+             "Nhớ hình ô vuông")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

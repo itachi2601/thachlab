@@ -67,9 +67,9 @@ def field_panel(d, a, band=True, arc=True, frame_label=False, wires=False):
     text(d, (110, 520), "N", 44, WHITE); text(d, (970, 520), "S", 44, WHITE)
     arrow(d, (170, 266), (260, 266), BLUE, w=4, head=16)
     text(d, (274, 266), "B", 38, BLUE, anchor="lm")
-    if band:
+    if band and abs(c) >= 0.05:                    # 90 do: khong duong nao xuyen -> an chu thich
         lg = "dải cam: xuyên qua khung" if c >= 0 else "dải tím: xuyên ngược n, Φ < 0"
-        text(d, (340, 266), lg, 32, bcol, bold=False, anchor="lm")
+        text(d, (340, 266), lg, 36, bcol, bold=False, anchor="lm")
     if wires:                                     # day noi tu truc khung xuong dien ke
         for dx in (0, 14):
             d.line([(CX + dx, CY), (CX + dx, 774 + dx * 0.0), (790 + dx, 774), (790 + dx, 812)], fill=(90, 96, 112), width=3)
@@ -84,10 +84,10 @@ def field_panel(d, a, band=True, arc=True, frame_label=False, wires=False):
     arrow(d, (CX, CY), tip, GREEN, w=6, head=20)
     tag(d, CX + 190 * cc - 32 * s, CY - 190 * s - 32 * cc, "n", 38, GREEN)
     if frame_label:
-        tx, ty = CX - 120 * s, CY - 120 * cc; lx, ly = 300, 430
-        tag(d, lx, ly, "khung (nhìn cạnh)", 34, COPPER)
-        ang = math.atan2(ty - ly, tx - (lx + 162)); e = (tx - 18 * math.cos(ang), ty - 18 * math.sin(ang))
-        arrow(d, (lx + 162, ly), e, COPPER, w=4, head=16)
+        tx, ty = CX - 120 * s, CY - 120 * cc; lx, ly = 316, 430
+        tag(d, lx, ly, "khung (nhìn cạnh)", 36, COPPER)
+        ang = math.atan2(ty - ly, tx - (lx + 170)); e = (tx - 18 * math.cos(ang), ty - 18 * math.sin(ang))
+        arrow(d, (lx + 170, ly), e, COPPER, w=4, head=16)
     if arc and a > 2:
         d.arc([CX - 70, CY - 70, CX + 70, CY + 70], 360 - a, 360, fill=GREEN, width=5)
         am = math.radians(a / 2); tag(d, CX + 104 * math.cos(am), CY - 104 * math.sin(am), "α", 36, GREEN)
@@ -103,17 +103,17 @@ def plot(d, box, a_drawn, recs, hl=0.0, pen=False):
                             outline=A(GREEN, hl), width=4)
     for p in (0.01, 0.005, -0.005):
         dashed(d, (x0, Y(p)), (x1, Y(p)), LIGHT, 3)
-        text(d, (x0 - 14, Y(p)), fphi(p), 34, MUTED, bold=False, anchor="rm")
+        text(d, (x0 - 14, Y(p)), fphi(p), 36, MUTED, bold=False, anchor="rm")
     for a in (30, 60, 90, 120):
         dashed(d, (X(a), yt), (X(a), yb), LIGHT, 3)
     for a in (0, 30, 60, 90, 120):
-        text(d, (X(a), yb + 32), str(a), 34, MUTED, bold=False)
+        text(d, (X(a), yb + 32), str(a), 36, MUTED, bold=False)
     d.line([(x0, yb + 4), (x0, yt - 14)], fill=NAVY, width=5)
     d.polygon([(x0, yt - 30), (x0 - 10, yt - 12), (x0 + 10, yt - 12)], fill=NAVY)
     d.line([(x0, Y(0)), (x1 + 20, Y(0))], fill=NAVY, width=5)
-    text(d, (x0 - 14, Y(0)), "0", 34, MUTED, bold=False, anchor="rm")
-    text(d, (x0 + 20, yt - 20), "Φ (Wb)", 34, INK, anchor="lm")
-    text(d, (x1 + 40, Y(0) - 30), "α (°)", 34, INK, anchor="rm")
+    text(d, (x0 - 14, Y(0)), "0", 36, MUTED, bold=False, anchor="rm")
+    text(d, (x0 + 20, yt - 20), "Φ (Wb)", 36, INK, anchor="lm")
+    text(d, (x1 + 40, Y(0) - 30), "α (°)", 36, INK, anchor="rm")
     if a_drawn > 0.2:
         n = max(2, int(a_drawn * 1.5))
         d.line([(X(a_drawn * k / (n - 1)), Y(phi_model(a_drawn * k / (n - 1)))) for k in range(n)],
@@ -137,15 +137,14 @@ def s_hook(img, d, t, sc):
     text(d, (W / 2, y0 + 46), "Dự đoán", 40, PURPLE, alpha=k)
     text(d, (W / 2, y0 + 104), "Quay khung từ 0° tới 90°,", 38, INK, alpha=k)
     text(d, (W / 2, y0 + 152), "B, S không đổi. Đồ thị Φ theo α?", 38, INK, alpha=k)
-    for i, (lab, f) in enumerate(OPTS):
-        bx = 80 + (i % 2) * 470; by = y0 + 196 + (i // 2) * 300
-        card(d, (bx, by, bx + 450, by + 280), fill=A((247, 248, 252), k), outline=A(NAVY, k), r=24, w=4)
-        text(d, (bx + 40, by + 44), lab + ".", 40, NAVY, alpha=k)
+    text(d, (W / 2, y0 + 206), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)
+    for i, (lab, f) in enumerate(OPTS):            # 4 dang do thi, khong nhan, khong vien nut (K10)
+        bx = 80 + (i % 2) * 470; by = y0 + 226 + (i // 2) * 290
         gx0, gy0, gx1, gy1 = bx + 110, by + 220, bx + 410, by + 40
         d.line([(gx0, gy1), (gx0, gy0), (gx1, gy0)], fill=A(MUTED, k), width=4)
-        text(d, (gx0 - 14, gy1 + 10), "Φ", 32, MUTED, anchor="rm", alpha=k)
-        text(d, (gx0, gy0 + 30), "0", 32, MUTED, bold=False, alpha=k)
-        text(d, (gx1 - 20, gy0 + 30), "90°", 32, MUTED, bold=False, alpha=k)
+        text(d, (gx0 - 14, gy1 + 10), "Φ", 36, MUTED, anchor="rm", alpha=k)
+        text(d, (gx0, gy0 + 30), "0", 36, MUTED, bold=False, alpha=k)
+        text(d, (gx1 - 20, gy0 + 30), "90°", 36, MUTED, bold=False, alpha=k)
         P = [(gx0 + 6 + u / 30 * (gx1 - gx0 - 26), gy0 - 4 - f(u / 30) * (gy0 - gy1 - 20)) for u in range(31)]
         d.line(P, fill=A(NAVY, k), width=7, joint="curve")
     t1, t2 = sc["M"][1] + 0.4, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))     # thanh dem thoi gian nghi
@@ -156,7 +155,7 @@ def s_hook(img, d, t, sc):
 # ---------------- canh 2: tien hanh ----------------
 def segs(sc):
     M = sc["M"]
-    return [(M[1], M[1] + 0.9, 0, 30), (M[1] + 1.5, M[1] + 2.4, 30, 60), (M[2], M[2] + 0.9, 60, 90),
+    return [(M[1], M[1] + 0.6, 0, 30), (M[1] + 1.65, M[1] + 2.25, 30, 60), (M[2], M[2] + 0.9, 60, 90),
             (M[3], M[3] + 2.0, 90, 120)]
 
 
@@ -175,7 +174,7 @@ def records(t, sc):
 def galvo(d, g):
     card(d, (680, 806, 1020, 966), fill=WHITE, outline=NAVY, w=4, r=24)
     gx, gy, gr = 850, 950, 100
-    text(d, (700, 838), "điện kế", 34, MUTED, bold=False, anchor="lm")
+    text(d, (700, 838), "điện kế", 36, MUTED, bold=False, anchor="lm")
     d.arc([gx - gr, gy - gr, gx + gr, gy + gr], 270 - 55, 270 + 55, fill=NAVY, width=4)
     d.line([(gx, gy - gr), (gx, gy - gr + 18)], fill=NAVY, width=4)
     for v in (-1, -0.5, 0.5, 1):
@@ -195,10 +194,10 @@ def s_do(img, d, t, sc):
     field_panel(d, a, frame_label=t < sc["M"][2], wires=True)
     recs = records(t, sc)
     card(d, (60, 806, 650, 966), fill=WHITE, outline=NAVY, w=4, r=24)
-    if recs and not rot:
-        ra, rp = recs[-1]
-        text(d, (96, 850), f"α = {ra}°", 46, GREEN, anchor="lm")
-        text(d, (96, 920), f"Φ = {fphi(rp)} Wb", 46, ORANGE, anchor="lm")
+    if recs:                                       # khi quay: giu so do cua lan dung truoc, mo di
+        ra, rp = recs[-1]; al = 0.3 if rot else 1.0
+        text(d, (96, 850), f"α = {ra}°", 46, GREEN, anchor="lm", alpha=al)
+        text(d, (96, 920), f"Φ = {fphi(rp)} Wb", 46, ORANGE, anchor="lm", alpha=al)
     else:
         text(d, (355, 886), "đang quay…", 40, MUTED, bold=False)
     galvo(d, g)
@@ -221,9 +220,9 @@ def s_rut(img, d, t, sc):
     plot(d, (200, 320, 940, 770), 120, ROWS, hl=appear(t, M[0] + 0.3, 0.5))
     ka = appear(t, M[0] + 0.3, 0.4)
     if ka > 0:
-        pw = tw(d, "ĐÁP ÁN C", F(34)) + 48
+        pw = tw(d, "ĐÁP ÁN C", F(36)) + 48
         card(d, (1000 - pw, 256, 1000, 314), fill=A(GREEN, ka), r=29)
-        text(d, (1000 - pw / 2, 285), "ĐÁP ÁN C", 34, WHITE, alpha=ka)
+        text(d, (1000 - pw / 2, 285), "ĐÁP ÁN C", 36, WHITE, alpha=ka)
     kcard(d, 890, "Càng nghiêng, càng ít đường sức qua", "", GREEN,
           appear(t, M[1], 0.45))
     kcard(d, 1100, "Φ = BS cosα = 0,01 cosα (Wb)", "B = 0,2 T, S = 0,05 m²", ORANGE,
@@ -237,9 +236,9 @@ def s_bay(img, d, t, sc):
     M = sc["M"]
     field_panel(d, 60, arc=False)
     d.arc([CX - 75, CY - 75, CX + 75, CY + 75], 300, 360, fill=GREEN, width=5)      # n voi B: 60 do
-    tag(d, CX + 150 * math.cos(math.radians(30)), CY - 150 * math.sin(math.radians(30)) - 6, "α = 60°", 34, GREEN)
+    tag(d, CX + 150 * math.cos(math.radians(30)), CY - 150 * math.sin(math.radians(30)) - 6, "α = 60°", 36, GREEN)
     d.arc([CX - 120, CY - 120, CX + 120, CY + 120], 0, 30, fill=RED, width=5)       # mat khung voi B: 30 do
-    tag(d, CX + 180 * math.cos(math.radians(15)), CY + 180 * math.sin(math.radians(15)) + 10, "30°", 34, RED)
+    tag(d, CX + 180 * math.cos(math.radians(15)), CY + 180 * math.sin(math.radians(15)) + 10, "30°", 36, RED)
     k1 = appear(t, 0.3, 0.45); k3 = appear(t, M[1] + 3.3, 0.45); a1 = k1 * (1 - k3)
     y = 830
     if a1 > 0:
@@ -269,7 +268,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         ctext(d, 1350, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
-        ctext(d, 1440, "Nhớ lại dạng đồ thị Φ theo α", 42, ORANGE, maxw=820, alpha=kh)
+        ctext(d, 1440, "Xem lại số đo lúc dừng", 42, ORANGE, maxw=820, alpha=kh)
 
 
 def _cues(clip):

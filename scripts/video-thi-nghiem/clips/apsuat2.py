@@ -48,7 +48,7 @@ def rig(d, t, tc, p_lbl, t_lbl, ph=0.0):
         x = BX0 + 24 + refl(ux + vx * t * sp, 0, 1) * (BX1 - BX0 - 48)
         y = BY0 + 24 + refl(uy + vy * t * sp, 0, 1) * (BY1 - BY0 - 100)   # chua vung nhan the tich o day binh
         dot(d, x, y, 8, mix(BLUE, RED, h))
-    text(d, ((BX0 + BX1) / 2, BY1 - 34), f"{V_BINH} lít", 30, NAVY)
+    text(d, ((BX0 + BX1) / 2, BY1 - 34), f"{V_BINH} lít", 36, NAVY)
     # ong noi binh -> ap ke
     cx = (BX0 + BX1) / 2
     d.line([(cx, BY0), (cx, 470), (640, 470)], fill=GRAY, width=14, joint="curve")
@@ -61,35 +61,30 @@ def rig(d, t, tc, p_lbl, t_lbl, ph=0.0):
     d.rectangle([TX - 6, lvl, TX + 6, TBULB], fill=RED)
     # man hinh ap ke dien tu
     card(d, (640, 270, 1010, 560), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (825, 318), "Áp kế", 34, MUTED, bold=False)
+    text(d, (825, 318), "Áp kế", 36, MUTED, bold=False)
     d.rounded_rectangle([670, 352, 980, 466], radius=16, fill=NAVY)
     text(d, (825, 410), p_lbl, 62, (134, 239, 172))
-    text(d, (825, 512), "kPa", 34, MUTED, bold=False)
+    text(d, (825, 512), "kPa", 36, MUTED, bold=False)
     # man hinh nhiet ke
     card(d, (640, 600, 1010, 890), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (825, 648), "Nhiệt kế", 34, MUTED, bold=False)
+    text(d, (825, 648), "Nhiệt kế", 36, MUTED, bold=False)
     d.rounded_rectangle([670, 682, 980, 796], radius=16, fill=WHITE, outline=NAVY, width=4)
     text(d, (825, 740), t_lbl, 62, RED)
-    text(d, (825, 842), "°C", 34, MUTED, bold=False)
+    text(d, (825, 842), "°C", 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. 96 kPa", "B. 123 kPa", "C. 192 kPa", "D. 864 kPa")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 10, f1(ROWS[0][2]), str(ROWS[0][0]))
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 1000, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 1000, 1020, 1390), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1055), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1155, "Đun từ 10 °C lên 90 °C.\nÁp kế chỉ bao nhiêu?", 42, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 110 + (i % 2) * 440; y = 1300 + (i // 2) * 110
-        card(d, (x0, y - 44, x0 + 420, y + 44), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 40, y), s, 42, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1268), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1552, 940, 1566], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1552, 140 + 800 * (1 - q), 1566], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1336, 940, 1350], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1336, 140 + 800 * (1 - q), 1350], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: dun dan, doc p va t, ghi bang ----------------
 ROW_T = [0.9, 2.3, 3.6, 4.9, 6.3]      # moc giay (trong canh) hien tung hang; dun 1,0 s truoc moi hang
@@ -112,7 +107,7 @@ def s_do(img, d, t, sc):
     IMG_REF[0] = img
     tc, pl, tl = do_state(t)
     rig(d, t, tc, pl, tl)
-    if pl == "···": text(d, (825, 950), "khuấy, đợi số đứng yên", 34, ORANGE)
+    if pl == "···": text(d, (825, 950), "khuấy, đợi số đứng yên", 36, ORANGE)
     card(d, (60, 1010, 1020, 1600), fill=WHITE, outline=NAVY, w=4)
     xs = [200, 480, 760]
     for x, c in zip(xs, ["t (°C)", "T = t + 273 (K)", "p (kPa)"]): text(d, (x, 1060), c, 36, MUTED)
@@ -142,9 +137,9 @@ def s_ans(img, d, t, sc):
     text(d, (x0 - 26, yb + 30), "O", 36, MUTED)
     for T in (100, 200, 300, 400):
         d.line([(X(T), yb), (X(T), yb + 10)], fill=NAVY, width=3)
-        text(d, (X(T), yb + 36), str(T), 34, MUTED, bold=False)
+        text(d, (X(T), yb + 36), str(T), 36, MUTED, bold=False)
     for p in (40, 80, 120):
-        d.line([(x0 - 10, Y(p)), (x0, Y(p))], fill=NAVY, width=4); text(d, (x0 - 18, Y(p)), str(p), 34, MUTED, bold=False, anchor="rm")
+        d.line([(x0 - 10, Y(p)), (x0, Y(p))], fill=NAVY, width=4); text(d, (x0 - 18, Y(p)), str(p), 36, MUTED, bold=False, anchor="rm")
     # duong thang qua goc (ve sau khi co diem)
     kl = ease((t - M[1] - 0.2) / 1.2)
     if kl > 0:
@@ -153,6 +148,7 @@ def s_ans(img, d, t, sc):
             a_, b_ = Te * j / 40, Te * (j + 0.55) / 40
             d.line([(X(a_), Y(model(a_))), (X(b_), Y(model(b_)))], fill=A(BLUE, 0.6), width=6)
         dot(d, X(0), Y(0), 10, BLUE)
+        text(d, (X(120) + 24, Y(model(120)) + 46), "ngoại suy", 36, BLUE, bold=False, anchor="lm", alpha=appear(t, M[1] + 1.4))
     for i, (_, TK, p, _) in enumerate(ROWS):
         a = appear(t, 0.5 + i * 0.2, 0.4)
         if a > 0: dot(d, X(TK), Y(p), 15 * back(a), ORANGE, WHITE)
@@ -162,8 +158,8 @@ def s_ans(img, d, t, sc):
     card(d, (60, 1090, 1020, 1600), fill=A(WHITE, a1), outline=A(LIGHT, a1), w=3)
     text(d, (W / 2, 1140), "p/T mỗi mốc", 38, MUTED, alpha=a1)
     xs = [260 + i * 160 for i in range(5)]
-    text(d, (150, 1225), "T (K)", 34, MUTED, alpha=a1)
-    text(d, (150, 1320), "p/T", 34, MUTED, alpha=a1)
+    text(d, (150, 1225), "T (K)", 36, MUTED, alpha=a1)
+    text(d, (150, 1320), "p/T", 36, MUTED, alpha=a1)
     band = appear(t, M[1] + 3.2, 0.4)
     if band > 0: d.rounded_rectangle([190, 1280, 1000, 1360], radius=20, fill=A((187, 247, 208), band))
     for i, (_, TK, _, r) in enumerate(ROWS):
@@ -220,9 +216,9 @@ def s_trap(img, d, t, sc):
     text(d, (x0 - 26, yb + 30), "O", 36, MUTED)
     for tc in (20, 40, 60, 80, 100):
         d.line([(X(tc), yb), (X(tc), yb + 10)], fill=NAVY, width=3)
-        text(d, (X(tc), yb + 36), str(tc), 34, MUTED, bold=False)
+        text(d, (X(tc), yb + 36), str(tc), 36, MUTED, bold=False)
     for p in (40, 80, 120):
-        d.line([(x0 - 10, Y(p)), (x0, Y(p))], fill=NAVY, width=4); text(d, (x0 - 18, Y(p)), str(p), 34, MUTED, bold=False, anchor="rm")
+        d.line([(x0 - 10, Y(p)), (x0, Y(p))], fill=NAVY, width=4); text(d, (x0 - 18, Y(p)), str(p), 36, MUTED, bold=False, anchor="rm")
     for i, (tc, _, p, _) in enumerate(ROWS):
         a = appear(t, 0.4 + i * 0.15, 0.4)
         if a > 0: dot(d, X(tc), Y(p), 15 * back(a), ORANGE, WHITE)
@@ -254,7 +250,7 @@ def s_end(img, d, t, sc):
     if kh <= 0: return
     card(d, (110, 1060, 970, 1270), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     text(d, (W / 2, 1115), "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1198, "Đổi hai nhiệt độ sang kelvin rồi so", 42, INK, maxw=820, alpha=kh)
+    ctext(d, 1198, "So sánh p với T ở hai mốc", 42, INK, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

@@ -79,24 +79,19 @@ def lbl_t(i): return f"{ROWS[i][0]} °C"
 def lbl_p(i): return f"{f1(ROWS[i][2])} kPa"
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. p nhân T", "B. p chia t (°C)", "C. p chia T (K)", "D. p trừ T")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, BXS[0], 880, 0, lbl_t(0), lbl_p(0))
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 990, 1020, 1430), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1040), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1122, "Bình kín: 0 → 100 °C\np: 100,0 → 136,3 kPa", 44, INK, alpha=k)
     ctext(d, 1222, "Đại lượng nào không đổi?", 46, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 100 + (i % 2) * 450; y = 1325 + (i // 2) * 112
-        card(d, (x0, y - 42, x0 + 430, y + 42), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 30, y), s, 40, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1310), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)   # K10: khong ve nut A-D
     t1, t2 = sc["M"][1] + 0.7, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1540, 940, 1554], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1540, 140 + 800 * (1 - q), 1554], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1372, 940, 1386], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1372, 140 + 800 * (1 - q), 1386], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: ngam lan luot 5 chau, doc t va p ----------------
 ROW_T = [0.5, 1.6, 2.7, 3.8, 4.9]      # moc (trong canh) hien tung hang
@@ -171,10 +166,10 @@ def s_why(img, d, t, sc):
     text(d, (x1 + 20, yb + 78), "T (K)", 36, NAVY, anchor="rm")
     for T in (100, 200, 300, 400):
         d.line([(X(T), yb), (X(T), yb + 10)], fill=NAVY, width=3)
-        text(d, (X(T), yb + 36), str(T), 34, NAVY, bold=False)
+        text(d, (X(T), yb + 36), str(T), 36, NAVY, bold=False)
     for p in (50, 100, 150):
         d.line([(x0 - 10, Y(p)), (x0, Y(p))], fill=NAVY, width=4)
-        text(d, (x0 - 18, Y(p)), str(p), 34, NAVY, bold=False, anchor="rm")
+        text(d, (x0 - 18, Y(p)), str(p), 36, NAVY, bold=False, anchor="rm")
     # duong thang p = (100/273)T, ve tu diem do keo dai ve goc 0 K
     kl = ease((t - 0.3) / 1.0)
     if kl > 0:
@@ -234,7 +229,7 @@ def s_trap(img, d, t, sc):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]
-    chot_hoi(d, t, sc, "Thể tích không đổi: p/T không đổi (kelvin)",
+    chot_hoi(d, t, sc, "p và T cùng đổi",
              "Ngâm bình vào nước 60 °C. Áp kế chỉ bao nhiêu?")
     kb = appear(t, M[0] + 0.6, 0.5)            # hai o so: nhiet ke 60 C, ap ke chua biet
     if kb > 0:
@@ -245,7 +240,7 @@ def s_end(img, d, t, sc):
     if kh <= 0: return
     card(d, (100, 1220, 980, 1560), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     text(d, (W / 2, 1285), "Gợi ý", 42, ORANGE, alpha=kh)
-    ctext(d, 1420, "Đổi sang kelvin trước.", 48, INK, maxw=840, alpha=kh)
+    ctext(d, 1420, "Thể tích có đổi không?", 48, INK, maxw=840, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
