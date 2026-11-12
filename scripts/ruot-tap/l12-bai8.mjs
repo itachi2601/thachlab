@@ -45,7 +45,7 @@ const NA = nw(m('N_A=6{,}02\\cdot10^{23}\\ \\mathrm{mol^{-1}}'));
 const RR = nw(m('R=8{,}31\\ \\mathrm{J/(mol{\\cdot}K)}'));
 const Ed = m('\\overline{E_d}'), v2 = m('\\overline{v^2}'), mu = m('\\mu'), vr = m('v_{rms}');
 const oC = (s) => nw(m(`${s}\\ ^\\circ\\mathrm C`));
-const hs = `<div class="card soft" style="padding:.8mm 3mm;font-size:var(--fs-sm)"><b>Hằng số dùng trong bài:</b> ${kB} · ${NA} · ${RR} · ${nw(m('T=t+273'))}</div>`;
+const hs = `<div class="card soft" style="padding:.8mm 3mm;font-size:var(--fs-sm)"><b>Hằng số:</b> ${kB}; ${NA}; ${RR}; ${nw(m('T=t+273'))}</div>`;
 
 const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 
@@ -61,11 +61,11 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Quả bóng bàn bị giẫm bẹp, nhúng vào nước ${oC('80')} thì vỏ phồng lại. Khi khí trong bóng nóng lên, các phân tử khí đập vào mặt trong vỏ bóng thay đổi thế nào?</p>
 <div class="fig-side" style="${fs(44)}"><div>
-${opt('A', 'Đập mạnh hơn vì phân tử nóng lên thì nặng thêm')}
-${opt('B', 'Bay nhanh hơn: mỗi cú đập truyền động lượng lớn hơn, lại đập dày hơn')}
-${opt('C', 'Không đổi; hơi nước thấm qua vỏ làm số phân tử tăng')}
-${opt('D', 'Không đổi; vỏ bóng gặp nóng mềm ra và tự phồng lại')}
-<div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
+${opt('A', 'Phân tử nóng lên thì nặng thêm, mỗi cú đập mạnh hơn')}
+${opt('B', 'Phân tử bay nhanh hơn, đập mạnh hơn và dày hơn')}
+${opt('C', 'Hơi nước thấm qua vỏ, số phân tử khí trong bóng tăng')}
+${opt('D', 'Không đổi; vỏ bóng gặp nóng mềm ra rồi tự phồng')}
+<div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 3)}</div>
 ${H.bongBan()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
@@ -75,8 +75,8 @@ ${h3(4, 'II.1 · Mô hình khí lí tưởng nhìn từ thành bình', '1·4')}
 <div><b>Nhỏ:</b> phân tử có kích thước ${f(22)} so với khoảng cách giữa chúng; bỏ qua lực ${f(22)} khi chưa va chạm.</div>
 <div><b>Loạn:</b> chuyển động ${f(22)} không ngừng; giữa hai va chạm bay ${f(22)}.</div>
 <div><b>Đập:</b> va vào thành, truyền ${f(22)} cho thành; vô số va chạm mỗi giây thành lực đẩy đều: ${f(22)} của khí.</div>
-<div><b>Nảy:</b> va chạm hoàn toàn ${f(20)}: phân tử bật ngược, tốc độ ${f(20)}.</div>
-<div style="margin-top:.6mm"><b>Hộp gạo lắc:</b> thêm hạt thì tiếng đập vào thành ${f(22)}; lắc nhanh hơn thì ${f(22)}.</div></div>
+<div><b>Nảy:</b> va chạm hoàn toàn ${f(22)}, phân tử bật ngược lại.</div>
+${wl('Vì sao khí gây áp suất lên thành bình?', 2)}</div>
 ${H.hopKhi()}</div>
 ${foot(1)}</section>`;
 
@@ -94,10 +94,10 @@ ${H.vaCham()}</div>
 ${h3(2, 'II.3 · N phân tử: công thức áp suất của khí', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Chỉ thành phần ${m('v_x')} ${f(22)} với thành mới gây áp suất lên thành đó. Ba phương ${f(18)} nên ${nw(`${m('\\overline{v_x^2}=')} ${f(12)} ${v2}`)}</div>
-<div style="margin-top:.6mm">Trung bình của các bình phương tốc độ: ${m('\\overline{v^2}=')} ${cao(46)}</div>
-<div style="margin-top:.6mm">${m('p=')} ${cao(30)} ${m('=\\dfrac13\\rho\\,\\overline{v^2}=')} ${cao(24)}</div>
-<table style="margin-top:1mm"><tr><th style="width:20mm">Kí hiệu</th><th>Tên gọi</th><th style="width:30mm">Công thức / đơn vị</th></tr>
-<tr><td>${mu}</td><td></td><td></td></tr><tr><td>${m('\\rho')}</td><td></td><td></td></tr><tr><td>${Ed}</td><td></td><td></td></tr></table>
+<div>Trung bình của các bình phương tốc độ: ${m('\\overline{v^2}=')} ${cao(46)}</div>
+<table style="margin-top:1mm"><tr><th style="width:34mm">Định nghĩa (cho sẵn)</th><th>Tên gọi</th><th style="width:24mm">Đơn vị</th></tr>
+<tr><td>${m('\\mu=N/V')}</td><td></td><td></td></tr><tr><td>${m('\\rho=\\mu m')}</td><td></td><td></td></tr><tr><td>${m('\\overline{E_d}=m\\overline{v^2}/2')}</td><td></td><td></td></tr></table>
+<div style="margin-top:.6mm">${m('p=')} ${cao(30)} ${m('=\\dfrac13\\rho\\,\\overline{v^2}=')} ${cao(24)} ${m('\\mu\\,\\overline{E_d}')}</div>
 </div>
 ${h3(3, 'Làm nhanh', '2·3')}
 ${box(cau(`<b>Câu 1.</b> Phân tử ${nw(m('m=4{,}65\\cdot10^{-26}\\ \\mathrm{kg}'))} bay vuông góc tới thành với ${nw(m('v=500\\ \\mathrm{m/s}'))}, bật ngược đàn hồi. Độ lớn độ biến thiên động lượng?`, 1)
@@ -109,13 +109,13 @@ ${head('ĐỘNG NĂNG TỊNH TIẾN TRUNG BÌNH · NHIỆT ĐỘ TUYỆT ĐỐI'
 ${hs}
 ${h3(1, 'II.4 · Động năng tịnh tiến trung bình và nhiệt độ', '3·1')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
-<div>Ô 38·2: ${m('p=\\tfrac23\\mu\\overline{E_d}')}. Phương trình trạng thái: ${m('p=\\tfrac{nRT}{V}=\\tfrac{N}{V}\\cdot\\tfrac{R}{N_A}T=\\mu kT')}, với ${nw(`${m('k=')} ${f(14)}`)}</div>
+<div>Ô 38·2: ${m('p=\\tfrac23\\mu\\overline{E_d}')}. Phương trình trạng thái: ${m('p=\\tfrac{nRT}{V}=\\tfrac{N}{V}\\cdot\\tfrac{R}{N_A}T=\\mu kT')}, với ${m('k=R/N_A')} (đầu trang).</div>
 <div style="margin-top:.6mm">So hai biểu thức: ${m('\\overline{E_d}=\\dfrac{m\\overline{v^2}}{2}=')} ${cao(24)}</div>
-<div>Hệ số ${m('\\tfrac32')}: ba phương tịnh tiến, mỗi phương góp ${f(16)}</div>
-<div>${Ed} chỉ phụ thuộc ${f(16)}; mọi khí cùng nhiệt độ có ${Ed} ${f(16)}</div>
+<div>Hệ số ${m('\\tfrac32')}: ba phương tịnh tiến, mỗi phương góp ${cao(18)}</div>
+<div>${Ed} chỉ phụ thuộc ${f(24)}</div><div>Mọi khí cùng nhiệt độ có ${Ed} ${f(22)}</div>
 <div style="margin-top:.6mm">${m('v_{rms}=\\sqrt{\\overline{v^2}}=')} ${cao(24)}</div>
 <div>Cùng ${m('T')}: khí ${f(14)} hơn thì bay nhanh hơn.</div>
-<div style="margin-top:.4mm">Hình bên: đường ứng nhiệt độ cao hơn là ${f(10)}, vì ${f(32)}</div></div>
+<div style="margin-top:.4mm">Hình bên: đường ứng nhiệt độ cao hơn là ${f(14)}, vì:</div>${lines(1)}</div>
 ${H.phanBo()}</div>
 ${h3(2, 'II.5 · Thí nghiệm: áp suất khí trong bình kín theo nhiệt độ', '3·2')}
 <div class="fig-side" style="${fs(40)}"><div>
@@ -125,13 +125,13 @@ ${h3(2, 'II.5 · Thí nghiệm: áp suất khí trong bình kín theo nhiệt đ
 <tr><td>${m('p/T')} (kPa/K)</td><td>0,3392</td><td>0,3393</td><td>0,3390</td><td>0,3394</td><td></td></tr></table>
 <div style="font-size:var(--fs-sm);color:var(--hint)">Số liệu minh hoạ, ${m('V')} và lượng khí không đổi.</div>
 <div style="margin-top:.6mm"><b>Hiện tượng:</b> nước càng nóng, áp kế chỉ ${f(20)}</div>
-<div><b>Kết luận:</b> ${m('p/T')} ${f(20)} ⇒ ${m('p')} tỉ lệ thuận với ${f(22)}</div>
-<div><b>Cơ chế:</b> phân tử bay ${f(16)}, va chạm ${f(16)} và ${f(16)}</div>
-<div><b>Giới hạn:</b> dụng cụ chỉ đo ${f(30)}; tốc độ, động năng phân tử là suy ra từ mô hình.</div>
+<div><b>Kết luận:</b> ${m('p/T')} ${f(30)}</div><div>⇒ ${m('p')} tỉ lệ thuận với ${f(40)}</div>
+<div><b>Cơ chế:</b> phân tử bay ${f(24)},</div><div>va chạm ${f(24)} và ${f(24)}</div>
+<div><b>Giới hạn:</b> dụng cụ chỉ đo ${f(44)}; tốc độ, động năng phân tử là suy ra từ mô hình.</div>
 <div><b>Sai số:</b> đọc ${m('p')} khi khí chưa kịp nóng bằng nước thì ${m('p/T')} đo được ${f(16)} giá trị thật.</div></div>
 ${H.binhKin()}</div>
-${h3(3, 'Làm nhanh', '3·3')}
-${box(cau(`Đồ thị ${Ed} theo ${m('T')} (kelvin) có dạng ${f(30)}. Ở nhiệt độ nào (°C) thì ${nw(m('\\overline{E_d}=4{,}14\\cdot10^{-21}\\ \\mathrm J'))}?`, 1))}
+${h3(3, 'Thí nghiệm nhỏ: hạt gạo đập vào thành hộp', '3·3')}
+<div class="card" style="padding:1.2mm 3mm">Lắc hộp gạo kín: thêm hạt thì tiếng đập ${f(22)}; lắc nhanh hơn thì ${f(22)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -173,7 +173,7 @@ ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} ${Ed} ở ${oC('0')} và ở ${oC('27')}; tăng mấy lần?`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Cùng nhiệt độ, ${nw(`H${m('_2')}`)} nhanh hơn ${nw(`O${m('_2')}`)} 4 lần mà áp suất hai bình (cùng ${m('N')}, ${m('V')}) vẫn bằng nhau. Vì sao?`, 1)
- + cau(`${m('\\bigstar\\bigstar\\bigstar')} Bình kín giữ nguyên nhiệt độ, hút bớt một nửa số phân tử. Áp suất đổi thế nào? Giải bằng hai cách.`, 1))}
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} Bình kín giữ nguyên nhiệt độ, hút bớt một nửa số phân tử. Áp suất đổi thế nào? Giải bằng hai cách.`, 2))}
 ${foot(5)}</section>`;
 
 const dang = [
@@ -182,10 +182,10 @@ const dang = [
     nd: `Đổi sang ${f(12)} trước; ${nw(`${m('\\overline{E_d}=')} ${f(14)}`)} không chứa ${f(18)} phân tử`, a: ['a', 'b'], cot: 2, gi: 4, fig: H.honHop() },
   { t: 'Dạng 2 · Trung bình · Đổi nhiệt độ: E<sub>d</sub>, v<sub>rms</sub>, p tăng mấy lần',
     de: `Khí heli trong bình kín (thể tích, lượng khí không đổi) được hơ nóng từ ${oC('27')} lên ${oC('147')}. Làm tròn tỉ số đến hai chữ số thập phân.<br><b>a)</b> ${Ed} tăng bao nhiêu lần<br><b>b)</b> ${vr} tăng bao nhiêu lần<br><b>c)</b> áp suất tăng bao nhiêu lần`,
-    nd: `Lấy tỉ số ${f(12)} (kelvin); ${Ed} và ${m('p')} tỉ lệ ${f(10)}; ${vr} tỉ lệ ${f(12)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `Lấy tỉ số ${f(12)} (kelvin); ${Ed} và ${m('p')} tỉ lệ ${f(10)}; ${vr} tỉ lệ ${f(12)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Áp suất từ khối lượng riêng và v<sub>rms</sub>',
     de: `Bình kín chứa khí neon có khối lượng riêng ${nw(m('0{,}90\\ \\mathrm{kg/m^3}'))}; ${nw(m('v_{rms}=600\\ \\mathrm{m/s}'))}.<br><b>a)</b> áp suất khí trong bình<br><b>b)</b> nung nóng (thể tích, lượng khí không đổi) đến khi ${nw(m('v_{rms}=900\\ \\mathrm{m/s}'))}: áp suất khi đó`,
-    nd: `${nw(`${m('p=')} ${f(16)}`)}; phải ${f(18)} ${vr} trước khi thay; ${m('\\rho')} ${f(14)} vì ${m('V')} và lượng khí giữ nguyên`, a: ['a', 'b'], cot: 2, gi: 3 },
+    nd: `${nw(`${m('p=')} ${f(16)}`)}; phải ${f(18)} ${vr} trước khi thay; ${m('\\rho')} ${f(14)}`, a: ['a', 'b'], cot: 2, gi: 3 },
   { t: 'Dạng 4 · Khá · Tốc độ căn quân phương từ nhiệt độ và khối lượng mol',
     de: `Bình kín chứa khí argon (${nw(m('M=40\\ \\mathrm{g/mol}'))}) ở ${oC('77')}; ${NA}, ${kB}.<br><b>a)</b> khối lượng một phân tử argon<br><b>b)</b> ${Ed} và ${vr} của phân tử argon<br><b>c)</b> thay bằng heli (${nw(m('M=4\\ \\mathrm{g/mol}'))}) cùng nhiệt độ: ${vr} của heli gấp mấy lần của argon`,
     nd: `${nw(`${m('m=')} ${f(14)}`)} (đổi ${m('M')} ra ${f(14)}); ${nw(`${m('v_{rms}=')} ${f(20)}`)}; cùng ${m('T')} thì ${m('\\dfrac{v_1}{v_2}=')} ${f(16)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 2, gi: 6 },
@@ -210,7 +210,7 @@ const tuongTu = {
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
     { t: 'Dạng 1 · Bài 1', de: `Khí ${nw(`CO${m('_2')}`)} và khí ${nw(`N${m('_2')}`)} trộn trong một bình kín ở ${oC('127')}; ${kB}.<br><b>a)</b> ${Ed} của một phân tử ${nw(`CO${m('_2')}`)}<br><b>b)</b> ${Ed} của phân tử ${nw(`N${m('_2')}`)} so với ${nw(`CO${m('_2')}`)}<br><b>c)</b> ở bao nhiêu °C thì ${Ed} của khí bằng ${nw(m('6{,}21\\cdot10^{-21}\\ \\mathrm J'))}`, o: ['a', 'b', 'c'], ow: { a: W, b: 22, c: 18 } },
-    { t: 'Dạng 1 · Bài 2', de: `Không khí trong kho lạnh ở ${oC('-23')}; ${kB}.<br><b>a)</b> ${Ed} của một phân tử khí<br><b>b)</b> phải tăng lên bao nhiêu °C thì ${Ed} gấp đôi`, o: ['a', 'b'], ow: { a: W, b: 18 } },
+    { t: 'Dạng 1 · Bài 2', de: `Không khí trong kho lạnh ở ${oC('-23')}; ${kB}.<br><b>a)</b> ${Ed} của một phân tử khí<br><b>b)</b> phải tăng tới bao nhiêu °C thì ${Ed} gấp đôi`, o: ['a', 'b'], ow: { a: W, b: 18 } },
     { t: 'Dạng 2 · Bài 1', de: `Khí oxygen trong bình kín (thể tích, lượng khí không đổi) được nung từ ${oC('7')} lên ${oC('287')}. Làm tròn tỉ số đến hai chữ số thập phân.<br><b>a)</b> ${Ed} tăng bao nhiêu lần<br><b>b)</b> ${vr} tăng bao nhiêu lần<br><b>c)</b> áp suất tăng bao nhiêu lần`, o: ['a', 'b', 'c'], ow: 16 },
     { t: 'Dạng 2 · Bài 2', de: `Khí trong bình kín (thể tích, lượng khí không đổi) được làm lạnh từ ${oC('127')} xuống ${oC('-73')}. Làm tròn tỉ số đến hai chữ số thập phân.<br><b>a)</b> ${Ed} mới bằng bao nhiêu lần ${Ed} cũ<br><b>b)</b> ${vr} mới bằng bao nhiêu lần ${vr} cũ<br><b>c)</b> áp suất mới bằng bao nhiêu lần áp suất cũ`, o: ['a', 'b', 'c'], ow: 16 },
     { t: 'Dạng 3 · Bài 1', de: `Khí nitơ trong bình kín có khối lượng riêng ${nw(m('1{,}2\\ \\mathrm{kg/m^3}'))}, ${nw(m('v_{rms}=500\\ \\mathrm{m/s}'))}.<br><b>a)</b> áp suất khí<br><b>b)</b> nung nóng (thể tích, lượng khí không đổi) đến ${nw(m('v_{rms}=600\\ \\mathrm{m/s}'))}: áp suất khi đó`, o: ['a', 'b'], ow: W },
