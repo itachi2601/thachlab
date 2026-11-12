@@ -72,9 +72,9 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Thí nghiệm Brown: hạt khói trong hộp kín', '1·4')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
-<div><b>Giả thuyết cần kiểm:</b> chất khí gồm các phân tử rất nhỏ, chuyển động hỗn loạn, không ngừng.</div>
+<div><b>Giả thuyết cần kiểm:</b> chất khí gồm rất nhiều phân tử nhỏ mà mắt không thấy được.</div>
 <div><b>Làm:</b> đậy kín hộp, chờ 30 s; rọi đèn ngang, theo dõi vài chấm sáng; làm lại khi hộp ấm hơn.</div>
-<div><b>Quan sát:</b> chấm sáng đi theo đường ${f(22)}, không dừng; hai chấm cạnh nhau đi ${f(20)}; hộp ấm hơn thì ${f(22)}</div>
+<div><b>Quan sát:</b> chấm sáng đi theo đường ${f(24)}; hai chấm cạnh nhau đi giống hay khác kiểu? ${f(16)}; hộp ấm hơn thì chấm sáng ${f(32)}</div>
 <div><b>Rút ra:</b> phân tử khí chuyển động ${f(30)}</div>
 <div><b>Cơ chế:</b> phân tử khí va đập hạt khói từ ${f(18)}; hai phía không bao giờ ${f(18)} nên hạt bị đẩy lệch liên tục.</div>
 <div><b>Chưa nói được gì:</b> không thấy phân tử; đường gấp khúc là của ${f(20)}, không phải của phân tử.</div></div>
@@ -99,10 +99,10 @@ ${h3(2, 'II.3 · Thí nghiệm đo: ống khói trắng', '2·2')}
 <tr><td>Tốc độ lan ${m('x/t')} (cm/s)</td><td>0,13</td><td></td><td></td></tr></table></div>
 ${H.ongKhoi()}</div>
 <div class="card" style="padding:1.2mm 3mm">
-<div><b>Rút ra:</b> tốc độ lan cỡ ${f(12)} cm/s, còn một phân tử bay cỡ 455 m/s = 45 500 cm/s: nhanh hơn cỡ ${f(22)} lần.</div>
-<div>Mùi lan chậm vì mỗi phân tử ${f(46)}</div>
+<div><b>Rút ra:</b> tốc độ lan cỡ ${f(12)} cm/s. Một phân tử bay cỡ 455 m/s = 45 500 cm/s, nhanh hơn (lấy tốc độ lan 0,13 cm/s) cỡ ${f(24)} lần.</div>
+<div>Mùi lan chậm vì:</div>${lines(1)}
 <div>Vòng khói luôn gần đầu ${f(12)} vì ở cùng nhiệt độ phân tử ${f(14)} hơn chuyển động chậm hơn (${NH3}: ${gmol('17')}; HCl: ${gmol('36{,}5')}).</div>
-<div><b>Sai số:</b> ba lần đo lệch nhau gần 1 cm. Nêu hai nguyên nhân:</div>${lines(2)}</div>
+<div><b>Sai số:</b> ba lần đo lệch nhau tới 0,7 cm. Nêu hai nguyên nhân:</div>${lines(2)}</div>
 ${h3(3, 'Làm nhanh', '2·3')}
 ${box(cau(`Giữa các phân tử khí có lực tương tác không? Mạnh hay yếu, vì sao?`, 1))}
 ${foot(2)}</section>`;
@@ -110,27 +110,28 @@ ${foot(2)}</section>`;
 const p3 = `<section class="page">
 ${head('MÔ HÌNH KHÍ LÍ TƯỞNG · LƯỢNG CHẤT VÀ MOL')}
 ${h3(1, 'II.4 · Mô hình khí lí tưởng: Chấm – Không lực – Thẳng – Nảy', '3·1')}
-<div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
+<div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
 <div><b>Chấm:</b> coi mỗi phân tử là một ${f(22)} vì khoảng cách giữa chúng lớn.</div>
 <div><b>Không lực:</b> bỏ qua ${f(30)} khi chưa va chạm.</div>
 <div><b>Thẳng:</b> giữa hai va chạm, phân tử chuyển động ${f(22)}</div>
-<div><b>Nảy:</b> va chạm ${f(30)} với nhau và với thành bình. Đập vào thành: ${m('v_x')} ${f(16)}, ${m('v_y')} ${f(16)}</div>
-<div>Khí thực gần giống khí lí tưởng khi ${f(36)}; sai rõ khi ${f(36)}</div>
+<div><b>Nảy:</b> va chạm ${f(42)} với nhau và với thành bình.</div>
+<div>Đập vào thành: ${m('v_x')} ${f(24)}, ${m('v_y')} ${f(24)}</div>
+<div>Khí thực ở nhiệt độ, áp suất bình thường gần giống khí lí tưởng; nén mạnh hay làm lạnh sâu thì mô hình sai rõ.</div>
 </div>
 ${H.vaThanh()}</div>
 ${h3(2, 'II.5 · Lượng chất, mol, số Avogadro', '3·2')}
-<div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
+<div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
 <div>Mol là lượng chất chứa ${f(14)} phân tử; số Avogadro ${NA} (cho sẵn).</div>
 <div>Khối lượng mol ${m('M')}: khối lượng của ${f(12)}, đơn vị ${f(12)}</div>
 <div>Ở ${dktc}, 1 mol khí nào cũng chiếm ${f(16)}</div>
 <div style="display:flex;gap:6mm;align-items:flex-end;margin:1mm 0;min-height:11mm"><span>${m('n=')} <span class="fill" style="min-width:16mm;height:10mm"></span> ${m('=')} <span class="fill" style="min-width:16mm;height:10mm"></span></span><span>Khí ở đktc: ${m('n=')} <span class="fill" style="min-width:16mm;height:10mm"></span></span></div>
-<table class="tbl-ct"><tr><th>Kí hiệu</th><th>${m('n')}</th><th>${m('N')}</th><th>${m('m')}</th><th>${m('M')}</th><th>${m('V')} (đktc)</th></tr>
-<tr><td>Đơn vị</td><td></td><td></td><td></td><td></td><td></td></tr></table></div>
+<table class="tbl-ct"><tr><th>Kí hiệu</th><th>${m('n')}</th><th>${m('m')}</th><th>${m('M')}</th><th>${m('V')} (đktc)</th></tr>
+<tr><td>Đơn vị</td><td></td><td></td><td></td><td></td></tr></table><div style="font-size:var(--fs-sm)">${m('N')}: số phân tử, không có đơn vị.</div></div>
 ${H.thung1mol()}</div>
 ${h3(3, 'Làm nhanh', '3·3')}
 ${box(cau(`<b>a)</b> Ở đktc, ${L('44{,}8')} khí ${CO2} chứa bao nhiêu phân tử?`, 2)
  + cau(`<b>b)</b> Bình chứa 2 mol khí helium (He, ${gmol('4')}) ở đktc. Khối lượng và thể tích lượng khí đó?`, 2)
- + cau(`<b>c)</b> Bình A chứa 1 mol ${N2}, bình B chứa 1 mol ${CO2}, cùng ở đktc. So sánh thể tích và khối lượng khí hai bình.`, 1))}
+ + cau(`<b>c)</b> Bình A chứa 1 mol ${N2} (${gmol('28')}), bình B chứa 1 mol ${CO2} (${gmol('44')}), cùng ở đktc. So sánh thể tích và khối lượng khí hai bình.`, 2))}
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -147,7 +148,7 @@ ${tb('2. Ba nội dung của thuyết động học phân tử chất khí?')}${
 ${tb('3. Vì sao lực liên kết giữa các phân tử khí rất yếu?')}${lines(1)}
 ${tb('4. Áp suất khí lên thành bình sinh ra từ đâu?')}${lines(1)}
 ${tb('5. Mô hình khí lí tưởng gồm gì? Khi nào dùng được?')}${lines(2)}
-${tb('6. Mol là gì? Hệ thức lượng chất, tên và đơn vị từng kí hiệu? Thể tích mol ở đktc?')}${lines(2)}`)}
+${tb('6. Mol là gì? Hệ thức lượng chất, tên và đơn vị từng kí hiệu? Thể tích mol ở đktc?')}${lines(4)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
 ${rkHai([1, 2, 3, 4], [5, 6, 7])}
@@ -156,35 +157,35 @@ ${foot(4)}</section>`;
 const p5 = `<section class="page">
 ${head('BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'V · Bài toán mẫu: túi khí an toàn trên ô tô', '5·1')}
-<div class="card soft" style="padding:1.2mm 3mm">Túi khí an toàn trên ô tô ở ${dktc} chứa ${g('84')} ${N2} (${gmol('28')}); ${NA}.<br><b>a)</b> số mol khí trong túi<br><b>b)</b> số phân tử ${N2}<br><b>c)</b> thể tích túi<br><b>d)</b> túi ${CO2} (${gmol('44')}) cùng thể tích, điều kiện: khối lượng khí? Vì sao khác?</div>
+<div class="card soft" style="padding:1.2mm 3mm">Túi khí ô tô ở ${dktc} chứa ${g('84')} ${N2} (${gmol('28')}); ${NA}.<br><b>a)</b> số mol khí trong túi<br><b>b)</b> số phân tử ${N2}<br><b>c)</b> thể tích túi<br><b>d)</b> túi ${CO2} (${gmol('44')}) cùng thể tích, điều kiện: khối lượng khí? Vì sao khác?</div>
 <table><tr><th style="width:44mm">Câu trong đề</th><th style="width:40mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“ở đktc”</td><td>0 °C · 1 atm</td><td>thể tích mol 22,4 lít</td></tr>
-<tr><td style="height:6.5mm">“84 g ${N2}, M = 28 g/mol”</td><td></td><td></td></tr>
+<tr><td style="height:6.5mm">“84 g ${N2}, M = 28 g/mol”</td><td></td><td><span class="hint">ghi dạng ${m('n=m:M')}</span></td></tr>
 <tr><td style="height:6.5mm">“túi ${CO2} cùng thể tích”</td><td></td><td></td></tr>
 </table>
 <div class="fig-side" style="${fs(34)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`a) ${m('n=')}`, 1)}${wl(`b) ${m('N=')}`, 1)}${wl(`c) ${m('V=')}`, 1)}${wl(`d) ${m("m'=")}`, 1)}</div>${H.tuiKhi()}</div>
+${wl(`a) ${m('n=')}`, 1)}${wl(`b) ${m('N=')}`, 1)}${wl(`c) ${m('V=')}`, 1)}${wl(`d) ${m("n'=")}, ${m("m'=")}`, 1)}${wl('Vì sao khác:', 1)}</div>${H.tuiKhi()}</div>
 ${h3(2, 'Điền bước còn thiếu: túi oxygen y tế', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-<div style="padding-top:.8mm;line-height:1.35">Túi chứa ${nw(m('0{,}32\\ \\mathrm{kg}'))} ${O2} (${gmol('32')}) ở đktc.<br><b>Bước 1 (cho sẵn):</b> ${nw(m('0{,}32\\ \\mathrm{kg}=320\\ \\mathrm g'))}, ${nw(m('n=320:32=10'))} mol</div>
+<div style="padding-top:.8mm;line-height:1.35">Túi ${nw(m('0{,}32\\ \\mathrm{kg}'))} ${O2} (${gmol('32')}), đktc. <b>Bước 1 (cho sẵn):</b> ${nw(m('m=320\\ \\mathrm g'))}, ${nw(m('n=320:32=10'))} mol</div>
 ${wl(`Bước 2: số phân tử ${m('N=')}`, 1)}${wl(`Bước 3: thể tích túi ${m('V=')}`, 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
-${box(cau(`${m('\\bigstar')} Bình chứa 0,5 mol khí. Số phân tử trong bình?`, 1)
+${box(`<div style="padding-top:.4mm">${m('\\bigstar')} Bình chứa 0,5 mol khí. Số phân tử trong bình? ${f(34)}</div>`
  + cau(`${m('\\bigstar\\bigstar')} Vì sao vòng khói trắng trong ống khuếch tán (ô 2·2) luôn hiện gần đầu HCl hơn?`, 1)
- + cau(`${m('\\bigstar\\bigstar\\bigstar')} ${nw(m('1\\ \\mathrm{cm^3}'))} khí ở đktc chứa bao nhiêu phân tử? Vì sao hạt khói nhỏ “nhảy múa” dữ dội?`, 1))}
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} ${nw(m('1\\ \\mathrm{cm^3}'))} khí ở đktc chứa bao nhiêu phân tử? Vì sao hạt khói nhỏ “nhảy múa” dữ dội?`, 2))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Đối chiếu phát biểu với thuyết động học phân tử',
     de: `Nhìn qua kính lúp, hạt khói trong hộp kín đi theo đường gấp khúc, không dừng. Bốn phát biểu:<br>(1) Hạt khói bị phân tử khí va đập không cân bằng từ mọi phía nên bị đẩy lệch liên tục.<br>(2) Chuyển động của hạt khói chứng tỏ phân tử khí chuyển động hỗn loạn, không ngừng.<br>(3) Áp suất khí lên thành hộp là do trọng lượng của khí đè xuống đáy hộp.<br>(4) Nhiệt độ khí càng cao thì phân tử khí chuyển động càng chậm.<br><b>a)</b> có bao nhiêu phát biểu đúng &nbsp;<b>b)</b> số các phát biểu sai; sửa lại ở phần giải`,
-    nd: `Đọc cả phần giải thích; áp suất khí do ${f(30)} của phân tử vào thành`, a: ['a', 'b'], gi: 2, cot: 2 },
+    nd: `Xét cả lí do nêu trong từng phát biểu; áp suất khí do ${f(24)} của phân tử vào thành`, a: ['a', 'b'], gi: 2, cot: 2 },
   { t: 'Dạng 2 · Dễ · Từ khối lượng khí tính số mol và số phân tử',
     de: `Bình kín chứa ${nw(m('0{,}16\\ \\mathrm{kg}'))} khí oxygen ${O2}, ${gmol('32')}; ${NA}.<br><b>a)</b> số mol khí trong bình &nbsp;<b>b)</b> số phân tử oxygen trong bình`,
     nd: `${m('M')} tính bằng g/mol nên đổi ${m('m')} ra ${f(10)} trước; ${nw(`${m('N=')} ${f(14)}`)}`, a: ['a', 'b'], gi: 2, cot: 2 },
   { t: 'Dạng 3 · Trung bình · Từ số phân tử tính khối lượng, thể tích ở đktc',
     de: `Bình kín chứa ${pt('1{,}505', '23')} nguyên tử helium ở ${dktc}; ${gmol('4')}; ${NA}.<br><b>a)</b> số mol helium &nbsp;<b>b)</b> khối lượng helium &nbsp;<b>c)</b> thể tích bình, theo lít<br><b>d)</b> bình cùng thể tích, cùng điều kiện đựng ${H2} (${gmol('2')}): khối lượng ${m("m'")}, số phân tử ${m("N'")}`,
-    nd: `Mọi đại lượng đi qua ${f(14)}; cùng ${m('V')}, cùng điều kiện ⇒ cùng ${f(14)}`, a: ['a', 'b', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 5, cot: 5, fig: H.haiBinhD3() },
+    nd: `Mọi đại lượng đi qua ${f(14)}; cùng ${m('V')}, cùng điều kiện ⇒ cùng ${f(14)}`, a: ['a', 'b', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 6, cot: 5, fig: H.haiBinhD3() },
 ];
 const dang2 = [
   { t: 'Dạng 4 · Khó · Chuỗi nhiều khâu: thể tích, khối lượng riêng, khối lượng, số mol, số phân tử',
@@ -218,7 +219,7 @@ const tuongTu = {
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Giọt nước hình cầu đường kính ${nw(m('2{,}0\\ \\mathrm{mm}'))}; ${nw(m('\\rho=1{,}0\\ \\mathrm{g/cm^3}'))}, ${gmol('18')}; ${NA}; ${nw(m('V=\\dfrac{\\pi d^3}{6}'))}.<br><b>a)</b> thể tích giọt, theo ${m('\\mathrm{cm^3}')}<br><b>b)</b> khối lượng giọt<br><b>c)</b> số mol nước<br><b>d)</b> số phân tử nước`, o: ['a', 'b', 'c', 'd'], ow: 30 },
     { t: 'Dạng 4 · Bài 2', de: `Khối nhôm lập phương cạnh ${nw(m('1{,}0\\ \\mathrm{cm}'))}; nhôm có ${nw(m('\\rho=2{,}7\\ \\mathrm{g/cm^3}'))}, ${gmol('27')}; ${NA}.<br><b>a)</b> thể tích khối, theo ${m('\\mathrm{cm^3}')}<br><b>b)</b> khối lượng khối<br><b>c)</b> số mol nhôm<br><b>d)</b> số nguyên tử nhôm`, fig: H.khoiNhomTT(), fw: 30, o: ['a', 'b', 'c', 'd'], ow: 30 },
-    { t: 'Dạng 5 · Bài 1', de: `Nước lỏng: 1 mol nước chiếm ${nw(m('18\\ \\mathrm{cm^3}'))}; ${NA}. Coi mỗi phân tử nước ở tâm một hình lập phương nhỏ xếp khít; đường kính phân tử nước cỡ ${nw(m('3{,}0\\cdot10^{-10}\\ \\mathrm m'))}.<br><b>a)</b> thể tích mỗi hình lập phương, theo ${m('\\mathrm{m^3}')}<br><b>b)</b> cạnh ${m('d')} của hình lập phương<br><b>c)</b> ${m('d')} gấp bao nhiêu lần đường kính phân tử (so với khí ở Dạng 5 trong vở)`, o: ['a', 'b', 'c'], ow: 30 },
+    { t: 'Dạng 5 · Bài 1', de: `Nước lỏng: 1 mol nước chiếm ${nw(m('18\\ \\mathrm{cm^3}'))}; ${NA}. Coi mỗi phân tử nước ở tâm một hình lập phương nhỏ xếp khít; đường kính phân tử nước cỡ ${nw(m('3{,}0\\cdot10^{-10}\\ \\mathrm m'))}.<br><b>a)</b> thể tích mỗi hình lập phương, theo ${m('\\mathrm{m^3}')}<br><b>b)</b> cạnh ${m('d')} của hình lập phương<br><b>c)</b> ${m('d')} gấp bao nhiêu lần đường kính phân tử (so với khí ở Dạng 5, Tập 7·1)`, o: ['a', 'b', 'c'], ow: 30 },
     { t: 'Dạng 5 · Bài 2', de: `Khí nitrogen ở 0 °C nhưng áp suất chỉ 0,10 atm: thể tích mol là ${nw(m('224\\ \\mathrm L'))} (cho sẵn); ${NA}; đường kính phân tử ${nw(m('D=3{,}0\\cdot10^{-10}\\ \\mathrm m'))}. Coi mỗi phân tử ở tâm một hình lập phương xếp khít.<br><b>a)</b> thể tích mỗi hình lập phương, theo ${m('\\mathrm{m^3}')}<br><b>b)</b> cạnh ${m('d')}<br><b>c)</b> ${m('d')} gấp bao nhiêu lần ${m('D')}`, o: ['a', 'b', 'c'], ow: 30 },
     nhap(3),
   ]],
