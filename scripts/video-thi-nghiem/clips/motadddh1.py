@@ -202,7 +202,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1355), "Gợi ý", 40, INK, alpha=kh)
-        text(d, (W / 2, 1450), "Biên độ mới 6 cm, T vẫn là 2 s", 44, ORANGE, alpha=kh)
+        text(d, (W / 2, 1450), "Ca 4 cm: sau 1,0 s, x = −4 cm", 44, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
