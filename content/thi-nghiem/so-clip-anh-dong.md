@@ -150,3 +150,7 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l10-thuc-hanh-do-g (lesson 56) · tn-l10-do-g-01 · clip dog1 · cổng mp4: gợi ý chốt "So 0,322 với t̄" → "Nhớ g = 2s/t²", khung Dự đoán che giá đỡ · chờ thầy duyệt · 10/11/2026 · 49,3 s · 1,29 MB · "Quan sát" hộp exp lộ đáp án ("cách nhau vài phần nghìn giây") — thầy quyết
 - L10 Ch.2 bỏ qua (`vi_du`): dd-qd-02/03, tdvt-02, dt-dctg-03, gia-toc-03, ctbdd-02/03; roi-tu-do-01 có YouTube · 10/11/2026 ·
 - **ĐÃ ĐĂNG DB 10/11/2026** (thầy duyệt, `cap-nhat-ly-thuyet.sh … --chi-video --yes`): lesson 51 (item 287), 52 (item 96), 55 (item 78), 56 (item 288) — chỉ đổi khối video, mục khác giữ nguyên; sao lưu `scripts/logs/ly-thuyet-bai{51,52,55,56}-backup-17942808*.json`. Hộp 'Quan sát' lộ đáp án vẫn chờ thầy quyết.
+
+## Ghi nhận rà cổng tự động 11–12/11/2026 (chưa sửa mp4)
+
+- thuchanhtu4 (bản 2, clip làm dở ở phiên khác): mật độ chữ 285 từ/phút (> 200); JSON khung `tong_giay` 48,1 s lệch engine 49,9 s → tải bản 2 mà không chạy lại `xuat-khung.py` thì điểm dừng sai. Chưa sửa; xử lý khi phiên đó chốt clip. · 12/11/2026

@@ -50,7 +50,7 @@ def syringe(d, t, V, bx0=BX0, bx1=BX1, y0=Y0ML, px=PXML, scale_lbl=True, heat=0.
     return cx, y0 + 40 * s
 
 def gang(p): return math.radians(-225 + clamp(p / 300) * 270)
-def gauge(d, cx, cy, r, p, fs=36, mark=None, out=True):
+def gauge(d, cx, cy, r, p, fs=36, mark=None, out=True, mark_a=1.0):
     d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=WHITE, outline=NAVY, width=7)
     a0, a1 = math.degrees(gang(270)), math.degrees(gang(300))
     d.arc([cx - r + 14, cy - r + 14, cx + r - 14, cy + r - 14], a0, a1, fill=(248, 180, 170), width=14)
@@ -61,12 +61,12 @@ def gauge(d, cx, cy, r, p, fs=36, mark=None, out=True):
     for v in (0, 100, 200, 300):
         a = gang(v); rr = r + 36 if out else r - 64
         text(d, (cx + rr * math.cos(a), cy + rr * math.sin(a)), str(v), fs, INK, bold=False)
-    text(d, (cx, cy + r * 0.5), "kPa", fs - 4, MUTED, bold=False)
-    if mark is not None:
+    text(d, (cx, cy + r * (0.5 if out else 0.72)), "kPa", fs - 4, MUTED, bold=False)   # so trong mat: ha "kPa" xa nhan 300
+    if mark is not None and mark_a > 0:
         a = gang(mark)
         d.line([(cx + (r - 2) * math.cos(a), cy + (r - 2) * math.sin(a)), (cx + (r + 22) * math.cos(a), cy + (r + 22) * math.sin(a))],
-               fill=GREEN, width=8)
-        text(d, (cx + (r + 48) * math.cos(a), cy + (r + 48) * math.sin(a)), str(mark), fs, GREEN)
+               fill=A(GREEN, mark_a), width=8)
+        text(d, (cx + (r + 48) * math.cos(a), cy + (r + 48) * math.sin(a)), str(mark), fs, GREEN, alpha=mark_a)
     a = gang(p)
     d.line([(cx - 22 * math.cos(a), cy - 22 * math.sin(a)), (cx + (r - 34) * math.cos(a), cy + (r - 34) * math.sin(a))], fill=RED, width=9)
     dot(d, cx, cy, 14, NAVY)
@@ -200,9 +200,15 @@ def box(d, t, t0, x0, x1, y0, y1, lbl, p_, a):
 def s_why(img, d, t, sc):
     IMG_REF[0] = img
     a = appear(t, 0.1, 0.4); t0 = sc["M"][0] + 0.6
-    box(d, t, t0, 110, 510, 330, 880, "8,0 ml", ROWS[0][1], a)
-    box(d, t, t0, 680, 880, 330, 880, "4,0 ml", ROWS[3][1], a)
+    box(d, t, t0, 155, 555, 330, 880, "8,0 ml", ROWS[0][1], a)     # hai hop can giua khung (tam 540)
+    box(d, t, t0, 725, 925, 330, 880, "4,0 ml", ROWS[3][1], a)
     k = back((t - sc["M"][1] - 0.6) / 0.5) if t >= sc["M"][1] + 0.6 else 0
+    if k <= 0:                                  # nua duoi: nhac lai phu de 1 trong luc cho cong thuc
+        b = appear(t, sc["M"][0] + 0.4)
+        if b <= 0: return
+        card(d, (80, 1110, 1000, 1450), fill=A(WHITE, b), outline=A(BLUE, b), w=6)
+        text(d, (W / 2, 1220), "Cùng 20 phân tử, thể tích nhỏ một nửa", 42, INK, alpha=b)
+        text(d, (W / 2, 1330), "→ mật độ gấp đôi", 44, BLUE, alpha=b)
     if k > 0:
         card(d, (80, 1110, 1000, 1450), fill=WHITE, outline=GREEN, w=6)
         rich(d, W / 2, 1235, "p_{1}V_{1} = p_{2}V_{2}", int(88 * clamp(k, 0.2, 1.08)), GREEN)
@@ -225,7 +231,7 @@ def s_trap(img, d, t, sc):
     heat = ease((t - ts) / 1.2)
     V = lerp(8.0, 4.0, kc)
     syringe(d, t, V, bx0=190, bx1=310, y0=1230, px=34, scale_lbl=False, heat=heat, push=0 < t - ts < 0.4, vmin=4.0)
-    text(d, (250, 1296), "8,0 → 4,0 ml", 34, BLUE)
+    text(d, (250, 1296), "8,0 → 4,0 ml", 36, BLUE)
     # nhiet ke
     tx, tb, tt = 455, 1220, 770
     d.rounded_rectangle([tx - 16, tt, tx + 16, tb], radius=16, fill=WHITE, outline=NAVY, width=4)
@@ -236,8 +242,8 @@ def s_trap(img, d, t, sc):
     # ap ke: moc 215 kPa (dang nhiet, so lieu mau) va kim vot qua
     p_iso = PV[0] / V
     p_show = p_iso * (1 + 0.16 * heat)
-    gauge(d, 760, 990, 150, p_show, fs=36, mark=ROWS[3][1], out=False)
-    c2 = appear(t, sc["M"][1] + 1.4)
+    c2 = appear(t, sc["M"][1] + 1.4)            # moc 215 hien cung dong giai thich, khong truoc
+    gauge(d, 760, 990, 150, p_show, fs=40, mark=ROWS[3][1], out=False, mark_a=c2)
     text(d, (W / 2, 1345), f"p vọt quá {ROWS[3][1]} kPa", 40, RED, alpha=c2)
     c3 = appear(t, sc["M"][1] + 2.8)
     card(d, (130, 1410, 950, 1550), fill=A((220, 252, 231), c3), r=24)
@@ -248,7 +254,7 @@ def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "T không đổi → p·V không đổi",
              "Giữ nhiệt độ, ấn tới 2,0 ml thì áp kế chỉ bao nhiêu? Áp kế còn đọc được không?",
-             f"p·V ≈ {P0V0} · thang đo 300 kPa")
+             f"p·V ≈ {P0V0}")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

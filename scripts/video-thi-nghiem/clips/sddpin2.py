@@ -137,8 +137,8 @@ def circuit(d, closed, rx):
     d.ellipse([VX - 44, VY - 44, VX + 44, VY + 44], fill=WHITE, outline=PURPLE, width=6); text(d, (VX, VY + 2), "V", 42, PURPLE)
     for p in ((XL, YT), (XR, YT), (XR, YB), (XL, YB)): dot(d, p[0], p[1], 7, WIRE)
     if closed:                       # chieu dong quy uoc: (+) -> mach ngoai -> (-): day duoi chay sang trai
-        arrow(d, (660, YB + 30), (580, YB + 30), RED, w=5, head=16)
-        text(d, (680, YB + 30), "I", 40, RED, anchor="lm")
+        arrow(d, (660, YB - 32), (580, YB - 32), RED, w=5, head=16)      # trong vong mach: cach the dong ho
+        text(d, (680, YB - 32), "I", 40, RED, anchor="lm")
 
 def readout(d, x0, label, reading):
     card(d, (x0, 586, x0 + 440, 712), fill=BODY, r=20)
@@ -209,7 +209,7 @@ def s_rut(img, d, t, sc):
         for E, c in ((E_NEW, NEWC), (E_OLD, OLDC)): dot(d, GX0, gy(E), 13, A(ORANGE, k1), outline=WHITE)
         y = 250 + (1 - k1) * 20
         card(d, (50, y, 1030, y + 200), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
-        mt(d, (W / 2, y + 62), "Giao trục U = ℰ", 44, ORANGE, k1)
+        mt(d, (W / 2, y + 62), "Giao trục U = ℰ (suất điện động)", 44, ORANGE, k1)
         text(d, (W / 2, y + 140), "1,58 V và 1,50 V: gần nhau", 44, INK, alpha=k1)
     k2 = appear(t, 1.9, 0.45)                      # phan hut I.r o cung dong (khong ghi so)
     if k2 > 0:
@@ -217,7 +217,10 @@ def s_rut(img, d, t, sc):
         for E, r, dx in ((E_NEW, R_NEW, 16), (E_OLD, R_OLD, -16)):
             dashed(d, (GX0, gy(E)), (xb + dx, gy(E)), A(ORANGE, k2), w=3)
             d.line([(xb + dx, gy(E)), (xb + dx, gy(E - r * I_CMP))], fill=A(RED, k2), width=10)
-        text(d, (xb + 44, gy(1.30)), "phần hụt I·r", 40, RED, anchor="lm", alpha=k2)
+        ly = gy(1.30)                              # nhan chung cho HAI cot: hai duong dan manh
+        d.line([(xb + 38, ly), (xb - 10, ly)], fill=A(RED, 0.8 * k2), width=3)
+        d.line([(xb + 38, ly - 6), (xb + 30, gy(E_NEW - R_NEW * I_CMP / 2))], fill=A(RED, 0.8 * k2), width=3)
+        text(d, (xb + 44, ly), "phần hụt I·r", 40, RED, anchor="lm", alpha=k2)
         y = 480 + (1 - k2) * 20
         card(d, (50, y, 1030, y + 200), fill=A(WHITE, k2), outline=A(RED, k2), w=6)
         text(d, (W / 2, y + 62), "Càng dốc xuống, r càng lớn", 44, RED, alpha=k2)
@@ -273,13 +276,13 @@ def s_end(img, d, t, sc):
     pw = tw(d, "THỬ NGHĨ", F(38)) + 52
     card(d, (W / 2 - pw / 2, 670, W / 2 + pw / 2, 734), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 702), "THỬ NGHĨ", 38, WHITE, alpha=k1)
-    ctext(d, 860, "Tính r pin mới chỉ từ hai lần đo\nRx = 100 Ω và 20 Ω: có đáng tin?",
+    ctext(d, 860, "Tính r pin mới từ hai lần đo\nRx = 100 Ω và 20 Ω: có đáng tin?",
           44, INK, maxw=940, alpha=appear(t, M[0] + 0.4, 0.5))
     kh = appear(t, M[0] + 2.9, 0.5)
     if kh <= 0: return
     card(d, (110, 1070, 970, 1300), fill=A((255, 247, 237), kh), r=24)
     ctext(d, 1125, "Gợi ý", 40, (154, 52, 18), alpha=kh)
-    ctext(d, 1220, "Vôn kế đọc tới 0,01 V", 48, ORANGE, maxw=820, alpha=kh)
+    ctext(d, 1220, "Cặp lần đo nào tính r tin hơn?", 44, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

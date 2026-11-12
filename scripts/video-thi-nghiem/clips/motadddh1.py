@@ -5,7 +5,7 @@
 #   so_lieu_mau (t s, x cm): 0 4 ; 0,5 0 ; 1,0 -4 ; 1,5 0  (khong noi suy li do -> khong hien x giua cac moc).
 #   hien_tuong_hay_sai[1]: hai lan x = 0 (t = 0,5 s va 1,5 s) di nguoc chieu -> bay.
 #   Cau chot: keo lech 6 cm (A trong khoang tham_so, chua tung hien), quang duong trong 1,0 s dau? (2A = 12 cm, khong
-#   hien; phan xa sai: 6 cm hoac 0 = li do; hien_tuong_hay_sai[0]). Goi y: bien do moi 6 cm, T van 2 s.
+#   hien; phan xa sai: 6 cm hoac 0 = li do; hien_tuong_hay_sai[0]). Goi y trung tinh: nhin lai bang, sau 1,0 s vat o dau.
 # Dan canh: TRUC CHINH la thuoc ngang duoi ray + vet cam (vung vat da quet) + bang 4 moc; khong do thi x-t
 #   (motadddh2 dung do thi). Vat chay theo x = 4cos(pi.tau), quay cham x2, dung hinh o moi moc ghi so.
 # Canh: Du doan (K10: chi cau hoi + hinh) -> Tien hanh -> Dap an + Rut ra + Chua noi duoc -> Bay (hai lan x = 0)
@@ -159,7 +159,7 @@ def s_dapan(img, d, t, sc):
         card(d, (60, 1180, 1020, 1500), fill=A(WHITE, k2), outline=A(NAVY, k2), r=24, w=5)
         text(d, (W / 2, 1240), "Chưa nói được", 46, NAVY, alpha=k2)
         for j, l in enumerate(("• Có ma sát: A giảm ra sao?", "• Kéo quá xa: lò xo hỏng?")):
-            text(d, (100, 1340 + j * 95), l, 42, INK, anchor="lm", alpha=k2 * appear(t, M[1] + 0.3 + 0.5 * j, 0.4))
+            text(d, (100, 1340 + j * 95), l, 42, INK, anchor="lm", alpha=k2 * appear(t, M[1] + 0.1 + 0.35 * j, 0.35))
 
 # ---------------- canh 4: Bay - hai lan x = 0 ----------------
 BYA, BYB = 470, 800                   # day vat hai ray
@@ -173,16 +173,16 @@ def s_bay(img, d, t, sc):
         arrow(d, (OX, ya), (OX + sgn * 170, ya), GREEN, w=7, head=24)
         text(d, (OX + sgn * 280, ya), "chiều đi", 40, (21, 110, 55))
     y0 = 980
-    card(d, (40, y0, 1040, y0 + 500), fill=WHITE, outline=(185, 28, 28), w=6)
+    card(d, (40, y0, 1040, y0 + 440), fill=WHITE, outline=(185, 28, 28), w=6)
     pill(d, W / 2, y0 + 62, "BẪY", 40, WHITE, (185, 28, 28))
     q = "“Hai lần x = 0 là như nhau”"
-    yy = y0 + 200; f = F(48); lw = tw(d, q, f)
+    yy = y0 + 175; f = F(48); lw = tw(d, q, f)
     text(d, (W / 2, yy), q, 48, (185, 28, 28))
     ks = clamp((t - (M[0] + 1.6)) / 0.4)
     if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=(140, 15, 15), width=7)
     kc = appear(t, M[1] + 0.8, 0.5)
-    ctext(d, y0 + 330, "✓ Cùng ở O, nhưng đi", 46, (21, 110, 55), maxw=920, alpha=kc)
-    ctext(d, y0 + 400, "ngược chiều nhau", 46, (21, 110, 55), maxw=920, alpha=kc)
+    ctext(d, y0 + 290, "✓ Cùng ở O, nhưng đi", 46, (21, 110, 55), maxw=920, alpha=kc)
+    ctext(d, y0 + 360, "ngược chiều nhau", 46, (21, 110, 55), maxw=920, alpha=kc)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def _end_body(d, t, k1):
@@ -202,7 +202,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         text(d, (W / 2, 1355), "Gợi ý", 40, INK, alpha=kh)
-        text(d, (W / 2, 1450), "Biên độ mới 6 cm, T vẫn là 2 s", 44, ORANGE, alpha=kh)
+        ctext(d, 1450, "Nhìn lại bảng: sau 1,0 s vật ở đâu?", 42, ORANGE, maxw=800, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
