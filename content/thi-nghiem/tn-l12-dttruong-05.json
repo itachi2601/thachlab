@@ -1,0 +1,156 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 16. Điện từ trường. Mô hình sóng điện từ",
+  "lesson_id": 127,
+  "nguon_trong_bai": "content/lesson-samples/l12-dien-tu-truong-song-dien-tu/theory.html",
+  "id": "tn-l12-dttruong-05",
+  "ten": "Mô hình sóng điện từ: E, B và phương truyền tại một điểm",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "dttruong.song_dien_tu_tinh_chat",
+    "dttruong.song_ngang",
+    "dttruong.lambda_bang_c_chia_f"
+  ],
+  "muc_tieu": "Đọc mô hình sóng điện từ phẳng: tại mỗi điểm E và B dao động điều hoà cùng tần số, cùng pha, vuông góc nhau và cùng vuông góc phương truyền (sóng ngang); sóng truyền được trong chân không với tốc độ c; λ = c/f.",
+  "gia_thuyet": [
+    "Một bạn cho rằng: giống mạch dao động, khi điện trường E cực đại thì từ trường B bằng 0 (E và B lệch pha nhau một phần tư chu kì)."
+  ],
+  "du_doan_neu_dung": [
+    "Tại một điểm trên đường truyền, lúc E đạt cực đại thì B phải bằng 0, và ngược lại."
+  ],
+  "khong_chung_minh": [
+    "Mô hình là hình vẽ của lí thuyết Maxwell, không phải ảnh chụp: không ai 'nhìn thấy' E và B; anten thu chỉ cho biết thành phần E dọc anten.",
+    "Không cho biết vì sao tốc độ trong chân không đúng bằng c; ở môi trường khác sóng chậm hơn."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Hình động mô hình sóng điện từ phẳng truyền theo trục Ox",
+      "so_luong": 1,
+      "ghi_chu": "E dọc trục Oy (đỏ), B dọc trục Oz (xanh)"
+    },
+    {
+      "ten": "Anten thu thẳng có đèn LED báo cường độ",
+      "so_luong": 1,
+      "ghi_chu": "dùng để thấy chỉ thành phần E dọc anten mới tạo dòng"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Đứng ở một điểm M trên trục Ox, ghi E và B tại M ở các thời điểm 0, T/4, T/2, 3T/4.",
+      "So hướng E, hướng B, phương truyền tại M.",
+      "Đặt anten thu dọc Oy rồi xoay sang dọc Oz, so độ sáng LED.",
+      "Tính bước sóng cho sóng FM 100 MHz và sóng wifi 2,4 GHz bằng λ = c/f.",
+      "Coi rằng sóng phẳng, truyền trong chân không với c = 3·10⁸ m/s; biên độ không đổi trên đoạn đang xét."
+    ],
+    "quan_sat": [
+      "Tại M: lúc t = 0, E và B cùng cực đại; t = T/4 cùng bằng 0; t = T/2 cùng cực đại theo chiều ngược lại.",
+      "E dọc Oy, B dọc Oz, sóng truyền dọc Ox: ba phương đôi một vuông góc.",
+      "Anten dọc Oy: LED sáng; xoay dọc Oz (theo B): LED gần như tắt.",
+      "100 MHz: λ = 3,0 m; 2,4 GHz: λ = 0,125 m."
+    ],
+    "rut_ra": [
+      "Kết quả bác bỏ giả thuyết: trong sóng điện từ, E và B dao động CÙNG PHA, cùng đạt cực đại và cùng bằng 0.",
+      "E ⊥ B và cả hai ⊥ phương truyền: sóng điện từ là sóng ngang.",
+      "Điện trường biến thiên sinh từ trường, từ trường biến thiên sinh điện trường, nên sóng tự lan truyền, không cần môi trường: truyền được trong chân không.",
+      "Lệch pha một phần tư chu kì là của năng lượng điện và từ trong mạch dao động LC, không phải của E, B trong sóng đang truyền."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "f",
+      "ten": "Tần số sóng",
+      "don_vi": "Hz",
+      "kieu": "dieu_chinh",
+      "min": 1000000.0,
+      "max": 3000000000.0,
+      "mac_dinh": 100000000.0
+    },
+    {
+      "ky_hieu": "c",
+      "ten": "Tốc độ ánh sáng trong chân không",
+      "don_vi": "m/s",
+      "kieu": "co_dinh",
+      "gia_tri": 300000000.0
+    },
+    {
+      "ky_hieu": "lambda",
+      "ten": "Bước sóng",
+      "don_vi": "m",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "E/E0",
+      "ten": "Điện trường tại M chia biên độ",
+      "don_vi": "",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "B/B0",
+      "ten": "Từ trường tại M chia biên độ",
+      "don_vi": "",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "E = E0·cos(2π·t/T − 2π·x/λ) theo Oy",
+      "B = B0·cos(2π·t/T − 2π·x/λ) theo Oz (cùng pha với E)",
+      "λ = c/f = c·T",
+      "E ⊥ B ⊥ phương truyền Ox"
+    ],
+    "gia_thiet": [
+      "sóng phẳng, biên độ không đổi",
+      "truyền trong chân không"
+    ],
+    "ghi_chu": "Kho trước chỉ có phần 'biến thiên sinh ra' (dttruong-01, -02); mục này bổ sung tính chất E, B, phương truyền mà đề hay hỏi."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "t",
+      "E/E0 tại M",
+      "B/B0 tại M"
+    ],
+    "hang": [
+      [
+        "0",
+        1,
+        1
+      ],
+      [
+        "T/4",
+        0,
+        0
+      ],
+      [
+        "T/2",
+        -1,
+        -1
+      ],
+      [
+        "3T/4",
+        0,
+        0
+      ],
+      [
+        "T",
+        1,
+        1
+      ]
+    ],
+    "ghi_chu": "Số liệu tính từ mô hình tại M (x = 0). Bước sóng: 100 MHz → 3,0 m; 2,4 GHz → 0,125 m."
+  },
+  "ket_qua_ky_vong": "E và B tại một điểm cùng pha, vuông góc nhau và vuông góc phương truyền; sóng truyền trong chân không với λ = c/f.",
+  "hien_tuong_hay_sai": [
+    "Cho rằng E và B lệch pha một phần tư chu kì (nhầm với năng lượng điện – từ trong mạch LC).",
+    "Cho rằng E song song B, hoặc E dọc phương truyền (sóng dọc).",
+    "Cho rằng sóng điện từ cần môi trường như sóng âm, không truyền được trong chân không.",
+    "Cho rằng hình vẽ hai đường sin là 'quỹ đạo' của sóng hay của hạt."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+do_thi",
+    "y_tuong": "Hình phối cảnh trục Ox, Oy, Oz; vectơ E (đỏ) dọc Oy, B (xanh) dọc Oz chạy theo Ox; điểm M có hai thanh đo E, B; nút dừng hình.",
+    "diem_nhan": "Dừng hình ở bất kì lúc nào: hai thanh E, B tại M luôn cùng dài, cùng về 0."
+  }
+}
