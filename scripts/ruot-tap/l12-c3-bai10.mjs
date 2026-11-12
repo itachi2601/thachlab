@@ -159,7 +159,7 @@ ${tb(`5. Vì sao khung dây quay trong từ trường? Viết ${m('M')}.`)}${lin
 ${tb('6. Chiều đường sức của dây thẳng, vòng dây, ống dây?')}${lines(2)}
 ${tb('7. Hạt mang điện bay vuông góc đường sức chuyển động thế nào?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/7 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(3, 'Kết quả tự kiểm tra (9 câu trên web, chiếu trên lớp)', '4·3')}
+${h3(3, 'Kết quả tự kiểm tra', '4·3')}
 ${rkHai([1, 2, 3, 4, 5], [6, 7, 8, 9])}
 ${foot(4)}</section>`;
 
@@ -185,7 +185,8 @@ ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(cau(`${m('\\bigstar')} Dây ${u('10', 'cm')} mang dòng ${u('2', 'A')} vuông góc đường sức, ${u('B=0{,}5', 'T')}. Tính lực từ.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Cũng dây đó, hợp đường sức ${m('30^\\circ')}, lực từ đo được ${u('0{,}1', 'N')}. ${m('B')} bằng bao nhiêu?`, 1)
- + cau(`${m('\\bigstar\\bigstar\\bigstar')} Khung 20 vòng, ${nw(m('S=25\\ \\mathrm{cm^2}'))}, dòng ${u('2', 'A')}, ${u('B=0{,}4', 'T')}: ${m('M_{\\max}')}? Vì sao khung quay mà tâm khung không bị đẩy đi?`, 2))}
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} Khung 20 vòng, ${nw(m('S=25\\ \\mathrm{cm^2}'))}, dòng ${u('2', 'A')}, ${u('B=0{,}4', 'T')}. <b>a)</b> mômen lớn nhất ${m('M_{\\max}')}`, 1)
+ + cau(`<b>b)</b> Vì sao khung quay mà tâm khung không bị đẩy đi?`, 1))}
 ${foot(5)}</section>`;
 
 // Hình đặt cạnh đề (cột 40 mm) để không tốn chiều cao; dạng 6 hình đặt cạnh ô giải (khung: 46 mm).
@@ -193,22 +194,22 @@ const deH = (txt, fig, w = 40) => `<div class="fig-side" style="grid-template-co
 const dang = [
   { t: 'Dạng 1 · Dễ · Bàn tay trái: chiều lực từ',
     de: `Dây MN nằm ngang (M trái, N phải), đường sức vuông góc mặt phẳng hình, hướng ra (${RA}).<br><b>a)</b> dòng từ M đến N: lực từ hướng lên, xuống, trái hay phải<br><b>b)</b> đảo chiều dòng, giữ từ trường: chiều lực<br><b>c)</b> từ câu a, đảo cả dòng và từ trường (${VAO}): chiều lực`,
-    nd: `tay trái: đường sức vào ${f(16)}, cổ tay → ngón tay theo ${f(6)}, ngón cái chỉ ${f(6)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `đường sức vào lòng bàn tay; ngón tay chỉ ${f(24)}; ngón cái chỉ ${f(20)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Dùng ngược bàn tay trái',
-    de: deH(`<b>a)</b> dây thẳng đứng, dòng chạy lên, lực sang phải; đường sức vuông góc hình: ra hay vào<br><b>b)</b> dây vuông góc hình, N trái, S phải, lực hướng xuống: dòng ra hay vào<br><b>c)</b> MN ngang, đường sức hướng xuống, lực hướng vào: dòng M → N hay N → M`, H.d2(''), 44),
-    nd: `biết hai chiều thì đặt tay trái theo chúng; giữa hai cực, đường sức đi từ ${f(6)} sang ${f(6)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: (`<b>a)</b> dây thẳng đứng, dòng chạy lên, lực sang phải; đường sức vuông góc hình: ra hay vào<br><b>b)</b> dây vuông góc hình, N trái, S phải, lực hướng xuống: dòng ra hay vào<br><b>c)</b> MN ngang, đường sức hướng xuống, lực hướng vào: dòng M → N hay N → M`),
+    nd: `đặt tay trái theo hai chiều đã biết; đường sức đi từ cực ${f(12)} sang cực ${f(12)}`, a: ['a', 'b', 'c'], gi: 4, fig: `<div style="width:38mm;margin-left:auto">${H.d2('')}</div>` },
   { t: `Dạng 3 · Trung bình · Tính ${m('F=BIl\\sin\\alpha')}`,
-    de: `Dây thẳng dài ${u('15', 'cm')}, dòng ${u('4{,}0', 'A')}, từ trường đều ${u('B=0{,}25', 'T')} (${aDef}). Độ lớn lực từ khi dây:<br><b>a)</b> vuông góc đường sức<br><b>b)</b> hợp đường sức ${m('30^\\circ')}<br><b>c)</b> hợp đường sức ${m('150^\\circ')}`,
-    nd: `đổi ${m('l')} ra ${f(10)}; ${nw(`${m('\\sin150^\\circ=')} ${f(10)}`)}; dọc đường sức thì ${nw(`${m('\\sin\\alpha=')} ${f(8)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Dây dài ${u('15', 'cm')}, ${u('I=4{,}0', 'A')}, từ trường đều ${u('B=0{,}25', 'T')} (${aDef}). Lực từ khi dây:<br><b>a)</b> vuông góc đường sức<br><b>b)</b> hợp đường sức ${m('30^\\circ')}<br><b>c)</b> hợp đường sức ${m('150^\\circ')}`,
+    nd: `đổi ${m('l')} ra ${f(18)}; ${nw(`${m('\\sin150^\\circ=')} ${f(16)}`)}; dọc đường sức thì ${nw(`${m('\\sin\\alpha=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Trung bình · Tìm B từ lực từ đo được',
     de: `Dây thẳng dài ${u('12', 'cm')}, dòng ${u('2{,}5', 'A')}, hợp đường sức từ trường đều góc ${m('30^\\circ')}; lực từ đo được ${u('15', 'mN')}.<br><b>a)</b> cảm ứng từ ${m('B')}<br><b>b)</b> tăng dòng lên ${u('5{,}0', 'A')}, giữ nguyên dây, vị trí, từ trường: ${m('B')} khi đó; lực từ (mN)`,
-    nd: `${nw(`${m('B=')} ${f(20)}`)}; đổi mN ra N; tăng dòng thử thì ${m('B')} ${f(16)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 3 },
+    nd: `${nw(`${m('B=')} ${f(32)}`)}; đổi mN ra N; tăng dòng thử thì ${m('B')} ${f(24)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 4 },
   { t: 'Dạng 5 · Khó · Dây cân bằng: chiều I, cường độ, lực căng',
-    de: deH(`Dây MN dài ${u('20', 'cm')}, nặng ${u('8{,}0', 'g')}, treo ngang bằng hai sợi chỉ nhẹ trong từ trường đều ${u('B=0{,}10', 'T')} hướng ra (${RA}); ${g10}.<br><b>a)</b> chiều, cường độ dòng để lực căng hai sợi chỉ bằng 0<br><b>b)</b> giảm dòng còn ${u('2{,}4', 'A')}, giữ chiều: tổng lực căng (mN)`, H.d5(), 34),
-    nd: `lực căng bằng 0 ⇒ lực từ hướng ${f(10)}, ${nw(`${m('F=')} ${f(8)}`)}; còn lực căng: ${nw(`${m('T+F=')} ${f(8)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 3 },
+    de: (`Dây MN ${u('20', 'cm')}, ${u('8{,}0', 'g')} treo ngang bằng hai chỉ nhẹ; ${u('B=0{,}10', 'T')} hướng ra (${RA}); ${g10}.<br><b>a)</b> chiều, cường độ dòng để lực căng hai sợi chỉ bằng 0<br><b>b)</b> giảm dòng còn ${u('2{,}4', 'A')}, giữ chiều: tổng lực căng (mN)`),
+    nd: `lực căng 0 ⇒ lực từ hướng ${f(14)}, ${nw(`${m('F=')} ${f(16)}`)}; câu b: ${nw(`${m('T+F=')} ${f(16)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 4, fig: `<div style="width:40mm;margin-left:auto">${H.d5('')}</div>` },
   { t: 'Dạng 6 · Khó · Khung dây: lực từng cạnh, mômen ngẫu lực',
-    de: deH(`Khung ABCD: ${u('AB=6{,}0', 'cm')}, ${u('BC=4{,}0', 'cm')}, 50 vòng, ${u('I=2{,}0', 'A')}, ${u('B=0{,}20', 'T')}; mặt khung song song đường sức, AB vuông góc đường sức (${al} trong ${m('M')}: góc giữa ${vB} và pháp tuyến).<br><b>a)</b> lực lên mỗi cạnh chịu lực từ<br><b>b)</b> mômen ngẫu lực từ<br><b>c)</b> mômen khi pháp tuyến hợp đường sức ${m('30^\\circ')}`, H.d6()),
-    nd: `cạnh dọc đường sức: ${nw(`${m('F=')} ${f(6)}`)}; hợp lực lên khung ${f(8)}; ${nw(`${m('M=')} ${f(20)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: (`Khung 50 vòng, ${u('AB=6{,}0', 'cm')}, ${u('BC=4{,}0', 'cm')}, ${u('I=2{,}0', 'A')}, ${u('B=0{,}20', 'T')}, đặt như hình (nhìn dọc cạnh AB).<br><b>a)</b> lực lên mỗi cạnh chịu lực từ<br><b>b)</b> mômen ngẫu lực từ<br><b>c)</b> mômen khi pháp tuyến hợp đường sức ${m('30^\\circ')}`),
+    nd: `cạnh dọc đường sức ${nw(`${m('F=')} ${f(12)}`)}; hợp lực ${f(12)}; ${nw(`${m('M=')} ${f(32)}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: `<div style="width:42mm;margin-left:auto">${H.d6('')}</div>` },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
