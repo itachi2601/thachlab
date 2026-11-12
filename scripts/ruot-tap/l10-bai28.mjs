@@ -77,7 +77,7 @@ ${h3(4, 'II.1 · Động lượng của một vật', '1·4')}
 <div class="two" style="display:grid;grid-template-columns:1fr 1fr;gap:0 4mm">
 <div>Động lượng: ${vp} = ${fn}</div><div>Độ lớn: ${m('p=')} ${fn}</div>
 <div>Vector cùng hướng với ${fn}</div><div>Đơn vị: ${fw}</div>
-<div>Phụ thuộc: ${fw}</div><div>vì ${fn} phụ thuộc như vậy.</div></div>
+<div>${m('p')} phụ thuộc hệ quy chiếu vì</div><div>${fw} phụ thuộc hệ quy chiếu.</div></div>
 <div>Đặc trưng cho khả năng ${fl} khi tương tác với vật khác.</div>
 <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 4mm">
 <div>Bóng ${u('0{,}45', 'kg')}, ${u('20', 'm/s')}: ${m('p=')} ${fn}</div><div>Xe ${nw(m('10')+' tấn')}, ${u('1', 'm/s')}: ${m('p=')} ${fw}</div></div>
@@ -120,8 +120,8 @@ ${H.demLoXo()}</div>
 <tr><td>${m('v_1')} ; ${m('v_2')} (m/s)</td><td>0,40 ; −0,32</td><td>0,60 ; −0,49</td><td>0,80 ; −0,63</td><td>1,00 ; −0,81</td></tr>
 <tr><td>Cảm biến (N·s)</td><td>0,176</td><td>0,268</td><td>0,352</td><td>0,445</td></tr>
 <tr><td style="height:7mm">${m('|\\Delta p|=m|v_2-v_1|')}</td><td></td><td></td><td></td><td></td></tr></table>
-<div style="margin:.8mm 0 0">Sai số: cổng quang ${m('\\pm 0{,}01\\ \\mathrm{m/s}')} (nên ${m('\\Delta p')} sai cỡ ${m('\\pm 0{,}005')}), cảm biến ${m('\\pm 2\\,\\%')}.</div>
-<div><b>Rút ra:</b> chênh lệch ${fw} sai số dụng cụ ⇒ khớp với ${fp(34, '.')}</div>
+<div style="margin:.8mm 0 0">Sai số cho phép = cổng quang ${m('\\pm 0{,}01\\ \\mathrm{m/s}')} (${m('\\Delta p')} sai cỡ ${m('\\pm 0{,}005')}) <b>cộng</b> cảm biến ${m('\\pm 2\\,\\%')}.</div>
+<div><b>Rút ra:</b> chênh lệch ${fw} sai số cho phép ⇒ khớp với ${fp(34, '.')}</div>
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -177,7 +177,7 @@ ${h3(3, 'Thử thách phân tầng')}
 <div class="fig-side" style="${fs(36)}">${box(wl(`★ So sánh động lượng viên đạn ${u('10', 'g')} bay ${u('800', 'm/s')} với bóng ${u('0{,}45', 'kg')} bay ${u('12', 'm/s')}.`, 2)
  + wl(`★★ Hai vật có động lượng cùng độ lớn ${kms('6')}, hợp nhau góc ${m('120^\\circ')} (${nw(m('\\cos 60^\\circ=0{,}5'))}). Động lượng của hệ?`, 2)
  + wl(`★★ Vật ${u('1', 'kg')} rơi tự do từ nghỉ, ${g98}. Độ biến thiên động lượng sau ${u('2', 's')}?`, 2)
- + wl(`★★★ Người ${u('60', 'kg')} rơi từ ${u('5', 'm')} xuống đệm hơi, dừng hẳn sau ${u('0{,}50', 's')}; ${g98}. Lực trung bình đệm tác dụng lên người? Rơi xuống bê tông, dừng trong ${u('0{,}01', 's')} thì lực lớn gấp mấy lần?`, 4))}${H.demHoi()}</div>
+ + wl(`★★★ Người ${u('60', 'kg')} rơi từ ${u('5', 'm')} xuống đệm hơi, dừng hẳn sau ${u('0{,}50', 's')}; tốc độ chạm đệm ${m('v')} với ${nw(m('v^2=2gh'))}, ${g98}. Độ lớn hợp lực trung bình lên người? Rơi xuống bê tông, dừng trong ${u('0{,}01', 's')} thì hợp lực gấp mấy lần?`, 4))}${H.demHoi()}</div>
 ${h3(4, 'Đời sống: nơi đang dùng bài này')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Túi khí, đai an toàn: kéo dài ${fw} người dừng lại, lực lên người ${fp(25, '.')}</div>
@@ -190,17 +190,17 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Động lượng một vật: đổi đơn vị, xét dấu',
-    de: `Xe tải ${nw(m('1{,}5')+' tấn')} chạy ${u('54', 'km/h')}; ô tô con ${u('750', 'kg')} ngược chiều ${u('72', 'km/h')}. Chiều dương: chiều xe tải; mốc: mặt đường.<br><b>a)</b> động lượng của xe tải<br><b>b)</b> động lượng của ô tô con (kể cả dấu)<br><b>c)</b> xe nào có động lượng với độ lớn lớn hơn`,
-    nd: `Đổi tấn, km/h ra ${fp(25, ';')} ngược chiều dương thì ${m('v')} mang dấu ${fn}`, a: ['a', 'b', 'c'], gi: 3, fig: H.xeDuong(''), cot: 3 },
+    de: `Xe tải ${nw(m('1{,}5')+' tấn')} chạy ${u('54', 'km/h')}; ô tô con ${u('750', 'kg')} ngược chiều ${u('72', 'km/h')} (mốc: mặt đường).<br><b>a)</b> động lượng của xe tải &nbsp; <b>b)</b> động lượng của ô tô con (dấu theo chiều (+) ở hình)<br><b>c)</b> xe nào có động lượng với độ lớn lớn hơn`,
+    nd: `Đổi tấn, km/h ra ${fp(25, ';')} ngược chiều dương thì ${m('v')} mang dấu ${fn}`, a: ['a', 'b', 'c'], gi: 5, fig: H.xeDuong(''), cot: 3 },
   { t: 'Dạng 2 · Dễ · Xung lượng của lực và tốc độ vật thu được',
-    de: `Khí thuốc súng đẩy viên đạn ${u('10', 'g')} đang đứng yên bằng lực trung bình ${u('9000', 'N')} trong ${u('1{,}0', 'ms')}.<br><b>a)</b> xung lượng của lực đẩy<br><b>b)</b> tốc độ đạn khi ra khỏi nòng<br><b>c)</b> cùng lực, đẩy chỉ ${u('0{,}50', 'ms')}: tốc độ ra khỏi nòng`,
-    nd: `Đổi g ra ${fw}, ms ra ${fp(25, ';')} ${m('F\\Delta t=mv_2-')} ${fn}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Khí thuốc súng đẩy viên đạn ${u('10', 'g')} đang đứng yên bằng lực trung bình ${u('9000', 'N')} trong ${u('1{,}0', 'ms')}.<br><b>a)</b> xung lượng của lực đẩy &nbsp; <b>b)</b> tốc độ đạn khi ra khỏi nòng<br><b>c)</b> cùng lực, đẩy chỉ ${u('0{,}50', 'ms')}: tốc độ ra khỏi nòng`,
+    nd: `Đổi g ra ${fw}, ms ra ${fp(25, ';')} ${m('F\\Delta t=mv_2-')} ${fn}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Động lượng của hệ hai vật theo góc',
-    de: `Xe 1: ${u('50', 'kg')}, ${u('6{,}0', 'm/s')}; xe 2: ${u('80', 'kg')}, ${u('5{,}0', 'm/s')} (đối với sàn nhẵn). Độ lớn động lượng của hệ khi<br><b>a)</b> ngược chiều trên cùng đường thẳng<br><b>b)</b> trên hai đường vuông góc<br><b>c)</b> hai vận tốc hợp nhau góc ${m('60^\\circ')} (${nw(m('\\cos 60^\\circ=0{,}5'))})`,
-    nd: `Tính ${m('p_1, p_2')} trước; cộng ${fw}, không cộng ${fp(25, '.')}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Hai xe trên sàn nhẵn (vận tốc đo đối với sàn): xe 1 ${u('50', 'kg')}, ${u('6{,}0', 'm/s')}; xe 2 ${u('80', 'kg')}, ${u('5{,}0', 'm/s')}.<br>Độ lớn động lượng của hệ khi <b>a)</b> ngược chiều trên cùng đường thẳng<br><b>b)</b> trên hai đường vuông góc &nbsp; <b>c)</b> hai vận tốc hợp nhau góc ${m('60^\\circ')} (${nw(m('\\cos 60^\\circ=0{,}5'))})`,
+    nd: `Tính ${m('p_1, p_2')} trước; cộng ${fw}, không cộng ${fp(25, '.')}`, a: ['a', 'b', 'c'], gi: 5 },
   { t: 'Dạng 4 · Trung bình · Độ biến thiên động lượng khi bật ngược lại',
     de: `Bóng cao su ${u('0{,}10', 'kg')} lăn trên sàn nhẵn, đập vuông góc vào vách cứng với tốc độ ${u('4{,}0', 'm/s')}.<br><b>a)</b> bật ngược lại cùng tốc độ ${u('4{,}0', 'm/s')}; chiều dương là chiều tới vách: ${m('\\Delta p')}<br><b>b)</b> tới ${u('4{,}0', 'm/s')}, bật lại ${u('3{,}0', 'm/s')} (chiều dương như a): ${m('\\Delta p')}<br><b>c)</b> ở ý a, chọn chiều dương là chiều bật ra: ${m('\\Delta p')}`,
-    nd: `Bật ngược lại thì ${m('v_1, v_2')} ${fp(25, ';')} ${m('\\Delta p=m(')}${fw}${m(')')}`, a: ['a', 'b', 'c'], gi: 6, fig: H.bongTuong('4,0 m/s', '? m/s', ''), cot: 3 },
+    nd: `Bật ngược lại thì ${m('v_1, v_2')} ${fp(25, ';')} ${m('\\Delta p=m(')}${fw}${m(')')}`, a: ['a', 'b', 'c'], gi: 8, fig: H.bongTuong('4,0 m/s', '? m/s', '', 180), cot: 3 },
   { t: 'Dạng 5 · Khó · Lực trung bình từ độ biến thiên động lượng',
     de: `Thủ môn bắt bóng ${u('0{,}40', 'kg')} bay ngang ${u('20', 'm/s')}, giữ bóng dừng hẳn; lực của tay nằm ngang, bỏ qua trọng lượng bóng; chiều dương là chiều bay.<br><b>a)</b> tay giữ cứng, dừng sau ${u('0{,}010', 's')}: lực trung bình của tay<br><b>b)</b> tay co lại theo bóng, dừng sau ${u('0{,}050', 's')}: lực trung bình<br><b>c)</b> lực ở b bằng mấy lần lực ở a? Vì sao co tay thì đỡ đau?`,
     nd: `Hai ý cùng ${m('\\Delta p')} vì ${fp(34, ';')} chỉ ${m('\\Delta t')} đổi nên ${m('F=')} ${fw}`, a: ['a', 'b', 'c'], gi: 8, cot: 3 },
