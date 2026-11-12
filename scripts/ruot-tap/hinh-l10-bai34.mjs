@@ -44,7 +44,7 @@ const ongU = ({ tL, yA, tR, upper = OIL, lower = WATER, tenTren = 'dầu', tenDu
 
 export const hinhL10b34 = {
   // Trang 1 · Dự đoán: bể hẹp và hồ rộng, cùng sâu 2 m (không nói nơi nào ép mạnh hơn)
-  beHo: (cap = 'Cùng sâu 2 m: bể bơi hẹp (trái) và hồ rộng (phải).') => {
+  beHo: (cap = 'Cùng sâu 2 m: bể bơi (trái) và hồ rộng (phải).') => {
     let b = '';
     b += binh(20, 34, 76, 136, 50);
     b += rect(130, 50, 186, 120, WATER) + `<path d="M130,34 L130,170 L316,170" fill="none" stroke="${INK}" stroke-width="${SW}"/>` + ln(130, 50, 316, 50, BLUE, 2);
@@ -77,15 +77,15 @@ export const hinhL10b34 = {
     b += T(42, 150, 'ngón cái', { a: 'middle' }) + T(290, 150, 'ngón trỏ', { a: 'middle' });
     b += T(42, 30, 'đầu bằng', { a: 'middle', c: BLUE }) + T(290, 30, 'đầu nhọn', { a: 'middle', c: BLUE });
     b += T(166, 140, '? đau hơn', { a: 'middle', w: 700 });
-    return wrap('0 0 320 160', b, cap, 'Bút chì kẹp giữa hai ngón tay');
+    return wrap('-16 0 352 160', b, cap, 'Bút chì kẹp giữa hai ngón tay');
   },
   // Trang 3 · áp suất chất lỏng: h đo từ mặt thoáng; mũi tên ở M và N vẽ bằng nhau, HS tự so
-  doSau: (cap = 'Mũi tên chỉ phương nước ép (không theo độ lớn). h đo từ mặt thoáng xuống.') => {
+  doSau: (cap = 'Mũi tên ở M, N: nước ép lên điểm (không vẽ theo độ lớn).') => {
     let b = defs('ds1');
     b += binh(30, 24, 260, 172, 44);
     b += ln(30, 44, 290, 44, BLUE, 2.4) + T(286, 38, 'mặt thoáng', { a: 'end', c: BLUE });
-    b += dot(110, 96) + bonPhuong(110, 96, 22, 'ds1') + T(122, 92, 'M', { w: 700 });
-    b += dot(214, 156) + bonPhuong(214, 156, 22, 'ds1') + T(226, 152, 'N', { w: 700 });
+    b += dot(110, 96) + bonPhuong(110, 96, 22, 'ds1') + T(124, 84, 'M', { w: 700 });
+    b += dot(214, 156) + bonPhuong(214, 156, 22, 'ds1') + T(228, 144, 'N', { w: 700 });
     b += doc(60, 44, 96, `h${sb('M')}`, 'phai') + doc(268, 44, 156, `h${sb('N')}`, 'trai');
     return wrap('0 0 320 204', b, cap, 'Hai điểm M, N ở hai độ sâu trong bể nước');
   },
@@ -113,7 +113,7 @@ export const hinhL10b34 = {
     return wrap('0 0 320 206', b, cap, 'Khối hộp chìm hẳn trong nước');
   },
   // Trang 4 · bẫy 1: ba bình khác hình dạng, cùng độ sâu
-  baBinh: (cap = 'Ba bình khác hình, cùng mực nước h. Áp suất do nước ở đáy?') => {
+  baBinh: (cap = 'Ba bình khác hình, cùng mực nước h. So p<sub>1</sub>, p<sub>2</sub>, p<sub>3</sub> ở đáy.') => {
     let b = '';
     const yl = 60, yb = 160;
     b += rect(22, yl, 64, yb - yl, WATER) + `<path d="M22,30 L22,${yb} L86,${yb} L86,30" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
@@ -122,24 +122,24 @@ export const hinhL10b34 = {
     // thắt miệng
     b += `<path d="M${248 + 20 * (yl - 30) / 130},${yl} L${312 - 20 * (yl - 30) / 130},${yl} L312,${yb} L248,${yb} z" fill="${WATER}"/>` + `<path d="M268,30 L248,${yb} L312,${yb} L292,30" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
     b += ln(10, yl, 316, yl, BLUE, 2, '6 4') + doc(10, yl, yb, '', 'trai') + T(4, 120, 'h');
-    b += T(54, 186, 'p = ?', { a: 'middle', w: 700 }) + T(173, 186, 'p = ?', { a: 'middle', w: 700 }) + T(280, 186, 'p = ?', { a: 'middle', w: 700 });
+    b += T(54, 186, `p${sb('1')}`, { a: 'middle', w: 700 }) + T(173, 186, `p${sb('2')}`, { a: 'middle', w: 700 }) + T(280, 186, `p${sb('3')}`, { a: 'middle', w: 700 });
     return wrap('0 0 320 194', b, cap, 'Ba bình khác hình dạng cùng mực nước');
   },
   // Trang 5 · bài toán mẫu: bể cá nhìn từ trước
   beCa: (cap = 'Bể cá nhìn từ phía trước. M cách đáy 20 cm.') => {
     let b = '';
-    b += binh(70, 26, 180, 164, 40);
-    b += ln(70, 40, 250, 40, BLUE, 2) + dot(160, 130) + T(170, 126, 'M', { w: 700 });
-    b += doc(48, 40, 190, '50 cm', 'trai') + doc(272, 130, 190, '20 cm', 'phai') + ngang(70, 250, 206, '60 cm');
+    b += binh(86, 26, 140, 164, 40);
+    b += ln(86, 40, 226, 40, BLUE, 2) + dot(156, 130) + T(166, 124, 'M', { w: 700 });
+    b += doc(72, 40, 190, '50 cm', 'trai') + doc(240, 130, 190, '20 cm', 'phai') + ngang(86, 226, 206, '60 cm');
     return wrap('0 0 320 238', b, cap, 'Bể cá chứa nước');
   },
   // Trang 5 · thử thách ★★★: bồn nước trên mái
-  bonMai: (cap = 'Bồn trên mái nối ống xuống vòi tầng 1 và tầng 6.') => {
+  bonMai: (cap = 'Bồn trên mái nối ống xuống vòi tầng 1 và vòi tầng 6.') => {
     let b = '';
     b += binh(150, 14, 80, 34, 22) + ln(190, 48, 190, 194, INK, SW) + ln(190, 194, 230, 194, INK, SW) + ln(190, 74, 230, 74, INK, SW);
-    b += rect(228, 188, 16, 12, INK) + rect(228, 68, 16, 12, INK) + T(252, 202, 'vòi tầng 1') + T(252, 82, 'vòi 6', {});
-    b += doc(120, 22, 194, '20 m', 'trai') + doc(290, 74, 194, '15 m', 'phai');
-    b += ln(124, 22, 150, 22, GREY, 2, '4 4') + ln(124, 194, 190, 194, GREY, 2, '4 4');
+    b += rect(228, 188, 14, 12, INK) + rect(228, 68, 14, 12, INK) + T(248, 202, 'tầng 1') + T(248, 82, 'tầng 6');
+    b += doc(60, 22, 194, '20 m', 'trai') + doc(120, 74, 194, '15 m', 'trai');
+    b += ln(66, 22, 150, 22, GREY, 2, '4 4') + ln(66, 194, 190, 194, GREY, 2, '4 4') + ln(126, 74, 190, 74, GREY, 2, '4 4');
     return wrap('0 0 320 210', b, cap, 'Bồn nước trên mái và hai vòi');
   },
 
@@ -152,17 +152,17 @@ export const hinhL10b34 = {
     return wrap('0 0 320 132', b, cap, 'Khối hộp nằm và đứng trên bàn');
   },
   beDau: (cap = 'Bể dầu: M sâu 1,0 m; nắp van ở đáy.', { H = '2,5 m', hM = '1,0 m', ten = 'dầu', fill = OIL, day = 'nắp van', hMday = false } = {}) => {
-    let b = binh(40, 8, 190, 104, 14, fill);
-    b += ln(40, 14, 230, 14, INK, 2) + T(186, 56, ten, { a: 'middle', c: GREY, w: 700 });
-    if (hMday) b += dot(110, 73) + T(122, 79, 'M', { w: 700 }) + doc(84, 73, 112, hM, 'trai');
-    else b += dot(110, 53) + T(122, 59, 'M', { w: 700 }) + doc(84, 14, 53, hM, 'trai');
-    b += rect(150, 108, 36, 9, INK) + T(144, 104, day, { a: 'end' }) + doc(252, 14, 112, H, 'phai');
-    return wrap('0 0 320 122', b, cap, 'Bể chứa chất lỏng có điểm M ở đáy');
+    let b = binh(70, 6, 170, 82, 10, fill);
+    b += ln(70, 10, 240, 10, INK, 2) + T(84, 34, ten, { c: GREY, w: 700 });
+    if (hMday) b += dot(140, 54) + T(126, 50, 'M', { w: 700, a: 'end' }) + doc(166, 54, 88, hM, 'phai');
+    else b += dot(140, 42) + T(126, 50, 'M', { w: 700, a: 'end' }) + doc(166, 10, 42, hM, 'phai');
+    b += rect(100, 84, 36, 9, INK) + T(118, 114, day, { a: 'middle' }) + doc(258, 10, 88, H, 'phai');
+    return wrap('0 0 320 120', b, cap, 'Bể chứa chất lỏng có điểm M');
   },
   thungA: (cap = 'Thùng hở, đầy nước. A cách ĐÁY 50 cm; B chưa biết độ sâu.') => {
     let b = binh(80, 8, 140, 112, 12);
     b += ln(80, 12, 220, 12, BLUE, 2);
-    b += dot(124, 90) + T(136, 96, 'A', { w: 700 }) + doc(100, 90, 120, '50 cm', 'trai');
+    b += dot(124, 90) + T(136, 96, 'A', { w: 700 }) + doc(66, 90, 120, '50 cm', 'trai') + ln(70, 90, 118, 90, GREY, 2, '4 4');
     b += dot(184, 54) + T(196, 60, 'B', { w: 700 });
     b += doc(244, 12, 120, '1,8 m', 'phai');
     return wrap('0 0 320 128', b, cap, 'Thùng nước hình trụ có điểm A, B');
@@ -174,7 +174,7 @@ export const hinhL10b34 = {
     b += ln(20, 72, 300, 72, BLUE, 2);
     b += rect(110, 46, 100, 50, WOOD, INK, SW, 2);
     b += ngang(110, 210, 34, '') + T(160, 24, '20 cm', { a: 'middle' });
-    b += doc(86, 46, 96, '10 cm', 'trai') + doc(234, 72, 96, "h' = ?", 'phai');
+    b += doc(86, 46, 96, '', 'trai') + T(78, 62, '10 cm', { a: 'end' }) + doc(234, 72, 96, "h' = ?", 'phai');
     return wrap('0 0 320 132', b, cap, 'Khối gỗ nổi trên mặt nước');
   },
   // ===== Bài tương tự =====

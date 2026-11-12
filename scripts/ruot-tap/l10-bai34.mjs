@@ -55,7 +55,7 @@ ${dong(`${ck}Phân biệt <b>áp lực</b> và <b>áp suất</b>; tính áp su�
 ${dong(`${ck}Tính <b>áp suất chất lỏng</b> tại một điểm; biết nó phụ thuộc những đại lượng nào`)}
 ${dong(`${ck}Vận dụng vào <b>bình thông nhau</b> và <b>lực đẩy Archimedes</b>`)}
 </div>
-<div class="card soft" style="padding:1mm 3mm"><b>Số liệu dùng trong cả tập</b> (đề không cho thì lấy): ${g10} · nước ${u('\\rho=1000\\ \\mathrm{kg/m^3}')} · áp suất khí quyển ${u('p_a=1{,}0\\cdot10^5\\ \\mathrm{Pa}')} · ${u('1\\ \\mathrm{atm}=1{,}013\\cdot10^5\\ \\mathrm{Pa}')}</div>
+<div class="card soft" style="padding:1mm 3mm"><b>Số liệu dùng trong cả tập</b> (đề không cho thì lấy): ${g10}; nước ${u('\\rho=1000\\ \\mathrm{kg/m^3}')}; áp suất khí quyển ${u('p_a=1{,}0\\cdot10^5\\ \\mathrm{Pa}')}; ${u('1\\ \\mathrm{atm}=1{,}013\\cdot10^5\\ \\mathrm{Pa}')}</div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Lặn xuống đúng 2 m dưới mặt nước, tai em bị nước ép mạnh hơn ở đâu?</p>
@@ -83,7 +83,7 @@ const p2 = `<section class="page">
 ${head('ĐO KHỐI LƯỢNG RIÊNG · ÁP LỰC VÀ ÁP SUẤT')}
 ${h3(1, 'Thí nghiệm: bốn khối nhôm to nhỏ khác nhau', '2·1')}
 <div class="fig-side" style="${fs(42)}"><div>
-<div><b>Làm:</b> cân từng khối (độ chia 0,1 g); thả khối vào bình chia độ (độ chia 1 cm³): ${m('V=')} ${f(25)}</div>
+<div><b>Làm:</b> cân từng khối (độ chia 0,1 g); thả khối vào bình chia độ (độ chia 1 cm³): ${m('V=V_2-V_1=')} ${f(20)}</div>
 <table class="tbl-ct" style="margin-top:.8mm"><tr><th>${m('m\\ (\\mathrm g)')}</th><th>${m('V\\ (\\mathrm{cm^3})')}</th><th>${m('\\rho\\ (\\mathrm{g/cm^3})')}</th></tr>
 <tr><td>21,1</td><td>8</td><td></td></tr>
 <tr><td>40,9</td><td>15</td><td></td></tr>
@@ -124,16 +124,16 @@ ${h3(1, 'II.3 · Áp suất chất lỏng', '3·1')}
 ${H.doSau()}</div>
 ${h3(2, 'Thí nghiệm: chai nhựa đục lỗ', '3·2')}
 <div class="card fig-side" style="${fs(30)};padding:1.2mm 3mm"><div>
-<div><b>Làm:</b> chai 1 đục 3 lỗ ở ba độ cao; chai 2 đục 4 lỗ quanh thân ở cùng một độ cao. Đổ đầy nước, mở lỗ.</div>
+<div><b>Làm:</b> chai 1 đục 3 lỗ ở ba độ cao; chai 2 (không vẽ) đục 4 lỗ quanh thân ở cùng một độ cao. Đổ đầy nước, mở lỗ.</div>
 <div><b>Quan sát:</b> chai 1, lỗ số ${f(10)} phun mạnh nhất · chai 2, bốn tia ${f(25)}</div>
 <div><b>Rút ra:</b> áp suất ${f(14)} theo độ sâu; cùng độ sâu, nước ép như nhau theo ${f(16)}.</div></div>
 ${H.chaiLo()}</div>
 ${h3(3, 'II.4 · Bình thông nhau', '3·3')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
-<div>Một chất lỏng đứng yên: mực ở các nhánh ${f(25)}. Ví dụ: ${f(25)}</div>
+<div>Một chất lỏng đứng yên: mực ở các nhánh ${f(25)}. Ví dụ: vòi ấm và thân ấm có mực nước ${f(20)}</div>
 <div>Hai chất lỏng không hoà tan: A ở mặt phân cách, B cùng mức ngang ở nhánh kia, cùng nằm trong ${f(14)} nên ${m('p_A=p_B')}:</div>
 <div style="margin:.5mm 0">${pa} ${m('+')} ${f(14)} ${m('=')} ${pa} ${m('+')} ${f(14)} &nbsp;${m('\\Rightarrow')}&nbsp; ${m('\\rho_1h_1=')} ${f(14)}</div>
-<div>${m('h_1, h_2')} đo từ mức ${f(14)} lên tới ${f(25)} mỗi nhánh.</div></div>
+<div>(1: dầu, 2: nước) ${m('h_1, h_2')} đo từ mức ${f(14)} lên tới ${f(25)} mỗi nhánh.</div></div>
 ${H.thongNhau()}</div>
 ${h3(4, 'II.5 · Lực đẩy Archimedes', '3·4')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
@@ -159,7 +159,7 @@ ${tb('3. Công thức áp suất tại điểm ở độ sâu h; nghĩa từng s
 ${tb('4. Vì sao áp suất ở đáy không phụ thuộc hình dạng bình, lượng chất lỏng?')}${lines(2)}
 ${tb('5. Bình thông nhau: một chất lỏng thì sao? Hai chất lỏng không hoà tan thì sao?')}${lines(2)}
 ${tb('6. Lực đẩy Archimedes: công thức, hướng; điều kiện vật nổi.')}${lines(2)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`${m('\\to')} đọc lại ô ${f(12)} Tập`)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`${m('\\to')} đọc lại ô Tập ${f(12)}`)}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
 ${rkHai([1, 2, 3, 4], [5, 6, 7])}
 ${foot(4)}</section>`;
@@ -174,30 +174,30 @@ ${h3(1, 'V · Bài toán mẫu: bể cá', '5·1')}
 ${wl(`a) ${m('S=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('V=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('m=')}`, 1)}${wl(`b) ${m('\\rho g h=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('p=p_a+\\rho g h=')}`, 1)}${wl('c) Áp lực của nước (dùng phần nào của p?):', 2)}${wl(`d) ${m('h_M=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('p_M=')}`, 1)}${wl(`Kiểm tra: ${m('mg=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; khớp câu c) không? Vì sao?`, 1)}</div></div>
 ${H.beCa()}</div>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
-<div class="ln"><b>Điền bước còn thiếu:</b> cùng bể, chứa nước muối ${u('\\rho=1030\\ \\mathrm{kg/m^3}')}, cao ${u('30\\ \\mathrm{cm}')}.</div>
+<div class="ln"><b>Điền tiếp:</b> cùng bể, nước muối ${u('\\rho=1030\\ \\mathrm{kg/m^3}')} cao ${u('30\\ \\mathrm{cm}')}.</div>
 ${wl(`Bước 2: áp suất do nước muối ở đáy ${m('=')}`, 1)}${wl(`Bước 3: áp lực của nước muối lên đáy ${m('=')}`, 1)}</div>
 ${K.btvn().replace('<i>1</i>Đề BTVN', '<i>2</i>Đề BTVN')}
 ${h3(3, 'Thử thách phân tầng', '5·3')}
 <div class="fig-side" style="${fs(36)}">${box(wl(`${m('\\bigstar')} Viên sỏi ${nw('54 g')} thả vào bình chia độ, nước dâng thêm ${nw('20 cm³')}. Khối lượng riêng của sỏi (kg/m³)?`, 2)
- + wl(`${m('\\bigstar\\bigstar')} Ống chữ U chứa nước; rót dầu hoả ${u('\\rho=800\\ \\mathrm{kg/m^3}')} vào một nhánh, cột dầu cao ${nw('15 cm')}. Mặt dầu cao hơn mặt nước nhánh kia bao nhiêu?`, 2)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Theo hình bên: áp suất dư ở hai vòi khi khoá? Máy giặt tầng 6 cần áp suất dư ít nhất ${u('0{,}3\\cdot10^5\\ \\mathrm{Pa}')}: mặt nước bồn phải cao hơn vòi tầng 1 ít nhất bao nhiêu?`, 3))}${H.bonMai()}</div>
+ + wl(`${m('\\bigstar\\bigstar')} Ống U chứa nước, rót vào một nhánh cột dầu ${u('\\rho=800\\ \\mathrm{kg/m^3}')} cao ${nw('15 cm')}. Mặt dầu cao hơn mặt nước bao nhiêu?`, 3)
+ + wl(`${m('\\bigstar\\bigstar\\bigstar')} Theo hình bên: áp suất dư ở vòi tầng 1 và vòi tầng 6 khi khoá? Máy giặt tầng 6 cần áp suất dư ít nhất ${u('0{,}3\\cdot10^5\\ \\mathrm{Pa}')}: bồn có đủ cao không?`, 3))}${H.bonMai()}</div>
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
-${box(wl('1.', 2) + wl('2.', 1) + wl('3.', 1))}
+${box(wl('1.', 1) + wl('2.', 1) + wl('3.', 1))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Khối lượng riêng và áp suất p = F/S (đổi đơn vị)',
     de: `Khối kim loại hình hộp ${nw('3,0 cm × 4,0 cm × 15 cm')}, khối lượng ${nw('1,26 kg')}.<br><b>a)</b> khối lượng riêng (kg/m³)<br><b>b)</b> áp suất lên mặt bàn khi đặt nằm trên mặt lớn nhất ${nw('4,0 cm × 15 cm')}<br><b>c)</b> áp suất khi dựng đứng trên mặt nhỏ nhất ${nw('3,0 cm × 4,0 cm')}`,
-    nd: `${m('V')}: cm³ ${m('\\to')} m³ (×${f(12)}); ${m('S')}: cm² ${m('\\to')} m² (×${f(12)}); áp lực ${m('F=')} ${f(12)}`, a: ['a', 'b', 'c'], gi: 6 },
+    nd: `${m('V')}: cm³ ${m('\\to')} m³ (×${f(12)}); ${m('S')}: cm² ${m('\\to')} m² (×${f(12)}); áp lực ${m('F=')} ${f(12)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: `Dạng 2 · Dễ · Áp suất chất lỏng theo độ sâu: ${m('p=\\rho gh')}`,
     de: `Bể dầu hoả ${rho} ${nw('= 0,80 g/cm³')}, mực dầu cao ${nw('2,5 m')}. Chỉ xét áp suất do dầu.<br><b>a)</b> áp suất do dầu ở đáy bể<br><b>b)</b> áp suất do dầu tại M cách mặt thoáng ${nw('1,0 m')}<br><b>c)</b> áp lực của dầu lên nắp van ở đáy, diện tích ${nw('20 cm²')}`,
-    nd: `đổi ${rho} ra ${f(14)}; ${m('h')} đo từ ${f(25)}; áp lực ${m('F=')} ${f(12)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.beDau('') },
+    nd: `đổi ${rho} ra ${f(14)}; ${m('h')} đo từ ${f(25)}; áp lực ${m('F=')} ${f(12)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.beDau('') },
   { t: 'Dạng 3 · Trung bình · Áp suất tuyệt đối và áp suất dư',
-    de: `Thùng hình trụ cao ${nw('1,8 m')}, miệng hở, đựng đầy nước; áp kế đo áp suất dư.<br><b>a)</b> áp suất do nước ở đáy (a<sub>1</sub>) và áp suất tuyệt đối tại đáy (a<sub>2</sub>)<br><b>b)</b> tại A cách <b>đáy</b> ${nw('50 cm')}: áp suất tuyệt đối (b<sub>1</sub>), số chỉ áp kế (b<sub>2</sub>)<br><b>c)</b> B có áp suất tuyệt đối ${nw('1,12·10<sup>5</sup> Pa')}: B cách mặt thoáng bao nhiêu`,
-    nd: `áp kế chỉ ${f(16)}; A cách đáy nên ${u('h_A=')} ${f(16)}; đổi chiều: ${m('h=')} ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4, fig: H.thungA(''), cot: 5 },
+    de: `Thùng hình trụ cao ${nw('1,8 m')}, miệng hở, đầy nước; áp kế đo áp suất dư.<br><b>a)</b> tại đáy: áp suất do nước (a<sub>1</sub>), áp suất tuyệt đối (a<sub>2</sub>)<br><b>b)</b> tại A cách <b>đáy</b> ${nw('50 cm')}: áp suất tuyệt đối (b<sub>1</sub>), số chỉ áp kế (b<sub>2</sub>)<br><b>c)</b> B có áp suất tuyệt đối ${nw('1,12·10<sup>5</sup> Pa')}: B sâu bao nhiêu`,
+    nd: `áp kế chỉ ${f(12)}; ${u('h_A=')} ${f(12)}; ngược lại ${m('h=(p-p_a)/\\rho g')}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 5, fig: H.thungA(''), cot: 5 },
   { t: 'Dạng 4 · Khó · Bình thông nhau chứa hai chất lỏng không hoà tan',
     de: `Ống chữ U tiết diện đều, hai đầu hở, chứa thuỷ ngân ${u('\\rho_2=13\\,600\\ \\mathrm{kg/m^3}')}. Rót nước vào nhánh trái, cột nước cao ${u('20{,}4\\ \\mathrm{cm}')} tính từ mặt phân cách.<br><b>a)</b> mặt thuỷ ngân nhánh phải cao hơn mặt phân cách bao nhiêu cm<br><b>b)</b> mặt nước nhánh trái cao hơn mặt thuỷ ngân nhánh phải bao nhiêu cm<br><b>c)</b> muốn mặt thuỷ ngân nhánh phải cao hơn mặt phân cách ${u('3{,}0\\ \\mathrm{cm}')}: cột nước cao bao nhiêu cm`,
-    nd: `A ở mặt phân cách, B cùng mức ngang nhánh phải, cùng trong ${f(16)} ${m('\\Rightarrow')} ${m('\\rho_1h_1=')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 6, fig: H.uHg('') },
+    nd: `A ở mặt phân cách, B cùng mức ngang nhánh phải, cùng trong ${f(16)}; nước ${u('\\rho_1=1000')} ${m('\\Rightarrow')} ${m('\\rho_1h_1=')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 6, fig: H.uHg('') },
   { t: 'Dạng 5 · Khó · Lực đẩy Archimedes: khối nổi và điều kiện chìm hẳn',
     de: `Khối gỗ hình hộp đáy ${nw('20 cm × 20 cm')}, cao ${u('10\\ \\mathrm{cm}')}, khối lượng ${u('2{,}4\\ \\mathrm{kg}')}, thả vào nước, đáy nằm ngang.<br><b>a)</b> khối lượng riêng của gỗ (a<sub>1</sub>); khối nổi hay chìm (a<sub>2</sub>)<br><b>b)</b> lực đẩy Archimedes khi khối đứng yên trên mặt nước<br><b>c)</b> chiều cao phần chìm<br><b>d)</b> đặt lên mặt trên một vật nhỏ để khối vừa chìm hẳn (mực nước coi như không đổi): khối lượng tối thiểu của vật`,
     nd: `khối nổi đứng yên ${m('\\Rightarrow')} ${m('F_A=')} ${f(12)}; ${m('V')} trong ${m('F_A')} là thể tích ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], gi: 7, fig: H.goNoi(''), cot: 3 },
@@ -233,7 +233,7 @@ const tuongTu = {
     nhap(7),
   ]],
   dap: [
-    `D1·1: a) 7800 kg/m³ · b) 1560 Pa · c) 9360 Pa &nbsp;|&nbsp; D1·2: a) 15 000 Pa · b) 30 000 Pa · c) 1500 Pa &nbsp;|&nbsp; D2·1: a) 30 000 Pa · b) 18 000 Pa · c) 1200 N &nbsp;|&nbsp; D2·2: a) 8400 Pa · b) 3500 Pa · c) 4900 Pa &nbsp;|&nbsp; D3·1: a) 2,06·10<sup>5</sup> Pa · b) 3,06·10<sup>5</sup> Pa · c) ${m('\\approx')} 3,02 atm &nbsp;|&nbsp; D3·2: a) 1,5 m · b) 1,15·10<sup>5</sup> Pa · c) 0,70 m`,
+    `D1·1: a) 7800 kg/m³ · b) 1560 Pa · c) 9360 Pa &nbsp;|&nbsp; D1·2: a) 15&nbsp;000 Pa · b) 30&nbsp;000 Pa · c) 1500 Pa &nbsp;|&nbsp; D2·1: a) 30&nbsp;000 Pa · b) 18&nbsp;000 Pa · c) 1200 N &nbsp;|&nbsp; D2·2: a) 8400 Pa · b) 3500 Pa · c) 4900 Pa &nbsp;|&nbsp; D3·1: a) 2,06·10<sup>5</sup> Pa · b) 3,06·10<sup>5</sup> Pa · c) ${m('\\approx')} 3,02 atm &nbsp;|&nbsp; D3·2: a) 1,5 m · b) 1,15·10<sup>5</sup> Pa · c) 0,70 m`,
     `D4·1: a) 8,0 cm · b) 2,0 cm · c) 15 cm &nbsp;|&nbsp; D4·2: a) 2,0 cm · b) 25,2 cm · c) 1,6 cm &nbsp;|&nbsp; D5·1: a<sub>1</sub>) 700 kg/m³ · a<sub>2</sub>) nổi · b) 7,0 N · c) 7,0 cm · d) 0,30 kg &nbsp;|&nbsp; D5·2: a) 5,4 N · b) 2,0 N · c) 3,4 N · d) 3,8 N`,
   ],
 };
