@@ -63,6 +63,15 @@ cd book && /usr/bin/python3 make.py l10-ch2-dong-hoc 49 50    # thử vài bài 
 5. Đối chiếu MỤC LỤC với trang thật: mỗi số trang trong mục lục (phần đầu, Lý thuyết/Bài tập mẫu/Luyện thêm từng bài,
    Tổng kết, Tự đánh giá, Bảng đáp án) phải trỏ tới trang có đúng tiêu đề đó (so chuỗi đã bỏ khoảng trắng). Số 0 hoặc
    trống = tìm không ra, không được giao.
+6. Lấp đáy trang: đếm trang có "GHI CHÉP" (ô ca-rô `book.js`) + `do_trong.py`; trống ≥80 mm mà không có ô Ghi chép là lỗi.
+7. **Học sinh thử trước khi in (bắt buộc, thầy duyệt 12/11/2026)** — 3 agent `kiem-code` chia bài, mỗi agent một thư mục
+   ảnh riêng (`<scratchpad>/hs-thu-<n>/`, không chung tên file), đóng vai HS 15–16 tuổi: tự làm câu, ô điền, bài mẫu,
+   Luyện thêm rồi đối chiếu bảng đáp án + `public/sach-data/dap-an-<id>.json`. Báo theo 5 nhóm: hình thiếu mà đề trỏ
+   tới · đáp án lộ trước khi HS thử (Nhận xét, lời giải Thử thách, công thức cạnh ô điền, gợi ý trên câu hỏi) · ô viết
+   không vừa · khung/tiêu đề bị cắt · chữ chỉ-web ("Bấm…", mã H2/H3, "Cam/Xanh"). Lần đầu đọc ảnh mọi trang; **lần sau
+   chỉ đọc ảnh trang đã đổi** (so text từng trang với bản trước), phần còn lại dùng chữ trích — lần đầu tốn ~425k token.
+8. QR đáp án phải sống TRƯỚC khi in: `curl -s -o /dev/null -w '%{http_code}' https://thachlab.id.vn/sach-data/dap-an-<id>.json`
+   = 200 cho mọi bài. Số trang/đáp án đổi theo mỗi lần dựng → kiểm lại sau lần dựng cuối.
 
 ## Ruột tập theo bài (`scripts/ruot-tap/`) — chuẩn chất lượng từ bài 14 VL12 (thầy chốt 25/10/2026)
 Khác sách A4 cả chương: ruột tập là 12 trang 165×240 mm cho MỘT bài, đóng **lò xo**, dùng hai buổi theo nhịp L12. Bài sau
@@ -149,6 +158,11 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
 - Commit `book/` (code + `sach/*.json` gồm cả sổ khoá `.lock.json`; HTML/PDF/cache sinh ra đã gitignore). `public/sach-data` + `app/(public)/sach/dap-an`
   chỉ commit/deploy khi đã kiểm trang web thật; chưa thì ghi "ĐANG CHỜ" trong `docs/STATE.md`.
+- Vào main: ruleset `bao-ve-main-deploy` (12/11) chặn workflow tự gộp → phiên Mac `git merge origin/main` rồi
+  `git push origin HEAD:main` (dòng "Cannot update this protected ref" vẫn hiện dù đẩy được — kiểm `git log origin/main`).
+- Chỉ đưa đáp án sách lên web, không deploy cả main (main hay có code phiên khác chưa thử): worktree tạm từ
+  `origin/deploy`, chép đúng `public/sach-data/{dap-an-<id>*.json,trang-<mã>.json,trang-bai.json}` vào `sach-data/`,
+  commit, `git push origin HEAD:deploy` (fast-forward), hosting kéo trong ≤10 phút → bước 8. Cần thầy cho phép mỗi lần.
 - Rút kinh nghiệm vào mục dưới.
 
 ## Nhật ký rút kinh nghiệm
