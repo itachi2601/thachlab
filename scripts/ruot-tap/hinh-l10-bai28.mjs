@@ -83,12 +83,12 @@ export const hinhL10b28 = {
     return wrap('0 0 300 200', b, cap, 'Đồ thị lực theo thời gian khi dừng trên mặt cứng và trên đệm');
   },
   // Trang 4 + Dạng 4 · bóng đập vuông góc vào tường rồi bật ngược lại
-  bongTuong: (v1 = '12 m/s', v2 = '8 m/s', cap = 'Trước (nét liền) và sau va chạm (nét đứt).') => {
+  bongTuong: (v1 = '12 m/s', v2 = '8 m/s', cap = 'Trước (nét liền) và sau va chạm (nét đứt).', l2 = 150) => {
     let b = defs('bt1') + defs('bt2');
     b += tuong(250, 14, 160) + `<circle cx="150" cy="88" r="22" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += `<path d="M132,76 Q150,88 132,100 M168,76 Q150,88 168,100" fill="none" stroke="${GREY}" stroke-width="2"/>`;
     b += arr(40, 36, 220, 36, 'bt1', BLUE) + T(42, 26, `trước: ${v1}`, { c: BLUE, w: 700 });
-    b += arr(220, 140, 70, 140, 'bt2', RED, '7 4') + T(42, 168, `sau: ${v2}`, { c: RED, w: 700 });
+    b += arr(220, 140, 220 - l2, 140, 'bt2', RED, '7 4') + T(42, 168, `sau: ${v2}`, { c: RED, w: 700 });
     return wrap('0 0 290 178', b, cap, 'Bóng đập vào tường rồi bật ngược lại');
   },
   // Dạng 1 · hai xe chạy ngược chiều trên đường thẳng, chiều dương theo xe tải

@@ -54,7 +54,7 @@ ${head('BÀI 32 · LỰC HƯỚNG TÂM VÀ GIA TỐC HƯỚNG TÂM', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Phân biệt <b>tốc độ</b> và <b>vận tốc</b> của vật chuyển động tròn đều`)}
-${dong(`${ck}Nêu gốc, phương, chiều và tính độ lớn <b>gia tốc hướng tâm</b>`)}
+${dong(`${ck}Nêu gốc, phương, chiều và tính độ lớn của <b>gia tốc</b> trong chuyển động tròn đều`)}
 ${dong(`${ck}Chỉ ra lực nào đóng vai <b>lực hướng tâm</b>; tính ${Fht}`)}
 ${dong(`${ck}Gỡ ba hiểu lầm: “lực mới”, “lực li tâm”, ${aht} phụ thuộc ${m('r')} thế nào`)}
 </div>
@@ -87,7 +87,7 @@ ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
 ${head('TÍNH GIA TỐC HƯỚNG TÂM · LỰC HƯỚNG TÂM')}
-${h3(1, 'Tính thử', '2·1')}
+${h3(1, 'Tính thử · cho sẵn 1 m/s = 3,6 km/h', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Xe ${nw('36 km/h')} = ${f(12)} m/s qua cua ${nw(m('r=50\\ \\mathrm m'))}: ${aht}${m('\\,=')} ${f(16)} ${m('\\mathrm{m/s^2}')}</div>
 <div style="margin-top:.6mm">Lồng vắt máy giặt quay ${nw('600 vòng/phút')}, thành lồng cách trục ${nw('20 cm')} (${pi}, ${g98}):</div>
@@ -101,7 +101,7 @@ ${h3(2, 'II.2 · Lực hướng tâm: tên một vai, không phải lực mới'
 <tr><td>Vệ tinh bay tròn quanh Trái Đất</td><td></td></tr>
 <tr><td>Ô tô qua cua trên đường phẳng</td><td></td></tr>
 <tr><td>Vật buộc dây quay trên bàn nhẵn</td><td></td></tr>
-<tr><td>Người trượt băng nghiêng người vào cua</td><td>thành phần nằm ngang của</td></tr></table>
+<tr><td>Người trượt băng nghiêng người vào cua</td><td>thành phần nằm ngang của <span class="hint" style="font-size:.85em">(lực mặt băng đỡ người)</span></td></tr></table>
 ${h3(3, 'Thí nghiệm: đồng xu trên bàn xoay', '2·3')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> đặt đồng xu trên đĩa bàn xoay, cách tâm khoảng ${nw('10 cm')}. Quay chậm rồi nhanh dần.</div>
@@ -110,8 +110,8 @@ ${h3(3, 'Thí nghiệm: đồng xu trên bàn xoay', '2·3')}
 ${wl('Quay càng nhanh thì xu càng dễ trượt. Vì sao?', 1)}</div>
 ${H.dongXu()}</div>
 ${h3(4, 'Làm nhanh', '2·4')}
-${box(cau(`<b>Câu 2.</b> Xe đạp chạy ${nw('15 m/s')} qua cua bán kính ${nw('75 m')}. Gia tốc hướng tâm? Chạy nhanh gấp 3 thì gia tốc gấp mấy lần?`, 2)
- + cau(`<b>Câu 3.</b> Quả tạ xích quay tròn: lực nào đóng vai lực hướng tâm? Buông tay, tạ bay theo hướng nào?`, 1))}
+${box(cau(`<b>Câu 2.</b> Xe đạp ${nw('15 m/s')} qua cua bán kính ${nw('75 m')}: gia tốc hướng tâm? Nhanh gấp 3 thì gia tốc gấp mấy lần?`, 2)
+ + cau(`<b>Câu 3.</b> Tạ xích quay tròn: lực nào đóng vai lực hướng tâm? Buông tay, tạ bay theo hướng nào?`, 2))}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -121,16 +121,16 @@ ${h3(1, 'Thí nghiệm: nút cao su quay trên đầu ống', '3·1')}
 <div><b>Làm:</b> nút ${nw(m('m=0{,}050\\ \\mathrm{kg}'))} buộc đầu dây luồn qua ống, đầu dưới treo quả nặng ${m('M')}. Quay nút thành vòng tròn ngang ${nw(m('r=0{,}50\\ \\mathrm m'))}, bấm giờ 10 vòng ${m('t_{10}')}.</div>
 <div><b>Rút ra:</b> quả nặng đứng yên ⇒ lực căng ${m('T=')} ${f(14)}; lực căng đóng vai ${f(25)}.</div>
 <div class="hint">Tính: ${m('T_{\\mathrm q}=t_{10}/10')} (chu kì quay), ${m('v=2\\pi r/T_{\\mathrm q}')}; ${pi}, ${g98}.</div>
-</div>${H.nutCaoSu('Quả nặng đứng yên: lực căng T bằng bao nhiêu?')}</div>
-<table class="tbl-ct" style="margin-top:.6mm"><style>.tbl-ct td{height:5.6mm;padding-top:.3mm;padding-bottom:.3mm}</style><tr><th>${m('Mg')} (N)</th><th>${m('t_{10}')} (s)</th><th>${m('T_{\\mathrm q}')} (s)</th><th>${m('v')} (m/s)</th><th>${m('mv^2/r')} (N)</th></tr>
+</div>${H.nutCaoSu('Quả nặng đứng yên: T = ?')}</div>
+<table class="tbl-ct" style="margin-top:.6mm"><style>.tbl-ct td{height:5mm;padding-top:.3mm;padding-bottom:.3mm}</style><tr><th>${m('Mg')} (N)</th><th>${m('t_{10}')} (s)</th><th>${m('T_{\\mathrm q}')} (s)</th><th>${m('v')} (m/s)</th><th>${m('mv^2/r')} (N)</th></tr>
 <tr><td>0,98</td><td>10,2</td><td>1,02</td><td>3,08</td><td>0,95</td></tr>
-<tr><td>1,96</td><td>7,0</td><td></td><td></td><td></td></tr>
-<tr><td>2,94</td><td>5,7</td><td></td><td></td><td></td></tr></table>
-<div>Hai cột lực khớp nhau? Hàng nào sai số tương đối lớn nhất, vì sao?</div>${lines(1)}
+<tr><td>1,96</td><td>7,1</td><td></td><td></td><td></td></tr>
+<tr><td>2,94</td><td>6,0</td><td></td><td></td><td></td></tr></table>
+<div>So hai cột lực: hàng nào lệch nhiều nhất? Thử nêu một nguyên nhân gây lệch.</div>${lines(2)}
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
-<div class="card fig-side" style="${fs(38)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Vẽ thêm lực hướng tâm.”</b> Nó là tên vai của một lực đã có: vẽ thêm là đếm hai lần.</span></div>
-<div class="trap">${ck}<span><b>“Lực li tâm đẩy vật ra.”</b> Không vật nào gây ra nó. Mất lực hướng tâm, vật đi theo ${f(20)} (đường ${f(8)}).</span></div>
+<div class="card fig-side" style="${fs(35)};padding:1mm 3mm"><div>
+<div class="trap">${ck}<span><b>“Vẽ thêm lực hướng tâm.”</b> Nó chỉ là vai của một lực đã có.</span></div>
+<div class="trap">${ck}<span><b>“Lực li tâm đẩy vật ra.”</b> Không vật nào gây ra nó. Mất lực hướng tâm, vật bay theo ${f(20)} (đường ${f(8)}).</span></div>
 <div class="trap">${ck}<span><b>“${m('r')} lớn thì ${aht} nhỏ.”</b> Cùng ${m('v')}: ${m('a=v^2/r')}, ${m('r')} lớn → ${m('a')} ${f(10)} · cùng ${om}: ${m('a=\\omega^2 r')}, ${m('r')} lớn → ${m('a')} ${f(10)}</span></div></div>
 ${H.viBi()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
@@ -147,7 +147,7 @@ ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
 ${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(2, 'V · Bài toán mẫu: ô tô qua khúc cua', '4·2')}
-<div class="card soft" style="padding:1.2mm 3mm">Ô tô ${m('1200\\ \\mathrm{kg}')} chạy đều ${m('36\\ \\mathrm{km/h}')} qua khúc cua tròn bán kính ${m('50\\ \\mathrm m')} trên đường nằm ngang. Lực ma sát nghỉ lớn nhất mặt đường tác dụng lên xe bằng ${m('0{,}5')} lần trọng lượng xe. Lấy ${g10}.
+<div class="card soft" style="padding:1.2mm 3mm">Ô tô ${m('1200\\ \\mathrm{kg}')} chạy đều ${m('36\\ \\mathrm{km/h}')} qua khúc cua tròn bán kính ${m('50\\ \\mathrm m')} trên đường nằm ngang. Lực ma sát nghỉ lớn nhất mặt đường tác dụng lên xe bằng ${m('0{,}5')} lần trọng lượng xe. Lấy ${g10}; ${nw('1 m/s = 3,6 km/h')}.
 <div>Tính lực hướng tâm. Xe có bị trượt không? Tốc độ lớn nhất để qua cua an toàn?</div></div>
 ${h3(3, 'Phân tích đề')}
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
@@ -180,20 +180,20 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Vận tốc đổi hướng nên có gia tốc hướng tâm',
-    de: `Hòn bi buộc dây (đầu kia cố định tại ${m('O')}) chạy tròn đều trên bàn nhẵn nằm ngang, ${nw(`${m('v=2{,}0\\ \\mathrm{m/s}')},`)} ${nw(`${m('r=0{,}50\\ \\mathrm m')};`)} ${m('A')}, ${m('B')} ở hai đầu một đường kính.<br><b>a)</b> vận tốc tại ${m('A')} và tại ${m('B')} có giống nhau không<br><b>b)</b> hòn bi có gia tốc không<br><b>c)</b> gia tốc của bi tại ${m('A')} hướng thế nào<br><b>d)</b> độ lớn gia tốc`,
-    nd: `vận tốc là ${f(20)}; tốc độ không đổi nhưng ${f(20)} đổi ⇒ có gia tốc`, a: ['a', 'b', 'c', 'd'], gi: 4 },
+    de: `Hòn bi buộc dây (đầu kia cố định tại ${m('O')}) chạy tròn đều trên bàn nhẵn nằm ngang, ${nw(`${m('v=2{,}0\\ \\mathrm{m/s}')},`)} ${nw(`${m('r=0{,}50\\ \\mathrm m')};`)} ${m('A')}, ${m('B')} ở hai đầu một đường kính.<br><b>a)</b> vận tốc tại ${m('A')} và tại ${m('B')} có giống nhau không<br><b>b)</b> hòn bi có gia tốc không<br><b>c)</b> gia tốc của bi tại ${m('A')} hướng thế nào &nbsp; <b>d)</b> độ lớn gia tốc`,
+    nd: `vận tốc là ${f(20)}; tốc độ không đổi nhưng ${f(20)} đổi ⇒ có gia tốc`, a: ['a', 'b', 'c', 'd'], gi: 5 },
   { t: 'Dạng 2 · Dễ · Gia tốc hướng tâm từ chu kì và bán kính',
-    de: `Vòng quay công viên bán kính ${m('15\\ \\mathrm m')} quay đều, mỗi vòng hết ${m('40\\ \\mathrm s')}; khách ngồi ở mép vòng; ${pi}.<br><b>a)</b> tốc độ góc của vòng quay<br><b>b)</b> tốc độ dài của khách<br><b>c)</b> gia tốc hướng tâm của khách`,
+    de: `Vòng quay công viên bán kính ${m('15\\ \\mathrm m')} quay đều, mỗi vòng hết ${m('40\\ \\mathrm s')}; khách ngồi ở mép vòng; ${pi}.<br><b>a)</b> tốc độ góc của vòng quay &nbsp; <b>b)</b> tốc độ dài của khách<br><b>c)</b> gia tốc hướng tâm của khách`,
     nd: `${nw(`${m('\\omega=')} ${f(12)}`)}, ${nw(`${m('v=')} ${f(12)}`)}, rồi ${nw(`${aht}${m('\\,=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: `Dạng 3 · Trung bình · Giữ nguyên ${om} hay giữ nguyên ${m('v')}`,
-    de: `Quạt trần quay đều ${m('\\omega=20\\ \\mathrm{rad/s}')}; điểm ${m('A')} cách trục ${m('10\\ \\mathrm{cm}')}, điểm ${m('B')} ở đầu cánh cách trục ${m('30\\ \\mathrm{cm}')}.<br><b>a)</b> gia tốc hướng tâm của ${m('A')} và của ${m('B')}<br><b>b)</b> hai xe máy cùng ${m('10\\ \\mathrm{m/s}')} qua hai khúc cua ${m('r_1=20\\ \\mathrm m')}, ${m('r_2=40\\ \\mathrm m')}: gia tốc hướng tâm mỗi xe<br><b>c)</b> xe 1 tăng lên ${m('12\\ \\mathrm{m/s}')} trên cua ${m('r_1')}: gia tốc lúc này, gấp mấy lần lúc trước`,
-    nd: `${m('A')}, ${m('B')} chung ${f(10)}; hai xe chung ${f(10)} → chọn công thức theo đại lượng chung`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.quat(''), cot: 6 },
+    de: `Quạt trần quay đều ${m('\\omega=20\\ \\mathrm{rad/s}')}; điểm ${m('A')} cách trục ${m('10\\ \\mathrm{cm}')}, điểm ${m('B')} ở đầu cánh cách trục ${m('30\\ \\mathrm{cm}')}.<br><b>a)</b> gia tốc hướng tâm của ${m('A')} và của ${m('B')}<br><b>b)</b> hai xe máy cùng ${m('10\\ \\mathrm{m/s}')} qua hai khúc cua ${m('r_1=20\\ \\mathrm m')}, ${m('r_2=40\\ \\mathrm m')}: gia tốc hướng tâm mỗi xe<br><b>c)</b> xe 1 tăng lên ${m('12\\ \\mathrm{m/s}')} trên cua ${m('r_1')}: gia tốc gấp mấy lần lúc trước`,
+    nd: `${m('A')}, ${m('B')} chung ${f(10)}; hai xe chung ${f(10)} → chọn công thức theo đại lượng chung`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 6, fig: H.quat(''), cot: 5 },
   { t: 'Dạng 4 · Trung bình · Lực nào đóng vai lực hướng tâm',
     de: `Vật nhỏ ${m('50\\ \\mathrm g')} đặt trên đĩa nằm ngang, cách trục ${m('20\\ \\mathrm{cm}')}. Đĩa quay đều ${m('60')} vòng/phút, vật không trượt; ${pi}.<br><b>a)</b> lực nào đóng vai lực hướng tâm của vật<br><b>b)</b> độ lớn lực hướng tâm<br><b>c)</b> lực đóng vai lực hướng tâm của (i) ô tô chạy đều qua cua nằm ngang; (ii) vệ tinh bay tròn quanh Trái Đất`,
     nd: `${m('\\vec P')}, ${m('\\vec N')} ${f(20)}; lực nằm ngang còn lại hướng vào tâm là ${f(25)}; ${nw(`${m('\\omega=2\\pi f')}, ${m('f=')} ${f(12)}`)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.diaVat(''), cot: 2 },
   { t: 'Dạng 5 · Khó · Lực hướng tâm so với ma sát nghỉ cực đại',
     de: `Mô tô cùng người lái ${m('200\\ \\mathrm{kg}')} chạy đều ${m('54\\ \\mathrm{km/h}')} vào đường vòng nằm ngang. Ma sát nghỉ cực đại bằng ${m('0{,}60')} lần trọng lượng khi đường khô, ${m('0{,}30')} lần khi đường ướt; ${g10}.<br><b>a)</b> bán kính ${m('50\\ \\mathrm m')}: lực hướng tâm cần có; xe có trượt trên đường khô, đường ướt không<br><b>b)</b> bán kính cong nhỏ nhất để xe không trượt khi đường khô, khi đường ướt`,
-    nd: `không trượt khi ${Fht} ${f(10)} ${Fmax}; giới hạn ứng với ${nw(`${Fht} ${f(10)} ${Fmax}`)}; đổi km/h ra m/s trước`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 7, fig: H.moTo(''), cot: 3 },
+    nd: `không trượt khi ${Fht} ${f(10)} ${Fmax}; giới hạn ứng với ${nw(`${Fht} ${f(10)} ${Fmax}`)}; đổi km/h ra m/s trước (${nw('1 m/s = 3,6 km/h')})`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 7, fig: H.moTo(''), cot: 3 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): ô đáp số cuối đúng dòng của ý (như l10-bai23.mjs); ô 25 mm, 40 mm khi đáp án là chữ.
@@ -219,7 +219,7 @@ const tuongTu = {
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Vật ${m('100\\ \\mathrm g')} đặt trên đĩa nằm ngang cách trục ${nw(`${m('15\\ \\mathrm{cm}')};`)} đĩa quay đều ${m('30')} vòng/phút, vật không trượt; ${nw(`${pi}.`)}<br><b>a)</b> lực đóng vai lực hướng tâm<br><b>b)</b> tốc độ góc<br><b>c)</b> độ lớn lực hướng tâm`, o: ['a', 'b', 'c'], ow: { a: 40 } },
     { t: 'Dạng 4 · Bài 2', de: `Quả cầu ${m('200\\ \\mathrm g')} buộc dây quay tròn đều trên mặt bàn nằm ngang nhẵn, ${nw(`${m('r=0{,}50\\ \\mathrm m')},`)} tốc độ ${nw(`${m('3{,}0\\ \\mathrm{m/s}')}.`)}<br><b>a)</b> lực đóng vai lực hướng tâm<br><b>b)</b> độ lớn lực đó<br><b>c)</b> Mặt Trăng quay quanh Trái Đất: lực nào đóng vai lực hướng tâm`, o: ['a', 'b', 'c'], ow: { a: 40, c: 40 } },
-    { t: 'Dạng 5 · Bài 1', de: `Ô tô ${m('1000\\ \\mathrm{kg}')} qua khúc cua phẳng bán kính ${nw(`${m('40\\ \\mathrm m')};`)} ma sát nghỉ cực đại bằng ${m('0{,}50')} lần trọng lượng; ${nw(`${g10}.`)}<br><b>a)</b> xe chạy ${m('54\\ \\mathrm{km/h}')}: lực hướng tâm cần có; xe có trượt không<br><b>b)</b> tốc độ lớn nhất qua cua an toàn (m/s; km/h)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], ow: 22 },
+    { t: 'Dạng 5 · Bài 1', de: `Ô tô ${m('1000\\ \\mathrm{kg}')} qua khúc cua phẳng bán kính ${nw(`${m('40\\ \\mathrm m')};`)} ma sát nghỉ cực đại bằng ${m('0{,}50')} lần trọng lượng; ${g10}; ${nw('1 m/s = 3,6 km/h.')}<br><b>a)</b> xe chạy ${m('54\\ \\mathrm{km/h}')}: lực hướng tâm cần có; xe có trượt không<br><b>b)</b> tốc độ lớn nhất qua cua an toàn (m/s; km/h)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], ow: 22 },
     { t: 'Dạng 5 · Bài 2', de: `Đồng xu trên bàn xoay cách tâm ${nw(`${m('12\\ \\mathrm{cm}')};`)} ma sát nghỉ cực đại bằng ${m('0{,}40')} lần trọng lượng xu; ${g10}; ${nw(`${pi}.`)}<br><b>a)</b> bàn quay ${m('45')} vòng/phút: gia tốc hướng tâm của xu; xu có trượt không<br><b>b)</b> tốc độ góc lớn nhất để xu không trượt<br><b>c)</b> vẫn ${m('45')} vòng/phút: đặt xu xa tâm nhất bao nhiêu`, fig: H.xuTT(), fw: 40, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], ow: 20 },
     nhap(8),
   ]],

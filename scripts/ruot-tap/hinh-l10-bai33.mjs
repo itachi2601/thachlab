@@ -77,15 +77,15 @@ export const hinhL10b33 = {
   },
   // 3·1 khung đồ thị để HS chấm điểm F theo Δl
   doThi: (cap = 'Chấm 5 điểm (Δl; F) từ bảng, nối thử bằng thước.') => {
-    const ox = 56, oy = 206, sx = 24, sy = 72; // 1 cm → 24 đơn vị, 1 N → 72 đơn vị
+    const ox = 56, oy = 196, sx = 24, sy = 52; // 1 cm → 24 đơn vị, 1 N → 52 đơn vị; trục F tới 3 N
     let b = defs('dta');
-    for (let i = 1; i <= 10; i++) b += ln(ox + i * sx, oy, ox + i * sx, oy - 2.5 * sy - 6, '#d3dbec', 1.4);
-    for (let j = 1; j <= 5; j++) b += ln(ox, oy - j * 0.5 * sy, ox + 10 * sx + 4, oy - j * 0.5 * sy, '#d3dbec', 1.4);
-    b += arr(ox, oy, ox + 10 * sx + 22, oy, 'dta') + arr(ox, oy, ox, oy - 2.5 * sy - 22, 'dta');
+    for (let i = 1; i <= 10; i++) b += ln(ox + i * sx, oy, ox + i * sx, oy - 3 * sy, '#d3dbec', 1.4);
+    for (let j = 1; j <= 6; j++) b += ln(ox, oy - j * 0.5 * sy, ox + 10 * sx + 4, oy - j * 0.5 * sy, '#d3dbec', 1.4);
+    b += arr(ox, oy, ox + 10 * sx + 22, oy, 'dta') + arr(ox, oy, ox, oy - 3 * sy - 20, 'dta');
     for (const i of [0, 2, 4, 6, 8, 10]) b += T(ox + i * sx, oy + 24, String(i), { a: 'middle' });
-    for (const j of [1, 2]) b += T(ox - 8, oy - j * sy + 7, String(j), { a: 'end' });
-    b += T(ox + 10 * sx + 20, oy - 10, `${gk('Δl')} (cm)`, { a: 'end' }) + T(ox + 8, 18, `${gk('F')} (N)`);
-    return wrap('0 0 320 238', b, cap, 'Khung đồ thị lực theo độ dãn');
+    for (const j of [1, 2, 3]) b += T(ox - 8, oy - j * sy + 7, String(j), { a: 'end' });
+    b += T(ox + 10 * sx + 20, oy - 10, `${gk('Δl')} (cm)`, { a: 'end' }) + T(ox + 10, 20, `${gk('F')} (N)`);
+    return wrap('0 0 320 228', b, cap, 'Khung đồ thị lực theo độ dãn');
   },
   // lò xo treo một vật: bên trái bóng mờ chiều dài tự nhiên, bên phải lò xo có vật
   treo: ({ l0 = 'l0', l = 'l', m = 'm', h0 = 110, h = 150, cap = '' } = {}) => {
@@ -121,7 +121,7 @@ export const hinhL10b33 = {
     let b = defs('tma');
     b += `<rect x="40" y="12" width="170" height="212" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += lxD(125, 12, 132, 8) + moc(125, 132) + tui(119, 140, '200 g', 74);
-    b += arr(262, 170, 262, 70, 'tma', BLUE) + T(272, 128, `${gk('a')}`, { c: BLUE, w: 700 });
+    b += arr(262, 170, 262, 70, 'tma', BLUE) + T(270, 132, `${gk('a')}`, { c: BLUE, w: 700, size: 34 });
     return wrap('0 0 320 236', b, cap, 'Lò xo treo vật trong thang máy');
   },
 };

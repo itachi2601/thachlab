@@ -79,8 +79,8 @@ ${H.rayDem()}</div>
 <tr><td>${m('v_1')} ; ${m('v')} (m/s)</td><td>0,52 ; 0,25</td><td>0,60 ; 0,24</td><td>0,57 ; 0,19</td><td>0,66 ; 0,16</td></tr>
 <tr><td>${pT}${m('=m_1v_1')} (${m(kgms)})</td><td></td><td></td><td></td><td></td></tr>
 <tr><td>${pS}${m('=(m_1+m_2)v')} (${m(kgms)})</td><td></td><td></td><td></td><td></td></tr></table>
-<div style="margin:.8mm 0 0"><b>Rút ra:</b> ${pT} ${fw} ${pS}; lệch vài % vì ${fp(34, '.')}</div>
-<div>Động năng lần 1: ${m('W')}<sub>sau</sub> : ${m('W')}<sub>trước</sub> = ${nw(`${fn}&nbsp;%`)} ⇒ động năng ${fp(25, '.')}</div>
+<div style="margin:.8mm 0 0"><b>Rút ra:</b> ${pT} ${fw} ${pS}; lệch vài % vì ${ck}ma sát còn sót ${ck}sai số đo thời gian ${ck}cả hai.</div>
+<div>Động năng lần 1 (${nw(m('W_{\\text{đ}}=\\tfrac12mv^2'))}): ${m('W')}<sub>sau</sub> : ${m('W')}<sub>trước</sub> = ${nw(`${fn}&nbsp;%`)} ⇒ động năng ${fp(25, '.')}</div>
 ${h3(3, 'II.3 · Va chạm mềm và va chạm đàn hồi', '2·3')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <table style="margin:0"><tr><th style="width:24mm"></th><th>Va chạm mềm</th><th>Va chạm đàn hồi</th></tr>
@@ -151,23 +151,23 @@ ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(3, 'VI · Mang về: điều em dễ quên nhất', '5·2')}
 ${box(wl('1.', 1) + wl('2.', 1))}
 ${h3(4, 'Thử thách phân tầng')}
-<div class="fig-side" style="${fs(42)}">${box(q(`★ Người ${u('60', 'kg')} đứng yên trên ván trượt (bỏ ma sát) ném quả tạ ${u('3', 'kg')} về trước với ${u('4', 'm/s')}. Người trượt lùi nhanh bao nhiêu?`, 1)
+<div class="fig-side" style="${fs(42)}">${box(q(`★ Người ${u('60', 'kg')} (không kể tạ) đứng yên trên ván trượt nhẹ (bỏ qua khối lượng ván và ma sát) ném quả tạ ${u('3', 'kg')} về trước với ${u('4', 'm/s')} so với đất. Người trượt lùi nhanh bao nhiêu?`, 1)
  + q(`★★ Đạn ${u('10', 'g')} bay ngang ${u('400', 'm/s')} cắm vào bao cát ${u('3{,}99', 'kg')} treo đứng yên. Vận tốc bao cát ngay sau va chạm? Còn bao nhiêu % động năng?`, 2)
  + q(`★★★ Xe cát ${u('50', 'kg')} chạy ${u('2', 'm/s')} trên ray ngang. Hòn đá ${u('10', 'kg')} rơi chéo cắm vào cát: lúc chạm vận tốc ${u('6', 'm/s')}, chếch xuống ${m('60^\\circ')} so với phương ngang, thành phần ngang ngược chiều xe. Vận tốc xe sau đó?`, 2))}${H.xeCat()}</div>
 ${h3(5, 'Thử sức đổi chiều: B chạy cùng chiều A')}
-${box(q(`Bài toán mẫu ở tr.&nbsp;${tr(4)}: A đuổi theo B (B chạy ${u('3', 'm/s')} cùng chiều) rồi ôm dính. Tìm ${m('v')}. Em quên dấu ở bài mẫu thì đã ra số nào?`, 2))}
+${box(q(`Bài toán mẫu ở tr.&nbsp;${tr(4)}: A đuổi theo B (B chạy ${u('3', 'm/s')} cùng chiều) rồi ôm dính. Tìm ${m('v')}, rồi so với số em sẽ ra nếu ở bài mẫu quên dấu “−” của B: vì sao trùng nhau?`, 2))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Hệ kín và bảo toàn động lượng',
-    de: `Trên ray đệm khí nằm ngang (ma sát coi như bằng 0), xe 1 ${u('0{,}30', 'kg')} chạy ${u('0{,}60', 'm/s')} tới đẩy xe 2 ${u('0{,}20', 'kg')} đang đứng yên. Ngay sau va chạm, xe 2 chạy cùng chiều xe 1 với ${u('0{,}45', 'm/s')}.<br><b>a)</b> hệ hai xe có coi là kín trong lúc va chạm không, vì sao<br><b>b)</b> vận tốc xe 1 ngay sau va chạm (độ lớn và chiều)`,
-    nd: `ngoại lực ${fw} ⇒ hệ kín; tổng động lượng trước = ${fp(25, '.')}`, a: ['a', 'b'], gi: 3, fig: H.d1(''), cot: 2 },
+    de: `Trên ray đệm khí nằm ngang (ma sát coi như bằng 0), xe 1 ${u('0{,}30', 'kg')} chạy ${u('0{,}60', 'm/s')} tới đẩy xe 2 ${u('0{,}20', 'kg')} đang đứng yên. Ngay sau va chạm, xe 2 chạy cùng chiều xe 1 với ${u('0{,}45', 'm/s')}.<br><b>a)</b> hệ hai xe có kín trong lúc va chạm không, vì sao; &nbsp;<b>b)</b> vận tốc xe 1 ngay sau va chạm (độ lớn, chiều)`,
+    nd: `ngoại lực ${fw} ⇒ hệ kín; tổng động lượng trước = ${fp(25, '.')}`, a: ['a', 'b'], gi: 2, fig: H.d1(''), cot: 2 },
   { t: 'Dạng 2 · Dễ · Va chạm mềm: tính vận tốc chung',
-    de: `Trong kho hàng, xe đẩy A ${u('150', 'kg')} chạy ${u('2{,}0', 'm/s')} trên nền nhẵn tới va vào xe đẩy B ${u('250', 'kg')}; sau va chạm hai xe móc dính. Bỏ qua ma sát. Tốc độ hai xe ngay sau va chạm khi:<br><b>a)</b> xe B đang đứng yên<br><b>b)</b> xe B đang chạy cùng chiều xe A với ${u('0{,}40', 'm/s')}`,
-    nd: `“móc dính” ⇒ va chạm ${fp(25, ';')} ${m('v=')} tổng động lượng : ${fp(25, '.')}`, a: ['a', 'b'], gi: 2 },
-  { t: 'Dạng 3 · Trung bình · Phân biệt va chạm mềm và va chạm đàn hồi',
-    de: `Trên ray đệm khí, xe 1 ${u('0{,}30', 'kg')} chạy ${u('0{,}80', 'm/s')} va vào xe 2 ${u('0{,}10', 'kg')} đứng yên. Sau va chạm hai xe tách nhau, cùng chạy theo chiều cũ: xe 1 ${u('0{,}40', 'm/s')}, xe 2 ${u('1{,}2', 'm/s')}. Dùng ${nw(m('W_{\\text{đ}}=\\tfrac12mv^2'))}.<br><b>a)</b> tổng động lượng có bảo toàn không (ghi giá trị)<br><b>b)</b> tổng động năng có bảo toàn không; va chạm mềm hay đàn hồi<br><b>c)</b> nếu hai xe dính nhau (cùng điều kiện đầu): tổng động năng ngay sau va chạm`,
-    nd: `phân loại phải kiểm cả ${fw} lẫn ${fp(25, '.')}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Trong kho hàng, xe đẩy A ${u('150', 'kg')} chạy ${u('2{,}0', 'm/s')} trên nền nhẵn tới va vào xe đẩy B ${u('250', 'kg')}; sau va chạm hai xe móc dính. Bỏ qua ma sát. Tốc độ hai xe ngay sau va chạm khi:<br><b>a)</b> xe B đang đứng yên; &nbsp;<b>b)</b> xe B đang chạy cùng chiều xe A với ${u('0{,}40', 'm/s')}`,
+    nd: `“móc dính” ⇒ va chạm ${fp(20, ';')} ${m('v=')} tổng động lượng : ${fp(20, '.')}`, a: ['a', 'b'], gi: 3 },
+  { t: 'Dạng 3 · Trung bình · Mềm hay đàn hồi?',
+    de: `Trên ray đệm khí, xe 1 ${u('0{,}30', 'kg')} chạy ${u('0{,}80', 'm/s')} va vào xe 2 ${u('0{,}10', 'kg')} đứng yên. Sau va chạm hai xe tách nhau, chạy theo chiều cũ: xe 1 ${u('0{,}40', 'm/s')}, xe 2 ${u('1{,}2', 'm/s')}. Dùng ${nw(m('W_{\\text{đ}}=\\tfrac12mv^2'))}.<br><b>a)</b> tổng động lượng có bảo toàn không (ghi giá trị)<br><b>b)</b> tổng động năng có bảo toàn không; va chạm mềm hay đàn hồi<br><b>c)</b> nếu hai xe dính nhau: tổng động năng ngay sau va chạm`,
+    nd: `phân loại phải kiểm cả ${fw} lẫn ${fp(25, '.')}`, a: ['a', 'b', 'c'], gi: 5 },
   { t: 'Dạng 4 · Trung bình · Bảo toàn động lượng với vận tốc ngược chiều',
     de: `Hai goòng chạy ngược chiều trên ray thẳng nằm ngang, đâm vào nhau rồi móc dính: goòng A ${u('900', 'kg')}, ${u('2{,}0', 'm/s')}; goòng B ${u('600', 'kg')}, ${u('1{,}0', 'm/s')}. Bỏ qua ma sát.<br><b>a)</b> vận tốc hai goòng ngay sau va chạm (độ lớn và chiều)<br><b>b)</b> A giữ nguyên số liệu: B phải chạy ngược chiều A với tốc độ bao nhiêu để sau va chạm hai goòng đứng yên`,
     nd: `chiều dương theo ${fp(25, ';')} ${m('v_B=')} ${fp(12, ';')} đứng yên ⇒ tổng ${m('p=')} ${fp(12, '.')}`, a: ['a', 'b'], gi: 7, fig: H.goong(''), cot: 2 },
@@ -180,37 +180,41 @@ const dang = [
 // Đáp số tính bằng Python, in lật ngược. CSS 2 cột chèn trong de của bài đầu (như bài 27).
 const ttCss2 = `<style>.tt:has(.tt2)>.hd>span:last-child{display:none}.tt2{display:grid;grid-template-columns:1fr 1fr;gap:0 4mm}.tt2>div{min-width:0}
 .tt2 .h2{display:flex;justify-content:space-between;align-items:center;font-weight:700;color:var(--navy);border-bottom:.2mm solid var(--grid);margin-bottom:.3mm}
-.tt2 .h2>span:last-child{font-weight:400;color:var(--ink);white-space:nowrap}.tt2 .q{margin-top:.5mm}</style>`;
+.tt2 .h2>span:last-child{font-weight:400;color:var(--ink);white-space:nowrap}.tt2 .q{margin-top:.5mm}.tt2 .dso{gap:.5mm 2mm}</style>`;
 const okS = '<span><span class="ck"></span>đúng &nbsp;<span class="ck"></span>sai, đã sửa</span>';
-const bai = (stmt, ys, o = ys.map((y) => y[0]), w) => `<div>${stmt}</div>` + ys.map(([lab, q]) => `<div class="q"><b>${lab})</b> ${q}</div>`).join('') + dapSo(o, w);
-const NHAP = [0, 10]; // số dòng nháp cuối tr.8, tr.9 — đổ cho dư 0–15 mm
+const bai = (stmt, ys, o = ys.map((y) => y[0]), w = 20) => `<div>${stmt}</div>` + ys.map(([lab, q]) => `<div class="q"><b>${lab})</b> ${q}</div>`).join('') + (typeof o === 'string' ? o : dapSo(o, w));
+const NHAP = [0, 8]; // số dòng nháp cuối tr.8, tr.9 — đổ cho dư 0–15 mm
 const nhap = (n) => !n ? '' : `<div style="margin-top:2mm;border-top:.3mm solid var(--grid);padding-top:.8mm"><b>Nháp / chỗ em còn vướng</b>${lines(n)}</div>`;
 const hai = (a, b, css = '') => `${css}<div class="tt2">${[a, b].map((x, i) => `<div><div class="h2"><span>Bài ${i + 1}</span>${okS}</div>${x}</div>`).join('')}</div>`;
 const chieu = '(độ lớn và chiều)';
+// Ô đáp số tách: số vào ô, chiều/kết luận chọn bằng ô tích (HS ảo 12/11: chữ dài không vừa ô 25–34 mm)
+const oS = (l, w = 20) => `<span class="nw"><b>${l})</b>${f(w)}</span>`;
+const oC = (...c) => `<span class="nw">${c.map((x) => `${ck}${x}`).join(' &nbsp;')}</span>`;
+const ds = (...p) => `<div class="dso"><b>Đáp số:</b>${p.join(' ')}</div>`;
 const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
     { t: 'Dạng 1 · Hệ kín và bảo toàn động lượng', k: 0, de: hai(
-      bai(`Ray đệm khí nằm ngang: xe 1 ${u('0{,}40', 'kg')} chạy ${u('0{,}50', 'm/s')} đẩy xe 2 ${u('0{,}10', 'kg')} đứng yên; ngay sau va chạm xe 2 chạy ${u('1{,}2', 'm/s')} cùng chiều xe 1.`, [['a', 'Hệ hai xe có kín không? Vì sao?'], ['b', `Vận tốc xe 1 ngay sau va chạm ${chieu}?`]], ['a', 'b'], 34),
-      bai(`Trên mặt bàn nhẵn, bi A ${u('0{,}20', 'kg')} lăn ${u('3{,}0', 'm/s')} va thẳng vào bi B ${u('0{,}30', 'kg')} đứng yên; ngay sau đó B lăn ${u('2{,}4', 'm/s')} theo chiều cũ của A.`, [['a', 'Tổng động lượng trước va chạm?'], ['b', `Vận tốc bi A ngay sau va chạm ${chieu}?`]], ['a', 'b'], 34), ttCss2) },
+      bai(`Ray đệm khí nằm ngang: xe 1 ${u('0{,}40', 'kg')} chạy ${u('0{,}50', 'm/s')} đẩy xe 2 ${u('0{,}10', 'kg')} đứng yên; ngay sau va chạm xe 2 chạy ${u('1{,}2', 'm/s')} cùng chiều xe 1.`, [['a', 'Hệ hai xe có kín không? Vì sao?'], ['b', `Vận tốc xe 1 ngay sau va chạm ${chieu}?`]], ds(`<span class="nw"><b>a)</b> ${ck}kín ${ck}không kín</span>`, oS('b'), oC('cùng chiều cũ', 'bật ngược'))),
+      bai(`Trên mặt bàn nhẵn, bi A ${u('0{,}20', 'kg')} lăn ${u('3{,}0', 'm/s')} va thẳng vào bi B ${u('0{,}30', 'kg')} đứng yên; ngay sau đó B lăn ${u('2{,}4', 'm/s')} theo chiều cũ của A.`, [['a', 'Tổng động lượng trước va chạm?'], ['b', `Vận tốc bi A ngay sau va chạm ${chieu}?`]], ds(oS('a', 26), oS('b'), oC('theo chiều cũ', 'bật ngược'))), ttCss2) },
     { t: 'Dạng 2 · Va chạm mềm: vận tốc chung', k: 0, de: hai(
       bai(`Toa tàu ${nw('20 tấn')} chạy ${u('1{,}5', 'm/s')} va vào toa ${nw('10 tấn')} rồi móc dính. Bỏ qua ma sát. Vận tốc hai toa ngay sau va chạm khi:`, [['a', 'toa 10 tấn đứng yên?'], ['b', `toa 10 tấn đang chạy cùng chiều với ${u('0{,}60', 'm/s')}?`]]),
       bai(`Đạn ${u('10', 'g')} bay ngang ${u('300', 'm/s')} cắm vào khối gỗ ${u('1{,}49', 'kg')} đứng yên trên mặt nhẵn.<br>Cho ${nw(m('1\\ \\mathrm{g}=0{,}001\\ \\mathrm{kg}'))}; ${nw(m('W_{\\text{đ}}=\\tfrac12mv^2'))}.`, [['a', 'Vận tốc gỗ và đạn ngay sau va chạm?'], ['b', 'Động năng mất đi bao nhiêu jun?']])) },
     { t: 'Dạng 3 · Mềm hay đàn hồi', k: 0, de: hai(
-      bai(`Ray đệm khí: xe 1 ${u('0{,}20', 'kg')} chạy ${u('0{,}90', 'm/s')} va vào xe 2 ${u('0{,}40', 'kg')} đứng yên. Sau va chạm xe 1 bật ngược ${u('0{,}30', 'm/s')}, xe 2 chạy ${u('0{,}60', 'm/s')} theo chiều cũ của xe 1.`, [['a', 'Tổng động lượng trước và sau?'], ['b', 'Tổng động năng trước và sau?'], ['c', 'Va chạm mềm hay đàn hồi?']]),
+      bai(`Ray đệm khí: xe 1 ${u('0{,}20', 'kg')} chạy ${u('0{,}90', 'm/s')} va vào xe 2 ${u('0{,}40', 'kg')} đứng yên. Sau va chạm xe 1 bật ngược ${u('0{,}30', 'm/s')}, xe 2 chạy ${u('0{,}60', 'm/s')} theo chiều cũ của xe 1.`, [['a', 'Tổng động lượng trước (a<sub>1</sub>) và sau (a<sub>2</sub>)?'], ['b', 'Tổng động năng trước (b<sub>1</sub>) và sau (b<sub>2</sub>)?'], ['c', 'Va chạm mềm hay đàn hồi?']], ds(oS('a<sub>1</sub>', 26), oS('a<sub>2</sub>', 26), oS('b<sub>1</sub>'), oS('b<sub>2</sub>'), `<span class="nw"><b>c)</b> ${ck}mềm ${ck}đàn hồi</span>`)),
       bai(`Xe ${u('0{,}50', 'kg')} chạy ${u('0{,}60', 'm/s')} va vào xe ${u('0{,}25', 'kg')} đứng yên, hai xe dính nhau.`, [['a', 'Vận tốc chung?'], ['b', 'Tổng động năng trước (b<sub>1</sub>) và sau (b<sub>2</sub>)?'], ['c', 'Mất bao nhiêu phần trăm động năng?']], ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'])) },
   ], [
     { t: 'Dạng 4 · Vận tốc ngược chiều', k: 0, de: hai(
-      bai(`Xe A ${u('2{,}0', 'kg')} chạy ${u('3{,}0', 'm/s')} và xe B ${u('4{,}0', 'kg')} chạy ${u('2{,}0', 'm/s')} ngược chiều nhau trên ray ngang, va chạm rồi dính lại. Bỏ qua ma sát.`, [['a', `Vận tốc hai xe ngay sau va chạm ${chieu}?`], ['b', 'A giữ nguyên: B phải chạy ngược chiều A nhanh bao nhiêu để sau va chạm hai xe đứng yên?']], ['a', 'b'], 34),
-      bai(`Người ${u('60', 'kg')} chạy ${u('4{,}0', 'm/s')} nhảy lên xe goòng ${u('140', 'kg')} trên ray ngang. Bỏ qua ma sát.`, [['a', `Goòng đang chạy ngược chiều người với ${u('1{,}0', 'm/s')}: vận tốc người và goòng ngay sau đó ${chieu}?`], ['b', `Goòng chạy cùng chiều người với ${u('1{,}0', 'm/s')}: vận tốc ngay sau đó?`]], ['a', 'b'], 34)) },
+      bai(`Xe A ${u('2{,}0', 'kg')} chạy ${u('3{,}0', 'm/s')} và xe B ${u('4{,}0', 'kg')} chạy ${u('2{,}0', 'm/s')} ngược chiều nhau trên ray ngang, va chạm rồi dính lại. Bỏ qua ma sát.`, [['a', `Vận tốc hai xe ngay sau va chạm ${chieu}?`], ['b', 'A giữ nguyên: B phải chạy ngược chiều A nhanh bao nhiêu để sau va chạm hai xe đứng yên?']], ds(oS('a'), oC('theo chiều A', 'theo chiều B'), oS('b'))),
+      bai(`Người ${u('60', 'kg')} chạy ${u('4{,}0', 'm/s')} nhảy lên xe goòng ${u('140', 'kg')} trên ray ngang. Bỏ qua ma sát.`, [['a', `Goòng đang chạy ngược chiều người với ${u('1{,}0', 'm/s')}: vận tốc người và goòng ngay sau đó ${chieu}?`], ['b', `Goòng chạy cùng chiều người với ${u('1{,}0', 'm/s')}: vận tốc ngay sau đó?`]], ds(oS('a'), oC('theo chiều người', 'theo chiều goòng'), oS('b')))) },
     { t: 'Dạng 5 · Chuyển động bằng phản lực', k: 0, de: hai(
-      bai(`Súng ${u('3{,}0', 'kg')} (không kể đạn) đặt tự do, bắn đạn ${u('15', 'g')} theo phương ngang với ${u('600', 'm/s')} so với đất.<br>Cho ${nw(m('1\\ \\mathrm{g}=0{,}001\\ \\mathrm{kg}'))}.`, [['a', `Vận tốc giật của súng ${chieu}?`], ['b', `Người tì chặt súng vào vai, súng + người nặng ${u('63', 'kg')}: tốc độ giật lúc này?`]], ['a', 'b'], 34),
-      bai(`Tên lửa mô hình ${u('1{,}2', 'kg')} (kể cả khí) đứng yên trên ray đệm khí, phụt tức thời ${u('0{,}20', 'kg')} khí về sau với ${u('40', 'm/s')} so với đất.`, [['a', 'Khối lượng phần tên lửa còn lại?'], ['b', `Vận tốc tên lửa ngay sau khi phụt ${chieu}?`]], ['a', 'b'], 34)) + nhap(NHAP[1]) },
+      bai(`Súng ${u('3{,}0', 'kg')} (không kể đạn) đặt tự do, bắn đạn ${u('15', 'g')} theo phương ngang với ${u('600', 'm/s')} so với đất.<br>Cho ${nw(m('1\\ \\mathrm{g}=0{,}001\\ \\mathrm{kg}'))}.`, [['a', `Vận tốc giật của súng ${chieu}?`], ['b', `Người tì chặt súng vào vai, súng + người nặng ${u('63', 'kg')}: tốc độ giật lúc này?`]], ds(oS('a'), oC('cùng chiều đạn', 'ngược chiều đạn'), oS('b'))),
+      bai(`Tên lửa mô hình ${u('1{,}2', 'kg')} (kể cả khí) đứng yên trên ray đệm khí, phụt tức thời ${u('0{,}20', 'kg')} khí về sau với ${u('40', 'm/s')} so với đất.`, [['a', 'Khối lượng phần tên lửa còn lại?'], ['b', `Vận tốc tên lửa ngay sau khi phụt ${chieu}?`]], ds(oS('a'), oS('b'), oC('cùng chiều khí', 'ngược chiều khí')))) + nhap(NHAP[1]) },
   ]],
   dap: [
-    'D1·1: a) kín: trọng lực cân bằng phản lực, ma sát ≈ 0 · b) 0,20 m/s, cùng chiều cũ &nbsp;|&nbsp; D1·2: a) 0,60 kg·m/s · b) 0,60 m/s, bật ngược &nbsp;|&nbsp; D2·1: a) 1,0 m/s · b) 1,2 m/s &nbsp;|&nbsp; D2·2: a) 2,0 m/s · b) 447 J &nbsp;|&nbsp; D3·1: a<sub>1</sub>) a<sub>2</sub>) 0,18 kg·m/s · b<sub>1</sub>) b<sub>2</sub>) 0,081 J · c) đàn hồi &nbsp;|&nbsp; D3·2: a) 0,40 m/s · b<sub>1</sub>) 0,090 J · b<sub>2</sub>) 0,060 J · c) 33 %',
-    'D4·1: a) 0,33 m/s, theo chiều B · b) 1,5 m/s &nbsp;|&nbsp; D4·2: a) 0,50 m/s, theo chiều người · b) 1,9 m/s &nbsp;|&nbsp; D5·1: a) 3,0 m/s, ngược chiều đạn · b) 0,14 m/s &nbsp;|&nbsp; D5·2: a) 1,0 kg · b) 8,0 m/s, ngược chiều khí',
+    'D1·1: a) kín (trọng lực cân bằng phản lực, ma sát ≈ 0) · b) 0,20 m/s; cùng chiều cũ &nbsp;|&nbsp; D1·2: a) 0,60 kg·m/s · b) 0,60 m/s; bật ngược &nbsp;|&nbsp; D2·1: a) 1,0 m/s · b) 1,2 m/s &nbsp;|&nbsp; D2·2: a) 2,0 m/s · b) 447 J &nbsp;|&nbsp; D3·1: a<sub>1</sub>) 0,18 kg·m/s · a<sub>2</sub>) 0,18 kg·m/s · b<sub>1</sub>) 0,081 J · b<sub>2</sub>) 0,081 J · c) đàn hồi &nbsp;|&nbsp; D3·2: a) 0,40 m/s · b<sub>1</sub>) 0,090 J · b<sub>2</sub>) 0,060 J · c) 33 %',
+    'D4·1: a) 0,33 m/s; theo chiều B · b) 1,5 m/s &nbsp;|&nbsp; D4·2: a) 0,50 m/s; theo chiều người · b) 1,9 m/s &nbsp;|&nbsp; D5·1: a) 3,0 m/s; ngược chiều đạn · b) 0,14 m/s &nbsp;|&nbsp; D5·2: a) 1,0 kg · b) 8,0 m/s; ngược chiều khí',
   ],
 };
 
