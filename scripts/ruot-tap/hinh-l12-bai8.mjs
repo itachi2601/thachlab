@@ -41,12 +41,11 @@ export const hinhL12b8 = {
   },
   vaCham: (cap = 'Va chạm vuông góc, đàn hồi.') => {
     let b = defs('vc1') + defs('vc2');
-    b += tuong(250, 14, 160);
+    b += tuong(250, 14, 150);
     b += T(8, 44, 'trước', { w: 700 }) + dot(120, 52, 8) + arr(132, 52, 220, 52, 'vc1', RED) + T(176, 40, '+mv', { c: RED, w: 700, a: 'middle' });
     b += T(8, 118, 'sau', { w: 700 }) + dot(220, 112, 8) + arr(208, 112, 120, 112, 'vc2', BLUE, '7 4') + T(164, 100, '?', { c: BLUE, w: 700, a: 'middle', size: 24 });
-    b += arr(24, 186, 96, 186, 'vc1') + T(100, 192, 'x') + T(30, 178, 'O');
-    b += ln(120, 168, 250, 168, GREY, 2) + ln(120, 162, 120, 174, GREY, 2) + T(185, 192, 'l', { a: 'middle', size: 22 });
-    return wrap('0 0 280 200', b, cap, 'Phân tử va chạm đàn hồi với thành bình');
+    b += ln(120, 146, 250, 146, GREY, 2) + ln(120, 140, 120, 152, GREY, 2) + T(185, 170, 'l', { a: 'middle', size: 22 }) + arr(14, 146, 70, 146, 'vc1') + T(74, 152, 'x');
+    return wrap('0 0 280 176', b, cap, 'Phân tử va chạm đàn hồi với thành bình');
   },
   phanBo: (cap = 'Phân bố tốc độ phân tử của cùng một khí ở hai nhiệt độ T<sub>1</sub>, T<sub>2</sub>.') => {
     let b = defs('pb1');
@@ -84,7 +83,7 @@ export const hinhL12b8 = {
     b += ln(190, 30, 190, 150) + ln(190, 176, 190, 200) + `<path d="M180,150 L200,158 L180,166 L200,174" fill="none" stroke="${INK}" stroke-width="2.4"/>`;
     for (const [kv, y] of Object.entries(Y)) {
       b += ln(102, y, 118, y, INK, 2.4) + ln(182, y, 198, y, INK, 2.4) + ln(118, y, 182, y, GREY, 1.6, '4 4');
-      b += T(94, y + 7, `${(kv - 273).toString().replace('-', '−')}`, { a: 'end' }) + T(206, y + 7, `${kv}`);
+      b += T(94, y + 7, `${(kv - 273).toString().replace('-', '−')}`, { a: 'end' }) + T(206, y + 7, kv === '293' || kv === '313' ? '?' : `${kv}`, { w: kv > 280 ? 700 : 400 });
     }
     b += T(110, 20, '°C', { a: 'middle', w: 700 }) + T(190, 20, 'K', { a: 'middle', w: 700 });
     return wrap('0 0 280 210', b, cap, 'Thang Celsius và thang Kelvin đặt cạnh nhau');
