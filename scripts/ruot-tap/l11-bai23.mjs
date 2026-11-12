@@ -58,7 +58,7 @@ ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Định nghĩa <b>điện trở</b> ${m('R=U/I')}, đơn vị ôm; đổi đúng kΩ, mA`)}
 ${dong(`${ck}Phát biểu <b>định luật Ohm</b>; đọc <b>đường đặc trưng vôn – ampe</b>`)}
-${dong(`${ck}Giải thích vì sao kim loại có điện trở; ${m('R')} của kim loại, NTC, PTC đổi thế nào theo <b>nhiệt độ</b>`)}
+${dong(`${ck}Giải thích vì sao kim loại có điện trở; ${m('R')} của kim loại, NTC, PTC phụ thuộc <b>nhiệt độ</b> ra sao`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -99,7 +99,7 @@ ${H.machDo()}</div>
 <div><b>Đường đặc trưng vôn – ampe:</b> đồ thị ${f(10)} theo ${f(10)} của một linh kiện.</div>
 <div>Điện trở (nhiệt độ ổn định): đường ${f(30)}.</div>
 <div>Độ dốc ${m('\\dfrac{I}{U}=')} <span class="fill" style="min-width:12mm;height:9mm"></span> &nbsp;⇒ đường dốc hơn thì ${m('R')} ${f(14)}.</div>
-<div style="margin-top:.8mm"><b>Sai số:</b> sai số tương đối của ${m('R')} ≈ ${m('\\dfrac{\\Delta U}{U}+\\dfrac{\\Delta I}{I}')}</div>
+<div style="margin-top:.3mm"><b>Sai số:</b> sai số tương đối của ${m('R')} ≈ ${m('\\dfrac{\\Delta U}{U}+\\dfrac{\\Delta I}{I}')}</div>
 <div>Hàng 1,0 V: ${o(14)} % &nbsp;· hàng 5,0 V: ${o(14)} %</div>
 <div>Tính ${m('R')} từ một hàng thì chọn hàng ${f(12)} V, vì ${f(30)}</div>
 <div>Tốt nhất: chấm cả 5 điểm rồi lấy ${f(30)}</div></div>
@@ -107,12 +107,12 @@ ${H.luoiR()}</div>
 ${h3(2, 'II.3 · Định luật Ohm', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Cường độ dòng điện qua vật dẫn tỉ lệ ${f(16)} với ${f(30)}, tỉ lệ ${f(16)} với ${f(25)}.</div>
-<div style="margin:1mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">${m('I=')} <span class="fill" style="min-width:16mm;height:10mm"></span> <span>&nbsp;“${m('I')} tỉ lệ thuận ${m('U')}” chỉ đúng khi ${m('R')} ${f(22)}</span></div>
+<div style="margin:.4mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">${m('I=')} <span class="fill" style="min-width:16mm;height:10mm"></span> <span>&nbsp;“${m('I')} tỉ lệ thuận ${m('U')}” chỉ đúng khi ${m('R')} ${f(22)}</span></div>
 <div><b>Ví dụ:</b> LED cần ${mA('20')}; hai đầu điện trở nối tiếp với LED là ${V('3')}. ${m('R=')} ${o(26)}</div>
 </div>
 ${h3(3, 'Nhắc lại từ lớp 9', '2·3')}
 <table class="bng"><tr><th style="width:24mm"></th><th>Điện trở tương đương</th><th style="width:28mm">${m('I')}</th><th style="width:28mm">${m('U')}</th></tr>
-<tr><td style="height:9mm">Nối tiếp</td><td></td><td></td><td></td></tr><tr><td style="height:9mm">Song song</td><td></td><td></td><td></td></tr></table>
+<tr><td style="height:10mm">Nối tiếp</td><td></td><td></td><td></td></tr><tr><td style="height:10mm">Song song</td><td></td><td></td><td></td></tr></table>
 <div style="margin-top:1mm">Dây đồng chất, tiết diện đều: ${m('R=')} <span class="fill" style="min-width:16mm;height:9mm"></span> ; ${rho} là ${f(25)} (đơn vị ${f(14)})</div>
 ${foot(2)}</section>`;
 
@@ -192,7 +192,7 @@ ${box(cau(`${m('\\bigstar')} Điện trở ${Om('470')} mắc vào ${V('9{,}4')}
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Cuộn dây đồng động cơ: ${Om('1{,}50')} ở ${oC('20')}; chạy một giờ, tắt máy đo ngay: ${Om('1{,}80')} (${aCu}). Nhiệt độ cuộn dây? Vì sao phải đo “ngay”?`, 2))}
 ${foot(5)}</section>`;
 
-const bangD2 = `<table class="bng" style="font-size:var(--fs-sm);margin:.4mm 0 .8mm"><tr><th></th><th colspan="3">X</th><th colspan="3">Y</th></tr>
+const bangD2 = `<table class="bng" style="font-size:var(--fs-sm);margin:.4mm 0 .8mm;line-height:1.15"><tr><th style="font-weight:400">đo khi ổn định</th><th colspan="3">X</th><th colspan="3">Y</th></tr>
 <tr><td>(${m('U')} V; ${m('I')} mA)</td><td>(2,0; 2,0)</td><td>(4,0; 4,0)</td><td>(6,0; 6,0)</td><td>(1,0; 0,50)</td><td>(3,0; 2,0)</td><td>(6,0; 6,6)</td></tr>
 <tr><td>${m('U/I')} (kΩ)</td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>`;
 
@@ -200,13 +200,13 @@ const dang = [
   { t: 'Dạng 1 · Dễ · Tính R và I, đổi mA sang A',
     de: `Điện trở có nhiệt độ ổn định: hiệu điện thế hai đầu ${V('6{,}0')} thì ampe kế chỉ ${mA('24')}.<br><b>a)</b> điện trở ${m('R')} (Ω)<br><b>b)</b> tăng hiệu điện thế lên ${V('15')}: cường độ dòng điện (mA)`,
     nd: `Đổi ${f(10)} ra A trước khi thế số; nhiệt độ ổn định ⇒ ${m('R')} ${f(14)}`, a: ['a', 'b'], cot: 2, gi: 3 },
-  { t: 'Dạng 2 · Dễ · Đường đặc trưng: điện trở thuần hay NTC',
-    de: `X, Y: một điện trở thuần, một NTC; mỗi lần đổi ${m('U')}, chờ ổn định rồi ghi ${m('I')}.<br><b>a)</b> điền ${m('U/I')} (kΩ) vào bảng<br><b>b)</b> linh kiện nào có đường đặc trưng thẳng qua gốc: ${f(10)}<br><b>c)</b> vì sao đường của linh kiện còn lại không có dạng đó`,
+  { t: 'Dạng 2 · Dễ · X, Y: một điện trở thuần, một NTC',
+    de: `<b>a)</b> điền ${m('U/I')} (kΩ) vào bảng<br><b>b)</b> đường đặc trưng nào thẳng qua gốc: ${f(10)}<br><b>c)</b> vì sao đường còn lại không thẳng`,
     bang: bangD2,
-    nd: `V/mA = ${f(10)}; ${m('I')} tăng theo ${m('U')} chưa đủ, phải xét ${m('U/I')} ${f(16)}`, a: [], gi: 3 },
+    nd: `V/mA = ${f(10)}; ${m('I')} tăng theo ${m('U')} chưa đủ, phải xét ${m('U/I')} ${f(16)}`, a: [], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Hai đường đặc trưng, I tính bằng mA',
-    de: `<div class="fig-side" style="grid-template-columns:1fr 34mm"><div>Trục ngang ${m('U')} (V), trục đứng ${m('I')} (mA); đường của ${m('R_1')}, ${m('R_2')} thẳng qua gốc: (1) qua ${nw('(6,0 V; 3,0 mA)')}, (2) qua ${nw('(6,0 V; 1,2 mA)')}.<br><b>a)</b> ${m('R_1')}, ${m('R_2')} (kΩ)<br><b>b)</b> đường nào dốc hơn; điện trở của nó lớn hơn hay nhỏ hơn<br><b>c)</b> đặt ${V('9{,}0')} vào ${m('R_2')}: dòng điện (mA)</div>${H.haiDuongD3('Đọc một điểm.')}</div>`,
-    nd: `Trục đứng là ${m('I')} ⇒ độ dốc ${nw(`${m('=')} ${f(12)}`)}; V/kΩ = ${f(10)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 3 },
+    de: `<div class="fig-side" style="grid-template-columns:1fr 28mm"><div>(1) của ${m('R_1')} qua ${nw('(6,0 V; 3,0 mA)')}, (2) của ${m('R_2')} qua ${nw('(6,0 V; 1,2 mA)')}.<br><b>a)</b> ${m('R_1')}, ${m('R_2')} (kΩ)<br><b>b)</b> đường nào dốc hơn; ${m('R')} của nó lớn hay nhỏ hơn<br><b>c)</b> đặt ${V('9{,}0')} vào ${m('R_2')}: dòng điện (mA)</div>${H.haiDuongD3('')}</div>`,
+    nd: `Trục đứng là ${m('I')} ⇒ độ dốc ${nw(`${m('=')} ${f(12)}`)}; V/kΩ = ${f(10)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 5 },
   { t: 'Dạng 4 · Trung bình · Từ U, I tìm nhiệt độ dây kim loại',
     de: `Nhiệt kế điện trở dây platin: ${m('R_0=100\\ \\Omega')} ở ${m('t_0=0\\ ^\\circ\\mathrm C')}; ${nw(m('\\alpha=3{,}9\\cdot10^{-3}\\ \\mathrm{K^{-1}}'))}. Đưa dây vào lò, đặt ${V('0{,}89')} vào hai đầu dây thì ampe kế chỉ ${mA('5{,}0')}.<br><b>a)</b> điện trở của dây trong lò<br><b>b)</b> nhiệt độ của lò<br><b>c)</b> thay dây platin bằng NTC: nhiệt độ tăng thì ${m('R')} tăng hay giảm`,
     nd: `${t0} đọc từ đề, không mặc định 20 °C; ${nw(`${m('R/R_0-1=')} ${f(16)}`)}`, a: ['a', 'b', 'c'], gi: 6, fig: H.loPt() },
@@ -233,8 +233,8 @@ const tuongTu = {
   trang: [[
     { t: 'Dạng 1 · Bài 1', de: `Điện trở có nhiệt độ ổn định. Hiệu điện thế hai đầu ${V('4{,}5')} thì dòng điện ${mA('15')}.<br><b>a)</b> điện trở ${m('R')} (Ω)<br><b>b)</b> tăng hiệu điện thế lên ${V('12')}: cường độ dòng điện (mA)`, o: ['a', 'b'] },
     { t: 'Dạng 1 · Bài 2', de: `Điện trở ${kOm('1{,}5')}, nhiệt độ ổn định, mắc vào ${V('9{,}0')}.<br><b>a)</b> cường độ dòng điện (mA)<br><b>b)</b> muốn dòng điện bằng ${mA('2{,}0')} thì hiệu điện thế bằng bao nhiêu`, o: ['a', 'b'] },
-    { t: 'Dạng 2 · Bài 1', de: `Hai linh kiện: một điện trở thuần, một bóng đèn sợi đốt. X: ${nw('(2,0 V; 0,40 A)')}, ${nw('(4,0 V; 0,62 A)')}, ${nw('(6,0 V; 0,75 A)')}. Y: ${nw('(1,0 V; 0,25 A)')}, ${nw('(3,0 V; 0,75 A)')}, ${nw('(5,0 V; 1,25 A)')}.<br><b>a)</b> ${m('U/I')} (Ω) mỗi lần đo của X; của Y<br><b>b)</b> linh kiện nào có đường đặc trưng thẳng qua gốc<br><b>c)</b> linh kiện nào là bóng đèn; vì sao ${m('U/I')} của nó đổi`, o: ['a<sub>X</sub>', 'a<sub>Y</sub>', 'b', 'c'], ow: { 'a<sub>X</sub>': 26, 'a<sub>Y</sub>': 22, b: 12, c: 12 } },
-    { t: 'Dạng 2 · Bài 2', de: `Hai linh kiện: một điện trở thuần, một NTC. X: ${nw('(2,0 V; 1,0 mA)')}, ${nw('(4,0 V; 2,5 mA)')}, ${nw('(6,0 V; 4,8 mA)')}. Y: ${nw('(1,5 V; 0,50 mA)')}, ${nw('(3,0 V; 1,0 mA)')}, ${nw('(6,0 V; 2,0 mA)')}.<br><b>a)</b> ${m('U/I')} (kΩ) mỗi lần đo của X; của Y<br><b>b)</b> linh kiện nào là NTC; điện trở của nó tăng hay giảm khi dòng lớn dần`, o: ['a<sub>X</sub>', 'a<sub>Y</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], ow: { 'a<sub>X</sub>': 26, 'a<sub>Y</sub>': 22, 'b<sub>1</sub>': 12, 'b<sub>2</sub>': 12 } },
+    { t: 'Dạng 2 · Bài 1', de: `Hai linh kiện: một điện trở thuần, một bóng đèn sợi đốt. X: ${nw('(2,0 V; 0,40 A)')}, ${nw('(4,0 V; 0,62 A)')}, ${nw('(6,0 V; 0,75 A)')}. Y: ${nw('(1,0 V; 0,25 A)')}, ${nw('(3,0 V; 0,75 A)')}, ${nw('(5,0 V; 1,25 A)')}.<br><b>a)</b> ${m('U/I')} (Ω) mỗi lần đo của X; của Y<br><b>b)</b> đường đặc trưng nào thẳng qua gốc<br><b>c)</b> linh kiện nào là đèn; vì sao ${m('U/I')} của nó đổi`, o: ['a<sub>X</sub>', 'a<sub>Y</sub>', 'b', 'c'], ow: { 'a<sub>X</sub>': 26, 'a<sub>Y</sub>': 22, b: 16, c: 64 } },
+    { t: 'Dạng 2 · Bài 2', de: `Hai linh kiện: một điện trở thuần, một NTC. X: ${nw('(2,0 V; 1,0 mA)')}, ${nw('(4,0 V; 2,5 mA)')}, ${nw('(6,0 V; 4,8 mA)')}. Y: ${nw('(1,5 V; 0,50 mA)')}, ${nw('(3,0 V; 1,0 mA)')}, ${nw('(6,0 V; 2,0 mA)')}.<br><b>a)</b> ${m('U/I')} (kΩ) mỗi lần đo của X; của Y<br><b>b)</b> linh kiện nào là NTC; điện trở của nó tăng hay giảm khi dòng lớn dần`, o: ['a<sub>X</sub>', 'a<sub>Y</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], ow: { 'a<sub>X</sub>': 26, 'a<sub>Y</sub>': 22, 'b<sub>1</sub>': 14, 'b<sub>2</sub>': 20 } },
     { t: 'Dạng 3 · Bài 1', de: `Trục ngang ${m('U')} (V), trục đứng ${m('I')} (mA); hai đường thẳng qua gốc: (1) qua ${nw('(4,0 V; 2,0 mA)')}, (2) qua ${nw('(4,0 V; 0,50 mA)')}.<br><b>a)</b> ${m('R_1')}, ${m('R_2')} (kΩ)<br><b>b)</b> đường dốc hơn ứng với điện trở lớn hơn hay nhỏ hơn<br><b>c)</b> đặt ${V('10')} vào ${m('R_1')}: dòng điện (mA)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], ow: { 'a<sub>1</sub>': 16, 'a<sub>2</sub>': 16, b: 25, c: 16 } },
     { t: 'Dạng 3 · Bài 2', de: `<b>Chú ý trục:</b> trục ngang ${m('I')} (mA), trục đứng ${m('U')} (V); (1) qua ${nw('(2,0 mA; 6,0 V)')}, (2) qua ${nw('(2,0 mA; 3,0 V)')}.<br><b>a)</b> ${m('R_1')}, ${m('R_2')} (kΩ)<br><b>b)</b> đường dốc hơn ứng với điện trở lớn hơn hay nhỏ hơn<br><b>c)</b> đặt ${V('4{,}5')} vào ${m('R_2')}: dòng điện (mA)`, fig: H.uTheoI(), fw: 34, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], ow: { 'a<sub>1</sub>': 14, 'a<sub>2</sub>': 14, b: 20, c: 14 } },
   ], [
