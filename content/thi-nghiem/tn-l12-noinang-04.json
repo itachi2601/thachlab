@@ -1,0 +1,249 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Bài 3. Nội năng. Định luật 1 của nhiệt động lực học",
+  "lesson_id": 4,
+  "nguon_trong_bai": "content/lesson-samples/l12-noi-nang-dl1/theory.html",
+  "id": "tn-l12-noinang-04",
+  "ten": "Xilanh cách nhiệt: nén khí, cho khí dãn, và hai ngăn có vách ngăn",
+  "loai": "vi_du",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "noinang.dinh_luat_1",
+    "noinang.quy_uoc_dau_a_q",
+    "noinang.cach_nhiet_q_bang_0"
+  ],
+  "muc_tieu": "Phân biệt 'cách nhiệt' (Q = 0) với 'nội năng không đổi' (ΔU = 0): trong xilanh cách nhiệt, khí bị nén thì nhận công và nóng lên, khí đẩy pit-tông ra thì sinh công và lạnh đi, còn khí tràn sang ngăn chân không thì không nhận công, không nhận nhiệt nên nội năng giữ nguyên. Dùng đúng dấu trong ΔU = A + Q.",
+  "gia_thuyet": [
+    "Một bạn cho rằng: xilanh đã cách nhiệt thì nội năng của khí bên trong không thể thay đổi, nên nhiệt độ khí luôn giữ nguyên dù nén hay cho dãn."
+  ],
+  "du_doan_neu_dung": [
+    "Nén nhanh pit-tông hay kéo pit-tông ra thì số chỉ cảm biến nhiệt độ trong xilanh vẫn đứng yên ở 300 K."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết nhiệt độ khí sau đó có giữ được mãi không: thành xilanh thật vẫn trao đổi nhiệt chậm với bên ngoài.",
+    "Trường hợp hai ngăn chỉ đúng cho khí lí tưởng (bỏ qua lực tương tác giữa các phân tử); khí thực tràn vào chân không có thể nóng hoặc lạnh đi một chút.",
+    "Không đo được công A trực tiếp; A suy ra từ ΔU = A + Q với Q = 0."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Xilanh có thành và pit-tông cách nhiệt",
+      "so_luong": 1,
+      "ghi_chu": "thể tích khí ban đầu 100 cm³"
+    },
+    {
+      "ten": "Khí argon (khí đơn nguyên tử)",
+      "so_luong": 1,
+      "ghi_chu": "0,0040 mol, ban đầu 300 K, áp suất ≈ 1,0·10⁵ Pa"
+    },
+    {
+      "ten": "Cảm biến nhiệt độ và cảm biến áp suất gắn trong xilanh",
+      "so_luong": 1
+    },
+    {
+      "ten": "Xilanh hai ngăn bằng nhau (50 cm³ mỗi ngăn) có vách ngăn rút ra được",
+      "so_luong": 1,
+      "ghi_chu": "ngăn trái chứa 0,0040 mol argon ở 300 K, ngăn phải là chân không"
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Ghi nhiệt độ và áp suất khí trong xilanh một ngăn khi pit-tông đứng yên (V = 100 cm³).",
+      "Đẩy nhanh pit-tông, nén khí còn 50 cm³; ghi nhiệt độ, áp suất.",
+      "Giữ pit-tông đứng yên một lúc, ghi lại nhiệt độ.",
+      "Kéo nhanh pit-tông về 100 cm³; ghi nhiệt độ.",
+      "Với xilanh hai ngăn: ghi nhiệt độ khí ở ngăn trái, rút vách ngăn để khí tràn sang ngăn chân không; chờ khí ổn định rồi ghi nhiệt độ, áp suất.",
+      "Coi rằng thành xilanh, pit-tông và vách ngăn cách nhiệt hoàn toàn (Q = 0); bỏ qua ma sát pit-tông; khí argon coi là khí lí tưởng."
+    ],
+    "quan_sat": [
+      "Nén từ 100 cm³ xuống 50 cm³: nhiệt độ tăng từ 300 K lên khoảng 476 K, áp suất tăng từ 1,0·10⁵ Pa lên khoảng 3,2·10⁵ Pa.",
+      "Giữ pit-tông đứng yên: nhiệt độ giữ ở khoảng 476 K.",
+      "Kéo pit-tông về 100 cm³: nhiệt độ giảm về 300 K.",
+      "Hai ngăn, rút vách: nhiệt độ vẫn 300 K, áp suất giảm từ 2,0·10⁵ Pa còn 1,0·10⁵ Pa."
+    ],
+    "rut_ra": [
+      "Kết quả bác bỏ giả thuyết: cách nhiệt chỉ có nghĩa Q = 0, nội năng vẫn đổi khi khí trao đổi công.",
+      "Nén khí: khí nhận công A > 0, Q = 0 nên ΔU = A > 0, động năng phân tử tăng, nhiệt độ tăng (khoảng +8,8 J).",
+      "Khí đẩy pit-tông ra: khí sinh công, A < 0, nên ΔU < 0, nhiệt độ giảm.",
+      "Khí tràn vào chân không không đẩy vật nào nên A = 0; cùng với Q = 0 thì ΔU = 0, nhiệt độ khí lí tưởng giữ nguyên dù thể tích tăng gấp đôi.",
+      "Cơ chế: phân tử va vào pit-tông đang tiến tới thì bật ra nhanh hơn (nhận năng lượng); va vào pit-tông đang lùi thì bật ra chậm hơn; vách ngăn biến mất thì không có gì để va."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "V2",
+      "ten": "Thể tích sau khi nén",
+      "don_vi": "cm³",
+      "kieu": "dieu_chinh",
+      "min": 40,
+      "max": 100,
+      "mac_dinh": 50,
+      "buoc": 10
+    },
+    {
+      "ky_hieu": "n",
+      "ten": "Lượng khí argon",
+      "don_vi": "mol",
+      "kieu": "co_dinh",
+      "gia_tri": 0.004
+    },
+    {
+      "ky_hieu": "T1",
+      "ten": "Nhiệt độ ban đầu",
+      "don_vi": "K",
+      "kieu": "co_dinh",
+      "gia_tri": 300
+    },
+    {
+      "ky_hieu": "V1",
+      "ten": "Thể tích ban đầu (một ngăn)",
+      "don_vi": "cm³",
+      "kieu": "co_dinh",
+      "gia_tri": 100
+    },
+    {
+      "ky_hieu": "R",
+      "ten": "Hằng số khí",
+      "don_vi": "J/(mol·K)",
+      "kieu": "co_dinh",
+      "gia_tri": 8.31
+    },
+    {
+      "ky_hieu": "T",
+      "ten": "Nhiệt độ khí",
+      "don_vi": "K",
+      "kieu": "do_duoc",
+      "sai_so_do": 1
+    },
+    {
+      "ky_hieu": "p",
+      "ten": "Áp suất khí",
+      "don_vi": "Pa",
+      "kieu": "do_duoc",
+      "sai_so_do": 1000
+    },
+    {
+      "ky_hieu": "dU",
+      "ten": "Độ biến thiên nội năng",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    },
+    {
+      "ky_hieu": "A",
+      "ten": "Công khí nhận được",
+      "don_vi": "J",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "ΔU = A + Q, với A là công khí NHẬN (A > 0 khi khí bị nén, A < 0 khi khí sinh công), Q là nhiệt lượng khí nhận",
+      "Cách nhiệt: Q = 0 nên ΔU = A",
+      "Khí lí tưởng đơn nguyên tử: U = (3/2)·n·R·T, nên ΔU = (3/2)·n·R·ΔT = 0,050·ΔT (J)",
+      "pV = nRT",
+      "Nén nhanh trong xilanh cách nhiệt: T·V^(2/3) không đổi (chỉ dùng để sinh số liệu mẫu, ngoài chương trình)",
+      "Khí tràn vào chân không: A = 0, Q = 0, nên ΔU = 0 và T không đổi"
+    ],
+    "gia_thiet": [
+      "thành xilanh, pit-tông, vách ngăn cách nhiệt hoàn toàn",
+      "bỏ qua ma sát pit-tông",
+      "argon coi là khí lí tưởng: bỏ qua tương tác giữa các phân tử",
+      "bỏ qua nhiệt dung của cảm biến"
+    ],
+    "ghi_chu": "Đề TN THPT hay cho 'xilanh cách nhiệt' để hỏi dấu A, Q và chiều thay đổi nội năng; trường hợp hai ngăn có vách để bẫy 'thể tích tăng nên khí sinh công'."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "Trạng thái",
+      "V (cm³)",
+      "T (K)",
+      "p (10⁵ Pa)",
+      "A (J)",
+      "Q (J)",
+      "ΔU (J)"
+    ],
+    "hang": [
+      [
+        "Ban đầu",
+        100,
+        300,
+        1.0,
+        null,
+        null,
+        null
+      ],
+      [
+        "Sau khi nén nhanh",
+        50,
+        476,
+        3.2,
+        8.8,
+        0,
+        8.8
+      ],
+      [
+        "Giữ pit-tông đứng yên",
+        50,
+        476,
+        3.2,
+        0,
+        0,
+        0
+      ],
+      [
+        "Kéo pit-tông về",
+        100,
+        300,
+        1.0,
+        -8.8,
+        0,
+        -8.8
+      ],
+      [
+        "Hai ngăn, trước khi rút vách",
+        50,
+        300,
+        2.0,
+        null,
+        null,
+        null
+      ],
+      [
+        "Hai ngăn, sau khi rút vách",
+        100,
+        300,
+        1.0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình: n = 0,0040 mol argon, R = 8,31 J/(mol·K), ΔU = 0,050·ΔT; T sau khi nén = 300·2^(2/3) ≈ 476 K. A, Q, ΔU ghi cho từng bước so với hàng ngay trên."
+  },
+  "ket_qua_ky_vong": "Xilanh cách nhiệt: nén thì T tăng (ΔU = A > 0), kéo ra thì T giảm (A < 0), giữ yên thì T đứng yên; khí tràn sang ngăn chân không thì T không đổi (A = 0, Q = 0, ΔU = 0).",
+  "hien_tuong_hay_sai": [
+    "Hiểu 'cách nhiệt' là 'nội năng không đổi' (thật ra chỉ Q = 0; nén khí thì ΔU = A > 0).",
+    "Thấy nhiệt độ tăng thì kết luận khí đã nhận nhiệt (thật ra Q = 0, nội năng tăng nhờ nhận công).",
+    "Lấy sai dấu: khí bị nén ghi A < 0, khí sinh công ghi A > 0 trong ΔU = A + Q.",
+    "Cho rằng khí tràn vào ngăn chân không thì 'sinh công' nên lạnh đi (thật ra không đẩy vật nào, A = 0).",
+    "Cho rằng giữ pit-tông đứng yên thì khí nóng tự nguội về 300 K (cách nhiệt hoàn toàn thì không)."
+  ],
+  "sai_so_thuong_gap": [
+    "Thành xilanh thật dẫn nhiệt chậm: sau khi nén, nhiệt độ đo được tụt dần, ΔU tính từ T NHỎ HƠN công đã nhận. Giảm: nén thật nhanh và đọc ngay."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+bang_so_lieu",
+    "y_tuong": "Xilanh có các chấm phân tử chạy; nút nén/kéo pit-tông, nút rút vách; đồng hồ T, p và ba ô A, Q, ΔU có dấu.",
+    "diem_nhan": "Ô Q luôn bằng 0 nhưng ΔU vẫn đổi theo A; rút vách thì cả ba ô đều 0 dù V gấp đôi."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261112.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261112.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "xilanh cách nhiệt, nén và rút vách",
+    "nhin_vao": "Nén nhanh trong xilanh cách nhiệt: nhiệt độ khí có đổi không?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-12"
+  }
+}

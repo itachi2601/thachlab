@@ -1,0 +1,220 @@
+{
+  "mon": "vat-ly",
+  "lop": 12,
+  "bai": "Hiện tượng cảm ứng điện từ",
+  "lesson_id": 13,
+  "nguon_trong_bai": "content/lesson-samples/l12-cam-ung-dien-tu/theory.html",
+  "id": "tn-l12-camungdt-05",
+  "ten": "Thanh kim loại trượt trên hai ray trong từ trường đều",
+  "loai": "thi_nghiem",
+  "muc_do": "trung_binh",
+  "kien_thuc": [
+    "camungdt.e_bang_blv",
+    "camungdt.dinh_luat_lenz",
+    "camungdt.bao_toan_nang_luong"
+  ],
+  "muc_tieu": "Đo suất điện động khi thanh trượt cắt đường sức, kiểm e = Bℓv; xác định chiều dòng cảm ứng bằng định luật Lenz; thấy lực từ lên thanh luôn cản chuyển động và công suất lực kéo bằng công suất toả nhiệt.",
+  "gia_thuyet": [
+    "Một bạn cho rằng: dòng điện cảm ứng chạy trong thanh nên lực từ lên thanh sẽ đẩy thanh đi nhanh hơn, thanh không cần kéo vẫn tự trượt mãi."
+  ],
+  "du_doan_neu_dung": [
+    "Thôi kéo thì thanh phải trượt nhanh dần, hoặc ít nhất giữ nguyên tốc độ; lực kế kéo thanh trượt đều phải chỉ 0."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết suất điện động khi thanh trượt xiên so với ray hoặc từ trường không vuông góc mặt phẳng ray.",
+    "Chỉ kiểm e tỉ lệ với v; không đổi B và ℓ nên chưa kiểm hết e = Bℓv."
+  ],
+  "dung_cu": [
+    {
+      "ten": "Hai ray đồng song song nằm ngang, cách nhau ℓ = 20 cm, nối kín qua điện trở R = 2,0 Ω",
+      "so_luong": 1
+    },
+    {
+      "ten": "Thanh đồng đặt vuông góc trên hai ray",
+      "so_luong": 1
+    },
+    {
+      "ten": "Nam châm tạo từ trường đều B = 0,40 T vuông góc mặt phẳng ray, hướng lên",
+      "so_luong": 1
+    },
+    {
+      "ten": "Milivôn kế và miliampe kế",
+      "so_luong": 1
+    },
+    {
+      "ten": "Xe kéo động cơ giữ tốc độ không đổi, có lực kế",
+      "so_luong": 1
+    }
+  ],
+  "cac_buoc": {
+    "lam": [
+      "Thanh đứng yên trên ray: đọc milivôn kế, miliampe kế.",
+      "Cho xe kéo thanh trượt đều v = 0,25 m/s; ghi e, I, số chỉ lực kế.",
+      "Lặp lại với v = 0,50 m/s và 1,00 m/s.",
+      "Kéo thanh theo chiều ngược lại, xem kim miliampe kế lệch về phía nào.",
+      "Thả cho thanh đang trượt tự chạy (tháo dây kéo), quan sát tốc độ.",
+      "Coi rằng từ trường đều trong vùng ray; bỏ qua điện trở của thanh, ray và ma sát; R là điện trở toàn mạch."
+    ],
+    "quan_sat": [
+      "Thanh đứng yên: e = 0, I = 0.",
+      "v = 0,25; 0,50; 1,00 m/s: e = 0,02; 0,04; 0,08 V; I = 10; 20; 40 mA.",
+      "Lực kế phải chỉ 0,8; 1,6; 3,2 mN thì thanh mới trượt đều.",
+      "Đổi chiều trượt: kim miliampe kế lệch ngược lại.",
+      "Thôi kéo: thanh chậm dần rồi dừng."
+    ],
+    "rut_ra": [
+      "e/v = 0,08 V·s/m = B·ℓ ở cả ba lần: khớp e = Bℓv.",
+      "Dòng cảm ứng chống lại sự tăng từ thông qua mạch (định luật Lenz), nên đổi chiều trượt thì dòng đổi chiều.",
+      "Thanh mang dòng I trong từ trường chịu lực từ F = BIℓ ngược chiều chuyển động: lực từ CẢN, kết quả bác bỏ giả thuyết.",
+      "Công suất kéo F·v = 0,8 mW ở v = 0,50 m/s bằng công suất toả nhiệt I²R = 0,8 mW: cơ năng chuyển hết thành nhiệt, không có năng lượng tự sinh ra."
+    ]
+  },
+  "tham_so": [
+    {
+      "ky_hieu": "v",
+      "ten": "Tốc độ thanh",
+      "don_vi": "m/s",
+      "kieu": "dieu_chinh",
+      "min": 0,
+      "max": 1.0,
+      "mac_dinh": 0.5,
+      "buoc": 0.25
+    },
+    {
+      "ky_hieu": "B",
+      "ten": "Cảm ứng từ",
+      "don_vi": "T",
+      "kieu": "co_dinh",
+      "gia_tri": 0.4
+    },
+    {
+      "ky_hieu": "l",
+      "ten": "Khoảng cách hai ray (chiều dài thanh trong mạch)",
+      "don_vi": "m",
+      "kieu": "co_dinh",
+      "gia_tri": 0.2
+    },
+    {
+      "ky_hieu": "R",
+      "ten": "Điện trở toàn mạch",
+      "don_vi": "Ω",
+      "kieu": "co_dinh",
+      "gia_tri": 2.0
+    },
+    {
+      "ky_hieu": "e",
+      "ten": "Suất điện động cảm ứng",
+      "don_vi": "V",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.001
+    },
+    {
+      "ky_hieu": "I",
+      "ten": "Cường độ dòng điện",
+      "don_vi": "mA",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.5
+    },
+    {
+      "ky_hieu": "F",
+      "ten": "Lực kéo để thanh trượt đều (= lực từ)",
+      "don_vi": "mN",
+      "kieu": "do_duoc",
+      "sai_so_do": 0.1
+    },
+    {
+      "ky_hieu": "P",
+      "ten": "Công suất toả nhiệt",
+      "don_vi": "mW",
+      "kieu": "tinh_ra"
+    }
+  ],
+  "mo_hinh": {
+    "phuong_trinh": [
+      "Diện tích mạch tăng ℓ·v mỗi giây: |e| = B·ℓ·v",
+      "I = e/R",
+      "F = B·I·ℓ, ngược chiều v",
+      "Công suất kéo F·v = B·I·ℓ·v = I·e = I²·R"
+    ],
+    "gia_thiet": [
+      "từ trường đều, vuông góc mặt phẳng ray",
+      "thanh vuông góc ray và vuông góc B",
+      "bỏ qua điện trở thanh, ray, dây nối; bỏ qua ma sát"
+    ],
+    "ghi_chu": "Số khớp Câu 6 trong bài (ℓ = 20 cm, v = 50 cm/s, B = 0,4 T, R = 2 Ω → I = 20 mA)."
+  },
+  "so_lieu_mau": {
+    "cot": [
+      "v (m/s)",
+      "e (V)",
+      "I (mA)",
+      "F (mN)",
+      "F·v (mW)",
+      "I²R (mW)"
+    ],
+    "hang": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0.25,
+        0.02,
+        10,
+        0.8,
+        0.2,
+        0.2
+      ],
+      [
+        0.5,
+        0.04,
+        20,
+        1.6,
+        0.8,
+        0.8
+      ],
+      [
+        1.0,
+        0.08,
+        40,
+        3.2,
+        3.2,
+        3.2
+      ]
+    ],
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình B = 0,40 T, ℓ = 0,20 m, R = 2,0 Ω. Ca tự suy cho câu chốt clip: kéo đều 0,50 m/s, R = 4,0 Ω → e = 0,04 V, I = 10 mA, F = 0,8 mN, công suất kéo = 0,4 mW (giảm một nửa)."
+  },
+  "ket_qua_ky_vong": "e tỉ lệ v với hệ số Bℓ = 0,08 V·s/m; lực từ luôn ngược chiều chuyển động; công suất kéo bằng công suất toả nhiệt; thôi kéo thì thanh chậm dần.",
+  "hien_tuong_hay_sai": [
+    "Xác định sai chiều dòng cảm ứng (quên định luật Lenz: dòng chống lại sự TĂNG từ thông).",
+    "Cho rằng lực từ lên thanh cùng chiều chuyển động, giúp thanh trượt (thật ra lực từ CẢN chuyển động).",
+    "Cho rằng thôi kéo thì thanh vẫn trượt đều mãi.",
+    "Cho rằng công suất kéo lớn hơn hoặc không liên quan công suất toả nhiệt (thật ra bằng nhau khi bỏ qua ma sát).",
+    "Quên đổi cm ra m khi thay ℓ, v."
+  ],
+  "sai_so_thuong_gap": [
+    "Điện trở thanh và ray không bằng 0: I đo được NHỎ HƠN e/R. Giảm: lấy R là điện trở toàn mạch đo bằng ôm kế."
+  ],
+  "an_toan": [
+    "Dòng chỉ vài chục mA, an toàn; giữ tay xa xe kéo khi động cơ chạy."
+  ],
+  "goi_y_mo_phong": {
+    "loai": "2d_dong_hoc+so_do_luc+bang_so_lieu",
+    "y_tuong": "Nhìn từ trên xuống: hai ray, thanh, điện trở R; ⊙ B; thanh trượt v; vẽ chiều dòng, mũi tên lực kéo và lực từ; đồng hồ e, I, F·v, I²R.",
+    "diem_nhan": "Mũi tên lực từ luôn ngược v; hai đồng hồ công suất luôn bằng nhau."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261112.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261112.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "thanh trượt trên hai ray",
+    "nhin_vao": "Thôi kéo thì thanh chuyển động thế nào?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-12"
+  }
+}

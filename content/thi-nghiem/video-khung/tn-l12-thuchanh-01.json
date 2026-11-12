@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-thuchanh-01",
+  "ten": "Đo nhiệt dung riêng của nước với ba khối lượng khác nhau",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261112.mp4",
+  "tong_giay": 49.9,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Một nhóm học sinh cho rằng: nhiệt dung riêng của nước phụ thuộc vào khối lượng của nước (vì m nằm trong công thức c = Q/(m·Δt)).",
+      "kiem": "Đổi khối lượng nước thì c tính ra có đổi không?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Cùng 150 W, đun 300 s với 0,200; 0,300; 0,400 kg nước. Ba giá trị c tính ra thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.7,
+      "chu": "Bình nhiệt lượng kế vỏ xốp có nắp, điện trở đun, oát kế (150 W), nhiệt kế, que khuấy."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 17.6,
+      "chu": "Cùng 300 s, m càng lớn thì Δt càng nhỏ: 53,3; 35,7; 26,8 °C."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 22.9,
+      "chu": "c ≈ 4 221; 4 202; 4 198 J/(kg·K), gần như bằng nhau: bác bỏ giả thuyết c phụ thuộc m."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 30.0,
+      "chu": "Chưa đo được nhiệt mất ra ngoài là bao nhiêu; chưa biết c có đổi theo nhiệt độ hay không."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.55,
+    "cau_hoi": "Nhóm bạn cho rằng c phụ thuộc m. Cùng 150 W, đun 300 s với m = 0,200; 0,300; 0,400 kg. Ba giá trị c tính ra:",
+    "chon": [
+      "A. Tăng dần khi m tăng",
+      "B. Giảm dần khi m tăng",
+      "C. Gần như bằng nhau",
+      "D. Không so sánh được vì Δt mỗi lần khác nhau"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "m tăng thì Δt giảm theo, tích m·Δt gần như giữ nguyên nên c ≈ 4 221; 4 202; 4 198 J/(kg·K), chênh nhau rất ít: giả thuyết bị bác bỏ.",
+    "giai_thich_sai": "m có trong công thức c = Q/(m·Δt), nhưng khi m tăng thì Δt cũng đổi. Hai thay đổi đó bù nhau thế nào?"
+  }
+}
