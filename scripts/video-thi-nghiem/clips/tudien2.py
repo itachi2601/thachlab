@@ -252,7 +252,7 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
-    """Chot (khong tra loi cau hoi) -> THU NGHI: nap tu nay o 12 V thi Q bao nhieu (Q = C.U); goi y tre 2,5 s."""
+    """Chot (khong tra loi cau hoi) -> THU NGHI: nap tu nay o 12 V thi Q bao nhieu; goi y (tre 2,5 s) chi la du kien kiem lai, khong neu cach tinh."""
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 260, 1020, 540), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
     ctext(d, 400, "Q/U không đổi: đó là điện dung C của tụ", 50, GREEN, maxw=880, alpha=k0)
@@ -267,7 +267,7 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 0.9 + 2.5, 0.5)
     card(d, (110, 1140, 970, 1480), fill=A((255, 247, 237), kh), r=24)
     ctext(d, 1215, "Gợi ý", 40, INK, alpha=kh)
-    ctext(d, 1340, "Q = C · U", 56, ORANGE, maxw=820, alpha=kh)
+    ctext(d, 1340, "12 V vẫn dưới 16 V ghi trên vỏ", 48, ORANGE, maxw=820, alpha=kh)   # goi y kiem lai, khong neu cach tinh
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
