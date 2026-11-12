@@ -111,9 +111,9 @@ def table(d):
         chevron(d, x, yy, s * math.pi / 2, NAVY, s=14, w=3)
         d.line([(x - 14, yy), (x + 14, yy)], fill=NAVY, width=3)
     ym = yl(40)                                         # tranh nhan "bi 10 mm" (hook) va tia 3 (y 698-791)
-    card(d, (x - 36, ym - 60, x + 36, ym + 60), fill=WHITE, r=16)
-    text(d, (x, ym - 22), "20", 34, INK)
-    text(d, (x, ym + 22), "cm", 34, INK, bold=False)
+    card(d, (x - 40, ym - 62, x + 40, ym + 62), fill=WHITE, r=16)
+    text(d, (x, ym - 23), "20", 36, INK)
+    text(d, (x, ym + 23), "cm", 36, INK, bold=False)
 
 def cover(d, alpha=1.0, mark=False):
     if alpha <= 0.02: return
@@ -131,32 +131,27 @@ def nail(d, alpha=1.0):
     d.ellipse([NX - RN - 1, NY - RN - 1, NX + RN + 1, NY + RN + 1], fill=A(NAVY, alpha))
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("Lượt nào cũng lệch nhẹ", "Khoảng nửa số lượt lệch",
-        "Đa số thẳng, vài lượt lệch mạnh", "Không lượt nào lệch")
 
 def s_hook(img, d, t, sc):
     table(d); cover(d, 1.0, mark=True)
     bx = XS + 40 * ease((t - 0.3) / 1.2)
     ball(d, bx, yl(150))
     arrow(d, (bx + RB + 10, yl(150)), (bx + RB + 90, yl(150)), NAVY, w=5, head=18)
-    text(d, (bx, yl(150) + 46), "bi 10 mm", 34, NAVY, bold=False)
+    text(d, (bx, yl(150) + 46), "bi 10 mm", 36, NAVY, bold=False)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1030 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 590), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 380), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 86), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 55), "DỰ ĐOÁN", 36, WHITE, alpha=a)
     text(d, (W / 2, y0 + 165), "Hướng bi đi ra thế nào?", 46, INK, alpha=a)
-    for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 264 + j * 76
-        d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
-        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 36, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 250), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a)   # K10
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 560, 940, y0 + 572], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 560, 140 + 800 * (1 - p), y0 + 572], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 330, 940, y0 + 342], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, y0 + 330, 140 + 800 * (1 - p), y0 + 342], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
 SLOW, FAST_D = 1.15, 0.38              # 3 luot dau cham; con lai moi luot 0,38 s, xuat phat cach nhau deu
@@ -249,7 +244,7 @@ def s_dapan(img, d, t, sc):
     # so lieu
     card(d, (50, 1040, 1030, 1220), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
     for x, lab, val, col in ((210, "Đi thẳng", "57", INK), (540, "Lệch mạnh", "3", RED), (870, "Tỉ lệ lệch", "0,05", INK)):
-        text(d, (x, 1085), lab, 34, MUTED, bold=False, alpha=ka)
+        text(d, (x, 1085), lab, 36, MUTED, bold=False, alpha=ka)
         text(d, (x, 1160), val, 64, col, alpha=ka)
     for x in (375, 705): d.line([(x, 1070), (x, 1190)], fill=A(LIGHT, ka), width=3)
     # rut ra
@@ -299,7 +294,7 @@ def _hint(d, t, k):                    # goi y tu ve, hien sau ~2,8 s (khong lo 
     if kh <= 0: return
     card(d, (110, 1290, 970, 1560), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     ctext(d, 1345, "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1450, "Phần bề rộng bị chắn?", 44, INK, maxw=800, alpha=kh)
+    ctext(d, 1450, "Nhớ lại thí nghiệm 60 lượt.", 44, INK, maxw=800, alpha=kh)
 
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Bi lệch mạnh: có vật nhỏ, cứng",

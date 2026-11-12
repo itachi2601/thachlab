@@ -61,22 +61,18 @@ def rig(d, t, minute, reading, src=1.0, clock_lbl=None):
     text(d, (795, 512), "xung/phút", 36, MUTED, bold=False)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Mỗi lần giảm như nhau", "B. Còn khoảng một nửa", "C. Sau 5 phút gần hết")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 0, ROWS[0][1])
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 990, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 990, 1020, 1360), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1045), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1150, "Số đếm sau mỗi 5 phút?", 46, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1270 + i * 100
-        card(d, (110, y - 42, 970, y + 42), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (150, y), s, 40, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1240), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1562, 940, 1576], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1562, 140 + 800 * (1 - q), 1576], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1302, 940, 1316], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1302, 140 + 800 * (1 - q), 1316], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: do phong, dem moi 5 phut, ghi bang ----------------
 def row_at(i, sc):
@@ -128,13 +124,13 @@ def s_ans(img, d, t, sc):
     card(d, (60, 380, 1020, 1050), fill=WHITE, outline=LIGHT, w=3)
     for h in (200, 400, 600, 800): d.line([(x0, Y(h)), (x1, Y(h))], fill=(240, 236, 228), width=2)
     d.line([(x0, yb), (x1 + 25, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 40)], fill=NAVY, width=5)
-    text(d, (x0 + 18, yt - 50), "H (xung/phút)", 34, MUTED, anchor="lm")
-    text(d, (x1 + 25, yb + 76), "t (phút)", 34, MUTED, anchor="rm")
+    text(d, (x0 + 18, yt - 50), "H (xung/phút)", 36, MUTED, anchor="lm")
+    text(d, (x1 + 25, yb + 76), "t (phút)", 36, MUTED, anchor="rm")
     for m in range(0, 26, 5):
         d.line([(X(m), yb), (X(m), yb + 10)], fill=NAVY, width=3)
-        text(d, (X(m), yb + 34), str(m), 34, MUTED, bold=False)
+        text(d, (X(m), yb + 34), str(m), 36, MUTED, bold=False)
     for h in (0, 200, 400, 600, 800):
-        d.line([(x0 - 10, Y(h)), (x0, Y(h))], fill=NAVY, width=4); text(d, (x0 - 18, Y(h)), str(h), 34, MUTED, bold=False, anchor="rm")
+        d.line([(x0 - 10, Y(h)), (x0, Y(h))], fill=NAVY, width=4); text(d, (x0 - 18, Y(h)), str(h), 36, MUTED, bold=False, anchor="rm")
     kc = ease((t - M[0] - 1.2) / 1.2)
     if kc > 0:
         pts = [(X(25 * j / 100), Y(model(25 * j / 100))) for j in range(101)]
@@ -228,7 +224,7 @@ def s_trap(img, d, t, sc):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "Chu kì T: số đếm (trừ phông) còn một nửa",
-             "Bớt một nửa lượng nguồn thì T còn 5 phút không?")
+             "Bớt một nửa lượng nguồn thì T có đổi không?")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

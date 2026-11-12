@@ -89,23 +89,18 @@ def rig(d, t, n2, reading, power=True, note=None):
     if note: note(d)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. 6 V", "B. 12 V", "C. 24 V", "D. 48 V")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, n_draw(400), "?")
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 1020, 1020, 1630), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 1020, 1020, 1420), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1075), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1170, "Thứ cấp 400 vòng.\nVôn kế chỉ bao nhiêu?", 46, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.12)
-        x0 = 110 + (i % 2) * 440; y = 1320 + (i // 2) * 110
-        card(d, (x0, y - 44, x0 + 420, y + 44), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 40, y), s, 44, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1300), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1572, 940, 1586], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1572, 140 + 800 * (1 - q), 1586], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1362, 940, 1376], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1362, 140 + 800 * (1 - q), 1376], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: quan them vong, do U2, ghi bang ----------------
 WIND = 0.6
@@ -140,7 +135,7 @@ def s_do(img, d, t, sc):
         if i == last: d.rounded_rectangle([80, y - 34, 1000, y + 34], radius=16, fill=A((225, 236, 255), a))
         for x, s, col in zip(xs, [str(N), r, fmt(u)], [BLUE, INK, RED]):
             text(d, (x, y), s, 44, col, alpha=a)
-    text(d, (W / 2, 1458), "Số liệu minh hoạ", 34, MUTED)
+    text(d, (W / 2, 1458), "Số liệu minh hoạ", 36, MUTED)
     c = appear(t, row_at(2, sc))
     if c > 0:
         card(d, (110, 1515, 970, 1615), fill=A((220, 252, 231), c), r=24)
@@ -159,7 +154,7 @@ def s_ans(img, d, t, sc):
     d.line([(x0, yb), (x1 + 25, yb)], fill=NAVY, width=5); d.line([(x0, yb), (x0, yt - 30)], fill=NAVY, width=5)
     text(d, (x0 + 18, yt - 36), "U₂ (V)", 38, INK, anchor="lm")
     text(d, (x1 - 175, yb - 40), "N₂ (vòng)", 38, INK, anchor="lm")
-    text(d, (1000, yt - 36), "Số liệu minh hoạ", 34, MUTED, anchor="rm")
+    text(d, (1000, yt - 36), "Số liệu minh hoạ", 36, MUTED, anchor="rm")
     for n in (0, 200, 400, 600):
         d.line([(X(n), yb), (X(n), yb + 10)], fill=NAVY, width=3); text(d, (X(n), yb + 38), str(n), 36, INK, bold=False)
     for u in (10, 20, 30, 40):
@@ -265,12 +260,12 @@ def s_trap(img, d, t, sc):
 def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "U₁/U₂ = N₁/N₂",
-             "Muốn thứ cấp ra 6 V: hơn hay kém 100 vòng?")
+             "Theo bảng đo: muốn ra 6 V, hơn hay kém 100 vòng?")
     kh = appear(t, sc["M"][0] + 2.5, 0.4)                # goi y hien sau 2,5 s cho HS tu nghi truoc
     if kh > 0:
         card(d, (110, 1110, 970, 1330), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
         text(d, (W / 2, 1165), "Gợi ý", 38, INK, alpha=kh)
-        text(d, (W / 2, 1255), "100 vòng cho ra mấy vôn?", 46, ORANGE, alpha=kh)
+        text(d, (W / 2, 1255), "U₂ đo so với tính: cao hay thấp?", 46, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

@@ -143,16 +143,13 @@ def s_hook(img, d, t, sc):
     k = appear(t, sc["M"][1] - 0.15, 0.45)
     if k <= 0: return
     y0 = TAB_Y - 60 + (1 - k) * 40
-    card(d, (60, y0, 1020, y0 + 420), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
+    card(d, (60, y0, 1020, y0 + 280), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
     t1, t2 = sc["M"][1] + 0.4, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))     # thanh dem thoi gian nghi
-    d.rounded_rectangle([140, y0 + 396, 940, y0 + 406], radius=5, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, y0 + 396, 140 + 800 * (1 - q), y0 + 406], radius=5, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, y0 + 250, 940, y0 + 260], radius=5, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, y0 + 250, 140 + 800 * (1 - q), y0 + 260], radius=5, fill=A(PURPLE, k))
     text(d, (W / 2, y0 + 44), "Dự đoán", 40, PURPLE, alpha=k)
-    text(d, (W / 2, y0 + 120), "Bắn vào GIẤY BẠC. Số đọc sẽ…", 44, INK, alpha=k)
-    for j, s in enumerate(("A.  gần 50 °C", "B.  thấp hơn 50 °C", "C.  cao hơn 50 °C")):
-        yy = y0 + 214 + j * 58
-        d.rounded_rectangle([110, yy - 24, 970, yy + 24], radius=24, outline=A(LIGHT, k), width=3)
-        text(d, (140, yy), s, 40, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 120), "Giấy bạc: số đọc so với 50 °C?", 44, INK, alpha=k)
+    text(d, (W / 2, y0 + 196), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)   # K10: khong ve nut A-C
 
 
 # ---------------- canh 2: tien hanh ----------------
@@ -210,8 +207,8 @@ def chart(d, t, sc):
     d.line([(x0, ay), (x1, ay)], fill=NAVY, width=4)
     for v in range(38, 53, 2):
         d.line([(X(v), ay - 8), (X(v), ay + 8)], fill=NAVY, width=3)
-        text(d, (X(v), ay + 32), str(v), 32, MUTED, bold=False)
-    text(d, (x1, ay - 30), "°C", 32, MUTED, bold=False, anchor="rm")
+        text(d, (X(v), ay + 34), str(v), 36, MUTED, bold=False)
+    text(d, (x1, ay - 30), "°C", 36, MUTED, bold=False, anchor="rm")
     dashed(d, (X(50), 316), (X(50), ay - 10), A(GREEN, 0.9), w=4)
     text(d, (X(50) - 10, 330), "50", 38, GREEN, anchor="rm")
     errs = (0.5, 0.2, 0, 0, 0)
@@ -222,7 +219,7 @@ def chart(d, t, sc):
         text(d, (100, y), nm, 38, INK, bold=False, anchor="lm", alpha=k)
         if errs[j]: d.line([(X(val - errs[j]), y), (X(val + errs[j]), y)], fill=A(col, 0.6 * k), width=4)
         dot(d, X(val), y, 12 * k, col, outline=WHITE)
-        text(d, (X(val) - 22, y), fmt(val), 32, col, anchor="rm", alpha=k)
+        text(d, (X(val) - 22, y), fmt(val), 36, col, anchor="rm", alpha=k)
 
 
 def kcard(d, y, title, ev, color, k, h=160):
@@ -262,7 +259,7 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 190), "→ SAI", 56, RED, alpha=a1)
     if a2 > 0:
         card(d, (60, y, 1020, y + 300), fill=A(WHITE, a2), outline=A(ORANGE, a2), w=5)
-        text(d, (W / 2, y + 100), "Lùi xa: vết đo tràn ra", 48, INK, alpha=a2)
+        text(d, (W / 2, y + 100), "Lùi xa: vết hứng cả nền", 48, INK, alpha=a2)
         text(d, (W / 2, y + 190), "→ số thấp hơn", 48, ORANGE, alpha=a2)
     if k3 > 0:
         card(d, (60, y, 1020, y + 300), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
@@ -273,9 +270,9 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: chot + cau hoi ----------------
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Mặt bóng cho số thấp giả",
+    chot_hoi(d, t, sc, "Ba nhiệt kế, ba cách đo",
              "Giấy bạc ấm như thành cốc. Sao máy hồng ngoại chỉ 41,0 °C?",
-             "So ε giấy bạc với 0,95")
+             "Hồng ngoại đo gì?")
 
 
 def _cues(clip):
