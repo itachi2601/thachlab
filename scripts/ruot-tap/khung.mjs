@@ -216,8 +216,10 @@ ${foot(n)}</section>`).join('')}`}
     await p.goto(pathToFileURL(out + '.html').href, { waitUntil: 'networkidle0' });
     await p.evaluate('document.fonts.ready');
     const diag = await p.evaluate(() => [...document.querySelectorAll('.page')].map((pg, i) => {
-      const lim = pg.getBoundingClientRect().bottom - 14 * 3.7795;
-      let max = 0; pg.querySelectorAll('.page>*:not(.foot)').forEach((e) => { max = Math.max(max, e.getBoundingClientRect().bottom); });
+      // ô QR (.gt) đặt tuyệt đối ở đáy 13 mm → không tính vào dòng chảy; nội dung phải dừng trên mép ô đó ≥ 1 mm
+      const gt = pg.querySelector('.page>.gt');
+      const lim = gt ? gt.getBoundingClientRect().top - 3.7795 : pg.getBoundingClientRect().bottom - 14 * 3.7795;
+      let max = 0; pg.querySelectorAll('.page>*:not(.foot):not(.gt)').forEach((e) => { max = Math.max(max, e.getBoundingClientRect().bottom); });
       return `trang ${i + 1}: dư ${Math.round((lim - max) / 3.7795)} mm; katexErr=${pg.querySelectorAll('.katex-error').length}`;
     }));
     console.log(diag.join('\n'));
