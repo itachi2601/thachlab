@@ -7,6 +7,8 @@
 # Hinh: nhin tu tren xuong; tu truong deu giua hai mat cuc = duong suc song song cach deu, N (trai) -> S (phai).
 #   Dong dien chay theo day tu dau tren-phai xuong duoi-trai: F ~ I l x B = +sin(theta) z -> F len (ra khoi man hinh),
 #   khop quy tac ban tay trai. Phan luc F' len nam cham huong xuong -> can chi them Dm (da TARE). Do dai mui ten ~ sin theta.
+# Ban 2 (12/11/2026): dong bo voi thuchanhtu4 ban 2 - nhan 'F: len day' / "F': len nam cham" o so do nhin ngang,
+#   F' mau cam (cung mau so can), mui ten I doi sang NAVY, the rut ra noi ro 'can doc F' = F'.
 from engine import *
 
 ROWS = [(90, 1.45, 1.0, 1.0), (60, 1.26, 0.866, 0.869), (30, 0.73, 0.5, 0.503)]
@@ -80,8 +82,8 @@ def top_view(d, th, on=True, show_th=True, th_label=True):
     if on:                                        # chieu dong: tu dau tren-phai ve dau duoi-trai
         ox, oy = -40 * s, -40 * c                 # lech sang phia tren-trai cua day
         m1 = (CX + 0.95 * HL * c + ox, CY - 0.95 * HL * s + oy); m2 = (CX + 0.4 * HL * c + ox, CY - 0.4 * HL * s + oy)
-        arrow(d, m1, m2, ORANGE, w=8, head=28)
-        tag(d, CX + 0.62 * HL * c - 82 * s, CY - 0.62 * HL * s - 82 * c, "I", 40, ORANGE)
+        arrow(d, m1, m2, NAVY, w=8, head=28)
+        tag(d, CX + 0.62 * HL * c - 82 * s, CY - 0.62 * HL * s - 82 * c, "I", 40, NAVY)
     if show_th and th > 2:
         d.line([(CX, CY), (CX + 150, CY)], fill=GREEN, width=4)
         d.arc([CX - 92, CY - 92, CX + 92, CY + 92], 360 - th, 360, fill=GREEN, width=5)
@@ -99,17 +101,18 @@ def force_side(d, sv, alpha=1.0):
     L = 92 * sv / 1.45
     # day (tiet dien) va luc F len
     dot(d, 640, 920, 13, COPPER, outline=WHITE)
-    text(d, (610, 965), "dây", 32, COPPER, anchor="mm")
+    text(d, (646, 972), "F: lên dây", 30, GREEN, anchor="mm")
     if L > 6:
-        arrow(d, (640, 905), (640, 905 - L), GREEN, w=6, head=18)
+        arrow(d, (640, 905), (640, 905 - L), GREEN, w=8, head=20)
         text(d, (662, 905 - L * 0.55), "F", 38, GREEN, anchor="lm")
     # nam cham tren dia can va phan luc F' xuong
     text(d, (860, 836), "nam châm", 32, NAVY)
     d.rounded_rectangle([780, 860, 940, 936], radius=10, fill=(214, 220, 236), outline=NAVY, width=3)
     d.line([(760, 944), (960, 944)], fill=NAVY, width=6)
+    text(d, (862, 972), "F′: lên nam châm", 30, ORANGE, anchor="mm")
     if L > 6:
-        arrow(d, (860, 866), (860, 866 + L * 0.9), PURPLE, w=6, head=18)
-        text(d, (846, 870 + L * 0.45), "F'", 38, PURPLE, anchor="rm")
+        arrow(d, (860, 864), (860, 864 + L * 0.8), ORANGE, w=8, head=20)
+        text(d, (842, 868 + L * 0.4), "F′", 38, ORANGE, anchor="rm")
 
 
 # ---------------- do thi Dm theo theta (truc co dinh) ----------------
@@ -224,7 +227,7 @@ def s_rut(img, d, t, sc):
     kh = appear(t, M[1] - 0.2, 0.45)
     if kh > 0: d.rounded_rectangle([510, 820, 990, 1048], radius=18, outline=A(GREEN, kh), width=4)
     # the rut ra
-    for y, title, ev, col, at in ((1124, "F = B·I·l·sin θ", "lớn nhất khi vuông góc", GREEN, M[1] + 0.8),
+    for y, title, ev, col, at in ((1124, "F = B·I·l·sin θ", "cân đọc F′ = F (phản lực lên nam châm)", GREEN, M[1] + 0.8),
                                   (1340, "Lệch 60°: B thấp 13%", "", ORANGE, M[1] + 3.0)):
         k = appear(t, at, 0.45)
         if k <= 0: continue
