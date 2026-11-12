@@ -18,6 +18,16 @@ export async function recordCncLearningResult(input: { courseId: number; lessonI
   if (error) throw error;
 }
 
+/** Nộp bài trắc nghiệm CNC để server chấm và ghi điểm. answers: thứ tự câu trong ngân hàng (từ 0) → chỉ số phương án. */
+export async function submitCncQuiz(input: { courseId: number; lessonId: string; assessmentId: string; answers: Record<string, number> }) {
+  const { data, error } = await getSupabase().rpc("cnc_quiz_submit", {
+    p_course_id: input.courseId, p_lesson_id: input.lessonId, p_assessment_id: input.assessmentId, p_answers: input.answers,
+  });
+  if (error) throw error;
+  const row = (Array.isArray(data) ? data[0] : data) as { score: number; total: number; passed: boolean } | null;
+  return row;
+}
+
 export async function fetchCncLearningRecords(courseId: number, studentId?: string) {
   let query = getSupabase().from("cnc_learning_records").select(fields).eq("course_id", courseId);
   if (studentId) query = query.eq("student_id", studentId);
