@@ -146,6 +146,30 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
 - Cân trang bằng dòng `trang N: dư X mm` script in ra (mục tiêu 0–15 mm, âm = tràn); đo từng khối bằng
   `getBoundingClientRect` trên `.pdf.html` khi không rõ khối nào phình, rồi mới nhìn ảnh.
 
+## Ruột tập cả chương bằng phiên song song (quy trình VL10 Ch.4 → VL11 Ch.3, 12/11/2026)
+Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG soạn bài, chỉ dựng khung rồi mở mỗi bài một phiên:
+1. **Hồ sơ + cache (phiên chính, tab terminal)**: `npx tsx book/lay-noi-dung.mts --moi l<lớp>-ch<N>-<tên> <lớp> <một lesson_id trong chương>`
+   → sửa `book/sach/<mã>.json` bỏ "Kiểm tra chương"/"KT giữa/cuối HK" (không có lý thuyết). Tra id: Ch.2 L11 = 27–33, Ch.3 L11 = 35–40,
+   L10 Ch.4 = 68–72; chưa biết thì đoán id gần rồi đọc danh sách lệnh in ra. `book/cache/` bị gitignore → mỗi phiên tự tải lại bằng
+   `npx tsx book/lay-noi-dung.mts <mã>` (cần `.env.local`; worktree thiếu thì `ln -s /Users/MAC/Projects/thachlab/.env.local .env.local`).
+2. **Script dựng quyển** `scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh` (chép `dung-l11-chuong3.sh`: bỏ qua bài chưa có file, ghép
+   bằng `pdfunite`, cảnh báo font hệ thống). Phiên chính là chủ DUY NHẤT của `khung.mjs` + script này; cần đổi khung thì phiên bài
+   báo lại, không tự sửa.
+3. **Commit hồ sơ + script + skill, push, chờ vào `main`** (`gh run list --workflow gop-claude-vao-main.yml`) rồi mới mở phiên.
+4. **Mở mỗi bài một phiên** (`start_session`, worktree riêng, "fresh"), brief mẫu (thay số):
+   > Soạn ruột tập VL11 bài 18 (lesson 37, Điện trường đều) theo skill `sach-in-tu-web` mục "Ruột tập theo bài" + checklist học sinh ảo.
+   > `git fetch && git merge origin/main`; tải cache `npx tsx book/lay-noi-dung.mts l11-ch3-dien-truong` (tab terminal). Chép
+   > `scripts/ruot-tap/l10-bai23.mjs` → `l11-bai18.mjs`, hình riêng `hinh-l11-bai18.mjs`; `khoiTao({bai:18, lid:37, lop:11, baiDau:16,
+   > ten, sub:'Vật lí 11 · Chương 3: Điện trường'})`; bố cục bài 14 có `tuongTu` (`vo: true`, giải vào vở). Nội dung lấy từ
+   > `book/cache/37.json` (lý thuyết + mọi dạng bài tập mẫu), đáp số tính bằng Python. Chỉ tạo/sửa 2 file của bài mình — KHÔNG đụng
+   > `khung.mjs`, script dựng quyển, skill, STATE. Kiểm: 12 trang, dư 0–15 mm, katexErr=0, `pdffonts` sạch, `xem-hinh`, QR giải mã
+   > đúng `?id=37`, `do-cho-viet.mjs`. Commit theo đường dẫn, push nhánh, báo trang nào dư bao nhiêu + điểm cần thầy quyết.
+   Ảnh Halliday được dùng (L11 Ch.3 ↔ Vol.2 ch.21 Coulomb, 22 điện trường, 24 điện thế, 25 tụ điện) nhưng chỉ trên Mac, thêm vào
+   bảng `ANH` của `cat-anh.py` + chép bản sao ra `ruot-tap-anh/`; không bắt buộc (L10 Ch.4 dùng toàn SVG).
+5. **Khi các phiên xong** (phiên chính): merge main, `bash scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh`, rồi MỘT phiên học sinh ảo
+   điền thử cả quyển theo checklist (A/B/C) → giao sửa lại cho phiên của từng bài (`SendMessage`) thay vì sửa chéo; dựng lại, gửi PDF
+   cho thầy, ghi memory dự án. Workflow tự gộp huỷ lượt chờ khi nhiều nhánh push cùng lúc → `gh run rerun <id>` lượt `cancelled`.
+
 ## Nhật ký rút kinh nghiệm (ruột tập)
 - 2026-11-10 · Lỗi "chữ đậm lẫn Helvetica": khai báo `@font-face` nhiều tệp con (latin/vietnamese) mà không có `unicode-range` thì tệp sau đè tệp trước, ký tự thiếu rơi về font hệ thống → mỗi tệp con PHẢI kèm `unicode-range` (đã có ở `bai14.mjs`). Kiểm bằng `pdffonts <pdf>`: không được còn Helvetica/Lucida/Hiragino (còn sót ★, φ, chỉ số trên ở bài 14 tr.1/5/6).
 - 2026-11-10 · `sed -i 's/…/…/' file` trên macOS hỏng (nuốt chuỗi thay làm hậu tố) → sửa chuỗi bằng Python `replace` có `assert count==1`.
