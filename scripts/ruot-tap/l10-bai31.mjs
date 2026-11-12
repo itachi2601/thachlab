@@ -54,7 +54,7 @@ ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Đo góc bằng <b>radian</b>; tính <b>độ dịch chuyển góc</b> từ cung và bán kính`)}
 ${dong(`${ck}Dùng <b>tốc độ góc</b> ${w}, <b>chu kì</b> ${m('T')}, <b>tần số</b> ${m('f')}; đổi ${vph} sang rad/s`)}
-${dong(`${ck}Liên hệ <b>tốc độ</b> của một điểm với ${w} và khoảng cách từ điểm đó tới tâm`)}
+${dong(`${ck}Tính <b>tốc độ</b> của một điểm trên vật quay từ ${w}`)}
 ${dong(`${ck}Vẽ đúng <b>vectơ vận tốc</b> của vật chuyển động tròn đều`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
@@ -107,7 +107,7 @@ ${h3(4, 'II.3 · Tốc độ và tốc độ góc', '2·4')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div>${m('v=\\dfrac{\\Delta s}{\\Delta t}')}, cung ${m('\\Delta s=\\Delta\\theta\\,\\cdot')} ${f(12)}</div><div>⇒ ${m('v=')} ${f(14)} ${m('=\\dfrac{2\\pi r}{\\phantom{x}}')}${f(12)}</div>
 <div>Mọi điểm trên cùng một vật quay có chung ${f(12)}, ${f(12)}, ${f(12)}; điểm xa tâm hơn có ${m('v')} ${f(25)}.</div>
-<div style="margin-top:.6mm"><b>Quay lại sân băng:</b> người ngoài cùng cách O ${u('6\\ \\mathrm m')}, cả hàng quay 1 vòng hết ${u('5\\ \\mathrm s')}. Cho sẵn ${u('1\\ \\mathrm{m/s}=3{,}6\\ \\mathrm{km/h}')}.</div>
+<div style="margin-top:.6mm"><b>Quay lại hàng người:</b> người ngoài cùng cách O ${u('6\\ \\mathrm m')}, cả hàng quay 1 vòng hết ${u('5\\ \\mathrm s')}. Cho sẵn ${u('1\\ \\mathrm{m/s}=3{,}6\\ \\mathrm{km/h}')}.</div>
 <div>${m('v=')} ${f(14)} m/s ${m('\\approx')} ${f(14)} km/h</div></div>
 ${H.haiDiem()}</div>
 ${foot(2)}</section>`;
@@ -167,7 +167,7 @@ ${K.btvn()}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Động cơ quay ${nw(`3000 ${vph}`)}. Tính ${w}.`, 3)
  + wl(`${m('\\bigstar\\bigstar')} Kim phút dài ${u('10\\ \\mathrm{cm}')}, kim giờ dài ${u('6\\ \\mathrm{cm}')}. Tốc độ đầu kim phút gấp mấy lần đầu kim giờ?`, 4)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Hà Nội ở vĩ độ ${m('21^\\circ')}; ${u('R=6370\\ \\mathrm{km}')}, Trái Đất tự quay ${u('T=24\\ \\mathrm h')}, ${u('\\cos21^\\circ\\approx0{,}934')}. Tốc độ của người đứng yên ở Hà Nội? Vì sao không dùng thẳng ${m('R')}?`, 5))}${H.traiDat()}</div>
+ + wl(`${m('\\bigstar\\bigstar\\bigstar')} Hà Nội ở vĩ độ ${m('21^\\circ')}; ${u('R=6370\\ \\mathrm{km}')}, Trái Đất tự quay ${u('T=24\\ \\mathrm h=86\\,400\\ \\mathrm s')}, ${u('\\cos21^\\circ\\approx0{,}934')}. Tốc độ của người đứng yên ở Hà Nội? Vì sao không dùng thẳng ${m('R')}?`, 5))}${H.traiDat()}</div>
 ${h3(3, 'Câu đổi chiều (bài toán mẫu)', '5·3')}
 ${box(wl(`Bánh xe nhỏ đường kính ${u('40\\ \\mathrm{cm}')}. Muốn điểm trên vành có đúng tốc độ như bài mẫu (${u('3{,}77\\ \\mathrm{m/s}')}), bánh phải quay bao nhiêu ${vph}? Viết ${m('v=\\omega r')} trước khi đoán tăng hay giảm.`, 5))}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
@@ -179,11 +179,11 @@ const dang = [
     de: `Xe đồ chơi chạy ngược chiều kim đồng hồ trên ray tròn tâm O, ${u('r=0{,}50\\ \\mathrm m')}; đồng hồ tốc độ luôn chỉ ${u('0{,}40\\ \\mathrm{m/s}')}. Xe đang qua A, điểm xa nhất bên phải O.<br><b>a)</b> có phải tròn đều; vận tốc có đổi không<br><b>b)</b> tại A, ${vv} có phương, chiều thế nào<br><b>c)</b> sau ${u('5{,}0\\ \\mathrm s')}: cung đi được, độ dịch chuyển góc (rad)`,
     nd: `Tròn đều: quỹ đạo tròn, ${f(25)} không đổi; ${vv} ${f(25)} bán kính`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.ray() },
   { t: 'Dạng 2 · Dễ · Chu kì, tần số, tốc độ góc từ số vòng đếm được',
-    de: `Vòng đu quay quay đều, hết ${nw('5 vòng')} trong ${u('2{,}0')} phút.<br><b>a)</b> chu kì và tần số<br><b>b)</b> tốc độ góc<br><b>c)</b> sau ${u('10\\ \\mathrm s')}, bán kính nối một cabin với trục quét góc bao nhiêu độ`,
-    nd: `Đổi phút ra ${f(12)}; ${m('T=\\Delta t/n')}; góc quét ${m('\\theta=')} ${f(14)}, nhân ${m('180^\\circ/\\pi')} ra độ`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4 },
+    de: `Vòng đu quay quay đều, hết ${nw('5 vòng')} trong ${u('2{,}0')} phút.<br><b>a)</b> chu kì và tần số &nbsp; <b>b)</b> tốc độ góc<br><b>c)</b> sau ${u('10\\ \\mathrm s')}, bán kính nối một cabin với trục quét góc bao nhiêu độ`,
+    nd: `Đổi phút ra ${f(12)}; ${m('T=\\Delta t/n')}; góc quét ${m('\\theta=')} ${f(14)}, nhân ${m('180^\\circ/\\pi')} ra độ`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 5 },
   { t: 'Dạng 3 · Trung bình · Đổi vòng/phút ra rad/s; góc quay rất ngắn',
-    de: `Đĩa ổ cứng máy tính quay đều ${nw(`7200 ${vph}`)}.<br><b>a)</b> tần số và chu kì (chu kì ra mili giây)<br><b>b)</b> tốc độ góc (rad/s)<br><b>c)</b> trong ${u('1{,}0\\ \\mathrm{ms}')} đĩa quay góc bao nhiêu độ`,
-    nd: `${vph}: chia ${f(12)} ra ${m('f')}, nhân ${f(12)} ra ${w}; ${u('1\\ \\mathrm{ms}=')} ${f(14)} s`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4 },
+    de: `Đĩa ổ cứng máy tính quay đều ${nw(`7200 ${vph}`)}.<br><b>a)</b> tần số và chu kì (chu kì ra mili giây) &nbsp; <b>b)</b> tốc độ góc (rad/s)<br><b>c)</b> trong ${u('1{,}0\\ \\mathrm{ms}')} đĩa quay góc bao nhiêu độ`,
+    nd: `${vph}: chia ${f(12)} ra ${m('f')}, nhân ${f(12)} ra ${w}; ${u('1\\ \\mathrm{ms}=')} ${f(14)} s`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 5 },
   { t: 'Dạng 4 · Trung bình · Các điểm cùng quay, khác bán kính',
     de: `Đĩa than đường kính ${u('30\\ \\mathrm{cm}')} quay đều ${nw(`45 ${vph}`)} quanh trục qua tâm. M ở mép đĩa, N cách tâm ${u('5{,}0\\ \\mathrm{cm}')}.<br><b>a)</b> tốc độ góc của đĩa<br><b>b)</b> tốc độ của M<br><b>c)</b> tốc độ của N`,
     nd: `Cùng một đĩa ⇒ chung ${f(14)}; ${nw(`${m('r_M=')} ${f(14)} m`)} (nửa đường kính)`, a: ['a', 'b', 'c'], gi: 7, fig: H.diaThan() },
