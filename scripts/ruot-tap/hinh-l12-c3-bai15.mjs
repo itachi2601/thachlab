@@ -21,9 +21,8 @@ export const hinhL12c3b15 = {
   // ===== Trang 1 · Dự đoán: bếp từ đang đun (không vẽ đường sức, không chỉ chỗ nóng) =====
   bepTu: (cap = 'Bếp từ đang đun: không lửa, không mâm nóng đỏ.') => {
     let b = noi(90, 42, 120, 70);
-    b += `<path d="M110,66 q10,-12 20,0 t20,0 t20,0 t20,0" fill="none" stroke="${BLUE}" stroke-width="2.4" stroke-dasharray="6 4"/>`;
     b += T(150, 98, 'nồi gang', { a: 'middle' });
-    b += rect(20, 112, 260, 14, { fill: '#eef2fa' }) + T(284, 146, 'mặt kính', { a: 'end' });
+    b += rect(20, 112, 260, 14, { fill: '#eef2fa' }) + T(6, 104, 'mặt kính');
     b += [70, 100, 130, 170, 200, 230].map((x) => `<circle cx="${x}" cy="${144}" r="8" fill="#fff" stroke="${INK}" stroke-width="2.2"/>`).join('');
     b += T(150, 178, 'cuộn dây', { a: 'middle' }) + ln(150, 160, 150, 152, GREY, 2);
     return wrap('0 0 300 186', b, cap, 'Nồi gang đặt trên bếp từ');
@@ -47,11 +46,11 @@ export const hinhL12c3b15 = {
     const { d = 'd', bia = false } = o;
     let b = '';
     b += rect(60, 14, 180, 46, { rx: 8 }) + T(150, 34, 'điện thoại', { a: 'middle' });
-    b += ell(150, 50, 60, 6, BLUE, 2.4) + ell(150, 50, 40, 4, BLUE, 2.4) + T(222, 54, `N${sb('2')}`, { w: 700 });
+    b += ell(150, 50, 60, 6, BLUE, 2.4) + ell(150, 50, 40, 4, BLUE, 2.4) + T(248, 54, `N${sb('2')}`, { w: 700 });
     if (bia) b += rect(70, 72, 160, 10, { fill: '#eef2fa', sw: 1.8 }) + rect(70, 82, 160, 10, { fill: '#eef2fa', sw: 1.8 }) + T(234, 90, 'bìa');
-    b += rect(40, 106, 220, 40, { rx: 6 }) + ell(150, 114, 60, 6, RED, 2.4) + ell(150, 114, 40, 4, RED, 2.4) + T(222, 120, `N${sb('1')}`, { w: 700 });
+    b += rect(60, 106, 180, 40, { rx: 6 }) + ell(150, 114, 60, 6, RED, 2.4) + ell(150, 114, 40, 4, RED, 2.4) + T(248, 120, `N${sb('1')}`, { w: 700 });
     b += T(150, 140, 'đế sạc', { a: 'middle' });
-    b += ln(28, 60, 28, 106, GREY, 2) + ln(20, 60, 36, 60, GREY, 2) + ln(20, 106, 36, 106, GREY, 2) + T(10, 90, d, { w: 700, a: 'start' });
+    b += ln(50, 60, 50, 106, GREY, 2) + ln(44, 60, 56, 60, GREY, 2) + ln(44, 106, 56, 106, GREY, 2) + T(42, 90, d, { w: 700, a: 'end' });
     b += ln(150, 146, 150, 162, INK, 2.4) + `<circle cx="150" cy="174" r="12" fill="#fff" stroke="${INK}" stroke-width="2.4"/>` + T(150, 181, '~', { a: 'middle', w: 700, size: 24 });
     b += T(170, 181, `U${sb('1')}`, { w: 700 });
     return wrap('0 0 300 194', b, cap, 'Đế sạc không dây và điện thoại');
@@ -70,9 +69,9 @@ export const hinhL12c3b15 = {
     return wrap('0 0 290 186', b, cap, 'Hai con lắc tấm nhôm dao động giữa hai cực nam châm');
   },
   // ===== Trang 3 · II.4: mặt cắt bếp từ =====
-  bepCat: (cap = 'Mặt cắt: cuộn dây nuôi dòng xoay chiều 20–30 kHz; đường sức đứt nét.') => {
-    let b = rect(70, 18, 160, 36, { fill: '#fff' }) + T(150, 42, 'đáy nồi', { a: 'middle' });
-    b += rect(14, 60, 272, 12, { fill: '#eef2fa' }) + T(290, 96, 'mặt kính', { a: 'end' });
+  bepCat: (cap = 'Mặt cắt bếp từ; đứt nét: đường sức từ.') => {
+    let b = rect(100, 18, 100, 36, { fill: '#fff' }) + T(6, 40, 'đáy nồi') + ln(78, 34, 98, 34, GREY, 2);
+    b += rect(14, 60, 272, 12, { fill: '#eef2fa' }) + T(294, 52, 'mặt kính', { a: 'end' });
     b += [80, 110, 140].map((x) => crs(x, 92)).join('') + [160, 190, 220].map((x) => dot(x, 92)).join('');
     b += [[60, 34], [90, 24], [210, 24], [240, 34]].map(([x, h]) => `<path d="M150,108 C${x},${120 + h} ${x},${30 - h} 150,${36}" fill="none" stroke="${BLUE}" stroke-width="2" stroke-dasharray="5 4"/>`).join('');
     b += T(150, 140, 'cuộn dây', { a: 'middle' });
@@ -92,21 +91,21 @@ export const hinhL12c3b15 = {
     const X = (d) => 50 + d * 56, Y = (u) => 160 - u * 14;
     let b = defs('ud1') + defs('ud2');
     b += arr(50, 160, 290, 160, 'ud1') + arr(50, 160, 50, 14, 'ud2');
-    b += ln(50, Y(9), 284, Y(9), GREY, 2.2, '8 5') + T(46, Y(9) + 6, '9,0', { a: 'end' });
+    b += ln(50, Y(9), 284, Y(9), GREY, 2.2, '8 5') + T(40, Y(9) + 6, '9,0', { a: 'end' });
     b += [0, 1, 2, 3, 4].map((d) => ln(X(d), 160, X(d), 166, INK, 2) + T(X(d), 186, String(d), { a: 'middle' })).join('');
     b += [[0, 8.4], [1, 7.1], [2, 5.9], [3, 4.8], [4, 3.9]].map(([d, u]) => `<circle cx="${X(d)}" cy="${Y(u)}" r="5" fill="${RED}"/>`).join('');
-    b += T(292, 150, 'd (cm)', { a: 'end' }) + T(58, 24, `U${sb('2')} (V)`, { w: 700 });
+    b += T(292, 150, 'd (cm)', { a: 'end' }) + T(64, 30, `U${sb('2')} (V)`, { w: 700 });
     return wrap('0 0 300 194', b, cap, 'Điện áp thứ cấp đo được theo khoảng cách hai cuộn');
   },
   // ===== Bài tập mẫu D3: tấm nhôm rơi qua khe hai cực =====
-  tamRoi: (cap = 'Tình huống (2): tấm rơi qua khe giữa hai cực.') => {
+  tamRoi: (cap = 'Tình huống (2).') => {
     let b = defs('tr');
     b += rect(20, 70, 70, 60, { fill: '#e3e7f0' }) + T(55, 108, 'N', { a: 'middle', w: 700 });
     b += rect(210, 70, 70, 60, { fill: '#e3e7f0' }) + T(245, 108, 'S', { a: 'middle', w: 700 });
-    b += rect(122, 30, 56, 70, { fill: '#fff' }) + T(150, 22, 'tấm nhôm', { a: 'middle' });
-    b += arr(150, 104, 150, 150, 'tr', RED) + T(160, 146, 'v', { c: RED, w: 700 });
-    b += [92, 108].map((y) => arr(94, y, 206, y, 'tr', BLUE, '6 4')).join('');
-    return wrap('0 0 300 156', b, cap, 'Tấm nhôm rơi qua khe giữa hai cực nam châm');
+    b += [84, 100, 116].map((y) => arr(92, y, 202, y, 'tr', BLUE, '6 4')).join('');
+    b += rect(144, 40, 12, 96, { fill: '#fff' }) + T(150, 30, 'tấm nhôm (nhìn từ cạnh)', { a: 'middle' });
+    b += arr(150, 138, 150, 160, 'tr', RED) + T(160, 158, 'v', { c: RED, w: 700 });
+    return wrap('0 0 300 166', b, cap, 'Tấm nhôm rơi qua khe giữa hai cực nam châm');
   },
   // ===== Bài tương tự D3·1: nam châm rơi trong ống đồng =====
   ongDong: (cap = 'Nam châm rơi trong ống.') => {

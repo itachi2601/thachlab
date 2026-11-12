@@ -74,10 +74,10 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Đàn ghi ta điện: dao động thành dòng điện', '1·4')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>Dây thép nằm ngay trên nam châm có quấn cuộn dây (bộ cảm ứng). Dây bị nam châm ${f(20)}.</div>
-<div>Dây dao động ⇒ ${f(18)} qua cuộn dây biến thiên ⇒ trong cuộn có ${f(30)}.</div>
+<div>Dây dao động ⇒ ${f(18)} qua cuộn dây biến thiên ⇒ trong cuộn có ${f(40)}.</div>
 <div style="margin:1mm 0;display:flex;align-items:flex-end;gap:2mm">${ec} = ${oF(11, 28)}</div>
 <div class="hint">${ec} (V) · ${m('N')} số vòng · ${dPhi} biến thiên từ thông qua <b>một</b> vòng (Wb) · ${m('\\Delta t')} (s)</div>
-<div>Dòng cảm ứng rất nhỏ, phải qua ${f(22)} rồi mới ra loa.</div></div>
+<div>Dòng cảm ứng rất nhỏ, phải qua máy tăng âm rồi mới ra loa.</div></div>
 ${H.pickup()}</div>
 ${box(cau(`<b>Làm nhanh.</b> Gảy dây mạnh hơn: ${dPhi} mỗi nửa chu kì lớn hơn, tần số không đổi. ${ec} thay đổi thế nào? Tiếng to hơn hay cao hơn?`, 1))}
 ${foot(1)}</section>`;
@@ -87,8 +87,8 @@ ${head('THÍ NGHIỆM DÂY THÉP RUNG · SẠC KHÔNG DÂY')}
 ${h3(1, 'Thí nghiệm: dây thép rung trên cuộn dây', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Làm:</b> căng dây thép 60 cm trên giá gỗ, kẹp nam châm và cuộn dây 1 000 vòng sát dưới dây, nối điện kế nhạy; gảy dây, kéo căng thêm rồi gảy lại.</div>
-<div><b>Quan sát:</b> kim điện kế ${f(36)}; dây căng hơn (rung nhanh hơn) thì kim ${f(30)}</div>
-<div>dây tắt thì kim ${f(26)}; gảy mạnh thì kim ${f(30)}</div>
+<div><b>Quan sát:</b> kim điện kế ${f(36)}; ${nw(`dây căng hơn (rung nhanh hơn) thì kim ${f(30)}`)}</div>
+<div>${nw(`dây tắt thì kim ${f(30)}`)}; ${nw(`gảy mạnh thì kim ${f(30)}`)}</div>
 <div><b>Rút ra:</b> dao động cơ đã biến thành dòng cảm ứng cùng ${f(22)} với dao động của dây.</div>
 </div>
 ${h3(2, 'II.2 · Sạc không dây: máy biến áp không lõi', '2·2')}
@@ -101,7 +101,7 @@ ${h3(2, 'II.2 · Sạc không dây: máy biến áp không lõi', '2·2')}
 ${H.sacKhongDay()}</div>
 ${h3(3, 'Thí nghiệm: điện áp thứ cấp theo khoảng cách', '2·3')}
 <div class="fig-side" style="${fs(52)}"><div>
-<div style="font-size:var(--fs-sm);line-height:1.35;margin-bottom:.6mm">Sơ cấp 200 vòng nối ${V('U_1=12')}, thứ cấp 150 vòng, hai ống nhựa đồng trục; chèn dần tấm bìa dày 1 cm vào giữa. Lí tưởng: ${m('U_2=')} ${f(16)}</div>
+<div style="font-size:var(--fs-sm);line-height:1.35;margin-bottom:.6mm">Sơ cấp 200 vòng nối ${V('U_1=12')}, thứ cấp 150 vòng, hai ống nhựa đồng trục; chèn dần tấm bìa dày 1 cm vào giữa. ${nw(`Lí tưởng: ${m('U_2=')} ${f(16)}`)}</div>
 <table class="tbl-ct"><tr><th>${m('d')} (cm)</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th></tr>
 <tr><td>${U2} đo (V)</td><td>8,4</td><td>7,1</td><td>5,9</td><td>4,8</td><td>3,9</td></tr>
 <tr><td>So với lí tưởng (%)</td><td></td><td></td><td></td><td></td><td></td></tr></table>
@@ -117,7 +117,7 @@ ${head('DÒNG ĐIỆN FOUCAULT · BẾP TỪ')}
 ${h3(1, 'II.3 · Dòng điện Foucault (dòng xoáy)', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Là dòng điện cảm ứng sinh ra trong lòng ${f(26)} khi khối đó ${f(26)} trong từ trường hoặc nằm trong từ trường ${f(20)}.</div>
-<div>Dòng khép kín trong khối, cường độ lớn vì ${f(26)}.</div>
+<div>Dòng khép kín trong khối, cường độ lớn vì ${f(34)}.</div>
 <div>Hai tác dụng đi cùng nhau: <b>1)</b> ${f(30)} (Lenz: chống lại chuyển động) · <b>2)</b> ${f(30)}: ${m('Q=')} ${f(16)}</div>
 <div>Giảm dòng Foucault có hại: lõi máy biến áp, lõi động cơ ghép từ ${f(50)}.</div>
 </div>
@@ -166,22 +166,22 @@ const p5 = `<section class="page">
 ${head('BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'V · Bài toán mẫu: đế sạc không dây', '5·1')}
 <div class="card soft" style="padding:1.2mm 3mm">Đế sạc: cuộn sơ cấp ${m('N_1=20')} vòng nối nguồn xoay chiều ${V('U_1=12')}; cuộn sau lưng điện thoại ${m('N_2=15')} vòng. Áp sát, vôn kế (±0,1 V) chỉ ${V('8{,}4')}; kê bìa thì số đo như bảng ô 2·3.
-<b>a)</b> lí tưởng ${U2} bằng bao nhiêu; số đo lệch mấy % · <b>b)</b> vì sao ${U2} giảm nhanh khi tăng ${m('d')}; năng lượng mất thành gì · <b>c)</b> ở ${m('d=2')} cm, điện áp còn mấy % so với lí tưởng · <b>d)</b> pin cần nhận ${nw('3 600 J')}, công suất nạp 8 W: nạp đầy mất bao lâu</div>
+<b>a)</b> lí tưởng ${U2} bằng bao nhiêu; số đo lệch mấy % · <b>b)</b> vì sao ${U2} giảm nhanh khi tăng ${m('d')}; năng lượng mất thành gì · <b>c)</b> ở ${m('d=2')} cm, điện áp còn mấy % so với lí tưởng · <b>d)</b> pin cần nhận ${nw('36 000 J')}, công suất nạp 8 W: nạp đầy mất bao lâu</div>
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“sơ cấp 20 vòng; thứ cấp 15 vòng”</td><td>${m('N_2/N_1=0{,}75')} → ${m('U_2=U_1N_2/N_1')}</td></tr>
 <tr><td style="height:6.5mm">“áp sát 8,4 V; kê bìa”</td><td></td></tr>
 </table>
 <div class="fig-side" style="${fs(46)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`a) ${m('U_2=')}`, 2)}${wl('b)', 2)}${wl('c)', 1)}${wl(`d) ${m('t=')}`, 1)}</div>${H.uTheoD()}</div>
+${wl(`a) ${m('U_2=')}`, 3)}${wl('b)', 3)}${wl('c)', 1)}${wl(`d) ${m('t=')}`, 1)}</div>${H.uTheoD()}</div>
 ${h3(2, 'Điền bước còn thiếu: đế sạc khác', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;min-height:5mm"><b>Đề:</b> ${m("N_1'=25")} vòng, ${V("U_1'=10")}, ${m("N_2'=10")} vòng; áp sát, vôn kế chỉ ${V('3{,}6')}.</div>
-<div class="ln"><b>Bước 1 (cho sẵn):</b> ${m("\\dfrac{N_2'}{N_1'}=\\dfrac{10}{25}=0{,}4")}</div>
+<div class="ln"><b>Bước 1 (cho sẵn):</b> ${m("N_2'/N_1'=10/25=0{,}4")}</div>
 ${wl(`Bước 2: lí tưởng ${m("U_2'=")}`, 1)}${wl('Bước 3: 3,6 V đạt bao nhiêu % giá trị lí tưởng?', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Sơ cấp 100 vòng nối ${V('24')}, thứ cấp 25 vòng. ${U2} bằng bao nhiêu?`, 1)
- + cau(`${m('\\bigstar\\bigstar')} Vì sao phanh điện từ yếu hẳn khi xe chậm?`, 1)
+ + wl(`${m('\\bigstar\\bigstar')} Vì sao phanh điện từ yếu hẳn khi xe chậm?`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Vì sao lõi máy biến áp ghép từ lá thép mỏng cách điện mà không đúc đặc?`, 1))}
 ${foot(5)}</section>`;
 
@@ -197,7 +197,7 @@ const dang = [
     nd: `Có dòng khi từ thông qua khối ${f(18)}; Lenz: lực từ ${f(18)} chuyển động; ${nw(`${m('I=|e_c|/R')}`)}`, a: ['a', 'b', 'c', 'd'], cot: 2, gi: 4, fig: H.tamRoi() },
   { t: 'Dạng 4 · Khó · Bếp từ: chọn nồi, nhiệt lượng, thời gian đun',
     de: `Bếp từ ghi ${nw('2 000 W')} (công suất điện tiêu thụ), hiệu suất 80 % (nhiệt nước nhận / điện năng tiêu thụ). Có hai nồi cùng cỡ: nồi nhôm và nồi gang. Đun ${nw('1,2 lít')} nước từ ${nw('25 °C')} đến sôi (${nw('100 °C')}); ${DN}, ${cN}.<br><b>a)</b> nên dùng nồi nào để đun nhanh hơn; vì sao<br><b>b)</b> nhiệt lượng nước nhận được<br><b>c)</b> thời gian đun sôi nước`,
-    nd: `${nw(`${m('m=DV=')} ${f(14)}`)}; ${nw(`${m('Q=mc\\Delta t')}`)}; ${nw(`${m('P_{\\text{ích}}=')} ${f(12)}`)}; ${nw(`${m('t=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 6, fig: H.bepCat('Nồi đặt trên bếp từ.') },
+    nd: `${nw(`${m('m=DV=')} ${f(14)}`)}; ${nw(`${m('Q=mc\\Delta t')}`)}; ${nw(`${m('P_{\\text{ích}}=')} ${f(12)}`)}; ${nw(`${m('t=')} ${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 2, gi: 5, fig: H.bepCat('Nồi đặt trên bếp từ.') },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
@@ -220,15 +220,15 @@ const tuongTu = {
     { t: 'Dạng 2 · Bài 2', de: `Máy biến áp trong cục sạc: cuộn sơ cấp ${nw('1 100 vòng')} nối điện lưới ${V('U_1=220')}; coi gần đúng lí tưởng.<br><b>a)</b> muốn ${V('U_2=5{,}0')} thì cuộn thứ cấp phải có bao nhiêu vòng<br><b>b)</b> quấn nhầm thành 30 vòng: ${U2} khi đó<br><b>c)</b> đây là máy tăng áp hay hạ áp`, o: ['a', 'b', 'c'] },
     nhap(8),
   ], [
-    { t: 'Dạng 3 · Bài 1', de: `Thả một nam châm nhỏ rơi theo phương thẳng đứng trong lòng một ống đồng dài dựng đứng (đồng không nhiễm từ, dẫn điện tốt; bỏ qua lực cản không khí, nam châm không chạm thành ống).<br><b>a)</b> trong thành ống có dòng Foucault không<br><b>b)</b> nam châm rơi nhanh hơn, chậm hơn hay như rơi tự do<br><b>c)</b> thay bằng ống nhựa cùng cỡ: nam châm rơi thế nào<br><b>d)</b> ống đồng xẻ một rãnh dọc suốt chiều dài: rơi nhanh hơn hay chậm hơn ống liền`, fig: H.ongDong(), fw: 22, o: ['a', 'b', 'c', 'd'], ow: { a: 18, b: 22, c: 22, d: 22 } },
-    { t: 'Dạng 3 · Bài 2', de: `So sánh hai lõi cùng cỡ của một máy biến áp nối điện xoay chiều: lõi thép đúc đặc và lõi ghép từ nhiều lá thép mỏng sơn cách điện. Công tơ điện kiểu cũ có đĩa nhôm quay giữa hai cực một nam châm đứng yên.<br><b>a)</b> lõi nào nóng lên nhiều hơn khi máy chạy<br><b>b)</b> vì sao (một câu)<br><b>c)</b> trong đĩa nhôm đang quay có dòng Foucault không<br><b>d)</b> lực từ lên dòng đó làm đĩa quay nhanh thêm hay bị hãm`, o: ['a', 'b', 'c', 'd'], ow: { a: 22, b: 48, c: 16, d: 22 } },
-    { t: 'Dạng 4 · Bài 1', de: `Bếp từ ghi ${nw('1 800 W')} (điện tiêu thụ), hiệu suất 85 %. Đun ${nw('1,5 lít')} nước từ ${nw('20 °C')} đến ${nw('100 °C')}; ${DN}, ${cN}. Có ba nồi cùng cỡ: nhôm, thuỷ tinh chịu nhiệt, inox đáy nhiễm từ.<br><b>a)</b> dùng được nồi nào<br><b>b)</b> nhiệt lượng nước nhận được (kJ)<br><b>c)</b> thời gian đun (s)`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 1', de: `Thả một nam châm nhỏ rơi theo phương thẳng đứng trong lòng một ống đồng dài dựng đứng (đồng không nhiễm từ, dẫn điện tốt; bỏ qua lực cản không khí, nam châm không chạm thành ống).<br><b>a)</b> trong thành ống có dòng Foucault không<br><b>b)</b> nam châm rơi nhanh hơn, chậm hơn hay như rơi tự do<br><b>c)</b> thay bằng ống nhựa cùng cỡ: nam châm rơi thế nào<br><b>d)</b> ống đồng xẻ một rãnh dọc suốt chiều dài: rơi nhanh hơn hay chậm hơn ống liền`, fig: H.ongDong(), fw: 22, o: ['a', 'b', 'c', 'd'], ow: { a: 18, b: 22, c: 30, d: 22 } },
+    { t: 'Dạng 3 · Bài 2', de: `So sánh hai lõi cùng cỡ của một máy biến áp nối điện xoay chiều: lõi thép đúc đặc và lõi ghép từ nhiều lá thép mỏng sơn cách điện. Công tơ điện kiểu cũ có đĩa nhôm quay giữa hai cực một nam châm đứng yên.<br><b>a)</b> lõi nào nóng lên nhiều hơn khi máy chạy<br><b>b)</b> điện trở của mạch dòng xoáy trong lõi nào lớn hơn<br><b>c)</b> trong đĩa nhôm đang quay có dòng Foucault không<br><b>d)</b> lực từ lên dòng đó làm đĩa quay nhanh thêm hay bị hãm`, o: ['a', 'b', 'c', 'd'], ow: { a: 22, b: 26, c: 16, d: 22 } },
+    { t: 'Dạng 4 · Bài 1', de: `Bếp từ ghi ${nw('1 800 W')} (điện tiêu thụ), hiệu suất 85 %. Đun ${nw('1,5 lít')} nước từ ${nw('20 °C')} đến ${nw('100 °C')}; ${DN}, ${cN}. Có ba nồi cùng cỡ: nhôm, thuỷ tinh chịu nhiệt, inox đáy nhiễm từ.<br><b>a)</b> dùng được nồi nào<br><b>b)</b> nhiệt lượng nước nhận được (kJ)<br><b>c)</b> thời gian đun (s)`, o: ['a', 'b', 'c'], ow: { a: 42 } },
     { t: 'Dạng 4 · Bài 2', de: `Bếp từ ghi ${nw('2 000 W')} (điện tiêu thụ) đun ${nw('2,0 lít')} nước từ ${nw('25 °C')} đến sôi (${nw('100 °C')}) hết ${nw('6,0 phút')}; ${DN}, ${cN}.<br><b>a)</b> nhiệt lượng nước nhận được (kJ)<br><b>b)</b> điện năng bếp tiêu thụ (kJ)<br><b>c)</b> hiệu suất của bếp`, o: ['a', 'b', 'c'] },
     nhap(4),
   ]],
   dap: [
     `D1·1: a) 82 Hz · b) 6,1 ms · c) 0,33 V &nbsp;|&nbsp; D1·2: a) 2,6 ms · b) 0,32 ${m('\\mu')}Wb · c) 1,0 V &nbsp;|&nbsp; D2·1: a) 9,0 V · b) 96 % · c) 70 % &nbsp;|&nbsp; D2·2: a) 25 vòng · b) 6,0 V · c) hạ áp`,
-    `D3·1: a) có · b) chậm hơn · c) như rơi tự do · d) nhanh hơn &nbsp;|&nbsp; D3·2: a) lõi đặc · b) điện trở khối nhỏ ⇒ dòng Foucault lớn ⇒ toả nhiệt lớn · c) có · d) bị hãm &nbsp;|&nbsp; D4·1: a) nồi inox đáy nhiễm từ · b) 504 kJ · c) ≈ 329 s &nbsp;|&nbsp; D4·2: a) 630 kJ · b) 720 kJ · c) 87,5 %`,
+    `D3·1: a) có · b) chậm hơn · c) như rơi tự do · d) nhanh hơn &nbsp;|&nbsp; D3·2: a) lõi đặc · b) lõi lá thép mỏng · c) có · d) bị hãm &nbsp;|&nbsp; D4·1: a) nồi inox đáy nhiễm từ · b) 504 kJ · c) ≈ 329 s &nbsp;|&nbsp; D4·2: a) 630 kJ · b) 720 kJ · c) 87,5 %`,
   ],
 };
 
