@@ -171,7 +171,7 @@ ${h3(1, 'V · Bài toán mẫu: đế sạc không dây', '5·1')}
 <tr><td>“sơ cấp 20 vòng; thứ cấp 15 vòng”</td><td>${m('N_2/N_1=0{,}75')} → ${m('U_2=U_1N_2/N_1')}</td></tr>
 <tr><td style="height:6.5mm">“áp sát 8,4 V; kê bìa”</td><td></td></tr>
 </table>
-<div class="fig-side" style="${fs(46)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
+<div class="fig-side" style="${fs(46)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm 2mm">
 ${wl(`a) ${m('U_2=')}`, 3)}${wl('b)', 3)}${wl('c)', 1)}${wl(`d) ${m('t=')}`, 1)}</div>${H.uTheoD()}</div>
 ${h3(2, 'Điền bước còn thiếu: đế sạc khác', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">

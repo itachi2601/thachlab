@@ -91,7 +91,7 @@ export const hinhL12c3b15 = {
     const X = (d) => 50 + d * 56, Y = (u) => 160 - u * 14;
     let b = defs('ud1') + defs('ud2');
     b += arr(50, 160, 290, 160, 'ud1') + arr(50, 160, 50, 14, 'ud2');
-    b += ln(50, Y(9), 284, Y(9), GREY, 2.2, '8 5') + T(40, Y(9) + 6, '9,0', { a: 'end' });
+    b += ln(50, Y(9), 284, Y(9), GREY, 2.2, '8 5') + T(34, Y(9) + 6, '9,0', { a: 'end' });
     b += [0, 1, 2, 3, 4].map((d) => ln(X(d), 160, X(d), 166, INK, 2) + T(X(d), 186, String(d), { a: 'middle' })).join('');
     b += [[0, 8.4], [1, 7.1], [2, 5.9], [3, 4.8], [4, 3.9]].map(([d, u]) => `<circle cx="${X(d)}" cy="${Y(u)}" r="5" fill="${RED}"/>`).join('');
     b += T(292, 150, 'd (cm)', { a: 'end' }) + T(64, 30, `U${sb('2')} (V)`, { w: 700 });
@@ -102,7 +102,7 @@ export const hinhL12c3b15 = {
     let b = defs('tr');
     b += rect(20, 70, 70, 60, { fill: '#e3e7f0' }) + T(55, 108, 'N', { a: 'middle', w: 700 });
     b += rect(210, 70, 70, 60, { fill: '#e3e7f0' }) + T(245, 108, 'S', { a: 'middle', w: 700 });
-    b += [84, 100, 116].map((y) => arr(92, y, 202, y, 'tr', BLUE, '6 4')).join('');
+    b += [84, 100, 116].map((y) => arr(92, y, 194, y, 'tr', BLUE, '6 4')).join('');
     b += rect(144, 40, 12, 96, { fill: '#fff' }) + T(150, 30, 'tấm nhôm (nhìn từ cạnh)', { a: 'middle' });
     b += arr(150, 138, 150, 160, 'tr', RED) + T(160, 158, 'v', { c: RED, w: 700 });
     return wrap('0 0 300 166', b, cap, 'Tấm nhôm rơi qua khe giữa hai cực nam châm');
