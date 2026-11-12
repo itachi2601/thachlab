@@ -45,7 +45,7 @@ export const hinhL11b21 = {
     // hai pin
     b += rect(88, 120, 30, 50, { rx: 4 }) + rect(142, 120, 30, 50, { rx: 4 }) + T(103, 152, '+', { a: 'middle', w: 700 }) + T(157, 152, '+', { a: 'middle', w: 700 });
     b += T(130, 106, '2 × 1,5 V', { a: 'middle' });
-    b += T(218, 100, 'píííp…', { c: BLUE }) + T(218, 128, 'vài giây', { c: BLUE });
+    b += T(218, 100, 'chờ đèn', { c: BLUE }) + T(218, 128, 'báo sáng', { c: BLUE });
     b += T(218, 30, 'loé', { c: RED, w: 700 }) + T(218, 56, `${km('≈')} 0,001 s`, { c: RED });
     return wrap('0 0 320 186', b, cap, 'Đèn flash rời của máy ảnh');
   },

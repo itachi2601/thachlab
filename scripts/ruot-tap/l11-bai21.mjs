@@ -69,16 +69,16 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Tụ điện là gì', '1·4')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
 <div><b>Cấu tạo:</b> hai ${f(16)} gần nhau, ngăn cách bằng ${f(16)}.</div>
-<div><b>Tác dụng:</b> ${f(16)} điện tích; xoay chiều: tích, ${f(14)} liên tục.</div>
+<div><b>Tác dụng:</b> (động từ) ${f(14)} điện tích; xoay chiều: tích, ${f(12)} liên tục.</div>
 <div><b>Tích điện:</b> nối hai bản với nguồn: bản nối cực + tích ${f(12)}, bản kia ${f(12)}.</div>
-<div><b>Điện tích của tụ:</b> ${f(16)} trên <b>mỗi</b> bản (không cộng).</div>
+<div><b>Điện tích của tụ:</b> điện tích trên ${f(14)} bản (không cộng).</div>
 </div>
 ${H.tuPhang()}</div>
 ${h3(5, 'Thí nghiệm: tụ nạp rồi tự xả qua đèn LED', '1·5')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> nối tiếp pin ${V(9)}, tụ ${uF(1000)}, LED. Tháo pin, nối tụ với LED đảo chiều.</div>
 <div><b>Quan sát:</b> vừa nối pin, LED ${f(16)} rồi ${f(16)} dù pin còn nối. Nối tụ với LED: LED lại ${f(20)}.</div>
-<div><b>Vì sao LED tắt hẳn dù pin còn nối?</b> Tụ đã ${f(16)}. Dòng một chiều ${ck}đi qua &nbsp;${ck}không đi qua tụ, vì giữa hai bản là ${f(16)}.</div></div>
+<div><b>Vì sao LED tắt hẳn dù pin còn nối?</b> Tụ đã ${f(16)}. Dòng một chiều ${ck}đi qua &nbsp;${ck}không đi qua tụ, vì giữa hai bản là chất ${f(16)}.</div></div>
 ${H.ledMach()}</div>
 ${foot(1)}</section>`;
 
@@ -89,8 +89,8 @@ ${h3(1, 'II.2 · Điện dung', '2·1')}
 <div>Điện dung đặc trưng cho khả năng ${f(25)} của tụ:</div>
 <div style="margin:.6mm 0;font-size:3.7mm">${m('C=')} ${f(14)} &nbsp;&nbsp; ${m('\\Rightarrow\\ Q=')} ${f(14)}</div>
 <div>Đơn vị: ${f(18)} (F). 1 F là điện dung của tụ tích được ${f(10)} khi đặt vào ${f(10)}.</div>
-<div><b>Tụ xoay:</b> điện dung đổi được khi ${f(25)} (dò đài radio).</div>
-<div style="margin-top:.6mm"><b>Vỏ tụ ghi</b> “${uF(1000)} – ${V(10)}”: ${f(18)} và ${f(25)}. Vượt quá: tụ bị ${f(20)}.</div></div>
+<div><b>Tụ xoay:</b> điện dung đổi được khi xoay ${f(18)} (dò đài radio).</div>
+<div style="margin-top:.6mm"><b>Vỏ ghi</b> “${uF(1000)} – ${V(10)}”: ${f(35)} và ${f(50)}; vượt: tụ bị ${f(16)}.</div></div>
 <table><tr><th>Ước số</th><th>Quy đổi</th></tr>
 <tr><td>1 mF</td><td>${m('10^{-3}')} F</td></tr>
 <tr><td>1 µF</td><td style="height:6mm"></td></tr>
@@ -104,13 +104,13 @@ ${h3(2, 'Thí nghiệm đo: Q theo U của tụ ghi “470 µF – 16 V”', '2�
 <tr><td>6</td><td>2890</td><td></td></tr>
 <tr><td>8</td><td>3820</td><td></td></tr>
 <tr><td>10</td><td>4800</td><td></td></tr></table>
-<div style="margin-top:.8mm">Trung bình ${m('Q/U\\approx')} ${f(14)} µF. Vỏ ghi 470 µF; lệch vì ${f(30)}.</div>
+<div style="margin-top:.8mm">Trung bình ${m('Q/U\\approx')} ${f(14)} µF. Vỏ ghi 470 µF; lệch vì sai số ${f(25)}.</div>
 <div><b>Rút ra:</b> ${m('Q')} tỉ lệ ${f(16)} với ${m('U')}; tỉ số ${m('Q/U')} gần như ${f(16)}, đó là ${f(8)}.</div></div>
 ${H.doThiQU()}</div>
 ${h3(3, 'II.3 · C do cấu tạo quyết định', '2·3')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>${m('C')} chỉ phụ thuộc ${f(30)}, <b>không</b> phụ thuộc ${f(10)} hay ${f(10)}.</div>
-<div style="margin:.6mm 0"><b>Tụ phẳng:</b> ${m('C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}')} &nbsp;(${m('S')}: diện tích ${f(14)}, đơn vị ${f(8)}; ${m('d')} đổi ra ${f(8)})</div>
+<div style="margin:.6mm 0"><b>Tụ phẳng:</b> ${m('C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}')} &nbsp;(${m('S')}: diện tích phần ${f(14)} của hai bản, đơn vị ${f(8)}; ${m('d')} đổi ra ${f(8)})</div>
 <div>Điện trường giữa hai bản là đều: ${m('E=')} ${f(12)}. Điện môi chịu tối đa ${m('E_{\\max}')} nên ${m('U_{\\max}=')} ${f(14)}</div>
 <div><b>Tấm nhôm:</b> gốc ${nw('≈ 350 pF')}. Tăng ${m('d')} gấp đôi: ≈ ${f(10)} pF; trượt lệch nửa tấm: ≈ ${f(10)} pF; chèn nhựa: ${m('C')} ${f(14)} vài lần.</div>
 <div><b>Rút ra:</b> ${m('S')} lớn, ${m('d')} ${f(10)}, ${eps} ${f(10)} thì ${m('C')} lớn.</div></div>
@@ -122,9 +122,8 @@ ${head('NĂNG LƯỢNG CỦA TỤ · GHÉP TỤ · BA CÁI BẪY')}
 ${h3(1, 'II.4 · Năng lượng của tụ', '3·1')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Tụ tích điện thì giữa hai bản có ${f(25)}; nó dự trữ năng lượng điện trường.</div>
-<div style="margin:.8mm 0;font-size:3.7mm">${m('W=\\tfrac12')}${f(12)} ${m('=\\tfrac12')}${f(12)} ${m('=')} ${f(14)}</div>
-<div>Mẹo: nhớ ${m('\\tfrac12QU')}, thay ${m('Q=CU')} ra hai dạng còn lại.</div>
-<div>Cùng một tụ (${m('C')} cố định): dùng ${f(16)} · đã ngắt nguồn (${m('Q')} giữ): dùng ${f(16)}</div>
+<div style="margin:.8mm 0;font-size:3.7mm">${m('W=\\tfrac12')}${f(12)} ${m('=\\tfrac12')}${f(12)} ${m('=')} ${f(14)} <span class="hint">(theo ${m('Q,U')} · ${m('C,U')} · ${m('Q,C')})</span></div>
+<div>Còn nối nguồn (${m('U')} giữ): dùng ${f(16)} · đã ngắt nguồn (${m('Q')} giữ): dùng ${f(16)}</div>
 <div>Vì sao có ½? Lúc nạp, ${m('U')} tăng dần từ ${f(8)}; ${m('W')} là diện tích ${f(20)} dưới đường ${m('Q')}–${m('U')}.</div>
 <div>Cùng một tụ, nạp ở ${m('U')} gấp đôi thì ${m('W')} gấp ${f(8)} lần.</div>
 <div><b>Ví dụ:</b> tụ flash ${uF(150)} nạp tới ${V(300)}: ${m('W=')} ${f(20)} J.</div></div>
@@ -141,7 +140,7 @@ ${h3(2, 'II.5 · Ghép tụ', '3·2')}
 ${H.ghep()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card fig-side" style="${fs(42)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“${m('C=Q/U')} nên tăng ${m('U')} thì ${m('C')} giảm.”</b> Sai: tụ đang nối 6 V đổi sang 12 V thì ${m('C')} ${f(16)}, chỉ ${m('Q')} ${f(16)}.</span></div>
+<div class="trap">${ck}<span><b>“${m('C=Q/U')} nên tăng ${m('U')} thì ${m('C')} giảm.”</b> Sai: tụ nối 6 V đổi sang 12 V: ${m('C')} ${f(20)}, chỉ ${m('Q')} ${f(20)}.</span></div>
 <div class="trap">${ck}<span><b>“Nối tiếp thì ${m('U')} chia đều.”</b> Sai: ${m('Q')} bằng nhau nên ${m('U_i=Q/C_i')}, tụ ${f(12)} gánh ${m('U')} lớn. ${uF(4)} nối tiếp ${uF(12)}: ${m('C=')} ${f(12)} µF.</span></div>
 <div class="trap">${ck}<span><b>Nối nguồn hay ngắt nguồn?</b> Còn nối: ${f(8)} giữ · đã ngắt: ${f(8)} giữ. Ngắt nguồn, kéo hai bản xa gấp đôi: ${m('C')} ${f(16)}, ${m('U')} ${f(16)}.</span></div></div>
 ${H.nguon()}</div>
@@ -190,17 +189,17 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Điện dung C = Q/U và đổi đơn vị',
     de: `Nối tụ A vào nguồn ${V('9{,}0')}; nạp đầy, tụ A tích ${uC(63)}. Tụ B có ghi “${u('4{,}7\\ \\mathrm{nF}')} – ${V(25)}”.<br><b>a)</b> điện dung tụ A, theo µF<br><b>b)</b> nối tụ A vào nguồn ${V(30)}: điện tích, theo µC<br><b>c)</b> điện tích lớn nhất tụ B tích được, theo nC`,
-    nd: `${m('C=Q/U')}; µC/V = ${f(10)}; nF·V = ${f(10)}; số vôn trên vỏ là ${f(25)}`, a: ['a', 'b', 'c'], gi: 2 },
+    nd: `${m('C=Q/U')}; µC/V = ${f(10)}; nF·V = ${f(10)}; số vôn trên vỏ là ${f(25)}`, a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 2 · Dễ · Năng lượng của tụ điện',
     de: `Tụ ${uF(50)} được nạp tới ${V(40)}.<br><b>a)</b> điện tích và năng lượng của tụ<br><b>b)</b> nạp tới ${V(80)}: năng lượng gấp bao nhiêu lần lúc đầu<br><b>c)</b> nạp tới bao nhiêu vôn để năng lượng là ${u('0{,}25\\ \\mathrm J')}`,
     nd: `đổi µF ra ${f(8)} thì ${m('W')} ra J; cùng tụ thì ${m('W')} tỉ lệ với ${f(12)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 3 },
   { t: 'Dạng 3 · Trung bình · Tụ phẳng: C theo cấu tạo, U tối đa',
     de: `Tụ phẳng: hai bản vuông cạnh ${u('30\\ \\mathrm{cm}')}, cách nhau ${u('2{,}0\\ \\mathrm{mm}')} trong không khí (${m('\\varepsilon=1')}); không khí chịu tối đa ${u('E_{\\max}=3\\cdot10^{6}\\ \\mathrm{V/m}')}.<br><b>a)</b> điện dung của tụ<br><b>b)</b> lấp đầy điện môi ${m('\\varepsilon=4')}: điện dung lúc này<br><b>c)</b> hiệu điện thế lớn nhất đặt vào tụ không khí mà không bị đánh thủng`,
-    nd: `${m('S=a^2')} đổi ra ${f(8)}, ${m('d')} ra ${f(8)}; ${m('U_{\\max}=')} ${f(14)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.tuVuong('30 cm', '2 mm', ''), cot: 3 },
+    nd: `${m('S=a^2')} đổi ra ${f(8)}, ${m('d')} ra ${f(8)}; ${m('U_{\\max}=')} ${f(14)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.tuVuong('30 cm', '2 mm', '') },
   { t: 'Dạng 4 · Trung bình · Ghép tụ hỗn hợp',
     de: `Ba tụ chưa tích điện ${m('C_1=5{,}0\\ \\mu\\mathrm F')}, ${m('C_2=20\\ \\mu\\mathrm F')}, ${m('C_3=6{,}0\\ \\mu\\mathrm F')}: ${C1} nối tiếp ${C2}, nhánh đó song song với ${C3}. Nối bộ vào nguồn ${V(60)}.<br><b>a)</b> điện dung của bộ<br><b>b)</b> điện tích của tụ ${C3}<br><b>c)</b> điện tích và hiệu điện thế của tụ ${C1}`,
     nd: `gộp nhánh ${f(14)} thành một tụ, rồi ${f(14)}; mỗi nhánh đều chịu ${f(10)} V`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 7, fig: H.honHop('') },
-  { t: 'Dạng 5 · Khá · Ngắt nguồn, kéo hai bản ra xa: năng lượng và công',
+  { t: 'Dạng 5 · Khó · Ngắt nguồn, kéo hai bản ra xa: năng lượng và công',
     de: `Tụ phẳng không khí ${m('C_0=40\\ \\mathrm{nF}')} nạp tới ${V(150)} rồi ngắt khỏi nguồn. Kéo hai bản ra xa đến khi khoảng cách tăng gấp ba.<br><b>a)</b> điện tích và năng lượng trước khi kéo<br><b>b)</b> hiệu điện thế và năng lượng sau khi kéo<br><b>c)</b> công cần thực hiện để kéo hai bản ra xa`,
     nd: `ngắt nguồn ⇒ ${f(8)} giữ; ${m('d')} gấp ba ⇒ ${m('C')} ${f(18)}; ${m('A=')} ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 8, fig: H.keoBan(''), cot: 3 },
 ];
@@ -216,7 +215,7 @@ const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
 const ttDe = (b) => b.fig ? `<div class="fig-side" style="grid-template-columns:1fr ${b.fw}mm">${`<div>${oY(b.de, b.o, b.ow)}</div>`}${b.fig}</div>` : oY(b.de, b.o, b.ow);
 const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: ttDe(b), k: 0 } : b));
 const nhap = (n) => ({ t: '<span class="nhap-t">Nháp / chỗ em còn vướng</span>', de: lines(n), k: 0 });
-const kk = '\\ (k=9\\cdot10^{9})';
+const kk = '\\ (k=9\\cdot10^{9}\\ \\mathrm{N\\cdot m^2/C^2})';
 const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
@@ -231,7 +230,7 @@ const tuongTu = {
     { t: 'Dạng 4 · Bài 1', de: `Ba tụ chưa tích điện: ${m('C_1=3\\ \\mu\\mathrm F')} nối tiếp ${m('C_2=6\\ \\mu\\mathrm F')}, nhánh đó song song với ${m('C_3=4\\ \\mu\\mathrm F')}; nguồn ${V(30)}.<br><b>a)</b> điện dung của bộ<br><b>b)</b> điện tích của ${C3}<br><b>c)</b> điện tích và hiệu điện thế của ${C1}`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: 20 },
     { t: 'Dạng 4 · Bài 2', de: `Ba tụ chưa tích điện: ${m('C_1=2\\ \\mu\\mathrm F')} song song ${m('C_2=4\\ \\mu\\mathrm F')}, cụm đó nối tiếp ${m('C_3=3\\ \\mu\\mathrm F')}; nguồn ${V(18)}.<br><b>a)</b> điện dung của bộ<br><b>b)</b> điện tích của ${C3}<br><b>c)</b> hiệu điện thế của ${C3}<br><b>d)</b> điện tích của ${C1}`, fig: H.honHop2(''), fw: 42, o: ['a', 'b', 'c', 'd'] },
     { t: 'Dạng 5 · Bài 1', de: `Tụ phẳng không khí ${u('20\\ \\mathrm{nF}')} nạp tới ${V(100)} rồi ngắt khỏi nguồn; kéo hai bản ra xa đến khi khoảng cách tăng gấp đôi.<br><b>a)</b> điện tích và năng lượng trước khi kéo<br><b>b)</b> hiệu điện thế và năng lượng sau khi kéo<br><b>c)</b> công cần thực hiện`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 20 },
-    { t: 'Dạng 5 · Bài 2', de: `Tụ phẳng có điện môi ${m('\\varepsilon=2')} lấp đầy, ${u('C_0=30\\ \\mathrm{nF}')}, nạp tới ${V(200)} rồi ngắt khỏi nguồn; rút tấm điện môi ra (còn không khí).<br><b>a)</b> điện tích và năng lượng lúc đầu<br><b>b)</b> hiệu điện thế và năng lượng sau khi rút<br><b>c)</b> công cần thực hiện để rút tấm điện môi`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 20 },
+    { t: 'Dạng 5 · Bài 2', de: `Tụ phẳng có điện môi ${m('\\varepsilon=2')} lấp đầy, ${u('C=30\\ \\mathrm{nF}')} (đã có điện môi), nạp tới ${V(200)} rồi ngắt khỏi nguồn; rút tấm điện môi ra (còn không khí).<br><b>a)</b> điện tích và năng lượng lúc đầu<br><b>b)</b> hiệu điện thế và năng lượng sau khi rút<br><b>c)</b> công cần thực hiện để rút tấm điện môi`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 20 },
     nhap(6),
   ]],
   dap: [
