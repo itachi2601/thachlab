@@ -54,14 +54,14 @@ def circuit(d, blade=0.0, vread="0,0 V", qread="0 μC", charge=0.0, mode=None, t
     # tu dien: ban + (tren), ban - (duoi, day hon)
     d.rectangle([480, 554, 600, 563], fill=WIRE)
     d.rectangle([480, 597, 600, 610], fill=WIRE)
-    text(d, (610, 556), "+", 40, RED, anchor="lm")
-    text(d, (610, 604), "−", 40, BLUE, anchor="lm")
-    text(d, (648, 556), "470 μF", 38, INK, anchor="lm")
-    text(d, (648, 606), "16 V", 38, INK, anchor="lm")
+    text(d, (620, 556), "+", 40, RED, anchor="lm")
+    text(d, (620, 604), "−", 40, BLUE, anchor="lm")
+    text(d, (656, 556), "470 μF", 38, INK, anchor="lm")
+    text(d, (656, 606), "16 V", 38, INK, anchor="lm")
     if charge > 0:
-        for x in (500, 580):
-            text(d, (x, 526), "+", 38, RED, alpha=charge)
-            text(d, (x, 640), "−", 38, BLUE, alpha=charge)
+        for x in (500, 572):           # cach nhan cuc +/- ben phai (ra soat 11/11)
+            text(d, (x, 522), "+", 38, RED, alpha=charge)
+            text(d, (x, 644), "−", 38, BLUE, alpha=charge)
     # nguon
     card(d, (60, 440, 280, 700), fill=BOXF, r=22)
     text(d, (170, 482), "nguồn", 38, WHITE)
@@ -181,17 +181,18 @@ def s_dapan(img, d, t, sc):
     card(d, (W - 60 - pw, 234, W - 60, 298), fill=A(NAVY, ka), r=32)
     text(d, (W - 60 - pw / 2, 266), lab, 40, WHITE, alpha=ka)
     card(d, (40, 320, 1040, 970), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (1000, 362), "số liệu mô phỏng", 36, MUTED, bold=False, anchor="rm")
+    text(d, (1000, 362), "số liệu mô phỏng", 38, MUTED, bold=False, anchor="rm")
     d.line([(GX0, GY1 - 30), (GX0, GY0)], fill=NAVY, width=4); d.line([(GX0, GY0), (GX1 + 30, GY0)], fill=NAVY, width=4)
     arrow(d, (GX0, GY1 - 10), (GX0, GY1 - 34), NAVY, w=4, head=16); arrow(d, (GX1 + 10, GY0), (GX1 + 34, GY0), NAVY, w=4, head=16)
     text(d, (GX0 + 20, GY1 - 40), "Q (μC)", 38, INK, anchor="lm")
     text(d, (1000, GY0 - 44), "U (V)", 38, INK, anchor="rm")
     for u in (2, 4, 6, 8, 10):
         d.line([(gx(u), GY0), (gx(u), GY0 + 12)], fill=NAVY, width=3); text(d, (gx(u), GY0 + 40), str(u), 38, MUTED, bold=False)
-    kd = appear(t, M[0] + 1.6, 0.4)                # duong dong diem (10 V ; 4800 uC); nhan 4000 tat khi 4800 hien
+    kd = appear(t, M[0] + 1.6, 0.4)                # duong dong diem (10 V ; 4800 uC); vach + nhan 4000 tat khi 4800 hien
     for q in (2000, 4000):
-        d.line([(GX0 - 12, gy(q)), (GX0, gy(q))], fill=NAVY, width=3)
-        text(d, (GX0 - 20, gy(q)), str(q), 38, MUTED, bold=False, anchor="rm", alpha=1 - kd if q == 4000 else 1)
+        k = 1 - kd if q == 4000 else 1
+        d.line([(GX0 - 12, gy(q)), (GX0, gy(q))], fill=A(NAVY, k), width=3)
+        text(d, (GX0 - 20, gy(q)), str(q), 38, MUTED, bold=False, anchor="rm", alpha=k)
     kl = appear(t, M[0] + 0.6, 0.8)                # duong thang qua goc, he so goc 480 uF
     if kl > 0:
         u1 = 10.5 * kl
@@ -252,7 +253,7 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
-    """Chot (khong tra loi cau hoi) -> THU NGHI: nap tu nay o 12 V thi Q bao nhieu (Q = C.U); goi y tre 2,5 s."""
+    """Chot (khong tra loi cau hoi) -> THU NGHI: nap tu nay o 12 V thi Q bao nhieu; goi y trung tinh (12 V < 16 V), tre 2,5 s."""
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 260, 1020, 540), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
     ctext(d, 400, "Q/U không đổi: đó là điện dung C của tụ", 50, GREEN, maxw=880, alpha=k0)
@@ -264,10 +265,14 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 662), "THỬ NGHĨ", 38, WHITE, alpha=k1)
     ctext(d, 880, "Nạp tụ này ở 12 V thì\nđiện tích Q khoảng\nbao nhiêu μC?", 50, INK, maxw=920,
           alpha=appear(t, M[0] + 0.9, 0.5))
-    kh = appear(t, M[0] + 0.9 + 2.5, 0.5)
-    card(d, (110, 1140, 970, 1480), fill=A((255, 247, 237), kh), r=24)
-    ctext(d, 1215, "Gợi ý", 40, INK, alpha=kh)
-    ctext(d, 1340, "Q = C · U", 56, ORANGE, maxw=820, alpha=kh)
+    th = M[0] + 0.9; kh = appear(t, th + 2.5, 0.5)      # khung goi y hien cung cau hoi, thanh dem 2,5 s roi moi hien chu
+    card(d, (110, 1140, 970, 1480), fill=A((255, 247, 237), k1), r=24)
+    ctext(d, 1215, "Gợi ý", 40, INK, alpha=k1)
+    if t > th and kh < 1:
+        p = clamp((t - th) / 2.5); kb = k1 * (1 - kh)
+        d.rounded_rectangle([200, 1334, 880, 1346], radius=6, fill=A(LIGHT, kb))
+        d.rounded_rectangle([200, 1334, 200 + 680 * (1 - p), 1346], radius=6, fill=A(ORANGE, kb))
+    ctext(d, 1350, "12 V vẫn dưới 16 V\nghi trên vỏ tụ", 48, (154, 52, 18), maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

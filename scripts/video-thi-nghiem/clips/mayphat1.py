@@ -51,21 +51,24 @@ def rig(d, t, n, ang, reading, lit):
     rotor(d, RX, RY, RR, ang, mark=True)
     if n: arrow(d, (RX + RR + 70, RY - 70), (RX + RR + 70, RY + 40), ORANGE, w=6, head=18)
     text(d, (RX, RY + RR + 90), "rô-to: p = 2 cặp cực", 36, NAVY)
-    # day noi: cuon day -> tan so ke, song song -> bong den
-    cable(d, [l1, (l1[0], 490), (600, 490)])
-    cable(d, [l2, (l2[0], 520), (580, 520), (580, 660), (805, 660), (805, 690)])
+    # day noi: hai dau cuon day -> hai cuc tan so ke; tu hai cuc do noi tiep sang hai cuc den (song song voi cuon day)
+    # day ngoai (490) bao quanh day trong (520) de khong cat nhau; doan sau the tan so ke bi the che
+    cable(d, [l1, (l1[0], 490), (1050, 490), (1050, 850), (815, 850)])
+    cable(d, [l2, (l2[0], 520), (1020, 520), (1020, 826), (815, 826)])
     # nhan toc do
     card(d, (60, 265, 560, 455), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (310, 310), "Tốc độ quay", 36, MUTED, bold=False)
-    text(d, (310, 385), f"n = {n} vòng/s" if n else "n = 0", 54, BLUE)  # n: so (vong/s) hoac "···" khi dang tang toc
-    if n: text(d, (310, 432), "(quay chậm lại)", 36, MUTED, bold=False)
+    text(d, (310, 385), "n đang tăng…" if n == "···" else f"n = {n} vòng/s" if n else "n = 0", 54, BLUE)  # n: so hoac "···" khi dang tang toc
+    if n: text(d, (310, 432), "(chiếu chậm)", 36, MUTED, bold=False)
     # tan so ke
     card(d, (600, 265, 1010, 600), fill=WHITE, outline=LIGHT, r=28, w=4)
     text(d, (805, 310), "Tần số kế", 36, MUTED, bold=False)
     d.rounded_rectangle([630, 350, 980, 470], radius=16, fill=NAVY)
     text(d, (805, 410), reading, 66, (134, 239, 172))
     text(d, (805, 520), "Hz", 40, MUTED)
-    text(d, (805, 568), "sai số ±0,1 Hz", 36, MUTED, bold=False)
+    text(d, (805, 568), "±0,1 Hz", 36, MUTED, bold=False)
+    for yy in (490, 520):   # hai day cham hai cuc tan so ke (cac cuc o mep the): tan so ke mac song song voi cuon day
+        dot(d, 600, yy, 11, NAVY); dot(d, 1010, yy, 11, NAVY)
     # bong den nho mac song song
     if lit > 0:
         for rr, al in ((120, 0.18), (90, 0.28), (66, 0.4)):
@@ -94,7 +97,7 @@ def s_hook(img, d, t, sc):
     if q < 1: d.rounded_rectangle([140, 1540, 140 + 800 * (1 - q), 1554], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: tien hanh, ghi bang ----------------
-RAMP = 0.6
+RAMP = 0.4   # tang toc ngan de so tan so ke moi lan dung lau hon (hang 2-5 cach nhau ~1 s)
 def row_at(i, sc):
     M = sc["M"]
     return [M[1] + 0.5, M[2] + 0.6, M[2] + 1.6, M[2] + 2.6, M[3] + 0.7][i]
@@ -186,7 +189,7 @@ def s_ans(img, d, t, sc):
     c = appear(t, M[2] + 0.2, 0.3)
     card(d, (130, 1360, 950, 1550), fill=A((220, 252, 231), c), r=24)
     ctext(d, 1415, "f/n ≈ 2 = số cặp cực p", 50, GREEN, alpha=c)
-    ctext(d, 1495, "lệch chút: quay không đều", 40, MUTED, bold=False, alpha=c)
+    ctext(d, 1495, "lệch: quay không đều", 40, MUTED, bold=False, alpha=c)
 
 # ---------------- canh 4: co che - moi vong cho p chu ki ----------------
 WX0, WX1, WY = 150, 950, 1110
@@ -228,7 +231,7 @@ def s_trap(img, d, t, sc):
     b = appear(t, 0.3)
     if b <= 0: return
     card(d, (60, 560, 1020, 1590), fill=A(WHITE, b), outline=A(RED, b), w=6)
-    text(d, (W / 2, 615), "Bẫy: đếm cực thay vì cặp cực", 44, RED, alpha=b)
+    text(d, (W / 2, 615), "Bẫy: em lấy p bằng mấy?", 44, RED, alpha=b)
     cx, cy, r = W / 2, 860, 150
     rotor(d, cx, cy, r, 45, a=b)   # xoay 45 do: cap 1 = nua phai (N tren + S duoi), cap 2 = nua trai (N duoi + S tren)
     g = appear(t, M[2] - 0.2)
@@ -242,7 +245,10 @@ def s_trap(img, d, t, sc):
     c1 = appear(t, M[1] + 0.4)
     text(d, (W / 2, 1110), "4 cực → lấy p = 4", 42, RED, alpha=c1)
     text(d, (W / 2, 1180), "f = 25 × 4 = 100 Hz  ✗", 46, RED, alpha=c1)
-    c2 = appear(t, M[2] + 0.4)
+    c2, cq = appear(t, M[2] + 0.4), appear(t, 1.2) * b
+    if c2 < 1:   # o cho: hoi p that bang may, toi khi hien dap so
+        card(d, (110, 1250, 970, 1550), fill=A((241, 245, 249), cq * (1 - c2)), outline=A(LIGHT, cq * (1 - c2)), r=24, w=3)
+        ctext(d, 1400, "p = ?", 60, MUTED, alpha=cq * (1 - c2))
     card(d, (110, 1250, 970, 1550), fill=A((220, 252, 231), c2), r=24)
     ctext(d, 1320, "p = 2", 52, GREEN, alpha=c2)
     ctext(d, 1400, "f = 25 × 2 = 50 Hz  ✓", 50, GREEN, alpha=c2)
@@ -252,7 +258,7 @@ def s_end(img, d, t, sc):
     IMG_REF[0] = img
     chot_hoi(d, t, sc, "f = n·p (n vòng/s, p cặp cực)",
              "p = 2, quay 900 vòng/phút. Tần số bằng bao nhiêu?",
-             "đổi ra vòng/s")
+             "đơn vị của n")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

@@ -159,3 +159,6 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - lesson 11 · tn-l12-luctu-06 · clip luctu6 · hai lá nhôm mang dòng: cùng chiều hút, hai lực bằng nhau dù I1 ≠ I2 · 48,6 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261112.mp4
 - lesson 13 · tn-l12-camungdt-05 · clip camungdt5 · thanh trượt e = Bℓv, Lenz, công suất kéo = công suất nhiệt · 49,6 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261112.mp4
 - lesson 127 · tn-l12-dttruong-05 · clip dttruong5 · mô hình sóng điện từ: E, B cùng pha, E ⊥ B ⊥ phương truyền · 49,3 s · 1,66 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-05-20261112.mp4
+## Ghi nhận rà cổng tự động 11–12/11/2026 (chưa sửa mp4)
+
+- thuchanhtu4 (bản 2, clip làm dở ở phiên khác): mật độ chữ 285 từ/phút (> 200); JSON khung `tong_giay` 48,1 s lệch engine 49,9 s → tải bản 2 mà không chạy lại `xuat-khung.py` thì điểm dừng sai. Chưa sửa; xử lý khi phiên đó chốt clip. · 12/11/2026
