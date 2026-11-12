@@ -47,15 +47,15 @@ export const hinhL12c3b11 = {
     b += T(214, 80, `${gk('θ')}`, { c: RED, w: 700 }) + dot(160, 95, 4);
     return wrap('0 0 320 186', b, cap, 'Dây nghiêng góc θ so với đường sức từ');
   },
-  // Lưới vẽ đồ thị Δm–I: I 0–5,0 A (vạch 1 A, lưới mịn 0,2 A); Δm 0–3,0 g (vạch 0,5 g, lưới mịn 0,1 g)
+  // Lưới vẽ đồ thị Δm–I: I 0–5,0 A (vạch 1 A, lưới mịn 0,2 A); Δm 0–3,5 g (vạch 0,5 g, lưới mịn 0,1 g)
   luoi: (cap = 'Vẽ đường thẳng đi qua các điểm đo, nét đặc; lấy hai điểm A, B nằm trên đường (không nhất thiết là điểm đo).') => {
-    const X0 = 62, Y0 = 296, W = 400, H = 240;
+    const X0 = 62, Y0 = 296, W = 400, H = 245;   // 7 đơn vị/0,1 g → 3,5 g
     let b = '';
     for (let i = 0; i <= 25; i++) b += ln(X0 + i * 16, Y0, X0 + i * 16, Y0 - H, '#d3dbec', i % 5 === 0 ? 1.1 : .5);
-    for (let j = 0; j <= 30; j++) b += ln(X0, Y0 - j * 8, X0 + W, Y0 - j * 8, '#d3dbec', j % 5 === 0 ? 1.1 : .5);
+    for (let j = 0; j <= 35; j++) b += ln(X0, Y0 - j * 7, X0 + W, Y0 - j * 7, '#d3dbec', j % 5 === 0 ? 1.1 : .5);
     b += `<rect x="${X0}" y="${Y0 - H}" width="${W}" height="${H}" fill="none" stroke="${INK}" stroke-width="2.2"/>`;
     for (let i = 0; i <= 5; i++) b += ln(X0 + i * 80, Y0, X0 + i * 80, Y0 + 8, INK, 2.2) + T(X0 + i * 80, Y0 + 28, `${i}`, { a: 'middle', size: 16 });
-    for (let j = 0; j <= 6; j++) b += ln(X0 - 8, Y0 - j * 40, X0, Y0 - j * 40, INK, 2.2) + T(X0 - 12, Y0 - j * 40 + 6, j === 0 ? '0' : `${Math.floor(j / 2)},${j % 2 ? 5 : 0}`, { a: 'end', size: 16 });
+    for (let j = 0; j <= 7; j++) b += ln(X0 - 8, Y0 - j * 35, X0, Y0 - j * 35, INK, 2.2) + T(X0 - 12, Y0 - j * 35 + 6, j === 0 ? '0' : `${Math.floor(j / 2)},${j % 2 ? 5 : 0}`, { a: 'end', size: 16 });
     b += T(X0 + W, Y0 + 52, `${gk('I')} (A)`, { a: 'end', size: 18, w: 700 }) + T(8, Y0 - H - 14, `${gk('Δ')}${gk('m')} (g)`, { size: 18, w: 700 });
     return wrap('0 0 480 360', b, cap, 'Lưới vẽ đồ thị Δm theo I');
   },

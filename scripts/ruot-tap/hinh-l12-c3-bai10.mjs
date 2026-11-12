@@ -56,14 +56,14 @@ export const hinhL12c3b10 = {
   },
   // ===== Trang 2 =====
   // Cân dòng điện: nam châm trên cân, dây MN (cắt ngang) kẹp trên giá riêng nằm trong khe N → S
-  canDong: (cap = 'MN cắt ngang, dòng chạy vào trang.') => {
+  canDong: (cap = 'MN cắt ngang, dòng chạy ra khỏi trang.') => {
     let b = defs('cd1');
     b += `<rect x="20" y="176" width="250" height="34" rx="5" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(34, 199, 'cân');
     b += `<rect x="150" y="182" width="108" height="22" rx="3" fill="#fff" stroke="${INK}" stroke-width="2"/>` + T(250, 200, '…, … g', { a: 'end', w: 700 });
     b += `<path d="M40,176 L40,96 L86,96 L86,150 L194,150 L194,96 L240,96 L240,176 Z" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += T(63, 132, 'N', { a: 'middle', w: 700, size: 24 }) + T(217, 132, 'S', { a: 'middle', w: 700, size: 24 });
     b += arr(92, 108, 186, 108, 'cd1', GREY, '6 5', 2) + arr(92, 136, 120, 136, 'cd1', GREY, '6 5', 2) + arr(160, 136, 186, 136, 'cd1', GREY, '6 5', 2);
-    b += ln(140, 6, 140, 110, GREY, 6) + ln(100, 6, 180, 6, INK, 4) + vao(140, 124, 12, INK) + T(140, 166, 'MN', { a: 'middle', w: 700 });
+    b += ln(140, 6, 140, 110, GREY, 6) + ln(100, 6, 180, 6, INK, 4) + ra(140, 124, 12, INK) + T(140, 166, 'MN', { a: 'middle', w: 700 });
     b += T(250, 60, 'giá', { a: 'middle' }) + ln(180, 6, 250, 6, INK, 4) + ln(250, 6, 250, 40, INK, 4);
     return wrap('0 0 290 216', b, cap, 'Cân dòng điện: nam châm chữ U đặt trên cân, dây MN nằm trong khe');
   },

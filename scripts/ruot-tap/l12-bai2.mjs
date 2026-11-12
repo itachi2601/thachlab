@@ -134,14 +134,14 @@ ${H.doThiP()}</div>
 ${h3(2, 'II.4 · Thang Fahrenheit', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Hai mốc nước: nước đá đang tan ${nw(`${f(12)} ${oF}`)}, hơi nước đang sôi ${nw(`${f(12)} ${oF}`)}; khoảng giữa chia ${f(12)} khoảng.</div>
-<div>Một độ chia ${oC} ứng với ${nw(`${f(12)} : 100 = ${f(10)}`)} độ chia ${oF}.</div>
+<div>Một độ chia ${oC} ứng với ${nw(`${f(12)} : 100 = ${f(12)}`)} độ chia ${oF}.</div>
 <div style="display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;margin-top:.6mm"><span>${m('t_F=')} ${tall(30)}</span><span>${m('t_C=')} ${tall(30)}</span></div>
 </div>
 ${h3(3, 'Bảng đổi giữa ba thang', '3·3')}
 <table><tr><th style="width:36mm">Muốn đổi</th><th>Làm gì</th></tr>
 <tr><td>${oC} → K</td><td></td></tr><tr><td>K → ${oC}</td><td></td></tr><tr><td>${oC} → ${oF}</td><td></td></tr><tr><td>${oF} → ${oC}</td><td></td></tr>
 <tr><td>K ↔ ${oF}</td><td></td></tr>
-<tr><td style="height:9mm">Khoảng chênh</td><td>${m('\\Delta T')} (K) = ${f(18)} &nbsp; ${m('\\Delta t_F')} (${oF}) = ${f(22)}</td></tr></table>
+<tr><td style="height:9mm">Khoảng chênh</td><td>${m('\\Delta T')} (K) = ${f(25)} &nbsp; ${m('\\Delta t_F')} (${oF}) = ${f(25)}</td></tr></table>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -158,8 +158,8 @@ ${H.hongNgoai()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '4·3')}
 <div class="card" style="padding:.6mm 3mm">
 <div class="trap">${ck}<span><b>“Nhiệt truyền từ vật nhiều nhiệt năng hơn.”</b> Chiều truyền do <b>nhiệt độ</b> quyết định.</span></div>
-<div class="trap">${ck}<span><b>“${dC('0')} là ${dK('0')}.”</b> Hai thang khác gốc; “${dC('20')} gấp đôi ${dC('10')}” vô nghĩa, so tỉ số phải đổi ra K.</span></div>
-<div class="trap">${ck}<span><b>“Đổi thang chỉ cần cộng trừ.”</b> 100 độ chia Celsius ứng 180 độ chia Fahrenheit; khoảng chênh không cộng 273, không cộng 32.</span></div>
+<div class="trap">${ck}<span><b>“${dC('0')} là ${dK('0')}.”</b> Hai thang khác gốc; so tỉ số nhiệt độ phải đổi ra K.</span></div>
+<div class="trap">${ck}<span><b>“Khoảng chênh cũng cộng 273 (hay 32).”</b> Sai: khoảng chênh không cộng 273, không cộng 32.</span></div>
 </div>
 ${h3(4, 'IV · Trả bài 6 câu', '4·4')}
 ${box(`${tb('1. Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào?')}${lines(1)}
@@ -168,6 +168,7 @@ ${tb('3. Độ không tuyệt đối bằng bao nhiêu °C? Nhiệt độ điể
 ${tb('4. Công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết “°K”?')}${lines(1)}
 ${tb('5. Khoảng chênh 10 °C bằng bao nhiêu K, bao nhiêu °F? Vì sao khác nhau?')}${lines(1)}
 ${tb('6. Kể tên các loại nhiệt kế và tính chất mỗi loại dựa vào.')}${lines(1)}`)}
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
@@ -183,7 +184,7 @@ ${H.loNuong()}</div>
 ${wl('a)', 1)}${wl('b)', 2)}${wl(`c) giá trị hay khoảng chênh? ${m('\\Delta t=')}`, 2)}${wl('d)', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
-${box(wl(`${m('\\bigstar')} Nước đá đang tan ở ${dC('0')}. Đổi sang K và ${oF}.`, 1)
+${box(wl(`${m('\\bigstar')} Nước đá đang tan ở ${dC('0')}. Đổi sang K và ${oF} ${dung3}.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Vì sao công thức chất khí dùng kelvin mà không dùng độ C?`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Nhiệt kế hồng ngoại đo trán được ${dC('36{,}5')}, nhưng bắn vào mảnh giấy bạc dán trên trán chỉ được ${dC('30')}. Vì sao?`, 1))}
 ${foot(5)}</section>`;
@@ -191,22 +192,22 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Chiều truyền nhiệt năng và cân bằng nhiệt',
     de: `Bi thép nhỏ ở ${dC('120')} thả vào bể nước rất lớn ở ${dC('25')} (bể có nhiều nhiệt năng hơn bi).<br><b>a)</b> viên bi nóng hơn nước bao nhiêu độ<br><b>b)</b> nhiệt năng truyền theo chiều nào<br><b>c)</b> truyền nhiệt dừng khi nào; lúc đó hai vật ở trạng thái gì`,
-    nd: `Chiều truyền do ${f(20)} quyết định, không do lượng nhiệt năng hay khối lượng`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3, fig: H.trongBe('Bể lớn, cách nhiệt.') },
+    nd: `Chiều truyền do ${f(20)} quyết định, không do lượng nhiệt năng hay khối lượng`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4, fig: H.trongBe('Bể lớn, cách nhiệt.') },
   { t: 'Dạng 2 · Dễ · Đổi giữa thang Celsius và thang Kelvin',
-    de: `Dùng ${cK} (${m('T')} tính bằng K, ${m('t')} bằng ${oC}).<br><b>a)</b> thân nhiệt ${dC('37')} theo K; <b>b)</b> heli sôi ở ${dK('4{,}22')} theo ${oC}<br><b>c)</b> thuỷ ngân đông đặc ở ${dC('-39')} theo K<br><b>d)</b> bạn báo đo được ${dC('-300')}: có đáng tin không, vì sao`,
-    nd: `${oC} → K: ${f(16)}; K → ${oC}: ${f(16)}; kelvin không bao giờ ${f(12)}`, a: ['a', 'b', 'c', 'd'], gi: 4 },
+    de: `Dùng ${cK}; ${dK('0')} là nhiệt độ thấp nhất có thể có.<br><b>a)</b> thân nhiệt ${dC('37')} ra K; <b>b)</b> heli sôi ở ${dK('4{,}22')} ra ${oC}; <b>c)</b> thuỷ ngân đông ở ${dC('-39')} ra K<br><b>d)</b> bạn báo đo được ${dC('-300')}: có đáng tin không, vì sao`,
+    nd: `${oC} → K: ${f(16)}; K → ${oC}: ${f(16)}; kelvin không bao giờ ${f(12)}`, a: ['a', 'b', 'c', 'd'], gi: 5 },
   { t: 'Dạng 3 · Trung bình · Đổi giữa ba thang Celsius, Kelvin, Fahrenheit',
-    de: `${dung2}<br><b>a)</b> công thức bánh của Mỹ ghi nướng ở ${dF('374')}: tính theo ${oC}<br><b>b)</b> nhiệt kế y tế hiện ${dF('98{,}6')}: thân nhiệt theo ${oC}, rồi theo K<br><b>c)</b> phòng thí nghiệm ghi nhiệt độ phòng ${dK('293')}: tính theo ${oF}`,
-    nd: `${oF} → ${oC}: trừ ${f(10)} rồi chia ${f(10)}; K ↔ ${oF} phải đi qua ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `${dung2} <b>a)</b> bánh Mỹ ghi nướng ở ${dF('374')}: tính theo ${oC}<br><b>b)</b> nhiệt kế y tế hiện ${dF('98{,}6')}: thân nhiệt theo ${oC}, rồi theo K<br><b>c)</b> phòng thí nghiệm ghi nhiệt độ phòng ${dK('293')}: tính theo ${oF}`,
+    nd: `${oF} → ${oC}: trừ ${f(10)} rồi chia ${f(10)}; K ↔ ${oF} phải đi qua ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
   { t: 'Dạng 4 · Trung bình · Khoảng chênh nhiệt độ trên ba thang',
-    de: `Hà Nội một ngày: thấp nhất ${dC('17')}, cao nhất ${dC('29')}. ${dung2}<br><b>a)</b> chênh lệch cao nhất – thấp nhất theo ${oC}<br><b>b)</b> chênh lệch đó theo K và theo ${oF}<br><b>c)</b> bạn An lấy kết quả câu a cộng thêm 273 để ra kelvin: chỉ ra chỗ sai`,
-    nd: `${nw(`${m('\\Delta T=')} ${f(12)}`)}; ${nw(`${m('\\Delta t_F=')} ${f(14)}`)}; không cộng ${f(10)}, ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `Hà Nội một ngày: thấp nhất ${dC('17')}, cao nhất ${dC('29')}. ${dung2}<br><b>a)</b> chênh lệch cao nhất – thấp nhất theo ${oC}; <b>b)</b> chênh lệch đó theo K và ${oF}<br><b>c)</b> bạn An lấy kết quả câu a cộng thêm 273 để ra kelvin: chỉ ra chỗ sai`,
+    nd: `${nw(`${m('\\Delta T=')} ${f(12)}`)}; ${nw(`${m('\\Delta t_F=')} ${f(14)}`)}; không cộng ${f(10)}, ${f(10)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
   { t: 'Dạng 5 · Khó · So sánh nhiệt độ khác thang, chiều truyền nhiệt',
-    de: `Ba vật tiếp xúc nhau, cách nhiệt với bên ngoài: A chỉ ${dF('68')}, B chỉ ${dK('293')}, C chỉ ${dC('25')}.<br><b>a)</b> đổi nhiệt độ vật A và vật B về ${oC} ${dung3}<br><b>b)</b> xếp ba vật theo nhiệt độ tăng dần<br><b>c)</b> cặp vật nào không trao đổi nhiệt với nhau ngay từ đầu<br><b>d)</b> nhiệt năng truyền từ vật nào sang vật nào`,
-    nd: `Đổi về cùng ${f(12)}; bằng nhau thì ${f(18)}; khác: từ ${f(10)} sang ${f(10)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], cot: 5, gi: 4, fig: H.baVat() },
+    de: `Ba vật tiếp xúc nhau, cách nhiệt với bên ngoài: A chỉ ${dF('68')}, B chỉ ${dK('293')}, C chỉ ${dC('25')}.<br><b>a)</b> đổi nhiệt độ vật A và vật B về ${oC} ${dung3}<br><b>b)</b> xếp ba vật theo nhiệt độ tăng dần; <b>c)</b> cặp nào không trao đổi nhiệt ngay từ đầu<br><b>d)</b> nhiệt năng truyền từ vật nào sang vật nào`,
+    nd: `Đổi về cùng ${f(12)}; bằng nhau thì ${f(18)}; khác: từ ${f(10)} sang ${f(10)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], cot: 5, gi: 5, fig: H.baVat() },
   { t: 'Dạng 6 · Nâng cao · Lập phương trình giữa hai thang',
-    de: `Dùng ${cF} (${m('t')}: số đọc ${oC}) và ${cK}.<br><b>a)</b> ở nhiệt độ nào số đọc ${oF} gấp đôi số đọc ${oC}<br><b>b)</b> ở nhiệt độ nào hai thang ${oF} và ${oC} cho cùng một số đọc<br><b>c)</b> ở nhiệt độ nào (tính theo K) số đọc ${oC} bằng một nửa số đọc K`,
-    nd: `Viết cả hai số đọc theo cùng một ẩn: “${oF} gấp đôi ${oC}” ⇒ ${nw(`${f(22)} = 2t`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Dùng ${cF}, ${cK}. <b>a)</b> ở nhiệt độ nào số đọc ${oF} gấp đôi số đọc ${oC}<br><b>b)</b> ở nhiệt độ nào hai thang ${oF} và ${oC} cho cùng một số đọc<br><b>c)</b> ở nhiệt độ nào (tính theo K) số đọc ${oC} bằng một nửa số đọc K`,
+    nd: `Viết cả hai số đọc theo cùng một ẩn: “${oF} gấp đôi ${oC}” ⇒ ${nw(`${f(22)} = 2t`)}`, a: ['a', 'b', 'c'], gi: 4 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
@@ -225,8 +226,8 @@ const tuongTu = {
   trang: [[
     { t: 'Dạng 1 · Bài 1', de: `Thả cục nước đá ở ${dC('-10')} vào cốc nước ${dC('30')}; cốc cách nhiệt với bên ngoài.<br><b>a)</b> nước nóng hơn nước đá bao nhiêu độ<br><b>b)</b> nhiệt năng truyền theo chiều nào<br><b>c)</b> truyền nhiệt dừng khi nào; lúc đó hai vật ở trạng thái gì`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], ow: { a: 16, b: 32, 'c<sub>1</sub>': 30, 'c<sub>2</sub>': 28 } },
     { t: 'Dạng 1 · Bài 2', de: `Viên sỏi ${dC('15')} đặt lên tảng băng lớn ${dC('-5')} trong thùng cách nhiệt. Bình nói: “Băng nhiều nhiệt năng hơn nên nhiệt truyền từ băng sang sỏi.”<br><b>a)</b> sỏi và băng chênh nhau bao nhiêu độ<br><b>b)</b> nhiệt năng thật sự truyền theo chiều nào<br><b>c)</b> Bình sai ở đâu`, fig: H.trongBe('Thùng cách nhiệt.', 'sỏi 15 °C', 'băng −5 °C'), fw: 32, o: ['a', 'b', 'c'], ow: { a: 16, b: 34, c: 40 } },
-    { t: 'Dạng 2 · Bài 1', de: `Dùng ${cK}.<br><b>a)</b> nước sôi ở ${dC('100')} theo K<br><b>b)</b> nitơ lỏng sôi ở ${dK('77')} theo ${oC}<br><b>c)</b> nhiệt độ thấp nhất đo được ở Nam Cực ${dC('-89')} theo K<br><b>d)</b> bạn báo đo được ${dC('-280')}: có đáng tin không`, o: ['a', 'b', 'c', 'd'], ow: { d: 34 } },
-    { t: 'Dạng 2 · Bài 2', de: `Dùng ${cK}.<br><b>a)</b> bề mặt Mặt Trời khoảng ${dK('5800')} theo ${oC}<br><b>b)</b> phòng học ${dC('27')} theo K<br><b>c)</b> ôxi lỏng sôi ở ${dC('-183')} theo K<br><b>d)</b> nhiệt độ thấp nhất có thể có, tính theo ${oC} (làm tròn)`, o: ['a', 'b', 'c', 'd'] },
+    { t: 'Dạng 2 · Bài 1', de: `Dùng ${cK}; không có nhiệt độ dưới ${dK('0')}.<br><b>a)</b> nước sôi ở ${dC('100')} theo K<br><b>b)</b> nitơ lỏng sôi ở ${dK('77')} theo ${oC}<br><b>c)</b> nhiệt độ thấp nhất đo được ở Nam Cực ${dC('-89')} theo K<br><b>d)</b> bạn báo đo được ${dC('-280')}: có đáng tin không`, o: ['a', 'b', 'c', 'd'], ow: { d: 34 } },
+    { t: 'Dạng 2 · Bài 2', de: `Dùng ${cK}; không có nhiệt độ dưới ${dK('0')}.<br><b>a)</b> bề mặt Mặt Trời khoảng ${dK('5800')} theo ${oC}<br><b>b)</b> phòng học ${dC('27')} theo K<br><b>c)</b> ôxi lỏng sôi ở ${dC('-183')} theo K<br><b>d)</b> nhiệt độ thấp nhất có thể có, tính theo ${oC} (làm tròn)`, o: ['a', 'b', 'c', 'd'] },
     { t: 'Dạng 3 · Bài 1', de: `${dung2}<br><b>a)</b> lò nướng đặt ${dF('356')}: tính theo ${oC}<br><b>b)</b> nhiệt kế y tế hiện ${dF('100{,}4')}: thân nhiệt theo ${oC}, rồi theo K<br><b>c)</b> ngăn đá tủ lạnh ${dK('263')}: tính theo ${oF}`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 20 },
     { t: 'Dạng 3 · Bài 2', de: `${dung2}<br><b>a)</b> nước hồ bơi ${dF('86')}: tính theo ${oC}<br><b>b)</b> một đêm mùa đông ở Canada ${dF('-4')}: tính theo ${oC}, rồi theo K<br><b>c)</b> nước ấm pha trà ${dK('353')}: tính theo ${oF}`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 20 },
   ], [
