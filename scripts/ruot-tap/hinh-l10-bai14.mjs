@@ -38,7 +38,7 @@ const thung = (cap, { nhan = 'T = 50 N', xuong = false, v = true, id = 'th' } = 
     b += arr(x0, y0, f1(ex), f1(ey), id + 'a', RED) + T(ex - 4, ey - 8, nhan, { c: RED, w: 700, a: 'end' });
     b += ln(x0, y0, x0 + 70, y0, GREY, 2, '5 4') + cung(x0, y0, 36, 0, 36.87) + T(x0 + 42, y0 - 6, gk('α'));
   } else { // đẩy từ phía sau, chếch xuống: lực đặt vào góc trên-trái của thùng
-    const x1 = 110, y1 = 110, L = 96, sx = x1 - L * 0.8, sy = y1 - L * 0.6;
+    const x1 = 106, y1 = 106, L = 90, sx = x1 - L * 0.8, sy = y1 - L * 0.6;
     b += arr(f1(sx), f1(sy), x1, y1, id + 'a', RED) + T(sx, sy - 8, nhan, { c: RED, w: 700 });
     b += ln(x1 - 76, y1, x1, y1, GREY, 2, '5 4') + cung(x1, y1, 36, 180, 143.13) + T(x1 - 60, y1 - 4, gk('α'));
   }
@@ -56,8 +56,8 @@ const oTo = (cap, { taiXe = false, id = 'ot', biet = ['Fk', 'P'] } = {}) => {
   const cx = taiXe ? 158 : 160, cy = 118, phai = taiXe ? 246 : 210, trai = taiXe ? 70 : 110;
   const co = (k) => biet.includes(k);
   b += co('Fk') ? arr(phai, cy, phai + 50, cy, id + 'a', RED) + T(phai + 52, cy - 12, `F${sb('k')}`, { c: RED, w: 700, a: 'end' }) : T(phai + 6, cy - 6, `F${sb('k')} ?`, { w: 700 });
-  b += co('Fc') ? arr(trai, cy, trai - 50, cy, id + 'b', INK, '6 4') + T(trai - 52, cy - 12, `F${sb('c')}`, { w: 700 }) : T(trai - 6, cy - 6, `F${sb('c')} ?`, { w: 700, a: 'end' });
-  b += co('P') ? arr(cx, cy, cx, cy + 58, id + 'a', RED) + T(cx + 8, cy + 58, 'P', { c: RED, w: 700 }) : '';
+  b += co('Fc') ? arr(trai, cy, trai - 50, cy, id + 'b', INK, '6 4') + T(trai - 50, cy - 20, `F${sb('c')}`, { w: 700 }) : T(trai - 6, cy - 6, `F${sb('c')} ?`, { w: 700, a: 'end' });
+  b += co('P') ? arr(cx, cy, cx, cy + 58, id + 'a', RED) + T(cx + 12, cy + 50, 'P', { c: RED, w: 700 }) : '';
   b += co('N') ? arr(cx, cy, cx, cy - 58, id + 'b', INK) + T(cx + 8, cy - 46, 'N', { w: 700 }) : T(cx - 6, cy - 30, 'N ?', { w: 700 });
   return wrap('0 0 320 184', b, cap, 'Xe trên đường ngang và các lực');
 };
@@ -71,7 +71,6 @@ export const hinhL10b14 = {
     b += ln(10, 104, 310, 104) + Array.from({ length: 6 }, (_, i) => ln(40 + i * 48, 114, 64 + i * 48, 114, GREY, 1.8)).join('');
     b += ln(30, 14, 70, 98, INK, 4) + ln(70, 98, 104, 98, INK, 5);
     b += `<ellipse cx="150" cy="96" rx="24" ry="8" fill="${INK}"/>`;
-    b += arr(186, 70, 268, 70, 'bk', BLUE, '6 4') + T(276, 76, 'v', { c: BLUE, w: 700 });
     b += T(310, 138, 'băng', { a: 'end', c: GREY });
     return wrap('0 0 320 146', b, cap, 'Bánh khúc côn cầu trượt trên băng');
   },
@@ -106,14 +105,14 @@ export const hinhL10b14 = {
     b += ln(8, 152, 312, 152) + T(312, 176, 'sàn xe', { a: 'end', c: GREY });
     b += arr(40, 22, 130, 22, 'pg1', BLUE, '6 4') + T(138, 28, 'xe đang chạy', { c: BLUE });
     b += nguoi(170, 48);
-    b += arr(176, 166, 110, 166, 'pg2', RED) + T(104, 172, `F${sb('ms')}`, { c: RED, w: 700, a: 'end' });
+    b += arr(196, 146, 120, 146, 'pg2', RED) + T(114, 140, `F${sb('ms')}`, { c: RED, w: 700, a: 'end' });
     return wrap('0 0 320 184', b, cap, 'Người đứng trên xe đang phanh');
   },
   // Trang 4 · bài toán mẫu: xe tải, bốn lực
   xeTai: (cap = 'Bốn lực lên xe tải. Viết cân bằng cho từng phương.') => oTo(cap, { taiXe: true, id: 'xt', biet: ['Fk', 'Fc', 'P', 'N'] }),
   // Trang 5 · ảnh thật: hình nhân thử va chạm
-  anhVaCham: (cap = 'Thử va chạm: dây an toàn giữ người.<br><span style="font-size:2.4mm">Ảnh: Brady Holt · Wikimedia Commons · CC BY 3.0</span>') =>
-    `<figure class="fig"><img src="${pathToFileURL(resolve(ANH, 'hinh-nhan-thu-va-cham.jpg')).href}" alt="Hình nhân thử va chạm" style="display:block;width:100%;height:22mm;object-fit:cover;object-position:60% 40%;filter:grayscale(1)"><figcaption>${cap}</figcaption></figure>`,
+  anhVaCham: (cap = 'Thử va chạm: dây an toàn giữ người.<br><span style="font-size:2.4mm">Ảnh: Brady Holt · Wikimedia · <span style="white-space:nowrap">CC BY 3.0</span></span>') =>
+    `<figure class="fig"><img src="${pathToFileURL(resolve(ANH, 'hinh-nhan-thu-va-cham.jpg')).href}" alt="Hình nhân thử va chạm" style="display:block;width:100%;height:19mm;object-fit:cover;object-position:60% 40%;filter:grayscale(1)"><figcaption>${cap}</figcaption></figure>`,
 
   // ===== Bài tập mẫu =====
   tuTruot: (cap = 'Tủ trượt đều. F<sub>ms</sub> và N chưa vẽ.') => {
@@ -128,7 +127,7 @@ export const hinhL10b14 = {
     let b = defs('cc1') + defs('cc2');
     b += ln(130, 6, 130, 70, INK, 3) + `<path d="M130,70 L104,90 M130,70 L156,90" stroke="${INK}" stroke-width="2.4" fill="none"/>`;
     b += `<rect x="90" y="90" width="80" height="62" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(130, 128, '450 kg', { a: 'middle', w: 700 });
-    b += arr(130, 152, 130, 200, 'cc1', RED) + T(138, 198, 'P', { c: RED, w: 700 });
+    b += arr(130, 152, 130, 200, 'cc1', RED) + T(140, 190, 'P', { c: RED, w: 700 });
     b += arr(220, 170, 220, 80, 'cc2', BLUE, '6 4') + T(230, 120, 'v =', { c: BLUE }) + T(230, 144, '0,5 m/s', { c: BLUE });
     b += T(140, 40, 'T ?', { w: 700 });
     return wrap('0 0 320 208', b, cap, 'Cần cẩu nâng kiện hàng');

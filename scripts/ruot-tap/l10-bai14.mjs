@@ -89,7 +89,7 @@ ${H.haiMang()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
 <div>Máng (2) càng thoải: ${m('d')} ${f(25)}, ${m('h')} ${f(25)}. Bi lên thấp hơn ${m('h_0')} vì có ${f(25)}.</div>
 <div><b>Rút ra:</b> không ma sát, máng (2) nằm ngang thì bi</div>${lines(2)}
-${wl('Hai hàng đầu chỉ chênh 0,7 cm. Cột nào cho kết luận chắc hơn? Vì sao?', 2)}</div>
+${cau('Hai hàng đầu chỉ chênh 0,7 cm. Cột nào cho kết luận chắc hơn? Vì sao?', 2)}</div>
 ${h3(2, 'II.2 · Định luật 1 Newton', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Nếu vật không chịu tác dụng của ${f(25)}, hoặc chịu các lực có hợp lực ${f(25)}, thì:</div>
@@ -102,9 +102,8 @@ ${h3(2, 'II.2 · Định luật 1 Newton', '2·2')}
 <div>(đổi độ lớn, đổi hướng, hoặc cả hai), không phải để ${f(40)}.</div>
 <div style="margin-top:.8mm">Xe chạy thẳng đều trên đường ngang (điền =, &gt; hoặc &lt;):</div>
 <div>${nw(`${Fk} ${f(12)} ${Fc}`)} &nbsp;·&nbsp; ${nw(`${m('N')} ${f(12)} ${m('P')}`)} &nbsp;·&nbsp; hợp lực ${nw(`${m('=')} ${f(16)}`)}</div>
-${wl('Xe chạy về phía trước mà hợp lực như vậy. Có mâu thuẫn không?', 2)}</div>
+${cau('Xe chạy tới mà hợp lực như vậy. Có mâu thuẫn không? (Voyager 1 tắt máy vẫn bay ≈ 17 km/s.)', 2)}</div>
 ${H.oTo()}</div>
-${box(wl('Tàu Voyager 1 đã tắt động cơ chính hàng chục năm mà vẫn bay ra xa Mặt Trời ≈ 17 km/s. Vì sao không cần lực đẩy?', 2))}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -125,7 +124,7 @@ ${h3(2, 'Thí nghiệm: đồng xu, tấm bìa và chiếc cốc', '3·2')}
 <div><b>Làm:</b> đặt bìa cứng lên miệng cốc, đồng xu giữa bìa. Búng thật nhanh vào mép bìa theo phương ngang. Lặp lại nhưng kéo bìa thật chậm.</div>
 <div style="margin-top:.6mm"><b>Thấy:</b> búng nhanh: xu ${f(36)}</div>
 <div>kéo chậm: xu ${f(36)}</div>
-${wl('Rút ra: vì sao búng nhanh thì xu không đi theo bìa?', 2)}</div>
+${cau('<b>Rút ra:</b> vì sao búng nhanh thì xu không đi theo bìa?', 1)}</div>
 ${H.dongXu()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card fig-side" style="${fs(40)};padding:1mm 3mm"><div>
@@ -160,22 +159,21 @@ ${wl(`Trọng lượng ${m('P')}:`, 1)}${wl(`Lực cản ${Fc}:`, 1)}${wl(`Phư�
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
-${head('ĐIỀN BƯỚC · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
-${h3(1, 'Điền bước còn thiếu: xe chở thêm hàng', '5·1')}
+${head('ĐIỀN BƯỚC · BIẾN THỂ · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
+${h3(1, 'Điền bước và biến thể của bài toán mẫu', '5·1')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:.4mm 3mm 0">
 <div>Cùng đề, xe chở thêm hàng thành ${nw('8 tấn')}, lực cản bằng <b>${nw('0,05')}</b> trọng lượng.</div>
 <div class="ln"><b>Bước 1 (cho sẵn):</b> ${m('P=8000\\cdot 10=80\\,000\\ \\mathrm N')}</div>
-${wl(`Bước 2: ${Fc}=`, 1)}${wl(`Bước 3: ${Fk}= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vì`, 1)}</div>
-${h3(2, 'Biến thể: đổi vai, đổi tình huống', '5·2')}
-${box(cau(`<b>a)</b> Lực kéo ${nw('3000 N')}, xe chạy thẳng đều, lực cản bằng ${nw('0,05')} trọng lượng, ${g10}. Khối lượng xe?`, 1)
- + cau(`<b>b)</b> Xe ${nw('5 tấn')} của đề tắt máy (${nw(`${Fk}=0`)}). Hợp lực lúc đó bằng bao nhiêu, hướng nào? Xe dừng ngay hay lăn thêm?`, 2))}
-${K.btvn().replace('<i>1</i>', '<i>3</i>')}
-${h3(4, 'Thử thách phân tầng', '5·4')}
-${box(wl(`${m('\\bigstar')} Vật đang chạy ${nw('3 m/s')} thì chịu hai lực cùng ${nw('10 N')}, cùng phương, ngược chiều. Vận tốc của vật sau ${nw('5 s')}?`, 2)
- + wl(`${m('\\bigstar\\bigstar')} Người ${nw('60 kg')} đứng trên cân trong thang máy đang đi lên đều, ${g10}. Lực đỡ của sàn lên người?`, 2)
- + wl(`${m('\\bigstar\\bigstar\\bigstar')} Quả cầu treo bằng dây trên trần toa tàu. <b>a)</b> Tàu chạy thẳng đều: dây thẳng đứng hay lệch?`, 1)
+${wl(`Bước 2: ${Fc}=`, 1)}${wl(`Bước 3: ${Fk}= &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vì`, 1)}
+${cau(`<b>Đổi vai.</b> Lực kéo ${nw('3000 N')}, xe chạy thẳng đều, lực cản bằng ${nw('0,05')} trọng lượng, ${g10}. Khối lượng xe?`, 1)}
+${cau(`<b>Tắt máy.</b> Xe ${nw('5 tấn')} của đề tắt máy (${nw(`${Fk}=0`)}). Hợp lực lúc đó bằng bao nhiêu, hướng nào? Xe dừng ngay hay lăn thêm?`, 1)}</div>
+${K.btvn().replace('<i>1</i>', '<i>2</i>')}
+${h3(3, 'Thử thách phân tầng', '5·3')}
+${box(cau(`${m('\\bigstar')} Vật đang chạy ${nw('3 m/s')} thì chịu hai lực cùng ${nw('10 N')}, cùng phương, ngược chiều. Vận tốc của vật sau ${nw('5 s')}?`, 1)
+ + cau(`${m('\\bigstar\\bigstar')} Người ${nw('60 kg')} đứng trên cân trong thang máy đang đi lên đều, ${g10}. Lực đỡ của sàn lên người?`, 1)
+ + cau(`${m('\\bigstar\\bigstar\\bigstar')} Quả cầu treo bằng dây trên trần toa tàu. <b>a)</b> Tàu chạy thẳng đều: dây thẳng đứng hay lệch?`, 1)
  + wl('<b>b)</b> Tàu phanh: dây lệch về phía đầu tàu hay đuôi tàu? Vì sao?', 1))}
-${h3(5, 'VI · Đời sống và mang về', '5·5')}
+${h3(4, 'VI · Đời sống và mang về', '5·4')}
 <div class="fig-side" style="${fs(34)}">${box(wl('Vì sao ô tô phải có dây an toàn và tựa đầu ghế?', 2) + wl('Mang về: điều em dễ quên nhất', 2))}${H.anhVaCham()}</div>
 ${foot(5)}</section>`;
 
@@ -186,7 +184,7 @@ const dang = [
   { t: 'Dạng 2 · Trung bình · Nâng đều: lực căng của cáp',
     de: `Cần cẩu nâng kiện hàng ${m('450\\ \\mathrm{kg}')} bằng cáp thẳng đứng; kiện hàng đi lên với tốc độ <b>không đổi</b> ${m('0{,}5\\ \\mathrm{m/s}')}. Bỏ qua khối lượng cáp; ${g10}.<br><b>a)</b> lực căng của cáp<br><b>b)</b> lực căng lớn hơn, nhỏ hơn hay bằng trọng lực kiện hàng`,
     nd: `Vận tốc không đổi ⇒ ${nw(`${m('T')} ${f(12)} ${m('P')}`)}; dữ kiện thừa là ${f(28)}`, a: ['a', 'b'], gi: 9, fig: H.canCau(), cot: 2 },
-  { t: 'Dạng 3 · Khá · Kéo bằng dây chếch lên: ma sát và phản lực khi trượt đều',
+  { t: 'Dạng 3 · Khá · Dây kéo chếch lên: ma sát và phản lực',
     de: `Kéo thùng ${m('20\\ \\mathrm{kg}')} trượt thẳng đều trên sàn ngang bằng dây chếch lên, hợp với phương ngang góc ${m('\\alpha')} có ${nw(m('\\cos\\alpha=0{,}8'))}, ${nw(m('\\sin\\alpha=0{,}6'))}. Lực căng dây ${m('50\\ \\mathrm N')}; ${g10}.<br><b>a)</b> hai thành phần ${m('T_x')} (ngang) và ${m('T_y')} (đứng) của lực căng<br><b>b)</b> độ lớn lực ma sát<br><b>c)</b> độ lớn phản lực của sàn`,
     nd: `${nw(`${m('T_x=T\\cdot')} ${f(16)}`)}, ${nw(`${m('T_y=T\\cdot')} ${f(16)}`)}; phương đứng: ${nw(`${m('N=P')} ${f(12)} ${m('T_y')}`)} (dây kéo lên hay đè xuống?)`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 15, fig: H.thungD3(), cot: 2,
     bang: `<table style="margin:.6mm 0"><tr><th style="width:60mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr><tr><td>“trượt thẳng đều”</td><td></td></tr><tr><td>“dây chếch lên … cos, sin”</td><td></td></tr><tr><td>“lực căng dây 50 N”</td><td></td></tr></table>` },
@@ -227,6 +225,6 @@ await K.dung({
   trang1to5: ttHaiCot + [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [2, 1], kq: [[1, 2], [3]], khoNhat: true },
   tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
-  tra: 'dự đoán 1·2 · Galilei 2·1 · định luật 1 2·2 · quán tính 3·1 · đồng xu 3·2 · bẫy 3·3 · bài toán mẫu 4·2 · biến thể 5·2 · dạng 1–2 → 6·1 · dạng 3 → 7·1',
+  tra: 'dự đoán 1·2 · Galilei 2·1 · định luật 1 2·2 · quán tính 3·1 · đồng xu 3·2 · bẫy 3·3 · bài toán mẫu 4·2 · điền bước, biến thể 5·1 · dạng 1–2 → 6·1 · dạng 3 → 7·1',
   out: process.argv[2],
 });
