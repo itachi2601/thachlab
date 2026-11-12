@@ -150,7 +150,7 @@ ${tb('3. Vì sao chất lỏng có thể tích xác định mà hình dạng kh�
 ${tb('4. Vì sao nhiệt độ không đổi suốt thời gian nóng chảy?')}${lines(2)}
 ${tb('5. Bay hơi khác sôi ở đâu? Nhiệt độ sôi phụ thuộc gì?')}${lines(2)}
 ${tb('6. Chất rắn kết tinh khác vô định hình ở đâu? Mỗi loại một ví dụ.')}${lines(2)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc câu ${f(16)} → đọc lại ô Tập: câu 1 → 1·4 · câu 2 → 2·2 · câu 3 → 2·1 · câu 4 → 3·1 · câu 5 → 3·2 · câu 6 → 3·3</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${foot(4)}</section>`;
@@ -179,20 +179,20 @@ const tra3 = `Nhiệt độ nóng chảy: ${['thiếc 232', 'chì 327', 'nhôm 6
 const hep = (fig, w = 36) => `<div style="width:${w}mm;justify-self:end">${fig}</div>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Gọi tên quá trình chuyển thể trong đời sống',
-    de: `Cốc nước đá trong phòng nóng ẩm, cạnh đĩa có ít nước. Sau 30 phút: (1) đá nhỏ dần, nước trong cốc nhiều lên; (2) thành ngoài cốc phủ giọt nước; (3) nước trong đĩa cạn bớt, không sủi bọt.<br><b>a)</b> tên quá trình và chiều chuyển thể ở (1), (2), (3)<br><b>b)</b> có mấy hiện tượng mà chất toả nhiệt`,
-    nd: `Gọi tên theo thể đầu ${to} thể cuối; không sủi bọt thì là ${f(18)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b'], gi: 2, fig: hep(H.cocD1(''), 21) },
+    de: `Cốc nước đá trong phòng nóng ẩm, cạnh đĩa có ít nước. Sau 30 phút: (1) đá nhỏ dần, nước trong cốc nhiều lên; (2) thành ngoài cốc phủ giọt nước; (3) nước trong đĩa cạn bớt, không sủi bọt.<br><b>a)</b> tên quá trình, chiều chuyển thể ở (1), (2), (3) &nbsp; <b>b)</b> mấy hiện tượng toả nhiệt`,
+    nd: `Gọi tên theo thể đầu ${to} thể cuối; không sủi bọt thì là ${f(18)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b'], gi: 3, fig: hep(H.cocD1(''), 21) },
   { t: 'Dạng 2 · Dễ · Thể tích và hình dạng của rắn, lỏng, khí trong bình',
-    de: `Sáp nến (khối đặc), dầu ăn, khí helium, mỗi chất ${nw('0,30 lít')}, lần lượt cho vào ba bình rỗng ${nw('1,5 lít')} rồi đậy kín (bình 3 đã hút hết không khí trước khi bơm helium). Nhiệt độ không đổi.<br><b>a)</b> thể tích và hình dạng trong bình của sáp (a<sub>1</sub>), dầu (a<sub>2</sub>), helium (a<sub>3</sub>)<br><b>b)</b> giải thích kết quả của helium bằng mô hình động học phân tử`,
-    nd: `Rắn, lỏng giữ ${f(22)}; khí ${f(28)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b'], gi: 2 },
+    de: `Sáp nến, dầu ăn, khí helium (mỗi chất ${nw('0,30 lít')}) cho vào ba bình kín, rỗng, ${nw('1,5 lít')}; nhiệt độ không đổi.<br><b>a)</b> thể tích, hình dạng của sáp (a<sub>1</sub>), dầu (a<sub>2</sub>), helium (a<sub>3</sub>)<br><b>b)</b> giải thích kết quả của helium bằng mô hình động học phân tử`,
+    nd: `Rắn, lỏng giữ ${f(22)}; khí ${f(28)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b'], gi: 3 },
   { t: 'Dạng 3 · Trung bình · Đọc bảng nhiệt độ – thời gian',
-    de: `Đun nóng đều chất rắn kết tinh ${m('X')}. ${tra3}.${bangTT([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], [52, 82, 112, 142, 172, 202, 232, 232, 232, 232, 232, 232, 257, 282, 307])}<b>a)</b> nhiệt độ nóng chảy của ${m('X')}; ${m('X')} là chất nào<br><b>b)</b> chất nóng chảy trong bao lâu<br><b>c)</b> ở phút thứ 9, chất ở thể nào<br><b>d)</b> sau khi nóng chảy hết, nhiệt độ tăng bao nhiêu độ mỗi phút`,
-    nd: `Dòng nhiệt độ không đổi là ${f(25)}; thời gian = ${f(22)} hai mốc`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], cot: 5, gi: 4 },
+    de: `Đun nóng đều chất rắn kết tinh ${m('X')}. ${tra3}.${bangTT([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14], [52, 82, 112, 142, 172, 202, 232, 232, 232, 232, 232, 232, 257, 282, 307])}<b>a)</b> nhiệt độ nóng chảy của ${m('X')}; ${m('X')} là chất nào &nbsp; <b>b)</b> nóng chảy trong bao lâu<br><b>c)</b> phút thứ 9: thể nào &nbsp; <b>d)</b> sau khi nóng chảy hết, nhiệt độ tăng bao nhiêu độ mỗi phút`,
+    nd: `Dòng nhiệt độ không đổi là ${f(25)}; thời gian = ${f(22)} hai mốc`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], cot: 5, gi: 5 },
   { t: 'Dạng 4 · Khó · Đọc đồ thị nhiệt độ – thời gian nhiều giai đoạn',
     de: `Chất ${m('X')} lúc đầu ở thể rắn, ${dC('20')}, được đun nóng đều. Đồ thị nhiệt độ theo thời gian như hình; ${m('BC')} và ${m('DE')} là hai đoạn nằm ngang.<br><b>a)</b> nhiệt độ nóng chảy và nhiệt độ sôi của ${m('X')}<br><b>b)</b> ở phút thứ 16, ${m('X')} ở thể nào<br><b>c)</b> quá trình sôi kéo dài bao lâu<br><b>d)</b> ở đoạn ${m('CD')}, nhiệt độ tăng bao nhiêu độ mỗi phút`,
     nd: `Đoạn ngang ${f(12)} là nóng chảy, đoạn ngang ${f(12)} là sôi (không xét độ dài)`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], cot: 3, gi: 6, fig: H.doThiD4() },
   { t: 'Dạng 5 · Nâng cao · Làm nguội kim loại đúc: dữ kiện ẩn',
-    de: `Rót chì lỏng ở ${dC('397')} vào khuôn; khi còn lỏng, chì nguội đều ${nw('14 °C')} mỗi phút. Lúc đun, thanh chì ấy nóng chảy hết trong 4 phút; coi tốc độ toả nhiệt khi nguội bằng tốc độ nhận nhiệt lúc đun. ${tra3}.<br><b>a)</b> chì đông đặc ở nhiệt độ nào<br><b>b)</b> sau bao nhiêu phút kể từ lúc rót thì chì bắt đầu đông đặc<br><b>c)</b> chì đông đặc hoàn toàn vào phút thứ mấy<br><b>d)</b> nhiệt độ chì ở phút thứ 7<br><b>e)</b> thuỷ tinh nguội đều mà nhiệt kế không lúc nào đứng yên: thuỷ tinh là chất rắn loại nào`,
-    nd: `Đông đặc ở ${f(16)} nhiệt độ nóng chảy; thời gian đông đặc ${f(18)}`, a: ['a', 'b', 'c', 'd', 'e'], cot: 3, gi: 5 },
+    de: `Rót chì lỏng ở ${dC('397')} vào khuôn; khi còn lỏng, chì nguội đều ${nw('14 °C')} mỗi phút. Lúc đun, thanh chì ấy nóng chảy hết trong 4 phút; coi tốc độ toả nhiệt khi nguội bằng tốc độ nhận nhiệt lúc đun. ${tra3}.<br><b>a)</b> chì đông đặc ở nhiệt độ nào<br><b>b)</b> sau bao nhiêu phút kể từ lúc rót thì chì bắt đầu đông đặc<br><b>c)</b> chì đông đặc hoàn toàn vào phút thứ mấy &nbsp; <b>d)</b> nhiệt độ chì ở phút thứ 7<br><b>e)</b> thuỷ tinh nguội đều mà nhiệt kế không lúc nào đứng yên: thuỷ tinh là chất rắn loại nào`,
+    nd: `Đông đặc ở ${f(16)} nhiệt độ nóng chảy; thời gian đông đặc ${f(18)}`, a: ['a', 'b', 'c', 'd', 'e'], cot: 3, gi: 6 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở (thầy chốt 10/11), ô đáp số cuối dòng của ý; đáp số tính bằng Python 12/11/2026.
