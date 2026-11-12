@@ -150,3 +150,12 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - l10-thuc-hanh-do-g (lesson 56) · tn-l10-do-g-01 · clip dog1 · cổng mp4: gợi ý chốt "So 0,322 với t̄" → "Nhớ g = 2s/t²", khung Dự đoán che giá đỡ · chờ thầy duyệt · 10/11/2026 · 49,3 s · 1,29 MB · "Quan sát" hộp exp lộ đáp án ("cách nhau vài phần nghìn giây") — thầy quyết
 - L10 Ch.2 bỏ qua (`vi_du`): dd-qd-02/03, tdvt-02, dt-dctg-03, gia-toc-03, ctbdd-02/03; roi-tu-do-01 có YouTube · 10/11/2026 ·
 - **ĐÃ ĐĂNG DB 10/11/2026** (thầy duyệt, `cap-nhat-ly-thuyet.sh … --chi-video --yes`): lesson 51 (item 287), 52 (item 96), 55 (item 78), 56 (item 288) — chỉ đổi khối video, mục khác giữ nguyên; sao lưu `scripts/logs/ly-thuyet-bai{51,52,55,56}-backup-17942808*.json`. Hộp 'Quan sát' lộ đáp án vẫn chờ thầy quyết.
+
+## Sửa 7 clip theo rà soát 11/11 (12/11/2026) — bản `-20261112-2` (HEAD 200), repo bài + khung đã đổi URL; DB CHƯA đổi (chờ thầy duyệt, sau 22h: `doi-url-clip-db.mts --tn <tn> --cu <hậu tố cũ> --ngay 20261112 --ban 2 --apply`)
+- l12-may-phat-dien-bien-ap · tn-l12-mayphatdien-01 · clip mayphat1 · vẽ lại dây: tần số kế + đèn mỗi cái nối hai đầu cuộn dây, song song; gợi ý "1 phút = 60 s"; "n đang tăng…" · 12/11/2026 · 52,5 s · 2,08 MB · cũ `-20261028-2`
+- l12-boyle-charles · tn-l12-boylecharles-01 · clip boyle · gợi ý chỉ "p·V ≈ 800"; kPa tách số 300; khung K3 · 12/11/2026 · 54,2 s · 2,33 MB · cũ `-20261028-2`
+- l10-moment-luc · tn-l10-moment-luc-03 · clip moment3 · nhãn F không chạm mũi tên; hàng d=0,15 sau khi nhích giá; gợi ý "M = F · d" · 12/11/2026 · 48,9 s · 1,49 MB · cũ `-20261030`
+- l11-tu-dien · tn-l11-tudien-02 · clip tudien2 · gợi ý "12 V vẫn dưới 16 V ghi trên vỏ" · 12/11/2026 · 49,7 s · 1,27 MB · cũ `-20261030-2`
+- l11-thuc-hanh-do-sdd-pin · tn-l11-do-sdd-pin-02 · clip sddpin2 · câu chốt hỏi mở, gợi ý "r = |ΔU| / ΔI" · 12/11/2026 · 49,8 s · 1,30 MB · cũ `-20261031-2`
+- l11-mo-ta-dao-dong · tn-l11-motadddh-01 · clip motadddh1 · gợi ý "Ca 4 cm: sau 1,0 s, x = −4 cm" · 12/11/2026 · 48,3 s · 1,57 MB · cũ `-20261031-2`
+- l9-dien-tro-dinh-luat-ohm · tn-l9-ohm-01 · clip l9ohm1 · thẻ chốt bỏ công thức, gợi ý "R = U : I" hiện trễ · 12/11/2026 · 49,8 s · 1,40 MB · cũ `-20261105`
