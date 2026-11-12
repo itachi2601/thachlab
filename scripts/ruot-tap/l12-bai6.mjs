@@ -73,9 +73,9 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Thông số trạng thái · Nhiệt độ tuyệt đối', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Ba thông số trạng thái của một lượng khí: ${f(22)}, ${f(22)}, ${f(22)}.</div>
-<div>Khí chuyển từ trạng thái này sang trạng thái khác: một ${f(36)}.</div>
+<div>Khí chuyển từ trạng thái này sang trạng thái khác: một ${f(56)}.</div>
 <div>Đẳng quá trình: quá trình có một thông số ${f(22)}.</div>
-<div>Đẳng nhiệt giữ ${f(14)} · đẳng áp giữ ${f(14)} · đẳng tích giữ ${f(14)}</div>
+<div>Đẳng nhiệt giữ ${f(24)} · đẳng áp giữ ${f(24)} · đẳng tích giữ ${f(24)}</div>
 <div>Nhiệt độ tuyệt đối: ${m('T=')} ${f(22)}; ${m('T')} đo bằng ${f(14)}, ${m('t')} đo bằng ${f(10)}</div>
 <div class="hint" style="margin-top:.6mm">${doiDV}</div>
 </div>
@@ -92,13 +92,13 @@ ${h3(1, 'Thí nghiệm: nén khí trong xilanh kín, đọc áp kế', '2·1')}
 <tr><td>${m('V')} (ml)</td><td>8,0</td><td>6,0</td><td>5,0</td><td>4,0</td><td>3,0</td></tr>
 <tr><td>${m('p')} (kPa)</td><td>100</td><td>142</td><td>170</td><td>215</td><td>267</td></tr>
 <tr><td>${m('pV')} (kPa·ml)</td><td>800</td><td>852</td><td>850</td><td>860</td><td></td></tr></table>
-<div><b>Quan sát:</b> ${m('V')} giảm thì ${m('p')} ${f(22)}; tích ${m('pV')} ${f(36)}</div>
-<div><b>Vì sao lệch tới 8 %?</b> (nêu 2 nguyên nhân)</div>${lines(2)}
+<div><b>Quan sát:</b> ${m('V')} giảm thì ${m('p')} ${f(22)}; tích ${m('pV')} ${f(46)}</div>
+<div class="hint">Số liệu minh hoạ.</div><div><b>Vì sao lệch tới 7,5 %?</b> (nêu 2 nguyên nhân)</div>${lines(2)}
 </div>
 ${h3(2, 'Định luật Boyle', '2·2')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>Đẳng nhiệt: ${f(28)} của khí không đổi.</div>
-<div>Khối lượng khí và nhiệt độ không đổi thì áp suất ${f(30)} với thể tích.</div>
+<div>Khối lượng khí và nhiệt độ không đổi thì áp suất ${f(40)} với thể tích.</div>
 <div style="margin:1mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">${m('pV=')} ${f(16)} &nbsp;⇒ <span class="fill" style="min-width:30mm;height:9mm"></span></div>
 <div>${p1}, ${p2} cùng ${f(16)}; ${V1}, ${V2} cùng ${f(16)} (không bắt buộc SI).</div>
 <div>Đường đẳng nhiệt trên đồ thị ${m('p')}–${m('V')}: một nhánh ${f(24)}.</div>
@@ -119,21 +119,21 @@ ${h3(1, 'Thí nghiệm: cột khí trong ống, áp suất không đổi', '3·1
 <tr><td>${m('T')} (K)</td><td>273</td><td>298</td><td>323</td><td></td></tr>
 <tr><td>${m('\\ell')} (cm)</td><td>10,0</td><td>10,9</td><td>11,9</td><td>12,9</td></tr>
 <tr><td>${m('\\ell/T')} (cm/K)</td><td>0,0366</td><td>0,0366</td><td>0,0368</td><td></td></tr></table>
-<div><b>Rút ra:</b> ${m('\\ell/T')} ${f(28)} ⇒ ${nw(`${m('\\dfrac{V_1}{T_1}')} ${f(8)} ${m('\\dfrac{V_2}{T_2}')}`)}</div>
+<div><b>Rút ra:</b> ${m('\\ell/T')} ${f(40)} ⇒ ${nw(`${m('\\dfrac{V_1}{T_1}')} ${f(8)} ${m('\\dfrac{V_2}{T_2}')}`)}</div>
 <div><b>Giới hạn:</b> chỉ đo từ 273 K tới 348 K. “Thí nghiệm chứng minh ${m('V=0')} khi ${m('T=0')} K”: ${ck}đúng ${ck}sai</div></div>
 ${H.ongCharles()}</div>
 ${h3(2, 'Định luật Charles', '3·2')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>Đẳng áp: ${f(28)} của khí không đổi.</div>
-<div>Khối lượng khí và áp suất không đổi thì thể tích ${f(26)} với ${f(30)}.</div>
+<div>Khối lượng khí và áp suất không đổi thì thể tích ${f(36)} với ${f(50)}.</div>
 <div style="margin:1mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">${m('\\dfrac{V}{T}=')} ${f(16)} &nbsp;⇒ <span class="fill" style="min-width:30mm;height:10mm"></span></div>
 <div>${m('T')} bắt buộc tính bằng ${f(16)}, không dùng °C.</div>
 <div>Đường đẳng áp trên đồ thị ${m('V')}–${m('T')}: đường ${f(20)}, kéo dài đi qua ${f(14)}.</div>
 <div>Áp suất càng nhỏ, đường càng ${f(14)} ⇒ ${nw(`${m('p_{(1)}')} ${f(8)} ${m('p_{(2)}')}`)}</div></div>
 ${H.doThiVT()}</div>
 ${h3(3, 'Làm nhanh', '3·3')}
-${box(cau(`<b>Câu 3.</b> Nung đẳng áp ${lit('1{,}0')} khí từ ${dC('27')} lên ${dC('87')}. Tính ${V2}. Vì sao lấy ${m('\\tfrac{87}{27}')} là sai?`, 2)
- + cau(`<b>Câu 4.</b> Nung đẳng áp từ ${dC('20')} lên ${dC('40')}: thể tích tăng mấy lần?`, 1))}
+${box(cau(`<b>Câu 4.</b> Nung đẳng áp ${lit('1{,}0')} khí từ ${dC('27')} lên ${dC('87')}. Tính ${V2}. Vì sao lấy ${m('\\tfrac{87}{27}')} là sai?`, 2)
+ + `<div class="yo" style="padding-top:1mm"><span><b>Câu 5.</b> Nung đẳng áp từ ${dC('20')} lên ${dC('40')}: thể tích tăng mấy lần?</span><span class="oo">${f(24)}</span></div>`)}
 ${h3(4, 'III · Ba cái bẫy hay sập', '3·4')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Đẳng nhiệt thì thể tích không đổi.”</b> Đẳng nhiệt giữ ${m('T')}; ${m('p')} và ${m('V')} đều đổi.</span></div>
@@ -173,28 +173,28 @@ ${h3(1, 'V · Bài toán mẫu: nén và nung khí trong xilanh y tế', '5·1')
 <tr><td style="height:6.5mm">“nung tới 87 °C … áp suất không đổi”</td><td></td></tr>
 </table>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:1mm">
-${wl(`a) ${m('p_2=')}`, 2)}${wl(`b) ${m('T_2=')} ………… ⇒ ${m('V_2=')} ………………… ⇒ ${m('\\Delta V=')}`, 2)}</div>
+${wl(`a) ${m('p_2=')}`, 2)}${wl(`b) ${m('T_2=')} ………… ⇒ ${m('V_2=')} ………………… ⇒ ${m('\\Delta V=')}`, 3)}</div>
 ${h3(2, 'Điền bước còn thiếu: câu a nhưng nén từ 60 ml xuống 15 ml', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln"><b>Bước 1 (cho sẵn):</b> ${m('p_1V_1=6{,}0\\cdot10^6\\ \\mathrm{Pa{\\cdot}ml}')}</div>
 ${wl(`Bước 2: ${m('p_2=')}`, 1)}${wl('Bước 3: thể tích giảm …… lần nên áp suất', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
-${box(cau(`${m('\\bigstar')} Khí ở ${u('1{,}0\\cdot10^5', 'Pa')}, ${lit('6{,}0')} nén đẳng nhiệt còn ${lit('2{,}0')}: áp suất?`, 1)
+${box(`<div class="yo" style="padding-top:1mm"><span>${m('\\bigstar')} Khí ở ${u('1{,}0\\cdot10^5', 'Pa')}, ${lit('6{,}0')} nén đẳng nhiệt còn ${lit('2{,}0')}: áp suất?</span><span class="oo">${f(28)}</span></div>`
  + cau(`${m('\\bigstar\\bigstar')} Giữ áp suất đó, nung ${lit('2{,}0')} khí từ ${u('300', 'K')} lên ${u('360', 'K')}: thể tích?`, 1)
  + cau(`${m('\\bigstar\\bigstar\\bigstar')} Bơm xe bằng tay vài chục lần: thân bơm nóng lên, cán nặng tay hơn mức Boyle dự đoán. Vì sao?`, 1))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Nén khí ở nhiệt độ không đổi (Boyle)',
-    de: `Bơm xe bịt kín chứa ${u('240', 'cm^3')} khí ở ${u('1{,}0\\cdot10^5', 'Pa')}; ấn thật chậm (nhiệt độ không đổi) cho thể tích còn ${u('80', 'cm^3')}.<br><b>a)</b> áp suất khí lúc này<br><b>b)</b> ấn tiếp tới ${u('4{,}8\\cdot10^5', 'Pa')}: thể tích khí`,
+    de: `Bơm xe bịt kín: ${u('240', 'cm^3')} khí ở ${u('1{,}0\\cdot10^5', 'Pa')}; ấn thật chậm (nhiệt độ không đổi) tới ${u('80', 'cm^3')}.<br><b>a)</b> áp suất khí lúc này<br><b>b)</b> ấn tiếp tới ${u('4{,}8\\cdot10^5', 'Pa')}: thể tích khí`,
     nd: `Bịt kín + ấn thật chậm ⇒ đẳng ${f(14)} ⇒ hệ thức ${f(26)}`, a: ['a', 'b'], gi: 3 },
   { t: 'Dạng 2 · Trung bình · Nung đẳng áp, đổi sang kenvin (Charles)',
     de: `Xilanh đứng, pittông nhẹ trượt không ma sát, phía trên thông khí trời; khí chiếm ${u('450', 'cm^3')} ở ${dC('17')}.<br><b>a)</b> nung khí tới ${dC('75')}: thể tích khí và phần thể tích tăng thêm<br><b>b)</b> làm lạnh đẳng áp cho thể tích còn ${u('360', 'cm^3')}: nhiệt độ khí (°C)`,
-    nd: `Pittông tự do ⇒ ${f(14)} không đổi; đổi ${m('t')} ra ${f(10)} trước khi lập tỉ số`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 3 },
+    nd: `Pittông tự do ⇒ ${f(14)} không đổi; đổi ${m('t')} ra ${f(10)} trước khi lập tỉ số`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Đọc đồ thị V–T của cùng một lượng khí',
     de: `Hình bên: (1), (2) kéo dài qua ${m('O')}; tại ${u('300', 'K')}, A trên (1) có ${lit('V=4')}, B trên (2) có ${lit('V=6')}.<br><b>a)</b> mỗi đường là quá trình gì; đường nào áp suất lớn hơn<br><b>b)</b> tỉ số ${m('p_{(1)}/p_{(2)}')}<br><b>c)</b> khí ở (2) nung đến ${u('450', 'K')}: thể tích`,
-    nd: `A, B cùng ${m('T')} ⇒ dùng ${f(16)}; cùng một đường ⇒ dùng ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4, fig: H.vtD3('') },
+    nd: `A, B cùng ${m('T')} ⇒ dùng ${f(16)}; cùng một đường ⇒ dùng ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 5, fig: H.vtD3('') },
   { t: 'Dạng 4 · Khó · Hai giai đoạn nối tiếp: đẳng nhiệt rồi đẳng áp',
     de: `Xilanh kín có pittông chứa ${lit('3{,}0')} khí ở ${u('1{,}0', 'atm')}, ${dC('27')}. Giai đoạn 1: đẩy pittông thật chậm (nhiệt độ không đổi) đến ${u('2{,}5', 'atm')}. Giai đoạn 2: giữ ${u('2{,}5', 'atm')}, nung khí tới ${dC('127')}.<br><b>a)</b> thể tích sau giai đoạn 1<br><b>b)</b> thể tích sau giai đoạn 2<br><b>c)</b> so với lúc đầu, thể tích cuối giảm bao nhiêu lít`,
     nd: `GĐ 1: ${f(16)}; GĐ 2: ${f(16)}; thể tích ${f(14)} của giai đoạn trước là thể tích đầu của giai đoạn sau`, a: ['a', 'b', 'c'], gi: 7 },
