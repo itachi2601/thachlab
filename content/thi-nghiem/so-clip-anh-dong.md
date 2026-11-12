@@ -162,3 +162,19 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 ## Ghi nhận rà cổng tự động 11–12/11/2026 (chưa sửa mp4)
 
 - thuchanhtu4 (bản 2, clip làm dở ở phiên khác): mật độ chữ 285 từ/phút (> 200); JSON khung `tong_giay` 48,1 s lệch engine 49,9 s → tải bản 2 mà không chạy lại `xuat-khung.py` thì điểm dừng sai. Chưa sửa; xử lý khi phiên đó chốt clip. · 12/11/2026
+
+## Chặng C — clip bẫy phụ đạo L12 Ch.1, 2, 4 (lô 12/11/2026, đề xuất `de-xuat-bo-sung-2026-11-12.md` mục B)
+
+Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; mp4 `lesson-clips/clip/bay-l12-chN-0X-20261112.mp4`. Cổng A, A2 (≤ 200 từ/phút), B 2 vòng (kiem-code). CHƯA gắn `lib/clip-bay.ts` / phụ đạo — chờ thầy duyệt. Ch.4 tự soạn (chưa có lượt làm 60 ngày).
+- l12-su-chuyen-the · topic 196 · clip bay-ch1-01 (nước sôi giữ 100 °C) · đã soát, đã tải · 12/11/2026 · tự soạn (gần: đề 933 câu 1)
+- l12-noi-nang-dl1 · topic 199 · clip bay-ch1-02 (nhiệt lượng không phải thứ vật chứa) · đã soát, đã tải · 12/11/2026 · từ đề 753 câu 6 Đ–S, 36/63 sai
+- l12-thang-nhiet-do · topic 197 · clip bay-ch1-03 (55 °C → 328 K) · đã soát, đã tải · 12/11/2026 · đề 1295 câu 23, 25/46 sai
+- l12-noi-nang-dl1 · topic 200 · clip bay-ch1-04 (dấu A khi khí dãn, 340 J) · đã soát, đã tải · 12/11/2026 · đề 1300 câu 25, 10/23 sai
+- l12-boyle-charles · topic 208 · clip bay-ch2-01 (đẳng tích trên p–V, p–T, p–t) · đã soát · 12/11/2026 · tự soạn (gần: đề 1296 câu 1, 1295 câu 20)
+- l12-ap-suat-dong-nang · topic 212 · clip bay-ch2-02 (Wđ trung bình chỉ theo T) · đã soát · 12/11/2026 · đề 1300 câu 12, 12/23 sai
+- l12-boyle-charles · topic 206 · clip bay-ch2-03 (48 bóng, quên khí ở lại bình) · đã soát · 12/11/2026 · đề 1296 câu 6, 42/56 sai
+- l12-boyle-charles · topic 206 · clip bay-ch2-04 (nén nhanh p > 2p₁) · đã soát · 12/11/2026 · tự soạn
+- l12-nang-luong-lien-ket · topic 224 · clip bay-ch4-01 (liên kết vs liên kết riêng) · đã soát · 12/11/2026 · tự soạn
+- l12-phong-xa · topic 229 · clip bay-ch4-02 (sau 2T còn 1/4) · đã soát · 12/11/2026 · tự soạn
+- l12-phong-xa · topic 229 · clip bay-ch4-03 (bình chì, làm lạnh: T không đổi) · đã soát · 12/11/2026 · tự soạn
+- l12-hat-nhan-mo-hinh-nguyen-tu · topic 221 (gần nhất) · clip bay-ch4-04 (Rutherford: α lệch do hạt nhân) · đã soát · 12/11/2026 · tự soạn; THỬ NGHĨ hỏi "quỹ đạo dừng" theo đề Bộ — thầy xác nhận
