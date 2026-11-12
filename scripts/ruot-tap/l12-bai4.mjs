@@ -117,7 +117,7 @@ ${h3(2, 'III · Bẫy 1: “nhiệt kế đứng yên nghĩa là hết truyền 
 <tr><td style="height:8mm">Nhiệt dùng để</td><td></td><td></td></tr>
 <tr><td style="height:8mm">Tính được</td><td></td><td></td></tr></table>
 <div style="margin-top:.8mm">Nước sôi ${nw(m('100\\ ^\\circ\\mathrm C'))} trên bếp ${nw(m('400\\ \\mathrm W'))}, nhiệt kế đứng yên. Mỗi giây vẫn có ${nw(`${f(14)} J`)} đi vào nước.</div></div>
-${h3(4, 'Thử: c của nước có phụ thuộc khối lượng nước?', '3·3')}
+${h3(3, 'Thử: c của nước có phụ thuộc khối lượng nước?', '3·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div class="hint" style="margin-bottom:.4mm">Bếp ${nw(m('150\\ \\mathrm W'))}, ${nw(m('\\tau=300\\ \\mathrm s'))}, ${nw(m('t_1=28{,}0\\ ^\\circ\\mathrm C'))}</div>
 <table class="tbl-ct" style="text-align:center"><tr><th style="width:26mm">${m('m')} (kg)</th><th>0,200</th><th>0,300</th><th>0,400</th></tr>
