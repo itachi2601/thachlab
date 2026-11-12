@@ -262,7 +262,7 @@ def s_bay(img, d, t, sc):
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
-    """Chot (khong tra loi cau hoi) -> THU NGHI: cung 0,5 A, U hai cuc chenh nhieu hay it hon luc ho mach?"""
+    """Chot (khong tra loi cau hoi) -> THU NGHI (hoi mo, khong lo co/khong): chon hai lan do nao de tinh r tin nhat; goi y chi la cong thuc goc."""
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 300, 1020, 580), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
     text(d, (W / 2, 395), "Pin “hết” vì r tăng,", 50, GREEN, alpha=k0)
@@ -273,13 +273,13 @@ def s_end(img, d, t, sc):
     pw = tw(d, "THỬ NGHĨ", F(38)) + 52
     card(d, (W / 2 - pw / 2, 670, W / 2 + pw / 2, 734), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 702), "THỬ NGHĨ", 38, WHITE, alpha=k1)
-    ctext(d, 860, "Tính r pin mới chỉ từ hai lần đo\nRx = 100 Ω và 20 Ω: có đáng tin?",
+    ctext(d, 860, "Pin mới: chọn hai lần đo nào\nđể tính r đáng tin nhất, vì sao?",
           44, INK, maxw=940, alpha=appear(t, M[0] + 0.4, 0.5))
     kh = appear(t, M[0] + 2.9, 0.5)
     if kh <= 0: return
     card(d, (110, 1070, 970, 1300), fill=A((255, 247, 237), kh), r=24)
     ctext(d, 1125, "Gợi ý", 40, (154, 52, 18), alpha=kh)
-    ctext(d, 1220, "Vôn kế đọc tới 0,01 V", 48, ORANGE, maxw=820, alpha=kh)
+    ctext(d, 1220, "r = |ΔU| / ΔI", 48, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
