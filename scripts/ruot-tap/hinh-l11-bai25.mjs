@@ -38,13 +38,14 @@ const mach = (cap, o = {}) => {
   let xs = [x1];
   if (A) { b += ln(x1, y2, 74, y2) + dongHo(89, y2, 'A'); xs = [104]; }
   if (cc) { b += ln(xs[0], y2, 96, y2) + cauChi(118, y2) + T(118, y2 + 34, 'cầu chì', { a: 'middle' }); xs = [140]; }
-  b += ln(xs[0], y2, xm + 10 - 28, y2);
+  const hw = laDen ? 16 : 28; // dây chạm đúng mép đèn/điện trở
+  b += ln(xs[0], y2, xm + 10 - hw, y2);
   if (laDen) b += den(xm + 10, y2, 16); else b += dtro(xm + 10, y2);
-  b += ln(xm + 10 + 28, y2, x2, y2);
-  if (nR) b += T(xm + 10, y2 + 36, nR, { a: 'middle' });
+  b += ln(xm + 10 + hw, y2, x2, y2);
+  if (nR) b += V ? T(xm + 10, y2 - 20, nR, { a: 'middle' }) : T(xm + 10, y2 + 36, nR, { a: 'middle' });
   if (V) { b += ln(xm - 30, y2, xm - 30, y2 + 50, INK, 2.4) + ln(xm + 50, y2, xm + 50, y2 + 50, INK, 2.4) + ln(xm - 30, y2 + 50, xm + 50, y2 + 50, INK, 2.4) + dongHo(xm + 10, y2 + 50, 'V'); }
-  if (chap) b += `<path d="M${xm - 34},${y2} C${xm - 24},${y2 - 40} ${xm + 44},${y2 - 40} ${xm + 54},${y2}" fill="none" stroke="${RED}" stroke-width="3.2" stroke-dasharray="7 4"/>` + T(xm + 10, y2 - 36, 'dây chập', { c: RED, w: 700, a: 'middle' });
-  return wrap(`0 0 320 ${V ? 214 : gon ? 156 : 196}`, b, cap, label);
+  if (chap) b += `<path d="M${xm - 12},${y2} C${xm - 6},${y2 - 40} ${xm + 34},${y2 - 40} ${xm + 40},${y2}" fill="none" stroke="${RED}" stroke-width="3.2" stroke-dasharray="7 4"/>` + T(xm + 10, y2 - 36, 'dây chập', { c: RED, w: 700, a: 'middle' });
+  return wrap(`0 0 320 ${V ? 224 : gon ? 156 : 196}`, b, cap, label);
 };
 
 export const hinhL11b25 = {

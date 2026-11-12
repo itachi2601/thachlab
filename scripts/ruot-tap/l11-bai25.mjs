@@ -92,10 +92,10 @@ ${box(cau(`Bàn là mắc vào ${V('220')}, dòng ${A_('4{,}0')}, dùng 15 phút
 ${h3(2, 'II.2 · Công suất điện', '2·2')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
 <div>Công suất điện là ${f(36)} tiêu thụ trong ${f(16)}.</div>
-<div style="margin:1mm 0;display:flex;align-items:flex-end;gap:2mm">${m('P=\\dfrac{A}{t}=')} <span class="fill" style="min-width:12mm"></span> · chỉ toả nhiệt: ${m('P=')} <span class="fill" style="min-width:12mm"></span>${m('=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
+<div style="margin:1mm 0;display:flex;align-items:flex-end;gap:2mm">${m('P=\\tfrac{A}{t}=')} <span class="fill" style="min-width:12mm"></span> · chỉ toả nhiệt: ${m('P=')} <span class="fill" style="min-width:12mm"></span>${m('=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
 <div>Đơn vị: oát, ${m('1\\ \\mathrm W=1')} ${f(10)}.</div>
 <div>Nhãn ${nhan(220, 100)}: ${nw(`${m('U')}<sub>đm</sub>${m('=')}`)} ${f(12)} là hiệu điện thế ${f(20)}; ${nw(`${m('P')}<sub>đm</sub>${m('=')}`)} ${f(12)} là công suất khi dùng đúng ${f(12)}.</div>
-<div>Từ nhãn: ${nw(`${m('I')}<sub>đm</sub>${m('=')}`)} <span class="fill" style="min-width:14mm;height:9mm"></span> · ${m('R=')} <span class="fill" style="min-width:14mm;height:9mm"></span> ${m('=')} ${f(16)}</div></div>
+<div>Từ nhãn: ${nw(`${m('I')}<sub>đm</sub>${m('=')}`)} <span class="fill" style="min-width:14mm;height:9mm"></span> ; ${m('R=')} <span class="fill" style="min-width:14mm;height:9mm"></span> ${m('=')} ${f(16)}</div></div>
 ${H.nhan()}</div>
 ${h3(3, 'Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W', '2·3')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
@@ -121,7 +121,7 @@ ${h3(1, 'II.3 · Công và công suất của nguồn điện', '3·1')}
 ${H.canBang()}</div>
 ${h3(2, 'II.4 · Hiệu suất của nguồn điện', '3·2')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
-<div style="display:flex;align-items:flex-end;gap:2mm;margin-bottom:.6mm">${m('H=\\dfrac{A_{\\text{ci}}}{A_{\\text{tp}}}=')}<span class="fill" style="min-width:14mm;height:9mm"></span>${m('=')}<span class="fill" style="min-width:12mm;height:9mm"></span> · thuần điện trở: ${m('H=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
+<div style="display:flex;align-items:flex-end;gap:2mm;margin-bottom:.6mm">${m('H=\\tfrac{A_{\\text{ci}}}{A_{\\text{tp}}}=')}<span class="fill" style="min-width:14mm;height:9mm"></span>${m('=')}<span class="fill" style="min-width:12mm;height:9mm"></span> · thuần điện trở: ${m('H=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
 <div>Mạch ngoài có quạt, động cơ, pin đang sạc: chỉ dùng ${m('H=')} ${f(12)}</div>
 <div><b>Thí nghiệm:</b> hai pin AA nối tiếp (${m('\\mathcal E=3{,}0\\ \\mathrm V')}, ${m('r=1{,}0\\ \\Omega')}), đổi ${m('R')}, đọc ${m('U')}, ${m('I')}.</div>
 <table class="tbl-ct" style="margin:.6mm 0"><tr><th>${m('R')} (${Om})</th><th>1,0</th><th>2,0</th><th>4,0</th><th>9,0</th></tr>
