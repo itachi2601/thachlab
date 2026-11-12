@@ -155,7 +155,8 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 2. **Script dựng quyển** `scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh` (chép `dung-l11-chuong3.sh`: bỏ qua bài chưa có file, ghép
    bằng `pdfunite`, cảnh báo font hệ thống). Phiên chính là chủ DUY NHẤT của `khung.mjs` + script này; cần đổi khung thì phiên bài
    báo lại, không tự sửa.
-3. **Commit hồ sơ + script + skill, push, chờ vào `main`** (`gh run list --workflow gop-claude-vao-main.yml`) rồi mới mở phiên.
+3. **Commit hồ sơ + script + skill, đưa vào `main` TRƯỚC khi mở phiên** (ruleset chặn tự gộp: `git merge origin/main` →
+   `git push origin HEAD:main`, kiểm `git log origin/main`). Phiên bài cũng vào main cách này; workflow tự gộp đỏ là bình thường.
 4. **Mở mỗi bài một phiên** (`start_session`, worktree riêng, "fresh"), brief mẫu (thay số):
    > Soạn ruột tập VL11 bài 18 (lesson 37, Điện trường đều) theo skill `sach-in-tu-web` mục "Ruột tập theo bài" + checklist học sinh ảo.
    > `git fetch && git merge origin/main`; tải cache `npx tsx book/lay-noi-dung.mts l11-ch3-dien-truong` (tab terminal). Chép
