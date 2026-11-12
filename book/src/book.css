@@ -634,3 +634,30 @@ h4{margin:3.4mm 0 1.2mm;font-size:10.6pt}
 .fig.photo .ph-src{display:block;margin-top:1.4mm;font-size:7.6pt;color:var(--g2);font-style:italic}
 .theory img,.fig img{max-height:48mm}
 .fig svg{max-height:66mm}
+/* v5 (11/11/2026): hình theo cỡ chữ trong hình (build.fit_figs), hình nhỏ nổi để chữ chạy cạnh, ô ghi ca-rô */
+.fig svg{max-height:70mm;margin:0 auto}
+.fig.fl{float:right;clear:right;margin:.6mm 0 2.4mm 4mm;padding:1.6mm}
+.fig.fl svg{width:100%!important}
+.fig.fl figcaption{font-size:7.6pt;line-height:1.4}
+svg.svfl{float:right;clear:right;height:auto;max-height:62mm;margin:1mm 0 2mm 4mm}
+.exp svg.svfl{margin:2mm 3mm 2mm 3mm}
+.fig.photo{float:left;clear:left;display:block;width:56mm;margin:.6mm 4mm 2mm 0;padding:1.4mm}
+.fig.photo img{width:100%;max-height:44mm;margin:0 auto}
+.fig.photo figcaption{margin-top:1.2mm;font-size:7.6pt;line-height:1.38}
+.fig.photo .ph-src{font-size:6.8pt;margin-top:.8mm}
+/* khối có khung đứng CẠNH hình nổi (không chui dưới hình) */
+.quiz,.key,.think,.problem,.selfq,.challenge,.try,.reveal,.tl-trap,.exp-w{display:flow-root}
+h2,h3,.sec-band,.btsec,.tlsec,.websec{clear:both}
+/* ô ghi chép: ca-rô nét đứt mờ 3,5 mm (2 ô = 1 dòng 7 mm), dòng viết đậm hơn chút mỗi --pitch */
+.dl i{border-bottom:.6pt dashed #b9b9b9}
+.dl{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 1H40M1 0V40' stroke='%23bdbdbd' stroke-width='2' stroke-dasharray='5 4' fill='none'/%3E%3C/svg%3E") 0 0/3.5mm 3.5mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fillnote{box-sizing:border-box;border-top:.7pt dashed var(--g2);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 1H40M1 0V40' stroke='%23bdbdbd' stroke-width='2' stroke-dasharray='5 4' fill='none'/%3E%3C/svg%3E") 0 0/3.5mm 3.5mm;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.fillnote span{display:inline-block;background:#fff;padding:0 1.6mm 0 0;font:800 7.6pt/1.6 var(--disp);letter-spacing:.08em;text-transform:uppercase;color:var(--g2)}
+.problem:has(> svg.svfl){break-inside:avoid}
+.exp{display:flow-root}
+.exp svg.svfl{max-height:52mm}
+.fig:not(.photo):not(.fl):has(> img){float:right;clear:right;width:78mm;margin:.6mm 0 2.4mm 4mm;padding:1.6mm}
+.fig:not(.photo):not(.fl):has(> img) img{max-height:52mm}
+.fig:not(.photo):not(.fl):has(> img) figcaption{font-size:7.6pt;line-height:1.4}
+.exp{clear:both}
+.exp svg.svfl{max-height:42mm}

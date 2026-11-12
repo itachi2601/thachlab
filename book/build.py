@@ -357,7 +357,8 @@ def photos_after(el, anh, out):
     for a in anh:
         if a['sau'] in txt:
             nguon = f'<span class="ph-src">{a["nguon"]}</span>' if a.get('nguon') else ''
-            out.append(f'<figure class="fig photo"><img src="../assets/anh-that/{a["tep"]}" alt="">'
+            # nổi trái, đặt TRƯỚC đoạn neo để chính đoạn mở bài chảy bên phải ảnh (không chừa trống cạnh ảnh)
+            out.insert(max(len(out) - 1, 0), f'<figure class="fig photo"><img src="../assets/anh-that/{a["tep"]}" alt="">'
                        f'<figcaption>{a["chu"]}{nguon}</figcaption></figure>')
         else: con.append(a)
     return con
@@ -673,6 +674,55 @@ def fetch_img(url):
     return f'../assets/img/{h}.jpg'
 
 
+SVG_SKIP = ('qr', 'cv-art', 'co-art', 'lopen', 'ico', 't1')
+
+
+def svg_mm(svg):
+    """Bề rộng in (mm) của một SVG sao cho chữ trong hình ≈ 9pt (nhỏ nhất ≥ 7,6pt): chữ hình không được to gấp đôi chữ thân."""
+    vb = re.search(r'viewBox="([^"]+)"', svg[:400], re.I)
+    if not vb: return None
+    w = float(vb.group(1).split()[2])
+    if w < 100: return None
+    fs = [float(x) for x in re.findall(r'font-size(?:="|:\s*)([\d.]+)', svg)] or [14.0]
+    fs.sort(); med = fs[len(fs) // 2]
+    s = max(3.17 / med, 2.68 / fs[0])
+    return round(min(max(w * s, 48), 120), 1)
+
+
+def fit_figs(html):
+    """Hình SVG in theo cỡ chữ của hình (svg_mm). Hình ≤100 mm nổi phải để chữ chạy bên trái; đoạn ngắn ngay trước hình
+    ('Quan sát Hình N dưới đây') kéo xuống cạnh hình. Hình trong khung Thí nghiệm cũng nổi phải trong khung."""
+    def fig(m):
+        blk = m.group(0)
+        if 'photo' in m.group(1): return blk
+        sv = re.search(r'<svg\b.*?</svg>', blk, re.S)
+        w = svg_mm(sv.group(0)) if sv else None
+        if not w: return blk
+        sv2 = re.sub(r'(<svg\b[^>]*?)\s+style="[^"]*"', r'\1', sv.group(0), count=1)
+        blk = blk.replace(sv.group(0), re.sub(r'<svg\b', f'<svg style="width:{w}mm"', sv2, count=1), 1)
+        if w <= 100:
+            blk = blk.replace(f'class="{m.group(1)}"', f'class="{m.group(1)} fl"', 1)
+            blk = blk.replace('<figure', f'<figure style="width:{w + 5}mm"', 1)
+        return blk
+    html = re.sub(r'<figure class="(fig[^"]*)"[^>]*>.*?</figure>', fig, html, flags=re.S)
+    # đoạn dẫn ngắn ngay trước hình nổi → đặt sau hình để nằm cạnh hình
+    html = re.sub(r'(<p>(?:(?!</p>).){0,160}?)dưới đây(.{0,60}?</p>)\s*(<figure class="fig[^"]* fl"[^>]*>.*?</figure>)',
+                  lambda m: m.group(3) + m.group(1) + 'bên cạnh' + m.group(2), html, flags=re.S)
+    # SVG trần trong khung thí nghiệm / đề bài
+    def bare(m):
+        sv = m.group(0)
+        if 'style="width' in sv[:80]: return sv
+        pre = html_ref[max(0, m.start() - 160):m.start()]
+        if any(f'class="{k}' in pre[-60:] for k in SVG_SKIP): return sv
+        w = svg_mm(sv)
+        if not w: return sv
+        sv = re.sub(r'(<svg\b[^>]*?)\s+style="[^"]*"', r'\1', sv, count=1)
+        if w <= 100 and re.search(r'<svg\b[^>]*\bclass="', sv): return re.sub(r'(<svg\b[^>]*?)\bclass="', f'\\1style="width:{w}mm" class="svfl ', sv, count=1)
+        return re.sub(r'<svg\b', f'<svg class="svfl" style="width:{w}mm"' if w <= 100 else f'<svg style="width:{w}mm"', sv, count=1)
+    html_ref = html
+    return re.sub(r'<svg\b.*?</svg>', bare, html, flags=re.S)
+
+
 def local_imgs(html):
     """Mọi <img> trong trang in phải là file cục bộ đen–trắng, không lazy: ảnh đường dẫn web ('/assets/…') mở bằng file://
     không tải được, và `loading="lazy"` làm img.decode() trong book.js treo vĩnh viễn (Paged.js không bao giờ chạy)."""
@@ -867,7 +917,7 @@ def build_lesson(lid, start=1, filler=False):
         html += front.filler()
     html += '</body></html>'
     out = SRC / f'lesson-{lid}.html'
-    out.write_text(local_imgs(html))
+    out.write_text(fit_figs(local_imgs(html)))
     return out, keys
 
 
