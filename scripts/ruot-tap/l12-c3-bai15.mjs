@@ -165,7 +165,7 @@ ${foot(4)}</section>`;
 const p5 = `<section class="page">
 ${head('BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'V · Bài toán mẫu: đế sạc không dây', '5·1')}
-<div class="card soft" style="padding:1.2mm 3mm">Đế sạc: cuộn sơ cấp ${m('N_1=20')} vòng nối nguồn xoay chiều ${V('U_1=12')}; cuộn sau lưng điện thoại ${m('N_2=15')} vòng. Áp sát, vôn kế (±0,1 V) chỉ ${V('8{,}4')}; kê bìa thì số đo như bảng ô 2·3.
+<div class="card soft" style="padding:1.2mm 3mm">Đế sạc: cuộn sơ cấp ${m('N_1=20')} vòng nối nguồn xoay chiều ${V('U_1=12')}; cuộn sau lưng điện thoại ${m('N_2=15')} vòng. Áp sát, vôn kế (±0,1 V) chỉ ${V('8{,}4')}; kê bìa thì số đo như bảng ở Tập 74·3.
 <b>a)</b> lí tưởng ${U2} bằng bao nhiêu; số đo lệch mấy % · <b>b)</b> vì sao ${U2} giảm nhanh khi tăng ${m('d')}; năng lượng mất thành gì · <b>c)</b> ở ${m('d=2')} cm, điện áp còn mấy % so với lí tưởng · <b>d)</b> pin cần nhận ${nw('36 000 J')}, công suất nạp 8 W: nạp đầy mất bao lâu</div>
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“sơ cấp 20 vòng; thứ cấp 15 vòng”</td><td>${m('N_2/N_1=0{,}75')} → ${m('U_2=U_1N_2/N_1')}</td></tr>
@@ -194,7 +194,7 @@ const dang = [
     nd: `${nw(`${m('U_2=')} ${f(20)}`)}; phần trăm = ${f(18)}; nhỏ hơn vì từ thông ${f(12)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 2, gi: 5, fig: H.sacKhongDay('Kê hai tấm bìa: khe 2 cm.', { d: '2 cm', bia: true }) },
   { t: 'Dạng 3 · Khá · Dòng Foucault: điều kiện, lực hãm, toả nhiệt',
     de: `Tấm nhôm liền khối ${nw('100 × 60 × 3 mm')} (bỏ qua lực cản không khí): (1) nằm yên cạnh nam châm đứng yên; (2) rơi thẳng đứng qua khe giữa hai cực nam châm mạnh, mặt tấm vuông góc đường sức; (3) nằm yên giữa hai cực nam châm điện có dòng nuôi tăng dần; (4) nằm yên trong lò nướng nóng, không có nam châm.<br><b>a)</b> dòng Foucault xuất hiện ở những tình huống nào<br><b>b)</b> so với rơi tự do, tấm ở (2) rơi nhanh hơn, chậm hơn hay như nhau<br><b>c)</b> cơ năng mất đi ở (2) chuyển thành dạng năng lượng nào<br><b>d)</b> tấm cùng cỡ xẻ vài rãnh song song, ở (2) rơi nhanh hơn hay chậm hơn tấm liền khối`,
-    nd: `Có dòng khi từ thông qua khối ${f(18)}; Lenz: lực từ ${f(18)} chuyển động; ${nw(`${m('I=|e_c|/R')}`)}`, a: ['a', 'b', 'c', 'd'], cot: 2, gi: 4, fig: H.tamRoi() },
+    nd: `Có dòng khi từ thông qua khối ${f(18)}; Lenz: lực từ ${f(18)} chuyển động; ${nw(`${m('I=|e_c|/R')}`)}`, a: ['a', 'b', 'c', 'd'], cot: 2, gi: 5, fig: H.tamRoi() },
   { t: 'Dạng 4 · Khó · Bếp từ: chọn nồi, nhiệt lượng, thời gian đun',
     de: `Bếp từ ghi ${nw('2 000 W')} (công suất điện tiêu thụ), hiệu suất 80 % (nhiệt nước nhận / điện năng tiêu thụ). Có hai nồi cùng cỡ: nồi nhôm và nồi gang. Đun ${nw('1,2 lít')} nước từ ${nw('25 °C')} đến sôi (${nw('100 °C')}); ${DN}, ${cN}.<br><b>a)</b> nên dùng nồi nào để đun nhanh hơn; vì sao<br><b>b)</b> nhiệt lượng nước nhận được<br><b>c)</b> thời gian đun sôi nước`,
     nd: `${nw(`${m('m=DV=')} ${f(14)}`)}; ${nw(`${m('Q=mc\\Delta t')}`)}; ${nw(`${m('P_{\\text{ích}}=')} ${f(12)}`)}; ${nw(`${m('t=')} ${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 2, gi: 5, fig: H.bepCat('Nồi đặt trên bếp từ.') },
