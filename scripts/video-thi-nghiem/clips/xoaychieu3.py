@@ -49,7 +49,7 @@ def vmeter(d, cx, cy, reading):
     card(d, (cx - 74, cy - 58, cx + 74, cy + 58), fill=(255, 236, 160), outline=NAVY, r=18, w=4)
     d.rounded_rectangle([cx - 60, cy - 46, cx + 60, cy + 10], radius=8, fill=NAVY)
     text(d, (cx, cy - 18), reading, 38, (134, 239, 172))
-    text(d, (cx, cy + 34), "V~", 32, INK)
+    text(d, (cx, cy + 34), "V~", 36, INK)
 
 
 def circuit(d, x0, kind, lit, vread="?", lab=True):
@@ -91,7 +91,7 @@ def axes(d, ytop, ybot, vmin, vmax, ticks, ylab, ycol=INK):
     for v, s in ticks:
         d.line([(GX0, Y(v)), (GX1, Y(v))], fill=(236, 232, 222), width=2)
         d.line([(GX0 - 10, Y(v)), (GX0, Y(v))], fill=NAVY, width=4)
-        text(d, (GX0 - 18, Y(v)), s, 34, INK, bold=False, anchor="rm")
+        text(d, (GX0 - 18, Y(v)), s, 36, INK, bold=False, anchor="rm")
     d.line([(GX0, y0), (GX1 + 20, y0)], fill=NAVY, width=5)
     d.line([(GX0, ybot + 10), (GX0, ytop - 30)], fill=NAVY, width=5)
     text(d, (GX0 + 16, ytop - 34), ylab, 36, ycol, anchor="lm")
@@ -119,23 +119,19 @@ def dashed_h(d, y, x0, x1, color, w=4, dash=18, gap=12, a=1.0):
 
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Không sáng", "B. Tối hơn", "C. Sáng như nhau", "D. Sáng hơn")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     two_circuits(d, 0, 0, "12 V")
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 960, 1020, 1640), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 960, 1020, 1390), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1015), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1135, "Đèn xoay chiều so với một chiều sẽ:", 46, INK, maxw=860, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.12)
-        x0 = 100 + (i % 2) * 450; y = 1310 + (i // 2) * 120
-        card(d, (x0, y - 48, x0 + 430, y + 48), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 34, y), s, 42, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1260), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False,
+         alpha=k * appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1580, 940, 1594], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1580, 140 + 800 * (1 - q), 1594], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1336, 940, 1350], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1336, 140 + 800 * (1 - q), 1350], radius=7, fill=A(PURPLE, k))
 
 
 # ---------------- canh 2: tien hanh, ve u(t) ----------------
@@ -153,7 +149,7 @@ def s_do(img, d, t, sc):
     text(d, (1010, 1552), "minh hoạ", 36, MUTED, anchor="rm")
     curve(d, lambda x: U, Y, ease((t - M[0] - 0.6) / 1.0), GREEN, w=7)
     if t > M[0] + 1.2:
-        text(d, (lerp(GX0, GX1, 0.19), Y(U) - 30), "một chiều", 34, GREEN)
+        text(d, (lerp(GX0, GX1, 0.19), Y(U) - 30), "một chiều", 36, GREEN)
     curve(d, u_ac, Y, ease((t - mac - 0.7) / 1.6), ORANGE, w=6)
     a = appear(t, M[1] - 0.2)
     if a > 0:                                                     # danh dau dinh U0
@@ -185,7 +181,7 @@ def s_why(img, d, t, sc):
     if kp >= 1:
         xp = lerp(GX0, GX1, 1 / PER)
         dashed_h(d, Y(U * U * 2 / R), GX0, GX1, ORANGE, w=3, dash=10, gap=12)
-        text(d, (600, 412), "đỉnh gấp 2", 40, ORANGE)      # vung trong 360-460, duong cong khong toi
+        text(d, (600, 412), "đỉnh 24 W, gấp 2", 40, ORANGE)      # vung trong 360-460, duong cong khong toi
     a = appear(t, M[1] - 0.2)
     if a > 0:                                                     # mot chieu + duong trung binh
         d.line([(GX0, Y(U * U / R)), (GX1, Y(U * U / R))], fill=A(GREEN, a), width=10)   # net dut de len net lien: trung
@@ -252,7 +248,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (110, 1120, 970, 1400), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
         text(d, (W / 2, 1175), "Gợi ý", 38, INK, alpha=kh)
-        ctext(d, 1295, "Dùng U hay U₀?", 50, ORANGE, maxw=800, alpha=kh)
+        ctext(d, 1295, "Xem lại cảnh Cái bẫy", 50, ORANGE, maxw=800, alpha=kh)
 
 
 def _cues(clip):
@@ -273,7 +269,7 @@ CLIP = dict(id="tn-l12-xoaychieu-03", header="VẬT LÍ 12 · THÍ NGHIỆM", cu
    ("Một chiều, rồi xoay chiều.", 5.4),
    ("Hai đèn sáng như nhau.", 4.5)]),
  dict(key="why", title="Vì sao sáng như nhau?", draw=s_why, tail=0.6, caps=[
-   ("Công suất p luôn dương.", 4.0),
+   ("p không bao giờ âm.", 4.0),
    ("Cùng công suất trung bình 12 W.", 4.4),
    ("Giới hạn của thí nghiệm.", 3.4)]),
  dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.5, caps=[

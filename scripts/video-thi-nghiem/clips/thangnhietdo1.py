@@ -81,7 +81,6 @@ def beaker(d, piv, w, h, ang, fill, col, steam_t=None):
 
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. 20 °C", "B. 33 °C", "C. 40 °C", "D. 60 °C")
 BW, BH = 220, 300
 
 
@@ -95,17 +94,14 @@ def s_hook(img, d, t, sc):
     text(d, (820, 800), "200 g · 20 °C", 42, BLUE); text(d, (820, 856), "nước lạnh", 36, INK, bold=False)
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 940, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 940, 1020, 1370), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 995), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1130, "Nhiệt kế dừng ở khoảng bao nhiêu?", 48, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 110 + (i % 2) * 440; y = 1290 + (i // 2) * 116
-        card(d, (x0, y - 46, x0 + 420, y + 46), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 34, y), s, 42, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1240), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False,
+         alpha=k * appear(t, sc["M"][1] + 0.2))
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1548, 940, 1562], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1548, 140 + 800 * (1 - q), 1562], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1318, 940, 1332], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1318, 140 + 800 * (1 - q), 1332], radius=7, fill=A(PURPLE, k))
 
 
 # ---------------- canh 2: do nuoc nong vao ca, khuay, doc nhiet ke ----------------
@@ -149,7 +145,7 @@ def screen(d, s, sub=None):
     text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 46), "Nhiệt kế", 36, MUTED, bold=False)
     d.rounded_rectangle([SCR[0] + 30, SCR[1] + 84, SCR[2] - 30, SCR[1] + 200], radius=16, fill=NAVY)
     text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 142), s, 64, (134, 239, 172))
-    text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 246), sub or "°C", 34, MUTED, bold=False)
+    text(d, ((SCR[0] + SCR[2]) / 2, SCR[1] + 246), sub or "°C", 36, MUTED, bold=False)
 
 
 SX0, SX1, SY = 140, 940, 1110                      # thang nhiet do ngang 10-70 °C
@@ -160,8 +156,8 @@ def scale(d, y=SY, alpha=1.0):
     d.line([(SX0, y), (SX1, y)], fill=A(NAVY, alpha), width=5)
     for tc in range(10, 71, 10):
         d.line([(SXv(tc), y - 12), (SXv(tc), y + 12)], fill=A(NAVY, alpha), width=4)
-        text(d, (SXv(tc), y + 44), str(tc), 34, INK, bold=False, alpha=alpha)
-    text(d, (SX1 + 30, y + 44), "°C", 34, INK, bold=False, anchor="lm", alpha=alpha)
+        text(d, (SXv(tc), y + 44), str(tc), 36, INK, bold=False, alpha=alpha)
+    text(d, (SX1 + 30, y + 44), "°C", 36, INK, bold=False, anchor="lm", alpha=alpha)
 
 
 def marker(d, tc, y, col, lab, up=True, alpha=1.0, r=18):
@@ -190,7 +186,7 @@ def s_do(img, d, t, sc):
             wy = CY1 - 10 - (CY1 - CY0 - 20) * (0.4 + 0.2 * pour)
             d.line([(piv[0] - 4, piv[1]), (piv[0] - 12, wy)], fill=A(HOT_W, bh_a), width=16)
         beaker(d, piv, 180, 210, ang, hot_fill, wcol(60), steam_t=None)
-        if mv < 0.05: text(d, (790, 272), "100 g · 60 °C", 36, RED, alpha=bh_a)
+        if mv < 0.05: text(d, (830, 272), "100 g · 60 °C", 36, RED, alpha=bh_a)
     # man hinh nhiet ke: truoc khi rot do nuoc lanh, dang tron hien '···' (khong in so noi suy)
     if t < P_TILT + 0.4: screen(d, f1(T2))
     elif t < P_READ: screen(d, "···")
@@ -232,7 +228,7 @@ def panel(d, t, y0, title, tcb, mh, mc, hl, a):
     for tc in range(10, 71, 10):
         d.line([(SXv(tc), y - 12), (SXv(tc), y + 12)], fill=A(NAVY, a), width=4)
     for tc in (20, 40, 60):
-        text(d, (SXv(tc), y + 42), str(tc), 34, INK, bold=False, alpha=a)
+        text(d, (SXv(tc), y + 42), str(tc), 36, INK, bold=False, alpha=a)
     # khoi luong o hai dau
     text(d, (SXv(60), y + 96), f"{mh} g", 36, RED, alpha=a)
     text(d, (SXv(20), y + 96), f"{mc} g", 36, BLUE, alpha=a)
@@ -254,7 +250,7 @@ def s_ans(img, d, t, sc):
     if t > M[0] - 0.1:   # vach trung binh cong o hang 1
         ka = appear(t, M[0] + 0.3)
         y = 600
-        text(d, (SXv(EQ_MH) + 64, y - 52), "giữa: 40,0", 34, MUTED, anchor="lm", alpha=ka)
+        text(d, (SXv(EQ_MH) + 64, y - 52), "giữa: 40,0", 38, INK, anchor="lm", alpha=ka)
     for i, (s, col, at) in enumerate((("Lệch về phía nước nhiều", BLUE, M[1] - 0.1),
                                        ("Dừng khi cùng nhiệt độ", GREEN, M[2] - 0.1))):
         a = appear(t, at, 0.4); y0 = 1190 + i * 190
@@ -278,7 +274,7 @@ def s_trap(img, d, t, sc):
     d.line([(ZX(30), y), (ZX(42), y)], fill=NAVY, width=5)
     for tc in range(30, 43, 2):
         d.line([(ZX(tc), y - 12), (ZX(tc), y + 12)], fill=NAVY, width=4)
-        text(d, (ZX(tc), y + 44), str(tc), 34, INK, bold=False)
+        text(d, (ZX(tc), y + 44), str(tc), 36, INK, bold=False)
     a0 = appear(t, 0.1, 0.3)
     dot(d, ZX(EQ_MH), y, 16, A(RED, a0), outline=WHITE)
     text(d, (ZX(EQ_MH), y - 66), "40,0", 38, RED, alpha=a0)
@@ -305,7 +301,7 @@ def s_trap(img, d, t, sc):
     if b1 > 0:
         card(d, (60, y0, 1020, y0 + 520), fill=A(WHITE, b1), outline=A(RED, b1), w=5)
         ctext(d, y0 + 150, "(60 + 20) : 2 = 40,0 → SAI", 52, RED, alpha=b1)
-        ctext(d, y0 + 340, "Nước nhiều kéo về phía nó", 52, GREEN, alpha=b1)
+        ctext(d, y0 + 340, "Nước nhiều đổi nhiệt độ ít hơn", 52, GREEN, maxw=880, alpha=b1)
     if k3 > 0:
         card(d, (60, y0, 1020, y0 + 520), fill=A(WHITE, k3), outline=A(NAVY, k3), w=5)
         text(d, (W / 2, y0 + 70), "Chưa nói được", 52, NAVY, alpha=k3)
@@ -335,7 +331,7 @@ def s_end(img, d, t, sc):
     if kh <= 0: return
     card(d, (110, 1300, 970, 1540), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
     text(d, (W / 2, 1355), "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1460, "Nhớ ca 100 g + 200 g.", 46, INK, maxw=820, alpha=kh)
+    ctext(d, 1460, "Nhớ lần trộn vừa xem.", 46, INK, maxw=820, alpha=kh)
 
 
 def _cues(clip):

@@ -90,8 +90,8 @@ def battery_switch(d, closed):
     ang = 0 if closed else math.radians(-32)
     d.line([(290, y), (290 + 76 * math.cos(ang), y + 76 * math.sin(ang))], fill=NAVY, width=7)
     d.line([(360, y), (C1[1], y), (C1[1], CY + CR - 4)], fill=NAVY, width=5)
-    text(d, (C1[0] - 14, y), "1,5 V", 32, MUTED, bold=False, anchor="rm")
-    text(d, (325, y - 46 if closed else y - 70), "K", 34, INK)
+    text(d, (C1[0] - 14, y), "1,5 V", 36, MUTED, bold=False, anchor="rm")
+    text(d, (325, y - 46 if closed else y - 70), "K", 36, INK)
 
 def galvo_wires(d):
     d.line([(C2[0], CY + CR - 4), (C2[0], 670), (640, 670), (640, 712)], fill=NAVY, width=5)
@@ -105,7 +105,7 @@ def galvo(d, e):
         a = math.radians(v / 4 * GANG); big = v == 0 or abs(v) == 4
         r0 = GR - (28 if big else 16)
         d.line([(GX + r0 * math.sin(a), GY - r0 * math.cos(a)), (GX + GR * math.sin(a), GY - GR * math.cos(a))], fill=NAVY, width=5 if big else 3)
-    text(d, (GX, GY - GR - 26), "0", 34, NAVY)
+    text(d, (GX, GY - GR - 26), "0", 36, NAVY)
     text(d, (GX - GR - 6, GY - 40), "−", 40, BLUE); text(d, (GX + GR + 6, GY - 40), "+", 40, RED)
     a = math.radians(clamp(e / EMAX, -1.05, 1.05) * GANG * 0.85)
     d.line([(GX, GY), (GX + (GR - 10) * math.sin(a), GY - (GR - 10) * math.cos(a))], fill=RED, width=8)
@@ -121,7 +121,7 @@ def readout(d, i, state, scol):
     text(d, (290, 754), "Dòng i₁", 36, MUTED, bold=False)
     d.rounded_rectangle([100, 800, 480, 836], radius=18, fill=LIGHT)
     if i > 0.005: d.rounded_rectangle([100, 800, 100 + 380 * i / I0, 836], radius=18, fill=COL1)
-    text(d, (100, 866), "0", 32, MUTED, bold=False, anchor="lm"); text(d, (480, 866), "0,5 A", 32, MUTED, bold=False, anchor="rm")
+    text(d, (100, 866), "0", 36, MUTED, bold=False, anchor="lm"); text(d, (480, 866), "0,5 A", 36, MUTED, bold=False, anchor="rm")
     if state: text(d, (290, 928), state, 36, scol)
 
 def apparatus(d, i, e, closed, state="", scol=INK):
@@ -143,18 +143,18 @@ def plot(d, box, u, pen=True, bands=0.0, alpha=1.0):
     Yi = lambda v: ib - v / I0 * (ib - it); Ye = lambda v: ez - v / EMAX * es
     if bands > 0:
         for a, b in ((U[0], U[1]), (U[2], U[3])):
-            d.rounded_rectangle([X(a) - 10, it - 18, X(b) + 10, ez + es + 18], radius=14, fill=A((187, 247, 208), bands), outline=A(GREEN, bands), width=3)
+            d.rounded_rectangle([X(a) - 10, it - 18, X(b) + 10, ez + es + 4], radius=14, fill=A((187, 247, 208), bands), outline=A(GREEN, bands), width=3)
     for yy, lab in ((Yi(I0), "0,5"), (ib, "0")):
         if lab != "0": d.line([(x0, yy), (x1, yy)], fill=LIGHT, width=2)
-        text(d, (x0 - 14, yy), lab, 32, MUTED, bold=False, anchor="rm")
+        text(d, (x0 - 14, yy), lab, 36, MUTED, bold=False, anchor="rm")
     for yy, lab in ((Ye(EMAX), "+0,05"), (ez, "0"), (Ye(-EMAX), "−0,05")):
         if lab != "0": d.line([(x0, yy), (x1, yy)], fill=LIGHT, width=2)
-        text(d, (x0 - 14, yy), lab, 32, MUTED, bold=False, anchor="rm")
+        text(d, (x0 - 14, yy), lab, 36, MUTED, bold=False, anchor="rm")
     for yy0, yy1, yz, lab in ((it - 30, ib, ib, "i₁ (A)"), (ez - es - 30, ez + es + 10, ez, "e₂ (V)")):
         d.line([(x0, yy0), (x0, yy1)], fill=NAVY, width=4); chevron(d, x0, yy0, -math.pi / 2, NAVY, s=16)
         d.line([(x0, yz), (x1 + 14, yz)], fill=NAVY, width=4); chevron(d, x1 + 14, yz, 0, NAVY, s=16)
-        text(d, (x0 + 20, yy0 + 4), lab, 32, INK, anchor="lm")
-    text(d, (x1 + 10, ez + 40), "t", 32, INK, anchor="rm")
+        text(d, (x0 + 20, yy0 + 4), lab, 36, INK, anchor="lm")
+    text(d, (x1 + 10, ez + 40), "t", 36, INK, anchor="rm")
     for uu, lab in (((U[0] + U[1]) / 2, "bật"), ((U[1] + U[2]) / 2, "giữ"), ((U[2] + U[3]) / 2, "ngắt")):
         text(d, (X(uu), y1 - 4), lab, 36, MUTED, bold=False)
     if u > 0:
@@ -171,28 +171,23 @@ def plot(d, box, u, pen=True, bands=0.0, alpha=1.0):
     return X, Yi, Ye
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("lệch một phía, giữ nguyên", "giật 2 lần, cùng phía", "giật 2 lần, ngược phía", "đứng yên ở số 0")
-
 def s_hook(img, d, t, sc):
     apparatus(d, 0.0, 0.0, False, "K mở", MUTED)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1000 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 600), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 390), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
     text(d, (W / 2, y0 + 140), "Bật K, giữ, rồi ngắt.", 44, INK, alpha=a)
     text(d, (W / 2, y0 + 196), "Kim điện kế sẽ…", 44, INK, alpha=a)
-    for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 270 + j * 76
-        d.rounded_rectangle([90, yy - 30, 990, yy + 30], radius=30, outline=A(LIGHT, k), width=3)
-        text(d, (120, yy), f"{'ABCD'[j]}.  {s}", 42, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 280), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a * appear(t, M[1], 0.4))
     tc, tend = M[1] + 0.8, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 572, 940, y0 + 584], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 572, 140 + 800 * (1 - p), y0 + 584], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 346, 940, y0 + 358], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, y0 + 346, 140 + 800 * (1 - p), y0 + 358], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh (bat - giu - ngat lien mach) ----------------
 def u_of(t, sc):
@@ -251,7 +246,7 @@ def s_dapan(img, d, t, sc):
     y = 930
     card(d, (40, y, 1040, y + 320), fill=A(WHITE, kt), outline=A(LIGHT, kt), w=3)
     for x, s in ((90, "Thao tác"), (520, "Δi₁/Δt (A/s)"), (760, "e₂ (V)"), (940, "Kim")):
-        text(d, (x, y + 40), s, 32, MUTED, bold=False, anchor="lm" if x == 90 else "mm", alpha=kt)
+        text(d, (x, y + 40), s, 36, MUTED, bold=False, anchor="lm" if x == 90 else "mm", alpha=kt)
     d.line([(70, y + 70), (1010, y + 70)], fill=A(LIGHT, kt), width=3)
     for j, (nm, di, e2, s) in enumerate(ROWS):
         k = appear(t, M[0] + 0.8 + 0.25 * j, 0.4); yy = y + 118 + j * 70
@@ -298,7 +293,7 @@ def s_bay(img, d, t, sc):
 def s_end(img, d, t, sc):
     chot_hoi(d, t, sc, "Chỉ khi i₁ đang ĐỔI, cuộn 2 mới có e₂",
              "Đế sạc nối thẳng vào pin 1,5 V. Điện thoại có sạc được không? Vì sao?",
-             "e₂ = −M · Δi₁/Δt\nGiữ K đóng: kim chỉ ở đâu?")
+             "Nhớ lại: lúc nào kim điện kế lệch?")
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

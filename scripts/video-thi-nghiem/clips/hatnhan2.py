@@ -20,7 +20,7 @@ def rich2(d, cx, cy, s, size, color=INK, alpha=1.0, anchor="m"):
     segs = []
     for p in [p for p in TOK.split(s) if p]:
         if p.startswith("^{"):
-            z = 0.8 if "/" in p else 0.72                 # 1/3 phong ~1,3 lan so voi 0,6 cua rich()
+            z = 0.9                                       # so mu (ke ca am, 1/3) >= 0,9 co chu de doc duoc tren dien thoai
             segs.append((p[2:-1], int(size * z), -size * 0.36))
         elif p.startswith("_{"): segs.append((p[2:-1], int(size * 0.72), size * 0.28))
         else: segs.append((p, size, 0))
@@ -47,7 +47,7 @@ def rig(d, t, i, reading, dims=1.0):
     d.rounded_rectangle([300, 808, 780, 822], radius=6, fill=NAVY)            # dia can
     d.rounded_rectangle([410, 846, 670, 914], radius=12, fill=NAVY)
     text(d, (540, 880), reading, 48, (134, 239, 172))
-    text(d, (540, 962), "cân điện tử", 34, MUTED, bold=False)
+    text(d, (540, 962), "cân điện tử", 36, MUTED, bold=False)
     _, a, b, *_ = SHEETS[i]
     p = sheet(d, a, b)
     if dims <= 0: return
@@ -62,24 +62,20 @@ def rig(d, t, i, reading, dims=1.0):
     text(d, (max(q1[0], q2[0]) + 18, (q1[1] + q2[1]) / 2), f"b = {b} mm", 38, BLUE, anchor="lm", alpha=dims)
 
 # ---------------- canh 1: mo bai + du doan ----------------
-OPTS = ("A. Chỉ vài lớp", "B. Khoảng 36 lớp", "C. Khoảng 36 000 lớp", "D. Khoảng 1,4 tỉ lớp")
 def s_hook(img, d, t, sc):
     IMG_REF[0] = img
     rig(d, t, 0, "0,27 g", dims=appear(t, 0.8))
     k = appear(t, sc["M"][1] - 0.5, 0.5)
     if k <= 0: return
-    card(d, (60, 1005, 1020, 1660), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
+    card(d, (60, 1005, 1020, 1410), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1050), "Dự đoán", 44, PURPLE, alpha=k)
     ctext(d, 1108, "Lá 0,27 g; D = 2700 kg/m³", 40, INK, alpha=k)
-    rich2(d, W / 2, 1162, "Nguyên tử nhôm: 2,8×10^{−10} m", 40, INK, alpha=k)
+    rich2(d, W / 2, 1162, "Đường kính nguyên tử nhôm: 2,8×10^{−10} m", 40, INK, alpha=k)
     ctext(d, 1222, "Dọc bề dày có bao nhiêu lớp?", 44, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15); y = 1298 + i * 76
-        card(d, (110, y - 33, 970, y + 33), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=20, w=4)
-        text(d, (150, y), s, 38, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1295), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=k)   # K10
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1614, 940, 1628], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1614, 140 + 800 * (1 - q), 1628], radius=7, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, 1358, 940, 1372], radius=7, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, 1358, 140 + 800 * (1 - q), 1372], radius=7, fill=A(PURPLE, k))
 
 # ---------------- canh 2: do 3 la, tinh d va so lop ----------------
 def tl(sc):
@@ -208,7 +204,7 @@ def s_trap(img, d, t, sc):
     for j, (nm, A_, Rv) in enumerate(RADII):
         y = 520 + j * 150; aj = appear(t, 0.4 + j * 0.35, 0.4)
         text(d, (100, y - 14), nm, 40, INK, anchor="lm", alpha=aj)
-        text(d, (100, y + 30), f"A = {A_}", 34, MUTED, bold=False, anchor="lm", alpha=aj)
+        text(d, (100, y + 30), f"A = {A_}", 36, MUTED, bold=False, anchor="lm", alpha=aj)
         L = float(Rv.replace(",", ".")) * px * ease((t - 0.4 - j * 0.35) / 0.6)
         if L > 2: d.rounded_rectangle([x0, y - 26, x0 + L, y + 26], radius=12, fill=A(BLUE, aj))
         text(d, (x0 + L + 16, y), Rv, 40, BLUE, anchor="lm", alpha=aj)
@@ -236,7 +232,7 @@ def s_end(img, d, t, sc):
     if kh <= 0: return
     card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
     ctext(d, 1360, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
-    ctext(d, 1445, "Diện tích gấp đôi: m thay đổi?", 42, ORANGE, maxw=820, alpha=kh)
+    ctext(d, 1445, "Bề dày d phụ thuộc gì?", 42, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
