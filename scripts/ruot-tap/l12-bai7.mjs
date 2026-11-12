@@ -62,8 +62,8 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Bình khí nén mini kín (lượng khí và thể tích không đổi). Sáng kim chỉ ${nw('5,0 bar')}, khí ở ${oC('27')}; trưa khí lên ${oC('47')}. Áp suất thay đổi thế nào?</p>
 <div class="fig-side" style="${fs(38)}"><div>
-${opt('A', `Tăng ${m('47/27\\approx1{,}74')} lần`)}
-${opt('B', `Tăng ${m('320/300\\approx1{,}07')} lần`)}
+${opt('A', 'Tăng khoảng 1,74 lần')}
+${opt('B', 'Tăng khoảng 1,07 lần')}
 ${opt('C', 'Không đổi, vì thể tích bình không đổi')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
 ${H.binhNang()}</div>
@@ -73,13 +73,12 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Ba thông số trạng thái — một hằng số', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Một lượng khí xác định được mô tả bằng ba thông số trạng thái: ${f(22)}, ${f(22)}, ${f(30)}.</div>
-<div>Cho sẵn: ${TK}.</div>
 <div style="margin:1mm 0;min-height:12mm;display:flex;align-items:flex-end;gap:3mm"><span>Phương trình trạng thái (lượng khí không đổi):</span> <span class="fill" style="min-width:42mm;height:11mm"></span></div>
 <div>Hằng số ${m('pV/T')} chỉ phụ thuộc ${f(30)}, không phụ thuộc cách biến đổi.</div>
-<div>Lập tỉ số hai trạng thái: ${m('p')} và ${m('V')} chỉ cần ${f(30)} ở hai vế; ${m('T')} bắt buộc ${nw(`đổi ra ${f(14)}.`)}</div>
+<div>Lập tỉ số hai trạng thái: ${m('p')} và ${m('V')} chỉ cần ${f(40)} ở hai vế; còn ${m('T')} thì ${f(40)}.</div>
 </div>
-${h3(5, 'Làm nhanh: đổi nhiệt độ', '1·5')}
-${box(`<div style="line-height:6mm">${nw(`${oC('27')} = ${f(14)} K`)} &nbsp;&nbsp; ${nw(`${oC('-33')} = ${f(14)} K`)} &nbsp;&nbsp; ${nw(`${K_('450')} = ${f(14)} °C`)} &nbsp;&nbsp; ${nw(`${oC('0')} = ${f(14)} K`)}</div>`)}
+${h3(5, 'Làm nhanh', '1·5')}
+${box(cau(`<b>Câu 1.</b> Đề không nói giữ thông số nào: hệ thức nào luôn đúng cho một lượng khí xác định, vì sao?`, 1))}
 ${foot(1)}</section>`;
 
 const p2_ = `<section class="page">
@@ -94,13 +93,12 @@ ${H.trungGian()}</div>
 ${h3(2, 'Thí nghiệm: quả bóng bàn bẹp phồng trở lại', '2·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> thả quả bóng bàn bị bẹp (chưa nứt) vào cốc nước nóng khoảng ${oC('80')}.</div>
-<div><b>Quan sát:</b> vỏ bóng ${f(46)}</div>
+${wl('Quan sát: <span style="font-weight:400">vỏ bóng</span>', 1)}
 <div><b>Rút ra:</b> nước nóng làm ${m('T')} của khí trong bóng ${f(14)} → áp suất khí ${f(14)}, đẩy vỏ bóng về dạng cũ, thể tích ${f(14)}.</div>
-<div>Cả ${f(10)} thông số cùng đổi, nên cần một ${f(30)} chung cho cả ba.</div></div>
+<div>Cả ${f(10)} thông số cùng đổi, nên cần một ${f(44)} chung cho cả ba.</div></div>
 ${H.bongBan()}</div>
 ${h3(3, 'Làm nhanh', '2·3')}
-${box(cau(`<b>Câu 1.</b> Đề không nói giữ thông số nào: hệ thức nào luôn đúng cho một lượng khí xác định, vì sao?`, 1)
- + cau(`<b>Câu 2.</b> Một lượng khí: ${lit('V_1=3{,}0')}, ${p1} ${m('=2{,}0')} atm, ${oC('27')} → ${lit('V_2=2{,}0')}, ${oC('127')}. Tính ${p2}.`, 3))}
+${box(`<div style="line-height:6mm"><b>Đổi nhiệt độ</b> (cho sẵn ${TK}): ${nw(`${oC('27')} = ${f(14)} K`)} &nbsp; ${nw(`${oC('-33')} = ${f(14)} K`)} &nbsp; ${nw(`${K_('450')} = ${f(14)} °C`)} &nbsp; ${nw(`${oC('0')} = ${f(14)} K`)}</div>` + cau(`<b>Câu 2.</b> Một lượng khí: ${lit('V_1=3{,}0')}, ${p1} ${m('=2{,}0')} atm, ${oC('27')} → ${lit('V_2=2{,}0')}, ${oC('127')}. Tính ${p2}.`, 3))}
 ${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '2·4')}
 ${rkHai([1, 2, 3, 4], [5, 6, 7])}
 ${foot(2)}</section>`;
@@ -114,22 +112,22 @@ ${h3(1, 'II.2 · Thí nghiệm: bình kín ngâm nước ở năm nhiệt độ'
 <tr><td>${m('T')} (K)</td><td>273</td><td>298</td><td>323</td><td>348</td><td></td></tr>
 <tr><td>${m('p')} (kPa)</td><td>100,0</td><td>108,9</td><td>118,4</td><td>126,9</td><td>136,3</td></tr>
 <tr><td>${m('p/T')} (kPa/K)</td><td>0,366</td><td>0,365</td><td>0,367</td><td>0,365</td><td></td></tr></table>
-<div style="margin-top:.6mm"><b>Rút ra:</b> ${m('p/T')} ${f(30)} nên ${m('p')} ${f(30)} với ${m('T')}.</div>
-<div>Chia ${m('p')} cho ${m('t')} (°C) thì tỉ số ${f(40)}: đó là lỗi khái niệm, không phải sai số.</div></div>
+<div style="margin-top:.6mm"><b>Rút ra:</b> ${m('p/T')} ${f(40)} nên ${m('p')} ${f(40)} với ${m('T')}.</div>
+<div>Chia ${m('p')} cho ${m('t')} (°C) thì tỉ số ${f(46)} (lỗi khái niệm, không phải sai số).</div></div>
 ${h3(2, 'Định luật của quá trình đẳng tích', '3·2')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Quá trình đẳng tích: ${f(30)} không đổi.</div>
-<div>Áp suất ${f(22)} với nhiệt độ ${f(22)}.</div>
+<div>Áp suất ${f(28)} với ${nw(`nhiệt độ ${f(24)}.`)}</div>
 <div style="margin:1mm 0;min-height:12mm;display:flex;align-items:flex-end;gap:3mm"><span>Hệ thức:</span><span class="fill" style="min-width:34mm;height:11mm"></span></div>
-<div>Hằng số ${m('p/T')} phụ thuộc lượng khí và ${f(22)}.</div>
-<div>Đồ thị ${m('p')}–${m('T')}: đường thẳng kéo dài đi qua ${f(30)}.</div>
-<div>Cùng ${m('T')}, đường nằm trên có ${m('p')} ${f(12)} nên ${m('V')} ${f(12)}.</div></div>
+<div>Hằng số ${m('p/T')} phụ thuộc lượng khí và ${nw(`${f(22)}.`)}</div>
+<div>Đồ thị ${m('p')}–${m('T')}: đường thẳng kéo dài đi qua ${nw(`${f(22)}.`)}</div>
+<div>Cùng ${m('T')}, đường nằm trên có:</div><div>${m('p')} ${f(20)} ⇒ ${m('V')} ${f(20)}.</div></div>
 ${H.dangTich()}</div>
 ${h3(3, 'II.3 · Ba định luật cũ nằm gọn trong một phương trình', '3·3')}
-<table><tr><th style="width:30mm">Giữ không đổi</th><th>Hệ thức còn lại</th><th style="width:44mm">Tên định luật (quá trình)</th></tr>
-<tr><td style="height:10mm">Nhiệt độ ${m('T')}</td><td></td><td></td></tr>
-<tr><td style="height:10mm">Áp suất ${m('p')}</td><td></td><td></td></tr>
-<tr><td style="height:10mm">Thể tích ${m('V')}</td><td></td><td></td></tr></table>
+<table><tr><th style="width:30mm">Giữ không đổi</th><th>Hệ thức còn lại</th><th style="width:44mm">Tên định luật (Boyle / Charles / Gay-Lussac)</th></tr>
+<tr><td style="height:9mm">Nhiệt độ ${m('T')}</td><td></td><td></td></tr>
+<tr><td style="height:9mm">Áp suất ${m('p')}</td><td></td><td></td></tr>
+<tr><td style="height:9mm">Thể tích ${m('V')}</td><td></td><td></td></tr></table>
 ${h3(4, 'Làm nhanh', '3·4')}
 ${box(cau(`<b>Câu 3.</b> Khí trong bình kín ở ${oC('27')}, ${Pa('3{,}0\\cdot10^5')}. Hạ xuống ${oC('0')} thì áp suất bằng bao nhiêu?`, 3))}
 ${foot(3)}</section>`;
@@ -163,31 +161,31 @@ ${head('TRẢ BÀI · BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ')}
 ${h3(1, 'IV · Trả bài 6 câu', '5·1')}
 ${box(`${tb('1. Ba thông số trạng thái; phương trình trạng thái.')}${lines(2)}
 ${tb(`2. Vì sao phải dùng ${m('T')} (K), không dùng ${m('t')} (°C)?`)}${lines(1)}
-${tb('3. Quá trình đẳng tích: định nghĩa, định luật, hệ thức.')}${lines(1)}
+${tb('3. Quá trình đẳng tích: định nghĩa, định luật, hệ thức.')}${lines(2)}
 ${tb(`4. Hằng số ${m('p/T')} và ${m('pV/T')} phụ thuộc những gì?`)}${lines(1)}
-${tb('5. Từ phương trình trạng thái suy ra ba định luật thế nào?')}${lines(1)}
-${tb(`6. Clapeyron – Mendeleev; ${m('R')}; 1 mol ở điều kiện tiêu chuẩn?`)}${lines(1)}`)}
+${tb('5. Từ phương trình trạng thái suy ra ba định luật thế nào?')}${lines(2)}
+${tb(`6. Clapeyron – Mendeleev; ${m('R')}; 1 mol ở điều kiện tiêu chuẩn?`)}${lines(2)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${h3(2, 'V · Bài toán mẫu: nén khí trong thân bơm xe đạp', '5·2')}
 <div class="card soft" style="padding:1.2mm 3mm">Thân bơm (bịt kín đầu vòi) chứa ${nw(m('200\\ \\mathrm{cm^3}'))} không khí ở ${oC('27')}, ${Pa('1{,}0\\cdot10^5')}.
 <b>a)</b> Nén nhanh còn ${nw(m('40\\ \\mathrm{cm^3}'))}, khí lên ${oC('87')}: tính áp suất.
 <b>b)</b> Nén thật chậm, nhiệt độ giữ ${oC('27')}: áp suất bao nhiêu?
 <b>c)</b> Số mol khí trong thân bơm sau khi nén nhanh (cho sẵn ${RC}, ${nw(m('1\\ \\mathrm{cm^3}=10^{-6}\\ \\mathrm{m^3}'))}).</div>
-<div class="fig-side" style="${fs(40)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`Đổi K: ${T1} =`, 1)}${wl(`a) ${p2} =`, 2)}${wl(`b) Định luật: ${f(16)} ⇒ ${m("p'_2=")}`, 1)}${wl(`c) Đổi ${V2} ra m³; ${m('n=')}`, 2)}</div>${H.bom()}</div>
+<div class="fig-side" style="${fs(35)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
+${wl(`a) Đổi K: ${T1} = ${f(14)} ; ${p2} =`, 2)}${wl(`b) Định luật: ${f(16)} ⇒ ${m("p'_2=")}`, 1)}${wl(`c) Đổi ${V2} ra m³; ${m('n=')}`, 2)}</div>${H.bom()}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>').replace(wl('Ghi chú của thầy về đề:', 2), wl('Ghi chú của thầy về đề:', 1))}
 ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Quá trình đẳng tích: nung nóng bình kín',
-    de: `Bình thép kín chứa khí nén ở ${oC('27')}, ${Pa('2{,}4\\cdot10^5')}. Đặt gần lò nung, khí nóng lên ${oC('117')}; thể tích bình coi như không đổi.<br><b>a)</b> áp suất khí trong bình lúc đó<br><b>b)</b> van an toàn mở khi áp suất đạt ${Pa('3{,}6\\cdot10^5')}: khí nóng tới bao nhiêu °C thì van mở`,
-    nd: `Bình kín, ${m('V')} không đổi ⇒ ${nw(`${m('p_1/T_1=')} ${f(14)}`)}; đổi ${m('t')} ra ${f(12)} trước khi chia`, a: ['a', 'b'], gi: 3 },
+    de: `Bình thép kín (thể tích không đổi) chứa khí ở ${oC('27')}, ${Pa('2{,}4\\cdot10^5')}; để gần lò nung, khí lên ${oC('117')}.<br><b>a)</b> áp suất khí trong bình lúc đó<br><b>b)</b> van an toàn mở khi áp suất đạt ${Pa('3{,}6\\cdot10^5')}: khí nóng tới bao nhiêu °C thì van mở`,
+    nd: `Bình kín, ${m('V')} không đổi ⇒ ${nw(`${m('p_1/T_1=')} ${f(14)}`)}; đổi ${m('t')} ra ${f(12)} trước khi chia`, a: ['a', 'b'], gi: 2 },
   { t: 'Dạng 2 · Trung bình · Cả p, V, T cùng đổi',
     de: `Xi lanh động cơ chứa ${nw(m('2{,}4\\ \\mathrm{dm^3}'))} hỗn hợp khí ở ${nw('1,0 atm')}, ${oC('27')}. Pit-tông nén xuống ${nw(m('0{,}20\\ \\mathrm{dm^3}'))} thì áp suất tăng lên ${nw('18 atm')}; lượng khí không đổi.<br><b>a)</b> nhiệt độ khí cuối quá trình nén: a<sub>1</sub> theo K, a<sub>2</sub> theo °C<br><b>b)</b> nếu nén thật chậm để nhiệt độ vẫn ${oC('27')}: áp suất cuối (atm); so với ${nw('18 atm')}`,
-    nd: `${nw(`${m('T_2=T_1\\cdot')} ${f(18)}`)}; ${m('p')}, ${m('V')} giữ atm, dm³ (chỉ lấy tỉ số); giữ ${m('T')} ⇒ định luật ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 3 },
+    nd: `${nw(`${m('T_2=T_1\\cdot')} ${f(18)}`)}; ${m('p')}, ${m('V')} giữ atm, dm³ (chỉ lấy tỉ số); giữ ${m('T')} ⇒ định luật ${f(16)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Đọc đồ thị p–T của hai đường đẳng tích',
     de: `Cùng một lượng khí: nung trong bình kín ${lit('V_1=4{,}0')} là đoạn MN trên đường (1); trong bình kín khác là đường (2) qua Q. Hai đường kéo dài qua O.<br><b>a)</b> áp suất tại N<br><b>b)</b> thể tích bình ứng với đường (2)<br><b>c)</b> đường nào ứng với thể tích lớn hơn`,
-    nd: `Cùng một đường: ${nw(`${m('p/T')} ${f(16)}`)}; M, Q cùng ${m('T')} nên ${nw(`${m('p_MV_1=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.doThiD3() },
+    nd: `Cùng một đường: ${nw(`${m('p/T')} ${f(16)}`)}; M, Q cùng ${m('T')} nên ${nw(`${m('p_MV_1=')} ${f(14)}`)}`, a: ['a', 'b', 'c'], gi: 5, fig: H.doThiD3() },
   { t: 'Dạng 4 · Khá · Clapeyron – Mendeleev: số mol, khối lượng, thể tích',
     de: `Bình thép dung tích ${lit('12')} chứa khí nitrogen (${nw(m('M=28\\ \\mathrm{g/mol}'))}) ở ${oC('27')}, ${Pa('2{,}0\\cdot10^6')}. Cho sẵn ${RC}; ở điều kiện tiêu chuẩn (${oC('0')}, 1 atm) 1 mol khí chiếm 22,4 lít.<br><b>a)</b> số mol khí trong bình<br><b>b)</b> khối lượng nitrogen<br><b>c)</b> đưa lượng khí này về điều kiện tiêu chuẩn thì chiếm bao nhiêu lít`,
     nd: `Đổi ${m('V')} ra ${f(16)}, ${m('T')} ra K; ${nw(`${m('n=')} ${f(18)}`)}, ${nw(`${m('m=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 6 },
@@ -234,6 +232,6 @@ await K.dung({
   trang1to5: [p1_, p2_, p3_, p4_, p5_].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]], khoNhat: false },
   tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
-  tra: 'ba thông số 1·4 · đổi K 1·5 · suy ra 2·1 · bóng bàn 2·2 · đẳng tích 3·1 · ba định luật 3·3 · Clapeyron 4·1 · bẫy 4·2 · trả bài 5·1 · bài mẫu 5·2 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
+  tra: 'ba thông số 1·4 · đổi K 2·3 · suy ra 2·1 · bóng bàn 2·2 · đẳng tích 3·1 · ba định luật 3·3 · Clapeyron 4·1 · bẫy 4·2 · trả bài 5·1 · bài mẫu 5·2 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
   out: process.argv[2],
 });
