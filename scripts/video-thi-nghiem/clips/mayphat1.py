@@ -67,6 +67,8 @@ def rig(d, t, n, ang, reading, lit):
     text(d, (805, 410), reading, 66, (134, 239, 172))
     text(d, (805, 520), "Hz", 40, MUTED)
     text(d, (805, 568), "±0,1 Hz", 36, MUTED, bold=False)
+    for yy in (490, 520):   # hai day cham hai cuc tan so ke (cac cuc o mep the): tan so ke mac song song voi cuon day
+        dot(d, 600, yy, 11, NAVY); dot(d, 1010, yy, 11, NAVY)
     # bong den nho mac song song
     if lit > 0:
         for rr, al in ((120, 0.18), (90, 0.28), (66, 0.4)):
@@ -229,7 +231,7 @@ def s_trap(img, d, t, sc):
     b = appear(t, 0.3)
     if b <= 0: return
     card(d, (60, 560, 1020, 1590), fill=A(WHITE, b), outline=A(RED, b), w=6)
-    text(d, (W / 2, 615), "Bẫy: đếm cực thay vì cặp cực", 44, RED, alpha=b)
+    text(d, (W / 2, 615), "Bẫy: em lấy p bằng mấy?", 44, RED, alpha=b)
     cx, cy, r = W / 2, 860, 150
     rotor(d, cx, cy, r, 45, a=b)   # xoay 45 do: cap 1 = nua phai (N tren + S duoi), cap 2 = nua trai (N duoi + S tren)
     g = appear(t, M[2] - 0.2)
@@ -240,8 +242,8 @@ def s_trap(img, d, t, sc):
             d.arc([cx - r - 26, cy - r - 26, cx + r + 26, cy + r + 26], a0 + 5, a0 + 175, fill=A(col, g), width=10)
             m = math.radians(a0 + 90)
             text(d, (cx + (r + 100) * math.cos(m), cy), f"cặp {k + 1}", 40, col, alpha=g)
-    c0, c1 = appear(t, 0.8), appear(t, M[1] + 0.4)
-    text(d, (W / 2, 1110), "4 cực → lấy p = 4", 42, RED, alpha=c0)   # tieu de hop da neu bay, hien som cho nua duoi khong trong
+    c1 = appear(t, M[1] + 0.4)
+    text(d, (W / 2, 1110), "4 cực → lấy p = 4", 42, RED, alpha=c1)
     text(d, (W / 2, 1180), "f = 25 × 4 = 100 Hz  ✗", 46, RED, alpha=c1)
     c2, cq = appear(t, M[2] + 0.4), appear(t, 1.2) * b
     if c2 < 1:   # o cho: hoi p that bang may, toi khi hien dap so
