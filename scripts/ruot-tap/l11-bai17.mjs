@@ -43,7 +43,7 @@ const nC = (s) => nw(m(`${s}\\ \\mathrm{nC}`));
 const cm = (s) => nw(m(`${s}\\ \\mathrm{cm}`));
 const Vm = (s) => nw(m(`${s}\\ \\mathrm{V/m}`));
 const kk = nw(m('k=9\\cdot10^{9}\\ \\mathrm{N\\cdot m^2/C^2}'));
-const fh = (w) => `<span class="fill" style="min-width:${w}mm;height:9mm;vertical-align:-4.5mm"></span>`; // ô cao cho phân số (HS ảo: ≥9 mm)
+const fh = (w) => `<span class="fill" style="min-width:${w}mm;height:10mm;vertical-align:-5mm"></span>`; // ô cao cho phân số (HS ảo: ≥9 mm)
 const cung = (s) => ({ t: '<span class="nhap-t">Dùng cho cả trang</span>', de: s, k: 0 });
 const ee = nw(m('e=1{,}6\\cdot10^{-19}\\ \\mathrm C'));
 
@@ -90,7 +90,7 @@ ${h3(1, 'II.3 · Điện trường của một điện tích điểm', '2·1')}
 <div><b>Điểm đặt:</b> ${f(30)}</div>
 <div><b>Phương:</b> đường thẳng nối ${f(30)}</div>
 <div><b>Chiều:</b> ${nw(`${m('Q>0')} ${f(25)}`)} · ${nw(`${m('Q<0')} ${f(25)}`)}</div>
-<div style="margin:.6mm 0"><b>Độ lớn:</b> ${m('E=')} ${fh(24)} &nbsp; ${m('k=')} ${f(22)}</div>
+<div style="margin:.6mm 0"><b>Độ lớn:</b> ${m('E=')} ${fh(26)} &nbsp; với ${kk} (cho sẵn)</div>
 <div>${eps}: hằng số ${f(22)}; chân không, không khí ${nw(`${m('\\varepsilon\\approx')} ${f(10)}`)}; dầu, nước ${m('\\varepsilon>1')} nên ${m('E')} ${f(18)}</div>
 <div><b>Mẹo:</b> ${m('r')} gấp đôi thì ${m('E')} ${f(25)}</div></div>
 ${H.quanhQ()}</div>
@@ -104,13 +104,13 @@ ${h3(2, 'Thí nghiệm: cân điện tử “cân” lực điện', '2·2')}
 <tr><td>${m('r=4')} cm, ${m('q=5')} nC</td><td>0,12</td><td></td></tr></table>
 </div>${H.canDien()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
-<div><b>Rút ra:</b> ${m('r')} gấp đôi (3 → 6 cm), ${m('E')} giảm khoảng ${f(12)} lần. Ở 4 cm, ${m('q')} giảm một nửa thì ${m('F')} ${f(22)}, ${m('E')} ${f(22)}.</div></div>
+<div><b>Rút ra:</b> ${m('r')} gấp đôi (3 → 6 cm), ${m('E')} giảm khoảng ${f(12)} lần. Ở 4 cm, ${m('q')} giảm một nửa thì ${m('F')} ${f(30)}, ${m('E')} ${f(30)}.</div></div>
 ${h3(3, 'II.4 · Đường sức điện', '2·3')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div><b>Tiếp:</b> tiếp tuyến tại mỗi điểm là ${f(16)} của ${vE}; hướng đường sức là hướng của ${f(12)}.</div>
+<div><b>Tiếp:</b> tiếp tuyến tại mỗi điểm là ${f(16)} của ${vE}; hướng đường sức là hướng của vectơ ${f(12)}.</div>
 <div>Qua mỗi điểm vẽ được ${f(16)} đường sức; các đường sức ${f(16)} cắt nhau.</div>
 <div><b>Ra – Vào:</b> đi ra từ điện tích ${f(16)}, kết thúc ở điện tích ${f(16)} (hoặc vô cực), nên ${ck}có &nbsp;${ck}không khép kín.</div>
-<div><b>Mau:</b> chỗ ${m('E')} lớn đường sức ${f(16)}, chỗ ${m('E')} nhỏ đường sức ${f(16)}.</div>
+<div><b>Độ lớn E:</b> chỗ ${m('E')} lớn đường sức ${f(16)}, chỗ ${m('E')} nhỏ đường sức ${f(16)}.</div>
 <div><b>Điện phổ:</b> bột hạt cách điện rắc trong dầu, đặt trong điện trường, xếp thành ${f(22)} dọc theo đường sức.</div></div>
 ${H.duongSuc()}</div>
 ${foot(2)}</section>`;
@@ -181,13 +181,13 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Từ lực trên điện tích thử tìm E, rồi đổi điện tích thử',
     de: `Tại M, điện tích thử ${m('q_1=-4\\ \\mathrm{nC}')} chịu lực điện ${m('6\\cdot10^{-4}\\ \\mathrm N')} hướng về phía bắc.<br><b>a)</b> độ lớn và hướng của ${vE} tại M<br><b>b)</b> bỏ ${m('q_1')}, đặt vào M ${m('q_2=+2\\ \\mathrm{nC}')}: lực lên ${m('q_2')} và hướng`,
-    nd: `${m('E=F/|q|')}; ${m('q<0')} thì ${vF} ${f(14)} chiều ${vE}; đổi điện tích thử thì ${vE} tại M ${f(16)}`, a: ['a', 'b'], gi: 4, cot: 2, fig: H.d1() },
-  { t: 'Dạng 2 · Dễ · Điện trường của một điện tích điểm và lực lên điện tích thử',
+    nd: `${m('E=F/|q|')}; ${m('q<0')} thì ${vF} ${f(14)} chiều ${vE}; đổi điện tích thử thì ${vE} tại M ${f(16)}`, a: ['a', 'b'], gi: 3, cot: 2, fig: H.d1() },
+  { t: 'Dạng 2 · Dễ · E của điện tích điểm, lực lên điện tích thử',
     de: `Điện tích điểm ${m('Q=-6\\ \\mathrm{nC}')} đặt cố định trong không khí; M cách Q ${cm(3)}; ${kk}.<br><b>a)</b> ${m('E')} tại M và hướng<br><b>b)</b> đặt tại M ${m('q=+2\\ \\mathrm{nC}')}: lực lên ${m('q')} và hướng`,
-    nd: `thế ${m('|Q|')}, ${m('r')} đổi ra ${f(10)}; dấu của ${m('Q')} chỉ để chọn ${f(16)}`, a: ['a', 'b'], gi: 3, cot: 2, fig: H.d2() },
-  { t: 'Dạng 3 · Trung bình · Điện trường trong điện môi, tỉ lệ theo khoảng cách',
+    nd: `thế ${m('|Q|')}, ${m('r')} đổi ra ${f(10)}; dấu của ${m('Q')} chỉ để chọn ${f(16)}`, a: ['a', 'b'], gi: 4, cot: 2, fig: H.d2() },
+  { t: 'Dạng 3 · Trung bình · Điện môi, tỉ lệ theo khoảng cách',
     de: `${m('Q=+8\\ \\mathrm{nC}')} đặt trong dầu ${m('\\varepsilon=2')}. M cách Q ${cm(4)}; N trên tia QM, cách Q ${cm(12)}; ${m('k')} như Dạng 2.<br><b>a)</b> ${m('E_M')} &nbsp;<b>b)</b> ${m('E_N')} &nbsp;<b>c)</b> P trên tia QM có ${m('E_P=900\\ \\mathrm{V/m}')}: khoảng cách PQ`,
-    nd: `cùng ${m('Q')}, cùng môi trường: ${m('r')} gấp ${m('n')} lần thì ${m('E')} giảm ${f(12)} lần`, a: ['a', 'b', 'c'], gi: 4, fig: H.d3() },
+    nd: `cùng ${m('Q')}, cùng môi trường: ${m('r')} gấp ${m('n')} lần thì ${m('E')} giảm ${f(12)} lần`, a: ['a', 'b', 'c'], gi: 5, fig: H.d3() },
   { t: 'Dạng 4 · Trung bình · Chồng chất hai vectơ cùng phương',
     de: `Trong không khí, ${m('q_1=+9\\ \\mathrm{nC}')} tại A, ${m('q_2=-4\\ \\mathrm{nC}')} tại B, ${m('AB=4\\ \\mathrm{cm}')}; ${kk}.<br><b>a)</b> M trên đường AB, ngoài đoạn AB, phía B, cách B ${cm(2)}: ${m('E')} tổng hợp tại M và hướng<br><b>b)</b> ${m('E')} tổng hợp tại trung điểm I của AB`,
     nd: `${m('r_i')} đo từ chính điện tích đó; cùng chiều thì ${m('E=')} ${f(16)}, ngược chiều thì ${m('E=')} ${f(16)}`, a: ['a', 'b'], gi: 7, fig: H.d4(), cot: 2 },
@@ -213,24 +213,23 @@ const tuongTu = {
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
     cung(`${kk}; ${ee}; không khí ${m('\\varepsilon\\approx1')}.`),
-    { t: 'Dạng 1 · Bài 1', de: `Tại M, điện tích thử ${m('q_1=+5\\ \\mathrm{nC}')} chịu lực điện ${m('1{,}0\\cdot10^{-3}\\ \\mathrm N')} hướng về phía đông.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> thay bằng ${m('q_2=-3\\ \\mathrm{nC}')} tại M: lực lên ${m('q_2')} (độ lớn, hướng)`, o: ['a', 'b'], ow: 40 },
-    { t: 'Dạng 1 · Bài 2', de: `Electron (${ee}) đặt tại M chịu lực điện ${m('3{,}2\\cdot10^{-15}\\ \\mathrm N')} hướng thẳng lên.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> thay bằng proton (${m('q=+e')}) tại M: lực lên proton (độ lớn, hướng)`, o: ['a', 'b'], ow: 40 },
-    { t: 'Dạng 2 · Bài 1', de: `${m('Q=+4\\ \\mathrm{nC}')} đặt trong không khí; M cách Q ${cm(6)}; ${kk}.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> lực lên ${m('q=-3\\ \\mathrm{nC}')} đặt tại M (độ lớn, hướng)`, o: ['a', 'b'], ow: 40 },
-    { t: 'Dạng 2 · Bài 2', de: `${m('Q=-2{,}5\\ \\mathrm{nC}')} đặt trong không khí; M cách Q ${cm(5)}.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> lực lên electron đặt tại M (độ lớn, hướng)`, o: ['a', 'b'], ow: 40 },
+    { t: 'Dạng 1 · Bài 1', de: `Tại M, điện tích thử ${m('q_1=+5\\ \\mathrm{nC}')} chịu lực điện ${m('1{,}0\\cdot10^{-3}\\ \\mathrm N')} hướng về phía đông.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> thay bằng ${m('q_2=-3\\ \\mathrm{nC}')} tại M: lực lên ${m('q_2')} (độ lớn, hướng)`, o: ['a', 'b'], ow: 60 },
+    { t: 'Dạng 1 · Bài 2', de: `Electron (${ee}) đặt tại M chịu lực điện ${m('3{,}2\\cdot10^{-15}\\ \\mathrm N')} hướng thẳng lên.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> thay bằng proton (${m('q=+e')}) tại M: lực lên proton (độ lớn, hướng)`, o: ['a', 'b'], ow: 60 },
+    { t: 'Dạng 2 · Bài 1', de: `${m('Q=+4\\ \\mathrm{nC}')} đặt trong không khí; M cách Q ${cm(6)}; ${kk}.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> lực lên ${m('q=-3\\ \\mathrm{nC}')} đặt tại M (độ lớn, hướng)`, o: ['a', 'b'], ow: 60 },
+    { t: 'Dạng 2 · Bài 2', de: `${m('Q=-2{,}5\\ \\mathrm{nC}')} đặt trong không khí; M cách Q ${cm(5)}.<br><b>a)</b> ${m('E')} tại M (độ lớn, hướng)<br><b>b)</b> lực lên electron đặt tại M (độ lớn, hướng)`, o: ['a', 'b'], ow: 60 },
     { t: 'Dạng 3 · Bài 1', de: `${m('Q=+6\\ \\mathrm{nC}')} đặt trong dầu ${m('\\varepsilon=3')}; M cách Q ${cm(3)}, N trên tia QM cách Q ${cm(6)}.<br><b>a)</b> ${m('E_M')}<br><b>b)</b> ${m('E_N')}<br><b>c)</b> P trên tia QM có ${m('E_P=800\\ \\mathrm{V/m}')}: khoảng cách PQ`, fig: H.ttD3(), fw: 44, o: ['a', 'b', 'c'] },
     { t: 'Dạng 3 · Bài 2', de: `${m('Q=+10\\ \\mathrm{nC}')} đặt trong dầu ${m('\\varepsilon=2{,}5')}; M cách Q ${cm(6)}.<br><b>a)</b> ${m('E_M')} trong dầu<br><b>b)</b> ${m('E')} tại M nếu bỏ dầu (không khí)<br><b>c)</b> trong dầu, ${m('E')} tại N cách Q ${cm(2)}`, o: ['a', 'b', 'c'] },
-    nhap(1),
   ], [
     cung(`${kk}; không khí ${m('\\varepsilon\\approx1')}; electron ${m('q=-1{,}6\\cdot10^{-19}\\ \\mathrm C')}.`),
-    { t: 'Dạng 4 · Bài 1', de: `Trong không khí, ${m('q_1=+4\\ \\mathrm{nC}')} tại A, ${m('q_2=-4\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}.<br><b>a)</b> ${m('E')} tổng hợp tại trung điểm I (độ lớn, hướng)<br><b>b)</b> M trên đường AB, ngoài đoạn AB, phía B, cách B ${cm(3)}: ${m('E')} tổng hợp (độ lớn, hướng)`, o: ['a', 'b'], ow: 40 },
-    { t: 'Dạng 4 · Bài 2', de: `Trong không khí, ${m('q_1=+16\\ \\mathrm{nC}')} tại A, ${m('q_2=+4\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}.<br><b>a)</b> ${m('E')} tổng hợp tại trung điểm I (độ lớn, hướng)<br><b>b)</b> điểm có ${m('E=0')}: cách A bao nhiêu, cách B bao nhiêu`, o: ['a', 'b'], ow: 40 },
-    { t: 'Dạng 5 · Bài 1', de: `Trong không khí, hai điện tích ${m('Q=+4\\ \\mathrm{nC}')} tại A và B, ${m('AB=6\\ \\mathrm{cm}')}; M trên trung trực của AB, cách trung điểm H ${cm(4)}.<br><b>a)</b> ${m('E')} tổng hợp tại M (độ lớn, hướng)<br><b>b)</b> lực lên ${m('q=+3\\ \\mathrm{nC}')} đặt tại M<br><b>c)</b> ${m('E')} tại H`, o: ['a', 'b', 'c'], ow: 40 },
-    { t: 'Dạng 5 · Bài 2', de: `Trong không khí, ${m('q_1=+6\\ \\mathrm{nC}')} tại A, ${m('q_2=-6\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}; M trên trung trực của AB, cách trung điểm H ${cm(4)}.<br><b>a)</b> ${m('E')} tổng hợp tại M (độ lớn, hướng)<br><b>b)</b> lực lên electron đặt tại M (độ lớn, hướng)<br><b>c)</b> ${m('E')} tại H (độ lớn, hướng)`, fig: H.ttD5(), fw: 40, o: ['a', 'b', 'c'], ow: 30 },
-    nhap(7),
+    { t: 'Dạng 4 · Bài 1', de: `Trong không khí, ${m('q_1=+4\\ \\mathrm{nC}')} tại A, ${m('q_2=-4\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}.<br><b>a)</b> ${m('E')} tổng hợp tại trung điểm I (độ lớn, hướng)<br><b>b)</b> M trên đường AB, ngoài đoạn AB, phía B, cách B ${cm(3)}: ${m('E')} tổng hợp (độ lớn, hướng)`, o: ['a', 'b'], ow: 60 },
+    { t: 'Dạng 4 · Bài 2', de: `Trong không khí, ${m('q_1=+16\\ \\mathrm{nC}')} tại A, ${m('q_2=+4\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}.<br><b>a)</b> ${m('E')} tổng hợp tại trung điểm I (độ lớn, hướng)<br><b>b)</b> điểm có ${m('E=0')}: cách A bao nhiêu, cách B bao nhiêu`, o: ['a', 'b'], ow: 60 },
+    { t: 'Dạng 5 · Bài 1', de: `Trong không khí, hai điện tích ${m('Q=+4\\ \\mathrm{nC}')} tại A và B, ${m('AB=6\\ \\mathrm{cm}')}; M trên trung trực của AB, cách trung điểm H ${cm(4)}.<br><b>a)</b> ${m('E')} tổng hợp tại M (độ lớn, hướng)<br><b>b)</b> lực lên ${m('q=+3\\ \\mathrm{nC}')} đặt tại M<br><b>c)</b> ${m('E')} tại H`, o: ['a', 'b', 'c'], ow: 60 },
+    { t: 'Dạng 5 · Bài 2', de: `Trong không khí, ${m('q_1=+6\\ \\mathrm{nC}')} tại A, ${m('q_2=-6\\ \\mathrm{nC}')} tại B, ${m('AB=6\\ \\mathrm{cm}')}; M trên trung trực của AB, cách trung điểm H ${cm(4)}.<br><b>a)</b> ${m('E')} tổng hợp tại M (độ lớn, hướng)<br><b>b)</b> lực lên electron đặt tại M (độ lớn, hướng)<br><b>c)</b> ${m('E')} tại H (độ lớn, hướng)`, fig: H.ttD5(), fw: 40, o: ['a', 'b', 'c'], ow: 60 },
+    nhap(5),
   ]],
   dap: [
-    `D1·1: a) 2,0·10<sup>5</sup> V/m, hướng đông · b) 6,0·10<sup>−4</sup> N, hướng tây &nbsp;|&nbsp; D1·2: a) 2,0·10<sup>4</sup> V/m, hướng xuống · b) 3,2·10<sup>−15</sup> N, hướng xuống &nbsp;|&nbsp; D2·1: a) 1,0·10<sup>4</sup> V/m, ra xa Q · b) 3,0·10<sup>−5</sup> N, về phía Q &nbsp;|&nbsp; D2·2: a) 9,0·10<sup>3</sup> V/m, về phía Q · b) 1,44·10<sup>−15</sup> N, ra xa Q &nbsp;|&nbsp; D3·1: a) 2,0·10<sup>4</sup> V/m · b) 5,0·10<sup>3</sup> V/m · c) 15 cm &nbsp;|&nbsp; D3·2: a) 1,0·10<sup>4</sup> V/m · b) 2,5·10<sup>4</sup> V/m · c) 9,0·10<sup>4</sup> V/m`,
-    `D4·1: a) 8,0·10<sup>4</sup> V/m, hướng về B · b) 3,56·10<sup>4</sup> V/m, hướng về B &nbsp;|&nbsp; D4·2: a) 1,2·10<sup>5</sup> V/m, hướng về B · b) giữa A và B, cách A 4 cm, cách B 2 cm &nbsp;|&nbsp; D5·1: a) 2,30·10<sup>4</sup> V/m, theo HM ra xa AB · b) 6,91·10<sup>−5</sup> N, cùng hướng E · c) 0 &nbsp;|&nbsp; D5·2: a) 2,59·10<sup>4</sup> V/m, song song AB, chiều A → B · b) 4,15·10<sup>−15</sup> N, chiều B → A · c) 1,2·10<sup>5</sup> V/m, hướng về B`,
+    `D1·1: a) 2,0·10<sup>5</sup> V/m, hướng đông · b) 6,0·10<sup>−4</sup> N, hướng tây &nbsp;|&nbsp; D1·2: a) 2,0·10<sup>4</sup> V/m, hướng xuống · b) 3,2·10<sup>−15</sup> N, hướng xuống &nbsp;|&nbsp; D2·1: a) 1,0·10<sup>4</sup> V/m, ra xa Q · b) 3,0·10<sup>−5</sup> N, về phía Q &nbsp;|&nbsp; D2·2: a) 9,0·10<sup>3</sup> V/m, về phía Q · b) 1,4·10<sup>−15</sup> N, ra xa Q &nbsp;|&nbsp; D3·1: a) 2,0·10<sup>4</sup> V/m · b) 5,0·10<sup>3</sup> V/m · c) 15 cm &nbsp;|&nbsp; D3·2: a) 1,0·10<sup>4</sup> V/m · b) 2,5·10<sup>4</sup> V/m · c) 9,0·10<sup>4</sup> V/m`,
+    `D4·1: a) 8,0·10<sup>4</sup> V/m, hướng về B · b) 3,6·10<sup>4</sup> V/m, hướng về B &nbsp;|&nbsp; D4·2: a) 1,2·10<sup>5</sup> V/m, hướng về B · b) giữa A và B, cách A 4 cm, cách B 2 cm &nbsp;|&nbsp; D5·1: a) 2,3·10<sup>4</sup> V/m, theo HM ra xa AB · b) 6,9·10<sup>−5</sup> N, cùng hướng E · c) 0 &nbsp;|&nbsp; D5·2: a) 2,6·10<sup>4</sup> V/m, song song AB, chiều A → B · b) 4,1·10<sup>−15</sup> N, chiều B → A · c) 1,2·10<sup>5</sup> V/m, hướng về B`,
   ],
 };
 
