@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 432 hàm, sinh tự động 2026-11-12
+# Hàm SQL / RPC (schema public) — 434 hàm, sinh tự động 2026-11-12
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -30,6 +30,8 @@ repo — xem trên Supabase Dashboard).
 - `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `cnc_milling_quiz_save(p_course_id bigint, p_participant_key uuid, p_participant_name text, p_class_name text, p_answers jsonb, p_score integer, p_total integer, p_status text)` → void
+- `cnc_quiz_bank_of(p_lesson_id text, p_assessment_id text)` → TABLE(cnc_key text, pass_ratio numeric)
+- `cnc_quiz_submit(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_answers jsonb)` → TABLE(score integer, total integer, passed boolean)
 - `count_question_types(qs jsonb)` → jsonb
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
 - `diagnostic_bank_topic_ids()` → bigint[]
@@ -241,8 +243,8 @@ repo — xem trên Supabase Dashboard).
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_public_stats()` → void
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
