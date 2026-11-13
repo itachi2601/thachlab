@@ -10,6 +10,8 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
 import { hinhL10b15 as H } from './hinh-l10-bai15.mjs';
+// ô viết phân số cao 9 mm (HS ảo: phân số viết tay cần ≥ 9 mm)
+const ft = (w) => `<span class="fill" style="min-width:${w}mm;height:9mm"></span>`;
 const HERE = dirname(fileURLToPath(import.meta.url));
 
 if (process.argv[2] === '--hinh') {
@@ -74,7 +76,7 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(2)}</div>
 ${h3(4, 'Kiểm tra hành trang: gia tốc', '1·4')}
 <div class="card" style="padding:1.2mm 3mm"><div>
-<div>Định nghĩa: ${m('a=')} ${f(25)} &nbsp;· công thức không có ${m('t')}: ${nw(`${m('v^2-v_0^2=')} ${f(16)}`)}</div>
+<div>Định nghĩa: ${m('a=')} ${ft(25)} &nbsp;· công thức không có ${m('t')}: ${nw(`${m('v^2-v_0^2=')} ${f(16)}`)}</div>
 <div style="margin-top:1mm"><b>1.</b> Xe máy tăng tốc đều từ đứng yên lên ${u('10', 'm/s')} trong ${u('5', 's')}.</div>
 ${lines(1)}<div>Gia tốc ${m('a=')} ${oDv(16, m(ms2))}</div>
 <div style="margin-top:1mm"><b>2.</b> Xe đang chạy ${u('10', 'm/s')} thì hãm phanh đều, đi thêm ${u('25', 'm')} thì dừng.</div>
@@ -86,8 +88,8 @@ const p2 = `<section class="page">
 ${head('II · LỰC, KHỐI LƯỢNG VÀ GIA TỐC')}
 ${h3(1, 'II.1 · Thí nghiệm: giữ khối lượng, đổi lực', '2·1')}
 <div class="card fig-side" style="${fs(50)};padding:1.2mm 3mm"><div>
-<div><b>Làm:</b> xe ${u('m=0{,}50', 'kg')} trên máng đệm khí (ma sát gần như bằng 0). Quả nặng kéo xe qua ròng rọc; cảm biến đo ${m('F')} (sai số ${u('\\pm0{,}01', 'N')}). Thả xe từ nghỉ ở cổng 1, đo ${m('t')} tới cổng 2 (sai số ${u('\\pm0{,}01', 's')}).</div>
-<div style="margin-top:.6mm">Từ ${m('s=\\tfrac12at^2')} (vì ${m('v_0=0')}): ${m('a=')} ${f(16)}</div></div>
+<div><b>Làm:</b> xe ${u('m=0{,}50', 'kg')} trên máng đệm khí (ma sát ≈ 0). Quả nặng kéo xe qua ròng rọc; cảm biến đo ${m('F')} (sai số ${u('\\pm0{,}01', 'N')}). Thả xe từ nghỉ ở cổng 1, đo ${m('t')} tới cổng 2 (cách nhau ${u('s=0{,}50', 'm')}) (sai số ${u('\\pm0{,}01', 's')}).</div>
+<div style="margin-top:.6mm">Từ ${m('s=\\tfrac12at^2')} (vì ${m('v_0=0')}): ${m('a=')} ${ft(16)}</div></div>
 ${H.mangDemKhi('Cảm biến đo F; hai cổng quang đo t.')}</div>
 <div class="fig-side" style="${fs(48)}"><div>
 <table class="tbl-c"><tr><th>${m('F\\ (\\mathrm N)')}</th><th>${m('t\\ (\\mathrm s)')}</th><th>${m(`a\\ (${ms2})`)}</th><th>${m('F/a\\ (\\mathrm{kg})')}</th></tr>
@@ -111,7 +113,7 @@ ${h3(3, 'II.3 · Định luật 2 Newton', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Gia tốc của vật cùng hướng với ${f(25)} tác dụng lên vật.</div>
 <div>Độ lớn gia tốc tỉ lệ thuận với ${f(25)}, tỉ lệ nghịch với ${f(25)}.</div>
-<div style="margin:.8mm 0;font-size:var(--fs-h3)">${va} ${m('=')} ${f(20)} &nbsp;&nbsp; hay &nbsp;&nbsp; ${vF} ${m('=')} ${f(20)}</div>
+<div style="margin:.2mm 0;font-size:var(--fs-h3)">${va} ${m('=')} ${ft(20)} &nbsp;&nbsp; hay &nbsp;&nbsp; ${vF} ${m('=')} ${f(20)}</div>
 <div>${vF}: ${f(25)} , tức tổng vectơ mọi lực tác dụng lên vật, đơn vị ${f(12)}</div>
 <div>${m('m')}: khối lượng (${f(12)}) &nbsp;· ${va}: gia tốc (${f(14)})</div>
 <div><b>Đơn vị lực:</b> ${nw(`${m('1\\ \\mathrm N=')} ${f(25)}`)}, là lực truyền cho vật ${u('1', 'kg')} gia tốc ${f(16)}</div></div>
@@ -131,7 +133,7 @@ ${h3(1, 'II.4 · Khối lượng là mức quán tính', '3·1')}
 ${h3(2, 'II.5 · Bài toán động lực học: các bước', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Vẽ</b> hình, chọn vật, chọn ${f(25)} &nbsp;→ <b>Kể</b> mọi ${f(16)} &nbsp;→ <b>Viết</b> ${nw(`${m('\\Sigma\\vec F=')} ${f(14)}`)}</div>
-<div>→ <b>Chiếu</b>: lực cùng chiều dương mang dấu ${f(10)}, ngược chiều mang dấu ${f(10)}; ra ${m('a\\lt 0')} nghĩa là ${f(25)}</div>
+<div>→ <b>Chiếu</b>: lực cùng chiều dương mang dấu ${f(10)}, ngược chiều mang dấu ${f(10)}; ra ${m('a\\lt 0')} nghĩa là ${f(40)}</div>
 <div style="margin-top:.6mm">Nối ${m('a')} với động học: ${m('v=')} ${f(20)} · ${m('s=')} ${f(25)} · ${m('v^2-v_0^2=')} ${f(16)}</div></div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card" style="padding:1mm 3mm">
@@ -169,16 +171,17 @@ ${head('BÀI TẬP VỀ NHÀ · ĐỔI CHIỀU · THỬ THÁCH · MANG VỀ')}
 ${K.btvn()}
 ${h3(2, 'Điền bước còn thiếu: sàn bẩn, ma sát 42 N', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
+<div style="padding-top:.4mm">Cùng đề xe đẩy siêu thị ở 4·2 (${u('60', 'kg')}, ${u('F=90', 'N')}, từ nghỉ, ${u('t=4', 's')}), nhưng ma sát ${u('42', 'N')}. Tìm quãng đường.</div>
 <div class="ln">Bước 1: ${Fhl}${m('=')}</div><div class="ln">Bước 2: ${m('a=')}</div>
 <div class="ln"><b>Bước 3 (cho sẵn):</b> ${m('s=\\tfrac12at^2=')} ${oDv(16, 'm')}</div></div>
 ${h3(3, 'Đổi chiều: biết chuyển động, tìm lực', '5·3')}
-${box(wl(`Ô tô ${nw('1,2 tấn')} đang chạy ${u('15', 'm/s')} thì phanh, dừng sau ${u('25', 'm')}. Tìm gia tốc và lực hãm (độ lớn, hướng so với chiều chuyển động).`, 4))}
+${box(wl(`Ô tô ${nw('1,2 tấn')} đang chạy ${u('15', 'm/s')} thì phanh, dừng sau ${u('25', 'm')}. Tìm gia tốc và lực hãm (độ lớn, hướng so với chiều chuyển động).`, 3))}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Lực ${u('12', 'N')} truyền cho vật gia tốc ${u('3', 'm/s^2')}. Khối lượng vật?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Lực ${m('F')} truyền cho vật ${m('m_1')} gia tốc ${u('2', 'm/s^2')}, cho vật ${m('m_2')} gia tốc ${u('3', 'm/s^2')}. Ghép hai vật, cùng lực ấy cho gia tốc bao nhiêu?`, 3)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Ô tô ${nw('1 tấn')} chạy ${nw('36 km/h')} thì thấy vật cản cách ${u('30', 'm')}, phanh với lực hãm ${u('2000', 'N')}. Xe có dừng kịp không?`, 4))}
 ${h3(5, 'VI · Mang về: điều em dễ quên nhất', '5·5')}
-<div class="fig-side" style="${fs(46)}">${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}${H.xeTruotBang()}</div>
+<div class="fig-side" style="${fs(40)}">${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}${H.xeTruotBang()}</div>
 ${foot(5)}</section>`;
 
 const dang = [
@@ -189,8 +192,8 @@ const dang = [
     de: `Công nhân kéo thùng hàng ${u('35', 'kg')} trên sàn kho bằng dây nằm ngang, lực ${u('120', 'N')}; sàn tác dụng lực ma sát ${u('50', 'N')}; thùng trượt về phía người kéo.<br><b>a)</b> hợp lực lên thùng<br><b>b)</b> độ lớn gia tốc<br><b>c)</b> hướng gia tốc`,
     nd: `hai lực ngược chiều ⇒ ${Fhl}${m('=')} ${f(22)}; ${va} cùng hướng ${f(22)}`, a: ['a', 'b', 'c'], gi: 3, cot: 3, fig: `<div style="width:40mm;margin-left:auto">${H.thungKeo('')}</div>` },
   { t: 'Dạng 3 · Trung bình · Chất thêm hàng, đổi lực đẩy',
-    de: `Xe đẩy siêu thị rỗng được đẩy bằng lực ngang ${u('15', 'N')} thì có gia tốc ${u('0{,}5', 'm/s^2')}. Chất lên xe kiện hàng ${u('40', 'kg')}, đẩy bằng lực ngang ${u('28', 'N')}. Bỏ qua ma sát.<br><b>a)</b> khối lượng xe rỗng<br><b>b)</b> khối lượng xe khi chở hàng<br><b>c)</b> gia tốc của xe khi chở hàng`,
-    nd: `lần 1 biết ${m('F')}, ${m('a')} ⇒ ${nw(`${m('m=')} ${f(16)}`)}; khối lượng ${f(25)} được`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Xe đẩy siêu thị rỗng được đẩy bằng lực ngang ${u('15', 'N')} thì có gia tốc ${u('0{,}5', 'm/s^2')}. Chất lên xe kiện hàng ${u('40', 'kg')}, đẩy bằng lực ngang ${u('28', 'N')}. Bỏ qua ma sát.<br><b>a)</b> khối lượng xe rỗng; &nbsp;<b>b)</b> khối lượng xe khi chở hàng; &nbsp;<b>c)</b> gia tốc khi chở hàng`,
+    nd: `lần 1 biết ${m('F')}, ${m('a')} ⇒ ${nw(`${m('m=')} ${ft(16)}`)}; khối lượng ${f(25)} được`, a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 4 · Khá · Từ nghỉ: gia tốc, vận tốc, quãng đường',
     de: `Thùng ${u('12', 'kg')} đứng yên trên sàn ngang, được kéo bằng lực ngang ${u('54', 'N')}; ma sát ${u('18', 'N')}. Sau ${u('6', 's')}:<br><b>a)</b> gia tốc của thùng<br><b>b)</b> vận tốc<br><b>c)</b> quãng đường đi được`,
     nd: `“đứng yên” ⇒ ${nw(`${m('v_0=')} ${f(12)}`)}; dùng ${nw(`${m('v=')} ${f(16)}`)}, ${nw(`${m('s=')} ${f(20)}`)}`, a: ['a', 'b', 'c'], gi: 3 },
@@ -198,8 +201,8 @@ const dang = [
     de: `Ô tô ${nw('1,4 tấn')} chạy ${nw('108 km/h')} thì phanh gấp, vết phanh dài ${u('90', 'm')} rồi dừng; lực hãm không đổi.<br><b>a)</b> gia tốc (có dấu; chiều dương là chiều chuyển động)<br><b>b)</b> độ lớn lực hãm<br><b>c)</b> hướng lực hãm so với chiều chuyển động`,
     nd: `không có ${m('t')} ⇒ ${nw(`${m('v^2-v_0^2=')} ${f(14)}`)}; ${nw(`${m('F\\lt 0')} nghĩa là ${f(22)}`)}`, a: ['a', 'b', 'c'], gi: 3, cot: 3, fig: `<div style="width:40mm;margin-left:auto">${H.otoPhanh('')}</div>` },
   { t: 'Dạng 6 · Khó · Tắt máy khi đang chạy đều',
-    de: `Ô tô ${nw('1,8 tấn')} chạy thẳng đều ${nw('90 km/h')}, lực kéo ${u('900', 'N')}. Tại O tắt máy; lực cản không đổi.<br><b>a)</b> lực cản lúc chạy đều<br><b>b)</b> gia tốc sau khi tắt máy (có dấu)<br><b>c)</b> thời gian từ O đến khi dừng<br><b>d)</b> quãng đường từ O đến khi dừng`,
-    nd: `chạy đều ⇒ ${nw(`${m('a=')} ${f(10)}`)} ⇒ ${nw(`${m('F_{\\mathrm c}=')} ${f(14)}`)}; tắt máy ⇒ hợp lực là ${f(22)}`, a: ['a', 'b', 'c', 'd'], gi: 3, fig: `<div style="width:40mm;margin-left:auto">${H.tatMay('')}</div>` },
+    de: `Ô tô ${nw('1,8 tấn')} chạy thẳng đều ${nw('90 km/h')}, lực kéo ${u('900', 'N')}. Tại O tắt máy; lực cản không đổi.<br><b>a)</b> lực cản lúc chạy đều; &nbsp;<b>b)</b> gia tốc sau khi tắt máy (có dấu)<br><b>c)</b> thời gian từ O đến khi dừng; &nbsp;<b>d)</b> quãng đường từ O đến khi dừng`,
+    nd: `chạy đều ⇒ ${nw(`${m('a=')} ${f(12)}`)} ⇒ ${nw(`${m('F_{\\mathrm c}=')} ${f(14)}`)}; tắt máy ⇒ hợp lực là ${f(22)}`, a: ['a', 'b', 'c', 'd'], gi: 4, fig: `<div style="width:40mm;margin-left:auto">${H.tatMay('')}</div>` },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số cuối đúng dòng của ý, nhãn ô khớp a) b) c)…
