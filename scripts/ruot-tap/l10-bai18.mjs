@@ -50,8 +50,7 @@ ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 ${dong(`${ck}Phân biệt ma sát <b>nghỉ</b>, ma sát <b>trượt</b>, ma sát <b>lăn</b>: khi nào có, hướng ra sao, lớn bao nhiêu`)}
 ${dong(`${ck}Dùng ${m('F_{\\mathrm{mst}}=\\mu N')}; tính đúng áp lực ${m('N')} trên mặt ngang, khi kéo chếch, trên mặt nghiêng`)}
-${dong(`${ck}Đọc bảng số liệu để tìm hệ số ma sát và nhận xét sai số`)}
-${dong(`${ck}Giải bài toán động lực học có ma sát, kể cả vật trên mặt phẳng nghiêng`)}
+${dong(`${ck}Tìm hệ số ma sát từ bảng số liệu; giải bài toán có ma sát, kể cả trên mặt nghiêng`)}
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
@@ -71,13 +70,15 @@ ${h3(4, 'II.1 · Ma sát nghỉ', '1·4')}
 <div>Xuất hiện khi có lực kéo/đẩy mà vật vẫn ${f(25)} trên mặt tiếp xúc.</div>
 <div>Phương: ${f(25)} mặt tiếp xúc. Chiều: ngược ${f(25)} chuyển động của vật.</div>
 <div>Độ lớn: ${Fmsn} ${m('=')} ${f(25)} lực gây xu hướng trượt. Giới hạn: ${nw(`${m('0\\le F_{\\mathrm{msn}}\\le')} ${f(14)}`)}</div>
+<div>Cực đại: ${nw(m('F_{\\mathrm{msn\\,max}}=\\mu_n N'))}; ${m('\\mu_n')}: <b>hệ số ma sát nghỉ</b>, không đơn vị.</div>
 <div class="fig-side" style="${fs(48)};margin-top:.6mm"><div>
 <div><b>Đọc đồ thị:</b></div>
 <div>Đoạn OA: hộp ${f(25)}</div>
 <div>Tại A: hộp ${f(25)}</div>
 <div>Đoạn BC: ma sát ${ck}tăng ${ck}không đổi, nhỏ hơn ở A khoảng ${nw(`${f(12)}&nbsp;N`)}</div>
-<div style="margin-top:1mm">Tủ cần lực ngang ít nhất ${nw('300 N')} mới dịch. Hai bạn đẩy ${nw('260 N')} và kéo ${nw('35 N')} cùng chiều: tủ ${ck}đứng yên ${ck}trượt; ma sát ${nw(`${f(12)}&nbsp;N`)}</div></div>
-${H.doThi()}</div></div>
+</div>
+${H.doThi()}</div>
+<div style="margin-top:1mm"><b>Ví dụ:</b> tủ cần lực ngang ít nhất ${nw('300 N')} mới dịch. Hai bạn đẩy ${nw('260 N')} và kéo ${nw('35 N')} cùng chiều: tủ ${ck}đứng yên ${ck}trượt; lực ma sát ${nw(`${f(14)}&nbsp;N`)}</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -86,7 +87,7 @@ ${h3(1, 'II.2 · Ma sát trượt', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Xuất hiện khi vật ${f(25)} trên bề mặt; chiều ngược chiều ${f(25)} tương đối.</div>
 <div style="margin:.6mm 0">${nw(`${Fmst}${m('=')} ${f(12)}`)} &nbsp;· ${mu}: hệ số ma sát trượt, đơn vị ${f(25)} · ${m('N')}: ${f(25)} (N)</div>
-<div>Phụ thuộc: ${f(25)}, ${f(25)}, ${f(25)}.</div>
+<div>Phụ thuộc: vật liệu, tình trạng bề mặt và ${f(30)} (thay đổi khi kéo chếch, khi đặt trên dốc).</div>
 <div>Không phụ thuộc: ${f(25)}, ${f(25)}. Thường ${ck}lớn hơn ${ck}nhỏ hơn ma sát nghỉ cực đại.</div></div>
 ${h3(2, 'Thí nghiệm: đổi mặt tiếp xúc, đổi tốc độ, cho lăn', '2·2')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
@@ -103,21 +104,21 @@ ${h3(3, 'II.3 · Đo hệ số ma sát bằng lực kế', '2·3')}
 <tr><td>7,84</td><td>2,9</td><td>2,4</td><td></td></tr></table>
 <div style="font-size:var(--fs-sm);line-height:1.4"><b>Làm:</b> hộp gỗ trên bàn gỗ, thêm gia trọng; ${m('N=mg')}, ${g98}. Lực kế chia độ ${nw('0,1 N')}, đọc sai cỡ ${nw('±0,05 N')}.<br>Tính tỉ số ở cột cuối (2 chữ số sau dấu phẩy).</div></div>
 <div class="card" style="margin-top:.8mm;padding:1mm 3mm">
-<div>Trung bình ${nw(`${mu} ${m('\\approx')} ${f(14)}`)} · Lần đo kém tin cậy nhất: lần ${f(12)}, vì</div>${lines(1)}</div>
+<div>Trung bình ${nw(`${mu} ${m('\\approx')} ${f(14)}`)} · Lần đo kém tin cậy nhất (xét <b>sai số tương đối</b> ${nw('0,05 N')} : lực đọc được): lần ${f(12)}, vì</div>${lines(1)}</div>
 ${h3(4, 'II.4 · Áp lực N: không phải lúc nào cũng bằng mg', '2·4')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>Lấy ${m('N')} theo phương ${f(25)} mặt tiếp xúc.</div>
 <div style="margin:.8mm 0">Mặt ngang, kéo ngang: ${nw(`${m('N=')} ${f(16)}`)}</div>
 <div style="margin:.8mm 0">Mặt ngang, kéo chếch lên góc ${al}: ${nw(`${m('N=')} ${f(22)}`)}</div>
 <div style="margin:.8mm 0">Mặt nghiêng góc ${al}: ${nw(`${m('N=')} ${f(16)}`)}</div>
-<div class="hint">Trên dốc, ${m('P')} tách thành ${m('P_x=mg\\sin\\alpha')} (dọc dốc) và ${m('P_y=mg\\cos\\alpha')} (ép vào dốc).</div></div>
+<div class="hint">Trên dốc, tách ${m('P')} thành ${m('P_x')} (dọc dốc) và ${m('P_y')} (vuông góc dốc).</div></div>
 ${H.keoCheo()}</div>
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
 ${head('THÍ NGHIỆM TẤM VÁN · MA SÁT LĂN · TRẢ BÀI')}
 ${h3(1, 'Thí nghiệm: nâng dần tấm ván', '3·1')}
-<div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
+<div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Quan sát:</b> hộp bắt đầu trượt khi ${nw('h ≈ 0,34 m')}; búng nhẹ thì hộp trượt đều khi ${nw('h ≈ 0,29 m')}. ${nw(m('\\sin\\alpha=h/L'))}.</div>
 <div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)} ⇒ ${nw(`${m('\\mu_n=')} ${f(14)}`)} ${nw(`${m('\\approx')} ${f(12)}`)}</div>
 <div style="margin-top:.6mm">Trượt đều: ${nw(`${m('\\mu=\\tan\\alpha\\approx')} ${f(12)}`)}; so với bảng ở Tập 62·3: ${ck}khớp ${ck}lệch</div></div>
@@ -125,16 +126,16 @@ ${H.nangVan()}</div>
 ${h3(2, 'II.5 · Ma sát lăn · có lợi, có hại', '3·2')}
 <div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
 <div>Ma sát lăn có khi vật ${f(25)} trên bề mặt; ${ck}lớn hơn ${ck}nhỏ hơn ma sát trượt rất nhiều.</div>
-<div>Có lợi (2 ví dụ): ${f(25)} · ${f(25)}</div>
-<div>Có hại (2 ví dụ): ${f(25)} · ${f(25)}</div>
+<div>Có lợi: ${f(40)} · ${f(40)}</div>
+<div>Có hại: ${f(40)} · ${f(40)}</div>
 <table style="margin-top:1mm;font-size:var(--fs-sm)"><tr><th style="width:17mm"></th><th>Nghỉ</th><th>Trượt</th><th>Lăn</th></tr>
-<tr><td>Khi nào</td><td></td><td></td><td></td></tr><tr><td>Độ lớn</td><td></td><td></td><td></td></tr></table></div>
+<tr style="height:11mm"><td>Khi nào</td><td></td><td></td><td></td></tr><tr style="height:11mm"><td>Độ lớn</td><td></td><td></td><td></td></tr></table></div>
 ${H.gaiLop()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
 ${box(`${tb('1. Ma sát nghỉ xuất hiện khi nào? Chiều, độ lớn?')}${lines(2)}
 ${tb('2. Công thức ma sát trượt, tên và đơn vị từng kí hiệu.')}${lines(1)}
 ${tb('3. Ma sát trượt phụ thuộc và không phụ thuộc vào gì?')}${lines(2)}
-${tb('4. Áp lực N trong ba trường hợp?')}${lines(2)}
+${tb('4. Áp lực N trong ba trường hợp?')}${lines(1)}
 ${tb('5. So sánh ma sát nghỉ cực đại, ma sát trượt, ma sát lăn.')}${lines(1)}
 ${tb('6. Ma sát luôn ngược chiều chuyển động: đúng hay sai? Ví dụ.')}${lines(1)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>

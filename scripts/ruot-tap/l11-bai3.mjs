@@ -7,6 +7,7 @@
 //       node scripts/ruot-tap/l11-bai3.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai3/
 import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
 import { hinhL11b3 as H } from './hinh-l11-bai3.mjs';
+const fc = (w = 16) => `<span class="fill" style="min-width:${w}mm;height:9mm;vertical-align:-3mm"></span>`;
 
 if (process.argv[2] === '--hinh') {
   const { createRequire } = await import('node:module');
@@ -134,9 +135,9 @@ ${h3(2, 'II.4 · Hệ thức độc lập với thời gian', '3·2')}
 <div>Hai đại lượng cùng tần số, biên độ ${m('M')}, ${m('N')}:</div>
 <div>cùng pha: ${m('\\dfrac mM=')} ${f(14)} · ngược pha: ${m('\\dfrac mM=')} ${f(14)}</div>
 <div>vuông pha: ${m('\\left(\\dfrac mM\\right)^2+\\left(\\dfrac nN\\right)^2=')} ${f(12)}</div>
-<div style="margin-top:.6mm">${m('x')}–${m('v')}: ${m('A^2=x^2+')} ${f(16)} &nbsp;${m('\\to')} đồ thị là ${f(20)}</div>
-<div>${m('v')}–${m('a')}: ${m('A^2=')} ${f(16)} ${m('+')} ${f(16)}</div>
-<div>${m('x')}–${m('a')}: ${m('a=')} ${f(14)} ${m('\\to')} đồ thị là đoạn ${f(20)}</div></div>
+<div style="margin-top:.6mm">${m('x')}–${m('v')}: ${m('A^2=x^2+')} ${fc(16)}<br>${m('\\to')} đồ thị là ${f(25)}</div>
+<div>${m('v')}–${m('a')}: ${m('A^2=')}${fc(16)}${m('+')}${fc(16)}</div>
+<div>${m('x')}–${m('a')}: ${m('a=')} ${f(14)} ${m('\\to')} đồ thị là đoạn ${f(25)}</div></div>
 ${H.elip()}</div>
 ${h3(3, 'II.5 · Thời gian ngắn nhất từ O tới các mốc', '3·3')}
 <div class="fig-side" style="${fs(48)}"><div>
@@ -150,7 +151,7 @@ ${h3(3, 'II.5 · Thời gian ngắn nhất từ O tới các mốc', '3·3')}
 <div>${m('T=0{,}800')} s thì ${m('T/12=')} ${f(14)} s</div></div>
 ${H.vongTron('Điểm chạy đều trên vòng, bóng của nó trên trục x là vật. Một vòng mất T.')}</div>
 ${h3(4, 'Làm nhanh', '3·4')}
-${box(`<div><b>Câu 1.</b> ${u('T=0{,}8\\ \\mathrm s')}. Thời gian ngắn nhất từ O tới ${m('x=A\\sqrt2/2')}?</div>${lines(1)}<div><b>Câu 2.</b> Cùng ${m('T')}, thời gian ngắn nhất từ ${m('x=-A/2')} tới ${m('x=A\\sqrt3/2')}?</div>${lines(1)}`)}
+${box(`<div><b>Câu 1.</b> ${u('T=0{,}8\\ \\mathrm s')}. Thời gian ngắn nhất từ O tới ${m('x=A\\sqrt2/2')}? ${f(14)} s</div><div><b>Câu 2.</b> Cùng ${m('T')}, thời gian ngắn nhất từ ${m('x=-A/2')} tới ${m('x=A\\sqrt3/2')}? ${f(14)} s</div>`)}
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -198,14 +199,14 @@ ${foot(5)}</section>`;
 // ---- Bài tập mẫu (tr. 6–7): 5 dạng theo bài web ----
 const dang = [
   { t: 'Dạng 1 · Dễ · Viết v(t), a(t); v<sub>max</sub>, a<sub>max</sub>; v và a tại một thời điểm',
-    de: `${m('x=5\\cos(4\\pi t+\\pi/3)')} (${m('x')}: cm, ${m('t')}: s; máy tính chế độ rad).<br><b>a)</b> tốc độ cực đại và độ lớn gia tốc cực đại<br><b>b)</b> phương trình ${m('v(t)')} và ${m('a(t)')}<br><b>c)</b> ${m('v')} và ${m('a')} tại ${u('t=\\tfrac1{12}\\ \\mathrm s')}; vật đang ${ck}về VTCB ${ck}ra biên`,
+    de: `${m('x=5\\cos(4\\pi t+\\pi/3)')} (${m('x')}: cm, ${m('t')}: s; máy tính chế độ rad).<br><b>a)</b> tốc độ cực đại và độ lớn gia tốc cực đại<br><b>b)</b> phương trình ${m('v(t)')} và ${m('a(t)')} &nbsp;&nbsp; <b>c)</b> ${m('v')} và ${m('a')} tại ${u('t=\\tfrac1{12}\\ \\mathrm s')}; vật đang ${ck}về VTCB ${ck}ra biên`,
     nd: `${m('v')}, ${m('a')} cùng dấu: ${f(25)} dần; ngược dấu: ${f(25)} dần`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Biết li độ tìm v, a; biết tốc độ tìm li độ',
-    de: `${u('A=10\\ \\mathrm{cm}')}, ${u('\\omega=4\\ \\mathrm{rad/s}')}; vật qua ${u('x=+6\\ \\mathrm{cm}')} theo chiều dương.<br><b>a)</b> độ lớn vận tốc tại đó<br><b>b)</b> gia tốc tại đó (kể cả dấu); nhanh dần hay chậm dần?<br><b>c)</b> lúc khác tốc độ ${u('24\\ \\mathrm{cm/s}')}: độ lớn li độ khi đó`,
-    nd: `${m('|v|=\\omega\\sqrt{\\ \\ }')} ${f(20)}; dấu ${m('v')} lấy từ ${f(25)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `${u('A=10\\ \\mathrm{cm}')}, ${u('\\omega=4\\ \\mathrm{rad/s}')}; vật qua ${u('x=+6\\ \\mathrm{cm}')} theo chiều dương.<br><b>a)</b> độ lớn vận tốc tại đó &nbsp;&nbsp; <b>b)</b> gia tốc tại đó (kể cả dấu); nhanh dần hay chậm dần?<br><b>c)</b> lúc khác tốc độ ${u('24\\ \\mathrm{cm/s}')}: độ lớn li độ khi đó`,
+    nd: `${m('|v|=\\omega\\sqrt{\\ \\ }')} ${fc(22)}; dấu ${m('v')} lấy từ ${f(25)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
   { t: `Dạng 3 · Trung bình · Đọc đồ thị x–t: A, T, ${m('\\varphi')}; suy ra v và a`,
-    de: `Hình bên là đồ thị li độ theo thời gian (${m('x')}: cm, ${m('t')}: s).<br><b>a)</b> chu kì ${m('T')} và pha ban đầu ${ph} (đọc ${m('A')}, tính ${om} trong khung giải)<br><b>b)</b> ${m('v(t)')}, ${m('a(t)')}; pha của ${m('v')}, ${m('a')} so với ${m('x')}<br><b>c)</b> ${m('v')} và ${m('a')} tại ${m('t=0')}`,
+    de: `Hình bên là đồ thị li độ theo thời gian (${m('x')}: cm, ${m('t')}: s).<br><b>a)</b> chu kì ${m('T')} và pha ban đầu ${ph} (đọc ${m('A')}, tính ${om} trong khung giải)<br><b>b)</b> ${m('v(t)')}, ${m('a(t)')}; pha của ${m('v')}, ${m('a')} so với ${m('x')} &nbsp;&nbsp; <b>c)</b> ${m('v')} và ${m('a')} tại ${m('t=0')}`,
     nd: `${m('\\cos\\varphi=x(0)/A')} cho hai góc; chọn theo ${f(25)} của đồ thị lúc ${m('t=0')}`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.d3('') },
   { t: 'Dạng 4 · Khó · Tốc độ bằng nửa cực đại: li độ, thời gian, gia tốc',
