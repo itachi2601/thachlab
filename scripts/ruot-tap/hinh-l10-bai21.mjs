@@ -169,4 +169,15 @@ export const hinhL10b21 = {
     b += T(A + 10, y + 32, 'A', { w: 700 }) + T(C + 8, y - 14, 'C', { w: 700 }) + T(B - 2, y - 14, 'B', { w: 700, a: 'end' });
     return wrap('0 0 320 236', b, cap, 'Thanh gắn bản lề giữ bằng dây xiên');
   },
+  // Tr.9 · Bài tương tự Dạng 5: chỉ hình học (HS tự vẽ lực); góc thật, không chú thích
+  banLeTT: (goc, den) => {
+    const A = 34, L = goc >= 45 ? 140 : 170, B = A + L, rise = (B - 22) * Math.tan(R(goc)), y = 24 + rise + 6, Wy = y - 6 - rise;
+    const H = y + (den ? 52 : 34);
+    let b = `<rect x="6" y="${Wy - 14}" width="16" height="${y + 20 - Wy}" fill="#fff" stroke="${GREY}" stroke-width="2"/>`;
+    b += thanh(A, B, y) + `<circle cx="${A}" cy="${y}" r="7" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + ln(B, y - 6, 22, Wy, INK, 2.4);
+    b += cung(B, y - 6, 40, 180 - goc, 180) + T(B - 46, y - 14, `${goc}°`, { a: 'end' });
+    b += T(A - 4, y + 30, 'A', { w: 700 }) + T(B + 2, y - 14, 'B', { w: 700 });
+    if (den) b += ln(B - 6, y + 6, B - 6, y + 18, INK, 2) + `<rect x="${B - 40}" y="${y + 18}" width="64" height="26" rx="2" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(B - 8, y + 38, '40 N', { a: 'middle' });
+    return wrap(`0 0 ${B + 30} ${H}`, b, '', `Thanh bản lề, dây hợp với thanh ${goc}°`);
+  },
 };
