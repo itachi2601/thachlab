@@ -43,7 +43,7 @@ const L = m('\\lambda'), v = m('v'), T = m('T'), fq = m('f'), A = m('A'), w = m(
 const uM = m('u_M'), uO = m('u_O');
 
 // Bài tương tự 1 cột, ô đáp số cuối dòng của ý (như l11-bai2); ô đáp số Bài tập mẫu cao 8 mm.
-const css = '<style>.bt>.gi{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:5mm}.tt:has(.nhap-t) .hd>span+span{display:none}.bt .ans .fill{height:8mm}.bt:has(.d4x) .ans>div:nth-child(3){grid-column:span 2}.bt:has(.d5x) .ans>div:nth-child(n+5){grid-column:span 2}.bt:has(.d5x) .ans{grid-template-columns:repeat(4,1fr)}</style>';
+const css = '<style>.bt>.gi{display:grid;grid-template-columns:1fr 1fr;column-gap:4mm}.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo{line-height:1.2}.yo .fill{height:6mm}.tt:has(.nhap-t) .hd>span+span{display:none}.bt .ans .fill{height:9mm}.bt:has(.d4x) .ans>div:nth-child(3){grid-column:span 2}.bt:has(.d5x) .ans>div:nth-child(n+5){grid-column:span 2}.bt:has(.d5x) .ans{grid-template-columns:repeat(4,1fr)}</style>';
 
 const p1 = `${css}<section class="page">
 ${head('BÀI 8 · MÔ TẢ SÓNG', K.sub)}
@@ -72,12 +72,12 @@ ${h3(4, 'II.1 · Sóng cơ và sự truyền sóng', '1·4')}
 <div>Muốn có sóng cơ cần đủ hai thứ: ${f(30)} và ${f(40)}.</div>
 <div>Sóng cơ không truyền được trong ${f(25)}, vì ở đó ${f(40)}.</div>
 <div>Phần tử môi trường chỉ ${f(30)} quanh ${f(30)};</div>
-<div>thứ lan ra xa là ${f(25)} và ${f(25)}, không phải vật chất.</div></div>
+<div>thứ lan ra xa là ${f(25)} và ${f(25)}.</div></div>
 ${h3(5, 'Thí nghiệm: khay nước và miếng xốp', '1·5')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> thả miếng xốp nhỏ C lên mặt nước trong khay; chấm đầu vật nhọn O xuống nước theo nhịp đều tay.</div>
 <div><b>Quan sát:</b> gợn tròn lan ra từ O; miếng xốp C ${f(45)}; ngừng chấm, gợn ${ck}dừng ngay ${ck}lan tiếp rồi yếu dần.</div>
-<div><b>Rút ra:</b> thứ lan ra xa là ${f(30)}, không phải ${f(20)}.</div>
+<div><b>Rút ra:</b> thứ lan ra xa là ${f(30)}, không phải ${f(25)}.</div>
 ${wl('Gõ nhẹ một đầu thước kẻ: mẩu tẩy trên thước có chạy ra xa không?', 1)}</div>
 ${H.khayNuoc()}</div>
 ${foot(1)}</section>`;
@@ -87,10 +87,10 @@ ${head('NĂM ĐẠI LƯỢNG ĐẶC TRƯNG CỦA SÓNG')}
 ${h3(1, 'II.2 · Bảng tra nhanh', '2·1')}
 <table style="margin-bottom:1mm"><tr><th style="width:37mm">Đại lượng, đơn vị</th><th>Nghĩa</th></tr>
 <tr><td>Biên độ ${A} (m, cm)</td><td>độ lệch lớn nhất khỏi ${f(30)}</td></tr>
-<tr><td>Chu kì ${T} (${f(8)})</td><td>thời gian một phần tử làm xong ${f(35)}</td></tr>
-<tr><td>Tần số ${fq} (${f(8)})</td><td>số dao động toàn phần trong ${f(14)}; ${nw(`${m('f=')} ${f(12)}`)}</td></tr>
-<tr><td>Bước sóng ${L} (m, cm)</td><td>(1) quãng đường sóng truyền được trong ${f(22)}<br>(2) khoảng cách hai điểm gần nhau nhất trên một phương truyền, dao động ${f(16)}</td></tr>
-<tr><td>Tốc độ truyền ${v} (m/s)</td><td>tốc độ lan truyền ${f(14)}; do ${f(25)} quyết định</td></tr></table>
+<tr><td>Chu kì ${T} (${f(12)})</td><td>thời gian một phần tử làm xong ${f(35)}</td></tr>
+<tr><td>Tần số ${fq} (${f(12)})</td><td>số dao động toàn phần trong ${f(14)}; ${nw(`${m('f=')} ${f(12)}`)}</td></tr>
+<tr><td>Bước sóng ${L} (m, cm)</td><td>(1) quãng đường sóng truyền được trong ${f(25)}<br>(2) khoảng cách gần nhất giữa hai điểm cùng phương truyền dao động ${f(25)}</td></tr>
+<tr><td>Tốc độ truyền ${v} (m/s)</td><td>lan truyền ${f(25)}; phụ thuộc ${f(25)}</td></tr></table>
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div><b>Công thức:</b> ${nw(`${m('\\lambda=')} ${f(14)} ${m('=')} ${f(14)}`)} &nbsp;·&nbsp; ${nw(`${m('v=')} ${f(14)}`)}</div>
 <div>Trên hình: đoạn (1) là ${f(25)}, đoạn (2) là ${f(25)}</div>
@@ -102,13 +102,13 @@ ${h3(2, 'Hai điểm cùng phương truyền · Đổi môi trường', '2·2')}
 <tr><td>cùng pha: ${m('\\Delta\\varphi=2k\\pi')}</td><td></td></tr>
 <tr><td>ngược pha: ${m('\\Delta\\varphi=(2k+1)\\pi')}</td><td></td></tr>
 <tr><td>vuông pha: ${m('\\Delta\\varphi=(2k+1)\\frac{\\pi}{2}')}</td><td></td></tr>
-<tr><td>từ đỉnh thứ nhất đến đỉnh thứ ${m('n')} (các đỉnh liên tiếp)</td><td></td></tr></table>
-<div>Sóng sang môi trường khác: giữ nguyên ${f(18)}, vì do ${f(18)} quyết định; đổi ${f(18)}, vì do ${f(22)} quyết định.</div>
-<div>Tốc độ truyền: chất ${f(14)} nhanh nhất, rồi chất ${f(14)}, chất ${f(14)} chậm nhất.</div>
-<div><b>Lò xo, quay 240 khung hình/s:</b> giữa hai lần một điểm lên đỉnh có ${nw('48 khung')}, hai đỉnh liên tiếp cách nhau ${nw('0,8 m')}: ${nw(`${T} = ${f(12)} s`)} · ${nw(`${v} = ${f(14)} m/s`)}</div></div>
+<tr><td>đỉnh thứ nhất đến đỉnh thứ ${m('n')} (liên tiếp)</td><td></td></tr></table>
+<div>Sang môi trường khác: giữ nguyên ${f(12)}; thay đổi ${f(12)} và ${f(12)} <span class="hint">(ghi kí hiệu)</span>.</div>
+<div>Sóng cơ truyền nhanh nhất trong chất ${f(25)}, chậm nhất trong chất ${f(25)}.</div>
+<div><b>Lò xo, quay 240 khung/s:</b> một điểm lên đỉnh lặp lại sau ${nw('48 khung')}; hai đỉnh liên tiếp cách ${nw('0,8 m')}: ${nw(`${T} = ${f(12)} s`)} · ${nw(`${v} = ${f(14)} m/s`)}</div></div>
 ${h3(3, 'Làm nhanh', '2·3')}
 ${box(cau(`<b>Câu 1.</b> Sóng có ${nw(`${m('T=0{,}4')} s`)}, truyền với ${nw(`${m('v=2{,}5')} m/s`)}. Tính bước sóng.`, 1)
- + `<div style="padding:1mm 0 .6mm"><b>Câu 2.</b> Sóng âm từ nước ra không khí: ${nw(`${fq} ${f(16)}`)} · ${nw(`${v} ${f(16)}`)} · ${nw(`${L} ${f(16)}`)} <span class="hint">(tăng / giảm / giữ nguyên)</span></div>`)}
+ + `<div style="padding:1mm 0 .6mm"><b>Câu 2.</b> Sóng âm từ nước ra không khí: ${nw(`${fq} ${f(25)}`)} · ${nw(`${v} ${f(25)}`)} · ${nw(`${L} ${f(25)}`)} <span class="hint">(tăng / giảm / giữ nguyên)</span></div>`)}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -119,7 +119,7 @@ ${h3(1, 'II.3 · Độ trễ pha và phương trình sóng', '3·1')}
 <div>Sóng mất ${nw(`${m('t_0=')} ${f(14)}`)} mới tới M; trước lúc đó M ${f(25)}.</div>
 <div>${nw(`${m('u_M=A\\cos\\left[\\omega\\left(t-\\frac{d}{v}\\right)\\right]')}`)} ${m('\\Rightarrow')} ${nw(`${m('u_M=')} ${f(42)}`)}</div>
 <div>M trễ pha so với O: ${nw(`${dp} ${m('=')} ${f(16)}`)}; điểm nào sóng tới sau thì ${ck}cộng ${ck}trừ pha.</div>
-<div>Đi thêm ${L}: trễ thêm ${f(12)} · đi thêm ${m('\\frac{\\lambda}{2}')}: trễ ${f(12)}, hai điểm ${f(18)} pha.</div>
+<div>Đi thêm ${L}: trễ thêm ${f(12)} · đi thêm ${m('\\frac{\\lambda}{2}')}: trễ ${f(12)}, hai điểm ${f(25)} pha.</div>
 <div>Nguồn có pha ban đầu ${m('\\varphi_0')}: ${nw(`${m('u_M=A\\cos\\left(\\omega t+\\varphi_0-\\frac{2\\pi d}{\\lambda}\\right)')}`)}</div>
 <div class="hint">${m('\\omega')}: tần số góc của nguồn (rad/s) · ${d}, ${L} cùng đơn vị (cm)</div></div>
 ${H.truyenOM()}</div>
@@ -172,7 +172,7 @@ ${box(`${wl(`a) ${fq}, ${T}, ${L}:`, 2)}${wl(`b) ${dp} và ${uM}:`, 2)}${wl(`c) 
 ${h3(2, `Điền bước còn thiếu: ${nw(`${m('v=80')} cm/s`)}, ${nw(`${m('f=20')} Hz`)}, N cách O ${nw('9 cm')}`, '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:.6mm 3mm">
 <div class="ln" style="height:7mm"><b>Bước 1:</b> ${nw(`${m('\\lambda=\\frac{v}{f}=')} ${f(14)} cm`)} &nbsp;·&nbsp; ${nw(`${m('\\frac{d}{\\lambda}=')} ${f(14)}`)}</div>
-<div class="ln" style="height:7mm"><b>Bước 2:</b> ${nw(`${m('\\Delta\\varphi=\\frac{2\\pi d}{\\lambda}=')} ${f(16)}`)} &nbsp;·&nbsp; bỏ vòng ${m('2\\pi')} trọn còn ${f(14)} ${m('\\to')} N và O ${f(18)}</div></div>
+<div class="ln" style="height:7mm"><b>Bước 2:</b> ${nw(`${m('\\Delta\\varphi=\\frac{2\\pi d}{\\lambda}=')} ${f(16)}`)} &nbsp;·&nbsp; bỏ vòng ${m('2\\pi')} trọn còn ${f(14)} ${m('\\to')} N và O ${f(25)}</div></div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} ${nw(`${m('T=0{,}4')} s`)}, ${nw(`${m('\\lambda=2')} m`)}. Tính ${v}.`, 2)
@@ -185,7 +185,7 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Đếm ngọn sóng: chu kì, tần số, tốc độ truyền',
     de: `Phao trên mặt hồ nhô lên ${nw('9 lần')} (tính từ lần đầu đến lần thứ chín) trong ${nw('20 s')}; khoảng cách giữa hai ngọn sóng liên tiếp là ${nw('4,5 m')}.<br><b>a)</b> chu kì ${T} (a<sub>1</sub>) và tần số ${fq} (a<sub>2</sub>)<br><b>b)</b> tốc độ truyền sóng ${v}`,
-    nd: `${m('n')} lần nhô lên có ${f(14)} chu kì; hai ngọn liên tiếp cách ${f(10)}; ${nw(`${m('v=')} ${f(12)}`)}`,
+    nd: `${m('n')} lần nhô lên có ${f(14)} chu kì; hai ngọn liên tiếp cách ${f(12)}; ${nw(`${m('v=')} ${f(12)}`)}`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Hai điểm: lệch pha, khoảng cách',
     de: `Sóng truyền trên dây từ M tới N, ${nw(`${m('v=1{,}2')} m/s`)}, ${nw(`${m('f=20')} Hz`)}; ${nw('MN = 10,5 cm')}.<br><b>a)</b> bước sóng<br><b>b)</b> độ lệch pha giữa M và N (b<sub>1</sub>); cùng, ngược hay vuông pha (b<sub>2</sub>)<br><b>c)</b> điểm P gần M nhất, dao động ngược pha với M, cách M bao nhiêu`,
@@ -193,7 +193,7 @@ const dang = [
     a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4, fig: H.dayMN() },
   { t: 'Dạng 3 · Trung bình · Đọc phương trình sóng',
     de: `${nw(`${m('u=5\\cos(8\\pi t-0{,}2\\pi x)')} (cm)`)}, ${m('x')} tính bằng cm, ${m('t')} tính bằng s.<br><b>a)</b> biên độ (a<sub>1</sub>), chu kì (a<sub>2</sub>), tần số (a<sub>3</sub>)<br><b>b)</b> bước sóng (b<sub>1</sub>), tốc độ truyền sóng theo m/s (b<sub>2</sub>)<br><b>c)</b> tốc độ dao động cực đại của phần tử dây (c<sub>1</sub>); lớn hơn hay nhỏ hơn ${v} (c<sub>2</sub>)`,
-    nd: `so với ${nw(`${m('u=A\\cos\\left(\\omega t-\\frac{2\\pi x}{\\lambda}\\right)')}`)}: hệ số của ${m('x')} là ${f(12)}; ${L} cùng đơn vị ${f(10)}`,
+    nd: `so với ${nw(`${m('u=A\\cos\\left(\\omega t-\\frac{2\\pi x}{\\lambda}\\right)')}`)}: hệ số của ${m('x')} là ${f(12)}; ${L} cùng đơn vị ${f(12)}`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4 },
   { t: 'Dạng 4 · Khó · Phương trình tại M, li độ và chiều chuyển động',
     de: `<span class="d4x"></span>Nguồn O: ${nw(`${m('u_O=4\\cos\\left(20\\pi t-\\frac{\\pi}{2}\\right)')} (cm)`)}, bắt đầu dao động lúc ${m('t=0')}; sóng truyền theo chiều dương Ox với ${nw('1,5 m/s')}, biên độ không đổi. M cách O ${nw('20 cm')}.<br><b>a)</b> chu kì (a<sub>1</sub>) và bước sóng (a<sub>2</sub>)<br><b>b)</b> phương trình dao động của M<br><b>c)</b> tại ${nw(`${m('t=0{,}15')} s`)}: li độ của M (c<sub>1</sub>), chiều chuyển động (c<sub>2</sub>)`,
@@ -201,16 +201,16 @@ const dang = [
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 6 },
   { t: 'Dạng 5 · Khó · Đọc hai đồ thị u–x và u–t, viết phương trình',
     de: `<span class="d5x"></span>Sóng hình sin truyền theo chiều dương Ox. Hình (a): li độ theo toạ độ ${m('x')} lúc ${m('t=0')}; hình (b): li độ theo thời gian của điểm M có ${nw(`${m('x_M=6')} cm`)}.<br><b>a)</b> biên độ (a<sub>1</sub>), bước sóng (a<sub>2</sub>), chu kì (a<sub>3</sub>)<br><b>b)</b> tốc độ truyền sóng<br><b>c)</b> phương trình dao động của M<br><b>d)</b> phương trình của N cách M ${nw('9 cm')} theo chiều truyền sóng`,
-    nd: `đọc nhãn trục hoành trước: hình (a) cho ${f(10)}, hình (b) cho ${f(10)}; lúc ${m('t=0')} M ở đâu cho ${m('\\varphi_0')}; N tới sau nên ${f(18)}`,
+    nd: `đọc nhãn trục hoành trước: hình (a) cho ${f(12)}, hình (b) cho ${f(12)}; lúc ${m('t=0')} M ở đâu cho ${m('\\varphi_0')}; N tới sau nên ${f(25)}`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b', 'c', 'd'], gi: 7, fig: H.d5() },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số cuối đúng dòng của ý, nhãn ô khớp a) b) c)…
 const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
-  const y = p.match(/^<b>([a-d])\)<\/b>/);
-  if (!y) return `<div>${p}</div>`;
-  const ls = o.filter((l) => (Array.isArray(l) ? l[0] : l)[0] === y[1]);
-  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => { const [n, wd] = Array.isArray(l) ? l : [l, w]; return `<span class="nw"><b>${n})</b>${f(wd)}</span>`; }).join('')}</span></div>`;
+  const ys = [...p.matchAll(/<b>([a-d])\)<\/b>/g)].map((x) => x[1]);
+  if (!p.startsWith('<b>') || !ys.length) return `<div>${p}</div>`;
+  const ls = o.filter((l) => ys.includes((Array.isArray(l) ? l[0] : l)[0]));
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => { const [n, wd, h] = Array.isArray(l) ? l : [l, w]; return `<span class="nw"><b>${n})</b>${h ? f(wd).replace('style="', `style="height:${h}mm;`) : f(wd)}</span>`; }).join('')}</span></div>`;
 }).join('');
 const ttDe = (b) => b.fig ? `<div class="fig-side" style="grid-template-columns:1fr ${b.fw}mm"><div>${oY(b.de, b.o, b.ow)}</div>${b.fig}</div>` : oY(b.de, b.o, b.ow);
 const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: ttDe(b), k: 0 } : b));
@@ -221,28 +221,34 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: `Phao nhô lên ${nw('11 lần')} (từ lần đầu đến lần cuối) trong ${nw('20 s')}; khoảng cách giữa ${nw('3 ngọn sóng')} liên tiếp là ${nw('6 m')}.<br><b>a)</b> chu kì, tần số, bước sóng<br><b>b)</b> tốc độ truyền sóng`, o: [s('a', 1), s('a', 2), s('a', 3), 'b'], ow: 18 },
-    { t: 'Dạng 1 · Bài 2', de: `Thuyền nhô lên ${nw('6 lần')} (từ lần đầu đến lần cuối) trong ${nw('15 s')}; khoảng cách giữa ${nw('5 ngọn sóng')} liên tiếp là ${nw('12 m')}.<br><b>a)</b> chu kì, tần số, bước sóng<br><b>b)</b> tốc độ truyền sóng`, o: [s('a', 1), s('a', 2), s('a', 3), 'b'], ow: 18 },
-    { t: 'Dạng 2 · Bài 1', de: `Sóng truyền trên dây từ M tới N, ${nw(`${m('v=0{,}8')} m/s`)}, ${nw(`${m('f=10')} Hz`)}; ${nw('MN = 22 cm')}.<br><b>a)</b> bước sóng<br><b>b)</b> độ lệch pha giữa M, N; cùng, ngược hay vuông pha<br><b>c)</b> điểm gần M nhất dao động cùng pha với M cách M bao nhiêu`, o: ['a', s('b', 1), s('b', 2), 'c'], ow: 20 },
-    { t: 'Dạng 2 · Bài 2', de: `Sóng truyền trên dây từ M tới N, ${nw(`${m('v=2')} m/s`)}, ${nw(`${m('f=50')} Hz`)}; ${nw('MN = 10 cm')}.<br><b>a)</b> bước sóng<br><b>b)</b> độ lệch pha giữa M, N; cùng, ngược hay vuông pha<br><b>c)</b> điểm gần M nhất dao động vuông pha với M cách M bao nhiêu`, o: ['a', s('b', 1), s('b', 2), 'c'], ow: 20 },
-    { t: `Dạng 3 · Bài 1 · ${nw(`${m('u=4\\cos(10\\pi t-0{,}5\\pi x)')} (cm)`)}, ${m('x')}: cm, ${m('t')}: s`, de: `<b>a)</b> biên độ, chu kì, tần số<br><b>b)</b> bước sóng; tốc độ truyền sóng (m/s)<br><b>c)</b> ${m('v_{max}')} của phần tử (cm/s); lớn hơn hay nhỏ hơn ${v}`, o: [s('a', 1), s('a', 2), s('a', 3), s('b', 1), s('b', 2), [s('c', 1), 26], s('c', 2)], ow: 16 },
-    { t: `Dạng 3 · Bài 2 · ${nw(`${m('u=2\\cos\\left(20\\pi t-\\frac{\\pi x}{15}\\right)')} (cm)`)}, ${m('x')}: cm, ${m('t')}: s`, de: `<b>a)</b> biên độ, chu kì, tần số<br><b>b)</b> bước sóng; tốc độ truyền sóng (m/s)<br><b>c)</b> ${m('v_{max}')} của phần tử (cm/s); lớn hơn hay nhỏ hơn ${v}`, o: [s('a', 1), s('a', 2), s('a', 3), s('b', 1), s('b', 2), [s('c', 1), 26], s('c', 2)], ow: 16 },
+    { t: 'Dạng 1 · Bài 1', de: `Phao nhô lên ${nw('11 lần')} (từ lần đầu đến lần cuối) trong ${nw('20 s')}; khoảng cách giữa ${nw('3 ngọn sóng')} liên tiếp là ${nw('6 m')}.<br><b>a)</b> chu kì, tần số, bước sóng; <b>b)</b> tốc độ truyền`, o: [s('a', 1), s('a', 2), s('a', 3), 'b'], ow: 18 },
+    { t: 'Dạng 1 · Bài 2', de: `Thuyền nhô lên ${nw('5 lần')} (từ lần đầu đến lần cuối) trong ${nw('16 s')}; khoảng cách giữa ${nw('5 ngọn sóng')} liên tiếp là ${nw('12 m')}.<br><b>a)</b> chu kì, tần số, bước sóng; <b>b)</b> tốc độ truyền`, o: [s('a', 1), s('a', 2), s('a', 3), 'b'], ow: 18 },
+    { t: 'Dạng 2 · Bài 1', de: `Sóng truyền trên dây từ M tới N, ${nw(`${m('v=0{,}8')} m/s`)}, ${nw(`${m('f=10')} Hz`)}; ${nw('MN = 22 cm')}.<br><b>a)</b> bước sóng<br><b>b)</b> độ lệch pha giữa M, N; cùng, ngược hay vuông pha<br><b>c)</b> điểm gần M nhất dao động cùng pha với M cách M bao nhiêu`, o: ['a', s('b', 1), [s('b', 2), 25], 'c'], ow: 20 },
+    { t: 'Dạng 2 · Bài 2', de: `Sóng truyền trên dây từ M tới N, ${nw(`${m('v=2')} m/s`)}, ${nw(`${m('f=50')} Hz`)}; ${nw('MN = 10 cm')}.<br><b>a)</b> bước sóng<br><b>b)</b> độ lệch pha giữa M, N; cùng, ngược hay vuông pha<br><b>c)</b> điểm gần M nhất dao động vuông pha với M cách M bao nhiêu`, o: ['a', s('b', 1), [s('b', 2), 25], 'c'], ow: 20 },
+    { t: `Dạng 3 · Bài 1 · ${nw(`${m('u=4\\cos(10\\pi t-0{,}5\\pi x)')} (cm)`)}, ${m('x')}: cm, ${m('t')}: s`, de: `<b>a)</b> biên độ, chu kì, tần số<br><b>b)</b> bước sóng; tốc độ truyền sóng (m/s)<br><b>c)</b> ${m('v_{max}')} của phần tử (cm/s); lớn hơn hay nhỏ hơn ${v}`, o: [s('a', 1), s('a', 2), s('a', 3), s('b', 1), s('b', 2), [s('c', 1), 26], [s('c', 2), 25]], ow: 16 },
+    { t: `Dạng 3 · Bài 2 · ${nw(`${m('u=2\\cos\\left(20\\pi t-\\frac{\\pi x}{15}\\right)')} (cm)`)}, ${m('x')}: cm, ${m('t')}: s`, de: `<b>a)</b> biên độ, chu kì, tần số<br><b>b)</b> bước sóng; tốc độ truyền sóng (m/s)<br><b>c)</b> ${m('v_{max}')} của phần tử (cm/s); lớn hơn hay nhỏ hơn ${v}`, o: [s('a', 1), s('a', 2), s('a', 3), s('b', 1), s('b', 2), [s('c', 1), 26], [s('c', 2), 25]], ow: 16 },
   ], [
-    { t: 'Dạng 4 · Bài 1', de: `Nguồn O: ${nw(`${m('u_O=5\\cos(10\\pi t)')} (cm)`)}, từ ${m('t=0')}; sóng truyền theo +Ox, ${nw('v = 40 cm/s')}, biên độ không đổi. M cách O ${nw('6 cm')}.<br><b>a)</b> chu kì, bước sóng<br><b>b)</b> phương trình dao động của M<br><b>c)</b> tại ${nw(`${m('t=0{,}2')} s`)}: li độ của M, chiều chuyển động`, o: [s('a', 1), s('a', 2), ['b', PT], s('c', 1), s('c', 2)], ow: 20 },
-    { t: 'Dạng 4 · Bài 2', de: `Nguồn O: ${nw(`${m('u_O=6\\cos\\left(4\\pi t+\\frac{\\pi}{3}\\right)')} (cm)`)}, từ ${m('t=0')}; sóng truyền theo +Ox, ${nw('v = 0,6 m/s')}, biên độ không đổi. M cách O ${nw('10 cm')}.<br><b>a)</b> chu kì, bước sóng<br><b>b)</b> phương trình dao động của M<br><b>c)</b> tại ${nw(`${m('t=0{,}5')} s`)}: li độ của M, chiều chuyển động`, o: [s('a', 1), s('a', 2), ['b', PT], s('c', 1), s('c', 2)], ow: 20 },
-    { t: 'Dạng 5 · Bài 1', de: `Sóng truyền theo chiều dương Ox. (a): ${m('u')}–${m('x')} lúc ${m('t=0')}; (b): ${m('u')}–${m('t')} của M (${nw(`${m('x_M=5')} cm`)}).<br><b>a)</b> biên độ, bước sóng, chu kì<br><b>b)</b> tốc độ truyền sóng<br><b>c)</b> phương trình của M<br><b>d)</b> phương trình của N cách M ${nw('5 cm')} theo chiều truyền`, fig: H.tt51(), fw: 44, o: [s('a', 1), s('a', 2), s('a', 3), 'b', ['c', PT], ['d', PT]], ow: 14 },
-    { t: 'Dạng 5 · Bài 2', de: `Sóng truyền theo chiều dương Ox. (a): ${m('u')}–${m('x')} lúc ${m('t=0')}; (b): ${m('u')}–${m('t')} của M (${nw(`${m('x_M=10')} cm`)}).<br><b>a)</b> biên độ, bước sóng, chu kì<br><b>b)</b> tốc độ truyền sóng<br><b>c)</b> phương trình của M<br><b>d)</b> phương trình của N cách M ${nw('10 cm')} theo chiều truyền`, fig: H.tt52(), fw: 44, o: [s('a', 1), s('a', 2), s('a', 3), 'b', ['c', PT], ['d', PT]], ow: 14 },
+    { t: 'Dạng 4 · Bài 1', de: `Nguồn O: ${nw(`${m('u_O=5\\cos(10\\pi t)')} (cm)`)}, từ ${m('t=0')}; sóng truyền theo +Ox, ${nw('v = 40 cm/s')}, biên độ không đổi. M cách O ${nw('6 cm')}.<br><b>a)</b> chu kì, bước sóng; <b>b)</b> phương trình của M<br><b>c)</b> tại ${nw(`${m('t=0{,}2')} s`)}: li độ của M, chiều chuyển động`, o: [[s('a', 1), 14], [s('a', 2), 16], ['b', PT, 9], [s('c', 1), 20], [s('c', 2), 25]], ow: 20 },
+    { t: 'Dạng 4 · Bài 2', de: `Nguồn O: ${nw(`${m('u_O=6\\cos\\left(4\\pi t+\\frac{\\pi}{3}\\right)')} (cm)`)}, từ ${m('t=0')}; sóng truyền theo +Ox, ${nw('v = 0,6 m/s')}, biên độ không đổi. M cách O ${nw('10 cm')}.<br><b>a)</b> chu kì, bước sóng; <b>b)</b> phương trình của M<br><b>c)</b> tại ${nw(`${m('t=0{,}5')} s`)}: li độ của M, chiều chuyển động`, o: [[s('a', 1), 14], [s('a', 2), 16], ['b', PT, 9], [s('c', 1), 20], [s('c', 2), 25]], ow: 20 },
+    { t: 'Dạng 5 · Bài 1', de: `Sóng truyền theo chiều dương Ox. (a): ${m('u')}–${m('x')} lúc ${m('t=0')}; (b): ${m('u')}–${m('t')} của M (${nw(`${m('x_M=5')} cm`)}).<br><b>a)</b> biên độ, bước sóng, chu kì<br><b>b)</b> tốc độ truyền sóng<br><b>c)</b> phương trình của M<br><b>d)</b> phương trình của N (sau M ${nw('5 cm')})`, fig: H.tt51(), fw: 44, o: [s('a', 1), s('a', 2), s('a', 3), 'b', ['c', PT, 9], ['d', PT, 9]], ow: 14 },
+    { t: 'Dạng 5 · Bài 2', de: `Sóng truyền theo chiều dương Ox. (a): ${m('u')}–${m('x')} lúc ${m('t=0')}; (b): ${m('u')}–${m('t')} của M (${nw(`${m('x_M=10')} cm`)}).<br><b>a)</b> biên độ, bước sóng, chu kì<br><b>b)</b> tốc độ truyền sóng<br><b>c)</b> phương trình của M<br><b>d)</b> phương trình của N (sau M ${nw('10 cm')})`, fig: H.tt52(), fw: 44, o: [s('a', 1), s('a', 2), s('a', 3), 'b', ['c', PT, 9], ['d', PT, 9]], ow: 14 },
   ]],
   dap: [
-    `D1·1: a<sub>1</sub>) 2 s · a<sub>2</sub>) 0,5 Hz · a<sub>3</sub>) 3 m · b) 1,5 m/s &nbsp;|&nbsp; D1·2: a<sub>1</sub>) 3 s · a<sub>2</sub>) ${m('\\frac13')} Hz ${m('\\approx')} 0,33 Hz · a<sub>3</sub>) 3 m · b) 1 m/s &nbsp;|&nbsp; D2·1: a) 8 cm · b<sub>1</sub>) ${m('5{,}5\\pi')} rad · b<sub>2</sub>) vuông pha · c) 8 cm &nbsp;|&nbsp; D2·2: a) 4 cm · b<sub>1</sub>) ${m('5\\pi')} rad · b<sub>2</sub>) ngược pha · c) 1 cm &nbsp;|&nbsp; D3·1: a) 4 cm; 0,2 s; 5 Hz · b) 4 cm; 0,2 m/s · c<sub>1</sub>) ${m('40\\pi\\approx125{,}7')} cm/s · c<sub>2</sub>) lớn hơn &nbsp;|&nbsp; D3·2: a) 2 cm; 0,1 s; 10 Hz · b) 30 cm; 3 m/s · c<sub>1</sub>) ${m('40\\pi\\approx125{,}7')} cm/s · c<sub>2</sub>) nhỏ hơn`,
+    `D1·1: a<sub>1</sub>) 2 s · a<sub>2</sub>) 0,5 Hz · a<sub>3</sub>) 3 m · b) 1,5 m/s &nbsp;|&nbsp; D1·2: a<sub>1</sub>) 4 s · a<sub>2</sub>) 0,25 Hz · a<sub>3</sub>) 3 m · b) 0,75 m/s &nbsp;|&nbsp; D2·1: a) 8 cm · b<sub>1</sub>) ${m('5{,}5\\pi')} rad · b<sub>2</sub>) vuông pha · c) 8 cm &nbsp;|&nbsp; D2·2: a) 4 cm · b<sub>1</sub>) ${m('5\\pi')} rad · b<sub>2</sub>) ngược pha · c) 1 cm &nbsp;|&nbsp; D3·1: a) 4 cm; 0,2 s; 5 Hz · b) 4 cm; 0,2 m/s · c<sub>1</sub>) ${m('40\\pi\\approx125{,}7')} cm/s · c<sub>2</sub>) lớn hơn &nbsp;|&nbsp; D3·2: a) 2 cm; 0,1 s; 10 Hz · b) 30 cm; 3 m/s · c<sub>1</sub>) ${m('40\\pi\\approx125{,}7')} cm/s · c<sub>2</sub>) nhỏ hơn`,
     `D4·1: a) 0,2 s; 8 cm · b) ${nw(`${m('u_M=5\\cos\\left(10\\pi t-\\frac{3\\pi}{2}\\right)')} cm`)} ${m('=5\\cos\\left(10\\pi t+\\frac{\\pi}{2}\\right)')} · c<sub>1</sub>) 0 (vị trí cân bằng) · c<sub>2</sub>) chiều âm &nbsp;|&nbsp; D4·2: a) 0,5 s; 30 cm · b) ${nw(`${m('u_M=6\\cos\\left(4\\pi t-\\frac{\\pi}{3}\\right)')} cm`)} · c<sub>1</sub>) 3 cm · c<sub>2</sub>) chiều dương &nbsp;|&nbsp; D5·1: a) 4 cm; 20 cm; 0,5 s · b) 40 cm/s · c) ${nw(`${m('u_M=4\\cos(4\\pi t)')} cm`)} · d) ${nw(`${m('u_N=4\\cos\\left(4\\pi t-\\frac{\\pi}{2}\\right)')} cm`)} &nbsp;|&nbsp; D5·2: a) 2 cm; 40 cm; 0,2 s · b) 2 m/s · c) ${nw(`${m('u_M=2\\cos\\left(10\\pi t-\\frac{\\pi}{2}\\right)')} cm`)} · d) ${nw(`${m('u_N=2\\cos(10\\pi t-\\pi)')} cm`)}`,
   ],
 };
 
-await K.dung({
+
+// Số + đơn vị không gãy dòng (lỗi HS ảo 13/11): thay dấu cách bằng &nbsp; trong phần chữ (ngoài thẻ).
+const U = /(\d) (s|m|Hz|cm|mm|m\/s|cm\/s|rad|lần|ngọn|khung|fps)(?![\p{L}\/])/gu;
+const nbU = (x) => typeof x === 'string' ? x.split(/(<[^>]*>)/).map((t) => (t.startsWith('<') ? t : t.replace(U, '$1&nbsp;$2'))).join('')
+  : Array.isArray(x) ? x.map(nbU) : x && typeof x === 'object' ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, nbU(v)])) : x;
+
+await K.dung(nbU({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]], khoNhat: false },
   tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
   tra: 'sóng cơ 1·4 · khay nước 1·5 · năm đại lượng 2·1 · lệch pha, đổi môi trường 2·2 · phương trình sóng 3·1 · đồ thị u–t, u–x 3·2 · bẫy 3·3 · bài toán mẫu 4·3 · dạng 1–3 ở 6·1 · dạng 4–5 ở 7·1',
   out: process.argv[2],
-});
+}));
