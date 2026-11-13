@@ -56,12 +56,13 @@ ${dong(`${ck}Dùng ${m('i=\\lambda D/a')}: tính khoảng vân, bước sóng; x
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
-<p style="margin:0 0 1mm">Hai loa phát cùng một âm, hai sóng âm gặp nhau. Em đi dọc hàng ghế đầu, em nghe thấy gì?</p>
+<p style="margin:0 0 1mm">Hai loa cùng phát một bản nhạc. Em đi chậm dọc hàng ghế đầu. Em nghe thấy gì?</p>
 <div class="fig-side" style="${fs(42)}"><div>
-${opt('A', 'Mọi chỗ đều to hơn khi chỉ có một loa, vì có hai loa')}
-${opt('B', 'Có chỗ to hơn, có chỗ gần như im, xen kẽ, không đổi chỗ')}
-${opt('C', 'Mọi chỗ nghe y hệt khi chỉ có một loa')}
-<div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
+${opt('A', 'Chỗ nào cũng to hơn khi chỉ bật một loa')}
+${opt('B', 'Chỗ to, chỗ nhỏ, xen kẽ nhau')}
+${opt('C', 'Chỗ nào cũng nghe như khi chỉ bật một loa')}
+${opt('D', 'Càng gần loa càng to, xa ra nhỏ dần')}
+<div style="margin-top:1mm">${chon(12)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
 ${H.haiLoa()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
@@ -70,8 +71,9 @@ ${h3(4, 'II.1 · Giao thoa và hai nguồn kết hợp', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Giao thoa:</b> hai sóng gặp nhau, tạo ra ${f(70)}</div>
 <div><b>Vân giao thoa:</b> ${f(95)}</div>
-<div><b>Hai nguồn kết hợp</b> (Phương – Tần – Pha): cùng ${f(22)} · cùng ${f(16)}</div>
-<div>· độ lệch pha ${f(22)} &nbsp; Thiếu một điều kiện thì ${f(48)}</div>
+<div><b>Hai nguồn kết hợp</b> (Phương – Tần – Pha): cùng ${f(25)} · cùng ${f(25)}</div>
+<div>· độ lệch pha ${f(40)}</div>
+<div>Thiếu một điều kiện thì ${f(60)}</div>
 <div>Ví dụ hai nguồn kết hợp: hai loa ${f(50)}</div></div>
 ${h3(5, 'Thí nghiệm: khay sóng hai mũi nhọn', '1·5')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
@@ -84,9 +86,9 @@ const p2 = `<section class="page">
 ${head('CỰC ĐẠI · CỰC TIỂU · HIỆU ĐƯỜNG ĐI')}
 ${h3(1, 'II.2 · Cực đại và cực tiểu (hai nguồn cùng pha)', '2·1')}
 <div class="card fig-side" style="${fs(34)};padding:1.2mm 3mm"><div>
-<div>Hiệu đường đi: ${d21}; ${m('d_1')}, ${m('d_2')}: từ M tới ${f(22)}</div>
-<div>Đi xa hơn ${m('k\\lambda')}: tới M trễ ${f(10)} chu kì ${m('\\to')} hai sóng ${f(20)}</div>
-<div>Đi xa hơn ${m('(k+\\tfrac12)\\lambda')}: trễ ${f(10)} chu kì ${m('\\to')} hai sóng ${f(20)}</div>
+<div>Hiệu đường đi: ${d21}; ${m('d_1')}, ${m('d_2')}: từ M tới ${f(25)}</div>
+<div>Hiệu ${m('k\\lambda')}: tới M trễ ${f(12)} chu kì ${m('\\to')} hai sóng ${f(25)}</div>
+<div>Hiệu ${m('(k+\\tfrac12)\\lambda')}: trễ ${f(12)} chu kì ${m('\\to')} hai sóng ${f(25)}</div>
 <div><b>Nhắc (Bài 8):</b> ${nw(m('\\lambda=v/f'))} · ${m('k=0,\\pm1,\\pm2,\\dots')} · ${m('a')}: biên độ mỗi sóng tới M</div></div>
 ${H.diemM()}</div>
 <div class="fig-side" style="${fs(46)}"><div>
@@ -94,13 +96,13 @@ ${H.diemM()}</div>
 <tr><th>${d21}</th><td></td><td></td></tr><tr><th>Hai sóng tới M</th><td></td><td></td></tr>
 <tr><th>Biên độ</th><td></td><td></td></tr><tr><th>Hình ảnh</th><td></td><td></td></tr></table>
 <div style="margin-top:.8mm"><b>Mẹo</b> (hai nguồn cùng pha): tính ${m('(d_2-d_1)/\\lambda')}</div>
-<div>nguyên ${m('\\to')} ${f(18)} · nguyên + ½ ${m('\\to')} ${f(18)}</div></div>
+<div>nguyên ${m('\\to')} ${f(25)} · nguyên + ½ ${m('\\to')} ${f(25)}</div></div>
 ${H.congSong()}</div>
 ${h3(2, 'Đường cực đại, cực tiểu quanh hai nguồn', '2·2')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>Đếm trên hình: cực đại ${f(10)} đường · cực tiểu ${f(10)} đường</div>
-<div>Trên trung trực: ${nw(`${d21} = ${f(10)}`)}</div>
-<div>${m('\\to')} trung trực là đường ${f(18)}, ${nw(`${m('k=')} ${f(8)}`)}</div>
+<div>Trên hình: ${f(12)} cực đại · ${f(12)} cực tiểu</div>
+<div>Trên trung trực: ${nw(`${d21} = ${f(12)}`)}</div>
+<div>${m('\\to')} trung trực là đường ${f(25)}, ${nw(`${m('k=')} ${f(12)}`)}</div>
 <div>Ra phía A, các cực đại ứng với ${nw(`${m('k=')} ${f(20)}`)}</div>
 ${wl('Điểm nằm trên nét đứt có đứng yên không, dù cả hai sóng đều tới?', 2)}</div>
 ${H.vanAB()}</div>
@@ -113,25 +115,23 @@ const p3 = `<section class="page">
 ${head('TRÊN ĐOẠN AB · KHE YOUNG · CÁI BẪY')}
 ${h3(1, 'II.3 · Trên đoạn nối hai nguồn AB (hai nguồn cùng pha)', '3·1')}
 <div class="card fig-side" style="${fs(50)};padding:1.2mm 3mm"><div>
-<div>Hai cực đại liên tiếp cách nhau: ${f(14)}</div>
-<div>Cực đại – cực tiểu liền kề cách nhau: ${f(14)}</div>
-<div>Trung điểm O của AB: ${f(20)}, ${nw(`${m('k=')} ${f(10)}`)}</div></div>
+<div>Khoảng cách giữa:</div><table class="tbl-dem" style="margin:.4mm 0"><tr><th>hai cực đại liên tiếp</th><td style="width:18mm"></td></tr><tr><th>cực đại – cực tiểu liền kề</th><td></td></tr></table>
+<div>Trung điểm O của AB: ${f(25)}, ${nw(`${m('k=')} ${f(12)}`)}</div></div>
 ${H.doanAB()}</div>
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Đếm số điểm trên AB</b> (${k0} nguyên, không lấy hai đầu A, B):</div>
 <table class="tbl-dem" style="margin:.6mm 0"><tr><th style="width:22mm">Cực đại</th><td></td><th style="width:22mm">Cực tiểu</th><td></td></tr></table>
-<div>Vì sao: M giữa A và B thì ${m('d_1+d_2=AB')} nên ${m('|d_2-d_1|')} ${f(10)} ${m('AB')}; thay ${m('d_2-d_1=k\\lambda')}, chia cho ${L}.</div></div>
+<div>Vì sao: M giữa A và B thì ${m('d_1+d_2=AB')} nên ${m('|d_2-d_1|')} ${f(12)} ${m('AB')}; thay ${m('d_2-d_1=k\\lambda')}, chia cho ${L}.</div></div>
 ${h3(2, 'II.4 · Giao thoa ánh sáng: khe Young', '3·2')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>Hai khe chiếu từ cùng một nguồn ${m('\\to')} hai nguồn ${f(22)} cùng pha.</div>
-<div>Vân sáng là ${f(16)}; vân tối là ${f(16)}</div>
-<table class="tbl-dem" style="margin:.6mm 0"><tr><th>Khoảng vân ${m('i')}</th><th>Vân sáng ${m('x_s')}</th><th>Vân tối ${m('x_t')}</th></tr><tr><td></td><td></td><td></td></tr></table>
-<div>${m('x')} đo từ ${f(34)}</div>
-<div>Vân sáng và vân tối liền kề cách nhau ${f(12)}</div></div>
+<div>Hai khe ${m('S_1, S_2')} là hai nguồn ${f(25)}</div>
+<div>Vân sáng: ${f(25)} · vân tối: ${f(25)}</div>
+<table class="tbl-dem" style="margin:.6mm 0"><tr><th>Khoảng vân ${m('i')}</th><th>Vân sáng ${m('x_s')}</th><th>Vân tối ${m('x_t')}</th><th>Sáng – tối liền kề</th></tr><tr><td></td><td></td><td></td><td></td></tr></table>
+<div>${m('x')} đo từ ${f(34)}</div></div>
 ${H.young()}</div>
 <div class="card" style="padding:1mm 3mm"><b>Thí nghiệm:</b> laser đỏ (${nw(`${m('\\lambda\\approx0{,}65')} ${m('\\mu\\text{m}')}`)}) qua hai khe ${nw(`${m('a=0{,}2')} mm`)}, màn cách ${nw(`${m('D=2')} m`)} (không rọi laser vào mắt người).
 <div>Dự tính ${nw(`${m('i=')} ${f(14)} mm`)} · Đặt màn xa hơn thì vân ${ck}giãn ra ${ck}sít lại · <b>Rút ra:</b> ánh sáng có ${f(26)}</div></div>
-<div class="card soft" style="padding:1mm 3mm"><b>Hai bức xạ cùng lúc:</b> vân sáng trùng khi ${m('k_1\\lambda_1=k_2\\lambda_2')}, tức ${nw(`${m('k_1/k_2=')} ${f(14)} ${m('=p/q')}`)} (tối giản) ${m('\\to')} khoảng vân trùng ${nw(`${m('i_{tr}=')} ${f(22)}`)}</div>
+<div class="card soft" style="padding:1mm 3mm"><b>Hai bức xạ cùng lúc:</b> vân sáng trùng khi ${m('k_1\\lambda_1=k_2\\lambda_2')}, tức ${nw(`${m('k_1/k_2=')} ${fT(16)} ${m('=p/q')}`)} (tối giản) ${m('\\to')} khoảng vân trùng ${nw(`${m('i_{tr}=')} ${f(22)}`)}</div>
 ${h3(3, 'III · Cái bẫy: “cực tiểu là chỗ không có sóng tới”', '3·3')}
 <div class="card" style="padding:1mm 3mm">
 <div>Sửa lại cho đúng: cực tiểu đứng yên vì ${f(76)}</div>
@@ -158,7 +158,7 @@ ${h3(3, 'V · Bài toán mẫu: xét một điểm, đếm trên AB', '4·3')}
 <table><tr><th style="width:52mm">Câu trong đề</th><th>Dữ liệu ${m('\\to')} kiến thức</th></tr>
 <tr><td>“hai nguồn A, B dao động cùng pha”</td><td>dùng cực đại ${m('k\\lambda')}, cực tiểu ${m('(k+\\tfrac12)\\lambda')}</td></tr>
 <tr><td style="height:6.5mm">“${nw('f = 20 Hz')} … ${nw('30 cm/s')}”</td><td></td></tr>
-<tr><td style="height:6.5mm">“M cách A 12 cm, cách B 15 cm”</td><td></td></tr>
+<tr><td style="height:6.5mm">“M cách A ${nw('12 cm')}, cách B ${nw('15 cm')}”</td><td></td></tr>
 <tr><td style="height:6.5mm">“cực đại hay cực tiểu?”</td><td></td></tr>
 <tr><td style="height:6.5mm">“bao nhiêu điểm trên đoạn AB”</td><td></td></tr></table>
 ${foot(4)}</section>`;
@@ -185,25 +185,25 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Xét một điểm là cực đại hay cực tiểu',
     de: `Hai nguồn A, B cùng pha, ${nw('f = 25 Hz')}, ${nw('AB = 20 cm')}, tốc độ sóng ${nw('v = 50 cm/s')}. M cách A ${nw('16 cm')}, cách B ${nw('21 cm')}; N cách A ${nw('18 cm')}, cách B ${nw('24 cm')}.<br><b>a)</b> M là cực đại hay cực tiểu? Ghi kèm ${k0}<br><b>b)</b> N là cực đại hay cực tiểu? Ghi kèm ${k0}`,
-    nd: `chia ${d21} cho ${f(10)}, không xét số cm; nguyên ${m('\\to')} ${f(16)}, nguyên + ½ ${m('\\to')} ${f(16)}`,
+    nd: `chia ${d21} cho ${f(12)} (không xét số cm); nguyên ${m('\\to')} ${f(25)}, nguyên + ½ ${m('\\to')} ${f(25)}`,
     a: ['a', 'b'], gi: 3, cot: 2 },
   { t: 'Dạng 2 · Trung bình · Đếm số cực đại, cực tiểu trên đoạn AB',
     de: `Hai nguồn kết hợp A, B cùng pha, ${nw('f = 20 Hz')}, ${nw('AB = 12 cm')}, ${nw('v = 40 cm/s')}. Trên đoạn AB có bao nhiêu điểm<br><b>a)</b> dao động với biên độ cực đại?<br><b>b)</b> đứng yên (cực tiểu)?`,
-    nd: `tính ${m('AB/\\lambda')}, đếm ${k0} nguyên; ${k0} làm điểm trùng đúng nguồn A, B thì ${f(14)}`,
+    nd: `tính ${m('AB/\\lambda')}, đếm ${k0} nguyên; ${k0} làm điểm trùng đúng nguồn A, B thì ${f(25)}`,
     a: ['a', 'b'], gi: 4, cot: 2 },
   { t: 'Dạng 3 · Trung bình · Biết số dãy cực đại giữa M và trung trực',
     de: `Hai nguồn A, B cùng pha, ${nw('f = 10 Hz')}, ${nw('AB = 24 cm')}. Điểm M cách A ${nw('14 cm')}, cách B ${nw('26 cm')} dao động với biên độ cực đại. Giữa M và trung trực của AB còn ${nw('3 dãy')} cực đại khác (không kể trung trực).<br><b>a)</b> M thuộc dãy cực đại bậc mấy?<br><b>b)</b> Tính bước sóng.<br><b>c)</b> Tính tốc độ truyền sóng.`,
-    nd: `trung trực ${nw(`${m('k=')} ${f(8)}`)}; dãy qua M kế sau ${f(8)} dãy; ${nw(`${L} = ${f(14)}`)}, ${nw(`${m('v=')} ${f(12)}`)}`,
+    nd: `trung trực ${nw(`${m('k=')} ${f(12)}`)}; dãy qua M kế sau ${f(12)} dãy; ${nw(`${L} = ${f(14)}`)}, ${nw(`${m('v=')} ${f(14)}`)}`,
     a: ['a', 'b', 'c'], gi: 5, fig: H.dayM() },
 ];
 const dang2 = [
   { t: 'Dạng 4 · Trung bình · Khe Young: khoảng vân, bước sóng, loại vân',
     de: `Thí nghiệm Young, ánh sáng đơn sắc: ${nw(`${m('a=0{,}8')} mm`)}, ${nw(`${m('D=1{,}6')} m`)}. Khoảng cách giữa ${nw('7 vân sáng')} liên tiếp là ${nw('6,0 mm')} (hình). M và N ở cùng một phía vân trung tâm, cách vân trung tâm ${nw('4,5 mm')} và ${nw('7,0 mm')}.<br><b>a)</b> khoảng vân ${m('i')} (a<sub>1</sub>), bước sóng ${L} (a<sub>2</sub>)<br><b>b)</b> M (b<sub>1</sub>), N (b<sub>2</sub>) là vân sáng hay vân tối? Vân sáng thì ghi bậc`,
-    nd: `${f(10)} vân sáng liên tiếp có ${f(10)} khoảng vân; ${nw(`${L} = ${f(14)}`)}, đổi ${m('i')}, ${m('a')} ra mét; xét ${m('x/i')}`,
+    nd: `${f(12)} vân sáng liên tiếp có ${f(12)} khoảng vân; ${nw(`${L} = ${fT(16)}`)}, đổi ${m('i')}, ${m('a')} ra mét; xét ${m('x/i')}`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 7, fig: H.vanD4() },
   { t: 'Dạng 5 · Khó · Khe Young với hai bức xạ: vân sáng trùng nhau',
     de: `Thí nghiệm Young: ${nw(`${m('a=1{,}2')} mm`)}, ${nw(`${m('D=2')} m`)}; chiếu cùng lúc ${nw(`${m('\\lambda_1=0{,}60')} ${m('\\mu\\text{m}')}`)} và ${nw(`${m('\\lambda_2=0{,}45')} ${m('\\mu\\text{m}')}`)}. Vân sáng trung tâm của hai bức xạ trùng nhau.<br><b>a)</b> khoảng vân ${m('i_1')} (a<sub>1</sub>), ${m('i_2')} (a<sub>2</sub>)<br><b>b)</b> khoảng cách từ vân trung tâm tới vân sáng gần nhất cùng màu với nó (vân trùng)<br><b>c)</b> giữa hai vân trùng liên tiếp có bao nhiêu vân sáng của riêng ${m('\\lambda_2')}?`,
-    nd: `${nw(`${m('\\dfrac{k_1}{k_2}=')} ${fT(12)}`)} tối giản ${m('=\\dfrac pq')}; ${nw(`${m('i_{tr}=')} ${f(14)}`)}; không đếm hai vân trùng ở hai đầu`,
+    nd: `${nw(`${m('\\dfrac{k_1}{k_2}=')} ${fT(16)}`)} tối giản ${m('=\\dfrac pq')}; ${nw(`${m('i_{tr}=')} ${f(14)}`)}; không đếm hai vân trùng ở hai đầu`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 8, fig: H.thangD5() },
 ];
 
@@ -239,8 +239,8 @@ const tuongTu = {
     nhap(9),
   ]],
   dap: [
-    `D1·1: a) cực tiểu, ${m('k=3')} · b) cực đại, ${m('k=3')} &nbsp;|&nbsp; D1·2: a) cực tiểu, ${m('k=1')} · b) cực đại, ${m('k=2')} &nbsp;|&nbsp; D2·1: a) 11 · b) 10 &nbsp;|&nbsp; D2·2: a) 9 · b) 10 &nbsp;|&nbsp; D3·1: a) ${m('k=3')} · b) 3 cm · c) 60 cm/s &nbsp;|&nbsp; D3·2: a) ${m('k=5')} · b) 2 cm · c) 30 cm/s`,
-    `D4·1: a<sub>1</sub>) 1,2 mm · a<sub>2</sub>) ${um('0,6')} · b<sub>1</sub>) M vân tối (${m('k=3')}) · b<sub>2</sub>) N vân sáng bậc 5 &nbsp;|&nbsp; D4·2: a<sub>1</sub>) 2,0 mm · a<sub>2</sub>) ${um('0,625')} · b<sub>1</sub>) M vân tối (${m('k=2')}) · b<sub>2</sub>) N vân sáng bậc 4 &nbsp;|&nbsp; D5·1: a<sub>1</sub>) 1,0 mm · a<sub>2</sub>) 1,5 mm · b) 3,0 mm · c) 2 vân &nbsp;|&nbsp; D5·2: a<sub>1</sub>) 0,96 mm · a<sub>2</sub>) 0,72 mm · b) 2,88 mm · c) 3 vân`,
+    `D1·1: a) cực tiểu, ${m('k=3')} · b) cực đại, ${m('k=3')} &nbsp;|&nbsp; D1·2: a) cực tiểu, ${m('k=1')} · b) cực đại, ${m('k=2')} &nbsp;|&nbsp; D2·1: a) 11 · b) 10 &nbsp;|&nbsp; D2·2: a) 9 · b) 10 &nbsp;|&nbsp; D3·1: a) ${m('k=3')} · b) ${nw('3 cm')} · c) ${nw('60 cm/s')} &nbsp;|&nbsp; D3·2: a) ${m('k=5')} · b) ${nw('2 cm')} · c) ${nw('30 cm/s')}`,
+    `D4·1: a<sub>1</sub>) ${nw('1,2 mm')} · a<sub>2</sub>) ${um('0,6')} · b<sub>1</sub>) M vân tối (${m('k=3')}) · b<sub>2</sub>) N vân sáng ${nw('bậc 5')} &nbsp;|&nbsp; D4·2: a<sub>1</sub>) ${nw('2,0 mm')} · a<sub>2</sub>) ${um('0,625')} · b<sub>1</sub>) M vân tối (${m('k=2')}) · b<sub>2</sub>) N vân sáng ${nw('bậc 4')} &nbsp;|&nbsp; D5·1: a<sub>1</sub>) ${nw('1,0 mm')} · a<sub>2</sub>) ${nw('1,5 mm')} · b) ${nw('3,0 mm')} · c) ${nw('2 vân')} &nbsp;|&nbsp; D5·2: a<sub>1</sub>) ${nw('0,96 mm')} · a<sub>2</sub>) ${nw('0,72 mm')} · b) ${nw('2,88 mm')} · c) ${nw('3 vân')}`,
   ],
 };
 
