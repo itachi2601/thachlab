@@ -112,7 +112,7 @@ export const hinhL11b6 = {
   },
 
   // Trang 4 · bài toán mẫu: bệ máy trên lò xo, lực tuần hoàn
-  beMay: (cap = 'Bệ máy trên lò xo. Lực F = 20 cos(2<span style="font-family:KaTeX_Main">π</span><i>f</i><i>t</i>) N đặt liên tục; f đổi được.') => {
+  beMay: (cap = 'Bệ máy trên lò xo. Lực tuần hoàn biên độ 20 N đặt liên tục; tần số <i>f</i> đổi được.') => {
     let b = defs('bm2') + dat(10, 310, 190);
     b += loXo(90, 132, 190) + loXo(230, 132, 190);
     b += `<rect x="60" y="104" width="200" height="28" rx="3" fill="${GREY}" stroke="${INK}" stroke-width="${SW}"/>`;
