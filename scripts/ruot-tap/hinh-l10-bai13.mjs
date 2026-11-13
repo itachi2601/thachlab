@@ -39,8 +39,8 @@ const keoChech = (cap, { goc = 35, nhan = gk('α'), F = 'F', id = 'kc' } = {}) =
   let b = defs(id + 'a') + defs(id + 'b');
   b += dat(10, 312, 150) + hop(40, 106, 90, 44);
   const x0 = 130, y0 = 118, [xe, ye] = dau(x0, y0, 150, goc);
-  b += arr(x0, y0, xe, ye, id + 'a', RED) + T(xe - 4, ye - 8, F, { c: RED, w: 700, a: 'end' });
-  b += arr(x0, y0, xe, y0, id + 'b', BLUE, '7 5') + T(xe + 2, y0 + 24, `F${sb('x')}`, { c: BLUE, a: 'middle' });
+  b += arr(x0, y0, xe, ye, id + 'a', RED) + T(xe + 8, ye + 14, F, { c: RED, w: 700 });
+  b += arr(x0, y0, xe, y0, id + 'b', BLUE, '7 5') + T(xe + 8, y0 + 8, `F${sb('x')}`, { c: BLUE });
   b += arr(x0, y0, x0, ye, id + 'b', BLUE, '7 5') + T(x0 - 8, ye + 14, `F${sb('y')}`, { c: BLUE, a: 'end' });
   b += ln(xe, ye, xe, y0, GREY, 1.8, '3 3') + ln(xe, ye, x0, ye, GREY, 1.8, '3 3');
   b += cung(x0, y0, 40, 0, goc) + T(x0 + 46, y0 - 8, nhan);
@@ -61,7 +61,7 @@ const docP = (cap, { goc = 30, nhan = gk('α'), id = 'dp', lucKe = false } = {})
   // thành phần: Px dọc dốc hướng xuống (độ dài Lp·sin), Py vuông góc dốc hướng vào dốc (Lp·cos)
   const Px = [cx - Lp * s * c, cy + Lp * s * s], Py = [cx + Lp * c * s, cy + Lp * c * c];
   b += ln(Px[0], Px[1], cx, py, GREY, 1.8, '3 3') + ln(Py[0], Py[1], cx, py, GREY, 1.8, '3 3');
-  b += arr(cx, cy, cx, py, id + 'a', RED) + T(cx - 8, py - 4, 'P', { c: RED, w: 700, a: 'end' });
+  b += arr(cx, cy, cx, py, id + 'a', RED) + T(cx - 5, cy + 64, 'P', { c: RED, w: 700, a: 'end' });
   b += arr(cx, cy, Px[0], Px[1], id + 'b', BLUE, '7 5') + T(Px[0] - 6, Px[1] + 8, `P${sb('x')}`, { c: BLUE, a: 'end' });
   b += arr(cx, cy, Py[0], Py[1], id + 'b', BLUE, '7 5') + T(Py[0] + 8, Py[1] + 6, `P${sb('y')}`, { c: BLUE });
   // góc giữa P và Py
