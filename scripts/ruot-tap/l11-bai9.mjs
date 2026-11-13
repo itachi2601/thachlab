@@ -130,7 +130,7 @@ ${h3(2, 'II.5 · Sóng truyền năng lượng · Cường độ sóng', '3·2')
 ${H.matCau()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card fig-side" style="${fs(46)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“Sóng chở nước và phao đi theo.”</b> ${nw(`${m('v=1')} m/s`)}, sau 10 s phao dời ${f(18)} m. Truyền đi: năng lượng, pha; ở lại: phần tử.</span></div>
+<div class="trap">${ck}<span><b>“Sóng chở nước và phao đi theo.”</b> ${nw(`${m('v=1')} m/s`)}, sau ${nw('10 s')} phao dời ${f(18)} m. Truyền đi: năng lượng, pha; ở lại: phần tử.</span></div>
 <div class="trap">${ck}<span><b>“Vùng nén ở đỉnh đồ thị ${m('u')}–${m('x')}.”</b> Nén, dãn đều ở chỗ ${m('u=0')}: đi xuống là nén, đi lên là dãn. Trên hình: nén ở ${f(10)}, dãn ở ${f(10)}.</span></div>
 <div class="trap">${ck}<span><b>“Ngang, dọc là so với mặt đất.”</b> So phương dao động với phương truyền. Dây treo đứng, lắc đầu dưới qua lại nằm ngang: sóng ${f(16)}.</span></div></div>
 ${H.uxDoc()}</div>
@@ -179,29 +179,29 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Phân biệt sóng ngang và sóng dọc',
-    de: `<span class="d1x"></span>(1) Dây thép căng ngang, tay rung đầu A lên – xuống. (2) Ống chứa khí, pit-tông đẩy – kéo dọc trục ống. (3) Sỏi rơi xuống hồ, gợn tròn lan ra, phao nhấp nhô lên – xuống.<br><b>a)</b> mỗi trường hợp: hai phương vuông góc hay trùng nhau, sóng ngang hay dọc (a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>)<br><b>b)</b> trong lòng một khối khí truyền được sóng ở (1) hay (2)? Lí do ghi ở phần giải<br><b>c)</b> rung đầu A nhanh gấp đôi: sóng (1) có thành sóng dọc không (có/không)?`,
+    de: `<span class="d1x"></span>(1) Dây thép căng ngang, tay rung đầu A lên – xuống. (2) Ống chứa khí, pit-tông đẩy – kéo dọc trục ống. (3) Sỏi rơi xuống hồ, gợn tròn lan ra, phao nhấp nhô lên – xuống.<br><b>a)</b> mỗi trường hợp: hai phương vuông góc hay trùng nhau, sóng ngang hay dọc (a<sub>1</sub>, a<sub>2</sub>, a<sub>3</sub>)<br><b>b)</b> trong lòng một khối khí truyền được sóng ở (1) hay (2)? Lí do ghi ở phần giải`,
     nd: `so hai phương: phương ${f(25)} và phương ${f(25)}; không dựa vào hướng dây, ống hay tần số`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b', 'c'], gi: 2, cot: 5 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b'], gi: 3, cot: 4 },
   { t: 'Dạng 2 · Trung bình · Sóng truyền đi cái gì, phần tử ở lại',
-    de: `<div class="fig-side" style="grid-template-columns:1fr 40mm"><div>Sỏi rơi xuống mặt hồ yên lặng tại O, sóng tròn lan ra với ${ms('v=0{,}80')}. Phao câu cách O ${u('6{,}0', 'm')}, lá cách O ${u('9{,}6', 'm')}.<br><b>a)</b> kể từ lúc sỏi rơi, sau bao lâu phao (a<sub>1</sub>), lá (a<sub>2</sub>) bắt đầu nhấp nhô<br><b>b)</b> sau ${u('20', 's')} sóng lan tới cách O bao xa (b<sub>1</sub>); phao dời xa O thêm bao nhiêu (b<sub>2</sub>)<br><b>c)</b> từ O tới phao, sóng truyền đi nước ở O hay năng lượng dao động</div>${H.hoThang('')}</div>`,
+    de: `Sỏi rơi xuống mặt hồ yên lặng tại O, sóng tròn lan ra với ${ms('v=0{,}80')}. Phao câu cách O ${u('6{,}0', 'm')}, lá cách O ${u('9{,}6', 'm')}.<br><b>a)</b> kể từ lúc sỏi rơi, sau bao lâu phao (a<sub>1</sub>), lá (a<sub>2</sub>) bắt đầu nhấp nhô<br><b>b)</b> sau ${u('20', 's')} sóng lan tới cách O bao xa (b<sub>1</sub>); phao dời xa O thêm bao nhiêu (b<sub>2</sub>)`,
     nd: `${m('s=vt')} là quãng của ${f(16)}; phao chỉ ${f(25)} quanh chỗ cũ`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 2, cot: 5 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 3, cot: 4 },
   { t: 'Dạng 3 · Trung bình · Sóng dọc: vùng nén, vùng dãn và bước sóng',
-    de: `<div class="fig-side" style="grid-template-columns:1fr 44mm"><div>Loa phát âm ${hz('f=1700')} vào ống dài chứa khí, ${ms('v=340')}.<br><b>a)</b> sóng ngang hay dọc (a<sub>1</sub>); bước sóng (a<sub>2</sub>)<br><b>b)</b> khoảng cách hai vùng nén liên tiếp (b<sub>1</sub>); vùng nén – vùng dãn gần nhất (b<sub>2</sub>)<br><b>c)</b> từ vùng nén thứ nhất đến vùng nén thứ sáu<br><b>d)</b> lớp khí ở M có li độ ${m('u=+A')}: M thuộc vùng nén, vùng dãn hay không vùng nào</div>${H.ongLoa({ cap: '' })}</div>`,
+    de: `Loa phát âm ${hz('f=1700')} vào ống dài chứa khí, ${ms('v=340')} (hình ống loa ở Tập 17·1).<br><b>a)</b> sóng ngang hay dọc (a<sub>1</sub>); bước sóng (a<sub>2</sub>)<br><b>b)</b> khoảng cách hai vùng nén liên tiếp (b<sub>1</sub>); vùng nén – vùng dãn gần nhất (b<sub>2</sub>)<br><b>c)</b> từ vùng nén thứ nhất đến vùng nén thứ sáu<br><b>d)</b> lớp khí ở M có li độ ${m('u=+A')}: M thuộc vùng nén, vùng dãn hay không vùng nào`,
     nd: `${m('\\lambda=v/f')}; nén – nén ${f(12)}, nén – dãn ${f(12)}; từ vùng 1 tới vùng 6 có ${f(10)} khoảng`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd'], gi: 2, cot: 6 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd'], gi: 5, cot: 6 },
   { t: `Dạng 4 · Trung bình · Năng lượng sóng tỉ lệ ${m('A^2')} và ${m('f^2')}`,
-    de: `Vẩy đầu một sợi dây dài để tạo sóng ngang, ${ms('v=2{,}0')} không đổi. Năng lượng truyền qua một điểm mỗi giây tỉ lệ ${m('A^2')} và ${m('f^2')}. Lần 1: ${u('A_1=5{,}0', 'cm')}, ${hz('f_1=1{,}0')}. Năng lượng mỗi giây ở các lần sau gấp mấy lần lần 1?<br><b>a)</b> ${u('A_2=15', 'cm')}, ${hz('f_2=1{,}0')} &nbsp; <b>b)</b> ${u('A_3=5{,}0', 'cm')}, ${hz('f_3=0{,}50')} &nbsp; <b>c)</b> ${u('A_4=3{,}0', 'cm')}, ${hz('f_4=2{,}5')}<br><b>d)</b> giữ ${hz('f=1{,}0')}: biên độ bao nhiêu để năng lượng gấp 4 lần lần 1`,
-    nd: `${nw(`${m('\\dfrac{E_n}{E_1}=')} ${f(30)}`)}; ${v} ${ck}có ${ck}không có mặt trong tỉ số`,
-    a: ['a', 'b', 'c', 'd'], gi: 2 },
+    de: `Vẩy đầu một sợi dây dài để tạo sóng ngang, ${ms('v=2{,}0')} không đổi. Năng lượng truyền qua một điểm mỗi giây tỉ lệ ${m('A^2')} và ${m('f^2')}. Lần 1: ${u('A_1=5{,}0', 'cm')}, ${hz('f_1=1{,}0')}. Năng lượng mỗi giây ở các lần sau gấp mấy lần lần 1?<br><b>a)</b> ${u('A_2=15', 'cm')}, ${hz('f_2=1{,}0')} &nbsp; <b>b)</b> ${u('A_3=5{,}0', 'cm')}, ${hz('f_3=0{,}50')} &nbsp; <b>c)</b> ${u('A_4=3{,}0', 'cm')}, ${hz('f_4=2{,}5')}`,
+    nd: `tỉ số năng lượng = (tỉ số ${A}) mũ ${f(12)} × (tỉ số ${fq}) mũ ${f(12)}; ${v} ${ck}có ${ck}không có mặt trong tỉ số`,
+    a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 5 · Khó · Cường độ sóng: nguồn điểm và tấm hứng',
-    de: `<div class="fig-side" style="grid-template-columns:1fr 42mm"><div>Nguồn âm điểm phát đều mọi phương trong không khí, bỏ qua hấp thụ. Tại M cách nguồn ${u('r_1=3{,}0', 'm')}: ${u('I_1=0{,}020', 'W/m^2')}.<br><b>a)</b> công suất của nguồn<br><b>b)</b> cường độ âm tại N cách nguồn ${u('r_2=6{,}0', 'm')}<br><b>c)</b> tấm phẳng ${u('S=0{,}50', 'm^2')} đặt tại M, vuông góc phương truyền: năng lượng qua tấm trong ${nw('10 phút')}</div>${H.nguonMN('')}</div>`,
-    nd: `${nw(`${m('P=I\\cdot')} ${f(16)}`)}; ${nw(`${m('E=')} ${f(16)}`)}, ${m('t')} đổi ra ${f(10)}`,
-    a: ['a', 'b', 'c'], gi: 3 },
+    de: `Nguồn âm điểm phát đều mọi phương trong không khí, bỏ qua hấp thụ. Tại M cách nguồn ${u('r_1=3{,}0', 'm')}: ${u('I_1=0{,}020', 'W/m^2')}.<br><b>a)</b> công suất của nguồn<br><b>b)</b> cường độ âm tại N cách nguồn ${u('r_2=6{,}0', 'm')}<br><b>c)</b> tấm phẳng ${u('S=0{,}50', 'm^2')} đặt tại M, vuông góc phương truyền: năng lượng qua tấm trong ${nw('10 phút')}`,
+    nd: `${nw(`${m('P=I\\cdot')} ${f(16)}`)}; ${nw(`${m('E=')} ${f(16)}`)}, ${m('t')} đổi ra ${nw(`${f(14)} s`)}`,
+    a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 6 · Nâng cao · Sóng P và sóng S từ cùng tâm chấn',
-    de: `<span class="d6x"></span><div class="fig-side" style="grid-template-columns:1fr 42mm"><div>Động đất phát đồng thời sóng P (dọc), ${u('v_P=6{,}0', 'km/s')}, và sóng S (ngang), ${u('v_S=3{,}5', 'km/s')}, cùng đường trong vỏ Trái Đất. Trạm đo ghi sóng P tới trước sóng S ${u('\\Delta t=30', 's')} (số minh hoạ).<br><b>a)</b> lõi ngoài Trái Đất ở thể lỏng: sóng nào không qua được lõi ngoài? Vì sao<br><b>b)</b> tâm chấn cách trạm bao nhiêu kilômét<br><b>c)</b> kể từ lúc động đất, sóng P tới trạm sau bao lâu</div>${H.dongDat('')}</div>`,
+    de: `<span class="d6x"></span>Động đất phát đồng thời sóng P (dọc), ${u('v_P=6{,}0', 'km/s')}, và sóng S (ngang), ${u('v_S=3{,}5', 'km/s')}, cùng đường trong vỏ Trái Đất (hình ở Tập 17·4). Trạm đo ghi sóng P tới trước sóng S ${u('\\Delta t=30', 's')} (số minh hoạ).<br><b>a)</b> lõi ngoài Trái Đất ở thể lỏng: sóng nào không qua được lõi ngoài? Vì sao<br><b>b)</b> tâm chấn cách trạm bao nhiêu kilômét<br><b>c)</b> kể từ lúc động đất, sóng P tới trạm sau bao lâu`,
     nd: `${nw(`${m('\\dfrac{d}{v_S}-\\dfrac{d}{v_P}=')} ${f(12)}`)}; sóng ngang ${ck}có ${ck}không truyền trong chất lỏng`,
-    a: ['a', 'b', 'c'], gi: 2 },
+    a: ['a', 'b', 'c'], gi: 4 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số cuối đúng dòng của ý, nhãn ô khớp a) b) c)…
@@ -234,9 +234,9 @@ const tuongTu = {
     { t: 'Dạng 6 · Bài 2', de: `${u('v_P=6{,}0', 'km/s')}, ${u('v_S=4{,}0', 'km/s')}, cùng đường. Trạm X ghi sóng P sau động đất ${u('25', 's')}.<br><b>a)</b> tâm chấn cách trạm X bao xa<br><b>b)</b> sóng S tới X sau sóng P bao lâu<br><b>c)</b> trạm Y ghi S sau P ${u('20', 's')}: tâm chấn cách Y bao xa`, o: ['a', 'b', 'c'], ow: 20 },
   ]],
   dap: [
-    `D1·1: a<sub>1</sub>) dọc · a<sub>2</sub>) ngang · a<sub>3</sub>) dọc · b) không trường hợp nào &nbsp;|&nbsp; D1·2: a<sub>1</sub>) dọc · a<sub>2</sub>) ngang · a<sub>3</sub>) ngang · b) chỉ (1) &nbsp;|&nbsp; D2·1: a<sub>1</sub>) 8,0 s · a<sub>2</sub>) 14 s · b<sub>1</sub>) 15 m · b<sub>2</sub>) gần như 0 &nbsp;|&nbsp; D2·2: a) 2,0 s · b<sub>1</sub>) 15 m · b<sub>2</sub>) gần như 0 &nbsp;|&nbsp; D3·1: a) 0,40 m · b<sub>1</sub>) 0,40 m · b<sub>2</sub>) 0,20 m · c) 1,2 m &nbsp;|&nbsp; D3·2: a) 15 cm · b) 0,75 m/s · c) 7,5 cm`,
-    `D4·1: a) 9 · b) 9 · c) 1 (không đổi) · d) 8,0 Hz &nbsp;|&nbsp; D4·2: a) 0,25 · b) 9 · c) 2,25 · d) 2,0 cm &nbsp;|&nbsp; D5·1: a) ${xx} 2,51 W · b) 0,0020 W/m² · c) 3,0 J &nbsp;|&nbsp; D5·2: a) ${xx} 0,318 W/m² · b) ${xx} 5,64 m · c) ${xx} 1,15 J &nbsp;|&nbsp; D6·1: a) sóng P, vì ${m('v_P\\gt v_S')} · b) 216 km · c) 48 s &nbsp;|&nbsp; D6·2: a) 150 km · b) 12,5 s · c) 240 km`,
-  ],
+    `D1·1: a<sub>1</sub>) dọc · a<sub>2</sub>) ngang · a<sub>3</sub>) dọc · b) không có &nbsp;|&nbsp; D1·2: a<sub>1</sub>) dọc · a<sub>2</sub>) ngang · a<sub>3</sub>) ngang · b) chỉ (1) &nbsp;|&nbsp; D2·1: a<sub>1</sub>) 8,0 s · a<sub>2</sub>) 14 s · b<sub>1</sub>) 15 m · b<sub>2</sub>) ${m('\\approx 0')} &nbsp;|&nbsp; D2·2: a) 2,0 s · b<sub>1</sub>) 15 m · b<sub>2</sub>) ${m('\\approx 0')} &nbsp;|&nbsp; D3·1: a) 0,40 m · b<sub>1</sub>) 0,40 m · b<sub>2</sub>) 0,20 m · c) 1,2 m &nbsp;|&nbsp; D3·2: a) 15 cm · b) 0,75 m/s · c) 7,5 cm`,
+    `D4·1: a) 9 · b) 9 · c) 1 · d) 8,0 Hz &nbsp;|&nbsp; D4·2: a) 0,25 · b) 9 · c) 2,25 · d) 2,0 cm &nbsp;|&nbsp; D5·1: a) ${xx} 2,51 W · b) 0,0020 W/m² · c) 3,0 J &nbsp;|&nbsp; D5·2: a) ${xx} 0,318 W/m² · b) ${xx} 5,64 m · c) ${xx} 1,15 J &nbsp;|&nbsp; D6·1: a) sóng P, vì ${m('v_P\\gt v_S')} · b) 216 km · c) 48 s &nbsp;|&nbsp; D6·2: a) 150 km · b) 12,5 s · c) 240 km`,
+  ].map((g) => g.split(' &nbsp;|&nbsp; ').map((x) => x.split(' · ').map(nw).join(' · ')).join(' &nbsp;|&nbsp; ')),
 };
 
 await K.dung({
