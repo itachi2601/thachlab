@@ -34,14 +34,18 @@ const boTri = (cap, sMark = true) => {
 
 export const hinhL10b11 = {
   // Trang 1 · Dự đoán: ba lần thả, hai cách bấm giờ (chỉ ghi số đo)
-  tayCong: (cap = 'Ba lần thả bi từ cùng độ cao 0,500 m, hai cách đo thời gian rơi.') => {
+  tayCong: (cap = 'Hai cách đo thời gian rơi của cùng một viên bi, thả từ độ cao 0,500 m.') => {
     let b = '';
-    for (const [x0, ten, rows] of [[10, 'Bấm tay', ['0,52 s', '0,47 s', '0,55 s']], [170, 'Cổng quang', ['0,319 s', '0,322 s', '0,321 s']]]) {
-      b += rect(x0, 10, 140, 138, '#fff') + T(x0 + 70, 38, ten, { a: 'middle', w: 700 });
-      b += ln(x0, 48, x0 + 140, 48, GREY, 2);
-      rows.forEach((r, i) => { b += T(x0 + 28, 78 + i * 28, `${i + 1}.`, { w: 700 }) + T(x0 + 130, 78 + i * 28, r, { a: 'end' }); });
-    }
-    return wrap('0 0 320 160', b, cap, 'Ba số đo thời gian rơi bằng tay và bằng cổng quang');
+    // trái: đồng hồ bấm giây
+    b += rect(10, 10, 140, 120, '#fff') + T(80, 36, 'Bấm tay', { a: 'middle', w: 700 });
+    b += `<circle cx="80" cy="86" r="30" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + ln(80, 86, 80, 66) + ln(80, 86, 94, 92) + ln(74, 50, 86, 50, INK, 5) + ln(80, 50, 80, 56);
+    b += T(80, 128, '', {});
+    // phải: cổng quang + đồng hồ hiện số
+    b += rect(170, 10, 140, 120, '#fff') + T(240, 36, 'Cổng quang', { a: 'middle', w: 700 });
+    b += ln(192, 56, 192, 100) + ln(236, 56, 236, 100) + ln(192, 100, 236, 100) + ln(192, 78, 236, 78, RED, 3, '7 5');
+    b += rect(250, 66, 52, 26, '#fff');
+    b += ln(236, 78, 250, 78);
+    return wrap('0 0 320 142', b, cap, 'Hai cách đo thời gian rơi: bấm tay và cổng quang nối đồng hồ hiện số');
   },
   // Trang 1 · II.1 và BTM D3: đường s theo t²
   duongS: (cap = 'Đồ thị s theo t²: đường thẳng qua gốc O; hai điểm bất kì (1), (2).', moVach = true) => {
