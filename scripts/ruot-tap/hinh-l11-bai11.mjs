@@ -36,37 +36,41 @@ export const hinhL11b11 = {
     b += `<path d="M0,212 Q160,176 320,212" fill="#eef2fa" stroke="${INK}" stroke-width="2.4"/>`;
     b += `<rect x="190" y="164" width="56" height="34" fill="#fff" stroke="${INK}" stroke-width="2.4"/><path d="M184,166 L218,140 L252,166" fill="none" stroke="${INK}" stroke-width="2.4"/>`;
     b += chao(218, 132);
-    b += veTinhHinh(84, 34);
-    b += luon(92, 52, 212, 116, 5, 7, RED, 2.6) + arr(200, 109, 212, 116, 'vt1', RED, '', 2.6);
-    b += ln(28, 52, 28, 186, GREY, 2, '6 5') + T(36, 124, '36 000 km', { size: 20 });
-    b += T(84, 74, 'vệ tinh', { a: 'middle', size: 20 }) + T(268, 148, 'chảo', { a: 'middle', size: 20 });
+    b += veTinhHinh(84, 48);
+    b += luon(104, 66, 212, 116, 5, 7, RED, 2.6) + arr(200, 109, 212, 116, 'vt1', RED, '', 2.6);
+    b += `<line x1="24" y1="50" x2="24" y2="184" stroke="${GREY}" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#vt1)" marker-end="url(#vt1)"/>` + T(32, 150, '36 000 km', { size: 20 }) + T(32, 172, '(không đúng tỉ lệ)', { size: 17, c: GREY });
+    b += T(84, 22, 'vệ tinh', { a: 'middle', size: 20 }) + T(268, 148, 'chảo', { a: 'middle', size: 20 });
     return wrap('0 0 320 216', b, cap, 'Vệ tinh và chảo thu');
   },
-  // Trang 1 · E ⊥ B ⊥ phương truyền: E dao động trong mặt phẳng đứng (liền), B trong mặt phẳng ngang vẽ xiên (đứt)
-  eb: (cap = 'E: nét liền, đỏ. B: nét đứt, xanh. Mũi tên Ox: phương truyền.') => {
+  // Trang 2 · E ⊥ B ⊥ phương truyền, vẽ phối cảnh: mặt phẳng ngang (hình bình hành xám) chứa B; E đứng, x nằm ngang.
+  // Vẽ vectơ tại 5 điểm (không vẽ đường bao của B vì phối cảnh làm nó trông như vòng khép); góc vuông đánh dấu tại điểm đầu.
+  eb: (cap = 'E (liền, đỏ) đứng; B (đứt, xanh) nằm ngang, chĩa ra trước trang; Ox: phương truyền.') => {
     let b = defs('eb1') + defs('eb2') + defs('eb3');
-    const x0 = 30, x1 = 290, yc = 118, A = 62, kx = 0.62, ky = 0.42; // B vẽ xiên theo (kx, ky)
-    let dE = '', dB = '';
-    for (let k = 0; k <= 160; k++) {
-      const s = k / 160, x = x0 + s * (x1 - x0 - 20), v = Math.sin(s * 2 * Math.PI * 1.5);
-      dE += `${k ? 'L' : 'M'}${f1(x)},${f1(yc - A * v)}`;
-      dB += `${k ? 'L' : 'M'}${f1(x - 46 * kx * v)},${f1(yc + 46 * ky * v + 0)}`;
-    }
-    b += arr(x0 - 10, yc, x1 + 6, yc, 'eb1', INK, '', 2.4) + T(x1 + 2, yc + 26, 'x', { a: 'end' });
-    b += `<path d="${dE}" fill="none" stroke="${RED}" stroke-width="${SW}"/>`;
-    b += `<path d="${dB}" fill="none" stroke="${BLUE}" stroke-width="${SW}" stroke-dasharray="7 5"/>`;
-    // vectơ tại một điểm có pha cực đại
-    const xs = x0 + (1 / 6) * (x1 - x0 - 20);
-    b += arr(f1(xs), yc, f1(xs), yc - A + 4, 'eb2', RED, '', 3) + T(f1(xs + 8), yc - A + 14, '<tspan font-weight="700">E</tspan>', { c: RED });
-    b += arr(f1(xs), yc, f1(xs - 46 * kx), f1(yc + 46 * ky), 'eb3', BLUE, '', 3) + T(f1(xs - 46 * kx - 4), f1(yc + 46 * ky + 24), '<tspan font-weight="700">B</tspan>', { c: BLUE, a: 'middle' });
-    return wrap('0 0 320 210', b, cap, 'Điện trường và từ trường trong sóng điện từ');
+    const x0 = 34, x1 = 292, yc = 112, A = 66, zx = -0.55, zy = 0.5, Bm = 56; // trục z (ra trước trang) vẽ xiên xuống trái
+    b += `<path d="M${x0 + 30},${yc - 26} L${x1},${yc - 26} L${x1 - 52},${yc + 22} L${x0 - 22},${yc + 22} Z" fill="#eef2fa" stroke="${GREY}" stroke-width="1.2"/>`;
+    let dE = '';
+    for (let k = 0; k <= 160; k++) { const s = k / 160, x = x0 + s * (x1 - x0 - 26); dE += `${k ? 'L' : 'M'}${f1(x)},${f1(yc - A * Math.sin(s * 2 * Math.PI))}`; }
+    b += `<path d="${dE}" fill="none" stroke="${RED}" stroke-width="2" opacity=".55"/>`;
+    b += arr(x0 - 14, yc, x1 + 4, yc, 'eb1', INK, '', 2.4) + T(x1 + 2, yc - 10, 'x', { a: 'end', w: 700 });
+    [0.25, 0.5, 0.75, 1, 1.25].map((q) => q / 1.25).forEach((s, i) => {
+      const x = x0 + s * (x1 - x0 - 26) * 1, v = Math.sin(s * 2 * Math.PI);
+      if (Math.abs(v) < 0.2) return;
+      b += arr(f1(x), yc, f1(x), f1(yc - A * v * 0.92), 'eb2', RED, '', 2.8);
+      b += arr(f1(x), yc, f1(x + Bm * zx * v), f1(yc + Bm * zy * v), 'eb3', BLUE, '6 4', 2.8);
+    });
+    // điểm đầu (s = 0,25): góc vuông E–x và nhãn rời mũi tên
+    const xs = x0 + 0.2 * (x1 - x0 - 26);
+    b += `<path d="M${f1(xs + 10)},${yc} L${f1(xs + 10)},${yc - 10} L${f1(xs)},${yc - 10}" fill="none" stroke="${INK}" stroke-width="1.6"/>`;
+    b += T(f1(xs - 10), yc - A + 6, '<tspan font-weight="700">E</tspan>', { c: RED, a: 'end', size: 22 });
+    b += T(f1(xs + Bm * zx - 6), f1(yc + Bm * zy + 24), '<tspan font-weight="700">B</tspan>', { c: BLUE, a: 'middle', size: 22 });
+    return wrap('0 0 320 196', b, cap, 'Điện trường và từ trường trong sóng điện từ');
   },
   // Trang 2 · lò vi sóng: thanh sô-cô-la, các vệt chảy, d đo giữa tâm hai vệt liền nhau
   soCoLa: (cap = 'Thanh sô-cô-la sau khi bật lò (đĩa không xoay). d: khoảng cách tâm hai vệt chảy liền nhau.') => {
     let b = defs('sc1');
     b += `<rect x="14" y="40" width="292" height="56" rx="6" fill="#efe6dc" stroke="${INK}" stroke-width="${SW}"/>`;
     const cx = [52, 128, 204, 280];
-    cx.forEach((x) => { b += `<ellipse cx="${x}" cy="68" rx="20" ry="18" fill="${GREY}" opacity=".7" stroke="${INK}" stroke-width="1.8" stroke-dasharray="4 3"/>` + ln(x, 30, x, 106, INK, 1.6, '3 3'); });
+    cx.forEach((x) => { b += `<ellipse cx="${x}" cy="68" rx="20" ry="18" fill="${GREY}" opacity=".7" stroke="${INK}" stroke-width="1.8" stroke-dasharray="4 3"/>` + ln(x, 36, x, 106, INK, 1.6, '3 3'); });
     b += `<line x1="128" y1="124" x2="204" y2="124" stroke="${RED}" stroke-width="2.6" marker-start="url(#sc1)" marker-end="url(#sc1)"/>`;
     b += ln(128, 108, 128, 132, RED, 2) + ln(204, 108, 204, 132, RED, 2);
     b += T(166, 152, '<tspan font-style="italic" font-weight="700">d</tspan>', { a: 'middle', c: RED, size: 22 });
@@ -76,7 +80,7 @@ export const hinhL11b11 = {
   // Trang 3 · thang sóng điện từ dọc, trục luỹ thừa 10 (m), bước sóng giảm dần từ trên xuống
   thang: (cap = `Trục ${'chia theo'} luỹ thừa 10 của mét. Vạch hẹp tô đậm: ánh sáng nhìn thấy.`) => {
     let b = '';
-    const y0 = 20, dy = 19, Y = (e) => y0 + (3 - e) * dy; // e = số mũ của 10 (m), từ 3 xuống −12
+    const y0 = 44, dy = 22, Y = (e) => y0 + (3 - e) * dy; // e = số mũ của 10 (m), từ 3 xuống −12
     const x = 92;
     b += ln(x, Y(3), x, Y(-12), INK, 2.4);
     [3, 0, -3, -6, -9, -12].forEach((e) => { b += ln(x - 7, f1(Y(e)), x, f1(Y(e)), INK, 2.2) + T(x - 10, f1(Y(e) + 7), `10${sup(e < 0 ? '−' + -e : e)}`, { a: 'end', size: 20 }); });
@@ -85,11 +89,12 @@ export const hinhL11b11 = {
     vung.forEach(([a, c, n], i) => {
       const ya = Y(a), yc = Y(c);
       b += `<rect x="${x + 4}" y="${f1(ya)}" width="18" height="${f1(yc - ya)}" fill="${n ? (i % 2 ? '#fff' : '#e3e8f3') : INK}" stroke="${INK}" stroke-width="1.4"/>`;
-      if (n) b += T(x + 30, f1((ya + yc) / 2 + 7), n, { size: 20 });
+      const lift = n === 'hồng ngoại' ? -14 : n === 'tử ngoại' ? 10 : 0;
+      if (n) b += T(x + 30, f1((ya + yc) / 2 + 7 + lift), n, { size: 20 });
     });
     b += ln(x + 22, f1(Y(-6.27)), x + 40, f1(Y(-6.27)), INK, 2) + T(x + 44, f1(Y(-6.27) + 7), 'nhìn thấy', { size: 20, w: 700 });
-    b += T(x - 10, 14, `${LAM} (m)`, { a: 'end', size: 20 });
-    return wrap('0 0 230 318', b, cap, 'Thang sóng điện từ');
+    b += T(x + 2, 22, `${LAM} (m)`, { a: 'middle', size: 20 });
+    return wrap('0 0 230 400', b, cap, 'Thang sóng điện từ');
   },
   // Trang 3 · ra-đa: sóng đi tới vật rồi phản xạ về (không ghi s = 2d để HS tự điền)
   raDa: (cap = 'Ra-đa phát xung, xung gặp máy bay rồi phản xạ về; t đo từ lúc phát đến lúc thu.') => {
@@ -140,7 +145,7 @@ export const hinhL11b11 = {
     const dr = (x, c, dash = '') => `<rect x="${x - 16}" y="44" width="32" height="10" rx="3" fill="#fff" stroke="${c}" stroke-width="2.4"${dash ? ` stroke-dasharray="${dash}"` : ''}/>` + ln(x - 22, 40, x - 8, 40, c, 2.2) + ln(x + 8, 40, x + 22, 40, c, 2.2);
     b += dr(200, GREY, '4 3') + dr(276, INK);
     b += arr(220, 30, 256, 30, 'dr1', INK, '', 2.2);
-    b += `<line x1="34" y1="166" x2="200" y2="166" stroke="${GREY}" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#dr1)" marker-end="url(#dr1)"/>` + T(117, 160, 'd<tspan font-size="15" dy="5">1</tspan>', { a: 'middle' });
+    b += `<line x1="34" y1="166" x2="200" y2="166" stroke="${GREY}" stroke-width="2" stroke-dasharray="6 4" marker-start="url(#dr1)" marker-end="url(#dr1)"/>` + T(117, 156, 'd<tspan font-size="15" dy="5">1</tspan>', { a: 'middle' });
     b += `<line x1="34" y1="190" x2="276" y2="190" stroke="${INK}" stroke-width="2" marker-start="url(#dr1)" marker-end="url(#dr1)"/>` + T(155, 214, 'd<tspan font-size="15" dy="5">2</tspan>', { a: 'middle' });
     b += T(200, 76, 'lần 1', { a: 'middle', size: 20, c: GREY }) + T(276, 76, 'lần 2', { a: 'middle', size: 20 });
     return wrap('0 0 320 222', b, cap, 'Ra-đa và drone ở hai lần đo');

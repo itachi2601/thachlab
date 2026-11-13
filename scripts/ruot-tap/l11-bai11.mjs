@@ -72,7 +72,7 @@ ${h3(4, 'II.1 · Sóng điện từ là gì?', '1·4')}
 <div><b>Maxwell:</b> điện trường biến thiên cũng sinh ra ${f(30)}.</div>
 <div>Hai trường sinh ra nhau liên tiếp nên lan đi thành ${f(35)}.</div>
 <div><b>Sóng điện từ:</b> điện từ trường biến thiên ${f(28)} (lặp lại sau những khoảng thời gian bằng nhau), lan truyền trong ${f(28)}.</div>
-<div><b>Nguồn phát:</b> vật tạo ra điện trường hay từ trường ${f(25)}; ví dụ ${f(25)}, ${f(25)}.</div>
+<div><b>Nguồn phát:</b> vật tạo ra điện trường hay từ trường ${f(25)}; ví dụ ${nw(`${f(25)},`)} ${f(25)}.</div>
 <div><b>Ví dụ:</b> radio đang bắt đài AM, bật – tắt công tắc đèn cạnh đó thì loa kêu “rẹt”, vì tia lửa điện ở công tắc ${f(40)}.</div>
 ${wl('Nói lại bằng lời của em: vì sao điện trường và từ trường lan đi được thành sóng?', 2)}</div>
 ${foot(1)}</section>`;
@@ -150,7 +150,7 @@ ${box(`${tb('1. Sóng điện từ là gì? Nguồn phát là gì?')}${lines(1)}
 ${tb(`2. ${E}, ${B} và phương truyền nằm thế nào? Pha của ${E} và ${B}?`)}${lines(1)}
 ${tb('3. Tốc độ sóng điện từ trong chân không? Khác sóng cơ ở đâu?')}${lines(1)}
 <div><b>4. Công thức bước sóng, kèm đơn vị:</b> ${f(45)}<span class="ck" style="float:right;margin:0"></span></div>
-${tb('5. Kể bảy vùng thang sóng điện từ theo bước sóng giảm dần.')}${lines(1)}
+${tb('5. Kể bảy vùng thang sóng điện từ theo bước sóng giảm dần.')}${lines(2)}
 <div><b>6. Đổi môi trường:</b> giữ nguyên ${f(30)} · đổi ${f(30)}<span class="ck" style="float:right;margin:0"></span></div>`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`${m('\\to')} đọc lại ô ${f(12)} Tập`)}</div>
 ${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·4')}
@@ -160,16 +160,16 @@ ${foot(4)}</section>`;
 const p5 = `<section class="page">
 ${head('BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'V · Bài toán mẫu: nhà Minh', '5·1')}
-<div class="card soft fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>Nhà Minh có radio bắt đài FM ${nw('100 MHz')}, bộ phát wifi hai băng ${nw('2,4 GHz')} và ${nw('5 GHz')}, xem truyền hình qua vệ tinh địa tĩnh cao ${nw('36 000 km')}. Lấy ${nw(`${m('c=3\\cdot10^{8}')} m/s`)}.
-<div><b>a)</b> Tính bước sóng của đài FM.</div><div><b>b)</b> Tính bước sóng hai băng wifi. Băng nào ngắn hơn, mấy lần?</div>
-<div><b>c)</b> Tín hiệu đi thẳng từ vệ tinh xuống chảo thu ngay bên dưới mất bao lâu?</div></div>${H.nhaMinh()}</div>
-<div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm;margin-top:.8mm">
-${wl(`a) đổi ${m('f_1')} ra Hz, ${m('\\lambda_1=')}`, 1)}${wl(`b) ${m('\\lambda_2=')} &nbsp; ${m('\\lambda_3=')} &nbsp; tỉ số:`, 2)}${wl(`c) đổi km ra m, ${m('t=s/c=')}`, 1)}</div>
+<div class="card soft" style="padding:1.2mm 3mm">Nhà Minh có radio bắt đài FM ${nw('100 MHz')}, bộ phát wifi hai băng ${nw('2,4 GHz')} và ${nw('5 GHz')}, xem truyền hình qua vệ tinh địa tĩnh cao ${nw('36 000 km')}. Lấy ${nw(`${m('c=3\\cdot10^{8}')} m/s`)}.
+<div><b>a)</b> Tính bước sóng của đài FM. &nbsp;<b>b)</b> Tính bước sóng hai băng wifi. Băng nào ngắn hơn, mấy lần?</div>
+<div><b>c)</b> Tín hiệu đi thẳng từ vệ tinh xuống chảo thu ngay bên dưới mất bao lâu?</div></div>
+<div class="fig-side" style="${fs(40)};margin-top:.8mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
+${wl(`a) đổi ${m('f_1')} ra Hz, ${m('\\lambda_1=')}`, 2)}${wl(`b) ${m('\\lambda_2=')} &nbsp; ${m('\\lambda_3=')} &nbsp; tỉ số:`, 3)}${wl(`c) đổi km ra m, ${m('t=s/c=')}`, 2)}</div>${H.nhaMinh()}</div>
 ${h3(2, 'Điền bước còn thiếu: gọi điện qua vệ tinh', '5·2')}
 <div class="fig-side" style="${fs(40)}"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:.6mm 3mm">
 <div style="line-height:1.35">Tiếng nói đi từ trạm A lên vệ tinh rồi xuống trạm B, mỗi chặng ${nw('36 000 km')}.</div>
 <div class="ln" style="height:7mm"><b>Bước 1:</b> ${nw(`${m('s=2\\times3{,}6\\cdot10^{7}=')} ${f(20)} m`)}</div>
-<div class="ln" style="height:7mm"><b>Bước 2:</b> tiếng tới B trễ ${nw(`${m('t=s/c=')} ${f(14)} s`)}</div>
+<div class="ln" style="height:7mm"><b>Bước 2:</b> thời gian tiếng tới B: ${nw(`${m('t=s/c=')} ${f(14)} s`)}</div>
 <div class="ln" style="height:7mm"><b>Bước 3:</b> B đáp ngay; A nghe câu trả lời sau ít nhất ${nw(`${f(14)} s`)}</div></div>${H.abVeTinh()}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
