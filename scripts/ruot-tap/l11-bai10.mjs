@@ -69,19 +69,21 @@ ${h3(4, `II.1 · Nhắc lại: tần số ${fq} và chu kì ${Tq}`, '1·4')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>${fq} là số dao động toàn phần trong ${nw('1 s')}; ${Tq} là thời gian một dao động toàn phần.</div>
 <div class="hint" style="margin:.3mm 0">Đơn vị: ${dv}</div>
-<div>Liên hệ: ${nw(`${m('f=')} ${f(20)}`)} · đếm ${Nq} dao động trong thời gian ${m('t')}: ${nw(`${m('f=')} ${f(20)}`)}</div>
+<div>Liên hệ: ${nw(`${m('f=')} ${f(20)}`)}</div>
+<div>Đếm ${Nq} dao động trong thời gian ${m('t')}: ${nw(`${m('f=')} ${f(20)}`)}</div>
 <div style="margin-top:.6mm">Trên hình, hai đỉnh liên tiếp (chấm đỏ) cách nhau ${f(20)}.</div></div>
 ${H.sinSong()}</div>
 ${h3(5, 'Làm nhanh', '1·5')}
 ${box(cau(`Một âm đơn có chu kì ${Tq} = ${ms('4')}. Tần số của âm là bao nhiêu?`, 2))}
 ${foot(1)}</section>`;
 
-const bangDc = (rows) => `<table><tr><th style="width:34mm">Dụng cụ</th><th>Làm gì · nối vào đâu</th></tr>${rows.map((x) => `<tr><td style="height:14.5mm">${x}</td><td></td></tr>`).join('')}</table>`;
+const bangDc = (rows) => `<table><tr><th style="width:24mm">Dụng cụ</th><th>Làm gì</th><th style="width:26mm">Nối vào</th></tr>${rows.map((x) => `<tr><td style="height:14.5mm">${x}</td><td></td><td></td></tr>`).join('')}</table>`;
 const p2 = `<section class="page">
 ${head('DỤNG CỤ · SƠ ĐỒ NỐI · HAI NÚM CỦA DAO ĐỘNG KÍ')}
 ${h3(1, 'II.2 · Dụng cụ và sơ đồ nối', '2·1')}
 <div class="fig-side" style="${fs(58)}"><div>
-${bangDc(['Nguồn âm đơn: âm thoa 440 Hz hoặc loa + máy phát tần số', 'Micro', 'Dao động kí', 'Dây tín hiệu'])}
+<div class="hint" style="margin-bottom:.8mm">Nguồn âm đơn: âm thoa 440 Hz, hoặc loa + máy phát tần số.</div>
+${bangDc(['Nguồn âm đơn', 'Micro', 'Dao động kí', 'Dây tín hiệu'])}
 </div>${H.soDo()}</div>
 ${h3(2, 'II.3 · Hai núm dễ nhầm: TIME/DIV và VOLT/DIV', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
