@@ -174,6 +174,14 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 5. **Khi các phiên xong** (phiên chính): merge main, `bash scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh`, rồi MỘT phiên học sinh ảo
    điền thử cả quyển theo checklist (A/B/C) → giao sửa lại cho phiên của từng bài (`SendMessage`) thay vì sửa chéo; dựng lại, gửi PDF
    cho thầy, ghi memory dự án. Workflow tự gộp huỷ lượt chờ khi nhiều nhánh push cùng lúc → `gh run rerun <id>` lượt `cancelled`.
+   **HS ảo ghi lỗi ra file NGAY TỪ ĐẦU, không báo cáo dài về phiên chính** (thầy chốt 13/11): brief HS ảo bắt buộc có —
+   (a) đọc xong MỖI bài thì ghi ngay `scripts/ruot-tap/out/loi-hs-ao/l<lớp>-b<N>.md` (một file một bài: dòng đầu `A x · B y · C z`,
+   rồi mỗi lỗi một dòng `trang tuyệt đối·ô · lỗi → cách sửa`, lỗi A ghi cả file + dòng code); không gom đến cuối (bị compact là mất);
+   (b) lỗi lặp cả quyển ghi một lần vào `out/loi-hs-ao/chung.md`; (c) tin trả về phiên chính ≤10 dòng: bảng số lỗi A/B/C theo bài +
+   đường dẫn thư mục, KHÔNG chép lại nội dung lỗi. Phiên chính không đọc các file đó, chỉ gửi mỗi phiên bài một tin trỏ ngắn
+   ("sửa theo `out/loi-hs-ao/l11-b6.md` + `chung.md`, xong commit theo đường dẫn, vào main") — ≤20 `SendMessage` mỗi lượt.
+   Bài 0 lỗi A/B thì không gửi. Mỗi phiên bài ở worktree riêng nên HS ảo phải commit thư mục `loi-hs-ao/` vào main TRƯỚC khi
+   phiên chính gửi tin (phiên bài `git merge origin/main` là đọc được); lượt HS ảo sau ghi đè file cùng tên.
 
 ## Nhật ký rút kinh nghiệm (ruột tập)
 - 2026-11-10 · Lỗi "chữ đậm lẫn Helvetica": khai báo `@font-face` nhiều tệp con (latin/vietnamese) mà không có `unicode-range` thì tệp sau đè tệp trước, ký tự thiếu rơi về font hệ thống → mỗi tệp con PHẢI kèm `unicode-range` (đã có ở `bai14.mjs`). Kiểm bằng `pdffonts <pdf>`: không được còn Helvetica/Lucida/Hiragino (còn sót ★, φ, chỉ số trên ở bài 14 tr.1/5/6).
