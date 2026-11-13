@@ -108,7 +108,7 @@ export const hinhL11b7 = {
     return wrap('0 0 320 200', b, cap, 'Hai lần đẩy xích đu');
   },
   // Trang 1 · Họ 1: thế năng dùng li độ x, không dùng A
-  loXo: (cap = 'Tại li độ x: thế năng tính bằng x hay A?') => loXo({ cap }),
+  loXo: (cap = 'Lò xo nằm ngang, mốc thế năng ở VTCB O.') => loXo({ cap }),
   // Trang 2 · thí nghiệm: lò xo treo, kéo xuống A rồi thả
   loXoTreo: (cap = 'Treo vật 250 g, lò xo dãn 5,0 cm; kéo xuống thêm A (A &lt; 5 cm) rồi thả.') => {
     let b = defs('lt') + tran(60, 200, 20);
@@ -120,7 +120,7 @@ export const hinhL11b7 = {
     return wrap('0 0 320 222', b, cap, 'Con lắc lò xo treo thẳng đứng');
   },
   // Trang 2 · Họ 2: cơ năng chia thành phần bằng nhau
-  phanN: (cap = 'Ví dụ W<sub>đ</sub> = 3W<sub>t</sub>. Cơ năng W gồm mấy phần bằng nhau như thế?') => {
+  phanN: (cap = 'Ví dụ W<sub>đ</sub> = 3W<sub>t</sub>: mỗi ô bằng W<sub>t</sub>; đếm số ô của cả W.') => {
     let b = '';
     const x0 = 20, w = 70, y = 56, h = 46;
     for (let i = 0; i < 4; i++) {
@@ -128,7 +128,7 @@ export const hinhL11b7 = {
       b += `<rect x="${x0 + i * w}" y="${y}" width="${w}" height="${h}" fill="${dong ? '#fbeceb' : '#fff'}" stroke="${dong ? RED : INK}" stroke-width="${SW}"${dong ? ' stroke-dasharray="7 4"' : ''}/>`;
       b += T(x0 + i * w + w / 2, y + 30, dong ? Wd : Wt, { a: 'middle', c: dong ? RED : INK });
     }
-    b += path([[x0, 40], [x0, 30], [x0 + 4 * w, 30], [x0 + 4 * w, 40]], INK, 2.2) + T(160, 22, 'W = ?', { a: 'middle', w: 700 });
+    b += path([[x0, 40], [x0, 30], [x0 + 4 * w, 30], [x0 + 4 * w, 40]], INK, 2.2) + T(160, 22, 'W', { a: 'middle', w: 700 });
     b += path([[x0, 118], [x0, 128], [x0 + 3 * w, 128], [x0 + 3 * w, 118]], RED, 2.2) + T(x0 + 1.5 * w, 152, 'n = 3 phần động', { a: 'middle', c: RED });
     b += T(x0 + 3.5 * w, 152, '1 phần thế', { a: 'middle' });
     return wrap('0 0 320 162', b, cap, 'Cơ năng chia thành các phần bằng nhau');
@@ -137,11 +137,11 @@ export const hinhL11b7 = {
   doThiXLT: (cap = 'Năng lượng theo li độ x. Hai đường cắt nhau tại x = ?') => doThiX({ id: 'dxl', cap }),
   // Trang 3 · Họ 3: li độ và năng lượng theo thời gian, gốc thời gian ở biên
   doThiTLT: (cap = 'Trên: li độ x(t). Dưới: W<sub>t</sub> (liền) và W<sub>đ</sub> (đứt). Đếm số đỉnh W<sub>t</sub> trong một chu kì của x.') =>
-    doThiT({ tMax: 1, Te: 0.5, li: true, yt: [[1, 'W'], [0.5, 'W/2']], id: 'dtl', cap }),
+    doThiT({ tMax: 1, Te: 0.5, li: true, yt: [[1, 'W'], [0.5, '']], id: 'dtl', cap }),
   // Trang 3 · Họ 4: con lắc đơn, mốc ở đáy
   conLac: (cap = 'Mốc thế năng ở đáy. Độ cao h của vật tính theo l và góc lệch.') => conLac({ cap, id: 'cl1' }),
   // Trang 3 · Bẫy 3: radian
-  radian: (cap = 'Cung dài đúng bằng bán kính r thì góc ở tâm là 1 rad.') => {
+  radian: (cap = 'Cung dài đúng bằng bán kính r thì góc ở tâm là 1&nbsp;rad.') => {
     const cx = 60, cy = 150, r = 120, a = 180 / Math.PI;
     let b = ln(cx, cy, cx + r, cy) + ln(cx, cy, f1(cx + r * Math.cos(R(a))), f1(cy - r * Math.sin(R(a))));
     b += cung(cx, cy, r, 0, a, RED).replace('stroke-width="2.2"', `stroke-width="${SW}" stroke-dasharray="7 4"`) + cung(cx, cy, 30, 0, a);
@@ -161,11 +161,11 @@ export const hinhL11b7 = {
   // Dạng 5: W = 90 mJ (không ghi), cắt nhau ở 45 mJ tại 0,05 s và 0,15 s; gốc ở biên
   d5: () => doThiT({ tMax: 0.25, Te: 0.2, xt: [[0.05, '0,05'], [0.15, '0,15']], tu: 't (s)', yt: [[0.5, '45']], yu: 'mJ', id: 'd5', cap: 'Liền W<sub>t</sub> · đứt W<sub>đ</sub>; gốc ở biên.' }),
   // Con lắc đơn dạng 4 (60°)
-  d4: () => conLac({ goc: 50, gocL: '60°', hL: 'h<tspan font-size="15" dy="5">0</tspan>', lL: '0,9 m', phu: 25, id: 'cl3', cap: 'Biên 60°; vòng chấm: lúc dây lệch 30°.' }),
+  d4: () => conLac({ goc: 50, gocL: '60°', hL: 'h<tspan font-size="15" dy="5">0</tspan>', lL: '0,9 m', phu: 25, id: 'cl3', cap: 'Hình không theo tỉ lệ. h<sub>0</sub>: độ cao của vật ở biên so với đáy; vòng chấm: lúc dây lệch 30°.' }),
 
   // ---- Bài tương tự ----
-  tt3a: () => doThiX({ xt: [[-1, '−5'], [0, '0'], [0.8, '4'], [1, '5']], xu: 'x (cm)', yt: [[1, '50']], yu: 'mJ', id: 't3a', cap: 'Liền W<sub>t</sub>, đứt W<sub>đ</sub>.' }),
-  tt3b: () => doThiX({ xt: [[-1, '−4'], [-0.5, '−2'], [0, '0'], [0.5, '2'], [1, '4']], xu: 'x (cm)', yt: [[1, '80'], [0.5, '40']], yu: 'mJ', ve: 'd', id: 't3b', cap: 'Đồ thị động năng W<sub>đ</sub> theo x.' }),
+  tt3a: () => doThiX({ xt: [[-1, '−5'], [0, '0'], [0.8, '4'], [1, '5']], xu: 'x (cm)', yt: [[1, '50']], yu: 'mJ', id: 't3a', cap: '' }),
+  tt3b: () => doThiX({ xt: [[-1, '−4'], [-0.5, '−2'], [0, '0'], [0.5, '2'], [1, '4']], xu: 'x (cm)', yt: [[1, '80'], [0.5, '40']], yu: 'mJ', ve: 'd', id: 't3b', cap: '' }),
   tt5a: () => doThiT({ tMax: 0.125, Te: 0.1, xt: [[0.025, '0,025'], [0.075, '0,075']], tu: 't (s)', yt: [[0.5, '10']], yu: 'mJ', id: 't5a', cap: 'Liền W<sub>t</sub>, đứt W<sub>đ</sub>; gốc ở biên.' }),
   tt5b: () => doThiT({ tMax: 0.45, Te: 0.2, dau: 'vtcb', ve: 'd', xt: [[0.1, '0,1'], [0.2, '0,2'], [0.3, '0,3'], [0.4, '0,4']], tu: 't (s)', yt: [[1, '60']], yu: 'mJ', id: 't5b', cap: 'Động năng W<sub>đ</sub> theo t; gốc lúc qua VTCB.' }),
 };
