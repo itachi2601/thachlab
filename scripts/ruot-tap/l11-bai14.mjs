@@ -72,7 +72,7 @@ ${h3(4, 'Bốn họ: nhìn từ khoá, gọi họ', '1·4')}
 <tr><td>ngọn sóng, tần số, lệch pha, sóng điện từ</td><td>A</td><td>${L_}${m('=vT')} · Dạng 1–5</td></tr>
 <tr><td>hai nguồn A, B; cực đại, cực tiểu</td><td>${f(8)}</td><td>hiệu đường đi ${f(20)} · Dạng 6–8</td></tr>
 <tr><td>khe Young, vân sáng, vân tối</td><td>${f(8)}</td><td>khoảng vân ${f(16)} · Dạng 9–12</td></tr>
-<tr><td>dây hai đầu cố định, ống sáo, nút, bụng</td><td>${f(8)}</td><td>${m('L=')} ${f(16)} · Dạng 13–15</td></tr></table>
+<tr><td>dây hai đầu cố định, ống sáo, nút, bụng</td><td>${f(8)}</td><td>${m('L=n\\cdot')} ${f(12)} · Dạng 13–15</td></tr></table>
 ${h3(5, 'Thí nghiệm: đo tốc độ sóng nước trong chậu', '1·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Làm:</b> thả nút chai vào chậu nước rộng, gõ nhịp đều đầu thước xuống mặt nước. Bấm giờ 10 dao động của nút chai; đo khoảng cách 5 ngọn sóng liên tiếp.</div>
@@ -89,7 +89,7 @@ ${h3(1, 'II.1 · Công thức chủ chốt họ A', '2·1')}
 <div><b>D2.</b> Cường độ ${nw(`${m('I=P/S')}`)}, sóng cầu ${nw(`${m('S=')} ${f(14)}`)}: ${nw(`${m('I\\sim')} ${f(14)}`)}</div>
 <div>Xa nguồn gấp đôi thì ${m('I')} ${f(25)}</div>
 <div><b>D3.</b> Hai điểm cách ${m('d')} trên phương truyền: ${nw(`${dp}${m('=')} ${f(16)}`)}</div>
-<div>Cùng pha ${nw(`${m('d=')} ${f(14)}`)} · ngược pha ${nw(`${m('d=')} ${f(16)}`)} · vuông pha ${nw(`${m('d=(2k+1)\\lambda/4')}`)}</div>
+<div>Cùng pha ${nw(`${m('d=')} ${f(14)}`)} · ngược pha ${nw(`${m('d=')} ${f(20)}`)} · vuông pha ${nw(`${m('d=(2k+1)\\lambda/4')}`)}</div>
 </div>${H.songCau()}</div>
 <div class="card" style="margin-top:-1.5mm;border-top:0;border-radius:0 0 1.5mm 1.5mm;padding:0 3mm 1.2mm">
 <div><b>D4.</b> Nguồn ${m('u_0=A\\cos\\omega t')}, điểm M cách nguồn ${m('x')}: ${nw(`${m('u_M=A\\cos\\big(')} ${f(26)} ${m('\\big)')}`)}; M ${f(16)} pha hơn nguồn</div>
@@ -148,11 +148,11 @@ ${foot(4)}</section>`;
 const bay = `${h3(1, 'Họ D: luyện nhanh', '4·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Thử ống nhựa:</b> bịt kín một đầu ống dài ${u('0,17', 'm')}, thổi ngang miệng; ${nw(`${m('v=340')} m/s`)}. ${nw(`${m('f_1=')} ${f(12)} Hz`)}; nối dài ống thì nốt ${f(16)}</div></div>
-${box(`<div style="padding-top:.6mm"><b>Câu 3.</b> Dây dài ${u('0,9', 'm')}, một đầu cố định, một đầu tự do, ${nw(`${L_}${m('=1{,}2')} m`)}. ${nw(`${m('L=')} ${f(10)}${m('\\cdot\\dfrac{\\lambda}{4}')}`)} ${m('\\Rightarrow')} ${nw(`${m('n=')} ${f(10)}`)} ${m('\\Rightarrow')} ${f(10)} bụng</div>`)}
+${box(`<div style="padding-top:.6mm"><b>Câu 3.</b> Dây dài ${u('0,9', 'm')}, một đầu cố định, một đầu tự do, ${nw(`${L_}${m('=1{,}2')} m`)}. ${nw(`${m('L=')} ${f(10)}${m('\\cdot\\dfrac{\\lambda}{4}')}`)} ${m('\\Rightarrow')} ${nw(`${m('n=')} ${f(10)}`)} ${m('\\Rightarrow')} số bụng ${nw(`${m('n+1=')} ${f(10)}`)}</div>`)}
 ${h3(2, 'III · Ba cái bẫy mất điểm', '4·2')}
 <table><tr><th style="width:44mm">Bẫy</th><th>Em ghi lại cách đúng</th></tr>
 <tr><td><b>1.</b> ${m('n')} ngọn, ${m('n')} vân sáng liên tiếp</td><td>${m('n')} ngọn cách ${f(18)}${L_} · 9 vân sáng cách ${f(12)}${m('i')}</td></tr>
-<tr><td><b>2.</b> Hai nguồn ngược pha</td><td>cực đại khi ${nw(`${m('d_2-d_1=')} ${f(18)}`)}: cực đại, cực tiểu ${f(18)}</td></tr>
+<tr><td><b>2.</b> Hai nguồn ngược pha</td><td>cực đại khi ${nw(`${m('d_2-d_1=')} ${f(18)}`)}; so với cùng pha, vị trí cực đại và cực tiểu ${f(25)}</td></tr>
 <tr><td><b>3.</b> Đếm nút, bụng</td><td>${m('n')} bó có ${f(14)} nút; đừng quên ${f(30)}</td></tr></table>
 ${box(`<div style="padding-top:.6mm"><b>Câu 4.</b> ${nw(`${m('i=2')} mm`)}, trường đối xứng rộng ${u('15', 'mm')}: ${nw(`${m('\\dfrac{L}{2i}=')} ${f(12)}`)} ${m('\\Rightarrow')} ${nw(`${m('N_s=')} ${f(12)}`)} vân sáng</div>
 <div><b>Câu 5.</b> Dây hai đầu cố định có 5 nút (kể cả hai đầu): ${f(10)} bụng</div>
@@ -192,7 +192,7 @@ const dang = [
     nd: `bốn đỉnh liên tiếp có ${f(10)} khoảng; đổi ${L_} sang ${f(10)} trước khi nhân ${m('f')}`, a: ['a', 'b', 'c'], gi: 3, fig: H.d1() },
   { t: 'Dạng 2 · Trung bình · Độ lệch pha hai điểm trên phương truyền',
     de: `Sóng trên dây: ${nw(`${m('f=20')} Hz`)}, ${nw(`${m('v=4{,}0')} m/s`)}; M, N cách nhau ${nw(`${m('MN=0{,}45')} m`)} theo phương truyền sóng.<br><b>a)</b> bước sóng ${L_}<br><b>b)</b> độ lệch pha giữa M và N<br><b>c)</b> M, N dao động cùng pha, ngược pha, vuông pha hay không đặc biệt?`,
-    nd: `${nw(`${dp}${m('=2\\pi d/\\lambda')}`)}; bỏ các bội của ${m('2\\pi')} rồi so phần dư với ${f(10)}, ${m('\\pi')}, ${m('\\pi/2')}`, a: ['a', 'b', 'c'], gi: 2, cot: 3 },
+    nd: `${nw(`${dp}${m('=2\\pi d/\\lambda')}`)}; bỏ các bội của ${m('2\\pi')} rồi so phần dư với ${f(10)}, ${m('\\pi')}, ${m('\\pi/2')}`, a: ['a', 'b', 'c'], gi: 3, cot: 3 },
   { t: 'Dạng 3 · Khó · Giao thoa cùng pha: loại điểm M, đếm trên AB',
     de: `Hai nguồn kết hợp A, B cùng pha, ${nw(`${m('f=25')} Hz`)}, ${nw(`${m('AB=12')} cm`)}, ${nw(`${m('v=0{,}50')} m/s`)}. Điểm M cách A ${u('15', 'cm')}, cách B ${u('8', 'cm')}.<br><b>a)</b> bước sóng ${L_}<br><b>b)</b> M nằm trên cực đại hay cực tiểu?<br><b>c)</b> trên đoạn AB có bao nhiêu cực đại, bao nhiêu cực tiểu?`,
     nd: `${nw(`${m('|d_1-d_2|/\\lambda')}`)} nguyên → ${f(16)}, bán nguyên → ${f(16)}; A, B không tính`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3 },
@@ -206,7 +206,7 @@ const dang2 = [
     nd: `mỗi bó dài ${f(12)}; đổi ${m('f')} thì ${m('v')} ${f(16)}, ${L_} đổi`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 3, fig: H.d5() },
   { t: 'Dạng 6 · Khó · Ống một đầu kín: hai tần số cộng hưởng liên tiếp',
     de: `Ống một đầu kín cộng hưởng ở hai tần số liên tiếp ${u('1020', 'Hz')}, ${u('1700', 'Hz')}; tốc độ âm ${u('340', 'm/s')}.<br><b>a)</b> tần số âm cơ bản<br><b>b)</b> chiều dài ống<br><b>c)</b> ở ${u('1700', 'Hz')} trong ống có mấy bụng sóng (kể cả đầu hở)?`,
-    nd: `ống một đầu kín chỉ có hoạ âm bậc lẻ: hai tần số liên tiếp hơn kém ${f(12)}`, a: ['a', 'b', 'c'], gi: 2 },
+    nd: `ống một đầu kín chỉ có hoạ âm bậc lẻ: hai tần số liên tiếp hơn kém ${f(12)}`, a: ['a', 'b', 'c'], gi: 3 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…
@@ -232,14 +232,14 @@ const tuongTu = {
     { t: 'Dạng 2 · Bài 2', de: `Sóng trên mặt nước: ${nw(`${m('f=10')} Hz`)}, ${nw(`${m('v=0{,}60')} m/s`)}; hai điểm trên cùng phương truyền cách nhau ${u('4,5', 'cm')}.<br><b>a)</b> bước sóng (cm)<br><b>b)</b> độ lệch pha<br><b>c)</b> cùng, ngược, vuông pha hay không đặc biệt?`, o: ['a', 'b', 'c:26'] },
     { t: 'Dạng 3 · Bài 1', de: `Hai nguồn A, B cùng pha, ${nw(`${m('f=20')} Hz`)}, ${nw(`${m('v=0{,}40')} m/s`)}, ${nw(`${m('AB=9')} cm`)}. M cách A ${u('13', 'cm')}, cách B ${u('7', 'cm')}.<br><b>a)</b> bước sóng (cm)<br><b>b)</b> M là cực đại hay cực tiểu?<br><b>c)</b> số cực đại, số cực tiểu trên AB`, o: ['a', 'b:26', s1('c'), s2('c')] },
     { t: 'Dạng 3 · Bài 2', de: `Hai nguồn A, B cùng pha, ${nw(`${m('f=40')} Hz`)}, ${nw(`${m('v=0{,}80')} m/s`)}, ${nw(`${m('AB=15')} cm`)}. M cách A ${u('10', 'cm')}, cách B ${u('15', 'cm')}.<br><b>a)</b> bước sóng (cm)<br><b>b)</b> M là cực đại hay cực tiểu?<br><b>c)</b> số cực đại, số cực tiểu trên AB`, o: ['a', 'b:26', s1('c'), s2('c')] },
+    nhap(1),
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Young: ${nw(`${m('a=1{,}0')} mm`)}, ${nw(`${m('D=2{,}0')} m`)}, ${nw(`${L_}${m('=0{,}50\\ \\mu\\text{m}')}`)}; trường đối xứng rộng ${u('12,5', 'mm')}.<br><b>a)</b> khoảng vân (mm)<br><b>b)</b> số vân sáng, số vân tối<br><b>c)</b> điểm cách vân trung tâm ${u('4,5', 'mm')}: vân sáng hay tối?`, o: ['a', s1('b'), s2('b'), 'c'] },
-    { t: 'Dạng 4 · Bài 2', de: `Young: ${nw(`${m('a=0{,}80')} mm`)}, ${nw(`${m('D=1{,}6')} m`)}, ${nw(`${L_}${m('=0{,}45\\ \\mu\\text{m}')}`)}; trường đối xứng rộng ${u('10', 'mm')}.<br><b>a)</b> khoảng vân (mm)<br><b>b)</b> số vân sáng, số vân tối<br><b>c)</b> điểm cách vân trung tâm ${u('3,6', 'mm')}: vân gì, bậc mấy?`, o: ['a', s1('b'), s2('b'), 'c:26'] },
-    { t: 'Dạng 5 · Bài 1', de: `Dây dài ${u('1,2', 'm')}, hai đầu cố định, ${nw(`${m('f=100')} Hz`)}, sóng dừng như hình bên.<br><b>a)</b> bước sóng, tốc độ truyền sóng<br><b>b)</b> số nút (kể cả hai đầu)<br><b>c)</b> giữ nguyên dây và lực căng, tần số để có 6 bụng`, fig: H.tt5(), fw: 44, o: [s1('a'), s2('a'), 'b', 'c'], ow: 16 },
+    { t: 'Dạng 4 · Bài 2', de: `Young: ${nw(`${m('a=0{,}80')} mm`)}, ${nw(`${m('D=1{,}6')} m`)}, ${nw(`${L_}${m('=0{,}45\\ \\mu\\text{m}')}`)}; trường đối xứng rộng ${u('10', 'mm')}.<br><b>a)</b> khoảng vân (mm)<br><b>b)</b> số vân sáng, số vân tối<br><b>c)</b> điểm cách vân trung tâm ${u('3,6', 'mm')}: vân gì, bậc mấy?`, o: ['a', s1('b'), s2('b'), 'c:32'] },
+    { t: 'Dạng 5 · Bài 1', de: `Dây dài ${u('1,2', 'm')}, hai đầu cố định, ${nw(`${m('f=100')} Hz`)}, sóng dừng như hình bên.<br><b>a)</b> bước sóng, tốc độ truyền sóng<br><b>b)</b> số nút (kể cả hai đầu)<br><b>c)</b> giữ nguyên dây và lực căng, tần số để có 6 bụng`, fig: H.tt5(), fw: 44, o: [s1('a'), s2('a'), 'b', 'c'], ow: 18 },
     { t: 'Dạng 5 · Bài 2', de: `Dây dài ${u('0,90', 'm')}, hai đầu cố định, ${nw(`${m('f=60')} Hz`)}, trên dây có 3 bụng sóng.<br><b>a)</b> bước sóng, tốc độ truyền sóng<br><b>b)</b> số nút (kể cả hai đầu)<br><b>c)</b> giữ nguyên dây và lực căng, tần số để có 5 bụng`, o: [s1('a'), s2('a'), 'b', 'c'] },
     { t: 'Dạng 6 · Bài 1', de: `Ống một đầu kín, một đầu hở cộng hưởng ở hai tần số liên tiếp ${u('750', 'Hz')} và ${u('1250', 'Hz')}; tốc độ âm ${u('340', 'm/s')}.<br><b>a)</b> tần số âm cơ bản<br><b>b)</b> chiều dài ống<br><b>c)</b> số bụng ở ${u('1250', 'Hz')} (kể cả đầu hở)`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 6 · Bài 2', de: `Ống một đầu kín, một đầu hở cộng hưởng ở hai tần số liên tiếp ${u('1050', 'Hz')} và ${u('1470', 'Hz')}; tốc độ âm ${u('336', 'm/s')}.<br><b>a)</b> tần số âm cơ bản<br><b>b)</b> chiều dài ống<br><b>c)</b> số bụng ở ${u('1470', 'Hz')} (kể cả đầu hở)`, o: ['a', 'b', 'c'] },
-    nhap(1),
   ]],
   dap: [
     `D1·1: a) 8 cm · b) 0,2 s · c) 0,4 m/s &nbsp;|&nbsp; D1·2: a) 2 s · b) 0,6 m · c) 0,3 m/s &nbsp;|&nbsp; D2·1: a) 4 cm · b) 5π rad · c) ngược pha &nbsp;|&nbsp; D2·2: a) 6 cm · b) 1,5π rad · c) vuông pha &nbsp;|&nbsp; D3·1: a) 2 cm · b) cực đại (bậc 3) · c<sub>1</sub>) 9 · c<sub>2</sub>) 8 &nbsp;|&nbsp; D3·2: a) 2 cm · b) cực tiểu · c<sub>1</sub>) 15 · c<sub>2</sub>) 14`,
@@ -249,7 +249,7 @@ const tuongTu = {
 
 await K.dung({
   trang1to5: ttHaiCot + [p1, p2, p3, p4(), p5].join('\n'),
-  btm: { dang: [...dang, ...dang2], tach: [3, 3], kq: [[1, 2, 3], [4, 5, 6]], khoNhat: true },
+  btm: { dang: [...dang, ...dang2], tach: [3, 3], kq: [[1, 2, 3], [4, 5, 6]], khoNhat: false },
   tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo), dap: tuongTu.dap.map((x) => x.replaceAll('π', m('\\pi'))) },
   tra: 'bốn họ 1·4 · họ A 2·1 · chậu nước 1·5 · họ B 2·2 · khe Young 3·1–3·2 · sóng dừng 3·3, 4·1 · bẫy 4·2 · trả bài 4·3 · bài toán mẫu 5·2 · dạng 1–3 → 6·1 · dạng 4–6 → 7·1',
   out: process.argv[2],

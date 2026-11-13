@@ -24,30 +24,30 @@ const songUX = ({ d0, lam, xmax, moc, cap, id, dinh = 0 }) => {
   const x0 = 40, x1 = 300, yc = 80, A = 38, kx = (x1 - x0) / xmax;
   const X = (v) => x0 + v * kx, Y = (u) => yc - u * A;
   let b = defs(id + 'a');
-  b += arr(x0, 150, x0, 12, id + 'a') + arr(x0 - 6, yc, 316, yc, id + 'a');
-  b += T(x0 + 8, 24, 'u') + T(316, 128, 'x (cm)', { a: 'end' });
+  b += arr(x0, 122, x0, 12, id + 'a') + arr(x0 - 6, yc, 316, yc, id + 'a');
+  b += T(x0 + 8, 24, 'u') + T(316, yc + 28, 'x (cm)', { a: 'end' });
   let d = '';
-  for (let i = 0; i <= 300; i++) { const v = (xmax * i) / 300; d += `${i ? 'L' : 'M'}${f1(X(v))},${f1(Y(Math.cos((2 * Math.PI * (v - d0)) / lam)))}`; }
+  for (let i = 0; i <= 300; i++) { const v = ((xmax - 4) * i) / 300; d += `${i ? 'L' : 'M'}${f1(X(v))},${f1(Y(Math.cos((2 * Math.PI * (v - d0)) / lam)))}`; }
   b += `<path d="${d}" fill="none" stroke="${BLUE}" stroke-width="${SW}"/>`;
   moc.forEach((v) => { b += ln(f1(X(v)), Y(1), f1(X(v)), yc + 6, GREY, 1.6, '4 4') + T(X(v), yc + 28, String(v).replace('.', ','), { a: 'middle' }); });
   b += T(x0 - 8, yc + 24, '0', { a: 'end' });
   for (let k = 0; k < dinh; k++) b += `<circle cx="${f1(X(d0 + k * lam))}" cy="${f1(Y(1))}" r="5" fill="${RED}"/>`;
-  b += arr(60, 142, 120, 142, id + 'a', INK, 2.2) + T(128, 149, 'truyền sóng');
-  return wrap('0 0 320 158', b, cap, 'Hình dạng sợi dây tại một thời điểm');
+  b += arr(118, 22, 168, 22, id + 'a', INK, 2.2) + T(176, 29, 'truyền sóng');
+  return wrap('0 0 320 120', b, cap, 'Hình dạng sợi dây tại một thời điểm');
 };
 
 // Sóng dừng trên dây hai đầu cố định: n bó, chiều dài ghi trên hình
 const dayDung = ({ n, L, cap, id }) => {
-  const x0 = 26, x1 = 294, yc = 50, A = 30, w = (x1 - x0) / n;
+  const x0 = 26, x1 = 294, yc = 46, A = 24, w = (x1 - x0) / n;
   let b = def2(id);
-  b += `<rect x="${x0 - 14}" y="${yc - 34}" width="10" height="68" fill="${GREY}"/>` + `<rect x="${x1 + 4}" y="${yc - 34}" width="10" height="68" fill="${GREY}"/>`;
+  b += `<rect x="${x0 - 14}" y="${yc - 26}" width="10" height="52" fill="${GREY}"/>` + `<rect x="${x1 + 4}" y="${yc - 26}" width="10" height="52" fill="${GREY}"/>`;
   let d1 = '', d2 = '';
   for (let i = 0; i <= 240; i++) { const x = x0 + ((x1 - x0) * i) / 240, s = Math.sin((Math.PI * (x - x0)) / w); d1 += `${i ? 'L' : 'M'}${f1(x)},${f1(yc - A * s)}`; d2 += `${i ? 'L' : 'M'}${f1(x)},${f1(yc + A * s)}`; }
   b += `<path d="${d1}" fill="none" stroke="${BLUE}" stroke-width="${SW}"/><path d="${d2}" fill="none" stroke="${BLUE}" stroke-width="2.2" stroke-dasharray="6 4"/>`;
   b += ln(x0, yc, x1, yc, GREY, 1.4, '3 4');
-  b += T(x0 - 8, yc + 32, 'A', { a: 'end', w: 700 }) + T(x1 + 18, yc + 32, 'B', { w: 700 });
-  b += hai(x0, 104, x1, 104, id, INK) + `<rect x="122" y="92" width="76" height="24" fill="#fff"/>` + T(160, 111, L, { a: 'middle', w: 700 });
-  return wrap('0 0 320 118', b, cap, 'Sóng dừng trên dây hai đầu cố định');
+  b += T(x0 - 9, 16, 'A', { a: 'middle', w: 700 }) + T(x1 + 9, 16, 'B', { a: 'middle', w: 700 });
+  b += hai(x0, 84, x1, 84, id, INK) + `<rect x="122" y="72" width="76" height="24" fill="#fff"/>` + T(160, 91, L, { a: 'middle', w: 700 });
+  return wrap('0 0 320 94', b, cap, 'Sóng dừng trên dây hai đầu cố định');
 };
 
 export const hinhL11b14 = {
@@ -58,7 +58,7 @@ export const hinhL11b14 = {
     let d = '';
     for (let i = 0; i <= 300; i++) { const x = 8 + (304 * i) / 300; d += `${i ? 'L' : 'M'}${f1(x)},${f1(yc - A * Math.cos((2 * Math.PI * (x - x0)) / lam))}`; }
     b += `<path d="${d}" fill="none" stroke="${BLUE}" stroke-width="${SW}"/>`;
-    for (let k = 0; k < n; k++) { const x = x0 + k * lam; b += `<circle cx="${f1(x)}" cy="${yc - A}" r="5" fill="${RED}"/>` + T(x, yc - A - 12, String(k + 1), { a: 'middle', w: 700, c: RED }); }
+    for (let k = 0; k < n; k++) { const x = x0 + k * lam; b += `<circle cx="${f1(x)}" cy="${yc - A}" r="5" fill="${RED}"/>`; }
     b += ln(x0, yc - A, x0, 156, GREY, 1.6, '4 4') + ln(x1, yc - A, x1, 156, GREY, 1.6, '4 4');
     b += hai(x0, 150, x1, 150, 'nn', INK) + `<rect x="138" y="138" width="44" height="24" fill="#fff"/>` + T(160, 157, '2 m', { a: 'middle', w: 700 });
     return wrap('0 0 320 168', b, cap, 'Năm ngọn sóng liên tiếp');
@@ -70,10 +70,10 @@ export const hinhL11b14 = {
     b += `<circle cx="${cx}" cy="${cy}" r="42" fill="none" stroke="${BLUE}" stroke-width="${SW}"/>`;
     b += `<path d="M${cx},${cy - 84} A84,84 0 0 1 ${cx},${cy + 84}" fill="none" stroke="${BLUE}" stroke-width="${SW}" stroke-dasharray="7 5"/>`;
     b += `<circle cx="${cx}" cy="${cy}" r="7" fill="${RED}"/>` + T(cx - 12, cy + 6, 'S', { a: 'end', w: 700 });
-    b += arr(cx, cy, cx + 40, cy - 12, 'sc') + T(cx + 16, cy - 16, 'R', { w: 700 });
-    b += arr(cx, cy, cx + 74, cy + 40, 'sc') + T(cx + 60, cy + 64, '2R', { w: 700 });
-    b += T(186, 60, `I${sb('1')}`, { c: BLUE, w: 700 }) + ln(130, 72, 182, 58, GREY, 1.6, '3 4');
-    b += T(236, 120, `I${sb('2')}`, { c: BLUE, w: 700 }) + ln(166, 110, 232, 114, GREY, 1.6, '3 4');
+    b += arr(cx, cy, cx + 40, cy - 12, 'sc') + T(cx + 8, cy - 16, 'R', { w: 700 });
+    b += arr(cx, cy, cx + 74, cy + 40, 'sc') + T(cx + 30, cy + 54, '2R', { w: 700 });
+    b += `<circle cx="109.7" cy="70.3" r="5" fill="${BLUE}"/>` + T(100, 56, `I${sb('1')}`, { c: BLUE, w: 700, a: 'end' });
+    b += `<circle cx="152.7" cy="58" r="5" fill="${BLUE}"/>` + T(162, 52, `I${sb('2')}`, { c: BLUE, w: 700 });
     return wrap('0 0 280 196', b, cap, 'Sóng cầu toả từ nguồn điểm');
   },
   // Trang 3 · Họ B: đoạn AB = 4λ, chấm đặc cực đại, vòng rỗng cực tiểu (để HS đếm, đối chiếu công thức)
@@ -93,15 +93,15 @@ export const hinhL11b14 = {
   },
   // Trang 3 · Họ C: hệ vân trên màn, vân trung tâm O, một khoảng vân i
   vanYoung: (cap = 'Vân sáng (trắng) xen vân tối, vân trung tâm ở O. Đo cả đoạn nhiều vân rồi chia.') => {
-    const y0 = 20, h = 56, x0 = 16, x1 = 304, c = 160, i = 36;
+    const y0 = 34, h = 56, x0 = 16, x1 = 304, c = 160, i = 36;
     let b = def2('vy');
     for (let x = x0; x <= x1; x += 1.5) {
       const g = Math.round(28 + 200 * Math.cos((Math.PI * (x - c)) / i) ** 2);
       b += `<rect x="${f1(x)}" y="${y0}" width="1.6" height="${h}" fill="rgb(${g},${g},${g})"/>`;
     }
     b += `<rect x="${x0}" y="${y0}" width="${x1 - x0}" height="${h}" fill="none" stroke="${INK}" stroke-width="2"/>`;
-    b += ln(c, y0 + h, c, y0 + h + 10, INK, 2.4) + T(c, y0 + h + 32, 'O', { a: 'middle', w: 700 });
-    b += ln(c + i, y0 + h, c + i, y0 + h + 10, INK, 2) + hai(c, y0 + h + 18, c + i, y0 + h + 18, 'vy') + T(c + i / 2 + 2, y0 + h + 42, 'i', { a: 'middle', c: RED, w: 700 });
+    b += ln(c, y0 + h, c, y0 + h + 10, INK, 2.4) + T(c, y0 + h + 30, 'O', { a: 'middle', w: 700 });
+    b += ln(c, y0 - 14, c, y0, INK, 2) + ln(c + i, y0 - 14, c + i, y0, INK, 2) + hai(c, y0 - 8, c + i, y0 - 8, 'vy') + T(c + i + 8, y0 - 6, 'i', { c: RED, w: 700 });
     return wrap('0 0 320 128', b, cap, 'Hệ vân giao thoa trên màn');
   },
   // Trang 4 · Họ D: dây một đầu cố định (nút), một đầu tự do — L = 5λ/4 như hình 3 của bài web (n = 2)
@@ -132,11 +132,11 @@ export const hinhL11b14 = {
     return wrap('0 0 320 166', b, cap, 'Hai nguồn sóng nước');
   },
   // Trang 6 · Dạng 1: bốn đỉnh liên tiếp, đỉnh đầu ở 3 cm, đỉnh cuối ở 39 cm
-  d1: (cap = '') => songUX({ d0: 3, lam: 12, xmax: 44, moc: [3, 39], cap, id: 'd1', dinh: 4 }),
+  d1: (cap = '') => songUX({ d0: 3, lam: 12, xmax: 50, moc: [3, 39], cap, id: 'd1', dinh: 4 }),
   // Trang 7 · Dạng 5: dây 0,60 m, ba bó
   d5: (cap = '') => dayDung({ n: 3, L: '0,60 m', cap, id: 'd5' }),
   // Trang 8 · Bài tương tự Dạng 1 bài 1: năm đỉnh liên tiếp, 2 cm → 34 cm
-  tt1: (cap = '') => songUX({ d0: 2, lam: 8, xmax: 38, moc: [2, 34], cap, id: 't1', dinh: 5 }),
+  tt1: (cap = '') => songUX({ d0: 2, lam: 8, xmax: 44, moc: [2, 34], cap, id: 't1', dinh: 5 }),
   // Trang 9 · Bài tương tự Dạng 5 bài 1: dây 1,2 m, bốn bó
   tt5: (cap = '') => dayDung({ n: 4, L: '1,2 m', cap, id: 't5' }),
 };
