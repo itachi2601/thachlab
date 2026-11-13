@@ -50,7 +50,7 @@ const p1 = `${ttCss}<section class="page">
 ${head('BÀI 15 · THỰC HÀNH: ĐO TỐC ĐỘ TRUYỀN ÂM', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
-${dong(`${ck}Giải thích vì sao mực nước khác nhau thì tiếng thổi qua miệng chai khác nhau`)}
+${dong(`${ck}Nhận ra cột không khí trong ống cộng hưởng với nguồn âm`)}
 ${dong(`${ck}Nêu phương án đo ${v} bằng ống cộng hưởng và chỗ dễ sai`)}
 ${dong(`${ck}Từ bảng số đo tính ${lam}, ${v}; viết kết quả kèm sai số`)}
 </div>
@@ -70,8 +70,8 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Nhắc lại: âm của tai và âm của máy đo', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Ghép cảm giác với đại lượng vật lí: độ cao ↔ ${f(24)} · độ to ↔ ${f(30)} · âm sắc ↔ ${f(30)}</div>
-<div style="margin-top:.6mm">${nw(`${m('L=10\\lg\\dfrac{I}{I_0}')}`)} (dB), ${nw(m('I_0=10^{-12}\\ \\mathrm{W/m^2}'))} (ngưỡng nghe; ${m('\\lg')} là logarit thập phân). ${m('I')} gấp 10 lần thì ${m('L')} tăng ${f(12)} dB.</div>
-<div style="margin-top:.6mm">Trong một chu kì sóng đi được một ${f(18)}, nên ${nw(`${v} = ${f(18)}`)}. ${tk}; ${nw(`ở 20 °C: ${v} ≈ 343 m/s`)}. ${nw(`Đổi ${fr} thì ${lam} ${f(25)}, ${v} ${f(25)}`)} (điền: đổi / giữ nguyên).</div>
+<div style="margin-top:.6mm">${nw(`${m('L=10\\lg\\dfrac{I}{I_0}')}`)} (dB), ${nw(m('I_0=10^{-12}\\ \\mathrm{W/m^2}'))} (ngưỡng nghe; ${m('\\lg')} là logarit thập phân). ${m('I')} gấp ${nw('10 lần')} thì ${m('L')} tăng ${f(12)} dB.</div>
+<div style="margin-top:.6mm">Trong một chu kì sóng đi được một ${f(28)}, nên ${nw(`${v} = ${f(22)}`)}. ${tk}; ${nw(`ở 20 °C: ${v} ≈ 343 m/s`)}. ${nw(`Đổi ${fr} thì ${lam} ${f(25)}, ${v} ${f(25)}`)} (điền: đổi / giữ nguyên).</div>
 <div class="hint" style="margin:.3mm 0">Đơn vị: ${dv}</div></div>
 ${h3(5, 'Làm nhanh', '1·5')}
 ${box(cau(`Máy phát ${Hz('686')}, không khí ở ${nw(m('20\\ ^\\circ\\mathrm C'))} (${ms('343')}). Bước sóng ${lam} của âm là bao nhiêu mét?`, 1))}
@@ -83,15 +83,15 @@ ${head('CỘT KHÍ CỘNG HƯỞNG · DỤNG CỤ · CÁCH ĐO')}
 ${h3(1, 'II.2 · Cột khí một đầu kín: nút và bụng ở đâu?', '2·1')}
 <div class="fig-side" style="${fs(58)}"><div>
 <div class="card" style="padding:1.2mm 3mm">
-<div>Ống thẳng đứng, đáy có nước, loa phát âm đơn sắc ${fr} trên miệng. Âm xuống mặt nước rồi phản xạ, tạo <b>sóng dừng</b> (như bài 13). Mặt nước chặn không khí dao động: đó là ${f(14)}. Miệng ống thông ra ngoài: không khí dao động mạnh nhất, đó là ${f(14)}, nằm cao hơn miệng một đoạn ${e} (${nw(`${e} ≈ 0,6 lần bán kính ống`)}).</div>
+<div>Ống thẳng đứng, đáy có nước, loa phát âm đơn sắc ${fr} trên miệng. Âm xuống mặt nước rồi phản xạ, tạo <b>sóng dừng</b> (như bài 13). Mặt nước chặn không khí dao động: đó là ${f(25)}. Miệng ống thông ra ngoài: không khí dao động mạnh nhất, đó là ${f(25)}, nằm cao hơn miệng một đoạn ${e} (${nw(`${e} ≈ 0,6 lần bán kính ống`)}).</div>
 <div style="margin-top:.8mm">${m('l')} đo từ miệng ống xuống mặt nước. Từ nút tới bụng liền kề bằng ${tall(12)}·${lam}.</div>
 <div style="margin-top:.8mm;display:grid;grid-template-columns:1fr 1fr;gap:3mm;align-items:center"><div>Lần 1: ${nw(`${l1} + ${e} = ${tall(16)}`)}</div><div>Lần 2: ${nw(`${l2} + ${e} = ${tall(16)}`)}</div></div>
 <div style="margin-top:.4mm">Trừ vế với vế: ${nw(`${l2} − ${l1} = ${tall(16)}`)} ⇒ ${nw(`${lam} = ${f(24)}`)} (${e} mất đi).</div></div>
 </div>${H.ong()}</div>
 ${h3(2, 'II.3 · Dụng cụ và cách đo', '2·2')}
 <div class="fig-side" style="${fs(40)}"><div>
-${bangDc(['Máy phát tần số + loa', `Ống trong suốt, ⌀ 16 mm, dài 670 mm`, 'Bình nước nối ống bằng ống mềm', 'Thước gắn bên ống', 'Nhiệt kế phòng'])}
-<div class="hint" style="margin:.5mm 0">Ống ⌀ 16 mm: bán kính 8 mm, nên ${nw(`${e} ≈ ${f(12)} cm`)}.</div>
+${bangDc(['Máy phát tần số + loa', `Ống trong suốt, ${nw('⌀ 16 mm')}, dài ${nw('670 mm')}`, 'Bình nước nối ống bằng ống mềm', 'Thước gắn bên ống', 'Nhiệt kế phòng'])}
+<div class="hint" style="margin:.5mm 0">Ống ${nw('⌀ 16 mm')}: bán kính ${nw('8 mm')}, nên ${nw(`${e} ≈ ${f(12)} cm`)}.</div>
 </div>${H.boOng()}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '2·3')}
 ${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
@@ -167,16 +167,16 @@ const tbDe = (ls1, ls2) => `<table style="text-align:center;margin:.6mm 0"><tr><
 const dang = [
   { t: 'Dạng 1 · Dễ · Mức cường độ âm: từ cường độ ra dB và từ dB ra cường độ',
     de: `Loa phát âm ${Hz('800')}; máy đo ghi ${nw(m('I=4{,}0\\cdot10^{-7}\\ \\mathrm{W/m^2}'))}. Lấy ${nw(m('I_0=10^{-12}\\ \\mathrm{W/m^2}'))}.<br><b>a)</b> mức cường độ âm ${m('L')}<br><b>b)</b> ${m('I')} tăng 100 lần: ${m('L')} lúc này<br><b>c)</b> bàn khác máy đo ${nw(m('L=85\\ \\mathrm{dB}'))}: cường độ âm ${m('I')}`,
-    nd: `${nw(`${m('L=10\\lg')} ${f(20)}`)}; ${m('I')} gấp 100 lần thì ${m('L')} tăng ${f(12)} dB; ${nw(`${m('I=I_0\\cdot10^{L/10}')}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `${nw(`${m('L=10\\lg')} ${tall(20)}`)}; ${m('I')} gấp 100 lần thì ${m('L')} tăng ${f(12)} dB; ${nw(`${m('I=I_0\\cdot10^{L/10}')}`)}`, a: ['a', 'b', 'c'], gi: 5 },
   { t: 'Dạng 2 · Trung bình · Ống một đầu kín: dự đoán các vị trí cộng hưởng',
     de: `Ống thẳng đứng dài ${cm('67')}, loa ở miệng ống phát ${Hz('600')}; phòng ${nw(m('15\\ ^\\circ\\mathrm C'))}; ${nw(m('e=0{,}5\\ \\mathrm{cm}'))}. Mặt nước hạ dần từ miệng ống xuống.<br><b>a)</b> ${v} và ${lam}<br><b>b)</b> ${l1} và ${l2} của hai lần to nhất đầu<br><b>c)</b> có nghe được lần to nhất thứ ba không (so với chiều dài ống)`,
-    nd: `${nw(`${v} = 331 + 0,6${m('t')}`)}; ${nw(`${l1} + ${e} = ${f(12)}`)}; lần ba ${nw(`${m('l_3+e=')} ${f(14)}`)} so với 67 cm`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 3, gi: 4, fig: H.ong() },
+    nd: `${nw(`${v} = 331 + 0,6${m('t')}`)}; ${nw(`${l1} + ${e} = ${tall(16)}`)}; lần ba ${nw(`${m('l_3+e=')} ${tall(16)}`)} so với 67 cm`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 3, gi: 6 },
   { t: `Dạng 3 · Trung bình · Từ hai lần cộng hưởng tính ${m('\\lambda')}, ${m('v')}, ${m('e')}`,
     de: `Âm thoa ${Hz('640')} (coi chính xác), phòng ${nw(m('28\\ ^\\circ\\mathrm C'))}. Nghe to nhất lần một khi ${nw(m('l_1=13{,}0\\ \\mathrm{cm}'))}, lần hai khi ${nw(m('l_2=39{,}9\\ \\mathrm{cm}'))}.<br><b>a)</b> ${lam} và ${v} nhóm đo được<br><b>b)</b> đoạn ${e}<br><b>c)</b> ${v} theo nhiệt độ phòng; kết quả đo lệch bao nhiêu phần trăm so với giá trị đó`,
-    nd: `${nw(`${lam} = 2(${l2} − ${l1})`)}; ${nw(`${e} = ${lam}/4 − ${l1}`)}; lệch ${nw(`= |${v} − ${m('v_{tk}')}| / ${m('v_{tk}')}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], cot: 3, gi: 3 },
+    nd: `${nw(`${lam} = 2(${l2} − ${l1})`)}; ${nw(`${e} = ${lam}/4 − ${l1}`)}; lệch ${nw(`= |${v} − ${m('v_{tk}')}| / ${m('v_{tk}')}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], cot: 3, gi: 4 },
   { t: 'Dạng 4 · Khó · Xử lí bảng số liệu: sai số và so với giá trị tham khảo',
     de: `Ống dài ${cm('70')}, phòng ${nw(m('30\\ ^\\circ\\mathrm C'))}, máy phát ${nw(m('f=400\\pm1\\ \\mathrm{Hz}'))}. Sai số dụng cụ ${nw(m('\\Delta l_{dc}=0{,}1\\ \\mathrm{cm}'))}; sai số của mỗi ${m('\\bar l')} = độ lệch trung bình + ${m('\\Delta l_{dc}')}.${tbDe(['21,5', '21,7', '21,6', '21,8', '21,4'], ['65,2', '65,1', '65,3', '65,2', '65,2'])}<b>a)</b> ${m('\\bar\\lambda')} và ${m('\\bar v')}<br><b>b)</b> ${m('\\Delta\\lambda')}, ${m('\\Delta v')}; viết ${m('v=\\bar v\\pm\\Delta v')}<br><b>c)</b> so với giá trị tham khảo theo nhiệt độ phòng: có phù hợp không`,
-    nd: `${nw(`${m('\\bar l_1')}, ${m('\\bar l_2')}`)} rồi ${nw(`${m('\\bar\\lambda=2(\\bar l_2-\\bar l_1)')}`)}; ${nw(`${m('\\Delta\\lambda')} = 2(${f(12)} + ${f(12)})`)}; ${nw(`${m('\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}+\\dfrac{\\Delta f}{f}')}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 3, gi: 6 },
+    nd: `${nw(`${m('\\bar l_1')}, ${m('\\bar l_2')}`)} rồi ${nw(`${m('\\bar\\lambda=2(\\bar l_2-\\bar l_1)')}`)}; ${nw(`${m('\\Delta\\lambda')} = 2(${f(12)} + ${f(12)})`)}; ${nw(`${m('\\dfrac{\\Delta v}{\\bar v}=\\dfrac{\\Delta\\lambda}{\\bar\\lambda}+\\dfrac{\\Delta f}{f}')}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 3, gi: 5 },
 ];
 
 const oY = (s, o, w = {}) => s.split('<br>').map((p) => {
@@ -210,6 +210,7 @@ const tuongTu = {
   ],
 };
 
+tuongTu.dap = tuongTu.dap.map((x) => x.replace(/(\d[\d,]*) (m\/s|cm|dB|Ω)/g, (_, a, u) => nw(`${a} ${u}`)));
 await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [2, 2], kq: [[1, 2], [3, 4]], khoNhat: false },
