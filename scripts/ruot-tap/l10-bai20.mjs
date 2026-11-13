@@ -44,6 +44,7 @@ const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
 const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
 const u = (s) => nw(m(s));
+const ps = (w) => `<span class="fill" style="min-width:${w}mm;height:9mm"></span>`;   // ô phân số cao 9 mm
 const g10 = u('g=10\\ \\mathrm{m/s^2}');
 const al = m('\\alpha'), mu = m('\\mu');
 const Fms = m('F_{\\mathrm{ms}}');
@@ -74,15 +75,16 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f(12)} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'Kiểm tra hành trang', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Mặt nghiêng góc ${al}: thành phần của ${m('P')} <b>dọc</b> mặt nghiêng ${f(25)} · <b>vuông góc</b> mặt nghiêng ${f(25)}</div>
+<div>Mặt nghiêng góc ${al}: thành phần của ${m('P')} <b>dọc</b> dốc ${f(25)} · <b>vuông góc</b> dốc ${f(25)}</div>
 <div>Ma sát trượt: ${u('F_{\\mathrm{ms}}=')} ${f(16)} · với ${u('N=50\\ \\mathrm N')}, ${u('\\mu=0{,}2')}: ${u('F_{\\mathrm{ms}}=')} ${f(12)}&nbsp;N</div>
-<div>Định luật II Newton: ${m('a=')} ${f(16)} (${m('F')} là ${f(25)}) · công thức không chứa ${m('t')}: ${f(30)}</div></div>
+<div>Định luật II: ${nw(`${m('a=')} ${ps(16)}`)} (${m('F')} là ${f(25)}) · không chứa ${m('t')}: ${f(30)}</div></div>
 ${h3(5, 'II.1 · Bốn bước, một cầu nối', '1·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Bốn bước:</b> Vẽ – ${f(25)} – ${f(25)} – ${f(25)}</div>
-<div><b>1. Vẽ:</b> hình, chọn ${f(25)} khảo sát, chọn hệ trục: Ox theo chiều ${f(30)}; chọn một lần, giữ đến hết bài.</div>
-<div><b>2. Kể lực:</b> mỗi lực phải chỉ ra được ${f(30)}; vẽ chung gốc ở trọng tâm.</div>
-<div><b>3. Viết:</b> ${f(40)} (dạng vectơ) &nbsp;<b>4. Chiếu</b> lên Ox, Oy, tìm ${m('a')}, rồi kiểm đơn vị, ${f(25)}.</div></div>
+<div><b>Bước 1</b> (Vẽ): chọn ${f(25)} khảo sát; Ox theo chiều ${f(30)}, giữ đến hết.</div>
+<div><b>Bước 2:</b> mỗi lực phải chỉ ra được ${f(30)}</div>
+<div><b>Bước 3:</b> ${f(40)} (dạng vectơ)</div>
+<div><b>Bước 4:</b> theo Ox, Oy tìm ${m('a')}; kiểm dấu: ${m('a<0')} nghĩa là ${f(36)}</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -146,7 +148,7 @@ ${h3(4, 'II.4 · Tình huống 3: hai vật nối dây qua ròng rọc', '3·4')
 <div>${m('m_2')} (treo): ${f(30)} ${m('=m_2a')}</div>
 <div>Cộng hai phương trình: ${f(12)} triệt tiêu.</div></div>
 ${H.rongRoc()}</div>
-${box(cau(`<b>Câu 3.</b> Với chiều (+) em vừa vẽ, viết phương trình cho ${m('m_2')}, cộng với phương trình của ${m('m_1')} để được ${m('a')} (lực ${m('T')} biến mất).`, 2))}
+${box(cau(`<b>Câu 3.</b> Hình trên với ${u('m_1=4\\ \\mathrm{kg}')}, ${u('m_2=1\\ \\mathrm{kg}')}, ${u('\\mu=0{,}1')}, ${g10}. Hệ có chạy không? Nếu có, tính gia tốc.`, 2))}
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -202,10 +204,10 @@ const dang = [
     nd: `Ox dọc dốc: ${m('a=g(')} ${f(16)} ${m('-')} ${f(16)}${m(')')}`, a: ['a', 'b', 'c', 'd'], gi: 6 },
   { t: 'Dạng 3 · Khó · Bài toán ngược: từ chuyển động tìm lực',
     de: deH(`Ô tô ${u('1200\\ \\mathrm{kg}')} đang chạy ${u('15\\ \\mathrm{m/s}')} trên đường ngang thì phanh gấp, bánh trượt ${u('22{,}5\\ \\mathrm m')} rồi dừng; ${g10}.<br><b>a)</b> gia tốc (chiều dương là chiều chạy)<br><b>b)</b> độ lớn lực hãm<br><b>c)</b> hệ số ma sát trượt lốp–đường`, H.d4),
-    nd: `tìm ${m('a')} trước từ ${m('v^2-v_0^2=')} ${f(16)}; rồi ${m('F_{\\text{hãm}}=')} ${f(16)}; ${m('\\mu=')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 5 },
+    nd: `tìm ${m('a')} trước từ ${m('v^2-v_0^2=')} ${f(16)}; rồi ${m('F_{\\text{hãm}}=')} ${f(16)}; ${m('\\mu=')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Khó · Hai vật nối dây qua ròng rọc (bài toán mẫu)',
     de: deH(`Khối gỗ ${u('m_1=2\\ \\mathrm{kg}')} trên bàn ngang, nối dây nhẹ không dãn vắt qua ròng rọc ở mép bàn với quả nặng ${u('m_2=1\\ \\mathrm{kg}')} treo thẳng đứng. Hệ số ma sát gỗ–bàn ${u('0{,}2')} (nghỉ và trượt như nhau). Thả hệ từ nghỉ; bỏ qua khối lượng, ma sát ròng rọc; ${g10}.<br><b>a)</b> giả sử hệ đứng yên: ma sát nghỉ cần có, mức trần ${m('\\mu m_1g')}; hệ có chạy không<br><b>b)</b> gia tốc của hệ<br><b>c)</b> lực căng dây<br><b>d)</b> quãng đường quả nặng đi được sau ${u('1\\ \\mathrm s')}`, H.d5, 40),
-    nd: `cùng ${m('a')}, cùng ${m('T')}; cộng hai phương trình: ${m('a=')} ${f(30)}; kiểm ${m('T')} ${ck}${m('\\lt P_2')} ${ck}${m('\\gt P_2')}`, a: ['a', 'b', 'c', 'd'], gi: 6, cot: 2 },
+    nd: `cùng ${m('a')}, cùng ${m('T')}; cộng hai phương trình: ${nw(`${m('a=')} ${ps(40)}`)}; kiểm ${m('T')} ${ck}${m('\\lt P_2')} ${ck}${m('\\gt P_2')}`, a: ['a', 'b', 'c', 'd'], gi: 6, cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): ô đáp số 25 mm cuối đúng dòng của ý; nhãn a₁, a₂ khi ý có 2 kết quả. Đáp số tính bằng Python 13/11/2026.

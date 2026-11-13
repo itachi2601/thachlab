@@ -91,7 +91,7 @@ const rongRoc = (cap, { m1 = `m${sb('1')}`, m2 = `m${sb('2')}`, ms = true, duong
 
 export const hinhL10b20 = {
   // Trang 1 · Dự đoán: ảnh thật cầu trượt (chú thích không nói ai tới trước)
-  cauTruot: (cap = 'Cầu trượt: trọng lực kéo người xuống dốc, ma sát cản lại.') => anh('cau-truot.jpg', cap),
+  cauTruot: (cap = 'Cầu trượt: trọng lực kéo người xuống dốc.') => anh('cau-truot.jpg', cap),
   // Trang 2 · cầu nối: ô giữa để "?"
   cauNoi: (cap = 'Ô giữa là đại lượng nào?') => {
     let b = defs('cn1') + defs('cn2');

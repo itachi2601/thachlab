@@ -133,7 +133,7 @@ export const hinhL10b17 = {
     b += (xuong ? arr(178, 86, 178, 134, 'tc1', BLUE, '6 4') : arr(178, 134, 178, 86, 'tc1', BLUE, '6 4')) + T(186, 116, 'v', { c: BLUE, w: 700 });
     return wrap('0 0 220 144', b, cap, 'Tời nâng thùng hàng bằng cáp thẳng đứng');
   },
-  heD3: (cap = 'm<sub>A</sub> = 1,5 kg; m<sub>B</sub> = 1,0 kg.') => heBan(cap, { id: 'd3' }),
+  heD3: (cap = '') => heBan(cap, { id: 'd3' }),
   atwoodD4: (cap = 'm<sub>1</sub> = 5,0 kg; m<sub>2</sub> = 3,0 kg; thả từ cùng độ cao.') => atwood(cap, { id: 'aw4' }),
   heD5: (cap = 'Dây chịu tối đa 12 N; m<sub>B</sub> chưa biết.') => heBan(cap, { gb: 'm = ?', id: 'd5' }),
   // ===== Bài tương tự =====

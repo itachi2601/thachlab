@@ -125,7 +125,7 @@ export const hinhL11b1 = {
   // Trang 5 · thử thách: M từ biên này sang biên kia
   tronTT: (cap = 'Q từ biên này sang biên kia: M quay bao nhiêu?') => tron({ g: 0, phi: false, R0: '10 cm', cap, id: 'tt' }),
   // Trang 6 · Dạng 3: đồ thị x–t xuất phát từ đáy
-  doThiD3: (cap = 'Đọc A, T, x(0) trên lưới.') => doThi({ A: 4, Tc: 1, phi: Math.PI, tMax: 1.75, dt: 0.25, lt: 0.5, cap, id: 'd3', nhanX: [4, 2, -2, -4], H: 62 }),
+  doThiD3: (cap = 'Đọc A, T, x(0) trên lưới.') => doThi({ A: 4, Tc: 1, phi: Math.PI, tMax: 1.75, dt: 0.25, lt: 0.5, cap, id: 'd3', nhanX: [4, 2, -2, -4], H: 48 }),
   // Trang 7 · Dạng 4: quỹ đạo thẳng 16 cm, t = 0 ở biên âm
   quyDao: (cap = `Lúc t = 0 vật ở biên âm. ${m('\\cos\\varphi=\\,?')}`) => {
     let b = defs('qd1');

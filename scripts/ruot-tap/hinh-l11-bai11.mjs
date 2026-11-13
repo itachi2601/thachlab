@@ -31,13 +31,13 @@ const chao = (x, y) => `<path d="M${x - 18},${y - 14} Q${x},${y + 10} ${x + 18},
 
 export const hinhL11b11 = {
   // Trang 1 · Dự đoán: vệ tinh địa tĩnh — chú thích chỉ tả cảnh, không nói sóng gì/đi qua cái gì
-  veTinh: (cap = 'Vệ tinh cao 36 000 km gửi hình xuống chảo thu trên mái nhà.') => {
+  veTinh: (cap = 'Vệ tinh cao 36 000 km; chảo thu trên mái nhà.') => {
     let b = defs('vt1');
     b += `<path d="M0,212 Q160,176 320,212" fill="#eef2fa" stroke="${INK}" stroke-width="2.4"/>`;
     b += `<rect x="190" y="164" width="56" height="34" fill="#fff" stroke="${INK}" stroke-width="2.4"/><path d="M184,166 L218,140 L252,166" fill="none" stroke="${INK}" stroke-width="2.4"/>`;
     b += chao(218, 132);
     b += veTinhHinh(84, 48);
-    b += luon(104, 66, 212, 116, 5, 7, RED, 2.6) + arr(200, 109, 212, 116, 'vt1', RED, '', 2.6);
+    b += ln(110, 64, 206, 114, GREY, 2.2, '5 6') + T(170, 82, '?', { size: 26, w: 700 }); // không vẽ sóng lượn: gợi đáp án C
     b += `<line x1="24" y1="50" x2="24" y2="184" stroke="${GREY}" stroke-width="2" stroke-dasharray="6 5" marker-start="url(#vt1)" marker-end="url(#vt1)"/>` + T(32, 150, '36 000 km', { size: 20 }) + T(32, 172, '(không đúng tỉ lệ)', { size: 17, c: GREY });
     b += T(84, 22, 'vệ tinh', { a: 'middle', size: 20 }) + T(268, 148, 'chảo', { a: 'middle', size: 20 });
     return wrap('0 0 320 216', b, cap, 'Vệ tinh và chảo thu');
