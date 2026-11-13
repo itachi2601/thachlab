@@ -187,7 +187,7 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-13 · Mở 37 worktree (~5 GB/cái) làm đầy đĩa, phiên chết hàng loạt → `df -h` trước khi mở; cần ≥ 6 GB × số phiên.
 - 2026-11-13 · App giới hạn 20 `SendMessage` tới phiên khác mỗi lượt thầy nhắn → HS ảo ghi lỗi từng bài ra file (`out/loi-hs-ao-*.md`), phiên chính gửi tin trỏ ngắn, xếp ≤20 phiên mỗi lượt.
 - 2026-11-13 · Agent HS ảo bị compact/giới hạn lượt giữa chừng mất chi tiết → dặn agent ghi lỗi vào file sau MỖI bài, không gom đến cuối.
-- 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → ký hiệu trong chú thích dùng chữ π của font thân, không gán font KaTeX bằng tay.
+- 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → Source Sans 3 nhúng KHÔNG có π (bỏ span thì ra Helvetica): ký hiệu Hy Lạp trong chú thích hình viết bằng KaTeX thật hoặc diễn đạt lại bằng chữ, rồi kiểm `pdffonts` quyển ghép.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
