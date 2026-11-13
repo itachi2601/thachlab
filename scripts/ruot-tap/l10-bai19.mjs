@@ -71,15 +71,14 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'Hành trang (KHTN 8)', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>${nw(`${m('1')} lít ${m('=1\\ \\mathrm{dm^3}=')} ${f(16)}&nbsp;${m('\\mathrm{m^3}')}`)} &nbsp;·&nbsp; ${nw(`${m('1\\ \\mathrm{cm^3}=1\\ \\mathrm{ml}=')} ${f(16)}&nbsp;${m('\\mathrm{m^3}')}`)}</div>
-<div>Khối lượng riêng ${nw(`${rho} = ${f(14)}`)} &nbsp;·&nbsp; áp suất chất lỏng ở độ sâu ${m('h')}: ${nw(`${m('p=')} ${f(14)}`)}</div>
+<div>Khối lượng riêng ${nw(`${rho} = <span class="fill" style="min-width:16mm;height:9mm"></span>`)} &nbsp;·&nbsp; áp suất chất lỏng ở độ sâu ${m('h')}: ${nw(`${m('p=')} ${f(14)}`)}</div>
 <div>Nước ${rn}, sâu ${m('2\\ \\mathrm m')}, ${g10}: ${nw(`${m('p=')} ${f(16)}&nbsp;Pa`)}</div></div>
 ${h3(5, 'II.1 · Lực cản của chất lưu', '1·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Chất lưu</b> = chất ${f(16)} và chất ${f(16)} (nước, dầu, không khí…).</div>
 <div>Vật chuyển động trong chất lưu luôn chịu lực cản. <b>Điểm đặt:</b> vẽ tại ${f(25)} của vật.</div>
 <div><b>Phương, chiều:</b> cùng phương, ${f(25)} chiều chuyển động.</div>
-<div><b>Độ lớn</b> phụ thuộc ${f(25)} và ${f(25)} của vật.</div>
-<div>Xoè tay chắn gió trên xe máy: bị đẩy ${ck}mạnh ${ck}nhẹ; nghiêng tay như lưỡi dao: ${ck}mạnh ${ck}nhẹ.</div></div>
+<div><b>Độ lớn</b> phụ thuộc hai yếu tố của vật: ${f(25)} và ${f(25)}</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -99,14 +98,14 @@ ${h3(1, 'Thí nghiệm: phễu giấy rơi', '2·1')}
 <div>Cột ${m('v^2/n')} gần như ${f(25)} ⇒ lực cản tăng gần theo ${f(12)}.</div></div></div></div>
 ${h3(2, 'II.2 · Vật rơi trong không khí: ba giai đoạn', '2·2')}
 <div class="fig-side" style="${fs(44)}"><div class="card" style="padding:1.2mm 3mm;margin:0">
-<div><b>GĐ 1</b> (rất ngắn): ${m('v')} nhỏ, lực cản gần bằng ${f(12)}; gần như nhanh dần đều, ${nw(`${m('a\\approx')} ${f(12)}`)}</div>
+<div><b>GĐ 1</b> (rất ngắn): ${m('v')} nhỏ, lực cản gần bằng ${f(12)}; gần như nhanh dần đều, ${nw(`${m('a\\approx')} ${f(12)}&nbsp;${m('\\mathrm{m/s^2}')}`)}</div>
 <div><b>GĐ 2:</b> ${m('v')} tăng, lực cản ${f(16)}, hợp lực ${f(16)} ⇒ vẫn nhanh dần nhưng gia tốc ${f(16)}</div>
 <div><b>GĐ 3:</b> lực cản ${f(12)} trọng lượng, hợp lực ${f(12)}: rơi ${f(16)} với <b>tốc độ giới hạn</b> ${m('v_{gh}')}</div>
 <div style="margin-top:.6mm">Ghi số 1, 2, 3 vào ba ô dưới đồ thị.</div></div>
 ${H.vt('Đường đặc: tốc độ của vật. Đường đứt: rơi tự do.')}</div>
 <div class="fig-side" style="${fs(34, 'margin-top:1.2mm')}"><div class="card" style="padding:1.2mm 3mm;margin:0">
 <div><b>Nhảy dù</b> (số liệu minh hoạ): chưa mở dù, sau khoảng ${nw('12 s')} tốc độ đạt cỡ ${nw('50 m/s')} rồi không tăng nữa.</div>
-<div>Mở dù: lực cản tăng vọt, ${ck}lớn hơn ${ck}nhỏ hơn trọng lượng ⇒ người ${f(25)} dần, tới khi cân bằng thì rơi đều cỡ ${nw(`${f(12)}&nbsp;m/s`)}</div>
+<div>Mở dù: lực cản tăng vọt, ${ck}lớn hơn ${ck}nhỏ hơn trọng lượng ⇒ người ${f(25)} dần, tới khi cân bằng thì rơi đều với tốc độ ${ck}lớn hơn ${ck}nhỏ hơn ${nw('50 m/s')}</div>
 <div>Dù càng rộng thì tốc độ giới hạn càng ${f(16)}</div></div>
 ${H.nhayDu('Chưa mở dù. Ảnh: Tony Danbury, Wikimedia Commons, CC BY 2.0.')}</div>
 ${h3(3, 'II.3 · Lực nâng của chất lưu', '2·3')}
@@ -177,7 +176,7 @@ ${h3(1, 'V · Đề bài', '5·1')}
 ${H.nhomLucKe('Cùng một khối nhôm.')}</div>
 ${h3(2, 'Phân tích đề')}
 <table><tr><th style="width:48mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
-<tr><td>“ngoài không khí lực kế chỉ 5,4 N”</td><td>${m('P=5{,}4\\ \\mathrm N')} → tìm khối lượng ${m('m=P/g')}</td></tr>
+<tr><td>“ngoài không khí lực kế chỉ ${nw('5,4 N')}”</td><td>${m('P=5{,}4\\ \\mathrm N')} → tìm khối lượng ${m('m=P/g')}</td></tr>
 <tr><td style="height:6.5mm">“nhôm 2700 kg/m³”</td><td></td></tr>
 <tr><td style="height:6.5mm">“chìm hoàn toàn” (dữ kiện ngầm)</td><td></td></tr>
 <tr><td style="height:6.5mm">“nước 1000 kg/m³”</td><td></td></tr>
@@ -202,7 +201,7 @@ const dang = [
     nd: `Hai lực ngược chiều ⇒ ${nw(`${m('F_{hl}=')} ${f(16)}`)}; gia tốc cùng hướng ${f(16)}; ngược chiều ${m('\\vec v')} ⇒ ${f(16)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 5, fig: H.bungDu('Hình không vẽ trọng lực.'), cot: 2 },
   { t: 'Dạng 3 · Khá · Lực kế khi nhúng vật vào chất lỏng: tìm khối lượng riêng chất lỏng',
     de: `Khối đồng đặc treo vào lực kế; ngoài không khí lực kế chỉ ${nw(m('8{,}9\\ \\mathrm N'))}. Nhúng chìm hoàn toàn vào một chất lỏng thì lực kế chỉ ${nw(m('8{,}1\\ \\mathrm N'))}. Khối lượng riêng của đồng ${nw(m('8900\\ \\mathrm{kg/m^3}'))}; ${g10}; bỏ qua lực đẩy của không khí.<br><b>a)</b> thể tích khối đồng<br><b>b)</b> lực đẩy Archimedes<br><b>c)</b> khối lượng riêng của chất lỏng; chất lỏng nặng hay nhẹ hơn nước (${rn})`,
-    nd: `${nw(`${m('V=')} ${f(14)}`)} (qua ${m('m=P/g')}); vật đứng yên ⇒ ${nw(`${m('T+F_A=')} ${f(12)}`)}; ${nw(`${m('\\rho=')} ${f(16)}`)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 22, fig: H.dongLong('Hình không ghi khối lượng riêng chất lỏng.'), cot: 2 },
+    nd: `${nw(`${m('V=')} <span class="fill" style="min-width:16mm;height:9mm"></span>`)} (qua ${m('m=P/g')}); vật đứng yên ⇒ ${nw(`${m('T+F_A=')} ${f(12)}`)}; ${nw(`${m('\\rho=')} <span class="fill" style="min-width:16mm;height:9mm"></span>`)}`, a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 21, fig: H.dongLong('Hình không ghi khối lượng riêng chất lỏng.'), cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột, ô đáp số cuối đúng dòng ý; mỗi dạng 2 bài; đáp số Python 13/11/2026.
