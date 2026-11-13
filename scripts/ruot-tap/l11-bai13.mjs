@@ -68,8 +68,8 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f(12)} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Sóng phản xạ', '1·4')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
-<div>Đầu dây <b>cố định</b> (buộc chặt): sóng phản xạ ${f(14)} pha với sóng tới.</div>
-<div>Đầu dây <b>tự do</b> (vòng nhẹ trượt trên cọc): sóng phản xạ ${f(14)} pha.</div>
+<div>Đầu dây <b>cố định</b> (buộc chặt): sóng phản xạ ${f(25)} pha với sóng tới.</div>
+<div>Đầu dây <b>tự do</b> (vòng nhẹ trượt trên cọc): sóng phản xạ ${f(25)} pha.</div>
 <div>Sóng phản xạ cùng ${f(20)}, cùng ${f(20)} với sóng tới.</div>
 <div><b>Sóng dừng</b>: sóng tổng hợp của hai sóng cùng biên độ, cùng bước sóng, truyền ${f(25)}.</div></div>
 ${H.phanXa()}</div>
@@ -99,19 +99,19 @@ ${h3(2, 'II.3 · Điều kiện để có sóng dừng', '2·2')}
 <tr><th>${f0} =</th><td></td><td></td></tr>
 <tr><th>Số bụng</th><td></td><td></td></tr>
 <tr><th>Số nút</th><td></td><td></td></tr></table>
-<div style="margin-top:.8mm"><b>Mẹo nhớ:</b> Cố Định: Nút – ${f(14)} – ${f(14)} · Tự Do: Bụng – ${f(14)} – ${f(14)}</div></div>
+<div style="margin-top:.8mm"><b>Mẹo nhớ:</b> đầu cố định luôn là ${f(26)}, đầu tự do luôn là ${f(26)}.</div></div>
 ${H.haiTH()}</div>
 ${h3(3, 'Làm nhanh', '2·3')}
-${box(cau(`<b>Câu 1.</b> Dây dài ${u('1{,}5', 'm')}, hai đầu cố định, có sóng dừng với 5 bó. Tính bước sóng.`, 2)
+${box(cau(`<b>Câu 1.</b> Dây dài ${u('1{,}5', 'm')}, hai đầu cố định, có sóng dừng với 5&nbsp;bó. Tính bước sóng.`, 2)
  + cau(`<b>Câu 2.</b> Dây dài ${u('0{,}4', 'm')}, một đầu cố định, một đầu tự do, ${u('v=8', 'm/s')}. Tần số nhỏ nhất để có sóng dừng?`, 3)
- + cau(`<b>Câu 3.</b> Dây hai đầu cố định có sóng dừng với 4 bó. Có bao nhiêu bụng, bao nhiêu nút (kể cả hai đầu)?`, 2))}
+ + cau(`<b>Câu 3.</b> Dây hai đầu cố định có sóng dừng với 4&nbsp;bó. Có bao nhiêu bụng, bao nhiêu nút (kể cả hai đầu)?`, 2))}
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
 ${head('ĐO BƯỚC SÓNG · ĐẦU TỰ DO · BIÊN ĐỘ · BẪY')}
 ${h3(1, 'II.4 · Đo bước sóng và tốc độ truyền sóng', '3·1')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>Hai đầu cố định, ${k} bó: ${nw(`${m('\\lambda=')} ${f(12)}`)} · ${nw(`${m('v=')} ${f(12)}`)}</div>
+<div>Hai đầu cố định, ${k} bó: ${nw(`${m('\\lambda=')} ${f(16)}`)} · ${nw(`${m('v=')} ${f(12)}`)}</div>
 <div><b>Làm:</b> dây ${u('l=0{,}80', 'm')}; tăng dần ${fz} tới khi dây rung rõ nét, đếm ${k}.</div>
 <table style="margin:.8mm 0"><tr><th>Số bó ${k}</th><td>2</td><td>3</td><td>4</td><td>5</td></tr>
 <tr><th>${fz} (Hz)</th><td>24,9</td><td>37,4</td><td>50,2</td><td>62,3</td></tr>
@@ -125,7 +125,7 @@ ${h3(2, `II.5 · Dây một đầu tự do: đo bằng ${m('\\lambda/4')}`, '3·
 <div><b>Làm:</b> cùng dây trên (${u('l=0{,}80', 'm')}, ${u('v\\approx20', 'm/s')}), tháo đầu B khỏi giá, gắn vào vòng nhẹ trượt trên cọc; quét tần số từ ${u('25', 'Hz')} xuống.</div>
 <div><b>Quan sát:</b> ở ${u('25{,}0', 'Hz')} mất sóng dừng; ở ${u('18{,}75', 'Hz')} dây rung rõ trở lại, đầu B vung mạnh nhất.</div>
 <div>Tần số nhỏ nhất: hai đầu cố định ${nw(`${f0} = ${f(14)} Hz`)} · một đầu tự do ${nw(`${f0} = ${f(14)} Hz`)}</div>
-${wl(`Vì sao ở ${nw('25 Hz')} không có sóng dừng, ở ${nw('18,75 Hz')} lại có?`, 2)}</div>
+${wl(`Vì sao ở ${nw('25&nbsp;Hz')} không có sóng dừng, ở ${nw('18,75&nbsp;Hz')} lại có?`, 2)}</div>
 ${h3(3, 'II.6 · Biên độ dao động của một điểm trên dây', '3·3')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>Cách nút gần nhất đoạn ${m('x')}: ${nw(`${m('A_M=')} ${f(30)}`)}</div>
@@ -167,14 +167,14 @@ const p5 = `<section class="page">
 ${head('GIẢI BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ · THỬ THÁCH')}
 ${h3(1, 'Giải bài toán mẫu', '5·1')}
 <div class="fig-side" style="${fs(46)}"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`a) ${L} khi ${k} nhỏ nhất; ${f0}:`, 3)}${wl(`b) ${L} ở 40 Hz; số bó ${k}; số nút:`, 3)}${wl(`c) ${m('l\\,/\\,(\\lambda/4)=')} … lẻ hay chẵn? Kết luận:`, 3)}${wl(`Kiểm tra: số bó × ${m('\\lambda/2')} có bằng ${l}?`, 1)}</div>${H.mauDay()}</div>
+${wl(`a) ${L} khi ${k} nhỏ nhất; ${f0}:`, 3)}${wl(`b) ${L} ở 40&nbsp;Hz; số bó ${k}; số nút:`, 3)}${wl(`c) ${m('l\\,/\\,(\\lambda/4)=')} … lẻ hay chẵn? Kết luận:`, 3)}${wl(`Kiểm tra: số bó × ${m('\\lambda/2')} có bằng ${l}?`, 1)}</div>${H.mauDay()}</div>
 ${h3(2, 'Điền bước còn thiếu: cùng cách làm, đổi số', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:.6mm 3mm"><div>Dây ${u('l=1{,}2', 'm')}, hai đầu cố định, ${u('v=24', 'm/s')}, ${u('f=30', 'Hz')}.</div>
 <div class="ln" style="height:7mm"><b>Bước 1:</b> ${nw(`${m('\\lambda=v/f=')} ${f(14)} m`)} &nbsp;·&nbsp; <b>Bước 2:</b> ${nw(`${m('k=2l/\\lambda=')} ${f(14)}`)}</div>
-<div class="ln" style="height:7mm"><b>Bước 3:</b> có sóng dừng không? ${f(16)} &nbsp;·&nbsp; số nút: ${f(14)}</div></div>
+<div class="ln" style="height:7mm"><b>Bước 3:</b> có sóng dừng không? ${f(25)} &nbsp;·&nbsp; số nút: ${f(14)}</div></div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
-${box(wl(`${m('\\bigstar')} Dây ${u('1{,}2', 'm')}, hai đầu cố định, có sóng dừng với 3 bó. Tính bước sóng.`, 2)
+${box(wl(`${m('\\bigstar')} Dây ${u('1{,}2', 'm')}, hai đầu cố định, có sóng dừng với 3&nbsp;bó. Tính bước sóng.`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Cũng dây đó, ${u('v=24', 'm/s')}. Tính tần số.`, 2)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Vẫn dây đó (${u('1{,}2', 'm')}, ${u('v=24', 'm/s')}) nhưng thả một đầu cho tự do, giữ ${u('f=30', 'Hz')}. Có sóng dừng không? Nếu không, hai tần số gần nhất cho sóng dừng là bao nhiêu?`, 3))}
 ${h3(5, 'VI · Mang về: điều em dễ quên nhất', '5·5')}
@@ -185,23 +185,23 @@ const a1 = 'a<sub>1</sub>', a2 = 'a<sub>2</sub>', b1 = 'b<sub>1</sub>', b2 = 'b<
 const dang = [
   { t: 'Dạng 1 · Dễ · Dây hai đầu cố định: tần số nhỏ nhất, số bó, số nút',
     de: `Dây AB dài ${u('l=0{,}6', 'm')}, hai đầu A, B cố định; ${u('v=24', 'm/s')}.<br><b>a)</b> bước sóng dài nhất (a<sub>1</sub>) và tần số nhỏ nhất (a<sub>2</sub>) để có sóng dừng<br><b>b)</b> cho ${u('f=60', 'Hz')}: có sóng dừng không (b<sub>1</sub>); nếu có, số bó (b<sub>2</sub>), số bụng (b<sub>3</sub>), số nút kể cả hai đầu (b<sub>4</sub>)`,
-    nd: `${L} dài nhất khi ${nw(`${m('k=')} ${f(10)}`)}; có sóng dừng khi ${nw(`${m('k=2l/\\lambda')} là số ${f(16)}`)}`,
+    nd: `${L} dài nhất khi ${nw(`${m('k=')} ${f(10)}`)}; có sóng dừng khi ${nw(`${m('k=2l/\\lambda')} là số ${f(25)}`)}`,
     a: [a1, a2, b1, b2, b3, b4], gi: 2, cot: 6 },
   { t: 'Dạng 2 · Trung bình · Dây một đầu cố định, một đầu tự do',
     de: `<div class="fig-side" style="grid-template-columns:1fr 30mm"><div>Dây AB dài ${u('l=0{,}9', 'm')}, đầu A cố định, đầu B gắn vòng nhẹ trượt trên cọc (đầu tự do); ${u('v=18', 'm/s')}.<br><b>a)</b> tần số nhỏ nhất để có sóng dừng<br><b>b)</b> ${u('f=30', 'Hz')}: có sóng dừng không<br><b>c)</b> ${u('f=45', 'Hz')}: có sóng dừng không (c<sub>1</sub>); số bụng (c<sub>2</sub>), số nút kể cả A, B (c<sub>3</sub>)</div>${H.d2Vong()}</div>`,
-    nd: `${nw(`${m('l\\,/\\,(\\lambda/4)')}`)} phải là số ${f(14)}; số bụng ${m('=')} số nút ${m('=')} ${f(12)}`,
+    nd: `${nw(`${m('l\\,/\\,(\\lambda/4)')}`)} phải là số ${f(25)}; số bụng ${m('=')} số nút ${m('=')} ${f(12)}`,
     a: ['a', 'b', c1, c2, c3], gi: 3, cot: 5 },
   { t: 'Dạng 3 · Trung bình · Từ số điểm đứng yên tìm bước sóng và tốc độ',
     de: `Dây dài ${u('l=1{,}5', 'm')}, hai đầu cố định, có sóng dừng với ${u('f=40', 'Hz')}. Ngoài hai đầu dây còn 4 điểm khác luôn đứng yên.<br><b>a)</b> số bó sóng<br><b>b)</b> bước sóng<br><b>c)</b> tốc độ truyền sóng`,
-    nd: `số nút kể cả hai đầu ${m('=')} ${f(10)} ${m('+2')}; ${nw(`${m('k=')} số nút ${f(10)}`)}; ${nw(`${m('\\lambda=2l/k')}`)}, ${nw(`${m('v=\\lambda f')}`)}`,
+    nd: `số nút kể cả hai đầu ${m('=')} ${f(12)} ${m('+2')}; ${nw(`${m('k=')} số nút ${f(12)}`)}; ${nw(`${m('\\lambda=2l/k')}`)}, ${nw(`${m('v=\\lambda f')}`)}`,
     a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 4 · Khó · Đổi tần số trên cùng một sợi dây',
-    de: `Dây AB dài ${u('l=1{,}5', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=42', 'Hz')} dây có 7 nút (kể cả hai đầu).<br><b>a)</b> tần số nhỏ nhất để có sóng dừng<br><b>b)</b> muốn có 5 nút (kể cả hai đầu) thì ${m('f_2')} bằng bao nhiêu<br><b>c)</b> tốc độ truyền sóng`,
-    nd: `cùng dây: ${nw(`${m('f=k f_0')}`)} nên ${fz} tỉ lệ với số ${f(14)}; ${nw(`${m('v=')} ${f(16)}`)}`,
+    de: `Dây AB dài ${u('l=1{,}5', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=42', 'Hz')} dây có 7&nbsp;nút (kể cả hai đầu).<br><b>a)</b> tần số nhỏ nhất để có sóng dừng<br><b>b)</b> muốn có 5&nbsp;nút (kể cả hai đầu) thì ${m('f_2')} bằng bao nhiêu<br><b>c)</b> tốc độ truyền sóng`,
+    nd: `cùng dây: ${nw(`${m('f=k f_0')}`)} nên ${fz} tỉ lệ với số ${f(25)}; ${nw(`${m('v=')} ${f(16)}`)}`,
     a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 5 · Khó · Biên độ của một điểm trên dây có sóng dừng',
-    de: `Dây AB dài ${u('90', 'cm')}, hai đầu cố định, có 3 bó sóng; biên độ tại bụng ${u('4', 'cm')}; M cách A ${u('5', 'cm')}.<br><b>a)</b> bước sóng &nbsp;·&nbsp; <b>b)</b> biên độ dao động của M<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('2\\sqrt3', 'cm')}<br><b>d)</b> bề rộng vùng dao động của một bụng`,
-    nd: `${nw(`${m('A_M=A_b\\left|\\sin\\dfrac{2\\pi d}{\\lambda}\\right|')}`)}, ${m('d')} đo từ ${f(16)}; bề rộng bụng ${m('=')} ${f(12)} ${m('A_b')}`,
+    de: `Dây AB dài ${u('90', 'cm')}, hai đầu cố định, có 3&nbsp;bó sóng; biên độ tại bụng ${u('4', 'cm')}; M cách A ${u('5', 'cm')}.<br><b>a)</b> bước sóng &nbsp;·&nbsp; <b>b)</b> biên độ dao động của M<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('2\\sqrt3', 'cm')}<br><b>d)</b> bề rộng vùng dao động của một bụng`,
+    nd: `${nw(`${m('A_M=A_b\\left|\\sin\\dfrac{2\\pi d}{\\lambda}\\right|')}`)}, ${m('d')} đo từ ${f(25)}; bề rộng bụng ${m('=')} ${f(12)} ${m('A_b')}`,
     a: ['a', 'b', 'c', 'd'], gi: 4, fig: H.d5Day() },
   { t: 'Dạng 6 · Khó · Hai tần số liên tiếp cùng cho sóng dừng',
     de: `Dây AB dài ${u('l=0{,}75', 'm')}, hai đầu cố định. Hai tần số liên tiếp cho sóng dừng là ${u('150', 'Hz')} và ${u('200', 'Hz')}.<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tốc độ truyền sóng<br><b>c)</b> với ${u('f=200', 'Hz')}: số bó (c<sub>1</sub>), số nút kể cả hai đầu (c<sub>2</sub>)`,
@@ -230,16 +230,16 @@ const tuongTu = {
     { t: 'Dạng 3 · Bài 1', de: `Dây dài ${u('0{,}9', 'm')}, hai đầu cố định, ${u('f=50', 'Hz')}; ngoài hai đầu còn 2 điểm khác luôn đứng yên.<br><b>a)</b> số bó · <b>b)</b> bước sóng · <b>c)</b> tốc độ truyền sóng`, o: ['a', 'b', 'c'], ow: 18 },
     { t: 'Dạng 3 · Bài 2', de: `Dây hai đầu cố định đặt cạnh thước như hình bên, ${u('f=25', 'Hz')}.<br><b>a)</b> số bó, số nút (kể cả hai đầu)<br><b>b)</b> bước sóng · <b>c)</b> tốc độ`, fig: H.tt3Hinh(), fw: 42, o: [a1, a2, 'b', 'c'], ow: 16 },
   ], [
-    { t: 'Dạng 4 · Bài 1', de: `Dây dài ${u('1{,}2', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=60', 'Hz')} dây có 5 nút (kể cả hai đầu).<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tần số để dây có 3 nút<br><b>c)</b> tốc độ truyền sóng`, o: ['a', 'b', 'c'], ow: 18 },
-    { t: 'Dạng 4 · Bài 2', de: `Dây dài ${u('0{,}8', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=30', 'Hz')} dây có 4 bụng.<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tần số để dây có 6 nút<br><b>c)</b> tốc độ truyền sóng`, o: ['a', 'b', 'c'], ow: 18 },
-    { t: 'Dạng 5 · Bài 1', de: `Dây dài ${u('120', 'cm')}, hai đầu cố định, có 4 bó; biên độ bụng ${u('6', 'cm')}; M cách đầu A ${u('5', 'cm')}.<br><b>a)</b> bước sóng · <b>b)</b> biên độ của M<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('3\\sqrt2', 'cm')}<br><b>d)</b> bề rộng vùng dao động của bụng`, o: ['a', 'b', 'c', 'd'], ow: 18 },
-    { t: 'Dạng 5 · Bài 2', de: `Dây dài ${u('60', 'cm')}, hai đầu cố định, có 2 bó; <b>sóng tới</b> có biên độ ${u('1{,}5', 'cm')}; N cách đầu A ${u('10', 'cm')}.<br><b>a)</b> bước sóng, biên độ bụng<br><b>b)</b> biên độ của N<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('1{,}5', 'cm')}<br><b>d)</b> bề rộng vùng dao động của bụng`, o: [a1, a2, 'b', 'c', 'd'], ow: 16 },
+    { t: 'Dạng 4 · Bài 1', de: `Dây dài ${u('1{,}2', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=60', 'Hz')} dây có 5&nbsp;nút (kể cả hai đầu).<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tần số để dây có 3&nbsp;nút<br><b>c)</b> tốc độ truyền sóng`, o: ['a', 'b', 'c'], ow: 18 },
+    { t: 'Dạng 4 · Bài 2', de: `Dây dài ${u('0{,}8', 'm')}, hai đầu cố định, ${v} không đổi. Với ${u('f_1=30', 'Hz')} dây có 4&nbsp;bụng.<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tần số để dây có 6&nbsp;nút<br><b>c)</b> tốc độ truyền sóng`, o: ['a', 'b', 'c'], ow: 18 },
+    { t: 'Dạng 5 · Bài 1', de: `Dây dài ${u('120', 'cm')}, hai đầu cố định, có 4&nbsp;bó; biên độ bụng ${u('6', 'cm')}; M cách đầu A ${u('5', 'cm')}.<br><b>a)</b> bước sóng · <b>b)</b> biên độ của M<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('3\\sqrt2', 'cm')}<br><b>d)</b> bề rộng vùng dao động của bụng`, o: ['a', 'b', 'c', 'd'], ow: 18 },
+    { t: 'Dạng 5 · Bài 2', de: `Dây dài ${u('60', 'cm')}, hai đầu cố định, có 2&nbsp;bó; <b>sóng tới</b> có biên độ ${u('1{,}5', 'cm')}; N cách đầu A ${u('10', 'cm')}.<br><b>a)</b> bước sóng, biên độ bụng<br><b>b)</b> biên độ của N<br><b>c)</b> khoảng cách nhỏ nhất từ A tới điểm có biên độ ${u('1{,}5', 'cm')}<br><b>d)</b> bề rộng vùng dao động của bụng`, o: [a1, a2, 'b', 'c', 'd'], ow: 16 },
     { t: 'Dạng 6 · Bài 1', de: `Dây dài ${u('1{,}0', 'm')}, hai đầu cố định; hai tần số liên tiếp cho sóng dừng là ${u('120', 'Hz')} và ${u('150', 'Hz')}.<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tốc độ truyền sóng<br><b>c)</b> với ${u('150', 'Hz')}: số bó, số nút (kể cả hai đầu)`, o: ['a', 'b', c1, c2], ow: 18 },
     { t: 'Dạng 6 · Bài 2', de: `Dây dài ${u('0{,}6', 'm')}, hai đầu cố định; hai tần số liên tiếp cho sóng dừng là ${u('84', 'Hz')} và ${u('105', 'Hz')}.<br><b>a)</b> tần số nhỏ nhất · <b>b)</b> tốc độ truyền sóng<br><b>c)</b> với ${u('84', 'Hz')}: số bó, số nút (kể cả hai đầu)`, o: ['a', 'b', c1, c2], ow: 18 },
   ]],
   dap: [
-    `D1·1: ${a1}) 1,6 m · ${a2}) 20 Hz · ${b1}) 4 bó · ${b2}) 5 nút &nbsp;|&nbsp; D1·2: a) không (${m('k\\approx2{,}67')}) · ${b1}) 3 bó · ${b2}) 4 nút &nbsp;|&nbsp; D2·1: a) 5 Hz · b) không (${m('l/(\\lambda/4)=4')}, chẵn) · ${c1}) 3 bụng · ${c2}) 3 nút &nbsp;|&nbsp; D2·2: a) 5 Hz · ${b1}) 4 bụng · ${b2}) 4 nút · c) 25 Hz &nbsp;|&nbsp; D3·1: a) 3 bó · b) 0,6 m · c) 30 m/s &nbsp;|&nbsp; D3·2: ${a1}) 4 bó · ${a2}) 5 nút · b) 0,6 m · c) 15 m/s`,
-    `D4·1: a) 15 Hz · b) 30 Hz · c) 36 m/s &nbsp;|&nbsp; D4·2: a) 7,5 Hz · b) 37,5 Hz · c) 12 m/s &nbsp;|&nbsp; D5·1: a) 60 cm · b) 3 cm · c) 7,5 cm · d) 12 cm &nbsp;|&nbsp; D5·2: ${a1}) 60 cm · ${a2}) 3 cm · b) ${m('1{,}5\\sqrt3\\approx2{,}60')} cm · c) 5 cm · d) 6 cm &nbsp;|&nbsp; D6·1: a) 30 Hz · b) 60 m/s · ${c1}) 5 bó · ${c2}) 6 nút &nbsp;|&nbsp; D6·2: a) 21 Hz · b) 25,2 m/s · ${c1}) 4 bó · ${c2}) 5 nút`,
+    `D1·1: ${a1}) 1,6&nbsp;m · ${a2}) 20&nbsp;Hz · ${b1}) 4&nbsp;bó · ${b2}) 5&nbsp;nút &nbsp;|&nbsp; D1·2: a) không (${m('k\\approx2{,}67')}) · ${b1}) 3&nbsp;bó · ${b2}) 4&nbsp;nút &nbsp;|&nbsp; D2·1: a) 5&nbsp;Hz · b) không (${m('l/(\\lambda/4)=4')}, chẵn) · ${c1}) 3&nbsp;bụng · ${c2}) 3&nbsp;nút &nbsp;|&nbsp; D2·2: a) 5&nbsp;Hz · ${b1}) 4&nbsp;bụng · ${b2}) 4&nbsp;nút · c) 25&nbsp;Hz &nbsp;|&nbsp; D3·1: a) 3&nbsp;bó · b) 0,6&nbsp;m · c) 30&nbsp;m/s &nbsp;|&nbsp; D3·2: ${a1}) 4&nbsp;bó · ${a2}) 5&nbsp;nút · b) 0,6&nbsp;m · c) 15&nbsp;m/s`,
+    `D4·1: a) 15&nbsp;Hz · b) 30&nbsp;Hz · c) 36&nbsp;m/s &nbsp;|&nbsp; D4·2: a) 7,5&nbsp;Hz · b) 37,5&nbsp;Hz · c) 12&nbsp;m/s &nbsp;|&nbsp; D5·1: a) 60&nbsp;cm · b) 3&nbsp;cm · c) 7,5&nbsp;cm · d) 12&nbsp;cm &nbsp;|&nbsp; D5·2: ${a1}) 60&nbsp;cm · ${a2}) 3&nbsp;cm · b) ${m('1{,}5\\sqrt3\\approx2{,}60')}&nbsp;cm · c) 5&nbsp;cm · d) 6&nbsp;cm &nbsp;|&nbsp; D6·1: a) 30&nbsp;Hz · b) 60&nbsp;m/s · ${c1}) 5&nbsp;bó · ${c2}) 6&nbsp;nút &nbsp;|&nbsp; D6·2: a) 21&nbsp;Hz · b) 25,2&nbsp;m/s · ${c1}) 4&nbsp;bó · ${c2}) 5&nbsp;nút`,
   ],
 };
 
