@@ -74,8 +74,7 @@ ${h3(5, 'II.1 · Moment lực', '1·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Moment lực đặc trưng cho tác dụng ${f(25)} của lực quanh một trục.</div>
 <div style="margin:.6mm 0">${m('M=')} ${fx()} · ${fx()} &nbsp;&nbsp; đơn vị của ${m('M')}: ${f(16)}</div>
-<div><b>Cánh tay đòn</b> ${m('d')} = khoảng cách từ ${f(25)} tới ${f(25)} của lực, đo ${f(25)}.</div>
-<div>Mở bài: Minh ${nw(`${m('M=')} ${fx()} N·m`)}; anh Tuấn ${nw(`${m('M=')} ${fx()} N·m`)}. Nhổ đinh cần khoảng ${u('40', 'N\\cdot m')}: người nhổ được là ${f(25)}</div></div>
+<div><b>Cánh tay đòn</b> ${m('d')} = khoảng cách từ ${f(25)} tới ${f(25)} của lực, đo ${f(25)}.</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -97,7 +96,7 @@ ${h3(3, 'II.2 · Quy tắc moment', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Áp dụng cho vật có ${f(30)}.</div>
 <div>Vật cân bằng khi tổng moment làm quay ${f(25)} chiều kim đồng hồ bằng tổng moment làm quay ${f(25)} chiều kim đồng hồ:</div>
-<div style="margin:.6mm 0">${m("M_1+M_2+\\dots=")} ${f(30)}</div></div>
+<div style="margin:.6mm 0">${m('M_1+M_2+\\dots')} <span class="hint">(độ lớn, cùng làm quay chiều kim)</span> = ${f(30)}</div></div>
 ${h3(4, 'Thí nghiệm: thước có trục quay ở giữa', '2·4')}
 <div class="fig-side" style="${fs(48)}"><div>
 <table class="tbl-ct"><tr><th>${m('d_2\\ (\\mathrm{cm})')}</th><th>${m('F_2\\ (\\mathrm N)')}</th><th>${m('F_2 d_2\\ (\\mathrm{N\\cdot cm})')}</th></tr>
@@ -117,9 +116,9 @@ const p3 = `<section class="page">
 ${head('CÂN BẰNG CỦA VẬT RẮN · NGẪU LỰC · BA CÁI BẪY')}
 ${h3(1, 'II.3 · Điều kiện cân bằng của vật rắn', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Không tịnh tiến: ${f(25)} ${m('=\\vec 0')} &nbsp;·&nbsp; Không quay: ${f(25)} ${m('=0')} đối với điểm ${f(25)}</div>
-<div>Chiều quay chọn làm dương: moment mang dấu ${fx(8)}; chiều kia mang dấu ${fx(8)}</div>
-<div><b>Mẹo chọn trục:</b> đặt trục ở chỗ có lực ${f(25)}, vì lực đó có ${nw(`${m('d=')} ${fx(8)}`)} nên biến khỏi phương trình moment.</div>
+<div>Không <b>tịnh tiến</b> <span class="hint">(mọi điểm dời như nhau)</span>: ${f(25)} ${m('=\\vec 0')} &nbsp;·&nbsp; Không quay: ${f(25)} ${m('=0')} đối với điểm ${f(25)}</div>
+<div>Chiều quay chọn làm dương: moment mang dấu ${fx(12)}; chiều kia mang dấu ${fx(12)}</div>
+<div><b>Mẹo chọn trục:</b> đặt trục ở chỗ có lực ${f(25)}, vì lực đó có ${nw(`${m('d=')} ${fx(12)}`)} nên biến khỏi phương trình moment.</div>
 <div style="margin-top:.6mm"><b>Thử:</b> ván đồng chất dài ${u('2', 'm')}, ${nw(m('P=200\\ \\mathrm N'))}, hai đầu gác lên hai bờ mương. Trục qua bờ trái: lực bờ phải ${nw(`${m('N_2=')} ${fx()} N`)}; tổng lực: lực bờ trái ${nw(`${m('N_1=')} ${fx()} N`)}</div></div>
 ${h3(2, 'II.4 · Ngẫu lực', '3·2')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
@@ -169,6 +168,7 @@ ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Lực ${u('15', 'N')} vuông góc tay quay, cách trục ${u('0{,}2', 'm')}. Moment?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Lực ${u('40', 'N')} đặt ở mép cửa cách bản lề ${u('0{,}9', 'm')}, hợp với mặt cửa góc ${m('60^\\circ')}. Moment?`, 2)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Thanh nhẹ dài ${u('1', 'm')} kê trên hai giá ở hai đầu ${m('A')}, ${m('B')}; treo vật ${u('300', 'N')} cách ${m('A')} ${u('0{,}4', 'm')}. Lực mỗi giá?`, 3))}${H.haiGia()}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.6mm 3mm"><b>Quay lại búa tr.97:</b> Minh ${nw(`${m('M=')} ${fx()} N·m`)}; Tuấn ${nw(`${m('M=')} ${fx()} N·m`)}; cần ${u('40', 'N\\cdot m')} → nhổ được: ${f(25)}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '5·3')}
 ${box(`${tb('1. Moment lực là gì? Công thức, đơn vị.')}${lines(2)}
 ${tb('2. Cánh tay đòn đo từ đâu tới đâu?')}${lines(1)}
@@ -177,7 +177,7 @@ ${tb('4. Hai điều kiện cân bằng của vật rắn?')}${lines(1)}
 ${tb('5. Ngẫu lực là gì? Gây ra chuyển động gì?')}${lines(1)}
 ${tb('6. Moment ngẫu lực tính thế nào? Có phụ thuộc trục không?')}${lines(1)}`)}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
-${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
+${box(wl('1.', 2) + wl('2.', 1) + wl('3.', 1))}
 ${foot(5)}</section>`;
 
 const dang = [
@@ -224,9 +224,9 @@ const tuongTu = {
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Thanh đồng chất ${m('AB')} dài ${u('2{,}0', 'm')}, trọng lượng ${u('60', 'N')}; treo vật ${u('90', 'N')} ở đầu ${m('A')}. Thanh nằm ngang trên giá đỡ nhọn ${m('O')}.<br><b>a)</b> khoảng cách ${m('OA')}<br><b>b)</b> lực giá đỡ tác dụng lên thanh`, o: ['a', 'b'] },
     { t: 'Dạng 4 · Bài 2', de: `Đòn gánh nhẹ dài ${u('1{,}5', 'm')}; đầu ${m('A')} treo thúng ${u('300', 'N')}, đầu ${m('B')} treo thúng ${u('200', 'N')}. Đòn gánh nằm ngang trên vai.<br><b>a)</b> vai đặt cách ${m('A')} bao nhiêu<br><b>b)</b> lực vai đỡ đòn gánh`, o: ['a', 'b'] },
-    { t: 'Dạng 5 · Bài 1', de: `Thanh đồng chất ${m('AB')} dài ${u('1{,}0', 'm')}, trọng lượng ${u('30', 'N')}, nằm ngang; đầu ${m('A')} gắn bản lề vào tường, dây buộc ở đầu ${m('B')} lên tường phía trên, hợp với thanh góc ${m('30^\\circ')}.<br><b>a)</b> cánh tay đòn của lực căng đối với ${m('A')}<br><b>b)</b> lực căng dây<br><b>c)</b> thành phần thẳng đứng của lực bản lề: độ lớn, hướng`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'] },
-    { t: 'Dạng 5 · Bài 2', de: `Thanh đồng chất ${m('AB')} dài ${u('1{,}2', 'm')}, trọng lượng ${u('20', 'N')}, nằm ngang, đầu ${m('A')} gắn bản lề; đầu ${m('B')} treo đèn ${u('40', 'N')} và buộc dây lên tường, dây hợp với thanh góc ${m('45^\\circ')}.<br><b>a)</b> cánh tay đòn của lực căng đối với ${m('A')}<br><b>b)</b> lực căng dây<br><b>c)</b> thành phần thẳng đứng của lực bản lề: độ lớn, hướng`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'] },
-    nhap(10),
+    { t: 'Dạng 5 · Bài 1', de: `Thanh đồng chất ${m('AB')} dài ${u('1{,}0', 'm')}, trọng lượng ${u('30', 'N')}, nằm ngang; đầu ${m('A')} gắn bản lề vào tường, dây buộc ở đầu ${m('B')} lên tường phía trên, hợp với thanh góc ${m('30^\\circ')}.<br><b>a)</b> cánh tay đòn của lực căng đối với ${m('A')}<br><b>b)</b> lực căng dây<br><b>c)</b> thành phần thẳng đứng của lực bản lề: độ lớn, hướng`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], fig: H.banLeTT(30), fw: 34 },
+    { t: 'Dạng 5 · Bài 2', de: `Thanh đồng chất ${m('AB')} dài ${u('1{,}2', 'm')}, trọng lượng ${u('20', 'N')}, nằm ngang, đầu ${m('A')} gắn bản lề; đầu ${m('B')} treo đèn ${u('40', 'N')} và buộc dây lên tường, dây hợp với thanh góc ${m('45^\\circ')}.<br><b>a)</b> cánh tay đòn của lực căng đối với ${m('A')}<br><b>b)</b> lực căng dây<br><b>c)</b> thành phần thẳng đứng của lực bản lề: độ lớn, hướng`, o: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], fig: H.banLeTT(45, true), fw: 30 },
+    nhap(8),
   ]],
   dap: [
     `D1·1: a) 10 N·m · b) 50 N &nbsp;|&nbsp; D1·2: a) 100 N · b) 1,5 m &nbsp;|&nbsp; D2·1: a) 0,40 m · b) 20 N·m · c) 25 N &nbsp;|&nbsp; D2·2: a) 0,260 m · b) 15,6 N·m · c) 69,3 N &nbsp;|&nbsp; D3·1: a) 0 · b) 0,20 N·m · c) 7,5 N &nbsp;|&nbsp; D3·2: a) 0 · b) 30 N·m · c) 120 N`,
