@@ -48,7 +48,8 @@ const nem = (o) => {
   b += `<polyline points="${pts.join(' ')}" fill="none" stroke="${INK}" stroke-width="2.4" stroke-dasharray="6 4"/>`;
   if (can) b += (can.tuong ? `<rect x="${f1(X(can.x) - 5)}" y="${f1(Y(can.H))}" width="10" height="${f1(Y(0) - Y(can.H))}" fill="#eef2fa" stroke="${INK}" stroke-width="2.4"/>`
       : ln(X(can.x), Y(0), X(can.x), Y(can.H) + 16, INK, 5) + `<circle cx="${f1(X(can.x))}" cy="${f1(Y(can.H) + 10)}" r="10" fill="#fff" stroke="${INK}" stroke-width="2.4"/>`)
-    + (can.ten ? T(X(can.x) - 12, Y(can.H * 0.45), can.ten, { size: 20, a: 'end' }) : '');
+    + (can.ten ? T(X(can.x) - 12, Y(can.H * (can.d ? 0.7 : 0.45)), can.ten, { size: 20, a: 'end' }) : '')
+    + (can.d ? arr(X(0), Y(0) - 10, X(can.x) - 6, Y(0) - 10, id + 'c', GREY, '5 4', 2) + T((X(0) + X(can.x)) / 2, Y(0) - 16, can.d, { a: 'middle', w: 700 }) : '');
   if (dau) b += vat(X(0), Y(h));
   // vận tốc ném (đỏ) và hai thành phần (xanh đứt)
   const k = (comps ? 80 : 52) / v, ex = X(0) + vx * k, ey = Y(h) - vy * k;
@@ -150,7 +151,7 @@ export const hinhL10b12 = {
   },
   // ===== Bài tương tự =====
   ttTuong: (cap = '') =>
-    nem({ h: 11.25, v: 6, lb: { h: 'h', L: '9 m' }, can: { x: 6, H: 5, ten: '5 m', tuong: true }, id: 'tw', cap, alt: 'Ném ngang qua bức tường', Hh: 150, W: 300, mt: 30 }),
+    nem({ h: 11.25, v: 6, lb: { h: 'h', L: '9 m' }, can: { x: 6, H: 5, ten: '5 m', tuong: true, d: '6 m' }, id: 'tw', cap, alt: 'Ném ngang qua bức tường', Hh: 150, W: 300, mt: 30 }),
   ttMai: (cap = '') =>
     nem({ h: 25, v: 20, a: 30, lb: { h: 'h', L: 'L = ?', a: '30°' }, id: 'tm', cap, alt: 'Ném xiên từ mái nhà', Hh: 150, W: 300, mt: 40 }),
 };

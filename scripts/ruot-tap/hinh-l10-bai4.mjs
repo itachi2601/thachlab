@@ -120,13 +120,13 @@ export const hinhL10b4 = {
   // Bài tập mẫu D3: hai đoạn vuông góc 900 m Đông, 1200 m Bắc (tỉ lệ 0,07 đơn vị/m)
   d3VuongGoc: (cap = 'Độ dịch chuyển là cạnh nào?') => {
     let b = defs('d3a') + defs('d3b');
-    b += arr(70, 110, 129, 110, 'd3a', BLUE, '7 5', 2.8) + arr(133, 110, 133, 30, 'd3a', BLUE, '7 5', 2.8);
-    b += arr(70, 110, 131, 32, 'd3b', RED) + T(86, 66, '?', { c: RED, w: 700, size: 24 });
-    b += cung(70, 110, 30, 0, 53) + T(104, 104, gk('α'));
-    b += T(100, 132, '900 m', { a: 'middle' }) + T(141, 76, '1200 m');
-    b += T(60, 116, 'Nhà', { a: 'end', w: 700 }) + T(133, 20, 'Trường', { a: 'middle', w: 700 });
-    b += laBan(250, 110, 'd3c');
-    return wrap('0 0 300 138', b, cap, 'Đi Đông rồi rẽ Bắc');
+    b += arr(70, 82, 113, 82, 'd3a', BLUE, '6 4', 1.8) + arr(117, 82, 117, 25, 'd3a', BLUE, '6 4', 1.8);
+    b += arr(70, 82, 114, 28, 'd3b', RED, '', 2.2) + T(78, 52, '?', { c: RED, w: 700, size: 24 });
+    b += cung(70, 82, 26, 0, 51) + T(100, 77, gk('α'));
+    b += T(92, 104, '900 m', { a: 'middle' }) + T(126, 58, '1200 m');
+    b += T(60, 88, 'Nhà', { a: 'end', w: 700 }) + T(118, 18, 'Trường', { a: 'middle', w: 700 });
+    b += laBan(240, 84, 'd3c');
+    return wrap('0 0 300 108', b, cap, 'Đi Đông rồi rẽ Bắc');
   },
   // Bài tập mẫu D4: trục thời gian có đoạn nghỉ
   d4ThoiGian: (cap = 'Đoạn nghỉ có tính vào t không?') => {
