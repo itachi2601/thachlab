@@ -88,7 +88,7 @@ ${h3(1, 'II.2 · Dụng cụ và bố trí', '2·1')}
 <tr><td style="height:9mm">Thước</td><td>đo ${s_}</td><td>1 mm</td></tr>
 <tr><td style="height:9mm">Cổng quang + đồng hồ hiện số</td><td>đo ${t_}</td><td>0,001 s</td></tr></table>
 <div class="hint" style="margin-top:.6mm">Cổng quang: cảm biến ghi thời điểm vật chắn tia sáng. Sai số dụng cụ lấy bằng một độ chia.</div>
-<div style="margin-top:.6mm">${nw(`${m('\\Delta s=')} ${f(14)} m`)} &nbsp;${nw(`${m('\\Delta t_{\\mathrm{dc}}=')} ${f(14)} s`)}</div></div>
+<div style="margin-top:.6mm">${nw(`${m('\\Delta s=')} ${f(14)} m`)} &nbsp;${nw(`${m('\\Delta t_{\\mathrm{dc}}=')} ${f(18)} s`)}</div></div>
 ${H.boTri('Bố trí thí nghiệm.')}</div>
 ${h3(2, 'Thứ tự thao tác: điền số 1–4', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
@@ -96,7 +96,7 @@ ${buoc.map((x) => `<div class="trap"><b>${f(6)}</b><span>${x}</span></div>`).joi
 <div style="margin-top:.8mm">Giá đỡ phải thẳng đứng; kiểm bằng ${f(26)}. Mép dưới bi ở ngay ${f(24)} thì ${t_} mới là thời gian rơi hết ${s_}.</div></div>
 ${h3(3, 'Vì sao không bấm tay?', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">Người bấm trễ cỡ ${nw(m('0{,}1\\ \\mathrm s'))}. Cả lần rơi từ ${S('0{,}500')} chỉ khoảng ${Ts('0{,}32')}: độ trễ chiếm ${nw(`${f(10)} %`)}. Nếu vật rơi ${Ts('3')} thì chiếm ${nw(`${f(10)} %`)}.</div>
-${h3(5, 'Làm nhanh', '2·4')}
+${h3(4, 'Làm nhanh', '2·4')}
 ${box(cau(`Thả bi từ ${S('0{,}350')}; đồng hồ ghi ${Ts('0{,}267')} (một lần đo). Gia tốc rơi tự do tính được là bao nhiêu?`, 1))}
 ${h3(5, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '2·5')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
@@ -132,9 +132,9 @@ ${head('BẢNG SỐ LIỆU · XỬ LÍ SAI SỐ')}
 ${h3(1, `II.4 · Số liệu nhóm em: ${nw(m('s=0{,}500\\ \\mathrm m'))}, 5 lần thả`, '4·1')}
 <div class="two"><div>${bangT}</div><div>
 <div class="card soft" style="padding:1.2mm 3mm">
-<div>${tb} ${nw(m('='))} ${f(20)} s</div>
-<div style="margin-top:.8mm">${nw(`${m('\\overline{\\Delta t}=')} ${f(16)} s`)}</div>
-<div style="margin-top:.8mm">${nw(`${dt} ${m('=\\overline{\\Delta t}+\\Delta t_{\\mathrm{dc}}=')} ${f(14)} s`)}</div></div>
+<div>${tb} ${nw(m('='))} ${f(24)} s</div>
+<div style="margin-top:.8mm">${nw(`${m('\\overline{\\Delta t}=')} ${f(20)} s`)}</div>
+<div style="margin-top:.8mm">${nw(`${dt} ${m('=\\overline{\\Delta t}+\\Delta t_{\\mathrm{dc}}=')} ${f(18)} s`)}</div></div>
 <div class="hint" style="margin-top:.8mm">${dcs}</div></div></div>
 ${h3(2, 'Tính g và sai số', '4·2')}
 <div class="card" style="padding:1.2mm 3mm">
