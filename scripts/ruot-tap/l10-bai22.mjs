@@ -80,7 +80,7 @@ ${h3(5, 'Làm nhanh', '1·5')}
 ${box(cau(`${m('F_1=1{,}5')} N và ${m('F_2=2{,}0')} N đồng quy, hai dây vuông góc. Hợp lực ${Ft} có độ lớn bao nhiêu?`, 1))}
 ${foot(1)}</section>`;
 
-const bangDc = (rows) => `<table><tr><th style="width:38mm">Dụng cụ</th><th>Để làm gì · độ chia</th></tr>${rows.map((x) => `<tr><td style="height:14mm">${x}</td><td></td></tr>`).join('')}</table>`;
+const bangDc = (rows) => `<table><tr><th style="width:38mm">Dụng cụ</th><th>Để làm gì · độ chia</th></tr>${rows.map((x) => `<tr><td style="height:15mm">${x}</td><td></td></tr>`).join('')}</table>`;
 const p2 = `<section class="page">
 ${head('DỤNG CỤ · BỐ TRÍ · LỰC CÂN BẰNG')}
 ${h3(1, 'II.1 · Dụng cụ và bố trí', '2·1')}
