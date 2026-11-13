@@ -129,7 +129,7 @@ export const hinhL10b18 = {
     return wrap('0 0 320 132', b, cap, 'Hộp kê trên hai bút chì');
   },
   // Trang 3 · thí nghiệm nâng ván
-  nangVan: (cap = 'Nâng dần một đầu ván dài L = 1,00 m.') => doc({ cap, id: 'nv', h: true, tach: true, N: true, ms: true, chieu: '', nhanL: 'L', P: true }),
+  nangVan: (cap = 'Nâng dần một đầu ván dài <span class="nw"><i>L</i> = 1,00 m</span>.') => doc({ cap, id: 'nv', h: true, tach: true, N: true, ms: true, chieu: '', nhanL: 'L', P: true }),
   // Trang 3 · ảnh thật
   gaiLop: (cap = 'Gai lốp làm ma sát với đường tăng hay giảm?') => {
     const f = [resolve(HERE, '../../book/assets/anh-that/gai-lop-xe.jpg'), '/Users/MAC/Projects/thachlab/book/assets/anh-that/gai-lop-xe.jpg'].find(existsSync);

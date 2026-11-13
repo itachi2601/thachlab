@@ -95,7 +95,7 @@ ${h3(1, 'II.2 · Chu kì, tần số, tần số góc', '2·1')}
 ${h3(2, 'II.3 · Pha ban đầu', '2·2')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Pha ${m('\\omega t+\\varphi')} cho biết ${f(25)} của vật lúc ${m('t')}.</div>
-<div>${ph} là pha lúc ${f(12)}; ${nw(`${ph} nằm trong ${f(16)}`)}; phụ thuộc cách kích thích và cách chọn ${f(25)}.</div>
+<div>${ph} là pha lúc ${f(12)}; ${ph} nằm trong ${f(25)}; phụ thuộc cách kích thích và cách chọn ${f(25)}.</div>
 <div>Trên vòng tròn: ${ph} là góc có hướng từ trục Ox tới ${f(25)} lúc ${t0}; dương nếu quay ${f(30)}.</div>
 <div><b>Mẹo chiều:</b> tăng ${m('t')} một chút; ${x} giảm thì đi về phía âm, ${x} tăng thì đi về phía dương.</div>
 <table style="margin-top:.8mm"><tr><th>Lúc ${t0}</th><th style="width:22mm">${ph}</th></tr>
@@ -187,7 +187,7 @@ const dang = [
   { t: 'Dạng 2 · Trung bình · Viết phương trình từ li độ và chiều lúc t = 0',
     de: `Vật dao động điều hoà với ${nw('A = 6 cm')}, ${nw('T = 0,5 s')}. Chọn ${t0} lúc vật ở ${nw(`${m('x=-3')} cm`)} và đang đi theo chiều dương.<br><b>a)</b> viết phương trình dao động<br><b>b)</b> kể từ ${t0}, sau bao lâu vật lần đầu tới biên dương`,
     nd: `${m('\\cos\\varphi=x_0/A')} cho ${f(12)} góc đối nhau; chọn dấu của ${ph} theo ${f(30)}`,
-    a: ['a', 'b'], gi: 4, cot: 2 },
+    a: ['a', 'b'], gi: 6, cot: 2 },
   { t: 'Dạng 3 · Trung bình · Độ lệch pha: sớm hay trễ, lệch bao lâu',
     de: `<div class="fig-side d3x" style="grid-template-columns:1fr 34mm"><div>${nw(`${m('x_1=3\\cos\\left(4\\pi t+\\frac{\\pi}{6}\\right)')} cm`)} và ${nw(`${m('x_2=5\\cos\\left(4\\pi t-\\frac{\\pi}{3}\\right)')} cm`)}.<br><b>a)</b> dao động nào sớm pha (a<sub>1</sub>), lệch pha bao nhiêu (a<sub>2</sub>)<br><b>b)</b> đỉnh dương của dao động sớm pha đến trước bao lâu<br><b>c)</b> viết ${m('x_3')} cùng biên độ với ${m('x_1')}, ngược pha với ${m('x_1')}</div>${H.haiBanKinh()}</div>`,
     nd: `${ph} lớn hơn thì ${f(16)} pha; ${nw(`${m('\\Delta t=')} ${f(14)}`)}; ngược pha: ${nw(`${m('\\varphi_3=\\varphi_1\\pm')} ${f(12)}`)}, ghi trong ${m('(-\\pi;\\pi]')}`,
