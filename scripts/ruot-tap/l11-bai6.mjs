@@ -185,17 +185,17 @@ ${foot(5)}</section>`;
 
 const deH = (txt, fig, w = 46) => `<div class="fig-side" style="grid-template-columns:1fr ${w}mm"><div>${txt}</div>${fig}</div>`;
 const bangDoc = (fsr, As) => `<table class="bf" style="font-size:var(--fs-sm);text-align:center"><tr><th>${m('f')} (Hz)</th><th>${m('A')} (cm)</th></tr>${fsr.map((x, i) => `<tr><td>${x}</td><td>${As[i]}</td></tr>`).join('')}</table>`;
+const bangDoi = (fsr, As) => { const h = Math.ceil(fsr.length / 2); return `<table class="bf" style="font-size:var(--fs-sm);text-align:center"><tr><th>${m('f')} (Hz)</th><th>${m('A')} (cm)</th><th style="border-left:1.2px solid">${m('f')} (Hz)</th><th>${m('A')} (cm)</th></tr>${fsr.slice(0, h).map((x, i) => `<tr><td>${x}</td><td>${As[i]}</td><td style="border-left:1.2px solid">${fsr[i + h]}</td><td>${As[i + h]}</td></tr>`).join('')}</table>`; };
 const dang = [
   { t: 'Dạng 1 · Dễ · Phân loại dao động',
-    de: `Ba con lắc lò xo giống nhau, ${U('T_0 = 1,0 s')}, đồ thị bên. (1) Kéo lệch rồi thả trong không khí. (2) Như (1), có cơ cấu bù đúng phần năng lượng mất mỗi chu kì. (3) Trên bệ rung ${U('1,5 Hz')} (lực liên tục), đã ổn định.<br><b>a)</b> mỗi con lắc dao động loại gì<br><b>b)</b> chu kì dao động của con lắc (3)`,
-    nd: `Xét cách ${f(25)} được cấp; cưỡng bức ổn định: ${nw(`${'<i>f</i><sub>vật</sub> ='} ${f(16)}`)}`, a: ['a<sub>(1)</sub>', 'a<sub>(2)</sub>', 'a<sub>(3)</sub>', 'b'], gi: 2, fig: H.d1(''), fw: 30 },
+    de: `Ba con lắc lò xo giống nhau, ${U('T_0 = 1,0 s')}. (1) Thả trong không khí. (2) Như (1), được bù đúng năng lượng mất mỗi chu kì. (3) Trên bệ rung ${U('1,5 Hz')}, đã ổn định.<br><b>a)</b> loại dao động của mỗi con lắc<br><b>b)</b> chu kì của (3)`,
+    nd: `Xét cách ${f(25)} được cấp; cưỡng bức ổn định: ${nw(`${'<i>f</i><sub>vật</sub> ='} ${f(16)}`)}`, a: ['a<sub>(1)</sub>', 'a<sub>(2)</sub>', 'a<sub>(3)</sub>', 'b'], gi: 2, fig: H.d1(''), fw: 40 },
   { t: 'Dạng 2 · Trung bình · Bảng quét tần số',
-    de: `Cột biển quảng cáo trên bàn rung, cùng lực; đọc ${m('A')} đỉnh cột lúc ổn định, sai số ${U('±0,2 cm')} (chắc khác nhau khi hiệu vượt ${U('0,4 cm')}).`
-      + `<br><b>a)</b> tần số riêng ${f0} của cột<br><b>b)</b> xe tải làm đất rung đều ${U('5,0 Hz')}: tần số dao động của cột<br><b>c)</b> đất rung ${U('4,0 Hz')}: ${m('A')} tăng/giảm bao nhiêu so với 5,0 Hz; vượt sai số?`, fw: 30, fig: bangDoc(['2,0', '3,0', '3,5', '4,0', '5,0', '6,0'], ['3,3', '5,4', '6,0', '5,4', '3,3', '2,2']),
-    nd: `${f0} ở chỗ ${m('A')} ${f(18)}; ${nw(`${'<i>f</i><sub>vật</sub> ='} ${f(14)}`)}; ${m('A')} lớn khi ${m('|f-f_0|')} ${f(14)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Cột biển trên bàn rung, cùng lực; ${m('A')} lúc ổn định, sai số ${U('±0,2 cm')} (khác thật khi hiệu vượt ${U('0,4 cm')}).`
+      + `<br><b>a)</b> tần số riêng ${f0} của cột<br><b>b)</b> đất rung đều ${U('5,0 Hz')}: tần số dao động của cột<br><b>c)</b> đất rung ${U('4,0 Hz')}: ${m('A')} tăng/giảm bao nhiêu so với 5,0 Hz; vượt sai số?`, fw: 40, fig: bangDoi(['2,0', '3,0', '3,5', '4,0', '5,0', '6,0'], ['3,3', '5,4', '6,0', '5,4', '3,3', '2,2']),     nd: `${f0} ở chỗ ${m('A')} ${f(18)}; ${nw(`${'<i>f</i><sub>vật</sub> ='} ${f(14)}`)}; ${m('A')} lớn khi ${m('|f-f_0|')} ${f(14)}`, a: ['a', 'b', 'c'], gi: 3 },
   { t: 'Dạng 3 · Trung bình · Biên độ tắt dần, cơ năng còn lại',
-    de: `Biên độ con lắc: ${m('A=A_0e^{-\\beta t}')}, ${U('A_0 = 5,0 cm')}, ${nw(`${m('\\beta=0{,}20\\ \\mathrm{s^{-1}}')};`)} ${nw(m('\\ln 2\\approx0{,}693'))}; cơ năng tỉ lệ ${m('A^2')}.<br><b>a)</b> biên độ sau ${U('5,0 s')}<br><b>b)</b> sau bao lâu biên độ còn một nửa ${m('A_0')}<br><b>c)</b> lúc đó cơ năng còn bao nhiêu phần trăm`,
-    nd: `${m('e^{-\\beta t}=1/2')} ⇒ ${nw(`${m('t=')} ${f(16)}`)}; ${nw(`${m('W/W_0=(')}${f(16)}${m(')^2')}`)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.d3(''), fw: 30 },
+    de: `${m('A=A_0e^{-\\beta t}')}, ${U('A_0 = 5,0 cm')}, ${nw(`${m('\\beta=0{,}20\\ \\mathrm{s^{-1}}')};`)} ${nw(m('\\ln 2\\approx0{,}693'))}.<br><b>a)</b> biên độ sau ${U('5,0 s')}<br><b>b)</b> lúc biên độ còn ${m('A_0/2')}<br><b>c)</b> khi đó cơ năng (${m('\\sim A^2')}) còn mấy %`,
+    nd: `${m('e^{-\\beta t}=1/2')} ⇒ ${nw(`${m('t=')} ${f(16)}`)}; ${nw(`${m('W/W_0=(')}${f(16)}${m(')^2')}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.d3(''), fw: 40 },
   { t: 'Dạng 4 · Khó · Xe qua gờ giảm tốc',
     de: `Gờ giảm tốc cách đều ${U('L = 6,0 m')}; thân xe trên lò xo có ${U('T_0 = 0,80 s')}; mỗi gờ đẩy xe một lần. Cho ${nw(m('1\\ \\mathrm{m/s}=3{,}6\\ \\mathrm{km/h}'))}.<br><b>a)</b> xe chạy ${U('36 km/h')}: chu kì của ngoại lực<br><b>b)</b> vận tốc (km/h) để thân xe rung mạnh nhất<br><b>c)</b> ${U('36 km/h')} hay ${U('54 km/h')} (lực, lực cản như nhau) rung mạnh hơn; vì sao`,
     nd: `${nw(`${'<i>T</i><sub>lực</sub> ='} ${f(14)}`)}; cộng hưởng khi ${nw(`${f(14)}${m('=T_0')}`)}; so ${m('|f-f_0|')}, không so độ nhanh`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4('') },
