@@ -84,7 +84,7 @@ export const hinhL10b22 = {
     return wrap('0 0 320 176', b, cap, 'Hai lực vẽ chung gốc và vẽ nối đuôi');
   },
   // Trang 4 · mẫu bảng đo vẽ: hai lực kế và độ chia (dùng cạnh bảng số liệu)
-  doChia: (cap = 'Mặt lực kế 5 N: mỗi độ chia 0,1 N. Nhìn thẳng mặt chỉ.') => {
+  doChia: (cap = 'Mặt lực kế 5 N. Nhìn thẳng mặt chỉ.') => {
     let b = rect(24, 40, 272, 70, ' rx="6"');
     for (let i = 0; i <= 50; i++) {
       const x = 40 + i * 5, big = i % 10 === 0, mid = i % 5 === 0;
