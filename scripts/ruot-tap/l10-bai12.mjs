@@ -82,8 +82,8 @@ ${h3(5, 'Thí nghiệm: một bi bắn ngang, một bi thả rơi', '1·5')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> bắn ngang bi 1, cùng lúc thả bi 2; quay chậm.</div>
 <div><b>Quan sát:</b> mỗi nhịp, hai bi luôn cùng ${f(25)}; chạm sàn ${f(25)}.</div>
-<div><b>Rút ra:</b> phần ngang ${ck}có ${ck}không đổi phần rơi.</div>
-<div>Bắn mạnh hơn: ${f(25)} đổi, ${f(25)} không.</div></div>
+<div><b>Rút ra:</b> phần ngang ${ck}có ${ck}không ảnh hưởng phần rơi.</div>
+<div>Bắn mạnh: tầm xa ${ck}đổi ${ck}không; ${m('t')} rơi ${ck}đổi ${ck}không.</div></div>
 ${H.haiBi()}</div>
 ${foot(1)}</section>`;
 
@@ -111,7 +111,7 @@ ${h3(4, 'II.4 · Vận tốc tại một điểm', '2·4')}
 <div>${m('v_x=')} ${f(14)} (không đổi) &nbsp;·&nbsp; ${m('v_y=')} ${f(14)} (tăng đều)</div>
 <div style="margin:.4mm 0">${m('v=')}${ob(30)}</div>
 <div>Chạm đất: ${m('v_y=')}${ob(18)} ${m('\\Rightarrow v_{\\mathrm{cd}}=')}${ob(22)}</div>
-<div>${m('\\tan\\alpha=')}${ob(14)}${m('=')}${ob(14)} &nbsp;(${al}: góc giữa ${m('\\vec v')} và phương ${f(14)})</div></div>
+<div>${m('\\tan\\alpha=')}${ob(14)}${m('=')}${ob(14)} &nbsp;(${al}: góc giữa ${m('\\vec v')} và phương ${f(25)})</div></div>
 ${H.vanToc()}</div>
 ${foot(2)}</section>`;
 
@@ -147,8 +147,8 @@ ${h3(1, 'VI.1 · Phân tích vận tốc ban đầu', '4·1')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>Ném xiên: ${vv0} hợp với phương ngang góc ${al} (<b>góc ném</b>). Chọn Oy hướng <b>lên</b> ⇒ ${m('a_y=')} ${f(12)}</div>
 <div style="margin:.4mm 0">${m('v_{0x}=')} ${f(22)} &nbsp; ${m('v_{0y}=')} ${f(22)}</div>
-<div>Ox: ${m('v_x=')} ${f(20)} &nbsp; ${m('x=')} ${f(22)}</div>
-<div>Oy: ${m('v_y=')} ${f(20)} &nbsp; ${m('y=')}${ob(26)}</div>
+<div>Ox: ${m('v_x=')} ${f(20)} &nbsp; ${m('x=')} ${f(28)}</div>
+<div>Oy: ${m('v_y=')} ${f(28)} &nbsp; ${m('y=')}${ob(26)}</div>
 <div>Oy: lên ${f(25)} dần, tới đỉnh, rồi xuống ${f(25)} dần.</div></div>
 ${H.nemXien()}</div>
 ${h3(2, 'VI.2 · Tầm cao, thời gian bay, tầm xa (ném từ mặt đất)', '4·2')}
@@ -157,9 +157,9 @@ ${h3(2, 'VI.2 · Tầm cao, thời gian bay, tầm xa (ném từ mặt đất)',
 <div>Chạm đất: ${m('y=')} ${f(10)} ⇒ ${m('t=')}${ob(16)}${m('=')} ${f(10)}${m('\\,t_{\\text{lên}}')} · ${m('L=v_{0x}t=')}${ob(24)}</div>
 <div class="fig-side" style="grid-template-columns:1fr 58mm;margin-top:.8mm;align-items:center"><table class="tbl-ct"><tr><th>Góc ${al}</th><th>${m('H\\ (\\mathrm m)')}</th><th>${m('L\\ (\\mathrm m)')}</th></tr>
 <tr><td style="height:5.6mm">${deg(30)}</td><td></td><td></td></tr><tr><td style="height:5.6mm">${deg(45)}</td><td></td><td></td></tr><tr><td style="height:5.6mm">${deg(60)}</td><td></td><td></td></tr></table>
-<div>Cùng ${ms('v_0=10')}, ${g10}. <span class="hint">(${m('2\\sin\\alpha\\cos\\alpha=\\sin2\\alpha')}, Toán 11)</span><br><b>Rút ra:</b> ${m('L')} lớn nhất khi ${nw(`${al} = ${f(12)}`)}; hai góc ${f(25)} nhau cho cùng ${m('L')}.</div></div></div>
+<div>Cùng ${ms('v_0=10')}, ${g10}. <span class="hint">(chưa học ${m('\\sin2\\alpha')} ở Toán 11 thì thế từng góc vào công thức H, L ở trên)</span><br><b>Rút ra:</b> ${m('L')} lớn nhất khi ${nw(`${al} = ${f(12)}`)}; hai góc ${f(25)} nhau cho cùng ${m('L')}.</div></div></div>
 ${h3(3, 'Bẫy: “lên tới đỉnh thì vật dừng lại”', '4·3')}
-<div class="card" style="padding:1mm 3mm"><div class="trap">${ck}<span>Ở đỉnh ${m('v_y=0')} nhưng ${m('v=')} ${f(20)}, hướng ${f(22)}; gia tốc vẫn là ${f(12)}.</span></div></div>
+<div class="card" style="padding:1mm 3mm"><div class="trap">${ck}<span>Ở đỉnh ${m('v_y=0')} nhưng ${m('v=')} ${f(25)}, hướng ${f(25)}; gia tốc vẫn là ${f(12)}.</span></div></div>
 ${h3(4, 'Bài toán mẫu ném xiên: cú sút bóng', '4·4')}
 <div class="card soft" style="padding:1.2mm 3mm">Cầu thủ sút bóng từ mặt sân với ${ms('v_0=20')}, hợp với phương ngang ${deg(30)}. Bỏ qua sức cản, lấy ${g10}.
 <div><b>a)</b> bóng lên cao nhất bao nhiêu</div><div><b>b)</b> bóng bay trong bao lâu</div><div><b>c)</b> bóng rơi cách chỗ sút bao xa</div><div><b>d)</b> vận tốc ở điểm cao nhất</div></div>
@@ -176,7 +176,7 @@ ${h3(2, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·2')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
-<div class="fig-side" style="${fs(42)}">${box(wl(`${m('\\bigstar')} Ném ngang từ ${mm('h=80')}, ${g10}. Thời gian rơi?`, 1)
+<div class="fig-side" style="${fs(42)}">${box(wl(`${m('\\bigstar')} Ném ngang từ ${mm('h=80')}, ${g10}. Thời gian rơi?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Cũng bài đó với ${ms('v_0=25')}: tầm xa và vận tốc chạm đất?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Ném xiên từ mặt đất, ${ms('v_0=20')}, ${nw(`${al} = ${deg(45)}`)}, ${g10}: tính ${m('H')} và ${m('L')}.`, 2)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Máy bay cứu trợ bay ngang ở ${mm('500')} với ${ms('100')}, ${g10}. Thả hàng khi còn cách đích bao xa theo phương ngang? Vì sao không thả ngay trên đích?`, 3))}${H.thaHang()}</div>
@@ -185,7 +185,7 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Ném ngang: thời gian bay và tầm xa',
     de: `Máy bay cứu hộ bay ngang ở độ cao ${mm('490')}, vận tốc ${ms('60')}, thả gói hàng. Bỏ qua lực cản, ${g98}.<br><b>a)</b> sau bao lâu gói hàng chạm đất<br><b>b)</b> thả gói khi máy bay còn cách điểm cần rơi trúng bao xa (theo phương ngang)`,
-    nd: `Tìm ${m('t')} từ phương ${f(25)} trước; ${m('t')} không phụ thuộc ${f(12)}`, a: ['a', 'b'], gi: 2, cot: 2 },
+    nd: `Tìm ${m('t')} từ phương ${f(30)} (ngang/đứng?) trước; ${m('t')} không phụ thuộc ${f(12)}`, a: ['a', 'b'], gi: 2, cot: 2 },
   { t: 'Dạng 2 · Dễ · Ném ngang: vận tốc chạm đất và góc',
     de: `Từ mép vách đá cao ${mm('78{,}4')}, ném ngang hòn đá với ${ms('v_0=30')}. Bỏ qua lực cản, ${g98}. Lúc chạm đất:<br><b>a)</b> độ lớn vận tốc<br><b>b)</b> góc giữa vectơ vận tốc và phương ngang`,
     nd: `${m('v_x=')} ${f(12)} không đổi · ${m('v_y=')} ${f(12)} lúc chạm · hai vectơ ${f(25)}`, a: ['a', 'b'], gi: 3, cot: 2 },
@@ -197,7 +197,7 @@ const dang = [
     nd: `Đỉnh: ${f(12)} ${m('=0')} · cùng độ cao nên ${m('t=')} ${f(10)}${m('\\,t_{\\text{lên}}')}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3, cot: 6 },
   { t: 'Dạng 5 · Khó · Ném xiên từ độ cao: rơi thấp hơn chỗ ném',
     de: `Từ vách đá cao ${mm('22{,}05')} ném đá lên với ${ms('v_0=14{,}7')}, góc ${deg(30)}; bỏ qua lực cản, ${g98}.<br><b>a)</b> thời gian từ lúc ném đến lúc chạm đất<br><b>b)</b> tầm xa tính từ chân vách<br><b>c)</b> độ cao lớn nhất so với mặt đất<br><b>d)</b> độ lớn vận tốc khi chạm đất`,
-    nd: `Oy lên, gốc ở chỗ ném: chạm đất khi ${m('y=')} ${f(14)}; bỏ nghiệm âm`, a: ['a', 'b', 'c', 'd'], gi: 4, fig: H.vachXien() },
+    nd: `Oy lên, gốc ở chỗ ném: chạm đất khi ${m('y=')} ${f(20)}; bỏ nghiệm âm`, a: ['a', 'b', 'c', 'd'], gi: 4, fig: H.vachXien() },
   { t: 'Dạng 6 · Khó · Bài ngược: biết tầm xa, tìm góc ném',
     de: `Pháo bắn với ${ms('v_0=14')}, nòng nghiêng ${al}, đạn rơi về độ cao nòng; bỏ qua lực cản, ${g98}.<br><b>a)</b> góc nghiêng nòng để đạn rơi cách pháo ${mm('15')}<br><b>b)</b> thời gian bay ứng với từng góc<br><b>c)</b> tầm xa lớn nhất và góc đạt được`,
     nd: `${m('\\sin2\\alpha=gL/v_0^2')} cho hai góc ${f(25)} nhau`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3, cot: 6 },
@@ -206,9 +206,9 @@ const dang = [
 // Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python (math, radian), làm tròn 3 chữ số có nghĩa. Giải vào vở (thầy chốt 10/11):
 // 1 cột; ô đáp số 25 mm đặt cuối đúng dòng của ý, nhãn khớp a) b) c)… (a<sub>1</sub>, a<sub>2</sub> khi ý có 2 kết quả).
 const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
-  const y = p.match(/^<b>([a-d])\)<\/b>/);
-  if (!y) return `<div>${p}</div>`;
-  const ls = o.filter((l) => l[0] === y[1]);
+  const y = [...p.matchAll(/<b>([a-d])\)<\/b>/g)].map((x) => x[1]);
+  if (!p.startsWith('<b>') || !y.length) return `<div>${p}</div>`;
+  const ls = o.filter((l) => y.includes(l[0]));
   return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
 }).join('');
 const ttDe = (b) => b.fig ? `<div class="fig-side" style="grid-template-columns:1fr ${b.fw}mm">${`<div>${oY(b.de, b.o, b.ow)}</div>`}${b.fig}</div>` : oY(b.de, b.o, b.ow);
@@ -227,9 +227,9 @@ const tuongTu = {
     { t: 'Dạng 4 · Bài 1', de: `Ném xiên từ mặt đất với ${ms('10')}, góc ${deg(60)}, vật rơi về cùng độ cao; bỏ qua lực cản, ${g10}.<br><b>a)</b> ${m('v_{0x}')} và ${m('v_{0y}')}<br><b>b)</b> tầm cao ${m('H')}<br><b>c)</b> thời gian bay và tầm xa`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'] },
     { t: 'Dạng 4 · Bài 2', de: `Phát bóng từ mặt sân với ${ms('24')}, góc ${deg(30)}, bóng rơi xuống mặt sân; bỏ qua lực cản, ${g10}.<br><b>a)</b> thời gian lên tới đỉnh và tầm cao<br><b>b)</b> thời gian bay và tầm xa<br><b>c)</b> tốc độ của bóng ở điểm cao nhất`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
     { t: 'Dạng 5 · Bài 1', de: `Từ độ cao ${mm('15')} ném vật lên với ${ms('10')}, góc ${deg(30)}; bỏ qua lực cản, ${g10}.<br><b>a)</b> thời gian bay · <b>b)</b> tầm xa theo phương ngang<br><b>c)</b> độ cao lớn nhất so với mặt đất<br><b>d)</b> tốc độ khi chạm đất`, o: ['a', 'b', 'c', 'd'] },
-    { t: 'Dạng 5 · Bài 2', de: `Từ mái nhà cao ${mm('25')} ném bóng lên với ${ms('20')}, góc ${deg(30)}; bỏ qua lực cản, ${g10}.<br><b>a)</b> thời gian bay · <b>b)</b> tầm xa tính từ chân nhà<br><b>c)</b> độ cao lớn nhất so với mặt đất<br><b>d)</b> tốc độ khi chạm đất`, fig: H.ttMai(), fw: 44, o: ['a', 'b', 'c', 'd'] },
+    { t: 'Dạng 5 · Bài 2', de: `Từ mái nhà cao ${mm('25')} ném bóng lên với ${ms('20')}, góc ${deg(30)}; bỏ qua lực cản, ${g10}.<br><b>a)</b> thời gian bay<br><b>b)</b> tầm xa tính từ chân nhà<br><b>c)</b> độ cao lớn nhất so với mặt đất<br><b>d)</b> tốc độ khi chạm đất`, fig: H.ttMai(), fw: 44, o: ['a', 'b', 'c', 'd'] },
     { t: 'Dạng 6 · Bài 1', de: `Vòi nước ở mặt đất phun với ${ms('20')}, nước rơi về cùng độ cao vòi; bỏ qua lực cản, ${g10}.<br><b>a)</b> góc nghiêng vòi để nước rơi cách vòi ${mm('20')}<br><b>b)</b> thời gian bay ứng với từng góc<br><b>c)</b> tầm xa lớn nhất của vòi`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
-    { t: 'Dạng 6 · Bài 2', de: `Đá bóng từ mặt sân với ${ms('10')}, bóng rơi cách chỗ đá ${nw(`${m('5\\sqrt3\\ \\mathrm m')} (≈ 8,66 m)`)}; bỏ qua lực cản, ${g10}.<br><b>a)</b> các góc đá có thể · <b>b)</b> tầm cao ứng với từng góc<br><b>c)</b> có đá được tới ${mm('12')} với tốc độ này không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
+    { t: 'Dạng 6 · Bài 2', de: `Đá bóng từ mặt sân với ${ms('10')}, bóng rơi cách chỗ đá ${nw(`${m('5\\sqrt3\\ \\mathrm m')} (≈ 8,66 m)`)}; bỏ qua lực cản, ${g10}.<br><b>a)</b> các góc đá có thể<br><b>b)</b> tầm cao ứng với từng góc<br><b>c)</b> có đá được tới ${mm('12')} với tốc độ này không`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
   ]],
   dap: [
     `D1·1: a) 3,0 s · b) 36 m · c) 3,0 s &nbsp;|&nbsp; D1·2: a) 12 s · b) 600 m &nbsp;|&nbsp; D2·1: a) 20 m/s · b) 25 m/s · c) 53,1° &nbsp;|&nbsp; D2·2: a) 0,50 s · b) 5,39 m/s · c) 68,2° &nbsp;|&nbsp; D3·1: a) 1,0 s · b) 8,0 m/s · c) 12 m/s &nbsp;|&nbsp; D3·2: a) 6,0 m/s · b<sub>1</sub>) 6,25 m · b<sub>2</sub>) có, cao hơn tường 1,25 m`,
