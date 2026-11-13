@@ -188,3 +188,4 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 - l12-phong-xa · topic 229 · clip bay-ch4-02 (sau 2T còn 1/4) · đã soát · 12/11/2026 · tự soạn
 - l12-phong-xa · topic 229 · clip bay-ch4-03 (bình chì, làm lạnh: T không đổi) · đã soát · 12/11/2026 · tự soạn
 - l12-hat-nhan-mo-hinh-nguyen-tu · topic 221 (gần nhất) · clip bay-ch4-04 (Rutherford: α lệch do hạt nhân) · đã soát · 12/11/2026 · tự soạn; THỬ NGHĨ hỏi "quỹ đạo dừng" theo đề Bộ — thầy xác nhận
+- 13/11/2026 · thuchanh-01, thuchanh-03 (lesson 5) và noinang-04 (lesson 4) bản 2: đã chèn bài + đăng DB (`--chi-video`; bài 4 thêm mốc `data-exp` trên `<details>` nên dùng `--cho-phep-khac` sau khi so bản sao lưu giống hệt).
