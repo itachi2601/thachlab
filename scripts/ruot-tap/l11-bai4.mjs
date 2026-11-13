@@ -9,6 +9,7 @@
 //       node scripts/ruot-tap/l11-bai4.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai4/ để soát chữ/nét
 import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
 import { hinhL11b4 as H } from './hinh-l11-bai4.mjs';
+const fc = (w = 16) => `<span class="fill" style="min-width:${w}mm;height:9mm"></span>`; // ô phân số cao 9 mm
 
 if (process.argv[2] === '--hinh') {
   const { createRequire } = await import('node:module');
@@ -71,9 +72,9 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Họ 1: đọc phương trình, đọc đồ thị', '1·4')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Dạng chuẩn: ${m('x=')} ${f(30)}, với ${nw(`${m('A')} ${f(10)} 0`)} và ${nw(`${ph} ${m('\\in(-\\pi;\\pi]')}`)}</div>
-<div>${m('T=')} ${f(14)} (s) · ${m('f=')} ${f(14)} (Hz) · ${w_} đo bằng rad/s</div>
-<div>Dấu trừ trước cos: ${nw(`${m('-\\cos\\alpha=\\cos\\big(')} ${f(18)} ${m('\\big)')}`)}</div>
-<div>Gặp sin: ${nw(`${m('\\sin\\alpha=\\cos\\big(')} ${f(18)} ${m('\\big)')}`)}</div>
+<div>${nw(`${m('T=')} ${fc()} s`)} · ${nw(`${m('f=')} ${fc()} Hz`)} (${w_}: rad/s)</div>
+<div>Dấu trừ trước cos: ${nw(`${m('-\\cos\\alpha=\\cos(\\alpha')} ${f(12)} ${m('\\pi)')}`)} <span class="hint">(dấu nào giữ pha trong ${m('(-\\pi;\\pi]')}?)</span></div>
+<div>Gặp sin: ${nw(`${m('\\sin\\alpha=\\cos\\big(\\alpha')} ${f(12)} ${m('\\tfrac{\\pi}{2}\\big)')}`)} <span class="hint">(+ hay −?)</span></div>
 <div>Đồ thị bên, viết theo ${m('A')}, ${m('T')}:</div><div>khoảng 1 = ${f(12)} · 2 = ${f(12)} · 3 = ${f(12)}</div>
 </div>${H.doThiBaKhoang()}</div>
 <div class="card" style="margin-top:-1.5mm;border-top:0;border-radius:0 0 1.5mm 1.5mm;padding:0 3mm 1.2mm">
@@ -115,13 +116,13 @@ ${foot(2)}</section>`;
 const p3 = `<section class="page">
 ${head('HỌ 3: VIẾT PHƯƠNG TRÌNH · HỌ 4: VÒNG TRÒN PHA')}
 ${h3(1, 'II.3 · Họ 3: viết phương trình từ lúc t = 0', '3·1')}
-<div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
-<div><b>B1.</b> ${w_} từ ${m('T')}, ${m('f')}: ${nw(`${w_}${m('=')} ${f(14)}`)} hoặc ${nw(`${w_}${m('=')} ${f(16)}`)} (biết ${m('v_{\\max}')}, ${m('A')})</div>
-<div><b>B2.</b> ${m('A')} đề cho, hoặc ${nw(`${m('A^2=x_0^2+')} ${f(20)}`)}</div>
-<div><b>B3.</b> ${nw(`${m('\\cos\\varphi=')} ${f(14)}`)} cho hai giá trị ${m('\\pm')} (hai điểm M ở hình)</div>
-<div><b>B4.</b> Chọn dấu: ${m('v_0=-A\\omega\\sin\\varphi')} nên ${nw(`${m('v_0>0')} thì ${ph} ${f(10)} 0`)}; ${nw(`${m('v_0<0')} thì ${ph} ${f(10)} 0`)}</div>
-<div style="margin-top:.6mm"><b>Ví dụ.</b> ${nw(`${m('A=10')} cm`)}, ${nw(`${m('T=2')} s`)}; lúc ${m('t=0')} vật qua ${nw(`${m('x=5')} cm`)} theo chiều dương.</div>
-<div>${nw(`${w_}${m('=')} ${f(14)}`)} &nbsp;${nw(`${m('\\cos\\varphi=')} ${f(12)}`)} &nbsp;${nw(`${ph}${m('=')} ${f(12)}`)}</div>
+<div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
+<div><b>B1.</b> ${nw(`${w_}${m('=')} ${fc()}`)} (từ ${m('T')}) ${nw(`${m('=')} ${fc()}`)} (từ ${m('v_{\\max}, A')})</div>
+<div><b>B2.</b> ${m('A')} đề cho, hoặc ${nw(`${m('A^2=x_0^2+')} ${fc(20)}`)}</div>
+<div><b>B3.</b> ${nw(`${m('\\cos\\varphi=')} ${fc()}`)} → hai giá trị ${m('\\pm\\varphi')} (${m('M_1, M_2')})</div>
+<div><b>B4.</b> ${nw(`${m('v_0>0')} ⇒ ${ph} ${f(10)} 0`)}; ${nw(`${m('v_0<0')} ⇒ ${ph} ${f(10)} 0`)}</div>
+<div style="margin-top:.6mm"><b>Ví dụ.</b> ${nw(`${m('A=10')} cm`)}, ${nw(`${m('T=2')} s`)}, ${m('t=0')} ở ${nw(`${m('x=5')} cm`)}, đi chiều +</div>
+<div>${nw(`${w_}${m('=')} ${f(14)}`)} &nbsp;${nw(`${m('\\cos\\varphi=')} ${fc()}`)} &nbsp;${nw(`${ph}${m('=')} ${fc()}`)}</div>
 <div>${m('x=')} ${f(40)} cm &nbsp;<span class="hint">thử lại ở ${m('t=0')}</span></div>
 </div>${H.haiDiemM()}</div>
 ${h3(2, 'Bẫy 1: dấu của pha ban đầu', '3·2')}
@@ -130,15 +131,15 @@ ${h3(2, 'Bẫy 1: dấu của pha ban đầu', '3·2')}
 <tr><td>đi theo chiều âm</td><td></td><td>${ph} ${f(10)} 0</td></tr>
 <tr><td>ở biên dương · ở biên âm</td><td style="background:var(--soft)"></td><td>${ph}${m('=')} ${f(12)} · ${ph}${m('=')} ${f(12)}</td></tr>
 <tr><td>qua O chiều dương · chiều âm</td><td style="background:var(--soft)"></td><td>${ph}${m('=')} ${f(12)} · ${ph}${m('=')} ${f(12)}</td></tr></table>
-<div style="margin:.8mm 0"><b>Câu 4.</b> ${nw(`${m('A=4')} cm`)}; lúc ${m('t=0')} vật ở ${nw(`${m('x=-2')} cm`)}, đi về biên âm: ${nw(`${m('\\cos\\varphi=')} ${f(12)}`)} &nbsp;${nw(`${ph}${m('=')} ${f(14)}`)}</div>
+<div style="margin:.8mm 0"><b>Câu 4.</b> ${nw(`${m('A=4')} cm`)}; ${m('t=0')}: ${nw(`${m('x=-2')} cm`)}, về biên âm. ${nw(`${m('\\cos\\varphi=')} ${fc()}`)} &nbsp;${nw(`${ph}${m('=')} ${fc()}`)}</div>
 ${h3(3, 'II.4 · Họ 4: thời gian, quãng đường', '3·3')}
-<div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
-<div>Điểm M quay trên vòng tròn bán kính ${m('A')}, ${f(25)} chiều kim đồng hồ; hình chiếu của M lên ${m('Ox')} là ${f(12)}.</div>
-<div>Góc quét ${m('2\\pi')} ứng với ${f(10)}: ${nw(`${m('\\Delta t=')} ${f(16)}`)}</div>
-<div>Quay chậm 240 khung/s, ${nw(`${m('T=0{,}80')} s`)} = 192 khung, ${nw(`${m('A=4')} cm`)}:</div>
-<div>O → 2 cm: 16 khung = ${nw(`${m('T/')}${f(12)}`)} · 2 cm → 4 cm: 32 khung = ${nw(`${m('T/')}${f(12)}`)} · O → biên: ${nw(`${m('T/')}${f(12)}`)}</div>
-<div>Nửa chu kì đi ${f(12)}, một chu kì đi ${f(12)}; ${m('T/4')} đi đúng ${m('A')} chỉ khi xuất phát ở ${f(25)}</div>
-<div>Tốc độ TB ${m('=')} ${f(14)} · vận tốc TB ${m('=')} ${f(18)}</div>
+<div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
+<div>M quay ${f(25)} chiều kim đồng hồ, chiếu xuống ${m('Ox')}: ${f(12)}</div>
+<div>Góc quét ${m('2\\pi')} ứng với ${f(10)}: ${nw(`${m('\\Delta t=')} ${fc()}`)}</div>
+<div>Quay chậm: ${m('T')} = 192 khung, ${nw(`${m('A=4')} cm`)}:</div>
+<div>${nw(`O → 2 cm (16 khung): ${m('T/')}${f(12)}`)} · ${nw(`2 → 4 cm (32 khung): ${m('T/')}${f(12)}`)} · ${nw(`O → biên: ${m('T/')}${f(12)}`)}</div>
+<div>${nw(`${m('T/2')} đi ${f(12)}`)} · ${nw(`${m('T')} đi ${f(12)}`)} · ${m('T/4')} đi đúng ${m('A')} chỉ khi bắt đầu ở ${f(25)}</div>
+<div>Tốc độ TB ${m('=')} ${fc()} · vận tốc TB ${m('=')} ${fc(18)}</div>
 </div>${H.mocThoiGian()}</div>
 <div><b>Câu 5.</b> ${nw(`${m('T=1{,}2')} s`)}. Thời gian ngắn nhất đi từ ${m('x=-A/2')} đến ${m('x=+A/2')}: ${nw(`${m('\\Delta t=')} ${f(16)} s`)}</div>
 ${foot(3)}</section>`;
@@ -192,13 +193,13 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Phương trình có sin và dấu trừ',
-    de: `${pt('-4\\sin(5\\pi t)')} (${m('x')}: cm, ${m('t')}: s). <b>a)</b> dạng chuẩn; biên độ ${m('A')} và pha ban đầu ${ph}<br><b>b)</b> chu kì ${m('T')} và tần số ${m('f')}<br><b>c)</b> tốc độ cực đại, gia tốc cực đại<br><b>d)</b> lúc ${m('t=0')} vật ở đâu, đi theo chiều nào`,
-    nd: `sin → cos: pha ${f(14)} · dấu trừ: pha ${f(14)} · ${m('A')} luôn ${f(25)}`, a: ['a', 'b', 'c', 'd'], gi: 4 },
+    de: `${pt('-4\\sin(5\\pi t)')} (${m('x')}: cm, ${m('t')}: s). <b>a)</b> dạng chuẩn; biên độ ${m('A')} và pha ban đầu ${ph}<br><b>b)</b> chu kì ${m('T')}, tần số ${m('f')} &nbsp;<b>c)</b> tốc độ cực đại, gia tốc cực đại<br><b>d)</b> lúc ${m('t=0')} vật ở đâu, đi theo chiều nào`,
+    nd: `sin → cos: pha thêm ${fc(14)} · dấu trừ trước: pha thêm ${f(14)}`, a: ['a', 'b', 'c', 'd'], gi: 5 },
   { t: 'Dạng 2 · Trung bình · Hệ thức độc lập: hai cặp (x, |v|)',
-    de: `Ở ${nw(`${m('x_1=3{,}0')} cm`)}: tốc độ ${nw(`${m('16\\pi')} cm/s`)}; ở ${nw(`${m('x_2=4{,}0')} cm`)}: tốc độ ${nw(`${m('12\\pi')} cm/s`)}. <b>a)</b> tần số góc ${w_} và chu kì<br><b>b)</b> biên độ ${m('A')}<br><b>c)</b> gia tốc cực đại`,
-    nd: `viết ${m('v^2=\\omega^2(A^2-x^2)')} cho hai vị trí rồi trừ vế để mất ${f(12)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Ở ${nw(`${m('x_1=3{,}0')} cm`)}: tốc độ ${nw(`${m('16\\pi')} cm/s`)}; ở ${nw(`${m('x_2=4{,}0')} cm`)}: tốc độ ${nw(`${m('12\\pi')} cm/s`)}. <b>a)</b> tần số góc ${w_} và chu kì<br><b>b)</b> biên độ ${m('A')} &nbsp;<b>c)</b> gia tốc cực đại`,
+    nd: `viết ${m('v^2=\\omega^2(A^2-x^2)')} cho hai vị trí rồi trừ vế để mất ${f(12)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 3 · Trung bình · Đọc đồ thị rồi viết phương trình',
-    de: `Đồ thị ${m('x')}–${m('t')} ở hình bên (${m('x')}: cm, ${m('t')}: s). <b>a)</b> biên độ và chu kì<br><b>b)</b> tần số góc<br><b>c)</b> pha ban đầu và phương trình`,
+    de: `Đồ thị ${m('x')}–${m('t')} ở hình bên (${m('x')}: cm, ${m('t')}: s). <b>a)</b> biên độ và chu kì<br><b>b)</b> tần số góc &nbsp;<b>c)</b> pha ban đầu và phương trình`,
     nd: `đáy và đỉnh liền kề cách ${f(12)} · lúc ${m('t=0')} đường cong đi xuống ⇒ ${ph} ${f(10)} 0`, a: ['a', 'b', 'c'], gi: 4, fig: H.doThiD3() },
   { t: 'Dạng 4 · Khó · Vòng tròn pha: qua một vị trí lần thứ n',
     de: `${pt('6\\cos\\left(4\\pi t+\\dfrac{\\pi}{3}\\right)')} cm, ${m('t')} tính bằng giây. Mỗi lần đi qua tính một lần, kể cả hai chiều.<br><b>a)</b> thời điểm vật qua vị trí cân bằng lần đầu<br><b>b)</b> thời điểm vật qua ${nw(`${m('x=-3')} cm`)} lần thứ 5`,

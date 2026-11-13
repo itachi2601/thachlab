@@ -59,7 +59,7 @@ ${dong(`${ck}Giải bài <b>hệ vật nối dây qua ròng rọc</b>: tìm gia 
 </div>
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
-<p style="margin:0 0 1mm">Đĩa CD (khoét lỗ giữa) treo trên đinh bằng dây buộc ở mép. Đĩa lắc vài cái rồi đứng yên; dây kéo dài xuống luôn đi qua tâm lỗ, chỗ không có nhựa. <b>Trọng lực tác dụng lên đĩa đặt ở đâu?</b></p>
+<p style="margin:0 0 1mm">Đĩa CD (khoét lỗ giữa) treo trên đinh bằng dây buộc ở mép. Đĩa lắc vài cái rồi đứng yên. <b>Trọng lực tác dụng lên đĩa đặt ở đâu?</b></p>
 <div class="fig-side" style="${fs(30)}"><div>
 ${opt('A', 'Ở điểm buộc dây trên mép đĩa, vì dây giữ đĩa ở đó')}
 ${opt('B', 'Ở tâm lỗ, dù chỗ đó không có nhựa')}
@@ -73,9 +73,9 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Trọng lực', '1·4')}
 <div class="card fig-side" style="${fs(28)};padding:1.2mm 3mm"><div>
 <div>Trọng lực là lực ${f(25)} giữa Trái Đất và vật, kí hiệu ${vP}.</div>
-<div>Điểm đặt: ${f(25)} &nbsp;${m('G')} của vật.</div>
+<div>Điểm đặt: trọng tâm ${m('G')} của vật.</div>
 <div>Phương: ${f(25)} · Chiều: ${f(25)}</div>
-<div style="margin:.6mm 0">Độ lớn: ${m('P=')} ${f(14)} &nbsp; (${m('P')}: ${f(12)}; ${m('m')}: ${f(12)}; ${m('g')}: ${f(14)})</div>
+<div style="margin:.6mm 0">Độ lớn: ${m('P=')} ${f(14)}</div><div style="margin:0 0 .6mm">Đơn vị: ${m('P')} ${f(14)}, ${m('m')} ${f(14)}, ${m('g')} ${f(18)}</div>
 <div>Dây dọi của thợ xây chỉ phương ${f(25)}.</div>
 ${wl('Ở hai phía Trái Đất, hai dây dọi có song song không? Vì sao?', 2)}</div>
 ${H.dayDoi()}</div>
@@ -87,7 +87,7 @@ ${h3(1, 'II.2 · Trọng tâm', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Trọng tâm là ${f(25)} của trọng lực.</div>
 <div>Vật phẳng, mỏng, đồng chất, đối xứng: trọng tâm ở ${f(25)} (thước thẳng: ${f(18)}; đĩa tròn: ${f(18)}).</div>
-<div>Vị trí trọng tâm phụ thuộc ${f(25)}; trọng tâm có thể nằm ${f(25)} vật.</div></div>
+<div>Vị trí trọng tâm phụ thuộc ${f(45)};</div><div>trọng tâm có thể nằm ${f(25)} vật.</div></div>
 ${h3(2, 'Thí nghiệm: tìm trọng tâm tấm bìa bằng dây dọi', '2·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> đục lỗ ${m('A')}, ${m('B')}, ${m('C')} gần mép bìa. Treo bìa ở ${m('A')} lên đinh, buộc dây dọi cùng đinh, kẻ theo dây. Làm lại với ${m('B')}, rồi với ${m('C')} để kiểm tra.</div>
@@ -118,10 +118,10 @@ ${head('LỰC CĂNG DÂY · HỆ VẬT NỐI DÂY QUA RÒNG RỌC')}
 ${h3(1, 'II.4 · Lực căng dây', '3·1')}
 <div class="card fig-side" style="${fs(30)};padding:1.2mm 3mm"><div>
 <div>Dây bị kéo thì tại mọi điểm trên dây xuất hiện lực căng ${vT}.</div>
-<div>Điểm đặt: ${f(25)}</div>
-<div>Phương: ${f(25)} · Chiều: ${f(25)}</div>
+<div>Điểm đặt: ${f(45)}</div>
+<div>Phương: ${f(45)} · Chiều: ${f(45)}</div>
 <div>Dây chỉ ${f(14)}, không ${f(14)}.</div>
-<div>Dây nhẹ (khối lượng không đáng kể): ${m('T')} ${f(25)} ở mọi điểm, kể cả khi vắt qua ròng rọc nhẹ, nhẵn.</div>
+<div>Dây nhẹ: ${m('T')} ${f(25)} ở mọi điểm, kể cả qua ròng rọc nhẹ.</div>
 <div>Đèn đứng yên: ${m('T')} ${f(12)} ${m('P')} của đèn.</div></div>
 ${H.denTreo()}</div>
 ${h3(2, 'II.5 · Hệ vật nối dây qua ròng rọc', '3·2')}
@@ -139,10 +139,10 @@ ${H.rongRocLucKe()}</div>
 ${h3(4, 'III · Ba cái bẫy hay sập', '3·4')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Em nặng 50 kg.”</b> kg là đơn vị của ${f(25)}; trọng lượng tính bằng ${f(10)}.</span></div>
-<div class="trap">${ck}<span><b>“Lực căng luôn bằng trọng lượng vật treo.”</b> ${m('T=P')} chỉ khi vật ${f(25)}.</span></div>
-<table style="margin:.4mm 0 .8mm"><tr><th style="width:62mm">Gia tốc của vật treo</th><th>Chiều dương theo ${m('\\vec a')}, định luật 2</th><th style="width:16mm">So ${m('T')}, ${m('P')}</th></tr>
-<tr><td>${m('\\vec a')} hướng lên (lên nhanh dần, xuống chậm dần)</td><td>${m('T=m(g')}${f(8)}${m('a)')}</td><td></td></tr>
-<tr><td>${m('\\vec a')} hướng xuống (xuống nhanh dần, lên chậm dần)</td><td>${m('T=m(g')}${f(8)}${m('a)')}</td><td></td></tr></table>
+<div class="trap">${ck}<span><b>“Lực căng luôn bằng trọng lượng.”</b> Chỉ đúng khi vật ${f(45)}.</span></div>
+<table style="margin:.4mm 0 .8mm"><tr><th style="width:54mm">Gia tốc của vật treo</th><th>Chiều dương theo ${m('\\vec a')}, định luật 2</th><th style="width:16mm">So ${m('T')}, ${m('P')}</th></tr>
+<tr><td>${m('\\vec a')} hướng lên (lên nhanh dần, xuống chậm dần)</td><td>${f(54)}<br>⇒ ${nw(`${m('T=m(g')}${f(8)}${m('a)')}`)}</td><td></td></tr>
+<tr><td>${m('\\vec a')} hướng xuống (xuống nhanh dần, lên chậm dần)</td><td>${f(54)}<br>⇒ ${nw(`${m('T=m(g')}${f(8)}${m('a)')}`)}</td><td></td></tr></table>
 <div class="fig-side" style="${fs(24)};gap:2mm"><div class="trap" style="margin:0">${ck}<span><b>“Vẽ ${vT} chĩa vào vật.”</b> Gốc ${vT} ở ${f(25)}, mũi chĩa ${f(25)}. Con lắc lệch: vẽ ${vT} lên quả cầu ở hình bên.</span></div>${H.conLac('')}</div></div>
 ${foot(3)}</section>`;
 
@@ -197,13 +197,13 @@ const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
 const bt = (d) => ({ ...d, de: oY(d.de, d.a, d.ow ?? 25), a: [] });
 const dang = [
   { t: 'Dạng 1 · Dễ · Khối lượng, trọng lượng ở từng nơi',
-    de: `Xe tự hành ${kg('90')} treo đứng yên vào lực kế trên Trái Đất ${nw(`(${g98})`)} rồi trên Sao Hoả ${nw(`(${ms2('g\'=3{,}7')})`)}.<br><b>a)</b> trọng lượng của xe trên Trái Đất<br><b>b)</b> khối lượng của xe trên Sao Hoả<br><b>c)</b> trọng lượng của xe trên Sao Hoả`,
-    nd: `${m('m')} ${f(18)} khi đổi nơi; ${m('P=mg')} với ${m('g')} của ${f(25)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Xe tự hành ${kg('90')} treo vào lực kế ở Trái Đất ${nw(`(${g98})`)} và Sao Hoả ${nw(`(${ms2('g\'=3{,}7')})`)}.<br><b>a)</b> trọng lượng của xe trên Trái Đất<br><b>b)</b> khối lượng của xe trên Sao Hoả<br><b>c)</b> trọng lượng của xe trên Sao Hoả`,
+    nd: `${m('m')} ${f(18)} khi đổi nơi; ${m('P=mg')} với ${m('g')} của ${f(25)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Vật treo có gia tốc: lực căng',
-    de: `Tời nâng thùng hàng ${kg('800')} bằng cáp thép nhẹ, thẳng đứng; ${g10}. Lực căng cáp khi thùng:<br><b>a)</b> đi lên thẳng đều<br><b>b)</b> khởi động, đi lên nhanh dần với ${m('a=1{,}5\\ \\mathrm{m/s^2}')}<br><b>c)</b> sắp tới nơi, đi lên chậm dần với ${m('a=1{,}2\\ \\mathrm{m/s^2}')}<br><b>d)</b> cáp chịu tối đa ${N('9\\,000')}: cáp đứt không, ở giai đoạn nào?`,
-    nd: `Lên nhanh dần ⇒ ${m('\\vec a')} hướng ${f(12)}; lên chậm dần ⇒ ${m('\\vec a')} hướng ${f(12)}`, a: ['a', 'b', 'c', 'd'], gi: 4 },
+    de: `Tời nâng thùng ${kg('800')} bằng cáp nhẹ thẳng đứng; ${g10}. Lực căng cáp khi thùng:<br><b>a)</b> đi lên thẳng đều<br><b>b)</b> khởi động, đi lên nhanh dần với ${m('a=1{,}5\\ \\mathrm{m/s^2}')}<br><b>c)</b> sắp tới nơi, đi lên chậm dần với ${m('a=1{,}2\\ \\mathrm{m/s^2}')}<br><b>d)</b> cáp chịu tối đa ${N('9\\,000')}: cáp đứt không, ở giai đoạn nào?`,
+    nd: `Lên nhanh dần ⇒ ${m('\\vec a')} hướng ${f(12)}; lên chậm dần ⇒ ${m('\\vec a')} hướng ${f(12)}`, a: ['a', 'b', 'c', 'd'], gi: 5 },
   { t: 'Dạng 3 · Trung bình · Vật trên bàn nhẵn nối vật treo qua ròng rọc',
-    de: `Khối ${m('A')} (${kg('1{,}5')}) trên bàn ngang nhẵn nối với vật ${m('B')} (${kg('1{,}0')}) treo qua ròng rọc ở mép bàn; dây nhẹ không dãn, ròng rọc nhẹ; thả từ nghỉ; ${g10}.<br><b>a)</b> gia tốc của hệ<br><b>b)</b> lực căng của dây<br><b>c)</b> so sánh lực căng với trọng lượng của ${m('B')}`,
+    de: `${m('A')} (${kg('1{,}5')}) trên bàn nhẵn nối ${m('B')} (${kg('1{,}0')}) treo qua ròng rọc; dây, ròng rọc nhẹ; thả từ nghỉ; ${g10}.<br><b>a)</b> gia tốc của hệ<br><b>b)</b> lực căng của dây<br><b>c)</b> so sánh lực căng với trọng lượng của ${m('B')}`,
     nd: `${m('A')}: ${nw(`${m('T=')} ${f(14)}`)}; ${m('B')}: ${nw(`${m('P_B-T=')} ${f(14)}`)}; cộng để khử ${m('T')}`, a: ['a', 'b', 'c'], gi: 4, fig: H.heD3() },
 ];
 const dang2 = [
@@ -212,7 +212,7 @@ const dang2 = [
     nd: `Vật ${f(18)} đi xuống; cộng hai phương trình: ${nw(`${m('P_1-P_2=')} ${f(25)}`)}`, a: ['a', 'b', 'c'], gi: 11, fig: H.atwoodD4(), cot: 3 },
   { t: 'Dạng 5 · Khó · Bài ngược: dây chỉ chịu lực căng tối đa',
     de: `Khối ${m('A')} (${kg('2{,}0')}) trên bàn ngang nhẵn, nối bằng dây nhẹ không dãn vắt qua ròng rọc nhẹ ở mép bàn với vật ${m('B')} treo thẳng đứng. Dây chịu tối đa ${N('12')}. Thả từ nghỉ, bỏ qua ma sát, ${g10}.<br><b>a)</b> gia tốc lớn nhất của hệ để dây không đứt<br><b>b)</b> khối lượng lớn nhất của ${m('B')} để dây không đứt`,
-    nd: `${m('A')} chỉ chịu ${m('T')} ⇒ ${nw(`${m('a_{max}=')} ${f(16)}`)}; rồi xét vật ${f(10)} với ${m('T_{max}')}, ${m('a_{max}')}`, a: ['a', 'b'], gi: 10, fig: H.heD5(), cot: 2 },
+    nd: `${m('A')} chỉ chịu ${m('T')} ⇒ ${nw(`${m('a_{max}=')} <span class="fill" style="min-width:16mm;height:9mm;vertical-align:middle"></span>`)}; rồi xét vật ${f(10)} với ${m('T_{max}')}, ${m('a_{max}')}`, a: ['a', 'b'], gi: 10, fig: H.heD5(), cot: 2 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở, đáp số tính bằng Python (13/11/2026). Ô đáp số cuối đúng dòng của ý.
