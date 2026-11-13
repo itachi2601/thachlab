@@ -92,6 +92,7 @@ ${h3(2, 'Thí nghiệm 1: bi qua hai cổng (số liệu minh hoạ)', '2·2')}
 <table class="tbl-ct" style="text-align:center;margin:.8mm 0"><tr><th style="width:26mm">Lần</th><th>${t_} (s)</th><th>${nw(m('|t-\\bar t|\\ (\\mathrm s)'))}</th></tr>
 <tr><td>1</td><td>0,835</td><td></td></tr><tr><td>2</td><td>0,838</td><td></td></tr><tr><td>3</td><td>0,837</td><td></td></tr>
 <tr><td><b>Trung bình</b></td><td></td><td></td></tr></table>
+<div class="hint">Làm tròn: ${tbar} đến ${nw('0,001 s')} rồi mới chia; ${m('v_{\\mathrm{tb}}')} tới 3 chữ số có nghĩa.</div>
 <div>Số lớn nhất trừ số nhỏ nhất: ${nw(`${f(14)}&nbsp;s`)} (chỉ vài phần nghìn giây, nhỏ hơn nhiều độ lệch của tay bấm).</div>
 <div style="margin-top:.6mm">Tốc độ trung bình: ${nw(`${m('v_{\\mathrm{tb}}=\\dfrac{0{,}500}{\\bar t}=')} <span class="fill" style="min-width:26mm;height:10mm"></span>`)}</div></div>
 ${h3(3, 'Làm nhanh', '2·3')}
@@ -111,6 +112,7 @@ ${h3(1, 'II.3 · Phương án 2: một cổng quang', '3·1')}
 ${h3(2, 'Thí nghiệm 2: bi chắn một cổng (số liệu minh hoạ)', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>${nw(`${m('d=20{,}0\\ \\mathrm{mm}=')} ${f(14)}&nbsp;m`)}; cổng F, MODE B, tia qua tâm bi. Ba lần đo ${t_}: ${nw('0,024 s')}; ${nw('0,023 s')}; ${nw('0,024 s')}.</div>
+<div class="hint">Làm tròn ${tbar} đến ${nw('0,001 s')} rồi mới chia; ${m('v_F')} tới 2 chữ số có nghĩa.</div>
 <div style="margin-top:.6mm">${nw(`${tbar} = ${f(14)}&nbsp;s`)} &nbsp;· ${nw(`${m('v_F=\\dfrac{d}{\\bar t}=')} <span class="fill" style="min-width:26mm;height:10mm"></span>`)}</div>
 <div>So với ${nw(m('v_{\\mathrm{tb}}=0{,}597\\ \\mathrm{m/s}'))} trên EF: ${nw(`${m('v_F')} ${ck}lớn hơn &nbsp;${ck}nhỏ hơn`)}; vì bi lăn ${f(25)}.</div></div>
 ${h3(3, 'III · Bẫy 1: “s/t và d/t cùng là tốc độ của bi, như nhau”', '3·3')}
@@ -136,7 +138,7 @@ ${h3(1, 'II.4 · Cách tính sai số', '4·1')}
 <div>Sai số dụng cụ: đồng hồ hiện số lấy ${f(12)} độ chia = ${nw(`${f(12)}&nbsp;s`)}; thước có vạch lấy ${f(12)} độ chia (thước mm: ${nw(`${f(12)}&nbsp;mm`)}).</div>
 <div style="margin:.4mm 0">${nw(`${Dt} = ${f(25)} + ${f(25)}`)} &nbsp;(lệch trung bình + dụng cụ)</div>
 <div>Chia thì cộng phần trăm: ${nw(`${m('\\delta v=')} ${f(12)} + ${f(12)}`)}; ${nw(`${m('\\Delta v=')} ${f(12)} · ${f(12)}`)}</div>
-<div style="margin-top:.4mm">Ghi: ${nw(`${m('v=')} ${f(12)} ± ${f(12)}`)} (${m('\\Delta v')} giữ một chữ số khác 0).</div></div>
+<div style="margin-top:.4mm">Ghi: ${nw(`${m('v=')} ${f(12)} ± ${f(12)}`)} (${m('\\Delta v')} giữ một chữ số khác 0; ${tbar} làm tròn trước rồi mới tính ${m('\\bar v')}).</div></div>
 ${h3(2, `Bảng Thí nghiệm 1 (tr. ${2 + OFF}) → kết quả`, '4·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>${nw(`${tbar} = ${f(14)}&nbsp;s`)}; ${nw(`${Dt} = ${f(12)} + 0,001 = ${f(12)}&nbsp;s`)}; ${nw(`${m('\\delta t=')} ${f(12)}&nbsp;%`)}</div>
