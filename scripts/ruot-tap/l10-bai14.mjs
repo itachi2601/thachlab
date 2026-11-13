@@ -69,10 +69,10 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'Mở bài: cú đẩy trên sân băng', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Trên sân băng, đẩy nhẹ vào thành sân là em lướt gần hết sân. Cùng cú đẩy ấy trên sàn xi măng với giày thường, em chỉ trượt nửa bước.</div>
-${wl('Cái gì làm em dừng lại: “hết lực đẩy” hay một lực khác?', 3)}</div>
+${wl('Điều em thấy lạ:', 3)}</div>
 ${h3(5, 'Kiểm tra hành trang', '1·5')}
 ${box(`<div>Gia tốc ${m('a=\\dfrac{\\Delta v}{\\Delta t}')} &nbsp;· Xe chạy thẳng đều ${nw(m('15\\ \\mathrm{m/s}'))} trong ${nw(m('10\\ \\mathrm s'))}: ${nw(`${m('a=')} ${f(16)}`)}</div>
-<div style="margin-top:.6mm">Hai lực cân bằng: cùng đặt lên ${f(25)}, cùng ${f(25)}, cùng ${f(25)}, ${f(25)} chiều.</div>`)}
+<div style="margin-top:.6mm">Hai lực cân bằng: cùng đặt lên ${f(25)}, cùng ${f(25)}, cùng giá, ${f(25)} chiều.</div>`)}
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -87,9 +87,10 @@ ${h3(1, 'II.1 · Thí nghiệm của Galilei: bi trên hai máng nghiêng', '2·
 <div class="hint" style="margin-top:.3mm">Số liệu minh hoạ, không phải số đo gốc của Galilei.</div></div>
 ${H.haiMang()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
-<div>Máng (2) càng thoải: ${m('d')} ${f(25)}, ${m('h')} ${f(25)}. Bi lên thấp hơn ${m('h_0')} vì có ${f(25)}.</div>
+<div>Máng (2) càng thoải: ${m('d')} ${f(25)}, ${m('h_0-h')} ${f(25)}. Bi lên thấp hơn ${m('h_0')} vì có ${f(25)}.</div>
 <div><b>Rút ra:</b> không ma sát, máng (2) nằm ngang thì bi</div>${lines(2)}
-${cau('Hai hàng đầu chỉ chênh 0,7 cm. Cột nào cho kết luận chắc hơn? Vì sao?', 2)}</div>
+${cau('Hai hàng đầu chỉ chênh 0,7 cm. Cột nào cho kết luận chắc hơn? Vì sao?', 1)}
+${cau('Quay lại Mở bài (Tập 13·4): trên sàn xi măng, cái gì làm em dừng lại?', 1)}</div>
 ${h3(2, 'II.2 · Định luật 1 Newton', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Nếu vật không chịu tác dụng của ${f(25)}, hoặc chịu các lực có hợp lực ${f(25)}, thì:</div>
@@ -110,27 +111,26 @@ const p3 = `<section class="page">
 ${head('QUÁN TÍNH · BA CÁI BẪY · TỰ KIỂM TRA')}
 ${h3(1, 'II.3 · Quán tính', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div><b>Quán tính:</b> tính chất của mọi vật có xu hướng bảo toàn ${f(25)}, cả về ${f(25)} lẫn ${f(25)}.</div>
-<div>Vì có quán tính, vận tốc không thể thay đổi ${f(25)}; lực phải tác dụng trong một khoảng thời gian.</div>
-<div>Định luật 1 còn gọi là định luật ${f(25)}. Khối lượng càng lớn, quán tính càng ${f(16)}.</div></div>
-<table class="tbl-ct"><tr><th style="width:62mm">Tình huống</th><th>Người (hoặc vật) bị làm sao, vì sao</th></tr>
+<div><b>Quán tính:</b> mọi vật có xu hướng bảo toàn <b>vận tốc</b>, cả về ${f(22)} lẫn ${f(22)}.</div>
+<div>Vận tốc không thể thay đổi ${f(22)}. Định luật 1 còn gọi là định luật ${f(22)}.</div></div>
+<style>.tinh td{height:11mm}</style><table class="tbl-ct tinh"><tr><th style="width:48mm">Tình huống</th><th>Người (hoặc vật) bị làm sao, vì sao</th></tr>
 <tr><td>Xe đang chạy, phanh gấp</td><td></td></tr>
 <tr><td>Xe đứng yên, tăng tốc đột ngột</td><td></td></tr>
 <tr><td>Xe rẽ gấp sang trái</td><td></td></tr>
 <tr><td>Giũ mạnh chiếc áo bám bụi</td><td></td></tr>
 <tr><td>Gõ đuôi cán búa xuống nền</td><td></td></tr></table>
 ${h3(2, 'Thí nghiệm: đồng xu, tấm bìa và chiếc cốc', '3·2')}
-<div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
-<div><b>Làm:</b> đặt bìa cứng lên miệng cốc, đồng xu giữa bìa. Búng thật nhanh vào mép bìa theo phương ngang. Lặp lại nhưng kéo bìa thật chậm.</div>
-<div style="margin-top:.6mm"><b>Thấy:</b> búng nhanh: xu ${f(36)}</div>
-<div>kéo chậm: xu ${f(36)}</div>
+<div class="card fig-side" style="${fs(38)};padding:1mm 3mm"><div>
+<div><b>Làm:</b> bìa trên miệng cốc, đồng xu giữa bìa. Búng nhanh mép bìa theo phương ngang; lần sau kéo bìa thật chậm.</div>
+<div style="margin-top:.4mm"><b>Thấy:</b> búng nhanh: xu ${f(30)}</div>
+<div>kéo chậm: xu ${f(30)}</div>
 ${cau('<b>Rút ra:</b> vì sao búng nhanh thì xu không đi theo bìa?', 1)}</div>
 ${H.dongXu()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card fig-side" style="${fs(40)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>“Đang chạy thì phải có lực đẩy theo chiều chạy.”</b> Không lực, vật vẫn thẳng đều; hết lực đẩy, vật dừng vì có lực cản.</span></div>
-<div class="trap">${ck}<span><b>“Đứng yên nghĩa là không có lực nào.”</b> Sách trên bàn chịu ${m('P')} và ${m('N')}: có lực, nhưng hợp lực bằng ${m('\\vec 0')}.</span></div>
-<div class="trap">${ck}<span><b>“Quán tính là lực đẩy em về phía trước.”</b> Quán tính là tính chất, không phải lực: không có vật nào đẩy em.</span></div></div>
+<div class="trap">${ck}<span><b>“Đứng yên nghĩa là không có lực nào.”</b> Sách trên bàn: có ${m('P')}, ${m('N')}, hợp lực bằng ${m('\\vec 0')}.</span></div>
+<div class="trap">${ck}<span><b>“Quán tính là lực đẩy em về phía trước.”</b> Quán tính là tính chất, không phải lực.</span></div></div>
 ${H.phanhGap()}</div>
 ${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·4')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
