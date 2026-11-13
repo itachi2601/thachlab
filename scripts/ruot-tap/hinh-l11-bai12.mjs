@@ -7,7 +7,7 @@ const { t, defs, wrap, INK, RED, BLUE, GREY, SW } = ve;
 const T = (x, y, s, o = {}) => t(x, y, s, { size: 20, ...o });
 const gk = (ch) => `<tspan font-family="KaTeX_Math" font-style="italic">${ch}</tspan>`;
 const L = gk('λ');
-const sb = (s) => `<tspan font-size="15" dy="5">${s}</tspan><tspan dy="-5"> </tspan>`;
+const sb = (s) => `<tspan font-size="17" dy="5">${s}</tspan><tspan dy="-5"> </tspan>`;
 const hl = '<span style="font-family:KaTeX_Math;font-style:italic">λ</span>'; // λ trong chú thích HTML
 const f1 = (v) => (+v).toFixed(1);
 const ln = (x1, y1, x2, y2, c = INK, w = SW, dash = '') =>
@@ -38,7 +38,6 @@ const dai = (n, nhan, id) => {
   for (let k = 0; k < n; k++) b += `<rect x="${f1(x0 + k * step - wv / 2)}" y="${y}" width="${f1(wv)}" height="${h}" fill="#fff" stroke="${INK}" stroke-width="1.2"/>`;
   b += ln(x0, y - 4, x0, y - 22, INK, 1.6) + ln(x1, y - 4, x1, y - 22, INK, 1.6) + arr2(x0 + 3, y - 15, x1 - 3, y - 15, id, INK, 2);
   b += T(160, y - 26, nhan, { a: 'middle', w: 700 });
-  for (let k = 0; k < n; k++) b += T(f1(x0 + k * step), y + h + 22, String(k + 1), { a: 'middle', size: 20, c: GREY });
   return b;
 };
 
@@ -46,12 +45,12 @@ export const hinhL11b12 = {
   // Trang 1 · Dự đoán: hai loa và hàng ghế đầu (không đánh dấu chỗ to/nhỏ)
   haiLoa: (cap = 'Hai loa cùng phát một bản nhạc; em đi dọc hàng ghế đầu.') => {
     let b = defs('hl1');
-    b += `<rect x="20" y="16" width="280" height="34" fill="#eef2fa" stroke="${GREY}" stroke-width="1.6"/>` + T(160, 40, 'sân khấu', { a: 'middle', c: GREY });
+    b += `<rect x="20" y="14" width="280" height="28" fill="#eef2fa" stroke="${GREY}" stroke-width="1.6"/>` + T(160, 35, 'sân khấu', { a: 'middle', size: 22 });
     const loa = (x, s) => `<rect x="${x - 15}" y="56" width="30" height="34" rx="3" fill="#fff" stroke="${INK}" stroke-width="2.6"/><circle cx="${x}" cy="73" r="9" fill="none" stroke="${INK}" stroke-width="2.2"/>` + T(x, 114, s, { a: 'middle', w: 700 });
     b += loa(42, 'Loa 1') + loa(278, 'Loa 2');
-    for (let k = 0; k < 4; k++) { const r = 14 + k * 14; b += `<path d="M${42 + r * 0.7},${73 - r * 0.7} A${r},${r} 0 0 1 ${42 + r * 0.7},${73 + r * 0.7}" fill="none" stroke="${GREY}" stroke-width="1.6"/><path d="M${278 - r * 0.7},${73 - r * 0.7} A${r},${r} 0 0 0 ${278 - r * 0.7},${73 + r * 0.7}" fill="none" stroke="${GREY}" stroke-width="1.6"/>`; }
+    for (let k = 0; k < 4; k++) { const r = 26 + k * 13; b += `<path d="M${42 + r * 0.88},${73 - r * 0.47} A${r},${r} 0 0 1 ${42 + r * 0.88},${73 + r * 0.47}" fill="none" stroke="${GREY}" stroke-width="1.6"/><path d="M${278 - r * 0.88},${73 - r * 0.47} A${r},${r} 0 0 0 ${278 - r * 0.88},${73 + r * 0.47}" fill="none" stroke="${GREY}" stroke-width="1.6"/>`; }
     for (let k = 0; k < 11; k++) b += `<rect x="${32 + k * 24}" y="150" width="18" height="16" rx="2" fill="#fff" stroke="${INK}" stroke-width="1.6"/>`;
-    b += T(160, 194, 'hàng ghế đầu', { a: 'middle', c: GREY });
+    b += T(160, 194, 'hàng ghế đầu', { a: 'middle', size: 22 });
     b += `<circle cx="70" cy="134" r="7" fill="${RED}"/>` + arr(82, 134, 250, 134, 'hl1', RED, 2.6) + T(160, 128, 'em đi', { a: 'middle', c: RED });
     return wrap('0 0 320 202', b, cap, 'Hai loa và hàng ghế đầu');
   },
@@ -60,13 +59,13 @@ export const hinhL11b12 = {
   khay: (cap = 'Gợn tròn từ hai mũi nhọn A, B: nét liền là đỉnh sóng, nét đứt là hõm.') => {
     const A = [118, 100], B = [202, 100];
     let b = `<defs><clipPath id="kclip"><rect x="4" y="4" width="312" height="192"/></clipPath></defs><rect x="4" y="4" width="312" height="192" fill="#f4f6fb" stroke="${GREY}" stroke-width="1.4"/><g clip-path="url(#kclip)">`;
-    for (const [x, y] of [A, B]) for (let k = 1; k <= 7; k++) {
+    for (const [x, y] of [A, B]) for (let k = 1; k <= 5; k++) {
       b += `<circle cx="${x}" cy="${y}" r="${k * 24}" fill="none" stroke="${INK}" stroke-width="1.5"/>`;
-      b += `<circle cx="${x}" cy="${y}" r="${k * 24 - 12}" fill="none" stroke="${BLUE}" stroke-width="1.3" stroke-dasharray="4 4"/>`;
+      b += `<circle cx="${x}" cy="${y}" r="${k * 24 - 12}" fill="none" stroke="${BLUE}" stroke-width="1.5" stroke-dasharray="4 4"/>`;
     }
     b += '</g>' + cham(A[0], A[1], RED, 6) + cham(B[0], B[1], RED, 6);
-    b += `<rect x="${A[0] - 30}" y="${A[1] + 8}" width="22" height="24" fill="#fff"/>` + T(A[0] - 19, A[1] + 27, 'A', { a: 'middle', w: 700 });
-    b += `<rect x="${B[0] + 8}" y="${B[1] + 8}" width="22" height="24" fill="#fff"/>` + T(B[0] + 19, B[1] + 27, 'B', { a: 'middle', w: 700 });
+    b += `<rect x="${A[0] - 30}" y="${A[1] + 8}" width="22" height="24" fill="#f4f6fb"/>` + T(A[0] - 19, A[1] + 27, 'A', { a: 'middle', w: 700 });
+    b += `<rect x="${B[0] + 8}" y="${B[1] + 8}" width="22" height="24" fill="#f4f6fb"/>` + T(B[0] + 19, B[1] + 27, 'B', { a: 'middle', w: 700 });
     return wrap('0 0 320 200', b, cap, 'Khay sóng hai mũi nhọn');
   },
 
@@ -94,7 +93,7 @@ export const hinhL11b12 = {
       b += ln(x0, 52, x0 + 136, 52, GREY, 1.2) + song(x0, 52, 136, 0) + T(x0 - 4, 58, '1', { a: 'end', size: 20 });
       b += ln(x0, 102, x0 + 136, 102, GREY, 1.2) + song(x0, 102, 136, ph, '6 4', BLUE) + T(x0 - 4, 108, '2', { a: 'end', size: 20 });
       b += ln(x0, 164, x0 + 136, 164, INK, 1.6);
-      for (const dy of [-28, -14, 14, 28]) b += ln(x0, 164 + dy, x0 + 136, 164 + dy, '#c4cbdc', 1.2, '2 4');
+      for (const dy of [-28, -14, 14, 28]) b += ln(x0, 164 + dy, x0 + 136, 164 + dy, '#8d97ae', 1.4, '1.5 4');
       return b + T(x0 + 68, 212, 'tổng', { a: 'middle', size: 20, c: GREY });
     };
     return wrap('0 0 320 218', cot(20, 0, '(a) cùng pha') + cot(176, Math.PI, '(b) ngược pha'), cap, 'Hai sóng cùng pha, ngược pha');
@@ -106,22 +105,21 @@ export const hinhL11b12 = {
     let b = `<defs><clipPath id="vclip"><rect x="2" y="4" width="316" height="216"/></clipPath></defs><g clip-path="url(#vclip)">`;
     for (let k = -3; k <= 3; k++) b += hyp(cx, cy, c, k * lam, [-106, 106], `stroke="${RED}" stroke-width="2.4"`);
     for (let k = -4; k <= 3; k++) b += hyp(cx, cy, c, (k + 0.5) * lam, [-106, 106], `stroke="${BLUE}" stroke-width="1.8" stroke-dasharray="5 4"`);
-    b += '</g>' + ln(cx - c, cy, cx + c, cy, INK, 2.2) + cham(cx - c, cy, INK, 6) + cham(cx + c, cy, INK, 6);
-    b += `<rect x="${cx - c - 30}" y="${cy + 6}" width="22" height="22" fill="#fff"/>` + T(cx - c - 19, cy + 24, 'A', { a: 'middle', w: 700 });
-    b += `<rect x="${cx + c + 8}" y="${cy + 6}" width="22" height="22" fill="#fff"/>` + T(cx + c + 19, cy + 24, 'B', { a: 'middle', w: 700 });
+    b += '</g>' + ln(cx - c, cy, cx + c, cy, INK, 2.2) + cham(cx - c, cy, INK, 5) + cham(cx + c, cy, INK, 5);
+    b += T(cx - c - 4, cy + 34, 'A', { a: 'middle', w: 700 }) + T(cx + c + 4, cy + 34, 'B', { a: 'middle', w: 700 });
     return wrap('0 0 320 224', b, cap, 'Đường cực đại, cực tiểu quanh hai nguồn');
   },
 
   // Trang 3 · Trên đoạn AB: cực đại, cực tiểu xen kẽ; hai khoảng để HS điền
   doanAB: (cap = 'Chấm đặc: cực đại; chấm rỗng: cực tiểu. Điền hai khoảng có dấu “?” theo λ.') => {
-    const x0 = 20, x1 = 300, cx = 160, h = 32, y = 66;
+    const x0 = 20, x1 = 300, cx = 160, h = 30, y = 66;
     let b = mk2('da') + ln(x0, y, x1, y, INK, 2.4);
     b += cham(x0, y, INK, 6.5) + cham(x1, y, INK, 6.5) + T(x0, y + 30, 'A', { a: 'middle', w: 700 }) + T(x1, y + 30, 'B', { a: 'middle', w: 700 });
     for (let n = -4; n <= 4; n++) b += cham(cx + n * h, y, RED, 5);
     for (let n = -4; n <= 3; n++) b += rong(cx + (n + 0.5) * h, y);
     b += ln(cx, y + 8, cx, y + 16, INK, 1.6) + T(cx, y + 34, 'O', { a: 'middle', w: 700 });
     b += arr2(cx + h + 2, y - 16, cx + 2 * h - 2, y - 16, 'da') + T(cx + 1.5 * h, y - 24, '?', { a: 'middle', w: 700, c: RED });
-    b += arr2(cx - 2 * h + 2, y - 16, cx - 1.5 * h - 2, y - 16, 'da') + T(cx - 1.75 * h, y - 24, '?', { a: 'middle', w: 700, c: BLUE });
+    b += ln(cx - 2 * h, y - 21, cx - 2 * h, y - 11, INK, 1.8) + ln(cx - 1.5 * h, y - 21, cx - 1.5 * h, y - 11, INK, 1.8) + ln(cx - 2 * h, y - 16, cx - 1.5 * h, y - 16, INK, 2) + T(cx - 1.75 * h, y - 26, '?', { a: 'middle', w: 700, c: BLUE });
     return wrap('0 0 320 106', b, cap.replace('λ', hl), 'Cực đại, cực tiểu trên đoạn AB');
   },
 
@@ -133,12 +131,12 @@ export const hinhL11b12 = {
     b += arr(34, yc, 84, yc, 'yg2', INK, 2);
     b += ln(xs, 14, xs, s1 - 5, INK, 4) + ln(xs, s1 + 5, xs, s2 - 5, INK, 4) + ln(xs, s2 + 5, xs, 172, INK, 4);
     b += T(xs - 8, s1 + 4, `S${sb('1')}`, { a: 'end', size: 20 }) + T(xs - 8, s2 + 18, `S${sb('2')}`, { a: 'end', size: 20 });
-    for (const yy of [s1, s2]) for (const yt of [yc - 60, yc, yc + 60]) b += ln(xs, yy, xm, yt, GREY, 1.1, '3 4');
+    for (const yy of [s1, s2]) for (const yt of [yc - 56, yc, yc + 56]) b += ln(xs, yy, xm, yt, GREY, 1.1, '3 4');
     b += arr2(xs + 12, s1, xs + 12, s2, 'yg', INK, 1.8) + T(xs + 18, yc + 6, gk('a'), { size: 22 });
     b += `<rect x="${xm}" y="14" width="20" height="158" fill="#c9cfdc" stroke="${INK}" stroke-width="1.6"/>`;
-    const i = 30;
+    const i = 28;
     for (let k = -2; k <= 2; k++) b += `<rect x="${xm}" y="${f1(yc + k * i - 6)}" width="20" height="12" fill="#fff" stroke="${INK}" stroke-width="1.2"/>`;
-    b += T(xm - 6, yc + 6, 'O', { a: 'end', w: 700, size: 20 });
+    b += T(xm + 26, yc + 7, 'O', { w: 700, size: 20 });
     b += ln(xm + 22, yc - i, xm + 34, yc - i, INK, 1.4) + ln(xm + 22, yc - 2 * i, xm + 34, yc - 2 * i, INK, 1.4) + arr2(xm + 30, yc - 2 * i + 2, xm + 30, yc - i - 2, 'yg', INK, 1.6) + T(xm + 36, yc - 1.5 * i + 7, gk('i'), { size: 22 });
     b += ln(xs, 184, xs, 196, INK, 1.4) + ln(xm, 184, xm, 196, INK, 1.4) + arr2(xs + 3, 190, xm - 3, 190, 'yg', INK, 1.8);
     b += `<rect x="${(xs + xm) / 2 - 14}" y="176" width="28" height="24" fill="#fff"/>` + T((xs + xm) / 2, 197, gk('D'), { a: 'middle', size: 22 });
@@ -166,17 +164,17 @@ export const hinhL11b12 = {
     const Mx = cx - 10 * sc, My = cy - Math.sqrt(192) * sc;
     b += ln(cx - c, cy, cx + c, cy, INK, 2.2) + cham(cx - c, cy, INK, 6) + cham(cx + c, cy, INK, 6) + cham(Mx, My, INK, 6);
     b += T(cx - c, cy + 26, 'A', { a: 'middle', w: 700 }) + T(cx + c, cy + 26, 'B', { a: 'middle', w: 700 });
-    b += `<rect x="${Mx - 34}" y="${My - 26}" width="26" height="24" fill="#fff"/>` + T(Mx - 21, My - 8, 'M', { a: 'middle', w: 700 });
+    b += T(Mx - 22, My + 20, 'M', { a: 'middle', w: 700 });
     b += `<rect x="${cx + 6}" y="50" width="100" height="24" fill="#fff"/>` + T(cx + 8, 68, 'trung trực', { size: 20, c: GREY });
     return wrap('0 44 320 172', b, cap, 'Dãy cực đại qua M');
   },
 
   // Dạng 4 (BTM): 7 vân sáng liên tiếp trải trên 6,0 mm
   vanD4: (cap = 'Đoạn màn có 7 vân sáng liên tiếp (ô trắng), đo từ tâm vân đầu tới tâm vân cuối.') =>
-    wrap('0 0 320 126', dai(7, '6,0 mm', 'v4'), cap, 'Bảy vân sáng liên tiếp'),
+    wrap('0 0 320 104', dai(7, '6,0 mm', 'v4'), cap, 'Bảy vân sáng liên tiếp'),
   // Bài tương tự Dạng 4 · Bài 2: 5 vân sáng liên tiếp trải trên 8,0 mm
   vanTT: (cap = 'Năm vân sáng liên tiếp, tâm tới tâm.') =>
-    wrap('0 0 320 126', dai(5, '8,0 mm', 'vt'), cap, 'Năm vân sáng liên tiếp'),
+    wrap('0 0 320 104', dai(5, '8,0 mm', 'vt'), cap, 'Năm vân sáng liên tiếp'),
 
   // Dạng 5 (BTM): trục toạ độ 0–3,5 mm, hai hàng trống để HS chấm vân sáng của từng bức xạ
   thangD5: (cap = `Chấm vân sáng của ${hl}<sub>1</sub> và ${hl}<sub>2</sub> (dùng <i>i</i><sub>1</sub>, <i>i</i><sub>2</sub> vừa tính) rồi tìm chỗ trùng.`) => {
@@ -187,7 +185,7 @@ export const hinhL11b12 = {
     b += T(x0 + 3.5 * sc, y + 56, 'x (mm)', { a: 'end', size: 20, c: GREY });
     for (const [yy, s] of [[38, '1'], [88, '2']]) {
       b += ln(x0, yy, x0 + 3.5 * sc, yy, GREY, 1.4, '3 4') + T(x0 - 8, yy + 7, `${L}${sb(s)}`, { a: 'end', size: 21 });
-      for (let k = 0; k <= 14; k++) b += ln(x0 + (k * sc) / 4, yy - 4, x0 + (k * sc) / 4, yy + 4, '#c4cbdc', 1);
+      for (let k = 0; k <= 14; k++) b += ln(x0 + (k * sc) / 4, yy - (k % 2 ? 4 : 6), x0 + (k * sc) / 4, yy + (k % 2 ? 4 : 6), '#8d97ae', 1.4);
     }
     b += cham(x0, 38, RED, 5) + cham(x0, 88, RED, 5);
     return wrap('0 0 320 196', b, cap, 'Trục chấm vân hai bức xạ');
