@@ -71,8 +71,8 @@ ${h3(4, 'II.1 · Gia tốc không đổi: nhanh dần đều, chậm dần đề
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Chuyển động thẳng biến đổi đều:</b> quỹ đạo ${f(25)}, gia tốc ${f(25)} (cả độ lớn lẫn hướng).</div>
 <div style="margin:.6mm 0">${m('a=\\dfrac{\\Delta v}{\\Delta t}=')} ${f(30)} &nbsp; đơn vị của ${aa}: ${f(14)}</div>
-<div><b>Nhanh dần đều:</b> ${aa} ${f(14)} dấu ${vv}, tức ${m('a\\cdot v')} ${f(12)} 0</div>
-<div><b>Chậm dần đều:</b> ${aa} ${f(14)} dấu ${vv}, tức ${m('a\\cdot v')} ${f(12)} 0</div>
+<div><b>Nhanh dần đều:</b> ${aa} ${f(25)} dấu ${vv}, tức ${m('a\\cdot v')} ${f(12)} 0</div>
+<div><b>Chậm dần đều:</b> ${aa} ${f(25)} dấu ${vv}, tức ${m('a\\cdot v')} ${f(12)} 0</div>
 <div style="margin-top:.8mm"><b>Ví dụ.</b> Người trượt băng thả trôi với ${u('6\\ \\mathrm{m/s}')}, mỗi giây chậm đi ${u('0{,}5\\ \\mathrm{m/s}')}. Chiều dương theo chiều trượt:</div>
 <div>${nw(`${m('a=')} ${f(16)}`)} · nhanh hay chậm dần: ${f(25)} · dừng hẳn sau ${nw(`${m('t=')} ${f(12)} s`)}</div>
 ${lines(1)}</div>
@@ -109,7 +109,7 @@ ${h3(3, 'II.3 · Độ dịch chuyển: diện tích dưới đồ thị v–t',
 <div style="margin:.5mm 0">${m('d=')} ${f(30)}</div>
 <div>Hình bên: ${nw(`${m('d=')} ${f(12)} + ${f(12)} = ${f(12)} m`)}</div>
 <div style="margin:.5mm 0"><b>Phương trình chuyển động:</b> ${m('x=')} ${f(30)}</div>
-<div>Trước khi viết, chọn: gốc ${f(16)}, chiều ${f(16)}, gốc ${f(16)}</div>
+<div>Trước khi viết, chọn: gốc ${f(25)}, chiều ${f(25)}, gốc ${f(25)}</div>
 <div>Không đổi chiều: quãng đường ${nw(`${m('s=')} ${f(12)}`)}</div></div>
 ${H.thang()}</div>
 ${foot(2)}</section>`;
@@ -197,10 +197,10 @@ const dang = [
     nd: `giây thứ ${m('n')} là từ ${nw(`${m('t=')} ${f(14)}`)} đến ${nw(`${m('t=')} ${f(12)}`)}; ${m('\\Delta s_n=s_n-')} ${f(12)}`, a: ['a', 'b'], gi: 4 },
   { t: 'Dạng 5 · Khó · Hai giai đoạn: dốc rồi mặt ngang',
     de: deH(`Quả cầu lăn từ nghỉ ở đỉnh A của dốc dài ${m('64\\ \\mathrm m')}, tới chân dốc B sau ${nw(`${m('8\\ \\mathrm s')}.`)} Sau đó lăn tiếp trên mặt ngang thêm ${m('32\\ \\mathrm m')} (B → C) thì dừng. Mỗi giai đoạn biến đổi đều.<br><b>a)</b> gia tốc trên dốc và vận tốc tại B<br><b>b)</b> gia tốc và thời gian lăn trên BC<br><b>c)</b> vận tốc trung bình trên cả hành trình AC`, H.d5),
-    nd: `${m('v_B')}: vận tốc ${f(14)} của giai đoạn 1, vận tốc ${f(14)} của giai đoạn 2; ${m('v_{tb}=')} tổng đường : ${f(25)}`, a: ['a', 'b', 'c'], gi: 4 },
+    nd: `${m('v_B')}: vận tốc ${f(25)} của giai đoạn 1, vận tốc ${f(25)} của giai đoạn 2; ${m('v_{tb}=')} tổng đường : ${f(25)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 6 · Khó · Hai xe ngược chiều trên dốc: lúc và nơi gặp nhau',
-    de: deH(`Ô tô qua chân dốc với ${u('20\\ \\mathrm{m/s}')}, lên dốc chậm dần đều, ${nw(`${m('|a_1|=0{,}4\\ \\mathrm{m/s^2}')}.`)} Cùng lúc, xe đạp ở đỉnh dốc có ${u('2\\ \\mathrm{m/s}')}, xuống dốc nhanh dần đều, ${nw(`${m('|a_2|=0{,}2\\ \\mathrm{m/s^2}')}.`)} Dốc dài ${nw(`${m('570\\ \\mathrm m')}.`)}<br><b>a)</b> sau bao lâu hai xe gặp nhau; chỗ gặp cách chân dốc bao xa<br><b>b)</b> vận tốc của mỗi xe lúc gặp nhau`, H.d6, 40),
-    nd: `MỘT gốc toạ độ, MỘT chiều dương cho cả hai xe; xe đạp: ${nw(`${m('v_{02}=')} ${f(12)}`)}, ${nw(`${m('a_2=')} ${f(12)}`)}; loại nghiệm khi ô tô đã ${f(16)}`, a: ['a', 'b'], gi: 6, cot: 2 },
+    de: deH(`Ô tô qua chân dốc với ${u('20\\ \\mathrm{m/s}')}, lên dốc chậm dần đều, ${nw(`${m('|a_1|=0{,}4\\ \\mathrm{m/s^2}')}.`)} Cùng lúc, xe đạp ở đỉnh dốc có ${u('2\\ \\mathrm{m/s}')}, xuống dốc nhanh dần đều, ${nw(`${m('|a_2|=0{,}2\\ \\mathrm{m/s^2}')}.`)} Dốc dài ${nw(`${m('570\\ \\mathrm m')}.`)} Gốc toạ độ ở chân dốc, <b>chiều dương từ chân lên đỉnh dốc</b> (chiều chuyển động của ô tô).<br><b>a)</b> sau bao lâu hai xe gặp nhau; chỗ gặp cách chân dốc bao xa<br><b>b)</b> vận tốc của mỗi xe lúc gặp nhau`, H.d6, 40),
+    nd: `cả hai xe cùng hệ quy chiếu đã chọn; xe đạp: ${nw(`${m('v_{02}=')} ${f(12)}`)}, ${nw(`${m('a_2=')} ${f(12)}`)}; loại nghiệm khi ô tô đã ${f(25)}`, a: ['a', 'b'], gi: 4, cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…

@@ -39,6 +39,7 @@ const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const cau = (s, k) => `<div style="padding-top:1mm;line-height:1.35">${s}</div>${lines(k)}`;
+const fr = (w = 16) => `<span style="display:inline-block;width:${w}mm;height:9mm;border:.3mm solid var(--navy);border-radius:.6mm;background:#fff;vertical-align:middle;margin:0 .5mm"></span>`;
 const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
 const FAB = m('\\vec F_{AB}'), FBA = m('\\vec F_{BA}');
 const ms2 = (s) => nw(m(`${s}\\ \\mathrm{m/s^2}`));
@@ -60,31 +61,31 @@ ${opt('A', 'Đứng yên, vì thành sân không nhúc nhích')}
 ${opt('B', 'Trượt tiến về phía thành sân')}
 ${opt('C', 'Trượt lùi ra xa thành sân')}
 ${opt('D', 'Trượt sang bên, dọc theo thành sân')}
-<div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
+<div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
 ${H.thanhSan()}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f(12)} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f(12)} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(3)}</div>
 ${h3(4, 'II.1 · Lực và phản lực', '1·4')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>A tác dụng lên B một lực thì B cũng ${f(25)} lên A một lực.</div>
 <div>Hai lực này gọi là ${f(25)} và ${f(25)}.</div>
-<div>Chúng có cùng ${f(25)}, ngược ${f(25)}, cùng ${f(25)}.</div>
+<div>Về phương: ${f(22)}</div>
+<div>Về chiều: ${f(22)}</div>
+<div>Về độ lớn: ${f(22)}</div>
 <div style="margin:1mm 0"><b>Định luật 3 Newton:</b> ${nw(`${m('\\vec F_{AB}=')} ${f(16)}`)}</div>
 <div>${FAB}: lực ${f(12)} tác dụng lên ${f(12)}</div>
 <div>${FBA}: lực ${f(12)} tác dụng lên ${f(12)}</div></div>
 ${H.boiBe()}</div>
-<div class="card" style="margin-top:1.2mm;padding:1mm 3mm">${cau('<b>Thành sân cũng chịu lực đẩy của em. Vì sao thành sân không nhúc nhích mà em lại chuyển động?</b>', 2)}</div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
 ${head('BỐN ĐẶC ĐIỂM · HAI LỰC KẾ · BẪY 1')}
-${h3(1, 'II.2 · Ba Cùng – Một Ngược – Một Khác', '2·1')}
+${h3(1, 'II.2 · Bốn đặc điểm: Ba Cùng – Một Ngược – Một Khác', '2·1')}
 <table><tr><th style="width:30mm">Đặc điểm</th><th>Nghĩa là</th><th style="width:44mm">Ví dụ</th></tr>
 <tr><td>Cùng ${f(18)}</td><td>cùng xuất hiện, cùng mất đi</td><td>hai kim lực kế đi cùng nhau</td></tr>
 <tr><td>Cùng ${f(18)}</td><td>cùng bản chất (cùng hấp dẫn, cùng đàn hồi…)</td><td>Trái Đất hút táo, táo hút ${f(14)}</td></tr>
-<tr><td>Cùng ${f(18)}</td><td>${m('F_{AB}=F_{BA}')} dù hai vật nặng nhẹ khác nhau</td><td>xe tải đâm xe con</td></tr>
-<tr><td>Ngược ${f(18)}</td><td>cùng phương, chiều ngược nhau</td><td>em đẩy thành, thành đẩy em</td></tr>
+<tr><td>Cùng ${f(13)}<br>ngược ${f(13)}</td><td>${m('F_{AB}=F_{BA}')} dù hai vật nặng nhẹ khác nhau; cùng phương, chiều ngược nhau</td><td>xe tải đâm xe con; em đẩy thành, thành đẩy em</td></tr>
 <tr><td>Khác ${f(18)}</td><td>mỗi lực đặt lên một vật</td><td>lực em đẩy đặt lên ${f(14)}</td></tr></table>
 ${h3(2, 'II.3 · Thí nghiệm: hai lực kế kéo nhau', '2·2')}
 <div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div>
@@ -100,7 +101,7 @@ ${box(`<div style="line-height:1.35">Lần 3 lực kế 2 chỉ lớn hơn ${nw(
 ${h3(3, 'III · Bẫy 1 · “Bằng nhau, ngược chiều thì triệt tiêu”', '2·3')}
 <div class="fig-side" style="${fs(44)}"><div>
 <table><tr><th></th><th>Hai lực cân bằng</th><th>Lực – phản lực</th></tr>
-<tr><td>Đặt lên</td><td>${f(25)}</td><td>${f(25)}</td></tr>
+<tr><td>Đặt lên</td><td>${f(12)} vật</td><td>${f(12)} vật</td></tr>
 <tr><td>Triệt tiêu?</td><td>${f(25)}</td><td>${f(25)}</td></tr>
 <tr><td>Loại lực</td><td>${f(25)}</td><td>${f(25)}</td></tr></table>
 <div style="margin-top:1mm">Hai lực cân bằng: ${f(12)} và ${f(12)} · Lực – phản lực: ${f(12)} và ${f(12)}</div></div>
@@ -184,7 +185,7 @@ const dang = [
     nd: `Lực xe kéo ngựa đặt lên ${f(25)} nên ${ck}có ${ck}không cộng vào hợp lực lên xe`, a: ['a', 'b', 'c'], gi: 6, fig: H.d2() },
   { t: 'Dạng 3 · Khá · Hai xe va nhau: lực tương tác và độ giảm vận tốc',
     de: `Trên đường ray nhẵn nằm ngang, xe A ${m('1{,}5\\ \\mathrm{kg}')} chạy tới va vào xe B ${m('0{,}5\\ \\mathrm{kg}')} đang đứng yên. Trong ${m('0{,}2\\ \\mathrm s')} hai xe tương tác, xe B tăng tốc từ nghỉ đến ${m('2{,}4\\ \\mathrm{m/s}')}. Coi lực tương tác không đổi.<br><b>a)</b> gia tốc của xe B<br><b>b)</b> độ lớn lực tương tác<br><b>c)</b> gia tốc của xe A<br><b>d)</b> độ giảm vận tốc của xe A`,
-    nd: `Biết ${m('\\Delta v')} của xe ${f(12)} → ${nw(`${m('a=')} ${f(14)}`)} → ${nw(`${m('F=')} ${f(14)}`)}; lực lên xe kia ${f(25)} nên ${nw(`${m('a_A=')} ${f(14)}`)}`, a: ['a', 'b', 'c', 'd'], gi: 14, fig: H.d3(),
+    nd: `Biết ${m('\\Delta v')} của xe ${f(12)} → ${nw(`${m('a=')}${fr()}`)} → ${nw(`${m('F=')}${fr()}`)}; lực lên xe kia ${f(25)} nên ${nw(`${m('a_A=')}${fr()}`)}`, a: ['a', 'b', 'c', 'd'], gi: 14, fig: H.d3(),
     bang: `<table style="margin:.6mm 0"><tr><th style="width:56mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“đường ray nhẵn”</td><td style="height:6.5mm"></td></tr>
 <tr><td>“B tăng tốc từ nghỉ đến 2,4 m/s trong 0,2 s”</td><td style="height:6.5mm"></td></tr>
