@@ -5,6 +5,7 @@
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { ve } from './hinh.mjs';
+const nw = (s) => `<span style="white-space:nowrap">${s}</span>`;
 const { t, defs, wrap, INK, RED, BLUE, GREY, SW } = ve;
 const ANH = resolve(dirname(fileURLToPath(import.meta.url)), '../../book/assets/anh-that');
 // K: hệ số phóng chữ cho hình in hẹp (cột 32–36 mm ở trang Bài tập mẫu) để chữ vẫn ≥ 7 pt
@@ -117,7 +118,7 @@ export const hinhL10b13 = {
     return wrap('0 0 320 196', b, cap, 'Quy tắc hình bình hành');
   },
   // Tr.3 · Đòn gánh: vai đặt ở đâu? (vai vẽ ở giữa, có dấu ? — không vẽ đúng tỉ lệ để khỏi lộ đáp số)
-  donGanh: (cap = `Đòn dài 1 m, hai thùng 30 N và 20 N. Vai đặt ở đâu?`) => {
+  donGanh: (cap = `Đòn dài 1 m, hai thùng ${nw('30 N')} và ${nw('20 N')}. Vai đặt ở đâu?`) => {
     let b = defs('dga');
     b += `<rect x="20" y="50" width="280" height="10" rx="4" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += ln(30, 60, 30, 92) + hop(4, 92, 52, 40) + T(30, 120, '30 N', { a: 'middle', size: 18, w: 700 });
