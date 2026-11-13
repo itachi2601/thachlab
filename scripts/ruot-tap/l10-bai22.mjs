@@ -71,7 +71,7 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, `II.1 · Nhắc lại: hợp lực của hai lực đồng quy`, '1·4')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>Hai lực ${F1}, ${F2} chung gốc O, hợp góc ${al}. Quy tắc hình bình hành: ${Ft} là đường ${f(18)} qua O.</div>
-<div style="margin-top:.6mm">${m('F=')} ${nw(`${m('\\sqrt{\\ \\ }')} ${f(30)}`)}</div>
+<div style="margin-top:.6mm">${m('F=')} ${nw(`${m('\\sqrt{\\ \\ }')} <span class="fill" style="min-width:38mm;height:9mm"></span>`)}</div>
 <div class="hint" style="margin:.3mm 0">Đơn vị: ${m('F_1,F_2,F')}: N · ${al}: độ · ${cs}</div>
 <div style="margin-top:.6mm">${nw(`${m('\\alpha=0^\\circ:\\ F=')} ${f(20)}`)} &nbsp;${nw(`${m('\\alpha=90^\\circ:\\ F=')} ${f(20)}`)}</div>
 <div style="margin-top:.6mm">${nw(`${m('\\alpha=180^\\circ:\\ F=')} ${f(20)}`)}</div></div>
@@ -80,7 +80,7 @@ ${h3(5, 'Làm nhanh', '1·5')}
 ${box(cau(`${m('F_1=1{,}5')} N và ${m('F_2=2{,}0')} N đồng quy, hai dây vuông góc. Hợp lực ${Ft} có độ lớn bao nhiêu?`, 1))}
 ${foot(1)}</section>`;
 
-const bangDc = (rows) => `<table><tr><th style="width:38mm">Dụng cụ</th><th>Để làm gì · độ chia</th></tr>${rows.map((x) => `<tr><td style="height:14mm">${x}</td><td></td></tr>`).join('')}</table>`;
+const bangDc = (rows) => `<table><tr><th style="width:38mm">Dụng cụ</th><th>Để làm gì · độ chia</th></tr>${rows.map((x) => `<tr><td style="height:15mm">${x}</td><td></td></tr>`).join('')}</table>`;
 const p2 = `<section class="page">
 ${head('DỤNG CỤ · BỐ TRÍ · LỰC CÂN BẰNG')}
 ${h3(1, 'II.1 · Dụng cụ và bố trí', '2·1')}
@@ -91,7 +91,7 @@ ${h3(2, 'Vì sao lực kế 3 đo được lực tổng hợp?', '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Nút O đứng yên nên hợp lực lên O bằng ${f(10)}. Vậy ${m('\\vec F+\\vec F_3=')} ${f(10)}.</div>
 <div style="margin-top:.6mm">${F3} so với ${Ft}: cùng ${f(18)}, cùng ${f(18)}, ${f(18)} chiều.</div>
-<div style="margin-top:.6mm">${Ft} trên hình vẽ gọi là lực tổng hợp ${f(10)}; ${F3} là lực tổng hợp ${f(10)}.</div></div>
+<div style="margin-top:.6mm">${Fv}: ${f(22)} từ hình bình hành; ${F3}: số chỉ lực kế ${f(8)}.</div></div>
 ${h3(3, 'Độ chia và cách đọc', '2·3')}
 <div class="fig-side" style="${fs(62)}"><div>
 <div>Mặt lực kế ${N('5')} chia thành các vạch. Mỗi độ chia ứng ${f(10)} N. Nhìn thẳng mặt chỉ để tránh sai số do nhìn lệch.</div>
@@ -104,9 +104,9 @@ const p3 = `<section class="page">
 ${head('CÁC BƯỚC ĐO · HAI CÁI BẪY SỐ LIỆU')}
 ${h3(1, 'II.2 · Các bước đo', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div class="trap"><b>1.</b><span>Chỉnh số ${f(8)} từng lực kế ở đúng tư thế dùng. Buộc ba dây vào nút O, chờ O ${f(13)}.</span></div>
+<div class="trap"><b>1.</b><span>Chỉnh số ${f(8)} từng lực kế ở đúng tư thế dùng. Buộc ba dây vào nút O, chờ O ${f(22)}.</span></div>
 <div class="trap"><b>2.</b><span>Chấm hai điểm trên mỗi dây để đánh dấu phương; đọc ${F1}, ${F2}, ${F3} (ghi bảng tr. ${4 + OFF}).</span></div>
-<div class="trap"><b>3.</b><span>Lấy giấy ra, nối các chấm qua O, đo góc ${al} giữa hai dây. Làm ${f(8)} lần, đổi vị trí hai chốt hoặc đổi vật.</span></div>
+<div class="trap"><b>3.</b><span>Lấy giấy ra, nối các chấm qua O, đo góc ${al} giữa hai dây. Làm ${f(14)} lần, đổi vị trí hai chốt hoặc đổi vật.</span></div>
 <div class="trap"><b>4.</b><span>Vẽ hình bình hành (tr. ${5 + OFF}), đo đường chéo, tính ${Fv}; so với ${F3}.</span></div>
 <div style="margin-top:.6mm"><b>Vì sao</b> phải đợi O đứng yên rồi mới đọc số?</div>${lines(1)}</div>
 ${h3(2, 'III · Bẫy 1: số 0 của lực kế', '3·2')}
@@ -143,7 +143,7 @@ ${h3(3, `Sai số ${Dl} của bài này`, '4·3')}
 <div>Mỗi lực kế sai ${nw(m('\\Delta F=0{,}1\\ \\mathrm N'))}. ${Fv} dựng từ ${F1}, ${F2}, rồi so với ${F3} nên ${nw(`${Dl} = ${m('\\Delta F_1+\\Delta F_2+\\Delta F_3')} = ${f(14)} N`)}</div>
 <div style="margin-top:.6mm">${nw(`${dl} ${m('\\le')} ${Dl}`)}: ${f(40)}. ${nw(`${dl} > ${Dl}`)}: ${f(40)}</div></div>
 ${h3(4, 'Quan sát và so sánh', '4·4')}
-<div class="card soft" style="padding:1.2mm 3mm"><div>Lần có ${dl} lớn nhất: lần ${f(8)}, ${nw(`${dl} = ${f(10)} N`)}. Cả ba lần ${Ft} vẽ cùng lớn hơn hoặc cùng nhỏ hơn ${F3}? ${f(26)}</div>${lines(1)}</div>
+<div class="card soft" style="padding:1.2mm 3mm"><div>Lần có ${dl} lớn nhất: lần ${f(14)}, ${nw(`${dl} = ${f(14)} N`)}. Cả ba lần ${Ft} vẽ cùng lớn hơn hoặc cùng nhỏ hơn ${F3}? ${f(26)}</div>${lines(1)}</div>
 ${h3(5, 'Làm nhanh: ba lần đo của một nhóm', '4·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <table class="tbl-ct" style="text-align:center"><tr><th style="width:14mm">Lần</th><th>${dl} (N)</th><th>${dl} ${m('\\le')} ${Dl} = ${N('0{,}3')}?</th></tr>
@@ -155,7 +155,7 @@ const p5 = `<section class="page">
 ${head('VẼ HÌNH BÌNH HÀNH · KẾT LUẬN · BÁO CÁO')}
 ${h3(1, 'II.5 · Hình bình hành của nhóm em (một lần đo)', '5·1')}
 <div style="width:123.6mm">${H.luoi()}</div>
-<div style="margin:.5mm 0">${nw(`${m('F_1=')} ${f(10)} N`)} · ${nw(`${m('F_2=')} ${f(10)} N`)} · ${nw(`${m('\\alpha=')} ${f(10)}°`)} · chéo ${f(12)} cm · ${nw(`${Fv} = ${f(12)} N`)}</div>
+<div style="margin:.5mm 0">${nw(`${m('F_1=')} ${f(14)} N`)} · ${nw(`${m('F_2=')} ${f(14)} N`)} · ${nw(`${m('\\alpha=')} ${f(14)}°`)} · chéo ${f(12)} cm · ${nw(`${Fv} = ${f(12)} N`)}</div>
 ${h3(2, 'Kết luận', '5·2')}
 <div class="card soft" style="padding:1.2mm 3mm"><div>${nw(`${dl} = ${f(12)} N`)}, ${nw(`${Dl} = ${f(10)} N`)}: ${ck}hợp quy tắc hình bình hành trong sai số &nbsp;${ck}chưa hợp, cần kiểm lại</div></div>
 ${h3(3, 'Câu hỏi báo cáo', '5·3')}
@@ -168,13 +168,13 @@ ${foot(5)}</section>`;
 const dang = [
   { t: `Dạng 1 · Dễ · Hai lực vuông góc: dựng hình, tính ${Fv}, so với ${F3}`,
     de: `Ba lực kế: ${nw(m('F_1=0{,}9\\ \\mathrm N'))}, ${nw(m('F_2=1{,}2\\ \\mathrm N'))}, hai dây vuông góc; lực kế 3 chỉ ${nw(m('F_3=1{,}6\\ \\mathrm N'))}. Tỉ lệ xích ${cm('1')} ứng ${N('0{,}5')}, mỗi lực kế sai ${N('0{,}1')}.<br><b>a)</b> độ dài hai cạnh vẽ<br><b>b)</b> đường chéo và ${Fv}<br><b>c)</b> độ lệch ${dl}<br><b>d)</b> sai số ${Dl}; kết luận`,
-    nd: `Cạnh ${nw(`= ${m('F/0{,}5')}`)}; hình ${f(14)} nên chéo ${nw(m('=\\sqrt{a^2+b^2}'))}; ${nw(`${dl} = |${Fv} − ${F3}|`)}; ${nw(`${Dl} = ${m('3\\Delta F')}`)} so với ${dl}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 5, fig: H.hbh('Hai cạnh vẽ chung gốc O, nét đứt hoàn thành hình.') },
+    nd: `Cạnh ${nw(`= ${m('F/0{,}5')}`)}; hình ${f(14)} nên chéo ${nw(m('=\\sqrt{a^2+b^2}'))}; ${nw(`${dl} = |${Fv} − ${F3}|`)}; ${nw(`${Dl} = ${m('3\\Delta F')}`)} so với ${dl}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 6, fig: H.hbh('Hai cạnh vẽ chung gốc O, nét đứt hoàn thành hình.') },
   { t: `Dạng 2 · Trung bình · Góc ${al} bất kì: công thức, chéo đo được, độ lệch`,
     de: `${nw(m('F_1=2{,}0\\ \\mathrm N'))}, ${nw(m('F_2=3{,}0\\ \\mathrm N'))}, góc giữa hai dây ở nút O là ${nw(m('\\alpha=60^\\circ'))}. Đường chéo vẽ đo được ${cm('8{,}7')} (tỉ lệ ${cm('1')} ứng ${N('0{,}5')}); lực kế 3 chỉ ${nw(m('F_3=4{,}5\\ \\mathrm N'))}; ${nw(m('\\Delta F=0{,}1\\ \\mathrm N'))} mỗi lực kế.<br><b>a)</b> ${Ft} tính bằng công thức<br><b>b)</b> ${Fv} từ đường chéo<br><b>c)</b> độ lệch ${dl}<br><b>d)</b> kết luận so với ${Dl}`,
     nd: `${nw(`${m('F^2=F_1^2+F_2^2+')} ${f(18)}`)}; ${nw(`${Fv} = chéo ${m('\\times 0{,}5')}`)}; ${nw(`${dl} = |${Fv} − ${F3}|`)}`, a: ['a', 'b', 'c', 'd'], gi: 5 },
   { t: 'Dạng 3 · Khó hơn · Hiệu chỉnh số 0 của lực kế rồi kết luận',
     de: `${nw(m('F_1=2{,}4\\ \\mathrm N'))}, ${nw(m('F_2=3{,}2\\ \\mathrm N'))}, hai dây vuông góc. Nhóm thay một lực kế 3 khác mà chưa chỉnh số 0: lực kế đọc ${nw(m('4{,}4\\ \\mathrm N'))}; treo thẳng, chưa móc vật thì nó chỉ ${nw(m('0{,}3\\ \\mathrm N'))}. Tỉ lệ xích ${cm('1')} ứng ${N('0{,}5')}; ${nw(m('\\Delta F=0{,}1\\ \\mathrm N'))} mỗi lực kế.<br><b>a)</b> ${Fv} (qua đường chéo)<br><b>b)</b> ${dl} khi dùng số đọc ${N('4{,}4')}; so với ${Dl}<br><b>c)</b> ${F3} sau khi trừ số 0 lệch<br><b>d)</b> ${dl} mới; kết luận`,
-    nd: `Số 0 lệch ${nw('+0,3')} cộng vào ${f(14)} lần đọc; ${nw(`${F3} đúng = đọc − ${f(10)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 5 },
+    nd: `Số 0 lệch ${nw('+0,3')} cộng vào ${f(14)} lần đọc; ${nw(`${F3} đúng = đọc − ${f(10)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], gi: 6 },
   { t: `Dạng 4 · Khó · Hai dây treo vật: lực căng phụ thuộc góc ${al}`,
     de: `Vật nặng ${N('3{,}0')} treo bằng hai dây giống hệt nhau, đối xứng, góc giữa hai dây là ${al}. Mỗi dây có lực căng ${m('T')}, hợp lực của hai dây cân bằng với ${m('P')}.<br><b>a)</b> ${m('T')} khi ${nw(m('\\alpha=60^\\circ'))}<br><b>b)</b> ${m('T')} khi ${nw(m('\\alpha=120^\\circ'))}<br><b>c)</b> dây chịu được tối đa ${N('4{,}0')}: góc ${al} lớn nhất không làm dây đứt`,
     nd: `Mỗi dây lệch ${nw(m('\\alpha/2'))} so với phương đứng: ${nw(`${m('2T\\cos\\dfrac{\\alpha}{2}=')} ${f(10)}`)}; ${al} tăng thì ${m('T')} ${f(14)}`, a: ['a', 'b', 'c'], cot: 3, gi: 5, fig: H.khungAnh(`Hai dây treo vật; ${al} là góc giữa hai dây.`, 'vật') },
@@ -206,7 +206,7 @@ const tuongTu = {
     nhap(18),
   ]],
   dap: [
-    `D1·1: a) 2,4 cm; 3,2 cm · b) chéo 4,0 cm; F vẽ 1,0 N; ${dl} 0,2 N · c) ${Dl} = 0,3 N: hợp &nbsp;|&nbsp; D1·2: a) 3,0 cm; 7,2 cm · b) chéo 7,8 cm; F vẽ 3,9 N; ${dl} 0,4 N · c) ${Dl} = 0,3 N: chưa hợp &nbsp;|&nbsp; D2·1: a) 2,65 N · b) 2,65 N · c) 0,15 N · d) hợp &nbsp;|&nbsp; D2·2: a) 1,80 N · b) 1,80 N · c) 0,40 N · d) chưa hợp &nbsp;|&nbsp; D3·1: a) 2,0 N · b) ${dl} 0,5 N, chưa hợp · c) 2,2 N · d) ${dl} 0,2 N, hợp`,
+    `D1·1: a) 1,2 cm; 1,6 cm · b) chéo 2,0 cm; F vẽ 1,0 N; ${dl} 0,2 N · c) ${Dl} = 0,3 N: hợp &nbsp;|&nbsp; D1·2: a) 3,0 cm; 7,2 cm · b) chéo 7,8 cm; F vẽ 3,9 N; ${dl} 0,4 N · c) ${Dl} = 0,3 N: chưa hợp &nbsp;|&nbsp; D2·1: a) 2,65 N · b) 2,65 N · c) 0,15 N · d) hợp &nbsp;|&nbsp; D2·2: a) 1,80 N · b) 1,80 N · c) 0,40 N · d) chưa hợp &nbsp;|&nbsp; D3·1: a) 2,0 N · b) ${dl} 0,5 N, chưa hợp · c) 2,2 N · d) ${dl} 0,2 N, hợp`,
     `D3·2: a) 2,6 N · b) ${dl} 0,5 N, chưa hợp · c) 2,7 N · d) ${dl} 0,1 N, hợp &nbsp;|&nbsp; D4·1: a) 1,70 N · b) 2,4 N · c) 133° &nbsp;|&nbsp; D4·2: a) 2,31 N · b) 2,83 N · c) 141°`,
   ],
 };

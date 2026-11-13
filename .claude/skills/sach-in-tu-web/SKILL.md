@@ -183,6 +183,11 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-10 · Yêu cầu "≥1 dòng mỗi ý" cho Bài tương tự là quá thấp: dòng nửa cột 62 mm chỉ đủ ghi đáp số, đo ra mỗi ý 0–1 dòng rộng trong khi lời giải cần ~2 → 10 bài/2 trang không thể vừa đề vừa lời giải; tính trước tổng mm cần (số ý × 2 dòng × 5 mm + đề) trước khi định số bài trên giấy.
 - 2026-11-12 · VL11 Ch.3 (6 phiên): mỗi phiên tự soát checklist vẫn bỏ sót lỗi lặp cả quyển — hằng số k, e, 1 eV bị hỏi trước khi in, Mục tiêu/chú thích hình cạnh Dự đoán lộ đáp án, ô hẹp cho phân số/đáp án dài, dòng kẻ < số ý ở Dạng 1–3; một HS ảo đọc cả 6 file `.pdf.html` (text, không ảnh, ~90k token) bắt đủ → giao lại từng phiên bằng `SendMessage`, mỗi phiên sửa ~15′. Đưa sẵn 4 lỗi lặp này vào brief phiên bài lần sau.
 - 2026-11-10 · 5 nhánh `claude/*` push cùng lúc → workflow tự gộp huỷ lượt chờ (concurrency) → `gh run list --workflow gop-claude-vao-main.yml`, lượt `cancelled` thì `gh run rerun <id>`.
+- 2026-11-13 · Đợt 3 (37 phiên): bộ đo "trang N: dư X mm" tính cả khối `position:absolute` (ô QR trang 12) → báo tràn giả −1 mm → bộ đo chỉ đo tới đỉnh `.gt`, bỏ khối tuyệt đối.
+- 2026-11-13 · Mở 37 worktree (~5 GB/cái) làm đầy đĩa, phiên chết hàng loạt → `df -h` trước khi mở; cần ≥ 6 GB × số phiên.
+- 2026-11-13 · App giới hạn 20 `SendMessage` tới phiên khác mỗi lượt thầy nhắn → HS ảo ghi lỗi từng bài ra file (`out/loi-hs-ao-*.md`), phiên chính gửi tin trỏ ngắn, xếp ≤20 phiên mỗi lượt.
+- 2026-11-13 · Agent HS ảo bị compact/giới hạn lượt giữa chừng mất chi tiết → dặn agent ghi lỗi vào file sau MỖI bài, không gom đến cuối.
+- 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → ký hiệu trong chú thích dùng chữ π của font thân, không gán font KaTeX bằng tay.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).

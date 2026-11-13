@@ -41,6 +41,7 @@ const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const dong = (s) => `<div style="margin:.3mm 0">${s}</div>`;
 const Et = m('E_t'), Ed = m('E_d'), W = m('W');
+const fp = (w = 16) => `<span class="fill" style="min-width:${w}mm;height:9mm"></span>`;
 const fr = (s) => m(`\\tfrac{1}{2}${s}`);
 
 const ttHaiCot = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm}.yo .oo{flex:none;display:flex;gap:3mm}.yo{line-height:1.35}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
@@ -68,17 +69,16 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Thế năng: mốc ở VTCB', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Li độ ${m('x=A\\cos(\\omega t+\\varphi)')} tính từ vị trí cân bằng (VTCB); ${m('\\omega')}: tần số góc (rad/s), ${m('\\varphi')}: pha ban đầu (rad).</div>
+<div>Li độ ${m('x=A\\cos(\\omega t+\\varphi)')} tính từ vị trí cân bằng (VTCB).</div>
 <div>Mốc thế năng đặt tại ${f(25)}; ở đó ${m('x=0')} và ${m('E_t=')} ${f(12)}</div>
 <div>${m('E_t=\\tfrac{1}{2}k')} ${f(14)} ${m('=\\tfrac{1}{2}m\\omega^2')} ${f(14)} &nbsp;· ${Et} chỉ phụ thuộc ${f(25)}</div>
 <div>${Et} lớn nhất tại ${f(25)}: ${m('E_{t,\\max}=')} ${f(16)}</div></div>
 ${h3(5, 'II.2 · Động năng: lớn ở giữa', '1·5')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>${m('E_d=\\tfrac{1}{2}m')} ${f(14)} &nbsp;(${m('v')}: vận tốc)</div>
-<div>Theo li độ: ${m('E_d=\\tfrac{1}{2}k\\big(')} ${f(16)} ${m('\\big)')}</div>
-<div>${Ed} lớn nhất tại ${f(25)}: ${m('E_{d,\\max}=\\tfrac{1}{2}m')} ${f(14)}, với ${m('v_{\\max}=\\omega A')}</div>
-<div>${Ed} bằng 0 tại ${f(25)}, vì ở đó ${m('v=')} ${f(12)}</div>
-<div>Vì ${m('k=m\\omega^2')} nên ${m('\\tfrac{1}{2}m\\omega^2A^2=\\tfrac{1}{2}k')} ${f(14)}</div></div>
+<div>${m('E_d=\\tfrac{1}{2}m')} ${fp(16)} &nbsp;(${m('v')}: vận tốc)</div>
+<div>Theo li độ: ${m('E_d=\\tfrac{1}{2}k\\big(')} ${fp(18)} ${m('\\big)')}</div>
+<div>${Ed} lớn nhất tại ${f(25)}: ${m('E_{d,\\max}=\\tfrac{1}{2}m')} ${fp(16)}, với ${m('v_{\\max}=\\omega A')}</div>
+<div>${Ed} bằng 0 tại ${f(25)}, vì ở đó ${m('v=')} ${f(12)}</div></div>
 ${H.conLacTrang1()}</div>
 ${foot(1)}</section>`;
 
@@ -189,20 +189,20 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Cơ năng, thế năng, động năng và tốc độ tại một li độ',
-    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('k=50\\ \\mathrm{N/m}')}, ${m('m=500\\ \\mathrm g')}; kéo vật lệch ${m('10\\ \\mathrm{cm}')} rồi thả nhẹ.<br><b>a)</b> cơ năng ${W}<br><b>b)</b> tại ${m('x=6{,}0\\ \\mathrm{cm}')}: thế năng ${m('(b_1)')} và động năng ${m('(b_2)')}<br><b>c)</b> tốc độ của vật ở li độ đó`,
-    nd: `thả nhẹ ${m('\\Rightarrow')} ${m('A=')} ${f(16)}; ${m('E_d=W-')} ${f(12)}; đổi g ${m('\\to')} kg, cm ${m('\\to')} m`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 3 },
+    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('k=50\\ \\mathrm{N/m}')}, ${m('m=500\\ \\mathrm g')}; kéo vật lệch ${m('10\\ \\mathrm{cm}')} rồi thả nhẹ. <b>a)</b> cơ năng ${W}<br><b>b)</b> tại ${m('x=6{,}0\\ \\mathrm{cm}')}: thế năng ${m('(b_1)')} và động năng ${m('(b_2)')} &nbsp; <b>c)</b> tốc độ khi đó`,
+    nd: `thả nhẹ ${m('\\Rightarrow')} ${m('A=')} ${f(16)}; ${m('E_d=W-')} ${fp(16)}; đổi g ${m('\\to')} kg, cm ${m('\\to')} m`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 5 },
   { t: 'Dạng 2 · Trung bình · Động năng bằng n lần thế năng',
-    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('m=250\\ \\mathrm g')}, ${m('k=25\\ \\mathrm{N/m}')}, ${m('A=12\\ \\mathrm{cm}')}. Lúc động năng gấp 8 lần thế năng:<br><b>a)</b> độ lớn li độ<br><b>b)</b> tốc độ<br><b>c)</b> trong một chu kì có mấy lần như vậy`,
-    nd: `${m('E_d=8E_t')} ${m('\\Rightarrow')} ${m('W=')} ${f(14)} ${m('E_t')}; không phải trường hợp ${m('x=\\pm A/\\sqrt2')}`, a: ['a', 'b', 'c'], gi: 3, fig: H.d2() },
+    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('m=250\\ \\mathrm g')}, ${m('k=25\\ \\mathrm{N/m}')}, ${m('A=12\\ \\mathrm{cm}')}. Lúc động năng gấp 8 lần thế năng: <b>a)</b> độ lớn li độ&nbsp; <b>b)</b> tốc độ&nbsp; <b>c)</b> trong một chu kì có mấy lần như vậy`,
+    nd: `${m('E_d=8E_t')} ${m('\\Rightarrow')} ${m('W=')} ${f(14)} ${m('E_t')}; không phải trường hợp ${m('x=\\pm A/\\sqrt2')}`, a: ['a', 'b', 'c'], gi: 4, fig: H.d2() },
   { t: 'Dạng 3 · Trung bình · Biết li độ và tốc độ cùng lúc: tìm W, A',
-    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('m=250\\ \\mathrm g')}, ${m('k=25\\ \\mathrm{N/m}')}. Khi vật ở ${m('x=3{,}0\\ \\mathrm{cm}')} thì tốc độ ${m('40\\ \\mathrm{cm/s}')}.<br><b>a)</b> cơ năng<br><b>b)</b> biên độ<br><b>c)</b> tốc độ cực đại`,
-    nd: `chưa biết ${m('A')} ${m('\\Rightarrow')} ${m('W=\\tfrac{1}{2}kx^2+')} ${f(16)}; rồi ${m('A')} từ ${m('W=\\tfrac{1}{2}kA^2')}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Con lắc lò xo nằm ngang, bỏ qua ma sát, ${m('m=250\\ \\mathrm g')}, ${m('k=25\\ \\mathrm{N/m}')}. Khi vật ở ${m('x=3{,}0\\ \\mathrm{cm}')} thì tốc độ ${m('40\\ \\mathrm{cm/s}')}. <b>a)</b> cơ năng&nbsp; <b>b)</b> biên độ&nbsp; <b>c)</b> tốc độ cực đại`,
+    nd: `chưa biết ${m('A')} ${m('\\Rightarrow')} ${m('W=\\tfrac{1}{2}kx^2+')} ${fp(18)}; rồi ${m('A')} từ ${m('W=\\tfrac{1}{2}kA^2')}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Khó · Chu kì của năng lượng; động năng theo thời gian',
     de: `Con lắc lò xo nằm ngang, ${m('m=100\\ \\mathrm g')}, ${m('k=40\\ \\mathrm{N/m}')}. Kéo vật tới ${m('A=5{,}0\\ \\mathrm{cm}')} rồi thả nhẹ lúc ${m('t=0')}; bỏ qua ma sát; lấy ${m('\\pi=3{,}14')}.<br><b>a)</b> chu kì dao động ${m('T')}<br><b>b)</b> chu kì ${m("T'")} của thế năng, động năng<br><b>c)</b> thời gian ngắn nhất giữa hai lần liên tiếp ${m('E_d=E_t')}<br><b>d)</b> động năng tại ${m('t=T/6')}`,
     nd: `thả từ biên: ${m('x=A\\cos\\omega t')} ${m('\\Rightarrow')} ${m('E_d=W\\sin^2')} ${f(14)}; ${m("T'=")} ${f(12)}`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.d4() },
   { t: 'Dạng 5 · Khó · Đọc đồ thị động năng theo li độ',
     de: `Con lắc lò xo nằm ngang, ${m('m=500\\ \\mathrm g')}, bỏ qua ma sát. Đồ thị bên là động năng ${Ed} (J) theo li độ ${m('x')} (cm).<br><b>a)</b> cơ năng ${m('(a_1)')} và biên độ ${m('(a_2)')}<br><b>b)</b> độ cứng ${m('k')}<br><b>c)</b> tốc độ cực đại<br><b>d)</b> li độ khi động năng bằng ${m('0{,}030\\ \\mathrm J')}`,
-    nd: `đỉnh đồ thị (${m('x=0')}): ${m('E_{d,\\max}=')} ${f(12)}; ${m('E_d=0')} tại ${m('x=\\pm')} ${f(12)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], gi: 5, fig: H.d5(), cot: 3 },
+    nd: `đỉnh đồ thị (${m('x=0')}): ${m('E_{d,\\max}=')} ${f(12)}; ${m('E_d=0')} tại ${m('x=\\pm')} ${f(12)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd'], gi: 6, fig: H.d5(), cot: 3 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm đặt cuối đúng dòng của ý; nhãn khớp a) b) c)…

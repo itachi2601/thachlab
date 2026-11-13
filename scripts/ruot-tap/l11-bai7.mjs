@@ -81,7 +81,7 @@ ${h3(5, 'Họ 1 · Tính W, W<sub>đ</sub>, W<sub>t</sub> tại li độ x', '1�
 <div>Cơ năng: ${m('W=\\tfrac12 k')}${f(12)} ${m('=\\tfrac12 m')}${f(14)} (không đổi)</div>
 <div>Thế năng: ${m('W_t=')} ${f(16)} &nbsp;(dùng ${ck}${x} &nbsp;${ck}${A})</div>
 <div>Động năng: ${m('W_{\\text{đ}}=W-')}${f(12)} ${m('=\\tfrac12 k\\,(')}${f(16)}${m(')')}</div>
-<div>Tốc độ: ${m('|v|=\\omega')}${f(18)}; ${m('v_{\\max}=')} ${f(12)} ở ${f(12)}</div>
+<div>Tốc độ: ${m('|v|=\\omega')}${fc(18)}; ${m('v_{\\max}=')} ${f(12)} ở ${f(12)}</div>
 <div style="margin-top:.6mm"><b>Ví dụ:</b> ${nw(m('k=40\\ \\mathrm{N/m}'))}, ${u('A=10', 'cm')}, ${nw(`${m('x=6\\ \\mathrm{cm}')}:`)}</div>
 <div>${m('W=')} ${f(12)}&nbsp;J · ${m('W_t=')} ${f(12)}&nbsp;J · ${m('W_{\\text{đ}}=')} ${f(12)}&nbsp;J</div>
 <div><b>Bẫy:</b> thế ${A} vào chỗ ${x} thì ${m('W_t=')} ${f(12)}, ${m('W_{\\text{đ}}=')} ${f(12)}</div></div>
@@ -109,7 +109,7 @@ ${h3(2, 'Họ 2 · Vị trí W<sub>đ</sub> = nW<sub>t</sub>', '2·2')}
 ${H.phanN()}</div>
 ${h3(3, 'Họ 3 · Đồ thị theo li độ x', '2·3')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
-<div>${Wt}: parabol ${ck}đáy ${ck}úp ở VTCB · ${Wd}: parabol ${ck}đáy ${ck}úp · ${W}: đường ${f(20)}</div>
+<div>${Wt}: parabol ${ck}đáy ${ck}úp ở VTCB · ${Wd}: parabol ${ck}đáy ${ck}úp · ${W}: đường ${f(25)}</div>
 <div>${m('W_{\\text{đ}}=W_t')} tại ${m('x=\\pm')}${fc(14)} ${m('\\approx\\pm')} ${f(12)}${m('\\,A')}</div>
 <div><b>Ví dụ:</b> đồ thị ${Wd} theo ${x} có đỉnh ${u('40', 'mJ')} tại ${m('x=0')}, chạm trục tại ${nw(`${m('\\pm5\\ \\mathrm{cm}')}:`)}</div>
 <div>${m('W=')} ${f(12)}&nbsp;J · ${m('A=')} ${f(12)}&nbsp;m · ${m('k=\\dfrac{2W}{A^2}=')} ${f(12)}&nbsp;N/m</div></div>
@@ -120,20 +120,20 @@ const p3 = `<section class="page">
 ${head('ĐỒ THỊ THEO THỜI GIAN · CON LẮC ĐƠN · BA BẪY')}
 ${h3(1, 'Họ 3 · Đồ thị theo thời gian t', '3·1')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div>${Wt}, ${Wd} lên xuống quanh ${f(12)}, <b>ngược pha</b> (cái này cực đại thì cái kia ${f(16)})</div>
+<div>${Wt}, ${Wd} lên xuống quanh ${f(12)}, <b>ngược pha</b> (cái này cực đại thì cái kia ${f(25)})</div>
 <div>Chu kì của ${Wd}, ${Wt}: ${m("T'=")} ${f(12)} · tần số ${m("f'=")} ${f(12)}</div>
-<div>Li độ ${x} có chu kì ${f(12)}; ${W} theo ${m('t')} là đường ${f(16)}</div>
+<div>Li độ ${x} có chu kì ${f(12)}; ${W} theo ${m('t')} là đường ${f(25)}</div>
 <div>Hai đỉnh ${Wt} liền nhau cách ${f(12)}</div>
 <div>${m('W_{\\text{đ}}=W_t')}: ${f(10)} lần mỗi chu kì; hai lần liền nhau cách ${f(12)}</div></div>
 ${H.doThiTLT()}</div>
 ${h3(2, 'Họ 4 · Con lắc đơn', '3·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div>Độ cao so với đáy: ${m('h=l\\,(')}${f(16)}${m(')')}</div>
-<div>Cơ năng: ${m('W=mgl\\,(')}${f(16)}${m(')')}, ${a0} là ${f(20)}</div>
-<div>Ở góc ${al}: ${m('v=\\sqrt{2gl\\,(\\qquad\\qquad\\qquad)}')}</div>
+<div>Cơ năng: ${m('W=mgl\\,(')}${f(16)}${m(')')}, ${a0} là ${f(25)}</div>
+<div>Ở góc ${al}: ${m('v^2=2gl\\,(')}${fc(30)}${m(')')}</div>
 <div>Qua đáy: ${m('v_{\\max}=')} ${fc(26)}</div>
 <div>Góc nhỏ (khoảng ${m('10^\\circ')} trở xuống), ${a0} tính bằng ${f(12)}:</div>
-<div>${m('W\\approx')} ${fc(18)} &nbsp; ${m('v_{\\max}\\approx')} ${fc(14)}</div>
+<div>${m('W\\approx')} ${fc(24)} &nbsp; ${m('v_{\\max}\\approx')} ${fc(22)}</div>
 <div><b>Bẫy:</b> viết ${m('\\cos\\alpha_0')} thay cho ${f(16)}</div></div>
 ${H.conLac()}</div>
 ${h3(3, 'Ví dụ: xích đu ở sân trường', '3·3')}
@@ -177,9 +177,9 @@ ${K.btvn()}
 ${h3(2, 'IV · Trả bài 6 câu', '5·2')}
 ${box(`${tb('1. Cơ năng con lắc lò xo? Đơn vị nào phải đổi trước?')}${lines(1)}
 ${tb('2. Thế năng, động năng tại li độ x?')}${lines(1)}
-${tb('3. W<sub>đ</sub> = nW<sub>t</sub> thì li độ và tốc độ bằng bao nhiêu?')}${lines(1)}
+${tb('3. W<sub>đ</sub> = nW<sub>t</sub> thì li độ và tốc độ bằng bao nhiêu?')}${lines(2)}
 ${tb('4. Đồ thị năng lượng theo x, theo t có dạng gì? Chu kì?')}${lines(2)}
-${tb(`5. Con lắc đơn: cơ năng và tốc độ ở góc ${m('\\alpha')}?`)}${lines(1)}
+${tb(`5. Con lắc đơn: cơ năng và tốc độ ở góc ${m('\\alpha')}?`)}${lines(2)}
 ${tb(`6. Khi nào dùng ${m('W\\approx\\tfrac12 mgl\\alpha_0^2')}? Góc tính bằng gì?`)}${lines(1)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${h3(3, 'Thử thách phân tầng', '5·3')}
@@ -192,14 +192,14 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · W, W<sub>đ</sub>, W<sub>t</sub> và tốc độ tại li độ x',
-    de: `Lò xo nằm ngang: vật ${u('400', 'g')}, ${nw(m('k=40\\ \\mathrm{N/m}'))}. Kéo vật khỏi VTCB ${u('15', 'cm')} rồi thả nhẹ, bỏ qua ma sát. Xét lúc ${nw(m('x=-9\\ \\mathrm{cm}'))}.<br><b>a)</b> cơ năng của con lắc<br><b>b)</b> thế năng và động năng tại li độ đó<br><b>c)</b> tốc độ của vật tại li độ đó`,
-    nd: `${Wt} dùng ${f(12)}, không dùng ${A}; đổi cm → ${f(10)} trước khi bình phương`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
+    de: `Lò xo nằm ngang: vật ${u('400', 'g')}, ${nw(m('k=40\\ \\mathrm{N/m}'))}. Kéo vật khỏi VTCB ${u('15', 'cm')} rồi thả nhẹ, bỏ qua ma sát. Xét lúc ${nw(m('x=-9\\ \\mathrm{cm}'))}. Tìm: <b>a)</b> cơ năng của con lắc; <b>b)</b> thế năng và động năng tại li độ đó; <b>c)</b> tốc độ của vật tại li độ đó.`,
+    nd: `${Wt} dùng ${f(12)}, không dùng ${A}; đổi cm → ${f(10)} trước khi bình phương`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 6 },
   { t: 'Dạng 2 · Trung bình · W<sub>đ</sub> = nW<sub>t</sub>: tìm li độ và tốc độ',
-    de: `Lò xo nằm ngang: vật ${u('500', 'g')}, ${nw(m('k=100\\ \\mathrm{N/m}'))}, biên độ ${u('10', 'cm')}, bỏ qua ma sát. Tại một thời điểm động năng bằng 24 lần thế năng.<br><b>a)</b> cơ năng<br><b>b)</b> li độ của vật lúc đó<br><b>c)</b> tốc độ của vật lúc đó`,
-    nd: `${m('W_{\\text{đ}}=24W_t')} ⇒ ${m('W=')} ${f(10)}${m('\\,W_t')} ⇒ ${m('|x|=A\\,/')} ${f(12)}`, a: ['a', 'b', 'c'], gi: 4 },
+    de: `Lò xo nằm ngang: vật ${u('500', 'g')}, ${nw(m('k=100\\ \\mathrm{N/m}'))}, biên độ ${u('10', 'cm')}, bỏ qua ma sát. Tại một thời điểm động năng bằng 24 lần thế năng. Tìm: <b>a)</b> cơ năng; <b>b)</b> li độ của vật lúc đó; <b>c)</b> tốc độ của vật lúc đó.`,
+    nd: `${m('W_{\\text{đ}}=24W_t')} ⇒ ${m('W=')} ${f(10)}${m('\\,W_t')} ⇒ ${m('|x|=')} ${f(12)}&nbsp;cm`, a: ['a', 'b', 'c'], gi: 5 },
   { t: 'Dạng 3 · Trung bình · Đọc đồ thị năng lượng theo li độ',
-    de: `Con lắc lò xo nằm ngang, vật ${u('150', 'g')}, bỏ qua ma sát. Hình bên: ${Wt}, ${Wd} theo li độ ${x}; nét chấm gạch nằm ngang là cơ năng.<br><b>a)</b> độ cứng của lò xo<br><b>b)</b> động năng và tốc độ của vật khi ${nw(m('x=3\\ \\mathrm{cm}'))}`,
-    nd: `Tại biên ${m('W_{\\text{đ}}=')} ${f(10)}; đọc ${W}, ${A} (đổi ra J, m) rồi ${m('k=2W/A^2')}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 4, hinh: H.d3 },
+    de: `Con lắc lò xo nằm ngang, vật ${u('150', 'g')}, bỏ qua ma sát. Hình bên: ${Wt}, ${Wd}, cơ năng theo li độ ${x}.<br><b>a)</b> độ cứng của lò xo<br><b>b)</b> động năng và tốc độ của vật khi ${nw(m('x=3\\ \\mathrm{cm}'))}`,
+    nd: `Tại biên ${m('W_{\\text{đ}}=')} ${f(10)}; đọc ${W}, ${A} (đổi ra J, m) rồi ${m('k=2W/A^2')}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 5, hinh: H.d3 },
   { t: 'Dạng 4 · Khó · Con lắc đơn góc lớn',
     de: `Con lắc đơn: vật ${u('200', 'g')}, dây nhẹ không dãn dài ${u('0{,}9', 'm')}. Kéo lệch ${m('\\alpha_0=60^\\circ')} rồi thả nhẹ; bỏ qua lực cản, ${g10}, mốc thế năng ở vị trí thấp nhất ${nw(`(${m('\\cos60^\\circ=0{,}5')};`)} ${nw(`${m('\\cos30^\\circ\\approx0{,}866')})`)}.<br><b>a)</b> cơ năng<br><b>b)</b> tốc độ khi qua VTCB<br><b>c)</b> tốc độ khi dây lệch ${m('30^\\circ')}`,
     nd: `${m('60^\\circ')} không nhỏ ⇒ dùng công thức có ${f(12)}, không dùng ${m('\\tfrac12 mgl\\alpha_0^2')}`, a: ['a', 'b', 'c'], gi: 10, hinh: H.d4 },
@@ -226,8 +226,8 @@ const tuongTu = {
     { t: 'Dạng 1 · Bài 2', de: `Lò xo nằm ngang: vật ${u('1{,}0', 'kg')}, ${nw(m('k=100\\ \\mathrm{N/m}'))}, biên độ ${u('10', 'cm')}, bỏ qua ma sát. Xét lúc ${nw(m('x=-6\\ \\mathrm{cm}'))}.<br><b>a)</b> cơ năng<br><b>b)</b> thế năng, động năng lúc đó<br><b>c)</b> tốc độ lúc đó`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
     { t: 'Dạng 2 · Bài 1', de: `Vật ${u('100', 'g')}, lò xo ${nw(m('40\\ \\mathrm{N/m}'))}, biên độ ${u('6', 'cm')}, bỏ qua ma sát. Lúc động năng bằng 3 lần thế năng:<br><b>a)</b> cơ năng<br><b>b)</b> li độ<br><b>c)</b> tốc độ`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 2 · Bài 2', de: `Vật ${u('400', 'g')}, lò xo ${nw(m('100\\ \\mathrm{N/m}'))}, biên độ ${u('8', 'cm')}, bỏ qua ma sát. Lúc <b>thế năng</b> bằng 3 lần động năng:<br><b>a)</b> cơ năng<br><b>b)</b> li độ<br><b>c)</b> tốc độ`, o: ['a', 'b', 'c'] },
-    { t: 'Dạng 3 · Bài 1', de: `Vật ${u('200', 'g')} trên lò xo nằm ngang, bỏ qua ma sát; hình bên là ${Wt}, ${Wd} theo ${x}.<br><b>a)</b> độ cứng lò xo<br><b>b)</b> động năng khi ${nw(m('x=4\\ \\mathrm{cm}'))}<br><b>c)</b> tốc độ khi đó`, fig: H.tt3a(), fw: 40, o: ['a', 'b', 'c'] },
-    { t: 'Dạng 3 · Bài 2', de: `Vật ${u('100', 'g')} trên lò xo nằm ngang, bỏ qua ma sát; hình bên là động năng theo ${x}.<br><b>a)</b> độ cứng lò xo<br><b>b)</b> tốc độ cực đại<br><b>c)</b> li độ tại đó ${m('W_{\\text{đ}}=W_t')}`, fig: H.tt3b(), fw: 40, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 1', de: `Vật ${u('200', 'g')} trên lò xo nằm ngang, bỏ qua ma sát; hình bên là ${Wt} (liền), ${Wd} (đứt) theo ${x}.<br><b>a)</b> độ cứng lò xo<br><b>b)</b> động năng khi ${nw(m('x=4\\ \\mathrm{cm}'))}<br><b>c)</b> tốc độ khi đó`, fig: H.tt3a(), fw: 46, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 2', de: `Vật ${u('100', 'g')} trên lò xo nằm ngang, bỏ qua ma sát; hình bên là động năng theo ${x}.<br><b>a)</b> độ cứng lò xo<br><b>b)</b> tốc độ cực đại<br><b>c)</b> li độ tại đó ${m('W_{\\text{đ}}=W_t')}`, fig: H.tt3b(), fw: 46, o: ['a', 'b', 'c'] },
   ], [
     { t: 'Dạng 4 · Bài 1', de: `Con lắc đơn: vật ${u('500', 'g')}, dây ${u('1{,}0', 'm')}, thả nhẹ từ ${m('\\alpha_0=60^\\circ')}; bỏ qua lực cản, ${nw(`${g10};`)} ${nw(`${m('\\cos45^\\circ\\approx0{,}707')}.`)}<br><b>a)</b> cơ năng (mốc ở đáy)<br><b>b)</b> tốc độ khi qua VTCB<br><b>c)</b> tốc độ khi dây lệch ${m('45^\\circ')}`, o: ['a', 'b', 'c'] },
     { t: 'Dạng 4 · Bài 2', de: `Con lắc đơn: vật ${u('200', 'g')}, dây ${u('0{,}45', 'm')}. Kéo dây tới nằm ngang ${nw(`(${m('\\alpha_0=90^\\circ')})`)} rồi thả nhẹ; bỏ qua lực cản, ${nw(`${g10}.`)}<br><b>a)</b> cơ năng (mốc ở đáy)<br><b>b)</b> tốc độ khi qua VTCB<br><b>c)</b> tốc độ khi dây lệch ${m('60^\\circ')}`, o: ['a', 'b', 'c'] },
