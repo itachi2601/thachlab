@@ -8,7 +8,8 @@
 # Bay: "Coi rang toan bo P.tau lam nong nuoc" -> binh, day, nhiet ke cung nong, nhiet mat ra ngoai -> dt nho di -> c do LON hon 4 180.
 # Chot THU NGHI: dau nhiet ke cham dien tro (sai_so_thuong_gap 3) -> so doc cao hon -> dt lon -> c NHO hon that (nguoc chieu bay).
 #   Goi y chi cho du kien: dien tro nong hon nuoc.
-# Ban 1 (12/11/2026).
+# Ban 1 (12/11/2026). Ban 2 (13/11/2026): nhiet ke hien so doc tu so_lieu_mau, oat ke dem giay, bieu do c truc tu 0,
+#   goi y chot chi la cong thuc goc va hien tre 4 s, nhan ten ky hieu, bo chu "Dung video, chon dap an".
 from engine import *
 
 NOTE = (70, 75, 95)
@@ -21,8 +22,15 @@ def pill(d, cx, cy, s, size, fg, bg, alpha=1.0, padx=26):
     card(d, (cx - wdt / 2, cy - size * 0.85, cx + wdt / 2, cy + size * 0.85), fill=A(bg, alpha), r=int(size * 0.85))
     text(d, (cx, cy), s, size, fg, alpha=alpha)
 
+def reading_at(run, p):
+    """So doc nhiet ke (chi so co trong kho) va moc doc. Lan 0,200 kg: moi 100 s (so_lieu_mau); lan khac chi doc t1 va t2."""
+    if run == 0:
+        k = min(3, int(p * 3 + 1e-6))
+        return ("28,0", "45,8", "63,5", "81,3")[k], ("t₁ lúc đầu", "lúc 100 s", "lúc 200 s", "t₂ lúc 300 s")[k]
+    return (RUNS[run][2], "t₂ lúc 300 s") if p >= 1 else ("28,0", "t₁ lúc đầu")
+
 def rig(d, t, run, reading, p_timer, on, heat, labels=True):
-    """run: chi so RUNS; reading: chu tren nhiet ke; p_timer: tien do 300 s (1 = xong); heat: 0..1 mau nuoc nong."""
+    """run: chi so RUNS; reading: (so doc, moc s) tren nhiet ke; p_timer: tien do 300 s (1 = xong); heat: 0..1 mau nuoc nong."""
     m_txt, lvl = RUNS[run][0], RUNS[run][1]
     # --- binh nhiet luong ke vo xop + nap ---
     card(d, (170, 440, 570, 920), fill=(232, 226, 214), outline=(170, 160, 140), r=30, w=4)
@@ -55,21 +63,17 @@ def rig(d, t, run, reading, p_timer, on, heat, labels=True):
     if labels: text(d, (840, 302), "oát kế", 40, INK)
     card(d, (675, 335, 1005, 515), fill=(24, 30, 40), r=14)
     text(d, (840, 385), "150 W", 48, (134, 239, 172))
-    if p_timer >= 1: text(d, (840, 465), "300 s", 46, (134, 239, 172))
-    else:
-        d.rounded_rectangle([705, 455, 975, 475], radius=10, fill=(60, 66, 80))
-        if p_timer > 0: d.rounded_rectangle([705, 455, 705 + 270 * p_timer, 475], radius=10, fill=(134, 239, 172))
+    text(d, (840, 465), f"{int(round(300 * clamp(p_timer)))} s", 46, (134, 239, 172))
     # --- nhiet ke ---
     card(d, (650, 590, 1030, 770), fill=WHITE, outline=NAVY, w=5, r=24)
-    if labels: text(d, (840, 622), "nhiệt kế", 40, INK)
+    if labels: text(d, (840, 622), reading[1], 40, INK)
     card(d, (675, 652, 1005, 752), fill=(24, 30, 40), r=14)
-    rising = reading is None
-    text(d, (840, 702), "đang tăng ↑" if rising else reading, 44 if rising else 48, ORANGE if rising else (134, 239, 172))
+    text(d, (840, 702), reading[0] + " °C", 48, (134, 239, 172))
     pill(d, 840, 860, f"m = {m_txt} kg", 44, WHITE, NAVY)
 
 # ---------------- canh 1: Du doan (K10: chi cau hoi + hinh, khong ve nut A-D) ----------------
 def s_hook(img, d, t, sc):
-    rig(d, t, 0, "28,0 °C", 0.0, False, 0.0)
+    rig(d, t, 0, ("28,0", "t₁ lúc đầu"), 0.0, False, 0.0)
     a = appear(t, 0.8, 0.5)
     if a <= 0: return
     y0 = 990 + (1 - a) * 30
@@ -106,19 +110,20 @@ def s_do(img, d, t, sc):
     R = runs_at(sc)
     j = 0 if t < R[1][0] - 0.25 else (1 if t < R[2][0] - 0.25 else 2)
     a, b = R[j]; p = clamp((t - a) / (b - a))
-    reading = "28,0 °C" if p <= 0 else (RUNS[j][2] + " °C" if p >= 1 else None)
-    rig(d, t, j, reading, p, 0 < p < 1, p)
+    # lan 0,200 kg: oat ke nhay theo dung moc doc nhiet ke (0/100/200/300 s) de hai dong ho cung moc
+    pt = min(3, int(p * 3 + 1e-6)) / 3 if j == 0 else p
+    rig(d, t, j, reading_at(j, p), pt, 0 < p < 1, p)
     if a < t < b:
         wdt = tw(d, "TUA NHANH", F(40)) + 90
         card(d, (60, 236, 60 + wdt, 296), fill=ORANGE, r=30)
         text(d, (60 + wdt / 2 + 18, 266), "TUA NHANH", 40, WHITE)
         for k in range(2):
             tx = 82 + k * 16; d.polygon([(tx, 252), (tx, 280), (tx + 16, 266)], fill=WHITE)
-    text(d, (W / 2, 940), "Nhiệt kế: nhiệt độ chỗ đầu đo", 40, NOTE, alpha=appear(t, 0.2, 0.4))
-    card(d, (40, 990, 1040, 1470), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (80, 1045), "t₁ = 28,0 °C", 44, NOTE, anchor="lm")
+    card(d, (40, 990, 1040, 1490), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (80, 1045), "t₁ = 28,0 °C: lúc đầu", 44, NOTE, anchor="lm")
     text(d, (1000, 1045), "Minh hoạ", 40, PURPLE, bold=False, anchor="rm")
     table(d, 1140, [appear(t, R[k][1], 0.35) for k in range(3)], [0, 0, 0])
+    text(d, (W / 2, 1440), "t₂: sau 300 s · Δt = t₂ − t₁", 40, NOTE, alpha=appear(t, R[0][1], 0.35))
 
 # ---------------- canh 3: Ket qua ----------------
 def s_ket(img, d, t, sc):
@@ -126,7 +131,7 @@ def s_ket(img, d, t, sc):
     card(d, (40, 250, 1040, 700), fill=WHITE, outline=LIGHT, w=3)
     hl = appear(t, M[0] + 0.1, 0.4)
     table(d, 310, [1, 1, 1], [appear(t, M[0] + 0.4 + 0.5 * k, 0.35) for k in range(3)], hl=hl)
-    text(d, (W / 2, 640), "Q = P·τ = 45 000 J", 42, NOTE)
+    text(d, (W / 2, 640), "Q = P·τ = 150 W · 300 s = 45 000 J", 42, NOTE)
     text(d, (W / 2, 770), "c = Q / (m·Δt)", 56, INK, alpha=appear(t, 0.2, 0.4))
     pill(d, W / 2, 890, "Chênh nhau dưới 1%", 46, WHITE, NAVY, appear(t, M[0] + 2.2, 0.4))
     k = appear(t, M[1] + 0.3, 0.45)
@@ -138,7 +143,7 @@ def s_ket(img, d, t, sc):
 
 # ---------------- canh 4: Chua noi duoc gi ----------------
 def s_chua(img, d, t, sc):
-    rig(d, t, 2, "54,8 °C", 1.0, False, 1.0, labels=False)
+    rig(d, t, 2, ("54,8", "t₂ lúc 300 s"), 1.0, False, 1.0, labels=False)
     k = appear(t, 0.3, 0.45)
     card(d, (40, 1000, 1040, 1490), fill=A(WHITE, k), outline=A(NAVY, k), w=6)
     text(d, (W / 2, 1070), "Chưa nói được", 48, NAVY, alpha=k)
@@ -146,7 +151,7 @@ def s_chua(img, d, t, sc):
         text(d, (90, 1210 + 150 * j), s, 44, INK, anchor="lm", alpha=appear(t, 0.6 + 0.4 * j, 0.4))
 
 # ---------------- canh 5: Bay ----------------
-X0B = 360
+X0B = 290
 def s_bay(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 250, 1040, 600), fill=WHITE, outline=RED, w=6)
@@ -157,17 +162,26 @@ def s_bay(img, d, t, sc):
     if ks > 0:
         lw = tw(d, q, F(44)); d.line([(W / 2 - lw / 2, 412), (W / 2 - lw / 2 + lw * ks, 412)], fill=RED, width=5)
     text(d, (W / 2, 520), "→ Δt đo được nhỏ đi", 46, ORANGE, alpha=appear(t, M[0] + 2.2, 0.4))
-    # so voi c that (hinh co ngay tu dau canh)
+    # so voi c that: truc c tu 0 (thang that, khong cat truc) -> ba cot gan bang nhau; so ghi canh cot
     card(d, (40, 640, 1040, 1460), fill=WHITE, outline=LIGHT, w=3)
-    d.line([(X0B, 790), (X0B, 1230)], fill=GREEN, width=6)
-    text(d, (X0B, 710), "c thật = 4 180", 44, GREEN)
+    KX = 530 / 4500                                     # px tren J/(kg.K)
+    xt = X0B + KX * 4180
+    for yy in range(760, 1130, 26): d.line([(xt, yy), (xt, yy + 14)], fill=GREEN, width=4)   # moc 4 180 (net dut)
+    text(d, (xt - 40, 715), "c thật = 4 180 J/(kg·K)", 42, GREEN)
     for j, r in enumerate(RUNS):
-        y = 860 + 130 * j; k = appear(t, 0.2 + 0.25 * j, 0.4)
+        y = 830 + 110 * j; k = appear(t, 0.2 + 0.25 * j, 0.4)
         text(d, (80, y), r[0] + " kg", 42, INK, anchor="lm", alpha=k)
-        L = 11 * (r[5] - 4180) * ease((t - 0.2 - 0.25 * j) / 0.6)
-        if L > 4: d.rounded_rectangle([X0B, y - 24, X0B + L, y + 24], radius=12, fill=A(ORANGE, k))
-        if j == 0: text(d, (X0B + 11 * (r[5] - 4180) + 20, y), "≈ " + r[4], 40, ORANGE, anchor="lm", alpha=appear(t, 0.9, 0.4))
-    text(d, (W / 2, 1330), "c đo lớn hơn thật", 52, RED, alpha=appear(t, M[1] + 0.1, 0.4))
+        L = KX * r[5] * ease((t - 0.2 - 0.25 * j) / 0.6)
+        if L > 4: d.rounded_rectangle([X0B, y - 26, X0B + L, y + 26], radius=10, fill=A(ORANGE, k))
+        text(d, (X0B + KX * 4500 + 20, y), "≈ " + r[4], 42, ORANGE, anchor="lm", alpha=appear(t, 0.8 + 0.25 * j, 0.4))
+    d.line([(X0B, 770), (X0B, 1150)], fill=INK, width=4)          # truc doc tai c = 0
+    d.line([(X0B, 1150), (X0B + KX * 4500, 1150)], fill=INK, width=4)
+    for v in (0, 2000, 4000):
+        x = X0B + KX * v; d.line([(x, 1150), (x, 1166)], fill=INK, width=4)
+        text(d, (x, 1200), f"{v:,}".replace(",", " "), 40, INK, bold=False)
+    text(d, (X0B + KX * 2250, 1260), "c (J/(kg·K)), trục từ 0", 40, INK, bold=False)
+    text(d, (W / 2, 1350), "c đo lớn hơn thật", 52, RED, alpha=appear(t, M[1] + 0.1, 0.4))
+    text(d, (W / 2, 1420), "cao hơn 0,4–1 %", 44, RED, alpha=appear(t, M[1] + 0.4, 0.4))   # 4198/4180 = +0,43 %; 4221/4180 = +0,98 %
 
 # ---------------- canh 6: Chot + cau hoi tu nho lai ----------------
 def _end_body(d, t, k):
@@ -177,16 +191,18 @@ def _end_body(d, t, k):
     d.line(zz, fill=A((255, 140, 60), 0.4 * k), width=18, joint="curve")
     d.line([(560, 1000), (560, 1158)], fill=A((90, 96, 110), k), width=12)
     dot(d, 560, 1162, 11, A(NAVY, k))
+    text(d, (535, 1040), "đầu nhiệt kế", 40, INK, anchor="rm", alpha=k)
+    text(d, (690, 1180), "điện trở", 40, WIRE_C, anchor="lm", alpha=k)
 
 def s_end(img, d, t, sc):
     M = sc["M"]
     chot_hoi(d, t, sc, "c không phụ thuộc m",
              "Riêng lỗi này (đầu nhiệt kế chạm điện trở), c tính ra lớn hay nhỏ hơn thật?", None, body=_end_body)
-    kh = appear(t, M[0] + 2.6, 0.5)                 # goi y hien tre, chi la du kien
+    kh = appear(t, M[0] + 4.6, 0.5)                 # goi y hien tre >= 4 s sau cau hoi (hien o M0+0,4), chi la cong thuc goc
     if kh > 0:
         card(d, (110, 1300, 970, 1540), fill=A((255, 247, 237), kh), r=24)
-        text(d, (W / 2, 1355), "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        text(d, (W / 2, 1455), "Điện trở nóng hơn nước", 46, ORANGE, alpha=kh)
+        text(d, (W / 2, 1355), "Gợi ý", 40, INK, bold=False, alpha=kh)
+        text(d, (W / 2, 1455), "c = Q / (m·Δt)", 48, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -202,14 +218,14 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-thuchanh-01", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Thực hành đo nhiệt dung riêng · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Nhiệt dung riêng của nước", draw=s_hook, tail=0.3, caps=[
-   ("Đo c của nước.", 3.4),
-   ("Dừng video, chọn đáp án.", 5.6)]),
+   ("c: nhiệt dung riêng; m: khối lượng nước.", 3.4),
+   ("Chọn đáp án ở khung câu hỏi.", 5.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Đun 300 s với 0,200 kg nước.", 3.4),
    ("Lặp lại: 0,300 kg, 0,400 kg.", 4.2)]),
  dict(key="ket", title="Kết quả", draw=s_ket, tail=0.5, caps=[
    ("Tính c cho từng lần đo.", 3.4),
-   ("Đáp án C: Δt giảm, c thì không.", 3.8)]),
+   ("Đáp án: c gần như không đổi.", 3.8)]),
  dict(key="chua", title="Giới hạn của thí nghiệm", draw=s_chua, tail=0.4, caps=[
    ("Hai điều chưa đo được.", 5.0)]),
  dict(key="bay", title="Cái bẫy “coi rằng”", draw=s_bay, tail=0.5, caps=[
