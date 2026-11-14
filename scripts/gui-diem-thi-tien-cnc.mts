@@ -2,6 +2,7 @@
 // Mặc định DRY-RUN (chỉ in ai khớp tài khoản, nội dung); thêm --yes mới ghi thật. CHẠY TRÊN MAC (cần service role).
 //   npx tsx scripts/gui-diem-thi-tien-cnc.mts "<file.csv>" [--course 10] [--yes]
 // CSV là file "Tải CSV" ở docs/cnc-nhap-diem.html: ca,máy,đề,họ tên,8 mức E/G/P/F,4 cột lỗi (x),tổng,xếp loại.
+// Ngoài thông báo còn nạp bảng cnc_grades (module tien) để SV mở trang /lop-hoc/cnc/bang-diem/ xem. Chạy lại an toàn (upsert).
 // Mỗi SV chỉ nhận điểm của chính mình. SV không khớp đúng 1 tài khoản trong lớp thì bỏ qua và in ra để xử tay.
 import { createClient } from "@supabase/supabase-js";
 import fs from "node:fs";
@@ -52,6 +53,7 @@ function find(name: string): string[] {
 }
 
 const KIND = "diem-thi-tien-cnc";
+const HREF = "/lop-hoc/cnc/bang-diem/";
 let sent = 0, skipped = 0;
 for (const c of rows) {
   const name = c[3];
@@ -70,9 +72,20 @@ for (const c of rows) {
     `\nTổng: ${c[16].replace(".", ",")}/10 · ${c[17]}`;
   console.log(`${yes ? "→ gửi" : "○ sẽ gửi"} ${name}\n${body.replace(/^/gm, "    ")}`);
   if (!yes) continue;
+  const g2 = pts.slice(4).reduce<number>((s, x) => s + (x ?? 0), 0);
+  const { error: eg } = await sb.from("cnc_grades").upsert({
+    course_id: courseId, student_id: m[0], module: "tien", ky_thuat: r2(g1), thanh_phan: r2(g1 >= 3.5 ? g2 : 0),
+    total: Number(c[16]), grade: c[17],
+    detail: { criteria: levels.map((v, k) => ({ name: NAMES[k], level: v || null, points: pts[k], max: MAX[k] })), violations: viol },
+    updated_at: new Date().toISOString(),
+  });
+  if (eg) throw new Error(`${name}: cnc_grades: ${eg.message}`);
   const { data: dup } = await sb.from("notifications").select("id").eq("user_id", m[0]).eq("kind", KIND).limit(1);
-  if (dup?.length) { console.log("  ≈ đã gửi trước đó, bỏ qua"); skipped++; continue; }
-  const { error } = await sb.rpc("notify_user", { p_user: m[0], p_kind: KIND, p_title: "Điểm thi tiện CNC", p_body: body, p_href: "/lop-hoc/cnc/" });
+  if (dup?.length) {
+    await sb.from("notifications").update({ href: HREF }).eq("user_id", m[0]).eq("kind", KIND);
+    console.log("  ≈ đã gửi trước đó, chỉ đổi link + cập nhật bảng điểm"); skipped++; continue;
+  }
+  const { error } = await sb.rpc("notify_user", { p_user: m[0], p_kind: KIND, p_title: "Điểm thi tiện CNC", p_body: body, p_href: HREF });
   if (error) throw new Error(`${name}: ${error.message}`);
   sent++;
 }
