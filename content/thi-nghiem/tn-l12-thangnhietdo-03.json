@@ -77,7 +77,7 @@
       [75, 127.5],
       [100, 136.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với p0 = 100,0 kPa (khí lí tưởng). Đo thật sẽ lệch vài phần nghìn ở nhiệt độ cao và gần 0 °C sẽ thấy áp suất khác 100 kPa nếu bình có rò khí."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với p0 = 100,0 kPa (khí lí tưởng). Đo thật sẽ lệch vài phần nghìn ở nhiệt độ cao và gần 0 °C sẽ thấy áp suất khác 100 kPa nếu bình có rò khí. Ca tự suy cho câu chốt clip: đun khí tới 273 °C (coi là khí lí tưởng) → p ≈ 200 kPa."
   },
   "ket_qua_ky_vong": "Năm điểm nằm gần như trên một đường thẳng; kéo dài đường thẳng cắt trục nhiệt độ ở khoảng −273 °C. Điểm cắt không đổi khi thay đổi lượng khí, loại khí hay dải nhiệt độ khảo sát.",
   "hien_tuong_hay_sai": [
@@ -98,5 +98,15 @@
   "an_toan": [
     "Bình kín ngâm nước sôi có thể tăng áp suất mạnh: dùng van an toàn, không dùng bình thuỷ tinh mỏng.",
     "Dùng kẹp và găng khi thao tác với nước sôi."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "bình khí thể tích không đổi, áp kế",
+    "nhin_vao": "Kéo dài đường p theo t xuống: p về 0 ở đâu?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
+  }
 }

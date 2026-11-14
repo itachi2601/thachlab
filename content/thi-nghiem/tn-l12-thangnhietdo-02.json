@@ -77,7 +77,7 @@
       [2, 0.1, 99.7],
       [3, 0.3, 100.1]
     ],
-    "ghi_chu": "Số liệu minh hoạ với p_kq = 101,325 kPa, sai_so_ht = 0, sai_so_dc = ±0,5 °C. Các số lệch ngẫu nhiên trong khoảng ±0,5 °C nên 0,2 °C và 99,6 °C đều phù hợp với hai mốc 0 °C và 100 °C."
+    "ghi_chu": "Số liệu minh hoạ với p_kq = 101,325 kPa, sai_so_ht = 0, sai_so_dc = ±0,5 °C. Các số lệch ngẫu nhiên trong khoảng ±0,5 °C nên 0,2 °C và 99,6 °C đều phù hợp với hai mốc 0 °C và 100 °C. Ca tự suy cho câu chốt clip: trên núi, áp suất 80 kPa → nước sôi ở ≈ 94 °C, nhiệt kế không hỏng."
   },
   "ket_qua_ky_vong": "Đo ở hai mốc đều cho số quanh 0 °C và quanh 100 °C; khoảng tin cậy ±0,5 °C luôn chứa giá trị quy ước. Khi hạ áp suất khí quyển, mốc sôi tụt xuống dưới 100 °C trong khi mốc nóng chảy gần như không đổi.",
   "hien_tuong_hay_sai": [
@@ -99,5 +99,15 @@
   "an_toan": [
     "Đun nước và hơi nước gây bỏng nặng: đặt cốc trên lưới amiăng, không nghiêng người trên miệng cốc.",
     "Dùng găng hoặc khăn khô khi cầm cốc nước sôi."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-02-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-02-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "nhiệt kế trong nước đá và hơi nước sôi",
+    "nhin_vao": "Nhiệt kế có chỉ đúng hai mốc 0 °C và 100 °C không?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
+  }
 }
