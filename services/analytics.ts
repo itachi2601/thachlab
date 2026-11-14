@@ -1005,6 +1005,7 @@ export interface ReviewQuestionStat {
   correctN: number;
   optionCounts?: number[]; // multiple_choice: số em chọn mỗi phương án A–D
   statementCorrectN?: number[]; // true_false: số em chọn đúng ở mỗi ý a–d
+  wrongAnswers?: Record<string, number>; // short_answer: đáp số sai → số em ghi (cho AI đoán lỗi hay gặp)
 }
 
 export interface ExamReviewData {
@@ -1064,6 +1065,7 @@ export async function fetchExamReviewData(
     const stat: ReviewQuestionStat = { attempted: 0, correctN: 0 };
     if (q.type === "multiple_choice") stat.optionCounts = [0, 0, 0, 0];
     if (q.type === "true_false") stat.statementCorrectN = [0, 0, 0, 0];
+    if (q.type === "short_answer") stat.wrongAnswers = {};
     return stat;
   });
 
@@ -1078,6 +1080,10 @@ export async function fetchExamReviewData(
 
       if (q.type === "multiple_choice" && stat.optionCounts && typeof response === "number") {
         if (response >= 0 && response < stat.optionCounts.length) stat.optionCounts[response] += 1;
+      }
+      if (q.type === "short_answer" && stat.wrongAnswers && typeof response === "string" && g.earned < g.max) {
+        const v = response.trim().slice(0, 20);
+        if (v) stat.wrongAnswers[v] = (stat.wrongAnswers[v] ?? 0) + 1;
       }
       if (q.type === "true_false" && stat.statementCorrectN && Array.isArray(response)) {
         q.statements.forEach((s, si) => {

@@ -2208,6 +2208,104 @@ html[data-theme="light"] .review-board .exam-content img.eq {
 .review-board .rb-hint { display: none; }
 @media (hover: hover) and (pointer: fine) { .review-board .rb-hint { display: flex; } }
 
+/* ---- Bước 0: Phân tích trước khi chữa (ReviewPrep) + ghi chú AI từng câu ---- */
+.review-board .rp-overlay {
+  position: absolute; inset: 0; z-index: 20; display: flex; justify-content: center; align-items: flex-start;
+  background: rgba(3,5,12,.82); backdrop-filter: blur(4px); overflow-y: auto; overscroll-behavior: contain;
+  padding: 24px 16px;
+}
+.review-board .rp-panel {
+  width: 100%; max-width: 760px; background: var(--rb-stage); border: 1px solid var(--rb-line); border-radius: 18px;
+  padding: 20px 22px 0; display: flex; flex-direction: column; gap: 16px;
+}
+.review-board .rp-head { display: flex; align-items: flex-start; gap: 12px; justify-content: space-between; }
+.review-board .rp-head h2 { margin: 4px 0 0; font-size: 1.2rem; font-weight: 700; line-height: 1.35; }
+.review-board .rp-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.review-board .rp-kpis > div {
+  background: var(--rb-surface); border: 1px solid var(--rb-line-soft); border-radius: 12px; padding: 10px 12px;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.review-board .rp-kpis b { font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+.review-board .rp-kpis span { font-size: .85rem; color: var(--rb-ink-soft); }
+.review-board .rp-sec h3 {
+  display: flex; align-items: center; gap: 7px; margin: 0 0 10px; font-size: 1rem; font-weight: 700; color: var(--rb-ink);
+}
+.review-board .rp-sec h4 { margin: 16px 0 8px; font-size: .95rem; font-weight: 700; color: var(--rb-ink-soft); }
+.review-board .rp-topics, .review-board .rp-ai-topics, .review-board .rp-notes {
+  list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;
+}
+.review-board .rp-topic, .review-board .rp-ai-topics > li {
+  background: var(--rb-surface); border: 1px solid var(--rb-line-soft); border-left: 4px solid var(--rb-faint);
+  border-radius: 12px; padding: 10px 12px; display: flex; flex-direction: column; gap: 7px;
+}
+.review-board .rp-lv-cao { border-left-color: var(--rb-bad) !important; }
+.review-board .rp-lv-vua { border-left-color: var(--rb-warn) !important; }
+.review-board .rp-lv-thap { border-left-color: var(--rb-ok) !important; }
+.review-board .rp-topic-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.review-board .rp-topic-name { font-weight: 700; flex: 1; min-width: 0; }
+.review-board .rp-topic-pct { font-variant-numeric: tabular-nums; font-weight: 700; }
+.review-board .rp-badge {
+  font-size: .78rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--rb-surface-2);
+  color: var(--rb-ink-soft);
+}
+.review-board .rp-lv-cao .rp-badge { background: var(--rb-bad-soft); color: var(--rb-bad-ink); }
+.review-board .rp-lv-vua .rp-badge { background: var(--rb-warn-soft); color: var(--rb-warn-ink); }
+.review-board .rp-lv-thap .rp-badge { background: var(--rb-ok-soft); color: var(--rb-ok-ink); }
+.review-board .rp-bar { display: block; height: 6px; border-radius: 99px; background: var(--rb-surface-2); overflow: hidden; }
+.review-board .rp-bar i { display: block; height: 100%; background: var(--rb-accent); border-radius: 99px; }
+.review-board .rp-qchips { display: flex; flex-wrap: wrap; gap: 6px; }
+.review-board .rp-qchip {
+  display: inline-flex; align-items: center; gap: 5px; min-height: 36px; padding: 0 11px; border-radius: 10px;
+  border: 1px solid var(--rb-line); background: var(--rb-stage); color: var(--rb-ink); font: inherit; font-size: .88rem;
+  font-weight: 600; cursor: pointer; touch-action: manipulation;
+}
+.review-board .rp-qchip small { font-size: .78rem; color: var(--rb-muted); font-variant-numeric: tabular-nums; }
+.review-board .rp-qchip.rp-hard { border-color: var(--rb-bad-line); }
+.review-board .rp-qchip.rp-mid { border-color: var(--rb-warn-line); }
+.review-board .rp-qchip.rp-easy { border-color: var(--rb-ok-line); }
+.review-board .rp-qchip:hover { border-color: var(--rb-accent); }
+.review-board .rp-ai { border-top: 1px solid var(--rb-line-soft); padding-top: 14px; }
+.review-board .rp-ai-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.review-board .rp-ai-head h3 { margin: 0; }
+.review-board .rp-overview {
+  background: var(--rb-accent-soft); border-radius: 12px; padding: 10px 12px; margin-bottom: 12px; line-height: 1.55;
+}
+.review-board .rp-reason { color: var(--rb-ink-soft); font-size: .92rem; line-height: 1.5; }
+.review-board .rp-tip { font-size: .92rem; line-height: 1.5; }
+.review-board .rp-tip b { color: var(--rb-accent-ink); }
+.review-board .rp-notes > li { display: flex; gap: 10px; align-items: flex-start; line-height: 1.5; font-size: .93rem; }
+.review-board .rp-notes > li > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+.review-board .rp-muted { color: var(--rb-ink-soft); font-size: .92rem; line-height: 1.55; margin: 0; }
+.review-board .rp-small { font-size: .8rem; color: var(--rb-muted); margin-top: 10px; }
+.review-board .rp-error { color: var(--rb-bad-ink); font-size: .92rem; margin: 0 0 8px; }
+.review-board .rp-foot {
+  position: sticky; bottom: 0; display: flex; padding: 12px 0 16px; background: var(--rb-stage);
+  border-top: 1px solid var(--rb-line-soft);
+}
+.review-board .rb-ai-note {
+  margin: 0 0 12px; border: 1px dashed var(--rb-line); border-radius: 12px; padding: 6px 12px; font-size: .92rem;
+  color: var(--rb-ink-soft); line-height: 1.5;
+}
+.review-board .rb-ai-note summary {
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px; color: var(--rb-accent-ink); font-weight: 600;
+  min-height: 32px;
+}
+.review-board .rb-ai-note[open] { background: var(--rb-surface); }
+.review-board .rb-ai-tip { margin-top: 4px; }
+.review-board .rb-ai-tip b { color: var(--rb-accent-ink); }
+@media (max-width: 480px) {
+  .review-board .rp-overlay { padding: 10px 8px; }
+  .review-board .rp-panel { padding: 14px 14px 0; border-radius: 14px; }
+  .review-board .rp-kpis b { font-size: 1.25rem; }
+  /* Điện thoại dọc: thanh trên tràn ngang → chỉ giữ icon nút, tiêu đề hẹp lại. */
+  .review-board .rb-topbar { gap: 8px; padding: 8px 10px; }
+  .review-board .rb-topbar .rb-btn-text { display: none; }
+  .review-board .rb-topbar .rb-btn { padding: 0 10px; }
+  .review-board .rb-topbar h1 { max-width: 34vw; }
+  .review-board .rb-progress-track { display: none; }
+  .review-board .rb-topbar .rb-zoom { display: none; }
+}
+
 @media (orientation: landscape) and (max-height: 520px) {
   .review-board { padding-left: env(safe-area-inset-left); padding-right: env(safe-area-inset-right); }
   .review-board .rb-topbar { gap: 8px; padding: 4px 10px; }
