@@ -52,6 +52,7 @@
       "Trong lò thật, thanh điều khiển (bo, cađimi) hấp thụ neutron nên làm giảm k theo cùng cách"
     ],
     "gia_thiet": [
+      "Clip tự dựng: bìa cắt thành dải che trọn cột ghim (2/7 cột ≈ 29 %, 4/7 cột ≈ 57 %, gọi tròn 30 % và 60 %).",
       "tấm chắn chặn tuyệt đối mọi ghim đi qua, thực tế còn khe hở ở mép",
       "ghim phân bố đều nên phần trăm diện tích che xấp xỉ phần trăm ghim bị chặn",
       "không kể ghim đổ do tấm bìa xô lệch khi đặt xuống"
@@ -65,7 +66,7 @@
       [30, "12 · 10 · 11", 1.0],
       [60, "4 · 5 · 3", 0.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ từ mô hình. Khi làm thật, mức che 30% thường cho số ghim đổ chênh lệch rõ giữa ba lần vì tấm bìa không đặt đúng cùng vị trí."
+    "ghi_chu": "Số liệu minh hoạ từ mô hình. Khi làm thật, mức che 30% thường cho số ghim đổ chênh lệch rõ giữa ba lần vì tấm bìa không đặt đúng cùng vị trí. Câu THỬ NGHĨ cuối clip: ghim cách 3 cm, che 30 % → tắt dần (3 cm chưa che đã k ≈ 1)."
   },
   "ket_qua_ky_vong": "Số ghim đổ giảm mạnh và có ngưỡng khi tăng phần bị che: trên một mức che nào đó, dây chuyền không lan được nữa dù vẫn còn ghim trên bàn.",
   "hien_tuong_hay_sai": [
@@ -86,5 +87,15 @@
   "an_toan": [
     "Ghim nhọn: đặt tấm bìa bằng cách hạ phẳng, không miết tay qua lưới ghim.",
     "Không dùng vật chắn bằng kim loại cứng có cạnh sắc."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.webp",
+    "nhan": "Bàn ghim và tấm bìa che lưới",
+    "nhin_vao": "Che nhiều hơn thì số ghim đổ thay đổi thế nào?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại"
+  }
 }
