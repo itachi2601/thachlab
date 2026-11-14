@@ -51,7 +51,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - 7/11 · BTM "một dạng — một hình": repo xong 97/97; DB đã đăng 51, CHƯA đăng 46 (danh sách: `docs/MOT-DANG-MOT-HINH.md` mục Trạng thái 7/11) — chờ soát ảnh + thầy duyệt → publish → deploy.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
-- Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
 - Motion graphic chặng A: code + DB xong (23/23 hộp khung L12 trên DB, kiểm 6/11); chờ có lượt chọn đầu tiên ở `lesson_clip_choices` để đo % đúng (mục 5) — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - Motion graphic chặng D (7/11): thầy duyệt; clip ôn L12 Ch.3 (89 s) đã lên Storage (`content/phu-dao/clip-on/on-l12-ch3.json`) và hiện thẻ "Ôn nhanh" ở `ReviewStudent` (buổi ở nhà + chờ chặng 1; khớp chữ "từ trường/lực từ…" trong tên buổi, `lib/clip-on-tap.ts`). CHƯA deploy, chưa thấy 375px bằng tài khoản HS, chưa có sự kiện đo phát/xem (cách đo ở `docs/KE-HOACH-MOTION-GRAPHIC.md` mục Chặng D).
 - Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lý thuyết lesson 11 (item 52) đã ghi DB 22h05, đã kiểm DB + deploy lại 22h25 1/11; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
@@ -62,11 +61,9 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
-- Clip tự dựng L9 nhóm C (5/11): 8 clip, 6 bài (lesson 87, 89, 91, 129–131) thầy duyệt, ĐÃ ĐĂNG DB 23h35 5/11 (--chi-video, kiểm DB đủ 8 clip); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- Clip L10 lô 1/11 (8 clip: tdvt1, giatoc1, dog3, trondeu3, biendang3, saiso2, antoan1/2 — lesson 50, 53, 56, 76, 78, 48, 47) ĐÃ ĐĂNG DB 6/11 ~23h55 (`--chi-video`, kiểm DB 8/8 có khung); giữ nguyên dòng Quan sát như L9; chưa thử HS thật.
+- Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
-- Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
