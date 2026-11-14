@@ -190,3 +190,14 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 - l12-phong-xa · topic 229 · clip bay-ch4-03 (bình chì, làm lạnh: T không đổi) · đã soát · 12/11/2026 · tự soạn
 - l12-hat-nhan-mo-hinh-nguyen-tu · topic 221 (gần nhất) · clip bay-ch4-04 (Rutherford: α lệch do hạt nhân) · đã soát · 12/11/2026 · tự soạn; THỬ NGHĨ hỏi "quỹ đạo dừng" theo đề Bộ — thầy xác nhận
 - 13/11/2026 · thuchanh-01, thuchanh-03 (lesson 5) và noinang-04 (lesson 4) bản 2: đã chèn bài + đăng DB (`--chi-video`; bài 4 thêm mốc `data-exp` trên `<details>` nên dùng `--cho-phep-khac` sau khi so bản sao lưu giống hệt).
+
+## Chặng B — L12 lô 2 (14/11/2026, 9 clip tự dựng, kho bổ sung T11 trước khi dựng). 3 agent Opus × 3 clip, kiem-code soát khung 375 px (`khung-375.py`); nhóm lực từ 2 vòng (vòng 1 bắt chiều lực ngược — hệ trục vẽ tay trái), 6 clip còn lại 1 vòng sửa nhẹ. Đã tải lesson-clips (-20261114, HEAD 200 cả 9), chèn repo + gắn khung ở src/html/bundle. **CHỜ THẦY DUYỆT** — chưa đăng DB (đăng sau 22h `cap-nhat-ly-thuyet.sh … --chi-video`)
+- tn-l12-luctu-02 · lesson 11 · clip luctu2 · 48,9 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-02-20261114.mp4
+- tn-l12-luctu-03 · lesson 11 · clip luctu3 · 49,1 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-03-20261114.mp4 · đặt SAU Câu 4 (clip nói "hai lực ngược chiều → ngẫu lực")
+- tn-l12-thuchanhtu-02 · lesson 12 · clip thuchanhtu2 · 49,6 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanhtu-02-20261114.mp4
+- tn-l12-xoaychieu-01 · lesson 14 · clip xoaychieu1 · 49,8 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-01-20261114.mp4
+- tn-l12-xoaychieu-02 · lesson 14 · clip xoaychieu2 · 49,0 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261114.mp4
+- tn-l12-mayphatdien-02 · lesson 125 · clip mayphat2 · 48,4 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-02-20261114.mp4
+- tn-l12-phongxa-01 · lesson 18 · clip phongxa1 · 49,8 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-01-20261114.mp4 · `--kiem` còn cảnh báo K5 (≈ 4 % khớp kho, để nguyên)
+- tn-l12-antoanpx-02 · lesson 19 · clip antoanpx2 · 49,2 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261114.mp4 · hộp exp (bấm xem) trước video đã có bảng 154 và dòng "giấy chặn alpha…" — thầy quyết có giữ
+- tn-l12-antoanpx-04 · lesson 19 · clip antoanpx4 · 49,4 s · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-04-20261114.mp4 · hộp exp trước video đã có 0,46/0,115/5,8 — như trên
