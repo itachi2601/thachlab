@@ -64,6 +64,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Clip tự dựng L9 nhóm C (5/11): 8 clip, 6 bài (lesson 87, 89, 91, 129–131) thầy duyệt, ĐÃ ĐĂNG DB 23h35 5/11 (--chi-video, kiểm DB đủ 8 clip); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Clip L10 lô 1/11 (8 clip: tdvt1, giatoc1, dog3, trondeu3, biendang3, saiso2, antoan1/2 — lesson 50, 53, 56, 76, 78, 48, 47) ĐÃ ĐĂNG DB 6/11 ~23h55 (`--chi-video`, kiểm DB 8/8 có khung); giữ nguyên dòng Quan sát như L9; chưa thử HS thật.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
+- Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
