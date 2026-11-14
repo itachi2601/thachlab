@@ -1,4 +1,6 @@
-# Clip: tn-l12-noinang-04 - Xilanh cach nhiet: nen khi, giu yen, keo ve; hai ngan co vach (ban 1, 12/11/2026)
+# Clip: tn-l12-noinang-04 - Xilanh cach nhiet: nen khi, giu yen, keo ve; hai ngan co vach (ban 2, 13/11/2026)
+# Ban 2: ghi loai/luong khi (0,0040 mol argon, dung_cu kho), hop Du doan "Chon dap an o khung cau hoi" (K10),
+#   huy hieu "DAP AN · Tang", ten ky hieu A, Q, dU va v, chu hang bang khong mo kieu vo hieu, THU NGHI rut con 1 cau + goi y tre.
 # Kho loai "vi_du" (mo hinh): clip ghi ro "mo hinh · so lieu minh hoa".
 # So lieu lay nguyen tu content/thi-nghiem/tn-l12-noinang-04.json (so_lieu_mau):
 #   Ban dau 100 cm3, 300 K, 1,0.10^5 Pa | Nen nhanh 50 cm3, ~476 K, ~3,2.10^5 Pa, A ~ +8,8 J, Q = 0, dU ~ +8,8 J
@@ -78,22 +80,25 @@ def readout(d, vals, y=720, alpha=1.0):
         rich(d, (a + b) / 2, y, s, sz, INK, alpha=alpha)
 
 def tag(d, y=1640, alpha=1.0):
-    text(d, (1030, y), "mô hình · số liệu minh hoạ", 40, NOTE, bold=False, anchor="rm", alpha=alpha)
+    text(d, (1030, y), "mô hình · số liệu minh hoạ", 44, NOTE, bold=False, anchor="rm", alpha=alpha)
 
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
     cylinder(d, 100, phase(t, lambda _: 300), ghost=t >= M[1] - 0.2)
     readout(d, ("V = 100 cm³", "T = 300 K", "p = 1,0·10⁵ Pa"), y=760)
+    text(d, (W / 2, 850), "0,0040 mol khí argon", 44, INK)      # kho: dung_cu, tham_so n
+    text(d, (W / 2, 910), "V: thể tích · T: nhiệt độ · p: áp suất", 44, NOTE, bold=False)
     tag(d, 1640)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 900 + (1 - a) * 40
+    y0 = 960 + (1 - a) * 40
     card(d, (50, y0, 1030, y0 + 470), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
     text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    ctext(d, y0 + 235, "Nén nhanh khí còn 50 cm³.\nNhiệt độ khí thế nào?", 56, INK, maxw=920, alpha=a)
+    ctext(d, y0 + 215, "Nén nhanh khí còn 50 cm³.\nNhiệt độ thế nào?", 56, INK, maxw=920, alpha=a)
+    text(d, (W / 2, y0 + 340), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)
     tc, tend = M[1] + 0.6, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
@@ -129,13 +134,13 @@ def table(d, y0, ks, hlq=0.0):
     card(d, (40, y0, 1040, y0 + h), fill=WHITE, outline=LIGHT, w=3)
     if hlq > 0:
         d.rounded_rectangle([600, y0 + 10, 780, y0 + h - 10], radius=18, fill=A((255, 237, 213), hlq), outline=A(ORANGE, hlq), width=4)
-    text(d, (COLX[0], y0 + 46), "Bước", 40, NOTE, bold=False)
+    text(d, (COLX[0], y0 + 46), "Bước", 44, NOTE, bold=False)
     for x, s in zip(COLX[1:], ("A (J)", "Q (J)", "ΔU (J)")): text(d, (x, y0 + 46), s, 40, NAVY)
     d.line([(70, y0 + 88), (1010, y0 + 88)], fill=LIGHT, width=3)
     for j, (r, k) in enumerate(zip(ROWS, ks)):
         yy = y0 + 88 + rh * (j + 0.5) + 2
         if k <= 0:                                     # tieu de hang hien san, mo
-            text(d, (COLX[0], yy), r[0], 42, LIGHT); continue
+            text(d, (COLX[0], yy), r[0], 42, NOTE, bold=False); continue
         text(d, (COLX[0], yy), r[0], 42, INK, alpha=k)
         for x, v in zip(COLX[1:], r[1:]):
             col = GREEN if v > 0 else (RED if v < 0 else INK)
@@ -159,17 +164,18 @@ def s_do(img, d, t, sc):
     ks = [appear(t, R1, 0.4), appear(t, R2, 0.4), appear(t, R3, 0.4)]
     table(d, 820, ks, hlq=appear(t, R3 + 0.6, 0.4))
     k = appear(t, R3 + 0.6, 0.4)
-    if k > 0: text(d, (690, 1290), "Q luôn bằng 0", 42, ORANGE, alpha=k)
-    text(d, (W / 2, 1420), "ΔU = A + Q", 60, INK)
-    tag(d, 1530)
+    if k > 0: text(d, (690, 1265), "Q luôn bằng 0", 42, ORANGE, alpha=k)
+    text(d, (W / 2, 1360), "ΔU = A + Q", 60, INK)
+    text(d, (W / 2, 1440), "A, Q: công, nhiệt khí nhận", 44, NOTE, bold=False)
+    text(d, (W / 2, 1505), "ΔU: độ biến thiên nội năng", 44, NOTE, bold=False)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, M[0] + 0.1, 0.4)
-    pw = tw(d, "ĐÁP ÁN C", F(40)) + 56
+    pw = tw(d, "ĐÁP ÁN · Tăng", F(40)) + 56
     card(d, (W / 2 - pw / 2, 270, W / 2 + pw / 2, 336), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 303), "ĐÁP ÁN C", 40, WHITE, alpha=ka)
+    text(d, (W / 2, 303), "ĐÁP ÁN · Tăng", 40, WHITE, alpha=ka)
     text(d, (W / 2, 410), "300 K  →  ≈ 476 K", 60, RED, alpha=ka)
     k1 = appear(t, M[0] + 1.4, 0.45)
     card(d, (40, 480, 1040, 860), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
@@ -190,13 +196,13 @@ def s_dapan(img, d, t, sc):
         arrow(d, (px + 150, 1080), (px + 46, 1080), A(RED, k2), w=8, head=22)
         dot(d, 676, 1030, 18, A(BLUE, k2))
         arrow(d, (520, 1030), (652, 1030), A(BLUE, k2), w=6, head=18)
-        text(d, (470, 1030), "v", 44, BLUE, alpha=k2)
+        text(d, (505, 1030), "tốc độ v", 42, BLUE, anchor="rm", alpha=k2)
         kb = appear(t, M[1] + 1.0, 0.4)
         if kb > 0:
             dot(d, 676, 1150, 18, A(BLUE, kb))
             arrow(d, (652, 1150), (400, 1150), A(BLUE, kb), w=6, head=18)
             text(d, (300, 1150), "v′ > v", 44, BLUE, alpha=kb)
-        ctext(d, 1330, "Phân tử bật khỏi pit-tông nhanh hơn", 44, INK, maxw=920, alpha=k2)
+        ctext(d, 1330, "Phân tử bật ra nhanh hơn", 44, INK, maxw=920, alpha=k2)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 BX0, BX1, BY0, BY1, MID = 150, 930, 400, 580, 540
@@ -209,7 +215,7 @@ def two_cells(d, t):
     kr = ease((t - S0) / (S1 - S0))
     xr = lerp(MID - 10, BX1, kr)
     gas(d, phase(t, lambda _: 300) * 1.4, BX0, xr, BY0, BY1, r=9)
-    if kr < 0.5: text(d, ((MID + BX1) / 2, (BY0 + BY1) / 2), "chân không", 40, NOTE, bold=False, alpha=1 - 2 * kr)
+    if kr < 0.5: text(d, ((MID + BX1) / 2, (BY0 + BY1) / 2), "chân không", 44, NOTE, bold=False, alpha=1 - 2 * kr)
     lift = ease((t - V0) / (V1 - V0))
     yv = BY0 - lift * 150
     if lift < 1:
@@ -237,7 +243,7 @@ def s_bay(img, d, t, sc):
     mk = 2.0; a1 = k1 * (1 - k3)
     y = 770
     if a1 > 0:
-        card(d, (40, y, 1040, y + 580), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
+        card(d, (40, y, 1040, y + 640), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pw = tw(d, "BẪY", F(40)) + 52
         card(d, (W / 2 - pw / 2, y + 28, W / 2 + pw / 2, y + 92), fill=A(RED, a1), r=32)
         text(d, (W / 2, y + 60), "BẪY", 40, WHITE, alpha=a1)
@@ -248,12 +254,14 @@ def s_bay(img, d, t, sc):
             cx = 210 + j * 330
             card(d, (cx - 140, y + 400, cx + 140, y + 500), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=4)
             text(d, (cx, y + 450), s, 46, GREEN, alpha=k2)
+        k4 = a1 * appear(t, mk + 0.8, 0.45)            # tra loi cau hoi phu de: chan khong -> T giu nguyen
+        text(d, (W / 2, y + 570), "Chân không → T giữ 300 K", 46, INK, alpha=k4)
     if k3 > 0:
         card(d, (40, y, 1040, y + 700), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, y + 70), "Chưa nói được", 48, NAVY, alpha=k3)
-        lines = ("• Thành xilanh thật dẫn nhiệt chậm", "• Chỉ đúng khí lí tưởng", "• A suy ra, không đo trực tiếp")
+        lines = ("• Thành xilanh thật dẫn nhiệt chậm", "• Chỉ đúng khí lí tưởng", "• A suy ra, không đo")
         for j, l in enumerate(lines):
-            kk = k3 * appear(t, M[1] + 0.2 + 0.4 * j, 0.4)
+            kk = k3 * appear(t, M[1] + 0.1 + 0.3 * j, 0.3)
             text(d, (90, y + 240 + j * 170), l, 46, INK, anchor="lm", alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
@@ -273,13 +281,13 @@ def _end_body(d, t, k):
 
 def s_end(img, d, t, sc):
     M = sc["M"]
-    chot_hoi(d, t, sc, "Cách nhiệt: Q = 0,\nnhưng ΔU vẫn đổi theo A",
-             "Xilanh không cách nhiệt, nén khí, T giữ 300 K. Q dương hay âm?", None, body=_end_body)
-    kh = appear(t, M[0] + 3.0, 0.5)                 # goi y hien tre: chi du kien
+    chot_hoi(d, t, sc, "Cách nhiệt: Q = 0,\nnhưng ΔU đổi theo A",
+             "Nén khí, T giữ 300 K (xilanh không cách nhiệt). Q dương hay âm?", None, body=_end_body)
+    kh = appear(t, M[0] + 4.5, 0.5)                 # goi y hien tre >= 4 s sau cau hoi (M0 + 0,4); cau hoi trung tinh
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1350, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        ctext(d, 1450, "Quy ước: khí nhận công A > 0,\nnhận nhiệt Q > 0", 42, ORANGE, maxw=820, alpha=kh)
+        ctext(d, 1350, "Gợi ý", 44, MUTED, bold=False, alpha=kh)
+        ctext(d, 1450, "T có đổi không?", 44, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -293,17 +301,17 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-noinang-04", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Nội năng · Định luật 1 NĐLH · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Xilanh cách nhiệt", draw=s_hook, tail=0.3, caps=[
-   ("Xilanh, pit-tông cách nhiệt.", 3.2),
-   ("Dừng lại, tự đoán.", 6.2)]),
+   ("Pit-tông cũng cách nhiệt.", 3.2),
+   ("Tự đoán trước.", 6.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Nén nhanh, ghi A, Q, ΔU.", 4.4),
-   ("Giữ yên, rồi kéo về.", 5.8)]),
+   ("Giữ yên, kéo về.", 5.8)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("Nhiệt độ tăng. Đáp án C.", 3.6),
+   ("Nhiệt độ khí tăng.", 3.6),
    ("Nội năng tăng nhờ nhận công.", 4.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Rút vách: khí sinh công?", 6.8),
-   ("Chưa nói được gì?", 4.6)]),
+   ("Rút vách: khí sinh công?", 6.4),
+   ("Chưa nói được gì?", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Dừng video, trả lời.", 6.0)]),
+   ("Dừng video, trả lời.", 7.8)]),
 ])
