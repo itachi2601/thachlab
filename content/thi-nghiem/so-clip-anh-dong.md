@@ -151,7 +151,7 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 - L10 Ch.2 bỏ qua (`vi_du`): dd-qd-02/03, tdvt-02, dt-dctg-03, gia-toc-03, ctbdd-02/03; roi-tu-do-01 có YouTube · 10/11/2026 ·
 - **ĐÃ ĐĂNG DB 10/11/2026** (thầy duyệt, `cap-nhat-ly-thuyet.sh … --chi-video --yes`): lesson 51 (item 287), 52 (item 96), 55 (item 78), 56 (item 288) — chỉ đổi khối video, mục khác giữ nguyên; sao lưu `scripts/logs/ly-thuyet-bai{51,52,55,56}-backup-17942808*.json`. Hộp 'Quan sát' lộ đáp án vẫn chờ thầy quyết.
 
-## Chặng B — L12 nhóm A đề xuất 12/11/2026 (bối cảnh đề TN THPT; 5 kho mới A3–A7 + 2 kho thực hành). Agent dựng, kiem-code soát khung 375 px 2 vòng + 1 vòng sửa cuối; tải lesson-clips (-20261112, HEAD 200), gắn `video` vào kho. CHƯA chèn bài, CHƯA đăng DB — chờ thầy duyệt
+## Chặng B — L12 nhóm A đề xuất 12/11/2026 (bối cảnh đề TN THPT; 5 kho mới A3–A7 + 2 kho thực hành). Agent dựng, kiem-code soát khung 375 px 2 vòng + 1 vòng sửa cuối; tải lesson-clips (-20261112, HEAD 200), gắn `video` vào kho. thầy duyệt 14/11; ĐÃ chèn bài + gắn khung 14/11 (5 kho mới chưa có hộp exp → chèn hộp video sau đoạn lý thuyết tương ứng: noinang4 cuối mục 4 ĐL I, luctu6 sau "hai dòng song song", luctu5 sau mục 6 hạt mang điện, camungdt5 sau "năng lượng đi đâu", dttruong5 sau đặc điểm sóng điện từ)
 - lesson 5 · tn-l12-thuchanh-03 · clip thuchanh3 · phễu nước đá hai giai đoạn (đề 2025 II.1); bẫy quên trừ nước tan do môi trường, λ lệch về phía nào · 49,9 s · 1,35 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-03-20261112.mp4
 - lesson 5 · tn-l12-thuchanh-01 · clip thuchanh1 · đo c với ba khối lượng, giả thuyết "c phụ thuộc m" bị bác bỏ (đề 2026 II.4); bẫy "toàn bộ nhiệt làm nóng nước" · 49,9 s · 1,34 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261112.mp4
 - lesson 4 · tn-l12-noinang-04 · clip noinang4 · xilanh cách nhiệt, nén/kéo và khí tràn vào chân không (A = 0) · 49,6 s · 2,0 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261112.mp4
@@ -165,7 +165,7 @@ Ch.4–5 (congsuat1, dongnang1, conang1, hieusuat1, dongluong1, dongluong2, thuc
 
 ## Chặng C — clip bẫy phụ đạo L12 Ch.1, 2, 4 (lô 12/11/2026, đề xuất `de-xuat-bo-sung-2026-11-12.md` mục B)
 
-Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; mp4 `lesson-clips/clip/bay-l12-chN-0X-20261112.mp4`. Cổng A, A2 (≤ 200 từ/phút), B 2 vòng (kiem-code). CHƯA gắn `lib/clip-bay.ts` / phụ đạo — chờ thầy duyệt. Ch.4 tự soạn (chưa có lượt làm 60 ngày).
+Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; mp4 `lesson-clips/clip/bay-l12-chN-0X-20261112.mp4`. Cổng A, A2 (≤ 200 từ/phút), B 2 vòng (kiem-code). thầy duyệt 14/11 (kể cả bay-ch4-04 "quỹ đạo dừng"); ĐÃ ghi vào `lib/clip-bay.ts` 14/11. Ch.4 tự soạn (chưa có lượt làm 60 ngày).
 - l12-su-chuyen-the · topic 196 · clip bay-ch1-01 (nước sôi giữ 100 °C) · đã soát, đã tải · 12/11/2026 · tự soạn (gần: đề 933 câu 1)
 - l12-noi-nang-dl1 · topic 199 · clip bay-ch1-02 (nhiệt lượng không phải thứ vật chứa) · đã soát, đã tải · 12/11/2026 · từ đề 753 câu 6 Đ–S, 36/63 sai
 - l12-thang-nhiet-do · topic 197 · clip bay-ch1-03 (55 °C → 328 K) · đã soát, đã tải · 12/11/2026 · đề 1295 câu 23, 25/46 sai
