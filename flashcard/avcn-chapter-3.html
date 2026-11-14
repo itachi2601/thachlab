@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 3 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 3</span></div>
+  <h1>Flashcard: Hand Tools</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "hand tool", "ipa": "/hænd tuːl/", "vi": "dụng cụ cầm tay", "def": "A manual device used for home improvement projects.", "img": "", "group": "Cụm A · Khái niệm và cửa hàng"}, {"term": "hardware", "ipa": "/ˈhɑːdweə/", "vi": "đồ ngũ kim (hardware store = cửa hàng ngũ kim; đời thường còn là phần cứng máy tính)", "def": "Metal tools and equipment, such as screws and hammers.", "img": "/assets/avcn/chapter-3/hardware-store.webp", "group": "Cụm A · Khái niệm và cửa hàng"}, {"term": "tool kit", "ipa": "/tuːl kɪt/", "vi": "bộ dụng cụ (hộp đựng nhiều dụng cụ)", "def": "A set of tools kept together in one box.", "img": "/assets/avcn/chapter-3/toolbox.webp", "group": "Cụm A · Khái niệm và cửa hàng"}, {"term": "retractable", "ipa": "/rɪˈtræktəbl/", "vi": "thụt vào được, kéo vào được", "def": "Being able to pull back in.", "img": "", "group": "Cụm A · Khái niệm và cửa hàng"}, {"term": "adjustable", "ipa": "/əˈdʒʌstəbl/", "vi": "chỉnh được, thay đổi cỡ được", "def": "Being able to change sizes.", "img": "/assets/avcn/chapter-3/adjustable-wrench.webp", "group": "Cụm A · Khái niệm và cửa hàng"}, {"term": "wrench", "ipa": "/rentʃ/", "vi": "cờ lê", "def": "A hand tool that tightens and loosens nuts and bolts.", "img": "/assets/avcn/chapter-3/wrench.webp", "group": "Cụm B · Cờ lê, tua vít, búa"}, {"term": "screwdriver", "ipa": "/ˈskruːdraɪvə/", "vi": "tua vít", "def": "A hand tool that turns screws.", "img": "/assets/avcn/chapter-3/screwdriver.webp", "group": "Cụm B · Cờ lê, tua vít, búa"}, {"term": "phillips screwdriver", "ipa": "/ˈfɪlɪps ˈskruːdraɪvə/", "vi": "tua vít đầu chữ thập (bốn cạnh)", "def": "A screwdriver for a screw with a cross-shape on the head.", "img": "/assets/avcn/chapter-3/phillips.webp", "group": "Cụm B · Cờ lê, tua vít, búa"}, {"term": "flathead screwdriver", "ipa": "/ˈflæthed ˈskruːdraɪvə/", "vi": "tua vít đầu dẹt", "def": "A screwdriver for a screw with a flat slot.", "img": "/assets/avcn/chapter-3/flathead.webp", "group": "Cụm B · Cờ lê, tua vít, búa"}, {"term": "claw hammer", "ipa": "/klɔː ˈhæmə/", "vi": "búa nhổ đinh", "def": "A hammer that can drive in or remove nails.", "img": "/assets/avcn/chapter-3/claw-hammer.webp", "group": "Cụm B · Cờ lê, tua vít, búa"}, {"term": "pliers", "ipa": "/ˈplaɪəz/", "vi": "kìm", "def": "A hand tool for gripping, pulling and cutting.", "img": "", "group": "Cụm C · Kìm và dụng cụ cắt dây"}, {"term": "slip-joint pliers", "ipa": "/slɪp dʒɔɪnt ˈplaɪəz/", "vi": "kìm mở được hai cỡ (khớp trượt)", "def": "Pliers that are adjustable.", "img": "/assets/avcn/chapter-3/slip-joint-pliers.webp", "group": "Cụm C · Kìm và dụng cụ cắt dây"}, {"term": "long-nose pliers", "ipa": "/lɒŋ nəʊz ˈplaɪəz/", "vi": "kìm mũi nhọn dài", "def": "Pliers with needle-like pincers.", "img": "/assets/avcn/chapter-3/long-nose-pliers.webp", "group": "Cụm C · Kìm và dụng cụ cắt dây"}, {"term": "diagonal cutters", "ipa": "/daɪˈæɡənl ˈkʌtəz/", "vi": "kìm cắt chéo", "def": "Pliers with angled edges for cutting wire.", "img": "/assets/avcn/chapter-3/diagonal-cutters.webp", "group": "Cụm C · Kìm và dụng cụ cắt dây"}, {"term": "wire strippers", "ipa": "/ˈwaɪə ˈstrɪpəz/", "vi": "kìm tuốt dây điện", "def": "A tool that removes the plastic cover from a wire.", "img": "/assets/avcn/chapter-3/wire-strippers.webp", "group": "Cụm C · Kìm và dụng cụ cắt dây"}, {"term": "utility knife", "ipa": "/juːˈtɪləti naɪf/", "vi": "dao rọc giấy, dao đa dụng", "def": "A small cutting device with a retractable blade.", "img": "/assets/avcn/chapter-3/utility-knife.webp", "group": "Cụm D · Dao, thước và đồ nghề gara"}, {"term": "tape measure", "ipa": "/teɪp ˈmeʒə/", "vi": "thước cuộn", "def": "A tool with a long flexible ruler for measuring length.", "img": "/assets/avcn/chapter-3/tape-measure.webp", "group": "Cụm D · Dao, thước và đồ nghề gara"}, {"term": "tire levers", "ipa": "/ˈtaɪə ˈliːvəz/", "vi": "cây cậy lốp", "def": "Tools used to take a tire off a wheel.", "img": "/assets/avcn/chapter-3/tire-levers.webp", "group": "Cụm D · Dao, thước và đồ nghề gara"}, {"term": "grease gun", "ipa": "/ɡriːs ɡʌn/", "vi": "súng bơm mỡ", "def": "A tool that pushes grease into machine parts.", "img": "/assets/avcn/chapter-3/grease-gun.webp", "group": "Cụm D · Dao, thước và đồ nghề gara"}, {"term": "paint-sprayer", "ipa": "/peɪnt ˈspreɪə/", "vi": "máy phun sơn", "def": "A tool that sprays paint onto a surface.", "img": "/assets/avcn/chapter-3/paint-sprayer.webp", "group": "Cụm D · Dao, thước và đồ nghề gara"}];
+const AUDIO = {"hand tool": "/assets/avcn/chapter-3/audio/61c078aed1.mp3", "A manual device used for home improvement projects.": "/assets/avcn/chapter-3/audio/9e3c780755.mp3", "hardware": "/assets/avcn/chapter-3/audio/2782a00d69.mp3", "Metal tools and equipment, such as screws and hammers.": "/assets/avcn/chapter-3/audio/eace89d6d2.mp3", "tool kit": "/assets/avcn/chapter-3/audio/9c5eb030f3.mp3", "A set of tools kept together in one box.": "/assets/avcn/chapter-3/audio/7fc0763e77.mp3", "retractable": "/assets/avcn/chapter-3/audio/846830df84.mp3", "Being able to pull back in.": "/assets/avcn/chapter-3/audio/85b9bcc223.mp3", "adjustable": "/assets/avcn/chapter-3/audio/e46f5da289.mp3", "Being able to change sizes.": "/assets/avcn/chapter-3/audio/9a40a2756e.mp3", "wrench": "/assets/avcn/chapter-3/audio/3469abbe38.mp3", "A hand tool that tightens and loosens nuts and bolts.": "/assets/avcn/chapter-3/audio/4bde7bb599.mp3", "screwdriver": "/assets/avcn/chapter-3/audio/e681e39b58.mp3", "A hand tool that turns screws.": "/assets/avcn/chapter-3/audio/832e45c59a.mp3", "phillips screwdriver": "/assets/avcn/chapter-3/audio/68e441aeeb.mp3", "A screwdriver for a screw with a cross-shape on the head.": "/assets/avcn/chapter-3/audio/f117dd5f2b.mp3", "flathead screwdriver": "/assets/avcn/chapter-3/audio/d135a87343.mp3", "A screwdriver for a screw with a flat slot.": "/assets/avcn/chapter-3/audio/67e357f6e0.mp3", "claw hammer": "/assets/avcn/chapter-3/audio/85ec656e43.mp3", "A hammer that can drive in or remove nails.": "/assets/avcn/chapter-3/audio/35a9b4f2de.mp3", "pliers": "/assets/avcn/chapter-3/audio/08f6ae65ef.mp3", "A hand tool for gripping, pulling and cutting.": "/assets/avcn/chapter-3/audio/ff29ca277b.mp3", "slip-joint pliers": "/assets/avcn/chapter-3/audio/c33c71ace2.mp3", "Pliers that are adjustable.": "/assets/avcn/chapter-3/audio/784d92924b.mp3", "long-nose pliers": "/assets/avcn/chapter-3/audio/a9e3d6c45c.mp3", "Pliers with needle-like pincers.": "/assets/avcn/chapter-3/audio/2877f8df20.mp3", "diagonal cutters": "/assets/avcn/chapter-3/audio/9560d40ea1.mp3", "Pliers with angled edges for cutting wire.": "/assets/avcn/chapter-3/audio/b5d5b66b4f.mp3", "wire strippers": "/assets/avcn/chapter-3/audio/bf7ed05afb.mp3", "A tool that removes the plastic cover from a wire.": "/assets/avcn/chapter-3/audio/c3f0c22786.mp3", "utility knife": "/assets/avcn/chapter-3/audio/79e7bfec14.mp3", "A small cutting device with a retractable blade.": "/assets/avcn/chapter-3/audio/041826377c.mp3", "tape measure": "/assets/avcn/chapter-3/audio/4a2d268fc2.mp3", "A tool with a long flexible ruler for measuring length.": "/assets/avcn/chapter-3/audio/5857f0f363.mp3", "tire levers": "/assets/avcn/chapter-3/audio/5448e0cc0a.mp3", "Tools used to take a tire off a wheel.": "/assets/avcn/chapter-3/audio/3f7bfadc89.mp3", "grease gun": "/assets/avcn/chapter-3/audio/61c3d1f5aa.mp3", "A tool that pushes grease into machine parts.": "/assets/avcn/chapter-3/audio/764ae8b585.mp3", "paint-sprayer": "/assets/avcn/chapter-3/audio/efbe854d8c.mp3", "A tool that sprays paint onto a surface.": "/assets/avcn/chapter-3/audio/f2d98c74db.mp3", "spanner": "/assets/avcn/chapter-3/audio/21eaf3be37.mp3", "side cutters": "/assets/avcn/chapter-3/audio/ef5fa39970.mp3", "end cutting pliers": "/assets/avcn/chapter-3/audio/32cd7b3f1d.mp3", "flashlight": "/assets/avcn/chapter-3/audio/b9fc39d351.mp3", "measuring tape": "/assets/avcn/chapter-3/audio/aa80ae9f4c.mp3", "homeowner": "/assets/avcn/chapter-3/audio/77dbb64040.mp3", "repair man": "/assets/avcn/chapter-3/audio/3fd034798f.mp3", "air compressor": "/assets/avcn/chapter-3/audio/99fb80854d.mp3", "air hose": "/assets/avcn/chapter-3/audio/11fe16a1a3.mp3", "trolley jack": "/assets/avcn/chapter-3/audio/5a85ac2654.mp3", "wheel balancer": "/assets/avcn/chapter-3/audio/be9911025d.mp3", "vehicle lift": "/assets/avcn/chapter-3/audio/a85fbf3052.mp3", "Sometimes things break in houses.": "/assets/avcn/chapter-3/audio/981c0a5fe3.mp3", "Calling a repair man is expensive.": "/assets/avcn/chapter-3/audio/83116799f6.mp3", "expensive": "/assets/avcn/chapter-3/audio/66535c8c15.mp3", "calling": "/assets/avcn/chapter-3/audio/1acf8d2934.mp3", "As a homeowner, you need tools.": "/assets/avcn/chapter-3/audio/903e283810.mp3", "need": "/assets/avcn/chapter-3/audio/cca7bb0ea8.mp3", "tools": "/assets/avcn/chapter-3/audio/f267f9d977.mp3", "Go to the local hardware store.": "/assets/avcn/chapter-3/audio/e06fc9e989.mp3", "go to": "/assets/avcn/chapter-3/audio/2c180456aa.mp3", "local": "/assets/avcn/chapter-3/audio/30d28d80dd.mp3", "store": "/assets/avcn/chapter-3/audio/1437f5c228.mp3", "Most sell tool kits with the basic hand tools.": "/assets/avcn/chapter-3/audio/cc88a7678b.mp3", "tool kits": "/assets/avcn/chapter-3/audio/3626264204.mp3", "hand tools": "/assets/avcn/chapter-3/audio/a38afa3309.mp3", "most": "/assets/avcn/chapter-3/audio/b95adb3400.mp3", "sell": "/assets/avcn/chapter-3/audio/f9df271b56.mp3", "basic": "/assets/avcn/chapter-3/audio/d3d96261cf.mp3", "They usually include a couple of Phillips screwdrivers, flathead screwdrivers, and an adjustable wrench.": "/assets/avcn/chapter-3/audio/2229bc5ad7.mp3", "Phillips screwdrivers": "/assets/avcn/chapter-3/audio/f99526e535.mp3", "usually": "/assets/avcn/chapter-3/audio/90dcbf10ea.mp3", "include": "/assets/avcn/chapter-3/audio/ba734f367a.mp3", "a couple of": "/assets/avcn/chapter-3/audio/517392582a.mp3", "flathead screwdrivers": "/assets/avcn/chapter-3/audio/157d4f2343.mp3", "Some tool kits also have slip-joint pliers and long-nose pliers.": "/assets/avcn/chapter-3/audio/297aca3ceb.mp3", "some": "/assets/avcn/chapter-3/audio/c56fec9745.mp3", "also": "/assets/avcn/chapter-3/audio/5ca58b6879.mp3", "have": "/assets/avcn/chapter-3/audio/5b5ee56f54.mp3", "Then buy a tape measure, a claw hammer, and a utility knife separately.": "/assets/avcn/chapter-3/audio/8371388904.mp3", "then": "/assets/avcn/chapter-3/audio/c02c47ad8d.mp3", "buy": "/assets/avcn/chapter-3/audio/dcc3bf51b2.mp3", "separately": "/assets/avcn/chapter-3/audio/7f45912ffb.mp3", "Utility knives have retractable blades, so they last a long time.": "/assets/avcn/chapter-3/audio/b5782fd599.mp3", "blades": "/assets/avcn/chapter-3/audio/3524f62a1c.mp3", "utility knives": "/assets/avcn/chapter-3/audio/087bd87aec.mp3", "last a long time": "/assets/avcn/chapter-3/audio/0d25f9d4df.mp3", "so": "/assets/avcn/chapter-3/audio/92d646dff4.mp3", "And these separate items can be found for less than ten dollars.": "/assets/avcn/chapter-3/audio/00a2767fcc.mp3", "separate": "/assets/avcn/chapter-3/audio/7da0171002.mp3", "items": "/assets/avcn/chapter-3/audio/c9f94ad7f6.mp3", "can be found": "/assets/avcn/chapter-3/audio/0dfda599ca.mp3", "less than": "/assets/avcn/chapter-3/audio/47b0cb2387.mp3", "dollars": "/assets/avcn/chapter-3/audio/eaa3884966.mp3", "Read about how to use these tools, and home improvement projects are easy.": "/assets/avcn/chapter-3/audio/e2e70f7e07.mp3", "home improvement": "/assets/avcn/chapter-3/audio/b64761ee97.mp3", "read about": "/assets/avcn/chapter-3/audio/59219fd8c0.mp3", "how to use": "/assets/avcn/chapter-3/audio/4d7dd3a51b.mp3", "projects": "/assets/avcn/chapter-3/audio/2af0647042.mp3", "easy": "/assets/avcn/chapter-3/audio/2e15aaae68.mp3", "All employees of Talbot Electrical Services will bring their own tool kits.": "/assets/avcn/chapter-3/audio/d383b6a767.mp3", "employees": "/assets/avcn/chapter-3/audio/45e0933097.mp3", "all": "/assets/avcn/chapter-3/audio/24a78d1085.mp3", "bring": "/assets/avcn/chapter-3/audio/17ea746ffc.mp3", "their own": "/assets/avcn/chapter-3/audio/b0441524df.mp3", "electrical services": "/assets/avcn/chapter-3/audio/43f0b1f796.mp3", "Tool kits need to contain the basic tools needed for electrical jobs.": "/assets/avcn/chapter-3/audio/c961081736.mp3", "contain": "/assets/avcn/chapter-3/audio/81c1c50106.mp3", "electrical": "/assets/avcn/chapter-3/audio/7729116825.mp3", "need to": "/assets/avcn/chapter-3/audio/4484974ecf.mp3", "jobs": "/assets/avcn/chapter-3/audio/40f70a3a53.mp3", "These basic tools are sold at most hardware stores.": "/assets/avcn/chapter-3/audio/ecc9b7a637.mp3", "sold": "/assets/avcn/chapter-3/audio/a1e5536cc4.mp3", "Pliers are needed for pulling and cutting wires.": "/assets/avcn/chapter-3/audio/6f591b0ec3.mp3", "Pliers": "/assets/avcn/chapter-3/audio/e1ee8224f1.mp3", "wires": "/assets/avcn/chapter-3/audio/0ade3d5522.mp3", "needed for": "/assets/avcn/chapter-3/audio/b7b0acd2ac.mp3", "pulling": "/assets/avcn/chapter-3/audio/8a8d5f863f.mp3", "cutting": "/assets/avcn/chapter-3/audio/24523ee809.mp3", "Your kit needs to include long nose pliers and end cutting pliers.": "/assets/avcn/chapter-3/audio/eae57935f3.mp3", "long nose pliers": "/assets/avcn/chapter-3/audio/804256706f.mp3", "Side cutters and diagonal cutters are recommended.": "/assets/avcn/chapter-3/audio/8d417ac4b4.mp3", "recommended": "/assets/avcn/chapter-3/audio/49fc1cfd9a.mp3", "You must have wire strippers in your kit.": "/assets/avcn/chapter-3/audio/d3578f5a46.mp3", "strippers": "/assets/avcn/chapter-3/audio/4d3aec3e32.mp3", "must have": "/assets/avcn/chapter-3/audio/9f369bb44e.mp3", "kit": "/assets/avcn/chapter-3/audio/a81771eb2c.mp3", "Make sure they are able to strip the most common wires.": "/assets/avcn/chapter-3/audio/776be7b306.mp3", "strip": "/assets/avcn/chapter-3/audio/48d5f43aaa.mp3", "make sure": "/assets/avcn/chapter-3/audio/4507154eb1.mp3", "able to": "/assets/avcn/chapter-3/audio/1fd8d13f1e.mp3", "most common": "/assets/avcn/chapter-3/audio/c917dade6f.mp3", "You will also need several types of screwdrivers on the job.": "/assets/avcn/chapter-3/audio/14d75df467.mp3", "screwdrivers": "/assets/avcn/chapter-3/audio/e5f44da6f0.mp3", "several types of": "/assets/avcn/chapter-3/audio/a6a3119c21.mp3", "on the job": "/assets/avcn/chapter-3/audio/39e881e4a3.mp3", "A flashlight, measuring tape and utility knife will round out your kit.": "/assets/avcn/chapter-3/audio/5082459158.mp3", "round out": "/assets/avcn/chapter-3/audio/fd55dc8087.mp3", "Wire strippers are needed for removing the plastic cover.": "/assets/avcn/chapter-3/audio/4c8e7c2f79.mp3", "A tape measure is needed for measuring length.": "/assets/avcn/chapter-3/audio/a39b870361.mp3", "Tool kits need to contain the basic tools.": "/assets/avcn/chapter-3/audio/d03ef9f5d0.mp3", "Your kit needs to include long nose pliers.": "/assets/avcn/chapter-3/audio/8164b119e7.mp3", "adjustable wrench": "/assets/avcn/chapter-3/audio/f877b23020.mp3", "Phillips screwdriver": "/assets/avcn/chapter-3/audio/1deefa1ad8.mp3", "A homeowner needs a few basic tools. A  is a box with many tools inside. A wrench with an  jaw can change size, so one wrench fits many nuts. A utility knife has a  blade that pulls back in for safety. You use  to pull and cut wires. You can buy all of them at a  store.": "/assets/avcn/chapter-3/audio/5ba4285796.mp3", "tire changer": "/assets/avcn/chapter-3/audio/c4ed1b7e93.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch3";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>

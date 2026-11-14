@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 6 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 6</span></div>
+  <h1>Flashcard: Welding</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "welding machine", "ipa": "/ˈweldɪŋ məˈʃiːn/", "vi": "máy hàn", "def": "A machine that supplies electric current for welding.", "img": "/assets/avcn/chapter-6/welding-machine.webp", "group": "Cụm A · Đồ nghề và bảo hộ khi hàn"}, {"term": "welding clamp", "ipa": "/ˈweldɪŋ klæmp/", "vi": "kẹp mát (kẹp nối phôi với máy hàn)", "def": "A clamp that connects the work piece to the welding machine.", "img": "/assets/avcn/chapter-6/welding-clamp.webp", "group": "Cụm A · Đồ nghề và bảo hộ khi hàn"}, {"term": "welding mask", "ipa": "/ˈweldɪŋ mɑːsk/", "vi": "mặt nạ hàn", "def": "A mask that protects the face and eyes from the arc light.", "img": "/assets/avcn/chapter-6/welding-mask.webp", "group": "Cụm A · Đồ nghề và bảo hộ khi hàn"}, {"term": "welding rod", "ipa": "/ˈweldɪŋ rɒd/", "vi": "que hàn", "def": "A stick of metal that provides filler.", "img": "/assets/avcn/chapter-6/welding-rod.webp", "group": "Cụm A · Đồ nghề và bảo hộ khi hàn"}, {"term": "welding gloves", "ipa": "/ˈweldɪŋ ɡlʌvz/", "vi": "găng tay hàn", "def": "Thick gloves that protect the hands from heat and sparks.", "img": "/assets/avcn/chapter-6/welding-gloves.webp", "group": "Cụm A · Đồ nghề và bảo hộ khi hàn"}, {"term": "weld", "ipa": "/weld/", "vi": "hàn; mối hàn", "def": "A solid joint formed when melted metal cools.", "img": "/assets/avcn/chapter-6/weld-bead.webp", "group": "Cụm B · Hàn là gì"}, {"term": "molten", "ipa": "/ˈməʊltən/", "vi": "nóng chảy, ở dạng lỏng", "def": "Heated until it becomes liquid.", "img": "", "group": "Cụm B · Hàn là gì"}, {"term": "filler", "ipa": "/ˈfɪlə/", "vi": "vật liệu bổ sung (vật liệu đắp)", "def": "New material that is melted into the weld pool.", "img": "/assets/avcn/chapter-6/filler-wire.webp", "group": "Cụm B · Hàn là gì"}, {"term": "base metal", "ipa": "/beɪs ˈmetl/", "vi": "kim loại nền", "def": "The metal that the components are made of.", "img": "/assets/avcn/chapter-6/steel-plate.webp", "group": "Cụm B · Hàn là gì"}, {"term": "weld pool", "ipa": "/weld puːl/", "vi": "vũng hàn (kim loại lỏng tại mối nối)", "def": "The molten metal at the joint during welding.", "img": "/assets/avcn/chapter-6/weld-pool-diagram.webp", "group": "Cụm B · Hàn là gì"}, {"term": "dissimilar materials", "ipa": "/dɪˈsɪmɪlə məˈtɪəriəlz/", "vi": "vật liệu khác loại", "def": "Materials that are not of the same type.", "img": "", "group": "Cụm C · Vùng hàn và các lỗi"}, {"term": "discontinuity", "ipa": "/ˌdɪskɒntɪˈnjuːəti/", "vi": "chỗ không liền khối (khuyết tật mối hàn)", "def": "A place where a joint is not completely solid.", "img": "/assets/avcn/chapter-6/weld-crack.webp", "group": "Cụm C · Vùng hàn và các lỗi"}, {"term": "residual stress", "ipa": "/rɪˈzɪdjuəl stres/", "vi": "ứng suất dư", "def": "Force that is trapped around a joint after welding.", "img": "/assets/avcn/chapter-6/weld-stress.webp", "group": "Cụm C · Vùng hàn và các lỗi"}, {"term": "weld zone", "ipa": "/weld zəʊn/", "vi": "vùng mối hàn (còn gọi fusion zone)", "def": "The area that was the weld pool.", "img": "/assets/avcn/chapter-6/weld-zone.webp", "group": "Cụm C · Vùng hàn và các lỗi"}, {"term": "heat-affected zone", "ipa": "/hiːt əˈfektɪd zəʊn/", "vi": "vùng ảnh hưởng nhiệt (HAZ)", "def": "The material close to the weld pool that was changed by heat.", "img": "/assets/avcn/chapter-6/haz-pipe.webp", "group": "Cụm C · Vùng hàn và các lỗi"}, {"term": "electrode", "ipa": "/ɪˈlektrəʊd/", "vi": "điện cực (que hàn gắn trên kìm hàn)", "def": "An electrical conductor used to strike an arc.", "img": "/assets/avcn/chapter-6/electrode-holder.webp", "group": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ"}, {"term": "flux", "ipa": "/flʌks/", "vi": "thuốc hàn (lớp bọc que hàn)", "def": "A material that coats the welding rod and produces a shielding gas.", "img": "/assets/avcn/chapter-6/flux-coating.webp", "group": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ"}, {"term": "shielding gas", "ipa": "/ˈʃiːldɪŋ ɡæs/", "vi": "khí bảo vệ", "def": "A gas that protects the molten metal from oxygen.", "img": "/assets/avcn/chapter-6/gas-cylinders.webp", "group": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ"}, {"term": "tungsten electrode", "ipa": "/ˈtʌŋstən ɪˈlektrəʊd/", "vi": "điện cực vonfram", "def": "An electrode which does not melt and is not consumed during welding.", "img": "/assets/avcn/chapter-6/tungsten-electrodes.webp", "group": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ"}, {"term": "consumable", "ipa": "/kənˈsjuːməbl/", "vi": "bị tiêu hao (dùng hết khi hàn)", "def": "Used up during the welding process.", "img": "", "group": "Cụm D · Điện cực, thuốc hàn và khí bảo vệ"}];
+const AUDIO = {"welding machine": "/assets/avcn/chapter-6/audio/337e73cdf9.mp3", "A machine that supplies electric current for welding.": "/assets/avcn/chapter-6/audio/19b147d53b.mp3", "welding clamp": "/assets/avcn/chapter-6/audio/da95e5e926.mp3", "A clamp that connects the work piece to the welding machine.": "/assets/avcn/chapter-6/audio/2e48802ac4.mp3", "welding mask": "/assets/avcn/chapter-6/audio/ca2d974463.mp3", "A mask that protects the face and eyes from the arc light.": "/assets/avcn/chapter-6/audio/9337f5a801.mp3", "welding rod": "/assets/avcn/chapter-6/audio/1a799c3566.mp3", "A stick of metal that provides filler.": "/assets/avcn/chapter-6/audio/04483890f2.mp3", "welding gloves": "/assets/avcn/chapter-6/audio/291b569492.mp3", "Thick gloves that protect the hands from heat and sparks.": "/assets/avcn/chapter-6/audio/18999c5e40.mp3", "weld": "/assets/avcn/chapter-6/audio/867bb7eb49.mp3", "A solid joint formed when melted metal cools.": "/assets/avcn/chapter-6/audio/4d908251b2.mp3", "molten": "/assets/avcn/chapter-6/audio/0f6ef96e5f.mp3", "Heated until it becomes liquid.": "/assets/avcn/chapter-6/audio/fbf7e827c7.mp3", "filler": "/assets/avcn/chapter-6/audio/00eab40a6a.mp3", "New material that is melted into the weld pool.": "/assets/avcn/chapter-6/audio/5227c39b26.mp3", "base metal": "/assets/avcn/chapter-6/audio/1135873988.mp3", "The metal that the components are made of.": "/assets/avcn/chapter-6/audio/61fddca4bd.mp3", "weld pool": "/assets/avcn/chapter-6/audio/9af1fa72dd.mp3", "The molten metal at the joint during welding.": "/assets/avcn/chapter-6/audio/bc59994ad2.mp3", "dissimilar materials": "/assets/avcn/chapter-6/audio/778d83fd63.mp3", "Materials that are not of the same type.": "/assets/avcn/chapter-6/audio/14de1caedc.mp3", "discontinuity": "/assets/avcn/chapter-6/audio/f5fba9adb1.mp3", "A place where a joint is not completely solid.": "/assets/avcn/chapter-6/audio/af30c5e49e.mp3", "residual stress": "/assets/avcn/chapter-6/audio/ab0e1f9802.mp3", "Force that is trapped around a joint after welding.": "/assets/avcn/chapter-6/audio/7c8229fa99.mp3", "weld zone": "/assets/avcn/chapter-6/audio/44cded2ebb.mp3", "The area that was the weld pool.": "/assets/avcn/chapter-6/audio/8730a57f1b.mp3", "heat-affected zone": "/assets/avcn/chapter-6/audio/13cdab8da0.mp3", "The material close to the weld pool that was changed by heat.": "/assets/avcn/chapter-6/audio/3045b03038.mp3", "electrode": "/assets/avcn/chapter-6/audio/b18e4d51c7.mp3", "An electrical conductor that an arc is struck from.": "/assets/avcn/chapter-6/audio/d123d0fc5b.mp3", "flux": "/assets/avcn/chapter-6/audio/9561822667.mp3", "A material that coats the welding rod and produces a shielding gas.": "/assets/avcn/chapter-6/audio/1c339261ac.mp3", "shielding gas": "/assets/avcn/chapter-6/audio/bd83b3ccbf.mp3", "A gas that protects the molten metal from oxygen.": "/assets/avcn/chapter-6/audio/9c7fd457df.mp3", "tungsten electrode": "/assets/avcn/chapter-6/audio/c6ca1d4fc2.mp3", "An electrode which does not melt and is not consumed during welding.": "/assets/avcn/chapter-6/audio/fa4b713b33.mp3", "consumable": "/assets/avcn/chapter-6/audio/2ca660d671.mp3", "Used up during the welding process.": "/assets/avcn/chapter-6/audio/70066c4a58.mp3", "welding apron": "/assets/avcn/chapter-6/audio/cbea616eb8.mp3", "arc": "/assets/avcn/chapter-6/audio/570ceff2db.mp3", "torch": "/assets/avcn/chapter-6/audio/3345627093.mp3", "oxyfuel / oxyacetylene": "/assets/avcn/chapter-6/audio/90b911ff31.mp3", "acetylene": "/assets/avcn/chapter-6/audio/42da263bc4.mp3", "argon": "/assets/avcn/chapter-6/audio/480eac19f6.mp3", "carbon dioxide": "/assets/avcn/chapter-6/audio/2c529a2ef8.mp3", "stick welding (SMAW)": "/assets/avcn/chapter-6/audio/f64a1554c2.mp3", "MIG welding (GMAW)": "/assets/avcn/chapter-6/audio/4938a13f35.mp3", "TIG welding (GTAW)": "/assets/avcn/chapter-6/audio/8de0abfd8f.mp3", "fusion": "/assets/avcn/chapter-6/audio/004e20c975.mp3", "non-consumable": "/assets/avcn/chapter-6/audio/f3379027fb.mp3", "Welding means permanently joining two pieces of material by heating the joint between them.": "/assets/avcn/chapter-6/audio/c0668b9ae6.mp3", "Welding": "/assets/avcn/chapter-6/audio/965db21b38.mp3", "permanently": "/assets/avcn/chapter-6/audio/a541605b4b.mp3", "means": "/assets/avcn/chapter-6/audio/d4b0f96c50.mp3", "joining": "/assets/avcn/chapter-6/audio/f7d376c7b5.mp3", "pieces of material": "/assets/avcn/chapter-6/audio/d14f1ff707.mp3", "heating": "/assets/avcn/chapter-6/audio/efd1cb4b9a.mp3", "joint": "/assets/avcn/chapter-6/audio/b7f74ddf89.mp3", "between": "/assets/avcn/chapter-6/audio/2bd3cd621a.mp3", "The heat melts the edges of the components being welded together, and once the material has become molten (liquid), fusion occurs.": "/assets/avcn/chapter-6/audio/8a57836743.mp3", "melts": "/assets/avcn/chapter-6/audio/890b835425.mp3", "heat": "/assets/avcn/chapter-6/audio/0bbe5d1c89.mp3", "edges": "/assets/avcn/chapter-6/audio/89445b32f7.mp3", "components": "/assets/avcn/chapter-6/audio/4954265316.mp3", "being welded": "/assets/avcn/chapter-6/audio/8d4b46f540.mp3", "once": "/assets/avcn/chapter-6/audio/2ce9f10199.mp3", "occurs": "/assets/avcn/chapter-6/audio/92489fda10.mp3", "When the joint fuses, material from each component is mixed together, joining to form a solid weld.": "/assets/avcn/chapter-6/audio/0316bfe3a3.mp3", "fuses": "/assets/avcn/chapter-6/audio/085fccce16.mp3", "mixed together": "/assets/avcn/chapter-6/audio/e7ea1b113d.mp3", "joining to form": "/assets/avcn/chapter-6/audio/f31f7fb0d1.mp3", "solid": "/assets/avcn/chapter-6/audio/e19ab1667e.mp3", "each": "/assets/avcn/chapter-6/audio/4a941198f7.mp3", "Metal is often welded.": "/assets/avcn/chapter-6/audio/2bc255eaab.mp3", "welded": "/assets/avcn/chapter-6/audio/449e9eadaf.mp3", "metal": "/assets/avcn/chapter-6/audio/2cdab5a4c9.mp3", "often": "/assets/avcn/chapter-6/audio/6c99118b16.mp3", "It is also possible to weld plastic.": "/assets/avcn/chapter-6/audio/65d984f3b8.mp3", "plastic": "/assets/avcn/chapter-6/audio/a5bd04d831.mp3", "also": "/assets/avcn/chapter-6/audio/5ca58b6879.mp3", "possible": "/assets/avcn/chapter-6/audio/20f6273ce8.mp3", "Welding is usually used to join components of the same base metal – that is, the metal the components are made of.": "/assets/avcn/chapter-6/audio/59cd5f62c5.mp3", "usually": "/assets/avcn/chapter-6/audio/90dcbf10ea.mp3", "join": "/assets/avcn/chapter-6/audio/0f397b0a96.mp3", "the same": "/assets/avcn/chapter-6/audio/a573cbcb5d.mp3", "that is": "/assets/avcn/chapter-6/audio/c67a108aea.mp3", "made of": "/assets/avcn/chapter-6/audio/0051dcb77c.mp3", "It is possible – though more difficult – to weld certain dissimilar materials.": "/assets/avcn/chapter-6/audio/54e5ddf921.mp3", "dissimilar": "/assets/avcn/chapter-6/audio/4e77b6e025.mp3", "though": "/assets/avcn/chapter-6/audio/ab672ba128.mp3", "more difficult": "/assets/avcn/chapter-6/audio/bde2fd123f.mp3", "certain": "/assets/avcn/chapter-6/audio/0d1fe75d2f.mp3", "materials": "/assets/avcn/chapter-6/audio/00db277b0b.mp3", "For example, copper can be welded to steel.": "/assets/avcn/chapter-6/audio/0fa764da08.mp3", "copper": "/assets/avcn/chapter-6/audio/665d07e38f.mp3", "steel": "/assets/avcn/chapter-6/audio/304c994964.mp3", "for example": "/assets/avcn/chapter-6/audio/13979c6d35.mp3", "can be": "/assets/avcn/chapter-6/audio/9a3e5b976a.mp3", "Often, a filler is added during welding.": "/assets/avcn/chapter-6/audio/f8b4255b5c.mp3", "is added": "/assets/avcn/chapter-6/audio/b6e4a5dafc.mp3", "during": "/assets/avcn/chapter-6/audio/b2abf22860.mp3", "This is new material, of the same type as the base metal, which is melted into the weld pool": "/assets/avcn/chapter-6/audio/67a5bba454.mp3", "new material": "/assets/avcn/chapter-6/audio/4fd5c2184e.mp3", "of the same type as": "/assets/avcn/chapter-6/audio/3763893b86.mp3", "melted into": "/assets/avcn/chapter-6/audio/a506655343.mp3", "– the molten metal at the joint during welding.": "/assets/avcn/chapter-6/audio/e7bfcf5fc4.mp3", "at the joint": "/assets/avcn/chapter-6/audio/6a551f25be.mp3", "during welding": "/assets/avcn/chapter-6/audio/6a8a46600d.mp3", "One problem in welding is discontinuity, where joints are not completely solid.": "/assets/avcn/chapter-6/audio/a4e1063ddb.mp3", "problem": "/assets/avcn/chapter-6/audio/806292d03e.mp3", "where": "/assets/avcn/chapter-6/audio/3a15324afa.mp3", "completely": "/assets/avcn/chapter-6/audio/a2d58cbdac.mp3", "Another problem is residual stress.": "/assets/avcn/chapter-6/audio/94df54e7cf.mp3", "another": "/assets/avcn/chapter-6/audio/a6d1be0b7c.mp3", "This is force – for example, tension – which is “trapped” around the joint.": "/assets/avcn/chapter-6/audio/75ed1f038c.mp3", "tension": "/assets/avcn/chapter-6/audio/2dc14fd755.mp3", "trapped": "/assets/avcn/chapter-6/audio/0fb60564d3.mp3", "force": "/assets/avcn/chapter-6/audio/a92cb67bbd.mp3", "around": "/assets/avcn/chapter-6/audio/63efe6aa39.mp3", "This problem occurs after welding, as a result of contraction in the weld zone (or fusion zone) – the area that was the weld pool.": "/assets/avcn/chapter-6/audio/26bdc3406e.mp3", "contraction": "/assets/avcn/chapter-6/audio/1e412058c9.mp3", "after": "/assets/avcn/chapter-6/audio/f2d32dd20d.mp3", "as a result of": "/assets/avcn/chapter-6/audio/f84c451dd0.mp3", "area": "/assets/avcn/chapter-6/audio/0663fc0125.mp3", "It can also occur in the heat-affected zone (HAZ)": "/assets/avcn/chapter-6/audio/bb7a352e65.mp3", "occur": "/assets/avcn/chapter-6/audio/53ced482cc.mp3", "– the material close to the weld pool which was subjected to high temperature, and was modified by the heat.": "/assets/avcn/chapter-6/audio/57771621d2.mp3", "subjected to": "/assets/avcn/chapter-6/audio/6a786aad65.mp3", "modified": "/assets/avcn/chapter-6/audio/5bb4d215e4.mp3", "material": "/assets/avcn/chapter-6/audio/7a23a9749f.mp3", "close to": "/assets/avcn/chapter-6/audio/908dd7f44a.mp3", "high temperature": "/assets/avcn/chapter-6/audio/a09ebdda1a.mp3", "Shielded metal arc welding (SMAW), generally called arc welding or stick welding, involves striking an electric arc between the work piece and an electrode": "/assets/avcn/chapter-6/audio/befb0891a5.mp3", "stick welding": "/assets/avcn/chapter-6/audio/89ffc08194.mp3", "involves": "/assets/avcn/chapter-6/audio/08aaef1e60.mp3", "striking an arc": "/assets/avcn/chapter-6/audio/4a73581da6.mp3", "work piece": "/assets/avcn/chapter-6/audio/0754cddc26.mp3", "– an electrical conductor.": "/assets/avcn/chapter-6/audio/c014e8f960.mp3", "conductor": "/assets/avcn/chapter-6/audio/e3a6b054fb.mp3", "electrical": "/assets/avcn/chapter-6/audio/7729116825.mp3", "The heat from the arc melts the base metal.": "/assets/avcn/chapter-6/audio/35bf836fd9.mp3", "The electrode consists of a welding rod – a stick of metal of the same type as the work piece – which provides filler.": "/assets/avcn/chapter-6/audio/202ab2602b.mp3", "consists of": "/assets/avcn/chapter-6/audio/1bc5fef763.mp3", "a stick of metal": "/assets/avcn/chapter-6/audio/e617c0b533.mp3", "provides": "/assets/avcn/chapter-6/audio/e7b682d65d.mp3", "The welding rod is therefore consumable – it is used up.": "/assets/avcn/chapter-6/audio/3a2aa92ffb.mp3", "used up": "/assets/avcn/chapter-6/audio/4f4658c780.mp3", "therefore": "/assets/avcn/chapter-6/audio/ee82f5d4b1.mp3", "The rod is also coated with a material called flux.": "/assets/avcn/chapter-6/audio/5d219bc7da.mp3", "coated with": "/assets/avcn/chapter-6/audio/5a1458f4bc.mp3", "rod": "/assets/avcn/chapter-6/audio/a255a63e13.mp3", "called": "/assets/avcn/chapter-6/audio/d275c7b966.mp3", "When heated, this produces a shielding gas, which protects the molten metal from oxygen.": "/assets/avcn/chapter-6/audio/5d68f81cfa.mp3", "oxygen": "/assets/avcn/chapter-6/audio/7ec56a376f.mp3", "when heated": "/assets/avcn/chapter-6/audio/604f161d1b.mp3", "produces": "/assets/avcn/chapter-6/audio/0a8e1616df.mp3", "protects": "/assets/avcn/chapter-6/audio/3a992cf2d0.mp3", "molten metal": "/assets/avcn/chapter-6/audio/00acf43834.mp3", "Without this gas, the hot metal would combine with the oxygen in the air, and this would weaken the weld.": "/assets/avcn/chapter-6/audio/ec462fa43a.mp3", "combine": "/assets/avcn/chapter-6/audio/b62d8c4d13.mp3", "weaken": "/assets/avcn/chapter-6/audio/a19c04e4cc.mp3", "without": "/assets/avcn/chapter-6/audio/0cc11c7a70.mp3", "hot": "/assets/avcn/chapter-6/audio/85ccf426c7.mp3", "air": "/assets/avcn/chapter-6/audio/c66ec11c42.mp3", "In gas welding, heat comes from a torch which burns oxyfuel – a mixture of oxygen (O₂) and a gas fuel.": "/assets/avcn/chapter-6/audio/6631dfd950.mp3", "gas welding": "/assets/avcn/chapter-6/audio/c8271e28e4.mp3", "comes from": "/assets/avcn/chapter-6/audio/24a5c3e09b.mp3", "burns": "/assets/avcn/chapter-6/audio/25f67b81ca.mp3", "oxyfuel": "/assets/avcn/chapter-6/audio/e088fc5abb.mp3", "a mixture of": "/assets/avcn/chapter-6/audio/24ce6d1a0e.mp3", "gas fuel": "/assets/avcn/chapter-6/audio/e2547c117d.mp3", "The gas fuel burns much hotter in oxygen than it would in the air.": "/assets/avcn/chapter-6/audio/63e3cc24fc.mp3", "hotter": "/assets/avcn/chapter-6/audio/0fb66a5a77.mp3", "much": "/assets/avcn/chapter-6/audio/dfe81ef17e.mp3", "in the air": "/assets/avcn/chapter-6/audio/0fe81cbf88.mp3", "The most common fuel is acetylene (C₂H₂) – called oxyacetylene when mixed with oxygen.": "/assets/avcn/chapter-6/audio/51365fd2ed.mp3", "oxyacetylene": "/assets/avcn/chapter-6/audio/f0a00e20f1.mp3", "the most common": "/assets/avcn/chapter-6/audio/fdd3e0932c.mp3", "fuel": "/assets/avcn/chapter-6/audio/959ff4aac3.mp3", "mixed with": "/assets/avcn/chapter-6/audio/30f270aeb5.mp3", "Welding rods provide filler but flux is not required, as the burning oxyfuel produces carbon dioxide (CO₂) which acts as a shielding gas.": "/assets/avcn/chapter-6/audio/9d2f6e98b0.mp3", "required": "/assets/avcn/chapter-6/audio/abea7c4178.mp3", "burning": "/assets/avcn/chapter-6/audio/f519974925.mp3", "acts as": "/assets/avcn/chapter-6/audio/64e7d2eb5e.mp3", "In gas metal arc welding (GMAW) – often called MIG welding (metal inert gas) –": "/assets/avcn/chapter-6/audio/61ab17491c.mp3", "MIG welding": "/assets/avcn/chapter-6/audio/ca6cb3c758.mp3", "often called": "/assets/avcn/chapter-6/audio/d1ccf6b556.mp3", "inert": "/assets/avcn/chapter-6/audio/2ce610d953.mp3", "an arc is struck between the work piece and a wire which is made of the same metal as the base metal.": "/assets/avcn/chapter-6/audio/b5aaddf2c3.mp3", "struck": "/assets/avcn/chapter-6/audio/b76fa00391.mp3", "wire": "/assets/avcn/chapter-6/audio/16a5b07b1e.mp3", "the same … as": "/assets/avcn/chapter-6/audio/cd8f8b83cb.mp3", "The wire acts as a consumable electrode, supplying filler.": "/assets/avcn/chapter-6/audio/896d425103.mp3", "supplying": "/assets/avcn/chapter-6/audio/a72f9968d6.mp3", "consumable electrode": "/assets/avcn/chapter-6/audio/e05b864522.mp3", "A shielding gas, often argon (Ar), is blown onto the weld pool.": "/assets/avcn/chapter-6/audio/110231cdcd.mp3", "blown": "/assets/avcn/chapter-6/audio/016edb3185.mp3", "In gas tungsten arc welding (GTAW) – often called TIG welding (Tungsten Inert Gas) –": "/assets/avcn/chapter-6/audio/b8a07731d5.mp3", "TIG welding": "/assets/avcn/chapter-6/audio/3796a77480.mp3", "tungsten": "/assets/avcn/chapter-6/audio/528a09af6b.mp3", "an arc comes from an electrode made of tungsten (W).": "/assets/avcn/chapter-6/audio/f65b5d5962.mp3", "However, the tungsten is non-consumable – it does not melt, and is not consumed as filler during the welding process.": "/assets/avcn/chapter-6/audio/23227a36b4.mp3", "melt": "/assets/avcn/chapter-6/audio/a162cc58fb.mp3", "however": "/assets/avcn/chapter-6/audio/28d95e09f4.mp3", "consumed": "/assets/avcn/chapter-6/audio/a4a875d59c.mp3", "welding process": "/assets/avcn/chapter-6/audio/ad5e5d8041.mp3", "A separate welding rod is used to supply filler, if required.": "/assets/avcn/chapter-6/audio/f0d63160eb.mp3", "separate": "/assets/avcn/chapter-6/audio/7da0171002.mp3", "supply": "/assets/avcn/chapter-6/audio/039e5b3e72.mp3", "is used to": "/assets/avcn/chapter-6/audio/83a8b0ca28.mp3", "if required": "/assets/avcn/chapter-6/audio/9ed5cf7142.mp3", "As with MIG welding, a shielding gas such as argon is blown onto the weld.": "/assets/avcn/chapter-6/audio/332a86015d.mp3", "such as": "/assets/avcn/chapter-6/audio/06ba079209.mp3", "as with": "/assets/avcn/chapter-6/audio/fb932124f1.mp3", "blown onto": "/assets/avcn/chapter-6/audio/03d8a86c9c.mp3", "In gas welding, heat comes from a torch which burns oxyfuel.": "/assets/avcn/chapter-6/audio/8244153018.mp3", "An arc is struck between the work piece and a wire which is made of the same metal as the base metal.": "/assets/avcn/chapter-6/audio/7d6c955d67.mp3", "The rod is coated with a material called flux, which produces a shielding gas.": "/assets/avcn/chapter-6/audio/9f4a638c30.mp3", "A separate welding rod is used to supply filler.": "/assets/avcn/chapter-6/audio/53b61bd21f.mp3", "Welding is used to join components of the same base metal.": "/assets/avcn/chapter-6/audio/99f576ce2c.mp3", "A shielding gas is blown onto the weld.": "/assets/avcn/chapter-6/audio/9939bdd3c2.mp3", "Different metals can be  together, but it is more difficult than welding the same base metal. Both metals become  in the weld pool. When the pool cools, the metals may not  properly. This can leave , such as cracks, in the weld zone. As the metals contract at different rates, residual  builds up around the joint.": "/assets/avcn/chapter-6/audio/abe68b54da.mp3", "An electrical conductor used to strike an arc.": "/assets/avcn/chapter-6/audio/71814971d3.mp3", "electrode holder": "/assets/avcn/chapter-6/audio/0398d35980.mp3", "chipping hammer": "/assets/avcn/chapter-6/audio/ae481f619f.mp3", "wire brush": "/assets/avcn/chapter-6/audio/0ece54ba22.mp3", "gas regulator": "/assets/avcn/chapter-6/audio/d1318c9409.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch6";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>
