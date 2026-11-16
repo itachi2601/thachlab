@@ -113,7 +113,7 @@ export const hinhL10b8 = {
   // Trang 4 · bài toán mẫu: ô tô hãm phanh, diện tích tam giác
   phanh: (cap = 'Ô tô hãm phanh: v giảm đều về 0. Diện tích phần tô là gì?') => vt([[0, 15], [5, 0]], { tm: 6, vm: 18, tk: [1, 2, 3, 4, 5], vk: [5, 10, 15], to: true, cap, id: 'ph' }),
   // Trang 5 · thử thách ★★★: v = 4 − 2t, vạch số nguyên, đổi dấu
-  doiChieu: (cap = 'v = 4 − 2t. Đọc dấu của v và a lúc t = 3 s.') => vt([[0, 4], [3.5, -3]], { tm: 4, vm: 5, vmin: -4, tk: [1, 2, 3, 4], vk: [-2, 2, 4], cap, id: 'dc' }),
+  doiChieu: (cap = 'v = 4 − 2t. Đọc dấu của v và a lúc t = 3 s.') => vt([[0, 4], [3.5, -3]], { tm: 4, vm: 5, vmin: -4, tk: [1, 2, 3], vk: [-2, 2, 4], cap, id: 'dc' }),
 
   // ===== Bài tập mẫu =====
   chieuDuong: (cap = 'Hai cách chọn chiều dương cho cùng một xe đang phanh.') => {
