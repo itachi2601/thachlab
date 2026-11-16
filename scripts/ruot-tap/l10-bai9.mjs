@@ -130,7 +130,7 @@ ${h3(1, 'II.4 · Công thức không có thời gian', '3·1')}
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card fig-side" style="${fs(46)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>“${m('a')} âm là chậm dần.”</b> Dấu ${aa} chỉ cho biết ${m('\\vec a')} cùng hay ngược chiều dương. Nhanh hay chậm: xét dấu ${m('a\\cdot v')}.</span></div>
-<div class="trap">${ck}<span><b>“Thay ngay ${tt} của đề.”</b> Xe phanh: tính lúc dừng ${nw(m('t_d=v_0/|a|'))} trước; ${m('t\\gt t_d')} thì ${nw(m('d=\\dfrac{v_0^2}{2|a|}'))}.</span></div>
+<div class="trap">${ck}<span><b>“Thay ngay ${tt} của đề.”</b> Xe phanh: tính lúc dừng ${nw(m('t_d=v_0/|a|'))} trước; ${m('t\\gt t_d')} thì quãng đường chỉ là đoạn đến lúc dừng (công thức ở ô trên).</span></div>
 <div class="trap">${ck}<span><b>“Hai đường ${vv}–${tt} cắt nhau là gặp nhau.”</b> Cắt nhau chỉ là cùng vận tốc; gặp nhau khi ${m('x_1=x_2')}.</span></div></div>
 ${H.bayDung()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
