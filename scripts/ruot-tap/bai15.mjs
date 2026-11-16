@@ -117,7 +117,7 @@ ${h3(3, 'Thử thách phân tầng')}
 <div class="fig-side" style="${fs('', 52)}">${box(`<div class="ln"><b>★ ${m('{}^{16}_{\\ 8}\\mathrm{O}')}:</b> ${m('\\Delta m=0{,}137005\\ \\mathrm{u}')} → ${m('E_{lkr}=')} ${f(22)}</div>` + wl('★★ Vì sao urani có E<sub>lk</sub> lớn hơn sắt mà lại kém bền?', 3) + wl('★★★ Tổng E<sub>lk</sub> sau phản ứng lớn hơn trước: toả hay thu? Vì sao không cần Δm?', 4))}<div style="display:grid;gap:2mm">${hinh.anh('nang-luong-lien-ket-rieng.png', 'Trục dọc: năng lượng liên kết riêng (MeV/nuclôn). Đỉnh quanh Fe-56, Ni-62 (≈ 8,8); hạt nhân nặng bên phải kém bền hơn. (Halliday 42.2.3)')}</div></div>
 ${h3(4, 'Câu 8 và ví dụ 1 gam heli-4')}
 ${box(wl('Câu 8: D + T → He + n, khối lượng giảm 0,018883 u; năng lượng toả ra cho MỘT phản ứng = …', 2)
- + wl('1 g He-4 có N = … hạt; E = N·28,3 MeV = … J', 2)
+ + wl('1 g He-4 (N<sub>A</sub> = 6,02·10²³/mol; 1 MeV = 1,6·10⁻¹³ J) có N = … hạt; E = N·28,3 MeV = … J', 2)
  + wl('So với đốt than (2,9·10⁷ J/kg): … kg', 2))}
 ${foot(5)}</section>`;
 
@@ -134,12 +134,12 @@ const dang = [
     nd: `Nhiều hạt nhân khác số khối → chia ${m('E_{lk}')} cho ${f(8)} từng hạt rồi xếp`, a: ['a', 'b'], gi: 5, fig: 'cotLkr' },
   { t: 'Dạng 4 · Khó · Khối lượng nguyên tử → độ hụt khối',
     de: `${m('{}^{40}_{20}\\mathrm{Ca}')}, ${m('m_{nt}=39{,}962591\\ \\mathrm{u}')}, ${m('m_e=0{,}000549\\ \\mathrm{u}')}:<br><b>a)</b> độ hụt khối<br><b>b)</b> ${m('E_{lk}')} và ${m('E_{lkr}')}`,
-    nd: `Đề ghi khối lượng <b>nguyên tử</b> → cộng ${m('Z\\,m_e=')} ${f(10)} vào tổng hạt rời trước khi trừ`, a: ['a', 'b'], gi: 4 },
+    nd: `Đề ghi khối lượng <b>nguyên tử</b> → cộng ${m('Z\\,m_e=')} ${f(10)} vào tổng hạt rời trước khi trừ`, a: ['a', 'b'], gi: 3 },
   { t: 'Dạng 5 · Khó · Đi ngược từ E<sub>lkr</sub> tìm khối lượng hạt nhân',
     de: `${m('{}^{84}_{36}\\mathrm{Kr}')}, ${m('E_{lkr}=8{,}72\\ \\mathrm{MeV}')}/nuclôn:<br><b>a)</b> độ hụt khối<br><b>b)</b> khối lượng hạt nhân`,
     nd: `Cho ${m('E_{lkr}')}, hỏi khối lượng → ${m('E_{lk}=')} ${f(8)}·${m('A')}, chia ${f(10)}, lấy tổng nuclôn rời trừ ${f(8)}`, a: ['a', 'b'], gi: 4, fig: 'hutKhoiKr' },
   { t: 'Dạng 6 · Nâng cao · Năng lượng tạo thành cả mẫu',
-    de: `${m('{}^{12}_{6}\\mathrm{C}')}, ${m('\\Delta m=0{,}098940\\ \\mathrm{u}')}; mẫu ${m('3{,}0\\ \\mathrm{g}')}, ${m('M=12\\ \\mathrm{g/mol}')}:<br><b>a)</b> năng lượng toả ra (J) khi tạo thành từ nuclôn rời<br><b>b)</b> bằng đốt bao nhiêu kg than (${m('2{,}9\\cdot10^{7}\\ \\mathrm{J/kg}')})?`,
+    de: `${m('{}^{12}_{6}\\mathrm{C}')}, ${m('\\Delta m=0{,}098940\\ \\mathrm{u}')}; mẫu ${m('3{,}0\\ \\mathrm{g}')}, ${m('M=12\\ \\mathrm{g/mol}')}; ${nw(m('N_A=6{,}02\\cdot10^{23}\\ \\mathrm{mol^{-1}}'))}; ${nw(m('1\\ \\mathrm{MeV}=1{,}6\\cdot10^{-13}\\ \\mathrm{J}'))}:<br><b>a)</b> năng lượng toả ra (J) khi tạo thành từ nuclôn rời<br><b>b)</b> bằng đốt bao nhiêu kg than (${m('2{,}9\\cdot10^{7}\\ \\mathrm{J/kg}')})?`,
     nd: `Cho khối lượng chất, hỏi năng lượng → ${m('N=')} ${f(8)} ${m('\\cdot N_A')}, nhân năng lượng ${f(10)}`, a: ['a', 'b'], gi: 3 },
 ];
 
