@@ -156,7 +156,7 @@ ${h3(2, 'III · Ba cái bẫy mất điểm', '4·2')}
 <tr><td><b>3.</b> Đếm nút, bụng</td><td>${m('n')} bó có ${f(14)} nút; đừng quên ${f(30)}</td></tr></table>
 ${box(`<div style="padding-top:.6mm"><b>Câu 4.</b> ${nw(`${m('i=2')} mm`)}, trường đối xứng rộng ${u('15', 'mm')}: ${nw(`${m('\\dfrac{L}{2i}=')} ${f(12)}`)} ${m('\\Rightarrow')} ${nw(`${m('N_s=')} ${f(12)}`)} vân sáng</div>
 <div><b>Câu 5.</b> Dây hai đầu cố định có 5 nút (kể cả hai đầu): ${f(10)} bụng</div>
-<div><b>Câu 6.</b> ${nw(`${m('AB=20')} cm`)}, ${nw(`${L_}${m('=2')} cm`)}, hai nguồn ngược pha: ${f(10)} cực đại, ${f(10)} cực tiểu</div>`, 'margin-top:1mm')}
+<div><b>Câu 6.</b> ${nw(`${m('AB=20')} cm`)}, ${nw(`${L_}${m('=2')} cm`)}, hai nguồn ngược pha: ${f(12)} cực đại, ${f(12)} cực tiểu</div>`, 'margin-top:1mm')}
 ${h3(3, 'IV · Trả bài 5 câu', '4·3')}
 ${box(`${tb(`1. ${m('T')}, ${m('f')}, ${L_}, ${m('v')} nối với nhau thế nào? ${m('n')} ngọn liên tiếp cách nhau bao nhiêu?`)}${lines(2)}
 ${tb(`2. Hai điểm cách ${m('d')} trên phương truyền lệch pha bao nhiêu? Khi nào cùng, ngược, vuông pha?`)}${lines(2)}
@@ -178,7 +178,7 @@ ${h3(2, 'V · Bài toán mẫu', '5·2')}
 <tr><td style="height:6mm">“cực đại, cực tiểu trên AB”</td><td></td></tr></table>
 <div class="fig-side" style="${fs(44)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`${L_} (cùng đơn vị cm), ${m('AB/\\lambda')}:`, 2)}${wl('Cực đại: miền k, đếm:', 1)}${wl('Cực tiểu: miền k, đếm:', 1)}${wl('Kiểm tra (xen kẽ, chênh 1):', 1)}</div>${H.haiNguon()}</div>
-<div style="margin-top:.8mm"><b>Đổi ${nw(`${m('AB=21')} cm`)}:</b> ${nw(`${m('AB/\\lambda=')} ${f(12)}`)} ${m('\\Rightarrow')} ${f(10)} cực đại, ${f(10)} cực tiểu &nbsp;<span class="hint">(hai điểm ${m('k+\\tfrac12=\\pm10{,}5')} rơi vào đâu?)</span></div>
+<div style="margin-top:.8mm"><b>Đổi ${nw(`${m('AB=21')} cm`)}:</b> ${nw(`${m('AB/\\lambda=')} ${f(12)}`)} ${m('\\Rightarrow')} ${f(12)} cực đại, ${f(12)} cực tiểu &nbsp;<span class="hint">(hai điểm ${m('k+\\tfrac12=\\pm10{,}5')} rơi vào đâu?)</span></div>
 ${K.btvn().replace('<h3><i>1</i>Đề BTVN</h3>', h3(3, 'Đề BTVN', '5·3')).replace(wl('Ghi chú của thầy về đề:', 2), wl('Ghi chú của thầy về đề:', 2))}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(wl(`${m('\\bigstar')} Sóng mặt hồ ${nw(`${m('f=2')} Hz`)}, ${nw(`${L_}${m('=0{,}5')} m`)}. Tốc độ truyền sóng?`, 2)
@@ -251,6 +251,6 @@ await K.dung({
   trang1to5: ttHaiCot + [p1, p2, p3, p4(), p5].join('\n'),
   btm: { dang: [...dang, ...dang2], tach: [3, 3], kq: [[1, 2, 3], [4, 5, 6]], khoNhat: false },
   tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo), dap: tuongTu.dap.map((x) => x.replace(/(\d|π) (?=(mm|m\/s|m|Hz|cm|s|rad|nút|bụng)(?![a-zà-ỹ]))/g, '$1&nbsp;').replace(/bậc /g, 'bậc&nbsp;').replace(/vân (sáng|tối)/g, 'vân&nbsp;$1').replace(/(ngược|vuông) pha/g, '$1&nbsp;pha').replace(/cực (đại|tiểu)/g, 'cực&nbsp;$1').replaceAll('π', m('\\pi'))) },
-  tra: 'bốn họ 1·4 · họ A 2·1 · chậu nước 1·5 · họ B 2·2 · khe Young 3·1–3·2 · sóng dừng 3·3, 4·1 · bẫy 4·2 · trả bài 4·3 · bài toán mẫu 5·2 · dạng 1–3 → 6·1 · dạng 4–6 → 7·1',
+  tra: 'bốn họ 1·4 · chậu nước 1·5 · họ A 2·1 · họ B 2·2 · khe Young 3·1–3·2 · sóng dừng 3·3, 4·1 · bẫy 4·2 · trả bài 4·3 · bài toán mẫu 5·2 · dạng 1–3 → 6·1 · dạng 4–6 → 7·1',
   out: process.argv[2],
 });

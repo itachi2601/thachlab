@@ -162,14 +162,14 @@ const tbL = (Ls) => `<table style="text-align:center;margin:.6mm 0"><tr><th styl
 const dang = [
   { t: 'Dạng 1 · Dễ · Đọc màn dao động kí: số chu kì, chu kì, tần số',
     de: `TIME/DIV ở ${mso('0{,}5')}. Trên màn đếm 5 đỉnh liên tiếp (chấm đỏ), đỉnh đầu tới đỉnh cuối cách nhau ${o('8{,}0')}.<br><b>a)</b> số chu kì ${Nq} của đoạn đó<br><b>b)</b> chu kì ${Tq}<br><b>c)</b> tần số ${fq}`,
-    nd: `${m('n')} đỉnh liên tiếp có ${f(8)} chu kì; ${nw(`${Tq} = ${f(14)} ms`)}; đổi ms ra ${f(6)} rồi lật ngược`, a: ['a', 'b', 'c'], gi: 6, fig: H.man({ start: 1, per: 2, n: 4 }) },
+    nd: `${m('n')} đỉnh liên tiếp có ${f(12)} chu kì; ${nw(`${Tq} = ${f(14)} ms`)}; đổi ms ra ${f(14)} rồi lật ngược`, a: ['a', 'b', 'c'], gi: 6, fig: H.man({ start: 1, per: 2, n: 4 }) },
   { t: 'Dạng 2 · Trung bình · Chọn thang đo: một chu kì chiếm mấy ô',
     de: `Loa phát âm đơn ${Hz('800')}. TIME/DIV ở ${mso('0{,}5')}; màn rộng ${o('10')}.<br><b>a)</b> chu kì ${Tq} (ms)<br><b>b)</b> một chu kì chiếm bao nhiêu ô<br><b>c)</b> ${m('N=3')} chu kì liên tiếp chiếm ${Lq} bằng bao nhiêu ô<br><b>d)</b> màn chứa trọn tối đa mấy chu kì liên tiếp`,
     nd: `ô mỗi chu kì = ${nw(`${Tq} : ${kq}`)}; ${nw(`${Lq} = ${f(12)}`)}; ${nw(`${m('N_{max}=')} ${f(10)}`)} (số nguyên)`, a: ['a', 'b', 'c', 'd'], gi: 9 },
   { t: `Dạng 3 · Khó · 5 lần đo: ${fb}, sai số và kết quả ${nw(m('f=\\bar f\\pm\\Delta f'))}`,
     de: `Đo âm thoa bằng dao động kí: ${nw(m('N=4'))}, ${nw(m('k=1\\ \\text{ms/ô}'))}, đọc lệch ${nw(m('\\Delta L=0{,}1\\ \\text{ô}'))}.
 ${tbL(['8,0', '8,1', '7,9', '8,0', '8,2'])}<b>a)</b> tần số trung bình ${fb}<br><b>b)</b> sai số ngẫu nhiên ${m('\\Delta\\bar f')} (trung bình các ${m('|f_i-\\bar f|')})<br><b>c)</b> sai số dụng cụ ${m('\\Delta f_{dc}')}<br><b>d)</b> sai số tổng ${df}; ghi ${m('f=\\ldots\\pm\\ldots')}`,
-    nd: `${nw(`${m('f_i=')} ${f(16)}`)} (đổi ${kq} ra s); ${nw(`${m('\\Delta f_{dc}=\\bar f\\dfrac{\\Delta L}{\\bar L}')}`)}; ${nw(`${df} = ${f(10)} + ${f(10)}`)}`, a: ['a', 'b', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], cot: 3, gi: 21 },
+    nd: `${nw(`${m('f_i=')} ${f(16)}`)} (đổi ${kq} ra s); ${nw(`${m('\\Delta f_{dc}=\\bar f\\dfrac{\\Delta L}{\\bar L}')}`)}; ${nw(`${df} = ${f(14)} + ${f(14)}`)}`, a: ['a', 'b', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>'], cot: 3, gi: 21 },
 ];
 
 const oY = (s, ol, w = {}) => s.split('<br>').map((p) => {
