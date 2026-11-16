@@ -6,7 +6,9 @@ const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 
-const p1 = `<section class="page">
+// Bài tương tự giải vào vở (thầy chốt 10/11): ô đáp số đặt cuối dòng của từng ý (CSS .yo như l10-bai23.mjs).
+const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
+const p1 = `${ttCss}<section class="page">
 ${head('BÀI 17 · HIỆN TƯỢNG PHÓNG XẠ', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
@@ -142,9 +144,45 @@ const dang = [
     nd: `So hai mẫu cùng đơn vị Bq/g: ${m('h/h_0=2^{-n}')} ⇒ ${m('n=')} ${f(8)} ⇒ ${m('t=nT')}`, a: ['a', 'b', 'c'], gi: 5, fig: 'c14' },
 ];
 
+// Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python 16/11/2026 (ln2, N_A = 6,022·10²³, 1 năm = 365 ngày, 1 Ci = 3,7·10¹⁰ Bq).
+const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
+  const y = p.match(/^<b>([a-d])\)<\/b>/);
+  if (!y) return `<div>${p}</div>`;
+  const ls = o.filter((l) => l[0] === y[1]);
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
+}).join('');
+const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: oY(b.de, b.o, b.ow), k: 0 } : b));
+const nhap = (n) => ({ t: '<span class="nhap-t">Nháp / chỗ em còn vướng</span>', de: lines(n), k: 0 });
+const s1 = '<sub>1</sub>', s2 = '<sub>2</sub>';
+const ci = `${nw(m('1\\ \\mathrm{Ci}=3{,}7\\cdot10^{10}\\ \\mathrm{Bq}'))}`, na = nw(m('N_A=6{,}022\\cdot10^{23}\\ \\mathrm{mol^{-1}}'));
+const tuongTu = {
+  vo: true,
+  tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
+  trang: [[
+    { t: 'Dạng 1 · Bài 1', de: `${m('{}^{232}_{90}\\mathrm{Th}\\xrightarrow{\\alpha}\\mathrm{X}\\xrightarrow{\\beta^-}\\mathrm{Y}\\xrightarrow{\\beta^-}\\mathrm{W}')}.<br><b>a)</b> ${m('A,\\ Z')} của X<br><b>b)</b> ${m('A,\\ Z')} của Y<br><b>c)</b> ${m('A,\\ Z')} của W<br><b>d)</b> W đứng ô nào so với Th; số khối đổi thế nào`, o: ['a', 'b', 'c', `d${s1}`, `d${s2}`] },
+    { t: 'Dạng 1 · Bài 2', de: `Chuỗi phân rã biến ${m('{}^{226}_{88}\\mathrm{Ra}')} thành ${m('{}^{210}_{82}\\mathrm{Pb}')} chỉ gồm các phân rã ${m('\\alpha')} và ${m('\\beta^-')}.<br><b>a)</b> số lần phân rã ${m('\\alpha')}<br><b>b)</b> số lần phân rã ${m('\\beta^-')}`, o: ['a', 'b'], ow: 14 },
+    { t: 'Dạng 2 · Bài 1', de: `${m('N_0=8{,}0\\cdot10^{16}')} hạt ${m('{}^{222}_{86}\\mathrm{Rn}')}, ${nw(`${m('T=3{,}8')} ngày`)}.<br><b>a)</b> còn bao nhiêu hạt sau 15,2 ngày<br><b>b)</b> bao nhiêu % đã phân rã<br><b>c)</b> sau 20,9 ngày còn bao nhiêu % số ban đầu`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 2 · Bài 2', de: `${m('N_0=4{,}8\\cdot10^{21}')} hạt ${m('{}^{137}_{55}\\mathrm{Cs}')}, ${nw(`${m('T=30')} năm`)}.<br><b>a)</b> còn bao nhiêu hạt sau 90 năm<br><b>b)</b> bao nhiêu % đã phân rã<br><b>c)</b> sau 45 năm còn bao nhiêu % số ban đầu`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 1', de: `Phốt pho-32, ${nw(m('m_0=80\\ \\mu\\mathrm{g}'))}; sau 42,9 ngày đã rã ${nw(`${m('70\\ \\mu\\mathrm{g}')}.`)}<br><b>a)</b> chu kì ${m('T')}<br><b>b)</b> khối lượng còn sau 100 ngày<br><b>c)</b> sau ít nhất bao nhiêu ngày thì còn dưới ${m('0{,}5\\ \\mu\\mathrm{g}')} (gợi ý: ${nw(m('\\log_2x=\\ln x/\\ln2'))})`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 2', de: `Radon-222, ${nw(m('m_0=48\\ \\mathrm{mg}'))}; sau 11,4 ngày đã rã ${nw(`${m('42\\ \\mathrm{mg}')}.`)}<br><b>a)</b> chu kì ${m('T')}<br><b>b)</b> khối lượng còn sau 19 ngày<br><b>c)</b> sau bao lâu thì chỉ còn ${m('1\\,\\%')} khối lượng ban đầu`, o: ['a', 'b', 'c'] },
+    nhap(1),
+  ], [
+    { t: 'Dạng 4 · Bài 1', de: `${m('1{,}0\\ \\mathrm{g}')} ${m('{}^{226}_{88}\\mathrm{Ra}')}, ${nw(`${m('T=1600')} năm`)} (1 năm = 365 ngày), ${na}, ${nw(m('M=226\\ \\mathrm{g/mol}'))}, ${nw(`${ci}.`)}<br><b>a)</b> ${m('N_0')} và ${m('\\lambda')} (${m('1/\\mathrm{s}')})<br><b>b)</b> ${m('H_0')} theo Bq và Ci<br><b>c)</b> ${m('H')} sau 3200 năm (Ci)`, o: [`a${s1}`, `a${s2}`, `b${s1}`, `b${s2}`, 'c'] },
+    { t: 'Dạng 4 · Bài 2', de: `${m('2{,}0\\ \\mathrm{mg}')} ${m('{}^{131}_{53}\\mathrm{I}')} dùng chẩn đoán tuyến giáp, ${nw(`${m('T=8{,}0')} ngày`)}, ${na}, ${nw(m('M=131\\ \\mathrm{g/mol}'))}, ${nw(`${ci}.`)}<br><b>a)</b> ${m('N_0')} và ${m('\\lambda')} (${m('1/\\mathrm{s}')})<br><b>b)</b> ${m('H_0')} theo Bq và Ci<br><b>c)</b> ${m('H')} sau 24 ngày (Ci)`, o: [`a${s1}`, `a${s2}`, `b${s1}`, `b${s2}`, 'c'] },
+    { t: 'Dạng 5 · Bài 1', de: `Cây sống ${nw(m('0{,}226\\ \\mathrm{Bq/g}'))} C; ${nw(`${m('T=5730')} năm`)}. Mẩu gỗ cổ chứa ${m('10\\ \\mathrm{g}')} C đo được ${nw(`${m('0{,}565\\ \\mathrm{Bq}')}.`)}<br><b>a)</b> độ phóng xạ riêng ${m('h')} và ${m('h/h_0')}<br><b>b)</b> tuổi mẩu gỗ<br><b>c)</b> mẫu lẫn carbon từ than đá (không còn C-14): tuổi tính ra lớn hay nhỏ hơn thật?`, o: [`a${s1}`, `a${s2}`, 'b', 'c'] },
+    { t: 'Dạng 5 · Bài 2', de: `Cây sống ${nw(m('0{,}226\\ \\mathrm{Bq/g}'))} C; ${nw(`${m('T=5730')} năm`)}. Mẩu xương chứa ${m('12\\ \\mathrm{g}')} C đo được ${nw(`${m('1{,}6\\ \\mathrm{Bq}')}.`)}<br><b>a)</b> độ phóng xạ riêng ${m('h')} và ${m('h/h_0')}<br><b>b)</b> tuổi mẩu xương<br><b>c)</b> quên trừ phông nền (số đếm dư): tuổi tính ra lớn hay nhỏ hơn thật?`, o: [`a${s1}`, `a${s2}`, 'b', 'c'] },
+    nhap(9),
+  ]],
+  dap: [
+    `D1·1: a) X: A = 228, Z = 88 · b) Y: 228, 89 · c) W: 228, 90 · d${s1}) cùng ô với Th (đồng vị) · d${s2}) giảm 4 &nbsp;|&nbsp; D1·2: a) 4 · b) 2 &nbsp;|&nbsp; D2·1: a) ${nw('5,0·10<sup>15</sup>')} · b) 93,75 % · c) 2,21 % &nbsp;|&nbsp; D2·2: a) ${nw('6,0·10<sup>20</sup>')} · b) 87,5 % · c) 35,4 % &nbsp;|&nbsp; D3·1: a) 14,3 ngày · b) 0,628 µg · c) 104,7 ngày (≈ 105 ngày) &nbsp;|&nbsp; D3·2: a) 3,8 ngày · b) 1,5 mg · c) 25,2 ngày`,
+    `D4·1: a${s1}) ${nw('2,66·10<sup>21</sup>')} · a${s2}) ${nw('1,37·10<sup>−11</sup> s<sup>−1</sup>')} · b${s1}) ${nw('3,66·10<sup>10</sup> Bq')} · b${s2}) 0,989 Ci · c) 0,247 Ci &nbsp;|&nbsp; D4·2: a${s1}) ${nw('9,19·10<sup>18</sup>')} · a${s2}) ${nw('1,00·10<sup>−6</sup> s<sup>−1</sup>')} · b${s1}) ${nw('9,22·10<sup>12</sup> Bq')} · b${s2}) 249 Ci · c) 31,1 Ci &nbsp;|&nbsp; D5·1: a${s1}) 0,0565 Bq/g · a${s2}) 0,25 · b) 11 460 năm · c) lớn hơn &nbsp;|&nbsp; D5·2: a${s1}) 0,133 Bq/g · a${s2}) 0,590 · b) ≈ 4360 năm · c) nhỏ hơn`,
+  ],
+};
+
 await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]] },
+  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
   tra: 'phóng xạ 1·4 · đếm xung 1·5 · bốn loại tia 2·1 · dịch ô 2·2 · định luật phóng xạ 2·3 · độ phóng xạ 2·4 · bẫy 3·1 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
   out: process.argv[2],
 });
