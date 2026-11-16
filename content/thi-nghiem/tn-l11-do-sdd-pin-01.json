@@ -177,7 +177,7 @@
     1.06
    ]
   ],
-  "ghi_chu": "Tính bằng script từ I = E/(R0 + Rx + r), U = E − I·r, rồi cộng nhiễu đều ngẫu nhiên trong ±0,002 A và ±0,01 V (random.Random(seed).uniform) và làm tròn I tới 0,001 A, U tới 0,01 V để mô phỏng sai số dụng cụ. Mô hình E = 1,50 V, r = 0,80 Ω, R0 = 2,0 Ω, seed = 7. Khớp bình phương tối thiểu trên 6 hàng: U = 1,496 − 0,806·I. Hai điểm trên đường (0; 1,50) và (0,500; 1,09) cho r = 0,82 Ω. Bảng này trùng bảng mục II.4 của bài."
+  "ghi_chu": "Tính bằng script từ I = E/(R0 + Rx + r), U = E − I·r, rồi cộng nhiễu đều ngẫu nhiên trong ±0,002 A và ±0,01 V (random.Random(seed).uniform) và làm tròn I tới 0,001 A, U tới 0,01 V để mô phỏng sai số dụng cụ. Mô hình E = 1,50 V, r = 0,80 Ω, R0 = 2,0 Ω, seed = 7. Khớp bình phương tối thiểu trên 6 hàng: U = 1,496 − 0,806·I. Hai điểm trên đường (0; 1,50) và (0,500; 1,09) cho r = 0,82 Ω. Bảng này trùng bảng mục II.4 của bài. Ca tự suy cho câu chốt clip: giữ pin cũ, thay R0 = 2,0 Ω bằng 5,0 Ω rồi đo lại 6 lần → đường U–I trùng đường cũ (ℰ, r của pin không đổi), chỉ các điểm dồn về I ≤ 1,50/(5,0 + 0,80) = 0,26 A (U ≥ 1,29 V)."
  },
  "ket_qua_ky_vong": "Đồ thị U–I là đường thẳng dốc xuống, cắt trục U tại ≈1,50 V, hệ số góc ≈ −0,8 Ω; kết quả E = 1,50 ± 0,01 V, r = 0,82 ± 0,05 Ω.",
  "hien_tuong_hay_sai": [
