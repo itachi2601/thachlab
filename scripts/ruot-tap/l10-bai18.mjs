@@ -194,10 +194,10 @@ const dang = [
     nd: `${nw(`${m('N=mg-')} ${f(14)}`)}; phương ngang: ${nw(`${f(14)} − ${Fmst} ${m('=ma')}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.d3 },
   { t: 'Dạng 4 · Khá · Trượt xuống mặt phẳng nghiêng',
     de: `Bao hàng ${m('12\\ \\mathrm{kg}')} thả không vận tốc đầu ở đỉnh tấm ván dốc dài ${nw(`${m('5{,}0\\ \\mathrm m')},`)} nghiêng ${nw(`${m('35^\\circ')};`)} ${nw(`${m('\\mu=0{,}30')};`)} ${nw(`${g98}.`)}<br><b>a)</b> áp lực lên ván và lực ma sát trượt<br><b>b)</b> gia tốc của bao hàng<br><b>c)</b> tốc độ khi tới chân ván`,
-    nd: `${nw(`${m('N=')} ${f(16)}`)}; ${nw(`${m('a=g(')} ${f(22)} ${m(')')}`)}, khối lượng ${ck}triệt tiêu ${ck}cần biết`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4, cot: 2 },
+    nd: `${nw(`${m('N=')} ${f(16)}`)}; ${nw(`${m('a=g(')} ${f(32)} ${m(')')}`)}, khối lượng ${ck}triệt tiêu ${ck}cần biết`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4, cot: 2 },
   { t: 'Dạng 5 · Khó · Lên dốc rồi có tụt xuống không',
     de: `Vật ${m('3{,}0\\ \\mathrm{kg}')} ở chân dốc nghiêng ${nw(`${m('25^\\circ')},`)} được truyền vận tốc đầu ${m('6{,}0\\ \\mathrm{m/s}')} dọc dốc, hướng lên; ${nw(m('\\mu=0{,}20'))} (coi ma sát nghỉ cực đại bằng ma sát trượt); ${nw(`${g98}.`)}<br><b>a)</b> gia tốc lúc đi lên và quãng đường đi lên được<br><b>b)</b> tới điểm cao nhất, vật nằm yên hay trượt xuống<br><b>c)</b> nếu vật về tới chân dốc: tốc độ khi đó`,
-    nd: `lên dốc: ma sát hướng ${f(14)}; ở đỉnh so ${m('\\tan\\alpha')} với ${f(12)}; xuống dốc ma sát ${ck}đổi chiều ${ck}giữ chiều`, a: ['a', 'b', 'c'], gi: 7, fig: H.d5, cot: 2 },
+    nd: `lên dốc: ma sát hướng ${f(25)}; ở đỉnh so ${m('\\tan\\alpha')} với ${f(16)}; xuống dốc ma sát ${ck}đổi chiều ${ck}giữ chiều`, a: ['a', 'b', 'c'], gi: 7, fig: H.d5, cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm (40 mm khi ý dài) đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…

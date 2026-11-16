@@ -167,7 +167,7 @@ ${h3(2, 'III · Bốn cái bẫy', '4·2')}
 <div class="card fig-side" style="${fs(33)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>Thiếu/thừa lực.</b> Không có “lực đà”: mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực ${f(30)}</span></div>
 <div class="trap">${ck}<span><b>${m('N=mg')} mọi lúc.</b> Mặt ngang kéo xiên: ${m('N=')} ${f(25)} · mặt nghiêng: ${m('N=')} ${f(20)}</span></div>
-<div class="trap">${ck}<span><b>Đổi chiều dương giữa chừng.</b> Vật quay đầu: ${f(12)} đổi dấu, ${f(12)} không đổi dấu.</span></div>
+<div class="trap">${ck}<span><b>Đổi chiều dương giữa chừng.</b> Vật quay đầu: ${f(25)} đổi dấu, ${f(25)} không đổi dấu.</span></div>
 <div class="trap">${ck}<span><b>Ma sát nghỉ cũng tính ${m('\\mu N')}.</b> Tủ ${u('50\\ \\mathrm{kg}')} bị đẩy ngang ${u('120\\ \\mathrm N')} vẫn đứng yên, ${u('\\mu_n=0{,}4')}, ${g10}: ${u('F_{\\mathrm{ms}}=')} ${f(12)}&nbsp;N, mức trần ${f(12)}&nbsp;N</span></div></div>
 ${H.hopLen()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '4·3')}
@@ -201,7 +201,7 @@ const dang = [
     nd: `Oy cho ${m('N')}: kéo xiên thì ${m('N=mg-')} ${f(16)}; Ox chỉ lấy ${f(16)}`, a: ['a', 'b', 'c', 'd'], gi: 7 },
   { t: 'Dạng 2 · Trung bình · Vật trượt xuống mặt phẳng nghiêng',
     de: deH(`Vật ${u('2{,}0\\ \\mathrm{kg}')} trượt từ nghỉ ở đỉnh dốc dài ${u('10\\ \\mathrm m')}, nghiêng ${u('30^\\circ')} (${u('\\sin 30^\\circ=0{,}5')}; ${u('\\cos 30^\\circ\\approx 0{,}866')}); ${u('\\mu=0{,}1')}; ${g10}.<br><b>a)</b> phản lực ${m('N')}<br><b>b)</b> gia tốc<br><b>c)</b> tốc độ ở chân dốc<br><b>d)</b> thời gian trượt hết dốc`, H.d3),
-    nd: `Ox dọc dốc: ${m('a=g(')} ${f(16)} ${m('-')} ${f(16)}${m(')')}`, a: ['a', 'b', 'c', 'd'], gi: 6 },
+    nd: `Ox dọc dốc: ${m('a=g(')} ${f(24)} ${m('-')} ${f(24)}${m(')')}`, a: ['a', 'b', 'c', 'd'], gi: 6 },
   { t: 'Dạng 3 · Khó · Bài toán ngược: từ chuyển động tìm lực',
     de: deH(`Ô tô ${u('1200\\ \\mathrm{kg}')} đang chạy ${u('15\\ \\mathrm{m/s}')} trên đường ngang thì phanh gấp, bánh trượt ${u('22{,}5\\ \\mathrm m')} rồi dừng; ${g10}.<br><b>a)</b> gia tốc (chiều dương là chiều chạy)<br><b>b)</b> độ lớn lực hãm<br><b>c)</b> hệ số ma sát trượt lốp–đường`, H.d4),
     nd: `tìm ${m('a')} trước từ ${m('v^2-v_0^2=')} ${f(16)}; rồi ${m('F_{\\text{hãm}}=')} ${f(16)}; ${m('\\mu=')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 4 },

@@ -86,7 +86,7 @@ ${head('TRỌNG TÂM · TRỌNG LƯỢNG')}
 ${h3(1, 'II.2 · Trọng tâm', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Trọng tâm là ${f(25)} của trọng lực.</div>
-<div>Vật phẳng, mỏng, đồng chất, đối xứng: trọng tâm ở ${f(25)} (thước thẳng: ${f(18)}; đĩa tròn: ${f(18)}).</div>
+<div>Vật phẳng, mỏng, đồng chất, đối xứng: trọng tâm ở ${f(25)} (thước thẳng: ${f(25)}; đĩa tròn: ${f(25)}).</div>
 <div>Vị trí trọng tâm phụ thuộc ${f(45)};</div><div>trọng tâm có thể nằm ${f(25)} vật.</div></div>
 ${h3(2, 'Thí nghiệm: tìm trọng tâm tấm bìa bằng dây dọi', '2·2')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
@@ -138,7 +138,7 @@ ${h3(3, 'Thí nghiệm: lực kế kéo dây vắt qua ròng rọc', '3·3')}
 ${H.rongRocLucKe()}</div>
 ${h3(4, 'III · Ba cái bẫy hay sập', '3·4')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Em nặng 50 kg.”</b> kg là đơn vị của ${f(25)}; trọng lượng tính bằng ${f(10)}.</span></div>
+<div class="trap">${ck}<span><b>“Em nặng 50 kg.”</b> kg đo ${f(25)}; trọng lượng đo bằng ${f(25)}.</span></div>
 <div class="trap">${ck}<span><b>“Lực căng luôn bằng trọng lượng.”</b> Chỉ đúng khi vật ${f(45)}.</span></div>
 <table style="margin:.4mm 0 .8mm"><tr><th style="width:54mm">Gia tốc của vật treo</th><th>Chiều dương theo ${m('\\vec a')}, định luật 2</th><th style="width:16mm">So ${m('T')}, ${m('P')}</th></tr>
 <tr><td>${m('\\vec a')} hướng lên (lên nhanh dần, xuống chậm dần)</td><td>${f(54)}<br>⇒ ${nw(`${m('T=m(g')}${f(8)}${m('a)')}`)}</td><td></td></tr>
