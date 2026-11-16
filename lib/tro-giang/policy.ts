@@ -20,13 +20,15 @@ export interface SessionPolicy {
   attention_note: string;
   teaching_minutes: number;
   teaching_note: string;
+  /** Nội dung thầy đã dạy trong buổi (trợ giảng khai lại để thầy đối chiếu). */
+  lesson_content?: string;
   prepared: boolean;
   recalled: boolean;
   asked_each: boolean;
   followups: { student: string; lesson: string; difficulty: string }[];
 }
 export function emptyPolicy(): SessionPolicy {
-  return { attendance: 'on_time', arrived_early: false, homework_checked: false, homework_missing: 0, walked_tables: false, reported_students: false, attention_note: '', teaching_minutes: 0, teaching_note: '', prepared: false, recalled: false, asked_each: false, followups: [] };
+  return { attendance: 'on_time', arrived_early: false, homework_checked: false, homework_missing: 0, walked_tables: false, reported_students: false, attention_note: '', teaching_minutes: 0, teaching_note: '', lesson_content: '', prepared: false, recalled: false, asked_each: false, followups: [] };
 }
 /** Hệ số theo tháng: từ 11/2026 phụ đạo ×1,15/×1,3, chữa bài ×1,5; tháng 10/2026 ×1,1/×1,2/×1,6. Khớp ta_monthly_policy. */
 export function policyFactors(date: string) { return date >= '2026-11' ? { tutor12: 1.15, tutor34: 1.3, teaching: 1.5 } : { tutor12: 1.1, tutor34: 1.2, teaching: 1.6 }; }

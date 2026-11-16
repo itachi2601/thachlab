@@ -92,3 +92,7 @@ cận trên: đọc thẳng `_ChuanHoa.docx` bằng `iter_inner_content()`, khô
 Đã spawn task riêng để vá lại script chính thức trong thư mục skill.
 
 **Cập nhật 2026-09-25:** `xuat_thachlab.py` (bản ~/.codex; bản synced không có scripts) gọi `cd.chuyen_anh_vector_sang_png()` sau khi lưu Word để EMF/WMF thành PNG. Xem [[project_thachlab_missing_figures]].
+
+## Nhật ký rút kinh nghiệm
+- 2026-11-15 · Kiểm "bank sạch" theo `topic_id` bỏ sót 18 dòng có `topic_id` NULL mà `topic_name` lớp 10 (dòng sinh lại khi hash đổi, trigger chép tên từ đề) → kiểm chủ đề phải so CẢ `topic_name` với `question_topics.name` theo khối, và nối đề↔bank bằng `question_content_hash`, không bằng (source_exam_id, source_index).
+- 2026-11-15 · Vá vài chục câu đề+bank: một giao dịch `lock_timeout 5s`, tắt cả `trg_exams_sync_bank` lẫn `trg_bank_tags_to_exams`, khối DO tự kiểm (hash/số câu/đề=bank), thử trước bằng `raise exception` cuối file → chạy ban ngày được, xong <2 giây (lần 14/11 chỉ tắt một trigger nên giữ khoá ~3 phút).
