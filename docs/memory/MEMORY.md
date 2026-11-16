@@ -30,7 +30,7 @@
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — mỗi trường hợp một dòng
-- [Chặng commit + ra-soat.md](feedback_chang_commit_ra_soat_ban_giao.md) — commit mỗi chặng, lỗi ghi ra-soat.md
+- [Chặng commit + ra-soat.md](feedback_chang_commit_ra_soat_ban_giao.md) — lỗi ghi ra-soat.md
 - [Bỏ câu mơ hồ, đừng giải lại](feedback_bo_cau_mo_ho_thay_vi_giai_lai.md) — câu lệch thì xoá
 ## Hạ tầng & tra cứu
 - [Supabase](project_supabase_configured.md) — Singapore; key ở .env.local
@@ -50,7 +50,7 @@
 - [Thí nghiệm theo khung đề thi](project_thachlab_thi_nghiem_khung_de_thi.md) — chờ merge data-tap
 - [Bài tập mẫu: quét dạng → đăng](project_thachlab_btm_quet_dang.md) — treo 38/43/45, L12, L10 đợt B
 - [Giải cùng hình + một dạng một hình](project_thachlab_giai_cung_hinh.md) — 46 bài chờ duyệt/đăng
-- [Sách in đồng bộ web](project_thachlab_sach_in_chuong2.md) — hồ sơ sách + soát lệch xong; treo chặng C–E, bản 7 chờ xem
+- [Sách in đồng bộ web](project_thachlab_sach_in_chuong2.md) — treo chặng C–E, bản 7
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — thí điểm 20 câu chờ thầy
 - [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — treo deploy 8 điểm UI
@@ -68,12 +68,12 @@
 - [Danh hiệu đeo + khung](project_thachlab_title_showcase.md) — chưa test HS thật
 - [Danh hiệu thiếu câu hỏi](project_title_bank_gaps.md) — scripts/sql/title-bank-coverage.sql
 - [Mastery YCCĐ](project_thachlab_mastery_yccd.md) — chưa test UI
-- [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%, tối đa 3 lượt
+- [Thoát phụ đạo tự kiểm tra](project_thachlab_tutoring_exit_quiz.md) — 20 câu ≥80%
 - [Phụ đạo theo chủ đề](project_thachlab_phu_dao.md) — treo RPC restamp đề cũ
 - [Chữa bài mobile + TA](project_thachlab_chua_bai_mobile_ta.md) — treo thử máy thật
 - [Kiểm tra hiểu bài](project_thachlab_kiem_tra_hieu_bai.md) — chờ ví dụ của thầy
 ## Giao diện & sản phẩm
-- [Câu tương tự đúng dạng](project_thachlab_cau_tuong_tu_dung_dang.md) — chờ thầy xem biến thể bài 18
+- [Câu tương tự đúng dạng](project_thachlab_cau_tuong_tu_dung_dang.md) — chờ xem bài 18
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — đã deploy, chưa thử HS thật
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — P1..P27; treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — KHÔNG xây trước Q2/2027
@@ -81,7 +81,7 @@
 - [Pháp lý & bản quyền](project_thachlab_phap_ly_ban_quyen.md) — treo nhãn nguồn từng câu
 - [KHTN 9 cơ học 129–131](project_thachlab_l9_co_hoc_129_131.md) — chờ duyệt rồi đăng
 - [TA giao BTVN riêng](project_thachlab_ta_giao_btvn_rieng.md) — deploy 17/10, chưa thử thật
-- [Tab CTTC + hộp thư + sửa đề CTTC](project_thachlab_cttc_tab_hop_thu.md) — đã deploy 10/11, chưa kiểm bằng tài khoản đăng nhập
+- [Tab CTTC + hộp thư](project_thachlab_cttc_tab_hop_thu.md) — deploy 10/11, chưa kiểm đăng nhập
 - [Quy chế + bảng việc TA](project_thachlab_ta_policy.md) — chưa tự tính
 ## Việc đang làm (từ 30/9)
 - [CNC lớp đảo ngược](project_thachlab_cnc_flipped.md) — treo G41/H11, cổng G5, N4
@@ -89,19 +89,19 @@
 - [Nạp ngân hàng VL10 (Word)](project_thachlab_nap_ngan_hang_vl10.md) — còn Ch.I, VII + Cơ năng
 - [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — Sheets
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
-- [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S/tính toán, Ch.3–4
-- [Ruột tập bài 14 + VL10 Ch.4 + VL11 Ch.3](project_thachlab_ruot_tap_bai14.md) — L12 b14, VL10 Ch.4 60 tr, VL11 Ch.3 72 tr chờ in thử
-- [Ruột tập các chương còn lại](project_thachlab_ruot_tap_con_lai.md) — 65 bài, 3 đợt; đợt 1 mở 12/11
-- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 12/11: 7 clip đề Bộ + 12 clip bẫy + 2 mô phỏng chờ duyệt gắn bài
+- [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
+- [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — chờ in thử
+- [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài xong 13/11, chờ in thử
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 21 clip chờ duyệt gắn bài
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — chờ duyệt ảnh, chưa đăng
 - [L10 Ch.2 Động học rà soát](project_thachlab_l10_ly_thuyet_ch2.md) — chờ duyệt, đăng lesson 49–57
 - [L11 Ch.4 Dòng điện rà soát](project_thachlab_l11_chuong4_ly_thuyet.md) — đã đăng; treo 2 điểm
-- [Rà soát L10/L11 còn lại 31/10](project_thachlab_ra_soat_l10_l11_con_lai.md) — chưa đăng DB, chờ duyệt ảnh
+- [Rà soát L10/L11 31/10](project_thachlab_ra_soat_l10_l11_con_lai.md) — chờ duyệt ảnh, chưa đăng
 - [Rà soát Ch.3 L12 31/10](project_thachlab_l12_ra_soat_ch3_2026_10_31.md) — 17 hình vẽ lại, chưa đăng DB
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
 - [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — 16 bài đã lên; chờ soát bậc 1
-- [Sơ đồ tư duy chương](project_thachlab_so_do_tu_duy_chuong.md) — L12 Ch.3 + L10 Ch.3 đã deploy 11/11; chương khác dùng skill
+- [Sơ đồ tư duy chương](project_thachlab_so_do_tu_duy_chuong.md) — L12/L10 Ch.3 đã deploy
