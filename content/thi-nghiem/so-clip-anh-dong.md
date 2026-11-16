@@ -191,7 +191,7 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 - l12-hat-nhan-mo-hinh-nguyen-tu · topic 221 (gần nhất) · clip bay-ch4-04 (Rutherford: α lệch do hạt nhân) · đã soát · 12/11/2026 · tự soạn; THỬ NGHĨ hỏi "quỹ đạo dừng" theo đề Bộ — thầy xác nhận
 - 13/11/2026 · thuchanh-01, thuchanh-03 (lesson 5) và noinang-04 (lesson 4) bản 2: đã chèn bài + đăng DB (`--chi-video`; bài 4 thêm mốc `data-exp` trên `<details>` nên dùng `--cho-phep-khac` sau khi so bản sao lưu giống hệt).
 
-## Lô 3 L12 (14/11/2026, 5 clip). Đã tải lesson-clips (-20261114) + chèn repo + khung 6 ô; CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB
+## Lô 3 L12 (14/11/2026, 5 clip). Đã tải lesson-clips (-20261114) + chèn repo + khung 6 ô; thầy duyệt 16/11/2026; ĐÃ ĐĂNG DB 16/11 10:02 (127, 10, 17 --chi-video; 126 cả lý thuyết)
 
 - l12-dien-tu-truong-song-dien-tu (bài 127) · tn-l12-dttruong-01 · clip dttruong1 · cổng B 2 vòng ĐẠT · 49,9 s · 1,74 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-01-20261114.mp4 · ĐÃ ĐĂNG 16/11
 - l12-khai-niem-tu-truong (bài 10) · tn-l12-tutruong-02 · clip tutruong2 · cổng B 2 vòng (sửa nhẹ vòng 2) · 49,7 s · 1,16 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-02-20261114.mp4 · ĐÃ ĐĂNG 16/11
