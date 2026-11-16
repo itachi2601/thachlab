@@ -125,7 +125,7 @@ ${h3(3, 'II.5 · Sai số tỉ đối: mức độ chính xác', '3·3')}
 <div>${m('\\delta A=\\dfrac{\\Delta A}{\\overline{A}}\\cdot 100\\,\\%')}. Cùng ${dA}, đại lượng đo càng ${f(14)} thì ${dl} càng lớn.</div>
 <div style="margin-top:.6mm">Con lắc: ${nw(`${m('\\delta t=')} ${f(16)} %`)}. Nghĩa là cứ ${nw('100 s')} đo thì sai chừng ${f(12)} s.</div>
 <div style="margin-top:.6mm">Đo ${nw('2 s')} mà sai ${nw('0,15 s')}: ${nw(`${m('\\delta=')} ${f(14)} %`)}</div></div>
-${h3(5, 'IV · Trả bài 6 câu', '3·4')}
+${h3(4, 'IV · Trả bài 6 câu', '3·4')}
 ${box(`${tb('1. Bảy đơn vị cơ bản SI; thứ nguyên và hai quy tắc kiểm công thức?')}${lines(1)}
 ${tb('2. Hệ thống khác ngẫu nhiên thế nào? Đo nhiều lần giảm loại nào?')}${lines(1)}
 ${tb('3. Sai số tuyệt đối của phép đo trực tiếp tính ra sao?')}${lines(1)}
@@ -154,7 +154,7 @@ ${h3(3, 'III · Ba cái bẫy hay sập', '4·3')}
 <div class="fig-side" style="${fs(46)}"><div class="card" style="padding:1mm 3mm;margin:0">
 <div class="trap">${ck}<span><b>“Đo nhiều lần thì sai số nào cũng nhỏ đi.”</b> Chỉ giảm sai số ${f(22)}; cân luôn chỉ thừa ${nw('0,3 g')} thì trung bình 5 lần vẫn thừa ${f(12)} g.</span></div>
 <div class="trap">${ck}<span><b>“Sai số tuyệt đối nhỏ là đo chính xác.”</b> So ${f(12)}, không so ${f(12)}: tấm bìa ${nw(m('(250{,}0\\pm0{,}5)\\ \\mathrm{mm}'))} có ${nw(`${m('\\delta=')} ${f(12)} %`)}, cục tẩy ${nw(m('(12{,}0\\pm0{,}5)\\ \\mathrm{mm}'))} có ${nw(`${m('\\delta=')} ${f(12)} %`)}.</span></div>
-<div class="trap">${ck}<span><b>“Ghi thêm số 0 cho đẹp.”</b> ${nw(m('1{,}5\\ \\mathrm m'))} và ${nw(m('1{,}500\\ \\mathrm m'))} khác nhau: dụng cụ đo tới ${f(12)} và tới ${f(12)}.</span></div></div>
+<div class="trap">${ck}<span><b>“Ghi thêm số 0 cho đẹp.”</b> ${nw(m('1{,}5\\ \\mathrm m'))} và ${nw(m('1{,}500\\ \\mathrm m'))} khác nhau: dụng cụ đo tới ${f(16)} và tới ${f(16)}.</span></div></div>
 ${H.haiHang('Dãy 1 và dãy 2: năm lần đo cùng một vật; nét đứt là giá trị thật.')}</div>
 ${h3(4, 'Làm nhanh', '4·4')}
 <div class="card" style="padding:1.2mm 3mm"><div>Cân điện tử có ĐCNN ${nw('0,1 g')} chỉ ${nw('25,3 g')}. Đo một lần: ghi ${nw(`${m('m=(')} ${f(14)} ± ${f(12)}${m(')\\ \\mathrm g')}`)}</div></div>
@@ -168,7 +168,7 @@ ${rkHai([1, 2, 3, 4], [5, 6, 7])}
 ${h3(2, 'V · Bài toán mẫu: đo g bằng con lắc đơn', '5·2')}
 <div class="card soft" style="padding:1.2mm 3mm">${m('g=\\dfrac{4\\pi^{2}l}{T^{2}}')}. Dây dài ${nw(m('l=1{,}000\\ \\mathrm m'))}, thước ĐCNN ${nw('1 mm')} (sai số dụng cụ lấy nửa ĐCNN). Thời gian ${m('t')} của 10 dao động đo 5 lần ở bảng tr. ${3 + OFF}; ${m('T=t/10')}. Bỏ qua sai số của ${m('\\pi')}. Tính ${m('g')} và ghi kết quả.</div>
 <table style="margin-top:1mm"><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
-<tr><td>“${m('g=4\\pi^2l/T^2')}”</td><td>Gián tiếp: tích, thương, ${f(12)} ở ${m('T')}</td></tr>
+<tr><td>“${m('g=4\\pi^2l/T^2')}”</td><td>Gián tiếp: tích, thương, ${f(25)} ở ${m('T')}</td></tr>
 <tr><td style="height:6.5mm">“ĐCNN 1 mm, nửa ĐCNN”</td><td></td></tr>
 <tr><td style="height:6.5mm">“10 dao động, 5 lần”</td><td></td></tr>
 <tr><td style="height:6.5mm">“bỏ qua sai số của ${m('\\pi')}”</td><td></td></tr></table>
@@ -183,13 +183,13 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Đo trực tiếp nhiều lần: trung bình, sai số tuyệt đối, tỉ đối, ghi kết quả',
     de: `Viên bi thép cân bốn lần bằng cân điện tử ĐCNN ${nw(m('0{,}01\\ \\mathrm g'))} (hiện số: sai số dụng cụ lấy một ĐCNN): ${nw(m('5{,}38'))}; ${nw(m('5{,}42'))}; ${nw(m('5{,}38'))}; ${nw(m('5{,}42'))} (g).<br><b>a)</b> giá trị trung bình ${m('\\overline{m}')}<br><b>b)</b> sai số tuyệt đối ${m('\\Delta m')}<br><b>c)</b> sai số tỉ đối ${m('\\delta m')}<br><b>d)</b> ghi kết quả đo`,
-    nd: `${nw(m('\\Delta m=\\overline{\\Delta m}+\\Delta m_{\\mathrm{dc}}'))}: ${nw(`${m('\\overline{\\Delta m}=')} ${f(14)}`)}; ${nw(`${m('\\delta m=')} ${f(14)}`)}; ${m('\\Delta m')} có ${f(12)} CSCN nên ${m('\\overline{m}')} lấy ${f(12)} chữ số thập phân`, a: ['a', 'b', 'c', 'd'], gi: 4, fig: H.can(), cot: 2 },
+    nd: `${nw(m('\\Delta m=\\overline{\\Delta m}+\\Delta m_{\\mathrm{dc}}'))}: ${nw(`${m('\\overline{\\Delta m}=')} ${f(14)}`)}; ${nw(`${m('\\delta m=')} ${f(14)}`)}; ${m('\\Delta m')} có ${f(12)} CSCN nên ${m('\\overline{m}')} lấy ${f(12)} chữ số thập phân`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.can(), cot: 2 },
   { t: 'Dạng 2 · Trung bình · Đo gián tiếp nhân, chia: cộng sai số tỉ đối',
     de: `Xe lăn chạy hết đường ray: ${nw(m('s=(2{,}50\\pm0{,}01)\\ \\mathrm m'))}, ${nw(m('t=(4{,}2\\pm0{,}1)\\ \\mathrm s'))}. Tốc độ trung bình ${m('v=s/t')}.<br><b>a)</b> ${m('\\delta s')} và ${m('\\delta t')}<br><b>b)</b> sai số tỉ đối ${m('\\delta v')}<br><b>c)</b> ${m('\\overline{v}')}, ${m('\\Delta v')} rồi ghi ${m('v=\\overline{v}\\pm\\Delta v')} đúng CSCN`,
     nd: `Chia cũng ${f(25)} sai số ${f(14)}: ${nw(`${m('\\delta v=')} ${f(12)} + ${f(12)}`)}; ${nw(`${m('\\Delta v=\\overline{v}\\,\\delta v')}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>', 'c<sub>3</sub>'], gi: 6, fig: H.rayXe(), cot: 3 },
   { t: 'Dạng 3 · Khó · Gián tiếp có số mũ: gộp phép đo nhiều lần và một lần, tìm nguồn sai số lớn nhất',
     de: `Vật trượt không vận tốc đầu trên mặt nghiêng dài ${nw(m('s=(1{,}20\\pm0{,}01)\\ \\mathrm m'))}. Thời gian trượt đo 5 lần bằng đồng hồ số (ĐCNN ${nw(m('0{,}01\\ \\mathrm s'))}, hiện số: sai số dụng cụ lấy một ĐCNN): ${nw(m('1{,}54'))}; ${nw(m('1{,}48'))}; ${nw(m('1{,}48'))}; ${nw(m('1{,}51'))}; ${nw(m('1{,}49'))} (s). Gia tốc ${m('a=\\dfrac{2s}{t^{2}}')}.<br><b>a)</b> ${m('\\overline{t}')} và ${m('\\Delta t')}<br><b>b)</b> ${m('\\delta s')}, ${m('\\delta t')} rồi ${m('\\delta a')}<br><b>c)</b> ${m('\\overline{a}')}, ${m('\\Delta a')}; ghi ${m('a=\\overline{a}\\pm\\Delta a')}<br><b>d)</b> đại lượng nào đóng góp nhiều nhất vào ${m('\\delta a')}`,
-    nd: `Số mũ nhân với ${f(14)} của chính nó: ${nw(`${m('\\delta a=\\delta s+')} ${f(12)} ${m('\\delta t')}`)}; hệ số ${m('2')} ${ck}có ${ck}không đóng góp vào sai số`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>', 'c<sub>3</sub>', 'd'], cot: 3, gi: 18, fig: H.mpn() },
+    nd: `Số mũ nhân với ${f(26)} của chính nó: ${nw(`${m('\\delta a=\\delta s+')} ${f(12)} ${m('\\delta t')}`)}; hệ số ${m('2')} ${ck}có ${ck}không đóng góp vào sai số`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>', 'c<sub>3</sub>', 'd'], cot: 3, gi: 18, fig: H.mpn() },
 ];
 
 // ---------- Bài tương tự (giải vào vở) ----------
