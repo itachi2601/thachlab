@@ -385,6 +385,7 @@ export default function GhiBuoiForm({
     if (newPolicy && ["lop", "phudao"].includes(draft.sessionType) && !draft.classLabel.trim()) return "Chọn lớp.";
     if (newPolicy && draft.sessionType === "lop") {
       if (!/^\d+$/.test(draft.touchCount)) return "Số lượt tiếp xúc phải là số nguyên không âm.";
+      if (!(draft.policy.lesson_content ?? "").trim() && !draft.policy.attendance.includes('absence')) return "Ghi nội dung thầy đã dạy buổi hôm đó.";
       const minutes = draft.policy.teaching_minutes;
       const timeMinutes = (t: string) => Number(t.slice(0,2))*60+Number(t.slice(3,5));
       if (!Number.isInteger(minutes) || minutes < 0 || (draft.startTime && draft.endTime && minutes > timeMinutes(draft.endTime)-timeMinutes(draft.startTime))) return "Phút chữa bài phải nằm trong thời lượng buổi.";
