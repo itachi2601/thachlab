@@ -13,6 +13,9 @@
     "phanhach.he_so_nhan_neutron"
   ],
   "muc_tieu": "Dùng lại bàn ghim ở mức lan mạnh (k > 1), chèn dần một tấm chắn để thấy \"vật hấp thụ\" kéo hệ số nhân xuống: từ tăng nhanh qua tự duy trì rồi tắt — đúng cách thanh điều khiển làm việc trong lò.",
+  "gia_thuyet": ["Thanh điều khiển làm phản ứng dây chuyền yếu đi vì nó lấy bớt neutron đang lan truyền (giảm hệ số nhân k), không phải vì làm nguội lò."],
+  "du_doan_neu_dung": ["Che càng nhiều lưới ghim thì số ghim đổ càng ít.", "Có một mức che mà dây chuyền tắt ngay sau vài ghim đầu, dù trên bàn vẫn còn nhiều ghim đứng."],
+  "khong_chung_minh": ["Không đo được giá trị k thật của lò phản ứng: bàn ghim chỉ là mô hình định tính.", "Không cho biết vì sao bo, cađimi hấp thụ neutron tốt; tấm bìa chỉ đóng vai vật hấp thụ."],
   "dung_cu": [
     { "ten": "Bàn ghim đã dựng ở thí nghiệm trước", "so_luong": 1, "ghi_chu": "lưới 7 × 7, khoảng cách 2 cm" },
     { "ten": "Tấm bìa cứng hoặc nhựa mỏng", "so_luong": 2, "ghi_chu": "cắt sẵn để che 30% và 60% diện tích lưới" },
@@ -49,6 +52,7 @@
       "Trong lò thật, thanh điều khiển (bo, cađimi) hấp thụ neutron nên làm giảm k theo cùng cách"
     ],
     "gia_thiet": [
+      "Clip tự dựng: bìa cắt thành dải che trọn cột ghim (2/7 cột ≈ 29 %, 4/7 cột ≈ 57 %, gọi tròn 30 % và 60 %).",
       "tấm chắn chặn tuyệt đối mọi ghim đi qua, thực tế còn khe hở ở mép",
       "ghim phân bố đều nên phần trăm diện tích che xấp xỉ phần trăm ghim bị chặn",
       "không kể ghim đổ do tấm bìa xô lệch khi đặt xuống"
@@ -62,7 +66,7 @@
       [30, "12 · 10 · 11", 1.0],
       [60, "4 · 5 · 3", 0.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ từ mô hình. Khi làm thật, mức che 30% thường cho số ghim đổ chênh lệch rõ giữa ba lần vì tấm bìa không đặt đúng cùng vị trí."
+    "ghi_chu": "Số liệu minh hoạ từ mô hình. Khi làm thật, mức che 30% thường cho số ghim đổ chênh lệch rõ giữa ba lần vì tấm bìa không đặt đúng cùng vị trí. Câu THỬ NGHĨ cuối clip: ghim cách 3 cm, che 30 % → tắt dần (3 cm chưa che đã k ≈ 1)."
   },
   "ket_qua_ky_vong": "Số ghim đổ giảm mạnh và có ngưỡng khi tăng phần bị che: trên một mức che nào đó, dây chuyền không lan được nữa dù vẫn còn ghim trên bàn.",
   "hien_tuong_hay_sai": [
@@ -83,5 +87,15 @@
   "an_toan": [
     "Ghim nhọn: đặt tấm bìa bằng cách hạ phẳng, không miết tay qua lưới ghim.",
     "Không dùng vật chắn bằng kim loại cứng có cạnh sắc."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.webp",
+    "nhan": "Bàn ghim và tấm bìa che lưới",
+    "nhin_vao": "Che nhiều hơn thì số ghim đổ thay đổi thế nào?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại"
+  }
 }

@@ -90,7 +90,7 @@
 - [Bảng điều hành + 4 Project claude.ai](project_dieu_hanh_4_project_claude_ai.md) — Sheets
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
-- [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — chờ in thử
+- [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — bản 1 chốt 14/11, chờ in giấy
 - [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài xong 13/11, chờ in thử
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 21 clip chờ duyệt gắn bài
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài

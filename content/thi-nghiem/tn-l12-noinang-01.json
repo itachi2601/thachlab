@@ -144,31 +144,31 @@
       ],
       [
         10,
-        258,
+        322,
         27.5
       ],
       [
         20,
-        516,
+        644,
         29.0
       ],
       [
         30,
-        774,
+        966,
         31.0
       ],
       [
         45,
-        1161,
+        1448,
         34.0
       ],
       [
         60,
-        1548,
+        1931,
         37.0
       ]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với V0 = 200 cm3, V1 = 40 cm3, p = 100 kPa: A1 = 100000 × 200e-6 × ln(5) ≈ 32,2 J. Cột nhiệt độ là số ước lượng theo cảm giác/đo bằng nhiệt kế hồng ngoại trên thân bơm, không phải đo trong lòng khí (trong lòng khí nóng hơn nhiều)."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với V0 = 200 cm3, V1 = 40 cm3, p = 100 kPa: A1 = 100000 × 200e-6 × ln(5) ≈ 32,2 J. Cột Tổng công A = n × A1, làm tròn tới 1 J (sửa 16/11/2026: bản cũ ghi 25,8 J mỗi lần, lệch mô hình). Cột nhiệt độ là số ước lượng theo cảm giác/đo bằng nhiệt kế hồng ngoại trên thân bơm, không phải đo trong lòng khí (trong lòng khí nóng hơn nhiều). Ca tự suy cho câu chốt clip: bơm chậm → đáy bơm ấm lên ít hơn, dưới 37,0 °C (khí kịp toả nhiệt)."
   },
   "ket_qua_ky_vong": "Sau khi bơm nhanh, thân ống bơm nóng lên rõ rệt và nguội dần khi để yên; nhiệt độ phòng không đổi. Bơm chậm cho độ nóng thấp hơn hẳn so với bơm nhanh cùng số lần ấn.",
   "hien_tuong_hay_sai": [
@@ -189,5 +189,15 @@
   "an_toan": [
     "Thân ống bơm có thể nóng tới mức gây bỏng nhẹ sau khi bơm rất nhanh — chỉ sờ nhanh bằng đầu ngón tay.",
     "Kiểm tra van và lốp trước khi bơm quá căng để tránh nổ săm."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-01-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-01-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "bơm xe đạp, ấn nhanh nhiều lần",
+    "nhin_vao": "Ấn bơm nhanh: chỗ nào trên thân bơm nóng nhất?",
+    "giay": 49,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
+  }
 }

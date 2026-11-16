@@ -13,6 +13,9 @@
     "tutruong.kim_nam_cham_nho"
   ],
   "muc_tieu": "Xác định hướng của từ trường tại nhiều điểm quanh một thanh nam châm bằng kim nam châm nhỏ, từ đó nêu quy ước hướng từ trường và chiều đường sức từ bên ngoài nam châm.",
+  "gia_thuyet": ["Tại mỗi điểm quanh nam châm, từ trường có một hướng xác định; kim nam châm nhỏ đặt ở đó sẽ nằm theo hướng ấy."],
+  "du_doan_neu_dung": ["Đặt kim ở các vị trí khác nhau thì kim nằm theo các hướng khác nhau, nhưng ở mỗi vị trí chỉ có một hướng, đặt lại vẫn thế.", "Nối các hướng thành đường cong liền: đi ra ở một cực, vòng ra ngoài rồi đi vào ở cực kia."],
+  "khong_chung_minh": ["Kim chỉ cho biết hướng, không đo được độ lớn cảm ứng từ B (số µT trong bảng tính từ mô hình lưỡng cực).", "Không cho thấy đường sức bên trong thanh nam châm, vì không đặt được kim vào trong."],
   "dung_cu": [
     { "ten": "Thanh nam châm thẳng (nam châm chữ nhật)", "so_luong": 1 },
     { "ten": "Kim nam châm nhỏ gắn trên trục quay, có đánh dấu cực N", "so_luong": 1, "ghi_chu": "hoặc la bàn nhỏ có mũi đỏ chỉ cực bắc" },
@@ -65,7 +68,7 @@
     "hang": [
       ["Trên trục, phía cực bắc", 4, 62, "chỉ ra xa cực bắc"],
       ["Trên trục, phía nam", 4, 62, "chỉ vào cực nam"],
-      ["Hai bên, ngang mức giữa", 4, 31, "chỉ dọc thân nam châm, từ nam sang bắc"],
+      ["Hai bên, ngang mức giữa", 4, 31, "chỉ dọc thân nam châm, đầu N của kim hướng về phía cực S của thanh"],
       ["Hai bên, ngang mức giữa", 8, 3.9, "cùng hướng trên, kim nằm yếu hơn"]
     ],
     "ghi_chu": "Số liệu tính theo mô hình lưỡng cực với m = 0,02 A·m² ở r = 4 cm và 8 cm. Giá trị thực đo được còn phụ thuộc kích thước nam châm nên chỉ dùng để so sánh tương đối giữa các vị trí."
@@ -85,5 +88,15 @@
     "loai": "2d_dong_hoc+do_thi",
     "y_tuong": "Một mặt phẳng có thanh nam châm ở giữa; người học kéo kim nam châm nhỏ tới các vị trí rồi bấm để ghi hướng, hệ thống vẽ dần các đường sức khép kín.",
     "diem_nhan": "Cho thấy hướng từ trường đổi liên tục quanh nam châm nhưng tại mỗi điểm chỉ có một hướng — dùng để chứng minh hai đường sức không cắt nhau."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-02-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-02-20261114.webp",
+    "nhan": "Kim nam châm nhỏ quanh thanh nam châm",
+    "nhin_vao": "Đầu N của kim chỉ hướng nào ở mỗi vị trí?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại"
   }
 }

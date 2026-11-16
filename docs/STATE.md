@@ -11,9 +11,10 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
-- `20261109120000_shcn_lesson_key` (9/11): cột bài đọc tuần SHCN; chạy TRƯỚC khi deploy trang `/sinh-hoat` + editor GVCN. Lúc nào cũng được.
-- `20261028100000_bai_tap_ngay`: migration ĐÃ CHẠY (kiểm DB 30/10); còn `npx tsx scripts/tao-bai-tap-ngay-hsg9.mts --yes` + deploy `components/review/ClassRoster.tsx` (chưa rõ đã làm).
-- `20261006120000_fix_grade_ngan_hang_5_de_l11`, `20261006130000_gan_lai_chu_de_5_de_l11`: chưa có trong `FILES`/chưa rõ.
+- **Điểm học phần CNC (14/11)**: `20261114120000_cnc_diem_hoc_phan` ĐÃ CHẠY (bảng `cnc_grades`, RLS SV chỉ đọc dòng mình); 28 SV lớp 10 đã nạp điểm Tiện + gửi thông báo trỏ `/lop-hoc/cnc/bang-diem/`. **CHƯA DEPLOY** trang bảng điểm (commit 555da175f, nhánh claude/cnc-exam-design-5-machines-cec8be) — SV bấm thông báo sẽ 404 tới khi deploy. Điểm Phay chưa có (nạp bằng `scripts/gui-diem-thi-tien-cnc.mts` làm mẫu, module 'phay').
+- `20261028100000_bai_tap_ngay`: ĐÃ XONG: migration chạy; script tạo đề chạy 28/10 (5 đề 1289–1293 "Ngày 1–5", published, buổi tự học lớp 19 = review_sessions 26; kiểm DB 14/11). KHÔNG chạy lại `--yes`. Còn chưa rõ: deploy `ClassRoster.tsx`.
+- L11 5 đề 638/639/658/693/701: `fix_grade` ĐÃ ÁP (còn 1 câu 684939 grade 10). `20261006130000_gan_lai_chu_de_5_de_l11` CHƯA ÁP (123/129 câu còn lệch chủ đề; 94 câu mang chủ đề Newton/Hooke) và KHÔNG chạy trực tiếp được: 14/11 bị timeout 57014, trigger `trg_bank_tags_to_exams` → `sync_exam_to_bank` chạy lại cả đề; đã rollback sạch. Làm lại theo mẫu `lib/sua-dinh-dang.ts` (tắt `trg_exams_sync_bank`, sửa cả bank lẫn `exams.questions`, sau 22h).
+- L11 đề 701/638 (15/11 07:30): ĐÃ VÁ tên chủ đề trong `exams.questions` + dòng bank tương ứng (18 câu; dòng bank id ~1,51 triệu có `topic_id` NULL mà `topic_name` lớp 10 — lý do lần kiểm theo topic_id báo "sạch"). Toàn bank: 0 câu lớp 11 mang tên chủ đề chỉ có ở lớp 10. Sao lưu `bk_chu_de_701_638_20261115_exams`/`_bank`. Còn treo: 701 câu 16, 28 không có dòng bank (hash lệch); câu chủ đề rỗng (ngoài CT) chờ thầy. Nhánh `claude/charming-franklin-d3b51b` (memory + STATE 14/11) CHƯA vào main.
 - **Vá bảo mật 11/11**: 3 migration ĐÃ CHẠY (bước 2 lúc 12/11 06:40; `20261112070000` kiểm đầu vào điểm CNC lúc 12/11 08:15), client đã deploy; 12/11 đã bấm thử bằng tài khoản admin (sửa đề THPT/CTTC, `/lop-hoc/cnc`, dashboard GV: mọi request 200). Chưa thử bằng tài khoản HS/TA thật; chưa bấm nút nhắc làm bài. Script đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
 - **Quiz trắc nghiệm CNC chấm ở server (12/11)**: cả 2 bước ĐÃ CHẠY (bước 2 lúc 08:52), client deploy 12/11 ~08:50 (bản 11/11 19:01 = commit 874bef7f6 + 6 file vá bảo mật). Chưa thử bằng tài khoản SV thật (admin không ghi điểm) → buổi CNC tới xem `cnc_learning_records` có dòng mới của 15 bài có ngân hàng. Đáp án vẫn nằm trong `get_cnc_quiz_banks` (quiz cho xem đáp án và làm lại không giới hạn).
 - Còn lỗ cần chấm ở server (đổi client, thầy quyết): bài CNC chấm ở máy (dịch lệnh trả lời ngắn, điền khuyết, viết chương trình, checklist — đáp án nằm trong mã client), `practice_sessions.score`, `question_bank` lộ đáp án qua policy exit-quiz/diagnostic (chặng 4); mật khẩu mặc định = mã số HS.
@@ -42,7 +43,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Lint 0 lỗi: thầy thử `/lop-hoc` trên điện thoại; bật CI gate eslint/tsc (P0 #4).
 - Sách in Ch.2 L10: bản 7 (134 trang, dựng từ DB 10/11) chờ thầy xem + chỉnh `book/sach/l10-ch2-dong-hoc.json` (Dạng chung, vạch tiết); `public/sach-data` bản 7 CHƯA commit/deploy; chặng C–E theo `docs/THIET-KE-SKILL-SACH-DONG-BO.md` chưa làm.
 - Sách in Ch.3 L10 (Động lực học): bản 1 (144 trang, 10/11) chờ thầy xem; `public/sach-data` ch3 CHƯA commit/deploy (sinh lại bằng `make.py l10-ch3-dong-luc-hoc`).
-- Ruột tập VL10 Ch.4 (bài 23–27): bản 1, 60 trang (`bash scripts/ruot-tap/dung-l10-chuong4.sh`), đã sửa theo HS ảo; Bài tương tự tr.8–9 = bài về nhà giải vào vở (thầy chốt 10/11, giấy chỉ có ô đáp số); chờ thầy in thử.
+- Ruột tập VL10 Ch.4 (bài 23–27): bản 1, 60 trang (`bash scripts/ruot-tap/dung-l10-chuong4.sh`), đã sửa theo HS ảo; Bài tương tự tr.8–9 = bài về nhà giải vào vở (thầy chốt 10/11, giấy chỉ có ô đáp số); **thầy chốt bản 1 ngày 14/11** (VL10 Ch.4 + VL11 Ch.3); PDF in từ `scripts/ruot-tap/out/` (gitignore), chưa ai cầm bản in giấy.
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
@@ -51,7 +52,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - 7/11 · BTM "một dạng — một hình": repo xong 97/97; DB đã đăng 51, CHƯA đăng 46 (danh sách: `docs/MOT-DANG-MOT-HINH.md` mục Trạng thái 7/11) — chờ soát ảnh + thầy duyệt → publish → deploy.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
-- Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
 - Motion graphic chặng A: code + DB xong (23/23 hộp khung L12 trên DB, kiểm 6/11); chờ có lượt chọn đầu tiên ở `lesson_clip_choices` để đo % đúng (mục 5) — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - Motion graphic chặng D (7/11): thầy duyệt; clip ôn L12 Ch.3 (89 s) đã lên Storage (`content/phu-dao/clip-on/on-l12-ch3.json`) và hiện thẻ "Ôn nhanh" ở `ReviewStudent` (buổi ở nhà + chờ chặng 1; khớp chữ "từ trường/lực từ…" trong tên buổi, `lib/clip-on-tap.ts`). CHƯA deploy, chưa thấy 375px bằng tài khoản HS, chưa có sự kiện đo phát/xem (cách đo ở `docs/KE-HOACH-MOTION-GRAPHIC.md` mục Chặng D).
 - Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lý thuyết lesson 11 (item 52) đã ghi DB 22h05, đã kiểm DB + deploy lại 22h25 1/11; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
@@ -62,10 +62,10 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
-- Clip tự dựng L9 nhóm C (5/11): 8 clip, 6 bài (lesson 87, 89, 91, 129–131) thầy duyệt, ĐÃ ĐĂNG DB 23h35 5/11 (--chi-video, kiểm DB đủ 8 clip); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- Clip L10 lô 1/11 (8 clip: tdvt1, giatoc1, dog3, trondeu3, biendang3, saiso2, antoan1/2 — lesson 50, 53, 56, 76, 78, 48, 47) ĐÃ ĐĂNG DB 6/11 ~23h55 (`--chi-video`, kiểm DB 8/8 có khung); giữ nguyên dòng Quan sát như L9; chưa thử HS thật.
+- Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
-- Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
+- Clip L12 lô 2 (14/11, 9 clip bài 11/12/14/125/18/19): đã tải lesson-clips -20261114 + chèn repo + khung; CHỜ THẦY DUYỆT rồi đăng DB `--chi-video` sau 22h — sổ `so-clip-anh-dong.md`.
+- Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
@@ -81,3 +81,4 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
 - Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; L10 Ch.3 (`?chuong=12&lop=lop-10`) đã deploy 11/11 chiều; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
+- Clip TN tự dựng L12 Ch.1–2 lô 1 (8 clip, bài 2/3/4/6/7): đã tải Storage -20261114 + chèn repo + khung, CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB — sổ `content/thi-nghiem/so-clip-anh-dong.md`.

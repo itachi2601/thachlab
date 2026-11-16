@@ -53,15 +53,16 @@ def loop(d, xs, xw, I, s):
     """Vong kin cua mot la: day tren/duoi ra xa toi day ve xw; ampe ke + nguon tren day ve.
     s = +1: dong trong la huong len -> tren day ve huong xuong; cuc + cua nguon o duoi."""
     d.line([(xs, 330), (xw, 330), (xw, 880), (xs, 880)], fill=COP, width=5)
-    dot(d, xw, 500, 40, WHITE, outline=NAVY); text(d, (xw, 500), "A", 40, NAVY)
+    dot(d, xw, 500, 44, WHITE, outline=NAVY); text(d, (xw, 500), "A", 44, NAVY)
     side = -1 if xw < xs else 1
-    text(d, (xw + side * 52, 500), f"{I:g} A", 40, INK, anchor="rm" if side < 0 else "lm")
+    text(d, (xw + side * 56, 500), f"{I:g} A", 50, INK, anchor="rm" if side < 0 else "lm")
     yb = 720
     d.rectangle([xw - 26, yb - 34, xw + 26, yb + 34], fill=BG)
     lo, sh = (yb + 12, yb - 12) if s >= 0 else (yb - 12, yb + 12)
     d.line([(xw - 44, lo), (xw + 44, lo)], fill=NAVY, width=6)          # ban dai: cuc +
     d.line([(xw - 22, sh), (xw + 22, sh)], fill=NAVY, width=10)         # ban ngan: cuc -
-    text(d, (xw + side * 74, lo), "+", 44, RED); text(d, (xw + side * 74, sh), "−", 44, NAVY)
+    yp, ym = (yb + 34, yb - 34) if s >= 0 else (yb - 34, yb + 34)          # cach nhau 68 px: khong doc thanh "±"
+    text(d, (xw + side * 74, yp), "+", 44, RED); text(d, (xw + side * 74, ym), "−", 44, NAVY)
     # khoa K: dong khi co dong (I > 0), mo khi I = 0 -> so ampe ke, mui ten I, do cong dong bo theo cung trang thai
     d.rectangle([xw - 8, 588, xw + 8, 632], fill=BG)
     dot(d, xw, 590, 7, NAVY); dot(d, xw, 630, 7, NAVY)
@@ -77,16 +78,19 @@ def front(d, I1, s1, I2, s2, k=1.0, arrows=True, plan=False):
     dx2 = DMAX * k * (1 if f2 > 0 else -1 if f2 < 0 else 0)
     strip(d, X1, -dx2); strip(d, X2, dx2)                               # DL III: la 1 lech nguoc la 2
     if arrows:
-        if I1: arrow(d, (370, 690 if s1 > 0 else 540), (370, 540 if s1 > 0 else 690), ORANGE, w=8, head=24)
-        text(d, (350, 615), "I1", 50, ORANGE, anchor="rm")
-        if I2: arrow(d, (710, 690 if s2 > 0 else 540), (710, 540 if s2 > 0 else 690), ORANGE, w=8, head=24)
-        text(d, (730, 615), "I2" if I2 else "I2 = 0", 50 if I2 else 42, ORANGE, anchor="lm")
-    text(d, (X1, 962), "lá 1", 42, NAVY); text(d, (X2, 962), "lá 2", 42, NAVY)
-    arrow(d, (X1 + 14, 352), (X2 - 14, 352), NOTE, w=3, head=12); arrow(d, (X2 - 14, 352), (X1 + 14, 352), NOTE, w=3, head=12)
-    text(d, (540, 398), "1,0 cm", 40, NOTE, bold=False)
+        xa1, xa2 = X1 - 0.92 * dx2, X2 + 0.92 * dx2                      # tren la cong (y 540-690 ~ 0,92 do cong)
+        if I1: arrow(d, (xa1, 690 if s1 > 0 else 540), (xa1, 540 if s1 > 0 else 690), ORANGE, w=8, head=24)
+        text(d, (xa1 - 30, 615), "I1", 50, ORANGE, anchor="rm")
+        if I2: arrow(d, (xa2, 690 if s2 > 0 else 540), (xa2, 540 if s2 > 0 else 690), ORANGE, w=8, head=24)
+        text(d, (xa2 + 30, 615), "I2" if I2 else "I2 = 0", 50 if I2 else 44, ORANGE, anchor="lm")
+    text(d, (X1, 962), "lá 1", 46, NAVY); text(d, (X2, 962), "lá 2", 46, NAVY)
+    # vach kich thuoc tren gia treo: khong bao gio cham la dang cong
+    for x in (X1, X2): d.line([(x, 236), (x, 286)], fill=NOTE, width=4)
+    arrow(d, (X1 + 4, 258), (X2 - 4, 258), NOTE, w=4, head=14); arrow(d, (X2 - 4, 258), (X1 + 4, 258), NOTE, w=4, head=14)
+    text(d, (X2 + 22, 258), "1,0 cm", 44, NOTE, anchor="lm")
 
 # ---------------- hinh nhin tu tren xuong ----------------
-WA, WB, WY = (370, 660), (710, 660), 660
+WA, WB, WY = (400, 660), (700, 660), 660      # ban kinh 300, mep trai x = 100
 def top(d, s1, s2, flab=True, Ilab=None, k=1.0, kB=1.0, kF2=1.0, kF1=1.0):
     r = WB[0] - WA[0]
     if kB > 0:
@@ -96,20 +100,20 @@ def top(d, s1, s2, flab=True, Ilab=None, k=1.0, kB=1.0, kF2=1.0, kF1=1.0):
             chevron(d, x, y, -(a + math.pi / 2) * s1, A(PURPLE, kB))
         B1 = cross((0, s1, 0), (1, 0, 0))            # (x, y, z) -> tren man nhin tu tren: x -> x, z -> xuong
         arrow(d, (WB[0], WY), (WB[0], WY + 130 * B1[2]), A(PURPLE, kB), w=8, head=24)
-        text(d, (WB[0] + 26, WY + 120 * B1[2]), "B1", 50, PURPLE, anchor="lm", alpha=kB)
+        text(d, (WB[0], WY + 130 * B1[2] - 46 * (1 if B1[2] < 0 else -1)), "B1", 50, PURPLE, alpha=kB)   # o dau mui ten
     sym(d, WA[0], WY, "o" if s1 > 0 else "x", 28, ORANGE)
     sym(d, WB[0], WY, "o" if s2 > 0 else "x", 28, ORANGE)
     lb1, lb2 = ("lá 1", "lá 2") if Ilab is None else Ilab
-    text(d, (WA[0] - 50, WY), lb1, 42, NAVY, anchor="rm"); text(d, (WB[0] + 50, WY), lb2, 42, NAVY, anchor="lm")
+    text(d, (WA[0] - 50, WY), lb1, 46, NAVY, anchor="rm"); text(d, (WB[0] + 50, WY), lb2, 46, NAVY, anchor="lm")
     f2 = force2(s1, s2); L = 90
     if kF2 > 0:
         x0 = WB[0] - 30 * (1 if f2 < 0 else -1)
         arrow(d, (x0, WY), (x0 + L * (1 if f2 > 0 else -1), WY), A(GREEN, kF2), w=9, head=26)
-        if flab: text(d, (570, WY - 62), "lực lên lá 2", 40, GREEN, alpha=kF2)
+        if flab: text(d, (WB[0] - 24, WY - 66), "lực lên lá 2", 46, GREEN, anchor="rm", alpha=kF2)
     if kF1 > 0:
         x0 = WA[0] + 30 * (1 if f2 < 0 else -1)
         arrow(d, (x0, WY), (x0 - L * (1 if f2 > 0 else -1), WY), A(ORANGE, kF1), w=9, head=26)
-        if flab: text(d, (460, WY + 62), "lực lên lá 1", 40, ORANGE, alpha=kF1)
+        if flab: text(d, (WA[0] + 12, WY + 66), "lực lên lá 1", 46, ORANGE, anchor="lm", alpha=kF1)
 
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
@@ -131,7 +135,7 @@ def s_hook(img, d, t, sc):
 # ---------------- canh 2: Tien hanh ----------------
 ROWS = (("5", "0", "đứng yên"), ("5", "5 cùng chiều", "hút"), ("5", "5 ngược chiều", "đẩy"))
 def stages(sc):
-    M = sc["M"]; return (0.4, M[1] + 0.2, M[1] + 3.2)
+    M = sc["M"]; return (0.4, M[1] + 0.2, M[1] + 2.6)
 
 def state_do(t, sc):
     """(I2, s2, k cong, so hang) dong bo: ampe ke, mui ten I2, do cong, bang."""
@@ -161,7 +165,7 @@ CHAIN = (("Nắm tay phải → B1 tại lá 2", PURPLE),
          ("Bàn tay trái → F lên lá 2", GREEN),
          ("Định luật III → F lên lá 1", ORANGE))
 def chain_at(sc):
-    return (0.4, 2.4, 4.4)
+    return (0.5, 3.3, 6.1)          # moi buoc hien cung nhip voi phan hinh tuong ung (B1 -> F2 -> F1)
 
 def s_dapan(img, d, t, sc):
     M = sc["M"]; at = chain_at(sc)
@@ -171,27 +175,31 @@ def s_dapan(img, d, t, sc):
     card(d, (W / 2 - pw / 2, 236, W / 2 + pw / 2, 300), fill=A(NAVY, ka), r=32)
     text(d, (W / 2, 268), s, 40, WHITE, alpha=ka)
     top(d, 1, 1, kB=appear(t, at[0], 0.45), kF2=appear(t, at[1], 0.45), kF1=appear(t, at[2], 0.45))
-    text(d, (W / 2, 1035), "nhìn từ trên xuống", 40, NOTE, bold=False, alpha=appear(t, 0.6, 0.4))
+    kt = appear(t, 0.3, 0.4)
+    text(d, (W / 2, 1052), "Nhìn từ trên xuống", 50, INK, alpha=kt)
+    if kt > 0:                                                   # chu giai ky hieu, mot lan
+        sym(d, 250, 1118, "o", 24, A(ORANGE, kt))
+        text(d, (286, 1118), ": dòng điện hướng ra phía em", 46, INK, anchor="lm", alpha=kt)
     k0 = appear(t, at[0] - 0.2, 0.4)
     nb = sum(appear(t, a, 0.45) for a in at)                     # the co theo so buoc da hien
-    card(d, (40, 1090, 1040, 1090 + 30 + 175 * max(1.0, nb)), fill=A(WHITE, k0), outline=A(LIGHT, k0), w=3)
+    card(d, (40, 1166, 1040, 1166 + 20 + 150 * max(1.0, nb)), fill=A(WHITE, k0), outline=A(LIGHT, k0), w=3)
     for j, (to, col) in enumerate(CHAIN):
-        k = appear(t, at[j], 0.45); yy = 1190 + j * 175
+        k = appear(t, at[j], 0.45); yy = 1244 + j * 150
         if k <= 0: continue
         dot(d, 110, yy, 32, A(col, k)); text(d, (110, yy), str(j + 1), 40, WHITE, alpha=k)
         text(d, (175, yy), to, 48, col, anchor="lm", alpha=k)
-        if j < 2 and appear(t, at[j + 1], 0.3) > 0: arrow(d, (110, yy + 40), (110, yy + 132), LIGHT, w=6, head=18)
+        if j < 2 and appear(t, at[j + 1], 0.3) > 0: arrow(d, (110, yy + 38), (110, yy + 112), GRAY, w=6, head=18)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
     k0 = appear(t, 0.2, 0.4)
-    y = 1000; mk = M[0] + 2.4
+    y = 1000; mk = M[1]                       # gach cau bay dung luc phu de doi sang "Sai: ..."
     k2 = appear(t, mk + 0.2, 0.45)
     top(d, 1, 1, Ilab=("lá 1: 10 A", "lá 2: 5 A"), kB=0.0, kF2=k2, kF1=k2)
-    k3 = appear(t, M[1] - 0.1, 0.45); a1 = k0 * (1 - k3)
+    k3 = appear(t, M[2] - 0.1, 0.45); a1 = k0 * (1 - k3)
     if a1 > 0:
-        card(d, (40, y, 1040, y + 250 + 330 * k2), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
+        card(d, (40, y, 1040, y + 250 + 200 * k2), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pw = tw(d, "BẪY", F(40)) + 52
         card(d, (W / 2 - pw / 2, y + 28, W / 2 + pw / 2, y + 92), fill=A(RED, a1), r=32)
         text(d, (W / 2, y + 60), "BẪY", 40, WHITE, alpha=a1)
@@ -200,22 +208,19 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, yy), q, 46, mix(INK, GRAY, ks), alpha=a1)
         if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * a1), width=5)
         k2 = a1 * k2
-        text(d, (W / 2, y + 290), "Hai lực bằng nhau", 48, INK, alpha=k2)
-        text(d, (W / 2, y + 395), "dài 50 cm, cách nhau 1,0 cm", 44, NOTE, alpha=k2)
-        text(d, (W / 2, y + 490), "F ≈ 5,0·10⁻⁴ N mỗi lá", 46, ORANGE, alpha=k2)
+        text(d, (W / 2, y + 290), "F ≈ 5,0·10⁻⁴ N mỗi lá", 50, ORANGE, alpha=k2)
+        text(d, (W / 2, y + 375), "tính từ B1 tại lá 2", 46, NOTE, alpha=k2)
     if k3 > 0:
-        card(d, (40, y, 1040, y + 480), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        card(d, (40, y, 1040, y + 320), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, y + 80), "Chưa nói được", 48, NAVY, alpha=k3)
-        lines = ("• Chỉ thấy lá lệch, chưa đo lực", "• Dây không song song: chưa xét")
-        for j, l in enumerate(lines):
-            kk = k3 * appear(t, M[1] + 0.2 + 0.5 * j, 0.4)
-            text(d, (90, y + 240 + j * 170), l, 44, INK, anchor="lm", alpha=kk)
+        kk = k3 * appear(t, M[2] + 0.2, 0.4)
+        text(d, (W / 2, y + 215), "Chỉ thấy lá lệch, chưa đo lực", 46, INK, alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def _end_body(d, t, k):
     for x, s in ((440, 1), (640, -1)):
-        d.line([(x, 1010), (x, 1230)], fill=A(FOIL, k), width=12)
-        arrow(d, (x + 40, 1170 if s > 0 else 1070), (x + 40, 1070 if s > 0 else 1170), A(ORANGE, k), w=7, head=20)
+        d.line([(x, 1010), (x, 1230)], fill=A(FOIL, k), width=14)
+        arrow(d, (x, 1175 if s > 0 else 1065), (x, 1065 if s > 0 else 1175), A(ORANGE, k), w=8, head=22)
     text(d, (420, 1120), "I1 = 4 A", 44, ORANGE, anchor="rm", alpha=k)
     text(d, (712, 1120), "I2 = 8 A", 44, ORANGE, anchor="lm", alpha=k)
 
@@ -225,9 +230,9 @@ def s_end(img, d, t, sc):
              "I1 = 4 A lên, I2 = 8 A xuống. Lực lên mỗi lá bao nhiêu, hút hay đẩy?", None, body=_end_body)
     kh = appear(t, M[0] + 2.6, 0.5)
     if kh > 0:
-        card(d, (110, 1320, 970, 1540), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1368, "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        ctext(d, 1460, "dài 50 cm, cách nhau 1,0 cm", 46, ORANGE, maxw=820, alpha=kh)
+        card(d, (110, 1320, 970, 1540), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
+        ctext(d, 1372, "Gợi ý", 44, INK, alpha=kh)
+        ctext(d, 1462, "dài 50 cm, cách nhau 1,0 cm", 48, (176, 64, 8), maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -236,21 +241,22 @@ def _cues(clip):
     return ([(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding")]
             + [(do["t0"] + s, "tap") for s in st[1:]]
             + [(da["t0"] + 0.4, "ding")] + [(da["t0"] + a, "tap") for a in chain_at(da)]
-            + [(b["t0"] + b["M"][0], "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")])
+            + [(b["t0"] + b["M"][1], "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")])
 
 CLIP = dict(id="tn-l12-luctu-06", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Lực từ · Cảm ứng từ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Hai lá nhôm song song", draw=s_hook, tail=0.3, caps=[
    ("Mỗi lá một mạch kín riêng.", 3.0),
-   ("Dừng video, tự chọn đáp án.", 6.2)]),
+   ("Chọn đáp án ở khung câu hỏi.", 6.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Chỉ lá 1 có dòng 5 A.", 3.4),
-   ("Lá 2 cùng chiều, rồi ngược chiều.", 6.0)]),
+   ("Lá 2 cùng chiều, rồi ngược chiều.", 4.8)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
-   ("Cùng chiều thì hút nhau.", 7.6)]),
+   ("Cùng chiều thì hút nhau.", 9.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Đúng hay sai?", 5.4),
-   ("Giới hạn thí nghiệm.", 4.2)]),
+   ("Đúng hay sai?", 2.5),
+   ("Sai: hai lực bằng nhau.", 4.3),
+   ("Giới hạn thí nghiệm.", 2.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Dừng video và trả lời.", 7.6)]),
 ])

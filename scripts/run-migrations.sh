@@ -125,6 +125,7 @@ FILES=(
   "supabase/migrations/20261109140000_de_danh_gia_mo_dap_an_sau_2_luot.sql|Đề đánh giá mở đáp án sau 2 lượt (trước 3) + hàm get_exam_wrong_notes (gợi ý vì sao phương án em chọn sai, không lộ đáp án); chỉ thay/thêm hàm|lúc nào cũng được"
   "supabase/migrations/20261111190000_va_bao_mat_buoc_1_ham_moi.sql|Vá bảo mật bước 1: thêm notify_user_staff, get_cnc_quiz_banks, cnc_milling_quiz_save, exam_has_essay; xoá rank_fix_quiz_submit(bigint,int) và 2 policy ghi của bảng checklist phay|lúc nào cũng được, TRƯỚC khi deploy client|supabase db query --linked -f perf/rollback/20261111190000_va_bao_mat_buoc_1_ham_moi.down.sql"
   "supabase/migrations/20261111200000_va_bao_mat_buoc_2_thu_quyen.sql|Vá bảo mật bước 2 (= P0 #1 chặng 3): thu quyền đọc exams.questions, thu notify_user + rank_gate_pool_ids về nội bộ, bỏ policy ghi thẳng cnc_milling_quiz_attempts|SAU khi chạy bước 1 VÀ deploy client; sau 22h|supabase db query --linked -f perf/rollback/20261111200000_va_bao_mat_buoc_2_thu_quyen.down.sql"
+  "supabase/migrations/20261114120000_cnc_diem_hoc_phan.sql|Bảng cnc_grades: điểm học phần CNC (Tiện, Phay) mỗi SV, RLS chỉ đọc dòng của mình|lúc nào cũng được (bảng mới, không đụng dữ liệu cũ)|supabase db query --linked -f perf/rollback/20261114120000_cnc_diem_hoc_phan.down.sql"
 )
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2
 # ĐÃ CHẠY 12/11/2026 08:45: 20261112090000_cnc_quiz_cham_server_buoc_1

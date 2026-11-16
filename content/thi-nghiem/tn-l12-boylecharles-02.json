@@ -53,13 +53,13 @@
   ],
   "cac_buoc": {
     "lam": [
-      "Nhốt một giọt dầu trong ống để giữ cột không khí dài đúng 10,0 cm ở nhiệt độ phòng; đầu hở để ống thông với khí trời nên áp suất khí trong ống luôn bằng áp suất khí quyển.",
-      "Ngâm ống vào cốc nước đá đang tan, đợi 2 phút cho khí trong ống cùng nhiệt độ với nước rồi đo chiều dài cột khí và nhiệt độ nước.",
-      "Làm lại lần lượt với nước phòng, nước khoảng 50 °C, nước khoảng 75 °C; mỗi lần đợi đủ 2 phút, ghi chiều dài cột khí và nhiệt độ tuyệt đối T = t + 273."
+      "Nhốt một giọt dầu trong ống để giữ một cột không khí; đầu hở để ống thông với khí trời nên áp suất khí trong ống luôn bằng áp suất khí quyển.",
+      "Ngâm ống vào cốc nước đá đang tan (0 °C), đợi 2 phút cho khí trong ống cùng nhiệt độ với nước rồi đo chiều dài cột khí (chọn lượng khí sao cho ở 0 °C cột dài 10,0 cm) và nhiệt độ nước.",
+      "Làm lại lần lượt với nước phòng (khoảng 25 °C), nước khoảng 50 °C, nước khoảng 75 °C; mỗi lần đợi đủ 2 phút, ghi chiều dài cột khí và nhiệt độ tuyệt đối T = t + 273."
     ],
     "quan_sat": [
       "Nước càng nóng, cột khí càng dài: từ 10,0 cm ở 0 °C lên 12,9 cm ở 75 °C.",
-      "Thể tích tăng thêm tỉ lệ với nhiệt độ tuyệt đối chứ không tỉ lệ với nhiệt độ Celsius.",
+      "Mỗi lần nước nóng thêm khoảng 25 °C, cột khí dài thêm khoảng 0,9–1,0 cm; ở 0 °C cột khí vẫn dài 10,0 cm chứ không bằng 0.",
       "Tỉ số V/T gần như đứng yên quanh 0,0368 cm/K, lệch nhau khoảng 1,2%."
     ],
     "rut_ra": [
@@ -156,7 +156,7 @@
         0.0371
       ]
     ],
-    "ghi_chu": "Số liệu minh hoạ: mô hình L = 10,0·T/273 cho 10,0; 10,9; 11,8; 12,7 cm; cột L trong bảng đã kể thêm sai số đọc của thước (thành 11,9 và 12,9 cm), nên V/T nhích dần từ 0,0366 lên 0,0371 cm/K — đúng như câu hỏi về sai số trong bài. Ở 100 °C mô hình cho 13,7 cm nhưng cột khí nhô lên khỏi mặt nước nên số đọc kém tin cậy, vì vậy bảng dừng ở 75 °C."
+    "ghi_chu": "Số liệu minh hoạ: mô hình L = 10,0·T/273 cho 10,0; 10,9; 11,8; 12,7 cm; cột L trong bảng đã kể thêm sai số đọc của thước (thành 11,9 và 12,9 cm), nên V/T nhích dần từ 0,0366 lên 0,0371 cm/K — đúng như câu hỏi về sai số trong bài. Ở 100 °C mô hình cho 13,7 cm nhưng cột khí nhô lên khỏi mặt nước nên số đọc kém tin cậy, vì vậy bảng dừng ở 75 °C. Ca tự suy cho câu chốt clip: đun tới 100 °C (theo định luật Charles) → cột khí dài ≈ 13,7 cm."
   },
   "ket_qua_ky_vong": "Chiều dài cột khí tăng đều theo nhiệt độ tuyệt đối; đồ thị L theo T là đường thẳng, kéo dài đi qua gốc 0 K; tỉ số V/T không đổi trong khoảng 1,2%.",
   "hien_tuong_hay_sai": [
@@ -178,5 +178,15 @@
   "an_toan": [
     "Nước sôi gây bỏng: dùng kẹp gỗ hoặc giá đỡ, không cầm ống bằng tay trần.",
     "Cốc thuỷ tinh phải là loại chịu nhiệt, không rót nước sôi vào cốc mỏng đang lạnh."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-02-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-02-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "ống mao dẫn có cột khí, đun nóng dần",
+    "nhin_vao": "Áp suất không đổi, đun nóng: cột khí dài thêm thế nào?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
+  }
 }

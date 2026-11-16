@@ -44,7 +44,7 @@ export function PredictGate({ question, options, choice, onChoose, hint }: Predi
                 onClick={() => onChoose(i)}
                 className="flex min-h-11 w-full items-start gap-2 rounded-lg border border-line-strong bg-panel px-3 py-2 text-left text-ink transition hover:bg-primary-soft active:scale-[0.99]"
               >
-                <span className="font-bold">{LETTERS[i]}.</span>
+                <span className="shrink-0 font-bold">{LETTERS[i]}.</span>
                 <span>{o.text}</span>
               </button>
             ))}

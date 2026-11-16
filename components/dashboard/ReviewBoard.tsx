@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type TouchEvent } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight, Eye, Maximize, NotebookPen, X, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye, Maximize, NotebookPen, Sparkles, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
@@ -12,6 +12,8 @@ import type { ExamReviewData, ReviewQuestionStat } from "@/services/analytics";
 import { classGrade, fetchClasses } from "@/services/classes";
 import { createReviewHomework, findLessonBoundary, lessonIdsBefore, outcomeTopicIdsForLessons } from "@/services/homework";
 import { fetchChapters, fetchLessons, type LessonWithItemRefs } from "@/services/lessons";
+import ReviewPrep from "@/components/dashboard/ReviewPrep";
+import { readCachedAnalysis, type AiExamAnalysis } from "@/services/ai-exam-analysis";
 
 const ZOOM_MIN = 0.4;
 const ZOOM_MAX = 2;
@@ -25,6 +27,8 @@ const TYPE_LABEL: Record<ExamQuestion["type"], string> = {
   essay: "Tự luận",
   translation: "Dịch",
 };
+
+const escapeText = (t: string) => t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
 function pctOf(stat: ReviewQuestionStat) {
   return stat.attempted > 0 ? Math.round((stat.correctN / stat.attempted) * 100) : null;
@@ -52,6 +56,18 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
   });
   const [catalog, setCatalog] = useState<{ grade: string | null; chapters: Chapter[]; lessons: LessonWithItemRefs[] } | null>(null);
   const [creatingReview, setCreatingReview] = useState(false);
+  // Bước 0 "Phân tích trước khi chữa": tự mở khi vào bảng (trừ khi mở thẳng một câu bằng ?q=) và lớp đã có bài nộp.
+  const [showPrep, setShowPrep] = useState(() => {
+    if (typeof window === "undefined" || data.totalStudents === 0) return false;
+    return !new URLSearchParams(window.location.search).has("q");
+  });
+  const showPrepRef = useRef(showPrep);
+  useEffect(() => {
+    showPrepRef.current = showPrep;
+  }, [showPrep]);
+  const [ai, setAi] = useState<AiExamAnalysis | null>(() =>
+    typeof window === "undefined" ? null : readCachedAnalysis(examId, classId, data.totalStudents),
+  );
   const [reviewCreated, setReviewCreated] = useState(false);
 
   useEffect(() => {
@@ -88,6 +104,10 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
+      if (showPrepRef.current) {
+        if (e.key === "Escape") setShowPrep(false);
+        return;
+      }
       if (e.key === "ArrowRight") go(idx + 1);
       else if (e.key === "ArrowLeft") go(idx - 1);
       else if (e.code === "Space") {
@@ -160,6 +180,7 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
 
   const p = pctOf(stat);
   const b = band(p);
+  const aiNote = ai?.questions.find((n) => n.index === idx) ?? null;
 
   async function createReview() {
     if (!profile || !catalog) return;
@@ -238,6 +259,13 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
             <ZoomIn size={16} />
           </button>
         </div>
+        <button
+          className="rb-btn"
+          onClick={() => setShowPrep(true)}
+          title="Phân tích bài làm cả lớp + AI gợi ý chủ đề cần ôn"
+        >
+          <Sparkles size={16} /> <span className="rb-btn-text">Phân tích</span>
+        </button>
         {canCreateHomework && (
         <button
           className="rb-btn"
@@ -274,6 +302,21 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
                 : `${p}% cả lớp làm đúng (${stat.correctN}/${stat.attempted})`}
             </span>
           </div>
+
+          {aiNote && (
+            <details className="rb-ai-note">
+              <summary>
+                <Sparkles size={14} /> Ghi chú AI cho thầy/cô
+              </summary>
+              <ContentHtml html={escapeText(aiNote.misconception)} />
+              {aiNote.teachingTip && (
+                <div className="rb-ai-tip">
+                  <b>Cách chữa: </b>
+                  <ContentHtml html={escapeText(aiNote.teachingTip)} />
+                </div>
+              )}
+            </details>
+          )}
 
           <div className="rb-qtext exam-paper">
             <ContentHtml html={q.question} />
@@ -432,6 +475,20 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
           ))}
         </div>
       </div>
+      {showPrep && (
+        <ReviewPrep
+          data={data}
+          examId={examId}
+          classId={classId}
+          ai={ai}
+          onAi={setAi}
+          onJump={(i) => {
+            go(i);
+            setShowPrep(false);
+          }}
+          onClose={() => setShowPrep(false)}
+        />
+      )}
     </div>
   );
 }

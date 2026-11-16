@@ -1,6 +1,7 @@
 "use client";
 
 import KhungPortals from "@/components/lessons/KhungPortals";
+import MoPhongPortals from "@/components/lessons/MoPhongPortals";
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { withQuestionTables } from "@/lib/question-table";
 import { quizSpeakText } from "@/lib/quiz-speak";
@@ -487,6 +488,7 @@ export default function ContentHtml({
         dangerouslySetInnerHTML={innerHtml}
       />
       {renderedWithVideo.includes("tl-box--khung") && <KhungPortals rootRef={rootRef} version={renderedWithVideo} />}
+      {renderedWithVideo.includes("tl-mo-phong") && <MoPhongPortals rootRef={rootRef} version={renderedWithVideo} />}
     </>
   );
 }
