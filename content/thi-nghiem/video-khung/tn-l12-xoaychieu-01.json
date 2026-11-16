@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-xoaychieu-01",
+  "ten": "Máy phát mini quay tay: đổi tốc độ quay",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-01-20261114.mp4",
+  "tong_giay": 49.8,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Biên độ suất điện động của khung quay tỉ lệ với tốc độ góc: E0 = NBSω.",
+      "kiem": "Tốc độ quay ảnh hưởng gì tới U0?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 2.9,
+      "chu": "Đang quay 4 vòng/s, quay 8 vòng/s thì biên độ U0 trên màn thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.4,
+      "chu": "Máy phát mini, dao động ký, đồng hồ bấm giây."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 13.6,
+      "chu": "n = 2, 4, 6, 8, 10 vòng/s: U0 = 0,95; 1,82; 2,84; 3,67; 4,70 V."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 19.6,
+      "chu": "U0/n gần như không đổi (≈ 0,47) nên U0 tỉ lệ thuận với n, tức với ω; tần số f = n."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 27.6,
+      "chu": "Không cho biết dạng sin chính xác.\nKhông cho giá trị hiệu dụng; dao động ký chỉ đọc biên độ."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.2,
+    "cau_hoi": "Máy phát mini đang quay 4 vòng/s, dao động ký đọc được biên độ U0. Quay nhanh gấp đôi, 8 vòng/s. Biên độ U0 trên màn thế nào?",
+    "chon": [
+      "A. Không đổi, chỉ sóng dày hơn",
+      "B. Gấp đôi, sóng dày gấp đôi",
+      "C. Gấp bốn",
+      "D. Giảm một nửa"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Đo được 1,82 V ở 4 vòng/s và 3,67 V ở 8 vòng/s: U0 = NBSω tỉ lệ với tốc độ quay, tần số cũng tăng theo.",
+    "giai_thich_sai": "Quay nhanh thì từ thông biến thiên nhanh hơn nên biên độ tăng theo tốc độ: 1,82 V lên 3,67 V, gấp đôi chứ không giữ nguyên hay gấp bốn."
+  }
+}

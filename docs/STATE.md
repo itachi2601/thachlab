@@ -64,6 +64,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
+- Clip L12 lô 2 (14/11, 9 clip bài 11/12/14/125/18/19): đã tải lesson-clips -20261114 + chèn repo + khung; CHỜ THẦY DUYỆT rồi đăng DB `--chi-video` sau 22h — sổ `so-clip-anh-dong.md`.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
