@@ -120,14 +120,14 @@ ${head('THÍ NGHIỆM TẤM VÁN · MA SÁT LĂN · TRẢ BÀI')}
 ${h3(1, 'Thí nghiệm: nâng dần tấm ván', '3·1')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Quan sát:</b> hộp bắt đầu trượt khi ${nw('h ≈ 0,34 m')}; búng nhẹ thì hộp trượt đều khi ${nw('h ≈ 0,29 m')}. ${nw(m('\\sin\\alpha=h/L'))}.</div>
-<div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)} ⇒ ${nw(`${m('\\mu_n=')} ${f(14)}`)} ${nw(`${m('\\approx')} ${f(12)}`)}</div>
+<div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)}<br>⇒ ${nw(`${m('\\mu_n=')} <span class="fill" style="min-width:16mm;height:9mm"></span> ${m('\\approx')} ${f(14)}`)}</div>
 <div style="margin-top:.6mm">Trượt đều: ${nw(`${m('\\mu=\\tan\\alpha\\approx')} ${f(12)}`)}; so với bảng ở Tập 62·3: ${ck}khớp ${ck}lệch</div></div>
 ${H.nangVan()}</div>
 ${h3(2, 'II.5 · Ma sát lăn · có lợi, có hại', '3·2')}
 <div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
 <div>Ma sát lăn có khi vật ${f(25)} trên bề mặt; ${ck}lớn hơn ${ck}nhỏ hơn ma sát trượt rất nhiều.</div>
-<div>Có lợi: ${f(40)} · ${f(40)}</div>
-<div>Có hại: ${f(40)} · ${f(40)}</div>
+<div style="white-space:nowrap">Có lợi: ${f(37)} ; ${f(37)}</div>
+<div style="white-space:nowrap">Có hại: ${f(37)} ; ${f(37)}</div>
 <table style="margin-top:1mm;font-size:var(--fs-sm)"><tr><th style="width:17mm"></th><th>Nghỉ</th><th>Trượt</th><th>Lăn</th></tr>
 <tr style="height:11mm"><td>Khi nào</td><td></td><td></td><td></td></tr><tr style="height:11mm"><td>Độ lớn</td><td></td><td></td><td></td></tr></table></div>
 ${H.gaiLop()}</div>

@@ -138,17 +138,17 @@ export const hinhL11b6 = {
   // D1: đồ thị x – t của ba con lắc trong 4 s, T0 = 1,0 s; (3) cưỡng bức 1,5 Hz
   d1: (cap = 'Li độ x (cm) theo t (s) của ba con lắc.') => {
     const row = (y0, fn, nhan, id) => {
-      const { b, X } = truc({ x0: 46, y0, w: 252, h: 18, xmin: 0, xmax: 4, ymin: 0, ymax: 4, xt: [], xl: '', yl: '', am: true }, id);
-      const Yv = (v) => y0 - (v / 4) * 18;
+      const { b, X } = truc({ x0: 46, y0, w: 252, h: 16, xmin: 0, xmax: 4, ymin: 0, ymax: 4, xt: [], xl: '', yl: '', am: true }, id);
+      const Yv = (v) => y0 - (v / 4) * 16;
       return b + ln(46, Yv(-4), 298, Yv(-4), GREY, 1, '3 4') + T(8, y0 + 7, nhan, { w: 700 })
-        + [1, 2, 3, 4].map((k) => ln(X(k), y0 - 22, X(k), y0 + 22, GREY, 1, '2 4')).join('')
+        + [1, 2, 3, 4].map((k) => ln(X(k), y0 - 17, X(k), y0 + 17, GREY, 1, '2 4')).join('')
         + path(mau(fn, 0, 4, 320).map(([s, v]) => [X(s), Yv(v)]), INK, 2.4);
     };
-    let b = row(27, (s) => 4 * Math.exp(-0.35 * s) * Math.cos(2 * Math.PI * s), '(1)', 'p1')
-      + row(76, (s) => 4 * Math.cos(2 * Math.PI * s), '(2)', 'p2')
-      + row(125, (s) => 3 * Math.cos(2 * Math.PI * 1.5 * s), '(3)', 'p3');
-    b += [1, 2, 3, 4].map((k) => T(46 + k * 63, 168, String(k), { a: 'middle' })).join('') + T(14, 168, 't (s)');
-    return wrap('0 0 320 174', b, cap, 'Đồ thị li độ ba con lắc');
+    let b = row(20, (s) => 4 * Math.exp(-0.35 * s) * Math.cos(2 * Math.PI * s), '(1)', 'p1')
+      + row(56, (s) => 4 * Math.cos(2 * Math.PI * s), '(2)', 'p2')
+      + row(92, (s) => 3 * Math.cos(2 * Math.PI * 1.5 * s), '(3)', 'p3');
+    b += [1, 2, 3, 4].map((k) => T(46 + k * 63, 128, String(k), { a: 'middle' })).join('') + T(14, 128, 't (s)');
+    return wrap('0 0 320 134', b, cap, 'Đồ thị li độ ba con lắc');
   },
   // D3: biên độ giảm theo hàm mũ, đường bao nét đứt, mốc 5 s
   d3: (cap = 'Đường đứt: biên độ A = 5,0 e<sup>−0,20t</sup> (cm).') => {
