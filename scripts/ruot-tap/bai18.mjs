@@ -1,14 +1,14 @@
 // Ruột tập VL12 – Bài 18 · An toàn phóng xạ (lesson id 19). Khung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai18.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai18.pdf
 import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
-const K = khoiTao({ bai: 18, lid: 19, ten: 'AN TOÀN PHÓNG XẠ' });
+const K = khoiTao({ bai: 21, baiDau: 17, lid: 19, ten: 'AN TOÀN PHÓNG XẠ' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const hd = m('\\dot H');
 
 const p1 = `<section class="page">
-${head('BÀI 18 · AN TOÀN PHÓNG XẠ', K.sub)}
+${head('BÀI 21 · AN TOÀN PHÓNG XẠ', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>tác hại</b> của tia phóng xạ và bốn yếu tố quyết định</div>
