@@ -6,9 +6,10 @@
 # Chia theo phân phối chương trình (sửa hàm quyen nếu trường chia khác):
 #   VL10 HK1 = Ch.1–3 (bài 1–22) · HK2 = Ch.4–7 (bài 23–34)
 #   VL11 HK1 = Ch.1–2 (bài 1–15) · HK2 = Ch.3–4 (bài 16–26)
-#   VL12 HK1 = Ch.1–2 + Ch.3 bài 9–12 (từ trường, cảm ứng điện từ) · HK2 = Ch.3 bài 13–16 (xoay chiều, sóng điện từ) + Ch.4
+#   VL12 HK1 = Ch.1–2 (bài 1–8) · HK2 = Ch.3–4 (bài 9–16 + hạt nhân 14–18) — thầy chốt 17/11/2026
 # Mỗi mục "script-chương:bỏ:giữ" = chạy dung-<script-chương>.sh với BOOK_PAGE_START sao cho trang đầu bài được giữ
 # đứng đúng số trang trong quyển, rồi cắt lấy `giữ` bài (12 trang/bài) sau khi bỏ `bỏ` bài đầu chương (giữ=0 → hết chương).
+# Đầu mỗi quyển: 2 trang không số (muc-luc.mjs: mục lục + trang trống) → trang 1 của ruột vẫn là mặt phải.
 # Bản theo chương (dung-l*-chuong*.sh chạy riêng) vẫn dựng được, số trang bắt đầu từ 1.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
@@ -18,8 +19,8 @@ quyen() { case $1 in   # bash 3.2 trên Mac: không có mảng kết hợp
   vl10-hk2) echo "l10-chuong4:0:0 l10-chuong5:0:0 l10-chuong6:0:0 l10-chuong7:0:0" ;;
   vl11-hk1) echo "l11-chuong1:0:0 l11-chuong2:0:0" ;;
   vl11-hk2) echo "l11-chuong3:0:0 l11-chuong4:0:0" ;;
-  vl12-hk1) echo "l12-chuong1:0:0 l12-chuong2:0:0 l12-chuong3:0:4" ;;
-  vl12-hk2) echo "l12-chuong3:4:0 chuong4:0:0" ;;
+  vl12-hk1) echo "l12-chuong1:0:0 l12-chuong2:0:0" ;;
+  vl12-hk2) echo "l12-chuong3:0:0 chuong4:0:0" ;;
   *) echo "không có quyển $1" >&2; exit 1 ;;
 esac; }
 pdf_chuong() { case $1 in chuong4) echo $OUT/ruot-tap-vl12-chuong4.pdf ;; l*) echo $OUT/ruot-tap-v${1%%-*}-${1#*-}.pdf ;; esac; }
@@ -37,7 +38,10 @@ dung() {
     k=$((k + 1)); cur=$((cur + den - tu + 1))
     echo "  $ch: tr.${tu}–${den} của chương → hết tr.$((cur - 1)) của quyển"
   done
-  pdfunite $(ls "$tmp"/*.pdf | sort) $OUT/ruot-tap-$q.pdf
+  pdfunite $(ls "$tmp"/*.pdf | sort) "$tmp/ruot.pdf"
+  local lop=${q%-hk*} hk=${q#*-hk}; [ "$hk" = 1 ] && hk=I || hk=II
+  node scripts/ruot-tap/muc-luc.mjs "$tmp/ruot.pdf" "$tmp/ml.pdf" "Vật lí ${lop#vl} · Học kì $hk"
+  pdfunite "$tmp/ml.pdf" "$tmp/ruot.pdf" $OUT/ruot-tap-$q.pdf
   rm -rf "$tmp"
   pdfinfo $OUT/ruot-tap-$q.pdf | grep Pages
   pdffonts $OUT/ruot-tap-$q.pdf | grep -iE "helvetica|lucida|hiragino|arial|symbols" && echo "! CẢNH BÁO: còn font hệ thống" || true

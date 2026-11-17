@@ -29,7 +29,7 @@ const UR = {
   'latin-ext': 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF',
   vietnamese: 'U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB',
 };
-const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
+export const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
   `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('') + fontsBu;
 
 export const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
