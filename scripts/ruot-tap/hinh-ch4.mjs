@@ -208,7 +208,7 @@ export const hinhCh4 = {
   batTia: (cap = 'Trong điện trường: α lệch về bản âm, β⁻ lệch về bản dương (nhiều hơn), γ không lệch.') => {
     let b = `<rect x="90" y="34" width="144" height="9" fill="${INK}"/><rect x="90" y="136" width="144" height="9" fill="${INK}"/>`;
     b += T(250, 44, '+', { size: 24, w: 700 }) + T(250, 154, '−', { size: 28, w: 700 });
-    b += rect(2, 76, 58, 28) + T(26, 96, 'nguồn', { a: 'middle', size: 18 });
+    b += rect(2, 76, 58, 28) + T(31, 96, 'nguồn', { a: 'middle', size: 17 });
     b += `<line x1="60" y1="90" x2="312" y2="90" stroke="${INK}" stroke-width="${SW}"/>` + T(316, 84, 'γ', { a: 'end', size: 22, w: 700 });
     b += `<path d="M60 90 L90 90 Q180 90 234 62 L312 40" fill="none" stroke="${RED}" stroke-width="${SW}"/>` + T(316, 30, 'β⁻', { a: 'end', c: RED, size: 22, w: 700 });
     b += `<path d="M60 90 L90 90 Q180 90 234 100 L312 118" fill="none" stroke="${BLUE}" stroke-width="${SW}" stroke-dasharray="7 4"/>` + T(316, 144, 'α', { a: 'end', c: BLUE, size: 22, w: 700 });
