@@ -220,6 +220,8 @@ export default function ReviewHome() {
     }
   }
 
+  const active = (sessions ?? []).filter((x) => x.status !== "finished");
+  const done = (sessions ?? []).filter((x) => x.status === "finished");
   const unpublished = stages.filter((s) => !s.pick.published).length;
 
   return (
@@ -231,37 +233,6 @@ export default function ReviewHome() {
           từng em chưa mở, đang làm hay đã đạt; học sinh chỉ thấy tiến độ của mình và số liệu chung của lớp.
         </p>
       </header>
-
-      <section aria-labelledby="gan-day" className="space-y-3">
-        <h2 id="gan-day" className="text-lg font-bold text-ink">Buổi ôn gần đây</h2>
-        {sessions === null ? (
-          <p className="text-sm text-muted">Đang tải…</p>
-        ) : sessions.length === 0 ? (
-          <p className="text-sm text-muted">Chưa có buổi ôn nào. Tạo buổi đầu tiên ở bên dưới.</p>
-        ) : (
-          <ul className="space-y-2">
-            {sessions.map((s) => (
-              <li key={s.id}>
-                <Link
-                  href={reviewConsolePath(s.id)}
-                  className="flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-line bg-panel px-4 py-3 hover:bg-surface-2"
-                >
-                  <span className="min-w-0 flex-1 font-semibold text-ink">{s.title}</span>
-                  <span className="text-sm text-muted">Lớp {s.class_name} · {s.stage_count} chặng</span>
-                  <span className="text-sm font-semibold text-primary">
-                    {s.mode === "self"
-                      ? s.status === "finished"
-                        ? "Tự học · đã kết thúc"
-                        : `Tự học · hạn ${s.due_at ? dueText(s.due_at) : "—"}`
-                      : STATUS_TEXT[s.status]}
-                    {s.mode !== "self" && s.status === "running" ? ` · chặng ${s.current_stage + 1}` : ""}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </section>
 
       <section aria-labelledby="tao-moi" className="space-y-4 rounded-2xl border border-line bg-panel p-4 sm:p-5">
         <h2 id="tao-moi" className="text-lg font-bold text-ink">Tạo buổi ôn mới</h2>
@@ -490,6 +461,70 @@ export default function ReviewHome() {
           {busy ? "Đang tạo…" : mode === "self" ? "Giao về nhà" : "Tạo buổi ôn"}
         </Button>
       </section>
+
+      <section aria-labelledby="gan-day" className="space-y-3">
+        <h2 id="gan-day" className="text-lg font-bold text-ink">Buổi ôn gần đây</h2>
+        {sessions === null ? (
+          <p className="text-sm text-muted">Đang tải…</p>
+        ) : active.length + done.length === 0 ? (
+          <p className="text-sm text-muted">Chưa có buổi ôn nào. Tạo buổi đầu tiên ở bên dưới.</p>
+        ) : (
+          <>
+          <ul className="space-y-2">
+            {active.map((s) => (
+              <li key={s.id}>
+                <Link
+                  href={reviewConsolePath(s.id)}
+                  className="flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-line bg-panel px-4 py-3 hover:bg-surface-2"
+                >
+                  <span className="min-w-0 flex-1 font-semibold text-ink">{s.title}</span>
+                  <span className="text-sm text-muted">Lớp {s.class_name} · {s.stage_count} chặng</span>
+                  <span className="text-sm font-semibold text-primary">
+                    {s.mode === "self"
+                      ? s.status === "finished"
+                        ? "Tự học · đã kết thúc"
+                        : `Tự học · hạn ${s.due_at ? dueText(s.due_at) : "—"}`
+                      : STATUS_TEXT[s.status]}
+                    {s.mode !== "self" && s.status === "running" ? ` · chặng ${s.current_stage + 1}` : ""}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+            {done.length > 0 && (
+              <details className="rounded-2xl border border-line bg-panel">
+                <summary className="flex min-h-11 cursor-pointer items-center px-4 py-2 text-sm font-semibold text-muted">
+                  Đã kết thúc ({done.length}) — bấm để mở
+                </summary>
+                <div className="p-2">
+          <ul className="space-y-2">
+            {done.map((s) => (
+              <li key={s.id}>
+                <Link
+                  href={reviewConsolePath(s.id)}
+                  className="flex min-h-11 flex-wrap items-center gap-x-3 gap-y-1 rounded-2xl border border-line bg-panel px-4 py-3 hover:bg-surface-2"
+                >
+                  <span className="min-w-0 flex-1 font-semibold text-ink">{s.title}</span>
+                  <span className="text-sm text-muted">Lớp {s.class_name} · {s.stage_count} chặng</span>
+                  <span className="text-sm font-semibold text-primary">
+                    {s.mode === "self"
+                      ? s.status === "finished"
+                        ? "Tự học · đã kết thúc"
+                        : `Tự học · hạn ${s.due_at ? dueText(s.due_at) : "—"}`
+                      : STATUS_TEXT[s.status]}
+                    {s.mode !== "self" && s.status === "running" ? ` · chặng ${s.current_stage + 1}` : ""}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+                </div>
+              </details>
+            )}
+          </>
+        )}
+      </section>
+
     </div>
   );
 }
