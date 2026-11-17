@@ -14,7 +14,9 @@ const ff = (file, w, ur) =>
   `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(K + file + '.woff2').href}");unicode-range:${ur}}`;
 const THUONG = 'U+03B1-03C9,U+03D1,U+03D5,U+03F5';
 const HOA = 'U+0391-03A9,U+2248';
-export const fontsBu = ff('Math-Italic', 400, THUONG) + ff('Math-BoldItalic', 700, THUONG) + ff('Main-Regular', 400, HOA) + ff('Main-Bold', 700, HOA);
+export const fontsBu = ff('Math-Italic', 400, THUONG) + ff('Math-BoldItalic', 700, THUONG) + ff('Main-Regular', 400, HOA) + ff('Main-Bold', 700, HOA)
+  // ℰ (U+2130, suất điện động) không có trong phông KaTeX nào → chuanHoa đổi thành chữ E phông BVCal (= \mathcal{E} của KaTeX)
+  + `@font-face{font-family:BVCal;src:url("${pathToFileURL(K + 'Caligraphic-Regular.woff2').href}")}`;
 
 export const chuanHoa = () => {
   const SUP = { '⁰': '0', '¹': '1', '²': '2', '³': '3', '⁴': '4', '⁵': '5', '⁶': '6', '⁷': '7', '⁸': '8', '⁹': '9', '⁺': '+', '⁻': '−' };
@@ -39,5 +41,18 @@ export const chuanHoa = () => {
     }
     frag.append(s.slice(last)); n.replaceWith(frag);
   }
-  return nodes.length;
+  // ℰ → <span>/<tspan> chữ E phông BVCal (sửa 17/11/2026: L11 bài 24 rơi về AppleSymbols)
+  const w2 = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); const ns = [];
+  while (w2.nextNode()) { const n = w2.currentNode; if (n.data.includes('ℰ') && !n.parentElement.closest('.katex,style,script')) ns.push(n); }
+  for (const n of ns) {
+    const svg = n.parentElement.closest('svg'); const frag = document.createDocumentFragment();
+    n.data.split('ℰ').forEach((part, i) => {
+      if (i) { const el = svg ? document.createElementNS('http://www.w3.org/2000/svg', 'tspan') : document.createElement('span');
+        if (svg) el.setAttribute('font-family', 'BVCal'); else el.style.fontFamily = 'BVCal';
+        el.textContent = 'E'; frag.append(el); }
+      frag.append(part);
+    });
+    n.replaceWith(frag);
+  }
+  return nodes.length + ns.length;
 };
