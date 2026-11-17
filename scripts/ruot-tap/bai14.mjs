@@ -26,7 +26,7 @@ const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
 // Ô cuối tập (thầy chốt 25/10 tối; 10/11: chỉ MỘT mã QR của bài học liên quan — hai mã cạnh nhau, máy quét dễ trúng nhầm): chỉ hướng dẫn xem lại bài trên web, không giới thiệu/quảng cáo.
 const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
-<b>Xem lại bài 14 trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
+<b>Xem lại bài 17 trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';
@@ -43,7 +43,7 @@ const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${String(t).replace(/^(\d+)/, (_, a) => Number(a) + OFF)}</span>`;
-const foot = (n) => `<div class="foot"><span></span><span>Bài 14 · tr. ${n + OFF}</span></div>`;
+const foot = (n) => `<div class="foot"><span></span><span>Bài 17 · tr. ${n + OFF}</span></div>`;
 // Không Ngày/Tên (các tờ đóng thành sách — thầy chốt 25/10); phụ đề chỉ khi thật cần, thầy tự điều phối nhịp buổi.
 const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
 const yn = `<td style="white-space:nowrap;padding:.2mm 1.8mm"><span class="ck"></span>Có &nbsp;<span class="ck"></span>Không</td>`;
@@ -68,7 +68,7 @@ ${lap ? '<div class="card soft" style="padding:1mm 3mm;margin-top:1.5mm"><b>Kế
 ${traNhanh}
 ${foot(n)}</section>`;
 
-const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 14</title>
+const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 17</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
 <style>
 ${fonts}
@@ -131,7 +131,7 @@ body.flip .page:nth-of-type(odd){--pl:10mm;--pr:20mm}body.flip .page:nth-of-type
 
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
 <section class="page">
-${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân')}
+${head('BÀI 17 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân')}
 <h3><i>1</i>Mục tiêu</h3>${tag('1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
