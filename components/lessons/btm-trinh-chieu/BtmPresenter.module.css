@@ -1,0 +1,555 @@
+/* Trình chiếu bài tập mẫu — 2 nền: "sang" (mặc định, M1/M7) và "bang" (xanh bảng phấn như lớp thầy).
+   Màu trạng thái: --s1 cam (trạng thái ①), --s2 xanh ngọc (②), --key đỏ (ý chính) — giống phấn màu thầy dùng. */
+.root {
+  --bg: #f4f6f8;
+  --panel: #ffffff;
+  --line: #dfe4ea;
+  --text: #0f172a;
+  --muted: #5b6676;
+  --accent: #2563eb;
+  --s1: #c2410c;
+  --s1-nhat: #fde7d6;
+  --s2: #0e7490;
+  --s2-nhat: #d4f1f6;
+  --key: #dc2626;
+  --hg: #c9d1da;
+  --hoi-bg: #fff7e6;
+  --hoi-line: #f2c14e;
+  --ok-bg: #ecfdf3;
+  --ok-line: #16a34a;
+  --fs: clamp(17px, 1.45vw, 28px);
+
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--fs);
+  line-height: 1.5;
+  overflow: hidden;
+}
+.root[data-theme="bang"] {
+  --bg: #1d3a31;
+  --panel: #234538;
+  --line: #3b6152;
+  --text: #eef3ee;
+  --muted: #a9c0b4;
+  --accent: #fde68a;
+  --s1: #fdba74;
+  --s1-nhat: rgba(253, 186, 116, 0.18);
+  --s2: #67e8f9;
+  --s2-nhat: rgba(103, 232, 249, 0.16);
+  --key: #fca5a5;
+  --hg: #7d8c86;
+  --hoi-bg: rgba(253, 230, 138, 0.1);
+  --hoi-line: #fde68a;
+  --ok-bg: rgba(134, 239, 172, 0.1);
+  --ok-line: #86efac;
+}
+
+/* ── thanh trên / dưới ── */
+.top,
+.day {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px clamp(12px, 2vw, 28px);
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+.day {
+  border-bottom: 0;
+  border-top: 1px solid var(--line);
+}
+.topTen {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+  flex: 1;
+}
+.nhan {
+  font-weight: 800;
+  color: var(--key);
+  white-space: nowrap;
+}
+.dang {
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topNut {
+  display: flex;
+  gap: 8px;
+}
+.nut {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.nut:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.nutChinh {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  padding: 0 20px;
+}
+.root[data-theme="bang"] .nutChinh {
+  color: #1d3a31;
+}
+.tienDo {
+  flex: 1;
+  min-width: 0;
+}
+.tienDoChu {
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+}
+.thanhTienDo {
+  height: 4px;
+  margin-top: 4px;
+  border-radius: 2px;
+  background: var(--line);
+  overflow: hidden;
+}
+.thanhTienDo > div {
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.25s;
+}
+
+/* ── thân 2 cột ── */
+.than {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
+}
+.trai {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(12px, 1.6vw, 24px);
+  border-right: 2px solid var(--line);
+  overflow-y: auto;
+}
+.phai {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* tóm đề */
+.tomDe {
+  display: grid;
+  gap: 8px;
+}
+.choTim {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+}
+.choTim ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+}
+.choNhan {
+  display: inline-block;
+  min-width: 48px;
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: var(--s1-nhat);
+  color: var(--s1);
+  font-weight: 800;
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 0.15em;
+}
+.timNhan {
+  background: transparent;
+  color: var(--key);
+  border: 2px solid var(--key);
+}
+.hinh {
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+.hinh svg {
+  max-height: 32dvh;
+}
+.hinh :global(.otn-chu) {
+  font: 600 15px system-ui, sans-serif;
+}
+.hinh :global(.otn-dam) {
+  font-weight: 800;
+  font-size: 17px;
+}
+.hinh :global(.otn-vien) {
+  paint-order: stroke;
+  stroke: var(--bg);
+  stroke-width: 4px;
+}
+.hinh :global(.otn-lop) {
+  transition: opacity 0.35s;
+}
+.hinh :global(.otn-lop[data-on="false"]) {
+  opacity: 0;
+}
+
+/* bảng trạng thái — đúng kiểu thầy kẻ: hàng p/V/T, cột ① ② */
+.bang {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  font-size: 1.05em;
+}
+.bang th,
+.bang td {
+  padding: 4px 12px;
+  text-align: center;
+}
+.bang thead th {
+  border-bottom: 2px solid var(--text);
+  font-weight: 800;
+}
+.bang tbody th {
+  border-right: 2px solid var(--text);
+  text-align: left;
+  white-space: nowrap;
+}
+.donVi {
+  margin-left: 6px;
+  color: var(--muted);
+  font-size: 0.7em;
+  font-weight: 500;
+}
+.c1 {
+  color: var(--s1);
+}
+.c2 {
+  color: var(--s2);
+}
+.trong {
+  color: var(--muted);
+  opacity: 0.5;
+}
+.hoiCham {
+  display: inline-block;
+  min-width: 1.6em;
+  border: 2px solid var(--key);
+  border-radius: 4px;
+  color: var(--key);
+  font-weight: 800;
+  line-height: 1.3;
+}
+.moi {
+  animation: nhay 1.4s ease-out;
+}
+@keyframes nhay {
+  0% {
+    background: var(--hoi-line);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+/* ── phải: dải bước + lời giải ── */
+.ray {
+  display: flex;
+  gap: 6px;
+  padding: 10px clamp(12px, 2vw, 28px);
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+.rayNut {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 12px 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rayNut[data-trang-thai="dang"] {
+  border-color: var(--accent);
+  color: var(--text);
+  font-weight: 700;
+}
+.rayNut[data-trang-thai="chua"] .rayTen {
+  opacity: 0.55;
+}
+.raySo {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--line);
+  font-weight: 800;
+  font-size: 13px;
+}
+.rayNut[data-trang-thai="dang"] .raySo {
+  background: var(--accent);
+  color: var(--panel);
+}
+.rayNut[data-trang-thai="xong"] .raySo {
+  background: var(--ok-bg);
+  color: var(--ok-line);
+}
+
+.cuon {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(14px, 2vw, 32px) clamp(14px, 3vw, 56px) 40vh;
+}
+.deTo {
+  max-width: 40em;
+}
+.deNhan {
+  font-size: 0.75em;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.deTo p {
+  margin: 0;
+  font-size: 1.15em;
+  line-height: 1.6;
+}
+
+.buocXong {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 6px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.82em;
+  text-align: left;
+  cursor: pointer;
+}
+.buocXong:hover {
+  background: var(--panel);
+}
+.buocXongSo {
+  color: var(--ok-line);
+  font-weight: 800;
+}
+.buocXongTen {
+  font-weight: 700;
+  white-space: nowrap;
+}
+.buocXongKq {
+  color: var(--text);
+}
+
+.buoc {
+  margin-top: 14px;
+  animation: vao 0.3s ease-out;
+}
+.buocTen {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 12px;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: var(--key);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+.buocSo {
+  display: inline-grid;
+  place-items: center;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--panel);
+  font-size: 0.8em;
+  text-decoration: none;
+}
+.hoi {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 12px 16px;
+  border-left: 5px solid var(--hoi-line);
+  border-radius: 6px;
+  background: var(--hoi-bg);
+  margin-bottom: 16px;
+  transition: opacity 0.3s;
+}
+.hoi[data-mo="false"] {
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+.hoiNhan {
+  flex: none;
+  font-size: 0.7em;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.dongs {
+  display: grid;
+  gap: 12px;
+  padding-left: clamp(0px, 2vw, 40px);
+}
+.dong {
+  animation: vao 0.35s ease-out;
+}
+.ketQua {
+  justify-self: start;
+  padding: 6px 16px;
+  border: 2px solid var(--ok-line);
+  border-radius: 8px;
+  background: var(--ok-bg);
+  font-weight: 700;
+}
+.ghiChu {
+  color: var(--muted);
+  font-size: 0.85em;
+  font-style: italic;
+}
+@keyframes vao {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.tongKet {
+  margin-top: 20px;
+  display: grid;
+  gap: 16px;
+  animation: vao 0.35s ease-out;
+}
+.dapSo {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  justify-self: start;
+  padding: 12px 24px;
+  border: 3px solid var(--ok-line);
+  border-radius: 12px;
+  background: var(--ok-bg);
+  font-size: 1.3em;
+  font-weight: 800;
+}
+.dapSo > span:first-child {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.the {
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  font-size: 0.9em;
+}
+.the p,
+.the ul {
+  margin: 4px 0 0;
+}
+.the ul {
+  padding-left: 1.2em;
+}
+.theNhan {
+  font-weight: 800;
+  font-size: 0.85em;
+}
+.theBay {
+  border-color: var(--key);
+}
+
+/* ── điện thoại / màn dọc: tóm đề lên trên, gọn ── */
+@media (max-width: 860px) {
+  .than {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .trai {
+    border-right: 0;
+    border-bottom: 2px solid var(--line);
+    max-height: 46dvh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    font-size: 15px;
+  }
+  .tomDe {
+    flex: 1 1 100%;
+  }
+  .hinh {
+    flex: 1 1 48%;
+    max-width: 220px;
+  }
+  .bang {
+    flex: 1 1 40%;
+    width: auto;
+    font-size: 14px;
+  }
+  .bang th,
+  .bang td {
+    padding: 3px 6px;
+  }
+  .dang,
+  .rayTen {
+    display: none;
+  }
+  .root {
+    --fs: 17px;
+  }
+}
