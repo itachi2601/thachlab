@@ -7,6 +7,7 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { chuanHoa, fontsBu } from './ky-tu-in.mjs';
 import { btmCss, btmPages } from './bai14-btm.mjs';
 import { ttCss, ttPages } from './bai14-tuongtu.mjs';
 import { hinh } from './hinh.mjs';
@@ -35,7 +36,7 @@ const UR = {
   vietnamese: 'U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB',
 };
 const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
-  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('');
+  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('') + fontsBu;
 const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
 // n dòng kẻ chấm, nhãn (a), b)…) nằm ngay đầu dòng đầu để không tốn thêm một dòng
 const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
@@ -199,7 +200,7 @@ ${head('BẪY · TRẢ BÀI')}
 <div class="trap"><span class="ck"></span><span><b>“Đồng vị khác số prôtôn”.</b> Sai: đồng vị phải <b>cùng</b> ${m('Z')}.</span></div>
 <div class="trap"><span class="ck"></span><span><b>Êlectron quay ở khoảng cách nào cũng được.</b> Bohr: chỉ ở quỹ đạo có năng lượng xác định.</span></div></div>
 <h3><i>2</i>IV · Trả bài 5 câu</h3>${tag('3·2')}
-<div class="hint" style="margin:-.5mm 0 1mm">Nói cho bạn cùng bàn nghe, ghi ý chính ra dòng kẻ; ☐ khi nói được.</div>
+<div class="hint" style="margin:-.5mm 0 1mm">Nói cho bạn cùng bàn nghe, ghi ý chính ra dòng kẻ; <span class="ck"></span>khi nói được.</div>
 ${box(`<div><b>1.</b> Hạt nhân gồm những hạt nào? Vì sao không vỡ ra?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>2.</b> Viết kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, nói rõ từng chữ.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>3.</b> Đồng vị là gì? Kể tên ba đồng vị của hiđrô, chúng giống và khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
@@ -248,7 +249,7 @@ ${wl('Ghi chú của thầy về đề:', 2)}
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
-<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · số khối <span class="fill" style="min-width:14mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A^⅓ m) chiếm bao nhiêu phần thể tích nguyên tử? (nguyên tử cỡ 10⁻¹⁰ m)', 4))}${hinh.kichThuoc()}</div>
+<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · số khối <span class="fill" style="min-width:14mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A<sup>1/3</sup> m) chiếm bao nhiêu phần thể tích nguyên tử? (nguyên tử cỡ 10⁻¹⁰ m)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
 <div class="fig-side" style="grid-template-columns:1fr 36mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
@@ -276,6 +277,7 @@ writeFileSync(out + '.html', html);
 const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--allow-file-access-from-files'] });
 const p = await b.newPage();
 await p.goto(pathToFileURL(out + '.html').href, { waitUntil: 'networkidle0' });
+await p.evaluate(chuanHoa);
 await p.evaluate('document.fonts.ready');
 const diag = await p.evaluate(() => [...document.querySelectorAll('.page')].map((pg, i) => {
   const lim = pg.getBoundingClientRect().bottom - 14 * 3.7795; // chừa chân trang

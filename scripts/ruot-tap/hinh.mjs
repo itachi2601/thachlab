@@ -56,9 +56,9 @@ export const hinh = {
     let b = `<ellipse cx="150" cy="84" rx="140" ry="54" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
     b += `<ellipse cx="150" cy="84" rx="118" ry="40" fill="none" stroke="${GREY}" stroke-width="1.6" stroke-dasharray="4 4"/>`;
     b += `<circle cx="150" cy="84" r="3.5" fill="${RED}"/>`;
-    b += `<line x1="153" y1="81" x2="200" y2="40" stroke="${RED}" stroke-width="2"/>` + t(206, 30, 'hạt nhân', { c: RED, size: 18 }) + t(206, 50, '~10⁻¹⁵ m', { c: RED, size: 18 });
+    b += `<line x1="153" y1="81" x2="154" y2="2" stroke="${RED}" stroke-width="2"/>` + t(156, -2, 'hạt nhân ~10⁻¹⁵ m', { c: RED, size: 18 });
     b += t(150, 170, 'nguyên tử ~10⁻¹⁰ m', { a: 'middle', size: 18 });
-    return wrap('0 0 300 178', b, cap, 'So sánh kích thước nguyên tử và hạt nhân');
+    return wrap('0 -18 300 196', b, cap, 'So sánh kích thước nguyên tử và hạt nhân');
   },
   // Trang 4 · Bài toán mẫu: nhãn treo trên mẫu kim loại
   nhanKimLoai: (cap = '') => {
@@ -67,7 +67,7 @@ export const hinh = {
     return wrap('0 0 204 112', b, cap, 'Nhãn mẫu kim loại nhôm');
   },
   // Trang 6 · Dạng 3: bán kính tăng theo A^{1/3}, chậm hơn A rất nhiều — để trống tỉ số cho HS điền
-  banKinh: (cap = 'Số khối tăng 3,7 lần (64 → 238) nhưng bán kính chỉ tăng ∛3,7 ≈ ? lần. Ước lượng rồi tính ở câu c).') => {
+  banKinh: (cap = 'Số khối tăng 3,7 lần (64 → 238) nhưng bán kính chỉ tăng (căn bậc ba của 3,7) ≈ ? lần. Ước lượng rồi tính ở câu c).') => {
     const k = 11, rZn = k * Math.cbrt(64), rU = k * Math.cbrt(238); // 44 · 68
     let b = `<circle cx="64" cy="82" r="${rZn.toFixed(1)}" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
     b += `<circle cx="236" cy="82" r="${rU.toFixed(1)}" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
