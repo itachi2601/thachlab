@@ -281,13 +281,15 @@ export const hinhCh4 = {
 
   // ===== Bài 18 · An toàn phóng xạ =====
   // Trang 1 · hai người ở 1 m và 3 m (l1, l2 là suất liều ghi trên hình)
-  nguoiSauChi: (cap = 'Kỹ thuật viên lùi từ 1 m ra 3 m: suất liều ở chỗ mới ra sao?', h1 = 'H̊₁', h2 = 'H̊₂ = ?') => {
+  nguoiSauChi: (cap = 'Kỹ thuật viên lùi từ 1 m ra 3 m: suất liều ở chỗ mới ra sao?', h1 = 'H₁', h2 = 'H₂ = ?', vong = h1 === 'H₁') => {
+    // H̊ (suất liều): dấu tròn trên H vẽ bằng circle — U+030A không có trong Source Sans 3 (rơi về Helvetica khi in, 17/11/2026)
     const nguoi = (x) => `<circle cx="${x}" cy="62" r="11" fill="#fff" stroke="${INK}" stroke-width="${SW}"/><path d="M${x} 74 V102 M${x - 14} 84 H${x + 14} M${x} 102 L${x - 10} 124 M${x} 102 L${x + 10} 124" fill="none" stroke="${INK}" stroke-width="${SW}"/>`;
     let b = `<circle cx="26" cy="94" r="14" fill="${RED}"/>` + T(26, 136, 'nguồn', { a: 'middle', size: 18 });
     b += nguoi(110) + nguoi(278);
     b += `<line x1="26" y1="146" x2="110" y2="146" stroke="${INK}" stroke-width="${SW}"/>` + T(68, 170, '1 m', { a: 'middle', size: 18 });
     b += `<line x1="26" y1="146" x2="278" y2="146" stroke="${INK}" stroke-width="${SW}" stroke-dasharray="7 4"/>` + T(194, 170, '3 m', { a: 'middle', size: 18 });
     b += T(110, 38, h1, { a: 'middle', size: 18 }) + T(278, 38, h2, { a: 'middle', size: 18, c: RED, w: 700 });
+    if (vong) b += `<circle cx="106" cy="20" r="2.4" fill="none" stroke="${INK}" stroke-width="1.3"/><circle cx="262" cy="20" r="2.4" fill="none" stroke="${RED}" stroke-width="1.5"/>`;
     b += `<path d="M40 86 L96 70 M40 102 L96 110" stroke="${RED}" stroke-width="2" stroke-dasharray="4 4" fill="none"/>`;
     return wrap('0 0 310 180', b, cap, 'Hai người ở hai khoảng cách khác nhau từ nguồn phóng xạ');
   },

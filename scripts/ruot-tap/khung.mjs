@@ -7,6 +7,7 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { chuanHoa, fontsBu } from './ky-tu-in.mjs';
 import { btmCss } from './bai14-btm.mjs';
 import { ttCss } from './bai14-tuongtu.mjs';
 import { hinh as hinh14 } from './hinh.mjs';
@@ -29,7 +30,7 @@ const UR = {
   vietnamese: 'U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB',
 };
 const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
-  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('');
+  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('') + fontsBu;
 
 export const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
 export const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
@@ -214,6 +215,7 @@ ${foot(n)}</section>`).join('')}`}
     const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--allow-file-access-from-files'] });
     const p = await b.newPage();
     await p.goto(pathToFileURL(out + '.html').href, { waitUntil: 'networkidle0' });
+    await p.evaluate(chuanHoa);
     await p.evaluate('document.fonts.ready');
     const diag = await p.evaluate(() => [...document.querySelectorAll('.page')].map((pg, i) => {
       // ô QR (.gt) đặt tuyệt đối ở đáy 13 mm → không tính vào dòng chảy; nội dung phải dừng trên mép ô đó ≥ 1 mm

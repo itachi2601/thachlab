@@ -197,7 +197,7 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → Source Sans 3 nhúng KHÔNG có π (bỏ span thì ra Helvetica): ký hiệu Hy Lạp trong chú thích hình viết bằng KaTeX thật hoặc diễn đạt lại bằng chữ, rồi kiểm `pdffonts` quyển ghép.
 
 - 2026-11-16 · HS ảo lượt 2 (6 quyển, Sonnet đọc `pdftotext` + đo ô bằng puppeteer, không ảnh) vẫn bắt ~70 lỗi B sau lượt 1, phần lớn do lượt sửa trước tạo ra (thêm dòng giải → gộp ý; ô mới hẹp) → mỗi lượt sửa phải chạy lại checklist ô/dòng giải, không chỉ "dư ≥ 0". Sửa bằng subagent Opus một quyển một agent trong cùng worktree (file bài tách nhau) nhanh hơn gửi về 37 phiên bài.
-- 2026-11-16 · Chữ Hy Lạp gõ trơn (γ, β, α) trong đề/chú thích → Chrome lấy Helvetica (Source Sans 3 không có Hy Lạp) → viết bằng KaTeX `m()`; alt của ảnh không chứa được KaTeX nên tách alt khỏi chú thích.
+- 2026-11-16/17 · Ký tự ngoài Source Sans 3 (Hy Lạp, Δ, ≈, chỉ số trên/dưới Unicode ⁻⁵ ₀, ☐ ∛ ⅓, dấu ̊) → Chrome lấy Helvetica/Lucida/Apple Symbols → từ 17/11 `scripts/ruot-tap/ky-tu-in.mjs` tự xử lý trong `khung.mjs` và `bai14.mjs` (Hy Lạp/Δ/≈ lấy phông KaTeX qua unicode-range; ⁻⁵ ₀ đổi thành sup/sub, trong SVG thành tspan baseline-shift); ☐ ∛ ⅓ ̊ vẫn phải sửa ở nguồn (☐ → `ck`, ⅓ → `<sup>1/3</sup>`, H̊ trong SVG → vẽ circle). Kiểm: `pdffonts` từng quyển không còn Helvetica/Lucida/Symbols.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
