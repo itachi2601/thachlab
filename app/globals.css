@@ -1153,6 +1153,12 @@ html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg)
    Áp dụng cho mọi nơi ContentHtml render (.exam-content), không riêng lý thuyết. */
 .exam-content p[data-bullet] { position: relative; margin-left: 1.3em; }
 .exam-content p[data-bullet]::before { content: "•"; position: absolute; left: -1.1em; color: var(--lesson-accent-text, #94a3b8); font-weight: 700; }
+/* <ul> thường (không class) trong bài: Tailwind preflight xoá dấu chấm → các ý dính thành đoạn văn (C4).
+   Khoảng cách giữa ý > khoảng cách dòng trong ý để ý dài 2 dòng vẫn đọc là một khối.
+   Danh sách có class (tl-fb-list, tl-dang, tl-fx-def…) và .tl-goal/.tl-mo-phong-host giữ luật riêng của chúng. */
+.exam-content ul:not([class]) { list-style: disc; padding-left: 1.3em; }
+.exam-content ul:not([class]) > li + li { margin-top: 0.5em; }
+.exam-content ul:not([class]) > li::marker { color: var(--lesson-accent-text, #94a3b8); }
 /* ContentHtml: trong lúc chờ KaTeX tải chunk (~290 KB, chỉ tải khi nội dung có công thức),
    công thức thô "$...$" hiện tạm trong <code> — đọc được ngay, không skeleton/khoảng trắng. */
 .exam-content-raw-tex { display: inline; padding: 0 3px; border-radius: 3px; background: rgba(255,255,255,.06); color: #cbd5e1; font-size: .92em; white-space: pre-wrap; word-break: break-word; }
