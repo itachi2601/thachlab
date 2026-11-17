@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Dựng ruột tập THEO HỌC KÌ — mỗi khối mỗi học kì một quyển, đánh số trang liền mạch cả quyển (thầy yêu cầu 17/11/2026).
-#   bash scripts/ruot-tap/dung-hoc-ki.sh            → cả 6 quyển
-#   bash scripts/ruot-tap/dung-hoc-ki.sh vl12-hk1   → một quyển
-# → scripts/ruot-tap/out/ruot-tap-vl<lớp>-hk<1|2>.pdf
+# Thầy chốt 17/11/2026: VL10 in theo HỌC KÌ (2 quyển); VL11, VL12 in MỖI CHƯƠNG MỘT QUYỂN (8 quyển) — in dạy tới đâu in tới đó.
+#   bash scripts/ruot-tap/dung-hoc-ki.sh                  → 10 quyển đang dùng
+#   bash scripts/ruot-tap/dung-hoc-ki.sh vl12-chuong3     → một quyển (vl11-hk1… vẫn dựng được nếu cần)
+# → scripts/ruot-tap/out/ruot-tap-<quyển>.pdf; quyển chương: số trang bắt đầu từ 1 như bản chương.
 # Chia theo phân phối chương trình (sửa hàm quyen nếu trường chia khác):
 #   VL10 HK1 = Ch.1–3 (bài 1–22) · HK2 = Ch.4–7 (bài 23–34)
 #   VL11 HK1 = Ch.1–2 (bài 1–15) · HK2 = Ch.3–4 (bài 16–26)
@@ -21,6 +22,9 @@ quyen() { case $1 in   # bash 3.2 trên Mac: không có mảng kết hợp
   vl11-hk2) echo "l11-chuong3:0:0 l11-chuong4:0:0" ;;
   vl12-hk1) echo "l12-chuong1:0:0 l12-chuong2:0:0" ;;
   vl12-hk2) echo "l12-chuong3:0:0 chuong4:0:0" ;;
+  vl11-chuong[1-4]) echo "l11-${1#vl11-}:0:0" ;;
+  vl12-chuong[1-3]) echo "l12-${1#vl12-}:0:0" ;;
+  vl12-chuong4) echo "chuong4:0:0" ;;
   *) echo "không có quyển $1" >&2; exit 1 ;;
 esac; }
 pdf_chuong() { case $1 in chuong4) echo $OUT/ruot-tap-vl12-chuong4.pdf ;; l*) echo $OUT/ruot-tap-v${1%%-*}-${1#*-}.pdf ;; esac; }
@@ -39,8 +43,8 @@ dung() {
     echo "  $ch: tr.${tu}–${den} của chương → hết tr.$((cur - 1)) của quyển"
   done
   pdfunite $(ls "$tmp"/*.pdf | sort) "$tmp/ruot.pdf"
-  local lop=${q%-hk*} hk=${q#*-hk}; [ "$hk" = 1 ] && hk=I || hk=II
-  node scripts/ruot-tap/muc-luc.mjs "$tmp/ruot.pdf" "$tmp/ml.pdf" "Vật lí ${lop#vl} · Học kì $hk"
+  local ten=""; case $q in *-hk1) ten="Vật lí ${q:2:2} · Học kì I" ;; *-hk2) ten="Vật lí ${q:2:2} · Học kì II" ;; esac   # quyển chương: muc-luc lấy tên chương
+  node scripts/ruot-tap/muc-luc.mjs "$tmp/ruot.pdf" "$tmp/ml.pdf" "$ten"
   pdfunite "$tmp/ml.pdf" "$tmp/ruot.pdf" $OUT/ruot-tap-$q.pdf
   rm -rf "$tmp"
   pdfinfo $OUT/ruot-tap-$q.pdf | grep Pages
@@ -48,5 +52,5 @@ dung() {
 }
 
 if [ $# -gt 0 ]; then for q in "$@"; do dung "$q"; done
-else for q in vl10-hk1 vl10-hk2 vl11-hk1 vl11-hk2 vl12-hk1 vl12-hk2; do dung "$q"; done; fi
+else for q in vl10-hk1 vl10-hk2 vl11-chuong1 vl11-chuong2 vl11-chuong3 vl11-chuong4 vl12-chuong1 vl12-chuong2 vl12-chuong3 vl12-chuong4; do dung "$q"; done; fi
 echo "=== XONG $(date +%H:%M:%S)"
