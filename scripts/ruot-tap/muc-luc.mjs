@@ -26,6 +26,7 @@ print(json.dumps({'n': len(d), 'r': r}, ensure_ascii=False))`;
 const { n, r } = JSON.parse(execFileSync('/usr/bin/python3', ['-c', py, src], { encoding: 'utf8' }));
 if (!r.length) throw new Error('không thấy trang mở bài nào trong ' + src);
 
+const tenQ = tenQuyen || r[0].ch;   // quyển một chương: lấy "Vật lí X · Chương k: …" ở trang mở bài đầu
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
 const nhom = [];
 for (const [i, e] of r.entries()) {
@@ -50,7 +51,7 @@ h1{margin:0;font-size:7mm;color:#1d3a78;letter-spacing:.4mm}.q{font-size:4mm;col
 .ch span,.bai span{flex:0 1 auto}.ch i,.bai i{flex:1 1 auto;border-bottom:.35mm dotted #8a94b0;min-width:6mm}.ch b,.bai b{flex:none;font-weight:700}
 .note{margin-top:7mm;font-size:3mm;color:#5f6a88;line-height:1.5;border-top:.25mm solid #d3dbec;padding-top:2mm}
 </style></head><body>
-<section class="page"><h1>MỤC LỤC</h1><div class="q">${esc(tenQuyen)}</div>${dong}
+<section class="page"><h1>MỤC LỤC</h1><div class="q">${esc(tenQ)}</div>${dong}
 <div class="note">Mỗi bài 12 trang: học bài mới · bài tập mẫu · bài tương tự · sửa bài · làm lại câu sai. Số trang ghi ở chân mỗi trang.</div></section>
 <section class="page"></section>
 </body></html>`;
