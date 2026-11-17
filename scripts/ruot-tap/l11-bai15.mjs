@@ -165,10 +165,10 @@ ${foot(5)}</section>`;
 const tbDe = (ls1, ls2) => `<table style="text-align:center;margin:.6mm 0"><tr><th style="width:21mm;text-align:left">Lần</th>${ls1.map((_, i) => `<th>${i + 1}</th>`).join('')}</tr>`
   + `<tr><td style="text-align:left">${l1} (cm)</td>${ls1.map((x) => `<td>${x}</td>`).join('')}</tr><tr><td style="text-align:left">${l2} (cm)</td>${ls2.map((x) => `<td>${x}</td>`).join('')}</tr></table>`;
 const dang = [
-  { t: 'Dạng 1 · Dễ · Mức cường độ âm: từ cường độ ra dB và từ dB ra cường độ',
+  { t: 'Dạng 1 · Dễ · Mức cường độ âm: từ I ra dB và ngược lại',
     de: `Loa phát âm ${Hz('800')}; máy đo ghi ${nw(m('I=4{,}0\\cdot10^{-7}\\ \\mathrm{W/m^2}'))}. Lấy ${nw(m('I_0=10^{-12}\\ \\mathrm{W/m^2}'))}.<br><b>a)</b> mức cường độ âm ${m('L')}<br><b>b)</b> ${m('I')} tăng 100 lần: ${m('L')} lúc này<br><b>c)</b> bàn khác máy đo ${nw(m('L=85\\ \\mathrm{dB}'))}: cường độ âm ${m('I')}`,
     nd: `${nw(`${m('L=10\\lg')} ${tall(20)}`)}; ${m('I')} gấp 100 lần thì ${m('L')} tăng ${f(12)} dB; ${nw(`${m('I=I_0\\cdot10^{L/10}')}`)}`, a: ['a', 'b', 'c'], gi: 5 },
-  { t: 'Dạng 2 · Trung bình · Ống một đầu kín: dự đoán các vị trí cộng hưởng',
+  { t: 'Dạng 2 · Trung bình · Ống một đầu kín: các vị trí cộng hưởng',
     de: `Ống thẳng đứng dài ${cm('67')}, loa ở miệng ống phát ${Hz('600')}; phòng ${nw(m('15\\ ^\\circ\\mathrm C'))}; ${nw(m('e=0{,}5\\ \\mathrm{cm}'))}. Mặt nước hạ dần từ miệng ống xuống.<br><b>a)</b> ${v} và ${lam}<br><b>b)</b> ${l1} và ${l2} của hai lần to nhất đầu<br><b>c)</b> có nghe được lần to nhất thứ ba không (so với chiều dài ống)`,
     nd: `${nw(`${v} = 331 + 0,6${m('t')}`)}; ${nw(`${l1} + ${e} = ${tall(16)}`)}; lần ba ${nw(`${m('l_3+e=')} ${tall(16)}`)} so với 67 cm`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 3, gi: 6 },
   { t: `Dạng 3 · Trung bình · Từ hai lần cộng hưởng tính ${m('\\lambda')}, ${m('v')}, ${m('e')}`,

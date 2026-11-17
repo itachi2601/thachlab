@@ -120,14 +120,14 @@ ${head('THÍ NGHIỆM TẤM VÁN · MA SÁT LĂN · TRẢ BÀI')}
 ${h3(1, 'Thí nghiệm: nâng dần tấm ván', '3·1')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Quan sát:</b> hộp bắt đầu trượt khi ${nw('h ≈ 0,34 m')}; búng nhẹ thì hộp trượt đều khi ${nw('h ≈ 0,29 m')}. ${nw(m('\\sin\\alpha=h/L'))}.</div>
-<div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)} ⇒ ${nw(`${m('\\mu_n=')} ${f(14)}`)} ${nw(`${m('\\approx')} ${f(12)}`)}</div>
+<div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)}<br>⇒ ${nw(`${m('\\mu_n=')} <span class="fill" style="min-width:16mm;height:9mm"></span> ${m('\\approx')} ${f(14)}`)}</div>
 <div style="margin-top:.6mm">Trượt đều: ${nw(`${m('\\mu=\\tan\\alpha\\approx')} ${f(12)}`)}; so với bảng ở Tập 62·3: ${ck}khớp ${ck}lệch</div></div>
 ${H.nangVan()}</div>
 ${h3(2, 'II.5 · Ma sát lăn · có lợi, có hại', '3·2')}
 <div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
 <div>Ma sát lăn có khi vật ${f(25)} trên bề mặt; ${ck}lớn hơn ${ck}nhỏ hơn ma sát trượt rất nhiều.</div>
-<div>Có lợi: ${f(40)} · ${f(40)}</div>
-<div>Có hại: ${f(40)} · ${f(40)}</div>
+<div style="white-space:nowrap">Có lợi: ${f(37)} ; ${f(37)}</div>
+<div style="white-space:nowrap">Có hại: ${f(37)} ; ${f(37)}</div>
 <table style="margin-top:1mm;font-size:var(--fs-sm)"><tr><th style="width:17mm"></th><th>Nghỉ</th><th>Trượt</th><th>Lăn</th></tr>
 <tr style="height:11mm"><td>Khi nào</td><td></td><td></td><td></td></tr><tr style="height:11mm"><td>Độ lớn</td><td></td><td></td><td></td></tr></table></div>
 ${H.gaiLop()}</div>
@@ -194,10 +194,10 @@ const dang = [
     nd: `${nw(`${m('N=mg-')} ${f(14)}`)}; phương ngang: ${nw(`${f(14)} − ${Fmst} ${m('=ma')}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.d3 },
   { t: 'Dạng 4 · Khá · Trượt xuống mặt phẳng nghiêng',
     de: `Bao hàng ${m('12\\ \\mathrm{kg}')} thả không vận tốc đầu ở đỉnh tấm ván dốc dài ${nw(`${m('5{,}0\\ \\mathrm m')},`)} nghiêng ${nw(`${m('35^\\circ')};`)} ${nw(`${m('\\mu=0{,}30')};`)} ${nw(`${g98}.`)}<br><b>a)</b> áp lực lên ván và lực ma sát trượt<br><b>b)</b> gia tốc của bao hàng<br><b>c)</b> tốc độ khi tới chân ván`,
-    nd: `${nw(`${m('N=')} ${f(16)}`)}; ${nw(`${m('a=g(')} ${f(22)} ${m(')')}`)}, khối lượng ${ck}triệt tiêu ${ck}cần biết`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4, cot: 2 },
+    nd: `${nw(`${m('N=')} ${f(16)}`)}; ${nw(`${m('a=g(')} ${f(32)} ${m(')')}`)}, khối lượng ${ck}triệt tiêu ${ck}cần biết`, a: ['a', 'b', 'c'], gi: 5, fig: H.d4, cot: 2 },
   { t: 'Dạng 5 · Khó · Lên dốc rồi có tụt xuống không',
     de: `Vật ${m('3{,}0\\ \\mathrm{kg}')} ở chân dốc nghiêng ${nw(`${m('25^\\circ')},`)} được truyền vận tốc đầu ${m('6{,}0\\ \\mathrm{m/s}')} dọc dốc, hướng lên; ${nw(m('\\mu=0{,}20'))} (coi ma sát nghỉ cực đại bằng ma sát trượt); ${nw(`${g98}.`)}<br><b>a)</b> gia tốc lúc đi lên và quãng đường đi lên được<br><b>b)</b> tới điểm cao nhất, vật nằm yên hay trượt xuống<br><b>c)</b> nếu vật về tới chân dốc: tốc độ khi đó`,
-    nd: `lên dốc: ma sát hướng ${f(14)}; ở đỉnh so ${m('\\tan\\alpha')} với ${f(12)}; xuống dốc ma sát ${ck}đổi chiều ${ck}giữ chiều`, a: ['a', 'b', 'c'], gi: 7, fig: H.d5, cot: 2 },
+    nd: `lên dốc: ma sát hướng ${f(25)}; ở đỉnh so ${m('\\tan\\alpha')} với ${f(16)}; xuống dốc ma sát ${ck}đổi chiều ${ck}giữ chiều`, a: ['a', 'b', 'c'], gi: 7, fig: H.d5, cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm (40 mm khi ý dài) đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…

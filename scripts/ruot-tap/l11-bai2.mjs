@@ -181,13 +181,13 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: `Dạng 1 · Dễ · Đọc phương trình: ${A}, ${w}, ${ph}, ${T}, ${m('f')} và li độ`,
-    de: `${nw(`${m('x=8\\cos\\left(5\\pi t-\\frac{\\pi}{3}\\right)')} cm`)}, ${m('t')} tính bằng giây.<br><b>a)</b> biên độ ${A} (a<sub>1</sub>), tần số góc ${w} (a<sub>2</sub>), pha ban đầu ${ph} (a<sub>3</sub>)<br><b>b)</b> chu kì ${T} (b<sub>1</sub>), tần số ${m('f')} (b<sub>2</sub>)<br><b>c)</b> li độ lúc ${nw('t = 0,1 s')}`,
+    de: `${nw(`${m('x=8\\cos\\left(5\\pi t-\\frac{\\pi}{3}\\right)')} cm`)}, ${m('t')} tính bằng giây.<br><b>a)</b> biên độ ${A} (a<sub>1</sub>), tần số góc ${w} (a<sub>2</sub>), pha ban đầu ${ph} (a<sub>3</sub>)<br><b>b)</b> chu kì ${T} (b<sub>1</sub>), tần số ${m('f')} (b<sub>2</sub>) &nbsp; <b>c)</b> li độ lúc ${nw('t = 0,1 s')}`,
     nd: `So với ${pt}: dấu trừ trong ngoặc thuộc về ${f(12)}; thế ${m('t')} vào cả pha, máy tính để chế độ ${f(14)}`,
-    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 2, cot: 6 },
+    a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 5, cot: 6 },
   { t: 'Dạng 2 · Trung bình · Viết phương trình từ li độ và chiều lúc t = 0',
     de: `Vật dao động điều hoà với ${nw('A = 6 cm')}, ${nw('T = 0,5 s')}. Chọn ${t0} lúc vật ở ${nw(`${m('x=-3')} cm`)} và đang đi theo chiều dương.<br><b>a)</b> viết phương trình dao động<br><b>b)</b> kể từ ${t0}, sau bao lâu vật lần đầu tới biên dương`,
     nd: `${m('\\cos\\varphi=x_0/A')} cho ${f(12)} góc đối nhau; chọn dấu của ${ph} theo ${f(30)}`,
-    a: ['a', 'b'], gi: 6, cot: 2 },
+    a: ['a', 'b'], gi: 4, cot: 2 },
   { t: 'Dạng 3 · Trung bình · Độ lệch pha: sớm hay trễ, lệch bao lâu',
     de: `<div class="fig-side d3x" style="grid-template-columns:1fr 34mm"><div>${nw(`${m('x_1=3\\cos\\left(4\\pi t+\\frac{\\pi}{6}\\right)')} cm`)} và ${nw(`${m('x_2=5\\cos\\left(4\\pi t-\\frac{\\pi}{3}\\right)')} cm`)}.<br><b>a)</b> dao động nào sớm pha (a<sub>1</sub>), lệch pha bao nhiêu (a<sub>2</sub>)<br><b>b)</b> đỉnh dương của dao động sớm pha đến trước bao lâu<br><b>c)</b> viết ${m('x_3')} cùng biên độ với ${m('x_1')}, ngược pha với ${m('x_1')}</div>${H.haiBanKinh()}</div>`,
     nd: `${ph} lớn hơn thì ${f(16)} pha; ${nw(`${m('\\Delta t=')} ${f(14)}`)}; ngược pha: ${nw(`${m('\\varphi_3=\\varphi_1\\pm')} ${f(12)}`)}, ghi trong ${m('(-\\pi;\\pi]')}`,

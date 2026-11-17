@@ -122,7 +122,7 @@ export const hinhL11b5 = {
   // Trang 2 · theo thời gian
   theoT: (cap = 'Thả từ biên lúc t = 0. Nét liền: E<sub>t</sub>; nét đứt: E<sub>d</sub>.') => theoT(cap),
   // Trang 3 · thí nghiệm năm vạch
-  namVach: (cap = 'k = 40 N/m, A = 8,0 cm. Năm vạch đánh dấu từ VTCB ra biên.') => conLac({ cap, xv: 104, nhan: ['−8,0', '0', '8,0'], dau: [[52, '4,0'], [73.5, ''], [90, '']], id: 'c3' }),
+  namVach: (cap = 'A = 8,0 cm. Năm vạch đánh dấu từ VTCB ra biên.') => conLac({ cap, xv: 104, nhan: ['−8,0', '0', '8,0'], dau: [[52, '4,0'], [73.5, ''], [90, '']], id: 'c3' }),
   // Trang 4 · bài toán mẫu
   mau: (cap = 'A = 8,0 cm; vật đang ở x = 4,0 cm.') => conLac({ cap, xv: 52, nhan: ['−8 cm', 'O', '+8 cm'], dau: [[52, '4 cm']], id: 'c4' }),
   // Trang 5 · thử thách đổi biên độ

@@ -116,7 +116,7 @@ ${h3(3, 'II.3 · Quan hệ pha và vị trí đặc biệt', '2·3')}
 <tr><td>${m('\\pm A\\sqrt3/2')}</td><td style="height:7mm"></td><td></td></tr>
 <tr><td>${m('\\pm A')}</td><td></td><td></td></tr></table></div>
 <div class="hint" style="margin-top:.6mm">Bảng phải: ghi theo ${vmx} và ${amx} (vd ${m('v_{\\max}/2')}). ${vmx} ở đây là tốc độ cực đại ${m('A\\omega')}.</div>
-<div class="card soft" style="margin-top:.8mm;padding:1mm 3mm"><b>Áp dụng:</b> ${u('A=4\\ \\mathrm{cm}')}, ${u('\\omega=10\\ \\mathrm{rad/s}')}. Tại ${u('x=-2\\ \\mathrm{cm}')} (tức ${m('-A/2')}): ${m('|v|=')} ${f(16)} cm/s · ${m('a=')} ${f(16)} cm/s² (ghi dấu)</div>
+<div class="card soft" style="margin-top:.8mm;padding:1mm 3mm"><b>Áp dụng:</b> ${u('A=4\\ \\mathrm{cm}')}, ${u('\\omega=10\\ \\mathrm{rad/s}')}. Tại ${u('x=-2\\ \\mathrm{cm}')} (tức ${m('-A/2')}): ${nw(`${m('|v|=')} ${f(16)} cm/s`)} · ${nw(`${m('a=')} ${f(16)} cm/s²`)} (ghi dấu)</div>
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">

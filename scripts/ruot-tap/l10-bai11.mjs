@@ -72,7 +72,7 @@ ${h3(4, `II.1 · Nhắc lại: bi thả từ nghỉ, ${m('s=\\tfrac12 gt^2')}`, 
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>Rơi tự do từ nghỉ: ${m('v_0=')} ${f(8)}, ${m('a=')} ${f(8)}. Suy ra ${nw(`${g} = `)} ${f(24)}</div>
 <div class="hint" style="margin:.3mm 0">Đơn vị: ${dv}</div>
-<div>Đồ thị ${s_} theo ${m('t^2')}: đường ${f(22)}, đi qua ${f(14)}; độ dốc ${m('k=')} ${f(10)}, nên ${nw(`${g} = `)} ${f(14)}</div>
+<div>Đồ thị ${s_} theo ${m('t^2')}: đường ${f(22)}, đi qua ${f(25)}; độ dốc ${m('k=')} ${f(10)}, nên ${nw(`${g} = `)} ${f(14)}</div>
 <div style="margin-top:.6mm">Hai điểm (1), (2) trên đường: ${nw(`${m('k=')} <span class="fill" style="min-width:34mm;height:10mm"></span>`)}</div></div>
 ${H.duongS()}</div>
 ${foot(1)}</section>`;
@@ -106,7 +106,7 @@ const p3 = `<section class="page">
 ${head('CÁC BƯỚC ĐO · HAI CÁI BẪY SỐ LIỆU')}
 ${h3(1, 'II.3 · Các bước đo', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div class="trap"><b>1.</b><span>Dựng giá thẳng đứng, đặt cổng quang cách mép dưới bi ${S('0{,}500')}. Đo ${s_} bằng ${f(14)}.</span></div>
+<div class="trap"><b>1.</b><span>Dựng giá thẳng đứng, đặt cổng quang cách mép dưới bi ${S('0{,}500')}. Đo ${s_} bằng ${f(25)}.</span></div>
 <div class="trap"><b>2.</b><span>Thả bi: ngắt công tắc, đọc ${t_} trên đồng hồ, ghi bảng (tr. ${4 + OFF}). Thả ${f(8)} lần ở cùng độ cao.</span></div>
 <div class="trap"><b>3.</b><span>Tính ${tb}, ${dt}, ${gb}, ${dl}, ${dg}; viết ${nw(m('g=\\bar g\\pm\\Delta g'))}.</span></div>
 <div class="trap"><b>4.</b><span>Đổi độ cao ${nw(m('s=0{,}200;\\ 0{,}300;\\ \\dots;\\ 0{,}600\\ \\mathrm m'))}, thả 5 lần mỗi độ cao, lấy ${tb}; vẽ đồ thị (tr. ${5 + OFF}).</span></div></div>
@@ -175,7 +175,7 @@ const t4 = (a) => nw(`${m('t=')} ${a.join('; ')} s`);
 const dang = [
   { t: 'Dạng 1 · Dễ · Tính g từ một lần đo; ghi nhầm gốc của s',
     de: `Thả bi từ nghỉ: quãng đường ${S('0{,}450')}, đồng hồ ghi ${Ts('0{,}303')}.<br><b>a)</b> gia tốc rơi tự do ${g}<br><b>b)</b> nhóm đo ${s_} từ mặt nam châm (dài hơn thật ${nw(m('0{,}010\\ \\mathrm m'))}) nên ghi ${S('0{,}460')}: ${g} nhóm tính<br><b>c)</b> ${g} ở câu b) lớn hơn ${g} ở câu a) bao nhiêu phần trăm`,
-    nd: `${nw(`${g} = `)} ${f(22)}; ${s_} ở tử số, ${s_} lớn hơn thì ${g} ${f(10)}`, a: ['a', 'b', 'c'], gi: 3, fig: H.boTri('Bố trí đo của đề.', false), fw: 46 },
+    nd: `${nw(`${g} = `)} ${f(22)}; ${s_} ở tử số, ${s_} lớn hơn thì ${g} ${f(10)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.boTri('Bố trí đo của đề.', false), fw: 46 },
   { t: 'Dạng 2 · Trung bình · Bốn lần đo: trung bình, sai số, kết quả có sai số',
     de: `Thả bi từ ${S('0{,}600')} (${dcs}). Bốn lần đo ${t4(['0,350', '0,352', '0,351', '0,351'])}.<br><b>a)</b> ${tb} và ${dt}<br><b>b)</b> ${gb}<br><b>c)</b> sai số tương đối ${dl}<br><b>d)</b> ${dg} và kết quả ${nw(m('g=\\bar g\\pm\\Delta g'))}<br><b>e)</b> khoảng ${nw(m('\\bar g\\pm\\Delta g'))} có chứa ${nw(m('9{,}8\\ \\mathrm{m/s^2}'))} không`,
     nd: `${nw(`${m('\\Delta t_i')}: ${f(10)}; ${f(10)}; ${f(10)}; ${f(10)}`)}; ${nw(`${dt} = ${m('\\overline{\\Delta t}')} + ${f(10)}`)}; ${nw(`${dl} = ${f(14)} + 2·${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c', 'd<sub>1</sub>', 'd<sub>2</sub>', 'e'], cot: 4, gi: 6 },

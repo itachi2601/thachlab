@@ -69,12 +69,12 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 ${h3(4, 'II.1 · Quỹ đạo, độ dịch chuyển và quãng đường', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Quỹ đạo:</b> đường vật ${f(25)} khi chuyển động. <b>Chuyển động thẳng:</b> quỹ đạo là ${f(25)}.</div>
-<div><b>Chuyển động thẳng đều:</b> quỹ đạo thẳng, đi ${f(14)} chiều, tốc độ ${f(25)}.</div>
+<div><b>Chuyển động thẳng đều:</b> đi ${f(25)} chiều, tốc độ ${f(25)}.</div>
 <div class="fig-side" style="${fs(50)};margin-top:.6mm"><div>
 <div>Đi một chiều: ${m('\\lvert d\\rvert')} ${f(12)} ${m('s')}</div>
-<div>Quay đầu: ${m('s')} vẫn ${f(25)}, ${m('d')} giảm, có thể ${f(14)}</div>
-<div style="margin-top:.8mm">Tốc độ trung bình: ${m('v_{\\mathrm{tb}}=')} ${f(14)} (không âm)</div>
-<div style="margin-top:.8mm">Vận tốc trung bình: ${m('\\vec v_{\\mathrm{tb}}=')} ${f(14)} (có dấu)</div>
+<div>Quay đầu: ${m('s')} vẫn ${f(25)}, ${m('d')} giảm, có thể ${f(25)}</div>
+<div style="margin-top:.8mm">Tốc độ trung bình: ${m('v_{\\mathrm{tb}}=')} <span class="fill" style="min-width:16mm;height:9mm"></span> (không âm)</div>
+<div style="margin-top:.8mm">Vận tốc trung bình: ${m('\\vec v_{\\mathrm{tb}}=')} <span class="fill" style="min-width:16mm;height:9mm"></span> (có dấu)</div>
 <div style="margin-top:.8mm">Hình bên: ${nw(`${m('s=')} ${f(12)}&nbsp;m`)} · ${nw(`${m('d=')} ${f(12)}&nbsp;m`)}</div>
 <div style="margin-top:.8mm"><b>Thử ngay:</b> trượt ${nw('25 m')} theo chiều dương rồi quay lại ${nw('15 m')}: ${nw(`${m('s=')} ${f(12)}&nbsp;m`)} · ${nw(`${m('d=')} ${f(12)}&nbsp;m`)}</div></div>
 ${H.truotBang()}</div></div>
@@ -119,7 +119,7 @@ ${h3(1, 'II.4 · Độ dốc là vận tốc', '3·1')}
 <div class="card" style="padding:1.2mm 3mm;margin-bottom:1mm">
 <div>${m('v=')} ${f(25)} ${m('=')} ${f(25)}</div>
 <div>Lấy hai điểm ${f(25)} trên đường, giữ đơn vị.</div>
-<div>Nhanh hay chậm: so ${f(25)} độ dốc, bỏ ${f(12)}.</div></div>
+<div>Nhanh hay chậm: so ${f(25)} độ dốc, bỏ ${f(25)}.</div></div>
 <table><tr><th style="width:26mm">Dạng đường</th><th>Vật đang…</th></tr>
 <tr><td>Đi lên, dốc nhiều</td><td></td></tr>
 <tr><td>Đi lên, dốc ít</td><td></td></tr>
@@ -132,7 +132,7 @@ ${wl('Chấm tròn (đường 1 cắt đường 4) cho biết gì về hai xe? C
 ${h3(2, 'II.5 · Đọc đồ thị: kể lại chuyển động', '3·2')}
 <div class="fig-side" style="${fs(50)}"><div class="card" style="padding:1.2mm 3mm;margin:0">
 <div>Chia đồ thị theo các ${f(25)}.</div>
-<div>Mỗi đoạn: dấu độ dốc cho ${f(25)};</div><div>độ lớn cho ${f(25)}; nằm ngang là ${f(14)}.</div>
+<div>Mỗi đoạn: dấu độ dốc cho ${f(25)};</div><div>độ lớn cho ${f(25)}; nằm ngang là ${f(25)}.</div>
 <div>Đang đi lên chuyển sang đi xuống: vật ${f(25)}.</div>
 <div style="margin-top:.6mm"><b>Thí nghiệm đi bộ:</b> thước dây 10 m dọc hành lang; một bạn đi chậm ra tới vạch 5 m, đứng 3 s, bước nhanh về vạch 0; bạn khác ghi vị trí mỗi giây.</div>
 <div><b>Rút ra:</b> mỗi kiểu đi cho ${f(25)}.</div></div>
@@ -140,8 +140,8 @@ ${H.diBo()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Đồ thị là con đường.”</b> Trục đứng là ${f(25)} của vật, không phải độ cao.</span></div>
-<div class="trap">${ck}<span><b>“Đường nằm cao hơn là xe nhanh hơn.”</b> Cao là ${f(14)} · dốc là ${f(14)}; hai đường cắt nhau: hai vật ${f(14)}.</span></div>
-<div class="trap">${ck}<span><b>“Đọc quãng đường ở điểm cuối.”</b> ${m('d=')} ${f(25)} · ${m('s=')} cộng ${f(14)} của từng đoạn.</span></div></div>
+<div class="trap">${ck}<span><b>“Đường nằm cao hơn là xe nhanh hơn.”</b> Cao là ${f(25)} · dốc là ${f(25)}; hai đường cắt nhau: hai vật ${f(25)}.</span></div>
+<div class="trap">${ck}<span><b>“Đọc quãng đường ở điểm cuối.”</b> ${m('d=')} ${f(25)} · ${m('s=')} cộng ${f(25)} của từng đoạn.</span></div></div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -196,7 +196,7 @@ const dang = [
     a: ['b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>', 'b<sub>4</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 6, fig: H.d1(), cot: 3 },
   { t: 'Dạng 2 · Trung bình · Độ dốc: vận tốc từng đoạn và trung bình',
     de: `Người đi bộ trên đường thẳng; chiều dương ra xa cột mốc O, gốc thời gian lúc bắt đầu đi; đồ thị ${dt} (${m('d')} tính từ O) ở hình cạnh ô giải.<br><b>a)</b> vận tốc trên đoạn 1 (a<sub>1</sub>), đoạn 2 (a<sub>2</sub>), đoạn 3 (a<sub>3</sub>)<br><b>b)</b> những lúc người đó cách O ${nw('10 m')}<br><b>c)</b> vận tốc trung bình (c<sub>1</sub>) và tốc độ trung bình (c<sub>2</sub>) trong cả ${nw('50 s')}`,
-    nd: `hai điểm trên ${f(14)} đoạn; trung bình: ${m('d/\\Delta t')} và ${m('s/\\Delta t')}, không lấy ${f(25)} các vận tốc`,
+    nd: `hai điểm trên ${f(25)} đoạn; trung bình: ${m('d/\\Delta t')} và ${m('s/\\Delta t')}, không lấy ${f(25)} các vận tốc`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'a<sub>3</sub>', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 6, fig: H.d2(), cot: 3 },
   { t: 'Dạng 3 · Trung bình · Hai đồ thị thẳng: phương trình, chỗ gặp nhau',
     de: `Hai ô tô chạy trên đường thẳng nối bến A và B; xe I xuất phát từ A, xe II từ B. Gốc toạ độ tại A, chiều dương A ${m('\\to')} B, gốc thời gian lúc hai xe cùng xuất phát; đồ thị toạ độ – thời gian ở hình cạnh ô giải.<br><b>a)</b> vận tốc xe I (a<sub>1</sub>), xe II (a<sub>2</sub>)<br><b>b)</b> phương trình chuyển động xe I (b<sub>1</sub>), xe II (b<sub>2</sub>)<br><b>c)</b> hai xe gặp nhau lúc nào (c<sub>1</sub>), cách A bao nhiêu km (c<sub>2</sub>)`,

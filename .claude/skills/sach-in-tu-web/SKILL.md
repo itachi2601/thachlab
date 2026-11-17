@@ -118,8 +118,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   **lật ngược 180°** (`transform:rotate(180deg)`) để HS không liếc thấy trước. Đề bài phải ghi đủ hằng số cần (N_A, e, 1 u) cho
   CẢ hai bài trong dạng. Dòng "Bài tương tự … /2" ở trang Bài tập mẫu phải khớp số bài thật. Để vẫn 12 trang thì bỏ 2 trang ghi chú
   tự do (quy ước "ghi chú đúng 2 trang" cũ không còn áp cho bài 14); thứ tự bài 14 hiện nay: 1–5 học bài mới · 6–7 Bài tập mẫu ·
-  8–9 Bài tương tự · 10 sửa bài trên lớp · 11 sửa bài kiểm tra chương · 12 làm lại câu sai + QR. **Bài 15–18 (`khung.mjs`) vẫn
-  bố cục cũ, chưa có trang Bài tương tự** — làm thì chép `bai14-tuongtu.mjs`.
+  8–9 Bài tương tự · 10 sửa bài trên lớp · 11 sửa bài kiểm tra chương · 12 làm lại câu sai + QR. Bài 15–18 đã sang bố cục này (16/11, `tuongTu.vo`).
 - **Ảnh raster phải có trên máy dựng**: `scripts/ruot-tap/anh/` bị gitignore nên worktree mới không có → ảnh vỡ chỉ còn chữ alt,
   script vẫn báo thành công. Chép từ `/Users/MAC/Documents/THPT/số hoá THPT/ruot-tap-anh/` vào `scripts/ruot-tap/anh/` rồi dựng, và
   kiểm `pdfimages -list <pdf>` (trang có hình Halliday phải có ảnh cỡ hàng trăm px, không phải 14×16 px).
@@ -196,6 +195,9 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-13 · App giới hạn 20 `SendMessage` tới phiên khác mỗi lượt thầy nhắn → HS ảo ghi lỗi từng bài ra file (`out/loi-hs-ao-*.md`), phiên chính gửi tin trỏ ngắn, xếp ≤20 phiên mỗi lượt.
 - 2026-11-13 · Agent HS ảo bị compact/giới hạn lượt giữa chừng mất chi tiết → dặn agent ghi lỗi vào file sau MỖI bài, không gom đến cuối.
 - 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → Source Sans 3 nhúng KHÔNG có π (bỏ span thì ra Helvetica): ký hiệu Hy Lạp trong chú thích hình viết bằng KaTeX thật hoặc diễn đạt lại bằng chữ, rồi kiểm `pdffonts` quyển ghép.
+
+- 2026-11-16 · HS ảo lượt 2 (6 quyển, Sonnet đọc `pdftotext` + đo ô bằng puppeteer, không ảnh) vẫn bắt ~70 lỗi B sau lượt 1, phần lớn do lượt sửa trước tạo ra (thêm dòng giải → gộp ý; ô mới hẹp) → mỗi lượt sửa phải chạy lại checklist ô/dòng giải, không chỉ "dư ≥ 0". Sửa bằng subagent Opus một quyển một agent trong cùng worktree (file bài tách nhau) nhanh hơn gửi về 37 phiên bài.
+- 2026-11-16 · Chữ Hy Lạp gõ trơn (γ, β, α) trong đề/chú thích → Chrome lấy Helvetica (Source Sans 3 không có Hy Lạp) → viết bằng KaTeX `m()`; alt của ảnh không chứa được KaTeX nên tách alt khỏi chú thích.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).

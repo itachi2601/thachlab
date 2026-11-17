@@ -6,7 +6,9 @@ const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 
-const p1 = `<section class="page">
+// Bài tương tự giải vào vở: ô đáp số đặt cuối dòng của từng ý (như l10-bai23).
+const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
+const p1 = `${ttCss}<section class="page">
 ${head('BÀI 16 · PHÂN HẠCH · NHIỆT HẠCH', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
@@ -23,7 +25,7 @@ ${opt('B', 'Hạt nhân urani vỡ ra, khối lượng nghỉ thành năng lư�
 ${opt('C', 'Nhiệt còn lại trong lòng đất')}
 ${opt('D', 'Ma sát giữa nước và thanh nhiên liệu')}
 <div style="margin-top:1mm">${chon(10)}</div><div class="hint">Vì sao?</div>${lines(1)}</div>
-${hinh.phanHach('Một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia γ.')}</div>
+${hinh.phanHach(`Một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia ${m('\\gamma')}.`)}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
@@ -137,9 +139,47 @@ const dang = [
     nd: `Cho công suất và thời gian → ${m('E=')} ${f(8)}·${f(8)}, chia cho năng lượng ${f(10)} để đếm hạt nhân`, a: ['a', 'b', 'c'], gi: 4, fig: 'congSuat' },
 ];
 
+// Bài tương tự (thầy chốt 10/11): bài về nhà, giải vào vở; mỗi dạng 2 bài; đáp số tính bằng Python 16/11/2026
+// (1 u = 931,5 MeV/c², 1 MeV = 1,6·10⁻¹³ J, N_A = 6,02·10²³; khối lượng HẠT NHÂN, cùng bộ số với Dạng 3).
+const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
+  const y = p.match(/^<b>([a-d])\)<\/b>/);
+  if (!y) return `<div>${p}</div>`;
+  const ls = o.filter((l) => l[0] === y[1]);
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
+}).join('');
+const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: oY(b.de, b.o, b.ow), k: 0 } : b));
+const nhap = (n) => ({ t: '<span class="nhap-t">Nháp / chỗ em còn vướng</span>', de: lines(n), k: 0 });
+const n0 = '{}^{1}_{0}\\mathrm{n}';
+const MeVJ = nw(`${m('1\\ \\mathrm{MeV}=1{,}6\\cdot10^{-13}\\ \\mathrm{J}')}`);
+const NA = nw(m('N_A=6{,}02\\cdot10^{23}\\ \\mathrm{mol^{-1}}'));
+const u = `${m('1\\ \\mathrm{u}=931{,}5\\ \\mathrm{MeV}/c^2')}`;
+const tuongTu = {
+  vo: true,
+  tieuDe: ['DẠNG 1–3', 'DẠNG 4–5'],
+  trang: [[
+    { t: 'Dạng 1 · Bài 1', de: `(1) ${m('{}^{2}_{1}\\mathrm{H}+{}^{2}_{1}\\mathrm{H}\\to{}^{3}_{2}\\mathrm{He}+' + n0)}; (2) ${m(n0 + '+{}^{239}_{94}\\mathrm{Pu}\\to{}^{134}_{54}\\mathrm{Xe}+{}^{103}_{40}\\mathrm{Zr}+3\\,' + n0)}. Nơtron ba thế hệ trong lò: ${nw('40 000')}; ${nw('39 600')}; ${nw('39 204')}.<br><b>a)</b> loại phản ứng (1), (2)<br><b>b)</b> hệ số ${m('k')}; công suất lò đổi thế nào<br><b>c)</b> chỉnh thanh điều khiển ra sao`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
+    { t: 'Dạng 1 · Bài 2', de: `(1) ${m(n0 + '+{}^{235}_{92}\\mathrm{U}\\to{}^{140}_{55}\\mathrm{Cs}+{}^{93}_{37}\\mathrm{Rb}+3\\,' + n0)}; (2) ${m('{}^{2}_{1}\\mathrm{H}+{}^{3}_{2}\\mathrm{He}\\to{}^{4}_{2}\\mathrm{He}+{}^{1}_{1}\\mathrm{H}')}. Nơtron ba thế hệ: ${nw('12 000')}; ${nw('12 000')}; ${nw('12 000')}.<br><b>a)</b> loại phản ứng (1), (2)<br><b>b)</b> hệ số ${m('k')}; công suất lò đổi thế nào<br><b>c)</b> chỉnh thanh điều khiển ra sao`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
+    { t: 'Dạng 2 · Bài 1', de: `(1) ${m(n0 + '+{}^{235}_{92}\\mathrm{U}\\to{}^{140}_{54}\\mathrm{Xe}+{}^{94}_{38}\\mathrm{Sr}+x\\,' + n0)}; (2) ${m('{}^{7}_{3}\\mathrm{Li}+{}^{1}_{1}\\mathrm{H}\\to{}^{4}_{2}\\mathrm{He}+{}^{A}_{Z}\\mathrm{X}')}<br><b>a)</b> ${m('x')}; điện tích hai vế có bằng nhau?<br><b>b)</b> hạt X`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    { t: 'Dạng 2 · Bài 2', de: `(1) ${m(n0 + '+{}^{235}_{92}\\mathrm{U}\\to{}^{141}_{56}\\mathrm{Ba}+{}^{92}_{36}\\mathrm{Kr}+x\\,' + n0)}; (2) ${m('{}^{2}_{1}\\mathrm{H}+{}^{2}_{1}\\mathrm{H}\\to{}^{3}_{1}\\mathrm{H}+{}^{A}_{Z}\\mathrm{X}')}<br><b>a)</b> ${m('x')}; điện tích hai vế có bằng nhau?<br><b>b)</b> hạt X`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    { t: 'Dạng 3 · Bài 1', de: `(1) ${m('{}^{2}_{1}\\mathrm{H}+{}^{2}_{1}\\mathrm{H}\\to{}^{3}_{2}\\mathrm{He}+' + n0)}; (2) ${m('{}^{27}_{13}\\mathrm{Al}+{}^{4}_{2}\\mathrm{He}\\to{}^{30}_{15}\\mathrm{P}+' + n0)}. ${m('m_D=2{,}013553')}, ${m('m_{He3}=3{,}014932')}, ${m('m_n=1{,}008665')}, ${m('m_{Al}=26{,}974406')}, ${m('m_{He4}=4{,}001506')}, ${m('m_P=29{,}970085')} (u); ${u}; ${nw(`${MeVJ}.`)}<br><b>a)</b> ${m('W')} của (1) theo MeV và J<br><b>b)</b> (2) toả hay thu? bao nhiêu MeV`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'] },
+    { t: 'Dạng 3 · Bài 2', de: `(1) ${m('{}^{7}_{3}\\mathrm{Li}+{}^{1}_{1}\\mathrm{p}\\to2\\,{}^{4}_{2}\\mathrm{He}')}; (2) ${m('{}^{7}_{3}\\mathrm{Li}+{}^{1}_{1}\\mathrm{p}\\to{}^{7}_{4}\\mathrm{Be}+' + n0)}. ${m('m_{Li}=7{,}014357')}, ${m('m_p=1{,}007276')}, ${m('m_{He}=4{,}001506')}, ${m('m_{Be}=7{,}014733')}, ${m('m_n=1{,}008665')} (u); ${u}; ${nw(`${MeVJ}.`)}<br><b>a)</b> ${m('W')} của (1) theo MeV và J<br><b>b)</b> (2) toả hay thu? bao nhiêu MeV`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'] },
+  ], [
+    { t: 'Dạng 4 · Bài 1', de: `D + T → He + n toả ${nw(m('17{,}6\\ \\mathrm{MeV}'))}. Lò đốt hết ${m('0{,}30\\ \\mathrm g')} triti (${m('M=3{,}0\\ \\mathrm{g/mol}')}), đơteri dư; ${NA}; ${MeVJ}; than ${nw(`${m('2{,}7\\cdot10^{7}\\ \\mathrm{J/kg}')}.`)}<br><b>a)</b> số phản ứng<br><b>b)</b> năng lượng toả ra (J)<br><b>c)</b> bằng đốt bao nhiêu kg than`, o: ['a', 'b', 'c'], ow: 30 },
+    { t: 'Dạng 4 · Bài 2', de: `${m('{}^{7}_{3}\\mathrm{Li}+{}^{1}_{1}\\mathrm{p}\\to2\\,{}^{4}_{2}\\mathrm{He}')} toả ${nw(m('17{,}3\\ \\mathrm{MeV}'))}. Đốt hết ${m('1{,}4\\ \\mathrm g')} liti-7 (${m('M=7{,}0\\ \\mathrm{g/mol}')}), prôtôn dư; ${NA}; ${MeVJ}; xăng ${nw(`${m('4{,}6\\cdot10^{7}\\ \\mathrm{J/kg}')}.`)}<br><b>a)</b> số phản ứng<br><b>b)</b> năng lượng toả ra (J)<br><b>c)</b> bằng đốt bao nhiêu kg xăng`, o: ['a', 'b', 'c'], ow: 30 },
+    { t: 'Dạng 5 · Bài 1', de: `Lò công suất nhiệt ${m('500\\ \\mathrm{MW}')} chạy liên tục 365 ngày, toàn bộ từ phân hạch U-235, mỗi phân hạch ${nw(m('200\\ \\mathrm{MeV}'))}; ${m('M=235\\ \\mathrm{g/mol}')}; ${NA}; ${MeVJ}; than ${nw(`${m('2{,}7\\cdot10^{7}\\ \\mathrm{J/kg}')}.`)}<br><b>a)</b> năng lượng lò toả ra (J)<br><b>b)</b> khối lượng U-235 đã phân hạch<br><b>c)</b> bằng đốt bao nhiêu tấn than`, o: ['a', 'b', 'c'], ow: 30 },
+    { t: 'Dạng 5 · Bài 2', de: `Nhà máy điện hạt nhân công suất <b>điện</b> ${m('1200\\ \\mathrm{MW}')}, hiệu suất ${m('30\\,\\%')}, chạy 24 giờ; U-235, mỗi phân hạch ${nw(m('200\\ \\mathrm{MeV}'))}; ${m('M=235\\ \\mathrm{g/mol}')}; ${NA}; ${MeVJ}; than ${nw(`${m('2{,}7\\cdot10^{7}\\ \\mathrm{J/kg}')}.`)}<br><b>a)</b> năng lượng nhiệt lò toả ra (J)<br><b>b)</b> khối lượng U-235 đã phân hạch<br><b>c)</b> bằng đốt bao nhiêu tấn than`, o: ['a', 'b', 'c'], ow: 30 },
+    nhap(7),
+  ]],
+  dap: [
+    `D1·1: a<sub>1</sub>) nhiệt hạch · a<sub>2</sub>) phân hạch · b<sub>1</sub>) k = 0,99 · b<sub>2</sub>) giảm dần · c) kéo bớt ra &nbsp;|&nbsp; D1·2: a<sub>1</sub>) phân hạch · a<sub>2</sub>) nhiệt hạch · b<sub>1</sub>) k = 1 · b<sub>2</sub>) không đổi · c) giữ nguyên &nbsp;|&nbsp; D2·1: a<sub>1</sub>) x = 2 · a<sub>2</sub>) có (92 = 54 + 38) · b) ${nw(`<sup>4</sup><sub>2</sub>He (hạt ${m('\\alpha')})`)} &nbsp;|&nbsp; D2·2: a<sub>1</sub>) x = 3 · a<sub>2</sub>) có (92 = 56 + 36) · b) ${nw('<sup>1</sup><sub>1</sub>H (prôtôn)')} &nbsp;|&nbsp; D3·1: a<sub>1</sub>) 3,27 MeV · a<sub>2</sub>) ${nw('5,23·10<sup>−13</sup> J')} · b<sub>1</sub>) thu · b<sub>2</sub>) 2,64 MeV &nbsp;|&nbsp; D3·2: a<sub>1</sub>) 17,3 MeV · a<sub>2</sub>) ${nw('2,78·10<sup>−12</sup> J')} · b<sub>1</sub>) thu · b<sub>2</sub>) 1,64 MeV`,
+    `D4·1: a) ${nw('6,02·10<sup>22</sup>')} · b) ${nw('1,70·10<sup>11</sup> J')} · c) ${nw('6,28·10<sup>3</sup> kg')} &nbsp;|&nbsp; D4·2: a) ${nw('1,20·10<sup>23</sup>')} · b) ${nw('3,33·10<sup>11</sup> J')} · c) ${nw('7,24·10<sup>3</sup> kg')} &nbsp;|&nbsp; D5·1: a) ${nw('1,58·10<sup>16</sup> J')} · b) ${nw('192 kg')} · c) ${nw('5,84·10<sup>5</sup> tấn')} &nbsp;|&nbsp; D5·2: a) ${nw('3,46·10<sup>14</sup> J')} · b) ${nw('4,22 kg')} · c) ${nw('1,28·10<sup>4</sup> tấn')}`,
+  ],
+};
+
 await K.dung({
   trang1to5: [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 2], kq: [[1, 2, 3], [4, 5]] },
+  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
   tra: 'bảo toàn 1·4 · năng lượng toả ra 1·5 · phân hạch 2·1 · hệ số k 2·2 · lò phản ứng 2·3 · nhiệt hạch 2·4 · bẫy 3·1 · dạng 1–3 → 6·1 · dạng 4–5 → 7·1',
   out: process.argv[2],
 });

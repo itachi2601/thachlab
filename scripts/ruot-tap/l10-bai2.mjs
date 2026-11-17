@@ -74,7 +74,7 @@ ${h3(4, 'II.1 · Đọc nhãn trên thiết bị', '1·4')}
 <div><b>Input</b> là đầu ${f(25)} (điện đi vào thiết bị); <b>Output</b> là đầu ${f(25)} (thiết bị cấp điện cho mạch).</div>
 <div><b>Định mức</b> là số ${f(25)} ghi trên nhãn dụng cụ: mức dụng cụ được thiết kế để hoạt động bình thường.</div></div>
 ${H.nhanNguon()}</div>
-<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; 12 V, vôn kế chỉ 3,1; 6,2; 9,3; 12,4 V. Bóng ghi 6 V mà núm ở vạch 12 V thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
+<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; ${nw('12 V')}, vôn kế chỉ 3,1; 6,2; 9,3; ${nw('12,4 V')}. Bóng ghi ${nw('6 V')} mà núm ở vạch ${nw('12 V')} thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -87,7 +87,7 @@ ${h3(1, 'II.2 · Kí hiệu: nhìn hình dạng và màu trước, hình bên tr
 <tr><td>(3) Tròn, xanh</td><td></td><td>phải làm</td></tr>
 <tr><td>(4), (5) Không có khung</td><td></td><td>nhận ra qua hình bên trong</td></tr></table>
 <div style="margin-top:1mm">Hình trong tam giác hay gặp: nhiệt độ cao · ${f(25)} · ${f(25)} · ${f(25)}</div>
-<div>Hình trong vòng cấm: ${f(25)} · hình trong vòng xanh: đeo ${f(25)}</div></div>
+<div>Hình trong vòng cấm (2): ${f(25)} · trong vòng xanh (3): đeo ${f(25)}</div></div>
 ${H.kiHieu()}</div>
 ${h3(2, 'Làm nhanh', '2·2')}
 ${box(cau(`<b>Câu 1.</b> Lọ cồn có hai nhãn: chất dễ cháy và cấm lửa. Trên bàn đang đốt đèn cồn và có bộ nguồn. Nên đặt lọ cồn ở đâu, nắp thế nào?`, 2)
@@ -105,7 +105,7 @@ ${head('THÍ NGHIỆM KHOẢNG CÁCH · BẪY · TRẢ BÀI')}
 ${h3(1, 'Thí nghiệm: càng xa ngọn lửa, càng bớt nóng', '3·1')}
 <div class="fig-side" style="${fs(48)}"><div>
 <div>Nhiệt độ phòng ${nw('25 °C')}, sai số mỗi số đọc ${nw('±1 °C')}; phần nóng hơn phòng ${dTdinh}.</div>
-<table class="tbl-ct"><tr><th style="width:34mm">Cách đèn (cm)</th><th>2</th><th>5</th><th>10</th><th>20</th></tr>
+<table class="tbl-ct"><tr><th style="width:30mm">Cách đèn (cm)</th><th style="width:13.5mm">2</th><th style="width:13.5mm">5</th><th style="width:13.5mm">10</th><th style="width:13.5mm">20</th></tr>
 <tr><td>Nhiệt kế chỉ (°C)</td><td>125</td><td>41</td><td>29</td><td>26</td></tr>
 <tr><td>${dT} (°C)</td><td></td><td></td><td></td><td></td></tr></table></div>
 ${H.khoangCach()}</div>
@@ -141,7 +141,7 @@ ${h3(3, 'Phân tích đề')}
 <tr><td style="height:6.5mm">“dây nguồn vắt ngang lối đi”</td><td></td></tr>
 <tr><td style="height:6.5mm">“tháo bóng khi nguồn còn bật”</td><td></td></tr>
 <tr><td style="height:6.5mm">“giáo viên chưa cho phép”</td><td></td></tr></table>
-${h3(4, 'Giải: các việc theo thứ tự')}
+${h3(4, 'Giải: các việc theo thứ tự (một việc có thể sửa hai lỗi)')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl('Việc 1:', 2)}${wl('Việc 2:', 2)}${wl('Việc 3:', 2)}${wl('Việc 4:', 2)}${wl('Kiểm lại: mỗi lỗi đã có việc sửa chưa?', 1)}</div>
 ${h3(5, 'Điền bước còn thiếu: bóng ghi 3 V, DC')}
@@ -170,12 +170,12 @@ const dang = [
   { t: 'Dạng 2 · Trung bình · Đọc kí hiệu qua hình dạng, màu rồi biết phải làm gì',
     de: `Thùng thu pin cũ dán bốn nhãn: <b>(1)</b> tam giác viền vàng, hình đầu lâu; <b>(2)</b> tròn đỏ gạch chéo, hình thùng rác; <b>(3)</b> tròn xanh, hình mặt nạ phòng độc; <b>(4)</b> hình cốc vỡ, không có khung.<br><b>a)</b> nhóm của mỗi nhãn; số nhãn có khung<br><b>b)</b> vứt pin vào thùng rác thường có được không, vì sao<br><b>c)</b> việc cần làm trước khi mở thùng`,
     nd: `nhìn ${f(25)} và ${f(25)} trước; tròn đỏ gạch chéo là nhóm ${f(25)}`, a: ['a', 'b', 'c'], gi: 4, fig: H.nhanThung(), cot: 2 },
-  { t: 'Dạng 3 · Khó · Giữ khoảng cách: đọc số đo, so với sai số, áp dụng quy tắc',
+  { t: 'Dạng 3 · Khó · Giữ khoảng cách: số đo, sai số, quy tắc',
     de: `Nhiệt kế đặt cạnh ngọn đèn cồn đang cháy, lần lượt cách ${m('3;\\ 8;\\ 15;\\ 30\\ \\mathrm{cm}')}, chỉ ${m('70;\\ 33;\\ 27;\\ 25{,}5\\ ^\\circ\\mathrm{C}')}. Nhiệt độ phòng ${m('25\\ ^\\circ\\mathrm{C}')}, sai số mỗi số đọc ${m('\\pm1\\ ^\\circ\\mathrm{C}')}.<br><b>a)</b> ${dT} ở 3 cm<br><b>b)</b> ${dT} giảm bao nhiêu từ 3 cm ra 8 cm<br><b>c)</b> vị trí gần đèn nhất mà ${m('\\Delta T\\le1\\ ^\\circ\\mathrm{C}')}<br><b>d)</b> quy tắc nào được minh hoạ; khi đèn đang cháy nên đứng thế nào`,
     nd: `${dTdinh} = ${f(12)} − ${f(12)}; ${m('\\Delta T\\le')} ${f(12)} °C thì chưa kết luận được là khác nhiệt độ phòng`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.khoangCach('Cách đèn 3; 8; 15; 30 cm.', [3, 8, 15, 30]), cot: 2 },
   { t: 'Dạng 4 · Khó · Xử lí sự cố bất ngờ ở bàn thực hành',
     de: `Đèn cồn trên bàn thực hành bị đổ, cồn cháy lan trên mặt bàn, gần bộ nguồn đang bật.<br><b>a)</b> việc đầu tiên của mọi bạn trong nhóm<br><b>b)</b> việc của bạn ngồi gần công tắc nguồn<br><b>c)</b> việc của bạn khác cùng lúc<br><b>d)</b> vì sao không tạt nước vội vào chỗ cháy`,
-    nd: `${f(25)} tay, lùi ra ${m('\\to')} ngắt ${f(25)} nếu an toàn ${m('\\to')} báo ${f(25)} ${m('\\to')} làm theo hướng dẫn`, a: ['a', 'b', 'c', 'd'], gi: 4, cot: 2 },
+    nd: `${f(25)} tay, lùi ra ${m('\\to')} ngắt ${f(25)} nếu an toàn ${m('\\to')} báo ${f(25)} ${m('\\to')} làm theo hướng dẫn`, a: ['a', 'b', 'c', 'd'], gi: 5, cot: 2 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python 13/11/2026. Giải vào vở (thầy chốt 10/11): ô đáp số theo nhãn ý, in lật ngược ở cuối trang.
@@ -192,8 +192,8 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–2', 'DẠNG 3–4'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: `Đèn pin nhỏ ghi <b>3 V, DC</b>, dây đỏ nối cực mang dấu ${m('+')}. Bộ nguồn: <b>Input 220 V ~</b>; Output có cổng DC (cực đỏ ${m('+')}, cực xanh ${m('-')}) và cổng AC; núm vạch 3; 6; 9; 12 V.<br><b>a)</b> loại dòng điện ở Input<br><b>b)</b> nối đèn vào cổng nào, núm ở vạch mấy vôn<br><b>c)</b> dây đỏ của đèn nối cực màu gì`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 28 },
-    { t: 'Dạng 1 · Bài 2', de: `Đèn bàn LED ghi <b>12 V, DC</b>. Hai bộ đổi nguồn: bộ A ghi <b>Input 220 V ~, Output 12 V, DC</b>; bộ B ghi <b>Input 220 V ~, Output 12 V, AC</b>.<br><b>a)</b> bộ nào dùng được với đèn<br><b>b)</b> đèn nối vào Input hay Output<br><b>c)</b> đầu nào của bộ đổi nguồn cắm vào ổ cắm điện`, o: ['a', 'b', 'c'], ow: 28 },
+    { t: 'Dạng 1 · Bài 1', de: `Đèn pin nhỏ ghi <b>3 V, DC</b>, dây đỏ nối cực mang dấu ${m('+')}. Bộ nguồn: <b>Input ${nw('220 V ~')}</b>; Output có cổng DC (cực đỏ ${m('+')}, cực xanh ${m('-')}) và cổng AC; núm vạch 3; 6; 9; 12 V.<br><b>a)</b> loại dòng điện ở Input<br><b>b)</b> nối đèn vào cổng nào, núm ở vạch mấy vôn<br><b>c)</b> dây đỏ của đèn nối cực màu gì`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], ow: 28 },
+    { t: 'Dạng 1 · Bài 2', de: `Đèn bàn LED ghi <b>12 V, DC</b>. Hai bộ đổi nguồn: bộ A ghi <b>Input ${nw('220 V ~')}, Output ${nw('12 V, DC')}</b>; bộ B ghi <b>Input ${nw('220 V ~')}, Output ${nw('12 V, AC')}</b>.<br><b>a)</b> bộ nào dùng được với đèn<br><b>b)</b> đèn nối vào Input hay Output<br><b>c)</b> đầu nào của bộ đổi nguồn cắm vào ổ cắm điện`, o: ['a', 'b', 'c'], ow: 28 },
     { t: 'Dạng 2 · Bài 1', de: `Tủ hoá chất dán ba nhãn: <b>(1)</b> tam giác viền vàng, hình tia chớp; <b>(2)</b> tròn đỏ gạch chéo, hình ngọn lửa; <b>(3)</b> tròn xanh, hình mặt nạ phòng độc.<br><b>a)</b> nhóm của nhãn (1)<br><b>b)</b> nhóm của nhãn (2)<br><b>c)</b> nhóm của nhãn (3)<br><b>d)</b> có được châm lửa thử cạnh tủ không`, fig: H.nhanTu('Ba nhãn trên tủ.'), fw: 40, o: ['a', 'b', 'c', 'd'], ow: 28 },
     { t: 'Dạng 2 · Bài 2', de: `Một tủ dán sáu nhãn: ba tam giác (chất dễ cháy, chất độc, tia laser), một tròn đỏ gạch chéo (cấm lửa), một tròn xanh (đeo mặt nạ phòng độc), một hình cốc vỡ không có khung.<br><b>a)</b> số nhãn có khung<br><b>b)</b> số nhãn thuộc nhóm cảnh báo<br><b>c)</b> nhãn nào cho biết việc không được làm<br><b>d)</b> nhãn cốc vỡ không có khung thì nhận ra qua gì (hình hay màu)`, o: ['a', 'b', 'c', 'd'], ow: 28 },
     nhap(8),
@@ -206,7 +206,7 @@ const tuongTu = {
   ]],
   dap: [
     `D1·1: a) xoay chiều · b<sub>1</sub>) DC · b<sub>2</sub>) 3 V · c) đỏ &nbsp;|&nbsp; D1·2: a) bộ A · b) Output · c) Input &nbsp;|&nbsp; D2·1: a) cảnh báo · b) cấm · c) bắt buộc · d) không &nbsp;|&nbsp; D2·2: a) 5 · b) 3 · c) cấm lửa · d) hình`,
-    `D3·1: a) 37 °C · b) 31 °C · c) 40 cm · d) không (30 cm chưa đo) &nbsp;|&nbsp; D3·2: a) 54 °C · b) 40 °C · c) 50 cm · d) 26 % &nbsp;|&nbsp; D4·1: a) dừng tay, lùi ra · b) tắt công tắc nguồn · c) giáo viên · d) không &nbsp;|&nbsp; D4·2: a) dừng tay, lùi ra · b) tắt công tắc nguồn · c) giáo viên · d) không`,
+    `D3·1: a) 37 °C · b) 31 °C · c) 40 cm · d) không (30 cm chưa đo) &nbsp;|&nbsp; D3·2: a) 54 °C · b) 40 °C · c) 50 cm · d) 26 % &nbsp;|&nbsp; D4·1: a) dừng, lùi ra · b) ngắt nguồn · c) giáo viên · d) không &nbsp;|&nbsp; D4·2: a) dừng, lùi ra · b) ngắt nguồn · c) giáo viên · d) không`,
   ],
 };
 

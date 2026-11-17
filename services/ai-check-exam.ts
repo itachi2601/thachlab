@@ -70,6 +70,23 @@ export function applyAiFix(q: ExamQuestion, fix: AiFix | undefined): ExamQuestio
   return next;
 }
 
+export interface BankFixResult {
+  status: "fixed" | "not_in_bank" | "duplicate" | "unchanged" | "error";
+  examsUpdated?: number;
+}
+
+/** Sửa luôn câu gốc trong ngân hàng (+ mọi đề dùng câu đó) bằng RPC bank_apply_question_fix. Không ném lỗi. */
+export async function applyFixToBank(oldQ: ExamQuestion, newQ: ExamQuestion): Promise<BankFixResult> {
+  try {
+    const { data, error } = await getSupabase().rpc("bank_apply_question_fix", { p_old: oldQ, p_new: newQ });
+    if (error) return { status: "error" };
+    const r = data as { status?: BankFixResult["status"]; exams_updated?: number } | null;
+    return { status: r?.status ?? "error", examsUpdated: r?.exams_updated };
+  } catch {
+    return { status: "error" };
+  }
+}
+
 async function checkChunk(items: AiCheckItem[]): Promise<AiCheckResult[]> {
   const { data, error } = await getSupabase().functions.invoke("check-exam", { body: { items } });
   if (error) throw new Error(await edgeFunctionErrorMessage(error, "Gọi AI kiểm đề lỗi."));
