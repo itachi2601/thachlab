@@ -82,7 +82,7 @@ export const hinhL10b9 = {
     return wrap('0 0 320 186', b, cap, 'Xe lăn trên máng nghiêng qua cổng quang điện');
   },
   // Trang 3 · Bẫy 2: xe phanh tới dừng — đường v–t chạm trục t rồi nằm trên trục; nét đứt đi xuống dưới trục là sai
-  bayDung: (cap = 'Phanh: v giảm tới 0 ở t<sub>d</sub>, rồi xe đứng yên. Phần nét đứt dưới trục t là sai.') => {
+  bayDung: (cap = 'Phanh: v về 0 ở t<sub>d</sub> rồi xe đứng yên; nét đứt dưới trục t là sai.') => {
     const ox = 40, oy = 120, X = (s) => ox + s * 28, Y = (v) => oy - v * 9;
     let b = defs('bd') + arr(ox, oy, ox + 270, oy, 'bd', INK, '', 2.4) + arr(ox, 200, ox, 8, 'bd', INK, '', 2.4) + T(ox + 270, oy + 24, 't (s)', { a: 'end' }) + T(ox - 10, 18, 'v', { a: 'end' });
     b += ln(X(0), Y(10), X(5), Y(0), INK, SW) + ln(X(5), Y(0), X(9), Y(0), INK, 5);

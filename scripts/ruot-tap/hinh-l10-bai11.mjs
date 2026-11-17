@@ -48,7 +48,7 @@ export const hinhL10b11 = {
     return wrap('0 0 320 142', b, cap, 'Hai cách đo thời gian rơi: bấm tay và cổng quang nối đồng hồ hiện số');
   },
   // Trang 1 · II.1 và BTM D3: đường s theo t²
-  duongS: (cap = 'Đồ thị s theo t²: đường thẳng qua gốc O; hai điểm bất kì (1), (2).', moVach = true) => {
+  duongS: (cap = 'Đồ thị s theo t²; (1), (2) là hai điểm bất kì trên đường.', moVach = true) => {
     const x0 = 56, y0 = 150, xe = 300, ye = 18;
     let b = defs('ds1') + ln(x0, y0, xe, y0) + ln(x0, y0, x0, ye) + `<path d="M${xe},${y0} l-9,-5 v10 z" fill="${INK}"/><path d="M${x0},${ye} l-5,9 h10 z" fill="${INK}"/>`;
     b += T(xe, y0 + 24, `${gk('t')}${sp('2')} (s${sp('2')})`, { a: 'end' }) + T(x0 + 10, ye + 8, `${gk('s')} (m)`) + T(x0 - 8, y0 + 22, 'O', { a: 'end' });

@@ -36,6 +36,12 @@ import c_tn_l12_thuchanhtu_04 from "@/content/thi-nghiem/video-khung/tn-l12-thuc
 import c_tn_l12_tutruong_04 from "@/content/thi-nghiem/video-khung/tn-l12-tutruong-04.json";
 import c_tn_l12_udcamung_02 from "@/content/thi-nghiem/video-khung/tn-l12-udcamung-02.json";
 import c_tn_l12_xoaychieu_03 from "@/content/thi-nghiem/video-khung/tn-l12-xoaychieu-03.json";
+import c_tn_l11_tudien_01 from "@/content/thi-nghiem/video-khung/tn-l11-tudien-01.json";
+import c_tn_l11_tudien_03 from "@/content/thi-nghiem/video-khung/tn-l11-tudien-03.json";
+import c_tn_l11_dien_tro_ohm_01 from "@/content/thi-nghiem/video-khung/tn-l11-dien-tro-ohm-01.json";
+import c_tn_l11_dien_tro_ohm_02 from "@/content/thi-nghiem/video-khung/tn-l11-dien-tro-ohm-02.json";
+import c_tn_l11_do_sdd_pin_01 from "@/content/thi-nghiem/video-khung/tn-l11-do-sdd-pin-01.json";
+import c_tn_l11_nguon_dien_03 from "@/content/thi-nghiem/video-khung/tn-l11-nguon-dien-03.json";
 
 /**
  * XEM THỬ video thí nghiệm + khung sáu ô + dừng ở câu Dự đoán (bản thử 29/10/2026), 23 clip L12.
@@ -74,6 +80,12 @@ const CLIPS = [
   c_tn_l12_tutruong_04,
   c_tn_l12_udcamung_02,
   c_tn_l12_xoaychieu_03,
+  c_tn_l11_tudien_01,
+  c_tn_l11_tudien_03,
+  c_tn_l11_dien_tro_ohm_01,
+  c_tn_l11_dien_tro_ohm_02,
+  c_tn_l11_do_sdd_pin_01,
+  c_tn_l11_nguon_dien_03,
 ] as VideoKhungData[];
 
 export default function VideoTuongTacPreviewPage() {

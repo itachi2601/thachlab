@@ -67,7 +67,7 @@ ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
 ${h3(4, 'II.1 · Cổng quang điện và đồng hồ hiện số', '1·4')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
-<div>Cổng quang: một bên phát tia hồng ngoại, một bên thu. Vật ${f(12)} tia thì cổng báo cho đồng hồ, như một ${f(22)} không cần tay.</div>
+<div>Cổng quang: một bên phát tia hồng ngoại, một bên thu. Vật ${f(25)} tia thì cổng báo cho đồng hồ, như một ${f(22)} không cần tay.</div>
 <div>Hai ổ cắm A, B nối hai cổng; thang ${nw(m('9{,}999\\ \\mathrm s'))}, chia tới ${nw(`${f(12)}&nbsp;s`)}. Nút ${f(20)} đưa số chỉ về ${nw(m('0{,}000'))}.</div>
 <div class="hint" style="margin:.3mm 0">Từ gợi ý: chắn · công tắc · RESET · 0,001</div></div>
 ${H.congQuang()}</div>
@@ -185,13 +185,13 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Chọn MODE đo và tính tốc độ từ số hiển thị',
     de: `Bi thép lăn qua hai cổng quang E, F nối đồng hồ hiện số. Thước máng: ${nw(m('EF=0{,}400\\ \\mathrm m'))}; thước kẹp: ${nw(m('d=20{,}0\\ \\mathrm{mm}'))}; tia của cổng F qua tâm bi. Lần 1: MODE ${AB} hiện ${nw(m('0{,}712\\ \\mathrm s'))}; lần 2: MODE B (cổng F) hiện ${nw(m('0{,}022\\ \\mathrm s'))}.<br><b>a)</b> mỗi số hiển thị là thời gian của việc gì<br><b>b)</b> tốc độ trung bình của bi trên đoạn EF<br><b>c)</b> tốc độ tức thời của bi khi qua cổng F`,
-    nd: `${nw(`MODE ${AB} đi với ${f(14)}`)}; một cổng đi với ${f(25)} của bi; đổi ${nw('mm → m')} trước khi chia`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 2, gi: 4, fig: H.boTri('Bố trí của đề: E, F là hai cổng.') },
+    nd: `${nw(`MODE ${AB} đi với ${f(25)}`)}; một cổng đi với ${f(25)} của bi; đổi ${nw('mm → m')} trước khi chia`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 2, gi: 4, fig: H.boTri('Bố trí của đề: E, F là hai cổng.') },
   { t: 'Dạng 2 · Trung bình · Bảng số liệu tốc độ trung bình và kết quả có sai số',
     de: `Đo tốc độ trung bình của bi trên đoạn EF. Thước máng chia nhỏ nhất ${nw(m('1\\ \\mathrm{mm}'))}, ${nw(m('s=EF=0{,}650\\ \\mathrm m'))}. Đồng hồ hiện số (chia ${nw(m('0{,}001\\ \\mathrm s'))}), MODE ${AB}, thả bi ba lần từ cùng một chỗ: ${nw(m('0{,}899\\ \\mathrm s'))}; ${nw(m('0{,}903\\ \\mathrm s'))}; ${nw(m('0{,}904\\ \\mathrm s'))}.<br><b>a)</b> tính ${tbar} và ${Dt}<br><b>b)</b> tính tốc độ trung bình ${m('\\bar v')}<br><b>c)</b> viết kết quả ${m('v=\\bar v\\pm\\Delta v')}`,
     nd: `Chuỗi ${nw(m('\\bar t\\to\\Delta t\\to\\bar v\\to\\delta v\\to\\Delta v'))}; ${nw(`${Dt} = ${f(14)} + ${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], cot: 2, gi: 4 },
   { t: 'Dạng 3 · Trung bình · Tốc độ tức thời từ thời gian chắn tia',
     de: `Đo tốc độ tức thời của bi tại cổng F. Thước kẹp chia ${nw(m('0{,}1\\ \\mathrm{mm}'))} cho ${nw(m('d=16{,}0\\ \\mathrm{mm}'))}. Đồng hồ hiện số chia ${nw(m('0{,}001\\ \\mathrm s'))}, MODE B; cả ba lần thả đều hiện ${nw(m('t=0{,}020\\ \\mathrm s'))}; tia qua tâm bi.<br><b>a)</b> tốc độ tức thời ${m('\\bar v')} tại F<br><b>b)</b> ${m('\\delta v')} và kết quả ${m('v=\\bar v\\pm\\Delta v')}<br><b>c)</b> muốn chính xác hơn thì cải thiện phép đo đại lượng nào trước`,
-    nd: `Ba lần trùng nhau vẫn còn sai số ${f(14)}; ${nw(`${m('\\delta v=')} ${f(12)} + ${f(12)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 2, gi: 6 },
+    nd: `Ba lần trùng nhau vẫn còn sai số ${f(25)}; ${nw(`${m('\\delta v=')} ${f(12)} + ${f(12)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], cot: 2, gi: 6 },
   { t: 'Dạng 4 · Khó · Tia sáng lệch tâm bi: độ lệch của phép đo d/t',
     de: `Bi đường kính ${nw(m('d=20{,}0\\ \\mathrm{mm}'))} qua cổng F lắp thấp: tia cắt bi theo dây cung cách tâm ${nw(m('h=8{,}0\\ \\mathrm{mm}'))}. MODE B hiện ${nw(m('t=0{,}015\\ \\mathrm s'))}; một nhóm vẫn tính bằng ${m('d/t')}.<br><b>a)</b> quãng đường bi thật sự đi được khi chắn tia<br><b>b)</b> tốc độ đúng của bi tại F<br><b>c)</b> ${m('d/t')} của nhóm lớn hơn tốc độ đúng bao nhiêu phần trăm<br><b>d)</b> thả nhiều lần rồi lấy trung bình có hết độ lệch không`,
     nd: `Tia lệch tâm: quãng đường chắn tia là ${f(25)}, ${nw(m('c=2\\sqrt{R^2-h^2}'))}; lệch cùng một phía thì lấy trung bình ${ck}có ${ck}không sửa được`, a: ['a', 'b', 'c', 'd'], cot: 2, gi: 6, fig: H.tiaLech('Tia lệch tâm cắt bi theo dây cung.') },

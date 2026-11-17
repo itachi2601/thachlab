@@ -126,7 +126,7 @@ ${h3(1, 'II.5 · Năm chỗ trên một chu kì', '3·1')}
 ${h3(2, 'II.6 · Con lắc lò xo nằm ngang', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Lò xo nhẹ (coi như không có khối lượng), độ cứng ${m('k')}, vật ${m('m')}, bỏ ma sát:</div>
-<div>${m('\\omega=')} ${f(16)} &nbsp; ${m('T=')} ${f(16)} &nbsp; ${m('f=')} ${f(16)}</div>
+<div>${m('\\omega=')} <span class="fill" style="min-width:20mm;height:9mm"></span> &nbsp;&nbsp; ${m('T=')} <span class="fill" style="min-width:20mm;height:9mm"></span> &nbsp;&nbsp; ${m('f=')} <span class="fill" style="min-width:20mm;height:9mm"></span></div>
 <div>Chỉ phụ thuộc ${f(25)}; không phụ thuộc ${f(25)} hay cách kích thích.</div></div>
 ${h3(3, 'Thí nghiệm: đo k, rồi tính năng lượng tại năm vạch', '3·3')}
 <div class="card" style="padding:1.2mm 3mm">

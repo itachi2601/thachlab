@@ -120,7 +120,8 @@ const p3 = `<section class="page">
 ${head('LỰC ĐẨY ARCHIMEDES · CHÊNH LỆCH ÁP SUẤT · NỔI, CHÌM')}
 ${h3(1, 'II.4 · Lực đẩy Archimedes', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div><b>Điểm đặt:</b> trọng tâm phần ${f(25)} bị vật chiếm chỗ. <b>Phương</b> ${f(16)}, <b>chiều</b> từ ${f(16)}</div>
+<div><b>Điểm đặt:</b> trọng tâm phần ${f(25)} bị vật chiếm chỗ.</div>
+<div><b>Phương</b> ${f(28)}, <b>chiều</b> từ ${f(28)}</div>
 <div><b>Độ lớn</b> bằng trọng lượng phần ${f(25)} bị chiếm chỗ: &nbsp;${nw(`${FA} = ${f(14)} = ${f(12)}`)} (dùng ${m('d=\\rho g')})</div>
 <div>${rho}: khối lượng riêng của ${f(25)} (kg/m³) · ${V}: thể tích ${f(25)} (m³)</div></div>
 ${h3(2, 'Thí nghiệm: lực kế và bình tràn', '3·2')}
@@ -189,7 +190,7 @@ ${h3(4, 'Điền bước còn thiếu: nhúng chìm hẳn trong dầu', '5·4')}
 <div class="ln"><b>Bước 1 (cho sẵn):</b> dầu ${nw(m('\\rho=800\\ \\mathrm{kg/m^3}'))}; ${m('V')} như bài trên (không đổi)</div>
 ${wl(`Bước 2: ${m('F_A=')}`, 1)}${wl(`Bước 3: ${m('T=')}`, 1)}</div>
 ${h3(5, 'Thử sức đổi chiều', '5·5')}
-${box(wl(`Vật nặng ${nw('5,4 N')} ngoài không khí, chìm hẳn trong nước lực kế chỉ ${nw('3,4 N')}. Tìm khối lượng riêng của vật, vật làm bằng gì?`, 3))}
+${box(wl(`Vật nặng ${nw('7,8 N')} ngoài không khí, chìm hẳn trong nước lực kế chỉ ${nw('6,8 N')}. Tìm khối lượng riêng của vật, vật làm bằng gì?`, 3))}
 ${foot(5)}</section>`;
 
 const dang = [

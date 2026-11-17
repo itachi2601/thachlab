@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-do-sdd-pin-01",
+  "ten": "Pin cũ nối với biến trở, ampe kế và vôn kế",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-01-20261116.mp4",
+  "tong_giay": 49.3,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Pin có điện trở trong nên vôn kế ở hai cực tụt khi dòng tăng.",
+      "kiem": "Giảm Rx thì vôn kế chỉ ra sao?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.0,
+      "chu": "Giảm Rx: 100, 20, 10, 5, 2, 0 Ω. Số chỉ vôn kế ở hai cực pin đổi thế nào qua từng nấc?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.2,
+      "chu": "Pin cũ, biến trở Rx, ampe kế nối tiếp, vôn kế ở hai cực pin."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 15.2,
+      "chu": "Rx giảm: I từ 0,014 tới 0,534 A, U từ 1,48 xuống 1,06 V."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 21.4,
+      "chu": "Vẽ U theo I: 6 điểm thẳng hàng, U tụt tỉ lệ với I."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 28.2,
+      "chu": "Dòng lớn hơn 0,534 A: còn thẳng?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.1,
+    "cau_hoi": "Giảm Rx: 100, 20, 10, 5, 2, 0 Ω. Số chỉ vôn kế ở hai cực pin đổi thế nào qua từng nấc?",
+    "chon": [
+      "A. Tụt đều, mỗi nấc như nhau",
+      "B. Tụt ít lúc đầu, tụt mạnh ở các nấc cuối",
+      "C. Tụt mạnh lúc đầu, ít ở các nấc cuối",
+      "D. Không đổi, vẫn 1,50 V"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Mỗi nấc U tụt 0,04; 0,04; 0,05; 0,10; 0,19 V: càng về cuối dòng tăng càng mạnh nên U tụt càng nhiều.",
+    "giai_thich_sai": "Xem cột U trong bảng: lấy U ở nấc trước trừ U ở nấc sau rồi so các hiệu với nhau."
+  }
+}

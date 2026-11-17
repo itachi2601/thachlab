@@ -27,6 +27,10 @@ const BAI: Record<string, () => Promise<{ default: { theory_html: string } }>> =
   "bai-tap-dd": () => import("@/content/lesson-samples/l11-bai-tap-dao-dong/bundle.json"),
   "co-nang-dd": () => import("@/content/lesson-samples/l11-co-nang-dao-dong/bundle.json"),
   "bai-tap-nl-dd": () => import("@/content/lesson-samples/l11-bai-tap-nang-luong-dao-dong/bundle.json"),
+  "tu-dien": () => import("@/content/lesson-samples/l11-tu-dien/bundle.json"),
+  ohm: () => import("@/content/lesson-samples/l11-dien-tro-dinh-luat-ohm/bundle.json"),
+  "nguon-dien": () => import("@/content/lesson-samples/l11-nguon-dien/bundle.json"),
+  "do-sdd-pin": () => import("@/content/lesson-samples/l11-thuc-hanh-do-sdd-pin/bundle.json"),
 };
 
 export default function BaiThatPreviewPage() {

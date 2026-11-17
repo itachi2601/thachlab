@@ -184,7 +184,7 @@ export const hinhL10b5 = {
     b += `<path d="M${B[0] - 12},${B[1]} L${B[0] - 12},${B[1] - 12} L${B[0]},${B[1] - 12}" fill="none" stroke="${INK}" stroke-width="1.8"/>`;
     b += T(A[0], A[1] + 22, 'A', { w: 700, a: 'middle' }) + T(B[0], B[1] + 22, 'B', { w: 700, a: 'middle' }) + T(C[0] - 8, C[1] + 8, 'C', { w: 700, a: 'end' });
     b += T(96, 86, '480 m', { a: 'middle' }) + T(184, 60, '360', {});
-    b += arr(226, 60, 226, 22, 'lt1', INK) + T(226, 84, 'B', { a: 'middle', size: 18 }) + T(214, 108, '(bắc)', { a: 'middle', size: 18 });
+    b += arr(226, 60, 226, 22, 'lt1', INK) + T(224, 84, 'Bắc', { a: 'middle', size: 16 });
     return wrap('0 0 240 118', b, c, 'Lộ trình gấp khúc');
   },
   beBoi: (c = '') => {

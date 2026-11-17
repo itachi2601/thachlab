@@ -70,9 +70,9 @@ ${h3(4, 'II.1 · Lực và phản lực', '1·4')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
 <div>A tác dụng lên B một lực thì B cũng ${f(25)} lên A một lực.</div>
 <div>Hai lực này gọi là ${f(25)} và ${f(25)}.</div>
-<div>Về phương: ${f(22)}</div>
-<div>Về chiều: ${f(22)}</div>
-<div>Về độ lớn: ${f(22)}</div>
+<div>Về phương: ${f(28)}</div>
+<div>Về chiều: ${f(28)}</div>
+<div>Về độ lớn: ${f(28)}</div>
 <div style="margin:1mm 0"><b>Định luật 3 Newton:</b> ${nw(`${m('\\vec F_{AB}=')} ${f(16)}`)}</div>
 <div>${FAB}: lực ${f(12)} tác dụng lên ${f(12)}</div>
 <div>${FBA}: lực ${f(12)} tác dụng lên ${f(12)}</div></div>
@@ -81,12 +81,12 @@ ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
 ${head('BỐN ĐẶC ĐIỂM · HAI LỰC KẾ · BẪY 1')}
-${h3(1, 'II.2 · Bốn đặc điểm: Ba Cùng – Một Ngược – Một Khác', '2·1')}
-<table><tr><th style="width:30mm">Đặc điểm</th><th>Nghĩa là</th><th style="width:44mm">Ví dụ</th></tr>
-<tr><td>Cùng ${f(18)}</td><td>cùng xuất hiện, cùng mất đi</td><td>hai kim lực kế đi cùng nhau</td></tr>
-<tr><td>Cùng ${f(18)}</td><td>cùng bản chất (cùng hấp dẫn, cùng đàn hồi…)</td><td>Trái Đất hút táo, táo hút ${f(14)}</td></tr>
-<tr><td>Cùng ${f(13)}<br>ngược ${f(13)}</td><td>${m('F_{AB}=F_{BA}')} dù hai vật nặng nhẹ khác nhau; cùng phương, chiều ngược nhau</td><td>xe tải đâm xe con; em đẩy thành, thành đẩy em</td></tr>
-<tr><td>Khác ${f(18)}</td><td>mỗi lực đặt lên một vật</td><td>lực em đẩy đặt lên ${f(14)}</td></tr></table>
+${h3(1, 'II.2 · Bốn đặc điểm của cặp lực – phản lực', '2·1')}
+<table><tr><th style="width:42mm">Đặc điểm</th><th>Nghĩa là</th><th style="width:40mm">Ví dụ</th></tr>
+<tr><td>Cùng ${f(25)}</td><td>cùng xuất hiện, cùng mất đi</td><td>hai kim lực kế cùng nhích</td></tr>
+<tr><td>Cùng ${f(25)}</td><td>cùng loại lực (hấp dẫn, đàn hồi…)</td><td>Trái Đất hút táo, táo hút ${f(25)}</td></tr>
+<tr><td>Cùng ${f(25)},<br>cùng phương, ngược ${f(25)}</td><td>${m('F_{AB}=F_{BA}')} dù vật nặng nhẹ khác nhau; chiều ngược nhau</td><td>xe tải đâm xe con; em đẩy thành, thành đẩy em</td></tr>
+<tr><td>Khác ${f(25)}</td><td>mỗi lực đặt lên một vật</td><td>lực em đẩy đặt lên ${f(25)}</td></tr></table>
 ${h3(2, 'II.3 · Thí nghiệm: hai lực kế kéo nhau', '2·2')}
 <div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> móc hai lực kế ${nw('5 N')} (đã chỉnh số 0) vào nhau, đặt nằm ngang. Giữ đầu lực kế 1, kéo đầu lực kế 2 chậm, tăng dần qua 5 lần; mỗi lần đọc cả hai số chỉ.</div>

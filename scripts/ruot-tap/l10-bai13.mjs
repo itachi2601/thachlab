@@ -190,7 +190,7 @@ const deH = (txt, fig, w = 38) => `<div class="fig-side" style="${fs(w)}"><div>$
 const dang = [
   { t: 'Dạng 1 · Dễ · Độ lớn hợp lực của hai lực đồng quy theo góc',
     de: `Hai lực đồng quy ${m('F_1=5{,}0\\ \\mathrm N')}, ${m('F_2=12\\ \\mathrm N')}. Hợp lực khi góc giữa chúng là: &nbsp;<b>a)</b> ${m('180^\\circ')} &nbsp; <b>b)</b> ${m('90^\\circ')} &nbsp; <b>c)</b> ${m('60^\\circ')}`,
-    nd: `${m('F^2=')} ${f(45)} &nbsp;(${m('180^\\circ')}: trừ thẳng; ${m('90^\\circ')}: Pythagore)`, a: ['a', 'b', 'c'], gi: 3 },
+    nd: `${m('F^2=')} ${f(45)} &nbsp;(${m('180^\\circ')}: trừ thẳng; ${m('90^\\circ')}: Pythagore)`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Khoảng giá trị của hợp lực, tìm góc',
     de: `Hai lực đồng quy ${m('F_1=7{,}0\\ \\mathrm N')}, ${m('F_2=15\\ \\mathrm N')} tác dụng lên một chất điểm.<br><b>a)</b> hợp lực nhỏ nhất (a<sub>1</sub>), lớn nhất (a<sub>2</sub>) khi đổi góc<br><b>b)</b> hợp lực có thể bằng ${m('5{,}0\\ \\mathrm N')} không?<br><b>c)</b> hợp lực bằng ${m('20\\ \\mathrm N')}: góc giữa hai lực`,
     nd: `${f(16)} ${m('\\le F\\le')} ${f(16)}; biết ${m('F')} tìm góc: ${nw(`${m('\\cos\\alpha=')} <span class="fill" style="min-width:16mm;height:9mm"></span>`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4 },
@@ -198,14 +198,14 @@ const dang = [
     de: deH(`Dây kéo thùng trên sàn, hợp với phương ngang ${m('40^\\circ')}, ${m('F=45\\ \\mathrm N')}.<br><b>a)</b> ${m('F_x')} nằm ngang (a<sub>1</sub>), ${m('F_y')} thẳng đứng (a<sub>2</sub>)<br><b>b)</b> thành phần làm thùng bớt ép sàn<br><b>c)</b> dây chếch ${m('60^\\circ')}: ${m('F_x')}`, H.keoD3, 36),
     nd: `${al} đo từ phương ngang ⇒ ${nw(`${m('F_x=F')} ${f(14)}`)}, ${nw(`${m('F_y=F')} ${f(14)}`)}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b', 'c'], gi: 4 },
   { t: 'Dạng 4 · Trung bình · Phân tích trọng lực trên mặt dốc',
-    de: deH(`Thùng ${m('8{,}0\\ \\mathrm{kg}')} trên dốc ${m('40^\\circ')}; ${g10}.<br><b>a)</b> trọng lượng ${m('P')}<br><b>b)</b> ${m('P_x')} dọc dốc (b<sub>1</sub>), ${m('P_y')} vuông góc dốc (b<sub>2</sub>)<br><b>c)</b> dốc còn nghiêng ${m('20^\\circ')}: ${m('P_x')}`, H.docD4, 28),
+    de: deH(`Thùng ${m('8{,}0\\ \\mathrm{kg}')} trên dốc ${m('40^\\circ')}; ${g10}. &nbsp;<b>a)</b> trọng lượng ${m('P')}<br><b>b)</b> ${m('P_x')} dọc dốc (b<sub>1</sub>), ${m('P_y')} vuông góc dốc (b<sub>2</sub>)<br><b>c)</b> dốc còn nghiêng ${m('20^\\circ')}: ${m('P_x')}`, H.docD4, 28),
     nd: `góc giữa ${m('\\vec P')} và ${m('\\vec P_y')} bằng góc nghiêng ⇒ ${nw(`${m('P_x=P')} ${f(14)}`)}, ${nw(`${m('P_y=P')} ${f(14)}`)}`, a: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'], gi: 4 },
   { t: 'Dạng 5 · Khó · Vật treo bằng hai dây: lực căng khi cân bằng',
-    de: deH(`Vật ${m('3{,}0\\ \\mathrm{kg}')} treo ở ${m('O')}; dây ${m('OA')} ngang, dây ${m('OB')} lệch ${m('30^\\circ')} so với phương đứng; ${g10}.<br><b>a)</b> lực căng dây ${m('OB')}<br><b>b)</b> lực căng dây ${m('OA')}`, (c) => H.oab(c, 1.3), 28),
-    nd: `chiếu lên ${m('Oy')}: ${nw(`${m('T_{OB}')} ${f(14)} ${m('=P')}`)}; chiếu lên ${m('Ox')}: ${nw(`${m('T_{OA}=T_{OB}')} ${f(14)}`)}`, a: ['a', 'b'], gi: 2, cot: 2 },
+    de: deH(`Vật ${m('3{,}0\\ \\mathrm{kg}')} treo ở ${m('O')}: ${m('OA')} ngang, ${m('OB')} lệch phương đứng ${m('30^\\circ')}; ${g10}.<br><b>a)</b> lực căng dây ${m('OB')}<br><b>b)</b> lực căng dây ${m('OA')}`, (c) => H.oab(c, 1.3), 28),
+    nd: `chiếu lên ${m('Oy')}: ${nw(`${m('T_{OB}')} ${f(14)} ${m('=P')}`)}; chiếu lên ${m('Ox')}: ${nw(`${m('T_{OA}=T_{OB}')} ${f(14)}`)}`, a: ['a', 'b'], gi: 3, cot: 2 },
   { t: 'Dạng 6 · Khó · Dây võng: lực căng mỗi nhánh',
-    de: deH(`Hai cột cao bằng nhau, ${m('AB=6{,}0\\ \\mathrm m')}; đèn ${m('4{,}0\\ \\mathrm{kg}')} treo giữa dây, dây võng ${m('h=0{,}50\\ \\mathrm m')}; ${g10}.<br><b>a)</b> góc ${m('\\theta')} giữa mỗi nhánh và phương ngang<br><b>b)</b> lực căng mỗi nhánh<br><b>c)</b> lực căng gấp mấy lần trọng lượng đèn`, (c) => H.vong(c, 1.3), 30),
-    nd: `${nw(`${m('\\tan\\theta=')} <span class="fill" style="min-width:16mm;height:9mm"></span>`)}; hai thành phần đứng đỡ đèn: ${nw(`${m('2T')} ${f(14)} ${m('=P')}`)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: deH(`Đèn nặng ${nw('40 N')} treo giữa dây ngang ${m('AB=6{,}0\\ \\mathrm m')}, võng ${m('h=0{,}50\\ \\mathrm m')}.<br><b>a)</b> góc ${m('\\theta')} giữa mỗi nhánh và phương ngang<br><b>b)</b> lực căng mỗi nhánh<br><b>c)</b> lực căng gấp mấy lần trọng lượng đèn`, (c) => H.vong(c, 1.3), 30),
+    nd: `${nw(`${m('\\tan\\theta=h:')} ${f(14)}`)}; chiếu lên ${m('Oy')}: ${nw(`${m('2T')} ${f(14)} ${m('=P')}`)}`, a: ['a', 'b', 'c'], gi: 4 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, giải vào vở; đáp số tính bằng Python 13/11/2026, 3 chữ số có nghĩa.

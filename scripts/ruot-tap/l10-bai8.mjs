@@ -87,7 +87,7 @@ ${h3(1, 'II.2 · Gia tốc', '2·1')}
 <div>Gia tốc đặc trưng cho độ ${f(25)} của vận tốc theo thời gian: vận tốc đổi ${f(25)} hay chậm.</div>
 <div style="margin:.8mm 0">Vectơ: ${m('\\vec a=\\dfrac{\\Delta\\vec v}{\\Delta t}')} &nbsp;· &nbsp;Thẳng, đã chọn chiều dương: ${m('a=\\dfrac{\\Delta v}{\\Delta t}=')} ${f(25)}</div>
 <div>Gia tốc là đại lượng ${f(25)}; đơn vị ${f(14)}. Đổi ${m('\\mathrm{km/h}\\to\\mathrm{m/s}')}: ${f(16)} cho ${m('3{,}6')}.</div>
-<div><b>Đọc đơn vị:</b> ${ms2(2)} nghĩa là mỗi ${f(14)}, vận tốc thay đổi ${f(16)}.</div>
+<div><b>Đọc đơn vị:</b> ${ms2(2)} nghĩa là mỗi ${f(25)}, vận tốc thay đổi ${f(16)}.</div>
 <div>Xe máy ở mục Dự đoán: ${m('a=')} ${f(25)} ${m('=')} ${f(12)} ${m('\\mathrm{m/s^2}')}; ô tô: ${m('a=')} ${f(12)} ${m('\\mathrm{m/s^2}')}</div></div>
 ${h3(2, 'Thí nghiệm: đo gia tốc xe lăn xuống máng nghiêng', '2·2')}
 <div class="fig-side" style="${fs(46)}"><div>
@@ -176,8 +176,8 @@ ${foot(5)}</section>`;
 
 const dang = [
   { t: 'Dạng 1 · Dễ · Tính gia tốc từ hai vận tốc, đổi km/h',
-    de: `Ô tô tải đang chạy thẳng ${kmh(18)} thì tăng ga, vận tốc tăng đều; ${sec(20)} sau đạt ${kmh(36)}.<br><b>a)</b> gia tốc của xe<br><b>b)</b> vận tốc sau ${sec(40)} kể từ lúc tăng ga<br><b>c)</b> sau bao lâu (từ lúc tăng ga) xe đạt ${kmh(72)}`,
-    nd: `đổi ${m('\\mathrm{km/h}\\to\\mathrm{m/s}')}: ${f(16)} cho 3,6; rút ra ${m('v_2=v_1+')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 3 },
+    de: `Ô tô tải đang chạy thẳng ${kmh(18)} thì tăng ga, vận tốc tăng đều; ${sec(20)} sau đạt ${kmh(36)}.<br><b>a)</b> gia tốc của xe; <b>b)</b> vận tốc sau ${sec(40)} kể từ lúc tăng ga; <b>c)</b> sau bao lâu xe đạt ${kmh(72)}`,
+    nd: `đổi ${m('\\mathrm{km/h}\\to\\mathrm{m/s}')}: ${f(16)} cho 3,6; rút ra ${m('v_2=v_1+')} ${f(16)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 2 · Trung bình · Xe phanh: dấu của gia tốc và chiều dương',
     de: `Xe máy đang chạy thẳng ${kmh(36)} thì phanh gấp, chậm dần đều, dừng sau ${sec(4)}.<br><b>a)</b> chiều dương theo chiều chuyển động: ${m('a')}; dấu ${m('v')}, ${m('a')}<br><b>b)</b> chiều dương ngược chiều chuyển động: ${m('a')}; dấu ${m('v')}, ${m('a')}; còn chậm dần không<br><b>c)</b> vận tốc sau ${sec(2)} kể từ lúc phanh (chiều dương như a)`,
     nd: `chậm dần ${m('\\Leftrightarrow a\\cdot v')} ${f(12)} 0 (không xét riêng dấu ${m('a')})`, a: ['a', 'b', 'c'], gi: 4 },

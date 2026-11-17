@@ -42,9 +42,9 @@ export const hinhL10b3 = {
     const vals = [20.19, 19.85, 20.14, 19.94, 20.23], x0 = 24, k = 600; // 1 s = 600 đơn vị
     const X = (v) => x0 + (v - 19.8) * k;
     let b = ln(x0, 78, x0 + 0.5 * k, 78, INK, 2.5);
-    for (const v of [19.8, 20.0, 20.2, 20.3]) b += ln(X(v), 78, X(v), 90, INK, 2.2) + T(X(v), 114, v.toFixed(1).replace('.', ','), { a: 'middle', size: 20 });
+    for (const v of [19.8, 19.9, 20.0, 20.1, 20.2, 20.3]) b += ln(X(v), 78, X(v), 90, INK, 2.2) + ([19.8, 20.0, 20.2].includes(v) ? T(X(v), 114, v.toFixed(1).replace('.', ','), { a: 'middle', size: 20 }) : '');
     vals.forEach((v, i) => { b += dot(X(v), 78 - 16 - (i % 2) * 22, 7, RED) + T(X(v), 78 - 46 - (i % 2) * 22 + 6, String(i + 1), { a: 'middle', size: 20, w: 700 }); });
-    return wrap('0 0 340 126', b, cap, 'Năm chấm trên trục thời gian từ 19,8 s đến 20,3 s');
+    return wrap('0 0 340 126', b, cap, 'Năm chấm trên trục thời gian từ 19,8 s đến 20,3 s, vạch chia 0,1 s');
   },
   // Trang 4 · bẫy 1: hai hàng năm lần đo, giá trị thật là nét đứt
   haiHang: (cap = 'Hai dãy năm lần đo; nét đứt là giá trị thật.') => {
