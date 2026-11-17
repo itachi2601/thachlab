@@ -20,6 +20,7 @@ export const MAU_ONG_THUY_NGAN: ChieuBai = {
     tim: ["$t_2 = \\,?$ để mực Hg trong = ngoài"],
   },
   hinh_dau: ["ong1"],
+  hinh: ({ lop }) => <HinhOngThuyNgan lop={lop} />,
   bang: {
     hang: [
       { id: "p", nhan: "p", don_vi: "cmHg" },

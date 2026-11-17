@@ -1224,6 +1224,8 @@ html[data-theme="light"] .lesson-shell :is(.theory-next small, .theory-next svg)
 .lesson-sample-mark.is-wrong { background: #f87171; }
 .lesson-sample-mark.is-revealed { background: #94a3b8; }
 .lesson-sample-body, .lesson-worked-body { padding: 4px 16px 16px; color: #e2e8f0; }
+/* Nút "Trình chiếu dạng này" (chỉ giáo viên, 17/11/2026): góc phải đầu thân dạng, không chen vào đề. */
+.lesson-worked-present { display: flex; align-items: center; gap: 6px; margin: 0 0 10px auto; }
 .lesson-sample-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; }
 .lesson-sample-actions button { border: 1px solid transparent; border-radius: 10px; padding: 9px 16px; color: #fff; font-size: 13.5px; font-weight: 700; cursor: pointer; }
 .lesson-sample-actions button.is-ghost { border-color: rgba(255,255,255,.15); background: transparent; color: #e2e8f0; }

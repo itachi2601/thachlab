@@ -17,6 +17,7 @@ import AroundReadMore from "@/components/lessons/AroundReadMore";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
+import BtmPresenter from "@/components/lessons/btm-trinh-chieu/BtmPresenterLazy";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import StudentNoteFab, { OPEN_STUDENT_NOTE_EVENT } from "@/components/lessons/StudentNoteFab";
 import PracticeSession from "@/components/lessons/PracticeSessionLazy";
@@ -796,6 +797,8 @@ function LessonLoader() {
   // chút — xem `splitTheorySections` mode "chieu"). Chỉ mount khi bấm nút, và cả component
   // được tải chậm (LessonPresenterLazy) nên phần vẽ tay/điều hướng không nằm trong JS ban đầu.
   const [presenting, setPresenting] = useState(false);
+  // Trình chiếu bài tập mẫu (17/11/2026): mục đang chiếu + dạng bắt đầu; chỉ giáo viên, tải chậm.
+  const [chieuBtm, setChieuBtm] = useState<{ itemId: number; start: number } | null>(null);
   // "#chieu" trên URL → mở thẳng chế độ trình chiếu (thầy lưu sẵn link cho tiết dạy). Đọc
   // trong effect chứ không phải giá trị khởi tạo của useState: trang này được prerender lúc
   // build (lúc đó chưa có hash), khởi tạo bằng hash sẽ lệch cây DOM khi hydrate. Đẩy sang
@@ -1813,7 +1816,12 @@ function LessonLoader() {
                   )}
                 </p>
               ) : (
-                <WorkedQuestionsGrid questions={item.questions} color={ACCENT} lessonId={item.lesson_id} />
+                <WorkedQuestionsGrid
+                  questions={item.questions}
+                  color={ACCENT}
+                  lessonId={item.lesson_id}
+                  onPresent={canPresent ? (start) => setChieuBtm({ itemId: item.id, start }) : undefined}
+                />
               )}
             </>
           ) : (
@@ -2470,6 +2478,13 @@ function LessonLoader() {
           onClose={() => setPresenting(false)}
         />
       )}
+      {/* Trình chiếu bài tập mẫu — dựng từ các dạng đã tải sẵn của mục (0 request mới), tải chậm, chỉ giáo viên. */}
+      {chieuBtm && (() => {
+        const it = items?.find((x) => x.id === chieuBtm.itemId);
+        return it && it.questions.length > 0 ? (
+          <BtmPresenter questions={it.questions} start={chieuBtm.start} title={title} onClose={() => setChieuBtm(null)} />
+        ) : null;
+      })()}
     </div>
   );
 }

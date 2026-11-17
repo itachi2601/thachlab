@@ -139,6 +139,8 @@ export interface LessonWorkedQuestion {
   tom_de?: WorkedTomDe;
   /** 🧪 Biến thể đổi số (chặng 3A, 5/11/2026): khuôn đề, trình duyệt tự sinh câu mới cùng dạng. Thư viện: lib/bien-the.ts. */
   bien_the?: WorkedVariant;
+  /** Trình chiếu khi chữa bài trên lớp (17/11/2026): viết đè bản tự sinh từ buoc/solution_html — xem features/lessons/btm-trinh-chieu. */
+  trinh_chieu?: import("@/features/lessons/btm-trinh-chieu/types").ChieuGhiDe;
 }
 
 /** Một biến số của khuôn đề: giá trị lấy ngẫu nhiên theo bước trong [min, max] (gồm cả hai đầu). */
