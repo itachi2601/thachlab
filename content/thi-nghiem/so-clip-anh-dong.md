@@ -234,3 +234,4 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 - lesson 40 · tn-l11-tudien-03 · clip tudien3 · tụ phẳng tự chế, C theo diện tích chồng · 48,6 s · 1,1 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-03-20261116.mp4
 - Dry-run `--chi-video` (scripts/video-thi-nghiem/dry-lo4-l11.sh): cả 4 bài KHÁC DB ngoài khối video, đúng các dòng Quan sát/Rút ra/Làm đã sửa → đăng phải thêm `--cho-phep-khac`.
 - Đăng DB (sau khi duyệt, sau 22h), mỗi bài: `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/<slug>/theory.html <id> --chi-video --cho-phep-khac` với l11-tu-dien:40, l11-dien-tro-dinh-luat-ohm:42, l11-nguon-dien:43, l11-thuc-hanh-do-sdd-pin:45.
+- 17/11/2026 · ĐÃ ĐĂNG DB bài 40 (tudien-01, tudien-03; thầy tự chạy `--chi-video --cho-phep-khac`, mục #201, sao lưu scripts/logs/ly-thuyet-bai40-backup-1794897221859.json). Bài 42, 43, 45 chưa đăng.
