@@ -93,6 +93,9 @@ export default function ExamDoneLocked({
             <div key={i}>
               <div className="mb-1">
                 <Badge tone={tone}>{label}</Badge>
+                {answered && label !== "Đúng" && label !== "Thầy chấm" && (
+                  <span className="ml-2 text-sm text-muted">Màu xanh là ý em đã chọn, chưa phải đáp án đúng.</span>
+                )}
               </div>
               <QuestionCard index={i + 1} question={q} response={responses[i]} />
               {notes
