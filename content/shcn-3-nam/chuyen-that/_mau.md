@@ -43,7 +43,7 @@ hơn là nghe "con ổn" mà giọng không ổn.
 - Giữ 2 chi tiết cụ thể: quê xa/gần, câu "con ổn, con ổn", bữa cơm nhà chủ trọ.
 - Giữ chỗ làm chưa đúng (giấu mẹ) và việc đã làm khác đi; không thêm câu "bài học rút ra là…".
 - Không thêm tên người, tên đường cụ thể, tên câu lạc bộ có thể nhận ra người kể (với mức đồng ý b).
-- 210 chữ — đọc trong khoảng 1 phút.
+- Khoảng 170 chữ — đọc trong chưa tới 1 phút.
 
 ## Chèn vào bài sẽ trông thế nào
 
