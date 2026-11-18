@@ -373,12 +373,15 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   // (ensureChapterMastery tự bỏ qua chương đã tải/đang tải nên gọi lặp không tốn thêm request).
   useEffect(() => {
     if (!session || isParent || isTeacherView) return;
+    // Chờ bước "mặc định chỉ mở một chương" chạy xong: trước đó collapsedChapters còn rỗng nên MỌI chương
+    // bị coi là đang mở và mỗi chương gọi một RPC (18/11/2026: 5 lượt ở trang lớp, 23 lượt ở màn chọn lớp).
+    if (!defaultChapterApplied) return;
     if (selectedChapterId !== null) ensureChapterMastery(selectedChapterId);
     for (const ch of classChapters) {
       if (!collapsedChapters.has(ch.id)) ensureChapterMastery(ch.id);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session, isParent, isTeacherView, collapsedChapters, classChapters, selectedChapterId]);
+  }, [session, isParent, isTeacherView, defaultChapterApplied, collapsedChapters, classChapters, selectedChapterId]);
 
   function lessonHref(lesson: Lesson) {
     const params = new URLSearchParams({
