@@ -43,15 +43,19 @@
 <ol class="tl-steps">
 <li><strong>Giả thuyết cần kiểm:</strong> có nam châm cạnh cuộn dây kín là có dòng điện.</li>
 <li><strong>Dự đoán nếu đúng:</strong> nam châm đứng yên, kim vẫn lệch.</li>
-<li><strong>Dụng cụ:</strong> (1) nam châm thẳng có trục quay; (2) cuộn dây; (3) <span class="tl-term"><input type="checkbox" id="tl92-t1"><label for="tl92-t1">điện kế</label><span class="tl-def">Ampe kế rất nhạy, số 0 ở giữa; kim lệch trái hay phải theo chiều dòng.</span></span>; (4) dây nối. Không có pin.</li>
+<li><strong>Dụng cụ</strong> (Hình 2): (1) nam châm thẳng có trục quay; (2) cuộn dây; (3) <span class="tl-term"><input type="checkbox" id="tl92-t1"><label for="tl92-t1">điện kế</label><span class="tl-def">Ampe kế rất nhạy, số 0 ở giữa: kim lệch hai phía theo chiều dòng.</span></span>; (4) dây nối. Không có pin.</li>
 <li><strong>Làm:</strong> ① Giữ yên nam châm trước cuộn dây. ② Đưa nam châm lại gần, rồi kéo ra xa. ③ Quay nam châm quanh trục. ④ Đưa cực N vào trong $2\ \text{s},$ $1\ \text{s},$ $0{,}5\ \text{s};$ mỗi cách 3 lần.</li>
-<li><strong>Quan sát:</strong> ① kim ở số 0.<br>② lại gần: lệch một phía; ra xa: lệch phía kia.<br>③ lệch qua lại.<br>④ bảng dưới.</li>
+<li><strong>Quan sát:</strong> ① kim ở số 0.<br>② lại gần: lệch một phía; ra xa: lệch phía kia.<br>③ lệch qua lại.<br>④ đưa càng nhanh, kim lệch càng nhiều.</li>
 <li><strong>Rút ra:</strong> giả thuyết sai. Nam châm phải <em>chuyển động</em> so với cuộn dây mới có dòng điện.</li>
-<li><strong>Chưa nói được gì:</strong> cái gì thay đổi mới là nguyên nhân (mục 3).</li>
+<li><strong>Chưa nói được gì:</strong> cái gì thay đổi gây ra dòng (mục 3).</li>
 </ol>
-<p>Coi rằng: gần đó không có nam châm nào khác.</p>
+<p>Coi rằng: gần đó không có nam châm khác.</p>
 </div>
 
+<p>Số đo bước ④: xem <strong>bảng</strong> dưới.</p>
+
+<details class="tl-details tl-more">
+<summary>📊 Bảng số liệu bước ④ và sai số (số minh hoạ)</summary>
 <div class="table-scroll">
 <table class="tl-table">
 <thead>
@@ -62,14 +66,15 @@ __BANG_TN1__
 </tbody>
 </table>
 </div>
-<p>Số liệu minh hoạ. Đưa <strong>càng nhanh</strong>, kim lệch càng nhiều.</p>
-
-<details class="tl-details tl-more">
-<summary>📊 Đưa nhanh gấp đôi mà lần 0,5 s chỉ được 1,8 mA, chưa tới 2,0. Vì sao?</summary>
-<p>Kim có quán tính, không kịp lệch hết khi đẩy rất nhanh. Số đọc nhỏ hơn giá trị thật.<br>Tay đưa không đều nên ba lần lệch nhau. Đo lặp, lấy trung bình để giảm.</p>
+<p><strong>Kiểm quy luật:</strong> nhân số chỉ trung bình với thời gian đưa.<br>$0{,}5\cdot 2=1{,}0;$ $1{,}0\cdot 1=1{,}0;$ $1{,}8\cdot 0{,}5=0{,}9.$<br>Gần bằng nhau: số đường sức đổi nhanh gấp đôi thì dòng gấp đôi.</p>
+<p><strong>Vì sao lần 0,5 s chỉ được 1,8 mA, chưa tới 2,0?</strong></p>
+<ul>
+<li>Kim có quán tính, không kịp lệch hết khi đẩy rất nhanh: số đọc <em>luôn nhỏ hơn</em> giá trị thật (sai số hệ thống). Đo lặp không bớt được; muốn giảm thì đưa chậm hơn hoặc dùng điện kế nhạy, kim nhẹ hơn.</li>
+<li>Tay đưa không đều nên ba lần lệch nhau, lúc lớn lúc nhỏ (sai số ngẫu nhiên): đo lặp 3 lần, lấy trung bình để giảm.</li>
+</ul>
 </details>
 
-<p><strong>🔑 Chuyển động sinh dòng cảm ứng</strong></p>
+<p><strong>🔑 Nam châm lại gần, ra xa: có dòng</strong></p>
 
 <ul>
 <li>Dòng điện sinh ra như vậy gọi là <strong>dòng điện cảm ứng</strong>.</li>
@@ -100,9 +105,9 @@ __BANG_TN1__
 <input type="radio" name="tl92-q3" id="tl92-q3a"><label for="tl92-q3a" class="tl-opt tl-no">A. Lệch mạnh và đứng yên ở đó</label>
 <input type="radio" name="tl92-q3" id="tl92-q3b"><label for="tl92-q3b" class="tl-opt tl-ok">B. Chỉ số 0</label>
 <input type="radio" name="tl92-q3" id="tl92-q3c"><label for="tl92-q3c" class="tl-opt tl-no">C. Lệch qua lại liên tục</label>
-<input type="radio" name="tl92-q3" id="tl92-q3d"><label for="tl92-q3d" class="tl-opt tl-no">D. Lệch dần lên mãi</label>
+<input type="radio" name="tl92-q3" id="tl92-q3d"><label for="tl92-q3d" class="tl-opt tl-no">D. Lệch một phía, vì từ trường cuộn A đang mạnh dần lên</label>
 <div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giữ đóng thì từ trường của cuộn A không đổi, giống nam châm đứng yên ở bước ① Thí nghiệm 1.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lỗi "nam châm điện đang mạnh thì có dòng": bước ① Thí nghiệm 1 đã bác bỏ ý này.<br>C, D cần một thứ gì đó đang thay đổi; dòng trong cuộn A lại đều đặn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A là lỗi "nam châm điện đang mạnh thì có dòng": bước ① Thí nghiệm 1 đã bác bỏ ý này.<br>C cần một thứ gì đó đang thay đổi.<br>D: dòng trong cuộn A đều đặn nên từ trường không mạnh lên nữa; nó chỉ mạnh dần trong lúc đóng.</p></div>
 </div>
 </div>
 
@@ -138,7 +143,7 @@ __BANG_TN1__
 <ul>
 <li><strong>Kín:</strong> cuộn dây hở hai đầu thì không có dòng điện.</li>
 <li><strong>Đổi:</strong> đổi càng nhanh, dòng càng lớn (bảng mục 1).</li>
-<li>Đang tăng chuyển sang giảm (hay ngược lại): dòng cảm ứng <strong>đổi chiều</strong>.</li>
+<li>Nam châm lại gần rồi ra xa: số đường sức tăng rồi giảm, dòng cảm ứng <strong>đổi chiều</strong>.</li>
 </ul>
 
 <div class="tl-box tl-box--think tl-check">
@@ -177,8 +182,9 @@ __BANG_TN1__
 <div class="tl-box tl-box--exp tl-note" data-exp="tn-l9-camung-03">
 <p class="tl-label">🔬 Thí nghiệm 3: nam châm quay, hai LED ngược chiều</p>
 <ol class="tl-steps">
-<li><strong>Làm:</strong> quay nam châm chậm, rồi nhanh hơn.</li>
-<li><strong>Quan sát:</strong> hai LED thay nhau chớp, không sáng cùng lúc.<br>Quay nhanh: chớp nhanh hơn.</li>
+<li><strong>Dụng cụ</strong> (Hình 4): nam châm mạnh (nam châm đất hiếm), cuộn dây từ 1000 vòng trở lên, LED đỏ và LED xanh.</li>
+<li><strong>Làm:</strong> quay nam châm thật nhanh, rồi quay chậm dần.</li>
+<li><strong>Quan sát:</strong> hai LED thay nhau chớp, không sáng cùng lúc.<br>Quay càng nhanh: chớp càng nhanh, càng sáng.<br>Quay chậm quá: LED không sáng.</li>
 <li><strong>Rút ra:</strong> dòng cảm ứng <strong>luân phiên đổi chiều</strong>.</li>
 </ol>
 </div>
@@ -187,7 +193,7 @@ __BANG_TN1__
 
 <ul>
 <li>Dòng điện luân phiên đổi chiều gọi là <strong>dòng điện xoay chiều</strong>.</li>
-<li>Mỗi cực quay tới trước cuộn dây rồi đi ra: số đường sức tăng chuyển sang giảm, dòng đổi chiều.</li>
+<li>Dòng đổi chiều mỗi khi một cực quay tới đối diện cuộn dây.</li>
 <li>Nam châm có hai cực nên mỗi vòng quay, dòng đổi chiều 2 lần.</li>
 </ul>
 
@@ -205,14 +211,14 @@ __BANG_TN1__
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra ngay</p>
-<p><strong>Câu 4.</strong> Đưa cực N lại gần cuộn dây kín rồi kéo ra xa. Dòng cảm ứng đổi chiều vào lúc nào?</p>
+<p><strong>Câu 4.</strong> Đẩy cực N vào trong cuộn dây kín nối điện kế, rồi để nam châm nằm yên trong đó. Kim điện kế thế nào?</p>
 <div class="tl-quiz">
-<input type="radio" name="tl92-q5" id="tl92-q5a"><label for="tl92-q5a" class="tl-opt tl-no">A. Ngay khi nam châm bắt đầu đi lại gần</label>
-<input type="radio" name="tl92-q5" id="tl92-q5b"><label for="tl92-q5b" class="tl-opt tl-no">B. Khi nam châm đi được nửa đường tới cuộn dây</label>
-<input type="radio" name="tl92-q5" id="tl92-q5c"><label for="tl92-q5c" class="tl-opt tl-no">C. Không đổi chiều, vì trước sau vẫn là cực N</label>
-<input type="radio" name="tl92-q5" id="tl92-q5d"><label for="tl92-q5d" class="tl-opt tl-ok">D. Khi số đường sức qua cuộn dây đang tăng chuyển sang giảm</label>
-<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lại gần: số đường sức tăng. Ra xa: giảm. Lúc chuyển từ tăng sang giảm, dòng đổi chiều, khớp bước ② Thí nghiệm 1.</p></div>
-<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: lúc bắt đầu đi lại gần, dòng mới xuất hiện chứ chưa đổi chiều.<br>B: cả quãng đi tới, số đường sức vẫn tăng nên dòng giữ một chiều.<br>C: cùng cực N nhưng tăng rồi giảm thì chiều ngược nhau (kim lệch hai phía).</p></div>
+<input type="radio" name="tl92-q5" id="tl92-q5a"><label for="tl92-q5a" class="tl-opt tl-no">A. Lệch một phía lúc đẩy, rồi đứng yên ở chỗ lệch đó</label>
+<input type="radio" name="tl92-q5" id="tl92-q5b"><label for="tl92-q5b" class="tl-opt tl-no">B. Lệch một phía lúc đẩy, rồi lệch sang phía kia khi nam châm dừng</label>
+<input type="radio" name="tl92-q5" id="tl92-q5c"><label for="tl92-q5c" class="tl-opt tl-no">C. Lệch qua lại liên tục, vì nam châm nằm ngay trong cuộn dây</label>
+<input type="radio" name="tl92-q5" id="tl92-q5d"><label for="tl92-q5d" class="tl-opt tl-ok">D. Lệch một phía lúc đẩy, về số 0 khi nam châm dừng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lúc đẩy, số đường sức tăng: có dòng một chiều. Nam châm dừng: số đường sức không đổi nữa, dòng mất.<br>Không có lúc nào số đường sức giảm nên kim không lệch sang phía kia.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> A: nam châm đã dừng mà kim vẫn lệch là lỗi "nam châm nằm trong cuộn dây là có dòng" (bước ① Thí nghiệm 1).<br>B: dòng chỉ đổi chiều khi kéo nam châm ra (số đường sức giảm); dừng lại thì không giảm.<br>C: lệch qua lại cần số đường sức lúc tăng lúc giảm, như khi quay nam châm.</p></div>
 </div>
 </div>
 
@@ -347,7 +353,7 @@ __BANG_TN1__
 </details>
 <details class="tl-details tl-more">
 <summary>5. Dòng điện xoay chiều là gì? Khi nào dòng cảm ứng đổi chiều?</summary>
-<p>Luân phiên đổi chiều.<br>Số đường sức đang tăng chuyển sang giảm, hay ngược lại.</p>
+<p>Luân phiên đổi chiều.<br>Nam châm lại gần rồi ra xa: đổi chiều lúc chuyển từ lại gần sang ra xa.<br>Nam châm hoặc cuộn dây quay: đổi chiều 2 lần mỗi vòng.</p>
 </details>
 <details class="tl-details tl-more">
 <summary>6. Hai cách tạo dòng xoay chiều? Rôto, stato của đinamô xe đạp?</summary>
@@ -384,16 +390,11 @@ __BANG_TN1__
 <summary>🧮 Bấm xem lời giải</summary>
 <ol class="tl-steps">
 <li><strong>a)</strong> Cuộn dây quay: mặt của nó lúc vuông góc, lúc song song với đường sức. Số đường sức xuyên qua luân phiên tăng, giảm. Mạch kín qua hai LED nên có dòng cảm ứng.</li>
-<li><strong>b) Đổi chiều:</strong> mỗi lần mặt cuộn dây quay qua vị trí vuông góc với đường sức (đón nhiều nhất), số đường sức đang tăng chuyển sang giảm. Dòng đổi chiều. Một vòng có 2 lần như vậy.</li>
+<li><strong>b) Đổi chiều:</strong> dòng đổi chiều mỗi khi mặt cuộn dây quay qua vị trí vuông góc với đường sức (đón nhiều đường sức nhất). Một vòng có 2 lần như vậy.</li>
 <li><strong>b) Hai đèn:</strong> nửa vòng này dòng đi một chiều, LED đỏ sáng. Nửa vòng kia dòng đi chiều ngược lại, LED xanh sáng. Không bao giờ sáng cùng lúc.</li>
 <li><strong>c)</strong> Dừng quay: số đường sức không đổi, không có dòng. Hai đèn tắt, dù từ trường vẫn còn.</li>
 <li><strong>Kiểm tra:</strong> khớp với đèn đinamô ở mở bài: dừng xe thì đèn tắt.</li>
 </ol>
-</details>
-
-<details class="tl-details tl-more">
-<summary>🤔 Lúc mặt cuộn dây song song với đường sức thì sao?</summary>
-<p>Lúc đó không đường sức nào xuyên qua. Quay tiếp, đường sức xuyên vào từ mặt bên kia của cuộn dây.<br>Kể cả chiều xuyên thì số đường sức vẫn đang giảm, nên dòng không đổi chiều ở vị trí này.</p>
 </details>
 
 <div class="tl-box tl-box--think tl-check">

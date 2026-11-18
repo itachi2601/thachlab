@@ -6,6 +6,7 @@ Chạy: cd <thư mục bài> && python3 build_figs.py
 """
 import json, math, pathlib
 from svg_lib import *
+BLUE_T, GRN_T, RED_T = "#0284c7", "#059669", "#dc2626"   # màu chữ nhãn: đậm hơn, đọc được cả nền sáng lẫn tối
 
 HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -75,7 +76,7 @@ P = arc_pts(WX, WY, WR + 18, WR + 18, 200, 250)
 b += pts_path(P, GRN, 2.6) + chev_on(P, len(P) - 2, GRN, 2.6)
 b += T(196, 112, "Đinamô", "currentColor", 16)
 b += T(290, 120, "Đèn xe", "currentColor", 16)
-b += T(12, 26, "Bánh xe quay", GRN, 15)
+b += T(12, 26, "Bánh xe quay", GRN_T, 15)
 fig1 = wrap("0 0 420 250", "Bánh xe đạp, đinamô hình trụ tì vào lốp, dây nối từ đinamô tới đèn xe phía trước", b,
             "Hình 1. Đèn xe đạp chạy bằng đinamô.<br>Núm đinamô tì vào lốp, quay theo bánh xe.")
 
@@ -88,8 +89,8 @@ b += pts_path(P, GRN, 2.2) + chev_on(P, len(P) - 2, GRN, 2.2, 10)
 b += bar_magnet(MCX, MCY, 104, 32, n_left=False)
 # mũi tên hai chiều: lại gần / ra xa
 b += line(52, 160, 136, 160, BLUE, 2.4) + chevron(136, 160, 1, 0, BLUE, 2.4, 11) + chevron(52, 160, -1, 0, BLUE, 2.4, 11)
-b += T(94, 184, "lại gần · ra xa", BLUE, 14, "middle")
-b += T(136, 64, "quay", GRN, 14)
+b += T(94, 184, "lại gần · ra xa", BLUE_T, 14, "middle")
+b += T(136, 64, "quay", GRN_T, 14)
 b += T(10, 28, "(1) Nam châm", "currentColor", 15)
 # cuộn dây
 X0, X1, RY = 214, 314, 38
@@ -179,8 +180,8 @@ pa, n_xa = panel(0, 80, 330, "a) Cuộn dây ở xa", "a")
 pb, n_gan = panel(146, 226, 160, "b) Cuộn dây ở gần", "b")
 assert n_gan > n_xa >= 1, (n_xa, n_gan)
 b = pa + pb + line(0, 140, 420, 140, "currentColor", 1, "3 4", .4)
-b += T(410, 18, f"{n_xa} đường xuyên qua", BLUE, 15, "end")
-b += T(410, 164, f"{n_gan} đường xuyên qua", BLUE, 15, "end")
+b += T(410, 18, f"{n_xa} đường xuyên qua", BLUE_T, 15, "end")
+b += T(410, 164, f"{n_gan} đường xuyên qua", BLUE_T, 15, "end")
 fig3 = wrap("0 0 420 282", f"Cùng một nam châm thẳng, đường sức nét đứt; vòng dây ở xa có {n_xa} đường sức xuyên qua, ở gần có {n_gan} đường", b,
             f"Hình 3. Đường sức xuyên qua cuộn dây (tô xanh).<br>Ở xa: {n_xa} đường. Ở gần: {n_gan} đường.")
 
@@ -207,7 +208,7 @@ b += (f'<g transform="rotate({ROT} {CX} {CY})">'
 b += f'<circle cx="{CX}" cy="{CY}" r="4" fill="#fff" stroke="{UM_EDGE}" stroke-width="2"/>'
 P = arc_pts(CX, CY, 78, 78, 200, 300)
 b += pts_path(P, GRN, 2.6) + chev_on(P, len(P) - 2, GRN, 2.6)
-b += T(10, 30, "Nam châm quay", GRN, 15)
+b += T(10, 30, "Nam châm quay", GRN_T, 15)
 b += T(10, 238, "trục quay ở tâm", "currentColor", 13, "start", "600")
 # cuộn dây
 X0, X1, RY = 186, 262, 34
@@ -220,9 +221,9 @@ b += f'<path d="M{X1},{CY + RY} V{YB} H{XG} V{CY + 12}" fill="none" stroke="curr
 b += line(XR, YT, XR, CY - 12) + line(XR, CY + 12, XR, YB)
 b += f'<circle cx="{XR}" cy="{YT}" r="3" fill="currentColor"/><circle cx="{XR}" cy="{YB}" r="3" fill="currentColor"/>'
 b += led(XR, CY, False, RED) + led(XG, CY, True, GRN)
-b += T(XR, 236, "LED đỏ", RED, 14, "middle")
-b += T(XG - 8, 256, "LED xanh", GRN, 14, "middle")
-fig4 = wrap("0 0 420 264", "Nhìn từ trên: nam châm thẳng quay quanh trục ở tâm, đặt trước cuộn dây; hai đầu cuộn dây nối với hai đèn LED đỏ và xanh mắc song song, ngược chiều nhau", b,
+b += T(XR - 8, CY + 38, "đỏ", RED_T, 14, "end")
+b += T(XG - 8, CY + 38, "xanh", GRN_T, 14, "end")
+fig4 = wrap("0 0 420 250", "Nhìn từ trên: nam châm thẳng quay quanh trục ở tâm, đặt trước cuộn dây; hai đầu cuộn dây nối với hai đèn LED đỏ và xanh mắc song song, ngược chiều nhau", b,
             "Hình 4. Thí nghiệm 3, nhìn từ trên xuống.<br>Hai LED mắc song song, ngược chiều nhau.<br>Mỗi LED chỉ cho dòng điện đi qua theo chiều mũi tam giác.")
 
 
@@ -293,7 +294,7 @@ tn.append({**base,
   "hien_tuong_hay_sai": ["Nghĩ nam châm mạnh để yên trong cuộn dây vẫn có dòng điện.",
                          "Nghĩ lại gần và ra xa cho dòng cùng chiều.",
                          "Quên rằng cuộn dây phải nối kín với điện kế."],
-  "sai_so_thuong_gap": "Lần đưa nhanh nhất, kim có quán tính nên số chỉ lớn nhất đọc được nhỏ hơn giá trị thật; tay đưa không đều làm ba lần lệch nhau, lấy trung bình để giảm.",
+  "sai_so_thuong_gap": "Hai nguồn khác nhau. (1) Kim có quán tính: khi đưa rất nhanh, số chỉ lớn nhất luôn nhỏ hơn giá trị thật (sai số hệ thống, đo lặp không bớt được); giảm bằng đưa chậm hơn hoặc dùng điện kế nhạy, kim nhẹ. (2) Tay đưa không đều: ba lần lệch nhau lúc lớn lúc nhỏ (sai số ngẫu nhiên); đo lặp 3 lần, lấy trung bình.",
   "an_toan": "Không đập nam châm vào cuộn dây; giữ nam châm xa điện thoại, thẻ từ.",
   "goi_y_mo_phong": {"loai": "2d_dong_hoc+bang_so_lieu", "y_tuong": "Kéo nam châm bằng chuột trước cuộn dây; kim điện kế lệch theo tốc độ và chiều chuyển động, đứng yên thì về 0.",
                      "diem_nhan": "Để yên nam châm ngay trong lòng cuộn dây: kim về 0."}})
@@ -328,22 +329,24 @@ tn.append({**base,
   "id": "tn-l9-camung-03", "ten": "Nam châm quay trước cuộn dây nối hai LED song song ngược chiều", "loai": "thi_nghiem", "muc_do": "co_ban",
   "kien_thuc": ["xoaychieu.khai_niem", "xoaychieu.nguyen_tac_tao", "camung.doi_chieu"],
   "muc_tieu": "Thấy hai LED ngược chiều thay nhau sáng, không sáng cùng lúc: dòng cảm ứng luân phiên đổi chiều, tức là dòng điện xoay chiều.",
-  "dung_cu": [{"ten": "Nam châm thẳng trên giá có trục quay thẳng đứng", "so_luong": 1},
-              {"ten": "Cuộn dây dẫn", "so_luong": 1},
+  "dung_cu": [{"ten": "Nam châm thẳng loại mạnh (nam châm đất hiếm NdFeB) trên giá có trục quay thẳng đứng", "so_luong": 1},
+              {"ten": "Cuộn dây dẫn từ 1000 vòng trở lên", "so_luong": 1},
               {"ten": "Hai đèn LED khác màu (đỏ, xanh) mắc song song, ngược chiều nhau", "so_luong": 2}],
-  "cac_buoc": {"lam": ["Nối hai LED vào hai đầu cuộn dây như Hình 4.", "Quay nam châm đều và chậm trước cuộn dây.", "Quay nhanh hơn."],
-               "quan_sat": ["Hai LED thay nhau chớp sáng, không bao giờ sáng cùng lúc.", "Quay nhanh hơn: chớp nhanh hơn, sáng hơn."],
+  "cac_buoc": {"lam": ["Nối hai LED vào hai đầu cuộn dây như Hình 4.", "Quay nam châm thật nhanh trước cuộn dây.", "Quay chậm dần."],
+               "quan_sat": ["Hai LED thay nhau chớp sáng, không bao giờ sáng cùng lúc.", "Quay càng nhanh: chớp càng nhanh, càng sáng.",
+                            "Quay chậm quá: LED không sáng (dòng quá nhỏ, LED cần điện áp tối thiểu khoảng 1,8 V mới sáng)."],
                "rut_ra": ["Dòng cảm ứng luân phiên đổi chiều: đó là dòng điện xoay chiều.",
-                          "Mỗi vòng quay, hai cực lần lượt đi qua trước cuộn dây nên dòng đổi chiều 2 lần."]},
+                          "Dòng đổi chiều mỗi khi một cực quay tới đối diện cuộn dây: 2 lần mỗi vòng."]},
   "tham_so": [{"ky_hieu": "n", "ten": "Số vòng quay mỗi giây", "don_vi": "vòng/s", "kieu": "dieu_chinh", "min": 0.5, "max": 5, "mac_dinh": 1, "buoc": 0.5},
               {"ky_hieu": "N_doi", "ten": "Số lần dòng đổi chiều mỗi giây", "don_vi": "lần/s", "kieu": "tinh_ra"}],
   "mo_hinh": {"phuong_trinh": ["N_doi = 2·n", "mỗi LED sáng trong nửa vòng quay"],
-              "gia_thiet": ["nam châm hai cực, quay đều", "LED chỉ cho dòng đi qua theo một chiều"]},
+              "gia_thiet": ["nam châm hai cực, quay đều", "LED chỉ cho dòng đi qua theo một chiều", "quay đủ nhanh để LED sáng"]},
   "so_lieu_mau": {"cot": ["n (vòng/s)", "Số lần đổi chiều mỗi giây", "Mỗi LED chớp mỗi giây"],
                   "hang": [[0.5, 1, 0.5], [1, 2, 1], [2, 4, 2]],
                   "ghi_chu": "Tính từ mô hình N_doi = 2n."},
   "ket_qua_ky_vong": "LED đỏ và LED xanh thay nhau sáng, mỗi đèn sáng nửa vòng quay.",
-  "hien_tuong_hay_sai": ["Nghĩ hai LED cùng sáng vì cùng nối vào một cuộn dây.", "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều."],
+  "hien_tuong_hay_sai": ["Nghĩ hai LED cùng sáng vì cùng nối vào một cuộn dây.", "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều.",
+                         "Quay tay chậm thấy LED không sáng rồi kết luận không có dòng; thật ra dòng quá nhỏ."],
   "an_toan": "Giữ tay xa nam châm đang quay.",
   "goi_y_mo_phong": {"loai": "2d_dong_hoc", "y_tuong": "Nam châm quay với tốc độ chỉnh được; hai LED sáng theo dấu dòng cảm ứng; tuỳ chọn hiện số đường sức qua cuộn dây.",
                      "diem_nhan": "Mỗi lần một cực quay qua chính diện cuộn dây, LED đang sáng tắt và LED kia sáng."}})

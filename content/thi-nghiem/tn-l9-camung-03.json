@@ -16,11 +16,11 @@
  "muc_tieu": "Thấy hai LED ngược chiều thay nhau sáng, không sáng cùng lúc: dòng cảm ứng luân phiên đổi chiều, tức là dòng điện xoay chiều.",
  "dung_cu": [
   {
-   "ten": "Nam châm thẳng trên giá có trục quay thẳng đứng",
+   "ten": "Nam châm thẳng loại mạnh (nam châm đất hiếm NdFeB) trên giá có trục quay thẳng đứng",
    "so_luong": 1
   },
   {
-   "ten": "Cuộn dây dẫn",
+   "ten": "Cuộn dây dẫn từ 1000 vòng trở lên",
    "so_luong": 1
   },
   {
@@ -31,16 +31,17 @@
  "cac_buoc": {
   "lam": [
    "Nối hai LED vào hai đầu cuộn dây như Hình 4.",
-   "Quay nam châm đều và chậm trước cuộn dây.",
-   "Quay nhanh hơn."
+   "Quay nam châm thật nhanh trước cuộn dây.",
+   "Quay chậm dần."
   ],
   "quan_sat": [
    "Hai LED thay nhau chớp sáng, không bao giờ sáng cùng lúc.",
-   "Quay nhanh hơn: chớp nhanh hơn, sáng hơn."
+   "Quay càng nhanh: chớp càng nhanh, càng sáng.",
+   "Quay chậm quá: LED không sáng (dòng quá nhỏ, LED cần điện áp tối thiểu khoảng 1,8 V mới sáng)."
   ],
   "rut_ra": [
    "Dòng cảm ứng luân phiên đổi chiều: đó là dòng điện xoay chiều.",
-   "Mỗi vòng quay, hai cực lần lượt đi qua trước cuộn dây nên dòng đổi chiều 2 lần."
+   "Dòng đổi chiều mỗi khi một cực quay tới đối diện cuộn dây: 2 lần mỗi vòng."
   ]
  },
  "tham_so": [
@@ -68,7 +69,8 @@
   ],
   "gia_thiet": [
    "nam châm hai cực, quay đều",
-   "LED chỉ cho dòng đi qua theo một chiều"
+   "LED chỉ cho dòng đi qua theo một chiều",
+   "quay đủ nhanh để LED sáng"
   ]
  },
  "so_lieu_mau": {
@@ -99,7 +101,8 @@
  "ket_qua_ky_vong": "LED đỏ và LED xanh thay nhau sáng, mỗi đèn sáng nửa vòng quay.",
  "hien_tuong_hay_sai": [
   "Nghĩ hai LED cùng sáng vì cùng nối vào một cuộn dây.",
-  "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều."
+  "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều.",
+  "Quay tay chậm thấy LED không sáng rồi kết luận không có dòng; thật ra dòng quá nhỏ."
  ],
  "an_toan": "Giữ tay xa nam châm đang quay.",
  "goi_y_mo_phong": {

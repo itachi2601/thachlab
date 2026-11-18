@@ -2,6 +2,7 @@
 
 ## Chặng
 - 2026-11-18 · Chặng 1 XONG (chưa kiểm chéo, chưa đăng DB): theory.html (2.261 từ hiện ngay, ~16,1 phút → ghi 16; 8 quiz, đáp án đúng 2A/2B/2C/2D; 4 hình), bundle.json (6 câu, validate ok), tn-l9-camung-01..03.json (kiểm bằng thi_nghiem.py trên bản sao kho ở scratchpad, KHÔNG ghi index.json).
+- 2026-11-18 · Sửa theo kiểm chéo: cắt details 'mặt cuộn dây song song' (đếm có dấu, ngoài YCCĐ); quy tắc tăng→giảm chỉ còn cho nam châm lại gần/ra xa, chỗ quay chỉ nêu kết quả 'đổi chiều 2 lần/vòng' (II.3, II.4, IV.5, V.b); Câu 4 đổi tình huống đẩy vào rồi dừng; TN3 thêm dụng cụ (nam châm đất hiếm, cuộn ≥1000 vòng), ngưỡng quay chậm thì LED không sáng; bảng TN1 vào details 📊 có kiểm quy luật i·t và tách sai số hệ thống/ngẫu nhiên; 🔑 II.1, nhiễu D Câu 2, '(Hình 2)', màu chữ nhãn đậm (#0284c7/#059669/#dc2626), nhãn LED sát đèn. 2.269 từ hiện ngay, lint_do_dai 0 lỗi, 1 cảnh báo (tổng > 2000).
 - Nguồn: "BÀI 13. CẢM ỨNG ĐIỆN TỪ - GV.docx" + phần máy phát / nguyên tắc của "BÀI 14. DÒNG ĐIỆN XOAY CHIỀU - GV.docx" (lấy ý, không chép, không dùng ảnh). Tác dụng của dòng xoay chiều để bài 93 (chỉ một câu chuyển tiếp).
 
 ## Ý bắt buộc (YCCĐ KHTN 9) — so lại sau khi viết
@@ -24,4 +25,4 @@
 - Số liệu bảng TN1 là minh hoạ (ghi rõ trong bài); có số đo thật thì thay trong build_figs.py (DOC).
 - docs/BANG-MEO-TU-KHOA.md: dùng lại "Kín – Đổi – Dòng", "Quay – Đổi – Sinh" (L12) với nghĩa lớp 9 (đổi = số đường sức); chưa thêm dòng lớp 9 vào bảng.
 - PhET faradays-law trong details: chưa mở thật lại ở phiên này (đã dùng ở L12).
-- lint_do_dai: 2 cảnh báo (mục II.1 384 từ > 350; tổng 2.261 > 2.000), 0 lỗi cứng.
+- lint_do_dai: 1 cảnh báo (tổng 2.269 > 2.000), 0 lỗi cứng.
