@@ -38,10 +38,10 @@ SOAT = {
                   ch("Không: khí nhận nhiệt thì nội năng phải tăng", vi_sao="Nội năng tăng hay giảm do TỔNG năng lượng vào và ra; khí còn sinh công đưa năng lượng ra ngoài.")],
         loi_hay_gap="Chỉ nhìn chữ “nhận nhiệt” mà kết luận nội năng tăng — phải so cả công khí sinh ra."),
     (4, 3): dict(soat="dau_chieu",
-        hoi="Quá trình 1, khí bị nén (nhận công) mà nội năng vẫn giảm. Khí phải toả hay thu nhiệt?",
-        lua_chon=[ch("Toả nhiệt, và nhiều hơn công nhận vào", True),
-                  ch("Thu nhiệt, vì đã nhận công thì cũng nhận nhiệt", vi_sao="Nhận công và nhận nhiệt là hai đường riêng. Nhận công mà nội năng vẫn giảm thì nhiệt phải đi ra."),
-                  ch("Không trao đổi nhiệt", vi_sao="Khi Q = 0 thì ΔU = A > 0, nội năng phải tăng — trái với đề.")],
+        hoi="Nén khí, khí nhận 25 J công mà nội năng vẫn giảm 35 J. Nhiệt toả ra lớn hơn hay nhỏ hơn 25 J?",
+        lua_chon=[ch("Lớn hơn 25 J: nhiệt toả phải bù cả công nhận vào lẫn phần nội năng giảm", True),
+                  ch("Nhỏ hơn 25 J", vi_sao="Nhiệt toả nhỏ hơn công nhận thì ΔU = A + Q > 0, nội năng tăng — trái với đề."),
+                  ch("Đúng bằng 25 J", vi_sao="Khi đó ΔU = 0, nội năng không đổi — trái với đề.")],
         loi_hay_gap="Coi “nội năng giảm 35 J” là ΔU = +35 J thì ra khí thu nhiệt, trái với việc nội năng giảm."),
     (4, 4): dict(soat="dau_chieu",
         hoi="Khối đồng toả nhiệt cho nước mà nội năng của đồng vẫn tăng. Có hợp lí không?",
@@ -55,16 +55,16 @@ SOAT = {
                   ch("Cỡ vài J/(kg·K)", vi_sao="Ra cỡ vài đơn vị là đã để khối lượng bằng gam — nhỏ đi 1000 lần."),
                   ch("Cỡ vài chục J/(kg·K)", vi_sao="Ra cỡ vài chục là đã thế τ bằng phút — Q nhỏ đi 60 lần; chất lỏng quen thuộc có c cỡ nghìn J/(kg·K).")],
         loi_hay_gap="Để m bằng gam hoặc τ bằng phút thì c lệch cả nghìn lần — so ngay với c của nước."),
-    (5, 2): dict(soat="co_so",
-        hoi="Ba giá trị đo được đều lớn hơn số tra bảng một chút. Điều đó cho biết gì?",
-        lua_chon=[ch("Hợp lí: cùng bậc với số tra bảng, lớn hơn chút ít do một phần nhiệt mất ra ngoài", True),
-                  ch("Đã lấy sai mốc thời gian", vi_sao="Lấy nhầm mốc (như mốc cuối tính từ gốc) làm kết quả lớn gấp mấy lần, không chỉ lớn hơn vài phần trăm.")],
-        loi_hay_gap="Lấy mốc cuối của đồ thị làm độ dài đoạn ngang thì L lớn gấp mấy lần số tra bảng — lệch quá xa là sai mốc."),
+    (5, 2): dict(soat="dau_chieu",
+        hoi="Một phần nhiệt của bếp mất ra ngoài. Vậy c, λ, L đo được lớn hơn hay nhỏ hơn giá trị thật?",
+        lua_chon=[ch("Lớn hơn: Pτ đã tính cả phần nhiệt mất, đem chia cho m nên ra số lớn hơn", True),
+                  ch("Nhỏ hơn: nhiệt mất ra ngoài thì số đo phải nhỏ đi", vi_sao="Số đo tính từ Pτ, mà Pτ gồm cả phần nhiệt mất; nước nhận ít hơn Pτ nên chia ra lớn hơn thật.")],
+        loi_hay_gap="Nghĩ mất nhiệt làm kết quả nhỏ đi — thật ra Pτ đã gồm phần mất nên c, λ, L ra lớn hơn giá trị thật."),
     (5, 3): dict(soat="co_so",
         hoi="Nhiệt dung riêng vừa tìm có hợp lí với một kim loại không?",
         lua_chon=[ch("Có: cùng bậc trăm J/(kg·K) như bảng, nhỏ hơn hẳn c của nước", True),
                   ch("Không: c của kim loại phải lớn hơn c của nước", vi_sao="Nước có c rất lớn (4200 J/(kg·K)); kim loại trong bảng chỉ vài trăm.")],
-        loi_hay_gap="Quên nhiệt dung của vỏ nhiệt lượng kế thì c lệch khỏi bảng — luôn đối chiếu với bảng c."),
+        loi_hay_gap="Lấy Δt của kim loại là 25 − 20 = 5 K thay vì 100 − 25 = 75 K thì c ra cỡ nghìn J/(kg·K), lớn hơn cả c của nước — dấu hiệu đã sai."),
 }
 
 TITLE = re.compile(r'(<span class="bt-step-n">\d+</span><span>)Kiểm tra(</span>)')
@@ -77,8 +77,10 @@ for lesson in sorted({k[0] for k in SOAT}):
             continue
         dang = J["dang_bai"][d - 1]
         last = dang["buoc"][-1]
-        if last.get("soat"):
-            print(f"{lesson} d{d}: đã có soat, bỏ qua"); continue
+        if last.get("soat"):  # chạy lại sau khi sửa câu chữ: ghi đè nội dung, tiêu đề đã đổi
+            if last != {"tieu_de": "Soát nhanh", **s}:
+                dang["buoc"][-1] = {"tieu_de": "Soát nhanh", **s}; print(f"{lesson} d{d}: cập nhật Soát nhanh")
+            continue
         assert last["tieu_de"] == "Kiểm tra" and not last.get("hoi"), (lesson, d, last)
         html = dang["solution_html"]
         hits = list(TITLE.finditer(html))

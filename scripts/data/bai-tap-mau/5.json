@@ -183,19 +183,19 @@
     },
     {
      "tieu_de": "Soát nhanh",
-     "soat": "co_so",
-     "hoi": "Ba giá trị đo được đều lớn hơn số tra bảng một chút. Điều đó cho biết gì?",
+     "soat": "dau_chieu",
+     "hoi": "Một phần nhiệt của bếp mất ra ngoài. Vậy c, λ, L đo được lớn hơn hay nhỏ hơn giá trị thật?",
      "lua_chon": [
       {
-       "text": "Hợp lí: cùng bậc với số tra bảng, lớn hơn chút ít do một phần nhiệt mất ra ngoài",
+       "text": "Lớn hơn: Pτ đã tính cả phần nhiệt mất, đem chia cho m nên ra số lớn hơn",
        "dung": true
       },
       {
-       "text": "Đã lấy sai mốc thời gian",
-       "vi_sao": "Lấy nhầm mốc (như mốc cuối tính từ gốc) làm kết quả lớn gấp mấy lần, không chỉ lớn hơn vài phần trăm."
+       "text": "Nhỏ hơn: nhiệt mất ra ngoài thì số đo phải nhỏ đi",
+       "vi_sao": "Số đo tính từ Pτ, mà Pτ gồm cả phần nhiệt mất; nước nhận ít hơn Pτ nên chia ra lớn hơn thật."
       }
      ],
-     "loi_hay_gap": "Lấy mốc cuối của đồ thị làm độ dài đoạn ngang thì L lớn gấp mấy lần số tra bảng — lệch quá xa là sai mốc."
+     "loi_hay_gap": "Nghĩ mất nhiệt làm kết quả nhỏ đi — thật ra Pτ đã gồm phần mất nên c, λ, L ra lớn hơn giá trị thật."
     }
    ],
    "form": "bai_tap",
@@ -456,7 +456,7 @@
        "vi_sao": "Nước có c rất lớn (4200 J/(kg·K)); kim loại trong bảng chỉ vài trăm."
       }
      ],
-     "loi_hay_gap": "Quên nhiệt dung của vỏ nhiệt lượng kế thì c lệch khỏi bảng — luôn đối chiếu với bảng c."
+     "loi_hay_gap": "Lấy Δt của kim loại là 25 − 20 = 5 K thay vì 100 − 25 = 75 K thì c ra cỡ nghìn J/(kg·K), lớn hơn cả c của nước — dấu hiệu đã sai."
     }
    ]
   },
