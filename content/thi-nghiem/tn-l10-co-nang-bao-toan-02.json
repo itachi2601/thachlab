@@ -90,27 +90,32 @@
  "so_lieu_mau": {
   "cot": [
    "lần nảy n",
-   "h_n (m)"
+   "h_n (m)",
+   "W_n = mgh_n (mJ)"
   ],
   "hang": [
    [
     0,
-    1.0
+    1.0,
+    27.0
    ],
    [
     1,
-    0.8
+    0.8,
+    21.6
    ],
    [
     2,
-    0.64
+    0.64,
+    17.28
    ],
    [
     3,
-    0.512
+    0.512,
+    13.824
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ từ mô hình h_n = 0,8^n; bài ghi 0,80; 0,64; 0,51 m."
+  "ghi_chu": "Số liệu minh hoạ từ mô hình h_n = 0,8^n; bài ghi 0,80; 0,64; 0,51 m. Cột W_n (mốc thế năng ở mặt bàn, m = 2,7 g, g = 10 m/s²) thêm 18/11/2026 cho clip conang2; trên màn làm tròn 27,0 / 21,6 / 17,3 / 13,8 mJ. Câu chốt clip: thả từ 1,50 m, tới đỉnh lần nảy 2 cơ năng giảm 40,5 − 25,92 = 14,58 ≈ 14,6 mJ."
  },
  "ket_qua_ky_vong": "Độ cao đỉnh giảm theo cấp số nhân, cơ năng giảm ~20 % mỗi lần nảy.",
  "hien_tuong_hay_sai": [
