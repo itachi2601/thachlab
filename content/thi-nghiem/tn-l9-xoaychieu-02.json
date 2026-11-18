@@ -1,0 +1,150 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 15. Tác dụng của dòng điện xoay chiều",
+ "lesson_id": 93,
+ "nguon_trong_bai": "content/lesson-samples/l9-tac-dung-dong-dien-xoay-chieu/theory.html",
+ "id": "tn-l9-xoaychieu-02",
+ "ten": "Đo dòng điện qua đèn 6 V – 3 W với nguồn một chiều và nguồn xoay chiều cùng 6 V",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "xoaychieu.tac_dung_nhiet_sang",
+  "xoaychieu.dung_cu_do_ac",
+  "xoaychieu.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng số liệu thấy với cùng 6 V, dòng xoay chiều làm đèn sáng, nóng như dòng một chiều; dụng cụ đo phải đúng loại (DC/AC).",
+ "dung_cu": [
+  {
+   "ten": "Bóng đèn 6 V – 3 W có đui",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn một chiều 6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn xoay chiều 6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế một chiều (GHĐ 1 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Ampe kế xoay chiều (GHĐ 1 A, ĐCNN 0,01 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc đèn nối tiếp ampe kế một chiều vào nguồn một chiều 6 V; đọc số chỉ 3 lần.",
+   "Thay bằng nguồn xoay chiều 6 V và ampe kế xoay chiều; đọc số chỉ 3 lần.",
+   "So độ sáng của đèn hai lần."
+  ],
+  "quan_sat": [
+   "Hai lần đèn sáng như nhau.",
+   "Số chỉ ampe kế: một chiều 0,50; 0,49; 0,50 A; xoay chiều 0,49; 0,50; 0,50 A."
+  ],
+  "rut_ra": [
+   "Với cùng 6 V (hiệu dụng), dòng xoay chiều có tác dụng nhiệt, phát sáng như dòng một chiều.",
+   "Chênh 0,01 A là sai lệch đọc số cỡ một độ chia; trung bình hai cột như nhau ≈ 0,50 A."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "loai_nguon",
+   "ten": "Loại nguồn (0 một chiều, 1 xoay chiều)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "loai_ampe_ke",
+   "ten": "Loại ampe kế (0 một chiều, 1 xoay chiều)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn (hiệu dụng nếu xoay chiều)",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 6
+  },
+  {
+   "ky_hieu": "P_dm",
+   "ten": "Công suất định mức của đèn",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 3
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Số chỉ ampe kế",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = P_dm/U = 0,50 A (cả hai nguồn, U hiệu dụng = 6 V)",
+   "Ampe kế đúng loại: I_doc = I ± 0,01 A",
+   "Ampe kế một chiều trong mạch xoay chiều 50 Hz: I_doc ≈ 0 (lực lên khung đổi chiều 100 lần/giây)"
+  ],
+  "gia_thiet": [
+   "coi điện trở đèn ở 6 V như nhau với hai nguồn",
+   "bỏ qua điện trở ampe kế, dây nối"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Lần đo",
+   "I một chiều (A)",
+   "I xoay chiều (A)"
+  ],
+  "hang": [
+   [
+    1,
+    0.5,
+    0.49
+   ],
+   [
+    2,
+    0.49,
+    0.5
+   ],
+   [
+    3,
+    0.5,
+    0.5
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ I = 3/6 = 0,50 A, lệch tối đa một độ chia 0,01 A do đọc số; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Trung bình hai cột ≈ 0,50 A; đèn sáng như nhau.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dòng xoay chiều làm đèn tối hơn vì đổi chiều.",
+  "Dùng ampe kế một chiều đo dòng xoay chiều: kim gần như đứng ở 0 dù đèn sáng.",
+  "Nghĩ phải mắc đúng chốt (+), (−) cho ampe kế xoay chiều."
+ ],
+ "sai_so_thuong_gap": "Đọc kim lệch một độ chia 0,01 A: khoảng 2 % của 0,50 A.",
+ "an_toan": "Chỉ dùng nguồn 6 V của phòng thí nghiệm; không đo trực tiếp ổ điện 220 V.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Chọn nguồn và loại ampe kế; kim ampe kế một chiều đứng ở 0 khi gặp nguồn xoay chiều; bảng tự ghi số đọc.",
+  "diem_nhan": "Đúng loại dụng cụ thì hai nguồn cho cùng 0,50 A; sai loại thì kim đứng ở 0."
+ }
+}
