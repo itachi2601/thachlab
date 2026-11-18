@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 1. Giới thiệu một số dụng cụ và hoá chất. Thuyết trình một vấn đề khoa học",
+ "lesson_id": 128,
+ "nguon_trong_bai": "content/lesson-samples/l9-mo-dau-dung-cu-thuyet-trinh/theory.html",
+ "id": "tn-l9-modau-02",
+ "ten": "Vôn kế mắc nối tiếp với bóng đèn: đèn tắt, vôn kế chỉ gần bằng hiệu điện thế nguồn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dungcu.von_ke_song_song",
+  "dungcu.mac_nham_dung_cu"
+ ],
+ "muc_tieu": "Thấy vôn kế (điện trở rất lớn) mắc nối tiếp làm mạch gần như hở: đèn không sáng, vôn kế đo hiệu điện thế của nguồn chứ không phải của đèn.",
+ "dung_cu": [
+  {
+   "ten": "Đồng hồ đo điện đa năng số, thang DCV 20 V (điện trở vào khoảng 10 MΩ)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn 6 V – 0,5 A có đui",
+   "so_luong": 1
+  },
+  {
+   "ten": "Biến áp nguồn chỉnh ra 6 V một chiều",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Tắt nguồn, mắc đồng hồ (thang 20 V) nối tiếp với bóng đèn.",
+   "Bật nguồn 6 V, đóng khoá, quan sát đèn và đọc đồng hồ."
+  ],
+  "quan_sat": [
+   "Đèn không sáng.",
+   "Đồng hồ chỉ khoảng 6,00 V."
+  ],
+  "rut_ra": [
+   "Điện trở vôn kế rất lớn nên dòng gần như bằng 0.",
+   "Gần như cả hiệu điện thế nguồn rơi trên vôn kế: nó không đo hiệu điện thế của đèn.",
+   "Muốn đo hiệu điện thế của đèn, vôn kế phải mắc song song với đèn."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U_n",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 12,
+   "mac_dinh": 6.0,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "R_V",
+   "ten": "Điện trở vôn kế",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 10000000.0
+  },
+  {
+   "ky_hieu": "R_D",
+   "ten": "Điện trở bóng đèn (nguội, coi không đổi)",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 12.0
+  },
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng trong mạch",
+   "don_vi": "A",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "U_V",
+   "ten": "Số chỉ vôn kế",
+   "don_vi": "V",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "I = U_n / (R_V + R_D)",
+   "U_V = I · R_V"
+  ],
+  "gia_thiet": [
+   "bỏ qua điện trở dây nối và nguồn",
+   "coi điện trở đèn không đổi"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "U_n (V)",
+   "I (A)",
+   "U_V (V)"
+  ],
+  "hang": [
+   [
+    6.0,
+    6e-07,
+    6.0
+   ]
+  ],
+  "ghi_chu": "Số liệu tính từ mô hình, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Dòng khoảng 0,6 µA, đèn tắt; vôn kế chỉ 6,00 V.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ vôn kế nối tiếp vẫn đo đúng hiệu điện thế của đèn.",
+  "Nghĩ mắc nhầm vôn kế cũng nguy hiểm như mắc nhầm ampe kế."
+ ],
+ "an_toan": "Chỉ làm thử với vôn kế. KHÔNG làm thử ampe kế mắc song song (nối tắt nguồn, dòng rất lớn).",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc+bang_so_lieu",
+  "y_tuong": "Kéo thả vôn kế/ampe kế vào vị trí nối tiếp hoặc song song; đèn sáng/tắt và số chỉ đổi theo.",
+  "diem_nhan": "Vôn kế nối tiếp: đèn tắt, số chỉ bằng U nguồn. Ampe kế song song: báo nối tắt."
+ }
+}
