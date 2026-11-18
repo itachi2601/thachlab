@@ -106,3 +106,31 @@ Hạn mức: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có mẹo (G1, V1
 - **Đòn bẩy nhiệt + Quỹ nhiệt ở L12 Bài 4** (17/11/2026): lesson 5 vốn có 4 dạng chuẩn (DB) → chèn 2 dạng mới làm Dạng 3 (trộn kim loại, tìm c) và Dạng 4 (thả đá, không tan hết), kiem-code đạt; `scripts/data/bai-tap-mau/them-dang-nhiet-5.py` (nguồn `old/5.json`). Thầy duyệt 17/11; lịch 22h05 không chạy được (tab terminal chờ duyệt) → đăng tay 18/11 10h05, DB 6 dạng / 2 mẹo (sao lưu `scripts/logs/bai-tap-mau-bai5-1794971105058.json`); tính vào đo chặng 5 từ 18/11.
 - **Chặng 5** (đo 2–3 tuần) chưa bắt đầu, chờ có mẹo trên web đủ lâu.
   - Bắt đầu đo từ 2026-11-05 (ngày deploy ghi lượt): bảng `similar_practice_attempts` ghi mỗi lượt "Làm bài tương tự"; câu đo `scripts/sql/do-meo-nhin.sql` (lượt 1, dạng có mẹo so với dạng chưa có mẹo cùng chương).
+
+## 7. Mở rộng: "✓ Soát nhanh" và "⚖ Lập tỉ số" (thầy duyệt hướng 18/11/2026)
+
+Hai mẹo chung dùng được ở mọi chương, bù chỗ còn thiếu (kiểm/đoán đáp số, suy luận tỉ lệ). Không thêm "công thức nhanh" thuộc lòng.
+Căn cứ (dẫn theo trí nhớ, chưa tra lại nguồn): bước nhìn lại đáp số làm tăng chất lượng lời giải (Heller, Keith & Anderson 1992; Pólya);
+suy luận tỉ lệ là điểm yếu phổ biến (Arons; Cohen & Kanim 2005); giải nhiều bài bằng công thức không xoá quan niệm sai (Kim & Pak 2002);
+HS khá bị chậm nếu ép xem hướng dẫn (Kalyuga) → mẹo luôn tuỳ chọn.
+
+**✓ Soát nhanh** — MỘT câu tự trả lời ở bước cuối `buoc[]` của dạng, không thêm khối mới trên màn (G1, N1). Mỗi dạng chọn một kiểu:
+- **Đơn vị**: hai vế cùng đơn vị không.
+- **Cỡ số**: đáp số có nằm trong khoảng hợp lí không (c kim loại 100–900 J/kg·K…).
+- **Trường hợp giới hạn**: cho một đại lượng → 0 hoặc → ∞, kết quả phải về đâu.
+- **Dấu và chiều**: vật nóng phải nguội đi, ảnh thật phải ngược chiều…
+
+**⚖ Lập tỉ số** — trong lời giải các dạng "tăng n lần thì…" (R = ρl/S, T = 2π√(l/g), hao phí ∝ 1/U², bán rã): viết thành tỉ số thay vì tính hai lần.
+
+**Chiến thuật ba phần đề** (Phần I loại trừ bằng đơn vị/cỡ số; Phần II xét từng ý a)–d) độc lập; Phần III làm tròn ở bước cuối) — một trang, làm sau cùng,
+trước kì thi. Không dạy loại trừ trong bài học.
+
+| Chặng | Việc | Điều kiện |
+|---|---|---|
+| 6 | Bảng tra Soát nhanh (4 kiểu · ví dụ · chỗ dễ sai) + quy tắc trong skill `soan-bai-tap-mau` | — |
+| 7 | Thí điểm Soát nhanh một chương đang dạy (2–3 bài, ~8 dạng), `kiem-code` soát, đăng sau 22h. Đề xuất: L12 Ch.1 Nhiệt (đã có 💡 ở lesson 2, 5) — thầy chưa chốt chương | sau chặng 6 |
+| 8 | Lập tỉ số cho dạng tỉ lệ, ưu tiên dạng sai nhiều theo `question_dang` | song song chặng 7 |
+| 9 | Đo 2–3 tuần bằng `similar_practice_attempts` (dạng có/chưa có Soát nhanh cùng chương); không cải thiện thì gỡ | sau chặng 7 |
+| 10 | Trang chiến thuật ba phần đề | sau khi có số chặng 9 |
+
+Hạn mức: mỗi dạng ≤ 1 💡 + ≤ 1 câu Soát nhanh; mỗi bài ≤ 2 dạng có 💡. Chặng 5 (đo 💡 từ 19/11) vẫn làm trước khi mở đợt 2 mẹo nhìn.

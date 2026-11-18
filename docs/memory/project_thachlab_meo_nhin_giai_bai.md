@@ -13,6 +13,7 @@ Mô hình đời thường giải nhanh một dạng (`meo` trong `scripts/data/
 
 **Còn chờ:**
 - Chặng 5 đo hiệu quả: từ 2026-11-19 (đủ 2 tuần kể từ 2026-11-05) chạy `scripts/sql/do-meo-nhin.sql`; đợt 2 (15 ứng viên, KE-HOACH mục 4) chỉ mở sau khi có số.
+- Mở rộng thầy duyệt 2026-11-18 (KE-HOACH mục 7): ✓ Soát nhanh (1 câu tự trả lời ở bước cuối dạng) + ⚖ Lập tỉ số; chặng 6 bảng tra + skill, chặng 7 thí điểm (đề xuất L12 Ch.1, thầy chưa chốt chương).
 - `meo.dieu_kien` Đòn bẩy nhiệt 50 chữ (validator cảnh báo > 40), dùng chung 153 + 5 — sửa ở `meo_nhiet.py` thì chạy lại cả hai bài.
 
 **Why:** thầy muốn mẹo đặt đúng chỗ có dạng hợp ⚠ (đủ mọi giả thiết), mỗi bài ≤ 2 dạng có mẹo (G1).
