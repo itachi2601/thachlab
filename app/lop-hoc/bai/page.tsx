@@ -769,6 +769,10 @@ function LessonLoader() {
 
   const [title, setTitle] = useState("");
   const [chapterTitle, setChapterTitle] = useState("");
+  // Trang xuất tĩnh nên <title> mặc định là tên site — đặt tên bài để tab/lịch sử trình duyệt phân biệt được.
+  useEffect(() => {
+    if (title) document.title = `${title} | ThachLab`;
+  }, [title]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
   const [items, setItems] = useState<LessonItem[] | null>(null);
