@@ -128,6 +128,7 @@ FILES=(
   "supabase/migrations/20261114120000_cnc_diem_hoc_phan.sql|Bảng cnc_grades: điểm học phần CNC (Tiện, Phay) mỗi SV, RLS chỉ đọc dòng của mình|lúc nào cũng được (bảng mới, không đụng dữ liệu cũ)|supabase db query --linked -f perf/rollback/20261114120000_cnc_diem_hoc_phan.down.sql"
   "supabase/migrations/20261116120000_bank_apply_question_fix.sql|Hàm bank_apply_question_fix: nút AI sửa lỗi sửa luôn câu gốc trong ngân hàng + mọi đề dùng câu đó|lúc nào cũng được (hàm mới)|supabase db query --linked -f perf/rollback/20261116120000_bank_apply_question_fix.down.sql"
   "supabase/migrations/20261118120000_tap_luyen.sql|Bảng workout_logs + body_measurements cho ứng dụng tập /tai-khoan/tap-luyen, RLS chỉ chủ tài khoản|lúc nào cũng được (bảng mới)|supabase db query --linked -f perf/rollback/20261118120000_tap_luyen.down.sql"
+  "supabase/migrations/20261118150000_get_lesson_page_student.sql|RPC get_lesson_page_student: gộp 7 truy vấn trang /lop-hoc/bai (đề, tiến độ, kết quả, bài dở, luyện tập, mastery) thành 1 lần gọi; security invoker, chỉ thêm hàm|lúc nào cũng được (hàm mới); khuyên sau 22h cho đồng bộ deploy client|supabase db query --linked -f perf/rollback/20261118150000_get_lesson_page_student.down.sql"
 )
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2
 # ĐÃ CHẠY 12/11/2026 08:45: 20261112090000_cnc_quiz_cham_server_buoc_1
