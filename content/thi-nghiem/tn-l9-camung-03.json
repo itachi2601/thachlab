@@ -65,7 +65,7 @@
  "mo_hinh": {
   "phuong_trinh": [
    "N_doi = 2·n",
-   "mỗi LED sáng trong nửa vòng quay"
+   "mỗi LED sáng không quá nửa vòng, một lần mỗi vòng"
   ],
   "gia_thiet": [
    "nam châm hai cực, quay đều",
@@ -96,9 +96,9 @@
     2
    ]
   ],
-  "ghi_chu": "Tính từ mô hình N_doi = 2n."
+  "ghi_chu": "Tính từ mô hình N_doi = 2n. Tốc độ trong so_lieu_mau là minh hoạ tỉ lệ, LED thật cần quay nhanh."
  },
- "ket_qua_ky_vong": "LED đỏ và LED xanh thay nhau sáng, mỗi đèn sáng nửa vòng quay.",
+ "ket_qua_ky_vong": "LED đỏ và LED xanh thay nhau sáng, mỗi đèn sáng không quá nửa vòng, một lần mỗi vòng.",
  "hien_tuong_hay_sai": [
   "Nghĩ hai LED cùng sáng vì cùng nối vào một cuộn dây.",
   "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều.",
