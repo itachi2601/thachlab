@@ -507,6 +507,9 @@ export interface WorkedStep {
   loi_hay_gap?: string;
   /** "Bước tiếp theo là gì?" — 3 lựa chọn (1 đúng, 2 là cách làm sai hay chọn). Chỉ ở bước ≥ 2. */
   chon_buoc_ke?: WorkedChoice[];
+  /** ✓ Soát nhanh (KE-HOACH-MEO-GIAI mục 7): chỉ ở bước cuối, câu `lua_chon` soát đáp số theo một kiểu.
+   *  Luôn hỏi (giấu tới khi trả lời) nhưng không tính là "bước cuối" của `fading`. */
+  soat?: "don_vi" | "co_so" | "gioi_han" | "dau_chieu";
 }
 
 export interface LessonItem {

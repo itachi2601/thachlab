@@ -26,3 +26,50 @@ Chỉ số dạng đếm từ 1 (d1 = dạng đầu tiên của bài).
 
 ## Ứng viên chưa vào bảng
 Danh sách ứng viên còn lại (Phí cố định, Bồn nước rò, Điểm có hệ số, Người giữ cửa, Bập bênh, Giảm giá chồng, Hai bạn patin đẩy nhau, Ví cơ năng, Chồng người, Ống hút trà sữa, Ống đầy bi, Xe tải lớn ít chuyến, Bể chứa, Đèn pin lan ra, Bóng dưới đèn đường): `docs/KE-HOACH-MEO-GIAI-BAI-TAP.md` mục 4. Khi định làm một mẹo, thêm hàng ở đây TRƯỚC, điền ⚠ và chỗ sai, rồi mới vẽ.
+
+## ✓ Soát nhanh — tra trước khi đặt `soat` vào bước cuối của dạng (chặng 6, 18/11/2026)
+
+Kế hoạch: `docs/KE-HOACH-MEO-GIAI-BAI-TAP.md` mục 7. Đây là thói quen nhìn lại đáp số, không phải mẹo hình như 💡.
+
+**Quy trình**
+1. Mỗi dạng chọn **MỘT** kiểu ở bảng dưới, ưu tiên kiểu bắt đúng lỗi hay gặp của dạng (`loi_hay_gap`, `go_roi`). Không hợp kiểu nào thì không đặt.
+2. **Thay bước "Kiểm tra" có sẵn**, không thêm bước (464/529 dạng đang kết thúc bằng bước Kiểm tra không hỏi): đổi `tieu_de` và tiêu đề `.bt-step` cuối thành "Soát nhanh", thêm `soat`, `hoi`, `lua_chon`, `loi_hay_gap`. Nội dung giải thích cũ giữ nguyên, hiện sau khi em trả lời. Số bước không đổi nên vẫn khớp `.bt-step`.
+3. `hoi` ≤ 25 chữ; `lua_chon` 2–3 lựa chọn, lựa chọn đúng kèm lí do ngắn, lựa chọn sai là kết luận nhầm hay gặp (có `vi_sao`). Không đưa số tham chiếu mới mà bài/bảng trong đề chưa có.
+4. Bước `soat` **luôn hỏi** (giấu tới khi trả lời hoặc sai 2 lần) và không tính là "bước cuối" của `fading` — `giau_buoc_cuoi` vẫn giấu bước tính cuối như cũ. Validator: chỉ ở bước cuối, có `hoi` + `lua_chon`, không `dap_so`, không `chon_buoc_ke`.
+5. Không đặt cho dạng định tính đã kết thúc bằng câu chọn (soát trùng câu vừa hỏi). Hạn mức: mỗi dạng ≤ 1 câu Soát nhanh.
+
+```json
+{ "tieu_de": "Soát nhanh", "soat": "co_so",
+  "hoi": "Nhiệt dung riêng vừa tìm có hợp lí với một kim loại không?",
+  "lua_chon": [ { "text": "Có: cùng bậc trăm J/(kg·K) như bảng, nhỏ hơn hẳn c của nước", "dung": true },
+    { "text": "Không: c của kim loại phải lớn hơn c của nước", "dung": false, "vi_sao": "Nước có c rất lớn (4 200 J/(kg·K)); kim loại trong bảng chỉ vài trăm." } ],
+  "loi_hay_gap": "Quên nhiệt dung của vỏ nhiệt lượng kế thì c lệch khỏi bảng — luôn đối chiếu với bảng c." }
+```
+
+| Kiểu (`soat`) | Hợp với dạng | Câu hỏi mẫu | Chỗ dễ sai / không dùng |
+|---|---|---|---|
+| **Đơn vị** (`don_vi`) | Đáp số là biểu thức chữ, hoặc công thức tự lập qua nhiều bước | "Biểu thức √(2gh) có đơn vị m/s không?" (√(m/s²·m) = m/s) | Đúng đơn vị chưa chắc đúng (thiếu ½, 2π, căn bậc hai đổi chỗ vẫn có thể cùng đơn vị) <br> Đại lượng không đơn vị (hiệu suất, góc rad, tỉ số) — không bắt được lỗi <br> Lỗi đổi cm²→m², g→kg là lỗi số → dùng **Cỡ số** |
+| **Cỡ số** (`co_so`) | Đáp số là số, có khoảng hợp lí HS đã biết từ bảng trong đề, bài lí thuyết hoặc đời thường | c kim loại vài trăm J/(kg·K), nhỏ hơn c nước <br> Nhiệt độ cân bằng nằm giữa hai nhiệt độ đầu <br> Hiệu suất < 100 % <br> Con lắc đơn dài 1 m: T ≈ 2 s <br> Người đi bộ 1–2 m/s, xe máy 10–20 m/s | Đề có số liệu giả định phi thực tế thì không hỏi "có thực tế không" <br> Khoảng phải đã có trong bài/đề, không bắt HS thuộc số mới <br> Câu hỏi hỏi "có nằm trong khoảng không", không tự hỏi lại đáp số |
+| **Trường hợp giới hạn** (`gioi_han`) | Đáp số là biểu thức chữ có hai đại lượng trở lên | R₁R₂/(R₁+R₂): cho R₂ → ∞ thì về R₁; R₁ = R₂ thì về R/2 <br> Mặt phẳng nghiêng không ma sát: α = 90° thì a = g <br> Cân bằng nhiệt: m₂ → 0 thì t → t₁ | Giới hạn phải còn trong miền công thức đúng (thấu kính d → f: ảnh ra vô cực, không phải "ảnh bằng 0") <br> Chỉ hỏi giới hạn HS đã biết đáp số, không giới hạn lạ <br> Đáp số là số cụ thể → dùng Cỡ số |
+| **Dấu và chiều** (`dau_chieu`) | Đại lượng có dấu/chiều: Δt, công, gia tốc, vận tốc, ảnh qua thấu kính, chiều dòng điện cảm ứng | Vật nóng phải nguội đi (Δt < 0) <br> Chậm dần thì a ngược chiều v <br> Ảnh thật qua thấu kính hội tụ ngược chiều vật <br> Công lực cản âm | Dấu phụ thuộc chiều dương đã chọn → hỏi "có khớp chiều dương đã chọn không" <br> Quy ước Q thu > 0, Q toả > 0 (SGK) khác quy ước ΔU = A + Q → nói rõ quy ước của bài |
+
+## ⚖ Lập tỉ số — tra trước khi viết lời giải dạng "tăng/giảm n lần" (chặng 6, 18/11/2026)
+
+Không phải trường JSON mới: là cách viết **trong `solution_html`** và một bước `buoc` có `dap_so` là tỉ số. Dùng khi đề so hai trạng thái hoặc hỏi "tăng/giảm bao nhiêu lần", nhất là khi đề không cho đủ số tuyệt đối.
+
+**Quy tắc viết**
+1. Ghi rõ đại lượng nào **giữ nguyên** trước khi chia (dòng riêng).
+2. Viết một dòng tỉ số `X₂/X₁ = (…)`, gạch các đại lượng giữ nguyên, rồi mới thế số. Không tính X₁, X₂ riêng.
+3. `dap_so` của bước = tỉ số (không đơn vị); `loi_hay_gap` ghi lỗi tỉ lệ thật của dạng (quên bình phương, quên căn, đảo ngược tỉ số).
+4. Tỉ số < 1 → câu trả lời nói "giảm … lần" và nghịch đảo; ghi thêm câu nhận dạng: "Thấy **tăng/giảm n lần** → lập tỉ số, giữ nguyên …".
+
+| Quan hệ | Tỉ số | ⚠ Điều kiện (đủ mọi giả thiết) | Chỗ dễ sai |
+|---|---|---|---|
+| R = ρl/S | R₂/R₁ = (l₂/l₁)·(S₁/S₂) | Cùng vật liệu, cùng nhiệt độ | Kéo dài dây cùng khối lượng: thể tích không đổi nên S giảm n lần khi l tăng n lần → R tăng **n²** lần, không phải n |
+| T = 2π√(l/g) | T₂/T₁ = √((l₂/l₁)·(g₁/g₂)) | Con lắc đơn, dao động nhỏ | Quên căn: l tăng 4 lần thì T tăng 2 lần |
+| Hao phí truyền tải P_hp = P²R/(U cos φ)² | P_hp2/P_hp1 = (U₁/U₂)² | Cùng công suất **truyền đi** P, cùng R, cùng cos φ | Đề giữ công suất nơi tiêu thụ thì P truyền đi đổi theo → không còn đúng n² chính xác |
+| F = k·q₁q₂/r², F = G·m₁m₂/r² | F₂/F₁ = (r₁/r₂)² (cùng điện tích/khối lượng) | Điện tích điểm / chất điểm, hoặc cầu đều tính từ tâm; cùng môi trường | Đổi khoảng cách giữa hai mặt cầu thay vì giữa hai tâm |
+| W_đ = ½mv² | W₂/W₁ = (m₂/m₁)·(v₂/v₁)² | Cơ học cổ điển (v ≪ c) | v tăng 2 lần thì W_đ tăng 4 lần, không phải 2 |
+| P = U²/R | P₂/P₁ = (U₂/U₁)² | Cùng điện trở R (bỏ qua R đổi theo nhiệt độ) | Đèn ghi 220 V–100 W dùng ở 110 V: P = 25 W (¼), không phải 50 W |
+| pV/T = const | p₂V₂/T₂ = p₁V₁/T₁ | Cùng lượng khí (kín), khí lí tưởng, T tính bằng **K** | Dùng °C trong tỉ số |
+| Bán rã N = N₀·2^(−t/T) | N₁/N₂ = 2^((t₂−t₁)/T) | Một chất phóng xạ; trùng điều kiện mẹo **Chia đôi bánh** | Tỉ số hạt con/hạt mẹ là 2^(t/T) − 1, không phải 2^(t/T) |
