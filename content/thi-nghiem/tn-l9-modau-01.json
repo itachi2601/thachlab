@@ -69,7 +69,11 @@
    "min": 0.02,
    "max": 10,
    "mac_dinh": 10,
-   "buoc": 0.02
+   "gia_tri_roi_rac": [
+    0.02,
+    0.2,
+    10
+   ]
   },
   {
    "ky_hieu": "I_doc",
@@ -87,7 +91,7 @@
  ],
  "mo_hinh": {
   "phuong_trinh": [
-   "buoc = GHD/2000 (đồng hồ 3½ chữ số: 10 A → 0,01 A; 200 mA → 0,1 mA; 20 mA → 0,01 mA)",
+   "buoc theo thang (đồng hồ 3½ chữ số): 10 A → 0,01 A (= GHD/1000); 200 mA → 0,1 mA và 20 mA → 0,01 mA (= GHD/2000)",
    "nếu I > GHD: hiện '1' bên trái (quá thang)",
    "I_doc = lam_tron(I, buoc)",
    "delta = buoc / I_doc · 100 %"

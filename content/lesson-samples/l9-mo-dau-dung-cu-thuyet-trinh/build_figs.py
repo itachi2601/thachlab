@@ -97,7 +97,7 @@ fig2 = wrap("0 0 440 322", "Sơ đồ mạch đúng: biến áp nguồn, khoá K
 b = ""
 boxes = [(10, "MỞ", "1–2 slide", ("nêu câu hỏi", "vì sao đáng", "quan tâm"), BLUE),
          (150, "THÂN", "3–5 slide", ("số liệu, hình", "thí nghiệm", "có nguồn"), ORG),
-         (290, "KẾT", "1 slide", ("trả lời", "câu hỏi", "chốt ý chính"), GRN)]
+         (290, "KẾT", "1 slide", ("trả lời", "câu hỏi,", "đề xuất"), GRN)]
 for x, ttl, sl, rows, col in boxes:
     b += f'<rect x="{x}" y="40" width="120" height="130" rx="10" fill="{col}" fill-opacity=".14" stroke="{col}" stroke-width="2.4"/>'
     b += T(x + 60, 28, sl, "currentColor", 14, "middle", "600")
@@ -117,7 +117,10 @@ def panel(oy, kind):
     X0, X1, Y0, Y1 = 50, 230, oy + 56, oy + 180
     LYc = (Y0 + Y1) / 2
     PX, NX = 133, 147
-    g += poly([(PX, Y1), (X0, Y1), (X0, Y0)], "currentColor", W)
+    KT, KB = (Y0 + Y1) / 2 - 22, (Y0 + Y1) / 2 + 22
+    g += poly([(PX, Y1), (X0, Y1), (X0, KB)], "currentColor", W) + poly([(X0, KT), (X0, Y0)], "currentColor", W)
+    g += dot(X0, KT, "currentColor", 4) + dot(X0, KB, "currentColor", 4) + line(X0, KB, X0, KT, "currentColor", 3)
+    g += T(X0 + 14, (Y0 + Y1) / 2 + 6, "K", "currentColor", 18)
     if kind == "a":
         g += poly([(X0, Y0), (X1, Y0), (X1, LYc - 15)], "currentColor", W)
     else:
@@ -139,13 +142,16 @@ def panel(oy, kind):
         g += T(12, oy + 26, "b) Vôn kế mắc nối tiếp với đèn", "currentColor", 17)
     return g
 b = panel(0, "a") + line(10, 236, 410, 236, "currentColor", 1.2, "5 5", .5) + panel(244, "b")
-fig4 = wrap("0 0 420 474", "Hai sơ đồ mắc nhầm: a) ampe kế mắc song song với bóng đèn; b) vôn kế mắc nối tiếp với bóng đèn", b,
+fig4 = wrap("0 0 420 474", "Hai sơ đồ mắc nhầm, mỗi mạch có khoá K: a) ampe kế mắc song song với bóng đèn; b) vôn kế mắc nối tiếp với bóng đèn", b,
             "Hình 4. Hai cách mắc nhầm ampe kế và vôn kế.")
 
 # ---------- Thí nghiệm 1: một dòng điện, ba thang (đồng hồ số 3½ chữ số, giới hạn hiển thị 1999)
 I_TRUE = 0.15318                       # A, dòng thật qua đèn nhỏ ở nguồn 3 V (minh hoạ)
 THANG = [("10 A", 10.0, 0.01, "A"), ("200 mA", 0.2, 0.0001, "mA"), ("20 mA", 0.02, 0.00001, "mA")]
 rows1 = []
+# bước hiển thị khớp ghi chú JSON: 10 A → GHD/1000, hai thang mA → GHD/2000
+assert [round(ghd / buoc) for _, ghd, buoc, _ in THANG] == [1000, 2000, 2000]
+assert [(t, round(bu * (1 if d == "A" else 1000), 5)) for t, _, bu, d in THANG] == [("10 A", 0.01), ("200 mA", 0.1), ("20 mA", 0.01)]
 for ten, ghd, buoc, dv in THANG:
     if I_TRUE > ghd:
         rows1.append((ten, None, None))
@@ -212,10 +218,10 @@ tn.append({**base,
                           "Thang nhỏ nhất mà giới hạn đo vẫn lớn hơn số đo cho nhiều chữ số nhất.",
                           "Thang nhỏ hơn số đo thì báo quá thang, có thể làm đứt cầu chì."]},
   "tham_so": [{"ky_hieu": "I", "ten": "Cường độ dòng điện thật trong mạch", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.001, "max": 5, "mac_dinh": I_TRUE, "buoc": 0.001},
-              {"ky_hieu": "GHD", "ten": "Giới hạn đo của thang (0,02 / 0,2 / 10 A)", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.02, "max": 10, "mac_dinh": 10, "buoc": 0.02},
+              {"ky_hieu": "GHD", "ten": "Giới hạn đo của thang (0,02 / 0,2 / 10 A)", "don_vi": "A", "kieu": "dieu_chinh", "min": 0.02, "max": 10, "mac_dinh": 10, "gia_tri_roi_rac": [0.02, 0.2, 10]},
               {"ky_hieu": "I_doc", "ten": "Số hiện trên màn hình", "don_vi": "A", "kieu": "do_duoc", "sai_so_do": 0.01},
               {"ky_hieu": "delta", "ten": "Sai số khi lệch một đơn vị chữ số cuối", "don_vi": "%", "kieu": "tinh_ra"}],
-  "mo_hinh": {"phuong_trinh": ["buoc = GHD/2000 (đồng hồ 3½ chữ số: 10 A → 0,01 A; 200 mA → 0,1 mA; 20 mA → 0,01 mA)",
+  "mo_hinh": {"phuong_trinh": ["buoc theo thang (đồng hồ 3½ chữ số): 10 A → 0,01 A (= GHD/1000); 200 mA → 0,1 mA và 20 mA → 0,01 mA (= GHD/2000)",
                                "nếu I > GHD: hiện '1' bên trái (quá thang)", "I_doc = lam_tron(I, buoc)", "delta = buoc / I_doc · 100 %"],
               "gia_thiet": ["thang 10 A hiển thị tới 0,01 A", "bỏ qua điện trở của đồng hồ (dòng thật không đổi khi đổi thang)",
                             "số liệu minh hoạ, chưa đo thật"]},

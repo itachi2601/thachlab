@@ -14,3 +14,5 @@
 - Clip mở bài CHƯA chèn. Đề xuất: quay cận đồng hồ đa năng nối tiếp với bóng đèn nhỏ, vặn núm 10 A → 200 mA (số hiện rõ dần) → 20 mA (màn hình chỉ còn số 1 bên trái); không lời.
 - index.json chưa có 2 mục modau (chạy thi_nghiem.py một lần khi gom lô).
 - Đăng: bài 128 chưa có lesson_items → dùng upload-lesson.mts/nhap-bai (cap-nhat-ly-thuyet.sh đòi đúng 1 dòng).
+
+- 2026-11-18 · Đã sửa theo kiểm chéo (11 mục): bước thang 10 A, lỗ cắm 10A/VΩmA + ngắt khoá khi đổi thang, Câu 3 đổi thành tình huống góp ý (Hình 3 ghi "đề xuất"), Hình 4 thêm khoá K, GHD có `gia_tri_roi_rac` [0.02, 0.2, 10] (README chưa định nghĩa trường này — app mô phỏng cần đọc nếu muốn thanh trượt rời rạc).
