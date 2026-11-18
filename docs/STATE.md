@@ -21,6 +21,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Còn lỗ cần chấm ở server (đổi client, thầy quyết): bài CNC chấm ở máy (dịch lệnh trả lời ngắn, điền khuyết, viết chương trình, checklist — đáp án nằm trong mã client), `practice_sessions.score`, `question_bank` lộ đáp án qua policy exit-quiz/diagnostic (chặng 4); mật khẩu mặc định = mã số HS.
 - **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.
 - **Ứng dụng tập `/tai-khoan/tap-luyen` (18/11)**: `20261118120000_tap_luyen` ĐÃ CHẠY 18/11 ~22:50 (bảng `workout_logs`, `body_measurements`, RLS chủ tài khoản, anon không đọc; log `scripts/logs/*tap_luyen.log` ở checkout chính). Đã deploy 18/11 ~23:00, mở được trên site bằng tài khoản thầy; chưa ghi buổi tập thật. Chương trình A/B/C ở `lib/tap-luyen/chuong-trinh.ts`.
+- **Báo lỗi #155 ôn tập theo chặng (18/11)**: `20261118200000_review_stage_exams` CHƯA CHẠY — chạy ngoài giờ HS làm bài; buổi ôn tính cả đề mới của mục bài học (đề chụp lúc tạo buổi lệch sau `publish-theory-quiz --replace`), câu sai tách theo đề. Kèm client `ReviewConsole`/`ReviewStudent` (nhánh `claude/xu-ly-bao-loi-d26f75`, tương thích hai chiều, deploy trước/sau đều được).
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
