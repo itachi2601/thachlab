@@ -60,14 +60,21 @@ function TopicPracticeModal(props: ComponentProps<typeof TopicPracticeModalLazy>
  * tránh phải thêm hook vào PracticeSession/ExamRunner (trang này đã tối ưu, không refetch tự
  * động sau khi nộp bài — xem perf/RESULT.md; nút refresh giữ đúng quy ước đó).
  */
+/** null = RPC gộp trả lỗi phần mastery (ẩn thẻ như khi get_lesson_mastery lỗi). */
+export type LessonMasteryInitial = LessonMastery | null | "pending" | "self";
+
 export default function LessonMasteryCard({
   lessonId,
   examIds,
   loggedIn,
+  initial = "self",
 }: {
   lessonId: number;
   examIds: number[];
   loggedIn: boolean;
+  /** Dữ liệu từ RPC gộp get_lesson_page_student của trang bài: "pending" = trang đang tải (chưa gọi gì),
+   *  "self" = RPC gộp không chạy → thẻ tự gọi get_lesson_mastery như trước. Bỏ trống = luôn tự gọi. */
+  initial?: LessonMasteryInitial;
 }) {
   // "pending" gộp cả lúc mới mount lẫn lúc đang tải lại — tránh setState đồng bộ ngay đầu effect
   // (không dùng riêng cờ "loading" đặt trước khi gọi fetch, theo đúng cách
@@ -87,9 +94,20 @@ export default function LessonMasteryCard({
   }, [lessonId]);
 
   useEffect(() => {
-    if (!loggedIn) return;
+    if (!loggedIn || initial !== "self") return;
     load();
-  }, [loggedIn, load]);
+  }, [loggedIn, load, initial]);
+
+  // Kết quả có sẵn từ RPC gộp → dùng luôn, không gọi get_lesson_mastery thêm lần nữa.
+  const [seenInitial, setSeenInitial] = useState<LessonMasteryInitial>("pending");
+  if (initial !== seenInitial) {
+    setSeenInitial(initial);
+    if (initial === null) setState("error");
+    else if (initial !== "pending" && initial !== "self") {
+      setMastery(initial);
+      setState("ready");
+    }
+  }
 
   function refresh() {
     setState("pending");
