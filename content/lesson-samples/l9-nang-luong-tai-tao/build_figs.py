@@ -74,7 +74,7 @@ P0, P1 = (156, 182), (TX - 20, TY - 6)
 b += f'<line x1="{P0[0]}" y1="{P0[1]}" x2="{P1[0]}" y2="{P1[1]}" stroke="{BLUE}" stroke-width="11" stroke-linecap="round" opacity=".45"/>'
 for f in (0.35, 0.7):        # chiều nước chảy: từ hồ xuống tua-bin
     x, y = P0[0] + (P1[0] - P0[0]) * f, P0[1] + (P1[1] - P0[1]) * f
-    b += chevron(x, y, P1[0] - P0[0], P1[1] - P0[1], "currentColor", 2.2, 9)
+    b += chevron(x, y, P1[0] - P0[0], P1[1] - P0[1], "currentColor", 2, 6)
 assert P1[0] > P0[0] and P1[1] > P0[1]                       # nước chảy xuống, sang phải
 b += f'<circle cx="{TX}" cy="{TY}" r="18" fill="rgba(52,211,153,.2)" stroke="currentColor" stroke-width="2.4"/>'
 for k in range(4):
@@ -88,6 +88,7 @@ b += line(TX + 18, TY + 6, 404, 230, BLUE, 2.2, "5 4") + chevron(404, 230, 1, 0.
 b += T(40, 140, "hồ", "currentColor", 17)
 b += T(178, 44, "đập", "currentColor", 16)
 b += T(TX, 260, "tua-bin", "currentColor", 15, "middle")
+b += T(218, 232, "ống dẫn", BLUE, 13)
 b += T(14, 62, "thế năng", ORG, 15)
 b += T(206, 182, "động năng", ORG, 14)
 b += T(326, 216, "cơ năng", ORG, 15)
@@ -95,34 +96,42 @@ b += T(346, 116, "điện năng", ORG, 14)
 fig2 = wrap("0 0 430 270", "Nhà máy thuỷ điện: nước hồ sau đập chảy theo ống dẫn xuống tua-bin, tua-bin quay máy phát, điện đi ra lưới; chữ cam ghi dạng năng lượng ở từng chặng", b,
             "Hình 2. Hồ – ống – tua-bin – máy phát.<br>Chữ cam: dạng năng lượng ở từng chặng.")
 
-# ---------- Hình 3: Mặt Trời đưa nước lên núi (vòng nước → hồ thuỷ điện)
+# ---------- Hình 3: Mặt Trời đưa nước lên núi (vòng nước → hồ thuỷ điện ở lưng chừng núi, cao hơn mực nước biển)
 b = sun(42, 44)
-SEA = 226
-b += f'<path d="M6,{SEA} L142,{SEA} L142,262 L6,262 z" fill="rgba(56,189,248,.25)" stroke="none"/>' + line(6, SEA, 142, SEA, BLUE, 2.2)
+SEA, PL = 226, 150            # mực nước biển, mặt bằng đặt hồ
+b += f'<path d="M6,{SEA} L130,{SEA} L130,262 L6,262 z" fill="rgba(56,189,248,.25)" stroke="none"/>' + line(6, SEA, 130, SEA, BLUE, 2.2)
 for x in (60, 104):           # hơi nước bốc lên
     b += line(x, SEA - 6, x, 118, BLUE, 2, "5 4") + chevron(x, 118, 0, -1, BLUE, 2, 9)
-b += cloud(282, 60)
-SL = lambda x: 246 - (x - 228) * 150 / 102        # sườn trái núi: (228,246) → (330,96)
-for k in range(4):            # mưa rơi xuống sườn núi
-    x = 262 + 16 * k
-    y2 = SL(x - 8) - 12
-    assert y2 > 104
-    b += line(x, 92, x - 8, y2, BLUE, 2)
-b += '<path d="M228,246 L330,96 L420,246 z" fill="rgba(52,211,153,.18)" stroke="currentColor" stroke-width="2"/>'
-RS = (250, SL(250))
-b += pts_path(cubic(RS, (238, 222), (226, 228), (214, 234)), BLUE, 3)
-b += chevron(214, 234, -1, 0.5, BLUE, 2.2, 9)
-b += f'<path d="M160,226 L214,226 L214,244 L160,244 z" fill="rgba(56,189,248,.35)" stroke="none"/>'
-b += '<rect x="148" y="212" width="12" height="34" fill="rgba(148,163,184,.6)" stroke="currentColor" stroke-width="1.6"/>'
-b += line(142, 246, 420, 246, "currentColor", 1.4, "", .5)
+b += line(116, 104, 244, 50, BLUE, 1.6, "5 4") + chevron(244, 50, 128, -54, BLUE, 2, 8)   # hơi nước lên cao thành mây
+b += f'<path d="M130,262 L130,236 L150,236 L196,{PL} L262,{PL} L360,58 L420,150 L420,262 z" fill="rgba(52,211,153,.18)" stroke="currentColor" stroke-width="2"/>'
+SL = lambda x: PL - (x - 262) * 92 / 98            # sườn núi phía hồ: (262,150) → (360,58)
+WL = 134                                           # mặt nước hồ
+XR = 262 + (PL - WL) * 98 / 92                     # chỗ mặt hồ chạm sườn núi
+b += f'<path d="M210,{WL} L{XR:.1f},{WL} L262,{PL} L210,{PL} z" fill="rgba(56,189,248,.35)" stroke="none"/>' + line(210, WL, XR, WL, BLUE, 2)
+b += f'<rect x="200" y="124" width="10" height="{PL - 124}" fill="rgba(148,163,184,.6)" stroke="currentColor" stroke-width="1.6"/>'
+b += cloud(300, 36)
+for k in range(4):            # mưa rơi xuống sườn núi phía hồ
+    x = 284 + 14 * k
+    y2 = SL(x - 6) - 8
+    assert y2 - 62 > 15 and y2 < SL(x - 6)
+    b += line(x, 62, x - 6, y2, BLUE, 2)
+RS = (306, SL(306))
+assert RS[1] < WL - 15   # suối bắt đầu trên sườn, cao hơn mặt hồ
+b += pts_path(cubic(RS, (296, RS[1] + 10), (286, WL - 2), (276, WL - 2)), BLUE, 3)   # suối chảy về hồ
+b += chevron(276, WL - 2, -1, 0, BLUE, 2.2, 8)
+b += line(6, SEA, 420, SEA, "currentColor", 1.2, "6 5", .7)                   # mực nước biển
+b += line(240, PL + 4, 240, SEA - 4, ORG, 2) + chevron(240, PL + 4, 0, -1, ORG, 2, 8) + chevron(240, SEA - 4, 0, 1, ORG, 2, 8)
+assert WL < PL < SEA                                                            # hồ cao hơn biển
 b += T(86, 50, "Mặt Trời", ORG, 15)
 b += T(114, 160, "bốc hơi", BLUE, 15)
-b += T(282, 28, "mây", "currentColor", 15, "middle")
-b += T(214, 112, "mưa", BLUE, 15)
-b += T(166, 264, "hồ", "currentColor", 15)
-b += T(132, 204, "đập", "currentColor", 15)
+b += T(354, 34, "mây", "currentColor", 15)
+b += T(276, 88, "mưa", BLUE, 15, "end")
+b += T(222, 128, "hồ", "currentColor", 15)
+b += T(194, 120, "đập", "currentColor", 15, "end")
+b += T(248, 196, "cao", ORG, 15)
+b += T(416, 244, "mực nước biển", "currentColor", 12, "end", "400")
 b += T(20, 256, "biển", "currentColor", 15)
-fig3 = wrap("0 0 424 272", "Mặt Trời làm nước biển bốc hơi thành mây, mây mưa trên núi, nước chảy về hồ sau đập thuỷ điện", b,
+fig3 = wrap("0 0 424 272", "Mặt Trời làm nước biển bốc hơi thành mây, mây mưa trên sườn núi, nước chảy về hồ sau đập ở lưng chừng núi, cao hơn mực nước biển", b,
             "Hình 3. Mặt Trời đưa nước lên cao.<br>Bốc hơi → mây → mưa trên núi → hồ.<br>Thế năng của nước hồ có gốc từ Mặt Trời.")
 
 # ---------- Thí nghiệm 1: tua-bin gió mô hình, U = k·(v − v0), R = 10 Ω
@@ -152,6 +161,7 @@ P_OK = (f"$U$ trung bình từ ${vn(U_TB[0], 2)}$ lên ${vn(U_TB[2], 2)}\\ \\tex
 NX1 = (f"Ba lần đo ở cùng tốc độ gió lệch nhau tới ${vn(spread, 2)}\\ \\text{{V}}{{:}}$ gió quạt thổi không đều, cánh quay lúc nhanh lúc chậm, kim vôn kế dao động.<br>"
        f"Lấy trung bình ba lần đo để giảm sai số ngẫu nhiên.<br>"
        f"Muốn tin hơn: đo nhiều lần hơn, giữ khoảng cách tua-bin – quạt cố định, đo tốc độ gió ngay trước cánh.<br>"
+       f"Tua-bin thật cũng vậy: gió mạnh gấp đôi thì công suất tăng cỡ $8$ lần. Vì vậy trang trại gió đặt ở nơi gió mạnh và đều, như ven biển.<br>"
        f"Dưới khoảng ${vn(V0, 1)}\\ \\text{{m/s}}$ cánh không quay nổi: gió quá yếu thì không có điện.")
 
 # ---------- Tình huống mẫu: đảo dùng pin mặt trời (số liệu giả định)

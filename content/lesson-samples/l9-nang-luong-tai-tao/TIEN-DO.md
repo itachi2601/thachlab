@@ -20,7 +20,18 @@
 ## Treo
 - Mẹo 🧠 mới "Trời – Gió – Nước – Cây – Đất" chưa ghi vào docs/BANG-MEO-TU-KHOA.md, vì đó là file chung.
 - index.json chưa có 2 mục taitao. Chạy thi_nghiem.py một lần khi gom lô.
-- Số 1 920 MW (8 × 240 MW) của Thuỷ điện Hoà Bình cần đối chiếu nguồn EVN trước khi đăng.
+- Hoà Bình: đã đổi thành "ban đầu 8 tổ máy, 1 920 MW". Chú thích ghi rõ đây không phải công suất hiện tại, vì nhà máy có dự án mở rộng. Vẫn nên đối chiếu nguồn EVN.
 - Bài 95 trống trên DB, nên đăng bằng upload-lesson.mts hoặc nhap-bai, không dùng cap-nhat-ly-thuyet.sh.
 - Bài 92 chỉ được nhắc bằng chữ "máy phát điện xoay chiều", chưa có link.
-- Tổng 2.232 từ, sát trần 2.300 (lint chỉ cảnh báo).
+- Tổng 2.243 từ, sát trần 2.300 (lint chỉ cảnh báo).
+- 2026-11-18 · Đã sửa theo kiểm chéo:
+  - Mang về: bỏ "5 hình".
+  - Hoà Bình: ghi "ban đầu".
+  - Hình 2: thêm nhãn "ống dẫn", thu nhỏ chevron để nằm gọn trong ống.
+  - Hình 3: vẽ lại, hồ và đập ở lưng chừng núi, có mũi tên "cao" tới đường mực nước biển nét đứt.
+  - Câu 3: đổi thành tình huống lúc 19 giờ.
+  - Cân độ dài phương án ở Câu 4 và Câu 6.
+  - Câu Dự đoán: bỏ "hoàn toàn".
+  - Thêm câu về tua-bin thật (gió gấp đôi thì công suất cỡ 8 lần).
+  - Tách hàng sinh khối và địa nhiệt trong bảng chuỗi chuyển hoá.
+  - Điền "—" vào ô trống.

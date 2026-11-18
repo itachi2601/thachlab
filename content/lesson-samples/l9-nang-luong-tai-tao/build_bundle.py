@@ -21,7 +21,7 @@ exam = {
          "options": ["Điện mặt trời không phát ban đêm, giảm khi trời mây", "Điện mặt trời thải nhiều khí hơn thuỷ điện khi phát", "Tấm pin chỉ chạy được vào mùa hè", "Điện từ pin mặt trời không dùng được trong nhà"],
          "answer": 0, "explanation": "Pin quang điện chỉ cho điện khi có ánh sáng. Buổi tối nhu cầu cao mà pin không phát, nên cần nguồn bù như thuỷ điện (giữ nước ban ngày, xả buổi tối)."},
         {"type": MC, "question": "Câu nào đúng về năng lượng tái tạo và môi trường?",
-         "options": ["Điện gió không đốt nhiên liệu nên không ảnh hưởng gì tới sinh vật", "Thuỷ điện chỉ dùng nước nên không làm thay đổi hệ sinh thái sông", "Khi phát điện hầu như không thải khí, nhưng xây dựng và thải bỏ thiết bị vẫn tác động môi trường", "Tấm pin mặt trời hết hạn có thể bỏ chung với rác sinh hoạt"],
+         "options": ["Điện gió không đốt nhiên liệu nên không ảnh hưởng gì tới sinh vật", "Thuỷ điện chỉ dùng nước nên không làm thay đổi hệ sinh thái sông", "Hầu như không thải khí khi chạy, nhưng lúc xây và lúc bỏ vẫn gây hại", "Tấm pin mặt trời hết hạn có thể bỏ chung với rác sinh hoạt"],
          "answer": 2, "explanation": "Tua-bin gió gây ồn, va phải chim; đập thuỷ điện ngập rừng, chặn cá; tấm pin hỏng là rác thải điện tử phải xử lí riêng. 'Sạch' chỉ đúng lúc đang phát điện."},
         {"type": MC, "question": "Nguồn nào dưới đây không có gốc từ năng lượng Mặt Trời?",
          "options": ["Năng lượng gió", "Thuỷ điện trên sông", "Năng lượng sinh khối từ trấu", "Năng lượng địa nhiệt"],
