@@ -81,7 +81,8 @@
  "mo_hinh": {
   "phuong_trinh": [
    "v_thấp² = 2·g·h0",
-   "h1 = h0 (khi h0 ≤ L − d, dây không chùng)"
+   "h1 = h0 (khi h0 ≤ L − d, dây không chùng)",
+   "cos(góc lệch bên kia) = 1 − h0/(L − d)"
   ],
   "gia_thiet": [
    "g = 10 m/s²",
@@ -93,26 +94,30 @@
   "cot": [
    "d (m)",
    "h0 (m)",
-   "h1 mô hình (m)"
+   "h1 mô hình (m)",
+   "góc lệch bên kia (°)"
   ],
   "hang": [
    [
     0.0,
     0.2,
-    0.2
+    0.2,
+    36.9
    ],
    [
     0.5,
     0.2,
-    0.2
+    0.2,
+    53.1
    ],
    [
     0.7,
     0.2,
-    0.2
+    0.2,
+    70.5
    ]
   ],
-  "ghi_chu": "Số liệu mô hình, không đo; thực tế h1 thấp hơn h0 vài mm do lực cản."
+  "ghi_chu": "Số liệu mô hình, không đo; thực tế h1 thấp hơn h0 vài mm do lực cản. Cột góc lệch thêm 18/11/2026 cho clip dongnang2: cos = 1 − h0/(L − d); góc thả 36,9° (cos = 0,8); clip hiện 37°, 53°, 71°. Câu chốt clip: đinh 0,5 m, thả từ 0,20 m, bên kia ở độ cao 0,15 m: v = √(2·10·0,05) = 1,0 m/s."
  },
  "ket_qua_ky_vong": "Quả nặng lên lại cùng độ cao h0 với mọi vị trí đinh (khi dây không chùng).",
  "hien_tuong_hay_sai": [
