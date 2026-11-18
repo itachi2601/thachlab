@@ -1,0 +1,173 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 16. Vòng năng lượng trên Trái Đất. Năng lượng hoá thạch",
+ "lesson_id": 94,
+ "nguon_trong_bai": "content/lesson-samples/l9-vong-nang-luong-hoa-thach/theory.html",
+ "id": "tn-l9-hoathach-02",
+ "ten": "Đốt nến parafin đun 200 g nước: năng lượng hoá học thành nhiệt, kèm CO2",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "hoathach.dot_chay_toa_nhiet",
+  "hoathach.thai_co2",
+  "hoathach.sai_so_do"
+ ],
+ "muc_tieu": "Từ bảng số liệu thấy nến (sản phẩm dầu mỏ) cháy càng nhiều thì nước càng nóng; nhận ra phần lớn nhiệt thất thoát và có CO2 thải ra.",
+ "dung_cu": [
+  {
+   "ten": "Nến parafin",
+   "so_luong": 1
+  },
+  {
+   "ten": "Lon nhôm chứa 200 g nước, giá đỡ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nhiệt kế (ĐCNN 0,1 °C)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cân điện tử (ĐCNN 0,01 g)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cốc thuỷ tinh khô, nước vôi trong",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đồng hồ bấm giờ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Cân nến, đặt lon chứa 200 g nước trên ngọn nến ở khoảng cách cố định.",
+   "Cứ 2 phút ghi nhiệt độ nước và cân lại nến, trong 8 phút.",
+   "Úp cốc khô lên ngọn nến, rồi lắc cốc với nước vôi trong."
+  ],
+  "quan_sat": [
+   "Nhiệt độ nước tăng từ 28,0 °C lên 37,6 °C khi nến cháy 0,96 g.",
+   "Thành cốc mờ hơi nước; nước vôi trong vẩn đục."
+  ],
+  "rut_ra": [
+   "Đốt nhiên liệu chuyển năng lượng hoá học thành nhiệt (và ánh sáng).",
+   "Đốt nhiên liệu từ dầu mỏ thải CO2 và hơi nước.",
+   "Phần lớn nhiệt thoát ra không khí, chỉ một phần vào nước."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đốt",
+   "don_vi": "phút",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 8,
+   "mac_dinh": 8,
+   "buoc": 2
+  },
+  {
+   "ky_hieu": "m_nuoc",
+   "ten": "Khối lượng nước",
+   "don_vi": "g",
+   "kieu": "co_dinh",
+   "gia_tri": 200
+  },
+  {
+   "ky_hieu": "v_chay",
+   "ten": "Tốc độ cháy của nến",
+   "don_vi": "g/phút",
+   "kieu": "co_dinh",
+   "gia_tri": 0.12
+  },
+  {
+   "ky_hieu": "q",
+   "ten": "Nhiệt toả ra khi đốt 1 g parafin (xấp xỉ)",
+   "don_vi": "J/g",
+   "kieu": "co_dinh",
+   "gia_tri": 42000.0
+  },
+  {
+   "ky_hieu": "eta0",
+   "ten": "Phần nhiệt vào nước lúc đầu",
+   "don_vi": "",
+   "kieu": "co_dinh",
+   "gia_tri": 0.22
+  },
+  {
+   "ky_hieu": "T",
+   "ten": "Nhiệt độ nước",
+   "don_vi": "°C",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  },
+  {
+   "ky_hieu": "dm",
+   "ten": "Khối lượng nến đã cháy",
+   "don_vi": "g",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "dm/dt = v_chay",
+   "eta = eta0·(1 − (T − T0)/50)",
+   "m_nuoc·c·dT/dt = eta·q·v_chay, c = 4,18 J/(g·K), T0 = 28 °C"
+  ],
+  "gia_thiet": [
+   "q parafin xấp xỉ 42 kJ/g (giá trị tra cứu, dao động 41–46 kJ/g)",
+   "phần nhiệt vào nước giảm dần khi nước nóng lên do mất nhiệt ra không khí",
+   "bỏ qua nhiệt làm nóng lon"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (phút)",
+   "Nến đã cháy (g)",
+   "Nước (°C)"
+  ],
+  "hang": [
+   [
+    0,
+    0.0,
+    28.0
+   ],
+   [
+    2,
+    0.24,
+    30.6
+   ],
+   [
+    4,
+    0.48,
+    33.0
+   ],
+   [
+    6,
+    0.72,
+    35.4
+   ],
+   [
+    8,
+    0.96,
+    37.6
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Nước tăng khoảng 9,6 °C trong 8 phút; mức tăng mỗi 2 phút giảm dần nhẹ.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ toàn bộ nhiệt của nến đi vào nước.",
+  "Nghĩ đốt nến chỉ sinh nhiệt, không thải khí gì.",
+  "Nghĩ lửa to hơn thì sai số nhỏ đi."
+ ],
+ "sai_so_thuong_gap": "Gió làm lửa lệch, khoảng cách lửa – đáy lon thay đổi, cân chỉ chính xác 0,01 g (khoảng 4 % ở 0,24 g).",
+ "an_toan": "Có lửa: buộc gọn tóc, đặt nến trên khay kim loại, không để gần giấy; lon và nước nóng.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thời gian, nến ngắn dần, nhiệt kế tăng; mũi tên nhiệt chia phần vào nước và phần thoát ra.",
+  "diem_nhan": "Phần nhiệt vào nước chỉ là một phần nhỏ, và kèm theo luôn có CO2."
+ }
+}
