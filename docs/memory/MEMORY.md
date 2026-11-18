@@ -11,13 +11,13 @@
 - [Phiên song song](project_thachlab_concurrent_sessions.md) — `git commit -- <path>`
 - [No progress updates](feedback_no_progress_updates.md) — im lặng giữa chừng, báo 1 lần cuối
 - [Lô duyệt kèm link](feedback_lo_duyet_kem_link.md) — mỗi mục kèm link
-- [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box câu hỏi
+- [wrap_up viết nội dung trước](feedback_wrap_up_viet_noi_dung_truoc.md) — nhận xét trước box
 - [Lệnh terminal = khối bash](feedback_lenh_terminal_khoi_bash.md) — đặt trong khối bash
 - [Chạy script giúp thầy](feedback_chay_script_giup.md) — chạy trong tab terminal, tự kiểm
 - [Deploy autonomy](feedback_deploy_autonomy.md) — test local xong tự deploy prod
 - [Deploy scope](feedback_thachlab_deploy_scope.md) — chỉ commit/deploy đúng feature vừa làm
 - [Small content edits](feedback_small_content_edits.md) — quy trình tiết kiệm
-- [Sửa mục lẻ qua REST](feedback_lesson_item_edit_via_rest.md) — PATCH lesson_items, không lái trình duyệt
+- [Sửa mục lẻ qua REST](feedback_lesson_item_edit_via_rest.md) — PATCH lesson_items
 - [Mobile-first UI](feedback_mobile_first_ui.md) — chụp 375px trước khi báo xong
 - [Tra memory trước](feedback_check_memory_before_reconstructing.md) — đọc memory trước khi dựng lại
 - [Tra trùng đề trước agent](feedback_dedup_check_before_agent.md) — exams bị RLS
@@ -26,7 +26,7 @@
 - [Rà ảnh bằng mắt](feedback_content_images_eyeball.md) — MD5 không bắt hết
 - [Giọng văn bài lý thuyết](feedback_giong-van-bai-ly-thuyet.md) — không dùng vai "thầy"
 - [Quy tắc thiết kế](feedback_design_research_rules.md) — nêu mã quy tắc
-- [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — lý thuyết: duyệt là đăng, không PR
+- [Đăng ngay sau duyệt](feedback_thachlab_dang_ngay_sau_duyet.md) — duyệt là đăng
 - [Không in lệnh hoàn tác](feedback_khong_in_lenh_hoan_tac.md) — chỉ nêu file sao lưu
 - [Không đốt credit API](feedback_khong_dot_credit_api.md) — soạn trực tiếp trong phiên Mac
 - [Xuống dòng từng trường hợp](feedback_xuong_dong_tung_truong_hop.md) — mỗi trường hợp một dòng
@@ -91,9 +91,10 @@
 - [Phong cách đề Bộ GD](project_thachlab_phong_cach_de_bo_gd.md) — quiz không ngoài chương trình
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
 - [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — bản 1 chốt 14/11, chờ in giấy
-- [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài + HS ảo lượt 2 xong 16/11, chờ in thử
+- [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài, chờ in thử
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 21 clip chờ duyệt gắn bài
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
+- [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — L12 b4 đã đăng 18/11; đo từ 19/11
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — chờ duyệt ảnh, chưa đăng
@@ -104,4 +105,3 @@
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
 - [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — 16 bài đã lên; chờ soát bậc 1
-- [Sơ đồ tư duy chương](project_thachlab_so_do_tu_duy_chuong.md) — L12/L10 Ch.3 đã deploy
