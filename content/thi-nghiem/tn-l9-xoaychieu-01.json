@@ -12,7 +12,7 @@
   "xoaychieu.tac_dung_tu",
   "xoaychieu.cuc_doi_theo_dong"
  ],
- "muc_tieu": "Thấy dòng xoay chiều vẫn có tác dụng từ (hút sắt); cực từ của nam châm điện đổi theo chiều dòng điện nên kim nam châm rung tại chỗ.",
+ "muc_tieu": "Thấy dòng xoay chiều vẫn có tác dụng từ (hút sắt); cực từ của nam châm điện đổi theo chiều dòng điện; với nguồn 50 Hz lực lên kim đổi chiều quá nhanh nên kim không lệch hẳn, chỉ rung rất nhẹ.",
  "dung_cu": [
   {
    "ten": "Cuộn dây khoảng 300 vòng có lõi sắt non",
@@ -47,11 +47,11 @@
   ],
   "quan_sat": [
    "Một chiều: đinh sắt bị hút; kim nam châm lệch hẳn về một phía. Đảo cực nguồn: kim lệch về phía ngược lại.",
-   "Xoay chiều: đinh sắt vẫn bị hút; kim nam châm rung tại chỗ."
+   "Xoay chiều: đinh sắt vẫn bị hút; kim nam châm không lệch hẳn về phía nào, chỉ rung rất nhẹ quanh vị trí cũ."
   ],
   "rut_ra": [
    "Dòng xoay chiều có tác dụng từ, vẫn hút sắt.",
-   "Cực từ của nam châm điện đổi theo chiều dòng điện; kim nam châm (cực cố định) bị hút, đẩy liên tục nên rung.",
+   "Cực từ của nam châm điện đổi theo chiều dòng điện; lực lên kim nam châm (cực cố định) đổi chiều 100 lần mỗi giây, kim không kịp quay theo.",
    "Đinh sắt non bị từ hoá đổi cực theo nên luôn bị hút."
   ]
  },
@@ -128,12 +128,12 @@
    [
     "xoay chiều 6 V",
     "bị hút",
-    "rung tại chỗ"
+    "không lệch, rung rất nhẹ"
    ]
   ],
   "ghi_chu": "Kết quả định tính, mô tả theo mô hình; chưa phải ghi chép thí nghiệm thật."
  },
- "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, rung tại chỗ với nguồn xoay chiều.",
+ "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, không lệch hẳn (chỉ rung rất nhẹ quanh vị trí cũ) với nguồn xoay chiều 50 Hz.",
  "hien_tuong_hay_sai": [
   "Nghĩ dòng xoay chiều không có tác dụng từ vì đổi chiều liên tục.",
   "Nghĩ đinh sắt cũng bị đẩy ra khi dòng đổi chiều.",
@@ -142,7 +142,7 @@
  "an_toan": "Chỉ dùng nguồn xoay chiều 6 V của phòng thí nghiệm, không nối cuộn dây vào ổ điện 220 V.",
  "goi_y_mo_phong": {
   "loai": "so_do_luc",
-  "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực, đinh sắt luôn bị hút.",
-  "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim rung, đinh sắt vẫn bị hút."
+  "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực khi chạy chậm, đứng gần như yên khi chạy đúng 50 Hz; đinh sắt luôn bị hút.",
+  "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim không kịp quay theo, đinh sắt vẫn bị hút."
  }
 }

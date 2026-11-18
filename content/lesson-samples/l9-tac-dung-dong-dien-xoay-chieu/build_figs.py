@@ -108,19 +108,24 @@ def meter(x0, sym, signs, ten):
     a = ang(I_DM)
     tip = (cx + (r - 8) * math.cos(a), py - (r - 8) * math.sin(a))
     g += line(cx, py, *tip, RED, 2.6) + dot(cx, py, r=4)
-    g += T(cx - 10, top + ht - 10, "A", size=22, anchor="end") + T(cx + 8, top + ht - 10, sym, BLUE, 22)
+    g += T(cx - 10, top + ht - 10, "A", size=22, anchor="end")
+    if sym == "DC":   # kí hiệu một chiều: gạch liền trên gạch đứt
+        yb = top + ht - 22
+        g += line(cx + 8, yb, cx + 40, yb, BLUE, 3) + f'<line x1="{cx + 8}" y1="{yb + 8}" x2="{cx + 40}" y2="{yb + 8}" stroke="{BLUE}" stroke-width="3" stroke-dasharray="7 5"/>'
+    else:
+        g += T(cx + 8, top + ht - 10, sym, BLUE, 22)
     for dx, s in ((-40, signs[0]), (40, signs[1])):
         g += f'<circle cx="{cx + dx}" cy="{top + ht + 18}" r="7" fill="none" stroke="currentColor" stroke-width="2.2"/>'
         if s:
             g += T(cx + dx - 12, top + ht + 24, s, size=16, anchor="end")
-    g += T(cx, top + ht + 54, ten, size=15, anchor="middle")
+    g += T(cx, top + ht + 50, "mắc vào nguồn", size=15, anchor="middle") + T(cx, top + ht + 70, ten, size=15, anchor="middle")
     return g, tip, (cx, py)
-m1, tip1, pv1 = meter(14, "—", ("+", "−"), "nguồn một chiều 6 V")
-m2, tip2, pv2 = meter(226, "~", ("", ""), "nguồn xoay chiều 6 V~")
+m1, tip1, pv1 = meter(14, "DC", ("+", "−"), "một chiều 6 V")
+m2, tip2, pv2 = meter(226, "~", ("", ""), "xoay chiều 6 V~")
 assert abs(tip1[0] - pv1[0]) < 1e-6 and tip1[1] < pv1[1]       # 0,5 A: kim thẳng đứng, đúng giữa thang 0–1 A
 b = m1 + m2
-fig3 = wrap("0 0 420 244", "Hai ampe kế thang 0 đến 1 ampe cùng chỉ 0,5 ampe: bên trái ampe kế một chiều có dấu gạch và hai chốt cộng trừ mắc vào nguồn một chiều; bên phải ampe kế xoay chiều có dấu ngã, chốt không phân biệt, mắc vào nguồn xoay chiều", b,
-            "Hình 3. Ampe kế một chiều (—) và xoay chiều (~), mỗi cái mắc đúng loại nguồn.")
+fig3 = wrap("0 0 420 262", "Hai ampe kế thang 0 đến 1 ampe cùng chỉ 0,5 ampe: bên trái ampe kế một chiều có kí hiệu gạch liền trên gạch đứt và hai chốt cộng trừ mắc vào nguồn một chiều; bên phải ampe kế xoay chiều có dấu ngã, chốt không phân biệt, mắc vào nguồn xoay chiều", b,
+            "Hình 3. Ampe kế một chiều (DC) và xoay chiều (AC, ~), mỗi cái mắc đúng loại nguồn.")
 
 # ---------- Thí nghiệm 2: đèn 6 V – 3 W, nguồn một chiều 6 V và xoay chiều 6 V (hiệu dụng); I = P/U = 0,50 A
 # Số đọc lệch tối đa một độ chia 0,01 A do đọc kim (số liệu minh hoạ).
@@ -184,7 +189,7 @@ tn = []
 tn.append({**base,
   "id": "tn-l9-xoaychieu-01", "ten": "Nam châm điện với nguồn một chiều và nguồn xoay chiều: đinh sắt, kim nam châm", "loai": "thi_nghiem", "muc_do": "co_ban",
   "kien_thuc": ["xoaychieu.tac_dung_tu", "xoaychieu.cuc_doi_theo_dong"],
-  "muc_tieu": "Thấy dòng xoay chiều vẫn có tác dụng từ (hút sắt); cực từ của nam châm điện đổi theo chiều dòng điện nên kim nam châm rung tại chỗ.",
+  "muc_tieu": "Thấy dòng xoay chiều vẫn có tác dụng từ (hút sắt); cực từ của nam châm điện đổi theo chiều dòng điện; với nguồn 50 Hz lực lên kim đổi chiều quá nhanh nên kim không lệch hẳn, chỉ rung rất nhẹ.",
   "dung_cu": [{"ten": "Cuộn dây khoảng 300 vòng có lõi sắt non", "so_luong": 1},
               {"ten": "Nguồn một chiều 6 V", "so_luong": 1},
               {"ten": "Nguồn xoay chiều 6 V (biến áp nguồn phòng thí nghiệm)", "so_luong": 1},
@@ -195,9 +200,9 @@ tn.append({**base,
                        "Lần 1: nối nguồn một chiều 6 V, đóng khoá; rồi đảo hai cực nguồn.",
                        "Lần 2: nối nguồn xoay chiều 6 V, đóng khoá."],
                "quan_sat": ["Một chiều: đinh sắt bị hút; kim nam châm lệch hẳn về một phía. Đảo cực nguồn: kim lệch về phía ngược lại.",
-                            "Xoay chiều: đinh sắt vẫn bị hút; kim nam châm rung tại chỗ."],
+                            "Xoay chiều: đinh sắt vẫn bị hút; kim nam châm không lệch hẳn về phía nào, chỉ rung rất nhẹ quanh vị trí cũ."],
                "rut_ra": ["Dòng xoay chiều có tác dụng từ, vẫn hút sắt.",
-                          "Cực từ của nam châm điện đổi theo chiều dòng điện; kim nam châm (cực cố định) bị hút, đẩy liên tục nên rung.",
+                          "Cực từ của nam châm điện đổi theo chiều dòng điện; lực lên kim nam châm (cực cố định) đổi chiều 100 lần mỗi giây, kim không kịp quay theo.",
                           "Đinh sắt non bị từ hoá đổi cực theo nên luôn bị hút."]},
   "tham_so": [{"ky_hieu": "loai_nguon", "ten": "Loại nguồn (0 một chiều, 1 xoay chiều)", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 1, "mac_dinh": 0, "buoc": 1},
               {"ky_hieu": "dao_cuc", "ten": "Đảo cực nguồn một chiều (0 không, 1 có)", "don_vi": "", "kieu": "dieu_chinh", "min": 0, "max": 1, "mac_dinh": 0, "buoc": 1},
@@ -211,15 +216,15 @@ tn.append({**base,
   "so_lieu_mau": {"cot": ["Nguồn", "Đinh sắt", "Kim nam châm"],
                   "hang": [["một chiều 6 V", "bị hút", "lệch hẳn một phía"],
                            ["một chiều 6 V, đảo cực", "bị hút", "lệch phía ngược lại"],
-                           ["xoay chiều 6 V", "bị hút", "rung tại chỗ"]],
+                           ["xoay chiều 6 V", "bị hút", "không lệch, rung rất nhẹ"]],
                   "ghi_chu": "Kết quả định tính, mô tả theo mô hình; chưa phải ghi chép thí nghiệm thật."},
-  "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, rung tại chỗ với nguồn xoay chiều.",
+  "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, không lệch hẳn (chỉ rung rất nhẹ quanh vị trí cũ) với nguồn xoay chiều 50 Hz.",
   "hien_tuong_hay_sai": ["Nghĩ dòng xoay chiều không có tác dụng từ vì đổi chiều liên tục.",
                          "Nghĩ đinh sắt cũng bị đẩy ra khi dòng đổi chiều.",
                          "Nghĩ kim nam châm sẽ quay tròn liên tục."],
   "an_toan": "Chỉ dùng nguồn xoay chiều 6 V của phòng thí nghiệm, không nối cuộn dây vào ổ điện 220 V.",
-  "goi_y_mo_phong": {"loai": "so_do_luc", "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực, đinh sắt luôn bị hút.",
-                     "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim rung, đinh sắt vẫn bị hút."}})
+  "goi_y_mo_phong": {"loai": "so_do_luc", "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực khi chạy chậm, đứng gần như yên khi chạy đúng 50 Hz; đinh sắt luôn bị hút.",
+                     "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim không kịp quay theo, đinh sắt vẫn bị hút."}})
 tn.append({**base,
   "id": "tn-l9-xoaychieu-02", "ten": "Đo dòng điện qua đèn 6 V – 3 W với nguồn một chiều và nguồn xoay chiều cùng 6 V", "loai": "thi_nghiem", "muc_do": "trung_binh",
   "kien_thuc": ["xoaychieu.tac_dung_nhiet_sang", "xoaychieu.dung_cu_do_ac", "xoaychieu.sai_so_do"],
