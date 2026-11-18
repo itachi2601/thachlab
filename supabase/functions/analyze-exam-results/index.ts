@@ -3,7 +3,9 @@
 //   - nhận xét chung 2–3 câu;
 //   - chủ đề cần ôn lại, xếp theo mức ưu tiên, kèm lý do + cách ôn + câu minh chứng;
 //   - chẩn đoán lỗi hiểu sai cho các câu khó + gợi ý cách chữa trên lớp;
-//   - thứ tự chữa gợi ý.
+//   - thứ tự chữa gợi ý;
+//   - bản lời cho HỌC SINH (classMessage, studentTip, studentWhy, studentAvoid) để trình chiếu lên lớp —
+//     xưng "các em"/"bạn", không lộ cách chữa của giáo viên, không chê.
 // Chỉ nhận số liệu gộp — client không gửi tên/mã học sinh. Kết quả chỉ là GỢI Ý cho giáo viên.
 //
 // Gọi thẳng REST /v1/messages (không SDK) như check-exam. Thinking luôn bật trên model 5.x — điều chỉnh
@@ -101,13 +103,19 @@ Deno.serve(async (req) => {
     "nhầm ở đâu, suy ra từ phương án nhiễu được chọn hoặc đáp số sai (vd nhầm đơn vị, quên bình phương, nhầm dấu); " +
     "`teachingTip` = cách chữa ngắn trên lớp (câu hỏi gợi mở, hình/ví dụ phản chứng). Không đoán bừa: số liệu không đủ thì nói rõ.\n" +
     "4) `reviewOrder`: thứ tự chữa gợi ý (index), gom câu cùng chủ đề/lỗi gần nhau, bỏ câu ≥ 85% đúng.\n" +
-    "Viết tiếng Việt, ngắn gọn, giọng đồng nghiệp; công thức dùng $…$.\n\n" +
+    "5) Bản trình chiếu cho HỌC SINH (lớp sẽ cùng xem trên màn chiếu, không có tên ai): `classMessage` 1–2 câu nói " +
+    "với cả lớp, mở bằng điểm làm tốt rồi mới tới chỗ cần ôn, không chê, không so sánh; mỗi topic thêm `studentTip` " +
+    "1 câu bắt đầu bằng động từ (\"Ôn lại…\", \"Nhớ…\") nói học sinh cần làm gì; mỗi câu trong `questions` thêm " +
+    "`studentWhy` (1 câu: vì sao nhiều bạn dễ nhầm, nói về cái bẫy chứ không về người) và `studentAvoid` (1 câu: mẹo " +
+    "nhận ra/tránh bẫy lần sau). Không nhắc giáo viên, không dùng từ \"yếu\", \"kém\".\n" +
+    "Phần cho giáo viên viết giọng đồng nghiệp; phần cho học sinh xưng \"các em\"/\"bạn\". Tiếng Việt, ngắn gọn; công thức dùng $…$.\n\n" +
     dataJson;
 
   const schema = {
     type: "object",
     properties: {
       overview: { type: "string" },
+      classMessage: { type: "string" },
       topics: {
         type: "array",
         items: {
@@ -117,9 +125,10 @@ Deno.serve(async (req) => {
             priority: { type: "string", enum: [...PRIORITIES] },
             reason: { type: "string" },
             reviewTip: { type: "string" },
+            studentTip: { type: "string" },
             questionIndexes: { type: "array", items: { type: "integer" } },
           },
-          required: ["topic", "priority", "reason", "reviewTip", "questionIndexes"],
+          required: ["topic", "priority", "reason", "reviewTip", "studentTip", "questionIndexes"],
           additionalProperties: false,
         },
       },
@@ -131,14 +140,16 @@ Deno.serve(async (req) => {
             index: { type: "integer" },
             misconception: { type: "string" },
             teachingTip: { type: "string" },
+            studentWhy: { type: "string" },
+            studentAvoid: { type: "string" },
           },
-          required: ["index", "misconception", "teachingTip"],
+          required: ["index", "misconception", "teachingTip", "studentWhy", "studentAvoid"],
           additionalProperties: false,
         },
       },
       reviewOrder: { type: "array", items: { type: "integer" } },
     },
-    required: ["overview", "topics", "questions", "reviewOrder"],
+    required: ["overview", "classMessage", "topics", "questions", "reviewOrder"],
     additionalProperties: false,
   };
 
@@ -186,6 +197,7 @@ Deno.serve(async (req) => {
           priority,
           reason: str(o.reason),
           reviewTip: str(o.reviewTip),
+          studentTip: str(o.studentTip, 400),
           questionIndexes: (Array.isArray(o.questionIndexes) ? o.questionIndexes : []).filter(validIdx).slice(0, 20),
         },
       ];
@@ -193,11 +205,25 @@ Deno.serve(async (req) => {
     const qNotes = (Array.isArray(parsed.questions) ? parsed.questions : []).slice(0, 12).flatMap((q) => {
       const o = (q ?? {}) as Record<string, unknown>;
       if (!validIdx(o.index)) return [];
-      return [{ index: o.index as number, misconception: str(o.misconception), teachingTip: str(o.teachingTip) }];
+      return [
+        {
+          index: o.index as number,
+          misconception: str(o.misconception),
+          teachingTip: str(o.teachingTip),
+          studentWhy: str(o.studentWhy, 400),
+          studentAvoid: str(o.studentAvoid, 400),
+        },
+      ];
     });
     const reviewOrder = [...new Set((Array.isArray(parsed.reviewOrder) ? parsed.reviewOrder : []).filter(validIdx))];
 
-    return jsonResponse({ overview: str(parsed.overview, 1200), topics, questions: qNotes, reviewOrder, model });
+    return jsonResponse({
+      overview: str(parsed.overview, 1200),
+      classMessage: str(parsed.classMessage, 600),
+      topics, questions: qNotes,
+      reviewOrder,
+      model,
+    });
   } catch (cause) {
     return jsonResponse({ error: cause instanceof Error ? cause.message : String(cause) }, 500);
   }

@@ -8,7 +8,7 @@
  * Chỉ giáo viên/trợ giảng thấy (trang chữa bài nằm sau RequireAuth khu THPT/trợ giảng).
  */
 import { useMemo, useState } from "react";
-import { ArrowRight, Loader2, RefreshCw, Sparkles, X } from "lucide-react";
+import { ArrowRight, Loader2, Presentation, RefreshCw, Sparkles, X } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import type { ExamReviewData } from "@/services/analytics";
 import { buildAiPayload, computeReviewInsights, type TopicInsight } from "@/lib/review-analysis";
@@ -36,6 +36,7 @@ export default function ReviewPrep({
   ai,
   onAi,
   onJump,
+  onPresent,
   onClose,
 }: {
   data: ExamReviewData;
@@ -44,6 +45,8 @@ export default function ReviewPrep({
   ai: AiExamAnalysis | null;
   onAi: (a: AiExamAnalysis) => void;
   onJump: (questionIndex: number) => void;
+  /** Mở trình chiếu phân tích cho cả lớp (bản lời cho học sinh). */
+  onPresent: () => void;
   onClose: () => void;
 }) {
   const insights = useMemo(() => computeReviewInsights(data), [data]);
@@ -236,7 +239,12 @@ export default function ReviewPrep({
           </>
         )}
 
-        <div className="rp-foot">
+        <div className="rp-foot" style={{ gap: 10 }}>
+          {insights.attempts > 0 && (
+            <button className="rb-ctl" onClick={onPresent} title="Chiếu kết quả + bẫy hay gặp cho cả lớp xem (không có tên học sinh)">
+              <Presentation size={18} /> Chiếu cho lớp
+            </button>
+          )}
           <button className="rb-ctl rb-ctl-main" onClick={() => (order.length ? onJump(order[0]) : onClose())}>
             Bắt đầu chữa {order.length ? `từ Câu ${order[0] + 1}` : ""} <ArrowRight size={18} />
           </button>

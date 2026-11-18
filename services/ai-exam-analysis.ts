@@ -12,15 +12,22 @@ export interface AiTopicSuggestion {
   priority: "cao" | "vua" | "thap";
   reason: string;
   reviewTip: string;
+  /** Lời cho học sinh (trình chiếu). Bản phân tích cũ trước 18/11/2026 không có. */
+  studentTip?: string;
   questionIndexes: number[];
 }
 export interface AiQuestionNote {
   index: number;
   misconception: string;
   teachingTip: string;
+  /** Lời cho học sinh: vì sao dễ nhầm / mẹo tránh (trình chiếu). */
+  studentWhy?: string;
+  studentAvoid?: string;
 }
 export interface AiExamAnalysis {
   overview: string;
+  /** 1–2 câu nói với cả lớp (trình chiếu). */
+  classMessage?: string;
   topics: AiTopicSuggestion[];
   questions: AiQuestionNote[];
   reviewOrder: number[];
@@ -51,6 +58,7 @@ export async function analyzeExamResults(
   const d = (data ?? {}) as Partial<AiExamAnalysis>;
   const result: AiExamAnalysis = {
     overview: d.overview ?? "",
+    classMessage: d.classMessage ?? "",
     topics: Array.isArray(d.topics) ? d.topics : [],
     questions: Array.isArray(d.questions) ? d.questions : [],
     reviewOrder: Array.isArray(d.reviewOrder) ? d.reviewOrder : [],
