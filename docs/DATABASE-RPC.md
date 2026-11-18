@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 434 hàm, sinh tự động 2026-11-12
+# Hàm SQL / RPC (schema public) — 435 hàm, sinh tự động 2026-11-18
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -10,6 +10,7 @@ repo — xem trên Supabase Dashboard).
 - `apply_parent_link(p_user_id uuid, p_code text)` → uuid
 - `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
 - `assists_class(p_class bigint)` → boolean
+- `bank_apply_question_fix(p_old jsonb, p_new jsonb)` → jsonb
 - `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
 - `bank_practice_lesson_ok(p_lesson_id bigint, p_uid uuid)` → boolean
 - `bank_replace_imgs_in_json(p_q jsonb, p_map jsonb)` → jsonb
@@ -247,8 +248,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
 - `review_board_stage(p_session bigint, p_stage integer)` → jsonb
