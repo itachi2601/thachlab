@@ -213,7 +213,7 @@
     1.9
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. s = 0,0500 m, Δm = Δt = 0,001. Lần 1, 2: δ ≤ ε; lần 3: δ > ε; cả ba lần p' < p."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. s = 0,0500 m, Δm = Δt = 0,001. Lần 1, 2: δ ≤ ε; lần 3: δ > ε; cả ba lần p' < p. Clip thuchanhdl1 — bẫy quên m2 ở lần 1: m1·v' = 0,205·0,251 ≈ 0,0515 kg·m/s (sai, đúng là 0,1012). Ca tự suy cho câu chốt clip: m1 = 0,305 kg, m2 = 0,198 kg, v1 = 0,500 m/s (t1 = 0,100 s), mat 0,022 → t1' = 0,169 s; v' = 0,0500/0,169 ≈ 0,296 m/s; p' = 0,503·0,296 ≈ 0,1489 ≈ 0,149 kg·m/s (p = 0,1525, δ ≈ 2,4 %)."
  },
  "ket_qua_ky_vong": "Hai trong ba lần δ ≤ ε, lần 3 vượt nhẹ; cả ba cùng p' < p (trung bình δ ≈ 2,1 %): bảo toàn gần đúng, còn sai số hệ thống do ngoại lực nhỏ.",
  "hien_tuong_hay_sai": [
