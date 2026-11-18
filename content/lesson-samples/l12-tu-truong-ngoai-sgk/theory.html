@@ -1,0 +1,397 @@
+<div class="tl-box tl-note">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Tính <strong>cảm ứng từ</strong> của dòng điện thẳng, vòng tròn, ống dây.</li>
+<li>Nhận ra <strong>hai dòng điện song song</strong> hút hay đẩy nhau.</li>
+<li>Dùng <strong>lực Lorentz</strong> cho hạt mang điện bay trong từ trường đều.</li>
+<li>Tính <strong>suất điện động $e = B v \ell$</strong> của thanh dẫn trượt trên ray.</li>
+</ul>
+<p>Cuối bài phải trả lời được <strong>6 câu ở mục Trả bài</strong>.</p>
+</div>
+
+<div class="tl-box tl-box--rule tl-note">
+<p class="tl-label">📌 Vì sao có chủ đề này</p>
+<p>Bốn nội dung dưới đây <strong>không có trong SGK Vật lí 12</strong> (chương trình 2018), nhưng đề thi thử của các trường, sở vẫn ra.</p>
+<ul>
+<li>Đề tốt nghiệp 2026 của Bộ có câu electron chuyển động tròn trong từ trường và cặp câu <strong>thanh kim loại trượt trên ray</strong>.</li>
+<li>Đề thường <strong>cho sẵn công thức</strong> trong câu hỏi.</li>
+<li>Việc của em: nhận ra tình huống, dùng đúng quy tắc tìm chiều, đổi đơn vị.</li>
+</ul>
+</div>
+
+<h3>I. Mở bài: câu hỏi "chưa học" trong đề thi thử</h3>
+
+<p>Đề thi thử có câu: proton bay vào máy gia tốc vòng, đề cho sẵn $R = \dfrac{mv}{|q|B}$. Nhiều bạn bỏ trống vì nghĩ "chưa học".</p>
+
+<p>Thật ra chỉ cần hiểu <strong>lực từ lên hạt chuyển động</strong> làm gì với hạt.</p>
+
+<div class="tl-box tl-box--think tl-note">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Electron bay vuông góc với đường sức của một từ trường đều. Trong từ trường, tốc độ của electron:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q0" id="tl201-q0a"><label for="tl201-q0a" class="tl-opt tl-no">A. Tăng dần</label>
+<input type="radio" name="tl201-q0" id="tl201-q0b"><label for="tl201-q0b" class="tl-opt tl-no">B. Giảm dần về 0</label>
+<input type="radio" name="tl201-q0" id="tl201-q0c"><label for="tl201-q0c" class="tl-opt tl-ok">C. Không đổi</label>
+<input type="radio" name="tl201-q0" id="tl201-q0d"><label for="tl201-q0d" class="tl-opt tl-no">D. Lúc tăng lúc giảm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Lực từ lên hạt luôn <strong>vuông góc với vận tốc</strong> nên không sinh công. Lực chỉ bẻ cong hướng bay, tốc độ giữ nguyên.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lực làm tăng hay giảm tốc độ khi có thành phần dọc theo vận tốc. Lực từ lên hạt luôn vuông góc với vận tốc (mục II.3), nên chỉ đổi hướng bay. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức</h3>
+
+<h4>1. Từ trường của dòng điện thẳng, vòng tròn, ống dây</h4>
+
+<p class="tl-meo">🧠 <b>Thẳng 2 – Tròn 2π – Ống 4π</b></p>
+<p><strong>🔑 Hệ số đứng trước $10^{-7}$</strong></p>
+
+<p>Chiều đường sức em đã học ở Bài 10 (quy tắc nắm tay phải). Phần mới là <strong>độ lớn</strong>:</p>
+
+<div class="table-scroll">
+<table class="tl-table">
+<thead>
+<tr><th>Dòng điện</th><th>Đường sức</th><th>Độ lớn $B$</th></tr>
+</thead>
+<tbody>
+<tr><td>Thẳng dài</td><td>Tròn đồng tâm quanh dây</td><td>$B = 2\cdot10^{-7}\dfrac{I}{r}$</td></tr>
+<tr><td>Vòng tròn $N$ vòng, bán kính $R$ (tại tâm)</td><td>Vào một mặt, ra mặt kia</td><td>$B = 2\pi\cdot10^{-7}\dfrac{NI}{R}$</td></tr>
+<tr><td>Ống dây dài $\ell$, $N$ vòng (trong lòng)</td><td>Song song trục, đều</td><td>$B = 4\pi\cdot10^{-7}\dfrac{N}{\ell}I$</td></tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>$r$: khoảng cách từ điểm xét tới dây (m).</li>
+<li>Ống quấn sát một lớp bằng dây đường kính $d$: $\dfrac{N}{\ell} = \dfrac{1}{d}$.</li>
+<li><strong>Nhiều dòng điện:</strong> cộng các vectơ $\vec B$, không cộng độ lớn.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 260" role="img" aria-label="Dây dẫn thẳng dài vuông góc trang, dòng điện hướng ra ngoài. Đường sức là các đường tròn đồng tâm nét đứt, đi ngược chiều kim đồng hồ. Tại điểm M cách dây khoảng r, vectơ cảm ứng từ tiếp tuyến với đường sức, hướng lên."><circle cx="170" cy="135" r="40" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M135.5,125.5 L130.0,135.0 L124.5,125.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M179.5,100.5 L170.0,95.0 L179.5,89.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="170" cy="135" r="75" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M100.5,125.5 L95.0,135.0 L89.5,125.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M179.5,65.5 L170.0,60.0 L179.5,54.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="170" cy="135" r="110" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="6 4"/><path d="M65.5,125.5 L60.0,135.0 L54.5,125.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M179.5,30.5 L170.0,25.0 L179.5,19.5" fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="170" cy="135" r="15" fill="rgba(251,146,60,.18)" stroke="#fb923c" stroke-width="2.5"/><circle cx="170" cy="135" r="4.5" fill="#fb923c"/><text x="148" y="165" fill="#ea580c" font-size="16" font-weight="700" text-anchor="end">I</text><line x1="170" y1="135" x2="280" y2="135" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4"/><text x="237.0" y="155" fill="currentColor" font-size="16" font-weight="700" text-anchor="middle">r</text><circle cx="280" cy="135" r="4.5" fill="currentColor"/><text x="290" y="157" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">M</text><line x1="280" y1="135" x2="280" y2="73" stroke="#38bdf8" stroke-width="2.8"/><path d="M274.2,83.0 L280.0,73.0 L285.8,83.0" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="290" y="85" fill="#0284c7" font-size="17" font-weight="700" text-anchor="start">B</text><text x="300" y="236" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">B = 2·10⁻⁷ I/r</text></svg><figcaption>Hình 1. Dây thẳng nhìn dọc dây, dòng điện hướng ra (⊙).<br>Đường sức: tròn đồng tâm, chiều theo nắm tay phải.<br>$\vec B$ tại M tiếp tuyến đường sức.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 1.</strong> Dây thẳng dài mang dòng 5 A. Cảm ứng từ tại điểm cách dây 10 cm bằng:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q1" id="tl201-q1a"><label for="tl201-q1a" class="tl-opt tl-no">A. $10^{-7}$ T</label>
+<input type="radio" name="tl201-q1" id="tl201-q1b"><label for="tl201-q1b" class="tl-opt tl-ok">B. $10^{-5}$ T</label>
+<input type="radio" name="tl201-q1" id="tl201-q1c"><label for="tl201-q1c" class="tl-opt tl-no">C. $3{,}14\cdot10^{-5}$ T</label>
+<input type="radio" name="tl201-q1" id="tl201-q1d"><label for="tl201-q1d" class="tl-opt tl-no">D. $10^{-3}$ T</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $B = 2\cdot10^{-7}\cdot\dfrac{5}{0{,}1} = 10^{-5}$ T.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>D: quên đổi 10 cm thành 0,1 m.<br>C: lấy nhầm hệ số $2\pi$ của vòng tròn.<br>A: thế $r = 10$ m.<br>Dây thẳng: hệ số là <strong>2</strong>, $r$ tính bằng mét.</p></div>
+</div>
+</div>
+
+<h4>2. Hai dòng điện thẳng song song</h4>
+
+<p class="tl-claim">Cùng chiều thì hút, ngược chiều thì đẩy.</p>
+<p><strong>🔑 Cùng chiều hút – Ngược chiều đẩy</strong></p>
+
+<ul>
+<li><strong>Vì sao:</strong> dây 1 tạo từ trường $\vec B_1$ tại dây 2; dây 2 chịu lực từ theo bàn tay trái.</li>
+<li><strong>Độ lớn</strong> trên đoạn dài $\ell$: $F = 2\cdot10^{-7}\dfrac{I_1 I_2}{r}\,\ell$.</li>
+<li>Hai lực lên hai dây: cùng độ lớn, ngược chiều (định luật III Newton).</li>
+</ul>
+
+<details class="tl-details tl-more">
+<summary>🔬 Bấm xem: hai lá nhôm mỏng song song</summary>
+<div class="tl-box tl-box--exp tl-note">
+<p class="tl-label">🔬 Thí nghiệm: hai lá nhôm mỏng song song</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> căng hai dải giấy nhôm thẳng đứng, cách nhau khoảng 1 cm; cho dòng điện vài ampe chạy qua trong thời gian ngắn.</li>
+<li><strong>Quan sát:</strong> dòng cùng chiều thì hai dải chụm lại; đảo một dòng thì hai dải xoè ra.</li>
+<li><strong>Rút ra:</strong> dòng điện tác dụng lực từ lên dòng điện; cùng chiều hút, ngược chiều đẩy.</li>
+</ol>
+</div>
+</details>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 262" role="img" aria-label="Hai cặp dây dẫn thẳng song song. Bên trái hai dòng điện cùng chiều đi lên, lực từ lên mỗi dây hướng về phía dây kia: hút nhau. Bên phải hai dòng điện ngược chiều, lực từ hướng ra xa nhau: đẩy nhau. Dấu nhân cạnh dây 2 là cảm ứng từ B1 do dây 1 gây ra, hướng vào trang."><text x="95" y="26" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Cùng chiều</text><line x1="55" y1="48" x2="55" y2="222" stroke="#fb923c" stroke-width="3"/><line x1="135" y1="48" x2="135" y2="222" stroke="#fb923c" stroke-width="3"/><path d="M49.0,90.4 L55.0,80.0 L61.0,90.4" fill="none" stroke="#fb923c" stroke-width="3" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M129.0,90.4 L135.0,80.0 L141.0,90.4" fill="none" stroke="#fb923c" stroke-width="3" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="45" y="66" fill="#ea580c" font-size="15" font-weight="700" text-anchor="end">I₁</text><text x="145" y="66" fill="#ea580c" font-size="15" font-weight="700" text-anchor="start">I₂</text><line x1="135" y1="140" x2="101" y2="140" stroke="#f87171" stroke-width="2.8"/><path d="M111.0,145.8 L101.0,140.0 L111.0,134.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="55" y1="140" x2="89" y2="140" stroke="#f87171" stroke-width="2.8"/><path d="M79.0,134.2 L89.0,140.0 L79.0,145.8" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="93" y="136" fill="#f87171" font-size="15" font-weight="700" text-anchor="end">F</text><line x1="107" y1="184" x2="119" y2="196" stroke="#38bdf8" stroke-width="2"/><line x1="119" y1="184" x2="107" y2="196" stroke="#38bdf8" stroke-width="2"/><text x="103" y="214" fill="#0284c7" font-size="14" font-weight="700" text-anchor="end">B₁</text><text x="95" y="250" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">hút nhau</text><text x="295" y="26" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">Ngược chiều</text><line x1="255" y1="48" x2="255" y2="222" stroke="#fb923c" stroke-width="3"/><line x1="335" y1="48" x2="335" y2="222" stroke="#fb923c" stroke-width="3"/><path d="M249.0,90.4 L255.0,80.0 L261.0,90.4" fill="none" stroke="#fb923c" stroke-width="3" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><path d="M341.0,185.6 L335.0,196.0 L329.0,185.6" fill="none" stroke="#fb923c" stroke-width="3" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="245" y="66" fill="#ea580c" font-size="15" font-weight="700" text-anchor="end">I₁</text><text x="345" y="66" fill="#ea580c" font-size="15" font-weight="700" text-anchor="start">I₂</text><line x1="335" y1="140" x2="369" y2="140" stroke="#f87171" stroke-width="2.8"/><path d="M359.0,134.2 L369.0,140.0 L359.0,145.8" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="255" y1="140" x2="221" y2="140" stroke="#f87171" stroke-width="2.8"/><path d="M231.0,145.8 L221.0,140.0 L231.0,134.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="377" y="136" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">F</text><line x1="307" y1="184" x2="319" y2="196" stroke="#38bdf8" stroke-width="2"/><line x1="319" y1="184" x2="307" y2="196" stroke="#38bdf8" stroke-width="2"/><text x="303" y="214" fill="#0284c7" font-size="14" font-weight="700" text-anchor="end">B₁</text><text x="295" y="250" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">đẩy nhau</text><line x1="200" y1="30" x2="200" y2="240" stroke="currentColor" stroke-width="1" stroke-dasharray="3 5"/></svg><figcaption>Hình 2. Dây 1 tạo $\vec B_1$ (×, vào trang) tại dây 2.<br>Bàn tay trái cho dây 2 ra chiều lực F.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 2.</strong> Hai dây dẫn thẳng song song có hai dòng điện <em>cùng chiều</em> chạy qua. Hai dây sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q2" id="tl201-q2a"><label for="tl201-q2a" class="tl-opt tl-ok">A. Hút nhau</label>
+<input type="radio" name="tl201-q2" id="tl201-q2b"><label for="tl201-q2b" class="tl-opt tl-no">B. Đẩy nhau</label>
+<input type="radio" name="tl201-q2" id="tl201-q2c"><label for="tl201-q2c" class="tl-opt tl-no">C. Không tương tác</label>
+<input type="radio" name="tl201-q2" id="tl201-q2d"><label for="tl201-q2d" class="tl-opt tl-no">D. Xoay vuông góc với nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Dòng điện cùng chiều hút nhau. Ngược với điện tích: điện tích cùng dấu thì đẩy.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Lỗi hay gặp là mượn quy tắc điện tích "cùng dấu đẩy". Ở đây là lực <em>từ</em>: dây 1 tạo $\vec B_1$ tại dây 2, đặt bàn tay trái cho dây 2 thì lực hướng về phía dây 1 — hút. Chọn lại nhé.</p></div>
+</div>
+</div>
+
+<h4>3. Lực Lorentz: lực từ lên hạt mang điện chuyển động</h4>
+
+<p class="tl-claim">Lực từ lên hạt luôn vuông góc vận tốc.</p>
+<p><strong>🔑 Vuông góc vận tốc – Không sinh công – Quay tròn</strong></p>
+
+<ul>
+<li><strong>Độ lớn:</strong> $f = |q|\,v\,B\sin\alpha$, với $\alpha$ là góc giữa $\vec v$ và $\vec B$.</li>
+<li><strong>Chiều:</strong> bàn tay trái, chiều cổ tay → ngón tay theo $\vec v$ của hạt <em>dương</em>.</li>
+<li>Hạt <strong>âm</strong> (electron): lực ngược chiều ngón cái.</li>
+</ul>
+
+<div class="tl-box tl-box--rule tl-note">
+<p class="tl-label">📘 Bay vuông góc đường sức của từ trường đều</p>
+<p>Lực Lorentz đóng vai <strong>lực hướng tâm</strong>: $|q|vB = \dfrac{mv^2}{R}$, nên hạt chuyển động tròn đều.</p>
+<ul>
+<li>Bán kính: $R = \dfrac{mv}{|q|B}$.</li>
+<li>Chu kì: $T = \dfrac{2\pi m}{|q|B}$ — <strong>không phụ thuộc $v$</strong>.</li>
+<li>Hạt được tăng tốc từ nghỉ qua hiệu điện thế $U$: $|q|U = \tfrac12 mv^2$.</li>
+</ul>
+</div>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 280" role="img" aria-label="Khối phổ kế: proton được tăng tốc qua hiệu điện thế U, đi qua khe vào vùng từ trường đều hướng ra khỏi trang, chuyển động nửa vòng tròn rồi đập vào phim. Ở đỉnh quỹ đạo vận tốc hướng sang phải, lực Lorentz hướng xuống về tâm. Khoảng cách từ khe tới điểm đập bằng đường kính d = 2R."><circle cx="80" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="80" cy="62" r="2.0" fill="#38bdf8"/><circle cx="80" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="80" cy="108" r="2.0" fill="#38bdf8"/><circle cx="80" cy="154" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="80" cy="154" r="2.0" fill="#38bdf8"/><circle cx="136" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="136" cy="62" r="2.0" fill="#38bdf8"/><circle cx="136" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="136" cy="108" r="2.0" fill="#38bdf8"/><circle cx="192" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="192" cy="62" r="2.0" fill="#38bdf8"/><circle cx="192" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="192" cy="108" r="2.0" fill="#38bdf8"/><circle cx="192" cy="154" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="192" cy="154" r="2.0" fill="#38bdf8"/><circle cx="248" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="248" cy="62" r="2.0" fill="#38bdf8"/><circle cx="248" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="248" cy="108" r="2.0" fill="#38bdf8"/><circle cx="304" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="304" cy="62" r="2.0" fill="#38bdf8"/><circle cx="304" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="304" cy="108" r="2.0" fill="#38bdf8"/><circle cx="304" cy="154" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="304" cy="154" r="2.0" fill="#38bdf8"/><circle cx="360" cy="62" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="360" cy="62" r="2.0" fill="#38bdf8"/><circle cx="360" cy="108" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="360" cy="108" r="2.0" fill="#38bdf8"/><circle cx="360" cy="154" r="7" fill="none" stroke="#38bdf8" stroke-width="1.6"/><circle cx="360" cy="154" r="2.0" fill="#38bdf8"/><rect x="60" y="40" width="310" height="180" fill="none" stroke="#38bdf8" stroke-width="1.2" stroke-dasharray="3 4"/><text x="352" y="60" fill="#0284c7" font-size="16" font-weight="700" text-anchor="end">B</text><line x1="40" y1="220" x2="380" y2="220" stroke="currentColor" stroke-width="4"/><text x="380" y="242" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">phim</text><path d="M110,220 A90,90 0 0 1 290,220" fill="none" stroke="currentColor" stroke-width="2.2" stroke-dasharray="7 5"/><path d="M190.5,124.5 L200.0,130.0 L190.5,135.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><rect x="101" y="217" width="18" height="7" fill="var(--surface, #fff)" stroke="none"/><line x1="110" y1="270" x2="110" y2="224" stroke="#fb923c" stroke-width="1.6" stroke-dasharray="4 3"/><text x="98" y="264" fill="#ea580c" font-size="15" font-weight="700" text-anchor="end">U</text><circle cx="200" cy="130" r="10" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/><text x="200" y="135" fill="currentColor" font-size="15" font-weight="800" text-anchor="middle">+</text><line x1="212" y1="130" x2="264" y2="130" stroke="#34d399" stroke-width="2.8"/><path d="M254.0,124.2 L264.0,130.0 L254.0,135.8" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="270" y="135" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">v</text><line x1="200" y1="142" x2="200" y2="186" stroke="#f87171" stroke-width="2.8"/><path d="M205.8,176.0 L200.0,186.0 L194.2,176.0" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="192" y="180" fill="#f87171" font-size="16" font-weight="700" text-anchor="end">f</text><line x1="110" y1="246" x2="290" y2="246" stroke="currentColor" stroke-width="1.4"/><line x1="110" y1="238" x2="110" y2="254" stroke="currentColor" stroke-width="1.4"/><line x1="290" y1="238" x2="290" y2="254" stroke="currentColor" stroke-width="1.4"/><text x="200" y="266" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">d = 2R</text><text x="120" y="212" fill="currentColor" font-size="13" font-weight="600" text-anchor="start">khe</text></svg><figcaption>Hình 3. Khối phổ kế: $\vec B$ hướng ra (⊙).<br>Lực Lorentz f luôn hướng về tâm, $\vec v$ tiếp tuyến.<br>Điểm đập cách khe $d = 2R$.</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 3.</strong> Proton bay vuông góc đường sức của từ trường đều. Tăng gấp đôi tốc độ thì:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl201-q3c" value="chac"> Chắc</label> <label><input type="radio" name="tl201-q3c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q3" id="tl201-q3a"><label for="tl201-q3a" class="tl-opt tl-no">A. Bán kính và chu kì đều gấp đôi</label>
+<input type="radio" name="tl201-q3" id="tl201-q3b"><label for="tl201-q3b" class="tl-opt tl-ok">B. Bán kính gấp đôi, chu kì không đổi</label>
+<input type="radio" name="tl201-q3" id="tl201-q3c"><label for="tl201-q3c" class="tl-opt tl-no">C. Bán kính không đổi, chu kì giảm một nửa</label>
+<input type="radio" name="tl201-q3" id="tl201-q3d"><label for="tl201-q3d" class="tl-opt tl-no">D. Bán kính giảm một nửa, chu kì gấp đôi</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R = \dfrac{mv}{|q|B}$ tỉ lệ với $v$. Còn $T = \dfrac{2\pi m}{|q|B}$ không có $v$: bay nhanh gấp đôi nhưng đường tròn cũng dài gấp đôi.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Viết hai công thức ra rồi tìm $v$: $R$ có $v$ ở tử số; $T$ không có $v$. Lỗi hay gặp là nghĩ "nhanh hơn thì quay một vòng mất ít thời gian hơn" — quên rằng vòng tròn cũng to ra.</p></div>
+</div>
+</div>
+
+<h4>4. Thanh dẫn chuyển động cắt đường sức</h4>
+
+<p class="tl-claim">Thanh cắt đường sức thì thành nguồn điện.</p>
+<p><strong>🔑 Thanh quét diện tích – Từ thông đổi – $e = Bv\ell$</strong></p>
+
+<ul>
+<li><strong>Từ đâu ra:</strong> sau $\Delta t$ thanh quét diện tích $\Delta S = \ell\, v\,\Delta t$, nên $|\Delta\Phi| = B\ell v\Delta t$.</li>
+<li>Theo Faraday: $e = \left|\dfrac{\Delta\Phi}{\Delta t}\right| = B v \ell$ (thanh, $\vec v$, $\vec B$ vuông góc đôi một).</li>
+<li><strong>Mạch kín điện trở $R$:</strong> $I = \dfrac{e}{R}$.</li>
+<li><strong>Chiều $I$:</strong> định luật Lenz — lực từ $F = BI\ell$ lên thanh <strong>ngược chiều chuyển động</strong>.</li>
+</ul>
+
+<figure class="fig" data-tl="1"><svg viewBox="0 0 400 230" role="img" aria-label="Thanh kim loại trượt sang phải trên hai ray song song nối với điện trở R, trong từ trường đều hướng vào trang. Dòng điện cảm ứng trong thanh đi lên, chạy ngược chiều kim đồng hồ quanh mạch. Lực từ F lên thanh hướng sang trái, ngược chiều vận tốc."><line x1="89" y1="94" x2="101" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="101" y1="94" x2="89" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="89" y1="129" x2="101" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="101" y1="129" x2="89" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="89" y1="164" x2="101" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="101" y1="164" x2="89" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="141" y1="94" x2="153" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="153" y1="94" x2="141" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="141" y1="129" x2="153" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="153" y1="129" x2="141" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="141" y1="164" x2="153" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="153" y1="164" x2="141" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="193" y1="94" x2="205" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="205" y1="94" x2="193" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="193" y1="129" x2="205" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="205" y1="129" x2="193" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="193" y1="164" x2="205" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="205" y1="164" x2="193" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="297" y1="94" x2="309" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="309" y1="94" x2="297" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="297" y1="129" x2="309" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="309" y1="129" x2="297" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="297" y1="164" x2="309" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="309" y1="164" x2="297" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="349" y1="94" x2="361" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="361" y1="94" x2="349" y2="106" stroke="#38bdf8" stroke-width="1.8"/><line x1="349" y1="129" x2="361" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="361" y1="129" x2="349" y2="141" stroke="#38bdf8" stroke-width="1.8"/><line x1="349" y1="164" x2="361" y2="176" stroke="#38bdf8" stroke-width="1.8"/><line x1="361" y1="164" x2="349" y2="176" stroke="#38bdf8" stroke-width="1.8"/><text x="372" y="100" fill="#0284c7" font-size="16" font-weight="700" text-anchor="end">B</text><line x1="40" y1="70" x2="380" y2="70" stroke="currentColor" stroke-width="3"/><line x1="40" y1="200" x2="380" y2="200" stroke="currentColor" stroke-width="3"/><line x1="40" y1="70" x2="40" y2="110" stroke="currentColor" stroke-width="3"/><line x1="40" y1="160" x2="40" y2="200" stroke="currentColor" stroke-width="3"/><rect x="30" y="110" width="20" height="50" rx="3" fill="var(--surface, #fff)" stroke="currentColor" stroke-width="2.5"/><text x="58" y="140" fill="currentColor" font-size="16" font-weight="700" text-anchor="start">R</text><rect x="244" y="58" width="12" height="154" rx="3" fill="#94a3b8" stroke="currentColor" stroke-width="2"/><line x1="272" y1="175" x2="272" y2="95" stroke="#fb923c" stroke-width="2.8"/><path d="M266.2,105.0 L272.0,95.0 L277.8,105.0" fill="none" stroke="#fb923c" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="280" y="112" fill="#ea580c" font-size="16" font-weight="700" text-anchor="start">I</text><line x1="250" y1="40" x2="310" y2="40" stroke="#34d399" stroke-width="2.8"/><path d="M300.0,34.2 L310.0,40.0 L300.0,45.8" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="316" y="45" fill="#34d399" font-size="16" font-weight="700" text-anchor="start">v</text><line x1="242" y1="135" x2="188" y2="135" stroke="#f87171" stroke-width="2.8"/><path d="M198.0,140.8 L188.0,135.0 L198.0,129.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="184" y="130" fill="#f87171" font-size="16" font-weight="700" text-anchor="end">F</text><line x1="214" y1="70" x2="214" y2="200" stroke="currentColor" stroke-width="1.2" stroke-dasharray="3 3"/><text x="208" y="182" fill="currentColor" font-size="16" font-weight="700" text-anchor="end">ℓ</text><line x1="120" y1="80" x2="90" y2="80" stroke="#fb923c" stroke-width="2"/><path d="M97.6,84.4 L90.0,80.0 L97.6,75.6" fill="none" stroke="#fb923c" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="90" y1="190" x2="120" y2="190" stroke="#fb923c" stroke-width="2"/><path d="M112.4,185.6 L120.0,190.0 L112.4,194.4" fill="none" stroke="#fb923c" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/></svg><figcaption>Hình 4. Thanh trượt sang phải, $\vec B$ vào trang (×).<br>Dòng cảm ứng I đi lên trong thanh.<br>Lực từ F ngược chiều $\vec v$ (Lenz).</figcaption></figure>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 4.</strong> Thanh dài 20 cm trượt với tốc độ 4 m/s, vuông góc đường sức của từ trường đều $B = 0{,}5$ T. Suất điện động trong thanh:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q4" id="tl201-q4a"><label for="tl201-q4a" class="tl-opt tl-no">A. 40 V</label>
+<input type="radio" name="tl201-q4" id="tl201-q4b"><label for="tl201-q4b" class="tl-opt tl-no">B. 4 V</label>
+<input type="radio" name="tl201-q4" id="tl201-q4c"><label for="tl201-q4c" class="tl-opt tl-no">C. 0,1 V</label>
+<input type="radio" name="tl201-q4" id="tl201-q4d"><label for="tl201-q4d" class="tl-opt tl-ok">D. 0,4 V</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $e = Bv\ell = 0{,}5 \times 4 \times 0{,}2 = 0{,}4$ V.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A: giữ 20 cm nguyên số.<br>B: đổi 20 cm thành 2 m.<br>C: chia $B\ell$ cho $v$ thay vì nhân.<br>Nhớ: $e = B\cdot v\cdot\ell$, $\ell$ bằng mét.</p></div>
+</div>
+</div>
+
+<h3>III. Ba cái bẫy sập nhiều nhất</h3>
+
+<div class="tl-trap">
+<h4>Bẫy 1: ba quy tắc bàn tay, ba câu hỏi khác nhau</h4>
+
+<p>Hỏi gì thì dùng tay ấy.</p>
+
+<div class="table-scroll">
+<table class="tl-table tl-cmp">
+<thead>
+<tr><th></th><th>Tìm gì</th><th>Đặt tay thế nào</th></tr>
+</thead>
+<tbody>
+<tr><th>Nắm tay phải</th><td>Chiều $\vec B$ của dòng điện</td><td>Dây thẳng: ngón cái theo $I$</td></tr>
+<tr><th>Bàn tay trái</th><td class="tl-diff">Chiều <strong>lực</strong> từ</td><td>Đường sức vào lòng bàn tay, ngón tay theo $I$ (hoặc $\vec v$ hạt dương)</td></tr>
+<tr><th>Bàn tay phải (thanh)</th><td class="tl-diff">Chiều <strong>dòng cảm ứng</strong></td><td>Đường sức vào lòng bàn tay, ngón cái theo $\vec v$, bốn ngón chỉ $I$</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<details class="tl-details tl-more">
+<summary>👀 Tự kiểm: không nhớ bàn tay phải cho thanh thì làm sao?</summary>
+<p>Dùng <strong>Lenz</strong>: dòng cảm ứng phải tạo lực từ cản chuyển động. Giả sử một chiều $I$, đặt bàn tay trái tìm lực; lực cùng chiều $\vec v$ thì đảo chiều $I$.</p>
+</details>
+
+<div class="tl-trap">
+<h4>Bẫy 2: tưởng lực Lorentz làm hạt nhanh lên</h4>
+
+<p>Lực từ chỉ <strong>bẻ hướng</strong>, không đổi tốc độ.</p>
+
+<table class="tl-table tl-cmp">
+<thead>
+<tr><th></th><th>Lực điện $q\vec E$</th><th>Lực Lorentz</th></tr>
+</thead>
+<tbody>
+<tr><th>Phương</th><td>Theo $\vec E$</td><td class="tl-diff">Vuông góc $\vec v$ và $\vec B$</td></tr>
+<tr><th>Công</th><td>Có thể khác 0</td><td class="tl-diff">Luôn bằng 0</td></tr>
+<tr><th>Tốc độ</th><td>Có thể đổi</td><td class="tl-diff">Không đổi</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra ngay</p>
+<p><strong>Câu 5.</strong> Electron bay vào từ trường đều với $\vec v$ <em>song song</em> đường sức. Electron sẽ:</p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q5" id="tl201-q5a"><label for="tl201-q5a" class="tl-opt tl-no">A. Chuyển động tròn đều</label>
+<input type="radio" name="tl201-q5" id="tl201-q5b"><label for="tl201-q5b" class="tl-opt tl-ok">B. Đi thẳng đều, không bị lệch</label>
+<input type="radio" name="tl201-q5" id="tl201-q5c"><label for="tl201-q5c" class="tl-opt tl-no">C. Bị hãm lại rồi dừng</label>
+<input type="radio" name="tl201-q5" id="tl201-q5d"><label for="tl201-q5d" class="tl-opt tl-no">D. Bị lệch theo chiều đường sức</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $\alpha = 0^\circ$ nên $f = |q|vB\sin 0^\circ = 0$. Không có lực, electron đi thẳng đều.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Kiểm tra góc trước: $\vec v$ song song $\vec B$ thì $\sin\alpha = 0$, lực Lorentz bằng 0. Hạt chỉ quay tròn khi $\vec v$ vuông góc $\vec B$.</p></div>
+</div>
+</div>
+
+<div class="tl-trap">
+<h4>Bẫy 3: mượn quy tắc "cùng dấu đẩy" cho dòng điện</h4>
+
+<table class="tl-table tl-cmp">
+<thead>
+<tr><th></th><th>Hai điện tích</th><th>Hai dòng điện song song</th></tr>
+</thead>
+<tbody>
+<tr><th>Giống nhau</th><td>Cùng dấu: <strong>đẩy</strong></td><td class="tl-diff">Cùng chiều: <strong>hút</strong></td></tr>
+<tr><th>Khác nhau</th><td>Trái dấu: hút</td><td class="tl-diff">Ngược chiều: đẩy</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details tl-more">
+<summary>👀 Tự kiểm: hai dòng electron bay song song cùng chiều trong ống chân không. Chúng hút hay đẩy?</summary>
+<p>Có cả hai lực: lực điện đẩy (cùng dấu) và lực từ hút (cùng chiều). Với hạt bay chậm hơn nhiều tốc độ ánh sáng, <strong>lực điện mạnh hơn</strong> nên chùm vẫn toả ra. Trong dây kim loại, dây trung hoà điện nên chỉ còn lực từ: hút.</p>
+</details>
+
+<h3>IV. Trả bài: nhớ lại trước khi giải bài tập</h3>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Trả bài</p>
+
+<details class="tl-details tl-more">
+<summary>1. Viết công thức $B$ của dòng điện thẳng, vòng tròn, ống dây.</summary>
+<p><strong>Thẳng 2 – Tròn 2π – Ống 4π.</strong> $B = 2\cdot10^{-7}\dfrac{I}{r}$; $B = 2\pi\cdot10^{-7}\dfrac{NI}{R}$; $B = 4\pi\cdot10^{-7}\dfrac{N}{\ell}I$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>2. Hai dòng điện song song tương tác thế nào? Viết $F$.</summary>
+<p><strong>Cùng chiều hút · Ngược chiều đẩy.</strong> $F = 2\cdot10^{-7}\dfrac{I_1I_2}{r}\ell$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>3. Nêu độ lớn và cách tìm chiều lực Lorentz.</summary>
+<p>$f = |q|vB\sin\alpha$. Bàn tay trái, ngón tay theo $\vec v$ của hạt dương; hạt âm thì đảo chiều.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>4. Hạt bay vuông góc đường sức: viết $R$, $T$. Đại lượng nào không phụ thuộc $v$?</summary>
+<p>$R = \dfrac{mv}{|q|B}$, $T = \dfrac{2\pi m}{|q|B}$. <strong>Chu kì</strong> không phụ thuộc $v$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>5. Suy ra $e = Bv\ell$ từ định luật Faraday.</summary>
+<p><strong>Thanh quét diện tích.</strong> $\Delta S = \ell v\Delta t$ → $|\Delta\Phi| = B\ell v\Delta t$ → $e = Bv\ell$.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>6. Lực từ lên thanh trượt có chiều thế nào? Vì sao?</summary>
+<p><strong>Ngược chiều chuyển động</strong>, theo định luật Lenz (dòng cảm ứng chống lại nguyên nhân sinh ra nó).</p>
+</details>
+</div>
+
+<h3>V. Bài toán mẫu: khối phổ kế</h3>
+
+<div class="tl-box tl-box--rule tl-note">
+<p class="tl-label">📝 Đề bài</p>
+<p>Proton ($m = 1{,}67\cdot10^{-27}$ kg, $q = 1{,}6\cdot10^{-19}$ C) được tăng tốc từ nghỉ qua hiệu điện thế $U = 2000$ V, rồi bay qua khe vào từ trường đều $B = 0{,}1$ T, vận tốc vuông góc đường sức. Proton đi nửa vòng tròn rồi đập vào phim.</p>
+<p>a) Tính tốc độ của proton khi vào từ trường.</p>
+<p>b) Tính khoảng cách từ khe tới điểm đập trên phim (đơn vị cm, làm tròn đến hàng phần mười).</p>
+<p>c) Tính thời gian proton bay trong từ trường.</p>
+</div>
+
+<div class="table-scroll">
+<table class="tl-table tl-table--data">
+<thead>
+<tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr>
+</thead>
+<tbody>
+<tr><td>"tăng tốc từ nghỉ qua $U$"</td><td>$v_0 = 0$; $U = 2000$ V</td><td>⚠ bỏ qua trọng lực; $|q|U = \tfrac12mv^2$</td></tr>
+<tr><td>"vuông góc đường sức"</td><td>$\alpha = 90^\circ$</td><td>chuyển động tròn đều, $R = \dfrac{mv}{|q|B}$</td></tr>
+<tr><td>"đi nửa vòng tròn"</td><td>đường kính</td><td>khoảng cách $d = 2R$</td></tr>
+<tr><td>"thời gian bay trong từ trường"</td><td>nửa chu kì</td><td>$t = \dfrac{T}{2} = \dfrac{\pi m}{|q|B}$</td></tr>
+</tbody>
+</table>
+</div>
+
+<details class="tl-details tl-more">
+<summary>🧮 Bấm xem: lời giải</summary>
+<ol class="tl-steps">
+<li>Câu a: $v = \sqrt{\dfrac{2|q|U}{m}} = \sqrt{\dfrac{2 \times 1{,}6\cdot10^{-19} \times 2000}{1{,}67\cdot10^{-27}}} \approx 6{,}19\cdot10^{5}$ m/s.</li>
+<li>Bán kính: $R = \dfrac{mv}{|q|B} = \dfrac{1{,}67\cdot10^{-27} \times 6{,}19\cdot10^{5}}{1{,}6\cdot10^{-19} \times 0{,}1} \approx 6{,}46\cdot10^{-2}$ m.</li>
+<li>Câu b: $d = 2R \approx 0{,}129$ m $\approx 12{,}9$ cm.</li>
+<li>Câu c: $t = \dfrac{\pi m}{|q|B} = \dfrac{3{,}14 \times 1{,}67\cdot10^{-27}}{1{,}6\cdot10^{-20}} \approx 3{,}28\cdot10^{-7}$ s.</li>
+<li>Kiểm tra: $v$ cỡ $10^5$–$10^6$ m/s, nhỏ hơn nhiều tốc độ ánh sáng — hợp lí. Tính lại $R$ từ $T$: quãng đường nửa vòng $\pi R = v\,t \approx 0{,}203$ m → $R \approx 6{,}46$ cm, khớp.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Điền bước còn thiếu (làm trên giấy rồi mới bấm xem)</p>
+<p>Thanh dài 20 cm trượt trên hai ray với tốc độ 4 m/s trong từ trường đều $B = 0{,}5$ T vuông góc mặt phẳng ray. Mạch kín có điện trở $R = 0{,}5\ \Omega$. Tìm lực từ cản thanh.</p>
+<ol class="tl-steps">
+<li>Bước 1: $e = Bv\ell = 0{,}5 \times 4 \times 0{,}2 = 0{,}4$ V.</li>
+<li><strong>Em điền:</strong> cường độ dòng điện trong mạch.</li>
+<li><strong>Em điền:</strong> lực từ lên thanh và chiều của nó.</li>
+</ol>
+<details class="tl-details tl-more">
+<summary>Bấm xem bước 2–3</summary>
+<p>$I = \dfrac{e}{R} = \dfrac{0{,}4}{0{,}5} = 0{,}8$ A. $F = BI\ell = 0{,}5 \times 0{,}8 \times 0{,}2 = 0{,}08$ N, ngược chiều chuyển động (Lenz). Muốn thanh trượt đều phải kéo bằng lực 0,08 N (bỏ qua ma sát).</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức: đổi số</p>
+<p><strong>Câu 6.</strong> Hai dây thẳng song song cách nhau 5 cm, mang dòng 10 A và 20 A ngược chiều. Lực từ lên mỗi mét dây:</p>
+<p class="tl-conf">Em chắc bao nhiêu? <label><input type="radio" name="tl201-q6c" value="chac"> Chắc</label> <label><input type="radio" name="tl201-q6c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tl201-q6" id="tl201-q6a"><label for="tl201-q6a" class="tl-opt tl-no">A. $8\cdot10^{-4}$ N, hút nhau</label>
+<input type="radio" name="tl201-q6" id="tl201-q6b"><label for="tl201-q6b" class="tl-opt tl-ok">B. $8\cdot10^{-4}$ N, đẩy nhau</label>
+<input type="radio" name="tl201-q6" id="tl201-q6c"><label for="tl201-q6c" class="tl-opt tl-no">C. $8\cdot10^{-6}$ N, đẩy nhau</label>
+<input type="radio" name="tl201-q6" id="tl201-q6d"><label for="tl201-q6d" class="tl-opt tl-no">D. $4\cdot10^{-5}$ N, đẩy nhau</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $F = 2\cdot10^{-7}\cdot\dfrac{10 \times 20}{0{,}05}\cdot 1 = 8\cdot10^{-4}$ N. Ngược chiều nên đẩy nhau.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong><br>A: số đúng nhưng chiều sai — ngược chiều thì đẩy.<br>C: thế $r = 5$ m thay vì 0,05 m.<br>D: chỉ tính $B_1$ của dây 1 tại dây 2, chưa nhân $I_2\ell$.</p></div>
+</div>
+</div>
+
+<h3>VI. Đời sống, thử thách và mang về</h3>
+
+<ul>
+<li><strong>Khối phổ kế:</strong> ion nặng hơn bay vòng rộng hơn → tách đồng vị.</li>
+<li><strong>Cyclotron:</strong> chu kì không phụ thuộc $v$ nên một điện áp xoay chiều tăng tốc hạt mãi.</li>
+<li><strong>Phanh điện từ tàu cao tốc:</strong> lực cản kiểu thanh trượt, không mài má phanh.</li>
+<li><strong>Cuộn dây điện từ, chuông điện:</strong> từ trường ống dây, $B$ tỉ lệ $I$.</li>
+</ul>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử thách phân tầng</p>
+
+<details class="tl-details tl-more">
+<summary>⭐ Cơ bản: ống dây dài 50 cm có 1000 vòng, dòng 2 A. Tính $B$ trong lòng ống.</summary>
+<p>$B = 4\pi\cdot10^{-7}\cdot\dfrac{1000}{0{,}5}\cdot 2 \approx 5{,}03\cdot10^{-3}$ T $\approx 5{,}0$ mT.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>⭐⭐ Khá: electron bay với $v = 2\cdot10^{6}$ m/s vuông góc từ trường đều $B = 10^{-3}$ T ($m_e = 9{,}1\cdot10^{-31}$ kg). Tính bán kính quỹ đạo.</summary>
+<p>$R = \dfrac{m_e v}{|e|B} = \dfrac{9{,}1\cdot10^{-31} \times 2\cdot10^{6}}{1{,}6\cdot10^{-19} \times 10^{-3}} \approx 1{,}14\cdot10^{-2}$ m $\approx 1{,}1$ cm.</p>
+</details>
+
+<details class="tl-details tl-more">
+<summary>⭐⭐⭐ Thách đấu: thanh trượt ở bài điền bước, ngừng kéo. Vì sao thanh chậm dần chứ không dừng ngay?</summary>
+<p>Lực cản $F = BI\ell = \dfrac{B^2\ell^2 v}{R}$ tỉ lệ với $v$. Thanh càng chậm thì lực cản càng nhỏ, nên thanh chậm dần mãi chứ không dừng đột ngột. Động năng của thanh biến thành nhiệt trên điện trở $R$.</p>
+</details>
+</div>
+
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
+<ul>
+<li><strong>Thẳng 2 – Tròn 2π – Ống 4π:</strong> hệ số trước $10^{-7}$.</li>
+<li><strong>Hai dòng điện:</strong> cùng chiều hút, ngược chiều đẩy.</li>
+<li><strong>Proton trong khối phổ kế:</strong> lực Lorentz là lực hướng tâm, tốc độ không đổi.</li>
+<li><strong>Thanh trượt trên ray:</strong> $e = Bv\ell$, lực từ cản chuyển động.</li>
+<li><strong>Đọc đề:</strong> đề cho sẵn công thức thì cứ dùng; soát đơn vị cm → m.</li>
+</ul>
+</div>
