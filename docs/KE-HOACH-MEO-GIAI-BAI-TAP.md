@@ -128,7 +128,7 @@ trước kì thi. Không dạy loại trừ trong bài học.
 | Chặng | Việc | Điều kiện |
 |---|---|---|
 | 6 ✅ | Bảng tra Soát nhanh (4 kiểu · ví dụ · chỗ dễ sai) + quy tắc trong skill `soan-bai-tap-mau` — xong 18/11: `docs/BANG-MEO-GIAI.md` mục ✓ và ⚖, trường `buoc[].soat` (validator + UI, thay bước Kiểm tra, không tính vào `fading`) | — |
-| 7 ⏳ | Thí điểm Soát nhanh L12 Ch.1 (thầy chốt 18/11): 8 dạng — lesson 3 d3–d4, 4 d2–d4, 5 d1–d3 (`them-soat-nhanh-l12-ch1.py`), kiem-code soát (sửa 4·3, 5·2, 5·3), xem thử `/dev/btm` đạt. CHƯA vào main, CHƯA deploy, CHƯA đăng DB (thứ tự: main → deploy UI → `publish-bai-tap-mau.mts --lesson 3/4/5`) | sau chặng 6 |
+| 7 ⏳ | Thí điểm Soát nhanh L12 Ch.1 (thầy chốt 18/11): 8 dạng — lesson 3 d3–d4, 4 d2–d4, 5 d1–d3 (`them-soat-nhanh-l12-ch1.py`), kiem-code soát (sửa 4·3, 5·2, 5·3), xem thử `/dev/btm` đạt. vào main b2582320f, deploy UI 18:46 18/11 (deploy 49ecdeb8b); hẹn đăng DB 22:05 18/11 trong tab terminal (`scripts/logs/dang-soat-nhanh-l12-ch1.sh`, log `.log` cùng chỗ) — sáng 19/11 kiểm log + DB | sau chặng 6 |
 | 8 | Lập tỉ số cho dạng tỉ lệ, ưu tiên dạng sai nhiều theo `question_dang` | song song chặng 7 |
 | 9 | Đo 2–3 tuần bằng `similar_practice_attempts` (dạng có/chưa có Soát nhanh cùng chương); không cải thiện thì gỡ | sau chặng 7 |
 | 10 | Trang chiến thuật ba phần đề | sau khi có số chặng 9 |

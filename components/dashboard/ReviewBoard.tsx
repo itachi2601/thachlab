@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState, type CSSProperties, type TouchEvent } from "react";
 import { useRouter } from "next/navigation";
-import { ChevronLeft, ChevronRight, Eye, Maximize, NotebookPen, Sparkles, X, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye, Maximize, NotebookPen, Presentation, Sparkles, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtmlLazy";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
@@ -13,6 +13,7 @@ import { classGrade, fetchClasses } from "@/services/classes";
 import { createReviewHomework, findLessonBoundary, lessonIdsBefore, outcomeTopicIdsForLessons } from "@/services/homework";
 import { fetchChapters, fetchLessons, type LessonWithItemRefs } from "@/services/lessons";
 import ReviewPrep from "@/components/dashboard/ReviewPrep";
+import ReviewSlides from "@/components/dashboard/ReviewSlides";
 import { readCachedAnalysis, type AiExamAnalysis } from "@/services/ai-exam-analysis";
 
 const ZOOM_MIN = 0.4;
@@ -69,6 +70,8 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
     typeof window === "undefined" ? null : readCachedAnalysis(examId, classId, data.totalStudents),
   );
   const [reviewCreated, setReviewCreated] = useState(false);
+  // Trình chiếu phân tích cho cả lớp (ReviewSlides tự bắt phím ở pha capture nên phím bảng không chạy chồng).
+  const [showSlides, setShowSlides] = useState(false);
 
   useEffect(() => {
     if (!canCreateHomework) return;
@@ -266,6 +269,11 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
         >
           <Sparkles size={16} /> <span className="rb-btn-text">Phân tích</span>
         </button>
+        {data.totalStudents > 0 && (
+          <button className="rb-btn" onClick={() => setShowSlides(true)} title="Trình chiếu phân tích cho cả lớp xem">
+            <Presentation size={16} /> <span className="rb-btn-text">Chiếu cho lớp</span>
+          </button>
+        )}
         {canCreateHomework && (
         <button
           className="rb-btn"
@@ -486,7 +494,22 @@ export default function ReviewBoard({ data, examId, classId, canCreateHomework =
             go(i);
             setShowPrep(false);
           }}
+          onPresent={() => {
+            setShowPrep(false);
+            setShowSlides(true);
+          }}
           onClose={() => setShowPrep(false)}
+        />
+      )}
+      {showSlides && (
+        <ReviewSlides
+          data={data}
+          ai={ai}
+          onJump={(i) => {
+            go(i);
+            setShowSlides(false);
+          }}
+          onClose={() => setShowSlides(false)}
         />
       )}
     </div>
