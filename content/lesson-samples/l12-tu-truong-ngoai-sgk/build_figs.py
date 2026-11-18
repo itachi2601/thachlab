@@ -57,7 +57,7 @@ b += f'<circle cx="{mx}" cy="{cy}" r="4.5" fill="currentColor"/>'
 b += text(mx + 10, cy + 22, "M", "currentColor", 16, "start", "700")
 b += arrow("f1", "b", mx, cy, mx, cy - 62, 3)
 b += text(mx + 10, cy - 50, "B", BTXT, 17, "start", "700")
-b += text(300, 236, "B = 2·10⁻⁷ I/r", "currentColor", 15, "middle", "700")
+b += text(320, 240, "B = 2·10⁻⁷ I/r", "currentColor", 15, "middle", "700")
 fig1 = fig("0 0 400 260",
            "Dây dẫn thẳng dài vuông góc trang, dòng điện hướng ra ngoài. Đường sức là các đường tròn đồng tâm nét đứt, "
            "đi ngược chiều kim đồng hồ. Tại điểm M cách dây khoảng r, vectơ cảm ứng từ tiếp tuyến với đường sức, hướng lên.",
@@ -152,7 +152,7 @@ b += arrow("f4", "g", rx, yt - 30, rx + 60, yt - 30, 3)
 b += text(rx + 66, yt - 25, "v", GRN, 16, "start", "700")
 b += arrow("f4", "r", rx - 8, 135, rx - 62, 135, 3)
 b += text(rx - 66, 130, "F", RED, 16, "end", "700")
-b += line(rx - 36, yt, rx - 36, yb, "currentColor", 1.2, "3 3")
+b += line(rx - 36, yt, rx - 36, 122, "currentColor", 1.2, "3 3") + line(rx - 36, 148, rx - 36, yb, "currentColor", 1.2, "3 3")
 b += text(rx - 42, 182, "ℓ", "currentColor", 16, "end", "700")
 b += arrow("f4", "o", 120, yt + 10, 90, yt + 10, 2)        # dòng chạy về R ở ray trên
 b += arrow("f4", "o", 90, yb - 10, 120, yb - 10, 2)        # và trở lại ở ray dưới

@@ -56,8 +56,8 @@ QUESTIONS = [
      "question": "Dây dẫn thẳng dài mang dòng điện 8 A. Cảm ứng từ tại điểm cách dây 4 cm bằng $x\\cdot10^{-5}$ T. Tìm $x$.",
      "answer": "4", "explanation": "$B = 2\\cdot10^{-7}\\dfrac{I}{r} = 2\\cdot10^{-7}\\cdot\\dfrac{8}{0{,}04} = 4\\cdot10^{-5}$ T."},
     {"type": "short_answer", "form": "bai_tap", "topic": T,
-     "question": "Electron ($m_e = 9{,}1\\cdot10^{-31}$ kg, $|e| = 1{,}6\\cdot10^{-19}$ C) bay với tốc độ $1{,}6\\cdot10^{6}$ m/s vuông góc với đường sức của từ trường đều $B = 2\\cdot10^{-3}$ T. Bán kính quỹ đạo bằng bao nhiêu milimét (làm tròn đến hàng phần mười)?",
-     "answer": "4,6", "explanation": "$R = \\dfrac{m_ev}{|e|B} = \\dfrac{9{,}1\\cdot10^{-31}\\cdot1{,}6\\cdot10^{6}}{1{,}6\\cdot10^{-19}\\cdot2\\cdot10^{-3}} = 4{,}55\\cdot10^{-3}$ m $\\approx 4{,}6$ mm."},
+     "question": "Electron ($m_e = 9{,}1\\cdot10^{-31}$ kg, $|e| = 1{,}6\\cdot10^{-19}$ C) bay với tốc độ $1{,}6\\cdot10^{6}$ m/s vuông góc với đường sức của từ trường đều $B = 2{,}5\\cdot10^{-3}$ T. Bán kính quỹ đạo bằng bao nhiêu milimét (làm tròn đến hàng phần mười)?",
+     "answer": "3,6", "explanation": "$R = \\dfrac{m_ev}{|e|B} = \\dfrac{9{,}1\\cdot10^{-31}\\cdot1{,}6\\cdot10^{6}}{1{,}6\\cdot10^{-19}\\cdot2{,}5\\cdot10^{-3}} = 3{,}64\\cdot10^{-3}$ m $\\approx 3{,}6$ mm."},
 ]
 
 bundle = {
