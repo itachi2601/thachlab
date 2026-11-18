@@ -114,7 +114,8 @@
   "phuong_trinh": [
    "dm/dt = v_chay",
    "eta = eta0·(1 − (T − T0)/50)",
-   "m_nuoc·c·dT/dt = eta·q·v_chay, c = 4,18 J/(g·K), T0 = 28 °C"
+   "m_nuoc·c·dT/dt = eta·q·v_chay, c = 4,18 J/(g·K), T0 = 28 °C",
+   "nghiệm: T = T0 + 50·(1 − e^(−K·t/50)), K = eta0·q·v_chay/(m_nuoc·c) ≈ 1,33 °C/phút"
   ],
   "gia_thiet": [
    "q parafin xấp xỉ 42 kJ/g (giá trị tra cứu, dao động 41–46 kJ/g)",

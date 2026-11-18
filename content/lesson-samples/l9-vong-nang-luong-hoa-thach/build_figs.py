@@ -157,14 +157,13 @@ fig4 = wrap("0 0 420 240", "Sơ đồ nhà máy nhiệt điện than: than vào 
 # ---------- Thí nghiệm 2: đốt nến đun 200 g nước (mô hình)
 M_NUOC, C_NUOC, Q_PARAFIN = 200, 4.18, 42.0e3       # g, J/(g·K), J/g (giá trị tra cứu xấp xỉ)
 TOC_DO, ETA0, T0, T_LOSS = 0.12, 0.22, 28.0, 50.0   # g/phút; phần nhiệt vào nước lúc đầu; °C; hệ số mất nhiệt
-rows2, Tw, burned, dt = [], T0, 0.0, 0.01
-for k in range(0, 801):
-    tmin = k * dt
-    if abs(tmin - round(tmin)) < 1e-9 and round(tmin) % 2 == 0:
-        rows2.append((round(tmin), round(burned, 2), round(Tw, 1)))
-    eta = ETA0 * (1 - (Tw - T0) / T_LOSS)
-    Tw += eta * Q_PARAFIN * TOC_DO * dt / (M_NUOC * C_NUOC)
-    burned += TOC_DO * dt
+# Nghiệm đúng của m·c·dT/dt = eta0·(1 − (T − T0)/T_LOSS)·q·v  →  T = T0 + T_LOSS·(1 − e^(−K·t/T_LOSS)),
+# K = eta0·q·v/(m·c) (°C/phút). Đây là NGUỒN SỰ THẬT duy nhất cho bảng, so_lieu_mau, quan_sat, ket_qua_ky_vong.
+import math
+K_TANG = ETA0 * Q_PARAFIN * TOC_DO / (M_NUOC * C_NUOC)
+def T_nuoc(t):
+    return T0 + T_LOSS * (1 - math.exp(-K_TANG * t / T_LOSS))
+rows2 = [(t, round(TOC_DO * t, 2), round(T_nuoc(t), 1)) for t in (0, 2, 4, 6, 8)]
 assert [r[0] for r in rows2] == [0, 2, 4, 6, 8], rows2
 inc = [rows2[i + 1][2] - rows2[i][2] for i in range(4)]
 assert all(inc[i] >= inc[i + 1] - 1e-9 for i in range(3)) and inc[0] > inc[-1] and 2.0 < inc[0] < 3.0, inc
@@ -250,7 +249,8 @@ tn.append({**base,
               {"ky_hieu": "eta0", "ten": "Phần nhiệt vào nước lúc đầu", "don_vi": "", "kieu": "co_dinh", "gia_tri": ETA0},
               {"ky_hieu": "T", "ten": "Nhiệt độ nước", "don_vi": "°C", "kieu": "do_duoc", "sai_so_do": 0.1},
               {"ky_hieu": "dm", "ten": "Khối lượng nến đã cháy", "don_vi": "g", "kieu": "do_duoc", "sai_so_do": 0.01}],
-  "mo_hinh": {"phuong_trinh": ["dm/dt = v_chay", "eta = eta0·(1 − (T − T0)/50)", "m_nuoc·c·dT/dt = eta·q·v_chay, c = 4,18 J/(g·K), T0 = 28 °C"],
+  "mo_hinh": {"phuong_trinh": ["dm/dt = v_chay", "eta = eta0·(1 − (T − T0)/50)", "m_nuoc·c·dT/dt = eta·q·v_chay, c = 4,18 J/(g·K), T0 = 28 °C",
+                                  "nghiệm: T = T0 + 50·(1 − e^(−K·t/50)), K = eta0·q·v_chay/(m_nuoc·c) ≈ 1,33 °C/phút"],
               "gia_thiet": ["q parafin xấp xỉ 42 kJ/g (giá trị tra cứu, dao động 41–46 kJ/g)",
                             "phần nhiệt vào nước giảm dần khi nước nóng lên do mất nhiệt ra không khí",
                             "bỏ qua nhiệt làm nóng lon"]},
