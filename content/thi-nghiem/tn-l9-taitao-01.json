@@ -1,0 +1,164 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 17. Một số dạng năng lượng tái tạo",
+ "lesson_id": 95,
+ "nguon_trong_bai": "content/lesson-samples/l9-nang-luong-tai-tao/theory.html",
+ "id": "tn-l9-taitao-01",
+ "ten": "Tua-bin gió mô hình trước quạt: đo hiệu điện thế theo tốc độ gió",
+ "loai": "thi_nghiem",
+ "muc_do": "trung_binh",
+ "kien_thuc": [
+  "taitao.chuoi_chuyen_hoa_gio",
+  "taitao.phu_thuoc_thoi_tiet",
+  "congsuat.p_bang_u2_chia_r"
+ ],
+ "muc_tieu": "Thấy gió làm quay tua-bin, máy phát cho ra điện; gió gấp đôi thì công suất tăng nhiều hơn gấp đôi, gió yếu thì gần như không có điện.",
+ "dung_cu": [
+  {
+   "ten": "Động cơ điện một chiều nhỏ (dùng làm máy phát) gắn cánh quạt nhựa 3 cánh",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện trở 10 Ω",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vôn kế (GHĐ 3 V, ĐCNN 0,01 V)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quạt bàn 3 tốc độ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Máy đo tốc độ gió cầm tay",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối, giá đỡ",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Gắn cánh quạt vào trục động cơ, nối hai đầu động cơ với điện trở 10 Ω, vôn kế song song với điện trở.",
+   "Đặt tua-bin trước quạt bàn; đo tốc độ gió ngay trước cánh: 2,0; 3,0; 4,0 m/s.",
+   "Mỗi tốc độ gió đọc vôn kế 3 lần, lấy trung bình."
+  ],
+  "quan_sat": [
+   "Gió càng mạnh, cánh quay càng nhanh, U càng lớn.",
+   "U trung bình: 0,60; 1,20; 1,80 V; ba lần đo lệch nhau tới 0,09 V."
+  ],
+  "rut_ra": [
+   "Động năng gió → cơ năng tua-bin → điện năng.",
+   "Gió từ 2 lên 4 m/s: U gấp 3, công suất P = U²/R gấp 9: điện gió phụ thuộc mạnh vào gió."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "v",
+   "ten": "Tốc độ gió trước cánh",
+   "don_vi": "m/s",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 5,
+   "mac_dinh": 3,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "k",
+   "ten": "Hệ số máy phát mô hình",
+   "don_vi": "V·s/m",
+   "kieu": "co_dinh",
+   "gia_tri": 0.6
+  },
+  {
+   "ky_hieu": "v0",
+   "ten": "Tốc độ gió tối thiểu để cánh quay",
+   "don_vi": "m/s",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "R",
+   "ten": "Điện trở tải",
+   "don_vi": "Ω",
+   "kieu": "co_dinh",
+   "gia_tri": 10.0
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế trên điện trở",
+   "don_vi": "V",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.05
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất điện trên điện trở",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "U = k·(v − v0) khi v > v0; U = 0 khi v ≤ v0",
+   "P = U²/R"
+  ],
+  "gia_thiet": [
+   "mô hình tuyến tính gần đúng cho tua-bin đồ chơi trong khoảng 1–5 m/s (tua-bin thật: công suất gió tỉ lệ khoảng v³)",
+   "vôn kế có điện trở rất lớn; dao động khi đọc ±0,05 V do gió quạt không đều"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "v (m/s)",
+   "U lần 1 (V)",
+   "U lần 2 (V)",
+   "U lần 3 (V)",
+   "U trung bình (V)",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    2.0,
+    0.57,
+    0.62,
+    0.61,
+    0.6,
+    0.036
+   ],
+   [
+    3.0,
+    1.18,
+    1.23,
+    1.19,
+    1.2,
+    0.144
+   ],
+   [
+    4.0,
+    1.76,
+    1.85,
+    1.79,
+    1.8,
+    0.324
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ tính từ U = 0,6·(v − 1), cộng dao động đọc số có tổng bằng 0; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "U trung bình 0,60 → 1,80 V khi gió 2 → 4 m/s; P tăng 9 lần.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ gió gấp đôi thì điện gấp đôi.",
+  "Nghĩ tua-bin gió phát đều đặn như nhau mọi lúc.",
+  "Lấy một lần đo thay vì trung bình ba lần."
+ ],
+ "sai_so_thuong_gap": "Gió quạt thổi không đều, đọc vôn kế dao động tới 0,09 V ở cùng một tốc độ gió.",
+ "an_toan": "Không thò tay vào cánh quạt đang quay; giữ tóc, dây xa quạt.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu+do_thi",
+  "y_tuong": "Kéo thanh tốc độ gió; cánh quay nhanh dần, vôn kế và cột công suất P = U²/R lên theo.",
+  "diem_nhan": "Gió gấp đôi mà công suất gấp 9; dưới 1 m/s cánh đứng yên."
+ }
+}

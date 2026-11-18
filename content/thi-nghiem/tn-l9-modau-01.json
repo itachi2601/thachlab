@@ -1,0 +1,143 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 1. Giới thiệu một số dụng cụ và hoá chất. Thuyết trình một vấn đề khoa học",
+ "lesson_id": 128,
+ "nguon_trong_bai": "content/lesson-samples/l9-mo-dau-dung-cu-thuyet-trinh/theory.html",
+ "id": "tn-l9-modau-01",
+ "ten": "Đo một dòng điện ở ba thang của đồng hồ đa năng",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "dungcu.chon_thang_do",
+  "dungcu.ampe_ke_noi_tiep",
+  "dungcu.sai_so_do"
+ ],
+ "muc_tieu": "Thấy cùng một dòng điện đọc ở thang lớn thì thô, ở thang vừa thì nhiều chữ số nhất, ở thang quá nhỏ thì báo quá thang.",
+ "dung_cu": [
+  {
+   "ten": "Đồng hồ đo điện đa năng số (thang DCA 20 mA, 200 mA, 10 A)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Bóng đèn nhỏ có đui",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn 3 V (hai pin hoặc biến áp nguồn)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc đồng hồ nối tiếp với bóng đèn, que đỏ về phía cực (+) của nguồn.",
+   "Đặt thang 10 A (que đỏ cắm lỗ 10A), đóng khoá, đọc số.",
+   "Tắt khoá, chuyển que đỏ về lỗ mA, đặt thang 200 mA, đọc số; rồi thang 20 mA."
+  ],
+  "quan_sat": [
+   "Thang 10 A: 0.15 (A).",
+   "Thang 200 mA: 153.2 (mA).",
+   "Thang 20 mA: chỉ hiện số 1 bên trái.",
+   "Đèn sáng như nhau cả ba lần."
+  ],
+  "rut_ra": [
+   "Dòng điện không đổi, chỉ cách hiển thị đổi theo thang.",
+   "Thang nhỏ nhất mà giới hạn đo vẫn lớn hơn số đo cho nhiều chữ số nhất.",
+   "Thang nhỏ hơn số đo thì báo quá thang, có thể làm đứt cầu chì."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "I",
+   "ten": "Cường độ dòng điện thật trong mạch",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0.001,
+   "max": 5,
+   "mac_dinh": 0.15318,
+   "buoc": 0.001
+  },
+  {
+   "ky_hieu": "GHD",
+   "ten": "Giới hạn đo của thang (0,02 / 0,2 / 10 A)",
+   "don_vi": "A",
+   "kieu": "dieu_chinh",
+   "min": 0.02,
+   "max": 10,
+   "mac_dinh": 10,
+   "gia_tri_roi_rac": [
+    0.02,
+    0.2,
+    10
+   ]
+  },
+  {
+   "ky_hieu": "I_doc",
+   "ten": "Số hiện trên màn hình",
+   "don_vi": "A",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.01
+  },
+  {
+   "ky_hieu": "delta",
+   "ten": "Sai số khi lệch một đơn vị chữ số cuối",
+   "don_vi": "%",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "buoc theo thang (đồng hồ 3½ chữ số): 10 A → 0,01 A (= GHD/1000); 200 mA → 0,1 mA và 20 mA → 0,01 mA (= GHD/2000)",
+   "nếu I > GHD: hiện '1' bên trái (quá thang)",
+   "I_doc = lam_tron(I, buoc)",
+   "delta = buoc / I_doc · 100 %"
+  ],
+  "gia_thiet": [
+   "thang 10 A hiển thị tới 0,01 A",
+   "bỏ qua điện trở của đồng hồ (dòng thật không đổi khi đổi thang)",
+   "số liệu minh hoạ, chưa đo thật"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Thang",
+   "Màn hình",
+   "Đọc ra"
+  ],
+  "hang": [
+   [
+    "10 A",
+    "0.15",
+    "0,15 A"
+   ],
+   [
+    "200 mA",
+    "153.2",
+    "153,2 mA"
+   ],
+   [
+    "20 mA",
+    "1 (bên trái)",
+    "quá thang"
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ dòng thật 0.15318 A, làm tròn theo bước của từng thang; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Thang 200 mA cho 153,2 mA (sai số ~0,07 %), thang 10 A cho 0,15 A (~7 %), thang 20 mA quá thang.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ thang nhỏ nhất luôn chính xác nhất.",
+  "Đọc số 1 bên trái thành 1 mA.",
+  "Đọc 153.2 ở thang 200 mA thành 153,2 A (quên đơn vị của thang)."
+ ],
+ "sai_so_thuong_gap": "Lệch một đơn vị chữ số cuối: 0,01 A trên 0,15 A ≈ 7 %; 0,1 mA trên 153,2 mA ≈ 0,07 %.",
+ "an_toan": "Đổi thang khi đã ngắt khoá. Dòng lớn hơn 200 mA phải dùng lỗ 10A.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Vặn núm đồng hồ ảo qua các thang; màn hình hiện số theo bước làm tròn, quá thang thì hiện 1.",
+  "diem_nhan": "Thang nhỏ quá thì không đọc được; thang lớn quá thì mất chữ số."
+ }
+}

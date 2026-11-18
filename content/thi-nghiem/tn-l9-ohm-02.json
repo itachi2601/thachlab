@@ -123,7 +123,7 @@
     20.0
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ: I = U/20 cộng sai lệch đọc kim, làm tròn 0,01 A; chưa phải số đo thật. Trung bình U/I = 19.80 Ω; lần 1 lệch nhiều nhất."
+  "ghi_chu": "Số liệu minh hoạ: I = U/20 cộng sai lệch đọc kim, làm tròn 0,01 A; chưa phải số đo thật. Trung bình U/I = 19.80 Ω; lần 1 lệch nhiều nhất. Câu chốt clip l9ohm2: một dây khác đặt 2,0 V thì ampe kế chỉ 0,05 A (R = 40 Ω); muốn ampe kế chỉ 0,12 A phải đặt U = 0,12 · 40 = 4,8 V."
  },
  "ket_qua_ky_vong": "U/I trung bình khoảng 19.8 Ω; các điểm nằm sát đường thẳng qua gốc.",
  "hien_tuong_hay_sai": [
@@ -137,5 +137,15 @@
   "loai": "do_thi+bang_so_lieu",
   "y_tuong": "Kéo thanh U, kim ampe kế nhảy theo độ chia; mỗi lần bấm 'ghi' thêm một chấm lên đồ thị I–U.",
   "diem_nhan": "Chấm ở U nhỏ lệch khỏi đường thẳng nhiều nhất (tính theo phần trăm)."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-ohm-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "đồ thị I theo U của dây constantan",
+  "nhin_vao": "Bốn điểm (U; I) nằm thế nào trên đồ thị?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

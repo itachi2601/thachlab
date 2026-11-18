@@ -1,0 +1,53 @@
+{
+  "id": "tn-l9-doanmach-02",
+  "ten": "Đoạn mạch hai nhánh: đo dòng điện ở từng nhánh và mạch chính",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.webp",
+  "tong_giay": 47.7,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Dòng mạch chính bằng tổng dòng các nhánh; mỗi nhánh nhận đủ hiệu điện thế.",
+      "kiem": "Đóng K, ampe kế mạch chính chỉ bao nhiêu?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.3,
+      "chu": "Đóng K: A1 chỉ 0,60 A, A2 chỉ 0,40 A. Ampe kế mạch chính chỉ bao nhiêu?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.7,
+      "chu": "Nguồn, khoá K, R1, R2, ba ampe kế, một vôn kế."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 13.7,
+      "chu": "Vôn kế chỉ 6,0 V. A1 chỉ 0,60 A, A2 chỉ 0,40 A, ampe kế mạch chính chỉ 1,00 A."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 23.9,
+      "chu": "Song song: dòng mạch chính chia cho hai nhánh, I = I1 + I2."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 36.8,
+      "chu": "Số liệu minh hoạ, chưa đo thật.\nĐã bỏ qua điện trở nguồn, ampe kế."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.6,
+    "cau_hoi": "Đóng K: A1 chỉ 0,60 A, A2 chỉ 0,40 A. Ampe kế mạch chính chỉ bao nhiêu?",
+    "chon": [
+      "A. 0,20 A",
+      "B. 0,50 A",
+      "C. 0,60 A",
+      "D. 1,00 A"
+    ],
+    "dung": 3,
+    "giai_thich_dung": "Ampe kế mạch chính chỉ 1,00 A = 0,60 A + 0,40 A: dòng mạch chính rẽ vào hai nhánh rồi nhập lại.",
+    "giai_thich_sai": "Dòng mạch chính chia ra hai nhánh nên bằng tổng hai dòng nhánh: 0,60 + 0,40 = 1,00 A. Không phải hiệu hai dòng, không phải trung bình, cũng không bằng riêng một nhánh."
+  }
+}
