@@ -6,8 +6,6 @@ link: "https://tuoitre.vn/hang-ngan-sinh-vien-o-tp-hcm-bi-buoc-thoi-hoc-vi-dau-2
 ghi_chu_nguon: "Báo chỉ ghi tên viết tắt."
 cau_hoi: "Ở Cao Thắng, ai sẽ nhắc bạn khi bạn sắp bị cấm thi một môn? Nếu không ai nhắc, bạn tự biết bằng cách nào?"
 ---
-L. đỗ một trường đại học ở TP.HCM. Ở phổ thông, thầy cô nhắc từng bài, từng buổi; lên đây không ai nhắc. L. nghĩ các môn đại cương "học cho có", nên học lơ là.
+L. đỗ một trường đại học ở TP.HCM. L. chủ quan với các môn đại cương, nghĩ là môn phụ. Một môn vướng đi vướng lại mãi không qua, L. chán và bỏ học từ năm thứ hai — tên nằm trong danh sách buộc thôi học.
 
-Một môn trượt, học lại, lại trượt. Càng nợ càng chán, càng chán càng bỏ buổi. Đến lúc xem kết quả thì tên L. đã nằm trong danh sách buộc thôi học.
-
-L. thi vào trường khác, nhờ giỏi tin học, sau này có việc ổn định ở một công ty tư nhân. Nhưng khi kể lại, điều L. tiếc nhất không phải tấm bằng, mà là mấy năm bỏ phí — chỉ vì năm đầu tưởng sẽ có người nhắc mình như hồi cấp 3.
+L. thi vào trường khác, nhưng lại bỏ dở ở năm thứ tư và lần nữa có tên trong danh sách thôi học. Nhờ giỏi tin học, sau này có việc ổn định ở một công ty tư nhân. Nhưng khi kể lại, điều L. tiếc nhất không phải tấm bằng, mà là mấy năm bỏ phí.

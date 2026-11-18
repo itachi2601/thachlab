@@ -10,4 +10,4 @@ Nguyễn Việt Cường tốt nghiệp kỹ sư năm 2006, vào làm công nhâ
 
 Anh lo mấy ngày liền: sợ hỏng, sợ cong vênh, sợ mất uy tín. Nhưng anh không giấu. Anh đi hỏi các bác, các chú thợ hàn trong tổ, làm từng phần, chỗ nào chưa biết thì hỏi ngay.
 
-Chiếc goòng đạt yêu cầu, chạy tốt — dù mối hàn chưa đẹp và anh bị đau mắt hơn một tuần. Anh rút ra: kiến thức ở trường chỉ là nền; vào xưởng, chưa biết thì hỏi ngay và làm cho dứt điểm.
+Chiếc goòng đạt yêu cầu, chạy tốt — dù mối hàn chưa đẹp và anh bị đau mắt hơn một tuần. Anh rút ra: kiến thức ở trường chỉ là nền; vào xưởng, chưa biết thì phải hỏi ngay.

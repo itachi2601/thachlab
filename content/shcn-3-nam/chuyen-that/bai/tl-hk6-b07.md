@@ -10,4 +10,4 @@ Hương mới đi làm hai tháng, nhân viên văn phòng một công ty may �
 
 Cuối tháng Hương ốm phải vào viện. Cần tiền gấp mà trong ví trống trơn; ngại xin gia đình ở xa, Hương đi vay mượn khắp nơi.
 
-Từ tháng sau, Hương đổi cách: lương về (khi đó 4 triệu đồng) là bỏ ngay một nửa vào ống heo trước, phần còn lại mới chia cho cả tháng. Một đồng nghiệp của Hương từ tỉnh lên thì mở tài khoản tiết kiệm ngay tháng lương đầu, đều đặn gửi khoảng 30% lương mỗi tháng.
+Từ tháng sau, Hương đổi cách: lương về (khi đó 4 triệu đồng) là bỏ ngay một nửa vào ống heo trước, phần còn lại mới chia cho cả tháng. Một người khác trong bài, hướng dẫn viên du lịch từ tỉnh lên, mở tài khoản tiết kiệm ngay tháng lương đầu, đều đặn gửi khoảng 30% lương mỗi tháng.

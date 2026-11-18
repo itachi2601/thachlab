@@ -1,7 +1,7 @@
 ---
 bai: hk4-b05
 mang: HT
-nguon: "This American Life (NPR), tập 403 \"NUMMI\", 26/3/2010"
+nguon: "This American Life (NPR), tập 403 \"NUMMI\", phát 26/3/2010"
 link: "https://www.thisamericanlife.org/403/transcript"
 ghi_chu_nguon: "Về dây andon: trang Toyota — https://global.toyota/en/company/vision-and-philosophy/production-system/"
 cau_hoi: "Ở xưởng trường, khi thấy chi tiết lỗi, bạn thường làm gì: sửa ngay, báo, hay để khâu sau lo? Vì sao?"
