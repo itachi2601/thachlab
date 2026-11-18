@@ -1,0 +1,44 @@
+{
+ "lesson_id": 93,
+ "dung_lai": "dòng điện xoay chiều và công thức điện năng $A = P\\,t$",
+ "cau": [
+  {
+   "hoi": "Nối hai đèn LED mắc ngược cực vào một cuộn dây. Quay nam châm trước cuộn dây thì hai đèn sáng luân phiên. Điều đó cho biết dòng điện trong cuộn dây",
+   "pa": [
+    "có chiều không đổi, chỉ lúc mạnh lúc yếu",
+    "luân phiên đổi chiều",
+    "chỉ xuất hiện khi nam châm đứng yên",
+    "chạy qua một đèn rồi dừng hẳn"
+   ],
+   "dung": 1,
+   "ok": "Mỗi đèn LED chỉ sáng với một chiều dòng điện. Hai đèn thay nhau sáng nghĩa là dòng điện luân phiên đổi chiều: dòng điện xoay chiều.",
+   "no": [
+    "Chiều không đổi thì chỉ một đèn sáng.",
+    "Nam châm đứng yên thì số đường sức từ qua cuộn dây không đổi, không có dòng điện.",
+    "Hai đèn thay nhau sáng mãi khi nam châm còn quay, không dừng ở một đèn."
+   ]
+  },
+  {
+   "hoi": "Ấm điện $1\\,000\\ \\text{W}$ chạy đúng công suất trong $30$ phút. Điện năng ấm tiêu thụ là",
+   "pa": [
+    "$500\\ \\text{kWh}$",
+    "$30\\ \\text{kWh}$",
+    "$0{,}5\\ \\text{kWh}$",
+    "$30\\,000\\ \\text{kWh}$"
+   ],
+   "dung": 2,
+   "ok": "$A = P\\,t = 1\\ \\text{kW} \\cdot 0{,}5\\ \\text{h} = 0{,}5\\ \\text{kWh}.$",
+   "no": [
+    "Ra $500$ là giữ $1\\,000\\ \\text{W}$, chưa đổi ra kW.",
+    "Ra $30$ là nhân với $30$ phút, chưa đổi ra giờ.",
+    "Ra $30\\,000$ là vừa không đổi W ra kW, vừa không đổi phút ra giờ."
+   ]
+  }
+ ],
+ "nhac": [
+  "Dòng điện xoay chiều: luân phiên đổi chiều.",
+  "Tạo ra khi số đường sức từ qua cuộn dây kín luân phiên tăng, giảm (quay nam châm hoặc quay cuộn dây).",
+  "Điện năng: $A = P\\,t$; $P$ tính bằng kW, $t$ bằng giờ thì $A$ ra kWh."
+ ],
+ "xem_lai": "KHTN 9 bài Dòng điện xoay chiều (ngay trước bài này) và Bài 13 (Năng lượng của dòng điện và công suất điện)."
+}

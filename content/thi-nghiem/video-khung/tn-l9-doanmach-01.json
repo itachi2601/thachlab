@@ -1,0 +1,52 @@
+{
+  "id": "tn-l9-doanmach-01",
+  "ten": "Hai điện trở mắc nối tiếp: đo dòng điện và hiệu điện thế",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-01-20261118.webp",
+  "tong_giay": 49.5,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Nối tiếp: dòng điện như nhau ở mọi chỗ, U = U1 + U2, U chia theo tỉ lệ điện trở.",
+      "kiem": "Ampe kế đổi chỗ, số chỉ thế nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 2.9,
+      "chu": "Ampe kế trước R1 chỉ 0,10 A. Chuyển vào giữa R1 và R2: số chỉ thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.3,
+      "chu": "Nguồn 3 V, khoá K, R1 = 10 Ω, R2 = 20 Ω, ampe kế, vôn kế."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 14.1,
+      "chu": "Nguồn 3 V: ampe kế ở ba chỗ đều chỉ 0,10 A."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 26.6,
+      "chu": "Nối tiếp: dòng điện như nhau ở mọi chỗ, I = I1 = I2."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 38.2,
+      "chu": "Số liệu minh hoạ, chưa đo thật.\nĐã bỏ qua điện trở ampe kế."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.2,
+    "cau_hoi": "Ampe kế trước R1 chỉ 0,10 A. Chuyển ampe kế vào giữa R1 và R2. Số chỉ ampe kế thế nào?",
+    "chon": [
+      "A. Nhỏ hơn 0,10 A",
+      "B. Vẫn 0,10 A",
+      "C. Lớn hơn 0,10 A"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Ampe kế ở giữa R1, R2 và cả sau R2 vẫn chỉ 0,10 A: dòng điện không bị dùng bớt khi đi qua điện trở.",
+    "giai_thich_sai": "Ampe kế đặt trước R1, giữa R1 và R2 hay sau R2 đều chỉ cùng một số (0,10 A với nguồn 3 V). Điện trở không làm dòng điện nhỏ dần dọc mạch."
+  }
+}

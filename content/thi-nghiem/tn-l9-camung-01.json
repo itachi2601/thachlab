@@ -1,0 +1,149 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 14. Cảm ứng điện từ. Nguyên tắc tạo ra dòng điện xoay chiều",
+ "lesson_id": 92,
+ "nguon_trong_bai": "content/lesson-samples/l9-cam-ung-dien-tu/theory.html",
+ "id": "tn-l9-camung-01",
+ "ten": "Thí nghiệm Faraday: nam châm thẳng và cuộn dây nối điện kế",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "camung.hien_tuong",
+  "camung.dieu_kien_bien_thien",
+  "camung.doi_chieu"
+ ],
+ "muc_tieu": "Thấy nam châm đứng yên không tạo ra dòng điện; chỉ khi nam châm chuyển động (lại gần, ra xa, quay) so với cuộn dây kín mới có dòng điện cảm ứng; lại gần và ra xa cho hai chiều ngược nhau.",
+ "gia_thuyet": [
+  "Cứ có nam châm đặt cạnh cuộn dây kín là có dòng điện trong cuộn dây."
+ ],
+ "du_doan_neu_dung": [
+  "Nam châm đứng yên sát cuộn dây, kim điện kế vẫn lệch."
+ ],
+ "khong_chung_minh": [
+  "Chưa cho biết cái gì thay đổi mới là nguyên nhân (số đường sức qua cuộn dây).",
+  "Bảng tốc độ chỉ là số liệu minh hoạ; chưa đo được dòng cảm ứng chính xác bao nhiêu ampe."
+ ],
+ "dung_cu": [
+  {
+   "ten": "Nam châm thẳng đặt trên giá có trục quay thẳng đứng qua giữa nam châm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cuộn dây dẫn (vài trăm vòng)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Điện kế có số 0 ở giữa thang đo",
+   "so_luong": 1
+  },
+  {
+   "ten": "Dây nối",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối hai đầu cuộn dây với điện kế (không có pin).",
+   "Giữ yên nam châm trước cuộn dây, nhìn kim.",
+   "Đưa nam châm lại gần cuộn dây, rồi kéo ra xa.",
+   "Quay nam châm quanh trục của giá.",
+   "Đưa cực N vào cuộn dây trong 2 s, 1 s, 0,5 s; mỗi cách 3 lần, ghi số chỉ lớn nhất của điện kế."
+  ],
+  "quan_sat": [
+   "Nam châm đứng yên: kim chỉ số 0.",
+   "Lại gần: kim lệch một phía; ra xa: kim lệch phía ngược lại.",
+   "Quay: kim lệch qua lại liên tục.",
+   "Đưa càng nhanh, kim lệch càng nhiều (bảng)."
+  ],
+  "rut_ra": [
+   "Giả thuyết bị bác bỏ: nam châm đứng yên không tạo ra dòng điện.",
+   "Nam châm chuyển động so với cuộn dây kín thì trong cuộn dây có dòng điện cảm ứng.",
+   "Lại gần và ra xa cho dòng cảm ứng ngược chiều nhau."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "t",
+   "ten": "Thời gian đưa cực N vào cuộn dây",
+   "don_vi": "s",
+   "kieu": "dieu_chinh",
+   "min": 0.25,
+   "max": 3,
+   "mac_dinh": 1,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "K",
+   "ten": "Hệ số của bộ dụng cụ (i = K/t)",
+   "don_vi": "mA·s",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "i",
+   "ten": "Số chỉ lớn nhất của điện kế",
+   "don_vi": "mA",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.1
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "i = K/t (số đường sức đổi càng nhanh, dòng càng lớn)",
+   "nam châm đứng yên: i = 0",
+   "i_doc nhỏ hơn i một chút khi t nhỏ (kim có quán tính)"
+  ],
+  "gia_thiet": [
+   "coi rằng gần đó không có nam châm hay dòng điện nào khác",
+   "bỏ qua từ trường Trái Đất",
+   "đưa nam châm gần như đều tay"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "t (s)",
+   "Lần 1 (mA)",
+   "Lần 2 (mA)",
+   "Lần 3 (mA)",
+   "Trung bình (mA)"
+  ],
+  "hang": [
+   [
+    2.0,
+    0.6,
+    0.5,
+    0.4,
+    0.5
+   ],
+   [
+    1.0,
+    1.1,
+    0.9,
+    1.0,
+    1.0
+   ],
+   [
+    0.5,
+    1.9,
+    1.7,
+    1.8,
+    1.8
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình i = 1,0/t, có lệch tay và quán tính kim; chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Đứng yên: 0. Lại gần và ra xa: kim lệch hai phía ngược nhau. Đưa nhanh gấp đôi thì số chỉ gần gấp đôi.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ nam châm mạnh để yên trong cuộn dây vẫn có dòng điện.",
+  "Nghĩ lại gần và ra xa cho dòng cùng chiều.",
+  "Quên rằng cuộn dây phải nối kín với điện kế."
+ ],
+ "sai_so_thuong_gap": "Hai nguồn khác nhau. (1) Kim có quán tính: khi đưa rất nhanh, số chỉ lớn nhất luôn nhỏ hơn giá trị thật (sai số hệ thống, đo lặp không bớt được); giảm bằng đưa chậm hơn hoặc dùng điện kế nhạy, kim nhẹ. (2) Tay đưa không đều: ba lần lệch nhau lúc lớn lúc nhỏ (sai số ngẫu nhiên); đo lặp 3 lần, lấy trung bình.",
+ "an_toan": "Không đập nam châm vào cuộn dây; giữ nam châm xa điện thoại, thẻ từ.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc+bang_so_lieu",
+  "y_tuong": "Kéo nam châm bằng chuột trước cuộn dây; kim điện kế lệch theo tốc độ và chiều chuyển động, đứng yên thì về 0.",
+  "diem_nhan": "Để yên nam châm ngay trong lòng cuộn dây: kim về 0."
+ }
+}
