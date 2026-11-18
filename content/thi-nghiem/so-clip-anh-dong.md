@@ -307,3 +307,16 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 
 ## Sửa hộp exp lộ đáp án — lô 5–9 (18/11/2026, thầy yêu cầu sau khi đăng clip)
 83 chỗ ở 35 hộp / 25 bài (L11 29, 34; L9 85–90, 130, CĐ15 HSG 150; L10 59–64, 66–68, 70, 71, 74, 75, 78, 79): Quan sát → việc cần nhìn/ghi, Rút ra → việc cần làm/câu hỏi; số đo và bảng có đáp án gập vào `<details class="tl-details">` "(xem sau video)" (gồm bảng dưới video của langkinh-03, ohm-02, tieucu-02). 3 agent viết, kiem-code soát → sửa 1 vòng (lời mới còn gợi gián tiếp ở ~20 chỗ). Công cụ: `scripts/video-thi-nghiem/sua-hop-exp.py <json> [--apply]` (đồng bộ src/html/bundle, nhận cả hộp `<details data-exp>`, `ngoai_hop` cho chỗ ngoài hộp). ĐÃ ĐĂNG DB 18/11 ~22h50 bằng `dang-sua-hop.sh` (`--chi-video --cho-phep-khac`), 25/25 ghi, khác biệt đầu tiên mỗi bài đều nằm ở dòng hộp exp. Sạch, không sửa: dongthe-03, hieu-suat-02. Còn treo: langkinh-03 mục 4 trước hộp đã nói tím lệch nhiều nhất (câu Dự đoán dễ).
+
+## Chặng B — lô 10 (18–19/11/2026, 13 clip tự dựng: L11 điện + L9 cảm ứng, xoay chiều, mở đầu, năng lượng)
+4 agent Opus dựng (2+3+4+4), kiem-code cổng B: coulomb1, dtdeu3, camung1/2, modau1/2, hoathach1, taitao1/2 2 vòng; camung3, hoathach2 2 vòng (sửa nhẹ vòng 2); xoaychieu1/2 3 vòng. Tải lesson-clips (`-20261118`, HEAD 200 cả 13, script `scripts/video-thi-nghiem/tai-lo10.sh`), chèn repo (`chen-video-thi-nghiem.mts`) + khung 6 ô (13 JSON, `--kiem` OK, kiem-code ĐẠT K4; gắn src/html/bundle). Hộp exp lộ đáp án ở cả 13 TN → sửa 50 chỗ bằng `sua-hop-exp.py` (2 vòng kiem-code), gập bảng dưới video (modau TN1, xoaychieu TN2, hoathach TN2, taitao TN1), kết luận chuyển ra sau video; bài 94 Câu 3 stem mới; bài 93 feedback Câu 2 bỏ "hai cực đổi chỗ".
+| TN | Bài | Clip | Ghi chú |
+|---|---|---|---|
+| tn-l11-coulomb-01 | l11-luc-coulomb (35?) | 48,2 s | thước (−); thêm hộp thứ 2 sau YouTube quả cầu xốp |
+| tn-l11-dien-truong-deu-03 | l11-dien-truong-deu (37?) | 48,8 s | bẫy trọng lực; Dự đoán thành câu ôn (lý thuyết trước hộp đã dạy) |
+| tn-l9-camung-01/02/03 | l9-cam-ung-dien-tu (92) | 49,4 / 47,0 / 49,6 s | 03: tốc độ chỉ định tính |
+| tn-l9-xoaychieu-01/02 | l9-tac-dung-dong-dien-xoay-chieu (93) | 49,9 / 49,6 s | 01 nguồn đổi chiều chậm (mô hình); 02 thêm vôn kế, "giá trị hiệu dụng" — thầy đối chiếu YCCĐ |
+| tn-l9-modau-01/02 | l9-mo-dau-dung-cu-thuyet-trinh (128) | 49,8 / 47,8 s | |
+| tn-l9-hoathach-01/02 | l9-vong-nang-luong-hoa-thach (94) | 49,6 / 49,2 s | 02 bỏ Q = mcΔt (THCS chưa học) |
+| tn-l9-taitao-01/02 | l9-nang-luong-tai-tao (95) | 49,9 / 49,8 s | |
+**CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB.** L11 đăng `--chi-video --cho-phep-khac` sau 22h (hộp exp đổi). Bài L9 92–95, 128 chưa đăng lần nào → đăng trọn bài khi thầy chốt bài.

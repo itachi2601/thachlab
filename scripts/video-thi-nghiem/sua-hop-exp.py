@@ -70,7 +70,7 @@ def main():
             b = json.loads(raw)
             for e in cac:
                 b["theory_html"] = sua(b["theory_html"], e["exp"], e["cu"], e["moi"], f"{td}/bundle.json", e.get("ngoai_hop", False))
-            out = json.dumps(b, ensure_ascii=False, indent=1) + ("\n" if raw.endswith("\n") else "")
+            out = json.dumps(b, ensure_ascii=False, indent=(2 if raw.startswith("{\n  \"") else 1)) + ("\n" if raw.endswith("\n") else "")
             ghi.append((fb, out))
         for e in cac:
             print(f"· {td.split('/')[-1]} · {e['exp']}\n  - {e['cu']}\n  + {e['moi']}")
