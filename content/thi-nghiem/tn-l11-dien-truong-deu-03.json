@@ -147,9 +147,19 @@
     91,
     40000000.0,
     0.625
+   ],
+   [
+    60,
+    20000000.0,
+    1.65
+   ],
+   [
+    120,
+    20000000.0,
+    3.3
    ]
   ],
-  "ghi_chu": "Tính từ mô hình với L = 0,05 m, d = 0,02 m; hàng U = 91 V khớp bài toán mẫu (2,5 mm) và biến thể v0 = 4,0e7 m/s (0,625 mm)."
+  "ghi_chu": "Tính từ mô hình với L = 0,05 m, d = 0,02 m; hàng U = 91 V khớp bài toán mẫu (2,5 mm) và biến thể v0 = 4,0e7 m/s (0,625 mm). Hai hàng U = 60 V (1,65 mm) và U = 120 V (3,30 mm) tính từ mô hình, dùng cho clip tự dựng (tránh trùng đáp số bài mẫu). Câu THỬ NGHĨ cuối clip: U = 60 V, electron vào cách bản (+) 1,5 mm (giả định, không phải số đo) → lệch 1,65 mm > 1,5 mm nên chạm bản, không ra khỏi hai bản."
  },
  "ket_qua_ky_vong": "U = 91 V, v0 = 2,0e7 m/s: y = 2,5 mm, không chạm bản (cách 10 mm); U gấp đôi thì y gấp đôi; v0 gấp đôi thì y giảm 4 lần.",
  "hien_tuong_hay_sai": [
