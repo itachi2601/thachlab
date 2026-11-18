@@ -94,7 +94,7 @@
 - [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài, chờ in thử
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 21 clip chờ duyệt gắn bài
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
-- [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — L12 b4 hẹn đăng 22h05 17/11; đo từ 19/11
+- [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — L12 b4 đã đăng 18/11; đo từ 19/11
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
 - [Chương 4 hạt nhân L12](project_thachlab_chuong4_hat_nhan_ly_thuyet.md) — lịch đăng DB 22h05
 - [Rà soát Ch.2 Sóng L11](project_thachlab_ra_soat_ch2_l11.md) — chờ duyệt ảnh, chưa đăng
