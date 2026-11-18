@@ -1,7 +1,7 @@
 // Ruột tập VL12 – Bài 16 · Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng (lesson id 17). Khung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai16.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai16.pdf
 import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
-const K = khoiTao({ bai: 16, lid: 17, ten: 'PHÂN HẠCH · NHIỆT HẠCH' });
+const K = khoiTao({ bai: 19, baiDau: 17, lid: 17, ten: 'PHÂN HẠCH · NHIỆT HẠCH' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
@@ -9,7 +9,7 @@ const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"
 // Bài tương tự giải vào vở: ô đáp số đặt cuối dòng của từng ý (như l10-bai23).
 const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 const p1 = `${ttCss}<section class="page">
-${head('BÀI 16 · PHÂN HẠCH · NHIỆT HẠCH', K.sub)}
+${head('BÀI 19 · PHÂN HẠCH · NHIỆT HẠCH', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>phản ứng hạt nhân</b> và các đại lượng <b>bảo toàn</b></div>

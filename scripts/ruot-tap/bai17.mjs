@@ -1,7 +1,7 @@
 // Ruột tập VL12 – Bài 17 · Hiện tượng phóng xạ (lesson id 18). Khung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai17.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai17.pdf
 import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
-const K = khoiTao({ bai: 17, lid: 18, ten: 'HIỆN TƯỢNG PHÓNG XẠ' });
+const K = khoiTao({ bai: 20, baiDau: 17, lid: 18, ten: 'HIỆN TƯỢNG PHÓNG XẠ' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
@@ -9,7 +9,7 @@ const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"
 // Bài tương tự giải vào vở (thầy chốt 10/11): ô đáp số đặt cuối dòng của từng ý (CSS .yo như l10-bai23.mjs).
 const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 const p1 = `${ttCss}<section class="page">
-${head('BÀI 17 · HIỆN TƯỢNG PHÓNG XẠ', K.sub)}
+${head('BÀI 20 · HIỆN TƯỢNG PHÓNG XẠ', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được phóng xạ: <b>tự phát, ngẫu nhiên</b>, không phụ thuộc bên ngoài</div>

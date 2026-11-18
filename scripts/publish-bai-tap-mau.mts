@@ -54,6 +54,7 @@ const questions = (data.dang_bai as Dang[]).map((d) => ({
   ...(d.meo ? { meo: d.meo } : {}), // 💡 Mẹo nhìn (1/11/2026)
   ...(d.cong_cu ? { cong_cu: d.cong_cu } : {}), // 🧪 công cụ giải tương tác (2/11/2026)
   ...(d.tom_de ? { tom_de: d.tom_de } : {}), // 🧪 tóm đề dính (3/11/2026)
+  ...((d as { trinh_chieu?: unknown }).trinh_chieu ? { trinh_chieu: (d as { trinh_chieu?: unknown }).trinh_chieu } : {}), // 📽 trình chiếu bài tập mẫu (17/11/2026, features/lessons/btm-trinh-chieu)
   ...((d as { bien_the?: WorkedVariant }).bien_the ? { bien_the: (d as { bien_the?: WorkedVariant }).bien_the } : {}), // 🧪 biến thể đổi số (5/11/2026, lib/bien-the.ts)
 }));
 if (data.tu_luan) questions.push({ label: data.tu_luan.label, body_html: data.tu_luan.body_html } as (typeof questions)[number]); // mục tự luận (dạng cũ biên tập lại) luôn đứng cuối

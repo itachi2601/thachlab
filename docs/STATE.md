@@ -11,6 +11,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
+- **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - **Điểm học phần CNC (14/11)**: `20261114120000_cnc_diem_hoc_phan` ĐÃ CHẠY (bảng `cnc_grades`, RLS SV chỉ đọc dòng mình); 28 SV lớp 10 đã nạp điểm Tiện + gửi thông báo trỏ `/lop-hoc/cnc/bang-diem/`. **CHƯA DEPLOY** trang bảng điểm (commit 555da175f, nhánh claude/cnc-exam-design-5-machines-cec8be) — SV bấm thông báo sẽ 404 tới khi deploy. Điểm Phay chưa có (nạp bằng `scripts/gui-diem-thi-tien-cnc.mts` làm mẫu, module 'phay').
 - `20261028100000_bai_tap_ngay`: ĐÃ XONG: migration chạy; script tạo đề chạy 28/10 (5 đề 1289–1293 "Ngày 1–5", published, buổi tự học lớp 19 = review_sessions 26; kiểm DB 14/11). KHÔNG chạy lại `--yes`. Còn chưa rõ: deploy `ClassRoster.tsx`.
 - L11 5 đề 638/639/658/693/701: `fix_grade` ĐÃ ÁP (còn 1 câu 684939 grade 10). `20261006130000_gan_lai_chu_de_5_de_l11` CHƯA ÁP (123/129 câu còn lệch chủ đề; 94 câu mang chủ đề Newton/Hooke) và KHÔNG chạy trực tiếp được: 14/11 bị timeout 57014, trigger `trg_bank_tags_to_exams` → `sync_exam_to_bank` chạy lại cả đề; đã rollback sạch. Làm lại theo mẫu `lib/sua-dinh-dang.ts` (tắt `trg_exams_sync_bank`, sửa cả bank lẫn `exams.questions`, sau 22h).
@@ -64,7 +65,6 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 - Video thí nghiệm: 211 thí nghiệm / 65 bài chưa có clip.
-- Clip L12 lô 2 (14/11, 9 clip bài 11/12/14/125/18/19): đã tải lesson-clips -20261114 + chèn repo + khung; CHỜ THẦY DUYỆT rồi đăng DB `--chi-video` sau 22h — sổ `so-clip-anh-dong.md`.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
@@ -81,4 +81,4 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
 - Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; L10 Ch.3 (`?chuong=12&lop=lop-10`) đã deploy 11/11 chiều; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
-- Clip TN tự dựng L12 Ch.1–2 lô 1 (8 clip, bài 2/3/4/6/7): đã tải Storage -20261114 + chèn repo + khung, thầy duyệt, ĐÃ ĐĂNG DB 16/11 (cùng lô 2) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+- Clip TN tự dựng L11 điện lô 4 (6 clip, bài 40/42/43/45): ĐÃ ĐĂNG DB 17/11 (`--chi-video --cho-phep-khac`, mục 201/207/210/216) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
