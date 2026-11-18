@@ -4,11 +4,11 @@ import { BarChart3, ChevronDown, CloudOff, Dumbbell, History, Play, Ruler, Troph
 import { ROUTINES, RULES_TEXT, exerciseById, weeklySets, type Routine } from "@/lib/tap-luyen/chuong-trinh";
 import {
   bestE1rmHistory, deleteWorkout, e1rm, fetchWorkouts, flushQueue, fmtKg, lastSetsOf, loadDraft, newId, pendingCount,
-  saveDraft, saveWorkout, workoutStats, type Draft, type LoggedExercise, type Workout,
+  saveDraft, saveWorkout, weekPlan, workoutStats, type Draft, type LoggedExercise, type Workout,
 } from "@/lib/tap-luyen/store";
 import WorkoutLogger from "./WorkoutLogger";
 import SoDo from "./SoDo";
-import { Card, LineChart, fmtDay, fmtDur, mondayOf, vn } from "./ui";
+import { Card, LineChart, fmtDay, fmtDur, vn } from "./ui";
 
 type Tab = "tap" | "lich-su" | "tien-bo" | "so-do";
 const TABS: { key: Tab; label: string; icon: React.ReactNode }[] = [
@@ -43,7 +43,10 @@ function buildDraft(r: Routine | null, history: Workout[]): Draft {
 }
 
 export default function TapLuyenApp() {
-  const [tab, setTab] = useState<Tab>("tap");
+  const [tab, setTab] = useState<Tab>(() => {
+    const t = new URLSearchParams(window.location.search).get("tab");
+    return TABS.some((x) => x.key === t) ? (t as Tab) : "tap";
+  });
   const [draft, setDraft] = useState<Draft | null>(() => loadDraft());
   const [history, setHistory] = useState<Workout[]>([]);
   const [offline, setOffline] = useState(false);
@@ -165,19 +168,14 @@ function TabBar({ tab, setTab, live }: { tab: Tab; setTab: (t: Tab) => void; liv
 
 function StartTab({ history, loaded, focus, onStart }: { history: Workout[]; loaded: boolean; focus: string | null; onStart: (r: Routine | null) => void }) {
   const [open, setOpen] = useState<string | null>(focus);
-  const mon = mondayOf().toISOString();
-  const thisWeek = history.filter((w) => new Date(w.started_at) >= new Date(mon));
-  const lastOf = (k: string) => history.find((w) => w.routine_key === k);
-  // gợi ý: buổi chưa tập tuần này; ưu tiên A (buổi trọng tâm), rồi buổi lâu chưa tập nhất
-  const doneKeys = new Set(thisWeek.map((w) => w.routine_key));
-  const next = (focus && !doneKeys.has(focus) ? focus : null) ?? (ROUTINES.find((r) => !doneKeys.has(r.key) && r.key === "A") ?? [...ROUTINES].filter((r) => !doneKeys.has(r.key)).sort((a, b) => (lastOf(a.key)?.started_at ?? "").localeCompare(lastOf(b.key)?.started_at ?? ""))[0])?.key;
+  const { count: weekCount, done: doneKeys, next, lastOf } = weekPlan(history, ROUTINES.map((r) => r.key), focus);
 
   return (
     <div className="space-y-3">
       <Card>
         <p className="text-sm text-muted">Tuần này</p>
         <p className="text-2xl font-bold text-ink">
-          {thisWeek.length}/3 buổi <span className="text-base font-semibold text-muted">· {ROUTINES.map((r) => (doneKeys.has(r.key) ? `${r.key} ✓` : r.key)).join("  ")}</span>
+          {weekCount}/3 buổi <span className="text-base font-semibold text-muted">· {ROUTINES.map((r) => (doneKeys.has(r.key) ? `${r.key} ✓` : r.key)).join("  ")}</span>
         </p>
         {loaded && history.length === 0 && <p className="mt-1 text-sm text-muted">Chưa có buổi nào. Buổi đầu: nhập tạ vừa sức, cột “Lần trước” sẽ tự có từ buổi sau.</p>}
       </Card>

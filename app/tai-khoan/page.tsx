@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import Link from "next/link";
-import { ArrowRight, Clock3, Dumbbell, GraduationCap, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
+import { ArrowRight, Clock3, GraduationCap, HeartPulse, KeyRound, LayoutDashboard, LogOut, ShieldCheck, Users, Wrench } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";import Footer from "@/components/layout/Footer";import RequireAuth from "@/components/auth/RequireAuth";import {useAuth} from "@/components/auth/AuthProvider";import StudentLearningDashboard from "@/components/dashboard/StudentLearningDashboardLazy";import ThptStudentHome from "@/components/dashboard/ThptStudentHomeLazy";import ProfileEditCard from "@/components/account/ProfileEditCard";import WelcomePanel,{type WelcomeVariant} from "@/components/account/WelcomePanel";import StudentAttendancePanel from "@/components/attendance/StudentAttendancePanelLazy";import HomeroomStudentHome from "@/components/dashboard/HomeroomStudentHomeLazy";import {fetchMyEnrollments,requestEnrollment} from "@/services/course-enrollments";import {fetchCncLearningRecords,type CncLearningRecord} from "@/services/cnc-learning-records";import CttcStreakCard from "@/components/rank/CttcStreakCard";import {getSubject,HOMEROOM_SUBJECT_CODE,learningHrefOf} from "@/services/subjects";import {fetchClasses,fetchMyClassRequest,requestClassJoin,type MyClassRequest} from "@/services/classes";import type {SchoolClass} from "@/features/exams/types";
 
 const StaffWeekPlan=dynamic(()=>import("@/components/account/StaffWeekPlan"),{ssr:false});
@@ -28,7 +28,7 @@ function StaffAccountCard(){
     <div className="mt-6 flex flex-wrap gap-3">
       <Link href="/dashboard" className="inline-flex items-center gap-2 rounded-xl bg-blue-600 px-5 py-2.5 text-sm font-bold text-white"><LayoutDashboard size={16}/>Vào Dashboard giáo viên</Link>
       {profile?.role==="admin"&&<Link href="/quan-tri" className="inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary-soft px-5 py-2.5 text-sm font-bold text-primary"><ShieldCheck size={16}/>Vào Quản trị</Link>}
-      <Link href="/tai-khoan/tap-luyen" className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 text-sm font-bold text-ink"><Dumbbell size={16}/>Tập luyện</Link>
+      <Link href="/suc-khoe" className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 text-sm font-bold text-ink"><HeartPulse size={16}/>Sức khỏe</Link>
       <button onClick={async()=>{await signOut();router.push("/")}} className="inline-flex items-center gap-2 rounded-xl border border-line px-5 py-2.5 text-sm font-bold text-ink"><LogOut size={16}/>Đăng xuất</button>
     </div>
   </section>;

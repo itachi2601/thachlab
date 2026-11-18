@@ -190,3 +190,19 @@ export function bestE1rmHistory(list: Workout[], exId: string) {
   return pts;
 }
 export const fmtKg = (n: number) => String(Math.round(n * 100) / 100).replace(".", ",");
+
+/** Buổi trong tuần (thứ Hai 0h giờ máy) và buổi nên tập tiếp: ưu tiên `focus`, rồi A (trọng tâm), rồi buổi lâu chưa tập. */
+export function weekPlan(list: Workout[], keys: string[], focus?: string | null) {
+  const mon = new Date();
+  mon.setHours(0, 0, 0, 0);
+  mon.setDate(mon.getDate() - ((mon.getDay() + 6) % 7));
+  const thisWeek = list.filter((w) => new Date(w.started_at) >= mon);
+  const done = new Set(thisWeek.map((w) => w.routine_key));
+  const lastOf = (k: string) => list.find((w) => w.routine_key === k);
+  const left = keys.filter((k) => !done.has(k));
+  const next =
+    (focus && !done.has(focus) ? focus : null) ??
+    (left.includes("A") ? "A" : [...left].sort((a, b) => (lastOf(a)?.started_at ?? "").localeCompare(lastOf(b)?.started_at ?? ""))[0]) ??
+    null;
+  return { count: thisWeek.length, done, next, lastOf };
+}
