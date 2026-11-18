@@ -103,7 +103,7 @@
     342.9
    ]
   ],
-  "ghi_chu": "Số minh hoạ sinh từ mô hình v = 343 m/s, độ trễ làm tròn 0,1 ms; không phải số đo thật."
+  "ghi_chu": "Số minh hoạ sinh từ mô hình v = 343 m/s, độ trễ làm tròn 0,1 ms; không phải số đo thật. Câu chốt clip tự dựng (clips/dotocdoam3.py): phòng 35 °C, vẫn d = 6,0 m → v = 331 + 0,6·35 = 352 m/s, Δt = 6,0/352 ≈ 17,0 ms (17,05), ngắn hơn 17,5 ms cỡ 0,5 ms."
  },
  "ket_qua_ky_vong": "Với d = 6,00 m, Δt = 17,5 ms: v ≈ 343 m/s. d càng ngắn thì Δt càng bé, sai số tỉ đối của v càng lớn.",
  "hien_tuong_hay_sai": [
@@ -123,5 +123,15 @@
   ],
   "hinh_trong_bai": "Hộp thí nghiệm mục II.6",
   "y_tuong": "Kéo micro thứ hai ra xa, gai thứ hai lùi dần; hiện v = d/Δt."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-03-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotocdoam-03-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "độ trễ giữa hai micro",
+  "nhin_vao": "Độ trễ Δt đổi thế nào khi dời micro 2 ra xa?",
+  "giay": 49,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

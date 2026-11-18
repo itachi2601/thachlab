@@ -1,0 +1,1887 @@
+{
+ "lesson_id": 201,
+ "lesson_title": "Chủ đề thêm. Từ trường ngoài SGK hay gặp trong đề thi",
+ "generated_at": "2026-11-18",
+ "review": {
+  "checked": true,
+  "notes": "đáp số mọi bước tự giải lại bằng python (assert trong build-hinh-201.py), chiều bằng tích có hướng; chưa qua kiem-code độc lập; chưa xem /dev/btm"
+ },
+ "dang_bai": [
+  {
+   "form": "bai_tap",
+   "label": "Dạng 1 · Dễ · Từ trường của dòng điện thẳng dài: chiều và độ lớn tại một điểm",
+   "topic": "Từ trường của nam châm và của dòng điện",
+   "problem_html": "<p>Một dây dẫn thẳng rất dài đặt thẳng đứng trong không khí, có dòng điện $I=5{,}0\\ \\text{A}$ chạy từ dưới lên. Hình vẽ nhìn từ trên xuống: dây đi qua O, vuông góc với mặt phẳng hình, dòng điện hướng ra phía người nhìn (⊙). Điểm M nằm bên phải dây, cách dây $4{,}0\\ \\text{cm}$; điểm N nằm trên tia OM, cách dây $12\\ \\text{cm}$. Biết cảm ứng từ do dòng điện thẳng rất dài gây ra tại điểm cách dây một khoảng $r$ là $B=2\\cdot10^{-7}\\dfrac{I}{r}$ ($B$ tính bằng T, $I$ bằng A, $r$ bằng m).</p><ol type=\"a\"><li>Đường sức từ của dòng điện trong mặt phẳng hình có dạng gì, chiều thế nào?</li><li>Vectơ cảm ứng từ tại M có phương, chiều thế nào?</li><li>Tính độ lớn cảm ứng từ tại M và tại N theo đơn vị μT (làm tròn đến hai chữ số sau dấu phẩy).</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> đường sức từ của dòng điện thẳng là các vòng tròn đồng tâm nằm trong mặt phẳng vuông góc với dây, tâm trên dây.</li><li><strong>Quy tắc:</strong> nắm tay phải, ngón cái theo chiều dòng điện, bốn ngón khum lại chỉ chiều đường sức.</li><li><strong>Công thức:</strong> $B=2\\cdot10^{-7}\\dfrac{I}{r}$ ; $\\vec B$ tiếp tuyến với đường sức.</li><li>⚠ <strong>Điều kiện:</strong> dây thẳng rất dài; $r$ tính bằng mét.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiều đường sức</span></p><p>Ngón cái hướng ra phía người nhìn (⊙), bốn ngón khum lại:</p><div class=\"bt-ans\"><p>Các vòng tròn đồng tâm O, chiều ngược chiều kim đồng hồ.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Chiều vectơ B tại M</span></p><p>M nằm bên phải O; tiếp tuyến của vòng tròn ngược chiều kim đồng hồ tại điểm bên phải hướng lên:</p><div class=\"bt-ans\"><p>$\\vec B_M$ vuông góc với OM, hướng lên trong mặt phẳng hình.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Độ lớn B tại M</span></p>$$B_M=2\\cdot10^{-7}\\dfrac{I}{r_M}=2\\cdot10^{-7}\\cdot\\dfrac{5{,}0}{0{,}040}$$$$B_M=2{,}5\\cdot10^{-5}\\ \\text{T}$$<div class=\"bt-ans\">$$B_M=25{,}00\\ \\mu\\text{T}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Độ lớn B tại N</span></p><p>$B$ tỉ lệ nghịch với $r$; $r_N=3r_M$ :</p>$$B_N=2\\cdot10^{-7}\\cdot\\dfrac{5{,}0}{0{,}12}=\\dfrac{B_M}{3}$$<div class=\"bt-ans\">$$B_N\\approx8{,}33\\ \\mu\\text{T}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Kiểm tra</span></p><p>Cỡ chục μT, bằng cỡ từ trường Trái Đất — hợp lí với dòng điện vài ampe ở cách vài xentimét.</p><p>$B_M\\cdot r_M=B_N\\cdot r_N=10^{-6}\\ \\text{T}\\cdot\\text{m}$ ✓</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) Vòng tròn đồng tâm O, ngược chiều kim đồng hồ.</p><p>b) $\\vec B_M\\perp OM$, hướng lên.</p><p>c) $B_M=25{,}00\\ \\mu\\text{T}$ ; $B_N\\approx8{,}33\\ \\mu\\text{T}$.</p></div><p class=\"bt-note\">Nhận dạng: thấy <b>dây thẳng dài, điểm cách dây r</b> → nắm tay phải cho chiều, $B=2\\cdot10^{-7}I/r$ cho độ lớn.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"dây dẫn thẳng rất dài … dòng điện $I=5{,}0\\ \\text{A}$\"</td><td>$I=5{,}0\\ \\text{A}$</td><td>Từ trường của dòng điện thẳng: đường sức là các vòng tròn đồng tâm, tâm trên dây</td></tr><tr><td>\"dòng điện hướng ra phía người nhìn (⊙)\"</td><td>Chiều $I$ ra khỏi mặt phẳng hình</td><td>Quy tắc nắm tay phải: ngón cái theo chiều $I$, bốn ngón khum cho chiều đường sức</td></tr><tr><td>\"M … cách dây $4{,}0\\ \\text{cm}$\"</td><td>$r_M=4{,}0\\ \\text{cm}$</td><td>⚠ $B=2\\cdot10^{-7}\\dfrac{I}{r}$ chỉ đúng với dây thẳng rất dài, $r$ đổi ra mét</td></tr><tr><td>\"Vectơ cảm ứng từ tại M có phương, chiều\"</td><td>Cần chiều $\\vec B_M$</td><td>$\\vec B$ tiếp tuyến với đường sức tại điểm đó, cùng chiều đường sức</td></tr><tr><td>\"N … cách dây $12\\ \\text{cm}$\"</td><td>$r_N=12\\ \\text{cm}$</td><td>$B$ phụ thuộc $r$ thế nào?</td></tr><tr><td>\"độ lớn cảm ứng từ tại M và tại N\"</td><td>Cần $B_M$, $B_N$ (μT)</td><td>$B=2\\cdot10^{-7}\\dfrac{I}{r}$ ; $1\\ \\mu\\text{T}=10^{-6}\\ \\text{T}$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>dây dẫn thẳng dài, điểm cách dây r</b> → nghĩ tới <b>nắm tay phải</b> và <b>B = 2·10⁻⁷·I/r</b>",
+   "cap_do": 1,
+   "fading": "mo_het",
+   "go_roi": {
+    "buoc_hay_sai": 1
+   },
+   "tom_de": {
+    "cho": [
+     "$I=5{,}0\\ \\text{A}$ hướng ra (⊙)",
+     "$OM=4{,}0\\ \\text{cm}$ ; $ON=12\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) dạng, chiều đường sức",
+     "b) chiều $\\vec B_M$",
+     "c) $B_M$, $B_N$ (μT)"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chiều đường sức",
+     "hoi": "Trong hình nhìn từ trên xuống, đường sức từ quanh dây có dạng và chiều thế nào?",
+     "lua_chon": [
+      {
+       "text": "Vòng tròn đồng tâm O, ngược chiều kim đồng hồ",
+       "dung": true
+      },
+      {
+       "text": "Vòng tròn đồng tâm O, cùng chiều kim đồng hồ",
+       "dung": false,
+       "vi_sao": "Ngón cái hướng ra phía người nhìn thì bốn ngón khum lại theo chiều ngược kim đồng hồ."
+      },
+      {
+       "text": "Đường thẳng song song với dây",
+       "dung": false,
+       "vi_sao": "Đường sức của dòng điện thẳng là vòng tròn trong mặt phẳng vuông góc với dây, tâm trên dây."
+      }
+     ],
+     "loi_hay_gap": "Đặt ngón cái theo chiều dòng điện nhưng đọc chiều quay như khi nhìn từ phía dưới, nên ra ngược lại."
+    },
+    {
+     "tieu_de": "Chiều vectơ B tại M",
+     "hoi": "Vectơ cảm ứng từ tại M hướng về đâu trong mặt phẳng hình?",
+     "lua_chon": [
+      {
+       "text": "Hướng lên, vuông góc với OM",
+       "dung": true
+      },
+      {
+       "text": "Hướng sang phải, ra xa dây",
+       "dung": false,
+       "vi_sao": "$\\vec B$ tiếp tuyến với đường sức tròn nên vuông góc với bán kính OM, không nằm dọc OM."
+      },
+      {
+       "text": "Hướng xuống, vuông góc với OM",
+       "dung": false,
+       "vi_sao": "Đó là chiều khi dòng điện đi vào mặt phẳng hình; ở đây đường sức ngược chiều kim đồng hồ."
+      }
+     ],
+     "loi_hay_gap": "Vẽ $\\vec B$ dọc theo bán kính OM, quên rằng $\\vec B$ tiếp tuyến với đường sức.",
+     "chon_buoc_ke": [
+      {
+       "text": "Vẽ đường sức qua M rồi lấy tiếp tuyến theo chiều đường sức",
+       "dung": true
+      },
+      {
+       "text": "Lấy $\\vec B$ cùng phương với OM",
+       "dung": false,
+       "vi_sao": "$\\vec B$ tiếp tuyến với đường sức, vuông góc với bán kính."
+      },
+      {
+       "text": "Lấy $\\vec B$ cùng chiều dòng điện",
+       "dung": false,
+       "vi_sao": "$\\vec B$ nằm trong mặt phẳng vuông góc với dây, không song song dây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn B tại M",
+     "hoi": "Cảm ứng từ tại M bằng bao nhiêu μT?",
+     "dap_so": 25,
+     "sai_so": 0.3,
+     "don_vi": "μT",
+     "loi_hay_gap": "Giữ $r$ bằng xentimét khi thế số (B lệch 100 lần) hoặc dùng nhầm $2\\pi\\cdot10^{-7}$ của vòng dây tròn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $I$ và $r_M$ (đổi ra mét) vào $B=2\\cdot10^{-7}\\dfrac{I}{r}$",
+       "dung": true
+      },
+      {
+       "text": "Thế $r_M$ giữ đơn vị cm",
+       "dung": false,
+       "vi_sao": "Công thức dùng $r$ bằng mét; giữ cm làm kết quả lệch 100 lần."
+      },
+      {
+       "text": "Dùng $B=2\\pi\\cdot10^{-7}\\dfrac{I}{r}$",
+       "dung": false,
+       "vi_sao": "Đó là công thức tại tâm vòng dây tròn, không phải dòng điện thẳng."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Độ lớn B tại N",
+     "hoi": "Cảm ứng từ tại N bằng bao nhiêu μT?",
+     "dap_so": 8.33,
+     "sai_so": 0.05,
+     "don_vi": "μT",
+     "loi_hay_gap": "Coi $B$ tỉ lệ nghịch với $r^2$ nên chia $B_M$ cho 9.",
+     "chon_buoc_ke": [
+      {
+       "text": "$B$ tỉ lệ nghịch với $r$: so $r_N$ với $r_M$",
+       "dung": true
+      },
+      {
+       "text": "$B$ tỉ lệ nghịch với $r^2$",
+       "dung": false,
+       "vi_sao": "Đó là kiểu giảm của điện trường điện tích điểm; dòng điện thẳng cho $B\\sim 1/r$."
+      },
+      {
+       "text": "$B_N=B_M$ vì cùng một dòng điện",
+       "dung": false,
+       "vi_sao": "$B$ phụ thuộc khoảng cách tới dây, càng xa càng yếu."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "vong",
+      "x": 4,
+      "y": 5.5,
+      "r": 2,
+      "mau": "b",
+      "dut": true,
+      "het": 1
+     },
+     {
+      "loai": "vong",
+      "x": 4,
+      "y": 5.5,
+      "r": 4,
+      "mau": "b",
+      "dut": true,
+      "het": 1
+     },
+     {
+      "loai": "day",
+      "tu": [
+       4,
+       5.5
+      ],
+      "den": [
+       17.5,
+       5.5
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "tiet_dien",
+      "x": 4,
+      "y": 5.5,
+      "chieu": "ra"
+     },
+     {
+      "loai": "chu",
+      "x": 3.0,
+      "y": 4.2,
+      "text": "O",
+      "a": "end"
+     },
+     {
+      "loai": "diem",
+      "x": 8,
+      "y": 5.5,
+      "ten": "M",
+      "vi": "duoi"
+     },
+     {
+      "loai": "diem",
+      "x": 16,
+      "y": 5.5,
+      "ten": "N",
+      "vi": "duoi"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 9.9,
+      "text": "I = 5,0 A",
+      "a": "start",
+      "mau": "i"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 10.0,
+      "text": "OM = 4,0 cm",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 8.3,
+      "text": "ON = 12 cm",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "vong",
+       "x": 4,
+       "y": 5.5,
+       "r": 2,
+       "mau": "b",
+       "dut": true,
+       "chieu": "nguoc"
+      },
+      {
+       "loai": "vong",
+       "x": 4,
+       "y": 5.5,
+       "r": 4,
+       "mau": "b",
+       "dut": true,
+       "chieu": "nguoc"
+      },
+      {
+       "loai": "ghi",
+       "text": "I ra ⊙ ⇒ ngược chiều kim đồng hồ"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 8,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 2.5,
+       "mau": "b",
+       "nhan": "B_M"
+      },
+      {
+       "loai": "ghi",
+       "text": "B_M tiếp tuyến đường sức: hướng lên"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B_M = 2·10⁻⁷·5,0 : 0,040 = 25 μT"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 16,
+       "y": 5.5,
+       "goc": 90,
+       "dai": 0.83,
+       "mau": "b",
+       "nhan": "B_N"
+      },
+      {
+       "loai": "ghi",
+       "text": "r gấp 3 ⇒ B_N = 25 : 3 ≈ 8,33 μT"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Xa dây gấp 3 thì B nhỏ đi 3 lần ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 2 · Trung bình · Ống dây quấn sát một lớp: cảm ứng từ trong lòng ống và từ thông qua ống",
+   "topic": "Từ thông qua khung dây",
+   "problem_html": "<p>Một ống dây dài $\\ell=40\\ \\text{cm}$, đường kính ống $D=4{,}0\\ \\text{cm}$, được quấn bằng dây đồng có đường kính $d=0{,}80\\ \\text{mm}$ (lớp sơn cách điện rất mỏng), các vòng quấn sát nhau thành một lớp. Cho dòng điện $I=2{,}0\\ \\text{A}$ chạy qua ống dây đặt trong không khí. Biết cảm ứng từ trong lòng ống dây dài là $B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$, với $N$ là tổng số vòng dây.</p><ol type=\"a\"><li>Tính số vòng dây trên mỗi mét chiều dài ống và tổng số vòng dây.</li><li>Tính cảm ứng từ trong lòng ống dây theo đơn vị mT (làm tròn đến hai chữ số sau dấu phẩy).</li><li>Tính từ thông qua ống dây $\\Phi=NBS$ theo đơn vị mWb (làm tròn đến hai chữ số sau dấu phẩy).</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Khái niệm:</strong> trong lòng ống dây dài, từ trường đều, đường sức song song trục ống.</li><li><strong>Công thức:</strong> $B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$ ; từ thông qua ống $\\Phi=NBS$.</li><li><strong>Quấn sát một lớp:</strong> mỗi vòng chiếm bề rộng $d$ nên $\\dfrac{N}{\\ell}=\\dfrac{1}{d}$.</li><li>⚠ <strong>Điều kiện:</strong> ống dài so với đường kính; mọi đại lượng đổi ra SI ($d$, $\\ell$ ra m; $S$ ra m²).</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Số vòng trên mỗi mét</span></p>$$\\dfrac{N}{\\ell}=\\dfrac{1}{d}=\\dfrac{1}{0{,}80\\cdot10^{-3}}$$<div class=\"bt-ans\">$$\\dfrac{N}{\\ell}=1250\\ \\text{vòng/m}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Tổng số vòng dây</span></p>$$N=\\dfrac{N}{\\ell}\\cdot\\ell=1250\\cdot0{,}40$$<div class=\"bt-ans\">$$N=500\\ \\text{vòng}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Cảm ứng từ trong lòng ống</span></p>$$B=4\\pi\\cdot10^{-7}\\cdot1250\\cdot2{,}0$$$$B=\\pi\\cdot10^{-3}\\ \\text{T}$$<div class=\"bt-ans\">$$B\\approx3{,}14\\ \\text{mT}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Tiết diện ống</span></p>$$S=\\pi\\left(\\dfrac{D}{2}\\right)^2=\\pi\\cdot2{,}0^2\\ \\text{cm}^2$$<div class=\"bt-ans\">$$S\\approx12{,}57\\ \\text{cm}^2=1{,}257\\cdot10^{-3}\\ \\text{m}^2$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Từ thông qua ống dây</span></p>$$\\Phi=NBS=500\\cdot3{,}14\\cdot10^{-3}\\cdot1{,}257\\cdot10^{-3}$$$$\\Phi\\approx1{,}97\\cdot10^{-3}\\ \\text{Wb}$$<div class=\"bt-ans\">$$\\Phi\\approx1{,}97\\ \\text{mWb}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Từ thông qua một vòng $BS\\approx3{,}9\\cdot10^{-6}\\ \\text{Wb}$, nhân 500 vòng ra cỡ mWb ✓.</p><p>Đơn vị: $\\text{T}\\cdot\\text{m}^2=\\text{Wb}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\dfrac{N}{\\ell}=1250\\ \\text{vòng/m}$ ; $N=500$ vòng.</p><p>b) $B\\approx3{,}14\\ \\text{mT}$.</p><p>c) $\\Phi\\approx1{,}97\\ \\text{mWb}$.</p></div><p class=\"bt-note\">Nhận dạng: thấy <b>quấn sát một lớp, đường kính dây d</b> → $N/\\ell=1/d$, rồi $B=4\\pi\\cdot10^{-7}(N/\\ell)I$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"ống dây dài $\\ell=40\\ \\text{cm}$, đường kính ống $D=4{,}0\\ \\text{cm}$\"</td><td>$\\ell=40\\ \\text{cm}$ ; $D=4{,}0\\ \\text{cm}$</td><td>Đổi ra mét; $D$ dùng cho tiết diện ống</td></tr><tr><td>\"dây đồng … đường kính $d=0{,}80\\ \\text{mm}$ … quấn sát nhau thành một lớp\"</td><td>$d=0{,}80\\ \\text{mm}$</td><td>⚠ Quấn sát một lớp: mỗi vòng chiếm đúng một bề rộng $d$ trên chiều dài ống ⇒ $\\dfrac{N}{\\ell}=\\dfrac{1}{d}$</td></tr><tr><td>\"dòng điện $I=2{,}0\\ \\text{A}$\"</td><td>$I=2{,}0\\ \\text{A}$</td><td>$B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$ (từ trường đều trong lòng ống dài)</td></tr><tr><td>\"số vòng dây trên mỗi mét … tổng số vòng dây\"</td><td>Cần $\\dfrac{N}{\\ell}$ ; $N$</td><td>$N=\\dfrac{N}{\\ell}\\cdot\\ell$</td></tr><tr><td>\"cảm ứng từ trong lòng ống dây\"</td><td>Cần $B$ (mT)</td><td>$B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$</td></tr><tr><td>\"từ thông qua ống dây $\\Phi=NBS$\"</td><td>Cần $\\Phi$ (mWb)</td><td>$S=\\pi\\left(\\dfrac{D}{2}\\right)^2$ đổi ra m² ; mặt vòng dây vuông góc $\\vec B$</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>ống dây quấn sát một lớp, đường kính dây d</b> → nghĩ tới <b>N/ℓ = 1/d</b> rồi <b>B = 4π·10⁻⁷(N/ℓ)I</b>",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 0
+   },
+   "tom_de": {
+    "cho": [
+     "$\\ell=40\\ \\text{cm}$ ; $D=4{,}0\\ \\text{cm}$",
+     "dây $d=0{,}80\\ \\text{mm}$ quấn sát một lớp",
+     "$I=2{,}0\\ \\text{A}$"
+    ],
+    "tim": [
+     "a) $N/\\ell$ ; $N$",
+     "b) $B$ (mT)",
+     "c) $\\Phi=NBS$ (mWb)"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Số vòng trên mỗi mét",
+     "hoi": "Số vòng dây trên mỗi mét chiều dài ống là bao nhiêu?",
+     "dap_so": 1250,
+     "sai_so": 2,
+     "don_vi": "vòng/m",
+     "loi_hay_gap": "Lấy $1/d$ khi $d$ còn tính bằng milimét, hoặc đổi $0{,}80\\ \\text{mm}$ sai thành $8\\cdot10^{-3}\\ \\text{m}$."
+    },
+    {
+     "tieu_de": "Tổng số vòng dây",
+     "hoi": "Tổng số vòng dây N bằng bao nhiêu?",
+     "dap_so": 500,
+     "sai_so": 1,
+     "don_vi": "vòng",
+     "loi_hay_gap": "Chia số vòng trên mét cho $\\ell$ thay vì nhân, hoặc giữ $\\ell$ bằng xentimét.",
+     "chon_buoc_ke": [
+      {
+       "text": "$N=\\dfrac{N}{\\ell}\\cdot\\ell$ với $\\ell$ đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "$N=\\dfrac{N}{\\ell}:\\ell$",
+       "dung": false,
+       "vi_sao": "Số vòng trên mỗi mét nhân với số mét mới ra tổng số vòng."
+      },
+      {
+       "text": "N bằng chu vi ống chia cho $d$",
+       "dung": false,
+       "vi_sao": "Chu vi ống là chiều dài một vòng; số vòng phụ thuộc chiều dài ống $\\ell$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Cảm ứng từ trong lòng ống",
+     "hoi": "Cảm ứng từ trong lòng ống dây bằng bao nhiêu mT?",
+     "dap_so": 3.14,
+     "sai_so": 0.02,
+     "don_vi": "mT",
+     "loi_hay_gap": "Dùng công thức dòng điện thẳng với $r$ là bán kính ống, hoặc quên đổi T sang mT.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế $\\dfrac{N}{\\ell}$ và $I$ vào $B=4\\pi\\cdot10^{-7}\\dfrac{N}{\\ell}I$",
+       "dung": true
+      },
+      {
+       "text": "Dùng $B=2\\cdot10^{-7}\\dfrac{I}{r}$ với $r$ là bán kính ống",
+       "dung": false,
+       "vi_sao": "Đó là công thức dòng điện thẳng; trong lòng ống dây dài $B$ tính theo số vòng trên mét."
+      },
+      {
+       "text": "Thế $N$ (tổng số vòng) thay cho $\\dfrac{N}{\\ell}$",
+       "dung": false,
+       "vi_sao": "Công thức cần số vòng trên mỗi mét; thế $N$ là bỏ mất phép chia cho $\\ell$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tiết diện ống",
+     "hoi": "Tiết diện của ống S bằng bao nhiêu cm²?",
+     "dap_so": 12.57,
+     "sai_so": 0.1,
+     "don_vi": "cm²",
+     "loi_hay_gap": "Dùng đường kính thay bán kính (ra gấp 4 lần) hoặc lấy tiết diện sợi dây đồng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$S=\\pi\\left(\\dfrac{D}{2}\\right)^2$",
+       "dung": true
+      },
+      {
+       "text": "$S=\\pi D^2$",
+       "dung": false,
+       "vi_sao": "$D$ là đường kính; phải lấy bán kính $D/2$, dùng $D$ ra gấp 4 lần."
+      },
+      {
+       "text": "$S=\\pi\\left(\\dfrac{d}{2}\\right)^2$ với $d$ của dây đồng",
+       "dung": false,
+       "vi_sao": "Từ thông đi qua lòng ống, tiết diện là của ống, không phải của sợi dây."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Từ thông qua ống dây",
+     "hoi": "Từ thông qua ống dây bằng bao nhiêu mWb?",
+     "dap_so": 1.97,
+     "sai_so": 0.02,
+     "don_vi": "mWb",
+     "loi_hay_gap": "Bỏ $N$ (ra từ thông qua một vòng) hoặc giữ $S$ theo cm² khi thế số.",
+     "chon_buoc_ke": [
+      {
+       "text": "$\\Phi=NBS$ với $B$ ra T, $S$ ra m²",
+       "dung": true
+      },
+      {
+       "text": "$\\Phi=BS$",
+       "dung": false,
+       "vi_sao": "Đó là từ thông qua một vòng; đề hỏi từ thông qua cả ống N vòng."
+      },
+      {
+       "text": "$\\Phi=NBS$ với $S$ giữ cm²",
+       "dung": false,
+       "vi_sao": "Phải đổi $1\\ \\text{cm}^2=10^{-4}\\ \\text{m}^2$ thì $\\Phi$ mới ra Wb."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "elip",
+      "x": 4,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 5,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 6,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 7,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 8,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 9,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 10,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 11,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 12,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 13,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 14,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 15,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "elip",
+      "x": 16,
+      "y": 5.5,
+      "rx": 0.3,
+      "ry": 2.0,
+      "mau": "i"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        2.5,
+        5.5
+       ],
+       [
+        17.5,
+        5.5
+       ]
+      ],
+      "mau": "b",
+      "dut": true
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        2.5,
+        4.6
+       ],
+       [
+        17.5,
+        4.6
+       ]
+      ],
+      "mau": "b",
+      "dut": true
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        2.5,
+        6.4
+       ],
+       [
+        17.5,
+        6.4
+       ]
+      ],
+      "mau": "b",
+      "dut": true
+     },
+     {
+      "loai": "day",
+      "tu": [
+       4,
+       2.6
+      ],
+      "den": [
+       16,
+       2.6
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "y": 1.0,
+      "text": "ℓ = 40 cm",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 9.9,
+      "text": "D = 4,0 cm",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 19.7,
+      "y": 9.9,
+      "text": "I = 2,0 A",
+      "a": "end",
+      "mau": "i"
+     },
+     {
+      "loai": "chu",
+      "x": 19.7,
+      "y": 8.2,
+      "text": "d = 0,80 mm",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "Quấn sát: N/ℓ = 1/d = 1250 vòng/m"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "N = ℓ/d = 0,40 : 0,00080 = 500"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B đều trong ống: B ≈ 3,14 mT"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "S = π(D/2)² = π·2,0² ≈ 12,57 cm²"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Φ = NBS ≈ 1,97 mWb"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Φ một vòng ≈ 3,9 μWb; ×500 ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 3 · Trung bình · Hai dòng điện thẳng song song: hút hay đẩy, lực tương tác",
+   "topic": "Tính lực từ F = BIl·sinθ",
+   "problem_html": "<p>Hai dây dẫn thẳng rất dài đặt song song trong không khí, cách nhau $r=10\\ \\text{cm}$. Dây (1) bên trái mang dòng điện $I_1=4{,}0\\ \\text{A}$, dây (2) bên phải mang dòng điện $I_2=5{,}0\\ \\text{A}$; hai dòng điện cùng chiều, hướng lên trong mặt phẳng hình vẽ. Biết $B=2\\cdot10^{-7}\\dfrac{I}{r}$ và lực từ giữa hai dòng điện song song tác dụng lên đoạn dây dài $\\ell$ là $F=2\\cdot10^{-7}\\dfrac{I_1I_2\\ell}{r}$.</p><ol type=\"a\"><li>Từ trường do dây (1) gây ra tại chỗ đặt dây (2) có chiều thế nào, độ lớn bao nhiêu μT?</li><li>Hai dây hút hay đẩy nhau? Tính lực từ tác dụng lên mỗi đoạn dài $50\\ \\text{cm}$ của dây (2) theo đơn vị μN.</li><li>Đổi chiều dòng điện trong dây (2), giữ nguyên cường độ. Lực tương tác giữa hai dây thay đổi thế nào?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Cách nghĩ:</strong> dây (1) tạo từ trường tại chỗ đặt dây (2); dây (2) mang dòng điện nằm trong từ trường đó nên chịu lực từ.</li><li><strong>Quy tắc:</strong> nắm tay phải cho chiều $\\vec B_1$ ; bàn tay trái cho chiều lực lên dây (2).</li><li><strong>Công thức:</strong> $B_1=2\\cdot10^{-7}\\dfrac{I_1}{r}$ ; $F=B_1I_2\\ell=2\\cdot10^{-7}\\dfrac{I_1I_2\\ell}{r}$.</li><li>⚠ <strong>Điều kiện:</strong> hai dây thẳng rất dài, song song; $r$, $\\ell$ đổi ra mét. Cùng chiều thì hút, ngược chiều thì đẩy.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Chiều từ trường của dây (1) tại dây (2)</span></p><p>Ngón cái tay phải hướng lên theo $I_1$; bên phải dây (1), bốn ngón đi vào mặt phẳng hình:</p><div class=\"bt-ans\"><p>$\\vec B_1$ tại dây (2) hướng vào mặt phẳng hình (⊗).</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Độ lớn từ trường tại dây (2)</span></p>$$B_1=2\\cdot10^{-7}\\dfrac{I_1}{r}=2\\cdot10^{-7}\\cdot\\dfrac{4{,}0}{0{,}10}$$<div class=\"bt-ans\">$$B_1=8{,}0\\cdot10^{-6}\\ \\text{T}=8{,}0\\ \\mu\\text{T}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Hút hay đẩy</span></p><p>Bàn tay trái: đường sức (⊗) đâm vào lòng bàn tay, chiều cổ tay → ngón tay theo $I_2$ (lên), ngón cái chỉ sang trái:</p><div class=\"bt-ans\"><p>Lực lên dây (2) hướng về dây (1): hai dây hút nhau.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Lực từ lên đoạn 50 cm</span></p>$$F=2\\cdot10^{-7}\\dfrac{I_1I_2\\ell}{r}=2\\cdot10^{-7}\\cdot\\dfrac{4{,}0\\cdot5{,}0\\cdot0{,}50}{0{,}10}$$$$F=2{,}0\\cdot10^{-5}\\ \\text{N}$$<div class=\"bt-ans\">$$F=20\\ \\mu\\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Đổi chiều dòng điện trong dây (2)</span></p><p>$\\vec B_1$ giữ nguyên, $I_2$ đổi chiều nên lực lên dây (2) đổi chiều; độ lớn chỉ phụ thuộc $I_1$, $I_2$, $\\ell$, $r$:</p><div class=\"bt-ans\"><p>Hai dây đẩy nhau, độ lớn lực vẫn như cũ.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Kiểm tra</span></p><p>Cách hai: $F=B_1I_2\\ell=8{,}0\\cdot10^{-6}\\cdot5{,}0\\cdot0{,}50=2{,}0\\cdot10^{-5}\\ \\text{N}$ ✓.</p><p>Lực lên dây (1) cùng độ lớn, ngược chiều (định luật III Newton).</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $\\vec B_1$ hướng vào mặt phẳng hình, $B_1=8{,}0\\ \\mu\\text{T}$.</p><p>b) Hút nhau ; $F=20\\ \\mu\\text{N}$.</p><p>c) Đẩy nhau, độ lớn không đổi.</p></div><p class=\"bt-note\">Nhận dạng: thấy <b>hai dây song song mang dòng điện</b> → cùng chiều hút, ngược chiều đẩy; $F=2\\cdot10^{-7}I_1I_2\\ell/r$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Hai dây dẫn thẳng rất dài đặt song song … cách nhau $r=10\\ \\text{cm}$\"</td><td>$r=10\\ \\text{cm}$</td><td>⚠ Công thức $B$ và $F$ chỉ đúng với dây thẳng rất dài, song song; $r$ đổi ra mét</td></tr><tr><td>\"$I_1=4{,}0\\ \\text{A}$ … $I_2=5{,}0\\ \\text{A}$ … cùng chiều, hướng lên\"</td><td>$I_1$, $I_2$ cùng chiều</td><td>Dây (1) tạo từ trường tại chỗ đặt dây (2); dây (2) mang dòng nằm trong từ trường đó</td></tr><tr><td>\"Từ trường do dây (1) gây ra tại chỗ đặt dây (2)\"</td><td>Cần chiều và độ lớn $B_1$</td><td>Nắm tay phải ; $B_1=2\\cdot10^{-7}\\dfrac{I_1}{r}$</td></tr><tr><td>\"Hai dây hút hay đẩy nhau?\"</td><td>Cần chiều lực lên dây (2)</td><td>Quy tắc bàn tay trái với $I_2$ và $\\vec B_1$</td></tr><tr><td>\"mỗi đoạn dài $50\\ \\text{cm}$ của dây (2)\"</td><td>$\\ell=50\\ \\text{cm}$</td><td>$F=2\\cdot10^{-7}\\dfrac{I_1I_2\\ell}{r}=B_1I_2\\ell$</td></tr><tr><td>\"Đổi chiều dòng điện trong dây (2)\"</td><td>$I_2$ ngược chiều $I_1$</td><td>Đổi chiều $I_2$ thì chiều lực lên dây (2) đổi thế nào? Độ lớn phụ thuộc chiều không?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hai dây dẫn song song có dòng điện</b> → nghĩ tới <b>cùng chiều hút, ngược chiều đẩy</b>, F = 2·10⁻⁷·I₁I₂ℓ/r",
+   "cap_do": 2,
+   "fading": "giau_buoc_cuoi",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "$r=10\\ \\text{cm}$",
+     "$I_1=4{,}0\\ \\text{A}$, $I_2=5{,}0\\ \\text{A}$ cùng chiều",
+     "đoạn $\\ell=50\\ \\text{cm}$"
+    ],
+    "tim": [
+     "a) chiều, độ lớn $B_1$ tại dây (2)",
+     "b) hút/đẩy ; $F$ (μN)",
+     "c) đổi chiều $I_2$"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Chiều từ trường của dây (1) tại dây (2)",
+     "hoi": "Từ trường do dây (1) gây ra tại chỗ đặt dây (2) có chiều nào?",
+     "lua_chon": [
+      {
+       "text": "Vào mặt phẳng hình (⊗)",
+       "dung": true
+      },
+      {
+       "text": "Ra khỏi mặt phẳng hình (⊙)",
+       "dung": false,
+       "vi_sao": "Đó là chiều bên trái dây (1); dây (2) ở bên phải nên bốn ngón tay đi vào mặt phẳng hình."
+      },
+      {
+       "text": "Hướng lên, song song với dây",
+       "dung": false,
+       "vi_sao": "Đường sức của dòng điện thẳng vuông góc với dây, không song song dây."
+      }
+     ],
+     "loi_hay_gap": "Lấy chiều $\\vec B_1$ cùng chiều dòng điện $I_1$, quên rằng $\\vec B$ vuông góc với dây."
+    },
+    {
+     "tieu_de": "Độ lớn từ trường tại dây (2)",
+     "hoi": "Cảm ứng từ do dây (1) gây ra tại dây (2) bằng bao nhiêu μT?",
+     "dap_so": 8,
+     "sai_so": 0.1,
+     "don_vi": "μT",
+     "loi_hay_gap": "Thế $I_2$ thay cho $I_1$ (từ trường tại dây (2) do dây (1) tạo nên chỉ phụ thuộc $I_1$), hoặc giữ $r$ bằng cm.",
+     "chon_buoc_ke": [
+      {
+       "text": "$B_1=2\\cdot10^{-7}\\dfrac{I_1}{r}$ với $r$ đổi ra mét",
+       "dung": true
+      },
+      {
+       "text": "$B_1=2\\cdot10^{-7}\\dfrac{I_2}{r}$",
+       "dung": false,
+       "vi_sao": "Từ trường tại dây (2) do dòng $I_1$ của dây (1) tạo ra."
+      },
+      {
+       "text": "$B_1=2\\cdot10^{-7}\\dfrac{I_1+I_2}{r}$",
+       "dung": false,
+       "vi_sao": "Dây (2) không tự tác dụng lực lên chính nó; chỉ xét từ trường của dây (1)."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Hút hay đẩy",
+     "hoi": "Lực từ tác dụng lên dây (2) hướng về đâu?",
+     "lua_chon": [
+      {
+       "text": "Về phía dây (1): hai dây hút nhau",
+       "dung": true
+      },
+      {
+       "text": "Ra xa dây (1): hai dây đẩy nhau",
+       "dung": false,
+       "vi_sao": "Đó là khi hai dòng điện ngược chiều; ở đây cùng chiều."
+      },
+      {
+       "text": "Dọc theo dây (2)",
+       "dung": false,
+       "vi_sao": "Lực từ vuông góc với dòng điện $I_2$ nên vuông góc với dây."
+      }
+     ],
+     "loi_hay_gap": "Dùng tay phải thay cho tay trái, ra lực hướng ra xa dây (1).",
+     "chon_buoc_ke": [
+      {
+       "text": "Bàn tay trái với $I_2$ và $\\vec B_1$",
+       "dung": true
+      },
+      {
+       "text": "Quy tắc nắm tay phải với $I_2$",
+       "dung": false,
+       "vi_sao": "Nắm tay phải cho chiều đường sức quanh dòng điện, không cho chiều lực."
+      },
+      {
+       "text": "Lấy lực cùng chiều $\\vec B_1$",
+       "dung": false,
+       "vi_sao": "Lực từ vuông góc với $\\vec B$, không cùng chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực từ lên đoạn 50 cm",
+     "hoi": "Lực từ tác dụng lên đoạn 50 cm của dây (2) bằng bao nhiêu μN?",
+     "dap_so": 20,
+     "sai_so": 0.3,
+     "don_vi": "μN",
+     "loi_hay_gap": "Bỏ $\\ell$ (ra lực trên mỗi mét) hoặc dùng $B_1I_1\\ell$ thay cho $B_1I_2\\ell$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Thế vào $F=2\\cdot10^{-7}\\dfrac{I_1I_2\\ell}{r}$, đổi $\\ell$, $r$ ra mét",
+       "dung": true
+      },
+      {
+       "text": "$F=2\\cdot10^{-7}\\dfrac{I_1I_2}{r}$, bỏ $\\ell$",
+       "dung": false,
+       "vi_sao": "Công thức cho lực trên đoạn dài $\\ell$; bỏ $\\ell$ là tính lực trên 1 m."
+      },
+      {
+       "text": "$F=B_1I_1\\ell$",
+       "dung": false,
+       "vi_sao": "Lực lên dây (2) là từ trường của dây (1) tác dụng lên dòng $I_2$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Đổi chiều dòng điện trong dây (2)",
+     "hoi": "Đổi chiều dòng điện trong dây (2), lực tương tác thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Đẩy nhau, độ lớn không đổi",
+       "dung": true
+      },
+      {
+       "text": "Vẫn hút nhau, độ lớn giảm",
+       "dung": false,
+       "vi_sao": "$I_2$ đổi chiều thì lực đổi chiều; độ lớn chỉ phụ thuộc $I_1I_2\\ell/r$."
+      },
+      {
+       "text": "Không còn lực tương tác",
+       "dung": false,
+       "vi_sao": "Hai dòng điện vẫn có, từ trường dây (1) vẫn tác dụng lên dòng $I_2$."
+      }
+     ],
+     "loi_hay_gap": "Nghĩ rằng hai dòng ngược chiều triệt tiêu nhau nên không còn lực.",
+     "chon_buoc_ke": [
+      {
+       "text": "Giữ $\\vec B_1$, đổi chiều $I_2$ rồi dùng lại bàn tay trái",
+       "dung": true
+      },
+      {
+       "text": "Đổi cả chiều $\\vec B_1$",
+       "dung": false,
+       "vi_sao": "$\\vec B_1$ do $I_1$ tạo ra, $I_1$ không đổi nên $\\vec B_1$ giữ nguyên."
+      },
+      {
+       "text": "Cộng hai dòng điện ngược chiều thành hiệu",
+       "dung": false,
+       "vi_sao": "Hai dòng nằm ở hai dây khác nhau, không cộng trừ với nhau."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       7,
+       0.6
+      ],
+      "den": [
+       7,
+       10.4
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       13,
+       0.6
+      ],
+      "den": [
+       13,
+       10.4
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "dong",
+      "tu": [
+       6.2,
+       7.2
+      ],
+      "den": [
+       6.2,
+       9.4
+      ],
+      "nhan": "I_1"
+     },
+     {
+      "loai": "dong",
+      "tu": [
+       13.8,
+       7.2
+      ],
+      "den": [
+       13.8,
+       9.4
+      ],
+      "nhan": "I_2",
+      "het": 5
+     },
+     {
+      "loai": "chu",
+      "x": 7,
+      "y": 0.0,
+      "text": "(1)",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 13,
+      "y": 0.0,
+      "text": "(2)",
+      "a": "middle"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       7,
+       2.0
+      ],
+      "den": [
+       13,
+       2.0
+      ],
+      "mau": "chu",
+      "dut": true
+     },
+     {
+      "loai": "chu",
+      "x": 10,
+      "y": 2.4,
+      "text": "r = 10 cm",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 0.3,
+      "y": 10.0,
+      "text": "I₁ = 4,0 A",
+      "a": "start",
+      "mau": "i"
+     },
+     {
+      "loai": "chu",
+      "x": 19.7,
+      "y": 10.0,
+      "text": "I₂ = 5,0 A",
+      "a": "end",
+      "mau": "i"
+     },
+     {
+      "loai": "chu",
+      "x": 19.7,
+      "y": 1.0,
+      "text": "ℓ = 50 cm",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "tiet_dien",
+       "x": 16.5,
+       "y": 3.2,
+       "chieu": "vao",
+       "ten": "B_1",
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "Nắm tay phải: B_1 tại (2) vào ⊗"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "B_1 = 2·10⁻⁷·4,0 : 0,10 = 8,0 μT"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 13,
+       "y": 5.0,
+       "goc": 180,
+       "dai": 2.2,
+       "mau": "luc",
+       "nhan": "F",
+       "het": 5
+      },
+      {
+       "loai": "vec",
+       "x": 7,
+       "y": 5.0,
+       "goc": 0,
+       "dai": 2.2,
+       "mau": "luc",
+       "dut": true,
+       "het": 5
+      },
+      {
+       "loai": "ghi",
+       "text": "Bàn tay trái: F về phía (1) ⇒ hút"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "F = B_1·I_2·ℓ = 20 μN"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        13.8,
+        9.4
+       ],
+       "den": [
+        13.8,
+        7.2
+       ],
+       "nhan": "I_2"
+      },
+      {
+       "loai": "vec",
+       "x": 13,
+       "y": 5.0,
+       "goc": 0,
+       "dai": 2.2,
+       "mau": "luc",
+       "nhan": "F"
+      },
+      {
+       "loai": "vec",
+       "x": 7,
+       "y": 5.0,
+       "goc": 180,
+       "dai": 2.2,
+       "mau": "luc",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Ngược chiều ⇒ đẩy, F như cũ"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "Cùng chiều hút, ngược chiều đẩy ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 4 · Khó · Hạt mang điện bay vào từ trường đều (khối phổ kế): bán kính, điểm đập, thời gian bay",
+   "topic": "Lực từ. Cảm ứng từ",
+   "problem_html": "<p>Một prôtôn ($q=+1{,}6\\cdot10^{-19}\\ \\text{C}$, $m=1{,}67\\cdot10^{-27}\\ \\text{kg}$) ban đầu đứng yên, được tăng tốc qua hiệu điện thế $U=500\\ \\text{V}$ rồi đi qua khe S vào vùng từ trường đều $B=0{,}10\\ \\text{T}$ theo hướng vuông góc với đường sức. Trong hình vẽ, đường sức từ hướng vào mặt phẳng hình (⊗), prôtôn đi qua khe S theo hướng lên trên; tấm phim ảnh nằm ngang, đi qua S. Bỏ qua trọng lực. Biết khi $\\vec v\\perp\\vec B$, lực từ tác dụng lên hạt có độ lớn $f=|q|vB$.</p><ol type=\"a\"><li>Tính tốc độ của prôtôn khi qua khe S theo đơn vị $10^5\\ \\text{m/s}$ (làm tròn đến hai chữ số sau dấu phẩy).</li><li>Prôtôn đập vào phim ở bên trái hay bên phải khe S, cách S bao nhiêu cm (làm tròn đến hai chữ số sau dấu phẩy)?</li><li>Tính thời gian prôtôn bay trong từ trường từ S đến phim theo đơn vị $10^{-7}\\ \\text{s}$ (làm tròn đến hai chữ số sau dấu phẩy).</li><li>Tăng hiệu điện thế tăng tốc lên 4 lần. Khoảng cách từ S đến điểm đập và thời gian bay thay đổi thế nào?</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Tăng tốc:</strong> định lí động năng $|q|U=\\tfrac12mv^2$.</li><li><strong>Lực từ lên hạt:</strong> $f=|q|vB$ khi $\\vec v\\perp\\vec B$; chiều theo bàn tay trái với điện tích dương (electron: chiều ngược lại).</li><li><strong>Chuyển động tròn đều:</strong> $|q|vB=\\dfrac{mv^2}{R}$ ⇒ $R=\\dfrac{mv}{|q|B}$ ; $T=\\dfrac{2\\pi m}{|q|B}$ không phụ thuộc $v$.</li><li>⚠ <strong>Điều kiện:</strong> $\\vec v\\perp\\vec B$, từ trường đều, bỏ qua trọng lực.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Tốc độ khi qua khe S</span></p>$$|q|U=\\tfrac12mv^2\\ \\Rightarrow\\ v=\\sqrt{\\dfrac{2|q|U}{m}}$$$$v=\\sqrt{\\dfrac{2\\cdot1{,}6\\cdot10^{-19}\\cdot500}{1{,}67\\cdot10^{-27}}}$$<div class=\"bt-ans\">$$v\\approx3{,}10\\cdot10^5\\ \\text{m/s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Phía bị lệch</span></p><p>Bàn tay trái: đường sức (⊗) đâm vào lòng bàn tay, chiều cổ tay → ngón tay theo $\\vec v$ (lên), prôtôn mang điện dương nên ngón cái chỉ chiều lực:</p><div class=\"bt-ans\"><p>Lực từ tại S hướng sang trái ⇒ prôtôn đi nửa vòng tròn, đập vào phim bên trái S.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Bán kính quỹ đạo</span></p>$$|q|vB=\\dfrac{mv^2}{R}\\ \\Rightarrow\\ R=\\dfrac{mv}{|q|B}$$$$R=\\dfrac{1{,}67\\cdot10^{-27}\\cdot3{,}095\\cdot10^5}{1{,}6\\cdot10^{-19}\\cdot0{,}10}$$<div class=\"bt-ans\">$$R\\approx3{,}23\\cdot10^{-2}\\ \\text{m}=3{,}23\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Khoảng cách từ S đến điểm đập</span></p><p>S và điểm đập A là hai đầu một đường kính:</p>$$SA=2R$$<div class=\"bt-ans\">$$SA\\approx6{,}46\\ \\text{cm}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Thời gian bay</span></p><p>Hạt đi nửa vòng:</p>$$t=\\dfrac{T}{2}=\\dfrac{\\pi m}{|q|B}=\\dfrac{\\pi\\cdot1{,}67\\cdot10^{-27}}{1{,}6\\cdot10^{-19}\\cdot0{,}10}$$<div class=\"bt-ans\">$$t\\approx3{,}28\\cdot10^{-7}\\ \\text{s}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Tăng hiệu điện thế 4 lần</span></p>$$v\\sim\\sqrt U\\ \\Rightarrow\\ v'=2v$$$$R=\\dfrac{mv}{|q|B}\\ \\Rightarrow\\ SA'=2\\,SA$$<div class=\"bt-ans\"><p>$SA$ tăng gấp 2 ; $t=\\dfrac{\\pi m}{|q|B}$ không phụ thuộc $v$ nên không đổi.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Kiểm tra</span></p><p>Đơn vị $R$: $\\dfrac{\\text{kg}\\cdot\\text{m/s}}{\\text{C}\\cdot\\text{T}}=\\text{m}$ ✓ ; bán kính vài xentimét vừa với khối phổ kế.</p><p>Thử lại $t=\\dfrac{\\pi R}{v}=\\dfrac{\\pi\\cdot0{,}0323}{3{,}095\\cdot10^5}\\approx3{,}28\\cdot10^{-7}\\ \\text{s}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $v\\approx3{,}10\\cdot10^5\\ \\text{m/s}$.</p><p>b) Bên trái S, $SA\\approx6{,}46\\ \\text{cm}$.</p><p>c) $t\\approx3{,}28\\cdot10^{-7}\\ \\text{s}$.</p><p>d) Khoảng cách tăng gấp 2, thời gian bay không đổi.</p></div><p class=\"bt-note\">Nhận dạng: thấy <b>hạt tăng tốc qua U rồi bay vào từ trường, đập vào phim</b> → $|q|U=\\tfrac12mv^2$, $R=mv/(|q|B)$, khoảng cách $2R$.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"prôtôn ($q=+1{,}6\\cdot10^{-19}\\ \\text{C}$, $m=1{,}67\\cdot10^{-27}\\ \\text{kg}$) ban đầu đứng yên\"</td><td>Hạt mang điện dương, $v_0=0$</td><td>Điện tích dương: dùng bàn tay trái trực tiếp (electron thì lấy chiều ngược lại)</td></tr><tr><td>\"được tăng tốc qua hiệu điện thế $U=500\\ \\text{V}$\"</td><td>$U=500\\ \\text{V}$</td><td>Định lí động năng: $|q|U=\\tfrac12mv^2$</td></tr><tr><td>\"vào vùng từ trường đều $B=0{,}10\\ \\text{T}$ theo hướng vuông góc với đường sức\"</td><td>$B=0{,}10\\ \\text{T}$ ; $\\vec v\\perp\\vec B$</td><td>⚠ $\\vec v\\perp\\vec B$ và bỏ qua trọng lực thì lực từ $f=|q|vB$ luôn vuông góc $\\vec v$ ⇒ chuyển động tròn đều</td></tr><tr><td>\"đường sức … (⊗), prôtôn đi qua khe S theo hướng lên trên\"</td><td>Chiều $\\vec B$, chiều $\\vec v$ tại S</td><td>Quy tắc bàn tay trái cho chiều lực tại S ⇒ phía lệch</td></tr><tr><td>\"đập vào phim … cách S bao nhiêu cm\"</td><td>Cần phía và khoảng cách SA</td><td>Lực từ đóng vai trò lực hướng tâm: $|q|vB=\\dfrac{mv^2}{R}$ ; hạt đi nửa vòng</td></tr><tr><td>\"thời gian prôtôn bay … từ S đến phim\"</td><td>Cần $t$</td><td>Chu kì chuyển động tròn $T=\\dfrac{2\\pi R}{v}$</td></tr><tr><td>\"Tăng hiệu điện thế … lên 4 lần\"</td><td>$U'=4U$</td><td>$v$, $R$, $T$ phụ thuộc $U$ thế nào?</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>hạt bay vào từ trường vuông góc đường sức</b> → nghĩ tới <b>|q|vB = mv²/R</b>, đi nửa vòng thì cách khe 2R",
+   "cap_do": 3,
+   "fading": "giau_tu_buoc_2",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "prôtôn $q=+1{,}6\\cdot10^{-19}\\ \\text{C}$, $m=1{,}67\\cdot10^{-27}\\ \\text{kg}$",
+     "$U=500\\ \\text{V}$ ; $B=0{,}10\\ \\text{T}$ (⊗)",
+     "qua S hướng lên, $\\vec v\\perp\\vec B$"
+    ],
+    "tim": [
+     "a) $v$",
+     "b) phía và khoảng cách điểm đập",
+     "c) thời gian bay",
+     "d) khi U tăng 4 lần"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Tốc độ khi qua khe S",
+     "hoi": "Tốc độ của prôtôn khi qua khe S bằng bao nhiêu (đơn vị $10^5$ m/s)?",
+     "dap_so": 3.1,
+     "sai_so": 0.02,
+     "don_vi": "·10⁵ m/s",
+     "loi_hay_gap": "Quên hệ số $\\tfrac12$ (viết $|q|U=mv^2$) hoặc quên lấy căn bậc hai."
+    },
+    {
+     "tieu_de": "Phía bị lệch",
+     "hoi": "Lực từ tại S hướng về đâu, prôtôn đập vào phim ở phía nào?",
+     "lua_chon": [
+      {
+       "text": "Lực sang trái; đập vào phim bên trái S",
+       "dung": true
+      },
+      {
+       "text": "Lực sang phải; đập vào phim bên phải S",
+       "dung": false,
+       "vi_sao": "Đó là chiều với electron (điện tích âm); prôtôn mang điện dương lấy đúng chiều ngón cái tay trái."
+      },
+      {
+       "text": "Lực hướng lên; prôtôn bay thẳng không lệch",
+       "dung": false,
+       "vi_sao": "Lực từ luôn vuông góc với $\\vec v$ nên hạt bị lệch, quỹ đạo tròn."
+      }
+     ],
+     "loi_hay_gap": "Dùng bàn tay trái nhưng để ngón tay theo chiều đường sức, hoặc đổi chiều như với electron.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bàn tay trái: đường sức vào lòng bàn tay, chiều cổ tay → ngón tay theo $\\vec v$",
+       "dung": true
+      },
+      {
+       "text": "Quy tắc nắm tay phải",
+       "dung": false,
+       "vi_sao": "Nắm tay phải tìm chiều đường sức quanh dòng điện, không tìm chiều lực."
+      },
+      {
+       "text": "Lấy lực cùng chiều đường sức",
+       "dung": false,
+       "vi_sao": "Lực từ vuông góc với đường sức, không cùng chiều."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Bán kính quỹ đạo",
+     "hoi": "Bán kính quỹ đạo của prôtôn bằng bao nhiêu cm?",
+     "dap_so": 3.23,
+     "sai_so": 0.03,
+     "don_vi": "cm",
+     "loi_hay_gap": "Đảo phân số thành $R=\\dfrac{|q|B}{mv}$, hoặc quên đổi mét ra xentimét.",
+     "chon_buoc_ke": [
+      {
+       "text": "Lực từ là lực hướng tâm: $|q|vB=\\dfrac{mv^2}{R}$",
+       "dung": true
+      },
+      {
+       "text": "$R=\\dfrac{|q|B}{mv}$",
+       "dung": false,
+       "vi_sao": "Phân số bị đảo; kiểm đơn vị thấy không ra mét."
+      },
+      {
+       "text": "Cho $|q|vB=mg$",
+       "dung": false,
+       "vi_sao": "Đề bỏ qua trọng lực; lực từ làm hạt đổi hướng, không cân bằng với trọng lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Khoảng cách từ S đến điểm đập",
+     "hoi": "Điểm đập cách khe S bao nhiêu cm?",
+     "dap_so": 6.46,
+     "sai_so": 0.05,
+     "don_vi": "cm",
+     "loi_hay_gap": "Lấy khoảng cách bằng $R$, hoặc bằng độ dài cung $\\pi R$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Hạt đi nửa vòng tròn: khoảng cách bằng đường kính 2R",
+       "dung": true
+      },
+      {
+       "text": "Khoảng cách bằng R",
+       "dung": false,
+       "vi_sao": "S và điểm đập là hai đầu một đường kính, không phải bán kính."
+      },
+      {
+       "text": "Khoảng cách bằng $\\pi R$",
+       "dung": false,
+       "vi_sao": "$\\pi R$ là quãng đường đi theo cung, không phải khoảng cách thẳng trên phim."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Thời gian bay",
+     "hoi": "Thời gian prôtôn bay từ S đến phim bằng bao nhiêu (đơn vị $10^{-7}$ s)?",
+     "dap_so": 3.28,
+     "sai_so": 0.03,
+     "don_vi": "·10⁻⁷ s",
+     "loi_hay_gap": "Lấy cả chu kì $T$ (hạt chỉ đi nửa vòng), hoặc lấy $t=\\dfrac{2R}{v}$ như đi thẳng.",
+     "chon_buoc_ke": [
+      {
+       "text": "$t=\\dfrac{T}{2}$ với $T=\\dfrac{2\\pi m}{|q|B}$",
+       "dung": true
+      },
+      {
+       "text": "$t=T$",
+       "dung": false,
+       "vi_sao": "Hạt chỉ đi nửa vòng tới phim."
+      },
+      {
+       "text": "$t=\\dfrac{2R}{v}$",
+       "dung": false,
+       "vi_sao": "Hạt đi theo cung tròn dài $\\pi R$, không đi thẳng đoạn $2R$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Tăng hiệu điện thế 4 lần",
+     "hoi": "Tăng U lên 4 lần thì khoảng cách từ S đến điểm đập và thời gian bay thay đổi thế nào?",
+     "lua_chon": [
+      {
+       "text": "Khoảng cách gấp 2, thời gian bay không đổi",
+       "dung": true
+      },
+      {
+       "text": "Khoảng cách gấp 4, thời gian bay không đổi",
+       "dung": false,
+       "vi_sao": "$v\\sim\\sqrt U$ nên U gấp 4 thì $v$ chỉ gấp 2, $R$ gấp 2."
+      },
+      {
+       "text": "Khoảng cách gấp 2, thời gian bay giảm một nửa",
+       "dung": false,
+       "vi_sao": "$T=2\\pi m/(|q|B)$ không phụ thuộc $v$: hạt nhanh hơn nhưng đi vòng lớn hơn đúng bấy nhiêu."
+      }
+     ],
+     "loi_hay_gap": "Cho $v$ tỉ lệ thuận với $U$ (ra khoảng cách gấp 4) hoặc cho thời gian giảm vì hạt nhanh hơn.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét $v$, $R$, $T$ phụ thuộc $U$ thế nào",
+       "dung": true
+      },
+      {
+       "text": "Cho khoảng cách tỉ lệ thuận với $U$",
+       "dung": false,
+       "vi_sao": "Khoảng cách $2R\\sim v\\sim\\sqrt U$, không tỉ lệ thuận với $U$."
+      },
+      {
+       "text": "Cho thời gian bay tỉ lệ nghịch với $v$",
+       "dung": false,
+       "vi_sao": "Quãng đường cũng tăng theo $v$; chu kì không phụ thuộc $v$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "vao",
+     "nhan": "B = 0,10 T"
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       1.5,
+       2.6
+      ],
+      "den": [
+       13.4,
+       2.6
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       14.6,
+       2.6
+      ],
+      "den": [
+       19.5,
+       2.6
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 1.4,
+      "text": "phim",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 14.8,
+      "y": 1.4,
+      "text": "S",
+      "a": "start"
+     },
+     {
+      "loai": "vec",
+      "x": 14,
+      "y": 2.6,
+      "goc": 90,
+      "dai": 2.0,
+      "mau": "chu",
+      "nhan": "v"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 10.0,
+      "text": "prôtôn, U = 500 V",
+      "a": "end"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "|q|U = ½mv² ⇒ v ≈ 3,10·10⁵ m/s"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 14,
+       "y": 3.6,
+       "goc": 180,
+       "dai": 1.6,
+       "mau": "luc",
+       "nhan": "f"
+      },
+      {
+       "loai": "duong",
+       "diem": [
+        [
+         14.0,
+         2.6
+        ],
+        [
+         13.939,
+         3.295
+        ],
+        [
+         13.759,
+         3.968
+        ],
+        [
+         13.464,
+         4.6
+        ],
+        [
+         13.064,
+         5.171
+        ],
+        [
+         12.571,
+         5.664
+        ],
+        [
+         12.0,
+         6.064
+        ],
+        [
+         11.368,
+         6.359
+        ],
+        [
+         10.695,
+         6.539
+        ],
+        [
+         10.0,
+         6.6
+        ],
+        [
+         9.305,
+         6.539
+        ],
+        [
+         8.632,
+         6.359
+        ],
+        [
+         8.0,
+         6.064
+        ],
+        [
+         7.429,
+         5.664
+        ],
+        [
+         6.936,
+         5.171
+        ],
+        [
+         6.536,
+         4.6
+        ],
+        [
+         6.241,
+         3.968
+        ],
+        [
+         6.061,
+         3.295
+        ],
+        [
+         6.0,
+         2.6
+        ]
+       ],
+       "mau": "i",
+       "mui": 2
+      },
+      {
+       "loai": "diem",
+       "x": 6.0,
+       "y": 2.6,
+       "ten": "A",
+       "vi": "duoi"
+      },
+      {
+       "loai": "ghi",
+       "text": "f hướng trái ⇒ đập bên trái S"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "|q|vB = mv²/R ⇒ R ≈ 3,23 cm"
+      }
+     ],
+     [
+      {
+       "loai": "day",
+       "tu": [
+        6.0,
+        1.7000000000000002
+       ],
+       "den": [
+        14,
+        1.7000000000000002
+       ],
+       "mau": "chu",
+       "dut": true
+      },
+      {
+       "loai": "ghi",
+       "text": "Nửa vòng: SA = 2R ≈ 6,46 cm"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "t = T/2 = πm/(|q|B) ≈ 3,28·10⁻⁷ s"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "U ×4 ⇒ v, R, SA ×2; t không đổi"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "R cỡ vài cm: vừa khối phổ kế ✓"
+      }
+     ]
+    ]
+   }
+  },
+  {
+   "form": "bai_tap",
+   "label": "Dạng 5 · Khó · Thanh dẫn trượt trên hai ray trong từ trường: dòng cảm ứng, lực cản, công suất",
+   "topic": "Suất điện động do thanh dẫn chuyển động",
+   "problem_html": "<p>Hai thanh ray kim loại song song nằm ngang, cách nhau $\\ell=20\\ \\text{cm}$, một đầu nối với điện trở $R=0{,}50\\ \\Omega$. Thanh kim loại MN đặt vuông góc với hai ray, trượt sang phải (ra xa điện trở) với tốc độ không đổi $v=4{,}0\\ \\text{m/s}$. Trong hình nhìn từ trên xuống, M ở ray trên, N ở ray dưới. Hệ đặt trong từ trường đều $B=0{,}50\\ \\text{T}$ có đường sức thẳng đứng, hướng vào mặt phẳng hình (⊗). Bỏ qua điện trở của thanh, của ray và ma sát. Biết suất điện động cảm ứng trong thanh là $e=Bv\\ell$ và lực từ tác dụng lên thanh có độ lớn $F=BI\\ell$.</p><ol type=\"a\"><li>Tính suất điện động cảm ứng và cường độ dòng điện qua $R$.</li><li>Dòng điện trong thanh chạy theo chiều nào?</li><li>Lực từ tác dụng lên thanh có chiều nào? Để thanh chuyển động đều cần lực kéo bao nhiêu niutơn?</li><li>Tính công suất của lực kéo và công suất toả nhiệt trên $R$; nhận xét.</li></ol>",
+   "solution_html": "<div class=\"bt-sol\"><div class=\"tl-box\"><p class=\"tl-label\">Kiến thức cần gọi lại</p><ol><li><strong>Hiện tượng:</strong> thanh chuyển động cắt đường sức, từ thông qua mạch kín biến thiên ⇒ có suất điện động cảm ứng $e=Bv\\ell$.</li><li><strong>Định luật Lenz:</strong> dòng cảm ứng chống lại sự biến thiên từ thông ⇒ lực từ lên thanh cản chuyển động.</li><li><strong>Công thức:</strong> $I=\\dfrac{e}{R}$ ; $F=BI\\ell$ ; $P_k=F_kv$ ; $P_R=I^2R$.</li><li>⚠ <strong>Điều kiện:</strong> thanh, $\\vec v$, $\\vec B$ vuông góc từng đôi; bỏ qua điện trở thanh, ray và ma sát.</li></ol></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">1</span><span>Suất điện động cảm ứng</span></p>$$e=Bv\\ell=0{,}50\\cdot4{,}0\\cdot0{,}20$$<div class=\"bt-ans\">$$e=0{,}40\\ \\text{V}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">2</span><span>Cường độ dòng điện</span></p>$$I=\\dfrac{e}{R}=\\dfrac{0{,}40}{0{,}50}$$<div class=\"bt-ans\">$$I=0{,}80\\ \\text{A}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">3</span><span>Chiều dòng điện trong thanh</span></p><p>Thanh ra xa $R$ ⇒ diện tích mạch tăng ⇒ từ thông (⊗) tăng. Từ trường cảm ứng phải hướng ra (⊙) ⇒ dòng điện ngược chiều kim đồng hồ:</p><div class=\"bt-ans\"><p>Trong thanh, dòng điện chạy từ N đến M.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">4</span><span>Chiều lực từ</span></p><p>Bàn tay trái: đường sức (⊗) vào lòng bàn tay, dòng điện từ N lên M, ngón cái chỉ sang trái:</p><div class=\"bt-ans\"><p>Lực từ ngược chiều $\\vec v$, cản chuyển động của thanh.</p></div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">5</span><span>Lực kéo</span></p><p>Thanh chuyển động đều ⇒ lực kéo cân bằng lực từ:</p>$$F_k=F=BI\\ell=0{,}50\\cdot0{,}80\\cdot0{,}20$$<div class=\"bt-ans\">$$F_k=0{,}080\\ \\text{N}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">6</span><span>Công suất lực kéo</span></p>$$P_k=F_kv=0{,}080\\cdot4{,}0$$<div class=\"bt-ans\">$$P_k=0{,}32\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">7</span><span>Công suất toả nhiệt</span></p>$$P_R=I^2R=0{,}80^2\\cdot0{,}50$$<div class=\"bt-ans\">$$P_R=0{,}32\\ \\text{W}$$</div></div><div class=\"bt-step\"><p class=\"bt-step-title\"><span class=\"bt-step-n\">8</span><span>Kiểm tra</span></p><p>$P_k=P_R$: toàn bộ công của lực kéo chuyển thành nhiệt trên $R$ (bảo toàn năng lượng) ✓.</p><p>Cũng có $P=eI=0{,}40\\cdot0{,}80=0{,}32\\ \\text{W}$ ✓.</p></div><div class=\"bt-final\"><p><strong>Đáp số</strong></p><p>a) $e=0{,}40\\ \\text{V}$ ; $I=0{,}80\\ \\text{A}$.</p><p>b) Từ N đến M.</p><p>c) Lực từ ngược chiều $\\vec v$ ; $F_k=0{,}080\\ \\text{N}$.</p><p>d) $P_k=P_R=0{,}32\\ \\text{W}$: công kéo chuyển hết thành nhiệt.</p></div><p class=\"bt-note\">Nhận dạng: thấy <b>thanh trượt trên hai ray trong từ trường</b> → $e=Bv\\ell$, Lenz cho chiều, lực từ luôn cản chuyển động.</p><p class=\"bt-note\">3 ngày sau che lời giải và giải lại từ đầu.</p></div>",
+   "analysis_html": "<p>Mỗi câu của đề: <strong>cho dữ liệu gì, gọi kiến thức nào?</strong> Hàng có ⚠ là <strong>điều kiện áp dụng</strong> — kiểm tra trước khi dùng công thức.</p><div class=\"table-scroll\"><table class=\"tl-table tl-table--data\"><thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead><tbody><tr><td>\"Hai thanh ray … cách nhau $\\ell=20\\ \\text{cm}$ … nối với điện trở $R=0{,}50\\ \\Omega$\"</td><td>$\\ell=20\\ \\text{cm}$ ; $R=0{,}50\\ \\Omega$</td><td>Thanh, hai ray và $R$ tạo thành mạch kín</td></tr><tr><td>\"trượt sang phải (ra xa điện trở) với tốc độ không đổi $v=4{,}0\\ \\text{m/s}$\"</td><td>$v=4{,}0\\ \\text{m/s}$ ; diện tích mạch tăng</td><td>Từ thông qua mạch thay đổi ⇒ có dòng cảm ứng</td></tr><tr><td>\"từ trường đều $B=0{,}50\\ \\text{T}$ … hướng vào mặt phẳng hình (⊗)\"</td><td>$B=0{,}50\\ \\text{T}$ ; $\\vec B\\perp$ mặt phẳng ray</td><td>⚠ $e=Bv\\ell$ dùng khi $\\vec v$, $\\vec B$, thanh vuông góc từng đôi; bỏ qua điện trở thanh, ray</td></tr><tr><td>\"Dòng điện trong thanh chạy theo chiều nào?\"</td><td>Cần chiều $I$ trong MN</td><td>Định luật Lenz: dòng cảm ứng sinh từ trường chống lại sự tăng từ thông</td></tr><tr><td>\"Lực từ … chiều nào? … cần lực kéo bao nhiêu\"</td><td>Cần chiều $F$ ; $F_k$</td><td>Quy tắc bàn tay trái ; thanh chuyển động đều ⇒ hợp lực bằng 0</td></tr><tr><td>\"công suất của lực kéo và công suất toả nhiệt trên $R$\"</td><td>Cần $P_k$, $P_R$</td><td>$P_k=F_kv$ ; $P_R=I^2R$ ; bảo toàn năng lượng</td></tr></tbody></table></div>",
+   "nhan_dang": "Thấy <b>thanh trượt trên hai ray trong từ trường</b> → nghĩ tới <b>e = Bvℓ</b>, Lenz cho chiều, <b>lực từ cản</b> chuyển động",
+   "cap_do": 4,
+   "fading": "giau_het",
+   "go_roi": {
+    "buoc_hay_sai": 2
+   },
+   "tom_de": {
+    "cho": [
+     "$\\ell=20\\ \\text{cm}$ ; $R=0{,}50\\ \\Omega$",
+     "$v=4{,}0\\ \\text{m/s}$ ra xa $R$",
+     "$B=0{,}50\\ \\text{T}$ (⊗)"
+    ],
+    "tim": [
+     "a) $e$, $I$",
+     "b) chiều $I$ trong thanh",
+     "c) chiều lực từ ; $F_k$",
+     "d) $P_k$, $P_R$"
+    ]
+   },
+   "buoc": [
+    {
+     "tieu_de": "Suất điện động cảm ứng",
+     "hoi": "Suất điện động cảm ứng trong thanh bằng bao nhiêu vôn?",
+     "dap_so": 0.4,
+     "sai_so": 0.005,
+     "don_vi": "V",
+     "loi_hay_gap": "Giữ $\\ell$ bằng xentimét khi thế số (ra lớn gấp 100 lần)."
+    },
+    {
+     "tieu_de": "Cường độ dòng điện",
+     "hoi": "Cường độ dòng điện qua R bằng bao nhiêu ampe?",
+     "dap_so": 0.8,
+     "sai_so": 0.01,
+     "don_vi": "A",
+     "loi_hay_gap": "Nhân $e$ với $R$ thay vì chia.",
+     "chon_buoc_ke": [
+      {
+       "text": "Định luật Ôm cho mạch kín: $I=\\dfrac{e}{R}$",
+       "dung": true
+      },
+      {
+       "text": "$I=eR$",
+       "dung": false,
+       "vi_sao": "Đơn vị V·Ω không phải ampe; định luật Ôm là chia cho R."
+      },
+      {
+       "text": "$I=\\dfrac{e}{R+\\ell}$",
+       "dung": false,
+       "vi_sao": "$\\ell$ là chiều dài, không phải điện trở; đề bỏ qua điện trở thanh."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều dòng điện trong thanh",
+     "hoi": "Dòng điện trong thanh chạy theo chiều nào?",
+     "lua_chon": [
+      {
+       "text": "Từ N đến M",
+       "dung": true
+      },
+      {
+       "text": "Từ M đến N",
+       "dung": false,
+       "vi_sao": "Từ thông (⊗) tăng nên từ trường cảm ứng hướng ra, dòng ngược chiều kim đồng hồ: trong thanh đi lên từ N đến M."
+      },
+      {
+       "text": "Không có dòng điện vì thanh chuyển động đều",
+       "dung": false,
+       "vi_sao": "Thanh chạy đều nhưng diện tích mạch vẫn tăng, từ thông vẫn biến thiên."
+      }
+     ],
+     "loi_hay_gap": "Cho rằng thanh chạy đều nên không có dòng điện, hoặc dùng bàn tay trái với $\\vec v$ và $\\vec B$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Xét từ thông qua mạch tăng hay giảm rồi dùng định luật Lenz",
+       "dung": true
+      },
+      {
+       "text": "Dùng bàn tay trái với $\\vec v$ và $\\vec B$",
+       "dung": false,
+       "vi_sao": "Bàn tay trái cho chiều lực lên dòng điện; chiều dòng cảm ứng tìm bằng Lenz hoặc bàn tay phải."
+      },
+      {
+       "text": "Cho dòng điện cùng chiều $\\vec v$",
+       "dung": false,
+       "vi_sao": "Dòng điện chạy dọc thanh, vuông góc với $\\vec v$."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Chiều lực từ",
+     "hoi": "Lực từ tác dụng lên thanh có chiều nào?",
+     "lua_chon": [
+      {
+       "text": "Ngược chiều $\\vec v$, cản chuyển động",
+       "dung": true
+      },
+      {
+       "text": "Cùng chiều $\\vec v$, đẩy thanh nhanh hơn",
+       "dung": false,
+       "vi_sao": "Nếu vậy thanh tự tăng tốc mà không cần kéo — trái định luật Lenz và bảo toàn năng lượng."
+      },
+      {
+       "text": "Dọc theo thanh",
+       "dung": false,
+       "vi_sao": "Lực từ vuông góc với dòng điện trong thanh, nên vuông góc với thanh."
+      }
+     ],
+     "loi_hay_gap": "Cho lực từ cùng chiều chuyển động, quên rằng theo Lenz dòng cảm ứng luôn chống lại nguyên nhân sinh ra nó.",
+     "chon_buoc_ke": [
+      {
+       "text": "Bàn tay trái với dòng điện vừa tìm và $\\vec B$",
+       "dung": true
+      },
+      {
+       "text": "Nắm tay phải quanh thanh",
+       "dung": false,
+       "vi_sao": "Nắm tay phải cho chiều đường sức quanh dòng điện, không cho chiều lực."
+      },
+      {
+       "text": "Lấy lực cùng chiều dòng điện",
+       "dung": false,
+       "vi_sao": "Lực từ vuông góc với dòng điện."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Lực kéo",
+     "hoi": "Để thanh chuyển động đều cần lực kéo bao nhiêu niutơn?",
+     "dap_so": 0.08,
+     "sai_so": 0.002,
+     "don_vi": "N",
+     "loi_hay_gap": "Cho rằng chuyển động đều thì không cần lực kéo, hoặc lấy nhầm $Bv\\ell$.",
+     "chon_buoc_ke": [
+      {
+       "text": "Chuyển động đều: $F_k=F=BI\\ell$",
+       "dung": true
+      },
+      {
+       "text": "$F_k=0$ vì thanh chuyển động đều",
+       "dung": false,
+       "vi_sao": "Thanh chịu lực từ cản; muốn đều phải có lực kéo cân bằng lực từ."
+      },
+      {
+       "text": "$F_k=Bv\\ell$",
+       "dung": false,
+       "vi_sao": "$Bv\\ell$ là suất điện động (V), không phải lực."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất lực kéo",
+     "hoi": "Công suất của lực kéo bằng bao nhiêu oát?",
+     "dap_so": 0.32,
+     "sai_so": 0.005,
+     "don_vi": "W",
+     "loi_hay_gap": "Nhân lực với chiều dài thanh thay cho tốc độ.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_k=F_kv$",
+       "dung": true
+      },
+      {
+       "text": "$P_k=F_k\\ell$",
+       "dung": false,
+       "vi_sao": "$\\ell$ là chiều dài thanh; công suất bằng lực nhân tốc độ."
+      },
+      {
+       "text": "$P_k=\\dfrac{F_k}{v}$",
+       "dung": false,
+       "vi_sao": "Công suất bằng lực nhân tốc độ, không chia."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Công suất toả nhiệt",
+     "hoi": "Công suất toả nhiệt trên R bằng bao nhiêu oát?",
+     "dap_so": 0.32,
+     "sai_so": 0.005,
+     "don_vi": "W",
+     "loi_hay_gap": "Dùng $P=IR$ (đó là hiệu điện thế) hoặc quên bình phương $I$.",
+     "chon_buoc_ke": [
+      {
+       "text": "$P_R=I^2R$",
+       "dung": true
+      },
+      {
+       "text": "$P_R=IR$",
+       "dung": false,
+       "vi_sao": "$IR$ là hiệu điện thế (V), không phải công suất."
+      },
+      {
+       "text": "$P_R=\\dfrac{e}{R}$",
+       "dung": false,
+       "vi_sao": "$e/R$ là cường độ dòng điện."
+      }
+     ]
+    },
+    {
+     "tieu_de": "Kiểm tra"
+    }
+   ],
+   "cong_cu": {
+    "loai": "tu_truong",
+    "de": true,
+    "nen": {
+     "kieu": "vao",
+     "nhan": "B = 0,50 T"
+    },
+    "hinh": [
+     {
+      "loai": "day",
+      "tu": [
+       3,
+       8.5
+      ],
+      "den": [
+       18.5,
+       8.5
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       3,
+       2.5
+      ],
+      "den": [
+       18.5,
+       2.5
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       3,
+       2.5
+      ],
+      "den": [
+       3,
+       4.4
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       3,
+       6.6
+      ],
+      "den": [
+       3,
+       8.5
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "duong",
+      "diem": [
+       [
+        2.6,
+        4.4
+       ],
+       [
+        3.4,
+        4.4
+       ],
+       [
+        3.4,
+        6.6
+       ],
+       [
+        2.6,
+        6.6
+       ]
+      ],
+      "kin": true,
+      "mau": "chu"
+     },
+     {
+      "loai": "day",
+      "tu": [
+       12,
+       1.9
+      ],
+      "den": [
+       12,
+       9.1
+      ],
+      "mau": "chu"
+     },
+     {
+      "loai": "chu",
+      "x": 12,
+      "y": 9.5,
+      "text": "M",
+      "a": "middle"
+     },
+     {
+      "loai": "chu",
+      "x": 12,
+      "y": 1.0,
+      "text": "N",
+      "a": "middle"
+     },
+     {
+      "loai": "vec",
+      "x": 12,
+      "y": 7.2,
+      "goc": 0,
+      "dai": 2.4,
+      "mau": "chu",
+      "nhan": "v"
+     },
+     {
+      "loai": "chu",
+      "x": 13.0,
+      "y": 1.0,
+      "text": "ℓ = 20 cm",
+      "a": "start"
+     },
+     {
+      "loai": "chu",
+      "x": 19.6,
+      "y": 9.3,
+      "text": "v = 4,0 m/s",
+      "a": "end"
+     },
+     {
+      "loai": "chu",
+      "x": 3.8,
+      "y": 6.0,
+      "text": "R = 0,50 Ω",
+      "a": "start"
+     }
+    ],
+    "lop": [
+     [
+      {
+       "loai": "ghi",
+       "text": "e = Bvℓ = 0,50·4,0·0,20 = 0,40 V"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "I = e : R = 0,40 : 0,50 = 0,80 A"
+      }
+     ],
+     [
+      {
+       "loai": "dong",
+       "tu": [
+        11.3,
+        5.0
+       ],
+       "den": [
+        11.3,
+        7.0
+       ],
+       "nhan": "I"
+      },
+      {
+       "loai": "ghi",
+       "text": "Φ tăng ⇒ trong thanh I từ N đến M"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 4.0,
+       "goc": 180,
+       "dai": 2.4,
+       "mau": "luc",
+       "nhan": "F"
+      },
+      {
+       "loai": "ghi",
+       "text": "F ngược chiều v: cản chuyển động"
+      }
+     ],
+     [
+      {
+       "loai": "vec",
+       "x": 12,
+       "y": 4.0,
+       "goc": 0,
+       "dai": 2.4,
+       "mau": "chu",
+       "dut": true,
+       "nhan": "F_k"
+      },
+      {
+       "loai": "ghi",
+       "text": "Đều ⇒ F_k = BIℓ = 0,080 N"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "P_k = F_k·v = 0,080·4,0 = 0,32 W"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "P_R = I²R = 0,80²·0,50 = 0,32 W"
+      }
+     ],
+     [
+      {
+       "loai": "ghi",
+       "text": "P_k = P_R: công kéo → nhiệt ✓"
+      }
+     ]
+    ]
+   }
+  }
+ ]
+}
