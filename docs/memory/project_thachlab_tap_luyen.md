@@ -11,4 +11,4 @@ metadata:
 
 **Ứng dụng** `/tai-khoan/tap-luyen` (link ở thẻ tài khoản giảng viên + "Mở ứng dụng tập →" ở mục gym trong Lịch tuần, `?buoi=A|B|C`): Tập (bắt đầu A/B/C/tự do, cột Lần trước, tick hiệp → đếm giờ nghỉ rung/bíp, gợi ý tăng tạ, thay/thêm/đổi thứ tự bài), Lịch sử, Tiến bộ (1RM Epley theo bài, hiệp/tuần theo nhóm cơ), Số đo (tỉ lệ BMI, eo/cao, eo/mông, ngực/eo, ngực−mông; mục tiêu 4 tuần; biểu đồ). Buổi đang tập giữ localStorage; lỗi mạng → hàng chờ tự gửi lại.
 
-**Chưa có:** sửa chương trình ngay trong app (đang sửa trong code), siêu hiệp (superset), chia sẻ buổi. Chưa thử bằng tài khoản thật trên điện thoại.
+**Chưa có:** sửa chương trình ngay trong app (đang sửa trong code), siêu hiệp (superset), chia sẻ buổi. Đã deploy 18/11 ~23:00. Chưa ghi buổi tập thật trên điện thoại.
