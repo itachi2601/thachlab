@@ -14,8 +14,8 @@
 # Thu nghi: U = 60 V (lech 1,65 mm khi vao giua) ; electron vao cach ban (+) 1,5 mm (gia dinh, ghi trong ghi_chu kho)
 #   -> lech ve ban (+) 1,65 mm > 1,5 mm -> cham ban, khong ra duoc.
 # Cong B: bo the "F nguoc chieu E" va bay "lech theo chieu E" (chep quy tac/tieu de Bay 1 cua bai) ; clip chi noi
-#   "lech ve ban (+)". Bay moi (khong trong hien_tuong_hay_sai cua kho, do phien chinh chon): "Tang U, tia bay nhanh
-#   hon nen it lech hon" - U hai ban khong doi v0 ; bang cho U tang thi lech tang.
+#   "lech ve ban (+)". Bay (vong 2 cong B; khong co trong hien_tuong_hay_sai, dua tren gia_thiet kho "bo qua trong luc"):
+#   "Tia lech xuong do trong luc" -> bac bang chinh hang U = 0 da chieu: tia thang. Khong dinh v0, khong trung Bay 1-3.
 # Assert chieu luc (F nguoc E) van giu trong ma.
 from engine import *
 
@@ -191,22 +191,22 @@ def s_dapan(img, d, t, sc):
 def s_bay(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 260, 1040, 990), fill=WHITE, outline=LIGHT, w=3)
-    tube(d, YC, beams=[(ROWS[1][1], FAINT), (ROWS[2][1], GLOW)], scale=False)
+    tube(d, YC, beams=[(ROWS[2][1], FAINT), (ROWS[0][1], GLOW)])
     k3 = appear(t, M[1] - 0.1, 0.45); a1 = appear(t, 0.2, 0.4) * (1 - k3)
     y = 1030
     if a1 > 0:
-        card(d, (40, y, 1040, y + 400), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
+        card(d, (40, y, 1040, y + 360), fill=A(WHITE, a1), outline=A(DRED, a1), w=6)
         pw = tw(d, "BẪY", F(40)) + 52
         card(d, (W / 2 - pw / 2, y + 26, W / 2 + pw / 2, y + 90), fill=A(DRED, a1), r=32)
         text(d, (W / 2, y + 58), "BẪY", 40, WHITE, alpha=a1)
         ks = clamp((t - 1.4) / 0.4)
-        for j, q in enumerate(("“Tăng U, tia bay nhanh hơn", "nên ít lệch hơn”")):
-            f = F(48); lw = tw(d, q, f); yy = y + 160 + j * 76
+        for j, q in enumerate(("“Tia lệch xuống do trọng lực”",)):
+            f = F(48); lw = tw(d, q, f); yy = y + 175 + j * 76
             text(d, (W / 2, yy), q, 48, mix(INK, GRAY, ks), alpha=a1)
             if ks > 0:
                 d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)],
                        fill=A(DRED, 0.85 * a1), width=6)
-        text(d, (W / 2, y + 335), "✓ U tăng thì lệch nhiều hơn", 46, DGREEN, alpha=a1 * appear(t, 2.0, 0.4))
+        text(d, (W / 2, y + 290), "✓ U = 0 thì tia đi thẳng", 46, DGREEN, alpha=a1 * appear(t, 2.0, 0.4))
     if k3 > 0:
         card(d, (40, y, 1040, y + 300), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, y + 75), "Chưa nói được", 48, NAVY, alpha=k3)
@@ -222,7 +222,7 @@ def s_end(img, d, t, sc):
     text(d, (W / 2, 450), "theo parabol", 50, DGREEN, alpha=k0)
     k1 = appear(t, M[0] + 0.1, 0.5)
     if k1 <= 0: return
-    card(d, (40, 600, 1040, 1440), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    card(d, (40, 600, 1040, 1270), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(40)) + 52
     card(d, (W / 2 - pw / 2, 630, W / 2 + pw / 2, 694), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 662), "THỬ NGHĨ", 40, WHITE, alpha=k1)
@@ -231,9 +231,9 @@ def s_end(img, d, t, sc):
         text(d, (W / 2, 790 + j * 80), s, 48, INK, alpha=kq)
     kh = appear(t, M[0] + 3.2, 0.5)
     if kh > 0:
-        card(d, (110, 1110, 970, 1380), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1170), "Gợi ý", 44, INK, alpha=kh)
-        text(d, (W / 2, 1280), "Vẽ thử đường đi của tia", 46, (176, 64, 8), alpha=kh)
+        card(d, (110, 1010, 970, 1240), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
+        text(d, (W / 2, 1060), "Gợi ý", 44, INK, alpha=kh)
+        text(d, (W / 2, 1160), "Vẽ thử đường đi của tia", 46, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

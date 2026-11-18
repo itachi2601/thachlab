@@ -42,6 +42,7 @@ def ruler(d, xtip, y, ang=0.0, charged=True, alpha=1.0, length=560):
     poly = [p(0, -RH / 2), p(length, -RH / 2), p(length, RH / 2), p(0, RH / 2)]
     d.polygon(poly, fill=A(RULER, alpha)); d.line(poly + [poly[0]], fill=A(RULER_D, alpha), width=3)
     for k in range(1, 12):
+        if k * 45 > length - 12: break
         q0, q1 = p(k * 45, -RH / 2), p(k * 45, -RH / 2 + (14 if k % 2 else 22))
         d.line([q0, q1], fill=A(RULER_D, alpha), width=2)
     if charged:
@@ -90,10 +91,10 @@ def s_hook(img, d, t, sc):
     if t < M[1] - 0.3:                                # co thuoc vao toc (qua lai)
         hair(d, 600, 420)
         sw = math.sin(t * 7) * 60
-        ruler(d, 560 + sw, 470, charged=False, length=400)
+        ruler(d, 560 + sw, 470, charged=False, length=360)
     else:
         k = appear(t, M[1] - 0.3, 0.8)
-        ruler(d, lerp(800, CX0 + CR + 70, k), TY - CR, charged=False, length=360)
+        ruler(d, lerp(800, CX0 + CR + 70, k), TY - CR, charged=False, length=320)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1010 + (1 - a) * 40
@@ -112,7 +113,7 @@ def s_hook(img, d, t, sc):
 
 # ---------------- canh 2: Tien hanh ----------------
 GAP = 70                       # khe thuoc - lon o hinh Rut ra
-RX2, RL2 = 760, 260            # thuoc dung yen o pha 2 (dau trai x 760, het o 1020)
+RX2, RL2 = 760, 220            # thuoc dung yen o pha 2 (dau trai x 760, het o 980)
 ROLL_MAX = RX2 - 36 - CR - CX0 # lon lan toi khi khe con 36 px
 def do_state(t, M):
     """-> (pha, ruler_x, ruler_y, k_giay, cx_lon, roll). Pha 1: giay vun ; pha 2: thuoc hien dan o vi tri dung yen, lon lan toi sat."""
@@ -195,7 +196,7 @@ def induction(d, cx, cy, k, kf):
         text(d, (cx + CR - 30 + (8 if j == 1 else 0), cy + dy), "+", 46, BLUE, alpha=k)
         text(d, (cx - CR + 30 - (8 if j == 1 else 0), cy + dy), "−", 46, DRED, alpha=k)
     ruler(d, cx + CR + GAP, cy, alpha=k, length=330)
-    text(d, (cx + CR + GAP + 165, cy - 70), "giả sử thước (−)", 36, MUTED, alpha=k)
+    text(d, (cx + CR + GAP + 165, cy - 70), "chỉ giả sử thước (−)", 36, MUTED, alpha=k)
     if kf > 0:
         yn = cy + CR + 50
         arrow(d, (cx + CR - 10, yn), (cx + CR - 10 + L_NEAR * kf, yn), A(BLUE, kf), w=8, head=22)
@@ -293,7 +294,7 @@ CLIP = dict(id="tn-l11-coulomb-01", header="VẬT LÍ 11 · THÍ NGHIỆM", foot
    ("Bẫy thường gặp.", 5.0)]),
  dict(key="rutra", title="Vì sao lon bị hút?", draw=s_rutra, tail=0.6, caps=[
    ("Đầu gần ở gần thước hơn.", 5.0),
-   ("Câu còn bỏ ngỏ.", 3.6)]),
+   ("Câu còn bỏ ngỏ.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Tự trả lời trước gợi ý.", 7.0)]),
 ])
