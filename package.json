@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "eslint",
     "check:a11y": "node scripts/check-a11y.mjs",
+    "test": "vitest run",
     "test:next-steps": "tsx scripts/test-next-steps.mts",
     "test:offline-queue": "tsx scripts/test-offline-queue.mts",
     "test:tuition": "tsx scripts/test-tuition-ledger.mts",
@@ -50,7 +51,8 @@
     "sharp": "^0.34.5",
     "tailwindcss": "^4",
     "tsx": "^4.23.13",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.7"
   },
   "browserslist": [
     "ios_saf >= 12",
