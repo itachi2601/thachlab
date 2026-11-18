@@ -166,11 +166,16 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
 
   // Chỉ dùng danh sách tên khi nó đúng là của chặng đang hiển thị (tránh nháy dữ liệu chặng khác).
   const wrong = wrongRows && wrongRows.stage === viewed ? wrongRows.rows : null;
+  // Khoá theo (đề, câu): chặng có thể gồm đề cũ + đề mới của mục bài học, câu số k của hai đề là hai câu khác nhau.
+  const qKey = (exam: number | undefined, i: number) => `${exam ?? examId}:${i}`;
   const byQuestion = useMemo(() => {
-    const m = new Map<number, WrongStudentRow[]>();
-    for (const w of wrong ?? []) m.set(w.idx, [...(m.get(w.idx) ?? []), w]);
+    const m = new Map<string, WrongStudentRow[]>();
+    for (const w of wrong ?? []) {
+      const k = `${w.exam_id ?? examId}:${w.idx}`;
+      m.set(k, [...(m.get(k) ?? []), w]);
+    }
     return m;
-  }, [wrong]);
+  }, [wrong, examId]);
   const byStudent = useMemo(() => {
     const m = new Map<string, WrongStudentRow[]>();
     for (const w of wrong ?? []) m.set(w.student_id, [...(m.get(w.student_id) ?? []), w]);
@@ -463,13 +468,14 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
                       {mineOpen && (
                         <ul className="w-full min-w-0 basis-full space-y-1 pb-1 text-sm text-ink">
                           {mine.map((w) => (
-                            <li key={w.idx} className="min-w-0">
+                            <li key={qKey(w.exam_id, w.idx)} className="min-w-0">
                               <strong>Câu {w.idx + 1}</strong>
+                              {w.exam_id != null && w.exam_id !== examId && <span className="text-muted"> (đề cũ #{w.exam_id})</span>}
                               {w.dang && <span className="text-muted"> · {shortDang(w.dang)}</span>}
                               {w.max != null && w.earned != null && w.earned > 0 && (
                                 <span className="text-muted"> · được {w.earned}/{w.max} điểm</span>
                               )}
-                              {snippets && snippets.exam === examId && snippets.list[w.idx] && (
+                              {snippets && snippets.exam === examId && (w.exam_id ?? examId) === examId && snippets.list[w.idx] && (
                                 <span className="block truncate text-muted">{snippets.list[w.idx]}</span>
                               )}
                             </li>
@@ -530,19 +536,22 @@ export default function ReviewConsole({ sessionId }: { sessionId: number }) {
             ) : (
               <ul className="space-y-2">
                 {board.wrongest.slice(0, showAllQ ? board.wrongest.length : 5).map((q) => {
-                  const text = snippets && snippets.exam === examId ? snippets.list[q.idx] : "";
-                  const who = byQuestion.get(q.idx);
-                  const key = `q${q.idx}`;
+                  const qExam = q.exam_id ?? examId;
+                  const oldExam = qExam !== examId;
+                  const text = snippets && snippets.exam === examId && !oldExam ? snippets.list[q.idx] : "";
+                  const who = byQuestion.get(qKey(q.exam_id, q.idx));
+                  const key = `q${qKey(q.exam_id, q.idx)}`;
                   return (
-                    <li key={q.idx} className="rounded-2xl border border-line bg-panel px-4 py-3">
+                    <li key={key} className="rounded-2xl border border-line bg-panel px-4 py-3">
                       <div className="flex flex-wrap items-center gap-3">
                         <span className="min-w-0 flex-1 basis-48 text-ink">
-                          <strong>Câu {q.idx + 1}</strong> · sai {q.pct}% ({q.wrong}/{q.total} lượt)
+                          <strong>Câu {q.idx + 1}</strong>
+                          {oldExam && <span className="text-sm text-muted"> (đề cũ #{qExam})</span>} · sai {q.pct}% ({q.wrong}/{q.total} lượt)
                           {q.dang && <span className="block text-sm text-muted">{q.dang.replace(/^Dạng\s*\d+\s*·\s*/, "")}</span>}
                           {text && <span className="block truncate text-sm text-muted">{text}</span>}
                         </span>
                         <a
-                          href={`${chuaBai}?exam=${examId}&class=${sess.class_id}&q=${q.idx}`}
+                          href={`${chuaBai}?exam=${qExam}&class=${sess.class_id}&q=${q.idx}`}
                           target="_blank"
                           rel="noreferrer"
                           className="inline-flex min-h-11 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-semibold text-white hover:bg-primary-dark"

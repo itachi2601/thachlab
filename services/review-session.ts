@@ -15,6 +15,8 @@ export interface ReviewStageDef {
   opened?: boolean;
   /** Chặng "ôn dạng": nhãn dạng của từng câu theo thứ tự trong đề (dùng cho thống kê sai theo dạng). */
   dang_by_index?: string[];
+  /** Máy chủ trả (migration 20261118200000): exam_id chụp lúc tạo buổi khi mục bài học đã đổi sang đề mới; `exam_id` là đề hiện hành. */
+  exam_id_goc?: number;
 }
 
 /** idle = chưa mở · doing = đang làm · failed = đã nộp, chưa đạt ngưỡng · passed = đạt. */
@@ -28,6 +30,8 @@ export interface StageProgress {
   tries: number;
   /** Số giây kể từ lần cuối đáp án được lưu (chỉ khi đang làm). */
   idle_secs: number | null;
+  /** Đề của lượt đang làm dở (tập đề của chặng gồm đề cũ + đề hiện hành của mục bài học). */
+  open_exam_id?: number | null;
 }
 
 export interface BoardStudent extends StageProgress {
@@ -36,6 +40,8 @@ export interface BoardStudent extends StageProgress {
 }
 
 export interface WrongQuestion {
+  /** Đề chứa câu (chặng có thể gồm đề cũ + đề mới). Bản máy chủ cũ không có: coi là đề của chặng. */
+  exam_id?: number;
   idx: number;
   total: number;
   wrong: number;
@@ -176,6 +182,8 @@ export const getReviewBoard = (sessionId: number, stage: number | null = null) =
 export interface WrongStudentRow {
   student_id: string;
   name: string;
+  /** Đề chứa câu; bản máy chủ cũ không có. */
+  exam_id?: number;
   idx: number;
   dang: string | null;
   earned: number | null;
