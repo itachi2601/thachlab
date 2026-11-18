@@ -15,7 +15,7 @@ import {
   type QuestionForm,
 } from "@/features/exams/types";
 import { classifyQuestionTagsBatched } from "@/services/ai-classify";
-import { applyAiFix, checkExamBatched, describeAiFix, type AiCheckResult } from "@/services/ai-check-exam";
+import { applyAiFix, applyFixToBank, checkExamBatched, describeAiFix, type AiCheckResult } from "@/services/ai-check-exam";
 import { estimateDuration } from "@/features/exams/duration";
 import type { QuestionTopic } from "@/services/analytics";
 import { questionTextForAi } from "@/services/exam-question-text";
@@ -323,12 +323,15 @@ export default function ExamSection({
   function applyAiFixes(indexes: number[]) {
     const base = edited ?? (JSON.parse(JSON.stringify(bundle)) as LessonBundle);
     const done: string[] = [];
+    const pairs: { oldQ: ExamQuestion; newQ: ExamQuestion }[] = [];
     const qs = base.exam.questions.map((q, i) => {
       const key = questions[i]?.question;
       const r = key === undefined ? undefined : aiCheck.get(key);
       if (!indexes.includes(i) || !r?.fix || describeAiFix(q, r.fix).length === 0) return q;
       done.push(key as string);
-      return applyAiFix(q, r.fix);
+      const newQ = applyAiFix(q, r.fix);
+      pairs.push({ oldQ: q, newQ });
+      return newQ;
     });
     if (done.length === 0) {
       toast("error", "Không có đề xuất sửa nào để áp dụng.");
@@ -341,6 +344,15 @@ export default function ExamSection({
       return next;
     });
     toast("success", `Đã sửa ${done.length} câu theo đề xuất AI — xem lại thẻ trước khi Đăng.`);
+    // Sửa luôn câu gốc trong ngân hàng (+ đề đã đăng dùng câu đó) để lần đăng không sinh thêm bản trùng.
+    void Promise.all(pairs.map((p) => applyFixToBank(p.oldQ, p.newQ))).then((rs) => {
+      const fixed = rs.filter((r) => r.status === "fixed").length;
+      const dup = rs.filter((r) => r.status === "duplicate").length;
+      const err = rs.filter((r) => r.status === "error").length;
+      if (fixed > 0) toast("success", `Đã sửa luôn ${fixed} câu gốc trong ngân hàng (và các đề đang dùng câu đó).`);
+      if (dup > 0) toast("error", `${dup} câu sau khi sửa trùng một câu khác trong ngân hàng — ngân hàng giữ nguyên, cần xử lý tay.`);
+      if (err > 0) toast("error", `Không cập nhật được ngân hàng cho ${err} câu (chỉ bản nháp đã sửa).`);
+    });
   }
 
   async function handleFile(file: File) {

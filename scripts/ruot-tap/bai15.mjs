@@ -1,12 +1,12 @@
 // Ruột tập VL12 – Bài 15 · Năng lượng liên kết hạt nhân (lesson id 16). Khung chung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai15.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai15.pdf
 import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
-const K = khoiTao({ bai: 15, lid: 16, ten: 'NĂNG LƯỢNG LIÊN KẾT HẠT NHÂN' });
+const K = khoiTao({ bai: 18, baiDau: 17, lid: 16, ten: 'NĂNG LƯỢNG LIÊN KẾT HẠT NHÂN' });
 const { head, h3, card, foot } = K;
 const fs = (fig, w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 
 const p1 = `<section class="page">
-${head('BÀI 15 · NĂNG LƯỢNG LIÊN KẾT HẠT NHÂN', K.sub)}
+${head('BÀI 18 · NĂNG LƯỢNG LIÊN KẾT HẠT NHÂN', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>lực hạt nhân</b> giữ các nuclôn và vì sao hạt nhân không bung ra</div>
