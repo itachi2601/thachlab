@@ -49,10 +49,10 @@ for r in (40, 75, 110):
     b += chevron(cx, cy - r, -1, 0, BLUE, 1.8, 11)         # trên: sang trái
 b += f'<circle cx="{cx}" cy="{cy}" r="15" fill="rgba(251,146,60,.18)" stroke="{ORG}" stroke-width="2.5"/>'
 b += f'<circle cx="{cx}" cy="{cy}" r="4.5" fill="{ORG}"/>'
-b += text(cx - 22, cy + 30, "I", OTXT, 16, "end", "700")
+b += text(cx - 20, cy + 25, "I", OTXT, 16, "end", "700")
 mx = cx + 110
 b += line(cx, cy, mx, cy, "currentColor", 1.5, "4 4")
-b += text((cx + mx) / 2 + 12, cy + 20, "r", "currentColor", 16, "middle", "700")
+b += text((cx + mx) / 2 - 2, cy + 20, "r", "currentColor", 16, "middle", "700")
 b += f'<circle cx="{mx}" cy="{cy}" r="4.5" fill="currentColor"/>'
 b += text(mx + 10, cy + 22, "M", "currentColor", 16, "start", "700")
 b += arrow("f1", "b", mx, cy, mx, cy - 62, 3)
@@ -78,7 +78,7 @@ def panel(x0, down2, title):
     s = -1 if not down2 else 1        # hướng lực lên dây 2 theo x
     g += arrow("f2", "r", x2, 140, x2 + 34 * s, 140, 3)
     g += arrow("f2", "r", x1, 140, x1 - 34 * s, 140, 3)
-    g += text(x2 + 34 * s + (8 if s > 0 else -8), 136, "F", RED, 15, "start" if s > 0 else "end", "700")
+    g += (text(x2 + 42, 136, "F", RED, 15, "start", "700") if s > 0 else text(x2 - 17, 126, "F", RED, 15, "middle", "700"))
     g += vao(x2 - 22, 190, 6)
     g += text(x2 - 32, 214, "B₁", BTXT, 14, "end", "700")
     g += text(x0 + 85, 250, "hút nhau" if not down2 else "đẩy nhau", RED, 15, "middle", "700")
@@ -101,18 +101,18 @@ ccx = kx + R
 b = ""
 for gx in range(80, 361, 56):
     for gy in range(62, 200, 46):
-        if abs(((gx - ccx) ** 2 + (gy - py) ** 2) ** 0.5 - R) < 22 or (abs(gx - ccx) < 30 and abs(gy - py) < 40):
+        if abs(((gx - ccx) ** 2 + (gy - py) ** 2) ** 0.5 - R) < 22 or (abs(gx - ccx) < 30 and abs(gy - py) < 80):
             continue
         b += ra(gx, gy, 7, BLUE, 1.6)
 b += f'<rect x="60" y="40" width="310" height="180" fill="none" stroke="{BLUE}" stroke-width="1.2" stroke-dasharray="3 4"/>'
-b += text(352, 60, "B", BTXT, 16, "end", "700")
+b += text(372, 32, "B", BTXT, 16, "end", "700")
 b += line(40, py, 380, py, "currentColor", 4)                        # phim
 b += text(380, py + 22, "phim", "currentColor", 14, "end", "600")
 b += f'<path d="M{kx},{py} A{R},{R} 0 0 1 {kx + 2 * R},{py}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-dasharray="7 5"/>'
-b += chevron(ccx, py - R, 1, 0, "currentColor", 2.2, 11)
+b += chevron(ccx + R * 0.7071, py - R * 0.7071, 0.7071, 0.7071, "currentColor", 2.2, 11)
 b += f'<rect x="{kx - 9}" y="{py - 3}" width="18" height="7" fill="var(--surface, #fff)" stroke="none"/>'   # khe hở trên phim
-b += line(kx, py + 50, kx, py + 4, ORG, 1.6, "4 3")
-b += text(kx - 12, py + 44, "U", OTXT, 15, "end", "700")
+b += line(kx, py + 56, kx, py + 38, ORG, 1.6, "4 3")
+b += text(kx - 12, py + 54, "U", OTXT, 15, "end", "700")
 b += f'<circle cx="{ccx}" cy="{py - R}" r="10" fill="rgba(148,163,184,.25)" stroke="currentColor" stroke-width="2"/>'
 b += text(ccx, py - R + 5, "+", "currentColor", 15, "middle", "800")
 b += arrow("f3", "g", ccx + 12, py - R, ccx + 64, py - R, 3)
@@ -137,7 +137,7 @@ yt, yb, rx = 70, 200, 250
 b = ""
 for gx in range(95, 361, 52):
     for gy in (100, 135, 170):
-        if abs(gx - rx) < 30:
+        if abs(gx - rx) < 30 or (gx, gy) in ((199, 135), (355, 100)):
             continue
         b += vao(gx, gy, 6, BLUE, 1.8)
 b += text(372, 100, "B", BTXT, 16, "end", "700")
@@ -153,7 +153,7 @@ b += text(rx + 66, yt - 25, "v", GRN, 16, "start", "700")
 b += arrow("f4", "r", rx - 8, 135, rx - 62, 135, 3)
 b += text(rx - 66, 130, "F", RED, 16, "end", "700")
 b += line(rx - 36, yt, rx - 36, 122, "currentColor", 1.2, "3 3") + line(rx - 36, 148, rx - 36, yb, "currentColor", 1.2, "3 3")
-b += text(rx - 42, 182, "ℓ", "currentColor", 16, "end", "700")
+b += text(rx - 30, 182, "ℓ", "currentColor", 16, "start", "700")
 b += arrow("f4", "o", 120, yt + 10, 90, yt + 10, 2)        # dòng chạy về R ở ray trên
 b += arrow("f4", "o", 90, yb - 10, 120, yb - 10, 2)        # và trở lại ở ray dưới
 fig4 = fig("0 0 400 230",
