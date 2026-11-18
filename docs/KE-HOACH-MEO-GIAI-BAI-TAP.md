@@ -127,7 +127,7 @@ trước kì thi. Không dạy loại trừ trong bài học.
 
 | Chặng | Việc | Điều kiện |
 |---|---|---|
-| 6 | Bảng tra Soát nhanh (4 kiểu · ví dụ · chỗ dễ sai) + quy tắc trong skill `soan-bai-tap-mau` | — |
+| 6 ✅ | Bảng tra Soát nhanh (4 kiểu · ví dụ · chỗ dễ sai) + quy tắc trong skill `soan-bai-tap-mau` — xong 18/11: `docs/BANG-MEO-GIAI.md` mục ✓ và ⚖, trường `buoc[].soat` (validator + UI, thay bước Kiểm tra, không tính vào `fading`) | — |
 | 7 | Thí điểm Soát nhanh một chương đang dạy (2–3 bài, ~8 dạng), `kiem-code` soát, đăng sau 22h. Đề xuất: L12 Ch.1 Nhiệt (đã có 💡 ở lesson 2, 5) — thầy chưa chốt chương | sau chặng 6 |
 | 8 | Lập tỉ số cho dạng tỉ lệ, ưu tiên dạng sai nhiều theo `question_dang` | song song chặng 7 |
 | 9 | Đo 2–3 tuần bằng `similar_practice_attempts` (dạng có/chưa có Soát nhanh cùng chương); không cải thiện thì gỡ | sau chặng 7 |

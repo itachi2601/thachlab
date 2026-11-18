@@ -14,9 +14,9 @@ import type { LessonWorkedQuestion, WorkedChoice, WorkedFading, WorkedStep } fro
 
 /** Bước nào bị giấu (bước không có câu hỏi, như Kiểm tra, không giấu). Giữ khớp với hiddenSteps trong skill scripts/lib.ts. */
 export function hiddenSteps(fading: WorkedFading | undefined, steps: WorkedStep[]): boolean[] {
-  const last = steps.map((s) => !!s.hoi).lastIndexOf(true);
+  const last = steps.map((s) => !!s.hoi && !s.soat).lastIndexOf(true); // bước Soát nhanh không tính là "bước cuối"
   return steps.map((s, i) =>
-    !s.hoi ? false : fading === "giau_het" ? true : fading === "giau_tu_buoc_2" ? i >= 1 : fading === "giau_buoc_cuoi" ? i === last : false,
+    !s.hoi ? false : s.soat ? true : fading === "giau_het" ? true : fading === "giau_tu_buoc_2" ? i >= 1 : fading === "giau_buoc_cuoi" ? i === last : false,
   );
 }
 
