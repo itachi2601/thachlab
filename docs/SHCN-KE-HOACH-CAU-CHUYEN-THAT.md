@@ -2,6 +2,12 @@
 
 Soạn 18/11/2026. Bổ sung cho `docs/SHCN-CHUONG-TRINH-3-NAM.md` — không đổi thứ tự bài, không bỏ nhân vật giả định.
 
+> **Đổi thứ tự (thầy chốt 18/11/2026):** làm **giai đoạn 1 — chuyện có thật sưu tầm trên mạng** trước, đưa ngay vào 29 suất
+> (mục `## Chuyện có thật` trong bài SV: kể lại tóm tắt bằng lời mình, ngôi thứ ba, ≤180 chữ, ghi nguồn + link; không chép
+> nguyên văn báo). **Giai đoạn 2:** thầy họp GVCN, trình chương trình đã có chuyện; thầy cô góp ý, đề xuất chuyện của chính mình
+> theo phiếu ở `content/shcn-3-nam/chuyen-that/phieu-va-tin-moi.md`. Chuyện thầy cô kể (mục `## Người đi trước kể`) được ưu tiên
+> hơn chuyện báo chí ở cùng suất — gần SV hơn; chuyện báo chí khi đó giữ làm đọc thêm hoặc bỏ.
+
 ## 1. Hiện trạng (đã kiểm)
 
 - 96 bài (6 HK × 16 tiết) đã soạn đủ ở `content/shcn-3-nam/hk*/b??.{sv,gv}.md`, phủ đủ mục con 12 chủ đề.
