@@ -92,7 +92,7 @@
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
 - [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — bản 1 chốt 14/11, chờ in giấy
 - [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài, chờ in thử
-- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–9 đã đăng 18/11; treo sửa hộp exp lộ đáp án
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–9 + sửa hộp exp đã đăng 18/11
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — L12 b4 đã đăng 18/11; đo từ 19/11
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
@@ -105,3 +105,4 @@
 - [Rà soát Ch.1 L12 31/10](project_thachlab_l12_ra_soat_ch1_2026_10_31.md) — chờ deploy; treo video iốt
 - [Hình nam châm chuẩn](feedback_hinh_nam_cham_chuan.md) — dùng u_magnet/bar_magnet trong svg_lib.py
 - [WorldSkills 2026 dịch](project_worldskills_2026_dich.md) — 16 bài đã lên; chờ soát bậc 1
+- [Ứng dụng tập + chương trình A/B/C](project_thachlab_tap_luyen.md) — tăng ngực–vai 18/11; /tai-khoan/tap-luyen
