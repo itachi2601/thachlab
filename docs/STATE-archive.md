@@ -907,3 +907,9 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 ## Chuyển từ STATE.md 17/11/2026 (clip L12 lô 1+2 đã đăng DB 16/11)
 - Clip L12 lô 2 (14/11, 9 clip bài 11/12/14/125/18/19): đã tải lesson-clips -20261114 + chèn repo + khung; CHỜ THẦY DUYỆT rồi đăng DB `--chi-video` sau 22h — sổ `so-clip-anh-dong.md`.
 - Clip TN tự dựng L12 Ch.1–2 lô 1 (8 clip, bài 2/3/4/6/7): đã tải Storage -20261114 + chèn repo + khung, thầy duyệt, ĐÃ ĐĂNG DB 16/11 (cùng lô 2) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+## Chuyển ra khi rút gọn STATE.md 18/11/2026 (đợt 2 dọn tồn đọng)
+
+- `20261028100000_bai_tap_ngay`: ĐÃ XONG: migration chạy; script tạo đề chạy 28/10 (5 đề 1289–1293 "Ngày 1–5", published, buổi tự học lớp 19 = review_sessions 26; kiểm DB 14/11). KHÔNG chạy lại `--yes`. Còn chưa rõ: deploy `ClassRoster.tsx`.
+- Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; L10 Ch.3 (`?chuong=12&lop=lop-10`) đã deploy 11/11 chiều; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
+- Clip TN tự dựng L11 điện lô 4 (6 clip, bài 40/42/43/45): ĐÃ ĐĂNG DB 17/11 (`--chi-video --cho-phep-khac`, mục 201/207/210/216) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
