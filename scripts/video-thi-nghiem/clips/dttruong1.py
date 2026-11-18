@@ -69,13 +69,14 @@ def chevron(d, x, y, ang, color, s=16, w=4):
         d.line([(x, y), (x + s * math.cos(a), y + s * math.sin(a))], fill=color, width=w)
 
 def field(d, ny, alpha=1.0, cx=CX):
-    """Nam cham dung, cuc N o duoi (dau N tai y = ny). Cuc bo x (doc truc, + ve phia N) -> man hinh y = ny - x...
-    N o duoi: diem cuc bo (x, w) -> (cx + w, ny - x) voi x <= 0 phia S (len tren)."""
+    """Nam cham dung, cuc N o duoi (dau N tai y = ny), S o tren (y = ny - ML).
+    Diem cuc bo (x, w), x <= 0 la phia S -> man hinh (cx + w, ny + x): S nam TREN N, duong suc vong tu N len S.
+    (Ban 14/11 dung ny - x -> cuc S ao nam duoi N, duong suc bo quanh dau duoi: sai hinh dang, sua 18/11.)"""
     if alpha <= 0: return
     c = A(PURPLE, 0.5 * alpha)
     for ln in FIELD:
         for sg in (1, -1):
-            pts = [(cx + sg * w, ny - x) for x, w in ln]
+            pts = [(cx + sg * w, ny + x) for x, w in ln]
             dashed_poly(d, pts, c)
             k = max(range(len(pts)), key=lambda n: abs(pts[n][0] - cx))   # diem xa truc nhat: mui ten N -> S (di len)
             (x0, y0), (x1, y1) = pts[max(0, k - 3)], pts[min(len(pts) - 1, k + 3)]
