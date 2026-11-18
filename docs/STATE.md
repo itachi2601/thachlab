@@ -1,19 +1,16 @@
-# STATE — Hiện trạng ThachLab (rút gọn 30/10/2026)
+# STATE — Hiện trạng ThachLab (rút gọn 18/11/2026)
 
-File dùng chung, **nạp mỗi phiên — giữ dưới ~15 KB**: chỉ hiện trạng + việc ĐANG CHỜ, mỗi việc 1–2 dòng, chi tiết để ở
-`docs/memory/project_*.md`. Xong mục nào → chuyển nguyên văn sang `docs/STATE-archive.md`. Bản đầy đủ trước mỗi lần rút gọn
-nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …", mới nhất 30/10/2026) — grep ở đó khi cần chi tiết.
+Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dòng/việc). Xong → nguyên văn sang `docs/STATE-archive.md`; chi tiết ở `docs/memory/project_*.md`.
 
 ## Hạ tầng
 - Next.js App Router + TS + Tailwind v4, `output: "export"`, deploy `scripts/deploy.sh` → nhánh `deploy`.
-- Supabase `jgvbdbpvjdntdgzthumv` (Singapore, gói PRO từ 23/10, compute t3a.small). Sơ đồ: `docs/DATABASE.md`, RPC: `docs/DATABASE-RPC.md`.
-- KaTeX 0.17; học liệu tĩnh `public/data/` sinh ở `prebuild` CHỈ cho bài xem thử (`lessons.is_preview`: 2, 20, 46) — bài khác HS đọc thẳng DB, ghi `cap-nhat-ly-thuyet.sh` là lên ngay, chỉ deploy khi đổi CSS/code (kiểm 1/11 22h30).
-- Nền SÁNG mặc định (11/10), token `app/globals.css`, xem `docs/MAU-NEN-SANG.md`, thử `/dev/giao-dien`.
+- Supabase `jgvbdbpvjdntdgzthumv` (Singapore, gói PRO). Sơ đồ: `docs/DATABASE.md`, RPC: `docs/DATABASE-RPC.md`.
+- KaTeX 0.17; học liệu tĩnh `public/data/` sinh ở `prebuild` CHỈ cho bài xem thử (`lessons.is_preview`: 2, 20, 46) — bài khác HS đọc thẳng DB, ghi `cap-nhat-ly-thuyet.sh` là lên ngay, chỉ deploy khi đổi CSS/code.
+- Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
-## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`)
+## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - **Điểm học phần CNC (14/11)**: `20261114120000_cnc_diem_hoc_phan` ĐÃ CHẠY (bảng `cnc_grades`, RLS SV chỉ đọc dòng mình); 28 SV lớp 10 đã nạp điểm Tiện + gửi thông báo trỏ `/lop-hoc/cnc/bang-diem/`. **CHƯA DEPLOY** trang bảng điểm (commit 555da175f, nhánh claude/cnc-exam-design-5-machines-cec8be) — SV bấm thông báo sẽ 404 tới khi deploy. Điểm Phay chưa có (nạp bằng `scripts/gui-diem-thi-tien-cnc.mts` làm mẫu, module 'phay').
-- `20261028100000_bai_tap_ngay`: ĐÃ XONG: migration chạy; script tạo đề chạy 28/10 (5 đề 1289–1293 "Ngày 1–5", published, buổi tự học lớp 19 = review_sessions 26; kiểm DB 14/11). KHÔNG chạy lại `--yes`. Còn chưa rõ: deploy `ClassRoster.tsx`.
 - L11 5 đề 638/639/658/693/701: `fix_grade` ĐÃ ÁP (còn 1 câu 684939 grade 10). `20261006130000_gan_lai_chu_de_5_de_l11` CHƯA ÁP (123/129 câu còn lệch chủ đề; 94 câu mang chủ đề Newton/Hooke) và KHÔNG chạy trực tiếp được: 14/11 bị timeout 57014, trigger `trg_bank_tags_to_exams` → `sync_exam_to_bank` chạy lại cả đề; đã rollback sạch. Làm lại theo mẫu `lib/sua-dinh-dang.ts` (tắt `trg_exams_sync_bank`, sửa cả bank lẫn `exams.questions`, sau 22h).
 - L11 đề 701/638 (15/11 07:30): ĐÃ VÁ tên chủ đề trong `exams.questions` + dòng bank tương ứng (18 câu; dòng bank id ~1,51 triệu có `topic_id` NULL mà `topic_name` lớp 10 — lý do lần kiểm theo topic_id báo "sạch"). Toàn bank: 0 câu lớp 11 mang tên chủ đề chỉ có ở lớp 10. Sao lưu `bk_chu_de_701_638_20261115_exams`/`_bank`. Còn treo: 701 câu 16, 28 không có dòng bank (hash lệch); câu chủ đề rỗng (ngoài CT) chờ thầy. Nhánh `claude/charming-franklin-d3b51b` (memory + STATE 14/11) CHƯA vào main.
 - **Vá bảo mật 11/11**: 3 migration ĐÃ CHẠY (bước 2 lúc 12/11 06:40; `20261112070000` kiểm đầu vào điểm CNC lúc 12/11 08:15), client đã deploy; 12/11 đã bấm thử bằng tài khoản admin (sửa đề THPT/CTTC, `/lop-hoc/cnc`, dashboard GV: mọi request 200). Chưa thử bằng tài khoản HS/TA thật; chưa bấm nút nhắc làm bài. Script đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
@@ -21,7 +18,7 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - Còn lỗ cần chấm ở server (đổi client, thầy quyết): bài CNC chấm ở máy (dịch lệnh trả lời ngắn, điền khuyết, viết chương trình, checklist — đáp án nằm trong mã client), `practice_sessions.score`, `question_bank` lộ đáp án qua policy exit-quiz/diagnostic (chặng 4); mật khẩu mặc định = mã số HS.
 - **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.
 - **Ứng dụng tập `/tai-khoan/tap-luyen` (18/11)**: `20261118120000_tap_luyen` ĐÃ CHẠY 18/11 ~22:50 (bảng `workout_logs`, `body_measurements`, RLS chủ tài khoản, anon không đọc; log `scripts/logs/*tap_luyen.log` ở checkout chính). Đã deploy 18/11 ~23:00, mở được trên site bằng tài khoản thầy; chưa ghi buổi tập thật. Chương trình A/B/C ở `lib/tap-luyen/chuong-trinh.ts`.
-- Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
+- Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
 
 ## Chờ deploy / chờ thử thật
 - Dashboard GV CNC: tab "Buổi học" theo nhịp lớp đảo ngược (10/11, `TeacherFlipBoard`, xem thử `/dev/cnc-bang-buoi`) — ĐÃ DEPLOY 10/11 từ commit c9eb40921 (kèm `dac7911f7` đáp án sau 2 lượt + `d72917876` cổng G tính `final`; CHƯA gồm CTTC thanh đáy `db053cc45`). Mở được bằng tài khoản thầy với lớp CĐ CK 24A; chưa thử trong một buổi dạy thật.
@@ -81,5 +78,3 @@ nằm ở `STATE-archive.md` (mục "Bản STATE.md trước khi rút gọn …"
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
-- Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; L10 Ch.3 (`?chuong=12&lop=lop-10`) đã deploy 11/11 chiều; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
-- Clip TN tự dựng L11 điện lô 4 (6 clip, bài 40/42/43/45): ĐÃ ĐĂNG DB 17/11 (`--chi-video --cho-phep-khac`, mục 201/207/210/216) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
