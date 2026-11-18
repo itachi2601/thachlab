@@ -1,0 +1,127 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 16. Vòng năng lượng trên Trái Đất. Năng lượng hoá thạch",
+ "lesson_id": 94,
+ "nguon_trong_bai": "content/lesson-samples/l9-vong-nang-luong-hoa-thach/theory.html",
+ "id": "tn-l9-hoathach-03",
+ "ten": "Đổi nhiên liệu đun nấu: củi khô, than bùn, khí tự nhiên cho cùng nhiệt lượng",
+ "loai": "vi_du",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "hoathach.nhiet_toa_moi_kg",
+  "hoathach.uu_diem"
+ ],
+ "muc_tieu": "So khối lượng các nhiên liệu cần để cho cùng một nhiệt lượng; thấy nhiên liệu hoá thạch như khí tự nhiên toả nhiều nhiệt trên mỗi kg.",
+ "dung_cu": [
+  {
+   "ten": "Bảng nhiệt toả ra khi đốt cháy hoàn toàn 1 kg nhiên liệu",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Tính nhiệt toả ra khi đốt 1,8 kg than bùn.",
+   "Chia nhiệt ấy cho nhiệt toả ra của 1 kg củi khô, 1 kg khí tự nhiên."
+  ],
+  "quan_sat": [
+   "1,8 kg than bùn cho 25,2 MJ.",
+   "Cần 2,52 kg củi khô hoặc 0,57 kg khí tự nhiên."
+  ],
+  "rut_ra": [
+   "Cùng nhiệt lượng, khí tự nhiên cần ít khối lượng nhất: một ưu điểm của nhiên liệu hoá thạch."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "m_tb",
+   "ten": "Khối lượng than bùn mỗi ngày",
+   "don_vi": "kg",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 5,
+   "mac_dinh": 1.8,
+   "buoc": 0.1
+  },
+  {
+   "ky_hieu": "q_cui",
+   "ten": "Nhiệt toả ra của 1 kg củi khô",
+   "don_vi": "MJ/kg",
+   "kieu": "co_dinh",
+   "gia_tri": 10
+  },
+  {
+   "ky_hieu": "q_tb",
+   "ten": "Nhiệt toả ra của 1 kg than bùn",
+   "don_vi": "MJ/kg",
+   "kieu": "co_dinh",
+   "gia_tri": 14
+  },
+  {
+   "ky_hieu": "q_khi",
+   "ten": "Nhiệt toả ra của 1 kg khí tự nhiên",
+   "don_vi": "MJ/kg",
+   "kieu": "co_dinh",
+   "gia_tri": 44
+  },
+  {
+   "ky_hieu": "m_cui",
+   "ten": "Khối lượng củi khô tương đương",
+   "don_vi": "kg",
+   "kieu": "tinh_ra"
+  },
+  {
+   "ky_hieu": "m_khi",
+   "ten": "Khối lượng khí tự nhiên tương đương",
+   "don_vi": "kg",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Q = m_tb·q_tb",
+   "m_cui = Q/q_cui",
+   "m_khi = Q/q_khi"
+  ],
+  "gia_thiet": [
+   "đốt cháy hoàn toàn",
+   "hiệu suất bếp như nhau với mọi nhiên liệu",
+   "số liệu nhiệt toả ra lấy từ bảng trong tài liệu KHTN 9 (Kết nối tri thức)"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Nhiên liệu",
+   "Nhiệt toả ra (MJ/kg)",
+   "Khối lượng cho 25,2 MJ (kg)"
+  ],
+  "hang": [
+   [
+    "than bùn",
+    14,
+    1.8
+   ],
+   [
+    "củi khô",
+    10,
+    2.52
+   ],
+   [
+    "khí tự nhiên",
+    44,
+    0.573
+   ]
+  ],
+  "ghi_chu": "Tính từ bảng số liệu của tài liệu nguồn."
+ },
+ "ket_qua_ky_vong": "Củi khô 2,52 kg, khí tự nhiên khoảng 0,57 kg.",
+ "hien_tuong_hay_sai": [
+  "Nhân thay vì chia khi đổi sang nhiên liệu khác.",
+  "Nghĩ nhiên liệu nặng hơn thì toả nhiều nhiệt hơn."
+ ],
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Kéo khối lượng than bùn, ba cột khối lượng nhiên liệu tương đương đổi theo.",
+  "diem_nhan": "Khí tự nhiên cần ít khối lượng nhất cho cùng nhiệt lượng."
+ }
+}

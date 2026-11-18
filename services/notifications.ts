@@ -23,14 +23,25 @@ export async function fetchNotifications(limit = 50): Promise<Notification[]> {
   return (data ?? []) as Notification[];
 }
 
-export async function fetchUnreadCount(): Promise<number> {
-  const { data, error } = await getSupabase().rpc("unread_notification_count");
-  if (error) return 0;
-  return Number(data ?? 0);
+// Chuông (NotificationBell) và thanh tab dưới (MobileTabBar) cùng hỏi lúc mở trang → dùng chung một lượt
+// RPC trong 3 giây; sau khi đánh dấu đã đọc/xoá thì bỏ bản nhớ để lượt hỏi kế tiếp lấy số mới.
+const UNREAD_SHARE_MS = 3000;
+let unreadShared: { at: number; value: Promise<number> } | null = null;
+
+export function fetchUnreadCount(): Promise<number> {
+  if (unreadShared && Date.now() - unreadShared.at < UNREAD_SHARE_MS) return unreadShared.value;
+  const value = (async () => {
+    const { data, error } = await getSupabase().rpc("unread_notification_count");
+    if (error) return 0;
+    return Number(data ?? 0);
+  })();
+  unreadShared = { at: Date.now(), value };
+  return value;
 }
 
 export async function markRead(ids: number[]): Promise<void> {
   if (ids.length === 0) return;
+  unreadShared = null;
   const { error } = await getSupabase()
     .from("notifications")
     .update({ read_at: new Date().toISOString() })
@@ -40,6 +51,7 @@ export async function markRead(ids: number[]): Promise<void> {
 }
 
 export async function markAllRead(): Promise<void> {
+  unreadShared = null;
   const { error } = await getSupabase()
     .from("notifications")
     .update({ read_at: new Date().toISOString() })
@@ -48,6 +60,7 @@ export async function markAllRead(): Promise<void> {
 }
 
 export async function deleteNotification(id: number): Promise<void> {
+  unreadShared = null;
   const { error } = await getSupabase().from("notifications").delete().eq("id", id);
   if (error) throw error;
 }

@@ -104,7 +104,7 @@
     440.5
    ]
   ],
-  "ghi_chu": "Số minh hoạ sinh từ mô hình f = 440 Hz với sai số đọc thời gian cỡ 0,1 ms; không phải số đo thật."
+  "ghi_chu": "Số minh hoạ sinh từ mô hình f = 440 Hz với sai số đọc thời gian cỡ 0,1 ms; không phải số đo thật. Câu chốt clip tự dựng (clips/dotansoam2.py): chỉ đếm N = 2 chu kì, đọc t vẫn lệch 0,1 ms → f lệch cỡ 10 Hz (2/4,445 ms = 449,9 Hz; 2/4,645 ms = 430,6 Hz); đếm N = 10 chu kì chỉ lệch cỡ 2 Hz (10/22,627 ms = 441,9 Hz)."
  },
  "ket_qua_ky_vong": "f ≈ 440,5 Hz, cùng nguyên lý với dao động kí.",
  "hien_tuong_hay_sai": [
@@ -124,5 +124,15 @@
   ],
   "hinh_trong_bai": null,
   "y_tuong": "Kéo hai mốc đầu và cuối đoạn, hiện t và f = N/t."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotansoam-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dotansoam-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "đếm 10 chu kì trên bản ghi âm thoa",
+  "nhin_vao": "Thời gian 10 chu kì đọc được ở ba đoạn khác nhau.",
+  "giay": 49,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

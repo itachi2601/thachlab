@@ -34,6 +34,8 @@ interface StaticCatalog {
   classes: SchoolClass[];
   chapters: Chapter[];
   lessons: LessonWithItemRefs[];
+  /** Bài có file tĩnh lessons/<id>.json (bài xem thử). Bản dựng cũ không có trường này → cứ thử tải. */
+  staticLessonIds?: number[];
 }
 
 type StaticItem = LessonItem & { questions_count?: number };
@@ -219,14 +221,25 @@ const lessonPromises = new Map<number, Promise<StaticLesson | null>>();
 function loadStaticLesson(id: number): Promise<StaticLesson | null> {
   let p = lessonPromises.get(id);
   if (!p) {
-    p = fetchStaticJson<StaticLesson>(`/lessons/${id}.json`).then((file) => {
-      if (!file || !file.lesson || file.lesson.id !== id || !Array.isArray(file.items)) return null;
-      return {
-        ...file,
-        lesson: { ...file.lesson, lesson_kind: normalizeLessonKind(file.lesson.lesson_kind), itemCount: file.items.length },
-        items: file.items.map((it) => normalizeItem(it as unknown as Record<string, unknown>)),
-      };
-    });
+    p = loadCatalog()
+      .then((cat) =>
+        // Danh mục cho biết bài không có file tĩnh → bỏ qua, khỏi tốn một lượt 404 trước khi hỏi Supabase.
+        Array.isArray(cat?.staticLessonIds) && !cat.staticLessonIds.includes(id)
+          ? null
+          : fetchStaticJson<StaticLesson>(`/lessons/${id}.json`),
+      )
+      .then((file) => {
+        if (!file || !file.lesson || file.lesson.id !== id || !Array.isArray(file.items)) return null;
+        return {
+          ...file,
+          lesson: {
+            ...file.lesson,
+            lesson_kind: normalizeLessonKind(file.lesson.lesson_kind),
+            itemCount: file.items.length,
+          },
+          items: file.items.map((it) => normalizeItem(it as unknown as Record<string, unknown>)),
+        };
+      });
     lessonPromises.set(id, p);
   }
   return p;
@@ -325,7 +338,10 @@ function revalidateLesson(id: number, file: StaticLesson): Promise<LessonBundle 
           };
         }
         if (meta === null) return null;
-        if (lessonKey(meta.lesson, meta.chapterTitle, meta.items) !== lessonKey(file.lesson, file.chapterTitle, file.items)) {
+        if (
+          lessonKey(meta.lesson, meta.chapterTitle, meta.items) !==
+          lessonKey(file.lesson, file.chapterTitle, file.items)
+        ) {
           return fetchLessonWithItems(id); // đã khác → lấy trọn bản mới (có body_html)
         }
         const questionsById = new Map(meta.items.map((it) => [it.id, it.questions]));
