@@ -94,7 +94,7 @@
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
 - [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — chờ in giấy
 - [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài, chờ in thử
-- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–10 đã đăng DB (19/11); kho hết TN cần dựng
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–11 đã đăng DB (19/11); 2 YouTube nghi sai chờ thầy
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — đo từ 19/11
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy
