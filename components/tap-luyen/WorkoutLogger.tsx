@@ -1,13 +1,15 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowDown, ArrowUp, Check, MoreVertical, Plus, Repeat2, Timer, Trash2, TrendingUp, X } from "lucide-react";
-import { EXERCISES, exerciseById, type Exercise } from "@/lib/tap-luyen/chuong-trinh";
+import { exerciseById, type Exercise } from "@/lib/tap-luyen/chuong-trinh";
 import { lastSetsOf, workoutStats, fmtKg, type Draft, type LoggedExercise, type LoggedSet, type Workout } from "@/lib/tap-luyen/store";
 import { NumInput, fmtClock, vn } from "./ui";
 
 type Props = {
   draft: Draft;
   history: Workout[];
+  /** danh sách bài cho "Thêm bài" (theo chương trình của người dùng) */
+  exercises: Exercise[];
   onChange: (d: Draft) => void;
   onFinish: (d: Draft) => void;
   onDiscard: () => void;
@@ -32,7 +34,7 @@ function beep() {
   }
 }
 
-export default function WorkoutLogger({ draft, history, onChange, onFinish, onDiscard }: Props) {
+export default function WorkoutLogger({ draft, history, exercises, onChange, onFinish, onDiscard }: Props) {
   const [now, setNow] = useState(() => Date.now());
   const [rest, setRest] = useState<{ endsAt: number; total: number } | null>(null);
   const [picker, setPicker] = useState<{ mode: "add" } | { mode: "replace"; idx: number } | null>(null);
@@ -115,7 +117,7 @@ export default function WorkoutLogger({ draft, history, onChange, onFinish, onDi
           <div className="min-w-0 flex-1">
             <p className="truncate text-sm font-bold text-ink">{draft.title}</p>
             <p className="text-xs tabular-nums text-muted">
-              {fmtClock(elapsed)} · {vn(stats.volume, 0)} kg · {stats.sets}/{totalSets} hiệp
+              {fmtClock(elapsed)}{stats.volume > 0 ? ` · ${vn(stats.volume, 0)} kg` : ""} · {stats.sets}/{totalSets} hiệp
             </p>
           </div>
           <button type="button" onClick={finish} className="min-h-11 rounded-xl bg-ok px-4 text-sm font-bold text-white">
@@ -169,6 +171,7 @@ export default function WorkoutLogger({ draft, history, onChange, onFinish, onDi
 
       {picker && (
         <ExercisePicker
+          exercises={exercises}
           onClose={() => setPicker(null)}
           onPick={(x) => {
             const prev = lastSetsOf(history, x.id).filter((s) => s.kind === "n");
@@ -236,10 +239,10 @@ function ExerciseCard({
       {hit && track !== "reps" && (
         <p className="mt-2 flex items-center gap-1.5 rounded-lg bg-primary-soft px-2 py-1.5 text-xs font-semibold text-primary">
           <TrendingUp size={14} />
-          {track === "time" ? "Lần trước đủ giây mọi hiệp → giữ lâu hơn 5–10 giây." : `Lần trước chạm ${e.hi} lần mọi hiệp → tăng ${fmtKg(meta?.step ?? 2.5)} kg, quay về ${e.lo} lần.`}
+          {track === "time" ? `Lần trước đủ giây mọi hiệp → ${meta?.harder ?? "giữ lâu hơn 5–10 giây."}` : `Lần trước chạm ${e.hi} lần mọi hiệp → tăng ${fmtKg(meta?.step ?? 2.5)} kg, quay về ${e.lo} lần.`}
         </p>
       )}
-      {hit && track === "reps" && <p className="mt-2 rounded-lg bg-primary-soft px-2 py-1.5 text-xs font-semibold text-primary">Lần trước đủ lần mọi hiệp → làm khó hơn (bớt hỗ trợ, nhảy cao hơn).</p>}
+      {hit && track === "reps" && <p className="mt-2 rounded-lg bg-primary-soft px-2 py-1.5 text-xs font-semibold text-primary">Lần trước đủ lần mọi hiệp → {meta?.harder ?? "làm khó hơn (bớt hỗ trợ, nhảy cao hơn)."}</p>}
 
       <input
         value={e.note ?? ""}
@@ -324,14 +327,14 @@ function MenuBtn({ icon, children, onClick, danger }: { icon: React.ReactNode; c
   );
 }
 
-function ExercisePicker({ onPick, onClose }: { onPick: (x: Exercise) => void; onClose: () => void }) {
+function ExercisePicker({ exercises, onPick, onClose }: { exercises: Exercise[]; onPick: (x: Exercise) => void; onClose: () => void }) {
   const [q, setQ] = useState("");
   const groups = useMemo(() => {
     const k = q.trim().toLowerCase();
     const m = new Map<string, Exercise[]>();
-    for (const x of EXERCISES) if (!k || x.name.toLowerCase().includes(k) || x.group.toLowerCase().includes(k)) m.set(x.group, [...(m.get(x.group) ?? []), x]);
+    for (const x of exercises) if (!k || x.name.toLowerCase().includes(k) || x.group.toLowerCase().includes(k)) m.set(x.group, [...(m.get(x.group) ?? []), x]);
     return [...m.entries()];
-  }, [q]);
+  }, [q, exercises]);
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-bg" role="dialog" aria-modal="true" aria-label="Chọn bài tập">
       <div className="flex items-center gap-2 border-b border-line bg-panel-deep px-4 py-2">
