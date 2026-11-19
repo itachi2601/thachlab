@@ -2,21 +2,22 @@
 # So lieu lay nguyen tu content/thi-nghiem/tn-l9-langkinh-01.json (_kiem_so()):
 #   tham_so A = 60 do, n = 1,5 ; so_lieu_mau (i, D): 30 47,1 | 40 38,5 | 45 37,4 | 50 37,2 | 60 38,9 | 70 42,9.
 #   D = i + i2 - A "dung cho mo phong, khong day o lop 9" -> clip KHONG viet cong thuc D, chi "do bang thuoc do goc".
-# Du doan (K10, khong nut A-D): tang dan i tu 30 toi 70 do, goc lech D thay doi the nao?
-#   (tang dan / giam dan / giam roi tang lai / khong doi) -> dap an: giam roi tang lai (nho nhat trong bang o 50 do).
+# Du doan (K10, khong nut A-D): tang dan i tu 30 toi 70 do, tia lo lech ve phia nao so voi huong tia toi?
+#   (ve day / ve canh (dinh) / khong lech / tuy goc toi) -> dap an: ve day, ca 6 lan.
+#   KHONG hoi D giam roi tang (can goc lech cuc tieu, ngoai KHTN 9): bang chi giu cot D, khong nhan "nho nhat".
 #   Khong trung cau Tu kiem tra: C1 (mat thu hai: xa phap tuyen) -> clip KHONG noi tia lo gan/xa phap tuyen;
-#   C4 (lang kinh lat nguoc) ; C5 (thu tu mau) ; C6 (A = 20 do).
+#   C4 (lang kinh dat nguoc, laser nam ngang -> len/xuong) -> THU NGHI dung lang kinh xoay day sang phai, laser chieu
+#   tu tren xuong; C5 (thu tu mau) ; C6 (A = 20 do).
 # Hinh: lang kinh deu dinh tren, day duoi; diem toi E co dinh tren mat trai, xoay but laser. Duong tia tinh bang Snell
 #   (sin i = n sin r1 ; r2 = A - r1 ; sin i2 = n sin r2) va do D tu chinh hai huong ve -> assert khop kho (< 0,06 do),
 #   tia lo ra o mat phai (khong cham day), lech ve phia day (quay xuoi chieu kim dong ho = xuong).
 # Bay = hien_tuong_hay_sai[1] (ve tia di thang). KHONG dung [0] (lech ve dinh, gan Cau 4) va [2] (= dap an Cau 1).
 # Chua noi duoc = ghi_chu kho (so lieu minh hoa, n gia dinh).
-# THU NGHI: i = 35 do -> D lon hon hay nho hon luc 45 do? Dap an lon hon (D(35) = 41,0 > 37,4; ghi vao ghi_chu kho).
+# THU NGHI: xoay lang kinh cho day quay sang phai, chieu laser tu tren xuong -> tia lo lech sang phai (ve phia day).
 from engine import *
 
 AXD, N = 60.0, 1.5
 ROWS = [(30, "47,1"), (40, "38,5"), (45, "37,4"), (50, "37,2"), (60, "38,9"), (70, "42,9")]
-CHOT_I = 35
 GLASS = (191, 219, 254); BEAM = (220, 38, 38); DRED = (185, 28, 28); DGREEN = (10, 110, 50)
 
 P = (470.0, 330.0); SIDE = 440.0
@@ -60,10 +61,7 @@ def _kiem():
         assert 0.05 < tt < 0.95, (i, tt)                      # tia ra o mat ben phai, khong cham day
         r1 = math.degrees(math.asin(math.sin(math.radians(i)) / N))
         assert r1 < i                                         # vao thuy tinh: gan phap tuyen
-    mins = min(ROWS, key=lambda r: float(r[1].replace(",", ".")))
-    assert mins[0] == 50
-    d35 = path(CHOT_I)[3]; assert abs(d35 - 41.0) < 0.06 and d35 > 37.4
-    assert "i = 35°" in k["so_lieu_mau"]["ghi_chu"]
+    assert "đáy quay sang phải" in k["so_lieu_mau"]["ghi_chu"]
 _kiem()
 
 
@@ -125,21 +123,13 @@ def readout(d, i, ds):
 
 
 XS = (300, 640)
-def table(d, n, y0=990, hl=-1, trend=0.0):
+def table(d, n, y0=990):
     card(d, (60, y0, 1020, y0 + 92 + 6 * 60 + 18), fill=WHITE, outline=LIGHT, w=3)
     text(d, (XS[0], y0 + 48), "i", 44, NAVY); text(d, (XS[1], y0 + 48), "D (thước đo góc)", 42, (176, 64, 8))
     d.line([(90, y0 + 88), (990, y0 + 88)], fill=LIGHT, width=3)
     for j in range(n):
         i, ds = ROWS[j]; yy = y0 + 122 + 60 * j
-        if j == hl: d.rounded_rectangle([80, yy - 28, 1000, yy + 28], radius=14, fill=(255, 237, 213))
         text(d, (XS[0], yy), f"{i}°", 44, INK); text(d, (XS[1], yy), f"{ds}°", 44, INK)
-        if trend > 0 and j > 0:
-            down = float(ds.replace(",", ".")) < float(ROWS[j - 1][1].replace(",", "."))
-            x = 860; y1, y2 = yy - 60 + 14, yy - 14
-            col = A(BLUE if down else ORANGE, trend)
-            arrow(d, (x, y1 if down else y2), (x, y2 if down else y1), col, w=5, head=14)
-    if trend > 0 and hl >= 0:
-        text(d, (XS[1] + 110, y0 + 122 + 60 * hl), "nhỏ nhất", 38, (176, 64, 8), anchor="lm", alpha=trend)
 
 
 # ---------------- canh 1: Du doan ----------------
@@ -153,7 +143,7 @@ def s_hook(img, d, t, sc):
     pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
     card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=32)
     text(d, (W / 2, y0 + 56), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    for j, s in enumerate(("Tăng dần góc tới i", "từ 30° tới 70°.", "Góc lệch D thay đổi thế nào?")):
+    for j, s in enumerate(("Tăng dần góc tới i từ 30° tới 70°.", "Tia ló lệch về phía nào", "so với hướng tia tới?")):
         text(d, (W / 2, y0 + 160 + j * 76), s, 48, INK, alpha=a)
     text(d, (W / 2, y0 + 420), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)
     tc, tend = M[1] + 0.5, sc["T"] - 0.2
@@ -164,7 +154,7 @@ def s_hook(img, d, t, sc):
 
 
 # ---------------- canh 2: Tien hanh ----------------
-T0, DT, ROT, READ, ROW = 0.6, 1.5, 0.5, 0.9, 1.2
+T0, DT, ROT, READ, ROW = 0.6, 1.5, 0.5, 0.9, 0.9
 def do_state(t):
     rows, ang, k_on = 0, ROWS[0][0], -1
     for k, (i, _) in enumerate(ROWS):
@@ -178,11 +168,18 @@ def do_state(t):
     return ang, k_on, rows
 
 
+def card_state(ang, k_on, rows):
+    """(i hien, D hien hoac None). Laser con dung o goc hang vua ghi -> giu so cua hang do (khop bang)."""
+    if k_on >= 0: return ROWS[k_on][0], ROWS[k_on][1]
+    if rows > 0 and abs(ang - ROWS[rows - 1][0]) < 0.5: return ROWS[rows - 1][0], ROWS[rows - 1][1]
+    return round(ang), None
+
+
 def s_do(img, d, t, sc):
     ang, k_on, rows = do_state(t)
     prism(d); normal_E(d)
     ray(d, ang, arc=k_on >= 0, lab=None)
-    readout(d, round(ang) if k_on < 0 else ROWS[k_on][0], ROWS[k_on][1] if k_on >= 0 else None)
+    readout(d, *card_state(ang, k_on, rows))
     table(d, rows)
 
 
@@ -194,6 +191,9 @@ def _kiem_dong_bo():
         if k_on >= 0:
             if abs(ang - ROWS[k_on][0]) > 1e-9: bad.append((round(t, 2), "D hien khi chua dung"))
             if num(path(ang)[3]) != ROWS[k_on][1]: bad.append((round(t, 2), "D lech hinh"))
+        ci, cd = card_state(ang, k_on, rows)
+        if cd is not None and (ci, cd) not in ROWS[:rows]: bad.append((round(t, 2), "the D co so ma bang chua ghi"))
+        if cd is None and any(r[0] == ci for r in ROWS[:rows]): bad.append((round(t, 2), "the D = … o goc da ghi"))
         if rows > 0:
             done = max(k for k in range(6) if t >= T0 + DT * k)
             if rows > done + 1: bad.append((round(t, 2), "hang som"))
@@ -218,11 +218,12 @@ def s_dapan(img, d, t, sc):
             th_in, X, th_out, D, _ = path(i); vo = u(th_out)
             d.line([X, (X[0] + LOUT * vo[0], X[1] + LOUT * vo[1])], fill=A(BEAM, 0.35 * k2), width=3)
     ray(d, 50)
-    pill(d, "ĐÁP ÁN: D giảm rồi tăng lại", 870, appear(t, 0.15, 0.4))
-    table(d, 6, hl=3, trend=appear(t, 0.6, 0.45))
+    pill(d, "ĐÁP ÁN: lệch về phía đáy", 870, appear(t, 0.15, 0.4))
+    table(d, 6)
     if k2 > 0:
-        card(d, (90, 1580, 990, 1660), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
-        text(d, (W / 2, 1620), "Cả 6 lần: tia ló ngả về phía đáy", 44, DGREEN, alpha=k2)
+        card(d, (90, 1560, 990, 1730), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
+        text(d, (W / 2, 1610), "Cả 6 lần: ngả về phía đáy", 44, DGREEN, alpha=k2)
+        text(d, (W / 2, 1685), "Đáy ở đâu thì tia lệch về đó", 44, DGREEN, alpha=k2)
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
@@ -266,13 +267,12 @@ def s_end(img, d, t, sc):
     card(d, (W / 2 - pw / 2, 630, W / 2 + pw / 2, 694), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 662), "THỬ NGHĨ", 40, WHITE, alpha=k1)
     kq = appear(t, M[0] + 0.4, 0.5)
-    for j, s in enumerate((f"Đặt i = {CHOT_I}°. D lớn hơn hay", "nhỏ hơn lúc i = 45°?")):
-        text(d, (W / 2, 800 + j * 78), s, 48, INK, alpha=kq)
+    for j, s in enumerate(("Đáy quay sang phải, laser chiếu xuống.", "Tia ló lệch trái hay phải?")):
+        text(d, (W / 2, 800 + j * 78), s, 46, INK, alpha=kq)
     kh = appear(t, M[0] + 3.2, 0.5)
     if kh > 0:
         card(d, (90, 1030, 990, 1260), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1080), "Gợi ý: đã đo", 44, INK, alpha=kh)
-        text(d, (W / 2, 1180), "30° → 47,1°    40° → 38,5°", 46, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1145), "Gợi ý: vẽ ra, tô đậm cạnh đáy", 44, (176, 64, 8), alpha=kh)
 
 
 def _cues(clip):
@@ -293,13 +293,13 @@ CLIP = dict(id="tn-l9-langkinh-01", header="KHTN 9 · THÍ NGHIỆM", footer="L�
    ("Xoay bút laser, giữ điểm tới.", 4.6),
    ("Đo D bằng thước đo góc.", 5.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
-   ("So cột D từ trên xuống.", 4.0),
+   ("So sáu tia ló với tia tới.", 4.0),
    ("Mỗi lần đều khúc xạ hai lần.", 4.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Bẫy thường gặp.", 5.2),
-   ("Câu còn bỏ ngỏ.", 3.8)]),
+   ("Câu còn bỏ ngỏ.", 3.2)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Tự trả lời trước gợi ý.", 7.6)]),
+   ("Tự trả lời trước gợi ý.", 8.2)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b

@@ -8,13 +8,13 @@
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Tia đơn sắc qua lăng kính khúc xạ hai lần, lệch về phía đáy; tăng góc tới thì góc lệch D giảm rồi tăng lại.",
-      "kiem": "Tăng góc tới, góc lệch ra sao?"
+      "chu": "Tia đơn sắc qua lăng kính khúc xạ hai lần và lệch về phía đáy.",
+      "kiem": "Tia ló lệch về phía nào?"
     },
     {
       "khoa": "du_doan",
       "giay": 4.2,
-      "chu": "Tăng dần góc tới i từ 30° tới 70°. Góc lệch D thay đổi thế nào?"
+      "chu": "Tăng dần góc tới i từ 30° tới 70°. Tia ló lệch về phía nào so với hướng tia tới?"
     },
     {
       "khoa": "dung_cu",
@@ -24,12 +24,12 @@
     {
       "khoa": "quan_sat",
       "giay": 21.5,
-      "chu": "D giảm từ 47,1° xuống 37,2° (ở 50°), rồi tăng lại."
+      "chu": "Cả 6 lần, tia ló đều ngả về phía đáy."
     },
     {
       "khoa": "rut_ra",
       "giay": 25.7,
-      "chu": "Tia laser khúc xạ ở cả hai mặt bên; cả 6 lần tia ló đều ngả về phía đáy."
+      "chu": "Tia khúc xạ ở cả hai mặt bên; đáy ở đâu thì tia lệch về đó."
     },
     {
       "khoa": "chua_noi",
@@ -39,15 +39,15 @@
   ],
   "dung_dua": {
     "giay": 10.3,
-    "cau_hoi": "Lăng kính A = 60°, giữ nguyên điểm tới. Tăng dần góc tới i từ 30° tới 70°. Góc lệch D thay đổi thế nào?",
+    "cau_hoi": "Lăng kính A = 60°, giữ nguyên điểm tới. Tăng dần góc tới i từ 30° tới 70°. Tia ló lệch về phía nào so với hướng tia tới?",
     "chon": [
-      "A. Tăng dần",
-      "B. Giảm dần",
-      "C. Giảm rồi tăng lại",
-      "D. Không đổi"
+      "A. Về phía đáy",
+      "B. Về phía cạnh (đỉnh)",
+      "C. Không lệch",
+      "D. Tuỳ góc tới"
     ],
-    "dung": 2,
-    "giai_thich_dung": "D đi 47,1°, 38,5°, 37,4°, 37,2° rồi 38,9°, 42,9°: nhỏ nhất trong bảng ở i = 50°, hai phía đều lớn hơn.",
-    "giai_thich_sai": "Bảng đo cho thấy D không đi một chiều: từ 30° tới 50° góc lệch giảm (47,1° xuống 37,2°), sau đó tăng lại (42,9° ở 70°)."
+    "dung": 0,
+    "giai_thich_dung": "Cả 6 lần đo, tia ló đều ngả về phía đáy lăng kính.",
+    "giai_thich_sai": "Xem lại 6 tia ló: góc tới thay đổi nhưng lần nào tia cũng ngả về phía đáy, không lần nào đi thẳng hay ngả về đỉnh."
   }
 }
