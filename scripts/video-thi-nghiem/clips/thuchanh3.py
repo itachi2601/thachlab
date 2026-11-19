@@ -8,7 +8,7 @@
 #   C gan bang; D nhieu hon.
 # Bay: quen tru m1 (chia m2 -> lambda nho hon that 11%) + nhiet day lam am pheu (lambda do lon hon that 3%).
 # Chot THU NGHI: phong am dan khi do giai doan 2 -> moi truong lam tan nhieu hon m1 -> m2 - m1 lon hon phan do day ->
-#   lambda tinh ra NHO hon (sai_so_thuong_gap 4, khong_chung_minh 2). Goi y chi nhac gia thiet "coi rang".
+#   lambda tinh ra NHO hon (sai_so_thuong_gap 4, khong_chung_minh 2). Goi y chi la cong thuc goc lambda = UItau/(m2 - m1), hien tre.
 # Ban 1 (12/11/2026).
 from engine import *
 
@@ -105,8 +105,9 @@ def s_hook(img, d, t, sc):
     text(d, (W / 2, y0 + 160), "Chưa cấp điện, sau 300 s,", 44, INK, alpha=a)
     text(d, (W / 2, y0 + 240), "cốc có bao nhiêu nước?", 48, PURPLE, alpha=a)
     k = appear(t, 1.4, 0.5)
-    mini_cup(d, 220, y0 + 330, "chưa cấp điện", NAVY, k)
-    mini_cup(d, 700, y0 + 330, "cấp điện", NAVY, k)
+    mini_cup(d, 220, y0 + 300, "chưa cấp điện", NAVY, k)
+    mini_cup(d, 700, y0 + 300, "cấp điện", NAVY, k)
+    text(d, (W / 2, y0 + 540), "Chọn đáp án ở khung câu hỏi", 40, MUTED, alpha=appear(t, sc["M"][1], 0.4))
     tc, tend = sc["M"][1] + 0.3, sc["T"] - 0.2
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
@@ -128,16 +129,16 @@ def state(t, sc):
     return dict(stg=2, on=t >= M[1] + 0.1, lvl=LV2 * p, p=p, flow=2 if 0 < p < 1 else 0,
                 txt="36,4 g" if p >= 1 else "· · ·", done=p >= 1)
 
-COLX = ((165, "Giai đoạn"), (420, "Cấp điện"), (650, "τ (s)"), (880, "m (g)"))
+COLX = ((160, "Giai đoạn"), (400, "Cấp điện"), (650, "Thời gian τ (s)"), (910, "m (g)"))
 ROWS = (("1", "không", "300", "5,0"), ("2", "có", "300", "36,4"))
 
 def table(d, y0, ks):
-    for x, s in COLX: text(d, (x, y0), s, 40, NOTE, bold=False)
-    d.line([(70, y0 + 36), (1010, y0 + 36)], fill=LIGHT, width=3)
+    for x, s in COLX: text(d, (x, y0), s, 44, NOTE, bold=False)
+    d.line([(70, y0 + 38), (1010, y0 + 38)], fill=LIGHT, width=3)
     for j, (r, k) in enumerate(zip(ROWS, ks)):
         if k <= 0: continue
         yy = y0 + 86 + 72 * j
-        for (x, _), s in zip(COLX, r): text(d, (x, yy), s, 42, BLUE if j == 0 else ORANGE, alpha=k)
+        for (x, _), s in zip(COLX, r): text(d, (x, yy), s, 44, BLUE if j == 0 else ORANGE, alpha=k)
 
 def s_do(img, d, t, sc):
     st = state(t, sc)
@@ -149,12 +150,13 @@ def s_do(img, d, t, sc):
     table(d, 1140, (appear(t, b1, 0.35), appear(t, b2, 0.35)))
     # thanh so sanh khoi luong nuoc vao coc (cung thang)
     for j, (lab, m, col, (a, b)) in enumerate((("m₁", 5.0, BLUE, (a1, b1)), ("m₂", 36.4, ORANGE, (a2, b2)))):
-        y = 1420 + 92 * j; p = clamp((t - a) / (b - a))
+        y = 1392 + 80 * j; p = clamp((t - a) / (b - a))
         text(d, (110, y), lab, 44, col)
         d.rounded_rectangle([180, y - 22, 940, y + 22], radius=22, fill=(244, 240, 232))
         wpx = 760 * m / 36.4 * p
         if wpx > 4: d.rounded_rectangle([180, y - 22, 180 + max(44, wpx), y + 22], radius=22, fill=col)
-    text(d, (1010, 1600), "Số liệu minh hoạ", 40, PURPLE, bold=False, anchor="rm")
+    text(d, (W / 2, 1540), "m₁, m₂: nước vào cốc", 44, INK, bold=False)
+    text(d, (W / 2, 1598), "Số liệu mẫu", 44, MUTED, bold=False)
 
 # ---------------- canh 3: Ket qua + Rut ra ----------------
 BASE, HMAX = 860, 420
@@ -162,7 +164,7 @@ def s_ket(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 250, 1040, 950), fill=WHITE, outline=LIGHT, w=3)
     ka = appear(t, M[0] + 0.1, 0.4)
-    pill(d, W / 2, 308, "Ít hơn nhiều, nhưng khác 0", 42, WHITE, NAVY, ka)
+    pill(d, W / 2, 308, "ĐÁP ÁN · Ít hơn nhiều, khác 0", 42, WHITE, NAVY, ka)
     h1, h2 = HMAX * 5.0 / 36.4, HMAX
     split = appear(t, M[1] + 0.1, 0.5)
     # cot giai doan 1
@@ -185,8 +187,9 @@ def s_ket(img, d, t, sc):
     k2 = appear(t, M[0] + 1.0, 0.5)
     k3 = appear(t, M[1] + 0.3, 0.5)
     card(d, (40, 990, 1040, 1290 + 230 * k3), fill=A(WHITE, k2), outline=A(ORANGE, k2), w=4)   # the co lai cho toi khi hien lambda
-    text(d, (W / 2, 1090), "λ = U·I·τ / (m₂ − m₁)", 56, INK, alpha=k2)
-    text(d, (W / 2, 1210), "U·I·τ = 10 800 J;   m₂ − m₁ = 31,4 g", 40, NOTE, alpha=k2)
+    text(d, (W / 2, 1070), "λ = U·I·τ / (m₂ − m₁)", 56, INK, alpha=k2)
+    text(d, (W / 2, 1150), "λ: nhiệt nóng chảy riêng", 44, INK, bold=False, alpha=k2)
+    text(d, (W / 2, 1232), "U·I·τ = 10 800 J;   m₂ − m₁ = 31,4 g", 40, NOTE, alpha=k2)
     text(d, (W / 2, 1380), "λ ≈ 3,44·10⁵ J/kg", 64, ORANGE, alpha=k3)
 
 # ---------------- canh 4: Chua noi duoc gi ----------------
@@ -195,12 +198,12 @@ def s_chua(img, d, t, sc):
     k = appear(t, 0.3, 0.45)
     card(d, (40, 1030, 1040, 1520), fill=A(WHITE, k), outline=A(NAVY, k), w=6)
     text(d, (W / 2, 1100), "Chưa nói được", 48, NAVY, alpha=k)
-    for j, s in enumerate(("• Nhiệt dây thất thoát: bao nhiêu?", "• Phòng có ấm dần trong 600 s không?")):
+    for j, s in enumerate(("• Nhiệt dây thất thoát: bao nhiêu?", "• Phòng có ấm dần lên không?")):
         kk = appear(t, 0.6 + 0.4 * j, 0.4)
         text(d, (90, 1240 + 150 * j), s, 44, INK, anchor="lm", alpha=kk)
 
 # ---------------- canh 5: Bay ----------------
-X0, X1, L0, L1 = 130, 950, 2.9, 3.5
+X0, X1, L0, L1 = 130, 950, 2.9, 3.6
 def XL(v): return X0 + (v - L0) / (L1 - L0) * (X1 - X0)
 
 def s_bay(img, d, t, sc):
@@ -217,16 +220,19 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, 680), "nhỏ hơn thật 11%", 48, RED, alpha=appear(t, M[0] + 1.5, 0.4))
     # truc so lambda (hinh co ngay tu dau canh)
     card(d, (40, 820, 1040, 1640), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 900), "λ (·10⁵ J/kg)", 44, NAVY)
+    text(d, (W / 2, 890), "λ (·10⁵ J/kg)", 44, NAVY)
+    text(d, (W / 2, 952), "vạch chia 0,1", 44, NOTE, bold=False)
     ya = 1180
     d.line([(X0 - 20, ya), (X1 + 20, ya)], fill=NAVY, width=5); chevron_r(d, X1 + 24, ya)
+    for i in range(8):                               # vach chia 0,1 (khong ghi so; so chi o 3 moc co trong kho)
+        x = XL(2.9 + 0.1 * i); d.line([(x, ya - 14), (x, ya + 14)], fill=NAVY, width=3)
     def mark(v, s, lab, col, up, a):
         if a <= 0: return
         x = XL(v); d.line([(x, ya - 22), (x, ya + 22)], fill=A(col, a), width=6); dot(d, x, ya, 13, A(col, a))
         if up:
-            text(d, (x, ya - 66), s, 42, col, alpha=a); text(d, (x, ya - 126), lab, 40, col, alpha=a)
+            text(d, (x, ya - 66), s, 44, col, alpha=a); text(d, (x, ya - 128), lab, 44, col, alpha=a)
         else:
-            text(d, (x, ya + 66), s, 42, col, alpha=a); text(d, (x, ya + 126), lab, 40, col, alpha=a)
+            text(d, (x, ya + 66), s, 44, col, alpha=a); text(d, (x, ya + 128), lab, 44, col, alpha=a)
     mark(3.34, "3,34", "thật", GREEN, True, appear(t, 0.2, 0.4))
     mark(2.97, "2,97", "chia m₂", RED, False, appear(t, M[0] + 0.8, 0.4))
     mark(3.44, "3,44", "chia m₂ − m₁", ORANGE, False, appear(t, M[1] + 0.2, 0.4))
@@ -252,11 +258,11 @@ def s_end(img, d, t, sc):
     M = sc["M"]
     chot_hoi(d, t, sc, "Đá tan do dây: m₂ − m₁",
              "Riêng do phòng ấm hơn ở giai đoạn 2, λ tính ra lệch lên hay xuống?", None, body=_end_body)
-    kh = appear(t, M[0] + 2.6, 0.5)                 # goi y hien tre, chi nhac du kien (gia thiet), khong neu buoc lam
+    kh = appear(t, M[0] + 4.4, 0.5)                 # goi y hien tre >= 4 s sau cau hoi, chi la cong thuc goc (khong neu huong lech)
     if kh > 0:
         card(d, (110, 1330, 970, 1560), fill=A((255, 247, 237), kh), r=24)
-        text(d, (W / 2, 1385), "Gợi ý", 40, MUTED, bold=False, alpha=kh)
-        text(d, (W / 2, 1470), "m₁ đo lúc phòng còn mát", 46, ORANGE, alpha=kh)
+        text(d, (W / 2, 1385), "Gợi ý", 44, MUTED, bold=False, alpha=kh)
+        text(d, (W / 2, 1470), "λ = U·I·τ / (m₂ − m₁)", 46, ORANGE, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -271,16 +277,16 @@ CLIP = dict(id="tn-l12-thuchanh-03", header="VẬT LÍ 12 · THÍ NGHIỆM", foo
             cues=_cues, scenes=[
  dict(key="hook", title="Phễu nước đá, hai lần đo", draw=s_hook, tail=0.3, caps=[
    ("Phễu nước đá, dây điện trở, cốc hứng.", 3.6),
-   ("Dừng video, chọn đáp án.", 5.0)]),
+   ("Chọn đáp án ở khung câu hỏi.", 5.0)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Chưa cấp điện, hứng 300 s.", 3.7),
    ("Cấp điện, hứng tiếp 300 s.", 3.7)]),
  dict(key="ket", title="Kết quả", draw=s_ket, tail=0.3, caps=[
-   ("Đáp án B: đá vẫn nhận nhiệt môi trường.", 3.8),
+   ("Đá vẫn nhận nhiệt từ môi trường.", 4.2),
    ("Giai đoạn 2: thêm nhiệt từ dây.", 4.0)]),
  dict(key="chua", title="Giới hạn của thí nghiệm", draw=s_chua, tail=0.4, caps=[
-   ("Hai điều chưa đo được.", 5.5)]),
- dict(key="bay", title="Cái bẫy khi tính λ", draw=s_bay, tail=0.5, caps=[
+   ("Hai điều chưa đo được.", 5.3)]),
+ dict(key="bay", title="Cái bẫy khi tính λ", draw=s_bay, tail=0.7, caps=[
    ("Quên trừ m₁ thì sao?", 3.6),
    ("Nhiệt dây có vào hết đá?", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[

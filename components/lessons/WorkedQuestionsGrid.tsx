@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MonitorPlay } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
 import VariantPractice from "@/components/lessons/VariantPractice";
@@ -132,11 +132,14 @@ export default function WorkedQuestionsGrid({
   questions,
   color = "#8B5CF6",
   lessonId,
+  onPresent,
 }: {
   questions: LessonWorkedQuestion[];
   color?: string;
   /** Bài chứa các dạng — để "Làm bài tương tự" lấy đúng câu đã gán dạng (question_dang). */
   lessonId?: number;
+  /** Chỉ giáo viên: mở trình chiếu chữa bài từ dạng thứ idx (17/11/2026). Dạng không chia bước thì không có nút. */
+  onPresent?: (idx: number) => void;
 }) {
   const [openIdx, setOpenIdx] = useState<Set<number>>(() => new Set(questions.length ? [0] : []));
 
@@ -174,6 +177,16 @@ export default function WorkedQuestionsGrid({
             </button>
             {open && (
               <div className="lesson-worked-body exam-paper">
+                {onPresent && q.problem_html && q.solution_html?.includes('class="bt-step"') && (
+                  <button
+                    type="button"
+                    className="lesson-btn-ghost lesson-worked-present"
+                    onClick={() => onPresent(idx)}
+                    title="Chiếu lên tivi: tóm đề + hình bên trái, lời giải từng bước bên phải"
+                  >
+                    <MonitorPlay size={16} aria-hidden /> Trình chiếu dạng này
+                  </button>
+                )}
                 {q.problem_html && q.solution_html ? (
                   <StructuredBody q={q} color={color} lessonId={lessonId} />
                 ) : (

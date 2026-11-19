@@ -13,6 +13,16 @@
     "thangnhietdo.thang_kelvin"
   ],
   "muc_tieu": "Từ bảng số liệu áp suất – nhiệt độ của một lượng khí, ngoại suy đường thẳng tới áp suất bằng 0 và nhận ra mọi chất khí đều cho cùng một điểm cắt ở −273,15 °C — gốc 0 K.",
+  "gia_thuyet": [
+    "Ở thể tích không đổi, áp suất của một lượng khí tăng tuyến tính theo nhiệt độ Celsius, nên đường p(t) kéo dài sẽ cắt trục nhiệt độ tại cùng một điểm cho mọi lượng khí."
+  ],
+  "du_doan_neu_dung": [
+    "Năm điểm (t, p) từ 0 °C đến 100 °C nằm trên một đường thẳng; kéo dài đường thẳng tới p = 0 thì cắt trục nhiệt độ ở khoảng −273 °C, và đổi lượng khí chỉ làm đổi độ dốc, không đổi điểm cắt."
+  ],
+  "khong_chung_minh": [
+    "Không chứng minh khí thật vẫn giữ đường thẳng tới gần −273 °C: khí hoá lỏng trước khi tới đó, điểm cắt chỉ là ngoại suy.",
+    "Không cho biết vật chất ở 0 K ra sao; áp suất bằng 0 là giới hạn của mô hình khí lí tưởng."
+  ],
   "dung_cu": [
     { "ten": "Bình kín chứa khí có nắp và van (hoặc bình tam giác đậy kín)", "so_luong": 1, "ghi_chu": "thể tích không đổi trong suốt thí nghiệm" },
     { "ten": "Cảm biến áp suất hoặc áp kế có chia tới 1 kPa", "so_luong": 1, "ghi_chu": "sai số ±1 kPa" },
@@ -27,9 +37,9 @@
       "Ghi 5 cặp số (t, p) vào bảng, vẽ các điểm lên đồ thị p – t, kẻ đường thẳng đi qua các điểm rồi kéo dài tới khi cắt trục nhiệt độ."
     ],
     "quan_sat": [
-      "Áp suất tăng đều theo nhiệt độ: các điểm gần như nằm trên một đường thẳng.",
-      "Kéo dài đường thẳng, nó cắt trục nhiệt độ ở khoảng −273 °C, nơi áp suất bằng 0.",
-      "Làm lại với lượng khí khác hoặc áp suất ban đầu khác, điểm cắt vẫn ở đó, chỉ độ dốc đường thẳng thay đổi."
+      "Chấm năm cặp số (t, p) lên đồ thị p – t; xem các điểm có nằm trên một đường thẳng không.",
+      "Kéo dài đường thẳng xuống tới p = 0 và đọc nhiệt độ tại điểm cắt trục nhiệt độ.",
+      "Làm lại với lượng khí khác (áp suất ban đầu khác); so điểm cắt và độ dốc của hai đường."
     ],
     "rut_ra": [
       "Không thể hạ nhiệt độ mãi: mọi chất khí đều cho cùng một điểm cắt, ứng với nhiệt độ thấp nhất có thể có.",
@@ -67,7 +77,7 @@
       [75, 127.5],
       [100, 136.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với p0 = 100,0 kPa (khí lí tưởng). Đo thật sẽ lệch vài phần nghìn ở nhiệt độ cao và gần 0 °C sẽ thấy áp suất khác 100 kPa nếu bình có rò khí."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với p0 = 100,0 kPa (khí lí tưởng). Đo thật sẽ lệch vài phần nghìn ở nhiệt độ cao và gần 0 °C sẽ thấy áp suất khác 100 kPa nếu bình có rò khí. Ca tự suy cho câu chốt clip: đun khí tới 273 °C (coi là khí lí tưởng) → p ≈ 200 kPa."
   },
   "ket_qua_ky_vong": "Năm điểm nằm gần như trên một đường thẳng; kéo dài đường thẳng cắt trục nhiệt độ ở khoảng −273 °C. Điểm cắt không đổi khi thay đổi lượng khí, loại khí hay dải nhiệt độ khảo sát.",
   "hien_tuong_hay_sai": [
@@ -88,5 +98,15 @@
   "an_toan": [
     "Bình kín ngâm nước sôi có thể tăng áp suất mạnh: dùng van an toàn, không dùng bình thuỷ tinh mỏng.",
     "Dùng kẹp và găng khi thao tác với nước sôi."
-  ]
+  ],
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-03-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "bình khí thể tích không đổi, áp kế",
+    "nhin_vao": "Kéo dài đường p theo t xuống: p về 0 ở đâu?",
+    "giay": 50,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
+  }
 }

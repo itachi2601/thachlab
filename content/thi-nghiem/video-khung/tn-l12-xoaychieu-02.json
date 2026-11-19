@@ -1,0 +1,52 @@
+{
+  "id": "tn-l12-xoaychieu-02",
+  "ten": "Hai đèn LED mắc ngược chiều nhau",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261114.mp4",
+  "tong_giay": 49.0,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Dòng điện xoay chiều đổi chiều 2 lần trong mỗi chu kì.",
+      "kiem": "Mỗi chu kì, dòng đổi chiều mấy lần?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 2.9,
+      "chu": "Ở 1 Hz, mỗi giây dòng điện đổi chiều mấy lần?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.4,
+      "chu": "Máy phát tín hiệu, hai LED ngược chiều, điện trở 330 Ω."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 13.6,
+      "chu": "1 Hz: hai LED chớp luân phiên; 50 Hz: trông như sáng liên tục."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 19.0,
+      "chu": "Mỗi chu kì mỗi LED sáng 1 lần, dòng đổi chiều 2 lần: 2f lần mỗi giây."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 25.6,
+      "chu": "Không cho biết tần số chính xác hay giá trị hiệu dụng của dòng.\nỞ 50 Hz mắt không phân biệt được chớp hay sáng liên tục."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.2,
+    "cau_hoi": "Máy phát tín hiệu hình sin 1 Hz nối qua điện trở với hai LED mắc song song, ngược chiều nhau. Mỗi giây dòng điện đổi chiều mấy lần?",
+    "chon": [
+      "A. 1 lần",
+      "B. 2 lần",
+      "C. 4 lần",
+      "D. 0,5 lần"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Trong một chu kì, nửa chu kì LED đỏ sáng, nửa chu kì LED xanh sáng: dòng đổi chiều 2 lần. Ở 1 Hz là 2 lần mỗi giây.",
+    "giai_thich_sai": "Mỗi LED sáng 1 lần mỗi giây, nhưng hai LED sáng luân phiên nên dòng đổi chiều 2 lần trong một chu kì, tức 2 lần mỗi giây ở 1 Hz."
+  }
+}

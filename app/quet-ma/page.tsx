@@ -8,7 +8,7 @@ import { Gamepad2, Keyboard } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
-import { examIdFromScan, examTakePath } from "@/lib/exam-link";
+import { examIdFromScan, examTakePath, guestCodeFromScan, guestExamPath } from "@/lib/exam-link";
 import { quizJoinPath, quizPinFromScan } from "@/lib/quiz-link";
 
 /**
@@ -50,6 +50,12 @@ export default function ScanExamPage() {
         router.push(quizJoinPath(pin));
         return;
       }
+      const guest = guestCodeFromScan(raw);
+      if (guest) {
+        setError("");
+        router.push(guestExamPath(guest));
+        return;
+      }
       const id = examIdFromScan(raw);
       if (!id) {
         setError("Mã này không phải mã của ThachLab. Em thử lại, hoặc gõ số đề thầy ghi trên bảng.");
@@ -89,9 +95,9 @@ export default function ScanExamPage() {
 
         <form onSubmit={submitManual} className="mt-8 rounded-2xl border border-white/10 bg-panel p-4">
           <label htmlFor="ma-de" className="flex items-center gap-2 text-sm font-semibold text-slate-300">
-            <Keyboard size={16} /> Gõ số đề
+            <Keyboard size={16} /> Gõ số đề hoặc mã bài
           </label>
-          <p className="mt-1 text-xs text-slate-500">Số đề là số thầy ghi trên bảng, ví dụ 770.</p>
+          <p className="mt-1 text-xs text-slate-500">Số thầy ghi trên bảng: số đề (ví dụ 770) hoặc mã bài 6 chữ số (ví dụ 482915).</p>
           <div className="mt-3 flex flex-wrap gap-2">
             <input
               id="ma-de"

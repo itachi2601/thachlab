@@ -7,6 +7,7 @@ import { createRequire } from 'node:module';
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { chuanHoa, fontsBu } from './ky-tu-in.mjs';
 import { btmCss, btmPages } from './bai14-btm.mjs';
 import { ttCss, ttPages } from './bai14-tuongtu.mjs';
 import { hinh } from './hinh.mjs';
@@ -25,7 +26,7 @@ const qr = qrcode(0, 'M'); qr.addData(LINK); qr.make();
 const qrSvg = qr.createSvgTag({ cellSize: 3, margin: 0, scalable: true });
 // Ô cuối tập (thầy chốt 25/10 tối; 10/11: chỉ MỘT mã QR của bài học liên quan — hai mã cạnh nhau, máy quét dễ trúng nhầm): chỉ hướng dẫn xem lại bài trên web, không giới thiệu/quảng cáo.
 const gioiThieu = `<div class="gt"><div class="gtq"><div class="qr">${qrSvg}</div></div><div>
-<b>Xem lại bài 14 trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
+<b>Xem lại bài 17 trên thachlab.id.vn:</b> quét mã bên để mở đúng bài này (lý thuyết, thí nghiệm, tự kiểm tra, bài tập mẫu).</div></div>`;
 // Source Sans 3 (OFL, thầy chốt 25/10 để tiết kiệm trang): hẹp hơn Noto Sans ~10%, x-height cao nên hạ cỡ chữ xuống 3,3 mm vẫn dễ đọc;
 // có dấu tiếng Việt. Mỗi tệp con PHẢI có unicode-range, nếu không tệp sau đè tệp trước và chữ in đậm rơi về Helvetica.
 const F = resolve(HERE, 'fonts') + '/source-sans-3-';
@@ -35,14 +36,14 @@ const UR = {
   vietnamese: 'U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB',
 };
 const fonts = [400, 700].flatMap((w) => Object.keys(UR).map((sub) =>
-  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('');
+  `@font-face{font-family:BV;font-weight:${w};src:url("${pathToFileURL(F + sub + '-' + w + '-normal.woff2').href}");unicode-range:${UR[sub]}}`)).join('') + fontsBu;
 const lines = (n) => Array.from({ length: n }, () => '<div class="ln"></div>').join('');
 // n dòng kẻ chấm, nhãn (a), b)…) nằm ngay đầu dòng đầu để không tốn thêm một dòng
 const wl = (label, n) => `<div class="ln"><b>${label}</b></div>` + lines(n - 1);
 
 // Nhãn góc phải: mã "trang·ô" trùng nhãn "✍ Tập: trang · ô" khi trình chiếu (data-tap trong theory.src.html).
 const tag = (t) => `<span class="tag">Tập ${String(t).replace(/^(\d+)/, (_, a) => Number(a) + OFF)}</span>`;
-const foot = (n) => `<div class="foot"><span></span><span>Bài 14 · tr. ${n + OFF}</span></div>`;
+const foot = (n) => `<div class="foot"><span></span><span>Bài 17 · tr. ${n + OFF}</span></div>`;
 // Không Ngày/Tên (các tờ đóng thành sách — thầy chốt 25/10); phụ đề chỉ khi thật cần, thầy tự điều phối nhịp buổi.
 const head = (t, s = '') => `<div class="top"><div><b>${t}</b>${s ? `<small>${s}</small>` : ''}</div></div>`;
 const yn = `<td style="white-space:nowrap;padding:.2mm 1.8mm"><span class="ck"></span>Có &nbsp;<span class="ck"></span>Không</td>`;
@@ -67,7 +68,7 @@ ${lap ? '<div class="card soft" style="padding:1mm 3mm;margin-top:1.5mm"><b>Kế
 ${traNhanh}
 ${foot(n)}</section>`;
 
-const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 14</title>
+const html = `<!doctype html><html lang="vi"><head><meta charset="utf-8"><title>Ruột tập Vật lí 12 – Bài 17</title>
 <link rel="stylesheet" href="${pathToFileURL(BOOK + 'node_modules/katex/dist/katex.min.css').href}">
 <style>
 ${fonts}
@@ -115,7 +116,7 @@ th{background:var(--soft);font-weight:700;text-align:left}
 .fig-side{display:grid;gap:2.5mm;align-items:start}
 .page.dots{background-image:radial-gradient(circle,#aab4cc .3mm,transparent .35mm);background-size:5mm 5mm;background-position:0 0;background-origin:content-box;background-clip:content-box}
 .nw{white-space:nowrap}
-.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:13mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
+.gt{position:absolute;left:var(--pl);right:var(--pr);bottom:14mm;display:flex;gap:3mm;align-items:center;background:#fff;border:.25mm solid var(--grid);border-radius:1.5mm;padding:1.6mm 2.5mm;font-size:var(--fs-sm);line-height:1.4;color:var(--hint)}.gt b{color:var(--navy)}
 .gtq{text-align:center;flex:none}.gtq .qr{width:34mm;height:34mm;padding:2mm;border:0}.gtq .qr svg{width:30mm;height:30mm}.gtq small{display:block;font-size:var(--fs-sm)}
 .tra{background:#fff;border:.3mm dashed var(--navy);border-radius:1.2mm;padding:.6mm 2mm;font-size:var(--fs-sm);line-height:1.4;margin-bottom:.5mm}
 .chb{background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm .4mm;margin-bottom:1.4mm}
@@ -130,7 +131,7 @@ body.flip .page:nth-of-type(odd){--pl:10mm;--pr:20mm}body.flip .page:nth-of-type
 
 <!-- TRANG 1: mục tiêu, dự đoán, II.1 -->
 <section class="page">
-${head('BÀI 14 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân')}
+${head('BÀI 17 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: Vật lí hạt nhân')}
 <h3><i>1</i>Mục tiêu</h3>${tag('1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
@@ -199,7 +200,7 @@ ${head('BẪY · TRẢ BÀI')}
 <div class="trap"><span class="ck"></span><span><b>“Đồng vị khác số prôtôn”.</b> Sai: đồng vị phải <b>cùng</b> ${m('Z')}.</span></div>
 <div class="trap"><span class="ck"></span><span><b>Êlectron quay ở khoảng cách nào cũng được.</b> Bohr: chỉ ở quỹ đạo có năng lượng xác định.</span></div></div>
 <h3><i>2</i>IV · Trả bài 5 câu</h3>${tag('3·2')}
-<div class="hint" style="margin:-.5mm 0 1mm">Nói cho bạn cùng bàn nghe, ghi ý chính ra dòng kẻ; ☐ khi nói được.</div>
+<div class="hint" style="margin:-.5mm 0 1mm">Nói cho bạn cùng bàn nghe, ghi ý chính ra dòng kẻ; <span class="ck"></span>khi nói được.</div>
 ${box(`<div><b>1.</b> Hạt nhân gồm những hạt nào? Vì sao không vỡ ra?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>2.</b> Viết kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, nói rõ từng chữ.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}
 <div><b>3.</b> Đồng vị là gì? Kể tên ba đồng vị của hiđrô, chúng giống và khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
@@ -248,7 +249,7 @@ ${wl('Ghi chú của thầy về đề:', 2)}
 <h3><i>2</i>VI · Mang về: điều em dễ quên nhất</h3>${tag('5')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
 <h3><i>3</i>Thử thách phân tầng</h3>
-<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · số khối <span class="fill" style="min-width:14mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A^⅓ m) chiếm bao nhiêu phần thể tích nguyên tử? (nguyên tử cỡ 10⁻¹⁰ m)', 4))}${hinh.kichThuoc()}</div>
+<div class="fig-side" style="grid-template-columns:1fr 42mm">${box(`<div class="ln"><b>★ ${m('{}^{4}_{2}\\mathrm{He}')}:</b> số prôtôn <span class="fill" style="min-width:10mm"></span> · số nơtron <span class="fill" style="min-width:10mm"></span> · số khối <span class="fill" style="min-width:14mm"></span></div>` + wl('★★ Vì sao nơtron làm hạt nhân bền hơn?', 2) + wl('★★★ Hạt nhân vàng (Au-197, R = 1,2·10⁻¹⁵·A<sup>1/3</sup> m) chiếm bao nhiêu phần thể tích nguyên tử? (nguyên tử cỡ 10⁻¹⁰ m)', 4))}${hinh.kichThuoc()}</div>
 <h3><i>4</i>Câu 7 (urani) và mô phỏng PhET</h3>
 <div class="fig-side" style="grid-template-columns:1fr 36mm">${box(wl(`Câu 7 (${m('{}^{238}_{92}\\mathrm{U}')}): A, Z, N = …`, 2)
  + wl('Bắn hạt alpha (Rutherford) · Dự đoán:', 1) + wl('Thấy:', 2)
@@ -276,6 +277,7 @@ writeFileSync(out + '.html', html);
 const b = await puppeteer.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', headless: true, args: ['--no-sandbox', '--allow-file-access-from-files'] });
 const p = await b.newPage();
 await p.goto(pathToFileURL(out + '.html').href, { waitUntil: 'networkidle0' });
+await p.evaluate(chuanHoa);
 await p.evaluate('document.fonts.ready');
 const diag = await p.evaluate(() => [...document.querySelectorAll('.page')].map((pg, i) => {
   const lim = pg.getBoundingClientRect().bottom - 14 * 3.7795; // chừa chân trang

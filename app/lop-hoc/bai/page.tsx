@@ -1,25 +1,29 @@
 "use client";
 
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type TouchEvent } from "react";
+import {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type TouchEvent,
+} from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, FileText, Home, Maximize2, Menu, MonitorPlay, Play, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
-import ExamQrButton from "@/components/exams/ExamQrButton";
-import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
-import { useReadDepth } from "@/components/lessons/useReadDepth";
 import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
 import { useTeacherView } from "@/components/auth/useTeacherView";
 import AroundReadMore from "@/components/lessons/AroundReadMore";
-import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGrid";
-import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
+import BtmPresenter from "@/components/lessons/btm-trinh-chieu/BtmPresenterLazy";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import StudentNoteFab, { OPEN_STUDENT_NOTE_EVENT } from "@/components/lessons/StudentNoteFab";
-import PracticeSession from "@/components/lessons/PracticeSessionLazy";
 import NenKhtn9 from "@/components/lop-hoc/NenKhtn9";
 import { HSG_SUBJECT_CODE } from "@/services/academic-subjects";
 import ChapterTree from "@/components/lessons/ChapterTree";
@@ -27,33 +31,29 @@ import LessonMasteryCard from "@/components/mastery/LessonMasteryCard";
 import type { SchoolClass } from "@/features/exams/types";
 import {
   consumeTheoryReviewContext,
-  splitTheorySections,
   estimateTheoryTime,
-  decorateGoalBox,
   theorySectionItemId,
   wrapTheorySections,
   type TheoryReviewContext,
 } from "@/features/lessons/theory-sections";
-import { withMarginNotes } from "@/features/lessons/margin-notes";
 import {
   LESSON_KIND_META,
   SECTION_ORDER,
   chapterDisplayTitle,
   chapterLabel,
-  formatTypeCounts,
   isGradedKind,
   isItemLive,
   isPeriodicExam,
   isSemesterExam,
-  youTubeEmbed,
-  youTubeThumb,
   type Chapter,
   type Lesson,
   type LessonItem,
   type LessonItemKind,
   type LessonKind,
 } from "@/features/lessons/types";
-import { fetchExamMetas, markItemDone, type LessonExamMeta } from "@/services/lessons";
+import { markItemDone, type LessonExamMeta } from "@/services/lessons";
+import { fetchLessonPageStudent } from "@/services/lesson-page";
+import type { LessonMasteryInitial } from "@/components/mastery/LessonMasteryCard";
 import { clearResumeSpot, writeResumeSpot } from "@/features/lessons/resume-spot";
 import {
   fetchChaptersStatic,
@@ -63,695 +63,33 @@ import {
   retryLessonRevalidate,
   type LessonBundle,
 } from "@/services/static-content";
-import { fetchMyLessonPageProgress, type ItemProgress } from "@/services/progress";
-import type { TheoryStatusResult } from "@/features/progress/types";
+import type { ItemProgress } from "@/services/progress";
 import { expandClassIdsByGrade, isCttcClassSlug } from "@/services/classes";
 import { visibleTo } from "@/services/content";
 import { supabaseConfigured } from "@/services/supabase";
 import { SGK_L12 } from "@/lib/sgk-l12";
 
-/** Một màu nhấn duy nhất cho cả trang — tránh mỗi mục một màu gây phân tâm. */
-const ACCENT = "#3B82F6";
-
-/** Nhãn ngắn cho tab — tên đầy đủ (SECTION_META) quá dài để nằm cạnh nhau trên một hàng tab. */
-const TAB_LABEL: Record<LessonItemKind, string> = {
-  ly_thuyet: "Lý thuyết",
-  video: "Video",
-  bai_tap_mau: "Bài mẫu",
-  luyen_tap: "Luyện tập",
-  bai_tap_ve_nha: "BTVN",
-  kiem_tra: "Kiểm tra",
-};
-
-/** Slug trên URL hash cho từng tab — `#muc=luyen-tap` để chia sẻ link đúng tab đang mở. */
-const TAB_SLUG: Record<LessonItemKind, string> = {
-  ly_thuyet: "ly-thuyet",
-  video: "video",
-  bai_tap_mau: "bai-tap-mau",
-  luyen_tap: "luyen-tap",
-  bai_tap_ve_nha: "btvn",
-  kiem_tra: "kiem-tra",
-};
-
-const SLUG_TAB = Object.fromEntries(
-  Object.entries(TAB_SLUG).map(([kind, slug]) => [slug, kind as LessonItemKind]),
-) as Record<string, LessonItemKind>;
-
-/** 3 mức cỡ chữ đọc (A− / A / A+) — nhân vào cỡ chữ gốc của khối nội dung. */
-const FONT_SCALES = [0.94, 1, 1.08];
-const FONT_STORE = "thachlab-read-font";
-const DIM_STORE = "thachlab-read-dim";
-const LESSON_DONE_STORE = "thachlab-lesson-done-";
-/** Mục <h3> lý thuyết đọc dở lần trước, theo lesson_items.id — để "Tiếp tục" trỏ đúng chỗ (L5). */
-const THEORY_POS_STORE = "thachlab-theory-pos-";
-/** Mục xa nhất trong mục lục em đã đọc tới, theo bài + tab — để rail đánh ✓ các mục trước đó (B7). */
-const TOC_READ_STORE = "thachlab-toc-read-";
-/** Sự kiện nội bộ: yêu cầu TheoryBlock mở một mục <h3> đang thu gọn trước khi cuộn/tô tới nó
- *  (mục lục, "Ôn ngay", thẻ câu sai) — detail là id `theory-sec-<itemId>-<n>`. */
-const OPEN_SECTION_EVENT = "thachlab:open-theory-section";
-
-function requestOpenTheorySection(hashId: string) {
-  window.dispatchEvent(new CustomEvent<string>(OPEN_SECTION_EVENT, { detail: hashId }));
-}
-
-/**
- * Đọc tab muốn mở từ hash của URL. Nhận cả 2 kiểu:
- *  - `#muc=luyen-tap` — link chia sẻ tab (trang này tự sinh khi bấm tab)
- *  - `#theory-sec-<itemId>-<n>` — link từ trang làm đề / "Ôn ngay" nhảy tới đúng đoạn lý thuyết
- */
-function parseTabHash(hash: string): { kind: LessonItemKind | null; theoryId: string | null } {
-  const raw = hash.replace(/^#/, "");
-  if (raw.startsWith("theory-sec-")) return { kind: "ly_thuyet", theoryId: raw };
-  for (const part of raw.split("&")) {
-    const value = part.startsWith("muc=") ? part.slice(4) : "";
-    if (value && SLUG_TAB[value]) return { kind: SLUG_TAB[value], theoryId: null };
-  }
-  return { kind: null, theoryId: null };
-}
-
-function currentHash() {
-  return typeof window === "undefined" ? "" : window.location.hash;
-}
-
-/** Cao thêm mà thanh dính (navbar + header bài) che mất khi cuộn tới một đoạn — đo bằng DOM. */
-function stickyOffset() {
-  const head = document.querySelector<HTMLElement>(".lesson-head");
-  return (head?.offsetHeight ?? 0) + 92;
-}
-
-/** Cuộn tới một phần tử với chừa chỗ cho thanh dính; không có id thì cuộn về đầu bài. */
-function scrollToPart(id: string | null) {
-  const target = id ? document.getElementById(id) : null;
-  if (target) {
-    const y = target.getBoundingClientRect().top + window.scrollY - stickyOffset();
-    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-  } else {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-}
-
-/** Đổi hash không thêm vào lịch sử duyệt (bấm tab không làm nút "Quay lại" nhảy lung tung). */
-function writeTabHash(hash: string) {
-  if (typeof window === "undefined") return;
-  window.history.replaceState(null, "", hash || window.location.pathname + window.location.search);
-}
-
-/** Cuộn tới + tô vàng một đoạn lý thuyết, tô lại vài nhịp vì bản tĩnh có thể bị bản mới thay thế. */
-function flashTheorySection(hashId: string, times = 6) {
-  requestOpenTheorySection(hashId); // mục đang thu gọn thì mở ra trước; các nhịp cuộn lại bên dưới sẽ tới đúng chỗ sau khi React dựng xong
-  const el = document.getElementById(hashId);
-  if (!el) return;
-  el.scrollIntoView({ behavior: "smooth", block: "start" });
-  el.classList.add("theory-section--highlight");
-  let count = 0;
-  const reapply = window.setInterval(() => {
-    const target = document.getElementById(hashId);
-    target?.classList.add("theory-section--highlight");
-    count += 1;
-    if (count <= times) target?.scrollIntoView({ behavior: "smooth", block: "start" });
-  }, 150);
-  window.setTimeout(() => {
-    window.clearInterval(reapply);
-    document.getElementById(hashId)?.classList.remove("theory-section--highlight");
-  }, 2600);
-}
-
-/** Tô vàng (không giành quyền cuộn) — dùng cho các đoạn phụ khi sai nhiều câu một lúc. */
-function highlightTheorySectionOnly(hashId: string) {
-  requestOpenTheorySection(hashId);
-  document.getElementById(hashId)?.classList.add("theory-section--highlight");
-  window.setTimeout(() => document.getElementById(hashId)?.classList.remove("theory-section--highlight"), 2600);
-}
-
-/** Vòng tiến độ bằng SVG thuần — không thêm thư viện, không request. */
-function ProgressRing({ percent, size = 52 }: { percent: number; size?: number }) {
-  const r = (size - 6) / 2;
-  const c = 2 * Math.PI * r;
-  const value = Math.max(0, Math.min(100, percent));
-  return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} aria-hidden="true">
-      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--lesson-line)" strokeWidth="5" />
-      <circle
-        cx={size / 2}
-        cy={size / 2}
-        r={r}
-        fill="none"
-        stroke="var(--lesson-accent)"
-        strokeWidth="5"
-        strokeLinecap="round"
-        strokeDasharray={`${(c * value) / 100} ${c}`}
-        transform={`rotate(-90 ${size / 2} ${size / 2})`}
-      />
-      <text x="50%" y="50%" textAnchor="middle" dominantBaseline="central" fill="var(--color-ink)" fontSize={size * 0.27} fontWeight="700">
-        {Math.round(value)}%
-      </text>
-    </svg>
-  );
-}
-
-/** Hạn nộp bài tập về nhà, vd "20:00 · 25/09/2026". */
-function formatDue(iso: string) {
-  const d = new Date(iso);
-  if (Number.isNaN(d.getTime())) return iso;
-  return `${d.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })} · ${d.toLocaleDateString("vi-VN")}`;
-}
-
-/** Video YouTube: ảnh bìa, bấm thì nhúng player ngay tại chỗ. Xem xong tự bấm "Đánh dấu đã xem". */
-function VideoBlock({
-  item,
-  done,
-  loggedIn,
-  onDone,
-  showMarkDone = true,
-}: {
-  item: LessonItem;
-  done: boolean;
-  loggedIn: boolean;
-  onDone: () => void;
-  showMarkDone?: boolean;
-}) {
-  const [playing, setPlaying] = useState(false);
-  const embed = youTubeEmbed(item.video_url);
-  const thumb = youTubeThumb(item.video_url);
-
-  return (
-    <div className="lesson-block">
-      <div className="lesson-block-head">
-        <p className="lesson-block-title">{item.title}</p>
-        {item.subtitle && <p className="lesson-block-sub">{item.subtitle}</p>}
-      </div>
-      {embed && (
-        <div className="lesson-video">
-          {playing ? (
-            <iframe
-              src={`${embed}?autoplay=1`}
-              title={item.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          ) : (
-            <button type="button" onClick={() => setPlaying(true)} aria-label={`Xem video ${item.title}`}>
-              {thumb && (
-                /* eslint-disable-next-line @next/next/no-img-element */
-                <img src={thumb} alt="" loading="lazy" decoding="async" />
-              )}
-              <span>
-                <Play size={22} fill="currentColor" />
-              </span>
-            </button>
-          )}
-        </div>
-      )}
-      <div className="lesson-block-foot">
-        {item.pdf_url && (
-          <a href={item.pdf_url} target="_blank" rel="noreferrer" className="lesson-link">
-            <FileText size={15} /> Tài liệu PDF
-          </a>
-        )}
-        {loggedIn && showMarkDone && (
-          <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
-            <Check size={14} /> {done ? "Đã xem" : "Đánh dấu đã xem"}
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/** Ý chính/công thức cần thuộc của các mục lý thuyết — đặt ở đầu tab Luyện tập (không còn
- *  nằm trong tab Lý thuyết) để học sinh ôn lại ngay trước khi làm bài. Mặc định THU GỌN chỉ
- *  còn dòng nhãn (bài có nhiều mục lý thuyết thì khối này dài, đẩy câu hỏi xuống xa) — bấm
- *  nhãn mới xổ ra. Rỗng (chưa backfill) thì không hiện gì. */
-function TheorySummary({ html, title }: { html: string; title?: string }) {
-  const [open, setOpen] = useState(false);
-  if (!html.trim()) return null;
-  return (
-    <div className={`lesson-summary ${open ? "is-open" : ""}`}>
-      <button
-        type="button"
-        className="lesson-summary-toggle"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-      >
-        <span className="lesson-summary-label">
-          📌 Tóm tắt ý chính cần thuộc{title ? <span className="lesson-summary-title"> · {title}</span> : null}
-        </span>
-        <ChevronDown size={16} className={open ? "rotate-180" : ""} />
-      </button>
-      {open && <ContentHtml html={html} className="block leading-relaxed" />}
-    </div>
-  );
-}
-
-/**
- * Lý thuyết: mục bài thứ hai trở đi thu gọn để trang không quá dài. BÊN TRONG một mục, các đoạn
- * <h3> (I., II., III…) cũng chỉ mở đoạn đầu; đoạn sau mở bằng nút "Tiếp" cuối đoạn trước hoặc chạm
- * tiêu đề (N5 segmenting: học sinh bấm "tiếp" chứ không cuộn vô tận — xem
- * docs/PHUONG-PHAP-NOI-DUNG-LY-THUYET.md mục 2, "toàn bộ <h3> render một mạch"). Đoạn đang đọc
- * được ghi vào localStorage để lần mở sau có nút "Tiếp tục ở mục N" (L5), không tự cuộn (B4).
- * Mục lục / "Ôn ngay" / thẻ câu sai trỏ vào đoạn đang thu gọn thì đoạn tự mở (OPEN_SECTION_EVENT).
- */
-function TheoryBlock({
-  item,
-  defaultOpen,
-  hideTitle,
-  done,
-  loggedIn,
-  onDone,
-  recordProgress = true,
-  forceAllOpen = false,
-  estimateInHead = false,
-}: {
-  item: LessonItem;
-  defaultOpen: boolean;
-  hideTitle: boolean; // tên mục trùng tên phần → khỏi lặp
-
-  done: boolean;
-  loggedIn: boolean;
-  onDone: () => void;
-  /** false = chế độ giáo viên: không gọi RP, không gửi độ sâu đọc. */
-  recordProgress?: boolean;
-  /** Mở sẵn mọi mốc để đọc, không đi lần lượt bằng nút Tiếp. */
-  forceAllOpen?: boolean;
-  /** Thời lượng · số mục · số câu đã hiện ở dòng meta dưới tên bài → không lặp trong thẻ đọc (N4). */
-  estimateInHead?: boolean;
-}) {
-  const [open, setOpen] = useState(defaultOpen);
-  const hasBody = item.body_html.trim() !== "";
-  // Tách theo từng mốc <h3> — cùng hàm với mục lục (tocEntries) và "Ôn ngay" nên id
-  // `theory-sec-<itemId>-<n>` khớp nhau; chỉ tính lại khi nội dung mục thật sự đổi.
-  // Chú thích/định nghĩa/ô số của từng đoạn chép thêm một bản cho cột lề phải ≥ 1280px (features/lessons/margin-notes.ts).
-  const displayHtml = useMemo(() => withMarginNotes(decorateGoalBox(item.body_html)), [item.body_html]);
-  const { introHtml, sections } = useMemo(
-    () => splitTheorySections(displayHtml, item.id),
-    [displayHtml, item.id],
-  );
-  const total = sections.length;
-  const estimate = useMemo(() => estimateTheoryTime(item.body_html), [item.body_html]);
-  const [openSections, setOpenSections] = useState<Set<number>>(() => new Set([0]));
-  const [allOpen, setAllOpen] = useState(forceAllOpen);
-  const [seenForceAll, setSeenForceAll] = useState(forceAllOpen);
-  // Hồ sơ giáo viên có thể về sau lúc mount: mở hết mốc khi biết là chế độ giáo viên.
-  if (forceAllOpen !== seenForceAll) {
-    setSeenForceAll(forceAllOpen);
-    if (forceAllOpen) setAllOpen(true);
-  }
-  const [resumeIndex, setResumeIndex] = useState<number | null>(null);
-  const rootRef = useRef<HTMLDivElement>(null);
-  const rp = useTheoryRp(item.id, recordProgress && loggedIn && open ? item.body_html : "", rootRef);
-  const quizTotal = useMemo(() => (item.body_html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length, [item.body_html]);
-  // Việc 6: độ sâu cuộn (mốc h3) + tỉ lệ bấm quiz, gửi khi rời mục/ẩn tab — không thêm round-trip lúc tải.
-  useReadDepth({
-    itemId: item.id,
-    active: recordProgress && loggedIn && open && hasBody,
-    h3Total: total,
-    quizTotal,
-    rootRef,
-    openKey: allOpen ? "all" : Array.from(openSections).join(","),
-  });
-  const isOpen = (i: number) => allOpen || openSections.has(i);
-  // Số mốc chưa từng mở — hiện cạnh "Mở tất cả" để biết bài còn bao nhiêu (bản đồ "còn gì").
-  const unopenedCount = allOpen ? 0 : Math.max(0, total - openSections.size);
-
-  const openSection = useCallback((index: number) => {
-    setOpen(true);
-    setOpenSections((prev) => (prev.has(index) ? prev : new Set(prev).add(index)));
-  }, []);
-
-  function savePos(index: number) {
-    try {
-      window.localStorage.setItem(`${THEORY_POS_STORE}${item.id}`, String(index));
-    } catch {}
-  }
-
-  /** Mở đoạn `index` do học sinh bấm (nút Tiếp / tiêu đề / Tiếp tục) rồi cuộn tới nếu cần. */
-  function goTo(index: number, scroll: boolean) {
-    openSection(index);
-    savePos(index);
-    setResumeIndex(null);
-    if (scroll) window.setTimeout(() => scrollToPart(sections[index]?.id ?? null), 60);
-  }
-
-  // Mục lục / "Ôn ngay" / thẻ câu sai muốn cuộn tới một đoạn đang thu gọn → mở đoạn đó trước.
-  useEffect(() => {
-    const prefix = `theory-sec-${item.id}-`;
-    const onOpen = (e: Event) => {
-      const id = (e as CustomEvent<string>).detail;
-      if (typeof id !== "string" || !id.startsWith(prefix)) return;
-      const index = Number(id.slice(prefix.length));
-      if (Number.isInteger(index) && index >= 0) openSection(index);
-    };
-    window.addEventListener(OPEN_SECTION_EVENT, onOpen);
-    return () => window.removeEventListener(OPEN_SECTION_EVENT, onOpen);
-  }, [item.id, openSection]);
-
-  /* eslint-disable react-hooks/set-state-in-effect -- đọc localStorage đúng 1 lần lúc có nội dung:
-     giá trị khởi tạo useState không đọc được vì trang được prerender tĩnh (window chưa có). */
-  useEffect(() => {
-    if (total < 2 || done) return;
-    try {
-      const raw = window.localStorage.getItem(`${THEORY_POS_STORE}${item.id}`);
-      const idx = raw == null ? NaN : Number(raw);
-      if (Number.isInteger(idx) && idx > 0 && idx < total) setResumeIndex(idx);
-    } catch {}
-  }, [item.id, total, done]);
-  /* eslint-enable react-hooks/set-state-in-effect */
-
-  // Ghi đoạn đang đọc: đoạn ĐÃ MỞ nào vừa đi vào 40% phía trên màn hình (cùng vùng với mục lục).
-  useEffect(() => {
-    const root = rootRef.current;
-    if (!root || total < 2 || !open) return;
-    const targets = Array.from(root.querySelectorAll<HTMLElement>('.theory-section[data-open="1"]'));
-    if (targets.length === 0) return;
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-        const idx = Number((visible[0]?.target as HTMLElement | undefined)?.dataset.index);
-        if (Number.isInteger(idx)) savePos(idx);
-      },
-      { rootMargin: "-130px 0px -60% 0px", threshold: 0 },
-    );
-    targets.forEach((t) => observer.observe(t));
-    return () => observer.disconnect();
-    // savePos chỉ dùng item.id — đã nằm trong deps qua `total`/`open`; openSections/allOpen đổi → danh sách đoạn mở đổi.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item.id, total, open, openSections, allOpen]);
-
-  const resume = resumeIndex !== null && !isOpen(resumeIndex) ? sections[resumeIndex] : null;
-
-  return (
-    <div className={`lesson-block ${hideTitle ? "lesson-block--plain" : ""}`} ref={rootRef}>
-      {!hideTitle && <button
-        type="button"
-        className="lesson-block-head lesson-block-toggle"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        disabled={!hasBody}
-      >
-        <span>
-          <span className="lesson-block-title">{item.title}</span>
-          {item.subtitle && <span className="lesson-block-sub">{item.subtitle}</span>}
-        </span>
-        {hasBody && <ChevronDown size={18} className={open ? "rotate-180" : ""} />}
-      </button>}
-      {open && hasBody && (
-        <div className={hideTitle ? "lesson-prose lesson-prose--plain" : "lesson-prose"}>
-          <TheoryRpHint rp={rp} />
-          {total === 0 ? (
-            <ContentHtml html={displayHtml} className="block leading-relaxed" />
-          ) : (
-            <>
-              {total > 1 && (
-                <div className="theory-nav">
-                  {resume ? (
-                    <button type="button" className="theory-next theory-resume" onClick={() => goTo(resumeIndex!, true)}>
-                      <small>Tiếp tục · {resumeIndex! + 1}/{total}</small>
-                      <strong>{resume.heading}</strong>
-                      <Play size={14} fill="currentColor" aria-hidden />
-                    </button>
-                  ) : estimateInHead ? (
-                    <span />
-                  ) : (
-                    <span>
-                      ~{estimate.minutes} phút · {total} mục
-                      {estimate.quizzes > 0 ? ` · ${estimate.quizzes} câu tự kiểm tra` : ""}
-                    </span>
-                  )}
-                  <button type="button" className="theory-nav-all" onClick={() => setAllOpen((a) => !a)}>
-                    {allOpen ? "Thu gọn" : unopenedCount > 0 ? `Mở tất cả · còn ${unopenedCount} mốc` : "Mở tất cả"}
-                  </button>
-                </div>
-              )}
-              {introHtml.trim() !== "" && <ContentHtml html={introHtml} className="block leading-relaxed" />}
-              {sections.map((section, i) => {
-                const opened = isOpen(i);
-                const next = sections[i + 1];
-                // Đoạn thu gọn ngay sau một đoạn đang mở đã có nút "Tiếp" ở cuối đoạn đó → không
-                // hiện thêm dòng tiêu đề (N4 không lặp); vẫn giữ <div id> để mục lục/"Ôn ngay" cuộn tới.
-                const coveredByNext = !opened && i > 0 && isOpen(i - 1);
-                return (
-                  <div
-                    key={section.id}
-                    id={section.id}
-                    className={`theory-section ${opened ? "" : "theory-section--closed"}`}
-                    data-index={i}
-                    data-open={opened ? "1" : "0"}
-                  >
-                    {opened ? (
-                      <>
-                        <ContentHtml html={section.html} className="block leading-relaxed" />
-                        {next && !isOpen(i + 1) && (
-                          <button type="button" className="theory-next" onClick={() => goTo(i + 1, true)}>
-                            <small>Tiếp · {i + 2}/{total}</small>
-                            <strong>{next.heading}</strong>
-                            <ArrowRight size={16} aria-hidden />
-                          </button>
-                        )}
-                      </>
-                    ) : coveredByNext ? null : (
-                      <button
-                        type="button"
-                        className="theory-section-toggle"
-                        aria-expanded={false}
-                        onClick={() => goTo(i, false)}
-                      >
-                        <span>{section.heading}</span>
-                        <ChevronDown size={18} aria-hidden />
-                      </button>
-                    )}
-                  </div>
-                );
-              })}
-            </>
-          )}
-        </div>
-      )}
-      <div className="lesson-block-foot">
-        {item.pdf_url && (
-          <a href={item.pdf_url} target="_blank" rel="noreferrer" className="lesson-link">
-            <FileText size={15} /> Tài liệu PDF
-          </a>
-        )}
-        {recordProgress && loggedIn && open && hasBody && <TheoryRpBar rp={rp} />}
-        {recordProgress && loggedIn && open && (
-          <button type="button" className={`lesson-done ${done ? "is-done" : ""}`} onClick={onDone} disabled={done}>
-            <Check size={14} /> {done ? "Đã tự xác nhận đọc" : "Tôi đã đọc xong"}
-          </button>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/** Quiz kiểm tra nhanh cuối lý thuyết: badge trạng thái + nút vào làm/làm lại, giữ lịch sử từng lần. */
-function TheoryQuizBlock({
-  examId,
-  itemId,
-  status,
-  loggedIn,
-  teacherView = false,
-}: {
-  examId: number;
-  itemId: number;
-  status: TheoryStatusResult | undefined;
-  loggedIn: boolean;
-  teacherView?: boolean;
-}) {
-  const attempted = !!status && status.attemptCount > 0;
-  const tone =
-    status?.status === "passed" ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status";
-  return (
-    <div className="lesson-exam">
-      <div>
-        <p className="lesson-block-title">Kiểm tra nhanh</p>
-        <p className="lesson-block-sub">
-          {!teacherView && status?.status === "passed" && `Đúng ${status.bestCorrect} câu — `}
-          {!teacherView && status?.status === "completed_not_passed" &&
-            `Đúng ${status.bestCorrect} câu, chưa đạt (lần ${status.attemptCount}) — `}
-          {teacherView ? (
-            <span className="lesson-status">Xem đáp án, không ghi lượt làm</span>
-          ) : loggedIn ? (
-            <span className={tone}>{status?.label ?? "Chưa bắt đầu"}</span>
-          ) : (
-            <span className="lesson-status">Đăng nhập để làm và lưu kết quả</span>
-          )}
-        </p>
-      </div>
-      {loggedIn ? (
-        <Link href={`/kiem-tra/lam?id=${examId}&item=${itemId}`} className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}>
-          {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm kiểm tra nhanh"}
-        </Link>
-      ) : (
-        <Link href="/dang-nhap" className="lesson-btn">
-          Đăng nhập để làm
-        </Link>
-      )}
-    </div>
-  );
-}
-
-/** Một đề: tên, thời gian + số câu, trạng thái, nút làm bài. */
-function ExamRow({
-  examId,
-  itemId,
-  exam,
-  score,
-  loggedIn,
-  metaStatus,
-  statusLabel,
-  passed,
-  teacherView = false,
-  showQr = false,
-}: {
-  examId: number;
-  itemId?: number | null;
-  exam: LessonExamMeta | undefined;
-  score: number | undefined;
-  loggedIn: boolean;
-  /** Trạng thái tải thông tin đề (chỉ có ý nghĩa khi đã đăng nhập) — phân biệt đang tải/lỗi/không thấy đề với chưa đăng nhập. */
-  metaStatus: "loading" | "error" | "ready";
-  /** Nhãn Đạt/Chưa đạt/Chờ chấm/Đã nộp — chỉ có khi mục này đã tính được trạng thái. */
-  statusLabel?: string;
-  passed?: boolean;
-  teacherView?: boolean;
-  /**
-   * Hiện số đề + nút "Mã QR" (chiếu lên bảng) — dành cho đề KIỂM TRA (bài kiểm tra chương,
-   * giữa/cuối kì). Đề luyện tập không cần: thầy không chiếu QR cho đề luyện.
-   */
-  showQr?: boolean;
-}) {
-  if (!exam) {
-    const notice = !loggedIn
-      ? "Đăng nhập để xem đề"
-      : metaStatus === "loading"
-        ? "Đang tải…"
-        : metaStatus === "error"
-          ? "Không tải được, thử tải lại trang"
-          : "Đề không khả dụng";
-    return (
-      <div className="lesson-exam">
-        <div>
-          <p className="lesson-block-title">Đề kiểm tra</p>
-        </div>
-        {loggedIn ? (
-          <span className="lesson-muted">{notice}</span>
-        ) : (
-          <Link href="/dang-nhap" className="lesson-btn-ghost">
-            {notice}
-          </Link>
-        )}
-      </div>
-    );
-  }
-
-  const counts = formatTypeCounts(exam.type_counts);
-  const attempted = score !== undefined;
-
-  return (
-    <div className="lesson-exam">
-      <div>
-        <p className="lesson-block-title">{exam.title}</p>
-        <p className="lesson-block-sub">
-          {exam.duration_minutes} phút · {counts || `${exam.question_count} câu`}
-          {showQr && (
-            // Số đề để em gõ tay ở trang Quét mã khi camera hỏng / mã trên bảng bị lấp (N3).
-            <span className="rounded-full border border-line px-2 py-0.5 font-mono text-[11px] font-semibold tracking-wide text-muted">
-              Mã đề #{examId}
-            </span>
-          )}
-          {!teacherView && (
-            <span className={attempted && passed !== false ? "lesson-status-done" : attempted ? "lesson-status" : "lesson-status"}>
-              {attempted ? `${statusLabel ?? "Đã làm"} · ${score} điểm` : "Chưa làm"}
-            </span>
-          )}
-        </p>
-      </div>
-      <div className="flex shrink-0 flex-wrap items-stretch gap-2">
-        <Link
-          href={`/kiem-tra/lam?id=${examId}${itemId ? `&item=${itemId}` : ""}`}
-          className={attempted && !teacherView ? "lesson-btn-ghost" : "lesson-btn"}
-        >
-          {teacherView ? "Xem đề và đáp án" : attempted ? "Làm lại" : "Làm bài"}
-        </Link>
-        {showQr && <ExamQrButton examId={examId} title={exam.title} />}
-      </div>
-    </div>
-  );
-}
-
-/** "N dạng bài kèm lời giải" đếm theo dạng có cấu trúc (problem_html); mục cũ đi kèm (bài tự luận…) đếm riêng. */
-function workedSubtitle(item: LessonItem): string {
-  if (item.kind !== "bai_tap_mau" || item.questions.length === 0) return item.subtitle ?? "";
-  const dang = item.questions.filter((q) => q.problem_html).length;
-  const them = item.questions.length - dang;
-  if (dang === 0 || them === 0) return item.subtitle ?? "";
-  return `${dang} dạng bài kèm lời giải · ${them} mục bài tập thêm`;
-}
-
-/** Khung xương trong lúc chờ bài học — cùng lớp bố cục (lesson-shell/lesson-layout) để nội dung về không nhảy. */
-function LessonLoginWall({ title }: { title: string }) {
-  const next = typeof window === "undefined" ? "" : encodeURIComponent(window.location.pathname + window.location.search);
-  return (
-    <div className="mx-auto max-w-xl px-4 py-16 text-center">
-      <h1 className="text-xl font-bold text-slate-900">{title || "Bài học"}</h1>
-      <p className="mt-3 text-base text-slate-700">
-        Bài này dành cho thành viên. Tạo tài khoản <strong>miễn phí</strong> trong 1 phút để học tiếp — không cần thẻ, không mất phí.
-      </p>
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center">
-        <Link href={`/dang-ky/?next=${next}`} className="inline-flex min-h-12 items-center justify-center rounded-lg bg-blue-600 px-6 font-semibold text-white">
-          Tạo tài khoản miễn phí
-        </Link>
-        <Link href={`/dang-nhap/?next=${next}`} className="inline-flex min-h-12 items-center justify-center rounded-lg border border-slate-300 px-6 font-semibold text-slate-800">
-          Tôi đã có tài khoản
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-function LessonSkeleton() {
-  return (
-    <div className="lesson-shell" aria-busy="true" aria-label="Đang tải bài học">
-      <div className="lesson-layout animate-pulse">
-        <aside className="lesson-nav" aria-hidden="true">
-          <div className="h-4 w-28 rounded bg-white/10" />
-          <div className="mt-6 space-y-3">
-            {Array.from({ length: 4 }, (_, i) => (
-              <div key={i} className="h-4 w-full rounded bg-white/5" />
-            ))}
-          </div>
-        </aside>
-        <div className="lesson-main">
-          <div className="h-3 w-24 rounded bg-white/10" />
-          <div className="mt-4 h-8 w-3/4 rounded bg-white/10" />
-          <div className="mt-3 h-4 w-1/2 rounded bg-white/5" />
-          <div className="mt-8 space-y-5">
-            {Array.from({ length: 3 }, (_, i) => (
-              <div key={i} className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                <div className="h-5 w-1/3 rounded bg-white/10" />
-                <div className="mt-4 h-4 w-full rounded bg-white/5" />
-                <div className="mt-2 h-4 w-5/6 rounded bg-white/5" />
-                <div className="mt-2 h-4 w-2/3 rounded bg-white/5" />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/** Lối thoát khỏi trang bài: thanh đáy toàn site bị ẩn ở đây, nên cần một nút về lại 5 nút chính (Hôm nay…). */
-function LessonHomeLink() {
-  const { session } = useAuth();
-  return (
-    <Link href={session ? "/tai-khoan" : "/"} className="lesson-bottom-link lesson-bottom-home" aria-label="Về trang chính">
-      <Home size={18} aria-hidden />
-    </Link>
-  );
-}
+import {
+  TAB_LABEL,
+  TAB_SLUG,
+  FONT_SCALES,
+  FONT_STORE,
+  DIM_STORE,
+  LESSON_DONE_STORE,
+  TOC_READ_STORE,
+  parseTabHash,
+  currentHash,
+  scrollToPart,
+  writeTabHash,
+  flashTheorySection,
+  highlightTheorySectionOnly,
+} from "./_parts/lesson-nav";
+import { ProgressRing, formatDue, LessonLoginWall, LessonSkeleton, LessonHomeLink } from "./_parts/LessonBits";
+import { VideoBlock } from "./_parts/VideoBlock";
+import { TheoryBlock, TheoryQuizBlock } from "./_parts/TheoryBlock";
+import { ExamRow } from "./_parts/ExamRow";
+import { GradedItemBlock } from "./_parts/GradedItemBlock";
+import { WorkedPracticeBlock } from "./_parts/WorkedPracticeBlock";
 
 function LessonLoader() {
   const { session, loading } = useAuth();
@@ -768,6 +106,10 @@ function LessonLoader() {
 
   const [title, setTitle] = useState("");
   const [chapterTitle, setChapterTitle] = useState("");
+  // Trang xuất tĩnh nên <title> mặc định là tên site — đặt tên bài để tab/lịch sử trình duyệt phân biệt được.
+  useEffect(() => {
+    if (title) document.title = `${title} | ThachLab`;
+  }, [title]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
   const [items, setItems] = useState<LessonItem[] | null>(null);
@@ -776,6 +118,7 @@ function LessonLoader() {
   const workedState: "loading" | "failed" = workedFailedId === id ? "failed" : "loading";
   const [examMetas, setExamMetas] = useState<Map<number, LessonExamMeta>>(new Map());
   const [examMetaStatus, setExamMetaStatus] = useState<"loading" | "error" | "ready">("loading");
+  const [masteryInitial, setMasteryInitial] = useState<LessonMasteryInitial>("pending");
   const [scores, setScores] = useState<Map<number, number>>(new Map());
   const [done, setDone] = useState<Set<number>>(new Set());
   const [progress, setProgress] = useState<Map<number, ItemProgress>>(new Map());
@@ -796,6 +139,8 @@ function LessonLoader() {
   // chút — xem `splitTheorySections` mode "chieu"). Chỉ mount khi bấm nút, và cả component
   // được tải chậm (LessonPresenterLazy) nên phần vẽ tay/điều hướng không nằm trong JS ban đầu.
   const [presenting, setPresenting] = useState(false);
+  // Trình chiếu bài tập mẫu (17/11/2026): mục đang chiếu + dạng bắt đầu; chỉ giáo viên, tải chậm.
+  const [chieuBtm, setChieuBtm] = useState<{ itemId: number; start: number } | null>(null);
   // "#chieu" trên URL → mở thẳng chế độ trình chiếu (thầy lưu sẵn link cho tiết dạy). Đọc
   // trong effect chứ không phải giá trị khởi tạo của useState: trang này được prerender lúc
   // build (lúc đó chưa có hash), khởi tạo bằng hash sẽ lệch cây DOM khi hydrate. Đẩy sang
@@ -921,44 +266,50 @@ function LessonLoader() {
     fetchLessonsStatic(setSiblingLessons).then(setSiblingLessons);
   }, []);
 
-  // dữ liệu cần đăng nhập: thông tin đề kiểm tra (RLS), điểm, tiến độ
-  useEffect(() => {
-    if (!session || !items) return;
-    const examIds = items.filter((i) => isGradedKind(i.kind)).flatMap((i) => i.exam_ids);
-    void (async () => {
-      if (examIds.length === 0) {
-        setExamMetaStatus("ready");
-        return;
-      }
-      setExamMetaStatus("loading");
-      try {
-        setExamMetas(await fetchExamMetas(examIds));
-        setExamMetaStatus("ready");
-      } catch {
-        setExamMetaStatus("error");
-      }
-    })();
-  }, [session, items]);
-
-  // Điểm và dấu đã học của chính tài khoản. Truy vấn chạy song song với phần còn lại ngay khi có
-  // session (không chờ hồ sơ, giữ tốc độ cũ cho học sinh); chế độ giáo viên chỉ bỏ kết quả, không áp.
+  // Dữ liệu cần đăng nhập — thông tin đề kiểm tra (RLS), điểm, tiến độ, mức thành thạo — gộp trong MỘT RPC
+  // get_lesson_page_student (services/lesson-page.ts; RPC chưa chạy thì tự lùi về các truy vấn cũ). Chạy song
+  // song với phần còn lại ngay khi có session (không chờ hồ sơ); chế độ giáo viên chỉ bỏ tiến độ, không áp.
+  // Khoá theo mục + mã đề chứ không theo đối tượng `items`: bản đối chiếu DB (thêm lời giải bài tập mẫu) thay
+  // `items` nhưng không đổi dữ liệu cần tải, không được gọi lại lần hai.
   const teacherViewRef = useRef(isTeacherView);
   useEffect(() => {
     teacherViewRef.current = isTeacherView;
   }, [isTeacherView]);
+  const itemsRef = useRef(items);
   useEffect(() => {
-    if (!session || !items) return;
-    fetchMyLessonPageProgress(session.user.id, items)
-      .then(({ progress: nextProgress, scores: nextScores, done: nextDone }) => {
-        if (teacherViewRef.current) return;
-        setProgress(nextProgress);
-        setScores(nextScores);
-        setDone(nextDone);
-      })
-      .catch(() => {
-        if (!teacherViewRef.current) setProgress(new Map());
-      });
-  }, [session, items]);
+    itemsRef.current = items;
+  });
+  const studentDataKey = items ? items.map((i) => `${i.id}:${i.kind}:${i.exam_ids.join(".")}`).join(",") : null;
+  const studentId = session?.user.id ?? null;
+  // Đổi bài trong cùng trang (?id= mới): về "đang tải" như bản cũ, không để đề/mastery của bài trước hiện tạm.
+  const [studentDataFor, setStudentDataFor] = useState(id);
+  if (studentDataFor !== id) {
+    setStudentDataFor(id);
+    setExamMetaStatus("loading");
+    setMasteryInitial("pending");
+  }
+  useEffect(() => {
+    const current = itemsRef.current;
+    if (!studentId || !current || studentDataKey === null) return;
+    let stale = false;
+    void fetchLessonPageStudent(id, studentId, current).then((data) => {
+      if (stale) return;
+      setMasteryInitial(data.mastery === undefined ? "self" : data.mastery);
+      if (data.examMetas) {
+        setExamMetas(data.examMetas);
+        setExamMetaStatus("ready");
+      } else setExamMetaStatus("error");
+      if (teacherViewRef.current) return;
+      if (data.progress) {
+        setProgress(data.progress.progress);
+        setScores(data.progress.scores);
+        setDone(data.progress.done);
+      } else setProgress(new Map());
+    });
+    return () => {
+      stale = true;
+    };
+  }, [id, studentId, studentDataKey]);
 
   // Mọi mã đề đã gắn vào bài (luyện tập/kiểm tra/bài tập mẫu/lý thuyết) — nguồn câu hỏi cho
   // "Luyện 10 câu phần này" của LessonMasteryCard, tái dùng examIds đã có sẵn từ items, không
@@ -1693,6 +1044,7 @@ function LessonLoader() {
   /** Nội dung của đúng tab đang mở — tách riêng vì commit sau còn dùng lại ở ngăn kéo. */
   function renderSectionItems(section: { kind: LessonItemKind; items: LessonItem[] }) {
     const plain = section.items.length === 1;
+    const theoryItemsAll = (items ?? []).filter((i) => i.kind === "ly_thuyet");
     return section.items.map((item, itemIndex) => {
       // Mục duy nhất của phần → tiêu đề riêng (thường là "<Loại> — <tên bài>")
       // chỉ lặp lại ý tiêu đề phần "N. <Tên phần>" ngay trên, ẩn cho đỡ trùng.
@@ -1735,114 +1087,40 @@ function LessonLoader() {
           </div>
         );
 
-      if (isGradedKind(item.kind)) {
-        const gradedExamIds = visibleExamIds(item.exam_ids);
+      if (isGradedKind(item.kind))
         return (
-          <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
-            {(!plain || item.due_at) && (
-              <div className="lesson-block-head">
-                {!plain && <p className="lesson-block-title">{item.title}</p>}
-                {item.due_at && <p className="lesson-block-sub">Hạn nộp: {formatDue(item.due_at)}</p>}
-              </div>
-            )}
-            {gradedExamIds.length === 0 ? (
-              <p className="lesson-muted">Chưa gắn đề</p>
-            ) : (
-              <div className="lesson-stack">
-                {gradedExamIds.map((examId) => {
-                  const graded = progress.get(item.id)?.graded;
-                  return (
-                    <ExamRow
-                      key={examId}
-                      examId={examId}
-                      itemId={item.id}
-                      exam={examMetas.get(examId)}
-                      score={scores.get(examId)}
-                      loggedIn={!!session}
-                      metaStatus={examMetaStatus}
-                      statusLabel={graded?.label}
-                      passed={graded ? graded.status === "passed" : undefined}
-                      teacherView={isTeacherView}
-                      showQr={item.kind === "kiem_tra"}
-                    />
-                  );
-                })}
-              </div>
-            )}
-          </div>
+          <GradedItemBlock
+            key={item.id}
+            item={item}
+            plain={plain}
+            examIds={visibleExamIds(item.exam_ids)}
+            graded={progress.get(item.id)?.graded}
+            examMetas={examMetas}
+            scores={scores}
+            loggedIn={!!session}
+            metaStatus={examMetaStatus}
+            teacherView={isTeacherView}
+          />
         );
-      }
 
       // bai_tap_mau / luyen_tap: lưới từng câu
-      const showSummaries = item.kind === "luyen_tap" && itemIndex === 0;
-      // Phụ đề lưu trong DB dễ lệch số: Luyện tập ghi số câu của MỘT đề gắn kèm trong khi PracticeSession bốc từ cả
-      // ngân hàng (đã tự báo "Ngân hàng có N câu") → bỏ; Bài tập mẫu đếm cả mục tự luận cũ là "dạng" → đếm lại (N3).
-      const blockSub = item.kind === "luyen_tap" ? "" : workedSubtitle(item);
       return (
-        <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-block" data-item={item.id}>
-          {showSummaries && (
-            <div className="mb-4">
-              {(items ?? [])
-                .filter((i) => i.kind === "ly_thuyet")
-                .map((t) => (
-                  <TheorySummary key={t.id} html={t.summary_html} title={t.title} />
-                ))}
-            </div>
-          )}
-          {(!plain || blockSub) && (
-            <div className="lesson-block-head">
-              {!plain && <p className="lesson-block-title">{item.title}</p>}
-              {blockSub && <p className="lesson-block-sub">{blockSub}</p>}
-            </div>
-          )}
-          {item.kind === "bai_tap_mau" ? (
-            <>
-              {item.exam_ids.length > 0 && <SampleQuestionsGrid examIds={item.exam_ids} color={ACCENT} />}
-              {item.questions.length === 0 && (item.questions_count ?? 0) > 0 ? (
-                // DB có dạng bài nhưng lời giải chưa về (file tĩnh không chứa): báo rõ, không để lưới trống (N3, L4).
-                <p className="lesson-block-sub" role="status" aria-live="polite">
-                  {workedState === "failed" ? (
-                    <>
-                      Chưa tải được {item.questions_count} dạng bài.{" "}
-                      <button type="button" className="lesson-btn-ghost" onClick={retryWorked}>
-                        Tải lại
-                      </button>
-                    </>
-                  ) : (
-                    `Đang tải ${item.questions_count} dạng bài…`
-                  )}
-                </p>
-              ) : (
-                <WorkedQuestionsGrid questions={item.questions} color={ACCENT} lessonId={item.lesson_id} />
-              )}
-            </>
-          ) : (
-            <PracticeSession
-              examIds={item.exam_ids}
-              poolExamIds={lessonExamIds}
-              lessonId={id}
-              itemId={item.id}
-              passScore={item.practice_pass_score}
-              color={ACCENT}
-              recordProgress={recordProgress}
-              onActiveChange={(active) => {
-                practiceActiveRef.current = active;
-              }}
-            />
-          )}
-          {recordProgress && (
-            <div className="lesson-block-foot">
-              <button
-                type="button"
-                className={`lesson-done ${done.has(item.id) ? "is-done" : ""}`}
-                onClick={() => markDone(item)}
-                disabled={done.has(item.id)}
-              >
-                <Check size={14} /> {done.has(item.id) ? "Đã làm" : "Đánh dấu đã làm"}
-              </button>
-            </div>
-          )}
-        </div>
+        <WorkedPracticeBlock
+          key={item.id}
+          item={item}
+          plain={plain}
+          showSummaries={item.kind === "luyen_tap" && itemIndex === 0}
+          theoryItems={theoryItemsAll}
+          workedState={workedState}
+          onRetryWorked={retryWorked}
+          onPresent={canPresent ? (start) => setChieuBtm({ itemId: item.id, start }) : undefined}
+          lessonId={id}
+          poolExamIds={lessonExamIds}
+          recordProgress={recordProgress}
+          practiceActiveRef={practiceActiveRef}
+          done={done.has(item.id)}
+          onDone={() => markDone(item)}
+        />
       );
     });
   }
@@ -2131,7 +1409,7 @@ function LessonLoader() {
     if (!items || items.length === 0) return null;
     return (
       <div className="lesson-endpanels">
-        <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={recordProgress} />
+        <LessonMasteryCard lessonId={id} examIds={lessonExamIds} loggedIn={recordProgress} initial={masteryInitial} />
         {!canPresent && (
           <button
             type="button"
@@ -2470,6 +1748,13 @@ function LessonLoader() {
           onClose={() => setPresenting(false)}
         />
       )}
+      {/* Trình chiếu bài tập mẫu — dựng từ các dạng đã tải sẵn của mục (0 request mới), tải chậm, chỉ giáo viên. */}
+      {chieuBtm && (() => {
+        const it = items?.find((x) => x.id === chieuBtm.itemId);
+        return it && it.questions.length > 0 ? (
+          <BtmPresenter questions={it.questions} start={chieuBtm.start} title={title} onClose={() => setChieuBtm(null)} />
+        ) : null;
+      })()}
     </div>
   );
 }

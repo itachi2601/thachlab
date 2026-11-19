@@ -1,0 +1,126 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 16. Vòng năng lượng trên Trái Đất. Năng lượng hoá thạch",
+ "lesson_id": 94,
+ "nguon_trong_bai": "content/lesson-samples/l9-vong-nang-luong-hoa-thach/theory.html",
+ "id": "tn-l9-hoathach-01",
+ "ten": "Mô hình vòng tuần hoàn nước trong bát thuỷ tinh",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "vongnangluong.vong_nuoc",
+  "vongnangluong.mat_troi_nguon_goc"
+ ],
+ "muc_tieu": "Thấy nhiệt làm nước bay hơi, hơi gặp lạnh ngưng thành giọt và rơi lại: mô hình thu nhỏ vòng nước do Mặt Trời duy trì.",
+ "dung_cu": [
+  {
+   "ten": "Bát thuỷ tinh trong",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nước ấm khoảng 50 °C",
+   "so_luong": 1
+  },
+  {
+   "ten": "Màng bọc thực phẩm",
+   "so_luong": 1
+  },
+  {
+   "ten": "Vài viên nước đá",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn bàn hoặc nắng trực tiếp",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Rót nước ấm vào bát, bọc kín miệng bát bằng màng bọc thực phẩm.",
+   "Đặt vài viên đá lên giữa màng, để bát dưới nắng hoặc đèn bàn 10–15 phút."
+  ],
+  "quan_sat": [
+   "Mặt dưới màng mờ hơi nước.",
+   "Giọt nước to dần ngay dưới chỗ đá rồi nhỏ xuống bát."
+  ],
+  "rut_ra": [
+   "Nhiệt làm nước bay hơi; hơi gặp lạnh ngưng thành giọt; giọt rơi lại: một vòng khép kín.",
+   "Ngoài trời, Mặt Trời là nguồn nhiệt, không khí lạnh trên cao đóng vai viên đá."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "T_nuoc",
+   "ten": "Nhiệt độ nước ban đầu",
+   "don_vi": "°C",
+   "kieu": "dieu_chinh",
+   "min": 25,
+   "max": 60,
+   "mac_dinh": 50,
+   "buoc": 5
+  },
+  {
+   "ky_hieu": "T_da",
+   "ten": "Nhiệt độ mặt màng dưới đá",
+   "don_vi": "°C",
+   "kieu": "co_dinh",
+   "gia_tri": 5
+  },
+  {
+   "ky_hieu": "t_giot",
+   "ten": "Thời gian tới giọt đầu tiên rơi",
+   "don_vi": "phút",
+   "kieu": "do_duoc",
+   "sai_so_do": 0.5
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "tốc độ bay hơi tăng khi T_nuoc tăng",
+   "hơi ngưng ở chỗ màng lạnh nhất (dưới đá)"
+  ],
+  "gia_thiet": [
+   "định tính, không đo lượng nước",
+   "bát kín nên hơi không thoát ra ngoài"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Nước ban đầu",
+   "Hiện tượng sau 10 phút"
+  ],
+  "hang": [
+   [
+    "nước ấm 50 °C",
+    "màng mờ, giọt rơi dưới chỗ đá"
+   ],
+   [
+    "nước nguội 25 °C",
+    "màng hơi mờ, chưa có giọt rơi"
+   ]
+  ],
+  "ghi_chu": "Mô tả định tính minh hoạ, chưa phải quan sát ghi thật."
+ },
+ "ket_qua_ky_vong": "Có giọt nước rơi lại vào bát ngay dưới chỗ đặt đá.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ giọt nước dưới màng là nước đá tan thấm qua màng.",
+  "Nghĩ mưa không liên quan Mặt Trời."
+ ],
+ "an_toan": "Dùng nước ấm, không dùng nước sôi với bát thuỷ tinh mỏng.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Hạt hơi nước bốc lên khi bật nguồn nhiệt, gặp lớp lạnh thì gom thành giọt rơi.",
+  "diem_nhan": "Tắt nguồn nhiệt thì vòng chậm hẳn: nước chỉ quay vòng khi có năng lượng cấp vào."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hoathach-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-hoathach-01-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "vòng tuần hoàn nước trong bát",
+  "nhin_vao": "Giọt nước dưới màng bọc đến từ đâu?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
+ }
+}

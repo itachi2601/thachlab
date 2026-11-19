@@ -16,8 +16,10 @@ OX, OY = 220, 580                 # goc O tren man hinh (khung 1080 x 1920)
 XEND = 1000                       # dau truc Ox
 LAM = 380.0                       # buoc song tren hinh (px)
 XM = 600                          # diem M
-AE, AB = 165.0, 100.0             # bien do ve E (doc) va B (xien)
-ZX, ZY = -0.5, 0.866               # huong +Oz tren man hinh (xuong-trai)
+AE, AB = 165.0, 115.0             # bien do ve E (doc) va B (xien)
+# 12/11: Oz doc hon (-0,3; 0,954) -> lech ngang cua duong B <= 35 px, he so nen 0,57 < 1: duong B la sin mo,
+# khong gay khuc (ban cu -0,5 lam nua suon doc gan dung dung). Dinh B nam tren cung mat cat x voi dinh E (vach noi).
+ZX, ZY = -0.3, 0.954               # huong +Oz tren man hinh (xuong-trai, huong ra phia nguoi xem)
 
 def wave(x, ph):
     """E/E0 = B/B0 tai x, pha ph = 2pi.t/T (M o pha 0 khi t = 0)."""
@@ -29,16 +31,20 @@ def axes(d, show_lab=True):
     zx, zy = OX + ZX * 210, OY + ZY * 210
     d.line([(OX, OY), (zx, zy)], fill=NAVY, width=4); arrow(d, (OX + ZX * 180, OY + ZY * 180), (zx, zy), NAVY, w=4, head=20)
     if show_lab:
-        text(d, (XEND + 24, OY + 46), "x", 44, NAVY)
-        text(d, (OX + 34, OY - 262), "y", 44, NAVY)
-        text(d, (zx - 26, zy + 30), "z", 44, NAVY)
+        text(d, (XEND + 10, OY + 46), "+x", 44, NAVY)
+        text(d, (OX + 44, OY - 262), "+y", 44, NAVY)
+        text(d, (zx - 40, zy + 26), "+z", 44, NAVY)
         text(d, (OX - 30, OY - 26), "O", 40, NAVY)
     # mui ten phuong truyen phia tren hinh
     arrow(d, (780, 300), (1010, 300), GREEN, w=7, head=22)
     text(d, (760, 300), "phương truyền", 40, GREEN, anchor="rm")
 
 def curves(d, ph, showB=True):
-    xs = [OX + k * 6 for k in range(int((XEND - 40 - OX) / 6) + 1)]
+    xs = [OX + k * 3 for k in range(int((XEND - 40 - OX) / 3) + 1)]
+    for x in range(OX + 19, XEND - 40, 19):          # vach noi truc Ox -> duong song (cung mat cat x)
+        w = wave(x, ph)
+        d.line([(x, OY), (x, OY - AE * w)], fill=A(RED, 0.35), width=2)
+        if showB: d.line([(x, OY), (x + ZX * AB * w, OY + ZY * AB * w)], fill=A(BLUE, 0.35), width=2)
     if showB:
         pts = [(x + ZX * AB * wave(x, ph), OY + ZY * AB * wave(x, ph)) for x in xs]
         d.line(pts, fill=BLUE, width=5, joint="curve")
@@ -80,7 +86,8 @@ def s_hook(img, d, t, sc):
     pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
     text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    ctext(d, y0 + 235, "Tại M, E đang cực đại.\nLúc đó B tại M ra sao?", 56, INK, maxw=920, alpha=a)
+    ctext(d, y0 + 210, "Tại M, E đang cực đại.\nLúc đó B tại M ra sao?", 56, INK, maxw=920, alpha=a)
+    text(d, (W / 2, y0 + 345), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a * appear(t, M[1], 0.4))
     tc, tend = M[1] + 0.6, sc["T"] - 0.3
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
@@ -88,9 +95,9 @@ def s_hook(img, d, t, sc):
         d.rounded_rectangle([140, y0 + 410, 140 + 800 * (1 - p), y0 + 422], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
-STOPS = [0.6, 1.5, 3.1, 4.7, 6.3]          # moc hien hang 0, T/4, T/2, 3T/4, T
-MOVES = [(0.7, 1.4), (2.3, 3.0), (3.9, 4.6), (5.5, 6.2)]
-RUN0 = 7.0                                  # sau do song chay lien tuc (cham)
+STOPS = [1.4, 2.3, 3.9, 5.5, 7.1]          # moc hien hang 0, T/4, T/2, 3T/4, T
+MOVES = [(1.5, 2.2), (3.1, 3.8), (4.7, 5.4), (6.3, 7.0)]
+# 12/11 (cong B): bo doan song chay tiep sau T -> dung hinh o pha T, E/E0 tai M = +1 khop hang cuoi bang
 ROWS = (("0", 1, 1), ("T/4", 0, 0), ("T/2", -1, -1), ("3T/4", 0, 0), ("T", 1, 1))
 
 def ph_at(t):
@@ -98,12 +105,11 @@ def ph_at(t):
     for a, b in MOVES:
         if t >= b: q += 1
         elif t > a: q += ease((t - a) / (b - a))
-    if t > RUN0: q += (t - RUN0) * 0.55
     return q * math.pi / 2
 
 def nv(v): return "0" if v == 0 else ("+1" if v > 0 else "−1")
 
-def meters(d, ph, y0=850):
+def meters(d, ph, y0=840):
     card(d, (40, y0, 1040, y0 + 250), fill=WHITE, outline=LIGHT, w=3)
     e = wave(XM, ph)
     for j, (lab, col) in enumerate((("E/E₀", RED), ("B/B₀", BLUE))):
@@ -116,11 +122,11 @@ def meters(d, ph, y0=850):
     for x, s in ((300, "−1"), (600, "0"), (900, "+1")):
         text(d, (x, y0 + 214), s, 40, NOTE, bold=False)
 
-def table(d, y0, ks):
-    rh = 66; h = 84 + rh * 5
-    card(d, (40, y0, 1040, y0 + h), fill=WHITE, outline=LIGHT, w=3)
-    for x, s, c in ((250, "t", NOTE), (560, "E/E₀", RED), (840, "B/B₀", BLUE)): text(d, (x, y0 + 44), s, 40, c)
-    d.line([(70, y0 + 82), (1010, y0 + 82)], fill=LIGHT, width=3)
+def table(d, y0, ks, kt=1.0):
+    rh = 60; h = 84 + rh * 5
+    card(d, (40, y0, 1040, y0 + h), fill=A(WHITE, kt), outline=A(LIGHT, kt), w=3)
+    for x, s, c in ((250, "t", NOTE), (560, "E/E₀", RED), (840, "B/B₀", BLUE)): text(d, (x, y0 + 44), s, 40, c, alpha=kt)
+    d.line([(70, y0 + 82), (1010, y0 + 82)], fill=A(LIGHT, kt), width=3)
     for j, (r, k) in enumerate(zip(ROWS, ks)):
         if k <= 0: continue
         yy = y0 + 82 + rh * (j + 0.5) + 2
@@ -133,17 +139,20 @@ def s_do(img, d, t, sc):
     ph = ph_at(t)
     axes(d); curves(d, ph); at_M(d, ph)
     meters(d, ph)
+    text(d, (175, 812), "B > 0: theo chiều +z", 40, BLUE, anchor="lm", alpha=appear(t, 0.3, 0.4))
+    text(d, (W / 2, 1122), "E₀, B₀: giá trị cực đại", 40, INK, alpha=appear(t, 0.3, 0.4))
     ks = [appear(t, s, 0.35) for s in STOPS]
-    table(d, 1135, ks)
-    tag(d, 1660)
+    table(d, 1160, ks, appear(t, 1.0, 0.4))           # thanh hien truoc, bang sau mot nhip
+    tag(d, 1640)
 
 # ---------------- canh 3: Dap an + rut ra ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     ka = appear(t, M[0] + 0.1, 0.4)
-    pw = tw(d, "ĐÁP ÁN B", F(40)) + 56
+    lab = "ĐÁP ÁN · B cũng cực đại"
+    pw = tw(d, lab, F(40)) + 56
     card(d, (W / 2 - pw / 2, 270, W / 2 + pw / 2, 336), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 303), "ĐÁP ÁN B", 40, WHITE, alpha=ka)
+    text(d, (W / 2, 303), lab, 40, WHITE, alpha=ka)
     # hai do thi theo thoi gian tai M, cung truc t
     x0, x1 = 230, 980
     X = lambda u: x0 + u * (x1 - x0)                 # u = t/T tu 0 den 1
@@ -155,7 +164,7 @@ def s_dapan(img, d, t, sc):
         k = appear(t, 0.6 if lab == "E" else 1.0, 0.6)
         n = max(2, int(101 * k))
         d.line(pts[:n], fill=A(col, kg), width=6, joint="curve")
-    kd = appear(t, 1.8, 0.4)
+    kd = appear(t, 1.5, 0.4)                          # giu tu 1,5 s toi het canh (~7,9 s)
     if kd > 0:
         for u in (0, 0.5, 1.0):
             for y in range(380, 760, 26): d.line([(X(u), y), (X(u), y + 13)], fill=A(GREEN, kd), width=4)
@@ -166,8 +175,8 @@ def s_dapan(img, d, t, sc):
     if k2 > 0:
         cx, cy = 210, 1170                            # bieu tuong ba phuong vuong goc
         arrow(d, (cx, cy), (cx, cy - 150), A(RED, k2), w=8, head=22); text(d, (cx + 30, cy - 140), "E", 44, RED, anchor="lm", alpha=k2)
-        arrow(d, (cx, cy), (cx + ZX * 140, cy + ZY * 140), A(BLUE, k2), w=8, head=22)
-        text(d, (cx + ZX * 140 + 40, cy + ZY * 140 + 6), "B", 44, BLUE, anchor="lm", alpha=k2)
+        arrow(d, (cx, cy), (cx + ZX * 110, cy + ZY * 110), A(BLUE, k2), w=8, head=22)
+        text(d, (cx + ZX * 110 + 36, cy + ZY * 110 - 4), "B", 44, BLUE, anchor="lm", alpha=k2)
         arrow(d, (cx, cy), (cx + 170, cy), A(GREEN, k2), w=8, head=22)
         text(d, (cx + 26, cy - 44), "phương truyền", 40, GREEN, anchor="lm", alpha=k2)
         text(d, (540, 1030), "E vuông góc B", 44, INK, anchor="lm", alpha=k2)
@@ -175,7 +184,7 @@ def s_dapan(img, d, t, sc):
         text(d, (540, 1170), "phương truyền", 44, INK, anchor="lm", alpha=k2)
         text(d, (540, 1250), "→ sóng ngang", 44, GREEN, anchor="lm", alpha=k2)
         k3 = appear(t, M[1] + 1.6, 0.45)
-        text(d, (W / 2, 1360), "Truyền cả trong chân không: c = 3·10⁸ m/s", 40, NAVY, alpha=k3)
+        text(d, (W / 2, 1360), "Truyền cả trong chân không: c = 3·10⁸ m/s", 44, NAVY, alpha=k3)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def mini_plot(d, box, shift, alpha):
@@ -205,21 +214,25 @@ def s_bay(img, d, t, sc):
     text(d, (W / 2, 330), "BẪY", 40, WHITE, alpha=k1)
     strike_q(d, 430, "“E cực đại thì B = 0 (lệch T/4)”", clamp((t - mk) / 0.4), k1)
     k0 = k1 * appear(t, 0.5, 0.45)                    # hinh co ngay khi phu de len
-    for j, (x0, sh, lab, col) in enumerate(((60, math.pi / 2, "lệch T/4: sai", RED), (560, 0.0, "cùng pha: đúng", GREEN))):
-        kk = k0 if j == 0 else k1 * appear(t, mk - 1.0, 0.45)
-        card(d, (x0, 500, x0 + 460, 860), fill=A(WHITE, kk), outline=A(col, kk), r=24, w=4)
+    # 12/11 (cong B): o trai dung giua, vien trung tinh; nhan "sai"/"dung" va o phai chi hien sau khi gach (mk + 0,2)
+    ks_ = appear(t, mk + 0.2, 0.5)
+    for j, (x0, sh, lab, col) in enumerate(((lerp(310, 60, ks_), math.pi / 2, "lệch T/4: sai", RED), (560, 0.0, "cùng pha: đúng", GREEN))):
+        kk = k0 if j == 0 else k1 * ks_
+        if kk <= 0: continue
+        oc = mix(NAVY, col, ks_) if j == 0 else col
+        card(d, (x0, 500, x0 + 460, 860), fill=A(WHITE, kk), outline=A(oc, kk), r=24, w=4)
         mini_plot(d, (x0 + 10, 520, x0 + 450, 780), sh, kk)
-        text(d, (x0 + 230, 820), lab, 40, col, alpha=kk)
-    text(d, (W / 2, 940), "E đỏ liền · B xanh đứt", 40, NOTE, bold=False, alpha=k0)
+        text(d, (x0 + 230, 820), lab, 40, col, alpha=kk * ks_)
+    text(d, (W / 2, 940), "E đỏ liền · B xanh đứt", 42, INK, alpha=k0)
     k3 = appear(t, M[1] - 0.1, 0.45)
     if k3 > 0:
-        card(d, (40, 1060, 1040, 1560), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        card(d, (40, 1060, 1040, 1460), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, 1120), "Chưa nói được", 48, NAVY, alpha=k3)
-        lines = (("• Hình vẽ, không phải ảnh chụp",), ("• Không ai nhìn thấy E, B",),
+        lines = (("• Hình vẽ lí thuyết, không ai", "  nhìn thấy E, B"),
                  ("• Vì sao tốc độ trong chân không", "  đúng bằng c"))
         for j, ls in enumerate(lines):
             kk = k3 * appear(t, M[1] + 0.2 + 0.4 * j, 0.4)
-            for i, l in enumerate(ls): text(d, (90, 1225 + j * 100 + i * 56), l, 44, INK, anchor="lm", alpha=kk)
+            for i, l in enumerate(ls): text(d, (90, 1215 + j * 130 + i * 56), l, 44, INK, anchor="lm", alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
@@ -247,13 +260,13 @@ CLIP = dict(id="tn-l12-dttruong-05", header="VẬT LÍ 12 · MÔ HÌNH", footer=
    ("Dừng lại, tự đoán.", 6.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Ghi E, B tại M mỗi T/4.", 3.8),
-   ("Sóng chạy tiếp theo phương Ox.", 5.8)]),
+   ("Đọc tiếp đến hết chu kì T.", 5.8)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("B cũng cực đại. Đáp án B.", 3.6),
+   ("Tại M, B cũng đạt cực đại.", 3.6),
    ("Tại mỗi điểm, E và B luôn cùng pha.", 5.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng hay sai?", 5.4),
-   ("Chưa nói được gì?", 4.8)]),
+   ("Chưa nói được gì?", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Dừng video, trả lời.", 6.4)]),
 ])

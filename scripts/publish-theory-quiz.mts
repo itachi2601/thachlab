@@ -94,6 +94,25 @@ function subjectFromCatalog(lessonId: number): string {
   return ch?.subjectCode ?? "vat-ly";
 }
 
+// --replace: buổi ôn tập theo chặng (review_sessions.stages) chụp exam_id lúc tạo. Từ migration 20261118200000_review_stage_exams
+// máy chủ tự tính cả đề mới của mục bài học; trước migration đó, lượt làm đề mới KHÔNG được tính (báo lỗi #155). Chỉ cảnh báo, không chặn.
+const reviewWarnings: string[] = [];
+async function warnReviewSessions(itemId: number, oldIds: number[], newId: number) {
+  if (!supabase) return;
+  const { data, error } = await supabase.from("review_sessions").select("id, title, status, stages").neq("status", "finished");
+  if (error) {
+    console.log(`  ⚠ không đọc được review_sessions để kiểm buổi ôn trỏ mục ${itemId}: ${error.message}`);
+    return;
+  }
+  for (const s of (data ?? []) as unknown as { id: number; title: string; status: string; stages: { item_id?: number | null; exam_id?: number }[] }[]) {
+    const hits = (s.stages ?? []).map((st, i) => ({ st, i })).filter(({ st }) => st.item_id === itemId);
+    if (!hits.length) continue;
+    const line = `buổi ôn #${s.id} "${s.title}" (${s.status}) chặng ${hits.map(({ i, st }) => `${i + 1} [đề ${st.exam_id}]`).join(", ")} trỏ mục ${itemId}: đề cũ [${oldIds.join(", ")}] → đề mới ${newId}`;
+    console.log(`  ⚠ ${line}`);
+    reviewWarnings.push(line);
+  }
+}
+
 const summary: string[] = [];
 for (const qz of quizzes) {
   const n = qz.questions.length;
@@ -158,8 +177,16 @@ for (const qz of quizzes) {
   const { error: upErr } = await supabase.from("lesson_items").update({ exam_ids: [examId], quiz_min_correct: qz.quiz_min_correct } as never).eq("id", itemId);
   if (upErr) fail(`đề ${examId} đã tạo nhưng gắn vào mục ${itemId} lỗi: ${upErr.message} (gắn tay exam_ids=[${examId}])`);
   console.log(`  ✓ exam ${examId} gắn vào mục ${itemId}`);
+  if (oldExamIds.length) await warnReviewSessions(itemId, oldExamIds, examId);
   summary.push(`Bài ${qz.lesson_id}: exam ${examId}${oldExamIds.length ? ` (đề cũ ${oldExamIds.join(",")} chưa xoá)` : ""}`);
 }
 
 console.log("\n--- Tổng kết ---\n" + summary.join("\n"));
+if (reviewWarnings.length) {
+  console.log(
+    `\n⚠ ${reviewWarnings.length} chặng ôn tập chưa kết thúc vẫn ghi đề cũ:\n  ${reviewWarnings.join("\n  ")}\n` +
+      "  Nếu migration 20261118200000_review_stage_exams ĐÃ chạy: máy chủ tự tính cả đề mới, không cần làm gì.\n" +
+      "  Nếu CHƯA chạy: lượt HS làm đề mới không được tính ở buổi ôn (báo lỗi #155) — chạy migration đó trước.",
+  );
+}
 if (!dryRun) console.log("\nSite export tĩnh → chạy tiếp: bash scripts/deploy.sh  (build-content ở prebuild) để thấy trên web.");

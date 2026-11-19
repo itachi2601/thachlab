@@ -1,0 +1,123 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 14. Cảm ứng điện từ. Nguyên tắc tạo ra dòng điện xoay chiều",
+ "lesson_id": 92,
+ "nguon_trong_bai": "content/lesson-samples/l9-cam-ung-dien-tu/theory.html",
+ "id": "tn-l9-camung-03",
+ "ten": "Nam châm quay trước cuộn dây nối hai LED song song ngược chiều",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "xoaychieu.khai_niem",
+  "xoaychieu.nguyen_tac_tao",
+  "camung.doi_chieu"
+ ],
+ "muc_tieu": "Thấy hai LED ngược chiều thay nhau sáng, không sáng cùng lúc: dòng cảm ứng luân phiên đổi chiều, tức là dòng điện xoay chiều.",
+ "dung_cu": [
+  {
+   "ten": "Nam châm thẳng loại mạnh (nam châm đất hiếm NdFeB) trên giá có trục quay thẳng đứng",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cuộn dây dẫn từ 1000 vòng trở lên",
+   "so_luong": 1
+  },
+  {
+   "ten": "Hai đèn LED khác màu (đỏ, xanh) mắc song song, ngược chiều nhau",
+   "so_luong": 2
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối hai LED vào hai đầu cuộn dây như Hình 4.",
+   "Quay nam châm thật nhanh trước cuộn dây.",
+   "Quay chậm dần."
+  ],
+  "quan_sat": [
+   "Hai LED thay nhau chớp sáng, không bao giờ sáng cùng lúc.",
+   "Quay càng nhanh: chớp càng nhanh, càng sáng.",
+   "Quay chậm quá: LED không sáng (dòng quá nhỏ, LED cần điện áp tối thiểu khoảng 1,8 V mới sáng)."
+  ],
+  "rut_ra": [
+   "Dòng cảm ứng luân phiên đổi chiều: đó là dòng điện xoay chiều.",
+   "Dòng đổi chiều mỗi khi một cực quay tới đối diện cuộn dây: 2 lần mỗi vòng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "n",
+   "ten": "Số vòng quay mỗi giây",
+   "don_vi": "vòng/s",
+   "kieu": "dieu_chinh",
+   "min": 0.5,
+   "max": 5,
+   "mac_dinh": 1,
+   "buoc": 0.5
+  },
+  {
+   "ky_hieu": "N_doi",
+   "ten": "Số lần dòng đổi chiều mỗi giây",
+   "don_vi": "lần/s",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "N_doi = 2·n",
+   "mỗi LED sáng không quá nửa vòng, một lần mỗi vòng"
+  ],
+  "gia_thiet": [
+   "nam châm hai cực, quay đều",
+   "LED chỉ cho dòng đi qua theo một chiều",
+   "quay đủ nhanh để LED sáng"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "n (vòng/s)",
+   "Số lần đổi chiều mỗi giây",
+   "Mỗi LED chớp mỗi giây"
+  ],
+  "hang": [
+   [
+    0.5,
+    1,
+    0.5
+   ],
+   [
+    1,
+    2,
+    1
+   ],
+   [
+    2,
+    4,
+    2
+   ]
+  ],
+  "ghi_chu": "Tính từ mô hình N_doi = 2n. Tốc độ trong so_lieu_mau là minh hoạ tỉ lệ, LED thật cần quay nhanh."
+ },
+ "ket_qua_ky_vong": "LED đỏ và LED xanh thay nhau sáng, mỗi đèn sáng không quá nửa vòng, một lần mỗi vòng.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ hai LED cùng sáng vì cùng nối vào một cuộn dây.",
+  "Nghĩ quay một chiều thì dòng điện cũng chỉ một chiều.",
+  "Quay tay chậm thấy LED không sáng rồi kết luận không có dòng; thật ra dòng quá nhỏ."
+ ],
+ "an_toan": "Giữ tay xa nam châm đang quay.",
+ "goi_y_mo_phong": {
+  "loai": "2d_dong_hoc",
+  "y_tuong": "Nam châm quay với tốc độ chỉnh được; hai LED sáng theo dấu dòng cảm ứng; tuỳ chọn hiện số đường sức qua cuộn dây.",
+  "diem_nhan": "Mỗi lần một cực quay qua chính diện cuộn dây, LED đang sáng tắt và LED kia sáng."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-03-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "nam châm quay trước cuộn dây có hai LED",
+  "nhin_vao": "Hai LED sáng thế nào khi nam châm quay?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
+ }
+}

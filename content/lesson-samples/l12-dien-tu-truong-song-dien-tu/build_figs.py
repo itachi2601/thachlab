@@ -114,7 +114,7 @@ fig2 = wrap("0 0 420 286", "Ba đường sức từ nét đứt hướng lên, �
             b, "Hình 2. Từ trường biến thiên (ở đây B đang tăng) sinh điện trường xoáy; đường sức điện trường xoáy là đường cong kín bao quanh các đường cảm ứng từ.")
 
 # ------------------------------------------------- Hình 3: sóng điện từ (ảnh OpenStax, chèn trực tiếp)
-fig3 = ('<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp" '
+fig3 = ('<figure class="fig" data-tl="1" data-exp="tn-l12-dttruong-05"><img src="/assets/openstax/l12-dien-tu-truong-song-dien-tu/hinh-3.webp" '
         'alt="Một đoạn sóng điện từ truyền sang phải: các mũi tên xanh của vectơ E dao động thẳng đứng, các mũi tên hồng của vectơ B dao động trong mặt phẳng nằm ngang, hai đường cong cùng pha và cùng vuông góc phương truyền" '
         'loading="lazy" width="875" height="602"><figcaption>'
         'Hình 3. Sóng điện từ: E vuông góc B, cả hai vuông góc phương truyền, cùng pha.<br>'

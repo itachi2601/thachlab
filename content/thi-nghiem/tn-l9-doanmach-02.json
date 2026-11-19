@@ -130,7 +130,7 @@
     1.0
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, chưa phải số đo thật."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, chưa phải số đo thật. Câu chốt clip l9doanmach2: thay R2 bằng 30 Ω (R1 = 10 Ω, nguồn 6 V giữ nguyên) → I1 = 0,60 A, I2 = 0,20 A, ampe kế mạch chính chỉ 0,80 A."
  },
  "ket_qua_ky_vong": "I = I1 + I2 = 1,00 A; vôn kế chỉ 6,0 V cho cả hai nhánh.",
  "hien_tuong_hay_sai": [
@@ -143,5 +143,15 @@
   "loai": "2d_dong_hoc+bang_so_lieu",
   "y_tuong": "Chấm điện tích chạy, tới A rẽ hai nhánh theo tỉ lệ I1 : I2; nút tháo/lắp từng nhánh.",
   "diem_nhan": "Tháo một nhánh: dòng nhánh kia không đổi, chỉ dòng mạch chính giảm."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-doanmach-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "ba ampe kế trong mạch song song",
+  "nhin_vao": "So số ampe kế mạch chính với hai số ở hai nhánh.",
+  "giay": 48,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

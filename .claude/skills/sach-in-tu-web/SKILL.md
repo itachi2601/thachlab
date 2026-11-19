@@ -118,8 +118,7 @@ chép `bai14.mjs` + `bai14-btm.mjs` thành `baiNN.mjs`, giữ nguyên các quy �
   **lật ngược 180°** (`transform:rotate(180deg)`) để HS không liếc thấy trước. Đề bài phải ghi đủ hằng số cần (N_A, e, 1 u) cho
   CẢ hai bài trong dạng. Dòng "Bài tương tự … /2" ở trang Bài tập mẫu phải khớp số bài thật. Để vẫn 12 trang thì bỏ 2 trang ghi chú
   tự do (quy ước "ghi chú đúng 2 trang" cũ không còn áp cho bài 14); thứ tự bài 14 hiện nay: 1–5 học bài mới · 6–7 Bài tập mẫu ·
-  8–9 Bài tương tự · 10 sửa bài trên lớp · 11 sửa bài kiểm tra chương · 12 làm lại câu sai + QR. **Bài 15–18 (`khung.mjs`) vẫn
-  bố cục cũ, chưa có trang Bài tương tự** — làm thì chép `bai14-tuongtu.mjs`.
+  8–9 Bài tương tự · 10 sửa bài trên lớp · 11 sửa bài kiểm tra chương · 12 làm lại câu sai + QR. Bài 15–18 đã sang bố cục này (16/11, `tuongTu.vo`).
 - **Ảnh raster phải có trên máy dựng**: `scripts/ruot-tap/anh/` bị gitignore nên worktree mới không có → ảnh vỡ chỉ còn chữ alt,
   script vẫn báo thành công. Chép từ `/Users/MAC/Documents/THPT/số hoá THPT/ruot-tap-anh/` vào `scripts/ruot-tap/anh/` rồi dựng, và
   kiểm `pdfimages -list <pdf>` (trang có hình Halliday phải có ảnh cỡ hàng trăm px, không phải 14×16 px).
@@ -165,11 +164,23 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
    > `book/cache/37.json` (lý thuyết + mọi dạng bài tập mẫu), đáp số tính bằng Python. Chỉ tạo/sửa 2 file của bài mình — KHÔNG đụng
    > `khung.mjs`, script dựng quyển, skill, STATE. Kiểm: 12 trang, dư 0–15 mm, katexErr=0, `pdffonts` sạch, `xem-hinh`, QR giải mã
    > đúng `?id=37`, `do-cho-viet.mjs`. Commit theo đường dẫn, push nhánh, báo trang nào dư bao nhiêu + điểm cần thầy quyết.
+   **Brief luôn kèm 4 lỗi lặp (HS ảo L11 Ch.3)**: hằng số (k, e, 1 eV, g…) in sẵn trước khi hỏi · Mục tiêu/chú thích hình cạnh
+   Dự đoán không lộ đáp án · ô đủ rộng cho phân số/đáp án dài · số dòng kẻ ≥ số ý ở Dạng 1–3. Bài không có bài tập mẫu (thực hành)
+   → tr.6–9 dùng bảng số liệu + xử lí sai số + câu hỏi báo cáo thay Dạng. **Model**: bài có BTM → Opus; bài thực hành,
+   bài nhập môn → Sonnet. Kế hoạch các chương còn lại: memory `project_thachlab_ruot_tap_con_lai.md`.
    Ảnh Halliday được dùng (L11 Ch.3 ↔ Vol.2 ch.21 Coulomb, 22 điện trường, 24 điện thế, 25 tụ điện) nhưng chỉ trên Mac, thêm vào
    bảng `ANH` của `cat-anh.py` + chép bản sao ra `ruot-tap-anh/`; không bắt buộc (L10 Ch.4 dùng toàn SVG).
 5. **Khi các phiên xong** (phiên chính): merge main, `bash scripts/ruot-tap/dung-l<lớp>-chuong<N>.sh`, rồi MỘT phiên học sinh ảo
    điền thử cả quyển theo checklist (A/B/C) → giao sửa lại cho phiên của từng bài (`SendMessage`) thay vì sửa chéo; dựng lại, gửi PDF
    cho thầy, ghi memory dự án. Workflow tự gộp huỷ lượt chờ khi nhiều nhánh push cùng lúc → `gh run rerun <id>` lượt `cancelled`.
+   **HS ảo ghi lỗi ra file NGAY TỪ ĐẦU, không báo cáo dài về phiên chính** (thầy chốt 13/11): brief HS ảo bắt buộc có —
+   (a) đọc xong MỖI bài thì ghi ngay `scripts/ruot-tap/out/loi-hs-ao/l<lớp>-b<N>.md` (một file một bài: dòng đầu `A x · B y · C z`,
+   rồi mỗi lỗi một dòng `trang tuyệt đối·ô · lỗi → cách sửa`, lỗi A ghi cả file + dòng code); không gom đến cuối (bị compact là mất);
+   (b) lỗi lặp cả quyển ghi một lần vào `out/loi-hs-ao/chung.md`; (c) tin trả về phiên chính ≤10 dòng: bảng số lỗi A/B/C theo bài +
+   đường dẫn thư mục, KHÔNG chép lại nội dung lỗi. Phiên chính không đọc các file đó, chỉ gửi mỗi phiên bài một tin trỏ ngắn
+   ("sửa theo `out/loi-hs-ao/l11-b6.md` + `chung.md`, xong commit theo đường dẫn, vào main") — ≤20 `SendMessage` mỗi lượt.
+   Bài 0 lỗi A/B thì không gửi. Mỗi phiên bài ở worktree riêng nên HS ảo phải commit thư mục `loi-hs-ao/` vào main TRƯỚC khi
+   phiên chính gửi tin (phiên bài `git merge origin/main` là đọc được); lượt HS ảo sau ghi đè file cùng tên.
 
 ## Nhật ký rút kinh nghiệm (ruột tập)
 - 2026-11-10 · Lỗi "chữ đậm lẫn Helvetica": khai báo `@font-face` nhiều tệp con (latin/vietnamese) mà không có `unicode-range` thì tệp sau đè tệp trước, ký tự thiếu rơi về font hệ thống → mỗi tệp con PHẢI kèm `unicode-range` (đã có ở `bai14.mjs`). Kiểm bằng `pdffonts <pdf>`: không được còn Helvetica/Lucida/Hiragino (còn sót ★, φ, chỉ số trên ở bài 14 tr.1/5/6).
@@ -179,6 +190,14 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-10 · Yêu cầu "≥1 dòng mỗi ý" cho Bài tương tự là quá thấp: dòng nửa cột 62 mm chỉ đủ ghi đáp số, đo ra mỗi ý 0–1 dòng rộng trong khi lời giải cần ~2 → 10 bài/2 trang không thể vừa đề vừa lời giải; tính trước tổng mm cần (số ý × 2 dòng × 5 mm + đề) trước khi định số bài trên giấy.
 - 2026-11-12 · VL11 Ch.3 (6 phiên): mỗi phiên tự soát checklist vẫn bỏ sót lỗi lặp cả quyển — hằng số k, e, 1 eV bị hỏi trước khi in, Mục tiêu/chú thích hình cạnh Dự đoán lộ đáp án, ô hẹp cho phân số/đáp án dài, dòng kẻ < số ý ở Dạng 1–3; một HS ảo đọc cả 6 file `.pdf.html` (text, không ảnh, ~90k token) bắt đủ → giao lại từng phiên bằng `SendMessage`, mỗi phiên sửa ~15′. Đưa sẵn 4 lỗi lặp này vào brief phiên bài lần sau.
 - 2026-11-10 · 5 nhánh `claude/*` push cùng lúc → workflow tự gộp huỷ lượt chờ (concurrency) → `gh run list --workflow gop-claude-vao-main.yml`, lượt `cancelled` thì `gh run rerun <id>`.
+- 2026-11-13 · Đợt 3 (37 phiên): bộ đo "trang N: dư X mm" tính cả khối `position:absolute` (ô QR trang 12) → báo tràn giả −1 mm → bộ đo chỉ đo tới đỉnh `.gt`, bỏ khối tuyệt đối.
+- 2026-11-13 · Mở 37 worktree (~5 GB/cái) làm đầy đĩa, phiên chết hàng loạt → `df -h` trước khi mở; cần ≥ 6 GB × số phiên.
+- 2026-11-13 · App giới hạn 20 `SendMessage` tới phiên khác mỗi lượt thầy nhắn → HS ảo ghi lỗi từng bài ra file (`out/loi-hs-ao-*.md`), phiên chính gửi tin trỏ ngắn, xếp ≤20 phiên mỗi lượt.
+- 2026-11-13 · Agent HS ảo bị compact/giới hạn lượt giữa chừng mất chi tiết → dặn agent ghi lỗi vào file sau MỖI bài, không gom đến cuối.
+- 2026-11-13 · `pdffonts` quyển bắt Times-Roman do `<span style="font-family:KaTeX_Main">π</span>` trong chú thích hình (trang không nạp KaTeX_Main) → Source Sans 3 nhúng KHÔNG có π (bỏ span thì ra Helvetica): ký hiệu Hy Lạp trong chú thích hình viết bằng KaTeX thật hoặc diễn đạt lại bằng chữ, rồi kiểm `pdffonts` quyển ghép.
+
+- 2026-11-16 · HS ảo lượt 2 (6 quyển, Sonnet đọc `pdftotext` + đo ô bằng puppeteer, không ảnh) vẫn bắt ~70 lỗi B sau lượt 1, phần lớn do lượt sửa trước tạo ra (thêm dòng giải → gộp ý; ô mới hẹp) → mỗi lượt sửa phải chạy lại checklist ô/dòng giải, không chỉ "dư ≥ 0". Sửa bằng subagent Opus một quyển một agent trong cùng worktree (file bài tách nhau) nhanh hơn gửi về 37 phiên bài.
+- 2026-11-16/17 · Ký tự ngoài Source Sans 3 (Hy Lạp, Δ, ≈, chỉ số trên/dưới Unicode ⁻⁵ ₀, ☐ ∛ ⅓, dấu ̊) → Chrome lấy Helvetica/Lucida/Apple Symbols → từ 17/11 `scripts/ruot-tap/ky-tu-in.mjs` tự xử lý trong `khung.mjs` và `bai14.mjs` (Hy Lạp/Δ/≈ lấy phông KaTeX qua unicode-range; ⁻⁵ ₀ đổi thành sup/sub, trong SVG thành tspan baseline-shift); ☐ ∛ ⅓ ̊ vẫn phải sửa ở nguồn (☐ → `ck`, ⅓ → `<sup>1/3</sup>`, H̊ trong SVG → vẽ circle). Kiểm: `pdffonts` từng quyển không còn Helvetica/Lucida/Symbols.
 
 ## Cuối phiên
 - Ghi memory `docs/memory/project_thachlab_sach_in_chuong2.md` (bản vN làm gì, số trang, còn treo).
@@ -229,3 +248,4 @@ Thầy nói "làm ruột sách chương X lớp Y" → phiên chính KHÔNG so�
 - 2026-11-11 · Hình SVG web in theo bề ngang trang → chữ trong hình to gấp 2 chữ thân, hình chiếm nửa trang → `build.fit_figs` tính bề rộng theo cỡ chữ trong SVG (≈9pt, nhỏ nhất ≥7,6pt); hình ≤100 mm nổi phải (`.fig.fl`, `svg.svfl`), khối có khung `display:flow-root` để đứng cạnh hình; khung Thí nghiệm `clear:both` (đứng cạnh hình thì chật). Ảnh thực tế nổi trái, chèn TRƯỚC đoạn mở bài để chữ chảy cạnh ảnh.
 - 2026-11-11 · Thay class bằng `str.replace('fig', 'fig fl')` biến `<figure` thành `<fig flure` → luôn thay cả chuỗi `class="…"`.
 - 2026-11-11 · Trang trống đáy: `book.js` sau Paged.js đo đáy nội dung (Range của chữ + khung có viền/nền + ảnh; bỏ phần tử `pagedjs_*` vì khung bao cao 100%) và lấp ≥28 mm bằng ô "Ghi chép" ca-rô nét đứt mờ 3,5 mm; ô `.dl` cũng ca-rô. Tile SVG data-URI: nét tính theo đơn vị tile (40 đơn vị → 3,5 mm thì stroke 2), không thì in ra gần như vô hình. `do_trong.py` vẫn tính vùng ca-rô là trống — đếm trang có "GHI CHÉP" để biết đã lấp.
+- 2026-11-17 · `pdffonts | grep helvetica` bỏ sót AppleSymbols (ℰ ở L11 b24 rơi phông, Type 3) → grep kiểm phông luôn gồm `symbols|Unnamed`; ruột tập in theo học kì dùng `dung-hoc-ki.sh`.

@@ -100,36 +100,42 @@
   "cot": [
    "Lần nảy n",
    "h (m)",
-   "Wt = mgh (J)"
+   "Wt = mgh (J)",
+   "Nhiệt + âm cộng dồn = mg(h0 − h) (J)"
   ],
   "hang": [
    [
     0,
     1.0,
-    0.559
+    0.559,
+    0.0
    ],
    [
     1,
     0.55,
-    0.307
+    0.307,
+    0.251
    ],
    [
     2,
-    0.3,
-    0.169
+    0.303,
+    0.169,
+    0.39
    ],
    [
     3,
-    0.17,
-    0.093
+    0.166,
+    0.093,
+    0.466
    ],
    [
     4,
-    0.09,
-    0.051
+    0.092,
+    0.051,
+    0.507
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình h(n) = 1,0·0,55^n; bài chỉ mô tả định tính, không hiện bảng."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình h(n) = 1,0·0,55^n; bài chỉ mô tả định tính, không hiện bảng. Cột nhiệt + âm thêm 18/11/2026 cho clip nlcong1, tính từ h(n) chưa làm tròn (0; 0,251; 0,390; 0,466; 0,507 J); clip chỉ hiện 0,466 J ở đỉnh 3 vì 0,251 và 0,507 lệch 0,001 với phép trừ hai số Wt đã làm tròn. Câu chốt clip: thả từ 2,0 m, k = 0,55: tới đỉnh lần nảy 1 đã có 0,057·9,8·2,0·0,45 = 0,503 ≈ 0,50 J thành nhiệt + âm. Cột đỉnh ghi 3 chữ số (0,303; 0,166; 0,092) từ 18/11/2026 để 0,057·9,8·h ra đúng cột thế năng."
  },
  "ket_qua_ky_vong": "Độ cao nảy giảm dần theo cấp số nhân; phần thế năng mất đi mỗi lần chuyển thành nhiệt và âm thanh.",
  "hien_tuong_hay_sai": [
@@ -140,5 +146,15 @@
   "loai": "2d_dong_hoc+do_thi",
   "y_tuong": "Bóng rơi nảy; cột năng lượng chồng: thế năng, động năng, nhiệt + âm cộng dồn, tổng không đổi.",
   "diem_nhan": "Hỏi trước: sau 5 lần nảy, năng lượng ban đầu đi đâu hết?"
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "bóng tennis nảy trên sàn",
+  "nhin_vao": "Cột năng lượng nào đổi lúc bóng chạm sàn?",
+  "giay": 48,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

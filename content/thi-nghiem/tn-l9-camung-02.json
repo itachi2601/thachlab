@@ -1,0 +1,131 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 14. Cảm ứng điện từ. Nguyên tắc tạo ra dòng điện xoay chiều",
+ "lesson_id": 92,
+ "nguon_trong_bai": "content/lesson-samples/l9-cam-ung-dien-tu/theory.html",
+ "id": "tn-l9-camung-02",
+ "ten": "Nam châm điện: đóng, giữ đóng, ngắt công tắc",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "camung.hien_tuong",
+  "camung.dieu_kien_bien_thien"
+ ],
+ "muc_tieu": "Thấy nam châm điện cũng tạo được dòng cảm ứng, nhưng chỉ trong lúc đóng hoặc ngắt công tắc, khi dòng điện trong cuộn A đang thay đổi.",
+ "dung_cu": [
+  {
+   "ten": "Cuộn dây A nối với bộ pin 4 × 1,5 V qua công tắc (nam châm điện)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Cuộn dây B nối với điện kế có số 0 ở giữa",
+   "so_luong": 1
+  },
+  {
+   "ten": "Công tắc và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Đặt cuộn A sát cuộn B, công tắc đang mở.",
+   "Đóng công tắc, rồi giữ đóng một lúc.",
+   "Ngắt công tắc."
+  ],
+  "quan_sat": [
+   "Trong lúc đóng: kim lệch một phía rồi về 0.",
+   "Giữ đóng: kim đứng ở số 0.",
+   "Trong lúc ngắt: kim lệch phía ngược lại rồi về 0."
+  ],
+  "rut_ra": [
+   "Chỉ khi dòng điện trong cuộn A đang thay đổi, từ trường qua cuộn B thay đổi và cuộn B có dòng cảm ứng.",
+   "Nam châm điện đang có dòng không đổi, dù mạnh, không tạo ra dòng cảm ứng."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế bộ pin",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 6.0
+  },
+  {
+   "ky_hieu": "trang_thai",
+   "ten": "Công tắc (0 mở, 1 đóng)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "i_B",
+   "ten": "Dòng cảm ứng trong cuộn B",
+   "don_vi": "mA",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "i_B khác 0 chỉ khi dòng trong cuộn A đang tăng (lúc đóng) hoặc đang giảm (lúc ngắt)",
+   "lúc đóng và lúc ngắt cho i_B ngược chiều nhau"
+  ],
+  "gia_thiet": [
+   "dòng trong cuộn A tăng tới giá trị ổn định trong một khoảng ngắn sau khi đóng",
+   "bỏ qua từ trường Trái Đất"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Thời điểm",
+   "Kim điện kế"
+  ],
+  "hang": [
+   [
+    "công tắc mở",
+    "0"
+   ],
+   [
+    "trong lúc đóng",
+    "lệch phải rồi về 0"
+   ],
+   [
+    "giữ đóng",
+    "0"
+   ],
+   [
+    "trong lúc ngắt",
+    "lệch trái rồi về 0"
+   ],
+   [
+    "sau khi ngắt",
+    "0"
+   ]
+  ],
+  "ghi_chu": "Quan sát định tính; phía lệch tuỳ cách nối điện kế."
+ },
+ "ket_qua_ky_vong": "Kim chỉ lệch trong khoảnh khắc đóng và ngắt, hai lần ngược chiều nhau.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ giữ công tắc đóng (nam châm điện đang mạnh) thì kim lệch mãi.",
+  "Nghĩ lúc ngắt không có gì vì đã hết dòng điện."
+ ],
+ "an_toan": "Không giữ công tắc đóng quá lâu để pin và cuộn dây không nóng.",
+ "goi_y_mo_phong": {
+  "loai": "do_thi",
+  "y_tuong": "Bấm công tắc; vẽ đồng thời dòng trong cuộn A và kim điện kế của cuộn B theo thời gian.",
+  "diem_nhan": "Kim chỉ nhúc nhích ở hai sườn đồ thị dòng A, phần nằm ngang thì về 0."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-camung-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "đóng, giữ, ngắt công tắc nam châm điện",
+  "nhin_vao": "Kim điện kế lệch ở bước nào?",
+  "giay": 47,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
+ }
+}

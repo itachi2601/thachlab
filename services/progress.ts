@@ -153,16 +153,37 @@ async function fetchRawProgressBatch(
       : Promise.resolve({ data: [] as { id: number; pass_score: number | null }[] }),
   ]);
 
-  const examPassScoreById = new Map((examsRes.data ?? []).map((e) => [e.id, e.pass_score ?? null]));
+  accumulateRawRows(out, {
+    progress: progressRes.data ?? [],
+    results: resultsRes.data ?? [],
+    attempts: attemptsRes.data ?? [],
+    practice: practiceRes.data ?? [],
+    passScores: examsRes.data ?? [],
+  });
+  return out;
+}
 
-  for (const row of progressRes.data ?? []) {
+interface RawRows {
+  progress: { user_id: string; item_id: number; done_at: string }[];
+  results: ResultRow[];
+  attempts: { student_id: string; exam_id: number }[];
+  practice: { student_id: string; item_id: number | null; score: number; created_at: string }[];
+  passScores: { id: number; pass_score: number | null }[];
+}
+
+/** Gom các dòng thô (từ 5 truy vấn REST hoặc RPC get_lesson_page_student) vào RawProgressData theo học sinh. */
+function accumulateRawRows(out: Map<string, RawProgressData>, rows: RawRows): void {
+  const { progress: progressRows, results: resultRows, attempts: attemptRows, practice: practiceRows } = rows;
+  const examPassScoreById = new Map(rows.passScores.map((e) => [e.id, e.pass_score ?? null]));
+
+  for (const row of progressRows) {
     const raw = out.get(row.user_id);
     if (!raw) continue;
     raw.confirmedItemIds.add(row.item_id);
     raw.confirmedAt.set(row.item_id, row.done_at);
   }
 
-  for (const row of resultsRes.data ?? []) {
+  for (const row of resultRows) {
     const raw = out.get(row.student_id);
     if (!raw) continue;
     const prevBest = raw.bestScoreByExam.get(row.exam_id);
@@ -185,11 +206,11 @@ async function fetchRawProgressBatch(
     raw.gradedResultsByExam.set(row.exam_id, graded);
   }
 
-  for (const row of attemptsRes.data ?? []) {
+  for (const row of attemptRows) {
     out.get(row.student_id)?.openAttemptExamIds.add(row.exam_id);
   }
 
-  for (const row of practiceRes.data ?? []) {
+  for (const row of practiceRows) {
     if (row.item_id === null) continue;
     const raw = out.get(row.student_id);
     if (!raw) continue;
@@ -201,7 +222,6 @@ async function fetchRawProgressBatch(
   }
 
   for (const raw of out.values()) raw.examPassScoreById = examPassScoreById;
-  return out;
 }
 
 function buildItemProgress(items: LessonItem[], raw: RawProgressData): Map<number, ItemProgress> {
@@ -300,6 +320,60 @@ export async function fetchMyLessonPageProgress(
     scores: raw.bestScoreByExam,
     done: raw.confirmedItemIds,
   };
+}
+
+/** Dòng thô RPC get_lesson_page_student trả về (migration 20261118150000) — chỉ của chính người gọi. */
+export interface LessonPageRpcRows {
+  progress: { item_id: number; done_at: string }[];
+  results: {
+    id: number;
+    exam_id: number;
+    created_at: string;
+    score: number;
+    correct_count: number | null;
+    final_score10: number | null;
+    pending_essay_count: number | null;
+  }[];
+  open_attempts: number[];
+  practice: { item_id: number | null; score: number; created_at: string }[];
+  exams: { id: number; pass_score: number | null }[];
+}
+
+/**
+ * Như fetchMyLessonPageProgress nhưng từ dòng RPC gộp (0 truy vấn thêm). Lọc lại đúng phạm vi đề/mục
+ * mà fetchRawProgressBatch truy vấn để kết quả trùng khớp đường cũ dù RPC trả rộng hơn (mọi đề của bài).
+ */
+export function lessonPageProgressFromRpc(
+  studentId: string,
+  items: LessonItem[],
+  rows: LessonPageRpcRows,
+): { progress: Map<number, ItemProgress>; scores: Map<number, number>; done: Set<number> } {
+  const itemIds = new Set(items.map((i) => i.id));
+  const examIds = new Set(items.filter((i) => isExamKind(i.kind) || i.kind === "ly_thuyet").flatMap((i) => i.exam_ids));
+  const resultExamIds = new Set(items.flatMap((i) => i.exam_ids));
+  const practiceItemIds = new Set(items.filter((i) => i.kind === "luyen_tap").map((i) => i.id));
+  const out = new Map<string, RawProgressData>([[studentId, emptyRaw()]]);
+  accumulateRawRows(out, {
+    progress: rows.progress.filter((r) => itemIds.has(r.item_id)).map((r) => ({ ...r, user_id: studentId })),
+    results: rows.results
+      .filter((r) => resultExamIds.has(r.exam_id))
+      .map((r) => ({
+        id: r.id,
+        student_id: studentId,
+        exam_id: r.exam_id,
+        created_at: r.created_at,
+        score: r.score,
+        detail: { correctCount: r.correct_count ?? 0 },
+        exam_result_scores: { final_score10: r.final_score10, pending_essay_count: r.pending_essay_count ?? 0 },
+      })),
+    attempts: rows.open_attempts.filter((id) => examIds.has(id)).map((exam_id) => ({ student_id: studentId, exam_id })),
+    practice: rows.practice
+      .filter((r) => r.item_id !== null && practiceItemIds.has(r.item_id))
+      .map((r) => ({ ...r, student_id: studentId })),
+    passScores: rows.exams.filter((e) => examIds.has(e.id)),
+  });
+  const raw = out.get(studentId)!;
+  return { progress: buildItemProgress(items, raw), scores: raw.bestScoreByExam, done: raw.confirmedItemIds };
 }
 
 /** Trạng thái từng mục của MỘT bài học cho CẢ LỚP — dùng ở bảng "Quá trình học tập" của giáo viên. */

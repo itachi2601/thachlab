@@ -1,0 +1,158 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 15. Tác dụng của dòng điện xoay chiều",
+ "lesson_id": 93,
+ "nguon_trong_bai": "content/lesson-samples/l9-tac-dung-dong-dien-xoay-chieu/theory.html",
+ "id": "tn-l9-xoaychieu-01",
+ "ten": "Nam châm điện với nguồn một chiều và nguồn xoay chiều: đinh sắt, kim nam châm",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "xoaychieu.tac_dung_tu",
+  "xoaychieu.cuc_doi_theo_dong"
+ ],
+ "muc_tieu": "Thấy dòng xoay chiều vẫn có tác dụng từ (hút sắt); cực từ của nam châm điện đổi theo chiều dòng điện; với nguồn 50 Hz lực lên kim đổi chiều quá nhanh nên kim không lệch hẳn, chỉ rung rất nhẹ.",
+ "dung_cu": [
+  {
+   "ten": "Cuộn dây khoảng 300 vòng có lõi sắt non",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn một chiều 6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Nguồn xoay chiều 6 V (biến áp nguồn phòng thí nghiệm)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Kim nam châm trên trụ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đinh sắt nhỏ",
+   "so_luong": 1
+  },
+  {
+   "ten": "Khoá K và dây nối",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Mắc nam châm điện như Hình 2: đinh sắt ở một đầu lõi, kim nam châm ở đầu kia.",
+   "Lần 1: nối nguồn một chiều 6 V, đóng khoá; rồi đảo hai cực nguồn.",
+   "Lần 2: nối nguồn xoay chiều 6 V, đóng khoá."
+  ],
+  "quan_sat": [
+   "Một chiều: đinh sắt bị hút; kim nam châm lệch hẳn về một phía. Đảo cực nguồn: kim lệch về phía ngược lại.",
+   "Xoay chiều: đinh sắt vẫn bị hút; kim nam châm không lệch hẳn về phía nào, chỉ rung rất nhẹ quanh vị trí cũ."
+  ],
+  "rut_ra": [
+   "Dòng xoay chiều có tác dụng từ, vẫn hút sắt.",
+   "Cực từ của nam châm điện đổi theo chiều dòng điện; lực lên kim nam châm (cực cố định) đổi chiều 100 lần mỗi giây, kim không kịp quay theo.",
+   "Đinh sắt non bị từ hoá đổi cực theo nên luôn bị hút."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "loai_nguon",
+   "ten": "Loại nguồn (0 một chiều, 1 xoay chiều)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "dao_cuc",
+   "ten": "Đảo cực nguồn một chiều (0 không, 1 có)",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 0,
+   "buoc": 1
+  },
+  {
+   "ky_hieu": "U",
+   "ten": "Hiệu điện thế nguồn",
+   "don_vi": "V",
+   "kieu": "co_dinh",
+   "gia_tri": 6
+  },
+  {
+   "ky_hieu": "f",
+   "ten": "Tần số nguồn xoay chiều",
+   "don_vi": "Hz",
+   "kieu": "co_dinh",
+   "gia_tri": 50
+  },
+  {
+   "ky_hieu": "lech_kim",
+   "ten": "Độ lệch kim nam châm",
+   "don_vi": "độ",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "Cực từ đầu lõi gần kim: N khi i > 0, S khi i < 0",
+   "Xoay chiều: i = I0·sin(2π·50·t) nên cực đổi 100 lần mỗi giây",
+   "Lực lên kim nam châm đổi chiều theo i; lực lên đinh sắt non luôn là lực hút, độ lớn tỉ lệ i²"
+  ],
+  "gia_thiet": [
+   "kim nam châm có quán tính: với 50 Hz chỉ rung nhẹ quanh vị trí cũ",
+   "bỏ qua từ dư của lõi sắt non"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "Nguồn",
+   "Đinh sắt",
+   "Kim nam châm"
+  ],
+  "hang": [
+   [
+    "một chiều 6 V",
+    "bị hút",
+    "lệch hẳn một phía"
+   ],
+   [
+    "một chiều 6 V, đảo cực",
+    "bị hút",
+    "lệch phía ngược lại"
+   ],
+   [
+    "xoay chiều 6 V",
+    "bị hút",
+    "không lệch, rung rất nhẹ"
+   ]
+  ],
+  "ghi_chu": "Kết quả định tính, mô tả theo mô hình; chưa phải ghi chép thí nghiệm thật. Video tự dựng dùng thêm nguồn đổi chiều thật chậm giả định, mỗi 2 giây một lần (mô hình minh hoạ, không có trong phòng thí nghiệm): kim nam châm lắc qua lại, đổi phía theo mỗi lần dòng đổi chiều."
+ },
+ "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, không lệch hẳn (chỉ rung rất nhẹ quanh vị trí cũ) với nguồn xoay chiều 50 Hz.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ dòng xoay chiều không có tác dụng từ vì đổi chiều liên tục.",
+  "Nghĩ đinh sắt cũng bị đẩy ra khi dòng đổi chiều.",
+  "Nghĩ kim nam châm sẽ quay tròn liên tục."
+ ],
+ "an_toan": "Chỉ dùng nguồn xoay chiều 6 V của phòng thí nghiệm, không nối cuộn dây vào ổ điện 220 V.",
+ "goi_y_mo_phong": {
+  "loai": "so_do_luc",
+  "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực khi chạy chậm, đứng gần như yên khi chạy đúng 50 Hz; đinh sắt luôn bị hút.",
+  "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim không kịp quay theo, đinh sắt vẫn bị hút."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "kim nam châm cạnh nam châm điện",
+  "nhin_vao": "Nguồn đổi chiều chậm thì kim làm gì?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
+ }
+}

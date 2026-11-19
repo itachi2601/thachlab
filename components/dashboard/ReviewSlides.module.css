@@ -1,0 +1,110 @@
+/* Trình chiếu phân tích bài làm cho cả lớp. Nền sáng mặc định (M1/M7), .dark khi thầy bấm T.
+   Cỡ chữ theo bề ngang màn chiếu: 1280px ≈ 26px, 1920px ≈ 34px; điện thoại 18px (C1). */
+.root {
+  --bg: #f7f8fb; --surface: #ffffff; --ink: #0f172a; --ink-soft: #334155; --muted: #64748b;
+  --line: #d5dbe5; --accent: #1d4ed8; --accent-soft: #e0e9ff;
+  --ok: #047857; --ok-soft: #d8f5e8; --bad: #b42335; --bad-soft: #fde4e7; --warn-soft: #fff1d6; --warn: #92400e;
+  position: absolute; inset: 0; z-index: 40; display: flex; flex-direction: column;
+  background: var(--bg); color: var(--ink);
+  font-size: calc(clamp(18px, 1.1vw + 12px, 34px) * var(--zoom, 1));
+  line-height: 1.55;
+}
+.root:fullscreen { position: fixed; }
+.dark {
+  --bg: #0b1020; --surface: #121a30; --ink: #e8edf7; --ink-soft: #c2cadf; --muted: #8b97b3;
+  --line: rgba(255,255,255,.14); --accent: #8fb4ff; --accent-soft: rgba(79,140,255,.18);
+  --ok: #6ee7b8; --ok-soft: rgba(52,211,153,.16); --bad: #ff8c9c; --bad-soft: rgba(251,90,114,.15);
+  --warn-soft: rgba(245,185,66,.16); --warn: #ffce6b;
+}
+
+/* Thanh trên nhỏ, chữ thường — không tranh với nội dung slide (B2). */
+.top { display: flex; align-items: center; gap: 12px; padding: 8px 16px; font-size: 15px; color: var(--muted); flex: none; }
+.title { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.count { font-variant-numeric: tabular-nums; }
+.tools { display: flex; gap: 4px; }
+.tools button, .navBtn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 44px; min-height: 44px;
+  padding: 0 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--ink-soft);
+  font: inherit; font-size: 16px; font-weight: 600; cursor: pointer; white-space: nowrap;
+}
+.tools button { border-color: transparent; background: transparent; }
+.navBtn:disabled { opacity: .35; cursor: default; }
+.navMain { background: var(--accent); border-color: var(--accent); color: #fff; padding: 0 22px; }
+.dark .navMain { color: #0b1020; }
+
+.stage { flex: 1; min-height: 0; overflow-y: auto; display: flex; justify-content: center; padding: 1vh 4vw 2vh; }
+.slide { width: 100%; max-width: 1500px; margin: auto 0; display: flex; flex-direction: column; gap: 1.1em; }
+.eyebrow {
+  margin: 0; font-size: 1.35em; font-weight: 800; letter-spacing: -.01em; display: flex; flex-wrap: wrap;
+  align-items: baseline; gap: .3em .7em;
+}
+.pctTag { font-size: .62em; font-weight: 600; color: var(--muted); }
+
+/* Slide 1 */
+.kpis { display: flex; flex-wrap: wrap; gap: 1em 3em; }
+.kpis > div { display: flex; flex-direction: column; }
+.kpis b { font-size: 3em; line-height: 1.05; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--accent); }
+.kpis span { color: var(--ink-soft); font-size: .85em; }
+.message { max-width: 34em; font-size: 1.1em; color: var(--ink); margin: 0; }
+
+/* Slide bẫy */
+.trapGrid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 2.2em; align-items: start; }
+.question { font-size: .95em; }
+.opts { list-style: none; margin: .7em 0 0; padding: 0; display: flex; flex-direction: column; gap: .35em; }
+.opts li {
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: .2em .6em;
+  padding: .3em .6em; border-radius: 12px; border: 2px solid transparent;
+}
+.letter { font-weight: 700; }
+.optBody { min-width: 0; }
+.optPct { display: inline-flex; align-items: center; gap: .4em; font-family: var(--font-body, system-ui), sans-serif; font-size: .78em; color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { display: inline-block; width: 4.5em; height: .45em; border-radius: 99px; background: var(--line); overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--muted); }
+.trapped { background: var(--warn-soft); border-color: var(--warn) !important; }
+.trapped .bar i { background: var(--warn); }
+.right { background: var(--ok-soft); border-color: var(--ok) !important; }
+.right .bar i { background: var(--ok); }
+.flag {
+  font-family: var(--font-body, system-ui), sans-serif; font-size: .7em; font-weight: 700; padding: .1em .55em;
+  border-radius: 99px; background: var(--ok-soft); color: var(--ok); white-space: nowrap;
+}
+.flagTrap { background: var(--warn-soft); color: var(--warn); }
+.flagFalse { background: var(--bad-soft); color: var(--bad); }
+.saRow { margin-top: .6em; font-size: 1.05em; }
+.saRow b { color: var(--ok); }
+
+.why { display: flex; flex-direction: column; gap: 1em; }
+.whyStat { font-size: 1em; padding: .5em .8em; border-radius: 12px; background: var(--warn-soft); }
+.whyBlock h3 { margin: 0 0 .2em; font-size: .8em; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); }
+.whyBlock { font-size: .95em; }
+.muted { color: var(--muted); margin: 0; }
+
+/* Slide cuối */
+.topics { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.1em; max-width: 40em; }
+.topics li { display: flex; gap: .8em; align-items: flex-start; }
+.topics h3 { margin: 0; font-size: 1.05em; }
+.num {
+  flex: none; width: 1.8em; height: 1.8em; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent-soft); color: var(--accent); font-weight: 800;
+}
+.qs { margin: .15em 0 0; color: var(--muted); font-size: .8em; }
+
+.nav { flex: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 16px 14px; }
+.dots { display: inline-flex; gap: 8px; padding: 0 12px; }
+.dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+.dots .dotOn { background: var(--accent); }
+
+/* Nội dung đề nhập từ Word có cỡ chữ cố định — theo cỡ chữ slide. */
+.root :global(.exam-content),
+.root :global(.exam-content) :where(p, li, span, strong, em, b, i) { font-size: inherit !important; line-height: inherit !important; }
+.root :global(img), .root :global(svg) { max-width: 100%; height: auto; }
+
+@media (max-width: 820px) {
+  .trapGrid { grid-template-columns: 1fr; gap: 1.2em; }
+  .stage { padding: 4px 16px 12px; }
+  .kpis b { font-size: 2.4em; }
+  .bar { width: 2.6em; }
+  .nav { gap: 6px; padding: 8px 8px 12px; }
+  .navBtn { padding: 0 10px; font-size: 15px; }
+  .navMain { padding: 0 14px; }
+}
