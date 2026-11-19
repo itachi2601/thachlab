@@ -63,6 +63,7 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    Từ 20/10/2026 script cũng sinh mp3 cho **phương án có `data-tl-say="1"`** và **`data-tl-word`** (bấm đáp án là nghe);
    thứ tự vẫn là dựng → sinh giọng → dựng lại; kiểm `grep -c 'data-tl-say="1"' theory.html` và mọi label đó phải có
    `data-tl-audio` (thiếu là còn chuỗi chưa sinh).
+   Sau khi có `audio.json`: `node scripts/avcn-luyen-tu.mjs` (dựng `public/assets/avcn/chapter-<n>/luyen-tu.json` cho mục **Luyện từ** — lượt ngắn chọn nghĩa/nghe/ghép trong tab Luyện tập; bài mới ngoài id 168–177 thì thêm vào `AVCN_LUYEN_TU_LESSONS` ở `features/lessons/avcn-luyen-tu.ts`).
 5. **Kiểm** (từ gốc repo; `S=.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts`):
    `python3 $S/lint_theory.py theory.html` · `python3 $S/check_quizzes.py theory.html` · `python3 $S/lint_do_dai.py theory.html`
    (bài từ vựng 10–13 quiz là bình thường, lỗi "quiz > 8" bỏ qua; tổng từ hiện ngay ≤ 2.200) ·

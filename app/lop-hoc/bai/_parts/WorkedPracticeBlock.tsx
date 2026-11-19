@@ -5,6 +5,8 @@ import { Check } from "lucide-react";
 import SampleQuestionsGrid from "@/components/lessons/SampleQuestionsGridLazy";
 import WorkedQuestionsGrid from "@/components/lessons/WorkedQuestionsGridLazy";
 import PracticeSession from "@/components/lessons/PracticeSessionLazy";
+import AvcnLuyenTu from "@/components/lessons/avcn/AvcnLuyenTuLazy";
+import { AVCN_LUYEN_TU_LESSONS } from "@/features/lessons/avcn-luyen-tu";
 import type { LessonItem } from "@/features/lessons/types";
 import { ACCENT } from "./lesson-nav";
 import { workedSubtitle } from "./LessonBits";
@@ -89,18 +91,40 @@ export function WorkedPracticeBlock({
           )}
         </>
       ) : (
-        <PracticeSession
-          examIds={item.exam_ids}
-          poolExamIds={poolExamIds}
-          lessonId={lessonId}
-          itemId={item.id}
-          passScore={item.practice_pass_score}
-          color={ACCENT}
-          recordProgress={recordProgress}
-          onActiveChange={(active) => {
-            practiceActiveRef.current = active;
-          }}
-        />
+        (() => {
+          const session = (
+            <PracticeSession
+              examIds={item.exam_ids}
+              poolExamIds={poolExamIds}
+              lessonId={lessonId}
+              itemId={item.id}
+              passScore={item.practice_pass_score}
+              color={ACCENT}
+              recordProgress={recordProgress}
+              onActiveChange={(active) => {
+                practiceActiveRef.current = active;
+              }}
+            />
+          );
+          // AVCN: Luyện từ (lượt ngắn kiểu ứng dụng học ngoại ngữ) đứng trước; đề trắc nghiệm cũ thu gọn bên dưới
+          // để mỗi màn chỉ một hành động chính (N1, B2) — thầy chốt 19/11/2026.
+          const chapter = AVCN_LUYEN_TU_LESSONS[lessonId];
+          if (!chapter) return session;
+          return (
+            <>
+              <AvcnLuyenTu
+                chapter={chapter}
+                onActiveChange={(active) => {
+                  practiceActiveRef.current = active;
+                }}
+              />
+              <details className="avcn-lt-old">
+                <summary>Làm đề trắc nghiệm của bài</summary>
+                {session}
+              </details>
+            </>
+          );
+        })()
       )}
       {recordProgress && (
         <div className="lesson-block-foot">
