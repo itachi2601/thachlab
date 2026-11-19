@@ -1,0 +1,53 @@
+{
+  "id": "tn-l10-nemngang-01",
+  "ten": "Một bi bắn ngang, một bi thả rơi: chạm sàn lúc nào?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nemngang-01-20261119.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nemngang-01-20261119.webp",
+  "tong_giay": 49.8,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Chuyển động ngang và chuyển động rơi độc lập: hai bi thả cùng lúc, cùng độ cao thì chạm sàn cùng lúc, dù bắn mạnh hay nhẹ.",
+      "kiem": "Bắn mạnh hơn có làm đổi lúc chạm sàn?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 4.2,
+      "chu": "Bắn bi A với v₀ = 2 m/s, rồi 5 m/s; bi B thả rơi cùng lúc. Hai bi chạm sàn lệch nhau thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.7,
+      "chu": "Máng cao 0,80 m, hai bi, quay chậm, thước cuộn."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 17.8,
+      "chu": "Cả hai lần, hai bi luôn cùng hàng; hai đồng hồ đều dừng ở 0,404 s."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 24.4,
+      "chu": "Thời gian rơi t = √(2h/g) chỉ do độ cao, không chứa v₀. Bắn mạnh hơn chỉ làm tầm xa tăng: 0,81 m thành 2,02 m."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 37.1,
+      "chu": "Ở đây bỏ qua lực cản không khí. Lực cản lớn thì hai bi còn chạm sàn cùng lúc?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.5,
+    "cau_hoi": "Bi A bắn ngang với v₀ = 2 m/s, rồi lần sau 5 m/s; bi B thả rơi cùng lúc, cùng độ cao 0,80 m. Hai bi chạm sàn lệch nhau thế nào?",
+    "chon": [
+      "A. Lần nào hai bi cũng chạm sàn cùng lúc",
+      "B. v₀ càng lớn, bi A chạm sàn càng muộn",
+      "C. v₀ càng lớn, bi A chạm sàn càng sớm",
+      "D. Phải biết khối lượng hai bi mới nói được"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "Theo phương thẳng đứng, cả hai bi bắt đầu từ vận tốc 0 và rơi với cùng gia tốc g, nên cùng t = √(2h/g) = 0,404 s. v₀ chỉ làm bi A bay xa hơn.",
+    "giai_thich_sai": "Bi A đi đường cong dài hơn nhưng phần rơi của nó giống hệt bi B: chuyển động ngang không làm nhanh hay chậm phần rơi, và khối lượng không có trong t = √(2h/g). Hai đồng hồ trong video dừng cùng ở 0,404 s."
+  }
+}
