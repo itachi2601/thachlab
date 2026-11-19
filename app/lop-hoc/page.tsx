@@ -11,7 +11,6 @@ import EmptyState from "@/components/ui/EmptyState";
 import ExamShelf from "@/components/lop-hoc/ExamShelf";
 import ContentSearch from "@/components/home/ContentSearch";
 import type { SchoolClass } from "@/features/exams/types";
-import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   chapterDisplayTitle,
