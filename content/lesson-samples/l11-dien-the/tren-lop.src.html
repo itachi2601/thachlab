@@ -35,9 +35,10 @@ ol.opt li b{display:inline-block;min-width:1.5em}
 ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
 ol.opt.hang li b{min-width:0;margin-right:.3em}
 .lo .dung{border-color:var(--ok);background:var(--ok-bg)}
-button.mo,a.mo{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
   border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
 button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
 .nut{display:flex;gap:.6em;flex-wrap:wrap}
 .an[hidden]{display:none}
 .an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
@@ -55,8 +56,16 @@ th{background:#eef2f7;font-size:.8em}
 td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
 td.trong:focus{background:#eef4ff}
 td.ns{color:var(--ok);font-weight:800;text-align:center}
-.video{flex:1;min-height:0;display:flex;justify-content:center}
-.video video{height:100%;max-width:100%;background:#000;border-radius:12px}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
 .qr svg{display:block;height:62vh;width:auto;margin:0 auto}
 .made{font-size:1.5em;text-align:center}
 .made b{color:var(--accent)}
@@ -66,13 +75,13 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   body{font-size:18px}
   .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
   .f1,.f2,.f3{height:auto} .fig svg{width:100%;height:auto}
-  .video video{height:auto;max-height:80vh}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
   ol.opt.hang{grid-template-columns:1fr 1fr}
   .qr svg{height:auto;width:100%;max-width:320px}
   .top{flex-wrap:wrap}
   .dk{display:none}
 }
-@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video{display:none}.an[hidden]{display:block}}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
 </style>
 </head>
 <body>
@@ -210,9 +219,20 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m3c">
-  <div class="top"><span class="so">3/6 · Xem cận cảnh</span><span>49 giây · dùng khi bàn cuối không thấy số hoặc thiếu dụng cụ</span><span class="tap">tr.3 · ô 3·1</span></div>
-  <p class="hoi">Nhìn số trên vôn kế ở cả 3 lần chạm.</p>
-  <div class="video"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.webp" controls preload="metadata" playsinline title="Vôn kế, pin 1,5 V và dây đồng"></video></div>
+  <div class="top"><span class="so">3/6 · Xem cận cảnh</span><span>3 điểm dừng · khoảng 1,5 phút · dùng khi bàn cuối không thấy số hoặc thiếu dụng cụ</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="vg" data-bat="10.8" data-het="21.9">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.webp" preload="metadata" playsinline title="Vôn kế, pin 1,5 V và dây đồng"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số trên vôn kế ở 3 lần chạm.</p><p class="nho">Clip bỏ qua phần mở đầu, vào thẳng 3 lần đo.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Lần 1: que đỏ ở cực (+), que đen ở cực (−).</p></div>
+      <div class="buoc" data-t="12.4" data-dung><p class="so-lon">Lần 1: $1{,}5$ V</p><p class="hoi">Đổi chỗ hai que. Vôn kế chỉ…?</p></div>
+      <div class="buoc" data-t="14.0"><p class="hoi">Lần 2: đổi chỗ hai que.</p></div>
+      <div class="buoc" data-t="16.9" data-dung><p class="so-lon">Lần 2: $-1{,}5$ V</p><p class="hoi">Hai que chạm hai điểm trên <u>cùng</u> dây đồng. Vôn kế chỉ…?</p></div>
+      <div class="buoc" data-t="17.0"><p class="hoi">Lần 3: hai que trên cùng dây đồng.</p></div>
+      <div class="buoc" data-t="21.9"><table class="bang"><tr><td>Lần 1 · đỏ ở (+)</td><td class="ns">$1{,}5$ V</td></tr><tr><td>Lần 2 · đổi que</td><td class="ns">$-1{,}5$ V</td></tr><tr><td>Lần 3 · cùng dây</td><td class="ns">$0{,}00$ V</td></tr></table><p class="hoi">Số chỉ $=V_{\text{đỏ}}-V_{\text{đen}}$</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
 </section>
 
 <!-- ================= 4. U = Ed + bẫy ================= -->
@@ -233,9 +253,21 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m4b">
-  <div class="top"><span class="so">4/6 · Thí nghiệm thật · khay nước muối</span><span>49 giây</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
-  <p class="hoi">Dời que đỏ song song với lá đồng: số chỉ đổi thế nào?</p>
-  <div class="video"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.webp" controls preload="metadata" playsinline title="Vôn kế trong khay nước muối"></video></div>
+  <div class="top"><span class="so">4/6 · Thí nghiệm thật · khay nước muối</span><span>3 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
+  <div class="vg" data-bat="10.8" data-het="21.7">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.webp" preload="metadata" playsinline title="Vôn kế trong khay nước muối"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ vôn kế khi que đỏ đi <u>dọc</u> đường sức, rồi đi <u>ngang</u>.</p><p class="nho">Hai lá đồng cách 10 cm, nguồn 6 V. Clip vào thẳng phần đo.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Que đen ở lá âm: mốc 0 V.<br>Que đỏ cách lá âm $x=2$ cm.</p></div>
+      <div class="buoc" data-t="12.9" data-dung><p class="so-lon">$x=2$ cm: $1{,}18$ V</p><p class="hoi">Đưa que đỏ ra $x=4;\ 6;\ 8$ cm. Số chỉ thế nào?</p></div>
+      <div class="buoc" data-t="15.0"><p class="hoi">$x=4;\ 6;\ 8$ cm (tua nhanh).</p></div>
+      <div class="buoc" data-t="18.0" data-dung><p class="so-lon">$x=8$ cm: $4{,}84$ V</p><p class="hoi">Que đỏ sẽ về $x=4$ cm ($2{,}43$ V), rồi dời <u>song song</u> lá đồng. Số chỉ…</p>
+        <ol class="opt lo"><li><b>A.</b> tăng dần</li><li><b>B.</b> giảm dần</li><li data-dung><b>C.</b> gần như không đổi</li><li><b>D.</b> tăng rồi giảm</li></ol></div>
+      <div class="buoc" data-t="18.1"><p class="hoi">Dời ngang ở $x=4$ cm: nhìn số chỉ.</p></div>
+      <div class="buoc" data-t="21.7"><table class="bang"><tr><th>$x$ (cm)</th><td>2</td><td>4</td><td>6</td><td>8</td></tr><tr><th>$V$ (V)</th><td class="ns">1,18</td><td class="ns">2,43</td><td class="ns">3,57</td><td class="ns">4,84</td></tr></table><p class="hoi">Dời ngang: vẫn $2{,}43$ V → <b>C</b>.</p><p class="hoi">$x$ gấp đôi thì $V$…?</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
 </section>
 
 <section class="man" id="m4c">
@@ -373,10 +405,53 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   var mans=[].slice.call(document.querySelectorAll('.man'));
   function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
   function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
   document.addEventListener('keydown',function(e){
     var t=e.target;
     if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
     if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
     if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
     else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
     else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
