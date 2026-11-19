@@ -320,3 +320,85 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 | tn-l9-hoathach-01/02 | l9-vong-nang-luong-hoa-thach (94) | 49,6 / 49,2 s | 02 bỏ Q = mcΔt (THCS chưa học) |
 | tn-l9-taitao-01/02 | l9-nang-luong-tai-tao (95) | 49,9 / 49,8 s | |
 **CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB.** L11 đăng `--chi-video --cho-phep-khac` sau 22h (hộp exp đổi). Bài L9 92–95, 128 chưa đăng lần nào → đăng trọn bài khi thầy chốt bài.
+
+
+## Chặng B — lô 11 (19/11/2026): đánh giá 55 TN đang dùng YouTube
+
+Kiểm chứng: không TN nào trong 55 có trường `mp4`; chưa có clip tự dựng. Đánh giá dựa JSON + ghi chú `video-de-xuat-l*-tu-loc.md` (tiếng Anh/lời suy từ tên kênh/tiêu đề, chưa xem lại từng clip). Lịch dạy hiện tại không ghi trong STATE/MEMORY; ưu tiên theo chương đã có mốc 18/10 (L10 Tổng hợp lực→Newton; L11 Sóng→Giao thoa/Sóng dừng; L12 Từ trường) và bài đã đăng DB (tất cả 55 đều có lesson_id).
+
+| tn-id | lớp·bài (lesson_id) | vấn đề YouTube | chọn/bỏ | lý do |
+|---|---|---|---|---|
+| tn-l10-baotoandl-03 | L10 · Định luật bảo toàn động lượng (74) | VN, bóng bay thật; ổn | Bỏ | video thật tốt, đã có baotoandl1/2 |
+| tn-l10-dl1-newton-02 | L10 · Định luật 1 Newton (59) | VN; không số đo | Bỏ | dl1newton1 đã có; thật quan trọng hơn |
+| tn-l10-lam-quen-01 | L10 · Làm quen với Vật lí (46) | VN; định tính | Bỏ | không số, mực thật |
+| tn-l10-luc-can-luc-nang-01 | L10 · Lực cản và lực nâng (64) | VN; không số đo | Bỏ | luccan2 đã có cùng bài |
+| tn-l10-nemngang-01 | L10 · Chuyển động ném (57) | short tiếng Anh; không số đo (h, v0 → t, L) | Chọn | so_lieu_mau 4 hàng t=√(2h/g), L; nemngang2 là hộp khác |
+| tn-l10-newton3-04 | L10 · Định luật III Newton (61) | short, không số đo | Bỏ | dl3newton1 đã có |
+| tn-l10-roi-tu-do-01 | L10 · Sự rơi tự do (55) | VN; không số đo | Bỏ | roitudo2/3 đã có |
+| tn-l10-thuchanhthl-02 | L10 · Thực hành: Tổng hợp lực (67) | VN; nhiều lời, dài | Bỏ | số liệu ít, đo thật cần xem |
+| tn-l10-tonghopluc-01 | L10 · Tổng hợp và phân tích lực. Cân bằng lực (58) | VN; đoạn 85 s có lời; nhãn "hai lực kế" lệch ba lực kế | Bỏ | tonghopluc2 đã có; đã kiểm 18/10 |
+| tn-l11-baitapsong-01 | L11 · Bài tập về sóng (33) | VN; có lời, không số | Bỏ | số liệu mô hình |
+| tn-l11-baitapsong-03 | L11 · Bài tập về sóng (33) | VN, 20 s ổn | Bỏ | giaothoa-03 lấy thay |
+| tn-l11-baitapsong-04 | L11 · Bài tập về sóng (33) | tiếng Anh (SMUPhysics) có lời; không số | Chọn | L=λ/4 → f 500/250/125 Hz tính được |
+| tn-l11-daodongdieuhoa-02 | L11 · Dao động điều hoà (20) | VN ổn, mô hình đúng | Bỏ | ddh1/3 đã có |
+| tn-l11-dien-truong-03 | L11 · Khái niệm điện trường (36) | short, hạt semolina | Bỏ | video thật không thay được |
+| tn-l11-dien-truong-deu-01 | L11 · Điện trường đều (37) | tiếng Anh (Easy Physics); trùng -03; không có số E | Chọn | E=U/d, 3 hàng; clip cho phần định lượng |
+| tn-l11-dotansoam-01 | L11 · Thực hành: Đo tần số của sóng âm (29) | tiếng Anh, Short | Bỏ | dotansoam2 đã có |
+| tn-l11-dotocdoam-01 | L11 · Thực hành: Đo tốc độ truyền âm (34) | tiếng Anh (Simon) có lời; không bảng số | Chọn | 5 lần l1,l2→v ≈341 m/s đủ số |
+| tn-l11-giaothoa-01 | L11 · Giao thoa sóng (31) | VN; khay sóng thật | Bỏ | video thật |
+| tn-l11-giaothoa-03 | L11 · Giao thoa sóng (31) | tiếng Anh (Pete G), không số | Chọn | i=λD/a 4 hàng, đổi từng đại lượng |
+| tn-l11-motasong-01 | L11 · Mô tả sóng (27) | VN, ổn | Bỏ | motadddh có hộp khác |
+| tn-l11-songdientu-01 | L11 · Sóng điện từ (30) | tiếng Anh, 1 hộp | Bỏ | thật quan trọng |
+| tn-l11-songdientu-02 | L11 · Sóng điện từ (30) | tiếng Anh (Jefferson Lab), sô-cô-la thật | Bỏ | video thật hơn mô phỏng |
+| tn-l11-songdientu-03 | L11 · Sóng điện từ (30) | short tiếng Anh | Bỏ | thật |
+| tn-l11-songdung-01 | L11 · Sóng dừng (32) | tiếng Anh (xmdemo), không số | Chọn | k=1,2,3 → f=2,4,6 Hz, λ 2;1;0,67 m |
+| tn-l11-songdung-02 | L11 · Sóng dừng (32) | VN, ổn | Bỏ | có số đo trong video |
+| tn-l11-songdung-03 | L11 · Sóng dừng (32) | VN, ổn | Bỏ | video đủ |
+| tn-l11-songngangdoc-01 | L11 · Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ (28) | tiếng Anh, ngắn | Bỏ | định tính, video thật |
+| tn-l11-songngangdoc-02 | L11 · Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ (28) | tiếng Anh (Physics Demos), không số | Chọn | λ=v/f 4 hàng, vùng nén–dãn |
+| tn-l11-songngangdoc-03 | L11 · Sóng ngang, sóng dọc, sự truyền năng lượng của sóng cơ (28) | tiếng Anh, chậm; số do thầy đo | Bỏ | số đo 5 lần mỏng |
+| tn-l12-camungdt-02 | L12 · Hiện tượng cảm ứng điện từ (13) | VN, ổn | Bỏ | camungdt* đã có |
+| tn-l12-chuyenthe-02 | L12 · Sự chuyển thể (2) | VN ngắn, ổn | Bỏ | chuyenthe* đã có |
+| tn-l12-luctu-01 | L12 · Lực từ. Cảm ứng từ (11) | VN, ổn | Bỏ | luctu* đã có |
+| tn-l12-phanbach-01 | L12 · Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng (17) | tiếng Anh, chưa có số | Bỏ | phanbach2 đã có; số mô hình |
+| tn-l12-pttrangthai-01 | L12 · Phương trình trạng thái của khí lí tưởng (8) | VN | Bỏ | pttrangthai2 đã có |
+| tn-l12-tdhphantu-02 | L12 · Thuyết động học phân tử chất khí (6) | tiếng Anh, vòng khói không số | Bỏ | thật quan trọng |
+| tn-l12-thuchanhtu-01 | L12 · Thực hành đo độ lớn cảm ứng từ (12) | VN, 90 s ổn | Bỏ | thật |
+| tn-l12-tutruong-01 | L12 · Khái niệm từ trường (10) | VN | Bỏ | thật |
+| tn-l12-tutruong-03 | L12 · Khái niệm từ trường (10) | VN | Bỏ | mạt sắt thật |
+| tn-l12-udcamung-04 | L12 · Một số ứng dụng của cảm ứng điện từ (126) | tiêu đề tiếng Anh | Bỏ | udcamung1-3 đã có |
+| tn-l12-ungdungcutu-01 | L12 · Một số ứng dụng của cảm ứng điện từ (126) | VN | Bỏ | VQT GV ổn |
+| tn-l12-ungdungcutu-02 | L12 · Một số ứng dụng của cảm ứng điện từ (126) | VN | Bỏ | ổn |
+| tn-l12-ungdungcutu-03 | L12 · Một số ứng dụng của cảm ứng điện từ (126) | VN thương mại; chưa xác minh có đo hiệu suất | Bỏ | nghi video khác thí nghiệm |
+| tn-l12-ungdungcutu-04 | L12 · Một số ứng dụng của cảm ứng điện từ (126) | tiếng Anh | Bỏ | udcamung3 đã có |
+| tn-l9-doanmach-03 | L9 · Đoạn mạch nối tiếp, song song (90) | short tiếng Anh; không số | Chọn | dòng 0,25/0,5 A; tháo một bóng |
+| tn-l9-hsgamthanh-01 | L9 · CĐ15. Âm thanh (Vật lí HSG & chuyên KHTN 9) (150) | tiếng Anh (KMi); không số | Chọn | f theo L 4 hàng |
+| tn-l9-khucxa-01 | L9 · Khúc xạ ánh sáng (83) | tiếng Anh, sữa | Bỏ | laser thật |
+| tn-l9-khucxa-02 | L9 · Khúc xạ ánh sáng (83) | tiếng Anh (QuantumBoffin) 87 s, góc đọc khó | Chọn | i/r + n=1,5 bảng 5 hàng |
+| tn-l9-khucxa-03 | L9 · Khúc xạ ánh sáng (83) | tiếng Anh, 23 s | Bỏ | thật |
+| tn-l9-langkinh-01 | L9 · Lăng kính (85) | tiếng Anh; không số | Chọn | i–D, D min ở i=50° |
+| tn-l9-langkinh-02 | L9 · Lăng kính (85) | VN, ổn | Bỏ | thật |
+| tn-l9-pxtp-01 | L9 · Phản xạ toàn phần (84) | tiếng Anh (QuantumBoffin), 72 s, góc nhỏ | Chọn | i→r, TIR ở i≥42° |
+| tn-l9-pxtp-02 | L9 · Phản xạ toàn phần (84) | tiếng Anh ngắn, 18 s | Bỏ | thật |
+| tn-l9-pxtp-03 | L9 · Phản xạ toàn phần (84) | tiếng Anh | Bỏ | thật |
+| tn-l9-thaukinh-01 | L9 · Thấu kính (86) | VN | Bỏ | ổn |
+| tn-l9-tieucu-01 | L9 · Thực hành đo tiêu cự của thấu kính hội tụ (87) | tiếng Anh (Make Me Scientific) | Bỏ | l9tieucu* đã có |
+
+### 12 TN chọn dựng clip tự dựng (không giọng, 9:16, phụ đề, Dự đoán, số từ so_lieu_mau)
+
+| tn-id | clip | câu Dự đoán gợi ý | slug · lesson_id |
+|---|---|---|---|
+| tn-l11-songdung-01 | clips/songdung1.py | Vung nhanh hơn thì số múi dây thay đổi thế nào? | l11-song-dung · 32 |
+| tn-l11-songngangdoc-02 | clips/songngangdoc2.py | Tăng tần số thì khoảng cách nén–nén gần nhất đổi ra sao? | l11-song-ngang-song-doc · 28 |
+| tn-l11-giaothoa-03 | clips/giaothoa3.py | Tăng khoảng cách D tới màn thì khoảng vân? | l11-giao-thoa-song · 31 |
+| tn-l11-baitapsong-04 | clips/baitapsong4.py | Cột khí càng dài thì nốt cộng hưởng đầu tiên cao hay thấp hơn? | l11-bai-tap-song · 33 |
+| tn-l11-dotocdoam-01 | clips/dotocdoam1.py | Hai lần âm to nhất cách nhau bao nhiêu so với bước sóng? | l11-thuc-hanh-do-toc-do-am · 34 |
+| tn-l11-dien-truong-deu-01 | clips/dientruongdeu1.py | Giảm khoảng cách giữa hai bản, cường độ điện trường thế nào? | l11-dien-truong-deu · 37 |
+| tn-l9-khucxa-02 | clips/khucxa2.py | Tăng dần góc tới thì góc khúc xạ đổi thế nào, tỉ số sin có đổi? | l9-khuc-xa-anh-sang · 83 |
+| tn-l9-pxtp-01 | clips/pxtp1.py | Tới góc tới nào tia khúc xạ biến mất? | l9-phan-xa-toan-phan · 84 |
+| tn-l9-langkinh-01 | clips/langkinh1.py | Góc lệch D thay đổi thế nào khi tăng góc tới? | l9-lang-kinh-tan-sac · 85 |
+| tn-l10-nemngang-01 | clips/nemngang1.py | Bi ném ngang và bi thả chạm đất lệch nhau bao nhiêu khi v0 tăng gấp đôi? | l10-chuyen-dong-nem · 57 |
+| tn-l9-doanmach-03 | clips/l9doanmach3.py | Tháo một bóng thì bóng còn lại sáng thế nào ở từng cách mắc? | l9-doan-mach-noi-tiep-song-song · 90 |
+| tn-l9-hsgamthanh-01 | clips/hsgamthanh1.py | Thước nhô ra ngắn hay dài thì âm cao hơn, gấp mấy lần? | (chưa có slug trong content/lesson-samples) · 150 |
+
+YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ xoá YouTube nếu sai thí nghiệm — thầy quyết. Chưa phát hiện YouTube sai hẳn thí nghiệm; nghi cần thầy xem: tn-l12-ungdungcutu-03 (clip bếp thương mại, chưa chắc có đo hiệu suất 1 lít nước), tn-l10-tonghopluc-01 (nhãn "hai lực kế" nhưng tiêu đề ba lực kế/vòng nhẫn), tn-l11-dien-truong-deu-01 (cùng video điện phổ semolina với -03, không có E=U/d).
