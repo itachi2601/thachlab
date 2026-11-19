@@ -33,7 +33,7 @@ for (const machine of ["tien", "phay"] as const) {
       expect(gradeRubricExam(rubric, all("E"), {}).zeroToleranceFailed).toBe(rubric.zeroTolerance.length > 0);
     });
     it("luật chặn: nhóm kỹ thuật dưới ngưỡng → nhóm thành phần bị tính 0", () => {
-      const levels = { ...all("E"), ...Object.fromEntries(rubric.groups.find((g) => g.id === rubric.gateGroupId)!.criteria.map((c) => [c.id, "F"])) };
+      const levels = { ...all("E"), ...Object.fromEntries(rubric.groups.find((g) => g.id === rubric.gateGroupId)!.criteria.map((c) => [c.id, "F" as RubricLevel])) };
       const r = gradeRubricExam(rubric, levels, zt(true));
       expect(r.gatePassed).toBe(false);
       expect(r.totalScore).toBe(r.groupScores[rubric.gateGroupId]);
