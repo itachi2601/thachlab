@@ -120,7 +120,7 @@ def s_hook(img, d, t, sc):
         d.rounded_rectangle([140, y0 + 495, 140 + 800 * (1 - p), y0 + 509], radius=7, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
-STARTS = [0.4, 3.4, 6.4]; GROW = 0.7; READ = 1.6; ROW = 1.9
+STARTS = [0.2, 3.2, 6.8]; GROW = 0.7; READ = 1.4; ROW = 1.6
 def do_state(t):
     """-> (i ong dang dung, L dang ve, f dang hien hoac None, so hang da ghi, dang thoi)."""
     i = max([j for j, s in enumerate(STARTS) if t >= s], default=-1)
