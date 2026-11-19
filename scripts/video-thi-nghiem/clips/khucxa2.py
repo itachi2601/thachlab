@@ -92,7 +92,7 @@ def disk(d):
     d.pieslice([C[0] - RB, C[1] - RB, C[0] + RB, C[1] + RB], 0, 180, fill=A(BLOCK, 0.85), outline=BLUE, width=4)
     d.line([(C[0] - RB, C[1]), (C[0] + RB, C[1])], fill=BLUE, width=5)
     dash(d, (C[0], C[1] - RD + 6), (C[0], C[1] + RD - 6), A(NAVY, 0.7), w=3)
-    text(d, (C[0] + 300, C[1] + 250), "nhựa", 40, BLUE)
+    text(d, (C[0] + 330, C[1] + 250), "nhựa", 40, BLUE)
     text(d, (C[0] + 300, C[1] - 260), "không khí", 40, MUTED, bold=False)
 
 
@@ -222,8 +222,8 @@ def s_dapan(img, d, t, sc):
     table(d, 5, plus=appear(t, 0.6, 0.45), ratio=appear(t, M[1] + 0.3, 0.5))
     k = appear(t, M[1] + 1.6, 0.5)
     if k > 0:
-        card(d, (110, 1530, 970, 1600), fill=A((236, 253, 243), k), outline=A(GREEN, k), r=22, w=3)
-        text(d, (W / 2, 1565), "sin i / sin r gần như không đổi", 44, DGREEN, alpha=k)
+        card(d, (110, 1548, 970, 1618), fill=A((236, 253, 243), k), outline=A(GREEN, k), r=22, w=3)
+        text(d, (W / 2, 1583), "sin i / sin r gần như không đổi", 44, DGREEN, alpha=k)
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
