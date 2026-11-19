@@ -31,7 +31,7 @@ DGREEN = (10, 110, 50); DRED = (185, 28, 28); WOOD = (250, 236, 196); WOOD_D = (
 RULER = (37, 99, 235); WAVE = (124, 58, 237)
 
 # ---------------- hinh: ban + thuoc + quat rung ----------------
-EDGE, TY, PXC, AMP = 330, 560, 26.0, 62       # mep ban x ; mat ban y ; px moi cm ; bien do dau thuoc (px)
+EDGE, TY, PXC, AMP = 330, 500, 26.0, 62       # mep ban x ; mat ban y ; px moi cm ; bien do dau thuoc (px)
 def ruler(d, L, vib=True, a=1.0, amp=AMP):
     d.rectangle([40, TY, EDGE, TY + 120], fill=A(WOOD, a), outline=A(WOOD_D, a), width=3)          # ban
     d.rectangle([60, TY - 12, EDGE, TY], fill=A(RULER, a))                                          # phan nam tren ban
@@ -46,7 +46,7 @@ def ruler(d, L, vib=True, a=1.0, amp=AMP):
     else:
         d.line(pts(0), fill=A(RULER, a), width=12)
     # thuoc do phan tho ra (duoi), chu "tho ra L cm" khong dung ky hieu l
-    yb = TY + 160
+    yb = TY + 150
     d.line([(EDGE, yb), (x1, yb)], fill=A(NAVY, a), width=3)
     for x in (EDGE, x1): d.line([(x, yb - 14), (x, yb + 14)], fill=A(NAVY, a), width=3)
     return x1, yb
@@ -58,7 +58,7 @@ def fbox(d, f, a=1.0):
 
 def graph(d, f, y0=700, a=1.0):
     card(d, (40, y0, 1040, y0 + 270), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
-    text(d, (W / 2, y0 + 36), "Đầu thước trong cùng một khoảng thời gian", 38, MUTED, bold=False, alpha=a)
+    text(d, (W / 2, y0 + 36), "Đếm số sóng trong cùng một khoảng thời gian", 38, MUTED, bold=False, alpha=a)
     yc = y0 + 150; x0, x1 = 90, 990
     d.line([(x0, yc), (x1, yc)], fill=A(LIGHT, a), width=3)
     if f is None: return
@@ -75,7 +75,7 @@ def s_hook(img, d, t, sc):
     x1, yb = ruler(d, 15, vib=on)
     text(d, ((EDGE + x1) / 2, yb + 46), "15 cm", 42, NAVY)
     fbox(d, 25 if on else None)
-    graph(d, 25 if on else None, y0=770)
+    graph(d, 25 if on else None, y0=790)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1090 + (1 - a) * 40
@@ -119,12 +119,13 @@ def table(d, y, done, hl=()):
 
 def s_do(img, d, t, sc):
     L, vib, f, done = do_state(t)
-    card(d, (40, 265, 1040, 690), fill=WHITE, outline=LIGHT, w=3)
+    card(d, (40, 265, 1040, 730), fill=WHITE, outline=LIGHT, w=3)
     x1, yb = ruler(d, L, vib=vib)
     if vib: text(d, ((EDGE + x1) / 2, yb + 46), vn(L) + " cm", 42, NAVY)
     fbox(d, f)
-    graph(d, f, y0=710)
-    table(d, 1000, done)
+    text(d, (840, 412), "số minh hoạ", 36, MUTED, bold=False)
+    graph(d, f, y0=750)
+    table(d, 1040, done)
 
 def _kiem_dong_bo():
     """Moi 0,05 s: so f chi hien khi thuoc da dung yen o L moi va dung hang kho ; hang bang chi sau khi da doc."""
@@ -205,7 +206,7 @@ def s_end(img, d, t, sc):
     if kh > 0:
         card(d, (90, 1060, 990, 1290), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
         text(d, (W / 2, 1115), "Gợi ý", 44, INK, alpha=kh)
-        text(d, (W / 2, 1215), "225 dao động trong 1 giây", 44, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1215), "Hz nghĩa là gì?", 44, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
