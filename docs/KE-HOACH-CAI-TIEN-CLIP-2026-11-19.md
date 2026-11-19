@@ -71,6 +71,9 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - **Đạt khi:** `--kiem` nhận trường mới và báo lỗi khi thiếu giải thích hoặc ≠ 4 lựa chọn; 3 clip mẫu có đáp án khớp kho; lúc dừng lần hai ở 375×812
   câu hỏi + 4 lựa chọn nằm trọn dưới video (tiêu chí việc 1); phản hồi không mở đầu "Đúng/Sai" do tay viết, không điểm, không xếp hạng (K6, L3).
 - **Mã quy tắc:** E1, L1, L3, K6, K7, D2. Tư vấn đã làm và thầy đã chốt 19/11 — phiên nhận việc không cần tư vấn lại.
+- **Xong 19/11/2026:** trường `cau_chot` ({giay = lúc dừng, cau_hoi, chon[4], dung, giai_thich[4]}), khối `KhoiChon` dùng chung với Dự đoán,
+  sự kiện `dung_o_cau_chot` / `chon_cau_chot` / `bo_qua_cau_chot` qua `onEvent` (việc 6 nối vào). Đo 375×812: video 8–300, câu hỏi từ 308, lựa chọn D đáy ≤ 691, thanh dưới 755.
+  Mốc dừng: lúc khung THỬ NGHĨ trong clip hiện đủ câu, trước ô Gợi ý (≈ t0 cảnh end + 2 s); câu chốt phải hỏi ĐÚNG ca clip đang hiện.
 
 ### Việc 3 — Cổng soát mới trong bộ dựng (chặn lỗi từ gốc)
 - **Model:** Sonnet.

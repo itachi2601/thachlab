@@ -14,6 +14,8 @@ import { Check, Lock, Play, Target } from "lucide-react";
  * - Bố cục: màn rộng = video bên trái (dính), phần tương tác bên phải; điện thoại = video dính trên đầu, thu theo
  *   chiều cao màn hình, dải bước + ô hiện tại nằm dưới.
  * - Câu Dự đoán bắt buộc: chạm video hay tua qua đều bị hỏi lại; chỉ có nút "Chưa muốn đoán, xem luôn" (tự chủ, SDT).
+ * - Câu chốt (tuỳ chọn, `cau_chot`): dừng lần hai ở khung THỬ NGHĨ của cảnh Chốt, cùng khối A–D với câu Dự đoán; chọn xong
+ *   mới hiện đáp án + giải thích của lựa chọn đó (L1). Sự kiện `*_cau_chot` qua `onEvent` để việc 6 ghi DB.
  * - Mốc giây lấy từ engine (scripts/video-thi-nghiem, `render.py <clip> --kich-ban`), nên không phải
  *   dựng lại mp4. Dữ liệu: content/thi-nghiem/video-khung/<id>.json.
  */
@@ -27,6 +29,16 @@ export type VideoKhungDuDoan = {
   giai_thich_dung: string;
   giai_thich_sai: string;
 };
+/** Câu chốt (việc 2, thầy chốt 19/11/2026): video dừng lần hai ở khung "THỬ NGHĨ" của cảnh Chốt, trước khi clip hiện
+ *  Gợi ý. Chọn A–D, chấm tự động; giải thích riêng cho TỪNG lựa chọn (L1), không điểm/xếp hạng (L3, K6).
+ *  `giay` = đúng lúc dừng (câu hỏi trong clip đã hiện đủ), không trừ DUNG_SOM. Kiểm bằng `xuat-khung.py --kiem`. */
+export type VideoKhungCauChot = {
+  giay: number;
+  cau_hoi: string;
+  chon: string[]; // đúng 4, có sẵn nhãn "A. " … "D. " (E1)
+  dung: number;
+  giai_thich: string[]; // cùng thứ tự với `chon`
+};
 export type VideoKhungData = {
   id: string;
   ten: string;
@@ -35,6 +47,7 @@ export type VideoKhungData = {
   tong_giay: number;
   o: VideoKhungO[];
   dung_dua: VideoKhungDuDoan;
+  cau_chot?: VideoKhungCauChot; // clip chưa có thì chạy như cũ (chỉ dừng ở Dự đoán)
 };
 
 /** Mốc giây → "m:ss" để em biết ô này nằm ở đâu trong clip (bấm là tua tới). */
@@ -53,14 +66,105 @@ export type VideoKhungEvent =
   | { loai: "dung_o_du_doan" }
   | { loai: "chon"; chon: number; dung: boolean }
   | { loai: "xem_lai_o"; khoa: string }
-  | { loai: "bo_qua" };
+  | { loai: "bo_qua" }
+  // Câu chốt (việc 6 sẽ gom các sự kiện này, ghi DB một lần khi xem xong/rời trang)
+  | { loai: "dung_o_cau_chot" }
+  | { loai: "chon_cau_chot"; chon: number; dung: boolean }
+  | { loai: "bo_qua_cau_chot" };
+
+type Hoi = "du_doan" | "cau_chot" | null;
 
 /** Câu trả lời đã chọn theo id clip, sống ngoài component: bài vẽ lại HTML (KaTeX tải xong, bấm video YouTube khác)
  *  thì khung được gắn lại và vẫn nhớ em đã đoán, không bắt dừng hỏi lần nữa. */
 /** Dừng sớm hơn mốc cuối cảnh Dự đoán (giây): hình còn là hình của câu hỏi, không trôi sang cảnh kế (K7). */
 const DUNG_SOM = 0.5;
 
-const TRA_LOI = new Map<string, { chose: number | null; boQua: boolean }>();
+const TRA_LOI = new Map<
+  string,
+  { chose: number | null; boQua: boolean; chotChose?: number | null; chotBoQua?: boolean }
+>();
+
+/** Khối câu hỏi + 4 lựa chọn dùng chung cho câu Dự đoán và câu chốt (cùng nhãn A–D, cùng cỡ nút 48px, cùng cách
+ *  cuộn ở effect trên qua `data-hoi`/`data-chon`). Câu chốt (hienDapAn) đánh dấu thêm lựa chọn đúng sau khi chọn. */
+function KhoiChon(p: {
+  nhanNhom: string;
+  cauHoi: string;
+  chon: string[];
+  daChon: number | null;
+  dungIdx: number;
+  onChon: (k: number) => void;
+  onBoQua: () => void;
+  chuBoQua: string;
+  giaiThich: (k: number) => string;
+  hienDapAn?: boolean;
+  onXemTiep: () => void;
+}) {
+  const dung = p.daChon === p.dungIdx;
+  return (
+    <div role="group" aria-live="polite" aria-label={p.nhanNhom} data-hoi>
+      <p className="text-[17px] leading-relaxed text-ink">{p.cauHoi}</p>
+      <div className="mt-3 grid gap-2">
+        {p.chon.map((s, k) => {
+          const picked = p.daChon === k;
+          const laDung = !!p.hienDapAn && p.daChon !== null && k === p.dungIdx;
+          return (
+            <button
+              key={s}
+              type="button"
+              data-chon
+              disabled={p.daChon !== null}
+              onClick={() => p.onChon(k)}
+              aria-label={laDung ? `${s} (đáp án)` : undefined}
+              className={
+                "flex min-h-12 items-center gap-2 rounded-xl border px-4 py-2 text-left text-[16px] font-semibold transition-colors " +
+                (laDung
+                  ? "border-ok bg-panel text-ink"
+                  : picked
+                    ? "border-primary bg-primary-soft text-ink"
+                    : "border-line-strong bg-panel text-ink hover:bg-primary-soft disabled:opacity-60")
+              }
+            >
+              <span className="flex-1">{s}</span>
+              {laDung && <Check className="size-5 shrink-0 text-ok" aria-hidden />}
+              {p.hienDapAn && picked && !laDung && <Target className="size-5 shrink-0 text-warn" aria-hidden />}
+            </button>
+          );
+        })}
+      </div>
+      {p.daChon === null && (
+        <button
+          type="button"
+          onClick={p.onBoQua}
+          className="mt-2 min-h-11 px-1 text-[14px] text-muted underline underline-offset-2 hover:text-ink"
+        >
+          {p.chuBoQua}
+        </button>
+      )}
+      {p.daChon !== null && (
+        <div className="mt-3 rounded-xl bg-surface-2 p-3">
+          <p className="flex items-start gap-2 text-[15px] leading-relaxed text-ink">
+            {dung ? (
+              <Check className="mt-0.5 size-5 shrink-0 text-ok" aria-hidden />
+            ) : (
+              <Target className="mt-0.5 size-5 shrink-0 text-warn" aria-hidden />
+            )}
+            <span>
+              <b>{dung ? "Đúng hướng. " : "Chưa khớp. "}</b>
+              {p.giaiThich(p.daChon)}
+            </span>
+          </p>
+          <button
+            type="button"
+            onClick={p.onXemTiep}
+            className="mt-3 inline-flex min-h-12 items-center gap-2 rounded-xl bg-primary px-5 text-[16px] font-bold text-white hover:bg-primary-dark"
+          >
+            <Play className="size-4" aria-hidden /> Xem tiếp
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function VideoThiNghiemKhung({
   data,
@@ -77,9 +181,11 @@ export default function VideoThiNghiemKhung({
   const sectionRef = useRef<HTMLElement>(null);
   const wrapRef = useRef<HTMLDivElement>(null); // khối bọc video (dính, thu nhỏ lúc dừng ở điện thoại)
   const cardRef = useRef<HTMLDivElement>(null); // ô hiện tại ở điện thoại (video cao gần hết màn hình nên câu hỏi nằm dưới)
-  const askingRef = useRef(false); // đồng bộ với `asking` ngay lúc gọi (onPlay chạy trước khi React kịp dựng lại)
+  const askingRef = useRef<Hoi>(null); // đồng bộ với `asking` ngay lúc gọi (onPlay chạy trước khi React kịp dựng lại)
   const askedOnce = useRef(false);
+  const chotAskedOnce = useRef(false);
   const doneRef = useRef(!!saved && (saved.chose !== null || saved.boQua)); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
+  const chotDoneRef = useRef(!!saved && (saved.chotChose != null || !!saved.chotBoQua)); // câu chốt: đã chọn hoặc bỏ qua
   const eventRef = useRef(onEvent); // trang gọi truyền hàm mới mỗi lần dựng: giữ ở ref để vòng rAF không bị huỷ liên tục
   useEffect(() => {
     eventRef.current = onEvent;
@@ -95,16 +201,28 @@ export default function VideoThiNghiemKhung({
     }
   }); // đã xem hết clip (sau khi trả lời Dự đoán) một lần: mở cả sáu ô để ôn lại, nhớ theo id khung
   const reached = xong ? data.o.length - 1 : reachedRaw;
-  const [asking, setAskingState] = useState(false);
-  const setAsking = useCallback((b: boolean) => {
+  const [asking, setAskingState] = useState<Hoi>(null);
+  const setAsking = useCallback((b: Hoi) => {
     askingRef.current = b;
     setAskingState(b);
   }, []);
   const [chose, setChose] = useState<number | null>(saved?.chose ?? null);
   const [boQua, setBoQua] = useState(saved?.boQua ?? false);
+  const [chotChose, setChotChose] = useState<number | null>(saved?.chotChose ?? null);
 
   const dd = data.dung_dua;
   const mocDung = dd.giay - DUNG_SOM;
+  // Dữ liệu câu chốt sai dạng (gõ tay vào HTML bài) thì bỏ qua cả câu, clip chạy như cũ thay vì hỏng khung.
+  const cc =
+    data.cau_chot &&
+    data.cau_chot.chon?.length === 4 &&
+    data.cau_chot.giai_thich?.length === 4 &&
+    data.cau_chot.dung >= 0 &&
+    data.cau_chot.dung < 4 &&
+    data.cau_chot.giay > dd.giay
+      ? data.cau_chot
+      : undefined;
+  const mocChot = cc ? cc.giay : Infinity; // câu chốt: dừng đúng mốc (câu hỏi trong clip đã hiện đủ, Gợi ý chưa hiện)
   const duDoanIdx = data.o.findIndex((o) => o.khoa === "du_doan");
 
   const curOf = useCallback(
@@ -120,15 +238,16 @@ export default function VideoThiNghiemKhung({
 
   // Dừng ở câu Dự đoán: thoát toàn màn hình (iOS/Android che mất thẻ câu hỏi), đưa focus vào nút chọn đầu tiên.
   const hoi = useCallback(
-    (v: HTMLVideoElement) => {
+    (v: HTMLVideoElement, loai: "du_doan" | "cau_chot" = "du_doan") => {
       v.pause();
       const w = v as HTMLVideoElement & { webkitExitFullscreen?: () => void };
       if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
       else w.webkitExitFullscreen?.();
-      setAsking(true);
-      if (!askedOnce.current) {
-        askedOnce.current = true;
-        eventRef.current?.({ loai: "dung_o_du_doan" });
+      setAsking(loai);
+      const once = loai === "du_doan" ? askedOnce : chotAskedOnce;
+      if (!once.current) {
+        once.current = true;
+        eventRef.current?.({ loai: loai === "du_doan" ? "dung_o_du_doan" : "dung_o_cau_chot" });
       }
     },
     [setAsking],
@@ -142,13 +261,14 @@ export default function VideoThiNghiemKhung({
     // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
     setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
     if (now >= mocDung && !v.seeking && !v.paused && !doneRef.current) hoi(v);
+    else if (now >= mocChot && !v.seeking && !v.paused && doneRef.current && !chotDoneRef.current) hoi(v, "cau_chot");
     if (doneRef.current && now >= data.tong_giay - 0.5) {
       setXong(true);
       try {
         localStorage.setItem(KEY_XONG, "1");
       } catch {}
     }
-  }, [curOf, mocDung, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
+  }, [curOf, mocDung, mocChot, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
@@ -156,11 +276,14 @@ export default function VideoThiNghiemKhung({
 
   const onPlay = () => {
     const v = videoRef.current;
-    if (askingRef.current && !doneRef.current) {
+    const dangHoi =
+      (askingRef.current === "du_doan" && !doneRef.current) ||
+      (askingRef.current === "cau_chot" && !chotDoneRef.current);
+    if (dangHoi) {
       v?.pause(); // chạm vào video hay bấm play gốc cũng không bỏ qua được câu hỏi
       return;
     }
-    setAsking(false);
+    setAsking(null);
     document.querySelectorAll("video").forEach((o) => o !== videoRef.current && o.pause()); // một video phát một lúc
     cancelAnimationFrame(raf.current);
     const loop = () => {
@@ -184,7 +307,13 @@ export default function VideoThiNghiemKhung({
       hoi(v);
       return;
     }
-    if (now < mocDung - 0.25) setAsking(false);
+    // Câu chốt cũng vậy: tua qua khi chưa trả lời thì đưa về đúng mốc và hỏi.
+    if (doneRef.current && !chotDoneRef.current && now >= mocChot) {
+      v.currentTime = Math.max(0, mocChot - 0.05);
+      hoi(v, "cau_chot");
+      return;
+    }
+    if (now < mocDung - 0.25 || (askingRef.current === "cau_chot" && now < mocChot - 0.25)) setAsking(null);
   };
 
   // Điện thoại: video dính trên đầu màn hình, câu hỏi nằm ngay dưới; chỉ kéo nhẹ nếu thẻ còn nằm ngoài tầm mắt.
@@ -234,7 +363,7 @@ export default function VideoThiNghiemKhung({
     const v = videoRef.current;
     if (!v || i > reached) return;
     v.currentTime = data.o[i].giay + 0.05;
-    setAsking(false);
+    setAsking(null);
     eventRef.current?.({ loai: "xem_lai_o", khoa: data.o[i].khoa });
     void v.play().catch(() => {});
   };
@@ -243,12 +372,12 @@ export default function VideoThiNghiemKhung({
     if (doneRef.current) return;
     doneRef.current = true;
     setChose(i);
-    TRA_LOI.set(data.id, { chose: i, boQua: false });
+    TRA_LOI.set(data.id, { ...TRA_LOI.get(data.id), chose: i, boQua: false });
     eventRef.current?.({ loai: "chon", chon: i, dung: i === dd.dung });
   };
 
   const resume = () => {
-    setAsking(false);
+    setAsking(null);
     void videoRef.current?.play().catch(() => {});
   };
 
@@ -256,8 +385,24 @@ export default function VideoThiNghiemKhung({
     if (doneRef.current) return;
     doneRef.current = true;
     setBoQua(true);
-    TRA_LOI.set(data.id, { chose: null, boQua: true });
+    TRA_LOI.set(data.id, { ...TRA_LOI.get(data.id), chose: null, boQua: true });
     eventRef.current?.({ loai: "bo_qua" });
+    resume();
+  };
+
+  const chooseChot = (i: number) => {
+    if (!cc || chotDoneRef.current) return;
+    chotDoneRef.current = true;
+    setChotChose(i);
+    TRA_LOI.set(data.id, { chose, boQua, ...TRA_LOI.get(data.id), chotChose: i, chotBoQua: false });
+    eventRef.current?.({ loai: "chon_cau_chot", chon: i, dung: i === cc.dung });
+  };
+
+  const boQuaChot = () => {
+    if (chotDoneRef.current) return;
+    chotDoneRef.current = true;
+    TRA_LOI.set(data.id, { chose, boQua, ...TRA_LOI.get(data.id), chotChose: null, chotBoQua: true });
+    eventRef.current?.({ loai: "bo_qua_cau_chot" });
     resume();
   };
 
@@ -265,75 +410,46 @@ export default function VideoThiNghiemKhung({
   // trước đó hiện câu hỏi trung tính `kiem`.
   const daQuaDuDoan = chose !== null || boQua;
   const an = (o: VideoKhungO) => o.khoa === "gia_thuyet" && !!o.kiem && !daQuaDuDoan;
-  const nhan = (o: VideoKhungO) => (an(o) ? "Cần kiểm tra" : NHAN[o.khoa]);
+  const nhan = (o: VideoKhungO) =>
+    asking === "cau_chot" && o === data.o[curOf(t)] ? "Câu chốt" : an(o) ? "Cần kiểm tra" : NHAN[o.khoa];
   const chu = (o: VideoKhungO) => (an(o) ? o.kiem : o.chu);
 
   const cur = curOf(t);
-  const shown = asking ? duDoanIdx : cur;
+  const shown = asking === "du_doan" ? duDoanIdx : cur;
 
   const body = (i: number, big: boolean) => {
     const o = data.o[i];
-    if (i === duDoanIdx && asking) {
-      const dung = chose === dd.dung;
+    if (i === duDoanIdx && asking === "du_doan") {
       return (
-        <div role="group" aria-live="polite" aria-label="Câu dự đoán" data-hoi>
-          <p className={big ? "text-[17px] leading-relaxed text-ink" : "text-[16px] leading-relaxed text-ink"}>
-            {dd.cau_hoi}
-          </p>
-          <div className="mt-3 grid gap-2">
-            {dd.chon.map((s, k) => {
-              const picked = chose === k;
-              return (
-                <button
-                  key={s}
-                  type="button"
-                  data-chon
-                  disabled={chose !== null}
-                  onClick={() => choose(k)}
-                  className={
-                    "min-h-12 rounded-xl border px-4 py-2 text-left text-[16px] font-semibold transition-colors " +
-                    (picked
-                      ? "border-primary bg-primary-soft text-ink"
-                      : "border-line-strong bg-panel text-ink hover:bg-primary-soft disabled:opacity-60")
-                  }
-                >
-                  {s}
-                </button>
-              );
-            })}
-          </div>
-          {chose === null && (
-            <button
-              type="button"
-              onClick={boQuaCau}
-              className="mt-2 min-h-11 px-1 text-[14px] text-muted underline underline-offset-2 hover:text-ink"
-            >
-              Chưa muốn đoán, xem luôn
-            </button>
-          )}
-          {chose !== null && (
-            <div className="mt-3 rounded-xl bg-surface-2 p-3">
-              <p className="flex items-start gap-2 text-[15px] leading-relaxed text-ink">
-                {dung ? (
-                  <Check className="mt-0.5 size-5 shrink-0 text-ok" aria-hidden />
-                ) : (
-                  <Target className="mt-0.5 size-5 shrink-0 text-warn" aria-hidden />
-                )}
-                <span>
-                  <b>{dung ? "Đúng hướng. " : "Chưa khớp. "}</b>
-                  {dung ? dd.giai_thich_dung : dd.giai_thich_sai}
-                </span>
-              </p>
-              <button
-                type="button"
-                onClick={resume}
-                className="mt-3 inline-flex min-h-12 items-center gap-2 rounded-xl bg-primary px-5 text-[16px] font-bold text-white hover:bg-primary-dark"
-              >
-                <Play className="size-4" aria-hidden /> Xem tiếp
-              </button>
-            </div>
-          )}
-        </div>
+        <KhoiChon
+          nhanNhom={"Câu dự đoán"}
+          cauHoi={dd.cau_hoi}
+          chon={dd.chon}
+          daChon={chose}
+          dungIdx={dd.dung}
+          onChon={(k) => choose(k)}
+          onBoQua={() => boQuaCau()}
+          chuBoQua={"Chưa muốn đoán, xem luôn"}
+          giaiThich={(k) => (k === dd.dung ? dd.giai_thich_dung : dd.giai_thich_sai)}
+          onXemTiep={resume}
+        />
+      );
+    }
+    if (cc && asking === "cau_chot" && i === shown) {
+      return (
+        <KhoiChon
+          nhanNhom={"Câu chốt"}
+          cauHoi={cc.cau_hoi}
+          chon={cc.chon}
+          daChon={chotChose}
+          dungIdx={cc.dung}
+          onChon={(k) => chooseChot(k)}
+          onBoQua={() => boQuaChot()}
+          chuBoQua={"Chưa muốn trả lời, xem tiếp"}
+          giaiThich={(k) => cc.giai_thich[k] ?? ""}
+          hienDapAn={true}
+          onXemTiep={resume}
+        />
       );
     }
     return (
