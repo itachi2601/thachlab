@@ -57,6 +57,9 @@ export type VideoKhungEvent =
 
 /** Câu trả lời đã chọn theo id clip, sống ngoài component: bài vẽ lại HTML (KaTeX tải xong, bấm video YouTube khác)
  *  thì khung được gắn lại và vẫn nhớ em đã đoán, không bắt dừng hỏi lần nữa. */
+/** Dừng sớm hơn mốc cuối cảnh Dự đoán (giây): hình còn là hình của câu hỏi, không trôi sang cảnh kế (K7). */
+const DUNG_SOM = 0.5;
+
 const TRA_LOI = new Map<string, { chose: number | null; boQua: boolean }>();
 
 export default function VideoThiNghiemKhung({
@@ -72,6 +75,7 @@ export default function VideoThiNghiemKhung({
   const saved = TRA_LOI.get(data.id);
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null); // khối bọc video (dính, thu nhỏ lúc dừng ở điện thoại)
   const cardRef = useRef<HTMLDivElement>(null); // ô hiện tại ở điện thoại (video cao gần hết màn hình nên câu hỏi nằm dưới)
   const askingRef = useRef(false); // đồng bộ với `asking` ngay lúc gọi (onPlay chạy trước khi React kịp dựng lại)
   const askedOnce = useRef(false);
@@ -100,6 +104,7 @@ export default function VideoThiNghiemKhung({
   const [boQua, setBoQua] = useState(saved?.boQua ?? false);
 
   const dd = data.dung_dua;
+  const mocDung = dd.giay - DUNG_SOM;
   const duDoanIdx = data.o.findIndex((o) => o.khoa === "du_doan");
 
   const curOf = useCallback(
@@ -136,14 +141,14 @@ export default function VideoThiNghiemKhung({
     setT(now);
     // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
     setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
-    if (now >= dd.giay - 0.05 && !v.seeking && !v.paused && !doneRef.current) hoi(v);
+    if (now >= mocDung && !v.seeking && !v.paused && !doneRef.current) hoi(v);
     if (doneRef.current && now >= data.tong_giay - 0.5) {
       setXong(true);
       try {
         localStorage.setItem(KEY_XONG, "1");
       } catch {}
     }
-  }, [curOf, dd.giay, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
+  }, [curOf, mocDung, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
@@ -174,12 +179,12 @@ export default function VideoThiNghiemKhung({
     const v = videoRef.current;
     if (!v) return;
     const now = v.currentTime;
-    if (!doneRef.current && now >= dd.giay - 0.05) {
-      v.currentTime = dd.giay - 0.1;
+    if (!doneRef.current && now >= mocDung) {
+      v.currentTime = Math.max(0, mocDung - 0.05);
       hoi(v);
       return;
     }
-    if (now < dd.giay - 0.3) setAsking(false);
+    if (now < mocDung - 0.25) setAsking(false);
   };
 
   // Điện thoại: video dính trên đầu màn hình, câu hỏi nằm ngay dưới; chỉ kéo nhẹ nếu thẻ còn nằm ngoài tầm mắt.
@@ -192,13 +197,38 @@ export default function VideoThiNghiemKhung({
 
   useEffect(() => {
     if (!asking) return;
-    const card = cardRef.current;
-    if (card && card.offsetParent !== null) card.scrollIntoView({ behavior: "instant", block: "nearest" });
-    const nut = [...(sectionRef.current?.querySelectorAll<HTMLButtonElement>("button[data-chon]") ?? [])].find(
+    const sec = sectionRef.current;
+    const wrap = wrapRef.current;
+    const grp = sec?.querySelector<HTMLElement>("[data-hoi]");
+    const hep = !window.matchMedia("(min-width: 1024px)").matches;
+    if (hep && wrap && grp && grp.offsetParent !== null) {
+      // Điện thoại: video thu còn 36svh (đã đổi bằng class), vẫn dính; cuộn để câu hỏi nằm NGAY DƯỚI đáy video,
+      // không bị video đè và không phải cuộn thêm (N8). Trong trang bài (dinh=false) video dính dưới thanh tab đầu bài.
+      const tab = document.querySelector<HTMLElement>(".lesson-tabs");
+      const topV =
+        !dinh && tab && getComputedStyle(tab).position === "sticky" ? tab.getBoundingClientRect().bottom + 8 : 8;
+      wrap.style.setProperty("--kd-top", `${topV}px`);
+      wrap.style.removeProperty("--kd-h");
+      const dat = grp.getBoundingClientRect().top - (topV + wrap.offsetHeight + 8);
+      if (Math.abs(dat) > 1) window.scrollBy({ top: dat, behavior: "instant" });
+      // Câu hỏi dài + lựa chọn xuống dòng có thể tràn xuống thanh điều hướng dưới: thu thêm video (sàn 26svh)
+      // đúng phần tràn, rồi dán lại câu hỏi vào đáy video.
+      const nav = document.querySelector<HTMLElement>(".mobile-tabbar");
+      const day =
+        (nav && getComputedStyle(nav).display !== "none" ? nav.getBoundingClientRect().top : window.innerHeight) - 4;
+      const tran = grp.getBoundingClientRect().bottom - day;
+      if (tran > 0) {
+        const h = Math.max(wrap.offsetHeight - tran, window.innerHeight * 0.26);
+        wrap.style.setProperty("--kd-h", `${Math.round(h)}px`);
+        const dat2 = grp.getBoundingClientRect().top - (topV + wrap.offsetHeight + 8);
+        if (Math.abs(dat2) > 1) window.scrollBy({ top: dat2, behavior: "instant" });
+      }
+    }
+    const nut = [...(sec?.querySelectorAll<HTMLButtonElement>("button[data-chon]") ?? [])].find(
       (b) => b.offsetParent !== null && !b.disabled,
     );
     nut?.focus({ preventScroll: true });
-  }, [asking]);
+  }, [asking, dinh]);
 
   const seekTo = (i: number) => {
     const v = videoRef.current;
@@ -246,7 +276,7 @@ export default function VideoThiNghiemKhung({
     if (i === duDoanIdx && asking) {
       const dung = chose === dd.dung;
       return (
-        <div role="group" aria-live="polite" aria-label="Câu dự đoán">
+        <div role="group" aria-live="polite" aria-label="Câu dự đoán" data-hoi>
           <p className={big ? "text-[17px] leading-relaxed text-ink" : "text-[16px] leading-relaxed text-ink"}>
             {dd.cau_hoi}
           </p>
@@ -442,21 +472,26 @@ export default function VideoThiNghiemKhung({
         </div>
 
         <div
+          ref={wrapRef}
           className={
             "order-1 mx-auto w-full self-start lg:mx-0 " +
             // Video dọc cao theo màn hình: điện thoại ≤ 50svh để ô câu hỏi bên dưới vẫn trong tầm mắt;
             // màn rộng bề rộng cố định (cột tương tác lấy phần còn lại), dính dưới thanh tab, cao vừa khung nhìn.
             "lg:w-[min(280px,calc((100svh_-_8rem)_*_9_/_16))] lg:max-w-none xl:w-[min(340px,calc((100svh_-_8rem)_*_9_/_16))] " +
-            (dinh
-              ? "sticky top-2 z-10 max-w-[min(340px,calc(62svh_*_9_/_16))] lg:top-4"
-              : "max-w-[min(340px,calc(50svh_*_9_/_16))] lg:sticky lg:top-24")
+            (asking
+              ? // Lúc dừng ở câu hỏi: video thu còn 36svh nhưng VẪN dính để câu hỏi + 4 lựa chọn nằm trọn dưới video
+                "sticky top-[var(--kd-top,0.5rem)] z-10 max-w-[min(340px,calc(var(--kd-h,36svh)_*_9_/_16))] " +
+                (dinh ? "lg:top-4" : "lg:top-24")
+              : dinh
+                ? "sticky top-2 z-10 max-w-[min(340px,calc(62svh_*_9_/_16))] lg:top-4"
+                : "max-w-[min(340px,calc(50svh_*_9_/_16))] lg:sticky lg:top-24")
           }
         >
           <video
             ref={videoRef}
             src={data.video}
             poster={data.poster ?? data.video.replace(/\.mp4$/, ".webp")}
-            controls
+            controls={!asking} // lúc dừng ẩn thanh điều khiển gốc để không đè phụ đề; chọn xong/“xem luôn” thì hiện lại
             playsInline
             preload="none"
             onPlay={onPlay}
