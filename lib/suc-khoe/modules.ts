@@ -21,7 +21,8 @@ export const MODULES: HealthModule[] = [
   { key: "tap-luyen", title: "Tập luyện", desc: "Chương trình A/B/C, ghi từng hiệp, đồng hồ nghỉ, gợi ý tăng tạ.", descHs: "3 buổi tập tại nhà không cần dụng cụ, mỗi buổi khoảng 30 phút, có đồng hồ nghỉ.", href: "/suc-khoe/tap-luyen", status: "dang-dung", forStudents: true },
   { key: "so-do", title: "Số đo cơ thể", desc: "Cân nặng, vòng ngực–eo–mông, tỉ lệ dáng người, mục tiêu 4 tuần.", href: "/suc-khoe/tap-luyen?tab=so-do", status: "dang-dung", forStudents: false },
   { key: "tien-bo", title: "Tiến bộ", desc: "Đường sức mạnh từng bài, số hiệp mỗi nhóm cơ trong tuần.", descHs: "Số lần, số giây của em tăng thế nào qua từng buổi.", href: "/suc-khoe/tap-luyen?tab=tien-bo", status: "dang-dung", forStudents: true },
-  { key: "dinh-duong", title: "Dinh dưỡng", desc: "Ước lượng năng lượng, đạm theo cân nặng và lịch tập.", descHs: "Ăn đủ bữa, đủ chất cho tuổi đang lớn và ngày có tập.", status: "sap-co", forStudents: true },
+  // Dinh dưỡng bản hiện tại tính theo cân nặng, kcal dư/thiếu cho người lớn → chưa mở cho HS (G2; trang chặn bằng staffOnly)
+  { key: "dinh-duong", title: "Dinh dưỡng", desc: "Năng lượng và đạm cần mỗi ngày, ghi món đã ăn, chỉnh theo xu hướng cân.", href: "/suc-khoe/dinh-duong", status: "dang-dung", forStudents: false },
   { key: "ngu-hoi-phuc", title: "Giấc ngủ & hồi phục", desc: "Giờ ngủ, mức mệt sau buổi tập, tuần nhẹ.", status: "sap-co", forStudents: true },
   { key: "bai-hoc", title: "Bài học sức khỏe", desc: "Cơ thể vận động thế nào, khởi động an toàn, ăn uống tuổi lớn — phần sẽ thành môn học.", status: "sap-co", forStudents: true },
 ];
