@@ -87,7 +87,7 @@ def rig(d, I, sgn, dm, fbd=True, label=True, show=2, ten=True):
         # F' dat tren nhanh phai cua nam cham (xa day), nam tron trong nam cham
         fy = 640 if L > 0 else 770
         varrow(d, 650, fy, -L, ORANGE, w=12, head=28)
-        text(d, (706, 620), "F′: lên", 36, ORANGE, anchor="lm"); text(d, (706, 664), "nam châm", 36, ORANGE, anchor="lm")
+        text(d, (706, 620), "F′ vào", 36, ORANGE, anchor="lm"); text(d, (706, 664), "nam châm", 36, ORANGE, anchor="lm")
     if fbd and show >= 2: free_body(d, I, sgn)
 
 def free_body(d, I, sgn):
@@ -107,8 +107,7 @@ def free_body(d, I, sgn):
         y0 = cy + 26 if Fp > 0 else cy - 26
         varrow(d, xf, y0, -Fp, ORANGE, w=8, head=20)
         text(d, (xf + 14, y0 + Fp / 2), "F′", 36, ORANGE, anchor="lm")
-    text(d, (152, 830), "Q = P ± F′", 32, NOTE, bold=False)
-    text(d, (152, 880), "Q: cân đỡ", 30, TEAL, bold=False)
+    text(d, (152, 860), "Q: cân đỡ", 36, TEAL, bold=False)
 
 # ---------------- bang so lieu ----------------
 COLS = ((150, "I (A)"), (395, "Δm (g)"), (640, "F′ (mN)"), (880, "B (T)"))
@@ -314,13 +313,13 @@ def _end_body(d, t, k):
 
 def s_end(img, d, t, sc):
     M = sc["M"]
-    chot_hoi(d, t, sc, "Đảo chiều dòng, số cân đổi dấu",
+    chot_hoi(d, t, sc, "Cân và dây: hai vật khác nhau",
              "Vì sao số cân tăng?", None, body=_end_body)
     kh = appear(t, M[0] + 3.0, 0.5)                 # goi y hien sau, de HS tu nghi truoc
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         ctext(d, 1350, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
-        ctext(d, 1440, "Cân đỡ vật nào?", 44, ORANGE, maxw=820, alpha=kh)
+        ctext(d, 1440, "Lực nào ép lên cân?", 44, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}

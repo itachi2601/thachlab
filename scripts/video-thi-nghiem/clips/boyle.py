@@ -126,7 +126,6 @@ def s_do(img, d, t, sc):
         if i == last: d.rounded_rectangle([100, y - 32, 980, y + 32], radius=16, fill=A((225, 236, 255), a))
         for x, s, col in list(zip(xs, [str(i + 1), fmt(v), str(pp)], [MUTED, BLUE, RED]))[1:]:
             text(d, (x, y), s, 44, col, alpha=a)
-        if i == 3: text(d, (900, y), "→ C", 44, GREEN, alpha=a)
 
 # ---------------- canh 3: do thi p-V + tich pV ----------------
 def s_graph(img, d, t, sc):

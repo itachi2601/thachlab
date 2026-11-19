@@ -276,7 +276,7 @@ CLIP = dict(id="tn-l12-mayphatdien-01", header="VẬT LÍ 12 · THÍ NGHIỆM", 
    ("Tăng n: 10, 15, 20.", 3.2),
    ("n = 25 → f = 50,3 Hz.", 2.4)]),
  dict(key="ans", title="Đồ thị f theo n", draw=s_ans, tail=0.6, caps=[
-   ("C: khoảng 50 Hz.", 2.6),
+   ("Khoảng 50 Hz.", 2.6),
    ("Điểm nằm trên đường thẳng.", 2.4),
    ("f/n gần bằng p = 2.", 2.8)]),
  dict(key="why", title="Vì sao f = n·p?", draw=s_why, tail=0.6, caps=[
