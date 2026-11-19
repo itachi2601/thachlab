@@ -8,7 +8,7 @@ const DinhDuongApp = dynamic(() => import("@/components/suc-khoe/DinhDuongApp"),
 
 export default function DinhDuongPage() {
   return (
-    <SucKhoeShell title="Dinh dưỡng" back={{ href: "/suc-khoe", label: "Về Sức khỏe" }}>
+    <SucKhoeShell title="Dinh dưỡng" staffOnly back={{ href: "/suc-khoe", label: "Về Sức khỏe" }}>
       <LazyErrorBoundary>
         <DinhDuongApp />
       </LazyErrorBoundary>

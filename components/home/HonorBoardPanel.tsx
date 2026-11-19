@@ -4,7 +4,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowUpCircle, Flame, TrendingUp } from "lucide-react";
 import Avatar from "@/components/ui/Avatar";
-import RankAvatarFrame from "@/components/rank/RankAvatarFrame";
 import RankBadge from "@/components/rank/RankBadge";
 import WornTitle from "@/components/rank/WornTitle";
 import { divisionLabel, tierMeta, type PublicHonorBoard, type PublicHonorGrade } from "@/features/rank/types";

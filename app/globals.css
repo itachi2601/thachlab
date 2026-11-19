@@ -4407,3 +4407,56 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .shcn-prose summary { cursor: pointer; font-weight: 600; color: var(--color-primary); min-height: 44px; display: flex; align-items: center; }
 .shcn-prose ol li { margin: 0.5rem 0; }
 .shcn-prose h2 { font-size: 1.2rem; margin: 1.8rem 0 0.6rem; }
+
+/* Mục Luyện từ bài AVCN (components/lessons/avcn/AvcnLuyenTu.tsx, thầy chốt 19/11/2026): lượt ngắn, một màn một câu
+   (N1, N5), phản hồi ngay ở nửa dưới cùng nút Tiếp (L1, D3), thanh tiến độ của lượt (L2), đích chạm ≥ 48px (D2). */
+/* Mục Luyện tập đã là một thẻ (.lesson-block) → không vẽ thêm khung lồng trong khung. */
+.avcn-lt { margin-bottom: 12px; }
+/* Đang trong lượt: ẩn lối sang đề trắc nghiệm cũ (N1 — một màn một việc). */
+.avcn-lt--run + .avcn-lt-old { display: none; }
+.avcn-lt-loading { min-height: 9rem; }
+.avcn-lt-title { font-weight: 700; font-size: 1.15rem; color: var(--color-ink); margin: 0 0 4px; }
+.avcn-lt-sub { color: var(--color-muted); font-size: 1rem; line-height: 1.55; margin: 0 0 14px; }
+.avcn-lt-btn { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 48px; border: 0; border-radius: var(--radius-ui-md); background: var(--color-primary); color: #fff; font-weight: 700; font-size: 1.05rem; cursor: pointer; }
+.avcn-lt-btn:hover { background: var(--color-primary-dark); }
+.avcn-lt-btn:focus-visible, .avcn-lt-opt:focus-visible, .avcn-lt-tile:focus-visible, .avcn-lt-say:focus-visible, .avcn-lt-quit:focus-visible { outline: 3px solid var(--color-primary); outline-offset: 2px; }
+.avcn-lt-top { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.avcn-lt-quit { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border: 0; background: transparent; color: var(--color-muted); border-radius: var(--radius-ui-sm); cursor: pointer; }
+.avcn-lt-bar { flex: 1; height: 12px; border-radius: 9999px; background: var(--color-line); overflow: hidden; }
+.avcn-lt-bar > span { display: block; height: 100%; background: var(--color-ok); border-radius: inherit; transition: width .3s ease; }
+.avcn-lt-body { min-height: 18rem; }
+.avcn-lt-ask { font-family: var(--font-body); font-weight: 600; color: var(--color-ink); font-size: 1rem; margin: 0 0 12px; }
+.avcn-lt-again { color: var(--color-warn); }
+.avcn-lt-prompt { display: flex; align-items: center; gap: 10px; margin: 0 0 16px; min-height: 56px; }
+.avcn-lt-prompt--nghe { justify-content: center; }
+.avcn-lt-word { font-size: 1.5rem; font-weight: 700; color: var(--color-ink); line-height: 1.3; }
+.avcn-lt-say { flex: none; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 9999px; border: 1px solid var(--color-line-strong); background: var(--color-primary-soft); color: var(--color-primary); cursor: pointer; }
+.avcn-lt-say--big { width: 88px; height: 88px; }
+.avcn-lt-opts { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.avcn-lt-opt { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 52px; padding: 10px 14px; text-align: left; border: 2px solid var(--color-line-strong); border-radius: var(--radius-ui-md); background: var(--color-panel); color: var(--color-ink); font-family: var(--font-exam); font-size: 1.1rem; line-height: 1.4; cursor: pointer; }
+.avcn-lt-opt:disabled { cursor: default; }
+.avcn-lt-opt-letter { font-weight: 700; min-width: 1.4em; }
+.avcn-lt-opt.is-right, .avcn-lt-tile.is-matched { border-color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 12%, var(--color-panel)); }
+.avcn-lt-opt.is-wrong, .avcn-lt-tile.is-wrong { border-color: var(--color-danger); background: color-mix(in srgb, var(--color-danger) 12%, var(--color-panel)); }
+.avcn-lt-opt.is-dim { opacity: .55; }
+.avcn-lt-match { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.avcn-lt-match ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; align-content: start; }
+.avcn-lt-tile { width: 100%; min-height: 56px; padding: 8px 10px; border: 2px solid var(--color-line-strong); border-radius: var(--radius-ui-md); background: var(--color-panel); color: var(--color-ink); font-family: var(--font-exam); font-size: 1.02rem; line-height: 1.3; cursor: pointer; }
+.avcn-lt-tile.is-picked { border-color: var(--color-primary); background: var(--color-primary-soft); }
+.avcn-lt-tile.is-matched { opacity: .5; cursor: default; }
+.avcn-lt-fb { margin-top: 16px; padding: 14px; border-radius: var(--radius-ui-md); border: 2px solid; display: grid; gap: 12px; }
+.avcn-lt-fb.is-ok { border-color: var(--color-ok); background: color-mix(in srgb, var(--color-ok) 10%, var(--color-panel)); }
+.avcn-lt-fb.is-no { border-color: var(--color-danger); background: color-mix(in srgb, var(--color-danger) 10%, var(--color-panel)); }
+.avcn-lt-fb-head { font-weight: 700; margin: 0; color: var(--color-ink); }
+.avcn-lt-fb.is-ok .avcn-lt-fb-head { color: var(--color-ok); }
+.avcn-lt-fb.is-no .avcn-lt-fb-head { color: var(--color-danger); }
+.avcn-lt-fb-word { margin: 4px 0 0; font-size: 1.05rem; color: var(--color-ink); }
+.avcn-lt-ipa { color: var(--color-muted); }
+.avcn-lt-missed { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
+.avcn-lt-missed li { display: flex; align-items: center; gap: 10px; }
+.avcn-lt-missed-term { font-weight: 700; color: var(--color-ink); }
+.avcn-lt-missed-vi { color: var(--color-muted); }
+.avcn-lt-old { margin-top: 4px; }
+.avcn-lt-old > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 600; color: var(--color-primary); }
+.avcn-lt-old[open] > summary { margin-bottom: 10px; }
+@media (prefers-reduced-motion: reduce) { .avcn-lt-bar > span { transition: none; } }

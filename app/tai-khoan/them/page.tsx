@@ -3,7 +3,7 @@
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import { BarChart3, Bug, Lightbulb, ChevronRight, Inbox, KeyRound, LogOut, QrCode, Trophy, Users } from "lucide-react";
+import { BarChart3, Bug, Lightbulb, ChevronRight, HeartPulse, Inbox, KeyRound, LogOut, QrCode, Trophy, Users } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
@@ -20,6 +20,7 @@ const LINKS = [
   { href: "/lop-hoc/xep-hang", label: "Xếp hạng", Icon: Trophy },
   { href: "/lop-hoc/ket-qua", label: "Bài đã làm & kết quả", Icon: BarChart3 },
   { href: "/quet-ma", label: "Quét mã QR vào hoạt động lớp", Icon: QrCode },
+  { href: "/suc-khoe", label: "Sức khỏe: gợi ý bài tập tại nhà", Icon: HeartPulse },
   { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },
   { href: "/bao-loi-cua-toi", label: "Báo lỗi và góp ý", Icon: Bug },
 ];
@@ -30,6 +31,7 @@ const CTTC_LINKS = [
   { href: "/quet-ma", label: "Quét mã QR vào đề kiểm tra, hoạt động lớp", Icon: QrCode },
   { href: "/choi", label: "Vào hoạt động lớp bằng mã", Icon: Users },
   { href: "/hop-thu", label: "Hộp thư: thông báo, tin nhắn, tin tức", Icon: Inbox },
+  { href: "/suc-khoe", label: "Sức khỏe: gợi ý bài tập tại nhà", Icon: HeartPulse },
   { href: "/tai-khoan/doi-mat-khau", label: "Đổi mật khẩu", Icon: KeyRound },
   { href: "/bao-loi-cua-toi", label: "Báo lỗi và góp ý", Icon: Bug },
 ];
