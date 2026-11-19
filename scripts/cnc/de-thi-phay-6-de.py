@@ -54,7 +54,7 @@ DE = [
          holes=[(13, 18), (35, 18), (13, 32), (35, 32)], lo_nhan=(0, 44, -40)),
 ]
 
-Z_VIEN, Z_LO = -2, -4          # rãnh biên dạng sâu 2, lỗ khoan sâu 4
+Z_VIEN, Z_LO = -4, -4          # rãnh biên dạng và lỗ khoan cùng sâu 4
 
 
 def arc_center(p0, p1, r, g):
