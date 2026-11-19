@@ -51,17 +51,17 @@ td.ns{color:var(--ok);font-weight:700}
 .bay b.ten{color:var(--no)}
 .steps{margin:.2em 0;padding-left:1.3em}
 .steps li{margin:.15em 0}
+.qrcols{grid-template-columns:minmax(0,.8fr) 1.2fr;align-items:center}
+.qr svg{display:block;width:100%;max-width:min(62vh,440px);height:auto;margin:0 auto}
+.made{font-size:1.6em;margin:0}
+.made b{color:var(--accent);font-variant-numeric:tabular-nums}
 .venha{border:2px dashed var(--muted);border-radius:12px;padding:.4em .8em;font-size:.85em}
 .dk{position:fixed;right:12px;bottom:10px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
-.phieu{display:grid;grid-template-columns:1fr 1fr;gap:.6em 2vw;font-size:.82em}
-.phieu .q{border:2px solid var(--line);border-radius:10px;padding:.3em .6em;background:var(--surface)}
-.phieu .q p{margin:.1em 0}
-.phieu .o{display:grid;grid-template-columns:1fr 1fr;gap:0 .8em}
 @media (max-width:760px){
   html{scroll-snap-type:none}
   body{font-size:17px}
   .stop{min-height:auto;padding:18px 16px 22px}
-  .cols,.cols.w3,.phieu,.phieu .o{grid-template-columns:1fr}
+  .cols,.cols.w3{grid-template-columns:1fr}
   h1{font-size:1.6em} h2{font-size:1.3em}
   .fig svg{max-height:none}
   .dk{display:none}
@@ -73,7 +73,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ Màn mở ============ -->
 <section class="stop" id="s0">
-  <div class="top"><span class="so">Vật lí 11 · Bài 20</span><span class="phut">tiết 45 phút · 6 điểm dừng</span></div>
+  <div class="top"><span class="so">Vật lí 11 · Bài 20</span><span class="phut">tiết 45 phút · 6 điểm dừng · 15 phút cuối làm đề 1215</span></div>
   <h1>Điện thế</h1>
   <div class="cols">
     <div class="card">
@@ -98,7 +98,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ 1. Dự đoán ============ -->
 <section class="stop" id="s1">
-  <div class="top"><span class="so">Điểm dừng 1/6 · Dự đoán</span><span class="phut">phút 0–5</span></div>
+  <div class="top"><span class="so">Điểm dừng 1/6 · Dự đoán</span><span class="phut">phút 0–4</span></div>
   <h2>Con chim trên dây 500 kV</h2>
   <div class="cols">
     <div class="fig"><!--FIG1--></div>
@@ -125,7 +125,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ 2. Thí nghiệm thật ============ -->
 <section class="stop" id="s2">
-  <div class="top"><span class="so">Điểm dừng 2/6 · Thí nghiệm tại lớp</span><span class="phut">phút 5–15</span></div>
+  <div class="top"><span class="so">Điểm dừng 2/6 · Thí nghiệm tại lớp</span><span class="phut">phút 4–12</span></div>
   <h2>Vôn kế đo được gì?</h2>
   <div class="cols w3">
     <div>
@@ -163,7 +163,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ 3. Công thức lõi ============ -->
 <section class="stop" id="s3">
-  <div class="top"><span class="so">Điểm dừng 3/6 · Công thức lõi</span><span class="phut">phút 15–22</span></div>
+  <div class="top"><span class="so">Điểm dừng 3/6 · Công thức lõi</span><span class="phut">phút 12–18</span></div>
   <h2>Điện thế, hiệu điện thế, $U=Ed$</h2>
   <div class="cols">
     <div>
@@ -191,7 +191,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ 4. Bẫy ============ -->
 <section class="stop" id="s4">
-  <div class="top"><span class="so">Điểm dừng 4/6 · Bẫy</span><span class="phut">phút 22–29</span></div>
+  <div class="top"><span class="so">Điểm dừng 4/6 · Bẫy</span><span class="phut">phút 18–23</span></div>
   <h2>Bẫy: "U = E nhân độ dài MN"</h2>
   <div class="cols">
     <div class="fig"><!--FIG2--><p class="nho">$\alpha$: góc giữa MN và đường sức. Nét đứt xanh: đường đẳng thế (mọi điểm trên đó cùng điện thế).</p></div>
@@ -218,7 +218,7 @@ td.ns{color:var(--ok);font-weight:700}
 
 <!-- ============ 5. Bài mẫu ============ -->
 <section class="stop" id="s5">
-  <div class="top"><span class="so">Điểm dừng 5/6 · Bài mẫu</span><span class="phut">phút 29–37</span></div>
+  <div class="top"><span class="so">Điểm dừng 5/6 · Bài mẫu</span><span class="phut">phút 23–29</span></div>
   <h2>Hai bản song song: làm mẫu bước đầu, cả lớp làm tiếp</h2>
   <div class="cols">
     <div class="card">
@@ -232,7 +232,7 @@ td.ns{color:var(--ok);font-weight:700}
       <div class="an" id="m5b" hidden><p>Từ M tới bản âm cùng chiều đường sức, $d=+0{,}005$ m: $V_M=0+6000\cdot0{,}005=30$ V.</p></div>
     </div>
     <div>
-      <p class="hoi">Cả lớp làm b), c) — 3 phút. c) Giơ tay: công lực điện là</p>
+      <p class="hoi">Cả lớp làm b), c) — 2 phút. c) Giơ tay: công lực điện là</p>
       <ol class="opt lo" id="q5">
         <li><b>A.</b> $-120$ eV</li>
         <li data-dung><b>B.</b> $+120$ eV</li>
@@ -248,54 +248,25 @@ td.ns{color:var(--ok);font-weight:700}
   </div>
 </section>
 
-<!-- ============ 6. Trả bài + phiếu ============ -->
+<!-- ============ 6. Kiểm tra lý thuyết trên web ============ -->
 <section class="stop" id="s6">
-  <div class="top"><span class="so">Điểm dừng 6/6 · Trả bài</span><span class="phut">phút 37–39, phiếu 39–45</span></div>
-  <h2>Nói to trước, rồi mở</h2>
-  <div class="cols">
+  <div class="top"><span class="so">Điểm dừng 6/6 · Kiểm tra lý thuyết</span><span class="phut">phút 29–30 quay lại câu chim · 30–45 làm đề</span></div>
+  <h2>Quét mã, làm đề Kiểm tra lý thuyết của bài</h2>
+  <div class="cols qrcols">
+    <div class="qr"><!--QR--></div>
     <div>
-      <p class="hoi">1. Điện thế khác thế năng chỗ nào?</p>
-      <button class="mo" data-mo="t1">Mở</button>
-      <div class="an" id="t1" hidden><p>$V$: của điểm, không phụ thuộc $q$. $W=qV$: của điện tích, đổi theo $q$.</p></div>
-      <p class="hoi">2. Vôn kế đo gì? Đổi que thì sao?</p>
-      <button class="mo" data-mo="t2">Mở</button>
-      <div class="an" id="t2" hidden><p>$U=V_{\text{đỏ}}-V_{\text{đen}}$; đổi que thì đổi dấu.</p></div>
-      <p class="hoi">3. $U=Ed$: $d$ là gì?</p>
-      <button class="mo" data-mo="t3">Mở</button>
-      <div class="an" id="t3" hidden><p>Hình chiếu của MN lên chiều đường sức, có dấu; chỉ dùng cho điện trường đều.</p></div>
-    </div>
-    <div>
-      <p class="hoi">Quay lại câu con chim</p>
-      <p>Ai đổi ý so với đầu giờ? Vì sao?</p>
+      <p class="made">Mã đề <b>1215</b></p>
+      <p>20 câu · 15 phút · làm trên điện thoại.</p>
+      <ol class="steps">
+        <li>Mở thachlab, bấm <b>Quét mã</b>, đưa camera vào mã bên trái.</li>
+        <li>Không quét được: gõ số đề <b>1215</b> vào ô dưới camera.</li>
+        <li>Làm một mình, không trao đổi. Nộp xong mới cất máy.</li>
+      </ol>
+      <p class="hoi">Trước khi làm: ai đổi ý ở câu con chim? Vì sao?</p>
       <div class="venha">
-        <p><b>Về nhà trên web</b> (bài Điện thế, mục Lý thuyết):</p>
-        <ul>
-          <li>Bẫy 1 "đặt electron vào thì điện thế âm" + Câu 1, 4</li>
-          <li>Clip khay nước muối, bảng $V$ theo $x$ (Hình 4)</li>
-          <li>Mô phỏng PhET · Điện thế trong đời sống</li>
-          <li>Ba thử thách ⭐ · Câu 6, 7 (đổi điểm đầu, đổi mốc)</li>
-        </ul>
+        <p><b>Về nhà</b> (bài Điện thế trên web): Bẫy 1 "đặt electron vào thì điện thế âm" · clip khay nước muối và bảng $V$ theo $x$ · mô phỏng PhET · ba thử thách ⭐.</p>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ Phiếu cuối tiết ============ -->
-<section class="stop" id="s7">
-  <div class="top"><span class="so">Phiếu cuối tiết · 6 phút</span><span class="phut">ghi A/B/C/D, không cần lời giải · $e=1{,}6\cdot10^{-19}$ C</span></div>
-  <div class="phieu">
-    <div class="q"><p><b>1.</b> Đặt $q_1=4\ \mu\text{C}$ tại M thì thế năng $24\ \mu\text{J}$. Thay bằng $q_2=-2\ \mu\text{C}$ tại M. $V_M$ và thế năng của $q_2$:</p>
-      <div class="o"><span>A. $-6$ V; $+12\ \mu$J</span><span>B. $6$ V; $12\ \mu$J</span><span>C. $6$ V; $-12\ \mu$J</span><span>D. $-12$ V; $24\ \mu$J</span></div></div>
-    <div class="q"><p><b>2.</b> Electron đi từ M ($V_M=5$ V) đến N ($V_N=80$ V). Công của lực điện:</p>
-      <div class="o"><span>A. $+1{,}2\cdot10^{-17}$ J</span><span>B. $-1{,}2\cdot10^{-17}$ J</span><span>C. $+1{,}36\cdot10^{-17}$ J</span><span>D. $-1{,}36\cdot10^{-17}$ J</span></div></div>
-    <div class="q"><p><b>3.</b> Hai bản song song cách $5$ cm, nối nguồn $150$ V, mốc ở bản âm. Điện thế tại điểm cách bản âm $2$ cm:</p>
-      <div class="o"><span>A. $90$ V</span><span>B. $6000$ V</span><span>C. $150$ V</span><span>D. $60$ V</span></div></div>
-    <div class="q"><p><b>4.</b> $E=500$ V/m; $MN=8$ cm hợp với đường sức góc $60^\circ$, N lệch theo chiều đường sức. $U_{MN}$:</p>
-      <div class="o"><span>A. $40$ V</span><span>B. $20$ V</span><span>C. $34{,}6$ V</span><span>D. $-20$ V</span></div></div>
-    <div class="q"><p><b>5.</b> Hai bản ở câu 3 nhưng mốc ở <b>bản dương</b>. Điện thế tại điểm cách bản âm $2$ cm và $U_{+-}$:</p>
-      <div class="o"><span>A. $60$ V; $150$ V</span><span>B. $90$ V; $-150$ V</span><span>C. $-90$ V; $150$ V</span><span>D. $-90$ V; $0$ V</span></div></div>
-    <div class="q"><button class="mo" data-mo="pda">Mở đáp án phiếu</button>
-      <div class="an" id="pda" hidden><p>1C · 2A · 3D · 4B · 5C</p></div></div>
   </div>
 </section>
 
