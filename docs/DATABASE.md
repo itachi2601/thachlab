@@ -1,4 +1,4 @@
-# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-18
+# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-19
 
 Sinh bằng `node scripts/gen-database-doc.mjs` (chỉ đọc `pg_class`/`pg_attribute`). **Không sửa
 tay** — chạy lại sau khi migration mới đã chạy trên production. Danh sách hàm/RPC ở
@@ -121,7 +121,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **post_classes** (~-1): post_id:int8*>posts, class_id:int8*>classes
 - **post_courses** (~-1): post_id:int8*>posts, course_id:int8*>course_offerings
 - **posts** (~1): id:int8*, created_at:ts, title:text, body:text, video_url:text, published:bool, topic:text, content_type:text, subject_code:text>academic_subjects
-- **student_alerts** (~525): id:int8*, student_id:uuid>profiles, class_id:int8>classes, kind:text, severity:text, reason:text, assessment_ids:bigint[], status:text, assigned_to:uuid>profiles, handled_by:uuid>profiles, handled_note:text, created_at:ts, updated_at:ts
+- **student_alerts** (~527): id:int8*, student_id:uuid>profiles, class_id:int8>classes, kind:text, severity:text, reason:text, assessment_ids:bigint[], status:text, assigned_to:uuid>profiles, handled_by:uuid>profiles, handled_note:text, created_at:ts, updated_at:ts
 - **tutoring_needs** (~1206): id:int8*, student_id:uuid>profiles, class_id:int8>classes, topic_id:int8>question_topics, form:text, wrong:int, total:int, pct:int, source:text, status:text, assigned_to:uuid>profiles, note:text, first_seen_at:ts, last_seen_at:ts, tutored_at:ts, cleared_at:ts, updated_at:ts
 - **tutoring_needs_backup_20261011** (~174): id:int8*, status:text, cleared_at:ts, note:text
 - **tutoring_registrations** (~-1): id:int8*, slot_id:int8>tutoring_slots, student_id:uuid>profiles, created_at:ts, topic_ids:bigint[], attended:bool, attended_at:ts
