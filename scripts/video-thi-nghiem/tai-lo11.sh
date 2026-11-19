@@ -36,7 +36,10 @@ if '"tieu_de_hop"' not in s:
     if not line.rstrip().endswith(","): line = line.rstrip("\n") + ",\n"
     s = s.replace(m.group(1), line + f'{ind}"tieu_de_hop": "Xem thí nghiệm dựng lại",\n', 1)
     json.loads(s); open(p, "w", encoding="utf-8").write(s)
-v = json.loads(s)["video"]; print("OK", sys.argv[1], v["mp4"], v.get("tieu_de_hop"))
+d = json.loads(s)
+for k in ("youtube_id", "ten", "kenh"): d["video"].pop(k, None)
+open(p, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+v = d["video"]; print("OK", sys.argv[1], v["mp4"], v.get("tieu_de_hop"))
 EOF
   url=$(python3 -c "import json;print(json.load(open('content/thi-nghiem/$TN.json'))['video']['mp4'])")
   echo "HEAD $(curl -s -o /dev/null -w '%{http_code}' -I "$url") $url"
