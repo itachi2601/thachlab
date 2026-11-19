@@ -26,23 +26,42 @@ export type Measurement = {
   note?: string | null;
 };
 
-const K_DRAFT = "tapluyen:draft";
-const K_QUEUE = "tapluyen:queue";
-const K_CACHE = "tapluyen:cache";
-const K_MCACHE = "tapluyen:mcache";
+// Khoá localStorage theo tài khoản: máy dùng chung (phòng máy, máy ở nhà) không lẫn buổi tập của người khác,
+// và hàng chờ của người trước không bị gửi lên dưới tài khoản người sau.
+let uid = "";
+const K = (name: string) => `tapluyen:${uid ? `${uid}:` : ""}${name}`;
+const K_DRAFT = "draft", K_QUEUE = "queue", K_CACHE = "cache", K_MCACHE = "mcache";
+
+/** Gọi trước mọi hàm lưu/đọc. `adoptLegacy`: chuyển dữ liệu khoá cũ (chưa theo tài khoản, chỉ giáo viên dùng trước 19/11/2026) về tài khoản này. */
+export function setTapLuyenUser(id: string, adoptLegacy: boolean) {
+  if (uid === id) return;
+  uid = id;
+  try {
+    for (const n of [K_DRAFT, K_QUEUE, K_CACHE, K_MCACHE]) {
+      const old = localStorage.getItem(`tapluyen:${n}`);
+      if (old == null) continue;
+      if (adoptLegacy && localStorage.getItem(K(n)) == null) localStorage.setItem(K(n), old);
+      if (adoptLegacy) localStorage.removeItem(`tapluyen:${n}`);
+    }
+  } catch {
+    /* chế độ ẩn danh */
+  }
+}
 
 function lsGet<T>(k: string, fb: T): T {
+  if (!uid) return fb;
   try {
-    const v = localStorage.getItem(k);
+    const v = localStorage.getItem(K(k));
     return v ? (JSON.parse(v) as T) : fb;
   } catch {
     return fb;
   }
 }
 function lsSet(k: string, v: unknown) {
+  if (!uid) return;
   try {
-    if (v == null) localStorage.removeItem(k);
-    else localStorage.setItem(k, JSON.stringify(v));
+    if (v == null) localStorage.removeItem(K(k));
+    else localStorage.setItem(K(k), JSON.stringify(v));
   } catch {
     /* bộ nhớ đầy / chế độ ẩn danh */
   }
@@ -191,7 +210,7 @@ export function bestE1rmHistory(list: Workout[], exId: string) {
 }
 export const fmtKg = (n: number) => String(Math.round(n * 100) / 100).replace(".", ",");
 
-/** Buổi trong tuần (thứ Hai 0h giờ máy) và buổi nên tập tiếp: ưu tiên `focus`, rồi A (trọng tâm), rồi buổi lâu chưa tập. */
+/** Buổi trong tuần (thứ Hai 0h giờ máy) và buổi nên tập tiếp: ưu tiên `focus`, rồi buổi đầu danh sách (A / 1), rồi buổi lâu chưa tập. */
 export function weekPlan(list: Workout[], keys: string[], focus?: string | null) {
   const mon = new Date();
   mon.setHours(0, 0, 0, 0);
@@ -202,7 +221,19 @@ export function weekPlan(list: Workout[], keys: string[], focus?: string | null)
   const left = keys.filter((k) => !done.has(k));
   const next =
     (focus && !done.has(focus) ? focus : null) ??
-    (left.includes("A") ? "A" : [...left].sort((a, b) => (lastOf(a)?.started_at ?? "").localeCompare(lastOf(b)?.started_at ?? ""))[0]) ??
+    (left.includes(keys[0]) ? keys[0] : [...left].sort((a, b) => (lastOf(a)?.started_at ?? "").localeCompare(lastOf(b)?.started_at ?? ""))[0]) ??
     null;
   return { count: thisWeek.length, done, next, lastOf };
+}
+
+/** Bài không tạ: số lần (hoặc số giây) tốt nhất trong các hiệp làm việc của mỗi buổi. */
+export function bestCountHistory(list: Workout[], exId: string) {
+  const pts: { date: string; v: number }[] = [];
+  for (const w of [...list].reverse()) {
+    const e = w.exercises.find((x) => x.id === exId);
+    if (!e) continue;
+    const best = Math.max(0, ...e.sets.filter((s) => s.done && s.kind === "n").map((s) => s.sec ?? s.reps ?? 0));
+    if (best) pts.push({ date: w.started_at.slice(0, 10), v: best });
+  }
+  return pts;
 }
