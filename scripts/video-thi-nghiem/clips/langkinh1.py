@@ -135,7 +135,9 @@ def table(d, n, y0=990):
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    prism(d); normal_E(d, 30); ray(d, 30, ka=appear(t, 0.5, 0.5))
+    prism(d); normal_E(d, 30)                                 # chi tia toi: tia lo (= dap an) hien tu canh Tien hanh
+    ka = appear(t, 0.5, 0.5); a = pen(d, 30)
+    d.line([a, E], fill=A(BEAM, ka), width=6); chev(d, a, E, A(BEAM, ka))
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
     y0 = 1010 + (1 - a) * 40
@@ -219,11 +221,10 @@ def s_dapan(img, d, t, sc):
             d.line([X, (X[0] + LOUT * vo[0], X[1] + LOUT * vo[1])], fill=A(BEAM, 0.35 * k2), width=3)
     ray(d, 50)
     pill(d, "ĐÁP ÁN: lệch về phía đáy", 870, appear(t, 0.15, 0.4))
-    table(d, 6)
+    table(d, 6, y0=925)                                     # bang 925-1395, hop xanh 1410-1490 (tren thanh phu de)
     if k2 > 0:
-        card(d, (90, 1560, 990, 1730), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
-        text(d, (W / 2, 1610), "Cả 6 lần: ngả về phía đáy", 44, DGREEN, alpha=k2)
-        text(d, (W / 2, 1685), "Đáy ở đâu thì tia lệch về đó", 44, DGREEN, alpha=k2)
+        card(d, (90, 1410, 990, 1490), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=3)
+        text(d, (W / 2, 1450), "Cả 6 lần: ngả về phía đáy", 44, DGREEN, alpha=k2)
 
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
