@@ -131,6 +131,7 @@ FILES=(
   "supabase/migrations/20261118150000_get_lesson_page_student.sql|RPC get_lesson_page_student: gộp 7 truy vấn trang /lop-hoc/bai (đề, tiến độ, kết quả, bài dở, luyện tập, mastery) thành 1 lần gọi; security invoker, chỉ thêm hàm|lúc nào cũng được (hàm mới); khuyên sau 22h cho đồng bộ deploy client|supabase db query --linked -f perf/rollback/20261118150000_get_lesson_page_student.down.sql"
   "supabase/migrations/20261118200000_review_stage_exams.sql|Báo lỗi #155: buổi ôn tập theo chặng tính cả đề mới của mục bài học (sau publish-theory-quiz --replace) — 2 hàm nội bộ review_stage_exams/review_stage_exam_now, thay review_student_stage/my_state/roster/board_stage/wrong_students; câu sai tách theo đề|ngoài giờ HS làm bài (sau 22h hoặc trước 6h)|supabase db query --linked -f perf/rollback/20261118200000_review_stage_exams.down.sql"
   "supabase/migrations/20261119090000_dinh_duong.sql|Bảng nutrition_days + nutrition_profile cho mục Sức khỏe › Dinh dưỡng, RLS chỉ chủ tài khoản|lúc nào cũng được (bảng mới)|supabase db query --linked -f perf/rollback/20261119090000_dinh_duong.down.sql"
+  "supabase/migrations/20261119120000_body_measurements_neck_wrist.sql|Thêm cột neck_cm, wrist_cm (cho phép null) vào body_measurements để ước tính % mỡ và khung xương|lúc nào cũng được (chỉ thêm cột)|supabase db query --linked -f perf/rollback/20261119120000_body_measurements_neck_wrist.down.sql"
 )
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2

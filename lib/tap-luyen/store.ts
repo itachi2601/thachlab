@@ -23,6 +23,9 @@ export type Measurement = {
   hip_cm: number | null;
   shoulder_cm: number | null;
   arm_cm: number | null;
+  /** cần migration 20261119120000 — null/thiếu nếu chưa đo hoặc cột chưa có */
+  neck_cm?: number | null;
+  wrist_cm?: number | null;
   note?: string | null;
 };
 
@@ -139,12 +142,13 @@ export async function deleteWorkout(clientId: string) {
 
 export async function fetchMeasurements(): Promise<{ list: Measurement[]; offline: boolean }> {
   try {
-    const { data, error } = await getSupabase()
-      .from("body_measurements")
-      .select("measured_on,height_cm,weight_kg,chest_cm,waist_cm,hip_cm,shoulder_cm,arm_cm,note")
-      .order("measured_on", { ascending: true });
+    const base = "measured_on,height_cm,weight_kg,chest_cm,waist_cm,hip_cm,shoulder_cm,arm_cm,note";
+    const q = (cols: string) => getSupabase().from("body_measurements").select(cols).order("measured_on", { ascending: true });
+    let res = await q(`${base},neck_cm,wrist_cm`);
+    if (res.error) res = await q(base); // chưa chạy migration thêm cổ/cổ tay → vẫn đọc được số đo cũ
+    const { data, error } = res;
     if (error) throw error;
-    const list = (data ?? []).map((r) => {
+    const list = ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
       const o = { ...r } as Record<string, unknown>;
       for (const k of Object.keys(o)) if (k.endsWith("_cm") || k.endsWith("_kg")) o[k] = o[k] == null ? null : Number(o[k]);
       return o as Measurement;
@@ -157,7 +161,10 @@ export async function fetchMeasurements(): Promise<{ list: Measurement[]; offlin
 }
 
 export async function saveMeasurement(m: Measurement) {
-  const { error } = await getSupabase().from("body_measurements").upsert(m, { onConflict: "user_id,measured_on" });
+  // Chưa chạy migration neck/wrist thì gửi cột lạ sẽ lỗi cả lần lưu → chỉ gửi hai cột này khi có giá trị.
+  const { neck_cm, wrist_cm, ...rest } = m;
+  const row = { ...rest, ...(neck_cm != null ? { neck_cm } : {}), ...(wrist_cm != null ? { wrist_cm } : {}) };
+  const { error } = await getSupabase().from("body_measurements").upsert(row, { onConflict: "user_id,measured_on" });
   if (error) throw error;
 }
 export async function deleteMeasurement(date: string) {

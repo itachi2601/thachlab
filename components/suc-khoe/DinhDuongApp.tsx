@@ -22,7 +22,8 @@ import {
   type NutritionProfile,
 } from "@/lib/suc-khoe/dinh-duong";
 import { TARGET } from "@/lib/tap-luyen/chuong-trinh";
-import { fetchMeasurements, newId } from "@/lib/tap-luyen/store";
+import { fetchMeasurements, newId, type Measurement } from "@/lib/tap-luyen/store";
+import { analyzeBuild } from "@/lib/suc-khoe/build";
 import { Card, NumInput, fmtDay, todayIso, vn } from "@/components/tap-luyen/ui";
 
 const shiftDay = (iso: string, n: number) => {
@@ -67,6 +68,7 @@ export default function DinhDuongApp() {
   const [prof, setProf] = useState<NutritionProfile | null>(null);
   const [bodyKg, setBodyKg] = useState<number | null>(null);
   const [bodyCm, setBodyCm] = useState<number | null>(null);
+  const [bodyLast, setBodyLast] = useState<Measurement | null>(null);
   const [dirtyDay, setDirtyDay] = useState<string | null>(null);
   const [dirtyProf, setDirtyProf] = useState(false);
   const [sync, setSync] = useState<"ok" | "pending" | null>(null);
@@ -85,6 +87,7 @@ export default function DinhDuongApp() {
       const withH = [...r.list].reverse().find((m) => m.height_cm);
       setBodyKg(withW?.weight_kg ?? null);
       setBodyCm(withH?.height_cm ?? null);
+      setBodyLast(r.list[r.list.length - 1] ?? null);
     });
   }, []);
 
@@ -277,6 +280,21 @@ export default function DinhDuongApp() {
           </button>
         )}
       </Card>
+
+      {/* gợi ý theo kiểu build (từ trang Số đo) */}
+      {prof && bodyLast && (() => {
+        const b = analyzeBuild(bodyLast, prof.sex ?? "nam");
+        if (!b || b.goal === prof.goal) return null;
+        return (
+          <Card className="border-primary/50">
+            <p className="font-bold text-ink">Theo kiểu build của bạn: {b.label}</p>
+            <p className="mt-1 text-sm text-ink">Gợi ý đổi mục tiêu sang <b>{GOAL_LABEL[b.goal]}</b> — {b.goalWhy}.</p>
+            <button type="button" onClick={() => editProf({ goal: b.goal })} className="mt-2 min-h-11 rounded-xl bg-primary px-4 text-sm font-bold text-white">
+              Dùng mục tiêu {GOAL_LABEL[b.goal]}
+            </button>
+          </Card>
+        );
+      })()}
 
       {/* hồ sơ + công thức */}
       <Card>
