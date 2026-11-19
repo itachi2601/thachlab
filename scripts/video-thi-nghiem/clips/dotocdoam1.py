@@ -183,6 +183,8 @@ def pill(d, s, y, a, color=NAVY, size=42):
     card(d, (W / 2 - pw / 2, y - 36, W / 2 + pw / 2, y + 36), fill=A(color, a), r=34)
     text(d, (W / 2, y), s, size, WHITE, alpha=a)
 
+PB = (L1 + L2) / 2                                                  # 33,8 cm: bung giua hai nut
+assert abs(abs(math.sin(2 * math.pi * (L2 - PB) / (2 * (L2 - L1)))) - 1) < 1e-9   # bao bien cuc dai tai PB
 def s_dapan(img, d, t, sc):
     M = sc["M"]
     card(d, (40, 260, 1040, 1000), fill=WHITE, outline=LIGHT, w=3)
@@ -192,6 +194,7 @@ def s_dapan(img, d, t, sc):
         for p, s in ((L2, "nút"), (L1, "nút")):
             text(d, (TX + TW / 2 + 14, yl(p)), s, 42, ENV, anchor="lm", alpha=ke)
         text(d, (TX + TW / 2 + 14, YM + 18), "bụng", 42, ENV, anchor="lm", alpha=ke)
+        text(d, (TX + TW / 2 + 14, yl(PB)), "bụng", 42, ENV, anchor="lm", alpha=ke)   # bung giua hai nut
     pill(d, "ĐÁP ÁN: gần gấp ba lần 1", 1060, appear(t, 0.15, 0.4))
     kq = appear(t, M[1] - 0.1, 0.5)
     lines = ("50,8 − 16,8 = 34,0 cm = λ/2", "λ = 68,0 cm", "v = λf = 340 m/s")
@@ -243,8 +246,7 @@ def eye(d, x, y, col, a):
 def s_end(img, d, t, sc):
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 280, 1020, 540), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 370), "Hai lần to, đọc ở mặt nước:", 50, DGREEN, alpha=k0)
-    text(d, (W / 2, 450), "lấy hiệu ra λ", 50, DGREEN, alpha=k0)
+    text(d, (W / 2, 410), "Hai lần to, đọc ở mặt nước", 50, DGREEN, alpha=k0)
     k1 = appear(t, M[0] + 0.1, 0.5)
     if k1 <= 0: return
     card(d, (40, 600, 1040, 1290), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
