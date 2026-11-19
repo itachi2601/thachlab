@@ -14,40 +14,40 @@
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Hai bóng giống nhau, nguồn 3 V. Nối tiếp: ampe kế ở Đ2 chỉ 0,25 A; song song: 0,5 A. Tháo Đ1 ở cả hai mạch, ampe kế ở Đ2 chỉ bao nhiêu?"
+      "chu": "Hai bóng giống nhau, nguồn 3 V. Lắp cả hai: ampe kế mạch chính chỉ 0,25 A (nối tiếp) và 1,0 A (song song). Tháo Đ1 ở cả hai mạch, ampe kế mạch chính chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
       "giay": 10.3,
-      "chu": "Hai bóng giống nhau, nguồn 3 V, khoá K, ampe kế."
+      "chu": "Hai bóng giống nhau, nguồn 3 V, khoá K, ampe kế mạch chính."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.0,
-      "chu": "Nối tiếp: tháo Đ1 thì Đ2 tắt, ampe kế 0 A. Song song: Đ2 sáng như cũ, ampe kế vẫn 0,5 A."
+      "giay": 17.0,
+      "chu": "Nối tiếp: Đ2 tắt, ampe kế 0 A. Song song: Đ2 vẫn sáng, ampe kế 0,5 A."
     },
     {
       "khoa": "rut_ra",
       "giay": 24.7,
-      "chu": "Nối tiếp chỉ có một đường đi: hở một chỗ là hở cả mạch. Song song: Đ2 vẫn nhận đủ 3 V nên dòng không đổi."
+      "chu": "Nối tiếp: hở một chỗ là hở cả mạch. Song song: dòng mạch chính bằng tổng dòng các nhánh, mất nhánh Đ1 còn 0,5 A."
     },
     {
       "khoa": "chua_noi",
       "giay": 34.9,
-      "chu": "Số dòng ở đây tính với điện trở bóng không đổi. Dây tóc nguội thì dòng thật có đúng thế?"
+      "chu": "Ở đây coi nguồn luôn giữ 3 V. Pin dùng lâu, yếu đi thì sao?"
     }
   ],
   "dung_dua": {
     "giay": 10.1,
-    "cau_hoi": "Hai bóng giống nhau, nguồn 3 V. Nối tiếp: ampe kế ở Đ2 chỉ 0,25 A; song song: 0,5 A. Tháo Đ1 ở cả hai mạch, ampe kế ở Đ2 chỉ bao nhiêu?",
+    "cau_hoi": "Hai bóng giống nhau, nguồn 3 V. Lắp cả hai: ampe kế mạch chính chỉ 0,25 A (nối tiếp) và 1,0 A (song song). Tháo Đ1 ở cả hai mạch, ampe kế mạch chính chỉ bao nhiêu?",
     "chon": [
-      "A. Nối tiếp 0 A; song song vẫn 0,5 A",
-      "B. Nối tiếp 0 A; song song tăng lên 1 A",
-      "C. Nối tiếp còn dòng nhỏ hơn 0,25 A; song song vẫn 0,5 A",
-      "D. Cả hai không đổi: 0,25 A và 0,5 A"
+      "A. Nối tiếp 0 A; song song 0,5 A",
+      "B. Nối tiếp 0 A; song song vẫn 1,0 A",
+      "C. Nối tiếp 0,25 A; song song 0,5 A",
+      "D. Nối tiếp 0,125 A; song song 0,5 A"
     ],
     "dung": 0,
-    "giai_thich_dung": "Mạch nối tiếp chỉ có một đường đi: tháo Đ1 là mạch hở, không còn dòng qua Đ2. Mạch song song: Đ2 có nhánh riêng nối thẳng vào nguồn, vẫn nhận đủ 3 V nên dòng giữ 0,5 A.",
-    "giai_thich_sai": "Bóng tháo ra (hay đứt dây tóc) không cho dòng nào đi qua, nên mạch nối tiếp hở hẳn. Ở mạch song song, nhánh Đ2 không nhận thêm dòng của nhánh Đ1: hiệu điện thế hai đầu Đ2 vẫn là 3 V nên dòng không đổi."
+    "giai_thich_dung": "Mạch nối tiếp chỉ có một đường đi: tháo Đ1 là mạch hở, ampe kế chỉ 0 A. Mạch song song: dòng mạch chính bằng tổng dòng hai nhánh (0,5 A + 0,5 A); tháo Đ1 thì chỉ còn nhánh Đ2 với 0,5 A.",
+    "giai_thich_sai": "Tháo một bóng ở mạch nối tiếp là cắt đường đi duy nhất, nên không còn dòng. Ở mạch song song, nhánh Đ2 vẫn nhận đủ 3 V nên giữ 0,5 A, nhưng nhánh Đ1 mất đi nên ampe kế mạch chính giảm từ 1,0 A xuống 0,5 A."
   }
 }
