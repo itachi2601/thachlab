@@ -69,10 +69,15 @@ def t_freeze(i):
 def spring(d, yc, tp, f, ka=1.0, mark=True):
     xs = [j * LX / (NR - 1) for j in range(NR)]
     d.line([(X0 - 40, yc + 92), (X1 + 40, yc + 92)], fill=LIGHT, width=6)          # san
+    if ka > 0.05:                                                          # dai mo o vung nen
+        bw = min(0.35, V / f / 5) * S / 2
+        for c in comps(tp, f):
+            pc = X0 + c * S
+            d.rectangle([max(X0 - 10, pc - bw), yc - 80, min(X1 + 10, pc + bw), yc + 80], fill=A((255, 214, 186), 0.85 * ka))
     for j, x in enumerate(xs):
         px = X0 + (x + u(x, tp, f, ka)) * S
         if j == MARK and mark: continue
-        d.ellipse([px - 6, yc - 70, px + 6, yc + 70], outline=(70, 90, 140), width=3)
+        d.ellipse([px - 6, yc - 70, px + 6, yc + 70], outline=(40, 58, 110), width=4)
     if mark:
         x = xs[MARK]; px = X0 + (x + u(x, tp, f, ka)) * S
         d.ellipse([px - 8, yc - 74, px + 8, yc + 74], outline=ORANGE, width=8)
@@ -98,7 +103,7 @@ def fpill(d, f, y=880, ka=1.0):
 YC = 500
 def stage(d):
     card(d, (40, 260, 1040, 940), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (1010, 305), "quay chậm 4 lần", 40, MUTED, anchor="rm", bold=False)
+    text(d, (1010, 305), "quay chậm 4 lần", 40, INK, anchor="rm")
     ruler(d, 700)
 
 # ---------------- canh 1: Du doan ----------------
@@ -160,7 +165,7 @@ def s_do(img, d, t, sc):
     if i >= 0: fpill(d, f)
     if fz:
         a = appear(t, starts()[i] + RUN + 0.1, 0.3)
-        text(d, (W / 2, 800), "hình đứng lại để đo", 40, MUTED, bold=False, alpha=a)
+        text(d, (W / 2, 800), "hình đứng lại để đo", 40, INK, alpha=a)
         cs = comps(tp, f)
         for c in cs: text(d, (X0 + c * S, YC + 130), "nén", 40, (176, 64, 8), alpha=a)
         bracket(d, cs[0], cs[1], 380, vn1(ROWS[i][1]) + " m", a)
@@ -196,14 +201,12 @@ def s_dapan(img, d, t, sc):
     if k1 > 0:
         y = 390 + 128
         arrow(d, (175, y), (175, y + 148), A(ORANGE, k1), w=5, head=16)
-        text(d, (200, y + 74), "×2,5", 40, ORANGE, anchor="lm", alpha=k1)
         arrow(d, (905, y), (905, y + 148), A(ORANGE, k1), w=5, head=16)
-        text(d, (880, y + 74), ":2,5", 40, ORANGE, anchor="rm", alpha=k1)
-    k2 = appear(t, M[1] - 0.05, 0.45)
+    k2 = appear(t, M[0] + 0.6, 0.45)
     if k2 > 0:
         card(d, (60, 760, 1020, 980), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=5)
-        text(d, (W / 2, 830), "Vòng dao động dọc phương truyền:", 46, (21, 128, 61), alpha=k2)
-        text(d, (W / 2, 910), "sóng dọc", 50, (21, 128, 61), alpha=k2)
+        text(d, (W / 2, 830), "f tăng 2,5 lần →", 46, (21, 128, 61), alpha=k2)
+        text(d, (W / 2, 910), "nén – nén ngắn đi 2,5 lần", 46, (21, 128, 61), alpha=k2)
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):

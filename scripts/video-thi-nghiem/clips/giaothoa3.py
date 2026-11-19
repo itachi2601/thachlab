@@ -61,8 +61,8 @@ def mmruler(d, y):
     for k in range(13):
         x = GX0 + k * 5 * PMM; L = 18 if k % 2 == 0 else 10
         d.line([(x, y), (x, y + L)], fill=NAVY, width=3)
-        if k % 2 == 0 and k not in (0, 12): text(d, (x, y + 44), str(k * 5), 40, INK)
-    text(d, (GX0 + 10, y + 44), "mm", 40, INK, anchor="lm")
+        if k % 2 == 0 and k != 12: text(d, (x, y + 44), str(k * 5), 40, INK)
+    text(d, (GX1, y + 44), "mm", 40, INK, anchor="rm")
 
 def schematic(d, D, show_d=True):
     yc = 420; sx = scr_x(D)
@@ -74,12 +74,12 @@ def schematic(d, D, show_d=True):
     d.rectangle([sx, 320, sx + 14, 520], fill=(225, 225, 232), outline=NAVY, width=3)
     text(d, (135, yc + 70), "laser", 40, INK); text(d, (SX, 300), "hai khe, a = 0,2 mm", 40, INK)
     text(d, (sx + 7, 290), "màn", 40, INK)
-    y = 575
+    y = 560
     d.line([(SX, y), (sx, y)], fill=MUTED, width=3)
     for x in (SX, sx): d.line([(x, y - 14), (x, y + 14)], fill=MUTED, width=3)
     if show_d:
         s = f"D = {D:g} m"; pw = tw(d, s, F(42)) + 30
-        card(d, ((SX + sx) / 2 - pw / 2, y - 30, (SX + sx) / 2 + pw / 2, y + 30), fill=WHITE, r=14)
+        card(d, ((SX + sx) / 2 - pw / 2, y - 26, (SX + sx) / 2 + pw / 2, y + 26), fill=WHITE, r=14)
         text(d, ((SX + sx) / 2, y), s, 42, INK)
 
 def stage(d, D, i, show_d=True):
@@ -87,7 +87,7 @@ def stage(d, D, i, show_d=True):
     schematic(d, D, show_d)
     fringes(d, 690, 790, i); mmruler(d, 800)
 
-def brack(d, i, lab, a=1.0, y=665):
+def brack(d, i, lab, a=1.0, y=670):
     xa, xb = GC - 2 * i * PMM, GC + 2 * i * PMM
     d.line([(xa, y), (xb, y)], fill=A(ORANGE, a), width=5)
     for x in (xa, xb): d.line([(x, y - 14), (x, y + 20)], fill=A(ORANGE, a), width=5)
@@ -224,7 +224,7 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 75), "Chưa nói được", 48, NAVY, alpha=k3)
         kk = k3 * appear(t, M[1] + 0.3, 0.4)
         text(d, (W / 2, y + 170), "Mới đổi D.", 46, INK, alpha=kk)
-        text(d, (W / 2, y + 240), "Đổi a, đổi màu laser thì sao?", 46, INK, alpha=kk)
+        text(d, (W / 2, y + 240), "Đổi màu laser thì sao?", 46, INK, alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
