@@ -87,11 +87,7 @@ def s_hook(img, d, t, sc):
     card(d, (60, 1000, 1020, 1600), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1055), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1155, "n = 25 vòng/s.\nTần số kế chỉ bao nhiêu?", 46, INK, alpha=k)
-    for i, s in enumerate(OPTS):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 110 + (i % 2) * 440; y = 1300 + (i // 2) * 110
-        card(d, (x0, y - 44, x0 + 420, y + 44), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 40, y), s, 42, INK, anchor="lm", alpha=a)
+    text(d, (W / 2, 1380), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))   # K10: khong ve nut
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
     d.rounded_rectangle([140, 1540, 940, 1554], radius=7, fill=A(LIGHT, k))
     if q < 1: d.rounded_rectangle([140, 1540, 140 + 800 * (1 - q), 1554], radius=7, fill=A(PURPLE, k))
@@ -155,7 +151,7 @@ def s_ans(img, d, t, sc):
     IMG_REF[0] = img
     M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
     card(d, (60, 250, 1020, 350), fill=(220, 252, 231), outline=GREEN, w=5)
-    text(d, (W / 2, 300), "Đáp án C", int(48 * clamp(k, 0.3, 1.0)), GREEN)
+    text(d, (W / 2, 300), "Đáp án: 50 Hz", int(48 * clamp(k, 0.3, 1.0)), GREEN)
     x0, x1, yb, yt = 190, 950, 940, 470
     X = lambda n: x0 + n / 30 * (x1 - x0); Y = lambda f: yb - f / 60 * (yb - yt)
     card(d, (60, 380, 1020, 1050), fill=WHITE, outline=LIGHT, w=3)
@@ -273,14 +269,14 @@ CLIP = dict(id="tn-l12-mayphatdien-01", header="VẬT LÍ 12 · THÍ NGHIỆM", 
     footer="Máy phát điện xoay chiều · thachlab.id.vn", scenes=[
  dict(key="hook", title="Máy phát mini và tần số", draw=s_hook, tail=0.6, caps=[
    ("Quay rô-to, đọc tần số.", 2.4),
-   ("Chọn đáp án.", 5.6)]),
+   ("Tự trả lời trước khi xem.", 5.6)]),
  dict(key="do", title="Quay nhanh dần, đọc tần số", draw=s_do, tail=0.6, caps=[
    ("Đếm vòng trong 10 s.", 2.6),
    ("n = 5 → f = 9,8 Hz.", 2.2),
    ("Tăng n: 10, 15, 20.", 3.2),
    ("n = 25 → f = 50,3 Hz.", 2.4)]),
  dict(key="ans", title="Đồ thị f theo n", draw=s_ans, tail=0.6, caps=[
-   ("C: khoảng 50 Hz.", 2.6),
+   ("Khoảng 50 Hz.", 2.6),
    ("Điểm nằm trên đường thẳng.", 2.4),
    ("f/n gần bằng p = 2.", 2.8)]),
  dict(key="why", title="Vì sao f = n·p?", draw=s_why, tail=0.6, caps=[
