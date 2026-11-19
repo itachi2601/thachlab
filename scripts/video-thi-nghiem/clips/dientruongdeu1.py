@@ -15,7 +15,8 @@
 from engine import *
 
 ROWS = [(4, 15, 375000), (2, 15, 750000)]           # hai hang chieu trong clip
-ROW3 = (4, 30, 750000)                               # dap an cau chot, khong chieu
+ROW3 = (4, 30, 750000)                               # hang 3 kho (khong chieu)
+CHOT = (2, 30, 1500000)                              # dap an cau chot (ghi_chu kho), khong hien tren man
 def num(n): return f"{n:,}".replace(",", " ")
 
 def _kiem_so():
@@ -25,7 +26,8 @@ def _kiem_so():
     for r in ROWS + [ROW3]:
         assert r in hang, r
         assert abs(r[1] * 1000 / (r[0] / 100) - r[2]) < 1e-6         # E = U/d
-    assert "nhanh hơn" in k["so_lieu_mau"]["ghi_chu"]
+    assert "nhanh hơn" in k["so_lieu_mau"]["ghi_chu"] and "1 500 000 V/m" in k["so_lieu_mau"]["ghi_chu"]
+    assert abs(CHOT[1] * 1000 / (CHOT[0] / 100) - CHOT[2]) < 1e-6
 _kiem_so()
 
 # ---------------- truong: hai la dong la hai doan tich dien deu +sigma / -sigma (2D) ----------------
@@ -127,9 +129,10 @@ def tray(d, dcm, k, show_lines=0.0, arrows=0.0, d_lbl=True, edge_hl=0.0):
             text(d, (x + (-34 if sg == "+" else 34), CY + j * 80), sg, 48, col)
     if arrows > 0:
         for j in (-1, 1):
-            yy = CY + j * 70
+            yy = CY + j * 28                                          # giua duong giua va duong ke (cach 57 px)
             arrow(d, (xp + 30, yy), (xm - 30, yy), A(PURPLE, arrows), w=6, head=20)
-        text(d, (CX, CY - 125), "E", 46, PURPLE, alpha=arrows)
+        card(d, (CX - 26, CY - 109, CX + 26, CY - 61), fill=A(OIL, arrows), r=12)   # nam giua hai duong suc -57 / -114 px
+        text(d, (CX, CY - 85), "E", 40, PURPLE, alpha=arrows)
     if d_lbl:
         yy = CY + HALF + 30
         d.line([(xp, yy), (xm, yy)], fill=NAVY, width=3)
@@ -253,7 +256,7 @@ def s_bay(img, d, t, sc):
 def s_end(img, d, t, sc):
     M = sc["M"]; k0 = appear(t, 0.2, 0.5)
     card(d, (60, 280, 1020, 540), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
-    text(d, (W / 2, 370), "Giữa hai lá, xa mép:", 50, DGREEN, alpha=k0)
+    text(d, (W / 2, 370), "Xa mép hai lá:", 50, DGREEN, alpha=k0)
     text(d, (W / 2, 450), "đường sức thẳng, song song, đều", 50, DGREEN, alpha=k0)
     k1 = appear(t, M[0] + 0.1, 0.5)
     if k1 <= 0: return
@@ -262,7 +265,7 @@ def s_end(img, d, t, sc):
     card(d, (W / 2 - pw / 2, 630, W / 2 + pw / 2, 694), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 662), "THỬ NGHĨ", 40, WHITE, alpha=k1)
     kq = appear(t, M[0] + 0.4, 0.5)
-    for j, s in enumerate(("Giữ 4 cm, tăng U lên 30 kV.", "E vùng giữa bao nhiêu?")):
+    for j, s in enumerate(("U lên 30 kV, hai lá còn 2 cm.", "E vùng giữa bao nhiêu?")):
         text(d, (W / 2, 800 + j * 78), s, 48, INK, alpha=kq)
     kh = appear(t, M[0] + 3.2, 0.5)
     if kh > 0:
@@ -287,7 +290,7 @@ CLIP = dict(id="tn-l11-dien-truong-deu-01", header="VẬT LÍ 11 · THÍ NGHIỆ
    ("Khuấy bột, quay máy ở 4 cm.", 4.2),
    ("Đưa hai lá còn 2 cm.", 4.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
-   ("Hai lá gần hơn, hạt xếp nhanh hơn.", 4.0),
+   ("Hai lá gần hơn, E tính sẵn gấp đôi.", 4.0),
    ("Đường sức vẫn thẳng, song song.", 4.6)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Bẫy thường gặp.", 4.6),
