@@ -131,7 +131,7 @@
     "không lệch, rung rất nhẹ"
    ]
   ],
-  "ghi_chu": "Kết quả định tính, mô tả theo mô hình; chưa phải ghi chép thí nghiệm thật."
+  "ghi_chu": "Kết quả định tính, mô tả theo mô hình; chưa phải ghi chép thí nghiệm thật. Video tự dựng dùng thêm nguồn đổi chiều thật chậm giả định, mỗi 2 giây một lần (mô hình minh hoạ, không có trong phòng thí nghiệm): kim nam châm lắc qua lại, đổi phía theo mỗi lần dòng đổi chiều."
  },
  "ket_qua_ky_vong": "Cả hai nguồn đều hút đinh sắt; kim nam châm lệch một phía với nguồn một chiều, không lệch hẳn (chỉ rung rất nhẹ quanh vị trí cũ) với nguồn xoay chiều 50 Hz.",
  "hien_tuong_hay_sai": [
@@ -144,5 +144,15 @@
   "loai": "so_do_luc",
   "y_tuong": "Công tắc chọn nguồn; vẽ cực N/S ở đầu lõi đổi theo dấu của i(t) chạy chậm; kim nam châm quay theo lực khi chạy chậm, đứng gần như yên khi chạy đúng 50 Hz; đinh sắt luôn bị hút.",
   "diem_nhan": "Cực nam châm điện đổi theo dòng điện: kim không kịp quay theo, đinh sắt vẫn bị hút."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-xoaychieu-01-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "kim nam châm cạnh nam châm điện",
+  "nhin_vao": "Nguồn đổi chiều chậm thì kim làm gì?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

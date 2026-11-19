@@ -35,6 +35,7 @@ export function PhysicsCuriosityCard({
       <div className={`relative shrink-0 bg-surface-2 ${compact ? "aspect-[3/2]" : "aspect-[16/9]"}`}>
         {card.photo ? (
           // Ảnh tĩnh (export), webp ≤150 KB do script kiểm; width/height giữ chỗ để không nhảy bố cục.
+          /* eslint-disable-next-line @next/next/no-img-element -- site xuất tĩnh (output: export), next/image không tối ưu được */
           <img
             src={card.photo}
             alt={card.photoAlt ?? ""}

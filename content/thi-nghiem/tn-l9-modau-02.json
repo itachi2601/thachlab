@@ -105,9 +105,14 @@
     6.0,
     6e-07,
     6.0
+   ],
+   [
+    3.0,
+    3e-07,
+    3.0
    ]
   ],
-  "ghi_chu": "Số liệu tính từ mô hình, chưa phải số đo thật."
+  "ghi_chu": "Số liệu tính từ mô hình, chưa phải số đo thật. Hàng 3 V dùng cho câu hỏi chốt của video tự dựng (mô hình)."
  },
  "ket_qua_ky_vong": "Dòng khoảng 0,6 µA, đèn tắt; vôn kế chỉ 6,00 V.",
  "hien_tuong_hay_sai": [
@@ -119,5 +124,15 @@
   "loai": "so_do_luc+bang_so_lieu",
   "y_tuong": "Kéo thả vôn kế/ampe kế vào vị trí nối tiếp hoặc song song; đèn sáng/tắt và số chỉ đổi theo.",
   "diem_nhan": "Vôn kế nối tiếp: đèn tắt, số chỉ bằng U nguồn. Ampe kế song song: báo nối tắt."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "vôn kế mắc nối tiếp với đèn",
+  "nhin_vao": "Vôn kế mắc sai chỗ chỉ bao nhiêu?",
+  "giay": 48,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

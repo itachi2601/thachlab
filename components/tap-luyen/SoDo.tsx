@@ -2,6 +2,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { TARGET } from "@/lib/tap-luyen/chuong-trinh";
 import { deleteMeasurement, fetchMeasurements, saveMeasurement, type Measurement } from "@/lib/tap-luyen/store";
+import { fetchProfile } from "@/lib/suc-khoe/dinh-duong";
+import type { Sex } from "@/lib/suc-khoe/dinh-duong";
+import KieuBuild from "@/components/suc-khoe/KieuBuild";
 import { Card, LineChart, NumInput, fmtDay, todayIso, vn } from "./ui";
 
 const FIELDS: { k: keyof Measurement; label: string; unit: string }[] = [
@@ -12,6 +15,8 @@ const FIELDS: { k: keyof Measurement; label: string; unit: string }[] = [
   { k: "shoulder_cm", label: "Vai (vòng)", unit: "cm" },
   { k: "arm_cm", label: "Bắp tay", unit: "cm" },
   { k: "height_cm", label: "Chiều cao", unit: "cm" },
+  { k: "neck_cm", label: "Cổ", unit: "cm" },
+  { k: "wrist_cm", label: "Cổ tay", unit: "cm" },
 ];
 type Rating = "tot" | "vua" | "yeu";
 const RATE: Record<Rating, string> = { tot: "text-ok", vua: "text-warn", yeu: "text-danger" };
@@ -44,7 +49,7 @@ function ratios(m: Measurement, h: number) {
 const blank = (last?: Measurement): Measurement => ({
   measured_on: todayIso(),
   height_cm: last?.height_cm ?? TARGET.start.height,
-  weight_kg: null, chest_cm: null, waist_cm: null, hip_cm: null, shoulder_cm: null, arm_cm: null, note: null,
+  weight_kg: null, chest_cm: null, waist_cm: null, hip_cm: null, shoulder_cm: null, arm_cm: null, neck_cm: last?.neck_cm ?? null, wrist_cm: last?.wrist_cm ?? null, note: null,
 });
 
 export default function SoDo() {
@@ -52,6 +57,7 @@ export default function SoDo() {
   const [form, setForm] = useState<Measurement | null>(null);
   const [busy, setBusy] = useState(false);
   const [metric, setMetric] = useState<keyof Measurement>("chest_cm");
+  const [sex, setSex] = useState<Sex>("nam");
 
   const [now] = useState(() => Date.now());
   const reload = useCallback(
@@ -65,6 +71,7 @@ export default function SoDo() {
     fetchMeasurements().then((r) => {
       setList(r.list);
     });
+    fetchProfile().then((p) => p.sex && setSex(p.sex));
   }, []);
 
   // Mốc xuất phát thầy báo 18/11/2026 dùng khi chưa có số đo nào trong máy chủ
@@ -128,6 +135,9 @@ export default function SoDo() {
                 </label>
               ))}
             </div>
+            <p className="mt-2 text-xs text-muted">
+              Cách đo: cổ — ngay dưới yết hầu; cổ tay — chỗ nhỏ nhất, tay không thuận; eo — ngang rốn, thở ra bình thường; mông — chỗ rộng nhất. Thước mềm, không siết.
+            </p>
             {!list.length && (
               <button type="button" onClick={() => setForm({ ...start, measured_on: TARGET.start.date, note: "Mốc xuất phát" })} className="mt-2 min-h-11 text-sm font-semibold text-primary">
                 Điền mốc 18/11 (53 kg · 82–72–85)
@@ -170,6 +180,8 @@ export default function SoDo() {
           ))}
         </ul>
       </Card>
+
+      <KieuBuild latest={latest} sex={sex} onSex={setSex} onAddMeasure={() => setForm(blank(latest))} />
 
       <Card>
         <p className="font-bold text-ink">Mục tiêu 4 tuần</p>
