@@ -8,295 +8,349 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
 :root{
-  --bg:#fbfaf7; --surface:#ffffff; --ink:#1c2430; --muted:#5b6574; --line:#d9dde3;
-  --accent:#1d4ed8; --ok:#15803d; --ok-bg:#ecfdf3; --no:#b91c1c; --warn-bg:#fff7e6; --warn:#9a5b00;
-  --red:#dc2626; --blue:#2563eb;
+  --bg:#ffffff; --ink:#111827; --muted:#4b5563; --line:#cbd2db;
+  --accent:#1d4ed8; --ok:#166534; --ok-bg:#e7f8ee; --no:#b91c1c; --warn-bg:#fff4dd; --warn:#8a4b00;
 }
 *{box-sizing:border-box}
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
-  font-size:clamp(17px,1.75vw,26px);line-height:1.4}
-.stop{min-height:100vh;scroll-snap-align:start;padding:2.2vh 3vw 2vh;display:flex;flex-direction:column;gap:1.4vh;border-bottom:3px solid var(--line)}
-.top{display:flex;align-items:baseline;gap:1em;flex-wrap:wrap}
-.top .so{font-weight:800;color:var(--accent);font-size:.8em;letter-spacing:.04em;text-transform:uppercase}
-.top .phut{font-size:.75em;color:var(--muted);font-variant-numeric:tabular-nums}
-h1,h2{margin:0;line-height:1.2}
-h1{font-size:2em} h2{font-size:1.45em}
-p{margin:.25em 0}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:2.5vw;align-items:start;flex:1}
-.cols.w3{grid-template-columns:1.15fr 1fr}
-.card{background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:.6em .9em}
-.hoi{font-weight:700}
-ol.opt{list-style:none;margin:.3em 0;padding:0;display:grid;gap:.3em}
-ol.opt li{border:2px solid var(--line);border-radius:10px;padding:.25em .6em;background:var(--surface)}
-ol.opt li b{display:inline-block;min-width:1.6em}
-.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
-button.mo,a.mo{display:inline-block;text-decoration:none;font:inherit;font-size:.8em;font-weight:700;color:#fff;background:var(--accent);border:0;border-radius:999px;
-  padding:.45em 1.1em;cursor:pointer;min-height:44px;margin:.3em 0}
-button.mo[aria-expanded="true"]{background:#94a3b8}
-.an[hidden]{display:none}
-.an{border-left:5px solid var(--ok);background:var(--ok-bg);border-radius:0 10px 10px 0;padding:.35em .8em;margin:.3em 0}
-.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
-.an ul{margin:.2em 0;padding-left:1.1em}
-.nho{font-size:.8em;color:var(--muted)}
-.fig svg{width:100%;height:auto;max-height:46vh;color:var(--ink)}
-table{border-collapse:collapse;width:100%;font-size:.92em}
-th,td{border:2px solid var(--line);padding:.2em .45em;text-align:left;vertical-align:top}
-th{background:#eef2f7}
-td.trong{min-width:5.5em;background:#fff}
-td.ns{color:var(--ok);font-weight:700}
-.fx{font-size:1.15em;text-align:center;background:var(--surface);border:2px solid var(--accent);border-radius:12px;padding:.3em .5em;margin:.25em 0}
-.bay{border:3px solid var(--no);border-radius:14px;padding:.4em .8em;background:#fff5f5}
-.bay b.ten{color:var(--no)}
-.steps{margin:.2em 0;padding-left:1.3em}
-.steps li{margin:.15em 0}
-.qrcols{grid-template-columns:minmax(0,.8fr) 1.2fr;align-items:center}
-.qr svg{display:block;width:100%;max-width:min(50vh,360px);height:auto;margin:0 auto}
-.made{font-size:1.6em;margin:0}
-.made b{color:var(--accent);font-variant-numeric:tabular-nums}
-.venha{border:2px dashed var(--muted);border-radius:12px;padding:.4em .8em;font-size:.78em}
-.tap{display:inline-block;font-size:.7em;font-weight:700;color:var(--warn);background:var(--warn-bg);border:1.5px solid #f0c36d;border-radius:999px;padding:.05em .6em;white-space:nowrap}
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
 .top .tap{margin-left:auto}
-.muc{font-weight:700;margin:.35em 0 .15em}
-.muc .tap{margin-right:.4em}
-button.mo.nho-btn{min-height:40px;padding:.2em .9em;margin:0 0 0 .4em;vertical-align:middle}
-ol.opt.hai{grid-template-columns:1fr 1fr}
-.ghi{border:2px dashed var(--muted);border-radius:10px;padding:.25em .6em;font-size:.8em;margin-top:.4em}
-.stop.gon{font-size:.92em}
-.stop.gon ul,.stop ul{margin:.15em 0;padding-left:1.1em}
-.nho-fig svg{max-height:30vh}
-.f4 svg{max-height:19vh}
-.dk{position:fixed;right:12px;bottom:10px;font-size:13px;color:var(--muted);background:rgba(255,255,255,.85);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .f2{height:47vh} .f3{height:52vh}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text{font-size:16px} .f2 svg text{font-size:23px} .f3 svg text{font-size:18px}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+.video{flex:1;min-height:0;display:flex;justify-content:center}
+.video video{height:100%;max-width:100%;background:#000;border-radius:12px}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
 @media (max-width:760px){
   html{scroll-snap-type:none}
-  body{font-size:17px}
-  .stop{min-height:auto;padding:18px 16px 22px}
-  .cols,.cols.w3{grid-template-columns:1fr}
-  h1{font-size:1.6em} h2{font-size:1.3em}
-  .fig svg{max-height:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3{height:auto} .fig svg{width:100%;height:auto}
+  .video video{height:auto;max-height:80vh}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
   .dk{display:none}
 }
-@media print{html{scroll-snap-type:none}.stop{min-height:auto;page-break-after:always}button.mo,.dk{display:none}.an[hidden]{display:block}}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video{display:none}.an[hidden]{display:block}}
 </style>
 </head>
 <body>
 
-<!-- ============ Màn mở ============ -->
-<section class="stop" id="s0">
-  <div class="top"><span class="so">Vật lí 11 · Bài 20</span><span class="phut">tiết 45 phút · 6 điểm dừng · 15 phút cuối làm đề 1215</span><span class="tap">mở Tập bài 20 tr.1</span></div>
-  <h1>Điện thế</h1>
-  <div class="cols">
-    <div class="card">
-      <p class="hoi">Hôm nay trả lời được:</p>
-      <ul>
-        <li>Vì sao chim đậu trên dây 500 kV mà không sao?</li>
-        <li>Vôn kế thật ra đo cái gì?</li>
-        <li>Điện thế, hiệu điện thế và $U=Ed$.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <p class="hoi">Cách học trong tiết</p>
-      <ul>
-        <li>Đoán trước, giơ tay chọn A/B/C/D.</li>
-        <li>Hai bạn chọn khác nhau: thuyết phục nhau 1 phút.</li>
-        <li>Rồi mới mở đáp án.</li>
-      </ul>
-    </div>
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 20</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 20 · tr.1</span></div>
+  <div class="giua">
+    <h1>Điện thế</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Vì sao chim đậu trên dây 500 kV mà không sao?</li>
+      <li>Vôn kế thật ra đo cái gì?</li>
+      <li>Điện thế, hiệu điện thế, $U=Ed$.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
   </div>
-  <p class="nho">Phím: → / PageDown sang điểm dừng sau · ← / PageUp quay lại · Enter mở ô kế tiếp trong màn đang chiếu.<br>Mô phỏng: PhET Interactive Simulations, Đại học Colorado Boulder (CC BY 4.0).</p>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
 </section>
 
-<!-- ============ 1. Dự đoán ============ -->
-<section class="stop" id="s1">
-  <div class="top"><span class="so">Điểm dừng 1/6 · Dự đoán</span><span class="phut">phút 0–3</span><span class="tap">Tập tr.1 · ô 1·2</span></div>
-  <h2>Con chim trên dây 500 kV</h2>
-  <div class="cols">
-    <div class="fig"><!--FIG1--></div>
-    <div>
-      <p>Người đứng dưới đất chạm dây này thì chết ngay. Chim đậu trên dây 500 kV mà không bị điện giật, chủ yếu là vì:</p>
-      <ol class="opt lo" id="q1">
-        <li><b>A.</b> Lông và chân chim cách điện hoàn toàn</li>
-        <li><b>B.</b> Điện chỉ chạy trong lõi dây, không ra tới mặt dây ngoài</li>
-        <li data-dung><b>C.</b> Hai chân gần như cùng điện thế</li>
-        <li><b>D.</b> Dây truyền tải có điện thế thấp hơn ổ cắm trong nhà</li>
-      </ol>
-      <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án mở ở cuối tiết (ô 1·3).</p>
-      <button class="mo" data-mo="a1">Mở đáp án</button>
-      <div class="an" id="a1" hidden>
-        <p><b>C.</b> Điện tích chạy qua cơ thể vì <b>hiệu</b> điện thế giữa hai chỗ chạm, không vì điện thế cao.</p>
-        <ul>
-          <li>A sai: chim chạm cùng lúc dây và cột là chết ngay.</li>
-          <li>B sai: dây trần, mặt dây có điện. D sai: 500 kV lớn hơn 220 V hàng nghìn lần.</li>
-        </ul>
-      </div>
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <h2>Chim đậu trên dây 500 kV mà không bị giật. Vì sao?</h2>
+  <div class="fig f1"><!--FIG1--></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Chim không bị giật, chủ yếu vì:</p>
+    <ol class="opt lo">
+      <li><b>A.</b> Lông và chân chim cách điện hoàn toàn</li>
+      <li><b>B.</b> Điện chỉ chạy trong lõi dây</li>
+      <li data-dung><b>C.</b> Hai chân gần như cùng điện thế</li>
+      <li><b>D.</b> Dây có điện thế thấp hơn ổ cắm</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án mở ở cuối tiết.</p>
+    <button class="mo" data-mo="a1">Mở đáp án</button>
+    <div class="an" id="a1" hidden>
+      <p><b>C.</b> Điện chạy qua người vì <b>hiệu</b> điện thế giữa hai chỗ chạm.</p>
+      <p class="nho">A: chạm cùng lúc dây và cột là chết · B: dây trần, mặt dây có điện · D: 500 kV gấp nghìn lần 220 V.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 2. Công thức lõi ============ -->
-<section class="stop gon" id="s2">
-  <div class="top"><span class="so">Điểm dừng 2/6 · Công thức lõi</span><span class="phut">phút 3–12</span><span class="tap">Tập tr.1 ô 1·4 → tr.2 ô 2·1, 2·3</span></div>
-  <h2>Điện thế và hiệu điện thế</h2>
-  <div class="cols">
-    <div>
-      <p class="muc"><span class="tap">tr.1 · ô 1·4</span> Nhắc Bài 19</p>
-      <p>Công của lực điện không phụ thuộc <b>đường đi</b>, chỉ phụ thuộc điểm <b>đầu</b> và điểm <b>cuối</b> — giống trọng lực: trượt dốc thẳng hay lượn vòng, công như nhau. Điện trường đều: $A_{MN}=qEd$.</p>
-      <p class="muc"><span class="tap">tr.2 · ô 2·1</span> Điện thế: thế năng của một culông</p>
-      <div class="fx">$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$</div>
-      <ul>
-        <li>Của một <b>điểm</b>, không phụ thuộc <b>điện tích</b> đặt vào.</li>
-        <li>Đơn vị: vôn; $1\ \text{V}=1\ \text{J/C}$.</li>
-        <li>Mốc $V=0$: thường chọn <b>Trái Đất</b> hoặc <b>vô cực</b>.</li>
-      </ul>
-    </div>
-    <div>
-      <p class="muc"><span class="tap">tr.2 · ô 2·3</span> Hiệu điện thế: công trên một culông</p>
-      <div class="fx">$U_{MN}=V_M-V_N=\dfrac{A_{MN}}{q}\ \Rightarrow\ A_{MN}=qU_{MN}$</div>
-      <ul>
-        <li>Đổi thứ tự hai điểm thì đổi dấu: $U_{NM}=-U_{MN}$.</li>
-        <li>Theo chiều đường sức, điện thế <b>giảm</b>.</li>
-        <li>Đổi mốc: mọi $V$ <b>đổi</b>, còn $U$ <b>giữ nguyên</b>.</li>
-      </ul>
-      <p class="hoi"><span class="tap">PhET</span> Đặt $+1$ nC, kéo "Mặt đẳng thế" ra cách 1 m: số chỉ dương hay âm? Đổi sang $-1$ nC?</p>
-      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+<!-- ================= 2. Công thức lõi ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Nhắc Bài 19</span><span>phút 3–12</span><span class="tap">tr.1 · ô 1·4 · dòng 1–2</span></div>
+  <div class="giua">
+    <p>Công của lực điện không phụ thuộc <b>đường đi</b>,<br>chỉ phụ thuộc điểm <b>đầu</b> và điểm <b>cuối</b>.</p>
+    <p class="nho">Giống trọng lực: trượt dốc thẳng hay lượn vòng, công như nhau.</p>
+    <p>Điện trường đều:</p>
+    <div class="fx">$A_{MN}=qEd$</div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Điện thế</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·1 · dòng 1–5</span></div>
+  <h2>Điện thế: thế năng của một culông</h2>
+  <div class="giua">
+    <div class="fx">$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$</div>
+    <ul>
+      <li>Của một <b>điểm</b>, không phụ thuộc <b>điện tích</b> đặt vào.</li>
+      <li>Đơn vị: vôn; $1\ \text{V}=1\ \text{J/C}$.</li>
+      <li>Mốc $V=0$: <b>Trái Đất</b> hoặc <b>vô cực</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Thí nghiệm ảo PhET</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·1 · dòng 5</span></div>
+  <div class="giua">
+    <p class="hoi">Đặt $+1$ nC. Đầu đo "Mặt đẳng thế" cách 1 m:<br>số chỉ dương hay âm?</p>
+    <p class="hoi">Đổi sang $-1$ nC thì sao?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET (tab 1)</a>
       <button class="mo" data-mo="p2">Mở: kết quả</button>
-      <div class="an" id="p2" hidden><p>$+1$ nC: khoảng $+9$ V; $-1$ nC: khoảng $-9$ V; kéo càng xa, số chỉ càng về $0$. Sim lấy mốc ở vô cực: $Q\gt0$ cho $V\gt0$, $Q\lt0$ cho $V\lt0$.</p></div>
-      <div class="ghi">
-        <p><b>Điền trên lớp:</b> ô 1·4 dòng 1–2 · ô 2·1 dòng 1–5 · ô 2·3 dòng 1–4.</p>
-        <p><b>Về nhà:</b> ô 1·4 dòng 3–4 + khung "giống trọng lực" · ô 2·1 dòng 6 ($W_M$) · ô 2·3 dòng 5–6 (eV, $q$ electron).</p>
-      </div>
+    </div>
+    <div class="an" id="p2" hidden>
+      <p>$+1$ nC: khoảng $+9$ V · $-1$ nC: khoảng $-9$ V · càng xa càng về $0$.</p>
+      <p class="nho">Sim lấy mốc ở vô cực: $Q\gt0$ cho $V\gt0$, $Q\lt0$ cho $V\lt0$.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 3. Thí nghiệm thật ============ -->
-<section class="stop" id="s3">
-  <div class="top"><span class="so">Điểm dừng 3/6 · Thí nghiệm tại lớp</span><span class="phut">phút 12–16</span><span class="tap">Tập tr.3 · ô 3·1</span></div>
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Hiệu điện thế</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·3 · dòng 1–4</span></div>
+  <h2>Hiệu điện thế: công trên một culông</h2>
+  <div class="giua">
+    <div class="fx">$U_{MN}=V_M-V_N=\dfrac{A_{MN}}{q}$</div>
+    <div class="fx">$A_{MN}=qU_{MN}$</div>
+    <ul>
+      <li>Đổi thứ tự hai điểm thì đổi dấu: $U_{NM}=-U_{MN}$.</li>
+      <li>Theo chiều đường sức, điện thế <b>giảm</b>.</li>
+      <li>Đổi mốc: $V$ <b>đổi</b>, $U$ <b>giữ nguyên</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 3. Thí nghiệm thật ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 12–16</span><span class="tap">tr.3 · ô 3·1</span></div>
   <h2>Vôn kế đo được gì?</h2>
-  <div class="cols w3">
-    <div>
-      <p class="nho"><b>Dụng cụ:</b> pin 1,5 V để hở · đồng hồ số thang 20 V DC (que đỏ cắm V, que đen cắm COM) · dây đồng 30 cm bóc vỏ, một đầu quấn vào cực (+).</p>
-      <table>
-        <thead><tr><th>Lần</th><th>Que đỏ · que đen chạm vào</th><th>Lớp đo<br><span class="nho">→ cột "Số chỉ" của Tập</span></th><th>Minh hoạ</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td>cực (+) · cực (−) của pin 1,5 V</td><td class="trong"></td><td class="ns"><span class="an-o" data-o="b2">1,50 V</span></td></tr>
-          <tr><td>2</td><td>đổi hai que cho nhau</td><td class="trong"></td><td class="ns"><span class="an-o" data-o="b2">−1,50 V</span></td></tr>
-          <tr><td>3</td><td>hai điểm trên cùng một dây đồng nối cực (+)</td><td class="trong"></td><td class="ns"><span class="an-o" data-o="b3">0,00 V</span></td></tr>
-        </tbody>
-      </table>
-      <button class="mo" data-mo="b2">Mở số minh hoạ lần 1–2</button>
-      <button class="mo" data-mo="b3">Mở số minh hoạ lần 3</button>
-    </div>
-    <div>
-      <p class="hoi">Trước lần 3: vôn kế sẽ chỉ…</p>
-      <ol class="opt lo" id="q2">
-        <li><b>A.</b> $1{,}5$ V</li>
-        <li data-dung><b>B.</b> $0$ V</li>
-        <li><b>C.</b> $-1{,}5$ V</li>
-        <li><b>D.</b> càng xa nhau càng lớn</li>
-      </ol>
-      <button class="mo" data-mo="r2">Mở: rút ra</button>
-      <div class="an" id="r2" hidden>
-        <p>Vôn kế số hiện $V_{\text{đỏ}}-V_{\text{đen}}$; nó đo <b>hiệu điện thế</b> giữa hai điểm, không đo <b>điện thế</b> của một điểm. Lần 3 giống chuyện <b>con chim trên dây</b>.</p>
-      </div>
+  <p class="nho">Pin 1,5 V · đồng hồ số thang 20 V DC · dây đồng bóc vỏ quấn vào cực (+). Thầy đọc to số, gõ vào cột "Lớp đo".</p>
+  <table>
+    <thead><tr><th>Lần</th><th>Que đỏ · que đen chạm vào</th><th>Lớp đo</th><th>Minh hoạ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>cực (+) · cực (−)</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b2">1,50 V</span></td></tr>
+      <tr><td>2</td><td>đổi hai que</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b2">−1,50 V</span></td></tr>
+      <tr><td>3</td><td>hai điểm trên một dây đồng</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,00 V</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut">
+    <button class="mo" data-mo="b2">Mở minh hoạ lần 1–2</button>
+    <button class="mo" data-mo="b3">Mở minh hoạ lần 3</button>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 12–16</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <p class="hoi">Lần 3: hai que chạm hai điểm trên cùng dây đồng. Vôn kế chỉ…</p>
+    <ol class="opt lo">
+      <li><b>A.</b> $1{,}5$ V</li>
+      <li data-dung><b>B.</b> $0$ V</li>
+      <li><b>C.</b> $-1{,}5$ V</li>
+      <li><b>D.</b> càng xa nhau càng lớn</li>
+    </ol>
+    <button class="mo" data-mo="r2">Mở: rút ra</button>
+    <div class="an" id="r2" hidden>
+      <p>Vôn kế đo <b>hiệu điện thế</b> giữa hai điểm ($V_{\text{đỏ}}-V_{\text{đen}}$), không đo điện thế một điểm. Lần 3 = <b>con chim</b>.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 4. U = Ed + Bẫy ============ -->
-<section class="stop gon" id="s4">
-  <div class="top"><span class="so">Điểm dừng 4/6 · $U=Ed$ và bẫy</span><span class="phut">phút 16–24</span><span class="tap">Tập tr.3 ô 3·2 → tr.4 ô 4·1</span></div>
-  <h2>Bẫy: "U = E nhân độ dài MN"</h2>
-  <div class="cols">
-    <div>
-      <p class="hoi"><span class="tap">PhET</span> Hai hàng điện tích (xếp sẵn). Kéo "Mặt đẳng thế" 1 m dọc đường sức, rồi 1 m ngang đường sức: lần nào số chỉ đổi?</p>
-      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Xem cận cảnh</span><span>49 giây · dùng khi bàn cuối không thấy số hoặc thiếu dụng cụ</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <p class="hoi">Nhìn số trên vôn kế ở cả 3 lần chạm.</p>
+  <div class="video"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.webp" controls preload="metadata" playsinline title="Vôn kế, pin 1,5 V và dây đồng"></video></div>
+</section>
+
+<!-- ================= 4. U = Ed + bẫy ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Thí nghiệm ảo PhET</span><span>phút 16–24</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <p class="hoi">Hai hàng điện tích trái dấu (xếp sẵn).</p>
+    <p class="hoi">Đi 1 m <u>dọc</u> đường sức, rồi 1 m <u>ngang</u> đường sức:<br>lần nào số chỉ đổi?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Sang PhET (tab 2)</a>
       <button class="mo" data-mo="p4">Mở: kết quả</button>
-      <div class="an" id="p4" hidden><p>Dọc đường sức: $V$ giảm đều theo quãng đi. Ngang đường sức: $V$ gần như không đổi (đường đẳng thế song song hai hàng). Chỉ phần đi <b>dọc đường sức</b> làm $V$ đổi.</p></div>
-      <p class="muc"><span class="tap">tr.3 · ô 3·2</span> Cùng một công, viết hai cách: $A_{MN}=qEd$ và $A_{MN}=qU_{MN}$</p>
-      <button class="mo" data-mo="c3">Mở: ghép hai dòng</button>
-      <div class="an" id="c3" hidden>
-        <p>Chia hai vế cho $q$: $U=Ed\ \Leftrightarrow\ E=\dfrac{U}{d}$; đơn vị $E$: V/m (cùng nghĩa với N/C).</p>
-        <p>$d$: hình chiếu <b>có dấu</b> của MN lên chiều <b>đường sức</b>; MN $\perp$ đường sức thì $U=0$.</p>
-      </div>
     </div>
-    <div>
-      <p class="muc"><span class="tap">tr.4 · ô 4·1 · Câu 5</span></p>
-      <div class="fig nho-fig f4"><!--FIG2--></div>
-      <p>$E=1000$ V/m, $MN=5$ cm hợp với đường sức $60^\circ$, N lệch theo chiều đường sức. $U_{MN}$ bằng:</p>
-      <ol class="opt lo hai" id="q4">
-        <li><b>A.</b> $50$ V</li>
-        <li data-dung><b>B.</b> $25$ V</li>
-        <li><b>C.</b> $43{,}3$ V</li>
-        <li><b>D.</b> $0$ V</li>
-      </ol>
-      <button class="mo" data-mo="a4">Mở đáp án</button>
-      <div class="an" id="a4" hidden>
-        <p><b>B.</b> Chỉ đúng $U=E\cdot MN$ khi MN nằm <b>dọc đường sức</b>. Xiên: $d=MN\cos\alpha=2{,}5$ cm; $U=1000\cdot0{,}025=25$ V.</p>
-        <p class="nho">A: nhân thẳng MN · C: chiếu bằng $\sin60^\circ$ · D: chỉ đúng khi MN $\perp$ đường sức.</p>
-      </div>
+    <div class="an" id="p4" hidden>
+      <p>Dọc đường sức: $V$ giảm đều. Ngang đường sức: $V$ gần như không đổi.</p>
+      <p>Chỉ phần đi <b>dọc đường sức</b> làm $V$ đổi.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 5. Bài mẫu ============ -->
-<section class="stop gon" id="s5">
-  <div class="top"><span class="so">Điểm dừng 5/6 · Bài mẫu</span><span class="phut">phút 24–27</span><span class="tap">Tập tr.5 · ô 5·1</span></div>
-  <h2>Hai bản song song: làm mẫu bước đầu, cả lớp làm tiếp</h2>
-  <div class="cols">
-    <div class="card">
-      <p>Hai bản phẳng song song cách nhau $2$ cm, nối nguồn $120$ V; mốc điện thế ở bản âm. a) $E$ giữa hai bản; b) $V_M$, M cách bản âm $0{,}5$ cm; c) electron đi từ bản âm sang bản dương: công lực điện (J và eV).</p>
-      <div class="an nhap"><p><b>Làm mẫu:</b> "hai bản phẳng song song" → điện trường đều → dùng được $U=Ed$. a) $E=\dfrac{120}{0{,}02}=6000$ V/m.</p></div>
-      <button class="mo" data-mo="m5d">Mở: bảng đọc đề (3 ô trống)</button>
-      <div class="an" id="m5d" hidden><ul>
-        <li>2 cm, 120 V → $d=0{,}02$ m → $E=U/d$</li>
-        <li>mốc bản âm → $V_-=0$, $V_+=120$ V</li>
-        <li>electron âm → dương → $q=-e$, $A=qU$</li>
-      </ul></div>
-    </div>
-    <div>
-      <button class="mo" data-mo="m5b">Mở b)</button>
-      <div class="an" id="m5b" hidden><p>Từ M tới bản âm cùng chiều đường sức, $d=+0{,}005$ m: $V_M=6000\cdot0{,}005=30$ V.</p></div>
-      <p class="nho"><b>Nhắc:</b> $1\ \text{eV}=1{,}6\cdot10^{-19}$ J là năng lượng electron nhận khi đi qua hiệu điện thế $1$ V.</p>
-      <p class="hoi">c) Giơ tay: công lực điện là</p>
-      <ol class="opt lo hai" id="q5">
-        <li><b>A.</b> $-120$ eV</li>
-        <li data-dung><b>B.</b> $+120$ eV</li>
-        <li><b>C.</b> $+30$ eV</li>
-        <li><b>D.</b> $0$ eV</li>
-      </ol>
-      <button class="mo" data-mo="m5c">Mở c)</button>
-      <div class="an" id="m5c" hidden>
-        <p><b>B.</b> $U_{\text{đầu–cuối}}=0-120=-120$ V; $A=(-e)(-120\ \text{V})=+120$ eV $=1{,}92\cdot10^{-17}$ J.</p>
-        <p class="nho">A: quên một dấu âm · C: lấy điện thế của M · D: tưởng electron không bị lực.</p>
-      </div>
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Thí nghiệm thật · khay nước muối</span><span>49 giây</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
+  <p class="hoi">Dời que đỏ song song với lá đồng: số chỉ đổi thế nào?</p>
+  <div class="video"><video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.webp" controls preload="metadata" playsinline title="Vôn kế trong khay nước muối"></video></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Số đo trong khay</span><span>hai lá đồng cách 10 cm, nguồn 6 V</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
+  <div class="fig f3"><!--FIG3--></div>
+  <p class="hoi">Bốn điểm nằm trên một đường thẳng: $V$ tăng đều theo $x$.</p>
+  <button class="mo" data-mo="g4">Mở: độ dốc là gì?</button>
+  <div class="an" id="g4" hidden><p>$\dfrac{V}{x}\approx60$ V/m $=\dfrac{U}{d}=\dfrac{6\ \text{V}}{0{,}1\ \text{m}}$: đó chính là $E$.</p></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · $U=Ed$</span><span>phút 16–24</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <p class="hoi">Cùng một công, viết hai cách:</p>
+    <div class="fx">$A_{MN}=qEd\qquad A_{MN}=qU_{MN}$</div>
+    <button class="mo" data-mo="c3">Mở: ghép hai dòng</button>
+    <div class="an" id="c3" hidden>
+      <p>Chia cho $q$: $U=Ed\ \Leftrightarrow\ E=\dfrac{U}{d}$ (V/m).</p>
+      <p>$d$: hình chiếu <b>có dấu</b> của MN lên <b>đường sức</b>. MN $\perp$ đường sức thì $U=0$.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 6. Trả bài + Kiểm tra lý thuyết trên web ============ -->
-<section class="stop gon" id="s6">
-  <div class="top"><span class="so">Điểm dừng 6/6 · Trả bài + đề 1215</span><span class="phut">phút 27–30 trả bài · 30–45 làm đề</span><span class="tap">Tập tr.4 ô 4·2 → tr.1 ô 1·3</span></div>
-  <div class="cols qrcols">
-    <div>
-      <p class="muc"><span class="tap">tr.4 · ô 4·2</span> Trả bài: viết câu 2, 6 — 2 phút, rồi mới mở</p>
-      <p class="hoi">2. Định nghĩa điện thế, công thức, đơn vị, mốc? <button class="mo nho-btn" data-mo="t2">Mở</button></p>
-      <div class="an" id="t2" hidden><p>$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$ · vôn (V) · mốc: Trái Đất, vô cực hoặc một điểm tự chọn.</p></div>
-      <p class="hoi">6. Hệ thức giữa E và U, nghĩa của d? <button class="mo nho-btn" data-mo="t6">Mở</button></p>
-      <div class="an" id="t6" hidden><p>$U=Ed$ · chỉ trong điện trường đều · $d$ = hình chiếu dọc đường sức.</p></div>
-    </div>
-    <div class="qrkhoi">
-      <div class="qr"><!--QR--></div>
-      <p class="made">Mã đề <b>1215</b> <span class="nho">· 20 câu · 15 phút</span></p>
-      <p class="nho">Mở thachlab → <b>Quét mã</b>; không quét được thì gõ số đề <b>1215</b>. Làm một mình, nộp xong mới cất máy.</p>
-      <p class="nho"><span class="tap">tr.1 · ô 1·3</span> Ghi đáp án câu con chim (C), đánh dấu đoán đúng/sai.</p>
-    </div>
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Bẫy</span><span>phút 16–24</span><span class="tap">tr.4 · ô 4·1 · Câu 5</span></div>
+  <p class="hoi">$E=1000$ V/m. $MN=5$ cm, lệch đường sức $60^\circ$. $U_{MN}=$ ?</p>
+  <div class="fig f2"><!--FIG2--></div>
+  <ol class="opt lo hang">
+    <li><b>A.</b>$50$ V</li>
+    <li data-dung><b>B.</b>$25$ V</li>
+    <li><b>C.</b>$43{,}3$ V</li>
+    <li><b>D.</b>$0$ V</li>
+  </ol>
+  <button class="mo" data-mo="a4">Mở đáp án</button>
+  <div class="an" id="a4" hidden>
+    <p><b>B.</b> $d=MN\cos60^\circ=2{,}5$ cm; $U=1000\cdot0{,}025=25$ V.</p>
+    <p class="nho">A: nhân thẳng MN · C: chiếu bằng $\sin$ · D: chỉ khi MN $\perp$ đường sức.</p>
   </div>
-  <div class="venha"><b>Về nhà theo Tập:</b> tr.1 ô 1·3 (dòng "điều em hiểu sai"), ô 1·4 phần còn lại · tr.2 ô 2·1 dòng 6, ô 2·3 dòng 5–6, ô 2·2 (Câu 1), ô 2·4 (Bẫy 1) · tr.3 Câu 2 trong ô 3·1, ô 3·3 (khay nước muối, xem clip trên web) + Câu 3, ô 3·4 · tr.4 ô 4·2 câu 1, 3, 4, 5, ô 4·3 · tr.5 ô 5·1 dòng "Kiểm tra", ô 5·2, 5·3, 5·4.</div>
 </section>
 
-<div class="dk" aria-hidden="true">← → điểm dừng · Enter mở ô</div>
+<!-- ================= 5. Bài mẫu ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">tr.5 · ô 5·1</span></div>
+  <div class="giua">
+    <p>Hai bản phẳng song song cách nhau $2$ cm, nối nguồn $120$ V; mốc điện thế ở bản âm.</p>
+    <p>a) $E$ giữa hai bản.<br>b) $V_M$, M cách bản âm $0{,}5$ cm.<br>c) Electron đi từ bản âm sang bản dương: công lực điện.</p>
+    <div class="an nhap"><p><b>Làm mẫu a):</b> "hai bản song song" → điện trường đều → $E=\dfrac{120}{0{,}02}=6000$ V/m.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">tr.5 · ô 5·1</span></div>
+  <div class="giua">
+    <button class="mo" data-mo="m5d">Mở: bảng đọc đề (3 ô)</button>
+    <div class="an" id="m5d" hidden><ul>
+      <li>2 cm, 120 V → $d=0{,}02$ m → $E=U/d$</li>
+      <li>mốc bản âm → $V_-=0$, $V_+=120$ V</li>
+      <li>electron → $q=-e$, $A=qU$</li>
+    </ul></div>
+    <button class="mo" data-mo="m5b">Mở b)</button>
+    <div class="an" id="m5b" hidden><p>M tới bản âm cùng chiều đường sức, $d=0{,}005$ m:<br>$V_M=6000\cdot0{,}005=30$ V.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">tr.5 · ô 5·1 · c)</span></div>
+  <div class="giua">
+    <p class="nho">$1\ \text{eV}=1{,}6\cdot10^{-19}$ J: năng lượng electron nhận khi đi qua hiệu điện thế $1$ V.</p>
+    <p class="hoi">c) Giơ tay: công lực điện là</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$-120$ eV</li>
+      <li data-dung><b>B.</b>$+120$ eV</li>
+      <li><b>C.</b>$+30$ eV</li>
+      <li><b>D.</b>$0$ eV</li>
+    </ol>
+    <button class="mo" data-mo="m5c">Mở c)</button>
+    <div class="an" id="m5c" hidden>
+      <p><b>B.</b> $U=0-120=-120$ V; $A=(-e)(-120\ \text{V})=+120$ eV.</p>
+      <p class="nho">$=1{,}92\cdot10^{-17}$ J · A: quên một dấu âm · C: lấy $V_M$ · D: tưởng electron không chịu lực.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Trả bài + đề 1215 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–30 · viết 2 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Định nghĩa điện thế, công thức, đơn vị, mốc?</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$ · vôn · mốc: Trái Đất, vô cực hoặc điểm tự chọn.</p></div>
+    <p class="hoi">Câu 6. Hệ thức giữa E và U, nghĩa của d?</p>
+    <button class="mo" data-mo="t6">Mở câu 6</button>
+    <div class="an" id="t6" hidden><p>$U=Ed$ · chỉ trong điện trường đều · $d$: hình chiếu dọc đường sức.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">tr.1 · ô 1·3: ghi đáp án con chim (C)</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1215</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1215 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 20</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · ô 1·4 phần còn lại</li>
+    <li><b>tr.2</b> ô 2·1 dòng 6 · ô 2·2 · ô 2·3 dòng 5–6 · ô 2·4</li>
+    <li><b>tr.3</b> Câu 2 ô 3·1 · ô 3·3 (khay nước muối) + Câu 3 · ô 3·4</li>
+    <li><b>tr.4</b> ô 4·2 câu 1, 3, 4, 5 · ô 4·3</li>
+    <li><b>tr.5</b> ô 5·1 dòng "Kiểm tra" · ô 5·2, 5·3, 5·4</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
 
 <script>
 (function(){
@@ -307,7 +361,7 @@ ol.opt.hai{grid-template-columns:1fr 1fr}
     btn.setAttribute('aria-expanded', open?'false':'true');
     btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
     // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
-    var sec=btn.closest('.stop');
+    var sec=btn.closest('.man');
     if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
   }
   document.querySelectorAll('button.mo').forEach(function(b){
@@ -316,15 +370,22 @@ ol.opt.hai{grid-template-columns:1fr 1fr}
     b.addEventListener('click',function(){toggle(b)});
   });
   document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
-  var stops=[].slice.call(document.querySelectorAll('.stop'));
-  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; stops.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
-  function go(d){ var k=Math.max(0,Math.min(stops.length-1,cur()+d)); stops[k].scrollIntoView({behavior:'smooth'}); }
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
   document.addEventListener('keydown',function(e){
-    if(e.target.closest && e.target.closest('button') && (e.key==='Enter'||e.key===' ')) return;
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
     if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
     else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
-    else if(e.key==='Enter'){ var b=stops[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
   });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
   document.addEventListener('DOMContentLoaded',function(){
     if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
   });
