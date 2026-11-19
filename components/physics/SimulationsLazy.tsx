@@ -19,6 +19,7 @@ const failed = (
 
 const Gas = dynamic(() => import("@/components/physics/GasGraphsSimulation"), { ssr: false, loading });
 const Charge = dynamic(() => import("@/components/physics/ChargeInFieldSimulation"), { ssr: false, loading });
+const CurrentBalance = dynamic(() => import("@/components/physics/CurrentBalanceSimulation"), { ssr: false, loading });
 
 export function GasGraphsSimulationLazy() {
   return (
@@ -32,6 +33,14 @@ export function ChargeInFieldSimulationLazy() {
   return (
     <LazyErrorBoundary fallback={failed}>
       <Charge />
+    </LazyErrorBoundary>
+  );
+}
+
+export function CurrentBalanceSimulationLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <CurrentBalance />
     </LazyErrorBoundary>
   );
 }

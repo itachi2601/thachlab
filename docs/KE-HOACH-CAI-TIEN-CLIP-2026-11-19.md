@@ -109,6 +109,11 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - **Đạt khi:** chạy ở 375px, đích chạm ≥ 44px, số liệu khớp `so_lieu_mau` của kho thí nghiệm; gắn vào bài bằng hộp `.tl-mo-phong` rồi
   `cap-nhat-ly-thuyet.sh` sau khi thầy duyệt.
 - Tư vấn đã làm và thầy đã chốt 19/11 — không cần tư vấn lại.
+- **Kết quả 19/11 (nhánh `claude/clip-viec5-mo-phong-987d82`):** ném ngang (L10 bài 12, lesson 57) và khúc xạ (L9 bài 5, lesson 83) ĐÃ CÓ PhET đúng
+  hiện tượng (projectile-motion, bending-light, `locale=vi`, bước "Thử" có dự đoán, ghi CC BY 4.0) → không thêm (V6, V11). Cân dòng điện:
+  `components/physics/CurrentBalanceSimulation.tsx` (khoá `can-dong-dien`), số cân lấy nguyên cột "Δm đo" của `tn-l12-thuchanhtu-04`; khối
+  radio/CSS cũ thành bản dự phòng; mô phỏng đặt sau clip. CHỜ thầy duyệt rồi mới
+  `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/l12-thuc-hanh-cam-ung-tu/theory.html 12` (cần deploy code trước).
 
 ### Việc 6 — Ghi lượt xem và lựa chọn của học sinh vào DB (sau việc 1–2)
 - **Model:** Opus, agent `kien-truc-du-lieu` cho schema + RLS; Sonnet nối `onEvent` trong component.

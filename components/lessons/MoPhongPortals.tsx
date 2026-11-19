@@ -2,7 +2,11 @@
 
 import { useLayoutEffect, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
-import { ChargeInFieldSimulationLazy, GasGraphsSimulationLazy } from "@/components/physics/SimulationsLazy";
+import {
+  ChargeInFieldSimulationLazy,
+  CurrentBalanceSimulationLazy,
+  GasGraphsSimulationLazy,
+} from "@/components/physics/SimulationsLazy";
 
 /**
  * Gắn mô phỏng tự kéo (C1, C2 — content/thi-nghiem/de-xuat-bo-sung-2026-11-12.md mục C) vào hộp
@@ -14,12 +18,19 @@ import { ChargeInFieldSimulationLazy, GasGraphsSimulationLazy } from "@/componen
 const MO_PHONG = {
   "do-thi-khi": GasGraphsSimulationLazy,
   "dien-tich-tu-truong": ChargeInFieldSimulationLazy,
+  "can-dong-dien": CurrentBalanceSimulationLazy,
 } as const;
 type Khoa = keyof typeof MO_PHONG;
 
 type Host = { host: HTMLElement; khoa: Khoa; key: string };
 
-export default function MoPhongPortals({ rootRef, version }: { rootRef: RefObject<HTMLElement | null>; version: string }) {
+export default function MoPhongPortals({
+  rootRef,
+  version,
+}: {
+  rootRef: RefObject<HTMLElement | null>;
+  version: string;
+}) {
   const [hosts, setHosts] = useState<Host[]>([]);
 
   useLayoutEffect(() => {
