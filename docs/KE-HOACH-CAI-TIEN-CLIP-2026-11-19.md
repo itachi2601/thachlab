@@ -32,6 +32,18 @@ Lỗi nội dung học sinh ảo nêu:
 - Nhãn trên hình 8–11px ở cỡ điện thoại, chữ xám nhạt; nhiều cảnh trống 1/3–2/3 khung, hình dụng cụ chỉ cao ≈ 100px.
 - Chỉ có một điểm bấm trong cả clip; học sinh muốn tự kéo biến (độ cao máng, góc laser, dòng I, đảo chiều).
 
+## 1b. Thầy chốt 19/11/2026 (sau tư vấn theo `docs/QUY-TAC-THIET-KE.md`)
+
+| Điểm | Quyết định | Căn cứ / ghi chú |
+|---|---|---|
+| Việc 1 | Lúc dừng: video thu còn ≈ 36svh và VẪN dính (không bỏ dính) | N8 chữ cạnh hình; mức dính 62% hiện nay ngược B6 |
+| Việc 2 | Câu chốt dạng **chọn A–D**, chấm tự động | Thầy chọn (tư vấn ban đầu là tự nhớ rồi xem đáp án). Nhãn A. B. C. D. (E1), đúng một đáp án, phản hồi có giải thích (L1), không điểm/xếp hạng (L3, K6) |
+| Việc 6 (mới) | CÓ ghi lượt chọn/bỏ qua/xem lại vào DB, làm sau việc 1–2 | Thước đo thật thay học sinh ảo; ghi gộp một lần, không thêm round-trip trang bài |
+| Việc 4 | Dựng lại **3 clip mẫu → thầy duyệt → 20 clip L12**; phần còn lại chờ số liệu việc 6 | ≈ 60 USD; không dựng lại cả kho |
+| Việc 5 | **PhET trước** cho ném ngang và khúc xạ (skill `phet`), chỉ tự viết cân dòng điện | V6, V11: chỉ gắn ở bài chưa có mô phỏng/PhET cho đúng hiện tượng đó |
+
+Thứ tự giao: việc 1 → việc 2 → việc 6 (cùng một component, nối tiếp). Việc 3 → việc 4 chạy song song với chuỗi trên. Việc 5 độc lập.
+
 ## 2. Các việc, xếp theo lợi ích trên công sức
 
 Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sau việc …". Việc 1 và 2 cùng đụng `components/lessons/VideoThiNghiemKhung.tsx` → làm lần lượt, không song song.
@@ -39,7 +51,7 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 ### Việc 1 — Khung Dự đoán không bị video che trên điện thoại
 - **Model:** Sonnet (sửa một component, có số đo rõ).
 - **File:** `components/lessons/VideoThiNghiemKhung.tsx` (lớp dính và chiều cao ở dòng ~447–452; `scrollIntoView` dòng ~196; chỗ dừng dòng ~119).
-- **Làm:** khi đang dừng ở câu hỏi trên màn < lg: thu video còn ≈ 35–40svh hoặc bỏ dính; cuộn sao cho câu hỏi nằm ngay dưới video
+- **Làm:** khi đang dừng ở câu hỏi trên màn < lg: thu video còn ≈ 36svh, vẫn dính (đã chốt, mục 1b); cuộn sao cho câu hỏi nằm ngay dưới video
   (tính cả chiều cao video dính và thanh điều hướng dưới); dừng sớm hơn ≈ 0,5 s để hình còn là hình của câu hỏi; ẩn thanh điều khiển gốc lúc dừng
   hoặc dời để không đè phụ đề.
 - **Đạt khi:** ở 375×812 và 375×667, lúc dừng: chữ câu hỏi + cả 4 lựa chọn + "Chưa muốn đoán" có `getBoundingClientRect().top` ≥ đáy video
@@ -50,11 +62,15 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - **Model:** Opus cho thiết kế + component; Sonnet cho việc điền dữ liệu từng clip.
 - **File:** `components/lessons/VideoThiNghiemKhung.tsx`, kiểu `VideoKhungData`, `scripts/video-thi-nghiem/xuat-khung.py` (`--kiem`),
   `content/thi-nghiem/video-khung/*.json`.
-- **Làm:** thêm trường tuỳ chọn cho câu chốt (câu hỏi, lựa chọn hoặc đáp số, giải thích, mốc giây); video dừng lần hai ở đầu cảnh Chốt,
-  học sinh trả lời rồi mới hiện đáp án. Clip chưa có trường này chạy như cũ. Điền trước cho 3 clip đã rà, sau đó theo lô.
-- **Đạt khi:** `--kiem` nhận trường mới; 3 clip mẫu có đáp án câu chốt khớp `content/thi-nghiem/<id>.json`; phản hồi không điểm, không xếp hạng (K6).
-- **Cần thầy quyết trước:** câu chốt dạng chọn A–D hay ô đáp số; có ghi kết quả vào DB để đo hay chưa.
-- Tư vấn theo nghiên cứu trước khi làm (AGENTS: tính năng HS thấy): nêu mã quy tắc, 3–6 dòng, thầy quyết.
+- **Làm (đã chốt: chọn A–D):** thêm trường tuỳ chọn cho câu chốt (câu hỏi, 4 lựa chọn, chỉ số đáp án, giải thích cho từng lựa chọn, mốc giây);
+  video dừng lần hai ở đầu cảnh Chốt, học sinh chọn rồi mới hiện đáp án + giải thích. Dùng lại đúng khối lựa chọn của câu Dự đoán
+  (cùng nhãn, cùng cỡ nút). Clip chưa có trường này chạy như cũ. Điền trước cho 3 clip đã rà, sau đó theo lô việc 4.
+- **Soạn phương án nhiễu:** lấy từ `hien_tuong_hay_sai` / `sai_so_thuong_gap` của `content/thi-nghiem/<id>.json`, mỗi phương án nhiễu là một
+  lỗi học sinh thật hay mắc; đúng MỘT đáp án; câu chốt không trùng ca của câu Dự đoán; các lựa chọn cùng độ dài tương đương, không lộ bằng hình thức.
+  `kiem-code` soát đáp án trước khi gắn.
+- **Đạt khi:** `--kiem` nhận trường mới và báo lỗi khi thiếu giải thích hoặc ≠ 4 lựa chọn; 3 clip mẫu có đáp án khớp kho; lúc dừng lần hai ở 375×812
+  câu hỏi + 4 lựa chọn nằm trọn dưới video (tiêu chí việc 1); phản hồi không mở đầu "Đúng/Sai" do tay viết, không điểm, không xếp hạng (K6, L3).
+- **Mã quy tắc:** E1, L1, L3, K6, K7, D2. Tư vấn đã làm và thầy đã chốt 19/11 — phiên nhận việc không cần tư vấn lại.
 
 ### Việc 3 — Cổng soát mới trong bộ dựng (chặn lỗi từ gốc)
 - **Model:** Sonnet.
@@ -71,7 +87,9 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 ### Việc 4 — Dựng lại clip theo cổng mới (sau việc 3)
 - **Model:** Opus mỗi clip một agent (chất lượng hình), `kiem-code` (Sonnet) soát ảnh ghép 283px. Ước ≈ 2,5 USD/clip.
 - **File:** `scripts/video-thi-nghiem/clips/*.py`, khung JSON, sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- **Làm:** bắt đầu bằng 3 clip đã rà để chốt mẫu, gửi thầy duyệt, rồi mới theo lô, ưu tiên bài nhiều học sinh xem:
+- **Phạm vi đã chốt:** 3 clip đã rà → gửi thầy duyệt mẫu (kèm link mp4) → một lô 20 clip L12 (chọn theo bài nằm trong phần thi TN và có câu
+  Dự đoán hay sai; lập danh sách gửi thầy trước khi dựng). Không dựng lại phần còn lại cho tới khi có số liệu việc 6.
+- **Làm:**
   - `nemngang1`: vẽ lại cảnh Bẫy (hai bi thả lệch nhau, có nhãn); tách công thức t và L thành hai nhịp; ghi rõ đường cong lần 1/lần 2.
   - `khucxa2`: giữ nhãn i, r suốt phần Tiến hành; một nhịp giới thiệu `sin i / sin r` trước cột số; nêu "≈ 1,5 = chiết suất n" ở Kết quả.
   - `thuchanhtu4`: chú thích `l` = chiều dài đoạn dây trong từ trường; cảnh Bẫy tách 3 bước ≥ 3 s; phóng to hộp Q, P, F′.
@@ -83,13 +101,26 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - **Model:** Opus (thiết kế tương tác + vật lí), phiên chính làm UI học sinh.
 - **File:** `components/physics/` (mẫu: `GasGraphsSimulation.tsx`, `ChargeInFieldSimulation.tsx`, `PredictGate.tsx`),
   `components/lessons/MoPhongPortals.tsx`, xem thử `/dev/mo-phong-tu-keo`.
-- **Làm:** ba mô phỏng đầu: ném ngang (kéo độ cao máng và v0), khúc xạ bán trụ (kéo góc tới), cân dòng điện (thanh I + nút đảo chiều).
-  Có dự đoán trước khi kéo; `next/dynamic({ssr:false})` + `LazyErrorBoundary`; không thêm round-trip Supabase.
+- **Làm (đã chốt: PhET trước):**
+  - Ném ngang và khúc xạ: dùng skill `phet` — kiểm URL + bản tiếng Việt, mở thật, viết bước "Thử" 2–3 nhiệm vụ có dự đoán, ghi nguồn CC BY 4.0.
+    Trước đó kiểm bài đã có PhET/mô phỏng cho đúng hiện tượng chưa; có rồi thì KHÔNG thêm (V6, V11). Phần này Sonnet làm được.
+  - Cân dòng điện: tự viết một component (thanh I 1–5 A + nút đảo chiều, số cân đổi theo), có dự đoán trước khi kéo (`PredictGate`);
+    `next/dynamic({ssr:false})` + `LazyErrorBoundary`; không thêm round-trip Supabase. Phần này Opus.
 - **Đạt khi:** chạy ở 375px, đích chạm ≥ 44px, số liệu khớp `so_lieu_mau` của kho thí nghiệm; gắn vào bài bằng hộp `.tl-mo-phong` rồi
   `cap-nhat-ly-thuyet.sh` sau khi thầy duyệt.
-- Tư vấn theo nghiên cứu trước khi làm, thầy quyết.
+- Tư vấn đã làm và thầy đã chốt 19/11 — không cần tư vấn lại.
+
+### Việc 6 — Ghi lượt xem và lựa chọn của học sinh vào DB (sau việc 1–2)
+- **Model:** Opus, agent `kien-truc-du-lieu` cho schema + RLS; Sonnet nối `onEvent` trong component.
+- **File:** migration mới `supabase/migrations/<timestamp>_*.sql` (kèm rollback, RLS bật, `revoke all from anon, authenticated`), nối vào `FILES` của
+  `scripts/run-migrations.sh`, ghi ĐANG CHỜ ở `docs/STATE.md`; `components/lessons/VideoThiNghiemKhung.tsx` (`onEvent`).
+- **Làm:** một bảng, mỗi lượt xem một dòng: học sinh, id thí nghiệm, bản clip, lựa chọn Dự đoán (hoặc bỏ qua), lựa chọn câu chốt, số lần xem lại,
+  có xem hết không. Gom sự kiện ở máy khách, ghi MỘT lần khi xem xong hoặc rời trang (qua RPC); không thêm round-trip lúc tải `/lop-hoc/bai`.
+  Đọc `docs/DATABASE.md` trước, không dò schema. Dữ liệu > 12 tháng theo quy tắc rollup của dự án.
+- **Đạt khi:** migration chạy thử trong giao dịch sạch; học sinh chỉ ghi/đọc dòng của mình, giáo viên đọc theo lớp; một truy vấn mẫu ra tỉ lệ
+  đúng Dự đoán, đúng câu chốt, bỏ qua, xem hết theo từng clip; `gen-database-doc.mjs` chạy lại.
+- Chạy migration theo mục "Migration Supabase" của `AGENTS.md`; không hoàn tác được thì hỏi thầy.
 
 ## 3. Việc nên làm thêm để tin được kết quả
 - Mở một bài thật bằng tài khoản học sinh trên điện thoại thật, xác nhận lỗi che ở việc 1 (mới đo ở trang `/dev`).
-- Sau việc 1–2: nối `onEvent` của khung vào bảng ghi (cần migration, agent `kien-truc-du-lieu`) để đo tỉ lệ chọn, bỏ qua, xem lại
-  trên học sinh thật — đây mới là thước đo hiệu quả, thay cho học sinh ảo.
+- Sau việc 6 chạy được 2–4 tuần: so tỉ lệ đúng câu chốt và tỉ lệ xem hết giữa clip dựng lại (việc 4) và clip cũ rồi mới quyết dựng tiếp.
