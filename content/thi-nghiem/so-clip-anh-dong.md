@@ -402,3 +402,5 @@ Kiểm chứng: không TN nào trong 55 có trường `mp4`; chưa có clip tự
 | tn-l9-hsgamthanh-01 | clips/hsgamthanh1.py | Thước nhô ra ngắn hay dài thì âm cao hơn, gấp mấy lần? | (chưa có slug trong content/lesson-samples) · 150 |
 
 YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ xoá YouTube nếu sai thí nghiệm — thầy quyết. Chưa phát hiện YouTube sai hẳn thí nghiệm; nghi cần thầy xem: tn-l12-ungdungcutu-03 (clip bếp thương mại, chưa chắc có đo hiệu suất 1 lít nước), tn-l10-tonghopluc-01 (nhãn "hai lực kế" nhưng tiêu đề ba lực kế/vòng nhẫn), tn-l11-dien-truong-deu-01 (cùng video điện phổ semolina với -03, không có E=U/d).
+
+**Lô 11 — trạng thái 19/11/2026:** 12/12 clip đã dựng, qua cổng A+B, tải `-20261119` (HEAD 200), chèn bài + khung trong repo (vào main). Chưa ghi DB (chờ thầy duyệt, sau 22h: `dang-lo11.sh`). K10 4 clip L12 đã đổi URL `-2` trong repo.
