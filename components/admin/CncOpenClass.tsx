@@ -20,7 +20,6 @@ export default function CncOpenClass() {
 
   useEffect(() => {
     let alive = true;
-    setCourses(null);
     fetchCncCourses(subjectCode)
       .then((rows) => { if (alive) { setCourses(rows); setError(""); } })
       .catch((e) => { if (alive) setError(e instanceof Error ? e.message : "Chưa tải được danh sách lớp."); });
@@ -41,7 +40,7 @@ export default function CncOpenClass() {
           {OPEN_SUBJECTS.map((s) => {
             const on = s.code === subjectCode;
             return (
-              <button key={s.code} type="button" role="radio" aria-checked={on} onClick={() => setSubjectCode(s.code)}
+              <button key={s.code} type="button" role="radio" aria-checked={on} onClick={() => { if (!on) { setCourses(null); setSubjectCode(s.code); } }}
                 className={`min-h-11 rounded-full border px-4 py-2 text-sm font-semibold ${on ? "border-blue-600 bg-blue-600 text-white" : "border-white/15"}`}>
                 {s.label}
               </button>
