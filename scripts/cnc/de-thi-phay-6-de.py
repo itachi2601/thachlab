@@ -22,10 +22,10 @@ DE = [
                ("L", 8, 3), ("A", 3, 8, 5, "G02")],
          holes=[(25, 12), (12, 25), (38, 25), (25, 33)]),
     dict(ten="Vát góc – lõm cạnh phải",
-         mo_ta="Hai góc trên bo R7 (G02), hai góc dưới vát 7×45° (G01), cạnh phải có cung lõm R6 (G03).",
+         mo_ta="Hai góc trên bo R7 (G02), hai góc dưới vát 7×45° (G01), cạnh phải có cung lõm R8 (G03).",
          start=(3, 10),
          path=[("L", 3, 40), ("A", 10, 47, 7, "G02"), ("L", 40, 47), ("A", 47, 40, 7, "G02"),
-               ("L", 47, 30), ("A", 47, 20, 6, "G03"), ("L", 47, 10), ("L", 40, 3),
+               ("L", 47, 31), ("A", 47, 19, 8, "G03"), ("L", 47, 10), ("L", 40, 3),
                ("L", 10, 3), ("L", 3, 10)],
          holes=[(14, 14), (34, 14), (14, 36), (34, 36)], lo_nhan=(0, 44, -40)),
     dict(ten="Đầu vòm – lõm cạnh dưới",
@@ -41,20 +41,30 @@ DE = [
                ("L", 47, 8), ("A", 42, 3, 5, "G02"), ("L", 8, 3), ("A", 3, 8, 5, "G02")],
          holes=[(13, 13), (37, 13), (37, 37), (25, 25)]),
     dict(ten="Hai đầu vòm – lõm cạnh dưới",
-         mo_ta="Hai đầu vòm R18 (G02), cạnh dưới có cung lõm R6 (G03).",
+         mo_ta="Hai đầu vòm R18 (G02), cạnh dưới có cung lõm R8 (G03).",
          start=(15, 40),
-         path=[("L", 35, 40), ("A", 35, 10, 18, "G02", {"t": 0.75}), ("L", 30, 10),
-               ("A", 20, 10, 6, "G03", {"L": -5}), ("L", 15, 10), ("A", 15, 40, 18, "G02", {"t": 0.25})],
+         path=[("L", 35, 40), ("A", 35, 10, 18, "G02", {"t": 0.75}), ("L", 31, 10),
+               ("A", 19, 10, 8, "G03", {"L": -5}), ("L", 15, 10), ("A", 15, 40, 18, "G02", {"t": 0.25})],
          holes=[(13, 25), (37, 25), (25, 33), (25, 19)]),
     dict(ten="Bo lồi trái – bo lõm phải",
-         mo_ta="Hai góc trái bo lồi R5 (G02), hai góc phải bo lõm R5 (G03).",
+         mo_ta="Hai góc trái bo lồi R5 (G02), hai góc phải bo lõm R8 (G03).",
          start=(3, 13),
-         path=[("L", 3, 37), ("A", 8, 42, 5, "G02"), ("L", 42, 42), ("A", 47, 37, 5, "G03", {"L": 4}),
-               ("L", 47, 13), ("A", 42, 8, 5, "G03", {"L": 4}), ("L", 8, 8), ("A", 3, 13, 5, "G02")],
+         path=[("L", 3, 37), ("A", 8, 42, 5, "G02"), ("L", 39, 42), ("A", 47, 34, 8, "G03", {"L": 3}),
+               ("L", 47, 16), ("A", 39, 8, 8, "G03", {"L": 3}), ("L", 8, 8), ("A", 3, 13, 5, "G02")],
          holes=[(13, 18), (35, 18), (13, 32), (35, 32)], lo_nhan=(0, 44, -40)),
 ]
 
-Z_VIEN, Z_LO = -4, -4          # rãnh biên dạng và lỗ khoan cùng sâu 4
+Z_VIEN, Z_LO = -4, -4          # biên dạng và lỗ khoan cùng sâu 4
+R_DAO = 5.0                    # dao phay ngón Ø10 (lớn nhất trên lớp), bù G41
+
+# Vòng phá góc (toạ độ TÂM dao, không bù): phôi ở góc cách biên dạng > 10 mm
+# thì một vòng G41 không quét tới. Mỗi đường bắt đầu ngoài phôi.
+PHA = {
+    3: [[(-6, 42), (1, 48.5), (49, 48.5), (56, 42)]],
+    4: [[(-6, 47), (3, 47)]],
+    5: [[(-6, 1.5), (48.5, 1.5), (48.5, 48.5), (1.5, 48.5), (1.5, -6)]],
+    6: [[(-6, 48.5), (56, 48.5)], [(-6, 1.5), (56, 1.5)]],
+}
 
 
 def arc_center(p0, p1, r, g):
@@ -78,6 +88,100 @@ def arc_points(p0, p1, r, g, n=60):
         while a1 < a0: a1 += 2 * math.pi
     return [(cx + r * math.cos(a0 + (a1 - a0) * i / n), cy + r * math.sin(a0 + (a1 - a0) * i / n))
             for i in range(n + 1)], (cx, cy), (a0 + a1) / 2
+
+
+def bien(de, n_line=80, n_arc=200):
+    pts, cur = [], de["start"]
+    for s in de["path"]:
+        if s[0] == "L":
+            pts += [(cur[0] + (s[1] - cur[0]) * k / n_line, cur[1] + (s[2] - cur[1]) * k / n_line) for k in range(n_line + 1)]
+        else:
+            pts += arc_points(cur, (s[1], s[2]), s[3], s[4], n_arc)[0]
+        cur = (s[1], s[2])
+    return pts
+
+
+def trong(p, poly):
+    x, y = p
+    c = False
+    for k in range(len(poly) - 1):
+        (x1, y1), (x2, y2) = poly[k], poly[k + 1]
+        if (y1 > y) != (y2 > y) and x < x1 + (y - y1) * (x2 - x1) / (y2 - y1):
+            c = not c
+    return c
+
+
+def vao_ra(de):
+    """Điểm vào dao A (G41) và ra dao B (G40): theo pháp tuyến ngoài của đoạn thẳng
+    đầu tiên, đủ xa để dao Ø10 xuống Z ở ngoài phôi."""
+    (sx, sy), s1 = de["start"], de["path"][0]
+    dx, dy = s1[1] - sx, s1[2] - sy
+    L = math.hypot(dx, dy)
+    ux, uy = dx / L, dy / L
+    nx, ny = -uy, ux                       # bên trái hướng đi = phía ngoài (đi cùng chiều kim)
+
+    def ngoai_phoi(q):
+        ddx = max(0 - q[0], 0, q[0] - 50)
+        ddy = max(0 - q[1], 0, q[1] - 50)
+        return math.hypot(ddx, ddy) >= R_DAO + 1
+    k = 10
+    while not ngoai_phoi((sx + k * nx - 10 * ux, sy + k * ny - 10 * uy)) or not ngoai_phoi((sx + k * nx, sy + k * ny)):
+        k += 1
+    A = (sx + k * nx - 10 * ux, sy + k * ny - 10 * uy)
+    B = (sx + k * nx, sy + k * ny)
+    # vị trí tâm dao thật lúc bắt đầu / kết thúc vòng bù
+    vt_dau = (sx + R_DAO * nx, sy + R_DAO * ny)
+    last = de["path"][-1]
+    if last[0] == "L":
+        prev = de["path"][-2]
+        ex, ey = sx - prev[1], sy - prev[2]
+        e = math.hypot(ex, ey)
+        vt_cuoi = (sx - R_DAO * ey / e, sy + R_DAO * ex / e)
+    else:
+        prev = de["path"][-2]
+        cx, cy = arc_center((prev[1], prev[2]), (sx, sy), last[3], last[4])
+        e = math.hypot(sx - cx, sy - cy)
+        sgn = 1 if last[4] == "G02" else -1   # cung lồi: dao ở phía xa tâm
+        vt_cuoi = (sx + sgn * R_DAO * (sx - cx) / e, sy + sgn * R_DAO * (sy - cy) / e)
+    return A, B, vt_dau, vt_cuoi
+
+
+def doan(p, q, n=60):
+    return [(p[0] + (q[0] - p[0]) * k / n, p[1] + (q[1] - p[1]) * k / n) for k in range(n + 1)]
+
+
+def kiem_dao(de, i):
+    """Dao Ø10 + G41: cung lõm > R dao, vào/ra/phá góc không lẹm chi tiết, không sót phôi."""
+    for s in de["path"]:
+        if s[0] == "A" and s[4] == "G03":
+            assert s[3] > R_DAO + 0.5, f"Đề {i}: cung lõm R{s[3]} không lớn hơn bán kính dao {R_DAO}"
+    poly = bien(de)
+
+    def kc(p):
+        return -1 if trong(p, poly) else min(math.hypot(p[0] - a, p[1] - b) for a, b in poly)
+    A, B, vd, vc = vao_ra(de)
+    tam = doan(A, vd) + doan(vc, B)
+    for line in PHA.get(i, []):
+        q0 = line[0]
+        assert min(abs(q0[0] - 25), abs(q0[1] - 25)) >= 25 + R_DAO + 1 or q0[0] < -R_DAO or q0[1] < -R_DAO, \
+            f"Đề {i}: vòng phá góc phải bắt đầu ngoài phôi"
+        for k in range(len(line) - 1):
+            tam += doan(line[k], line[k + 1])
+    for p in tam:
+        d = kc(p)
+        assert d >= R_DAO - 0.05, f"Đề {i}: tâm dao tại ({p[0]:.1f},{p[1]:.1f}) lẹm vào chi tiết ({d:.2f} < {R_DAO})"
+    sot = []
+    for gx in range(0, 201):
+        for gy in range(0, 201):
+            p = (gx / 4, gy / 4)
+            if trong(p, poly):
+                continue
+            if kc(p) <= 2 * R_DAO + 0.05:
+                continue
+            if any(math.hypot(p[0] - a, p[1] - b) <= R_DAO + 0.05 for a, b in tam):
+                continue
+            sot.append(p)
+    assert not sot, f"Đề {i}: còn sót phôi {len(sot)} điểm, vd {sot[:4]}"
 
 
 def kiem(de, i):
@@ -232,8 +336,8 @@ def ve(de, so):
     for k, t in enumerate([
         "- Phôi 50 × 50 × 10, gốc W góc dưới trái,",
         "  mặt trên Z0.",
-        f"- Rãnh biên dạng: dao phay ngón Ø4,",
-        f"  tâm dao đi trên đường vẽ, sâu {-Z_VIEN} mm.",
+        f"- Phay biên dạng ngoài sâu {-Z_VIEN} mm, dao Ø10,",
+        "  bù bán kính; phay bỏ hết phôi ngoài biên dạng.",
         f"- Khoan 4 lỗ Ø4 sâu {-Z_LO} mm.",
         "- Bắt buộc dùng G01, G02, G03.",
         "- Kích thước không chỉ dẫn ± 0,1.",
@@ -251,29 +355,40 @@ def ve(de, so):
     return "".join(o)
 
 
-def chuong_trinh(de, so):
+def so(v):
+    return fmt(round(v, 1))
+
+
+def chuong_trinh(de, so_de):
     n = [0]
     out = []
 
     def b(t):
         n[0] += 10
         out.append(f"N{n[0]} {t} ;")
-    out.append(f"O{1100+so:04d} ;")
+    out.append(f"O{1100+so_de:04d} ;")
     b("G17 G71 G90 G94 G54")
     b("T01 M06")
     b("G43 H01")
-    b("S1500 M03")
+    b("S1200 M03")
+    A, B, _, _ = vao_ra(de)
     sx, sy = de["start"]
-    b(f"G00 X{sx} Y{sy} Z5")
+    b(f"G00 X{so(A[0])} Y{so(A[1])} Z5")
     b(f"G01 Z{Z_VIEN} F60")
-    first = True
+    b(f"G41 H11 G01 X{sx} Y{sy} F150")
     for s in de["path"]:
-        f = " F150" if first else ""
-        first = False
         if s[0] == "L":
-            b(f"G01 X{s[1]} Y{s[2]}{f}")
+            b(f"G01 X{s[1]} Y{s[2]}")
         else:
-            b(f"{s[4]} X{s[1]} Y{s[2]} R{s[3]}{f}")
+            b(f"{s[4]} X{s[1]} Y{s[2]} R{s[3]}")
+    b(f"G40 G01 X{so(B[0])} Y{so(B[1])}")
+    b("G00 Z5")
+    for line in PHA.get(so_de, []):
+        b(f"G00 X{so(line[0][0])} Y{so(line[0][1])}")
+        b(f"G01 Z{Z_VIEN} F60")
+        for k, q in enumerate(line[1:]):
+            b(f"G01 X{so(q[0])} Y{so(q[1])}" + (" F150" if k == 0 else ""))
+        b("G00 Z5")
     b("G00 Z50")
     b("T02 M06")
     b("G43 H02")
@@ -291,7 +406,7 @@ def chuong_trinh(de, so):
 
 
 def bang(de):
-    rows = [("1", *de["start"], "G01 (xuống Z%d)" % Z_VIEN)]
+    rows = [("1", *de["start"], "G41 G01 (vào dao)")]
     for k, s in enumerate(de["path"], 2):
         lenh = "G01" if s[0] == "L" else f"{s[4]} R{s[3]}"
         rows.append((str(k) if k <= len(de["path"]) else "1", s[1], s[2], lenh))
@@ -306,6 +421,7 @@ def main():
     svgdir = sys.argv[1] if len(sys.argv) > 1 else None
     for i, de in enumerate(DE, 1):
         kiem(de, i)
+        kiem_dao(de, i)
     html = ['<!doctype html><html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             '<title>Đề thi phay CNC – 6 đề</title><style>svg{max-width:100%;height:auto}body{font:15px/1.5 system-ui;max-width:1000px;'
             'margin:auto;padding:16px;color:#111;background:#fff}h2{border-bottom:2px solid #124;margin-top:28px}pre{background:#f4f4f4;'
@@ -313,15 +429,18 @@ def main():
             'padding:4px 8px;text-align:left}.de{break-before:page}@page{size:A4 landscape;margin:8mm}</style>'
             '<h1>Đề thi phay CNC – 6 đề (Win-NC32 / Fanuc 21M)</h1><h2>Điều kiện chung</h2><ul>'
             '<li>Phôi 50 × 50 × 10 (nhựa POM), gốc W ở góc dưới trái mặt trên (G54), mặt trên Z0. Kích thước ghi theo toạ độ tính từ W.</li>'
-            f'<li>Rãnh biên dạng: dao phay ngón Ø4 (T01), tâm dao chạy trên đường vẽ, không bù bán kính, sâu {-Z_VIEN} mm. '
+            f'<li>Phay biên dạng ngoài (giữ phần trong đường vẽ) sâu {-Z_VIEN} mm bằng dao phay ngón Ø10 (T01), bù bán kính <b>G41</b>, huỷ bằng <b>G40</b>; ô bù H11 = 5.000 (Win-NC32 ghi H, FANUC chuẩn ghi D). '
+            'Vào/ra dao từ ngoài phôi. Góc phôi cách biên dạng quá 10 mm phải có thêm đường phá góc (tâm dao, không bù) để không sót phôi. '
+            'Mọi cung lõm đều R ≥ 7 > bán kính dao 5, nên Ø10 đi hết. '
             f'Khoan 4 lỗ Ø4 sâu {-Z_LO} mm bằng mũi khoan Ø4 (T02), chu trình G81 (G83 cũng chấp nhận).</li>'
             '<li>Bắt buộc dùng <b>G01</b>, <b>G02</b>, <b>G03</b>: mọi đề đều có cung lồi và cung lõm. Ghi cung bằng R (hoặc I, J).</li>'
-            '<li>Biên dạng trong đáp án đi cùng chiều kim đồng hồ từ điểm 1; SV đi ngược chiều vẫn đúng nếu đổi G02 ↔ G03 hợp lý.</li>'
+            '<li>Biên dạng trong đáp án đi cùng chiều kim đồng hồ từ điểm 1 (G41, phay thuận); SV đi ngược chiều thì dùng G42 và đổi G02 ↔ G03.</li>'
             '<li>Dung sai kích thước không chỉ dẫn ±0,1; mỗi ca thi 45 phút.</li></ul>'
             '<h2>Thang điểm (10)</h2><table><tr><th>Tiêu chí</th><th>Điểm</th></tr>'
             '<tr><td>Đọc bản vẽ, tính toạ độ đúng (có bảng điểm)</td><td>2</td></tr>'
             '<tr><td>Cấu trúc chương trình đúng (G17/G71/G90/G94/G54, thay dao, M03, M05, M30)</td><td>1</td></tr>'
-            '<tr><td>G02/G03 đúng chiều và R ở mọi cung</td><td>2</td></tr>'
+            '<tr><td>G02/G03 đúng chiều và R ở mọi cung</td><td>1</td></tr>'
+            '<tr><td>Bù dao G41/G40 đúng, vào/ra dao không lẹm, phá hết phôi ngoài biên dạng</td><td>1</td></tr>'
             '<tr><td>Chu trình khoan đúng (Z-4, R, G80 huỷ chu trình)</td><td>1</td></tr>'
             '<tr><td>Mô phỏng không báo lỗi/không va chạm</td><td>1</td></tr>'
             '<tr><td>Gia công đạt kích thước (±0,1) và bề mặt</td><td>3</td></tr></table>']
