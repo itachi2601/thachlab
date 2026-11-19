@@ -4,7 +4,14 @@
 # không làm trên nền cũ. Hook lỗi không được chặn phiên → luôn exit 0 ở phần báo cáo.
 set -uo pipefail
 
-[ "${CLAUDE_CODE_REMOTE:-}" = "true" ] || exit 0
+# Trên Mac: chỉ cảnh báo ổ sắp đầy (sự cố 19/11/2026: còn 2 GB, worktree ~240 GB), rồi thoát.
+if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
+  trong=$(df -g "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null | awk 'NR==2{print $4}')
+  if [ -n "$trong" ] && [ "$trong" -lt 40 ]; then
+    echo "⚠ Ổ Mac còn ${trong} GB trống (<40 GB). Báo thầy và đề xuất dọn: bash scripts/don-worktree.sh (xem trước) rồi --yes."
+  fi
+  exit 0
+fi
 cd "${CLAUDE_PROJECT_DIR:-.}"
 
 # --- 1. Phụ thuộc ---------------------------------------------------------
