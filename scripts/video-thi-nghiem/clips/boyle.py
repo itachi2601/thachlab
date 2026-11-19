@@ -90,11 +90,7 @@ def s_hook(img, d, t, sc):
     card(d, (80, 1110, 1000, 1590), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
     text(d, (W / 2, 1170), "Dự đoán", 46, PURPLE, alpha=k)
     ctext(d, 1270, "Ấn tới 4,0 ml (một nửa).\nÁp kế chỉ bao nhiêu?", 44, INK, alpha=k)
-    for i, s in enumerate(("A. 100 kPa", "B. 150 kPa", "C. 200 kPa")):
-        a = appear(t, sc["M"][1] + 0.2 + i * 0.15)
-        x0 = 100 + i * 300
-        card(d, (x0, 1395, x0 + 280, 1490), fill=A((245, 243, 255), a), outline=A(PURPLE, a), r=22, w=4)
-        text(d, (x0 + 140, 1443), s, 40, INK, alpha=a)
+    text(d, (W / 2, 1440), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=appear(t, sc["M"][1] + 0.2))   # K10: khong ve nut
     # thanh dem nguoc thoi gian nghi
     t1, t2 = sc["M"][1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
     d.rounded_rectangle([140, 1532, 940, 1546], radius=7, fill=A(LIGHT, k))
@@ -267,10 +263,10 @@ CLIP = dict(id="tn-l12-boylecharles-01", header="VẬT LÍ 12 · THÍ NGHIỆM",
     footer="Định luật Boyle · thachlab.id.vn", scenes=[
  dict(key="hook", title="Nén khí trong xilanh kín", draw=s_hook, tail=0.6, caps=[
    ("Khí nhốt kín, nối áp kế.", 2.4),
-   ("Chọn một đáp án.", 5.0)]),
+   ("Tự trả lời trước khi xem.", 5.0)]),
  dict(key="do", title="Ấn từ từ, đọc áp kế", draw=s_do, tail=0.8, caps=[
    ("Ấn từ từ, đợi số ổn định.", 6.9),
-   ("Gần gấp đôi: đáp án C.", 3.0)]),
+   ("Gần gấp đôi: 215 kPa.", 3.0)]),
  dict(key="graph", title="Đồ thị p–V và tích p·V", draw=s_graph, tail=0.6, caps=[
    ("V giảm, p tăng.", 2.5),
    ("Nhân p với V.", 2.5),

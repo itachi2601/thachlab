@@ -8,6 +8,8 @@
 # Hinh (nhin ngang): cuc N mat trong ben trai, S ben phai -> B nam ngang tu trai sang phai trong khe. Canh duoi khung vuong
 #   goc man hinh. I ra khoi trang (+z), B (+x): F = I l x B = +y -> F len (quy tac ban tay trai). Phan luc F' len nam cham
 #   huong xuong -> can (da TARE) chi +. Dao chieu: F xuong, F' len, can chi -. Nam cham can bang: N = P + F' (hoac P - F').
+# Ban 3 (19/11/2026): cat chu 285 -> <=200 tu/phut (bo nhan 'gia rieng' lap lai, bot the, caps ngan); K10: hop Du doan khong ve nut A-D
+#   (khung ben canh co lua chon that), huy hieu dap an khong chu cai.
 # Ban 2 (11/11/2026): HS nham luc len day voi luc len nam cham -> them canh 'chuoi' (ban tay trai -> F len DAY;
 #   DL III -> F' len NAM CHAM; can do nam cham), nhan 'len day'/'len nam cham', doi N -> Q (trung chu cuc N), cot F' (mN).
 from engine import *
@@ -44,7 +46,7 @@ WX, WY = 510, 540                       # day trong khe
 YOKE = (175, 180, 195)
 def kF(I): return 24 * I                # do dai mui ten F, F' (px) ti le I
 
-def rig(d, I, sgn, dm, fbd=True, label=True, show=2):
+def rig(d, I, sgn, dm, fbd=True, label=True, show=2, ten=True):
     """show: 0 = chua ve luc, 1 = chi F len day, 2 = ca F va F' (kem so do luc len nam cham neu fbd)."""
     # chan de + tru giu khung (dung rieng, khong cham can)
     d.rounded_rectangle([830, 930, 1010, 952], radius=8, fill=NAVY)
@@ -65,7 +67,6 @@ def rig(d, I, sgn, dm, fbd=True, label=True, show=2):
     if show >= 2 and I > 0:                     # vien cam: vat chiu F' la nam cham
         U = [(330, 440), (410, 440), (410, 700), (610, 700), (610, 440), (690, 440), (690, 790), (330, 790), (330, 440)]
         d.line(U, fill=ORANGE, width=5)
-    if label: text(d, (WX + 14, 262), "giá riêng, không chạm cân", 30, NOTE, bold=False, anchor="lm")
     # duong suc trong khe: tu N sang S
     for y in (490, 590, 540):
         if y == 540:
@@ -81,7 +82,7 @@ def rig(d, I, sgn, dm, fbd=True, label=True, show=2):
         fx = WX + 40                            # canh thanh giu, goc o ngang day
         varrow(d, fx, WY, L, GREEN)
         text(d, (WX - 16, WY - L / 2), "F", 40, GREEN, anchor="rm")
-        text(d, (WX - 20, 410), "F: lên dây", 36, GREEN, anchor="rm")
+        if ten: text(d, (WX - 20, 410), "F: lên dây", 36, GREEN, anchor="rm")
     if I > 0 and show >= 2:
         # F' dat tren nhanh phai cua nam cham (xa day), nam tron trong nam cham
         fy = 640 if L > 0 else 770
@@ -130,45 +131,40 @@ def table(d, y0, rows, ks, hl=0.0, minh_hoa=True, rh=64):
     return h
 
 # ---------------- canh 1: Du doan ----------------
-OPTS = ("+2,90 g", "+1,45 g", "0,00 g", "−1,45 g")
 
 def s_hook(img, d, t, sc):
-    rig(d, 3, 1, 1.45, show=0)
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
+    rig(d, 3, 1, 0.0 if a <= 0 else 1.45, show=0)
     if a <= 0:
         k = appear(t, 0.5, 0.5)
         card(d, (60, 1010, 1020, 1300), fill=A(WHITE, k), outline=A(LIGHT, k), w=3)
-        text(d, (W / 2, 1100), "Cân đã TARE (về 0).", 44, INK, alpha=k)
-        text(d, (W / 2, 1190), "I = 3 A, ra khỏi trang", 44, INK, alpha=k)
+        text(d, (W / 2, 1150), "Cân đã về 0.", 44, INK, alpha=k)
         return
     y0 = 1000 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 610), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    card(d, (50, y0, 1030, y0 + 470), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
     card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 88), fill=A(PURPLE, a), r=31)
     text(d, (W / 2, y0 + 57), "DỰ ĐOÁN", 36, WHITE, alpha=a)
     text(d, (W / 2, y0 + 150), "3 A ra khỏi trang: cân chỉ +1,45 g.", 42, INK, alpha=a)
     text(d, (W / 2, y0 + 220), "Đảo chiều dòng: cân chỉ?", 44, INK, alpha=a)
-    for j, s in enumerate(OPTS):
-        k = appear(t, M[1] + 0.15 * j, 0.4); yy = y0 + 312 + j * 66
-        d.rounded_rectangle([90, yy - 29, 990, yy + 29], radius=29, outline=A(LIGHT, k), width=3)
-        text(d, (130, yy), f"{'ABCD'[j]}.   {s}", 38, NAVY, bold=False, anchor="lm", alpha=k)
+    text(d, (W / 2, y0 + 310), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)   # K10: khong ve nut A-D
     tc, tend = M[1] + 0.8, sc["T"] - 0.2
     if t > tc:
         p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 580, 940, y0 + 592], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 580, 140 + 800 * (1 - p), y0 + 592], radius=6, fill=A(PURPLE, a))
+        d.rounded_rectangle([140, y0 + 400, 940, y0 + 412], radius=6, fill=A(LIGHT, a))
+        d.rounded_rectangle([140, y0 + 400, 140 + 800 * (1 - p), y0 + 412], radius=6, fill=A(PURPLE, a))
 
 # ---------------- canh 1b: Chuoi 3 buoc - luc nao len vat nao ----------------
-CHAIN = (("Quy tắc bàn tay trái", "F lên DÂY: hướng lên", GREEN),
-         ("Định luật III Newton", "F′ lên NAM CHÂM: hướng xuống", ORANGE),
-         ("Cân chỉ đỡ nam châm", "Số cân tăng: +1,45 g", NAVY))
+CHAIN = (("Bàn tay trái", "F lên DÂY: hướng lên", GREEN),
+         ("Định luật III", "F′ lên NAM CHÂM: xuống", ORANGE),
+         ("Cân đỡ nam châm", "Cân tăng +1,45 g", NAVY))
 
 def chain_at(sc):
     M = sc["M"]; return (0.5, M[1] + 0.1, M[1] + 1.7)
 
 def s_chuoi(img, d, t, sc):
     at = chain_at(sc)
-    rig(d, 3, 1, 1.45, show=2 if t >= at[1] else 1)
+    rig(d, 3, 1, 1.45, show=2 if t >= at[1] else 1, ten=False)
     card(d, (40, 985, 1040, 1640), fill=WHITE, outline=LIGHT, w=3)
     for j, (nho, to, col) in enumerate(CHAIN):
         k = appear(t, at[j], 0.45); yy = 1085 + j * 205
@@ -200,7 +196,7 @@ def s_do(img, d, t, sc):
     if rev - 0.25 <= t < rev + 0.25:
         kk = abs(t - rev) / 0.25; Ieff = 3 * kk; sgn_eff = 1 if t < rev else -1
     else: Ieff, sgn_eff = I, sgn
-    rig(d, Ieff, sgn_eff, dm, label=not (rev - 0.2 <= t < rev + 1.6))
+    rig(d, Ieff, sgn_eff, dm, label=False, fbd=False, ten=False)
     # thanh I + chieu
     card(d, (40, 975, 1040, 1075), fill=WHITE, outline=NAVY, w=4, r=24)
     text(d, (80, 1025), f"I = {I} A", 46, INK, anchor="lm")
@@ -239,7 +235,6 @@ def mini(d, cx, sgn, k):
     fy = 560 if L > 0 else 660
     varrow(d, cx + 52, fy, -L, ORANGE, w=8, head=20)
     text(d, (cx + 70, fy + L / 2), "F′", 36, ORANGE, anchor="lm")
-    text(d, (cx, 706), "F: lên dây · F′: lên nam châm", 28, NOTE, bold=False, alpha=k)
     text(d, (cx, 770), "+1,45 g" if sgn > 0 else "−1,45 g", 48, GREEN if sgn > 0 else RED, alpha=k)
 
 def plot(d, box, k_line, k_rev, alpha=1.0):
@@ -269,12 +264,12 @@ def s_dapan(img, d, t, sc):
     ka = appear(t, M[0] + 0.1, 0.4)
     mini(d, 295, 1, 1.0); mini(d, 785, -1, appear(t, 0.1, 0.4))
     if ka > 0:
-        pw = tw(d, "ĐÁP ÁN D", F(36)) + 52
+        pw = tw(d, "ĐÁP ÁN: −1,45 g", F(36)) + 52
         card(d, (W / 2 - pw / 2, 832, W / 2 + pw / 2, 892), fill=A(NAVY, ka), r=30)
-        text(d, (W / 2, 862), "ĐÁP ÁN D", 36, WHITE, alpha=ka)
+        text(d, (W / 2, 862), "ĐÁP ÁN: −1,45 g", 36, WHITE, alpha=ka)
     k1 = appear(t, M[0] + 2.2, 0.45)
     if k1 > 0:
-        text(d, (W / 2, 940), "F (dây) và F′ (nam châm) cùng đổi chiều", 40, INK, alpha=k1)
+        text(d, (W / 2, 940), "F và F′ cùng đổi chiều", 40, INK, alpha=k1)
     k2 = appear(t, M[1] - 0.6, 0.5)
     card(d, (40, 985, 1040, 1660), fill=A(WHITE, k2), outline=A(LIGHT, k2), w=3)
     if k2 > 0:
@@ -284,7 +279,7 @@ def s_dapan(img, d, t, sc):
 # ---------------- canh 4: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    table(d, 240, ROWS + [REV], [1.0] * 6, hl=appear(t, 0.2, 0.4))
+    table(d, 240, ROWS + [REV], [1.0] * 6, hl=appear(t, 0.2, 0.4), minh_hoa=False)
     k1 = appear(t, 0.2, 0.4); k3 = appear(t, M[1] - 0.1, 0.45)
     mk = M[0] + 2.4; a1 = k1 * (1 - k3)
     y = 820
@@ -304,28 +299,28 @@ def s_bay(img, d, t, sc):
         k2 = a1 * appear(t, mk, 0.45)
         text(d, (W / 2, y + 430), "B = Δm·g / (I·l)", 56, INK, alpha=k2)
         text(d, (W / 2, y + 520), "1 A → 0,123 T   ·   5 A → 0,120 T", 40, ORANGE, alpha=k2)
-        ctext(d, y + 650, "B ≈ 0,12 T: của khe nam châm", 44, INK, maxw=880, alpha=k2)
+        ctext(d, y + 650, "B ≈ 0,12 T: khe nam châm", 44, INK, maxw=880, alpha=k2)
     if k3 > 0:
         card(d, (40, y, 1040, y + 820), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, y + 70), "Chưa nói được", 48, NAVY, alpha=k3)
-        lines = (("• Từ trường rò ở mép khe", ""), ("• Góc khác 90°", ""), ("• Số đo thật: chưa có", ""))
+        lines = (("• Từ trường rò mép khe", ""), ("• Góc khác 90°", ""))
         for j, (l1, l2) in enumerate(lines):
             kk = k3 * appear(t, M[1] + 0.2 + 0.4 * j, 0.4); yy = y + 240 + j * 180
             text(d, (100, yy), l1, 46, INK, anchor="lm", alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def _end_body(d, t, k):
-    text(d, (W / 2, 1110), "3 A ra khỏi trang: +1,45 g", 42, NOTE, bold=False, alpha=k)
+    pass
 
 def s_end(img, d, t, sc):
     M = sc["M"]
-    chot_hoi(d, t, sc, "Cân đọc lực lên nam châm, bằng lực từ lên dây",
-             "Bàn tay trái: lực lên dây hướng lên. Vì sao số cân lại tăng?", None, body=_end_body)
+    chot_hoi(d, t, sc, "Đảo chiều dòng, số cân đổi dấu",
+             "Vì sao số cân tăng?", None, body=_end_body)
     kh = appear(t, M[0] + 3.0, 0.5)                 # goi y hien sau, de HS tu nghi truoc
     if kh > 0:
         card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
         ctext(d, 1350, "Gợi ý", 36, MUTED, bold=False, alpha=kh)
-        ctext(d, 1440, "Cân đang đỡ vật nào?", 44, ORANGE, maxw=820, alpha=kh)
+        ctext(d, 1440, "Cân đỡ vật nào?", 44, ORANGE, maxw=820, alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -340,20 +335,20 @@ def _cues(clip):
 CLIP = dict(id="tn-l12-thuchanhtu-04", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Thực hành đo cảm ứng từ · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Cân dòng điện", draw=s_hook, tail=0.3, caps=[
-   "Dây nằm trong khe nam châm.",
-   ("Dừng video, chọn A, B, C hay D.", 4.6)]),
+   "Dây trong khe nam châm.",
+   ("Tự trả lời trước khi xem.", 4.6)]),
  dict(key="chuoi", title="Lực nào lên vật nào?", draw=s_chuoi, tail=0.3, caps=[
-   ("Bàn tay trái: lực lên dây hướng lên.", 3.0),
-   ("Phản lực ép nam châm xuống cân.", 3.4)]),
+   ("Bàn tay trái: F lên dây.", 3.6),
+   ("Phản lực F′ ép nam châm xuống.", 3.9)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
    ("Tăng I từ 1 A đến 5 A.", 4.5),
    ("Về 3 A, rồi đảo chiều.", 4.0)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
-   ("Đảo chiều: −1,45 g. Đáp án D.", 3.6),
+   ("Đảo chiều: cân đổi dấu.", 3.6),
    ("Δm tỉ lệ thuận với I.", 2.9)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
    ("Đúng hay sai?", 5.0),
-   ("Giới hạn của thí nghiệm.", 3.6)]),
+   ("Còn thiếu gì?", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Dừng video và trả lời.", 5.4)]),
+   ("Tự trả lời rồi xem tiếp.", 5.6)]),
 ])
