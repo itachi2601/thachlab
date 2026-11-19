@@ -121,7 +121,7 @@ def rays(d, i, arcs=True, lab=None):
         d.arc([C[0] - 110, C[1] - 110, C[0] + 110, C[1] + 110], 90, 90 + i, fill=NAVY, width=5)
         if r is not None: d.arc([C[0] - 140, C[1] - 140, C[0] + 140, C[1] + 140], 270, 270 + r, fill=DGREEN, width=5)
         if lab:
-            m = math.radians(90 + i / 2); text(d, (C[0] + 160 * math.cos(m), C[1] + 160 * math.sin(m)), lab[0], 42, NAVY)
+            m = math.radians(90 + i + 25); text(d, (C[0] + 150 * math.cos(m), C[1] + 150 * math.sin(m)), lab[0], 42, NAVY)  # ngoai goc, khong de tia toi
             if r is not None:
                 m = math.radians(270 + r / 2); text(d, (C[0] + 195 * math.cos(m), C[1] + 195 * math.sin(m)), lab[1], 42, DGREEN)
 
@@ -168,7 +168,7 @@ def s_hook(img, d, t, sc):
 
 
 # ---------------- canh 2: Tien hanh ----------------
-T0, DT, ROT, READ, ROW = 0.6, 1.5, 0.5, 0.8, 1.2
+T0, DT, ROT, READ, ROW = 0.6, 1.5, 0.5, 0.8, 0.8
 def do_state(t):
     """-> (goc i dang chieu, chi so lan do dang dung (-1 khi dang xoay), so hang bang)."""
     rows, ang, k_on = 0, ROWS[0][0], -1
@@ -186,10 +186,17 @@ def do_state(t):
 def r_txt(k): return f"r = {ROWS[k][1]}°" if ROWS[k][1] is not None else "không còn tia ló"
 
 
+def card_state(ang, k_on, rows):
+    """(i hien, chu r hoac None). Laser con dung o goc hang vua ghi -> giu so cua hang do (khop bang)."""
+    if k_on >= 0: return ROWS[k_on][0], r_txt(k_on)
+    if rows > 0 and abs(ang - ROWS[rows - 1][0]) < 0.5: return ROWS[rows - 1][0], r_txt(rows - 1)
+    return round(ang), None
+
+
 def s_do(img, d, t, sc):
     ang, k_on, rows = do_state(t)
     disk(d); pen(d, ang); rays(d, ang)
-    readout(d, round(ang) if k_on < 0 else ROWS[k_on][0], r_txt(k_on) if k_on >= 0 else None)
+    readout(d, *card_state(ang, k_on, rows))
     table(d, rows)
 
 
@@ -203,6 +210,9 @@ def _kiem_dong_bo():
             r = r_of(ang)
             if (r is None) != (ROWS[k_on][1] is None): bad.append((round(t, 2), "tia khuc xa khong khop so"))
             if r is not None and abs(r - ROWS[k_on][1]) > 0.65: bad.append((round(t, 2), "r lech tia"))
+        ci, cr = card_state(ang, k_on, rows)
+        if cr is not None and ci not in [x[0] for x in ROWS[:rows]]: bad.append((round(t, 2), "the r co so ma bang chua ghi"))
+        if cr is None and ci in [x[0] for x in ROWS[:rows]]: bad.append((round(t, 2), "the r = … o goc da ghi"))
         if rows > 0:
             done = max(k for k in range(6) if t >= T0 + DT * k)
             if rows > done + 1: bad.append((round(t, 2), "hang som"))
@@ -278,8 +288,8 @@ def s_end(img, d, t, sc):
     kh = appear(t, M[0] + 3.2, 0.5)
     if kh > 0:
         card(d, (90, 1030, 990, 1260), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        text(d, (W / 2, 1080), "Gợi ý: đã đo", 44, INK, alpha=kh)
-        text(d, (W / 2, 1180), "35° → 60°    40° → 74°", 46, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1105), "Gợi ý: gần 42°, r tăng", 44, INK, alpha=kh)
+        text(d, (W / 2, 1180), "càng lúc càng nhanh", 44, (176, 64, 8), alpha=kh)
 
 
 def _cues(clip):

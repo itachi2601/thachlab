@@ -2,7 +2,7 @@
 # So lieu lay nguyen tu content/thi-nghiem/tn-l9-doanmach-03.json (_kiem_so() doi chieu ca mo_hinh):
 #   U = 3 V ; R bong = 6 Ω ; so_lieu_mau: noi tiep 0,25 A -> thao mot bong 0 ; song song 0,5 A -> 0,5 A (so minh hoa).
 # KHTN 9: chi dung I nhu nhau (noi tiep), moi nhanh nhan du U (song song), I = I1 + I2 (bai nay) ; khong P = UI.
-# Du doan (K10, khong nut A-D): thao Đ1 o ca hai mach, ampe kế o Đ2 chi bao nhieu? -> noi tiep 0 A, song song van 0,5 A.
+# Du doan (K10, khong nut A-D, sua cong B): ampe ke MACH CHINH, thao Đ1 o ca hai mach -> noi tiep 0,25 -> 0 A ; song song 1,0 -> 0,5 A.
 #   Khac Cau 6 cua bai (2 bong 220 V song song, hoi do sang) va Du doan mo bai (day den Tet).
 # Bay = hien_tuong_hay_sai[1] (bong dut van cho dong yeu qua). Khong dung [0] (= phuong an C Cau 6).
 # Chua noi duoc: gia_thiet "dien tro bong coi khong doi" -> so that khi day toc nguoi.
@@ -13,6 +13,7 @@ from engine import *
 U, RB = 3, 6
 NT = (0.25, 0.0)            # noi tiep: dong moi bong ; thao mot bong
 SS = (0.5, 0.5)             # song song
+MAIN = {"nt": (0.25, 0.0), "ss": (1.0, 0.5)}   # ampe ke mach chinh (ghi_chu kho), I = I1 + I2
 def vn(x): return ("%g" % x).replace(".", ",")
 
 def _kiem_so():
@@ -23,6 +24,9 @@ def _kiem_so():
     hang = {r[0]: tuple(r[1:]) for r in k["so_lieu_mau"]["hang"]}
     assert hang["nối tiếp"] == NT and hang["song song"] == SS
     assert abs(U / (2 * RB) - NT[0]) < 1e-9 and abs(U / RB - SS[0]) < 1e-9          # mo_hinh
+    g = k["so_lieu_mau"]["ghi_chu"]
+    assert "nối tiếp 0,25 A → tháo một bóng 0 A; song song 1,0 A → tháo một bóng 0,5 A" in g
+    assert MAIN["nt"] == NT and MAIN["ss"] == (2 * SS[0], SS[1])                     # I = I1 + I2
     assert "1,0 A" in k["so_lieu_mau"]["ghi_chu"] and abs(2 * SS[1] - 1.0) < 1e-9     # ca chot
 _kiem_so()
 
@@ -35,7 +39,7 @@ def rails(y0, kind):
     return y1, (y2 if kind == "ss" else None), y3
 def bulbs(y0, kind):
     y1, y2, y3 = rails(y0, kind)
-    return ({"Đ1": (330, y1), "Đ2": (540, y1)}, (750, y1)) if kind == "nt" else ({"Đ1": (540, y1), "Đ2": (440, y2)}, (660, y2))
+    return ({"Đ1": (330, y1), "Đ2": (600, y1)}, (760, y3)) if kind == "nt" else ({"Đ1": (540, y1), "Đ2": (540, y2)}, (760, y3))
 
 def battery(d, x, y):
     d.line([(x - 15, y - 22), (x - 15, y + 22)], fill=WIRE, width=10)          # cuc am: ngan, day
@@ -62,7 +66,6 @@ def circuit(d, y0, kind, rm=0.0, broken=False, a_on=True):
     R = 34
     gaps = {1: [], 2: []}                                   # cac khoang ho tren moi thanh (bong, ampe ke)
     for nm, (x, y) in bl.items(): gaps[1 if y == y1 else 2].append((x - R, x + R))
-    gaps[1 if am[1] == y1 else 2].append((am[0] - R, am[0] + R))
     for r, yy in ((1, y1), (2, y2)):
         if yy is None: continue
         xs = [XL] + [v for g in sorted(gaps[r]) for v in g] + [XR]
@@ -74,7 +77,8 @@ def circuit(d, y0, kind, rm=0.0, broken=False, a_on=True):
     xb = 560
     d.line([(XL, y3), (300, y3)], fill=WIRE, width=5); d.line([(300, y3), (370, y3 - 4)], fill=WIRE, width=5)
     dot(d, 300, y3, 8, WIRE); dot(d, 372, y3, 8, WIRE); text(d, (336, y3 + 46), "K", 40, INK)
-    d.line([(372, y3), (xb - 15, y3)], fill=WIRE, width=5); d.line([(xb + 15, y3), (XR, y3)], fill=WIRE, width=5)
+    d.line([(372, y3), (xb - 15, y3)], fill=WIRE, width=5)
+    d.line([(xb + 15, y3), (am[0] - R, y3)], fill=WIRE, width=5); d.line([(am[0] + R, y3), (XR, y3)], fill=WIRE, width=5)
     d.rectangle([xb - 14, y3 - 45, xb + 14, y3 + 45], fill=WHITE)
     battery(d, xb, y3)
     # bong
@@ -102,20 +106,20 @@ def circuit(d, y0, kind, rm=0.0, broken=False, a_on=True):
     # ampe ke + so chi (dong bo voi trang thai)
     x, y = am
     d.ellipse([x - R, y - R, x + R, y + R], fill=WHITE, outline=WIRE, width=5); text(d, (x, y), "A", 40, WIRE)
-    val = (NT if kind == "nt" else SS)[1 if opened else 0]
+    val = MAIN[kind][1 if opened else 0]
     s = vn(val) + " A"
     bw = tw(d, s, F(46)) + 40
-    card(d, (x + R + 14, y - 32, x + R + 14 + bw, y + 32), fill=NAVY, r=14)
-    text(d, (x + R + 14 + bw / 2, y), s, 46, (253, 224, 71))
+    card(d, (x - bw / 2, y - 100, x + bw / 2, y - 40), fill=NAVY, r=14)
+    text(d, (x, y - 70), s, 46, (253, 224, 71))
     # mui ten chieu dong (chi khi co dong), w=7 head=20, dai >= 70 px
     if a_on and on2:
         AR = ORANGE
         arrow(d, (XR + 26, y3 - 30), (XR + 26, (y2 if y2 else y1) + 40), AR, w=7, head=20)     # canh phai: len
         arrow(d, (XL - 26, (y2 if y2 else y1) + 30), (XL - 26, y3 - 40), AR, w=7, head=20)     # canh trai: xuong
         if kind == "nt":
-            arrow(d, (480, y1 - 70), (390, y1 - 70), AR, w=7, head=20)                       # thanh tren: sang trai
+            arrow(d, (520, y1 - 70), (430, y1 - 70), AR, w=7, head=20)                       # thanh tren: sang trai
         else:
-            arrow(d, (380, y2 + 50), (230, y2 + 50), AR, w=7, head=20)                       # nhanh Đ2: sang trai
+            arrow(d, (440, y2 + 50), (290, y2 + 50), AR, w=7, head=20)                       # nhanh Đ2: sang trai
             if on1: arrow(d, (860, y1 - 30), (720, y1 - 30), AR, w=7, head=20)               # nhanh Đ1: sang trai
     return opened
 
@@ -132,7 +136,7 @@ def s_hook(img, d, t, sc):
     card(d, (W / 2 - pw / 2, y0 + 22, W / 2 + pw / 2, y0 + 86), fill=A(PURPLE, a), r=32)
     text(d, (W / 2, y0 + 54), "DỰ ĐOÁN", 40, WHITE, alpha=a)
     text(d, (W / 2, y0 + 160), "Tháo bóng Đ1 ở cả hai mạch.", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 235), "Ampe kế ở Đ2 chỉ bao nhiêu?", 46, INK, alpha=a)
+    text(d, (W / 2, y0 + 235), "Ampe kế mạch chính chỉ bao nhiêu?", 46, INK, alpha=a)
     text(d, (W / 2, y0 + 330), "Chọn đáp án ở khung câu hỏi", 40, MUTED, alpha=a)
     tc, tend = M[1] + 0.5, sc["T"] - 0.2
     if t > tc:
@@ -146,11 +150,11 @@ def rm_at(t, t0): return 0.0 if t < t0 else max(1e-3, clamp((t - t0) / 0.7))
 
 def table(d, y, n_nt, n_ss):
     card(d, (60, y, 1020, y + 330), fill=WHITE, outline=NAVY, w=4)
-    text(d, (W / 2, y + 45), "Dòng qua Đ2 (A)", 40, INK)
+    text(d, (W / 2, y + 45), "Ampe kế mạch chính (A)", 40, INK)
     xs = (230, 560, 850)
-    text(d, (xs[1], y + 105), "lắp cả hai", 40, MUTED, bold=False); text(d, (xs[2], y + 105), "tháo Đ1", 40, MUTED, bold=False)
+    text(d, (xs[1], y + 105), "lắp cả hai", 40, INK, bold=False); text(d, (xs[2], y + 105), "tháo Đ1", 40, INK, bold=False)
     d.line([(90, y + 140), (990, y + 140)], fill=LIGHT, width=4)
-    for i, (nm, v, n) in enumerate((("Nối tiếp", NT, n_nt), ("Song song", SS, n_ss))):
+    for i, (nm, v, n) in enumerate((("Nối tiếp", MAIN["nt"], n_nt), ("Song song", MAIN["ss"], n_ss))):
         yy = y + 195 + i * 85
         text(d, (xs[0], yy), nm, 42, NAVY)
         text(d, (xs[1], yy), vn(v[0]), 46, INK)
@@ -191,7 +195,7 @@ def s_dapan(img, d, t, sc):
         card(d, (60, 1215, 1020, 1470), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), r=24, w=4)
         text(d, (W / 2, 1285), "Nối tiếp: hở một chỗ, hở cả mạch", 46, DGREEN, alpha=k1)
         k2 = appear(t, M[1] - 0.1, 0.5)
-        text(d, (W / 2, 1395), "Song song: Đ2 vẫn nhận đủ 3 V", 46, DGREEN, alpha=k2)
+        text(d, (W / 2, 1395), "Song song: mất một nhánh 0,5 A", 46, DGREEN, alpha=k2)
 
 # ---------------- canh 4: Bay ; chua noi duoc ----------------
 def s_bay(img, d, t, sc):
@@ -216,7 +220,7 @@ def s_bay(img, d, t, sc):
         card(d, (40, y, 1040, y + 300), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
         text(d, (W / 2, y + 75), "Chưa nói được", 48, NAVY, alpha=k3)
         kk = k3 * appear(t, M[1] + 0.3, 0.4)
-        text(d, (W / 2, y + 200), "Dây tóc nguội: dòng có đúng thế?", 46, INK, alpha=kk)
+        text(d, (W / 2, y + 200), "Pin dùng lâu, yếu đi thì sao?", 46, INK, alpha=kk)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
@@ -231,13 +235,13 @@ def s_end(img, d, t, sc):
     card(d, (W / 2 - pw / 2, 630, W / 2 + pw / 2, 694), fill=A(ORANGE, k1), r=32)
     text(d, (W / 2, 662), "THỬ NGHĨ", 40, WHITE, alpha=k1)
     kq = appear(t, M[0] + 0.4, 0.5)
-    for j, s in enumerate(("Ba bóng như trên mắc song song,", "nguồn 3 V. Tháo một bóng:", "ampe kế mạch chính chỉ bao nhiêu?")):
-        text(d, (W / 2, 790 + j * 78), s, 46, INK, alpha=kq)
+    for j, s in enumerate(("Ba bóng như trên mắc song song.", "Tháo một bóng: ampe kế mạch chính?")):
+        text(d, (W / 2, 810 + j * 90), s, 46, INK, alpha=kq)
     kh = appear(t, M[0] + 4.2, 0.5)
     if kh > 0:
         card(d, (90, 1060, 990, 1290), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
         text(d, (W / 2, 1115), "Gợi ý", 44, INK, alpha=kh)
-        text(d, (W / 2, 1215), "Đếm nhánh còn sáng", 44, (176, 64, 8), alpha=kh)
+        text(d, (W / 2, 1215), "Mỗi nhánh còn dòng bao nhiêu?", 44, (176, 64, 8), alpha=kh)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -257,9 +261,9 @@ CLIP = dict(id="tn-l9-doanmach-03", header="KHTN 9 · THÍ NGHIỆM", footer="Đ
    ("Tháo Đ1 ở mạch song song.", 4.4)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.8, caps=[
    ("Nối tiếp chỉ có một đường.", 4.2),
-   ("Song song: mỗi nhánh riêng.", 4.0)]),
+   ("Song song: mỗi nhánh một dòng.", 4.0)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.6, caps=[
-   ("Bẫy khi bóng đứt dây tóc.", 5.0),
+   ("Bẫy thường gặp.", 5.0),
    ("Câu còn bỏ ngỏ.", 4.0)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
    ("Tự trả lời trước gợi ý.", 8.7)]),
