@@ -116,8 +116,8 @@ def disk(d, normal_lab=False):
     d.line([(C[0] - RB, C[1]), (C[0] + RB, C[1])], fill=BLUE, width=5)
     dash(d, (C[0], C[1] - RD + 6), (C[0], C[1] + RD - 6), NAVY, w=4)
     lab(d, (C[0] + 0.94 * RD, C[1] + 0.86 * RD), "nhựa", FM, BLUE)
-    lab(d, (C[0] + 0.86 * RD, C[1] - 0.86 * RD), "không khí", FM, DINK)
-    if normal_lab: lab(d, (C[0] - 165, C[1] + RD - 75), "pháp tuyến", FM, NAVY)
+    lab(d, (C[0] + 0.75 * RD, C[1] - 0.45 * RD), "không khí", FM, DINK)
+    if normal_lab: lab(d, (C[0] + 150, C[1] - RD + 58), "pháp tuyến", FM, NAVY)
 
 
 def pen(d, i, on=True):
@@ -139,7 +139,7 @@ def beam(d, i, ka=1.0, lab=True):
 
 def readout(d, i, r, ka_r):
     card(d, (90, 1005, 500, 1090), fill=WHITE, outline=NAVY, r=24, w=4)
-    text(d, (295, 1047), f"i = {i}°", FS, NAVY)
+    text(d, (295, 1047), f"i = {i}°" if i is not None else "i = …", FS, NAVY)
     card(d, (580, 1005, 990, 1090), fill=WHITE, outline=DGREEN, r=24, w=4)
     if ka_r > 0: text(d, (785, 1047), f"r = {r}°", FS, DGREEN, alpha=ka_r)
     else: text(d, (785, 1047), "r = …", FS, DINK)
@@ -196,7 +196,7 @@ def s_do(img, d, t, sc):
     ang, k_on, rows = do_state(t)
     disk(d); pen(d, ang)
     if t >= T0: beam(d, ang, 1.0)            # nhan i, r giu suot canh, ke ca luc dang xoay
-    i_show = round(ang) if k_on < 0 else ROWS[k_on][0]
+    i_show = next((r_[0] for r_ in ROWS if abs(ang - r_[0]) < 1e-9), None)   # chi so trong kho; dang xoay -> "…"
     if k_on >= 0: readout(d, i_show, ROWS[k_on][1], 1.0)
     else: readout(d, i_show, 0, 0.0)
     hl = rows - 1; khl = 1 - appear(t, T0 + DT * hl + ROW + 0.6, 0.3) if rows > 0 else 0
@@ -227,7 +227,7 @@ def s_sin(img, d, t, sc):
         i = I_SIN; r = r_of(i)
         disk(d, normal_lab=True); pen(d, i); beam(d, i)
         A_ = P(u_in(i), RD); B_ = P(u_out(r), RD)
-        m = P(u_in(i), 300); lab(d, (m[0] - 0.643 * 60, m[1] + 0.766 * 60), "R = 1", FM, NAVY)
+        m = P(u_in(i), 385); lab(d, (m[0] - 0.643 * 70, m[1] + 0.766 * 70), "R = 1", FM, NAVY)
         gi, gr = appear(t, 0.5, 0.6), appear(t, 1.3, 0.6)
         if gi > 0:
             d.line([(C[0], A_[1]), (lerp(C[0], A_[0], gi), A_[1])], fill=NAVY, width=12)
@@ -236,12 +236,12 @@ def s_sin(img, d, t, sc):
         if gr > 0:
             d.line([(C[0], B_[1]), (lerp(C[0], B_[0], gr), B_[1])], fill=DGREEN, width=12)
             dot(d, B_[0], B_[1], 9, DGREEN)
-            lab(d, ((C[0] + B_[0]) / 2, B_[1] + 46), "sin r", FS, DGREEN, alpha=gr)
+            lab(d, ((C[0] + B_[0]) / 2, B_[1] + 100), "sin r", FS, DGREEN, alpha=gr)
         # hai doan truot xuong cho trong, xep canh nhau, kem so (hang 50° cua bang)
         k = appear(t, 2.2, 0.8)
         if k > 0:
             Li, Lr = C[0] - A_[0], B_[0] - C[0]; x0 = 300
-            for L, y_end, y_from, col, s_, v in ((Li, 1175, A_[1], NAVY, "sin i", SIN_SO[0]), (Lr, 1270, B_[1], DGREEN, "sin r", SIN_SO[1])):
+            for L, y_end, y_from, col, s_, v in ((Li, 1215, A_[1], NAVY, "sin i", SIN_SO[0]), (Lr, 1300, B_[1], DGREEN, "sin r", SIN_SO[1])):
                 y = lerp(y_from, y_end, k)
                 d.rounded_rectangle([x0, y - 16, x0 + L, y + 16], radius=10, fill=A(col, k))
                 text(d, (x0 - 25, y), s_, FS, col, anchor="rm", alpha=k)
@@ -250,8 +250,8 @@ def s_sin(img, d, t, sc):
         C, RD, RB = old
     kq = appear(t, SIN_Q, 0.45)
     if kq > 0:
-        card(d, (110, 1350, 970, 1455), fill=A((236, 253, 243), kq), outline=A(GREEN, kq), r=26, w=4)
-        text(d, (W / 2, 1402), f"{SIN_SO[0]} : {SIN_SO[1]} ≈ 1,49".replace(".", ","), 60, DGREEN, alpha=kq)
+        card(d, (110, 1365, 970, 1465), fill=A((236, 253, 243), kq), outline=A(GREEN, kq), r=26, w=4)
+        text(d, (W / 2, 1415), f"{SIN_SO[0]} : {SIN_SO[1]} ≈ 1,49".replace(".", ","), 60, DGREEN, alpha=kq)
 SIN_Q = 3.8
 
 
@@ -317,7 +317,7 @@ def bars(d, x0, vals, lab, col, k, ka):
 
 def s_bay(img, d, t, sc):
     M = sc["M"]
-    a1 = appear(t, 0.3, 0.45); fl = a1 * (1 - 0.55 * appear(t, BAY_E + 1.8, 0.8))   # cuoi canh: lam mo cach sai
+    a1 = appear(t, 0.3, 0.45); fl = a1
     pw = tw(d, "BẪY", F(FM)) + 60
     card(d, (W / 2 - pw / 2, 262, W / 2 + pw / 2, 338), fill=A(DRED, a1), r=38)
     text(d, (W / 2, 300), "BẪY", FM, WHITE, alpha=a1)
@@ -338,9 +338,9 @@ def s_bay(img, d, t, sc):
 
 
 # ---------------- canh 6: Chot + THU NGHI (cau chot A-D o khung web) ----------------
-END_Q, END_H, END_H2 = 0.2, 2.4, 4.6
+END_Q, END_H, END_C = 0.2, 0.2, 3.0   # de + hinh hien ngay; cau chot (tom tat) hien sau
 def s_end(img, d, t, sc):
-    k0 = appear(t, 0.2, 0.5)
+    k0 = appear(t, END_C, 0.5)
     card(d, (50, 265, 1030, 425), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
     text(d, (W / 2, 345), "Vào nhựa: r nhỏ hơn i, tăng chậm dần", 55, DGREEN, alpha=k0)
     k1 = appear(t, END_Q, 0.5)
@@ -360,12 +360,8 @@ def s_end(img, d, t, sc):
         b = P(u_out(CHOT_R), rb, c3)
         d.line([c3, b], fill=A(BEAM, kh), width=7); chev(d, c3, b, A(BEAM, kh))
         d.arc([c3[0] - 150, c3[1] - 150, c3[0] + 150, c3[1] + 150], 90 - CHOT_R, 90, fill=A(DGREEN, kh), width=6)
-        text(d, (c3[0] + 250, c3[1] + 140), f"r = {CHOT_R}°", FS, DGREEN, alpha=kh)
-    kq = appear(t, END_H2, 0.4)
-    if kq > 0:   # vung goc toi chua biet: quat to mau navy nhat (khong ve tia toi)
-        d.pieslice([c3[0] - 210, c3[1] - 210, c3[0] + 210, c3[1] + 210], 200, 270, fill=A(NAVY, 0.3 * kq))
-        d.arc([c3[0] - 200, c3[1] - 200, c3[0] + 200, c3[1] + 200], 200, 270, fill=A(NAVY, kq), width=6)
-        text(d, (c3[0] - 200, c3[1] - 170), "i = ?", 64, NAVY, alpha=kq)
+        lab(d, (c3[0] + 215, c3[1] + 75), f"r = {CHOT_R}°", FS, DGREEN, alpha=kh)
+        text(d, (c3[0] - 110, c3[1] - 150), "i = ?", 64, NAVY, alpha=kh)   # chi dau hoi canh phap tuyen, khong ve cung/nan goi so
 
 
 def _cues(clip):
@@ -395,7 +391,7 @@ CLIP = dict(id="tn-l9-khucxa-02", header="KHTN 9 · THÍ NGHIỆM", footer="Khú
    ("So hai cách chia.", BAY_E - 0.4),
    ("Còn bỏ ngỏ.", 3.8)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.3, caps=[
-   ("Dừng lại, tự tính.", 7.1)]),
+   ("Dừng lại, tự tính.", 6.7)]),
 ])
 
 _b = _kiem_dong_bo(); assert not _b, _b
