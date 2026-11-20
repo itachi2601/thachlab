@@ -1,52 +1,68 @@
 {
   "id": "tn-l12-noinang-04",
-  "ten": "Xilanh cách nhiệt: nén, giữ yên, kéo về và rút vách ngăn",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261113-2.mp4",
+  "ten": "Xilanh cách nhiệt: kéo pit-tông ra và rút vách ngăn",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261121.mp4",
   "tong_giay": 50.0,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Một bạn cho rằng: xilanh đã cách nhiệt thì nội năng khí không đổi, nên nhiệt độ khí giữ nguyên dù nén hay cho dãn.",
-      "kiem": "Xilanh cách nhiệt: nén khí thì nhiệt độ có đổi?"
+      "kiem": "Cách nhiệt: nhiệt độ khí có đổi?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.6,
-      "chu": "Nén nhanh khí còn 50 cm³ trong xilanh cách nhiệt. Nhiệt độ khí thế nào?"
+      "giay": 3.3,
+      "chu": "Khí đã nén ở 50 cm³, 476 K. Kéo pit-tông ra tới 100 cm³. Nhiệt độ khí thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.1,
-      "chu": "Xilanh và pit-tông cách nhiệt, khí ban đầu 100 cm³, 300 K; số chỉ V, T, p. Mô hình, số liệu minh hoạ."
+      "giay": 8.8,
+      "chu": "Xilanh, pit-tông cách nhiệt; khí argon."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.4,
-      "chu": "Nén: T lên ≈ 476 K. Giữ yên: T không đổi. Kéo về: T còn 300 K. Q luôn bằng 0."
+      "giay": 15.3,
+      "chu": "Kéo ra: T về 300 K. Đẩy vào: T lại ≈ 476 K. Hai lần đều Q = 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 25.3,
-      "chu": "ΔU = A + Q với Q = 0: nén thì A dương, ΔU dương, T tăng; kéo ra thì A âm, T giảm.\nPhân tử va pit-tông đang tiến tới bật ra nhanh hơn."
+      "giay": 23.4,
+      "chu": "Cách nhiệt chỉ có nghĩa Q = 0. Khí sinh công nên ΔU = A âm, T giảm.\nPhân tử va pit-tông đang lùi thì bật ra chậm hơn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.1,
-      "chu": "Thành xilanh thật vẫn dẫn nhiệt chậm.\nHai ngăn: chỉ đúng cho khí lí tưởng.\nA suy ra từ ΔU = A + Q, không đo trực tiếp."
+      "giay": 37.3,
+      "chu": "Xilanh thật vẫn dẫn nhiệt chậm.\nSố liệu từ mô hình, không phải số đo thật."
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
-    "cau_hoi": "Xilanh và pit-tông cách nhiệt chứa khí ở 300 K, thể tích 100 cm³. Đẩy nhanh pit-tông, nén khí còn 50 cm³. Nhiệt độ khí sẽ thế nào?",
+    "giay": 8.6,
+    "cau_hoi": "Xilanh và pit-tông cách nhiệt chứa khí argon đã bị nén: 50 cm³, 476 K. Kéo pit-tông ra tới 100 cm³. Nhiệt độ khí sẽ thế nào?",
     "chon": [
       "A. Không đổi, vì xilanh cách nhiệt",
-      "B. Giảm",
-      "C. Tăng",
-      "D. Tăng rồi tự giảm về 300 K"
+      "B. Tăng",
+      "C. Giảm"
     ],
     "dung": 2,
-    "giai_thich_dung": "Cách nhiệt chỉ có nghĩa Q = 0. Khí bị nén nhận công A > 0, nên ΔU = A > 0: nhiệt độ tăng lên khoảng 476 K và giữ nguyên khi pit-tông đứng yên.",
-    "giai_thich_sai": "Cách nhiệt chỉ chặn trao đổi nhiệt (Q = 0), không chặn công. Nén khí là truyền công cho khí: ΔU = A + Q = A > 0, nên nhiệt độ tăng; cách nhiệt hoàn toàn thì khí cũng không tự nguội về 300 K."
+    "giai_thich_dung": "Cách nhiệt chỉ có nghĩa Q = 0. Khí đẩy pit-tông ra là sinh công, A ≈ −8,8 J, nên ΔU = A âm: nhiệt độ giảm từ khoảng 476 K về 300 K.",
+    "giai_thich_sai": "Cách nhiệt chỉ chặn trao đổi nhiệt (Q = 0), không chặn công. Khí đẩy pit-tông ra là sinh công (A âm), nên ΔU = A + Q = A, âm: nội năng giảm, nhiệt độ giảm."
+  },
+  "cau_chot": {
+    "giay": 42.1,
+    "cau_hoi": "Khí lí tưởng trong xilanh dẫn nhiệt (không cách nhiệt) bị nén chậm, nhiệt độ khí giữ 300 K. Nhiệt lượng Q khí nhận dương hay âm?",
+    "chon": [
+      "A. Q = 0, không trao đổi nhiệt",
+      "B. Q dương, khí nhận nhiệt",
+      "C. Q âm, khí toả nhiệt",
+      "D. Chưa đủ dữ kiện để biết"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "T không đổi nên ΔU = 0, nhưng khí bị nén vẫn nhận công (A dương). Từ ΔU = A + Q = 0 suy ra Q = −A, âm: khí toả nhiệt. ΔU = 0 không có nghĩa Q = 0.",
+      "Khí bị nén nhận công A dương; T giữ 300 K nên ΔU = 0. Từ ΔU = A + Q suy ra Q = −A, âm: khí toả nhiệt chứ không nhận nhiệt.",
+      "T giữ 300 K nên nội năng khí lí tưởng không đổi, ΔU = 0. Khí nhận công A dương nên Q = −A, âm: khí toả ra ngoài đúng bằng công nhận được.",
+      "Đủ dữ kiện: T không đổi nên ΔU = 0 (khí lí tưởng); bị nén nên A dương. Từ ΔU = A + Q suy ra Q = −A, âm."
+    ]
   }
 }
