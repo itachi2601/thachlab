@@ -259,14 +259,32 @@ def s_dapan(img, d, t, sc):
         plot(d, (240, 1070, 950, 1630), appear(t, M[1], 1.0), k2)
 
 # ---------------- canh 5: Bay (3 nhip ~3 s, moi nhip mot phu de) ----------------
+from PIL import ImageFont as _IF
+_FL = {}
+def FL(size):
+    """l nghieng (Georgia Bold Italic, da kiem co glyph 'l') de khong lan voi I trong phong sans."""
+    if size not in _FL: _FL[size] = _IF.truetype("/System/Library/Fonts/Supplemental/Georgia Bold Italic.ttf", size)
+    return _FL[size]
+
+def seq(d, x, y, parts, alpha=1.0, center=False):
+    """Ve noi tiep cac doan (chu, font, mau) tren mot dong; center=True thi x la tam."""
+    ws = [tw(d, s, f) + (4 if f in _FL.values() else 0) for s, f, c in parts]
+    if center: x -= sum(ws) / 2
+    for (s, f, c), w in zip(parts, ws):
+        dtext(d, (x, y), s, f, c, alpha, anchor="lm"); x += w
+
 def topview(d, k):
-    """Nhin tu tren xuong khe: hai cuc N, S; doan day nam giua hai cuc (xanh, dai l) va phan ngoai khe (xam)."""
-    d.rectangle([110, 1020, 190, 1190], fill=A(RED, k)); d.rectangle([300, 1020, 380, 1190], fill=A(BLUE, k))
-    text(d, (150, 1105), "N", 58, WHITE, alpha=k); text(d, (340, 1105), "S", 58, WHITE, alpha=k)
-    d.line([(245, 975), (245, 1235)], fill=A(GRAY, k), width=8)
-    d.line([(245, 1020), (245, 1190)], fill=A(GREEN, k), width=12)
-    for yy in (1020, 1190): d.line([(228, yy), (262, yy)], fill=A(GREEN, k), width=6)
-    text(d, (268, 1105), "l", 64, GREEN, anchor="lm", alpha=k)
+    """Nhin tu tren xuong khe: hai cuc N, S; doan day trong khe (xanh) + doan kich thuoc l hai vach chan."""
+    d.rectangle([110, 1030, 190, 1200], fill=A(RED, k)); d.rectangle([300, 1030, 380, 1200], fill=A(BLUE, k))
+    text(d, (150, 1115), "N", 58, WHITE, alpha=k); text(d, (340, 1115), "S", 58, WHITE, alpha=k)
+    d.line([(245, 990), (245, 1235)], fill=A(GRAY, k), width=8)
+    d.line([(245, 1030), (245, 1200)], fill=A(GREEN, k), width=12)
+    # duong gióng tu hai dau doan day ra doan kich thuoc (x = 420), hai vach chan
+    for yy in (1030, 1200):
+        for xx in range(255, 420, 22): d.line([(xx, yy), (xx + 11, yy)], fill=A(GREEN, k), width=4)
+        d.line([(402, yy), (438, yy)], fill=A(GREEN, k), width=7)
+    d.line([(420, 1030), (420, 1200)], fill=A(GREEN, k), width=7)
+    dtext(d, (446, 1115), "l", FL(76), GREEN, k, anchor="lm")
 
 def s_bay(img, d, t, sc):
     M = sc["M"]; b1, b2, b3 = (m - 0.1 for m in M)
@@ -290,11 +308,11 @@ def s_bay(img, d, t, sc):
     d.line([(120, base), (960, base)], fill=A(NAVY, k1), width=5)
     # nhip 2: cong thuc + chu thich l bang hinh
     if k2 > 0:
-        card(d, (40, 890, 1040, 1240), fill=A(WHITE, k2), outline=A(NAVY, k2), w=4)
-        text(d, (W / 2, 940), "B = Δm·g / (I·l)", 64, INK, alpha=k2)
+        card(d, (40, 898, 1040, 1248), fill=A(WHITE, k2), outline=A(NAVY, k2), w=4)
+        seq(d, W / 2, 950, [("B = Δm·g / (I·", F(64), INK), ("l", FL(70), INK), (")", F(64), INK)], k2, center=True)
         topview(d, k2)
-        text(d, (450, 1070), "l: dây trong khe", 60, GREEN, anchor="lm", alpha=k2)
-        text(d, (450, 1160), "l = 4,0 cm", 60, INK, anchor="lm", alpha=k2)
+        seq(d, 520, 1075, [("l", FL(66), GREEN), (": dây trong khe", F(60), GREEN)], k2)
+        seq(d, 520, 1165, [("l", FL(66), INK), (" = 4,0 cm", F(60), INK)], k2)
     # nhip 3: tinh lai B cho tung cot
     if k3 > 0:
         card(d, (40, 1260, 1040, 1680), fill=A((236, 253, 243), k3), outline=A(GREEN, k3), w=5)
