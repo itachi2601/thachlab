@@ -265,7 +265,9 @@ def sim_html():
            '<p>Mũi tên F, F′ phóng to cho dễ thấy.</p>'
            '<p>Các mũi tên còn lại không vẽ theo tỉ lệ.</p></details></div>')
 
-    h = '<div class="tl-box tl-box--exp tl-sim" data-exp="tn-l12-thuchanhtu-04">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
+    # tl-mo-phong + data-mo-phong: trên web MoPhongPortals thay khối radio/CSS này bằng CurrentBalanceSimulation (có câu đoán,
+    # thanh I, đồ thị Δm–I); khối tĩnh còn lại làm bản dự phòng (sách in, code cũ). Việc 5 — KE-HOACH-CAI-TIEN-CLIP-2026-11-19.
+    h = '<div class="tl-box tl-box--exp tl-sim tl-mo-phong" data-exp="tn-l12-thuchanhtu-04" data-mo-phong="can-dong-dien">\n<p class="tl-label">🎛️ Mô phỏng: tự chỉnh dòng điện, quan sát cân</p>\n'
     h += '<div class="tl-sim__row"><b>Cường độ dòng điện</b>'
     for i in range(6):
         h += f'<input type="radio" name="tls12-i" class="tls-i{i}" id="tls12-i{i}"' + (" checked" if i == 0 else "") + ">"

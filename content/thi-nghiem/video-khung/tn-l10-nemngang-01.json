@@ -49,5 +49,22 @@
     "dung": 0,
     "giai_thich_dung": "t = √(2h/g) tăng theo độ cao: 0,404 s ở 0,80 m thành 0,505 s ở 1,25 m. Cùng v₀ = 5 m/s, tầm xa L = v₀·t tăng từ 2,02 m lên 2,53 m.",
     "giai_thich_sai": "Thời gian rơi không do v₀ mà do độ cao: máng cao hơn thì phần rơi dài hơn, mất nhiều thời gian hơn. Theo phương ngang bi vẫn đi đều 5 m/s, nên bay lâu hơn là bay xa hơn."
+  },
+  "cau_chot": {
+    "giay": 42.5,
+    "cau_hoi": "Máng cao 0,50 m, bắn bi A ngang với v₀ = 2 m/s (g = 9,8 m/s²). Bi A bay xa bao nhiêu?",
+    "chon": [
+      "A. Khoảng 0,20 m",
+      "B. Khoảng 0,45 m",
+      "C. Khoảng 0,64 m",
+      "D. Khoảng 1,14 m"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Số này ra khi quên dấu căn: t = 2h/g ≈ 0,102 s. Thời gian rơi là t = √(2h/g) = √(2·0,50/9,8) ≈ 0,319 s, nên L = v₀·t = 2 × 0,319 ≈ 0,64 m.",
+      "Số này ra khi quên hệ số 2: t = √(h/g) ≈ 0,226 s. Từ h = ½gt² suy ra t = √(2h/g) ≈ 0,319 s, nên L = 2 × 0,319 ≈ 0,64 m.",
+      "t = √(2h/g) = √(2·0,50/9,8) ≈ 0,319 s, bằng bi thả rơi cùng độ cao. Phương ngang bi đi đều 2 m/s: L = v₀·t ≈ 0,64 m.",
+      "Số này coi bi A nhanh dần theo phương ngang (cộng thêm ½gt² ≈ 0,50 m). Phương ngang không có lực nào kéo bi nên bi đi đều 2 m/s: L = 2 × 0,319 ≈ 0,64 m."
+    ]
   }
 }

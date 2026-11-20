@@ -49,5 +49,22 @@
     "dung": 2,
     "giai_thich_dung": "r tăng 13°, 22°, 31°, 37°, 41°, mỗi lần thêm ít dần (9°, 9°, 6°, 4°).",
     "giai_thich_sai": "Góc khúc xạ không tỉ lệ với góc tới. Vào nhựa, r luôn nhỏ hơn i và vẫn tăng khi i tăng, nhưng càng về sau càng tăng chậm: 13°, 22°, 31°, 37°, 41°."
+  },
+  "cau_chot": {
+    "giay": 42.8,
+    "cau_hoi": "Cùng khối nhựa (n ≈ 1,5), đọc được góc khúc xạ r = 25°. Góc tới i khoảng bao nhiêu?",
+    "chon": [
+      "A. sin i = sin 25° : 1,5, nên i ≈ 16°",
+      "B. Đọc từ mặt khối: i ≈ 51°",
+      "C. Không tính được: sin i / sin r đổi theo góc",
+      "D. sin i = 1,5 × sin 25°, nên i ≈ 39°"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "Chia ngược: ánh sáng từ không khí vào nhựa thì r nhỏ hơn i, nên i phải lớn hơn 25°. sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°.",
+      "Góc tới và góc khúc xạ đều đo từ pháp tuyến, không đo từ mặt khối (lỗi đọc góc hay gặp). Từ pháp tuyến: sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°.",
+      "Chỉ tỉ số i : r mới đổi theo góc (20 : 13 ≈ 1,54 rồi 80 : 41 ≈ 1,95). Tỉ số sin i / sin r giữ ≈ 1,5 ở mọi góc, nên vẫn tính được: sin i ≈ 0,634, nên i ≈ 39°.",
+      "sin i / sin r ≈ 1,5 ở mọi góc: sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°, lớn hơn r như mọi lần đo trong bảng."
+    ]
   }
 }
