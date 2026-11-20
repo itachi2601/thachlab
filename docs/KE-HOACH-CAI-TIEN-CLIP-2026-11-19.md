@@ -166,9 +166,9 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - Việc 1, 2, 3, 6 xong code; migration việc 6 đã chạy 20/11 08:20. **Nhưng code việc 1, 2, 5, 6 CHƯA lên web**: bản deploy cuối 19/11 14:16
   (trước các commit 4d07cb1d2, 30061f236, 176380903) → chưa ghi được lượt nào vào `lesson_clip_views`. Từ bản deploy trước, `origin/main` chỉ đổi 7 file
   của kế hoạch này (`VideoThiNghiemKhung`, `KhungPortals`, `MoPhongPortals`, `CurrentBalanceSimulation`, `SimulationsLazy`, 2 trang `/dev`).
-  Build thử ở worktree sạch tại `01eab4d3f`; bước push nhánh `deploy` bị bộ phân loại chặn → thầy chạy `scripts/deploy.sh`.
+  **ĐÃ DEPLOY 21/11/2026 06:29** từ `01eab4d3f` (thầy chạy `scripts/deploy.sh`; kiểm chunk trên web có `log_clip_view`).
 - Còn chờ thầy: (a) duyệt 3 clip mẫu `-20261120` (việc 4); (b) chọn lô 20 clip L12 (việc 4); (c) duyệt mô phỏng cân dòng điện (việc 5).
-- Đồng hồ "2–4 tuần số liệu" (mục 3) tính từ ngày deploy, không phải ngày chạy migration.
+- Đồng hồ "2–4 tuần số liệu" (mục 3) tính từ 21/11/2026 → xem tỉ lệ khoảng 5–19/12 bằng `scripts/sql/ty-le-clip-thi-nghiem.sql`.
 
 ## 3. Việc nên làm thêm để tin được kết quả
 - Mở một bài thật bằng tài khoản học sinh trên điện thoại thật, xác nhận lỗi che ở việc 1 (mới đo ở trang `/dev`).

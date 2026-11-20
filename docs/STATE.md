@@ -26,7 +26,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
-- Clip việc 1/2/5/6 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục 2b): CHƯA DEPLOY (web ở bản 19/11 14:16) → chưa ghi `lesson_clip_views`; build thử `01eab4d3f` sạch, chờ thầy chạy `scripts/deploy.sh`.
+- Clip việc 1/2/5/6 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md`): ĐÃ DEPLOY 21/11 06:29 (`01eab4d3f`, chunk có `log_clip_view`); `lesson_clip_views` bắt đầu ghi từ 21/11 — xem số liệu sau 2–4 tuần. Chưa thử bằng HS thật.
 - Dashboard GV CNC: tab "Buổi học" theo nhịp lớp đảo ngược (10/11, `TeacherFlipBoard`, xem thử `/dev/cnc-bang-buoi`) — ĐÃ DEPLOY 10/11 từ commit c9eb40921 (kèm `dac7911f7` đáp án sau 2 lượt + `d72917876` cổng G tính `final`; CHƯA gồm CTTC thanh đáy `db053cc45`). Mở được bằng tài khoản thầy với lớp CĐ CK 24A; chưa thử trong một buổi dạy thật.
 - `ExamDoneLocked` ĐÃ DEPLOY 18/11 (migration đáp án sau 2 lượt chạy 10/11, chi tiết STATE-archive); còn thử bằng HS thật (đề 1297, lớp 11, 375px).
 - 30/10 · Công TA hằng tháng tự chạy (cron `ta-month-cycle`): báo 19h cuối tháng → mở ngày 1–3 → khoá, báo thầy chốt; khiếu nại ở /tro-giang. T10 đang mở, 1/11 tự kéo hạn tới 23:59 03/11. Chưa thử bằng tài khoản TA thật. Thấy lạ: `.claude/worktrees/deploy-tree` có `app/globals.css` sửa dở chưa commit, HEAD kẹt ở ac5a22baf.
