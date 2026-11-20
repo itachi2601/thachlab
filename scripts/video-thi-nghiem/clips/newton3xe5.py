@@ -105,7 +105,8 @@ def s_hook(img, d, t, sc):
 TS = (0.5, 4.6)            # bat dau moi lan (chot rut trong PIN giay, roi lo xo day P giay)
 RESET = (2.9, 3.4)         # xe ve cho cu, nen lai lo xo
 BLK = (3.9, 4.3)           # chat gia trong len xe 2
-ROW_AT = PIN + 0.6         # hang bang hien giua luc day (so cam bien con dang chi F)
+ROW_AT = PIN + 0.6         # m, F cua hang hien giua luc day (so cam bien con dang chi F)
+A_AT = PIN + P + C         # o gia toc chi dien khi xe chay xong (cam bien chuyen dong tinh a trung binh luc day)
 
 def fmot(tau):
     if tau <= 0: return 0.0
@@ -116,7 +117,8 @@ def do_state(t):
     """-> dict: k (lan), s1, s2, chu cam bien, pin, lend, m2, blk, so hang da ghi."""
     k = 1 if t >= RESET[0] else 0
     m1, m2, Fk, a1, a2 = RUNS[k]
-    st = dict(k=k, m1=m1, m2=m2, blk=1.0, n=sum(1 for j in range(2) if t >= TS[j] + ROW_AT - 1e-9))
+    st = dict(k=k, m1=m1, m2=m2, blk=1.0, n=sum(1 for j in range(2) if t >= TS[j] + ROW_AT - 1e-9),
+              na=sum(1 for j in range(2) if t >= TS[j] + A_AT - 1e-9), roi=False)
     if k == 1:
         st["blk"] = clamp((t - BLK[0]) / (BLK[1] - BLK[0]))
         if t < BLK[0]: st["m2"] = 1
@@ -128,16 +130,17 @@ def do_state(t):
         return st
     f = fmot(tau)
     st.update(s1=K * a1 * f, s2=K * a2 * f, pin=clamp((t - ts) / PIN) if t >= ts else 0.0,
-              lend=GAP0 + K * (a1 + a2) * min(f, 1.0), val=(Fk if 0 <= tau < P else 0))
+              lend=GAP0 + K * (a1 + a2) * min(f, 1.0), val=(Fk if 0 <= tau < P else 0), roi=tau >= P)
     return st
 
 COLS = (140, 300, 460, 620, 780, 940)
-def table(d, y, n, hl=None, glow=0.0, a=1.0):
+def table(d, y, n, hl=None, glow=0.0, a=1.0, na=None):
+    na = n if na is None else na
     card(d, (40, y, 1040, y + 360), fill=A(WHITE, a), outline=A(LIGHT, a), w=3)
     for x, s in ((220, "m (kg)"), (540, "F (N)"), (860, "a (m/s²)")):
         text(d, (x, y + 50), s, 55, INK, alpha=a)
     for j, x in enumerate(COLS):
-        text(d, (x, y + 122), "xe " + ("1" if j % 2 == 0 else "2"), 55, C1 if j % 2 == 0 else C2, alpha=a)
+        text(d, (x, y + 122), "xe " + ("1" if j % 2 == 0 else "2"), 58, C1 if j % 2 == 0 else C2, alpha=a)
     for x in (380, 700): d.line([(x, y + 20), (x, y + 340)], fill=A(LIGHT, a), width=3)
     d.line([(60, y + 162), (1020, y + 162)], fill=A(LIGHT, a), width=3)
     for j, (m1, m2, Fk, a1, a2) in enumerate(RUNS):
@@ -145,14 +148,20 @@ def table(d, y, n, hl=None, glow=0.0, a=1.0):
         if hl == j: d.rounded_rectangle([56, yy - 42, 1024, yy + 42], radius=18, fill=A(mix((245, 243, 255), GLOW, glow), a))
         vals = (f"{m1:g}", f"{m2:g}", f"{Fk:g}", f"{Fk:g}", a_str(a1), a_str(a2))
         for i, (x, v) in enumerate(zip(COLS, vals)):
-            if j < n: text(d, (x, yy), v, 58, C1 if i % 2 == 0 else C2, alpha=a)
+            if j < n and (i < 4 or j < na): text(d, (x, yy), v, 58, C1 if i % 2 == 0 else C2, alpha=a)
+            elif j < n: text(d, (x, yy), "…", 58, GRAY, alpha=a)
             else: text(d, (x, yy), "·", 58, GRAY, alpha=a)
 
 def s_do(img, d, t, sc):
     st = do_state(t)
     v = f"{st['val']:g} N"
     rig(d, st["s1"], st["s2"], st["m1"], st["m2"], v, v, pin=st["pin"], lend=st["lend"], blk=st["blk"])
-    table(d, 790, st["n"], hl=(st["n"] - 1 if st["n"] > 0 else None))
+    if st["roi"]:                                  # da roi lo xo: hai xe troi deu ra hai phia
+        x1, x2 = X1 - st["s1"], X2 + st["s2"]
+        arrow(d, (x1 - CW / 2 - 10, 585), (x1 - CW / 2 - 80, 585), C1, w=8, head=22)
+        arrow(d, (x2 + CW / 2 + 10, 585), (x2 + CW / 2 + 80, 585), C2, w=8, head=22)
+        text(d, (540, 752), "đã rời lò xo", 55, MUTED)
+    table(d, 800, st["n"], hl=(st["n"] - 1 if st["n"] > 0 else None), na=st["na"])
 
 def _kiem_dong_bo():
     """Moi 0,05 s: hai cam bien cung so; so != 0 chi khi lo xo dang day; hang j chi hien khi lan j dang day,
@@ -163,6 +172,8 @@ def _kiem_dong_bo():
         st = do_state(t); k = st["k"]; tau = t - TS[k] - PIN
         if st["val"] and not (0 <= tau < P): bad.append((round(t, 2), "so khi khong day"))
         if st["n"] > k + 1: bad.append((round(t, 2), "hang som"))
+        if st["na"] > st["n"] or (st["na"] == k + 1 and tau < P + C - 1e-9): bad.append((round(t, 2), "a dien som"))
+        if st["roi"] and st["val"]: bad.append((round(t, 2), "roi lo xo ma con so"))
         if X1 - st["s1"] - 150 < 40 or X2 + st["s2"] + 150 > 1040: bad.append((round(t, 2), "ra khung", st["s1"], st["s2"]))
         t += 0.05
     for j in range(2):
@@ -182,12 +193,19 @@ def s_dapan(img, d, t, sc):
     M = sc["M"]
     table(d, 330, 2, hl=1, glow=pul(t))
     ka = appear(t, 2.0, 0.4)
-    if ka > 0: pill(d, "ĐÁP ÁN · bằng nhau", 790, ka)
+    if ka > 0: pill(d, "ĐÁP ÁN · 4 N = 4 N", 790, ka)
     k1 = appear(t, M[1] + 0.3, 0.45)
     if k1 > 0:
         y0 = 900 + (1 - k1) * 20
         card(d, (60, y0, 1020, y0 + 150), fill=A((236, 253, 243), k1), outline=A(GREEN, k1), w=5)
         text(d, (W / 2, y0 + 75), "Xe nặng: gia tốc nhỏ hơn", 58, DGREEN, alpha=k1)
+        if k1 >= 0.98:                             # lap lai lan 2: cung luc, xe 1 kg di xa gap ba xe 3 kg
+            q = ((t - M[1] - 0.8) % 2.6) / 2.0; q = min(max(q, 0.0), 1.0) ** 2
+            yb = 1330
+            d.line([(80, yb), (1000, yb)], fill=WOOD_D, width=5)
+            f1, y = cart(d, 400 - 150 * q, yb, 1, C1, +1, s=0.8)
+            f2, _ = cart(d, 680 + 50 * q, yb, 3, C2, -1, s=0.8)
+            spring(d, f1, f1 + min(f2 - f1, 60 + 200 * min(q * 4, 1)), y, amp=16, n=9)
 
 # ---------------- canh 4: Bay roi Chua noi duoc ----------------
 def mini(d, y_trk, l1, l2, k, lab=None):
@@ -205,6 +223,7 @@ def mini(d, y_trk, l1, l2, k, lab=None):
             text(d, (750 + l2 + 20, ya), lab, 55, C2, anchor="lm", alpha=k)
     text(d, (330, y_trk + 45), "lực lên xe 1", 55, C1); text(d, (750, y_trk + 45), "lực lên xe 2", 55, C2)
 
+QS, QX = 60, 500                                   # co chu va tam cau bay (con cho dau ✗ lon ben phai)
 def s_bay(img, d, t, sc):
     M = sc["M"]
     a1 = appear(t, 0.1, 0.4)
@@ -213,17 +232,15 @@ def s_bay(img, d, t, sc):
     card(d, (W / 2 - pw / 2, 290, W / 2 + pw / 2, 366), fill=A(DRED, a1), r=38)
     text(d, (W / 2, 328), "BẪY", 55, WHITE, alpha=a1)
     q = "“Xe nặng bị đẩy mạnh hơn”"
-    ks = clamp((t - 2.0) / 0.4); lw = tw(d, q, F(56)); yy = 425
-    text(d, (W / 2 - 24, yy), q, 56, mix(INK, MUTED, ks), alpha=a1)
-    if ks > 0:
-        xa = W / 2 - 24 - lw / 2 - 6
-        d.line([(xa, yy + 2), (xa + (lw + 12) * ks, yy + 2)], fill=A(DRED, 0.85), width=7)
-        text(d, (W / 2 - 24 + lw / 2 + 36, yy), "✗", 60, DRED, alpha=ks)
+    ks = clamp((t - 2.0) / 0.4); lw = tw(d, q, F(QS)); yy = 425; xq = QX
+    text(d, (xq, yy), q, QS, INK, alpha=a1)
+    if ks > 0: text(d, (xq + lw / 2 + 60, yy), "✗", 90, DRED, alpha=ks)
     if a1 >= 0.98: mini(d, 640, 60, 180, a1)
     k2 = appear(t, 2.6, 0.5)
     if k2 > 0:
         card(d, (40, 750, 1040, 1170), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), w=6)
         text(d, (100, 800), "✓", 70, DGREEN, alpha=k2)
+        if k2 >= 0.98: text(d, (W / 2 + 30, 800), "Lực bằng nhau: 4 N = 4 N", 58, DGREEN)
         if k2 >= 0.98: mini(d, 1090, 120, 120, appear(t, 2.8, 0.5), lab="4 N")
     k3 = appear(t, M[1] + 0.1, 0.45)
     if k3 > 0:
@@ -232,19 +249,19 @@ def s_bay(img, d, t, sc):
         hlq = ease((t - M[1] - 2.6) / 0.3)            # vach sang chuyen tu y 1 sang y 2
         for j, w_ in ((0, 1 - hlq), (1, hlq)):
             if t > M[1] + 0.6:
-                yb = y0 + 160 + j * 95
-                d.rounded_rectangle([70, yb - 42, 1010, yb + 42], radius=18, fill=A((255, 247, 205), k3 * w_))
-        text(d, (W / 2, y0 + 70), "Chưa nói được", 56, NAVY, alpha=k3)
-        text(d, (100, y0 + 160), "• Coi lực lò xo không đổi", 56, INK, anchor="lm", alpha=k3)
-        text(d, (100, y0 + 255), "• Bỏ qua ma sát", 56, INK, anchor="lm", alpha=k3)
+                yb = y0 + 165 + j * 95
+                d.rounded_rectangle([70, yb - 44, 1010, yb + 44], radius=18, fill=A((255, 247, 205), k3 * w_))
+        text(d, (W / 2, y0 + 70), "Chỉ đúng khi:", 60, NAVY, alpha=k3)
+        text(d, (100, y0 + 165), "• Lực lò xo không đổi", 60, INK, anchor="lm", alpha=k3)
+        text(d, (100, y0 + 260), "• Ma sát rất nhỏ", 60, INK, anchor="lm", alpha=k3)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
     M = sc["M"]
-    k0 = appear(t, 0.2, 0.5)
+    k1 = appear(t, M[1] + 0.1, 0.5)
+    k0 = appear(t, 0.2, 0.5) * (1 - k1)            # an the chot khi cau hoi hien (khong nhac nua loi giai)
     card(d, (50, 270, 1030, 480), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
     ctext(d, 375, "Lực bằng nhau,\nxe nặng tăng tốc chậm", 58, DGREEN, maxw=900, alpha=k0)
-    k1 = appear(t, M[1] + 0.1, 0.5)
     if k1 <= 0: return
     card(d, (40, 520, 1040, 1420), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pw = tw(d, "THỬ NGHĨ", F(55)) + 60
@@ -258,8 +275,10 @@ def s_end(img, d, t, sc):
     f2, _ = cart(d, 760, yb, 3, C2, -1, s=0.9)
     spring(d, f1, f2, y, amp=18, n=12)
     display(d, 760, f2 + 8, y, "?", C2, glow=pul(t - M[1]), lab=False, y0=850)
-    text(d, (300, yb + 55), "gia tốc 2,5 m/s²", 55, C1)
-    text(d, (790, yb + 55), "bàn nhẵn", 55, MUTED)
+    text(d, (300, 920), "xe 1: a = 2,5 m/s²", 58, C1)
+    ab = 0.35 + 0.65 * pul(t - M[1], 1.0)          # mui ten gia toc xe 1 nhap nhay
+    arrow(d, (360, 1000), (220, 1000), A(C1, ab), w=10, head=26)
+    text(d, (540, yb + 55), "bàn nhẵn", 55, MUTED)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -273,7 +292,7 @@ CLIP = dict(id="tn-l10-newton3-05", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
             cues=_cues, scenes=[
  dict(key="hook", title="Hai xe đẩy và lò xo nén", draw=s_hook, tail=0.8, caps=[
    ("Lò xo nén giữa hai xe.", 3.4),
-   ("Tự trả lời trước khi xem.", 6.0)]),
+   ("Tự trả lời trước khi xem.", 5.8)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.5, caps=[
    ("Rút chốt: hai xe bật ra.", 3.6),
    ("Xe 2 chất thêm gia trọng.", 4.0)]),
@@ -282,9 +301,9 @@ CLIP = dict(id="tn-l10-newton3-05", header="VẬT LÍ 10 · THÍ NGHIỆM", foot
    ("So hai cột gia tốc.", 3.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.5, caps=[
    ("Đúng hay sai?", 4.6),
-   ("Còn giả thiết gì?", 5.0)]),
+   ("Còn giả thiết gì?", 5.4)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.8, caps=[
-   ("Chốt lại.", 3.0),
+   ("Chốt lại.", 3.6),
    ("Tự tính trước khi đọc tiếp.", 7.0)]),
 ])
 
