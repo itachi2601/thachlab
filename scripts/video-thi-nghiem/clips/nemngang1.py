@@ -31,11 +31,11 @@ _kiem_so()
 STEEL_A = (37, 99, 235); STEEL_B = (234, 88, 12); WOOD = (250, 236, 196); WOOD_D = (190, 160, 100)
 DGREEN = (10, 110, 50); DRED = (185, 28, 28); DORANGE = (176, 64, 8)
 METAL = (150, 160, 180); EMPTY = (148, 140, 128)
-CURVE = ((190, 24, 93), (51, 65, 85))   # lan 1 hong dam, lan 2 xam xanh dam
+CURVE = ((109, 40, 217), (51, 65, 85))  # lan 1 tim, lan 2 xam xanh dam (khac cam bi B, xanh bi A, hop ket qua)
 
 # ---------------- hinh hoc: (x0 = dau mang, yf = mat san, pxm = px/m) ----------------
-GEO = (250, 1000, 280.0)                 # khung chinh: L = 2,53 m -> x = 958, le phai 80 px
-GEO_H = (340, 1000, 546.0)               # canh Du doan: chi can do cao, phong to 1,3x
+GEO = (240, 1000, 260.0)                 # khung chinh: L = 2,53 m -> x = 898 (+ban kinh 22 = 920), le phai 120 px
+GEO_H = (340, 1060, 640.0)               # canh Du doan: chi can do cao, phong to
 def P(g, x, y): return (g[0] + x * g[2], g[1] - y * g[2])
 def xb(g): return g[0] - 55                # bi B kep ngay truoc dau mang, cung do cao
 
@@ -49,7 +49,7 @@ def dash_h(d, x1, x2, y, col, w=5):
     x = x1
     while x < x2: d.line([(x, y), (min(x + 18, x2), y)], fill=col, width=w); x += 32
 
-def setup(d, h, g=GEO, ruler=True, hlab=True):
+def setup(d, h, g=GEO, ruler=True, hlab=True, hx=None):
     YL = P(g, 0, h)[1]; X0, YF = g[0], g[1]; XB = xb(g)
     d.rectangle([45, YL + 22, XB - 45, YF], fill=WOOD, outline=WOOD_D, width=3)                     # ban
     d.rectangle([40, YF, 1040, YF + 18], fill=(205, 196, 180))                                       # san
@@ -65,10 +65,10 @@ def setup(d, h, g=GEO, ruler=True, hlab=True):
             if k % 2 == 0 and k < 10: text(d, (xx, YF + 80), "0" if k == 0 else vn(k * 0.25, 1).replace(",0", ""), 62, NAVY)
         text(d, (P(g, 2.5, 0)[0] - 12, YF + 80), "2,5 m", 62, NAVY)
     if hlab:                                                                                         # vach do cao
-        xm = XB - 90
-        d.line([(xm, YL), (xm, YF)], fill=PURPLE, width=5)
-        for yy in (YL, YF): d.line([(xm - 12, yy), (xm + 12, yy)], fill=PURPLE, width=5)
-        text(d, (XB + 34, (YL + YF) / 2 + 20), vn(h) + " m", 62, PURPLE, anchor="lm")
+        xm = XB - 90 if hx is None else hx; y1 = YL if hx is None else YL + 44
+        d.line([(xm, y1), (xm, YF)], fill=PURPLE, width=5)
+        for yy in (y1, YF): d.line([(xm - 12, yy), (xm + 12, yy)], fill=PURPLE, width=5)
+        text(d, ((XB + 34) if hx is None else xm + 22, (y1 + YF) / 2 + 20), vn(h) + " m", 62, PURPLE, anchor="lm")
 
 def path(d, g, h, v0, tau, col, w=7):
     if tau <= 0: return
@@ -87,7 +87,7 @@ def seg_bar(d, y, t, t0, t1, col, a=1.0):
 def s_hook(img, d, t, sc):
     M = sc["M"]; h = ROWS[0][0]; g = GEO_H; YL = P(g, 0, h)[1]
     card(d, (40, 205, 1040, 1100), fill=WHITE, outline=LIGHT, w=3)
-    setup(d, h, g, ruler=False)
+    setup(d, h, g, ruler=False, hx=xb(g) + 40)
     ball(d, g[0] - 6, YL, STEEL_A, "A", r=30); ball(d, xb(g), YL, STEEL_B, "B", side="left", r=30)
     ka = appear(t, 0.8, 0.5)
     arrow(d, (g[0] + 36, YL), (g[0] + 240, YL), A(BLUE, ka), w=8, head=24)
@@ -98,21 +98,21 @@ def s_hook(img, d, t, sc):
     dash_h(d, 60, g[0] + 40, y2, A(PURPLE, a))
     arrow(d, (g[0] - 250, YL - 70), (g[0] - 250, y2 + 14), A(PURPLE, a), w=7, head=22)
     text(d, (g[0] + 60, y2), "1,25 m ?", 64, PURPLE, anchor="lm", alpha=a)
-    y0 = 1115 + (1 - a) * 30
-    card(d, (50, y0, 1030, y0 + 500), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    y0 = 1110 + (1 - a) * 30
+    card(d, (50, y0, 1030, y0 + 540), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
     pw = tw(d, "DỰ ĐOÁN", F(56)) + 60
     card(d, (W / 2 - pw / 2, y0 + 22, W / 2 + pw / 2, y0 + 98), fill=A(PURPLE, a), r=36)
     text(d, (W / 2, y0 + 60), "DỰ ĐOÁN", 56, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 150), "Nâng máng lên 1,25 m,", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 225), "v₀ giữ nguyên.", 60, INK, alpha=a)
-    text(d, (W / 2, y0 + 305), "Thời gian rơi và tầm xa", 60, PURPLE, alpha=a)
-    text(d, (W / 2, y0 + 380), "đổi thế nào?", 60, PURPLE, alpha=a)
-    seg_bar(d, y0 + 425, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 205), "Nâng máng lên 1,25 m,", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 285), "v₀ giữ nguyên.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 380), "Thời gian rơi và tầm xa", 60, PURPLE, alpha=a)
+    text(d, (W / 2, y0 + 460), "đổi thế nào?", 60, PURPLE, alpha=a)
+    seg_bar(d, y0 + 112, t, M[1] + 0.4, sc["T"] - 0.3, PURPLE, a)
 
 # ---------------- canh 2: Tien hanh (2 lan, chieu cham 5 lan) ----------------
 SLOW = 5.0
 STARTS = (0.6, 4.0)                    # luc gat/tha moi lan (giay trong canh)
-LAB = (("lần 1 (0,80 m)", (232, 945)), ("lần 2 (1,25 m)", (640, 600)))   # (232 = can trai), (640 = can giua)
+LAB = (("lần 1 (0,80 m)", (130, 455)), ("lần 2 (1,25 m)", (130, 535)))   # chu giai: mau net + chu, can trai
 def run_state(t):
     """-> (lan j, tau that (0..t_roi), so hang bang da xong)."""
     j = 1 if t >= STARTS[1] else 0
@@ -135,7 +135,8 @@ def flight(d, j, tau, labels=(False, False)):
     for i in (0, 1):
         if labels[i]:
             s, (x, y) = LAB[i]
-            text(d, (x, y), s, 62, CURVE[i], anchor="lm" if i == 0 else "mm")
+            d.line([(60, y), (112, y)], fill=CURVE[i], width=8)
+            text(d, (x, y), s, 62, CURVE[i], anchor="lm")
     ball(d, XB, yy, STEEL_B, "B", side="left"); ball(d, xa if tau > 0 else g[0] - 4, yy, STEEL_A, "A")
 
 def clock(d, x, lab, col, val):
@@ -159,11 +160,11 @@ def table(d, y, n, hl=-1):
 def s_do(img, d, t, sc):
     j, tau, rows = run_state(t)
     card(d, (40, 205, 1040, 1110), fill=WHITE, outline=LIGHT, w=3)
-    setup(d, ROWS[j][0], hlab=(rows == 0))
+    setup(d, ROWS[j][0], hlab=False)
     clock(d, 290, "Bi A", STEEL_A, tau); clock(d, 790, "Bi B", STEEL_B, tau)
-    text(d, (W / 2, 395), "chiếu chậm 5 lần", 60, INK)
+    text(d, (1010, 395), "chiếu chậm 5 lần", 60, INK, anchor="rm")
     text(d, (1010, 475), "v₀ = 5 m/s", 62, BLUE, anchor="rm")
-    flight(d, j, tau, labels=(rows >= 1, j == 1))
+    flight(d, j, tau, labels=(True, j == 1))
     table(d, 1140, rows, hl=rows - 1 if rows > j else -1)
 
 def _kiem_dong_bo():
@@ -200,7 +201,7 @@ def s_dapan(img, d, t, sc):
         text(d, (W / 2, 1555), "2,02 m → 2,53 m", 62, DORANGE, alpha=k2)
 
 # ---------------- canh 4: Bay - hai bi tha lech nhau (khung tren) / tha cung luc (khung duoi) ----------------
-GEO_T = (200, 715, 400.0); GEO_D = (200, 1410, 400.0)
+GEO_T = (200, 715, 360.0); GEO_D = (200, 1410, 360.0)   # L = 2,02 m -> x = 927 (+40 = 967)
 LECH = 0.08                            # do tre phong dai de nhin thay (giay that), khong hien so
 B_START = (0.6, 7.7)
 RB = 40                                # ban kinh bi trong canh bay (ra 283 px: ~21 px)
@@ -236,7 +237,7 @@ def s_bay(img, d, t, sc):
     tag(d, 772, "✗ Dễ tưởng: A rơi lâu hơn", DRED, (254, 242, 242), appear(t, M[1] + 0.5, 0.45))
     kd = appear(t, M[2] - 0.1, 0.4)
     if kd > 0:
-        landed = panel(d, GEO_D, t, B_START[1], 0.0, DGREEN)
+        landed = panel(d, GEO_D, t, B_START[1], 0.0, DGREEN, "Thả cùng lúc")
         if landed: tag(d, 1470, "✓ Chạm sàn cùng lúc", DGREEN, (236, 253, 243), 1.0)
 
 # ---------------- canh 5: Chua noi duoc ----------------
@@ -244,16 +245,16 @@ def s_gioihan(img, d, t, sc):
     card(d, (40, 205, 1040, 560), fill=WHITE, outline=NAVY, w=6)
     text(d, (W / 2, 290), "Chưa nói được", 64, NAVY)
     text(d, (W / 2, 440), "Lực cản lớn thì sao?", 62, INK)
-    k = appear(t, 2.0, 0.5)                                                   # luc can NGUOC chieu van toc moi bi
-    if k <= 0: return
-    card(d, (40, 590, 1040, 1300), fill=A(WHITE, k), outline=A(LIGHT, k), w=3)
-    x0, y0, xa, yb = 300, 650, 760, 1000
+    k = 1.0                                                                   # luc can NGUOC chieu van toc moi bi
+    card(d, (40, 590, 1040, 1300), fill=WHITE, outline=LIGHT, w=3)
+    u = 0.55 + 0.45 * ease(t / 1.4)                                           # hai bi roi toi vi tri cuoi trong 1,4 s
+    x0, y0 = 300, 650; xa, yb = x0 + 460 * u, y0 + 350 * u * u
     d.line([(x0, y0), (x0, yb - 34)], fill=A(STEEL_B, 0.6 * k), width=6)                    # B roi thang
-    s2 = lambda u: (x0 + (xa - x0) * u, y0 + (yb - y0) * u * u)                            # A: parabol toi (xa, yb)
+    s2 = lambda v: (x0 + (xa - x0) * v, y0 + (yb - y0) * v * v)                            # A: parabol toi (xa, yb)
     d.line([s2(i / 30) for i in range(31)], fill=A(STEEL_A, 0.6 * k), width=6)
     # B: van toc huong xuong -> luc can huong len
     arrow(d, (x0, yb - 36), (x0, yb - 200), A(DRED, k), w=9, head=28)
-    text(d, (x0 + 30, yb - 150), "lực cản", 60, DRED, anchor="lm", alpha=k)
+    text(d, (x0 - 30, yb - 150), "lực cản", 60, DRED, anchor="rm", alpha=k)
     # A: van toc theo tiep tuyen (xuong, sang phai) -> luc can nguoc lai (len, sang trai)
     vx, vy = (xa - x0), 2 * (yb - y0); n = math.hypot(vx, vy); ux, uy = -vx / n, -vy / n
     arrow(d, (xa + ux * 36, yb + uy * 36), (xa + ux * 200, yb + uy * 200), A(DRED, k), w=9, head=28)
@@ -263,7 +264,7 @@ def s_gioihan(img, d, t, sc):
     d.rectangle([60, 1060, 1020, 1080], fill=A((205, 196, 180), k))
 
 # ---------------- canh 6: Chot (phu de) + THU NGHI (= cau_chot khung web), hinh ca h = 0,50 m ----------------
-GEO_E = (330, 1060, 600.0)
+GEO_E = (330, 1080, 800.0)
 def s_end(img, d, t, sc):
     k1 = appear(t, 0.15, 0.4)
     card(d, (40, 210, 1040, 1520), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
@@ -283,7 +284,11 @@ def s_end(img, d, t, sc):
     arrow(d, (g[0] + 36, YL), (g[0] + 240, YL), A(BLUE, k1), w=8, head=24)
     text(d, (g[0] + 330, YL), "v₀ = 2 m/s", 62, BLUE, anchor="lm", alpha=k1)
     text(d, (1010, 400), "g = 9,8 m/s²", 60, INK, anchor="rm", alpha=k1)
-    text(d, (850, YF - 60), "?", 90, DORANGE, alpha=k1)
+    x = g[0]
+    while x < 905: d.line([(x, YF - 26), (min(x + 22, 905), YF - 26)], fill=A(DORANGE, k1), width=6); x += 38
+    arrow(d, (890, YF - 26), (920, YF - 26), A(DORANGE, k1), w=6, head=22)
+    d.line([(g[0], YF - 44), (g[0], YF - 8)], fill=A(DORANGE, k1), width=6)
+    text(d, (955, YF - 90), "?", 90, DORANGE, alpha=k1)
     text(d, (W / 2, 1230), "Bi A bay xa bao nhiêu?", 64, DORANGE, alpha=k1)
     seg_bar(d, 1360, t, 1.0, sc["T"] - 0.2, ORANGE, k1)
 
