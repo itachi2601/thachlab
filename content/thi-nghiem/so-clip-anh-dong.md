@@ -406,3 +406,13 @@ Kiểm chứng: không TN nào trong 55 có trường `mp4`; chưa có clip tự
 YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ xoá YouTube nếu sai thí nghiệm — thầy quyết. **19/11/2026 thầy xem 2 clip → GIỮ, đổi nhãn kho** (`video.nhan` ghi rõ biến thể/minh hoạ + trường `video.khac_thi_nghiem`): tn-l10-tonghopluc-01, tn-l12-ungdungcutu-03; bài không đổi, không đăng lại. Ghi chú gốc: Chưa phát hiện YouTube sai hẳn thí nghiệm; nghi cần thầy xem: tn-l12-ungdungcutu-03 (clip bếp thương mại, chưa chắc có đo hiệu suất 1 lít nước), tn-l10-tonghopluc-01 (nhãn "hai lực kế" nhưng tiêu đề ba lực kế/vòng nhẫn), tn-l11-dien-truong-deu-01 (cùng video điện phổ semolina với -03, không có E=U/d).
 
 **Lô 11 — trạng thái 19/11/2026:** 12/12 clip đã dựng, qua cổng A+B, tải `-20261119` (HEAD 200), chèn bài + khung trong repo (vào main). Chưa ghi DB (chờ thầy duyệt, sau 22h: `dang-lo11.sh`). K10 4 clip L12 đã đổi URL `-2` trong repo. **ĐÃ ĐĂNG DB 19/11/2026 chiều** (thầy cho đăng ngay): lý thuyết 12 bài lô 11 (#32, 28, 31, 33, 34, 37, 83, 84, 85, 57, 90, 150; `dang-lo11.sh --yes`) + 3 bài L12 K10 (#7, 125, 12; `--chi-video`, "Khác biệt ngoài khối video: KHÔNG"). Kiểm DB: 15/15 mục lý thuyết chứa đúng tên clip mới; 4 URL K10 `-20261119-2` HEAD 200.
+
+## Việc 4 — dựng lại 3 clip mẫu theo cổng mới (20/11/2026) **CHỜ THẦY DUYỆT MẪU, CHƯA ĐỔI URL DB**
+Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi clip một agent Opus, cổng B kiem-code 2 vòng ở 283px + một lượt sửa cuối tự crop.
+| tn | clip | từ/phút trước → sau | LỖI `--do-chu` | giây · KB | bản mới (HEAD 200) |
+|---|---|---|---|---|---|
+| tn-l10-nemngang-01 | clips/nemngang1.py | 182 → 146 | 11 → 0 | 48,4 · 1 479 | `lesson-clips/clip/tn-l10-nemngang-01-20261120.mp4` |
+| tn-l9-khucxa-02 | clips/khucxa2.py | 172 → 150 | 15 → 0 | 49,5 · 1 441 | `lesson-clips/clip/tn-l9-khucxa-02-20261120.mp4` |
+| tn-l12-thuchanhtu-04 | clips/thuchanhtu4.py | 199 → 138 | 16 → 0 | 49,7 · 1 298 | `lesson-clips/clip/tn-l12-thuchanhtu-04-20261120.mp4` |
+Khung JSON `video-khung/*.json` đã trỏ bản `-20261120` + mốc mới (`--kiem` OK); kho `content/thi-nghiem/<id>.json` và DB vẫn bản `-20261119`.
+Thầy duyệt → `scripts/doi-ban-clip-db.mts` sau 22h (sao lưu) + `gan-khung-video.mts` gắn lại khung. Danh sách đề xuất lô 20 clip L12 ở file kế hoạch.

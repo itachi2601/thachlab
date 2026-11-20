@@ -15,7 +15,9 @@ import { Check, Lock, Play, Target } from "lucide-react";
  *   chiều cao màn hình, dải bước + ô hiện tại nằm dưới.
  * - Câu Dự đoán bắt buộc: chạm video hay tua qua đều bị hỏi lại; chỉ có nút "Chưa muốn đoán, xem luôn" (tự chủ, SDT).
  * - Câu chốt (tuỳ chọn, `cau_chot`): dừng lần hai ở khung THỬ NGHĨ của cảnh Chốt, cùng khối A–D với câu Dự đoán; chọn xong
- *   mới hiện đáp án + giải thích của lựa chọn đó (L1). Sự kiện `*_cau_chot` qua `onEvent` để việc 6 ghi DB.
+ *   mới hiện đáp án + giải thích của lựa chọn đó (L1). Sự kiện `*_cau_chot` qua `onEvent`.
+ * - Việc 6: mỗi lượt xem gom ở máy khách (`VideoKhungLuot`), gửi qua `onLuot` khi xem hết / ẩn tab / rời trang
+ *   (KhungPortals → services/clip-views → RPC log_clip_view). Không gọi gì lúc tải trang.
  * - Mốc giây lấy từ engine (scripts/video-thi-nghiem, `render.py <clip> --kich-ban`), nên không phải
  *   dựng lại mp4. Dữ liệu: content/thi-nghiem/video-khung/<id>.json.
  */
@@ -70,7 +72,37 @@ export type VideoKhungEvent =
   // Câu chốt (việc 6 sẽ gom các sự kiện này, ghi DB một lần khi xem xong/rời trang)
   | { loai: "dung_o_cau_chot" }
   | { loai: "chon_cau_chot"; chon: number; dung: boolean }
-  | { loai: "bo_qua_cau_chot" };
+  | { loai: "bo_qua_cau_chot" }
+  // Lượt xem mới bắt đầu (lần phát đầu): trang gọi chuẩn bị token ghi lượt (services/clip-views) — không lúc tải trang
+  | { loai: "bat_dau_luot" };
+
+/** Một lượt xem (việc 6): gom ở máy khách, gửi qua `onLuot` khi xem hết / ẩn tab / rời trang. Cùng `luotId` gửi lại
+ *  là ảnh chụp mới của cùng lượt (máy chủ upsert). Khoá camelCase = payload RPC `log_clip_view`. */
+export type VideoKhungLuot = {
+  luotId: string;
+  tnId: string;
+  banClip: string; // tên file mp4: phân biệt clip cũ và clip dựng lại (việc 4)
+  coCauChot: boolean;
+  duDoan: number | null;
+  duDoanBoQua: boolean;
+  duDoanDung: boolean | null;
+  chot: number | null;
+  chotBoQua: boolean;
+  chotDung: boolean | null;
+  soXemLai: number;
+  xemHet: boolean;
+  giayMax: number;
+  batDau: string;
+};
+
+const uuid = () => {
+  if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") return crypto.randomUUID();
+  const b = crypto.getRandomValues(new Uint8Array(16));
+  b[6] = (b[6] & 0x0f) | 0x40;
+  b[8] = (b[8] & 0x3f) | 0x80;
+  const h = [...b].map((x) => x.toString(16).padStart(2, "0")).join("");
+  return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+};
 
 type Hoi = "du_doan" | "cau_chot" | null;
 
@@ -169,10 +201,13 @@ function KhoiChon(p: {
 export default function VideoThiNghiemKhung({
   data,
   onEvent,
+  onLuot,
   dinh = true,
 }: {
   data: VideoKhungData;
   onEvent?: (e: VideoKhungEvent) => void;
+  /** Nhận lượt xem đã gom để ghi DB (việc 6). Trang /dev không truyền thì không gom gì. */
+  onLuot?: (l: VideoKhungLuot) => void;
   /** Video dính trên đầu màn hình khi cuộn. Trang bài có thanh tab dính sẵn nên ContentHtml truyền false. */
   dinh?: boolean;
 }) {
@@ -187,9 +222,37 @@ export default function VideoThiNghiemKhung({
   const doneRef = useRef(!!saved && (saved.chose !== null || saved.boQua)); // đã chọn hoặc chủ động bấm "xem luôn": từ đó mới hết bắt dừng và mở Giả thuyết
   const chotDoneRef = useRef(!!saved && (saved.chotChose != null || !!saved.chotBoQua)); // câu chốt: đã chọn hoặc bỏ qua
   const eventRef = useRef(onEvent); // trang gọi truyền hàm mới mỗi lần dựng: giữ ở ref để vòng rAF không bị huỷ liên tục
+  const luotRef = useRef(onLuot);
   useEffect(() => {
     eventRef.current = onEvent;
-  }, [onEvent]);
+    luotRef.current = onLuot;
+  }, [onEvent, onLuot]);
+  // Lượt xem đang mở + cờ "có thay đổi chưa gửi". Mở ở lần phát đầu, đóng (gửi rồi bỏ) khi xem hết.
+  const luot = useRef<VideoKhungLuot | null>(null);
+  const luotBan = useRef(false);
+  const guiLuot = useCallback(() => {
+    if (!luot.current || !luotBan.current) return;
+    luotBan.current = false;
+    luotRef.current?.({ ...luot.current });
+  }, []);
+  const suaLuot = (f: (l: VideoKhungLuot) => void) => {
+    if (!luot.current) return;
+    f(luot.current);
+    luotBan.current = true;
+  };
+  // Rời trang / ẩn tab (điện thoại khoá màn hình, chuyển app) / gỡ khung: gửi ảnh chụp lượt hiện tại.
+  useEffect(() => {
+    const an = () => {
+      if (document.visibilityState === "hidden") guiLuot();
+    };
+    document.addEventListener("visibilitychange", an);
+    window.addEventListener("pagehide", guiLuot);
+    return () => {
+      document.removeEventListener("visibilitychange", an);
+      window.removeEventListener("pagehide", guiLuot);
+      guiLuot();
+    };
+  }, [guiLuot]);
   const [t, setT] = useState(0);
   const [reachedRaw, setReached] = useState(0); // chỉ số ô xa nhất đã tới: ô sau đó còn khoá
   const KEY_XONG = `khung-xong:${data.id}`;
@@ -236,10 +299,34 @@ export default function VideoThiNghiemKhung({
     [data.o],
   );
 
+  // Mở lượt xem ở lần phát đầu — hoặc khi tua qua điểm dừng trước khi bấm phát (hoi() chạy trước onPlay).
+  const moLuot = useCallback(() => {
+    if (luot.current || !luotRef.current) return;
+    luot.current = {
+      luotId: uuid(),
+      tnId: data.id,
+      banClip: (data.video.split("/").pop() ?? "").split("?")[0].toLowerCase(),
+      coCauChot: !!cc,
+      duDoan: null,
+      duDoanBoQua: false,
+      duDoanDung: null,
+      chot: null,
+      chotBoQua: false,
+      chotDung: null,
+      soXemLai: 0,
+      xemHet: false,
+      giayMax: 0,
+      batDau: new Date().toISOString(),
+    };
+    luotBan.current = true;
+    eventRef.current?.({ loai: "bat_dau_luot" });
+  }, [data.id, data.video, cc]);
+
   // Dừng ở câu Dự đoán: thoát toàn màn hình (iOS/Android che mất thẻ câu hỏi), đưa focus vào nút chọn đầu tiên.
   const hoi = useCallback(
     (v: HTMLVideoElement, loai: "du_doan" | "cau_chot" = "du_doan") => {
       v.pause();
+      moLuot();
       const w = v as HTMLVideoElement & { webkitExitFullscreen?: () => void };
       if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
       else w.webkitExitFullscreen?.();
@@ -250,7 +337,7 @@ export default function VideoThiNghiemKhung({
         eventRef.current?.({ loai: loai === "du_doan" ? "dung_o_du_doan" : "dung_o_cau_chot" });
       }
     },
-    [setAsking],
+    [setAsking, moLuot],
   );
 
   const check = useCallback(() => {
@@ -258,17 +345,26 @@ export default function VideoThiNghiemKhung({
     if (!v) return;
     const now = v.currentTime;
     setT(now);
+    if (luot.current && now > luot.current.giayMax + 0.5) suaLuot((l) => (l.giayMax = Math.round(now * 10) / 10));
     // chưa trả lời thì các ô sau Dự đoán vẫn khoá, dù thanh tua đã kéo qua
     setReached((r) => Math.max(r, doneRef.current ? curOf(now) : Math.min(curOf(now), duDoanIdx)));
     if (now >= mocDung && !v.seeking && !v.paused && !doneRef.current) hoi(v);
     else if (now >= mocChot && !v.seeking && !v.paused && doneRef.current && !chotDoneRef.current) hoi(v, "cau_chot");
     if (doneRef.current && now >= data.tong_giay - 0.5) {
+      if (luot.current) {
+        suaLuot((l) => {
+          l.xemHet = true;
+          l.giayMax = Math.max(l.giayMax, Math.round(now * 10) / 10);
+        });
+        guiLuot();
+        luot.current = null; // phát lại từ đầu là lượt mới
+      }
       setXong(true);
       try {
         localStorage.setItem(KEY_XONG, "1");
       } catch {}
     }
-  }, [curOf, mocDung, mocChot, duDoanIdx, hoi, data.tong_giay, KEY_XONG]);
+  }, [curOf, mocDung, mocChot, duDoanIdx, hoi, data.tong_giay, KEY_XONG, guiLuot]);
 
   // rAF chỉ chạy khi video đang phát; lúc dừng/tua cập nhật bằng sự kiện (tab ẩn thì timeupdate vẫn bắt kịp).
   const raf = useRef(0);
@@ -284,6 +380,7 @@ export default function VideoThiNghiemKhung({
       return;
     }
     setAsking(null);
+    moLuot();
     document.querySelectorAll("video").forEach((o) => o !== videoRef.current && o.pause()); // một video phát một lúc
     cancelAnimationFrame(raf.current);
     const loop = () => {
@@ -365,6 +462,7 @@ export default function VideoThiNghiemKhung({
     v.currentTime = data.o[i].giay + 0.05;
     setAsking(null);
     eventRef.current?.({ loai: "xem_lai_o", khoa: data.o[i].khoa });
+    suaLuot((l) => (l.soXemLai += 1));
     void v.play().catch(() => {});
   };
 
@@ -374,6 +472,10 @@ export default function VideoThiNghiemKhung({
     setChose(i);
     TRA_LOI.set(data.id, { ...TRA_LOI.get(data.id), chose: i, boQua: false });
     eventRef.current?.({ loai: "chon", chon: i, dung: i === dd.dung });
+    suaLuot((l) => {
+      l.duDoan = i;
+      l.duDoanDung = i === dd.dung;
+    });
   };
 
   const resume = () => {
@@ -387,6 +489,7 @@ export default function VideoThiNghiemKhung({
     setBoQua(true);
     TRA_LOI.set(data.id, { ...TRA_LOI.get(data.id), chose: null, boQua: true });
     eventRef.current?.({ loai: "bo_qua" });
+    suaLuot((l) => (l.duDoanBoQua = true));
     resume();
   };
 
@@ -396,6 +499,10 @@ export default function VideoThiNghiemKhung({
     setChotChose(i);
     TRA_LOI.set(data.id, { chose, boQua, ...TRA_LOI.get(data.id), chotChose: i, chotBoQua: false });
     eventRef.current?.({ loai: "chon_cau_chot", chon: i, dung: i === cc.dung });
+    suaLuot((l) => {
+      l.chot = i;
+      l.chotDung = i === cc.dung;
+    });
   };
 
   const boQuaChot = () => {
@@ -403,6 +510,7 @@ export default function VideoThiNghiemKhung({
     chotDoneRef.current = true;
     TRA_LOI.set(data.id, { chose, boQua, ...TRA_LOI.get(data.id), chotChose: null, chotBoQua: true });
     eventRef.current?.({ loai: "bo_qua_cau_chot" });
+    suaLuot((l) => (l.chotBoQua = true));
     resume();
   };
 
