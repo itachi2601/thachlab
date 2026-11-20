@@ -1,0 +1,68 @@
+{
+  "id": "tn-l11-motasong-02",
+  "ten": "Dây lò xo trên sàn: đo bước sóng và chu kì khi đổi nhịp gảy, lực căng",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-motasong-02-20261120.mp4",
+  "tong_giay": 49.7,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Cùng nhịp gảy, kéo căng hơn thì λ dài ra, T như cũ.",
+      "kiem": "Kéo căng dây hơn, λ và T thay đổi thế nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 4.2,
+      "chu": "Giữ nhịp gảy, kéo căng từ 2 N lên 4,5 N. Bước sóng λ và chu kì T đổi thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.9,
+      "chu": "Dây lò xo 3 m, lực kế, thước, quay 240 khung/s."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 14.5,
+      "chu": "Chấm đỏ đi từ đỉnh tới đỉnh: lần 1 mất 120 khung ở 240 khung/s, T = 0,5 s; λ = 1,0 m."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 24.2,
+      "chu": "Kéo 2 N lên 4,5 N: λ từ 1,0 lên 1,5 m, T vẫn 0,5 s. Gảy nhanh hơn: T ≈ 0,33 s."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 38.1,
+      "chu": "Chưa đo ảnh hưởng của độ mạnh tay gảy (biên độ). Để dành cho mô phỏng."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.4,
+    "cau_hoi": "Giữ nhịp gảy, kéo căng dây từ 2 N lên 4,5 N. Bước sóng λ và chu kì T đổi thế nào?",
+    "chon": [
+      "A. λ dài ra, T như cũ",
+      "B. λ như cũ, T dài ra",
+      "C. λ và T cùng dài ra"
+    ],
+    "dung": 0,
+    "giai_thich_dung": "λ dài ra từ 1,0 lên 1,5 m còn T vẫn 0,5 s. Xem số đo thật ở đoạn kế.",
+    "giai_thich_sai": "Kéo căng dây thì λ dài ra (1,0 lên 1,5 m) còn T vẫn 0,5 s. Xem số đo thật ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 44.8,
+    "cau_hoi": "Kéo 4,5 N, gảy nhanh hơn, đo được λ = 0,75 m. Quay 240 khung/s, một chu kì mất bao nhiêu khung?",
+    "chon": [
+      "A. 120 khung",
+      "B. 80 khung",
+      "C. 60 khung",
+      "D. 180 khung"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "T vẫn 0,5 s chỉ khi nhịp gảy không đổi. Lần này gảy nhanh hơn nên T ngắn đi: v = 3,0 m/s, T = 0,25 s, tức 60 khung.",
+      "80 khung ứng với lần kéo 2 N, gảy 3 lần/s; lần này lực căng khác nên v khác. Với 4,5 N, v = 3,0 m/s, T = 0,25 s, tức 60 khung.",
+      "Tốc độ v = 1,5 : 0,5 = 3,0 m/s ở lần 4,5 N, lực căng không đổi nên v vẫn 3,0 m/s. T = 0,75 : 3,0 = 0,25 s, tức 0,25 × 240 = 60 khung.",
+      "λ tính bằng mét, T tính bằng giây, hai số này không bằng nhau. T = λ : v = 0,75 : 3,0 = 0,25 s, tức 0,25 × 240 = 60 khung."
+    ]
+  }
+}
