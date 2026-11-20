@@ -6,7 +6,7 @@
 // Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l11-bai20.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai20.pdf
 //       node scripts/ruot-tap/l11-bai20.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai20/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b20 as H } from './hinh-l11-bai20.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -62,8 +62,8 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="fig-side" style="${fs(46)}"><div>
 ${opt('A', 'Lông và chân chim cách điện hoàn toàn')}
 ${opt('B', 'Điện chỉ chạy trong lõi dây, không ra tới mặt dây ngoài')}
-${opt('C', 'Hai chân gần như cùng điện thế, nên hầu như không có hiệu điện thế giữa chúng')}
-${opt('D', 'Dây truyền tải có điện thế thấp hơn ổ cắm trong nhà')}
+${opt('C', 'Hai chân chạm hai chỗ trên cùng một dây, giữa hai chân hầu như không có chênh lệch điện')}
+${opt('D', 'Cơ thể chim nhỏ nên chịu được điện cao hơn người')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
 ${H.chimDay()}</div>
 </div>
@@ -149,7 +149,7 @@ ${head('BẪY 2 · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'Bẫy 2: “U = E nhân độ dài MN”', '4·1')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div>Chỉ đúng khi MN nằm ${f(22)}. MN xiên góc ${m('\\alpha')} với đường sức: ${nw(`${m('d=MN\\cdot')} ${f(14)}`)}</div>
-<div style="margin-top:.6mm"><b>Câu 5.</b> ${m('E=1000')}&nbsp;V/m, ${m('MN=5')}&nbsp;cm hợp với đường sức ${m('60^\\circ')}, N lệch theo chiều đường sức. ${nw(`${m('U_{MN}=')} ${f(16)}`)}</div></div>
+<div style="margin-top:.6mm"><b>Câu 4.</b> ${m('E=1000')}&nbsp;V/m, ${m('MN=5')}&nbsp;cm hợp với đường sức ${m('60^\\circ')}, N lệch theo chiều đường sức. ${nw(`${m('U_{MN}=')} ${f(16)}`)}</div></div>
 ${H.hinhChieu()}</div>
 ${h3(2, 'IV · Trả bài 6 câu', '4·2')}
 ${box(`${tb('1. Công lực điện phụ thuộc gì, không phụ thuộc gì?')}${lines(1)}
@@ -159,9 +159,9 @@ ${tb('4. Điện thế thay đổi thế nào dọc theo đường sức?')}${li
 ${tb('5. Điện thế và thế năng khác nhau chỗ nào?')}${lines(1)}
 ${tb('6. Hệ thức giữa E và U, nghĩa của d?')}${lines(1)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(3, 'Kết quả tự kiểm tra (8 câu trên web)', '4·3')}
-${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
-${K.btvn().replace('<i>1</i>', '<i>4</i>')}
+${h3(3, 'Đề 1215 (20 câu, cuối tiết)', '4·3')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
+${K.btvn().replace('<i>1</i>Đề BTVN</h3>', `<i>4</i>Đề BTVN</h3>${K.tag('4·4')}`)}
 ${foot(4)}</section>`;
 
 const de = (txt, n) => `<div style="margin-top:.6mm;line-height:1.3"><b>${txt}</b></div>` + lines(n);
@@ -170,10 +170,10 @@ ${head('BÀI TOÁN MẪU · THỬ THÁCH · MANG VỀ')}
 ${h3(1, 'V · Bài toán mẫu: hai bản song song', '5·1')}
 <div class="card soft" style="padding:1.2mm 3mm">Hai bản phẳng song song cách nhau ${cm('2')}, nối nguồn ${V('120')}; mốc điện thế ở bản âm.<br>
 <b>a)</b> cường độ điện trường giữa hai bản<br><b>b)</b> điện thế tại M cách bản âm ${cm('0{,}5')}<br><b>c)</b> electron đi từ bản âm sang bản dương: công của lực điện (J và eV)</div>
-<table><tr><th style="width:66mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+<table><tr><th style="width:66mm">Câu trong đề</th><th>Dữ liệu → kiến thức <span class="hint" style="font-weight:400">(viết một dòng)</span></th></tr>
 <tr><td>“hai bản phẳng song song”</td><td>điện trường đều → dùng được ${m('U=Ed')}</td></tr>
 <tr><td style="height:5.5mm">“cách nhau 2 cm, nguồn 120 V”</td><td></td></tr>
-<tr><td style="height:5.5mm">“mốc ở bản âm”</td><td></td></tr>
+<tr><td style="height:5.5mm">“mốc ở bản âm”</td><td>${nw(`${m('V_-=')} ${f(14)}`)}, ${nw(`${m('V_+=')} ${f(14)}`)}</td></tr>
 <tr><td style="height:5.5mm">“electron đi từ bản âm sang bản dương”</td><td></td></tr></table>
 <div class="fig-side" style="${fs(40)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`a) ${m('E=')}`, 1)}${wl(`b) ${m('V_M=')}`, 1)}${wl(`c) U<sub>đầu–cuối</sub> ${m('=')}`, 1)}${wl(`${m('A=qU=')}`, 1)}${wl('Kiểm tra dấu, độ lớn có hợp lí?', 1)}</div>${H.banMau()}</div>
