@@ -54,6 +54,7 @@ button.vn.phu{background:#64748b}
 .hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
 .hai>.fig{flex:none;width:44%;height:100%;align-items:center}
 .hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
 .gian{flex:1;min-height:0} .gian svg{height:100%}
 .f4 svg{height:100%}
 .fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
@@ -315,8 +316,10 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m4e">
   <div class="top"><span class="so">4/6 · Bẫy</span><span>phút 16–24</span><span class="tap">tr.4 · ô 4·1 · Câu 4</span></div>
   <p class="hoi">$E=1000$ V/m, $MN=5$ cm <u>hợp với</u> đường sức $60^\circ$, N lệch theo chiều đường sức. $U_{MN}=$ ?</p>
+  <div class="hai">
   <div class="fig gian f4"><svg viewBox="0 0 320 184" role="img" aria-label="Hình chiếu của MN lên đường sức"><defs><marker id="hc" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="hc2" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="8" y1="16" x2="304" y2="16" stroke="#8a94ad" stroke-width="2" marker-end="url(#hc)"/><line x1="8" y1="174" x2="304" y2="174" stroke="#8a94ad" stroke-width="2" marker-end="url(#hc)"/><text x="310" y="32" fill="#8a94ad" font-size="20" text-anchor="end" font-weight="700">E</text><line x1="50" y1="140" x2="220" y2="46" stroke="#1c2540" stroke-width="2.8"/><circle cx="50" cy="140" r="5" fill="#1c2540"/><circle cx="220" cy="46" r="5" fill="#1c2540"/><text x="42" y="146" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">M</text><text x="228" y="46" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">N</text><line x1="50" y1="140" x2="290" y2="140" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><path d="M94.0,140.0 A44,44 0 0 0 88.5,118.7" fill="none" stroke="#1c2540" stroke-width="2.2"/><text x="102" y="132" fill="#1c2540" font-size="22" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">α</tspan></text><line x1="220" y1="46" x2="220" y2="140" stroke="#1f5fa8" stroke-width="2" stroke-dasharray="4 4"/><line x1="52" y1="158" x2="218" y2="158" stroke="#1f5fa8" stroke-width="2.2" marker-start="url(#hc2)" marker-end="url(#hc2)"/><text x="135" y="152" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="700">?</text></svg></div>
-  <ol class="opt lo hang">
+  <div class="ben">
+  <ol class="opt lo hai-cot">
     <li><b>A.</b>$50$ V</li>
     <li data-dung><b>B.</b>$25$ V</li>
     <li><b>C.</b>$43{,}3$ V</li>
@@ -324,9 +327,11 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   </ol>
   <button class="mo" data-mo="a4">Mở đáp án</button>
   <div class="an" id="a4" hidden>
-    <p><b>B.</b> $d=MN\cos60^\circ=2{,}5$ cm; $U=1000\cdot0{,}025=25$ V.</p>
-    <p>$U=E\cdot MN$ chỉ đúng khi MN <b class="o">dọc đường sức</b>; $\alpha$ giữa MN và đường sức → $\cos$.</p>
-    <p class="nho">A: nhân thẳng MN · C: chiếu bằng $\sin$ · D: chỉ khi MN $\perp$ đường sức.</p>
+    <p><b>B.</b> $d=MN\cos60^\circ=2{,}5$ cm</p>
+    <p>$U=Ed=25$ V</p>
+    <p>Góc với <b class="o">đường sức</b> → $\cos$.</p>
+  </div>
+  </div>
   </div>
 </section>
 
