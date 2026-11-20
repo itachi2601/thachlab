@@ -167,7 +167,8 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   (trước các commit 4d07cb1d2, 30061f236, 176380903) → chưa ghi được lượt nào vào `lesson_clip_views`. Từ bản deploy trước, `origin/main` chỉ đổi 7 file
   của kế hoạch này (`VideoThiNghiemKhung`, `KhungPortals`, `MoPhongPortals`, `CurrentBalanceSimulation`, `SimulationsLazy`, 2 trang `/dev`).
   **ĐÃ DEPLOY 21/11/2026 06:29** từ `01eab4d3f` (thầy chạy `scripts/deploy.sh`; kiểm chunk trên web có `log_clip_view`).
-- Còn chờ thầy: (a) duyệt 3 clip mẫu `-20261120` (việc 4); (b) chọn lô 20 clip L12 (việc 4); (c) duyệt mô phỏng cân dòng điện (việc 5).
+- 21/11 kiểm DB: bài 57, 83, 12 trỏ clip `-20261120` (chỉ bản này), khung có `cau_chot`; bài 12 có hộp `can-dong-dien` (việc 5 đã lên DB).
+  Còn: lô 20 clip L12 (phiên nhánh `clip-l12-lo20`); thử bằng tài khoản HS thật.
 - Đồng hồ "2–4 tuần số liệu" (mục 3) tính từ 21/11/2026 → xem tỉ lệ khoảng 5–19/12 bằng `scripts/sql/ty-le-clip-thi-nghiem.sql`.
 
 ## 3. Việc nên làm thêm để tin được kết quả
