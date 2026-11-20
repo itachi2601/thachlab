@@ -48,7 +48,7 @@ import c_tn_l11_nguon_dien_03 from "@/content/thi-nghiem/video-khung/tn-l11-nguo
 /**
  * XEM THỬ video thí nghiệm + khung sáu ô + dừng ở câu Dự đoán (bản thử 29/10/2026), 23 clip L12.
  * Mở http://localhost:3000/dev/video-tuong-tac. Chỉ có nghĩa ở máy dev; sự kiện chỉ in ra bảng bên dưới,
- * chưa ghi DB (muốn đo tỉ lệ dừng/chọn/xem lại thì nối onEvent vào bảng ghi sau khi thầy chốt).
+ * không ghi DB; dòng "LƯỢT" là đúng payload trang bài gửi RPC log_clip_view (việc 6) khi xem hết / ẩn tab.
  */
 const CLIPS = [
   c_tn_l12_thuchanhtu_04, // 3 clip đã rà 19/11, có câu chốt (việc 2) — để đầu cho dễ thử
@@ -107,11 +107,22 @@ export default function VideoTuongTacPreviewPage() {
         </p>
       </header>
       {CLIPS.map((c) => (
-        <VideoThiNghiemKhung key={c.id} data={c} onEvent={onEvent(c.id)} />
+        <VideoThiNghiemKhung
+          key={c.id}
+          data={c}
+          onEvent={onEvent(c.id)}
+          onLuot={(l) =>
+            setLog((x) =>
+              [`${new Date().toLocaleTimeString("vi-VN")} · LƯỢT · ${JSON.stringify(l)}`, ...x].slice(0, 12),
+            )
+          }
+        />
       ))}
       <section className="rounded-2xl border border-line bg-panel p-4">
         <h2 className="mb-2 text-[15px] font-bold text-ink">Sự kiện gần nhất</h2>
-        <pre className="whitespace-pre-wrap break-all text-[13px] text-muted">{log.length ? log.join("\n") : "Chưa có."}</pre>
+        <pre className="whitespace-pre-wrap break-all text-[13px] text-muted">
+          {log.length ? log.join("\n") : "Chưa có."}
+        </pre>
       </section>
     </main>
   );
