@@ -99,6 +99,39 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   - Cả ba: chữ ≥ 48px, bỏ chữ xám nhạt, phóng hình dụng cụ vào chỗ trống, cắt 8 giây tĩnh cuối (đã có việc 2) để giãn cảnh Bẫy; vẫn ≤ 50 s.
 - **Đạt khi:** qua cổng A + B mới; mp4 < 3 MB; tải bản mới lên `lesson-clips` với hậu tố ngày; đổi URL trên DB bằng `scripts/doi-ban-clip-db.mts`
   sau 22h, có sao lưu; ghi sổ clip.
+- **Kết quả 3 clip mẫu 20/11/2026** (commit 02cc8e55c…f8d5d4664): qua cổng A (`--do-chu` 0 LỖI) + cổng B (kiem-code 2 vòng ở 283px, lượt sửa cuối tự crop),
+  `xuat-khung.py --kiem` OK, khung JSON đã đổi mốc + URL `-20261120`. Đã tải `lesson-clips/clip/<id>-20261120.{mp4,webp}` (HEAD 200). **CHƯA đổi URL trên DB
+  và kho `content/thi-nghiem/<id>.json`** — chờ thầy duyệt mẫu; sau duyệt: `scripts/doi-ban-clip-db.mts` sau 22h + gắn lại khung (`gan-khung-video.mts`).
+
+  | Clip | Từ/phút trước → sau | LỖI trước → sau | Giây | KB |
+  |---|---|---|---|---|
+  | nemngang1 | 182 → 146 | 11 → 0 | 49,2 → 48,4 | 1 479 |
+  | khucxa2 | 172 → 150 | 15 → 0 | 49,6 → 49,5 | 1 441 |
+  | thuchanhtu4 | 199 → 138 | 16 → 0 | 49,2 → 49,7 | 1 298 |
+
+  Cố ý lệch quy tắc: cảnh Bẫy `thuchanhtu4` có 3 phụ đề (> 2/cảnh) để mỗi nhịp ≥ 3 s có nhãn riêng.
+- **Đề xuất lô 20 clip L12 (CHƯA dựng, chờ thầy chọn).** Tiêu chí: bài trong phần thi TN THPT, câu Dự đoán đánh vào quan niệm sai mạnh (`hien_tuong_hay_sai`),
+  ưu tiên clip đang > 50 s hoặc dày chữ (đo `--do-chu` 20/11: cả 52 clip L12 đều 12–19 LỖI theo cổng mới).
+  1. `hatnhan3` Rutherford — 63,5 s (dài nhất), đề 2026 II.2 hỏi; HS nghĩ alpha lệch do êlectron.
+  2. `boyle` (boylecharles-01) — 54,2 s; HS đoán nén ½ thể tích thì p "tăng chút ít".
+  3. `boylecharles2` Charles — lỗi lấy tỉ số °C (87/27) rất phổ biến trong đề.
+  4. `pttrangthai2` p/T — chia p cho °C rồi kết luận sai.
+  5. `apsuat2` áp suất theo nhiệt độ — 52,6 s; cùng lỗi tỉ lệ °C.
+  6. `thangnhietdo1` trộn nước — HS lấy trung bình cộng, bỏ khối lượng.
+  7. `thuchanh1` nhiệt dung riêng (Bài 4 thực hành) — 19 LỖI; HS tưởng phải đun tới 100 °C.
+  8. `thuchanh2` đun đá liên tục — 53,3 s, 19 LỖI; đoạn nằm ngang bị hiểu là bếp ngừng cấp nhiệt.
+  9. `chuyenthe` (chuyenthe-01) — 216 từ/phút (dày nhất); HS đoán đồ thị dốc thẳng.
+  10. `noinang4` xilanh cách nhiệt — nhầm Q = 0 với ΔU = 0, câu Đ/S hay gặp.
+  11. `phongxa2` chu kì bán rã — 54,9 s; HS tưởng số đếm giảm đều theo đường thẳng.
+  12. `antoanpx1` quy luật 1/r² — 54,6 s; lẫn 1/r với 1/r².
+  13. `luctu6` hai dòng song song — HS suy "cùng chiều đẩy nhau" từ điện tích.
+  14. `luctu5` electron trong từ trường — tưởng lực từ làm đổi tốc độ.
+  15. `camungdt5` thanh trượt trên ray — sai chiều dòng cảm ứng (Lenz).
+  16. `camungdt3` từ thông khung quay — lấy nhầm góc giữa mặt khung và B.
+  17. `mayphat1` f = np — 53,8 s, 202 từ/phút; quên số cặp cực.
+  18. `mayphat3` máy biến áp — 53,2 s; tưởng tăng U thì tăng công suất.
+  19. `xoaychieu2` hai LED ngược chiều — đổi chiều f thay vì 2f lần/s.
+  20. `thuchanhtu3` dây hợp góc θ (Bài 11 thực hành, cùng bộ cân với mẫu) — tưởng B đổi khi xoay dây.
 
 ### Việc 5 — Mô phỏng tự kéo sau clip cho thí nghiệm một biến
 - **Model:** Opus (thiết kế tương tác + vật lí), phiên chính làm UI học sinh.
