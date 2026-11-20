@@ -407,7 +407,7 @@ YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ 
 
 **Lô 11 — trạng thái 19/11/2026:** 12/12 clip đã dựng, qua cổng A+B, tải `-20261119` (HEAD 200), chèn bài + khung trong repo (vào main). Chưa ghi DB (chờ thầy duyệt, sau 22h: `dang-lo11.sh`). K10 4 clip L12 đã đổi URL `-2` trong repo. **ĐÃ ĐĂNG DB 19/11/2026 chiều** (thầy cho đăng ngay): lý thuyết 12 bài lô 11 (#32, 28, 31, 33, 34, 37, 83, 84, 85, 57, 90, 150; `dang-lo11.sh --yes`) + 3 bài L12 K10 (#7, 125, 12; `--chi-video`, "Khác biệt ngoài khối video: KHÔNG"). Kiểm DB: 15/15 mục lý thuyết chứa đúng tên clip mới; 4 URL K10 `-20261119-2` HEAD 200.
 
-## Việc 4 — dựng lại 3 clip mẫu theo cổng mới (20/11/2026) **THẦY DUYỆT 20/11 11h; HẸN GHI DB 22:05 20/11**
+## Việc 4 — dựng lại 3 clip mẫu theo cổng mới (20/11/2026) **THẦY DUYỆT 20/11; ĐÃ GHI DB 21/11 06:29 (3/3)**
 Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi clip một agent Opus, cổng B kiem-code 2 vòng ở 283px + một lượt sửa cuối tự crop.
 | tn | clip | từ/phút trước → sau | LỖI `--do-chu` | giây · KB | bản mới (HEAD 200) |
 |---|---|---|---|---|---|
