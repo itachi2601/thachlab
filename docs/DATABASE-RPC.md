@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 438 hàm, sinh tự động 2026-11-19
+# Hàm SQL / RPC (schema public) — 440 hàm, sinh tự động 2026-11-20
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -112,6 +112,7 @@ repo — xem trên Supabase Dashboard).
 - `lesson_practice_pool(p_lesson_id bigint, p_per_level integer)` → jsonb
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
 - `live_study_summary()` → jsonb
+- `log_clip_view(p jsonb)` → integer
 - `log_learning_events(p_events jsonb)` → integer
 - `manages_class(p_class bigint)` → boolean
 - `mistake_q_public(p_key bigint, p_exam bigint, p_idx integer, p_stage integer, p_kind text, q jsonb)` → jsonb
@@ -245,8 +246,8 @@ repo — xem trên Supabase Dashboard).
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_public_stats()` → void
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
@@ -274,6 +275,7 @@ repo — xem trên Supabase Dashboard).
 - `review_wrong_students(p_session bigint, p_stage integer)` → jsonb
 - `rl_allow(p_key text, p_max integer, p_window interval)` → boolean
 - `rl_client_ip()` → text
+- `rollup_lesson_clip_views(p_before timestamp with time zone)` → bigint
 - `rollup_lesson_read_depth(p_before date, p_dry boolean)` → jsonb
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
 - `search_students_for_link(p_query text)` → TABLE(id uuid, full_name text, class_name text, birth_date date)
