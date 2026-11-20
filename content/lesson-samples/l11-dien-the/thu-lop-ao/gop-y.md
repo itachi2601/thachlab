@@ -61,3 +61,35 @@ Số ô [n] là số chỗ trống trong `thu-lop-ao/sach-trong.md`. Bằng ch�
   - Học sinh ảo đúng gần như mọi câu, nên các lỗi hay gặp mà ghi chú lường trước (dùng sin, ra 90 V, −120 eV, chọn A ở lần 3) **chưa được kiểm**.
   - Không đo được phút thật.
 - **Không thử**: đề 1215 trên web, mã QR, cỡ chữ ở bàn cuối, nhiễu 0,01 V của đồng hồ.
+
+## Đã xử lý (ngày 20/11/2026)
+
+Commit `2fa643534`. Màn chiếu nay 22 màn (thêm `#m6chim`). Ruột tập vẫn 12 trang (trang 5 còn dư 2 mm).
+
+| # | Kết quả | Ghi chú |
+|---|---|---|
+| 1 | Làm | Ô 4·3 → "Đề 1215 (20 câu, cuối tiết)": Điểm …/20 · Câu sai · Câu đoán mò. Màn 6b: "nộp xong: tr.4 ô 4·3 ghi điểm". Bỏ ô 4·3 khỏi Về nhà. |
+| 2 | Làm | Đề BTVN gán mã 4·4; màn Về nhà thêm dòng ô 4·4. |
+| 3 | Làm | C: "Hai chân chạm hai chỗ trên cùng một dây, giữa hai chân hầu như không có chênh lệch điện". D: "Cơ thể chim nhỏ nên chịu được điện cao hơn người" (phản bác: chim lớn sải cánh chạm hai dây cũng chết). Đáp án vẫn C. |
+| 4 | Làm | Màn 1b chép y chữ Tập (câu hỏi + 4 phương án). |
+| 5 | Làm | Màn mới `#m6chim` (sau 6a): hình chim (chép Hình 1 bằng script) + "Lần 3 … 0,00 V", ô mở chim (U ≈ 0) và người đứng đất (dây – đất cỡ hàng trăm kV, không ghi "500 kV" vì 500 kV là điện áp giữa hai dây). Bỏ "(C)" ở nhãn 6b. |
+| 6 | Làm | Màn 4e dùng đúng hình ô 4·1 (`hinhChieu`, cạnh d tô xanh có "?"), đề chép y Tập, ô mở thêm dòng "U = E·MN chỉ đúng khi MN dọc đường sức". Hình 2 cũ chuyển sang màn 4d. |
+| 7 | Làm một phần | Màn 4b mặc định bỏ qua, câu "x gấp đôi" gộp vào 4c. Giữ mốc phút ĐD4 16–24, ĐD5 24–27 (bỏ clip đã bù 1,5 phút); ĐD6: trả bài viết 1,5 phút + màn con chim 1 phút, đề 1215 giữ 30–45 vì không cắt giờ đề. |
+| 8 | Làm | Màn 2a thêm dòng d (ô 1·4 dòng 3 điền trên lớp, ĐD2 thành 26 chỗ). |
+| 9 | Làm | |
+| 10 | Làm | |
+| 11 | Làm | |
+| 12 | Làm | D rút thành "hai que càng xa nhau, số càng lớn" (câu hỏi đã nói "trên cùng dây"). |
+| 13 | Làm | SVG nhỏ dọc/ngang ở màn 4a. |
+| 14 | Làm | |
+| 15 | Làm | |
+| 16 | Làm | Màn 4d: ba nút mở lần lượt qEd → qU → ghép; ghi chú đổi câu gợi mở cho khớp. |
+| 17 | Làm | Màn 5c thêm dòng; ĐD5 điền luôn ô 2·3 dòng 5–6 (bỏ khỏi Về nhà); Tập in sẵn "V₋ = …, V₊ = …". |
+| 18 | Bỏ | ĐD4 vốn quá tải (mục 7); đổi số ô 3·3 thì lệch số đo thật trong clip; về nhà vẫn có Câu 3 (x = 5 cm) là bài mới. |
+| 19 | Làm | Chữ ứng với ô trống gạch chân xanh (màn 2a–2d, dòng ô 4·1 ở 4e); nhãn góc màn ghi đúng dòng (2b: dòng 1–4, 2c: dòng 5). |
+| 20 | Làm | Câu 5 → Câu 4 ở Tập, màn 4e, ghi chú. |
+| 21 | Làm | Số đo ghi 1,50 V; −1,50 V; 0,00 V (giữ "pin 1,5 V" vì là nhãn pin). |
+| 22 | Làm | Gộp vào mục 5. |
+| 23 | Làm | |
+| 24 | Làm | |
+| 25 | Làm | Gợi ý rút gọn "(viết một dòng)" để tiêu đề cột không xuống dòng (trang 5 suýt tràn). |
