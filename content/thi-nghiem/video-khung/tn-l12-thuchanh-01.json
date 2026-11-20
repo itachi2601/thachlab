@@ -1,52 +1,69 @@
 {
   "id": "tn-l12-thuchanh-01",
-  "ten": "Đo nhiệt dung riêng của nước với ba khối lượng khác nhau",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261113-2.mp4",
+  "ten": "Đo nhiệt dung riêng: có phải đun nước tới sôi?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261121.mp4",
   "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Một nhóm học sinh cho rằng: nhiệt dung riêng của nước phụ thuộc vào khối lượng của nước (vì m nằm trong công thức c = Q/(m·Δt)).",
-      "kiem": "Đổi khối lượng nước thì c tính ra có đổi không?"
+      "chu": "Một bạn cho rằng: phải đun nước tới 100 °C (sôi) mới tính được nhiệt dung riêng c.",
+      "kiem": "Nước chưa sôi thì tính được c không?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Cùng 150 W, đun 300 s với 0,200; 0,300; 0,400 kg nước. Ba giá trị c tính ra thế nào?"
+      "giay": 2.4,
+      "chu": "Bạn nói phải đun tới 100 °C. Đun 300 s với 0,200; 0,300; 0,400 kg nước. Ba giá trị c ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.7,
-      "chu": "Bình nhiệt lượng kế vỏ xốp có nắp, điện trở đun, oát kế (150 W), nhiệt kế, que khuấy."
+      "giay": 9.3,
+      "chu": "Nhiệt lượng kế, oát kế, nhiệt kế, cân."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.6,
-      "chu": "Cùng 300 s, m càng lớn thì Δt càng nhỏ: 53,3; 35,7; 26,8 °C."
+      "giay": 16.9,
+      "chu": "Sau 300 s: 81,3; 63,7; 54,8 °C, cả ba đều chưa sôi."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.9,
-      "chu": "c ≈ 4 221; 4 202; 4 198 J/(kg·K), gần như bằng nhau: bác bỏ giả thuyết c phụ thuộc m."
+      "giay": 22.5,
+      "chu": "c ≈ 4 221; 4 202; 4 198 J/(kg·K), gần bằng nhau. Chưa sôi vẫn tính được c, chỉ cần đo được Δt."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.0,
-      "chu": "Chưa đo được nhiệt mất ra ngoài là bao nhiêu; chưa biết c có đổi theo nhiệt độ hay không."
+      "giay": 37.6,
+      "chu": "Chưa biết nhiệt mất ra ngoài là bao nhiêu; chưa biết c có đổi theo nhiệt độ hay không."
     }
   ],
   "dung_dua": {
-    "giay": 9.55,
-    "cau_hoi": "Nhóm bạn cho rằng c phụ thuộc m. Cùng 150 W, đun 300 s với m = 0,200; 0,300; 0,400 kg. Ba giá trị c tính ra:",
+    "giay": 9.15,
+    "cau_hoi": "Một bạn cho rằng phải đun tới 100 °C mới tính được c. Cùng 150 W, đun 300 s với 0,200; 0,300; 0,400 kg nước. Ba giá trị c tính ra:",
     "chon": [
-      "A. Tăng dần khi m tăng",
-      "B. Giảm dần khi m tăng",
+      "A. Chưa tính được, vì nước chưa sôi",
+      "B. Chỉ lần nước nóng nhất là gần đúng",
       "C. Gần như bằng nhau",
-      "D. Không so sánh được vì Δt mỗi lần khác nhau"
+      "D. Tăng dần khi m tăng"
     ],
     "dung": 2,
-    "giai_thich_dung": "m tăng thì Δt giảm theo, tích m·Δt gần như giữ nguyên nên c ≈ 4 221; 4 202; 4 198 J/(kg·K), chênh nhau rất ít: giả thuyết bị bác bỏ.",
-    "giai_thich_sai": "m có trong công thức c = Q/(m·Δt), nhưng khi m tăng thì Δt cũng đổi. Hai thay đổi đó bù nhau thế nào?"
+    "giai_thich_dung": "c = P·τ/(m·Δt) chỉ cần nhiệt lượng P·τ, khối lượng và độ tăng nhiệt độ Δt. Ba lần ra ≈ 4 221; 4 202; 4 198 J/(kg·K) dù nước chỉ lên 81,3; 63,7; 54,8 °C.",
+    "giai_thich_sai": "Công thức c = P·τ/(m·Δt) cần mốc 100 °C ở chỗ nào không? Chỉ cần đo được Δt trong lúc nước còn là chất lỏng."
+  },
+  "cau_chot": {
+    "giay": 45.0,
+    "cau_hoi": "Lúc đun, đầu đo nhiệt kế chạm vào điện trở đang nóng; P, τ, m vẫn đo đúng. Nhiệt dung riêng c tính ra sẽ:",
+    "chon": [
+      "A. Lớn hơn giá trị thật",
+      "B. Nhỏ hơn giá trị thật",
+      "C. Bằng giá trị thật",
+      "D. Lớn hay nhỏ tuỳ khối lượng nước"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Đầu đo chạm điện trở nóng nên đọc cao hơn nhiệt độ của nước: t₂ đọc được lớn, Δt lớn. Δt nằm ở mẫu số của c = P·τ/(m·Δt) nên c nhỏ đi, không lớn lên.",
+      "Điện trở nóng hơn nước nên nhiệt kế đọc t₂ cao hơn nhiệt độ thật của nước. Δt đo được lớn hơn, mà Δt ở mẫu số của c = P·τ/(m·Δt) nên c tính ra nhỏ hơn thật.",
+      "P, τ, m đúng nhưng Δt thì sai: đầu đo chạm điện trở nóng nên đọc cao hơn nhiệt độ nước. Δt lớn hơn thật làm c tính ra nhỏ hơn.",
+      "Lỗi nằm ở số đọc nhiệt kế, với mọi khối lượng nước đều làm Δt đọc được lớn hơn thật. Vì vậy c luôn lệch về một phía: nhỏ hơn thật."
+    ]
   }
 }
