@@ -162,6 +162,14 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   đúng Dự đoán, đúng câu chốt, bỏ qua, xem hết theo từng clip; `gen-database-doc.mjs` chạy lại.
 - Chạy migration theo mục "Migration Supabase" của `AGENTS.md`; không hoàn tác được thì hỏi thầy.
 
+## 2b. Tình trạng 20/11/2026 (phiên `motion-graphic-video-review-5c4291`)
+- Việc 1, 2, 3, 6 xong code; migration việc 6 đã chạy 20/11 08:20. **Nhưng code việc 1, 2, 5, 6 CHƯA lên web**: bản deploy cuối 19/11 14:16
+  (trước các commit 4d07cb1d2, 30061f236, 176380903) → chưa ghi được lượt nào vào `lesson_clip_views`. Từ bản deploy trước, `origin/main` chỉ đổi 7 file
+  của kế hoạch này (`VideoThiNghiemKhung`, `KhungPortals`, `MoPhongPortals`, `CurrentBalanceSimulation`, `SimulationsLazy`, 2 trang `/dev`).
+  Build thử ở worktree sạch tại `01eab4d3f`; bước push nhánh `deploy` bị bộ phân loại chặn → thầy chạy `scripts/deploy.sh`.
+- Còn chờ thầy: (a) duyệt 3 clip mẫu `-20261120` (việc 4); (b) chọn lô 20 clip L12 (việc 4); (c) duyệt mô phỏng cân dòng điện (việc 5).
+- Đồng hồ "2–4 tuần số liệu" (mục 3) tính từ ngày deploy, không phải ngày chạy migration.
+
 ## 3. Việc nên làm thêm để tin được kết quả
 - Mở một bài thật bằng tài khoản học sinh trên điện thoại thật, xác nhận lỗi che ở việc 1 (mới đo ở trang `/dev`).
 - Sau việc 6 chạy được 2–4 tuần: so tỉ lệ đúng câu chốt và tỉ lệ xem hết giữa clip dựng lại (việc 4) và clip cũ rồi mới quyết dựng tiếp.
