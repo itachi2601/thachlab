@@ -400,6 +400,8 @@ Kiểm chứng: không TN nào trong 55 có trường `mp4`; chưa có clip tự
 | tn-l10-nemngang-01 | clips/nemngang1.py | Bi ném ngang và bi thả chạm đất lệch nhau bao nhiêu khi v0 tăng gấp đôi? | l10-chuyen-dong-nem · 57 |
 | tn-l9-doanmach-03 | clips/l9doanmach3.py | Tháo một bóng thì bóng còn lại sáng thế nào ở từng cách mắc? | l9-doan-mach-noi-tiep-song-song · 90 |
 | tn-l9-hsgamthanh-01 | clips/hsgamthanh1.py | Thước nhô ra ngắn hay dài thì âm cao hơn, gấp mấy lần? | (chưa có slug trong content/lesson-samples) · 150 |
+| tn-l10-newton3-05 | clips/newton3xe5.py | Xe 1 kg và xe 3 kg: hai cảm biến lực chỉ số thế nào? | l10-dinh-luat-3-newton · 61 |
+| tn-l11-motasong-02 | clips/motasong2.py | Giữ nhịp gảy, kéo căng 2 N → 4,5 N: λ, T đổi thế nào? | l11-mo-ta-song · 27 |
 
 YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ xoá YouTube nếu sai thí nghiệm — thầy quyết. **19/11/2026 thầy xem 2 clip → GIỮ, đổi nhãn kho** (`video.nhan` ghi rõ biến thể/minh hoạ + trường `video.khac_thi_nghiem`): tn-l10-tonghopluc-01, tn-l12-ungdungcutu-03; bài không đổi, không đăng lại. Ghi chú gốc: Chưa phát hiện YouTube sai hẳn thí nghiệm; nghi cần thầy xem: tn-l12-ungdungcutu-03 (clip bếp thương mại, chưa chắc có đo hiệu suất 1 lít nước), tn-l10-tonghopluc-01 (nhãn "hai lực kế" nhưng tiêu đề ba lực kế/vòng nhẫn), tn-l11-dien-truong-deu-01 (cùng video điện phổ semolina với -03, không có E=U/d).
 
