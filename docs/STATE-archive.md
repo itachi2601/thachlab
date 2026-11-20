@@ -925,3 +925,8 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 
 - **RPC gộp trang bài `/lop-hoc/bai` (18/11)**: `20261118150000_get_lesson_page_student` CHƯA CHẠY — hàm mới (invoker) thay 7 round-trip/lượt tải; client đã có nhánh lùi nên chạy trước/sau deploy đều được, sau 22h. Code đã vào main (bdf0f29d7). Rollback `perf/rollback/20261118150000_get_lesson_page_student.down.sql`.
 - **Báo lỗi #155 ôn tập theo chặng (18/11)**: `20261118200000_review_stage_exams` CHƯA CHẠY — chạy ngoài giờ HS làm bài; buổi ôn tính cả đề mới của mục bài học (đề chụp lúc tạo buổi lệch sau `publish-theory-quiz --replace`), câu sai tách theo đề. Kèm client `ReviewConsole`/`ReviewStudent` (nhánh `claude/xu-ly-bao-loi-d26f75`, tương thích hai chiều, deploy trước/sau đều được).
+
+## Migration chạy 20/11/2026 08:20 (việc 6 clip)
+
+- **Việc 6 clip (20/11)**: `20261120120000_lesson_clip_views` CHỜ CHẠY (bảng mới `lesson_clip_views` + RPC `log_clip_view`, rollup >12 tháng; chạy lúc nào cũng được, khuyên sau 22h; đã thử trong giao dịch 20/11). Client gửi khi deploy; tỉ lệ theo clip: `scripts/sql/ty-le-clip-thi-nghiem.sql`.
+- → ĐÃ CHẠY 20/11 08:20 (log `scripts/logs/20261120-082035-20261120120000_lesson_clip_views.log` ở checkout chính); kiểm: 2 bảng + RPC có, RLS bật, anon không đọc/gọi được, pg_cron `lesson-clip-views-rollup` đặt; `gen-database-doc` chạy lại. Client chưa deploy.
