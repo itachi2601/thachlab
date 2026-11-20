@@ -1,0 +1,140 @@
+{
+ "mon": "vat-ly",
+ "lop": 9,
+ "bai": "Bài 17. Một số dạng năng lượng tái tạo",
+ "lesson_id": 95,
+ "nguon_trong_bai": "content/lesson-samples/l9-nang-luong-tai-tao/theory.html",
+ "id": "tn-l9-taitao-02",
+ "ten": "Pin mặt trời mini dưới đèn bàn: che bớt, tắt đèn",
+ "loai": "thi_nghiem",
+ "muc_do": "co_ban",
+ "kien_thuc": [
+  "taitao.pin_quang_dien",
+  "taitao.phu_thuoc_thoi_tiet"
+ ],
+ "muc_tieu": "Thấy pin quang điện chỉ cho điện khi có ánh sáng; ánh sáng giảm thì điện giảm, tối thì không có điện.",
+ "dung_cu": [
+  {
+   "ten": "Tấm pin mặt trời mini 6 V",
+   "so_luong": 1
+  },
+  {
+   "ten": "Quạt nhỏ (động cơ một chiều có cánh)",
+   "so_luong": 1
+  },
+  {
+   "ten": "Đèn bàn",
+   "so_luong": 1
+  },
+  {
+   "ten": "Tấm bìa che",
+   "so_luong": 1
+  }
+ ],
+ "cac_buoc": {
+  "lam": [
+   "Nối tấm pin với quạt nhỏ.",
+   "Chiếu đèn bàn vào tấm pin; lấy bìa che nửa tấm pin; tắt đèn."
+  ],
+  "quan_sat": [
+   "Có đèn: quạt quay đều.",
+   "Che bớt: quạt quay chậm hẳn.",
+   "Tắt đèn: quạt dừng."
+  ],
+  "rut_ra": [
+   "Năng lượng ánh sáng → điện năng, không qua tua-bin.",
+   "Không có ánh sáng thì không có điện: điện mặt trời không phát ban đêm."
+  ]
+ },
+ "tham_so": [
+  {
+   "ky_hieu": "f",
+   "ten": "Phần diện tích tấm pin được chiếu sáng",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "E",
+   "ten": "Độ sáng tương đối của đèn",
+   "don_vi": "",
+   "kieu": "dieu_chinh",
+   "min": 0,
+   "max": 1,
+   "mac_dinh": 1,
+   "buoc": 0.25
+  },
+  {
+   "ky_hieu": "P0",
+   "ten": "Công suất tấm pin khi chiếu sáng đủ",
+   "don_vi": "W",
+   "kieu": "co_dinh",
+   "gia_tri": 1.0
+  },
+  {
+   "ky_hieu": "P",
+   "ten": "Công suất điện tấm pin cho quạt",
+   "don_vi": "W",
+   "kieu": "tinh_ra"
+  }
+ ],
+ "mo_hinh": {
+  "phuong_trinh": [
+   "P = P0·f·E (gần đúng)"
+  ],
+  "gia_thiet": [
+   "coi công suất tỉ lệ diện tích được chiếu và độ sáng",
+   "thực tế che một phần có thể làm công suất giảm mạnh hơn tỉ lệ vì các ô pin mắc nối tiếp"
+  ]
+ },
+ "so_lieu_mau": {
+  "cot": [
+   "f",
+   "E",
+   "P (W)"
+  ],
+  "hang": [
+   [
+    1,
+    1,
+    1.0
+   ],
+   [
+    0.5,
+    1,
+    0.5
+   ],
+   [
+    1,
+    0,
+    0.0
+   ]
+  ],
+  "ghi_chu": "Số liệu minh hoạ từ mô hình P = P0·f·E, chưa phải số đo thật."
+ },
+ "ket_qua_ky_vong": "Che bớt thì quạt chậm, tắt đèn thì quạt dừng.",
+ "hien_tuong_hay_sai": [
+  "Nghĩ tấm pin tích sẵn điện nên tối vẫn chạy.",
+  "Nghĩ pin mặt trời cần nhiệt (nóng) chứ không cần ánh sáng."
+ ],
+ "an_toan": "Đèn bàn nóng, không chạm tay vào bóng đèn.",
+ "goi_y_mo_phong": {
+  "loai": "bang_so_lieu",
+  "y_tuong": "Kéo tấm bìa che và nút tắt đèn; cánh quạt quay chậm dần theo P.",
+  "diem_nhan": "Ánh sáng bằng 0 thì điện bằng 0."
+ },
+ "ghi_chu": "Video tự dựng (18/11/2026): \"pin còn ấm\" ngay sau khi tắt đèn là mô tả định tính (đèn bàn nóng), không phải số đo. Câu THỬ NGHĨ cuối video: không che pin, vặn đèn tối còn một nửa (E = 0,5, f = 1) → theo mô hình P = P0·f·E ≈ 0,5 W, quạt quay chậm hơn lúc đủ sáng.",
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-taitao-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "pin mặt trời dưới đèn bàn",
+  "nhin_vao": "Che bớt pin, tắt đèn thì quạt thế nào?",
+  "giay": 50,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
+ }
+}

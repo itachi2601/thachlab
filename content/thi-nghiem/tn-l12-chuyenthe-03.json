@@ -13,6 +13,16 @@
     "chuyenthe.mo_hinh_dong_hoc"
   ],
   "muc_tieu": "Chứng tỏ bay hơi xảy ra ở mọi nhiệt độ, chỉ ở mặt thoáng, và mạnh lên khi có gió — khác với sôi là chỉ xảy ra ở một nhiệt độ xác định, trong cả khối chất lỏng.",
+  "gia_thuyet": [
+    "Nước bay hơi ở mặt thoáng ngay ở nhiệt độ phòng, không cần sôi; gió cuốn hơi vừa thoát ra đi nên bay hơi nhanh hơn."
+  ],
+  "du_doan_neu_dung": [
+    "Sau 1 giờ ở 30 °C, đĩa để yên đã vơi đi (20 g còn 18,4 g), đĩa có gió càng mạnh càng vơi nhiều hơn, trong khi nhiệt độ nước vẫn ở mức phòng, chưa hề sôi."
+  ],
+  "khong_chung_minh": [
+    "Không cho biết bay hơi phụ thuộc diện tích mặt thoáng thế nào: hai đĩa có cùng diện tích.",
+    "Không tách được vai trò của độ ẩm không khí, vì độ ẩm được coi là không đổi."
+  ],
   "dung_cu": [
     {
       "ten": "Hai đĩa nhôm hoặc đĩa nhựa giống hệt nhau",
@@ -136,7 +146,7 @@
       [0, 40, 15.2],
       [3, 40, 7.6]
     ],
-    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với k·S = 0,027 g/phút ở 30 °C, a = 0,22, b = 0,035; không phải số đo thật. Đĩa đậy kín coi như v_bay_hoi ≈ 0."
+    "ghi_chu": "Số liệu minh hoạ tính từ mô hình với k·S = 0,027 g/phút ở 30 °C, a = 0,22, b = 0,035; không phải số đo thật. Đĩa đậy kín coi như v_bay_hoi ≈ 0. Ca tự suy cho câu chốt clip: 40 °C, gió 3 m/s → đĩa vơi ≈ 7,6 g."
   },
   "ket_qua_ky_vong": "Nước trong đĩa giảm dần ngay ở nhiệt độ phòng; gió mạnh hơn hoặc phòng nóng hơn thì giảm nhanh hơn; đĩa đậy kín gần như không giảm. Trong mọi trường hợp nhiệt độ nước đều thấp hơn 100 °C, tức chưa hề sôi.",
   "hien_tuong_hay_sai": [
@@ -153,5 +163,15 @@
     "loai": "2d_dong_hoc+bang_so_lieu",
     "y_tuong": "Hai đĩa nước cạnh nhau, một đĩa có quạt; các hạt nước ở mặt thoáng văng ra thành hơi, đĩa trước quạt vơi nhanh hơn.",
     "diem_nhan": "Cho thấy hạt chỉ thoát ra ở mặt thoáng và gió làm chúng không quay lại được, trong khi nhiệt độ nước đứng yên ở mức phòng."
+  },
+  "video": {
+    "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-chuyenthe-03-20261114.mp4",
+    "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-chuyenthe-03-20261114.webp",
+    "tieu_de_hop": "Xem thí nghiệm dựng lại",
+    "nhan": "hai đĩa nước, một đĩa trước quạt",
+    "nhin_vao": "Chưa sôi, nước trong hai đĩa có vơi không?",
+    "giay": 49,
+    "nguon": "tự dựng",
+    "da_kiem": "2026-11-14"
   }
 }

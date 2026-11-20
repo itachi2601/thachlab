@@ -14,6 +14,9 @@
   "udcamung.sai_so_do_thoi_gian"
  ],
  "muc_tieu": "Đo thời gian nam châm rơi hết ống nhựa và ống đồng cùng chiều dài để thấy lực hãm điện từ của dòng Foucault, và tính trung bình, độ lệch của ba lần đo.",
+ "gia_thuyet": ["Nam châm rơi chậm trong ống đồng là do dòng điện cảm ứng (dòng Foucault) trong thành ống, không phải do ống đồng nặng hơn hay do đồng hút nam châm."],
+ "du_doan_neu_dung": ["Ống nhựa cùng chiều dài, cùng đường kính (không dẫn điện) cho nam châm rơi gần như tự do.", "Ống đồng làm nam châm rơi chậm hẳn nhưng vẫn ra khỏi đáy ống, không dính vào thành ống."],
+ "khong_chung_minh": ["Không đo được cường độ dòng Foucault hay hình dạng đường dòng trong thành ống.", "Phép so với ống nhựa chưa tự loại được ý \"đồng hút nam châm\"; muốn loại phải đưa nam châm sát một thanh đồng đứng yên (không hút).", "Ống nhựa rơi chỉ khoảng 0,25 s nên bấm tay (±0,1 s) cho sai số tương đối rất lớn; chỉ so sánh được nhanh–chậm, không đo chính xác được."],
  "dung_cu": [
   {
    "ten": "Ống nhựa dài 30 cm",
@@ -132,7 +135,7 @@
     1.9
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ (chưa phải kết quả đo thật), chọn quanh t_nhựa ≈ 0,25 s và t_đồng ≈ 1,93 s của mô hình; trung bình 0,25 s và 1,9 s."
+  "ghi_chu": "Số liệu minh hoạ (chưa phải kết quả đo thật), chọn quanh t_nhựa ≈ 0,25 s và t_đồng ≈ 1,93 s của mô hình; trung bình 0,25 s và 1,9 s. Câu THỬ NGHĨ cuối clip: lật nam châm (cực S ở dưới) thả vào ống đồng → vẫn ≈ 1,9 s (dòng Foucault đổi chiều, lực lên nam châm vẫn hướng lên)."
  },
  "ket_qua_ky_vong": "Ống nhựa nam châm rơi cỡ 0,25 s, ống đồng chậm hơn nhiều (cỡ vài giây), nam châm vẫn ra hết ống.",
  "hien_tuong_hay_sai": [
@@ -149,5 +152,15 @@
   "loai": "2d_dong_hoc+do_thi",
   "y_tuong": "Hai ống cạnh nhau, thả nam châm cùng lúc; đồ thị v(t) của hai ống chồng nhau.",
   "diem_nhan": "Ống đồng đạt tốc độ giới hạn rất nhanh rồi rơi đều; ống nhựa tăng tốc đều theo g."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-03-20261114.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-03-20261114.webp",
+  "nhan": "Nam châm rơi trong ống nhựa và ống đồng",
+  "nhin_vao": "Thời gian rơi qua hai ống khác nhau thế nào?",
+  "giay": 49,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-14",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại"
  }
 }

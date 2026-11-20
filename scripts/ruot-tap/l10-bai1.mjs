@@ -73,7 +73,7 @@ ${h3(5, 'Thí nghiệm: giọt mực trong nước nóng và lạnh', '1·5')}
 <div><b>Quan sát:</b> mực loang đều nhanh hơn ở cốc ${f(25)}.</div>
 <div><b>Rút ra:</b> mực loang là hiện tượng ${f(14)} mô; nguyên nhân là ${f(25)} nước (cấp độ ${f(14)} mô): nước càng nóng, chúng chuyển động càng ${f(14)}.</div></div>
 ${H.giotMuc('Hai cốc, nhìn cùng một lúc sau khi nhỏ mực.')}</div>
-<div class="card soft" style="margin-top:1mm;padding:.8mm 3mm"><b>Làm nhanh:</b> xếp vi mô hay vĩ mô: nguyên tử, phân tử nước, hạt cát, người, Trái Đất.${lines(2)}</div>
+<div class="card soft" style="margin-top:1mm;padding:.8mm 3mm"><b>Làm nhanh · Câu 1.</b> Xếp vi mô hay vĩ mô: nguyên tử, phân tử nước, hạt cát, người, Trái Đất.${lines(2)}</div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -111,17 +111,17 @@ ${h3(1, 'II.5 · Quy trình nghiên cứu: 5 bước', '3·1')}
 <div><b>Thấy:</b> ${f(25)}, suy luận &nbsp;·&nbsp; <b>Hỏi:</b> đề xuất ${f(25)}</div>
 <div><b>Đoán:</b> hình thành ${f(25)} (lời đoán nguyên nhân, chưa được kiểm tra)</div>
 <div><b>Thử:</b> ${f(25)} giả thuyết &nbsp;·&nbsp; <b>Chốt:</b> rút ra ${f(25)}</div>
-<div>Kiểm tra không khớp: ${f(25)} hoặc ${f(25)} giả thuyết, rồi quay lại bước ${f(8)}.</div>
+<div>Kiểm tra không khớp: ${f(25)} hoặc ${f(25)} giả thuyết, rồi quay lại bước ${f(12)}.</div>
 <div style="margin-top:.6mm"><b>Lưu ý:</b> suy luận ở bước 1 chỉ dẫn tới câu ${f(25)}; lời đoán nguyên nhân để đem đi kiểm tra mới là giả thuyết.</div></div>
 ${H.nam('Năm bước nghiên cứu; có đường quay lại.')}</div>
 ${h3(2, 'Làm nhanh', '3·2')}
-${box(cau(`<b>Câu 1.</b> Lan thấy sách rơi nhanh hơn tờ giấy và nói: “Chắc do không khí cản tờ giấy nhiều hơn.” Câu này thuộc bước nào? Vì sao?`, 2))}
+${box(cau(`<b>Câu 3.</b> Lan thấy sách rơi nhanh hơn tờ giấy và nói: “Chắc do không khí cản tờ giấy nhiều hơn.” Câu này thuộc bước nào? Vì sao?`, 2))}
 ${h3(3, 'Thí nghiệm: sách và giấy rơi', '3·3')}
 <div class="fig-side" style="${fs(44)}"><div>
 <div><b>Làm:</b> thả cùng lúc từ ${nw('2 m')}: sách với giấy phẳng; giấy đặt trên sách; giấy vo tròn thả cùng sách. Quay video ${nw('60 hình/giây')} (1 khung = ${nw(m('\\tfrac1{60}\\ \\mathrm s'))}); thả mỗi kiểu 3 lần, đếm số khung hình từ lúc buông tới lúc chạm sàn.</div>
-<table class="tbl-ct" style="margin-top:.8mm;text-align:center"><tr><th style="text-align:left">Vật</th><th>Số khung 3 lần</th><th>Trung bình</th><th>${m('t\\ (\\mathrm s)')}</th><th>${m('g=\\dfrac{2h}{t^2}')}</th></tr>
+<table class="tbl-ct" style="margin-top:.8mm;text-align:center"><tr><th style="text-align:left;width:13mm">Vật</th><th style="width:23mm;white-space:nowrap">Số khung 3 lần</th><th style="width:12mm">TB</th><th style="width:14mm">${m('t\\ (\\mathrm s)')}</th><th>${m('g=\\dfrac{2h}{t^2}')}</th></tr>
 <tr><td style="text-align:left">Sách</td><td>38 · 38 · 39</td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Giấy vo</td><td>41 · 41 · 41</td><td></td><td></td><td></td></tr></table></div>
+<tr><td style="text-align:left;white-space:nowrap">Giấy vo</td><td>41 · 41 · 41</td><td></td><td></td><td></td></tr></table></div>
 ${H.roi('Thả cùng lúc từ cùng độ cao; ảnh chụp cùng một thời điểm (minh hoạ).')}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
 <div><b>Quan sát:</b> giấy phẳng rơi ${f(25)} hẳn; giấy đặt trên sách rơi ${f(25)} sách.</div>
@@ -163,7 +163,7 @@ ${h3(2, 'Giải')}
 ${wl('Vấn đề:', 1)}${wl(`Giả thuyết G1 (của Minh) và G2 (em đoán):`, 2)}${wl('Kiểm tra G1; dự đoán nếu G1 đúng:', 2)}${wl('Kiểm tra G2; dự đoán nếu G2 đúng:', 2)}</div>
 <div class="card soft" style="margin:1mm 0;padding:1mm 3mm"><b>Kết quả đo (cho sẵn):</b> giọt ngoài ly trong suốt, không màu; ly rỗng ướp lạnh mang ra vẫn đọng giọt.</div>
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">${wl('Kết luận (G1, G2 thế nào):', 2)}</div>
-${K.btvn()}
+${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·2')}
 ${box(wl('1.', 1) + wl('2.', 1))}
 ${foot(5)}</section>`;
@@ -197,8 +197,8 @@ const tuongTu = {
   vo: true,
   tieuDe: ['DẠNG 1–2', 'DẠNG 3'],
   trang: [[
-    { t: 'Dạng 1 · Bài 1', de: `Bốn đối tượng: <b>(1)</b> một phân tử oxi trong không khí; <b>(2)</b> quả bóng đá; <b>(3)</b> ngôi sao Mặt Trời; <b>(4)</b> hạt nhân của một nguyên tử. Ba ứng dụng: <b>(I)</b> máy chụp cộng hưởng từ (MRI); <b>(II)</b> cáp quang truyền internet; <b>(III)</b> robot hàn ở nhà máy.<br><b>a)</b> các đối tượng vi mô; các đối tượng vĩ mô<br><b>b)</b> lĩnh vực của (I), (II), (III)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>'], ow: 22 },
-    { t: 'Dạng 1 · Bài 2', de: `Bốn đối tượng: <b>(1)</b> một hạt cát trên bãi biển; <b>(2)</b> một nguyên tử hiđrô; <b>(3)</b> Trái Đất; <b>(4)</b> một phân tử nước trong giọt sương. Ba ứng dụng: <b>(I)</b> đèn LED chiếu cho cây trong nhà kính; <b>(II)</b> máy quang phổ phân tích mẫu; <b>(III)</b> máy xạ trị chữa ung thư.<br><b>a)</b> các đối tượng vi mô; các đối tượng vĩ mô<br><b>b)</b> lĩnh vực của (I), (II), (III)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>'], ow: 22 },
+    { t: 'Dạng 1 · Bài 1', de: `Bốn đối tượng: <b>(1)</b> một phân tử oxi trong không khí; <b>(2)</b> quả bóng đá; <b>(3)</b> ngôi sao Mặt Trời; <b>(4)</b> hạt nhân của một nguyên tử. Ba ứng dụng: <b>(I)</b> máy chụp cộng hưởng từ (MRI); <b>(II)</b> cáp quang truyền internet; <b>(III)</b> robot hàn ở nhà máy.<br><b>a)</b> các đối tượng vi mô; các đối tượng vĩ mô<br><b>b)</b> lĩnh vực của (I), (II), (III)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>'], ow: 26 },
+    { t: 'Dạng 1 · Bài 2', de: `Bốn đối tượng: <b>(1)</b> một hạt cát trên bãi biển; <b>(2)</b> một nguyên tử hiđrô; <b>(3)</b> Trái Đất; <b>(4)</b> một phân tử nước trong giọt sương. Ba ứng dụng: <b>(I)</b> đèn LED chiếu cho cây trong nhà kính; <b>(II)</b> máy quang phổ phân tích mẫu; <b>(III)</b> máy xạ trị chữa ung thư.<br><b>a)</b> các đối tượng vi mô; các đối tượng vĩ mô<br><b>b)</b> lĩnh vực của (I), (II), (III)`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'b<sub>3</sub>'], ow: 26 },
     { t: 'Dạng 2 · Bài 1', de: `Xe đồ chơi chạy hết đường dài ${m('3{,}6\\ \\mathrm m')}. Nam coi xe chạy đều với tốc độ ${m('0{,}40\\ \\mathrm{m/s}')} và tính ${m('t=\\dfrac{s}{v}')}. Hà bấm đồng hồ ba lần: ${m('9{,}8\\ \\mathrm s')}; ${m('10{,}0\\ \\mathrm s')}; ${m('10{,}2\\ \\mathrm s')}; sai số mỗi lần ${pm('0{,}2\\ \\mathrm s')}.<br><b>a)</b> thời gian Nam tính<br><b>b)</b> thời gian trung bình Hà đo<br><b>c)</b> độ lệch giữa hai kết quả<br><b>d)</b> độ lệch lớn hơn hay không lớn hơn sai số`, o: ['a', 'b', 'c', 'd'], fig: H.xeDuong('', '3,6 m'), fw: 44, ow: 30 },
     { t: 'Dạng 2 · Bài 2', de: `Xe đồ chơi chạy hết đường dài ${m('1{,}8\\ \\mathrm m')}. Nam coi xe chạy đều với tốc độ ${m('0{,}30\\ \\mathrm{m/s}')} và tính ${m('t=\\dfrac{s}{v}')}. Hà bấm đồng hồ ba lần: ${m('6{,}2\\ \\mathrm s')}; ${m('5{,}9\\ \\mathrm s')}; ${m('6{,}2\\ \\mathrm s')}; sai số mỗi lần ${pm('0{,}3\\ \\mathrm s')}.<br><b>a)</b> thời gian Nam tính<br><b>b)</b> thời gian trung bình Hà đo<br><b>c)</b> độ lệch giữa hai kết quả<br><b>d)</b> độ lệch lớn hơn hay không lớn hơn sai số`, o: ['a', 'b', 'c', 'd'], ow: 30 },
   ], [
@@ -207,8 +207,8 @@ const tuongTu = {
     nhap(8),
   ]],
   dap: [
-    `D1·1: a<sub>1</sub>) (1), (4) · a<sub>2</sub>) (2), (3) · b<sub>1</sub>) y tế · b<sub>2</sub>) liên lạc · b<sub>3</sub>) công nghiệp &nbsp;|&nbsp; D1·2: a<sub>1</sub>) (2), (4) · a<sub>2</sub>) (1), (3) · b<sub>1</sub>) nông nghiệp · b<sub>2</sub>) nghiên cứu · b<sub>3</sub>) y tế &nbsp;|&nbsp; D2·1: a) 9,0 s · b) 10,0 s · c) 1,0 s · d) lớn hơn sai số, khác thật &nbsp;|&nbsp; D2·2: a) 6,0 s · b) 6,1 s · c) 0,1 s · d) không lớn hơn sai số, chưa kết luận được là khác`,
-    `D3·1: a) lời đoán · b) 55 s · c) lớn hơn nhiều sai số 5 s · d) giả thuyết được ủng hộ trong điều kiện đã thử &nbsp;|&nbsp; D3·2: a) lời đoán · b) 0,3 °C · c) không vượt sai số 0,5 °C · d) chưa kết luận được là khác; chưa đủ để ủng hộ giả thuyết`,
+    `D1·1: a<sub>1</sub>) (1), (4) · a<sub>2</sub>) (2), (3) · b<sub>1</sub>) y tế · b<sub>2</sub>) liên lạc · b<sub>3</sub>) công nghiệp &nbsp;|&nbsp; D1·2: a<sub>1</sub>) (2), (4) · a<sub>2</sub>) (1), (3) · b<sub>1</sub>) nông nghiệp · b<sub>2</sub>) nghiên cứu · b<sub>3</sub>) y tế &nbsp;|&nbsp; D2·1: a) 9,0 s · b) 10,0 s · c) 1,0 s · d) lớn hơn &nbsp;|&nbsp; D2·2: a) 6,0 s · b) 6,1 s · c) 0,1 s · d) không lớn hơn`,
+    `D3·1: a) lời đoán · b) 55 s · c) lớn hơn · d) ủng hộ &nbsp;|&nbsp; D3·2: a) lời đoán · b) 0,3 °C · c) không vượt · d) chưa kết luận`,
   ],
 };
 

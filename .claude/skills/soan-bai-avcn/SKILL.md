@@ -63,6 +63,7 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
    Từ 20/10/2026 script cũng sinh mp3 cho **phương án có `data-tl-say="1"`** và **`data-tl-word`** (bấm đáp án là nghe);
    thứ tự vẫn là dựng → sinh giọng → dựng lại; kiểm `grep -c 'data-tl-say="1"' theory.html` và mọi label đó phải có
    `data-tl-audio` (thiếu là còn chuỗi chưa sinh).
+   Sau khi có `audio.json`: `node scripts/avcn-luyen-tu.mjs` (dựng `public/assets/avcn/chapter-<n>/luyen-tu.json` cho mục **Luyện từ** — lượt ngắn chọn nghĩa/nghe/ghép trong tab Luyện tập; bài mới ngoài id 168–177 thì thêm vào `AVCN_LUYEN_TU_LESSONS` ở `features/lessons/avcn-luyen-tu.ts`).
 5. **Kiểm** (từ gốc repo; `S=.claude/skills/soan-bai-ly-thuyet-tuong-tac/scripts`):
    `python3 $S/lint_theory.py theory.html` · `python3 $S/check_quizzes.py theory.html` · `python3 $S/lint_do_dai.py theory.html`
    (bài từ vựng 10–13 quiz là bình thường, lỗi "quiz > 8" bỏ qua; tổng từ hiện ngay ≤ 2.200) ·
@@ -81,6 +82,12 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 9. **Sửa nội dung đã đăng mà không đổi đề** (lý thuyết + bài tập mẫu, giữ kết quả HS đã làm): dựng lại bundle rồi
    `npx tsx scripts/cap-nhat-avcn-noi-dung.mts --dry-run` → `--apply` (chỉ ghi `ly_thuyet.body_html` +
    `bai_tap_mau.questions/subtitle` của 10 chương, tự sao lưu `scripts/logs/` và đối chiếu sau ghi). Sau đó deploy.
+10. **Đề Kiểm tra từ vựng** (thầy yêu cầu 19/11/2026 — xem em nào đã học): `python3 .claude/skills/soan-bai-avcn/scripts/build_kiem_tra_tu_vung.py <thư mục bài>` (hoặc `--all`)
+   → `kiem-tra-tu-vung/bundle.json`, 25 câu/15 phút (10 định nghĩa→từ, 10 nghĩa Việt→từ, 5 từ ⭐⭐→nghĩa), đáp án rải đều a–d.
+   Soát bằng `kiem-code` (tự giải lại 250 câu); cặp gần nghĩa ghi vào `CAM_CAP`, chữ lộ đáp án vào `DEF_SUA`/`VI_SUA` trong script.
+   Đăng: `python3 .claude/skills/soan-bai-avcn/scripts/sql_kiem_tra_tu_vung.py > x.sql` rồi `supabase db query --linked -f x.sql`
+   (chạy từ checkout chính) — đề ẨN, GẮN THÊM vào mục Kiểm tra (không xoá đề 30 phút + bài làm cũ như `upload-lesson --target kiem_tra`);
+   chạy lại chỉ cập nhật câu hỏi. Đề ẩn thì trang `/kiem-tra/lam` chặn cả admin → duyệt bằng HTML.
 
 ## Ranh giới
 - Không chép nguyên văn giải thích của sách khác; định nghĩa Part 1 viết lại ngắn kiểu đề (một mệnh đề danh từ).
@@ -110,3 +117,5 @@ nên 9 chương còn lại chỉ cần điền JSON đúng schema (`references/s
 - 2026-10-20 · Áp giọng nam cho **cả 10 chương**: `cau_noi` lấy đúng câu trong `tinh_huong` (ch4 không có câu thoại → tự viết 1 câu theo từ khoá của bài), `nhan_nghe` theo vai (ch1 anh kỹ sư, ch9 khách email). Sinh mp3: 9 chương thiếu 1 câu, ch9 thiếu **cả chương** (0 mp3 từ 17/10) → sinh 160 file. `lint_theory.py` báo giả "quiz #2 có 2 đáp án tl-ok" vì nút Flashcard dùng `<a class="tl-opt tl-ok">`, chặn `cap-nhat-ly-thuyet.sh` ở 7 chương → sửa lint chỉ đếm `<label … tl-opt tl-ok>` (đã thử: 2 label → báo 2, chỉ link → 1).
 - 2026-10-20 · Chuẩn đầu ra còn nói nhiều về đề/Part → thầy chốt viết lại thành **4 gạch đầu dòng kiến thức** mỗi chương (hiểu/biết/phân biệt, bỏ "nhận ra 20 từ ⭐"), bỏ hẳn bảng 5 Part khỏi tab Học (bảng Part chỉ còn ở tab Bài mẫu); `build_avcn.py` đổi khối thành "Chuẩn đầu ra của chương", `meta.de_thi` giữ làm dữ liệu nội bộ nhưng không render; trước khi ghi DB đã soát DB↔bundle chỉ khác đúng khối đó (script tách `</details>` lồng nhau), rồi `cap-nhat-avcn-noi-dung.mts --dry-run` → `--apply`.
 - 2026-10-20 · Bấm đáp án là phát âm: định làm trong `handleChange` (radio) nhưng Chrome **không bắn `change` cho React khi bấm `<label>`** (label chỉ check input rồi dispatch `change` native; React 19 nghe `click` cho radio) → `dataset.answered` cũng không được ghi. Cách đúng: xử lý ở `click` trên `label.tl-opt` (mỗi lần bấm đều đọc, kể cả bấm lại để nghe lại) + nhánh `input[type=radio]` cho bàn phím; `playSpeech` tự bỏ bản trùng trong 200ms để WebView có bắn cả click+change không đọc 2 lần. Kiểm bằng trang tạm `app/dev/…` + Chrome headless/CDP (giả `speechSynthesis.speak` và `new Audio`, bấm bằng `Input.dispatchMouseEvent` — `.click()` không phải input tin cậy). Bài học phụ: đừng đoán "phương án tiếng Anh" bằng dấu tiếng Việt — "phoi/khoan/ren/nhanh" không dấu sẽ bị đọc bằng giọng Anh; build đánh dấu `data-tl-say` theo ngữ cảnh câu (có `data-tl-word` thì bỏ).
+- 2026-11-19 · Đề Kiểm tra từ vựng sinh tự động từ `tu_vung`: lần soát 1 `kiem-code` bắt 10 câu có hai đáp án hợp lý (cutting fluid/coolant, forging/rolling, CNC/CAM, micrometer/vernier caliper, variation/deviation…) và nghĩa lộ đáp án ("pound, cân Anh", "hệ imperial", "Noun: drilling", "(cùng nghĩa tape measure)"); sửa xong lần 2 còn 6 câu vì nhiễu bốc lại ngẫu nhiên → mỗi lần đổi `CAM_CAP` phải soát lại cả chương, không chỉ câu đã sửa. `upload-lesson.mts --target kiem_tra` XOÁ đề cũ trong mục → không dùng cho đề thứ hai của mục.
+

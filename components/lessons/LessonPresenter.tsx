@@ -131,6 +131,23 @@ function hasVisibleContent(html: string): boolean {
 }
 
 /**
+ * Trang bài học vẫn render nguyên bài BÊN DƯỚI lớp phủ trình chiếu, nên mỗi ô chọn của câu tự kiểm tra
+ * (`<input id="tl1-p1b">` + `<label for="tl1-p1b">`) có HAI bản cùng id trong document. Bấm nhãn ở trang chiếu,
+ * trình duyệt tìm id đầu tiên → tích ô của trang bài ẩn phía dưới, trang chiếu "bấm không ăn". Radio cùng
+ * `name` cũng chung một nhóm giữa hai bản. Đổi id/for/name của ô chọn sang tiền tố riêng cho trang chiếu.
+ * Chỉ đụng thẻ input và thuộc tính for của label — không đổi id của SVG (url(#…)) hay neo chú thích.
+ */
+const PRESENTER_ID_PREFIX = "pc-";
+export function withPresenterInputIds(html: string): string {
+  if (!html.includes("<input")) return html;
+  return html
+    .replace(/<input\b[^>]*>/gi, (tag) =>
+      tag.replace(/\b(id|name)="([^"]+)"/g, (_m, attr: string, value: string) => `${attr}="${PRESENTER_ID_PREFIX}${value}"`),
+    )
+    .replace(/<label\b[^>]*>/gi, (tag) => tag.replace(/\bfor="([^"]+)"/g, (_m, value: string) => `for="${PRESENTER_ID_PREFIX}${value}"`));
+}
+
+/**
  * Dựng "bộ trang chiếu" từ các mục lý thuyết của bài: 1 trang bìa + mỗi đoạn lý thuyết 1 trang.
  * @param lessonTitle tên bài — dùng cho trang bìa và nhãn nhóm khi mục không có tiêu đề riêng
  */
@@ -142,7 +159,7 @@ export function buildPresenterDeck(lessonTitle: string, items: LessonItem[]): De
   items.forEach((item) => {
     const groupKey = `item-${item.id}`;
     // mode "chieu": chia theo mốc LỚN (h2 → h3 → in đậm) để mỗi trang là một mục I., II., III.
-    const { introHtml, sections } = splitTheorySections(item.body_html, item.id, "chieu");
+    const { introHtml, sections } = splitTheorySections(withPresenterInputIds(item.body_html), item.id, "chieu");
 
     if (sections.length === 0) {
       // Bài chưa có mốc tiêu đề nào → cả mục là một trang, không cắt vụn nội dung.

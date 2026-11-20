@@ -1,0 +1,70 @@
+{
+  "id": "tn-l9-khucxa-02",
+  "ten": "Khối nhựa bán trụ: tăng dần góc tới",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-khucxa-02-20261120.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-khucxa-02-20261120.webp",
+  "tong_giay": 49.5,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Ánh sáng từ không khí vào nhựa: r luôn nhỏ hơn i, tăng chậm dần; tỉ số sin i / sin r gần như không đổi.",
+      "kiem": "Tăng góc tới, r đổi thế nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.1,
+      "chu": "Tăng i từ 20° tới 80°, mỗi lần thêm 15°. Góc khúc xạ r thay đổi thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 8.6,
+      "chu": "Khối nhựa bán trụ, đĩa chia độ, laser."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 23.8,
+      "chu": "r luôn nhỏ hơn i; i thêm 15° mỗi lần, r thêm 9°, 9°, 6°, 4°."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 29.4,
+      "chu": "Tỉ số sin i / sin r gần như không đổi, khoảng 1,5: đó là chiết suất của nhựa."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 38.1,
+      "chu": "Số liệu minh hoạ tính từ n = 1,5, chưa phải số đo thật."
+    }
+  ],
+  "dung_dua": {
+    "giay": 8.4,
+    "cau_hoi": "Tăng góc tới i từ 20° tới 80°, mỗi lần thêm 15°. Góc khúc xạ r thay đổi thế nào?",
+    "chon": [
+      "A. Tăng, mỗi lần thêm 15° như i",
+      "B. Tăng, mỗi lần thêm đều 10°",
+      "C. Tăng, về sau thêm ít dần",
+      "D. Giảm dần"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "r tăng 13°, 22°, 31°, 37°, 41°, mỗi lần thêm ít dần (9°, 9°, 6°, 4°).",
+    "giai_thich_sai": "Góc khúc xạ không tỉ lệ với góc tới. Vào nhựa, r luôn nhỏ hơn i và vẫn tăng khi i tăng, nhưng càng về sau càng tăng chậm: 13°, 22°, 31°, 37°, 41°."
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Cùng khối nhựa (n ≈ 1,5), đọc được góc khúc xạ r = 25°. Góc tới i khoảng bao nhiêu?",
+    "chon": [
+      "A. sin i = sin 25° : 1,5, nên i ≈ 16°",
+      "B. Đọc từ mặt khối: i ≈ 51°",
+      "C. Không tính được: sin i / sin r đổi theo góc",
+      "D. sin i = 1,5 × sin 25°, nên i ≈ 39°"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "Chia ngược: ánh sáng từ không khí vào nhựa thì r nhỏ hơn i, nên i phải lớn hơn 25°. sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°.",
+      "Góc tới và góc khúc xạ đều đo từ pháp tuyến, không đo từ mặt khối (lỗi đọc góc hay gặp). Từ pháp tuyến: sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°.",
+      "Chỉ tỉ số i : r mới đổi theo góc (20 : 13 ≈ 1,54 rồi 80 : 41 ≈ 1,95). Tỉ số sin i / sin r giữ ≈ 1,5 ở mọi góc, nên vẫn tính được: sin i ≈ 0,634, nên i ≈ 39°.",
+      "sin i / sin r ≈ 1,5 ở mọi góc: sin i = 1,5 × sin 25° ≈ 0,634, nên i ≈ 39°, lớn hơn r như mọi lần đo trong bảng."
+    ]
+  }
+}

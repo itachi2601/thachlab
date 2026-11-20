@@ -116,9 +116,15 @@
     0.29,
     16.9,
     0.3
+   ],
+   [
+    "thêm gia trọng, bắt đầu trượt (suy từ mô hình)",
+    0.34,
+    19.9,
+    0.36
    ]
   ],
-  "ghi_chu": "tanα = h/√(L² − h²): 0,34/0,940 = 0,362; 0,29/0,957 = 0,303."
+  "ghi_chu": "tanα = h/√(L² − h²): 0,34/0,940 = 0,362; 0,29/0,957 = 0,303. Hàng 'thêm gia trọng' SUY TỪ MÔ HÌNH, không phải số đo: góc bắt đầu trượt không phụ thuộc m (tanα = μn) nên vẫn h ≈ 0,34 m. Câu chốt clip masat3: hộp 0,20 kg (hộp TN 01) nằm yên trên ván có đầu cao h = 0,20 m → ma sát nghỉ = P_x = mg·h/L = 0,20·9,8·0,20 ≈ 0,39 N (không phải μn·N ≈ 0,69 N)."
  },
  "ket_qua_ky_vong": "μn ≈ 0,36 và μ ≈ 0,30, trùng giá trị đo bằng lực kế ở thí nghiệm 01.",
  "hien_tuong_hay_sai": [
@@ -129,5 +135,15 @@
   "loai": "2d_dong_hoc+so_do_luc",
   "y_tuong": "Thanh trượt h; sơ đồ lực P, Px, Py, N, Fms đổi theo góc; hộp tự trượt khi tanα vượt μn.",
   "diem_nhan": "Hỏi trước: thêm gia trọng lên hộp thì góc bắt đầu trượt lớn hơn hay nhỏ hơn?"
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-03-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-luc-ma-sat-03-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "nâng dần tấm ván",
+  "nhin_vao": "Độ cao h lúc hộp bắt đầu trượt và lúc trượt đều.",
+  "giay": 47,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

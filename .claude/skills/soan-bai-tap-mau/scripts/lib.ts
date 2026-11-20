@@ -26,7 +26,10 @@ export interface Step {
   lua_chon?: Choice[];
   loi_hay_gap?: string;
   chon_buoc_ke?: Choice[];
+  /** ✓ Soát nhanh — chỉ bước cuối, có hoi + lua_chon; luôn hỏi, không tính vào fading. Bảng tra: docs/BANG-MEO-GIAI.md mục ✓. */
+  soat?: (typeof SOAT)[number];
 }
+export const SOAT = ["don_vi", "co_so", "gioi_han", "dau_chieu"] as const;
 export const FADING = ["mo_het", "giau_buoc_cuoi", "giau_tu_buoc_2", "giau_het"] as const;
 export type Fading = (typeof FADING)[number];
 
@@ -68,10 +71,10 @@ function validateMeo(m: Dang["meo"], at: string, errors: string[], warnings: str
 }
 
 /** Bước nào bị giấu theo `fading` (0-based). Dùng chung cho validator và UI (components/lessons/StepwiseSolution.tsx chép lại logic này). */
-export function hiddenSteps(fading: Fading | undefined, steps: { hoi?: string }[]): boolean[] {
-  const last = steps.map((s) => !!s.hoi).lastIndexOf(true); // "bước cuối" = bước cuối CÓ câu hỏi (bước Kiểm tra không hỏi)
+export function hiddenSteps(fading: Fading | undefined, steps: { hoi?: string; soat?: string }[]): boolean[] {
+  const last = steps.map((s) => !!s.hoi && !s.soat).lastIndexOf(true); // "bước cuối" = bước cuối CÓ câu hỏi, trừ Soát nhanh (bước Kiểm tra không hỏi)
   return steps.map((s, i) =>
-    !s.hoi ? false : fading === "giau_het" ? true : fading === "giau_tu_buoc_2" ? i >= 1 : fading === "giau_buoc_cuoi" ? i === last : false,
+    !s.hoi ? false : s.soat ? true : fading === "giau_het" ? true : fading === "giau_tu_buoc_2" ? i >= 1 : fading === "giau_buoc_cuoi" ? i === last : false,
   );
 }
 
@@ -114,10 +117,17 @@ function validateSteps(d: Dang, at: string, errors: string[], warnings: string[]
         .filter((t) => t.includes(vi) || new RegExp(`(^|[^\\d.,_{])${en.replace(".", "\\.")}(?![\\d])`).test(t));
       if (leak.length) errors.push(`${sa}: lộ đáp số ${en} trong: ${leak.join(" | ")}`);
     }
+    if (s.soat !== undefined) { // ✓ Soát nhanh (mục 7 kế hoạch mẹo giải, 18/11/2026)
+      if (!SOAT.includes(s.soat)) errors.push(`${sa}: soat phải là ${SOAT.join("|")}`);
+      if (j !== steps.length - 1) errors.push(`${sa}: soat chỉ đặt ở bước cuối`);
+      if (!s.hoi || !hasChoice || hasNum) errors.push(`${sa}: soat cần hoi + lua_chon (không dap_so)`);
+      if (s.chon_buoc_ke) errors.push(`${sa}: soat không có chon_buoc_ke`);
+      if (s.hoi && countWords(s.hoi) > 25) warnings.push(`${sa}: câu Soát nhanh dài ${countWords(s.hoi)} chữ (> 25)`);
+    }
     if (s.chon_buoc_ke) {
       if (j === 0) errors.push(`${sa}: bước 1 không có chon_buoc_ke`);
       else checkChoices(s.chon_buoc_ke, `${sa} chon_buoc_ke`, 3);
-    } else if (hidden[j] && j > 0 && s.hoi) warnings.push(`${sa}: bước bị giấu nhưng chưa có chon_buoc_ke (3 lựa chọn)`);
+    } else if (hidden[j] && j > 0 && s.hoi && !s.soat) warnings.push(`${sa}: bước bị giấu nhưng chưa có chon_buoc_ke (3 lựa chọn)`);
   });
 }
 

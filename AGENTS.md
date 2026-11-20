@@ -173,6 +173,8 @@ Lightning CSS gộp khối `@media` sát nhau; Turbopack có lúc giữ CSS cũ 
 Đọc CSS mẫu (số đo thật), lập danh sách điểm so; chụp cùng cỡ 1280·1024·768·375 sáng+tối, đo `getComputedStyle`; lệch cố ý thì ghi lý do. Chi tiết: `docs/AGENTS-CHUYEN-DE.md`.
 # Worktree thiếu .env.local → "Hệ thống đang được cấu hình" (29/10/2026)
 Chạy `npm run dev` (không `next dev` trực tiếp) — `predev` symlink `.env.local` về checkout chính.
+# Ổ Mac đầy vì worktree (19/11/2026: còn 2 GB, ~210 worktree ≈ 240 GB)
+Mỗi worktree ≈ 0,6 GB mã + `.next` ~0,6 GB/lần build. Hook đầu phiên cảnh báo khi trống <40 GB → đề xuất `bash scripts/don-worktree.sh` (xem trước) rồi `--yes` (gỡ worktree sạch bỏ ≥7 ngày, xoá `.next` ở worktree bỏ còn thay đổi). Việc xong thì commit hết để worktree sạch, dọn được. `du` trên APFS đếm trùng bản clone — đo số lấy lại bằng `df`.
 # Báo cáo: không tin nhắn quá trình, chỉ báo cáo tổng hợp cuối (thầy chốt 2/11/2026)
 Trong lúc làm không viết tin nhắn tiến độ/"đang làm X"; làm im lặng tới khi xong. Chỉ MỘT báo cáo tổng hợp cuối phiên: đã làm gì, kết quả đã kiểm, file/nhánh đã đụng, việc còn treo. Chỉ dừng giữa chừng khi bị chặn bởi quyết định của thầy.
 **Lô chờ duyệt → kèm link mở xem ngay** (thầy chốt 6/11/2026): mỗi mục một dòng `tên · link (URL Storage / trang /dev / file) · điều cần quyết`; link đã kiểm mở được.

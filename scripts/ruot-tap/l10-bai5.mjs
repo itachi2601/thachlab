@@ -188,23 +188,23 @@ ${foot(5)}</section>`;
 const sm = (fig, w = 38) => fig.replace('<figure class="fig"', `<figure class="fig" style="width:${w}mm;justify-self:end"`);
 const dang = [
   { t: 'Dạng 1 · Dễ · Tốc độ trung bình khi đi nhiều đoạn',
-    de: `Chạy bộ trên đường thẳng, không đổi chiều: ${nw('4 phút')} đầu với ${nw('4 m/s')}, ${nw('6 phút')} sau với ${nw('3 m/s')}.<br><b>a)</b> quãng đường ${m('s')}<br><b>b)</b> tốc độ trung bình (m/s)<br><b>c)</b> lấy ${m('(4+3):2')} làm tốc độ trung bình được không?`,
-    nd: `Đổi phút ra ${f(25)}; lấy tổng ${m('s')} chia tổng ${f(14)}`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.chayBo(), 36) },
+    de: `Chạy bộ trên đường thẳng, không đổi chiều: ${nw('4 phút')} đầu với ${nw('4 m/s')}, ${nw('6 phút')} sau với ${nw('3 m/s')}.<br><b>a)</b> quãng đường ${m('s')}; <b>b)</b> tốc độ trung bình (m/s); <b>c)</b> lấy ${m('(4+3):2')} làm tốc độ trung bình được không?`,
+    nd: `Đổi phút ra ${f(25)}; lấy tổng ${m('s')} chia tổng ${f(25)}`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.chayBo(), 36) },
   { t: 'Dạng 2 · Dễ · Lộ trình gấp khúc',
     de: `Từ nhà A đến trường C: ${nw('AB = 480 m')} hướng đông hết ${nw('6 phút')}, rồi ${nw('BC = 360 m')} hướng bắc hết ${nw('4 phút')}.<br><b>a)</b> độ lớn độ dịch chuyển AC<br><b>b)</b> tốc độ trung bình<br><b>c)</b> độ lớn vận tốc trung bình`,
-    nd: `${m('d=AC')} tính bằng định lí ${f(25)}; ${vvtb} hướng từ ${f(12)} tới ${f(12)}`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.loTrinh(), 36) },
+    nd: `${m('d=AC')} tính bằng định lí ${f(25)}; ${vvtb} hướng từ ${f(12)} tới ${f(12)}`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.loTrinh(), 36) },
   { t: 'Dạng 3 · Trung bình · Đi rồi quay lại: dấu của vận tốc',
     de: `Bể dài ${nw('50 m')}: bơi đầu → cuối ${nw('40 s')}, rồi về ${nw('50 s')}; chiều dương đầu → cuối.<br><b>a)</b> vận tốc trung bình lúc bơi về (cuối → đầu)<br><b>b)</b> tốc độ trung bình cả đi lẫn về<br><b>c)</b> vận tốc trung bình cả đi lẫn về`,
-    nd: `Tốc độ luôn ${f(25)}; vận tốc mang dấu; về chỗ cũ ⇒ ${nw(`${m('d=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.beBoi(), 36) },
+    nd: `Tốc độ luôn ${f(25)}; vận tốc mang dấu; về chỗ cũ ⇒ ${nw(`${m('d=')} ${f(12)}`)}`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.beBoi(), 36) },
   { t: 'Dạng 4 · Trung bình · Cộng vận tốc cùng chiều: đuổi kịp',
-    de: `Mô tô quay phim chạy cùng chiều đoàn đua xe đạp, giữ ${nw('60 km/h')} so với mặt đường; vận động viên (VĐV) dẫn đầu cách mô tô ${nw('10 km')}, sau ${nw('30 phút')} mô tô bắt kịp. Các xe chạy thẳng đều.<br><b>a)</b> vận tốc của mô tô so với VĐV dẫn đầu<br><b>b)</b> tốc độ của VĐV so với mặt đường<br><b>c)</b> quãng đường VĐV đi được trong ${nw('30 phút')}`,
-    nd: `(1) mô tô · (2) ${f(25)} · (3) ${f(25)}; ${nw(`${v('13')} =`)} ${f(18)}`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.moTo(), 36) },
+    de: `Mô tô quay phim chạy cùng chiều đoàn đua xe đạp, giữ ${nw('60 km/h')} so với mặt đường; vận động viên (VĐV) dẫn đầu cách mô tô ${nw('10 km')}, sau ${nw('30 phút')} mô tô bắt kịp. Các xe chạy thẳng đều.<br><b>a)</b> vận tốc của mô tô so với VĐV dẫn đầu; <b>b)</b> tốc độ của VĐV so với mặt đường; <b>c)</b> quãng đường VĐV đi được trong ${nw('30 phút')}`,
+    nd: `(1) mô tô · (2) ${f(25)} · (3) ${f(25)}; ${nw(`${v('13')} =`)} ${f(18)}`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.moTo(), 36) },
   { t: 'Dạng 5 · Trung bình · Cộng vận tốc vuông góc',
-    de: `Ca nô chạy ${nw('14,4 km/h')} so với nước, mũi luôn hướng đông, vuông góc bờ; sông rộng ${nw('200 m')}; nước chảy về phía nam ${nw('3 m/s')} so với bờ.<br><b>a)</b> độ lớn vận tốc của ca nô so với bờ<br><b>b)</b> thời gian qua sông<br><b>c)</b> điểm cập bến cách điểm đối diện bao xa`,
-    nd: `${nw(`${m('14{,}4\\ \\mathrm{km/h}=')} ${f(12)}&nbsp;m/s`)}; chỉ ${f(14)} đưa ca nô sang bờ bên kia`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.caNoD5(), 36) },
+    de: `Ca nô chạy ${nw('14,4 km/h')} so với nước, mũi luôn hướng đông, vuông góc bờ; sông rộng ${nw('200 m')}; nước chảy về phía nam ${nw('3 m/s')} so với bờ.<br><b>a)</b> độ lớn vận tốc của ca nô so với bờ; <b>b)</b> thời gian qua sông; <b>c)</b> điểm cập bến cách điểm đối diện bao xa`,
+    nd: `${nw(`${m('14{,}4\\ \\mathrm{km/h}=')} ${f(12)}&nbsp;m/s`)}; chỉ ${f(25)} đưa ca nô sang bờ bên kia`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.caNoD5(), 36) },
   { t: 'Dạng 6 · Khó · Chọn hướng mũi để tới đúng điểm đối diện',
-    de: `Ca nô ${nw('4 m/s')} so với nước (không đổi) đi từ A sang B đối diện. Lần 1 mũi hướng thẳng tới B: sau ${nw('100 s')} cập bờ ở C, cách B ${nw('200 m')} về hạ lưu. Lần 2 mũi theo AD lệch về thượng lưu, cập đúng B.<br><b>a)</b> từ lần 1: vận tốc của nước<br><b>b)</b> góc giữa AD và AB<br><b>c)</b> thời gian qua sông lần 2`,
-    nd: `Lần 2: ${vv('13')} ⊥ bờ ⇒ ${vv('12')} là cạnh ${f(25)}`, a: ['a', 'b', 'c'], gi: 3, fig: sm(H.caNoD6(), 36) },
+    de: `Ca nô ${nw('4 m/s')} so với nước (không đổi) đi từ A sang B đối diện. Lần 1 mũi hướng thẳng tới B: sau ${nw('100 s')} cập bờ ở C, cách B ${nw('200 m')} về hạ lưu. Lần 2 mũi theo AD lệch về thượng lưu, cập đúng B.<br><b>a)</b> từ lần 1: vận tốc của nước; <b>b)</b> góc giữa AD và AB; <b>c)</b> thời gian qua sông lần 2`,
+    nd: `Lần 2: ${vv('13')} ⊥ bờ ⇒ ${vv('12')} là cạnh ${f(25)}`, a: ['a', 'b', 'c'], gi: 4, fig: sm(H.caNoD6(), 36) },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…

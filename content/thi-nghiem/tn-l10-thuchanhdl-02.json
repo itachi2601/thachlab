@@ -175,7 +175,7 @@
     0.0007
    ]
   ],
-  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. Dấu của p' lẫn lộn (+, −, −) và |p'| ≤ Δp' cả ba lần."
+  "ghi_chu": "Số liệu minh hoạ tính từ mô hình, không phải đo thật. Dấu của p' lẫn lộn (+, −, −) và |p'| ≤ Δp' cả ba lần. Ca tự suy cho câu chốt clip (thuchanhdl2): m1 = 0,300 kg (trong 0,19–0,6), t1' = 0,200 s, s = 0,0500 m → v1 = 0,250 m/s, p1' = −0,0750 kg·m/s; p2' ≈ +0,0750 kg·m/s (p0 = 0,075 trong 0,02–0,1)."
  },
  "ket_qua_ky_vong": "p' ≈ 0 trong sai số ở cả ba lần; t1'/t2' xấp xỉ m1/m2 (lần 2: 0,404/0,200 ≈ 2,0 so với m1/m2 ≈ 2,05).",
  "hien_tuong_hay_sai": [
@@ -189,5 +189,15 @@
   "loai": "2d_dong_hoc+bang_so_lieu",
   "y_tuong": "Hai xe giữa hai cổng; nút cắt dây; đồng hồ hiện t1', t2'; bảng tự tính p1', p2' có dấu, p' và Δp'.",
   "diem_nhan": "Đổi chiều dương: dấu của p1', p2' đổi nhưng p' vẫn xấp xỉ 0."
+ },
+ "video": {
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-02-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-02-20261118.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "nhan": "hai xe đẩy nhau bằng lò xo",
+  "nhin_vao": "Chiều đi và thời gian qua cổng của mỗi xe.",
+  "giay": 47,
+  "nguon": "tự dựng",
+  "da_kiem": "2026-11-18"
  }
 }

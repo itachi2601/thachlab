@@ -58,3 +58,26 @@ export function examIdFromScan(raw: string): number | null {
 
   return null;
 }
+
+/**
+ * Mã làm bài KHÔNG cần tài khoản (`guest_exam_links.code`, trang `/thi/?ma=`) từ nội dung quét/nhập tay.
+ *  - link `…/thi/?ma=ABC123` (QR in ở /quan-tri/bang-diem-ma);
+ *  - mã số trần 6–8 chữ số (gõ ở ô "Gõ số đề"). Số đề thật hiện chỉ 4 chữ số, nên số ≥6 chữ số là mã.
+ * Chỉ lấy mã rồi tự dựng đường dẫn nội bộ (như `examIdFromScan`), không điều hướng theo URL quét được.
+ */
+export function guestCodeFromScan(raw: string): string | null {
+  const text = raw.trim();
+  const bare = text.replace(/\s+/g, "").match(/^#?(\d{6,8})$/);
+  if (bare) return bare[1];
+  const q = text.indexOf("?");
+  if (q < 0) return null;
+  const hash = text.indexOf("#");
+  const path = text.slice(0, q).replace(/\/+$/, "");
+  if (!/(^|\/)thi$/.test(path)) return null;
+  const ma = new URLSearchParams(text.slice(q + 1, hash > q ? hash : undefined)).get("ma")?.trim().toUpperCase();
+  return ma && /^[A-Z0-9]{4,12}$/.test(ma) ? ma : null;
+}
+
+export function guestExamPath(code: string): string {
+  return `/thi/?ma=${encodeURIComponent(code)}`;
+}

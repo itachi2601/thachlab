@@ -186,7 +186,7 @@ const dang = [
     de: `Bộ đàm của đội cứu hộ phát sóng ${nw('150 MHz')}. Một trạm 4G phát sóng có bước sóng ${nw('15 cm')}. Coi không khí như chân không, ${nw(`${m('c=3\\cdot10^{8}')} m/s`)}.<br><b>a)</b> bước sóng của sóng bộ đàm<br><b>b)</b> tần số của sóng trạm 4G<br><b>c)</b> sóng nào có bước sóng dài hơn (c<sub>1</sub>), dài gấp mấy lần (c<sub>2</sub>)`,
     nd: `cho ${fq} tìm ${nw(`${la} = ${fq9}`)}, cho ${la} tìm ${nw(`${fq} = ${fq9}`)}; đổi ${f(16)} ra Hz, cm ra ${f(12)}`,
     a: ['a', 'b', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 8, cot: 4 },
-  { t: 'Dạng 2 · Trung bình · Xác định vùng của bức xạ trên thang sóng điện từ',
+  { t: 'Dạng 2 · Trung bình · Xác định vùng của bức xạ',
     de: `Hai bức xạ trong chân không: ${nw(`${m('f_1=6{,}0\\cdot10^{14}')} Hz`)} và ${nw(`${m('f_2=3{,}0\\cdot10^{12}')} Hz`)}; ${nw(`${m('c=3\\cdot10^{8}')} m/s`)}. Mắt nhìn thấy ${nw('380 nm')} đến ${nw('760 nm')}; hồng ngoại ${nw('760 nm')} đến ${nw('1 mm')}.<br><b>a)</b> bước sóng ${m('\\lambda_1')} (a<sub>1</sub>), ${m('\\lambda_2')} (a<sub>2</sub>)<br><b>b)</b> vùng của bức xạ 1 (b<sub>1</sub>), bức xạ 2 (b<sub>2</sub>)`,
     nd: `tính ${la} ra mét rồi đổi sang ${f(16)} để so với ${f(25)} của thang`,
     a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>'], gi: 8, cot: 4, fig: H.mocThang() },
@@ -222,7 +222,7 @@ const tuongTu = {
     nhap(4),
   ], [
     { t: 'Dạng 3 · Bài 1 · Ánh sáng Mặt Trời tới Trái Đất. Ghi Đ hoặc S.', de: `<b>a)</b> Sóng điện từ truyền được trong chân không.<br><b>b)</b> ${E} và ${B} dao động lệch pha nhau ${m('\\pi/2')}.<br><b>c)</b> Ánh sáng đi từ không khí vào nước thì bước sóng giảm.<br><b>d)</b> Trong chân không, tia X truyền nhanh hơn sóng FM.`, o: [['a', 12], ['b', 12], ['c', 12], ['d', 12]] },
-    { t: 'Dạng 3 · Bài 2 · Điện thoại phát nhạc qua loa bluetooth. Ghi Đ hoặc S.', de: `<b>a)</b> Sóng bluetooth từ điện thoại tới loa là sóng cơ.<br><b>b)</b> Tiếng từ loa tới tai em là sóng âm.<br><b>c)</b> Sóng điện từ là sóng dọc.<br><b>d)</b> Sóng wifi ${nw('5 GHz')} có bước sóng ngắn hơn sóng wifi ${nw('2,4 GHz')}.`, o: [['a', 12], ['b', 12], ['c', 12], ['d', 12]] },
+    { t: 'Dạng 3 · Bài 2 · Điện thoại phát nhạc qua loa bluetooth. Ghi Đ/S.', de: `<b>a)</b> Sóng bluetooth từ điện thoại tới loa là sóng cơ.<br><b>b)</b> Tiếng từ loa tới tai em là sóng âm.<br><b>c)</b> Sóng điện từ là sóng dọc.<br><b>d)</b> Sóng wifi ${nw('5 GHz')} có bước sóng ngắn hơn sóng wifi ${nw('2,4 GHz')}.`, o: [['a', 12], ['b', 12], ['c', 12], ['d', 12]] },
     { t: 'Dạng 4 · Bài 1', de: `<div class="fig-side" style="grid-template-columns:1fr 44mm"><div>Ra-đa thu xung phản xạ từ một máy bay sau ${nw(`${m('200')} ${m('\\mu')}s`)}; ${nw('20 s')} sau, sau ${nw(`${m('180')} ${m('\\mu')}s`)}. ${C8}; ${nw(`1 ${m('\\mu')}s = ${m('10^{-6}')} s`)}.${oY('<b>a)</b> khoảng cách lần 1, lần 2 (km)<br><b>b)</b> tốc độ trung bình máy bay; bay lại gần hay ra xa', ['a<sub>1</sub>', 'a<sub>2</sub>', ['b<sub>1</sub>', 18], ['b<sub>2</sub>', 25]], 18)}</div>${H.raDa('Xung đi tới máy bay rồi phản xạ về ra-đa.')}</div>`, o: null },
     { t: 'Dạng 4 · Bài 2', de: `Xung ra-đa phát từ Trái Đất tới Mặt Trăng, phản xạ về sau ${nw('2,56 s')}. ${C8}; ${nw(`1 ns = ${m('10^{-9}')} s`)}.<br><b>a)</b> khoảng cách Trái Đất – Mặt Trăng (km)<br><b>b)</b> nếu đo thời gian lệch ${nw('1 ns')} thì khoảng cách sai bao nhiêu (cm)`, o: [['a', 30], 'b'] },
     nhap(5),

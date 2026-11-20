@@ -1,0 +1,52 @@
+{
+  "id": "tn-l11-tudien-01",
+  "ten": "Tụ, pin và đèn LED mắc nối tiếp",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-01-20261116.mp4",
+  "tong_giay": 49.8,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Tụ nạp điện tích rồi giữ lại, và phóng ra được.",
+      "kiem": "LED sáng và tắt khi nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 4.2,
+      "chu": "Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ thế nào?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 10.9,
+      "chu": "Pin 9 V, tụ 1000 μF, LED, điện trở 1 kΩ."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 16.5,
+      "chu": "Pin vẫn nối: LED loé rồi tắt hẳn."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 22.3,
+      "chu": "Dòng giảm dần, LED tối. Nối tụ với LED đảo chiều: LED loé lại rồi mờ dần. Tụ giữ rồi phóng điện tích."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 31.5,
+      "chu": "Vì sao dòng về 0 dù pin còn nối? Tụ giữ bao nhiêu điện tích?"
+    }
+  ],
+  "dung_dua": {
+    "giay": 10.8,
+    "cau_hoi": "Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ thế nào?",
+    "chon": [
+      "A. Sáng đều suốt lúc pin còn nối",
+      "B. Loé lên rồi tắt hẳn",
+      "C. Mờ dần nhưng không bao giờ tắt hẳn",
+      "D. Không sáng lúc nào"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Clip chiếu dòng qua LED giảm dần rồi LED tối dù pin vẫn nối; sau đó tháo pin, nối tụ với LED đảo chiều thì LED loé lại.",
+    "giai_thich_sai": "Xem cảnh kết quả: nhìn độ sáng LED từ lúc đóng khoá tới khi pin vẫn nối, rồi so với lúc nối tụ vào LED."
+  }
+}

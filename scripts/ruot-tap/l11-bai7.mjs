@@ -141,7 +141,7 @@ ${h3(3, 'Ví dụ: xích đu ở sân trường', '3·3')}
 <div>${m('h=')} ${f(14)}&nbsp;m · ${m('W=mgh=')} ${f(14)}&nbsp;J · qua đáy ${m('v=\\sqrt{2gh}=')} ${f(14)}&nbsp;m/s</div></div>
 ${h3(4, 'III · Ba cái bẫy mất điểm', '3·4')}
 <div class="card fig-side" style="${fs(34)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>cm, mJ và bình phương.</b> ${nw(m('k=200\\ \\mathrm{N/m}'))}, ${u('A=2', 'cm')}: ${m('W=')} ${f(12)}&nbsp;J = ${f(12)}&nbsp;mJ. Để nguyên cm thì kết quả lớn gấp ${f(12)} lần. ${m('0{,}0125\\ \\mathrm J=')} ${f(12)}&nbsp;mJ</span></div>
+<div class="trap">${ck}<span><b>Đổi cm ra m rồi mới bình phương.</b> ${nw(m('k=200\\ \\mathrm{N/m}'))}, ${u('A=2', 'cm')}: ${m('W=')} ${f(12)}&nbsp;J = ${f(12)}&nbsp;mJ. Để nguyên cm thì kết quả lớn gấp ${f(12)} lần. ${m('0{,}0125\\ \\mathrm J=')} ${f(12)}&nbsp;mJ</span></div>
 <div class="trap">${ck}<span><b>Chu kì năng lượng ${m('\\neq')} chu kì dao động.</b> Đồ thị ${Wt} lặp lại sau ${u('0{,}25', 's')} ⇒ ${m('T=')} ${f(12)}&nbsp;s</span></div>
 <div class="trap">${ck}<span><b>Góc nhỏ phải đổi ra rad:</b> ${m('\\alpha(\\mathrm{rad})=\\alpha(^\\circ)\\cdot\\dfrac{\\pi}{180}')}; ${m('6^\\circ=')} ${f(14)}&nbsp;rad. Công thức có ${m('\\cos')}: máy để chế độ ${f(14)}</span></div></div>
 ${H.radian()}</div>

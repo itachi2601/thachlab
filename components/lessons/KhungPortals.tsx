@@ -1,10 +1,11 @@
 "use client";
 
-import { useLayoutEffect, useState, type RefObject } from "react";
+import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 import { createPortal } from "react-dom";
 import VideoKhungLazy from "@/components/lessons/VideoKhungLazy";
 import { logClipChoice } from "@/services/learning-events";
-import type { VideoKhungData, VideoKhungEvent } from "@/components/lessons/VideoThiNghiemKhung";
+import { chuanBiGhiLuotClip, logClipView } from "@/services/clip-views";
+import type { VideoKhungData, VideoKhungEvent, VideoKhungLuot } from "@/components/lessons/VideoThiNghiemKhung";
 
 /**
  * Gắn khung video tương tác vào các hộp `<div class="tl-box tl-box--video tl-box--khung" data-khung='{json}'>`
@@ -51,10 +52,21 @@ export default function KhungPortals({
   }, [rootRef, version]);
 
   // Chỉ học sinh trong bài (InlineLessonAccordion đặt data-lesson-id): ghi lựa chọn Dự đoán vào lô sự kiện chung.
+  // Nhớ mã bài lần cuối đọc được: lượt xem gửi lúc gỡ khung (chuyển trang) có thể chạy khi rootRef đã rời DOM.
+  const baiNho = useRef<number | null>(null);
+  const baiId = () => {
+    const n = Number(rootRef.current?.closest<HTMLElement>("[data-lesson-id]")?.dataset.lessonId);
+    if (Number.isFinite(n) && n > 0) baiNho.current = n;
+    return baiNho.current;
+  };
   const ghi = (tnId: string, e: VideoKhungEvent) => {
+    if (e.loai === "bat_dau_luot") {
+      if (baiId()) chuanBiGhiLuotClip(); // đọc token sẵn lúc em bấm phát, để lúc rời trang gửi keepalive được
+      return;
+    }
     if (e.loai !== "chon" && e.loai !== "bo_qua") return;
-    const lessonId = Number(rootRef.current?.closest<HTMLElement>("[data-lesson-id]")?.dataset.lessonId);
-    if (!Number.isFinite(lessonId) || lessonId <= 0) return;
+    const lessonId = baiId();
+    if (!lessonId) return;
     logClipChoice({
       lessonId,
       tnId,
@@ -63,10 +75,20 @@ export default function KhungPortals({
     });
   };
 
+  // Việc 6: một dòng mỗi lượt xem (bảng lesson_clip_views). Ngoài trang bài (không có data-lesson-id) thì bỏ.
+  const ghiLuot = (l: VideoKhungLuot) => {
+    const lessonId = baiId();
+    if (lessonId) logClipView(lessonId, l);
+  };
+
   return (
     <>
       {hosts.map((h) =>
-        createPortal(<VideoKhungLazy data={h.data} dinh={false} onEvent={(e) => ghi(h.data.id, e)} />, h.host, h.data.id),
+        createPortal(
+          <VideoKhungLazy data={h.data} dinh={false} onEvent={(e) => ghi(h.data.id, e)} onLuot={ghiLuot} />,
+          h.host,
+          h.data.id,
+        ),
       )}
     </>
   );

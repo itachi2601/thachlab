@@ -16,7 +16,7 @@ const ln = (x1, y1, x2, y2, c = INK, w = SW, dash = '') =>
   `<line x1="${f1(x1)}" y1="${f1(y1)}" x2="${f1(x2)}" y2="${f1(y2)}" stroke="${c}" stroke-width="${w}"${dash ? ` stroke-dasharray="${dash}"` : ''}/>`;
 const dot = (x, y, r = 5, c = INK) => `<circle cx="${f1(x)}" cy="${f1(y)}" r="${r}" fill="${c}"/>`;
 const hop = (x, y, s = 'đây') => `<rect x="${f1(x - 15)}" y="${f1(y - 13)}" width="30" height="26" rx="4" fill="#fff" stroke="${RED}" stroke-width="2.4"/>${T(x, y + 7, s, { a: 'middle', c: RED, w: 700 })}`;
-const vs = (s) => s.replace(/\./g, ',');
+const vs = (s) => s.replace(/\./g, ',').replace(/-/g, '−');
 
 // Đồ thị x–t đọc được số: lưới nét đứt mờ ở mọi vạch, số trên trục ≥ 20 đơn vị.
 // o: { A, w, phi, tmax, dt (bước vạch t), xs (các vạch x), dau (in số ở vạch t thứ mấy, mặc định mọi vạch), ten ('x (cm)') }

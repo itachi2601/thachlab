@@ -118,8 +118,8 @@ const p3 = `<section class="page">
 ${head('CÔNG THỨC KHÔNG CÓ THỜI GIAN · BẪY · TRẢ BÀI')}
 ${h3(1, 'II.4 · Công thức không có thời gian', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Khử ${tt} giữa ${m('v=v_0+at')} và ${m('d=\\dfrac{v_0+v}{2}\\,t')}: &nbsp; ${f(40)} &nbsp; Dùng khi đề ${f(25)}</div>
-<div style="margin-top:.6mm">Phanh tới dừng (${m('v=0')}): ${m('d=')} ${f(25)} &nbsp; ⇒ ${v0} gấp đôi thì ${dd} gấp ${f(12)}</div></div>
+<div>Khử ${tt} giữa ${m('v=v_0+at')} và ${m('d=\\tfrac{v_0+v}{2}\\,t')}: &nbsp; ${f(40)} &nbsp; Dùng khi đề ${f(25)}</div>
+<div>Phanh tới dừng (${m('v=0')}): ${m('d=')} <span class="fill" style="min-width:25mm;height:9mm"></span> &nbsp; ⇒ ${v0} gấp đôi thì ${dd} gấp ${f(12)}</div></div>
 <div class="fig-side" style="${fs(58)}"><table class="tbl-ct">
 <tr><th>Tốc độ lúc phanh</th><th style="width:26mm">Quãng phanh</th></tr>
 <tr><td>${m('36\\ \\mathrm{km/h}=10\\ \\mathrm{m/s}')}</td><td>${m('10\\ \\mathrm m')}</td></tr>
@@ -130,7 +130,7 @@ ${h3(1, 'II.4 · Công thức không có thời gian', '3·1')}
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card fig-side" style="${fs(46)};padding:1mm 3mm"><div>
 <div class="trap">${ck}<span><b>“${m('a')} âm là chậm dần.”</b> Dấu ${aa} chỉ cho biết ${m('\\vec a')} cùng hay ngược chiều dương. Nhanh hay chậm: xét dấu ${m('a\\cdot v')}.</span></div>
-<div class="trap">${ck}<span><b>“Thay ngay ${tt} của đề.”</b> Xe phanh: tính lúc dừng ${nw(m('t_d=v_0/|a|'))} trước; ${m('t\\gt t_d')} thì ${nw(m('d=\\dfrac{v_0^2}{2|a|}'))}.</span></div>
+<div class="trap">${ck}<span><b>“Thay ngay ${tt} của đề.”</b> Xe phanh: tính lúc dừng ${nw(m('t_d=v_0/|a|'))} trước; ${m('t\\gt t_d')} thì quãng đường chỉ là đoạn đến lúc dừng (công thức ở ô trên).</span></div>
 <div class="trap">${ck}<span><b>“Hai đường ${vv}–${tt} cắt nhau là gặp nhau.”</b> Cắt nhau chỉ là cùng vận tốc; gặp nhau khi ${m('x_1=x_2')}.</span></div></div>
 ${H.bayDung()}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
@@ -200,7 +200,7 @@ const dang = [
     nd: `${m('v_B')}: vận tốc ${f(25)} của giai đoạn 1, vận tốc ${f(25)} của giai đoạn 2; ${m('v_{tb}=')} tổng đường : ${f(25)}`, a: ['a', 'b', 'c'], gi: 4 },
   { t: 'Dạng 6 · Khó · Hai xe ngược chiều trên dốc: lúc và nơi gặp nhau',
     de: deH(`Ô tô qua chân dốc với ${u('20\\ \\mathrm{m/s}')}, lên dốc chậm dần đều, ${nw(`${m('|a_1|=0{,}4\\ \\mathrm{m/s^2}')}.`)} Cùng lúc, xe đạp ở đỉnh dốc có ${u('2\\ \\mathrm{m/s}')}, xuống dốc nhanh dần đều, ${nw(`${m('|a_2|=0{,}2\\ \\mathrm{m/s^2}')}.`)} Dốc dài ${nw(`${m('570\\ \\mathrm m')}.`)} Gốc toạ độ ở chân dốc, <b>chiều dương từ chân lên đỉnh dốc</b> (chiều chuyển động của ô tô).<br><b>a)</b> sau bao lâu hai xe gặp nhau; chỗ gặp cách chân dốc bao xa<br><b>b)</b> vận tốc của mỗi xe lúc gặp nhau`, H.d6, 40),
-    nd: `cả hai xe cùng hệ quy chiếu đã chọn; xe đạp: ${nw(`${m('v_{02}=')} ${f(12)}`)}, ${nw(`${m('a_2=')} ${f(12)}`)}; loại nghiệm khi ô tô đã ${f(25)}`, a: ['a', 'b'], gi: 4, cot: 2 },
+    nd: `cả hai xe cùng hệ quy chiếu đã chọn; xe đạp: ${nw(`${m('v_{02}=')} ${f(16)}`)}, ${nw(`${m('a_2=')} ${f(16)}`)}; loại nghiệm khi ô tô đã ${f(25)}`, a: ['a', 'b'], gi: 4, cot: 2 },
 ];
 
 // Bài tương tự giải vào vở (thầy chốt 10/11): 1 cột; ô đáp số 25 mm đặt cuối đúng dòng của ý, nhãn ô khớp a) b) c)…

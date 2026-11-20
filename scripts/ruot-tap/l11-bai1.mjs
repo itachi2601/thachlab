@@ -185,7 +185,7 @@ ${h3(3, 'Câu đổi chiều', '5·3')}
 ${box(wl(`Cùng đề, nhưng ${m('x=-6\\cos\\left(5\\pi t+\\frac{\\pi}{2}\\right)')} cm: tìm ${m('A')}, ${ph} (với ${m('-\\pi\\lt\\varphi\\le\\pi')}) và li độ lúc ${m('t=0{,}1')} s.`, 3))}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 <div class="fig-side" style="${fs(40)}">${box(wl(`${m('\\bigstar')} ${m('M')} quay đều một vòng hết ${nw('2 s')}, bán kính ${nw('10 cm')}. Hình chiếu ${m('Q')} đi từ biên này sang biên kia mất bao lâu?`, 2)
- + wl(`${m('\\bigstar\\bigstar')} ${m('x=8\\cos\\left(2\\pi t+\\frac{\\pi}{3}\\right)')} cm: li độ lúc ${m('t=0')} và lúc ${m('t=\\frac16')} s; trong thời gian đó ${m('M')} quay góc bao nhiêu?`, 3)
+ + wl(`${m('\\bigstar\\bigstar')} ${m('x=8\\cos\\left(2\\pi t+\\frac{\\pi}{3}\\right)')} cm: li độ lúc ${m('t=0')} và lúc ${nw(m('t=\\frac16')+'&nbsp;s')}; trong thời gian đó ${m('M')} quay góc bao nhiêu?`, 3)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Pít-tông động cơ chạy lên xuống nhờ trục khuỷu quay đều. Vì sao chỉ <b>gần</b> dao động điều hoà?`, 2))}${H.tronTT()}</div>
 ${foot(5)}</section>`;
 

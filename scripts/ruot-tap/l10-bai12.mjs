@@ -185,7 +185,7 @@ ${foot(5)}</section>`;
 const dang = [
   { t: 'Dạng 1 · Dễ · Ném ngang: thời gian bay và tầm xa',
     de: `Máy bay cứu hộ bay ngang ở độ cao ${mm('490')}, vận tốc ${ms('60')}, thả gói hàng. Bỏ qua lực cản, ${g98}.<br><b>a)</b> sau bao lâu gói hàng chạm đất<br><b>b)</b> thả gói khi máy bay còn cách điểm cần rơi trúng bao xa (theo phương ngang)`,
-    nd: `Tìm ${m('t')} từ phương ${f(30)} (ngang/đứng?) trước; ${m('t')} không phụ thuộc ${f(12)}`, a: ['a', 'b'], gi: 2, cot: 2 },
+    nd: `Tìm ${m('t')} từ phương ${f(30)} (ngang/đứng?) trước; ${m('t')} không phụ thuộc ${f(12)}`, a: ['a', 'b'], gi: 3, cot: 2 },
   { t: 'Dạng 2 · Dễ · Ném ngang: vận tốc chạm đất và góc',
     de: `Từ mép vách đá cao ${mm('78{,}4')}, ném ngang hòn đá với ${ms('v_0=30')}. Bỏ qua lực cản, ${g98}. Lúc chạm đất:<br><b>a)</b> độ lớn vận tốc<br><b>b)</b> góc giữa vectơ vận tốc và phương ngang`,
     nd: `${m('v_x=')} ${f(12)} không đổi · ${m('v_y=')} ${f(12)} lúc chạm · hai vectơ ${f(25)}`, a: ['a', 'b'], gi: 3, cot: 2 },
@@ -193,14 +193,14 @@ const dang = [
     de: `Từ mép mái nhà cao ${mm('19{,}6')}, ném ngang hòn đá; đá chạm đất cách chân nhà ${mm('15')}. Bỏ qua lực cản, ${g98}.<br><b>a)</b> vận tốc ném ${v0}<br><b>b)</b> cây cao ${mm('10')} cách chân nhà ${mm('10')}: đá có bay qua ngọn cây không, cao hơn ngọn bao nhiêu`,
     nd: `${m('v_0=L/t')}; ở cây: ${m('t_1=x/v_0')}, độ cao còn lại ${m('h-\\tfrac12gt_1^2')}`, a: ['a', 'b'], gi: 4, fig: H.nhaCay(), cot: 2 },
   { t: 'Dạng 4 · Trung bình · Ném xiên từ mặt đất: H, t, L',
-    de: `Nhảy xa: bật với ${ms('v_0=9{,}8')}, góc ${deg(30)}, tiếp đất cùng độ cao; bỏ qua lực cản, ${g98}.<br><b>a)</b> ${m('v_{0x}')} và ${m('v_{0y}')}<br><b>b)</b> thời gian lên tới đỉnh và tầm cao ${m('H')}<br><b>c)</b> thời gian bay và tầm xa ${m('L')}`,
-    nd: `Đỉnh: ${f(12)} ${m('=0')} · cùng độ cao nên ${m('t=')} ${f(10)}${m('\\,t_{\\text{lên}}')}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3, cot: 6 },
+    de: `Nhảy xa: bật với ${ms('v_0=9{,}8')}, góc ${deg(30)}, tiếp đất cùng độ cao; bỏ qua lực cản, ${g98}.<br><b>a)</b> ${m('v_{0x}')} và ${m('v_{0y}')}; <b>b)</b> thời gian lên tới đỉnh và tầm cao ${m('H')}; <b>c)</b> thời gian bay và tầm xa ${m('L')}`,
+    nd: `Đỉnh: ${f(12)} ${m('=0')} · cùng độ cao nên ${m('t=')} ${f(10)}${m('\\,t_{\\text{lên}}')}`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4, cot: 6 },
   { t: 'Dạng 5 · Khó · Ném xiên từ độ cao: rơi thấp hơn chỗ ném',
-    de: `Từ vách đá cao ${mm('22{,}05')} ném đá lên với ${ms('v_0=14{,}7')}, góc ${deg(30)}; bỏ qua lực cản, ${g98}.<br><b>a)</b> thời gian từ lúc ném đến lúc chạm đất<br><b>b)</b> tầm xa tính từ chân vách<br><b>c)</b> độ cao lớn nhất so với mặt đất<br><b>d)</b> độ lớn vận tốc khi chạm đất`,
-    nd: `Oy lên, gốc ở chỗ ném: chạm đất khi ${m('y=')} ${f(20)}; bỏ nghiệm âm`, a: ['a', 'b', 'c', 'd'], gi: 4, fig: H.vachXien() },
+    de: `Từ vách đá cao ${mm('22{,}05')} ném đá lên với ${ms('v_0=14{,}7')}, góc ${deg(30)}; bỏ qua lực cản, ${g98}.<br><b>a)</b> thời gian từ lúc ném đến lúc chạm đất; <b>b)</b> tầm xa tính từ chân vách<br><b>c)</b> độ cao lớn nhất so với mặt đất; <b>d)</b> độ lớn vận tốc khi chạm đất`,
+    nd: `Oy lên, gốc ở chỗ ném: chạm đất khi ${m('y=')} ${f(20)}; bỏ nghiệm âm`, a: ['a', 'b', 'c', 'd'], gi: 5, fig: H.vachXien() },
   { t: 'Dạng 6 · Khó · Bài ngược: biết tầm xa, tìm góc ném',
-    de: `Pháo bắn với ${ms('v_0=14')}, nòng nghiêng ${al}, đạn rơi về độ cao nòng; bỏ qua lực cản, ${g98}.<br><b>a)</b> góc nghiêng nòng để đạn rơi cách pháo ${mm('15')}<br><b>b)</b> thời gian bay ứng với từng góc<br><b>c)</b> tầm xa lớn nhất và góc đạt được`,
-    nd: `${m('\\sin2\\alpha=gL/v_0^2')} cho hai góc ${f(25)} nhau`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 3, cot: 6 },
+    de: `Pháo bắn với ${ms('v_0=14')}, nòng nghiêng ${al}, đạn rơi về độ cao nòng; bỏ qua lực cản, ${g98}.<br><b>a)</b> góc nghiêng nòng để đạn rơi cách pháo ${mm('15')}; <b>b)</b> thời gian bay ứng với từng góc<br><b>c)</b> tầm xa lớn nhất và góc đạt được`,
+    nd: `${m('\\sin2\\alpha=gL/v_0^2')} cho hai góc ${f(25)} nhau`, a: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c<sub>1</sub>', 'c<sub>2</sub>'], gi: 4, cot: 6 },
 ];
 
 // Bài tương tự: mỗi dạng 2 bài, đáp số tính bằng Python (math, radian), làm tròn 3 chữ số có nghĩa. Giải vào vở (thầy chốt 10/11):

@@ -1,14 +1,14 @@
 // Ruột tập VL12 – Bài 18 · An toàn phóng xạ (lesson id 19). Khung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai18.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai18.pdf
 import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
-const K = khoiTao({ bai: 18, lid: 19, ten: 'AN TOÀN PHÓNG XẠ' });
+const K = khoiTao({ bai: 21, baiDau: 17, lid: 19, ten: 'AN TOÀN PHÓNG XẠ' });
 const { head, h3, foot } = K;
 const fs = (w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
 const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"></span></div>`;
 const hd = m('\\dot H');
 
 const p1 = `<section class="page">
-${head('BÀI 18 · AN TOÀN PHÓNG XẠ', K.sub)}
+${head('BÀI 21 · AN TOÀN PHÓNG XẠ', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>tác hại</b> của tia phóng xạ và bốn yếu tố quyết định</div>
@@ -140,9 +140,49 @@ const dang = [
     nd: `Đổi mSv ra µSv, quy ngược về suất liều cho phép ${m('=')} ${f(10)}, rồi về khoảng cách`, a: ['a', 'b'], gi: 2 },
 ];
 
+// Bài tương tự (bố cục bài 14, thầy chốt 10/11): bài về nhà, GIẢI VÀO VỞ; giấy in đề + ô đáp số theo ý, đáp số lật ngược cuối trang.
+// Đáp số tính bằng Python (python3) 16/11/2026; w_R: X, γ, β = 1; α = 20 (như bài học).
+const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
+const oY = (s, o, w = 25) => s.split('<br>').map((p) => {
+  const y = p.match(/^<b>([a-d])\)<\/b>/);
+  if (!y) return `<div>${p}</div>`;
+  const ls = o.filter((l) => l[0] === y[1]);
+  return `<div class="yo"><span>${p}</span><span class="oo">${ls.map((l) => `<span class="nw"><b>${l})</b>${f(w)}</span>`).join('')}</span></div>`;
+}).join('');
+const ttDe = (b) => oY(b.de, b.o, b.ow);
+const vaoVo = (ds) => ds.map((b) => (b.o ? { t: b.t, de: ttDe(b), k: 0 } : b));
+const nhap = (n) => ({ t: '<span class="nhap-t">Nháp / chỗ em còn vướng</span>', de: lines(n), k: 0 });
+const wr = m('w_R:\\ \\mathrm X,\\ \\gamma,\\ \\beta=1;\\ \\alpha=20');
+const tuongTu = {
+  vo: true,
+  tieuDe: ['DẠNG 1–3', 'DẠNG 4–6'],
+  trang: [[
+    { t: 'Dạng 1 · Bài 1', de: `Chụp CT bụng: khối mô ${m('20\\ \\mathrm{kg}')} hấp thụ ${m('0{,}16\\ \\mathrm J')} tia X (${m('w_R=1')}).<br><b>a)</b> liều hấp thụ ${m('D')} (mGy)<br><b>b)</b> liều tương đương ${m('H')} (mSv)`, o: ['a', 'b'] },
+    { t: 'Dạng 1 · Bài 2', de: `Xạ trị: khối u ${m('0{,}25\\ \\mathrm{kg}')} nhận ${m('0{,}50\\ \\mathrm J')} tia ${m('\\gamma')} mỗi buổi (${m('w_R=1')}).<br><b>a)</b> liều hấp thụ mỗi buổi (Gy)<br><b>b)</b> liều tương đương mỗi buổi (Sv)<br><b>c)</b> cả đợt cần ${m('60\\ \\mathrm{Gy}')}: số buổi`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 2 · Bài 1', de: `Hai mẫu mô ${m('0{,}40\\ \\mathrm{kg}')}, mỗi mẫu hấp thụ ${m('1{,}2\\ \\mathrm{mJ}')}: A chiếu ${m('\\beta')}, B chiếu ${m('\\alpha')} (${wr}).<br><b>a)</b> ${m('D')} mỗi mẫu (mGy)<br><b>b)</b> ${m('H')} của A, của B (mSv)<br><b>c)</b> mẫu nào hại hơn, gấp mấy lần`, o: ['a', 'b<sub>1</sub>', 'b<sub>2</sub>', 'c'] },
+    { t: 'Dạng 2 · Bài 2', de: `Khối mô ${m('2{,}0\\ \\mathrm{kg}')} bị chiếu ${m('\\alpha')}, nhận liều tương đương ${m('4{,}0\\ \\mathrm{mSv}')} (${wr}).<br><b>a)</b> liều hấp thụ ${m('D')} (mGy)<br><b>b)</b> năng lượng mô đã hấp thụ (mJ)<br><b>c)</b> muốn cùng ${m('H')} bằng tia ${m('\\gamma')}, mô phải hấp thụ bao nhiêu mJ`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 3 · Bài 1', de: `Nguồn điểm: ${m('48\\ \\mu\\mathrm{Sv/h}')} tại 2,0 m.<br><b>a)</b> suất liều tại 4,0 m (µSv/h)<br><b>b)</b> cách nguồn bao nhiêu m thì còn ${m('3{,}0\\ \\mu\\mathrm{Sv/h}')}`, o: ['a', 'b'] },
+    { t: 'Dạng 3 · Bài 2', de: `Nguồn điểm: ${m('200\\ \\mu\\mathrm{Sv/h}')} tại 0,40 m.<br><b>a)</b> suất liều tại 1,0 m (µSv/h)<br><b>b)</b> cách nguồn bao nhiêu m thì còn ${m('2{,}0\\ \\mu\\mathrm{Sv/h}')}`, o: ['a', 'b'] },
+    nhap(4),
+  ], [
+    { t: 'Dạng 4 · Bài 1', de: `Nguồn ${m('180\\ \\mu\\mathrm{Sv/h}')} tại 1,0 m; kỹ thuật viên đứng cách 3,0 m.<br><b>a)</b> suất liều tại chỗ đứng (µSv/h)<br><b>b)</b> liều khi đứng 15 phút (µSv)<br><b>c)</b> liều mỗi ca ≤ ${m('10\\ \\mu\\mathrm{Sv}')}: đứng tối đa mấy phút`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 4 · Bài 2', de: `Nguồn ${m('400\\ \\mu\\mathrm{Sv/h}')} tại 0,50 m; kỹ thuật viên đứng cách 2,0 m.<br><b>a)</b> suất liều tại chỗ đứng (µSv/h)<br><b>b)</b> liều khi đứng 6 phút (µSv)<br><b>c)</b> liều mỗi ca ≤ ${m('15\\ \\mu\\mathrm{Sv}')}: đứng tối đa mấy phút`, o: ['a', 'b', 'c'] },
+    { t: 'Dạng 5 · Bài 1', de: `Đứng 1,0 m, 30 phút/ca, máy đo 400 xung/phút. Tính % liều còn lại khi:<br><b>a)</b> lùi ra 2,0 m<br><b>b)</b> chỉ đứng 6 phút<br><b>c)</b> đặt tấm chì (máy còn 120 xung/phút)<br><b>d)</b> biện pháp nào giảm liều nhiều nhất`, o: ['a', 'b', 'c', 'd'] },
+    { t: 'Dạng 5 · Bài 2', de: `Đứng 0,50 m, 20 phút/ca, máy đo 500 xung/phút. Tính % liều còn lại khi:<br><b>a)</b> lùi ra 1,5 m<br><b>b)</b> chỉ đứng 5 phút<br><b>c)</b> đặt tấm chì (máy còn 250 xung/phút)<br><b>d)</b> vừa lùi ra 1,5 m vừa đặt tấm chì đó`, o: ['a', 'b', 'c', 'd'] },
+    { t: 'Dạng 6 · Bài 1', de: `Nguồn ${m('90\\ \\mu\\mathrm{Sv/h}')} tại 1,0 m; nhân viên làm 1 500 giờ/năm ở 1,5 m; giới hạn 20 mSv/năm.<br><b>a)</b> liều cả năm (mSv); gấp mấy lần giới hạn<br><b>b)</b> phải đứng cách tối thiểu bao nhiêu m`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    { t: 'Dạng 6 · Bài 2', de: `Nguồn ${m('250\\ \\mu\\mathrm{Sv/h}')} tại 1,0 m; nhân viên làm 2 000 giờ/năm ở 2,5 m; giới hạn 20 mSv/năm.<br><b>a)</b> liều cả năm (mSv); gấp mấy lần giới hạn<br><b>b)</b> phải đứng cách tối thiểu bao nhiêu m`, o: ['a<sub>1</sub>', 'a<sub>2</sub>', 'b'] },
+    nhap(2),
+  ]],
+  dap: [
+    `D1·1: ${nw('a) 8,0 mGy')} · ${nw('b) 8,0 mSv')} &nbsp;|&nbsp; D1·2: ${nw('a) 2,0 Gy')} · ${nw('b) 2,0 Sv')} · ${nw('c) 30 buổi')} &nbsp;|&nbsp; D2·1: ${nw('a) 3,0 mGy')} · ${nw('b<sub>1</sub>) 3,0 mSv')} · ${nw('b<sub>2</sub>) 60 mSv')} · c) B, gấp 20 lần &nbsp;|&nbsp; D2·2: ${nw('a) 0,20 mGy')} · ${nw('b) 0,40 mJ')} · ${nw('c) 8,0 mJ')} &nbsp;|&nbsp; D3·1: ${nw('a) 12 µSv/h')} · ${nw('b) 8,0 m')} &nbsp;|&nbsp; D3·2: ${nw('a) 32 µSv/h')} · ${nw('b) 4,0 m')}`,
+    `D4·1: ${nw('a) 20 µSv/h')} · ${nw('b) 5,0 µSv')} · ${nw('c) 30 phút')} &nbsp;|&nbsp; D4·2: ${nw('a) 25 µSv/h')} · ${nw('b) 2,5 µSv')} · ${nw('c) 36 phút')} &nbsp;|&nbsp; D5·1: ${nw('a) 25 %')} · ${nw('b) 20 %')} · ${nw('c) 30 %')} · d) chỉ đứng 6 phút &nbsp;|&nbsp; D5·2: ${nw('a) 11 %')} · ${nw('b) 25 %')} · ${nw('c) 50 %')} · ${nw('d) 5,6 %')} &nbsp;|&nbsp; D6·1: ${nw('a<sub>1</sub>) 60 mSv')} · ${nw('a<sub>2</sub>) gấp 3 lần')} · ${nw('b) 2,6 m')} &nbsp;|&nbsp; D6·2: ${nw('a<sub>1</sub>) 80 mSv')} · ${nw('a<sub>2</sub>) gấp 4 lần')} · ${nw('b) 5,0 m')}`,
+  ],
+};
+
 await K.dung({
-  trang1to5: [p1, p2, p3, p4, p5].join('\n'),
+  trang1to5: ttCss + [p1, p2, p3, p4, p5].join('\n'),
   btm: { dang, tach: [3, 3], kq: [[1, 2, 3], [4, 5, 6]], khoNhat: false },
+  tuongTu: { ...tuongTu, trang: tuongTu.trang.map(vaoVo) },
   tra: 'tác hại 1·4 · liều Gy–Sv 1·5 · mốc liều 2·1 · ba nguyên tắc 2·2 · bảng đo 2·3 · biển, y tế, chất thải 2·4 · bẫy 3·1 · dạng 1–3 → 6·1 · dạng 4–6 → 7·1',
   out: process.argv[2],
 });

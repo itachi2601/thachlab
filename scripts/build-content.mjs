@@ -711,6 +711,8 @@ async function main() {
     bytes += json.length;
     writeFileSync(join(LESSONS_DIR, `${l.id}.json`), json);
   }
+  // Bài nào có file tĩnh lessons/<id>.json — client chỉ thử tải những bài này (bài khác trước đây 404 mỗi lần mở).
+  catalog.staticLessonIds = lessons.filter((l) => previewIds.has(l.id)).map((l) => l.id);
   writeJson(join(OUT_DIR, "catalog.json"), catalog);
   writeSearchIndex(generatedAt, lessons, itemsByLesson, previewIds);
   const counts = await fetchSiteCounts(url, serviceKey);

@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 434 hàm, sinh tự động 2026-11-12
+# Hàm SQL / RPC (schema public) — 440 hàm, sinh tự động 2026-11-20
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -10,6 +10,7 @@ repo — xem trên Supabase Dashboard).
 - `apply_parent_link(p_user_id uuid, p_code text)` → uuid
 - `apply_staff_invite(p_user_id uuid, p_email text, p_code text)` → uuid
 - `assists_class(p_class bigint)` → boolean
+- `bank_apply_question_fix(p_old jsonb, p_new jsonb)` → jsonb
 - `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
 - `bank_practice_lesson_ok(p_lesson_id bigint, p_uid uuid)` → boolean
 - `bank_replace_imgs_in_json(p_q jsonb, p_map jsonb)` → jsonb
@@ -67,6 +68,7 @@ repo — xem trên Supabase Dashboard).
 - `get_exam_review(p_exam_ids bigint[])` → SETOF jsonb
 - `get_exam_wrong_notes(p_result_id bigint)` → jsonb
 - `get_lesson_mastery(p_lesson bigint)` → TABLE(topic_id bigint, topic_name text, sort_order integer, answered_count integer, level text, pct integer, is_summary boolean)
+- `get_lesson_page_student(p_lesson bigint)` → jsonb
 - `get_my_chapter_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, pct integer, level text)
 - `get_my_course_mastery_pct(p_before timestamp with time zone)` → TABLE(chapter_id bigint, chapter_title text, chapter_sort integer, subject_code text, is_latest boolean, lesson_id bigint, lesson_title text, sort_order integer, answered_count integer, earned numeric, max numeric, pct integer, level text)
 - `get_my_weakest_topics(p_limit integer)` → TABLE(topic_id bigint, topic_name text, lesson_id bigint, lesson_title text, answered_count integer, pct integer, level text)
@@ -110,6 +112,7 @@ repo — xem trên Supabase Dashboard).
 - `lesson_practice_pool(p_lesson_id bigint, p_per_level integer)` → jsonb
 - `list_cnc_course_classmates(p_course_id bigint)` → TABLE(student_id uuid, full_name text, class_name text)
 - `live_study_summary()` → jsonb
+- `log_clip_view(p jsonb)` → integer
 - `log_learning_events(p_events jsonb)` → integer
 - `manages_class(p_class bigint)` → boolean
 - `mistake_q_public(p_key bigint, p_exam bigint, p_idx integer, p_stage integer, p_kind text, q jsonb)` → jsonb
@@ -265,11 +268,14 @@ repo — xem trên Supabase Dashboard).
 - `review_secs_left(r review_sessions)` → integer
 - `review_session_meta(p_session bigint)` → jsonb
 - `review_set_stage(p_session bigint, p_stage integer)` → void
+- `review_stage_exam_now(stage jsonb)` → bigint
+- `review_stage_exams(stage jsonb)` → bigint[]
 - `review_student_stage(r review_sessions, p_student uuid, p_idx integer)` → jsonb
 - `review_thpt_registration(p_request_id bigint, p_status text)` → void
 - `review_wrong_students(p_session bigint, p_stage integer)` → jsonb
 - `rl_allow(p_key text, p_max integer, p_window interval)` → boolean
 - `rl_client_ip()` → text
+- `rollup_lesson_clip_views(p_before timestamp with time zone)` → bigint
 - `rollup_lesson_read_depth(p_before date, p_dry boolean)` → jsonb
 - `rollup_question_results(p_before timestamp with time zone, p_dry boolean)` → jsonb
 - `search_students_for_link(p_query text)` → TABLE(id uuid, full_name text, class_name text, birth_date date)
@@ -289,8 +295,8 @@ repo — xem trên Supabase Dashboard).
 - `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint)` → void
 - `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
+- `start_equipment_repair(p_id bigint)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real

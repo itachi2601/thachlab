@@ -103,5 +103,34 @@ Hạn mức: mỗi dạng ≤ 1 mẹo, mỗi bài ≤ 2 dạng có mẹo (G1, V1
 - ✅ **`dieu_kien` Đòn bẩy nhiệt, Quỹ nhiệt** (6/11/2026) đã làm đầy trong `meo_nhiet.py` và vá tại chỗ vào `153.json` (diff chỉ 2 dòng `meo.dieu_kien`). Đã đăng 6/11 cùng chặng 4.
 - **Cần kiểm** (đối chiếu 6/11, chưa mở bản SGK giấy): c_đá = 2100 J/kg·K khớp bài đã đăng `l12-thuc-hanh-nhiet` và `l12-su-chuyen-the` (≈2100; bản khác ghi 2090–2200, sai lệch <5%, không đổi đáp số làm tròn). Ngưỡng góc nhỏ 10° khớp bài `l11-bai-tap-nang-luong-dao-dong` ("khoảng 10° trở xuống"; sai số chu kì ≈0,2% ở 10°); nếu SGK dùng ngưỡng 5° thì chỉ cần ghi "khoảng" như bài đó. Còn mở: Cổng soát vé chưa có vật gần gũi cho U; Xe đẩy vào cát nên ở bài lý thuyết hay bài tập mẫu.
 - **Đợt 2 mở sớm 1 mẹo** (thầy chốt 7/11/2026, dạy L12 trong ngày): Thang máy dừng tầng gắn lesson 2 d3 + d4, thầy duyệt và đã đăng 7/11 (sao lưu `scripts/logs/bai-tap-mau-bai2-1794032804533.json`); tính vào đo chặng 5 từ 7/11. Soát 7/11: Đòn bẩy nhiệt / Quỹ nhiệt KHÔNG hợp L12 b1, b3 (không có dạng cân bằng nhiệt / thả đá) → chỗ đúng là L12 Bài 4 (lesson 5), bài này chưa có bài tập mẫu.
+- **Đòn bẩy nhiệt + Quỹ nhiệt ở L12 Bài 4** (17/11/2026): lesson 5 vốn có 4 dạng chuẩn (DB) → chèn 2 dạng mới làm Dạng 3 (trộn kim loại, tìm c) và Dạng 4 (thả đá, không tan hết), kiem-code đạt; `scripts/data/bai-tap-mau/them-dang-nhiet-5.py` (nguồn `old/5.json`). Thầy duyệt 17/11; lịch 22h05 không chạy được (tab terminal chờ duyệt) → đăng tay 18/11 10h05, DB 6 dạng / 2 mẹo (sao lưu `scripts/logs/bai-tap-mau-bai5-1794971105058.json`); tính vào đo chặng 5 từ 18/11.
 - **Chặng 5** (đo 2–3 tuần) chưa bắt đầu, chờ có mẹo trên web đủ lâu.
   - Bắt đầu đo từ 2026-11-05 (ngày deploy ghi lượt): bảng `similar_practice_attempts` ghi mỗi lượt "Làm bài tương tự"; câu đo `scripts/sql/do-meo-nhin.sql` (lượt 1, dạng có mẹo so với dạng chưa có mẹo cùng chương).
+
+## 7. Mở rộng: "✓ Soát nhanh" và "⚖ Lập tỉ số" (thầy duyệt hướng 18/11/2026)
+
+Hai mẹo chung dùng được ở mọi chương, bù chỗ còn thiếu (kiểm/đoán đáp số, suy luận tỉ lệ). Không thêm "công thức nhanh" thuộc lòng.
+Căn cứ (dẫn theo trí nhớ, chưa tra lại nguồn): bước nhìn lại đáp số làm tăng chất lượng lời giải (Heller, Keith & Anderson 1992; Pólya);
+suy luận tỉ lệ là điểm yếu phổ biến (Arons; Cohen & Kanim 2005); giải nhiều bài bằng công thức không xoá quan niệm sai (Kim & Pak 2002);
+HS khá bị chậm nếu ép xem hướng dẫn (Kalyuga) → mẹo luôn tuỳ chọn.
+
+**✓ Soát nhanh** — MỘT câu tự trả lời ở bước cuối `buoc[]` của dạng, không thêm khối mới trên màn (G1, N1). Mỗi dạng chọn một kiểu:
+- **Đơn vị**: hai vế cùng đơn vị không.
+- **Cỡ số**: đáp số có nằm trong khoảng hợp lí không (c kim loại 100–900 J/kg·K…).
+- **Trường hợp giới hạn**: cho một đại lượng → 0 hoặc → ∞, kết quả phải về đâu.
+- **Dấu và chiều**: vật nóng phải nguội đi, ảnh thật phải ngược chiều…
+
+**⚖ Lập tỉ số** — trong lời giải các dạng "tăng n lần thì…" (R = ρl/S, T = 2π√(l/g), hao phí ∝ 1/U², bán rã): viết thành tỉ số thay vì tính hai lần.
+
+**Chiến thuật ba phần đề** (Phần I loại trừ bằng đơn vị/cỡ số; Phần II xét từng ý a)–d) độc lập; Phần III làm tròn ở bước cuối) — một trang, làm sau cùng,
+trước kì thi. Không dạy loại trừ trong bài học.
+
+| Chặng | Việc | Điều kiện |
+|---|---|---|
+| 6 ✅ | Bảng tra Soát nhanh (4 kiểu · ví dụ · chỗ dễ sai) + quy tắc trong skill `soan-bai-tap-mau` — xong 18/11: `docs/BANG-MEO-GIAI.md` mục ✓ và ⚖, trường `buoc[].soat` (validator + UI, thay bước Kiểm tra, không tính vào `fading`) | — |
+| 7 ⏳ | Thí điểm Soát nhanh L12 Ch.1 (thầy chốt 18/11): 8 dạng — lesson 3 d3–d4, 4 d2–d4, 5 d1–d3 (`them-soat-nhanh-l12-ch1.py`), kiem-code soát (sửa 4·3, 5·2, 5·3), xem thử `/dev/btm` đạt. vào main b2582320f, deploy UI 18:46 18/11 (deploy 49ecdeb8b); hẹn đăng DB 22:05 18/11 trong tab terminal (`scripts/logs/dang-soat-nhanh-l12-ch1.sh`, log `.log` cùng chỗ) — sáng 19/11 kiểm log + DB | sau chặng 6 |
+| 8 ⏳ | Lập tỉ số (soạn 18/11): `scripts/sql/dang-sai-nhieu.sql` (60 ngày, ≥ 20 lượt) — dạng tỉ số duy nhất trong nhóm sai nhiều là 26·3 đồ thị năng lượng (76 %, 96 lượt); các dạng "tăng n lần" khác chưa đủ lượt. Quét 37 dạng có bước đáp số "lần": 9·2, 19·3, 28·4, 70·1, 159·3, 164·1 đã đúng quy tắc. Vá 4 dạng (`them-ti-so-chang8.py`): 26·3 $W_t/W=(x/A)^2$ khỏi đổi đơn vị; 152·4 bỏ tính $I'$ riêng → $(U'/U)^2$; 15·3 tỉ số từ số khối; 40·2 câu nhận dạng. kiem-code đạt (KaTeX 0 lỗi), xem thử 375px đạt. Thầy duyệt 18/11, **đã đăng DB 23:01 18/11** (sao lưu `scripts/logs/bai-tap-mau-bai{15,26,40,152}-17950176*.json`, tải lại DB đối chiếu khớp); deploy 23:17 18/11 (deploy 86b6910c2); 55·2 rơi tự do (42 % sai) không phải dạng tỉ số, không ép | song song chặng 7 |
+| 9 | Đo 2–3 tuần bằng `similar_practice_attempts` (dạng có/chưa có Soát nhanh cùng chương); không cải thiện thì gỡ | sau chặng 7 |
+| 10 | Trang chiến thuật ba phần đề | sau khi có số chặng 9 |
+
+Hạn mức: mỗi dạng ≤ 1 💡 + ≤ 1 câu Soát nhanh; mỗi bài ≤ 2 dạng có 💡. Chặng 5 (đo 💡 từ 19/11) vẫn làm trước khi mở đợt 2 mẹo nhìn.

@@ -893,3 +893,40 @@ nguyên văn sang `docs/STATE-archive.md` (đừng để ở đây). Bản đầ
 - **11/11 Vá bảo mật bước 2 — ĐÃ CHẠY 12/11 06:40** (`20261111200000_va_bao_mat_buoc_2_thu_quyen`, log `scripts/logs/20261111200000_va_bao_mat_buoc_2_thu_quyen.log`; = P0 #1 chặng 3): thu quyền đọc `exams.questions` của anon/authenticated (cấp đọc theo 12 cột còn lại), `notify_user` và `rank_gate_pool_ids` thành nội bộ, xoá 2 policy anon INSERT/UPDATE trên `cnc_milling_quiz_attempts`. Kiểm sau chạy: REST anon đọc `questions` → 401, đọc `id,title` → 200, `rpc/notify_user` → 404; khối đổi vai HS/anon/admin (tự rollback) đúng hết. Dòng STATE trước khi chạy: **Vá bảo mật 11/11**: bước 1 ĐÃ CHẠY, client ĐÃ DEPLOY 11/11 19:01 (bản 15:16 + đúng 4 file client; chưa bấm thử bằng tài khoản HS/TA/GV) → còn `20261111200000_va_bao_mat_buoc_2_thu_quyen` chạy sau 22h (= P0 #1 chặng 3, thu quyền `exams.questions`; đã thử trong giao dịch rollback vai HS/anon/admin). Script nào đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
 
 - 14/11/2026 · `20261109120000_shcn_lesson_key` ĐÃ CHẠY (Mac, 08:23, log `scripts/logs/20261114-082345-20261109120000_shcn_lesson_key.log`; kiểm `information_schema`: cột `homeroom_weekly_sessions.lesson_key` có). Còn deploy `/sinh-hoat` + editor GVCN.
+
+## Chuyển từ STATE.md 14/11/2026 (clip tự dựng đã đăng DB)
+- Chặng B L11 Dao động: 7 clip bài 21, 22, 23, 24, 26 đã đăng DB 1/11 12h23, thầy duyệt lô 1/11 tối, kiểm dry-run 22h40 khớp DB; chưa thử HS thật.
+- Clip tự dựng L9 nhóm C (5/11): 8 clip, 6 bài (lesson 87, 89, 91, 129–131) thầy duyệt, ĐÃ ĐĂNG DB 23h35 5/11 (--chi-video, kiểm DB đủ 8 clip); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+- Clip L10 lô 1/11 (8 clip: tdvt1, giatoc1, dog3, trondeu3, biendang3, saiso2, antoan1/2 — lesson 50, 53, 56, 76, 78, 48, 47) ĐÃ ĐĂNG DB 6/11 ~23h55 (`--chi-video`, kiểm DB 8/8 có khung); giữ nguyên dòng Quan sát như L9; chưa thử HS thật.
+- Clip tự dựng Ch.4 L11: 6 clip đã đăng DB (bài 41, 42, 44, 45 ngày 31/10; bài 43 nguondien1/2 + 4 chỉ số tspan 14 ngày 1/11 22h30, sao lưu `scripts/logs/ly-thuyet-bai43-backup-1793546652365.json`); chưa thử HS thật.
+
+## 15/11/2026 07:30 — vá chủ đề exams.questions đề 701/638 (L11)
+Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg_bank_tags_to_exams` rồi bật lại), thử trước bằng raise-exception. 18 câu (701: 0,1,3,4,7,8,9,11,13,14,16,18,19,20,22,23,26; 638: 18) lấy chủ đề từ dòng gốc 685082+idx trong `20261006130000_gan_lai_chu_de_5_de_l11` (đối chiếu nội dung); câu 7, 26 (bán dẫn, chất điện phân) để rỗng như migration gốc; 638 câu 19 → "Công của lực điện và thế năng điện". Kiểm: content_hash không đổi, số câu không đổi, đề = bank. Sao lưu `public.bk_chu_de_701_638_20261115_exams`, `public.bk_chu_de_701_638_20261115_bank` (RLS bật, revoke anon/authenticated).
+- Clip L12 lô 3 (14/11): 5 clip (bài 127, 10, 17, 126×2) đã tải Storage + chèn repo + khung, CHỜ THẦY DUYỆT, CHƯA ĐĂNG DB; bài 126 thêm 2 hộp TN mới (details) → đăng cả lý thuyết, bài vượt 2500 từ hiện ngay (2568) — sổ `content/thi-nghiem/so-clip-anh-dong.md`. → ĐÃ ĐĂNG DB 16/11/2026 10:02 (thầy duyệt; nhánh vào main 05757d3f1). Sao lưu scripts/logs/ly-thuyet-bai{127,10,17,126}-backup-*.json
+
+## Chuyển từ STATE.md 17/11/2026 (clip L12 lô 1+2 đã đăng DB 16/11)
+- Clip L12 lô 2 (14/11, 9 clip bài 11/12/14/125/18/19): đã tải lesson-clips -20261114 + chèn repo + khung; CHỜ THẦY DUYỆT rồi đăng DB `--chi-video` sau 22h — sổ `so-clip-anh-dong.md`.
+- Clip TN tự dựng L12 Ch.1–2 lô 1 (8 clip, bài 2/3/4/6/7): đã tải Storage -20261114 + chèn repo + khung, thầy duyệt, ĐÃ ĐĂNG DB 16/11 (cùng lô 2) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+## Chuyển ra khi rút gọn STATE.md 18/11/2026 (đợt 2 dọn tồn đọng)
+
+- `20261028100000_bai_tap_ngay`: ĐÃ XONG: migration chạy; script tạo đề chạy 28/10 (5 đề 1289–1293 "Ngày 1–5", published, buổi tự học lớp 19 = review_sessions 26; kiểm DB 14/11). KHÔNG chạy lại `--yes`. Còn chưa rõ: deploy `ClassRoster.tsx`.
+- Sơ đồ tư duy chương (11/11): L12 Ch.3 gắn cuối chương ở trang lớp (`/lop-hoc/so-do/?chuong=4&lop=lop-12`), ĐÃ DEPLOY 11/11 10:17 (bản build của phiên deploy-student-interface-web), đã kiểm trang thật 375px; L10 Ch.3 (`?chuong=12&lop=lop-10`) đã deploy 11/11 chiều; chương khác làm bằng skill `so-do-tu-duy-chuong`; chi tiết memory `project_thachlab_so_do_tu_duy_chuong`.
+- Clip TN tự dựng L11 điện lô 4 (6 clip, bài 40/42/43/45): ĐÃ ĐĂNG DB 17/11 (`--chi-video --cho-phep-khac`, mục 201/207/210/216) — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+## Chuyển ra khi gộp 4 nhánh đợt 2–3 (19/11/2026)
+
+- L11 đề 701/638 (15/11 07:30): ĐÃ VÁ tên chủ đề trong `exams.questions` + dòng bank tương ứng (18 câu; dòng bank id ~1,51 triệu có `topic_id` NULL mà `topic_name` lớp 10 — lý do lần kiểm theo topic_id báo "sạch"). Toàn bank: 0 câu lớp 11 mang tên chủ đề chỉ có ở lớp 10. Sao lưu `bk_chu_de_701_638_20261115_exams`/`_bank`. Còn treo: 701 câu 16, 28 không có dòng bank (hash lệch); câu chủ đề rỗng (ngoài CT) chờ thầy. Nhánh `claude/charming-franklin-d3b51b` (memory + STATE 14/11) CHƯA vào main.
+- 10/11: `20261109140000_de_danh_gia_mo_dap_an_sau_2_luot` ĐÃ CHẠY (đáp án mở sau 2 lượt, hàm `get_exam_wrong_notes`); `ExamDoneLocked` ĐÃ DEPLOY 18/11 (kèm chú thích màu xanh); còn thử bằng HS thật để hiện "vì sao sai" + thử 375px bằng tài khoản HS làm đề 1297 (lớp 11). Script `run-migrations.sh` trong worktree lỗi IPv6 → chạy `supabase db query --linked -f` từ thư mục chính.
+- Motion graphic chặng D (7/11): thầy duyệt; clip ôn L12 Ch.3 (89 s) đã lên Storage (`content/phu-dao/clip-on/on-l12-ch3.json`) và hiện thẻ "Ôn nhanh" ở `ReviewStudent` (buổi ở nhà + chờ chặng 1; khớp chữ "từ trường/lực từ…" trong tên buổi, `lib/clip-on-tap.ts`). ĐÃ DEPLOY 17/11 (cùng lô 12/11: 7 clip đề Bộ, 12 clip bẫy, 2 mô phỏng tự kéo); chưa thấy 375px bằng tài khoản HS, chưa có sự kiện đo phát/xem (cách đo ở `docs/KE-HOACH-MOTION-GRAPHIC.md` mục Chặng D).
+- Motion graphic chặng C (1/11): 5 clip bẫy L12 Ch.3 (`content/phu-dao/clip-bay/`, khuôn `clips/bay_chung.py`) hiện trong thẻ mục phụ đạo `/lop-hoc/ket-qua` (thử `/dev/clip-bay`); clip 01 chèn hộp Bẫy 3 bài Lực từ, thầy duyệt 1/11, ĐÃ DEPLOY 1/11 17h40 (thẻ phụ đạo có clip); lý thuyết lesson 11 (item 52) đã ghi DB 22h05, đã kiểm DB + deploy lại 22h25 1/11; đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql` (mốc D đặt 2026-11-01 17:40+07).
+
+## Migration chạy 19/11/2026 07:15 (phiên rà soát website)
+
+- **RPC gộp trang bài `/lop-hoc/bai` (18/11)**: `20261118150000_get_lesson_page_student` CHƯA CHẠY — hàm mới (invoker) thay 7 round-trip/lượt tải; client đã có nhánh lùi nên chạy trước/sau deploy đều được, sau 22h. Code đã vào main (bdf0f29d7). Rollback `perf/rollback/20261118150000_get_lesson_page_student.down.sql`.
+- **Báo lỗi #155 ôn tập theo chặng (18/11)**: `20261118200000_review_stage_exams` CHƯA CHẠY — chạy ngoài giờ HS làm bài; buổi ôn tính cả đề mới của mục bài học (đề chụp lúc tạo buổi lệch sau `publish-theory-quiz --replace`), câu sai tách theo đề. Kèm client `ReviewConsole`/`ReviewStudent` (nhánh `claude/xu-ly-bao-loi-d26f75`, tương thích hai chiều, deploy trước/sau đều được).
+
+## Migration chạy 20/11/2026 08:20 (việc 6 clip)
+
+- **Việc 6 clip (20/11)**: `20261120120000_lesson_clip_views` CHỜ CHẠY (bảng mới `lesson_clip_views` + RPC `log_clip_view`, rollup >12 tháng; chạy lúc nào cũng được, khuyên sau 22h; đã thử trong giao dịch 20/11). Client gửi khi deploy; tỉ lệ theo clip: `scripts/sql/ty-le-clip-thi-nghiem.sql`.
+- → ĐÃ CHẠY 20/11 08:20 (log `scripts/logs/20261120-082035-20261120120000_lesson_clip_views.log` ở checkout chính); kiểm: 2 bảng + RPC có, RLS bật, anon không đọc/gọi được, pg_cron `lesson-clip-views-rollup` đặt; `gen-database-doc` chạy lại. Client chưa deploy.

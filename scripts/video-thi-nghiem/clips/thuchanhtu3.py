@@ -152,18 +152,14 @@ def s_hook(img, d, t, sc):
         text(d, (760, 870), "cân: 1,45 g", 46, ORANGE)
         return
     y0 = 776 + (1 - k) * 40
-    card(d, (40, y0, 1040, y0 + 860), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
+    card(d, (40, y0, 1040, y0 + 470), fill=A(WHITE, k), outline=A(PURPLE, k), w=5)
     pill(d, W / 2, y0 + 52, "DỰ ĐOÁN", 36, WHITE, PURPLE, k)
     text(d, (W / 2, y0 + 130), "θ = 90°: cân chỉ 1,45 g.", 44, INK, alpha=k)
     text(d, (W / 2, y0 + 200), "Xoay dây tới θ = 30°: cân chỉ?", 44, INK, alpha=k)
-    for i, (lab, val) in enumerate(OPTS):
-        bx = 80 + (i % 2) * 470; by = y0 + 300 + (i // 2) * 250
-        card(d, (bx, by, bx + 450, by + 220), fill=A((247, 248, 252), k), outline=A(NAVY, k), r=24, w=4)
-        text(d, (bx + 70, by + 110), lab + ".", 52, NAVY, alpha=k)
-        text(d, (bx + 270, by + 110), val, 60, NAVY, alpha=k)
+    text(d, (W / 2, y0 + 310), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=k)   # K10: khong ve nut A-D
     t1, t2 = sc["M"][1] + 0.4, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, y0 + 818, 940, y0 + 830], radius=6, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, y0 + 818, 140 + 800 * (1 - q), y0 + 830], radius=6, fill=A(PURPLE, k))
+    d.rounded_rectangle([140, y0 + 400, 940, y0 + 412], radius=6, fill=A(LIGHT, k))
+    if q < 1: d.rounded_rectangle([140, y0 + 400, 140 + 800 * (1 - q), y0 + 412], radius=6, fill=A(PURPLE, k))
 
 
 # ---------------- canh 2: Tien hanh ----------------
@@ -207,7 +203,7 @@ def s_rut(img, d, t, sc):
     kc = appear(t, M[1] + 0.6, 0.4)
     if kc > 0: text(d, (910, 470), "Δm(90°)·sin θ", 38, BLUE, anchor="rm", alpha=kc)
     ka = appear(t, M[0] - 0.1, 0.4)
-    if ka > 0: pill(d, 580, 556, "ĐÁP ÁN B", 38, WHITE, GREEN, ka)
+    if ka > 0: pill(d, 580, 556, "ĐÁP ÁN: 0,73 g", 38, WHITE, GREEN, ka)
     # bang so lieu
     card(d, (60, 724, 1020, 1100), fill=WHITE, outline=NAVY, w=4, r=24)
     cols = [(170, "θ"), (380, "Δm (g)"), (640, "Δm/Δm(90°)"), (880, "sin θ")]
@@ -321,13 +317,13 @@ CLIP = dict(id="tn-l12-thuchanhtu-03", header="VẬT LÍ 12 · THÍ NGHIỆM", f
             cues=_cues, scenes=[
  dict(key="hook", title="Dây hợp góc với đường sức", draw=s_hook, tail=0.3, caps=[
    "Dây vuông góc đường sức.",
-   ("Dừng video, chọn A, B, C hay D.", 6.6)]),
+   ("Tự trả lời trước khi xem.", 6.6)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Cân chỉ 1,45 g.", 2.6),
    ("Ngắt, xoay tới 60°: 1,26 g.", 3.0),
    ("Xoay tiếp tới 30°: 0,73 g.", 3.0)]),
  dict(key="rut", title="Kết luận", draw=s_rut, tail=0.4, caps=[
-   ("30° cho 0,73 g: đáp án B.", 2.4),
+   ("30° cho 0,73 g.", 2.4),
    ("Δm tỉ lệ với sin θ.", 5.8)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.3, caps=[
    ("Đúng hay sai?", 5.0),
