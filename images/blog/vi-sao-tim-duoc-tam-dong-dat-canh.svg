@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="100%" height="100%">
+  <!-- Sky -->
+  <rect width="480" height="110" fill="#e8f4fd"/>
+  <!-- Ground surface line -->
+  <rect y="110" width="480" height="210" fill="#d9cbba"/>
+  <rect y="160" width="480" height="160" fill="#c4b29e"/>
+
+  <!-- Fault line -->
+  <path d="M 80,310 L 150,220 L 140,110" stroke="#7a624d" stroke-width="3" stroke-dasharray="6,4" fill="none"/>
+
+  <!-- Seismic waves from Focus (150, 220) -->
+  <circle cx="150" cy="220" r="45" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,4" fill="none" opacity="0.8"/>
+  <circle cx="150" cy="220" r="90" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,4" fill="none" opacity="0.7"/>
+  <circle cx="150" cy="220" r="140" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,4" fill="none" opacity="0.6"/>
+  <circle cx="150" cy="220" r="200" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,4" fill="none" opacity="0.5"/>
+
+  <circle cx="150" cy="220" r="30" stroke="#e53e3e" stroke-width="2.5" fill="none" opacity="0.85"/>
+  <circle cx="150" cy="220" r="65" stroke="#e53e3e" stroke-width="2.5" fill="none" opacity="0.75"/>
+  <circle cx="150" cy="220" r="110" stroke="#e53e3e" stroke-width="2.5" fill="none" opacity="0.65"/>
+  <circle cx="150" cy="220" r="160" stroke="#e53e3e" stroke-width="2.5" fill="none" opacity="0.55"/>
+
+  <!-- Focus (Chấn tiêu) -->
+  <circle cx="150" cy="220" r="9" fill="#e53e3e"/>
+  <circle cx="150" cy="220" r="4" fill="#ffffff"/>
+
+  <!-- Projection to Epicenter -->
+  <line x1="150" y1="220" x2="150" y2="110" stroke="#e53e3e" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- Epicenter (Chấn tâm) on ground surface -->
+  <circle cx="150" cy="110" r="7" fill="#dd6b20"/>
+  <circle cx="150" cy="110" r="3" fill="#ffffff"/>
+
+  <!-- Seismograph station on ground -->
+  <path d="M 360,110 L 375,85 L 390,110 Z" fill="#2d3748"/>
+  <line x1="375" y1="85" x2="375" y2="70" stroke="#2d3748" stroke-width="3"/>
+  <circle cx="375" cy="68" r="4" fill="#3182ce"/>
+</svg>

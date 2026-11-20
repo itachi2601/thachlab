@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <!-- Nền thẻ chuẩn ThachLab -->
+  <rect width="400" height="300" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Tiêu đề & Nhãn lớp -->
+  <rect x="20" y="18" width="88" height="24" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="64" y="34" fill="#1d4ed8" font-size="12" font-weight="700" text-anchor="middle" letter-spacing="0.5">VẬT LÝ 10</text>
+  <text x="380" y="34" fill="#64748b" font-size="12" font-weight="500" text-anchor="end">Cơ học · Định luật Newton &amp; Lực</text>
+
+  <!-- Mặt đất nằm ngang -->
+  <line x1="30" y1="230" x2="370" y2="230" stroke="#64748b" stroke-width="1.8"/>
+  <path d="M40 230 L30 240 M80 230 L70 240 M120 230 L110 240 M160 230 L150 240 M200 230 L190 240 M240 230 L230 240 M280 230 L270 240 M320 230 L310 240 M360 230 L350 240" stroke="#cbd5e1" stroke-width="1.2"/>
+
+  <!-- Nêm mặt phẳng nghiêng góc alpha = 28 độ -->
+  <polygon points="50,230 330,230 330,80" fill="#f8fafc" stroke="#334155" stroke-width="2.2" stroke-linejoin="round"/>
+
+  <!-- Cung góc alpha -->
+  <path d="M95 230 A45 45 0 0 0 90 210" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <text x="104" y="222" fill="#64748b" font-size="12" font-weight="600">α</text>
+
+  <!-- Hệ vật trượt trên mặt phẳng nghiêng (nhóm toạ độ xoay theo dốc) -->
+  <g transform="translate(195, 152) rotate(-28.2)">
+    <!-- Vật khối lượng m -->
+    <rect x="-26" y="-34" width="52" height="34" rx="4" fill="#fef3c7" stroke="#b45309" stroke-width="2.2"/>
+    <text x="0" y="-13" fill="#b45309" font-size="12" font-weight="700" text-anchor="middle">m</text>
+
+    <!-- Phản lực N vuông góc mặt dốc (hướng lên) -->
+    <line x1="0" y1="-17" x2="0" y2="-72" stroke="#0284c7" stroke-width="2.6" stroke-linecap="round"/>
+    <path d="M-5 -64 L0 -72 L5 -64" fill="none" stroke="#0284c7" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="8" y="-62" fill="#0284c7" font-size="13" font-weight="700">N</text>
+
+    <!-- Lực ma sát Fms ngược chiều trượt (hướng lên dốc) -->
+    <line x1="0" y1="-2" x2="42" y2="-2" stroke="#047857" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M34 -7 L42 -2 L34 3" fill="none" stroke="#047857" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="24" y="-9" fill="#047857" font-size="11" font-weight="700">F<tspan font-size="9" dy="3">ms</tspan></text>
+
+    <!-- Thành phần Pn ép vào dốc -->
+    <line x1="0" y1="-17" x2="0" y2="48" stroke="#f87171" stroke-width="1.8" stroke-dasharray="4 3"/>
+    <path d="M-4 41 L0 48 L4 41" fill="none" stroke="#f87171" stroke-width="1.8"/>
+    <text x="8" y="44" fill="#b91c1c" font-size="11" font-weight="600">P<tspan font-size="9" dy="3">n</tspan></text>
+
+    <!-- Thành phần Pt kéo trượt xuống dốc -->
+    <line x1="0" y1="-17" x2="-38" y2="-17" stroke="#f87171" stroke-width="1.8" stroke-dasharray="4 3"/>
+    <path d="M-31 -21 L-38 -17 L-31 -13" fill="none" stroke="#f87171" stroke-width="1.8"/>
+    <text x="-36" y="-23" fill="#b91c1c" font-size="11" font-weight="600">P<tspan font-size="9" dy="3">t</tspan></text>
+
+    <!-- Hình chữ nhật hình chiếu phân tích lực -->
+    <rect x="-38" y="-17" width="38" height="65" fill="none" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+
+    <!-- Trọng lực P tổng hợp (thẳng đứng xuống dưới) -->
+    <line x1="0" y1="-17" x2="-38" y2="48" stroke="#b91c1c" stroke-width="2.8" stroke-linecap="round"/>
+    <path d="M-40 39 L-38 48 L-30 43" fill="none" stroke="#b91c1c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="-48" y="48" fill="#b91c1c" font-size="13" font-weight="700">P</text>
+
+    <!-- Vectơ gia tốc a hướng xuống dốc -->
+    <line x1="-10" y1="-44" x2="-45" y2="-44" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round"/>
+    <path d="M-38 -48 L-45 -44 L-38 -40" fill="none" stroke="#1d4ed8" stroke-width="2.2" stroke-linecap="round"/>
+    <text x="-32" y="-50" fill="#1d4ed8" font-size="11" font-weight="700">a</text>
+  </g>
+
+  <!-- Chân thẻ: Phương trình định luật II Newton -->
+  <text x="20" y="282" fill="#0f172a" font-size="12" font-weight="600">Định luật II Newton</text>
+  <text x="380" y="282" fill="#475569" font-size="12" font-weight="500" text-anchor="end">m·a = P + N + F_ms  ·  F_hl = m·a</text>
+</svg>

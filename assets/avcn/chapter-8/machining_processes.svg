@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="auto" style="max-width:900px;font-family:system-ui,-apple-system,sans-serif;">
+  <defs>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="1" dy="2" stdDeviation="2" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="480" fill="#f8fafc" rx="12" stroke="#e2e8f0" stroke-width="2"/>
+  <text x="450" y="32" text-anchor="middle" font-size="18" font-weight="bold" fill="#0f172a">5 PHƯƠNG PHÁP GIA CÔNG CẮT GỌT CƠ BẢN (5 BASIC MACHINING PROCESSES)</text>
+  <text x="450" y="52" text-anchor="middle" font-size="12" fill="#64748b">Phân biệt chuyển động chính (chạy dao/quay) giữa Dụng cụ cắt (Tool) và Phôi (Workpiece)</text>
+
+  <!-- Card 1: Turning (Tiện) -->
+  <g transform="translate(25, 75)">
+    <rect width="155" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="155" height="36" fill="#dbeafe" rx="8" clip-path="inset(0 0 344 0)"/>
+    <text x="77" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">1. TURNING</text>
+    <text x="77" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#0284c7">(Tiện - Máy lathe)</text>
+    
+    <!-- Mini graphic: cylindrical workpiece rotates, single-point tool feeds -->
+    <rect x="30" y="80" width="95" height="50" fill="#fef08a" stroke="#ca8a04" rx="2"/>
+    <path d="M 40,70 A 10,10 0 1,1 40,95" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="40,95 44,88 36,88" fill="#dc2626"/>
+    <!-- Tool -->
+    <polygon points="110,120 135,120 135,145 118,145" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
+    <!-- Feed arrow -->
+    <path d="M 140,132 L 95,132" stroke="#2563eb" stroke-width="2"/>
+    <polygon points="95,132 102,128 102,136" fill="#2563eb"/>
+
+    <text x="15" y="180" font-size="11" font-weight="bold" fill="#334155">🔹 Phôi (Workpiece):</text>
+    <text x="15" y="198" font-size="11" fill="#dc2626" font-weight="bold">Rotates (Quay tròn)</text>
+    <text x="15" y="225" font-size="11" font-weight="bold" fill="#334155">🔹 Dụng cụ (Tool):</text>
+    <text x="15" y="243" font-size="11" fill="#2563eb" font-weight="bold">Fixed, feeds (Tịnh tiến)</text>
+    <text x="15" y="270" font-size="11" font-weight="bold" fill="#334155">🔹 Sản phẩm:</text>
+    <text x="15" y="288" font-size="11" fill="#475569">Mặt trụ, trục tròn xoay</text>
+    <text x="15" y="304" font-size="10" fill="#64748b">(Circular cross-section)</text>
+
+    <!-- Key keyword badge -->
+    <rect x="12" y="335" width="130" height="24" rx="4" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="77" y="351" text-anchor="middle" font-size="10" font-weight="bold" fill="#1d4ed8">🔑 Lathe · Spindle · Chuck</text>
+  </g>
+
+  <!-- Card 2: Milling (Phay) -->
+  <g transform="translate(195, 75)">
+    <rect width="155" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="155" height="36" fill="#fef3c7" rx="8" clip-path="inset(0 0 344 0)"/>
+    <text x="77" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#b45309">2. MILLING</text>
+    <text x="77" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#d97706">(Phay - Milling machine)</text>
+
+    <!-- Mini graphic: block fixed, multi-tooth cutter spins -->
+    <rect x="30" y="110" width="95" height="40" fill="#cbd5e1" stroke="#475569" rx="2"/>
+    <!-- Rotating Cutter -->
+    <circle cx="77" cy="80" r="20" fill="#94a3b8" stroke="#334155" stroke-width="1.5" stroke-dasharray="6,3"/>
+    <path d="M 65,70 A 12,12 0 1,1 89,70" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <polygon points="89,70 85,63 92,65" fill="#dc2626"/>
+    <!-- Workpiece feed arrow -->
+    <path d="M 40,165 L 115,165" stroke="#2563eb" stroke-width="2"/>
+    <polygon points="115,165 108,161 108,169" fill="#2563eb"/>
+
+    <text x="15" y="180" font-size="11" font-weight="bold" fill="#334155">🔹 Phôi (Workpiece):</text>
+    <text x="15" y="198" font-size="11" fill="#2563eb" font-weight="bold">Fixed / Feeds (Kẹp chặt)</text>
+    <text x="15" y="225" font-size="11" font-weight="bold" fill="#334155">🔹 Dụng cụ (Tool):</text>
+    <text x="15" y="243" font-size="11" fill="#dc2626" font-weight="bold">Rotates/Spins (Dao quay)</text>
+    <text x="15" y="270" font-size="11" font-weight="bold" fill="#334155">🔹 Sản phẩm:</text>
+    <text x="15" y="288" font-size="11" fill="#475569">Mặt phẳng, rãnh, bậc</text>
+    <text x="15" y="304" font-size="10" fill="#64748b">(Flat surfaces, grooves)</text>
+
+    <rect x="12" y="335" width="130" height="24" rx="4" fill="#fffbeb" stroke="#fde68a"/>
+    <text x="77" y="351" text-anchor="middle" font-size="10" font-weight="bold" fill="#b45309">🔑 Cutter · Teeth · Arbor</text>
+  </g>
+
+  <!-- Card 3: Drilling (Khoan) -->
+  <g transform="translate(365, 75)">
+    <rect width="155" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="155" height="36" fill="#dcfce7" rx="8" clip-path="inset(0 0 344 0)"/>
+    <text x="77" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#15803d">3. DRILLING</text>
+    <text x="77" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#16a34a">(Khoan - Drill)</text>
+
+    <!-- Mini graphic: drill bit spinning & plunging downwards into block -->
+    <rect x="30" y="115" width="95" height="35" fill="#cbd5e1" stroke="#475569" rx="2"/>
+    <!-- Drill bit -->
+    <rect x="70" y="70" width="15" height="40" fill="#94a3b8" stroke="#334155" stroke-width="1.5"/>
+    <polygon points="70,110 85,110 77.5,120" fill="#475569"/>
+    <!-- Down arrow -->
+    <path d="M 105,75 L 105,105" stroke="#2563eb" stroke-width="2"/>
+    <polygon points="105,105 101,98 109,98" fill="#2563eb"/>
+    <!-- Spin arc -->
+    <path d="M 65,75 A 12,12 0 1,1 89,75" fill="none" stroke="#dc2626" stroke-width="2"/>
+
+    <text x="15" y="180" font-size="11" font-weight="bold" fill="#334155">🔹 Phôi (Workpiece):</text>
+    <text x="15" y="198" font-size="11" fill="#475569">Fixed (Được kẹp chặt)</text>
+    <text x="15" y="225" font-size="11" font-weight="bold" fill="#334155">🔹 Dụng cụ (Tool):</text>
+    <text x="15" y="243" font-size="11" fill="#dc2626" font-weight="bold">Drill bit rotates &amp; feeds</text>
+    <text x="15" y="270" font-size="11" font-weight="bold" fill="#334155">🔹 Sản phẩm:</text>
+    <text x="15" y="288" font-size="11" fill="#475569">Tạo lỗ tròn (Holes)</text>
+    <text x="15" y="304" font-size="10" fill="#64748b">*Mở rộng lỗ = Boring</text>
+
+    <rect x="12" y="335" width="130" height="24" rx="4" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="77" y="351" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">🔑 Drill bit · Hole saw · Bore</text>
+  </g>
+
+  <!-- Card 4: Grinding (Mài) -->
+  <g transform="translate(535, 75)">
+    <rect width="155" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="155" height="36" fill="#f3e8ff" rx="8" clip-path="inset(0 0 344 0)"/>
+    <text x="77" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#7e22ce">4. GRINDING</text>
+    <text x="77" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#9333ea">(Mài - Grinder)</text>
+
+    <!-- Mini graphic: abrasive wheel rotating fast against workpiece surface -->
+    <rect x="30" y="120" width="95" height="30" fill="#cbd5e1" stroke="#475569" rx="2"/>
+    <ellipse cx="77" cy="85" rx="25" ry="25" fill="#64748b" stroke="#334155" stroke-width="1.5"/>
+    <ellipse cx="77" cy="85" rx="8" ry="8" fill="#cbd5e1"/>
+    <path d="M 60,65 A 20,20 0 1,1 95,65" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <!-- Spark lines -->
+    <line x1="77" y1="110" x2="95" y2="115" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="77" y1="110" x2="100" y2="112" stroke="#ef4444" stroke-width="1.5"/>
+
+    <text x="15" y="180" font-size="11" font-weight="bold" fill="#334155">🔹 Phôi (Workpiece):</text>
+    <text x="15" y="198" font-size="11" fill="#2563eb" font-weight="bold">Surface feed (Chạy bàn)</text>
+    <text x="15" y="225" font-size="11" font-weight="bold" fill="#334155">🔹 Dụng cụ (Tool):</text>
+    <text x="15" y="243" font-size="11" fill="#dc2626" font-weight="bold">Abrasive wheel spins</text>
+    <text x="15" y="270" font-size="11" font-weight="bold" fill="#334155">🔹 Sản phẩm:</text>
+    <text x="15" y="288" font-size="11" fill="#475569">Làm nhẵn bóng bề mặt</text>
+    <text x="15" y="304" font-size="10" fill="#64748b">(Precision finishing)</text>
+
+    <rect x="12" y="335" width="130" height="24" rx="4" fill="#faf5ff" stroke="#e9d5ff"/>
+    <text x="77" y="351" text-anchor="middle" font-size="10" font-weight="bold" fill="#7e22ce">🔑 Abrasive wheel · Sparks</text>
+  </g>
+
+  <!-- Card 5: Sawing (Cưa) -->
+  <g transform="translate(705, 75)">
+    <rect width="170" height="380" fill="#ffffff" rx="8" stroke="#cbd5e1" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="170" height="36" fill="#fee2e2" rx="8" clip-path="inset(0 0 344 0)"/>
+    <text x="85" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#b91c1c">5. SAWING</text>
+    <text x="85" y="52" text-anchor="middle" font-size="12" font-weight="600" fill="#dc2626">(Cưa - Saw)</text>
+
+    <!-- Mini graphic: blade cuts a bar, leaving a kerf -->
+    <rect x="30" y="110" width="110" height="35" fill="#cbd5e1" stroke="#475569" rx="2"/>
+    <!-- Kerf gap -->
+    <line x1="80" y1="100" x2="80" y2="135" stroke="#ffffff" stroke-width="4"/>
+    <!-- Blade with teeth -->
+    <line x1="40" y1="100" x2="130" y2="100" stroke="#334155" stroke-width="3" stroke-dasharray="4,2"/>
+    <text x="85" y="92" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">Kerf (Mạch cắt)</text>
+
+    <text x="15" y="180" font-size="11" font-weight="bold" fill="#334155">🔹 Phôi (Workpiece):</text>
+    <text x="15" y="198" font-size="11" fill="#475569">Clamped bar/tube</text>
+    <text x="15" y="225" font-size="11" font-weight="bold" fill="#334155">🔹 Dụng cụ (Tool):</text>
+    <text x="15" y="243" font-size="11" fill="#dc2626" font-weight="bold">Toothed blade (Lưỡi răng)</text>
+    <text x="15" y="270" font-size="11" font-weight="bold" fill="#334155">🔹 Sản phẩm:</text>
+    <text x="15" y="288" font-size="11" fill="#475569">Cắt đứt phôi thô</text>
+    <text x="15" y="304" font-size="10" fill="#64748b">(Cutting into lengths)</text>
+
+    <rect x="15" y="335" width="140" height="24" rx="4" fill="#fef2f2" stroke="#fecaca"/>
+    <text x="85" y="351" text-anchor="middle" font-size="10" font-weight="bold" fill="#b91c1c">🔑 Blade · Kerf · Hacksaw</text>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" width="100%" height="100%">
+  <!-- Background -->
+  <rect width="520" height="260" fill="#f7fafc"/>
+  
+  <!-- Grid lines -->
+  <line x1="40" y1="130" x2="480" y2="130" stroke="#cbd5e0" stroke-width="1.5"/>
+  <line x1="40" y1="50" x2="480" y2="50" stroke="#edf2f7" stroke-width="1"/>
+  <line x1="40" y1="210" x2="480" y2="210" stroke="#edf2f7" stroke-width="1"/>
+
+  <!-- Quiet trace before P-wave -->
+  <path d="M 40,130 L 110,130 Q 115,128 120,130" stroke="#718096" stroke-width="2" fill="none"/>
+
+  <!-- P-wave packet (blue) starting at x=120 -->
+  <path d="M 120,130 
+           L 125,115 L 130,145 L 135,110 L 140,150 L 145,120 L 150,140 
+           L 155,124 L 160,136 L 165,126 L 170,134 L 175,128 L 180,132 
+           L 190,130 L 210,130 L 230,130" 
+        stroke="#2b6cb0" stroke-width="2.5" fill="none"/>
+
+  <!-- S-wave packet (red) starting at x=250 with larger amplitude -->
+  <path d="M 230,130 L 250,130 
+           L 255,80 L 265,180 L 275,65 L 285,195 L 295,85 L 305,175 
+           L 315,95 L 325,165 L 335,110 L 345,150 L 355,120 L 365,140 
+           L 380,130 L 410,130 L 480,130" 
+        stroke="#c53030" stroke-width="3" fill="none"/>
+
+  <!-- Arrival markers and labels -->
+  <!-- P-arrival at x=120 -->
+  <line x1="120" y1="40" x2="120" y2="220" stroke="#3182ce" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="120" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#2b6cb0" text-anchor="middle">Sóng P (t_P)</text>
+
+  <!-- S-arrival at x=250 -->
+  <line x1="250" y1="40" x2="250" y2="220" stroke="#e53e3e" stroke-width="2" stroke-dasharray="5,4"/>
+  <text x="250" y="32" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#c53030" text-anchor="middle">Sóng S (t_S)</text>
+
+  <!-- Delta t arrow between 120 and 250 -->
+  <line x1="125" y1="235" x2="245" y2="235" stroke="#4a5568" stroke-width="2"/>
+  <polygon points="120,235 128,231 128,239" fill="#4a5568"/>
+  <polygon points="250,235 242,231 242,239" fill="#4a5568"/>
+  <text x="185" y="253" font-family="system-ui, sans-serif" font-size="13" font-weight="bold" fill="#2d3748" text-anchor="middle">Δt = t_S - t_P</text>
+</svg>

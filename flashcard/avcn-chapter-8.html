@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flashcard Chapter 8 — Anh văn chuyên ngành Cơ khí | ThachLab</title>
+<meta name="robots" content="noindex">
+<style>
+:root { --bg:#f7f8fb; --card:#fff; --ink:#0f172a; --muted:#475569; --line:#d6dbe4; --accent:#c2410c; --accent-soft:#fff1e6; --ok:#047857; --ok-soft:#e7f7ef; --bad:#b91c1c; --bad-soft:#fdecec; }
+@media (prefers-color-scheme: dark) { :root { --bg:#0f172a; --card:#1e293b; --ink:#f1f5f9; --muted:#cbd5e1; --line:#334155; --accent:#fb923c; --accent-soft:#2a1d14; --ok:#34d399; --ok-soft:#10291f; --bad:#f87171; --bad-soft:#2d1515; } }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+main { max-width:560px; margin:0 auto; padding:16px 16px 40px; }
+a { color:var(--accent); }
+.top { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; }
+.top a { display:inline-flex; align-items:center; min-height:44px; font-weight:600; text-decoration:none; }
+h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
+.sub { color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+.tabs { display:grid; grid-template-columns:1fr 1fr; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:4px; margin-bottom:14px; }
+.tabs button { min-height:44px; border:0; border-radius:10px; background:transparent; color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.tabs button[aria-selected=true] { background:var(--accent); color:#fff; }
+.boxes { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin-bottom:12px; }
+.boxes div { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:6px; text-align:center; font-size:.85rem; color:var(--muted); }
+.boxes b { display:block; font-size:1.3rem; color:var(--ink); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
+.pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+.def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
+.hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
+.back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
+.term { font-size:1.6rem; font-weight:800; margin:0; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.ipa { color:var(--muted); font-size:1rem; font-weight:400; }
+.vi { font-size:1.15rem; margin:4px 0 0; }
+.btn { min-height:48px; padding:0 16px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:700; cursor:pointer; }
+.btn-main { width:100%; margin-top:14px; background:var(--accent); border-color:var(--accent); color:#fff; }
+.row { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:14px; }
+.btn-bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.btn-ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.speak { min-width:44px; min-height:44px; border-radius:50%; border:1px solid var(--line); background:var(--accent-soft); font-size:1.1rem; cursor:pointer; }
+.opts { display:grid; gap:8px; margin-top:14px; }
+.opts button { min-height:48px; text-align:left; padding:8px 14px; border-radius:12px; border:1px solid var(--line); background:var(--card); color:var(--ink); font:inherit; font-weight:600; cursor:pointer; }
+.opts button.ok { background:var(--ok-soft); border-color:var(--ok); color:var(--ok); }
+.opts button.bad { background:var(--bad-soft); border-color:var(--bad); color:var(--bad); }
+.score { color:var(--muted); font-size:.95rem; margin:0 0 10px; }
+.done { text-align:center; }
+.credit { color:var(--muted); font-size:.8rem; margin-top:20px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="top"><a href="/lop-hoc/avcn/">← Về bài học</a><span class="sub" style="margin:0">Chapter 8</span></div>
+  <h1>Flashcard: Chipping Machining</h1>
+  <p class="sub">20 từ ⭐ của chương. Chạm 🔊 để nghe phát âm.</p>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t-leitner" aria-selected="true">Thẻ 3 hộp</button>
+    <button role="tab" id="t-quiz" aria-selected="false">Nhìn ảnh đoán từ</button>
+  </div>
+  <section id="view"></section>
+  <p class="credit">Ảnh: Wikimedia Commons, giấy phép mở. Nguồn từng ảnh ghi trong bài học.</p>
+</main>
+<script>
+const TERMS = [{"term": "lathe", "ipa": "/leɪð/", "vi": "máy tiện", "def": "A machine that rotates the workpiece against a fixed cutting tool.", "img": "/assets/avcn/chapter-8/lathe.webp", "group": "Cụm A · 5 loại máy"}, {"term": "milling machine", "ipa": "/ˈmɪlɪŋ məˌʃiːn/", "vi": "máy phay", "def": "A machine with a rotating toothed cutter; the workpiece is held fixed.", "img": "/assets/avcn/chapter-8/milling-machine.webp", "group": "Cụm A · 5 loại máy"}, {"term": "drill", "ipa": "/drɪl/", "vi": "máy khoan", "def": "A machine fitted with a drill bit to cut circular holes.", "img": "/assets/avcn/chapter-8/drill-press.webp", "group": "Cụm A · 5 loại máy"}, {"term": "grinder", "ipa": "/ˈɡraɪndər/", "vi": "máy mài", "def": "A machine that removes material across a surface using an abrasive wheel.", "img": "/assets/avcn/chapter-8/bench-grinder.webp", "group": "Cụm A · 5 loại máy"}, {"term": "saw", "ipa": "/sɔː/", "vi": "máy cưa / cái cưa", "def": "A tool or machine that cuts with a toothed blade: hacksaw, band saw, circular saw.", "img": "/assets/avcn/chapter-8/band-saw.webp", "group": "Cụm A · 5 loại máy"}, {"term": "workpiece", "ipa": "/ˈwɜːkpiːs/", "vi": "phôi", "def": "The piece of material being machined.", "img": "/assets/avcn/chapter-8/turning.webp", "group": "Cụm B · Vật liệu, phế phẩm, chất lỏng"}, {"term": "machine tool", "ipa": "/məˈʃiːn tuːl/", "vi": "máy công cụ / dụng cụ cắt", "def": "The tool or machine used in machining to make holes, grooves, threads.", "img": "/assets/avcn/chapter-8/end-mills.webp", "group": "Cụm B · Vật liệu, phế phẩm, chất lỏng"}, {"term": "swarf / chips", "ipa": "/swɔːf/ /tʃɪps/", "vi": "phoi", "def": "The waste metal produced as the workpiece is cut.", "img": "/assets/avcn/chapter-8/swarf.webp", "group": "Cụm B · Vật liệu, phế phẩm, chất lỏng"}, {"term": "cutting fluid", "ipa": "/ˈkʌtɪŋ ˌfluːɪd/", "vi": "dung dịch cắt gọt", "def": "A liquid pumped onto the workpiece during machining.", "img": "/assets/avcn/chapter-8/boring.webp", "group": "Cụm B · Vật liệu, phế phẩm, chất lỏng"}, {"term": "coolant", "ipa": "/ˈkuːlənt/", "vi": "chất làm mát", "def": "A liquid that keeps the workpiece cool. Cutting fluid acts as a coolant.", "img": "", "group": "Cụm B · Vật liệu, phế phẩm, chất lỏng"}, {"term": "turn", "ipa": "/tɜːn/", "vi": "tiện", "def": "To cut a rotating workpiece on a lathe. Noun: turning.", "img": "/assets/avcn/chapter-8/turning.webp", "group": "Cụm C · 5 động từ gia công"}, {"term": "mill", "ipa": "/mɪl/", "vi": "phay", "def": "To cut a fixed workpiece with a rotating toothed cutter. Noun: milling.", "img": "", "group": "Cụm C · 5 động từ gia công"}, {"term": "drill", "ipa": "/drɪl/", "vi": "khoan", "def": "To cut a new circular hole with a drill bit. Noun: drilling.", "img": "/assets/avcn/chapter-8/drill-bit.webp", "group": "Cụm C · 5 động từ gia công"}, {"term": "bore", "ipa": "/bɔːr/", "vi": "doa, khoét rộng lỗ", "def": "To enlarge a hole that already exists. Noun: boring.", "img": "/assets/avcn/chapter-8/boring.webp", "group": "Cụm C · 5 động từ gia công"}, {"term": "grind", "ipa": "/ɡraɪnd/", "vi": "mài", "def": "To remove material across a surface with an abrasive wheel. Noun: grinding.", "img": "", "group": "Cụm C · 5 động từ gia công"}, {"term": "drill bit", "ipa": "/drɪl bɪt/", "vi": "mũi khoan", "def": "The rotating tool fitted to a drill; also called a bit.", "img": "/assets/avcn/chapter-8/drill-bit.webp", "group": "Cụm D · Dụng cụ cắt và mạch cắt"}, {"term": "blade", "ipa": "/bleɪd/", "vi": "lưỡi cưa", "def": "A thin, sharp piece of metal, usually with teeth.", "img": "/assets/avcn/chapter-8/hacksaw.webp", "group": "Cụm D · Dụng cụ cắt và mạch cắt"}, {"term": "abrasive wheel", "ipa": "/əˈbreɪsɪv wiːl/", "vi": "đá mài, đĩa cắt", "def": "A thin circular wheel with a tough, hard surface, often industrial diamond.", "img": "/assets/avcn/chapter-8/bench-grinder.webp", "group": "Cụm D · Dụng cụ cắt và mạch cắt"}, {"term": "hole saw", "ipa": "/həʊl sɔː/", "vi": "mũi khoét lỗ", "def": "A hollow cylinder with teeth that cuts a large hole and removes a core.", "img": "/assets/avcn/chapter-8/hole-saw.webp", "group": "Cụm D · Dụng cụ cắt và mạch cắt"}, {"term": "kerf", "ipa": "/kɜːf/", "vi": "mạch cắt", "def": "The gap left by the blade along the line of the cut.", "img": "/assets/avcn/chapter-8/circular-saw-blade.webp", "group": "Cụm D · Dụng cụ cắt và mạch cắt"}];
+const AUDIO = {"lathe": "/assets/avcn/chapter-8/audio/d0af48761d.mp3", "A machine that rotates the workpiece against a fixed cutting tool.": "/assets/avcn/chapter-8/audio/73cec25e13.mp3", "milling machine": "/assets/avcn/chapter-8/audio/3867477965.mp3", "A machine with a rotating toothed cutter; the workpiece is held fixed.": "/assets/avcn/chapter-8/audio/3c5b73bf0b.mp3", "drill": "/assets/avcn/chapter-8/audio/8a759f1ab5.mp3", "A machine fitted with a drill bit to cut circular holes.": "/assets/avcn/chapter-8/audio/e89c94cd6c.mp3", "grinder": "/assets/avcn/chapter-8/audio/b5b60f1e0d.mp3", "A machine that removes material across a surface using an abrasive wheel.": "/assets/avcn/chapter-8/audio/75c1b4a4ac.mp3", "saw": "/assets/avcn/chapter-8/audio/0381608769.mp3", "A tool or machine that cuts with a toothed blade: hacksaw, band saw, circular saw.": "/assets/avcn/chapter-8/audio/58e9239a49.mp3", "workpiece": "/assets/avcn/chapter-8/audio/8093a00192.mp3", "The piece of material being machined.": "/assets/avcn/chapter-8/audio/cf09f679fe.mp3", "machine tool": "/assets/avcn/chapter-8/audio/4db1886d34.mp3", "The tool or machine used in machining to make holes, grooves, threads.": "/assets/avcn/chapter-8/audio/068ff4822a.mp3", "swarf / chips": "/assets/avcn/chapter-8/audio/22359029a7.mp3", "The waste metal produced as the workpiece is cut.": "/assets/avcn/chapter-8/audio/9a0a568d39.mp3", "cutting fluid": "/assets/avcn/chapter-8/audio/46bacdba97.mp3", "A liquid pumped onto the workpiece during machining.": "/assets/avcn/chapter-8/audio/bc607844ad.mp3", "coolant": "/assets/avcn/chapter-8/audio/46f2c8dead.mp3", "A liquid that keeps the workpiece cool. Cutting fluid acts as a coolant.": "/assets/avcn/chapter-8/audio/40cf2df058.mp3", "turn": "/assets/avcn/chapter-8/audio/3f2947cc57.mp3", "To cut a rotating workpiece on a lathe. Noun: turning.": "/assets/avcn/chapter-8/audio/a446c78717.mp3", "mill": "/assets/avcn/chapter-8/audio/1d5776669d.mp3", "To cut a fixed workpiece with a rotating toothed cutter. Noun: milling.": "/assets/avcn/chapter-8/audio/aaa616b475.mp3", "To cut a new circular hole with a drill bit. Noun: drilling.": "/assets/avcn/chapter-8/audio/c18560a75a.mp3", "bore": "/assets/avcn/chapter-8/audio/f1924efee0.mp3", "To enlarge a hole that already exists. Noun: boring.": "/assets/avcn/chapter-8/audio/b83f479b2b.mp3", "grind": "/assets/avcn/chapter-8/audio/fcee89236a.mp3", "To remove material across a surface with an abrasive wheel. Noun: grinding.": "/assets/avcn/chapter-8/audio/3af9be77aa.mp3", "drill bit": "/assets/avcn/chapter-8/audio/be264b8b8f.mp3", "The rotating tool fitted to a drill; also called a bit.": "/assets/avcn/chapter-8/audio/01027a3a0c.mp3", "blade": "/assets/avcn/chapter-8/audio/69344a59df.mp3", "A thin, sharp piece of metal, usually with teeth.": "/assets/avcn/chapter-8/audio/ce1ab88eb7.mp3", "abrasive wheel": "/assets/avcn/chapter-8/audio/ad5be208be.mp3", "A thin circular wheel with a tough, hard surface, often industrial diamond.": "/assets/avcn/chapter-8/audio/1fdf9f952a.mp3", "hole saw": "/assets/avcn/chapter-8/audio/d1ba01632b.mp3", "A hollow cylinder with teeth that cuts a large hole and removes a core.": "/assets/avcn/chapter-8/audio/5cbecd80fa.mp3", "kerf": "/assets/avcn/chapter-8/audio/d87c5e8c8b.mp3", "The gap left by the blade along the line of the cut.": "/assets/avcn/chapter-8/audio/e87371c5b0.mp3", "headstock": "/assets/avcn/chapter-8/audio/fdc318229b.mp3", "tailstock": "/assets/avcn/chapter-8/audio/c64ceaf9af.mp3", "chuck": "/assets/avcn/chapter-8/audio/b349565e97.mp3", "spindle": "/assets/avcn/chapter-8/audio/1cd57df151.mp3", "tool post": "/assets/avcn/chapter-8/audio/53c92d6351.mp3", "carriage": "/assets/avcn/chapter-8/audio/48bc82c5ec.mp3", "bed": "/assets/avcn/chapter-8/audio/1ec829b2aa.mp3", "lead screw": "/assets/avcn/chapter-8/audio/80003047c4.mp3", "toothed": "/assets/avcn/chapter-8/audio/806e169311.mp3", "rotate / spin": "/assets/avcn/chapter-8/audio/44ec3786d7.mp3", "circular cross-section": "/assets/avcn/chapter-8/audio/e561c7df85.mp3", "core": "/assets/avcn/chapter-8/audio/684134682c.mp3", "Machining is the use of machines to cut pieces of material (called workpieces) and shape them into components.": "/assets/avcn/chapter-8/audio/f291e92bf0.mp3", "workpieces": "/assets/avcn/chapter-8/audio/6ab37d2ae7.mp3", "components": "/assets/avcn/chapter-8/audio/4954265316.mp3", "machining": "/assets/avcn/chapter-8/audio/c03c0f6056.mp3", "material": "/assets/avcn/chapter-8/audio/7a23a9749f.mp3", "shape": "/assets/avcn/chapter-8/audio/db7c060a6e.mp3", "called": "/assets/avcn/chapter-8/audio/d275c7b966.mp3", "The tools used in machining, to make holes, grooves, threads, etc., are called machine tools.": "/assets/avcn/chapter-8/audio/e7f26dc412.mp3", "threads": "/assets/avcn/chapter-8/audio/0df3fdf43b.mp3", "machine tools": "/assets/avcn/chapter-8/audio/4dfccf4e28.mp3", "holes": "/assets/avcn/chapter-8/audio/a745621719.mp3", "grooves": "/assets/avcn/chapter-8/audio/9be0739afc.mp3", "used in": "/assets/avcn/chapter-8/audio/184bbec092.mp3", "Metal is often machined. As it is cut, waste is produced, called swarf or chips.": "/assets/avcn/chapter-8/audio/463a0c438a.mp3", "waste": "/assets/avcn/chapter-8/audio/1bebb5b80f.mp3", "often": "/assets/avcn/chapter-8/audio/6c99118b16.mp3", "as it is cut": "/assets/avcn/chapter-8/audio/0e68dd8a69.mp3", "produced": "/assets/avcn/chapter-8/audio/80051d0b90.mp3", "During machining, a liquid called cutting fluid may be pumped onto the workpiece to act as a coolant, keeping the workpiece cool.": "/assets/avcn/chapter-8/audio/cbbe816aff.mp3", "liquid": "/assets/avcn/chapter-8/audio/2faeaca2b4.mp3", "pumped onto": "/assets/avcn/chapter-8/audio/396a3de8dd.mp3", "act as": "/assets/avcn/chapter-8/audio/9afe641ce0.mp3", "keeping … cool": "/assets/avcn/chapter-8/audio/9151c22115.mp3", "Milling is cutting done by a milling machine, often using toothed cutting discs (wheels with teeth that have sharp edges).": "/assets/avcn/chapter-8/audio/c930192460.mp3", "Milling": "/assets/avcn/chapter-8/audio/50004dea3b.mp3", "done by": "/assets/avcn/chapter-8/audio/e51523fcaa.mp3", "cutting discs": "/assets/avcn/chapter-8/audio/a79691ea1b.mp3", "sharp edges": "/assets/avcn/chapter-8/audio/5289dc6cff.mp3", "When a workpiece is milled, it is held in a fixed position on the machine, and is shaped by cutting tools which rotate while being moved over the surface of the workpiece.": "/assets/avcn/chapter-8/audio/b223e72420.mp3", "fixed": "/assets/avcn/chapter-8/audio/52d0c3c29b.mp3", "rotate": "/assets/avcn/chapter-8/audio/9ac9750b2e.mp3", "held": "/assets/avcn/chapter-8/audio/ec41d41522.mp3", "shaped": "/assets/avcn/chapter-8/audio/a32695861e.mp3", "surface": "/assets/avcn/chapter-8/audio/851210f585.mp3", "while being moved over": "/assets/avcn/chapter-8/audio/fb3000461f.mp3", "Turning is a technique for cutting components that have a circular cross-section.": "/assets/avcn/chapter-8/audio/565b26e1ad.mp3", "Turning": "/assets/avcn/chapter-8/audio/978dc964da.mp3", "cross-section": "/assets/avcn/chapter-8/audio/add5edd28c.mp3", "technique": "/assets/avcn/chapter-8/audio/c67861638f.mp3", "circular": "/assets/avcn/chapter-8/audio/c76469c6a8.mp3", "The workpiece is turned by a machine called a lathe, which rotates the workpiece. A fixed machine tool is then moved against the rotating workpiece to cut material from it.": "/assets/avcn/chapter-8/audio/d1995bde98.mp3", "rotates": "/assets/avcn/chapter-8/audio/e26094cd61.mp3", "then": "/assets/avcn/chapter-8/audio/c02c47ad8d.mp3", "against": "/assets/avcn/chapter-8/audio/d270a51e6e.mp3", "rotating": "/assets/avcn/chapter-8/audio/df218fc8f1.mp3", "cut material from it": "/assets/avcn/chapter-8/audio/e6f6a2170f.mp3", "Sawing is cutting using a blade (a thin, sharp piece of metal), which usually has teeth, to remove a thickness of material slightly wider than the blade.": "/assets/avcn/chapter-8/audio/2860ead705.mp3", "Sawing": "/assets/avcn/chapter-8/audio/43a2f169c8.mp3", "thin": "/assets/avcn/chapter-8/audio/eebce66ac0.mp3", "sharp": "/assets/avcn/chapter-8/audio/4adcc9d201.mp3", "remove": "/assets/avcn/chapter-8/audio/46937092d8.mp3", "thickness": "/assets/avcn/chapter-8/audio/9453f6ad7d.mp3", "slightly wider": "/assets/avcn/chapter-8/audio/c9457e7d5a.mp3", "The gap left by the blade, along the line of the cut, is called a kerf.": "/assets/avcn/chapter-8/audio/362f67511f.mp3", "gap": "/assets/avcn/chapter-8/audio/3bd0b9cf1c.mp3", "left by": "/assets/avcn/chapter-8/audio/4f569e6837.mp3", "along the line of the cut": "/assets/avcn/chapter-8/audio/057d4fa4cd.mp3", "Machines that use toothed blades include circular saws, band saws, and power hacksaws. A hacksaw has a blade with very small teeth, for cutting metal.": "/assets/avcn/chapter-8/audio/deebbfe2d7.mp3", "band saws": "/assets/avcn/chapter-8/audio/7ec01df3b1.mp3", "hacksaw": "/assets/avcn/chapter-8/audio/867129cd11.mp3", "include": "/assets/avcn/chapter-8/audio/ba734f367a.mp3", "circular saws": "/assets/avcn/chapter-8/audio/8e75d39933.mp3", "power": "/assets/avcn/chapter-8/audio/96f803928b.mp3", "very small teeth": "/assets/avcn/chapter-8/audio/c24917f59a.mp3", "Saws may also use abrasive wheels – thin, circular cutting wheels with tough, hard surfaces – often made of industrial diamond.": "/assets/avcn/chapter-8/audio/97d398ccdf.mp3", "abrasive wheels": "/assets/avcn/chapter-8/audio/3705312894.mp3", "tough": "/assets/avcn/chapter-8/audio/0924768018.mp3", "hard": "/assets/avcn/chapter-8/audio/72b9154cbc.mp3", "surfaces": "/assets/avcn/chapter-8/audio/bec9764dd8.mp3", "made of": "/assets/avcn/chapter-8/audio/0051dcb77c.mp3", "industrial diamond": "/assets/avcn/chapter-8/audio/0aab3a4571.mp3", "Drilling is a technique for cutting circular holes. A machine called a drill is fitted with a tool called a drill bit (or bit). The bit rotates and drills into the material.": "/assets/avcn/chapter-8/audio/2f27dab09e.mp3", "Drilling": "/assets/avcn/chapter-8/audio/137b883fae.mp3", "fitted with": "/assets/avcn/chapter-8/audio/820c67f941.mp3", "drills into": "/assets/avcn/chapter-8/audio/155cefe964.mp3", "Holes with large diameters can be cut using hole saws – hollow cylinders with teeth, which saw circular cuts and remove a core of material.": "/assets/avcn/chapter-8/audio/f495b65aef.mp3", "diameters": "/assets/avcn/chapter-8/audio/35ce341043.mp3", "hole saws": "/assets/avcn/chapter-8/audio/b54785a3b9.mp3", "large": "/assets/avcn/chapter-8/audio/38413ab6d9.mp3", "hollow": "/assets/avcn/chapter-8/audio/253e85a85f.mp3", "cylinders": "/assets/avcn/chapter-8/audio/c1a47dad26.mp3", "Usually, drilling refers to making new holes. In machining, enlarging a hole (making it wider) is called boring.": "/assets/avcn/chapter-8/audio/f7acdcfa0e.mp3", "enlarging": "/assets/avcn/chapter-8/audio/117116db77.mp3", "boring": "/assets/avcn/chapter-8/audio/9ae360a818.mp3", "usually": "/assets/avcn/chapter-8/audio/90dcbf10ea.mp3", "refers to": "/assets/avcn/chapter-8/audio/4309f6b4e5.mp3", "wider": "/assets/avcn/chapter-8/audio/3f6abe36c7.mp3", "Grinding is removing material across a surface area, using abrasive wheels. The machines used to grind material are called grinders.": "/assets/avcn/chapter-8/audio/71238e4cca.mp3", "Grinding": "/assets/avcn/chapter-8/audio/e88236002e.mp3", "grinders": "/assets/avcn/chapter-8/audio/830f0b7478.mp3", "removing": "/assets/avcn/chapter-8/audio/98c377ca0f.mp3", "across a surface area": "/assets/avcn/chapter-8/audio/90d50ad3cb.mp3", "Waste is produced, called swarf.": "/assets/avcn/chapter-8/audio/8b4c20e5a8.mp3", "The gap left by the blade is called a kerf.": "/assets/avcn/chapter-8/audio/7df19392f5.mp3", "Enlarging a hole is called boring.": "/assets/avcn/chapter-8/audio/52475e3617.mp3", "The workpiece is held in a fixed position.": "/assets/avcn/chapter-8/audio/c83b08ddbb.mp3", "It is shaped by cutting tools which rotate.": "/assets/avcn/chapter-8/audio/20f221aefc.mp3", "Cutting fluid is pumped onto the workpiece.": "/assets/avcn/chapter-8/audio/760ae4e97e.mp3", "Before starting the lathe,  that the CSS function switch is OFF and the spindle speed dial is at the minimum, and make sure the cross slide is .  the master switch on the back of the lathe and turn it to the \"ON\" position; the power lamp will light.  the spindle ON/OFF lever to start or stop the spindle and chuck. To stop a freewheeling chuck and cut power to the motor,  down on the foot brake.": "/assets/avcn/chapter-8/audio/e2ff118983.mp3"};
+let curAudio = null;
+const KEY = "avcn-flashcard-ch8";
+TERMS.forEach((t, i) => { t.id = i; });
+// Cặp từ đồng nghĩa trong chương: không cho làm phương án nhiễu của nhau (hai đáp án cùng đúng).
+const SAME = [["coolant", "cutting fluid"]];
+const clash = (a, b) => a.term === b.term || SAME.some((p) => p.includes(a.term) && p.includes(b.term));
+const view = document.getElementById("view");
+let box = {};
+try { box = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { box = {}; }
+const boxOf = (t) => box[t.id] || 1;
+function save() { try { localStorage.setItem(KEY, JSON.stringify(box)); } catch (e) {} }
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+function speak(text) {
+  if (curAudio) { curAudio.pause(); curAudio = null; }
+  if ("speechSynthesis" in window) speechSynthesis.cancel();
+  if (AUDIO[text]) {
+    const a = new Audio(AUDIO[text]);
+    curAudio = a;
+    a.play().catch((e) => { if (curAudio === a && !(e && e.name === "AbortError")) speakBrowser(text); });
+    return;
+  }
+  speakBrowser(text);
+}
+function speakBrowser(text) {
+  if (!("speechSynthesis" in window)) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = "en-US"; u.rate = 0.9;
+  const score = (x) => {
+    const l = x.lang.replace("_", "-").toLowerCase();
+    if (!l.startsWith("en")) return -1;
+    let s = l === "en-us" ? 10 : 5;
+    if (/premium|enhanced|neural|natural|online/i.test(x.name)) s += 30;
+    if (/\b(samantha|ava|allison|evan|nicky|zoe|aria|jenny|guy|google us english)\b/i.test(x.name)) s += 20;
+    if (/\b(fred|albert|zarvox|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|junior|kathy|organ|princess|ralph|trinoids|whisper|superstar)\b/i.test(x.name)) s -= 40;
+    if (x.localService === false) s += 5;
+    return s;
+  };
+  const v = speechSynthesis.getVoices().filter((x) => score(x) >= 0).sort((a, b) => score(b) - score(a))[0];
+  if (v) u.voice = v;
+  speechSynthesis.speak(u);
+}
+if ("speechSynthesis" in window) speechSynthesis.getVoices();
+view.addEventListener("click", (e) => { const b = e.target.closest("[data-speak]"); if (b) speak(b.dataset.speak); });
+function front(t) {
+  return (t.img ? `<img class="pic" src="${t.img}" alt="">` : "") + `<p class="def">${esc(t.def)}</p>`;
+}
+function shuffle(a) { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
+
+// Thẻ Leitner 3 hộp: hộp 1 hiện nhiều nhất; "Nhớ rồi" đẩy lên một hộp, "Chưa nhớ" về hộp 1.
+let current = null;
+function pickCard() {
+  const weights = { 1: 6, 2: 3, 3: 1 };
+  const pool = TERMS.filter((t) => t !== current);
+  const total = pool.reduce((s, t) => s + weights[boxOf(t)], 0);
+  let r = Math.random() * total;
+  for (const t of pool) { r -= weights[boxOf(t)]; if (r <= 0) return t; }
+  return pool[0];
+}
+function boxesHtml() {
+  const c = { 1: 0, 2: 0, 3: 0 };
+  TERMS.forEach((t) => c[boxOf(t)]++);
+  return `<div class="boxes"><div><b>${c[1]}</b>Hộp 1 · chưa nhớ</div><div><b>${c[2]}</b>Hộp 2 · đang nhớ</div><div><b>${c[3]}</b>Hộp 3 · đã thuộc</div></div>`;
+}
+function renderLeitner() {
+  current = pickCard();
+  const t = current;
+  view.innerHTML = boxesHtml() + `<div class="card">${front(t)}<p class="hint">Nghĩ ra từ tiếng Anh trước, rồi mới lật thẻ.</p>
+    <div id="back" class="back" hidden>
+      <p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p>
+      <p class="vi">${esc(t.vi)}</p>
+      <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
+    </div>
+    <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
+  view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
+}
+
+// Nhìn ảnh (hoặc đọc định nghĩa nếu từ không có ảnh) chọn 1 trong 4 từ — đúng dạng Part 1 của đề cuối kỳ.
+let quiz = null;
+function startQuiz() { quiz = { order: shuffle(TERMS.slice()), i: 0, right: 0 }; renderQuiz(); }
+function renderQuiz() {
+  if (quiz.i >= quiz.order.length) {
+    view.innerHTML = `<div class="card done"><p class="term" style="justify-content:center">${quiz.right}/${quiz.order.length}</p><p class="vi">${quiz.right >= 16 ? "Rất tốt! Em đã sẵn sàng cho Part 1." : "Ôn lại các từ sai ở chế độ Thẻ 3 hộp rồi làm lại nhé."}</p><button class="btn btn-main" id="again">Làm lại</button></div>`;
+    document.getElementById("again").onclick = startQuiz;
+    return;
+  }
+  const t = quiz.order[quiz.i];
+  const opts = shuffle([t, ...shuffle(TERMS.filter((x) => !clash(x, t)).filter((x, k, a) => a.findIndex((y) => y.term === x.term) === k)).slice(0, 3)]);
+  view.innerHTML = `<p class="score">Câu ${quiz.i + 1}/${quiz.order.length} · đúng ${quiz.right}</p><div class="card">${front(t)}
+    <div class="opts">${opts.map((o, k) => `<button data-k="${k}">${"abcd"[k]}. ${esc(o.term)}</button>`).join("")}</div><div id="after"></div></div>`;
+  view.querySelectorAll(".opts button").forEach((b) => b.onclick = () => {
+    const pick = opts[+b.dataset.k];
+    const ok = pick === t;
+    if (ok) quiz.right++; else box[t.id] = 1;
+    save();
+    view.querySelectorAll(".opts button").forEach((x) => { x.disabled = true; if (opts[+x.dataset.k] === t) x.classList.add("ok"); });
+    if (!ok) b.classList.add("bad");
+    document.getElementById("after").innerHTML = `<div class="back"><p class="term">${esc(t.term)} <span class="ipa">${esc(t.ipa)}</span> <button class="speak" data-speak="${esc(t.term)}" aria-label="Nghe">🔊</button></p><p class="vi">${esc(t.vi)}</p></div><button class="btn btn-main" id="next">Câu tiếp</button>`;
+    document.getElementById("next").onclick = () => { quiz.i++; renderQuiz(); };
+    speak(t.term);
+  });
+}
+
+const tabs = { leitner: document.getElementById("t-leitner"), quiz: document.getElementById("t-quiz") };
+function setMode(m) {
+  tabs.leitner.setAttribute("aria-selected", m === "leitner");
+  tabs.quiz.setAttribute("aria-selected", m === "quiz");
+  m === "leitner" ? renderLeitner() : startQuiz();
+}
+tabs.leitner.onclick = () => setMode("leitner");
+tabs.quiz.onclick = () => setMode("quiz");
+setMode("leitner");
+</script>
+</body>
+</html>
