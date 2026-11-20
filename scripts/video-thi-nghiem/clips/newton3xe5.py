@@ -203,6 +203,10 @@ def s_dapan(img, d, t, sc):
             q = ((t - M[1] - 0.8) % 2.6) / 2.0; q = min(max(q, 0.0), 1.0) ** 2
             yb = 1330
             d.line([(80, yb), (1000, yb)], fill=WOOD_D, width=5)
+            for x0, x1_, col in ((400 - 88, 400 - 150 - 88, C1), (680 + 88, 680 + 50 + 88, C2)):   # vach xuat phat (xam) + vach dich
+                for yy in range(int(yb - 150), int(yb), 24): d.line([(x0, yy), (x0, yy + 12)], fill=GRAY, width=4)
+                for yy in range(int(yb - 150), int(yb), 24): d.line([(x1_, yy), (x1_, yy + 12)], fill=col, width=6)
+                arrow(d, (x0, yb + 30), (x1_, yb + 30), col, w=6, head=18)
             f1, y = cart(d, 400 - 150 * q, yb, 1, C1, +1, s=0.8)
             f2, _ = cart(d, 680 + 50 * q, yb, 3, C2, -1, s=0.8)
             spring(d, f1, f1 + min(f2 - f1, 60 + 200 * min(q * 4, 1)), y, amp=16, n=9)
