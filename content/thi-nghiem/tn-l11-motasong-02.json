@@ -38,8 +38,8 @@
  ],
  "cac_buoc": {
   "lam": [
-   "Cố định một đầu dây, đầu kia móc lực kế và kéo căng với lực F xác định (ví dụ 8 N), giữ nguyên suốt thí nghiệm.",
-   "Một bạn gảy nhẹ đầu dây theo nhịp đều tay, bạn kia quay chậm toàn bộ đoạn dây.",
+   "Cố định một đầu dây, đầu kia móc lực kế và kéo nhẹ với lực F xác định (ví dụ 2 N, không quá 10 N), đọc F trước khi gảy và giữ nguyên lực kéo.",
+   "Một bạn gảy ngang gần đầu móc lực kế theo nhịp đều tay, bạn kia quay chậm toàn bộ đoạn dây.",
    "Đo khoảng cách giữa hai đỉnh sóng liên tiếp trên dây bằng thước dây.",
    "Đếm số khung hình giữa hai lần một điểm trên dây đạt đỉnh liên tiếp, chia cho tốc độ khung hình để suy ra T.",
    "Lặp lại với nhịp gảy khác, rồi với lực căng F khác."
@@ -61,10 +61,10 @@
    "ten": "Lực căng dây",
    "don_vi": "N",
    "kieu": "dieu_chinh",
-   "min": 2,
-   "max": 36,
-   "mac_dinh": 8,
-   "buoc": 2
+   "min": 1,
+   "max": 10,
+   "mac_dinh": 2,
+   "buoc": 0.5
   },
   {
    "ky_hieu": "f",
@@ -81,7 +81,7 @@
    "ten": "Khối lượng trên một mét dây",
    "don_vi": "kg/m",
    "kieu": "co_dinh",
-   "gia_tri": 2
+   "gia_tri": 0.5
   },
   {
    "ky_hieu": "v",
@@ -123,13 +123,13 @@
    "T (s)"
   ],
   "hang": [
-   [8, 2.0, 2, 1.0, 0.5],
-   [8, 2.0, 3, 0.67, 0.33],
-   [18, 3.0, 2, 1.5, 0.5],
-   [18, 3.0, 3, 1.0, 0.33],
-   [32, 4.0, 2, 2.0, 0.5]
+   [2, 2.0, 2, 1.0, 0.5],
+   [2, 2.0, 3, 0.67, 0.33],
+   [4.5, 3.0, 2, 1.5, 0.5],
+   [4.5, 3.0, 3, 1.0, 0.33],
+   [8, 4.0, 2, 2.0, 0.5]
   ],
-  "ghi_chu": "Tính từ mô hình v = sqrt(F/μ) với μ = 2 kg/m, không phải số đo thật. Dây 3 m nên giữ λ ≤ 1,5 m để thấy được ít nhất hai bước sóng."
+  "ghi_chu": "Tính từ mô hình v = sqrt(F/μ) với μ = 0,5 kg/m (lò xo mềm), không phải số đo thật; F ≤ 10 N cho vừa lực kế 10 N (sửa 20/11/2026: bản cũ F = 8, 18, 32 N với μ = 2 kg/m vượt thang lực kế). T = 0,33 s là 80 khung ở 240 fps (ghi ≈ 0,33); T = 0,5 s là 120 khung. Dây 3 m nên giữ λ ≤ 1,5 m để thấy được ít nhất hai bước sóng. Ca tự suy cho câu chốt clip motasong2: kéo 4,5 N, gảy nhanh hơn, đo λ = 1,0 m → v = 3,0 m/s (như lần 4,5 N gảy chậm) → T = λ/v ≈ 0,33 s → N = 80 khung (hàng 4,5 N, 3 Hz)."
  },
  "ket_qua_ky_vong": "Với mỗi lực căng, tỉ số λ/T cho cùng một giá trị v; tăng F thì v và λ tăng, còn T vẫn đúng bằng khoảng thời gian giữa hai lần gảy.",
  "hien_tuong_hay_sai": [
