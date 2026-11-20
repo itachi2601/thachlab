@@ -407,7 +407,7 @@ YouTube giữ nguyên, clip tự dựng thêm vào hộp kèm khung 6 ô; chỉ 
 
 **Lô 11 — trạng thái 19/11/2026:** 12/12 clip đã dựng, qua cổng A+B, tải `-20261119` (HEAD 200), chèn bài + khung trong repo (vào main). Chưa ghi DB (chờ thầy duyệt, sau 22h: `dang-lo11.sh`). K10 4 clip L12 đã đổi URL `-2` trong repo. **ĐÃ ĐĂNG DB 19/11/2026 chiều** (thầy cho đăng ngay): lý thuyết 12 bài lô 11 (#32, 28, 31, 33, 34, 37, 83, 84, 85, 57, 90, 150; `dang-lo11.sh --yes`) + 3 bài L12 K10 (#7, 125, 12; `--chi-video`, "Khác biệt ngoài khối video: KHÔNG"). Kiểm DB: 15/15 mục lý thuyết chứa đúng tên clip mới; 4 URL K10 `-20261119-2` HEAD 200.
 
-## Việc 4 — dựng lại 3 clip mẫu theo cổng mới (20/11/2026) **CHỜ THẦY DUYỆT MẪU, CHƯA ĐỔI URL DB**
+## Việc 4 — dựng lại 3 clip mẫu theo cổng mới (20/11/2026) **THẦY DUYỆT 20/11; ĐÃ GHI DB 21/11 06:29 (3/3)**
 Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi clip một agent Opus, cổng B kiem-code 2 vòng ở 283px + một lượt sửa cuối tự crop.
 | tn | clip | từ/phút trước → sau | LỖI `--do-chu` | giây · KB | bản mới (HEAD 200) |
 |---|---|---|---|---|---|
@@ -415,4 +415,4 @@ Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi 
 | tn-l9-khucxa-02 | clips/khucxa2.py | 172 → 150 | 15 → 0 | 49,5 · 1 441 | `lesson-clips/clip/tn-l9-khucxa-02-20261120.mp4` |
 | tn-l12-thuchanhtu-04 | clips/thuchanhtu4.py | 199 → 138 | 16 → 0 | 49,7 · 1 298 | `lesson-clips/clip/tn-l12-thuchanhtu-04-20261120.mp4` |
 Khung JSON `video-khung/*.json` đã trỏ bản `-20261120` + mốc mới (`--kiem` OK); kho `content/thi-nghiem/<id>.json` và DB vẫn bản `-20261119`.
-Thầy duyệt → `scripts/doi-ban-clip-db.mts` sau 22h (sao lưu) + `gan-khung-video.mts` gắn lại khung. Danh sách đề xuất lô 20 clip L12 ở file kế hoạch.
+20/11 11h: thầy duyệt → kho JSON + bài 57/83/12 (theory.src/html, bundle) đổi sang `-20261120`, `gan-khung-video.mts` gắn lại khung mốc mới (commit f400fda70). Dry-run `--chi-video` sạch bài 57, 83; bài 12 khác vì hộp mô phỏng việc 5 (clip dời lên trước hộp, `data-mo-phong=can-dong-dien` — bản web chưa deploy thì bỏ qua khoá lạ) → `--cho-phep-khac`. Hẹn `dang-viec4.sh --yes --22h05` (tab terminal, log `scripts/logs/dang-viec4-20261120.log`). Danh sách đề xuất lô 20 clip L12 ở file kế hoạch.

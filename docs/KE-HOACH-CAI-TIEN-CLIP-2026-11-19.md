@@ -100,8 +100,8 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
 - **Đạt khi:** qua cổng A + B mới; mp4 < 3 MB; tải bản mới lên `lesson-clips` với hậu tố ngày; đổi URL trên DB bằng `scripts/doi-ban-clip-db.mts`
   sau 22h, có sao lưu; ghi sổ clip.
 - **Kết quả 3 clip mẫu 20/11/2026** (commit 02cc8e55c…f8d5d4664): qua cổng A (`--do-chu` 0 LỖI) + cổng B (kiem-code 2 vòng ở 283px, lượt sửa cuối tự crop),
-  `xuat-khung.py --kiem` OK, khung JSON đã đổi mốc + URL `-20261120`. Đã tải `lesson-clips/clip/<id>-20261120.{mp4,webp}` (HEAD 200). **CHƯA đổi URL trên DB
-  và kho `content/thi-nghiem/<id>.json`** — chờ thầy duyệt mẫu; sau duyệt: `scripts/doi-ban-clip-db.mts` sau 22h + gắn lại khung (`gan-khung-video.mts`).
+  `xuat-khung.py --kiem` OK, khung JSON đã đổi mốc + URL `-20261120`. Đã tải `lesson-clips/clip/<id>-20261120.{mp4,webp}` (HEAD 200). **Thầy duyệt 20/11 11h**: kho + bài đã đổi sang `-20261120` + gắn lại khung;
+  hẹn ghi DB 22:05 20/11 bằng `scripts/video-thi-nghiem/dang-viec4.sh --yes --22h05`. Tiếp: chọn lô 20 clip L12 (dưới).
 
   | Clip | Từ/phút trước → sau | LỖI trước → sau | Giây | KB |
   |---|---|---|---|---|
