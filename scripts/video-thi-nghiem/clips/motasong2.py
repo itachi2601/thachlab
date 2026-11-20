@@ -120,7 +120,7 @@ def s_hook(img, d, t, sc):
         d.rounded_rectangle([140, y0 + 490, 140 + 800 * (1 - p), y0 + 506], radius=8, fill=A(PURPLE, a))
 
 # ---------------- canh 2: Tien hanh ----------------
-RUNS, HOLD = (0.6, 1.4, 0.6), 1.4                   # giay chay truoc khi dem (lan nhip nhanh chieu lau hon) ; giay dung hinh
+RUNS, HOLD = (0.6, 2.6, 0.6), 1.4                   # giay chay truoc khi dem (lan nhip nhanh chieu lau hon) ; giay dung hinh
 def plan():
     out, s = [], 0.4
     for (F_, v, f, lam, T, N), run in zip(ROWS, RUNS):
@@ -135,7 +135,7 @@ def do_state(t):
     F_, v, f, lam, T, N = ROWS[i]
     fz = t >= e
     tp = crest_t(f, v) + (min(t, e) - c) / SLOW
-    n = 0 if t < c else min(N, int(round(FPS_Q * (min(t, e) - c) / SLOW)))
+    n = 0 if t < c else min(N, 8 * int(FPS_Q * (min(t, e) - c) / SLOW / 8 + 0.5))   # buoc 8 khung: khong hien 60 (dap so chot)
     ka = ease((t - s) / 0.5)
     rows = i + (1 if t >= e + 0.9 else 0)
     Fk = F_ if i == 0 else lerp(ROWS[i - 1][0], F_, ease((t - s) / 0.6))
@@ -144,7 +144,7 @@ def do_state(t):
 def ntable(d, y, n, hl=()):
     card(d, (60, y, 1020, y + 96 + 3 * 76), fill=WHITE, outline=NAVY, w=4)
     xs = (140, 335, 535, 720, 910)
-    for x, h in zip(xs, ("F (N)", "số khung", "T (s)", "λ (m)", "v (m/s)")): text(d, (x, y + 48), h, 58, INK)
+    for x, h in zip(xs, ("F (N)", "khung", "T (s)", "λ (m)", "v (m/s)")): text(d, (x, y + 48), h, 58, INK)
     d.line([(90, y + 92), (990, y + 92)], fill=LIGHT, width=4)
     for i in range(n):
         yy = y + 132 + i * 76
@@ -217,14 +217,14 @@ def s_bay(img, d, t, sc):
     tp = crest_t(f, v)                                  # hinh dung lai de do
     rope(d, YC, tp, f, v, mark=False)
     cs = crests(tp, f, v)                               # 0,5 ; 1,5 ; 2,5 m
-    kb = appear(t, 0.6, 0.5)                            # hai cach do hien cung luc
+    kb = appear(t, 0.3, 0.4)                            # hai cach do hien cung luc
     if kb > 0:
         bracket(d, cs[0], cs[2], 625, "2λ ✗", kb, col=RED, tc=RED)
         bracket(d, cs[0], cs[1], 420, "λ ✓", kb, col=GREEN, tc=(10, 80, 40), below=False)
-    k3 = appear(t, M[1] + 0.4, 0.45); a1 = appear(t, 0.2, 0.4) * (1 - k3)
+    k3 = appear(t, M[1] + 0.9, 0.45); a1 = appear(t, 0.2, 0.4) * (1 - k3)
     y = 1040
     if a1 > 0:
-        k2 = appear(t, 3.2, 0.4); h = 230 if k2 <= 0 else 320
+        k2 = appear(t, 2.4, 0.4); h = 230 if k2 <= 0 else 320
         card(d, (40, y, 1040, y + h), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
         pw = tw(d, "BẪY", F(56)) + 52
         card(d, (W / 2 - pw / 2, y + 26, W / 2 + pw / 2, y + 102), fill=A(RED, a1), r=36)
@@ -232,12 +232,8 @@ def s_bay(img, d, t, sc):
         text(d, (W / 2, y + 170), "Sai: hai đỉnh bất kì", 58, RED, alpha=a1 * kb)
         if k2 > 0: text(d, (W / 2, y + 260), "Đúng: hai đỉnh liền nhau", 58, (10, 80, 40), alpha=a1 * k2)
     if k3 > 0:
-        kk = k3 * appear(t, M[1] + 2.5, 0.4); h = 170 if kk <= 0 else 340
-        card(d, (40, y, 1040, y + h), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
-        text(d, (W / 2, y + 80), "Chưa nói được", 58, NAVY, alpha=k3)
-        if kk > 0:
-            text(d, (W / 2, y + 180), "Gảy mạnh (biên độ lớn):", 58, INK, alpha=kk)
-            text(d, (W / 2, y + 265), "chưa đo", 58, INK, alpha=kk)
+        card(d, (40, y, 1040, y + 180), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        text(d, (W / 2, y + 90), "Gảy mạnh (biên độ lớn): chưa đo", 58, INK, alpha=k3)
 
 # ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
 def s_end(img, d, t, sc):
@@ -265,22 +261,22 @@ def _cues(clip):
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
     out += [(do["t0"] + p[0], "tap") for p in plan()]
-    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.6, "buzz"), (e["t0"] + e["M"][0] + 2.1, "open")]
+    out += [(da["t0"] + 0.1, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + e["M"][0] + 2.1, "open")]
     return out
 
 CLIP = dict(id="tn-l11-motasong-02", header="VẬT LÍ 11 · THÍ NGHIỆM", footer="Mô tả sóng · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Dây lò xo trên sàn", draw=s_hook, tail=0.3, caps=[
    ("Đầu phải buộc, tay gảy.", 3.8),
-   ("Tự trả lời trước khi xem.", 5.8)]),
+   ("Tự trả lời trước khi xem.", 5.4)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
    ("Đếm khung: chấm đỏ đỉnh tới đỉnh.", 4.2),
-   ("Đổi nhịp gảy, rồi đổi lực căng.", 7.7)]),
+   ("Đổi nhịp gảy, rồi đổi lực căng.", 8.9)]),
  dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.6, caps=[
    ("Hai chấm đỏ cùng nhịp.", 3.4),
    ("Vì sao λ đổi mà T không?", 4.4)]),
  dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Bẫy khi đo λ.", 4.8),
+   ("Bẫy khi đo λ.", 4.2),
    ("Còn bỏ ngỏ.", 3.6)]),
  dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
    ("Tự trả lời trước gợi ý.", 7.6)]),
