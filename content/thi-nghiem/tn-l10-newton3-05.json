@@ -26,6 +26,11 @@
    "ghi_chu": ""
   },
   {
+   "ten": "Cảm biến lực gắn ở chỗ tiếp xúc lò xo",
+   "so_luong": 2,
+   "ghi_chu": "khối lượng xe tính cả cảm biến"
+  },
+  {
    "ten": "Lò xo nén, chốt giữ",
    "so_luong": 1,
    "ghi_chu": "khối lượng lò xo rất nhỏ"
@@ -152,9 +157,9 @@
     3.0
    ]
   ],
-  "ghi_chu": "Tính từ mô hình. Số đo thật lệch vài % do ma sát."
+  "ghi_chu": "Tính từ mô hình. Số đo thật lệch vài % do ma sát. Ca tự suy cho câu chốt clip: xe 1 nặng 2 kg có gia tốc 2,5 m/s², xe 2 nặng 3 kg → cảm biến lực ở xe 2 chỉ 5 N (lực lên xe 1 = 2 · 2,5 = 5 N, rồi định luật III; nhiễu hay gặp: 7,5 N lấy 3 · 2,5; 2,5 N lấy nguyên gia tốc)."
  },
- "ket_qua_ky_vong": "m1 = 1 kg, m2 = 2 kg, a1 = 4 m/s² thì a2 = 2 m/s² (Câu 3 trong bài).",
+ "ket_qua_ky_vong": "m1 = 1 kg, m2 = 2 kg, a1 = 4 m/s² thì a2 = 2 m/s² (Câu 6 trong bài).",
  "hien_tuong_hay_sai": [
   "Cho rằng xe nặng chịu lực lớn hơn nên chạy nhanh hơn."
  ],
