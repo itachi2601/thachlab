@@ -44,3 +44,14 @@ export function CurrentBalanceSimulationLazy() {
     </LazyErrorBoundary>
   );
 }
+
+/* ---- Dụng cụ đo (Gói A, docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md mục 3) ---- */
+const ThuocKep = dynamic(() => import("@/components/physics/do-luong/ThuocKep"), { ssr: false, loading });
+
+export function ThuocKepLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <ThuocKep />
+    </LazyErrorBoundary>
+  );
+}
