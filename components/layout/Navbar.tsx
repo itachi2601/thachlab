@@ -28,6 +28,7 @@ const links: NavLink[] = [
 
 // Gom vào mục "Thêm" trên desktop (N2: ≤4 lựa chọn/vùng); menu mobile vẫn liệt kê đủ.
 const MORE_LINKS: NavLink[] = [
+  { label: "Thư viện mô phỏng", href: "/mo-phong" },
   { label: "Vật lý quanh ta", href: "/blog/#vat-ly-quanh-ta" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/gioi-thieu" },
