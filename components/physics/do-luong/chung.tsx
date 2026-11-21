@@ -10,7 +10,7 @@
  * Không gọi Supabase: tiến độ ở localStorage (bọc try/catch, chạy được khi bị chặn).
  */
 
-import { useCallback, useEffect, useState, type ReactNode } from "react";
+import { useCallback, useState, type ReactNode } from "react";
 
 export type CheDo = "xem" | "luyen";
 
@@ -97,18 +97,16 @@ export function soNguyenRaChuoi(units: number, decimals: number): string {
 
 export type TienDo = { streak: number; done: boolean };
 
-/** Tiến độ luyện đọc theo từng nhiệm vụ (khoá con, ví dụ "0.02"). Đọc sau khi mount để không lệch SSR. */
+/** Tiến độ luyện đọc theo từng nhiệm vụ (khoá con, ví dụ "0.02"). Dụng cụ chỉ nạp phía client (ssr:false) nên đọc ngay lúc khởi tạo. */
 export function useTienDo(storageKey: string) {
-  const [data, setData] = useState<Record<string, TienDo>>({});
-
-  useEffect(() => {
+  const [data, setData] = useState<Record<string, TienDo>>(() => {
     try {
-      const raw = window.localStorage.getItem(storageKey);
-      if (raw) setData(JSON.parse(raw) as Record<string, TienDo>);
+      const raw = typeof window === "undefined" ? null : window.localStorage.getItem(storageKey);
+      return raw ? (JSON.parse(raw) as Record<string, TienDo>) : {};
     } catch {
-      /* private mode / bị chặn: chạy không lưu */
+      return {}; /* private mode / bị chặn: chạy không lưu */
     }
-  }, [storageKey]);
+  });
 
   const ghi = useCallback(
     (nhiemVu: string, dung: boolean) => {
@@ -139,16 +137,12 @@ export type KetQuaCham = {
   loi: string;
 };
 
-export function LuyenDoc({
-  cauKey,
-  donVi,
-  nhan,
-  cham,
-  onDaCham,
-  onCauMoi,
-  tienDo,
-  tenNhiemVu,
-}: {
+/** Ô nhập + chấm; `cauKey` đổi thì ô được dựng lại (xoá chữ, xoá phản hồi). */
+export function LuyenDoc(props: LuyenDocProps) {
+  return <LuyenDocO key={props.cauKey} {...props} />;
+}
+
+type LuyenDocProps = {
   /** Đổi khi có câu mới → xoá ô nhập. */
   cauKey: string;
   donVi: string;
@@ -158,16 +152,21 @@ export function LuyenDoc({
   onCauMoi: () => void;
   tienDo: TienDo | undefined;
   tenNhiemVu: string;
-}) {
+};
+
+function LuyenDocO({
+  cauKey,
+  donVi,
+  nhan,
+  cham,
+  onDaCham,
+  onCauMoi,
+  tienDo,
+  tenNhiemVu,
+}: LuyenDocProps) {
   const [raw, setRaw] = useState("");
   const [kq, setKq] = useState<KetQuaCham | null>(null);
   const [loiNhap, setLoiNhap] = useState(false);
-
-  useEffect(() => {
-    setRaw("");
-    setKq(null);
-    setLoiNhap(false);
-  }, [cauKey]);
 
   const kiemTra = () => {
     if (kq) return;
