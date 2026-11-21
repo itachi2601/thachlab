@@ -1,51 +1,69 @@
 {
   "id": "tn-l12-phongxa-02",
   "ten": "Đếm xung từ một nguồn phóng xạ, cứ 5 phút một lần",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261112-2.mp4",
-  "tong_giay": 54.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261121.mp4",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Số hạt nhân chưa phân rã giảm theo hàm mũ: cứ sau một khoảng T không đổi thì nhịp đếm (đã trừ phông) giảm một nửa.",
-      "kiem": "Số đếm biến đổi ra sao?"
+      "kiem": "Số đếm thay đổi thế nào theo thời gian?"
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Nguồn đặt trước ống Geiger. Số đếm sau mỗi 5 phút sẽ ra sao?"
+      "giay": 3.3,
+      "chu": "Đã trừ phông: phút 0 là 812, phút 5 là 398. Phút 10 còn khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
-      "chu": "Ống Geiger, máy đếm, đồng hồ; nguồn chu kì bán rã ngắn; đo phông nền trước."
+      "giay": 9.0,
+      "chu": "Ống Geiger, máy đếm; đo phông nền trước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.4,
-      "chu": "Sau khi trừ phông 23: 812, 398, 204, 97, 52, 24 xung/phút."
+      "giay": 18.0,
+      "chu": "Phông nền 23 xung/phút. Đã trừ phông, phút 0, 5, 10, 15, 20: 812, 398, 204, 97, 52 xung/phút."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.6,
-      "chu": "Cứ 5 phút nhịp đếm còn khoảng một nửa: T ≈ 5 phút."
+      "giay": 27.4,
+      "chu": "Không giảm đều: cứ 5 phút còn khoảng một nửa (T ≈ 5 phút).\nMọi hạt nhân cùng xác suất phân rã."
     },
     {
       "khoa": "chua_noi",
-      "giay": 35.3,
-      "chu": "Không cho biết hạt nhân nào sẽ phân rã ở phút tiếp theo: phép đo chỉ cho số trung bình của cả mẫu. Cũng chưa giải thích vì sao mỗi chất có T khác nhau."
+      "giay": 35.4,
+      "chu": "Không cho biết hạt nhân nào phân rã ở phút tới: phép đo chỉ cho số trung bình của cả mẫu."
     }
   ],
   "dung_dua": {
-    "giay": 8.35,
-    "cau_hoi": "Đếm xung từ nguồn phóng xạ cứ 5 phút một lần. Số đếm (đã trừ phông) sau mỗi 5 phút sẽ ra sao?",
+    "giay": 8.85,
+    "cau_hoi": "Đếm xung từ một nguồn phóng xạ. Số đếm đã trừ phông: phút 0 là 812, phút 5 là 398 xung/phút. Ở phút 10, số đếm còn khoảng:",
     "chon": [
-      "A. Mỗi lần giảm như nhau",
-      "B. Còn khoảng một nửa",
-      "C. Sau 5 phút gần hết"
+      "A. Gần 0 xung/phút",
+      "B. Khoảng 200 xung/phút",
+      "C. Khoảng 300 xung/phút",
+      "D. Khoảng 400 xung/phút"
     ],
     "dung": 1,
-    "giai_thich_dung": "Mỗi 5 phút số đếm còn khoảng một nửa: không giảm đều và cũng không hết ngay.",
-    "giai_thich_sai": "Xem bảng số đếm ở đoạn kế và so từng số với số đứng trước nó."
+    "giai_thich_dung": "Cứ 5 phút số đếm còn khoảng một nửa, nên phút 10 còn khoảng 398 : 2 ≈ 200. Xem số đo thật ở đoạn kế.",
+    "giai_thich_sai": "Xem số đo thật ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 45.6,
+    "cau_hoi": "Số đếm (đã trừ phông) giảm 414 xung/phút trong 5 phút đầu, từ phút 0 đến phút 5. Từ phút 20 đến phút 25, số đếm giảm khoảng:",
+    "chon": [
+      "A. 400 xung/phút",
+      "B. 200 xung/phút",
+      "C. 100 xung/phút",
+      "D. 30 xung/phút"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "400 là coi số đếm giảm đều. Mỗi 5 phút số đếm còn một nửa nên phần giảm cũng chia đôi: 414 → 207 → 103 → 52 → 26, tức khoảng 30 xung/phút.",
+      "200 là mới chia đôi một lần (phút 5 → 10). Từ phút 20 → 25 đã cách phút 0 → 5 bốn chu kì, phần giảm còn 414 : 2⁴ ≈ 26, khoảng 30 xung/phút.",
+      "100 là chia đôi hai lần (phút 10 → 15). Phút 20 → 25 cách phút 0 → 5 bốn chu kì: 414 : 2⁴ ≈ 26, khoảng 30 xung/phút.",
+      "Phần giảm cũng chia đôi sau mỗi T = 5 phút: 414 : 2⁴ ≈ 26, khoảng 30 xung/phút. Đối chiếu với hàng phút 25 trong bảng số liệu của bài."
+    ]
   }
 }
