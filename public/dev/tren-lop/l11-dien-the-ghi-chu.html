@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điện thế · ghi chú dạy</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+:root{--bg:#fbfaf7;--ink:#1c2430;--muted:#5b6574;--line:#d9dde3;--accent:#1d4ed8;--warn:#9a5b00;--warn-bg:#fff7e6}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Điện thế (L11 Bài 20) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Mỗi bàn đầu (hoặc 1 bộ cho thầy + camera chiếu): pin AA 1,5 V <b>để hở</b>, đồng hồ vạn năng số đặt thang <b>20 V DC</b>, que đỏ cắm V, que đen cắm COM, 1 đoạn dây đồng 30 cm bóc vỏ hai đầu và một đoạn giữa, băng dính để quấn dây vào cực (+).</li>
+  <li>Thử trước ở nhà: lần 3 có thể nhảy 0,00 ↔ ±0,01 V — đó là nhiễu của đồng hồ, cứ ghi đúng số lớp thấy.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1215 "Kiểm tra nhanh — Bài 20. Điện thế"</b> (20 câu, 15 phút, mục Lý thuyết id 198) trên điện thoại: màn 6b có mã QR (cao 62% màn để quét từ xa) (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1215&amp;item=198</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>PhET "Điện tích và điện trường"</b> (cần mạng, bản tiếng Việt): mở sẵn <b>hai tab</b> trước giờ. Tab 1 để trống (điểm dừng 2). Tab 2 xếp sẵn hai hàng điện tích, mỗi hàng 8–10 điện tích, cách nhau 2 m: hàng $+1$ nC bên trái, hàng $-1$ nC bên phải. Bật "Lưới" và "Trị số", lấy công cụ "Mặt đẳng thế" ra giữa (điểm dừng 4). Nút "Mở PhET" trên màn mở một tab mới trống, nên ở điểm dừng 4 chuyển sang tab 2 đã xếp sẵn; kéo tay 16–20 điện tích trong giờ mất khoảng 1 phút.</li>
+  <li><b>Chiếu tivi 50 inch (bản 20/11):</b> 22 màn, mỗi màn một ý, một cột, không chia đôi. Cỡ chữ tính theo chiều cao màn: chữ thường = 5,2% chiều cao (khoảng 3,2 cm trên tivi 50"), nhãn trong hình khoảng 3,5% (khoảng 2,2 cm). Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại để chỉnh.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn (điểm dừng 2, Bẫy 2) = đúng chữ của chỗ trống trong Tập; góc phải màn ghi ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Hai clip thí nghiệm</b> (màn 3c vôn kế cận cảnh, màn 4b khay nước muối; cần mạng). <b>Màn 4b mặc định bỏ qua</b> (bấm → qua luôn), chỉ chiếu khi lớp không mở được PhET: clip nằm bên trái cao hết màn, cột phải hiện chữ to. Clip bỏ phần mở đầu, chỉ chạy đoạn đo (khoảng 11 giây), <b>tự dừng 3 lần</b>: cột phải hiện số vừa đo + câu hỏi cho lớp đoán. <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; nút ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Clip không chiếu phần Rút ra/Bẫy của nó — các màn sau đã làm việc đó. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn. Rời màn thì clip tự dừng.</li>
+  <li>Cột "Lớp đo" ở màn 3a gõ chữ được: bấm vào ô, gõ số lớp đọc được, Enter. Chữ to để bàn cuối thấy — màn đồng hồ vạn năng thật quá nhỏ với bàn cuối.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 20 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.5 → tr.4 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán con chim</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Công thức lõi + PhET</td><td>3–12</td><td>tr.1 ô 1·4 dòng 1–3 → tr.2 ô 2·1 dòng 1–5, ô 2·3 dòng 1–4</td><td>7 + 11 + 8 = 26 chỗ điền ngắn</td></tr>
+<tr><td>3 · Vôn kế + pin</td><td>12–16</td><td>tr.3 ô 3·1</td><td>3 số chỉ (cột "Số chỉ") + 4 chỗ "Rút ra" = 7</td></tr>
+<tr><td>4 · PhET + $U=Ed$ + Bẫy 2</td><td>16–24</td><td>tr.3 ô 3·2 → tr.4 ô 4·1 (Câu 4)</td><td>6 + 3 = 9</td></tr>
+<tr><td>5 · Bài mẫu</td><td>24–27</td><td>tr.5 ô 5·1 + tr.2 ô 2·3 dòng 5–6</td><td>3 ô bảng đọc đề + 4 dòng a), b), c) U, A + 2 ô eV, $q=-e$ = 9</td></tr>
+<tr><td>6 · Trả bài + con chim + đề 1215</td><td>27–30, đề 30–45</td><td>tr.4 ô 4·2 câu 2, 6 → tr.1 ô 1·3, 1·1 → đề xong: tr.4 ô 4·3</td><td>3 dòng trả bài + đáp án chim, đúng/sai + đánh dấu mục tiêu + điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 2 dày nhất (26 chỗ, chỉ là từ/ký hiệu ngắn): chiếu xong mới cho chép, đọc to từng dòng. Thêm PhET ở điểm dừng 2 và 4 (tổng 5 phút) được bù bằng: thí nghiệm vôn kế 5 → 4 phút, bài mẫu 4 → 3 phút, trả bài bỏ câu 3 (về nhà). Điểm dừng 4 có 5 câu đoán: bù bằng bỏ clip khay (màn 4b) theo mặc định, câu "$x$ gấp đôi" hỏi luôn ở màn đồ thị 4c. Màn "Quay lại con chim" dùng đúng 1 phút ô 1·3 đã có ở điểm dừng 6 (trả bài còn viết 1,5 phút). Thiếu giờ thì để ô 2·3 dòng 3–4 về nhà.</p>
+
+<h2>Điểm dừng 1 · Dự đoán con chim <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Người đứng đất chạm dây thì chết. Chim cũng chạm dây. Khác nhau ở đâu?" — để các em tự nêu "chim không chạm đất".</li>
+  <li>Khoanh vào Tập, viết một dòng "Vì sao". Màn 1b không có ô đáp án (tránh bấm nhầm lộ đáp án): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn "Quay lại con chim", ô 1·3). Phương án trên màn chép y Tập, không dùng chữ "điện thế" vì lớp chưa học.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (chân chim cách điện) — hỏi lại "thế sao chim đậu chạm cả dây lẫn cột thì chết?". Chọn D (chim nhỏ chịu được điện) — hỏi "chim lớn sải cánh chạm hai dây thì sao?". Chọn B — dây trần, chạm mặt dây vẫn có điện.</div>
+
+<h2>Điểm dừng 2 · Công thức lõi <small>phút 3–12 · tr.1 ô 1·4 → tr.2 ô 2·1, 2·3</small></h2>
+<ul>
+  <li>Mở bằng nhắc Bài 19 (ô 1·4 dòng 1–3; dòng 3 "$d$: hình chiếu có dấu" chép luôn trên lớp để điểm dừng 4 khỏi giảng lại): "trượt dốc thẳng hay lượn vòng, trọng lực sinh công như nhau" — lực điện cũng vậy, $A_{MN}=qEd$.</li>
+  <li>Ví dụ "độ cao bậc cầu thang" (hình bậc thang ở ô 2·1): đặt quả bóng hay cái tủ lên, độ cao bậc vẫn vậy → $V$ của điểm, không của điện tích.</li>
+  <li><span class="k">PhET (tab 1, khoảng 2 phút), ngay sau dòng "Mốc":</span> biểu quyết "dương hay âm?" rồi mới đặt $+1$ nC, kéo "Mặt đẳng thế" ra cách 1 m (đếm ô lưới): khoảng $+9$ V. Đổi $-1$ nC: khoảng $-9$ V. Kéo ra xa: về $0$ → sim lấy mốc ở vô cực. Đây là dòng "Q &gt; 0 cho V &gt; 0" của ô 2·1 dòng 5.</li>
+  <li>Mốc: Trái Đất hoặc vô cực; mốc vô cực thì $Q\gt0$ cho $V\gt0$, $Q\lt0$ cho $V\lt0$. Đổi mốc: mọi $V$ đổi, $U$ giữ nguyên — hỏi miệng "chiều cao tầng 3 tính từ sân hay từ tầng hầm thì khác, nhưng tầng 3 cao hơn tầng 2 bao nhiêu có đổi không?"</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> đặt electron vào thì nghĩ $V$ đổi dấu (Bẫy 1, ô 2·4 — về nhà). Quên $q$ của electron âm khi tính $A=qU$.</div>
+
+<h2>Điểm dừng 3 · Thí nghiệm vôn kế + pin <small>phút 12–16 · tr.3 ô 3·1</small></h2>
+<ul>
+  <li>Làm lần 1 trước lớp, cả lớp đọc số, viết vào <b>cột "Số chỉ"</b> của Tập (cột duy nhất trong Tập; số minh hoạ trên màn chỉ để so, không chép). Bấm "Mở số minh hoạ lần 1–2" sau khi ghi xong.</li>
+  <li><span class="k">Trước lần 2:</span> hỏi miệng "đổi hai que thì số chỉ đổi thế nào?". <span class="k">Trước lần 3:</span> biểu quyết A/B/C/D trên màn, làm thật, ghi số, rồi mới mở "số minh hoạ lần 3" và "rút ra".</li>
+  <li>Thầy đọc to từng số và gõ vào cột "Lớp đo" trên màn (màn 3a). Bàn cuối không thấy số trên đồng hồ: chiếu màn 3c (clip cận cảnh, dừng sau lần 1 và lần 2 để lớp đoán lần kế, dừng cuối là bảng 3 số) <i>sau</i> khi đã làm thật — clip chỉ để nhìn rõ, không thay thí nghiệm. Thiếu dụng cụ thì clip là phương án dự phòng.</li>
+  <li>Câu 2 (electron 10 V → 60 V) trong ô 3·1 để về nhà.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (1,5 V) vì "dây nối với cực dương thì có 1,5 V" — đúng là mỗi điểm có điện thế bằng cực (+), nhưng vôn kế đo <i>hiệu</i>. Chọn D vì nghĩ hiệu tăng theo khoảng cách — chỉ đúng khi có điện trường dọc dây (dây có dòng).</div>
+
+<h2>Điểm dừng 4 · $U=Ed$ và Bẫy 2 <small>phút 16–24 · tr.3 ô 3·2 → tr.4 ô 4·1</small></h2>
+<ul>
+  <li><span class="k">PhET (tab 2 đã xếp sẵn, khoảng 2 phút), trước khi ghép công thức:</span> hỏi "đi 1 m dọc đường sức và 1 m ngang đường sức, lần nào số chỉ đổi?" rồi kéo "Mặt đẳng thế" cho cả lớp xem. Có thể bấm nút bút chì của công cụ để vẽ vài đường đẳng thế (song song hai hàng, vuông góc đường sức). Giữa hai hàng điện trường chỉ <i>gần</i> đều; nói rõ "gần như không đổi", tránh đọc số lẻ ở sát mép hàng.</li>
+  <li><span class="k">Mặc định: bỏ màn 4b, sang thẳng đồ thị V–x (màn 4c)</span> — hỏi "$x$ gấp đôi thì $V$…?" rồi "độ dốc 60 V/m là gì?" (mở có dòng $1$ V/m $=1$ N/C). <span class="k">Chỉ khi không có PhET: clip khay nước muối (màn 4b), khoảng 1,5 phút:</span> PhET là ảo, clip là số đo thật cùng ý "dọc đổi, ngang không đổi". Ba lần dừng: ① $x=2$ cm được 1,18 V → "ra 4, 6, 8 cm thì sao?"; ② $x=8$ cm được 4,84 V, que sắp về 4 cm → biểu quyết A–D "dời song song lá đồng thì số chỉ…" (đáp án C, clip chiếu ngay sau); ③ bảng 4 số đo + "x gấp đôi thì V…?" rồi Enter sang đồ thị. Ở màn đồ thị hỏi "độ dốc 60 V/m là gì?" rồi mới mở — lớp tự thấy $V/x=U/d=E$, dẫn thẳng vào ô 3·2. Ô 3·3 vẫn để về nhà (điền bảng, Câu 3).</li>
+  <li><span class="k">Gợi mở cho $U=Ed$ (màn 4d):</span> màn chưa hiện công thức. Hỏi "Bài 19 có công thức công nào trong điện trường đều?" — lớp nói xong Enter mở $qEd$; "Ô 2·3 có công thức công nào nữa?" — Enter mở $qU_{MN}$; "Cùng một công thì sao?" — lớp tự ghép rồi Enter mở. Hình bên là $d$ hình chiếu. Điền ô 3·2.</li>
+  <li>Lật sang tr.4, ô 4·1 Câu 4 (màn 4e có đúng hình ô 4·1 và chữ của Tập: $E=1000$ V/m, $MN=5$ cm, $60^\circ$). Chỉ góc $\alpha$ trên hình trước khi biểu quyết. <span class="k">Gợi mở:</span> "Đi từ M tới N, phần nào của bước đi làm điện thế đổi: phần dọc hay phần ngang đường sức?"</li>
+  <li>Đáp án B ($25$ V). Ô mở có dòng "$U=E\cdot MN$ chỉ đúng khi MN dọc đường sức" = chỗ trống đầu ô 4·1. Sau khi mở, hỏi: "MN phải nằm thế nào để $U=0$?" → vuông góc đường sức, cùng một đường đẳng thế.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A ($50$ V) nhân thẳng độ dài; C ($43{,}3$ V) dùng $\sin$ vì quen chiếu lên phương thẳng đứng; quên đổi cm sang m (ra $2500$ V).</div>
+
+<h2>Điểm dừng 5 · Bài mẫu <small>phút 24–27 · tr.5 ô 5·1</small></h2>
+<ul>
+  <li>Câu a) làm mẫu trên bảng, nói to cách đọc đề (dòng đầu bảng đã in sẵn trong Tập). Cả lớp điền 3 ô còn trống của bảng, bấm "Mở: bảng đọc đề" để so.</li>
+  <li>b) cả lớp tự làm 45–60 giây (phải tính $E$ rồi nhân, đổi cm) rồi mở; thiếu giờ thì bỏ biểu quyết c). Đọc dòng "Nhắc: 1 eV…" trước khi biểu quyết c) theo eV (tránh lỗi số mũ), rồi mới đổi ra J. Màn 5c có dòng "$U=V_{\text{đầu}}-V_{\text{cuối}}$, electron $q=-e$": cho điền luôn ô 2·3 dòng 5–6 (tr.2).</li>
+  <li>Dòng "Kiểm tra dấu, độ lớn" để về nhà.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> b) dùng khoảng cách tới bản dương (ra 90 V); c) quên một dấu âm (ra −120 eV); lấy $V_M=30$ V làm hiệu điện thế (ra 30 eV).</div>
+
+<h2>Điểm dừng 6 · Trả bài + đề 1215 <small>phút 27–30 trả bài · 30–45 làm đề · tr.4 ô 4·2 → tr.1 ô 1·3</small></h2>
+<ul>
+  <li>Trả bài 2 câu của ô 4·2 (đúng lời trong Tập): câu 2 (2 dòng), câu 6 (1 dòng); câu 3 về nhà. Cho viết <b>1,5 phút, gấp màn</b> (chưa bấm Mở), rồi mở từng câu để các em tự sửa bằng bút khác màu.</li>
+  <li><span class="k">Màn "Quay lại con chim" (6/6, sau màn trả bài), 1 phút:</span> hình chim cạnh dòng "Lần 3: hai que trên cùng một dây → 0,00 V". Enter mở "C. hai chân = hai que trên cùng dây → $U\approx0$", hỏi "chim chạm cả dây lẫn cột thì sao?", rồi Enter mở "người đứng đất: dây – đất cỡ hàng trăm kV". Lớp lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai" viết bằng chữ "hiệu điện thế" vừa học (sửa câu kiểu "chim không chạm đất nên không có hiệu điện thế"). <b>20 giây: đánh dấu ô 1·1</b> (mục tiêu đã đạt).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1215 trong 15 phút. Nộp xong ghi ngay vào tr.4 ô 4·3: điểm …/20, câu sai, câu đoán mò.</li>
+  <li>Đọc dòng "Về nhà theo Tập" trên màn — liệt kê đúng mã ô; ô 4·4 ghi đề BTVN thầy giao trên web (đề, số câu, hạn).</li>
+</ul>
+<div class="sai"><b>Đề 1215 so với phần học trên lớp:</b> câu 5, 6, 18 (thay điện tích tại một điểm → $V$, $W$) chạm Bẫy 1 và dòng $W_M=qV_M$ — phần về nhà (ô 2·1 dòng 6, ô 2·4), lớp mới nghe ý "V của điểm, không của điện tích" ở điểm dừng 2. Câu 17 (khay nước muối) là ô 3·3 — về nhà. Câu 12 (đổi mốc), câu 2 (J/C) đã dạy ở điểm dừng 2; câu 11 (eV) ở điểm dừng 5. Câu 10 (con chim) và câu 16 (vôn kế ba lần chạm) hỏi lại đúng hai tình huống vừa chữa nên đo "nhớ lại", chưa đo "chuyển sang tình huống mới".</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu tính số, số liệu khác mọi câu đã chữa · lấy $e=1{,}6\cdot10^{-19}$ C</small></h2>
+<ol>
+<li>Đặt $q_1=4\ \mu\text{C}$ tại M thì thế năng $24\ \mu\text{J}$. Thay bằng $q_2=-2\ \mu\text{C}$ tại M. $V_M$ và thế năng của $q_2$: A. $-6$ V; $+12\ \mu$J · B. $6$ V; $12\ \mu$J · C. $6$ V; $-12\ \mu$J · D. $-12$ V; $24\ \mu$J</li>
+<li>Electron đi từ M ($V_M=5$ V) đến N ($V_N=80$ V). Công của lực điện: A. $+1{,}2\cdot10^{-17}$ J · B. $-1{,}2\cdot10^{-17}$ J · C. $+1{,}36\cdot10^{-17}$ J · D. $-1{,}36\cdot10^{-17}$ J</li>
+<li>Hai bản song song cách $5$ cm, nối nguồn $150$ V, mốc ở bản âm. Điện thế tại điểm cách bản âm $2$ cm: A. $90$ V · B. $6000$ V · C. $150$ V · D. $60$ V</li>
+<li>$E=500$ V/m; $MN=8$ cm hợp với đường sức góc $60^\circ$, N lệch theo chiều đường sức. $U_{MN}$: A. $40$ V · B. $20$ V · C. $34{,}6$ V · D. $-20$ V</li>
+<li>Hai bản ở câu 3 nhưng mốc ở bản dương. Điện thế tại điểm cách bản âm $2$ cm và $U_{+-}$: A. $60$ V; $150$ V · B. $90$ V; $-150$ V · C. $-90$ V; $150$ V · D. $-90$ V; $0$ V</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>C</td><td>$V_M=24/4=6$ V; $W_2=(-2)(6)=-12\ \mu$J</td><td>A: cho $V$ đổi dấu theo $q$ · B: quên dấu $q_2$ · D: giữ $W$, chia cho $q_2$</td></tr>
+<tr><td>2</td><td>A</td><td>$U_{MN}=5-80=-75$ V; $A=(-1{,}6\cdot10^{-19})(-75)=+1{,}2\cdot10^{-17}$ J</td><td>B: sai một dấu · C, D: cộng $5+80$</td></tr>
+<tr><td>3</td><td>D</td><td>$E=150/0{,}05=3000$ V/m; $V=3000\cdot0{,}02=60$ V</td><td>A: dùng 3 cm tới bản dương · B: không đổi cm ra m · C: lấy cả $U$</td></tr>
+<tr><td>4</td><td>B</td><td>$d=8\cos60^\circ=4$ cm; $U=500\cdot0{,}04=20$ V</td><td>A: nhân thẳng MN · C: dùng $\sin$ · D: sai dấu $d$</td></tr>
+<tr><td>5</td><td>C</td><td>Điểm cách bản dương 3 cm, thấp hơn $3000\cdot0{,}03=90$ V: $V=-90$ V; $U_{+-}=150$ V</td><td>A: giữ $V$ khi đổi mốc · B: đảo thứ tự hai bản · D: tưởng đổi mốc thì $U=0$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 4c (đồ thị) — màn 4b đã bỏ mặc định, học sinh xem clip khay ở nhà khi làm ô 3·3; bỏ biểu quyết ở điểm dừng 5 c) (làm thẳng trên bảng); để ô 2·3 dòng 3–4 về nhà; không cắt giờ làm đề 1215 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: hỏi Bẫy 1 bằng miệng; hoặc thử thách ⭐ "M, N trên đường vuông góc đường sức: $U_{MN}$?"</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào (hỏi 2–3 em bàn cuối sau tiết); nhãn trong hình (12 V, M, N, α) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở câu bẫy MN xiên (điểm dừng 4, sau PhET) — so với lớp chưa dùng PhET; câu 9 và 20 của đề 1215. Tỉ lệ đúng lần đầu / lần hai ở 4 câu biểu quyết; điểm dừng 2 (26 chỗ điền) có chép kịp trong 9 phút không.</li>
+  <li>Đề 1215: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút; màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>
