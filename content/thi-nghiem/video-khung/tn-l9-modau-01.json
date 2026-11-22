@@ -1,0 +1,53 @@
+{
+  "id": "tn-l9-modau-01",
+  "ten": "Một dòng điện qua đèn, đọc trên ba thang đo",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261118.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l9-modau-01-20261118.webp",
+  "tong_giay": 49.8,
+  "o": [
+    {
+      "khoa": "gia_thuyet",
+      "giay": 0,
+      "chu": "Đổi thang đo, dòng điện trong mạch không đổi; chỉ cách hiện số trên màn hình đổi.",
+      "kiem": "Đổi thang, màn hình hiện số nào?"
+    },
+    {
+      "khoa": "du_doan",
+      "giay": 3.8,
+      "chu": "Thang 10 A: 0,15 A. Chuyển sang thang 200 mA, màn hình hiện gì?"
+    },
+    {
+      "khoa": "dung_cu",
+      "giay": 9.5,
+      "chu": "Nguồn 3 V, khoá K, đèn, đồng hồ đa năng."
+    },
+    {
+      "khoa": "quan_sat",
+      "giay": 17.0,
+      "chu": "Thang 10 A: 0.15. Thang 200 mA: 153.2. Thang 20 mA: hiện 1 ở bên trái."
+    },
+    {
+      "khoa": "rut_ra",
+      "giay": 37.7,
+      "chu": "Dòng điện không đổi; số 1 bên trái là quá thang."
+    },
+    {
+      "khoa": "chua_noi",
+      "giay": 42.0,
+      "chu": "Số liệu minh hoạ. Bỏ qua điện trở của đồng hồ."
+    }
+  ],
+  "dung_dua": {
+    "giay": 9.3,
+    "cau_hoi": "Thang 10 A: 0,15 A. Chuyển sang thang 200 mA, màn hình hiện gì?",
+    "chon": [
+      "A. 0.15",
+      "B. 153.2",
+      "C. 1.53",
+      "D. 15.3"
+    ],
+    "dung": 1,
+    "giai_thich_dung": "Dòng khoảng 0,153 A, tức khoảng 153 mA; thang 200 mA đọc theo mA nên màn hình hiện 153.2.",
+    "giai_thich_sai": "Đổi thang không đổi dòng điện: dòng thật khoảng 0,153 A = 153 mA (thang 10 A chỉ làm tròn thành 0.15), nên thang 200 mA phải hiện số cỡ 153, không phải 0.15, 1.53 hay 15.3."
+  }
+}

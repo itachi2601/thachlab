@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-chuyenthe-01",
   "ten": "Đun nước đá, mỗi phút ghi nhiệt độ một lần",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-chuyenthe-01-20261112-2.mp4",
-  "tong_giay": 50.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-chuyenthe-01-20261121.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,40 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
-      "chu": "Đun đều từ −6 °C. Đồ thị nhiệt độ theo thời gian có dạng nào?"
+      "giay": 3.6,
+      "chu": "Đun đá −6 °C tới khi nước 100 °C, bếp vẫn bật ở mức cũ. Sau đó nhiệt kế chỉ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.6,
-      "chu": "Nước đá −6 °C, bếp công suất không đổi, nhiệt kế."
+      "giay": 9.3,
+      "chu": "Nước đá, bếp giữ một mức, nhiệt kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 12.4,
-      "chu": "Đứng ở khoảng 0 °C khoảng 4 phút, đá tan hết thì tăng đều."
+      "giay": 15.3,
+      "chu": "Đứng gần 0 °C khoảng 4 phút; đá tan hết thì tăng đều."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.6,
-      "chu": "Từ phút 10 lại đứng ở khoảng 100 °C. Đoạn nằm ngang là lúc chuyển thể: nhiệt nhận vào không làm nhiệt độ tăng."
+      "giay": 24.4,
+      "chu": "Từ phút 10 lại đứng gần 100 °C. Đang chuyển thể: nhiệt phá liên kết, T không tăng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.2,
-      "chu": "Số đọc 0,2–0,3 °C vẫn khớp 0 °C vì nằm trong sai số ±0,5 °C. Chưa biết nhiệt thất thoát bao nhiêu. Áp suất khác thì nhiệt độ sôi ra sao."
+      "giay": 33.4,
+      "chu": "Số đọc 0,2–0,3 °C vẫn khớp 0 °C vì nằm trong sai số ±0,5 °C. Chưa đo được nhiệt mất ra ngoài; chưa xét áp suất khác."
     }
   ],
   "dung_dua": {
-    "giay": 8.25,
-    "cau_hoi": "Đun nước đá từ −6 °C bằng bếp công suất không đổi. Đồ thị T theo t có dạng nào?",
+    "giay": 9.1,
+    "cau_hoi": "Đun 0,20 kg nước đá −6 °C bằng bếp giữ một mức. Khi nước đã tới 100 °C, bếp vẫn bật như cũ. Sau đó nhiệt kế chỉ thế nào?",
     "chon": [
-      "A. Một đường thẳng đi lên đều",
-      "B. Có một đoạn nằm ngang",
-      "C. Có hai đoạn nằm ngang"
+      "A. Tiếp tục tăng đều như trước",
+      "B. Nhích lên 101–102 °C rồi đứng",
+      "C. Đứng gần 100 °C tới khi nước cạn",
+      "D. Giảm dần vì nước bay hơi bớt"
     ],
     "dung": 2,
-    "giai_thich_dung": "Có hai đoạn nằm ngang, một lúc đá tan và một lúc nước sôi.",
-    "giai_thich_sai": "Xem đồ thị ở đoạn kế, đếm số đoạn nằm ngang."
+    "giai_thich_dung": "Nước sôi thì nhiệt kế đứng gần 100 °C khoảng 27 phút, tới khi cạn. Bếp vẫn cấp nhiệt suốt, nhưng nhiệt dùng để phá liên kết cho phân tử thoát thành hơi nên nhiệt độ không tăng.",
+    "giai_thich_sai": "Bếp cấp nhiệt đều, nhưng nhận nhiệt chưa chắc làm nhiệt độ tăng. Xem đoạn đồ thị sau phút 10: nhiệt kế làm gì trong lúc nước sôi?"
+  },
+  "cau_chot": {
+    "giay": 46.0,
+    "cau_hoi": "Làm lại với lượng nước đá −6 °C gấp đôi, vẫn bếp đó, giữ cùng một mức. Đoạn nằm ngang đầu tiên trên đồ thị thay đổi thế nào?",
+    "chon": [
+      "A. Vẫn ở 0 °C, dài như cũ",
+      "B. Vẫn ở 0 °C, dài gấp đôi",
+      "C. Cao hơn 0 °C, dài như cũ",
+      "D. Cao hơn 0 °C, dài gấp đôi"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Độ cao vẫn ở 0 °C là đúng. Nhưng đá gấp đôi cần nhiệt gấp đôi để tan hết (Q = m·λ), mà bếp cấp nhiệt đều như cũ, nên phải đun lâu gấp đôi.",
+      "Nhiệt độ nóng chảy của nước đá là 0 °C, không phụ thuộc lượng đá. Nhiệt cần để tan Q = m·λ tăng gấp đôi, bếp cấp nhiệt như cũ nên thời gian tan dài gấp đôi.",
+      "Nhiệt độ nóng chảy là tính chất của chất, không phụ thuộc lượng đá, nên đoạn ngang vẫn ở 0 °C. Còn độ dài thì đổi: đá gấp đôi cần nhiệt Q = m·λ gấp đôi.",
+      "Độ dài gấp đôi là đúng (Q = m·λ gấp đôi, bếp cấp đều). Nhưng nhiệt độ nóng chảy của nước đá không phụ thuộc lượng đá, nên đoạn ngang vẫn ở 0 °C."
+    ]
   }
 }

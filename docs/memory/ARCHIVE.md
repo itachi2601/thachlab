@@ -109,3 +109,6 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 - [Báo live đang học](project_thachlab_bao_live_dang_hoc.md) — heartbeat chỉ ở lý thuyết
 - [Hình OpenStax cho L12](project_thachlab_hinh_openstax.md) — chèn ảnh thẳng, không vẽ lại SVG
 - [Sơ đồ tư duy chương](project_thachlab_so_do_tu_duy_chuong.md) — L12/L10 Ch.3 đã deploy  (chuyển 17/11: đã deploy, chương khác dùng skill so-do-tu-duy-chuong)
+
+## Chuyển từ MEMORY.md khi rút gọn 18/11/2026
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–9 + sửa hộp exp đã đăng 18/11

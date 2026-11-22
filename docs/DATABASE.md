@@ -1,4 +1,4 @@
-# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-18
+# Sơ đồ dữ liệu Supabase (schema public) — sinh tự động 2026-11-20
 
 Sinh bằng `node scripts/gen-database-doc.mjs` (chỉ đọc `pg_class`/`pg_attribute`). **Không sửa
 tay** — chạy lại sau khi migration mới đã chạy trên production. Danh sách hàm/RPC ở
@@ -21,7 +21,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **class_instructors** (~1): class_id:int8*>classes, instructor_id:uuid*>profiles, assigned_by:uuid>profiles, assigned_at:ts
 - **class_review_homework** (~-1): id:int8*, class_id:int8>classes, source_exam_id:int8>exams, exam_id:int8>exams, title:text, wrong_count:int, bank_count:int, created_by:uuid>profiles, created_at:ts
 - **classes** (~4): id:int8*, created_at:ts, name:text, slug:text, color:text, icon:text, sort_order:int, active:bool, requires_approval:bool
-- **course_enrollments** (~195): course_id:int8*>course_offerings, student_id:uuid*>profiles, enrolled_at:ts, status:text, approved_at:ts, approved_by:uuid>profiles
+- **course_enrollments** (~229): course_id:int8*>course_offerings, student_id:uuid*>profiles, enrolled_at:ts, status:text, approved_at:ts, approved_by:uuid>profiles
 - **course_grade_overrides** (~11): course_id:int8*>course_offerings, student_id:uuid*>profiles, grade_key:text*, score:numeric(4,2), updated_by:uuid>profiles, updated_at:ts
 - **course_instructors** (~2): course_id:int8*>course_offerings, instructor_id:uuid*>profiles, assigned_by:uuid>profiles, assigned_at:ts
 - **course_offerings** (~3): id:int8*, subject_id:int8>subjects, created_by:uuid>profiles, created_at:ts, name:text, class_label:text, school_year:text, join_code:text, enrollment_mode:text, starts_at:date, ends_at:date, status:text, open_lesson_ids:text[]
@@ -29,7 +29,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **parent_link_requests** (~-1): id:int8*, parent_id:uuid>profiles, child_name:text, child_birth:date, parent_phone:text, note:text, matched_student_id:uuid>profiles, status:text, reviewed_by:uuid>profiles, reviewed_at:ts, created_at:ts
 - **parent_links** (~137): id:uuid*, code:text, student_id:uuid>profiles, parent_id:uuid>profiles, label:text, created_by:uuid>profiles, created_at:ts, claimed_at:ts
 - **password_reset_codes** (~27): id:uuid*, code:text, student_id:uuid>profiles, method:text, created_by:uuid>profiles, created_at:ts, expires_at:ts, used_at:ts
-- **profiles** (~598): id:uuid*>users, created_at:ts, full_name:text, class_name:text, role:text, student_code:text, admin_area:text, birth_date:date, track:text, display_title_code:text>rank_titles, display_title_level:text, avatar_url:text, honor_visibility:text, is_test:bool
+- **profiles** (~643): id:uuid*>users, created_at:ts, full_name:text, class_name:text, role:text, student_code:text, admin_area:text, birth_date:date, track:text, display_title_code:text>rank_titles, display_title_level:text, avatar_url:text, honor_visibility:text, is_test:bool
 - **staff_invites** (~7): id:uuid*, email:text, full_name:text, role:text, admin_area:text, class_id:int8>classes, course_id:int8>course_offerings, tier:text, invited_by:uuid>profiles, invited_at:ts, claimed_at:ts, claimed_user_id:uuid>users, code:text
 - **staff_week_plans** (~-1): user_id:uuid*>profiles, week_start:date*, events:jsonb, warnings:jsonb, updated_at:ts
 - **thpt_attendance_records** (~-1): session_id:int8*>thpt_attendance_sessions, student_id:uuid*>profiles, status:text, note:text, marked_by:uuid>profiles, marked_at:ts
@@ -47,15 +47,17 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **user_classes** (~323): user_id:uuid*>profiles, class_id:int8*>classes, status:text, requested_at:ts, reviewed_by:uuid>profiles, reviewed_at:ts
 - **user_classes_backup_20261007** (~-1): user_id:uuid, class_id:int8, status:text, requested_at:ts, reviewed_by:uuid, reviewed_at:ts
 
-## Học liệu THPT: chương · bài · mục — 10 bảng
+## Học liệu THPT: chương · bài · mục — 12 bảng
 
 - **chapter_classes** (~22): chapter_id:int8*>chapters, class_id:int8*>classes
 - **chapters** (~22): id:int8*, created_at:ts, title:text, sort_order:int, subject_code:text>academic_subjects
 - **lesson_clip_choices** (~-1): student_id:uuid*>profiles, tn_id:text*, lesson_id:int8>lessons, choice:smallint, correct:bool, occurred_at:ts
-- **lesson_items** (~438): id:int8*, created_at:ts, lesson_id:int8>lessons, kind:text, title:text, subtitle:text, body_html:text, video_url:text, pdf_url:text, sort_order:int, exam_ids:bigint[], questions:jsonb, due_at:ts, quiz_min_correct:int, practice_pass_score:numeric(4,2), required:bool, published_at:ts, draft_payload:jsonb, draft_saved_at:ts, summary_html:text
+- **lesson_clip_view_rollups** (~-1): thang:date*, tn_id:text*, ban_clip:text*, so_luot:int, so_hs:int, du_doan_tra_loi:int, du_doan_dung:int, du_doan_bo_qua:int, chot_co:int, chot_tra_loi:int, chot_dung:int, chot_bo_qua:int, xem_het:int
+- **lesson_clip_views** (~-1): luot_id:uuid*, student_id:uuid>profiles, tn_id:text, lesson_id:int8>lessons, ban_clip:text, co_cau_chot:bool, du_doan:smallint, du_doan_bo_qua:bool, du_doan_dung:bool, chot:smallint, chot_bo_qua:bool, chot_dung:bool, so_xem_lai:smallint, xem_het:bool, giay_max:numeric(6,1), bat_dau:ts, cap_nhat:ts, so_lan_gui:int
+- **lesson_items** (~459): id:int8*, created_at:ts, lesson_id:int8>lessons, kind:text, title:text, subtitle:text, body_html:text, video_url:text, pdf_url:text, sort_order:int, exam_ids:bigint[], questions:jsonb, due_at:ts, quiz_min_correct:int, practice_pass_score:numeric(4,2), required:bool, published_at:ts, draft_payload:jsonb, draft_saved_at:ts, summary_html:text
 - **lesson_notes** (~-1): user_id:uuid*>users, lesson_id:int8*>lessons, heading_id:text*, heading_text:text, body:text, updated_at:ts
 - **lesson_progress** (~964): user_id:uuid*>profiles, item_id:int8*>lesson_items, done_at:ts, course_id:int8>course_offerings
-- **lesson_read_depth** (~1899): student_id:uuid*>profiles, item_id:int8*>lesson_items, read_date:date*, lesson_id:int8>lessons, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, sends:int, first_at:ts, last_at:ts
+- **lesson_read_depth** (~1969): student_id:uuid*>profiles, item_id:int8*>lesson_items, read_date:date*, lesson_id:int8>lessons, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, sends:int, first_at:ts, last_at:ts
 - **lesson_read_depth_rollups** (~-1): student_id:uuid*>profiles, item_id:int8*>lesson_items, lesson_id:int8>lessons, days_read:int, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, first_at:ts, last_at:ts, updated_at:ts
 - **lessons** (~155): id:int8*, created_at:ts, chapter_id:int8>chapters, title:text, sort_order:int, published:bool, lesson_kind:text, description:text, is_preview:bool
 - **subjects** (~4): id:int8*, code:text, name:text, area:text, active:bool, is_practicum:bool
@@ -63,9 +65,9 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 ## Đề · câu hỏi · bài làm — 27 bảng
 
 - **bug_reports** (~165): id:int8*, created_at:ts, updated_at:ts, user_id:uuid>profiles, reporter_name:text, reporter_email:text, page_url:text, category:text, description:text, screenshot_path:text, status:text, admin_note:text, exam_id:int8>exams, question_index:int
-- **exam_attempts** (~4235): id:int8*, client_token:uuid, student_id:uuid>profiles, exam_id:int8>exams, item_id:int8>lesson_items, started_at:ts, submitted_at:ts, exam_result_id:int8>exam_results, responses:jsonb, seconds_left:int, saved_at:ts
+- **exam_attempts** (~4275): id:int8*, client_token:uuid, student_id:uuid>profiles, exam_id:int8>exams, item_id:int8>lesson_items, started_at:ts, submitted_at:ts, exam_result_id:int8>exam_results, responses:jsonb, seconds_left:int, saved_at:ts
 - **exam_classes** (~877): exam_id:int8*>exams, class_id:int8*>classes
-- **exam_question_results** (~76187): exam_result_id:int8*>exam_results, question_index:int*, student_id:uuid>profiles, exam_id:int8>exams, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, earned:numeric(4,2), max:numeric(4,2), is_correct:bool, estimated:bool, created_at:ts, manual_earned:numeric(4,2), manual_max:numeric(4,2), graded_by:uuid>profiles, graded_at:ts, difficulty:text
+- **exam_question_results** (~81810): exam_result_id:int8*>exam_results, question_index:int*, student_id:uuid>profiles, exam_id:int8>exams, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, earned:numeric(4,2), max:numeric(4,2), is_correct:bool, estimated:bool, created_at:ts, manual_earned:numeric(4,2), manual_max:numeric(4,2), graded_by:uuid>profiles, graded_at:ts, difficulty:text
 - **exam_results** (~3749): id:int8*, created_at:ts, student_id:uuid>profiles, exam_id:int8>exams, score:numeric(4,2), detail:jsonb, duration_seconds:int, course_id:int8>course_offerings, violation_count:int, violations:jsonb, client_token:uuid, results_rolled_up_at:ts
 - **exam_ta_previews** (~-1): exam_id:int8*>exams, class_id:int8*>classes, sent_by:uuid>users, sent_at:ts
 - **exams** (~1270): id:int8*, created_at:ts, title:text, duration_minutes:int, published:bool, questions:jsonb, question_count:int, topic:text, difficulty:text, type_counts:jsonb, subject_code:text>academic_subjects, cnc_key:text, pass_score:numeric(4,2)
@@ -121,7 +123,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **post_classes** (~-1): post_id:int8*>posts, class_id:int8*>classes
 - **post_courses** (~-1): post_id:int8*>posts, course_id:int8*>course_offerings
 - **posts** (~1): id:int8*, created_at:ts, title:text, body:text, video_url:text, published:bool, topic:text, content_type:text, subject_code:text>academic_subjects
-- **student_alerts** (~525): id:int8*, student_id:uuid>profiles, class_id:int8>classes, kind:text, severity:text, reason:text, assessment_ids:bigint[], status:text, assigned_to:uuid>profiles, handled_by:uuid>profiles, handled_note:text, created_at:ts, updated_at:ts
+- **student_alerts** (~533): id:int8*, student_id:uuid>profiles, class_id:int8>classes, kind:text, severity:text, reason:text, assessment_ids:bigint[], status:text, assigned_to:uuid>profiles, handled_by:uuid>profiles, handled_note:text, created_at:ts, updated_at:ts
 - **tutoring_needs** (~1206): id:int8*, student_id:uuid>profiles, class_id:int8>classes, topic_id:int8>question_topics, form:text, wrong:int, total:int, pct:int, source:text, status:text, assigned_to:uuid>profiles, note:text, first_seen_at:ts, last_seen_at:ts, tutored_at:ts, cleared_at:ts, updated_at:ts
 - **tutoring_needs_backup_20261011** (~174): id:int8*, status:text, cleared_at:ts, note:text
 - **tutoring_registrations** (~-1): id:int8*, slot_id:int8>tutoring_slots, student_id:uuid>profiles, created_at:ts, topic_ids:bigint[], attended:bool, attended_at:ts
@@ -134,7 +136,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 
 - **attendance_machine_photos** (~-1): id:int8*, session_id:int8>attendance_sessions, machine_code:text, checkpoint:text, storage_path:text, note:text, uploaded_by:uuid>profiles, created_at:ts
 - **attendance_machine_scores** (~3): session_id:int8*>attendance_sessions, machine_code:text*, bonus_points:int, note:text, updated_at:ts, sang_loc:bool, sap_xep:bool, sach_se:bool, san_soc:bool, san_sang:bool, equipment_status:text
-- **attendance_records** (~535): session_id:int8*>attendance_sessions, student_id:uuid*>profiles, status:text, checked_in_at:ts, note:text, marked_by:uuid>profiles, updated_at:ts, bonus_points:int, machine_code:text, machine_selected_at:ts
+- **attendance_records** (~599): session_id:int8*>attendance_sessions, student_id:uuid*>profiles, status:text, checked_in_at:ts, note:text, marked_by:uuid>profiles, updated_at:ts, bonus_points:int, machine_code:text, machine_selected_at:ts
 - **attendance_session_machines** (~8): session_id:int8*>attendance_sessions, machine_code:text*>machines
 - **attendance_sessions** (~14): id:int8*, course_id:int8>course_offerings, created_by:uuid>profiles, created_at:ts, title:text, session_date:date, starts_at:ts, late_after:ts, closes_at:ts, code:text, status:text, note:text, machine_selection_open:bool, machine_edit_override:bool, workshop:text, period:text
 - **checklist_attempts** (~-1): id:int8*, session_id:int8>checklist_sessions, course_id:int8>course_offerings, lesson_id:text, student_id:uuid>profiles, grader_id:uuid>profiles, grader_role:text, item_results:jsonb, score:num, total:num, critical_ok:bool, zero_tolerance_ok:bool, passed:bool, created_at:ts, started_at:ts, duration_seconds:int
@@ -180,7 +182,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **ta_video_rates** (~1): id:uuid*, effective_from:date, price_don_gian:int, price_dung_ky:int, view_threshold_1:int, view_bonus_1:int, view_threshold_2:int, view_bonus_2:int, lead_bonus:int, monthly_budget_cap:int
 - **ta_video_stats** (~-1): id:uuid*, session_id:uuid>ta_sessions, checked_at:date, views:int, saves:int, comments:int, created_at:ts
 
-## Khác — 39 bảng
+## Khác — 41 bảng
 
 - **_bak_exam_classes_avcn_20261013** (~-1): exam_id:int8, class_id:int8
 - **_bak_profiles_birth_20261015** (~142): id:uuid*, copied_at:ts
@@ -193,7 +195,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **bk_sua_dinh_dang_202611101518_exams** (~666): id:int8, questions:jsonb
 - **bk_sua_nhan_abcd_202611160558_bank** (~-1): id:int8, created_at:ts, updated_at:ts, subject_code:text, grade:text, topic_id:int8, topic_name:text, form:text, qtype:text, difficulty:text, question:jsonb, content_hash:text, source_exam_id:int8, source_index:int, archived:bool, note:text, figure_not_needed:bool, ai_figure:jsonb, difficulty_source:text, lint_flags:text[]
 - **bk_sua_nhan_abcd_202611160558_exams** (~-1): id:int8, questions:jsonb
-- **body_measurements** (~-1): id:uuid*, user_id:uuid>profiles, measured_on:date, height_cm:numeric(5,1), weight_kg:numeric(5,1), chest_cm:numeric(5,1), waist_cm:numeric(5,1), hip_cm:numeric(5,1), shoulder_cm:numeric(5,1), arm_cm:numeric(5,1), note:text, created_at:ts
+- **body_measurements** (~-1): id:uuid*, user_id:uuid>profiles, measured_on:date, height_cm:numeric(5,1), weight_kg:numeric(5,1), chest_cm:numeric(5,1), waist_cm:numeric(5,1), hip_cm:numeric(5,1), shoulder_cm:numeric(5,1), arm_cm:numeric(5,1), note:text, created_at:ts, neck_cm:numeric(5,1), wrist_cm:numeric(5,1)
 - **entry_diagnostics** (~-1): id:int8*, student_id:uuid>profiles, per_topic:jsonb, need_count:int, created_at:ts
 - **feature_flags** (~-1): flag:text*, class_id:int8*>classes, enabled:bool, note:text, created_by:uuid>profiles, created_at:ts
 - **guest_exam_links** (~-1): id:int8*, code:text, exam_id:int8>exams, gradebook:text, is_open:bool, note:text, created_by:uuid>profiles, created_at:ts
@@ -201,8 +203,10 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **hsg_grade_sheets** (~-1): id:int8*, test_id:int8>hsg_grade_tests, student_name:text, class_name:text, answers:jsonb, scores:jsonb, total:num, graded_by:uuid>profiles, created_at:ts, updated_at:ts
 - **hsg_grade_tests** (~-1): id:int8*, title:text, kind:text, config:jsonb, created_by:uuid>profiles, created_at:ts, archived:bool
 - **learning_events** (~-1): id:int8*, student_id:uuid>profiles, lesson_id:int8>lessons, item_id:int8>lesson_items, kind:text, duration_s:int, occurred_at:ts
+- **nutrition_days** (~-1): id:uuid*, user_id:uuid>profiles, day:date, items:jsonb, weight_kg:numeric(5,1), note:text, updated_at:ts
+- **nutrition_profile** (~-1): user_id:uuid*>profiles, birth_year:int, sex:text, activity:numeric(4,3), goal:text, kcal_adjust:int, updated_at:ts
 - **public_stats_cache** (~-1): id:smallint*, computed_at:ts, stats:jsonb
-- **push_subscriptions** (~46): id:int8*, student_id:uuid>profiles, endpoint:text, p256dh:text, auth_key:text, remind_hour:smallint, enabled:bool, last_sent_at:ts, created_at:ts
+- **push_subscriptions** (~47): id:int8*, student_id:uuid>profiles, endpoint:text, p256dh:text, auth_key:text, remind_hour:smallint, enabled:bool, last_sent_at:ts, created_at:ts
 - **quiz_answers** (~-1): room_id:int8>quiz_rooms, player_id:int8*>quiz_players, q_index:int*, choice:int, correct:bool, points:int, answered_at:ts
 - **quiz_ch3_l12_bank_backup_20261021** (~158): id:int8, archived:bool, note:text, backed_up_at:ts
 - **quiz_ch3_l12_sources_backup_20261021** (~-1): season_id:int8, source_kind:text, source_id:int8, max_rp:int, backed_up_at:ts
@@ -214,7 +218,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **review_sessions** (~24): id:int8*, created_at:ts, class_id:int8>classes, created_by:uuid>profiles, title:text, threshold:int, stages:jsonb, current_stage:int, stage_started_at:ts, extra_seconds:int, status:text, mode:text, due_at:ts, sequential:bool
 - **similar_practice_attempts** (~-1): id:int8*, user_id:uuid>users, lesson_id:int8>lessons, dang_no:int, topic_id:int8>question_topics, form:text, nguon:text, luot:smallint, co_meo:bool, mo_meo:bool, dung_lan_dau:smallint, tong:smallint, created_at:ts
 - **student_mistake_review_attempts** (~162): id:int8*, student_id:uuid>profiles, season_id:int8>rank_seasons, mistake_ids:bigint[], answers:jsonb, correct_count:int, total:int, rp_awarded:int, status:text, created_at:ts, submitted_at:ts, ok_items:jsonb
-- **student_mistakes** (~16882): id:int8*, student_id:uuid>profiles, exam_id:int8>exams, question_index:int, topic_id:int8>question_topics, form:text, difficulty:text, mistake_count:int, consecutive_correct:int, stage:int, cleared:bool, last_wrong_at:ts, last_reviewed_at:ts, next_review_at:ts, created_at:ts
+- **student_mistakes** (~17121): id:int8*, student_id:uuid>profiles, exam_id:int8>exams, question_index:int, topic_id:int8>question_topics, form:text, difficulty:text, mistake_count:int, consecutive_correct:int, stage:int, cleared:bool, last_wrong_at:ts, last_reviewed_at:ts, next_review_at:ts, created_at:ts
 - **teacher_lesson_notes** (~-1): id:int8*, created_at:ts, updated_at:ts, user_id:uuid>profiles, lesson_id:int8>lessons, item_id:int8>lesson_items, page_key:text, page_heading:text, tag:text, body:text, status:text, resolution:text
 - **theory_quiz_keys** (~93): item_id:int8*>lesson_items, enabled:bool, answers:jsonb, challenge:jsonb, est_read_seconds:int, updated_at:ts
 - **theory_reviews** (~-1): student_id:uuid*>profiles, item_id:int8*>lesson_items, round:int*, opened_at:ts, submitted_at:ts, correct:int, total:int, awarded:int, result:text

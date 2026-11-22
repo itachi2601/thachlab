@@ -1,0 +1,397 @@
+{
+ "schema": "thachlab.lesson-bundle/v1",
+ "target": {
+  "class_name": "Anh văn chuyên ngành Cơ khí",
+  "chapter_title": "Technical English for Mechanical Engineering",
+  "lesson_title": "Chapter 9: CAD/CAM — Thiết kế và gia công có máy tính"
+ },
+ "theory_title": "",
+ "theory_subtitle": "",
+ "theory_html": "",
+ "worked_examples": [],
+ "exam": {
+  "title": "Kiểm tra từ vựng Chapter 9: CAD/CAM",
+  "topic": "AVCN C9: CAD/CAM",
+  "difficulty": "de",
+  "duration_minutes": 15,
+  "subject_code": "avcn",
+  "questions": [
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>The process of making products, often in a factory.</em>",
+    "options": [
+     "machinist",
+     "machine tool",
+     "geometry",
+     "manufacturing"
+    ],
+    "answer": 3,
+    "explanation": "<strong>manufacturing</strong> = sản xuất, chế tạo.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“chi phí nhân công”</strong>?",
+    "options": [
+     "virus",
+     "unemployment",
+     "labour cost",
+     "reliable"
+    ],
+    "answer": 2,
+    "explanation": "labour cost: The money paid to workers for their work.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>A picture that shows the shape and size of a part.</em>",
+    "options": [
+     "3D model",
+     "prototype",
+     "drawing",
+     "design"
+    ],
+    "answer": 2,
+    "explanation": "<strong>drawing</strong> = bản vẽ.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "What does <strong>finished part</strong> mean?",
+    "options": [
+     "nhược điểm",
+     "đường cong",
+     "ưu điểm",
+     "chi tiết hoàn thiện"
+    ],
+    "answer": 3,
+    "explanation": "<strong>finished part</strong> = chi tiết hoàn thiện.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“máy công cụ”</strong>?",
+    "options": [
+     "machine tool",
+     "geometry",
+     "manufacturing",
+     "machinist"
+    ],
+    "answer": 0,
+    "explanation": "machine tool: A power-driven machine that cuts or shapes metal.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“thất nghiệp”</strong>?",
+    "options": [
+     "virus",
+     "reliable",
+     "unemployment",
+     "human error"
+    ],
+    "answer": 2,
+    "explanation": "unemployment: The situation of having no job when you want to work.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>A harmful program that damages files on a computer.</em>",
+    "options": [
+     "reliable",
+     "virus",
+     "labour cost",
+     "unemployment"
+    ],
+    "answer": 1,
+    "explanation": "<strong>virus</strong> = vi-rút máy tính.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“thiết kế”</strong>?",
+    "options": [
+     "simulation",
+     "3D model",
+     "prototype",
+     "design"
+    ],
+    "answer": 3,
+    "explanation": "design: To plan how a product will look and work.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "What does <strong>advantage</strong> mean?",
+    "options": [
+     "mục đích",
+     "ưu điểm",
+     "chi tiết hoàn thiện",
+     "bề mặt"
+    ],
+    "answer": 1,
+    "explanation": "<strong>advantage</strong> = ưu điểm.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>A way of controlling a machine tool with a computer program.</em>",
+    "options": [
+     "CAD",
+     "machine tool",
+     "manufacturing",
+     "CNC"
+    ],
+    "answer": 3,
+    "explanation": "<strong>CNC</strong> = điều khiển số bằng máy tính.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>The first test version of a product, made before mass production.</em>",
+    "options": [
+     "simulation",
+     "design",
+     "prototype",
+     "drawing"
+    ],
+    "answer": 2,
+    "explanation": "<strong>prototype</strong> = mẫu thử.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "What does <strong>assemble</strong> mean?",
+    "options": [
+     "sửa đổi, chỉnh lại",
+     "lắp ráp",
+     "chi tiết hoàn thiện",
+     "giống thật, sát thực tế"
+    ],
+    "answer": 1,
+    "explanation": "<strong>assemble</strong> = lắp ráp.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“mô phỏng”</strong>?",
+    "options": [
+     "simulation",
+     "prototype",
+     "3D model",
+     "drawing"
+    ],
+    "answer": 0,
+    "explanation": "simulation: A computer test that shows how a design will behave.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“mô hình 3D”</strong>?",
+    "options": [
+     "simulation",
+     "drawing",
+     "3D model",
+     "design"
+    ],
+    "answer": 2,
+    "explanation": "3D model: A computer shape that shows a part with length, width and height.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "What does <strong>realistic</strong> mean?",
+    "options": [
+     "thành phẩm",
+     "giống thật, sát thực tế",
+     "ưu điểm",
+     "sửa đổi, chỉnh lại"
+    ],
+    "answer": 1,
+    "explanation": "<strong>realistic</strong> = giống thật, sát thực tế.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“đáng tin cậy, ổn định”</strong>?",
+    "options": [
+     "human error",
+     "virus",
+     "labour cost",
+     "reliable"
+    ],
+    "answer": 3,
+    "explanation": "reliable: Able to be trusted to work well every time.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>The use of computers to create and change designs.</em>",
+    "options": [
+     "CNC",
+     "automation",
+     "CAD",
+     "CAM"
+    ],
+    "answer": 2,
+    "explanation": "<strong>CAD</strong> = thiết kế có sự hỗ trợ của máy tính.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>A mistake made by a person, not by a machine.</em>",
+    "options": [
+     "human error",
+     "virus",
+     "reliable",
+     "unemployment"
+    ],
+    "answer": 0,
+    "explanation": "<strong>human error</strong> = lỗi do con người.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“gia công có sự hỗ trợ của máy tính”</strong>?",
+    "options": [
+     "CAM",
+     "CAD",
+     "automation",
+     "drawing"
+    ],
+    "answer": 0,
+    "explanation": "CAM: The use of computer software to control machine tools that make products.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "What does <strong>modify</strong> mean?",
+    "options": [
+     "ưu điểm",
+     "sửa đổi, chỉnh lại",
+     "dao cắt, dụng cụ cắt",
+     "lắp ráp"
+    ],
+    "answer": 1,
+    "explanation": "<strong>modify</strong> = sửa đổi, chỉnh lại.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>The shape and size of a part, shown by lines, surfaces and solids.</em>",
+    "options": [
+     "manufacturing",
+     "geometry",
+     "mass production",
+     "machinist"
+    ],
+    "answer": 1,
+    "explanation": "<strong>geometry</strong> = hình dạng và kích thước của chi tiết.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>The use of machines to do work without human help.</em>",
+    "options": [
+     "CAM",
+     "CAD",
+     "software",
+     "automation"
+    ],
+    "answer": 3,
+    "explanation": "<strong>automation</strong> = tự động hoá.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“sản xuất hàng loạt”</strong>?",
+    "options": [
+     "machinist",
+     "geometry",
+     "machine tool",
+     "mass production"
+    ],
+    "answer": 3,
+    "explanation": "mass production: Making large numbers of the same product, usually by machines.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which English word means <strong>“phần mềm”</strong>?",
+    "options": [
+     "automation",
+     "simulation",
+     "software",
+     "reliable"
+    ],
+    "answer": 2,
+    "explanation": "software: Programs that tell a computer what to do.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   },
+   {
+    "type": "multiple_choice",
+    "question": "Which word matches this definition?<br><em>A skilled worker who sets up and runs machine tools.</em>",
+    "options": [
+     "machine tool",
+     "machinist",
+     "manufacturing",
+     "geometry"
+    ],
+    "answer": 1,
+    "explanation": "<strong>machinist</strong> = thợ gia công, thợ máy.",
+    "topic": "AVCN C9: CAD/CAM",
+    "form": "ly_thuyet",
+    "difficulty": "de"
+   }
+  ]
+ },
+ "raster_images": []
+}

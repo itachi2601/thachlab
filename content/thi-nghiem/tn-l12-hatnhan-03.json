@@ -51,6 +51,7 @@
   },
   "tham_so": [
     { "ky_hieu": "Z", "ten": "Số prôtôn của hạt nhân bia", "don_vi": "—", "kieu": "dieu_chinh", "min": 1, "max": 92, "mac_dinh": 79, "buoc": 1 },
+    { "ky_hieu": "Z_Al", "ten": "Số prôtôn của hạt nhân nhôm (lá bia so sánh, câu chốt clip)", "don_vi": "—", "kieu": "co_dinh", "gia_tri": 13 },
     { "ky_hieu": "E", "ten": "Động năng hạt alpha", "don_vi": "MeV", "kieu": "dieu_chinh", "min": 2, "max": 10, "mac_dinh": 5.5, "buoc": 0.5 },
     { "ky_hieu": "theta", "ten": "Góc tán xạ", "don_vi": "độ", "kieu": "dieu_chinh", "min": 15, "max": 150, "mac_dinh": 60, "buoc": 15 },
     { "ky_hieu": "N", "ten": "Số chớp đếm được ở góc theta trong cùng thời gian", "don_vi": "chớp", "kieu": "do_duoc", "sai_so_do": "√N (thống kê đếm)" },

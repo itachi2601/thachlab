@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-thangnhietdo-01",
   "ten": "Trộn nước nóng với nước lạnh trong một ca",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-01-20261112-2.mp4",
-  "tong_giay": 48.5,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-01-20261121.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
+      "giay": 3.1,
       "chu": "Trộn 100 g nước 60 °C với 200 g nước 20 °C. Nhiệt kế dừng ở khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9,
-      "chu": "Ca xốp có nắp, cân, nhiệt kế, que khuấy; nước nóng 60 °C, nước lạnh 20 °C."
+      "giay": 9.1,
+      "chu": "Ca có nắp, cân, nhiệt kế, que khuấy."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.4,
-      "chu": "Nhiệt kế đổi nhanh rồi đứng yên ở 32,9 °C, giữa 20 và 60 °C."
+      "giay": 15.4,
+      "chu": "Nhiệt kế đứng yên ở 32,9 °C: giữa 20 °C và 60 °C, gần phía 20 °C hơn."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.7,
-      "chu": "Nước lạnh nhiều gấp đôi nên hỗn hợp dừng gần phía nước lạnh."
+      "giay": 25.5,
+      "chu": "Nước nóng hạ nhiều, nước lạnh tăng ít. Nhiệt năng truyền từ nóng sang lạnh tới khi cùng nhiệt độ: cân bằng nhiệt."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.8,
-      "chu": "Không đo riêng được nhiệt làm nóng ca và nhiệt mất ra không khí, nên số đo thấp hơn giá trị tính."
+      "giay": 38.8,
+      "chu": "Không đo riêng được nhiệt ca và không khí nhận, nên số đo 32,9 °C thấp hơn 33,3 °C tính."
     }
   ],
   "dung_dua": {
-    "giay": 8.85,
+    "giay": 8.95,
     "cau_hoi": "Trộn 100 g nước 60 °C với 200 g nước 20 °C, khuấy đều. Nhiệt kế dừng ở khoảng bao nhiêu?",
     "chon": [
       "A. 20 °C",
@@ -47,6 +47,23 @@
     ],
     "dung": 1,
     "giai_thich_dung": "Nước lạnh nhiều gấp đôi nên nhiệt độ cuối gần 20 °C hơn 60 °C: khoảng 33 °C, không phải trung bình cộng 40 °C.",
-    "giai_thich_sai": "Xem số nhiệt kế đứng yên ở đoạn kế và so với hai nhiệt độ ban đầu."
+    "giai_thich_sai": "Xem số nhiệt kế đứng yên ở đoạn kế và so với hai nhiệt độ ban đầu: phần nước nhiều hơn đổi nhiệt độ ít hơn."
+  },
+  "cau_chot": {
+    "giay": 46.0,
+    "cau_hoi": "Trộn 200 g nước 90 °C với 100 g nước 30 °C, khuấy đều, bỏ qua nhiệt ca nhận. Nhiệt kế dừng gần mức nào?",
+    "chon": [
+      "A. Khoảng 50 °C",
+      "B. Khoảng 60 °C",
+      "C. Khoảng 70 °C",
+      "D. Khoảng 90 °C"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "50 °C là kết quả nếu nước LẠNH nhiều gấp đôi. Ở đây nước nóng nhiều gấp đôi nên nhiệt độ cuối gần 90 °C: (200·90 + 100·30)/300 = 70 °C.",
+      "60 °C là trung bình cộng, chỉ đúng khi hai khối lượng bằng nhau. Nước nóng nhiều gấp đôi nên đổi nhiệt độ ít hơn: (200·90 + 100·30)/300 = 70 °C.",
+      "Nước nóng nhiều gấp đôi nên hạ ít, nước lạnh tăng nhiều: 200·(90 − t) = 100·(t − 30) cho t = 70 °C, gần 90 °C hơn.",
+      "Nước nóng không giữ nguyên 90 °C: nó vẫn truyền nhiệt cho nước lạnh tới khi hai phần cùng nhiệt độ, khoảng 70 °C."
+    ]
   }
 }

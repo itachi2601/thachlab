@@ -22,6 +22,10 @@
   {
    "ten": "Ống nối thêm",
    "so_luong": 2
+  },
+  {
+   "ten": "Điện thoại có ứng dụng đo tần số",
+   "so_luong": 1
   }
  ],
  "cac_buoc": {
@@ -94,7 +98,7 @@
     125
    ]
   ],
-  "ghi_chu": "Tính từ mô hình."
+  "ghi_chu": "Tính từ mô hình. Ống 0,17 m: nốt cao kế tiếp là hoạ âm bậc 3, 3·500 = 1500 Hz (câu chốt clip; 1000 Hz là bẫy dùng mẫu dây). Bẫy f = v/(2L) với 0,34 m cho 500 Hz."
  },
  "ket_qua_ky_vong": "Ống 0,17 m kêu 500 Hz; dài gấp đôi thì tần số giảm một nửa.",
  "hien_tuong_hay_sai": [
@@ -118,11 +122,13 @@
  },
  "an_toan": "Dùng ống sạch, không chia sẻ miệng thổi.",
  "video": {
-  "youtube_id": "u7wUvEA1v1A",
-  "nhan": "ống một đầu kín nhúng nước, cộng hưởng",
-  "nhin_vao": "Nốt cộng hưởng to lên khi cột khí trong ống dài bao nhiêu?",
-  "ten": "Resonance in a Tube",
-  "kenh": "SMUPhysics",
-  "da_kiem": "2026-10-18"
+  "nhan": "ống bịt một đầu, nối thêm ống",
+  "nhin_vao": "Ống dài gấp đôi thì tần số cộng hưởng thế nào?",
+  "da_kiem": "2026-11-19",
+  "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapsong-04-20261119.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-baitapsong-04-20261119.webp",
+  "tieu_de_hop": "Xem thí nghiệm dựng lại",
+  "giay": 49,
+  "nguon": "tự dựng"
  }
 }

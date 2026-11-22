@@ -92,6 +92,7 @@ export function CncVideosAdmin({
 
         <div className="overflow-hidden rounded-xl border border-line bg-panel">
           {previewId ? (
+            /* eslint-disable-next-line @next/next/no-img-element -- site xuất tĩnh (output: export), next/image không tối ưu được */
             <img
               src={getYouTubeThumbnailUrl(previewId)}
               alt="Xem trước video YouTube"
@@ -114,6 +115,7 @@ export function CncVideosAdmin({
           </p>
         ) : videos.map((video, index) => (
           <div key={video.id} className="flex gap-3 rounded-xl border border-line bg-panel p-3">
+            {/* eslint-disable-next-line @next/next/no-img-element -- site xuất tĩnh (output: export), next/image không tối ưu được */}
             <img
               src={getYouTubeThumbnailUrl(video.youtube_id)}
               alt=""

@@ -1,47 +1,69 @@
-# Clip: tn-l12-noinang-04 - Xilanh cach nhiet: nen khi, giu yen, keo ve; hai ngan co vach (ban 2, 13/11/2026)
-# Ban 2: ghi loai/luong khi (0,0040 mol argon, dung_cu kho), hop Du doan "Chon dap an o khung cau hoi" (K10),
-#   huy hieu "DAP AN · Tang", ten ky hieu A, Q, dU va v, chu hang bang khong mo kieu vo hieu, THU NGHI rut con 1 cau + goi y tre.
-# Kho loai "vi_du" (mo hinh): clip ghi ro "mo hinh · so lieu minh hoa".
-# So lieu lay nguyen tu content/thi-nghiem/tn-l12-noinang-04.json (so_lieu_mau):
-#   Ban dau 100 cm3, 300 K, 1,0.10^5 Pa | Nen nhanh 50 cm3, ~476 K, ~3,2.10^5 Pa, A ~ +8,8 J, Q = 0, dU ~ +8,8 J
-#   Giu yen 50, 476, 3,2, A = Q = dU = 0 | Keo ve 100, 300, 1,0, A ~ -8,8 J, Q = 0, dU ~ -8,8 J
-#   Hai ngan: 50 cm3 (ngan trai), 300 K, 2,0.10^5 Pa -> rut vach 100 cm3, 300 K, 1,0.10^5 Pa, A = Q = dU = 0.
-# Du doan (khung): nen nhanh trong xilanh cach nhiet thi T khi ... A khong doi (vi cach nhiet) / B giam / C tang (dung) /
-#   D tang roi tu giam ve 300 K. Trong mp4 KHONG ve nut A-D (K10), chi cau hoi + hinh.
-# Bay chinh: "cach nhiet" != "noi nang khong doi"; dau A, Q trong dU = A + Q; khi tran vao chan khong A = 0.
-# Font SF khong co glyph "⊥" -> khong dung.
+# Clip: tn-l12-noinang-04 - Xilanh cach nhiet: keo pit-tong ra, day vao; hai ngan co vach (ban 3, 21/11/2026)
+# Ban 3 (viec 4 lo 20, cong moi): danh quan niem sai "cach nhiet (Q = 0) nen noi nang khong doi (dU = 0)".
+#   Du doan cu (nen nhanh -> T?) da bi Cau 2 cua bai tra loi san (bom nhanh, day ong nong nhat) -> doi sang KEO RA:
+#   khi o 50 cm3, ~476 K (hang "Giu pit-tong dung yen" cua kho), keo nhanh ra 100 cm3 -> T? (dap an: giam, ve 300 K).
+#   Khong trung quiz mo bai (hai am nuoc), Cau 1-5, Tra bai (cau 6 hoi nen nhanh, khong hoi keo ra).
+#   Chu than canh ve >= 56 (ra >= 49 px), khong chu MUTED, khong nut A-D (K10), dong "Dung lai, tu doan", thanh dem >= 70 px.
+# So lieu lay nguyen tu content/thi-nghiem/tn-l12-noinang-04.json (so_lieu_mau), kiem bang _kiem_so():
+#   Giu yen 50 cm3, 476 K | Keo ve 100 cm3, 300 K, A ~ -8,8 J, Q = 0, dU ~ -8,8 J (so voi hang tren)
+#   Nen nhanh 100 -> 50 cm3, 300 -> 476 K, A ~ +8,8 J, Q = 0, dU ~ +8,8 J
+#   Hai ngan 50 cm3, 300 K -> rut vach 100 cm3, 300 K, A = Q = dU = 0.
+# Bay = hien_tuong_hay_sai[3]: "V gap doi thi khi lanh di" -> dung khi khi day pit-tong, sai khi tran vao chan khong.
+# Chua noi duoc = khong_chung_minh[0] (thanh xilanh that dan nhiet cham).
+# THU NGHI (= cau_chot khung web): khi li tuong, xilanh DAN nhiet, nen cham, T giu 300 K -> Q duong hay am?
+#   Dap an: am (dU = 0 vi T khong doi, A > 0 nen Q = -A < 0). Man khong ve mui ten nhiet, khong ghi dU = 0.
 from engine import *
 
 NOTE = (70, 75, 95)
-WALL = (255, 226, 190); HATCH = (214, 120, 40)
-X0, YT, YB = 150, 360, 600            # mat trong thanh trai, mat trong thanh tren / duoi
-LMAX = 560                            # V = 100 cm3 <-> 560 px
-def xp_of(V): return X0 + LMAX * V / 100.0
+WALL = (255, 226, 190); HATCH = (190, 100, 30)
+DRED = (185, 28, 28); DGREEN = (10, 110, 50); DPURP = (76, 29, 149)
+FS, FM = 58, 56          # co chu than canh (ve) -> 51 / 49 px trong mp4
 
-def vn(x, nd=1, sign=False):
+T_NEN = 476              # K, sau khi nen 100 -> 50 cm3 (kho)
+DU = 8.8                 # J
+
+
+def _kiem_so():
+    import json, os
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l12-noinang-04.json")))
+    h = {r[0]: r for r in k["so_lieu_mau"]["hang"]}
+    assert h["Ban đầu"][1:3] == [100, 300]
+    assert h["Sau khi nén nhanh"][1:3] == [50, T_NEN] and h["Sau khi nén nhanh"][4:] == [DU, 0, DU]
+    assert h["Giữ pit-tông đứng yên"][1:3] == [50, T_NEN]
+    assert h["Kéo pit-tông về"][1:3] == [100, 300] and h["Kéo pit-tông về"][4:] == [-DU, 0, -DU]
+    assert h["Hai ngăn, trước khi rút vách"][1:3] == [50, 300]
+    assert h["Hai ngăn, sau khi rút vách"][1:3] == [100, 300] and h["Hai ngăn, sau khi rút vách"][4:] == [0, 0, 0]
+    assert abs(300 * 2 ** (2 / 3) - T_NEN) < 0.5 and abs(1.5 * 0.004 * 8.31 * (T_NEN - 300) - DU) < 0.05
+_kiem_so()
+
+
+def vn(x):
     if abs(x) < 1e-9: return "0"
-    s = f"{x:+.{nd}f}" if sign else f"{x:.{nd}f}"
-    return s.replace(".", ",").replace("-", "−")
+    return ("≈ " + f"{x:+.1f}").replace(".", ",").replace("-", "−")
 
-def hatch_h(d, x0, x1, y0, y1, step=22):
-    d.rectangle([x0, y0, x1, y1], fill=WALL)
+
+def hatch_h(d, x0, x1, y0, y1, step=22, col=HATCH, fill=WALL):
+    d.rectangle([x0, y0, x1, y1], fill=fill)
     h = y1 - y0; x = x0
     while x < x1:
-        xa, xb = x, min(x + h, x1); d.line([(xa, y1), (xb, y1 - (xb - xa))], fill=HATCH, width=3); x += step
+        xa, xb = x, min(x + h, x1); d.line([(xa, y1), (xb, y1 - (xb - xa))], fill=col, width=3); x += step
     d.rectangle([x0, y0, x1, y1], outline=NAVY, width=3)
 
-def hatch_v(d, x0, x1, y0, y1, step=22):
-    d.rectangle([x0, y0, x1, y1], fill=WALL)
+
+def hatch_v(d, x0, x1, y0, y1, step=22, col=HATCH, fill=WALL):
+    d.rectangle([x0, y0, x1, y1], fill=fill)
     w = x1 - x0; y = y0 + w
     while y < y1 + w:
         ya = min(y, y1); xa = x0 + (y - ya)
-        d.line([(xa, ya), (x1, max(y - w, y0))], fill=HATCH, width=3); y += step
+        d.line([(xa, ya), (x1, max(y - w, y0))], fill=col, width=3); y += step
     d.rectangle([x0, y0, x1, y1], outline=NAVY, width=3)
+
 
 # ---- phan tu khi: vi tri xac dinh (seed co dinh), toc do ~ sqrt(T) ----
 random.seed(4)
 MOL = [(random.random(), random.random(), random.uniform(0.18, 0.32) * random.choice((1, -1)),
         random.uniform(0.18, 0.32) * random.choice((1, -1))) for _ in range(26)]
+
 
 def phase(t, Tfun, dt=0.05):
     """tich phan sqrt(T/300) theo thoi gian -> quang duong 'chuan hoa' (khong nhay khi T doi)."""
@@ -50,268 +72,264 @@ def phase(t, Tfun, dt=0.05):
         h = min(dt, t - tau); s += math.sqrt(Tfun(tau) / 300.0) * h; tau += h
     return s
 
+
 def gas(d, s, xl, xr, yt, yb, n=26, r=10, col=BLUE):
     for u0, v0, vu, vv in MOL[:n]:
         u = refl(u0 + vu * s, 0, 1); v = refl(v0 + vv * s, 0, 1)
         dot(d, xl + r + 2 + u * (xr - xl - 2 * r - 4), yt + r + 2 + v * (yb - yt - 2 * r - 4), r, col)
 
-def cylinder(d, V, s, push=0, ghost=False, label=True):
-    """Xilanh mot ngan nam ngang, day trai kin, pit-tong ben phai. push: -1 day vao, +1 keo ra (mui ten tren can)."""
-    hatch_h(d, X0 - 26, 800, YT - 26, YT); hatch_h(d, X0 - 26, 800, YB, YB + 26); hatch_v(d, X0 - 26, X0, YT, YB)
-    xp = xp_of(V)
-    gas(d, s, X0, xp, YT, YB)
-    hatch_v(d, xp, xp + 26, YT + 2, YB - 2)                       # pit-tong cach nhiet
-    d.rectangle([xp + 26, 470, xp + 250, 490], fill=NAVY)        # can
-    d.rounded_rectangle([xp + 250, 430, xp + 274, 530], radius=8, fill=NAVY)
-    if label: text(d, (X0 - 26, YT - 62), "cách nhiệt", 40, HATCH, anchor="lm")
-    if ghost:
-        xg = xp_of(50)
-        for y in range(YT + 6, YB - 6, 28): d.line([(xg, y), (xg, y + 14)], fill=PURPLE, width=5)
-        text(d, (xg, YB + 62), "50 cm³", 40, PURPLE)
+
+def cyl(d, V, s, x0=150, yt=360, yb=600, L=560, wall=26, rod=224, push=0, n=26, r=10):
+    """Xilanh nam ngang cach nhiet, day trai kin, pit-tong ben phai. V (cm3): 100 <-> L px. push: -1 day vao, +1 keo ra."""
+    xr_wall = x0 + L + 90
+    hatch_h(d, x0 - wall, xr_wall, yt - wall, yt); hatch_h(d, x0 - wall, xr_wall, yb, yb + wall); hatch_v(d, x0 - wall, x0, yt, yb)
+    xp = x0 + L * V / 100.0
+    gas(d, s, x0, xp, yt, yb, n=n, r=r)
+    hatch_v(d, xp, xp + wall, yt + 2, yb - 2)
+    ym = (yt + yb) / 2
+    d.rectangle([xp + wall, ym - 10, xp + wall + rod, ym + 10], fill=NAVY)
+    d.rounded_rectangle([xp + wall + rod, ym - 50, xp + wall + rod + 24, ym + 50], radius=8, fill=NAVY)
     if push:
-        if push < 0: arrow(d, (xp + 230, 400), (xp + 80, 400), RED, w=8, head=24)
-        else: arrow(d, (xp + 80, 400), (xp + 230, 400), RED, w=8, head=24)
+        ya = yt - 50
+        if push < 0: arrow(d, (xp + wall + rod, ya), (xp + wall + 60, ya), RED, w=8, head=24)
+        else: arrow(d, (xp + wall + 60, ya), (xp + wall + rod, ya), RED, w=8, head=24)
+    return xp
 
-def readout(d, vals, y=720, alpha=1.0):
-    """3 o: V, T, p. vals = chuoi da dinh dang (khong noi suy so)."""
-    xs = ((40, 330), (345, 615), (630, 1040))      # o p rong hon: "10⁵" o co 48
-    for (a, b), s, sz in zip(xs, vals, (44, 44, 48)):
-        card(d, (a, y - 46, b, y + 46), fill=A(WHITE, alpha), outline=A(NAVY, alpha), r=22, w=3)
-        rich(d, (a + b) / 2, y, s, sz, INK, alpha=alpha)
 
-def tag(d, y=1640, alpha=1.0):
-    text(d, (1030, y), "mô hình · số liệu minh hoạ", 44, NOTE, bold=False, anchor="rm", alpha=alpha)
+def readout(d, vals, y, alpha=1.0):
+    for (a, b), s in zip(((90, 520), (560, 990)), vals):
+        card(d, (a, y - 48, b, y + 48), fill=A(WHITE, alpha), outline=A(NAVY, alpha), r=24, w=4)
+        text(d, ((a + b) / 2, y), s, FS, INK, alpha=alpha)
+
+
+def countdown(d, y, t, tc, tend, a=1.0):
+    if t <= tc: return
+    p = clamp((t - tc) / (tend - tc))
+    d.rounded_rectangle([110, y, 970, y + 70], radius=35, fill=A((237, 233, 254), a))
+    if p < 1: d.rounded_rectangle([110, y, 110 + max(70, 860 * (1 - p)), y + 70], radius=35, fill=A(DPURP, a))
+
+
+def pill(d, s, y, a, color=NAVY, size=FM):
+    if a <= 0: return
+    pw = tw(d, s, F(size)) + 60
+    card(d, (W / 2 - pw / 2, y - 40, W / 2 + pw / 2, y + 40), fill=A(color, a), r=38)
+    text(d, (W / 2, y), s, size, WHITE, alpha=a)
+
 
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    cylinder(d, 100, phase(t, lambda _: 300), ghost=t >= M[1] - 0.2)
-    readout(d, ("V = 100 cm³", "T = 300 K", "p = 1,0·10⁵ Pa"), y=760)
-    text(d, (W / 2, 850), "0,0040 mol khí argon", 44, INK)      # kho: dung_cu, tham_so n
-    text(d, (W / 2, 910), "V: thể tích · T: nhiệt độ · p: áp suất", 44, NOTE, bold=False)
-    tag(d, 1640)
+    xp = cyl(d, 50, phase(t, lambda _: T_NEN))
+    text(d, (124, 290), "cách nhiệt", FS, HATCH, anchor="lm")
+    if t >= M[1] - 0.2:                                   # vach dich 100 cm3 (net dut)
+        xg = 150 + 560
+        for y in range(366, 594, 30): d.line([(xg, y), (xg, y + 15)], fill=PURPLE, width=6)
+    readout(d, ("V = 50 cm³", "T ≈ 476 K"), 730)
     a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 960 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 470), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    ctext(d, y0 + 215, "Nén nhanh khí còn 50 cm³.\nNhiệt độ thế nào?", 56, INK, maxw=920, alpha=a)
-    text(d, (W / 2, y0 + 340), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=a)
-    tc, tend = M[1] + 0.6, sc["T"] - 0.3
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 410, 940, y0 + 422], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 410, 140 + 800 * (1 - p), y0 + 422], radius=6, fill=A(PURPLE, a))
+    y0 = 850 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 520), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, "DỰ ĐOÁN", y0 + 62, a, color=PURPLE)
+    for j, s in enumerate(("Kéo pit-tông ra", "tới vạch 100 cm³.", "Nhiệt độ khí thế nào?")):
+        text(d, (W / 2, y0 + 170 + j * 78), s, 60, INK, alpha=a)
+    countdown(d, y0 + 410, t, M[1] + 0.3, sc["T"] - 0.1, a)
+
 
 # ---------------- canh 2: Tien hanh ----------------
-C0, C1 = 0.9, 2.1          # nen
-R1 = 2.3                   # hang "Nen"
-H0, R2 = 4.9, 6.4          # giu yen (dong ho dem) ; hang "Giu yen"
-P0, P1 = 7.0, 8.2          # keo ve
-R3 = 8.4                   # hang "Keo ve"
+K0, K1 = 0.6, 1.8          # keo ra 50 -> 100
+R1 = 2.3                   # hang "Keo ra"
+P0, P1 = 3.5, 4.7          # day vao 100 -> 50
+R2 = 5.0                   # hang "Day vao"
+HQ = 6.5                   # to cot Q
+
 
 def V_at(t):
-    if t < C0: return 100.0
-    if t < C1: return lerp(100, 50, ease((t - C0) / (C1 - C0)))
-    if t < P0: return 50.0
-    if t < P1: return lerp(50, 100, ease((t - P0) / (P1 - P0)))
-    return 100.0
+    if t < K0: return 50.0
+    if t < K1: return lerp(50, 100, ease((t - K0) / (K1 - K0)))
+    if t < P0: return 100.0
+    if t < P1: return lerp(100, 50, ease((t - P0) / (P1 - P0)))
+    return 50.0
 
-def T_at(t):  # chi de lam phan tu chay nhanh/cham (khong in so trung gian): T.V^(2/3) khong doi (mo_hinh)
+
+def T_at(t):  # chi de phan tu chay nhanh/cham (khong in so trung gian): T.V^(2/3) khong doi (mo_hinh)
     return 300.0 * (100.0 / V_at(t)) ** (2.0 / 3.0)
 
-ROWS = (("Nén", 8.8, 0, 8.8), ("Giữ yên", 0, 0, 0), ("Kéo về", -8.8, 0, -8.8))
-COLX = (180, 470, 690, 900)
 
-def cell(x, nd=1):
-    if abs(x) < 1e-9: return "0"
-    return "≈ " + vn(x, nd, sign=True)
+ROWS = (("Kéo ra", -DU, 0, -DU), ("Đẩy vào", DU, 0, DU))
+COLX = (200, 480, 700, 900)
+
 
 def table(d, y0, ks, hlq=0.0):
-    rh = 100; h = 90 + rh * 3
+    rh = 96; h = 92 + rh * 2 + 10
     card(d, (40, y0, 1040, y0 + h), fill=WHITE, outline=LIGHT, w=3)
     if hlq > 0:
-        d.rounded_rectangle([600, y0 + 10, 780, y0 + h - 10], radius=18, fill=A((255, 237, 213), hlq), outline=A(ORANGE, hlq), width=4)
-    text(d, (COLX[0], y0 + 46), "Bước", 44, NOTE, bold=False)
-    for x, s in zip(COLX[1:], ("A (J)", "Q (J)", "ΔU (J)")): text(d, (x, y0 + 46), s, 40, NAVY)
-    d.line([(70, y0 + 88), (1010, y0 + 88)], fill=LIGHT, width=3)
+        d.rounded_rectangle([620, y0 + 10, 780, y0 + h - 10], radius=18, fill=A((255, 237, 213), hlq), outline=A(ORANGE, hlq), width=5)
+    for x, s in zip(COLX[1:], ("A (J)", "Q (J)", "ΔU (J)")): text(d, (x, y0 + 48), s, FS, NAVY)
+    d.line([(70, y0 + 92), (1010, y0 + 92)], fill=LIGHT, width=3)
     for j, (r, k) in enumerate(zip(ROWS, ks)):
-        yy = y0 + 88 + rh * (j + 0.5) + 2
-        if k <= 0:                                     # tieu de hang hien san, mo
-            text(d, (COLX[0], yy), r[0], 42, NOTE, bold=False); continue
-        text(d, (COLX[0], yy), r[0], 42, INK, alpha=k)
+        if k <= 0: continue
+        yy = y0 + 92 + rh * (j + 0.5) + 4
+        text(d, (COLX[0], yy), r[0], FS, INK, alpha=k)
         for x, v in zip(COLX[1:], r[1:]):
-            col = GREEN if v > 0 else (RED if v < 0 else INK)
-            text(d, (x, yy), cell(v), 42, col, alpha=k)
-    return h
+            col = DGREEN if v > 0 else (DRED if v < 0 else INK)
+            text(d, (x, yy), vn(v), FS, col, alpha=k)
+
 
 def s_do(img, d, t, sc):
     V = V_at(t)
-    push = -1 if C0 - 0.3 < t < C1 else (1 if P0 - 0.3 < t < P1 else 0)
-    cylinder(d, V, phase(t, T_at), push=push, label=False)
-    if t < C0: vals = ("V = 100 cm³", "T = 300 K", "p = 1,0·10⁵ Pa")
-    elif t < C1: vals = ("V ↓", "T ↑", "p ↑")
-    elif t < P0: vals = ("V = 50 cm³", "T ≈ 476 K", "p ≈ 3,2·10⁵ Pa")
-    elif t < P1: vals = ("V ↑", "T ↓", "p ↓")
-    else: vals = ("V = 100 cm³", "T = 300 K", "p = 1,0·10⁵ Pa")
-    readout(d, vals, y=700)
-    if H0 <= t < R2:                                   # giu yen: dem thoi gian, T van 476
-        k = appear(t, H0, 0.3)
-        card(d, (740, 438, 1040, 522), fill=A(WHITE, k), outline=A(NAVY, k), r=20, w=3)
-        text(d, (890, 480), "giữ yên…", 40, NAVY, alpha=k)
-    ks = [appear(t, R1, 0.4), appear(t, R2, 0.4), appear(t, R3, 0.4)]
-    table(d, 820, ks, hlq=appear(t, R3 + 0.6, 0.4))
-    k = appear(t, R3 + 0.6, 0.4)
-    if k > 0: text(d, (690, 1265), "Q luôn bằng 0", 42, ORANGE, alpha=k)
-    text(d, (W / 2, 1360), "ΔU = A + Q", 60, INK)
-    text(d, (W / 2, 1440), "A, Q: công, nhiệt khí nhận", 44, NOTE, bold=False)
-    text(d, (W / 2, 1505), "ΔU: độ biến thiên nội năng", 44, NOTE, bold=False)
+    push = 1 if K0 - 0.3 < t < K1 else (-1 if P0 - 0.3 < t < P1 else 0)
+    cyl(d, V, phase(t, T_at), push=push)
+    if t < K0: vals = ("V = 50 cm³", "T ≈ 476 K")
+    elif t < K1: vals = ("V ↑", "T ↓")
+    elif t < P0: vals = ("V = 100 cm³", "T = 300 K")
+    elif t < P1: vals = ("V ↓", "T ↑")
+    else: vals = ("V = 50 cm³", "T ≈ 476 K")
+    readout(d, vals, 730)
+    table(d, 820, [appear(t, R1, 0.4), appear(t, R2, 0.4)], hlq=appear(t, HQ, 0.4))
+    text(d, (W / 2, 1180), "A, Q: phần khí nhận vào", FS, NAVY)
+    text(d, (W / 2, 1280), "ΔU = A + Q", 66, INK)
+    text(d, (W / 2, 1385), "số liệu mô hình", FM, NOTE)
+
 
 # ---------------- canh 3: Dap an + rut ra ----------------
+MECH = 4.4
+
+
 def s_dapan(img, d, t, sc):
-    M = sc["M"]
-    ka = appear(t, M[0] + 0.1, 0.4)
-    pw = tw(d, "ĐÁP ÁN · Tăng", F(40)) + 56
-    card(d, (W / 2 - pw / 2, 270, W / 2 + pw / 2, 336), fill=A(NAVY, ka), r=33)
-    text(d, (W / 2, 303), "ĐÁP ÁN · Tăng", 40, WHITE, alpha=ka)
-    text(d, (W / 2, 410), "300 K  →  ≈ 476 K", 60, RED, alpha=ka)
-    k1 = appear(t, M[0] + 1.4, 0.45)
-    card(d, (40, 480, 1040, 860), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
+    ka = appear(t, 0.1, 0.4)
+    pill(d, "ĐÁP ÁN · Giảm", 300, ka)
+    text(d, (W / 2, 405), "476 K  →  300 K", 66, DRED, alpha=ka)
+    k1 = appear(t, 2.2, 0.45)
     if k1 > 0:
-        text(d, (W / 2, 550), "ΔU = A + Q", 64, INK, alpha=k1)
-        text(d, (90, 650), "Q = 0", 46, ORANGE, anchor="lm", alpha=k1)
-        text(d, (330, 650), "(cách nhiệt)", 42, NOTE, bold=False, anchor="lm", alpha=k1)
-        text(d, (90, 730), "A > 0", 46, GREEN, anchor="lm", alpha=k1)
-        text(d, (330, 730), "(bị nén)", 42, NOTE, bold=False, anchor="lm", alpha=k1)
-        text(d, (90, 810), "ΔU = A > 0", 46, GREEN, anchor="lm", alpha=k1)
-        text(d, (390, 810), "→ T tăng", 42, NOTE, bold=False, anchor="lm", alpha=k1)
-    k2 = appear(t, M[1] + 0.2, 0.5)
-    card(d, (40, 900, 1040, 1410), fill=A(WHITE, k2), outline=A(LIGHT, k2), w=3)
+        card(d, (40, 470, 1040, 800), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
+        for j, (s, col) in enumerate((("Q = 0 · cách nhiệt", ORANGE), ("A < 0 · đẩy pit-tông", DRED), ("ΔU = A < 0 → T giảm", DRED))):
+            text(d, (90, 530 + j * 100), s, FS, col, anchor="lm", alpha=k1)
+    k2 = appear(t, MECH, 0.5)
     if k2 > 0:
-        # co che: pit-tong tien sang trai, phan tu bat ra nhanh hon
-        px = 700
-        hatch_v(d, px, px + 26, 960, 1200) if k2 > 0.5 else None
-        arrow(d, (px + 150, 1080), (px + 46, 1080), A(RED, k2), w=8, head=22)
-        dot(d, 676, 1030, 18, A(BLUE, k2))
-        arrow(d, (520, 1030), (652, 1030), A(BLUE, k2), w=6, head=18)
-        text(d, (505, 1030), "tốc độ v", 42, BLUE, anchor="rm", alpha=k2)
-        kb = appear(t, M[1] + 1.0, 0.4)
-        if kb > 0:
-            dot(d, 676, 1150, 18, A(BLUE, kb))
-            arrow(d, (652, 1150), (400, 1150), A(BLUE, kb), w=6, head=18)
-            text(d, (300, 1150), "v′ > v", 44, BLUE, alpha=kb)
-        ctext(d, 1330, "Phân tử bật ra nhanh hơn", 44, INK, maxw=920, alpha=k2)
+        card(d, (40, 840, 1040, 1300), fill=A(WHITE, k2), outline=A(LIGHT, k2), w=3)
+        # pit-tong lui dan sang phai (lap 2 s); phan tu toi nhanh, bat ve cham
+        cyc = ((t - MECH) % 2.4) / 2.4
+        px = 690 + 60 * cyc
+        hatch_v(d, px, px + 30, 880, 1260)
+        arrow(d, (px + 50, 900), (px + 170, 900), A(RED, k2), w=8, head=22)
+        # mot phan tu (cham to) chay tren MOT duong y = 1070: toi nhanh (0,9 s), bat ve cham (1,5 s); nhan ngay tren/duoi duong
+        xw = px - 28                                          # cho cham cham pit-tong
+        if cyc < 0.375: xd = lerp(250, xw, cyc / 0.375)
+        else: xd = lerp(xw, xw - 260, (cyc - 0.375) / 0.625)
+        d.line([(200, 1070), (px, 1070)], fill=A(LIGHT, k2), width=4)
+        arrow(d, (230, 990), (560, 990), A(BLUE, k2), w=8, head=24)
+        text(d, (180, 990), "v", 64, BLUE, alpha=k2)
+        arrow(d, (640, 1150), (470, 1150), A(BLUE, k2), w=8, head=24)
+        text(d, (320, 1150), "v′ < v", FS, BLUE, alpha=k2)
+        dot(d, xd, 1070, 26, A(BLUE, k2))
+
 
 # ---------------- canh 4: Bay + chua noi duoc ----------------
-BX0, BX1, BY0, BY1, MID = 150, 930, 400, 580, 540
-V0, V1 = 1.2, 1.7          # vach rut len
-S0, S1 = 1.7, 3.3          # khi tran sang
+BT = 3.4                    # khung duoi (rut vach) hien
+VL0, VL1 = 5.0, 5.5         # vach rut len
+SP0, SP1 = 5.5, 6.8         # khi tran sang
+BR = 7.2                    # ket qua khung duoi + gach cau bay
+BC = 10.2                    # chua noi duoc
 
-def two_cells(d, t):
-    hatch_h(d, BX0 - 24, BX1 + 24, BY0 - 24, BY0); hatch_h(d, BX0 - 24, BX1 + 24, BY1, BY1 + 24)
-    hatch_v(d, BX0 - 24, BX0, BY0, BY1); hatch_v(d, BX1, BX1 + 24, BY0, BY1)
-    kr = ease((t - S0) / (S1 - S0))
-    xr = lerp(MID - 10, BX1, kr)
-    gas(d, phase(t, lambda _: 300) * 1.4, BX0, xr, BY0, BY1, r=9)
-    if kr < 0.5: text(d, ((MID + BX1) / 2, (BY0 + BY1) / 2), "chân không", 44, NOTE, bold=False, alpha=1 - 2 * kr)
-    lift = ease((t - V0) / (V1 - V0))
-    yv = BY0 - lift * 150
-    if lift < 1:
-        d.rectangle([MID - 10, yv, MID + 10, yv + (BY1 - BY0)], fill=A(NAVY, 1 - lift))
-    if V0 - 0.4 < t < V1 + 0.6:
-        arrow(d, (MID + 50, BY0 - 36), (MID + 50, BY0 - 140), RED, w=7, head=20)
-    p = "p = 2,0·10⁵ Pa" if t < S0 else ("p ↓" if t < S1 else "p = 1,0·10⁵ Pa")
-    vv = "V = 50 cm³" if t < S0 else ("V ↑" if t < S1 else "V = 100 cm³")
-    readout(d, (vv, "T = 300 K", p), y=680)
 
-def strike_q(d, y, q, ks, alpha):
-    f = F(44); ls = wrap(d, q, f, 880)
-    for i, l in enumerate(ls):
-        yy = y + i * 56
-        text(d, (W / 2, yy), l, 44, mix(INK, GRAY, ks), alpha=alpha)
-        if ks > 0:
-            lw = tw(d, l, f)
-            d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.85 * alpha), width=5)
-    return len(ls)
+def strike(d, y, s, size, ks, alpha):
+    text(d, (W / 2, y), s, size, mix(INK, GRAY, ks), alpha=alpha)
+    if ks > 0:
+        lw = tw(d, s, F(size))
+        d.line([(W / 2 - lw / 2 - 8, y + 2), (W / 2 - lw / 2 - 8 + (lw + 16) * ks, y + 2)], fill=A(DRED, 0.9 * alpha), width=6)
+
 
 def s_bay(img, d, t, sc):
-    M = sc["M"]
-    two_cells(d, t)
-    k1 = appear(t, 0.2, 0.4); k3 = appear(t, M[1] - 0.1, 0.45)
-    mk = 2.0; a1 = k1 * (1 - k3)
-    y = 770
+    a1 = appear(t, 0.3, 0.45)
+    pill(d, "BẪY", 300, a1, color=DRED)
+    strike(d, 400, "“V gấp đôi thì khí lạnh đi”", 60, clamp((t - BR) / 0.4), a1)
+    # khung tren: keo pit-tong 50 -> 100 cm3 (dung la lanh di)
+    card(d, (40, 460, 1040, 880), fill=A(WHITE, a1), outline=A(DRED, a1), w=5)
     if a1 > 0:
-        card(d, (40, y, 1040, y + 640), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
-        pw = tw(d, "BẪY", F(40)) + 52
-        card(d, (W / 2 - pw / 2, y + 28, W / 2 + pw / 2, y + 92), fill=A(RED, a1), r=32)
-        text(d, (W / 2, y + 60), "BẪY", 40, WHITE, alpha=a1)
-        strike_q(d, y + 170, "“V gấp đôi: khí sinh công, lạnh đi”", clamp((t - mk) / 0.4), a1)
-        k2 = a1 * appear(t, mk, 0.45)
-        text(d, (W / 2, y + 330), "Khí không đẩy vật nào", 46, INK, alpha=k2)
-        for j, s in enumerate(("A = 0", "Q = 0", "ΔU = 0")):
-            cx = 210 + j * 330
-            card(d, (cx - 140, y + 400, cx + 140, y + 500), fill=A((236, 253, 243), k2), outline=A(GREEN, k2), r=22, w=4)
-            text(d, (cx, y + 450), s, 46, GREEN, alpha=k2)
-        k4 = a1 * appear(t, mk + 0.8, 0.45)            # tra loi cau hoi phu de: chan khong -> T giu nguyen
-        text(d, (W / 2, y + 570), "Chân không → T giữ 300 K", 46, INK, alpha=k4)
-    if k3 > 0:
-        card(d, (40, y, 1040, y + 700), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
-        text(d, (W / 2, y + 70), "Chưa nói được", 48, NAVY, alpha=k3)
-        lines = ("• Thành xilanh thật dẫn nhiệt chậm", "• Chỉ đúng khí lí tưởng", "• A suy ra, không đo")
-        for j, l in enumerate(lines):
-            kk = k3 * appear(t, M[1] + 0.1 + 0.3 * j, 0.3)
-            text(d, (90, y + 240 + j * 170), l, 46, INK, anchor="lm", alpha=kk)
+        kv = ease((t - 0.5) / 1.2)
+        V = lerp(50, 100, kv)
+        cyl(d, V, phase(t, lambda tt: 300 * (100 / lerp(50, 100, ease((tt - 0.5) / 1.2))) ** (2 / 3)),
+            x0=130, yt=560, yb=720, L=440, wall=22, rod=150, push=1 if t < 1.8 else 0, n=16, r=9)
+        text(d, (W / 2, 815), "A < 0 · 476 K → 300 K", FS, DRED, alpha=a1)
+    # khung duoi: rut vach, khi tran vao chan khong
+    a2 = appear(t, BT, 0.45)
+    if a2 > 0:
+        card(d, (40, 910, 1040, 1360), fill=A(WHITE, a2), outline=A(DGREEN, a2), w=5)
+        x0, x1, y0, y1, mid = 130, 870, 990, 1160, 500
+        hatch_h(d, x0 - 22, x1 + 22, y0 - 22, y0); hatch_h(d, x0 - 22, x1 + 22, y1, y1 + 22)
+        hatch_v(d, x0 - 22, x0, y0, y1); hatch_v(d, x1, x1 + 22, y0, y1)
+        kr = ease((t - SP0) / (SP1 - SP0))
+        gas(d, phase(t, lambda _: 300) * 1.4, x0, lerp(mid - 10, x1, kr), y0, y1, n=16, r=9)
+        if kr < 0.5: text(d, ((mid + x1) / 2, (y0 + y1) / 2), "chân không", FM, NOTE, alpha=a2 * (1 - 2 * kr))
+        lift = ease((t - VL0) / (VL1 - VL0))
+        if lift < 1:
+            yv = y0 - lift * 140
+            d.rectangle([mid - 10, yv, mid + 10, yv + (y1 - y0)], fill=A(NAVY, a2 * (1 - lift)))
+        if VL0 - 0.4 < t < VL1 + 0.6:
+            arrow(d, (mid + 50, y0 - 30), (mid + 50, y0 - 120), RED, w=7, head=20)
+        k3 = appear(t, BR, 0.45)
+        if k3 > 0: text(d, (W / 2, 1290), "A = 0 · 300 K → 300 K", FS, DGREEN, alpha=k3)
+    k4 = appear(t, BC, 0.45)
+    if k4 > 0:
+        card(d, (40, 1395, 1040, 1530), fill=A(WHITE, k4), outline=A(NAVY, k4), w=5)
+        text(d, (W / 2, 1462), "Xilanh thật vẫn dẫn nhiệt chậm", FS, NAVY, alpha=k4)
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
-def _end_body(d, t, k):
-    """Xilanh thuong (khong cach nhiet) thu nho, mui ten nen, so chi T = 300 K: minh hoa cau hoi."""
-    if k <= 0: return
-    x0, x1, y0, y1 = 200, 640, 1000, 1180
-    d.rectangle([x0 - 16, y0 - 16, x1, y0], fill=A(GRAY, k)); d.rectangle([x0 - 16, y1, x1, y1 + 16], fill=A(GRAY, k))
-    d.rectangle([x0 - 16, y0, x0, y1], fill=A(GRAY, k))
-    xp = 470
-    d.rectangle([xp, y0 + 2, xp + 18, y1 - 2], fill=A(NAVY, k)); d.rectangle([xp + 18, y0 + 80, xp + 160, y0 + 98], fill=A(NAVY, k))
-    for i, (u, v) in enumerate(((0.2, 0.3), (0.5, 0.7), (0.8, 0.4), (0.35, 0.8), (0.65, 0.2), (0.1, 0.6))):
-        dot(d, x0 + 20 + u * (xp - x0 - 40), y0 + 20 + v * (y1 - y0 - 40), 9, A(BLUE, k))
-    arrow(d, (xp + 250, y0 + 40), (xp + 190, y0 + 40), A(RED, k), w=7, head=20)
-    card(d, (720, y0 + 40, 960, y0 + 140), fill=A(WHITE, k), outline=A(NAVY, k), r=20, w=3)
-    text(d, (840, y0 + 90), "T = 300 K", 42, INK, alpha=k)
+
+# ---------------- canh 5: Chot + THU NGHI (cau chot A-D o khung web) ----------------
+END_Q, END_C = 0.2, 3.0
+
 
 def s_end(img, d, t, sc):
-    M = sc["M"]
-    chot_hoi(d, t, sc, "Cách nhiệt: Q = 0,\nnhưng ΔU đổi theo A",
-             "Nén khí, T giữ 300 K (xilanh không cách nhiệt). Q dương hay âm?", None, body=_end_body)
-    kh = appear(t, M[0] + 4.5, 0.5)                 # goi y hien tre >= 4 s sau cau hoi (M0 + 0,4); cau hoi trung tinh
-    if kh > 0:
-        card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), r=24)
-        ctext(d, 1350, "Gợi ý", 44, MUTED, bold=False, alpha=kh)
-        ctext(d, 1450, "T có đổi không?", 44, ORANGE, maxw=820, alpha=kh)
+    k0 = appear(t, END_C, 0.5)
+    card(d, (50, 262, 1030, 450), fill=A((236, 253, 243), k0), outline=A(GREEN, k0), w=6)
+    text(d, (W / 2, 315), "Cách nhiệt chưa chắc", 60, DGREEN, alpha=k0)
+    text(d, (W / 2, 395), "nội năng không đổi", 60, DGREEN, alpha=k0)
+    k1 = appear(t, END_Q, 0.5)
+    card(d, (40, 480, 1040, 1580), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, "THỬ NGHĨ", 545, k1, color=ORANGE)
+    for j, s in enumerate(("Khí lí tưởng, xilanh dẫn nhiệt.", "Nén chậm, T giữ 300 K.", "Q của khí dương hay âm?")):
+        text(d, (W / 2, 650 + j * 80), s, 60, INK, alpha=k1)
+    if k1 > 0:   # xilanh thuong (thanh xam, khong gach cach nhiet), mui ten nen, so chi T; KHONG ve mui ten nhiet
+        x0, x1, y0, y1 = 150, 700, 945, 1135
+        d.rectangle([x0 - 18, y0 - 18, x1, y0], fill=A(GRAY, k1)); d.rectangle([x0 - 18, y1, x1, y1 + 18], fill=A(GRAY, k1))
+        d.rectangle([x0 - 18, y0, x0, y1], fill=A(GRAY, k1))
+        xp = 560 - 40 * ease(((t - END_Q) % 3.0) / 3.0)
+        gas(d, phase(t, lambda _: 300) * 0.8, x0, xp, y0, y1, n=12, r=9)
+        d.rectangle([xp, y0 + 2, xp + 20, y1 - 2], fill=A(NAVY, k1))
+        d.rectangle([xp + 20, (y0 + y1) / 2 - 9, xp + 200, (y0 + y1) / 2 + 9], fill=A(NAVY, k1))
+        arrow(d, (xp + 330, y0 - 40), (xp + 200, y0 - 40), A(RED, k1), w=8, head=22)
+        card(d, (300, 1200, 780, 1300), fill=A(WHITE, k1), outline=A(NAVY, k1), r=22, w=4)
+        text(d, (540, 1250), "T = 300 K", FS, INK, alpha=k1)
+    countdown(d, 1380, t, END_Q + 0.5, sc["T"] - 0.1, k1)
+
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
-    return [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding"),
-            (do["t0"] + C0, "tap"), (do["t0"] + P0, "tap"),
-            (da["t0"] + da["M"][0] + 0.1, "ding"),
-            (b["t0"] + b["M"][0], "buzz"), (b["t0"] + V0, "tap"),
-            (e["t0"] + e["M"][0] + 0.1, "open")]
+    return [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.1, "ding"),
+            (do["t0"] + K0, "tap"), (do["t0"] + P0, "tap"),
+            (da["t0"] + 0.1, "ding"),
+            (b["t0"] + 0.3, "buzz"), (b["t0"] + VL0, "tap"),
+            (e["t0"] + END_Q + 0.1, "open")]
+
 
 CLIP = dict(id="tn-l12-noinang-04", header="VẬT LÍ 12 · THÍ NGHIỆM", footer="Nội năng · Định luật 1 NĐLH · thachlab.id.vn",
             cues=_cues, scenes=[
  dict(key="hook", title="Xilanh cách nhiệt", draw=s_hook, tail=0.3, caps=[
-   ("Pit-tông cũng cách nhiệt.", 3.2),
-   ("Tự đoán trước.", 6.2)]),
+   ("Khí argon đã nén sẵn.", 2.94),
+   ("Dừng lại, tự đoán.", 5.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("Nén nhanh, ghi A, Q, ΔU.", 4.4),
-   ("Giữ yên, kéo về.", 5.8)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("Nhiệt độ khí tăng.", 3.6),
-   ("Nội năng tăng nhờ nhận công.", 4.8)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Rút vách: khí sinh công?", 6.4),
-   ("Chưa nói được gì?", 3.6)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.7, caps=[
-   ("Dừng video, trả lời.", 7.8)]),
+   ("Kéo ra, ghi A, Q, ΔU.", 3.1),
+   ("Rồi đẩy về 50 cm³.", 3.0),
+   ("Hai lần đều không nhận nhiệt.", 3.4)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.3, caps=[
+   ("Khí sinh công, nội năng giảm.", MECH - 0.4),
+   ("Va pit-tông lùi, bật chậm.", 3.37)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.2, caps=[
+   ("Đúng khi đẩy pit-tông.", BT - 0.4),
+   ("Rút vách thì sao?", BR - BT),
+   ("Không có gì để đẩy.", BC - BR),
+   ("Xilanh thật thì sao?", 2.8)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=0.1, caps=[
+   ("Dừng lại, tự trả lời.", 9.2)]),
 ])

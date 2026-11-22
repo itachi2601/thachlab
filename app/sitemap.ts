@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { MO_PHONG_TRANG } from "@/lib/mo-phong-trang";
 import { SITE_URL as SITE } from "@/lib/site";
 
 // Bắt buộc với output: export — route sinh file tĩnh lúc build.
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${SITE}/lop-hoc/`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE}/de-thi/`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE}/mo-phong/`, changeFrequency: "monthly", priority: 0.7 },
     { url: `${SITE}/blog/`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE}/tin-tuc/`, changeFrequency: "weekly", priority: 0.6 },
     { url: `${SITE}/gioi-thieu/`, changeFrequency: "monthly", priority: 0.7 },
@@ -19,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/dang-ky/`, changeFrequency: "yearly", priority: 0.6 },
   ];
 
+  const moPhong: MetadataRoute.Sitemap = MO_PHONG_TRANG.map((m) => ({
+    url: `${SITE}/mo-phong/${m.slug}/`,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+
   const posts: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: `${SITE}/blog/${post.slug}/`,
     lastModified: post.date,
@@ -26,5 +34,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...posts];
+  return [...staticRoutes, ...moPhong, ...posts];
 }

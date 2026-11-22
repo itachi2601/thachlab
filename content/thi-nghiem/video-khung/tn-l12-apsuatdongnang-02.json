@@ -1,52 +1,70 @@
 {
   "id": "tn-l12-apsuatdongnang-02",
   "ten": "Đun nóng bình khí kín: áp kế chỉ bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261112-2.mp4",
-  "tong_giay": 52.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261121.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261121.webp",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Khí kín: áp suất tỉ lệ thuận với nhiệt độ tuyệt đối T.",
+      "chu": "Khí kín, thể tích không đổi: áp suất tỉ lệ thuận với nhiệt độ tuyệt đối T = t + 273.",
       "kiem": "Đun nóng bình kín thì áp suất ra sao?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Bình kín đang ở 10 °C, áp kế chỉ 96 kPa. Đun lên 90 °C thì áp kế chỉ bao nhiêu?"
+      "giay": 3.5,
+      "chu": "Bình kín ở 10 °C, áp kế chỉ 96,0 kPa. Đun nước lên 90 °C thì áp kế chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
-      "chu": "Bình kín nối áp kế, ngâm nước nóng dần; nhiệt kế sát bình.\nĐọc p, t."
+      "giay": 9.4,
+      "chu": "Bình kín nối áp kế, nồi nước đun, nhiệt kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.8,
-      "chu": "Áp suất tăng đều theo nhiệt độ: từ 96,0 kPa ở 10 °C lên 123,0 kPa ở 90 °C."
+      "giay": 13.8,
+      "chu": "Áp suất tăng đều: 96,0 kPa ở 10 °C (283 K) lên 123,0 kPa ở 90 °C (363 K)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.8,
-      "chu": "Thể tích và lượng khí không đổi: p/T hằng số, nên p tỉ lệ thuận với T (kelvin).\np/T xấp xỉ 0,339 kPa/K ở mọi mốc đo."
+      "giay": 21.7,
+      "chu": "Các điểm (T, p) thẳng hàng, qua gốc O; p/T ≈ 0,339 kPa/K ở cả 5 mốc: p tỉ lệ thuận với T (kelvin)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.2,
+      "giay": 29.1,
       "chu": "Thí nghiệm chỉ đo p và t. Tốc độ và động năng phân tử chỉ suy ra từ mô hình. Chỉ đo trong khoảng 283–363 K."
     }
   ],
   "dung_dua": {
-    "giay": 8.75,
-    "cau_hoi": "Đun từ 10 °C lên 90 °C. Áp kế chỉ bao nhiêu?",
+    "giay": 9.25,
+    "cau_hoi": "Bình kín ở 10 °C, áp kế chỉ 96,0 kPa. Đun nước lên 90 °C thì áp kế chỉ bao nhiêu?",
     "chon": [
       "A. 96 kPa",
       "B. 123 kPa",
-      "C. 192 kPa",
+      "C. 176 kPa",
       "D. 864 kPa"
     ],
     "dung": 1,
-    "giai_thich_dung": "Đổi sang kelvin: 283 K lên 363 K, áp suất tăng theo tỉ lệ đó, từ 96 lên khoảng 123 kPa.",
-    "giai_thich_sai": "Thử lập tỉ số p/T với T là nhiệt độ tuyệt đối rồi so lại với số trên áp kế."
+    "giai_thich_dung": "Đổi sang kelvin: 283 K lên 363 K. Áp suất tăng theo đúng tỉ lệ đó, từ 96,0 lên 123,0 kPa.",
+    "giai_thich_sai": "Bình kín vẫn tăng áp suất khi nóng, nhưng không theo con số °C (gấp 9 lần) cũng không cộng thêm 80. Đổi 10 °C và 90 °C ra kelvin rồi so tỉ lệ."
+  },
+  "cau_chot": {
+    "giay": 46.0,
+    "cau_hoi": "Ở 10 °C áp kế chỉ 96,0 kPa. Phải đun nước nóng tới bao nhiêu °C để áp suất khí trong bình kín gấp đôi?",
+    "chon": [
+      "A. 20 °C",
+      "B. 566 °C",
+      "C. 293 °C",
+      "D. 839 °C"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Số này gấp đôi con số °C, nhưng p tỉ lệ với T (kelvin). Cần T gấp đôi: 2 × 283 = 566 K, tức 566 − 273 = 293 °C.",
+      "566 là nhiệt độ tuyệt đối (566 K), chưa đổi lại ra độ C: 566 − 273 = 293 °C.",
+      "p tỉ lệ thuận với T nên T phải gấp đôi: 2 × 283 = 566 K, đổi ra độ C là 566 − 273 = 293 °C.",
+      "Số này cộng thêm 273 thay vì trừ. T = 2 × 283 = 566 K; đổi ra độ C phải trừ: 566 − 273 = 293 °C."
+    ]
   }
 }

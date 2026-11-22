@@ -11,7 +11,6 @@ import EmptyState from "@/components/ui/EmptyState";
 import ExamShelf from "@/components/lop-hoc/ExamShelf";
 import ContentSearch from "@/components/home/ContentSearch";
 import type { SchoolClass } from "@/features/exams/types";
-import { DIFFICULTY_LABELS } from "@/features/exams/types";
 import {
   LESSON_KIND_META,
   chapterDisplayTitle,
@@ -304,7 +303,6 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
       e.subjectCode === subjectCode &&
       (e.classIds.length > 0 || visibleClassIds === null || unassignedExamFitsGrade(e.id, e.title, activeGrade, examGradeByLesson)),
   );
-  const visibleLessonIds = new Set(classChapters.map((chapter) => chapter.id));
 
   // Cây chương cột trái (>= 1024): cùng quy tắc gom với courseChapters của trang bài — bài thường
   // trước, kiểm tra giữa/cuối kì cuối chương, bỏ chương không có bài. (Không useMemo: classChapters

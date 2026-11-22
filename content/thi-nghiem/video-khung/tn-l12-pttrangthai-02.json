@@ -1,52 +1,70 @@
 {
   "id": "tn-l12-pttrangthai-02",
-  "ten": "Ngâm bình kín vào năm chậu nước, đọc nhiệt độ và áp suất",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-pttrangthai-02-20261112-2.mp4",
-  "tong_giay": 48.5,
+  "ten": "Bình kín nóng từ 25 °C lên 100 °C: áp suất tăng gấp mấy?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-pttrangthai-02-20261121.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-pttrangthai-02-20261121.webp",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Thể tích và lượng khí không đổi thì áp suất tỉ lệ thuận với nhiệt độ tuyệt đối.",
-      "kiem": "Bình nóng dần, đại lượng nào giữ nguyên?"
+      "chu": "Bình kín: p tỉ lệ thuận với T (kelvin).",
+      "kiem": "Bình nóng lên, áp suất tăng theo gì?"
     },
     {
       "khoa": "du_doan",
       "giay": 2.9,
-      "chu": "Bình kín: 0 → 100 °C, p tăng 100,0 → 136,3 kPa. Đại lượng nào không đổi?"
+      "chu": "Nhiệt độ từ 25 °C lên 100 °C: số chỉ °C gấp 4. Áp suất trong bình kín tăng gấp mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.5,
+      "giay": 8.3,
       "chu": "Bình kín, áp kế, nhiệt kế, chậu nước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 12.3,
-      "chu": "Từ 0 °C lên 100 °C, áp kế tăng từ 100,0 lên 136,3 kPa."
+      "giay": 15.0,
+      "chu": "Số chỉ °C gấp 4 (25 → 100 °C), áp suất chỉ tăng 108,9 → 136,3 kPa: chưa tới 1,5 lần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 20.9,
-      "chu": "Cột p/T gần như nhau: áp suất tỉ lệ thuận với nhiệt độ kelvin."
+      "giay": 24.5,
+      "chu": "Đổi ra kelvin, cột p/T gần như không đổi (≈ 0,366 kPa/K): áp suất tỉ lệ thuận với T, không tỉ lệ với t (°C)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.4,
-      "chu": "Chỉ kiểm trong 0–100 °C và áp suất thấp; chưa nói khi áp suất rất cao hay khi đổi lượng khí."
+      "giay": 40.1,
+      "chu": "Chỉ kiểm trong 0–100 °C, áp suất thấp; chưa nói gì khi đổi lượng khí. Số liệu là minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 8.35,
-    "cau_hoi": "Ngâm bình kín vào nước 0 → 100 °C, áp suất tăng từ 100,0 lên 136,3 kPa. Đại lượng nào không đổi?",
+    "giay": 8.15,
+    "cau_hoi": "Bình kín: nhiệt độ từ 25 °C lên 100 °C (số chỉ °C gấp 4). Áp suất tăng:",
     "chon": [
-      "A. p nhân T",
-      "B. p chia t (°C)",
-      "C. p chia T (K)",
-      "D. p trừ T"
+      "A. Gấp 4 lần",
+      "B. Gấp 2 lần",
+      "C. Chưa tới 1,5 lần",
+      "D. Không đổi"
     ],
     "dung": 2,
-    "giai_thich_dung": "Khi T tính bằng kelvin, p/T gần như nhau ở cả năm nhiệt độ.",
-    "giai_thich_sai": "Đổi sang kelvin rồi tính từng thương số ở đoạn kế để so sánh."
+    "giai_thich_dung": "Áp suất tỉ lệ với nhiệt độ tuyệt đối: T chỉ tăng từ 298 K lên 373 K, nên áp kế chỉ tăng từ 108,9 lên 136,3 kPa.",
+    "giai_thich_sai": "Số chỉ °C gấp 4 không có nghĩa nhiệt độ tuyệt đối gấp 4. Đổi 25 °C và 100 °C ra kelvin rồi so lại."
+  },
+  "cau_chot": {
+    "giay": 45.2,
+    "cau_hoi": "Bình kín ấy ngâm vào nước 60 °C. Áp kế chỉ khoảng:",
+    "chon": [
+      "A. 82 kPa",
+      "B. 122 kPa",
+      "C. 142 kPa",
+      "D. 261 kPa"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "82 kPa là lấy 136,3 × 60/100, tức coi áp suất tỉ lệ với nhiệt độ °C. Đổi 60 °C ra 333 K rồi dùng p/T không đổi.",
+      "60 °C = 333 K. Bình kín nên p/T vẫn ≈ 0,366 kPa/K: p ≈ 0,366 × 333 ≈ 122 kPa, nằm giữa số đo ở 50 °C và 75 °C.",
+      "142 kPa là lấy 118,4 × 60/50, chia theo °C. Tính theo kelvin, 50 → 60 °C chỉ là 323 → 333 K nên áp suất tăng rất ít.",
+      "261 kPa là lấy 108,9 × 60/25, coi áp suất tỉ lệ với °C. Đổi ra kelvin thì T chỉ tăng từ 298 K lên 333 K."
+    ]
   }
 }

@@ -9,7 +9,6 @@ import { LazyErrorBoundary } from "@/components/ui/LazyErrorBoundary";
 import {
   averageSeconds,
   emptyResponses,
-  formatClock,
   gradeExam,
   isAnswered,
   pickRandom,

@@ -133,7 +133,9 @@ function HomeView({ data, finished }: { data: MyReviewState; finished: boolean }
                 <p className="text-sm text-muted">
                   {s.open_at && Date.parse(s.open_at) > Date.parse(data.now)
                     ? `Mở lúc ${openText(s.open_at)}.`
-                    : `Làm chặng ${i} đạt ${data.threshold}% (hoặc nộp 2 lượt) để mở chặng này.`}
+                    : data.stages[i - 1]?.mine?.state === "failed" && data.stages[i - 1]?.mine?.tries === 1
+                      ? `Chặng ${i} em được ${data.stages[i - 1]?.mine?.best_pct ?? 0}%: làm lại đạt ${data.threshold}% hoặc nộp thêm 1 lượt để mở chặng này.`
+                      : `Làm chặng ${i} đạt ${data.threshold}% (hoặc nộp 2 lượt) để mở chặng này.`}
                 </p>
               ) : finished ? null : state === "passed" ? (
                 <Link href={href} className="inline-flex min-h-11 items-center font-semibold text-primary underline">Làm lại để ôn thêm</Link>

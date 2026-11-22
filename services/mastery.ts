@@ -56,7 +56,7 @@ export interface LessonMastery {
   lessonLevel: MasteryLevel;
 }
 
-interface LessonMasteryRow {
+export interface LessonMasteryRow {
   topic_id: number | null;
   topic_name: string | null;
   sort_order: number;
@@ -75,7 +75,11 @@ interface LessonMasteryRow {
 export async function fetchLessonMastery(lessonId: number): Promise<LessonMastery> {
   const { data, error } = await getSupabase().rpc("get_lesson_mastery", { p_lesson: lessonId });
   if (error) throw error;
-  const rows = (data ?? []) as LessonMasteryRow[];
+  return lessonMasteryFromRows((data ?? []) as LessonMasteryRow[]);
+}
+
+/** Dựng LessonMastery từ các dòng get_lesson_mastery — dùng chung cho RPC gộp get_lesson_page_student. */
+export function lessonMasteryFromRows(rows: LessonMasteryRow[]): LessonMastery {
   const summary = rows.find((r) => r.is_summary);
   const topics = rows
     .filter((r) => !r.is_summary)

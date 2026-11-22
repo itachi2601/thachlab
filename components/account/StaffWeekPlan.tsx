@@ -40,7 +40,7 @@ function fmtDur(min: number) {
 // Bỏ chuỗi gỡ lỗi của script còn sót trong dữ liệu cũ (điểm 5)
 const cleanNote = (n?: string) => n?.replace(/\s*·?\s*khớp "[^"]*"/g, "").trim() || "";
 
-// "Gym · A Thân trên …" → "A" (mở thẳng buổi đó trong /tai-khoan/tap-luyen)
+// "Gym · A Thân trên …" → "A" (mở thẳng buổi đó trong /suc-khoe/tap-luyen)
 const gymKey = (lesson?: string) => /·\s*([ABC])\s/.exec(lesson ?? "")?.[1] ?? "";
 
 type Kind = "day" | "truot" | "gym" | "truong";
@@ -72,7 +72,7 @@ function EventItem({ e, compact }: { e: PlanEvent; compact?: boolean }) {
       )}
       {e.lesson && <p className={`mt-0.5 text-xs text-ink ${compact ? "line-clamp-3" : ""}`} title={e.lesson}>{e.lesson}</p>}
       {kindOf(e) === "gym" && !compact && (
-        <a href={`/tai-khoan/tap-luyen${gymKey(e.lesson) ? `?buoi=${gymKey(e.lesson)}` : ""}`} className="mt-1 inline-flex min-h-9 items-center text-xs font-bold text-primary">
+        <a href={`/suc-khoe/tap-luyen${gymKey(e.lesson) ? `?buoi=${gymKey(e.lesson)}` : ""}`} className="mt-1 inline-flex min-h-9 items-center text-xs font-bold text-primary">
           Mở ứng dụng tập →
         </a>
       )}

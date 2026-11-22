@@ -79,12 +79,13 @@ tn2 = dict(CHUNG, **{
     "mo_hinh": {
         "phuong_trinh": ["u(x, t) = a·cos(2πf·(t − x/v)) — u là độ lệch DỌC trục của vòng ở vị trí cân bằng x",
                          "λ = v/f", "vùng nén: u = 0 và ∂u/∂x < 0; vùng dãn: u = 0 và ∂u/∂x > 0"],
-        "gia_thiet": ["bỏ qua ma sát với sàn và tắt dần", "a·2π/λ < 1 để các vòng không chạm nhau"],
+        "gia_thiet": ["bỏ qua ma sát với sàn và tắt dần", "a·2π/λ < 1 để các vòng không chạm nhau",
+                      "không xét sóng phản xạ ở tay giữ đầu kia (mô hình sóng chạy)"],
     },
     "so_lieu_mau": {
         "cot": ["f (Hz)", "λ = v/f (m)", "Nén – dãn gần nhất (m)"],
         "hang": [[f, round(7.0 / f, 2), round(7.0 / f / 2, 2)] for f in (1.0, 2.0, 3.5, 5.0)],
-        "ghi_chu": "Tính từ mô hình với v = 7,0 m/s (khớp tn-l11-songngangdoc-03); số minh hoạ.",
+        "ghi_chu": "Tính từ mô hình với v = 7,0 m/s (khớp tn-l11-songngangdoc-03); số minh hoạ. Clip songngangdoc2: chiếu chậm 4 lần, biên độ a = 10 cm; câu THỬ NGHĨ dùng hàng 1 Hz (7,0 m, dài hơn lò xo 4 m).",
     },
     "ket_qua_ky_vong": "Đẩy – kéo nhanh gấp đôi thì các vùng nén sít lại gần nhau gấp đôi (λ giảm một nửa); vòng đánh dấu chỉ tiến – lùi ±a.",
     "hien_tuong_hay_sai": ["Tưởng vùng nén ứng với đỉnh đồ thị u – x (thực ra ở điểm u = 0, đồ thị đi xuống).",

@@ -5,6 +5,8 @@ import VideoThiNghiemKhung, {
   type VideoKhungData,
   type VideoKhungEvent,
 } from "@/components/lessons/VideoThiNghiemKhung";
+import c_tn_l10_nemngang_01 from "@/content/thi-nghiem/video-khung/tn-l10-nemngang-01.json";
+import c_tn_l9_khucxa_02 from "@/content/thi-nghiem/video-khung/tn-l9-khucxa-02.json";
 import c_tn_l10_co_nang_bao_toan_01 from "@/content/thi-nghiem/video-khung/tn-l10-co-nang-bao-toan-01.json";
 import c_tn_l10_cong_suat_01 from "@/content/thi-nghiem/video-khung/tn-l10-cong-suat-01.json";
 import c_tn_l10_dong_nang_the_nang_01 from "@/content/thi-nghiem/video-khung/tn-l10-dong-nang-the-nang-01.json";
@@ -46,9 +48,12 @@ import c_tn_l11_nguon_dien_03 from "@/content/thi-nghiem/video-khung/tn-l11-nguo
 /**
  * XEM THỬ video thí nghiệm + khung sáu ô + dừng ở câu Dự đoán (bản thử 29/10/2026), 23 clip L12.
  * Mở http://localhost:3000/dev/video-tuong-tac. Chỉ có nghĩa ở máy dev; sự kiện chỉ in ra bảng bên dưới,
- * chưa ghi DB (muốn đo tỉ lệ dừng/chọn/xem lại thì nối onEvent vào bảng ghi sau khi thầy chốt).
+ * không ghi DB; dòng "LƯỢT" là đúng payload trang bài gửi RPC log_clip_view (việc 6) khi xem hết / ẩn tab.
  */
 const CLIPS = [
+  c_tn_l12_thuchanhtu_04, // 3 clip đã rà 19/11, có câu chốt (việc 2) — để đầu cho dễ thử
+  c_tn_l10_nemngang_01,
+  c_tn_l9_khucxa_02,
   c_tn_l10_co_nang_bao_toan_01,
   c_tn_l10_cong_suat_01,
   c_tn_l10_dong_nang_the_nang_01,
@@ -76,7 +81,6 @@ const CLIPS = [
   c_tn_l12_thangnhietdo_04,
   c_tn_l12_thuchanh_02,
   c_tn_l12_thuchanhtu_03,
-  c_tn_l12_thuchanhtu_04,
   c_tn_l12_tutruong_04,
   c_tn_l12_udcamung_02,
   c_tn_l12_xoaychieu_03,
@@ -94,7 +98,7 @@ export default function VideoTuongTacPreviewPage() {
     setLog((l) => [`${new Date().toLocaleTimeString("vi-VN")} · ${id} · ${JSON.stringify(e)}`, ...l].slice(0, 12));
 
   return (
-    <main className="mx-auto max-w-5xl space-y-8 px-4 py-8">
+    <main className="mx-auto w-full min-w-0 max-w-5xl space-y-8 px-4 py-8">
       <header>
         <h1 className="font-display text-2xl font-bold text-ink">Video thí nghiệm bán tương tác — bản thử</h1>
         <p className="mt-1 text-[15px] text-muted">
@@ -103,11 +107,22 @@ export default function VideoTuongTacPreviewPage() {
         </p>
       </header>
       {CLIPS.map((c) => (
-        <VideoThiNghiemKhung key={c.id} data={c} onEvent={onEvent(c.id)} />
+        <VideoThiNghiemKhung
+          key={c.id}
+          data={c}
+          onEvent={onEvent(c.id)}
+          onLuot={(l) =>
+            setLog((x) =>
+              [`${new Date().toLocaleTimeString("vi-VN")} · LƯỢT · ${JSON.stringify(l)}`, ...x].slice(0, 12),
+            )
+          }
+        />
       ))}
       <section className="rounded-2xl border border-line bg-panel p-4">
         <h2 className="mb-2 text-[15px] font-bold text-ink">Sự kiện gần nhất</h2>
-        <pre className="whitespace-pre-wrap text-[13px] text-muted">{log.length ? log.join("\n") : "Chưa có."}</pre>
+        <pre className="whitespace-pre-wrap break-all text-[13px] text-muted">
+          {log.length ? log.join("\n") : "Chưa có."}
+        </pre>
       </section>
     </main>
   );

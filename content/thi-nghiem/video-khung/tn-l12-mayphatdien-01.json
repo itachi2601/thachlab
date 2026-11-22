@@ -1,52 +1,69 @@
 {
   "id": "tn-l12-mayphatdien-01",
-  "ten": "Máy phát mini quay nhanh dần: tần số kế chỉ bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-01-20261112.mp4",
-  "tong_giay": 53.8,
+  "ten": "Máy phát mini 4 cực: tần số kế chỉ bao nhiêu?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-01-20261121.mp4",
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Tần số dòng điện bằng tốc độ quay nhân số cặp cực: f = n·p.",
-      "kiem": "Quay nhanh hơn thì tần số kế chỉ thế nào?"
+      "chu": "Tần số dòng điện do máy phát ra bằng tốc độ quay nhân số cặp cực: f = n·p.",
+      "kiem": "Tần số kế chỉ phụ thuộc vào gì?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Rô-to 2 cặp cực quay n = 25 vòng/s. Tần số kế chỉ bao nhiêu?"
+      "giay": 3.0,
+      "chu": "Rô-to 4 cực quay n = 10 vòng/s. Tần số kế chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.0,
-      "chu": "Máy phát mini hai cặp cực nối tần số kế; quay đều n = 5–25 vòng/s."
+      "giay": 8.5,
+      "chu": "Máy phát mini, tần số kế, đèn nhỏ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.7,
-      "chu": "n = 25 vòng/s thì f = 50,3 Hz."
+      "giay": 15.1,
+      "chu": "Quay càng nhanh, f càng lớn: n = 10 vòng/s cho 20,1 Hz; n = 25 vòng/s cho 50,3 Hz."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.7,
-      "chu": "Tỉ số f/n gần bằng 2, đúng bằng số cặp cực p, nên f = n·p."
+      "giay": 21.4,
+      "chu": "Tỉ số f/n gần như không đổi, xấp xỉ 2 — bằng số cặp cực p của máy, nên f = n·p."
     },
     {
       "khoa": "chua_noi",
-      "giay": 39.7,
+      "giay": 30.4,
       "chu": "Chỉ dùng một máy p = 2, nên chưa kiểm trực tiếp f tỉ lệ với p."
     }
   ],
   "dung_dua": {
-    "giay": 9.8,
-    "cau_hoi": "Máy phát có rô-to 2 cặp cực, quay n = 25 vòng/s. Tần số kế chỉ bao nhiêu?",
+    "giay": 8.3,
+    "cau_hoi": "Máy phát có rô-to 4 cực (N, S xen kẽ), quay n = 10 vòng/s. Tần số kế chỉ bao nhiêu?",
     "chon": [
-      "A. 12,5 Hz",
-      "B. 25 Hz",
-      "C. 50 Hz",
-      "D. 100 Hz"
+      "A. 5 Hz",
+      "B. 10 Hz",
+      "C. 20 Hz",
+      "D. 40 Hz"
     ],
     "dung": 2,
-    "giai_thich_dung": "f = n·p = 25 × 2 = 50 Hz, khớp số chỉ khoảng 50 Hz trong video.",
-    "giai_thich_sai": "Mỗi cặp cực đi qua cuộn dây cho một chu kì; một vòng quay có mấy cặp cực đi qua?"
+    "giai_thich_dung": "4 cực là 2 cặp cực nên p = 2; f = n·p = 10 × 2 = 20 Hz, khớp số đo 20,1 Hz trong video.",
+    "giai_thich_sai": "Mỗi cặp cực N–S đi qua cuộn dây cho một chu kì. Rô-to 4 cực có mấy cặp? Xem tiếp để so với số đo."
+  },
+  "cau_chot": {
+    "giay": 45.9,
+    "cau_hoi": "Rô-to 6 cực (N, S xen kẽ) quay 900 vòng/phút. Tần số dòng điện là bao nhiêu?",
+    "chon": [
+      "A. 15 Hz",
+      "B. 45 Hz",
+      "C. 90 Hz",
+      "D. 2 700 Hz"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "15 là số vòng mỗi giây (900 : 60); còn phải nhân với số cặp cực.",
+      "n = 900 : 60 = 15 vòng/s; 6 cực là 3 cặp nên f = 15 × 3 = 45 Hz.",
+      "Lấy p = 6 là đếm cực; 6 cực N, S xen kẽ chỉ có 3 cặp.",
+      "900 là vòng/phút; phải đổi ra vòng/s (chia 60) rồi mới nhân p."
+    ]
   }
 }

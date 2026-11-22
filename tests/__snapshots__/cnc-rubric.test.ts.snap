@@ -1,0 +1,91 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`rubric phay > bảng điểm mức E/G/P/F khoá cứng (snapshot) 1`] = `
+[
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 7,
+      "thanh-phan": 3,
+    },
+    "totalScore": 10,
+    "xepLoai": "Xuất sắc (Excellent)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 5.25,
+      "thanh-phan": 2.25,
+    },
+    "totalScore": 7.5,
+    "xepLoai": "Khá (Good)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 3.5,
+      "thanh-phan": 1.5,
+    },
+    "totalScore": 5,
+    "xepLoai": "Đạt (Pass)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": false,
+    "groupScores": {
+      "ky-thuat": 0,
+      "thanh-phan": 0,
+    },
+    "totalScore": 0,
+    "xepLoai": "Không đạt (Failed)",
+    "zeroToleranceFailed": false,
+  },
+]
+`;
+
+exports[`rubric tien > bảng điểm mức E/G/P/F khoá cứng (snapshot) 1`] = `
+[
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 7,
+      "thanh-phan": 3,
+    },
+    "totalScore": 10,
+    "xepLoai": "Xuất sắc (Excellent)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 5.25,
+      "thanh-phan": 2.25,
+    },
+    "totalScore": 7.5,
+    "xepLoai": "Khá (Good)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": true,
+    "groupScores": {
+      "ky-thuat": 3.5,
+      "thanh-phan": 1.5,
+    },
+    "totalScore": 5,
+    "xepLoai": "Đạt (Pass)",
+    "zeroToleranceFailed": false,
+  },
+  {
+    "gatePassed": false,
+    "groupScores": {
+      "ky-thuat": 0,
+      "thanh-phan": 0,
+    },
+    "totalScore": 0,
+    "xepLoai": "Không đạt (Failed)",
+    "zeroToleranceFailed": false,
+  },
+]
+`;

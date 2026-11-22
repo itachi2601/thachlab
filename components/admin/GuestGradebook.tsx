@@ -40,11 +40,11 @@ const link = (code: string) => `${SITE_URL}/thi/?ma=${code}`;
 const fmtTime = (iso: string | null) => (iso ? new Date(iso).toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" }) : "—");
 const num = (n: number | null) => (n === null ? "—" : Number(n).toLocaleString("vi-VN"));
 
+// Mã 6 chữ số: gõ được ở ô số của trang Quét mã (/quet-ma), không cần đổi bàn phím trên điện thoại.
 function randomCode(): string {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  const bytes = new Uint8Array(6);
+  const bytes = new Uint32Array(1);
   crypto.getRandomValues(bytes);
-  return Array.from(bytes, (b) => chars[b % chars.length]).join("");
+  return String(100000 + (bytes[0] % 900000));
 }
 
 function Qr({ text }: { text: string }) {

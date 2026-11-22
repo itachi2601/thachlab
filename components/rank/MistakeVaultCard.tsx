@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Sparkles, AlertCircle, CheckCircle2, ChevronRight } from "lucide-react";
+import { Sparkles, ChevronRight } from "lucide-react";
 import Button from "@/components/ui/Button";
 import { fetchMistakeStats, type MistakeStats } from "@/services/mistakes";
 import MistakeReviewModal from "@/components/rank/MistakeReviewModal";

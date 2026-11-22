@@ -1,52 +1,70 @@
 {
   "id": "tn-l12-xoaychieu-02",
   "ten": "Hai đèn LED mắc ngược chiều nhau",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261114.mp4",
-  "tong_giay": 49.0,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261121.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261121.webp",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Dòng điện xoay chiều đổi chiều 2 lần trong mỗi chu kì.",
-      "kiem": "Mỗi chu kì, dòng đổi chiều mấy lần?"
+      "chu": "Dòng đổi chiều 2 lần mỗi chu kì, nhưng hai LED thay phiên nhau: mỗi LED chỉ sáng 1 lần mỗi chu kì.",
+      "kiem": "Mỗi LED sáng mấy lần trong một chu kì?"
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Ở 1 Hz, mỗi giây dòng điện đổi chiều mấy lần?"
+      "giay": 3.3,
+      "chu": "Máy phát đặt 5 Hz. Trong 1 s, LED đỏ sáng mấy lần?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Máy phát tín hiệu, hai LED ngược chiều, điện trở 330 Ω."
+      "giay": 9.2,
+      "chu": "Máy phát, hai LED ngược chiều, điện trở."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.6,
-      "chu": "1 Hz: hai LED chớp luân phiên; 50 Hz: trông như sáng liên tục."
+      "giay": 15.6,
+      "chu": "5 Hz, chiếu chậm 1 s: đỏ 5 lần, xanh 5 lần. 50 Hz: trông sáng đều."
     },
     {
       "khoa": "rut_ra",
-      "giay": 19.0,
-      "chu": "Mỗi chu kì mỗi LED sáng 1 lần, dòng đổi chiều 2 lần: 2f lần mỗi giây."
+      "giay": 22.4,
+      "chu": "Mỗi chu kì mỗi LED sáng 1 lần; 1 s có f chu kì nên mỗi LED sáng f lần mỗi giây."
     },
     {
       "khoa": "chua_noi",
-      "giay": 25.6,
-      "chu": "Không cho biết tần số chính xác hay giá trị hiệu dụng của dòng.\nỞ 50 Hz mắt không phân biệt được chớp hay sáng liên tục."
+      "giay": 38.9,
+      "chu": "Không cho biết tần số chính xác hay giá trị hiệu dụng của dòng."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
-    "cau_hoi": "Máy phát tín hiệu hình sin 1 Hz nối qua điện trở với hai LED mắc song song, ngược chiều nhau. Mỗi giây dòng điện đổi chiều mấy lần?",
+    "giay": 9.0,
+    "cau_hoi": "Máy phát tín hiệu hình sin đặt 5 Hz, nối qua điện trở với hai LED mắc song song, ngược chiều nhau. Trong 1 s, LED đỏ sáng mấy lần?",
     "chon": [
-      "A. 1 lần",
-      "B. 2 lần",
-      "C. 4 lần",
-      "D. 0,5 lần"
+      "A. 2,5 lần",
+      "B. 5 lần",
+      "C. 10 lần",
+      "D. 20 lần"
     ],
     "dung": 1,
-    "giai_thich_dung": "Trong một chu kì, nửa chu kì LED đỏ sáng, nửa chu kì LED xanh sáng: dòng đổi chiều 2 lần. Ở 1 Hz là 2 lần mỗi giây.",
-    "giai_thich_sai": "Mỗi LED sáng 1 lần mỗi giây, nhưng hai LED sáng luân phiên nên dòng đổi chiều 2 lần trong một chu kì, tức 2 lần mỗi giây ở 1 Hz."
+    "giai_thich_dung": "Mỗi chu kì, LED đỏ sáng ở nửa u dương, LED xanh ở nửa u âm: mỗi LED sáng 1 lần. 5 Hz là 5 chu kì mỗi giây nên LED đỏ sáng 5 lần; cả cặp 10 lần, bằng số lần đổi chiều.",
+    "giai_thich_sai": "Dòng đổi chiều 10 lần mỗi giây, nhưng hai LED chia nhau: đỏ sáng ở nửa u dương, xanh ở nửa u âm. Mỗi LED chỉ sáng 1 lần mỗi chu kì."
+  },
+  "cau_chot": {
+    "giay": 45.8,
+    "cau_hoi": "Trong 10 s, đếm cả hai LED được tổng cộng 50 lần chớp. Máy phát đang đặt tần số bao nhiêu?",
+    "chon": [
+      "A. 1,25 Hz",
+      "B. 2,5 Hz",
+      "C. 5 Hz",
+      "D. 25 Hz"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Đây là coi mỗi LED chớp 2f lần mỗi giây. Thật ra mỗi LED chớp f lần, cả cặp 2f lần mỗi giây.",
+      "50 lần trong 10 s là 5 lần mỗi giây. Mỗi chu kì cả cặp chớp 2 lần (đỏ 1, xanh 1) nên 2f = 5, f = 2,5 Hz (ca suy từ quan hệ 2f, không phải số đo trong bảng).",
+      "5 lần mỗi giây là tổng của cả hai LED, không phải số chu kì. Mỗi chu kì cả cặp chớp 2 lần.",
+      "Phải chia cho 10 s trước để có số lần chớp mỗi giây, rồi mới chia cho 2 lần mỗi chu kì."
+    ]
   }
 }

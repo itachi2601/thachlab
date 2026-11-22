@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, ListChecks, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { ChevronDown, ChevronRight, ClipboardList, Dumbbell, Gamepad2, HeartPulse, ListChecks, KeyRound, LayoutDashboard, LogOut, Menu, QrCode, ShieldCheck, Target, User, Users, X } from "lucide-react";
+import { canUseSucKhoe } from "@/lib/suc-khoe/modules";
 import { useAuth, useAuthSnapshot } from "@/components/auth/auth-context";
 import { tabBarShownOn } from "@/components/layout/MobileTabBar";
 import ThemeToggle from "@/components/layout/ThemeToggle";
@@ -27,6 +28,7 @@ const links: NavLink[] = [
 
 // Gom vào mục "Thêm" trên desktop (N2: ≤4 lựa chọn/vùng); menu mobile vẫn liệt kê đủ.
 const MORE_LINKS: NavLink[] = [
+  { label: "Thư viện mô phỏng", href: "/mo-phong" },
   { label: "Vật lý quanh ta", href: "/blog/#vat-ly-quanh-ta" },
   { label: "Tin tức", href: "/tin-tuc" },
   { label: "Giới thiệu", href: "/gioi-thieu" },
@@ -281,6 +283,16 @@ export default function Navbar() {
                       className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
                     >
                       <LayoutDashboard size={16} /> Dashboard giáo viên · THPT
+                    </Link>
+                  )}
+                  {/* Mục Sức khỏe — bản thử, vai trò được mở ở lib/suc-khoe/modules.ts */}
+                  {canUseSucKhoe(profile?.role) && (
+                    <Link prefetch={false}
+                      href="/suc-khoe"
+                      onClick={() => setAccountMenuOpen(false)}
+                      className="flex items-center gap-2.5 rounded-ui-md px-3.5 py-2.5 text-sm font-semibold text-ink transition-colors hover:bg-surface-2 hover:text-primary"
+                    >
+                      <HeartPulse size={16} /> Sức khỏe
                     </Link>
                   )}
                   {/* Trợ giảng trước đây phải tự gõ /tro-giang mới vào được khu làm việc của mình. */}

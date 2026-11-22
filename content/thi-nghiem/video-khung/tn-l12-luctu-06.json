@@ -1,8 +1,9 @@
 {
   "id": "tn-l12-luctu-06",
   "ten": "Hai lá nhôm song song mang dòng điện",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261112-2.mp4",
-  "tong_giay": 48.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261121.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261121.webp",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +13,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
-      "chu": "Hai dòng 5 A cùng chiều: hai lá thế nào?"
+      "giay": 3.4,
+      "chu": "Êlectron trong hai lá cùng dấu, cùng chạy xuống. Hai lá hút hay đẩy nhau?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.3,
-      "chu": "Hai lá nhôm song song, mỗi lá một mạch."
+      "giay": 10.1,
+      "chu": "Hai lá nhôm, mỗi lá một mạch."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.3,
+      "giay": 18.0,
       "chu": "Chỉ lá 1 có dòng 5 A: hai lá đứng yên. Hai dòng 5 A cùng chiều: hút. Ngược chiều: đẩy."
     },
     {
       "khoa": "rut_ra",
-      "giay": 29.5,
-      "chu": "Lá 2 nằm trong từ trường lá 1: cùng chiều thì hút. Lực lên hai lá bằng nhau, ngược chiều (định luật III)."
+      "giay": 28.2,
+      "chu": "Lá 2 nằm trong từ trường lá 1 nên bị kéo về phía lá 1. Lá 1 chịu lực ngược lại, cùng độ lớn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 39.9,
-      "chu": "Chỉ thấy lá lệch, chưa đo độ lớn lực; dây không song song chưa xét."
+      "giay": 38.6,
+      "chu": "Chỉ thấy lá lệch, chưa so được độ lớn lực; dây không song song chưa xét."
     }
   ],
   "dung_dua": {
-    "giay": 10.15,
-    "cau_hoi": "Hai lá nhôm song song, mỗi lá nằm trong một mạch kín riêng. Đóng mạch: hai dòng 5 A cùng chiều. Hai lá nhôm sẽ thế nào?",
+    "giay": 9.95,
+    "cau_hoi": "Hai lá nhôm song song, mỗi lá một mạch kín riêng. Đóng khoá: êlectron trong hai lá (cùng dấu) cùng chạy xuống. Hai lá nhôm sẽ thế nào?",
     "chon": [
       "A. Hút lại gần nhau",
       "B. Đẩy ra xa nhau",
@@ -46,7 +47,24 @@
       "D. Cùng lệch sang một bên"
     ],
     "dung": 0,
-    "giai_thich_dung": "Lá 2 nằm trong từ trường của lá 1; bàn tay trái cho lực lên lá 2 hướng về lá 1, và lá 1 chịu lực ngược lại. Dòng cùng chiều thì hút nhau.",
-    "giai_thich_sai": "Hai dòng điện không giống hai điện tích: xem cảnh nhìn từ trên xuống, chiều từ trường lá 1 tại lá 2 và chiều lực lên lá 2."
+    "giai_thich_dung": "Êlectron chạy xuống nghĩa là dòng điện trong cả hai lá hướng lên: hai dòng cùng chiều. Lá 2 nằm trong từ trường của lá 1, bàn tay trái cho lực hướng về lá 1; lá 1 chịu lực ngược lại. Hai lá hút nhau.",
+    "giai_thich_sai": "Hai lá không tích điện nên không đẩy nhau như hai điện tích cùng dấu. Xem cảnh nhìn từ trên xuống: chiều từ trường lá 1 tại lá 2 và chiều lực lên lá 2."
+  },
+  "cau_chot": {
+    "giay": 45.4,
+    "cau_hoi": "Hai lá dài 50 cm, cách nhau 1,0 cm. I1 = 4 A hướng lên, I2 = 8 A hướng xuống. Hai lá hút hay đẩy, lực từ lên mỗi lá bao nhiêu?",
+    "chon": [
+      "A. Hút nhau, mỗi lá 3,2·10⁻⁴ N",
+      "B. Đẩy nhau, mỗi lá 3,2·10⁻⁴ N",
+      "C. Đẩy nhau, lá 2 chịu lực gấp đôi lá 1",
+      "D. Hút nhau, lá 2 chịu lực gấp đôi lá 1"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Độ lớn đúng nhưng hai dòng ngược chiều: lực từ lên lá 2 hướng ra xa lá 1, hai lá đẩy nhau.",
+      "B1 = 2·10⁻⁷·4/0,010 = 0,8·10⁻⁴ T; F = B1·I2·l = 0,8·10⁻⁴·8·0,50 = 3,2·10⁻⁴ N. Hai dòng ngược chiều nên đẩy nhau; lá 1 chịu lực cùng độ lớn (định luật III).",
+      "Chiều đúng (ngược chiều thì đẩy), nhưng hai lực là cặp lực – phản lực: cùng độ lớn 3,2·10⁻⁴ N dù I2 gấp đôi I1.",
+      "Hai dòng ngược chiều thì đẩy, không hút; và hai lực luôn cùng độ lớn (định luật III), lá có dòng lớn hơn không chịu lực lớn hơn."
+    ]
   }
 }

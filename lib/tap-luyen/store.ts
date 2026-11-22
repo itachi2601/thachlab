@@ -23,26 +23,48 @@ export type Measurement = {
   hip_cm: number | null;
   shoulder_cm: number | null;
   arm_cm: number | null;
+  /** cần migration 20261119120000 — null/thiếu nếu chưa đo hoặc cột chưa có */
+  neck_cm?: number | null;
+  wrist_cm?: number | null;
   note?: string | null;
 };
 
-const K_DRAFT = "tapluyen:draft";
-const K_QUEUE = "tapluyen:queue";
-const K_CACHE = "tapluyen:cache";
-const K_MCACHE = "tapluyen:mcache";
+// Khoá localStorage theo tài khoản: máy dùng chung (phòng máy, máy ở nhà) không lẫn buổi tập của người khác,
+// và hàng chờ của người trước không bị gửi lên dưới tài khoản người sau.
+let uid = "";
+const K = (name: string) => `tapluyen:${uid ? `${uid}:` : ""}${name}`;
+const K_DRAFT = "draft", K_QUEUE = "queue", K_CACHE = "cache", K_MCACHE = "mcache";
+
+/** Gọi trước mọi hàm lưu/đọc. `adoptLegacy`: chuyển dữ liệu khoá cũ (chưa theo tài khoản, chỉ giáo viên dùng trước 19/11/2026) về tài khoản này. */
+export function setTapLuyenUser(id: string, adoptLegacy: boolean) {
+  if (uid === id) return;
+  uid = id;
+  try {
+    for (const n of [K_DRAFT, K_QUEUE, K_CACHE, K_MCACHE]) {
+      const old = localStorage.getItem(`tapluyen:${n}`);
+      if (old == null) continue;
+      if (adoptLegacy && localStorage.getItem(K(n)) == null) localStorage.setItem(K(n), old);
+      if (adoptLegacy) localStorage.removeItem(`tapluyen:${n}`);
+    }
+  } catch {
+    /* chế độ ẩn danh */
+  }
+}
 
 function lsGet<T>(k: string, fb: T): T {
+  if (!uid) return fb;
   try {
-    const v = localStorage.getItem(k);
+    const v = localStorage.getItem(K(k));
     return v ? (JSON.parse(v) as T) : fb;
   } catch {
     return fb;
   }
 }
 function lsSet(k: string, v: unknown) {
+  if (!uid) return;
   try {
-    if (v == null) localStorage.removeItem(k);
-    else localStorage.setItem(k, JSON.stringify(v));
+    if (v == null) localStorage.removeItem(K(k));
+    else localStorage.setItem(K(k), JSON.stringify(v));
   } catch {
     /* bộ nhớ đầy / chế độ ẩn danh */
   }
@@ -120,12 +142,13 @@ export async function deleteWorkout(clientId: string) {
 
 export async function fetchMeasurements(): Promise<{ list: Measurement[]; offline: boolean }> {
   try {
-    const { data, error } = await getSupabase()
-      .from("body_measurements")
-      .select("measured_on,height_cm,weight_kg,chest_cm,waist_cm,hip_cm,shoulder_cm,arm_cm,note")
-      .order("measured_on", { ascending: true });
+    const base = "measured_on,height_cm,weight_kg,chest_cm,waist_cm,hip_cm,shoulder_cm,arm_cm,note";
+    const q = (cols: string) => getSupabase().from("body_measurements").select(cols).order("measured_on", { ascending: true });
+    let res = await q(`${base},neck_cm,wrist_cm`);
+    if (res.error) res = await q(base); // chưa chạy migration thêm cổ/cổ tay → vẫn đọc được số đo cũ
+    const { data, error } = res;
     if (error) throw error;
-    const list = (data ?? []).map((r) => {
+    const list = ((data ?? []) as unknown as Record<string, unknown>[]).map((r) => {
       const o = { ...r } as Record<string, unknown>;
       for (const k of Object.keys(o)) if (k.endsWith("_cm") || k.endsWith("_kg")) o[k] = o[k] == null ? null : Number(o[k]);
       return o as Measurement;
@@ -138,7 +161,10 @@ export async function fetchMeasurements(): Promise<{ list: Measurement[]; offlin
 }
 
 export async function saveMeasurement(m: Measurement) {
-  const { error } = await getSupabase().from("body_measurements").upsert(m, { onConflict: "user_id,measured_on" });
+  // Chưa chạy migration neck/wrist thì gửi cột lạ sẽ lỗi cả lần lưu → chỉ gửi hai cột này khi có giá trị.
+  const { neck_cm, wrist_cm, ...rest } = m;
+  const row = { ...rest, ...(neck_cm != null ? { neck_cm } : {}), ...(wrist_cm != null ? { wrist_cm } : {}) };
+  const { error } = await getSupabase().from("body_measurements").upsert(row, { onConflict: "user_id,measured_on" });
   if (error) throw error;
 }
 export async function deleteMeasurement(date: string) {
@@ -190,3 +216,31 @@ export function bestE1rmHistory(list: Workout[], exId: string) {
   return pts;
 }
 export const fmtKg = (n: number) => String(Math.round(n * 100) / 100).replace(".", ",");
+
+/** Buổi trong tuần (thứ Hai 0h giờ máy) và buổi nên tập tiếp: ưu tiên `focus`, rồi buổi đầu danh sách (A / 1), rồi buổi lâu chưa tập. */
+export function weekPlan(list: Workout[], keys: string[], focus?: string | null) {
+  const mon = new Date();
+  mon.setHours(0, 0, 0, 0);
+  mon.setDate(mon.getDate() - ((mon.getDay() + 6) % 7));
+  const thisWeek = list.filter((w) => new Date(w.started_at) >= mon);
+  const done = new Set(thisWeek.map((w) => w.routine_key));
+  const lastOf = (k: string) => list.find((w) => w.routine_key === k);
+  const left = keys.filter((k) => !done.has(k));
+  const next =
+    (focus && !done.has(focus) ? focus : null) ??
+    (left.includes(keys[0]) ? keys[0] : [...left].sort((a, b) => (lastOf(a)?.started_at ?? "").localeCompare(lastOf(b)?.started_at ?? ""))[0]) ??
+    null;
+  return { count: thisWeek.length, done, next, lastOf };
+}
+
+/** Bài không tạ: số lần (hoặc số giây) tốt nhất trong các hiệp làm việc của mỗi buổi. */
+export function bestCountHistory(list: Workout[], exId: string) {
+  const pts: { date: string; v: number }[] = [];
+  for (const w of [...list].reverse()) {
+    const e = w.exercises.find((x) => x.id === exId);
+    if (!e) continue;
+    const best = Math.max(0, ...e.sets.filter((s) => s.done && s.kind === "n").map((s) => s.sec ?? s.reps ?? 0));
+    if (best) pts.push({ date: w.started_at.slice(0, 10), v: best });
+  }
+  return pts;
+}
