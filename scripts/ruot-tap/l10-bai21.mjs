@@ -96,14 +96,14 @@ ${h3(3, 'II.2 · Quy tắc moment', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Áp dụng cho vật có ${f(30)}.</div>
 <div>Vật cân bằng khi tổng moment làm quay ${f(25)} chiều kim đồng hồ bằng tổng moment làm quay ${f(25)} chiều kim đồng hồ:</div>
-<div style="margin:.6mm 0">${m('M_1+M_2+\\dots')} <span class="hint">(độ lớn, cùng làm quay chiều kim)</span> = ${f(30)}</div></div>
+<div style="margin:.6mm 0">${m('M_1+M_2+\\dots')} = ${f(30)}</div></div>
 ${h3(4, 'Thí nghiệm: thước có trục quay ở giữa', '2·4')}
 <div class="fig-side" style="${fs(48)}"><div>
 <table class="tbl-ct"><tr><th>${m('d_2\\ (\\mathrm{cm})')}</th><th>${m('F_2\\ (\\mathrm N)')}</th><th>${m('F_2 d_2\\ (\\mathrm{N\\cdot cm})')}</th></tr>
 <tr><td>10</td><td>3,10</td><td></td></tr>
 <tr><td>15</td><td>2,00</td><td></td></tr>
-<tr><td>20</td><td>1,52</td><td></td></tr>
-<tr><td>30</td><td>0,99</td><td></td></tr></table>
+<tr><td>20</td><td></td><td></td></tr>
+<tr><td>30</td><td></td><td></td></tr></table>
 <div style="margin-top:.6mm">${m('P_1 d_1=')} ${fx()} N·cm = ${fx()} N·m</div>
 </div>
 ${H.thuocTN()}</div>
@@ -119,7 +119,7 @@ ${h3(1, 'II.3 · Điều kiện cân bằng của vật rắn', '3·1')}
 <div>Không <b>tịnh tiến</b> <span class="hint">(mọi điểm dời như nhau)</span>: ${f(25)} ${m('=\\vec 0')} &nbsp;·&nbsp; Không quay: ${f(25)} ${m('=0')} đối với điểm ${f(25)}</div>
 <div>Chiều quay chọn làm dương: moment mang dấu ${fx(12)}; chiều kia mang dấu ${fx(12)}</div>
 <div><b>Mẹo chọn trục:</b> đặt trục ở chỗ có lực ${f(25)}, vì lực đó có ${nw(`${m('d=')} ${fx(12)}`)} nên biến khỏi phương trình moment.</div>
-<div style="margin-top:.6mm"><b>Thử:</b> ván đồng chất dài ${u('2', 'm')}, ${nw(m('P=200\\ \\mathrm N'))}, hai đầu gác lên hai bờ mương. Trục qua bờ trái: lực bờ phải ${nw(`${m('N_2=')} ${fx()} N`)}; tổng lực: lực bờ trái ${nw(`${m('N_1=')} ${fx()} N`)}</div></div>
+<div style="margin-top:.6mm"><b>Thử (về nhà):</b> ván đồng chất dài ${u('2', 'm')}, ${nw(m('P=200\\ \\mathrm N'))}, hai đầu gác lên hai bờ mương. Trục qua bờ trái: lực bờ phải ${nw(`${m('N_2=')} ${fx()} N`)}; tổng lực: lực bờ trái ${nw(`${m('N_1=')} ${fx()} N`)}</div></div>
 ${h3(2, 'II.4 · Ngẫu lực', '3·2')}
 <div class="card fig-side" style="${fs(44)};padding:1.2mm 3mm"><div>
 <div><b>Ngẫu lực:</b> hai lực ${f(25)}, ${f(25)} chiều, cùng ${f(25)}, cùng đặt vào ${f(25)}</div>
@@ -128,34 +128,33 @@ ${h3(2, 'II.4 · Ngẫu lực', '3·2')}
 <div style="margin:.6mm 0">${m('M=')} ${fx()} · ${fx()} &nbsp;với ${m('d')} là khoảng cách giữa ${f(25)}</div>
 <div>Moment ngẫu lực ${ck}có &nbsp;${ck}không phụ thuộc vị trí trục quay.</div>
 <div><b>Thí nghiệm:</b> đẩy hai đầu thước 30 cm trên mặt bàn nhẵn, ngược chiều, mạnh như nhau, vuông góc thước. Thước ${ck}trượt đi &nbsp;${ck}quay tại chỗ, quanh vạch ${fx()} cm.</div>
-<div><b>Thử:</b> vô lăng, mỗi lực ${u('20', 'N')}, hai giá cách nhau ${u('0{,}36', 'm')}: hợp lực = ${fx()} N; ${nw(`${m('M=')} ${fx()} N·m`)}</div></div>
+<div><b>Thử (về nhà):</b> vô lăng, mỗi lực ${u('20', 'N')}, hai giá cách nhau ${u('0{,}36', 'm')}: hợp lực = ${fx()} N; ${nw(`${m('M=')} ${fx()} N·m`)}</div></div>
 ${H.voLang()}</div>
 ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="fig-side" style="${fs(30)}"><div class="card" style="padding:1mm 3mm;margin:0">
-<div class="trap">${ck}<span><b>“Cánh tay đòn là khoảng cách tới điểm đặt lực.”</b> Đo vuông góc từ trục tới <b>giá</b> lực: ${m('d=r\\sin\\alpha')}.</span></div>
-<div class="trap">${ck}<span><b>“Lực càng lớn, vật càng dễ quay.”</b> Đẩy cửa hướng vào bản lề: ${m('d=0')}, ${m('M=0')}. So moment, không so lực.</span></div>
-<div class="trap">${ck}<span><b>“Tổng lực bằng 0 là vật cân bằng.”</b> Ngẫu lực trên vô lăng: tổng lực bằng 0 mà vẫn quay. Cần thêm tổng moment bằng 0.</span></div></div>${H.anhBua()}</div>
+<div class="trap">${ck}<span><b>“Cánh tay đòn là khoảng cách tới điểm đặt lực.”</b> Sai ở đâu? ${f(32)}</span></div>
+<div class="trap">${ck}<span><b>“Lực càng lớn, vật càng dễ quay.”</b> Sai ở đâu? ${f(32)}</span></div>
+<div class="trap">${ck}<span><b>“Tổng lực bằng 0 là vật cân bằng.”</b> Sai ở đâu? ${f(32)}</span></div></div>${H.anhBua()}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
+${h3(1, 'Kết quả tự kiểm tra (Câu 1–6) · Đề 1242: ……/20 · câu sai ……', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm Trả bài:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${fx()} Tập`)}</div>
 ${h3(2, 'V · Bài toán mẫu: thanh gỗ và túi gạo', '4·2')}
 <div class="card soft" style="padding:1.2mm 3mm">Thanh gỗ đồng chất ${m('AB')} dài ${u('1{,}2', 'm')}, trọng lượng ${u('40', 'N')}, kê trên giá đỡ nhọn tại ${m('O')} cách đầu ${m('A')} một đoạn ${u('0{,}4', 'm')}. Treo túi gạo ở ${m('A')} thì thanh nằm ngang cân bằng.
 <div>Tìm trọng lượng túi gạo và lực giá đỡ tác dụng lên thanh.</div></div>
-${h3(3, 'Phân tích đề')}
+${h3(3, 'Phân tích đề', '4·3')}
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“đồng chất, dài 1,2 m”</td><td>Trọng tâm ${m('G')} ở giữa: ${m('AG=0{,}6\\ \\mathrm m')}</td></tr>
 <tr><td style="height:6.5mm">“trọng lượng 40 N”</td><td></td></tr>
 <tr><td style="height:6.5mm">“cách đầu A 0,4 m”</td><td></td></tr>
 <tr><td style="height:6.5mm">“treo túi gạo ở A”</td><td></td></tr>
 <tr><td style="height:6.5mm">Dữ kiện ngầm: “nằm ngang cân bằng”</td><td></td></tr></table>
-${h3(4, 'Giải')}
+${h3(4, 'Giải', '4·4')}
 <div class="fig-side" style="${fs(52)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl('Chọn trục qua điểm nào, vì sao?', 2)}${wl('Quy tắc moment, tìm <i>P</i><sub>1</sub>:', 3)}${wl('Tổng lực, tìm <i>N</i>:', 2)}${wl('Kiểm tra: moment quanh <i>A</i>', 2)}</div>${H.thanhMau()}</div>
-${h3(5, 'Điền bước còn thiếu: giá đỡ dời tới cách A đúng 0,3 m')}
+${wl('Chọn trục qua điểm nào, vì sao?', 3)}${wl('Quy tắc moment, tìm <i>P</i><sub>1</sub>:', 3)}${wl('Tổng lực, tìm <i>N</i>:', 3)}${wl('Kiểm tra: moment quanh <i>A</i>', 2)}</div>${H.thanhMau()}</div>
+${h3(5, 'Điền bước còn thiếu: giá đỡ dời tới cách A đúng 0,3 m', '4·5')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`Bước 1: ${m('OG=')}`, 1)}${wl(`Bước 2: ${m('P_1=')}`, 1)}
 <div class="ln"><b>Bước 3:</b> ${m('N=P_1+P=')} ${f(16)}</div></div>
@@ -163,21 +162,22 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · TRẢ BÀI')}
-${K.btvn()}
+${K.btvn().replace('<h3><i>1</i>Đề BTVN</h3>', h3(1, 'Đề BTVN', '5·1'))}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Lực ${u('15', 'N')} vuông góc tay quay, cách trục ${u('0{,}2', 'm')}. Moment?`, 2)
  + wl(`${m('\\bigstar\\bigstar')} Lực ${u('40', 'N')} đặt ở mép cửa cách bản lề ${u('0{,}9', 'm')}, hợp với mặt cửa góc ${m('60^\\circ')}. Moment?`, 2)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Thanh nhẹ dài ${u('1', 'm')} kê trên hai giá ở hai đầu ${m('A')}, ${m('B')}; treo vật ${u('300', 'N')} cách ${m('A')} ${u('0{,}4', 'm')}. Lực mỗi giá?`, 3))}${H.haiGia()}</div>
 <div class="card soft" style="margin-top:.8mm;padding:.6mm 3mm"><b>Quay lại búa tr.97:</b> Minh ${nw(`${m('M=')} ${fx()} N·m`)}; Tuấn ${nw(`${m('M=')} ${fx()} N·m`)}; cần ${u('40', 'N\\cdot m')} → nhổ được: ${f(25)}</div>
 ${h3(3, 'IV · Trả bài 6 câu', '5·3')}
-${box(`${tb('1. Moment lực là gì? Công thức, đơn vị.')}${lines(2)}
+${box(`${tb('1. Moment lực là gì? Công thức, đơn vị.')}${lines(1)}
 ${tb('2. Cánh tay đòn đo từ đâu tới đâu?')}${lines(1)}
 ${tb('3. Phát biểu quy tắc moment. Áp dụng cho vật nào?')}${lines(1)}
 ${tb('4. Hai điều kiện cân bằng của vật rắn?')}${lines(1)}
 ${tb('5. Ngẫu lực là gì? Gây ra chuyển động gì?')}${lines(1)}
-${tb('6. Moment ngẫu lực tính thế nào? Có phụ thuộc trục không?')}${lines(1)}`)}
+${tb('6. Moment ngẫu lực tính thế nào? Có phụ thuộc trục không?')}${lines(1)}
+<div style="margin-top:.6mm"><b>Bạn cùng bàn kiểm Trả bài:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${fx()} Tập`)}</div>`)}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
-${box(wl('1.', 2) + wl('2.', 1) + wl('3.', 1))}
+${box(wl('1.', 1) + wl('2.', 1) + wl('3.', 1))}
 ${foot(5)}</section>`;
 
 const dang = [
