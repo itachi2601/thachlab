@@ -82,12 +82,16 @@ function ONhapCham({
             onChange={(e) => setRaw(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && kiemTra()}
             placeholder={`ví dụ ${vidu}`}
-            className="min-h-11 w-full min-w-0 rounded-lg bg-transparent px-3 text-base text-ink outline-none placeholder:text-slate-500"
+            className="min-h-11 w-full min-w-0 rounded-lg bg-transparent px-3 text-base text-ink outline-none placeholder:text-muted"
           />
           <span className="shrink-0 text-base text-muted">{donVi}</span>
         </div>
         {!kq && (
-          <button type="button" className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-white" onClick={kiemTra}>
+          <button
+            type="button"
+            className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-white"
+            onClick={kiemTra}
+          >
             Kiểm tra
           </button>
         )}
@@ -137,7 +141,9 @@ function CauKieuDe({ de, cac }: { de: string; cac: { text: string; dung?: boolea
                 </span>
                 {daChon && (
                   <span className="mt-1 font-sans text-sm text-muted">
-                    <b className={o.dung ? "text-ok" : "text-muted"}>{o.dung ? "✓ Đây là phát biểu sai cần tìm." : "Phát biểu đúng."}</b>{" "}
+                    <b className={o.dung ? "text-ok" : "text-muted"}>
+                      {o.dung ? "✓ Đây là phát biểu sai cần tìm." : "Phát biểu đúng."}
+                    </b>{" "}
                     {o.why}
                   </span>
                 )}
@@ -163,20 +169,48 @@ const K = 200; // px/m
 const R = 8; // px, bán kính bi vẽ (không theo tỉ lệ)
 const X_BI = 132;
 
-function CanhRoi({ s, tMs, lan, treMs, tuDu, xong }: { s: number; tMs: number; lan: LanChan[]; treMs: number; tuDu: boolean; xong: boolean }) {
+function CanhRoi({
+  s,
+  tMs,
+  lan,
+  treMs,
+  tuDu,
+  xong,
+}: {
+  s: number;
+  tMs: number;
+  lan: LanChan[];
+  treMs: number;
+  tuDu: boolean;
+  xong: boolean;
+}) {
   const t = Math.max(0, tMs - treMs) / 1000;
   const yDay = xong ? 282 : Math.min(Y0 + 0.5 * G_THAT * t * t * K, 282); // xong: bi nằm trong hộp hứng
   const yCong = Y0 + s * K;
   const b = lan.find((l) => l.o === "B");
   const chan = !!b && tMs >= b.vao && tMs <= b.ra;
   return (
-    <svg viewBox="0 0 360 292" className="block w-full select-none text-ink" role="img" aria-label="Giá đỡ, nam châm điện giữ viên bi, cổng quang cách đáy bi một đoạn s, thước đo">
+    <svg
+      viewBox="0 0 360 292"
+      className="block w-full select-none text-ink"
+      role="img"
+      aria-label="Giá đỡ, nam châm điện giữ viên bi, cổng quang cách đáy bi một đoạn s, thước đo"
+    >
       {/* giá đỡ */}
       <line x1={40} y1={10} x2={40} y2={284} stroke="currentColor" strokeWidth={4} />
       <line x1={14} y1={284} x2={200} y2={284} stroke="currentColor" strokeWidth={4} />
       <line x1={40} y1={26} x2={112} y2={26} stroke="currentColor" strokeWidth={3} />
       {/* nam châm điện */}
-      <rect x={112} y={12} width={40} height={28} rx={4} fill="var(--color-primary-soft)" stroke="var(--color-primary)" strokeWidth={2} />
+      <rect
+        x={112}
+        y={12}
+        width={40}
+        height={28}
+        rx={4}
+        fill="var(--color-surface-2)"
+        stroke="currentColor"
+        strokeWidth={2}
+      />
       <text x={160} y={24} fontSize={16} fill="currentColor">
         Nam châm điện
       </text>
@@ -186,30 +220,61 @@ function CanhRoi({ s, tMs, lan, treMs, tuDu, xong }: { s: number; tMs: number; l
         </text>
       )}
       {/* thước */}
-      <line x1={72} y1={Y0} x2={72} y2={Y0 + K} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={80} y1={Y0} x2={80} y2={Y0 + K} stroke="currentColor" strokeWidth={1.5} />
       {Array.from({ length: 11 }, (_, i) => (
-        <line key={i} x1={72} x2={i % 5 === 0 ? 84 : 79} y1={Y0 + i * 0.1 * K} y2={Y0 + i * 0.1 * K} stroke="currentColor" strokeWidth={1.5} />
+        <line
+          key={i}
+          x1={80}
+          x2={i % 5 === 0 ? 92 : 87}
+          y1={Y0 + i * 0.1 * K}
+          y2={Y0 + i * 0.1 * K}
+          stroke="currentColor"
+          strokeWidth={1.5}
+        />
       ))}
       {[0, 0.5, 1].map((m) => (
-        <text key={m} x={66} y={Y0 + m * K + 5} textAnchor="end" fontSize={16} fill="var(--color-muted)">
+        <text key={m} x={74} y={Y0 + m * K + 5} textAnchor="end" fontSize={16} fill="var(--color-muted)">
           {m === 0 ? "0" : vnSo(m, 1)}
         </text>
       ))}
       {/* hộp mềm hứng bi */}
-      <rect x={112} y={270} width={40} height={14} rx={2} fill="var(--color-surface-2)" stroke="var(--color-line-strong)" />
+      <rect
+        x={112}
+        y={270}
+        width={40}
+        height={14}
+        rx={2}
+        fill="var(--color-surface-2)"
+        stroke="var(--color-line-strong)"
+      />
       {/* cổng quang */}
       <rect x={100} y={yCong - 9} width={10} height={18} rx={2} fill="currentColor" />
       <rect x={154} y={yCong - 9} width={10} height={18} rx={2} fill="currentColor" />
-      <line x1={110} x2={154} y1={yCong} y2={yCong} stroke={chan ? "var(--color-danger)" : "var(--color-ok)"} strokeWidth={2} strokeDasharray="4 3" />
+      <line
+        x1={110}
+        x2={154}
+        y1={yCong}
+        y2={yCong}
+        stroke={chan ? "var(--color-danger)" : "var(--color-ok)"}
+        strokeWidth={2}
+        strokeDasharray="4 3"
+      />
       <text x={170} y={yCong + 5} fontSize={16} fill="currentColor">
         Cổng quang
       </text>
       {/* kích thước s */}
-      <line x1={286} x2={286} y1={Y0} y2={yCong} stroke="var(--color-primary)" strokeWidth={1.5} />
-      <line x1={278} x2={294} y1={Y0} y2={Y0} stroke="var(--color-primary)" strokeWidth={1.5} />
-      <line x1={278} x2={294} y1={yCong} y2={yCong} stroke="var(--color-primary)" strokeWidth={1.5} />
-      <line x1={152} x2={278} y1={Y0} y2={Y0} stroke="var(--color-primary)" strokeWidth={1} strokeDasharray="2 3" />
-      <text x={282} y={(Y0 + yCong) / 2 + (s < 0.3 ? -22 : 5)} textAnchor="end" fontSize={16} fontWeight={700} fill="var(--color-primary)">
+      <line x1={286} x2={286} y1={Y0} y2={yCong} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={278} x2={294} y1={Y0} y2={Y0} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={278} x2={294} y1={yCong} y2={yCong} stroke="currentColor" strokeWidth={1.5} />
+      <line x1={152} x2={278} y1={Y0} y2={Y0} stroke="currentColor" strokeWidth={1} strokeDasharray="2 3" />
+      <text
+        x={282}
+        y={(Y0 + yCong) / 2 + (s < 0.3 ? -22 : 5)}
+        textAnchor="end"
+        fontSize={16}
+        fontWeight={700}
+        fill="currentColor"
+      >
         s = {vnSo(s, 3)} m
       </text>
       {/* bi */}
@@ -232,7 +297,12 @@ function TrucKetQua({ ds }: { ds: TomTat[] }) {
   const h = 36 + ds.length * 30;
   return (
     <figure>
-      <svg viewBox={`0 0 360 ${h}`} className="block w-full text-ink" role="img" aria-label="Các khoảng g đo được so với 9,8 m/s²">
+      <svg
+        viewBox={`0 0 360 ${h}`}
+        className="block w-full text-ink"
+        role="img"
+        aria-label="Các khoảng g đo được so với 9,8 m/s²"
+      >
         <line x1={24} x2={336} y1={h - 20} y2={h - 20} stroke="currentColor" strokeWidth={1.5} />
         {[9.2, 9.6, 9.8, 10.0].map((v) => (
           <g key={v}>
@@ -242,22 +312,40 @@ function TrucKetQua({ ds }: { ds: TomTat[] }) {
             </text>
           </g>
         ))}
-        <line x1={x(G_THAT)} x2={x(G_THAT)} y1={6} y2={h - 20} stroke="var(--color-ok)" strokeWidth={2} strokeDasharray="4 3" />
+        <line
+          x1={x(G_THAT)}
+          x2={x(G_THAT)}
+          y1={6}
+          y2={h - 20}
+          stroke="var(--color-ok)"
+          strokeWidth={2}
+          strokeDasharray="4 3"
+        />
         {ds.map((d, i) => {
           const y = 22 + i * 30;
           const mau = d.tuDu ? "var(--color-warn)" : "var(--color-primary)";
           return (
             <g key={i}>
-              <line x1={x(d.kq.g - d.kq.dg)} x2={x(d.kq.g + d.kq.dg)} y1={y} y2={y} stroke={mau} strokeWidth={5} strokeLinecap="round" />
+              <line
+                x1={x(d.kq.g - d.kq.dg)}
+                x2={x(d.kq.g + d.kq.dg)}
+                y1={y}
+                y2={y}
+                stroke={mau}
+                strokeWidth={5}
+                strokeLinecap="round"
+              />
               <circle cx={x(d.kq.g)} cy={y} r={5} fill={mau} />
-              <text x={Math.min(x(d.kq.g + d.kq.dg) + 6, 326)} y={y + 5} fontSize={16} fill={mau}>
+              <text x={Math.max(x(d.kq.g - d.kq.dg) - 6, 30)} textAnchor="end" y={y + 5} fontSize={16} fill={mau}>
                 B{d.so}
               </text>
             </g>
           );
         })}
       </svg>
-      <figcaption className="text-sm text-muted">Vạch xanh lá đứt: 9,8 m/s². Mỗi đoạn: ḡ ± Δg của một bảng (cam: có từ dư).</figcaption>
+      <figcaption className="mt-1 text-sm text-muted">
+        Vạch xanh lá đứt: 9,8 m/s². Mỗi đoạn: ḡ ± Δg của một bảng (cam: có từ dư).
+      </figcaption>
     </figure>
   );
 }
@@ -266,30 +354,48 @@ function TrucKetQua({ ds }: { ds: TomTat[] }) {
 
 const DU_DOAN = {
   question:
-    "Nam châm còn từ dư: ngắt công tắc thì đồng hồ bắt đầu đếm ngay, nhưng bi còn bám lại một chút rồi mới rơi. So với khi không có từ dư (cùng độ cao s), 5 số t đo được sẽ thế nào?",
+    "Nam châm còn từ dư: ngắt công tắc thì đồng hồ bắt đầu đếm ngay, nhưng lõi sắt vẫn còn hút nhẹ viên bi. So với khi không có từ dư (cùng độ cao s), 5 số t đo được sẽ thế nào?",
   options: [
     {
       text: "Cùng lớn hơn, vẫn chụm như cũ.",
       correct: true,
       why: "Lần nào đồng hồ cũng đếm thêm khoảng bi còn bám nam châm, nên cả loạt dịch lên như nhau; độ chụm do nhiễu ngẫu nhiên quyết định.",
     },
-    { text: "Cùng nhỏ hơn, vẫn chụm như cũ.", why: "Đồng hồ đếm từ lúc ngắt điện, bi rời muộn thì thời gian đếm dài ra chứ không ngắn đi." },
-    { text: "Tản ra nhiều hơn, trung bình không đổi.", why: "Từ dư làm bi rời muộn gần như cùng một khoảng mỗi lần: lệch về một phía, không phải lên xuống ngẫu nhiên." },
-    { text: "Không đổi, vì lấy trung bình 5 lần là hết sai số.", why: "Lấy trung bình chỉ giảm phần lên xuống ngẫu nhiên; phần lệch một phía vẫn còn nguyên." },
+    {
+      text: "Cùng nhỏ hơn, vẫn chụm như cũ.",
+      why: "Đồng hồ đếm từ lúc ngắt điện, bi rời muộn thì thời gian đếm dài ra chứ không ngắn đi.",
+    },
+    {
+      text: "Tản ra nhiều hơn, trung bình không đổi.",
+      why: "Từ dư làm bi rời muộn gần như cùng một khoảng mỗi lần: lệch về một phía, không phải lên xuống ngẫu nhiên.",
+    },
+    {
+      text: "Không đổi, vì lấy trung bình 5 lần là hết sai số.",
+      why: "Lấy trung bình chỉ giảm phần lên xuống ngẫu nhiên; phần lệch một phía vẫn còn nguyên.",
+    },
   ],
 };
 
 const CAU_DE = {
   de: "Một nhóm đo g bằng nam châm điện, cổng quang và đồng hồ hiện số (MODE A↔B), thả bi 5 lần từ s = 0,500 m. Nam châm còn từ dư nên bi rời nam châm muộn hơn lúc đồng hồ bắt đầu đếm. Phát biểu nào sau đây sai?",
   cac: [
-    { text: "Năm số t lệch nhau vài phần nghìn giây là do sai số ngẫu nhiên.", why: "Các lần lên xuống quanh giá trị trung bình là sai số ngẫu nhiên." },
-    { text: "Từ dư làm mọi số t lớn hơn thời gian rơi thật nên ḡ nhỏ hơn g thật.", why: "g = 2s/t²: t lớn hơn thì g tính ra nhỏ hơn." },
     {
-      text: "Thả thêm nhiều lần rồi lấy trung bình sẽ khử được sai số do từ dư.",
-      dung: true,
-      why: "Lần nào bi cũng rời muộn như nhau nên trung bình bao nhiêu lần vẫn lệch. Cách giảm: chỉnh dòng điện nam châm vừa đủ giữ bi để bi rời ngay khi ngắt.",
+      text: "Năm số t lệch nhau vài phần nghìn giây là do sai số ngẫu nhiên.",
+      why: "Các lần lên xuống quanh giá trị trung bình là sai số ngẫu nhiên.",
     },
-    { text: "Kết quả có thể chụm (Δg nhỏ) mà khoảng ḡ ± Δg vẫn không chứa giá trị thật.", why: "Δg tính từ độ phân tán và dụng cụ, không phát hiện được phần lệch một phía (xem bảng có từ dư)." },
+    {
+      text: "Từ dư làm mọi số t lớn hơn thời gian rơi thật nên ḡ nhỏ hơn g thật.",
+      why: "g = 2s/t²: t lớn hơn thì g tính ra nhỏ hơn.",
+    },
+    {
+      text: "Đặt cổng quang thấp hơn (s lớn hơn) thì ḡ càng lệch nhiều khỏi g thật.",
+      dung: true,
+      why: "Độ trễ do từ dư gần như không đổi, nên t càng lớn thì phần trễ càng nhỏ so với t: thả cao hơn ḡ lệch ÍT hơn (có từ dư, s = 0,200 m cho ḡ ≈ 9,3; s = 1,000 m cho ḡ ≈ 9,6 m/s²). Cách giảm thật: chỉnh dòng điện nam châm vừa đủ giữ bi.",
+    },
+    {
+      text: "Kết quả có thể chụm (Δg nhỏ) mà khoảng ḡ ± Δg vẫn không chứa giá trị thật.",
+      why: "Δg tính từ độ phân tán và dụng cụ, không phát hiện được phần lệch một phía (xem bảng có từ dư).",
+    },
   ],
 };
 
@@ -348,7 +454,10 @@ export default function ThucHanhRoiTuDo() {
     const nb = buocTinh + 1;
     setBuocTinh(nb);
     if (nb === 4 && bangTinh)
-      setLichSu((ls) => [{ so: bangTinh.so, sCm: bangTinh.sCm, tuDu: bangTinh.tuDu, kq: tinhLoat(bangTinh.tMs, bangTinh.sCm / 100) }, ...ls]);
+      setLichSu((ls) => [
+        { so: bangTinh.so, sCm: bangTinh.sCm, tuDu: bangTinh.tuDu, kq: tinhLoat(bangTinh.tMs, bangTinh.sCm / 100) },
+        ...ls,
+      ]);
   };
 
   const bangDay = loat.tMs.length === SO_LAN;
@@ -361,7 +470,10 @@ export default function ThucHanhRoiTuDo() {
   const coCaHai = lichSuHien.some((l) => l.tuDu) && lichSuHien.some((l) => !l.tuDu);
 
   return (
-    <section className="rounded-2xl border border-line bg-panel p-3 text-ink sm:p-5" aria-label="Thí nghiệm ảo đo gia tốc rơi tự do">
+    <section
+      className="rounded-2xl border border-line bg-panel p-3 text-ink sm:p-5"
+      aria-label="Thí nghiệm ảo đo gia tốc rơi tự do"
+    >
       <h2 className="font-display text-lg font-semibold">Thí nghiệm ảo: đo gia tốc rơi tự do</h2>
       <p className="mt-1 text-base text-muted">
         Nhiệm vụ: thả bi 5 lần, tự tính g = ḡ ± Δg. Rồi bật “từ dư”, đo thêm một bảng và so.
@@ -406,10 +518,20 @@ export default function ThucHanhRoiTuDo() {
             <div className="flex items-center gap-2">
               <span className="w-24 shrink-0 text-sm text-muted">Từ dư nam châm</span>
               <div className="flex flex-1 gap-2">
-                <button type="button" className={segBtn(!tuDu)} disabled={khoaDieuKien} onClick={() => tuDu && doiDieuKien(sCm, false)}>
+                <button
+                  type="button"
+                  className={segBtn(!tuDu)}
+                  disabled={khoaDieuKien}
+                  onClick={() => tuDu && doiDieuKien(sCm, false)}
+                >
                   Không
                 </button>
-                <button type="button" className={segBtn(tuDu)} disabled={khoaDieuKien} onClick={() => !tuDu && doiDieuKien(sCm, true)}>
+                <button
+                  type="button"
+                  className={segBtn(tuDu)}
+                  disabled={khoaDieuKien}
+                  onClick={() => !tuDu && doiDieuKien(sCm, true)}
+                >
                   Có
                 </button>
               </div>
@@ -419,7 +541,10 @@ export default function ThucHanhRoiTuDo() {
 
           <div className="mt-3">
             <CanhRoi s={s} tMs={may.tMs} lan={lan} treMs={treMs} tuDu={tuDu} xong={may.trangThai === "xong"} />
-            <p className="text-sm text-muted">Bi rơi chiếu chậm {CHIEU_CHAM} lần. Coi giá thẳng đứng, tia sáng ngang mép dưới bi.</p>
+            <p className="text-sm text-muted">
+              Bi rơi chiếu chậm {CHIEU_CHAM} lần. Bỏ qua sức cản không khí. Coi giá thẳng đứng, tia sáng ngang mép dưới
+              bi.
+            </p>
           </div>
           <div className="mt-2">
             <BangDongHoHienSo
@@ -439,8 +564,7 @@ export default function ThucHanhRoiTuDo() {
           {/* Bảng số liệu, 3 cột xếp dọc (H2). */}
           <div className="mt-3">
             <p className="text-base font-semibold">
-              Bảng {loat.so} · s = {vnSo(loat.sCm / 100, 3)} m ·{" "}
-              {loat.tuDu ? "có từ dư" : "không từ dư"}
+              Bảng {loat.so} · s = {vnSo(loat.sCm / 100, 3)} m · {loat.tuDu ? "có từ dư" : "không từ dư"}
             </p>
             <table className="mt-1 w-full border-collapse text-base tabular-nums">
               <thead>
@@ -457,20 +581,30 @@ export default function ThucHanhRoiTuDo() {
                   return (
                     <tr key={i}>
                       <td className="border-b border-line py-1.5 pr-2">{i + 1}</td>
-                      <td className="border-b border-line py-1.5 pr-2 font-mono">{t === undefined ? "—" : vnSo(t / 1000, 3)}</td>
-                      <td className="border-b border-line py-1.5 font-mono text-muted">{hienLech ? vnSo(kqTinh.lech[i], 4) : ""}</td>
+                      <td className="border-b border-line py-1.5 pr-2 font-mono">
+                        {t === undefined ? "—" : vnSo(t / 1000, 3)}
+                      </td>
+                      <td className="border-b border-line py-1.5 font-mono text-muted">
+                        {hienLech ? vnSo(kqTinh.lech[i], 4) : ""}
+                      </td>
                     </tr>
                   );
                 })}
               </tbody>
             </table>
-            {!bangDay && <p className="mt-1 text-sm text-muted">Bấm Ngắt nam châm, đọc số, RESET, thả lần tiếp. Còn {SO_LAN - loat.tMs.length} lần.</p>}
+            {!bangDay && (
+              <p className="mt-1 text-sm text-muted">
+                Bấm Ngắt nam châm, đọc số, RESET, thả lần tiếp. Còn {SO_LAN - loat.tMs.length} lần.
+              </p>
+            )}
           </div>
 
           {/* Học sinh tự tính bảng 1 (L1, L4). */}
           {bangTinh && kqTinh && !(chay && dangHienLaBangTinh) && (
             <div className="mt-4 space-y-2">
-              <p className="text-base font-semibold">Tự tính từ bảng 1 (s = {vnSo(bangTinh.sCm / 100, 3)} m, Δs = 0,001 m, Δt_dc = {vnSo(DC_T, 3)} s)</p>
+              <p className="text-base font-semibold">
+                Tự tính từ bảng 1 (s = {vnSo(bangTinh.sCm / 100, 3)} m, Δs = 0,001 m, Δt_dc = {vnSo(DC_T, 3)} s)
+              </p>
               <ONhapCham
                 nhan={<>1. Thời gian rơi trung bình t̄ =</>}
                 donVi="s"
@@ -488,7 +622,13 @@ export default function ThucHanhRoiTuDo() {
                 />
               )}
               {buocTinh >= 2 && (
-                <ONhapCham nhan={<>3. ḡ = 2s : t̄² =</>} donVi="m/s²" vidu="9,70" cham={(r) => chamG(r, bangTinh.sCm / 100, kqTinh)} onXong={xongTinh} />
+                <ONhapCham
+                  nhan={<>3. ḡ = 2s : t̄² =</>}
+                  donVi="m/s²"
+                  vidu="9,70"
+                  cham={(r) => chamG(r, bangTinh.sCm / 100, kqTinh)}
+                  onXong={xongTinh}
+                />
               )}
               {buocTinh >= 3 && (
                 <ONhapCham
@@ -501,8 +641,11 @@ export default function ThucHanhRoiTuDo() {
               )}
               {hsXong && (
                 <p className="rounded-xl border border-line bg-surface-2 p-3 text-base">
-                  Kết quả bảng 1: <b>g = {vnSo(kqTinh.g, 2)} ± {vnSo(kqTinh.dg, 2)} m/s²</b>, tức từ {vnSo(kqTinh.g - kqTinh.dg, 2)} đến{" "}
-                  {vnSo(kqTinh.g + kqTinh.dg, 2)} m/s².
+                  Kết quả bảng 1:{" "}
+                  <b>
+                    g = {vnSo(kqTinh.g, 2)} ± {vnSo(kqTinh.dg, 2)} m/s²
+                  </b>
+                  , tức từ {vnSo(kqTinh.g - kqTinh.dg, 2)} đến {vnSo(kqTinh.g + kqTinh.dg, 2)} m/s².
                 </p>
               )}
             </div>
@@ -516,19 +659,21 @@ export default function ThucHanhRoiTuDo() {
               <ul className="space-y-1 text-base tabular-nums">
                 {lichSuHien.map((l, i) => (
                   <li key={i}>
-                    B{l.so}: s = {vnSo(l.sCm / 100, 3)} m, {l.tuDu ? "có từ dư" : "không từ dư"} → t̄ = {vnSo(l.kq.tbar, 4)} s, g = {vnSo(l.kq.g, 2)} ±{" "}
-                    {vnSo(l.kq.dg, 2)} m/s²
+                    B{l.so}: s = {vnSo(l.sCm / 100, 3)} m, {l.tuDu ? "có từ dư" : "không từ dư"} → t̄ ={" "}
+                    {vnSo(l.kq.tbar, 4)} s, g = {vnSo(l.kq.g, 2)} ± {vnSo(l.kq.dg, 2)} m/s²
                   </li>
                 ))}
               </ul>
               {coCaHai ? (
                 <p className="rounded-xl border border-line bg-surface-2 p-3 text-base leading-relaxed">
-                  Bảng có từ dư: mọi t lớn hơn chừng {vnSo(TRE_TU_DU_MS / 1000, 3)} s nên ḡ <b>nhỏ hơn</b>, mà Δg vẫn nhỏ như cũ: chụm nhưng lệch. Cách
-                  giảm: chỉnh dòng điện nam châm vừa đủ giữ bi; thả thêm nhiều lần không khử được.
+                  Bảng có từ dư: mọi t lớn hơn chừng {vnSo(TRE_TU_DU_MS / 1000, 3)} s nên ḡ <b>nhỏ hơn</b>, mà Δg vẫn
+                  nhỏ như cũ: chụm nhưng lệch. Cách giảm: chỉnh dòng điện nam châm vừa đủ giữ bi; thả thêm nhiều lần
+                  không khử được. Thử thêm: s = 1,000 m, có từ dư thì lệch nhiều hay ít hơn?
                 </p>
               ) : (
                 <p className="text-base text-muted">
-                  {tuDu ? "Bỏ" : "Bật"} “từ dư” ({tuDu ? "Không" : "Có"}) rồi thả 5 lần: máy tính sẵn bảng mới để so với bảng 1.
+                  {tuDu ? "Bỏ" : "Bật"} “từ dư” ({tuDu ? "Không" : "Có"}) rồi thả 5 lần: máy tính sẵn bảng mới để so với
+                  bảng 1.
                 </p>
               )}
             </div>
@@ -538,9 +683,13 @@ export default function ThucHanhRoiTuDo() {
             <div className="mt-4 space-y-3">
               <CauKieuDe de={CAU_DE.de} cac={CAU_DE.cac} />
               <details className="rounded-xl border border-line bg-surface-2 p-3">
-                <summary className="min-h-11 cursor-pointer py-2 text-base font-semibold">Thí nghiệm này chưa nói được gì? Nghĩ một câu rồi mở.</summary>
+                <summary className="min-h-11 cursor-pointer py-2 text-base font-semibold">
+                  Thí nghiệm này chưa nói được gì? Nghĩ một câu rồi mở.
+                </summary>
                 <ul className="mt-1 list-disc space-y-1 pl-5 text-base leading-relaxed">
-                  <li>Chỉ một bảng ở một độ cao không phát hiện được từ dư: cả 5 số t cùng lớn lên, bảng vẫn chụm đẹp.</li>
+                  <li>
+                    Chỉ một bảng ở một độ cao không phát hiện được từ dư: cả 5 số t cùng lớn lên, bảng vẫn chụm đẹp.
+                  </li>
                   <li>Không cho biết vật nhẹ, sức cản lớn có rơi với cùng g: mô hình đã bỏ qua sức cản không khí.</li>
                 </ul>
               </details>
