@@ -5,7 +5,7 @@
 // bài toán mẫu nguồn nuôi bộ sấy, thử thách ⭐–⭐⭐⭐, 5 dạng bài tập mẫu. Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l11-bai25.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai25.pdf
 //       node scripts/ruot-tap/l11-bai25.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai25/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b25 as H } from './hinh-l11-bai25.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -61,10 +61,10 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Hoá đơn tiền điện ghi “312 kWh”, mẹ gọi là “312 số điện”. Một bóng đèn ${W('100')} sáng liên tục 10 giờ “ăn” bao nhiêu số điện?</p>
 <div class="fig-side" style="${fs(40)}"><div>
-${opt('A', '100 số, vì công suất là 100 W')}
-${opt('B', '1000 số, vì 100 nhân 10')}
+${opt('A', '100 số')}
+${opt('B', '1000 số')}
 ${opt('C', '1 số')}
-${opt('D', '10 số, vì sáng 10 giờ')}
+${opt('D', '10 số')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 1)}</div>
 ${H.congTo()}</div>
 </div>
@@ -155,8 +155,8 @@ ${tb('4. Công, công suất của nguồn; khác công suất mạch ngoài ch�
 ${tb('5. Hiệu suất nguồn: hai cách viết, suy ra từ đâu?')}${lines(2)}
 ${tb('6. Vì sao đoản mạch gây cháy? Chọn cầu chì thế nào?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
-${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
+${h3(3, 'Đề 1220 (19 câu, cuối tiết)', '4·3')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/19 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">

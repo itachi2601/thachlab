@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điện trở. Định luật Ohm · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Điện trở. Định luật Ohm (L11 Bài 23) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa chạy lớp ảo. Tập bài 23 = trang 13–24 của quyển Chương 4; trên lớp dùng tr.13–17, nhãn ô in trên giấy dạng "Tập 13·2".</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Ba clip thí nghiệm dựng lại</b> (cần mạng, số liệu mô phỏng — clip có ghi, nói rõ với lớp): điện trở 10 Ω (màn 3b), bóng đèn 6 V – 3 W (màn 4b), NTC trong cốc nước (màn 5a). Clip nằm bên trái cao hết màn, cột phải hiện chữ to; mỗi clip bỏ phần mở đầu, <b>tự dừng 2 lần</b> + lần cuối. <b>Enter</b> (Space, bấm clip, nút ▶) = phát tiếp; ↺ xem lại đoạn; lần dừng cuối Enter sang màn sau. Trước giờ bấm ▶ rồi ↺ ở cả ba màn để máy tải sẵn.</li>
+  <li><b>Có đồ thật thì làm thật thay clip:</b> điện trở công suất 10 Ω, bóng đèn 6 V – 3 W, nguồn điều chỉnh 0–6 V, hai đồng hồ vạn năng (DCA nối tiếp, DCV song song); NTC 10 kΩ + cốc nước ấm + nhiệt kế. Bảng trong Tập đã in sẵn số đo, lớp so số thật với số in.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1218 "Kiểm tra nhanh — Bài 23. Điện trở. Định luật Ohm"</b> (20 câu, 15 phút, mục 207) trên điện thoại: màn 6b có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1218&amp;item=207</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>PhET "Định luật Ohm"</b> (cần mạng, bản tiếng Việt): màn 3f, mặc định bỏ qua; dùng khi dư giờ hoặc khi clip 3b không chạy.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 25 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 23 <small>thứ tự lật: tr.13 → 14 → 15 → 16 → 13</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán bóng đèn đứt</td><td>0–3</td><td>tr.13 ô 13·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Điện trở, đổi đơn vị</td><td>3–7</td><td>tr.13 ô 13·4, 13·5</td><td>dây B, mức cản, $R=U/I$, ôm, Ω, V/A, 6 Ω, 24 Ω, 3 phép đổi = 11 · làm nhanh 5 mA</td></tr>
+<tr><td>3 · Mạch đo, đường đặc trưng, định luật Ohm</td><td>7–15</td><td>tr.14 ô 14·1, 14·2</td><td>nối tiếp/song song, hàng $U/I$ (5 ô), 2 rút ra, đường đặc trưng 5 chỗ, sai số 4 chỗ · định luật Ohm 4 chỗ + $I=U/R$ + "không đổi" + LED 150 Ω</td></tr>
+<tr><td>4 · Vì sao có điện trở, đèn, $R(t)$</td><td>15–22</td><td>tr.15 ô 15·1 → 15·4</td><td>ion 9 chỗ · 3 ô $U/I$ của đèn + quan sát 2 + rút ra 2 + điốt 2 · công thức $R(t)$ + 5 chỗ · điền bước 2, 3</td></tr>
+<tr><td>5 · NTC/PTC, Bẫy 1–3</td><td>22–27</td><td>tr.16 ô 16·1, 16·2</td><td>cảm biến, âm/giảm, dương/tăng · Bẫy 2 (NTC, 4,3 kΩ) · Bẫy 1 (10 Ω; 0,20; 0,40) · Bẫy 3 ($1/R$, $R$, 10 Ω, 20 Ω)</td></tr>
+<tr><td>6 · Trả bài + quay lại + đề 1218</td><td>27–30, đề 30–45</td><td>tr.16 ô 16·3 câu 2, 5 → tr.13 ô 13·3, 13·1 → đề xong: tr.17 ô 17·1</td><td>2 dòng trả bài + đáp án dự đoán, đúng/sai + đánh dấu mục tiêu + điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 3 và 4 dày nhất (mỗi điểm một clip). Không làm trên lớp: chấm điểm lên hai lưới ô 14·1, 15·2 (về nhà, đã có số), bảng "Nhắc lại từ lớp 9" ô 14·3, Trả bài câu 1, 3, 4, 6, bài toán mẫu ô 17·2 (cùng cách tính với ô 15·4 đã làm).</p>
+
+<h2>Điểm dừng 1 · Dự đoán <small>phút 0–3 · Tập tr.13 ô 13·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Nhà em có bóng đèn sợi đốt nào từng 'tạch' đúng lúc bật không? Ổ cắm lúc nào cũng 220 V, vậy lúc vừa bật khác lúc đang sáng ở đâu?"</li>
+  <li>Màn 1a chỉ có hình (y Tập), màn 1b câu y Tập. Khoanh, chắc/không chắc, một dòng "Vì sao". Không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại" (màn "Quay lại bóng đèn").</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C (hiệu điện thế không đổi nên dòng không đổi) — chưa biết điện trở đổi theo nhiệt độ; chọn B (lúc nóng nhất "mệt" nhất).</div>
+
+<h2>Điểm dừng 2 · Điện trở <small>phút 3–7 · tr.13 ô 13·4, 13·5</small></h2>
+<ul>
+  <li>Màn 2a: hình hai dây của Tập; đọc to, lớp chép chữ gạch chân (dòng 1–3 ô 13·4).</li>
+  <li>Màn 2b: cho lớp tự tính $R$ dây A, dây B và ba phép đổi (40 giây), rồi bấm "Mở: tính", "Mở: đổi đơn vị".</li>
+  <li>Màn 2c = ô 13·5: biểu quyết A–D, rồi viết vào ô "$I=$ … mA".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> thế thẳng kΩ vào $I=U/R$ (ra 5 A); chia ngược $R/U$; nhầm $1$ mA $=10^{-6}$ A.</div>
+
+<h2>Điểm dừng 3 · Mạch đo, đường đặc trưng, định luật Ohm <small>phút 7–15 · tr.14 ô 14·1, 14·2</small></h2>
+<ul>
+  <li>Màn 3a: hình mạch của Tập, điền "nối tiếp", "song song" ở dòng Làm.</li>
+  <li><span class="k">Clip điện trở 10 Ω (màn 3b, khoảng 2 phút):</span> trước khi phát, biểu quyết "Tăng $U$ thì $U/I$ thế nào?" (đáp án C, lộ ở lần dừng ②). ① 17,4 s: đủ 5 điểm → lớp điền hàng $U/I$ trong bảng; ② 21,8 s: bảng kết quả, chốt C; cuối 26,0 s: "U gấp đôi thì I gấp đôi; I tỉ lệ thuận với U" = dòng Rút ra.</li>
+  <li>Màn 3c (Hình 2 bài web): đường đặc trưng, 5 chỗ điền. Hỏi "đường đứt là 20 Ω: dốc hơn hay thoải hơn?".</li>
+  <li>Màn 3d: biểu quyết sai số (khối Sai số ô 14·1). Đáp án mở có 20 %, 4 %, "độ dốc đường thẳng".</li>
+  <li>Màn 3e = ô 14·2: đọc định luật, lớp chép; ví dụ LED cho 30 giây tự tính rồi mở.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> mắc ampe kế song song; nghĩ "dốc hơn là $R$ lớn hơn" (Bẫy 3); quên đổi 20 mA ra A (ra 0,15 Ω).</div>
+
+<h2>Điểm dừng 4 · Vì sao có điện trở, bóng đèn, $R$ theo nhiệt độ <small>phút 15–22 · tr.15 ô 15·1 → 15·4</small></h2>
+<ul>
+  <li>Màn 4a: hình mạng ion của Tập (trái lạnh, phải nóng). Hỏi "nóng lên thì electron đi khó hay dễ hơn?" trước khi mở chuỗi "nóng hơn thì…".</li>
+  <li><span class="k">Clip bóng đèn (màn 4b, khoảng 2 phút):</span> ① 13,9 s: 3,0 V cho 0,33 A → biểu quyết "lên 6,0 V, $I$ sẽ…" (đáp án C, nhỏ hơn 0,66 A); ② 18,1 s: đủ bảng → chốt C, lớp tự tính 3 ô $U/I$ trống (2,0; 4,0; 6,0 V) rồi so với clip; cuối 26,1 s: dòng Quan sát.</li>
+  <li>Màn 4c (Hình 4 bài web): dòng Rút ra + điốt.</li>
+  <li>Màn 4d = ô 15·3: công thức, 5 chỗ điền. Nhấn: $t-t_0$ °C hay K như nhau, không cộng 273.</li>
+  <li>Màn 4e = ô 15·4: lớp làm 1 phút rồi mở.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> "U lớn hơn nên R lớn hơn" (nguyên nhân là nhiệt độ, không phải $U$); quên "1 +" (18 Ω) hoặc cộng $\alpha\Delta t$ vào $R_0$ (8,5 Ω).</div>
+
+<h2>Điểm dừng 5 · Điện trở nhiệt và ba cái bẫy <small>phút 22–27 · tr.16 ô 16·1, 16·2</small></h2>
+<ul>
+  <li><span class="k">Clip NTC (màn 5a, khoảng 2 phút):</span> ① 14,3 s: 25 °C là 10,0 kΩ → biểu quyết "pha nóng dần, số kΩ…" (đáp án D); ② 19,6 s: 10,0 → 6,5 → 4,3 → 3,0 kΩ, chốt D; cuối 36,1 s: thẻ Bẫy của clip = Bẫy 2 trong Tập (lớp tích ô Bẫy 2, điền "NTC", "4,3").</li>
+  <li>Màn 5b = ô 16·1: cảm biến, âm/giảm, dương/tăng. Ví dụ PTC trong cục sạc: quá dòng → nóng → $R$ tăng vọt → chặn dòng.</li>
+  <li>Màn 5c (Bẫy 1) và 5d (Bẫy 3, hình hai đường của Tập): biểu quyết, rồi điền số vào ô 16·2.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Bẫy 1 chọn A/B ($R$ tăng theo $U$); Bẫy 3 chọn A (đúng số nhưng gán ngược) hoặc B (lấy $I/U$).</div>
+
+<h2>Điểm dừng 6 · Trả bài + quay lại + đề 1218 <small>phút 27–30 trả bài · 30–45 làm đề · tr.16 ô 16·3 → tr.13 ô 13·3</small></h2>
+<ul>
+  <li>Trả bài 2 câu của ô 16·3 (đúng lời Tập): câu 2 và câu 5; câu 1, 3, 4, 6 về nhà. Viết <b>1,5 phút, chưa bấm Mở</b>, rồi mở từng câu để tự sửa bằng bút khác màu.</li>
+  <li><span class="k">Màn "Quay lại bóng đèn" (1 phút):</span> hình đèn cạnh dòng "gần nguội 5,9 Ω, sáng đủ 12 Ω". Enter mở đáp án A. Lớp lật tr.13 ô 13·3: đáp án, đúng/sai, dòng "điều em hiểu sai". <b>20 giây: đánh dấu ô 13·1</b>.</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1218 trong 15 phút. Nộp xong ghi ngay vào tr.17 ô 17·1: điểm …/20, câu sai, câu đoán mò.</li>
+  <li>Đọc màn "Về nhà theo Tập"; ô 17·3 ghi đề BTVN thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1218 so với phần học trên lớp:</b> ít nhất 5 câu của đề trùng câu đã biểu quyết hoặc câu trong bài web: 2,2 kΩ – 11 V (= màn 2c), Bẫy 1 10 Ω 2,0 → 4,0 V (= màn 5c), NTC pin 25 → 45 °C (= clip 5a), hai đường (4,0 V; 0,40/0,20 A) (= màn 5d), dây tóc 2,0 Ω lên 2 020 °C (bài web "Thử sức", chưa làm trên lớp nhưng cùng cách ô 15·4). Câu đã biểu quyết đo "nhớ lại", chưa đo "chuyển sang tình huống mới". Xem đề trên web trước giờ.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · đồng $\alpha=3{,}9\cdot10^{-3}$ K⁻¹</small></h2>
+<ol>
+<li>Điện trở $4{,}7$ kΩ mắc vào $9{,}4$ V. Dòng điện: A. $2{,}0$ A · B. $2{,}0$ mA · C. $0{,}5$ mA · D. $44$ mA</li>
+<li>Điện trở 20 Ω (nhiệt độ ổn định) đang chịu 3,0 V. Tăng lên 6,0 V thì: A. $R$ = 40 Ω, $I$ giữ 0,15 A · B. $R$ vẫn 20 Ω, $I$ từ 0,15 A lên 0,30 A · C. $R$ = 10 Ω, $I$ = 0,60 A · D. $R$ = 40 Ω, $I$ = 0,30 A</li>
+<li>Đồ thị $U$ theo $I$ (trục đứng là $U$): (1) qua (2,0 mA; 6,0 V), (2) qua (2,0 mA; 3,0 V). A. $R_1=3{,}0$ kΩ, $R_2=1{,}5$ kΩ · B. $R_1=1{,}5$ kΩ, $R_2=3{,}0$ kΩ · C. $R_1=3{,}0$ Ω, $R_2=1{,}5$ Ω · D. $R_1=0{,}33$ kΩ, $R_2=0{,}67$ kΩ</li>
+<li>Cuộn dây đồng $R_0=10\ \Omega$ ở 20 °C, nóng lên 120 °C. Điện trở: A. $3{,}9\ \Omega$ · B. $13{,}9\ \Omega$ · C. $10{,}39\ \Omega$ · D. $14{,}7\ \Omega$</li>
+<li>Pin sạc nóng lên, mạch sạc giảm dòng nhờ đọc điện trở của: A. dây đồng, $R$ tăng mạnh · B. NTC, $R$ giảm · C. PTC, $R$ giảm · D. NTC, $R$ tăng</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>$I=9{,}4/4700=0{,}0020$ A $=2{,}0$ mA</td><td>A: để nguyên kΩ · C: chia ngược · D: nhân</td></tr>
+<tr><td>2</td><td>B</td><td>$R$ không đổi; $I=3{,}0/20=0{,}15$ A → $6{,}0/20=0{,}30$ A</td><td>A, D: $R$ tăng theo $U$ (Bẫy 1) · C: ngược chiều</td></tr>
+<tr><td>3</td><td>A</td><td>Trục đứng là $U$: độ dốc $=R$; $6{,}0/2{,}0$ mA $=3{,}0$ kΩ, $3{,}0/2{,}0$ mA $=1{,}5$ kΩ</td><td>B: gán ngược · C: quên mA · D: lấy $I/U$</td></tr>
+<tr><td>4</td><td>B</td><td>$10[1+3{,}9\cdot10^{-3}\cdot100]=13{,}9\ \Omega$</td><td>A: quên "1 +" · C: cộng $\alpha\Delta t$ thẳng vào $R_0$ ($10+0{,}39$) · D: dùng $t=120$ thay $t-t_0$</td></tr>
+<tr><td>5</td><td>B</td><td>NTC hệ số âm: nóng thì $R$ giảm, dùng làm cảm biến</td><td>A: kim loại tăng ít · C: PTC tăng · D: ngược chiều NTC</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 3f (PhET, đã mặc định bỏ) và 3d (sai số, để khối Sai số ô 14·1 về nhà); ở clip 5a dừng ở lần ② rồi sang màn (bỏ thẻ Bẫy, nói miệng Bẫy 2); không cắt giờ làm đề 1218 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: màn 3f PhET; hoặc thử thách ⭐⭐ ô 17·4 (điểm 2,0 V của đèn: $I=0{,}26$ A, trên đường đứt 12 Ω có $I=0{,}17$ A → nằm trên).</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (trục $U$, $I$, (1), (2), lạnh/nóng) có đọc được không.</li>
+  <li>Tỉ lệ đoán đúng ô dự đoán (A) lúc đầu giờ; tỉ lệ đúng lần đầu ở các câu biểu quyết (2c, clip 3b, 3d, clip 4b, clip 5a, 5c, 5d).</li>
+  <li>Ba clip có tải kịp không; dừng đúng chỗ không.</li>
+  <li>Đề 1218: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (dự đoán: điểm dừng 3 hoặc 4).</li>
+</ul>
+</body>
+</html>
