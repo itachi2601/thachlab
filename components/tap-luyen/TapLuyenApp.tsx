@@ -19,6 +19,13 @@ const TABS: { key: Tab; label: string; icon: React.ReactNode }[] = [
   { key: "so-do", label: "Số đo", icon: <Ruler size={18} /> },
 ];
 
+/** Ba điều học sinh cần biết trước buổi đầu (rút từ RULES_TEXT_HS, bản đầy đủ ở hộp "Tập an toàn" cuối tab). */
+const FIRST_SESSION_SAFETY = [
+  "Khởi động 5 phút: xoay cổ, vai, hông, gối, cổ chân; đi bộ nhanh tại chỗ.",
+  "Động tác bắt đầu sai thì dừng hiệp, không cố thêm lần.",
+  "Đau nhói ở khớp, chóng mặt, tức ngực hay khó thở bất thường: dừng ngay và báo người lớn.",
+];
+
 function buildDraft(r: Routine | null, history: Workout[]): Draft {
   const exercises: LoggedExercise[] = (r?.items ?? []).map((it) => {
     const meta = exerciseById(it.ex)!;
@@ -194,19 +201,34 @@ function StartTab({ program, history, loaded, focus, onStart }: { program: Progr
 
   return (
     <div className="space-y-3">
-      <Card>
-        <p className="text-sm text-muted">Tuần này</p>
-        <p className="text-2xl font-bold text-ink">
-          {weekCount}/{ROUTINES.length} buổi <span className="text-base font-semibold text-muted">· {ROUTINES.map((r) => (doneKeys.has(r.key) ? `${r.key} ✓` : r.key)).join("  ")}</span>
-        </p>
-        {loaded && history.length === 0 && (
-          <p className="mt-1 text-sm text-muted">
-            {hs
-              ? "Chưa có buổi nào. Bắt đầu từ buổi 1, làm số lần vừa sức với động tác đúng; cột “Lần trước” sẽ tự có từ buổi sau."
-              : "Chưa có buổi nào. Buổi đầu: nhập tạ vừa sức, cột “Lần trước” sẽ tự có từ buổi sau."}
+      {/* Học sinh (mục tự chọn, không tính điểm): không hiện "0/3 buổi" như chỉ tiêu còn thiếu (N3, L3) — chỉ ghi nhận buổi đã tập. */}
+      {!hs && (
+        <Card>
+          <p className="text-sm text-muted">Tuần này</p>
+          <p className="text-2xl font-bold text-ink">
+            {weekCount}/{ROUTINES.length} buổi <span className="text-base font-semibold text-muted">· {ROUTINES.map((r) => (doneKeys.has(r.key) ? `${r.key} ✓` : r.key)).join("  ")}</span>
           </p>
-        )}
-      </Card>
+          {loaded && history.length === 0 && (
+            <p className="mt-1 text-sm text-muted">Chưa có buổi nào. Buổi đầu: nhập tạ vừa sức, cột “Lần trước” sẽ tự có từ buổi sau.</p>
+          )}
+        </Card>
+      )}
+      {hs && weekCount > 0 && (
+        <Card>
+          <p className="text-sm text-muted">Tuần này</p>
+          <p className="text-2xl font-bold text-ink">Em đã tập {weekCount} buổi</p>
+        </Card>
+      )}
+      {/* Buổi đầu tiên: ba điều an toàn hiện sẵn phía trên nút Bắt đầu (trước đây chỉ nằm trong hộp gập cuối trang). */}
+      {hs && loaded && history.length === 0 && (
+        <Card>
+          <p className="font-bold text-ink">Trước buổi đầu tiên</p>
+          <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink">
+            {FIRST_SESSION_SAFETY.map((t) => <li key={t}>{t}</li>)}
+          </ul>
+          <p className="mt-2 text-sm text-muted">Bắt đầu từ buổi 1, làm số lần vừa sức. Cột “Lần trước” sẽ tự có từ buổi sau.</p>
+        </Card>
+      )}
 
       {ROUTINES.map((r) => {
         const last = lastOf(r.key);
@@ -259,7 +281,7 @@ function StartTab({ program, history, loaded, focus, onStart }: { program: Progr
       </button>
 
       <details className="rounded-2xl border border-line bg-panel p-4">
-        <summary className="min-h-8 cursor-pointer font-bold text-ink">{hs ? "Tập an toàn: đọc trước buổi đầu" : "Nguyên tắc chương trình · số hiệp/tuần"}</summary>
+        <summary className="min-h-8 cursor-pointer font-bold text-ink">{hs ? "Tập an toàn: bản đầy đủ" : "Nguyên tắc chương trình · số hiệp/tuần"}</summary>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-ink">
           {program.rules.map((t) => <li key={t}>{t}</li>)}
         </ul>

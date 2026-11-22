@@ -235,7 +235,8 @@ function ExerciseCard({
           )}
         </div>
       </div>
-      {meta?.cue && <p className="mt-1 text-xs leading-relaxed text-muted">{meta.cue}</p>}
+      {/* C1: hướng dẫn động tác là chữ cần đọc (an toàn) → 14px, không 12px */}
+      {meta?.cue && <p className="mt-1 text-sm leading-relaxed text-muted">{meta.cue}</p>}
       {hit && track !== "reps" && (
         <p className="mt-2 flex items-center gap-1.5 rounded-lg bg-primary-soft px-2 py-1.5 text-xs font-semibold text-primary">
           <TrendingUp size={14} />
