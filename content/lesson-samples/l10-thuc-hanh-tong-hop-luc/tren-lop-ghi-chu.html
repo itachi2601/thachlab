@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thực hành tổng hợp lực · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Thực hành: Tổng hợp lực (L10 Bài 22) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Tuỳ chọn:</b> ba lực kế $5\ \text{N}$, vài đoạn dây, một vật nặng: bày trên bàn thầy cho lớp nhìn nút O đứng yên (không bắt buộc, tiết này học trên giấy).</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1243 "Kiểm tra lý thuyết — Bài 22"</b> (20 câu, 15 phút, mục id 298) trên điện thoại: màn QR cao 62% màn (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1243&amp;item=298</code>) và số đề để gõ tay.</li>
+  <li>Bài này <b>không có clip, không PhET</b> trong bản chiếu (bài web có clip 44 giây, chưa dựng thành màn có điểm dừng). Số liệu trên màn là <b>số liệu minh hoạ</b> của bài web: hôm nay không đo thật.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 29 màn, mỗi màn một ý, một cột. Mở toàn màn hình (F11 hoặc ⌃⌘F). Chữ thường = 5,2% chiều cao màn.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang và ô.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 22 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.5; đề cuối tiết ghi điểm ở tr.2 ô 2·4</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán khung ảnh + nhắc lại</td><td>0–4</td><td>tr.1 ô 1·2 → 1·4 → 1·5</td><td>khoanh 1 phương án + 1 dòng "Vì sao" + 5 chỗ + 1 đáp số</td></tr>
+<tr><td>2 · Dụng cụ, lực cân bằng, độ chia</td><td>4–8</td><td>tr.2 ô 2·1 → 2·2 → 2·3</td><td>5 dòng bảng + 7 chỗ + 2 chỗ</td></tr>
+<tr><td>3 · Các bước đo + bẫy số 0</td><td>8–13</td><td>tr.3 ô 3·1 → 3·2</td><td>3 chỗ + 1 dòng + bảng 3 dòng + 1 ô chọn</td></tr>
+<tr><td>4 · Bẫy góc α + bảng số liệu + hình lần 2</td><td>13–18</td><td>tr.3 ô 3·3 → tr.4 ô 4·1 → 4·2</td><td>4 chỗ + chép bảng + hàng lần 2</td></tr>
+<tr><td>5 · Sai số Δ, một lần vượt, làm nhanh</td><td>18–24</td><td>tr.4 ô 4·3 → 4·4 → 4·5</td><td>3 chỗ + câu áp dụng + 2 chỗ + 4 chỗ</td></tr>
+<tr><td>6 · Vẽ hình, kết luận, trả bài, khung ảnh, đề 1243</td><td>24–30, đề 30–45</td><td>tr.5 ô 5·1 → 5·2 → 5·3 → tr.1 ô 1·3 → đề xong: tr.2 ô 2·4</td><td>dòng kết luận + câu 3 báo cáo + đúng/sai + điểm /20</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 4 và 5 dày nhất. Không cắt màn 5b (áp dụng ô 4·3): đó là câu kiểm xem học sinh có hiểu "một lần vượt Δ chưa bác bỏ quy tắc".</p>
+
+<h2>Điểm dừng 1 · Dự đoán khung ảnh <small>phút 0–4 · Tập tr.1 ô 1·2 → 1·5</small></h2>
+<ul>
+  <li>Màn 1a: hỏi "Ai có khung ảnh treo bằng hai dây ở nhà? Dây có bao giờ đứt không?" — để lớp kể.</li>
+  <li>Màn 1b: viết chữ cái vào ô "Em chọn" rồi một dòng "Vì sao". Không có ô đáp án trên màn này; đáp án ở màn "Quay lại khung ảnh" cuối tiết.</li>
+  <li>Màn 1c, 1d: nhắc lại hợp lực hai lực đồng quy (5 chỗ + $F=2{,}5$ N). Nhấn: $\alpha=0^\circ$ cộng, $180^\circ$ trừ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (trọng lượng vẫn $2{,}0$ N nên mỗi dây $2{,}0$ N) hoặc D; cộng thẳng $1{,}5+2{,}0=3{,}5$.</div>
+
+<h2>Điểm dừng 2 · Dụng cụ, lực cân bằng, độ chia <small>phút 4–8 · tr.2 ô 2·1 → 2·3</small></h2>
+<ul>
+  <li>Màn 2a (Hình 1 của bài): chỉ lực kế 3 và góc $\alpha$. Màn 2a2: bảng dụng cụ, Enter mở cột "Để làm gì".</li>
+  <li>Màn 2b (ô 2·2): ý chính cả bài: nút O đứng yên nên $\vec F_3$ cân bằng $\vec F$. $F_{\text{vẽ}}$ là lực <b>vẽ</b>, $F_3$ là lực <b>đo</b>.</li>
+  <li>Màn 2c: thang lực kế vẽ lớn; kim chỉ $2{,}3$ N (ba vạch sau số 2). Dặn nhìn thẳng mặt chỉ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ $\vec F_3$ cùng chiều $\vec F$; đọc độ chia sai ($0{,}5$ thay vì $0{,}1$).</div>
+
+<h2>Điểm dừng 3 · Các bước đo + bẫy số 0 <small>phút 8–13 · tr.3 ô 3·1 → 3·2</small></h2>
+<ul>
+  <li>Màn 3a: bốn bước; chép 3 chỗ trống. Màn 3b: hỏi miệng "vì sao đợi O đứng yên", để học sinh viết một dòng.</li>
+  <li>Màn 3c: bảng ba tình huống; Enter mở cột "Em làm". Màn 3d: biểu quyết A/B/C (lớn hơn, nhỏ hơn, bằng), đáp án mở cùng màn: cả hai số đọc dư $0{,}1$ N, hai số lệch cùng dấu nên cộng dồn.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C "bằng" (nghĩ hai số lệch bù trừ); chỉnh $0$ lúc nằm ngang rồi treo thẳng.</div>
+
+<h2>Điểm dừng 4 · Bẫy góc α + bảng số liệu + hình lần 2 <small>phút 13–18 · tr.3 ô 3·3 → tr.4 ô 4·1 → 4·2</small></h2>
+<ul>
+  <li>Màn 4a: biểu quyết A–D ($F_1=2{,}0$, $F_2=3{,}0$, $\alpha=120^\circ$ đo ở O); đáp án B $2{,}6$ N. Màn 4b: điền ô 3·3 (nối đuôi là $60^\circ$, công thức vẫn thay $120^\circ$).</li>
+  <li>Màn 4c: chép ba hàng số liệu minh hoạ vào ô 4·1; cột "Số 0 lệch" hàng 3 để trống, điền ở màn 5c2.</li>
+  <li>Màn 4d (Hình 2): làm mẫu hàng lần 2 (cạnh $4{,}0$ cm, $F_{\text{vẽ}}=3{,}45$, $\delta=0{,}05$). Hai hàng còn lại làm ở nhà.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C ($60^\circ$, nhầm góc bù), D ($90^\circ$); lấy cạnh vẽ $=F$ mà quên chia $0{,}5$.</div>
+
+<h2>Điểm dừng 5 · Sai số Δ, một lần vượt, làm nhanh <small>phút 18–24 · tr.4 ô 4·3 → 4·5</small></h2>
+<ul>
+  <li>Màn 5a: $\Delta=0{,}3$ N và hai dòng kết luận. Màn 5b: biểu quyết câu áp dụng (đáp án D), màn 5b2 giải. Nhấn "một lần vượt chưa bác bỏ quy tắc".</li>
+  <li>Màn 5c (Hình 3): hỏi lần $\delta$ lớn nhất và chiều lệch. Màn 5c2: lực kế 3 đổi cái khác, số $0$ lệch $0{,}3$.</li>
+  <li>Màn 5d (ô 4·5): hợp, hợp, chưa hợp; việc đầu tiên kiểm là số $0$ từng lực kế.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn B (quy tắc sai) hoặc A (cộng hai số); lẫn $\Delta F=0{,}1$ với $\Delta=0{,}3$.</div>
+
+<h2>Điểm dừng 6 · Vẽ hình, kết luận, trả bài, đề 1243 <small>phút 24–30 · đề 30–45</small></h2>
+<ul>
+  <li>Màn 6a: bốn bước vẽ trên lưới (ô 5·1); hôm nay vẽ theo số lần 2, lần đo thật của nhóm vẽ khi thực hành. Màn 6b: ô 5·2 và câu 3 báo cáo (ô 5·3).</li>
+  <li>Màn 6c: Trả bài hai câu, cho viết $1{,}5$ phút rồi mới mở. Màn 6cau: quay lại khung ảnh, mở đáp án C ($T=1{,}15$ N lên $2{,}00$ N).</li>
+  <li>Màn 6qr: QR đề 1243, làm một mình 15 phút; nộp xong ghi điểm $/20$ vào Tập tr.2 ô 2·4. Màn 6ve: Về nhà, cho học sinh chụp lại.</li>
+</ul>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 1d, 2c, 3b, 5d (các ô vẫn nằm trong Tập để làm ở nhà). Không bỏ 2b, 5a, 5b.</li>
+  <li>Dư: cho học sinh vẽ hình bình hành lần 3 trên lưới (ô 5·1) rồi so với đáp án trên màn 5c.</li>
+</ul>
+<h2>Phiếu giấy dự phòng</h2>
+<ul><li>Mất mạng: in trang Tập tr.1–5 (không đáp án), đọc các câu A–D bằng miệng, đáp án đọc từ trang này.</li></ul>
+<h2>Sau buổi dạy</h2>
+<ul><li>Ghi tỉ lệ biểu quyết các câu 1b, 3d, 4a, 5b và những ô học sinh hỏi lại.</li></ul>
+</body>
+</html>

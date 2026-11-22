@@ -1,0 +1,575 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thực hành tổng hợp lực · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1,.f2,.f3,.f4,.fh,.fp{height:58vh} .fd{height:26vh}
+/* nhãn trong hình bài web (viewBox rộng 420, chữ gốc 14–19): phóng lên để chữ trong hình ≈ 0,7 cỡ chữ thường.
+   Hình Tập (viewBox 320, chữ 20) đã đủ to, không phóng. */
+.f1 svg text,.f3 svg text,.f4 svg text{font-size:22px}
+/* chỉ số dưới (tspan có font-size riêng 14–15) cũng phóng, để không nhãn nào dưới 0,7 */
+.f3 svg tspan[font-size],.f4 svg tspan[font-size]{font-size:20px} .fp svg tspan[font-size]{font-size:17px}
+/* hình kéo xiên, hai vật nối dây nhiều nhãn: hình rộng hơn để chỉ số dưới vẫn ≥ 0,7 chữ thường */
+@media (min-width:761px){.hai>.fig.f3,.hai>.fig.f4{width:50%}}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .bang{font-size:15px;width:100%} .bang td,.bang th{padding:6px 4px}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 22</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 22 · tr.1</span></div>
+  <div class="giua">
+    <h1>Thực hành: Tổng hợp lực</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Treo khung ảnh bằng hai dây: dời hai đinh ra xa thì mỗi dây chịu lực thế nào?</li>
+      <li>Ba lực kế và một nút dây đo được lực tổng hợp bằng cách nào?</li>
+      <li>Khi nào được viết "hợp quy tắc" thay vì "gần bằng"?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Số liệu trên màn là số liệu minh hoạ của bài web · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–4</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="hai">
+    <div class="fig fp"><svg viewBox="0 0 320 220" role="img" aria-label="Khung ảnh treo bằng hai dây vào hai đinh"><circle cx="60" cy="30" r="6" fill="currentColor"/><circle cx="260" cy="30" r="6" fill="currentColor"/><line x1="60" y1="30" x2="160" y2="118" stroke="currentColor" stroke-width="3"/><line x1="260" y1="30" x2="160" y2="118" stroke="currentColor" stroke-width="3"/><line x1="160" y1="118" x2="160" y2="140" stroke="currentColor" stroke-width="3"/><rect x="95" y="140" width="130" height="68" fill="#fff" stroke="currentColor" stroke-width="3"/><text x="160" y="182" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">2,0 N</text><path d="M140,90 A32,32 0 0 0 180,90" fill="none" stroke="#1d4ed8" stroke-width="3"/><text x="160" y="76" text-anchor="middle" font-size="22" font-weight="700" fill="#1d4ed8" font-style="italic">α</text><text x="60" y="20" text-anchor="middle" font-size="18" fill="currentColor">đinh</text><text x="260" y="20" text-anchor="middle" font-size="18" fill="currentColor">đinh</text></svg></div>
+    <div class="ben">
+      <p>Khung ảnh nặng $2{,}0\ \text{N}$ treo bằng hai dây giống hệt nhau, đối xứng, buộc vào hai đinh.</p>
+      <p>Em dời hai đinh ra xa: góc $\alpha$ giữa hai dây tăng từ $60^\circ$ lên $120^\circ$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–4</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Lực căng của mỗi dây thay đổi thế nào?</p>
+    <ol class="opt">
+      <li><b>A.</b> Không đổi, vì trọng lượng khung vẫn là $2{,}0\ \text{N}$</li>
+      <li><b>B.</b> Giảm đi, vì dây xoạc ra thì mỗi dây gánh nhẹ hơn</li>
+      <li><b>C.</b> Tăng lên, vì hai lực nghiêng vẫn phải đỡ $2{,}0\ \text{N}$</li>
+      <li><b>D.</b> Bằng một nửa trọng lượng, vì hai dây giống hệt nhau</li>
+    </ol>
+    <p class="nho">Viết chữ cái vào ô "Em chọn" của Tập, rồi một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại khung ảnh").</p>
+  </div>
+</section>
+
+<section class="man" id="m1c">
+  <div class="top"><span class="so">1/6 · Nhắc lại</span><span>phút 0–4</span><span class="tap">tr.1 · ô 1·4</span></div>
+  <div class="giua">
+    <p>Hai lực $\vec F_1,\ \vec F_2$ chung gốc O, hợp góc $\alpha$. Quy tắc hình bình hành: $\vec F$ là đường ? qua O.</p>
+    <p>$F=$ ? · $\alpha=0^\circ$: $F=$ ? · $\alpha=90^\circ$: $F=$ ? · $\alpha=180^\circ$: $F=$ ?</p>
+    <button class="mo" data-mo="h1">Mở: nhắc lại</button>
+    <div class="an" id="h1" hidden>
+      <p>Đường <b class="o">chéo</b> qua O · $F=$ <b class="o">$\sqrt{F_1^2+F_2^2+2F_1F_2\cos\alpha}$</b></p>
+      <p>$0^\circ$: <b class="o">$F_1+F_2$</b> · $90^\circ$: <b class="o">$\sqrt{F_1^2+F_2^2}$</b> · $180^\circ$: <b class="o">$|F_1-F_2|$</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m1d">
+  <div class="top"><span class="so">1/6 · Làm nhanh</span><span>phút 0–4</span><span class="tap">tr.1 · ô 1·5</span></div>
+  <div class="giua">
+    <p>$F_1=1{,}5\ \text{N}$ và $F_2=2{,}0\ \text{N}$ đồng quy, hai dây vuông góc. Hợp lực $\vec F$ có độ lớn bao nhiêu?</p>
+    <button class="mo" data-mo="l1">Mở: lời giải</button>
+    <div class="an" id="l1" hidden>
+      <p>Vuông góc: $F=\sqrt{1{,}5^2+2{,}0^2}=\sqrt{6{,}25}=$ <b class="o">$2{,}5\ \text{N}$</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Dụng cụ và bố trí</span><span>phút 4–8</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 420 310" role="img" aria-label="Sơ đồ bố trí thí nghiệm tổng hợp lực: hai lực kế 1 và 2 móc vào hai chốt trên giá đỡ, hai dây nghiêng gặp nhau ở nút O; từ nút O một dây thẳng đứng đi xuống qua lực kế 3 tới vật nặng; góc alpha là góc giữa hai dây ở nút O; nền là bảng giấy"><rect x="12" y="48" width="396" height="252" rx="4" fill="rgba(128,128,128,.12)" stroke="currentColor" stroke-width="1.6"/><rect x="80" y="28" width="272" height="8" fill="rgba(128,128,128,.35)" stroke="currentColor" stroke-width="2"/><circle cx="96" cy="40" r="4" fill="currentColor"/><line x1="96" y1="36" x2="96" y2="40" stroke="currentColor" stroke-width="2"/><circle cx="324" cy="40" r="4" fill="currentColor"/><line x1="324" y1="36" x2="324" y2="40" stroke="currentColor" stroke-width="2"/><line x1="96.0" y1="40.0" x2="210.0" y2="176.0" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="324.0" y1="40.0" x2="210.0" y2="176.0" stroke="currentColor" stroke-width="2" opacity="1"/><g transform="rotate(-40.0 141.6 94.4)"><rect x="133.6" y="70.4" width="16" height="48" rx="3" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/><line x1="133.6" y1="94.4" x2="149.6" y2="94.4" stroke="currentColor" stroke-width="1.6"/></g><g transform="rotate(40.0 278.4 94.4)"><rect x="270.4" y="70.4" width="16" height="48" rx="3" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/><line x1="270.4" y1="94.4" x2="286.4" y2="94.4" stroke="currentColor" stroke-width="1.6"/></g><line x1="210.0" y1="176.0" x2="210.0" y2="200.0" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="202" y="200" width="16" height="46" rx="3" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/><line x1="202" y1="223" x2="218" y2="223" stroke="currentColor" stroke-width="1.6"/><line x1="210.0" y1="246.0" x2="210.0" y2="258.0" stroke="currentColor" stroke-width="2" opacity="1"/><rect x="190" y="258" width="40" height="30" rx="3" fill="rgba(251,146,60,.30)" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="176" r="5" fill="#f87171" stroke="currentColor" stroke-width="1.4"/><path d="M186.9,148.4 A36,36 0 0 1 233.1,148.4" fill="none" stroke="#f87171" stroke-width="2.4"/><text x="205.0" y="134.0" fill="currentColor" font-size="18" font-weight="700" text-anchor="middle" font-style="italic" font-family="serif">α</text><text x="12.0" y="40.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">giá đỡ</text><text x="20.0" y="122.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">lực kế 1</text><text x="400.0" y="122.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="end">lực kế 2</text><text x="222.0" y="196.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">nút O</text><text x="192.0" y="232.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="end">lực kế 3</text><text x="238.0" y="280.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">vật nặng</text><text x="20.0" y="292.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">bảng giấy</text></svg></div>
+    <div class="ben">
+      <p>Ba dây gặp nhau ở nút O; vật nặng kéo nút O xuống qua lực kế 3.</p>
+      <p class="hoi">Lực kế nào treo vật? Góc $\alpha$ nằm ở đâu?</p>
+      <button class="mo" data-mo="d2">Mở: trả lời</button>
+      <div class="an" id="d2" hidden><p>Lực kế <b class="o">3</b> treo vật, kéo nút O xuống · $\alpha$ là góc giữa <b class="o">hai dây</b> ở nút O.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2a2">
+  <div class="top"><span class="so">2/6 · Dụng cụ</span><span>phút 4–8</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="giua">
+    <table>
+      <tr><th>Dụng cụ</th><th>Để làm gì · độ chia</th></tr>
+      <tr><td>Giá đỡ, bảng giấy</td><td class="ns an-o" data-o="u2">treo lực kế, chấm phương các dây</td></tr>
+      <tr><td>Ba lực kế $5\ \text{N}$</td><td class="ns an-o" data-o="u2">đọc $F_1,F_2,F_3$ · độ chia $0{,}1\ \text{N}$</td></tr>
+      <tr><td>Dây mảnh, nút O</td><td class="ns an-o" data-o="u2">nối ba lực kế lại với nhau</td></tr>
+      <tr><td>Vật nặng</td><td class="ns an-o" data-o="u2">móc vào lực kế 3, kéo nút O xuống</td></tr>
+      <tr><td>Thước, thước đo độ</td><td class="ns an-o" data-o="u2">vẽ hình, chia $1\ \text{mm}$ và $1^\circ$</td></tr>
+    </table>
+    <button class="mo" data-mo="u2">Mở: cột "Để làm gì"</button>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Vì sao lực kế 3 đo được lực tổng hợp</span><span>phút 4–8</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="giua">
+    <p>Nút O <b>đứng yên</b>. Hợp lực lên O bằng ? nên $\vec F+\vec F_3=$ ?</p>
+    <p>$\vec F_3$ so với $\vec F$: cùng ?, cùng ?, ? chiều.</p>
+    <p>$F_{\text{vẽ}}$: ? từ hình bình hành · $F_3$: số chỉ lực kế ?</p>
+    <button class="mo" data-mo="c2">Mở: lực cân bằng</button>
+    <div class="an" id="c2" hidden>
+      <p>Hợp lực lên O bằng <b class="o">0</b> · $\vec F+\vec F_3=$ <b class="o">$\vec 0$</b></p>
+      <p>cùng <b class="o">độ lớn</b>, cùng <b class="o">phương</b>, <b class="o">ngược</b> chiều</p>
+      <p>$F_{\text{vẽ}}$: <b class="o">đo</b> từ hình bình hành · $F_3$: số chỉ lực kế <b class="o">3</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Độ chia và cách đọc</span><span>phút 4–8</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="giua">
+    <p>Mặt lực kế $5\ \text{N}$ chia vạch. Mỗi độ chia ứng ? N. Nhìn <b>thẳng</b> mặt chỉ để tránh sai số do nhìn lệch.</p>
+    <div class="fig fd"><svg viewBox="0 0 320 135" role="img" aria-label="Mặt chia độ lực kế 5 N, kim chỉ giữa vạch 2 và 3"><rect x="24" y="40" width="272" height="70" rx="6" fill="#fff" stroke="currentColor" stroke-width="2"/><line x1="40" y1="40" x2="40" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="40" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">0</text><line x1="45" y1="40" x2="45" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="50" y1="40" x2="50" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="55" y1="40" x2="55" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="60" y1="40" x2="60" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="65" y1="40" x2="65" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="70" y1="40" x2="70" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="75" y1="40" x2="75" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="80" y1="40" x2="80" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="85" y1="40" x2="85" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="90" y1="40" x2="90" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="90" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">1</text><line x1="95" y1="40" x2="95" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="100" y1="40" x2="100" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="105" y1="40" x2="105" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="110" y1="40" x2="110" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="115" y1="40" x2="115" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="120" y1="40" x2="120" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="125" y1="40" x2="125" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="130" y1="40" x2="130" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="135" y1="40" x2="135" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="140" y1="40" x2="140" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="140" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">2</text><line x1="145" y1="40" x2="145" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="150" y1="40" x2="150" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="155" y1="40" x2="155" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="160" y1="40" x2="160" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="165" y1="40" x2="165" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="170" y1="40" x2="170" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="175" y1="40" x2="175" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="180" y1="40" x2="180" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="185" y1="40" x2="185" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="190" y1="40" x2="190" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="190" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">3</text><line x1="195" y1="40" x2="195" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="200" y1="40" x2="200" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="205" y1="40" x2="205" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="210" y1="40" x2="210" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="215" y1="40" x2="215" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="220" y1="40" x2="220" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="225" y1="40" x2="225" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="230" y1="40" x2="230" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="235" y1="40" x2="235" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="240" y1="40" x2="240" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="240" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">4</text><line x1="245" y1="40" x2="245" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="250" y1="40" x2="250" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="255" y1="40" x2="255" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="260" y1="40" x2="260" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="265" y1="40" x2="265" y2="56" stroke="currentColor" stroke-width="1.6"/><line x1="270" y1="40" x2="270" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="275" y1="40" x2="275" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="280" y1="40" x2="280" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="285" y1="40" x2="285" y2="50" stroke="currentColor" stroke-width="1.6"/><line x1="290" y1="40" x2="290" y2="62" stroke="currentColor" stroke-width="2.6"/><text x="290" y="78" text-anchor="middle" font-size="20" font-weight="700" fill="currentColor">5</text><path d="M155,106 L148,124 L162,124 z" fill="#b91c1c"/></svg></div>
+    <p>Kim chỉ trên hình: $F=$ ? N</p>
+    <button class="mo" data-mo="k2">Mở: đọc kim</button>
+    <div class="an" id="k2" hidden>
+      <p>Mỗi độ chia <b class="o">$0{,}1$</b> N · kim sau số 2 ba vạch: $F=$ <b class="o">$2{,}3$</b> N</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Các bước đo</span><span>phút 8–13</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <ul>
+      <li><b>1.</b> Chỉnh số ? từng lực kế ở đúng tư thế dùng. Buộc ba dây vào nút O, chờ O ?</li>
+      <li><b>2.</b> Chấm hai điểm trên mỗi dây để đánh dấu phương; đọc $F_1,F_2,F_3$ (ghi bảng tr.4).</li>
+      <li><b>3.</b> Lấy giấy ra, nối các chấm qua O, đo góc $\alpha$. Làm ? lần, đổi vị trí hai chốt hoặc đổi vật.</li>
+      <li><b>4.</b> Vẽ hình bình hành (tr.5), đo đường chéo, tính $F_{\text{vẽ}}$; so với $F_3$.</li>
+    </ul>
+    <button class="mo" data-mo="b3">Mở: ba chỗ trống</button>
+    <div class="an" id="b3" hidden>
+      <p>Chỉnh số <b class="o">0</b> · chờ O <b class="o">đứng yên</b> · làm <b class="o">3</b> lần</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Vì sao đợi O đứng yên</span><span>phút 8–13</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <p class="hoi">Vì sao phải đợi O đứng yên rồi mới đọc số?</p>
+    <p class="nho">Nghĩ 20 giây, viết một dòng vào Tập.</p>
+    <button class="mo" data-mo="y3">Mở: vì sao</button>
+    <div class="an" id="y3" hidden>
+      <p>O còn đung đưa thì hợp lực lên O khác $0$, $\vec F_3$ chưa cân bằng $\vec F$ và số chỉ lực kế còn <b class="o">thay đổi</b>. Chỉ khi O đứng yên mới có $\vec F+\vec F_3=\vec 0$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Bẫy 1: số 0 của lực kế</span><span>phút 8–13</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <table>
+      <tr><th>Tình huống</th><th>Em làm</th></tr>
+      <tr><td>Treo thẳng đứng</td><td class="ns an-o" data-o="s3">chỉnh $0$ lúc treo thẳng, chưa móc vật</td></tr>
+      <tr><td>Kéo nghiêng hoặc nằm ngang</td><td class="ns an-o" data-o="s3">chỉnh $0$ lại ở đúng tư thế đó</td></tr>
+      <tr><td>Chưa móc gì, kim chỉ $0{,}3\ \text{N}$</td><td class="ns an-o" data-o="s3">chỉnh về $0$, hoặc ghi số lệch để trừ (số lệch cộng vào mọi lần đọc, đo nhiều lần không làm nó biến mất)</td></tr>
+    </table>
+    <button class="mo" data-mo="s3">Mở: cột "Em làm"</button>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Bẫy 1: câu biểu quyết</span><span>phút 8–13</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <p>Lực kế 1 và 2 chưa chỉnh $0$: chưa móc gì, mỗi cái chỉ $+0{,}1\ \text{N}$. Lực kế 3 đã chỉnh đúng. Nhóm vẽ hình bình hành từ số đọc $F_1,F_2$.</p>
+    <p class="hoi">$F_{\text{vẽ}}$ so với $F$ thật?</p>
+    <ol class="opt hang">
+      <li data-dung><b>A.</b> Lớn hơn</li>
+      <li><b>B.</b> Nhỏ hơn</li>
+      <li><b>C.</b> Bằng</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở: đáp án</button>
+    <div class="an" id="a3" hidden><p>Cả hai số đọc đều <b class="o">dư</b> $0{,}1\ \text{N}$, hai số lệch cùng dấu nên <b>cộng dồn</b>, không bù trừ: hình vẽ <b class="o">lớn hơn</b>. Phải trừ số lệch trước khi vẽ.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Bẫy 2: góc α ở nút O</span><span>phút 13–18</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <div class="giua">
+    <p>$F_1=2{,}0\ \text{N}$, $F_2=3{,}0\ \text{N}$, góc giữa hai dây đo <b>ở nút O</b> là $\alpha=120^\circ$.</p>
+    <p class="hoi">Lực tổng hợp có độ lớn gần nhất?</p>
+    <ol class="opt hang">
+      <li><b>A.</b> $5{,}0\ \text{N}$</li>
+      <li data-dung><b>B.</b> $2{,}6\ \text{N}$</li>
+      <li><b>C.</b> $4{,}4\ \text{N}$</li>
+      <li><b>D.</b> $3{,}6\ \text{N}$</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở: đáp án</button>
+    <div class="an" id="a4" hidden><p><b>B.</b> $F^2=2{,}0^2+3{,}0^2+2\cdot2{,}0\cdot3{,}0\cos120^\circ=13-6=7$, $F\approx2{,}6\ \text{N}$. A cộng thẳng ($\alpha=0^\circ$) · C dùng $60^\circ$ · D dùng $90^\circ$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Bẫy 2: góc vẽ nối đuôi</span><span>phút 13–18</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <div class="giua">
+    <p>Cùng $F_1=2{,}0\ \text{N}$, $F_2=3{,}0\ \text{N}$, $\alpha=120^\circ$. Công thức dùng $\alpha=$ ? ° : $F=$ ? N</p>
+    <p>Vẽ <b>nối đuôi</b> ($\vec F_2$ vẽ từ ngọn $\vec F_1$): góc ở đỉnh (dấu ?) là ? °. Khi dùng công thức vẫn thay góc ?</p>
+    <button class="mo" data-mo="g4">Mở: ô 3·3</button>
+    <div class="an" id="g4" hidden>
+      <p>$\alpha=$ <b class="o">$120$</b>° · $F=$ <b class="o">$2{,}6$</b> N</p>
+      <p>Nối đuôi: góc ở đỉnh là <b class="o">$60$</b>° $(180^\circ-\alpha)$ · công thức vẫn thay góc <b class="o">$\alpha=120^\circ$</b> đo ở O</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Bảng số liệu (số minh hoạ)</span><span>phút 13–18</span><span class="tap">tr.4 · ô 4·1</span></div>
+  <div class="giua">
+    <table class="bang">
+      <tr><th>Lần</th><th>$F_1$ (N)</th><th>$F_2$ (N)</th><th>$\alpha$ (độ)</th><th>$F_3$ đọc (N)</th></tr>
+      <tr><td>1</td><td>1,6</td><td>2,1</td><td>80</td><td>2,9</td></tr>
+      <tr><td>2</td><td>2,0</td><td>2,0</td><td>60</td><td>3,5</td></tr>
+      <tr><td>3</td><td>1,4</td><td>1,6</td><td>110</td><td>2,1</td></tr>
+    </table>
+    <p>Hôm nay coi đây là số đo của nhóm em: chép cả ba hàng vào Tập. Cột "Số 0 lệch": hàng 1, 2 ghi $0$; hàng 3 chờ tới màn "Vì sao lần 3 lệch". Cột "$F_3$ đúng" $=F_3$ đọc $-$ số $0$ lệch.</p>
+    <p class="nho">Hôm nay chỉ làm mẫu hàng 2 (màn kế); hai hàng còn lại làm ở nhà hoặc khi đo thật.</p>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Vẽ hình bình hành lần 2</span><span>phút 13–18</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="hai">
+    <div class="fig f3"><svg viewBox="0 0 420 310" role="img" aria-label="Hình bình hành lực của lần 2: từ nút O vẽ hai vectơ F1 và F2 bằng nhau, dài 4,0 xentimet, hợp nhau góc 60 độ về hai phía của phương thẳng đứng; hai đường nét đứt hoàn thành hình thoi; đường chéo hướng lên là lực tổng hợp F; vectơ F3 hướng xuống cùng phương và bằng độ lớn với F"><line x1="174.0" y1="107.6" x2="210.0" y2="45.3" stroke="currentColor" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.7"/><line x1="246.0" y1="107.6" x2="210.0" y2="45.3" stroke="currentColor" stroke-width="1.8" stroke-dasharray="6 4" opacity="0.7"/><line x1="210.0" y1="170.0" x2="174.8" y2="109.1" stroke="#f87171" stroke-width="2.8"/><path d="M174.0,119.6 L174.0,107.6 L184.4,113.6" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210.0" y1="170.0" x2="245.2" y2="109.1" stroke="#f87171" stroke-width="2.8"/><path d="M235.6,113.6 L246.0,107.6 L246.0,119.6" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210.0" y1="170.0" x2="210.0" y2="47.0" stroke="#34d399" stroke-width="2.8"/><path d="M204.0,55.7 L210.0,45.3 L216.0,55.7" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="210.0" y1="170.0" x2="210.0" y2="294.3" stroke="#38bdf8" stroke-width="2.8"/><path d="M216.0,285.6 L210.0,296.0 L204.0,285.6" fill="none" stroke="#38bdf8" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="210" cy="170" r="4" fill="currentColor"/><path d="M196.0,145.8 A28,28 0 0 1 224.0,145.8" fill="none" stroke="currentColor" stroke-width="1.8"/><text x="217.0" y="128.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start" font-style="italic" font-family="serif">α</text><text x="168.0" y="134.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="end"><tspan font-style="italic" font-family="serif">F</tspan><tspan font-size="14" dy="5">1</tspan><tspan dy="-5" font-weight="400"> = 2,0 N</tspan></text><text x="252.0" y="134.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start"><tspan font-style="italic" font-family="serif">F</tspan><tspan font-size="14" dy="5">2</tspan><tspan dy="-5" font-weight="400"> = 2,0 N</tspan></text><text x="210.0" y="30.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="middle"><tspan font-style="italic" font-family="serif">F</tspan><tspan font-weight="400"> = 3,45 N</tspan></text><text x="224.0" y="246.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start"><tspan font-style="italic" font-family="serif">F</tspan><tspan font-size="14" dy="5">3</tspan><tspan dy="-5" font-weight="400"> = 3,5 N</tspan></text></svg></div>
+    <div class="ben">
+      <p>Lần 2: $F_1=F_2=2{,}0$ N, $\alpha=60^\circ$, chéo đo $6{,}9$ cm, $F_3=3{,}5$ N. Xích: $1$ cm ứng $0{,}5$ N.</p>
+      <p class="hoi">Cạnh vẽ? $F_{\text{vẽ}}$? $\delta$?</p>
+      <button class="mo" data-mo="v4">Mở: hàng lần 2</button>
+      <div class="an" id="v4" hidden><p>Cạnh $\dfrac{2{,}0}{0{,}5}=$ <b class="o">$4{,}0$</b> cm · $F_{\text{vẽ}}=6{,}9\cdot0{,}5\approx$ <b class="o">$3{,}45$</b> N · $\delta=$ <b class="o">$0{,}05$</b> N</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Sai số Δ của bài này</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·3</span></div>
+  <div class="giua">
+    <p>Mỗi lực kế sai $\Delta F=0{,}1\ \text{N}$. $F_{\text{vẽ}}$ dựng từ $F_1,F_2$, rồi so với $F_3$, nên $\Delta=\Delta F_1+\Delta F_2+\Delta F_3=$ ? N</p>
+    <p>$\delta\le\Delta$: ? · $\delta\gt\Delta$: ?</p>
+    <button class="mo" data-mo="s5">Mở: ô 4·3</button>
+    <div class="an" id="s5" hidden>
+      <p>$\Delta=0{,}1+0{,}1+0{,}1=$ <b class="o">$0{,}3$</b> N</p>
+      <p>$\delta\le\Delta$: <b class="o">hợp quy tắc trong sai số</b> · $\delta\gt\Delta$: <b class="o">chưa hợp, kiểm dụng cụ và thao tác trước</b> khi nghi quy tắc</p>
+      <p class="nho">Lần 2: $\delta=0{,}05\le0{,}3$, hợp.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Áp dụng ô 4·3</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·3 (áp dụng)</span></div>
+  <div class="giua">
+    <p>$F_1=F_2=1{,}0$ N vuông góc, $F_3=1{,}9$ N; xích $1$ cm ứng $0{,}5$ N, mỗi lực kế sai $0{,}1$ N.</p>
+    <p class="hoi">Kết luận nào đúng?</p>
+    <ol class="opt">
+      <li><b>A.</b> Hợp, vì $F_3$ gần $F_1+F_2=2{,}0$ N</li>
+      <li><b>B.</b> Quy tắc sai, vì $\delta\gt\Delta$</li>
+      <li><b>C.</b> Hợp, vì mỗi lực kế chỉ sai $0{,}1$ N</li>
+      <li data-dung><b>D.</b> Chưa hợp, vì $\delta=0{,}5$ N vượt $\Delta$</li>
+    </ol>
+    <p class="nho">Đáp án ở màn kế.</p>
+  </div>
+</section>
+
+<section class="man" id="m5b2">
+  <div class="top"><span class="so">5/6 · Giải câu vừa bầu</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·3 (áp dụng)</span></div>
+  <div class="giua">
+    <p class="hoi">Đáp án <b>D</b>.</p>
+    <p>Cạnh vẽ $\dfrac{1{,}0}{0{,}5}=2{,}0$ cm · chéo $\sqrt2\cdot2{,}0\approx2{,}8$ cm · $F_{\text{vẽ}}=1{,}40$ N · $\delta=|1{,}40-1{,}9|=0{,}50$ N $\gt\Delta=0{,}3$ N.</p>
+    <p class="nhin">Một lần vượt chưa bác bỏ được quy tắc (không phải B): kiểm số $0$, góc, phương dây rồi đo lại.</p>
+    <p class="nho">A cộng thẳng hai số như hai lực cùng chiều · C lẫn sai số một lực kế với $\Delta$ gộp.</p>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Ba lần đo, một lần vượt</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·4</span></div>
+  <div class="hai">
+    <div class="fig f4"><svg viewBox="0 0 420 290" role="img" aria-label="Biểu đồ cột độ lệch delta của ba lần đo: lần 1 và lần 2 là hai cột thấp màu cam cùng 0,05 N, nằm dưới đường nét đứt xanh Delta bằng 0,3 N; lần 3 là cột đỏ cao 0,35 N vượt đường nét đứt; chấm xanh trên cột lần 3 ở 0,05 N là giá trị sau khi trừ số 0 lệch của lực kế 3"><line x1="70.0" y1="238.0" x2="408.9" y2="238.0" stroke="currentColor" stroke-width="1.8"/><path d="M401.3,233.0 L410.0,238.0 L401.3,243.0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="70.0" y1="238.0" x2="70.0" y2="23.1" stroke="currentColor" stroke-width="1.8"/><path d="M65.0,30.7 L70.0,22.0 L75.0,30.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="78.0" y="24.0" fill="currentColor" font-size="18" font-weight="700" text-anchor="start"><tspan font-style="italic" font-family="serif">δ</tspan> (N)</text><line x1="66.0" y1="188.0" x2="74.0" y2="188.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="62.0" y="193.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">0,1</text><line x1="66.0" y1="138.0" x2="74.0" y2="138.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="62.0" y="143.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">0,2</text><line x1="66.0" y1="88.0" x2="74.0" y2="88.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="62.0" y="93.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">0,3</text><line x1="66.0" y1="38.0" x2="74.0" y2="38.0" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="62.0" y="43.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="end">0,4</text><line x1="70.0" y1="88.0" x2="408.0" y2="88.0" stroke="#34d399" stroke-width="2.2" stroke-dasharray="7 5" opacity="1"/><text x="76.0" y="80.0" fill="#34d399" font-size="18" font-weight="700" text-anchor="start">Δ = 0,3 N</text><rect x="100" y="213.0" width="40" height="25.0" fill="#fb923c" fill-opacity=".75" stroke="currentColor" stroke-width="1.6"/><text x="120.0" y="262.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="middle">lần 1</text><rect x="180" y="213.0" width="40" height="25.0" fill="#fb923c" fill-opacity=".75" stroke="currentColor" stroke-width="1.6"/><text x="200.0" y="262.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="middle">lần 2</text><rect x="260" y="63.0" width="40" height="175.0" fill="#f87171" fill-opacity=".75" stroke="currentColor" stroke-width="1.6"/><text x="280.0" y="262.0" fill="currentColor" font-size="17" font-weight="600" text-anchor="middle">lần 3</text><circle cx="280" cy="213.0" r="6" fill="#34d399" stroke="currentColor" stroke-width="1.6"/><line x1="288.0" y1="213.0" x2="304.0" y2="213.0" stroke="currentColor" stroke-width="1.4" opacity="1"/><text x="310.0" y="209.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">sau khi</text><text x="310.0" y="227.0" fill="currentColor" font-size="17" font-weight="700" text-anchor="start">trừ số 0</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Lần có $\delta$ lớn nhất là lần nào? Cả ba lần $F_{\text{vẽ}}$ cùng lớn hơn hay cùng nhỏ hơn $F_3$?</p>
+      <button class="mo" data-mo="q4">Mở: quan sát</button>
+      <div class="an" id="q4" hidden><p>Lần <b class="o">3</b>, $\delta=$ <b class="o">$0{,}35$</b> N $\gt0{,}3$ · $F_{\text{vẽ}}$ cả ba lần cùng <b class="o">nhỏ hơn</b> $F_3$ (2,85 &lt; 2,9 · 3,45 &lt; 3,5 · 1,75 &lt; 2,1): lệch một phía thì nghi sai số hệ thống.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5c2">
+  <div class="top"><span class="so">5/6 · Vì sao lần 3 lệch</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·1 và 4·4</span></div>
+  <div class="giua">
+    <p>Ở lần 3, nhóm đổi sang một lực kế 3 khác mà chưa chỉnh $0$.</p>
+    <p class="hoi">Treo thẳng đứng, chưa móc vật, nó chỉ $0{,}3\ \text{N}$. $F_3$ đúng bằng bao nhiêu? $\delta$ mới?</p>
+    <button class="mo" data-mo="z5">Mở: hiệu chỉnh</button>
+    <div class="an" id="z5" hidden>
+      <p>$F_3=2{,}1-0{,}3=$ <b class="o">$1{,}8$</b> N · $\delta=|1{,}75-1{,}8|=$ <b class="o">$0{,}05$</b> N $\le\Delta$. Điền $0{,}3$ vào cột "Số 0 lệch" hàng 3 của ô 4·1.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Làm nhanh: ba lần của một nhóm khác</span><span>phút 18–24</span><span class="tap">tr.4 · ô 4·5</span></div>
+  <div class="giua">
+    <table class="bang">
+      <tr><th>Lần</th><th>$\delta$ (N)</th><th>$\delta\le\Delta=0{,}3\ \text{N}$?</th></tr>
+      <tr><td>1</td><td>0,10</td><td>? </td></tr>
+      <tr><td>2</td><td>0,25</td><td>? </td></tr>
+      <tr><td>3</td><td>0,35</td><td>? </td></tr>
+    </table>
+    <p>Lần chưa hợp: việc đầu tiên em kiểm là ?</p>
+    <button class="mo" data-mo="n5">Mở: ô 4·5</button>
+    <div class="an" id="n5" hidden>
+      <p>Lần 1: <b class="o">hợp</b> · lần 2: <b class="o">hợp</b> · lần 3: <b class="o">chưa hợp</b></p>
+      <p>Kiểm đầu tiên: <b class="o">số $0$ của từng lực kế</b> (đúng tư thế), rồi góc $\alpha$ đo ở O và phương dây.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Vẽ hình bình hành của nhóm</span><span>phút 24–30</span><span class="tap">tr.5 · ô 5·1</span></div>
+  <div class="giua">
+    <ul>
+      <li>Trên lưới, ô lớn $1\ \text{cm}$ ứng $0{,}5\ \text{N}$. Chấm O.</li>
+      <li>Vẽ $\vec F_1$ và $\vec F_2$ chung gốc O, hợp góc $\alpha$ (thước đo độ).</li>
+      <li>Nét đứt hoàn thành hình bình hành, đo chéo (cm).</li>
+      <li>$F_{\text{vẽ}}=$ chéo $\times0{,}5$. Điền $F_1,F_2,\alpha$, chéo, $F_{\text{vẽ}}$ bên dưới lưới.</li>
+    </ul>
+    <p class="nho">Hôm nay vẽ theo số lần 2 (4,0 cm mỗi cạnh, $\alpha=60^\circ$); lần đo thật của nhóm vẽ vào lưới khi thực hành.</p>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kết luận và báo cáo</span><span>phút 24–30</span><span class="tap">tr.5 · ô 5·2 và 5·3</span></div>
+  <div class="giua">
+    <p>$\delta=$ ? N, $\Delta=$ ? N: hợp quy tắc hình bình hành trong sai số, hay chưa hợp?</p>
+    <p class="hoi">Câu 3 báo cáo (một nhóm khác): cả ba lần $F_{\text{vẽ}}$ đều lớn hơn $F_3$ khoảng $0{,}2\ \text{N}$ và đều có $\delta\le\Delta$. Có kết luận được quy tắc đúng không? Nguyên nhân có thể và cách kiểm?</p>
+    <button class="mo" data-mo="r5">Mở: ô 5·2 và câu 3</button>
+    <div class="an" id="r5" hidden>
+      <p>Lần 2: $\delta=$ <b class="o">$0{,}05$</b> N, $\Delta=$ <b class="o">$0{,}3$</b> N: <b class="o">hợp</b> trong sai số.</p>
+      <p>Câu 3: có, vì mọi lần $\delta\le\Delta$; nhưng lệch <b>cùng một phía</b> mọi lần là dấu hiệu sai số hệ thống (số $0$ lực kế chưa chỉnh). Kiểm: đọc số $0$ từng lực kế khi chưa móc gì, chỉnh lại rồi đo lại.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 24–30 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.2 · ô 2·2 · tr.4 · ô 4·3</span></div>
+  <div class="giua">
+    <p class="hoi">2. Vì sao lực kế 3 đo trực tiếp được lực tổng hợp?</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>Nút O đứng yên · $\vec F_3$ cân bằng với $\vec F$ · cùng độ lớn, cùng phương, ngược chiều.</p></div>
+    <p class="hoi">5. Khi nào kết luận "hợp quy tắc trong sai số"?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>$\delta=|F_{\text{vẽ}}-F_3|$ · $\Delta=\Delta F_1+\Delta F_2+\Delta F_3=0{,}3\ \text{N}$ · $\delta\le\Delta$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6cau">
+  <div class="top"><span class="so">6/6 · Quay lại khung ảnh</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig fp" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Hai lực nghiêng phải gánh đủ $2{,}0\ \text{N}$.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Tăng: $T=\dfrac{P}{2\cos(\alpha/2)}$. $60^\circ$: $1{,}15$ N · $120^\circ$: $2{,}00$ N.</p></div>
+      <button class="mo" data-mo="a7">Mở: giải thích các phương án</button>
+      <div class="an" id="a7" hidden><p class="nho">A: $2{,}0$ N là tổng của hai dây · B ngược: dây xoạc cần lực lớn hơn · D chỉ đúng khi $\alpha=0^\circ$.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6qr">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.2 ô 2·4 ghi điểm /20</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1243" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM18 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM20 5h1v1h-1zM23 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM28 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM0 11h1v1h-1zM1 11h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM1 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM30 13h1v1h-1zM0 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM25 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM23 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM32 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM10 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM11 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM29 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM0 22h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM11 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM16 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM13 27h1v1h-1zM14 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM16 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM23 30h1v1h-1zM25 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM31 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM14 31h1v1h-1zM19 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM24 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1243</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1243 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6ve">
+  <div class="top"><span class="so">Về nhà theo Tập bài 22</span><span></span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "Điều em hiểu sai hoặc mới biết"</li>
+    <li><b>tr.3</b> ô 3·4 Đề BTVN: ghi đề, số câu, hạn</li>
+    <li><b>tr.4</b> ô 4·1 và 4·2: điền hai hàng còn lại (lần 1, lần 3) · ô 4·3 kiểm lại bằng bạn cùng bàn</li>
+    <li><b>tr.5</b> ô 5·3: câu báo cáo 1, 2 (câu 3 đã làm trên lớp)</li>
+    <li><b>tr.6–7</b> dạng 1–4 (ô 6·1, 7·1): chọn một dạng mỗi ngày</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

@@ -96,8 +96,8 @@ ${h3(3, 'Độ chia và cách đọc', '2·3')}
 <div class="fig-side" style="${fs(62)}"><div>
 <div>Mặt lực kế ${N('5')} chia thành các vạch. Mỗi độ chia ứng ${f(10)} N. Nhìn thẳng mặt chỉ để tránh sai số do nhìn lệch.</div>
 <div style="margin-top:1.2mm">Kim chỉ trên hình: ${nw(`${m('F=')} ${f(16)} N`)}</div></div>${H.doChia()}</div>
-${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '2·4')}
-${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
+${h3(4, 'Đề 1243 (20 câu, cuối tiết)', '2·4')}
+<div class="card soft" style="padding:1.6mm 3mm">Điểm: ……/20 · câu sai: ${f(25)} · câu đoán mò: ${f(25)}</div>
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -121,7 +121,7 @@ ${h3(3, `III · Bẫy 2: góc ${al} ở nút O`, '3·3')}
 <div>Cho ${nw(m('F_1=2{,}0\\ \\mathrm N'))}, ${nw(m('F_2=3{,}0\\ \\mathrm N'))}, ${nw(m('\\alpha=120^\\circ'))} (đo ở nút O giữa hai dây).</div>
 <div style="margin-top:.8mm">Công thức dùng ${m('\\alpha')} = ${f(12)}°: ${nw(`${m('F=')} ${f(26)} N`)}</div>
 <div style="margin-top:.8mm">Vẽ nối đuôi: góc ở đỉnh (dấu ?) là ${f(14)}°. Khi dùng công thức vẫn thay góc ${f(8)}.</div></div>${H.gocAlpha()}</div>
-${K.btvn().replace('<i>1</i>', '<i>4</i>')}
+${K.btvn().replace('<h3><i>1</i>Đề BTVN</h3>', `<h3><i>4</i>Đề BTVN</h3>${K.tag('3·4')}`)}
 ${foot(3)}</section>`;
 
 const bangDo = `<table class="tbl-ct" style="text-align:center">
@@ -144,7 +144,7 @@ ${h3(3, `Sai số ${Dl} của bài này`, '4·3')}
 <div style="margin-top:.6mm">${nw(`${dl} ${m('\\le')} ${Dl}`)}: ${f(40)}. ${nw(`${dl} > ${Dl}`)}: ${f(40)}</div></div>
 ${h3(4, 'Quan sát và so sánh', '4·4')}
 <div class="card soft" style="padding:1.2mm 3mm"><div>Lần có ${dl} lớn nhất: lần ${f(14)}, ${nw(`${dl} = ${f(14)} N`)}. Cả ba lần ${Ft} vẽ cùng lớn hơn hoặc cùng nhỏ hơn ${F3}? ${f(26)}</div>${lines(1)}</div>
-${h3(5, 'Làm nhanh: ba lần đo của một nhóm', '4·5')}
+${h3(5, 'Làm nhanh: ba lần đo của một nhóm khác', '4·5')}
 <div class="card" style="padding:1.2mm 3mm">
 <table class="tbl-ct" style="text-align:center"><tr><th style="width:14mm">Lần</th><th>${dl} (N)</th><th>${dl} ${m('\\le')} ${Dl} = ${N('0{,}3')}?</th></tr>
 ${[['1', '0{,}10'], ['2', '0{,}25'], ['3', '0{,}35']].map(([i, d]) => `<tr><td style="height:7mm"><b>${i}</b></td><td>${m(d)}</td><td>${ck}hợp &nbsp;${ck}chưa hợp</td></tr>`).join('')}</table>
@@ -161,7 +161,7 @@ ${h3(2, 'Kết luận', '5·2')}
 ${h3(3, 'Câu hỏi báo cáo', '5·3')}
 ${box(`<div style="padding-top:.6mm"><b>1.</b> Nguồn sai số lớn nhất của nhóm em là gì? Cách giảm?</div>${lines(2)}
 <div style="padding-top:.6mm"><b>2.</b> Một lần ${dl} vượt ${Dl} thì kiểm gì trước khi nghi ngờ quy tắc?</div>${lines(1)}
-<div style="padding-top:.6mm"><b>3.</b> Cả ba lần ${Fv} đều lớn hơn ${F3} khoảng ${N('0{,}2')} và đều có ${dl} ${m('\\le')} ${Dl}. Có kết luận được quy tắc đúng không? Nguyên nhân có thể và cách kiểm?</div>${lines(2)}`)}
+<div style="padding-top:.6mm"><b>3.</b> Một nhóm khác: cả ba lần ${Fv} đều lớn hơn ${F3} khoảng ${N('0{,}2')} và đều có ${dl} ${m('\\le')} ${Dl}. Có kết luận được quy tắc đúng không? Nguyên nhân có thể và cách kiểm?</div>${lines(2)}`)}
 ${foot(5)}</section>`;
 
 // ---- Bốn dạng xử lí số liệu (thay Bài tập mẫu): 1 dễ · 2 TB · 3 hiệu chỉnh số 0 · 4 khó (hai dây treo vật)
