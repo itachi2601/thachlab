@@ -84,7 +84,7 @@ ${h3(5, 'II.1 · Bốn bước, một cầu nối', '1·5')}
 <div><b>Bước 1</b> (Vẽ): chọn ${f(25)} khảo sát; Ox theo chiều ${f(30)}, giữ đến hết.</div>
 <div><b>Bước 2:</b> mỗi lực phải chỉ ra được ${f(30)}</div>
 <div><b>Bước 3:</b> ${f(40)} (dạng vectơ)</div>
-<div><b>Bước 4:</b> theo Ox, Oy tìm ${m('a')}; kiểm dấu: ${m('a<0')} nghĩa là ${f(36)}</div></div>
+<div><b>Bước 4:</b> chiếu lên Ox, Oy tìm ${m('a')}; kiểm dấu: ${m('a<0')} nghĩa là ${f(36)}</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -133,7 +133,7 @@ ${h3(1, 'II.3 · Tình huống 2: mặt phẳng nghiêng', '3·1')}
 ${H.docTach()}</div>
 ${h3(2, 'Thí nghiệm: hai hộp, một nhẹ một nặng', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
-<div><b>Làm:</b> hai hộp bút giống nhau, một rỗng, một nhét đầy đồ; đặt cạnh nhau ở đầu tấm ván nghiêng khoảng ${u('30^\\circ')}, thả cùng lúc.</div>
+<div><b>Làm:</b> hai hộp bút giống nhau, rỗng ${u('0{,}1\\ \\mathrm{kg}')} và đầy ${u('0{,}4\\ \\mathrm{kg}')}; đặt đầu hai ván giống nhau nghiêng ${u('30^\\circ')}, thả cùng lúc.</div>
 <div><b>Quan sát:</b> ${f(60)}</div>
 <div><b>Rút ra:</b> gia tốc trượt ${f(50)} khối lượng.</div>
 <div><b>Vật nằm yên trên dốc</b> khi ${m('\\tan\\alpha\\le')} ${f(12)}; lúc đó ma sát nghỉ bằng ${f(20)} (không phải ${m('\\mu_n mg\\cos\\alpha')}).</div></div>
@@ -182,9 +182,9 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
-${K.btvn()}
-${h3(2, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·2')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${K.btvn().replace('</h3>', '</h3>' + K.tag('5·1'))}
+${h3(2, 'Đề 1241 (20 câu, cuối tiết)', '5·2')}
+<div class="card soft" style="padding:1.6mm 3mm">Điểm: ……/20 · câu sai: ${f(25)} · câu đoán mò: ${f(25)}</div>
 ${h3(3, 'Thử thách phân tầng', '5·3')}
 <div class="fig-side" style="${fs(44)}">${box(cau(`${m('\\bigstar')} Vật trượt không ma sát, từ nghỉ, trên dốc ${u('30^\\circ')} (${u('\\sin 30^\\circ=0{,}5')}), ${g10}. Gia tốc? Tốc độ sau ${u('2\\ \\mathrm s')}?`, 2)
  + cau(`${m('\\bigstar\\bigstar')} <b>Bài toán ngược.</b> Ô tô ${u('1000\\ \\mathrm{kg}')} đang chạy ${u('20\\ \\mathrm{m/s}')} thì phanh gấp, trượt ${u('40\\ \\mathrm m')} rồi dừng (đường ngang, ${g10}). Lực hãm? Hệ số ma sát trượt?`, 2)

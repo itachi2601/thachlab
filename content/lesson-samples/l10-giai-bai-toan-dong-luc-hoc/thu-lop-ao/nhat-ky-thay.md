@@ -22,3 +22,11 @@ Nguồn đối chiếu: `../tren-lop.src.html` (23 màn), `../tren-lop-ghi-chu.h
 - HS chọn C ở cầu trượt, không chắc, lý do "rơi tự do nhẹ nặng như nhau": đoán đúng nhờ ý từ chương rơi tự do, chưa hiểu vì ma sát. Thầy không chữa đúng sai, hẹn cuối giờ.
 - Điền đúng cả 27 ô; ô 12–14 chỉ điền được nhờ chữ gạch chân trên màn 2a (Tập không gợi ý). Màn 2a hiện sẵn, không có nút Mở: không còn gì để đoán.
 - Báo lệch tài liệu: màn 1b "Khoanh vào Tập" mà Tập chỉ có ô "Em chọn" (phải đổi thành "viết chữ cái"); ô 1·4 chật (3 dòng sát nhau); Bước 4 của Tập cụt chữ "chiếu"; ô 11 "không chứa t" chỉ nhớ được nhờ chương 2.
+
+## ĐD5–6 + màn cuối (lượt 2)
+
+- Màn 5b: câu biểu quyết A–D chỉ có trên màn; Tập ô 3·4 dòng 4–6 chỉ là chỗ trống [__59__]–[__61__], không ghi lại lựa chọn.
+- Màn 5e: học sinh điền [__63__]–[__67__] ở ô 4·1 từ màn 5d, còn [__68__] điền ở màn 5c: ô 4·1 điền không theo thứ tự dòng.
+- Màn 5d: lời thầy "5 lần" nhưng chỉ lần 1 ($t=0{,}93$ s) hiện ở clip; bảng đủ 5 lần ở Tập và màn 5e.
+- Màn 6a: ô 4·3 chỉ dùng câu 3, 5; màn 6cau/6b/6c đều dùng lại các ô tr.1 và tr.5 chưa nói đến lúc đầu giờ, mà bảng 5·2 chỉ 6 dòng cho đề 20 câu (đã báo ở soát trước giờ).
+- Về nhà: ô 4·2 bẫy 3 chưa dạy ở màn nào nhưng vẫn giao về nhà; ô 4·3 câu 1, 2, 4, 6 và [__85__]–[__86__] chỉ được nhắc ở màn 6a/6c.

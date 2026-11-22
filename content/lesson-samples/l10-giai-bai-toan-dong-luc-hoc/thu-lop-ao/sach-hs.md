@@ -24,8 +24,8 @@ Vì sao? [2: vật nặng nhẹ rơi nhanh bằng nhau nên chắc trượt cũn
 [Hình: cầu trượt đôi, hai bạn ở đỉnh, một nhỏ một to.]
 
 ### 1·3 · Học xong, em sửa lại
-Đáp án đúng là: [__3__]  Em đoán ☐ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
-[__4__] (1 dòng)
+Đáp án đúng là: [3: C (hai người tới gần như cùng lúc)]  Em đoán ☒ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
+[4: lực kéo xuống dốc và ma sát đều tỉ lệ với m nên m triệt tiêu (đoán)] (1 dòng)
 
 ### 1·4 · Kiểm tra hành trang
 Mặt nghiêng góc $\alpha$: thành phần của $P$ **dọc** dốc [5: P sinα] · **vuông góc** dốc [6: P cosα]
@@ -98,15 +98,15 @@ Trong $a$ không còn [49: m (khối lượng)]. Bỏ ma sát: $a=$ [50: g sinα
 [55: a = 10(0,5 − 0,2·0,866) ≈ 3,3 m/s²] (2 dòng)
 
 ### 3·4 · II.4 · Tình huống 3: hai vật nối dây qua ròng rọc
-Dây không dãn ⇒ hai vật cùng độ lớn [__56__]
-Dây, ròng rọc nhẹ, không ma sát ⇒ cùng [__57__]
-Chiều dương: [__58__]
-$m_1$ (bàn có ma sát): [__59__] $=m_1a$
-$m_2$ (treo): [__60__] $=m_2a$
-Cộng hai phương trình: [__61__] triệt tiêu.
+Dây không dãn ⇒ hai vật cùng độ lớn [56: gia tốc a]
+Dây, ròng rọc nhẹ, không ma sát ⇒ cùng [57: lực căng T]
+Chiều dương: [58: đi vòng theo dây, m₁ sang phải, m₂ xuống]
+$m_1$ (bàn có ma sát): [59: T − F_ms] $=m_1a$
+$m_2$ (treo): [60: P₂ − T] $=m_2a$
+Cộng hai phương trình: [61: T] triệt tiêu.
 [Hình: $m_1$ trên bàn, dây vắt qua ròng rọc ở mép bàn, $m_2$ treo.]
 **Câu 3.** Hình trên với $m_1=4$ kg, $m_2=1$ kg, $\mu=0{,}1$, $g=10$ m/s². Hệ có chạy không? Nếu có, tính gia tốc.
-[__62__] (2 dòng)
+[62: có chạy; P₂ = 10 N > F_ms = 0,1·4·10 = 4 N; a = (10 − 4)/(4 + 1) = 1,2 m/s²] (2 dòng)
 
 ---
 
@@ -118,34 +118,34 @@ Xe $m_1=0{,}40$ kg trên máng ngang, quả nặng $m_2=0{,}10$ kg. Thả từ n
 | Lần | 1 | 2 | 3 | 4 | 5 |
 |---|---|---|---|---|---|
 | $t$ (s) | 0,93 | 0,95 | 0,92 | 0,94 | 0,93 |
-| $a$ (m/s²) | [__63__] | [__64__] | [__65__] | [__66__] | [__67__] |
+| $a$ (m/s²) | 1,85 | 1,77 | 1,89 | 1,81 | 1,85 |
 
-Dự đoán (bỏ ma sát): $a=m_2g/(m_1+m_2)=$ [__68__] m/s² · $a$ đo trung bình [__69__] m/s²
-Cả 5 lần lệch một phía ⇒ sai số [__70__]; do [__71__]
+Dự đoán (bỏ ma sát): $a=m_2g/(m_1+m_2)=$ [68: 2,0] m/s² · $a$ đo trung bình [69: 1,83] m/s²
+Cả 5 lần lệch một phía ⇒ sai số [70: hệ thống]; do [71: ma sát ở trục bánh xe và ròng rọc]
 [Hình: xe lăn trên máng, dây vắt ròng rọc, quả nặng.]
 
 ### 4·2 · III · Bốn cái bẫy
-☐ **Thiếu/thừa lực.** Không có "lực đà": mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực [__72__]
-☐ **$N=mg$ mọi lúc.** Mặt ngang kéo xiên: $N=$ [__73__] · mặt nghiêng: $N=$ [__74__]
-☐ **Đổi chiều dương giữa chừng.** Vật quay đầu: [__75__] đổi dấu, [__76__] không đổi dấu.
-☐ **Ma sát nghỉ cũng tính $\mu N$.** Tủ $50$ kg bị đẩy ngang $120$ N vẫn đứng yên, $\mu_n=0{,}4$, $g=10$ m/s²: $F_{\text{ms}}=$ [__77__] N, mức trần [__78__] N
+☐ **Thiếu/thừa lực.** Không có "lực đà": mỗi lực do một vật gây ra. Hộp trượt lên, tay đã buông, chịu các lực [72: P, N, F_ms]
+☐ **$N=mg$ mọi lúc.** Mặt ngang kéo xiên: $N=$ [73: mg − F sinα] · mặt nghiêng: $N=$ [74: mg cosα]
+☐ **Đổi chiều dương giữa chừng.** Vật quay đầu: [75: F_ms và a (đoán)] đổi dấu, [76: P và N (đoán)] không đổi dấu.
+☐ **Ma sát nghỉ cũng tính $\mu N$.** Tủ $50$ kg bị đẩy ngang $120$ N vẫn đứng yên, $\mu_n=0{,}4$, $g=10$ m/s²: $F_{\text{ms}}=$ [77: 120] N, mức trần [78: 200] N
 [Hình: hộp trượt lên dốc.]
 
 ### 4·3 · IV · Trả bài 6 câu
 1. Bốn bước giải bài toán động lực học là gì?
-[__79__] (1 dòng)
+[79: Vẽ – kể lực – viết ΣF = ma – chiếu và giải] (1 dòng)
 2. Đại lượng nào nối lực với chuyển động? Hai loại bài toán?
-[__80__] (1 dòng)
+[80: gia tốc a; bài thuận (lực → a → v, s, t) và bài ngược (v, s, t → a → lực)] (1 dòng)
 3. Mặt nghiêng góc $\alpha$: chọn trục thế nào, $N$ bằng bao nhiêu, $a$ khi trượt xuống?
-[__81__] (1 dòng)
+[81: Ox dọc dốc, chiều xuống; N = mg cosα; a = g(sinα − μcosα)] (1 dòng)
 4. Kéo xiên lên góc $\alpha$ trên mặt ngang: áp lực bằng bao nhiêu?
-[__82__] (1 dòng)
+[82: N = mg − F sinα] (1 dòng)
 5. Hai vật nối dây qua ròng rọc: chung những gì, chiều dương chọn ra sao?
-[__83__] (1 dòng)
+[83: cùng a, cùng T; chiều dương đi vòng theo dây] (1 dòng)
 6. Khi nào được dùng $F_{\text{ms}}=\mu N$?
-[__84__] (1 dòng)
+[84: khi vật đang trượt (đã có chuyển động trượt)] (1 dòng)
 
-**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: [__85__] → đọc lại ô [__86__] Tập
+**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: [85: câu 6] → đọc lại ô [86: 1·4] Tập
 
 ---
 
@@ -170,13 +170,13 @@ Bảng 6 dòng (Câu 1–6), mỗi dòng: Em chọn | Chắc? ☐ | Đúng? ☐
 
 ### 5·3 · Thử thách phân tầng
 ⭐ Vật trượt không ma sát, từ nghỉ, trên dốc $30^\circ$ ($\sin30^\circ=0{,}5$), $g=10$ m/s². Gia tốc? Tốc độ sau $2$ s?
-[__97__] (2 dòng)
+[97: a = g·sinα = 10·0,5 = 5 m/s²; v = at = 5·2 = 10 m/s] (2 dòng)
 ⭐⭐ **Bài toán ngược.** Ô tô $1000$ kg đang chạy $20$ m/s thì phanh gấp, trượt $40$ m rồi dừng (đường ngang, $g=10$ m/s²). Lực hãm? Hệ số ma sát trượt?
-[__98__] (2 dòng)
+[98: a = (v² − v₀²)/(2s) = (0 − 400)/80 = −5 m/s² (|a| = 5); lực hãm F = m|a| = 1000·5 = 5000 N; F_ms = μmg ⇒ μ = 5000/10000 = 0,5] (2 dòng)
 ⭐⭐⭐ **Vật chồng.** Ván $2$ kg trên sàn nhẵn, khối $1$ kg đặt trên ván, hệ số ma sát khối–ván $0{,}3$ (nghỉ và trượt như nhau), $g=10$ m/s². Kéo ván ngang $6$ N: khối có trượt trên ván không? Kéo $12$ N thì sao?
-[__99__] (4 dòng)
+[99: kéo 6 N: a = 6/(2+1) = 2 m/s², khối cần F_ms = 1·2 = 2 N ≤ 0,3·1·10 = 3 N ⇒ không trượt. Kéo 12 N: nếu chung a = 4 m/s² thì khối cần 4 N > 3 N ⇒ khối trượt trên ván] (4 dòng)
 
 ### 5·4 · VI · Mang về: điều em dễ quên nhất
-1. [__100__] (2 dòng)
-2. [__101__] (2 dòng)
-3. [__102__] (2 dòng)
+1. [100: N không luôn bằng mg, có lực xiên hoặc mặt nghiêng thì N khác (đoán)] (2 dòng)
+2. [101: chiều dương chọn một lần, đừng đổi giữa chừng (đoán)] (2 dòng)
+3. [102: ma sát nghỉ không tính μN, tính theo lực đặt vào (đoán)] (2 dòng)

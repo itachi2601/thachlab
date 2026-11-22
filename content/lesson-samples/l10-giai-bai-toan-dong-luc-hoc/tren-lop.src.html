@@ -95,6 +95,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   ol.opt.hang{grid-template-columns:1fr 1fr}
   .qr svg{height:auto;width:100%;max-width:320px}
   .top{flex-wrap:wrap}
+  .bang{font-size:15px;width:100%} .bang td,.bang th{padding:6px 4px}
   .dk{display:none}
 }
 @media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
@@ -141,7 +142,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <li><b>C.</b> Hai người tới gần như cùng lúc</li>
       <li><b>D.</b> Em nhẹ hơn nên xuống nhanh hơn</li>
     </ol>
-    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại cầu trượt").</p>
+    <p class="nho">Viết chữ cái vào ô "Em chọn" của Tập, rồi một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại cầu trượt").</p>
   </div>
 </section>
 
@@ -267,7 +268,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m4b">
-  <div class="top"><span class="so">4/6 · Trượt xuống dốc</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · dòng 6–8</span></div>
+  <div class="top"><span class="so">4/6 · Trượt xuống dốc</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · dòng 6</span></div>
   <div class="giua">
     <p class="hoi">Ox (vật trượt xuống): viết phương trình, rút ra $a$.</p>
     <button class="mo" data-mo="o4">Mở: chiếu Ox</button>
@@ -275,9 +276,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p><b class="o">$mg\sin\alpha-\mu mg\cos\alpha$</b> $=ma$</p>
       <p class="fx">$a=$ <b class="o">$g(\sin\alpha-\mu\cos\alpha)$</b></p>
     </div>
-    <p class="hoi">Trong $a$ còn khối lượng $m$ không? Bỏ ma sát thì $a=$ ?</p>
-    <button class="mo" data-mo="m4">Mở: nhận xét</button>
-    <div class="an" id="m4" hidden><p>Không còn <b class="o">$m$</b>. Bỏ ma sát: $a=$ <b class="o">$g\sin\alpha$</b>.</p></div>
+    <p class="nho">Còn một câu về $m$ trong $a$: để sau clip hai hộp.</p>
   </div>
 </section>
 
@@ -304,12 +303,13 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m4d">
-  <div class="top"><span class="so">4/6 · Hai hộp: rút ra</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="top"><span class="so">4/6 · Hai hộp: rút ra</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·2 · ô 3·1 dòng 7–8</span></div>
   <div class="giua">
     <button class="mo" data-mo="r4">Mở: quan sát, rút ra</button>
     <div class="an" id="r4" hidden>
       <p><b>Quan sát:</b> <b class="o">hai hộp tới chân ván gần như cùng lúc</b> (đáp án <b>C</b>).</p>
       <p><b>Rút ra:</b> gia tốc trượt <b class="o">không phụ thuộc</b> khối lượng.</p>
+      <p>Trong $a$ không còn <b class="o">$m$</b>; bỏ ma sát: $a=$ <b class="o">$g\sin\alpha$</b>.</p>
     </div>
     <p class="hoi">Hộp đặt yên trên dốc, không trượt: ma sát nghỉ bằng bao nhiêu?</p>
     <button class="mo" data-mo="n4">Mở: vật nằm yên</button>
@@ -449,7 +449,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m6b">
-  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.5 ô 5·2 ghi kết quả</span></div>
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.5 ô 5·2 ghi điểm /20</span></div>
   <div class="qr"><!--QR--></div>
   <p class="made">Mã đề <b>1241</b> · 20 câu · 15 phút</p>
   <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1241 · làm một mình, nộp xong mới cất máy</p>
@@ -460,7 +460,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <ul>
     <li><b>tr.1</b> ô 1·3 dòng "Điều em hiểu sai hoặc mới biết"</li>
     <li><b>tr.3</b> ô 3·4: Câu 3 ($m_1=4$ kg, $m_2=1$ kg, $\mu=0{,}1$)</li>
-    <li><b>tr.4</b> ô 4·2: bốn bẫy, tích bẫy em từng sập và điền chỗ trống · ô 4·3 câu 1, 2, 4, 6 + bạn cùng bàn kiểm</li>
+    <li><b>tr.4</b> ô 4·2: bốn bẫy, tích bẫy em từng sập và điền chỗ trống (bẫy 1, 2, 4 đã gặp trên lớp; bẫy 3: tự nghĩ lực nào đổi chiều khi vật quay đầu) · ô 4·3 câu 1, 2, 4, 6 + bạn cùng bàn kiểm</li>
     <li><b>tr.5</b> ô 5·1 Đề BTVN · ô 5·3 thử thách ⭐ → ⭐⭐⭐ · ô 5·4 mang về</li>
   </ul>
 </section>
