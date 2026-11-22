@@ -113,7 +113,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <ul>
       <li>Pin khác tụ điện đã nạp ở chỗ nào?</li>
       <li>Số "1,5 V" trên vỏ pin nói gì?</li>
-      <li>$I=\dfrac{\mathcal E}{R+r}$ và vì sao nối tắt pin lại nguy hiểm.</li>
+      <li>Vì sao nối tắt hai cực pin lại nguy hiểm?</li>
     </ul>
     <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
   </div>
@@ -132,9 +132,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="giua">
     <p class="hoi">Bật khoá xe máy: đèn pha sáng rõ. Bấm nút đề: đèn tối hẳn một giây, máy nổ rồi đèn mới sáng lại. Vẫn bình đó, dây đó. Điều gì làm đèn tối đi lúc đề?</p>
     <ol class="opt" style="font-size:.92em">
-      <li><b>A.</b> Nút đề cắt bớt điện của đèn, dồn cho mô tơ</li>
-      <li><b>B.</b> Ắc quy hết điện trong tích tắc rồi tự nạp lại</li>
-      <li><b>C.</b> Dòng đề rất lớn bị chính ắc quy cản bên trong, làm hai cực ắc quy tụt áp</li>
+      <li><b>A.</b> Nút đề cắt bớt điện của đèn để dồn hết sang cho mô tơ đề</li>
+      <li><b>B.</b> Ắc quy hết điện trong tích tắc rồi tự nạp lại ngay khi máy nổ</li>
+      <li><b>C.</b> Dòng đề rất lớn; ắc quy cũng cản dòng bên trong nó, nên hai cực của nó giảm điện thế</li>
       <li><b>D.</b> Dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng</li>
     </ol>
     <p class="nho">Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại đèn pha").</p>
@@ -148,6 +148,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="fig f2"><!--TAP:haiQuaCau--></div>
     <div class="ben">
       <p>A tích $+q$, B tích $-q$: $V_A$ <span class="an-o" data-o="c2"><b class="o">&gt;</b></span> $V_B$.</p>
+      <p class="nho">Electron mang điện âm; dòng điện quy ước theo điện tích dương.</p>
       <p>Nối dây: electron đi <span class="an-o" data-o="c2"><b class="o">B → A</b></span>; dòng điện <span class="an-o" data-o="c2"><b class="o">A → B</b></span>.</p>
       <p>Một lát sau hai quả <span class="an-o" data-o="c2"><b class="o">trung hoà</b></span>, $V_A$ <span class="an-o" data-o="c2"><b class="o">=</b></span> $V_B$: dòng <span class="an-o" data-o="c2"><b class="o">ngừng</b></span>.</p>
       <p>Dòng chạy mãi: giữ $U_{AB}$ <span class="an-o" data-o="c2"><b class="o">≠</b></span> $0$.</p>
@@ -168,15 +169,15 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m2c">
-  <div class="top"><span class="so">2/6 · Tụ hay pin</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="top"><span class="so">2/6 · Tụ hay pin</span><span>2 điểm dừng + cuối · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·1</span></div>
   <div class="vg" data-bat="10.0" data-het="27.6">
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261031-2.webp" preload="metadata" playsinline title="Tụ điện nạp sẵn và pin cùng nuôi điện trở"></video>
     <div class="ben">
-      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hai vôn kế, đọc mỗi 20 s.</p><p>Tụ $1{,}0$ F nạp $2{,}7$ V · hai pin $3{,}0$ V · cùng $R=100\ \Omega$.</p><p class="nho">Bảng trong ô 2·1 đã in số đo, đối chiếu với clip.</p></div>
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hai vôn kế, đọc mỗi 20 s.</p><p>Tụ $1{,}0$ F nạp $2{,}7$ V · hai pin $3{,}0$ V · cùng $R=100\ \Omega$.</p><p class="nho">Số liệu mô phỏng, làm tròn từ clip. Ô cột 300 s của hàng tụ (ô 2·1) để trống: điền sau lần dừng thứ hai.</p></div>
       <div class="buoc" data-t="10.0"><p class="hoi">Đọc hai vôn kế mỗi 20 s.</p></div>
       <div class="buoc" data-t="15.3" data-dung><p class="so-lon">60 s: tụ $1{,}48$ V · pin $2{,}98$ V</p><p class="hoi">Hai vôn kế khác nhau ở đâu? Đoán: 5 phút sau, vôn kế của tụ còn bao nhiêu?</p></div>
       <div class="buoc" data-t="15.35"><p class="hoi">Đọc tiếp, rồi tua tới 5 phút.</p></div>
-      <div class="buoc" data-t="21.0" data-dung><p class="so-lon">5 phút: tụ $0{,}13$ V · pin $2{,}98$ V</p><p class="hoi">Điền dòng "Rút ra" ô 2·1 (4 chỗ trống), rồi mới phát tiếp.</p><p class="nho">Tập làm tròn: $1{,}5$ V; $0{,}1$ V.</p></div>
+      <div class="buoc" data-t="21.0" data-dung><p class="so-lon">5 phút: tụ $0{,}13$ V · pin $2{,}98$ V</p><p class="hoi">Điền dòng "Rút ra" ô 2·1 (4 chỗ trống), rồi mới phát tiếp.</p><p class="nho">Điền cột 300 s: $0{,}1$ V (làm tròn). Dòng 60 s trong Tập: $1{,}5$ V.</p></div>
       <div class="buoc" data-t="21.05"><p class="hoi">Rút ra.</p></div>
       <div class="buoc" data-t="27.6"><p>Tụ chỉ chứa sẵn <b class="o">điện tích</b>, xả dần là <b class="o">hết</b>.</p><p>Pin <b class="o">duy trì</b> được hiệu điện thế, nên <b class="o">pin</b> mới là nguồn điện.</p></div>
     </div>
@@ -191,6 +192,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="fig f3"><!--TAP:lucLa--></div>
     <div class="ben">
       <p>Mạch ngoài: dòng điện chạy từ cực <span class="an-o" data-o="l3"><b class="o">(+)</b></span> về cực <span class="an-o" data-o="l3"><b class="o">(−)</b></span>.</p>
+      <p class="nho">Điện trường trong nguồn hướng từ cực (+) sang cực (−).</p>
       <p>Trong nguồn: điện tích dương phải đi từ cực <span class="an-o" data-o="l3"><b class="o">(−)</b></span> sang cực <span class="an-o" data-o="l3"><b class="o">(+)</b></span>, <span class="an-o" data-o="l3"><b class="o">ngược</b></span> chiều điện trường.</p>
       <p class="hoi">Lực điện có đẩy nổi không?</p>
       <button class="mo" data-mo="l3">Mở: chỗ điền</button>
@@ -204,6 +206,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <p>Lực điện không làm nổi: cần <b>lực lạ</b>, khác bản chất lực điện.</p>
     <p>Trong pin: lực <span class="an-o" data-o="l3b"><b class="o">hoá học</b></span> · trong máy phát điện: lực <span class="an-o" data-o="l3b"><b class="o">điện từ</b></span>.</p>
     <p>Trong nguồn: công lực lạ $A_{\text{l}}$ <span class="an-o" data-o="l3b"><b class="o">&gt;</b></span> độ lớn công cản của lực điện $A_{\text{đ}}$.</p>
+    <p class="nho">Lực lạ phải thắng công cản của lực điện thì điện tích mới lên được cực (+).</p>
     <p>Mạch kín: dòng ra ở cực <span class="an-o" data-o="l3b"><b class="o">(+)</b></span>, qua $R$, vào cực <span class="an-o" data-o="l3b"><b class="o">(−)</b></span>, rồi lực lạ đưa lên cực <span class="an-o" data-o="l3b"><b class="o">(+)</b></span>.</p>
     <button class="mo" data-mo="l3b">Mở: chỗ điền</button>
     <p class="nho">Như máy bơm đưa nước từ bể thấp lên bể cao (Bẫy 2, ô 4·2).</p>
@@ -215,6 +218,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="giua">
     <p>Suất điện động đặc trưng cho khả năng <b class="o">thực hiện công</b> của nguồn điện.</p>
     <div class="fx">$\mathcal E=\dfrac{A}{q}$</div>
+    <p class="nho">$\mathcal E$ đọc là "E hoa", khác $U$: $\mathcal E$ là số đo khi hở mạch, $U$ là số đo khi có dòng (màn 4)</p>
     <p>$A$: công của <b class="o">lực lạ</b> trong nguồn (J) · $q$: <b class="o">điện tích dương dịch chuyển</b> (C)</p>
     <p>Đơn vị <b class="o">vôn (V)</b> · $1$ V $=1$ <b class="o">J</b>/C</p>
   </div>
@@ -226,7 +230,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <p class="hoi">Câu 1. Vỏ pin ghi "1,5 V". Con số này cho biết điều gì về công và điện tích?</p>
     <button class="mo" data-mo="q1">Mở câu 1</button>
     <div class="an" id="q1" hidden><p>Lực lạ làm công $1{,}5$ J để đưa mỗi $1$ C điện tích dương qua nguồn, từ cực (−) sang cực (+).</p></div>
-    <p class="hoi">Câu 2. Pin có $\mathcal E=9{,}0$ V. Lực lạ làm công bao nhiêu khi đưa $20$ C điện tích dương qua nguồn?</p>
+    <p class="hoi">Câu 2. Pin có $\mathcal E=9{,}0$ V. Lực lạ làm công bao nhiêu khi đưa $20$ C điện tích dương qua nguồn? Dùng $\mathcal E=A/q$ vừa chép, suy $A$.</p>
     <button class="mo" data-mo="q2">Mở câu 2</button>
     <div class="an" id="q2" hidden><p>$A=\mathcal Eq=9{,}0\cdot20=180$ J</p></div>
   </div>
@@ -239,13 +243,14 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <p>Điện tích đi trong nguồn bị <b class="o">cản trở</b> (va chạm với vật chất của nguồn): nguồn có <b>điện trở trong</b> $r$.</p>
     <p>Hở mạch ($I=0$): $U$ <b class="o">=</b> $\mathcal E$.</p>
     <p class="hoi">Mạch kín, có dòng: $U$ lớn hơn, bằng hay nhỏ hơn $\mathcal E$? Đo thử.</p>
+    <p class="nho">Che bảng ô 3·1 (tr.3) bằng tờ giấy tới màn 4c.</p>
     <button class="mo" data-mo="k4">Mở</button>
     <div class="an" id="k4" hidden><p>Mạch kín: $U$ <b class="o">&lt;</b> $\mathcal E$ (clip kế tiếp).</p></div>
   </div>
 </section>
 
 <section class="man" id="m4b">
-  <div class="top"><span class="so">4/6 · Đo U theo I</span><span>2 điểm dừng · khoảng 1 phút</span><span class="tap">tr.3 · ô 3·1 · bảng</span></div>
+  <div class="top"><span class="so">4/6 · Đo U theo I</span><span>1 điểm dừng (K mở) + cuối · khoảng 1 phút</span><span class="tap">tr.3 · ô 3·1 · bảng</span></div>
   <div class="vg" data-bat="10.5" data-het="20.5">
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261031-2.webp" preload="metadata" playsinline title="Vôn kế ở hai cực pin khi đổi điện trở mạch ngoài"></video>
     <div class="ben">
@@ -261,7 +266,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 
 <section class="man" id="m4c">
   <div class="top"><span class="so">4/6 · Tính r</span><span>phút 15–21 · chia dãy</span><span class="tap">tr.3 · ô 3·1 · bảng + Rút ra</span></div>
-  <p class="nho">$\mathcal E=1{,}50$ V (hở mạch). Dãy trái: hàng 14, 9 · dãy giữa: hàng 4 · dãy phải: hàng 2; 1,5.</p>
+  <p class="nho">Vì sao không lấy $U/I$? $\mathcal E=1{,}50$ V. Dãy trái: hàng 14, 9 · giữa: 4 · phải: 2; 1,5.</p>
   <table class="bang">
     <thead><tr><th>$R$ (Ω)</th><th>$I$ (A)</th><th>$U$ (V)</th><th>$\mathcal E-U$ (V)</th><th>$\dfrac{\mathcal E-U}{I}$ (Ω)</th></tr></thead>
     <tbody>
@@ -283,7 +288,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <div class="fx">$U=\mathcal E-Ir$</div>
       <p>$Ir$: độ giảm thế trên <b class="o">$r$</b>, mạch ngoài <b class="o">không nhận được</b>.</p>
-      <p>Đồ thị $U$ theo $I$: đường <b class="o">thẳng</b> đi xuống; cắt trục $U$ tại <b class="o">$\mathcal E$</b>; độ dốc bằng <b class="o">$-r$</b>.</p>
+      <p class="nho">Dòng "Đồ thị" (đường gì, cắt trục tại đâu, độ dốc): về nhà, sau khi kẻ 5 điểm ở ô 3·1.</p>
     </div>
   </div>
 </section>
@@ -310,7 +315,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <button class="mo" data-mo="o5">Mở: nhiệt</button>
     <p class="nho">Chia hai vế cho $It$.</p>
     <button class="mo" data-mo="o5b">Mở: công thức</button>
-    <div class="an" id="o5b" hidden><p class="so-lon" style="text-align:center">$I=\dfrac{\mathcal E}{R+r}$ &nbsp;·&nbsp; $I_{\text{đm}}=\dfrac{\mathcal E}{r}$</p><p class="nho">Đoản mạch: $R\to0$, chỉ còn $r$ giữ dòng.</p></div>
+    <div class="an" id="o5b" hidden><p class="nho">$\mathcal EIt=RI^2t+rI^2t\ \Rightarrow\ \mathcal E=RI+rI=(R+r)I$</p><p class="so-lon" style="text-align:center">$I=\dfrac{\mathcal E}{R+r}$ &nbsp;·&nbsp; $I_{\text{đm}}=\dfrac{\mathcal E}{r}$</p><p class="nho">Đoản mạch: $R\to0$, chỉ còn $r$ giữ dòng.</p></div>
   </div>
 </section>
 
@@ -321,7 +326,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <p>Pin tiểu mới ($1{,}5$ V; $0{,}3\ \Omega$): $I_{\text{đm}}=$ <span class="an-o" data-o="d5"><b class="o">$5$</b></span> A</p>
     <p>Ắc quy xe máy ($12{,}6$ V; $0{,}02\ \Omega$): $I_{\text{đm}}=$ <span class="an-o" data-o="d5"><b class="o">$630$</b></span> A</p>
     <button class="mo" data-mo="d5">Mở: số</button>
-    <p class="nho">Clip kế tiếp: đo thật dòng nối tắt pin tiểu. Không tự làm ở nhà.</p>
+    <p class="nho">$630$ A: nhiệt $rI^2t$ ở nguồn cực lớn, dây nóng đỏ, cháy. Clip kế tiếp đo thật dòng nối tắt pin tiểu. Không tự làm ở nhà.</p>
   </div>
 </section>
 
@@ -332,7 +337,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: ampe kế khi nối tắt pin mới, rồi pin đã dùng.</p><p>Hai pin cùng $1{,}5$ V khi hở mạch. Chỉ nối 3 giây, kẹp cách điện.</p></div>
       <div class="buoc" data-t="9.8"><p class="hoi">Nối tắt pin mới.</p></div>
-      <div class="buoc" data-t="12.5" data-dung><p class="so-lon">Pin mới: $5{,}0$ A</p><p class="hoi">Khớp số em vừa tính? Điền "cỡ … A" ô 3·2. Dây nóng lên (vệt đỏ).</p><p class="hoi">Pin đã dùng: dòng lớn hơn hay nhỏ hơn?</p></div>
+      <div class="buoc" data-t="12.5" data-dung><p class="so-lon">Pin mới: $5{,}0$ A</p><p class="hoi">Khớp số em vừa tính? Điền "cỡ … A" ô 3·2. Dây nóng lên (vệt đỏ).</p><p class="hoi">Pin đã dùng, $\mathcal E$ vẫn $1{,}5$ V: dòng lớn hơn hay nhỏ hơn?</p></div>
       <div class="buoc" data-t="12.55"><p class="hoi">Đổi pin đã dùng, làm lại.</p></div>
       <div class="buoc" data-t="17.3" data-dung><p class="so-lon">Pin đã dùng: $1{,}5$ A</p><p class="hoi">Cùng $1{,}5$ V. Tính $r$ của pin đã dùng.</p></div>
       <div class="buoc" data-t="17.35"><p class="hoi">Rút ra.</p></div>
@@ -367,21 +372,23 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <tr><td>$n$ dãy, mỗi dãy $m$ nguồn</td><td class="ns"><span class="an-o" data-o="g6">$m\mathcal E$</span></td><td class="ns"><span class="an-o" data-o="g6">$mr/n$</span></td></tr>
     </tbody>
   </table>
+  <p class="nho">Xung đối: hai nguồn ngược cực nối vào nhau; nguồn mạnh hơn quyết định chiều dòng.</p>
   <div class="hai" style="gap:2vw">
     <div class="fig f5"><!--TAP:honHop--></div>
     <div class="ben">
-      <p>6 pin ($1{,}5$ V; $0{,}6\ \Omega$), 2 dãy × 3 pin: $\mathcal E_b=$ <span class="an-o" data-o="g6b"><b class="o">$4{,}5$ V</b></span> · $r_b=$ <span class="an-o" data-o="g6b"><b class="o">$0{,}9\ \Omega$</b></span></p>
+      <p>6 pin ($1{,}5$ V; $0{,}6\ \Omega$): $m=3$ pin nối tiếp mỗi dãy, $n=2$ dãy song song: $\mathcal E_b=$ <span class="an-o" data-o="g6b"><b class="o">$4{,}5$ V</b></span> · $r_b=$ <span class="an-o" data-o="g6b"><b class="o">$0{,}9\ \Omega$</b></span></p>
       <div class="nut"><button class="mo" data-mo="g6">Mở: bảng</button><button class="mo" data-mo="g6b">Mở: 6 pin</button></div>
     </div>
   </div>
 </section>
 
 <section class="man" id="m6ct">
-  <div class="top"><span class="so">6/6 · Quay lại đèn pha</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3 · tr.4 ô 4·2 Bẫy 1</span></div>
+  <div class="top"><span class="so">6/6 · Quay lại đèn pha</span><span>phút 29–30</span><span class="tap">lật tr.4 → tr.1 ô 1·3 → tr.4 ô 4·2 Bẫy 1</span></div>
   <div class="hai">
     <div class="fig f1" data-chep="m1a"></div>
     <div class="ben">
       <p class="nhin">Ắc quy $12{,}6$ V, $r=0{,}05\ \Omega$; mô tơ đề lấy $60$ A:<br>$U=12{,}6-60\cdot0{,}05=9{,}6$ V</p>
+      <p class="nho">Tích ô 1·1 · điền Bẫy 1 ở ô 4·2 sau khi mở đáp án.</p>
       <button class="mo" data-mo="a6">Mở: đáp án</button>
       <div class="an" id="a6" hidden><p><b>C.</b> Dòng đề lớn, $Ir$ lớn: hai cực tụt áp, đèn tối. $\mathcal E$ không đổi (Bẫy 1).</p>
         <p class="nho">A: đèn vẫn nối thẳng hai cực · B: ắc quy không hết rồi tự nạp · D: dây chưa kịp nóng trong một giây.</p></div>
@@ -401,7 +408,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <ul>
     <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
     <li><b>tr.3</b> ô 3·1 kẻ đường thẳng qua 5 điểm của đồ thị</li>
-    <li><b>tr.4</b> ô 4·2 đọc Bẫy 2, Bẫy 3 (điền $U$ pin cũ) · ô 4·3 Trả bài 6 câu (bạn cùng bàn kiểm)</li>
+    <li><b>tr.3</b> ô 3·1 dòng "Đồ thị" (đường gì, cắt trục, độ dốc)</li>
+    <li><b>tr.4</b> ô 4·2 điền Bẫy 2, Bẫy 3 (điền $U$ pin cũ) · ô 4·3 Trả bài 6 câu (bạn cùng bàn kiểm)</li>
     <li><b>tr.5</b> ô 5·1 bài toán mẫu · ô 5·2 · ô 5·3 ghi đề BTVN thầy giao trên web · ô 5·4 thử thách</li>
   </ul>
 </section>

@@ -59,9 +59,9 @@ ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Bật khoá xe máy: đèn pha sáng rõ. Bấm nút đề: đèn tối hẳn một giây, máy nổ rồi đèn mới sáng lại. Vẫn bình đó, dây đó. Điều gì làm đèn tối đi lúc đề?</p>
 <div class="fig-side" style="${fs(44)}"><div>
-${opt('A', 'Nút đề cắt bớt điện của đèn, dồn cho mô tơ')}
-${opt('B', 'Ắc quy hết điện trong tích tắc rồi tự nạp lại')}
-${opt('C', 'Dòng đề rất lớn bị chính ắc quy cản bên trong, làm hai cực ắc quy tụt áp')}
+${opt('A', 'Nút đề cắt bớt điện của đèn để dồn hết sang cho mô tơ đề')}
+${opt('B', 'Ắc quy hết điện trong tích tắc rồi tự nạp lại ngay khi máy nổ')}
+${opt('C', 'Dòng đề rất lớn; ắc quy cũng cản dòng bên trong nó, nên hai cực của nó giảm điện thế')}
 ${opt('D', 'Dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng')}
 <div style="margin-top:1mm">${chon(10)}</div>${wl('<span class="hint" style="font-weight:400">Vì sao?</span>', 2)}</div>
 ${H.denPha()}</div>
@@ -80,11 +80,11 @@ ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
 ${head('THÍ NGHIỆM TỤ – PIN · LỰC LẠ · SUẤT ĐIỆN ĐỘNG')}
-${h3(1, 'Thí nghiệm: tụ điện “giả làm” nguồn', '2·1')}
+${h3(1, 'Thí nghiệm: tụ điện và pin', '2·1')}
 <div class="card fig-side" style="${fs(46)};padding:1.2mm 3mm"><div>
-<div><b>Làm:</b> nạp siêu tụ ${nw(m('1{,}0\\ \\mathrm F'))} tới ${V('2{,}7')} rồi cho xả qua điện trở ${Om('100')}; bên cạnh, hai pin tiểu nối tiếp (${V('3{,}0')}) nuôi điện trở ${Om('100')} giống hệt. Vôn kế đo hai đầu mỗi điện trở.</div>
+<div><b>Làm:</b> nạp siêu tụ ${nw(m('1{,}0\\ \\mathrm F'))} tới ${V('2{,}7')} rồi cho xả qua điện trở ${Om('100')}; bên cạnh, hai pin tiểu nối tiếp (${V('3{,}0')}) nuôi điện trở ${Om('100')} giống hệt. Vôn kế đo hai đầu mỗi điện trở (số liệu mô phỏng, làm tròn từ clip).</div>
 <table class="tbl-ct" style="margin:.6mm 0"><tr><th>${m('t')} (s)</th><th>0</th><th>20</th><th>40</th><th>60</th><th>300</th></tr>
-<tr><td>Vôn kế, mạch tụ (V)</td><td>2,7</td><td>2,2</td><td>1,8</td><td>1,5</td><td>0,1</td></tr>
+<tr><td>Vôn kế, mạch tụ (V)</td><td>2,7</td><td>2,2</td><td>1,8</td><td>1,5</td><td></td></tr>
 <tr><td>Vôn kế, mạch pin (V)</td><td>2,98</td><td>2,98</td><td>2,98</td><td>2,98</td><td>2,98</td></tr></table>
 <div><b>Rút ra:</b> tụ chỉ chứa sẵn ${f(20)}, xả dần là ${f(12)}; pin ${f(22)} được hiệu điện thế, nên ${f(10)} mới là nguồn điện.</div></div>
 ${H.tuPin()}</div>
@@ -149,9 +149,9 @@ ${h3(1, 'II.5 · Ghép nguồn thành bộ', '4·1')}
 ${H.honHop('2 dãy, mỗi dãy 3 pin.', { n: 2, m: 3 })}</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '4·2')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Suất điện động là hiệu điện thế hai cực.”</b> Có dòng thì ${nw(m('U<\\mathcal E'))}; ${E} không đổi.</span></div>
-<div class="trap">${ck}<span><b>“Trong nguồn dòng cũng chạy từ (+) sang (−).”</b> Lực lạ đẩy dòng từ (−) lên (+), như bơm nước.</span></div>
-<div class="trap">${ck}<span><b>“Vôn kế chỉ 1,5 V thì pin còn tốt.”</b> Hở mạch pin nào cũng ${V('1{,}5')}. Nối ${Om('3')}: pin mới ${nw(`(${Om('0{,}3')})`)} ${nw(`${m('U\\approx1{,}36\\ \\mathrm V')};`)} pin cũ ${nw(`(${Om('3')})`)} ${nw(`${m('U=')} ${f(10)} V`)}</span></div></div>
+<div class="trap">${ck}<span><b>“Suất điện động là hiệu điện thế hai cực.”</b> Sửa lại: ${f(52)}</span></div>
+<div class="trap">${ck}<span><b>“Trong nguồn dòng cũng chạy từ (+) sang (−).”</b> Sửa lại: ${f(52)}</span></div>
+<div class="trap">${ck}<span><b>“Vôn kế chỉ 1,5 V thì pin còn tốt.”</b> Hở mạch pin nào cũng ${V('1{,}5')}. Nối ${Om('3')}: pin mới ${nw(`(${Om('0{,}3')})`)} ${nw(`${m('U\\approx1{,}36\\ \\mathrm V')};`)} pin cũ ${nw(`(${Om('1{,}0')})`)} ${nw(`${m('U=')} ${f(10)} V`)}</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '4·3')}
 ${box(`${tb('1. Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn?')}${lines(1)}
 ${tb('2. Lực lạ là gì, làm việc ở đâu, theo chiều nào?')}${lines(1)}
@@ -159,7 +159,7 @@ ${tb('3. Định nghĩa, công thức, đơn vị suất điện động.')}${li
 ${tb(`4. Điện trở trong; ${m('U')} theo ${m('\\mathcal E')}, ${m('I')}, ${m('r')}; khi nào ${m('U=\\mathcal E')}?`)}${lines(1)}
 ${tb('5. Định luật Ohm cho toàn mạch suy ra từ đâu? Đoản mạch là gì?')}${lines(1)}
 ${tb(`6. So sánh ${m('\\mathcal E')} và ${m('U')}; ghép nối tiếp, song song.`)}${lines(1)}`)}
-<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
+<div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô số ${f(10)}`)}</div>
 ${h3(4, 'Đề 1219 (20 câu, cuối tiết)', '4·4')}
 <div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(4)}</section>`;
