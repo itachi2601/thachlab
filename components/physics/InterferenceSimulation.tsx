@@ -304,7 +304,7 @@ function label(
   color: string,
   haloColor: string,
   align: CanvasTextAlign = "left",
-  size = 12
+  size = 14
 ) {
   ctx.save();
   ctx.font = `${size}px ${MONO}`;
@@ -456,7 +456,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalett
       ctx.lineTo(cx + 4, cy - 4);
       ctx.stroke();
     }
-    label(ctx, name, cx + 8, cy + 17, on ? pal.accent : pal.muted, halo, "left", 13);
+    label(ctx, name, cx + 8, cy + 17, on ? pal.accent : pal.muted, halo, "left", 14);
   };
   drawSource(p.sources.a, "A", true);
   drawSource(p.sources.b, p.sourceBOn ? "B" : "B tắt", p.sourceBOn);
@@ -481,7 +481,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalett
 
   const delta = p.d2 - p.d1;
   if (tankW < 430) {
-    label(ctx, "M", mx + 9, my - 8, color, halo, "left", 13);
+    label(ctx, "M", mx + 9, my - 8, color, halo, "left", 14);
     return;
   }
 
@@ -491,7 +491,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalett
     p.sourceBOn ? kindLabel(p.kind, p.order) : "chỉ còn sóng từ A",
   ];
   const boxW = Math.min(268, tankW - 16);
-  const boxH = 12 + lines.length * 16;
+  const boxH = 12 + lines.length * 18;
   let boxX = mx + 12;
   if (boxX + boxW > geo.offsetX + tankW - 4) boxX = mx - boxW - 12;
   boxX = Math.min(Math.max(boxX, geo.offsetX + 4), geo.offsetX + tankW - boxW - 4);
@@ -508,7 +508,7 @@ function drawOverlay(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalett
   ctx.stroke();
   lines.forEach((text, i) => {
     const last = i === lines.length - 1;
-    label(ctx, text, boxX + 8, boxY + 16 + i * 16, last ? color : pal.ink, halo);
+    label(ctx, text, boxX + 8, boxY + 16 + i * 18, last ? color : pal.ink, halo);
   });
 }
 
