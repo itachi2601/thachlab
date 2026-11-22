@@ -67,8 +67,9 @@ export default function SucKhoeHub() {
             </p>
           </>
         )}
-        {!staff && (
-          <p className="mt-3 text-sm text-muted">Tuần này: <b className="tabular-nums text-ink">{plan.count}/{ROUTINES.length}</b> buổi</p>
+        {/* N3, L3: mục tự chọn, không tính điểm — không hiện "0/3" như chỉ tiêu còn thiếu; chỉ ghi nhận buổi đã tập */}
+        {!staff && plan.count > 0 && nextR && (
+          <p className="mt-3 text-sm text-muted">Tuần này em đã tập <b className="tabular-nums text-ink">{plan.count}</b> buổi.</p>
         )}
         {staff && <dl className="mt-3 grid grid-cols-3 gap-2 text-center">
           <div className="rounded-xl bg-surface-2 px-1 py-2">

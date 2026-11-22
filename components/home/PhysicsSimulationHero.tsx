@@ -152,12 +152,12 @@ export function PhysicsSimulationHero() {
   };
 
   return (
-    <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-8 pt-16 sm:pb-12 sm:pt-20 lg:pb-10 lg:pt-16 lg:px-12">
+    <section id="thpt" className="relative overflow-clip bg-bg px-6 pb-8 pt-20 sm:pb-12 lg:pb-10 lg:pt-16 lg:px-12">
       <div aria-hidden className="grid-bg absolute inset-0" />
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 lg:grid-cols-12 lg:items-center lg:gap-x-8">
         <div className="order-1 lg:order-none lg:col-span-4 lg:col-start-1 lg:row-start-1" aria-live="polite" aria-atomic="true">
-          <p className="font-mono text-xs uppercase tracking-widest text-primary">
+          <p className="font-mono text-[13px] uppercase tracking-widest text-primary">
             Có bao giờ em tự hỏi…
           </p>
 
