@@ -74,7 +74,7 @@ ${h3(4, 'II.1 · Đọc nhãn trên thiết bị', '1·4')}
 <div><b>Input</b> là đầu ${f(25)} (điện đi vào thiết bị); <b>Output</b> là đầu ${f(25)} (thiết bị cấp điện cho mạch).</div>
 <div><b>Định mức</b> là số ${f(25)} ghi trên nhãn dụng cụ: mức dụng cụ được thiết kế để hoạt động bình thường.</div></div>
 ${H.nhanNguon()}</div>
-<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; ${nw('12 V')}, vôn kế chỉ 3,1; 6,2; 9,3; ${nw('12,4 V')}. Bóng ghi ${nw('6 V')} mà núm ở vạch ${nw('12 V')} thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
+<div class="card soft" style="padding:1.2mm 3mm"><b>Đo thử:</b> núm ở vạch 3; 6; 9; ${nw('12 V')}, vôn kế chỉ ${f(25)}. Bóng ghi ${nw('6 V')} mà núm ở vạch ${nw('12 V')} thì nhận ${f(12)} V, gấp ${f(12)} lần định mức. Vạch chỉ là giá trị gần ${f(25)}.</div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -114,7 +114,7 @@ ${H.khoangCach()}</div>
 <div>Vì vậy khi đèn đang cháy phải giữ ${f(25)} an toàn.</div></div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Phích vừa khít ổ là dùng được.”</b> Thiết bị ghi ${nw('110 V ~')} mà cắm ổ ${nw('220 V')}: quá áp, dễ cháy. Vừa chân ${m('\\neq')} vừa ${f(25)}.</span></div>
+<div class="trap">${ck}<span><b>“Phích vừa khít ổ là dùng được.”</b> Thiết bị ghi ${nw('110 V ~')} mà cắm ổ ${nw('220 V')}: ${f(25)}. Vừa chân ${m('\\neq')} vừa ${f(25)}.</span></div>
 <div class="trap">${ck}<span><b>“Hết lửa, hết khói là hết nóng.”</b> Cốc vừa đun sôi vẫn gây bỏng; mắt không ${f(25)} được nhiệt độ ${m('\\to')} dùng kẹp hoặc găng chịu nhiệt.</span></div>
 <div class="trap">${ck}<span><b>“Mạch lắp đúng rồi, bật thử một giây.”</b> Chỉ bật khi ${f(25)} cho phép.</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
