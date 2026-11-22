@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hạt nhân và mô hình nguyên tử · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:78vh} .f3{height:80vh}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text[font-size="14"]{font-size:15px} .fh svg text[font-size="15.6"]{font-size:17px} .fs svg text{font-size:22px}
+.ki{font-size:4.6em;margin:0;text-align:center;line-height:1}
+.fk{align-items:center}
+table.mh td{font-size:.86em;vertical-align:top;width:29%} table.mh th{font-size:.8em}
+table.gon td,table.gon th{font-size:.8em;padding:.04em .35em}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 12 · Bài 17 (web: Bài 14)</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 17 · tr.1</span></div>
+  <div class="giua">
+    <h1>Hạt nhân và mô hình nguyên tử</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Vì sao vài hạt alpha bật ngược khỏi lá vàng mỏng?</li>
+      <li>Hạt nhân gồm gì? Đọc kí hiệu ${}^{A}_{Z}\mathrm{X}$ thế nào?</li>
+      <li>Đồng vị là gì? Hạt nhân nhỏ cỡ nào, nặng bao nhiêu u?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="hai">
+    <div class="fig fs" style="width:38%"><svg viewBox="-10 0 352 250" role="img" aria-label="Nguồn bắn hạt alpha vào lá vàng mỏng; máy dò quay quanh lá vàng, đếm hạt ở góc phi">
+      <defs><marker id="sx" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs>
+      <circle cx="200" cy="120" r="100" fill="none" stroke="#8a94ad" stroke-width="2.4" stroke-dasharray="7 6"/>
+      <rect x="-4" y="100" width="74" height="40" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/>
+      <text x="33" y="128" fill="#1c2540" font-size="20" text-anchor="middle">nguồn</text>
+      <line x1="66" y1="120" x2="190" y2="120" stroke="#b3261e" stroke-width="3" marker-end="url(#sx)"/>
+      <text x="120" y="108" fill="#b3261e" font-size="22" text-anchor="middle" font-weight="700">α</text>
+      <rect x="196" y="72" width="8" height="96" fill="#d4a017" stroke="#1c2540" stroke-width="2"/>
+      <text x="200" y="196" fill="#1c2540" font-size="20" text-anchor="middle">lá vàng</text>
+      <line x1="200" y1="120" x2="270.7" y2="49.3" stroke="#1c2540" stroke-width="2" stroke-dasharray="5 4"/>
+      <line x1="200" y1="120" x2="290" y2="120" stroke="#1c2540" stroke-width="2" stroke-dasharray="5 4"/>
+      <path d="M248,120 A48,48 0 0 0 233.9,86.1" fill="none" stroke="#1c2540" stroke-width="2.4"/>
+      <text x="252" y="104" fill="#1c2540" font-size="22" font-style="italic">φ</text>
+      <rect x="262" y="34" width="26" height="26" rx="4" fill="#1f5fa8" transform="rotate(45 275 47)"/>
+      <text x="300" y="26" fill="#1f5fa8" font-size="20" text-anchor="end" font-weight="700">máy dò</text>
+      <text x="170" y="244" fill="#1c2540" font-size="20" text-anchor="middle">máy dò quay quanh lá vàng</text>
+    </svg></div>
+    <div class="ben">
+      <p class="nho">Thomson: nguyên tử là khối cầu dương đặc, êlectron rải rác.</p>
+      <p class="hoi">Bắn hàng vạn hạt alpha ($+2e$) vào lá vàng mỏng, đếm hạt ở từng góc. Sẽ thấy:</p>
+      <ol class="opt" style="font-size:.9em">
+        <li><b>A.</b> Mọi hạt đi gần thẳng, không hạt nào lệch rõ</li>
+        <li><b>B.</b> Phần lớn đi thẳng, số ít lệch nhiều góc, rất ít hạt bật ngược</li>
+        <li><b>C.</b> Phần lớn hạt lệch mạnh hoặc bật lại, vì vàng rất đặc</li>
+      </ol>
+      <p class="nho">Khoanh Tập + "Vì sao". Đáp án: cuối tiết.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Hạt nhân, kí hiệu ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Hạt nhân</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 1–2</span></div>
+  <h2>Hạt nhân gồm gì? Vì sao không vỡ?</h2>
+  <div class="giua">
+    <p>Hạt nhân gồm <b class="o">prôtôn</b> ($+e$) và <b class="o">nơtron</b> (không mang điện),<br>gọi chung là <b class="o">nuclôn</b>.</p>
+    <p class="nho">Nguyên tử trung hoà: số êlectron ở vỏ = số prôtôn.</p>
+    <p>Các prôtôn đẩy nhau. Thứ giữ chúng lại: <b>lực hạt nhân</b></p>
+    <ul>
+      <li>rất <b class="o">mạnh</b>, thắng lực <b class="o">đẩy tĩnh điện</b></li>
+      <li>tầm tác dụng cỡ 10<sup><b class="o">−15</b></sup> m (cỡ kích thước hạt nhân)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Kí hiệu hạt nhân</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 3–4</span></div>
+  <div class="hai">
+    <div class="fig fk"><p class="ki">${}^{A}_{Z}\mathrm{X}$</p></div>
+    <div class="ben">
+      <p>$A$ (trên) = số <b class="o">nuclôn</b> = <b class="o">$Z$</b> + <b class="o">$N$</b></p>
+      <p>$Z$ (dưới) = số <b class="o">prôtôn</b></p>
+      <p>$N$ = <b class="o">$A$</b> − <b class="o">$Z$</b> &nbsp;(số nơtron)</p>
+      <p class="nho">Trên là tổng, dưới là prôtôn. X: kí hiệu hoá học. $A, Z, N$ không có đơn vị.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Tự kiểm tra 1</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · Tự kiểm tra 1</span></div>
+  <div class="giua">
+    <p class="hoi">${}^{65}_{29}\mathrm{Cu}$ có:</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> 65 prôtôn, 29 nơtron</li>
+      <li><b>B.</b> 29 nuclôn, 36 nơtron</li>
+      <li data-dung><b>C.</b> 29 prôtôn, 36 nơtron</li>
+      <li><b>D.</b> 29 prôtôn, 65 nơtron</li>
+    </ol>
+    <button class="mo" data-mo="a1">Mở đáp án</button>
+    <div class="an" id="a1" hidden>
+      <p><b>C.</b> $Z=29$ prôtôn · $N=A-Z=65-29=36$ nơtron. Điền dòng "Vì $N=A-Z=$ …".</p>
+      <p class="nho">A: đọc ngược hai chỉ số · B: lấy $Z$ làm số nuclôn · D: lấy $A$ làm số nơtron.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Chốt kí hiệu</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4</span></div>
+  <div class="fig f1"><svg viewBox="0 0 440 272" role="img" aria-label="Kí hiệu hạt nhân đồng: chỉ số trên là số nuclôn A bằng 65, chỉ số dưới là số proton Z bằng 29, nên có 36 neutron"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="24" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">Đọc kí hiệu hạt nhân</text><text x="252" y="122" fill="currentColor" font-size="56" font-weight="700" text-anchor="start">Cu</text><text x="246" y="94" fill="#f87171" font-size="30" font-weight="700" text-anchor="end">65</text><text x="246" y="146" fill="#38bdf8" font-size="30" font-weight="700" text-anchor="end">29</text><text x="14" y="84" fill="#f87171" font-size="15" font-weight="700" text-anchor="start">A = số nuclôn</text><text x="14" y="103" fill="#f87171" font-size="14" font-weight="500" text-anchor="start">proton + neutron</text><line x1="150" y1="84" x2="200" y2="84" stroke="#f87171" stroke-width="2"/><path d="M192.4,79.6 L200.0,84.0 L192.4,88.4" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="14" y="136" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">Z = số proton</text><text x="14" y="155" fill="#38bdf8" font-size="14" font-weight="500" text-anchor="start">điện tích hạt nhân</text><line x1="150" y1="136" x2="200" y2="136" stroke="#38bdf8" stroke-width="2"/><path d="M192.4,131.6 L200.0,136.0 L192.4,140.4" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="352" y="104" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">kí hiệu</text><text x="352" y="122" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">hoá học X</text><rect x="10" y="178" width="420" height="84" rx="8" fill="rgba(148,163,184,.10)" stroke="currentColor" stroke-width="1.2"/><text x="22" y="200" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Ví dụ: hạt nhân đồng có 29 proton, 65 nuclôn</text><text x="22" y="222" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Số neutron N = A − Z = 65 − 29 = 36</text><text x="22" y="246" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Cùng Z = 29, khác N: hai đồng vị của đồng</text></svg></div>
+</section>
+
+
+<!-- ================= 3. Đồng vị ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Đồng vị</span><span>phút 9–13</span><span class="tap">tr.2 · ô 2·1 · dòng 1–2</span></div>
+  <div class="hai">
+    <div class="fig fh"><svg viewBox="0 0 320 128" role="img" aria-label="Ba đồng vị của hiđrô"><circle cx="50" cy="46" r="34" fill="none" stroke="#8a94ad" stroke-width="1.6" stroke-dasharray="4 4"/><circle cx="50" cy="46" r="11" fill="#b3261e"/><text x="50" y="51.5" fill="#fff" font-size="16.5" text-anchor="middle" font-weight="700">+</text><text font-size="15.6" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="41.048" y="106.3">1</tspan><tspan x="41.048" y="124.5">1</tspan></text><text x="43.048" y="118" font-size="26" fill="#1c2540" font-weight="700">H</text><circle cx="160" cy="46" r="34" fill="none" stroke="#8a94ad" stroke-width="1.6" stroke-dasharray="4 4"/><circle cx="148" cy="46" r="11" fill="#b3261e"/><text x="148" y="51.5" fill="#fff" font-size="16.5" text-anchor="middle" font-weight="700">+</text><circle cx="172" cy="46" r="11" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><text font-size="15.6" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="151.048" y="106.3">2</tspan><tspan x="151.048" y="124.5">1</tspan></text><text x="153.048" y="118" font-size="26" fill="#1c2540" font-weight="700">H</text><circle cx="270" cy="46" r="34" fill="none" stroke="#8a94ad" stroke-width="1.6" stroke-dasharray="4 4"/><circle cx="270" cy="34" r="11" fill="#b3261e"/><text x="270" y="39.5" fill="#fff" font-size="16.5" text-anchor="middle" font-weight="700">+</text><circle cx="256" cy="58" r="11" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="58" r="11" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><text font-size="15.6" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="261.048" y="106.3">3</tspan><tspan x="261.048" y="124.5">1</tspan></text><text x="263.048" y="118" font-size="26" fill="#1c2540" font-weight="700">H</text></svg></div>
+    <div class="ben">
+      <p>Đồng vị: cùng số <b class="o">prôtôn</b>, khác số <b class="o">nơtron</b>;<br>tính chất <b class="o">hoá học</b> giống nhau.</p>
+      <p class="nho">Cùng $Z$ → cùng số êlectron ở vỏ → cùng hoá học; chỉ khác khối lượng.</p>
+      <p>${}^{2}_{1}\mathrm{H}$ (<b class="o">đơteri</b>), ${}^{3}_{1}\mathrm{H}$ (<b class="o">triti</b>): cùng <b class="o">1</b> prôtôn, nơtron <b class="o">0</b> / <b class="o">1</b> / <b class="o">2</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Đồng vị?</span><span>phút 9–13</span><span class="tap">tr.2 · ô 2·1 · bảng</span></div>
+  <p class="hoi">Điền $Z$, $N$ rồi đánh dấu: cặp nào là đồng vị?</p>
+  <table class="bang">
+    <thead><tr><th>Cặp hạt nhân</th><th>$Z$ (hạt 1 · hạt 2)</th><th>$N$ (hạt 1 · hạt 2)</th><th>Đồng vị?</th></tr></thead>
+    <tbody>
+      <tr><td>${}^{12}_{6}\mathrm{C}$ và ${}^{14}_{6}\mathrm{C}$</td><td class="ns"><span class="an-o" data-o="b3">6 · 6</span></td><td class="ns"><span class="an-o" data-o="b3">6 · 8</span></td><td class="ns"><span class="an-o" data-o="b3">Có</span></td></tr>
+      <tr><td>${}^{40}_{18}\mathrm{Ar}$ và ${}^{40}_{20}\mathrm{Ca}$</td><td class="ns"><span class="an-o" data-o="b3">18 · 20</span></td><td class="ns"><span class="an-o" data-o="b3">22 · 20</span></td><td class="ns"><span class="an-o" data-o="b3">Không</span></td></tr>
+      <tr><td>${}^{35}_{17}\mathrm{Cl}$ và ${}^{37}_{17}\mathrm{Cl}$</td><td class="ns"><span class="an-o" data-o="b3">17 · 17</span></td><td class="ns"><span class="an-o" data-o="b3">18 · 20</span></td><td class="ns"><span class="an-o" data-o="b3">Có</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b3">Mở: bảng đáp án</button>
+  <p class="nho an-o" data-o="b3">Cùng $Z$ mới là đồng vị. Ar – Ca cùng số khối 40 nhưng là hai nguyên tố.</p>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Câu 3</span><span>phút 9–13</span><span class="tap">tr.2 · ô 2·4 · Câu 3</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 3. Hai hạt nhân nào sau đây là đồng vị của nhau?</p>
+    <ol class="opt lo hai-cot">
+      <li data-dung><b>A.</b> ${}^{16}_{8}\mathrm{O}$ và ${}^{17}_{8}\mathrm{O}$</li>
+      <li><b>B.</b> ${}^{14}_{6}\mathrm{C}$ và ${}^{14}_{7}\mathrm{N}$ — cùng số khối 14</li>
+      <li><b>C.</b> ${}^{3}_{1}\mathrm{H}$ và ${}^{3}_{2}\mathrm{He}$ — cùng số khối 3</li>
+      <li><b>D.</b> ${}^{13}_{6}\mathrm{C}$ và ${}^{14}_{7}\mathrm{N}$ — cùng 7 nơtron</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden><p><b>A.</b> Cùng $Z=8$, nơtron 8 và 9. B, C chỉ cùng số khối; D chỉ cùng số nơtron: đều khác $Z$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m2e">
+  <div class="top"><span class="so">3/6 · Câu 2</span><span>phút 9–13 · nhớ lại</span><span class="tap">tr.2 · ô 2·4 · Câu 2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Ra xa hơn kích thước hạt nhân, lực hạt nhân thế nào?</p>
+    <ol class="opt lo">
+      <li data-dung><b>A.</b> Yếu đi rất nhanh, coi như không còn tác dụng</li>
+      <li><b>B.</b> Vẫn mạnh như trong hạt nhân</li>
+      <li><b>C.</b> Đổi thành lực đẩy</li>
+    </ol>
+    <p class="nho">Ghi vào bảng ô 2·4: em chọn, chắc hay không.</p>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden><p><b>A.</b> Lực hạt nhân chỉ tác dụng trong phạm vi cỡ $10^{-15}$ m; ra xa hơn coi như bằng không.</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Mô hình nguyên tử ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Thí nghiệm ảo PhET</span><span>phút 13–20</span><span class="tap">tr.5 · ô 5·4 · dòng "Bắn hạt alpha"</span></div>
+  <div class="giua">
+    <p class="hoi">Màn "Mẫu Nguyên tử bánh pudding" (Thomson): bắn hạt alpha.<br>Có hạt nào lệch rõ hay bật ngược không?</p>
+    <p class="hoi">Sang "Mẫu Nguyên tử Rutherford": hạt nào lệch mạnh? Nó đi gần cái gì?</p>
+    <p class="nho">Ghi "Dự đoán" vào Tập trước khi xem.</p>
+        <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/rutherford-scattering/latest/rutherford-scattering_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p4">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p4" hidden>
+      <p>Thomson: mọi hạt gần thẳng. Rutherford: xa hạt nhân đi thẳng; <b>sát hạt nhân</b> lệch mạnh, có hạt bật ngược.</p>
+      <p>Êlectron nhẹ hơn alpha &gt;7 000 lần nên không làm alpha lệch. Đẩy ngược là <b>lực điện</b> của hạt nhân nhỏ, nặng, dương.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Thí nghiệm dựng lại</span><span>chỉ chiếu khi không có PhET · mặc định bỏ qua</span><span class="tap">tr.5 · ô 5·4</span></div>
+  <div class="vg" data-bat="0.4" data-het="49.3">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-hatnhan-03-20261121.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-hatnhan-03-20261121.webp" preload="metadata" playsinline title="Bắn hạt alpha vào lá vàng"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hạt alpha gặp êlectron, rồi gặp hạt nhân.</p><p class="nho">Clip dừng 3 lần cho lớp đoán.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Lá vàng chứa rất nhiều êlectron.</p><p class="hoi">Êlectron nhẹ hơn hạt alpha hơn 7 000 lần.</p></div>
+      <div class="buoc" data-t="9.3" data-dung><p class="hoi">Hạt alpha va vào một êlectron. Alpha đi tiếp thế nào?</p>
+        <ol class="opt lo"><li><b>A.</b> Bật ngược trở lại</li><li><b>B.</b> Lệch mạnh sang một bên</li><li data-dung><b>C.</b> Gần như không lệch, đi tiếp</li><li><b>D.</b> Dừng lại, nằm yên trong lá vàng</li></ol></div>
+      <div class="buoc" data-t="9.4"><p class="so-lon">C: gần như không lệch</p><p class="hoi">Rutherford đếm chớp sáng ở từng góc.</p></div>
+      <div class="buoc" data-t="23.1" data-dung><p class="so-lon">8 000 hạt → 1 hạt lệch quá $90^\circ$</p><p class="hoi">Êlectron không đẩy ngược được. Vậy cái gì đẩy?</p></div>
+      <div class="buoc" data-t="23.2"><p class="hoi">Xa hạt nhân · gần hơn · rất sát: nhìn đường đi.</p></div>
+      <div class="buoc" data-t="33.9" data-dung><table class="bang"><tr><td>xa hạt nhân</td><td class="ns">đi thẳng</td></tr><tr><td>gần hơn</td><td class="ns">lệch</td></tr><tr><td>rất sát</td><td class="ns">bật ngược</td></tr></table><p class="hoi">Điện dương loãng (Thomson) có đẩy ngược được không?</p></div>
+      <div class="buoc" data-t="34.0"><p class="hoi">Điện dương loãng: chỉ đẩy nhẹ → Thomson bị bác bỏ.</p></div>
+      <div class="buoc" data-t="49.3"><p class="so-lon">Hạt nhân đẩy ngược, không phải êlectron.</p><p class="nho">Câu cuối clip (lá nhôm) để về nhà.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Ba mô hình</span><span>phút 13–20</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="fig f3"><svg viewBox="0 0 440 306" role="img" aria-label="Ba mô hình nguyên tử đặt cạnh nhau: Thomson cầu đặc, Rutherford có hạt nhân nhỏ ở giữa, Bohr thêm các quỹ đạo cho phép"><defs><marker id="f2-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f2-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f2-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f2-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="66" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Thomson 1904</text><text x="202" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Rutherford 1911</text><text x="352" y="22" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">Bohr 1913</text><circle cx="66" cy="112" r="56" fill="rgba(251,146,60,.16)" stroke="#fb923c" stroke-width="1.8"/><circle cx="40" cy="86" r="4" fill="#38bdf8"/><circle cx="92" cy="86" r="4" fill="#38bdf8"/><circle cx="66" cy="112" r="4" fill="#38bdf8"/><circle cx="40" cy="138" r="4" fill="#38bdf8"/><circle cx="92" cy="138" r="4" fill="#38bdf8"/><text x="66" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">cầu dương đặc</text><text x="66" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">electron rải rác</text><circle cx="202" cy="112" r="56" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity="0.5"/><circle cx="202" cy="112" r="13" fill="#f87171"/><text x="202" y="117" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+</text><ellipse cx="202" cy="112" rx="42" ry="42" fill="none" stroke="#38bdf8" stroke-width="1.4" stroke-dasharray="4 4"/><circle cx="160" cy="112" r="4" fill="#38bdf8"/><circle cx="244" cy="112" r="4" fill="#38bdf8"/><text x="202" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">hạt nhân nhỏ, nặng</text><text x="202" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">electron quay</text><text x="202" y="228" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">quanh hạt nhân</text><circle cx="352" cy="112" r="13" fill="#f87171"/><text x="352" y="117" fill="currentColor" font-size="14" font-weight="700" text-anchor="middle">+</text><circle cx="352" cy="112" r="24" fill="none" stroke="#38bdf8" stroke-width="1.8"/><circle cx="352" cy="112" r="46" fill="none" stroke="#38bdf8" stroke-width="1.8"/><circle cx="328" cy="112" r="4.5" fill="#38bdf8"/><circle cx="352" cy="66" r="4.5" fill="#38bdf8"/><text x="352" y="192" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">quỹ đạo cho phép,</text><text x="352" y="210" fill="currentColor" font-size="14" font-weight="500" text-anchor="middle">năng lượng xác định</text><text x="16" y="258" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">Nguyên tử gần như trống: hạt nhân chiếm</text><text x="16" y="276" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">cỡ một phần mười nghìn tỉ thể tích</text><text x="16" y="296" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">Hạt nhân vẽ phóng to, không đúng tỉ lệ</text></svg></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Ba mô hình</span><span>phút 13–20</span><span class="tap">tr.2 · ô 2·2 · dòng 1–2 + bảng</span></div>
+  <p>Rutherford: hạt nhân rất nhỏ mang điện <b class="o">dương</b>, êlectron ở vỏ.<br>Bohr thêm: êlectron chỉ ở những quỹ đạo có <b class="o">năng lượng xác định</b>.</p>
+  <table class="mh">
+    <thead><tr><th></th><th>Thomson 1904</th><th>Rutherford 1911</th><th>Bohr 1913</th></tr></thead>
+    <tbody>
+      <tr><th>Điểm mới</th><td><span class="an-o" data-o="b41">cầu điện dương đặc, êlectron rải rác</span></td><td><span class="an-o" data-o="b42">hạt nhân nhỏ, nặng, dương ở tâm; nguyên tử gần như trống</span></td><td><span class="an-o" data-o="b43">êlectron chỉ ở quỹ đạo có năng lượng xác định</span></td></tr>
+      <tr><th>Bị bác bỏ / còn thiếu</th><td><span class="an-o" data-o="b41">không có hạt nào bật ngược → lá vàng bác bỏ</span></td><td><span class="an-o" data-o="b42">êlectron chuyển động thế nào? chưa nói</span></td><td><span class="an-o" data-o="b43">(đọc thêm, không đòi hỏi)</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut"><button class="mo" data-mo="b41">Mở: Thomson</button><button class="mo" data-mo="b42">Mở: Rutherford</button><button class="mo" data-mo="b43">Mở: Bohr</button></div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Câu 4</span><span>phút 13–20</span><span class="tap">tr.2 · ô 2·4 · Câu 4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 4. Về thí nghiệm tán xạ hạt alpha, phát biểu nào <u>sai</u>?</p>
+    <ol class="opt lo" style="font-size:.84em">
+      <li><b>A.</b> Phần lớn hạt alpha đi thẳng qua lá vàng, số ít bị lệch với các góc khác nhau</li>
+      <li><b>B.</b> Kết quả cho thấy nguyên tử không có cấu tạo như mô hình Thomson</li>
+      <li data-dung><b>C.</b> Hạt alpha tán xạ góc lớn là do tương tác điện với các êlectron</li>
+      <li><b>D.</b> Thí nghiệm không chứng minh êlectron có quỹ đạo dừng; đó là của Bohr</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở đáp án</button>
+    <div class="an" id="a4" hidden><p><b>C sai.</b> Êlectron nhẹ hơn alpha hơn 7 000 lần: chỉ hạt nhân nặng, dương mới đẩy ngược được.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4f">
+  <div class="top"><span class="so">4/6 · Câu 6</span><span>phút 13–20</span><span class="tap">tr.2 · ô 2·4 · Câu 6</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 6. Theo mô hình Rutherford, phát biểu nào đúng?</p>
+    <ol class="opt lo">
+      <li><b>A.</b> Điện tích dương rải đều khắp nguyên tử, êlectron cắm rải rác bên trong</li>
+      <li data-dung><b>B.</b> Nguyên tử gần như trống; hạt nhân rất nhỏ ở tâm mang toàn bộ điện tích dương và gần hết khối lượng</li>
+      <li><b>C.</b> Êlectron nằm trong hạt nhân, nơtron chuyển động quanh hạt nhân</li>
+    </ol>
+    <button class="mo" data-mo="a6">Mở đáp án</button>
+    <div class="an" id="a6" hidden><p><b>B.</b> A là Thomson · C: êlectron ở vỏ, nơtron trong hạt nhân.</p></div>
+  </div>
+</section>
+
+<!-- ================= 5. Kích thước, u, bài mẫu ================= -->
+<section class="man" id="m5f">
+  <div class="top"><span class="so">5/6 · Câu 7 · nhớ lại</span><span>phút 20–27</span><span class="tap">tr.2 · ô 2·4 · Câu 7 · tr.5 ô 5·4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 7. Hạt nhân uranium ${}^{238}_{92}\mathrm{U}$ có bao nhiêu nuclôn, prôtôn, nơtron?</p>
+    <ol class="opt lo" style="font-size:.92em">
+      <li><b>A.</b> 238 nuclôn · 238 prôtôn · 92 nơtron</li>
+      <li><b>B.</b> 238 nuclôn · 92 prôtôn · 92 nơtron</li>
+      <li data-dung><b>C.</b> 238 nuclôn · 92 prôtôn · 146 nơtron</li>
+      <li><b>D.</b> 330 nuclôn · 92 prôtôn · 238 nơtron</li>
+    </ol>
+    <button class="mo" data-mo="a7">Mở đáp án</button>
+    <div class="an" id="a7" hidden><p><b>C.</b> $N=238-92=146$. Ghi luôn dòng "Câu 7: A, Z, N" ở tr.5 ô 5·4.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Hạt nhân nhỏ cỡ nào?</span><span>phút 20–27</span><span class="tap">tr.2 · ô 2·3 · dòng 1–2</span></div>
+  <div class="giua">
+    <div class="fx">$R=1{,}2\cdot10^{-15}\,A^{1/3}$ (m)</div>
+    <p class="nho">$A$: số khối (số nguyên). Hệ số $1{,}2$ chỉ gần đúng: công thức thực nghiệm.</p>
+    <p>Nguyên tử cỡ 10<sup><b class="o">−10</b></sup> m · hạt nhân cỡ 10<sup><b class="o">−15</b></sup> m → nhỏ hơn <b class="o">100 000</b> lần</p>
+    <p class="hoi">$A$ gấp 27 lần (${}^{1}_{1}\mathrm{H}$ → ${}^{27}_{13}\mathrm{Al}$) thì $R$ gấp mấy lần?</p>
+    <button class="mo" data-mo="g5">Mở</button>
+    <div class="an" id="g5" hidden><p>$27=3\cdot3\cdot3$ nên $27^{1/3}=3$: chỉ gấp <b>3</b> lần. $R$ tăng chậm, theo căn bậc ba của $A$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Đơn vị u</span><span>phút 20–27</span><span class="tap">tr.2 · ô 2·3 · dòng 3–5</span></div>
+  <div class="giua">
+    <p>$1\ \mathrm{u}$ = <b class="o">$\tfrac{1}{12}$</b> khối lượng nguyên tử <b class="o">${}^{12}_{6}\mathrm{C}$</b></p>
+    <div class="fx">$1\ \mathrm{u}\approx$ <b class="o">$1{,}66054\cdot10^{-27}$</b> kg $\approx$ <b class="o">$931{,}5$</b> $\mathrm{MeV}/c^2$</div>
+    <p>$1\ \mathrm{MeV}=$ <b class="o">$1{,}6\cdot10^{-13}$</b> J &nbsp;<span class="nho">($\mathrm{MeV}/c^2$ suy từ $E=mc^2$)</span></p>
+    <p>Một nguyên tử: $m\approx$ <b class="o">$A$</b> u · một mol: $M\approx$ <b class="o">$A$</b> g/mol</p>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Câu 5</span><span>phút 20–27</span><span class="tap">tr.2 · ô 2·4 · Câu 5</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 5. Một mol có $N_A=6{,}022\cdot10^{23}$ nguyên tử. Từ khối lượng mol $M$ (g/mol), muốn tìm khối lượng một nguyên tử thì làm thế nào?</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> Lấy $M$ nhân với $N_A$</li>
+      <li data-dung><b>B.</b> Lấy $M$ chia cho $N_A$ (ra gam, rồi đổi sang u nếu cần)</li>
+      <li><b>C.</b> Lấy số khối $A$ làm khối lượng (tính bằng u)</li>
+      <li><b>D.</b> Lấy $M$ chia cho số khối $A$</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>B.</b> $m=M/N_A$ · C: chỉ gần đúng · D: ra gần 1 g/mol.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 20–27</span><span class="tap">tr.4 · ô 4·1 → 4·2</span></div>
+  <p>Mẫu ghi ${}^{27}_{13}\mathrm{Al}$; $M=26{,}98$ g/mol; $N_A=6{,}022\cdot10^{23}\ \text{mol}^{-1}$.</p>
+  <p class="nho">a) prôtôn, nơtron · b) bán kính hạt nhân · c) khối lượng một nguyên tử (u, kg) · d) ${}^{63}\mathrm{Cu}$, ${}^{65}\mathrm{Cu}$ khác ở đâu?</p>
+  <table class="bang gon">
+    <thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+    <tbody>
+      <tr><td>"${}^{27}_{13}\mathrm{Al}$"</td><td>$A=27;\ Z=13$</td><td>$N=A-Z$</td></tr>
+      <tr><td>"bán kính hạt nhân"</td><td class="ns"><span class="an-o" data-o="b5">$A=27$</span></td><td class="ns"><span class="an-o" data-o="b5">$R=1{,}2\cdot10^{-15}A^{1/3}$</span></td></tr>
+      <tr><td>"khối lượng mol"</td><td class="ns"><span class="an-o" data-o="b5">$M=26{,}98$ g/mol</span></td><td class="ns"><span class="an-o" data-o="b5">$m=M/N_A$</span></td></tr>
+      <tr><td>"ra đơn vị u"</td><td class="ns"><span class="an-o" data-o="b5">$1\ \mathrm{u}\approx1{,}66\cdot10^{-27}$ kg</span></td><td class="ns"><span class="an-o" data-o="b5">kg → u: chia cho $1{,}66\cdot10^{-27}$ kg</span></td></tr>
+      <tr><td>"hai đồng vị của đồng"</td><td class="ns"><span class="an-o" data-o="b5">$Z=29$; $N$: 34, 36</span></td><td class="ns"><span class="an-o" data-o="b5">cùng $Z$, khác $N$</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b5">Mở: bảng phân tích đề</button>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 20–27</span><span class="tap">tr.4 · ô 4·3 · a) b) c)</span></div>
+  <div class="giua">
+    <div class="an nhap"><p><b>Làm mẫu a):</b> $Z=13$ prôtôn · $N=27-13=14$ nơtron.</p></div>
+    <button class="mo" data-mo="m5g1">Mở b)</button>
+    <div class="an" id="m5g1" hidden><p>$R=1{,}2\cdot10^{-15}\cdot27^{1/3}=1{,}2\cdot10^{-15}\cdot3=3{,}6\cdot10^{-15}$ m</p></div>
+    <button class="mo" data-mo="m5g2">Mở c)</button>
+    <div class="an" id="m5g2" hidden><p>$m=\dfrac{26{,}98}{6{,}022\cdot10^{23}}\approx4{,}48\cdot10^{-23}$ g $=4{,}48\cdot10^{-26}$ kg $\approx26{,}98$ u</p>
+      <p class="nho">26,98 u ≠ 27: số khối là số đếm, không phải khối lượng (bẫy 1). d) về nhà.</p></div>
+  </div>
+</section>
+
+
+<!-- ================= 6. Bẫy, trả bài, quay lại, đề 1191 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Ba cái bẫy</span><span>phút 27–30 · 20 giây</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <p class="hoi">Đánh dấu ☐ bẫy em từng sập:</p>
+    <ul>
+      <li><b>Lấy số khối làm khối lượng.</b> Nhôm: $A=27$, nhưng $26{,}98$ u.</li>
+      <li><b>"Đồng vị khác số prôtôn".</b> Sai: đồng vị phải <b>cùng</b> $Z$.</li>
+      <li><b>Êlectron quay ở khoảng cách nào cũng được.</b> Bohr: chỉ ở quỹ đạo có năng lượng xác định.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–30 · viết 1 phút rồi mới mở</span><span class="tap">tr.3 · ô 3·2 · câu 3, 5</span></div>
+  <div class="giua">
+    <p class="hoi">3. Đồng vị là gì? Kể tên ba đồng vị của hiđrô, chúng giống và khác nhau ở đâu?</p>
+    <button class="mo" data-mo="t3">Mở câu 3</button>
+    <div class="an" id="t3" hidden><p>Cùng $Z$, khác $N$ · ${}^{1}_{1}\mathrm{H}$, ${}^{2}_{1}\mathrm{H}$, ${}^{3}_{1}\mathrm{H}$: cùng 1 prôtôn (cùng hoá học), nơtron 0, 1, 2 (khác khối lượng).</p></div>
+    <p class="hoi">5. Đơn vị u là gì? Viết công thức bán kính hạt nhân.</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>$1\ \mathrm{u}=\tfrac{1}{12}$ khối lượng ${}^{12}_{6}\mathrm{C}\approx1{,}66054\cdot10^{-27}$ kg · $R=1{,}2\cdot10^{-15}A^{1/3}$ (m).</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Quay lại lá vàng</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig fv"><svg viewBox="0 0 320 196" role="img" aria-label="Thí nghiệm lá vàng của Rutherford"><defs><marker id="al" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="4" y="78" width="66" height="40" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="37" y="105" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nguồn</text><rect x="186" y="14" width="9" height="150" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="190" y="190" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">lá vàng</text><line x1="70" y1="98" x2="312" y2="98" stroke="#1c2540" stroke-width="2.8" marker-end="url(#al)"/><text x="312" y="128" fill="#1c2540" font-size="18" text-anchor="end" font-weight="400">hầu hết</text><text x="312" y="148" fill="#1c2540" font-size="18" text-anchor="end" font-weight="400">bay thẳng</text><path d="M70,90 L190,74 L306,20" fill="none" stroke="#1c2540" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#al)"/><text x="80" y="46" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">vài hạt lệch</text><path d="M70,106 L190,122 L96,174" fill="none" stroke="#b3261e" stroke-width="2.8" marker-end="url(#al)"/><text x="8" y="160" fill="#b3261e" font-size="18" text-anchor="start" font-weight="400">rất hiếm:</text><text x="8" y="180" fill="#b3261e" font-size="18" text-anchor="start" font-weight="400">bật ngược</text><circle cx="190" cy="74" r="5" fill="#b3261e"/><circle cx="190" cy="122" r="5" fill="#b3261e"/></svg></div>
+    <div class="ben">
+      <p class="nhin">Cứ khoảng 8 000 hạt mới có 1 hạt lệch quá $90^\circ$.</p>
+      <button class="mo" data-mo="a8">Mở đáp án</button>
+      <div class="an" id="a8" hidden><p><b>B.</b> Nên nguyên tử gần như trống (hầu hết bay thẳng); điện dương dồn ở vùng rất nhỏ, nặng: hạt nhân (vài hạt bật ngược).</p>
+        <p class="nho">A: dự đoán của Thomson, nhưng có hạt bật ngược → Thomson bị bác bỏ · C: vàng đặc kín thì không hạt nào xuyên qua.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6d">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.3 ô Ghi chú: điểm …/18</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1191" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM10 0h1v1h-1zM11 0h1v1h-1zM12 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM17 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM16 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM26 8h1v1h-1zM29 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM7 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM1 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM1 11h1v1h-1zM3 11h1v1h-1zM5 11h1v1h-1zM9 11h1v1h-1zM11 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM5 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM14 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM32 17h1v1h-1zM2 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM2 19h1v1h-1zM4 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM31 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM9 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM19 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM9 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM11 29h1v1h-1zM12 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM27 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM22 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM24 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM12 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM21 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM30 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1191</b> · 18 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1191 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6e">
+  <div class="top"><span class="so">Về nhà theo Tập bài 17</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · ô 1·1 đánh dấu mục tiêu</li>
+    <li><b>tr.2</b> ô 2·2 ô "Hình" (vẽ 3 mô hình) · ô 2·4 cột "Đúng?" còn trống</li>
+    <li><b>tr.3</b> ô 3·2 câu 1, 2, 4 (nói cho người nhà nghe)</li>
+    <li><b>tr.4</b> ô 4·3 d) · ô 4·4 khối lượng trung bình của đồng</li>
+    <li><b>tr.5</b> ô 5·1 ghi đề BTVN thầy giao · ô 5·2 · ô 5·3 · ô 5·4 dòng "Đồng vị neon" (PhET trên web)</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>
