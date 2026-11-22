@@ -131,7 +131,7 @@ export const hinhL10b23 = {
     return wrap('0 0 320 180', b, cap, 'Phân tích lực xiên góc');
   },
   // Trang 2 · dấu của công theo góc
-  dauCong: (cap = 'Cùng d, đổi hướng F. Điền &gt;, = hay &lt; vào chỗ “?”.') => baGoc([45, 90, 135], cap),
+  dauCong: (cap = 'Cùng d, đổi hướng F. Ghi dấu của A vào bảng bên trái.') => baGoc([45, 90, 135], cap),
   // Trang 2 · công của trọng lực lên/xuống dốc
   docTrongLuc: (cap = 'Vật đi lên hay đi xuống dốc: công của P mang dấu gì, tính theo s hay h?') => doc({ cap, id: 'dtl', chieu: 'len', mui: true }),
   // Trang 3 · thí nghiệm kéo xe lên mặt nghiêng

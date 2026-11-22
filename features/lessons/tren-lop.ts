@@ -17,6 +17,7 @@ export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 41, slug: "l11-cuong-do-dong-dien", ten: "Vật lí 11 · Bài 22 · Cường độ dòng điện", ghiChu: "22 màn · cuối tiết đề 1217 (QR)" },
   { lessonId: 15, slug: "l12-hat-nhan-mo-hinh-nguyen-tu", ten: "Vật lí 12 · Bài 14 · Hạt nhân và mô hình nguyên tử", ghiChu: "27 màn · cuối tiết đề 1191 (QR)" },
   { lessonId: 67, slug: "l10-thuc-hanh-tong-hop-luc", ten: "Vật lí 10 · Bài 22 · Thực hành: Tổng hợp lực", ghiChu: "29 màn · cuối tiết đề 1243 (QR)" },
+  { lessonId: 23, slug: "l10-nang-luong-cong-co-hoc", ten: "Vật lí 10 · Bài 23 · Năng lượng. Công cơ học", ghiChu: "22 màn · cuối tiết đề 1244 (QR)" },
 ];
 
 export const banChieuCuaBai = (lessonId: number) => BAN_CHIEU_TREN_LOP.find((b) => b.lessonId === lessonId);

@@ -135,7 +135,7 @@ ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="trap">${ck}<span><b>“${al} là góc dốc.”</b> Sai ở đâu? ${f(32)}</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
 ${box(`${tb('1. Kể 5 dạng năng lượng, mỗi dạng một ví dụ.')}${lines(3)}
-${tb('2. Phát biểu định luật bảo toàn năng lượng.')}${lines(1)}
+${tb('2. Phát biểu định luật bảo toàn năng lượng.')}${lines(2)}
 ${tb('3. Công thức công, ý nghĩa từng kí hiệu, đơn vị.')}${lines(3)}
 ${tb('4. Khi nào công dương, âm, bằng 0? Gọi tên.')}${lines(2)}
 ${tb('5. Công của trọng lực và của ma sát trượt tính thế nào?')}${lines(2)}
