@@ -92,17 +92,15 @@ export function chamTbar(raw: string, tMs: number[], kq: KetQuaLoat): KetQuaCham
  * Chọn ứng viên GẦN NHẤT (đáp án đúng gồm cả bản làm tròn Δt về 0,001 s, vì ô Δt đã nhận cách làm tròn đó) trong số các ứng viên còn trong dung sai (đáp án đúng + các lỗi thật), để dung sai của đáp án
  * đúng có thể rộng (nhận làm tròn trung gian) mà một lỗi nằm gần vẫn bị gọi đúng tên.
  */
-function phanLoai(x: number, cach: string, dung: [number[], number], loi: [number, number, string][]): KetQuaCham {
-  let tot: { d: number; kq: KetQuaCham } | null = null;
-  for (const v of dung[0]) {
-    const d = Math.abs(x - v);
-    if (gan(x, v, dung[1]) && (!tot || d < tot.d)) tot = { d, kq: { loai: "dung", loi: cach } };
-  }
+function phanLoai(x: number, cach: string, dung: [number, number][], loi: [number, number, string][]): KetQuaCham {
+  // Đáp án đúng được ưu tiên: còn trong dung sai là đúng, dù một lỗi nào đó cũng gần (làm tròn hợp lí không bị phạt).
+  if (dung.some(([v, tol]) => gan(x, v, tol))) return { loai: "dung", loi: cach };
+  let tot: { d: number; msg: string } | null = null;
   for (const [v, tol, msg] of loi) {
     const d = Math.abs(x - v);
-    if (gan(x, v, tol) && (!tot || d < tot.d)) tot = { d, kq: { loai: "sai", loi: `${msg} ${cach}` } };
+    if (gan(x, v, tol) && (!tot || d < tot.d)) tot = { d, msg };
   }
-  return tot?.kq ?? { loai: "sai", loi: cach };
+  return { loai: "sai", loi: tot ? `${tot.msg} ${cach}` : cach };
 }
 
 export function chamDt(raw: string, kq: KetQuaLoat): KetQuaCham | null {
@@ -112,7 +110,10 @@ export function chamDt(raw: string, kq: KetQuaLoat): KetQuaCham | null {
   return phanLoai(
     so.value,
     cach,
-    [[kq.dt], 0.00045],
+    [
+      [kq.dt, 0.00045],
+      [Math.round(kq.dt * 1000) / 1000, 1e-7],
+    ],
     [
       [kq.dbar, 0.0003, "Em mới có phần phân tán, quên cộng sai số dụng cụ: lấy trung bình không xoá được Δt_dc."],
       [
@@ -131,7 +132,7 @@ export function chamG(raw: string, s: number, kq: KetQuaLoat): KetQuaCham | null
   return phanLoai(
     so.value,
     cach,
-    [[kq.g], 0.05],
+    [[kq.g, 0.05]],
     [
       [kq.g / 2, 0.05, "Em tính s : t², quên nhân 2 (từ s = gt²/2)."],
       [(2 * s) / kq.tbar, 0.05, "Em chia cho t̄, chưa bình phương."],
@@ -139,21 +140,29 @@ export function chamG(raw: string, s: number, kq: KetQuaLoat): KetQuaCham | null
   );
 }
 
-export function chamDg(raw: string, s: number, kq: KetQuaLoat): KetQuaCham | null {
+/**
+ * Δg chấm theo Δt và ḡ CỦA HỌC SINH ở hai ô trước (nếu ô đó đúng; sai thì dùng số đúng): làm tròn Δt về 0,001 s là hợp lí
+ * và kéo Δg đi tới 0,01 m/s², nên so với số máy tính từ Δt đầy đủ sẽ chấm oan. Dung sai 0,0055 = làm tròn 2 chữ số thập phân.
+ * Giới hạn đã biết: ở s ≥ 0,8 m phần Δs/s chỉ cỡ 0,01 m/s² (dưới 0,15 %), ghi 2 chữ số thập phân không phân biệt được
+ * "quên Δs/s" với đáp án đúng nên được nhận đúng; ở s = 0,5 m trở xuống thì bắt được.
+ */
+export function chamDg(raw: string, s: number, kq: KetQuaLoat, dtHs = kq.dt, gHs = kq.g): KetQuaCham | null {
   const so = docSo(raw);
   if (!so) return null;
-  const cach = `δ = Δs/s + 2Δt/t̄ = ${vnSo(DC_S, 3)}/${vnSo(s, 3)} + 2 · ${vnSo(kq.dt, 4)}/${vnSo(kq.tbar, 4)} ≈ ${vnSo(kq.delta, 4)}; Δg = δ · ḡ ≈ ${vnSo(kq.dg, 2)} m/s².`;
-  const voi = (dt: number, heSo: number, coDs: boolean) => ((coDs ? DC_S / s : 0) + (heSo * dt) / kq.tbar) * kq.g;
+  const voi = (dt: number, heSo: number, coDs: boolean) => ((coDs ? DC_S / s : 0) + (heSo * dt) / kq.tbar) * gHs;
+  const delta = DC_S / s + (2 * dtHs) / kq.tbar;
+  const dg = voi(dtHs, 2, true);
+  const cach = `δ = Δs/s + 2Δt/t̄ = ${vnSo(DC_S, 3)}/${vnSo(s, 3)} + 2 · ${vnSo(dtHs, 4)}/${vnSo(kq.tbar, 4)} ≈ ${vnSo(delta, 4)}; Δg = δ · ḡ ≈ ${vnSo(dg, 2)} m/s².`;
   const sai: [number, number, string][] = [
-    [voi(kq.dt, 1, true), 0.012, "Thiếu hệ số 2 trước Δt/t̄: t² = t · t nên phần của t tính hai lần."],
-    [voi(kq.dt, 2, false), 0.012, "Thiếu phần Δs/s của thước (0,001 m chia cho s)."],
+    [voi(dtHs, 1, true), 0.008, "Thiếu hệ số 2 trước Δt/t̄: t² = t · t nên phần của t tính hai lần."],
+    [voi(dtHs, 2, false), 0.008, "Thiếu phần Δs/s của thước (0,001 m chia cho s)."],
     [
       voi(kq.dbar + DC_T / 2, 2, true),
-      0.012,
+      0.008,
       "Bài này lấy sai số dụng cụ 1 độ chia (0,001 s) trong Δt, không phải nửa độ chia.",
     ],
-    [kq.delta, 0.002, "Đó là sai số tương đối δ; Δg = δ · ḡ mới là sai số tuyệt đối (m/s²)."],
-    [kq.delta * 100, 0.2, "Đó là sai số tương đối δ tính theo %; Δg = δ · ḡ mới là sai số tuyệt đối (m/s²)."],
+    [delta, 0.002, "Đó là sai số tương đối δ; Δg = δ · ḡ mới là sai số tuyệt đối (m/s²)."],
+    [delta * 100, 0.2, "Đó là sai số tương đối δ tính theo %; Δg = δ · ḡ mới là sai số tuyệt đối (m/s²)."],
   ];
-  return phanLoai(so.value, cach, [[kq.dg, voi(Math.round(kq.dt * 1000) / 1000, 2, true)], 0.012], sai);
+  return phanLoai(so.value, cach, [[dg, 0.0055]], sai);
 }

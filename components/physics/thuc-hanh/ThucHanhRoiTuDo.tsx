@@ -16,7 +16,7 @@
 import { useId, useMemo, useState, type ReactNode } from "react";
 import { PredictGate } from "@/components/physics/PredictGate";
 import { BangDongHoHienSo, useDongHoHienSo, type LanChan } from "@/components/physics/do-luong/DongHoHienSo";
-import { phuBtn, segBtn, type KetQuaCham } from "@/components/physics/do-luong/chung";
+import { docSo, phuBtn, segBtn, type KetQuaCham } from "@/components/physics/do-luong/chung";
 import {
   DC_T,
   G_THAT,
@@ -51,7 +51,7 @@ function ONhapCham({
   nhan: ReactNode;
   donVi: string;
   cham: (raw: string) => KetQuaCham | null;
-  onXong: () => void;
+  onXong: (kq: KetQuaCham, giaTri: number) => void;
   vidu: string;
 }) {
   const [raw, setRaw] = useState("");
@@ -64,7 +64,7 @@ function ONhapCham({
     if (!r) return setLoiNhap(true);
     setLoiNhap(false);
     setKq(r);
-    onXong();
+    onXong(r, docSo(raw)?.value ?? NaN);
   };
   return (
     <div className="rounded-xl border border-line bg-surface-2 p-3">
@@ -411,6 +411,9 @@ export default function ThucHanhRoiTuDo() {
   /** Bảng học sinh tự tính (bảng đầy đủ đầu tiên) và số ô đã chấm (0..4). */
   const [bangTinh, setBangTinh] = useState<Loat | null>(null);
   const [buocTinh, setBuocTinh] = useState(0);
+  /** Δt, ḡ học sinh đã nhập ĐÚNG (để chấm Δg theo số của em, không phạt làm tròn hợp lí). */
+  const [hsDt, setHsDt] = useState<number | null>(null);
+  const [hsG, setHsG] = useState<number | null>(null);
 
   const s = sCm / 100;
   const treMs = tuDu ? TRE_TU_DU_MS : 0;
@@ -618,7 +621,10 @@ export default function ThucHanhRoiTuDo() {
                   donVi="s"
                   vidu="0,0022"
                   cham={(r) => chamDt(r, kqTinh)}
-                  onXong={xongTinh}
+                  onXong={(r, v) => {
+                    if (r.loai === "dung") setHsDt(v);
+                    xongTinh();
+                  }}
                 />
               )}
               {buocTinh >= 2 && (
@@ -627,7 +633,10 @@ export default function ThucHanhRoiTuDo() {
                   donVi="m/s²"
                   vidu="9,70"
                   cham={(r) => chamG(r, bangTinh.sCm / 100, kqTinh)}
-                  onXong={xongTinh}
+                  onXong={(r, v) => {
+                    if (r.loai === "dung") setHsG(v);
+                    xongTinh();
+                  }}
                 />
               )}
               {buocTinh >= 3 && (
@@ -635,7 +644,7 @@ export default function ThucHanhRoiTuDo() {
                   nhan={<>4. Δg = (Δs/s + 2Δt/t̄) · ḡ =</>}
                   donVi="m/s²"
                   vidu="0,15"
-                  cham={(r) => chamDg(r, bangTinh.sCm / 100, kqTinh)}
+                  cham={(r) => chamDg(r, bangTinh.sCm / 100, kqTinh, hsDt ?? kqTinh.dt, hsG ?? kqTinh.g)}
                   onXong={xongTinh}
                 />
               )}
