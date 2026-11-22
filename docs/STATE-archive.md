@@ -939,3 +939,6 @@ Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ
 
 - **Sức khỏe › Kiểu build (19/11)**: migration `20261119120000_body_measurements_neck_wrist` CHỜ CHẠY (thêm `neck_cm`, `wrist_cm`, chỉ thêm cột, chạy lúc nào cũng được; chưa chạy thì app vẫn lưu/đọc số đo cũ, chỉ không lưu cổ/cổ tay). Code ở `lib/suc-khoe/build.ts`, `components/suc-khoe/KieuBuild.tsx`; chưa deploy.
 - → ĐÃ CHẠY 19/11 11:49 (log `scripts/logs/20261119-114951-20261119120000_body_measurements_neck_wrist.log` ở checkout chính; phát hiện và kiểm lại 22/11 ~22h: `neck_cm`, `wrist_cm` có trong `body_measurements`, `DATABASE.md` đã có hai cột). Code KieuBuild CHƯA deploy lên site (không có trong `origin/deploy` ngày 22/11).
+
+- 22/11 Gói A dụng cụ đo (`components/physics/do-luong/`: thước kẹp, panme, đồng hồ đa năng, đồng hồ hiện số; `/dev/do-luong`): code ở main, CHỜ `deploy.sh` + đăng lý thuyết 48, 47, 51, 45 bằng `cap-nhat-ly-thuyet.sh` (lịch 22h05 22/11). Treo: quy ước sai số dụng cụ thước kẹp (độ chính xác hay nửa) — thầy chốt.
+- 22/11 Bài 3 L10 (48): sai số dụng cụ thước kẻ = một ĐCNN (bảng thầy chốt), clip tn-l10-sai-so-02 dựng lại (ra/ ở worktree goi-a). Đăng cả Gói A bằng một lệnh SAU 22h: `bash scripts/video-thi-nghiem/dang-goi-a.sh --yes` (tải clip → deploy → 4 bài).
