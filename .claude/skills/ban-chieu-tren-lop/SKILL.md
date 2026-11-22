@@ -27,6 +27,13 @@ description: Dựng "đường trên lớp" cho MỘT bài đã có lý thuyết
 7. **Sửa theo góp ý** (cao + vừa đã tự kiểm), chạy lại bước 5, PDF ruột tập `node scripts/ruot-tap/<file>.mjs` giữ số trang; ghi mục "Đã xử lý" cuối gop-y.md; commit.
 8. **Lên web** (sau bước 7): `build_tren_lop.py` chép bản noindex sang `public/dev/tren-lop/<slug>.html` (+ `-ghi-chu.html`); thêm MỘT dòng `{lessonId, slug, ten, ghiChu}` vào `features/lessons/tren-lop.ts` → hiện ở mục lục `/dev/tren-lop` và nút "Bản chiếu lớp" (chế độ giáo viên) trên trang bài. Giao diện theo token nền sáng của web (khối `:root` + `<link>` font `/fonts/be-vietnam-pro/be-vietnam-pro.css` y bài mẫu; nền trắng là lệch có chủ ý cho tivi). Deploy do phiên chính/thầy quyết, không tự deploy.
 
+## Làm nhiều bài trong một phiên — tiết kiệm token (thầy chốt 22/11/2026)
+Phiên làm 2–5 bài liền context phình (lớp ảo + ảnh + bản chiếu dài), mỗi lượt sau gửi lại cả đống đó. Nên:
+- **Phiên chính chỉ điều phối**, không mở theory.html/tren-lop.src.html, không đọc ảnh. Mỗi bài giao MỘT agent `general-purpose` (model sonnet) làm bước 1–5, 7, 8 + commit; nhận về đúng dòng báo cáo dưới đây. Tối đa 2 agent dựng bài chạy song song (cùng sửa `features/lessons/tren-lop.ts` → agent chỉ thêm dòng, phiên chính kiểm `git diff` dòng đó).
+- **Lớp ảo gộp 1 lượt**: agent thầy đưa cả 6 điểm dừng một lần, agent học sinh (model haiku — đóng vai HS trung bình, càng dễ lộ chỗ phải đoán) điền một lần; thầy viết `gop-y.md`. Không nhắn qua lại từng lượt.
+- **Kiểm máy bằng `scripts/kiem-tren-lop.mjs`** (in số đo), ảnh khung hình clip chỉ đọc trong agent.
+- Tiến độ ghi ở `content/tren-lop-tien-do/<nhóm>.md` (mỗi bài một dòng), cập nhật + commit sau mỗi bài; phiên mới đọc file này thay vì dò git log. Phiên đã làm ≥4 bài hoặc context >150k → chốt tiến độ, push, mở phiên mới.
+
 ## Báo cáo mỗi bài (một dòng)
 `bài · commit · số màn · đề cuối tiết (mã/không có) · số góp ý làm/bỏ · việc treo`
 
