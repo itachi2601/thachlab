@@ -14,7 +14,7 @@ Mở trong app desktop: phiên mới, **model Opus 5.5** (thiết kế màn chi�
 
 ```
 Dựng "đường trên lớp" cho các bài có ruột tập <PHẠM VI>, theo đúng skill .claude/skills/ban-chieu-tren-lop/SKILL.md
-(đọc trước, đủ 7 bước, kể cả lớp ảo). Mẫu chuẩn: content/lesson-samples/l11-dien-the/.
+(đọc trước, đủ 8 bước, kể cả lớp ảo và bước 8 lên web). Mẫu chuẩn: content/lesson-samples/l11-dien-the/.
 - Mỗi bài: tìm thư mục content/lesson-samples/<slug>/ khớp bài (đầu file .mjs ghi lesson id và nguồn); chưa có theory.html → bỏ qua, ghi treo.
 - Làm tuần tự, commit riêng từng bài theo đường dẫn ngay khi xong; context > 150k thì /compact giữa hai bài.
   Lớp ảo dùng subagent Sonnet như skill nói; phiên chính chỉ nhắn "lượt N".

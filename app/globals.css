@@ -4010,6 +4010,9 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .lesson-page .lesson-head .lesson-drawer-toggle { display: none; }
 .lesson-present-btn { grid-area: present; display: inline-flex; height: 44px; align-items: center; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 10px; background: none; padding: 0 12px; color: var(--color-ink); font-size: 14px; font-weight: 600; cursor: pointer; }
 .lesson-present-btn:hover { border-color: var(--lesson-accent-line); }
+/* Nhóm 2 nút giáo viên (Trình chiếu + Bản chiếu lớp) chung ô lưới present. */
+.lesson-present-group { grid-area: present; display: inline-flex; gap: 8px; }
+.lesson-present-group .lesson-present-btn { text-decoration: none; }
 /* Cỡ chữ, Dịu mắt, Toàn màn hình gom vào bảng Aa (N2): bảng nổi ngay dưới nút. */
 .lesson-page .lesson-head .lesson-tools { position: absolute; top: 48px; right: 0; z-index: 30; display: none; min-width: 200px; flex-direction: column; align-items: stretch; gap: 6px; border: 1px solid var(--lesson-line); border-radius: 12px; background: var(--color-panel); padding: 8px; box-shadow: 0 14px 30px -18px rgba(15,23,42,.45); }
 .lesson-page .lesson-head .lesson-tools.is-open { display: flex; }

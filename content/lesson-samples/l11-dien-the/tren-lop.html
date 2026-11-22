@@ -4,15 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Điện thế · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 <style>
 /* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
    nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
 :root{
-  --bg:#ffffff; --ink:#111827; --muted:#4b5563; --line:#cbd2db;
-  --accent:#1d4ed8; --ok:#166534; --ok-bg:#e7f8ee; --no:#b91c1c; --warn-bg:#fff4dd; --warn:#8a4b00;
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
 }
 *{box-sizing:border-box}
 html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
