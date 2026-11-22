@@ -195,14 +195,14 @@ export const hinhCh4 = {
 
   // ===== Bài 17 · Hiện tượng phóng xạ =====
   // Trang 1 · máy đếm không ngừng dù làm lạnh
-  maDem: (cap = 'Nhúng nguồn vào nitơ lỏng, máy đếm vẫn kêu. Nhịp đếm có đổi không?') => {
+  maDem: (cap = 'Nhúng nguồn vào nitơ lỏng, máy đếm vẫn kêu. Nhịp đếm có đổi không?', soXung = true) => {
     let b = defs('md');
     b += `<path d="M8 40 L8 112 Q8 128 24 128 L74 128 Q90 128 90 112 L90 40" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>`;
     b += `<rect x="12" y="68" width="74" height="56" fill="${GREY}" opacity=".35"/>` + `<circle cx="49" cy="104" r="9" fill="${RED}"/>`;
     b += T(49, 156, 'nitơ lỏng', { a: 'middle', size: 18 }) + T(49, 20, '−196 °C', { a: 'middle', size: 18 });
     b += arr(92, 104, 140, 104, 'md', RED, '6 4') + arr(92, 92, 140, 80, 'md', RED, '6 4');
     b += rect(150, 56, 90, 76) + T(195, 84, 'ống', { a: 'middle', size: 18 }) + T(195, 106, 'đếm', { a: 'middle', size: 18 });
-    b += `<rect x="252" y="62" width="62" height="40" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + T(283, 90, '≈500', { a: 'middle', size: 20, w: 700 }) + T(316, 124, 'xung/phút', { a: 'end', size: 18 });
+    b += `<rect x="252" y="62" width="62" height="40" rx="3" fill="#fff" stroke="${INK}" stroke-width="${SW}"/>` + (soXung ? T(283, 90, '≈500', { a: 'middle', size: 20, w: 700 }) + T(316, 124, 'xung/phút', { a: 'end', size: 18 }) : '');
     b += arr(242, 82, 250, 82, 'md');
     return wrap('0 0 320 164', b, cap, 'Nguồn phóng xạ trong nitơ lỏng trước ống đếm');
   },
@@ -228,15 +228,15 @@ export const hinhCh4 = {
     return wrap('0 0 330 160', b, cap, 'Ba tia phóng xạ và tấm chắn của chúng');
   },
   // Trang 2 · dịch chuyển ô trong bảng tuần hoàn
-  dichChuyenO: (cap = 'Mỗi tia đưa hạt nhân con sang ô nào so với hạt nhân mẹ ở ô Z?') => {
+  dichChuyenO: (cap = 'Mỗi tia đưa hạt nhân con sang ô nào so với hạt nhân mẹ ở ô Z?', nhan = true) => {
     let b = defs('dc2');
     ['Z−2', 'Z−1', 'Z', 'Z+1'].forEach((l, i) => {
       const x = 6 + i * 76;
       b += rect(x, 70, 66, 40, i === 2 ? `stroke="${RED}"` : '') + T(x + 33, 98, l, { a: 'middle', w: i === 2 ? 700 : 400 });
     });
-    b += `<path d="M190 66 Q110 22 44 66" fill="none" stroke="${BLUE}" stroke-width="${SW}" stroke-dasharray="7 4" marker-end="url(#dc2)"/>` + T(118, 26, 'α', { a: 'middle', c: BLUE, w: 700, size: 22 });
-    b += `<path d="M190 114 Q150 142 120 114" fill="none" stroke="${INK}" stroke-width="${SW}" marker-end="url(#dc2)"/>` + T(154, 148, 'β⁺', { a: 'middle', w: 700, size: 22 });
-    b += `<path d="M196 66 Q226 30 262 66" fill="none" stroke="${RED}" stroke-width="${SW}" marker-end="url(#dc2)"/>` + T(230, 26, 'β⁻', { a: 'middle', c: RED, w: 700, size: 22 });
+    b += `<path d="M190 66 Q110 22 44 66" fill="none" stroke="${BLUE}" stroke-width="${SW}" stroke-dasharray="7 4" marker-end="url(#dc2)"/>` + T(118, 26, nhan ? 'α' : '?', { a: 'middle', c: BLUE, w: 700, size: 22 });
+    b += `<path d="M190 114 Q150 142 120 114" fill="none" stroke="${INK}" stroke-width="${SW}" marker-end="url(#dc2)"/>` + T(154, 148, nhan ? 'β⁺' : '?', { a: 'middle', w: 700, size: 22 });
+    b += `<path d="M196 66 Q226 30 262 66" fill="none" stroke="${RED}" stroke-width="${SW}" marker-end="url(#dc2)"/>` + T(230, 26, nhan ? 'β⁻' : '?', { a: 'middle', c: RED, w: 700, size: 22 });
     return wrap('0 0 312 156', b, cap, 'Dịch chuyển ô của hạt nhân con trong bảng tuần hoàn');
   },
   // Trang 3 · phân rã mũ theo chu kì bán rã

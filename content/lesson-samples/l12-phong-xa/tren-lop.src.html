@@ -44,6 +44,7 @@ button.mo[aria-expanded="true"]{background:#94a3b8}
 button.vn.phu{background:#64748b}
 .nut{display:flex;gap:.6em;flex-wrap:wrap}
 .an[hidden]{display:none}
+.xung{visibility:hidden} .xong .xung{visibility:visible}
 .an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
 .an.nhap{border-color:var(--warn);background:var(--warn-bg)}
 .nho{font-size:.7em;color:var(--muted)}
@@ -102,7 +103,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   .top{flex-wrap:wrap}
   .dk{display:none}
 }
-@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+@media print{.xung{visibility:visible}html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
 </style>
 </head>
 <body>
@@ -114,11 +115,11 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <h1>Hiện tượng phóng xạ</h1>
     <p class="hoi">Hôm nay trả lời được:</p>
     <ul>
-      <li>Làm lạnh hay đun nóng mẫu, nhịp đếm có đổi không?</li>
+      <li>Nhịp đếm của mẫu phụ thuộc vào điều gì?</li>
       <li>Bốn loại tia $\alpha,\ \beta^-,\ \beta^+,\ \gamma$ là gì? Hạt nhân con ở ô nào?</li>
       <li>Chu kì bán rã $T$, độ phóng xạ $H$ tính thế nào?</li>
     </ul>
-    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+    <p>Đoán trước, giơ tay A/B/C, rồi mới mở đáp án.</p>
   </div>
   <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
 </section>
@@ -127,7 +128,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m1">
   <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.37 · ô 37·2</span></div>
   <div class="hai">
-    <div class="fig fm" style="width:40%"><svg viewBox="0 0 320 164" role="img" aria-label="Nguồn phóng xạ trong nitơ lỏng trước ống đếm"><defs><marker id="md" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><path d="M8 40 L8 112 Q8 128 24 128 L74 128 Q90 128 90 112 L90 40" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="12" y="68" width="74" height="56" fill="#8a94ad" opacity=".35"/><circle cx="49" cy="104" r="9" fill="#b3261e"/><text x="49" y="156" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nitơ lỏng</text><text x="49" y="20" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">−196 °C</text><line x1="92" y1="104" x2="140" y2="104" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#md)"/><line x1="92" y1="92" x2="140" y2="80" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#md)"/><rect x="150" y="56" width="90" height="76" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="195" y="84" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">ống</text><text x="195" y="106" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">đếm</text><rect x="252" y="62" width="62" height="40" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="283" y="90" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">≈500</text><text x="316" y="124" fill="#1c2540" font-size="18" text-anchor="end" font-weight="400">xung/phút</text><line x1="242" y1="82" x2="250" y2="82" stroke="#1c2540" stroke-width="2.8" marker-end="url(#md)"/></svg></div>
+    <div class="fig fm" style="width:40%"><svg viewBox="0 0 320 164" role="img" aria-label="Nguồn phóng xạ trong nitơ lỏng trước ống đếm"><defs><marker id="md" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><path d="M8 40 L8 112 Q8 128 24 128 L74 128 Q90 128 90 112 L90 40" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="12" y="68" width="74" height="56" fill="#8a94ad" opacity=".35"/><circle cx="49" cy="104" r="9" fill="#b3261e"/><text x="49" y="156" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nitơ lỏng</text><text x="49" y="20" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">−196 °C</text><line x1="92" y1="104" x2="140" y2="104" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#md)"/><line x1="92" y1="92" x2="140" y2="80" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#md)"/><rect x="150" y="56" width="90" height="76" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="195" y="84" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">ống</text><text x="195" y="106" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">đếm</text><rect x="252" y="62" width="62" height="40" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text class="xung" x="283" y="90" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">≈500</text><text class="xung" x="316" y="124" fill="#1c2540" font-size="18" text-anchor="end" font-weight="400">xung/phút</text><line x1="242" y1="82" x2="250" y2="82" stroke="#1c2540" stroke-width="2.8" marker-end="url(#md)"/></svg></div>
     <div class="ben">
       <p class="hoi">Nhúng mẫu phóng xạ vào nitơ lỏng $-196\ ^\circ\mathrm{C}$ thì nhịp đếm của máy thay đổi thế nào?</p>
       <ol class="opt">
@@ -149,7 +150,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <ul>
       <li>Tự <b class="o">phát</b>: không cần kích thích</li>
       <li><b class="o">Ngẫu nhiên</b>: không đoán được hạt nào, lúc nào</li>
-      <li>Không phụ thuộc <b class="o">nhiệt độ, áp suất, hoá học</b></li>
+      <li>Còn một tính chất nữa: <span class="nho">chốt ở cuối tiết (ô 37·3)</span></li>
     </ul>
     <p>Đồng vị phóng xạ: tự nhiên <b class="o">${}^{14}\mathrm{C}$, ${}^{235}\mathrm{U}$</b>; nhân tạo <b class="o">${}^{60}\mathrm{Co}$, ${}^{131}\mathrm{I}$</b></p>
   </div>
@@ -166,9 +167,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
         <ol class="opt lo"><li><b>A.</b> Bằng nhau, vì nguồn không đổi</li><li><b>B.</b> Giảm dần đều qua 5 lần</li><li data-dung><b>C.</b> Khác nhau, dao động quanh một giá trị</li></ol></div>
       <div class="buoc" data-t="9.0"><p class="so-lon">C: khác nhau</p><p class="hoi">Xem năm lần đếm, rồi cất nguồn đếm phông nền.</p></div>
       <div class="buoc" data-t="17.9" data-dung><p class="so-lon">512 · 486 · 531 · 497 · 505</p><p class="hoi">Phông nền: 23.</p><p class="hoi">Tính trung bình, rồi trừ phông. Ghi ô 37·5.</p></div>
-      <div class="buoc" data-t="18.0"><p class="hoi">Trung bình $\approx 506$, trừ phông còn $\approx 483$ xung/phút.</p></div>
       <div class="buoc" data-t="36.8" data-dung><p class="hoi">Bạn nói: "Nguồn cho 506 xung/phút."</p><p class="hoi">Đúng hay sai?</p></div>
-      <div class="buoc" data-t="36.9"><p class="hoi">Sai: 506 còn lẫn phông 23.</p></div>
+      <div class="buoc" data-t="36.9"><p class="hoi">Sai: 506 còn lẫn phông 23.</p><p class="hoi">Trung bình $\approx 506$, trừ phông còn $\approx 483$ xung/phút.</p></div>
       <div class="buoc" data-t="42.9"><table class="bang"><tr><td>từng phút</td><td class="ns">khác nhau</td></tr><tr><td>trung bình</td><td class="ns">ổn định</td></tr><tr><td>phông nền</td><td class="ns">phải trừ</td></tr></table></div>
     </div>
   </div>
@@ -183,9 +183,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   </table>
   <p>Trung bình <b class="o"><span class="an-o" data-o="b2">506</span></b>; trừ phông nền 23 còn <b class="o"><span class="an-o" data-o="b2">483</span></b> xung/phút.</p>
   <p>Từng phút thì <b class="o"><span class="an-o" data-o="b2">khác nhau</span></b>, nhưng nhịp trung bình thì <b class="o"><span class="an-o" data-o="b2">ổn định</span></b>.</p>
-  <p>Sai số cỡ $\pm$ <b class="o"><span class="an-o" data-o="b2">10</span></b> xung/phút, vì thăng giáng <b class="o"><span class="an-o" data-o="b2">thống kê</span></b>.</p>
+  <p>Sai số cỡ $\pm$ <b class="o"><span class="an-o" data-o="b2">10</span></b> xung/phút, vì thăng giáng <span class="nho">(dao động quanh trung bình)</span> <b class="o"><span class="an-o" data-o="b2">thống kê</span></b>.</p>
   <button class="mo" data-mo="b2">Mở: các chỗ điền</button>
-  <p class="nho">Một lần đếm lệch cỡ $\pm20\approx\sqrt{N}$ (4%); trung bình 5 lần chỉ lệch cỡ $\pm10$. Muốn chắc hơn: đếm lâu hơn.</p>
+  <p class="an nho" id="b2" hidden>Một lần đếm riêng lệch cỡ $\pm20$ (4%); trung bình 5 lần chỉ lệch cỡ $\pm10$. Muốn chắc hơn: đếm lâu hơn.</p>
 </section>
 
 <section class="man" id="m2d">
@@ -219,24 +219,24 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   </div>
 </section>
 
-<section class="man" id="m3b">
-  <div class="top"><span class="so">3/6 · Ba chùm tia trong điện trường</span><span>phút 10–17</span><span class="tap">tr.38 · ô 38·1</span></div>
-  <div class="fig f2"><!--FIG2--></div>
-</section>
-
 <section class="man" id="m3c">
   <div class="top"><span class="so">3/6 · Câu 3</span><span>phút 10–17</span><span class="tap">ghi tr.39 · ô 39·3 · Câu 3</span></div>
   <div class="giua">
     <p class="hoi">Câu 3. Vì sao tia $\alpha$ lệch về bản âm còn tia $\beta^-$ lệch về bản dương?</p>
     <ol class="opt lo" style="font-size:.88em">
       <li><b>A.</b> Vì tia $\alpha$ nặng hơn nên rơi xuống</li>
-      <li data-dung><b>B.</b> Vì hạt $\alpha$ mang điện dương còn electron mang điện âm</li>
+      <li data-dung><b>B.</b> Vì hạt $\alpha$ mang điện dương còn êlectron mang điện âm</li>
       <li><b>C.</b> Vì tia $\alpha$ phát ra từ bản âm</li>
       <li><b>D.</b> Vì tia $\alpha$ bị hấp thụ rồi đổi chiều</li>
     </ol>
     <button class="mo" data-mo="a3">Mở đáp án</button>
     <div class="an" id="a3" hidden><p><b>B.</b> $\alpha$ mang $+2e$, êlectron mang $-e$: chiều lệch do điện tích.</p></div>
   </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Ba chùm tia trong điện trường</span><span>phút 10–17</span><span class="tap">tr.38 · ô 38·1</span></div>
+  <div class="fig f2"><!--FIG2--></div>
 </section>
 
 <section class="man" id="m3d">
@@ -296,7 +296,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <!-- ================= 4. Định luật phóng xạ ================= -->
 <section class="man" id="m4a">
   <div class="top"><span class="so">4/6 · Thí nghiệm dựng lại</span><span>phút 17–23</span><span class="tap">tr.38 · ô 38·3</span></div>
-  <div class="vg" data-bat="0.4" data-het="34.9">
+  <div class="vg" data-bat="0.4" data-het="26.6">
     <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261121.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261121.webp" preload="metadata" playsinline title="Đếm xung từ một nguồn phóng xạ, cứ 5 phút một lần"></video>
     <div class="ben">
       <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số đếm đã trừ phông ở phút 0, 5, 10, 15, 20.</p><p class="nho">Clip dừng 3 lần cho lớp đoán.</p></div>
@@ -306,9 +306,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <div class="buoc" data-t="8.8"><p class="hoi">Xem số đo thật, rồi so với dự đoán.</p></div>
       <div class="buoc" data-t="18.7" data-dung><table class="bang"><tr><th>phút</th><td>0</td><td>5</td><td>10</td><td>15</td><td>20</td></tr><tr><th>xung</th><td>812</td><td>398</td><td>204</td><td>97</td><td>52</td></tr></table><p class="hoi">Lấy số trước chia số sau: được bao nhiêu?</p></div>
       <div class="buoc" data-t="18.8"><p class="hoi">$812:398\approx2{,}04$ · $398:204\approx1{,}95$ · $204:97\approx2{,}10$ · $97:52\approx1{,}87$</p></div>
-      <div class="buoc" data-t="26.6" data-dung><p class="so-lon">B. Cứ 5 phút còn một nửa: $T\approx5$ phút</p><p class="hoi">Số đếm giảm vì mỗi hạt nhân phân rã chậm dần?</p></div>
-      <div class="buoc" data-t="26.7"><p class="hoi">Xem: từng hạt nhân rã thế nào.</p></div>
-      <div class="buoc" data-t="34.9"><p class="so-lon">Mỗi hạt nhân: cùng một xác suất rã.</p><p class="hoi">Còn ít hạt → số đếm ít đi.</p></div>
+      <div class="buoc" data-t="26.6"><p class="hoi">Cứ 5 phút, số đếm giảm đi mấy lần? Vậy chu kì bán rã $T$ bằng bao nhiêu?</p><button class="mo" data-mo="y4a">Mở: chu kì bán rã</button><div class="an" id="y4a" hidden><p class="so-lon">Còn một nửa: $T\approx5$ phút</p></div></div>
     </div>
   </div>
     <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
@@ -322,7 +320,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p>$T$: thời gian còn <b class="o">một nửa</b> số hạt</p>
       <p>$N_t=N_0\cdot$ <b class="o">$2^{-t/T}$</b> $=N_0\,e^{-\lambda t}$</p>
       <p>$m_t=$ <b class="o">$m_0\,2^{-t/T}$</b></p>
-      <p>$H_t=$ <b class="o">$H_0\,2^{-t/T}$</b></p>
+      <p>$H_t=$ <b class="o">$H_0\,2^{-t/T}$</b> &nbsp;<span class="nho">($H$: độ phóng xạ, học ở ô 38·4)</span></p>
       <p>$\Delta N=$ <b class="o">$N_0\left(1-2^{-t/T}\right)$</b> &nbsp;<span class="nho">(đã rã)</span></p>
     </div>
   </div>
@@ -382,9 +380,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="top"><span class="so">5/6 · Độ phóng xạ</span><span>phút 23–28</span><span class="tap">tr.38 · ô 38·4</span></div>
   <div class="giua">
     <div class="fx">$H=$ <b class="o">$\lambda$</b> $\cdot$ <b class="o">$N$</b></div>
-    <p>= số phân rã trong <b class="o">1 giây</b></p>
-    <p>$1\ \mathrm{Bq}=$ <b class="o">1 phân rã/giây</b> · $1\ \mathrm{Ci}=$ <b class="o">$3{,}7\cdot10^{10}$</b> Bq</p>
-    <p>Đổi Bq ra Ci thì con số phải <b class="o">nhỏ</b> đi (Ci rất <b class="o">lớn</b>).</p>
+    <p>$H$ là số phân rã trong <b class="o">1 giây</b></p>
+    <p>$1\ \mathrm{Bq}=$ <b class="o">1 phân rã/giây</b></p>
+    <p class="nho">$1\ \mathrm{Ci}$ bằng bao nhiêu Bq, đổi Bq ra Ci thì số to hay nhỏ: chốt sau Câu 5 (ô 38·4).</p>
     <p>Đo mức mạnh hay yếu, <b>không</b> đo mức <b class="o">nguy hiểm</b>.</p>
   </div>
 </section>
@@ -400,7 +398,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <li data-dung><b>D.</b> $1\ \mathrm{Ci}$</li>
     </ol>
     <button class="mo" data-mo="a5">Mở đáp án</button>
-    <div class="an" id="a5" hidden><p><b>D.</b> Đúng định nghĩa $1\ \mathrm{Ci}=3{,}7\cdot10^{10}\ \mathrm{Bq}$.</p>
+    <div class="an" id="a5" hidden><p><b>D.</b> Đúng định nghĩa $1\ \mathrm{Ci}=$ <b class="o">$3{,}7\cdot10^{10}$</b> $\mathrm{Bq}$ (ô 38·4). Đổi Bq ra Ci thì con số phải <b class="o">nhỏ</b> đi (Ci rất <b class="o">lớn</b>).</p>
       <p class="nho">A: đổi sai chiều (Ci lớn thì số phải nhỏ) · C: lẫn Ci với Bq.</p></div>
   </div>
 </section>
@@ -455,9 +453,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="giua">
     <p class="hoi">Đánh dấu ☐ bẫy em từng sập:</p>
     <ul>
-      <li><b>"Sau một chu kì là phân rã hết."</b> "Bán rã" = một nửa; mẫu không bao giờ hết đúng.</li>
-      <li><b>"Độ phóng xạ $H$ và chu kì $T$ là một."</b> $H$ phụ thuộc lượng chất; $T$ thì không.</li>
-      <li><b>"Nhầm chiều dịch ô."</b> $\alpha$: $A-4,\ Z-2$; $\beta^-$: $A$ giữ, $Z+1$.</li>
+      <li><b>1 · "Sau một chu kì là phân rã hết."</b> "Bán rã" = một nửa; mẫu không bao giờ hết đúng.</li>
+      <li><b>2 · "Độ phóng xạ $H$ và chu kì $T$ là một."</b> Chia đôi mẫu thì sao? Xem màn sau.</li>
+      <li><b>3 · "Nhầm chiều dịch ô."</b> $\alpha$: $A-4,\ Z-2$; $\beta^-$: $A$ giữ, $Z+1$.</li>
     </ul>
   </div>
 </section>
@@ -469,7 +467,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <p class="hoi">Chia mẫu làm hai phần bằng nhau. Mỗi phần: $N$, $H$ giảm một nửa. Còn $T$?</p>
       <button class="mo" data-mo="g6">Mở</button>
-      <div class="an" id="g6" hidden><p>$T$ <b>giữ nguyên</b> 8 ngày: $\lambda$ chỉ phụ thuộc loại hạt nhân. $H=\lambda N$ giảm một nửa vì $N$ giảm một nửa.</p></div>
+      <div class="an" id="g6" hidden><p>$H$ <b class="o">giảm một nửa</b>; $T$ <b class="o">giữ nguyên</b> 8 ngày: $\lambda$ chỉ phụ thuộc loại hạt nhân. $H=\lambda N$ giảm một nửa vì $N$ giảm một nửa.</p></div>
     </div>
   </div>
 </section>
@@ -491,28 +489,29 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig fm" data-chep="m1" style="width:40%"></div>
     <div class="ben">
-      <p class="nhin">Phóng xạ xảy ra trong hạt nhân. Lạnh, nóng chỉ đụng tới phân tử và lớp vỏ êlectron.</p>
+      <p class="nhin">Em đoán gì ở phút 0? Đúng hay sai?</p>
       <button class="mo" data-mo="a8">Mở: nhịp đếm…</button>
-      <div class="an" id="a8" hidden><p><b>C. Không đổi.</b> Nitơ lỏng không với tới hạt nhân.</p>
+      <div class="an" id="a8" hidden><p><b>C. Không đổi.</b> Phóng xạ xảy ra trong hạt nhân; lạnh, nóng chỉ đụng tới phân tử và lớp vỏ êlectron.</p>
+        <p>Phóng xạ không phụ thuộc <b class="o">nhiệt độ, áp suất, hoá học</b> <span class="nho">(ghi ô 37·3)</span></p>
         <p class="nho">A: coi phóng xạ như phản ứng hoá học · B: hạt nhân không co lại khi lạnh.</p></div>
     </div>
   </div>
 </section>
 
 <section class="man" id="m6e">
-  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi "Đề 1194: …/20" dưới ô 39·3</span></div>
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi "Đề 1194: …/20" vào ô 39·4</span></div>
   <div class="qr"><!--QR--></div>
   <p class="made">Mã đề <b>1194</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">Trên web đề tên "Bài 17"; Tập là "Bài 20".</p>
   <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1194 · làm một mình, nộp xong mới cất máy</p>
 </section>
 
 <section class="man" id="m6f">
   <div class="top"><span class="so">Về nhà theo Tập bài 20</span><span class="tap">chụp lại màn này</span></div>
   <ul>
-    <li><b>tr.37</b> ô 37·3 dòng "điều em hiểu sai" · ô 37·1 đánh dấu mục tiêu</li>
     <li><b>tr.39</b> ô 39·2 câu 1, 3, 5, 6 (nói cho người nhà nghe) · ô 39·3 cột "Đúng?" còn trống</li>
     <li><b>tr.40</b> giải d), e) · "Mở rộng: sau 60 giờ"</li>
-    <li><b>tr.41</b> ghi đề BTVN thầy giao · Mang về · Thử thách ★ ★★ ★★★ · Câu 7, câu 8 (C-14)</li>
+    <li><b>tr.41</b> ghi đề BTVN thầy giao · Mang về · Thử thách ★ ★★ ★★★ · Câu 8 (C-14)</li>
   </ul>
 </section>
 
@@ -528,6 +527,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
     // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
     var sec=btn.closest('.man');
+    if(id==='a8' && sec){ sec.classList.toggle('xong', !open); }
     if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
   }
   document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
@@ -586,7 +586,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
     if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
     var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
-    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); var bm=vg.sec.querySelector('.buoc.hien button.mo[aria-expanded="false"]'); if(bm) toggle(bm); else vg.tiep(); return; }
     if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
     else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
     else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }

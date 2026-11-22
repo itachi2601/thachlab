@@ -12,7 +12,7 @@ const p1 = `${ttCss}<section class="page">
 ${head('BÀI 20 · HIỆN TƯỢNG PHÓNG XẠ', K.sub)}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
-<div style="margin:.3mm 0">${ck}Nêu được phóng xạ: <b>tự phát, ngẫu nhiên</b>, không phụ thuộc bên ngoài</div>
+<div style="margin:.3mm 0">${ck}Nêu được <b>đặc điểm</b> của phóng xạ</div>
 <div style="margin:.3mm 0">${ck}Phân biệt <b>${m('\\alpha,\\ \\beta^-,\\ \\beta^+,\\ \\gamma')}</b> và viết phương trình phân rã</div>
 <div style="margin:.3mm 0">${ck}Dùng <b>chu kì bán rã</b> ${m('T')}, hằng số ${m('\\lambda')}, độ phóng xạ ${m('H')} (Bq, Ci)</div>
 </div>
@@ -24,20 +24,21 @@ ${opt('A', 'Chậm đi hẳn, vì lạnh làm phản ứng chậm lại')}
 ${opt('B', 'Chậm đi, vì hạt nhân co lại khi lạnh')}
 ${opt('C', 'Không đổi')}
 <div style="margin-top:1mm">${chon(10)}</div><div class="hint">Vì sao?</div>${lines(1)}</div>
-${hinh.maDem('Nitơ lỏng bao quanh nguồn, ống đếm vẫn ghi xung.')}</div>
+${hinh.maDem('Nitơ lỏng bao quanh nguồn.', false)}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
-<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
+<div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}
+<div>Phóng xạ không phụ thuộc ${f(30)} (chốt ở cuối tiết).</div></div>
 ${h3(4, 'II.1 · Phóng xạ là gì', '1·4')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Hạt nhân không ${f(10)} tự ${f(10)}, phát ra ${f(10)} (tia) và biến thành hạt nhân ${f(10)}.</div>
 <div>Hạt nhân mẹ ${m('{}^{A}_{Z}\\mathrm{X}')} → ${f(14)} + hạt nhân con ${m('{}^{A\'}_{Z\'}\\mathrm{Y}')}</div>
-<div>Tự ${f(10)} (không cần kích thích) · ${f(12)} (không đoán được hạt nào) · không phụ thuộc ${f(24)}.</div>
+<div>Tự ${f(10)} (không cần kích thích) · ${f(12)} (không đoán được hạt nào).</div>
 <div>Đồng vị phóng xạ: tự nhiên ${f(16)}; nhân tạo ${f(16)}.</div></div>
 ${h3(5, 'Thí nghiệm: đếm xung của một nguồn', '1·5')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Năm lần đếm 1 phút: 512, 486, 531, 497, 505. Trung bình ${f(14)}; trừ phông nền 23 còn ${f(14)} xung/phút.</div>
-<div>Từng phút thì ${f(14)}, nhưng nhịp trung bình thì ${f(14)}. Sai số cỡ ${nw(`±&nbsp;${f(8)}`)} xung/phút, vì thăng giáng ${f(14)}.</div></div>
+<div>Năm lần đếm 1 phút: ${f(9)} ${f(9)} ${f(9)} ${f(9)} ${f(9)}. Trung bình ${f(14)}; trừ phông nền 23 còn ${f(14)} xung/phút.</div>
+<div>Từng phút thì ${f(14)}, nhưng nhịp trung bình thì ${f(14)}. Sai số cỡ ${nw(`±&nbsp;${f(8)}`)} xung/phút, vì thăng giáng <span class="hint">(dao động quanh trung bình)</span> ${f(14)}.</div></div>
 ${foot(1)}</section>`;
 
 const p2 = `<section class="page">
@@ -48,28 +49,30 @@ ${h3(1, 'II.2 · Bản chất bốn loại tia', '2·1')}
 <div>${m('\\beta^-')}: ${f(14)} ${m('{}^{0}_{-1}e')}; lệch về bản ${f(8)}.</div>
 <div>${m('\\beta^+')}: ${f(14)} ${m('{}^{0}_{1}e')}; lệch về bản ${f(8)}.</div>
 <div>${m('\\gamma')}: sóng ${f(16)}; xuyên ${f(10)}; ${f(8)} lệch.</div></div>
-${hinh.batTia('Trong điện trường: α lệch về bản âm, β⁻ lệch về bản dương (nhiều hơn), γ không lệch.')}</div>
+${hinh.batTia('Ba tia đi qua điện trường giữa hai bản.')}</div>
 ${h3(2, 'Phương trình và dịch chuyển ô', '2·2')}
 <div class="card fig-side" style="${fs(56)};padding:1.2mm 3mm"><div>
 <div>${m('\\alpha')} (${m('{}^{4}_{2}\\mathrm{He}')}): ${m('A_Y=')} ${f(8)}, ${m('Z_Y=')} ${f(8)} → con lùi ${f(5)} ô</div>
 <div>${m('\\beta^-')} (${m('{}^{0}_{-1}e')}): ${m('A_Y=')} ${f(8)}, ${m('Z_Y=')} ${f(8)} → tiến ${f(5)} ô</div>
 <div>${m('\\beta^+')} (${m('{}^{0}_{1}e')}): ${m('A_Y=')} ${f(8)}, ${m('Z_Y=')} ${f(8)} → lùi ${f(5)} ô</div>
-<div>${m('\\gamma')}: hạt nhân con còn ở trạng thái ${f(14)}, ${m('Z,A')} ${f(10)}.</div></div>
-${hinh.dichChuyenO('Hạt nhân con ở ô nào so với hạt nhân mẹ (ô Z)?')}</div>
+<div>${m('\\gamma')}: hạt nhân con còn ở trạng thái ${f(14)}, ${m('Z,A')} ${f(10)}.</div>
+<div>PhET C-14 → ${f(6)} prôtôn, ${f(6)} nơtron</div></div>
+${hinh.dichChuyenO('Hạt nhân con ở ô nào so với hạt nhân mẹ (ô Z)? Điền tia vào mỗi cung.', false)}</div>
 ${h3(3, 'II.3 · Định luật phóng xạ', '2·3')}
 <div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div>
 <div>${m('T')}: thời gian còn ${f(12)} số hạt.</div>
 <div>${m('N_t=N_0\\cdot')} ${f(14)}</div>
 <div>${m('m_t=')} ${f(16)}</div>
-<div>${m('H_t=')} ${f(16)}</div>
+<div>${m('H_t=')} ${f(16)} <span class="hint">(H: độ phóng xạ, học ở ô 38·4)</span></div>
 <div>${m('\\Delta N=')} ${f(24)}</div>
 <div>${m('\\lambda=')} ${f(10)} / ${m('T')} ≈ ${f(10)} / ${m('T')}</div>
 <div>${m('N_0=\\dfrac{m_0}{A}\\cdot')} ${f(10)}</div>
 <div>Sau ${m('T,\\,2T,\\,3T')}: còn ${f(8)}, ${f(8)}, ${f(8)}; đã rã ${f(8)}, ${f(8)}, ${f(8)}.</div></div>
-${hinh.phanRaMu('Mỗi T còn một nửa. Điền tỉ lệ còn lại ở các mốc.')}</div>
+${hinh.phanRaMu('Điền tỉ lệ còn lại ở các mốc.')}</div>
 ${h3(4, 'II.4 · Độ phóng xạ', '2·4')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>${m('H=')} ${f(10)} · ${f(8)} &nbsp;·&nbsp; số phân rã trong ${f(10)} &nbsp;·&nbsp; ${m('1\\ \\mathrm{Bq}=')} ${f(16)} &nbsp;·&nbsp; ${m('1\\ \\mathrm{Ci}=')} ${nw(`${f(14)}&nbsp;Bq`)}</div>
+<div>${m('H=')} ${f(10)} · ${f(8)}; &nbsp;${m('H')} là số phân rã trong ${f(10)}.</div>
+<div>${m('1\\ \\mathrm{Bq}=')} ${f(16)} &nbsp;·&nbsp; ${m('1\\ \\mathrm{Ci}=')} ${nw(`${f(14)}&nbsp;Bq`)}</div>
 <div>Đổi Bq ra Ci thì con số phải ${f(10)} đi (Ci rất ${f(10)}). Đo mức mạnh hay yếu, <b>không</b> đo mức ${f(14)}.</div></div>
 ${foot(2)}</section>`;
 
@@ -77,9 +80,9 @@ const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '3·1')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Sau một chu kì là phân rã hết.”</b> “Bán rã” = một nửa; mẫu không bao giờ hết đúng.</span></div>
-<div class="trap">${ck}<span><b>“Độ phóng xạ ${m('H')} và chu kì ${m('T')} là một.”</b> ${m('H')} phụ thuộc lượng chất; ${m('T')} thì không.</span></div>
-<div class="trap">${ck}<span><b>“Nhầm chiều dịch ô.”</b> ${m('\\alpha')}: ${m('A-4,\\ Z-2')}; ${m('\\beta^-')}: ${m('A')} giữ, ${m('Z+1')}.</span></div></div>
+<div class="trap">${ck}<span><b>1 · “Sau một chu kì là phân rã hết.”</b> “Bán rã” = một nửa; mẫu không bao giờ hết đúng.</span></div>
+<div class="trap">${ck}<span><b>2 · “Độ phóng xạ ${m('H')} và chu kì ${m('T')} là một.”</b> Chia đôi mẫu: ${m('H')} ${f(16)}, ${m('T')} ${f(16)}.</span></div>
+<div class="trap">${ck}<span><b>3 · “Nhầm chiều dịch ô.”</b> ${m('\\alpha')}: ${m('A-4,\\ Z-2')}; ${m('\\beta^-')}: ${m('A')} giữ, ${m('Z+1')}.</span></div></div>
 ${h3(2, 'IV · Trả bài 6 câu', '3·2')}
 ${box(`${tb('1. Phóng xạ là gì? Vì sao tự phát, ngẫu nhiên?')}${lines(2)}
 ${tb('2. Bản chất bốn loại tia và chỗ dịch chuyển của hạt nhân con?')}${lines(2)}
@@ -87,9 +90,11 @@ ${tb('3. Phát biểu định luật phóng xạ, viết công thức N, m, H.')
 ${tb('4. Chu kì bán rã là gì? Hệ thức với hằng số phóng xạ λ?')}${lines(2)}
 ${tb('5. Độ phóng xạ là gì, đơn vị, liên hệ với số hạt nhân?')}${lines(2)}
 ${tb('6. Vì sao phóng xạ là ngẫu nhiên, và lộ ra thế nào khi đo?')}${lines(2)}`)}
-<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
+<div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><span class="hint">Trên lớp: câu 2, 4 · Về nhà: câu 1, 3, 5, 6.</span> <b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
-${rkHai([2, 3, 4, 5], [6, 7, 8])}
+<div class="hint" style="margin-bottom:.8mm">Câu 1 = câu dự đoán ô 37·2 · Câu 8 làm ở tr.41.</div>
+${rkHai([2, 3, 4], [5, 6, 7])}
+<div class="card soft" style="margin-top:1mm;padding:1mm 3mm"><b>39·4 · Đề cuối tiết 1194 (kiểm tra lý thuyết):</b> ……… /20 điểm · câu sai: ${f(30)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -105,8 +110,8 @@ ${h3(2, 'Phân tích đề (điền cùng thầy)')}
 <tr><td style="height:6.5mm">“độ phóng xạ… ra curi”</td><td></td><td></td></tr></table>
 ${h3(3, 'Giải')}
 <div class="fig-side" style="${fs(52)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl('a)', 2)}${wl('b)', 2)}${wl('c)', 3)}${wl('d)', 3)}${wl('e)', 1)}</div>${hinh.na24('T = 15 giờ: sau 45 giờ là mấy chu kì? Còn lại bao nhiêu?')}</div>
-${h3(4, 'Mở rộng: cũng mẫu đó, sau 60 giờ')}
+${wl('a)', 2)}${wl('b)', 2)}${wl('c)', 3)}${wl('d) (về nhà)', 3)}${wl('e) (về nhà)', 1)}</div>${hinh.na24('T = 15 giờ: sau 45 giờ là mấy chu kì? Còn lại bao nhiêu?')}</div>
+${h3(4, 'Mở rộng: cũng mẫu đó, sau 60 giờ (về nhà)')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;padding-top:1mm"><b>Bước 1 (cho sẵn):</b> ${m('n=t/T=60/15=4')}, vậy ${m('N=N_0/16')}.</div>
 ${wl('Bước 2: N = …', 1)}${wl('Bước 3: H còn lại tính từ H₀ thế nào?', 2)}</div>
@@ -122,8 +127,8 @@ ${h3(3, 'Thử thách phân tầng')}
 <div class="fig-side" style="${fs(46)}">${box(wl('★ N₀ = 6·10²⁰ hạt, T = 5 năm. Sau 10 năm còn:', 2)
  + wl('★★ Vì sao nhiệt độ, axit không xử lí được chất thải phóng xạ?', 3)
  + wl('★★★ Xương cổ còn 1/8 lượng C-14: tuổi? Nêu một giả thiết về lượng C-14 ban đầu có thể sai:', 4))}<div style="display:grid;gap:2mm">${hinh.chiaDoiMau('Chia mẫu làm hai: N và H giảm một nửa, còn T thì sao?')}${hinh.anh('phong-xa-do-thi-ln-r.png', 'Đồ thị ln R theo t (R: số phân rã/giây) là đường thẳng, độ dốc = −λ (I-128: λ ≈ 0,0276/phút, T ≈ 25 phút). (Halliday 42.3.1)')}</div></div>
-${h3(4, 'Câu 7, câu 8 (C-14)')}
-${box(wl('Câu 7: I-131, T = 8 ngày, sau 16 ngày còn … %', 2) + wl('Câu 8: vì sao C-14 chỉ định tuổi được tới vài chục nghìn năm?', 2))}
+${h3(4, 'Câu 8 (C-14)')}
+${box(wl('Câu 8: vì sao C-14 chỉ định tuổi được tới vài chục nghìn năm?', 3))}
 ${foot(5)}</section>`;
 
 const dang = [
