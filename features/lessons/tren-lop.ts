@@ -7,6 +7,7 @@
 export type BanChieuTrenLop = { lessonId: number; slug: string; ten: string; ghiChu: string };
 
 export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
+  { lessonId: 46, slug: "l10-lam-quen-voi-vat-li", ten: "Vật lí 10 · Bài 1 · Làm quen với Vật lí", ghiChu: "26 màn · cuối tiết đề 1222 (QR)" },
   { lessonId: 61, slug: "l10-dinh-luat-3-newton", ten: "Vật lí 10 · Bài 16 · Định luật 3 Newton", ghiChu: "25 màn · cuối tiết đề 1237 (QR)" },
   { lessonId: 62, slug: "l10-trong-luc-luc-cang", ten: "Vật lí 10 · Bài 17 · Trọng lực và lực căng", ghiChu: "27 màn · cuối tiết đề 1238 (QR)" },
   { lessonId: 63, slug: "l10-luc-ma-sat", ten: "Vật lí 10 · Bài 18 · Lực ma sát", ghiChu: "22 màn · cuối tiết đề 1239 (QR)" },

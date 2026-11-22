@@ -7,10 +7,10 @@ Vật lí 10 · Chương 1: Mở đầu. Quy ước: `[__n__]` là chỗ trống
 ## TRANG 1 — BÀI 1 · LÀM QUEN VỚI VẬT LÍ
 
 ### 1·1 · Mục tiêu
-- ☐ Nêu **đối tượng** nghiên cứu của vật lí; phân biệt **vi mô** và **vĩ mô**
-- ☐ Kể được **mục tiêu** môn Vật lí và ảnh hưởng của nó tới **năm lĩnh vực**
+- ☒ Nêu **đối tượng** nghiên cứu của vật lí; phân biệt **vi mô** và **vĩ mô**
+- ☒ Kể được **mục tiêu** môn Vật lí và ảnh hưởng của nó tới **năm lĩnh vực**
 - ☐ Phân biệt **thực nghiệm** với **lí thuyết**; nhớ quy trình **5 bước**
-- ☐ So **chênh lệch với sai số** trước khi nói hai số là khác nhau
+- ☒ So **chênh lệch với sai số** trước khi nói hai số là khác nhau
 
 ### 1·2 · Dự đoán trước khi học
 Phần nào của cảnh ấm nước sắp sôi thuộc phạm vi nghiên cứu của vật lí?
@@ -26,8 +26,8 @@ Vì sao? Nước nóng lên thì phân tử chuyển động mạnh hơn và đ�
 [Hình: ấm nước trên bếp, nắp ấm rung, hơi nước phun ra từ vòi, chữ "nước" trong ấm, ngọn lửa dưới đáy. Chú thích: "Ấm nước trên bếp sắp sôi."]
 
 ### 1·3 · Học xong, em sửa lại
-Đáp án đúng là: [__3__]  Em đoán ☐ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
-[__4__] (1 dòng)
+Đáp án đúng là: C  Em đoán ☒ đúng ☐ sai · Điều em hiểu sai hoặc mới biết:
+Em tưởng nắp rung và phân tử nước chuyển động là hai chuyện riêng; giờ thấy vi mô là nguyên nhân của vĩ mô
 
 ### 1·4 · II.1 · Vật lí nghiên cứu gì
 - Vật lí nghiên cứu vận động của vật chất và năng lượng ở mọi cấp độ.
@@ -49,10 +49,10 @@ Vi mô: nguyên tử, phân tử nước. Vĩ mô: hạt cát, người, Trái �
 ## TRANG 2 — MỤC TIÊU · ẢNH HƯỞNG · HAI PHƯƠNG PHÁP
 
 ### 2·1 · II.2 · Mục tiêu của môn Vật lí
-- Khám phá quy luật [__15__] nhất của vận động và tương tác của vật chất, năng lượng, ở cả vi mô lẫn vĩ mô.
-- Ở phổ thông: nắm kiến thức, kĩ năng và [__16__] vào học tập, đời sống.
-- Vật lí là cơ sở của khoa học [__17__].
-- **Ví dụ "tổng quát":** một định luật bảo toàn năng lượng cho cả hai cảnh: xe đạp xuống dốc, thế năng thành [__18__] năng; pin hết dần, hoá năng thành [__19__] năng.
+- Khám phá quy luật tổng quát nhất của vận động và tương tác của vật chất, năng lượng, ở cả vi mô lẫn vĩ mô.
+- Ở phổ thông: nắm kiến thức, kĩ năng và vận dụng vào học tập, đời sống.
+- Vật lí là cơ sở của khoa học tự nhiên.
+- **Ví dụ "tổng quát":** một định luật bảo toàn năng lượng cho cả hai cảnh: xe đạp xuống dốc, thế năng thành động năng; pin hết dần, hoá năng thành điện năng.
 
 [Hình: thang năm đối tượng từ nhỏ đến lớn (nguyên tử, phân tử nước, hạt cát, người, Trái Đất), mũi tên chỉ hướng tăng dần. Chú thích: "Năm đối tượng từ nhỏ đến lớn (không theo tỉ lệ)."]
 
@@ -61,92 +61,92 @@ Ngân hàng ví dụ: internet · chụp MRI · robot tự động hoá · đèn
 
 | Lĩnh vực | Ví dụ từ vật lí (chọn trong ngân hàng, hoặc tự thêm) |
 |---|---|
-| Thông tin liên lạc | [__20__] |
-| Y tế | [__21__] |
-| Công nghiệp | [__22__] |
-| Nông nghiệp | [__23__] |
-| Nghiên cứu | [__24__] |
+| Thông tin liên lạc | internet |
+| Y tế | chụp MRI |
+| Công nghiệp | robot tự động hoá |
+| Nông nghiệp | đèn LED trồng cây |
+| Nghiên cứu | kính hiển vi điện tử |
 
 ### 2·3 · II.4 · Hai phương pháp nghiên cứu
 | | Thực nghiệm | Lí thuyết |
 |---|---|---|
-| **Làm gì** | [__25__] | [__26__] |
-| **Kết quả cần** | [__27__] | [__28__] |
+| **Làm gì** | dùng thí nghiệm để phát hiện kết quả | dùng toán học, suy luận để dự đoán kết quả mới |
+| **Kết quả cần** | lí thuyết giải thích | thực nghiệm kiểm chứng |
 
 **Ví dụ:** thả sách rơi từ độ cao $h$ (m); $g\approx 9{,}8\ \mathrm{m/s^2}$ là gia tốc rơi tự do (học kĩ ở bài Sự rơi tự do).
-Đo thời gian rơi bằng video: phương pháp [__29__]. Tính trước $t=\sqrt{\dfrac{2h}{g}}$: phương pháp [__30__].
+Đo thời gian rơi bằng video: phương pháp thực nghiệm. Tính trước $t=\sqrt{\dfrac{2h}{g}}$: phương pháp lí thuyết.
 
 ### 2·4 · Làm nhanh (tiếp)
 **Câu 2.** Máy chụp MRI, đèn LED chiếu cây, kính hiển vi điện tử: mỗi thiết bị thuộc lĩnh vực nào?
-[__31__] (1 dòng)
+MRI: y tế · LED: nông nghiệp · kính hiển vi điện tử: nghiên cứu
 
 ---
 
 ## TRANG 3 — QUY TRÌNH 5 BƯỚC · THÍ NGHIỆM SÁCH VÀ GIẤY RƠI
 
 ### 3·1 · II.5 · Quy trình nghiên cứu: 5 bước
-- **Thấy:** [__32__], suy luận · **Hỏi:** đề xuất [__33__]
-- **Đoán:** hình thành [__34__] (lời đoán nguyên nhân, chưa được kiểm tra)
-- **Thử:** [__35__] giả thuyết · **Chốt:** rút ra [__36__]
-- Kiểm tra không khớp: [__37__] hoặc [__38__] giả thuyết, rồi quay lại bước [__39__].
-- **Lưu ý:** suy luận ở bước 1 chỉ dẫn tới câu [__40__]; lời đoán nguyên nhân để đem đi kiểm tra mới là giả thuyết.
+- **Thấy:** quan sát, suy luận · **Hỏi:** đề xuất vấn đề
+- **Đoán:** hình thành giả thuyết (lời đoán nguyên nhân, chưa được kiểm tra)
+- **Thử:** kiểm tra giả thuyết · **Chốt:** rút ra kết luận
+- Kiểm tra không khớp: điều chỉnh hoặc bác bỏ giả thuyết, rồi quay lại bước 3.
+- **Lưu ý:** suy luận ở bước 1 chỉ dẫn tới câu hỏi; lời đoán nguyên nhân để đem đi kiểm tra mới là giả thuyết.
 
 [Hình: năm ô nối bằng mũi tên theo thứ tự, có đường "không khớp" quay lại. Chú thích: "Năm bước nghiên cứu; có đường quay lại."]
 
 ### 3·2 · Làm nhanh
 **Câu 3.** Lan thấy sách rơi nhanh hơn tờ giấy và nói: "Chắc do không khí cản tờ giấy nhiều hơn." Câu này thuộc bước nào? Vì sao?
-[__41__] (2 dòng)
+(về nhà)
 
 ### 3·3 · Thí nghiệm: sách và giấy rơi
 - **Làm:** thả cùng lúc từ 2 m: sách với giấy phẳng; giấy đặt trên sách; giấy vo tròn thả cùng sách. Quay video 60 hình/giây (1 khung = $\tfrac1{60}\ \mathrm s$); thả mỗi kiểu 3 lần, đếm số khung hình từ lúc buông tới lúc chạm sàn.
 
 | Vật | Số khung 3 lần | TB | $t\ (\mathrm s)$ | $g=\dfrac{2h}{t^2}$ |
 |---|---|---|---|---|
-| Sách | 38 · 38 · 39 | [__42__] | [__43__] | [__44__] |
-| Giấy vo | 41 · 41 · 41 | [__45__] | [__46__] | [__47__] |
+| Sách | 38 · 38 · 39 | 38,3 | 0,64 | 9,8 |
+| Giấy vo | 41 · 41 · 41 | 41 | 0,68 | 8,6 |
 
 [Hình: bốn vật rơi cùng lúc từ cùng độ cao (sách, giấy phẳng, giấy + sách, giấy vo), ảnh chụp cùng một thời điểm. Chú thích: "Thả cùng lúc từ cùng độ cao; ảnh chụp cùng một thời điểm (minh hoạ)."]
 
-- **Quan sát:** giấy phẳng rơi [__48__] hẳn; giấy đặt trên sách rơi [__49__] sách.
-- Mỗi lần đếm lệch $\pm 1$ khung $=\pm$ [__50__] s. Chênh giữa hai vật $\approx 2{,}7$ khung: ☐ vượt ☐ không vượt sai số.
-- **Rút ra:** giấy phẳng chậm vì [__51__] cản, không phải vì [__52__].
+- **Quan sát:** giấy phẳng rơi chậm hẳn hẳn; giấy đặt trên sách rơi cùng sách.
+- Mỗi lần đếm lệch $\pm 1$ khung $=\pm$ 0,017 s. Chênh giữa hai vật $\approx 2{,}7$ khung: ☒ vượt ☐ không vượt sai số.
+- **Rút ra:** giấy phẳng chậm vì không khí cản, không phải vì nhẹ.
 
 ### 3·4 · Điền bước còn thiếu: giả thuyết của Hà
 **Hà đoán (cho sẵn):** ly càng lạnh thì càng đọng nhiều giọt ở thành ngoài.
-Cách kiểm tra (hai ly giống nhau, chỉ đổi một điều): [__53__] (1 dòng)
-Dự đoán nếu giả thuyết đúng: [__54__] (1 dòng)
+Cách kiểm tra (hai ly giống nhau, chỉ đổi một điều): (về nhà)
+Dự đoán nếu giả thuyết đúng: (về nhà)
 
 ---
 
 ## TRANG 4 — BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA
 
 ### 4·1 · III · Ba cái bẫy hay sập
-- ☐ **"Đã có lí thuyết thì khỏi cần đo."** Robot đi 6 m với 0,2 m/s: lí thuyết $6:0{,}2=$ [__55__] s, đo được 33 s. Lệch ⇒ tìm [__56__], không bỏ bên nào.
-- ☐ **"Giả thuyết bị bác bỏ là thí nghiệm hỏng."** Bác bỏ cũng là kết quả: loại một hướng [__57__], cho biết điều [__58__].
-- ☐ **"Hai số khác nhau là khác thật."** Chênh lệch [__59__] sai số thì chưa kết luận được.
+- ☐ **"Đã có lí thuyết thì khỏi cần đo."** Robot đi 6 m với 0,2 m/s: lí thuyết $6:0{,}2=$ 30 s, đo được 33 s. Lệch ⇒ tìm nguyên nhân, không bỏ bên nào.
+- ☐ **"Giả thuyết bị bác bỏ là thí nghiệm hỏng."** Bác bỏ cũng là kết quả: loại một hướng sai, cho biết điều mới.
+- ☐ **"Hai số khác nhau là khác thật."** Chênh lệch không vượt quá sai số thì chưa kết luận được.
 
 [Hình: robot hút bụi đi dọc bốn cạnh ô vuông cạnh 1,5 m, bốn góc rẽ. Chú thích: "Robot hút bụi đi dọc bốn cạnh ô vuông cạnh 1,5 m."]
 
 ### 4·2 · IV · Trả bài 6 câu
-1. Vật lí nghiên cứu gì? Vi mô và vĩ mô khác nhau thế nào? [__60__] (2 dòng)
-2. Mục tiêu của môn Vật lí là gì? [__61__] (2 dòng)
-3. Kể năm lĩnh vực chịu ảnh hưởng của vật lí, mỗi lĩnh vực một ví dụ. [__62__] (2 dòng)
-4. Hai phương pháp nghiên cứu là gì, quan hệ với nhau thế nào? [__63__] (2 dòng)
-5. Năm bước của quy trình (chữ Đoán là bước nào)? Không khớp thì làm gì? [__64__] (2 dòng)
-6. Vì sao giả thuyết bị bác bỏ vẫn có giá trị? [__65__] (2 dòng)
+1. Vật lí nghiên cứu gì? Vi mô và vĩ mô khác nhau thế nào? (về nhà)
+2. Mục tiêu của môn Vật lí là gì? (về nhà)
+3. Kể năm lĩnh vực chịu ảnh hưởng của vật lí, mỗi lĩnh vực một ví dụ. (về nhà)
+4. Hai phương pháp nghiên cứu là gì, quan hệ với nhau thế nào? (về nhà)
+5. Năm bước của quy trình (chữ Đoán là bước nào)? Không khớp thì làm gì? (về nhà)
+6. Vì sao giả thuyết bị bác bỏ vẫn có giá trị? (về nhà)
 
-**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: [__66__] → đọc lại ô [__67__] Tập
+**Bạn cùng bàn kiểm:** ……/6 câu · chưa thuộc: (về nhà) → đọc lại ô (về nhà) Tập
 
 ### 4·3 · Kết quả tự kiểm tra (đề chiếu trên lớp)
 | Câu | Em chọn | Chắc? | Đúng? |
 |---|---|---|---|
 | 1 | A | ☒ | ☒ |
-| 2 | [__69__] | ☐ | ☐ |
-| 3 | [__70__] | ☐ | ☐ |
-| 4 | [__71__] | ☐ | ☐ |
-| 5 | [__72__] | ☐ | ☐ |
-| 6 | [__73__] | ☐ | ☐ |
-| 7 | [__74__] | ☐ | ☐ |
+| 2 | A | ☒ | ☐ |
+| 3 | A | ☐ | ☐ |
+| 4 | A | ☐ | ☐ |
+| 5 | B | ☒ | ☐ |
+| 6 | B | ☐ | ☒ |
+| 7 | (về nhà) | ☐ | ☐ |
 
 ---
 
@@ -158,19 +158,19 @@ Vận dụng quy trình nghiên cứu: nêu vấn đề, giả thuyết, một c
 [Hình: ly nước đá có giọt nước đọng bên ngoài. Chú thích: "Ly nước đá để ngoài trời nóng vài phút."]
 
 **Giải**
-Vấn đề: [__75__] (1 dòng)
-Giả thuyết G1 (của Minh) và G2 (em đoán): [__76__] (2 dòng)
-Kiểm tra G1; dự đoán nếu G1 đúng: [__77__] (2 dòng)
-Kiểm tra G2; dự đoán nếu G2 đúng: [__78__] (2 dòng)
+Vấn đề: (về nhà)
+Giả thuyết G1 (của Minh) và G2 (em đoán): (về nhà)
+Kiểm tra G1; dự đoán nếu G1 đúng: (về nhà)
+Kiểm tra G2; dự đoán nếu G2 đúng: (về nhà)
 **Kết quả đo (cho sẵn):** giọt ngoài ly trong suốt, không màu; ly rỗng ướp lạnh mang ra vẫn đọng giọt.
-Kết luận (G1, G2 thế nào): [__79__] (2 dòng)
+Kết luận (G1, G2 thế nào): (về nhà)
 
 ### Đề BTVN (khung thầy ghi đề thầy giao trên web)
-Đề: [__80__]  Số câu: [__81__]
+Đề: (về nhà)  Số câu: (về nhà)
 Làm ở: ☐ thachlab ☐ Azota ☐ giấy · Hạn: ……/……
-Ghi chú của thầy về đề: [__82__] (2 dòng)
-☐ Đã nộp · Điểm: ……/…… · Câu sai: [__83__]
+Ghi chú của thầy về đề: (về nhà)
+☐ Đã nộp · Điểm: ……/…… · Câu sai: (về nhà)
 
 ### 5·2 · VI · Mang về: điều em dễ quên nhất
-1. [__84__] (1 dòng)
-2. [__85__] (1 dòng)
+1. (về nhà)
+2. (về nhà)
