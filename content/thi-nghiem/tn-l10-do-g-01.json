@@ -182,7 +182,15 @@
  "goi_y_mo_phong": {
   "loai": "2d_dong_hoc+bang_so_lieu",
   "y_tuong": "Giá đỡ, nam châm, bi, cổng quang; nút thả; đồng hồ hiện t; bảng điền sau mỗi lần thả và tự tính t̄, Δt, ḡ, Δg.",
-  "diem_nhan": "Thanh trượt 'độ trễ hệ thống': kéo lên thì ḡ lệch hẳn khỏi 9,8 dù Δg vẫn nhỏ (chụm nhưng lệch)."
+  "diem_nhan": "Thanh trượt 'độ trễ hệ thống': kéo lên thì ḡ lệch hẳn khỏi 9,8 dù Δg vẫn nhỏ (chụm nhưng lệch).",
+  "da_dung": "components/physics/thuc-hanh/ThucHanhRoiTuDo.tsx (Gói C, xem thử /dev/thuc-hanh)",
+  "bat_tat": {
+   "tre_ht": [
+    0,
+    0.004
+   ],
+   "ghi_chu": "Nút 'Nam châm còn từ dư' tắt = 0, bật = 0,004 s (trong khoảng tham_so tre_ht): ở s = 0,500 m, ḡ ≈ 9,58 ± 0,15 m/s² (dãy nhiễu cố định −2; +1; 0; +2; −1 ms), khoảng không còn chứa 9,8; tắt thì 9,83 ± 0,16."
+  }
  },
  "video": {
   "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-do-g-01-20261110.mp4",
@@ -193,5 +201,15 @@
   "giay": 49,
   "nguon": "tự dựng",
   "da_kiem": "2026-11-10"
- }
+ },
+ "gia_thuyet": [
+  "Bi thả từ nghỉ rơi tự do nên s = gt²/2; đo s và t thì tính được g = 2s/t²."
+ ],
+ "du_doan_neu_dung": [
+  "Năm lần thả cho t lệch nhau vài phần nghìn giây; khoảng ḡ ± Δg chứa 9,8 m/s² khi không có sai số hệ thống."
+ ],
+ "khong_chung_minh": [
+  "Một độ cao không phát hiện được từ dư: bi rời muộn thì cả 5 số t cùng lớn lên, bảng vẫn chụm, chỉ ḡ lệch nhỏ đi.",
+  "Không cho biết g có như nhau với vật nhẹ, sức cản lớn: mô hình đã bỏ qua sức cản."
+ ]
 }

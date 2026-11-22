@@ -92,6 +92,8 @@ export type BangDongHoHienSoProps = {
   cacMode?: ModeDem[];
   /** Cổng nào nối ổ nào, hiện dưới màn: { A: "cổng E", B: "cổng F" }. */
   noiO?: { A?: string; B?: string };
+  /** Khoá nút thả (Gói C: bảng đã đủ lần đo, chờ học sinh tính). */
+  khoaTha?: boolean;
 };
 
 export function BangDongHoHienSo({
@@ -104,6 +106,7 @@ export function BangDongHoHienSo({
   nhanTha = "Thả",
   cacMode = CAC_MODE,
   noiO,
+  khoaTha = false,
 }: BangDongHoHienSoProps) {
   const chuaReset = trangThai === "xong";
   return (
@@ -147,7 +150,7 @@ export function BangDongHoHienSo({
         <button
           type="button"
           className="min-h-11 flex-1 rounded-lg bg-primary px-3 text-sm font-semibold text-white disabled:opacity-40"
-          disabled={trangThai !== "cho"}
+          disabled={trangThai !== "cho" || khoaTha}
           onClick={onTha}
         >
           {chuaReset ? "RESET trước" : nhanTha}
