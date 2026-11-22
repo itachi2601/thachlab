@@ -20,3 +20,8 @@
 | 14 | lớp ảo | Ô [97]–[99] (đề 1218) không đo được vì lớp ảo không có đề. | thấp | hs-6 |
 
 Tổng: cao 3, vừa 6, thấp 5.
+
+## Đã xử lý (22/11/2026)
+- Làm: #1 (đáp án 6bd bỏ "mười mấy lần", thêm 4,0→22 Ω ô 15·4), #2 + #4 (m3d: công thức sai số + vì sao độ dốc tốt hơn), #3 (m4b thêm 6,0 V: 2,9 lần), #5 + #12 (m4d: ρ, t−t₀), #6 (m4a: rung quanh nút mạng), #7 (m5d đường liền đỏ / đứt xanh), #8 (m4b ghi "đọc bảng, so sánh"), #9 (m0 chép đúng 3 mục tiêu 13·1), #11 (m3c tên đồ thị). Bỏ #10, #13 (thấp, sửa Tập không đáng), #14 (không đo được).
+- Giảm 25 → 24 màn: bỏ m3f (PhET Ohm), chuyển link PhET vào ghi chú dạy.
+- Kiểm máy ĐẠT (1280 + 1920, katex 0, 375px ok); PDF Tập `l11-bai23.mjs` không đổi, 12 trang.

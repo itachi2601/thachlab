@@ -113,9 +113,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <h1>Điện trở. Định luật Ohm</h1>
     <p class="hoi">Hôm nay trả lời được:</p>
     <ul>
-      <li>Vì sao bóng đèn hay đứt đúng lúc bật?</li>
-      <li>$R=\dfrac{U}{I}$ và $I=\dfrac{U}{R}$: đổi kΩ, mA cho đúng.</li>
-      <li>Kim loại, NTC nóng lên thì $R$ đổi thế nào?</li>
+      <li>Định nghĩa <b>điện trở</b> $R=\dfrac{U}{I}$, đơn vị ôm; đổi đúng kΩ, mA.</li>
+      <li>Phát biểu <b>định luật Ohm</b>; đọc <b>đường đặc trưng vôn – ampe</b>.</li>
+      <li>Vì sao kim loại có điện trở; $R$ của kim loại, NTC, PTC phụ thuộc <b>nhiệt độ</b> ra sao.</li>
     </ul>
     <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
   </div>
@@ -220,7 +220,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig f4 rong"><!--FIG2--></div>
     <div class="ben">
-      <p>Đồ thị <b class="o">$I$</b> theo <b class="o">$U$</b> của một linh kiện.</p>
+      <p>Đồ thị <b class="o">cường độ dòng điện $I$</b> theo <b class="o">hiệu điện thế $U$</b> của một linh kiện.</p>
       <p>Điện trở: đường <b class="o">thẳng qua gốc</b>.</p>
       <p>Độ dốc $\dfrac{I}{U}=$ <b class="o">$\dfrac{1}{R}$</b></p>
       <p>Dốc hơn thì $R$ <b class="o">nhỏ hơn</b>.</p>
@@ -232,7 +232,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m3d">
   <div class="top"><span class="so">3/6 · Sai số</span><span>phút 7–15</span><span class="tap">tr.14 · ô 14·1 · Sai số</span></div>
   <div class="giua">
-    <p class="hoi">Vôn kế lệch $\pm0{,}1$ V, ampe kế $\pm0{,}01$ A. Tính $R$ từ <b>một</b> hàng thì chọn hàng nào?</p>
+    <p class="hoi">Vôn kế lệch $\pm0{,}1$ V, ampe kế $\pm0{,}01$ A. Tính $R$ từ <b>một</b> hàng: chọn?</p>
     <ol class="opt lo">
       <li><b>A.</b> Hàng 1,0 V, vì gần gốc toạ độ nhất</li>
       <li><b>B.</b> Hàng nào cũng như nhau, vì đều ra 10 Ω</li>
@@ -241,7 +241,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     </ol>
     <button class="mo" data-mo="a3">Mở đáp án</button>
     <div class="an" id="a3" hidden>
-      <p><b>D.</b> 1,0 V: <b class="o">20 %</b> · 5,0 V: <b class="o">4 %</b> · tốt nhất: lấy <b class="o">độ dốc đường thẳng</b></p>
+      <p><b>D.</b> $\Delta U/U+\Delta I/I$: <b class="o">20 %</b> (1,0 V), <b class="o">4 %</b> (5,0 V)</p><p class="nho">Tốt nhất lấy <b class="o">độ dốc</b>: 5 điểm triệt sai số.</p>
     </div>
   </div>
 </section>
@@ -258,19 +258,6 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   </div>
 </section>
 
-<section class="man" id="m3f">
-  <div class="top"><span class="so">3/6 · Thí nghiệm ảo PhET</span><span>dùng khi dư giờ hoặc thay clip</span><span class="tap">tr.14 · ô 14·2</span></div>
-  <div class="giua">
-    <p class="hoi">Mô phỏng "Định luật Ohm": giữ $R$, kéo $U$ tăng gấp đôi. Đoán: $I$ thế nào?</p>
-    <p class="hoi">Rồi giữ $U$, kéo $R$ tăng gấp đôi. $I$ thế nào?</p>
-    <div class="nut">
-      <a class="mo" href="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
-      <button class="mo" data-mo="p3">Mở: kết quả</button>
-    </div>
-    <div class="an" id="p3" hidden><p>$R$ giữ nguyên, $U$ gấp đôi: $I$ gấp đôi. $U$ giữ nguyên, $R$ gấp đôi: $I$ còn một nửa. Đúng $I=U/R$.</p></div>
-  </div>
-</section>
-
 <!-- ================= 4. Vì sao có điện trở · đèn · R(t) ================= -->
 <section class="man" id="m4a">
   <div class="top"><span class="so">4/6 · Vì sao kim loại có điện trở</span><span>phút 15–22</span><span class="tap">tr.15 · ô 15·1</span></div>
@@ -278,7 +265,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="fig f5"><!--TAP:mangIon--></div>
     <div class="ben">
       <p>Ion <b class="o">dương</b> xếp đều ở <b class="o">nút mạng</b>; electron <b class="o">tự do</b> trôi giữa chúng.</p>
-      <p>Ion dao động <b class="o">nhiệt</b>; electron <b class="o">va chạm</b> vào ion, bị cản: đó là điện trở.</p>
+      <p>Ion dao động <b class="o">nhiệt</b> (rung quanh nút mạng, nóng càng mạnh); electron <b class="o">va chạm</b> vào ion, bị cản: đó là điện trở.</p>
       <button class="mo" data-mo="r4">Mở: nóng hơn thì…</button>
       <div class="an" id="r4" hidden><p>rung <b class="o">mạnh hơn</b> → va chạm <b class="o">nhiều hơn</b> → trôi <b class="o">chậm hơn</b> → $I$ <b class="o">nhỏ hơn</b> → $R$ <b class="o">tăng</b></p></div>
     </div>
@@ -292,9 +279,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: $I$ và $U/I$ sau mỗi lần tăng 1,0 V.</p><p class="nho">Thay điện trở 10 Ω bằng đèn 6 V – 3 W; chờ đèn ổn định mới ghi. Clip bỏ phần mở đầu.</p></div>
       <div class="buoc" data-t="10.7"><p class="hoi">Tăng $U$ từng 1,0 V.</p></div>
-      <div class="buoc" data-t="13.9" data-dung><p class="so-lon">$3{,}0$ V: $I=0{,}33$ A</p><p class="hoi">Từ 1,0 V lên 3,0 V ($U$ gấp 3), $I$ gấp mấy lần?</p><p class="nho">1,0 V: 0,17 A (bảng ô 15·2)</p></div>
+      <div class="buoc" data-t="13.9" data-dung><p class="so-lon">$3{,}0$ V: $I=0{,}33$ A</p><p class="hoi">Đọc bảng ô 15·2, so sánh: từ 1,0 V lên 3,0 V ($U$ gấp 3), $I$ gấp mấy lần?</p><p class="nho">1,0 V: 0,17 A (bảng ô 15·2)</p></div>
       <div class="buoc" data-t="14.0"><p class="hoi">Đo tiếp tới 6,0 V.</p></div>
-      <div class="buoc" data-t="18.1" data-dung><p class="so-lon">$0{,}33/0{,}17\approx1{,}9$ lần, chưa tới 3</p><p class="hoi">Điền 3 ô $U/I$ còn trống (2,0; 4,0; 6,0 V) vào Tập.</p></div>
+      <div class="buoc" data-t="18.1" data-dung><p class="so-lon">$0{,}33/0{,}17\approx1{,}9$ lần, chưa tới 3</p><p class="nho">6,0 V: $0{,}50/0{,}17\approx2{,}9$ lần, $U$ gấp 6</p><p class="hoi">Điền 3 ô $U/I$ còn trống (2,0; 4,0; 6,0 V) vào Tập.</p></div>
       <div class="buoc" data-t="18.2"><p class="hoi">Kết quả.</p></div>
       <div class="buoc" data-t="26.1"><p class="so-lon">$U/I$: $5{,}9 \to 7{,}7 \to \dots \to 12{,}0\ \Omega$</p><p class="hoi">$U$ tăng 6 lần, $I$ tăng <span class="o">chưa tới 3 lần</span>; $U/I$ <span class="o">tăng dần</span>.</p></div>
     </div>
@@ -322,7 +309,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <p>$R_0$: điện trở ở $t_0$ (thường 20 °C)</p>
     <p>$\alpha$: hệ số <b class="o">nhiệt điện trở</b> (đơn vị <b class="o">K⁻¹</b>); kim loại có $\alpha$ <b class="o">$\gt$</b> $0$</p>
     <p>$t-t_0$ tính bằng °C hay K đều ra <b class="o">cùng một số</b>.</p>
-    <p>Điện trở suất: $\rho=$ <b class="o">$\rho_0\,[1+\alpha\,(t-t_0)]$</b></p>
+    <p>$\rho$: <b class="o">điện trở suất</b>; $t-t_0$: <b class="o">độ tăng nhiệt độ</b>. Cũng theo nhiệt độ: $\rho=$ <b class="o">$\rho_0\,[1+\alpha\,(t-t_0)]$</b></p>
   </div>
 </section>
 
@@ -389,7 +376,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig f8"><!--TAP:haiDuong--></div>
     <div class="ben">
-      <p class="hoi">(1) qua (4,0 V; 0,40 A), (2) qua (4,0 V; 0,20 A):</p>
+      <p class="hoi">(1) liền đỏ: (4,0 V; 0,40 A) · (2) đứt xanh: (4,0 V; 0,20 A)</p>
       <ol class="opt lo">
         <li><b>A.</b> $R_1=20$, $R_2=10\ \Omega$</li>
         <li><b>B.</b> $R_1=0{,}1$, $R_2=0{,}05\ \Omega$</li>
@@ -420,9 +407,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig f1" data-chep="m1a"></div>
     <div class="ben">
-      <p class="nhin">Đèn 6 V – 3 W: gần nguội (1,0 V) $U/I=5{,}9\ \Omega$; sáng đủ $12\ \Omega$.</p>
+      <p class="nhin">Đèn 6 V – 3 W: gần nguội (1,0 V) $U/I=5{,}9\ \Omega$; sáng đủ $12\ \Omega$. Dây tóc 4,0 Ω ở 20 °C, 22 Ω khi sáng (ô 15·4).</p>
       <button class="mo" data-mo="a6">Mở: đáp án</button>
-      <div class="an" id="a6" hidden><p><b>A.</b> Dây tóc nguội có $R$ nhỏ hơn lúc sáng cỡ mười mấy lần: cùng 220 V, dòng lúc bật lớn gấp mười mấy lần.</p>
+      <div class="an" id="a6" hidden><p><b>A.</b> Dây tóc nguội có $R$ nhỏ hơn nhiều lúc sáng: cùng 220 V, dòng lúc bật lớn hơn nhiều.</p>
         <p class="nho">B: nóng thì $R$ lớn, dòng nhỏ · C: $U$ không đổi nhưng $R$ đổi · D: tắt rồi thì không còn dòng.</p></div>
     </div>
   </div>
