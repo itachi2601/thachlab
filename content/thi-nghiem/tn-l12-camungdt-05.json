@@ -13,12 +13,12 @@
     "camungdt.dinh_luat_lenz",
     "camungdt.bao_toan_nang_luong"
   ],
-  "muc_tieu": "Đo suất điện động khi thanh trượt cắt đường sức, kiểm e = Bℓv; xác định chiều dòng cảm ứng bằng định luật Lenz; thấy lực từ lên thanh luôn cản chuyển động và công suất lực kéo bằng công suất toả nhiệt.",
+  "muc_tieu": "Xác định chiều dòng cảm ứng khi thanh trượt trên hai ray bằng định luật Lenz (đẩy về phía R, kéo ra xa R); thấy lực từ lên thanh luôn ngược chiều chuyển động; đo e theo v để kiểm |e| = Bℓv.",
   "gia_thuyet": [
-    "Một bạn cho rằng: dòng điện cảm ứng chạy trong thanh nên lực từ lên thanh sẽ đẩy thanh đi nhanh hơn, thanh không cần kéo vẫn tự trượt mãi."
+    "Một bạn cho rằng: từ trường của dòng cảm ứng luôn ngược chiều B, nên đẩy thanh về phía R hay kéo ra xa R thì dòng vẫn chạy cùng một chiều."
   ],
   "du_doan_neu_dung": [
-    "Thôi kéo thì thanh phải trượt nhanh dần, hoặc ít nhất giữ nguyên tốc độ; lực kế kéo thanh trượt đều phải chỉ 0."
+    "Đẩy thanh về phía R và kéo ra xa R thì kim miliampe kế lệch cùng một phía."
   ],
   "khong_chung_minh": [
     "Không cho biết suất điện động khi thanh trượt xiên so với ray hoặc từ trường không vuông góc mặt phẳng ray.",
@@ -188,7 +188,7 @@
     ],
     "ghi_chu": "Số liệu minh hoạ tính từ mô hình B = 0,40 T, ℓ = 0,20 m, R = 2,0 Ω. Ca tự suy cho câu chốt clip: kéo đều 0,50 m/s, R = 4,0 Ω → e = 0,04 V, I = 10 mA, F = 0,8 mN, công suất kéo = 0,4 mW (giảm một nửa)."
   },
-  "ket_qua_ky_vong": "e tỉ lệ v với hệ số Bℓ = 0,08 V·s/m; lực từ luôn ngược chiều chuyển động; công suất kéo bằng công suất toả nhiệt; thôi kéo thì thanh chậm dần.",
+  "ket_qua_ky_vong": "Đẩy thanh về phía R (từ thông giảm) và kéo ra xa R (từ thông tăng) cho dòng ngược chiều nhau: kim miliampe kế lệch về hai phía; lực từ luôn ngược chiều chuyển động; e tỉ lệ v với hệ số Bℓ = 0,08 V·s/m; công suất kéo bằng công suất toả nhiệt.",
   "hien_tuong_hay_sai": [
     "Xác định sai chiều dòng cảm ứng (quên định luật Lenz: dòng chống lại sự TĂNG từ thông).",
     "Cho rằng lực từ lên thanh cùng chiều chuyển động, giúp thanh trượt (thật ra lực từ CẢN chuyển động).",
@@ -212,7 +212,7 @@
     "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261121.webp",
     "tieu_de_hop": "Xem thí nghiệm dựng lại",
     "nhan": "thanh trượt trên hai ray",
-    "nhin_vao": "Thôi kéo thì thanh chuyển động thế nào?",
+    "nhin_vao": "Đẩy thanh về phía R rồi kéo ra xa R: kim miliampe kế lệch về hai phía nào?",
     "giay": 50,
     "nguon": "tự dựng",
     "da_kiem": "2026-11-21"
