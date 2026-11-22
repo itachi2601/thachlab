@@ -63,7 +63,7 @@ for (const [w, h] of [[1280, 720], [1920, 1080]]) {
     if (anhDir) {
       mkdirSync(anhDir, { recursive: true });
       const ids = r.out.map((x) => x.id);
-      for (const id of ids) { await pg.evaluate((i) => document.getElementById(i).scrollIntoView(), id); await new Promise((z) => setTimeout(z, 150)); await pg.screenshot({ path: `${anhDir}/${id}.png` }); }
+      for (const id of ids) { await pg.evaluate((i) => { document.documentElement.style.scrollBehavior = 'auto'; document.getElementById(i).scrollIntoView({ behavior: 'instant' }); }, id); await new Promise((z) => setTimeout(z, 150)); await pg.screenshot({ path: `${anhDir}/${id}.png` }); }
       console.log('  ảnh:', anhDir);
     }
   }
