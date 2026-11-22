@@ -193,7 +193,7 @@ Kho `content/phu-dao/clip-bay/bay-l12-chN-0X.json`, mã `clips/bay-chN-0X.py`; m
 
 ## Lô 3 L12 (14/11/2026, 5 clip). Đã tải lesson-clips (-20261114) + chèn repo + khung 6 ô; thầy duyệt 16/11/2026; ĐÃ ĐĂNG DB 16/11 10:02 (127, 10, 17 --chi-video; 126 cả lý thuyết)
 
-- l12-dien-tu-truong-song-dien-tu (bài 127) · tn-l12-dttruong-01 · clip dttruong1 · cổng B 2 vòng ĐẠT · 49,9 s · 1,74 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-01-20261114.mp4 · ĐÃ ĐĂNG 16/11
+- l12-dien-tu-truong-song-dien-tu (bài 127) · tn-l12-dttruong-01 · clip dttruong1 · cổng B 2 vòng ĐẠT · 49,9 s · 1,74 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-dttruong-01-20261118.mp4 · ĐÃ ĐĂNG 16/11 · 18/11 dựng lại: sửa đường sức nam châm (cực S ảo nằm dưới N), đổi URL trên DB bài 127
 - l12-khai-niem-tu-truong (bài 10) · tn-l12-tutruong-02 · clip tutruong2 · cổng B 2 vòng (sửa nhẹ vòng 2) · 49,7 s · 1,16 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-tutruong-02-20261114.mp4 · ĐÃ ĐĂNG 16/11
 - l12-phan-hach-nhiet-hach (bài 17) · tn-l12-phanbach-02 · clip phanbach2 · cổng B 2 vòng ĐẠT · 49,7 s · 1,35 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.mp4 · ĐÃ ĐĂNG 16/11
 - l12-ung-dung-cam-ung-dien-tu (bài 126) · tn-l12-udcamung-01 · clip udcamung1 · cổng B 2 vòng ĐẠT · 49,5 s · 1,51 MB · https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-01-20261114.mp4 · ĐÃ ĐĂNG 16/11 (bài có 2 hộp TN mới dạng details, cần đăng thường, không chỉ --chi-video)
