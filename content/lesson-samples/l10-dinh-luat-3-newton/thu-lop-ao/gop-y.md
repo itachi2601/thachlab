@@ -39,3 +39,30 @@ Số ô [n] là số chỗ trống trong `thu-lop-ao/sach-trong.md`. Bằng ch�
 | 18 | **src** `#m4a` | Học sinh muốn ví dụ loại lực (P hấp dẫn, N đàn hồi). hs-4. | Thêm ví dụ vào ô "có thể khác loại". |
 | 19 | **src** `#m5e` | "Hai bạn đi về đâu?" không rõ cần chữ nào. hs-5. | Đổi thành "Hai bạn trượt cùng chiều hay ngược chiều?" |
 | 20 | **src** `#m5g` ↔ ô 39·1 | $v=at$ ở ô 39·1 không được màn nào dùng ngoài Câu 5; học sinh đoán. hs-5. | Nhắc "$v=at$" trong ô mở Câu 5 (đã có) và chiếu ô 39·1 ở ĐD5 nếu còn giờ. |
+
+## Đã xử lý (22/11/2026)
+
+| # | Kết quả | Ghi chú |
+|---|---|---|
+| 1 | Làm một phần | Câu đánh số lại theo thứ tự chiếu: 3c=1, 4c=2, 4e=3, 5a=4, 5f=5, 5g=6. Ghi chú sửa theo, có dặn "kẹp bút ở tr.40". Không dời ô 40·1 lên tr.38 vì tr.38 hết chỗ (dư 2 mm). |
+| 2 | Làm | Màn 2b: vế phải "$-\vec F_{BA}$" ẩn, có nút "Mở vế phải". |
+| 3 | Làm | Điểm dừng 2 đổi thành phút 3–10, chia hai nhịp: màn 2a có dòng "chép xong 5 dòng (1 phút) rồi mới sang". Điểm dừng 3 thành 10–15; bù giờ nhờ bỏ hộp câu hỏi ô 38·2 (mục 7). |
+| 4 | Làm | Màn 2c thêm dòng "Cột 'Nghĩa là' đã in trong Tập, không chép". |
+| 5 | Làm một phần | Màn 5g (nay là Câu 6) mặc định bỏ, về nhà. Clip 5c bỏ điểm dừng ở bảng (18.5 s), còn ① 13.9 s và lần cuối 26.7 s. Điểm dừng 5 giữ 21–28 chứ không nâng lên 21–29, vì điểm dừng 6 đang thiếu giờ (mục 16). |
+| 6 | Làm | Thống nhất: trên lớp ô 37·3 chỉ ghi đáp án + đúng/sai; dòng "điều em hiểu sai" về nhà. Màn 6san và màn 6c ghi rõ như vậy, ghi chú sửa theo. |
+| 7 | Làm | Tập ô 38·2: hộp "Có phải hai lực khác nhau không?" đổi thành hộp "Trước khi làm" (Em chọn + chắc/không chắc) kèm dòng "Lớp đo có thể khác bảng này; lần 3, 4 trả lời ở Câu 1". Màn 3b cũng có câu đó. |
+| 8 | Làm | Màn 4b: "Cân bằng: … và …" + dòng "Điền bằng kí hiệu: P, N, N′". |
+| 9 | Làm | Ô mở màn 4b thêm "P không phải phản lực của N" (dòng N–N′ đã có). |
+| 10 | Làm | Đổi thành "Hai lực làm thành một cặp." |
+| 11 | Làm | Thêm vào dòng cuối màn 2c: "Lực bằng nhau, gia tốc có bằng không? → điểm dừng 5". |
+| 12 | Làm | Màn 1a: "Tập ô 37·2: chọn A–D, đánh dấu chắc/không chắc, một dòng 'Vì sao?'. Ô 37·3 để cuối giờ." |
+| 13 | Làm | Nút mở của 6 câu đổi thành "Mở đáp án → đánh dấu 'Đúng?'". Thêm dòng nhắc riêng thì 5 màn bị tràn nên dùng nút. |
+| 14 | Làm | Tập ô 40·2: cột thành "Dữ liệu → kiến thức (định luật II hay III?)". |
+| 15 | Làm | Tập: tiêu đề Bẫy 3 thêm "(về nhà)". Màn 4d có dòng "Ô 39·3: chỉ nghe". |
+| 16 | Làm | Ô 37·1 và dòng "hiểu sai" của ô 37·3 về nhà; điểm dừng 6 trên lớp chỉ còn trả bài 2 câu + đáp án đúng/sai. |
+| 17 | Làm một phần | Câu 3a: ghi ở hộp "Trước khi làm" mới của ô 38·2. Clip 5c: "Giơ tay chọn, không ghi" (không thêm dòng ở ô 39·2). |
+| 18 | Làm | Màn 4a: "có thể khác loại (P hút, N đàn hồi)". |
+| 19 | Làm | Câu hỏi nằm ở Tập ô 40·2, không ở màn. Đổi thành "hai bạn trượt cùng chiều hay ngược chiều?". |
+| 20 | Bỏ | Ô mở Câu 6 (màn 5g) đã có $v=at$; màn 5g nay mặc định về nhà. |
+
+Kiểm lại: build + `kiem.mjs` sạch (1280×720 và 1920×1080 không tràn, KaTeX 0, 375px không cuộn ngang). Tập vẫn 12 trang (đo trước và sau).
