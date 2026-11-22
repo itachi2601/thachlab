@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trọng lực và lực căng · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Trọng lực và lực căng (L10 Bài 17) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Thí nghiệm tấm bìa (điểm dừng 2, ô 50·2):</b> 1 tấm bìa cứng hình bất kì có 3 lỗ nhỏ A, B, C gần mép, 1 cây đinh (hoặc bút cắm vào lỗ, cầm ngang), 1 dây dọi (chỉ + đai ốc), bút dạ, 1 cây bút chì để kiểm tra thăng bằng. Thử ở nhà một lần: kẻ phải đi qua đúng điểm treo, ba đường lệch nhau vài mm là chuyện thường.</li>
+  <li><b>Một đĩa CD cũ + đoạn chỉ</b> (không bắt buộc): buộc ở mép, treo cho lớp xem ở điểm dừng 1 và 6.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1238 "Kiểm tra nhanh — Bài 17. Trọng lực và lực căng"</b> (18 câu, 15 phút, mục Lý thuyết id 120) trên điện thoại: màn 6/6 "Kiểm tra lý thuyết" có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1238&amp;item=120</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 26 màn, mỗi màn một ý. Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại để chỉnh.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Ba clip thí nghiệm</b> (cần mạng), mỗi clip vào thẳng phần đo và tự dừng để lớp đoán: <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn.
+    <ul>
+      <li>Clip tấm bìa (màn "Tấm bìa (clip)"): <b>mặc định bỏ qua</b> (bấm → qua luôn), chỉ chiếu khi không làm thật được. Dừng 2 lần: ① bìa treo ở A đứng yên → biểu quyết "$G$ ở đâu?" (đáp án B); ② ba đường gặp nhau → "đặt lên bút chì thì bìa…?".</li>
+      <li>Clip lực kế + quả nặng 50 g (điểm dừng 3): dừng 2 lần: ① 1 quả 0,50 N → biểu quyết "4 quả chỉ bao nhiêu?" (đáp án C, 1,95 N); ② bảng 4 số đo → lớp tính $P/m$ vào cột cuối rồi Enter xem đồ thị.</li>
+      <li>Clip ròng rọc + lực kế (điểm dừng 4): dừng 1 lần sau "thẳng đứng 1,0 N" → biểu quyết "kéo nằm ngang thì lực kế chỉ…" (đáp án B).</li>
+    </ul></li>
+  <li>Hình đáp án (đèn treo, con lắc, đĩa CD) hiện đè lên hình đề khi bấm Mở; bấm lại để ẩn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 17 <small>thứ tự lật: tr.49 → tr.50 → tr.51 → tr.52 → tr.51 → tr.52 → tr.49 → tr.52</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Việc điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán đĩa CD</td><td>0–3</td><td>tr.49 ô 49·2</td><td>khoanh 1 phương án + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Trọng lực, trọng tâm, tấm bìa</td><td>3–11</td><td>tr.49 ô 49·4 dòng 1–7 → tr.50 ô 50·1, ô 50·2</td><td>chỗ điền ngắn của định nghĩa + dây dọi + trọng tâm; quan sát/rút ra tấm bìa</td></tr>
+<tr><td>3 · Trọng lượng, lực kế, Bẫy 1</td><td>11–17</td><td>tr.50 ô 50·3, ô 50·4 → tr.51 ô 51·4 dòng 1</td><td>bảng $m$–$P$, $g\approx9{,}8$; cột $P/m$; dòng Bẫy 1</td></tr>
+<tr><td>4 · Lực căng, ròng rọc, Bẫy 3</td><td>17–23</td><td>tr.51 ô 51·1 (cả hình đèn) → ô 51·3 → ô 51·4 dòng 3</td><td>định nghĩa + vẽ 2 vectơ $\vec T$; bảng 3 số chỉ; dòng Bẫy 3</td></tr>
+<tr><td>5 · Hệ vật + bài mẫu + Bẫy 2</td><td>23–28</td><td>tr.51 ô 51·2 → tr.52 ô 52·3 → tr.51 ô 51·4 dòng 2 + bảng</td><td>3 dòng hệ vật; bảng đọc đề + 2 phương trình + $a$, $T$; bảng Bẫy 2</td></tr>
+<tr><td>6 · Trả bài + đĩa CD + đề 1238</td><td>28–30, đề 30–45</td><td>tr.52 ô 52·1 câu 2, 5 → tr.49 ô 49·3 → đề xong: tr.52 ô 52·2</td><td>2 câu trả bài; đáp án đĩa CD, đúng/sai; điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 2 dài nhất (8 phút) vì có thí nghiệm tấm bìa làm thật; clip tấm bìa bỏ mặc định để giữ giờ. Điểm dừng 5 có 5 màn: màn bảng đọc đề và bảng Bẫy 2 có thể chép ở nhà nếu trễ giờ (xem mục thiếu giờ).</p>
+
+<h2>Điểm dừng 1 · Dự đoán đĩa CD <small>phút 0–3 · Tập tr.49 ô 49·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> treo đĩa CD thật (nếu có) cho lớp nhìn. "Trái Đất hút từng mẩu nhựa của đĩa. Gộp lại thành một lực — lực đó đặt ở đâu?"</li>
+  <li>Khoanh vào Tập, viết một dòng "Vì sao". Màn 1b không có ô đáp án (tránh lộ): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn "Quay lại đĩa CD", ô 49·3). Phương án chép y Tập.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (điểm buộc dây) — lẫn điểm đặt lực căng với điểm đặt trọng lực. D (điểm thấp nhất) — "gần đất nhất thì bị hút mạnh nhất". C — không tin trọng lực có thể đặt ở chỗ không có vật chất.</div>
+
+<h2>Điểm dừng 2 · Trọng lực, trọng tâm, tấm bìa <small>phút 3–11 · tr.49 ô 49·4 → tr.50 ô 50·1, 50·2</small></h2>
+<ul>
+  <li>Màn trọng lực: đọc to từng dòng, cả lớp điền ô 49·4 dòng 1–5 (hấp dẫn, trọng tâm, thẳng đứng, hướng về tâm Trái Đất, $P=mg$, đơn vị).</li>
+  <li><span class="k">Dây dọi (dòng 6–7):</span> hỏi "ở hai phía Trái Đất, hai dây dọi có song song không?" — để lớp cãi nhau 30 giây rồi mới mở hình Trái Đất. Ý cần chốt: "thẳng đứng" = hướng về tâm Trái Đất, nên mỗi nơi một phương.</li>
+  <li>Trọng tâm (ô 50·1): ví dụ thước thẳng, đĩa tròn. Dòng "có thể nằm ngoài vật" chỉ nêu, để đĩa CD cuối giờ chứng minh.</li>
+  <li><span class="k">Thí nghiệm tấm bìa (ô 50·2), làm thật khoảng 3 phút:</span> gọi 1 em lên cầm dây dọi. Treo ở A, đợi đứng yên, kẻ; trước khi treo ở B hỏi "đường mới sẽ cắt đường cũ ở đâu?". Treo ở C, cả lớp thấy ba đường gặp nhau; đặt điểm đó lên đầu bút chì — bìa thăng bằng. Hỏi "cần ít nhất mấy lần treo?" → 2, lần 3 để kiểm tra.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ trọng tâm luôn ở "giữa" hình (kể cả hình không đối xứng); nghĩ "thẳng đứng" là một phương cố định cho cả Trái Đất; nghĩ trọng tâm phải nằm trên vật.</div>
+
+<h2>Điểm dừng 3 · Trọng lượng, lực kế, Bẫy 1 <small>phút 11–17 · tr.50 ô 50·3, 50·4 → tr.51 ô 51·4 dòng 1</small></h2>
+<ul>
+  <li>Bảng khối lượng/trọng lượng: hỏi miệng từng hàng trước khi bấm "Mở bảng". Chốt $g\approx9{,}8$ m/s², đổi theo vĩ độ và độ cao, $1$ N/kg $=1$ m/s².</li>
+  <li><span class="k">Clip lực kế (khoảng 1,5 phút):</span> dừng ① biểu quyết 4 quả → C (1,95 N, không đúng 2,00 vì đọc kim). Dừng ② cả lớp tính $P/m$ (10,0; 9,5; 9,7; 9,8) rồi mới mở → $P$ tỉ lệ thuận với $m$, $P/m\approx g$.</li>
+  <li>Màn "Đọc bảng": "hàng nào kém tin cậy nhất?" — sai một vạch 0,05 N là 10 % ở hàng đầu, 2,6 % ở hàng cuối. Câu này nằm trong ô 50·4; viết lại bằng lời ở nhà.</li>
+  <li><span class="k">Bẫy 1 (ô 51·4 dòng 1):</span> "Em nặng 50 kg" — kg là khối lượng. Biểu quyết nhà du hành 60 kg lên Mặt Trăng → C ($60$ kg; $96$ N).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A/D ở câu Mặt Trăng — cho khối lượng giảm theo $g$; B — giữ $g=9{,}8$. Viết đơn vị trọng lượng là kg; nhầm $P=m/g$.</div>
+
+<h2>Điểm dừng 4 · Lực căng, ròng rọc, Bẫy 3 <small>phút 17–23 · tr.51 ô 51·1, 51·3, 51·4 dòng 3</small></h2>
+<ul>
+  <li>Định nghĩa lực căng (ô 51·1): điểm đặt ở chỗ dây chạm vật, dọc dây, kéo vật về phía dây; dây chỉ kéo, không đẩy.</li>
+  <li><span class="k">Hình đèn treo:</span> cho cả lớp vẽ $\vec T$ lên đèn và lên móc trần vào Tập (40 giây), gọi 1 em lên bảng, rồi mới Mở hình đáp án: cùng độ lớn, đều hướng vào giữa dây.</li>
+  <li><span class="k">Clip ròng rọc (khoảng 1 phút):</span> dừng sau "thẳng đứng 1,0 N", biểu quyết kéo nằm ngang → B. Chốt: ròng rọc nhẹ chỉ đổi hướng dây, lực căng hai bên bằng nhau.</li>
+  <li><span class="k">Bẫy 3 con lắc:</span> biểu quyết rồi Mở hình đáp án → D (gốc ở chỗ buộc, mũi theo dây ra xa vật).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> vẽ $\vec T$ lên móc trần hướng lên; ở con lắc chọn A (thẳng đứng lên) hoặc B (từ điểm treo xuống — vẽ theo chiều "dây treo vật"); nghĩ kéo nằm ngang thì lực kế chỉ ít hơn vì "không phải nâng vật".</div>
+
+<h2>Điểm dừng 5 · Hệ vật, bài mẫu, Bẫy 2 <small>phút 23–28 · tr.51 ô 51·2 → tr.52 ô 52·3 → tr.51 ô 51·4 dòng 2</small></h2>
+<ul>
+  <li>Ô 51·2: dây không dãn → cùng độ lớn $a$; dây và ròng rọc nhẹ → $T_1=T_2$; viết $F=ma$ cho từng vật rồi cộng để khử $T$.</li>
+  <li>Bài mẫu ô 52·3 ($m_A=2$ kg, $m_B=0{,}5$ kg, $g=10$): cả lớp điền bảng đọc đề, mở để so. Viết hai phương trình (màn "giải") — chỉ hình hệ A–B trong khi mở từng dòng; cộng → $a=2$ m/s².</li>
+  <li>Màn lực căng: biểu quyết → B ($T=4$ N). Hỏi "vì sao $T$ nhỏ hơn $P_B$?" — dẫn sang Bẫy 2.</li>
+  <li><span class="k">Bẫy 2 (ô 51·4 dòng 2 + bảng):</span> $T=P$ chỉ khi đứng yên hoặc chuyển động thẳng đều; $\vec a$ hướng lên thì $T\gt P$, hướng xuống thì $T\lt P$.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> coi $T=P_B=5$ N (A); lấy $m_Ba=1$ N (C); dùng $P_A$ (D). Chọn một chiều dương chung cho cả hệ rồi sai dấu ở vật B; chia $P_B$ cho riêng $m_A$ (ra 2,5 m/s²).</div>
+
+<h2>Điểm dừng 6 · Trả bài + đĩa CD + đề 1238 <small>phút 28–30 trả bài · 30–45 làm đề · tr.52 ô 52·1 → tr.49 ô 49·3 → tr.52 ô 52·2</small></h2>
+<ul>
+  <li>Trả bài câu 2 và câu 5 của ô 52·1: viết 1 phút, gấp màn, rồi mở từng câu để tự sửa bằng bút khác màu. Câu 1, 3, 4, 6 về nhà.</li>
+  <li><span class="k">Quay lại đĩa CD (1 phút):</span> nhắc "tấm bìa: $G$ ngay dưới điểm treo" → Mở hình: dây kéo dài đi qua tâm lỗ → B. Mở tiếp "vì sao A, C, D sai". Lớp lật tr.49 ô 49·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai".</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1238 trong 15 phút. Nộp xong ghi điểm vào tr.52 ô 52·2.</li>
+  <li>Đọc màn "Về nhà theo Tập" — đúng mã ô; ô 53·1 ghi đề BTVN thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Tập lệch với đề:</b> ô 52·2 "Kết quả tự kiểm tra (đề chiếu trên lớp)" chỉ có 6 dòng Câu 1–6, đề 1238 có 18 câu. Trên lớp bảo học sinh ghi "điểm …/18 + số câu sai" vào dòng đầu. Nên sửa ruột tập ô 52·2 thành dòng điểm …/18, câu sai, câu đoán mò (như bài mẫu L11).</div>
+<div class="sai"><b>Đề 1238 so với phần học trên lớp:</b> câu 1, 2, 3, 11, 12 (định nghĩa, phương chiều, $P=mg$, đơn vị) đã điền ở điểm dừng 2–3. Câu 4 (đĩa CD) và câu 5 (con lắc) hỏi lại đúng tình huống vừa chữa (điểm dừng 6 và Bẫy 3) nên đo "nhớ lại". Câu 6 (hệ vật, ròng rọc) — điểm dừng 5. Câu 7 ("nặng 50 kg") và câu 13 (gia tốc bằng 1/6) — Bẫy 1, số liệu khác. Câu 8 (tìm trọng tâm bằng dây dọi) — thí nghiệm tấm bìa. Câu 9 (đèn treo) — điểm dừng 4. Câu 14, 17 (lực kế, quả 50 g) — clip điểm dừng 3. Câu 10, 15, 16, 18 ($T$ khi có gia tốc, thang máy) — bảng Bẫy 2: câu 15, 16 là công thức $m(g\pm a)$ lớp mới chép, chưa luyện; câu 18 (thang máy) là tình huống mới. <b>Câu 7, 8, 9, 17, 18 (Đúng/Sai) trong file đề xuất ra không có các ý a)–d) và đáp án</b> — kiểm trên web trước giờ xem đề có đủ ý không.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu tính số, số liệu khác mọi câu đã chữa · lấy $g=10$ m/s² trừ khi đề cho khác</small></h2>
+<ol>
+<li>Một vật $3$ kg được đưa lên Mặt Trăng ($g=1{,}6$ m/s²). Khối lượng và trọng lượng của vật ở đó: A. $3$ kg; $4{,}8$ N · B. $0{,}5$ kg; $4{,}8$ N · C. $3$ kg; $29{,}4$ N · D. $0{,}49$ kg; $3$ N</li>
+<li>Treo vật $0{,}30$ kg vào lực kế, đứng yên lực kế chỉ $2{,}94$ N. Gia tốc rơi tự do tại đó: A. $0{,}10$ m/s² · B. $9{,}8$ m/s² · C. $0{,}88$ m/s² · D. $3{,}24$ m/s²</li>
+<li>Thang máy (kể cả người) $400$ kg đang đi lên chậm dần với gia tốc $0{,}5$ m/s². Lực căng cáp: A. $4000$ N · B. $4200$ N · C. $200$ N · D. $3800$ N</li>
+<li>Khối A $4$ kg trên bàn ngang nhẵn, nối dây nhẹ không dãn qua ròng rọc nhẹ với vật B $1$ kg treo. Gia tốc và lực căng: A. $2{,}5$ m/s²; $10$ N · B. $2$ m/s²; $10$ N · C. $2$ m/s²; $8$ N · D. $2$ m/s²; $2$ N</li>
+<li>Vật $2$ kg treo dưới dây, đang đi xuống nhanh dần với gia tốc $3$ m/s². Lực căng dây: A. $26$ N · B. $14$ N · C. $20$ N · D. $6$ N</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$m$ không đổi $=3$ kg; $P=3\cdot1{,}6=4{,}8$ N</td><td>B, D: cho khối lượng đổi · C: dùng $g=9{,}8$</td></tr>
+<tr><td>2</td><td>B</td><td>$g=P/m=2{,}94/0{,}30=9{,}8$ m/s²</td><td>A: $m/P$ · C: $Pm$ · D: $P+m$</td></tr>
+<tr><td>3</td><td>D</td><td>Đi lên chậm dần: $\vec a$ hướng xuống; $T=m(g-a)=400\cdot9{,}5=3800$ N</td><td>A: coi $T=P$ · B: thấy "đi lên" nên dùng $g+a$ · C: chỉ lấy $ma$</td></tr>
+<tr><td>4</td><td>C</td><td>$a=P_B/(m_A+m_B)=10/5=2$ m/s²; $T=m_Aa=8$ N</td><td>A: chia cho riêng $m_A$, $T=P_B$ · B: coi $T=P_B$ · D: lấy $m_Ba$</td></tr>
+<tr><td>5</td><td>B</td><td>$\vec a$ hướng xuống: $T=m(g-a)=2\cdot7=14$ N</td><td>A: dùng $g+a$ · C: coi $T=P$ · D: chỉ lấy $ma$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: giữ bỏ clip tấm bìa; bảng đọc đề (điểm dừng 5) chỉ đọc miệng, học sinh chép ở nhà; bảng Bẫy 2 chỉ mở, chép ở nhà (đã có trong "Về nhà"); màn "Đọc bảng" ở điểm dừng 3 hỏi miệng 20 giây. Không cắt giờ làm đề 1238 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: thang máy $500$ kg (kể cả người) lên nhanh dần $a=1$ m/s², $g=10$: lực căng cáp? ($T=m(g+a)=5500$ N, lớn hơn $P=5000$ N). Hoặc hỏi miệng "kéo vật bằng dây chếch lên thì $\vec T$ vẽ thế nào?".</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (A, B, $T$, $P_B$, điểm 1/2 ở đèn treo) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu / lần hai ở 6 câu biểu quyết (đĩa CD, 4 quả nặng, Mặt Trăng, kéo ngang, con lắc, lực căng bài mẫu).</li>
+  <li>Thí nghiệm tấm bìa có kịp 3 phút không; ba đường có gặp nhau rõ không.</li>
+  <li>Đề 1238: điểm trung bình lớp, câu sai nhiều nhất (dự đoán: 15, 16, 18), số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút; màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>
