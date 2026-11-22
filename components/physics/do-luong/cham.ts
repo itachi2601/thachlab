@@ -212,7 +212,7 @@ export const THANG_DH: Record<DaiLuongDH, ThangDo[]> = {
 export const TEN_DL: Record<DaiLuongDH, string> = { DCV: "V⎓", ACV: "V~", DCA: "A⎓", OHM: "Ω" };
 
 /** Một tình huống đo. giaTri theo đơn vị SI (V, A, Ω); uNguon: hiệu điện thế nguồn của mạch (tình huống đo dòng). */
-export type NhiemVuDH = { dl: DaiLuongDH; giaTri: number; de: string; vat: string; uNguon?: number };
+export type NhiemVuDH = { dl: DaiLuongDH; giaTri: number; de: string; vat: string; uNguon?: number; uVat?: number };
 export type CauHinhDH = { dl: DaiLuongDH; thang: number; lo: LoCam; mac: CachMac };
 export type KetQuaDo = {
   /** Chữ trên màn (dấu chấm như máy thật; "1" = quá thang; "—" = không đo được). */
@@ -226,7 +226,8 @@ export type KetQuaDo = {
 /** Chữ trên màn cho giá trị ở thang th (quá thang → "1", như đồng hồ thật). */
 export function manHinhDH(giaTri: number, th: ThangDo): string {
   if (Math.abs(giaTri) >= th.T) return "1";
-  return (giaTri / th.heSo).toFixed(th.decimals);
+  const chu = (giaTri / th.heSo).toFixed(th.decimals);
+  return Math.abs(Number(chu)) * th.heSo >= th.T - 1e-12 ? "1" : chu; // làm tròn lên chạm T (2.000) cũng là quá thang
 }
 
 /** Cách đặt đúng: thang nhỏ nhất còn lớn hơn giá trị; dòng ≥ 200 mA dùng lỗ 10A; đo dòng mắc nối tiếp, còn lại song song. */
@@ -260,8 +261,11 @@ export function doDongHo(nv: NhiemVuDH, ch: CauHinhDH, chiDutSan = false): KetQu
     loi,
   });
 
+  // 0. Cầu chì lỗ mA đã đứt.
+  if (chiDutSan && ch.lo === "mA")
+    return kq("sai", manHinhDH(0, th), "Cầu chì lỗ mA đã đứt nên đồng hồ chỉ 0. Bấm “Thay cầu chì” rồi đo lại.");
   // 1. Lỗ ampe kế chạm song song vào chỗ có điện = chập mạch.
-  if (loA && ch.mac === "song-song" && coNguon) {
+  if (loA && ch.mac === "song-song" && coNguon && ch.dl === "DCA") {
     if (ch.lo === "mA")
       return kq(
         "nguy-hiem",
@@ -282,9 +286,6 @@ export function doDongHo(nv: NhiemVuDH, ch: CauHinhDH, chiDutSan = false): KetQu
       "—",
       `Không đo điện trở khi mạch đang có điện: thang Ω dùng pin riêng của đồng hồ, gặp điện ngoài thì số đọc sai và dễ hỏng máy. Cách đúng: ${dung}.`,
     );
-  // 3. Cầu chì lỗ mA đã đứt.
-  if (chiDutSan && ch.lo === "mA")
-    return kq("sai", manHinhDH(0, th), "Cầu chì lỗ mA đã đứt nên đồng hồ chỉ 0. Bấm “Thay cầu chì” rồi đo lại.");
 
   if (nv.dl === "OHM") {
     if (ch.dl !== "OHM")
@@ -296,7 +297,7 @@ export function doDongHo(nv: NhiemVuDH, ch: CauHinhDH, chiDutSan = false): KetQu
     const thV = ch.dl === "DCV" || ch.dl === "ACV";
     if (nv.dl === "DCA" && thV) {
       if (loA) return kq("sai", manHinhDH(0, th), `Núm ở thang V nhưng que đỏ ở lỗ ${ch.lo}: núm và lỗ cắm phải khớp nhau. Cách đúng: ${dung}.`);
-      const u = nv.uNguon ?? 0;
+      const u = ch.mac === "song-song" ? (nv.uVat ?? nv.uNguon ?? 0) : (nv.uNguon ?? 0);
       if (ch.mac === "noi-tiep")
         return kq(
           "sai",
@@ -343,14 +344,14 @@ export function doDongHo(nv: NhiemVuDH, ch: CauHinhDH, chiDutSan = false): KetQu
   return kq("dung", man, `Đặt đúng: ${dung}. Đọc: ${man.replace(".", ",")} ${th.donVi}.`);
 }
 
-/** Mẫu tình huống: [đại lượng, min, max, bước làm tròn, đề, vật, uNguon]. */
-const MAU_DH: [DaiLuongDH, number, number, number, string, string, number?][] = [
+/** Mẫu tình huống: [đại lượng, min, max, bước làm tròn, đề, vật, uNguon, uVat (hiệu điện thế hai đầu vật)]. */
+const MAU_DH: [DaiLuongDH, number, number, number, string, string, number?, number?][] = [
   ["DCV", 1.48, 1.62, 0.001, "Đo suất điện động một pin 1,5 V (mạch ngoài để hở).", "pin"],
   ["DCV", 11.6, 12.6, 0.01, "Đo hiệu điện thế hai cực một nguồn điện một chiều 12 V.", "nguồn điện"],
-  ["DCV", 4.4, 5.2, 0.01, "Đo hiệu điện thế hai cực bộ nguồn 3 pin nối tiếp.", "bộ nguồn"],
+  ["DCV", 4.4, 4.86, 0.01, "Đo hiệu điện thế hai cực bộ nguồn 3 pin nối tiếp.", "bộ nguồn"],
   ["ACV", 215, 235, 1, "Đo hiệu điện thế ổ điện 220 V xoay chiều của bàn thí nghiệm.", "ổ điện"],
-  ["DCA", 0.22, 0.32, 0.01, "Đo cường độ dòng điện qua bóng đèn 6 V – 1,8 W đang sáng (cỡ 0,3 A).", "bóng đèn", 6],
-  ["DCA", 0.012, 0.018, 0.0001, "Đo cường độ dòng điện qua một đèn LED đang sáng (cỡ 15 mA).", "đèn LED", 5],
+  ["DCA", 0.24, 0.3, 0.01, "Đo cường độ dòng điện qua bóng đèn 6 V – 1,8 W đang sáng (cỡ 0,3 A).", "bóng đèn", 6],
+  ["DCA", 0.012, 0.018, 0.0001, "Đo cường độ dòng điện qua một đèn LED đang sáng (cỡ 15 mA).", "đèn LED", 5, 2],
   ["DCA", 0.056, 0.064, 0.0001, "Đo cường độ dòng điện qua điện trở 100 Ω nối vào nguồn 6 V.", "điện trở", 6],
   ["OHM", 46.5, 47.5, 0.1, "Đo điện trở ghi 47 Ω (đã tháo khỏi mạch).", "điện trở"],
   ["OHM", 216, 224, 1, "Đo điện trở ghi 220 Ω (đã tháo khỏi mạch).", "điện trở"],
@@ -361,10 +362,10 @@ export const SO_MAU_DH = MAU_DH.length;
 
 /** Tình huống thứ i (i cho trước → giá trị giữa khoảng; không cho → ngẫu nhiên). */
 export function taoNhiemVuDH(i: number, ngauNhien = true): NhiemVuDH {
-  const [dl, lo, hi, buoc, de, vat, uNguon] = MAU_DH[((i % MAU_DH.length) + MAU_DH.length) % MAU_DH.length];
+  const [dl, lo, hi, buoc, de, vat, uNguon, uVat] = MAU_DH[((i % MAU_DH.length) + MAU_DH.length) % MAU_DH.length];
   const raw = ngauNhien ? lo + Math.random() * (hi - lo) : (lo + hi) / 2;
   const giaTri = Number((Math.round(raw / buoc) * buoc).toFixed(6));
-  return { dl, giaTri, de, vat, uNguon };
+  return { dl, giaTri, de, vat, uNguon, uVat };
 }
 
 /* ---------------- Đồng hồ đo thời gian hiện số + cổng quang ---------------- */
@@ -426,7 +427,7 @@ export function chamDongHoHienSo(raw: string, can: ModeDem, dangChon: ModeDem, l
   }
   return {
     loai: "sai",
-    loi: `Để MODE ${can}, bấm RESET rồi thả lại và đọc màn: ${dapAn}. Màn ghi dấu chấm, em ghi dấu phẩy.`,
+    loi: `Kiểm lại MODE: cần MODE ${can}, bấm RESET rồi thả lại và đọc màn: ${dapAn}.`,
   };
 }
 
@@ -435,7 +436,7 @@ export function chamDongHoHienSo(raw: string, can: ModeDem, dangChon: ModeDem, l
  * và cổng F (ổ B) cách thêm s (m); tia sáng đi ngang tâm bi.
  */
 export function lanChanBiLan(a: number, d: number, xE: number, s: number): LanChan[] {
-  const tg = (x: number) => Math.round(Math.sqrt((2 * x) / a) * 1000);
+  const tg = (x: number) => Math.round(Math.sqrt(Math.max(0, (2 * x) / a)) * 1000);
   return [
     { o: "A", vao: tg(xE - d / 2), ra: tg(xE + d / 2) },
     { o: "B", vao: tg(xE + s - d / 2), ra: tg(xE + s + d / 2) },
