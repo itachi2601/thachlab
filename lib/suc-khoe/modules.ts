@@ -19,6 +19,7 @@ export type HealthModule = {
 
 export const MODULES: HealthModule[] = [
   { key: "tap-luyen", title: "Tập luyện", desc: "Chương trình A/B/C, ghi từng hiệp, đồng hồ nghỉ, gợi ý tăng tạ.", descHs: "3 buổi tập tại nhà không cần dụng cụ, mỗi buổi khoảng 30 phút, có đồng hồ nghỉ.", href: "/suc-khoe/tap-luyen", status: "dang-dung", forStudents: true },
+  { key: "tai-nha", title: "Tập tại nhà — lộ trình 6 bậc", desc: "Từ đi bộ công viên, nghe podcast → tay không → Tabata, HIIT → phòng gym. Cá nhân hoá theo sức em, chỉ lưu trên máy, không gửi máy chủ.", descHs: "Bắt đầu từ đi bộ, lên dần tới Tabata, HIIT rồi phòng gym. Chọn theo sức em; không thu thập dữ liệu — chỉ lưu trên máy em.", href: "/suc-khoe/tai-nha", status: "dang-dung", forStudents: true },
   { key: "so-do", title: "Số đo cơ thể", desc: "Cân nặng, vòng ngực–eo–mông, tỉ lệ dáng người, mục tiêu 4 tuần.", href: "/suc-khoe/tap-luyen?tab=so-do", status: "dang-dung", forStudents: false },
   { key: "tien-bo", title: "Tiến bộ", desc: "Đường sức mạnh từng bài, số hiệp mỗi nhóm cơ trong tuần.", descHs: "Số lần, số giây của em tăng thế nào qua từng buổi.", href: "/suc-khoe/tap-luyen?tab=tien-bo", status: "dang-dung", forStudents: true },
   // Dinh dưỡng bản hiện tại tính theo cân nặng, kcal dư/thiếu cho người lớn → chưa mở cho HS (G2; trang chặn bằng staffOnly)
