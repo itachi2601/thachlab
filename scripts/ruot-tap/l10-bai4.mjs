@@ -109,7 +109,7 @@ ${h3(1, 'Thí nghiệm: xe đồ chơi trên ray uốn', '3·1')}
 <div class="fig-side" style="${fs(52)}"><div>
 <table class="tbl-ct"><tr><th>Hình ray</th><th>${m('s')} đo (cm)</th><th>${m('d')} đo (cm)</th></tr>
 <tr><td>thẳng ${so('30\\ \\mathrm{cm}')}</td><td>30,2</td><td>30,0</td></tr>
-<tr><td>nửa vòng, ${so('r=10\\ \\mathrm{cm}')}</td><td>31,9</td><td>20,1</td></tr>
+<tr><td>nửa vòng, ${so('r=10\\ \\mathrm{cm}')}</td><td>31,9</td><td>${f(10)}</td></tr>
 <tr><td>chữ L ${nw('30 cm + 40 cm')}</td><td>70,6</td><td>49,9</td></tr>
 <tr><td>trọn vòng, ${so('r=10\\ \\mathrm{cm}')}</td><td>63,5</td><td>0,0</td></tr></table>
 <div class="hint" style="margin-top:.4mm">Đo ${m('s')} bằng sợi chỉ đặt dọc ray, đo ${m('d')} bằng thước nối thẳng hai dấu (số liệu minh hoạ).</div>
@@ -129,8 +129,8 @@ ${h3(3, 'III · Ba cái bẫy hay sập', '3·3')}
 <div class="trap">${ck}<span><b>“Dấu âm là sai, gạch bỏ.”</b> ${m('d\\lt 0')}: vật dịch chuyển ${f(25)} chiều dương; còn ${m('s')} luôn ${f(25)}.</span></div>
 <div class="trap">${ck}<span><b>“Cộng độ dịch chuyển như cộng số.”</b> Hai đoạn vuông góc: ${nw(`${m('d=')} ${f(25)}`)}; cùng phương, ngược chiều: ${nw(`${m('d=')} ${f(25)}`)}.</span></div></div>
 ${H.vuongGoc()}</div>
-${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·4')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(4, 'Kết quả đề cuối tiết (đề 1225)', '3·4')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/19 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">

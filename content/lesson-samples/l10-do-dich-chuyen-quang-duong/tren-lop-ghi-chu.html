@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Độ dịch chuyển và quãng đường · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Độ dịch chuyển và quãng đường đi được (L10 Bài 4) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Vật dụng (không bắt buộc):</b> một cây thước + xe đồ chơi (điểm dừng 3, tới rồi lùi), một sợi chỉ + đoạn ray hoặc dây uốn (điểm dừng 4). Không có thì dùng clip.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và clip. Không có mạng thì công thức hiện dạng ký hiệu đô-la thô; mở trước giờ để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1225 "Kiểm tra nhanh — Bài 4. Độ dịch chuyển và quãng đường đi được"</b> (19 câu, 15 phút, mục Lý thuyết id 90) trên điện thoại: màn 6/6 "Kiểm tra lý thuyết" có mã QR (đã giải mã lại, ra đúng đề 1225). Chưa kiểm đề trên web (câu Đúng/Sai cần đủ ý a)–d)).</li>
+  <li><b>Chiếu tivi 50 inch:</b> 26 màn, mỗi màn một ý. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì đổi.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Clip ray uốn</b> (màn "Ray uốn (clip)", ô 3·1): Enter (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu. Dừng 3 lần: ① biểu quyết $d$ nửa vòng bằng bao nhiêu (đáp án B, 20 cm); ② khoảng 21 s: hiện $d=20{,}1$ cm, lớp điền ô "?" trong Tập; ③ khoảng 27 s: rút ra $|d|\le s$. Clip còn một cảnh sau (thước chỉ cho độ lớn $d$, chưa cho hướng) — bỏ đi để giữ giờ, chỉ nói miệng.</li>
+  <li><b>Ô "?" của bảng ray uốn:</b> Tập in sẵn $31{,}9$ cho $s$ nhưng để trống $d$ nửa vòng (cố ý, để không lộ đáp án biểu quyết). Nhắc lớp đừng điền trước.</li>
+  <li>Hình đáp án (hình bài mẫu đạp xe) và bảng đọc đề chỉ hiện khi bấm Mở; bấm lại để ẩn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Ba câu biểu quyết: sân băng (Tập ô 1·2), $d$ nửa vòng ở clip, "trường hợp nào $|d|=s$" ở Bẫy 1. Hai câu sau chỉ có trên màn, không có ô A–D trong Tập.</li>
+</ul>
+
+<h2>Đi theo Tập bài 4 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.1 (ô 1·3)</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Việc điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán sân băng</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Chuyển động, chất điểm, hệ quy chiếu</td><td>3–9</td><td>tr.1 ô 1·4 → tr.2 ô 2·1</td><td>các chỗ điền ngắn; xe khách; $x_M$, $x_N$; thời điểm / khoảng thời gian</td></tr>
+<tr><td>3 · Độ dịch chuyển, quãng đường</td><td>9–16</td><td>tr.2 ô 2·2, 2·3, 2·4</td><td>định nghĩa, $d=x_2-x_1$, ví dụ xe tới lùi, so $|d|$ với $s$, làm nhanh câu 1</td></tr>
+<tr><td>4 · Ray uốn (clip)</td><td>16–21</td><td>tr.3 ô 3·1</td><td>ô $d$ nửa vòng; số tính theo hình; "Rút ra"</td></tr>
+<tr><td>5 · Tốc độ trung bình + ba bẫy</td><td>21–26</td><td>tr.3 ô 3·2, ô 3·3</td><td>công thức, đổi đơn vị, sân băng; 3 dòng bẫy</td></tr>
+<tr><td>6 · Bài mẫu + trả bài + sân băng + đề 1225</td><td>26–30, đề 30–45</td><td>tr.4 ô 4·2 → ô 4·1 câu 5, 6 → tr.1 ô 1·3 → đề xong: tr.3 ô 3·4</td><td>bảng đọc đề + phần giải; 2 câu trả bài; đáp án sân băng, đúng/sai; điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 2 có 5 màn nhưng ngắn (mỗi màn vài chữ điền). Điểm dừng 6 chật nhất: nếu thiếu giờ, bài mẫu chỉ chiếu màn giải rồi cho lớp chép ở nhà.</p>
+
+<div class="sai"><b>Lưu ý chung từ lớp ảo:</b> (1) Ở tr.4 lớp làm ô 4·2 (bài mẫu) TRƯỚC ô 4·1 (trả bài): nói "xuống ô 4·2 trước". (2) Tập có ô màn không nhắc: ☐ mục tiêu 1·1, "bạn cùng bàn kiểm", ☐ đầu mỗi bẫy, ô BTVN 5·1 — nhắc miệng hoặc để về nhà. (3) Ô "Câu sai" của đề chỉ 30 mm: ghi số câu, không ghi lý do. (4) Tập tr.4 in sẵn hình đạp xe có mũi tên $\vec d$ và góc $\alpha$ cạnh ô giải: bảo lớp úp hình lại khi tự giải, mở màn 6b mới được nhìn. (5) Màn 5b (sân băng tính $d=0$) đã nói trước đáp án của câu mở bài; ở 6d chỉ cần hỏi lại "đồng hồ đo cái gì, bạn nói về cái gì".</div>
+
+<h2>Điểm dừng 1 · Dự đoán sân băng <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Đồng hồ nói đi 60 m, bạn nói không dịch chuyển tí nào. Cả hai đều nói thật?" Khoanh vào Tập, viết một dòng "Vì sao". Màn 1b không có ô đáp án (tránh lộ): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, ô 1·3).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (đi bao nhiêu thì dịch chuyển bấy nhiêu), C (em về chỗ cũ nên đồng hồ sai), D (trộn "nửa vòng" vào).</div>
+
+<h2>Điểm dừng 2 · Chuyển động, chất điểm, hệ quy chiếu <small>phút 3–9 · tr.1 ô 1·4 → tr.2 ô 2·1</small></h2>
+<ul>
+  <li>Mỗi màn 1–2 phút, cho lớp điền rồi bấm Mở (xe khách, $x_M$/$x_N$, đổi gốc thời gian). Tính tương đối: hỏi "người ngồi cạnh em có chuyển động không? so với ai?".</li>
+  <li>Xe khách lùi vào chỗ đỗ: nhấn "chất điểm không phụ thuộc vật to hay nhỏ mà phụ thuộc so với khoảng cách đang xét".</li>
+  <li>Hình trục toạ độ: mỗi vạch 1 m, $O$ ở vạch thứ ba từ trái. $M$ cách $O$ ba vạch về phía dương, $N$ hai vạch về phía âm.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> đếm vạch từ mép hình thay vì từ $O$; quên dấu âm của $x_N$; lẫn thời điểm và khoảng thời gian.</div>
+
+<h2>Điểm dừng 3 · Độ dịch chuyển, quãng đường <small>phút 9–16 · tr.2 ô 2·2, 2·3, 2·4</small></h2>
+<ul>
+  <li>Vẽ mũi tên đầu → cuối trên bảng, chốt "vectơ: có độ lớn và hướng". Công thức $d=x_2-x_1$: đọc "cuối trừ đầu".</li>
+  <li>Xe tới rồi lùi: cho lớp tính trước ($90$ cm, $+30$ cm), rồi hỏi "lùi về $10$ cm thì sao?" → $-10$ cm, dấu âm nghĩa là ngược chiều dương.</li>
+  <li>Làm nhanh câu 1 (ô 2·4): cho 1 phút tính, gọi một em nói $d=-30$ cm, $s=70$ cm, rồi hỏi "vì sao $|d|\lt s$?".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> trừ ngược ($x_1-x_2$); bỏ dấu âm của $d$; lấy $s=|d|$ cho cả đường đổi chiều.</div>
+
+<h2>Điểm dừng 4 · Ray uốn (clip) <small>phút 16–21 · tr.3 ô 3·1</small></h2>
+<ul>
+  <li>Làm thật nếu có ray: uốn dây thành nửa vòng, đo $s$ bằng chỉ và $d$ bằng thước. Không có thì chiếu clip (màn 4a rồi 4b).</li>
+  <li>Dừng ①: biểu quyết $d$ nửa vòng. Dừng ②: lớp điền $20{,}1$ vào ô "?" ở Tập. Dừng ③: rút ra $|d|\le s$.</li>
+  <li>Màn 4c: hỏi trước "$s$ hay $d$ lệch nhiều hơn so với số tính?", rồi mới mở. Nối sang bài sau: sai số do dụng cụ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C ($31$ cm, nửa chu vi) vì lẫn $d$ với $s$; chọn A ($10$ cm, bán kính) vì nhớ "r = 10 cm".</div>
+
+<h2>Điểm dừng 5 · Tốc độ trung bình + ba bẫy <small>phút 21–26 · tr.3 ô 3·2, 3·3</small></h2>
+<ul>
+  <li>Công thức $v_{tb}=s/t$: nhấn "$s$ chứ không phải $d$". Sân băng: $d=0$ nhưng $v_{tb}=3$ m/s ($10{,}8$ km/h).</li>
+  <li>Bẫy 1: biểu quyết rồi mở, điền "thẳng", "đổi chiều" vào Tập. Bẫy 2: $d=-5$ km, $s=5$ km. Bẫy 3: $3$–$4$–$5$.</li>
+  <li>Thầy nói "độ dịch chuyển cộng như vectơ, không cộng số" — chốt đủ ba bẫy trong 5 phút, không giảng thêm.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> $v_{tb}=d/t$ (ra $0$ cho vòng kín); cho $s$ âm khi đi ngược chiều; cộng $3+4=7$ cho độ dịch chuyển.</div>
+
+<h2>Điểm dừng 6 · Bài mẫu, trả bài, sân băng, đề 1225 <small>phút 26–30 · tr.4 ô 4·2 → 4·1 → tr.1 ô 1·3 → tr.3 ô 3·4</small></h2>
+<ul>
+  <li>Bài mẫu đạp xe: đọc đề, lớp điền ba dòng bảng rồi mở (màn 6a); màn 6b giải: $s=1{,}7$ km, $d=1{,}3$ km, $\alpha\approx22{,}6^\circ$ so với Đông, $v_{tb}=17$ km/h $\approx4{,}7$ m/s. Thiếu giờ thì bỏ hai ô viết tay, cho lớp chép ở nhà.</li>
+  <li>Trả bài câu 5 và 6 của ô 4·1: viết 1 phút rồi mở từng câu để tự sửa bằng bút khác màu. Câu 1–4 về nhà.</li>
+  <li><span class="k">Quay lại sân băng (1 phút):</span> mở đáp án B, hỏi lại "đồng hồ đo $s$, bạn nói về $d$". Lớp lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai.</li>
+  <li>Chiếu mã QR, làm đề 1225 trong 15 phút. Nộp xong ghi vào tr.3 ô 3·4: điểm …/19, câu sai, câu đoán mò.</li>
+  <li>Đọc màn "Về nhà theo Tập" — đúng mã ô; ô 5·1 ghi đề BTVN thầy giao trên web. Tr.6–12 của Tập (bài tập mẫu, bài tương tự) làm ở nhà theo BTVN.</li>
+</ul>
+<div class="sai"><b>Đề 1225 so với phần học trên lớp:</b> đề 19 câu, chưa kiểm trên web; sau buổi dạy ghi câu sai nhiều nhất để biết điểm dừng nào cần dạy lại.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Xe đi thẳng từ $x_1=30\ \mathrm{cm}$ tới $90\ \mathrm{cm}$ rồi lùi về $x_2=60\ \mathrm{cm}$. Độ dịch chuyển: A. $+30$ cm · B. $-30$ cm · C. $+90$ cm · D. $+60$ cm</li>
+<li>Em đi bộ quanh hồ đúng một vòng $400$ m hết $5$ phút. Độ dịch chuyển và tốc độ trung bình: A. $0$; $80$ m/phút · B. $400$ m; $80$ m/phút · C. $0$; $0$ · D. $400$ m; $0$</li>
+<li>Đi $6$ km về phía Bắc rồi $8$ km về phía Đông. Độ lớn độ dịch chuyển: A. $14$ km · B. $2$ km · C. $10$ km · D. $48$ km</li>
+<li>Chọn trục $Ox$ hướng Đông. Xe đi thẳng $4$ km về phía Tây, không đổi chiều: A. $d=4$ km; $s=-4$ km · B. $d=-4$ km; $s=4$ km · C. $d=-4$ km; $s=-4$ km · D. $d=4$ km; $s=4$ km</li>
+<li>Đạp xe thẳng $9$ km hết $30$ phút (không đổi chiều). Tốc độ trung bình: A. $18$ km/h · B. $4{,}5$ km/h · C. $270$ km/h · D. $5$ km/h</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$d=60-30=+30$ cm</td></tr>
+<tr><td>2</td><td>A</td><td>vòng kín $d=0$; $v_{tb}=400/5=80$ m/phút</td></tr>
+<tr><td>3</td><td>C</td><td>$\sqrt{6^2+8^2}=10$ km</td></tr>
+<tr><td>4</td><td>B</td><td>ngược chiều dương nên $d=-4$ km; $s$ luôn không âm</td></tr>
+<tr><td>5</td><td>A</td><td>$9/0{,}5=18$ km/h</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Điểm dừng 5 cũng chật (17 chỗ trong 5 phút): thiếu giờ thì Bẫy 3 chỉ nói miệng.</li>
+  <li>Thiếu: bỏ clip ray uốn (chỉ nói kết quả, lớp điền $20{,}1$); màn 2e (thời điểm / khoảng thời gian) và màn 4c chỉ đọc miệng; bài mẫu chỉ chiếu màn giải; trả bài chỉ câu 5.</li>
+  <li>Dư: hỏi "đi $1{,}5$ vòng sân tròn bán kính $50$ m thì $s$ và $d$ bao nhiêu?" ($s=471$ m, $d=100$ m) — nối sang thử thách ★★ ở Tập ô 5·3.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (M, N, $d=?$, $\alpha$) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu / lần hai ở 3 câu biểu quyết (sân băng, $d$ nửa vòng, Bẫy 1).</li>
+  <li>Clip ray uốn có dừng đúng chỗ không; lớp có điền kịp ô "?" không.</li>
+  <li>Đề 1225: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (dự đoán: 2 và 6).</li>
+</ul>
+</body>
+</html>

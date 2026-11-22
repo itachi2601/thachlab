@@ -13,6 +13,7 @@ export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 62, slug: "l10-trong-luc-luc-cang", ten: "Vật lí 10 · Bài 17 · Trọng lực và lực căng", ghiChu: "27 màn · cuối tiết đề 1238 (QR)" },
   { lessonId: 63, slug: "l10-luc-ma-sat", ten: "Vật lí 10 · Bài 18 · Lực ma sát", ghiChu: "22 màn · cuối tiết đề 1239 (QR)" },
   { lessonId: 64, slug: "l10-luc-can-luc-nang", ten: "Vật lí 10 · Bài 19 · Lực cản và lực nâng", ghiChu: "22 màn · cuối tiết đề 1240 (QR)" },
+  { lessonId: 49, slug: "l10-do-dich-chuyen-quang-duong", ten: "Vật lí 10 · Bài 4 · Độ dịch chuyển và quãng đường", ghiChu: "26 màn · cuối tiết đề 1225 (QR)" },
   { lessonId: 47, slug: "l10-an-toan-phong-thuc-hanh", ten: "Vật lí 10 · Bài 2 · An toàn phòng thực hành", ghiChu: "24 màn · cuối tiết đề 1223 (QR)" },
   { lessonId: 39, slug: "l11-dien-the", ten: "Vật lí 11 · Bài 20 · Điện thế", ghiChu: "22 màn · cuối tiết đề 1215 (QR)" },
   { lessonId: 40, slug: "l11-tu-dien", ten: "Vật lí 11 · Bài 21 · Tụ điện", ghiChu: "23 màn · cuối tiết đề 1216 (QR)" },

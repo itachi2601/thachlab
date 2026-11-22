@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Độ dịch chuyển và quãng đường · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style><!--CSS-->
+.fig svg{overflow:visible}
+.ban{font-size:.82em}.dau{font-size:.9em}
+/* Bài 4: hình của Tập (scripts/ruot-tap/hinh-l10-bai4.mjs, nét in đen–xanh–đỏ, hợp nền trắng) chép thẳng vào màn */
+.hai>.fig.rong{width:54%}
+.hai>.fig.vua{width:44%}
+.hai>.fig.hep{width:40%}
+.fig>.an-o{display:flex;justify-content:center;height:100%}
+.fig>.an-o svg{height:100%;width:auto;max-width:100%}
+.f-tr svg text{font-size:21px}
+.f-ray svg text{font-size:18px}
+.f-xe svg text{font-size:21px}
+.f-san svg text{font-size:21px}
+.f-dx svg text{font-size:21px}
+.nho-tren{font-size:.62em;color:var(--muted)}
+.ban td.dap,.ban td .an-o{font-weight:800;color:var(--accent)}
+@media (max-width:760px){.hai>.fig.rong,.hai>.fig.vua,.hai>.fig.hep{width:100%}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 4</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 4 · tr.1</span></div>
+  <div class="giua">
+    <h1>Độ dịch chuyển và quãng đường đi được</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Trượt một vòng sân băng: đồng hồ và bạn ai nói đúng?</li>
+      <li>Độ dịch chuyển khác quãng đường ở đâu?</li>
+      <li>Đi hai đoạn vuông góc thì độ dịch chuyển tính thế nào?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="hai">
+    <div class="fig rong f-san"><svg viewBox="0 0 320 176" role="img" aria-label="Một vòng sân băng"><defs><marker id="sb1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="16" y="12" width="288" height="128" rx="62" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="142" y="134" width="36" height="12" fill="#fff"/><line x1="142" y1="132" x2="142" y2="148" stroke="#1c2540" stroke-width="2.8"/><line x1="178" y1="132" x2="178" y2="148" stroke="#1c2540" stroke-width="2.8"/><rect x="36" y="30" width="248" height="92" rx="44" fill="none" stroke="#1f5fa8" stroke-width="2.6" stroke-dasharray="7 5"/><line x1="150" y1="30" x2="186" y2="30" stroke="#1f5fa8" stroke-width="2.6" marker-end="url(#sb1)"/><line x1="176" y1="122" x2="140" y2="122" stroke="#1f5fa8" stroke-width="2.6" marker-end="url(#sb1)"/><circle cx="160" cy="122" r="6" fill="#1c2540" stroke="#1c2540" stroke-width="2.4"/><text x="160" y="72" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">Đồng hồ: đi 60 m</text><text x="160" y="98" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="400">(số liệu minh hoạ)</text><text x="160" y="168" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">cửa vào</text></svg></div>
+    <div class="ben">
+      <h2>Một vòng sân băng</h2>
+      <p>Em trượt đúng một vòng sát rào rồi dừng ở cửa vào sân.</p>
+      <p>Đồng hồ thể thao báo: đã đi $60\ \mathrm m$.</p>
+      <p>Bạn đứng ở cửa nói: "Cậu có dịch chuyển tí nào đâu!"</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Ai đúng?</p>
+    <ol class="opt">
+      <li><b>A.</b> Chỉ đồng hồ đúng: đi $60\ \mathrm m$ tức là dịch chuyển $60\ \mathrm m$</li>
+      <li><b>B.</b> Cả hai đúng: đồng hồ đo độ dài đường đi, bạn nói về sự thay đổi vị trí</li>
+      <li><b>C.</b> Chỉ bạn đúng: em về chỗ cũ nên đồng hồ đo sai</li>
+      <li><b>D.</b> Cả hai sai: dịch chuyển phải là nửa vòng, $30\ \mathrm m$</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại sân băng").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Chuyển động, chất điểm, hệ quy chiếu ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Chuyển động cơ</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 1–2</span></div>
+  <h2>Chuyển động cơ và tính tương đối</h2>
+  <div class="giua">
+    <p><b>Chuyển động cơ:</b> vị trí của vật <b class="o">thay đổi</b> so với vật khác theo <b class="o">thời gian</b>.</p>
+    <p><b>Tính tương đối:</b> ngồi trên xe buýt, em đứng yên so với <b class="o">ghế</b> nhưng chuyển động so với <b class="o">cột đèn</b>.</p>
+    <p class="nho">Vật nào cũng phải có một vật khác làm mốc để so.</p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Chất điểm, quỹ đạo</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 3–4</span></div>
+  <h2>Chất điểm và quỹ đạo</h2>
+  <div class="giua">
+    <p><b>Chất điểm:</b> vật có kích thước rất <b class="o">nhỏ</b> so với <b class="o">độ dài đường đi</b> (hoặc khoảng cách đang xét).</p>
+    <p>Khối lượng chất điểm <b class="o">bằng</b> khối lượng của vật.</p>
+    <p><b>Quỹ đạo:</b> <b class="o">đường</b> mà chất điểm vạch ra khi chuyển động.</p>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Xe khách</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 5–6</span></div>
+  <div class="giua">
+    <p>Xe khách dài khoảng $10\ \mathrm m$.</p>
+    <p class="hoi">① Chạy Hà Nội – Huế (khoảng $650\ \mathrm{km}$): có coi là chất điểm không?</p>
+    <p class="hoi">② Cũng xe đó lùi vào chỗ đỗ hẹp: có coi là chất điểm không?</p>
+    <button class="mo" data-mo="k2c">Mở: ① và ②</button>
+    <div class="an" id="k2c" hidden><p>① <b>Là</b> chất điểm: $10\ \mathrm m$ rất nhỏ so với $650\ \mathrm{km}$.</p><p>② <b>Không là</b> chất điểm: khoảng cách chỉ cỡ thân xe.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Hệ quy chiếu</span><span>phút 3–9</span><span class="tap">tr.2 · ô 2·1 · dòng 1–3</span></div>
+  <div class="hai">
+    <div class="fig rong f-tr"><svg viewBox="0 0 320 110" role="img" aria-label="Trục toạ độ có hai điểm M và N"><defs><marker id="tt1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="10" y1="64" x2="312" y2="64" stroke="#1c2540" stroke-width="2.8" marker-end="url(#tt1)"/><text x="306" y="50" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">x</text><line x1="30" y1="58" x2="30" y2="70" stroke="#1c2540" stroke-width="2.4"/><line x1="70" y1="58" x2="70" y2="70" stroke="#1c2540" stroke-width="2.4"/><line x1="110" y1="58" x2="110" y2="70" stroke="#1c2540" stroke-width="2.4"/><text x="110" y="96" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">O</text><line x1="150" y1="58" x2="150" y2="70" stroke="#1c2540" stroke-width="2.4"/><line x1="190" y1="58" x2="190" y2="70" stroke="#1c2540" stroke-width="2.4"/><line x1="230" y1="58" x2="230" y2="70" stroke="#1c2540" stroke-width="2.4"/><line x1="270" y1="58" x2="270" y2="70" stroke="#1c2540" stroke-width="2.4"/><circle cx="230" cy="64" r="7" fill="#b3261e"/><text x="230" y="44" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="700">M</text><circle cx="30" cy="64" r="7" fill="#1f5fa8"/><text x="30" y="44" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="700">N</text><text x="56" y="100" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="400">phía âm</text><text x="200" y="100" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="400">phía dương</text></svg></div>
+    <div class="ben">
+      <p><b>Hệ quy chiếu</b> = <b class="o">hệ toạ độ</b> gắn với vật mốc + <b class="o">gốc thời gian</b> và đồng hồ.</p>
+      <p>$x=\overline{OM}$: $M$ ở phía dương thì $x$ <b class="o">dương</b>; phía âm thì $x$ <b class="o">âm</b>.</p>
+      <p class="hoi" style="white-space:nowrap">Trong hình: $x_M=$ ? ; $x_N=$ ?</p>
+      <button class="mo" data-mo="k2d">Mở: $x_M$, $x_N$</button>
+      <div class="an" id="k2d" hidden><p>$x_M=$ <b class="o">+3</b> m ; $x_N=$ <b class="o">−2</b> m</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2e">
+  <div class="top"><span class="so">2/6 · Thời điểm, khoảng thời gian</span><span>phút 3–9</span><span class="tap">tr.2 · ô 2·1 · dòng 4–5</span></div>
+  <div class="giua">
+    <p>"Lúc $7$ giờ" là <b class="o">thời điểm</b>.</p>
+    <p>"Từ $7$ giờ đến $7$ giờ $45$ phút" là <b class="o">khoảng thời gian</b>, $\Delta t=$ <b class="o">45</b> phút.</p>
+    <p class="hoi">Đổi gốc thời gian thì cái nào đổi, cái nào giữ nguyên?</p>
+    <button class="mo" data-mo="k2e">Mở: đổi gốc thời gian</button>
+    <div class="an" id="k2e" hidden><p><b class="o">Thời điểm</b> đổi · <b class="o">khoảng thời gian</b> giữ nguyên.</p></div>
+  </div>
+</section>
+
+<!-- ================= 3. Độ dịch chuyển, quãng đường ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Độ dịch chuyển</span><span>phút 9–16</span><span class="tap">tr.2 · ô 2·2 · dòng 1–3</span></div>
+  <h2>Độ dịch chuyển $\vec d$</h2>
+  <div class="giua">
+    <p>Đại lượng <b class="o">vectơ</b>, cho biết <b class="o">độ lớn</b> và <b class="o">hướng</b> của sự thay đổi vị trí.</p>
+    <p>Vẽ: mũi tên nối <b class="o">vị trí đầu</b> tới <b class="o">vị trí cuối</b>.</p>
+    <p class="fx">$d=\Delta x=$ <b class="o">$x_2-x_1$</b></p>
+    <p>Dấu của $d$ cho biết <b class="o">hướng so với chiều dương</b>.</p>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Xe tới rồi lùi</span><span>phút 9–16</span><span class="tap">tr.2 · ô 2·2 · ví dụ</span></div>
+  <div class="hai">
+    <div class="fig rong f-xe"><svg viewBox="0 0 320 156" role="img" aria-label="Xe chạy tới rồi lùi dọc cây thước"><defs><marker id="xt1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="xt2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="20" y1="120" x2="300" y2="120" stroke="#1c2540" stroke-width="2.8"/><line x1="20" y1="114" x2="20" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="48" y1="114" x2="48" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="76" y1="114" x2="76" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="104" y1="114" x2="104" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="132" y1="114" x2="132" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="160" y1="114" x2="160" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="188" y1="114" x2="188" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="216" y1="114" x2="216" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="244" y1="114" x2="244" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="272" y1="114" x2="272" y2="126" stroke="#1c2540" stroke-width="2"/><line x1="300" y1="114" x2="300" y2="126" stroke="#1c2540" stroke-width="2"/><text x="20" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">0</text><text x="76" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">20</text><text x="132" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">40</text><text x="188" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">60</text><text x="244" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">80</text><text x="300" y="148" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">100</text><line x1="76" y1="34" x2="244" y2="34" stroke="#1f5fa8" stroke-width="2.6" stroke-dasharray="7 5" marker-end="url(#xt1)"/><line x1="244" y1="34" x2="244" y2="60" stroke="#8a94ad" stroke-width="2" stroke-dasharray="4 4"/><line x1="244" y1="60" x2="160" y2="60" stroke="#1f5fa8" stroke-width="2.6" stroke-dasharray="7 5" marker-end="url(#xt1)"/><line x1="76" y1="34" x2="76" y2="120" stroke="#8a94ad" stroke-width="2" stroke-dasharray="4 4"/><line x1="160" y1="60" x2="160" y2="120" stroke="#8a94ad" stroke-width="2" stroke-dasharray="4 4"/><line x1="76" y1="96" x2="160" y2="96" stroke="#b3261e" stroke-width="2.8" marker-end="url(#xt2)"/><text x="118" y="88" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="700">d = ?</text><text x="300" y="112" fill="#8a94ad" font-size="20" text-anchor="end" font-weight="400">cm</text></svg></div>
+    <div class="ben">
+      <p>Xe điều khiển chạy dọc thước: từ $20\ \mathrm{cm}$ tới $80\ \mathrm{cm}$ rồi lùi về $50\ \mathrm{cm}$.</p>
+      <p class="hoi">Đoạn xe đã chạy? $d=$ ? Nếu lùi về $10\ \mathrm{cm}$ thì $d=$ ?</p>
+      <button class="mo" data-mo="k3b">Mở: kết quả</button>
+      <div class="an" id="k3b" hidden><p>Đã chạy $60+30=$ <b class="o">90</b> cm.</p><p>$d=50-20=$ <b class="o">+30</b> cm.</p><p>Lùi về $10$: $d=10-20=$ <b class="o">−10</b> cm.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Quãng đường</span><span>phút 9–16</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <h2>Quãng đường $s$</h2>
+  <div class="giua">
+    <p>$s$: <b class="o">độ dài</b> vật đi được trong suốt quá trình; đại lượng <b class="o">vô hướng</b>, không <b class="o">âm</b>.</p>
+    <ul>
+      <li>Thẳng, không đổi chiều: $|d|$ <b class="o">=</b> $s$</li>
+      <li>Đổi chiều hoặc đi đường cong: $|d|$ <b class="o">&lt;</b> $s$</li>
+      <li>Quay về chỗ cũ: $d=$ <b class="o">0</b></li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Làm nhanh</span><span>phút 9–16</span><span class="tap">tr.2 · ô 2·4 · câu 1</span></div>
+  <div class="giua">
+    <p>Cùng trục như hình ví dụ: xe đi từ $70\ \mathrm{cm}$ tới $90\ \mathrm{cm}$ rồi lùi về $40\ \mathrm{cm}$.</p>
+    <p class="hoi">Tìm $d$ và $s$. Vì sao $|d|\lt s$?</p>
+    <button class="mo" data-mo="k3d">Mở: $d$, $s$</button>
+    <div class="an" id="k3d" hidden><p>$d=40-70=$ <b>−30</b> cm · $s=20+50=$ <b>70</b> cm.</p><p>Xe <b>đổi chiều</b>: $d$ chỉ cần đầu và cuối, $s$ cộng dồn cả đường.</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Ray uốn ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Ray uốn</span><span>phút 16–21</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <h2>Ray uốn: $s$ đo bằng chỉ, $d$ bằng thước</h2>
+  <div class="hai">
+    <div class="fig rong f-ray"><svg viewBox="0 0 320 132" role="img" aria-label="Bốn hình ray: thẳng, nửa vòng, chữ L, trọn vòng"><line x1="10" y1="90" x2="70" y2="90" stroke="#1f5fa8" stroke-width="4"/><circle cx="10" cy="90" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><circle cx="70" cy="90" r="6" fill="#1c2540" stroke="#1c2540" stroke-width="2.4"/><path d="M92,90 A28,28 0 0 1 148,90" fill="none" stroke="#1f5fa8" stroke-width="4"/><circle cx="92" cy="90" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><circle cx="148" cy="90" r="6" fill="#1c2540" stroke="#1c2540" stroke-width="2.4"/><path d="M174,40 L174,90 L230,90" fill="none" stroke="#1f5fa8" stroke-width="4"/><circle cx="174" cy="40" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><circle cx="230" cy="90" r="6" fill="#1c2540" stroke="#1c2540" stroke-width="2.4"/><circle cx="280" cy="62" r="28" fill="none" stroke="#1f5fa8" stroke-width="4"/><circle cx="280" cy="90" r="9" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><circle cx="280" cy="90" r="4" fill="#1c2540"/><text x="40" y="124" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">thẳng</text><text x="120" y="124" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">nửa vòng</text><text x="200" y="124" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">chữ L</text><text x="280" y="124" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">trọn vòng</text></svg></div>
+    <div class="ben">
+      <table class="bang" style="font-size:.85em">
+        <thead><tr><th>Hình ray</th><th>$s$ đo (cm)</th><th>$d$ đo (cm)</th></tr></thead>
+        <tbody>
+          <tr><td>thẳng $30$ cm</td><td>30,2</td><td>30,0</td></tr>
+          <tr><td>nửa vòng, $r=10$ cm</td><td>31,9</td><td class="dap">?</td></tr>
+          <tr><td>chữ L $30+40$ cm</td><td>70,6</td><td>49,9</td></tr>
+          <tr><td>trọn vòng, $r=10$ cm</td><td>63,5</td><td>0,0</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Ray uốn (clip)</span><span>phút 16–21 · dừng 3 lần</span><span class="tap">tr.3 · ô 3·1 · điền ô d nửa vòng</span></div>
+  <div class="vg" data-bat="0.3" data-het="27.5">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dd-qd-01-20261031.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-dd-qd-01-20261031.webp" preload="metadata" playsinline title="Xe đồ chơi trên ray uốn"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hai cột $s$ và $d$ của mỗi hình ray.</p><p class="nho">Ray nhựa uốn nửa vòng tròn, $r=10$ cm.</p></div>
+      <div class="buoc" data-t="0.3"><p class="hoi">Xe chạy hết ray nửa vòng.</p></div>
+      <div class="buoc" data-t="10.1" data-dung><p class="hoi">Hết ray nửa vòng, thước nối thẳng hai dấu chỉ $d$ khoảng bao nhiêu?</p>
+        <ol class="opt lo"><li><b>A.</b> Khoảng $10$ cm</li><li data-dung><b>B.</b> Khoảng $20$ cm</li><li><b>C.</b> Khoảng $31$ cm</li><li><b>D.</b> Khoảng $63$ cm</li></ol></div>
+      <div class="buoc" data-t="10.2"><p class="hoi">Thước đo $d$ nửa vòng: điền ô "?" ở Tập.</p></div>
+      <div class="buoc" data-t="21.0" data-dung><p class="so-lon">$d$ nửa vòng: $20{,}1$ cm</p><p class="hoi">Đáp án <b>B</b>: $d$ bằng đường kính $2r=20$ cm.</p><p class="nhin">Điền $20{,}1$ vào ô "?" ở Tập.</p></div>
+      <div class="buoc" data-t="21.1"><p class="hoi">So $s$ với $d$ ở cả bốn hình.</p></div>
+      <div class="buoc" data-t="27.5"><p class="so-lon">$|d|\le s$</p><p class="hoi">Ray thẳng: $d\approx s$.</p><p class="hoi">Cong hoặc quay về: $d\lt s$; vòng kín: $d=0$.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Đọc bảng</span><span>phút 16–21</span><span class="tap">tr.3 · ô 3·1 · phần dưới</span></div>
+  <div class="giua">
+    <p class="hoi">Tính theo hình: nửa vòng $s$, $d$ · chữ L $d$ · trọn vòng $s$, $d$.</p>
+    <button class="mo" data-mo="k4c1">Mở: số tính</button>
+    <div class="an" id="k4c1" hidden><p>Nửa vòng: $s=\pi r\approx$ <b>31,4</b>, $d=$ <b>20</b> · Chữ L: $d=$ <b>50</b> · Trọn vòng: $s\approx$ <b>62,8</b>, $d=$ <b>0</b> (cm)</p><p>Rút ra: chỉ ray <b class="o">thẳng</b> cho $d\approx s$; vòng kín cho $d=$ <b class="o">0</b>.</p></div>
+    <p class="hoi">Vì sao cột $s$ lệch nhiều hơn cột $d$?</p>
+    <button class="mo" data-mo="k4c2">Mở: vì sao</button>
+    <div class="an" id="k4c2" hidden><p>Cột $s$: sợi chỉ khó bám chỗ cong, hay đặt dư nên $s$ đo thường lớn hơn. Cột $d$: thước đặt thẳng giữa hai dấu nên lệch rất ít.</p></div>
+  </div>
+</section>
+
+<!-- ================= 5. Tốc độ trung bình, ba bẫy ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Tốc độ trung bình</span><span>phút 21–26</span><span class="tap">tr.3 · ô 3·2 · dòng 1–2</span></div>
+  <h2>Tốc độ trung bình</h2>
+  <div class="giua">
+    <p class="fx">$v_{\mathrm{tb}}=$ <b class="o">$\dfrac{s}{t}$</b></p>
+    <p>$s$: <b class="o">quãng đường đi được</b> · $t$: thời gian đi hết quãng đường đó.</p>
+    <p>Đơn vị $\mathrm{m/s}$ hoặc $\mathrm{km/h}$: $1\ \mathrm{m/s}=$ <b class="o">3,6</b> km/h, vì $1\ \mathrm h=$ <b class="o">3600</b> s.</p>
+    <p>Cho biết nhanh hay chậm, <b class="o">không</b> cho biết hướng.</p>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Tốc độ vòng sân băng</span><span>phút 21–26</span><span class="tap">tr.3 · ô 3·2 · sân băng</span></div>
+  <div class="giua">
+    <p>Một vòng sân băng dài $60\ \mathrm m$, trượt hết $20\ \mathrm s$.</p>
+    <p class="hoi">Độ dịch chuyển $d=$ ? Tốc độ trung bình $v_{\mathrm{tb}}=$ ? m/s $=$ ? km/h</p>
+    <button class="mo" data-mo="k5b">Mở: kết quả</button>
+    <div class="an" id="k5b" hidden><p>$d=$ <b class="o">0</b> · $v_{\mathrm{tb}}=60/20=$ <b class="o">3</b> m/s $=$ <b class="o">10,8</b> km/h</p><p class="nho">$d=0$ nhưng $v_{\mathrm{tb}}\ne0$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Bẫy 1</span><span>phút 21–26</span><span class="tap">tr.3 · ô 3·3 · bẫy 1</span></div>
+  <div class="giua">
+    <p class="hoi">Bẫy "đi bao nhiêu dịch chuyển bấy nhiêu": khi nào $|d|=s$?</p>
+    <ol class="opt">
+      <li data-dung><b>A.</b> Thang máy đi thẳng lên tầng 8, không quay xuống</li>
+      <li><b>B.</b> Chạy đúng một vòng sân $400\ \mathrm m$</li>
+      <li><b>C.</b> Xe đi thẳng từ A đến B rồi quay về A</li>
+      <li><b>D.</b> Ô tô chạy đường đèo uốn lượn lên dốc</li>
+    </ol>
+    <button class="mo" data-mo="a5c">Mở: đáp án</button>
+    <div class="an" id="a5c" hidden><p><b>A.</b> Chỉ đúng khi chuyển động <b class="o">thẳng</b>, không <b class="o">đổi chiều</b>. B, C: $d=0$; D: $d\lt s$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bẫy 2</span><span>phút 21–26</span><span class="tap">tr.3 · ô 3·3 · bẫy 2</span></div>
+  <div class="giua">
+    <p class="nhin">Bẫy: "Dấu âm là sai, gạch bỏ."</p>
+    <p>Chọn $Ox$ hướng từ Tây sang Đông. Xe đi thẳng $5\ \mathrm{km}$ về phía Tây, không đổi chiều.</p>
+    <p class="hoi">$d=$ ? $s=$ ?</p>
+    <button class="mo" data-mo="k5d">Mở: $d$, $s$</button>
+    <div class="an" id="k5d" hidden><p>$d=$ <b>−5</b> km: dịch chuyển <b class="o">ngược</b> chiều dương.</p><p>$s=$ <b>5</b> km: $s$ luôn <b class="o">không âm</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bẫy 3</span><span>phút 21–26</span><span class="tap">tr.3 · ô 3·3 · bẫy 3</span></div>
+  <div class="hai">
+    <div class="fig hep f-vg"><svg viewBox="0 0 250 156" role="img" aria-label="Hai đoạn vuông góc"><defs><marker id="vg1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="vg2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="40" y1="146" x2="40" y2="56" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#vg1)"/><line x1="40" y1="56" x2="160" y2="56" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#vg1)"/><line x1="40" y1="146" x2="158" y2="58" stroke="#b3261e" stroke-width="2.8" marker-end="url(#vg2)"/><text x="112" y="118" fill="#b3261e" font-size="24" text-anchor="start" font-weight="700">?</text><text x="32" y="106" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400">3 m</text><text x="100" y="44" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">4 m</text><circle cx="40" cy="146" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><defs><marker id="vg3" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="200" y1="140" x2="200" y2="106" stroke="#8a94ad" stroke-width="2.4" marker-end="url(#vg3)"/><line x1="200" y1="140" x2="234" y2="140" stroke="#8a94ad" stroke-width="2.4" marker-end="url(#vg3)"/><text x="200" y="100" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="700">B</text><text x="240" y="147" fill="#8a94ad" font-size="20" text-anchor="start" font-weight="700">Đ</text></svg></div>
+    <div class="ben">
+      <p class="nhin">Bẫy: "Cộng độ dịch chuyển như cộng số."</p>
+      <p>Đi $3\ \mathrm m$ về Bắc rồi $4\ \mathrm m$ về Đông. Quãng đường $7\ \mathrm m$.</p>
+      <p class="hoi">Độ dịch chuyển là mũi tên nào? Độ lớn bao nhiêu?</p>
+      <button class="mo" data-mo="k5e">Mở: độ lớn</button>
+      <div class="an" id="k5e" hidden><p>Hai đoạn vuông góc: $d=$ <b class="o">$\sqrt{d_1^2+d_2^2}$</b> $=5$ m.</p><p>Cùng phương, ngược chiều: $d=$ <b class="o">$|d_1-d_2|$</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Bài mẫu, trả bài ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Bài mẫu · đọc đề</span><span>phút 26–30</span><span class="tap">tr.4 · ô 4·2 · bảng</span></div>
+  <p class="dau">Đạp xe từ nhà: thẳng $1{,}2\ \mathrm{km}$ về Đông tới ngã tư, rẽ trái thẳng $0{,}5\ \mathrm{km}$ về Bắc tới trường, hết $6$ phút. Tính $s$, $d$ (độ lớn, hướng), $v_{\mathrm{tb}}$.</p>
+  <table class="ban">
+    <thead><tr><th style="width:42%">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+    <tbody>
+      <tr><td>"đi thẳng $1{,}2$ km về phía Đông"</td><td>$d_1=1{,}2$ km, đoạn thẳng, không đổi chiều</td></tr>
+      <tr><td>"rẽ trái … $0{,}5$ km về phía Bắc"</td><td><span class="an-o" data-o="b6">$d_2=0{,}5$ km, vuông góc với đoạn 1</span></td></tr>
+      <tr><td>"từ nhà … tới trường"</td><td><span class="an-o" data-o="b6">điểm đầu: nhà; điểm cuối: trường → $\vec d$ nối nhà tới trường</span></td></tr>
+      <tr><td>"hết $6$ phút"</td><td><span class="an-o" data-o="b6">$t=6$ phút $=0{,}1$ h</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b6">Mở bảng</button>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Bài mẫu · giải</span><span>phút 26–30</span><span class="tap">tr.4 · ô 4·2 · phần giải</span></div>
+  <div class="hai">
+    <div class="fig vua f-dx"><span class="an-o" data-o="g6"><svg viewBox="0 0 320 174" role="img" aria-label="Đường đạp xe từ nhà tới trường"><defs><marker id="dx1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="dx2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="24" y1="140" x2="240" y2="140" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#dx1)"/><line x1="244" y1="140" x2="244" y2="52" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 5" marker-end="url(#dx1)"/><line x1="24" y1="140" x2="240" y2="50" stroke="#b3261e" stroke-width="2.8" marker-end="url(#dx2)"/><text x="118" y="82" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">d</text><path d="M74.0,140.0 A50,50 0 0 0 70.2,120.8" fill="none" stroke="#1c2540" stroke-width="2.2"/><text x="80" y="134" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">α</tspan></text><circle cx="24" cy="140" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.4"/><text x="24" y="166" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">Nhà</text><text x="244" y="166" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">ngã tư</text><text x="244" y="34" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">Trường</text><text x="134" y="166" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">1,2 km</text><text x="252" y="102" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">0,5 km</text><defs><marker id="dx3" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="44" y1="46" x2="44" y2="12" stroke="#8a94ad" stroke-width="2.4" marker-end="url(#dx3)"/><line x1="44" y1="46" x2="78" y2="46" stroke="#8a94ad" stroke-width="2.4" marker-end="url(#dx3)"/><text x="44" y="6" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="700">B</text><text x="84" y="53" fill="#8a94ad" font-size="20" text-anchor="start" font-weight="700">Đ</text></svg></span></div>
+    <div class="ben">
+      <button class="mo" data-mo="k6b1">Mở: $s$ và $d$</button>
+      <div class="an" id="k6b1" hidden><p>$s=1{,}2+0{,}5=$ <b>1,7</b> km</p><p>$d=\sqrt{1{,}2^2+0{,}5^2}=$ <b>1,3</b> km $\lt s$ ✓</p></div>
+      <button class="mo" data-mo="g6">Mở: $\alpha$ và $v_{\mathrm{tb}}$</button>
+      <div class="an" id="g6" hidden><p>$\tan\alpha=0{,}5/1{,}2$ → $\alpha\approx$ <b>22,6°</b> so với Đông, lệch Bắc</p><p>$v_{\mathrm{tb}}=1{,}7/0{,}1=$ <b>17</b> km/h $\approx$ <b>4,7</b> m/s</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 28–29 · viết 1 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·1 · câu 5, 6</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 5. Ba điểm khác nhau giữa $d$ và $s$. Khi nào độ lớn bằng nhau?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>Vectơ / vô hướng · đầu–cuối / cộng dồn · có thể âm / không âm. Bằng nhau khi thẳng, không đổi chiều.</p></div>
+    <p class="hoi">Câu 6. Tốc độ trung bình tính thế nào? Đi một vòng kín thì $d$ và $v_{\mathrm{tb}}$ ra sao?</p>
+    <button class="mo" data-mo="t6">Mở câu 6</button>
+    <div class="an" id="t6" hidden><p>$v_{\mathrm{tb}}=s/t$, không âm · vòng kín: $d=0$ nhưng $v_{\mathrm{tb}}\gt0$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6d">
+  <div class="top"><span class="so">6/6 · Quay lại sân băng</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig rong f-san"><svg viewBox="0 0 320 176" role="img" aria-label="Một vòng sân băng"><defs><marker id="sb2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="16" y="12" width="288" height="128" rx="62" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="142" y="134" width="36" height="12" fill="#fff"/><line x1="142" y1="132" x2="142" y2="148" stroke="#1c2540" stroke-width="2.8"/><line x1="178" y1="132" x2="178" y2="148" stroke="#1c2540" stroke-width="2.8"/><rect x="36" y="30" width="248" height="92" rx="44" fill="none" stroke="#1f5fa8" stroke-width="2.6" stroke-dasharray="7 5"/><line x1="150" y1="30" x2="186" y2="30" stroke="#1f5fa8" stroke-width="2.6" marker-end="url(#sb2)"/><line x1="176" y1="122" x2="140" y2="122" stroke="#1f5fa8" stroke-width="2.6" marker-end="url(#sb2)"/><circle cx="160" cy="122" r="6" fill="#1c2540" stroke="#1c2540" stroke-width="2.4"/><text x="160" y="72" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">Đồng hồ: đi 60 m</text><text x="160" y="98" fill="#8a94ad" font-size="20" text-anchor="middle" font-weight="400">(số liệu minh hoạ)</text><text x="160" y="168" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">cửa vào</text></svg></div>
+    <div class="ben">
+      <p class="nhin">Đồng hồ: $s=60$ m · điểm đầu trùng điểm cuối.</p>
+      <button class="mo" data-mo="k6d">Mở: đáp án</button>
+      <div class="an" id="k6d" hidden><p><b>B.</b> Cả hai đúng: $s=60$ m còn $d=0$.</p></div>
+      <button class="mo" data-mo="k6d2">Mở: vì sao A, C, D sai</button>
+      <div class="an" id="k6d2" hidden><p class="nho">A: đi $60$ m là $s$, không phải $d$ · C: đồng hồ không sai, nó đo $s$ · D: đi trọn vòng chứ không phải nửa vòng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6e">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.3 ô 3·4 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1225</b> · 19 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1225 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6f">
+  <div class="top"><span class="so">Về nhà theo Tập bài 4</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · ô 1·1 đánh dấu mục em đã làm được</li>
+    <li><b>tr.2</b> ô 2·1, 2·2, 2·3 chỗ chưa kịp điền · ô 2·4 câu 1</li>
+    <li><b>tr.3</b> ô 3·1 phần "Rút ra" · ô 3·2 · ô 3·3 ba bẫy (nếu chưa xong) · ô 3·4 điểm đề 1225</li>
+    <li><b>tr.4</b> ô 4·1 câu 1, 2, 3, 4 · ô 4·2 phần giải (nếu chưa xong)</li>
+    <li><b>tr.5</b> ô 5·1 ghi đề BTVN thầy giao trên web · ô 5·2, 5·3, 5·4, 5·5</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+<script><!--JS--></script>
+</body>
+</html>
