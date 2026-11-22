@@ -932,3 +932,6 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 - → ĐÃ CHẠY 20/11 08:20 (log `scripts/logs/20261120-082035-20261120120000_lesson_clip_views.log` ở checkout chính); kiểm: 2 bảng + RPC có, RLS bật, anon không đọc/gọi được, pg_cron `lesson-clip-views-rollup` đặt; `gen-database-doc` chạy lại. Client chưa deploy.
 
 - Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+- **Sức khỏe › Kiểu build (19/11)**: migration `20261119120000_body_measurements_neck_wrist` CHỜ CHẠY (thêm `neck_cm`, `wrist_cm`, chỉ thêm cột, chạy lúc nào cũng được; chưa chạy thì app vẫn lưu/đọc số đo cũ, chỉ không lưu cổ/cổ tay). Code ở `lib/suc-khoe/build.ts`, `components/suc-khoe/KieuBuild.tsx`; chưa deploy.
+- → ĐÃ CHẠY 19/11 11:49 (log `scripts/logs/20261119-114951-20261119120000_body_measurements_neck_wrist.log` ở checkout chính; phát hiện và kiểm lại 22/11 ~22h: `neck_cm`, `wrist_cm` có trong `body_measurements`, `DATABASE.md` đã có hai cột). Code KieuBuild CHƯA deploy lên site (không có trong `origin/deploy` ngày 22/11).
