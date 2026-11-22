@@ -933,5 +933,12 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 
 - Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
 
+## 22/11/2026 — L11 5 đề: migration 20261006130000 không cần chạy
+Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ đề trong `exams.questions` = dòng bank theo hash = ánh xạ (gồm topic_id); 684939 đã grade 11; không còn câu Newton/Hooke. Không ghi DB. Dòng STATE cũ:
+- L11 5 đề 638/639/658/693/701: `fix_grade` ĐÃ ÁP (còn 1 câu 684939 grade 10). `20261006130000_gan_lai_chu_de_5_de_l11` CHƯA ÁP (123/129 câu còn lệch chủ đề; 94 câu mang chủ đề Newton/Hooke) và KHÔNG chạy trực tiếp được: 14/11 bị timeout 57014, trigger `trg_bank_tags_to_exams` → `sync_exam_to_bank` chạy lại cả đề; đã rollback sạch. Làm lại theo mẫu `lib/sua-dinh-dang.ts` (tắt `trg_exams_sync_bank`, sửa cả bank lẫn `exams.questions`, sau 22h).
+
 - **Sức khỏe › Kiểu build (19/11)**: migration `20261119120000_body_measurements_neck_wrist` CHỜ CHẠY (thêm `neck_cm`, `wrist_cm`, chỉ thêm cột, chạy lúc nào cũng được; chưa chạy thì app vẫn lưu/đọc số đo cũ, chỉ không lưu cổ/cổ tay). Code ở `lib/suc-khoe/build.ts`, `components/suc-khoe/KieuBuild.tsx`; chưa deploy.
 - → ĐÃ CHẠY 19/11 11:49 (log `scripts/logs/20261119-114951-20261119120000_body_measurements_neck_wrist.log` ở checkout chính; phát hiện và kiểm lại 22/11 ~22h: `neck_cm`, `wrist_cm` có trong `body_measurements`, `DATABASE.md` đã có hai cột). Code KieuBuild CHƯA deploy lên site (không có trong `origin/deploy` ngày 22/11).
+
+- 22/11 Gói A dụng cụ đo (`components/physics/do-luong/`: thước kẹp, panme, đồng hồ đa năng, đồng hồ hiện số; `/dev/do-luong`): code ở main, CHỜ `deploy.sh` + đăng lý thuyết 48, 47, 51, 45 bằng `cap-nhat-ly-thuyet.sh` (lịch 22h05 22/11). Treo: quy ước sai số dụng cụ thước kẹp (độ chính xác hay nửa) — thầy chốt.
+- 22/11 Bài 3 L10 (48): sai số dụng cụ thước kẻ = một ĐCNN (bảng thầy chốt), clip tn-l10-sai-so-02 dựng lại (ra/ ở worktree goi-a). Đăng cả Gói A bằng một lệnh SAU 22h: `bash scripts/video-thi-nghiem/dang-goi-a.sh --yes` (tải clip → deploy → 4 bài).
