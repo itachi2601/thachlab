@@ -50,7 +50,7 @@ ${h3(2, 'II.4 · Độ hụt khối, năng lượng liên kết', '2·2')}
 <div>${m('E_{lkr}=')} ${f(10)} / ${f(10)} (MeV/nuclôn); càng ${f(10)} càng bền.</div>
 <div>Tách hạt nhân thành nuclôn rời: ${f(12)} năng lượng; tạo thành: ${f(12)}.</div></div>
 ${hinh.doHutKhoi('Vẽ phóng đại: hiệu chỉ 0,76 %. Nguyên tử nhẹ hơn tổng hạt rời.')}</div>
-${h3(3, 'Tính cho bốn hạt nhân (Δm đã cho)', '2·3')}
+${h3(3, 'Tính cho bốn hạt nhân (Δm đã cho) · trên lớp chỉ dòng He-4', '2·3')}
 <table class="tbl-ct"><tr><th style="width:24mm">Hạt nhân</th><th style="width:33mm">${m('\\Delta m\\ (\\mathrm{u})')}</th><th>${m('E_{lk}\\ (\\mathrm{MeV})')}</th><th>${m('E_{lkr}\\ (\\text{MeV/nuclôn})')}</th></tr>
 <tr><td>${m('{}^{4}_{2}\\mathrm{He}')}</td><td>0,030377</td><td></td><td></td></tr>
 <tr><td>${m('{}^{16}_{\\ 8}\\mathrm{O}')}</td><td>0,137005</td><td></td><td></td></tr>
@@ -69,7 +69,7 @@ const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'II.6 · Hoá học và hạt nhân', '3·1')}
 <div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: cỡ ${nw(`${f(8)}&nbsp;eV`)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${nw(`10${exp}&nbsp;lần`)}.</div>
-${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
+${h3(2, 'III · Ba cái bẫy hay sập (tích khi em đã biết bẫy)', '3·2')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Khối lượng đã mất đi.”</b> Không mất: chuyển thành năng lượng ${m('E=\\Delta m\\,c^2')}.</span></div>
 <div class="trap">${ck}<span><b>“${m('E_{lk}')} lớn là bền.”</b> Phải chia cho ${m('A')}, so bằng ${m('E_{lkr}')}.</span></div>

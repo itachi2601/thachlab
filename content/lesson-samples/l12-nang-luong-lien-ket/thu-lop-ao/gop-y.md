@@ -19,3 +19,11 @@
 | ruột tập · ô 3·2 | thêm chữ "tích khi đã biết bẫy này" | thấp | hs-5 không rõ nghĩa tích |
 | ghi chú dạy · điểm dừng 4 | ghi rằng ô 2·3 chỉ He-4 trên lớp nhưng HS có thể bấm cả 4 dòng; liệt kê thứ tự | thấp | hs-4 tự bấm cả 4 dòng |
 | đề 1192 · nhóm câu 14, 16 | giữ; ngoài phạm vi: câu hỏi cộng Zm_e và phổ kế đã dạy ở điểm dừng 3–4, không thấy câu hỏi thứ chưa dạy | thấp | đối chiếu ghi chú "đề so với phần học" |
+
+## Đã xử lý (22/11/2026)
+Làm 17/17 mục (cao + vừa + thấp), bỏ 0 theo nghĩa bỏ hẳn; riêng đề 1192 giữ nguyên (đúng như góp ý).
+- Hình ô 1·2 chỉ còn lực đẩy và dấu "?" (bai15.mjs, hinh-ch4.mjs); màn 4a che "toả 28,30 MeV" + dòng tính; màn 5a che nhãn hợp lại/vỡ ra + 8,8 tới khi mở; thêm câu "E_lkr tăng = mỗi nuclôn giữ chặt hơn".
+- Câu 7 phương án D bỏ phép tính, cùng độ dài; ô 3·4 dòng 8 chuyển "tự luận, giải ở trang Về nhà"; tr.5 "1 g He-4": M = 4 g/mol, "tạo 1 g He-4 từ nuclôn rời".
+- Màn 3d: A ghi rõ 2 prôtôn, 2 nơtron, 2 êlectron rời; dòng giải thích D. Màn 3c có dòng tính 1 u·c² = 931,5 MeV. Màn 5d: "cỡ ... eV". Màn 1 có dòng "nuclôn = prôtôn và nơtron". Bảng Phân tích đề 3 cột, m_X định nghĩa ở màn 4b. Chữ prôtôn/nơtron/êlectron/urani thống nhất.
+- ô 2·3: tiêu đề ghi "trên lớp chỉ dòng He-4" (Fe-56 = 8,79 trùng Câu 4 nên để về nhà); ô 3·2 ghi "tích khi em đã biết bẫy"; ghi chú dạy điểm dừng 4 và 6 cập nhật; màn "Quay lại heli" nhắc ô 1·1 và đoán đúng/sai.
+- Kiểm máy kiem-tren-lop.mjs: ĐẠT (24 màn, tràn 0, katex-error 0, chữ hình ≥ 0,7). PDF ruột tập bài 15: 12 trang.
