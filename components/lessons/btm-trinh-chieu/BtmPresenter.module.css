@@ -11,7 +11,8 @@
   --ok-nhat: #ecfdf5;
   --hoi: #b45309;
   --hoi-nhat: #fff8eb;
-  --fs: calc(1.22rem * var(--presenter-zoom, 1));
+  /* 18/11/2026: 1,22rem → 1,55rem (thầy: chữ bài mẫu nhỏ khi chiếu lên lớp; lý thuyết đang 1,3rem) */
+  --fs: calc(1.55rem * var(--presenter-zoom, 1));
 }
 .root[data-bg="dark"] {
   --s1: #fdba74;
@@ -110,7 +111,7 @@
   max-width: 100%;
 }
 .hinh svg {
-  max-height: 34vh;
+  max-height: 30vh; /* 34vh → 30vh bù chữ to 1,55rem: bảng ①② vẫn vừa cột trái ở 1280×800 */
   width: auto;
   max-width: 100%;
 }
