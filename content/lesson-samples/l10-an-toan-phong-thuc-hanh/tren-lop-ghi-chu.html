@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An toàn phòng thực hành · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Các quy tắc an toàn trong phòng thực hành Vật lí (L10 Bài 2) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Tiết này học ở lớp, không cần phòng thực hành. Nếu có: mang <b>một bộ nguồn học đường</b> (núm 3; 6; 9; 12 V) để cả lớp nhìn nhãn thật lúc chiếu màn 2a, và một lọ cồn có nhãn "dễ cháy". Không bật nguồn, không đốt đèn cồn trên lớp — hai thí nghiệm có clip.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và hai clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1223 "Kiểm tra nhanh — Bài 2. Các quy tắc an toàn trong phòng thực hành Vật lí"</b> (20 câu: 14 câu A–D + 6 câu Đúng/Sai, 15 phút, mục Lý thuyết id 84) trên điện thoại: màn QR (cao 62% màn để quét từ xa) đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1223&amp;item=84</code>, kèm số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn (nhãn thiết bị, kí hiệu, mười quy tắc, "Rút ra" của thí nghiệm, ba bẫy) = đúng chữ của chỗ trống trong Tập; góc phải màn ghi ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Hai clip thí nghiệm dựng lại</b>, đều là clip chính (trên lớp không làm thật): màn 2b (núm bộ nguồn – vôn kế, ô 13·4 "Đo thử") và màn 4c (nhiệt kế cách đèn cồn, ô 15·1). Clip bên trái, cột phải chữ to; clip bỏ phần mở đầu, <b>tự dừng 2 lần + lần cuối</b>: cột phải hiện số vừa đo + câu hỏi cho lớp. <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn; lần dừng cuối Enter sang màn sau. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li><b>Ô 16·1 "Kết quả tự kiểm tra (đề chiếu trên lớp)"</b> có 7 dòng = Câu 1–7 chiếu trong tiết (màn 2c, 3c, 4d, 5b, 5c, 5d, 6c — đúng 7 câu "Tự kiểm tra ngay" của bài web). Mỗi câu: biểu quyết xong, học sinh ghi "Em chọn", "Chắc?" vào ô 16·1 rồi mới mở; mở xong đánh "Đúng?". <b>Lưu ý số câu:</b> ô 14·2 "Làm nhanh" in Câu 1 = lọ cồn, Câu 2 = dụng cụ 6 V; còn ô 16·1 theo thứ tự bài web (Câu 1 = 6 V, Câu 2 = lọ cồn). Góc màn ghi cả hai: "ghi ô 16·1 · Câu 1 · rồi viết ô 14·2 Câu 2".</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp (bài này nhiều câu dễ — đừng tiêu giờ ở câu lớp đã đúng hết). &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 2 <small>thứ tự lật: tr.13 → tr.14 (+ ô 16·1) → tr.15 → tr.16 → tr.15 → tr.13</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán dây chưa nối</td><td>0–2</td><td>tr.13 ô 13·2</td><td>khoanh 1 phương án + "Em chọn/chắc" + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Đọc nhãn, đo thử bộ nguồn + Câu 1</td><td>2–9</td><td>tr.13 ô 13·4 (+ ô 16·1 Câu 1, ô 14·2 Câu 2)</td><td>9 chỗ nhãn + 3 chỗ "Đo thử" + 1 dòng ô 16·1 + 2 dòng ô 14·2 = 15</td></tr>
+<tr><td>3 · Kí hiệu + Câu 2</td><td>9–13</td><td>tr.14 ô 14·1 (+ ô 16·1 Câu 2, ô 14·2 Câu 1)</td><td>4 ô "Nhóm" + 5 chỗ hai dòng cuối + 1 dòng ô 16·1 + 2 dòng ô 14·2 = 12</td></tr>
+<tr><td>4 · Mười quy tắc, thí nghiệm khoảng cách + Câu 3</td><td>13–20</td><td>tr.14 ô 14·3 → tr.15 ô 15·1 (+ ô 16·1 Câu 3)</td><td>13 chỗ quy tắc + 4 ô $\Delta T$ + 5 chỗ "Rút ra" + 1 dòng ô 16·1 = 23</td></tr>
+<tr><td>5 · Ba cái bẫy + Câu 4, 5, 6</td><td>20–25</td><td>tr.15 ô 15·2 (+ ô 16·1 Câu 4, 5, 6)</td><td>3 chỗ + 3 dòng ô 16·1 = 6</td></tr>
+<tr><td>6 · Bài toán mẫu, sự cố bất ngờ, Câu 7, Trả bài, dây chưa nối + đề 1223</td><td>25–30, đề 30–45</td><td>tr.16 ô 16·2 → tr.15 ô 15·3 câu 3, 4 → tr.13 ô 13·3, 13·1</td><td>4 dòng phân tích đề + 4 việc + 1 dòng ô 16·1 + 2 câu trả bài + đáp án, đúng/sai + mục tiêu</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 4 dày nhất (23 chỗ, toàn từ ngắn): chiếu màn 4a, 4b xong mới cho chép, đọc to từng dòng. Điểm dừng 6 chật nhất: Câu 7 (màn 6c) là câu đầu tiên bỏ khi thiếu giờ (về nhà, ghi ô 16·1 Câu 7 ở nhà); bài toán mẫu chỉ làm bảng phân tích đề + đọc lời giải, "Điền bước còn thiếu: bóng 3 V" về nhà.</p>
+
+<h2>Điểm dừng 1 · Dự đoán dây chưa nối <small>phút 0–2 · Tập tr.13 ô 13·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Tiết thực hành đầu tiên, nhóm em sắp xong, chuông sắp reo. Bạn giục: chỉ một giây thôi!" — để các em thấy áp lực thời gian là thật.</li>
+  <li>Khoanh vào Tập, ghi "Em chọn", chắc/không chắc, một dòng "Vì sao". Màn 1a không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (màn "Quay lại dây chưa nối", ô 13·3). Câu hỏi, 4 phương án và hình chép y Tập ô 13·2.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C (găng cao su) — hỏi "găng mỏng, ẩm mồ hôi, thủng một lỗ thì sao?". Chọn A — vỏ nhựa chỉ bọc thân dây, đầu kim loại vẫn có điện. Chọn D — mẹo giảm rủi ro chứ không loại bỏ rủi ro.</div>
+
+<h2>Điểm dừng 2 · Đọc nhãn, đo thử bộ nguồn + Câu 1 <small>phút 2–9 · tr.13 ô 13·4</small></h2>
+<ul>
+  <li>Màn 2a (ô 13·4, hình nhãn bộ nguồn của Tập): có bộ nguồn thật thì giơ lên cho lớp tìm chữ Input, Output, dấu ~. Đọc to bốn dòng, lớp điền 9 chỗ. Nhấn: dấu ~ cạnh số vôn = xoay chiều; dấu "−" ở cực = cực âm, khác nhau.</li>
+  <li><span class="k">Màn 2b (clip núm – vôn kế, khoảng 1 phút):</span> trước khi phát hỏi miệng "vạch 3 V thì vôn kế chỉ đúng 3 V?". Ba lần dừng: ① vạch 3 V → 3,1 V, biểu quyết A–D "vạch 6; 9; 12 V thì vôn kế chỉ…" (đáp án B); ② bảng 4 vạch → câu của ô "Đo thử": bóng 6 V, núm vạch 12 V nhận bao nhiêu vôn, gấp mấy lần (lớp điền 3 chỗ); ③ "B. cao hơn vạch một chút · 12,4 V · gấp 2 lần · gần đúng".</li>
+  <li>Màn 2c = Câu 1 (dụng cụ 6 V, DC nối vào đâu): biểu quyết, ghi ô 16·1 Câu 1, mở. Rồi cho 1 phút viết ô 14·2 Câu 2 (cùng tình huống, câu hỏi mở: "cổng DC, vạch 6 V").</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 1 chọn A (cùng 6 V là được, quên loại dòng) hoặc C (Input là chỗ "có điện"). Trong clip chọn A "bằng đúng vạch" — tin số in trên núm. Ô "Đo thử" ghi "12 V" thay vì 12,4 V.</div>
+
+<h2>Điểm dừng 3 · Kí hiệu + Câu 2 <small>phút 9–13 · tr.14 ô 14·1</small></h2>
+<ul>
+  <li>Màn 3a (hình năm kí hiệu của Tập): hỏi "chưa cần biết hình bên trong, nhìn khung và màu: kí hiệu nào bảo CẤM?" rồi lớp điền cột "Nhóm" 4 ô, bấm "Mở: nhóm". Ô mở đọc luôn tên từng kí hiệu (1)–(5).</li>
+  <li>Màn 3b (hai dòng cuối ô 14·1): dòng tam giác có nhiều đáp án đúng — chấp nhận bất kì ba hình trong danh sách nhóm cảnh báo của bài (nguy hiểm điện, chất dễ cháy, tia laser, chất độc, phóng xạ, từ trường, vật sắc nhọn, khí nén).</li>
+  <li>Màn 3c = Câu 2 (lọ cồn), ghi ô 16·1 Câu 2, rồi viết ô 14·2 Câu 1 (đặt đâu, nắp thế nào). Nhấn ý "tia lửa điện ở ổ cắm, bộ nguồn cũng là lửa".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> xếp "cấm lửa" vào nhóm cảnh báo vì có hình ngọn lửa (nhìn hình trước, khung sau); xếp kí hiệu không khung (4), (5) vào "cảnh báo". Câu 2 chọn C hoặc D — chỉ nghĩ tới lửa đèn cồn, quên tia lửa điện.</div>
+
+<h2>Điểm dừng 4 · Mười quy tắc, thí nghiệm khoảng cách + Câu 3 <small>phút 13–20 · tr.14 ô 14·3 → tr.15 ô 15·1</small></h2>
+<ul>
+  <li>Màn 4a, 4b (ô 14·3, 13 chỗ): đọc to từng nhóm, lớp điền. Dòng từ khoá cuối màn = 🔑 của bài web, dùng lại khi Trả bài câu 3, 4.</li>
+  <li><span class="k">Màn 4c (clip đèn cồn – nhiệt kế, khoảng 1,5 phút):</span> trước khi phát biểu quyết A–D "ra xa ngọn lửa, nhiệt độ giảm kiểu nào" (bảng số trong Tập đọc được — cho các em nhìn bảng mà đoán). Ba lần dừng: ① 125 · 41 · 29 · 26 °C → lớp điền dòng $\Delta T$ trong bảng ô 15·1 (1 phút); ② "B. gần tụt nhanh, xa tụt chậm"; ③ $\Delta T$ = 100 · 16 · 4 · 1 °C → lớp điền 5 chỗ "Rút ra". Ở 20 cm $\Delta T$ = 1 °C bằng sai số đọc nên chưa nói được là khác phòng.</li>
+  <li>Màn 4d = Câu 3 (tia laser), ghi ô 16·1 Câu 3.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> dòng $\Delta T$ ghi lại số nhiệt kế (quên trừ 25 °C); "Rút ra" ghi "giảm 12 °C" (lấy 41 − 29, đúng số nhưng ô hỏi "từ … xuống …"); Câu 3 chọn B — nghĩ tia phản xạ yếu đi nên an toàn.</div>
+
+<h2>Điểm dừng 5 · Ba cái bẫy + Câu 4, 5, 6 <small>phút 20–25 · tr.15 ô 15·2</small></h2>
+<ul>
+  <li>Màn 5a: đọc ba câu "em dễ nghĩ", hỏi "ai từng tin câu này?" — cho đánh dấu ô vuông trước bẫy mình từng tin, điền 3 chỗ.</li>
+  <li>Màn 5b = Câu 4 (110 V cắm ổ 220 V), 5c = Câu 5 (cốc vừa đun), 5d = Câu 6 (đợi giáo viên). Mỗi câu ghi ô 16·1 rồi mới mở. Lớp đúng &gt; 80% thì mở luôn.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 4 chọn C ("bật thật nhanh rồi tắt") — quá áp hỏng ngay lần đầu. Câu 5 chọn C (dội nước lạnh: cốc nứt). Câu 6 chọn D (đọc xong hướng dẫn là đủ).</div>
+
+<h2>Điểm dừng 6 · Bài toán mẫu, sự cố bất ngờ, Trả bài + đề 1223 <small>phút 25–30 · đề 30–45 · tr.16 ô 16·2 → tr.15 ô 15·3 → tr.13 ô 13·3</small></h2>
+<ul>
+  <li>Màn 6a (ô 16·2, hình bàn của nhóm trong Tập): đọc đề ở Tập, lớp điền 4 dòng còn trống của bảng "Phân tích đề" (dòng đầu in sẵn), bấm "Mở: bốn dòng". Màn 6b: 1 phút xếp việc vào phần "Giải", mở lời giải; dòng "Kiểm lại" làm miệng.</li>
+  <li>Màn 6s (sự cố bất ngờ, 1 phút, hình 4 của bài web): đây là mục tiêu 4 ô 13·1 và là câu 12, 20 của đề 1223 — đừng bỏ. Hỏi "đèn cồn đổ, cồn cháy lan — việc đầu tiên?" rồi mở bốn bước. Khác với bài toán mẫu: bốn việc ở 6b dùng <i>trước khi bật nguồn</i>; bốn bước ở 6s dùng <i>khi đã có sự cố</i>.</li>
+  <li>Màn 6c = Câu 7 (dây tróc vỏ), ghi ô 16·1 Câu 7 — thiếu giờ thì bỏ, về nhà.</li>
+  <li>Trả bài câu 3, 4 của ô 15·3 (đúng lời trong Tập): cho viết <b>1 phút, gấp màn</b>, rồi mở từng câu để tự sửa bằng bút khác màu. Câu 1, 2, 5, 6 và dòng "Bạn cùng bàn kiểm" về nhà.</li>
+  <li><span class="k">Màn "Quay lại dây chưa nối", 1 phút:</span> hình ô 13·2, Enter mở "B. tắt công tắc nguồn". Lớp lật tr.13 ô 13·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai". <b>20 giây: đánh dấu ô 13·1</b>.</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1223 trong 15 phút. Tập bài 2 không có ô ghi điểm đề cuối tiết (ô 16·1 là 7 câu chiếu trên lớp) — điểm xem trên web.</li>
+  <li>Đọc màn "Về nhà theo Tập" — liệt kê đúng mã ô; ô 17·1 ghi đề BTVN thầy giao trên web (đề, số câu, hạn).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> bảng phân tích đề ghi "nguy hiểm" chung chung thay vì tên quy tắc; xếp "báo giáo viên" lên việc 1 (đúng ở sự cố, nhưng ở 6b việc 1 là tắt nguồn vì Nam đang cầm bóng); ở 6s chọn "tạt nước" hoặc "chạy tắt nguồn băng qua chỗ cháy".</div>
+<div class="sai"><b>Đề 1223 so với phần học trên lớp:</b> câu 1–4, 13, 14, 15, 19 (DC/AC, cực, Output, định mức, bóng 3 V ở vạch 6 V, nhãn bộ nguồn, vôn kế cao hơn vạch) là điểm dừng 2; câu 5, 6, 7, 16 (tam giác, mặt nạ, lọ cồn, rà phòng xếp nhóm kí hiệu) điểm dừng 3; câu 9, 17 (điều kiện cắm, laser + đèn cồn) điểm dừng 4–5; câu 10, 11 điểm dừng 5; câu 18 bài toán mẫu, câu 12, 20 màn 6s (sự cố bất ngờ — chỉ dạy ở màn này, bỏ màn 6s thì lớp chưa được học); câu 8 màn 1a/Quay lại. Câu 7, 8, 10, 11, 18, 19, 20 hỏi lại đúng tình huống vừa chữa nên đo "nhớ lại", chưa đo "chuyển sang tình huống mới"; câu 14 (bóng 3 V, vạch 6 V) là bước điền của bài toán mẫu đã giao về nhà — chiếu lướt màn 2b ô "gấp 2 lần" để lớp tự suy ra. Câu 16 nói tới hoạt động "rà phòng thực hành" của bài web — trên lớp không làm, chỉ cần biết xếp nhóm. (File đề tải về không có nội dung các ý a–d của 6 câu Đúng/Sai; đối chiếu ở mức tình huống của câu.)</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu tính số, số liệu khác mọi câu đã chữa · bộ nguồn của bài: vạch 3; 6; 9; 12 V cho 3,1; 6,2; 9,3; 12,4 V</small></h2>
+<ol>
+<li>Quạt nhỏ ghi $3$ V, DC; núm bộ nguồn đang ở vạch $9$ V. Quạt nhận khoảng bao nhiêu vôn, so với định mức? A. $3{,}1$ V, đúng định mức · B. $9{,}3$ V, khoảng $3$ lần định mức · C. $9{,}3$ V, khoảng $6$ lần định mức · D. $6{,}2$ V, gấp $2$ lần định mức</li>
+<li>Phòng $27\ ^\circ$C. Nhiệt kế cách đèn cồn $8$ cm chỉ $35\ ^\circ$C. Phần nóng hơn phòng $\Delta T$ là: A. $35\ ^\circ$C · B. $62\ ^\circ$C · C. $8\ ^\circ$C · D. $27\ ^\circ$C</li>
+<li>Phòng $26\ ^\circ$C, sai số mỗi số đọc $\pm1\ ^\circ$C. Nhiệt kế cách đèn $25$ cm chỉ $27\ ^\circ$C. Kết luận đúng: A. $\Delta T=1\ ^\circ$C, chưa kết luận được là nóng hơn phòng · B. $\Delta T=1\ ^\circ$C, chắc chắn nóng hơn phòng · C. $\Delta T=27\ ^\circ$C, rất nóng · D. $\Delta T=53\ ^\circ$C, rất nóng</li>
+<li>Phòng $24\ ^\circ$C. Nhiệt kế cách đèn $4$ cm chỉ $68\ ^\circ$C, cách $8$ cm chỉ $34\ ^\circ$C. $\Delta T$ ở $4$ cm và $8$ cm lần lượt là: A. $68$ và $34\ ^\circ$C · B. $92$ và $58\ ^\circ$C · C. $34$ và $34\ ^\circ$C · D. $44$ và $10\ ^\circ$C</li>
+<li>Bóng ghi $12$ V, DC; núm đang ở vạch $6$ V. Bóng nhận khoảng: A. $6{,}2$ V, gấp đôi định mức · B. $6{,}2$ V, khoảng một nửa định mức, sáng yếu · C. $12{,}4$ V, đúng định mức · D. $3{,}1$ V, một phần tư định mức</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>Vạch $9$ V cho $9{,}3$ V; $9{,}3/3=3{,}1\approx3$ lần định mức — quạt có thể cháy</td><td>A: đọc định mức thay số chỉ · C: lấy hiệu $9{,}3-3\approx6$ · D: lấy vạch $6$ V</td></tr>
+<tr><td>2</td><td>C</td><td>$\Delta T=35-27=8\ ^\circ$C</td><td>A: lấy số nhiệt kế · B: cộng thay vì trừ · D: lấy nhiệt độ phòng</td></tr>
+<tr><td>3</td><td>A</td><td>$\Delta T=27-26=1\ ^\circ$C $\le1\ ^\circ$C (sai số) nên chưa kết luận được</td><td>B: quên sai số · C: lấy số nhiệt kế · D: cộng thay vì trừ</td></tr>
+<tr><td>4</td><td>D</td><td>$68-24=44$; $34-24=10\ ^\circ$C</td><td>A: lấy số nhiệt kế · B: cộng thay vì trừ · C: trừ hai số đo cho nhau</td></tr>
+<tr><td>5</td><td>B</td><td>Vạch $6$ V cho $6{,}2$ V; $6{,}2/12\approx0{,}52$: khoảng một nửa định mức</td><td>A: đảo tỉ số · C: lấy vạch $12$ V · D: lấy vạch $3$ V</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 6c (Câu 7, về nhà); màn 3b chỉ mở, không chờ lớp nghĩ; Câu 4–6 lớp đúng &gt; 80% thì mở luôn không thuyết phục; bài toán mẫu chỉ làm bảng phân tích đề, lời giải đọc lướt. Giữ màn 6s (đề hỏi câu 12, 20). Không cắt giờ làm đề 1223 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: thử thách ⭐⭐⭐ ô 17·2 (đun nước bằng đèn cồn trên bàn có bộ nguồn: ba điều chỉnh bố trí, hình bàn nhìn từ trên xuống) — làm miệng theo nhóm 2 phút; hoặc "Điền bước còn thiếu: bóng 3 V" ở ô 16·2.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (bộ nguồn, Input/Output, 12 V, ổ cắm) và số trong hai clip có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở màn 1a (dự đoán) và Câu 1, Câu 4; câu 12, 14, 20 của đề 1223. Điểm dừng 4 (23 chỗ điền) có chép kịp trong 7 phút không.</li>
+  <li>Đề 1223: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (đoán trước: điểm dừng 6); màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>
