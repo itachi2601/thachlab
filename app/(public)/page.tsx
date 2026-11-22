@@ -52,14 +52,14 @@ export default function Home() {
             </div>
           </HomeScreen>
         )}
-        {/* Thẻ cài app: điện thoại giữ chỗ cũ; máy tính dời xuống cuối trang để không chen giữa hai màn. */}
-        <div className="bg-bg px-6 pt-4 lg:hidden">
-          <PwaInstallCard guideFallback />
-        </div>
         <HomeScreen>
           <OpenClasses stats={stats} />
           <ContentSearch />
         </HomeScreen>
+        {/* Thẻ cài app: điện thoại đặt SAU khối chọn lớp (người mới chọn lớp trước, mời cài sau — B8); máy tính ở cuối trang. */}
+        <div className="bg-bg px-6 pb-6 lg:hidden">
+          <PwaInstallCard guideFallback />
+        </div>
         <HomeScreen className="bg-panel">
           <ForParents courses={stats?.courses ?? null} />
         </HomeScreen>
