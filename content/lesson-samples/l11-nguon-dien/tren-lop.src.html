@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguồn điện · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .hai>.fig.rong{width:56%} .f3 svg{overflow:visible}
+/* màu hình web vẽ cho nền tối: đổi sang sắc đậm để đủ tương phản trên nền trắng tivi */
+.fig svg [fill="#38bdf8"]{fill:#0369a1} .fig svg [stroke="#38bdf8"]{stroke:#0369a1} .fig svg [fill="#f87171"]{fill:#dc2626} .fig svg [stroke="#f87171"]{stroke:#dc2626} .fig svg [fill="#34d399"]{fill:#047857} .fig svg [stroke="#34d399"]{stroke:#047857} .fig svg [fill="#fb923c"]{fill:#c2410c} .fig svg [stroke="#fb923c"]{stroke:#c2410c}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f3 svg text{font-size:19px} .f4 svg{overflow:visible} .f4 svg text{font-size:18px} .f4 svg text[x="136"],.f4 svg text[y="95"]{display:none}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.f7,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+<!-- Nguồn: theory.html bài 43 (Nguồn điện) + ruột tập scripts/ruot-tap/l11-bai24.mjs (tr.1–5, mã ô t·k);
+     hình: dấu FIGn = thẻ svg thứ n trong theory.html; dấu TAP:ten = hình hinh-l11-bai24.mjs của Tập (build_tren_lop.py).
+     Clip (engine clips/nguondien1..3.py, mốc tính bằng engine.build rồi xem khung hình thật 22/11/2026):
+     01 tụ–pin: "Tiến hành" 9,71–23,01 s (đọc 60 s lúc 14,71; đáp án 20,41), "Rút ra" 23,01–33,47 (chưa nói 28,77);
+     02 U theo R: "Tiến hành" 9,97–22,17 s (K mở 10,87; hàng cuối 18,27; đáp án 19,77);
+     03 nối tắt: "Tiến hành" 9,2–21,4 s (pin mới 5,0 A 10,45–13,45; pin đã dùng 1,5 A 15,25–18,25), "Rút ra" thẻ I=ℰ/r 22,6–23,05. -->
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 24</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 24 · tr.1</span></div>
+  <div class="giua">
+    <h1>Nguồn điện</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Pin khác tụ điện đã nạp ở chỗ nào?</li>
+      <li>Số "1,5 V" trên vỏ pin nói gì?</li>
+      <li>$I=\dfrac{\mathcal E}{R+r}$ và vì sao nối tắt pin lại nguy hiểm.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <h2>Bấm nút đề: đèn pha tối hẳn một giây.</h2>
+  <div class="fig f1"><!--TAP:denPha--></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Bật khoá xe máy: đèn pha sáng rõ. Bấm nút đề: đèn tối hẳn một giây, máy nổ rồi đèn mới sáng lại. Vẫn bình đó, dây đó. Điều gì làm đèn tối đi lúc đề?</p>
+    <ol class="opt" style="font-size:.92em">
+      <li><b>A.</b> Nút đề cắt bớt điện của đèn, dồn cho mô tơ</li>
+      <li><b>B.</b> Ắc quy hết điện trong tích tắc rồi tự nạp lại</li>
+      <li><b>C.</b> Dòng đề rất lớn bị chính ắc quy cản bên trong, làm hai cực ắc quy tụt áp</li>
+      <li><b>D.</b> Dây dẫn nóng lên lúc đề, điện trở dây tăng nên đèn nhận ít dòng</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại đèn pha").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Nguồn điện ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Hai quả cầu</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · dòng 1–4</span></div>
+  <div class="hai">
+    <div class="fig f2"><!--TAP:haiQuaCau--></div>
+    <div class="ben">
+      <p>A tích $+q$, B tích $-q$: $V_A$ <span class="an-o" data-o="c2"><b class="o">&gt;</b></span> $V_B$.</p>
+      <p>Nối dây: electron đi <span class="an-o" data-o="c2"><b class="o">B → A</b></span>; dòng điện <span class="an-o" data-o="c2"><b class="o">A → B</b></span>.</p>
+      <p>Một lát sau hai quả <span class="an-o" data-o="c2"><b class="o">trung hoà</b></span>, $V_A$ <span class="an-o" data-o="c2"><b class="o">=</b></span> $V_B$: dòng <span class="an-o" data-o="c2"><b class="o">ngừng</b></span>.</p>
+      <p>Dòng chạy mãi: giữ $U_{AB}$ <span class="an-o" data-o="c2"><b class="o">≠</b></span> $0$.</p>
+      <button class="mo" data-mo="c2">Mở: chỗ điền</button>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Nguồn điện</span><span>phút 3–9</span><span class="tap">tr.1 · ô 1·4 · khung dưới</span></div>
+  <div class="giua">
+    <p class="fx" style="font-size:1em;text-align:left"><b>Nguồn điện:</b> thiết bị tạo ra và <b class="o">duy trì</b> hiệu điện thế giữa hai cực (+) và (−), nhờ đó duy trì <b class="o">dòng điện</b> trong mạch kín.</p>
+    <p class="hoi">Ba nguồn điện em dùng hằng ngày?</p>
+    <button class="mo" data-mo="n2">Mở: ví dụ</button>
+    <div class="an" id="n2" hidden><p>Pin tiểu, pin điện thoại, ắc quy xe máy, máy phát điện (nhà máy điện).</p></div>
+    <p class="hoi">Tụ điện đã nạp có hiệu điện thế giữa hai bản. Tụ có phải nguồn điện không?</p>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Tụ hay pin</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="vg" data-bat="10.0" data-het="27.6">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-01-20261031-2.webp" preload="metadata" playsinline title="Tụ điện nạp sẵn và pin cùng nuôi điện trở"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hai vôn kế, đọc mỗi 20 s.</p><p>Tụ $1{,}0$ F nạp $2{,}7$ V · hai pin $3{,}0$ V · cùng $R=100\ \Omega$.</p><p class="nho">Bảng trong ô 2·1 đã in số đo, đối chiếu với clip.</p></div>
+      <div class="buoc" data-t="10.0"><p class="hoi">Đọc hai vôn kế mỗi 20 s.</p></div>
+      <div class="buoc" data-t="15.3" data-dung><p class="so-lon">60 s: tụ $1{,}48$ V · pin $2{,}98$ V</p><p class="hoi">Hai vôn kế khác nhau ở đâu? Đoán: 5 phút sau, vôn kế của tụ còn bao nhiêu?</p></div>
+      <div class="buoc" data-t="15.35"><p class="hoi">Đọc tiếp, rồi tua tới 5 phút.</p></div>
+      <div class="buoc" data-t="21.0" data-dung><p class="so-lon">5 phút: tụ $0{,}13$ V · pin $2{,}98$ V</p><p class="hoi">Điền dòng "Rút ra" ô 2·1 (4 chỗ trống), rồi mới phát tiếp.</p><p class="nho">Tập làm tròn: $1{,}5$ V; $0{,}1$ V.</p></div>
+      <div class="buoc" data-t="21.05"><p class="hoi">Rút ra.</p></div>
+      <div class="buoc" data-t="27.6"><p>Tụ chỉ chứa sẵn <b class="o">điện tích</b>, xả dần là <b class="o">hết</b>.</p><p>Pin <b class="o">duy trì</b> được hiệu điện thế, nên <b class="o">pin</b> mới là nguồn điện.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 3. Lực lạ, suất điện động ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Trong nguồn</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·2 · dòng 1–2</span></div>
+  <div class="hai">
+    <div class="fig f3"><!--TAP:lucLa--></div>
+    <div class="ben">
+      <p>Mạch ngoài: dòng điện chạy từ cực <span class="an-o" data-o="l3"><b class="o">(+)</b></span> về cực <span class="an-o" data-o="l3"><b class="o">(−)</b></span>.</p>
+      <p>Trong nguồn: điện tích dương phải đi từ cực <span class="an-o" data-o="l3"><b class="o">(−)</b></span> sang cực <span class="an-o" data-o="l3"><b class="o">(+)</b></span>, <span class="an-o" data-o="l3"><b class="o">ngược</b></span> chiều điện trường.</p>
+      <p class="hoi">Lực điện có đẩy nổi không?</p>
+      <button class="mo" data-mo="l3">Mở: chỗ điền</button>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Lực lạ</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·2 · dòng 3–5</span></div>
+  <div class="giua">
+    <p>Lực điện không làm nổi: cần <b>lực lạ</b>, khác bản chất lực điện.</p>
+    <p>Trong pin: lực <span class="an-o" data-o="l3b"><b class="o">hoá học</b></span> · trong máy phát điện: lực <span class="an-o" data-o="l3b"><b class="o">điện từ</b></span>.</p>
+    <p>Trong nguồn: công lực lạ $A_{\text{l}}$ <span class="an-o" data-o="l3b"><b class="o">&gt;</b></span> độ lớn công cản của lực điện $A_{\text{đ}}$.</p>
+    <p>Mạch kín: dòng ra ở cực <span class="an-o" data-o="l3b"><b class="o">(+)</b></span>, qua $R$, vào cực <span class="an-o" data-o="l3b"><b class="o">(−)</b></span>, rồi lực lạ đưa lên cực <span class="an-o" data-o="l3b"><b class="o">(+)</b></span>.</p>
+    <button class="mo" data-mo="l3b">Mở: chỗ điền</button>
+    <p class="nho">Như máy bơm đưa nước từ bể thấp lên bể cao (Bẫy 2, ô 4·2).</p>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Suất điện động</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·2 · khung dưới</span></div>
+  <div class="giua">
+    <p>Suất điện động đặc trưng cho khả năng <b class="o">thực hiện công</b> của nguồn điện.</p>
+    <div class="fx">$\mathcal E=\dfrac{A}{q}$</div>
+    <p>$A$: công của <b class="o">lực lạ</b> trong nguồn (J) · $q$: <b class="o">điện tích dương dịch chuyển</b> (C)</p>
+    <p>Đơn vị <b class="o">vôn (V)</b> · $1$ V $=1$ <b class="o">J</b>/C</p>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Làm nhanh</span><span>phút 9–15</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 1. Vỏ pin ghi "1,5 V". Con số này cho biết điều gì về công và điện tích?</p>
+    <button class="mo" data-mo="q1">Mở câu 1</button>
+    <div class="an" id="q1" hidden><p>Lực lạ làm công $1{,}5$ J để đưa mỗi $1$ C điện tích dương qua nguồn, từ cực (−) sang cực (+).</p></div>
+    <p class="hoi">Câu 2. Pin có $\mathcal E=9{,}0$ V. Lực lạ làm công bao nhiêu khi đưa $20$ C điện tích dương qua nguồn?</p>
+    <button class="mo" data-mo="q2">Mở câu 2</button>
+    <div class="an" id="q2" hidden><p>$A=\mathcal Eq=9{,}0\cdot20=180$ J</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Điện trở trong ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Điện trở trong</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · dòng 1–2</span></div>
+  <div class="giua">
+    <p>Điện tích đi trong nguồn bị <b class="o">cản trở</b> (va chạm với vật chất của nguồn): nguồn có <b>điện trở trong</b> $r$.</p>
+    <p>Hở mạch ($I=0$): $U$ <b class="o">=</b> $\mathcal E$.</p>
+    <p class="hoi">Mạch kín, có dòng: $U$ lớn hơn, bằng hay nhỏ hơn $\mathcal E$? Đo thử.</p>
+    <button class="mo" data-mo="k4">Mở</button>
+    <div class="an" id="k4" hidden><p>Mạch kín: $U$ <b class="o">&lt;</b> $\mathcal E$ (clip kế tiếp).</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Đo U theo I</span><span>2 điểm dừng · khoảng 1 phút</span><span class="tap">tr.3 · ô 3·1 · bảng</span></div>
+  <div class="vg" data-bat="10.5" data-het="20.5">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-02-20261031-2.webp" preload="metadata" playsinline title="Vôn kế ở hai cực pin khi đổi điện trở mạch ngoài"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: vôn kế ở hai cực pin khi $R$ nhỏ dần.</p><p>Pin tiểu đã dùng · hộp điện trở $R$ · ampe kế nối tiếp.</p></div>
+      <div class="buoc" data-t="10.5"><p class="hoi">Hở mạch trước (K mở).</p></div>
+      <div class="buoc" data-t="11.6" data-dung><p class="so-lon">K mở: $I=0$ · $U=1{,}50$ V</p><p class="hoi">Đóng K, giảm $R$ dần. Vôn kế sẽ thế nào? Nói, chưa ghi.</p></div>
+      <div class="buoc" data-t="11.65"><p class="hoi">Đóng K, giảm $R$: đọc từng cặp số.</p></div>
+      <div class="buoc" data-t="20.5"><p class="so-lon">$I$: $0{,}10\to0{,}60$ A<br>$U$: $1{,}40\to0{,}90$ V</p><p class="hoi">Dòng tăng, $U$ tụt. Khớp bảng ô 3·1.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Tính r</span><span>phút 15–21 · chia dãy</span><span class="tap">tr.3 · ô 3·1 · bảng + Rút ra</span></div>
+  <p class="nho">$\mathcal E=1{,}50$ V (hở mạch). Dãy trái: hàng 14, 9 · dãy giữa: hàng 4 · dãy phải: hàng 2; 1,5.</p>
+  <table class="bang">
+    <thead><tr><th>$R$ (Ω)</th><th>$I$ (A)</th><th>$U$ (V)</th><th>$\mathcal E-U$ (V)</th><th>$\dfrac{\mathcal E-U}{I}$ (Ω)</th></tr></thead>
+    <tbody>
+      <tr><td>14</td><td>0,10</td><td>1,40</td><td class="ns"><span class="an-o" data-o="b4">0,10</span></td><td class="ns"><span class="an-o" data-o="b4">1,0</span></td></tr>
+      <tr><td>9</td><td>0,15</td><td>1,35</td><td class="ns"><span class="an-o" data-o="b4">0,15</span></td><td class="ns"><span class="an-o" data-o="b4">1,0</span></td></tr>
+      <tr><td>4</td><td>0,30</td><td>1,20</td><td class="ns"><span class="an-o" data-o="b4">0,30</span></td><td class="ns"><span class="an-o" data-o="b4">1,0</span></td></tr>
+      <tr><td>2</td><td>0,50</td><td>1,00</td><td class="ns"><span class="an-o" data-o="b4">0,50</span></td><td class="ns"><span class="an-o" data-o="b4">1,0</span></td></tr>
+      <tr><td>1,5</td><td>0,60</td><td>0,90</td><td class="ns"><span class="an-o" data-o="b4">0,60</span></td><td class="ns"><span class="an-o" data-o="b4">1,0</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut"><button class="mo" data-mo="b4">Mở: số</button><button class="mo" data-mo="r4">Mở: rút ra</button></div>
+  <div class="an" id="r4" hidden><p>$\mathcal E-U$ tỉ lệ thuận với <b class="o">$I$</b>; hệ số là $r=$ <b class="o">$1{,}0$</b> Ω.</p></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · U = ℰ − Ir</span><span>phút 15–21</span><span class="tap">tr.3 · ô 3·1 · khung dưới</span></div>
+  <div class="hai">
+    <div class="fig f4 rong"><!--FIG3--></div>
+    <div class="ben">
+      <div class="fx">$U=\mathcal E-Ir$</div>
+      <p>$Ir$: độ giảm thế trên <b class="o">$r$</b>, mạch ngoài <b class="o">không nhận được</b>.</p>
+      <p>Đồ thị $U$ theo $I$: đường <b class="o">thẳng</b> đi xuống; cắt trục $U$ tại <b class="o">$\mathcal E$</b>; độ dốc bằng <b class="o">$-r$</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Thí nghiệm ảo PhET</span><span>mặc định bỏ qua · chỉ dùng khi dư giờ</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <p class="hoi">Màn "Lab", mở "Cao cấp" để có thanh Điện trở trong. Pin $9$ V nối $R=10\ \Omega$, vôn kế ở hai cực pin.</p>
+    <p class="hoi">Điện trở trong gần $0$: vôn kế chỉ gần $9$ V. Tăng điện trở trong lên $2\ \Omega$: vôn kế chỉ bao nhiêu?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p4">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p4" hidden><p>$I=\dfrac{9}{10+2}=0{,}75$ A; $U=9-0{,}75\cdot2=7{,}5$ V.</p></div>
+  </div>
+</section>
+
+<!-- ================= 5. Ohm toàn mạch, đoản mạch ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Ohm toàn mạch</span><span>phút 21–27</span><span class="tap">tr.3 · ô 3·2 · dòng 1–2</span></div>
+  <div class="giua">
+    <p>Bảo toàn năng lượng: công của nguồn $\mathcal EIt$ = nhiệt ở $R$ + nhiệt ở $r$</p>
+    <p class="hoi" style="text-align:center">$\mathcal EIt=$ <span class="an-o" data-o="o5"><b class="o">$RI^2t$</b></span> $+$ <span class="an-o" data-o="o5"><b class="o">$rI^2t$</b></span></p>
+    <button class="mo" data-mo="o5">Mở: nhiệt</button>
+    <p class="nho">Chia hai vế cho $It$.</p>
+    <button class="mo" data-mo="o5b">Mở: công thức</button>
+    <div class="an" id="o5b" hidden><p class="so-lon" style="text-align:center">$I=\dfrac{\mathcal E}{R+r}$ &nbsp;·&nbsp; $I_{\text{đm}}=\dfrac{\mathcal E}{r}$</p><p class="nho">Đoản mạch: $R\to0$, chỉ còn $r$ giữ dòng.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Đoản mạch</span><span>phút 21–27</span><span class="tap">tr.3 · ô 3·2 · dòng 3–4</span></div>
+  <div class="giua">
+    <p class="hoi">Nối tắt hai cực ($R\to0$): chỉ còn $r$ giữ dòng.</p>
+    <p>Pin tiểu mới ($1{,}5$ V; $0{,}3\ \Omega$): $I_{\text{đm}}=$ <span class="an-o" data-o="d5"><b class="o">$5$</b></span> A</p>
+    <p>Ắc quy xe máy ($12{,}6$ V; $0{,}02\ \Omega$): $I_{\text{đm}}=$ <span class="an-o" data-o="d5"><b class="o">$630$</b></span> A</p>
+    <button class="mo" data-mo="d5">Mở: số</button>
+    <p class="nho">Clip kế tiếp: đo thật dòng nối tắt pin tiểu. Không tự làm ở nhà.</p>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Nối tắt pin tiểu</span><span>2 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.3 · ô 3·2 · Thí nghiệm nối tắt</span></div>
+  <div class="vg" data-bat="9.8" data-het="23.5">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-03-20261116.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-nguon-dien-03-20261116.webp" preload="metadata" playsinline title="Nối tắt pin mới rồi pin đã dùng"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: ampe kế khi nối tắt pin mới, rồi pin đã dùng.</p><p>Hai pin cùng $1{,}5$ V khi hở mạch. Chỉ nối 3 giây, kẹp cách điện.</p></div>
+      <div class="buoc" data-t="9.8"><p class="hoi">Nối tắt pin mới.</p></div>
+      <div class="buoc" data-t="12.5" data-dung><p class="so-lon">Pin mới: $5{,}0$ A</p><p class="hoi">Khớp số em vừa tính? Điền "cỡ … A" ô 3·2. Dây nóng lên (vệt đỏ).</p><p class="hoi">Pin đã dùng: dòng lớn hơn hay nhỏ hơn?</p></div>
+      <div class="buoc" data-t="12.55"><p class="hoi">Đổi pin đã dùng, làm lại.</p></div>
+      <div class="buoc" data-t="17.3" data-dung><p class="so-lon">Pin đã dùng: $1{,}5$ A</p><p class="hoi">Cùng $1{,}5$ V. Tính $r$ của pin đã dùng.</p></div>
+      <div class="buoc" data-t="17.35"><p class="hoi">Rút ra.</p></div>
+      <div class="buoc" data-t="23.5"><p>Pin mới: $r=\dfrac{1{,}5}{5{,}0}=0{,}3\ \Omega$</p><p>Pin đã dùng: $r=\dfrac{1{,}5}{1{,}5}=1{,}0\ \Omega$</p><p class="hoi">$r$ càng <b class="o">nhỏ</b> thì đoản mạch càng nguy hiểm; cầu chì chặn dòng đoản mạch.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Làm nhanh</span><span>phút 21–27</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <div class="giua">
+    <p class="hoi">Nguồn $\mathcal E=6{,}0$ V, $r=0{,}50\ \Omega$ nối $R=2{,}5\ \Omega$. Tính $I$ và $U$ hai cực nguồn (kiểm bằng hai cách).</p>
+    <button class="mo" data-mo="t5">Mở: lời giải</button>
+    <div class="an" id="t5" hidden>
+      <p>$I=\dfrac{6{,}0}{2{,}5+0{,}50}=2{,}0$ A</p>
+      <p>$U=IR=2{,}0\cdot2{,}5=5{,}0$ V</p><p>Kiểm: $U=\mathcal E-Ir=6{,}0-2{,}0\cdot0{,}50=5{,}0$ V</p>
+      <p class="nho">Quên cộng $r$: $2{,}4$ A · lấy $\mathcal E/r$: $12$ A là dòng đoản mạch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Ghép nguồn + quay lại + đề 1219 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Ghép nguồn</span><span>phút 27–29</span><span class="tap">tr.4 · ô 4·1</span></div>
+  <table class="bang" style="font-size:.9em">
+    <thead><tr><th>Cách ghép</th><th>$\mathcal E_b$</th><th>$r_b$</th></tr></thead>
+    <tbody>
+      <tr><td>Nối tiếp</td><td class="ns"><span class="an-o" data-o="g6">$\mathcal E_1+\mathcal E_2+\dots$</span></td><td class="ns"><span class="an-o" data-o="g6">$r_1+r_2+\dots$</span></td></tr>
+      <tr><td>Song song $n$ nguồn giống nhau</td><td class="ns"><span class="an-o" data-o="g6">$\mathcal E$</span></td><td class="ns"><span class="an-o" data-o="g6">$r/n$</span></td></tr>
+      <tr><td>Xung đối, $\mathcal E_1&gt;\mathcal E_2$</td><td class="ns"><span class="an-o" data-o="g6">$\mathcal E_1-\mathcal E_2$</span></td><td class="ns"><span class="an-o" data-o="g6">$r_1+r_2$</span></td></tr>
+      <tr><td>$n$ dãy, mỗi dãy $m$ nguồn</td><td class="ns"><span class="an-o" data-o="g6">$m\mathcal E$</span></td><td class="ns"><span class="an-o" data-o="g6">$mr/n$</span></td></tr>
+    </tbody>
+  </table>
+  <div class="hai" style="gap:2vw">
+    <div class="fig f5"><!--TAP:honHop--></div>
+    <div class="ben">
+      <p>6 pin ($1{,}5$ V; $0{,}6\ \Omega$), 2 dãy × 3 pin: $\mathcal E_b=$ <span class="an-o" data-o="g6b"><b class="o">$4{,}5$ V</b></span> · $r_b=$ <span class="an-o" data-o="g6b"><b class="o">$0{,}9\ \Omega$</b></span></p>
+      <div class="nut"><button class="mo" data-mo="g6">Mở: bảng</button><button class="mo" data-mo="g6b">Mở: 6 pin</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6ct">
+  <div class="top"><span class="so">6/6 · Quay lại đèn pha</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3 · tr.4 ô 4·2 Bẫy 1</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Ắc quy $12{,}6$ V, $r=0{,}05\ \Omega$; mô tơ đề lấy $60$ A:<br>$U=12{,}6-60\cdot0{,}05=9{,}6$ V</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Dòng đề lớn, $Ir$ lớn: hai cực tụt áp, đèn tối. $\mathcal E$ không đổi (Bẫy 1).</p>
+        <p class="nho">A: đèn vẫn nối thẳng hai cực · B: ắc quy không hết rồi tự nạp · D: dây chưa kịp nóng trong một giây.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.4 ô 4·4 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1219</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1219 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 24</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
+    <li><b>tr.3</b> ô 3·1 kẻ đường thẳng qua 5 điểm của đồ thị</li>
+    <li><b>tr.4</b> ô 4·2 đọc Bẫy 2, Bẫy 3 (điền $U$ pin cũ) · ô 4·3 Trả bài 6 câu (bạn cùng bàn kiểm)</li>
+    <li><b>tr.5</b> ô 5·1 bài toán mẫu · ô 5·2 · ô 5·3 ghi đề BTVN thầy giao trên web · ô 5·4 thử thách</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điện trở. Định luật Ohm · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .hai>.fig.rong{width:54%} .f4 svg,.f6 svg{overflow:visible}
+/* màu hình web vẽ cho nền tối: đổi sang sắc đậm để đủ tương phản trên nền trắng tivi */
+.fig svg [fill="#38bdf8"]{fill:#0369a1} .fig svg [stroke="#38bdf8"]{stroke:#0369a1} .fig svg [fill="#f87171"]{fill:#dc2626} .fig svg [stroke="#f87171"]{stroke:#dc2626}
+.fig svg [fill="#34d399"]{fill:#047857} .fig svg [stroke="#34d399"]{stroke:#047857} .fig svg [fill="#fb923c"]{fill:#c2410c} .fig svg [stroke="#fb923c"]{stroke:#c2410c}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f4 svg text,.f6 svg text{font-size:20px} .f4 svg text[x="260"][y="45"]{display:none} .f7 svg text{font-size:20px} .hai>.fig.f8{width:36%}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.f7,.f8,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+
+<!-- Nguồn: theory.html bài 42 (Điện trở. Định luật Ohm) + ruột tập scripts/ruot-tap/l11-bai23.mjs (bài 23 = tr.13–24 của quyển Chương 4;
+     trang học trên lớp tr.13–17, mã ô t·k in trên giấy, vd "Tập 13·2"). Hình: dấu FIGn = thẻ svg thứ n trong theory.html;
+     dấu TAP:ten = hình hinh-l11-bai23.mjs của Tập (build_tren_lop.py).
+     Clip (engine scripts/video-thi-nghiem/clips/ohm1–3.py, xem khung hình thật 22/11/2026):
+       tn-l11-dien-tro-ohm-01: "Tiến hành" 10,5–18,4 s, "Kết quả" 18,4–26,6 s (rút ra từ 22,3 s) → bắt 10,8, dừng 17,4 · 21,8 · hết 26,0.
+       tn-l11-dien-tro-ohm-02: "Tiến hành" 10,3–18,6 s (hàng 3,0 V hiện 13,2 s, 4,0 V 14,4 s), "Kết quả" 18,6–26,6 s → bắt 10,7, dừng 13,9 · 18,1 · hết 26,1.
+       tn-l11-dien-tro-ohm-03: "Tiến hành" 10,37–20,37 s (pha nước từ 14,77 s), "Kết quả" 20,37–32,34 s, "Bẫy" 32,34–41,74 s → bắt 10,8, dừng 14,3 · 19,6 · hết 36,1. -->
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 23</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 23 · tr.13</span></div>
+  <div class="giua">
+    <h1>Điện trở. Định luật Ohm</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Vì sao bóng đèn hay đứt đúng lúc bật?</li>
+      <li>$R=\dfrac{U}{I}$ và $I=\dfrac{U}{R}$: đổi kΩ, mA cho đúng.</li>
+      <li>Kim loại, NTC nóng lên thì $R$ đổi thế nào?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.13 · ô 13·2</span></div>
+  <h2>Cùng ổ 220 V. Bóng hay đứt lúc nào?</h2>
+  <div class="fig f1"><!--TAP:denBat--></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.13 · ô 13·2</span></div>
+  <div class="giua">
+    <p class="hoi">Bóng đèn sợi đốt hay đứt đúng lúc bật công tắc, hiếm khi đứt lúc đang sáng. Cùng ổ 220 V: dòng qua dây tóc lớn nhất vào lúc nào?</p>
+    <ol class="opt">
+      <li><b>A.</b> Lúc vừa bật, dây tóc còn nguội</li>
+      <li><b>B.</b> Lúc đã sáng ổn định, dây tóc nóng nhất</li>
+      <li><b>C.</b> Như nhau, vì hiệu điện thế không đổi</li>
+      <li><b>D.</b> Lúc vừa tắt, dây tóc còn nóng</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại bóng đèn").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Điện trở ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Điện trở</span><span>phút 3–7</span><span class="tap">tr.13 · ô 13·4 · dòng 1–3</span></div>
+  <div class="hai">
+    <div class="fig f2"><!--TAP:dayAB--></div>
+    <div class="ben">
+      <p>Cùng $12$ V: dây A cho $2$ A, dây B chỉ $0{,}5$ A. Dây <b class="o">B</b> cản dòng mạnh hơn.</p>
+      <p>Điện trở đo mức <b class="o">cản trở dòng điện</b> của vật dẫn.</p>
+      <div class="fx">$R=\dfrac{U}{I}$</div>
+      <p>Đơn vị: <b class="o">ôm</b> (kí hiệu <b class="o">Ω</b>)</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Tính và đổi đơn vị</span><span>phút 3–7</span><span class="tap">tr.13 · ô 13·4 · dòng 4–5</span></div>
+  <div class="giua">
+    <p>$1\ \Omega=1$ <span class="an-o" data-o="t2"><b class="o">V/A</b></span></p>
+    <p>Dây A: $R=$ <span class="an-o" data-o="t2"><b class="o">$12/2=6\ \Omega$</b></span> &nbsp;·&nbsp; dây B: $R=$ <span class="an-o" data-o="t2"><b class="o">$12/0{,}5=24\ \Omega$</b></span></p>
+    <p>$1\ \text{k}\Omega=$ <span class="an-o" data-o="d2"><b class="o">$1000$</b></span> $\Omega$ &nbsp;·&nbsp; $1\ \text{M}\Omega=$ <span class="an-o" data-o="d2"><b class="o">$10^{6}$</b></span> $\Omega$</p>
+    <p>$1\ \text{mA}=$ <span class="an-o" data-o="d2"><b class="o">$10^{-3}$</b></span> A</p>
+    <div class="nut"><button class="mo" data-mo="t2">Mở: tính</button><button class="mo" data-mo="d2">Mở: đổi đơn vị</button></div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Làm nhanh</span><span>phút 3–7</span><span class="tap">tr.13 · ô 13·5</span></div>
+  <div class="giua">
+    <p class="hoi">Điện trở $2{,}2$ kΩ mắc vào $11$ V. Dòng điện qua nó bằng bao nhiêu mA?</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$5$ A</li>
+      <li data-dung><b>B.</b>$5$ mA</li>
+      <li><b>C.</b>$0{,}2$ A</li>
+      <li><b>D.</b>$24{,}2$ mA</li>
+    </ol>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden>
+      <p><b>B.</b> $2{,}2$ kΩ $=2200\ \Omega$; $I=\dfrac{11}{2200}=0{,}005$ A $=5$ mA.</p>
+      <p class="nho">A: để nguyên kΩ · C: chia ngược $R/U$ · D: nhân thay vì chia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. Đường đặc trưng · định luật Ohm ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Mạch đo</span><span>phút 7–15</span><span class="tap">tr.14 · ô 14·1 · Làm</span></div>
+  <div class="hai">
+    <div class="fig f3"><!--TAP:machDo--></div>
+    <div class="ben">
+      <p>Ampe kế mắc <b class="o">nối tiếp</b>, vôn kế mắc <b class="o">song song</b> với R.</p>
+      <p class="nho">Điện trở 10 Ω (loại ít nóng). Tăng $U$ từ 1,0 V tới 5,0 V, ghi $I$. Sai số: ampe kế $\pm0{,}01$ A, vôn kế $\pm0{,}1$ V.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Đo điện trở 10 Ω</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.14 · ô 14·1 · bảng, Rút ra</span></div>
+  <div class="vg" data-bat="10.8" data-het="26.0">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-01-20261116.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-01-20261116.webp" preload="metadata" playsinline title="Đo U và I của điện trở 10 Ω"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số vôn kế, ampe kế mỗi lần tăng $U$ thêm 1,0 V.</p><p class="nho">Bảng ô 14·1 đã in sẵn $I$; lớp tính hàng $U/I$. Clip bỏ phần mở đầu.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Tăng $U$ từng 1,0 V, ghi $I$.</p></div>
+      <div class="buoc" data-t="17.4" data-dung><p class="so-lon">Đủ 5 điểm đo</p><p class="hoi">Tính $U/I$ từng hàng, điền vào bảng ô 14·1 (30 giây).</p></div>
+      <div class="buoc" data-t="17.5"><p class="hoi">Kết quả.</p></div>
+      <div class="buoc" data-t="21.8" data-dung><p class="so-lon">$U/I=10\ \Omega$ cả 5 hàng</p><p class="hoi">$U$ gấp đôi thì $I$ thế nào?</p></div>
+      <div class="buoc" data-t="21.9"><p class="hoi">Rút ra.</p></div>
+      <div class="buoc" data-t="26.0"><p class="so-lon">$U$ gấp đôi thì $I$ <span class="o">gấp đôi</span></p><p class="hoi">$I$ <span class="o">tỉ lệ thuận</span> với $U$.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Đường đặc trưng vôn – ampe</span><span>phút 7–15</span><span class="tap">tr.14 · ô 14·1 · hình lưới</span></div>
+  <div class="hai">
+    <div class="fig f4 rong"><!--FIG2--></div>
+    <div class="ben">
+      <p>Đồ thị <b class="o">$I$</b> theo <b class="o">$U$</b> của một linh kiện.</p>
+      <p>Điện trở: đường <b class="o">thẳng qua gốc</b>.</p>
+      <p>Độ dốc $\dfrac{I}{U}=$ <b class="o">$\dfrac{1}{R}$</b></p>
+      <p>Dốc hơn thì $R$ <b class="o">nhỏ hơn</b>.</p>
+      <p class="nho">Đường liền 10 Ω dốc gấp đôi đường đứt 20 Ω.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Sai số</span><span>phút 7–15</span><span class="tap">tr.14 · ô 14·1 · Sai số</span></div>
+  <div class="giua">
+    <p class="hoi">Vôn kế lệch $\pm0{,}1$ V, ampe kế $\pm0{,}01$ A. Tính $R$ từ <b>một</b> hàng thì chọn hàng nào?</p>
+    <ol class="opt lo">
+      <li><b>A.</b> Hàng 1,0 V, vì gần gốc toạ độ nhất</li>
+      <li><b>B.</b> Hàng nào cũng như nhau, vì đều ra 10 Ω</li>
+      <li><b>C.</b> Hàng 3,0 V, vì ở giữa bảng</li>
+      <li data-dung><b>D.</b> Hàng 5,0 V, vì số đo lớn nhất ít bị lệch nhất</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden>
+      <p><b>D.</b> 1,0 V: <b class="o">20 %</b> · 5,0 V: <b class="o">4 %</b> · tốt nhất: lấy <b class="o">độ dốc đường thẳng</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3e">
+  <div class="top"><span class="so">3/6 · Định luật Ohm</span><span>phút 7–15</span><span class="tap">tr.14 · ô 14·2</span></div>
+  <div class="giua">
+    <p>Cường độ dòng điện qua vật dẫn tỉ lệ <b class="o">thuận</b> với <b class="o">hiệu điện thế hai đầu vật dẫn</b>, tỉ lệ <b class="o">nghịch</b> với <b class="o">điện trở</b> của nó.</p>
+    <div class="fx">$I=\dfrac{U}{R}$</div>
+    <p>"$I$ tỉ lệ thuận $U$" chỉ đúng khi $R$ <b class="o">không đổi</b>.</p>
+    <p class="hoi">Ví dụ: LED cần $20$ mA; điện trở nối tiếp với LED chịu $3$ V. $R=$ ?</p>
+    <button class="mo" data-mo="v3">Mở: lời giải</button>
+    <div class="an" id="v3" hidden><p>$20$ mA $=0{,}02$ A; $R=\dfrac{3}{0{,}02}=150\ \Omega$</p></div>
+  </div>
+</section>
+
+<section class="man" id="m3f">
+  <div class="top"><span class="so">3/6 · Thí nghiệm ảo PhET</span><span>dùng khi dư giờ hoặc thay clip</span><span class="tap">tr.14 · ô 14·2</span></div>
+  <div class="giua">
+    <p class="hoi">Mô phỏng "Định luật Ohm": giữ $R$, kéo $U$ tăng gấp đôi. Đoán: $I$ thế nào?</p>
+    <p class="hoi">Rồi giữ $U$, kéo $R$ tăng gấp đôi. $I$ thế nào?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/ohms-law/latest/ohms-law_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p3">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p3" hidden><p>$R$ giữ nguyên, $U$ gấp đôi: $I$ gấp đôi. $U$ giữ nguyên, $R$ gấp đôi: $I$ còn một nửa. Đúng $I=U/R$.</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Vì sao có điện trở · đèn · R(t) ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Vì sao kim loại có điện trở</span><span>phút 15–22</span><span class="tap">tr.15 · ô 15·1</span></div>
+  <div class="hai">
+    <div class="fig f5"><!--TAP:mangIon--></div>
+    <div class="ben">
+      <p>Ion <b class="o">dương</b> xếp đều ở <b class="o">nút mạng</b>; electron <b class="o">tự do</b> trôi giữa chúng.</p>
+      <p>Ion dao động <b class="o">nhiệt</b>; electron <b class="o">va chạm</b> vào ion, bị cản: đó là điện trở.</p>
+      <button class="mo" data-mo="r4">Mở: nóng hơn thì…</button>
+      <div class="an" id="r4" hidden><p>rung <b class="o">mạnh hơn</b> → va chạm <b class="o">nhiều hơn</b> → trôi <b class="o">chậm hơn</b> → $I$ <b class="o">nhỏ hơn</b> → $R$ <b class="o">tăng</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Đo bóng đèn 6 V – 3 W</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.15 · ô 15·2</span></div>
+  <div class="vg" data-bat="10.7" data-het="26.1">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-02-20261116.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-02-20261116.webp" preload="metadata" playsinline title="Đo U và I của bóng đèn sợi đốt"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: $I$ và $U/I$ sau mỗi lần tăng 1,0 V.</p><p class="nho">Thay điện trở 10 Ω bằng đèn 6 V – 3 W; chờ đèn ổn định mới ghi. Clip bỏ phần mở đầu.</p></div>
+      <div class="buoc" data-t="10.7"><p class="hoi">Tăng $U$ từng 1,0 V.</p></div>
+      <div class="buoc" data-t="13.9" data-dung><p class="so-lon">$3{,}0$ V: $I=0{,}33$ A</p><p class="hoi">Từ 1,0 V lên 3,0 V ($U$ gấp 3), $I$ gấp mấy lần?</p><p class="nho">1,0 V: 0,17 A (bảng ô 15·2)</p></div>
+      <div class="buoc" data-t="14.0"><p class="hoi">Đo tiếp tới 6,0 V.</p></div>
+      <div class="buoc" data-t="18.1" data-dung><p class="so-lon">$0{,}33/0{,}17\approx1{,}9$ lần, chưa tới 3</p><p class="hoi">Điền 3 ô $U/I$ còn trống (2,0; 4,0; 6,0 V) vào Tập.</p></div>
+      <div class="buoc" data-t="18.2"><p class="hoi">Kết quả.</p></div>
+      <div class="buoc" data-t="26.1"><p class="so-lon">$U/I$: $5{,}9 \to 7{,}7 \to \dots \to 12{,}0\ \Omega$</p><p class="hoi">$U$ tăng 6 lần, $I$ tăng <span class="o">chưa tới 3 lần</span>; $U/I$ <span class="o">tăng dần</span>.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Đường đặc trưng của đèn</span><span>phút 15–22</span><span class="tap">tr.15 · ô 15·2 · Rút ra</span></div>
+  <div class="hai">
+    <div class="fig f6 rong"><!--FIG4--></div>
+    <div class="ben">
+      <p>$R$ dây tóc <b class="o">tăng</b> khi nóng lên.</p>
+      <p>Đường đặc trưng của đèn: <b class="o">đường cong</b>, dốc giảm dần.</p>
+      <p>Điốt: chỉ dẫn điện theo <b class="o">một chiều</b>; đường đặc trưng <b class="o">không thẳng</b>.</p>
+      <p class="nho">Đường đứt: $R=12\ \Omega$ không đổi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Điện trở theo nhiệt độ</span><span>phút 15–22</span><span class="tap">tr.15 · ô 15·3</span></div>
+  <div class="giua">
+    <div class="fx">$R=R_0\,[1+\alpha\,(t-t_0)]$</div>
+    <p>$R_0$: điện trở ở $t_0$ (thường 20 °C)</p>
+    <p>$\alpha$: hệ số <b class="o">nhiệt điện trở</b> (đơn vị <b class="o">K⁻¹</b>); kim loại có $\alpha$ <b class="o">$\gt$</b> $0$</p>
+    <p>$t-t_0$ tính bằng °C hay K đều ra <b class="o">cùng một số</b>.</p>
+    <p>Điện trở suất: $\rho=$ <b class="o">$\rho_0\,[1+\alpha\,(t-t_0)]$</b></p>
+  </div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Điền bước còn thiếu</span><span>phút 15–22 · làm 1 phút</span><span class="tap">tr.15 · ô 15·4</span></div>
+  <div class="giua">
+    <p class="hoi">Dây tóc vonfram $R_0=4{,}0\ \Omega$ ở 20 °C ($\alpha=4{,}5\cdot10^{-3}$ K⁻¹); khi sáng 1 020 °C, dòng $0{,}20$ A.</p>
+    <p>Bước 1: $t-t_0=1020-20=1000$ °C</p>
+    <p>Bước 2: $R=4{,}0\,[1+4{,}5\cdot10^{-3}\cdot1000]=$ <span class="an-o" data-o="b4"><b class="o">$4{,}0\cdot5{,}5=22\ \Omega$</b></span></p>
+    <p>Bước 3: $U=IR=$ <span class="an-o" data-o="b4"><b class="o">$0{,}20\cdot22=4{,}4$ V</b></span></p>
+    <button class="mo" data-mo="b4">Mở: bước 2, 3</button>
+    <p class="nho">Hay sai: quên "1 +" (ra 18 Ω) · cộng $\alpha\cdot1000$ thẳng vào $R_0$ (ra 8,5 Ω).</p>
+  </div>
+</section>
+
+<!-- ================= 5. NTC, PTC · bẫy ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · NTC trong cốc nước</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.16 · ô 16·1 · 16·2 Bẫy 2</span></div>
+  <div class="vg" data-bat="10.8" data-het="36.1">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-03-20261031-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-tro-ohm-03-20261031-2.webp" preload="metadata" playsinline title="NTC trong cốc nước ấm"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số kΩ khi nước nóng dần 25 → 55 °C.</p><p class="nho">NTC 10 kΩ và nhiệt kế cùng nhúng trong nước; đồng hồ vạn năng thang Ω. Clip bỏ phần mở đầu.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Ở 25 °C, chờ số ổn định.</p></div>
+      <div class="buoc" data-t="14.3" data-dung><p class="so-lon">25 °C: $10{,}0$ kΩ</p><p class="hoi">Pha nóng lên 35, 45, 55 °C. Đọc bảng ô 16·1, trừ hai hàng liền nhau. Số kΩ:</p>
+        <ol class="opt"><li><b>A.</b> Tăng dần, mỗi 10 °C tăng đều nhau</li><li><b>B.</b> Gần như không đổi</li><li><b>C.</b> Giảm dần, mỗi 10 °C giảm đều nhau</li><li><b>D.</b> Giảm dần, mỗi 10 °C giảm ít hơn lần trước</li></ol></div>
+      <div class="buoc" data-t="14.4"><p class="hoi">Pha nước nóng, đo lại.</p></div>
+      <div class="buoc" data-t="19.6" data-dung><p class="so-lon">$10{,}0 \to 6{,}5 \to 4{,}3 \to 3{,}0$ kΩ</p><p class="hoi">Giảm $3{,}5$; $2{,}2$; $1{,}3$ kΩ → <b>D</b></p></div>
+      <div class="buoc" data-t="19.7"><p class="hoi">Kết quả và bẫy.</p></div>
+      <div class="buoc" data-t="36.1"><p class="so-lon">Bẫy 2: "nóng lên thì $R$ luôn tăng"</p><p class="hoi">Sai với <span class="o">NTC</span>: pin nóng 25 → 45 °C, NTC 10 kΩ còn khoảng <span class="o">4,3</span> kΩ.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Điện trở nhiệt</span><span>phút 22–27</span><span class="tap">tr.16 · ô 16·1</span></div>
+  <div class="hai">
+    <div class="fig f7"><!--TAP:ntcCoc--></div>
+    <div class="ben">
+      <p>Điện trở nhiệt: $R$ đổi rất mạnh theo nhiệt độ, dùng làm <b class="o">cảm biến nhiệt</b>.</p>
+      <p>NTC (hệ số <b class="o">âm</b>): nóng thì $R$ <b class="o">giảm mạnh</b>.</p>
+      <p>PTC (hệ số <b class="o">dương</b>): nóng thì $R$ <b class="o">tăng vọt</b>, làm cầu chì tự phục hồi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Bẫy 1</span><span>phút 22–27</span><span class="tap">tr.16 · ô 16·2 · Bẫy 1</span></div>
+  <div class="giua">
+    <p class="hoi">Điện trở 10 Ω (nhiệt độ ổn định): tăng $U$ từ 2,0 V lên 4,0 V thì</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $R$ tăng lên 20 Ω, $I$ giữ nguyên</li>
+      <li><b>B.</b> $R$ tăng lên 20 Ω, $I$ tăng gấp đôi</li>
+      <li data-dung><b>C.</b> $R$ vẫn 10 Ω, $I$ tăng từ 0,20 A lên 0,40 A</li>
+      <li><b>D.</b> $R$ giảm còn 5 Ω, $I$ tăng gấp 4</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>C.</b> $R=U/I$ chỉ là <b>cách đo</b>; $R$ do vật liệu, nhiệt độ quyết định.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bẫy 3</span><span>phút 22–27</span><span class="tap">tr.16 · ô 16·2 · Bẫy 3</span></div>
+  <div class="hai">
+    <div class="fig f8"><!--TAP:haiDuong--></div>
+    <div class="ben">
+      <p class="hoi">(1) qua (4,0 V; 0,40 A), (2) qua (4,0 V; 0,20 A):</p>
+      <ol class="opt lo">
+        <li><b>A.</b> $R_1=20$, $R_2=10\ \Omega$</li>
+        <li><b>B.</b> $R_1=0{,}1$, $R_2=0{,}05\ \Omega$</li>
+        <li><b>C.</b> Chưa đủ dữ liệu</li>
+        <li data-dung><b>D.</b> $R_1=10$, $R_2=20\ \Omega$</li>
+      </ol>
+      <button class="mo" data-mo="a5d">Mở đáp án</button>
+      <div class="an" id="a5d" hidden><p><b>D.</b> Dốc hơn, $R$ nhỏ hơn. $I$ theo $U$: dốc <b class="o">$1/R$</b> · $U$ theo $I$: dốc <b class="o">$R$</b></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Trả bài + quay lại + đề 1218 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–29 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.16 · ô 16·3</span></div>
+  <div class="giua">
+    <p class="hoi">2. Phát biểu định luật Ohm. Khi nào I tỉ lệ thuận U?</p>
+    <button class="mo" data-mo="t1">Mở câu 2</button>
+    <div class="an" id="t1" hidden><p>$I$ tỉ lệ thuận $U$, tỉ lệ nghịch $R$: $I=U/R$ · tỉ lệ thuận chỉ khi $R$ không đổi (nhiệt độ vật dẫn không đổi).</p></div>
+    <p class="hoi">5. Công thức R theo nhiệt độ; ý nghĩa từng kí hiệu?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>$R=R_0[1+\alpha(t-t_0)]$ · $R_0$ ở $t_0$ · $\alpha$ hệ số nhiệt điện trở (K⁻¹), dương với kim loại.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6bd">
+  <div class="top"><span class="so">6/6 · Quay lại bóng đèn</span><span>phút 29–30</span><span class="tap">tr.13 · ô 13·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Đèn 6 V – 3 W: gần nguội (1,0 V) $U/I=5{,}9\ \Omega$; sáng đủ $12\ \Omega$.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>A.</b> Dây tóc nguội có $R$ nhỏ hơn lúc sáng cỡ mười mấy lần: cùng 220 V, dòng lúc bật lớn gấp mười mấy lần.</p>
+        <p class="nho">B: nóng thì $R$ lớn, dòng nhỏ · C: $U$ không đổi nhưng $R$ đổi · D: tắt rồi thì không còn dòng.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.17 ô 17·1 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1218</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1218 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 23</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.13</b> ô 13·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
+    <li><b>tr.14</b> ô 14·1 chấm 5 điểm lên lưới · ô 14·3 nhắc lại lớp 9</li>
+    <li><b>tr.15</b> ô 15·2 chấm 6 điểm của đèn lên lưới</li>
+    <li><b>tr.16</b> ô 16·3 câu 1, 3, 4, 6 (bạn cùng bàn kiểm)</li>
+    <li><b>tr.17</b> ô 17·2 bài toán mẫu · ô 17·3 ghi đề BTVN thầy giao trên web · ô 17·4 thử thách</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

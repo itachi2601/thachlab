@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phân hạch, nhiệt hạch · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:100%} .f2{height:84vh}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text[font-size="14"],.f1 svg text[font-size="15"]{font-size:16.5px} .hai>.fig.flo,.hai>.fig.fph{width:50%}
+.f2 svg text[font-size="11"]{font-size:13px} .f2 svg text[font-size="13"]{font-size:14px}
+.fph svg text[font-size="13.2"]{font-size:14px} .fnh{height:30vh}
+.ki{font-size:4.6em;margin:0;text-align:center;line-height:1}
+.fk{align-items:center}
+table.mh td{font-size:.86em;vertical-align:top;width:29%} table.mh th{font-size:.8em}
+table.gon td,table.gon th{font-size:.8em;padding:.04em .35em}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.fnh,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 12 · Bài 19 (web: Bài 16)</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 19 · tr.25</span></div>
+  <div class="giua">
+    <h1>Phân hạch · Nhiệt hạch</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Phản ứng hạt nhân bảo toàn gì, không bảo toàn gì?</li>
+      <li>Năng lượng toả ra $W$ tính từ khối lượng thế nào?</li>
+      <li>Lò phản ứng giữ $k=1$ ra sao? Mặt trời "cháy" bằng gì?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.25 · ô 25·2</span></div>
+  <div class="hai">
+    <div class="fig flo" style="width:43%"><svg viewBox="0 0 330 148" role="img" aria-label="Sơ đồ nhà máy điện hạt nhân"><rect x="2" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="37" y="92" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Lò</text><line x1="72" y1="86" x2="74" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M74 79 L85 86 L74 93 z" fill="#1c2540"/><rect x="84" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="119" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Trao đổi</text><text x="119" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nhiệt</text><line x1="154" y1="86" x2="156" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M156 79 L167 86 L156 93 z" fill="#1c2540"/><rect x="166" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="201" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Tua</text><text x="201" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">bin</text><line x1="236" y1="86" x2="238" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M238 79 L249 86 L238 93 z" fill="#1c2540"/><rect x="248" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="283" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Máy</text><text x="283" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">phát</text><rect x="20" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><rect x="38" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="60" y="40" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">thanh điều khiển</text><text x="326" y="140" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700">điện</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Nhà máy điện hạt nhân không có ngọn lửa. Năng lượng khổng lồ ấy đến từ đâu?</p>
+      <ol class="opt" style="font-size:.87em">
+        <li><b>A.</b> Phản ứng hoá học giữa urani với nước</li>
+        <li><b>B.</b> Hạt nhân urani vỡ ra, khối lượng nghỉ thành năng lượng</li>
+        <li><b>C.</b> Nhiệt còn lại trong lòng đất</li>
+        <li><b>D.</b> Ma sát giữa nước và thanh nhiên liệu</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Phản ứng hạt nhân, bảo toàn, W ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Phản ứng hạt nhân</span><span>phút 3–9</span><span class="tap">tr.25 · ô 25·4 · dòng 1–3</span></div>
+  <div class="giua">
+    <p>Biến hạt nhân này thành hạt nhân khác: tự <b class="o">phát</b> (phóng xạ) hoặc do <b class="o">kích thích</b> (va chạm hạt khác).</p>
+    <p>Bảo toàn 4 đại lượng: 1) <b class="o">điện tích</b> 2) số <b class="o">nuclôn</b> 3) <b class="o">năng lượng</b> toàn phần 4) <b class="o">động lượng</b>.</p>
+    <p><b>Không</b> bảo toàn <b class="o">khối lượng nghỉ</b>: phần hụt chính là năng lượng.</p>
+    <div class="fx">$A_1+A_2=$ <b class="o">$A_3+A_4$</b> &nbsp;·&nbsp; $Z_1+Z_2=$ <b class="o">$Z_3+Z_4$</b></div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Tự kiểm tra 1</span><span>phút 3–9</span><span class="tap">tr.25 · ô 25·4 · Tự kiểm tra 1</span></div>
+  <div class="giua">
+    <p class="hoi" style="font-size:1.1em;text-align:center">${}^{235}_{92}\mathrm{U}+{}^{1}_{0}\mathrm{n}\to{}^{144}_{56}\mathrm{Ba}+{}^{89}_{36}\mathrm{Kr}+x\,{}^{1}_{0}\mathrm{n}$</p>
+    <p>Cộng $A$ hai vế: …… ⇒ $x=$ …… &nbsp;<span class="nho">(30 giây, tự làm vào Tập)</span></p>
+    <button class="mo" data-mo="g2">Mở</button>
+    <div class="an" id="g2" hidden><p>$235+1=144+89+x$ ⇒ $x=3$</p>
+      <p class="nho">Kiểm điện tích: $92+0=56+36$ khớp. Quên nơtron bắn vào ở vế trái thì ra $x=2$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Năng lượng toả ra</span><span>phút 3–9</span><span class="tap">tr.25 · ô 25·5</span></div>
+  <div class="giua">
+    <div class="fx">$W=($<b class="o">$m_A+m_B-m_C-m_D$</b>$)\,c^2$</div>
+    <p>$1\ \mathrm{u}=$ <b class="o">$931{,}5$</b> MeV/$c^2$ &nbsp;·&nbsp; $1\ \mathrm{MeV}=$ <b class="o">$1{,}6\cdot10^{-13}$</b> J</p>
+    <p>Khối lượng nghỉ <b>giảm</b> ⇒ $W$ <b class="o">&gt;</b> 0: phản ứng <b class="o">toả</b>.</p>
+    <p>Khối lượng nghỉ <b>tăng</b> ⇒ $W$ <b class="o">&lt;</b> 0: <b class="o">thu</b>.</p>
+    <p class="nho">Nhớ: "trước nặng hơn thì toả". Khối lượng tính bằng u thì $W$ (MeV) $=\Delta m\times931{,}5$.</p>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Câu 2</span><span>phút 3–9</span><span class="tap">tr.27 · ô 27·3 · Câu 2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Phản ứng có tổng khối lượng nghỉ của các hạt trước <u>nhỏ hơn</u> của các hạt sau thì:</p>
+    <ol class="opt lo hai-cot" style="font-size:.9em">
+      <li><b>A.</b> Toả năng lượng, vì khối lượng giảm</li>
+      <li data-dung><b>B.</b> Thu năng lượng, phải cấp thêm cho phản ứng</li>
+      <li><b>C.</b> Không trao đổi, khối lượng bảo toàn</li>
+      <li><b>D.</b> Toả năng lượng, vì khối lượng tăng</li>
+    </ol>
+    <p class="nho">Lật tr.27, bảng ô 27·3: ghi "Em chọn" + "Chắc?" trước khi mở.</p>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden><p><b>B.</b> Sau nặng hơn ⇒ $W&lt;0$: thu. C sai: khối lượng nghỉ không bảo toàn.</p></div>
+  </div>
+</section>
+
+<!-- ================= 3. Phân hạch, dây chuyền ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Phân hạch</span><span>phút 9–15</span><span class="tap">tr.26 · ô 26·1</span></div>
+  <div class="hai">
+    <div class="fig fph"><svg viewBox="0 0 310 170" role="img" aria-label="Phân hạch urani-235"><defs><marker id="ph" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><circle cx="22" cy="86" r="9" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="34" y1="86" x2="62" y2="86" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#ph)"/><circle cx="104" cy="86" r="38" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="16.8" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="109.232" y="81.4">235</tspan><tspan x="109.232" y="101">92</tspan></text><text x="111.232" y="94" font-size="28" fill="#1c2540" font-weight="700">U</text><line x1="146" y1="72" x2="178" y2="46" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph)"/><line x1="146" y1="100" x2="178" y2="126" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph)"/><circle cx="206" cy="36" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="206.968" y="32.1">144</tspan><tspan x="206.968" y="47.5">56</tspan></text><text x="208.968" y="42" font-size="22" fill="#1c2540" font-weight="700">Ba</text><circle cx="206" cy="136" r="24" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="201.312" y="132.1">89</tspan><tspan x="201.312" y="147.5">36</tspan></text><text x="203.312" y="142" font-size="22" fill="#1c2540" font-weight="700">Kr</text><circle cx="284" cy="64" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="88" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="112" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="146" y1="88" x2="262" y2="88" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#ph)"/><text x="284" y="140" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="400">3n</text><path d="M60 20 q8 -8 16 0 t16 0 t16 0" fill="none" stroke="#b3261e" stroke-width="2.4"/><text x="40" y="28" fill="#b3261e" font-size="22" text-anchor="middle" font-weight="700">γ</text></svg></div>
+    <div class="ben">
+      <p>Hạt nhân rất <b class="o">nặng</b> hấp thụ <b class="o">nơtron</b> chậm rồi vỡ thành <b class="o">hai</b> mảnh; mỗi lần thêm <b class="o">2</b>–<b class="o">3</b> nơtron và tia <b class="o">$\gamma$</b>.</p>
+      <p>Toả vì hai mảnh bền hơn: $E_{lkr}$ <b class="o">tăng</b>, tổng khối lượng nghỉ <b class="o">giảm</b>.</p>
+      <p>Một phân hạch cỡ <b class="o">200</b> MeV</p>
+      <p class="nho">Phản ứng trong hình toả 173 MeV; trung bình mọi cặp mảnh ≈ 200 MeV.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Câu 3</span><span>phút 9–15</span><span class="tap">tr.27 · ô 27·3 · Câu 3</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 3. Phân hạch U-235 toả năng lượng vì:</p>
+    <ol class="opt lo">
+      <li data-dung><b>A.</b> Tổng khối lượng nghỉ sau phản ứng nhỏ hơn trước</li>
+      <li><b>B.</b> Nơtron bị hấp thụ, thành nhiệt</li>
+      <li><b>C.</b> Hai hạt nhân urani kết hợp lại</li>
+      <li><b>D.</b> Êlectron chuyển mức, phát sáng</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden><p><b>A.</b> B: nơtron chậm chỉ mồi · C: kết hợp là chiều ngược (nhiệt hạch) · D: chỉ cỡ eV, quá nhỏ.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Dây chuyền · hệ số k</span><span>phút 9–15</span><span class="tap">tr.26 · ô 26·2</span></div>
+  <div class="hai">
+    <div class="fig f1" style="width:62%"><svg viewBox="0 0 440 298" role="img" aria-label="Đồ thị số neutron theo thế hệ, cùng xuất phát 4 neutron: k bằng 1,5 tăng 4, 6, 9; k bằng 1 giữ 4; k bằng 0,5 giảm 4, 2, 1"><defs><marker id="f3-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f3-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f3-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f3-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="22" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">Số neutron theo từng thế hệ</text><line x1="60" y1="220" x2="300" y2="220" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="60" y1="220" x2="60" y2="56" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="60" y1="56" x2="60" y2="48" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M55.5,55.8 L60.0,48.0 L64.5,55.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="300" y1="220" x2="306" y2="220" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M298.2,215.5 L306.0,220.0 L298.2,224.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="70" y="54" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">số neutron</text><line x1="56" y1="188" x2="60" y2="188" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="60" y1="188" x2="290" y2="188" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity="0.25"/><text x="50" y="193" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">2</text><line x1="56" y1="156" x2="60" y2="156" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="60" y1="156" x2="290" y2="156" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity="0.25"/><text x="50" y="161" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">4</text><line x1="56" y1="124" x2="60" y2="124" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="60" y1="124" x2="290" y2="124" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity="0.25"/><text x="50" y="129" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">6</text><line x1="56" y1="92" x2="60" y2="92" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="60" y1="92" x2="290" y2="92" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity="0.25"/><text x="50" y="97" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">8</text><text x="50" y="225" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">0</text><line x1="110" y1="220" x2="110" y2="224" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="110" y="241" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">1</text><line x1="200" y1="220" x2="200" y2="224" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="200" y="241" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">2</text><line x1="290" y1="220" x2="290" y2="224" stroke="currentColor" stroke-width="1.6" opacity="1"/><text x="290" y="241" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">3</text><text x="316" y="241" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">thế hệ</text><polyline fill="none" stroke="#f87171" stroke-width="2.6" points="110,156 200,124 290,76"/><circle cx="110" cy="156" r="4" fill="#f87171"/><circle cx="200" cy="124" r="4" fill="#f87171"/><circle cx="290" cy="76" r="4" fill="#f87171"/><polyline fill="none" stroke="#34d399" stroke-width="2.6" points="110,156 200,156 290,156"/><circle cx="110" cy="156" r="4" fill="#34d399"/><circle cx="200" cy="156" r="4" fill="#34d399"/><circle cx="290" cy="156" r="4" fill="#34d399"/><polyline fill="none" stroke="#38bdf8" stroke-width="2.6" points="110,156 200,188 290,204"/><circle cx="110" cy="156" r="4" fill="#38bdf8"/><circle cx="200" cy="188" r="4" fill="#38bdf8"/><circle cx="290" cy="204" r="4" fill="#38bdf8"/><circle cx="110" cy="156" r="4.5" fill="currentColor"/><text x="316" y="81" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">k = 1,5</text><text x="316" y="99" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">tăng nhanh</text><text x="316" y="152" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">k = 1</text><text x="316" y="170" fill="#34d399" font-size="14" font-weight="600" text-anchor="start">giữ nguyên</text><text x="316" y="196" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">k = 0,5</text><text x="316" y="214" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">tắt dần</text><text x="14" y="268" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">Mỗi chấm: số neutron của một thế hệ.</text><text x="14" y="288" fill="currentColor" font-size="14" font-weight="500" text-anchor="start">k = số neutron thế hệ sau ÷ thế hệ trước.</text></svg></div>
+    <div class="ben">
+      <p>$k=$ <b class="o">$N_{\text{sau}}$</b> / <b class="o">$N_{\text{trước}}$</b></p>
+      <p>$k&lt;1$: <b class="o">tắt dần</b></p>
+      <p>$k=1$: <b class="o">tự duy trì</b></p>
+      <p>$k&gt;1$: <b class="o">tăng nhanh</b></p>
+      <p>Khối lượng tới hạn: lượng nhiên liệu <b class="o">tối thiểu</b> để giữ $k\ge1$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Câu 4</span><span>phút 9–15</span><span class="tap">tr.27 · ô 27·3 · Câu 4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 4. Ba thế hệ nơtron liên tiếp: 5 000; 4 000; 3 200. Hệ số nhân và dây chuyền?</p>
+    <ol class="opt lo hai-cot">
+      <li data-dung><b>A.</b> $k=0{,}8$: tắt dần</li>
+      <li><b>B.</b> $k=1{,}25$: tăng nhanh</li>
+      <li><b>C.</b> $k=1$: tự duy trì</li>
+      <li><b>D.</b> $k=0{,}2$: tắt dần</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở đáp án</button>
+    <div class="an" id="a4" hidden><p><b>A.</b> $4\,000/5\,000=3\,200/4\,000=0{,}8&lt;1$. B: chia ngược · C: "giảm đều" chưa phải $k=1$ · D: lấy phần giảm $1\,000/5\,000$.</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Lò phản ứng + clip ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Lò phản ứng</span><span>phút 15–21</span><span class="tap">tr.26 · ô 26·3</span></div>
+  <div class="hai">
+    <div class="fig flo"><svg viewBox="0 0 330 148" role="img" aria-label="Sơ đồ nhà máy điện hạt nhân"><rect x="2" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="37" y="92" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Lò</text><line x1="72" y1="86" x2="74" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M74 79 L85 86 L74 93 z" fill="#1c2540"/><rect x="84" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="119" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Trao đổi</text><text x="119" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nhiệt</text><line x1="154" y1="86" x2="156" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M156 79 L167 86 L156 93 z" fill="#1c2540"/><rect x="166" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="201" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Tua</text><text x="201" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">bin</text><line x1="236" y1="86" x2="238" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M238 79 L249 86 L238 93 z" fill="#1c2540"/><rect x="248" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="283" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Máy</text><text x="283" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">phát</text><rect x="20" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><rect x="38" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="60" y="40" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">thanh điều khiển</text><text x="326" y="140" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700">điện</text></svg></div>
+    <div class="ben">
+      <p>Thanh điều khiển (bo, cađimi) <b class="o">hấp thụ</b> nơtron:<br>đẩy vào ⇒ $k$ <b class="o">giảm</b>; kéo ra ⇒ $k$ <b class="o">tăng</b>.</p>
+      <p>Giữ $k=$ <b class="o">1</b> để công suất không đổi.</p>
+      <p>Chất tải nhiệt đưa nhiệt tới <b class="o">bộ trao đổi nhiệt</b> rồi <b class="o">tua bin</b>.</p>
+      <p class="nho">Nhiên liệu: urani làm giàu (vài % U-235).</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Thí nghiệm dựng lại</span><span>phút 15–21 · 42 giây + 3 lần dừng</span><span class="tap">tr.26 · ô 26·3</span></div>
+  <div class="vg" data-bat="0.4" data-het="41.8">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.webp" preload="metadata" playsinline title="Che dần bàn ghim"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: che bớt lưới ghim thì dây chuyền đổi thế nào?</p><p class="nho">Clip dừng 3 lần cho lớp đoán.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Ghim đổ làm đổ ghim bên cạnh,<br>như nơtron mồi phân hạch tiếp theo.</p><p class="hoi">Tấm bìa che bớt lưới ghim.</p></div>
+      <div class="buoc" data-t="9.0" data-dung><p class="hoi">Lấy bìa che 30 % rồi 60 % lưới ghim. Số ghim đổ sẽ:</p>
+        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> Giảm theo đúng tỉ lệ phần bị che</li><li><b>B.</b> Gần như không đổi cho tới khi che kín</li><li data-dung><b>C.</b> Giảm mạnh, có mức che làm dây chuyền tắt sớm</li><li><b>D.</b> Tăng lên vì bi chỉ rơi vào phần còn hở</li></ol></div>
+      <div class="buoc" data-t="9.1"><p class="hoi">Thả bi ở ba mức che, đếm ghim đổ.</p></div>
+      <div class="buoc" data-t="19.0" data-dung><table class="bang"><tr><td>che 0 %</td><td class="ns">36 · 34 · 37</td></tr><tr><td>che 30 %</td><td class="ns">12 · 10 · 11</td></tr><tr><td>che 60 %</td><td class="ns">4 · 5 · 3</td></tr></table><p class="hoi">Che 30 % mà còn chỉ khoảng 1/3. Đáp án dự đoán? Vì sao giảm mạnh thế?</p></div>
+      <div class="buoc" data-t="19.1"><p class="so-lon">C: giảm mạnh, tắt sớm</p><p class="hoi">Ghim bị che còn cắt mọi nhánh lan tiếp từ nó: $k$ tụt dưới 1.</p></div>
+      <div class="buoc" data-t="33.5" data-dung><p class="so-lon">"Thanh điều khiển làm nguội lò."</p><p class="hoi">Đúng hay sai? Vì sao?</p></div>
+      <div class="buoc" data-t="33.6"><p class="hoi">Sai: thanh hấp thụ nơtron, giảm $k$.</p></div>
+      <div class="buoc" data-t="41.8"><p class="so-lon">Đẩy thanh vào: $k$ giảm · kéo ra: $k$ tăng</p><p class="hoi">Lò chạy ổn định: giữ $k=1$.</p><p class="nho">Cảnh cuối clip (ghim 3 cm) không chiếu: cần bảng bàn ghim trên web.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 5. Nhiệt hạch, bài toán mẫu ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Nhiệt hạch</span><span>phút 21–27</span><span class="tap">tr.26 · ô 26·4</span></div>
+  <div class="giua">
+    <div class="fig fnh"><svg viewBox="0 0 312 100" role="img" aria-label="Phản ứng nhiệt hạch đơteri với triti"><defs><marker id="nh" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><circle cx="34" cy="50" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="23.656" y="46.1">2</tspan><tspan x="23.656" y="61.5">1</tspan></text><text x="25.656" y="56" font-size="22" fill="#1c2540" font-weight="700">H</text><text x="76" y="58" fill="#1c2540" font-size="26" text-anchor="middle" font-weight="400">+</text><circle cx="118" cy="50" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="107.656" y="46.1">3</tspan><tspan x="107.656" y="61.5">1</tspan></text><text x="109.656" y="56" font-size="22" fill="#1c2540" font-weight="700">H</text><line x1="152" y1="50" x2="178" y2="50" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nh)"/><circle cx="214" cy="50" r="30" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="14.399999999999999" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="202.352" y="45.2">4</tspan><tspan x="202.352" y="62">2</tspan></text><text x="204.352" y="56" font-size="24" fill="#1c2540" font-weight="700">He</text><text x="252" y="58" fill="#1c2540" font-size="26" text-anchor="middle" font-weight="400">+</text><circle cx="286" cy="50" r="10" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><text x="286" y="92" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="400">n</text></svg></div>
+    <p>Hạt nhân rất <b class="o">nhẹ</b> kết hợp thành hạt nhân <b class="o">nặng hơn</b>.</p>
+    <p class="nho">D + T → He + n, toả cỡ 17,6 MeV</p>
+    <p>Điều kiện: <b class="o">$10^8$–$10^9$</b> K, mật độ <b class="o">đủ lớn</b>, duy trì <b class="o">đủ lâu</b>.</p>
+    <p>Nơi có nhiệt hạch tự nhiên: <b class="o">Mặt trời, các sao</b>.</p>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Mặt trời là lò nhiệt hạch</span><span>phút 21–27</span><span class="tap">tr.29 · hình chu trình p–p</span></div>
+  <div class="fig f2"><svg viewBox="0 0 440 212" role="img" aria-label="a) Bốn proton kết hợp thành hạt nhân heli gồm 2 proton và 2 neutron, phát ra 2 positron và 2 neutrino, toả 26,7 MeV. b) Mặt trời: lõi khoảng 15 triệu K, lực hấp dẫn ép khối khí vào lõi"><defs><marker id="f4-r" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f87171"/></marker><marker id="f4-b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#38bdf8"/></marker><marker id="f4-o" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#fb923c"/></marker><marker id="f4-g" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#34d399"/></marker></defs><text x="14" y="22" fill="currentColor" font-size="15" font-weight="700" text-anchor="start">a) Phản ứng nhiệt hạch</text><circle cx="24" cy="84" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="24" y="89" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><circle cx="50" cy="84" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="50" y="89" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><circle cx="24" cy="110" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="24" y="115" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><circle cx="50" cy="110" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="50" y="115" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><line x1="68" y1="97" x2="108" y2="97" stroke="#f87171" stroke-width="2.4"/><path d="M99.2,91.9 L108.0,97.0 L99.2,102.1" fill="none" stroke="#f87171" stroke-width="2.4" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="88" y="62" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">kết hợp</text><circle cx="146" cy="97" r="31" fill="rgba(52,211,153,.12)" stroke="#34d399" stroke-width="2"/><circle cx="134" cy="85" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="134" y="90" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><circle cx="158" cy="85" r="11" fill="rgba(148,163,184,.25)" stroke="#94a3b8" stroke-width="1.8"/><text x="158" y="90" fill="#94a3b8" font-size="13" font-weight="700" text-anchor="middle">n</text><circle cx="134" cy="109" r="11" fill="rgba(148,163,184,.25)" stroke="#94a3b8" stroke-width="1.8"/><text x="134" y="114" fill="#94a3b8" font-size="13" font-weight="700" text-anchor="middle">n</text><circle cx="158" cy="109" r="11" fill="rgba(56,189,248,.22)" stroke="#38bdf8" stroke-width="1.8"/><text x="158" y="114" fill="#38bdf8" font-size="13" font-weight="700" text-anchor="middle">p</text><text x="146" y="150" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">He-4 = 2p + 2n</text><line x1="179" y1="84" x2="198" y2="70" stroke="#38bdf8" stroke-width="2.2"/><path d="M188.6,71.1 L198.0,70.0 L194.2,78.7" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="202" y="74" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">2e<tspan baseline-shift="super" font-size="11">+</tspan></text><line x1="179" y1="110" x2="198" y2="124" stroke="#38bdf8" stroke-width="2.2"/><path d="M194.2,115.3 L198.0,124.0 L188.6,122.9" fill="none" stroke="#38bdf8" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="202" y="130" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="start">2 neutrino</text><text x="14" y="182" fill="#fb923c" font-size="14" font-weight="700" text-anchor="start">toả 26,7 MeV</text><text x="14" y="202" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">điện tích: 4 = 2 (He) + 2 (e⁺)</text><text x="366" y="22" fill="currentColor" font-size="15" font-weight="700" text-anchor="middle">b) Mặt trời</text><circle cx="366" cy="100" r="42" fill="rgba(251,146,60,.16)" stroke="#fb923c" stroke-width="2"/><line x1="409.4" y1="118.0" x2="417.7" y2="121.4" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="384.0" y1="143.4" x2="387.4" y2="151.7" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="348.0" y1="143.4" x2="344.6" y2="151.7" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="322.6" y1="118.0" x2="314.3" y2="121.4" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="322.6" y1="82.0" x2="314.3" y2="78.6" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="348.0" y1="56.6" x2="344.6" y2="48.3" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="384.0" y1="56.6" x2="387.4" y2="48.3" stroke="#fb923c" stroke-width="2.4" opacity="1"/><line x1="409.4" y1="82.0" x2="417.7" y2="78.6" stroke="#fb923c" stroke-width="2.4" opacity="1"/><circle cx="366" cy="100" r="16" fill="rgba(251,146,60,.40)" stroke="#fb923c" stroke-width="1.8"/><text x="366" y="105" fill="currentColor" font-size="13" font-weight="700" text-anchor="middle">lõi</text><line x1="393.6" y1="127.6" x2="380.8" y2="114.8" stroke="#f87171" stroke-width="2.2"/><path d="M383.3,124.0 L380.8,114.8 L390.0,117.3" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="338.4" y1="127.6" x2="351.2" y2="114.8" stroke="#f87171" stroke-width="2.2"/><path d="M342.0,117.3 L351.2,114.8 L348.7,124.0" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="338.4" y1="72.4" x2="351.2" y2="85.2" stroke="#f87171" stroke-width="2.2"/><path d="M348.7,76.0 L351.2,85.2 L342.0,82.7" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="393.6" y1="72.4" x2="380.8" y2="85.2" stroke="#f87171" stroke-width="2.2"/><path d="M390.0,82.7 L380.8,85.2 L383.3,76.0" fill="none" stroke="#f87171" stroke-width="2.2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="366" y="182" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">lõi ~15 triệu K</text><text x="366" y="202" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">hấp dẫn ép vào lõi</text></svg></div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Câu 5</span><span>phút 21–27</span><span class="tap">tr.27 · ô 27·3 · Câu 5</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 5. Lò nhiệt hạch trên Trái Đất cần nhiệt độ cỡ $10^8$ K chủ yếu để:</p>
+    <ol class="opt lo" style="font-size:.88em">
+      <li data-dung><b>A.</b> Hạt nhân đủ động năng thắng lực đẩy điện giữa chúng</li>
+      <li><b>B.</b> Nơtron chậm lại, dễ bị hấp thụ</li>
+      <li><b>C.</b> Nhiên liệu vượt khối lượng tới hạn</li>
+      <li><b>D.</b> Các hạt nhân nhẹ tự vỡ ra như chất phóng xạ</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>A.</b> B, C là chuyện của phân hạch · D: nhiệt hạch là kết hợp, không phải vỡ ra.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Câu 6</span><span>phút 21–27</span><span class="tap">tr.27 · ô 27·3 · Câu 6</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 6. Phân hạch khác nhiệt hạch ở chỗ:</p>
+    <ol class="opt lo" style="font-size:.84em">
+      <li data-dung><b>A.</b> Phân hạch: hạt nhân nặng vỡ ra; nhiệt hạch: hạt nhân nhẹ kết hợp lại</li>
+      <li><b>B.</b> Phân hạch toả năng lượng, còn nhiệt hạch thu năng lượng</li>
+      <li><b>C.</b> Phân hạch cần nhiệt độ cao, nhiệt hạch ở nhiệt độ thường</li>
+      <li><b>D.</b> Phân hạch chỉ xảy ra trong lòng sao, nhiệt hạch chỉ xảy ra trong lò phản ứng</li>
+    </ol>
+    <button class="mo" data-mo="a6">Mở đáp án</button>
+    <div class="an" id="a6" hidden><p><b>A.</b> Cả hai đều toả (B sai) · C, D: đổi chỗ điều kiện và nơi xảy ra.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · đề + phân tích đề</span></div>
+  <p>Phản ứng ở Tự kiểm tra 1. $m_{\mathrm U}=235{,}0439$; $m_{\mathrm n}=1{,}0087$; $m_{\mathrm{Ba}}=143{,}9230$; $m_{\mathrm{Kr}}=88{,}9176$ (u); $N_A=6{,}02\cdot10^{23}$; than $2{,}7\cdot10^{7}$ J/kg.</p>
+  <p class="nho">a) $x$ · b) $\Delta m$, $W$ (MeV) · c) 1 g U-235 toả bao nhiêu J? · d) bằng mấy kg than?</p>
+  <table class="bang gon">
+    <thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+    <tbody>
+      <tr><td>"U-235 hấp thụ nơtron chậm"</td><td>$A=235;\ Z=92$</td><td>bảo toàn $A$, $Z$</td></tr>
+      <tr><td>"khối lượng các hạt"</td><td class="ns"><span class="an-o" data-o="b5">$m_{\mathrm U}, m_{\mathrm n}, m_{\mathrm{Ba}}, m_{\mathrm{Kr}}$</span></td><td class="ns"><span class="an-o" data-o="b5">$W=\Delta m\,c^2$</span></td></tr>
+      <tr><td>"một gam U-235"</td><td class="ns"><span class="an-o" data-o="b5">$m=1$ g; $M=235$ g/mol</span></td><td class="ns"><span class="an-o" data-o="b5">$N=\frac{m}{M}N_A$</span></td></tr>
+      <tr><td>"than toả $2{,}7\cdot10^{7}$ J/kg"</td><td class="ns"><span class="an-o" data-o="b5">năng suất toả nhiệt</span></td><td class="ns"><span class="an-o" data-o="b5">$m_{\text{than}}=W/q$</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b5">Mở: bảng phân tích đề</button>
+</section>
+
+<section class="man" id="m5f">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · Giải a) b) c) d)</span></div>
+  <div class="giua">
+    <div class="an nhap"><p><b>a)</b> $x=3$ (Tự kiểm tra 1) · điện tích $92=56+36$ ✓</p></div>
+    <button class="mo" data-mo="m5g1">Mở b)</button>
+    <div class="an" id="m5g1" hidden><p>$\Delta m=236{,}0526-235{,}8667=0{,}1859$ u · $W=0{,}1859\times931{,}5\approx173$ MeV</p></div>
+    <button class="mo" data-mo="m5g2">Mở c) d)</button>
+    <div class="an" id="m5g2" hidden><p>$N=\frac{1}{235}\cdot6{,}02\cdot10^{23}\approx2{,}56\cdot10^{21}$ · $W\approx2{,}56\cdot10^{21}\cdot173{,}2\cdot1{,}6\cdot10^{-13}\approx7{,}1\cdot10^{10}$ J</p>
+      <p>Than: $7{,}1\cdot10^{10}/2{,}7\cdot10^{7}\approx2{,}6\cdot10^{3}$ kg ≈ 2,6 tấn</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5g">
+  <div class="top"><span class="so">5/6 · Câu 7 · đổi số</span><span>phút 21–27</span><span class="tap">tr.27 ô 27·3 · tr.28 "Mở rộng" bước 2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 7. U-235 phân hạch toả trung bình $200$ MeV. Số phân hạch cần để toả ra $1$ J là:</p>
+    <ol class="opt lo hang">
+      <li data-dung><b>A.</b> $3{,}1\cdot10^{10}$</li>
+      <li><b>B.</b> $3{,}1\cdot10^{13}$</li>
+      <li><b>C.</b> $1{,}25\cdot10^{10}$</li>
+      <li><b>D.</b> $6{,}25\cdot10^{12}$</li>
+    </ol>
+    <button class="mo" data-mo="a7">Mở đáp án</button>
+    <div class="an" id="a7" hidden><p><b>A.</b> $200\cdot1{,}6\cdot10^{-13}=3{,}2\cdot10^{-11}$ J; $1/3{,}2\cdot10^{-11}\approx3{,}1\cdot10^{10}$. Ghi luôn bước 2 ở tr.28.</p>
+      <p class="nho">B: lấy 1 MeV $=1{,}6\cdot10^{-16}$ J · C: lấy 500 MeV · D: quên nhân 200.</p></div>
+  </div>
+</section>
+
+<!-- ================= 6. Bẫy, trả bài, quay lại, đề 1193 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Ba cái bẫy</span><span>phút 27–30 · 20 giây</span><span class="tap">tr.27 · ô 27·1</span></div>
+  <div class="giua">
+    <p class="hoi">Đánh dấu ☐ bẫy em từng sập:</p>
+    <ul>
+      <li><b>"U-235 tự vỡ như chất phóng xạ."</b> Phân hạch cần <b>nơtron</b> bắn vào, điều khiển được bằng $k$.</li>
+      <li><b>"Khối lượng được bảo toàn."</b> Khối lượng nghỉ <b>không</b> bảo toàn: phần hụt là năng lượng.</li>
+      <li><b>"Phân hạch và nhiệt hạch là một."</b> Ngược chiều: nặng vỡ ra – nhẹ ghép lại.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–30 · viết 1 phút rồi mới mở</span><span class="tap">tr.27 · ô 27·2 · câu 3, 4</span></div>
+  <div class="giua">
+    <p class="hoi">3. Phân hạch là gì? Vì sao phân hạch U-235 toả năng lượng?</p>
+    <button class="mo" data-mo="t3">Mở câu 3</button>
+    <div class="an" id="t3" hidden><p>Hạt nhân rất nặng hấp thụ nơtron, vỡ thành hai mảnh nhẹ hơn. Hai mảnh bền hơn ($E_{lkr}$ tăng) nên tổng khối lượng nghỉ giảm.</p></div>
+    <p class="hoi">4. Hệ số nhân nơtron $k$ là gì? Ý nghĩa ba trường hợp?</p>
+    <button class="mo" data-mo="t4">Mở câu 4</button>
+    <div class="an" id="t4" hidden><p>$k=N_{\text{sau}}/N_{\text{trước}}$ · $k&lt;1$ tắt dần · $k=1$ tự duy trì (công suất không đổi) · $k&gt;1$ tăng nhanh.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Quay lại nhà máy</span><span>phút 29–30</span><span class="tap">tr.25 · ô 25·3</span></div>
+  <div class="hai">
+    <div class="fig fph"><svg viewBox="0 0 310 170" role="img" aria-label="Phân hạch urani-235"><defs><marker id="ph2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><circle cx="22" cy="86" r="9" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="34" y1="86" x2="62" y2="86" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#ph2)"/><circle cx="104" cy="86" r="38" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="16.8" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="109.232" y="81.4">235</tspan><tspan x="109.232" y="101">92</tspan></text><text x="111.232" y="94" font-size="28" fill="#1c2540" font-weight="700">U</text><line x1="146" y1="72" x2="178" y2="46" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph2)"/><line x1="146" y1="100" x2="178" y2="126" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph2)"/><circle cx="206" cy="36" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="206.968" y="32.1">144</tspan><tspan x="206.968" y="47.5">56</tspan></text><text x="208.968" y="42" font-size="22" fill="#1c2540" font-weight="700">Ba</text><circle cx="206" cy="136" r="24" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="201.312" y="132.1">89</tspan><tspan x="201.312" y="147.5">36</tspan></text><text x="203.312" y="142" font-size="22" fill="#1c2540" font-weight="700">Kr</text><circle cx="284" cy="64" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="88" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="112" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="146" y1="88" x2="262" y2="88" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#ph2)"/><text x="284" y="140" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="400">3n</text><path d="M60 20 q8 -8 16 0 t16 0 t16 0" fill="none" stroke="#b3261e" stroke-width="2.4"/><text x="40" y="28" fill="#b3261e" font-size="22" text-anchor="middle" font-weight="700">γ</text></svg></div>
+    <div class="ben">
+      <p class="nhin">Không có lửa, nhiệt lấy từ đâu?</p>
+      <button class="mo" data-mo="a8">Mở: năng lượng đến từ…</button>
+      <div class="an" id="a8" hidden><p><b>B.</b> Hạt nhân urani vỡ ra; phần khối lượng nghỉ hụt thành năng lượng $W=\Delta m\,c^2$.</p>
+        <p class="nho">A: hoá học chỉ đụng lớp êlectron, toả ít hơn hàng triệu lần · C, D: không phải nguồn nhiệt của lò.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6d">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm …/19 cạnh ô 27·3</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1193" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM23 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM28 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM0 10h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM1 11h1v1h-1zM3 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM30 13h1v1h-1zM0 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM20 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM0 17h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM1 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM13 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM23 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM32 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM16 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM29 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM3 21h1v1h-1zM5 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM23 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM0 23h1v1h-1zM5 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM11 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM14 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM11 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM16 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM23 30h1v1h-1zM25 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM31 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM14 31h1v1h-1zM19 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM24 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1193</b> · 19 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1193 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6e">
+  <div class="top"><span class="so">Về nhà theo Tập bài 19</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.25</b> ô 25·3 dòng "điều em hiểu sai" · ô 25·1 đánh dấu mục tiêu</li>
+    <li><b>tr.27</b> ô 27·2 câu 1, 2, 5, 6 (nói cho người nhà nghe) · ô 27·3 cột "Đúng?" còn trống</li>
+    <li><b>tr.28</b> phần Giải a)–d) chép lại · "Mở rộng" bước 3</li>
+    <li><b>tr.29</b> ô Đề BTVN (thầy giao trên web) · ô 29 Mang về · Thử thách ★ → ★★★</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

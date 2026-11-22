@@ -1,11 +1,11 @@
-# Clip: tn-l10-sai-so-02 - Mot thuoc ke, hai vat do (1/11/2026)
+# Clip: tn-l10-sai-so-02 - Mot thuoc ke, hai vat do (1/11/2026; dung lai 22/11/2026: ΔA = 1 DCNN theo bang thay chot)
 # So lieu lay nguyen tu content/thi-nghiem/tn-l10-sai-so-02.json:
-#   so_lieu_mau: Tam bia d = 250,0 mm, ΔA = 0,5 mm ; Cuc tay d = 12,0 mm, ΔA = 0,5 mm (thuoc vach 1 mm, do 1 lan).
-#   mo_hinh: ΔA = DCNN/2 ; δA = ΔA/d·100 % ; gia_thiet: do 1 lan, chi sai so dung cu, dau vat dung vach.
-#   tham_so d: 5..300 mm -> cau hoi chot dung quyen vo 5 mm (δ = 10 %, chua tung hien).
+#   so_lieu_mau: Tam bia d = 250 mm, ΔA = 1 mm ; Cuc tay d = 12 mm, ΔA = 1 mm (thuoc vach 1 mm, do 1 lan).
+#   mo_hinh: ΔA = DCNN (doc hai dau, moi dau DCNN/2) ; δA = ΔA/d·100 % ; gia_thiet: do 1 lan, chi sai so dung cu, dau vat dung vach.
+#   tham_so d: 5..300 mm -> cau hoi chot dung quyen vo 5 mm (δ = 20 %, chua tung hien).
 # Cau hoi ngay SAU hop trong bai (Cau 6: phep do nao chinh xac hon) -> clip KHONG tinh δ, de "= ?".
 # Hinh dung ti le: thuoc tong 3,4 px/mm (bia 850 px, tay 41 px); khung phong to 56 px/mm cho CA HAI vat
-#   -> dai ±0,5 mm rong bang nhau o hai lan doc.
+#   -> dai ±0,5 mm moi dau rong bang nhau o hai lan doc; cuc tay thay ca dau 0.
 # Canh: Du doan (ΔA hai phep do so nhau the nao, K10: chi cau hoi + hinh) -> Doc thuoc (phong to dau bia, dau tay)
 #       -> Rut ra (δA = ΔA/A, the so "= ?") -> Chua noi duoc gi -> Bay (vat nho thi it sai so) -> Chot + cau hoi.
 from engine import *
@@ -65,13 +65,16 @@ def zoom(d, key, m0, edge_k=0.0, band_k=0.0, alpha=1.0, box=ZB, z=Z, lab=True):
         ex = xf(L); yy = ry - hh - 10
         while yy < ry + 80:
             d.line([(ex, yy), (ex, min(yy + 14, ry + 80))], fill=A(NAVY, alpha * edge_k), width=4); yy += 24
-    if band_k > 0:                                       # dai ±0,5 mm quanh mep
-        ex = xf(L)
-        d.rectangle([ex - 0.5 * z, ry - hh - 14, ex + 0.5 * z, ry + 150 - 2], fill=A(BAND, 0.28 * alpha * band_k),
-                    outline=A(BAND, alpha * band_k), width=3)
+    if band_k > 0:                                       # dai ±0,5 mm quanh moi dau vat thay duoc trong khung
+        ends = [L] + ([0.0] if m0 < -0.6 else [])
+        for e in ends:
+            ex = xf(e)
+            d.rectangle([ex - 0.5 * z, ry - hh - 14, ex + 0.5 * z, ry + 150 - 2], fill=A(BAND, 0.28 * alpha * band_k),
+                        outline=A(BAND, alpha * band_k), width=3)
         if lab:
-            text(d, (ex - 0.5 * z - 6, ry - hh - 40), "−0,5", 40, BAND, anchor="rm", alpha=alpha * band_k)
-            text(d, (ex + 0.5 * z + 6, ry - hh - 40), "+0,5", 40, BAND, anchor="lm", alpha=alpha * band_k)
+            for e in ends:
+                ex = xf(e)
+                text(d, (ex, ry - hh - 40), "±0,5", 44, BAND, alpha=alpha * band_k)
     return xf
 
 # ---------------- canh 1: du doan ----------------
@@ -113,13 +116,15 @@ def s_do(img, d, t, sc):
         ek = appear(t, P["edge1"] if key == "bia" else P["edge2"], 0.4)
         bk = appear(t, P["band1"] if key == "bia" else P["band2"], 0.4)
         zoom(d, key, m0, edge_k=ek, band_k=bk, alpha=kz)
-        if bk > 0: text(d, (W / 2, 1055), "ΔA = ± nửa vạch = 0,5 mm", 40, BAND, alpha=bk)
+        if bk > 0:
+            s_ = "Đầu này ±0,5; đầu 0 cũng ±0,5" if key == "bia" else "0,5 + 0,5 → ΔA = 1 mm"
+            text(d, (W / 2, 1060), s_, 46, BAND, alpha=bk)
     # bang ket qua
     k1 = appear(t, P["row1"], 0.4)
     if k1 > 0:
         card(d, (60, 1110, 1020, 1310), fill=WHITE, outline=NAVY, w=4)
-        for i, (nm, val, at) in enumerate((("Tấm bìa", "(250,0 ± 0,5) mm", P["row1"]),
-                                           ("Cục tẩy", "(12,0 ± 0,5) mm", P["row2"]))):
+        for i, (nm, val, at) in enumerate((("Tấm bìa", "(250 ± 1) mm", P["row1"]),
+                                           ("Cục tẩy", "(12 ± 1) mm", P["row2"]))):
             kk = appear(t, at, 0.4)
             if kk <= 0: continue
             yy = 1165 + i * 90
@@ -127,7 +132,7 @@ def s_do(img, d, t, sc):
             text(d, (960, yy), val, 46, INK, anchor="rm", alpha=kk)
     kb = appear(t, P["badge"], 0.4)
     if kb > 0:
-        s_ = "ĐÁP ÁN · Bằng nhau, cùng 0,5 mm"; pw = tw(d, s_, F(44)) + 70
+        s_ = "ĐÁP ÁN · Bằng nhau, cùng 1 mm"; pw = tw(d, s_, F(44)) + 70
         card(d, (W / 2 - pw / 2, 1370, W / 2 + pw / 2, 1470), fill=A((220, 252, 231), kb), outline=A(GREEN, kb), r=26, w=4)
         text(d, (W / 2, 1420), s_, 44, GREEN, alpha=kb)
 
@@ -135,7 +140,7 @@ def s_do(img, d, t, sc):
 def s_rutra(img, d, t, sc):
     M = sc["M"]; a = appear(t, 0.1)
     card(d, (60, 290, 1020, 470), fill=A(WHITE, a), outline=A(NAVY, a), w=4)
-    text(d, (W / 2, 380), "Cùng ΔA = 0,5 mm", 54, INK, alpha=a)
+    text(d, (W / 2, 380), "Cùng ΔA = 1 mm", 54, INK, alpha=a)
     k = appear(t, M[0] + 0.6, 0.4)
     if k <= 0: return
     card(d, (60, 520, 1020, 1330), fill=A(WHITE, k), outline=A(GREEN, k), w=5)
@@ -144,7 +149,7 @@ def s_rutra(img, d, t, sc):
     text(d, (W / 2, 770), "δA: sai số tỉ đối", 42, INK, alpha=k2)
     text(d, (W / 2, 840), "A: giá trị đo", 42, INK, alpha=k2)
     d.line([(120, 920), (960, 920)], fill=A(LIGHT, k2), width=3)
-    for i, (nm, num, col) in enumerate((("Tấm bìa", "0,5 / 250,0", CARD_D), ("Cục tẩy", "0,5 / 12,0", ERA_D))):
+    for i, (nm, num, col) in enumerate((("Tấm bìa", "1 / 250", CARD_D), ("Cục tẩy", "1 / 12", ERA_D))):
         kk = appear(t, M[0] + 2.8 + 1.0 * i, 0.4)
         if kk <= 0: continue
         yy = 1030 + i * 160
@@ -185,7 +190,7 @@ def s_bay(img, d, t, sc):
     if kb > 0:
         for bx0, L, m0 in ((BZ_L[0], 250.0, 246.0), (BZ_R[0], 12.0, 8.0)):
             ex = bx0 + (L - m0) * Z
-            text(d, (ex, 1125), "±0,5 mm", 40, BAND, alpha=kb)
+            text(d, (ex, 1125), "mỗi đầu ±0,5", 44, BAND, alpha=kb)
     kc = appear(t, M[1] + 2.0, 0.4)
     if kc > 0:
         ctext(d, 1260, "✓ ΔA do thước, không do vật", 46, GREEN, alpha=kc)
@@ -216,7 +221,7 @@ CLIP = dict(id="tn-l10-sai-so-02", header="VẬT LÍ 10 · THÍ NGHIỆM", cues=
    ("Dừng video, tự đoán.", 5.6)]),
  dict(key="do", title="Đọc thước", draw=s_do, tail=0.3, caps=[
    ("Mép bìa trùng vạch 250.", 3.2),
-   ("Mép thật nằm trong dải cam.", 3.4),
+   ("Mỗi đầu sai nửa vạch.", 3.4),
    ("Cục tẩy, cùng độ phóng to.", 4.6)]),
  dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.3, caps=[
    ("Chính xác như nhau chưa?", 4.0),

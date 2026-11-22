@@ -5,7 +5,7 @@
 // một điện trở, thử thách ⭐–⭐⭐⭐, 4 dạng bài tập mẫu. Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l11-bai24.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai24.pdf
 //       node scripts/ruot-tap/l11-bai24.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai24/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b24 as H } from './hinh-l11-bai24.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -160,8 +160,8 @@ ${tb(`4. Điện trở trong; ${m('U')} theo ${m('\\mathcal E')}, ${m('I')}, ${m
 ${tb('5. Định luật Ohm cho toàn mạch suy ra từ đâu? Đoản mạch là gì?')}${lines(1)}
 ${tb(`6. So sánh ${m('\\mathcal E')} và ${m('U')}; ghép nối tiếp, song song.`)}${lines(1)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·4')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(4, 'Đề 1219 (20 câu, cuối tiết)', '4·4')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">

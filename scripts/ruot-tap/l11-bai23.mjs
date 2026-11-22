@@ -7,7 +7,7 @@
 // để trống cho HS chấm) · ô rộng cho phân số/đáp án dài · số dòng kẻ ≥ số ý ở Dạng 1–3.
 // Chạy: node scripts/ruot-tap/l11-bai23.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai23.pdf
 //       node scripts/ruot-tap/l11-bai23.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai23/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b23 as H } from './hinh-l11-bai23.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -175,8 +175,8 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU · THỬ THÁCH')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·1')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(1, 'Đề 1218 (20 câu, cuối tiết)', '5·1')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${h3(2, 'V · Bài toán mẫu: dây tóc lúc nguội và lúc sáng', '5·2')}
 <div class="card soft" style="padding:1.2mm 3mm">Dây tóc vonfram ${m('R_0=4{,}0\\ \\Omega')} ở ${oC('20')}, ${aW}; sáng bình thường: ${V('12')}, ${A('0{,}25')}.<br><b>a)</b> ${m('R')} khi sáng bình thường<br><b>b)</b> nhiệt độ dây tóc lúc đó<br><b>c)</b> lúc vừa bật (dây tóc ${oC('20')}): dòng điện; gấp mấy lần lúc sáng</div>
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
@@ -185,7 +185,7 @@ ${h3(2, 'V · Bài toán mẫu: dây tóc lúc nguội và lúc sáng', '5·2')}
 </table>
 <div class="fig-side" style="${fs(36)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`a) ${m('R=')}`, 1)}${wl(`b) ${m('R/R_0=1+\\alpha(t-t_0)')} ⇒`, 2)}${wl(`c) ${m('I_0=')}`, 2)}</div>${H.dayToc('')}</div>
-${K.btvn().replace('<i>1</i>', '<i>3</i>')}
+${K.btvn().replace('<i>1</i>Đề BTVN</h3>', `<i>3</i>Đề BTVN</h3>${K.tag('5·3')}`)}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 ${box(cau(`${m('\\bigstar')} Điện trở ${Om('470')} mắc vào ${V('9{,}4')}. Tính ${m('I')} ra mA.`, 1)
  + cau(`${m('\\bigstar\\bigstar')} Ở hình mục II.5, điểm đo 2,0 V của đèn nằm trên hay dưới đường đứt 12 Ω? Vì sao?`, 1)

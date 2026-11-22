@@ -96,7 +96,7 @@ ${H.lucKe()}</div>
 <table class="tbl-ct"><tr><th>Lần</th><th>Lực kế 1 (N)</th><th>Lực kế 2 (N)</th></tr>
 <tr><td>1</td><td>1,0</td><td>1,0</td></tr><tr><td>2</td><td>2,0</td><td>2,0</td></tr><tr><td>3</td><td>3,0</td><td>3,1</td></tr>
 <tr><td>4</td><td>4,1</td><td>4,0</td></tr><tr><td>5</td><td>5,0</td><td>5,0</td></tr></table>
-${box(`<div style="line-height:1.35">Lần 3 lực kế 2 chỉ lớn hơn ${nw('0,1 N')}, lần 4 lại nhỏ hơn ${nw('0,1 N')}. Có phải hai lực khác nhau không? Vì sao?</div>${lines(4)}`)}</div>
+${box(`<div style="line-height:1.35"><b>Trước khi làm:</b> kéo lực kế 2 tới ${nw('2,0 N')}, lực kế 1 chỉ bao nhiêu?</div><div style="margin-top:1mm">${chon(10)}</div><div class="hint" style="margin-top:1mm">Lớp đo có thể khác bảng này. Lần 3, 4 lệch ${nw('0,1 N')}: trả lời ở Câu 1 (ô 40·1).</div>`)}</div>
 <div class="card" style="margin-top:1.2mm;padding:1mm 3mm"><b>Rút ra:</b> lực và phản lực có độ lớn ${f(25)}, xuất hiện ${f(25)}; mỗi lực kế chỉ đo lực đặt lên ${f(25)}.</div>
 ${h3(3, 'III · Bẫy 1 · “Bằng nhau, ngược chiều thì triệt tiêu”', '2·3')}
 <div class="fig-side" style="${fs(44)}"><div>
@@ -119,7 +119,7 @@ ${h3(2, 'Bẫy 2 · “Xe nặng đâm xe nhẹ thì lực lớn hơn”', '3·2
 <tr><td>Lực xe kia tác dụng lên nó</td><td>${f(25)}</td><td>${nw('40 000 N')}</td></tr>
 <tr><td>Gia tốc ${m('a=F/m')}</td><td>${f(25)}</td><td>${f(25)}</td></tr></table>
 <div style="margin-top:.6mm">Xe con hỏng nặng hơn vì ${f(25)} của nó lớn hơn, không phải vì ${f(25)} lớn hơn. Khi lực tương tác là hợp lực lên mỗi vật: ${nw(`${m('m_Aa_A=')} ${f(16)}`)}</div>
-${h3(3, 'Bẫy 3 · “Phải có thứ gì bên ngoài để đẩy”', '3·3')}
+${h3(3, 'Bẫy 3 · “Phải có thứ gì bên ngoài để đẩy” (về nhà)', '3·3')}
 <div class="fig-side" style="${fs(36)}"><div>
 ${cau('<b>Trong chân không, tên lửa đẩy vào cái gì? Cái gì đẩy tên lửa đi lên?</b>', 2)}
 ${cau('<b>Phi hành gia đứng yên ngoài không gian ném búa về phía trước. Người sẽ thế nào? Vì sao?</b>', 2)}</div>
@@ -141,14 +141,14 @@ ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(2, 'V · Bài toán mẫu: hai bạn trượt băng đẩy nhau', '4·2')}
 <div class="card soft" style="padding:1.2mm 3mm">Hai bạn A (${nw('40 kg')}) và B (${nw('60 kg')}) đứng đối diện nhau trên giày trượt, hai tay chạm nhau. Bạn A đẩy bạn B bằng lực ${nw('120 N')}. Bỏ qua ma sát. Tính gia tốc của mỗi bạn.</div>
 ${h3(3, 'Phân tích đề')}
-<table><tr><th style="width:52mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
+<table><tr><th style="width:52mm">Câu trong đề</th><th>Dữ liệu → kiến thức (định luật II hay III?)</th></tr>
 <tr><td>“A (40 kg) và B (60 kg)”</td><td>${m('m_A=40\\ \\mathrm{kg}')}, ${m('m_B=60\\ \\mathrm{kg}')}</td></tr>
 <tr><td style="height:6.5mm">“giày trượt … bỏ qua ma sát”</td><td></td></tr>
 <tr><td style="height:6.5mm">“A đẩy B bằng lực 120 N”</td><td></td></tr>
 <tr><td style="height:6.5mm">“tính gia tốc của mỗi bạn”</td><td></td></tr></table>
 ${h3(4, 'Giải')}
 <div class="fig-side" style="${fs(52)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-${wl(`Lực lên B, lực lên A (định luật mấy?):`, 2)}${wl(`Gia tốc bạn A:`, 3)}${wl(`Gia tốc bạn B:`, 2)}${wl(`Kiểm tra ${m('m_Aa_A')} và ${m('m_Ba_B')}; hai bạn đi về đâu?`, 2)}</div>${H.haiBan()}</div>
+${wl(`Lực lên B, lực lên A (định luật mấy?):`, 2)}${wl(`Gia tốc bạn A:`, 3)}${wl(`Gia tốc bạn B:`, 2)}${wl(`Kiểm tra ${m('m_Aa_A')} và ${m('m_Ba_B')}; hai bạn trượt cùng chiều hay ngược chiều?`, 2)}</div>${H.haiBan()}</div>
 ${h3(5, 'Điền bước còn thiếu: B nặng 80 kg')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln">Cùng đề, A vẫn ${nw('40 kg')}, lực vẫn ${nw('120 N')}, B nặng ${nw('80 kg')}.</div>
