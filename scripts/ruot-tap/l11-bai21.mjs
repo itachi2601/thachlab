@@ -112,7 +112,7 @@ ${h3(3, 'II.3 · C do cấu tạo quyết định', '2·3')}
 <div>${m('C')} chỉ phụ thuộc ${f(30)}, <b>không</b> phụ thuộc ${f(10)} hay ${f(10)}.</div>
 <div style="margin:.6mm 0"><b>Tụ phẳng:</b> ${m('C=\\dfrac{\\varepsilon S}{9\\cdot10^{9}\\cdot4\\pi d}')} &nbsp;(${m('S')}: diện tích phần ${f(14)} của hai bản, đơn vị ${f(8)}; ${m('d')} đổi ra ${f(8)})</div>
 <div>Điện trường giữa hai bản là đều: ${m('E=')} ${f(12)}. Điện môi chịu tối đa ${m('E_{\\max}')} nên ${m('U_{\\max}=')} ${f(14)}</div>
-<div><b>Tấm nhôm:</b> gốc ${nw('≈ 350 pF')}. Tăng ${m('d')} gấp đôi: ≈ ${f(10)} pF; trượt lệch nửa tấm: ≈ ${f(10)} pF; chèn nhựa: ${m('C')} ${f(14)} vài lần.</div>
+<div><b>Tấm nhôm:</b> gốc ${nw('≈ 354 pF')}. Tăng ${m('d')} gấp đôi: ≈ ${f(10)} pF; trượt lệch nửa tấm: ≈ ${f(10)} pF; chèn nhựa: ${m('C')} ${f(14)} vài lần.</div>
 <div><b>Rút ra:</b> ${m('S')} lớn, ${m('d')} ${f(10)}, ${eps} ${f(10)} thì ${m('C')} lớn.</div></div>
 ${H.tamNhom()}</div>
 ${foot(2)}</section>`;
@@ -176,7 +176,7 @@ ${h3(2, 'Điền bước còn thiếu: cùng hai tụ, ghép song song vào 12 V
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln"><b>Bước 1 (cho sẵn):</b> ${m('C=C_1+C_2=9\\ \\mu\\mathrm F')}; ${m('U_1=U_2=12\\ \\mathrm V')}; ${m('Q_1=C_1U=36\\ \\mu\\mathrm C')}</div>
 ${wl(`Bước 2: ${m('Q_2=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; kiểm: ${m('Q_1+Q_2=CU')}?`, 1)}${wl(`Bước 3: ${m('W')} của bộ ${m('=')}`, 1)}</div>
-<div class="card soft" style="margin-top:1mm;padding:1mm 3mm"><b>Thử sức đổi số:</b> ${uF(2)} và ${uF(6)} nối tiếp vào ${V(16)}. Hiệu điện thế trên tụ ${uF(2)}: ${f(14)} V${lines(1)}</div>
+<div class="card soft" style="margin-top:1mm;padding:1mm 3mm"><b>Thử sức đổi số:</b> ${uF(2)} và ${uF(6)} nối tiếp vào ${V(16)}. Hiệu điện thế trên tụ ${uF(2)}: ${f(14)} V${wl('Giải:', 1)}</div>
 ${K.btvn().replace('<i>1</i>', '<i>3</i>')}
 ${h3(4, 'Thử thách phân tầng', '5·4')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Tụ ${uF(20)} nối vào nguồn ${V(10)}. Tính ${m('Q')} và ${m('W')}.`, 3)
