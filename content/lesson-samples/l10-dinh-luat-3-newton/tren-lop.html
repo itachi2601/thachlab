@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Định luật 3 Newton · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .fig,.gian{height:auto!important;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+
+/* hình riêng bài 16: f1 thành sân · f2 người bơi · f3 hai lực kế (Tập) · f4 sách trên bàn · f5 hai bạn (Tập) · f6 hai bạn có số (FIG3 bài web) */
+/* nhãn trong hình giữ cỡ gốc (Tập 19–20, web 14 đơn vị): đo được ≥ 0,7 chữ thường khi đáp án mở, phóng thêm thì chữ tràn khung hình */
+table.gon th,table.gon td{padding:.06em .4em}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 16</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 16 · tr.37</span></div>
+  <div class="giua">
+    <h1>Định luật 3 Newton</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Đẩy thành sân mà mình lại trượt lùi: vì sao?</li>
+      <li>Xe tải đâm xe con: lực bên nào lớn hơn?</li>
+      <li>Trong chân không, tên lửa đẩy vào cái gì?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.37 · ô 37·2</span></div>
+  <p class="hoi">Em đi giày trượt, hai tay đẩy mạnh vào thành sân băng (thành gắn chặt với mặt đất). Em sẽ chuyển động thế nào?</p>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 300 190" role="img" aria-label="Người đi giày trượt đặt hai tay lên thành sân"><defs><marker id="tsa" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="4" y1="178" x2="296" y2="178" stroke="#1c2540" stroke-width="2.8"/><rect x="34" y="30" width="14" height="148" rx="0" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="24" y1="48" x2="34" y2="38" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="64" x2="34" y2="54" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="80" x2="34" y2="70" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="96" x2="34" y2="86" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="112" x2="34" y2="102" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="128" x2="34" y2="118" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="144" x2="34" y2="134" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="160" x2="34" y2="150" stroke="#8a94ad" stroke-width="1.8"/><line x1="24" y1="176" x2="34" y2="166" stroke="#8a94ad" stroke-width="1.8"/><circle cx="120" cy="64" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="120" y1="75" x2="120" y2="126" stroke="#1c2540" stroke-width="2.8"/><line x1="120" y1="126" x2="106" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="120" y1="126" x2="134" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="98" y1="170" x2="142" y2="170" stroke="#1c2540" stroke-width="3.2"/><circle cx="106" cy="175" r="3" fill="#1c2540"/><circle cx="134" cy="175" r="3" fill="#1c2540"/><line x1="120" y1="88" x2="48" y2="96" stroke="#1c2540" stroke-width="2.8"/><line x1="120" y1="94" x2="48" y2="104" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="150" x2="52" y2="150" stroke="#b3261e" stroke-width="2.8" marker-end="url(#tsa)"/><text x="50" y="138" fill="#b3261e" font-size="19" text-anchor="start" font-weight="700">em đẩy</text><text x="176" y="70" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">thành gắn</text><text x="176" y="92" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">chặt với đất</text></svg></div>
+    <div class="ben">
+      <ol class="opt">
+        <li><b>A.</b> Đứng yên, vì thành sân không nhúc nhích</li>
+        <li><b>B.</b> Trượt tiến về phía thành sân</li>
+        <li><b>C.</b> Trượt lùi ra xa thành sân</li>
+        <li><b>D.</b> Trượt sang bên, dọc theo thành sân</li>
+      </ol>
+      <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại thành sân").</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Lực và phản lực ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Lực và phản lực</span><span>phút 3–9</span><span class="tap">tr.37 · ô 37·4 · dòng 1–5</span></div>
+  <h2>A đẩy B thì B đẩy lại A</h2>
+  <div class="hai">
+    <div class="fig f2"><svg viewBox="0 0 360 162" role="img" aria-label="Người bơi đạp chân vào thành bể, thành đẩy lại người"><defs><marker id="bba" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="bbb" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="100" y="16" width="14" height="140" rx="0" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="90" y1="34" x2="100" y2="24" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="50" x2="100" y2="40" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="66" x2="100" y2="56" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="82" x2="100" y2="72" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="98" x2="100" y2="88" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="114" x2="100" y2="104" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="130" x2="100" y2="120" stroke="#8a94ad" stroke-width="1.8"/><line x1="90" y1="146" x2="100" y2="136" stroke="#8a94ad" stroke-width="1.8"/><line x1="114" y1="50" x2="356" y2="50" stroke="#8a94ad" stroke-width="2" stroke-dasharray="8 5"/><text x="356" y="40" fill="#8a94ad" font-size="18" text-anchor="end" font-weight="400">mặt nước</text><line x1="196" y1="88" x2="290" y2="88" stroke="#1c2540" stroke-width="2.8"/><circle cx="302" cy="88" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="290" y1="88" x2="350" y2="76" stroke="#1c2540" stroke-width="2.8"/><line x1="196" y1="88" x2="114" y2="80" stroke="#1c2540" stroke-width="2.8"/><line x1="196" y1="88" x2="114" y2="96" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="128" x2="30" y2="128" stroke="#b3261e" stroke-width="2.8" marker-end="url(#bba)"/><text x="4" y="152" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">lên thành</text><line x1="114" y1="128" x2="184" y2="128" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="8 4" marker-end="url(#bbb)"/><text x="118" y="152" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">lên người</text></svg></div>
+    <div class="ben">
+      <p>A tác dụng lên B một lực thì B cũng <b class="o">tác dụng</b> lên A một lực.</p>
+      <p>Hai lực này gọi là <b class="o">lực</b> và <b class="o">phản lực</b>.</p>
+      <ul>
+        <li>Về phương: <b class="o">cùng phương</b></li>
+        <li>Về chiều: <b class="o">ngược chiều</b></li>
+        <li>Về độ lớn: <b class="o">bằng nhau</b></li>
+      </ul>
+      <p class="nho">Mũi tên đặc đặt lên thành, mũi tên đứt đặt lên người.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Định luật 3 Newton</span><span>phút 3–9</span><span class="tap">tr.37 · ô 37·4 · dòng 6–8</span></div>
+  <div class="giua">
+    <div class="fx">$\vec F_{AB}=-\vec F_{BA}$</div>
+    <p>$\vec F_{AB}$: lực <b class="o">A</b> tác dụng lên <b class="o">B</b></p>
+    <p>$\vec F_{BA}$: lực <b class="o">B</b> tác dụng lên <b class="o">A</b></p>
+    <p class="nho">Dấu trừ: ngược chiều. Độ lớn $F_{AB}=F_{BA}$. Gọi lực nào là "lực" cũng được.</p>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Bốn đặc điểm</span><span>phút 3–9</span><span class="tap">tr.38 · ô 38·1</span></div>
+  <h2>Ba Cùng – Một Ngược – Một Khác</h2>
+  <table>
+    <thead><tr><th>Đặc điểm</th><th>Ví dụ</th></tr></thead>
+    <tbody>
+      <tr><td>Cùng <b class="o">lúc</b></td><td>hai kim lực kế cùng nhích</td></tr>
+      <tr><td>Cùng <b class="o">loại</b></td><td>Trái Đất hút táo, táo hút <b class="o">Trái Đất</b></td></tr>
+      <tr><td>Cùng <b class="o">độ lớn</b>, cùng phương, ngược <b class="o">chiều</b></td><td>xe tải đâm xe con; em đẩy thành, thành đẩy em</td></tr>
+      <tr><td>Khác <b class="o">vật</b></td><td>lực em đẩy đặt lên <b class="o">thành</b></td></tr>
+    </tbody>
+  </table>
+  <p class="nho">Khác vật là chỗ dễ nhầm nhất: điểm dừng 4.</p>
+</section>
+
+<!-- ================= 3. Hai lực kế ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 9–15</span><span class="tap">tr.38 · ô 38·2</span></div>
+  <p class="hoi">Hai lực kế 5 N móc vào nhau. Giữ lực kế 1, kéo lực kế 2 tới 2,0 N. Lực kế 1 chỉ…</p>
+  <div class="hai">
+    <div class="fig f3"><svg viewBox="0 0 340 122" role="img" aria-label="Hai lực kế lò xo móc vào nhau, một đầu giữ, một đầu kéo"><defs><marker id="lka" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="4" y="30" width="14" height="84" rx="0" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="18" y1="72" x2="32" y2="72" stroke="#1c2540" stroke-width="2.8"/><rect x="32" y="56" width="106" height="32" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="44" y1="56" x2="44" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="54" y1="56" x2="54" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="64" y1="56" x2="64" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="74" y1="56" x2="74" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="84" y1="56" x2="84" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="94" y1="56" x2="94" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="104" y1="56" x2="104" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="114" y1="56" x2="114" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="124" y1="56" x2="124" y2="70" stroke="#1c2540" stroke-width="1.6"/><text x="85" y="46" fill="#1c2540" font-size="19" text-anchor="middle" font-weight="700">lực kế 1</text><text x="85" y="112" fill="#1c2540" font-size="19" text-anchor="middle" font-weight="400">…… N</text><line x1="138" y1="72" x2="168" y2="72" stroke="#1c2540" stroke-width="2.8"/><rect x="168" y="56" width="106" height="32" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="180" y1="56" x2="180" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="190" y1="56" x2="190" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="200" y1="56" x2="200" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="210" y1="56" x2="210" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="220" y1="56" x2="220" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="230" y1="56" x2="230" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="240" y1="56" x2="240" y2="70" stroke="#1c2540" stroke-width="1.6"/><line x1="250" y1="56" x2="250" y2="64" stroke="#1c2540" stroke-width="1.6"/><line x1="260" y1="56" x2="260" y2="70" stroke="#1c2540" stroke-width="1.6"/><text x="221" y="46" fill="#1c2540" font-size="19" text-anchor="middle" font-weight="700">lực kế 2</text><text x="221" y="112" fill="#1c2540" font-size="19" text-anchor="middle" font-weight="400">…… N</text><line x1="274" y1="72" x2="290" y2="72" stroke="#1c2540" stroke-width="2.8"/><line x1="290" y1="72" x2="336" y2="72" stroke="#b3261e" stroke-width="2.8" marker-end="url(#lka)"/><text x="338" y="104" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700">kéo</text></svg></div>
+    <div class="ben">
+      <ol class="opt lo">
+        <li><b>A.</b> $0$ N, vì đầu lực kế 1 chỉ được giữ yên</li>
+        <li><b>B.</b> Nhỏ hơn $2{,}0$ N, vì bên kéo mạnh hơn</li>
+        <li data-dung><b>C.</b> Bằng $2{,}0$ N</li>
+      </ol>
+      <button class="mo" data-mo="r3">Làm thật rồi mới mở</button>
+      <div class="an" id="r3" hidden><p><b>C.</b> Hai số chỉ bằng nhau.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 9–15</span><span class="tap">tr.38 · ô 38·2</span></div>
+  <p class="nho">Kéo chậm, tăng dần qua 5 lần. Thầy đọc to hai số, gõ vào cột "Lớp đo". Tập in sẵn số minh hoạ để so.</p>
+  <table class="gon">
+    <thead><tr><th>Lần</th><th>Lực kế 1 · lớp đo (N)</th><th>Lực kế 2 · lớp đo (N)</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td class="trong" contenteditable="true"></td><td class="trong" contenteditable="true"></td></tr>
+      <tr><td>2</td><td class="trong" contenteditable="true"></td><td class="trong" contenteditable="true"></td></tr>
+      <tr><td>3</td><td class="trong" contenteditable="true"></td><td class="trong" contenteditable="true"></td></tr>
+      <tr><td>4</td><td class="trong" contenteditable="true"></td><td class="trong" contenteditable="true"></td></tr>
+      <tr><td>5</td><td class="trong" contenteditable="true"></td><td class="trong" contenteditable="true"></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="r3b">Mở: rút ra</button>
+  <div class="an" id="r3b" hidden><p>Lực và phản lực có độ lớn <b class="o">bằng nhau</b>, xuất hiện <b class="o">cùng lúc</b>; mỗi lực kế chỉ đo lực đặt lên <b class="o">chính nó</b>.</p></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Câu 1</span><span>phút 9–15</span><span class="tap">tr.38 · ô 38·2 · ghi ô 40·1</span></div>
+  <p class="hoi">Bảng Tập: lần 3 lực kế 2 hơn $0{,}1$ N, lần 4 ngược lại. Kết luận hợp lí nhất?</p>
+  <ol class="opt lo">
+    <li data-dung><b>A.</b> Chênh $0{,}1$ N nằm trong sai số đọc, lúc lệch bên này lúc bên kia</li>
+    <li><b>B.</b> Lực kế 2 mạnh hơn vì người kéo đứng ở phía nó</li>
+    <li><b>C.</b> Phản lực đến chậm hơn nên hai số chưa kịp bằng nhau</li>
+    <li><b>D.</b> Định luật III không còn đúng khi lực từ $3$ N trở lên</li>
+  </ol>
+  <button class="mo" data-mo="a3">Mở đáp án</button>
+  <div class="an" id="a3" hidden><p><b>A.</b> Chênh không quá sai số đọc, lại đổi chiều.</p></div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Xem cận cảnh</span><span>dự phòng: thiếu lực kế hoặc bàn cuối không thấy kim · mặc định bỏ qua</span><span class="tap">tr.38 · ô 38·2</span></div>
+  <div class="vg" data-bat="10.83" data-het="33.3">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-newton3-01-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-newton3-01-20261118.webp" preload="metadata" playsinline title="Hai lực kế móc vào nhau"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: hai số chỉ ở mỗi lần kéo.</p><p class="nho">Clip bỏ phần mở đầu, vào thẳng phần kéo.</p></div>
+      <div class="buoc" data-t="10.83"><p class="hoi">Lần 1: kéo nhẹ.</p></div>
+      <div class="buoc" data-t="12.8" data-dung><p class="so-lon">Kéo nhẹ: $1{,}0$ N và $1{,}0$ N</p><p class="hoi">Kéo vừa: lực kế 2 chỉ $2{,}0$ N. Lực kế 1 chỉ…?</p></div>
+      <div class="buoc" data-t="12.9"><p class="hoi">Kéo vừa, rồi kéo mạnh.</p></div>
+      <div class="buoc" data-t="17.5" data-dung><table class="bang"><tr><th></th><th>lực kế 1</th><th>lực kế 2</th></tr><tr><td>nhẹ</td><td class="ns">1,0 N</td><td class="ns">1,0 N</td></tr><tr><td>vừa</td><td class="ns">2,0 N</td><td class="ns">2,0 N</td></tr><tr><td>mạnh</td><td class="ns">5,0 N</td><td class="ns">5,0 N</td></tr></table><p class="hoi">Lực kế 1 đo lực đặt lên vật nào?</p></div>
+      <div class="buoc" data-t="17.6"><p class="hoi">Lực nào lên vật nào?</p></div>
+      <div class="buoc" data-t="33.3"><p class="so-lon">Hai lực đặt lên hai vật</p><p class="hoi">Lực kế 2 kéo lực kế 1, lực kế 1 kéo lực kế 2: cùng độ lớn, ngược chiều.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 4. Bẫy 1 + Bẫy 3 ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Bẫy 1</span><span>phút 15–21</span><span class="tap">tr.38 · ô 38·3</span></div>
+  <h2>"Bằng nhau, ngược chiều thì triệt tiêu"?</h2>
+  <p class="hoi">Lực và phản lực bằng nhau, ngược chiều. Thế sao em vẫn trượt lùi?</p>
+  <table>
+    <thead><tr><th></th><th>Hai lực cân bằng</th><th>Lực – phản lực</th></tr></thead>
+    <tbody>
+      <tr><td>Đặt lên</td><td><b class="o">một</b> vật</td><td><b class="o">hai</b> vật</td></tr>
+      <tr><td>Triệt tiêu?</td><td><b class="o">có</b></td><td><b class="o">không</b></td></tr>
+      <tr><td>Loại lực</td><td><b class="o">có thể khác loại</b></td><td><b class="o">luôn cùng loại</b></td></tr>
+    </tbody>
+  </table>
+  <p class="nho">Chỉ được cộng các lực cùng đặt lên một vật.</p>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Bẫy 1</span><span>phút 15–21</span><span class="tap">tr.38 · ô 38·3 · dòng cuối</span></div>
+  <p class="hoi">Sách nằm yên trên bàn. Cặp nào cân bằng, cặp nào là lực – phản lực?</p>
+  <div class="hai">
+    <div class="fig f4"><svg viewBox="0 0 300 198" role="img" aria-label="Quyển sách nằm yên trên mặt bàn"><defs><marker id="sba" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="sbb" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="20" y="116" width="260" height="12" rx="2" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="36" y1="128" x2="36" y2="192" stroke="#1c2540" stroke-width="2.8"/><line x1="264" y1="128" x2="264" y2="192" stroke="#1c2540" stroke-width="2.8"/><rect x="90" y="86" width="120" height="30" rx="2" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="150" y="108" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">sách</text><line x1="110" y1="101" x2="110" y2="168" stroke="#b3261e" stroke-width="2.8" marker-end="url(#sba)"/><text x="88" y="166" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">P</text><line x1="190" y1="116" x2="190" y2="44" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#sbb)"/><text x="200" y="54" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">N</text><line x1="190" y1="128" x2="190" y2="186" stroke="#1c2540" stroke-width="2.8" stroke-dasharray="7 4" marker-end="url(#sbb)"/><text x="200" y="184" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">N’</text><text x="262" y="108" fill="#1c2540" font-size="18" text-anchor="end" font-weight="400">bàn</text></svg></div>
+    <div class="ben">
+      <p>Hai lực cân bằng: … và …</p>
+      <p>Lực – phản lực: … và …</p>
+      <button class="mo" data-mo="g4b">Mở</button>
+      <div class="an" id="g4b" hidden>
+        <p>Cân bằng: <b class="o">P</b> và <b class="o">N</b> (cùng đặt lên sách)</p>
+        <p>Lực – phản lực: <b class="o">N</b> và <b class="o">N′</b> (N lên sách, N′ lên bàn)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Câu 2</span><span>phút 15–21</span><span class="tap">ghi ô 40·1 · Câu 2</span></div>
+  <p class="hoi">Chiếc đèn treo vào trần bằng một sợi dây, đang đứng yên. Hai lực nào là cặp lực – phản lực?</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Trọng lực lên đèn và lực dây kéo đèn</li>
+    <li><b>B.</b> Trọng lực lên đèn và lực đèn kéo dây</li>
+    <li><b>C.</b> Lực dây kéo đèn và lực trần kéo dây</li>
+    <li data-dung><b>D.</b> Lực dây kéo đèn và lực đèn kéo dây</li>
+  </ol>
+  <button class="mo" data-mo="a4c">Mở đáp án</button>
+  <div class="an" id="a4c" hidden><p><b>D.</b> Cùng cặp hai vật (dây – đèn), cùng loại, đặt lên hai vật khác nhau. A: cả hai lực đặt lên đèn, đó là cân bằng.</p></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Bẫy 3</span><span>phút 15–21</span><span class="tap">tr.39 · ô 39·3</span></div>
+  <h2>"Phải có thứ gì bên ngoài để đẩy"?</h2>
+  <div class="giua">
+    <p class="hoi">Trong chân không, tên lửa đẩy vào cái gì? Cái gì đẩy tên lửa đi lên?</p>
+    <button class="mo" data-mo="g4d">Mở</button>
+    <div class="an" id="g4d" hidden>
+      <p>Tên lửa đẩy <b>khí cháy</b> phụt ra sau (xuống dưới).</p>
+      <p>Khí cháy đẩy lại tên lửa đi lên. Trong chân không vẫn vậy.</p>
+    </div>
+    <p class="nho">Đẩy cái gì thì cái đó đẩy lại.</p>
+  </div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Câu 4</span><span>phút 15–21</span><span class="tap">tr.39 · ô 39·3 · ghi ô 40·1 · Câu 4</span></div>
+  <p class="hoi">Một phi hành gia lơ lửng đứng yên ngoài không gian rồi ném cái búa về phía trước. Phi hành gia sẽ:</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Vẫn đứng yên, vì không có gì để tựa vào</li>
+    <li><b>B.</b> Trôi về phía trước theo cái búa</li>
+    <li data-dung><b>C.</b> Trôi lùi về phía sau</li>
+    <li><b>D.</b> Trôi lên phía trên</li>
+  </ol>
+  <button class="mo" data-mo="a4e">Mở đáp án</button>
+  <div class="an" id="a4e" hidden><p><b>C.</b> Người đẩy búa về trước thì búa đẩy lại người về sau. Không có ma sát nên người cứ trôi lùi.</p></div>
+</section>
+
+<!-- ================= 5. Bẫy 2 + hai bạn đẩy nhau ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Câu 3</span><span>phút 21–28</span><span class="tap">ghi ô 40·1 · Câu 3</span></div>
+  <p class="hoi">Con muỗi đâm vào kính chắn gió của ô tô đang chạy nhanh. Lực của muỗi lên kính so với lực của kính lên muỗi:</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Nhỏ hơn rất nhiều, vì muỗi rất nhẹ</li>
+    <li data-dung><b>B.</b> Bằng nhau về độ lớn</li>
+    <li><b>C.</b> Lớn hơn, vì ô tô đang chạy nhanh</li>
+    <li><b>D.</b> Bằng không, vì kính chẳng bị làm sao</li>
+  </ol>
+  <button class="mo" data-mo="a5a">Mở đáp án</button>
+  <div class="an" id="a5a" hidden><p><b>B.</b> Hai lực luôn bằng nhau. Muỗi nát vì nó nhẹ nên gia tốc cực lớn.</p></div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bẫy 2</span><span>phút 21–28</span><span class="tap">tr.39 · ô 39·2</span></div>
+  <h2>"Xe nặng đâm xe nhẹ thì lực lớn hơn"?</h2>
+  <table>
+    <thead><tr><th></th><th>Xe tải 8000 kg</th><th>Xe con 1000 kg</th></tr></thead>
+    <tbody>
+      <tr><td>Lực xe kia tác dụng lên nó</td><td class="ns"><span class="an-o" data-o="g5b">40 000 N</span></td><td>40 000 N</td></tr>
+      <tr><td>Gia tốc $a=F/m$</td><td class="ns"><span class="an-o" data-o="g5b">$5\ \text{m/s}^2$</span></td><td class="ns"><span class="an-o" data-o="g5b">$40\ \text{m/s}^2$</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="g5b">Mở: lực, gia tốc</button>
+  <div class="an" id="g5b" hidden>
+    <p>Xe con hỏng nặng hơn vì <b class="o">gia tốc</b> của nó lớn hơn, không phải vì <b class="o">lực</b> lớn hơn.</p>
+    <p>Lực tương tác là hợp lực lên mỗi vật: $m_Aa_A=$ <b class="o">$m_Ba_B$</b></p>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Thí nghiệm dựng lại</span><span>3 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.39 · ô 39·2</span></div>
+  <div class="vg" data-bat="10.4" data-het="26.7">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-newton3-05-20261120.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-newton3-05-20261120.webp" preload="metadata" playsinline title="Hai xe đẩy bật ra nhờ lò xo nén"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ hai cảm biến lực và gia tốc hai xe.</p><p class="nho">Lò xo nén giữa hai xe, giữ bằng chốt. Rút chốt, hai xe bật ra. Clip vào thẳng phần làm.</p></div>
+      <div class="buoc" data-t="10.4"><p class="hoi">Lần 1: hai xe cùng $1$ kg.</p></div>
+      <div class="buoc" data-t="13.9" data-dung><p class="so-lon">$1$ kg và $1$ kg: $4$ N và $4$ N</p><p class="hoi">Xe 2 chất thêm gia trọng thành $3$ kg. Rút chốt, hai cảm biến chỉ…</p>
+        <ol class="opt lo"><li><b>A.</b> Cảm biến xe 3 kg chỉ số lớn hơn</li><li data-dung><b>B.</b> Hai cảm biến chỉ số bằng nhau</li><li><b>C.</b> Cảm biến xe 1 kg chỉ số lớn hơn</li></ol></div>
+      <div class="buoc" data-t="14.0"><p class="hoi">Lần 2: xe 2 nặng $3$ kg.</p></div>
+      <div class="buoc" data-t="18.5" data-dung><table class="bang"><tr><th>$m$ (kg)</th><th>$F$ (N)</th><th>$a$ (m/s²)</th></tr><tr><td>1 · 1</td><td class="ns">4 · 4</td><td class="ns">4,0 · 4,0</td></tr><tr><td>1 · 3</td><td class="ns">4 · 4</td><td class="ns">4,0 · ≈ 1,33</td></tr></table><p class="hoi">Lần 2: so $m_1a_1$ với $m_2a_2$?</p></div>
+      <div class="buoc" data-t="18.6"><p class="hoi">Kết quả.</p></div>
+      <div class="buoc" data-t="26.7"><p class="so-lon">$1\cdot4{,}0=3\cdot1{,}33\approx4$</p><p class="hoi">Lực bằng nhau ($4$ N $=4$ N). Xe nặng: gia tốc nhỏ hơn.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–28</span><span class="tap">tr.40 · ô 40·2</span></div>
+  <p>Hai bạn A ($40$ kg) và B ($60$ kg) đứng đối diện nhau trên giày trượt, hai tay chạm nhau. Bạn A đẩy bạn B bằng lực $120$ N. Bỏ qua ma sát. Tính gia tốc của mỗi bạn.</p>
+  <div class="hai">
+    <div class="fig f5"><svg viewBox="0 0 320 172" role="img" aria-label="Hai bạn đi giày trượt đẩy tay nhau"><defs><marker id="hba" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="hbb" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="4" y1="160" x2="316" y2="160" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="46" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="57" x2="100" y2="108" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="108" x2="86" y2="150" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="108" x2="114" y2="150" stroke="#1c2540" stroke-width="2.8"/><line x1="78" y1="152" x2="122" y2="152" stroke="#1c2540" stroke-width="3.2"/><circle cx="86" cy="157" r="3" fill="#1c2540"/><circle cx="114" cy="157" r="3" fill="#1c2540"/><circle cx="220" cy="46" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="57" x2="220" y2="108" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="108" x2="206" y2="150" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="108" x2="234" y2="150" stroke="#1c2540" stroke-width="2.8"/><line x1="198" y1="152" x2="242" y2="152" stroke="#1c2540" stroke-width="3.2"/><circle cx="206" cy="157" r="3" fill="#1c2540"/><circle cx="234" cy="157" r="3" fill="#1c2540"/><line x1="100" y1="70" x2="160" y2="80" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="70" x2="160" y2="80" stroke="#1c2540" stroke-width="2.8"/><text x="100" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A · 40 kg</text><text x="220" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">B · 60 kg</text><line x1="220" y1="124" x2="296" y2="124" stroke="#b3261e" stroke-width="2.8" marker-end="url(#hba)"/><text x="316" y="114" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700">120 N</text><line x1="100" y1="124" x2="24" y2="124" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="8 4" marker-end="url(#hbb)"/><text x="4" y="114" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">F = ?</text></svg></div>
+    <div class="ben">
+      <button class="mo" data-mo="g5d">Mở: phân tích đề (3 ô)</button>
+      <div class="an" id="g5d" hidden><ul>
+        <li>bỏ qua ma sát → chỉ còn lực đẩy</li>
+        <li>A đẩy B $120$ N → định luật III: B đẩy A $120$ N</li>
+        <li>gia tốc mỗi bạn → định luật II cho <b>từng</b> bạn</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–28</span><span class="tap">tr.40 · ô 40·2 · Giải</span></div>
+  <p class="hoi">Cả lớp tự tính $a_A$, $a_B$ (1 phút) rồi mới mở.</p>
+  <div class="hai">
+    <div class="ben">
+      <button class="mo" data-mo="g5e">Mở lời giải</button>
+      <div class="an" id="g5e" hidden>
+        <p style="margin:.35em 0">$a_A=\dfrac{120}{40}=3\ \text{m/s}^2$</p>
+        <p style="margin:.35em 0">$a_B=\dfrac{120}{60}=2\ \text{m/s}^2$</p>
+        <p>Kiểm tra: $40\cdot3=60\cdot2$</p>
+        <p class="nho">Hai bạn trượt ngược chiều, bạn nhẹ gia tốc lớn hơn.</p>
+      </div>
+    </div>
+    <div class="fig f6 an-o" data-o="g5e"><svg viewBox="0 0 440 238" role="img" aria-label="Hai bạn đẩy nhau trên giày trượt: lực đỏ bằng nhau 120 N, gia tốc xanh của bạn A nhẹ hơn dài hơn"><line x1="10.0" y1="190.0" x2="430.0" y2="190.0" stroke="#38bdf8" stroke-width="2" opacity="0.6"/><circle cx="110" cy="100.0" r="10.8" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="110.0" y1="110.8" x2="110.0" y2="134.2" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="110.0" y1="134.2" x2="99.2" y2="184.6" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="110.0" y1="134.2" x2="120.8" y2="184.6" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="110.0" y1="121.6" x2="200.0" y2="104.0" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="88.4" y1="188.0" x2="131.6" y2="188.0" stroke="#38bdf8" stroke-width="3" opacity="1"/><circle cx="310" cy="80.0" r="13.2" fill="none" stroke="currentColor" stroke-width="2.5"/><line x1="310.0" y1="93.2" x2="310.0" y2="121.8" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="310.0" y1="121.8" x2="296.8" y2="183.4" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="310.0" y1="121.8" x2="323.2" y2="183.4" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="310.0" y1="106.4" x2="200.0" y2="104.0" stroke="currentColor" stroke-width="2.5" opacity="1"/><line x1="283.6" y1="188.0" x2="336.4" y2="188.0" stroke="#38bdf8" stroke-width="3" opacity="1"/><text x="110.0" y="216.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">A: 40 kg</text><text x="310.0" y="216.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">B: 60 kg</text><line x1="100" y1="150" x2="44" y2="150" stroke="#f87171" stroke-width="2.8"/><path d="M54.0,155.8 L44.0,150.0 L54.0,144.2" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="24.0" y="140.0" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">120 N</text><line x1="320" y1="150" x2="376" y2="150" stroke="#f87171" stroke-width="2.8"/><path d="M366.0,144.2 L376.0,150.0 L366.0,155.8" fill="none" stroke="#f87171" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="334.0" y="140.0" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">120 N</text><line x1="110" y1="64" x2="20" y2="64" stroke="#34d399" stroke-width="2.8"/><path d="M30.0,69.8 L20.0,64.0 L30.0,58.2" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="70.0" y="46.0" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">a<tspan baseline-shift="sub" font-size="14">A</tspan> = 3 m/s²</text><line x1="310" y1="52" x2="370" y2="52" stroke="#34d399" stroke-width="2.8"/><path d="M360.0,46.2 L370.0,52.0 L360.0,57.8" fill="none" stroke="#34d399" stroke-width="2.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="350.0" y="34.0" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">a<tspan baseline-shift="sub" font-size="14">B</tspan> = 2 m/s²</text></svg></div>
+  </div>
+</section>
+
+<section class="man" id="m5f">
+  <div class="top"><span class="so">5/6 · Câu 6</span><span>phút 21–28</span><span class="tap">ghi ô 40·1 · Câu 6</span></div>
+  <p class="hoi">Hai xe đẩy trên bàn nhẵn, ép lò xo giữa chúng rồi thả ra. Xe 1 nặng $1$ kg có gia tốc $4\ \text{m/s}^2$. Xe 2 nặng $2$ kg có gia tốc:</p>
+  <ol class="opt lo hang">
+    <li><b>A.</b>$0{,}5\ \text{m/s}^2$</li>
+    <li data-dung><b>B.</b>$2\ \text{m/s}^2$</li>
+    <li><b>C.</b>$4\ \text{m/s}^2$</li>
+    <li><b>D.</b>$8\ \text{m/s}^2$</li>
+  </ol>
+  <button class="mo" data-mo="a5f">Mở đáp án</button>
+  <div class="an" id="a5f" hidden><p><b>B.</b> $m_1a_1=m_2a_2$ → $a_2=\dfrac{1\cdot4}{2}=2\ \text{m/s}^2$.</p><p class="nho">C: quên khối lượng · D: nhân thay vì chia · A: quên nhân $a_1$.</p></div>
+</section>
+
+<section class="man" id="m5g">
+  <div class="top"><span class="so">5/6 · Câu 5</span><span>thiếu giờ thì về nhà</span><span class="tap">ghi ô 40·1 · Câu 5</span></div>
+  <p class="hoi">Hai bạn $50$ kg và $70$ kg đang đứng yên trên giày trượt, đẩy nhau một lúc rồi buông tay. Sau đó:</p>
+  <ol class="opt lo">
+    <li data-dung><b>A.</b> Bạn $50$ kg có tốc độ lớn hơn</li>
+    <li><b>B.</b> Bạn $70$ kg có tốc độ lớn hơn, vì bị đẩy mạnh hơn</li>
+    <li><b>C.</b> Hai bạn cùng tốc độ, vì lực bằng nhau</li>
+    <li><b>D.</b> Bạn $70$ kg đứng yên, vì nặng hơn</li>
+  </ol>
+  <button class="mo" data-mo="a5g">Mở đáp án</button>
+  <div class="an" id="a5g" hidden><p><b>A.</b> Cùng lực, cùng thời gian $t$: bạn nhẹ $a$ lớn → $v=at$ lớn.</p></div>
+</section>
+
+<!-- ================= 6. Trả bài + đề 1237 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 28–29 · viết 1 phút rồi mới mở</span><span class="tap">tr.39 · ô 39·4</span></div>
+  <div class="giua">
+    <p class="hoi">4. Hai lực cân bằng khác lực – phản lực ở đâu?</p>
+    <button class="mo" data-mo="t4">Mở câu 4</button>
+    <div class="an" id="t4" hidden><p>Cân bằng: <b>cùng một vật</b>, triệt tiêu. Lực – phản lực: <b>hai vật</b>, không triệt tiêu.</p></div>
+    <p class="hoi">5. Lực hai bên bằng nhau, sao gia tốc hai vật khác nhau?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>$a=F/m$: <b>vật nhẹ hơn, gia tốc lớn hơn</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6san">
+  <div class="top"><span class="so">6/6 · Quay lại thành sân</span><span>phút 29–30</span><span class="tap">tr.37 · ô 37·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <button class="mo" data-mo="a6">Mở: em trượt thế nào</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Thành đẩy lại em, ngược chiều. Giày trượt gần như không ma sát.</p></div>
+      <button class="mo" data-mo="a6b">Mở: sao thành không nhúc nhích</button>
+      <div class="an" id="a6b" hidden><p>Thành gắn với cả Trái Đất: khối lượng rất lớn, gia tốc rất nhỏ.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">làm trên điện thoại</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1237" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM11 0h1v1h-1zM12 0h1v1h-1zM15 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM18 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM17 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM12 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM17 3h1v1h-1zM19 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM21 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM17 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM27 8h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM5 9h1v1h-1zM9 9h1v1h-1zM12 9h1v1h-1zM16 9h1v1h-1zM20 9h1v1h-1zM24 9h1v1h-1zM25 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM31 9h1v1h-1zM32 9h1v1h-1zM0 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM12 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM0 11h1v1h-1zM2 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM11 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM32 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM11 12h1v1h-1zM15 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM26 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM0 13h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM5 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM21 13h1v1h-1zM25 13h1v1h-1zM26 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM3 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM2 15h1v1h-1zM4 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM31 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM11 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM31 16h1v1h-1zM0 17h1v1h-1zM3 17h1v1h-1zM5 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM13 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM25 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM32 18h1v1h-1zM3 19h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM9 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM14 19h1v1h-1zM15 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM13 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM31 20h1v1h-1zM32 20h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM21 21h1v1h-1zM26 21h1v1h-1zM30 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM3 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM24 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM4 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM20 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM10 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM19 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM10 28h1v1h-1zM16 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM9 29h1v1h-1zM12 29h1v1h-1zM15 29h1v1h-1zM17 29h1v1h-1zM20 29h1v1h-1zM26 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM18 30h1v1h-1zM21 30h1v1h-1zM28 30h1v1h-1zM29 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM12 31h1v1h-1zM13 31h1v1h-1zM15 31h1v1h-1zM16 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM24 31h1v1h-1zM29 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM19 32h1v1h-1zM21 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM28 32h1v1h-1zM31 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1237</b> · 19 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1237 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 16</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.37</b> ô 37·3 dòng "điều em hiểu sai" · ô 37·1 đánh dấu mục tiêu</li>
+    <li><b>tr.39</b> ô 39·1 (đọc) · ô 39·3 viết 2 câu · ô 39·4 câu 1, 2, 3, 6</li>
+    <li><b>tr.40</b> ô 40·2 bảng phân tích đề + phần Giải · "B nặng 80 kg" · ô 40·3</li>
+    <li><b>tr.41</b> ô 41·1 ghi đề BTVN thầy giao trên web · ô 41·2, 41·3, 41·4</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+<script>(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && (/^(a|r)/.test(id) || btn.hasAttribute('data-to'))){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>
