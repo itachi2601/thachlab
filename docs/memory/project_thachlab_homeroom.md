@@ -28,3 +28,5 @@ qua /tai-khoan (môn hasCurriculum=false).
 
 Sau khi chạy migration: admin tạo lớp học phần môn này ở tab Danh sách lớp → gán GVCN ở
 /quan-tri/phan-cong-giang-vien → import Excel danh sách. Liên quan [[feedback_thachlab_deploy_scope]].
+
+- 2026-11-18 · Chuyện có thật SHCN: 29 chuyện báo chí ở `content/shcn-3-nam/chuyen-that/bai/`, chèn bằng `scripts/chen-chuyen-that-shcn.mjs`; soát nguồn bắt 14/29 file có chi tiết bịa/lệch (thêm "kết quả" hay "bài học" nguồn không có) → kể lại chỉ từ dữ kiện nguồn, luôn cho agent `kiem-code` curl bài gốc đối chiếu trước khi báo xong. Gđ 2: thầy họp GVCN để thầy cô bổ sung chuyện của mình.
