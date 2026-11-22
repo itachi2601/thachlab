@@ -134,6 +134,7 @@ FILES=(
   "supabase/migrations/20261119120000_body_measurements_neck_wrist.sql|Thêm cột neck_cm, wrist_cm (cho phép null) vào body_measurements để ước tính % mỡ và khung xương|lúc nào cũng được (chỉ thêm cột)|supabase db query --linked -f perf/rollback/20261119120000_body_measurements_neck_wrist.down.sql"
   "supabase/migrations/20261120120000_lesson_clip_views.sql|Việc 6 clip: bảng lesson_clip_views (mỗi lượt xem khung video thí nghiệm một dòng) + RPC log_clip_view + bảng cộng dồn lesson_clip_view_rollups, pg_cron rollup >12 tháng|lúc nào cũng được (bảng mới), khuyên sau 22h|supabase db query --linked -f perf/rollback/20261120120000_lesson_clip_views.down.sql"
 )
+# ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2
 # ĐÃ CHẠY 12/11/2026 08:45: 20261112090000_cnc_quiz_cham_server_buoc_1
