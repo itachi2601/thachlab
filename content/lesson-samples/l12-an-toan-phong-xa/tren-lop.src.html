@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An toàn phóng xạ · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:100%} .f2{height:84vh}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text[font-size="14"],.f1 svg text[font-size="15"]{font-size:16.5px} .hai>.fig.flo,.hai>.fig.fph{width:50%}
+.f2 svg text[font-size="11"]{font-size:13px} .f2 svg text[font-size="13"]{font-size:14px}
+.fph svg text[font-size="13.2"]{font-size:14px} .fnh{height:30vh}
+.ki{font-size:4.6em;margin:0;text-align:center;line-height:1}
+.fk{align-items:center}
+table.mh td{font-size:.86em;vertical-align:top;width:29%} table.mh th{font-size:.8em}
+table.gon td,table.gon th{font-size:.8em;padding:.04em .35em}
+@media (min-width:761px){table.gon th{white-space:nowrap}}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.fnh,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+/* bài 18: chữ nhãn hình lý thuyết phóng lên cho tivi */
+.f1 svg text[font-size="13"],.f1 svg text[font-size="14"]{font-size:17px}
+.f2 svg text[font-size="13"],.f2 svg text[font-size="14"]{font-size:16px}
+.fnsc svg,.fxu svg{width:100%;height:auto;max-height:100%}
+.fnsc,.fxu{align-items:center}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 12 · Bài 21 trong Tập (web: Bài 18)</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 21 · tr.49</span></div>
+  <div class="giua">
+    <h1>An toàn phóng xạ</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Tia phóng xạ gây hại thế nào? Gy khác Sv ra sao?</li>
+      <li>Lùi xa, đứng ngắn, che chắn: mỗi cách giảm liều bao nhiêu?</li>
+      <li>Chất thải phóng xạ xử lí thế nào?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ===== 1. Dự đoán, tác hại ===== -->
+<section class="man" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.49 · ô 49·2</span></div>
+  <div class="hai">
+    <div class="fig fnsc" style="width:46%"><svg viewBox="0 0 310 180" role="img" aria-label="Hai người ở hai khoảng cách khác nhau từ nguồn phóng xạ"><circle cx="26" cy="94" r="14" fill="#b3261e"/><text x="26" y="136" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nguồn</text><circle cx="110" cy="62" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M110 74 V102 M96 84 H124 M110 102 L100 124 M110 102 L120 124" fill="none" stroke="#1c2540" stroke-width="2.8"/><circle cx="278" cy="62" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M278 74 V102 M264 84 H292 M278 102 L268 124 M278 102 L288 124" fill="none" stroke="#1c2540" stroke-width="2.8"/><line x1="26" y1="146" x2="110" y2="146" stroke="#1c2540" stroke-width="2.8"/><text x="68" y="170" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">1 m</text><line x1="26" y1="146" x2="278" y2="146" stroke="#1c2540" stroke-width="2.8" stroke-dasharray="7 4"/><text x="194" y="170" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">3 m</text><text x="110" y="38" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">H₁</text><text x="278" y="38" fill="#b3261e" font-size="18" text-anchor="middle" font-weight="700">H₂ = ?</text><circle cx="106" cy="20" r="2.4" fill="none" stroke="#1c2540" stroke-width="1.3"/><circle cx="262" cy="20" r="2.4" fill="none" stroke="#b3261e" stroke-width="1.5"/><path d="M40 86 L96 70 M40 102 L96 110" stroke="#b3261e" stroke-width="2" stroke-dasharray="4 4" fill="none"/></svg></div>
+    <div class="ben">
+      <p class="hoi">Kỹ thuật viên lùi từ 1 m ra 3 m. Suất liều ở chỗ mới sẽ:</p>
+      <ol class="opt" style="font-size:.92em">
+        <li><b>A.</b> Còn một nửa</li>
+        <li><b>B.</b> Còn một phần ba</li>
+        <li><b>C.</b> Còn một phần chín</li>
+        <li><b>D.</b> Không đổi</li>
+      </ol>
+      <p class="nho">Ghi "Em chọn" + chắc/không chắc + "Vì sao?" vào ô 49·2. Đáp án ở màn cuối tiết.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Tia phóng xạ gây hại</span><span>phút 3–5</span><span class="tap">tr.49 · ô 49·4</span></div>
+  <div class="giua">
+    <p>Không nhìn <b class="o">thấy</b>; <b class="o">ion</b> hoá môi trường, phá huỷ phân tử sinh học, hỏng <b class="o">tế bào</b>.</p>
+    <p>Nặng nhất ở tế bào phân chia <b class="o">nhanh</b>.</p>
+    <p>Bốn yếu tố: <b class="o">cường độ</b> chùm tia, khả năng <b class="o">ion hoá</b>, khả năng <b class="o">đâm xuyên</b>, <b class="o">thời gian</b> chiếu.</p>
+    <p class="nho">Liều thấp: đỏ da, rụng tóc. Liều cao: bỏng xạ, suy tuỷ xương.</p>
+  </div>
+</section>
+
+<!-- ===== 2. Liều ===== -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Gy và Sv</span><span>phút 5–10</span><span class="tap">tr.49 · ô 49·5</span></div>
+  <div class="giua">
+    <div class="fx">$D=\dfrac{E}{m}$ <b class="o">(Gy)</b> &nbsp;·&nbsp; $1\ \mathrm{Gy}=1$ <b class="o">J/kg</b></div>
+    <div class="fx">$H=w_R\cdot D$ <b class="o">(Sv)</b></div>
+    <p>$w_R$: tia X, $\gamma$, $\beta$ = <b class="o">1</b> · $\alpha$ = <b class="o">20</b> · nơtron <b class="o">5–20</b></p>
+    <p>Suất liều $\dot H$ (µSv/h): $H=\dot H\cdot t$, <b>đổi phút ra giờ trước</b>.</p>
+    <p class="nho">Gy đo năng lượng mô nhận · Sv đo mức nguy hiểm.</p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Câu 2</span><span>phút 5–10</span><span class="tap">tr.51 · ô 51·3 · Câu 2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Mẫu mô phơi nhiễm tia alpha, nhận liều hấp thụ $D=0{,}05\ \mathrm{Gy}$. Liều tương đương là:</p>
+    <ol class="opt lo hai-cot" style="font-size:.9em">
+      <li><b>A.</b> $0{,}05\ \mathrm{Sv}$</li>
+      <li data-dung><b>B.</b> $1\ \mathrm{Sv}$</li>
+      <li><b>C.</b> $0{,}05\ \mathrm{Gy}$, vì Sv và Gy là một</li>
+      <li><b>D.</b> $0{,}0025\ \mathrm{Sv}$</li>
+    </ol>
+    <p class="nho">Ghi "Em chọn" + "Chắc?" ở ô 51·3 trước khi mở.</p>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden><p><b>B.</b> $H=w_RD=20\cdot0{,}05=1$ Sv. A: quên $w_R$ · C: gộp Gy với Sv · D: chia cho 20 thay vì nhân.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Mốc liều nên nhớ</span><span>phút 5–10</span><span class="tap">tr.50 · ô 50·1</span></div>
+  <div class="giua">
+    <p>Phông tự nhiên: <b class="o">2,4</b> mSv/năm</p>
+    <p>X-quang ngực: <b class="o">0,1</b> mSv · chụp CT: <b class="o">7</b> mSv</p>
+    <p>Giới hạn nghề nghiệp: <b class="o">20</b> mSv/năm · dân thường: <b class="o">1</b> mSv/năm</p>
+    <p>Toàn thân <b class="o">4 000</b> mSv: chết <b class="o">một nửa</b> số người.</p>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Thang liều lôgarit</span><span>phút 5–10</span><span class="tap">tr.50 · hình cạnh ô 50·1</span></div>
+  <div class="fig f2"><!--FIG2--></div>
+</section>
+
+<!-- ===== 3. Khoảng cách ===== -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Ba nguyên tắc: thời gian, khoảng cách</span><span>phút 10–17</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="giua">
+    <p>Thời gian: liều tỉ lệ <b class="o">thuận</b> với $t$ · $H=$ <b class="o">$\dot H$</b> $\cdot$ <b class="o">$t$</b></p>
+    <p>Khoảng cách: $\dot H\sim$ <b class="o">$\dfrac{1}{r^2}$</b></p>
+    <div class="fx">$\dfrac{\dot H_2}{\dot H_1}=$ <b class="o">$\left(\dfrac{r_1}{r_2}\right)^2$</b></div>
+    <p class="nho">Nguồn phát mọi hướng: cùng lượng tia trải trên mặt cầu $4\pi r^2$. Quy luật dùng cho nguồn điểm: nguồn rất nhỏ so với khoảng cách tới nó. Xem clip để tự kiểm.</p>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm dựng lại</span><span>phút 10–17 · 50 giây + 2 lần dừng</span><span class="tap">tr.50 · ô 50·3</span></div>
+  <div class="vg" data-bat="0.4" data-het="49.3">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.webp" preload="metadata" playsinline title="Lùi xa nguồn phóng xạ"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: lùi xa nguồn thì số đếm của máy đổi thế nào?</p><p class="nho">Clip dừng 2 lần cho lớp đoán.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Máy đếm gamma đặt cách nguồn 0,5 m: 1454 xung/phút (đã trừ phông).</p></div>
+      <div class="buoc" data-t="8.0" data-dung><p class="hoi">Lùi ra 1 m thì máy đếm:</p>
+        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> Còn khoảng 1/2</li><li data-dung><b>B.</b> Còn khoảng 1/4</li><li><b>C.</b> Còn khoảng 1/8</li><li><b>D.</b> Gần như không đổi</li></ol></div>
+      <div class="buoc" data-t="8.1"><p class="so-lon">B: còn khoảng 1/4</p><p class="hoi">Xem tiếp ở 2 m và 3 m: xa gấp 2 (từ chỗ nào cũng vậy) thì còn 1/4.</p></div>
+      <div class="buoc" data-t="45.6" data-dung><p class="hoi">Lùi từ 1 m ra 6 m. Nhịp thực giảm mấy lần?</p>
+        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> 6 lần</li><li><b>B.</b> 25 lần</li><li><b>C.</b> 12 lần</li><li data-dung><b>D.</b> 36 lần</li></ol></div>
+      <div class="buoc" data-t="45.7"><p class="so-lon">D: giảm 36 lần</p><p class="hoi">Xa gấp 6 ⇒ chia $6^2=36$.</p><p class="nho">A: lấy tỉ số, quên bình phương · B: lấy hiệu 5 m rồi bình phương · C: nhân đôi thay vì bình phương.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Bảng suất liều</span><span>phút 10–17</span><span class="tap">tr.50 · ô 50·3</span></div>
+  <div class="giua">
+    <table class="bang"><tr><th>$d$ (m)</th><th>0,5</th><th>1,0</th><th>1,5</th><th>2,0</th><th>3,0</th></tr>
+      <tr><td>$\dot H$ (µSv/h)</td><td>360</td><td>90</td><td>40</td><td>22,5</td><td>10</td></tr>
+      <tr><td>$\dot H\cdot d^2$</td><td class="ns an-o" data-o="g3">90</td><td class="ns an-o" data-o="g3">90</td><td class="ns an-o" data-o="g3">90</td><td class="ns an-o" data-o="g3">90</td><td class="ns an-o" data-o="g3">90</td></tr></table>
+    <p>Tự tính hàng cuối vào Tập (1 phút). Giống nhau ⇒ $\dot H$ tỉ lệ nghịch với <b class="o">$d^2$</b>. Lùi xa là cách giảm liều <b class="o">hiệu quả</b> nhất.</p>
+    <button class="mo" data-mo="g3">Mở hàng cuối</button>
+    <p class="nho">Tập đo bằng µSv/h, clip đếm xung/phút: cùng quy luật $1/d^2$.</p>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Câu 3</span><span>phút 10–17</span><span class="tap">tr.51 · ô 51·3 · Câu 3</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 3. Về thí nghiệm khoảng cách, phát biểu nào <u>sai</u>?</p>
+    <ol class="opt lo" style="font-size:.84em">
+      <li><b>A.</b> Từ 1 m ra 2 m, nhịp đếm thực còn khoảng một phần tư</li>
+      <li><b>B.</b> $Nd^2$ gần không đổi nên suất liều tỉ lệ nghịch bình phương khoảng cách</li>
+      <li data-dung><b>C.</b> Nhịp đếm giảm chủ yếu do không khí hấp thụ tia</li>
+      <li><b>D.</b> Sát nguồn lớn, không phải nguồn điểm, quy luật không dùng được</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden><p><b>C sai.</b> Giảm vì cùng số hạt trải trên mặt cầu $4\pi d^2$ ngày càng lớn; không khí chặn gamma rất ít trên vài mét.</p></div>
+  </div>
+</section>
+
+<!-- ===== 4. Che chắn, biển, y tế ===== -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Che chắn</span><span>phút 17–23</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="hai">
+    <div class="fig fxu" style="width:44%"><svg viewBox="0 0 330 160" role="img" aria-label="Ba tia phóng xạ và tấm chắn của chúng"><defs><marker id="xy" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><text x="4" y="32" fill="#1f5fa8" font-size="22" text-anchor="start" font-weight="700">α</text><line x1="30" y1="24" x2="94" y2="24" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 4" marker-end="url(#xy)"/><rect x="96" y="6" width="6" height="36" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="110" y="31" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">giấy</text><text x="4" y="78" fill="#b3261e" font-size="22" text-anchor="start" font-weight="700">β</text><line x1="30" y1="70" x2="176" y2="70" stroke="#b3261e" stroke-width="2.8" marker-end="url(#xy)"/><rect x="178" y="52" width="14" height="36" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="200" y="77" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">nhôm</text><text x="4" y="124" fill="#1c2540" font-size="22" text-anchor="start" font-weight="700">γ</text><line x1="30" y1="116" x2="260" y2="116" stroke="#1c2540" stroke-width="2.8" marker-end="url(#xy)"/><rect x="262" y="98" width="34" height="36" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="304" y="123" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">chì</text></svg></div>
+    <div class="ben">
+      <p>$\alpha$: chắn bằng <b class="o">giấy</b></p>
+      <p>$\beta$: chắn bằng <b class="o">nhôm</b></p>
+      <p>$\gamma$, X: chắn bằng <b class="o">chì, bê tông dày</b></p>
+      <p class="hoi"><b>Đặt tấm giấy, nhôm 3 mm, chì 5 mm trước chùm gamma: số đếm đổi thế nào?</b></p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Thí nghiệm dựng lại</span><span>phút 17–23 · 49 giây + 2 lần dừng</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="vg" data-bat="0.4" data-het="49.0">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261114.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-02-20261114.webp" preload="metadata" playsinline title="Giấy, nhôm, chì chắn chùm gamma"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số đếm sau mỗi tấm chắn.</p><p class="nho">Clip dừng 2 lần cho lớp đoán.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Đầu dò cách nguồn gamma 1 m, không chắn: 360 xung/phút.</p><p class="nho">Số đếm xung/phút của clip, không phải µSv/h ở bảng ô 50·3.</p></div>
+      <div class="buoc" data-t="9.3" data-dung><p class="hoi">Lần lượt chèn giấy, nhôm 3 mm, chì 5 mm. Số đếm:</p>
+        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> Giấy làm giảm mạnh nhất</li><li><b>B.</b> Ba tấm giảm gần bằng nhau</li><li data-dung><b>C.</b> Chỉ tấm chì làm giảm rõ</li><li><b>D.</b> Tấm nào cũng chặn hết</li></ol></div>
+      <div class="buoc" data-t="9.4"><p class="so-lon">C: chỉ chì giảm rõ</p><p class="hoi">Xem số đếm từng tấm.</p></div>
+      <div class="buoc" data-t="35.9" data-dung><p class="so-lon">"Thêm 5 mm chì là chặn hết."</p><p class="hoi">Đúng hay sai? Vì sao?</p></div>
+      <div class="buoc" data-t="36.0"><p class="hoi">Sai: mỗi 5 mm chì nhân số đếm khoảng 0,43; 10 mm vẫn còn 66. Giảm mãi, không về 0.</p></div>
+      <div class="buoc" data-t="49.0"><p class="so-lon">Gamma: chì, đủ dày</p><p class="hoi">Giấy chặn $\alpha$ · nhôm chặn $\beta$ · chì, bê tông chặn $\gamma$.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Biển cảnh báo · liều kế · y tế</span><span>phút 17–23</span><span class="tap">tr.50 · ô 50·4</span></div>
+  <div class="giua">
+    <p>Biển ba cánh: đặt ở nơi <b class="o">có nguồn phóng xạ</b>; liều kế đeo ở <b class="o">ngực</b>, đọc định kì.</p>
+    <p>Y tế: liều <b class="o">thấp</b> để xem (chẩn đoán), liều <b class="o">cao</b> để diệt (điều trị ung thư).</p>
+    <p class="nho">Chụp CT liều gấp hàng chục lần X-quang ngực: chỉ định khi thật cần.</p>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Câu 4</span><span>phút 17–23</span><span class="tap">tr.51 · ô 51·3 · Câu 4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 4. Khác nhau cơ bản giữa chẩn đoán hình ảnh phóng xạ và xạ trị ung thư là:</p>
+    <ol class="opt lo" style="font-size:.84em">
+      <li><b>A.</b> Chẩn đoán dùng đồng vị phóng xạ, xạ trị thì không</li>
+      <li><b>B.</b> Chẩn đoán đưa nguồn vào trong, xạ trị chiếu từ ngoài</li>
+      <li data-dung><b>C.</b> Chẩn đoán liều thấp để ghi hình, xạ trị liều cao để diệt tế bào</li>
+      <li><b>D.</b> Chẩn đoán không gây liều, chỉ xạ trị gây liều</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở đáp án</button>
+    <div class="an" id="a4" hidden><p><b>C.</b> Cùng dùng bức xạ, khác ở mục đích và mức liều. A, B sai: cả hai đều có cả hai cách · D: chẩn đoán có liều, chỉ thấp.</p></div>
+  </div>
+</section>
+
+<!-- ===== 5. Chất thải, bài toán ===== -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Chất thải phóng xạ</span><span>phút 23–28</span><span class="tap">tr.50 · ô 50·4</span></div>
+  <div class="giua">
+    <p>Phân loại theo <b class="o">chu kì bán rã</b> → giảm thể tích → <b class="o">cố định</b> → <b class="o">cách li</b>.</p>
+    <p>Không <b class="o">pha</b> loãng rồi xả ra môi trường.</p>
+    <p class="nho">Chu kì ngắn (I-131, 8 ngày): lưu chờ phân rã. Chu kì dài ($^{137}$Cs 30 năm): cách li lâu dài.</p>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Câu 5</span><span>phút 23–28</span><span class="tap">tr.51 · ô 51·3 · Câu 5</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 5. Cách làm nào <u>không</u> phù hợp với chất thải mức cao?</p>
+    <ol class="opt lo" style="font-size:.84em">
+      <li><b>A.</b> Thuỷ tinh hoá, bọc thép rồi chôn sâu trong tầng địa chất</li>
+      <li><b>B.</b> Lưu trong bể nước để chắn tia nhiều năm</li>
+      <li data-dung><b>C.</b> Pha loãng với nước rồi xả ra sông</li>
+      <li><b>D.</b> Phân loại theo chu kì bán rã trước khi lưu giữ</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>C.</b> Pha loãng chỉ làm nồng độ thấp đi chốc lát, chất phóng xạ vẫn vào sinh vật. Ba cách còn lại đang làm thật.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Câu 6</span><span>phút 23–28</span><span class="tap">tr.51 · ô 51·3 · Câu 6</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 6. Phòng thí nghiệm nhận nguồn alpha hở (dạng bột). Cách phòng tránh đúng nhất?</p>
+    <ol class="opt lo" style="font-size:.86em">
+      <li><b>A.</b> Đặt nguồn sau tấm chì dày</li>
+      <li data-dung><b>B.</b> Làm trong tủ hút, đeo khẩu trang và găng tay</li>
+      <li><b>C.</b> Đứng xa trên 5 m là an toàn tuyệt đối</li>
+      <li><b>D.</b> Mở cửa cho tia alpha bay ra ngoài</li>
+    </ol>
+    <button class="mo" data-mo="a6">Mở đáp án</button>
+    <div class="an" id="a6" hidden><p><b>B.</b> Nguồn hở: đường nguy hiểm nhất là hít, nuốt bụi. Chặn ở đường vào. C sai ở chữ "tuyệt đối".</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Câu 7 (dự phòng nếu còn giờ)</span><span>phút 26–28</span><span class="tap">tr.51 · ô 51·3 · Câu 7 · tr.53 · ô 53·4</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 7. Máy đo 120 µSv/h tại 2 m. Muốn liều không quá 20 µSv, ở 4 m đứng tối đa:</p><p class="nho">Cùng đề in ở tr.53 ô 53·4: chọn A–D ở ô 51·3, điền số phút ở ô 53·4.</p>
+    <ol class="opt lo hai-cot" style="font-size:.9em">
+      <li data-dung><b>A.</b> 40 phút</li>
+      <li><b>B.</b> 10 phút</li>
+      <li><b>C.</b> 20 phút</li>
+      <li><b>D.</b> 2 giờ 40 phút</li>
+    </ol>
+    <button class="mo" data-mo="a7">Mở đáp án</button>
+    <div class="an" id="a7" hidden><p><b>A.</b> Xa gấp 2 ⇒ $120/4=30$ µSv/h; $t=20/30$ h $=40$ phút.</p>
+      <p class="nho">B: quên đổi khoảng cách · C: dùng $1/r$ · D: chia 16.</p></div>
+  </div>
+</section>
+
+<!-- ===== 6. Bẫy, trả bài, quay lại, đề 1195 ===== -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Ba cái bẫy</span><span>phút 28–30 · 20 giây</span><span class="tap">tr.51 · ô 51·1</span></div>
+  <div class="giua">
+    <p class="hoi">Đánh dấu ☐ bẫy em <b>đã nghĩ như vậy</b> trước hôm nay:</p>
+    <ul>
+      <li><b>"Gy và Sv là một."</b> Gy đo năng lượng; Sv đo mức nguy hiểm: $H=w_RD$.</li>
+      <li><b>"Xa gấp đôi thì liều giảm một nửa."</b> Tỉ lệ nghịch $r^2$: còn 1/4.</li>
+      <li><b>"Alpha bị giấy chắn nên vô hại."</b> Chỉ khi nguồn ở <b class="o">ngoài</b>; <b class="o">hít, nuốt</b> vào thì nguy hiểm nhất.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 28–30 · viết 1 phút rồi mới mở</span><span class="tap">tr.51 · ô 51·2 · câu 3, 4</span></div>
+  <div class="giua">
+    <p class="hoi">3. Phát biểu ba nguyên tắc an toàn phóng xạ.</p>
+    <button class="mo" data-mo="t3">Mở câu 3</button>
+    <div class="an" id="t3" hidden><p>Thời gian ngắn · khoảng cách xa · che chắn đủ. Liều tỉ lệ thuận thời gian, tỉ lệ nghịch $r^2$, giảm theo vật liệu và độ dày tấm chắn.</p></div>
+    <p class="hoi">4. Vì sao lùi xa gấp đôi thì liều còn một phần tư?</p>
+    <button class="mo" data-mo="t4">Mở câu 4</button>
+    <div class="an" id="t4" hidden><p>Nguồn phát mọi hướng: cùng lượng tia trải trên mặt cầu $4\pi r^2$. Lùi gấp đôi, diện tích gấp 4, liều còn $1/4$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Quay lại câu mở bài</span><span>phút 29–30</span><span class="tap">tr.49 · ô 49·3</span></div>
+  <div class="hai">
+    <div class="fig fnsc" style="width:42%"><svg viewBox="0 0 310 180" role="img" aria-label="Hai người ở hai khoảng cách khác nhau từ nguồn phóng xạ"><circle cx="26" cy="94" r="14" fill="#b3261e"/><text x="26" y="136" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nguồn</text><circle cx="110" cy="62" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M110 74 V102 M96 84 H124 M110 102 L100 124 M110 102 L120 124" fill="none" stroke="#1c2540" stroke-width="2.8"/><circle cx="278" cy="62" r="11" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M278 74 V102 M264 84 H292 M278 102 L268 124 M278 102 L288 124" fill="none" stroke="#1c2540" stroke-width="2.8"/><line x1="26" y1="146" x2="110" y2="146" stroke="#1c2540" stroke-width="2.8"/><text x="68" y="170" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">1 m</text><line x1="26" y1="146" x2="278" y2="146" stroke="#1c2540" stroke-width="2.8" stroke-dasharray="7 4"/><text x="194" y="170" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">3 m</text><text x="110" y="38" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">H₁</text><text x="278" y="38" fill="#b3261e" font-size="18" text-anchor="middle" font-weight="700">H₂ = ?</text><circle cx="106" cy="20" r="2.4" fill="none" stroke="#1c2540" stroke-width="1.3"/><circle cx="262" cy="20" r="2.4" fill="none" stroke="#b3261e" stroke-width="1.5"/><path d="M40 86 L96 70 M40 102 L96 110" stroke="#b3261e" stroke-width="2" stroke-dasharray="4 4" fill="none"/></svg></div>
+    <div class="ben">
+      <p class="nhin">Lùi từ 1 m ra 3 m. Suất liều ở chỗ mới sẽ còn:</p>
+      <button class="mo" data-mo="a8">Mở: suất liều còn…</button>
+      <div class="an" id="a8" hidden><p><b>C.</b> Còn một phần chín: xa gấp 3 ⇒ chia $3^2=9$.</p>
+        <p class="nho">A, B: nghĩ liều giảm theo $1/r$ · D: quên rằng tia trải rộng ra.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6d">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm …/20 vào ô 51·4</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1195</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1195 (web: Bài 18) · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6e">
+  <div class="top"><span class="so">Về nhà theo Tập bài 21 (web: Bài 18)</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.49</b> ô 49·3 dòng "điều em hiểu sai" · ô 49·1 đánh dấu mục tiêu</li>
+    <li><b>tr.51</b> ô 51·2 câu 1, 2, 5, 6: nói cho bạn cùng bàn hoặc người nhà nghe, ghi số câu nói được · ô 51·3 cột "Đúng?" của câu nào chưa kịp ghi trên lớp</li>
+    <li><b>tr.52</b> ô 52·3 Giải a)–d) · ô 52·4 "Mở rộng" bước 2, 3</li>
+    <li><b>tr.53</b> ô 53·1 Đề BTVN (thầy giao trên web) · ô 53·2 Mang về · ô 53·3 Thử thách ★ → ★★★</li>
+    <li>Sau khi nộp đề 1195: xem lời giải trên web</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

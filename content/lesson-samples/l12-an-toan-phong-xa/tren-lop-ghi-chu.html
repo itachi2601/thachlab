@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>An toàn phóng xạ · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>An toàn phóng xạ (L12 · Tập bài 21 · web Bài 18) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Tập in số bài <b>21</b>, trang <b>49–53</b> (đánh số liền cả quyển chương 4), trang web là "Bài 18" — đọc to "Tập bài 21, trang 49" để học sinh lật đúng. Mã ô theo số trang quyển: ô 49·2, 50·3…</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Màn chiếu cần mạng (công thức KaTeX từ cdn.jsdelivr.net, 2 clip từ kho clip). Mở trước giờ để trình duyệt nhớ.</li>
+  <li>Cuối tiết làm <b>đề 1195 "Kiểm tra nhanh — Bài 18. An toàn phóng xạ"</b> (20 câu, 15 phút, mục Lý thuyết id 150) trên điện thoại: màn 6d có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1195&amp;item=150</code>) và số đề để gõ tay ở trang Quét mã. Điểm ghi vào <b>ô 51·4</b>. Điểm ở tr.53 là điểm BTVN.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý, chữ thường = 5,2% chiều cao màn. F11 hoặc ⌃⌘F. Ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> = đúng chữ ô trống trong Tập; góc phải màn ghi trang · ô.</li>
+  <li><b>Clip 1 "Lùi xa nguồn phóng xạ"</b> (màn 3b, 50 giây): dừng ở 8,0 s (lùi 0,5 m → 1 m còn bao nhiêu?) và 45,6 s (1 m → 6 m giảm mấy lần?). <b>Clip 2 "Giấy, nhôm, chì"</b> (màn 4b, 49 giây): dừng ở 9,3 s (số đếm sau ba tấm) và 35,9 s ("thêm 5 mm chì là chặn hết", đúng hay sai). Enter phát tiếp, ↺ xem lại đoạn.</li>
+  <li>Clip 3 "liều kế cá nhân 4 tuần" và bảng ¹³¹I chỉ có trên web (mặc định bỏ qua): dùng nếu dư giờ, hoặc giao về nhà xem.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp.</li>
+</ul>
+
+<h2>Cách biểu quyết (mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, 30 giây tự nghĩ, giơ tay theo từng phương án, nói to tỉ lệ. Gọi hai em chọn khác nhau thuyết phục bạn, biểu quyết lại rồi mới Mở.</li>
+  <li>Đúng &gt; 80% ngay lần đầu: bỏ bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Câu 2–7 không in đề trong Tập: ghi vào bảng ô 51·3 "Kết quả tự kiểm tra" cột "Em chọn" + "Chắc?" trước khi mở, cột "Đúng?" sau khi mở. Bảng ô 51·3 bắt đầu từ câu 2; ý "liều tỉ lệ thuận thời gian" nói ở màn 3a.</li>
+</ul>
+
+<h2>Đi theo Tập bài 21 <small>thứ tự lật: tr.49 → tr.51 (câu 2) → tr.50 ↔ tr.51 → tr.51 → tr.49</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán 1 m → 3 m, tác hại</td><td>0–5</td><td>ô 49·2 (khoanh, chắc/không, "Vì sao") → ô 49·4</td></tr>
+<tr><td>2 · Gy, Sv, mốc liều + câu 2</td><td>5–10</td><td>ô 49·5 → ô 51·3 câu 2 → ô 50·1</td></tr>
+<tr><td>3 · Khoảng cách + clip 1 + bảng + câu 3</td><td>10–17</td><td>ô 50·2 (dòng thời gian, khoảng cách) → ô 50·3 → ô 51·3 câu 3</td></tr>
+<tr><td>4 · Che chắn + clip 2 + biển, liều kế, y tế + câu 4</td><td>17–23</td><td>ô 50·2 (dòng che chắn) → ô 50·4 → ô 51·3 câu 4</td></tr>
+<tr><td>5 · Chất thải + câu 5, 6 (+ câu 7 dự phòng)</td><td>23–28</td><td>ô 50·4 (chất thải) → ô 51·3 câu 5, 6, (7 + tr.53 ô 53·4)</td></tr>
+<tr><td>6 · Bẫy, trả bài, quay lại, đề 1195</td><td>28–30, đề 30–45</td><td>ô 51·1, 51·2 câu 3, 4 → ô 49·3, 49·1 → ô 51·4</td></tr>
+</tbody>
+</table>
+<p>Bài toán mẫu tr.52 (suất liều 90 µSv/h tại 1 m) <b>không làm trên lớp</b>: về nhà, ô 52·3 và 52·4. Điểm dừng 3 dày nhất (clip 50 giây + 2 lần dừng + bảng): bảng 50·3 cho lớp tự tính 1 phút, mở hàng cuối. Điểm dừng 5 chỉ chiếu câu 7 khi còn giờ.</p>
+
+<h2>Điểm dừng 1 · Dự đoán, tác hại <small>phút 0–5 · tr.49</small></h2>
+<ul>
+  <li>Gợi mở: "Kỹ thuật viên xạ trị bấm nút từ xa, đứng sau tấm chắn chì. Vì sao phải lùi xa?" Hình hai người ở 1 m và 3 m giống hệt hình Tập. Câu và A–D chép y chữ Tập; chưa nói công thức.</li>
+  <li>Ghi tỉ lệ lên góc bảng, nói "cuối giờ quay lại" (màn 6c, ô 49·3). Clip ở điểm dừng 3 sẽ cho số đo 1/4 ở 2 m, 1/9 ở 3 m: khi đó nhắc lớp nhớ lại phương án mình chọn.</li>
+  <li>Màn 1b: 6 chỗ điền ô 49·4, chép nhanh (2 phút).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A hoặc B (giảm theo 1/r, vì quen "xa gấp 3 thì giảm 3 lần").</div>
+
+<h2>Điểm dừng 2 · Gy, Sv, mốc liều <small>phút 5–10 · ô 49·5, 51·3, 50·1</small></h2>
+<ul>
+  <li>Màn 2a: $D=E/m$, $H=w_RD$, $w_R$ của các tia, $H=\dot H t$ (đổi phút ra giờ). Nhấn "Gy đo năng lượng, Sv đo mức nguy hiểm".</li>
+  <li>Màn 2b: câu 2 (alpha 0,05 Gy → 1 Sv). Màn 2c: 6 mốc liều ô 50·1; màn 2d: thang lôgarit (xem 20 giây: mỗi vạch gấp 10 lần; chỉ cho lớp mốc 2,4 nằm giữa vạch 1 và 10, mốc 7 gần vạch 10).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> "Gy và Sv là một" (câu 2 C); quên $w_R$ (A); chia 20 thay vì nhân (D).</div>
+
+<h2>Điểm dừng 3 · Thời gian, khoảng cách <small>phút 10–17 · ô 50·2, 50·3</small></h2>
+<ul>
+  <li>Màn 3a: ba dòng ô 50·2 (thời gian, khoảng cách) và lí do mặt cầu $4\pi r^2$; nói "nguồn điểm" = nguồn rất nhỏ so với khoảng cách (câu 3 D hỏi) (câu 4 phần trả bài hỏi lại).</li>
+  <li>Màn 3b: clip 1. Tập đo µSv/h, clip đếm xung/phút: cùng quy luật; nói rõ để khỏi hỏi "sao số khác". Lớp ghi nhanh số 2 m, 3 m để so bảng 50·3.</li>
+  <li>Màn 3c: bảng 50·3, lớp tự tính hàng $\dot H d^2$ (đều ra 90); mở hàng cuối. Màn 3d: câu 3 (phát biểu sai là C).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chia theo hiệu khoảng cách thay vì tỉ số; chọn nhầm D ở câu 3 vì quên "sát nguồn lớn".</div>
+
+<h2>Điểm dừng 4 · Che chắn, biển, y tế <small>phút 17–23 · ô 50·2, 50·4</small></h2>
+<ul>
+  <li>Màn 4a: giấy – nhôm – chì ứng với α – β – γ. Câu hỏi hiện trên màn chưa chốt, clip 2 trả lời.</li>
+  <li>Màn 4b: clip 2; ở dừng 2 gọi một em nói vì sao sai ("còn 66 sau 10 mm, giảm mãi không về 0"). Màn 4c: 5 chỗ ô 50·4 (biển, liều kế, y tế). Màn 4d: câu 4 (C).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ "có tấm chắn là đủ", không xét vật liệu và độ dày; nghĩ chẩn đoán không gây liều (câu 4 D).</div>
+
+<h2>Điểm dừng 5 · Chất thải <small>phút 23–28 · ô 50·4, 51·3</small></h2>
+<ul>
+  <li>Màn 5a: phân loại theo chu kì bán rã → giảm thể tích → cố định → cách li; không pha loãng. Màn 5b: câu 5 (C). Màn 5c: câu 6 (nguồn alpha hở, B): nối với bẫy 3. Màn 5d: câu 7 (A) chỉ chiếu khi còn giờ; lớp ghi ô 51·3 và dòng tr.53 ô 53·4.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C câu 6 ("xa 5 m an toàn tuyệt đối"); câu 7: B (quên đổi khoảng cách), C (dùng 1/r), D (chia 16).</div>
+
+<h2>Điểm dừng 6 · Bẫy, trả bài, quay lại, đề 1195 <small>phút 28–30 · 30–45 làm đề</small></h2>
+<ul>
+  <li>Màn 6a (20 giây): tick bẫy mình <b>đã nghĩ như vậy trước hôm nay</b>. Màn 6b: trả bài câu 3, 4 (viết 1 phút rồi mở). Câu 1, 2, 5, 6: về nhà, nói cho bạn cùng bàn hoặc người nhà, ghi số câu nói được ở dòng "Bạn cùng bàn kiểm".</li>
+  <li>Màn 6c: quay lại 1 m → 3 m, mở đáp án C (1/9). Lật tr.49 ô 49·3: ghi đáp án, đúng/sai, "điều em hiểu sai".</li>
+  <li>Màn 6d: QR, đề 1195 trong 15 phút, ghi điểm ô 51·4. Màn 6e: về nhà (bài toán mẫu tr.52, ô 53·1 Đề BTVN, ô 53·2, 53·3); xem lời giải đề 1195 trên web sau khi nộp.</li>
+</ul>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Điểm dừng 6 chật (phút 28–30): viết câu 4, câu 3 nói miệng; màn 6c chỉ 1 phút. Câu 7 màn 5d cùng đề ô 53·4: chọn ở 51·3, điền số phút ở 53·4, không làm hai lần.</li>
+  <li>Thiếu: bỏ màn 2d, bỏ dừng 2 của cả hai clip, bỏ câu 7, trả bài chỉ câu 4. Không cắt giờ làm đề.</li>
+  <li>Dư: câu 7 + thử thách ★★ tr.53; clip 3 (liều kế) trên web.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn hình thang liều (màn 2d) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu câu dự đoán ô 49·2 (đáp án C) và dừng 1 của clip 1 (B).</li>
+  <li>Đề 1195: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp; điểm dừng 3 có vượt mốc phút không.</li>
+</ul>
+</body>
+</html>

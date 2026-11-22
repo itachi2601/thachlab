@@ -8,7 +8,7 @@ const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"
 const hd = m('\\dot H');
 
 const p1 = `<section class="page">
-${head('BÀI 21 · AN TOÀN PHÓNG XẠ', K.sub)}
+${head('BÀI 21 · AN TOÀN PHÓNG XẠ', K.sub + ' · web: Bài 18')}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>tác hại</b> của tia phóng xạ và bốn yếu tố quyết định</div>
@@ -72,7 +72,7 @@ ${h3(1, 'III · Ba cái bẫy hay sập', '3·1')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Gy và Sv là một.”</b> Gy đo năng lượng mô nhận; Sv đo mức nguy hiểm: ${m('H=w_R D')}.</span></div>
 <div class="trap">${ck}<span><b>“Xa gấp đôi thì liều giảm một nửa.”</b> Tỉ lệ nghịch ${m('r^2')}: xa gấp 2 ⇒ còn ${m('1/4')}.</span></div>
-<div class="trap">${ck}<span><b>“Alpha bị giấy chắn nên vô hại.”</b> Chỉ đúng khi nguồn ở ngoài; hít, nuốt vào thì nguy hiểm nhất.</span></div></div>
+<div class="trap">${ck}<span><b>“Alpha bị giấy chắn nên vô hại.”</b> Chỉ đúng khi nguồn ở ${f(10)}; ${f(14)} vào thì nguy hiểm nhất.</span></div></div>
 ${h3(2, 'IV · Trả bài 6 câu', '3·2')}
 ${box(`${tb('1. Tia phóng xạ gây hại cho cơ thể thế nào?')}${lines(2)}
 ${tb('2. Liều hấp thụ và liều tương đương khác nhau thế nào?')}${lines(2)}
@@ -81,25 +81,27 @@ ${tb('4. Vì sao lùi xa gấp đôi thì liều còn một phần tư?')}${line
 ${tb('5. Biển cảnh báo phóng xạ đặt ở đâu, để làm gì?')}${lines(2)}
 ${tb('6. Xử lí chất thải phóng xạ theo bước nào, vì sao tách theo chu kì?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
-${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
+${h3(3, 'Kết quả tự kiểm tra (câu chiếu trên lớp)', '3·3')}
 ${rkHai([2, 3, 4], [5, 6, 7])}
+${h3(4, 'Đề 1195 cuối tiết (web: Bài 18)', '3·4')}
+<div class="card soft" style="padding:1mm 3mm">Điểm ……/20 &nbsp;· câu sai: ${f(40)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('BÀI TOÁN MẪU · SUẤT LIỀU 90 µSv/h TẠI 1 m')}
-${h3(1, 'V · Đề bài', '4')}
+${h3(1, 'V · Đề bài', '4·1')}
 <div class="card soft" style="padding:1.2mm 3mm">Nguồn ${m('{}^{192}_{77}\\mathrm{Ir}')}: máy đo cho ${m('90\\ \\mu\\mathrm{Sv/h}')} tại 1 m. Kỹ thuật viên đứng ở 3 m, mỗi ca 30 phút, cả năm 2 000 giờ; giới hạn nghề nghiệp 20 mSv/năm.
 <div><b>a)</b> Suất liều ở 3 m?</div><div><b>b)</b> Liều trong 30 phút ở 3 m?</div><div><b>c)</b> Ở 1 m trong 30 phút, liều gấp mấy lần?</div><div><b>d)</b> 2 000 giờ/năm ở 3 m có vượt giới hạn?</div></div>
-${h3(2, 'Phân tích đề (điền cùng thầy)')}
+${h3(2, 'Phân tích đề (điền ở nhà)', '4·2')}
 <table><tr><th style="width:46mm">Câu trong đề</th><th style="width:36mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“90 µSv/h tại 1 m”</td><td>${m('\\dot H_1=90')}</td><td>suất liều gốc</td></tr>
 <tr><td style="height:6.5mm">“đứng cách nguồn 3 m”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“30 phút mỗi ca”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“cả năm 2 000 giờ”</td><td></td><td></td></tr></table>
-${h3(3, 'Giải')}
+${h3(3, 'Giải', '4·3')}
 <div class="fig-side" style="${fs(52)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl('a)', 2)}${wl('b)', 2)}${wl('c)', 2)}${wl('d)', 3)}</div>${hinh.nguoiSauChi('Ở 1 m và 3 m.', '90 µSv/h', '?')}</div>
-${h3(4, 'Mở rộng: 160 µSv/h tại 1 m')}
+${h3(4, 'Mở rộng: 160 µSv/h tại 1 m', '4·4')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln" style="height:auto;padding-top:1mm"><b>Đề:</b> đứng cách 2 m trong 15 phút, mỗi ca không quá 0,01 mSv. <b>Bước 1 (cho sẵn):</b> xa gấp 2 ⇒ ${hd}${m('_2=160/4=40\\ \\mu\\mathrm{Sv/h}')}.</div>
 ${wl('Bước 2: liều trong 15 phút = …', 2)}${wl('Bước 3: muốn liều ≤ 5 µSv thì đứng tối đa mấy phút?', 2)}</div>
@@ -107,15 +109,15 @@ ${wl('Bước 2: liều trong 15 phút = …', 2)}${wl('Bước 3: muốn liều
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
-${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH')}
-${K.btvn()}
-${h3(2, 'VI · Mang về: điều em dễ quên nhất', '5')}
+${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Tập bài 21 = Bài 18 trên web')}
+${K.btvn().replace('</h3>', `</h3>${K.tag('5·1')}`).replace('<b>Điểm:</b>', '<b>Điểm BTVN:</b>')}
+${h3(2, 'VI · Mang về: điều em dễ quên nhất', '5·2')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
-${h3(3, 'Thử thách phân tầng')}
+${h3(3, 'Thử thách phân tầng', '5·3')}
 <div class="fig-side" style="grid-template-columns:1fr 30mm">${box(wl('★ Đổi 0,1 mSv ra µSv; X-quang ngực gấp mấy lần 5 µSv một ca?', 2)
  + wl('★★ Vì sao cùng 1 Gy, alpha gây hại gấp 20 lần tia X?', 3)
  + wl('★★★ Vì sao I-131 (T = 8 ngày) lưu vài tháng được còn nhiên liệu phải cách li hàng nghìn năm?', 4))}${hinh.bienCanhBao('Biển cảnh báo.')}</div>
-${h3(4, 'Câu 7 (đổi số)')}
+${h3(4, 'Câu 7 (đổi số)', '5·4')}
 ${box(wl('120 µSv/h tại 2 m; liều ≤ 20 µSv, ở 4 m đứng tối đa … phút', 3))}
 ${foot(5)}</section>`;
 
