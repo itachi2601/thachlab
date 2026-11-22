@@ -95,7 +95,7 @@ ${h3(2, 'II.2 · Công suất điện', '2·2')}
 <div style="margin:1mm 0;display:flex;align-items:flex-end;gap:2mm">${m('P=\\tfrac{A}{t}=')} <span class="fill" style="min-width:12mm"></span> · chỉ toả nhiệt: ${m('P=')} <span class="fill" style="min-width:12mm"></span>${m('=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
 <div>Đơn vị: oát, ${m('1\\ \\mathrm W=1')} ${f(10)}.</div>
 <div>Nhãn ${nhan(220, 100)}: ${nw(`${m('U')}<sub>đm</sub>${m('=')}`)} ${f(12)} là hiệu điện thế ${f(20)}; ${nw(`${m('P')}<sub>đm</sub>${m('=')}`)} ${f(12)} là công suất khi dùng đúng ${f(12)}.</div>
-<div>Từ nhãn: ${nw(`${m('I')}<sub>đm</sub>${m('=')}`)} <span class="fill" style="min-width:14mm;height:9mm"></span> ; ${m('R=')} <span class="fill" style="min-width:14mm;height:9mm"></span> ${m('=')} ${f(16)}</div></div>
+<div>Từ nhãn: ${nw(`${m('I')}<sub>đm</sub>${m('=')}`)} <span class="fill" style="min-width:14mm;height:9mm"></span> ; ${m('R=')} <span class="fill" style="min-width:14mm;height:9mm"></span> ${m('=')} ${f(16)} ${nw('(cách tính: ' + m('U_{\\text{đm}}^2/P_{\\text{đm}}') + ')')}</div></div>
 ${H.nhan()}</div>
 ${h3(3, 'Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W', '2·3')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
@@ -104,7 +104,7 @@ ${h3(3, 'Thí nghiệm: kiểm nhãn đèn xe máy 12 V – 21 W', '2·3')}
 <tr><td>${m('I')} (A)</td><td>1,75</td><td>1,55</td><td>1,30</td></tr>
 <tr><td>${m('P=UI')} (W)</td><td></td><td></td><td></td></tr>
 <tr><td>${m('R=U/I')} (${Om})</td><td></td><td></td><td></td></tr></table>
-<div><b>Rút ra:</b> ở ${V('12{,}0')} công suất ${f(16)} nhãn. Đèn mờ thì ${m('R')} ${f(16)} vì dây tóc ${f(16)}. Bài tập ghi “coi ${m('R')} không đổi” là phép ${f(18)}.</div></div>
+<div><b>Rút ra:</b> ở ${V('12{,}0')} công suất ${f(16)} nhãn. Đèn mờ: ${f(30)}. Bài tập ghi “coi ${m('R')} không đổi” là phép ${f(18)}.</div></div>
 ${H.denXe()}</div>
 ${h3(4, 'Làm nhanh', '2·4')}
 ${box(cau(`Đèn ${nhan(220, 100)} mắc vào ${V('110')}, coi ${m('R')} không đổi. Công suất thực? Vì sao không phải ${W('50')}?`, 2))}
@@ -122,13 +122,13 @@ ${H.canBang()}</div>
 ${h3(2, 'II.4 · Hiệu suất của nguồn điện', '3·2')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
 <div style="display:flex;align-items:flex-end;gap:2mm;margin-bottom:.6mm">${m('H=\\tfrac{A_{\\text{ci}}}{A_{\\text{tp}}}=')}<span class="fill" style="min-width:14mm;height:9mm"></span>${m('=')}<span class="fill" style="min-width:12mm;height:9mm"></span> · thuần điện trở: ${m('H=')}<span class="fill" style="min-width:14mm;height:9mm"></span></div>
-<div>Mạch ngoài có quạt, động cơ, pin đang sạc: chỉ dùng ${m('H=')} ${f(12)}</div>
+<div>Mạch ngoài có quạt, pin đang sạc (năng lượng không thành nhiệt trong R): chỉ dùng ${m('H=')} ${f(12)}</div>
 <div><b>Thí nghiệm:</b> hai pin AA nối tiếp (${m('\\mathcal E=3{,}0\\ \\mathrm V')}, ${m('r=1{,}0\\ \\Omega')}), đổi ${m('R')}, đọc ${m('U')}, ${m('I')}.</div>
 <table class="tbl-ct" style="margin:.6mm 0"><tr><th>${m('R')} (${Om})</th><th>1,0</th><th>2,0</th><th>4,0</th><th>9,0</th></tr>
 <tr><td>${m('I')} (A)</td><td>1,50</td><td>1,00</td><td>0,60</td><td>0,30</td></tr>
 <tr><td>${m('U')} (V)</td><td>1,50</td><td>2,00</td><td>2,40</td><td>2,70</td></tr>
 <tr><td>${m('H=U/\\mathcal E')}</td><td></td><td></td><td></td><td></td></tr></table>
-<div><b>Rút ra:</b> ${m('R')} tăng thì ${m('H')} ${f(14)}; ${m('H')} có đạt 100 % không? ${f(30)}</div></div>
+<div><b>Rút ra:</b> ${m('R')} tăng thì ${m('H')} ${f(14)}; ${m('H')} ${f(30)}</div></div>
 ${H.haiPin()}</div>
 ${h3(3, 'II.5 · An toàn điện: đoản mạch và cầu chì', '3·3')}
 <div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
@@ -143,9 +143,9 @@ const p4 = `<section class="page">
 ${head('BA CÁI BẪY · TRẢ BÀI · TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="card fig-side" style="${fs(40)};padding:1mm 3mm"><div>
-<div class="trap">${ck}<span><b>“kW và kWh là một.”</b> kW là ${f(16)} (ghi trên nhãn); kWh là ${f(16)} (ghi trên hoá đơn). Điều hoà ${u('1{,}2\\ \\mathrm{kW}')} chạy 8 giờ mỗi đêm, 30 đêm: ${f(12)} kWh.</span></div>
-<div class="trap">${ck}<span><b>“Công suất nguồn là công suất mạch ngoài.”</b> Nguồn phát ${m('\\mathcal EI')}, lớn hơn ${m('UI')} một phần ${f(10)}. Nguồn ${V('9{,}0')}, ${m('r=0{,}5\\ \\Omega')}, ${m('R=4{,}0\\ \\Omega')}: ${m('P_{ng}=')} ${f(10)} W, mạch ngoài ${f(10)} W.</span></div>
-<div class="trap">${ck}<span><b>“Đèn công suất lớn luôn sáng hơn.”</b> Nối tiếp (cùng ${m('I')}) dùng ${m('P=')} ${f(10)}: ${m('R')} lớn nhận nhiều hơn. Song song (cùng ${m('U')}) dùng ${m('P=')} ${f(10)}. Đèn sáng hơn: ${f(10)}</span></div></div>
+<div class="trap">${ck}<span><b>Bẫy 1 · kW và kWh.</b> kW là ${f(16)} (ghi trên nhãn); kWh là ${f(16)} (ghi trên hoá đơn). Điều hoà ${u('1{,}2\\ \\mathrm{kW}')} chạy 8 giờ mỗi đêm, 30 đêm: ${f(12)} kWh.</span></div>
+<div class="trap">${ck}<span><b>Bẫy 2 · nguồn và mạch ngoài.</b> Nguồn phát ${m('\\mathcal EI')}, lớn hơn ${m('UI')} một phần ${f(10)}. Nguồn ${V('9{,}0')}, ${m('r=0{,}5\\ \\Omega')}, ${m('R=4{,}0\\ \\Omega')}: ${m('P_{ng}=')} ${f(10)} W, mạch ngoài ${f(10)} W.</span></div>
+<div class="trap">${ck}<span><b>Bẫy 3 · đèn nào sáng hơn.</b> Nối tiếp (cùng ${m('I')}) dùng ${m('P=')} ${f(10)}. Song song (cùng ${m('U')}) dùng ${m('P=')} ${f(10)}. Đèn sáng hơn: ${f(10)}</span></div></div>
 ${H.noiTiep()}</div>
 ${h3(2, 'IV · Trả bài 6 câu', '4·2')}
 ${box(`${tb('1. Năng lượng điện tiêu thụ: công thức, đơn vị, đo bằng gì?')}${lines(2)}

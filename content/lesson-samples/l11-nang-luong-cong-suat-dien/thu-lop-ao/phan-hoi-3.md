@@ -1,0 +1,5 @@
+# Phản hồi hs-3 · Công suất, nhãn, đèn xe máy (38·2–38·4)
+- Bảng 38·3: HS đoán clip dừng ① là 5 W vì giả định R không đổi (P ∝ U²) — đây đúng là hiểu sai mà clip định lật, nên biểu quyết có giá trị với HS đi theo thứ tự màn. Nhưng hàng I (1,30 A ở 6,0 V) in sẵn trong Tập: HS nhìn bảng là ra 7,8 W không cần dự đoán. HS ảo không nhìn vì đi đúng thứ tự; HS thật lật trang sẽ nhìn → biểu quyết cao giả. Chưa chứng minh được bằng hs-3, nên ưu tiên "vừa" chứ không "cao".
+- Ô "Từ nhãn: I_đm, R": HS viết R = U/I (đoán) rồi ≈ 484 Ω; đáp án U²/P. Hai cách cùng đúng, nhưng Tập không dạy cách đi thẳng từ nhãn (U²/P), HS nhầm là "đoán". Màn 3b chưa nói rõ R từ nhãn.
+- 38·4: HS chọn A 25 W theo "U giảm một nửa, P giảm bốn" nhưng không biết vì sao không phải 50 W; lý do HS ghi "P không tỉ lệ thuận U" chỉ là phủ định. Tập có dòng "Vì sao không phải 50 W?" lộ phương án B sai; màn 3e là A–D còn Tập tự luận, không có chỗ ghi chữ cái.
+- Khối lượng: 24 ô trong 8 phút (hs-3 viết hơn 20 dòng đoán) — nặng nhất. HS ảo trả lời xong cả khối nhưng không có áp lực giờ; thật sẽ bỏ ô.
