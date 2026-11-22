@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Năng lượng. Công cơ học · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Năng lượng. Công cơ học (L10 Bài 23) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Đã chạy lớp ảo 22/11 và sửa theo góp ý (xem <code>thu-lop-ao/gop-y.md</code>).</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Dụng cụ (không bắt buộc):</b> quả bóng tennis + thước dựng đứng (làm thật trước clip bóng nảy), một cặp giày/xe lăn để minh hoạ đẩy-buông nếu có. Không có thì hai clip đủ cho tiết này.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và hai clip. Mở trước giờ để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1244 "Kiểm tra lý thuyết — Bài 23"</b> (20 câu, 15 phút, mục id 233) trên điện thoại: màn cuối có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1244&amp;item=233</code>) và số đề để gõ tay ở trang Quét mã. Thiếu điện thoại/mạng thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Điểm đề 1244 ghi vào dòng tiêu đề ô 4·1</b> (tr.4): "Kết quả tự kiểm tra (Câu 1–6) · Đề 1244: ……/20 · câu sai ……".</li>
+  <li><b>Chiếu tivi 50 inch:</b> 22 màn, mỗi màn một ý, một cột. Chữ thường = 5,2% chiều cao màn. Mở toàn màn hình (F11 hoặc ⌃⌘F). Hình trên màn là đúng hình trong Tập (nhãn từ 0,67 cỡ chữ thường trở lên; máy đo ≥ 0,75 ở các hình chính).</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô.</li>
+  <li><b>Hai clip</b> (bóng nảy ở màn 2c, mặt nghiêng ở màn 5a; cần mạng): clip bên trái, chữ to bên phải, tự dừng ở điểm có câu hỏi (clip bóng nảy dừng 3 lần: câu hỏi ở 6,0 s, đáp án ở 19,0 s, kết luận ở 27,4 s; clip mặt nghiêng dừng 3 lần: câu hỏi 5,8 s, bảng số 21,8 s, kết luận 31,1 s). <b>Enter</b> (hoặc Space, bấm clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Clip bỏ phần "Bẫy" và "Chốt lại" của chính nó vì Tập đã có. Rời màn thì clip tự dừng. Mốc dừng đã đối chiếu với khung hình dựng từ engine video (không lộ đáp án trước biểu quyết); chưa chiếu clip thật trên máy lớp.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Sáu câu Câu 1–6 (đúng sáu câu "Tự kiểm tra ngay" của bài web) ghi vào bảng tr.4 ô 4·1: Em chọn · Chắc? · Đúng?. Thứ tự chiếu: Câu 1, 2 (điểm dừng 4) → Câu 3, 4, 5 (điểm dừng 5) → Câu 6 (điểm dừng 6). Màn câu hỏi chỉ ghi "Tự kiểm tra · Câu N", không báo trước là câu bẫy; ô 3·2 (ba bẫy) các em điền "Sai ở đâu?" ở nhà, <b>không giải trước</b>.</li>
+</ul>
+
+<h2>Đi theo Tập bài 23 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 (ghi Câu 1–6) → tr.1</small></h2>
+<p class="nho">Gấp góc trang 4 (bảng 4·1) để nó nằm cạnh trang đang làm; các câu 1, 2 viết lời giải ở ô 2·4 rồi mới ghi chữ cái vào 4·1. Thứ tự màn khớp thứ tự ô Tập.</p>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán sân băng</td><td>0–2</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án + chắc/không chắc + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Năng lượng + clip bóng nảy</td><td>2–7</td><td>tr.1 ô 1·4, 1·5</td><td>12 chỗ ô 1·4 + 3 chỗ ô 1·5 + 1 dòng "Bóng nằm yên"</td></tr>
+<tr><td>3 · Công cơ học, dấu của công</td><td>7–12</td><td>tr.2 ô 2·1, 2·2</td><td>9 chỗ + bảng 3 dòng × 2 cột + 3 chỗ</td></tr>
+<tr><td>4 · Trọng lực, ma sát, làm nhanh</td><td>12–17</td><td>tr.2 ô 2·3, 2·4</td><td>9 chỗ + Câu 1, 2 (ghi 4·1)</td></tr>
+<tr><td>5 · Clip mặt nghiêng, đọc số liệu, ba câu</td><td>17–23</td><td>tr.3 ô 3·1, 3·2 (câu 3, 4, 5 ghi 4·1)</td><td>bảng 4 dòng + 6 chỗ + Câu 3, 4, 5</td></tr>
+<tr><td>6 · Trả bài, bài toán mẫu, quay lại sân băng, đề 1244</td><td>23–30, đề 30–45</td><td>tr.3 ô 3·3 câu 2, 4 → tr.4 ô 4·3, 4·4, Câu 6 → tr.1 ô 1·3, 1·1</td><td>2 câu trả bài + 4 dòng bảng + 5 khung giải + Câu 6 + đáp án dự đoán</td></tr>
+</tbody>
+</table>
+<p class="nho">Mỗi điểm dừng ≤ 15 chỗ điền (điểm dừng 5 nặng nhất: clip dừng 3 lần). Phần chưa kịp: mục "Về nhà theo Tập" ở màn cuối liệt kê đúng mã ô.</p>
+
+<h2>Điểm dừng 1 · Dự đoán sân băng <small>phút 0–2 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ai từng xách cặp đứng chờ mỏi tay? Mỏi có phải là có công không?" Màn 1: hình Minh ôm ba lô, Lan đẩy Hà (3 m), cạnh câu hỏi chép y Tập.</li>
+  <li>Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao". Ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (màn "Quay lại sân băng", ô 1·3).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A hoặc C (đo công bằng cảm giác mỏi) — hỏi "ba lô có dịch chuyển không?". Chọn D — "công có đòi vật nóng lên không?".</div>
+
+<h2>Điểm dừng 2 · Năng lượng + clip bóng nảy <small>phút 2–7 · tr.1 ô 1·4, 1·5</small></h2>
+<ul>
+  <li>Màn 2a: đọc từng dòng, chép các chỗ (dạng · chuyển hoá · truyền · sinh ra · mất đi · vô · jun · $4{,}184$ · động · thế). Nhắc 1 cal = 4,184 J (số làm tròn 4,18 dùng ở thử thách ⭐⭐).</li>
+  <li>Màn 2b: lớp đoán dạng năng lượng chủ yếu của bốn tình huống rồi bấm "Mở: bốn dạng".</li>
+  <li><span class="k">Clip bóng nảy (màn 2c, khoảng 1,5 phút):</span> dừng ① (6,0 s) biểu quyết "phần lớn năng lượng thành nhiệt và âm sinh ra lúc nào?" (đáp án B, lúc chạm sàn). Phát tiếp, dừng ② (19,0 s): cột đỏ chỉ tăng khi chạm sàn — điền ô 1·5 (động, nhiệt, âm). Dừng ③ (27,4 s): $0{,}093+0{,}466=0{,}559$ J bằng thế năng lúc thả — trả lời dòng "Bóng nằm yên. Năng lượng lúc thả đi đâu?" (thành nhiệt và âm, không mất).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn D (chia đều cả ba lúc); nghĩ bóng nằm yên là năng lượng "mất". Hỏi "cột đỏ có bao giờ giảm không?".</div>
+
+<h2>Điểm dừng 3 · Công cơ học, dấu của công <small>phút 7–12 · tr.2 ô 2·1, 2·2</small></h2>
+<ul>
+  <li>Màn 3a (hình Tập ô 2·1): đọc, chép 9 chỗ. Hỏi "phần nào của $F$ kéo vật dọc đường đi?" trước khi mở ($F\cos\alpha$).</li>
+  <li>Màn 3b (ba góc 45°, 90°, 135°, hình Tập): cả lớp điền bảng góc → dấu → tên gọi trước khi bấm mở (hỏi "nếu $\alpha=180^\circ$ thì công bằng bao nhiêu?"). Dòng "chuyển động đều vẫn có thể sinh công" nối với Câu 2 ở điểm dừng 4.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ công luôn dương; nhầm $\alpha$ với góc giữa lực và mặt đất.</div>
+
+<h2>Điểm dừng 4 · Trọng lực, ma sát, làm nhanh <small>phút 12–17 · tr.2 ô 2·3, 2·4</small></h2>
+<ul>
+  <li>Màn 4a (hình dốc): $A_P=\pm Ph$ (xuống +, lên −), đi ngang 0; $h=s\sin\theta$; ma sát $A_{ms}=-F_{ms}s$, góc $180^\circ$, công luôn âm.</li>
+  <li><span class="k">Câu 1 (vali, 30 giây):</span> viết lời giải vào ô 2·4 rồi biểu quyết. Đáp án D ($500$ J). <span class="k">Câu 2 (thang máy, 30 giây):</span> đáp án A (công âm). Ghi chữ cái vào ô 4·1.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 1 chọn A (quên cos) hoặc B (dùng sin). Câu 2 chọn C (chuyển động đều nên công bằng 0) hoặc D (lấy chiều trọng lực).</div>
+
+<h2>Điểm dừng 5 · Clip mặt nghiêng, đọc số liệu, ba câu <small>phút 17–23 · tr.3 ô 3·1, 3·2 → tr.4 Câu 3, 4, 5</small></h2>
+<ul>
+  <li><span class="k">Clip mặt nghiêng (màn 5a, khoảng 2 phút):</span> bảng ô 3·1 chỉ in hai hàng đầu ($0{,}20$ → $2{,}00$ N; $0{,}40$ → $1{,}06$ N), hai hàng $0{,}80$ và $1{,}00$ m để trống (không cần úp Tập). Dừng ① (5,8 s): biểu quyết "máng dài gấp đôi thì $F\cdot s$ thế nào?" (đáp án C). Dừng ② (21,8 s): bảng $F$ bốn hàng, các em điền $F$ hai hàng cuối rồi tính cột $A=Fs$. Dừng ③ (31,1 s): $F\cdot s$ sát $0{,}40$ J, $A_P=-0{,}40$ J ở cả bốn đường.</li>
+  <li>Màn 5b (đọc số liệu): chia bốn dãy mỗi dãy một dòng tích $Fs$ (20 giây) rồi "Mở: tích $Fs$"; hỏi "lần nào lệch nhiều nhất, phần dôi ra đi đâu?" rồi "Mở: rút ra" (lợi về lực, thiệt về đường đi, không lợi về công). Dòng "phần dôi ra" nếu thiếu giờ thì về nhà.</li>
+  <li>Màn 5c, 5d, 5e (Câu 3 xách xô, Câu 4 đẩy thành sân băng, Câu 5 kéo thùng lên dốc, mỗi câu 30 giây): đáp án C, B, D; ghi 4·1. Sau khi mở đáp án mới nói "ba câu này khớp ba bẫy ô 3·2, về nhà điền 'Sai ở đâu?'".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> clip chọn B (gấp đôi). Câu 3 chọn A hoặc B (quên góc 90°); Câu 4 chọn A hoặc C (lấy 2 m của người); Câu 5 chọn A (lấy góc dốc làm $\alpha$).</div>
+
+<h2>Điểm dừng 6 · Trả bài, bài toán mẫu, quay lại sân băng, đề 1244 <small>phút 23–30 · 30–45 làm đề · tr.3 ô 3·3 → tr.4 → tr.1</small></h2>
+<ul>
+  <li><span class="k">Trả bài (màn 6a, 2 phút):</span> câu 2 và câu 4 của ô 3·3. Viết <b>1 phút, chưa bấm Mở</b>, rồi mở từng câu để các em tự sửa bằng bút khác màu. Câu 1, 3, 5, 6 và dòng "Bạn cùng bàn kiểm" về nhà.</li>
+  <li><span class="k">Bài toán mẫu (màn 6b, 6c, 6d):</span> phân tích đề ở ô 4·3 (dòng đầu in sẵn; lớp điền 4 dòng, 1 phút, rồi "Mở: phân tích đề"); giải ở ô 4·4: hỏi "$N$ có bằng $P=300$ N không?" rồi mở ba nấc: công kéo $\approx 520$ J và $A_P=A_N=0$ → $N=280$ N, $F_{ms}=14$ N, $A_{ms}=-210$ J → tổng $\approx 310$ J. Câu 6 (30 giây): đáp án A ($-420$ J), ghi 4·1. Ô 4·5 "Điền bước còn thiếu" (kéo dây nằm ngang) về nhà.</li>
+  <li><span class="k">Quay lại sân băng (màn 6e, 1 phút):</span> lớp tự trả lời, rồi mở: Lan thực hiện công (đáp án B), Minh $d=0$, Hà lướt 3 m sau khi Lan buông nên Lan không còn tác dụng lực. Lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, điều em hiểu sai. <b>20 giây: đánh dấu ô 1·1</b> (mục tiêu).</li>
+  <li>Chiếu mã QR, quét, làm đề 1244 trong 15 phút. Nộp xong ghi "Đề 1244: ……/20 · câu sai ……" vào dòng tiêu đề ô 4·1.</li>
+  <li>Đọc màn "Về nhà theo Tập": liệt kê đúng mã ô; ô 5·1 ghi đề BTVN, nói rõ "thachlab → lớp → bài 23 → Bài tập về nhà".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> bài toán mẫu: lấy $N=mg=300$ N (quên phần lực kéo hướng lên) hay quên dấu trừ của công ma sát; chọn D ở Câu 6.</div>
+<div class="sai"><b>Đề 1244 so với phần học trên lớp:</b> chưa đối chiếu từng câu (phiên dựng không đọc nội dung đề). Sau buổi dạy xem câu sai nhiều nhất có rơi vào phần về nhà không.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Kéo hộp bằng dây hợp với phương ngang $30^\circ$, lực $80$ N, hộp đi thẳng $10$ m trên sàn ngang. Công của lực kéo: A. $800$ J · B. $693$ J · C. $400$ J · D. $-693$ J</li>
+<li>Nâng đều thùng $12$ kg lên bàn cao $0{,}8$ m ($g=10\ \text{m/s}^2$). Công của trọng lực: A. $+96$ J · B. $-96$ J · C. $0$ · D. $9{,}6$ J</li>
+<li>Kéo vali bằng lực ngang $30$ N, vali đi <b>đều</b> $20$ m trên sàn ngang. Công của lực ma sát: A. $+600$ J · B. $0$ · C. $-600$ J · D. $-30$ J</li>
+<li>Xách túi $5$ kg ($50$ N) đi ngang $12$ m, túi giữ độ cao không đổi. Công của lực tay lên túi: A. $600$ J · B. $-600$ J · C. $0$ · D. $4{,}2$ J</li>
+<li>Đẩy tủ trượt thẳng $5$ m trên sàn ngang, lực đẩy $120$ N song song sàn, ma sát trượt $90$ N. Tổng công các lực lên tủ: A. $600$ J · B. $150$ J · C. $-450$ J · D. $1050$ J</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>$A=80\cdot10\cos30^\circ\approx693$ J</td><td>A: quên $\cos\alpha$ · C: dùng $\sin30^\circ$ · D: gán dấu trừ cho góc nhọn</td></tr>
+<tr><td>2</td><td>B</td><td>Đi lên: $A_P=-Ph=-120\cdot0{,}8=-96$ J</td><td>A: quên dấu · C: nghĩ vuông góc · D: bỏ $g$</td></tr>
+<tr><td>3</td><td>C</td><td>Đi đều: $F_{ms}=30$ N; $A_{ms}=-30\cdot20=-600$ J</td><td>A: quên dấu · B: nghĩ đều thì công 0 · D: lấy lực làm công</td></tr>
+<tr><td>4</td><td>C</td><td>Lực tay hướng lên, đi ngang: $\alpha=90^\circ$, $A=0$</td><td>A: quên góc · B: nhầm công cản · D: chia $F/s$</td></tr>
+<tr><td>5</td><td>B</td><td>$A_F=120\cdot5=600$; $A_{ms}=-90\cdot5=-450$; $P,N$ vuông góc: 0. Tổng $=150$ J</td><td>A: chỉ lực đẩy · C: chỉ ma sát · D: cộng không dấu</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: màn 2b chỉ đọc; màn 5b chỉ mở tích rồi nêu kết luận; bỏ Câu 4 hoặc Câu 5 trên màn (cho các em tự làm ở nhà); không cắt giờ làm đề 1244 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: "Thử sức đổi chiều" của bài web (đẩy từ phía sau, lực chếch xuống: $N=320$ N, $F_{ms}=16$ N, $A_{ms}=-240$ J, ô 5·3) hoặc thử thách ⭐ ô 5·2 ($30$ J).</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình dấu của công (45°, 90°, 135°) và hình ván trượt có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở câu dự đoán sân băng, ở clip mặt nghiêng (có em chọn B "gấp đôi"), Câu 3 (xách xô) và Câu 5 (góc dốc); điểm dừng 5 có kịp trong 6 phút không.</li>
+  <li>Đề 1244: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút; màn nào chữ nhỏ ở cuối lớp; hai clip có dừng đúng chỗ khi chiếu thật.</li>
+</ul>
+</body>
+</html>

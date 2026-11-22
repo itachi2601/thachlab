@@ -78,7 +78,7 @@ ${h3(4, 'II.1 · Năng lượng: nhiều dạng, không tự mất', '1·4')}
 ${h3(5, 'Thí nghiệm: quả bóng nảy thấp dần', '1·5')}
 <div class="card fig-side" style="${fs(37)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> thả bóng tennis từ cao 1 m xuống sàn gạch, nhìn độ cao mỗi lần nảy.</div>
-<div><b>Rút ra:</b> thế năng ${m('\\leftrightarrow')} ${f(25)} năng; mỗi lần chạm sàn, một phần thành ${f(25)} năng và ${f(25)}.</div>
+<div><b>Rút ra:</b> thế năng ${m('\\leftrightarrow')} ${f(25)} năng; sau mỗi lần nảy, một phần thành ${f(25)} năng và ${f(25)}.</div>
 ${wl('Bóng nằm yên. Năng lượng lúc thả đi đâu?', 2)}</div>
 ${H.bongNay()}</div>
 ${foot(1)}</section>`;
@@ -121,8 +121,8 @@ ${h3(1, 'Thí nghiệm: đưa xe lên cùng độ cao bằng nhiều đường',
 <table class="tbl-ct"><tr><th>${m('s\\ (\\mathrm m)')}</th><th>${m('F\\ (\\mathrm N)')}</th><th>${m('A=Fs\\ (\\mathrm J)')}</th></tr>
 <tr><td>0,20 (kéo thẳng đứng)</td><td>2,00</td><td></td></tr>
 <tr><td>0,40</td><td>1,06</td><td></td></tr>
-<tr><td>0,80</td><td>0,56</td><td></td></tr>
-<tr><td>1,00</td><td>0,46</td><td></td></tr></table>
+<tr><td>0,80</td><td></td><td></td></tr>
+<tr><td>1,00</td><td></td><td></td></tr></table>
 </div>
 ${H.keoXe()}</div>
 <div class="card" style="margin-top:.6mm;padding:1mm 3mm">
@@ -130,9 +130,9 @@ ${H.keoXe()}</div>
 <div><b>Rút ra:</b> mặt nghiêng lợi về ${f(25)}, thiệt về ${f(25)}, không lợi về ${f(25)}.</div></div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card" style="padding:1mm 3mm">
-<div class="trap">${ck}<span><b>“Mỏi tay là có công.”</b> Cầm vật đứng yên (${m('d=0')}), xách xô đi ngang (${m('\\vec F\\perp\\vec d')}): ${m('A=0')}.</span></div>
-<div class="trap">${ck}<span><b>“Lấy ${m('s')} của người đẩy.”</b> Lấy ${m('s')} của vật nhận lực: đẩy xe tải đứng yên thì ${m('A=0')}.</span></div>
-<div class="trap">${ck}<span><b>“${al} là góc dốc.”</b> ${al} là góc giữa ${vF} và ${vd}: kéo song song dốc thì ${m('\\alpha=0^\\circ')}.</span></div></div>
+<div class="trap">${ck}<span><b>“Mỏi tay là có công.”</b> Sai ở đâu? ${f(32)}</span></div>
+<div class="trap">${ck}<span><b>“Lấy ${m('s')} của người đẩy.”</b> Sai ở đâu? ${f(32)}</span></div>
+<div class="trap">${ck}<span><b>“${al} là góc dốc.”</b> Sai ở đâu? ${f(32)}</span></div></div>
 ${h3(3, 'IV · Trả bài 6 câu', '3·3')}
 ${box(`${tb('1. Kể 5 dạng năng lượng, mỗi dạng một ví dụ.')}${lines(3)}
 ${tb('2. Phát biểu định luật bảo toàn năng lượng.')}${lines(1)}
@@ -145,22 +145,22 @@ ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·1')}
+${h3(1, 'Kết quả tự kiểm tra (Câu 1–6) · Đề 1244: ……/20 · câu sai ……', '4·1')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(2, 'V · Bài toán mẫu: kéo ván trượt trên sân băng', '4·2')}
 <div class="card soft" style="padding:1.2mm 3mm">Trên sân băng nằm ngang, Lan kéo ván trượt chở em nhỏ, tổng khối lượng ${m('30\\ \\mathrm{kg}')}, bằng dây chếch lên hợp với phương ngang ${m('30^\\circ')}, lực kéo ${m('40\\ \\mathrm N')}. Ván đi thẳng ${m('15\\ \\mathrm m')}. Hệ số ma sát trượt ${m('0{,}05')}, lấy ${g10}.
 <div>Tính công của lực kéo, trọng lực, phản lực và lực ma sát.</div></div>
-${h3(3, 'Phân tích đề')}
+${h3(3, 'Phân tích đề', '4·3')}
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
 <tr><td>“tổng khối lượng 30 kg”</td><td>${m('P=mg=300\\ \\mathrm N')}</td></tr>
 <tr><td style="height:6.5mm">“chếch lên … 30°, lực kéo 40 N”</td><td></td></tr>
 <tr><td style="height:6.5mm">“nằm ngang … đi thẳng 15 m”</td><td></td></tr>
 <tr><td style="height:6.5mm">“hệ số ma sát trượt 0,05”</td><td></td></tr>
 <tr><td style="height:6.5mm">Dữ kiện ngầm: ván không chuyển động theo phương thẳng đứng</td><td></td></tr></table>
-${h3(4, 'Giải')}
+${h3(4, 'Giải', '4·4')}
 <div class="fig-side" style="${fs(52)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`Công lực kéo ${m('A_F')}:`, 2)}${wl(`Công của ${m('P')}, ${m('N')}:`, 1)}${wl(`Phản lực ${m('N')} và ${m('F_{\\mathrm{ms}}')}:`, 3)}${wl(`Công ma sát ${m('A_{\\mathrm{ms}}')}:`, 2)}${wl('Tổng công, dấu có hợp lí?', 2)}</div>${H.vanTruot()}</div>
-${h3(5, 'Điền bước còn thiếu: Lan kéo dây nằm ngang')}
+${h3(5, 'Điền bước còn thiếu: Lan kéo dây nằm ngang', '4·5')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl(`Bước 1: ${m('A_F=')}`, 1)}${wl(`Bước 2: ${m('N=')} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${m('F_{\\mathrm{ms}}=')}`, 1)}
 <div class="ln"><b>Bước 3 (cho sẵn):</b> ${m('A_{\\mathrm{ms}}=-F_{\\mathrm{ms}}\\,s=')} ${f(16)}</div></div>
@@ -168,7 +168,7 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
-${K.btvn()}
+${K.btvn().replace('<h3><i>1</i>Đề BTVN</h3>', h3(1, 'Đề BTVN', '5·1'))}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Nâng đều hộp ${nw('2 kg')} lên kệ cao ${nw('1,5 m')} (${g10}). Công của lực nâng?`, 3)
  + wl(`${m('\\bigstar\\bigstar')} Sô-cô-la ghi ${nw('200 kcal')} (${nw('1 kcal = 1000 cal')}, ${nw('1 cal = 4,18 J')}): bao nhiêu J? Đủ nâng người ${nw('50 kg')} lên cao bao nhiêu?`, 3)

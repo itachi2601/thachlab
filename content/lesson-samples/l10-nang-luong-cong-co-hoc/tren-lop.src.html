@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Năng lượng. Công cơ học · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+/* hình = hình trong Tập (scripts/ruot-tap/hinh-l10-bai23.mjs, viewBox 320 hoặc 366, chữ 20, nét đậm): không cần phóng nhãn. */
+.dapf{flex:none;width:48%;height:100%;display:flex;flex-direction:column;justify-content:center;gap:1vh}
+.dapf svg{flex:1 1 0;min-height:0;width:100%;color:var(--ink)}
+/* Hình 1–4 bài web vẽ màu nhạt cho nền tối: đổi sang màu đậm để rõ trên nền trắng tivi */
+.man [fill="#f87171"]{fill:#b91c1c} .man [stroke="#f87171"]{stroke:#b91c1c}
+.man [fill="#38bdf8"]{fill:#0369a1} .man [stroke="#38bdf8"]{stroke:#0369a1}
+.man [fill="#34d399"]{fill:#047857} .man [stroke="#34d399"]{stroke:#047857}
+.man [fill="#fb923c"]{fill:#c2410c} .man [stroke="#fb923c"]{stroke:#c2410c}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai.hep>.fig{width:38%}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (min-width:761px){.z85{font-size:calc(min(5.2vh,2.95vw)*.85)} .z84{font-size:calc(min(5.2vh,2.95vw)*.84)} .z93{font-size:calc(min(5.2vh,2.95vw)*.93)} .z72{font-size:calc(min(5.2vh,2.95vw)*.72)} .z86{font-size:calc(min(5.2vh,2.95vw)*.86)}}
+/* màn nhiều chữ: thu cỡ chữ vài chục phần trăm để không tràn (chỉ màn rộng) */
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.fx2,.gian{height:auto;flex:none} .dapf{width:100%} .dapf svg{flex:none;height:auto} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man z85" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 23</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 23 · tr.1</span></div>
+  <div class="giua">
+    <h1>Năng lượng. Công cơ học</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Giữ ba lô 5 phút mỏi tay, đẩy bạn một đoạn không mỏi. Vậy ai đã thực hiện công?</li>
+      <li>Năng lượng đổi dạng, không tự mất. Công $A=Fs\cos\alpha$ và dấu của công.</li>
+      <li>Công của trọng lực (lên, xuống) và của ma sát trượt (luôn âm).</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man z85" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–2</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <p class="hoi">Minh ôm ba lô $6$ kg đứng yên $5$ phút. Lan đẩy Hà một đoạn $0{,}5$ m rồi buông; Hà lướt tiếp $3$ m. Theo vật lí, ai đã thực hiện công?</p>
+  <div class="hai">
+    <div class="fig f1"><!--FIG1--></div>
+    <div class="ben">
+      <ol class="opt">
+        <li><b>A.</b> Chỉ Minh, vì giữ ba lô lâu và mỏi tay hơn</li>
+        <li><b>B.</b> Chỉ Lan, vì Hà dịch chuyển theo hướng lực</li>
+        <li><b>C.</b> Cả hai như nhau, vì cả hai đều dùng lực tay</li>
+        <li><b>D.</b> Không ai, vì không có vật nào nóng lên</li>
+      </ol>
+    </div>
+  </div>
+  <p class="nho">Khoanh vào Tập, đánh dấu chắc / không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết.</p>
+</section>
+
+<!-- ================= 2. Năng lượng + bóng nảy ================= -->
+<section class="man z93" id="m2a">
+  <div class="top"><span class="so">2/6 · Năng lượng</span><span>phút 2–7</span><span class="tap">tr.1 · ô 1·4</span></div>
+  <div class="giua">
+    <p>Năng lượng tồn tại ở nhiều <b class="o">dạng</b>; <b class="o">chuyển hoá</b> từ dạng này sang dạng khác hoặc <b class="o">truyền</b> từ vật này sang vật khác.</p>
+    <p><b>Bảo toàn:</b> năng lượng không tự <b class="o">sinh ra</b>, không tự <b class="o">mất đi</b>.</p>
+    <p>Đại lượng <b class="o">vô</b> hướng, đơn vị <b class="o">jun (J)</b>; $1\ \text{cal}=$ <b class="o">$4{,}184$</b> J</p>
+    <p>Hai nhóm: <b class="o">động</b> năng (chuyển động) · <b class="o">thế</b> năng (vị trí)</p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Dạng năng lượng</span><span>phút 2–7</span><span class="tap">tr.1 · ô 1·4 · hai dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Dạng năng lượng chủ yếu trong mỗi trường hợp:</p>
+    <table class="bang">
+      <tr><td>Dây cung căng</td><td class="ns"><span class="an-o" data-o="d2">thế năng</span></td></tr>
+      <tr><td>Than đỏ</td><td class="ns"><span class="an-o" data-o="d2">nhiệt năng</span></td></tr>
+      <tr><td>Dòng điện sạc pin</td><td class="ns"><span class="an-o" data-o="d2">điện năng</span></td></tr>
+      <tr><td>Nắng chiếu vào pin mặt trời</td><td class="ns"><span class="an-o" data-o="d2">quang năng</span></td></tr>
+    </table>
+    <button class="mo" data-mo="d2">Mở: bốn dạng</button>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Thí nghiệm: quả bóng nảy thấp dần</span><span>1 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.1 · ô 1·5</span></div>
+  <div class="vg" data-bat="0.4" data-het="27.4">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-01-20261118.webp" preload="metadata" playsinline title="Bóng tennis nảy trên sàn gạch"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: độ cao các lần nảy, hai cột màu năng lượng.</p><p class="nho">Bóng tennis $57$ g thả từ $1{,}0$ m xuống sàn gạch.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Thả bóng từ $1{,}0$ m, không ném. Nhìn độ cao mỗi lần nảy.</p></div>
+      <div class="buoc" data-t="6.0" data-dung><p class="hoi">Phần lớn năng lượng thành nhiệt và âm sinh ra lúc nào?</p>
+        <ol class="opt lo hai-cot"><li><b>A.</b> Lúc bóng rơi xuống</li><li data-dung><b>B.</b> Lúc bóng chạm sàn</li><li><b>C.</b> Lúc bóng bay lên</li><li><b>D.</b> Chia đều cả ba lúc</li></ol></div>
+      <div class="buoc" data-t="10.4"><p class="hoi">Nhìn cột đỏ (nhiệt và âm): nó tăng vào lúc nào?</p></div>
+      <div class="buoc" data-t="19.0" data-dung><p class="so-lon">Cột đỏ chỉ tăng khi bóng chạm sàn</p><p class="hoi">Đáp án <b>B</b>. Điền ô 1·5: thế năng ↔ <b class="o">động</b> năng; sau mỗi lần nảy, một phần thành <b class="o">nhiệt</b> năng và <b class="o">âm</b>.</p></div>
+      <div class="buoc" data-t="20.6"><p class="hoi">Đỉnh 3: thế năng còn $0{,}093$ J, phần còn lại là nhiệt và âm. Cộng hai phần được bao nhiêu?</p></div>
+      <div class="buoc" data-t="27.4"><p class="so-lon">$0{,}093+0{,}466=0{,}559$ J</p><p class="hoi">Bằng thế năng lúc thả: không mất, chỉ đổi dạng. Trả lời dòng "Bóng nằm yên" ô 1·5.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 3. Công, dấu của công ================= -->
+<section class="man z93" id="m3a">
+  <div class="top"><span class="so">3/6 · Công cơ học</span><span>phút 7–12</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="hai hep">
+    <div class="fig f2"><!--FIG2--></div>
+    <div class="ben">
+      <p>Lực làm vật <b class="o">dịch chuyển</b> thì lực thực hiện công, tức là <b class="o">truyền</b> năng lượng cho vật.</p>
+      <div class="fx">$A=$ <b class="o">$F$</b> $\cdot$ <b class="o">$d$</b> $\cdot$ <b class="o">$\cos\alpha$</b></div>
+      <p>$\alpha$ là góc giữa <b class="o">$\vec F$</b> và <b class="o">$\vec d$</b> &nbsp; $1\ \text{J}=1$ <b class="o">N·m</b></p>
+      <p class="hoi">Phần nào của $F$ kéo vật dọc đường đi?</p>
+      <button class="mo" data-mo="p3a">Mở: phần lực dọc đường đi</button>
+      <div class="an" id="p3a" hidden><p>Chỉ phần lực dọc đường đi, <b class="o">$F\cos\alpha$</b>, mới sinh công. Vật đi thẳng một chiều thì $d=s$.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man z85" id="m3b">
+  <div class="top"><span class="so">3/6 · Dấu của công</span><span>phút 7–12</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="hai">
+    <div class="fig f3"><!--FIG3--></div>
+    <div class="ben">
+      <table class="bang">
+        <thead><tr><th>Góc $\alpha$</th><th>Dấu $A$</th><th>Tên gọi</th></tr></thead>
+        <tbody>
+          <tr><td>$0^\circ\le\alpha\lt90^\circ$</td><td class="ns"><span class="an-o" data-o="d3">$A\gt0$</span></td><td class="ns"><span class="an-o" data-o="d3">phát động</span></td></tr>
+          <tr><td>$\alpha=90^\circ$</td><td class="ns"><span class="an-o" data-o="d3">$A=0$</span></td><td class="ns"><span class="an-o" data-o="d3">không sinh công</span></td></tr>
+          <tr><td>$90^\circ\lt\alpha\le180^\circ$</td><td class="ns"><span class="an-o" data-o="d3">$A\lt0$</span></td><td class="ns"><span class="an-o" data-o="d3">công cản</span></td></tr>
+        </tbody>
+      </table>
+      <p>$\vec F$ cùng hướng $\vec d$: $A=$ <b class="o"><span class="an-o" data-o="d3">$+Fs$</span></b> · ngược hướng: $A=$ <b class="o"><span class="an-o" data-o="d3">$-Fs$</span></b></p>
+      <p>Chuyển động đều vẫn có dịch chuyển nên từng lực <b class="o"><span class="an-o" data-o="d3">vẫn có thể</span></b> sinh công.</p>
+      <button class="mo" data-mo="d3">Mở: dấu và tên gọi</button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. Trọng lực, ma sát, làm nhanh ================= -->
+<section class="man z93" id="m4a">
+  <div class="top"><span class="so">4/6 · Trọng lực và ma sát trượt</span><span>phút 12–17</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="hai hep">
+    <div class="fig f4"><!--FIG4--></div>
+    <div class="ben">
+      <p>Vật đi <b>xuống</b>, độ cao giảm $h$: $A_P=$ <b class="o">$+Ph$</b></p>
+      <p>Vật đi <b>lên</b>, độ cao tăng $h$: $A_P=$ <b class="o">$-Ph$</b></p>
+      <p>Vật đi <b>ngang</b>: $A_P=$ <b class="o">$0$</b></p>
+      <p>Dốc dài $s$, nghiêng $\theta$: $h=$ <b class="o">$s\sin\theta$</b></p>
+      <p>Ma sát trượt, đi quãng $s$: $A_{\text{ms}}=$ <b class="o">$-F_{\text{ms}}s$</b> (góc $\alpha=$ <b class="o">$180^\circ$</b>, công luôn <b class="o">âm</b>)</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Làm nhanh · Câu 1</span><span>phút 12–17 · 30 giây</span><span class="tap">tr.2 · ô 2·4 · ghi tr.4 ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 1. Kéo vali bằng lực $50$ N, dây hợp với phương ngang $60^\circ$, vali đi thẳng $20$ m trên sàn ngang. Công của lực kéo:</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$1000$ J</li>
+      <li><b>B.</b>$866$ J</li>
+      <li><b>C.</b>$-500$ J</li>
+      <li data-dung><b>D.</b>$500$ J</li>
+    </ol>
+    <button class="mo" data-mo="a1">Mở đáp án</button>
+    <div class="an" id="a1" hidden>
+      <p><b>D.</b> $A=50\cdot20\cdot\cos60^\circ=500$ J. Góc nhọn nên công dương (phát động).</p>
+      <p class="nho">A: quên $\cos\alpha$ · B: dùng $\sin60^\circ$ · C: gán dấu trừ cho góc nhọn.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man z85" id="m4c">
+  <div class="top"><span class="so">4/6 · Làm nhanh · Câu 2</span><span>phút 12–17 · 30 giây</span><span class="tap">tr.2 · ô 2·4 · ghi tr.4 ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Thang máy chung cư hạ cabin thẳng đứng xuống, chậm đều. Công của lực căng dây cáp lên cabin:</p>
+    <ol class="opt lo">
+      <li data-dung><b>A.</b> Âm, vì lực hướng lên, cabin đi xuống</li>
+      <li><b>B.</b> Dương, vì dây cáp đang kéo giữ cabin</li>
+      <li><b>C.</b> Bằng 0, vì cabin chuyển động thẳng đều</li>
+      <li><b>D.</b> Dương, vì cabin đi xuống cùng chiều với trọng lực</li>
+    </ol>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden>
+      <p><b>A.</b> $\vec T$ hướng lên, $\vec d$ hướng xuống: $\alpha=180^\circ$, $A=-Ts$. Dây cáp lấy bớt năng lượng của cabin: công cản.</p>
+      <p class="nho">B: "kéo" chưa nói gì về dấu, phải so hướng lực với hướng dịch chuyển · C: đều vẫn có dịch chuyển · D: lấy chiều của trọng lực.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. Mặt nghiêng + ba câu ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Thí nghiệm: đưa xe lên cùng độ cao</span><span>phút 17–23 · khoảng 2 phút</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="vg" data-bat="0.4" data-het="31.1">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-02-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-nang-luong-cong-02-20261118.webp" preload="metadata" playsinline title="Kéo xe lên cùng độ cao qua nhiều máng"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ lực kế $F$ và tích $F\cdot s$ ở mỗi máng.</p><p class="nho">Xe lăn $P=2{,}0$ N lên cao $h=0{,}20$ m. Tập ô 3·1 chỉ in hai hàng đầu.</p></div>
+      <div class="buoc" data-t="0.4"><p class="hoi">Kéo đều xe $2{,}0$ N lên cao $0{,}20$ m.</p></div>
+      <div class="buoc" data-t="5.8" data-dung><p class="hoi">Hai máng cùng cao $0{,}20$ m. Máng dài gấp đôi thì công kéo $F\cdot s$ thế nào?</p>
+        <ol class="opt lo hang"><li><b>A.</b>Giảm còn một nửa</li><li><b>B.</b>Gấp đôi</li><li data-dung><b>C.</b>Gần như không đổi</li></ol></div>
+      <div class="buoc" data-t="10.0"><p class="hoi">Lần đầu kéo thẳng đứng, rồi kéo song song máng. Chú ý số lực kế $F$.</p></div>
+      <div class="buoc" data-t="21.8" data-dung><table class="bang"><thead><tr><th>$s$ (m)</th><th>$F$ (N)</th></tr></thead><tbody><tr><td>$0{,}20$ (đứng)</td><td class="ns">$2{,}00$</td></tr><tr><td>$0{,}40$</td><td class="ns">$1{,}06$</td></tr><tr><td>$0{,}80$</td><td class="ns">$0{,}56$</td></tr><tr><td>$1{,}00$</td><td class="ns">$0{,}46$</td></tr></tbody></table><p class="hoi">Điền $F$ hai hàng cuối vào Tập, rồi tính $A=Fs$ cả bốn hàng.</p></div>
+      <div class="buoc" data-t="22.6"><p class="so-lon">$F\cdot s$ luôn sát $0{,}40$ J</p><p class="hoi">Đáp án <b>C</b>: máng dài gấp đôi thì $F$ giảm gần một nửa, nên $F\cdot s$ gần như không đổi.</p></div>
+      <div class="buoc" data-t="26.8"><p class="hoi">Đi lên: $A_P=-Ph=-0{,}40$ J ở cả bốn đường.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man z84" id="m5b">
+  <div class="top"><span class="so">5/6 · Đọc số liệu</span><span>phút 17–23</span><span class="tap">tr.3 · ô 3·1 · dòng "So cột cuối"</span></div>
+  <div class="giua">
+    <table class="bang">
+      <thead><tr><th>$s$ (m)</th><th>$F$ (N)</th><th>$A=Fs$ (J)</th></tr></thead>
+      <tbody>
+        <tr><td>0,20 (đứng)</td><td>2,00</td><td class="ns"><span class="an-o" data-o="t5">0,400</span></td></tr>
+        <tr><td>0,40</td><td>1,06</td><td class="ns"><span class="an-o" data-o="t5">0,424</span></td></tr>
+        <tr><td>0,80</td><td>0,56</td><td class="ns"><span class="an-o" data-o="t5">0,448</span></td></tr>
+        <tr><td>1,00</td><td>0,46</td><td class="ns"><span class="an-o" data-o="t5">0,460</span></td></tr>
+      </tbody>
+    </table>
+    <p>$Ph=2{,}0\cdot0{,}20=$ <b class="o"><span class="an-o" data-o="t5">$0{,}40$</span></b> J. Lần nào lệch nhiều nhất? Phần dôi ra đi đâu?</p>
+    <div class="nut"><button class="mo" data-mo="t5">Mở: tích $Fs$</button><button class="mo" data-mo="r5">Mở: rút ra</button></div>
+    <div class="an" id="r5" hidden><p>Lệch nhiều nhất ở $s=$ <b class="o">$1{,}00$</b> m ($+15\,\%$): phần dôi ra thành <b class="o">nhiệt</b> do ma sát lăn ở bánh xe và trục.</p><p>Mặt nghiêng lợi về <b class="o">lực</b>, thiệt về <b class="o">đường đi</b>, không lợi về <b class="o">công</b>.</p></div>
+  </div>
+</section>
+
+<section class="man z84" id="m5c">
+  <div class="top"><span class="so">5/6 · Tự kiểm tra · Câu 3</span><span>phút 17–23 · 30 giây</span><span class="tap">tr.3 · ô 3·2 · ghi tr.4 ô 4·1</span></div>
+  <p class="hoi">Câu 3. Em xách xô nước nặng $100$ N, đi đều $10$ m trên sàn nằm ngang, xô giữ ở độ cao không đổi. Công của lực tay lên xô:</p>
+  <div class="hai">
+    <div class="fig f5"><!--FIG5--></div>
+    <div class="ben">
+      <ol class="opt lo">
+        <li><b>A.</b> $1000$ J</li>
+        <li><b>B.</b> $-1000$ J</li>
+        <li data-dung><b>C.</b> $0$</li>
+        <li><b>D.</b> $10$ J</li>
+      </ol>
+      <button class="mo" data-mo="a3">Mở đáp án</button>
+      <div class="an" id="a3" hidden>
+        <p><b>C.</b> Lực tay hướng thẳng lên, xô đi ngang: $\alpha=90^\circ$, $\cos\alpha=0$. Mỏi là chuyện cơ bắp, không phải công.</p>
+        <p class="nho">A: quên góc · B: công cản · D: chia $F/s$.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man z93" id="m5d">
+  <div class="top"><span class="so">5/6 · Tự kiểm tra · Câu 4</span><span>phút 17–23 · 30 giây</span><span class="tap">tr.3 · ô 3·2 · ghi tr.4 ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 4. Đứng trên giày trượt, em đẩy thành sân băng bằng lực $150$ N và lùi ra xa được $2$ m. Công của lực em đẩy lên thành sân:</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $300$ J</li>
+      <li data-dung><b>B.</b> $0$</li>
+      <li><b>C.</b> $-300$ J</li>
+      <li><b>D.</b> $75$ J</li>
+    </ol>
+    <button class="mo" data-mo="a4">Mở đáp án</button>
+    <div class="an" id="a4" hidden>
+      <p><b>B.</b> Lực đặt lên thành sân, thành sân không dịch chuyển: $A=0$. Quãng $2$ m là của em, không phải của thành sân.</p>
+      <p class="nho">A, C: lấy nhầm $2$ m làm quãng đường của thành sân · D: chia $F/s$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man z93" id="m5e">
+  <div class="top"><span class="so">5/6 · Tự kiểm tra · Câu 5</span><span>phút 17–23 · 30 giây</span><span class="tap">tr.3 · ô 3·2 · ghi tr.4 ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 5. Kéo thùng lên dốc nghiêng $30^\circ$ bằng lực $200$ N song song mặt dốc, thùng đi được $5$ m dọc dốc. Công của lực kéo:</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$866$ J</li>
+      <li><b>B.</b>$500$ J</li>
+      <li><b>C.</b>$-1000$ J</li>
+      <li data-dung><b>D.</b>$1000$ J</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden>
+      <p><b>D.</b> Lực song song mặt dốc, cùng hướng đường đi: $\alpha=0^\circ$, $A=200\cdot5=1000$ J. Góc dốc $30^\circ$ chỉ cần khi tính công của trọng lực.</p>
+      <p class="nho">A: lấy $\alpha=30^\circ$ (góc dốc) · B: nhân $\sin30^\circ$ · C: nghĩ lên dốc thì công âm (đó là dấu của công trọng lực).</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Trả bài, bài toán mẫu, quay lại sân băng ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 23–25 · viết 1 phút rồi mới mở</span><span class="tap">tr.3 · ô 3·3 · câu 2, 4</span></div>
+  <div class="giua">
+    <p class="hoi">2. Phát biểu định luật bảo toàn năng lượng.</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>Năng lượng không tự sinh ra, không tự mất đi; chỉ chuyển hoá từ dạng này sang dạng khác hoặc truyền từ vật này sang vật khác.</p></div>
+    <p class="hoi">4. Khi nào công dương, âm, bằng 0? Gọi tên.</p>
+    <button class="mo" data-mo="t4">Mở câu 4</button>
+    <div class="an" id="t4" hidden><p>Góc nhọn: dương, phát động · $90^\circ$: bằng 0, không sinh công · góc tù: âm, công cản.</p></div>
+  </div>
+</section>
+
+<section class="man z72" id="m6b">
+  <div class="top"><span class="so">6/6 · Bài toán mẫu</span><span>phút 25–30</span><span class="tap">tr.4 · ô 4·2, 4·3 · Phân tích đề</span></div>
+  <p>Trên sân băng nằm ngang, Lan kéo ván trượt chở em nhỏ, tổng khối lượng $30$ kg, bằng dây chếch lên hợp với phương ngang $30^\circ$, lực kéo $40$ N. Ván đi thẳng $15$ m. Hệ số ma sát trượt $0{,}05$, lấy $g=10\ \text{m/s}^2$. Tính công của lực kéo, trọng lực, phản lực và lực ma sát.</p>
+  <table>
+    <thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+    <tbody>
+      <tr><td>"tổng khối lượng 30 kg"</td><td>$P=mg=300$ N</td></tr>
+      <tr><td>"chếch lên … $30^\circ$, lực kéo 40 N"</td><td class="ns"><span class="an-o" data-o="p6">$\alpha_F=30^\circ$; phần lực hướng lên $F\sin30^\circ$ làm giảm áp lực</span></td></tr>
+      <tr><td>"nằm ngang … đi thẳng 15 m"</td><td class="ns"><span class="an-o" data-o="p6">$s=15$ m; $\vec P$, $\vec N$ vuông góc đường đi</span></td></tr>
+      <tr><td>"hệ số ma sát trượt 0,05"</td><td class="ns"><span class="an-o" data-o="p6">$F_{\text{ms}}=\mu N$, ngược hướng chuyển động</span></td></tr>
+      <tr><td>Ngầm: ván không chuyển động theo phương thẳng đứng</td><td class="ns"><span class="an-o" data-o="p6">$N+F\sin30^\circ=P$</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="p6">Mở: phân tích đề</button>
+</section>
+
+<section class="man z85" id="m6c">
+  <div class="top"><span class="so">6/6 · Bài toán mẫu</span><span>phút 25–30</span><span class="tap">tr.4 · ô 4·4 · Giải</span></div>
+  <div class="hai hep">
+    <div class="fig f6"><!--FIG6--></div>
+    <div class="ben">
+      <p class="hoi">$N$ có bằng $P=300$ N không?</p>
+      <button class="mo" data-mo="g6a">Mở: công kéo, $P$, $N$</button>
+      <div class="an" id="g6a" hidden>
+        <p>$A_F=40\cdot15\cos30^\circ\approx520$ J (phát động)</p>
+        <p>$A_P=A_N=0$ (vuông góc đi)</p>
+      </div>
+      <button class="mo" data-mo="g6b">Mở: $N$, ma sát</button>
+      <div class="an" id="g6b" hidden>
+        <p>$N=300-40\sin30^\circ=280$ N</p>
+        <p>$F_{\text{ms}}=0{,}05\cdot280=14$ N; $A_{\text{ms}}=-14\cdot15=-210$ J</p>
+      </div>
+      <button class="mo" data-mo="g6c">Mở: tổng công</button>
+      <div class="an" id="g6c" hidden><p>$520-210\approx310$ J $\gt0$: ván nhanh dần.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man z93" id="m6d">
+  <div class="top"><span class="so">6/6 · Tự kiểm tra · Câu 6</span><span>phút 25–30 · 30 giây</span><span class="tap">tr.4 · ô 4·1 · Câu 6</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 6. Cùng đề bài (dây chếch lên $30^\circ$), nếu Lan kéo ván đi được $30$ m thì công của lực ma sát là:</p>
+    <ol class="opt lo hang">
+      <li data-dung><b>A.</b>$-420$ J</li>
+      <li><b>B.</b>$-210$ J</li>
+      <li><b>C.</b>$420$ J</li>
+      <li><b>D.</b>$-450$ J</li>
+    </ol>
+    <button class="mo" data-mo="a6">Mở đáp án</button>
+    <div class="an" id="a6" hidden>
+      <p><b>A.</b> $F_{\text{ms}}=14$ N không đổi, $A_{\text{ms}}=-14\cdot30=-420$ J. Quãng đường gấp đôi thì công cản gấp đôi.</p>
+      <p class="nho">B: giữ nguyên $s=15$ m · C: quên dấu trừ · D: lấy $N=mg=300$ N, quên phần lực kéo hướng lên.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man z86" id="m6e">
+  <div class="top"><span class="so">6/6 · Quay lại sân băng</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3 · rồi ô 1·1</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1"></div>
+    <div class="ben">
+      <p class="hoi">Minh giữ ba lô đứng yên $5$ phút. Lan đẩy Hà $0{,}5$ m rồi buông; Hà lướt $3$ m.</p>
+      <button class="mo" data-mo="b6">Mở: ai thực hiện công</button>
+      <div class="an" id="b6" hidden>
+        <p><b class="o">Lan</b>: lực đẩy có dịch chuyển $0{,}5$ m theo hướng lực → đáp án <b>B</b></p>
+        <p>Minh: $d=0$ nên $A=$ <b class="o">$0$</b>; mỏi là chuyện cơ bắp</p>
+        <p>Lan buông rồi, Hà lướt tiếp $3$ m: Lan không còn tác dụng lực</p>
+      </div>
+      <button class="mo" data-mo="b7">Mở: vì sao A, C, D sai</button>
+      <div class="an" id="b7" hidden><p class="nho">A, C: đo công bằng cảm giác mỏi · D: công không đòi vật phải nóng lên.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6f">
+  <div class="top"><span class="so">Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm vào tiêu đề ô 4·1</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1244</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1244 · làm một mình · nộp xong ghi "Đề 1244: ……/20 · câu sai ……" vào dòng tiêu đề ô 4·1 (tr.4)</p>
+</section>
+
+<section class="man" id="m6g">
+  <div class="top"><span class="so">Về nhà theo Tập bài 23</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · đánh dấu ô 1·1 mục tiêu (nếu chưa xong)</li>
+    <li><b>tr.2</b> ô 2·4 viết lời giải Câu 1, 2 (nếu chưa xong)</li>
+    <li><b>tr.3</b> ô 3·1 điền $F$ hai hàng cuối + cột $A=Fs$ + dòng "phần dôi ra đi đâu" · ô 3·2 điền "Sai ở đâu?" cho 3 bẫy, đánh dấu bẫy em từng mắc · ô 3·3 câu 1, 3, 5, 6 + dòng "Bạn cùng bàn kiểm"</li>
+    <li><b>tr.4</b> ô 4·1 ghi Câu 1–6 và điểm đề · ô 4·3, 4·4 phần chưa xong · ô 4·5 "Điền bước còn thiếu" (Lan kéo dây nằm ngang)</li>
+    <li><b>tr.5</b> ô 5·1 Đề BTVN: thầy giao đề trên web (thachlab → lớp → bài 23 → Bài tập về nhà), em ghi đề, số câu, hạn · ô 5·2 thử thách ⭐ ⭐⭐ ⭐⭐⭐ · ô 5·3 câu đổi chiều · ô 5·4 mang về</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>
