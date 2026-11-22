@@ -126,12 +126,12 @@ assert f"{G_BAR * dg2 / 100:.2f}" == "0.18" and round(9.80 * 0.018, 2) == 0.18
 dT20 = DT / (2 * TBAR) * 100
 assert f"{dT20:.3f}" == "0.374" and f"{0.1 + 2 * dT20:.2f}" == "0.85" and f"{G_BAR * (0.1 + 2 * dT20) / 100:.2f}" == "0.08"
 assert 2 * TBAR == 40.14 or abs(2 * TBAR - 40.14) < 1e-9
-# TN2: thước kẻ 1 mm, ΔA = 0,5 mm
-D_TAM, D_CHOT, DA = 250.0, 12.0, 0.5
-assert f"{DA / D_TAM * 100:.1f}" == "0.2" and f"{DA / D_CHOT * 100:.1f}" == "4.2"
+# TN2: thước kẻ 1 mm, đọc hai đầu → ΔA = một ĐCNN = 1 mm (thầy chốt 22/11/2026)
+D_TAM, D_CHOT, DA = 250.0, 12.0, 1.0
+assert f"{DA / D_TAM * 100:.1f}" == "0.4" and f"{DA / D_CHOT * 100:.1f}" == "8.3"
 assert abs(0.005 * 12 - 0.06) < 1e-12
 # thử thách
-assert f"{0.5 / 143.0 * 100:.2f}" == "0.35"
+assert f"{1 / 143 * 100:.2f}" == "0.70"
 assert abs(0.2 / 20.0 * 100 - 1) < 1e-9 and abs(2 * 1 - 2) < 1e-9 and 20.0 ** 2 == 400 and abs(0.02 * 400 - 8) < 1e-9
 dm, da = 5 / 1000 * 100, 0.05 / 5.00 * 100
 assert abs(dm - 0.5) < 1e-9 and abs(da - 1) < 1e-9 and abs(dm + 3 * da - 3.5) < 1e-9
@@ -169,13 +169,13 @@ b1, b2 = X1(11.5), X1(12.5)
 c.line(b1, 172, b2, 172, GRN, 4)
 c.line(b1, 164, b1, 180, GRN, 3)
 c.line(b2, 164, b2, 180, GRN, 3)
-c.text(X1(12), 200, "12,0 ± 0,5 mm", GRN, 14, anchor="middle")
+c.text(X1(12), 200, "đầu này ± 0,5 mm", GRN, 14, anchor="middle")
 # kiểm toạ độ: vạch cách đều, khoảng ± nửa ĐCNN đối xứng quanh vạch 12, mũi tên a↔b nằm giữa hai vạch 13 và 14
 ERR += [] if all(abs((X1(v + 1) - X1(v)) - 55) < 1e-9 for v in range(9, 15)) else ["f1: vạch thước không cách đều"]
 ERR += [] if abs((X1(12) - b1) - (b2 - X1(12))) < 1e-9 and abs((b2 - b1) - 55) < 1e-9 else ["f1: khoảng ±0,5 mm lệch tâm"]
 ERR += [] if (c.arrows["l"][2] > X1(13) and c.arrows["r"][2] < X1(14)) else ["f1: mũi tên ĐCNN ra ngoài hai vạch"]
-fig1 = c.svg("Thước kẻ vạch chia 1 milimét; mép cục tẩy nằm đúng vạch 12; dưới thước là khoảng 12,0 ± 0,5 mm",
-             "Hình 1. Thước vạch 1 mm (ĐCNN = 1 mm). Mép cục tẩy nằm đúng vạch 12: kết quả ghi (12,0 ± 0,5) mm, với sai số dụng cụ bằng nửa ĐCNN.",
+fig1 = c.svg("Thước kẻ vạch chia 1 milimét; mép cục tẩy nằm đúng vạch 12; dưới thước là khoảng ± 0,5 mm quanh vạch 12 cho đầu này",
+             "Hình 1. Thước vạch 1 mm (ĐCNN = 1 mm). Mép cục tẩy nằm đúng vạch 12, đầu này sai tối đa nửa ĐCNN (đoạn xanh). Đầu kia đặt ở vạch 0 cũng vậy, nên kết quả ghi (12 ± 1) mm: sai số dụng cụ bằng một ĐCNN.",
              exp="tn-l10-sai-so-02")
 ERR += c.check()
 
@@ -314,27 +314,27 @@ tn = [
      "ten": "Một thước kẻ, hai vật đo: cùng sai số tuyệt đối, khác sai số tỉ đối",
      "loai": "thi_nghiem", "muc_do": "co_ban",
      "kien_thuc": ["saiso.dung_cu_dcnn", "saiso.ti_doi", "saiso.so_sanh_do_chinh_xac"],
-     "muc_tieu": "Hiểu sai số dụng cụ bằng nửa ĐCNN và so độ chính xác của hai phép đo bằng sai số tỉ đối, không bằng sai số tuyệt đối.",
+     "muc_tieu": "Hiểu vì sao sai số dụng cụ của thước kẻ bằng một ĐCNN (đọc hai đầu, mỗi đầu nửa ĐCNN) và so độ chính xác của hai phép đo bằng sai số tỉ đối, không bằng sai số tuyệt đối.",
      "dung_cu": [{"ten": "Thước kẻ vạch chia 1 mm", "so_luong": 1}, {"ten": "Tấm bìa dài khoảng 250 mm", "so_luong": 1},
                  {"ten": "Cục tẩy dày khoảng 12 mm", "so_luong": 1}],
-     "cac_buoc": {"lam": ["Đo 1 lần chiều dài tấm bìa và độ dày cục tẩy bằng thước vạch 1 mm.", "Lấy sai số dụng cụ bằng nửa ĐCNN = 0,5 mm."],
-                  "quan_sat": ["Tấm bìa: (250,0 ± 0,5) mm. Cục tẩy: (12,0 ± 0,5) mm.", "Hai phép đo có cùng sai số tuyệt đối 0,5 mm."],
-                  "rut_ra": ["Sai số tỉ đối: tấm bìa 0,5/250,0 ≈ 0,2 %; cục tẩy 0,5/12,0 ≈ 4,2 %.", "Phải so δ, không so Δ: phép đo tấm bìa chính xác hơn."]},
+     "cac_buoc": {"lam": ["Đo 1 lần chiều dài tấm bìa và độ dày cục tẩy bằng thước vạch 1 mm.", "Đọc cả đầu 0 lẫn đầu cuối, mỗi đầu sai tối đa nửa ĐCNN, nên sai số dụng cụ bằng một ĐCNN = 1 mm."],
+                  "quan_sat": ["Tấm bìa: (250 ± 1) mm. Cục tẩy: (12 ± 1) mm.", "Hai phép đo có cùng sai số tuyệt đối 1 mm."],
+                  "rut_ra": ["Sai số tỉ đối: tấm bìa 1/250 = 0,4 %; cục tẩy 1/12 ≈ 8,3 %.", "Phải so δ, không so Δ: phép đo tấm bìa chính xác hơn."]},
      "tham_so": [{"ky_hieu": "d", "ten": "Kích thước vật đo", "don_vi": "mm", "kieu": "dieu_chinh", "min": 5, "max": 300, "mac_dinh": 12, "buoc": 1},
                  {"ky_hieu": "dcnn", "ten": "Độ chia nhỏ nhất của dụng cụ", "don_vi": "mm", "kieu": "dieu_chinh", "min": 0.01, "max": 1, "mac_dinh": 1, "buoc": 0.01},
-                 {"ky_hieu": "delta_A", "ten": "Sai số dụng cụ (= nửa ĐCNN)", "don_vi": "mm", "kieu": "tinh_ra"},
+                 {"ky_hieu": "delta_A", "ten": "Sai số dụng cụ (= một ĐCNN, thước đọc hai đầu)", "don_vi": "mm", "kieu": "tinh_ra"},
                  {"ky_hieu": "delta_ti_doi", "ten": "Sai số tỉ đối", "don_vi": "%", "kieu": "tinh_ra"}],
-     "mo_hinh": {"phuong_trinh": ["ΔA = ĐCNN/2", "δA = ΔA/d · 100 %", "ΔA cần có để δA ≤ 0,5 % : ΔA ≤ 0,005·d"],
-                 "gia_thiet": ["đo 1 lần, chỉ có sai số dụng cụ", "đầu vật nằm đúng vạch"]},
+     "mo_hinh": {"phuong_trinh": ["ΔA = ĐCNN (đọc hai đầu, mỗi đầu ĐCNN/2)", "δA = ΔA/d · 100 %", "ΔA cần có để δA ≤ 0,5 % : ΔA ≤ 0,005·d"],
+                 "gia_thiet": ["đo 1 lần, chỉ có sai số dụng cụ", "vị trí 0 không cố định: phải đọc cả đầu 0 và đầu cuối"]},
      "so_lieu_mau": {"cot": ["Vật đo", "d (mm)", "ΔA (mm)", "δA (%)"],
                      "hang": [["Tấm bìa", D_TAM, DA, round(DA / D_TAM * 100, 2)], ["Cục tẩy", D_CHOT, DA, round(DA / D_CHOT * 100, 2)]],
                      "ghi_chu": "Số liệu minh hoạ tính từ mô hình. Cục tẩy cần δ ≤ 0,5 % thì ΔA ≤ 0,06 mm (thước điện tử cầm tay)."},
-     "ket_qua_ky_vong": "δ tấm bìa ≈ 0,2 %, δ cục tẩy ≈ 4,2 %: phép đo tấm bìa chính xác hơn dù cùng ΔA = 0,5 mm.",
+     "ket_qua_ky_vong": "δ tấm bìa = 0,4 %, δ cục tẩy ≈ 8,3 %: phép đo tấm bìa chính xác hơn dù cùng ΔA = 1 mm.",
      "hien_tuong_hay_sai": ["So hai sai số tuyệt đối rồi kết luận hai phép đo như nhau.", "Cho rằng vật nhỏ thì ít sai số."],
      "sai_so_thuong_gap": "Đặt thước không sát đầu vật; nhìn xiên gây sai số thị sai.",
      "goi_y_mo_phong": {"loai": "2d_dong_hoc+bang_so_lieu",
                         "y_tuong": "Thước kéo được trên vật đo; thanh trượt kích thước vật và ĐCNN; bảng hiện ΔA và δA, thanh màu δA đổi theo.",
-                        "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của cục tẩy rơi từ 4,2 % xuống dưới 0,5 %."}},
+                        "diem_nhan": "Giảm ĐCNN từ 1 mm xuống 0,05 mm để thấy δ của cục tẩy rơi từ 8,3 % xuống dưới 0,5 %."}},
     {**BASE,
      "id": "tn-l10-sai-so-03",
      "ten": "Đo g bằng con lắc đơn: sai số của phép đo gián tiếp",
@@ -342,7 +342,7 @@ tn = [
      "kien_thuc": ["saiso.gian_tiep_tich_thuong", "saiso.gian_tiep_so_mu", "saiso.ghi_ket_qua"],
      "muc_tieu": "Tính g = 4π²l/T² từ l và T đo trực tiếp; cộng sai số tỉ đối (số mũ 2 nhân với δT); ghi g = trung bình ± Δg đúng chữ số có nghĩa.",
      "dung_cu": [{"ten": "Không cần (bài toán mẫu dùng số liệu của TN1)", "so_luong": 0}],
-     "cac_buoc": {"lam": ["Dùng l = 1,000 m (thước ĐCNN 1 mm; đề quy ước lấy Δl = một ĐCNN = 1 mm, không phải nửa ĐCNN) và t = (20,07 ± 0,15) s cho 10 dao động; T = t/10."],
+     "cac_buoc": {"lam": ["Dùng l = 1,000 m (thước ĐCNN 1 mm, đọc hai đầu nên Δl = một ĐCNN = 1 mm) và t = (20,07 ± 0,15) s cho 10 dao động; T = t/10."],
                   "quan_sat": ["T = 2,007 s, δT ≈ 0,747 %; δl = 0,1 %."],
                   "rut_ra": ["δg = δl + 2δT ≈ 1,6 %; g ≈ 9,80 m/s²; Δg ≈ 0,16 m/s².", "Kết quả g = (9,80 ± 0,16) m/s²; giá trị chuẩn 9,81 nằm trong khoảng."]},
      "tham_so": [{"ky_hieu": "dl", "ten": "Sai số tuyệt đối của chiều dài", "don_vi": "m", "kieu": "dieu_chinh", "min": 0.0005, "max": 0.005, "mac_dinh": 0.001, "buoc": 0.0005},
@@ -365,5 +365,10 @@ tn = [
                         "diem_nhan": "Tăng số dao động từ 10 lên 20: cột của 2δT thấp xuống một nửa, thấy rõ đo nhiều dao động trong một lần bấm có lợi."}},
 ]
 for d in tn:
-    (ROOT / "content/thi-nghiem" / f"{d['id']}.json").write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
+    f = ROOT / "content/thi-nghiem" / f"{d['id']}.json"
+    if f.exists() and "video" not in d:  # giữ khối video do tai-clip-len-storage.mts ghi (trước 22/11 bị mất khi dựng lại)
+        cu = json.loads(f.read_text(encoding="utf8"))
+        if "video" in cu:
+            d = {**d, "video": cu["video"]}
+    f.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
 print(f"ok theory.html {len(h)} ký tự · 3 hình · {phut} phút · 3 file thí nghiệm · δt = {dTrel:.3f} % · g = {G_BAR:.4f}")
