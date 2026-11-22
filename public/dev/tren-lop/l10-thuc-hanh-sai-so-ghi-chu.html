@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thực hành tính sai số · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Thực hành tính sai số (L10 Bài 3) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Đồ làm thật (điểm dừng 3 và 6, không bắt buộc):</b> 1 thước kẻ vạch 1 mm cho mỗi bàn, 1 cục tẩy, 1 tấm bìa cứng (A4 cắt nửa). Điểm dừng 6 "Bẫy 2 · đo tại lớp": mỗi bàn tự đo tấm bìa và cục tẩy một lần, ghi $(250{,}0\pm0{,}5)$ mm và $(12{,}0\pm0{,}5)$ mm. Thiếu thước thì dùng clip "Xem cận cảnh".</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và hai clip. Mở trước giờ để trình duyệt nhớ sẵn; không có mạng thì công thức hiện dạng ký hiệu đô-la thô.</li>
+  <li>Cuối tiết làm <b>đề 1224 "Kiểm tra nhanh — Bài 3. Thực hành tính sai số trong phép đo"</b> (20 câu, 15 phút, mục Lý thuyết id 87) trên điện thoại: màn cuối "Kiểm tra lý thuyết" có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1224&amp;item=87</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> mỗi màn một ý. Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang và ô. Đọc to: "chữ gạch chân là chữ điền vào ô…". Ô nào hiện chữ xanh sau nút "Mở" thì lớp tự làm trước (1 phút), rồi mới mở để so.</li>
+  <li><b>Hai clip thí nghiệm</b> (cần mạng): <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn.
+    <ul>
+      <li>Clip con lắc (màn "Thí nghiệm dựng lại", điểm dừng 4): <b>biểu quyết "5 số đo lệch nhau cỡ bao nhiêu?" khi clip CHƯA chạy</b> (đáp án C hiện trên khung clip lúc 20,2 s). Dừng 2 lần: ① sau 5 lần đo, hiện đáp án + "số nào đại diện?"; ② sau khi lấy trung bình, lớp chép hàng $\Delta t_i$ vào ô 27·2.</li>
+      <li>Clip thước, tấm bìa và cục tẩy (điểm dừng 6): <b>mặc định bỏ qua</b>, chỉ chiếu khi không làm thật được hoặc bàn cuối không thấy vạch. Biểu quyết "$\Delta A$ của hai phép đo so nhau thế nào?" trước khi bấm ▶ (đáp án "bằng nhau" hiện ở 20,9 s).</li>
+    </ul></li>
+  <li>PhET Con lắc (màn "Thử với PhET", điểm dừng 4) <b>mặc định bỏ qua</b>: chỉ dùng khi dư giờ. Nút mở tab mới, lớp đoán trước, rồi mới bấm "Mở: kết quả".</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Bảy câu "Câu 1–7" trên màn là biểu quyết trên lớp, ghi vào bảng ô 29·1 (Em chọn · Chắc? · Đúng?). Đề 1224 (20 câu) ghi riêng dòng "Đề 1224" ngay dưới bảng đó.</li>
+</ul>
+
+<h2>Đi theo Tập bài 3 <small>thứ tự lật: tr.25 → tr.26 → tr.29 → tr.26 → tr.27 → tr.29 → tr.27 → tr.28 → tr.29 → tr.28 → tr.29 → tr.25 → tr.29</small></h2>
+<p class="nho">Nhãn ô là số trang tuyệt đối của quyển (bài 3 = tr.25–36; trang đầu của bài in "1·2" ứng với ô 25·2).</p>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Việc điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán cục tẩy</td><td>0–2</td><td>tr.25 ô 25·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · SI, tiếp đầu ngữ, thứ nguyên</td><td>2–7</td><td>tr.25 ô 25·4 → tr.26 ô 26·1, 26·2 → tr.29 ô 29·1 Câu 1</td><td>bảng 7 đơn vị (14 ô); 2 phép đổi; bảng thứ nguyên + dòng "hệ số"; đánh dấu Câu 1</td></tr>
+<tr><td>3 · Phép đo, hai loại sai số</td><td>7–11</td><td>tr.26 ô 26·3</td><td>đo trực tiếp/gián tiếp, sai số dụng cụ, $A=(12{,}0\pm0{,}5)$ mm; bảng hệ thống/ngẫu nhiên + 2 dòng</td></tr>
+<tr><td>4 · Con lắc, tuyệt đối, tỉ đối</td><td>11–18</td><td>tr.27 ô 27·1 → 27·2 → tr.29 Câu 2 → tr.27 ô 27·3</td><td>công thức; hàng $\Delta t_i$, $\overline t$, $\Delta t$, $t=(\ldots\pm\ldots)$; $\delta t$ và $\delta=7{,}5$ %</td></tr>
+<tr><td>5 · Gián tiếp, chữ số có nghĩa</td><td>18–23</td><td>tr.28 ô 28·1 → tr.29 Câu 3 → tr.28 ô 28·2 → tr.29 Câu 4</td><td>3 dòng quy tắc, $\delta V=1{,}5$ %; quy tắc CSCN, bảng 4 số, $s=(2{,}386\pm0{,}013)$ m</td></tr>
+<tr><td>6 · Ba bẫy + quay lại + đề 1224</td><td>23–29, 29–30, đề 30–45</td><td>tr.29 Câu 5 → tr.28 ô 28·3 (bẫy 1, 2, 3) → tr.29 Câu 6, 7 → tr.25 ô 25·3 → đề xong: dòng "Đề 1224" ô 29·1</td><td>3 bẫy; đáp án cục tẩy, đúng/sai; điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 2 dồn nhiều ô (bảng SI 14 ô + hai phép đổi + bảng thứ nguyên): cho chép bảng SI nhanh, nửa còn lại làm tiếp ở nhà nếu trễ. Điểm dừng 4 dài nhất (7 phút) vì có clip + bảng số. Bẫy 1 điền SAU Câu 5: Tập in sẵn "trung bình 5 lần vẫn thừa …", nên biểu quyết Câu 5 trước, lớp chưa điền ô 28·3 bẫy 1. Làm theo thứ tự màn.</p>
+
+<h2>Điểm dừng 1 · Dự đoán cục tẩy <small>phút 0–2 · Tập tr.25 ô 25·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> giơ một cục tẩy. "Hai bạn đo cùng cục tẩy, một bạn ra 12 mm, một bạn ra 12,05 mm. Ai đúng?"</li>
+  <li>Khoanh vào Tập, viết một dòng "Vì sao". Màn này không có ô đáp án (tránh lộ): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, ô 25·3). Phương án chép y Tập.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (chỉ một con số đúng) — tin kích thước thật là một số đo được chính xác. C (ghi 12,00 cho "chính xác bằng bạn B") — thêm số 0 là thêm độ chính xác.</div>
+
+<h2>Điểm dừng 2 · SI, tiếp đầu ngữ, thứ nguyên <small>phút 2–7 · tr.25 ô 25·4 → tr.26 ô 26·1, 26·2 → Câu 1</small></h2>
+<ul>
+  <li>Bảng bảy đơn vị: đây là phần học thuộc — cho lớp điền 14 ô trong 1,5 phút (đơn vị + kí hiệu), rồi mới mở. Không giảng từng đơn vị; nhắc "mọi đơn vị khác là dẫn xuất".</li>
+  <li>Tiếp đầu ngữ: đọc cả hàng $10^9\ldots10^{-9}$. Cho lớp tự đổi $36$ km/h và $250$ mg (1 phút), mở đáp số; chữ nhắc "đổi về m và s trước".</li>
+  <li>Thứ nguyên: viết sẵn $[v]$, $[a]$ trên màn. Lớp điền ba hàng bảng rồi Mở. Chốt dòng cuối: kiểm thứ nguyên chỉ bắt được lỗi thứ nguyên, <b>không</b> bắt được thiếu hệ số 2.</li>
+  <li>Câu 1: biểu quyết (đáp án C, $s=vt+at$), đánh dấu ô 29·1.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> viết kilôgam là "g"; đổi km/h sang m/s bằng cách nhân 3,6; nghĩ hệ số $\tfrac12$ có thứ nguyên; chọn B hoặc D ở Câu 1 vì nhận ra $s=\tfrac12at^2$ và $v^2=2as$ nhưng không kiểm hai số hạng cộng nhau.</div>
+
+<h2>Điểm dừng 3 · Phép đo, hai loại sai số <small>phút 7–11 · tr.26 ô 26·3</small></h2>
+<ul>
+  <li>Trực tiếp/gián tiếp: cho ví dụ miệng (cân, bình chia độ / tốc độ, khối lượng riêng). ĐCNN: giơ thước kẻ, "vạch nhỏ nhất cách nhau 1 mm".</li>
+  <li>Sai số dụng cụ: có vạch chia lấy <b>nửa</b> ĐCNN, hiện số lấy <b>một</b> ĐCNN. Hỏi trước khi mở: "mép cục tẩy đúng vạch 12, ghi thế nào?". Hình thước bên phải: chỉ cho thấy mép đúng vạch 12.</li>
+  <li>Bảng hệ thống/ngẫu nhiên: lớp điền cột trái (hệ thống), thầy làm mẫu một ô cột phải. Hai câu cuối: thước mòn đầu = hệ thống; bấm đồng hồ lúc sớm lúc muộn = ngẫu nhiên.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> ghi $A=12$ mm (thiếu sai số) hoặc $(12\pm1)$ mm (lấy cả ĐCNN cho thước có vạch); lẫn "đo nhiều lần giảm sai số" cho cả hai loại.</div>
+
+<h2>Điểm dừng 4 · Con lắc, sai số tuyệt đối và tỉ đối <small>phút 11–18 · tr.27 ô 27·1 → 27·2 → Câu 2 → 27·3</small></h2>
+<ul>
+  <li>Màn công thức: đọc to $\overline A$, $\Delta A_i$, $\Delta A=\overline{\Delta A}+\Delta A_{\mathrm{dc}}$; chỉ đo một lần thì $\Delta A=\Delta A_{\mathrm{dc}}$ (ô 27·1).</li>
+  <li><span class="k">Clip con lắc (khoảng 1 phút):</span> biểu quyết trước khi chạy → C; chạy tới dừng ①, mở đáp án; dừng ② ra $\overline t=20{,}07$ s, cả lớp chép hàng $\Delta t_i$ vào Tập.</li>
+  <li>Màn bảng: tính $\overline{\Delta t}$, $\Delta t_{\mathrm{dc}}$, $\Delta t$ (1 phút), rồi Câu 2 (đáp án A, 0,15 s). Chốt: $t=(20{,}07\pm0{,}15)$ s.</li>
+  <li>Sai số tỉ đối (ô 27·3): $\delta t\approx0{,}75$ %; đo $2$ s mà sai $0{,}15$ s thì $\delta=7{,}5$ % — cùng $\Delta$, đại lượng nhỏ thì $\delta$ lớn.</li>
+  <li>Màn PhET: mặc định bỏ qua (dư giờ mới dùng).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> B (quên cộng $\Delta t_{\mathrm{dc}}=0{,}01$) · C (quên chia 5) · D (lấy độ lệch lớn nhất). Viết 100,35 chia 5 ra 20,17.</div>
+
+<h2>Điểm dừng 5 · Gián tiếp, chữ số có nghĩa <small>phút 18–23 · tr.28 ô 28·1, 28·2 → Câu 3, 4</small></h2>
+<ul>
+  <li>Bảng ba phép tính: cộng/trừ cộng $\Delta$; nhân/chia cộng $\delta$; có số mũ thì nhân số mũ với $\delta$. Nhấn: <b>phép trừ vẫn cộng sai số</b>.</li>
+  <li>Câu 3 ($V=a^3$, $\delta a=0{,}5$ %): biểu quyết → D ($1{,}5$ %). Ghi dòng cuối ô 28·1.</li>
+  <li>Chữ số có nghĩa: đọc quy tắc, lớp đếm CSCN của 4 số (1 phút), mở. Câu 4 → C; ghi $s=(2{,}386\pm0{,}013)$ m ở ô 28·2 ($0{,}013$ bắt đầu bằng 1 nên giữ 2 CSCN).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> $\delta V=0{,}5$ % (A, quên số mũ) hoặc $1{,}0$ % (B); đếm CSCN của $0{,}0620$ là 4 và của $0{,}00040$ là 5; giữ nguyên $1{,}5273$ khi $\Delta l$ chỉ có 3 chữ số thập phân.</div>
+
+<h2>Điểm dừng 6 · Ba bẫy, quay lại cục tẩy, đề 1224 <small>phút 23–30 · tr.29 Câu 5–7 → tr.28 ô 28·3 → tr.25 ô 25·3 → đề</small></h2>
+<ul>
+  <li><span class="k">Câu 5 trước, rồi bẫy 1:</span> biểu quyết cân luôn chỉ thừa $0{,}3$ g (đáp án A, vẫn thừa), sau đó mới mở màn "Đo nhiều lần thì sai số nào cũng nhỏ đi?" và cho lớp điền dòng bẫy 1 (hệ thống không giảm khi đo nhiều lần).</li>
+  <li><span class="k">Bẫy 2 (đo tại lớp, 2–3 phút):</span> mỗi bàn đo tấm bìa và cục tẩy một lần; điền hai ô $\delta$ ($0{,}2$ % và $4{,}2$ %); Câu 6 → D. Clip thước chỉ dùng khi không làm thật được.</li>
+  <li><span class="k">Bẫy 3 + Câu 7:</span> $1{,}5$ m và $1{,}500$ m khác nhau (đo tới dm và tới mm). Câu 7 → B ($0{,}0350$).</li>
+  <li><span class="k">Quay lại cục tẩy (1 phút):</span> mở đáp án B; lớp lật tr.25 ô 25·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai".</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1224 trong 15 phút. Nộp xong ghi vào dòng "Đề 1224" dưới bảng ô 29·1: điểm …/20, câu sai, câu đoán mò.</li>
+  <li>Bẫy 2: Tập in sẵn hai kết quả thước chuẩn; việc đo tại lớp là để so với số in sẵn, không để điền lại.</li>
+  <li>Đọc màn "Về nhà theo Tập": ô 25·3 + 25·1; ô 27·4 Trả bài 6 câu; ô 28·4 Làm nhanh; ô 29·2 bài toán mẫu đo $g$; ô 29 cuối ghi đề BTVN thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1224 so với phần học trên lớp:</b> đề 20 câu (14 trắc nghiệm, 6 đúng/sai) hỏi lại toàn bộ lý thuyết trọng tâm; bảy câu biểu quyết đã gặp trước ở điểm dừng 2–6 nên là ôn lại, không phải bài kiểm tra "lần đầu". Thấy điểm quá cao thì ghi vào "sau buổi dạy".</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Đổi $54$ km/h sang m/s: A. $15$ m/s · B. $194{,}4$ m/s · C. $1{,}5$ m/s · D. $150$ m/s</li>
+<li>Công thức đúng thứ nguyên (v: vận tốc, a: gia tốc, s: quãng đường, t: thời gian): A. $v=a/t$ · B. $s=vt^{2}$ · C. $v=at$ · D. $s=at$</li>
+<li>Thước hiện số ĐCNN $0{,}1$ mm, đo thanh bốn lần: $40{,}2$; $40{,}4$; $40{,}2$; $40{,}4$ (mm). Ghi kết quả: A. $(40{,}3\pm0{,}1)$ mm · B. $(40{,}3\pm0{,}2)$ mm · C. $(40{,}30\pm0{,}2)$ mm · D. $(40{,}3\pm0{,}4)$ mm</li>
+<li>$\rho=m/a^{3}$, $\delta m=1{,}0$ %, $\delta a=0{,}5$ %. Sai số tỉ đối của $\rho$: A. $0{,}5$ % · B. $1{,}5$ % · C. $2{,}5$ % · D. $2{,}0$ %</li>
+<li>$\overline v=12{,}3487$ m/s, $\Delta v=0{,}24$ m/s. Ghi đúng: A. $(12{,}3487\pm0{,}24)$ m/s · B. $(12{,}35\pm0{,}24)$ m/s · C. $(12{,}3\pm0{,}2)$ m/s · D. $(12{,}35\pm0{,}2)$ m/s</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$54\cdot10^{3}/3600=15$ m/s</td><td>B: nhân 3,6 · C: chia 36 · D: bỏ qua đổi giờ</td></tr>
+<tr><td>2</td><td>C</td><td>$[at]=\mathrm{L\,T^{-2}\,T}=\mathrm{L\,T^{-1}}=[v]$</td><td>A: $\mathrm{L\,T^{-3}}$ · B: $\mathrm{L\,T}$ · D: $\mathrm{L\,T^{-1}}$ khác $\mathrm L$</td></tr>
+<tr><td>3</td><td>B</td><td>$\overline A=40{,}3$; mọi $\Delta A_i=0{,}1$; $\Delta A=0{,}1+0{,}1=0{,}2$</td><td>A: quên $\Delta A_{\mathrm{dc}}$ · C: thừa chữ số · D: cộng thêm lần nữa</td></tr>
+<tr><td>4</td><td>C</td><td>$\delta\rho=\delta m+3\,\delta a=1{,}0+1{,}5=2{,}5$ %</td><td>A: bỏ $m$ · B: nhân 1 · D: nhân 2 cho $a$</td></tr>
+<tr><td>5</td><td>B</td><td>$0{,}24$ bắt đầu bằng 2 → giữ 2 CSCN (hai chữ số thập phân); $\overline v=12{,}35$</td><td>A: không làm tròn · C, D: giữ 1 CSCN cho $\Delta v$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ PhET và clip thước; bảng tiếp đầu ngữ chỉ đọc; bảng hệ thống/ngẫu nhiên chỉ điền cột trái, cột phải chép ở nhà; điểm dừng 5 chữ số có nghĩa: đếm CSCN miệng. Không cắt giờ làm đề 1224 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: PhET Con lắc (màn "Thử với PhET", ~3 phút); hoặc hỏi miệng "đo $2$ s bằng đồng hồ có ĐCNN $0{,}01$ s: $\delta$ tối thiểu là bao nhiêu?" ($0{,}5\%$).</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; chữ trong hình ba chấm đo (số 1–5) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu / lần hai ở 7 câu biểu quyết và câu cục tẩy; lớp có điền kịp bảng 14 ô SI trong 1,5 phút không.</li>
+  <li>Bẫy 2 đo tại lớp có đủ thước không; clip thước có dùng đến không.</li>
+  <li>Đề 1224: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (điểm dừng 4 và 6 dễ quá giờ).</li>
+</ul>
+</body>
+</html>

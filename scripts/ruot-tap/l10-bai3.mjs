@@ -163,8 +163,9 @@ ${foot(4)}</section>`;
 // ---------- Trang 5: tự kiểm tra · bài toán mẫu · BTVN ----------
 const p5 = `<section class="page">
 ${head('TỰ KIỂM TRA · BÀI TOÁN MẪU · BÀI TẬP VỀ NHÀ')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·1')}
+${h3(1, 'Kết quả tự kiểm tra (7 câu trên lớp) · đề 1224 (20 câu, cuối tiết)', '5·1')}
 ${rkHai([1, 2, 3, 4], [5, 6, 7])}
+<div class="card soft" style="margin-top:.8mm;padding:1mm 3mm"><b>Đề 1224:</b> Điểm ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${h3(2, 'V · Bài toán mẫu: đo g bằng con lắc đơn', '5·2')}
 <div class="card soft" style="padding:1.2mm 3mm">${m('g=\\dfrac{4\\pi^{2}l}{T^{2}}')}. Dây dài ${nw(m('l=1{,}000\\ \\mathrm m'))}, thước ĐCNN ${nw('1 mm')} (sai số dụng cụ lấy nửa ĐCNN). Thời gian ${m('t')} của 10 dao động đo 5 lần ở bảng tr. ${3 + OFF}; ${m('T=t/10')}. Bỏ qua sai số của ${m('\\pi')}. Tính ${m('g')} và ghi kết quả.</div>
 <table style="margin-top:1mm"><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
