@@ -72,9 +72,9 @@ def zoom(d, key, m0, edge_k=0.0, band_k=0.0, alpha=1.0, box=ZB, z=Z, lab=True):
             d.rectangle([ex - 0.5 * z, ry - hh - 14, ex + 0.5 * z, ry + 150 - 2], fill=A(BAND, 0.28 * alpha * band_k),
                         outline=A(BAND, alpha * band_k), width=3)
         if lab:
-            ex = xf(L)
-            text(d, (ex - 0.5 * z - 6, ry - hh - 40), "−0,5", 40, BAND, anchor="rm", alpha=alpha * band_k)
-            text(d, (ex + 0.5 * z + 6, ry - hh - 40), "+0,5", 40, BAND, anchor="lm", alpha=alpha * band_k)
+            for e in ends:
+                ex = xf(e)
+                text(d, (ex, ry - hh - 40), "±0,5", 44, BAND, alpha=alpha * band_k)
     return xf
 
 # ---------------- canh 1: du doan ----------------
@@ -116,7 +116,9 @@ def s_do(img, d, t, sc):
         ek = appear(t, P["edge1"] if key == "bia" else P["edge2"], 0.4)
         bk = appear(t, P["band1"] if key == "bia" else P["band2"], 0.4)
         zoom(d, key, m0, edge_k=ek, band_k=bk, alpha=kz)
-        if bk > 0: text(d, (W / 2, 1055), "Hai đầu, mỗi đầu ±0,5 → ΔA = 1 mm", 40, BAND, alpha=bk)
+        if bk > 0:
+            s_ = "Đầu này ±0,5; đầu 0 cũng ±0,5" if key == "bia" else "0,5 + 0,5 → ΔA = 1 mm"
+            text(d, (W / 2, 1060), s_, 46, BAND, alpha=bk)
     # bang ket qua
     k1 = appear(t, P["row1"], 0.4)
     if k1 > 0:
@@ -188,7 +190,7 @@ def s_bay(img, d, t, sc):
     if kb > 0:
         for bx0, L, m0 in ((BZ_L[0], 250.0, 246.0), (BZ_R[0], 12.0, 8.0)):
             ex = bx0 + (L - m0) * Z
-            text(d, (ex, 1125), "mỗi đầu ±0,5", 40, BAND, alpha=kb)
+            text(d, (ex, 1125), "mỗi đầu ±0,5", 44, BAND, alpha=kb)
     kc = appear(t, M[1] + 2.0, 0.4)
     if kc > 0:
         ctext(d, 1260, "✓ ΔA do thước, không do vật", 46, GREEN, alpha=kc)
