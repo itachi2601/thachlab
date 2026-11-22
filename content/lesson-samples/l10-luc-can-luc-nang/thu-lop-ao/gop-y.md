@@ -43,3 +43,30 @@ Số ô [n] là số chỗ trống trong `thu-lop-ao/sach-trong.md`. Bằng ch�
 | 20 | **src** `#m6c` Về nhà + **ghi chú** | Tàu thép và 5·5 không có gợi ý (hs-3: "[66] chưa biết trả lời… không có ví dụ tương tự trên lớp"). Màn Về nhà không nhắc ô 4·3. | `#m6c` thêm "tr.3 ô 3·4 tàu thép: gợi ý: tàu rỗng, phần chìm lớn?" và "tr.4 ô 4·3 ghi điểm đề 1240"; ghi chú ĐD6 thêm 1 ví dụ tương tự 5·5 nói miệng ("chìm, lực kế giảm 1 N thì V = ?"). |
 | 21 | **src** `#m5c` | Biểu quyết A–D không có ô trong Tập; hs-3: "em tính trên giấy nháp". | Ghi chú: "chỉ giơ tay, không ghi" hoặc lấy kết quả điền vào ô 5·4 lề. |
 | 22 | **ghi chú** bảng đề cuối tiết | "Chưa đối chiếu từng câu đề 1240 với phần học trên lớp". | Trước khi dạy, chạy đề 1240 qua `ra-soat` đối chiếu từng câu với ô 1·1 mục tiêu; ghi mục tiêu nào có/không có câu. |
+
+## Đã xử lý
+
+PDF Tập trước sửa 12 trang, sau sửa 12 trang, không trang nào tràn (tr.2 còn dư 2 mm). Kiểm máy: 1920×1080 và 1280×720 không màn nào tràn, katexErr 0, 375px không cuộn ngang.
+
+- 1 · làm: ô 4·3 thành "Đề 1240 (19 câu, cuối tiết)", một dòng "Điểm …/19 · câu sai · câu đoán mò"; `#m6b` thêm dòng "Nộp xong: ghi điểm vào tr.4 ô 4·3".
+- 2 · làm: .mjs "Ghi GĐ 1, 2, 3 vào ba ô dưới đồ thị, từ trái sang phải". Hình 3 trên màn đã có nhãn GĐ 1/2/3; nhãn đầu màn `#m3b` ghi "ghi GĐ 1, 2, 3 trái → phải". Câu chỉ dẫn trong thân màn làm tràn 79 px nên đưa lên nhãn đầu màn.
+- 3 · làm: bỏ màn 3d. Lực nâng (ô 2·4) về nhà, có trong màn Về nhà; ghi chú ĐD3 đặt sẵn.
+- 4 · làm (cách thứ hai): màn đáp án Phân tích đề/Giải (5d) chuyển xuống sau màn Về nhà, chỉ chiếu khi dư giờ. Ô 5·2, 5·3 về nhà. Phút: ĐD4 16–22, ĐD5 22–27. Giữ 5a vì ô 3·3 cần trên lớp; ghi chú "thiếu giờ" ghi bỏ 5a trước.
+- 5 · làm: bỏ dòng "Độ lớn…" khỏi `#m2a`; dòng này chuyển vào ô kết quả PhET `#m2b`.
+- 6 · làm: thêm mã ô 5·2, 5·3; nhãn màn đáp án ghi "tr.5 · ô 5·2, 5·3".
+- 7 · làm: đổi thứ tự trong Tập và đánh lại mã ô theo thứ tự đọc. Tr.2: Làm nhanh = 2·3, lực nâng = 2·4. Tr.3: bình tràn = 3·1, Archimedes = 3·2. Đã sửa nhãn màn, ghi chú và dòng tra cứu trong .mjs.
+- 8 · làm: `#m2d` ghi "$F_c\sim v^2$ (bình phương tốc độ)"; Tập ghi "tăng gần theo ( ) của tốc độ".
+- 9 · làm (cách ghi chú): ghi "chỉ giơ tay, không ghi". Lý do: tr.2 chỉ dư 2 mm, thêm dòng thì tràn.
+- 10 · làm: đáp án `#m3c` ghi "Ghi vào ô 2·3:" kèm ba ý cần viết.
+- 11 · làm một phần: 4·4 đổi thành "Câu 2" nên hết trùng. Không thêm "(Bẫy 1)" vào 2·3 vì câu xuống dòng làm tr.2 tràn 2 mm.
+- 12 · làm: màn 4c đổi thành "$F_A=dV=\rho gV$", cùng thứ tự với Tập (Tập ghi "dùng $d=\rho g$").
+- 13 · làm: Tập ghi "hạ sâu thêm (làm trên lớp): ( ) N"; `#m4b` cũng ghi vậy, thêm "$g=9{,}8$ ở ô này; các ô khác $g=10$".
+- 14 · làm: đáp án "tính" của `#m4b` thêm $100\ \text{cm}^3=100\cdot10^{-6}=10^{-4}\ \text{m}^3$.
+- 15 · làm: thêm gợi ý `#m4a` "Nước tràn ra là nước ở đâu? (chỗ vật chiếm)".
+- 16 · làm: Tập ô 3·3 ghi "( ) (điền dấu)" và "(vì $\Delta h\cdot S=V$)"; `#m5a` ghi thêm "$\Delta h\cdot S=V$: thể tích hộp".
+- 17 · làm: ghi chú ĐD5 thêm câu hỏi miệng trước khi mở bảng nổi chìm.
+- 18 · làm: `m6giay` hỏi D trước ($\rho_{kk}\approx1{,}2$ kg/m³, nhỏ hơn nước khoảng 800 lần) rồi mới mở B.
+- 19 · bỏ: mức thấp; tr.4 còn chỗ nhưng chưa cần đổi lời ô bẫy.
+- 20 · làm: màn Về nhà thêm gợi ý tàu thép và ô 4·3; ghi chú "dư giờ" thêm ví dụ nói miệng giống ô 5·5.
+- 21 · làm: ghi chú `#m5c` ghi "chỉ giơ tay, không ghi".
+- 22 · bỏ: đối chiếu đề 1240 cần đọc DB, nằm ngoài lượt này; ghi chú để ở "Còn treo".
