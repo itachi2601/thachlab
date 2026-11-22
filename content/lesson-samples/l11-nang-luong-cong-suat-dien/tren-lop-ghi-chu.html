@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cường độ dòng điện · ghi chú dạy</title>
+<title>Năng lượng điện và công suất điện · ghi chú dạy</title>
 <link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -28,19 +28,16 @@ th{background:#eef2f7}
 </style>
 </head>
 <body>
-<h1>Cường độ dòng điện (L11 Bài 22) — ghi chú dạy một tiết</h1>
-<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa chạy lớp ảo.</p>
+<h1>Năng lượng điện và công suất điện (L11 Bài 25) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Tập in số trang tuyệt đối của quyển Chương 4: bài 25 = tr.37–48, học trên lớp tr.37–41.</p>
 
 <h2>Chuẩn bị trước giờ</h2>
 <ul>
-  <li><b>Thí nghiệm ampe kế (điểm dừng 3):</b> 2 pin AA trong đế (3 V), bóng đèn nhỏ 2,5–3 V có đui, đồng hồ vạn năng số đặt thang <b>DCA (cỡ 1 A hoặc 10 A)</b>, que đỏ cắm lỗ A, que đen COM, 4 dây có kẹp cá sấu. Thử ở nhà: số đọc có thể là 0,2–0,3 A tuỳ bóng; cứ ghi số lớp thấy, điều cần thấy là <b>ba vị trí bằng nhau</b> và đảo pin ra dấu "−". <b>Không chạm hai que ampe kế vào hai cực pin</b> (Bẫy 3).</li>
-  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
-  <li>Cuối tiết làm <b>đề 1217 "Kiểm tra nhanh — Bài 22. Cường độ dòng điện"</b> (20 câu, 15 phút, mục 204) trên điện thoại: màn 6b có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1217&amp;item=204</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
-  <li><b>PhET "Bộ lắp ráp mạch điện: DC"</b> (cần mạng, bản tiếng Việt): mở sẵn một tab, màn <b>Giới thiệu</b>, dựng trước mạch pin – đèn – dây kín để trong giờ chỉ kéo ampe kế vào. Dùng ở điểm dừng 3 (khi thiếu dụng cụ / bàn cuối không thấy số) và điểm dừng 4 (bấm đổi <b>Điện tử ↔ Quy ước</b> để thấy hai chiều ngược nhau).</li>
-  <li><b>Chiếu tivi 50 inch:</b> 22 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối. Màn chiếu cần mạng (công thức KaTeX, 2 clip); mở trước để trình duyệt nhớ sẵn.</li>
+  <li><b>Hai clip tự dựng</b> (không giọng, phụ đề): màn 3c đèn xe máy 12 V – 21 W (3 điểm dừng) và màn 4c hai pin AA đổi $R$ (3 điểm dừng). Mỗi clip khoảng 2 phút. Không có PhET hợp bài này, không cần mở tab mô phỏng.</li>
+  <li><b>Đồ thật (không bắt buộc):</b> một cái hoá đơn tiền điện hoặc ảnh công tơ để mở đầu; một bóng đèn ghi nhãn 220 V – 100 W cầm tay cho màn "Đọc nhãn".</li>
+  <li>Cuối tiết làm <b>đề 1220</b> (mục 213, 19 câu, 15 phút) trên điện thoại: màn 6b có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1220&amp;item=213</code>). Nhắc cả lớp sạc điện thoại từ trước.</li>
   <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
-  <li><b>Clip đồng hồ USB</b> (màn 3d, cần mạng): clip nằm bên trái cao hết màn, cột phải hiện chữ to. Clip bỏ phần mở đầu (câu dự đoán đã có trên màn), chạy từ "Tiến hành" tới hết "Đổi đơn vị" (khoảng 17 giây), <b>tự dừng 3 lần</b> + lần cuối: ① 10 phút được 250 mAh → biểu quyết A–D "cứ 10 phút số mAh thay đổi thế nào?" (đáp án A, lộ ở lần dừng ②); ② bảng 5 số mAh → hỏi "10 phút = ? s" (lớp điền dòng "Đổi" ô 2·3), rồi điền cột $\Delta q$ hàng 20–50 (hàng 10 phút in sẵn 900); ③ cột $\Delta q$ 900…4500 C → "1 mAh = ? C"; cuối: $1$ mAh $=3{,}6$ C. <b>Enter</b> (Space, bấm clip, nút ▶) = phát tiếp; ↺ xem lại đoạn; lần dừng cuối Enter sang màn sau. Trước giờ bấm ▶ rồi ↺ để máy tải sẵn. Số liệu trong clip là <b>số liệu mô phỏng</b> (clip có ghi), nói rõ với lớp.</li>
-  <li>Cột "Lớp đo" ở màn 3b gõ chữ được: bấm vào ô, gõ số lớp đọc được, Enter.</li>
   <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
 </ul>
 
@@ -51,101 +48,96 @@ th{background:#eef2f7}
   <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
 </ul>
 
-<h2>Đi theo Tập bài 22 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.1</small></h2>
+<h2>Đi theo Tập bài 25 <small>thứ tự lật: tr.37 → tr.38 → tr.39 → tr.40 → tr.37 → tr.40</small></h2>
 <table>
 <thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
 <tbody>
-<tr><td>1 · Dự đoán tốc độ trôi</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
-<tr><td>2 · Định nghĩa $I$</td><td>3–8</td><td>tr.1 ô 1·4 → tr.2 ô 2·2</td><td>7 chỗ điền + công thức + ví dụ 9 A (2 dòng) + dòng "9 nhiều hơn 4" + 2 dòng làm nhanh</td></tr>
-<tr><td>3 · Ampe kế + đồng hồ USB</td><td>8–16</td><td>tr.2 ô 2·1 → ô 2·3</td><td>3 + 2 số đo + 2 rút ra = 7 · đổi mAh (2) + 4 ô $\Delta q$ + 2 rút ra + 1 sai số = 9</td></tr>
-<tr><td>4 · Chiều dòng, không đổi / một chiều</td><td>16–20</td><td>tr.3 ô 3·1</td><td>4 chỗ điền + bảng 6 ô + 2 đồ thị phác + 2 ô luôn/không luôn</td></tr>
-<tr><td>5 · $I=Snve$, tốc độ trôi, Bẫy 1</td><td>20–27</td><td>tr.3 ô 3·2, 3·3 → tr.4 ô 4·1 (Bẫy 1)</td><td>$N$, $\Delta q$, $I$, $j$, đơn vị, $v$/$n$ = 7 · $S$, $Sne$, 3 số $v$, 1 mm/s + 1 dòng = 7 · tích Bẫy 1</td></tr>
-<tr><td>6 · Trả bài + quay lại công tắc + đề 1217</td><td>27–30, đề 30–45</td><td>tr.4 ô 4·2 câu 1, 5 → tr.1 ô 1·3, 1·1 → đề xong: tr.4 ô 4·3</td><td>4 dòng trả bài + đáp án dự đoán, đúng/sai + đánh dấu mục tiêu + điểm đề</td></tr>
+<tr><td>1 · Dự đoán số điện</td><td>0–2</td><td>tr.37 ô 37·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Năng lượng điện</td><td>2–8</td><td>tr.37 ô 37·4, 37·5 → tr.38 ô 38·1</td><td>chữ gạch chân (jun, cơ, hoá, kWh, công tơ) · đọc công tơ 0,3 kWh · làm nhanh bàn là</td></tr>
+<tr><td>3 · Công suất, nhãn, đèn xe máy</td><td>8–16</td><td>tr.38 ô 38·2 → 38·4</td><td>định nghĩa $P$, $I^2R$, $U^2/R$, J/s · nhãn · bảng 3 cột $P$, $R$ + rút ra · làm nhanh đèn 110 V</td></tr>
+<tr><td>4 · Nguồn điện, hiệu suất</td><td>16–22</td><td>tr.39 ô 39·1, 39·2</td><td>$\mathcal EIt$, $\mathcal EI$, $UI$, $I^2r$ · $H=U/\mathcal E$, $R/(R+r)$ · hàng $H$ của bảng 4 cột + rút ra</td></tr>
+<tr><td>5 · Đoản mạch, cầu chì, ba bẫy</td><td>22–27</td><td>tr.39 ô 39·3 → tr.40 ô 40·1</td><td>$I=\mathcal E/r$, 600 A, 7200 W · cầu chì 10 A · Bẫy 1 (288 kWh) · Bẫy 2 (18 W) · Bẫy 3 (đèn 40 W)</td></tr>
+<tr><td>6 · Trả bài + quay lại + đề 1220</td><td>27–30, đề 30–45</td><td>tr.40 ô 40·2 câu 1, 3 → tr.37 ô 37·3 → đề xong: tr.40 ô 40·3</td><td>2 dòng trả bài + đáp án dự đoán, đúng/sai + dòng "điều em hiểu sai" + điểm đề …/19</td></tr>
 </tbody>
 </table>
-<p class="nho">Điểm dừng 3 dày nhất (thí nghiệm thật + clip, 8 phút): nếu thí nghiệm thật trơn tru thì bỏ màn PhET 3c. Bài toán mẫu (tr.5 ô 5·1, 5·2) không làm trên lớp: cùng cách tính với ví dụ ô 3·3 đã làm ở điểm dừng 5, để về nhà. Bẫy 2 đã dạy ở điểm dừng 4 (màn 4c), Bẫy 3 đã nói ở màn 3a; trên lớp chỉ tích Bẫy 1.</p>
+<p class="nho">Điểm dừng 3 và 4 dày nhất (mỗi điểm một clip). Bẫy 2 (màn 5d) dễ bỏ khi thiếu giờ, đã ghi "về nhà" trên màn. Bài toán mẫu (tr.41 ô 41·1, 41·2) và thử thách không làm trên lớp. Ô 40·2 dòng "Bạn cùng bàn kiểm": điền ở nhà.</p>
 
-<h2>Điểm dừng 1 · Dự đoán tốc độ trôi <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<h2>Điểm dừng 1 · Dự đoán <small>phút 0–2 · Tập tr.37 ô 37·2</small></h2>
 <ul>
-  <li><span class="k">Gợi mở:</span> "Bật công tắc, đèn ở đầu kia phòng sáng ngay. Có phải electron từ công tắc chạy tới đèn không?"</li>
-  <li>Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao". Màn 1b không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ chính các em tính ra con số" (điểm dừng 5, ô 3·3; đáp án ở màn "Quay lại công tắc").</li>
+  <li><span class="k">Gợi mở:</span> "Mẹ em hay nói 'tháng này nhà mình hết 312 số điện'. Số điện là cái gì? Có phải công suất không?"</li>
+  <li>Màn 1 có hình hoá đơn/công tơ (y Tập) và câu A–D. Khoanh, chắc/không chắc, một dòng "Vì sao". Không mở đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại" (màn "Quay lại hoá đơn").</li>
 </ul>
-<div class="sai"><b>Học sinh hay mắc:</b> chọn A (đèn sáng ngay nên electron chạy như ánh sáng) — đó là tốc độ điện trường lan dọc dây. Chọn D — electron có trôi, nếu đứng yên thì không có dòng điện.</div>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (100 số, nhầm số điện với công suất) hoặc D (10 số, lấy số giờ).</div>
 
-<h2>Điểm dừng 2 · Cường độ dòng điện <small>phút 3–8 · tr.1 ô 1·4 → tr.2 ô 2·2</small></h2>
+<h2>Điểm dừng 2 · Năng lượng điện <small>phút 2–8 · tr.37 ô 37·4, 37·5 → tr.38 ô 38·1</small></h2>
 <ul>
-  <li>Màn 2a: đọc to từng dòng, lớp chép chữ gạch chân vào ô 1·4. Nhấn "tiết diện thẳng": đếm điện tích đi qua một mặt cắt ngang dây, như đếm người qua cửa.</li>
-  <li>Màn 2b (ví dụ trong ô 1·4): lớp tính 30 giây rồi mới mở. Câu "9 nhiều hơn 4" trả lời câu mở bài web: ampe kế "đếm" số cu-lông qua tiết diện mỗi giây.</li>
-  <li>Màn 2c = ô 2·2 (lật sang tr.2). Biểu quyết A–D trên màn, rồi viết 2 dòng vào Tập. Nhấn "số 5 V không dùng".</li>
+  <li>Màn 2a: lớp chép $A=UIt$, đơn vị, các dạng năng lượng (gạch chân). Màn 2b: toả nhiệt, đổi $1$ kWh $=3{,}6\cdot10^6$ J (số cho sẵn, không bắt tự suy), công tơ đo năng lượng.</li>
+  <li>Màn 2c = ô 37·5: cho lớp 40 giây tự tính, rồi bấm "Mở: lời giải". Nhấn $10$ phút $=\tfrac16$ h.</li>
+  <li>Màn 2d = ô 38·1: biểu quyết, mở đáp án B (792 kJ).</li>
 </ul>
-<div class="sai"><b>Học sinh hay mắc:</b> để nguyên phút (ra 6 C); chia $I/\Delta t$ (ra 0,025 C); nhân thêm 5 V. Tính số electron quên chia cho $e$ hoặc nhân với $e$.</div>
+<div class="sai"><b>Học sinh hay mắc:</b> quên đổi phút ra giây (52,8 kJ); quên nhân $I$; đổi kWh nhân/chia 1000 nhầm.</div>
 
-<h2>Điểm dừng 3 · Ampe kế và đồng hồ USB <small>phút 8–16 · tr.2 ô 2·1 → ô 2·3</small></h2>
+<h2>Điểm dừng 3 · Công suất điện, nhãn, đèn xe máy <small>phút 8–16 · tr.38 ô 38·2 → 38·4</small></h2>
 <ul>
-  <li>Màn 3a: hình mạch pin – đèn – ampe kế của Tập. Điền 3 chỗ dòng đầu ô 2·1. Hỏi "mắc song song thì sao?": ampe kế gần như một đoạn dây, không cản dòng, nên mắc song song hay nối thẳng vào pin thì dòng rất lớn (chưa cần nhắc điện trở — bài sau).</li>
-  <li><span class="k">Thí nghiệm thật (màn 3b, khoảng 3 phút):</span> trước lần 1 hỏi miệng "đặt ampe kế trước đèn hay sau đèn thì số lớn hơn?". Làm 3 vị trí, đọc to, gõ vào "Lớp đo"; lớp ghi số vào dòng "Quan sát" ô 2·1. Trước lần 4 hỏi "đảo pin thì số chỉ đổi thế nào?". Rồi mở "rút ra".</li>
-  <li><b>Màn 3c PhET mặc định bỏ qua</b> (Enter qua luôn); chỉ dùng khi thiếu dụng cụ hoặc bàn cuối không thấy số. Màn 3f (sai số) bỏ khi thiếu giờ. Khung đồ thị ô 2·3 chấm điểm ở nhà.</li>
-  <li><span class="k">Clip đồng hồ USB (màn 3d, khoảng 2 phút):</span> dòng đầu ô 2·3 (đổi mAh) để sau lần dừng ③. Ở lần dừng ② lớp điền cột $\Delta q$ trong Tập (1 phút); lần dừng ③ để so. Màn 3e: điền dòng "Rút ra" (thuận, $I$). Màn 3f: biểu quyết sai số = dòng cuối ô 2·3.</li>
+  <li>Màn 3a, 3b: định nghĩa, nhãn 220 V – 100 W. Cho lớp tự tính $I_{\text{đm}}$, $R$ rồi mở.</li>
+  <li><span class="k">Clip đèn xe máy (màn 3c, khoảng 2 phút):</span> ① 13,6 s: $12{,}0$ V → 1,75 A → 21 W, biểu quyết "hạ xuống 6,0 V thì khoảng bao nhiêu oát?" (đáp án B, 8 W); ② 17,9 s: $6{,}0$ V → 1,30 A → 7,8 W, lớp điền hàng $P=UI$; ③ 23,7 s: 21 W khớp nhãn, lớp điền hàng $R=U/I$; cuối 27,6 s.</li>
+  <li>Màn 3d: bảng 3 cột + dòng rút ra (nhấn "coi $R$ không đổi" là phép gần đúng). Màn 3e = ô 38·4: đèn 220 V – 100 W mắc 110 V, đáp án A (25 W).</li>
 </ul>
-<div class="sai"><b>Học sinh hay mắc:</b> nghĩ ampe kế đặt sau đèn chỉ ít hơn vì "đèn dùng mất dòng" — ba số bằng nhau là bằng chứng điện tích không mất đi. Đổi mAh nhân 60 thay vì 3600; nhân dòng với số phút (Bẫy trong clip). Sai số: quên nhân thời gian.</div>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ $P$ tỉ lệ với $U$ (chọn 50 W); nghĩ đèn mờ thì $R$ vẫn 6,9 Ω; quên bình phương.</div>
 
-<h2>Điểm dừng 4 · Chiều dòng điện · không đổi và một chiều <small>phút 16–20 · tr.3 ô 3·1</small></h2>
+<h2>Điểm dừng 4 · Nguồn điện và hiệu suất <small>phút 16–22 · tr.39 ô 39·1, 39·2</small></h2>
 <ul>
-  <li>Màn 4a (Hình 1 bài web: đỏ chiều dòng, xanh chiều electron): điền 4 chỗ. Nếu có PhET: bấm Điện tử ↔ Quy ước trên mạch đang dựng, lớp thấy chấm chạy ngược nhau.</li>
-  <li>Màn 4b: hình (a), (b) y Tập. Hỏi "đồ thị nào là dòng không đổi?" rồi mở bảng; lớp chép vào bảng ô 3·1 và phác hai đồ thị vào hàng "Đồ thị".</li>
-  <li>Màn 4c: hai câu luôn/không luôn y Tập (tích ô). Giơ tay "luôn" / "không luôn" cho từng câu, rồi mở.</li>
+  <li>Màn 4a: hình cân bằng công suất của Tập; chép $\mathcal EI=UI+I^2r$. Màn 4b: $H=U/\mathcal E$, $R/(R+r)$. Nhắc: mạch có quạt/động cơ chỉ dùng $U/\mathcal E$.</li>
+  <li><span class="k">Clip hai pin AA (màn 4c, khoảng 2 phút):</span> ① 14,3 s: $R=1{,}0\ \Omega$, $H=50\ \%$ → lớp tính ba hàng còn lại ($U$ đã in sẵn); ② 21,9 s: $50; 66{,}7; 80; 90\ \%$ → biểu quyết "R tăng mãi thì $H$…" (đáp án D); cuối 26,2 s: chốt D.</li>
+  <li>Màn 4d: đồ thị $H$ theo $R$ (Hình 3 bài web), 2 dòng Rút ra.</li>
 </ul>
-<div class="sai"><b>Học sinh hay mắc:</b> cho rằng "một chiều = không đổi" (Bẫy 2); gọi dòng nhấp nhô là xoay chiều — xoay chiều là <i>chiều</i> đổi qua lại, đồ thị cắt trục $t$.</div>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn C (đạt đúng 100 % khi $R$ đủ lớn); chọn A (R tăng thì $I$ giảm nên $H$ giảm); dùng $R/(R+r)$ cho mạch có động cơ.</div>
 
-<h2>Điểm dừng 5 · $I=Snve$, tốc độ trôi, Bẫy 1 <small>phút 20–27 · tr.3 ô 3·2, 3·3 → tr.4 ô 4·1</small></h2>
+<h2>Điểm dừng 5 · Đoản mạch, cầu chì, ba bẫy <small>phút 22–27 · tr.39 ô 39·3 → tr.40 ô 40·1</small></h2>
 <ul>
-  <li>Màn 5a: hình trụ của Tập. <span class="k">Gợi mở từng bước</span> trước khi bấm: "trụ dài $v\Delta t$, đáy $S$: thể tích?" → "mỗi m³ có $n$ hạt: số hạt?" (Mở: N) → "mỗi hạt mang $e$: điện lượng?" (Mở: Δq) → "chia $\Delta t$?" (Mở: I). Mẹo nhớ "Đông – Nhanh – To".</li>
-  <li>Màn 5b: điền dòng $j$ và đơn vị, rồi biểu quyết Bẫy 1 (lớp tích ô Bẫy 1 ở tr.4 ô 4·1). Đáp án mở có đúng chữ dòng cuối ô 3·2 ("tăng $v$, không phải tăng $n$").</li>
-  <li>Màn 5c = ô 3·3: lớp tự đổi $S$ và tính $Sne$ (1 phút, cho dùng máy tính), mở số; rồi chia lớp 3 nhóm tính 5, 10, 16 A. Mở "rút ra" và nối về câu dự đoán.</li>
+  <li>Màn 5a: $I=\mathcal E/r$; cho lớp tự tính ắc quy 12 V, $r=0{,}02\ \Omega$ rồi mở 600 A, 7200 W. Màn 5b: ấm 1800 W, cầu chì 10 A.</li>
+  <li>Màn 5c (Bẫy 1, kW và kWh), 5d (Bẫy 2, công suất nguồn ≠ mạch ngoài; <b>thiếu giờ thì bỏ</b>, về nhà), 5e (Bẫy 3, hai đèn nối tiếp; hình của Tập). Biểu quyết rồi mở.</li>
 </ul>
-<div class="sai"><b>Học sinh hay mắc:</b> đổi $1{,}5$ mm² ra $1{,}5\cdot10^{-3}$ m² (đổi như mm sang m); quên $e$ trong $Sne$; nghĩ dòng tăng vì "thêm electron" ($n$ tăng).</div>
+<div class="sai"><b>Học sinh hay mắc:</b> Bẫy 1 chọn A (một đêm) hoặc D (đúng số, sai đơn vị); Bẫy 2 chọn A (16 W là mạch ngoài); Bẫy 3 chọn A (100 W nên sáng hơn).</div>
 
-<h2>Điểm dừng 6 · Trả bài + quay lại + đề 1217 <small>phút 27–30 trả bài · 30–45 làm đề · tr.4 ô 4·2 → tr.1 ô 1·3</small></h2>
+<h2>Điểm dừng 6 · Trả bài + quay lại + đề 1220 <small>phút 27–30 trả bài · 30–45 làm đề · tr.40 ô 40·2 → tr.37 ô 37·3</small></h2>
 <ul>
-  <li>Trả bài 2 câu của ô 4·2 (đúng lời Tập): câu 1 (2 dòng), câu 5 (2 dòng); câu 2, 3, 4, 6 về nhà. Cho viết <b>1,5 phút, chưa bấm Mở</b>, rồi mở từng câu để tự sửa bằng bút khác màu.</li>
-  <li><span class="k">Màn "Quay lại công tắc" (1 phút):</span> hình công tắc cạnh dòng "16 A: 0,78 mm/s". Enter mở đáp án C + ví dụ ống nước. Lớp lật tr.1 ô 1·3: ghi đáp án, đúng/sai, dòng "điều em hiểu sai". <b>20 giây: đánh dấu ô 1·1</b>.</li>
-  <li>Chiếu mã QR, cả lớp quét, làm đề 1217 trong 15 phút. Nộp xong ghi ngay vào tr.4 ô 4·3: điểm …/20, câu sai, câu đoán mò.</li>
-  <li>Đọc màn "Về nhà theo Tập"; ô 5·3 ghi đề BTVN thầy giao trên web.</li>
+  <li>Trả bài 2 câu của ô 40·2 (đúng lời Tập): câu 1 và câu 3; câu 2, 4, 5, 6 về nhà. Viết <b>1,5 phút, chưa bấm Mở</b>, rồi mở từng câu để tự sửa bằng bút khác màu.</li>
+  <li><span class="k">Màn "Quay lại hoá đơn" (1 phút):</span> hình công tơ cạnh dòng "đèn 100 W sáng 10 giờ". Enter mở đáp án C (1 số). Lớp lật tr.37 ô 37·3: đáp án, đúng/sai, dòng "điều em hiểu sai".</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1220 trong 15 phút. Nộp xong ghi ngay vào tr.40 ô 40·3: điểm …/19, câu sai, câu đoán mò.</li>
+  <li>Đọc màn "Về nhà theo Tập"; ô 41·3 ghi đề BTVN thầy giao trên web.</li>
 </ul>
-<div class="sai"><b>Đề 1217 so với phần học trên lớp:</b> ít nhất 5 câu của đề trùng câu tự kiểm tra trong bài web: cục sạc 5 V – 3 A (= ô 2·2, đã biểu quyết ở màn 2c), hai dây 1,5 và 3,0 mm², đèn LED sau chỉnh lưu, 300 mC trong 2 phút (Bẫy 3 — chỉ nói qua), cáp kích 50 mm² (bài toán mẫu — về nhà). Câu đã biểu quyết trên lớp đo "nhớ lại", chưa đo "chuyển sang tình huống mới". Xem đề trên web trước giờ để biết câu nào chạm phần về nhà.</div>
+<div class="sai"><b>Đề 1220:</b> chưa đối chiếu từng câu của đề với phần dạy (cần tra DB); nếu phát hiện câu đề hỏi cái chưa dạy thì nói trước với lớp, không chữa trên lớp.</div>
 
-<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · $e=1{,}6\cdot10^{-19}$ C, đồng $n=8{,}5\cdot10^{28}$ m⁻³</small></h2>
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa</small></h2>
 <ol>
-<li>Máy sấy tóc dùng dòng không đổi $4{,}0$ A trong 3 phút. Điện lượng qua dây: A. $12$ C · B. $720$ C · C. $0{,}022$ C · D. $1{,}33$ C</li>
-<li>Trong $10$ s có $5{,}0\cdot10^{19}$ electron qua tiết diện dây. Cường độ dòng điện: A. $8{,}0$ A · B. $0{,}80$ A · C. $5{,}0$ A · D. $80$ A</li>
-<li>Pin $3000$ mAh sạc bằng dòng không đổi $1{,}0$ A trong 60 phút ($1$ mAh $=3{,}6$ C). Điện lượng đã nạp và phần trăm dung lượng: A. $60$ C; $0{,}6$ % · B. $3600$ C; $33$ % · C. $3600$ C; $120$ % · D. $1000$ C; $33$ %</li>
-<li>Dây đồng tiết diện $2{,}0$ mm² mang dòng $6{,}8$ A. Tốc độ trôi của electron: A. $0{,}25$ mm/s · B. $0{,}50$ mm/s · C. $2{,}5\cdot10^{-4}$ mm/s · D. $250$ mm/s</li>
-<li>Nối tiếp hai đoạn dây đồng tiết diện $1{,}0$ mm² và $4{,}0$ mm². Trong đoạn nhỏ: A. $I$ lớn gấp 4, $v$ như nhau · B. $I$ như nhau, $v$ lớn gấp 4 · C. $I$ như nhau, $v$ nhỏ bằng 1/4 · D. $I$ và $v$ đều như nhau</li>
+<li>Máy sấy tóc mắc vào $220$ V, dòng $5{,}0$ A, dùng 6 phút. Năng lượng điện tiêu thụ: A. $6{,}6$ kJ · B. $396$ kJ · C. $66$ kJ · D. $1{,}1$ kJ</li>
+<li>Bàn là $220$ V – $1100$ W (coi $R$ không đổi) mắc vào $110$ V. Công suất thực: A. $550$ W · B. $275$ W · C. $1100$ W · D. $137{,}5$ W</li>
+<li>Nguồn $\mathcal E=6{,}0$ V, $r=0{,}5\ \Omega$ nối với $R=2{,}5\ \Omega$. Hiệu suất nguồn: A. $83\ \%$ · B. $17\ \%$ · C. $42\ \%$ · D. $100\ \%$</li>
+<li>Đèn $220$ V – $25$ W và đèn $220$ V – $75$ W nối tiếp vào $220$ V. Đèn sáng hơn: A. đèn $75$ W vì công suất lớn hơn · B. như nhau vì cùng dòng · C. đèn $25$ W vì $R$ lớn hơn · D. cả hai đúng định mức</li>
+<li>Bình nước nóng $220$ V – $3300$ W. Chọn cầu chì: A. $10$ A · B. $15$ A · C. $20$ A · D. $60$ A</li>
 </ol>
 <table>
 <thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
 <tbody>
-<tr><td>1</td><td>B</td><td>$\Delta q=4{,}0\cdot180=720$ C</td><td>A: để nguyên phút · C: chia $I/\Delta t$ · D: chia và chưa đổi phút</td></tr>
-<tr><td>2</td><td>B</td><td>$\Delta q=5{,}0\cdot10^{19}\cdot1{,}6\cdot10^{-19}=8{,}0$ C; $I=8{,}0/10=0{,}80$ A</td><td>A: quên chia thời gian · C: lấy số mũ thành số · D: nhân thời gian</td></tr>
-<tr><td>3</td><td>B</td><td>$\Delta q=1{,}0\cdot3600=3600$ C $=1000$ mAh; $1000/3000\approx33$ %</td><td>A: để nguyên phút · C: lẫn C với mAh · D: lẫn mAh với C</td></tr>
-<tr><td>4</td><td>A</td><td>$Sne=2{,}0\cdot10^{-6}\cdot8{,}5\cdot10^{28}\cdot1{,}6\cdot10^{-19}=2{,}72\cdot10^{4}$ C/m; $v=6{,}8/2{,}72\cdot10^{4}=2{,}5\cdot10^{-4}$ m/s</td><td>B: lấy $S=1$ mm² · C: ghi m/s thành mm/s · D: đổi mm² ra $10^{-9}$ m²</td></tr>
-<tr><td>5</td><td>B</td><td>Nối tiếp: $I$ như nhau; $v=I/(Sne)$, $S$ nhỏ 4 lần → $v$ lớn 4 lần</td><td>A: tưởng dây nhỏ dòng lớn · C: ngược chiều tỉ lệ · D: bỏ qua $S$</td></tr>
+<tr><td>1</td><td>B</td><td>$A=UIt=220\cdot5{,}0\cdot360=396\,000$ J</td><td>A: nhân 6 thay vì 360 s · C: nhân 60 s · D: quên $t$</td></tr>
+<tr><td>2</td><td>B</td><td>$R=220^2/1100=44\ \Omega$; $P=110^2/44=275$ W</td><td>A: $P$ tỉ lệ $U$ · C: chỉ đúng ở 220 V · D: chia 8</td></tr>
+<tr><td>3</td><td>A</td><td>$H=R/(R+r)=2{,}5/3{,}0\approx83\ \%$</td><td>B: $r/(R+r)$ · C: $R/\mathcal E$ · D: bỏ qua $r$</td></tr>
+<tr><td>4</td><td>C</td><td>Nối tiếp cùng $I$, $P=I^2R$; $R_{25}=1936\ \Omega&gt;R_{75}\approx645\ \Omega$</td><td>A: so công suất ghi nhãn · B: cùng dòng nên nghĩ như nhau</td></tr>
+<tr><td>5</td><td>C</td><td>$I=3300/220=15$ A; chọn hơi lớn hơn: $20$ A</td><td>A: nhỏ hơn dòng, đứt ngay · B: bằng dòng, nóng dây · D: quá lớn, không bảo vệ</td></tr>
 </tbody>
 </table>
 
 <h2>Nếu thiếu giờ / dư giờ</h2>
 <ul>
-  <li>Thiếu: bỏ màn 3c (PhET) và 3f (sai số, để dòng cuối ô 2·3 về nhà); ở màn 5c chỉ tính 10 A, ba số còn lại về nhà; không cắt giờ làm đề 1217 — chưa xong thì làm nốt ở nhà trong ngày.</li>
-  <li>Dư: bài toán mẫu ô 5·1 c) (cáp kích 120 A, 25 mm²: $v=0{,}35$ mm/s) hoặc thử thách ⭐⭐ pin dự phòng $10\,000$ mAh.</li>
+  <li>Thiếu: bỏ màn 5d (Bẫy 2, về nhà); ở clip 4c dừng ở lần ② rồi nói miệng đáp án D; không cắt giờ làm đề 1220 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: cho lớp làm nhanh một câu phiếu giấy (câu 2 hoặc 4) và gọi hai em giải thích; hoặc bắt đầu ô 41·1 bài toán mẫu (nguồn nuôi bộ sấy) cùng cả lớp.</li>
 </ul>
 
-<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<h2>Sau buổi dạy</h2>
 <ul>
-  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (pin 3 V, $v\Delta t$, (a), (b)) có đọc được không.</li>
-  <li>Tỉ lệ đoán đúng ô dự đoán (C) lúc đầu giờ; tỉ lệ đúng lần đầu ở 4 câu biểu quyết (2c, clip ①, 3f, 5b).</li>
-  <li>Thí nghiệm ampe kế: số đọc thật ở ba vị trí có bằng nhau không; mất bao lâu.</li>
-  <li>Đề 1217: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
-  <li>Điểm dừng nào vượt mốc phút (dự đoán: điểm dừng 3).</li>
+  <li>Ghi tỉ lệ biểu quyết lần đầu của: dự đoán số điện, đèn 6,0 V (clip 3c), $H$ khi $R$ tăng (clip 4c), Bẫy 1–3. Câu nào &lt; 30% đúng thì ghi vào ô ghi chú lớp (phím N khi trình chiếu bài học).</li>
+  <li>Điểm đề 1220 trên web: câu sai nhiều nhất thì quay lại đúng màn tương ứng ở buổi sau.</li>
 </ul>
 </body>
 </html>
