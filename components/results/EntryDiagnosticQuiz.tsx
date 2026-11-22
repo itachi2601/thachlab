@@ -1,16 +1,17 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import { useToast } from "@/components/ui/Toast";
-import type { ExamQuestion, QuestionResponse } from "@/features/exams/types";
-import { emptyResponses, gradeQuestion, isAnswered, pickRandom } from "@/features/exams/types";
-import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/services/question-bank";
+import type { ExamQuestionPublic, QuestionResponse } from "@/features/exams/types";
+import { emptyResponses, isAnswered, pickRandom } from "@/features/exams/types";
+import { fetchStudentBankQuestions, toPublicQuestion, type StudentBankQuestion } from "@/services/question-bank";
 import { fetchTopicFamilyIds } from "@/services/tutoring";
 import {
   buildStartMap,
+  checkDiagnosticAnswer,
   CONFIDENCE_LABEL,
   DIAGNOSTIC_MAX_PROBES,
   DIAGNOSTIC_PROBE_QUESTIONS,
@@ -28,7 +29,9 @@ type Phase = "loading" | "empty" | "intro" | "running" | "done";
 
 interface Item {
   topicId: number;
-  question: ExamQuestion;
+  /** id câu ngân hàng — server chấm theo id (diagnostic_check_answer). */
+  bankId: number;
+  question: ExamQuestionPublic;
   /** Bài lùi về dò tiền đề (2 câu dễ). */
   probe?: boolean;
 }
@@ -42,7 +45,7 @@ interface Tally {
 const CONFIDENCE_ORDER: DiagnosticConfidence[] = ["chac", "hoi", "doan"];
 
 /** 3 câu mỗi bài: ưu tiên 2 dễ + 1 trung bình (câu khó không dùng để chẩn đoán), thiếu mức nào bù từ mức còn lại. */
-function pickForTopic(pool: BankQuestion[]): BankQuestion[] {
+function pickForTopic(pool: StudentBankQuestion[]): StudentBankQuestion[] {
   const ok = pool.filter((q) => q.qtype !== "essay" && q.difficulty !== "kho");
   const easy = pickRandom(ok.filter((q) => q.difficulty === "de"), 2);
   const mid = pickRandom(ok.filter((q) => q.difficulty !== "de"), DIAGNOSTIC_QUESTIONS_PER_TOPIC - easy.length);
@@ -55,7 +58,7 @@ function pickForTopic(pool: BankQuestion[]): BankQuestion[] {
 }
 
 /** Bài dò tiền đề: chỉ câu dễ (thiếu thì bù câu trung bình), không câu khó. */
-function pickForProbe(pool: BankQuestion[]): BankQuestion[] {
+function pickForProbe(pool: StudentBankQuestion[]): StudentBankQuestion[] {
   const ok = pool.filter((q) => q.qtype !== "essay" && q.difficulty !== "kho");
   const easy = pickRandom(ok.filter((q) => q.difficulty === "de"), DIAGNOSTIC_PROBE_QUESTIONS);
   if (easy.length >= DIAGNOSTIC_PROBE_QUESTIONS) return easy;
@@ -93,6 +96,8 @@ export default function EntryDiagnosticQuiz({
   const [confs, setConfs] = useState<(DiagnosticConfidence | null)[]>([]);
   const [tally, setTally] = useState<Map<number, Tally>>(new Map());
   const [submitting, setSubmitting] = useState(false);
+  /** Chặn bấm "Câu tiếp" hai lần trong lúc chờ server chấm (tránh đếm một câu hai lần). */
+  const checkingRef = useRef(false);
   const [result, setResult] = useState<DiagnosticSubmitResult | null>(null);
   const [probesUsed, setProbesUsed] = useState(0);
   const order = useMemo(() => [...topicIds, ...reserveIds], [topicIds, reserveIds]);
@@ -102,8 +107,8 @@ export default function EntryDiagnosticQuiz({
     Promise.all(
       topicIds.map(async (topicId) => {
         const family = await fetchTopicFamilyIds(topicId);
-        const pool = await fetchBankQuestions({ topicIds: family, includeArchived: false });
-        return pickForTopic(pool).map((b) => ({ topicId, question: toExamQuestion(b) }));
+        const pool = await fetchStudentBankQuestions({ topicIds: family });
+        return pickForTopic(pool).map((b) => ({ topicId, bankId: b.id, question: toPublicQuestion(b) }));
       }),
     )
       .then((groups) => {
@@ -156,8 +161,8 @@ export default function EntryDiagnosticQuiz({
     const olderId = order[order.indexOf(topicId) + 1];
     if (olderId == null || t.has(olderId) || list.some((i) => i.topicId === olderId)) return [];
     try {
-      const pool = await fetchBankQuestions({ topicIds: await fetchTopicFamilyIds(olderId), includeArchived: false });
-      return pickForProbe(pool).map((b) => ({ topicId: olderId, question: toExamQuestion(b), probe: true }));
+      const pool = await fetchStudentBankQuestions({ topicIds: await fetchTopicFamilyIds(olderId) });
+      return pickForProbe(pool).map((b) => ({ topicId: olderId, bankId: b.id, question: toPublicQuestion(b), probe: true }));
     } catch {
       return [];
     }
@@ -167,9 +172,21 @@ export default function EntryDiagnosticQuiz({
   async function next() {
     const conf = confs[cur];
     if (!conf) return;
+    if (checkingRef.current) return;
     const item = items[cur];
-    const g = gradeQuestion(item.question, responses[cur]);
-    const ok = g.max > 0 && g.earned === g.max;
+    // Chấm ở server (máy em không có đáp án); lần trả lời đầu của mỗi câu là lần được tính.
+    let ok: boolean;
+    checkingRef.current = true;
+    setSubmitting(true);
+    try {
+      ok = await checkDiagnosticAnswer(item.bankId, responses[cur]);
+    } catch (e) {
+      toast("error", e instanceof Error ? e.message : "Chưa gửi được câu trả lời, thử lại nhé.");
+      return;
+    } finally {
+      checkingRef.current = false;
+      setSubmitting(false);
+    }
     const t = new Map(tally);
     const prev = t.get(item.topicId) ?? { correct: 0, total: 0, answers: [] };
     t.set(item.topicId, {

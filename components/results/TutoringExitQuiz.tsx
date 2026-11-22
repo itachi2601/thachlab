@@ -7,10 +7,10 @@ import Button from "@/components/ui/Button";
 import QuestionCard from "@/components/exams/QuestionCard";
 import TheoryReviewStep from "@/components/results/TheoryReviewStep";
 import { useToast } from "@/components/ui/Toast";
-import type { Difficulty, ExamQuestion, QuestionResponse } from "@/features/exams/types";
+import type { Difficulty, ExamQuestionPublic, QuestionResponse } from "@/features/exams/types";
 import { arrangeForMotivation } from "@/features/lessons/practice-arrange";
-import { emptyResponses, gradeExam, gradeQuestion, isAnswered, pickRandom } from "@/features/exams/types";
-import { fetchBankQuestions, toExamQuestion, type BankQuestion } from "@/services/question-bank";
+import { emptyResponses, isAnswered, pickRandom } from "@/features/exams/types";
+import { fetchStudentBankQuestions, toPublicQuestion, type StudentBankQuestion } from "@/services/question-bank";
 import {
   EXIT_QUIZ_PASS_PCT,
   EXIT_QUIZ_QUESTION_COUNT,
@@ -22,7 +22,7 @@ import {
   fetchSeenQuestionIds,
   fetchTheoryItem,
   fetchTopicFamilyIds,
-  logExitAttempt,
+  submitExitQuiz,
   needLabel,
   type ExitWindow,
   type TutoringNeed,
@@ -34,16 +34,16 @@ type Phase = "loading" | "empty" | "review" | "intro" | "running" | "result";
  * Bài cuối buổi (có `exitWindow`): 10 câu cơ cấu 4 dễ / 4 trung bình / 2 khó, ưu tiên câu em chưa gặp,
  * đạt từ 70%, chỉ làm được trong cửa sổ trợ giảng mở. Lượt này được tính vào điểm phụ đạo của trợ giảng.
  */
-function pickWindowQuestions(pool: BankQuestion[], seen: Set<number>): BankQuestion[] {
-  const fresh = (list: BankQuestion[]) => [
+function pickWindowQuestions(pool: StudentBankQuestion[], seen: Set<number>): StudentBankQuestion[] {
+  const fresh = (list: StudentBankQuestion[]) => [
     ...pickRandom(list.filter((q) => !seen.has(q.id)), list.length),
     ...pickRandom(list.filter((q) => seen.has(q.id)), list.length),
   ];
   const levels = ["de", "trung-binh", "kho"] as const;
   const byLevel = new Map(levels.map((lv) => [lv, fresh(pool.filter((q) => q.difficulty === lv))]));
-  const picked: BankQuestion[] = [];
+  const picked: StudentBankQuestion[] = [];
   const taken = new Set<number>();
-  const take = (q: BankQuestion) => {
+  const take = (q: StudentBankQuestion) => {
     picked.push(q);
     taken.add(q.id);
   };
@@ -61,7 +61,10 @@ function pickWindowQuestions(pool: BankQuestion[], seen: Set<number>): BankQuest
  * xem lại — phần SAU lấy các câu khác trong ngân hàng của chủ đề, xếp dễ → khó. Bài chưa có bộ Kiểm tra nhanh
  * (hoặc ngân hàng ít câu) thì phần thiếu bù từ ngân hàng như cũ.
  */
-function pickSelfQuizQuestions(pool: BankQuestion[], theory: BankQuestion[]): { picked: BankQuestion[]; easyCount: number } {
+function pickSelfQuizQuestions(
+  pool: StudentBankQuestion[],
+  theory: StudentBankQuestion[],
+): { picked: StudentBankQuestion[]; easyCount: number } {
   const easy = pickRandom(
     theory.filter((q) => q.qtype !== "essay"),
     EXIT_QUIZ_THEORY_COUNT,
@@ -98,7 +101,7 @@ export default function TutoringExitQuiz({
   const [phase, setPhase] = useState<Phase>("loading");
   const [bankIds, setBankIds] = useState<number[]>([]);
   const [topicNames, setTopicNames] = useState<string[]>([]);
-  const [questions, setQuestions] = useState<ExamQuestion[]>([]);
+  const [questions, setQuestions] = useState<ExamQuestionPublic[]>([]);
   const [responses, setResponses] = useState<QuestionResponse[]>([]);
   const [easyCount, setEasyCount] = useState(0);
   const [cur, setCur] = useState(0);
@@ -120,17 +123,17 @@ export default function TutoringExitQuiz({
     Promise.all([
       fetchTopicFamilyIds(need.topicId).then((topicIds) =>
         Promise.all([
-          fetchBankQuestions({ topicIds, form, includeArchived: false }),
+          fetchStudentBankQuestions({ topicIds, form }),
           // Bộ Kiểm tra nhanh của bài lý thuyết (bài tự kiểm tra thoát phụ đạo lấy làm phần dễ).
           exitWindow || !need.lessonId
-            ? Promise.resolve<BankQuestion[]>([])
+            ? Promise.resolve<StudentBankQuestion[]>([])
             : fetchTheoryItem(need.lessonId)
                 .then((t) =>
                   t && t.examIds.length > 0
-                    ? fetchBankQuestions({ topicIds, sourceExamIds: t.examIds, includeArchived: false })
+                    ? fetchStudentBankQuestions({ topicIds, sourceExamIds: t.examIds })
                     : [],
                 )
-                .catch(() => [] as BankQuestion[]),
+                .catch(() => [] as StudentBankQuestion[]),
         ]),
       ),
       exitWindow ? fetchSeenQuestionIds(studentId, need.id).catch(() => new Set<number>()) : Promise.resolve(null),
@@ -138,7 +141,7 @@ export default function TutoringExitQuiz({
       .then(([[rows, theoryRows], seen]) => {
         if (cancelled) return;
         const pool = rows.filter((r) => r.qtype !== "essay");
-        let picked: BankQuestion[];
+        let picked: StudentBankQuestion[];
         let easy = 0;
         if (seen) {
           picked = pickWindowQuestions(pool, seen);
@@ -148,7 +151,7 @@ export default function TutoringExitQuiz({
         setEasyCount(easy);
         setBankIds(picked.map((b) => b.id));
         setTopicNames(picked.map((b) => b.topicName.trim()));
-        const examQuestions = picked.map(toExamQuestion);
+        const examQuestions = picked.map(toPublicQuestion);
         setQuestions(examQuestions);
         setResponses(emptyResponses(examQuestions));
         // Tự kiểm tra: xem lại lý thuyết trước (bước này tự bỏ qua nếu chủ đề không có bài lý thuyết).
@@ -176,24 +179,21 @@ export default function TutoringExitQuiz({
   async function submit() {
     setSubmitting(true);
     try {
-      const summary = gradeExam(questions, responses);
-      const attempt = await logExitAttempt({
+      // Chấm ở server (đáp án không còn gửi về máy em) — trả số câu đúng + đúng/sai từng câu.
+      const attempt = await submitExitQuiz({
         tutoringNeedId: need.id,
-        studentId,
         questionIds: bankIds,
-        total: questions.length,
-        correct: summary.correctCount,
+        responses,
         windowId: exitWindow?.id,
       });
       // Gom câu sai theo YCCĐ (tên chủ đề của câu) để chỉ đúng chỗ em cần ôn lại.
       const byTopic = new Map<string, { wrong: number; total: number }>();
-      questions.forEach((q, i) => {
+      questions.forEach((_, i) => {
         const name = topicNames[i];
         if (!name) return;
-        const g = gradeQuestion(q, responses[i]);
         const cur = byTopic.get(name) ?? { wrong: 0, total: 0 };
         cur.total += 1;
-        if (!(g.earned === g.max && g.max > 0)) cur.wrong += 1;
+        if (attempt.perQuestion[i] !== true) cur.wrong += 1;
         byTopic.set(name, cur);
       });
       const weak = [...byTopic.entries()]
@@ -201,7 +201,7 @@ export default function TutoringExitQuiz({
         .map(([name, v]) => ({ name, ...v }))
         .sort((a, b) => b.wrong - a.wrong)
         .slice(0, 5);
-      setResult({ pct: attempt.pct, passed: attempt.passed, correct: summary.correctCount, total: questions.length, weak });
+      setResult({ pct: attempt.pct, passed: attempt.passed, correct: attempt.correct, total: attempt.total, weak });
       setPhase("result");
       if (attempt.passed) {
         toast("success", `Đạt ${attempt.pct}% — đã gỡ khỏi danh sách cần phụ đạo!`);

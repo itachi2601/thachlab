@@ -3,7 +3,13 @@
 // (question_topics). Trigger phía DB tự nạp câu khi đề được tạo/sửa; app chỉ đọc,
 // gắn nhãn và lấy câu ra soạn đề. Xem docs/supabase-migration-question-bank.sql.
 
-import { QUESTION_TYPE_ORDER, type Difficulty, type ExamQuestion, type QuestionForm } from "@/features/exams/types";
+import {
+  QUESTION_TYPE_ORDER,
+  type Difficulty,
+  type ExamQuestion,
+  type ExamQuestionPublic,
+  type QuestionForm,
+} from "@/features/exams/types";
 import { FIGURE_MARK_PG, FIGURE_WORDS_PG, HAS_IMAGE_PG, isMissingFigure } from "@/services/question-figures";
 import { activeLintFlags, blockingFlags } from "@/lib/question-lint";
 import { getSupabase } from "@/services/supabase";
@@ -182,6 +188,62 @@ export async function fetchBankQuestionsByIds(ids: number[]): Promise<BankQuesti
   if (error) throw new Error(error.message);
   const map = new Map(((data as BankRow[]) ?? []).map((r) => [r.id, fromRow(r)]));
   return ids.map((id) => map.get(id)).filter((x): x is BankQuestion => !!x);
+}
+
+/**
+ * Câu ngân hàng phía HỌC SINH (phụ đạo thoát, chẩn đoán đầu vào): đã lược đáp án/lời giải ở server
+ * (RPC bank_questions_for_student, migration 20261122090000). HS không đọc thẳng bảng question_bank nữa;
+ * chấm qua tutoring_exit_quiz_submit / diagnostic_check_answer.
+ */
+export interface StudentBankQuestion {
+  id: number;
+  topicId: number | null;
+  topicName: string;
+  form: QuestionForm | "";
+  qtype: ExamQuestion["type"];
+  difficulty: Difficulty;
+  sourceExamId: number | null;
+  question: ExamQuestionPublic;
+}
+
+interface StudentBankRow {
+  id: number;
+  topic_id: number | null;
+  topic_name: string | null;
+  form: string | null;
+  qtype: string | null;
+  difficulty: string | null;
+  source_exam_id: number | null;
+  question: ExamQuestionPublic;
+}
+
+export async function fetchStudentBankQuestions(filter: {
+  topicIds: number[];
+  form?: QuestionForm | "";
+  sourceExamIds?: number[];
+}): Promise<StudentBankQuestion[]> {
+  if (!filter.topicIds.length) return [];
+  const { data, error } = await getSupabase().rpc("bank_questions_for_student", {
+    p_topic_ids: filter.topicIds,
+    p_form: filter.form || null,
+    p_source_exam_ids: filter.sourceExamIds?.length ? filter.sourceExamIds : null,
+  });
+  if (error) throw new Error(error.message);
+  return ((data as StudentBankRow[] | null) ?? []).map((r) => ({
+    id: r.id,
+    topicId: r.topic_id,
+    topicName: r.topic_name ?? "",
+    form: r.form === "ly_thuyet" || r.form === "bai_tap" ? r.form : "",
+    qtype: (r.qtype || r.question?.type) as ExamQuestion["type"],
+    difficulty: (r.difficulty as Difficulty) || "",
+    sourceExamId: r.source_exam_id,
+    question: r.question,
+  }));
+}
+
+/** Như toExamQuestion nhưng cho câu đã lược đáp án (gắn chủ đề + dạng để gom câu sai theo YCCĐ). */
+export function toPublicQuestion(b: StudentBankQuestion): ExamQuestionPublic {
+  return { ...b.question, topic: b.topicName || undefined, form: b.form || undefined } as ExamQuestionPublic;
 }
 
 /** Số câu theo chủ đề của một khối: key = topic_id (0 = chưa gắn nhãn). */
