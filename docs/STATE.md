@@ -50,6 +50,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Ruột tập VL10 Ch.4 (bài 23–27): bản 1, 60 trang (`bash scripts/ruot-tap/dung-l10-chuong4.sh`), đã sửa theo HS ảo; Bài tương tự tr.8–9 = bài về nhà giải vào vở (thầy chốt 10/11, giấy chỉ có ô đáp số); **thầy chốt bản 1 ngày 14/11** (VL10 Ch.4 + VL11 Ch.3); PDF in từ `scripts/ruot-tap/out/` (gitignore), chưa ai cầm bản in giấy.
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 - 22/11 Gói A dụng cụ đo (`components/physics/do-luong/`: thước kẹp, panme, đồng hồ đa năng, đồng hồ hiện số; `/dev/do-luong`): code ở main, CHỜ `deploy.sh` + đăng lý thuyết 48, 47, 51, 45 bằng `cap-nhat-ly-thuyet.sh` (lịch 22h05 22/11). Treo: quy ước sai số dụng cụ thước kẹp (độ chính xác hay nửa) — thầy chốt.
+- 22/11 Bài 3 L10 (48): sai số dụng cụ thước kẻ = một ĐCNN (bảng thầy chốt), clip tn-l10-sai-so-02 dựng lại (ra/ ở worktree goi-a). Đăng cả Gói A bằng một lệnh SAU 22h: `bash scripts/video-thi-nghiem/dang-goi-a.sh --yes` (tải clip → deploy → 4 bài).
 
 ## Nội dung đang treo
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
