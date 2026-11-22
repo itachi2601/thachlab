@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tụ điện · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+/* f1, f2: Hình 1, 2 của theory.html · tf1–tf4: hình của Tập (hinh-l11-bai21.mjs: flash, ghep, nguon, baiMau) */
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text{font-size:20px} .f2 svg text{font-size:25px} .f2{padding-left:2.2vw} .f2 svg{overflow:visible}
+.tf1 svg text,.tf2 svg text,.tf3 svg text,.tf4 svg text{font-size:22px}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.tf1,.tf2,.tf3,.tf4,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 21</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 21 · tr.1</span></div>
+  <div class="giua">
+    <h1>Tụ điện</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Đèn flash chạy pin 3 V lấy đâu ra cú loé chói?</li>
+      <li>Vì sao tụ chặn dòng một chiều?</li>
+      <li>$C=Q/U$, năng lượng của tụ, ghép nối tiếp và song song.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–2 · khoanh vào Tập + một dòng "Vì sao?" · đáp án cuối tiết</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <p>Flash chạy pin 3 V; chụp xong kêu "píííp" vài giây mới sáng đèn báo.</p>
+  <div class="hai">
+    <div class="fig tf1" style="width:36%"><svg viewBox="0 0 320 186" role="img" aria-label="Đèn flash rời của máy ảnh"><rect x="70" y="60" width="120" height="120" rx="8" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="80" y="18" width="100" height="42" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="90" y1="39" x2="170" y2="39" stroke="#8a94ad" stroke-width="2" stroke-dasharray="4 3"/><line x1="76" y1="34" x2="54" y2="29" stroke="#b3261e" stroke-width="2.6"/><line x1="184" y1="34" x2="206" y2="29" stroke="#b3261e" stroke-width="2.6"/><line x1="76" y1="42" x2="50" y2="45" stroke="#b3261e" stroke-width="2.6"/><line x1="184" y1="42" x2="210" y2="45" stroke="#b3261e" stroke-width="2.6"/><line x1="76" y1="50" x2="54" y2="61" stroke="#b3261e" stroke-width="2.6"/><line x1="184" y1="50" x2="206" y2="61" stroke="#b3261e" stroke-width="2.6"/><rect x="88" y="120" width="30" height="50" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><rect x="142" y="120" width="30" height="50" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="103" y="152" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">+</text><text x="157" y="152" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">+</text><text x="130" y="106" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">2 × 1,5 V</text><text x="218" y="100" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="400">chờ đèn</text><text x="218" y="128" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="400">báo sáng</text><text x="218" y="30" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">loé</text><text x="218" y="56" fill="#b3261e" font-size="20" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Main">≈</tspan> 0,001 s</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Năng lượng cho cú loé chói trong tích tắc đến từ đâu?</p>
+      <ol class="opt">
+        <li><b>A.</b> Pin đẩy thẳng điện vào bóng đúng lúc bấm chụp</li>
+        <li><b>B.</b> Một linh kiện gom điện tích từ pin trong vài giây, rồi xả hết một lần</li>
+        <li><b>C.</b> Bóng đèn tự sinh năng lượng khi có ánh sáng chiếu vào</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Tụ điện là gì + LED ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Tụ điện là gì</span><span>phút 2–8</span><span class="tap">tr.1 · ô 1·4</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="70 12 376 236" role="img" aria-label="Tụ điện phẳng: hai bản kim loại song song, giữa là điện môi, nối với hai cực nguồn; bên phải là kí hiệu tụ"><rect x="176" y="40" width="68" height="120" fill="#fb923c" opacity=".15"/><rect x="170" y="40" width="6" height="120" fill="#f87171"/><rect x="244" y="40" width="6" height="120" fill="#38bdf8"/><text x="183" y="63" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">+</text><text x="237" y="63" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">−</text><text x="183" y="91" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">+</text><text x="237" y="91" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">−</text><text x="183" y="119" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">+</text><text x="237" y="119" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">−</text><text x="183" y="147" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle">+</text><text x="237" y="147" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="middle">−</text><line x1="192" y1="72" x2="226" y2="72" stroke="#34d399" stroke-width="2"/><path d="M218.4,67.6 L226.0,72.0 L218.4,76.4" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="192" y1="100" x2="226" y2="100" stroke="#34d399" stroke-width="2"/><path d="M218.4,95.6 L226.0,100.0 L218.4,104.4" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="192" y1="128" x2="226" y2="128" stroke="#34d399" stroke-width="2"/><path d="M218.4,123.6 L226.0,128.0 L218.4,132.4" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="209" y="91" fill="#34d399" font-size="15" font-weight="700" text-anchor="middle">E</text><text x="173" y="30" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">bản +Q</text><text x="250" y="30" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">bản −Q</text><text x="210" y="178" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">điện môi</text><line x1="170" y1="100" x2="90" y2="100" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="90" y1="100" x2="90" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="90" y1="210" x2="200" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="200" y1="196" x2="200" y2="224" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="212" y1="202" x2="212" y2="218" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="212" y1="210" x2="330" y2="210" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="330" y1="210" x2="330" y2="100" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="330" y1="100" x2="250" y2="100" stroke="currentColor" stroke-width="2" opacity="1"/><text x="192" y="204" fill="#f87171" font-size="15" font-weight="700" text-anchor="end">+</text><text x="220" y="204" fill="#38bdf8" font-size="15" font-weight="700" text-anchor="start">−</text><text x="206" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">nguồn U</text><line x1="352" y1="30" x2="352" y2="232" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity="0.4"/><line x1="362" y1="120" x2="392" y2="120" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="392" y1="105.0" x2="392" y2="135.0" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="402" y1="105.0" x2="402" y2="135.0" stroke="currentColor" stroke-width="3.5" opacity="1"/><line x1="402" y1="120" x2="432" y2="120" stroke="currentColor" stroke-width="2" opacity="1"/><text x="397" y="92" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">kí hiệu</text></svg></div>
+    <div class="ben">
+      <p><b>Cấu tạo:</b> hai <b class="o">vật dẫn</b> (hai bản) gần nhau, ngăn cách bằng <b class="o">điện môi</b>.</p>
+      <p><b>Tác dụng:</b> <b class="o">tích trữ</b> điện tích; xoay chiều: tích, <b class="o">phóng</b> liên tục.</p>
+      <p><b>Tích điện:</b> nối hai bản với nguồn: bản nối cực + tích <b class="o">$+Q$</b>, bản kia <b class="o">$-Q$</b>.</p>
+      <p><b>Điện tích của tụ:</b> $Q$ trên <b class="o">một</b> bản (không cộng).</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Thí nghiệm</span><span>2 điểm dừng · khoảng 1 phút</span><span class="tap">tr.1 · ô 1·5</span></div>
+  <div class="vg" data-bat="10.9" data-het="21.9">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-01-20261116.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-01-20261116.webp" preload="metadata" playsinline title="Tụ, pin và đèn LED mắc nối tiếp"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Pin 9 V, tụ 1000 μF, LED nối tiếp.</p><p class="hoi">Đóng khoá K, pin vẫn nối mãi. Đèn LED sẽ…</p>
+        <ol class="opt"><li><b>A.</b> sáng đều suốt lúc pin còn nối</li><li><b>B.</b> loé lên rồi tắt hẳn</li><li><b>C.</b> mờ dần nhưng không tắt hẳn</li><li><b>D.</b> không sáng lúc nào</li></ol></div>
+      <div class="buoc" data-t="10.9"><p class="hoi">Đóng khoá K, pin vẫn nối.</p><p class="nho">Nhìn đèn LED và đồ thị dòng "nạp".</p></div>
+      <div class="buoc" data-t="16.1" data-dung><p class="so-lon">LED loé rồi tắt hẳn → B</p><p>Pin vẫn còn nối.</p><p class="hoi">Tháo pin, nối tụ với LED đảo chiều. LED…?</p></div>
+      <div class="buoc" data-t="16.2"><p class="hoi">Tháo pin, đảo LED, nối lại.</p></div>
+      <div class="buoc" data-t="21.9"><p class="so-lon">LED loé lại rồi mờ dần</p><p class="hoi">Không còn pin: điện tích từ đâu ra?</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Rút ra</span><span>phút 2–8</span><span class="tap">tr.1 · ô 1·5</span></div>
+  <div class="giua">
+    <p class="hoi">Vì sao LED tắt hẳn dù pin vẫn còn nối?</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> Pin hết điện ngay sau cú loé</li>
+      <li><b>B.</b> Điện tích xuyên qua điện môi rồi mất</li>
+      <li><b>C.</b> Đèn LED cháy vì dòng quá lớn</li>
+      <li data-dung><b>D.</b> Tụ nạp đầy nên dòng ngừng hẳn</li>
+    </ol>
+    <button class="mo" data-mo="a2c">Mở đáp án</button>
+    <div class="an" id="a2c" hidden>
+      <p>LED <b class="o">loé</b> rồi <b class="o">tắt</b>; nối tụ với LED: LED lại <b class="o">loé sáng</b>.</p>
+      <p>Tụ đã <b class="o">nạp đầy</b>. Dòng một chiều <b class="o">không đi qua</b> tụ, vì giữa hai bản là chất <b class="o">cách điện</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. Điện dung ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Điện dung</span><span>phút 8–13</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <p>Điện dung đặc trưng cho khả năng <b class="o">tích điện</b> của tụ:</p>
+  <div class="hai">
+    <div class="ben">
+      <div class="fx">$C=\dfrac{Q}{U}$</div>
+      <div class="fx">$Q=CU$</div>
+      <p>Đơn vị: <b class="o">fara</b> (F).</p>
+      <p>1 F: tụ tích được <b class="o">1 C</b> khi đặt vào <b class="o">1 V</b>. Rất lớn!</p>
+    </div>
+    <div class="ben">
+      <table>
+        <tr><th>Ước số</th><th>Quy đổi</th></tr>
+        <tr><td>1 mF</td><td>$10^{-3}$ F</td></tr>
+        <tr><td>1 μF</td><td><b class="o">$10^{-6}$ F</b></td></tr>
+        <tr><td>1 nF</td><td><b class="o">$10^{-9}$ F</b></td></tr>
+        <tr><td>1 pF</td><td><b class="o">$10^{-12}$ F</b></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Vỏ tụ</span><span>phút 8–13</span><span class="tap">tr.2 · ô 2·1 · 2 dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Vỏ tụ ghi “1000 μF – 10 V”. Hai số nghĩa là gì? Đặt 15 V thì sao?</p>
+    <button class="mo" data-mo="v3">Mở</button>
+    <div class="an" id="v3" hidden>
+      <p>1000 μF: <b class="o">điện dung</b> · 10 V: <b class="o">hiệu điện thế tối đa</b>.</p>
+      <p>Vượt 10 V: tụ bị <b class="o">đánh thủng</b> (điện môi hỏng, tụ thành vật dẫn).</p>
+    </div>
+    <p><b>Tụ xoay:</b> điện dung đổi được khi xoay <b class="o">núm</b> (dò đài radio).</p>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Đo Q theo U</span><span>2 điểm dừng · khoảng 1 phút</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="vg" data-bat="11.2" data-het="21.9">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-02-20261030-2.webp" preload="metadata" playsinline title="Nạp tụ ở nhiều mức U, đo điện tích Q"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Tụ ghi “470 μF – 16 V”, nạp ở U rồi đo Q.</p><p class="hoi">Nạp ở U càng lớn thì tỉ số Q/U…</p>
+        <ol class="opt"><li><b>A.</b> tăng dần theo U</li><li><b>B.</b> giảm dần khi U tăng</li><li><b>C.</b> gần như không đổi</li><li><b>D.</b> luôn bằng đúng 470 μF ghi trên vỏ</li></ol></div>
+      <div class="buoc" data-t="11.2"><p class="hoi">Nạp ở 2 V, rồi phóng qua bộ đo.</p></div>
+      <div class="buoc" data-t="14.3" data-dung><p class="so-lon">2 V: 980 μC</p><p>$Q/U=490$ μF</p><p class="hoi">Lặp lại ở 4; 6; 8; 10 V. Q/U…?</p></div>
+      <div class="buoc" data-t="14.4"><p class="hoi">Lặp lại ở 4; 6; 8; 10 V (tua nhanh).</p></div>
+      <div class="buoc" data-t="21.9"><table class="bang"><tr><th>U (V)</th><td>2</td><td>4</td><td>6</td><td>8</td><td>10</td></tr><tr><th>Q (μC)</th><td class="ns">980</td><td class="ns">1900</td><td class="ns">2890</td><td class="ns">3820</td><td class="ns">4800</td></tr></table><p class="hoi">→ C: Q tỉ lệ <span class="o">thuận</span> U; Q/U <span class="o">không đổi</span>, đó là <span class="o">C</span>.</p><p class="nho">Chia Q cho U, điền cột cuối ô 2·2.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Đọc bảng</span><span>phút 8–13</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <p class="hoi">Từ bảng: nên báo điện dung của tụ là bao nhiêu?</p>
+  <div class="hai">
+    <div class="fig f2"><svg viewBox="0 0 440 230" role="img" aria-label="Đồ thị Q theo U: năm điểm đo nằm sát đường thẳng qua gốc, hệ số góc C khoảng 480 microfara; diện tích tam giác dưới đường là năng lượng"><polygon points="64.0,200.0 332.8,200.0 332.8,69.4" fill="#fb923c" opacity=".28"/><line x1="64" y1="200" x2="433.6" y2="200" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="64" y1="200" x2="64" y2="9.599999999999994" stroke="currentColor" stroke-width="1.6" opacity="1"/><line x1="131.2" y1="200" x2="131.2" y2="205" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="131.2" y="218" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">2</text><line x1="198.4" y1="200" x2="198.4" y2="205" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="198.4" y="218" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">4</text><line x1="265.6" y1="200" x2="265.6" y2="205" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="265.6" y="218" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">6</text><line x1="332.8" y1="200" x2="332.8" y2="205" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="332.8" y="218" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">8</text><line x1="400.0" y1="200" x2="400.0" y2="205" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="400.0" y="218" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">10</text><line x1="59" y1="132.0" x2="64" y2="132.0" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="56" y="136.0" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">2000</text><line x1="59" y1="64.0" x2="64" y2="64.0" stroke="currentColor" stroke-width="1.2" opacity="1"/><text x="56" y="68.0" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">4000</text><text x="433.6" y="193" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">U (V)</text><text x="70" y="13.599999999999994" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Q (μC)</text><line x1="64.0" y1="200.0" x2="420.16" y2="27.00799999999998" stroke="#f87171" stroke-width="2.2" opacity="1"/><circle cx="131.2" cy="166.7" r="4.5" fill="#38bdf8"/><circle cx="198.4" cy="135.4" r="4.5" fill="#38bdf8"/><circle cx="265.6" cy="101.7" r="4.5" fill="#38bdf8"/><circle cx="332.8" cy="70.1" r="4.5" fill="#38bdf8"/><circle cx="400.0" cy="36.8" r="4.5" fill="#38bdf8"/><text x="205.12" y="101.39999999999999" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">Q = C·U</text><text x="252.16" y="184.7" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">W = ½QU</text><line x1="332.8" y1="69.44" x2="332.8" y2="200" stroke="#fb923c" stroke-width="1.2" stroke-dasharray="3 3" opacity="1"/></svg></div>
+    <div class="ben">
+      <ol class="opt lo">
+        <li><b>A.</b> 490 μF, lần đo đầu</li>
+        <li><b>B.</b> 470 μF, vỏ ghi như vậy</li>
+        <li data-dung><b>C.</b> ≈ 480 μF, trung bình 5 lần</li>
+        <li><b>D.</b> 4800 μF, Q lớn nhất</li>
+      </ol>
+      <button class="mo" data-mo="a3d">Mở đáp án</button>
+      <div class="an" id="a3d" hidden>
+        <p>TB <b class="o">≈ 481</b> μF; lệch 470: sai số <b class="o">chế tạo</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. C do cấu tạo ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · C do cấu tạo</span><span>phút 13–18</span><span class="tap">tr.2 · ô 2·3 · dòng 1–3</span></div>
+  <div class="giua">
+    <p>$C$ chỉ phụ thuộc <b class="o">cấu tạo</b>, <b>không</b> phụ thuộc <b class="o">$Q$</b> hay <b class="o">$U$</b>.</p>
+    <div class="fx">Tụ phẳng: $C=\dfrac{\varepsilon S}{9\cdot10^{9}\cdot4\pi d}$</div>
+    <p>$S$: diện tích phần <b class="o">đối diện</b> (<b class="o">m²</b>) · $d$ đổi ra <b class="o">m</b></p>
+    <p>Giữa hai bản: $E=$ <b class="o">$U/d$</b>; điện môi chịu tối đa $E_{\max}$ nên $U_{\max}=$ <b class="o">$E_{\max}d$</b>.</p>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Tụ hai tấm nhôm</span><span>3 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.2 · ô 2·3 · dòng 4–5</span></div>
+  <div class="vg" data-bat="10.9" data-het="19.6">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-03-20261116.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-tudien-03-20261116.webp" preload="metadata" playsinline title="Tụ phẳng tự chế từ hai tấm nhôm"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Hai tấm nhôm 20 × 20 cm, cách 1 mm. Gốc ≈ 354 pF.</p><p class="hoi">Mỗi lần chỉ đổi một yếu tố. Tăng $d$ lên 2 mm: $C$…?</p></div>
+      <div class="buoc" data-t="10.9"><p class="hoi">Tăng $d$ lên 2 mm.</p></div>
+      <div class="buoc" data-t="13.5" data-dung><p class="so-lon">$d$ gấp đôi: 177 pF</p><p class="hoi">Về gốc, rồi trượt lệch, chỉ còn nửa phần chồng nhau. $C$…</p>
+        <ol class="opt hai-cot"><li><b>A.</b> như lúc đầu</li><li><b>B.</b> còn khoảng một nửa</li><li><b>C.</b> gấp đôi</li><li><b>D.</b> về 0</li></ol></div>
+      <div class="buoc" data-t="13.6"><p class="hoi">Trượt lệch nửa tấm.</p></div>
+      <div class="buoc" data-t="16.9" data-dung><p class="so-lon">Lệch nửa tấm: 177 pF → B</p><p class="hoi">Về gốc, rồi chèn tấm nhựa kín khe. $C$…?</p></div>
+      <div class="buoc" data-t="17.0"><p class="hoi">Chèn tấm nhựa.</p></div>
+      <div class="buoc" data-t="19.6"><table class="bang"><tr><td>gốc</td><td class="ns">354 pF</td></tr><tr><td>$d$ gấp đôi</td><td class="ns">177 pF</td></tr><tr><td>lệch nửa tấm</td><td class="ns">177 pF</td></tr><tr><td>chèn nhựa</td><td class="ns">1061 pF</td></tr></table><p class="hoi">$S$ lớn, $d$ <span class="o">nhỏ</span>, $\varepsilon$ <span class="o">lớn</span> → $C$ lớn.</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Bẫy 1 · PhET</span><span>phút 13–18</span><span class="tap">tr.3 · ô 3·3 · bẫy 1</span></div>
+  <div class="giua">
+    <p class="hoi">Một tụ đang nối nguồn 6 V. Đổi sang nguồn 12 V thì điện dung của tụ:</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b> giảm một nửa</li>
+      <li data-dung><b>B.</b> không đổi</li>
+      <li><b>C.</b> tăng gấp đôi</li>
+      <li><b>D.</b> tăng gấp bốn</li>
+    </ol>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/capacitor-lab-basics/latest/capacitor-lab-basics_all.html?locale=vi" target="_blank" rel="noopener">Thử trên PhET</a>
+      <button class="mo" data-mo="a4c">Mở đáp án</button>
+    </div>
+    <p class="nho">PhET: màn "Điện dung", tích ô Điện dung + Điện tích bản trên, kéo thanh pin.</p>
+    <div class="an" id="a4c" hidden><p><b>B.</b> Hai bản, khoảng cách, điện môi không đổi → $C$ <b class="o">không đổi</b>, chỉ $Q$ <b class="o">gấp đôi</b>.</p><p class="nho">$C=Q/U$ để <b>tính</b> C, không phải cái <b>làm ra</b> C.</p></div>
+  </div>
+</section>
+
+<!-- ================= 5. Năng lượng + ghép ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Năng lượng</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <p>Giữa hai bản có <b class="o">điện trường</b>: nó trữ năng lượng.</p>
+  <div class="fx">$W=\tfrac12QU=\tfrac12CU^2=\dfrac{Q^2}{2C}$</div>
+  <div class="hai">
+    <div class="fig f2" data-chep="m3d"></div>
+    <div class="ben">
+      <p>Còn nối nguồn ($U$ giữ): <b class="o">$\tfrac12CU^2$</b> · ngắt nguồn ($Q$ giữ): <b class="o">$\tfrac{Q^2}{2C}$</b></p>
+      <p class="nho">Vì sao ½? Nạp: $U$ tăng dần từ <b class="o">0</b>; $W$ = diện tích <b class="o">tam giác</b> dưới đường $Q$–$U$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Năng lượng</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·1 · dòng "gấp … lần"</span></div>
+  <div class="giua">
+    <p class="hoi">Cùng một tụ, nạp ở hiệu điện thế gấp đôi thì năng lượng của tụ:</p>
+    <ol class="opt lo hang">
+      <li data-dung><b>A.</b> tăng 4 lần</li>
+      <li><b>B.</b> tăng 2 lần</li>
+      <li><b>C.</b> không đổi</li>
+      <li><b>D.</b> giảm 2 lần</li>
+    </ol>
+    <button class="mo" data-mo="a5b">Mở đáp án</button>
+    <div class="an" id="a5b" hidden><p><b>A.</b> $C$ không đổi, $W=\tfrac12CU^2$: $U$ gấp 2 → $W$ gấp $2^2=$ <b class="o">4</b>.</p><p class="nho">B: quên rằng $Q$ cũng tăng theo $U$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Ghép tụ</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="hai">
+    <div class="fig tf2" style="width:34%"><svg viewBox="0 0 320 222" role="img" aria-label="Hai cách ghép tụ"><line x1="20" y1="50" x2="300" y2="50" stroke="#1c2540" stroke-width="2.8"/><circle cx="20" cy="50" r="4.5" fill="#1c2540"/><circle cx="300" cy="50" r="4.5" fill="#1c2540"/><rect x="113" y="46" width="14" height="8" fill="#fff"/><line x1="113" y1="30" x2="113" y2="70" stroke="#1c2540" stroke-width="4.5"/><line x1="127" y1="30" x2="127" y2="70" stroke="#1c2540" stroke-width="4.5"/><text x="120" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">C<tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan></text><rect x="203" y="46" width="14" height="8" fill="#fff"/><line x1="203" y1="30" x2="203" y2="70" stroke="#1c2540" stroke-width="4.5"/><line x1="217" y1="30" x2="217" y2="70" stroke="#1c2540" stroke-width="4.5"/><text x="210" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">C<tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan></text><text x="20" y="82" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><text x="300" y="82" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">B</text><line x1="20" y1="160" x2="100" y2="160" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="160" x2="300" y2="160" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="120" x2="100" y2="200" stroke="#1c2540" stroke-width="2.8"/><line x1="220" y1="120" x2="220" y2="200" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="120" x2="220" y2="120" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="200" x2="220" y2="200" stroke="#1c2540" stroke-width="2.8"/><circle cx="20" cy="160" r="4.5" fill="#1c2540"/><circle cx="300" cy="160" r="4.5" fill="#1c2540"/><rect x="153" y="116" width="14" height="8" fill="#fff"/><line x1="153" y1="100" x2="153" y2="140" stroke="#1c2540" stroke-width="4.5"/><line x1="167" y1="100" x2="167" y2="140" stroke="#1c2540" stroke-width="4.5"/><text x="160" y="92" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">C<tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan></text><rect x="153" y="196" width="14" height="8" fill="#fff"/><line x1="153" y1="180" x2="153" y2="220" stroke="#1c2540" stroke-width="4.5"/><line x1="167" y1="180" x2="167" y2="220" stroke="#1c2540" stroke-width="4.5"/><text x="186" y="192" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">C<tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan></text><text x="20" y="192" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><text x="300" y="192" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">B</text></svg></div>
+    <div class="ben">
+      <table class="bang">
+        <tr><th>Ghép</th><th>Nối tiếp</th><th>Song song</th></tr>
+        <tr><td>$Q$</td><td class="ns"><span class="an-o" data-o="g5">$Q_1=Q_2$</span></td><td class="ns"><span class="an-o" data-o="g5">$Q_1+Q_2$</span></td></tr>
+        <tr><td>$U$</td><td class="ns"><span class="an-o" data-o="g5">$U_1+U_2$</span></td><td class="ns"><span class="an-o" data-o="g5">$U_1=U_2$</span></td></tr>
+        <tr><td>$C$ bộ</td><td class="ns"><span class="an-o" data-o="g5" style="white-space:nowrap">$\tfrac1{C}=\tfrac1{C_1}+\tfrac1{C_2}$</span></td><td class="ns"><span class="an-o" data-o="g5">$C_1+C_2$</span></td></tr>
+        <tr><td>So</td><td class="ns"><span class="an-o" data-o="g5">&lt; tụ nhỏ nhất</span></td><td class="ns"><span class="an-o" data-o="g5">&gt; tụ lớn nhất</span></td></tr>
+      </table>
+      <button class="mo" data-mo="g5">Mở bảng</button>
+      <p class="nho">Chỉ đúng khi các tụ <b class="o">chưa tích điện</b> trước lúc ghép. Hai tụ nối tiếp: $C=\dfrac{C_1C_2}{C_1+C_2}$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bẫy 2</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·3 · bẫy 2</span></div>
+  <div class="giua">
+    <p class="hoi">Hai tụ 4 μF và 12 μF ghép nối tiếp. Điện dung của bộ là:</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b> 16 μF</li>
+      <li><b>B.</b> 8 μF</li>
+      <li><b>C.</b> 4 μF</li>
+      <li data-dung><b>D.</b> 3 μF</li>
+    </ol>
+    <button class="mo" data-mo="a5d">Mở đáp án</button>
+    <div class="an" id="a5d" hidden>
+      <p><b>D.</b> $C=\dfrac{4\cdot12}{4+12}=3$ μF, nhỏ hơn cả tụ 4 μF.</p>
+      <p>Nối tiếp: $Q$ bằng nhau nên $U_i=Q/C_i$: tụ <b class="o">nhỏ</b> gánh $U$ lớn.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bẫy 3</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·3 · bẫy 3</span></div>
+  <p class="hoi">Tụ phẳng nạp xong, <u>ngắt khỏi nguồn</u>, rồi kéo hai bản ra xa gấp đôi. Hiệu điện thế giữa hai bản:</p>
+  <div class="hai">
+    <div class="fig tf3" style="width:38%"><svg viewBox="0 0 330 166" role="img" aria-label="Tụ còn nối nguồn và tụ đã ngắt nguồn"><rect x="14" y="30" width="120" height="120" rx="0" fill="none" stroke="#1c2540" stroke-width="2.8"/><rect x="67" y="26" width="14" height="8" fill="#fff"/><line x1="67" y1="10" x2="67" y2="50" stroke="#1c2540" stroke-width="4.5"/><line x1="81" y1="10" x2="81" y2="50" stroke="#1c2540" stroke-width="4.5"/><rect x="67" y="146" width="14" height="8" fill="#fff"/><line x1="68" y1="130" x2="68" y2="170" stroke="#1c2540" stroke-width="2.4"/><line x1="80" y1="139" x2="80" y2="161" stroke="#1c2540" stroke-width="6.5"/><text x="62" y="132" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">+</text><text x="87" y="136" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">−</text><rect x="186" y="30" width="120" height="120" rx="0" fill="none" stroke="#1c2540" stroke-width="2.8"/><rect x="239" y="26" width="14" height="8" fill="#fff"/><line x1="239" y1="10" x2="239" y2="50" stroke="#1c2540" stroke-width="4.5"/><line x1="253" y1="10" x2="253" y2="50" stroke="#1c2540" stroke-width="4.5"/><rect x="239" y="146" width="14" height="8" fill="#fff"/><line x1="240" y1="130" x2="240" y2="170" stroke="#1c2540" stroke-width="2.4"/><line x1="252" y1="139" x2="252" y2="161" stroke="#1c2540" stroke-width="6.5"/><text x="234" y="132" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">+</text><text x="259" y="136" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">−</text><rect x="301" y="72" width="10" height="36" fill="#fff"/><circle cx="306" cy="72" r="4.5" fill="#1c2540"/><circle cx="306" cy="108" r="4.5" fill="#1c2540"/><line x1="306" y1="108" x2="324" y2="80" stroke="#1c2540" stroke-width="2.8"/><text x="74" y="84" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="400">giữ gì?</text><text x="246" y="84" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="400">giữ gì?</text></svg></div>
+    <div class="ben">
+      <ol class="opt lo hai-cot">
+        <li data-dung><b>A.</b> tăng gấp đôi</li>
+        <li><b>B.</b> không đổi</li>
+        <li><b>C.</b> giảm một nửa</li>
+        <li><b>D.</b> tăng gấp bốn</li>
+      </ol>
+      <button class="mo" data-mo="a5e">Mở đáp án</button>
+      <div class="an" id="a5e" hidden>
+        <p>Còn nối: <b class="o">$U$</b> giữ · đã ngắt: <b class="o">$Q$</b> giữ.</p>
+        <p><b>A.</b> $d$ gấp đôi: $C$ <b class="o">giảm một nửa</b>, $U=Q/C$ <b class="o">gấp đôi</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Bài toán mẫu + trả bài ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Bài toán mẫu</span><span>phút 25–28</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="hai">
+    <div class="fig tf4" style="width:36%"><svg viewBox="0 0 320 184" role="img" aria-label="Hai tụ ghép nối tiếp vào nguồn 12 V"><rect x="30" y="50" width="260" height="120" rx="0" fill="none" stroke="#1c2540" stroke-width="2.8"/><rect x="103" y="46" width="14" height="8" fill="#fff"/><line x1="103" y1="30" x2="103" y2="70" stroke="#1c2540" stroke-width="4.5"/><line x1="117" y1="30" x2="117" y2="70" stroke="#1c2540" stroke-width="4.5"/><text x="110" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">C<tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan> 3 µF</text><rect x="203" y="46" width="14" height="8" fill="#fff"/><line x1="203" y1="30" x2="203" y2="70" stroke="#1c2540" stroke-width="4.5"/><line x1="217" y1="30" x2="217" y2="70" stroke="#1c2540" stroke-width="4.5"/><text x="210" y="22" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">C<tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan> 6 µF</text><rect x="153" y="166" width="14" height="8" fill="#fff"/><line x1="154" y1="150" x2="154" y2="190" stroke="#1c2540" stroke-width="2.4"/><line x1="166" y1="159" x2="166" y2="181" stroke="#1c2540" stroke-width="6.5"/><text x="148" y="152" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">+</text><text x="173" y="156" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">−</text><text x="110" y="104" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="400">U<tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan> = ?</text><text x="210" y="104" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="400">U<tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan> = ?</text><text x="186" y="178" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">12 V</text></svg></div>
+    <div class="ben">
+      <p>Hai tụ chưa tích điện, $C_1=3$ μF, $C_2=6$ μF, ghép nối tiếp vào nguồn $U=12$ V.</p>
+      <p>a) $C$ bộ, $Q$ mỗi tụ · b) $U_1$, $U_2$, $W$ bộ</p>
+      <button class="mo" data-mo="m6d">Mở: bảng đọc đề</button>
+      <div class="an" id="m6d" hidden><ul>
+        <li>“nối tiếp” → $Q_1=Q_2=Q$</li>
+        <li>“nguồn 12 V” → $U$ cả bộ: $Q=CU$, $U=U_1+U_2$</li>
+        <li>“năng lượng của bộ” → $W=\tfrac12CU^2$</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Bài toán mẫu</span><span>phút 25–28</span><span class="tap">tr.4 · ô 4·2 · 5 dòng giải</span></div>
+  <div class="giua">
+    <div class="nut"><button class="mo" data-mo="b6a">Mở a)</button><button class="mo" data-mo="b6b">Mở b)</button><button class="mo" data-mo="b6k">Mở: kiểm tra</button></div>
+    <div class="an" id="b6a" hidden><p>$C=\dfrac{3\cdot6}{3+6}=2$ μF · $Q_1=Q_2=CU=24$ μC</p></div>
+    <div class="an" id="b6b" hidden><p>$U_1=\dfrac{24}{3}=8$ V · $U_2=\dfrac{24}{6}=4$ V</p><p>$W=\tfrac12\cdot2\cdot10^{-6}\cdot12^2=1{,}44\cdot10^{-4}$ J $=144$ μJ</p></div>
+    <div class="an" id="b6k" hidden><p>$8+4=12$ V, khớp nguồn. Tụ nhỏ (3 μF) gánh $U$ lớn: đúng bẫy 2.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 28–29 · viết 1 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Định nghĩa điện dung, đơn vị, ước số?</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>$C=Q/U$ · fara (F) · 1 μF $=10^{-6}$ F, 1 nF $=10^{-9}$ F, 1 pF $=10^{-12}$ F</p></div>
+    <p class="hoi">Câu 5. Nối tiếp, song song: cái gì chung, C bộ tính sao?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>Nối tiếp: $Q$ chung · $\dfrac1C=\sum\dfrac1{C_i}$ · Song song: $U$ chung · $C=\sum C_i$</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6flash">
+  <div class="top"><span class="so">6/6 · Quay lại đèn flash</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3 · tr.3 ô 3·1 dòng Ví dụ</span></div>
+  <div class="hai">
+    <div class="fig tf1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Tụ flash 150 μF nạp tới 300 V.</p>
+      <button class="mo" data-mo="a6">Mở: đèn flash</button>
+      <div class="an" id="a6" hidden><p><b>B.</b> Pin nạp chậm cho <b>tụ</b> (tiếng "píííp"), tụ xả một lần.</p>
+        <p>$W=\tfrac12\cdot150\cdot10^{-6}\cdot300^2\approx$ <b class="o">6,75</b> J, xả trong 1 ms.</p>
+        <p class="nho">A: cấp thẳng thì đâu phải chờ · C: bóng không tự sinh năng lượng · mạch tăng áp đưa 3 V lên cỡ 300 V.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6qr">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.5 ô 5·1 ghi điểm</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1216" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM11 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM23 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM28 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM1 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM1 11h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM7 11h1v1h-1zM9 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM1 13h1v1h-1zM3 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM30 13h1v1h-1zM0 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h1v1h-1zM2 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM0 17h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM7 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM23 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM32 18h1v1h-1zM2 19h1v1h-1zM4 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM0 20h1v1h-1zM1 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM9 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM16 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM29 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM5 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM0 22h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM5 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM2 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM16 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM10 27h1v1h-1zM11 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM16 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM23 30h1v1h-1zM25 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM31 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM14 31h1v1h-1zM19 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM24 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1216</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1216 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6vn">
+  <div class="top"><span class="so">Về nhà theo Tập bài 21</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai"</li>
+    <li><b>tr.3</b> ô 3·2 dòng "Tụ đã tích sẵn" (bảo toàn điện tích)</li>
+    <li><b>tr.4</b> ô 4·1 câu 1, 3, 4, 6 + bạn cùng bàn kiểm</li>
+    <li><b>tr.5</b> ô 5·2 (song song + thử sức) · ô 5·3: đề BTVN thầy giao trên web · ô 5·4 · ô 5·5</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cường độ dòng điện · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .f4{height:56vh} .hai>.fig.rong{width:56%} .f3 svg,.f4 svg{overflow:visible}
+/* màu hình web vẽ cho nền tối: đổi sang sắc đậm để đủ tương phản trên nền trắng tivi */
+.fig svg [fill="#38bdf8"]{fill:#0369a1} .fig svg [stroke="#38bdf8"]{stroke:#0369a1} .fig svg [fill="#f87171"]{fill:#dc2626} .fig svg [stroke="#f87171"]{stroke:#dc2626}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f3 svg text{font-size:18px} .f3 svg text[x="215"]{display:none} .f4 svg text[font-size="14"],.f4 svg text[font-size="15"]{font-size:16px}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+<!-- Nguồn: theory.html bài 41 (Cường độ dòng điện) + ruột tập scripts/ruot-tap/l11-bai22.mjs (tr.1–5, mã ô t·k);
+     hình: dấu FIGn = thẻ svg thứ n trong theory.html; dấu TAP:ten = hình hinh-l11-bai22.mjs của Tập (build_tren_lop.py).
+     Clip tn-l11-cuong-do-dong-dien-02 (engine clips/cddd2.py): cảnh "Tiến hành" 10,77–21,57 s, "Kết quả" 21,57–31,27 s. -->
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 22</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 22 · tr.1</span></div>
+  <div class="giua">
+    <h1>Cường độ dòng điện</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Ampe kế "đếm" cái gì trong dây? Mắc thế nào?</li>
+      <li>Electron trong dây điện nhà trôi nhanh cỡ nào?</li>
+      <li>$I=\dfrac{\Delta q}{\Delta t}$ và $I=Snve$.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <h2>Bật công tắc, đèn cách 5 m sáng gần như tức thì.</h2>
+  <div class="fig f1"><!--TAP:congTac--></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Bật công tắc, đèn sáng gần như tức thì dù dây tới đèn dài 5 m. Mỗi electron trong dây đồng trôi dọc dây (dịch chuyển có hướng) nhanh cỡ nào?</p>
+    <ol class="opt">
+      <li><b>A.</b> Gần bằng tốc độ ánh sáng, $3\cdot10^8$ m/s</li>
+      <li><b>B.</b> Cỡ vài km/s, như âm thanh trong kim loại</li>
+      <li><b>C.</b> Dưới 1 mm/s, chậm hơn kiến bò</li>
+      <li><b>D.</b> Đứng yên, chỉ có điện trường chạy trong dây</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại công tắc").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Cường độ dòng điện ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Cường độ dòng điện</span><span>phút 3–8</span><span class="tap">tr.1 · ô 1·4 · dòng 1–4</span></div>
+  <div class="giua">
+    <p>Dòng điện: dòng chuyển dời <b class="o">có hướng</b> của các <b class="o">điện tích</b>. Trong kim loại: <b class="o">electron tự do</b>.</p>
+    <p>$I$ đặc trưng cho tác dụng <b class="o">mạnh, yếu</b> của dòng điện.</p>
+    <div class="fx">$I=\dfrac{\Delta q}{\Delta t}$</div>
+    <p>$\Delta q$: điện lượng qua <b class="o">tiết diện thẳng</b> của dây trong thời gian $\Delta t$.</p>
+    <p>Đơn vị: $\Delta q$ (C), $\Delta t$ (s), $I$ (A, ampe) · $1$ A $=1$ <b class="o">C/s</b></p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Ví dụ</span><span>phút 3–8</span><span class="tap">tr.1 · ô 1·4 · Ví dụ</span></div>
+  <div class="giua">
+    <p class="hoi">Kim ampe kế bộ sạc ắc quy chỉ $9$ A. Mỗi giây có bao nhiêu cu-lông và bao nhiêu electron qua tiết diện dây?</p>
+    <p class="nho">$e=1{,}6\cdot10^{-19}$ C</p>
+    <p class="hoi">Lúc kim chỉ $4$ A, "9" nhiều hơn "4" ở chỗ nào?</p>
+    <button class="mo" data-mo="v2">Mở: lời giải</button>
+    <div class="an" id="v2" hidden>
+      <p>$\Delta q=I\Delta t=9\cdot1=9$ C</p><p>$N=\dfrac{\Delta q}{e}=\dfrac{9}{1{,}6\cdot10^{-19}}\approx5{,}6\cdot10^{19}$ electron</p>
+      <p>Mỗi giây qua tiết diện có $9$ C thay vì $4$ C: nhiều điện tích hơn.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Làm nhanh</span><span>phút 3–8</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="giua">
+    <p class="hoi">Cục sạc nhanh ghi $5$ V, $3$ A. Trong 2 phút sạc, điện lượng qua dây sạc là bao nhiêu? Số $5$ V có dùng không?</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$6$ C</li>
+      <li data-dung><b>B.</b>$360$ C</li>
+      <li><b>C.</b>$0{,}025$ C</li>
+      <li><b>D.</b>$1{,}5$ C</li>
+    </ol>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden>
+      <p><b>B.</b> $\Delta q=I\Delta t=3\cdot120=360$ C · $5$ V <b>không dùng</b>.</p>
+      <p class="nho">A: để nguyên 2 phút · C: chia thay vì nhân · D: vừa chia vừa chưa đổi phút.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. Đo cường độ dòng điện ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Ampe kế</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·1 · dòng 1</span></div>
+  <div class="hai">
+    <div class="fig f2"><!--TAP:mach--></div>
+    <div class="ben">
+      <p>Đo $I$ bằng <b class="o">ampe kế</b>, mắc <b class="o">nối tiếp</b> với đoạn mạch cần đo: dòng phải chạy <b class="o">qua</b> ampe kế.</p>
+      <p class="nho">Không mắc song song, không nối thẳng ampe kế vào hai cực pin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·1 · Quan sát, Rút ra</span></div>
+  <p class="nho">Pin 3 V · bóng đèn nhỏ · ampe kế số thang 1 A. Thầy đọc to số, gõ vào cột "Lớp đo".</p>
+  <table>
+    <thead><tr><th>Lần</th><th>Ampe kế đặt ở</th><th>Lớp đo</th><th>Minh hoạ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>trước đèn</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>2</td><td>sau đèn</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>3</td><td>sát cực âm pin</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>4</td><td>đảo hai cực pin</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">−0,30 A</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut">
+    <button class="mo" data-mo="b3">Mở minh hoạ</button>
+    <button class="mo" data-mo="r3">Mở: rút ra</button>
+  </div>
+  <div class="an" id="r3" hidden><p>Mạch nối tiếp: $I$ <b class="o">như nhau</b> tại mọi tiết diện. Dấu "−" chỉ báo <b class="o">chiều dòng điện đảo</b>, độ lớn không đổi.</p></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Thí nghiệm ảo PhET</span><span>dùng khi thiếu dụng cụ hoặc bàn cuối không thấy số</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="giua">
+    <p class="hoi">Màn "Giới thiệu": dựng mạch pin – đèn – dây. Đặt ampe kế gần cực dương, rồi gần cực âm.</p>
+    <p class="hoi">Hai số chỉ có khác nhau không?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p3">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p3" hidden><p>Hai số chỉ bằng nhau: trong mạch nối tiếp điện tích không dồn lại ở đâu, $I$ như nhau tại mọi tiết diện.</p></div>
+    <p class="nho">Giữ tab PhET mở: điểm dừng 4 dùng lại (đổi Điện tử ↔ Quy ước).</p>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Đồng hồ USB</span><span>4 điểm dừng · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="vg" data-bat="11.0" data-het="27.6">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261105.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261105.webp" preload="metadata" playsinline title="Sạc điện thoại qua đồng hồ USB"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số mAh trên đồng hồ USB sau mỗi 10 phút. Dòng giữ $1{,}50$ A.</p><p class="nho">Đồng hồ USB mắc nối tiếp giữa cục sạc và điện thoại. Clip bỏ phần mở đầu.</p></div>
+      <div class="buoc" data-t="11.0"><p class="hoi">Sạc 10 phút, ghi số mAh.</p></div>
+      <div class="buoc" data-t="14.8" data-dung><p class="so-lon">10 phút: $250$ mAh</p><p class="hoi">Dòng giữ $1{,}50$ A. Cứ sau 10 phút, số mAh thay đổi thế nào?</p>
+        <ol class="opt lo"><li data-dung><b>A.</b> Mỗi 10 phút thêm cùng một lượng</li><li><b>B.</b> Mỗi 10 phút thêm nhiều hơn lần trước</li><li><b>C.</b> Mỗi 10 phút thêm ít hơn lần trước</li><li><b>D.</b> Không tăng, vì dòng không đổi</li></ol></div>
+      <div class="buoc" data-t="14.9"><p class="hoi">Ghi tiếp ở 20, 30, 40, 50 phút (tua nhanh).</p></div>
+      <div class="buoc" data-t="21.2" data-dung><p class="so-lon">$250;\ 500;\ 750;\ 1000;\ 1250$ mAh</p><p class="hoi">Mỗi 10 phút thêm $250$ mAh → <b>A</b>.</p><p class="hoi">Điền cột $\Delta q=I\Delta t$ vào Tập. Hàng 10 phút: $\Delta t=$ ? s</p></div>
+      <div class="buoc" data-t="21.3"><p class="hoi">Kết quả: đồ thị $\Delta q$ theo $\Delta t$.</p></div>
+      <div class="buoc" data-t="25.6" data-dung><p class="so-lon">$900;\ 1800;\ 2700;\ 3600;\ 4500$ C</p><p class="hoi">$250$ mAh ứng với $900$ C. Vậy $1$ mAh $=$ ? C</p></div>
+      <div class="buoc" data-t="25.7"><p class="hoi">Đổi đơn vị mAh → C.</p></div>
+      <div class="buoc" data-t="27.6"><p class="so-lon">$1$ mAh $=3{,}6$ C</p><p class="hoi">$10^{-3}$ A $\cdot3600$ s $=3{,}6$ C</p><p class="hoi">Đồ thị: đường thẳng qua gốc.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3e">
+  <div class="top"><span class="so">3/6 · Rút ra</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·3 · Rút ra</span></div>
+  <div class="hai">
+    <div class="fig f3 rong"><!--FIG2--></div>
+    <div class="ben">
+      <p>Dòng không đổi: $\Delta q$ tỉ lệ <b class="o">thuận</b> với $\Delta t$.</p>
+      <p>Độ dốc đồ thị là <b class="o">$I$</b>.</p>
+      <p class="nho">$90$ C/phút $=\dfrac{90\ \text{C}}{60\ \text{s}}=1{,}50$ A</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3f">
+  <div class="top"><span class="so">3/6 · Sai số</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·3 · dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng dao động $\pm0{,}02$ A: ở hàng 10 phút, $\Delta q$ lệch bao nhiêu?</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $\pm0{,}02$ C</li>
+      <li><b>B.</b> $\pm0{,}2$ C</li>
+      <li><b>C.</b> $\pm900$ C</li>
+      <li data-dung><b>D.</b> $\pm12$ C</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden>
+      <p><b>D.</b> $0{,}02\cdot600=12$ C, khoảng $1{,}3\ \%$ của $900$ C.</p>
+      <p class="nho">A: chưa nhân thời gian · B: nhân 10 "phút" · C: cả điện lượng, không phải phần lệch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. Chiều dòng điện ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Chiều dòng điện</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · dòng 1–2</span></div>
+  <p>Chiều quy ước: chiều chuyển động của hạt mang điện <b class="o">dương</b>; từ cực <b class="o">+</b> qua mạch ngoài về cực <b class="o">−</b>.</p>
+  <div class="fig f4"><!--FIG1--></div>
+  <p>Kim loại: electron trôi <b class="o">ngược</b> chiều dòng điện. <span class="nho">PhET: Điện tử ↔ Quy ước</span></p>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Không đổi · một chiều</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · bảng</span></div>
+  <p class="hoi">Hai đồ thị $I$ theo $t$: đồ thị nào là dòng không đổi?</p>
+  <div class="hai">
+    <div class="fig f5"><!--TAP:haiDong--></div>
+    <div class="ben">
+      <button class="mo" data-mo="k4">Mở: bảng</button>
+      <div class="an" id="k4" hidden>
+        <table style="font-size:.85em">
+          <tr><th></th><th>(a) không đổi</th><th>(b) một chiều</th></tr>
+          <tr><td>Chiều</td><td>không đổi</td><td>không đổi</td></tr>
+          <tr><td>Cường độ</td><td>không đổi</td><td>có thể thay đổi</td></tr>
+          <tr><td>Đồ thị</td><td>nằm ngang</td><td>trọn một phía trục $t$</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Giơ tay</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng không đổi ☐ luôn ☐ không luôn là dòng một chiều.</p>
+    <p class="hoi">Dòng một chiều ☐ luôn ☐ không luôn là dòng không đổi.</p>
+    <button class="mo" data-mo="k4c">Mở</button>
+    <div class="an" id="k4c" hidden>
+      <p>Không đổi → <b>luôn</b> là một chiều. Một chiều → <b>không luôn</b> là không đổi.</p>
+      <p class="nho">Ví dụ: dòng nạp ắc quy sau chỉnh lưu: chiều giữ nguyên, cường độ nhấp nhô.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. Hạt tải điện ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Hạt tải điện</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <p class="nho">Dây tiết diện $S$, mật độ hạt tải $n$ (hạt/m³), mỗi hạt điện tích $e$, trôi tốc độ $v$. Trong $\Delta t$ mỗi hạt đi $v\Delta t$.</p>
+  <div class="hai">
+    <div class="fig f6"><!--TAP:hinhTru--></div>
+    <div class="ben">
+      <div class="nut"><button class="mo" data-mo="s1">Mở: N</button><button class="mo" data-mo="s2">Mở: Δq</button><button class="mo" data-mo="s3">Mở: I</button></div>
+      <div class="an" id="s1" hidden><p>Số hạt trong trụ: $N=nSv\Delta t$</p></div>
+      <div class="an" id="s2" hidden><p>$\Delta q=Ne=nSv\Delta t\,e$</p></div>
+      <div class="an" id="s3" hidden><div class="fx">$I=Snve$</div><p class="nho">Đông – Nhanh – To: $n$, $v$, $S$ lớn thì $I$ lớn. Mật độ dòng điện:</p><p>$j=I/S=$ <b class="o">$nve$</b> · <b class="o">A/m²</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bẫy 1</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·2 · dòng cuối → tr.4 · ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng trong cùng một dây đồng tăng từ $1$ A lên $2$ A. Điều gì đã thay đổi?</p>
+    <ol class="opt lo">
+      <li><b>A.</b> Mật độ electron $n$ tăng gấp đôi</li>
+      <li><b>B.</b> Cả $n$ và $v$ đều tăng $\sqrt2$ lần</li>
+      <li><b>C.</b> Điện tích của mỗi electron tăng gấp đôi</li>
+      <li data-dung><b>D.</b> Tốc độ trôi $v$ tăng gấp đôi, $n$ giữ nguyên</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>D.</b> Tăng $I$ trong cùng một dây là tăng <b class="o">$v$</b>, không phải tăng <b class="o">$n$</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Ví dụ tính</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <p>Dây đồng dân dụng $S=1{,}5\ \text{mm}^2=$ <span class="an-o" data-o="t5"><b>$1{,}5\cdot10^{-6}$</b></span> m²; $n=8{,}5\cdot10^{28}$ m⁻³</p>
+  <p>$Sne=$ <span class="an-o" data-o="t5"><b>$2{,}04\cdot10^{4}$</b></span> C/m · $v=\dfrac{I}{Sne}$</p>
+  <table class="bang">
+    <tr><th>$I$ (A)</th><td>1</td><td>5</td><td>10</td><td>16</td></tr>
+    <tr><th>$v$ (mm/s)</th><td class="ns">0,049</td><td class="ns"><span class="an-o" data-o="t5">0,25</span></td><td class="ns"><span class="an-o" data-o="t5">0,49</span></td><td class="ns"><span class="an-o" data-o="t5">0,78</span></td></tr>
+  </table>
+  <div class="nut"><button class="mo" data-mo="t5">Mở: số</button><button class="mo" data-mo="r5">Mở: rút ra</button></div>
+  <div class="an" id="r5" hidden><p>Ngay ở 16 A electron trôi chưa tới <b class="o">1 mm/s</b>. Đèn sáng ngay vì điện trường lan dọc dây gần tốc độ ánh sáng, mọi electron trong dây cùng trôi một lúc.</p></div>
+</section>
+
+<!-- ================= 6. Trả bài + quay lại + đề 1217 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–29 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="giua">
+    <p class="hoi">1. Cường độ dòng điện đặc trưng cho gì? Công thức, đơn vị?</p>
+    <button class="mo" data-mo="t1">Mở câu 1</button>
+    <div class="an" id="t1" hidden><p>Tác dụng mạnh, yếu của dòng điện · $I=\dfrac{\Delta q}{\Delta t}$ · ampe, $1$ A $=1$ C/s.</p></div>
+    <p class="hoi">5. Viết $I=Snve$, nêu nghĩa và đơn vị từng kí hiệu.</p>
+    <button class="mo" data-mo="t6">Mở câu 5</button>
+    <div class="an" id="t6" hidden><p>$S$ tiết diện (m²) · $n$ mật độ hạt tải (m⁻³) · $v$ tốc độ trôi (m/s) · $e$ điện tích hạt (C).</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6ct">
+  <div class="top"><span class="so">6/6 · Quay lại công tắc</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Dây 1,5 mm², 16 A: electron trôi $0{,}78$ mm/s.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Dưới 1 mm/s. Dây đã đầy electron sẵn, như ống nước đầy: mở vòi là nước ra ngay.</p>
+        <p class="nho">A: tốc độ điện trường lan dọc dây · B: tốc độ âm thanh · D: electron có trôi, đó chính là dòng điện.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.4 ô 4·3 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1217</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1217 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 22</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
+    <li><b>tr.3</b> ô 3·3 dòng "Rút ra" (viết đủ ý)</li>
+    <li><b>tr.4</b> ô 4·1 đọc Bẫy 2, Bẫy 3 · ô 4·2 câu 2, 3, 4, 6 (bạn cùng bàn kiểm)</li>
+    <li><b>tr.5</b> ô 5·1 bài toán mẫu · ô 5·2 · ô 5·3 ghi đề BTVN thầy giao trên web · ô 5·4 thử thách</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

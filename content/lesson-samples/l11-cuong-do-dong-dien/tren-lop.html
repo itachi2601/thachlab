@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cường độ dòng điện · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .f4{height:56vh} .hai>.fig.rong{width:56%} .f3 svg,.f4 svg{overflow:visible}
+/* màu hình web vẽ cho nền tối: đổi sang sắc đậm để đủ tương phản trên nền trắng tivi */
+.fig svg [fill="#38bdf8"]{fill:#0369a1} .fig svg [stroke="#38bdf8"]{stroke:#0369a1} .fig svg [fill="#f87171"]{fill:#dc2626} .fig svg [stroke="#f87171"]{stroke:#dc2626}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f3 svg text{font-size:18px} .f3 svg text[x="215"]{display:none} .f4 svg text[font-size="14"],.f4 svg text[font-size="15"]{font-size:16px}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+<!-- Nguồn: theory.html bài 41 (Cường độ dòng điện) + ruột tập scripts/ruot-tap/l11-bai22.mjs (tr.1–5, mã ô t·k);
+     hình: dấu FIGn = thẻ svg thứ n trong theory.html; dấu TAP:ten = hình hinh-l11-bai22.mjs của Tập (build_tren_lop.py).
+     Clip tn-l11-cuong-do-dong-dien-02 (engine clips/cddd2.py): cảnh "Tiến hành" 10,77–21,57 s, "Kết quả" 21,57–31,27 s. -->
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 22</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 22 · tr.1</span></div>
+  <div class="giua">
+    <h1>Cường độ dòng điện</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Ampe kế "đếm" cái gì trong dây? Mắc thế nào?</li>
+      <li>Electron trong dây điện nhà trôi nhanh cỡ nào?</li>
+      <li>$I=\dfrac{\Delta q}{\Delta t}$ và $I=Snve$.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <h2>Bật công tắc, đèn cách 5 m sáng gần như tức thì.</h2>
+  <div class="fig f1"><svg viewBox="0 0 320 180" role="img" aria-label="Công tắc nối với đèn bằng dây dài 5 m"><defs><marker id="ct1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="20" y1="60" x2="96" y2="60" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="60" r="4" fill="#1c2540"/><line x1="100" y1="60" x2="132" y2="40" stroke="#1c2540" stroke-width="2.8"/><circle cx="136" cy="60" r="4" fill="#1c2540"/><text x="116" y="92" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">công tắc</text><line x1="136" y1="60" x2="266" y2="60" stroke="#1c2540" stroke-width="2.8"/><circle cx="282" cy="60" r="15" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="271.5" y1="49.5" x2="292.5" y2="70.5" stroke="#1c2540" stroke-width="2.2"/><line x1="271.5" y1="70.5" x2="292.5" y2="49.5" stroke="#1c2540" stroke-width="2.2"/><line x1="297" y1="60" x2="312" y2="60" stroke="#1c2540" stroke-width="2.8"/><line x1="140" y1="126" x2="262" y2="126" stroke="#8a94ad" stroke-width="2"/><line x1="140" y1="118" x2="140" y2="134" stroke="#8a94ad" stroke-width="2"/><line x1="262" y1="118" x2="262" y2="134" stroke="#8a94ad" stroke-width="2"/><text x="201" y="118" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">5 m</text><circle cx="170" cy="60" r="6" fill="#fff" stroke="#1f5fa8" stroke-width="2.2"/><line x1="167" y1="60" x2="173" y2="60" stroke="#1f5fa8" stroke-width="2"/><circle cx="200" cy="60" r="6" fill="#fff" stroke="#1f5fa8" stroke-width="2.2"/><line x1="197" y1="60" x2="203" y2="60" stroke="#1f5fa8" stroke-width="2"/><circle cx="230" cy="60" r="6" fill="#fff" stroke="#1f5fa8" stroke-width="2.2"/><line x1="227" y1="60" x2="233" y2="60" stroke="#1f5fa8" stroke-width="2"/><line x1="150" y1="160" x2="114" y2="160" stroke="#1f5fa8" stroke-width="2.4" stroke-dasharray="6 4" marker-end="url(#ct1)"/><text x="158" y="166" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">electron: v = ?</text></svg></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Bật công tắc, đèn sáng gần như tức thì dù dây tới đèn dài 5 m. Mỗi electron trong dây đồng trôi dọc dây (dịch chuyển có hướng) nhanh cỡ nào?</p>
+    <ol class="opt">
+      <li><b>A.</b> Gần bằng tốc độ ánh sáng, $3\cdot10^8$ m/s</li>
+      <li><b>B.</b> Cỡ vài km/s, như âm thanh trong kim loại</li>
+      <li><b>C.</b> Dưới 1 mm/s, chậm hơn kiến bò</li>
+      <li><b>D.</b> Đứng yên, chỉ có điện trường chạy trong dây</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại công tắc").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Cường độ dòng điện ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Cường độ dòng điện</span><span>phút 3–8</span><span class="tap">tr.1 · ô 1·4 · dòng 1–4</span></div>
+  <div class="giua">
+    <p>Dòng điện: dòng chuyển dời <b class="o">có hướng</b> của các <b class="o">điện tích</b>. Trong kim loại: <b class="o">electron tự do</b>.</p>
+    <p>$I$ đặc trưng cho tác dụng <b class="o">mạnh, yếu</b> của dòng điện.</p>
+    <div class="fx">$I=\dfrac{\Delta q}{\Delta t}$</div>
+    <p>$\Delta q$: điện lượng qua <b class="o">tiết diện thẳng</b> của dây trong thời gian $\Delta t$.</p>
+    <p>Đơn vị: $\Delta q$ (C), $\Delta t$ (s), $I$ (A, ampe) · $1$ A $=1$ <b class="o">C/s</b></p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Ví dụ</span><span>phút 3–8</span><span class="tap">tr.1 · ô 1·4 · Ví dụ</span></div>
+  <div class="giua">
+    <p class="hoi">Kim ampe kế bộ sạc ắc quy chỉ $9$ A. Mỗi giây có bao nhiêu cu-lông và bao nhiêu electron qua tiết diện dây?</p>
+    <p class="nho">$e=1{,}6\cdot10^{-19}$ C</p>
+    <p class="hoi">Lúc kim chỉ $4$ A, "9" nhiều hơn "4" ở chỗ nào?</p>
+    <button class="mo" data-mo="v2">Mở: lời giải</button>
+    <div class="an" id="v2" hidden>
+      <p>$\Delta q=I\Delta t=9\cdot1=9$ C</p><p>$N=\dfrac{\Delta q}{e}=\dfrac{9}{1{,}6\cdot10^{-19}}\approx5{,}6\cdot10^{19}$ electron</p>
+      <p>Mỗi giây qua tiết diện có $9$ C thay vì $4$ C: nhiều điện tích hơn.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Làm nhanh</span><span>phút 3–8</span><span class="tap">tr.2 · ô 2·2</span></div>
+  <div class="giua">
+    <p class="hoi">Cục sạc nhanh ghi $5$ V, $3$ A. Trong 2 phút sạc, điện lượng qua dây sạc là bao nhiêu? Số $5$ V có dùng không?</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$6$ C</li>
+      <li data-dung><b>B.</b>$360$ C</li>
+      <li><b>C.</b>$0{,}025$ C</li>
+      <li><b>D.</b>$1{,}5$ C</li>
+    </ol>
+    <button class="mo" data-mo="a2">Mở đáp án</button>
+    <div class="an" id="a2" hidden>
+      <p><b>B.</b> $\Delta q=I\Delta t=3\cdot120=360$ C · $5$ V <b>không dùng</b>.</p>
+      <p class="nho">A: để nguyên 2 phút · C: chia thay vì nhân · D: vừa chia vừa chưa đổi phút.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 3. Đo cường độ dòng điện ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Ampe kế</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·1 · dòng 1</span></div>
+  <div class="hai">
+    <div class="fig f2"><svg viewBox="0 0 300 190" role="img" aria-label="Mạch điện có ampe kế mắc trong mạch pin và đèn"><defs><marker id="m1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><polyline points="60,40 60,30 260,30 260,150 60,150 60,40" fill="none" stroke="#1c2540" stroke-width="2.8" stroke-linejoin="round"/><rect x="40" y="70" width="40" height="40" fill="#fff"/><g transform="rotate(90 60 90)"><rect x="50" y="70" width="20" height="40" fill="#fff"/><line x1="54" y1="72" x2="54" y2="108" stroke="#1c2540" stroke-width="2.8"/><line x1="66" y1="80" x2="66" y2="100" stroke="#1c2540" stroke-width="5"/></g><text x="36" y="70" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">+</text><text x="36" y="122" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">−</text><circle cx="160" cy="30" r="16" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="160" y="37" fill="#1c2540" font-size="21" text-anchor="middle" font-weight="700">A</text><circle cx="260" cy="90" r="15" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="249.5" y1="79.5" x2="270.5" y2="100.5" stroke="#1c2540" stroke-width="2.2"/><line x1="249.5" y1="100.5" x2="270.5" y2="79.5" stroke="#1c2540" stroke-width="2.2"/><line x1="84" y1="30" x2="124" y2="30" stroke="#b3261e" stroke-width="2.8" marker-end="url(#m1)"/><line x1="260" y1="128" x2="260" y2="140" stroke="#b3261e" stroke-width="2.8" marker-end="url(#m1)"/><line x1="220" y1="150" x2="180" y2="150" stroke="#b3261e" stroke-width="2.8" marker-end="url(#m1)"/><text x="92" y="180" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">pin 3 V</text><text x="226" y="96" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400">đèn</text></svg></div>
+    <div class="ben">
+      <p>Đo $I$ bằng <b class="o">ampe kế</b>, mắc <b class="o">nối tiếp</b> với đoạn mạch cần đo: dòng phải chạy <b class="o">qua</b> ampe kế.</p>
+      <p class="nho">Không mắc song song, không nối thẳng ampe kế vào hai cực pin.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·1 · Quan sát, Rút ra</span></div>
+  <p class="nho">Pin 3 V · bóng đèn nhỏ · ampe kế số thang 1 A. Thầy đọc to số, gõ vào cột "Lớp đo".</p>
+  <table>
+    <thead><tr><th>Lần</th><th>Ampe kế đặt ở</th><th>Lớp đo</th><th>Minh hoạ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>trước đèn</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>2</td><td>sau đèn</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>3</td><td>sát cực âm pin</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,30 A</span></td></tr>
+      <tr><td>4</td><td>đảo hai cực pin</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">−0,30 A</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut">
+    <button class="mo" data-mo="b3">Mở minh hoạ</button>
+    <button class="mo" data-mo="r3">Mở: rút ra</button>
+  </div>
+  <div class="an" id="r3" hidden><p>Mạch nối tiếp: $I$ <b class="o">như nhau</b> tại mọi tiết diện. Dấu "−" chỉ báo <b class="o">chiều dòng điện đảo</b>, độ lớn không đổi.</p></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Thí nghiệm ảo PhET</span><span>dùng khi thiếu dụng cụ hoặc bàn cuối không thấy số</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <div class="giua">
+    <p class="hoi">Màn "Giới thiệu": dựng mạch pin – đèn – dây. Đặt ampe kế gần cực dương, rồi gần cực âm.</p>
+    <p class="hoi">Hai số chỉ có khác nhau không?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/circuit-construction-kit-dc/latest/circuit-construction-kit-dc_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET</a>
+      <button class="mo" data-mo="p3">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p3" hidden><p>Hai số chỉ bằng nhau: trong mạch nối tiếp điện tích không dồn lại ở đâu, $I$ như nhau tại mọi tiết diện.</p></div>
+    <p class="nho">Giữ tab PhET mở: điểm dừng 4 dùng lại (đổi Điện tử ↔ Quy ước).</p>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Đồng hồ USB</span><span>4 điểm dừng · khoảng 2 phút</span><span class="tap">tr.2 · ô 2·3</span></div>
+  <div class="vg" data-bat="11.0" data-het="27.6">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261105.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-cuong-do-dong-dien-02-20261105.webp" preload="metadata" playsinline title="Sạc điện thoại qua đồng hồ USB"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số mAh trên đồng hồ USB sau mỗi 10 phút. Dòng giữ $1{,}50$ A.</p><p class="nho">Đồng hồ USB mắc nối tiếp giữa cục sạc và điện thoại. Clip bỏ phần mở đầu.</p></div>
+      <div class="buoc" data-t="11.0"><p class="hoi">Sạc 10 phút, ghi số mAh.</p></div>
+      <div class="buoc" data-t="14.8" data-dung><p class="so-lon">10 phút: $250$ mAh</p><p class="hoi">Dòng giữ $1{,}50$ A. Cứ sau 10 phút, số mAh thay đổi thế nào?</p>
+        <ol class="opt lo"><li data-dung><b>A.</b> Mỗi 10 phút thêm cùng một lượng</li><li><b>B.</b> Mỗi 10 phút thêm nhiều hơn lần trước</li><li><b>C.</b> Mỗi 10 phút thêm ít hơn lần trước</li><li><b>D.</b> Không tăng, vì dòng không đổi</li></ol></div>
+      <div class="buoc" data-t="14.9"><p class="hoi">Ghi tiếp ở 20, 30, 40, 50 phút (tua nhanh).</p></div>
+      <div class="buoc" data-t="21.2" data-dung><p class="so-lon">$250;\ 500;\ 750;\ 1000;\ 1250$ mAh</p><p class="hoi">Mỗi 10 phút thêm $250$ mAh → <b>A</b>.</p><p class="hoi">Điền cột $\Delta q=I\Delta t$ vào Tập. Hàng 10 phút: $\Delta t=$ ? s</p></div>
+      <div class="buoc" data-t="21.3"><p class="hoi">Kết quả: đồ thị $\Delta q$ theo $\Delta t$.</p></div>
+      <div class="buoc" data-t="25.6" data-dung><p class="so-lon">$900;\ 1800;\ 2700;\ 3600;\ 4500$ C</p><p class="hoi">$250$ mAh ứng với $900$ C. Vậy $1$ mAh $=$ ? C</p></div>
+      <div class="buoc" data-t="25.7"><p class="hoi">Đổi đơn vị mAh → C.</p></div>
+      <div class="buoc" data-t="27.6"><p class="so-lon">$1$ mAh $=3{,}6$ C</p><p class="hoi">$10^{-3}$ A $\cdot3600$ s $=3{,}6$ C</p><p class="hoi">Đồ thị: đường thẳng qua gốc.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3e">
+  <div class="top"><span class="so">3/6 · Rút ra</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·3 · Rút ra</span></div>
+  <div class="hai">
+    <div class="fig f3 rong"><svg viewBox="0 0 420 260" role="img" aria-label="Đồ thị điện lượng theo thời gian: năm chấm số liệu nằm trên đường thẳng qua gốc, độ dốc bằng cường độ dòng điện 1,50 ampe."><line x1="60.0" y1="220.0" x2="400.0" y2="220.0" stroke="currentColor" stroke-width="2"/><path d="M392.4,215.6 L400.0,220.0 L392.4,224.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60.0" y1="220.0" x2="60.0" y2="20.0" stroke="currentColor" stroke-width="2"/><path d="M55.6,27.6 L60.0,20.0 L64.4,27.6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="54" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">0</text><text x="400" y="255" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">Δt (phút)</text><text x="14" y="16" fill="currentColor" font-size="14" font-weight="600" text-anchor="start">Δq (C)</text><line x1="120.0" y1="220.0" x2="120.0" y2="225.0" stroke="currentColor" stroke-width="1.5"/><text x="120.0" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">10</text><line x1="180.0" y1="220.0" x2="180.0" y2="225.0" stroke="currentColor" stroke-width="1.5"/><text x="180.0" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">20</text><line x1="240.0" y1="220.0" x2="240.0" y2="225.0" stroke="currentColor" stroke-width="1.5"/><text x="240.0" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">30</text><line x1="300.0" y1="220.0" x2="300.0" y2="225.0" stroke="currentColor" stroke-width="1.5"/><text x="300.0" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">40</text><line x1="360.0" y1="220.0" x2="360.0" y2="225.0" stroke="currentColor" stroke-width="1.5"/><text x="360.0" y="238" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">50</text><line x1="55.0" y1="184.0" x2="60.0" y2="184.0" stroke="currentColor" stroke-width="1.5"/><text x="50" y="188.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">900</text><line x1="55.0" y1="148.0" x2="60.0" y2="148.0" stroke="currentColor" stroke-width="1.5"/><text x="50" y="152.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">1800</text><line x1="55.0" y1="112.0" x2="60.0" y2="112.0" stroke="currentColor" stroke-width="1.5"/><text x="50" y="116.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">2700</text><line x1="55.0" y1="76.0" x2="60.0" y2="76.0" stroke="currentColor" stroke-width="1.5"/><text x="50" y="80.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">3600</text><line x1="55.0" y1="40.0" x2="60.0" y2="40.0" stroke="currentColor" stroke-width="1.5"/><text x="50" y="44.0" fill="currentColor" font-size="14" font-weight="600" text-anchor="end">4500</text><line x1="60.0" y1="220.0" x2="372.0" y2="32.8" stroke="#f87171" stroke-width="2"/><text x="215" y="172" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">độ dốc 90 C/phút = 1,50 A</text><circle cx="120.0" cy="184.0" r="5" fill="#34d399" stroke="currentColor" stroke-width="1"/><circle cx="180.0" cy="148.0" r="5" fill="#34d399" stroke="currentColor" stroke-width="1"/><circle cx="240.0" cy="112.0" r="5" fill="#34d399" stroke="currentColor" stroke-width="1"/><circle cx="300.0" cy="76.0" r="5" fill="#34d399" stroke="currentColor" stroke-width="1"/><circle cx="360.0" cy="40.0" r="5" fill="#34d399" stroke="currentColor" stroke-width="1"/></svg></div>
+    <div class="ben">
+      <p>Dòng không đổi: $\Delta q$ tỉ lệ <b class="o">thuận</b> với $\Delta t$.</p>
+      <p>Độ dốc đồ thị là <b class="o">$I$</b>.</p>
+      <p class="nho">$90$ C/phút $=\dfrac{90\ \text{C}}{60\ \text{s}}=1{,}50$ A</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3f">
+  <div class="top"><span class="so">3/6 · Sai số</span><span>phút 8–16</span><span class="tap">tr.2 · ô 2·3 · dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng dao động $\pm0{,}02$ A: ở hàng 10 phút, $\Delta q$ lệch bao nhiêu?</p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $\pm0{,}02$ C</li>
+      <li><b>B.</b> $\pm0{,}2$ C</li>
+      <li><b>C.</b> $\pm900$ C</li>
+      <li data-dung><b>D.</b> $\pm12$ C</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden>
+      <p><b>D.</b> $0{,}02\cdot600=12$ C, khoảng $1{,}3\ \%$ của $900$ C.</p>
+      <p class="nho">A: chưa nhân thời gian · B: nhân 10 "phút" · C: cả điện lượng, không phải phần lệch.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4. Chiều dòng điện ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Chiều dòng điện</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · dòng 1–2</span></div>
+  <p>Chiều quy ước: chiều chuyển động của hạt mang điện <b class="o">dương</b>; từ cực <b class="o">+</b> qua mạch ngoài về cực <b class="o">−</b>.</p>
+  <div class="fig f4"><svg viewBox="0 0 420 240" role="img" aria-label="Mạch kín gồm pin, ampe kế nối tiếp và bóng đèn; mũi tên đỏ chỉ chiều dòng điện từ cực dương qua mạch ngoài về cực âm, mũi tên xanh chỉ electron đi ngược chiều."><line x1="60.0" y1="50.0" x2="190.0" y2="50.0" stroke="currentColor" stroke-width="2"/><line x1="230.0" y1="50.0" x2="360.0" y2="50.0" stroke="currentColor" stroke-width="2"/><line x1="360.0" y1="50.0" x2="360.0" y2="97.0" stroke="currentColor" stroke-width="2"/><line x1="360.0" y1="133.0" x2="360.0" y2="180.0" stroke="currentColor" stroke-width="2"/><line x1="360.0" y1="180.0" x2="60.0" y2="180.0" stroke="currentColor" stroke-width="2"/><line x1="60.0" y1="180.0" x2="60.0" y2="122.0" stroke="currentColor" stroke-width="2"/><line x1="60.0" y1="108.0" x2="60.0" y2="50.0" stroke="currentColor" stroke-width="2"/><line x1="45.0" y1="108.0" x2="75.0" y2="108.0" stroke="currentColor" stroke-width="3"/><line x1="52.0" y1="122.0" x2="68.0" y2="122.0" stroke="currentColor" stroke-width="1.5"/><text x="82" y="113" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">+</text><text x="82" y="127" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">−</text><text x="12" y="120" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Pin</text><circle cx="210" cy="50" r="20" fill="none" stroke="#38bdf8" stroke-width="2"/><text x="210" y="56" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="middle">A</text><text x="210" y="22" fill="currentColor" font-size="14" font-weight="600" text-anchor="middle">nối tiếp</text><circle cx="360" cy="115" r="18" fill="none" stroke="currentColor" stroke-width="2"/><line x1="347.3" y1="102.3" x2="372.7" y2="127.7" stroke="currentColor" stroke-width="2"/><line x1="347.3" y1="127.7" x2="372.7" y2="102.3" stroke="currentColor" stroke-width="2"/><text x="385" y="119" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">Đèn</text><line x1="100.0" y1="50.0" x2="170.0" y2="50.0" stroke="#f87171" stroke-width="2.5"/><path d="M160.9,44.8 L170.0,50.0 L160.9,55.2" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="360.0" y1="60.0" x2="360.0" y2="90.0" stroke="#f87171" stroke-width="2.5"/><path d="M365.2,80.9 L360.0,90.0 L354.8,80.9" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="320.0" y1="180.0" x2="250.0" y2="180.0" stroke="#f87171" stroke-width="2.5"/><path d="M259.1,185.2 L250.0,180.0 L259.1,174.8" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60.0" y1="170.0" x2="60.0" y2="145.0" stroke="#f87171" stroke-width="2.5"/><path d="M54.8,154.1 L60.0,145.0 L65.2,154.1" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="135" y="42" fill="#f87171" font-size="15" font-weight="700" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic">I</text><line x1="170.0" y1="64.0" x2="100.0" y2="64.0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3"/><path d="M107.6,68.4 L100.0,64.0 L107.6,59.6" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="250.0" y1="166.0" x2="320.0" y2="166.0" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 3"/><path d="M312.4,161.6 L320.0,166.0 L312.4,170.4" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><circle cx="170" cy="64" r="6" fill="#38bdf8"/><text x="170" y="68" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">−</text><circle cx="250" cy="166" r="6" fill="#38bdf8"/><text x="250" y="170" fill="#fff" font-size="14" font-weight="700" text-anchor="middle">−</text><text x="135" y="82" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="middle">electron</text><text x="12" y="212" fill="#f87171" font-size="14" font-weight="600" text-anchor="start">đỏ: chiều dòng điện</text><text x="12" y="230" fill="#38bdf8" font-size="14" font-weight="600" text-anchor="start">xanh: chiều electron</text></svg></div>
+  <p>Kim loại: electron trôi <b class="o">ngược</b> chiều dòng điện. <span class="nho">PhET: Điện tử ↔ Quy ước</span></p>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Không đổi · một chiều</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · bảng</span></div>
+  <p class="hoi">Hai đồ thị $I$ theo $t$: đồ thị nào là dòng không đổi?</p>
+  <div class="hai">
+    <div class="fig f5"><svg viewBox="0 0 310 172" role="img" aria-label="Hai đồ thị cường độ dòng điện theo thời gian"><defs><marker id="hd1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="hd2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="20" y1="130" x2="148" y2="130" stroke="#1c2540" stroke-width="2.8" marker-end="url(#hd1)"/><line x1="20" y1="130" x2="20" y2="26" stroke="#1c2540" stroke-width="2.8" marker-end="url(#hd1)"/><text x="32" y="40" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">I</text><text x="138" y="154" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">t</text><line x1="20" y1="70" x2="136" y2="70" stroke="#b3261e" stroke-width="2.8"/><text x="76" y="162" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">(a)</text><line x1="172" y1="130" x2="300" y2="130" stroke="#1c2540" stroke-width="2.8" marker-end="url(#hd2)"/><line x1="172" y1="130" x2="172" y2="26" stroke="#1c2540" stroke-width="2.8" marker-end="url(#hd2)"/><text x="184" y="40" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">I</text><text x="290" y="154" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">t</text><path d="M172,130 Q186.5,10 201,130 Q215.5,10 230,130 Q244.5,10 259,130 Q273.5,10 288,130" fill="none" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="7 4"/><text x="232" y="162" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">(b)</text></svg></div>
+    <div class="ben">
+      <button class="mo" data-mo="k4">Mở: bảng</button>
+      <div class="an" id="k4" hidden>
+        <table style="font-size:.85em">
+          <tr><th></th><th>(a) không đổi</th><th>(b) một chiều</th></tr>
+          <tr><td>Chiều</td><td>không đổi</td><td>không đổi</td></tr>
+          <tr><td>Cường độ</td><td>không đổi</td><td>có thể thay đổi</td></tr>
+          <tr><td>Đồ thị</td><td>nằm ngang</td><td>trọn một phía trục $t$</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Giơ tay</span><span>phút 16–20</span><span class="tap">tr.3 · ô 3·1 · dòng cuối</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng không đổi ☐ luôn ☐ không luôn là dòng một chiều.</p>
+    <p class="hoi">Dòng một chiều ☐ luôn ☐ không luôn là dòng không đổi.</p>
+    <button class="mo" data-mo="k4c">Mở</button>
+    <div class="an" id="k4c" hidden>
+      <p>Không đổi → <b>luôn</b> là một chiều. Một chiều → <b>không luôn</b> là không đổi.</p>
+      <p class="nho">Ví dụ: dòng nạp ắc quy sau chỉnh lưu: chiều giữ nguyên, cường độ nhấp nhô.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. Hạt tải điện ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Hạt tải điện</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <p class="nho">Dây tiết diện $S$, mật độ hạt tải $n$ (hạt/m³), mỗi hạt điện tích $e$, trôi tốc độ $v$. Trong $\Delta t$ mỗi hạt đi $v\Delta t$.</p>
+  <div class="hai">
+    <div class="fig f6"><svg viewBox="0 0 310 176" role="img" aria-label="Hình trụ chứa các hạt tải điện trôi qua tiết diện"><defs><marker id="ht1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><path d="M30,38 L290,38 M30,122 L290,122" stroke="#1c2540" stroke-width="2.8" fill="none"/><ellipse cx="30" cy="80" rx="12" ry="42" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M290,38 A12,42 0 0 1 290,122" fill="none" stroke="#1c2540" stroke-width="2.8"/><ellipse cx="200" cy="80" rx="12" ry="42" fill="none" stroke="#b3261e" stroke-width="2.8"/><text x="200" y="30" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="700">S</text><ellipse cx="80" cy="80" rx="12" ry="42" fill="none" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><circle cx="100" cy="62" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="96" y1="62" x2="104" y2="62" stroke="#1c2540" stroke-width="2"/><line x1="100" y1="58" x2="100" y2="66" stroke="#1c2540" stroke-width="2"/><circle cx="124" cy="96" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="120" y1="96" x2="128" y2="96" stroke="#1c2540" stroke-width="2"/><line x1="124" y1="92" x2="124" y2="100" stroke="#1c2540" stroke-width="2"/><circle cx="146" cy="70" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="142" y1="70" x2="150" y2="70" stroke="#1c2540" stroke-width="2"/><line x1="146" y1="66" x2="146" y2="74" stroke="#1c2540" stroke-width="2"/><circle cx="168" cy="100" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="164" y1="100" x2="172" y2="100" stroke="#1c2540" stroke-width="2"/><line x1="168" y1="96" x2="168" y2="104" stroke="#1c2540" stroke-width="2"/><circle cx="180" cy="58" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="176" y1="58" x2="184" y2="58" stroke="#1c2540" stroke-width="2"/><line x1="180" y1="54" x2="180" y2="62" stroke="#1c2540" stroke-width="2"/><circle cx="112" cy="84" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="108" y1="84" x2="116" y2="84" stroke="#1c2540" stroke-width="2"/><line x1="112" y1="80" x2="112" y2="88" stroke="#1c2540" stroke-width="2"/><circle cx="158" cy="84" r="7" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="154" y1="84" x2="162" y2="84" stroke="#1c2540" stroke-width="2"/><line x1="158" y1="80" x2="158" y2="88" stroke="#1c2540" stroke-width="2"/><line x1="224" y1="80" x2="270" y2="80" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ht1)"/><text x="250" y="70" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">v</text><line x1="80" y1="140" x2="200" y2="140" stroke="#8a94ad" stroke-width="2"/><line x1="80" y1="132" x2="80" y2="148" stroke="#8a94ad" stroke-width="2"/><line x1="200" y1="132" x2="200" y2="148" stroke="#8a94ad" stroke-width="2"/><text x="140" y="168" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">v<tspan font-family="KaTeX_Main">Δ</tspan>t</text></svg></div>
+    <div class="ben">
+      <div class="nut"><button class="mo" data-mo="s1">Mở: N</button><button class="mo" data-mo="s2">Mở: Δq</button><button class="mo" data-mo="s3">Mở: I</button></div>
+      <div class="an" id="s1" hidden><p>Số hạt trong trụ: $N=nSv\Delta t$</p></div>
+      <div class="an" id="s2" hidden><p>$\Delta q=Ne=nSv\Delta t\,e$</p></div>
+      <div class="an" id="s3" hidden><div class="fx">$I=Snve$</div><p class="nho">Đông – Nhanh – To: $n$, $v$, $S$ lớn thì $I$ lớn. Mật độ dòng điện:</p><p>$j=I/S=$ <b class="o">$nve$</b> · <b class="o">A/m²</b></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bẫy 1</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·2 · dòng cuối → tr.4 · ô 4·1</span></div>
+  <div class="giua">
+    <p class="hoi">Dòng trong cùng một dây đồng tăng từ $1$ A lên $2$ A. Điều gì đã thay đổi?</p>
+    <ol class="opt lo">
+      <li><b>A.</b> Mật độ electron $n$ tăng gấp đôi</li>
+      <li><b>B.</b> Cả $n$ và $v$ đều tăng $\sqrt2$ lần</li>
+      <li><b>C.</b> Điện tích của mỗi electron tăng gấp đôi</li>
+      <li data-dung><b>D.</b> Tốc độ trôi $v$ tăng gấp đôi, $n$ giữ nguyên</li>
+    </ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>D.</b> Tăng $I$ trong cùng một dây là tăng <b class="o">$v$</b>, không phải tăng <b class="o">$n$</b>.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Ví dụ tính</span><span>phút 20–27</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <p>Dây đồng dân dụng $S=1{,}5\ \text{mm}^2=$ <span class="an-o" data-o="t5"><b>$1{,}5\cdot10^{-6}$</b></span> m²; $n=8{,}5\cdot10^{28}$ m⁻³</p>
+  <p>$Sne=$ <span class="an-o" data-o="t5"><b>$2{,}04\cdot10^{4}$</b></span> C/m · $v=\dfrac{I}{Sne}$</p>
+  <table class="bang">
+    <tr><th>$I$ (A)</th><td>1</td><td>5</td><td>10</td><td>16</td></tr>
+    <tr><th>$v$ (mm/s)</th><td class="ns">0,049</td><td class="ns"><span class="an-o" data-o="t5">0,25</span></td><td class="ns"><span class="an-o" data-o="t5">0,49</span></td><td class="ns"><span class="an-o" data-o="t5">0,78</span></td></tr>
+  </table>
+  <div class="nut"><button class="mo" data-mo="t5">Mở: số</button><button class="mo" data-mo="r5">Mở: rút ra</button></div>
+  <div class="an" id="r5" hidden><p>Ngay ở 16 A electron trôi chưa tới <b class="o">1 mm/s</b>. Đèn sáng ngay vì điện trường lan dọc dây gần tốc độ ánh sáng, mọi electron trong dây cùng trôi một lúc.</p></div>
+</section>
+
+<!-- ================= 6. Trả bài + quay lại + đề 1217 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–29 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="giua">
+    <p class="hoi">1. Cường độ dòng điện đặc trưng cho gì? Công thức, đơn vị?</p>
+    <button class="mo" data-mo="t1">Mở câu 1</button>
+    <div class="an" id="t1" hidden><p>Tác dụng mạnh, yếu của dòng điện · $I=\dfrac{\Delta q}{\Delta t}$ · ampe, $1$ A $=1$ C/s.</p></div>
+    <p class="hoi">5. Viết $I=Snve$, nêu nghĩa và đơn vị từng kí hiệu.</p>
+    <button class="mo" data-mo="t6">Mở câu 5</button>
+    <div class="an" id="t6" hidden><p>$S$ tiết diện (m²) · $n$ mật độ hạt tải (m⁻³) · $v$ tốc độ trôi (m/s) · $e$ điện tích hạt (C).</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6ct">
+  <div class="top"><span class="so">6/6 · Quay lại công tắc</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Dây 1,5 mm², 16 A: electron trôi $0{,}78$ mm/s.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Dưới 1 mm/s. Dây đã đầy electron sẵn, như ống nước đầy: mở vòi là nước ra ngay.</p>
+        <p class="nho">A: tốc độ điện trường lan dọc dây · B: tốc độ âm thanh · D: electron có trôi, đó chính là dòng điện.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.4 ô 4·3 ghi điểm</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1217" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM11 0h1v1h-1zM12 0h1v1h-1zM15 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM17 1h1v1h-1zM18 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM14 2h1v1h-1zM17 2h1v1h-1zM18 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM13 3h1v1h-1zM15 3h1v1h-1zM17 3h1v1h-1zM19 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM11 4h1v1h-1zM13 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM14 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM17 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM27 8h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM12 9h1v1h-1zM16 9h1v1h-1zM20 9h1v1h-1zM24 9h1v1h-1zM25 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM31 9h1v1h-1zM32 9h1v1h-1zM1 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM12 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM20 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM32 10h1v1h-1zM0 11h1v1h-1zM2 11h1v1h-1zM4 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM32 11h1v1h-1zM0 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM15 12h1v1h-1zM19 12h1v1h-1zM21 12h1v1h-1zM26 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM0 13h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM21 13h1v1h-1zM25 13h1v1h-1zM26 13h1v1h-1zM28 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM0 14h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM6 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM7 15h1v1h-1zM11 15h1v1h-1zM12 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM31 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM11 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM31 16h1v1h-1zM3 17h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM13 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM0 18h1v1h-1zM3 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM18 18h1v1h-1zM20 18h1v1h-1zM25 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM32 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM15 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM23 20h1v1h-1zM31 20h1v1h-1zM32 20h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM7 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM18 21h1v1h-1zM21 21h1v1h-1zM26 21h1v1h-1zM30 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM13 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM21 22h1v1h-1zM24 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM4 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM32 23h1v1h-1zM0 24h1v1h-1zM3 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM13 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM10 25h1v1h-1zM12 25h1v1h-1zM14 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM20 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM12 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM19 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM13 28h1v1h-1zM16 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM9 29h1v1h-1zM11 29h1v1h-1zM15 29h1v1h-1zM17 29h1v1h-1zM20 29h1v1h-1zM26 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM12 30h1v1h-1zM18 30h1v1h-1zM21 30h1v1h-1zM28 30h1v1h-1zM29 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM13 31h1v1h-1zM15 31h1v1h-1zM16 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM24 31h1v1h-1zM29 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM19 32h1v1h-1zM21 32h1v1h-1zM23 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM28 32h1v1h-1zM31 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1217</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1217 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 22</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" (nếu chưa viết xong)</li>
+    <li><b>tr.3</b> ô 3·3 dòng "Rút ra" (viết đủ ý)</li>
+    <li><b>tr.4</b> ô 4·1 đọc Bẫy 2, Bẫy 3 · ô 4·2 câu 2, 3, 4, 6 (bạn cùng bàn kiểm)</li>
+    <li><b>tr.5</b> ô 5·1 bài toán mẫu · ô 5·2 · ô 5·3 ghi đề BTVN thầy giao trên web · ô 5·4 thử thách</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 // Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026; Bài tương tự giải vào vở (vo: true), xếp 2 cột bằng <style> riêng (ttHaiCot).
 // Chạy: node scripts/ruot-tap/l11-bai21.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai21.pdf
 //       node scripts/ruot-tap/l11-bai21.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai21/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b21 as H } from './hinh-l11-bai21.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -170,8 +170,8 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('TỰ KIỂM TRA · ĐIỀN BƯỚC · BTVN · THỬ THÁCH')}
-${h3(1, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '5·1')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+${h3(1, 'Đề 1216 (20 câu, cuối tiết)', '5·1')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${h3(2, 'Điền bước còn thiếu: cùng hai tụ, ghép song song vào 12 V', '5·2')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 <div class="ln"><b>Bước 1 (cho sẵn):</b> ${m('C=C_1+C_2=9\\ \\mu\\mathrm F')}; ${m('U_1=U_2=12\\ \\mathrm V')}; ${m('Q_1=C_1U=36\\ \\mu\\mathrm C')}</div>

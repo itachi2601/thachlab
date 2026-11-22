@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tụ điện · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Tụ điện (L11 Bài 21) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục, bản web <code>/dev/tren-lop/l11-tu-dien.html</code>). Trang này không chiếu. Bản thử, chưa chạy lớp ảo.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Chiếu tivi 50 inch:</b> 23 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối, màn nào không đọc được thì ghi lại.</li>
+  <li><b>Ba clip thí nghiệm</b> (cần mạng): màn 2b (tụ nạp/phóng qua LED, 2 lần dừng), 3c (đo Q theo U, 2 lần dừng), 4b (tụ hai tấm nhôm, 3 lần dừng). Mỗi clip bỏ phần mở đầu, chỉ chạy đoạn Tiến hành (9–11 giây) và tự dừng; cột phải hiện số vừa thấy + câu hỏi kế. <b>Enter</b> (Space, bấm clip, nút ▶) = phát tiếp; ↺ xem lại đoạn; lần dừng cuối Enter sang màn sau. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn. Rời màn thì clip tự dừng.</li>
+  <li><b>Thí nghiệm LED làm thật (tuỳ chọn):</b> pin 9 V, tụ hoá 1000 μF – 16 V (đúng cực), LED + điện trở 1 kΩ nối tiếp. Làm thật thì chiếu clip 2b sau để bàn cuối thấy đồ thị dòng. Lúc phóng phải <b>đảo chiều LED</b>, quên đảo thì LED không sáng.</li>
+  <li><b>PhET "Tụ điện: phần cơ bản"</b> (bản tiếng Việt, cần mạng): mở sẵn một tab, chọn màn <b>Điện dung</b>, tích ô "Điện dung" và "Điện tích bản trên". Dùng ở màn 4c (Bẫy 1): kéo thanh pin, số điện dung đứng yên, điện tích đổi.</li>
+  <li>Cuối tiết làm <b>đề 1216 "Kiểm tra nhanh — Bài 21. Tụ điện"</b> (20 câu, 15 phút, mục id 201) trên điện thoại: màn 6/6 có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1216&amp;item=201</code>) và số đề để gõ tay. Thiếu máy thì dùng phiếu giấy dự phòng cuối trang.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi ô (và dòng). Bảng ghép tụ (màn 5c) ẩn sẵn, lớp đoán từng ô rồi mới bấm "Mở bảng".</li>
+  <li>KaTeX tải từ cdn.jsdelivr.net: mở màn chiếu trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đúng &gt; 80% ngay lần đầu: bỏ bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 21 <small>thứ tự lật: tr.1 → tr.2 → tr.3 → tr.4 → tr.1 → (đề) tr.5</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán đèn flash</td><td>0–2</td><td>tr.1 ô 1·2</td><td>khoanh A/B/C + "chắc/không chắc" + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Tụ điện là gì + clip LED</td><td>2–8</td><td>tr.1 ô 1·4 → ô 1·5</td><td>7 + 6 = 13 chỗ ngắn (+ 1 ô đánh dấu "không đi qua")</td></tr>
+<tr><td>3 · Điện dung + clip đo Q–U</td><td>8–13</td><td>tr.2 ô 2·1 → ô 2·2</td><td>11 chỗ + 3 ô quy đổi; cột Q/U 5 ô + 4 chỗ "Rút ra"</td></tr>
+<tr><td>4 · C do cấu tạo + clip tấm nhôm + Bẫy 1</td><td>13–18</td><td>tr.2 ô 2·3 → tr.3 ô 3·3 bẫy 1</td><td>14 chỗ ở ô 2·3 + 2 chỗ bẫy 1</td></tr>
+<tr><td>5 · Năng lượng + ghép tụ + Bẫy 2, 3</td><td>18–25</td><td>tr.3 ô 3·1 → 3·2 → 3·3</td><td>ô 3·1 (trừ dòng Ví dụ) · bảng ghép 8 ô + 2 dòng · bẫy 2, 3</td></tr>
+<tr><td>6 · Bài toán mẫu + trả bài + flash + đề 1216</td><td>25–30, đề 30–45</td><td>tr.4 ô 4·2 → ô 4·1 câu 2, 5 → tr.1 ô 1·3 + tr.3 dòng Ví dụ → đề xong: tr.5 ô 5·1</td><td>3 dòng bảng đọc đề + 5 dòng giải · 3 dòng trả bài · đáp án flash · điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Bài này dày (năm mục II.1–II.5, ba bẫy): ba clip đều ngắn (≈ 1 phút mỗi clip kể cả biểu quyết), PhET chỉ dùng 1 lần ở Bẫy 1. Điểm dừng 3 và 5 nhiều chỗ điền nhất: chiếu xong mới cho chép, đọc to từng dòng. Dòng "Tụ đã tích sẵn" (ô 3·2) và câu 1, 3, 4, 6 của trả bài để về nhà.</p>
+
+<h2>Điểm dừng 1 · Dự đoán đèn flash <small>phút 0–2 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ai từng chụp ảnh có đèn flash rời? Bấm xong nó kêu gì? Trong vài giây đó đèn đang làm gì?"</li>
+  <li>Màn 1 chép y Tập (3 phương án A/B/C, không có D). Không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại". Không nói chữ "tụ" trước khi biểu quyết.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A — hỏi "pin cấp thẳng thì sao phải chờ vài giây mới chụp tiếp được?". Chọn C — bóng đèn không tự sinh năng lượng.</div>
+
+<h2>Điểm dừng 2 · Tụ điện là gì + clip LED <small>phút 2–8 · tr.1 ô 1·4 → ô 1·5</small></h2>
+<ul>
+  <li>Màn 2a (Hình 1 của bài: tụ phẳng nối nguồn + kí hiệu): đọc từng dòng, lớp điền ô 1·4. Nhấn "điện tích của tụ là $Q$ trên <b>một</b> bản, không cộng hai bản".</li>
+  <li><span class="k">Clip 2b:</span> trước khi phát biểu quyết A–D "đóng K, pin vẫn nối mãi, LED…" (đáp án B). Dừng ① (16,1 s): LED đã tắt, đồ thị dòng về 0 dù pin còn nối → hỏi "tháo pin, nối tụ với LED đảo chiều thì LED…?". Dừng ② (21,9 s): LED loé lại → hỏi "không còn pin, điện tích từ đâu ra?".</li>
+  <li>Màn 2c: biểu quyết "vì sao LED tắt hẳn" (D), mở đáp án — 6 chữ gạch chân là 6 chỗ ô 1·5; ô đánh dấu "không đi qua tụ".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (pin hết điện) — nạp tụ tốn rất ít điện của pin, và LED còn loé lại lúc phóng. B (điện tích xuyên qua điện môi) — điện môi là chất cách điện.</div>
+
+<h2>Điểm dừng 3 · Điện dung + đo Q theo U <small>phút 8–13 · tr.2 ô 2·1 → ô 2·2</small></h2>
+<ul>
+  <li>Màn 3a: $C=Q/U$, fara, bảng ước số (3 ô quy đổi trống trong Tập). "1 F rất lớn: tụ thường gặp chỉ cỡ pF đến mF."</li>
+  <li>Màn 3b: hỏi miệng "vỏ ghi 1000 μF – 10 V, đặt 15 V thì sao?" rồi mở. Tụ xoay: nhắc núm dò đài radio.</li>
+  <li><span class="k">Clip 3c:</span> trước khi phát biểu quyết "U càng lớn thì Q/U…" (đáp án C). Dừng ① (14,3 s): 2 V được 980 μC, Q/U = 490 μF. Dừng ② (21,9 s): đủ 5 cặp số → cả lớp chia Q/U điền cột cuối ô 2·2 (chia 4 nhóm bàn, mỗi nhóm 1 hàng, 30 giây).</li>
+  <li>Màn 3d (Hình 2: đồ thị Q–U): biểu quyết "nên báo C bao nhiêu" (C, ≈ 480 μF), mở → lớp điền "trung bình", "sai số chế tạo", 3 chỗ "Rút ra". Hình 2 có sẵn dòng "W = ½QU": nói "điểm dừng 5 quay lại".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> B (lấy 470 μF trên vỏ — số nhà sản xuất, không phải số đo; tụ hoá sai số tới ±20%). D nhầm điện tích (μC) thành điện dung.</div>
+
+<h2>Điểm dừng 4 · C do cấu tạo + tấm nhôm + Bẫy 1 <small>phút 13–18 · tr.2 ô 2·3 → tr.3 ô 3·3</small></h2>
+<ul>
+  <li>Màn 4a: công thức tụ phẳng không cần thuộc hằng số ngay, nhấn "S là phần <b>đối diện</b>", đổi mm, cm² ra m. Dòng $E=U/d$, $U_{\max}=E_{\max}d$ giải thích vì sao vỏ tụ ghi số vôn.</li>
+  <li><span class="k">Clip 4b (tấm nhôm, gốc 354 pF):</span> hỏi trước "tăng d lên 2 mm thì C…?". Dừng ① (13,5 s): 177 pF → biểu quyết A–D "trượt lệch nửa tấm" (đáp án B; câu dự đoán của chính clip). Dừng ② (16,9 s): lệch nửa tấm 177 pF → "chèn tấm nhựa thì C…?". Dừng ③ (19,6 s): bảng 4 số → điền 3 số "≈ … pF" và "Rút ra" ô 2·3. Ô 2·3 ghi gốc ≈ 350 pF (Tập làm tròn), clip đo 354 pF: nói "cỡ 350".</li>
+  <li>Màn 4c (Bẫy 1, tr.3 ô 3·3): biểu quyết "6 V đổi sang 12 V, C…" (B). <span class="k">PhET (1 phút):</span> kéo thanh pin trước cả lớp — số điện dung đứng yên, điện tích bản trên đổi. Rồi mở đáp án, điền 2 chỗ của bẫy 1.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> A (giảm một nửa) — đọc $C=Q/U$ mà giữ $Q$. Clip tấm nhôm: chọn D (về 0) vì "không còn chồng kín" — chỉ phần đối diện mất đi một nửa.</div>
+
+<h2>Điểm dừng 5 · Năng lượng + ghép tụ + Bẫy 2, 3 <small>phút 18–25 · tr.3 ô 3·1 → 3·2 → 3·3</small></h2>
+<ul>
+  <li>Màn 5a (Hình 2 lại): ba dạng $W$, "nhớ ½QU, thay $Q=CU$ ra hai dạng còn lại". Vì sao ½: chỉ tam giác dưới đường thẳng. Dòng "Ví dụ" (tụ flash) của ô 3·1 <b>chưa làm</b> — để màn "Quay lại đèn flash".</li>
+  <li>Màn 5b: biểu quyết "U gấp đôi thì W" (A, 4 lần) → điền "gấp 4 lần" ô 3·1.</li>
+  <li>Màn 5c: bảng ghép tụ ẩn; hỏi từng hàng ("nối tiếp thì cái gì chung?") rồi "Mở bảng". Mẹo: ghép tụ "ngược" ghép điện trở. Nhấn dòng "chỉ đúng khi các tụ chưa tích điện". Dòng "Tụ đã tích sẵn" của ô 3·2: về nhà.</li>
+  <li>Màn 5d (Bẫy 2): biểu quyết 4 μF nối tiếp 12 μF (D, 3 μF) → điền "tụ <b>nhỏ</b> gánh U lớn", $C=3$ μF.</li>
+  <li>Màn 5e (Bẫy 3, hình "giữ gì?" của Tập): hỏi "còn nối nguồn thì cái gì giữ? ngắt nguồn thì?" trước khi biểu quyết (A, tăng gấp đôi).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Bẫy 2: A (16 μF, cộng thẳng), B (8 μF, trung bình), C (4 μF, "bằng tụ nhỏ nhất"). Bẫy 3: B (coi như vẫn nối nguồn), C (cho U đổi cùng chiều C). Màn 5b: B (2 lần, quên $Q$ cũng tăng).</div>
+
+<h2>Điểm dừng 6 · Bài toán mẫu + trả bài + đèn flash + đề 1216 <small>phút 25–30 · đề 30–45 · tr.4 → tr.1 → tr.5</small></h2>
+<ul>
+  <li>Màn 6a (hình bài mẫu của Tập): lớp điền 3 dòng trống của bảng đọc đề (dòng "chưa tích điện" đã in sẵn), bấm "Mở: bảng đọc đề" để so. Màn 6b: cả lớp tự giải 60 giây, mở a), b), rồi "kiểm tra" ($U_1+U_2=12$ V; tụ nhỏ gánh U lớn — nối lại Bẫy 2). Năng lượng ghi cả J và μJ như dòng Tập yêu cầu.</li>
+  <li>Màn 6c: trả bài câu 2 và câu 5 (chữ y Tập ô 4·1). Viết <b>1 phút, chưa mở</b>, rồi mở từng câu cho các em tự sửa bằng bút khác màu. Câu 1, 3, 4, 6 về nhà.</li>
+  <li><span class="k">Màn "Quay lại đèn flash", 1 phút:</span> hỏi "giờ thì linh kiện ở phương án B tên là gì?", mở → B, tính $W\approx6{,}75$ J (lớp điền dòng Ví dụ tr.3 ô 3·1). Lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai". 20 giây đánh dấu ô 1·1 (mục tiêu).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1216 trong 15 phút. Nộp xong ghi ngay vào <b>tr.5 ô 5·1</b>: điểm …/20, câu sai, câu đoán mò.</li>
+  <li>Đọc màn "Về nhà theo Tập" — liệt kê đúng mã ô; ô 5·3 ghi đề BTVN thầy giao trên web (đề, số câu, hạn).</li>
+</ul>
+<div class="sai"><b>Đề 1216 so với phần học trên lớp:</b> chưa đối chiếu từng câu (phiên dựng bản chiếu không đọc được DB). Trước buổi dạy nên xem đề có câu nào chạm phần về nhà (tụ đã tích sẵn ghép song song, $U_{\max}$ của bộ nối tiếp) không.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu tính số, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Tụ ghi “220 μF – 25 V” nối vào nguồn 12 V. Điện tích của tụ: A. $2{,}64$ mC · B. $5{,}5$ mC · C. $18{,}3$ mC · D. $2{,}64$ C</li>
+<li>Tụ 40 μF nạp tới 50 V. Năng lượng của tụ: A. $0{,}05$ J · B. $0{,}1$ J · C. $2\cdot10^{-3}$ J · D. $1\cdot10^{-3}$ J</li>
+<li>Hai tụ 6 μF và 3 μF chưa tích điện, ghép nối tiếp vào nguồn 18 V. Hiệu điện thế trên tụ 6 μF: A. $6$ V · B. $12$ V · C. $9$ V · D. $18$ V</li>
+<li>Tụ phẳng không khí, phần đối diện $0{,}02$ m², hai bản cách 1 mm. Điện dung: A. $177$ pF · B. $0{,}177$ pF · C. $354$ pF · D. $2{,}22$ nF</li>
+<li>Tụ 5 μF nạp tới 20 V rồi ngắt khỏi nguồn, kéo hai bản ra xa gấp đôi. Hiệu điện thế lúc sau: A. $40$ V · B. $20$ V · C. $10$ V · D. $80$ V</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$Q=CU=220\cdot12=2640$ μC $=2{,}64$ mC</td><td>B: lấy 25 V trên vỏ · C: chia $C/U$ · D: quên μ</td></tr>
+<tr><td>2</td><td>A</td><td>$W=\tfrac12\cdot40\cdot10^{-6}\cdot50^2=0{,}05$ J</td><td>B: quên ½ · C: lấy $Q=2\cdot10^{-3}$ C làm W · D: quên bình phương U</td></tr>
+<tr><td>3</td><td>A</td><td>$C=2$ μF, $Q=36$ μC, $U_1=36/6=6$ V</td><td>B: nhầm tụ · C: chia đều · D: coi như song song</td></tr>
+<tr><td>4</td><td>A</td><td>$C=\dfrac{0{,}02}{9\cdot10^9\cdot4\pi\cdot10^{-3}}\approx1{,}77\cdot10^{-10}$ F</td><td>B: không đổi mm ra m · C: nhân đôi · D: quên $4\pi$</td></tr>
+<tr><td>5</td><td>A</td><td>Ngắt nguồn: $Q=100$ μC giữ; $C=2{,}5$ μF; $U=40$ V</td><td>B: coi như còn nối nguồn · C: U đổi cùng chiều C · D: bình phương nhầm</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 3b (vỏ tụ — Tập về nhà); clip 3c chỉ chiếu tới dừng ② rồi đọc bảng ở màn 3d; bỏ PhET ở màn 4c (biểu quyết rồi mở luôn); bài toán mẫu chỉ làm a), b) về nhà. Không cắt giờ làm đề 1216.</li>
+  <li>Dư: hỏi miệng thử sức đổi số (ô 5·2: 2 μF và 6 μF nối tiếp 16 V, $U_1=12$ V); hoặc ví dụ tụ đã tích sẵn ghép song song (ô 3·2).</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình (C1, C2, "giữ gì?", "loé") có đọc được không.</li>
+  <li>Ba clip: dừng có đúng chỗ, lớp có kịp nhìn số trước khi dừng không; clip nào thừa.</li>
+  <li>Tỉ lệ đúng lần đầu ở 6 câu biểu quyết (2c, 3d, 4c, 5b, 5d, 5e); điểm dừng 5 có vượt 7 phút không.</li>
+  <li>Đề 1216: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+</ul>
+</body>
+</html>
