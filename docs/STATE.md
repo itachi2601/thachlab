@@ -12,7 +12,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - **Điểm học phần CNC (14/11)**: `20261114120000_cnc_diem_hoc_phan` ĐÃ CHẠY (bảng `cnc_grades`, RLS SV chỉ đọc dòng mình); 28 SV lớp 10 đã nạp điểm Tiện + gửi thông báo trỏ `/lop-hoc/cnc/bang-diem/`. Trang bảng điểm ĐÃ DEPLOY 18/11 (thachlab.id.vn/lop-hoc/cnc/bang-diem/ trả 200). Điểm Phay chưa có (nạp bằng `scripts/gui-diem-thi-tien-cnc.mts` làm mẫu, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
-- L11 5 đề 638/639/658/693/701: KHÔNG cần chạy `20261006130000_gan_lai_chu_de_5_de_l11` nữa — kiểm chỉ đọc 22/11 (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu đề = bank = ánh xạ. 658 câu 18 thầy chốt 22/11 giữ "Đọc đồ thị li độ – thời gian". Treo chờ thầy: 11 câu chủ đề rỗng ngoài CT (693 câu 5, 8, 9, 14, 15, 18, 26; 701 câu 8, 11, 26, 27).
+- L11 5 đề 638/639/658/693/701: KHÔNG cần chạy `20261006130000_gan_lai_chu_de_5_de_l11` (kiểm 22/11: 126/129 khớp). 22/11 23h thầy chốt bỏ 11 câu chủ đề rỗng ngoài CT: ĐÃ BỎ khỏi đề 693 (33→26) và 701 (28→24), ẩn 10 dòng bank; sao lưu `bk_bo11cau_20261122_{exams,bank}` (`scripts/sql/bo-11-cau-ngoai-ct-693-701.sql`). Đề cũ 1227 đã ẩn.
 - L11 đề 701 câu 16, 28: có dòng bank 1248678/1248701 (đúng chủ đề) nhưng hash lệch bản trong đề (đề đã sửa định dạng sau) → lưu lại đề 701 một lần ở /quan-tri/sua-de là `sync_exam_to_bank` cập nhật đúng dòng đó.
 - **Vá bảo mật 11/11**: 3 migration ĐÃ CHẠY (bước 2 lúc 12/11 06:40; `20261112070000` kiểm đầu vào điểm CNC lúc 12/11 08:15), client đã deploy; 12/11 đã bấm thử bằng tài khoản admin (sửa đề THPT/CTTC, `/lop-hoc/cnc`, dashboard GV: mọi request 200). Chưa thử bằng tài khoản HS/TA thật; chưa bấm nút nhắc làm bài. Script đăng nhập tài khoản thường mà đọc `exams.questions` phải đổi sang `exams_staff`.
 - **Quiz trắc nghiệm CNC chấm ở server (12/11)**: cả 2 bước ĐÃ CHẠY (bước 2 lúc 08:52), client deploy 12/11 ~08:50 (bản 11/11 19:01 = commit 874bef7f6 + 6 file vá bảo mật). Chưa thử bằng tài khoản SV thật (admin không ghi điểm) → buổi CNC tới xem `cnc_learning_records` có dòng mới của 15 bài có ngân hàng. Đáp án vẫn nằm trong `get_cnc_quiz_banks` (quiz cho xem đáp án và làm lại không giới hạn).
@@ -53,13 +53,13 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 
 ## Nội dung đang treo
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
-- 5/11 · Giải cùng hình + 7/11 BTM "một dạng — một hình": XONG, đã đăng DB (L12/L11 8/11, L10+KHTN9 8/11, Đ9 KHTN9+HSG9 25 bài: kiểm DB 14/11 số `cong_cu.de` = repo, không còn `<figure`; dạng DB nhiều hơn repo 1 = mục tự luận, đúng ý). Còn chờ thầy: 3 câu F (131 họ hình công, máy biến áp 152·D5, phân thức 165·D5) + 42·D2 nhãn X/Y; nhánh `claude/*` cũ chưa vào main chờ thầy chỉ.
+- 5/11 · Giải cùng hình + 7/11 BTM "một dạng — một hình": XONG, đã đăng DB (L12/L11 8/11, L10+KHTN9 8/11, Đ9 KHTN9+HSG9 25 bài: kiểm DB 14/11 số `cong_cu.de` = repo, không còn `<figure`; dạng DB nhiều hơn repo 1 = mục tự luận, đúng ý). 3 câu F (131, 152·D5, 165·D5) + 42·D2: thầy chốt 22/11 BỎ hình, giữ dạng bằng chữ (không làm thêm).
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
 - Motion graphic chặng A: code + DB xong (23/23 hộp khung L12 trên DB, kiểm 6/11); chờ có lượt chọn đầu tiên ở `lesson_clip_choices` để đo % đúng (mục 5) — `docs/KE-HOACH-MOTION-GRAPHIC.md`.
 - Motion graphic chặng D: ĐÃ DEPLOY 17/11 (chi tiết STATE-archive); chưa xem 375px bằng tài khoản HS, chưa có sự kiện đo phát/xem (`docs/KE-HOACH-MOTION-GRAPHIC.md`).
 - Motion graphic chặng C: ĐÃ DEPLOY 1/11 (chi tiết STATE-archive); đo 15/11 bằng `scripts/sql/do-clip-bay-phu-dao.sql`.
-- 23 đề chưa gán lớp: `scripts/logs/gan-lop-de-khong-suy-duoc-*.json`; 16 câu L10 YCCĐ NONE chờ thầy.
+- 22/11 23h: đề chưa gán lớp 362 → 16 (còn 16 đề CNC không thuộc lớp nào trong `classes`): 146 suy từ bài học + 200 theo đề sinh đôi/môn (`gan-lop-de-song-sinh.mts`, undo bằng file `scripts/logs/gan-lop-*`). 16 câu L10 YCCĐ NONE vẫn chờ.
 - Bài tập mẫu L12 soạn lại 12 bài (9, 11, 13–19, 125–127); kế hoạch 42 bài L10/L11 chờ duyệt.
 - Bài 11 L12 Thực hành chưa ghi DB; 4 bài L12 sửa đường sức — kiểm `so-file-voi-db.mts` trước.
 - Trùng slug lesson 126: `content/lesson-samples/l12-ung-dung-cam-ung/` là bản cũ, đừng đăng từ đó.
