@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phân hạch, nhiệt hạch · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Phân hạch, nhiệt hạch (L12 · Tập bài 19 · web Bài 16) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử. Tập in số bài <b>19</b>, trang <b>25–29</b> (đánh số liền cả quyển chương 4), trang web là "Bài 16" — đọc to "Tập bài 19, trang 25" để học sinh lật đúng. Mã ô trên Tập cũng theo số trang quyển: ô 25·2, 26·3…</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1193 "Kiểm tra nhanh — Bài 16. Phản ứng phân hạch, phản ứng nhiệt hạch và ứng dụng"</b> (19 câu: 13 câu A–D + 6 câu Đúng/Sai, 15 phút, mục Lý thuyết id 181) trên điện thoại: màn 6d có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1193&amp;item=181</code>) và số đề để gõ tay ở trang Quét mã. Thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 24 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn; nhãn trong hình ≥ 0,7 chữ thường. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang · ô · dòng.</li>
+  <li><b>Clip "Che dần bàn ghim"</b> (màn 4b, cần mạng, 42 giây chiếu): mô hình thanh điều khiển. Clip tự dừng 3 lần: (1) dự đoán A–D "che 30 % rồi 60 % thì số ghim đổ ra sao?"; (2) bảng số ghim đổ 36/11/4 → "vì sao giảm mạnh hơn phần bị che?"; (3) "Thanh điều khiển làm nguội lò — đúng hay sai?". Enter phát tiếp, ↺ xem lại đoạn. Cảnh cuối clip (ghim cách 3 cm) không chiếu vì cần bảng bàn ghim trên web. Trước giờ tới màn bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li>Bài không có PhET. Clip bàn ghim thứ nhất (khoảng cách ghim ↔ $k$) và clip bẫy chuột + bóng bàn chỉ có trên web, học sinh xem khi ôn.</li>
+  <li>Hình nhà máy trên Tập tr.26 (ảnh lò nước áp lực) có thể in lỗi nếu máy in không có tệp ảnh; màn chiếu dùng sơ đồ khối Lò → Trao đổi nhiệt → Tua bin → Máy phát.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Câu 2–7 (màn chiếu) không in đề trong Tập: học sinh ghi vào bảng ô 27·3 "Kết quả tự kiểm tra" (tr.27) cột "Em chọn" + "Chắc?" trước khi mở, cột "Đúng?" sau khi mở. Câu 1 là Tự kiểm tra 1 in sẵn ở ô 25·4.</li>
+</ul>
+
+<h2>Đi theo Tập bài 19 <small>thứ tự lật: tr.25 → tr.27 (câu 2) → tr.26 ↔ tr.27 → tr.28 → tr.27 → tr.25</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán: nhà máy không lửa</td><td>0–3</td><td>tr.25 ô 25·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Phản ứng hạt nhân, bảo toàn, $W$ + câu 2</td><td>3–9</td><td>ô 25·4 → 25·5 → tr.27 ô 27·3 câu 2</td><td>9 chỗ ô 25·4 + 2 chỗ Tự kiểm tra 1 + 7 chỗ ô 25·5 + câu 2 = 19</td></tr>
+<tr><td>3 · Phân hạch, dây chuyền + câu 3, 4</td><td>9–15</td><td>tr.26 ô 26·1, 26·2 → ô 27·3 câu 3, 4</td><td>9 chỗ ô 26·1 + 6 chỗ ô 26·2 + 2 câu = 17</td></tr>
+<tr><td>4 · Lò phản ứng + clip bàn ghim</td><td>15–21</td><td>tr.26 ô 26·3</td><td>6 chỗ + 3 lần dừng clip (nói miệng)</td></tr>
+<tr><td>5 · Nhiệt hạch + câu 5, 6 + bài toán mẫu + câu 7</td><td>21–27</td><td>ô 26·4 → ô 27·3 câu 5, 6 → tr.28 phân tích đề, Giải a)–c) → câu 7 (ô 27·3 + tr.28 "Mở rộng" bước 2)</td><td>6 chỗ + 6 ô bảng phân tích + 3 dòng giải + 3 câu = 18</td></tr>
+<tr><td>6 · Bẫy, trả bài, quay lại dự đoán, đề 1193</td><td>27–30, đề 30–45</td><td>tr.27 ô 27·1, 27·2 câu 3, 4 → tr.25 ô 25·3, 25·1</td><td>tick bẫy + 2 câu trả bài + đáp án dự đoán, đúng/sai + điểm đề</td></tr>
+</tbody>
+</table>
+<p>Điểm dừng 5 dày nhất: nhiệt hạch chỉ 2 phút (chép nhanh, không giảng Mặt trời sâu — thử thách ★★★ để về nhà). Bài toán mẫu: a) đã có từ Tự kiểm tra 1, lớp làm b) 1 phút, thầy làm mẫu c), d) đọc kết quả. Thiếu giờ: d) và bảng phân tích đề chép ở nhà.</p>
+
+<h2>Điểm dừng 1 · Dự đoán <small>phút 0–3 · tr.25 ô 25·2</small></h2>
+<ul>
+  <li>Gợi mở: "Đêm cả khu phố sáng đèn, điện từ một nhà máy không đốt than, không đốt khí: trong lò chỉ có những thanh urani ngâm trong nước. Không có lửa, nhiệt lấy từ đâu?" Chỉ sơ đồ khối trên màn: lò → trao đổi nhiệt → tua bin → máy phát.</li>
+  <li>Màn 1 không có ô đáp án: khoanh vào Tập, chắc/không chắc, một dòng "Vì sao". Ghi tỉ lệ lên góc bảng, nói "cuối giờ quay lại" (màn 6c, ô 25·3).</li>
+  <li>Câu và 4 phương án chép y chữ Tập. Hình phân hạch trong Tập (cạnh câu hỏi) gợi ý B — không chỉ vào hình đó; màn chiếu dùng sơ đồ nhà máy để không lộ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (phản ứng hoá học) vì quen "đốt nhiên liệu". Hỏi "đốt cháy đụng tới phần nào của nguyên tử?" (để mở, chưa chốt).</div>
+
+<h2>Điểm dừng 2 · Phản ứng hạt nhân, bảo toàn, năng lượng <small>phút 3–9 · tr.25 ô 25·4, 25·5 → tr.27</small></h2>
+<ul>
+  <li>Màn 2a: tự phát (phóng xạ) / kích thích (va chạm hạt khác). Bốn đại lượng bảo toàn; <b>không</b> bảo toàn khối lượng nghỉ. Hai phương trình $A$, $Z$. Đề 1193 câu 1, 2, 8 hỏi đúng màn này.</li>
+  <li>Màn 2b: Tự kiểm tra 1 — 30 giây tự làm, mở. Nhấn "cộng cả nơtron bắn vào ở vế trái" (đề 1193 câu 13 hỏi lại y phương trình).</li>
+  <li>Màn 2c: $W=(m_A+m_B-m_C-m_D)c^2$, $931{,}5$, $1{,}6\cdot10^{-13}$; "trước nặng hơn thì toả". Điền 7 chỗ ô 25·5.</li>
+  <li>Màn 2d: Câu 2 — lật tr.27 ô 27·3 ghi lần đầu; nói rõ "bảng này dùng cho câu 2–7 cả buổi".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> "khối lượng được bảo toàn" (bẫy 2, đề câu 2, 16b); đọc ngược dấu $W$ (câu 2 A/D); quên nơtron vế trái ($x=2$).</div>
+
+<h2>Điểm dừng 3 · Phân hạch, phản ứng dây chuyền <small>phút 9–15 · tr.26 ô 26·1, 26·2 → tr.27</small></h2>
+<ul>
+  <li>Màn 3a: hình U-235 vỡ thành Ba + Kr + 3n (cùng hình Tập tr.25). 9 chỗ điền. Ô "một phân hạch cỡ … MeV": điền <b>200</b> (trung bình); phản ứng trong hình là 173 MeV — sẽ tính ở bài toán mẫu.</li>
+  <li>Màn 3b: Câu 3 (vì sao toả).</li>
+  <li>Màn 3c: Hình 3 của bài (số nơtron theo thế hệ, $k$ = 1,5 / 1 / 0,5) + 6 chỗ ô 26·2. Hỏi "đường nào là lò đang chạy ổn định?".</li>
+  <li>Màn 3d: Câu 4 (5 000; 4 000; 3 200 → $k=0{,}8$). Nói thêm "$k$ so với 1, không so với 0" — đề 1193 câu 18 hỏi $k=0{,}9$ và $k=1{,}002$.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chia ngược ($k=1{,}25$); nghĩ "giảm đều" là $k=1$; coi $k=1{,}002$ như $k=1$ (đề câu 18d).</div>
+
+<h2>Điểm dừng 4 · Lò phản ứng + clip bàn ghim <small>phút 15–21 · tr.26 ô 26·3</small></h2>
+<ul>
+  <li>Màn 4a: sơ đồ khối + 6 chỗ ô 26·3 (hấp thụ, giảm, tăng, 1, bộ trao đổi nhiệt, tua bin). Hỏi trước khi mở clip: "muốn tắt lò thì làm gì với thanh điều khiển?"</li>
+  <li>Màn 4b clip (≈ 3 phút kể cả dừng). Dừng 1: biểu quyết A–D (đáp án C), không ghi vào Tập. Dừng 2: bảng 36/11/4 — gọi 1 em giải thích "ghim bị che còn cắt nhánh lan tiếp". Dừng 3: "thanh điều khiển làm nguội lò" — sai. Kết: đẩy vào $k$ giảm, kéo ra $k$ tăng, giữ $k=1$. Cảnh "Câu nào sai? … $k$ so với 1" chạy giữa dừng 3 và cuối: đọc to "k so với 1".</li>
+  <li>Hỏi miệng (theo web, mục "Nghĩ tiếp"): "rút hết thanh ra thì sao?" → $k&gt;1$, công suất tăng vọt (đề 1193 câu 15a).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ thanh điều khiển làm nguội lò; nghĩ rút thanh ra thì lò tắt (đề câu 15a); nghĩ nhiệt do urani cháy (câu 15b).</div>
+
+<h2>Điểm dừng 5 · Nhiệt hạch, bài toán mẫu <small>phút 21–27 · tr.26 ô 26·4 → tr.27 → tr.28</small></h2>
+<ul>
+  <li>Màn 5a: D + T → He + n (cùng hình Tập). 6 chỗ ô 26·4. Màn 5b: Hình 4 của bài (chu trình p–p, Mặt trời) — 20 giây, chỉ "Mặt trời là lò nhiệt hạch tự nhiên"; câu "lõi chỉ 15 triệu K vì sao vẫn cháy" để thử thách ★★★ tr.29.</li>
+  <li>Màn 5c Câu 5 (vì sao cần $10^8$ K: thắng lực đẩy giữa hai hạt nhân cùng dấu). Màn 5d Câu 6 (phân hạch ↔ nhiệt hạch) — đề 1193 câu 14 hỏi Đ/S cùng ý.</li>
+  <li>Màn 5e: lật tr.28, đọc đề; dòng 1 bảng phân tích in sẵn; lớp nói miệng 3 dòng còn lại rồi mở. Màn 5f: a) chép từ Tự kiểm tra 1; lớp tự làm b) 1 phút ($\Delta m=0{,}1859$ u, $W\approx173$ MeV); mở c) d) và giải thích "1 g urani ≈ 2,6 tấn than".</li>
+  <li>Màn 5g: Câu 7 (200 MeV → $3{,}1\cdot10^{10}$ phân hạch/J) — ghi ô 27·3 và dòng "Bước 2" của "Mở rộng" tr.28 (Tập tr.29 cũng có dòng "Câu 7" trong ô thử thách: chép số vào đó khi về nhà).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> làm tròn khối lượng sớm (ra $W=0$); quên $3m_n$ ở vế sau (đề câu 19d); chia cho $1{,}6\cdot10^{-13}$ khi đổi MeV → J (câu 19a, câu 7 B).</div>
+
+<h2>Điểm dừng 6 · Bẫy, trả bài, quay lại, đề 1193 <small>phút 27–30 · 30–45 làm đề · tr.27 → tr.25 ô 25·3</small></h2>
+<ul>
+  <li>Màn 6a (20 giây): ba bẫy ô 27·1 in sẵn — tick bẫy mình từng sập. Bẫy 1 (U-235 không tự vỡ như phóng xạ) là đề 1193 câu 6: đọc to "phân hạch cần nơtron, phóng xạ thì tự phát".</li>
+  <li>Màn 6b: trả bài câu 3, 4 của ô 27·2 (phân hạch, $k$ — hai nhóm đề hỏi nhiều). Viết 1 phút, rồi mở để tự sửa bằng bút khác màu. Câu 1, 2, 5, 6 về nhà.</li>
+  <li>Màn 6c "Quay lại nhà máy" (1 phút): mở đáp án B. Lật tr.25 ô 25·3: ghi đáp án, đúng/sai, dòng "điều em hiểu sai". 20 giây đánh dấu ô 25·1.</li>
+  <li>Chiếu mã QR (màn 6d), làm đề 1193 trong 15 phút. Tập trang 25–29 <b>không có ô ghi điểm đề cuối tiết</b>: ghi "Đề 1193: …/19" vào lề cạnh ô 27·3.</li>
+  <li>Đọc màn "Về nhà theo Tập bài 19" — ô Đề BTVN (tr.29) ghi đề thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1193 so với phần học trên lớp:</b>
+<ul>
+  <li>Đã dạy trực tiếp: câu 1, 2, 8 (màn 2a), 7, 9, 10, 17 (màn 2c + câu 2) ở điểm dừng 2; câu 3 (màn 3a), 11, 18a–c (màn 3c, câu 4) ở điểm dừng 3; câu 5, 15 (màn 4a + clip) ở điểm dừng 4; câu 4, 14 (màn 5a, câu 5, 6), 19c–d (bài mẫu b) ở điểm dừng 5; câu 6 (bẫy 1) ở điểm dừng 6.</li>
+  <li>Hỏi lại đúng tình huống đã chữa (đo "nhớ lại"): câu 13 (= Tự kiểm tra 1), câu 19 (phản ứng của bài mẫu).</li>
+  <li>Chuyển sang tình huống mới: câu 12 ($\Delta m$ gấp đôi → $W$ gấp đôi, chưa hỏi trên lớp); câu 16 (bảo toàn $A$, $Z$ cho D + T — trên lớp chỉ làm với U-235); câu 18d ($k=1{,}002$ — chỉ có câu "k so với 1" trong clip).</li>
+  <li>Chỉ có trên web: câu 19b (độ hụt khối của phản ứng ≠ của một hạt nhân) — nói miệng một câu ở màn 5f; bảng phân rã ↔ phân hạch của câu 6.</li>
+</ul></div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · $1\ \mathrm{u}=931{,}5\ \mathrm{MeV}/c^2$ · $1\ \mathrm{MeV}=1{,}6\cdot10^{-13}$ J</small></h2>
+<ol>
+<li>${}^{1}_{0}\mathrm{n}+{}^{235}_{92}\mathrm{U}\to{}^{141}_{55}\mathrm{Cs}+{}^{93}_{37}\mathrm{Rb}+x\,{}^{1}_{0}\mathrm{n}$. Giá trị $x$: A. $1$ · B. $2$ · C. $3$ · D. $4$</li>
+<li>Ba thế hệ nơtron: 2 000; 2 400; 2 880. A. $k=1{,}2$, tăng nhanh · B. $k=0{,}83$, tắt dần · C. $k=1$, tự duy trì · D. $k=0{,}2$, tăng nhanh</li>
+<li>Một phản ứng có độ hụt khối $\Delta m=0{,}02$ u. Năng lượng toả ra: A. $18{,}6$ MeV · B. $1{,}86$ MeV · C. $186$ MeV · D. $18{,}6$ J</li>
+<li>Tổng khối lượng nghỉ sau phản ứng lớn hơn trước $0{,}0013$ u. Phản ứng: A. toả $1{,}21$ MeV · B. thu $1{,}21$ MeV · C. toả $0{,}0013$ MeV · D. không toả, không thu</li>
+<li>Mỗi phân hạch toả 200 MeV. Số phân hạch để toả $3{,}2$ J: A. $1{,}0\cdot10^{11}$ · B. $1{,}0\cdot10^{14}$ · C. $2{,}0\cdot10^{13}$ · D. $6{,}4\cdot10^{-10}$</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>$1+235=141+93+x$ ⇒ $x=2$ (kiểm $Z$: $92=55+37$)</td><td>A: quên nơtron vế trái · C, D: nhớ máy móc "3 nơtron"</td></tr>
+<tr><td>2</td><td>A</td><td>$2\,400/2\,000=2\,880/2\,400=1{,}2&gt;1$</td><td>B: chia ngược · C: thấy tăng đều · D: lấy phần tăng $400/2\,000$</td></tr>
+<tr><td>3</td><td>A</td><td>$0{,}02\times931{,}5\approx18{,}6$ MeV</td><td>B, C: lệch dấu phẩy · D: nhầm đơn vị</td></tr>
+<tr><td>4</td><td>B</td><td>sau nặng hơn ⇒ $W&lt;0$, $|W|=0{,}0013\times931{,}5\approx1{,}21$ MeV</td><td>A: đọc ngược dấu · C: quên nhân 931,5 · D: "khối lượng bảo toàn"</td></tr>
+<tr><td>5</td><td>A</td><td>$200\cdot1{,}6\cdot10^{-13}=3{,}2\cdot10^{-11}$ J; $3{,}2/3{,}2\cdot10^{-11}=10^{11}$</td><td>B: lấy 1 MeV $=1{,}6\cdot10^{-16}$ J · C: quên nhân 200 · D: nhân thay vì chia</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 5b (Mặt trời); bỏ dừng 3 của clip (bấm phát tiếp ngay); bài toán mẫu chỉ giữ b), c) d) đọc kết quả, bảng phân tích đề chép ở nhà; trả bài chỉ câu 4. Không cắt giờ làm đề 1193.</li>
+  <li>Dư: thử thách ★★ tr.29 ("vì sao giữ $k=1$ mà không để $k$ lớn hơn một chút?"); hoặc so 1 g U-235 (2,6 tấn than) với 1 g đơteri ở Dạng 4 bài tập mẫu.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong Hình 3 (màn 3c) và Hình 4 (màn 5b) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu câu dự đoán (ô 25·2) và dừng 1 của clip (C).</li>
+  <li>Đề 1193: điểm trung bình lớp, câu sai nhiều nhất (dự kiến 12, 16, 18d, 19b), số em chưa nộp kịp.</li>
+  <li>Điểm dừng 4 (clip) và 5 có vượt mốc phút không.</li>
+</ul>
+</body>
+</html>
