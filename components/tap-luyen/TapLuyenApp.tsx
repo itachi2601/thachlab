@@ -1,11 +1,11 @@
 "use client";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { BarChart3, ChevronDown, CloudOff, Dumbbell, History, Play, Ruler, Trophy } from "lucide-react";
+import { BarChart3, ChevronDown, CloudOff, Dumbbell, History, Lock, Play, Ruler, Trophy } from "lucide-react";
 import { exerciseById, programFor, weeklySets, type Program, type Routine } from "@/lib/tap-luyen/chuong-trinh";
 import { useAuth } from "@/components/auth/AuthProvider";
 import {
   bestCountHistory, bestE1rmHistory, deleteWorkout, e1rm, fetchWorkouts, flushQueue, fmtKg, lastSetsOf, loadDraft, newId, pendingCount,
-  saveDraft, saveWorkout, setTapLuyenUser, weekPlan, workoutStats, type Draft, type LoggedExercise, type Workout,
+  isLocalOnly, saveDraft, saveWorkout, setTapLuyenUser, weekPlan, workoutStats, type Draft, type LoggedExercise, type Workout,
 } from "@/lib/tap-luyen/store";
 import WorkoutLogger from "./WorkoutLogger";
 import SoDo from "./SoDo";
@@ -144,6 +144,12 @@ export default function TapLuyenApp() {
   return (
     <>
       <TabBar tabs={tabs} tab={tab} setTab={setTab} live={!!draft} />
+      {isLocalOnly() && (
+        <p className="mb-3 flex items-start gap-2 rounded-xl border border-ok/40 px-3 py-2 text-sm text-ink">
+          <Lock size={16} className="mt-0.5 shrink-0 text-ok" />
+          <span><b>Không thu thập dữ liệu của em.</b> Các buổi tập chỉ lưu trên trình duyệt của máy này, không gửi lên máy chủ, thầy cô không xem được. Đổi máy hoặc xoá dữ liệu trình duyệt thì lịch sử mất.</span>
+        </p>
+      )}
       {(offline || pending > 0) && (
         <p className="mb-3 flex items-start gap-2 rounded-xl border border-warn/40 bg-warn/10 px-3 py-2 text-sm text-ink">
           <CloudOff size={16} className="mt-0.5 shrink-0 text-warn" />
