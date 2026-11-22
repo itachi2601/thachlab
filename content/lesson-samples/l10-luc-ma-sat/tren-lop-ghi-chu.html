@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lực ma sát · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Lực ma sát (L10 Bài 18) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa chạy lớp ảo.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Dụng cụ (nếu có, làm thật trước clip):</b> hộp gỗ (hộp bút gỗ, khúc gỗ) có móc, lực kế 5 N chia độ 0,1 N, hai bút chì tròn, một tấm ván dài khoảng 1 m + thước. Không có dụng cụ thì hai clip là đủ — tấm ván (điểm dừng 4) dùng số đo in sẵn trong Tập.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và hai clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn; không có mạng thì công thức hiện dạng ký hiệu đô-la thô.</li>
+  <li>Cuối tiết làm <b>đề 1239 "Kiểm tra nhanh — Bài 18. Lực ma sát"</b> (20 câu, 15 phút, mục Lý thuyết id 123) trên điện thoại: màn cuối có mã QR cao 62% màn (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1239&amp;item=123</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Tập chưa có ô ghi điểm đề 1239</b> (ô 4·2 là bảng 6 câu tự kiểm tra chiếu trên lớp). Tạm thời: nộp xong ghi "Đề 1239: …/20, câu sai …" vào lề dưới ô 4·2.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 22 màn, mỗi màn một ý, một cột. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"); nhãn trong hình khoảng 0,75–0,85 cỡ chữ thường. Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại để chỉnh.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang, ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Hai clip thí nghiệm</b> (màn 2b kéo hộp gỗ, màn 3b trượt hay lăn; cần mạng): clip bên trái cao hết màn, cột phải hiện chữ to. Mỗi clip bỏ phần mở đầu, chỉ chạy đoạn đo, <b>tự dừng</b> ở điểm có câu hỏi (2b: 1 lần + cuối; 3b: 2 lần + cuối). <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Clip không chiếu phần Kết quả/Bẫy của nó — các màn sau đã làm việc đó. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn. Rời màn thì clip tự dừng. Clip thứ ba của bài (nâng dần tấm ván) không đưa vào: tối đa hai clip một tiết, số đo tấm ván đã in trong Tập.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Bốn câu Câu 1, 2, 3, 5 (đúng số câu "Tự kiểm tra ngay" của bài web) ghi vào bảng tr.4 ô 4·2: Em chọn · Chắc? · Đúng?. Câu 4, 6 về nhà.</li>
+</ul>
+
+<h2>Đi theo Tập bài 18 <small>thứ tự lật: tr.1 → tr.4 (Câu 3) → tr.2 → tr.3 → tr.4 → tr.3 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán thùng nước</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án + chắc/không chắc + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Ma sát nghỉ + clip kéo hộp + Bẫy 1</td><td>3–10</td><td>tr.1 ô 1·4 dòng 1–3, đọc đồ thị, ví dụ → tr.4 ô 4·2 Câu 3</td><td>5 + 4 + 2 = 11 chỗ + Câu 3</td></tr>
+<tr><td>3 · Ma sát trượt, lăn + clip + đo $\mu$</td><td>10–17</td><td>tr.2 ô 2·1, 2·2, 2·3 (trừ dòng "kém tin cậy") · tr.3 ô 3·2 dòng 1 · tr.4 ô 4·2 Câu 1</td><td>9 + 2 + 5 + 2 = 18 chỗ + Câu 1</td></tr>
+<tr><td>4 · Áp lực $N$ + Bẫy 2 + tấm ván</td><td>17–21</td><td>tr.2 ô 2·4 → tr.4 ô 4·2 Câu 2 → tr.3 ô 3·1</td><td>4 + 4 = 8 chỗ + Câu 2</td></tr>
+<tr><td>5 · Bẫy 3 + bài toán mẫu</td><td>21–27</td><td>tr.4 ô 4·1, ô 4·2 Câu 5, ô 4·3 (phân tích đề + Giải)</td><td>4 dòng bảng + 4 dòng giải = 8 + Câu 5</td></tr>
+<tr><td>6 · Trả bài + thùng nước + đề 1239</td><td>27–30, đề 30–45</td><td>tr.3 ô 3·3 câu 1, 4 → tr.1 ô 1·3, 1·1 → đề xong: ghi điểm</td><td>2 câu trả bài + đáp án thùng nước, đúng/sai + đánh dấu mục tiêu + điểm đề</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 3 dày nhất (18 chỗ, phần lớn là từ ngắn): chiếu xong mới cho chép, đọc to từng dòng. Bảng đo $\mu$ (màn 3d): cả lớp tính hàng đầu, chia ba dãy tính ba hàng còn lại (20 giây), rồi mới mở. Thiếu giờ ở điểm dừng 3 thì để ô 2·3 về nhà (giữ dòng "$\mu\approx0{,}30$" vì màn tấm ván cần để so).</p>
+
+<h2>Điểm dừng 1 · Dự đoán thùng nước <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ở nhà các em đẩy tủ, đẩy thùng nước bao giờ chưa? Đẩy nhẹ không nhúc nhích, đẩy mạnh dần tới lúc nó bật ra." Màn 1a chỉ có hình và tình huống; màn 1b là câu hỏi chép y Tập.</li>
+  <li>Khoanh vào Tập, đánh dấu chắc/không chắc, viết một dòng "Vì sao". Màn 1b không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (màn "Quay lại thùng nước", ô 1·3).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (chưa chuyển động thì không có ma sát) — hỏi lại "vậy lực 50 N đi đâu?". Chọn C (ma sát của sàn cố định) — nhầm với mức cực đại. Chọn D (ma sát phải thắng lực đẩy thì thùng mới yên) — hỏi "ma sát lớn hơn thì thùng lùi về phía An à?".</div>
+
+<h2>Điểm dừng 2 · Ma sát nghỉ <small>phút 3–10 · tr.1 ô 1·4 → tr.4 ô 4·2 Câu 3</small></h2>
+<ul>
+  <li>Màn 2a: đọc từng dòng, cho chép 5 chỗ (đứng yên · song song · xu hướng · độ lớn · $F_{\text{msn max}}$). Dòng "Cực đại $\mu_n N$" đã in sẵn trong Tập.</li>
+  <li><span class="k">Clip kéo hộp gỗ (màn 2b, khoảng 1 phút):</span> nếu có lực kế + hộp thì làm thật trước, rồi chiếu clip để bàn cuối nhìn rõ số. Dừng ①: hộp còn yên, lực kế đã khoảng 0,6 N → biểu quyết "lúc hộp bật đi số chỉ… " (đáp án C, tụt một chút). Dừng cuối: bảng "còn yên tăng dần · bật đi 0,7 N · trượt đều 0,6 N". Đồ thị trong clip là F theo thời gian; đồ thị trong Tập là ma sát theo lực kéo (hộp 0,60 kg) — nói rõ khi sang màn 2c.</li>
+  <li><span class="k">Màn 2c (đọc đồ thị, hình đúng hình Tập có O, A, B, C):</span> hỏi "đoạn OA hộp đang làm gì?" — lớp nói rồi mới mở. Ô "nhỏ hơn ở A khoảng … N": $2{,}1-1{,}7=0{,}4$ N.</li>
+  <li>Màn 2d (ví dụ tủ, dòng cuối ô 1·4): tổng $295$ N $\lt 300$ N → đứng yên, ma sát $295$ N.</li>
+  <li><span class="k">Màn 2e · Câu 3 (Bẫy 1, 30 giây):</span> lật tr.4, ghi vào ô 4·2 dòng Câu 3. Đáp án A ($120$ N). Đánh dấu luôn bẫy 1 ở ô 4·1 nếu em từng nghĩ "ma sát lúc nào cũng bằng $\mu N$".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 3 chọn B ($200$ N, lấy mức cực đại) hoặc C ($80$ N, lấy hiệu). Đọc đồ thị: tưởng BC "tăng" vì lực kéo vẫn tăng.</div>
+
+<h2>Điểm dừng 3 · Ma sát trượt, ma sát lăn <small>phút 10–17 · tr.2 ô 2·1, 2·2, 2·3 · tr.3 ô 3·2 dòng 1</small></h2>
+<ul>
+  <li>Màn 3a: ô 2·1 dòng 1–2 (trượt · chuyển động · $\mu N$ · không có · áp lực). Nhấn: "$N$ in nghiêng là áp lực, chữ N sau con số là niutơn".</li>
+  <li><span class="k">Clip trượt hay lăn (màn 3b, khoảng 1,5 phút):</span> dừng ① sau lần "nằm" ($1{,}2$ N): biểu quyết <b>Câu 1</b> (dựng đứng, diện tích còn $1/3$) — ghi tr.4 ô 4·2 Câu 1; clip chiếu tiếp hai lần "dựng đứng", "nhanh hơn" để lớp tự thấy đáp án C. Dừng ②: biểu quyết "kê lên bút chì cho lăn, lực kế chỉ…" (đáp án D). Dừng cuối: bảng bốn số $1{,}2 · 1{,}2 · 1{,}2 ·$ dưới $0{,}1$ N.</li>
+  <li>Màn 3c (rút ra): chép ô 2·1 dòng 3–4, dòng "Rút ra" ô 2·2, ô 3·2 dòng 1 (lăn · nhỏ hơn). Phần "Có lợi / Có hại" và bảng Nghỉ–Trượt–Lăn ở ô 3·2 về nhà.</li>
+  <li>Màn 3d (bảng đo $\mu$): chia dãy tính tỉ số, mở "tỉ số" rồi "trung bình" ($\mu\approx0{,}30$). Dòng "lần đo kém tin cậy nhất… vì" về nhà (gợi ý: $0{,}05$ N so với $0{,}6$ N là khoảng 8%).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 1 chọn A hoặc B vì tưởng diện tích có trong công thức — hỏi "trong $F=\mu N$ có chữ nào là diện tích không?". Ghi đơn vị của $\mu$ là N.</div>
+
+<h2>Điểm dừng 4 · Áp lực $N$, Bẫy 2, tấm ván <small>phút 17–21 · tr.2 ô 2·4 → tr.4 ô 4·2 Câu 2 → tr.3 ô 3·1</small></h2>
+<ul>
+  <li><span class="k">Màn 4a (hình kéo chếch của bài web):</span> hỏi "kéo chếch lên thì $N$ lớn hơn, bằng hay nhỏ hơn $mg$?" — chỉ thành phần $F\sin\alpha$ trên hình — rồi mở ba trường hợp. Trường hợp mặt nghiêng: vẽ nhanh trên bảng dốc, tách $P$ thành $P_x$, $P_y$ (bài web dùng hình OpenStax, không chiếu).</li>
+  <li><span class="k">Màn 4b · Câu 2 (Bẫy 2, 30 giây):</span> ghi tr.4 ô 4·2 Câu 2. Đáp án D ($19{,}4$ N). Đánh dấu bẫy 2 ở ô 4·1 nếu từng nghĩ "áp lực luôn bằng $mg$".</li>
+  <li><span class="k">Màn 4c · tấm ván (tr.3 ô 3·1):</span> có ván thì nâng thật cho cả lớp xem lúc hộp bật đi; không có thì dùng số trong Tập. Lớp tự chia hai vế để ra $\tan\alpha$ rồi mới mở. $\mu_n\approx0{,}36$, $\mu\approx0{,}30$ → khớp bảng lực kế.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 2 chọn C (dùng $\cos$) hoặc A (quên $F\sin\alpha$). Tấm ván: tính $\sin\alpha$ rồi coi luôn là $\mu$ (ra $0{,}34$).</div>
+
+<h2>Điểm dừng 5 · Bẫy 3 + bài toán mẫu <small>phút 21–27 · tr.4 ô 4·1, 4·2 Câu 5, 4·3</small></h2>
+<ul>
+  <li><span class="k">Màn 5a · Câu 5:</span> hình bước đi (bài web) đứng cạnh 4 phương án. <span class="k">Gợi mở:</span> "đi trên sàn đổ dầu thì sao?". Đáp án D. Ghi ô 4·2 Câu 5, đánh dấu bẫy 3 ở ô 4·1.</li>
+  <li><span class="k">Màn 5b · phân tích đề:</span> dòng đầu đã in sẵn trong Tập. Cả lớp điền 4 dòng còn lại (1 phút), bấm "Mở: phân tích đề" để so.</li>
+  <li><span class="k">Màn 5c · Giải:</span> lớp tự chiếu lên $Oy$, $Ox$ (1,5 phút) rồi mở; $m$ triệt tiêu. Tốc độ $v=\sqrt{2as}$, kiểm tra $a\lt g\sin\alpha$. Khung "Điền bước còn thiếu ($\mu=0{,}40$)" về nhà.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> dùng $N=mg$ trên dốc; quên ma sát hướng lên dốc (ra $a=g(\sin\alpha+\mu\cos\alpha)$); quên căn khi tính $v$.</div>
+
+<h2>Điểm dừng 6 · Trả bài + đề 1239 <small>phút 27–30 trả bài · 30–45 làm đề · tr.3 ô 3·3 → tr.1 ô 1·3, 1·1</small></h2>
+<ul>
+  <li>Trả bài 2 câu của ô 3·3 (đúng lời trong Tập): câu 1 (2 dòng), câu 4 (1 dòng). Viết <b>1,5 phút, chưa bấm Mở</b>, rồi mở từng câu để các em tự sửa bằng bút khác màu. Câu 2, 3, 5, 6 và "Bạn cùng bàn kiểm" về nhà.</li>
+  <li><span class="k">Màn "Quay lại thùng nước", 1 phút:</span> hình An đẩy thùng cạnh dòng nhắc clip kéo hộp. Enter mở "B. đứng yên → hợp lực 0 → ma sát nghỉ 50 N", rồi mở "vì sao A, C, D sai". Lớp lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai" (ví dụ "tưởng chưa chạy thì không có ma sát"). <b>20 giây: đánh dấu ô 1·1</b> (mục tiêu đã đạt).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1239 trong 15 phút. Nộp xong ghi điểm …/20 và câu sai vào lề ô 4·2 (Tập chưa có ô riêng cho đề này).</li>
+  <li>Đọc màn "Về nhà theo Tập" — liệt kê đúng mã ô; tr.5 mục 1 ghi đề BTVN thầy giao trên web (đề, số câu, hạn).</li>
+</ul>
+<div class="sai"><b>Đề 1239 so với phần học trên lớp:</b> chưa đối chiếu từng câu (phiên dựng không đọc được nội dung đề). Sau buổi dạy xem câu sai nhiều nhất có rơi vào phần về nhà (ma sát lăn có lợi/có hại, trả bài câu 3, 5, 6) không.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Tủ $60$ kg cần lực ngang ít nhất $250$ N mới dịch. Đẩy ngang $180$ N. Lực ma sát sàn tác dụng lên tủ: A. $0$ N · B. $180$ N · C. $250$ N · D. $70$ N</li>
+<li>Kéo ngang hộp $2{,}5$ kg trượt đều trên bàn, lực kế chỉ $7{,}5$ N; $g=10\ \text{m/s}^2$. Hệ số ma sát trượt: A. $0{,}30$ · B. $3{,}0$ · C. $0{,}75$ · D. $0{,}03$</li>
+<li>Kéo thùng $5{,}0$ kg trên sàn ngang bằng lực $30$ N chếch lên $30^\circ$; $g=9{,}8\ \text{m/s}^2$. Áp lực lên sàn: A. $49$ N · B. $34$ N · C. $23$ N · D. $64$ N</li>
+<li>Vật trượt xuống dốc nghiêng $30^\circ$, $\mu=0{,}25$, $g=9{,}8\ \text{m/s}^2$. Gia tốc: A. $4{,}9\ \text{m/s}^2$ · B. $2{,}78\ \text{m/s}^2$ · C. $2{,}45\ \text{m/s}^2$ · D. $7{,}0\ \text{m/s}^2$</li>
+<li>Xe đạp và người $70$ kg đang chạy $5{,}0$ m/s thì phanh khoá bánh, trượt $2{,}5$ m rồi dừng trên đường ngang; $g=10\ \text{m/s}^2$. Hệ số ma sát trượt: A. $0{,}50$ · B. $1{,}0$ · C. $0{,}20$ · D. $5{,}0$</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>Đứng yên: ma sát nghỉ cân bằng lực đẩy, $180$ N</td><td>A: chưa chạy thì không có ma sát · C: lấy mức cực đại · D: lấy hiệu $250-180$</td></tr>
+<tr><td>2</td><td>A</td><td>$N=25$ N; $\mu=7{,}5/25=0{,}30$</td><td>B: chia cho $m$ · C: chia cho $g$ · D: sai dấu phẩy</td></tr>
+<tr><td>3</td><td>B</td><td>$N=49-30\sin30^\circ=49-15=34$ N</td><td>A: quên $F\sin\alpha$ · C: dùng $F\cos30^\circ\approx26$ N · D: cộng thay vì trừ</td></tr>
+<tr><td>4</td><td>B</td><td>$a=9{,}8(0{,}5-0{,}25\cdot0{,}866)\approx2{,}78\ \text{m/s}^2$</td><td>A: quên ma sát · C: dùng $N=mg$ ($9{,}8(0{,}5-0{,}25)$) · D: ma sát cùng chiều trượt</td></tr>
+<tr><td>5</td><td>A</td><td>$a=-\dfrac{5^2}{2\cdot2{,}5}=-5\ \text{m/s}^2$; $\mu=\dfrac{|a|}{g}=0{,}50$</td><td>B: quên số 2 trong $2as$ · C: lấy $v/s$ chia $g$ · D: lấy $|a|$ làm $\mu$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 2d (ví dụ tủ → về nhà, Câu 3 đã đủ ý); bảng đo $\mu$ (màn 3d) chỉ tính một hàng; màn 5c giải trên bảng không biểu quyết; không cắt giờ làm đề 1239 — chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: Câu 4 (sách trên bàn nghiêng, $\mu=0{,}3$: $1{,}27$ N) hoặc Câu 6 (thùng $55$ kg, $220$ N: $0{,}57\ \text{m/s}^2$) của bài web; hoặc thử thách ⭐ ô 5·2 câu một sao.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào (hỏi 2–3 em bàn cuối sau tiết); nhãn trong hình kéo chếch ($F\sin\alpha$, $F_{\text{ms}}$) và hình bước đi có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở câu dự đoán thùng nước và ở Câu 1 (diện tích) — hai chỗ học sinh hay sai nhất; điểm dừng 3 (18 chỗ điền) có chép kịp trong 7 phút không.</li>
+  <li>Đề 1239: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút; màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>
