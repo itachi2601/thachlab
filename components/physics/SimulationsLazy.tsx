@@ -95,3 +95,13 @@ export function ThucHanhRoiTuDoLazy() {
     </LazyErrorBoundary>
   );
 }
+
+const ThucHanhDongLuong = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhDongLuong"), { ssr: false, loading });
+
+export function ThucHanhDongLuongLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <ThucHanhDongLuong />
+    </LazyErrorBoundary>
+  );
+}

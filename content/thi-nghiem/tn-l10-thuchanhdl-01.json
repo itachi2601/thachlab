@@ -15,6 +15,17 @@
   "thuchanhdl.he_khong_kin_hoan_toan"
  ],
  "muc_tieu": "Đo t1 và t1' bằng cổng quang, tính v = s/t, p = m1·v1 và p' = (m1+m2)·v'; so p' với p qua độ lệch δ và sai số ε; nhận ra p' < p cùng phía ở cả ba lần là sai số hệ thống.",
+ "gia_thuyet": [
+  "Hệ hai xe trên băng nằm ngang gần như kín: tổng động lượng ngay trước và ngay sau va chạm bằng nhau, m1·v1 = (m1 + m2)·v'."
+ ],
+ "du_doan_neu_dung": [
+  "Mỗi lần đo có δ ≤ ε (độ lệch không vượt sai số); nếu còn ma sát thì p' < p ở mọi lần, cùng một phía."
+ ],
+ "khong_chung_minh": [
+  "δ ≤ ε chỉ cho biết số đo không mâu thuẫn với bảo toàn động lượng trong phạm vi sai số, không chứng minh bảo toàn tuyệt đối.",
+  "Chỉ thử va chạm mềm với xe 2 đứng yên: chưa nói gì về va chạm đàn hồi hay khi cả hai xe cùng chạy.",
+  "Không cho biết động năng: va chạm mềm mất động năng dù động lượng gần như giữ nguyên."
+ ],
  "dung_cu": [
   {
    "ten": "Băng đệm khí + bơm nén khí",
@@ -227,7 +238,15 @@
  "goi_y_mo_phong": {
   "loai": "2d_dong_hoc+bang_so_lieu+do_thi",
   "y_tuong": "Băng đệm khí, hai xe, hai cổng; nút đẩy; đồng hồ hiện t1, t1'; bảng tự tính p, p', δ, ε và đồ thị p'/p kèm thanh sai số.",
-  "diem_nhan": "Thanh trượt 'mat': kéo lên thì p'/p tụt dưới 1 ở mọi lần, thanh sai số không còn chạm 1."
+  "diem_nhan": "Thanh trượt 'mat': kéo lên thì p'/p tụt dưới 1 ở mọi lần, thanh sai số không còn chạm 1.",
+  "da_dung": "components/physics/thuc-hanh/ThucHanhDongLuong.tsx (Gói C, xem thử /dev/thuc-hanh)",
+  "bat_tat": {
+   "mat": [
+    0,
+    0.022
+   ],
+   "ghi_chu": "Nút 'Ma sát khí, sức cản' bỏ qua = 0, có = 0,022 (tham_so mat). Mỗi lần đẩy v1 ngẫu nhiên 0,455–0,555 m/s, nhiễu đọc mỗi đồng hồ −1; 0; +1 ms. Ca cố định v1 = 0,505 m/s, nhiễu (0; 0), (+1; −1), (−1; +1), ba lần m1/m2 = 0,205/0,198; 0,405/0,198; 0,405/0,398: bỏ qua δ = 0,2 %; 2,0 %; 1,4 % (p' lúc lớn lúc nhỏ hơn p, đều ≤ ε); có δ = 2,2 %; 0,7 %; 3,8 % với ε = 2,5 %; 2,2 %; 2,0 % (cả ba p' < p, lần 3 δ > ε)."
+  }
  },
  "video": {
   "mp4": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-thuchanhdl-01-20261118.mp4",

@@ -13,10 +13,11 @@
  * Không gọi Supabase, không lưu gì.
  */
 
-import { useId, useMemo, useState, type ReactNode } from "react";
+import { useMemo, useState } from "react";
 import { PredictGate } from "@/components/physics/PredictGate";
 import { BangDongHoHienSo, useDongHoHienSo, type LanChan } from "@/components/physics/do-luong/DongHoHienSo";
-import { docSo, phuBtn, segBtn, type KetQuaCham } from "@/components/physics/do-luong/chung";
+import { phuBtn, segBtn } from "@/components/physics/do-luong/chung";
+import { BangSoLieu, CauKieuDe, ChuaNoiDuoc, ONhapCham, TrucKhoang } from "./BangSoLieu";
 import {
   DC_T,
   G_THAT,
@@ -37,130 +38,6 @@ import {
 const SO_LAN = 5;
 const CHIEU_CHAM = 4; // chiếu chậm 4 lần để mắt kịp thấy bi rơi 0,3 s
 const D_BI = 0.02; // m, đường kính bi (để tính lúc bi ra khỏi tia)
-
-/* ---------------- Phần dùng chung (sẽ tách sang BangSoLieu.tsx ở bài mẫu 2) ---------------- */
-
-/** Ô nhập một số + chấm một lần; sai thì hiện cách tính đúng rồi cho đi tiếp. */
-function ONhapCham({
-  nhan,
-  donVi,
-  cham,
-  onXong,
-  vidu,
-}: {
-  nhan: ReactNode;
-  donVi: string;
-  cham: (raw: string) => KetQuaCham | null;
-  onXong: (kq: KetQuaCham, giaTri: number) => void;
-  vidu: string;
-}) {
-  const [raw, setRaw] = useState("");
-  const [kq, setKq] = useState<KetQuaCham | null>(null);
-  const [loiNhap, setLoiNhap] = useState(false);
-  const id = useId();
-  const kiemTra = () => {
-    if (kq) return;
-    const r = cham(raw);
-    if (!r) return setLoiNhap(true);
-    setLoiNhap(false);
-    setKq(r);
-    onXong(r, docSo(raw)?.value ?? NaN);
-  };
-  return (
-    <div className="rounded-xl border border-line bg-surface-2 p-3">
-      <label className="block text-base text-ink" htmlFor={id}>
-        {nhan}
-      </label>
-      <div className="mt-2 flex gap-2">
-        <div className="flex min-w-0 flex-1 items-center rounded-lg border border-line-strong bg-panel pr-3 focus-within:ring-2 focus-within:ring-primary">
-          <input
-            id={id}
-            inputMode="decimal"
-            autoComplete="off"
-            value={raw}
-            disabled={!!kq}
-            onChange={(e) => setRaw(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && kiemTra()}
-            placeholder={`ví dụ ${vidu}`}
-            className="min-h-11 w-full min-w-0 rounded-lg bg-transparent px-3 text-base text-ink outline-none placeholder:text-muted"
-          />
-          <span className="shrink-0 text-base text-muted">{donVi}</span>
-        </div>
-        {!kq && (
-          <button
-            type="button"
-            className="min-h-11 rounded-lg bg-primary px-4 text-sm font-semibold text-white"
-            onClick={kiemTra}
-          >
-            Kiểm tra
-          </button>
-        )}
-      </div>
-      {loiNhap && <p className="mt-2 text-sm text-warn">Gõ một số, ví dụ {vidu} (dấu phẩy hay dấu chấm đều được).</p>}
-      {kq && (
-        <p className="mt-2 text-base leading-relaxed text-ink" aria-live="polite">
-          <span className={kq.loai === "dung" ? "font-semibold text-ok" : "font-semibold text-danger"}>
-            {kq.loai === "dung" ? "✓ Đúng." : "✗ Chưa đúng."}
-          </span>{" "}
-          {kq.loi}
-        </p>
-      )}
-    </div>
-  );
-}
-
-/** Câu 4 phương án kiểu đề (T9): chọn một lần, hiện vì sao từng phương án đúng/sai. */
-function CauKieuDe({ de, cac }: { de: string; cac: { text: string; dung?: boolean; why: string }[] }) {
-  const [chon, setChon] = useState<number | null>(null);
-  const L = ["A", "B", "C", "D"];
-  return (
-    <div className="rounded-xl border border-line-strong bg-panel p-3">
-      <p className="text-xs font-semibold uppercase tracking-wide text-primary">Câu hỏi kiểu đề thi</p>
-      <div className="exam-paper mt-1">
-        <p className="exam-content text-ink">{de}</p>
-        <div className="exam-content mt-2 grid gap-2">
-          {cac.map((o, i) => {
-            const daChon = chon !== null;
-            const mau = !daChon
-              ? "border-line-strong hover:bg-primary-soft"
-              : o.dung
-                ? "border-ok"
-                : i === chon
-                  ? "border-danger"
-                  : "border-line opacity-80";
-            return (
-              <button
-                key={i}
-                type="button"
-                disabled={daChon}
-                onClick={() => setChon(i)}
-                className={`flex min-h-11 w-full flex-col items-start rounded-lg border bg-panel px-3 py-2 text-left text-ink transition ${mau}`}
-              >
-                <span>
-                  <b>{L[i]}.</b> {o.text}
-                </span>
-                {daChon && (
-                  <span className="mt-1 font-sans text-sm text-muted">
-                    <b className={o.dung ? "text-ok" : "text-muted"}>
-                      {o.dung ? "✓ Đây là phát biểu sai cần tìm." : "Phát biểu đúng."}
-                    </b>{" "}
-                    {o.why}
-                  </span>
-                )}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-      {chon !== null && (
-        <p className="mt-2 text-base text-ink" aria-live="polite">
-          {cac[chon].dung ? <b className="text-ok">✓ Đúng.</b> : <b className="text-danger">✗ Chưa đúng.</b>} Đáp án{" "}
-          {L[cac.findIndex((o) => o.dung)]}.
-        </p>
-      )}
-    </div>
-  );
-}
 
 /* ---------------- Cảnh: giá đỡ, nam châm, bi, cổng quang, thước ---------------- */
 
@@ -291,62 +168,17 @@ type TomTat = { so: number; sCm: number; tuDu: boolean; kq: KetQuaLoat };
 
 /** Trục số: mỗi bảng đã đo là một khoảng ḡ ± Δg, vạch đứng 9,8. */
 function TrucKetQua({ ds }: { ds: TomTat[] }) {
-  const LO = 9.2;
-  const HI = 10.2;
-  const x = (g: number) => 24 + ((Math.min(HI, Math.max(LO, g)) - LO) / (HI - LO)) * 312;
-  const h = 36 + ds.length * 30;
   return (
-    <figure>
-      <svg
-        viewBox={`0 0 360 ${h}`}
-        className="block w-full text-ink"
-        role="img"
-        aria-label="Các khoảng g đo được so với 9,8 m/s²"
-      >
-        <line x1={24} x2={336} y1={h - 20} y2={h - 20} stroke="currentColor" strokeWidth={1.5} />
-        {[9.2, 9.6, 9.8, 10.0].map((v) => (
-          <g key={v}>
-            <line x1={x(v)} x2={x(v)} y1={h - 25} y2={h - 15} stroke="currentColor" />
-            <text x={x(v)} y={h - 1} textAnchor="middle" fontSize={16} fill="var(--color-muted)">
-              {vnSo(v, 1)}
-            </text>
-          </g>
-        ))}
-        <line
-          x1={x(G_THAT)}
-          x2={x(G_THAT)}
-          y1={6}
-          y2={h - 20}
-          stroke="var(--color-ok)"
-          strokeWidth={2}
-          strokeDasharray="4 3"
-        />
-        {ds.map((d, i) => {
-          const y = 22 + i * 30;
-          const mau = d.tuDu ? "var(--color-warn)" : "var(--color-primary)";
-          return (
-            <g key={i}>
-              <line
-                x1={x(d.kq.g - d.kq.dg)}
-                x2={x(d.kq.g + d.kq.dg)}
-                y1={y}
-                y2={y}
-                stroke={mau}
-                strokeWidth={5}
-                strokeLinecap="round"
-              />
-              <circle cx={x(d.kq.g)} cy={y} r={5} fill={mau} />
-              <text x={Math.max(x(d.kq.g - d.kq.dg) - 6, 30)} textAnchor="end" y={y + 5} fontSize={16} fill={mau}>
-                B{d.so}
-              </text>
-            </g>
-          );
-        })}
-      </svg>
-      <figcaption className="mt-1 text-sm text-muted">
-        Vạch xanh lá đứt: 9,8 m/s². Mỗi đoạn: ḡ ± Δg của một bảng (cam: có từ dư).
-      </figcaption>
-    </figure>
+    <TrucKhoang
+      lo={9.2}
+      hi={10.2}
+      vach={[9.2, 9.6, 9.8, 10.0]}
+      moc={G_THAT}
+      ds={ds.map((d) => ({ nhan: `B${d.so}`, giua: d.kq.g, ban: d.kq.dg, phu: d.tuDu }))}
+      ghiVach={(v) => vnSo(v, 1)}
+      aria="Các khoảng g đo được so với 9,8 m/s²"
+      chuThich="Vạch xanh lá đứt: 9,8 m/s². Mỗi đoạn: ḡ ± Δg của một bảng (cam: có từ dư)."
+    />
   );
 }
 
@@ -569,32 +401,18 @@ export default function ThucHanhRoiTuDo() {
             <p className="text-base font-semibold">
               Bảng {loat.so} · s = {vnSo(loat.sCm / 100, 3)} m · {loat.tuDu ? "có từ dư" : "không từ dư"}
             </p>
-            <table className="mt-1 w-full border-collapse text-base tabular-nums">
-              <thead>
-                <tr className="text-left text-sm text-muted">
-                  <th className="border-b border-line py-1 pr-2 font-medium">Lần</th>
-                  <th className="border-b border-line py-1 pr-2 font-medium">t (s)</th>
-                  <th className="border-b border-line py-1 font-medium">|t − t̄| (s)</th>
-                </tr>
-              </thead>
-              <tbody>
-                {Array.from({ length: SO_LAN }, (_, i) => {
-                  const t = i < loat.tMs.length - (chay ? 1 : 0) ? loat.tMs[i] : undefined;
-                  const hienLech = dangHienLaBangTinh && buocTinh >= 2 && kqTinh;
-                  return (
-                    <tr key={i}>
-                      <td className="border-b border-line py-1.5 pr-2">{i + 1}</td>
-                      <td className="border-b border-line py-1.5 pr-2 font-mono">
-                        {t === undefined ? "—" : vnSo(t / 1000, 3)}
-                      </td>
-                      <td className="border-b border-line py-1.5 font-mono text-muted">
-                        {hienLech ? vnSo(kqTinh.lech[i], 4) : ""}
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+            <BangSoLieu
+              cot={[{ nhan: "Lần" }, { nhan: "t (s)" }, { nhan: "|t − t̄| (s)", phu: true }]}
+              hang={Array.from({ length: SO_LAN }, (_, i) => {
+                const t = i < loat.tMs.length - (chay ? 1 : 0) ? loat.tMs[i] : undefined;
+                const hienLech = dangHienLaBangTinh && buocTinh >= 2 && kqTinh;
+                return [
+                  i + 1,
+                  t === undefined ? undefined : vnSo(t / 1000, 3),
+                  hienLech ? vnSo(kqTinh.lech[i], 4) : "",
+                ];
+              })}
+            />
             {!bangDay && (
               <p className="mt-1 text-sm text-muted">
                 Bấm Ngắt nam châm, đọc số, RESET, thả lần tiếp. Còn {SO_LAN - loat.tMs.length} lần.
@@ -691,17 +509,12 @@ export default function ThucHanhRoiTuDo() {
           {hsXong && (
             <div className="mt-4 space-y-3">
               <CauKieuDe de={CAU_DE.de} cac={CAU_DE.cac} />
-              <details className="rounded-xl border border-line bg-surface-2 p-3">
-                <summary className="min-h-11 cursor-pointer py-2 text-base font-semibold">
-                  Thí nghiệm này chưa nói được gì? Nghĩ một câu rồi mở.
-                </summary>
-                <ul className="mt-1 list-disc space-y-1 pl-5 text-base leading-relaxed">
-                  <li>
-                    Chỉ một bảng ở một độ cao không phát hiện được từ dư: cả 5 số t cùng lớn lên, bảng vẫn chụm đẹp.
-                  </li>
-                  <li>Không cho biết vật nhẹ, sức cản lớn có rơi với cùng g: mô hình đã bỏ qua sức cản không khí.</li>
-                </ul>
-              </details>
+              <ChuaNoiDuoc
+                y={[
+                  "Chỉ một bảng ở một độ cao không phát hiện được từ dư: cả 5 số t cùng lớn lên, bảng vẫn chụm đẹp.",
+                  "Không cho biết vật nhẹ, sức cản lớn có rơi với cùng g: mô hình đã bỏ qua sức cản không khí.",
+                ]}
+              />
             </div>
           )}
         </>

@@ -9,6 +9,9 @@
 
 import tn from "@/content/thi-nghiem/tn-l10-do-g-01.json";
 import { docSo, type KetQuaCham } from "@/components/physics/do-luong/chung";
+import { gan, phanLoai, vnSo } from "./cham-chung";
+
+export { vnSo };
 
 type ThamSo = {
   ky_hieu: string;
@@ -70,11 +73,6 @@ export function tinhLoat(tMs: number[], s: number): KetQuaLoat {
   return { tbar, lech, dbar, dt, g, delta, dg: delta * g };
 }
 
-/** Số kiểu Việt: 0.3212 → "0,3212". */
-export const vnSo = (x: number, d: number) => x.toFixed(d).replace("-", "−").replace(".", ",");
-
-const gan = (x: number, y: number, tol: number) => Math.abs(x - y) <= tol + 1e-9;
-
 /* ---------------- Chấm bốn ô học sinh tự tính ---------------- */
 /* Dung sai đủ rộng để chấp nhận cách làm tròn trung gian hợp lí (t̄ lấy 3 hay 4 chữ số), đủ hẹp để bắt lỗi thật. */
 
@@ -86,21 +84,6 @@ export function chamTbar(raw: string, tMs: number[], kq: KetQuaLoat): KetQuaCham
   if (gan(so.value, kq.tbar, 0.0005)) return { loai: "dung", loi: cach };
   if (gan(so.value, tong, 0.001)) return { loai: "sai", loi: `Đó là tổng 5 lần, còn phải chia cho 5. ${cach}` };
   return { loai: "sai", loi: `Cộng 5 số rồi chia 5: ${cach}` };
-}
-
-/**
- * Chọn ứng viên GẦN NHẤT (đáp án đúng gồm cả bản làm tròn Δt về 0,001 s, vì ô Δt đã nhận cách làm tròn đó) trong số các ứng viên còn trong dung sai (đáp án đúng + các lỗi thật), để dung sai của đáp án
- * đúng có thể rộng (nhận làm tròn trung gian) mà một lỗi nằm gần vẫn bị gọi đúng tên.
- */
-function phanLoai(x: number, cach: string, dung: [number, number][], loi: [number, number, string][]): KetQuaCham {
-  // Đáp án đúng được ưu tiên: còn trong dung sai là đúng, dù một lỗi nào đó cũng gần (làm tròn hợp lí không bị phạt).
-  if (dung.some(([v, tol]) => gan(x, v, tol))) return { loai: "dung", loi: cach };
-  let tot: { d: number; msg: string } | null = null;
-  for (const [v, tol, msg] of loi) {
-    const d = Math.abs(x - v);
-    if (gan(x, v, tol) && (!tot || d < tot.d)) tot = { d, msg };
-  }
-  return { loai: "sai", loi: tot ? `${tot.msg} ${cach}` : cach };
 }
 
 export function chamDt(raw: string, kq: KetQuaLoat): KetQuaCham | null {
