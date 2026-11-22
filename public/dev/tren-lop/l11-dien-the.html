@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điện thế · trên lớp</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+:root{
+  --bg:#ffffff; --ink:#111827; --muted:#4b5563; --line:#cbd2db;
+  --accent:#1d4ed8; --ok:#166534; --ok-bg:#e7f8ee; --no:#b91c1c; --warn-bg:#fff4dd; --warn:#8a4b00;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.f1{height:58vh} .f2{height:47vh} .f3{height:52vh}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f1 svg text{font-size:16px} .f2 svg text{font-size:23px} .f3 svg text{font-size:18px}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 20</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 20 · tr.1</span></div>
+  <div class="giua">
+    <h1>Điện thế</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Vì sao chim đậu trên dây 500 kV mà không sao?</li>
+      <li>Vôn kế thật ra đo cái gì?</li>
+      <li>Điện thế, hiệu điện thế, $U=Ed$.</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Mô phỏng: PhET Interactive Simulations, ĐH Colorado Boulder (CC BY 4.0) · Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <h2>Chim đậu trên dây 500 kV mà không bị giật. Vì sao?</h2>
+  <div class="fig f1"><svg viewBox="0 0 440 242" role="img" aria-label="Chim đậu trên dây 500 kV: hai chân cùng điện thế nên hiệu điện thế gần bằng 0; giữa dây và cột nối đất hiệu điện thế cỡ hàng trăm kV"><line x1="12" y1="90" x2="370" y2="90" stroke="currentColor" stroke-width="3" opacity="1"/><line x1="390" y1="40" x2="390" y2="205" stroke="currentColor" stroke-width="5" opacity="1"/><line x1="355" y1="40" x2="425" y2="40" stroke="currentColor" stroke-width="4" opacity="1"/><ellipse cx="370" cy="50" rx="9" ry="4" fill="none" stroke="#38bdf8" stroke-width="2"/><ellipse cx="370" cy="62" rx="9" ry="4" fill="none" stroke="#38bdf8" stroke-width="2"/><ellipse cx="370" cy="74" rx="9" ry="4" fill="none" stroke="#38bdf8" stroke-width="2"/><line x1="370" y1="40" x2="370" y2="90" stroke="#38bdf8" stroke-width="1.5" opacity="1"/><line x1="300" y1="205" x2="432" y2="205" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="306" y1="205" x2="298" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="320" y1="205" x2="312" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="334" y1="205" x2="326" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="348" y1="205" x2="340" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="362" y1="205" x2="354" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="376" y1="205" x2="368" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="390" y1="205" x2="382" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="404" y1="205" x2="396" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><line x1="418" y1="205" x2="410" y2="214" stroke="currentColor" stroke-width="1.2" opacity="0.6"/><ellipse cx="150" cy="66" rx="22" ry="12" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><circle cx="172" cy="52" r="8" fill="rgba(148,163,184,.3)" stroke="currentColor" stroke-width="2"/><path d="M179,50 L188,53 L179,56 z" fill="currentColor"/><line x1="128" y1="64" x2="112" y2="58" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="142" y1="77" x2="138" y2="90" stroke="currentColor" stroke-width="2" opacity="1"/><line x1="158" y1="77" x2="162" y2="90" stroke="currentColor" stroke-width="2" opacity="1"/><circle cx="138" cy="90" r="4" fill="#f87171"/><circle cx="162" cy="90" r="4" fill="#f87171"/><text x="128" y="108" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">A</text><text x="172" y="108" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">B</text><line x1="350" y1="147" x2="350" y2="95" stroke="#f87171" stroke-width="2" stroke-dasharray="5 4"/><path d="M345.6,102.6 L350.0,95.0 L354.4,102.6" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="350" y1="147" x2="350" y2="200" stroke="#f87171" stroke-width="2" stroke-dasharray="5 4"/><path d="M354.4,192.4 L350.0,200.0 L345.6,192.4" fill="none" stroke="#f87171" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="340" y="140" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">dây – đất (cột):</text><text x="340" y="160" fill="#f87171" font-size="14" font-weight="700" text-anchor="end">U cỡ hàng trăm kV</text><text x="428" y="234" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">cột nối đất: V = 0</text><text x="14" y="78" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">dây 500 kV</text></svg></div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <div class="giua">
+    <p class="hoi">Chim đậu trên dây 500 kV mà không bị điện giật, chủ yếu là vì:</p>
+    <ol class="opt">
+      <li><b>A.</b> Lông và chân chim cách điện hoàn toàn</li>
+      <li><b>B.</b> Điện chỉ chạy trong lõi dây, không ra tới mặt dây ngoài</li>
+      <li><b>C.</b> Hai chân chạm hai chỗ trên cùng một dây, giữa hai chân hầu như không có chênh lệch điện</li>
+      <li><b>D.</b> Cơ thể chim nhỏ nên chịu được điện cao hơn người</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại con chim").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Công thức lõi ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Nhắc Bài 19</span><span>phút 3–12</span><span class="tap">tr.1 · ô 1·4 · dòng 1–3</span></div>
+  <div class="giua">
+    <p>Công của lực điện không phụ thuộc <b class="o">đường đi</b>,<br>chỉ phụ thuộc điểm <b class="o">đầu</b> và điểm <b class="o">cuối</b>.</p>
+    <p class="nho">Giống trọng lực: trượt dốc thẳng hay lượn vòng, công như nhau.</p>
+    <p>Điện trường đều:</p>
+    <div class="fx">$A_{MN}=qEd$</div>
+    <p>$d$: <b class="o">hình chiếu</b> của MN lên chiều <b class="o">đường sức</b>, có dấu: $d\gt0$ khi N lệch <b class="o">cùng</b> chiều đường sức.</p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Điện thế</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·1 · dòng 1–4</span></div>
+  <h2>Điện thế: thế năng của một culông</h2>
+  <div class="giua">
+    <div class="fx">$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$</div>
+    <p>$A_{M\infty}$: công đưa $q$ từ M ra <b class="o">vô cực</b> (xa tới mức không còn lực).</p>
+    <ul>
+      <li>Của một <b class="o">điểm</b>, không phụ thuộc <b class="o">điện tích</b> đặt vào.</li>
+      <li>Đơn vị: <b class="o">vôn</b>; $1\ \text{V}=1$ <b class="o">J/C</b>.</li>
+      <li>Mốc $V=0$: <b class="o">Trái Đất</b> hoặc <b class="o">vô cực</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Thí nghiệm ảo PhET</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·1 · dòng 5</span></div>
+  <div class="giua">
+    <p class="hoi">Đặt $+1$ nC. Đầu đo điện thế (trong sim tên là "Mặt đẳng thế") cách 1 m: số chỉ dương hay âm?</p>
+    <p class="hoi">Đổi sang $-1$ nC thì sao?</p>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Mở PhET (tab 1)</a>
+      <button class="mo" data-mo="p2">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p2" hidden>
+      <p>$+1$ nC: khoảng $+9$ V · $-1$ nC: khoảng $-9$ V · càng xa càng về $0$.</p>
+      <p>Mốc ở vô cực. $Q\gt0$ đẩy $q\gt0$ ra xa → $A_{M\infty}\gt0$ → $V$ <b class="o">$\gt$</b> $0$; $Q\lt0$ cho $V$ <b class="o">$\lt$</b> $0$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Hiệu điện thế</span><span>phút 3–12</span><span class="tap">tr.2 · ô 2·3 · dòng 1–4</span></div>
+  <h2>Hiệu điện thế: công trên một culông</h2>
+  <div class="giua">
+    <div class="fx">$U_{MN}=V_M-V_N=\dfrac{A_{MN}}{q}$</div>
+    <div class="fx">$A_{MN}=qU_{MN}$</div>
+    <ul>
+      <li>Đổi thứ tự hai điểm thì đổi dấu: $U_{NM}=-U_{MN}$.</li>
+      <li>Theo chiều đường sức, điện thế <b class="o">giảm</b>: đường sức đi từ $V$ cao xuống $V$ thấp, như nước chảy xuống dốc.</li>
+      <li>Đổi mốc: $V$ <b class="o">đổi</b>, $U$ <b class="o">giữ nguyên</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= 3. Thí nghiệm thật ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 12–16</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <h2>Vôn kế đo được gì?</h2>
+  <p class="nho">Pin 1,5 V · đồng hồ số thang 20 V DC · dây đồng bóc vỏ quấn vào cực (+). Thầy đọc to số, gõ vào cột "Lớp đo".</p>
+  <table>
+    <thead><tr><th>Lần</th><th>Que đỏ · que đen chạm vào</th><th>Lớp đo</th><th>Minh hoạ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>cực (+) · cực (−)</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b2">1,50 V</span></td></tr>
+      <tr><td>2</td><td>đổi hai que</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b2">−1,50 V</span></td></tr>
+      <tr><td>3</td><td>hai điểm trên một dây đồng</td><td class="trong" contenteditable="true"></td><td class="ns"><span class="an-o" data-o="b3">0,00 V</span></td></tr>
+    </tbody>
+  </table>
+  <div class="nut">
+    <button class="mo" data-mo="b2">Mở minh hoạ lần 1–2</button>
+    <button class="mo" data-mo="b3">Mở minh hoạ lần 3</button>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Thí nghiệm tại lớp</span><span>phút 12–16</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="giua">
+    <p class="hoi">Lần 3: hai que trên cùng dây đồng. Vôn kế chỉ…</p>
+    <ol class="opt lo" style="grid-template-columns:1fr 1fr">
+      <li><b>A.</b> $1{,}50$ V</li>
+      <li data-dung><b>B.</b> $0$ V</li>
+      <li><b>C.</b> $-1{,}50$ V</li>
+      <li><b>D.</b> hai que càng xa nhau, số càng lớn</li>
+    </ol>
+    <button class="mo" data-mo="r2">Mở: rút ra</button>
+    <div class="an" id="r2" hidden>
+      <p>Dây nối cực (+), không có dòng: mọi điểm trên dây cùng $V$ với cực (+).</p>
+      <p>Vôn kế đo <b>hiệu điện thế</b> $V_{\text{đỏ}}-V_{\text{đen}}$, không đo điện thế một điểm. Lần 3 = <b>con chim</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Xem cận cảnh</span><span>3 điểm dừng · khoảng 1,5 phút · dùng khi bàn cuối không thấy số hoặc thiếu dụng cụ</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="vg" data-bat="10.8" data-het="21.9">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-02-20261030-2.webp" preload="metadata" playsinline title="Vôn kế, pin 1,5 V và dây đồng"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số trên vôn kế ở 3 lần chạm.</p><p class="nho">Clip bỏ qua phần mở đầu, vào thẳng 3 lần đo.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Lần 1: que đỏ ở cực (+), que đen ở cực (−).</p></div>
+      <div class="buoc" data-t="12.4" data-dung><p class="so-lon">Lần 1: $1{,}50$ V</p><p class="hoi">Đổi chỗ hai que. Vôn kế chỉ…?</p></div>
+      <div class="buoc" data-t="14.0"><p class="hoi">Lần 2: đổi chỗ hai que.</p></div>
+      <div class="buoc" data-t="16.9" data-dung><p class="so-lon">Lần 2: $-1{,}50$ V</p><p class="hoi">Hai que chạm hai điểm trên <u>cùng</u> dây đồng. Vôn kế chỉ…?</p></div>
+      <div class="buoc" data-t="17.0"><p class="hoi">Lần 3: hai que trên cùng dây đồng.</p></div>
+      <div class="buoc" data-t="21.9"><table class="bang"><tr><td>Lần 1 · đỏ ở (+)</td><td class="ns">$1{,}50$ V</td></tr><tr><td>Lần 2 · đổi que</td><td class="ns">$-1{,}50$ V</td></tr><tr><td>Lần 3 · cùng dây</td><td class="ns">$0{,}00$ V</td></tr></table><p class="hoi">Số chỉ $=V_{\text{đỏ}}-V_{\text{đen}}$</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 4. U = Ed + bẫy ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Thí nghiệm ảo PhET</span><span>phút 16–24</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <p class="hoi">Hai hàng điện tích trái dấu (xếp sẵn).</p>
+    <p class="hoi">Đi 1 m <u>dọc</u> đường sức, rồi 1 m <u>ngang</u> đường sức:<br>lần nào số chỉ đổi?</p>
+    <div class="fig" style="height:24vh"><svg viewBox="0 0 640 190" role="img" aria-label="Đường sức E nằm ngang; đi dọc là đi theo E, đi ngang là đi vuông góc với E">
+      <defs><marker id="dn" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs>
+      <line x1="10" y1="172" x2="620" y2="172" stroke="#8a94ad" stroke-width="3" stroke-dasharray="10 7" marker-end="url(#dn)"/>
+      <text x="630" y="150" fill="#8a94ad" font-size="38" font-weight="700" text-anchor="end">E (đường sức)</text>
+      <circle cx="120" cy="120" r="8" fill="#111827"/>
+      <line x1="120" y1="120" x2="360" y2="120" stroke="#1d4ed8" stroke-width="6" marker-end="url(#dn)"/>
+      <text x="240" y="104" fill="#1d4ed8" font-size="40" font-weight="800" text-anchor="middle">dọc</text>
+      <line x1="120" y1="120" x2="120" y2="14" stroke="#b91c1c" stroke-width="6" marker-end="url(#dn)"/>
+      <text x="150" y="56" fill="#b91c1c" font-size="40" font-weight="800">ngang (⊥ E)</text>
+    </svg></div>
+    <div class="nut">
+      <a class="mo" href="https://phet.colorado.edu/sims/html/charges-and-fields/latest/charges-and-fields_all.html?locale=vi" target="_blank" rel="noopener">Sang PhET (tab 2)</a>
+      <button class="mo" data-mo="p4">Mở: kết quả</button>
+    </div>
+    <div class="an" id="p4" hidden>
+      <p>Dọc đường sức: $V$ giảm đều. Ngang đường sức: $V$ gần như không đổi.</p>
+      <p>Chỉ phần đi <b>dọc đường sức</b> làm $V$ đổi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Khay nước muối</span><span>chỉ chiếu khi không có PhET · mặc định bỏ qua</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
+  <div class="vg" data-bat="10.8" data-het="21.7">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-dien-the-01-20261030-2.webp" preload="metadata" playsinline title="Vôn kế trong khay nước muối"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ vôn kế khi que đỏ đi <u>dọc</u> đường sức, rồi đi <u>ngang</u>.</p><p class="nho">Hai lá đồng cách 10 cm, nguồn 6 V. Clip vào thẳng phần đo.</p></div>
+      <div class="buoc" data-t="10.8"><p class="hoi">Que đen ở lá âm: mốc 0 V → số chỉ = điện thế tại que đỏ.</p><p class="hoi">Que đỏ cách lá âm $x=2$ cm.</p></div>
+      <div class="buoc" data-t="12.9" data-dung><p class="so-lon">$x=2$ cm: $1{,}18$ V</p><p class="hoi">Đưa que đỏ ra $x=4;\ 6;\ 8$ cm. Số chỉ thế nào?</p></div>
+      <div class="buoc" data-t="15.0"><p class="hoi">$x=4;\ 6;\ 8$ cm (tua nhanh).</p></div>
+      <div class="buoc" data-t="18.0" data-dung><p class="so-lon">$x=8$ cm: $4{,}84$ V</p><p class="hoi">Que đỏ sẽ về $x=4$ cm ($2{,}43$ V), rồi dời <u>song song</u> lá đồng. Số chỉ…</p>
+        <ol class="opt lo"><li><b>A.</b> tăng dần</li><li><b>B.</b> giảm dần</li><li data-dung><b>C.</b> gần như không đổi</li><li><b>D.</b> tăng rồi giảm</li></ol></div>
+      <div class="buoc" data-t="18.1"><p class="hoi">Dời ngang ở $x=4$ cm: nhìn số chỉ.</p></div>
+      <div class="buoc" data-t="21.7"><table class="bang"><tr><th>$x$ (cm)</th><td>2</td><td>4</td><td>6</td><td>8</td></tr><tr><th>$V$ (V)</th><td class="ns">1,18</td><td class="ns">2,43</td><td class="ns">3,57</td><td class="ns">4,84</td></tr></table><p class="hoi">Dời ngang: vẫn $2{,}43$ V → <b>C</b>.</p><p class="hoi">$x$ gấp đôi thì $V$…?</p></div>
+    </div>
+  </div>
+    <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Số đo trong khay</span><span>hai lá đồng cách 10 cm, nguồn 6 V</span><span class="tap">tr.3 · ô 3·3 (về nhà)</span></div>
+  <div class="fig f3"><svg viewBox="0 0 440 248" role="img" aria-label="Đồ thị điện thế V theo khoảng cách x từ lá âm: bốn điểm đo nằm sát đường thẳng V = 0,6x"><line x1="60" y1="210" x2="432" y2="210" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M423.3,205.0 L432.0,210.0 L423.3,215.0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60" y1="210" x2="60" y2="7" stroke="currentColor" stroke-width="1.8" opacity="1"/><path d="M55.0,15.7 L60.0,7.0 L65.0,15.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="60" y1="210" x2="60" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="60" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">0</text><line x1="128" y1="210" x2="128" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="128" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">2</text><line x1="196" y1="210" x2="196" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="196" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">4</text><line x1="264" y1="210" x2="264" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="264" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">6</text><line x1="332" y1="210" x2="332" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="332" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">8</text><line x1="400" y1="210" x2="400" y2="215" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="400" y="228" fill="currentColor" font-size="14" font-weight="400" text-anchor="middle">10</text><line x1="55" y1="150" x2="60" y2="150" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52" y="154" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">2</text><line x1="60" y1="150" x2="400" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" opacity="0.3"/><line x1="55" y1="90" x2="60" y2="90" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52" y="94" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">4</text><line x1="60" y1="90" x2="400" y2="90" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" opacity="0.3"/><line x1="55" y1="30" x2="60" y2="30" stroke="currentColor" stroke-width="1.5" opacity="1"/><text x="52" y="34" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">6</text><line x1="60" y1="30" x2="400" y2="30" stroke="currentColor" stroke-width="1" stroke-dasharray="2 4" opacity="0.3"/><line x1="60" y1="210" x2="400.0" y2="30.0" stroke="#34d399" stroke-width="2.5" opacity="1"/><circle cx="128" cy="174.6" r="5" fill="#f87171"/><circle cx="196" cy="137.1" r="5" fill="#f87171"/><circle cx="264" cy="102.9" r="5" fill="#f87171"/><circle cx="332" cy="64.80000000000001" r="5" fill="#f87171"/><text x="425" y="244" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">x (cm) — cách lá âm</text><text x="68" y="18" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">V (V)</text><text x="120" y="70" fill="#34d399" font-size="14" font-weight="700" text-anchor="start">lí thuyết: V = U·x/d</text><text x="250" y="196" fill="#f87171" font-size="14" font-weight="700" text-anchor="start">● số đo</text></svg></div>
+  <p class="hoi">$x$ gấp đôi thì $V$…? Độ dốc $V/x$ là gì?</p>
+  <button class="mo" data-mo="g4">Mở: độ dốc</button>
+  <div class="an" id="g4" hidden><p>$x$ gấp đôi, $V$ gấp đôi. $\dfrac{V}{x}\approx60$ V/m $=\dfrac{U}{d}=\dfrac{6\ \text{V}}{0{,}1\ \text{m}}$: đó chính là $E$. <span class="nho">($1$ V/m $=1$ N/C)</span></p></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · $U=Ed$</span><span>phút 16–24</span><span class="tap">tr.3 · ô 3·2</span></div>
+  <div class="giua">
+    <p class="hoi">Cùng một công $A_{MN}$: lớp nói hai cách viết, rồi mới mở.</p>
+    <div class="hai" style="flex:none;height:70vh">
+      <div class="fig f2"><svg viewBox="0 0 440 270" role="img" aria-label="Điện trường đều giữa hai bản: điện thế giảm từ 12 V ở bản dương xuống 0 V ở bản âm; công từ M đến N không phụ thuộc đường đi, chỉ phụ thuộc hình chiếu d"><rect x="40" y="20" width="10" height="180" fill="rgba(248,113,113,.25)" stroke="currentColor" stroke-width="2"/><rect x="390" y="20" width="10" height="180" fill="rgba(56,189,248,.25)" stroke="currentColor" stroke-width="2"/><text x="27" y="45" fill="#f87171" font-size="16" font-weight="700" text-anchor="middle">+</text><text x="413" y="45" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="middle">−</text><text x="27" y="90" fill="#f87171" font-size="16" font-weight="700" text-anchor="middle">+</text><text x="413" y="90" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="middle">−</text><text x="27" y="135" fill="#f87171" font-size="16" font-weight="700" text-anchor="middle">+</text><text x="413" y="135" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="middle">−</text><text x="27" y="180" fill="#f87171" font-size="16" font-weight="700" text-anchor="middle">+</text><text x="413" y="180" fill="#38bdf8" font-size="16" font-weight="700" text-anchor="middle">−</text><line x1="57" y1="40" x2="383" y2="40" stroke="#f87171" stroke-width="2.5"/><path d="M373.9,34.8 L383.0,40.0 L373.9,45.2" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="57" y1="195" x2="383" y2="195" stroke="#f87171" stroke-width="2.5"/><path d="M373.9,189.8 L383.0,195.0 L373.9,200.2" fill="none" stroke="#f87171" stroke-width="2.5" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="220" y="32" fill="#f87171" font-size="14" font-weight="700" text-anchor="middle">E</text><text x="45" y="218" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">12 V</text><line x1="132.5" y1="52" x2="132.5" y2="183" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.8"/><text x="132.5" y="218" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">9 V</text><line x1="220" y1="52" x2="220" y2="183" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.8"/><text x="220" y="218" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">6 V</text><line x1="307.5" y1="52" x2="307.5" y2="183" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.8"/><text x="307.5" y="218" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">3 V</text><text x="395" y="218" fill="#38bdf8" font-size="14" font-weight="700" text-anchor="middle">0 V</text><line x1="110" y1="80" x2="280" y2="160" stroke="currentColor" stroke-width="2" opacity="1"/><path d="M110,80 Q250,48 280,160" fill="none" stroke="#fb923c" stroke-width="2" stroke-dasharray="6 4"/><line x1="110" y1="80" x2="172" y2="80" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.7"/><path d="M148,80 A38,38 0 0,1 144.4,96.2" fill="none" stroke="#fb923c" stroke-width="2"/><text x="160" y="93" fill="#fb923c" font-size="14" font-weight="700" text-anchor="middle">α</text><circle cx="110" cy="80" r="5" fill="currentColor"/><circle cx="280" cy="160" r="5" fill="currentColor"/><text x="100" y="74" fill="currentColor" font-size="14" font-weight="700" text-anchor="end">M</text><text x="290" y="164" fill="currentColor" font-size="14" font-weight="700" text-anchor="start">N</text><line x1="110" y1="86" x2="110" y2="246" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/><line x1="280" y1="166" x2="280" y2="246" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/><line x1="195.0" y1="242" x2="112" y2="242" stroke="#34d399" stroke-width="2"/><path d="M119.6,246.4 L112.0,242.0 L119.6,237.6" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><line x1="195.0" y1="242" x2="278" y2="242" stroke="#34d399" stroke-width="2"/><path d="M270.4,237.6 L278.0,242.0 L270.4,246.4" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="miter" stroke-miterlimit="10" stroke-linecap="butt"/><text x="195.0" y="237" fill="#34d399" font-size="14" font-weight="700" text-anchor="middle">d</text><text x="14" y="264" fill="currentColor" font-size="14" font-weight="400" text-anchor="start">điện thế cao</text><text x="426" y="264" fill="currentColor" font-size="14" font-weight="400" text-anchor="end">điện thế thấp</text></svg></div>
+      <div class="ben">
+        <div class="nut"><button class="mo" data-mo="c1">Mở: Bài 19</button><button class="mo" data-mo="c2">Mở: ô 2·3</button><button class="mo" data-mo="c3">Mở: ghép</button></div>
+        <div class="an" id="c1" hidden><p>$A_{MN}=qEd$</p></div>
+        <div class="an" id="c2" hidden><p>$A_{MN}=qU_{MN}$</p></div>
+        <div class="an" id="c3" hidden>
+          <p>Chia cho $q$: $U=Ed\ \Leftrightarrow\ E=\dfrac{U}{d}$ (V/m).</p>
+          <p class="nho">$d$: hình chiếu <b>có dấu</b> của MN lên <b>đường sức</b>. MN $\perp$ đường sức thì $U=0$.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">4/6 · Bẫy</span><span>phút 16–24</span><span class="tap">tr.4 · ô 4·1 · Câu 4</span></div>
+  <p class="hoi">$E=1000$ V/m, $MN=5$ cm <u>hợp với</u> đường sức $60^\circ$, N lệch theo chiều đường sức. $U_{MN}=$ ?</p>
+  <div class="hai">
+  <div class="fig gian f4"><svg viewBox="0 0 320 184" role="img" aria-label="Hình chiếu của MN lên đường sức"><defs><marker id="hc" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><defs><marker id="hc2" markerWidth="7" markerHeight="7" refX="3.5" refY="3.5" orient="auto-start-reverse" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="8" y1="16" x2="304" y2="16" stroke="#8a94ad" stroke-width="2" marker-end="url(#hc)"/><line x1="8" y1="174" x2="304" y2="174" stroke="#8a94ad" stroke-width="2" marker-end="url(#hc)"/><text x="310" y="32" fill="#8a94ad" font-size="20" text-anchor="end" font-weight="700">E</text><line x1="50" y1="140" x2="220" y2="46" stroke="#1c2540" stroke-width="2.8"/><circle cx="50" cy="140" r="5" fill="#1c2540"/><circle cx="220" cy="46" r="5" fill="#1c2540"/><text x="42" y="146" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">M</text><text x="228" y="46" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">N</text><line x1="50" y1="140" x2="290" y2="140" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><path d="M94.0,140.0 A44,44 0 0 0 88.5,118.7" fill="none" stroke="#1c2540" stroke-width="2.2"/><text x="102" y="132" fill="#1c2540" font-size="22" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">α</tspan></text><line x1="220" y1="46" x2="220" y2="140" stroke="#1f5fa8" stroke-width="2" stroke-dasharray="4 4"/><line x1="52" y1="158" x2="218" y2="158" stroke="#1f5fa8" stroke-width="2.2" marker-start="url(#hc2)" marker-end="url(#hc2)"/><text x="135" y="152" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="700">?</text></svg></div>
+  <div class="ben">
+  <ol class="opt lo hai-cot">
+    <li><b>A.</b>$50$ V</li>
+    <li data-dung><b>B.</b>$25$ V</li>
+    <li><b>C.</b>$43{,}3$ V</li>
+    <li><b>D.</b>$0$ V</li>
+  </ol>
+  <button class="mo" data-mo="a4">Mở đáp án</button>
+  <div class="an" id="a4" hidden>
+    <p><b>B.</b> $d=MN\cos60^\circ=2{,}5$ cm</p>
+    <p>$U=Ed=25$ V</p>
+    <p>Góc với <b class="o">đường sức</b> → $\cos$.</p>
+  </div>
+  </div>
+  </div>
+</section>
+
+<!-- ================= 5. Bài mẫu ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">tr.5 · ô 5·1</span></div>
+  <div class="giua">
+    <p>Hai bản phẳng song song cách nhau $2$ cm, nối nguồn $120$ V; mốc điện thế ở bản âm.</p>
+    <p>a) $E$ giữa hai bản.<br>b) $V_M$, M cách bản âm $0{,}5$ cm.<br>c) Electron đi từ bản âm sang bản dương: công lực điện.</p>
+    <div class="an nhap"><p><b>Làm mẫu a):</b> "hai bản song song" → điện trường đều → $E=\dfrac{120}{0{,}02}=6000$ V/m.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">tr.5 · ô 5·1</span></div>
+  <div class="giua">
+    <button class="mo" data-mo="m5d">Mở: bảng đọc đề (3 ô)</button>
+    <div class="an" id="m5d" hidden><ul>
+      <li>2 cm, 120 V → $d=0{,}02$ m → $E=U/d$</li>
+      <li>mốc bản âm → $V_-=0$, $V_+=120$ V</li>
+      <li>electron → $q=-e$, $A=qU$</li>
+    </ul></div>
+    <button class="mo" data-mo="m5b">Mở b)</button>
+    <div class="an" id="m5b" hidden><p>M tới bản âm cùng chiều đường sức, $d=0{,}005$ m:<br>$V_M=6000\cdot0{,}005=30$ V.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 24–27</span><span class="tap">ô 5·1 c) · tr.2 ô 2·3 dòng 5–6</span></div>
+  <div class="giua">
+    <p class="nho">$1\ \text{eV}=1{,}6\cdot10^{-19}$ J: năng lượng electron nhận khi đi qua hiệu điện thế $1$ V.</p>
+    <p>$U=V_{\text{đầu}}-V_{\text{cuối}}$ · electron: $q=-e$, giữ đủ hai dấu.</p>
+    <p class="hoi">c) Giơ tay: công lực điện là</p>
+    <ol class="opt lo hang">
+      <li><b>A.</b>$-120$ eV</li>
+      <li data-dung><b>B.</b>$+120$ eV</li>
+      <li><b>C.</b>$+30$ eV</li>
+      <li><b>D.</b>$0$ eV</li>
+    </ol>
+    <button class="mo" data-mo="m5c">Mở c)</button>
+    <div class="an" id="m5c" hidden>
+      <p><b>B.</b> $U=0-120=-120$ V; $A=(-e)(-120\ \text{V})=+120$ eV.</p>
+      <p class="nho">$=1{,}92\cdot10^{-17}$ J · A: quên một dấu âm · C: lấy $V_M$ · D: tưởng electron không chịu lực.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 6. Trả bài + đề 1215 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 27–29 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.4 · ô 4·2</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Định nghĩa điện thế, công thức, đơn vị, mốc?</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>$V_M=\dfrac{W_M}{q}=\dfrac{A_{M\infty}}{q}$ · vôn · mốc: Trái Đất, vô cực hoặc điểm tự chọn.</p></div>
+    <p class="hoi">Câu 6. Hệ thức giữa E và U, nghĩa của d?</p>
+    <button class="mo" data-mo="t6">Mở câu 6</button>
+    <div class="an" id="t6" hidden><p>$U=Ed$ · chỉ trong điện trường đều · $d$: hình chiếu dọc đường sức.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6chim">
+  <div class="top"><span class="so">6/6 · Quay lại con chim</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="nhin">Lần 3: hai que trên cùng một dây → $0{,}00$ V.</p>
+      <button class="mo" data-mo="a6">Mở: con chim</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Hai chân = hai que trên cùng dây → $U\approx0$.</p></div>
+      <button class="mo" data-mo="a7">Mở: người đứng đất</button>
+      <div class="an" id="a7" hidden><p>Dây – đất ($0$ V): $U$ cỡ hàng trăm kV → dòng điện lớn qua người.</p>
+        <p class="nho">A: chim chạm cả dây lẫn cột là chết · B: dây trần, mặt dây có điện · D: chim lớn sải cánh chạm hai dây cũng chết.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.4 ô 4·3 ghi điểm</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1215" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM18 0h1v1h-1zM21 0h1v1h-1zM22 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM15 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM21 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM9 4h1v1h-1zM12 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM20 5h1v1h-1zM23 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM11 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM28 8h1v1h-1zM30 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM1 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM10 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM23 9h1v1h-1zM28 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM20 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM0 11h1v1h-1zM3 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM18 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM1 12h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM17 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM27 12h1v1h-1zM2 13h1v1h-1zM3 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM27 13h1v1h-1zM30 13h1v1h-1zM0 14h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM17 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM26 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM9 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM13 15h1v1h-1zM16 15h1v1h-1zM20 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM32 15h1v1h-1zM0 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM11 16h1v1h-1zM13 16h1v1h-1zM15 16h1v1h-1zM20 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM0 17h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM17 18h1v1h-1zM18 18h1v1h-1zM19 18h1v1h-1zM20 18h1v1h-1zM21 18h1v1h-1zM23 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM32 18h1v1h-1zM0 19h1v1h-1zM2 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM9 19h1v1h-1zM14 19h1v1h-1zM16 19h1v1h-1zM19 19h1v1h-1zM24 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM16 20h1v1h-1zM18 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM29 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM5 21h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM14 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM22 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM29 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM18 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM5 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM24 23h1v1h-1zM27 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM31 23h1v1h-1zM0 24h1v1h-1zM1 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM17 25h1v1h-1zM18 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM31 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM11 26h1v1h-1zM13 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM11 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM20 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM32 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM11 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM11 29h1v1h-1zM12 29h1v1h-1zM13 29h1v1h-1zM16 29h1v1h-1zM18 29h1v1h-1zM19 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM23 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM23 30h1v1h-1zM25 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1zM31 30h1v1h-1zM32 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM11 31h1v1h-1zM12 31h1v1h-1zM14 31h1v1h-1zM19 31h1v1h-1zM23 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM31 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM10 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM24 32h1v1h-1zM27 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1215</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1215 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 20</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · ô 1·4 dòng 4</li>
+    <li><b>tr.2</b> ô 2·1 dòng 6 · ô 2·2 · ô 2·4</li>
+    <li><b>tr.3</b> Câu 2 ô 3·1 · ô 3·3 (khay nước muối) + Câu 3 · ô 3·4</li>
+    <li><b>tr.4</b> ô 4·2 câu 1, 3, 4, 5 · ô 4·4: ghi đề BTVN thầy giao trên web</li>
+    <li><b>tr.5</b> ô 5·1 dòng "Kiểm tra" · ô 5·2, 5·3, 5·4</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

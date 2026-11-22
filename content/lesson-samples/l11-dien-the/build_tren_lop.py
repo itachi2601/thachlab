@@ -13,3 +13,11 @@ assert h.count("<!--QR-->") == 1
 h = h.replace("<!--QR-->", qr)
 (HERE / "tren-lop.html").write_text(h, encoding="utf8")
 print("tren-lop.html", len(h))
+# Bản lên web (tĩnh, không index): /dev/tren-lop/l11-dien-the.html + ghi chú dạy. Trang mục lục: app/dev/tren-lop/page.tsx
+PUB = HERE.parents[2] / "public" / "dev" / "tren-lop"
+PUB.mkdir(parents=True, exist_ok=True)
+NOI = '<meta name="robots" content="noindex">\n'
+for src, dst in ((h, "l11-dien-the.html"), ((HERE / "tren-lop-ghi-chu.html").read_text(encoding="utf8"), "l11-dien-the-ghi-chu.html")):
+    assert src.count("<meta charset=\"utf-8\">\n") == 1, dst
+    (PUB / dst).write_text(src.replace("<meta charset=\"utf-8\">\n", "<meta charset=\"utf-8\">\n" + NOI), encoding="utf8")
+    print("public/dev/tren-lop/" + dst)
