@@ -932,3 +932,7 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 - → ĐÃ CHẠY 20/11 08:20 (log `scripts/logs/20261120-082035-20261120120000_lesson_clip_views.log` ở checkout chính); kiểm: 2 bảng + RPC có, RLS bật, anon không đọc/gọi được, pg_cron `lesson-clip-views-rollup` đặt; `gen-database-doc` chạy lại. Client chưa deploy.
 
 - Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
+
+## 22/11/2026 — L11 5 đề: migration 20261006130000 không cần chạy
+Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ đề trong `exams.questions` = dòng bank theo hash = ánh xạ (gồm topic_id); 684939 đã grade 11; không còn câu Newton/Hooke. Không ghi DB. Dòng STATE cũ:
+- L11 5 đề 638/639/658/693/701: `fix_grade` ĐÃ ÁP (còn 1 câu 684939 grade 10). `20261006130000_gan_lai_chu_de_5_de_l11` CHƯA ÁP (123/129 câu còn lệch chủ đề; 94 câu mang chủ đề Newton/Hooke) và KHÔNG chạy trực tiếp được: 14/11 bị timeout 57014, trigger `trg_bank_tags_to_exams` → `sync_exam_to_bank` chạy lại cả đề; đã rollback sạch. Làm lại theo mẫu `lib/sua-dinh-dang.ts` (tắt `trg_exams_sync_bank`, sửa cả bank lẫn `exams.questions`, sau 22h).
