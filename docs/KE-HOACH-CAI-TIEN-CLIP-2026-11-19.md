@@ -166,6 +166,15 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   đúng Dự đoán, đúng câu chốt, bỏ qua, xem hết theo từng clip; `gen-database-doc.mjs` chạy lại.
 - Chạy migration theo mục "Migration Supabase" của `AGENTS.md`; không hoàn tác được thì hỏi thầy.
 
+## 2b. Tình trạng 20/11/2026 (phiên `motion-graphic-video-review-5c4291`)
+- Việc 1, 2, 3, 6 xong code; migration việc 6 đã chạy 20/11 08:20. **Nhưng code việc 1, 2, 5, 6 CHƯA lên web**: bản deploy cuối 19/11 14:16
+  (trước các commit 4d07cb1d2, 30061f236, 176380903) → chưa ghi được lượt nào vào `lesson_clip_views`. Từ bản deploy trước, `origin/main` chỉ đổi 7 file
+  của kế hoạch này (`VideoThiNghiemKhung`, `KhungPortals`, `MoPhongPortals`, `CurrentBalanceSimulation`, `SimulationsLazy`, 2 trang `/dev`).
+  **ĐÃ DEPLOY 21/11/2026 06:29** từ `01eab4d3f` (thầy chạy `scripts/deploy.sh`; kiểm chunk trên web có `log_clip_view`).
+- 21/11 kiểm DB: bài 57, 83, 12 trỏ clip `-20261120` (chỉ bản này), khung có `cau_chot`; bài 12 có hộp `can-dong-dien` (việc 5 đã lên DB).
+  Còn: lô 20 clip L12 (phiên nhánh `clip-l12-lo20`); thử bằng tài khoản HS thật.
+- Đồng hồ "2–4 tuần số liệu" (mục 3) tính từ 21/11/2026 → xem tỉ lệ khoảng 5–19/12 bằng `scripts/sql/ty-le-clip-thi-nghiem.sql`.
+
 ## 3. Việc nên làm thêm để tin được kết quả
 - Mở một bài thật bằng tài khoản học sinh trên điện thoại thật, xác nhận lỗi che ở việc 1 (mới đo ở trang `/dev`).
 - Sau việc 6 chạy được 2–4 tuần: so tỉ lệ đúng câu chốt và tỉ lệ xem hết giữa clip dựng lại (việc 4) và clip cũ rồi mới quyết dựng tiếp.

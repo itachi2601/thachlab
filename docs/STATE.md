@@ -25,6 +25,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
+- Clip việc 1/2/5/6 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md`): ĐÃ DEPLOY 21/11 06:29 (`01eab4d3f`, chunk có `log_clip_view`); `lesson_clip_views` bắt đầu ghi từ 21/11 — xem số liệu sau 2–4 tuần. Chưa thử bằng HS thật.
 - Dashboard GV CNC: tab "Buổi học" theo nhịp lớp đảo ngược (10/11, `TeacherFlipBoard`, xem thử `/dev/cnc-bang-buoi`) — ĐÃ DEPLOY 10/11 từ commit c9eb40921 (kèm `dac7911f7` đáp án sau 2 lượt + `d72917876` cổng G tính `final`; CHƯA gồm CTTC thanh đáy `db053cc45`). Mở được bằng tài khoản thầy với lớp CĐ CK 24A; chưa thử trong một buổi dạy thật.
 - `ExamDoneLocked` ĐÃ DEPLOY 18/11 (migration đáp án sau 2 lượt chạy 10/11, chi tiết STATE-archive); còn thử bằng HS thật (đề 1297, lớp 11, 375px).
 - 30/10 · Công TA hằng tháng tự chạy (cron `ta-month-cycle`): báo 19h cuối tháng → mở ngày 1–3 → khoá, báo thầy chốt; khiếu nại ở /tro-giang. T10 đang mở, 1/11 tự kéo hạn tới 23:59 03/11. Chưa thử bằng tài khoản TA thật. Thấy lạ: `.claude/worktrees/deploy-tree` có `app/globals.css` sửa dở chưa commit, HEAD kẹt ở ac5a22baf.
@@ -66,7 +67,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
-- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do (20/11: thêm newton3-05 bài 61, motasong-02 bài 27 — ĐÃ ĐĂNG DB 20/11 sáng, thầy cho đăng ngay). Việc 4: 3 clip mẫu `-20261120` thầy duyệt 20/11, ĐÃ GHI DB 21/11 06:29 (bài 57, 83, 12; hẹn 22:05 treo vì máy ngủ; log `scripts/logs/dang-viec4-20261121.log`, 3/3 ✓). Lô 20 clip L12 `-20261121`: ĐÃ GHI DB 22/11 22:26–22:28 (lệnh hẹn 22:05 không chạy, chạy tay sau Gói A; 15/15 bài ✓, không LOI; log `scripts/video-thi-nghiem/ra/lo20-dang.log`, sao lưu `scripts/logs/ly-thuyet-bai*-backup-*.json`). Code việc 1, 2, 6 chưa deploy.
+- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do (20/11: thêm newton3-05 bài 61, motasong-02 bài 27 — ĐÃ ĐĂNG DB 20/11 sáng, thầy cho đăng ngay). Việc 4: 3 clip mẫu `-20261120` thầy duyệt 20/11, ĐÃ GHI DB 21/11 06:29 (bài 57, 83, 12; hẹn 22:05 treo vì máy ngủ; log `scripts/logs/dang-viec4-20261121.log`, 3/3 ✓). Lô 20 clip L12 `-20261121`: ĐÃ GHI DB 22/11 22:26–22:28 (lệnh hẹn 22:05 không chạy, chạy tay sau Gói A; 15/15 bài ✓, không LOI; log `scripts/video-thi-nghiem/ra/lo20-dang.log`, sao lưu `scripts/logs/ly-thuyet-bai*-backup-*.json`). Code việc 1, 2, 5, 6 ĐÃ DEPLOY 21/11 06:29.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
