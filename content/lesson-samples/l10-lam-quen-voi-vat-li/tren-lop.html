@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Làm quen với Vật lí · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.f4 svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .fig,.gian{height:auto!important;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+
+/* hình riêng bài 1 (chép từ scripts/ruot-tap/hinh-l10-bai1.mjs, đúng hình Tập): f1 ấm nước · f2 thang vi mô–vĩ mô · f3 hai cốc mực · f4 năm bước · f5 bốn vật rơi · f6 robot */
+/* nhãn hình giữ cỡ Tập (20 đơn vị viewBox); kiem.mjs đo ≥ 0,7 chữ thường khi đáp án mở */
+table.gon th,table.gon td{padding:.06em .4em}
+.hai>.ben.rong{flex:1.3}
+#m1a .hai>.fig{width:36%}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 1</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 1 · tr.1</span></div>
+  <div class="giua">
+    <h1>Làm quen với Vật lí</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Ấm nước sắp sôi: phần nào là việc của vật lí?</li>
+      <li>Nhà vật lí tìm ra quy luật bằng cách nào?</li>
+      <li>Hai số đo khác nhau: đã chắc là khác thật chưa?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–2</span><span class="tap">tr.1 · ô 1·2</span></div>
+  <p class="hoi">Phần nào của cảnh ấm nước sắp sôi thuộc phạm vi nghiên cứu của vật lí?</p>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 320 172" role="img" aria-label="Ấm nước trên bếp, nắp rung, hơi nước phun ra từ vòi"><defs><marker id="an1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="80" y1="150" x2="252" y2="150" stroke="#1c2540" stroke-width="4"/><path d="M106,60 L226,60 L236,146 L96,146 z" fill="#fff" stroke="#1c2540" stroke-width="2.8" stroke-linejoin="round"/><path d="M236,84 C276,84 276,128 240,128" fill="none" stroke="#1c2540" stroke-width="2.8"/><path d="M106,84 L68,66 L60,74 L100,106" fill="#fff" stroke="#1c2540" stroke-width="2.8" stroke-linejoin="round"/><path d="M120,60 Q166,36 212,60" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="166" cy="38" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="112" y1="30" x2="104" y2="22" stroke="#8a94ad" stroke-width="2.4"/><line x1="222" y1="30" x2="230" y2="22" stroke="#8a94ad" stroke-width="2.4"/><line x1="104" y1="44" x2="94" y2="42" stroke="#8a94ad" stroke-width="2.4"/><line x1="230" y1="44" x2="240" y2="42" stroke="#8a94ad" stroke-width="2.4"/><path d="M60,66 C46,52 70,40 54,24" fill="none" stroke="#8a94ad" stroke-width="2.8" stroke-dasharray="6 5"/><path d="M48,70 C30,58 52,48 36,34" fill="none" stroke="#8a94ad" stroke-width="2.8" stroke-dasharray="6 5"/><text x="126" y="112" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">nước</text><path d="M120,150 q6,-16 12,0 M152,150 q6,-16 12,0 M184,150 q6,-16 12,0" fill="none" stroke="#b3261e" stroke-width="2.8"/></svg></div>
+    <div class="ben">
+      <ol class="opt">
+        <li><b>A.</b> Chỉ nắp ấm rung, vì ta nhìn thấy nó</li>
+        <li><b>B.</b> Chỉ chuyển động của phân tử, vì đó mới là gốc</li>
+        <li><b>C.</b> Cả hai, và mối liên hệ giữa chúng</li>
+        <li><b>D.</b> Không phần nào, đây là việc của hoá học</li>
+      </ol>
+      <p class="nho">Khoanh vào Tập + một dòng "Vì sao?". Đáp án: cuối tiết.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 2. Đối tượng · vi mô, vĩ mô · giọt mực ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Vật lí nghiên cứu gì</span><span>phút 2–8</span><span class="tap">tr.1 · ô 1·4</span></div>
+  <div class="hai">
+    <div class="fig f2"><svg viewBox="0 0 240 210" role="img" aria-label="Năm đối tượng từ nhỏ đến lớn"><defs><marker id="th1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="12" y1="186" x2="12" y2="14" stroke="#8a94ad" stroke-width="2.8" marker-end="url(#th1)"/><circle cx="40" cy="24" r="3.4" fill="#1c2540" stroke="#1c2540" stroke-width="2.8"/><ellipse cx="40" cy="24" rx="13" ry="6" fill="none" stroke="#1c2540" stroke-width="2"/><text x="70" y="30" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">nguyên tử</text><circle cx="34" cy="66" r="9" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="48" cy="62" r="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="46" cy="72" r="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="70" y="72" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">phân tử nước</text><path d="M30,108 L38,100 L50,102 L52,112 L42,116 z" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="70" y="114" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">hạt cát</text><circle cx="40" cy="132" r="6" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="138" x2="40" y2="156" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="144" x2="30" y2="152" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="144" x2="50" y2="152" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="156" x2="32" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="156" x2="48" y2="168" stroke="#1c2540" stroke-width="2.8"/><text x="70" y="156" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">người</text><circle cx="42" cy="190" r="14" fill="#dfe6f4" stroke="#1c2540" stroke-width="2.8"/><path d="M30,186 q8,-8 14,0 M36,196 q10,4 14,-4" fill="none" stroke="#1c2540" stroke-width="2"/><text x="70" y="196" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">Trái Đất</text></svg></div>
+    <div class="ben rong">
+      <p>Vật lí nghiên cứu <b class="o">vận động</b> của vật chất và <b class="o">năng lượng</b> ở mọi cấp độ.</p>
+      <p><b>Vi mô:</b> mắt thường <b class="o">không</b> thấy (nguyên tử, phân tử).</p>
+      <p><b>Vĩ mô:</b> mắt thường <b class="o">nhìn</b> thấy (Trái Đất, vũ trụ).</p>
+      <p class="nho">Hình: năm đối tượng từ nhỏ đến lớn (không theo tỉ lệ). Ranh giới vi mô – vĩ mô nằm ở đâu?</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Thí nghiệm tại lớp</span><span>phút 2–8</span><span class="tap">tr.1 · ô 1·5</span></div>
+  <div class="hai">
+    <div class="ben">
+      <p><b>Làm:</b> nhỏ một giọt mực vào hai cốc nước, không khuấy: một cốc lạnh, một cốc nóng khoảng $60^\circ\text{C}$.</p>
+      <p class="hoi">Đoán: mực loang đều nhanh hơn ở cốc nào? Giơ tay: lạnh · nóng · như nhau.</p>
+      <button class="mo" data-mo="r2b">Làm thật rồi mới mở</button>
+      <div class="an" id="r2b" hidden>
+        <p><b>Quan sát:</b> mực loang đều nhanh hơn ở cốc <b class="o">nóng</b>.</p>
+      </div>
+    </div>
+    <div class="fig f3 an-o" data-o="r2b"><svg viewBox="0 0 320 176" role="img" aria-label="Mực loang trong hai cốc nước"><path d="M24,40 L40,140 L124,140 L140,40" fill="#fff" stroke="#1c2540" stroke-width="2.8" stroke-linejoin="round"/><path d="M180,40 L196,140 L280,140 L296,40" fill="#fff" stroke="#1c2540" stroke-width="2.8" stroke-linejoin="round"/><path d="M30,66 L134,66" stroke="#dfe6f4" stroke-width="2.4"/><circle cx="82" cy="80" r="14" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><ellipse cx="238" cy="92" rx="46" ry="34" fill="#8a94ad" fill-opacity=".45" stroke="#1c2540" stroke-width="2.4" stroke-dasharray="5 4"/><text x="82" y="30" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">nước lạnh</text><text x="238" y="30" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">nước nóng</text><text x="238" y="168" fill="#b3261e" font-size="20" text-anchor="middle" font-weight="400">60 °C</text></svg></div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Rút ra</span><span>phút 2–8</span><span class="tap">tr.1 · ô 1·5 · dòng Rút ra</span></div>
+  <div class="giua">
+    <p class="hoi">Mực loang là thứ mắt thấy. Cái gì gây ra nó?</p>
+    <button class="mo" data-mo="g2c">Mở: rút ra</button>
+    <div class="an" id="g2c" hidden>
+      <p>Mực loang là hiện tượng <b class="o">vĩ</b> mô.</p>
+      <p>Nguyên nhân là <b class="o">phân tử</b> nước (cấp độ <b class="o">vi</b> mô).</p>
+      <p>Nước càng nóng, chúng chuyển động càng <b class="o">nhanh</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Câu 1</span><span>phút 2–8</span><span class="tap">ghi ô 4·3 · Câu 1</span></div>
+  <p class="hoi">Cặp nào phân loại đúng?</p>
+  <ol class="opt lo">
+    <li data-dung><b>A.</b> Phân tử nước: vi mô; chiếc ấm nước: vĩ mô</li>
+    <li><b>B.</b> Hạt cát: vi mô, vì rất nhỏ</li>
+    <li><b>C.</b> Vũ trụ: ngoài phạm vi vật lí, vì quá lớn</li>
+    <li><b>D.</b> Nguyên tử: vĩ mô, vì cũng là vật chất</li>
+  </ol>
+  <button class="mo" data-mo="a2d">Mở đáp án</button>
+  <div class="an" id="a2d" hidden><p><b>A.</b> Phân tử không thấy bằng mắt thường: vi mô. Hạt cát vẫn nhìn thấy: vĩ mô.</p></div>
+</section>
+
+<section class="man" id="m2e">
+  <div class="top"><span class="so">2/6 · Làm nhanh</span><span>phút 2–8 · viết 1 phút</span><span class="tap">tr.1 · ô 1·5 · Làm nhanh Câu 1</span></div>
+  <p class="hoi">Xếp vi mô hay vĩ mô: nguyên tử, phân tử nước, hạt cát, người, Trái Đất.</p>
+  <table>
+    <thead><tr><th>Vi mô</th><th>Vĩ mô</th></tr></thead>
+    <tbody>
+      <tr><td class="ns"><span class="an-o" data-o="g2e">nguyên tử, phân tử nước</span></td><td class="ns"><span class="an-o" data-o="g2e">hạt cát, người, Trái Đất</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="g2e">Mở</button>
+  <div class="an" id="g2e" hidden><p>Hạt cát nhỏ nhưng mắt vẫn thấy: <b>vĩ mô</b>.</p></div>
+</section>
+
+<!-- ================= 3. Mục tiêu · năm lĩnh vực ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Mục tiêu của môn Vật lí</span><span>phút 8–12</span><span class="tap">tr.2 · ô 2·1</span></div>
+  <p>Khám phá quy luật <b class="o">tổng quát</b> nhất của vận động và tương tác của vật chất, năng lượng, ở cả vi mô lẫn vĩ mô.</p>
+  <p>Ở phổ thông: nắm kiến thức, kĩ năng và <b class="o">vận dụng</b> vào học tập, đời sống.</p>
+  <p>Vật lí là cơ sở của khoa học <b class="o">tự nhiên</b>.</p>
+  <p class="hoi">"Tổng quát" là gì? Một định luật giải thích được cả xe đạp xuống dốc lẫn pin điện thoại hết dần?</p>
+  <button class="mo" data-mo="g3a">Mở: bảo toàn năng lượng</button>
+  <div class="an" id="g3a" hidden>
+    <p>Xe xuống dốc: thế năng thành <b class="o">động</b> năng. Pin hết dần: hoá năng thành <b class="o">điện</b> năng.</p>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Năm lĩnh vực</span><span>phút 8–12</span><span class="tap">tr.2 · ô 2·2 + ô 2·4</span></div>
+  <p class="nho">Ngân hàng: internet · chụp MRI · robot tự động hoá · đèn LED trồng cây · kính hiển vi điện tử</p>
+  <table>
+    <thead><tr><th>Lĩnh vực</th><th>Ví dụ từ vật lí</th></tr></thead>
+    <tbody>
+      <tr><td>Thông tin liên lạc</td><td class="ns"><span class="an-o" data-o="g3b">internet</span></td></tr>
+      <tr><td>Y tế</td><td class="ns"><span class="an-o" data-o="g3b">chụp MRI</span></td></tr>
+      <tr><td>Công nghiệp</td><td class="ns"><span class="an-o" data-o="g3b">robot tự động hoá</span></td></tr>
+      <tr><td>Nông nghiệp</td><td class="ns"><span class="an-o" data-o="g3b">đèn LED trồng cây</span></td></tr>
+      <tr><td>Nghiên cứu</td><td class="ns"><span class="an-o" data-o="g3b">kính hiển vi điện tử</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="g3b">Mở</button>
+  <div class="an" id="g3b" hidden><p>Ô 2·4 (Câu 2) chép luôn: MRI: y tế · LED: nông nghiệp · kính hiển vi điện tử: nghiên cứu.</p></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Câu 2</span><span>phút 8–12</span><span class="tap">ghi ô 4·3 · Câu 2</span></div>
+  <p class="hoi">Cặp thiết bị – lĩnh vực nào ghép đúng?</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Nhiễu xạ tia X: y tế</li>
+    <li><b>B.</b> Đèn LED chiếu cây trồng: y tế</li>
+    <li><b>C.</b> Kính hiển vi điện tử: thông tin liên lạc</li>
+    <li data-dung><b>D.</b> Dây chuyền tự động hoá dùng trí tuệ nhân tạo: công nghiệp</li>
+  </ol>
+  <button class="mo" data-mo="a3c">Mở đáp án</button>
+  <div class="an" id="a3c" hidden><p><b>D.</b> A là bẫy: nhiễu xạ tia X dùng để <b>nghiên cứu</b> cấu trúc vật chất; X-quang mới thuộc y tế.</p></div>
+</section>
+
+<!-- ================= 4. Hai phương pháp · 5 bước ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Hai phương pháp</span><span>phút 12–18</span><span class="tap">tr.2 · ô 2·3 · bảng</span></div>
+  <table>
+    <thead><tr><th></th><th>Thực nghiệm</th><th>Lí thuyết</th></tr></thead>
+    <tbody>
+      <tr><td><b>Làm gì</b></td><td><span class="an-o" data-o="g4a">dùng thí nghiệm để phát hiện kết quả</span></td><td><span class="an-o" data-o="g4a">dùng toán học, suy luận để dự đoán kết quả mới</span></td></tr>
+      <tr><td><b>Kết quả cần</b></td><td><span class="an-o" data-o="g4a">lí thuyết giải thích</span></td><td><span class="an-o" data-o="g4a">thực nghiệm kiểm chứng</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="g4a">Mở bảng</button>
+  <div class="an" id="g4a" hidden><p>Hai phương pháp <b>bổ sung nhau</b>.</p></div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Phân loại</span><span>phút 12–18</span><span class="tap">tr.2 · ô 2·3 · Ví dụ</span></div>
+  <div class="giua">
+    <p>Thả sách rơi từ độ cao $h$; $g\approx 9{,}8\ \text{m/s}^2$ là gia tốc rơi tự do.</p>
+    <p class="hoi">Đo thời gian rơi bằng video: phương pháp nào? Tính trước bằng công thức $t=\sqrt{\dfrac{2h}{g}}$ thì sao?</p>
+    <button class="mo" data-mo="g4b">Mở</button>
+    <div class="an" id="g4b" hidden>
+      <p>Đo bằng video: <b class="o">thực nghiệm</b>. Tính trước: <b class="o">lí thuyết</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Quy trình 5 bước</span><span>phút 12–18</span><span class="tap">tr.3 · ô 3·1</span></div>
+  <div class="hai">
+    <div class="fig f4"><svg viewBox="0 0 240 228" role="img" aria-label="Quy trình năm bước nghiên cứu"><defs><marker id="nb1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="8" y="8" width="128" height="32" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="22" y="31" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">1</text><text x="46" y="31" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">Thấy</text><line x1="72" y1="40" x2="72" y2="52" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nb1)"/><rect x="8" y="52" width="128" height="32" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="22" y="75" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">2</text><text x="46" y="75" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">Hỏi</text><line x1="72" y1="84" x2="72" y2="96" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nb1)"/><rect x="8" y="96" width="128" height="32" rx="5" fill="#dfe6f4" stroke="#1c2540" stroke-width="2.8"/><text x="22" y="119" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">3</text><text x="46" y="119" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">Đoán</text><line x1="72" y1="128" x2="72" y2="140" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nb1)"/><rect x="8" y="140" width="128" height="32" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="22" y="163" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">4</text><text x="46" y="163" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">Thử</text><line x1="72" y1="172" x2="72" y2="184" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nb1)"/><rect x="8" y="184" width="128" height="32" rx="5" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="22" y="207" fill="#1f5fa8" font-size="20" text-anchor="start" font-weight="700">5</text><text x="46" y="207" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">Chốt</text><path d="M136,164 L164,164 L164,106 L142,106" fill="none" stroke="#b3261e" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#nb1)"/><text x="172" y="128" fill="#b3261e" font-size="20" text-anchor="start" font-weight="400">không</text><text x="172" y="150" fill="#b3261e" font-size="20" text-anchor="start" font-weight="400">khớp</text></svg></div>
+    <div class="ben rong">
+      <p><b>Thấy:</b> <b class="o">quan sát</b>, suy luận · <b>Hỏi:</b> đề xuất <b class="o">vấn đề</b></p>
+      <p><b>Đoán:</b> hình thành <b class="o">giả thuyết</b></p>
+      <p><b>Thử:</b> <b class="o">kiểm tra</b> giả thuyết · <b>Chốt:</b> rút ra <b class="o">kết luận</b></p>
+      <p>Không khớp: <b class="o">điều chỉnh</b> hoặc <b class="o">bác bỏ</b> giả thuyết, rồi quay lại bước <b class="o">3</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Câu 3</span><span>phút 12–18</span><span class="tap">tr.3 · ô 3·2 · ghi ô 4·3 · Câu 3</span></div>
+  <p class="hoi">Lan thấy sách rơi nhanh hơn tờ giấy và nói: "Chắc do không khí cản tờ giấy nhiều hơn." Câu này thuộc bước nào?</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Quan sát, suy luận</li>
+    <li data-dung><b>B.</b> Hình thành giả thuyết</li>
+    <li><b>C.</b> Kiểm tra giả thuyết</li>
+    <li><b>D.</b> Rút ra kết luận</li>
+  </ol>
+  <button class="mo" data-mo="a4d">Mở đáp án</button>
+  <div class="an" id="a4d" hidden><p><b>B.</b> Lan đoán nguyên nhân, chưa kiểm tra. Suy luận ở bước 1 chỉ dẫn tới câu <b class="o">hỏi</b>.</p></div>
+</section>
+
+<!-- ================= 5. Sách và giấy rơi · sai số ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Thí nghiệm tại lớp</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·3</span></div>
+  <div class="hai">
+    <div class="ben">
+      <p><b>Làm:</b> thả cùng lúc, cùng độ cao: sách với giấy phẳng; rồi giấy đặt trên sách.</p>
+      <p class="hoi">Giả thuyết của Lan: "không khí cản giấy". Nếu đúng, giấy đặt trên sách rơi thế nào?</p>
+      <button class="mo" data-mo="r5a">Làm thật rồi mới mở</button>
+      <div class="an" id="r5a" hidden>
+        <p><b>Quan sát:</b> giấy phẳng rơi <b class="o">chậm</b> hẳn; giấy đặt trên sách rơi <b class="o">cùng</b> sách.</p>
+      </div>
+    </div>
+    <div class="fig f5 an-o" data-o="r5a"><svg viewBox="0 0 320 262" role="img" aria-label="Bốn vật rơi cùng lúc"><line x1="4" y1="196" x2="316" y2="196" stroke="#1c2540" stroke-width="4"/><line x1="4" y1="14" x2="316" y2="14" stroke="#8a94ad" stroke-width="2.4" stroke-dasharray="6 4"/><text x="8" y="36" fill="#8a94ad" font-size="20" text-anchor="start" font-weight="400">độ cao thả</text><rect x="22" y="176" width="44" height="16" rx="2" fill="#dfe6f4" stroke="#1c2540" stroke-width="2.8"/><rect x="98" y="120" width="48" height="4" rx="1" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M98,124 q12,10 24,0 t24,0" fill="none" stroke="#8a94ad" stroke-width="2"/><rect x="178" y="176" width="44" height="16" rx="2" fill="#dfe6f4" stroke="#1c2540" stroke-width="2.8"/><rect x="180" y="172" width="40" height="4" rx="1" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="278" cy="160" r="12" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><line x1="44" y1="40" x2="44" y2="160" stroke="#8a94ad" stroke-width="1.8" stroke-dasharray="4 5"/><line x1="122" y1="40" x2="122" y2="110" stroke="#8a94ad" stroke-width="1.8" stroke-dasharray="4 5"/><line x1="200" y1="40" x2="200" y2="160" stroke="#8a94ad" stroke-width="1.8" stroke-dasharray="4 5"/><line x1="278" y1="40" x2="278" y2="140" stroke="#8a94ad" stroke-width="1.8" stroke-dasharray="4 5"/><text x="44" y="218" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">sách</text><text x="122" y="218" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">giấy</text><text x="122" y="240" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">phẳng</text><text x="200" y="218" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">giấy</text><text x="200" y="240" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">+ sách</text><text x="278" y="218" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">giấy</text><text x="278" y="240" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">vo</text></svg></div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Thí nghiệm dựng lại</span><span>3 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.3 · ô 3·3 · bảng</span></div>
+  <div class="vg" data-bat="0" data-het="31.3">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-lam-quen-02-20261109.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-lam-quen-02-20261109.webp" preload="metadata" playsinline title="Sách và tờ giấy rơi: thử một giả thuyết qua 5 bước"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: giấy vo tròn rơi so với sách, và số khung hình.</p><p class="nho">Quay 60 hình/giây: đếm khung từ lúc buông tới lúc chạm sàn.</p></div>
+      <div class="buoc" data-t="0"><p class="hoi">Hai giả thuyết: ① vật nặng rơi nhanh hơn · ② không khí cản giấy.</p></div>
+      <div class="buoc" data-t="11.0" data-dung><p class="hoi">Vo tròn tờ giấy (khối lượng như cũ), thả cùng sách từ $2$ m. Giấy vo rơi thế nào?</p>
+        <ol class="opt lo"><li><b>A.</b> Chậm hẳn, như giấy phẳng</li><li data-dung><b>B.</b> Chỉ chậm hơn sách chút ít</li><li><b>C.</b> Nhanh hơn sách rõ rệt</li><li><b>D.</b> Chạm sàn đúng cùng lúc</li></ol></div>
+      <div class="buoc" data-t="11.1"><p class="hoi">Thử: giấy trên sách, rồi giấy vo cùng sách, đếm khung 3 lần.</p></div>
+      <div class="buoc" data-t="23.0" data-dung><p class="so-lon">B. Chậm hơn chút ít</p><table class="bang"><tr><th></th><th>lần 1</th><th>lần 2</th><th>lần 3</th></tr><tr><td>sách</td><td class="ns">38</td><td class="ns">38</td><td class="ns">39</td></tr><tr><td>giấy vo</td><td class="ns">41</td><td class="ns">41</td><td class="ns">41</td></tr></table><p class="hoi">Chênh khoảng $2{,}7$ khung, mỗi lần đếm lệch $\pm1$ khung. Chậm hơn thật không?</p></div>
+      <div class="buoc" data-t="23.1"><p class="hoi">Rút ra.</p></div>
+      <div class="buoc" data-t="31.3"><p class="so-lon">$2{,}7$ khung $&gt;\pm1$ khung: chậm hơn thật</p><p class="hoi">Giấy vo nặng như cũ, chỉ bị cản ít hơn: giả thuyết ① bị bác bỏ, ② được ủng hộ.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Đọc bảng</span><span>phút 18–25 · tự tính 1 phút</span><span class="tap">tr.3 · ô 3·3 · bảng + dòng ±1</span></div>
+  <p class="nho">Rơi từ $h=2$ m · $1$ khung $=\tfrac1{60}$ s</p>
+  <table class="gon">
+    <thead><tr><th>Vật</th><th>Số khung 3 lần</th><th>TB</th><th>$t$ (s)</th><th>$g=\dfrac{2h}{t^2}$</th></tr></thead>
+    <tbody>
+      <tr><td>Sách</td><td>38 · 38 · 39</td><td class="ns"><span class="an-o" data-o="g5c">38,3</span></td><td class="ns"><span class="an-o" data-o="g5c">0,64</span></td><td class="ns"><span class="an-o" data-o="g5c">≈ 9,8</span></td></tr>
+      <tr><td>Giấy vo</td><td>41 · 41 · 41</td><td class="ns"><span class="an-o" data-o="g5c">41</span></td><td class="ns"><span class="an-o" data-o="g5c">0,68</span></td><td class="ns"><span class="an-o" data-o="g5c">≈ 8,6</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="g5c">Mở</button>
+  <div class="an" id="g5c" hidden>
+    <p>Mỗi lần đếm lệch $\pm1$ khung $=\pm$ <b class="o">0,017</b> s.</p>
+    <p class="nho">Giấy vo ra $8{,}6$ vì vẫn bị không khí cản: con số đó không phải $g$.</p>
+  </div>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Câu 6</span><span>phút 18–25</span><span class="tap">ghi ô 4·3 · Câu 6</span></div>
+  <p class="hoi">Sách $38 \cdot 38 \cdot 39$ khung, giấy vo $41 \cdot 41 \cdot 41$ khung, sai số mỗi lần đếm $\pm 1$ khung. Câu nào đúng?</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Lần đo $39$ là đo hỏng, vì khác hai lần còn lại</li>
+    <li data-dung><b>B.</b> Giấy vo rơi chậm hơn thật, vì chênh vượt sai số</li>
+    <li><b>C.</b> Hai vật rơi như nhau, vì cùng chỉ chênh vài khung hình</li>
+    <li><b>D.</b> Không so sánh được, vì chỉ đo $3$ lần</li>
+  </ol>
+  <button class="mo" data-mo="a5d">Mở đáp án</button>
+  <div class="an" id="a5d" hidden><p><b>B.</b> Chênh $\approx2{,}7$ khung: <b class="o">vượt</b> sai số $\pm1$ khung.</p></div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Rút ra</span><span>phút 18–25</span><span class="tap">tr.3 · ô 3·3 dòng cuối · tr.4 · ô 4·1 dòng 3</span></div>
+  <div class="giua">
+    <p class="hoi">Giấy trên sách rơi cùng sách; giấy vo nặng như cũ mà gần bằng sách. Vậy giấy phẳng chậm vì đâu?</p>
+    <button class="mo" data-mo="g5e">Mở: rút ra</button>
+    <div class="an" id="g5e" hidden><p>Giấy phẳng chậm vì <b class="o">không khí</b> cản, không phải vì <b class="o">nhẹ</b>.</p></div>
+    <p class="hoi">Bẫy 3: "Hai số khác nhau là khác thật"?</p>
+    <button class="mo" data-mo="g5f">Mở</button>
+    <div class="an" id="g5f" hidden><p>Chênh lệch <b class="o">không vượt quá</b> sai số thì chưa kết luận được.</p></div>
+  </div>
+</section>
+
+<!-- ================= 6. Bẫy 1, Bẫy 2 · quay lại ấm nước · đề 1222 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Bẫy 1</span><span>phút 25–30</span><span class="tap">tr.4 · ô 4·1 · dòng 1</span></div>
+  <h2>"Đã có lí thuyết thì khỏi cần đo"?</h2>
+  <div class="hai">
+    <div class="fig f6"><svg viewBox="0 0 340 176" role="img" aria-label="Đường đi của robot hút bụi"><defs><marker id="rb1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><path d="M70,36 L190,36 L190,156 L70,156 z" fill="none" stroke="#8a94ad" stroke-width="2.4" stroke-dasharray="6 5"/><line x1="76" y1="156" x2="76" y2="100" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#rb1)"/><line x1="120" y1="36" x2="160" y2="36" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#rb1)"/><line x1="190" y1="70" x2="190" y2="110" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#rb1)"/><line x1="170" y1="156" x2="130" y2="156" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#rb1)"/><circle cx="70" cy="36" r="7" fill="#fff" stroke="#b3261e" stroke-width="2.6"/><circle cx="190" cy="36" r="7" fill="#fff" stroke="#b3261e" stroke-width="2.6"/><circle cx="190" cy="156" r="7" fill="#fff" stroke="#b3261e" stroke-width="2.6"/><circle cx="70" cy="156" r="7" fill="#fff" stroke="#b3261e" stroke-width="2.6"/><circle cx="70" cy="156" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="70" y="163" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">R</text><text x="130" y="100" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">1,5 m</text><text x="230" y="100" fill="#b3261e" font-size="20" text-anchor="start" font-weight="400">bốn góc rẽ</text></svg></div>
+    <div class="ben">
+      <p>Robot đi $6$ m với $0{,}2$ m/s.</p>
+      <p>Lí thuyết: $6:0{,}2=$ <b class="o"><span class="an-o" data-o="g6a">30</span></b> s. Đo được: $33$ s.</p>
+      <button class="mo" data-mo="g6a">Mở</button>
+      <div class="an" id="g6a" hidden><p>Lệch $3$ s ⇒ tìm <b class="o">nguyên nhân</b>, không bỏ bên nào.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Câu 4</span><span>phút 25–30</span><span class="tap">ghi ô 4·3 · Câu 4</span></div>
+  <p class="hoi">Lí thuyết dự đoán $30$ s, robot thật chạy $33$ s. Kết luận hợp lí nhất?</p>
+  <ol class="opt lo">
+    <li><b>A.</b> Robot hỏng nên phải bỏ kết quả đo</li>
+    <li><b>B.</b> Lí thuyết sai hoàn toàn nên bỏ phép tính</li>
+    <li><b>C.</b> Phép đo sai vì lí thuyết đã tính chắc chắn</li>
+    <li data-dung><b>D.</b> Mô hình thiếu yếu tố; sửa rồi đo lại</li>
+  </ol>
+  <button class="mo" data-mo="a6b">Mở đáp án</button>
+  <div class="an" id="a6b" hidden><p><b>D.</b> Có thể robot chậm lại ở $4$ góc rẽ. Đó là giả thuyết mới, cần đo để kiểm tra.</p></div>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">6/6 · Câu 5 · Bẫy 2</span><span>phút 25–30</span><span class="tap">ô 4·3 Câu 5 · ô 4·1 dòng 2</span></div>
+  <p class="hoi">Nhóm giả thuyết: gắn thêm quả nặng thì xe đồ chơi chạy nhanh hơn. Đo xong, xe nặng hơn lại chậm hơn. Điều nào đúng?</p>
+  <ol class="opt lo">
+    <li data-dung><b>A.</b> Giả thuyết bị bác bỏ; nhóm nên đặt giả thuyết mới</li>
+    <li><b>B.</b> Thí nghiệm hỏng, làm lại tới khi xe nặng chạy nhanh hơn</li>
+    <li><b>C.</b> Giả thuyết vẫn đúng, chỉ cần ghi số liệu theo dự đoán</li>
+    <li><b>D.</b> Không rút ra được gì, vì giả thuyết sai</li>
+  </ol>
+  <button class="mo" data-mo="a6c">Mở đáp án</button>
+  <div class="an" id="a6c" hidden><p><b>A.</b> Bác bỏ: loại một hướng <b class="o">sai</b>, cho biết điều <b class="o">mới</b>.</p></div>
+</section>
+
+<section class="man" id="m6am">
+  <div class="top"><span class="so">6/6 · Quay lại ấm nước</span><span>phút 29–30</span><span class="tap">tr.1 · ô 1·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1a"></div>
+    <div class="ben">
+      <p class="hoi">Nắp ấm rung, phân tử nước chuyển động: phần nào là việc của vật lí?</p>
+      <button class="mo" data-mo="a6am">Mở đáp án</button>
+      <div class="an" id="a6am" hidden><p><b>C.</b> Cả hai: phân tử chuyển động nhanh (vi mô) làm nắp ấm rung (vĩ mô). Vật lí nghiên cứu cả cách cái này gây ra cái kia.</p></div>
+      <p class="nho">D sai: nước hoá hơi vẫn là nước, không có chất mới.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6qr">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">làm trên điện thoại</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1222" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM15 1h1v1h-1zM17 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM17 2h1v1h-1zM18 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM24 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM15 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM23 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM9 7h1v1h-1zM12 7h1v1h-1zM15 7h1v1h-1zM18 7h1v1h-1zM21 7h1v1h-1zM23 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM13 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM5 9h1v1h-1zM7 9h1v1h-1zM8 9h1v1h-1zM9 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM21 10h1v1h-1zM25 10h1v1h-1zM28 10h1v1h-1zM30 10h1v1h-1zM31 10h1v1h-1zM0 11h1v1h-1zM3 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM11 11h1v1h-1zM14 11h1v1h-1zM15 11h1v1h-1zM16 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM30 11h1v1h-1zM0 12h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM2 13h1v1h-1zM4 13h1v1h-1zM7 13h1v1h-1zM10 13h1v1h-1zM11 13h1v1h-1zM13 13h1v1h-1zM14 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM19 13h1v1h-1zM21 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM25 13h1v1h-1zM26 13h1v1h-1zM30 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM1 14h1v1h-1zM2 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM12 14h1v1h-1zM17 14h1v1h-1zM21 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM26 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM31 14h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM12 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM1 16h1v1h-1zM3 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM11 16h1v1h-1zM13 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM22 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM32 16h1v1h-1zM1 17h1v1h-1zM2 17h1v1h-1zM9 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM17 17h1v1h-1zM18 17h1v1h-1zM19 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM30 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM3 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM2 19h1v1h-1zM4 19h1v1h-1zM7 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM15 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM31 19h1v1h-1zM32 19h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM13 20h1v1h-1zM16 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM29 20h1v1h-1zM31 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM12 21h1v1h-1zM15 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM10 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM15 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM20 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM8 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM15 23h1v1h-1zM20 23h1v1h-1zM21 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM28 23h1v1h-1zM30 23h1v1h-1zM0 24h1v1h-1zM3 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM11 24h1v1h-1zM12 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM15 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM8 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM12 25h1v1h-1zM16 25h1v1h-1zM18 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM16 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM30 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h1v1h-1zM11 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM10 29h1v1h-1zM12 29h1v1h-1zM14 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM19 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM22 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM12 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM16 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM23 31h1v1h-1zM28 31h1v1h-1zM30 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM11 32h1v1h-1zM13 32h1v1h-1zM17 32h1v1h-1zM19 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM25 32h1v1h-1zM27 32h1v1h-1zM29 32h1v1h-1zM31 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1222</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1222 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6ve">
+  <div class="top"><span class="so">Về nhà theo Tập bài 1</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.1</b> ô 1·3 dòng "điều em hiểu sai" · ô 1·1 đánh dấu mục tiêu</li>
+    <li><b>tr.3</b> ô 3·2 dòng "Vì sao" · ô 3·4 cách kiểm tra giả thuyết của Hà</li>
+    <li><b>tr.4</b> ô 4·2 Trả bài 6 câu + bạn cùng bàn kiểm</li>
+    <li><b>tr.5</b> ô 5·1 bài toán mẫu ly nước đá (Giải) · rồi ô 4·3 Câu 7 · khung Đề BTVN ghi đề thầy giao trên web · ô 5·2</li>
+  </ul>
+</section>
+
+<section class="man" id="m6c7">
+  <div class="top"><span class="so">Về nhà · Câu 7</span><span>làm sau ô 5·1</span><span class="tap">ghi ô 4·3 · Câu 7</span></div>
+  <p class="hoi">Cùng ly nước đá ấy, đặt trong phòng điều hoà rất khô thì hầu như không đọng giọt. Kết quả này ủng hộ giả thuyết nào?</p>
+  <ol class="opt">
+    <li><b>A.</b> "Nước thấm qua thành ly", vì phòng khô thì thấm kém hơn</li>
+    <li><b>B.</b> Cả hai giả thuyết như nhau</li>
+    <li><b>C.</b> "Hơi nước ngưng tụ": phòng khô ít hơi nước nên ít giọt</li>
+    <li><b>D.</b> Không giả thuyết nào, vì độ khô của phòng không liên quan gì</li>
+  </ol>
+  <p class="nho">Chụp lại màn này. Đáp án: buổi sau.</p>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+<script>(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && (/^(a|r)/.test(id) || btn.hasAttribute('data-to'))){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

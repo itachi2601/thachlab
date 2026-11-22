@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hạt nhân và mô hình nguyên tử · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Hạt nhân và mô hình nguyên tử (L12 · Tập bài 17 · web Bài 14) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web. Tập in số bài <b>17</b>, trang web là "Bài 14" — đọc to "Tập bài 17" để học sinh lật đúng.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1191 "Kiểm tra nhanh — Bài 14. Hạt nhân và mô hình nguyên tử"</b> (18 câu: 12 câu A–D + 6 câu Đúng/Sai, 15 phút, mục Lý thuyết id 138) trên điện thoại: màn 6d có mã QR (cao 62% màn) (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1191&amp;item=138</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>PhET "Tán xạ Rutherford"</b> (cần mạng, bản tiếng Việt): mở sẵn một tab trước giờ, để ở màn chọn. Ở điểm dừng 4 chọn "Mẫu Nguyên tử bánh pudding" bấm nút đỏ Hạt Alpha, rồi sang "Mẫu Nguyên tử Rutherford" (mặc định 79 prôtôn) bắn lại. Bật vết đường đi để bàn cuối thấy hạt bật ngược.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 27 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn; nhãn trong hình ≥ 0,7 chữ thường. Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang · ô · dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…". Số mũ gạch chân (10<sup>−15</sup>) điền vào ô số mũ nhỏ trong Tập.</li>
+  <li><b>Clip "Bắn hạt alpha vào lá vàng"</b> (màn 4b, cần mạng): <b>mặc định bỏ qua</b> (bấm → qua luôn) vì trùng ý PhET; chỉ chiếu khi lớp không mở được PhET. Clip tự dừng 3 lần (alpha va êlectron → đoán A–D; 1/8 000 hạt lệch quá 90° → "cái gì đẩy?"; bảng xa/gần/rất sát → "Thomson đẩy ngược được không?"), Enter phát tiếp, ↺ xem lại đoạn. Trước giờ tới màn bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li>Hai clip khác của bài (bắn bi mù tìm vật chắn, đếm lớp nguyên tử lá nhôm) không chiếu trên lớp: học sinh xem trên web (mục lý thuyết) khi ôn.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Câu 2–7 (màn chiếu) không in đề trong Tập: học sinh ghi vào bảng ô 2·4 (tr.2) cột "Em chọn" + "Chắc?" trước khi mở, cột "Đúng?" sau khi mở. Câu 1 in sẵn trong ô 1·4.</li>
+</ul>
+
+<h2>Đi theo Tập bài 17 <small>thứ tự lật: tr.1 → tr.2 → tr.5 (PhET) → tr.2 → tr.4 → tr.3 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán lá vàng</td><td>0–3</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Hạt nhân, kí hiệu + câu 1</td><td>3–9</td><td>tr.1 ô 1·4</td><td>12 chỗ điền ngắn + câu 1 (chọn, dòng "Vì") = 13</td></tr>
+<tr><td>3 · Đồng vị + câu 3, câu 2 (nhớ lại)</td><td>9–13</td><td>tr.2 ô 2·1 → ô 2·4 câu 3, 2</td><td>9 chỗ điền + bảng 3 cặp (9 ô) + 2 câu = 20</td></tr>
+<tr><td>4 · Mô hình nguyên tử + PhET + câu 4, 6</td><td>13–21</td><td>tr.5 ô 5·4 (dòng "Bắn hạt alpha") → tr.2 ô 2·2 → ô 2·4 câu 4, 6</td><td>2 dòng PhET + 2 chỗ điền + 6 ô bảng (3 ô "Hình" về nhà) + 2 câu = 12</td></tr>
+<tr><td>5 · Câu 7 (nhớ lại), kích thước, u, bài mẫu, câu 5</td><td>21–27</td><td>ô 2·4 câu 7 (+ tr.5 ô 5·4) → tr.2 ô 2·3 → ô 2·4 câu 5 → tr.4 ô 4·2, 4·3 a)–c)</td><td>12 chỗ điền + 8 ô bảng phân tích + 3 dòng giải + 2 câu = 25</td></tr>
+<tr><td>6 · Bẫy, trả bài, quay lại lá vàng, đề 1191</td><td>27–30, đề 30–45</td><td>tr.3 ô 3·1, 3·2 câu 3, 5 → tr.1 ô 1·3, 1·1 → đề xong: tr.3 ô "Ghi chú"</td><td>tick bẫy + 2 câu trả bài + đáp án dự đoán, đúng/sai + điểm đề</td></tr>
+</tbody>
+</table>
+<p>Điểm dừng 5 dày nhất (25 chỗ): ô 2·3 chỉ là số/kí hiệu ngắn — chiếu xong mới cho chép, đọc to từng dòng. Bảng phân tích đề (ô 4·2) cho cả lớp nói miệng từng dòng rồi mở, chép sau. Thiếu giờ: ô 4·2 chép ở nhà (màn đã đủ dữ liệu), chỉ giữ giải b), c) trên lớp.</p>
+
+<h2>Điểm dừng 1 · Dự đoán lá vàng <small>phút 0–3 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li>Gợi mở: "Năm 1904 Thomson nói nguyên tử là quả cầu điện dương đặc, êlectron cắm rải rác như nho khô trong bánh. Rutherford kiểm bằng cách bắn hạt alpha (điện $+2e$) vào lá vàng mỏng." Chỉ hình: nguồn, lá vàng, máy dò quay quanh để đếm hạt ở mỗi góc $\varphi$.</li>
+  <li>Màn 1 không có ô đáp án (tránh bấm nhầm lộ): khoanh vào Tập, chắc/không chắc, viết một dòng "Vì sao". Ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn "Quay lại lá vàng", ô 1·3).</li>
+  <li>Câu hỏi đã đổi theo lớp ảo 22/11: hỏi <b>sẽ thấy gì</b> (A: mọi hạt gần thẳng · B: phần lớn thẳng, ít lệch, rất ít bật ngược · C: phần lớn lệch/bật lại), không hỏi thẳng "nguyên tử là gì" để không trùng câu trả lời thuộc lòng từ Hoá 10. Câu và 3 phương án trên màn khớp ý Tập (màn rút gọn chữ). Hình trên màn là hình tự vẽ (chỉ có bố trí thí nghiệm, không lộ kết quả) — Tập dùng ảnh khác cùng nội dung.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (đúng như Thomson dự đoán: điện dương trải đều thì không chỗ nào đủ mạnh để hất ngược alpha) — hỏi "nếu có hạt bật ngược thì Thomson sai ở đâu?". Chọn C (vàng đặc) — hỏi "đặc kín thì hạt alpha có xuyên qua lá vàng được không?" (để mở dần, chưa chốt; đáp án B).</div>
+
+<h2>Điểm dừng 2 · Hạt nhân và kí hiệu <small>phút 3–9 · tr.1 ô 1·4 → tr.2 ô 2·4</small></h2>
+<ul>
+  <li>Màn 2a: hạt nhân gồm prôtôn ($+e$), nơtron (không điện) — gọi chung nuclôn. Gợi mở: "Các prôtôn cùng dấu đẩy nhau rất mạnh ở khoảng cách $10^{-15}$ m. Sao hạt nhân không nổ tung?" → lực hạt nhân: rất mạnh, thắng lực đẩy tĩnh điện, chỉ trong phạm vi $10^{-15}$ m. Dòng "Nguyên tử trung hoà: số êlectron = số prôtôn" (chữ nhỏ) không có trong Tập nhưng đề 1191 hỏi (câu 14) — đọc to.</li>
+  <li>Màn 2b: kí hiệu ${}^{A}_{Z}\mathrm{X}$ — "trên là tổng, dưới là prôtôn". Điền 6 chỗ dòng 3–4 của ô 1·4.</li>
+  <li>Màn 2c: Tự kiểm tra 1 (${}^{65}_{29}\mathrm{Cu}$, in sẵn trong ô 1·4), biểu quyết rồi mở; điền dòng "Vì $N=A-Z=$…". Màn 2d: Hình 2 của bài (đọc kí hiệu Cu) để chốt — chỉ chiếu sau khi đã mở đáp án câu 1 (hình có sẵn số 36).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> đọc ngược hai chỉ số (65 prôtôn); lấy $Z$ làm số nuclôn; nghĩ lực hạt nhân "ra xa thành lực đẩy" (câu 2 C).</div>
+
+<h2>Điểm dừng 3 · Đồng vị <small>phút 9–13 · tr.2 ô 2·1 → ô 2·4</small></h2>
+<ul>
+  <li>Màn 3a: hình ba đồng vị hiđrô (cùng hình Tập: prôtôn đặc có "+", nơtron rỗng). Hỏi "ba hạt này cùng là hiđrô vì sao?" → cùng 1 prôtôn. "Vì sao cùng tính chất hoá học?" → cùng $Z$ nên cùng số êlectron ở vỏ (đề 1191 câu 4 hỏi đúng ý này).</li>
+  <li>Màn 3b: bảng 3 cặp — cả lớp điền $Z$, $N$, Có/Không 45 giây rồi mở. Nhấn cặp Ar – Ca: cùng số khối 40 mà không phải đồng vị.</li>
+  <li>Màn 3c: Câu 3 (O-16/O-17), ghi ô 2·4. Bảng màn 3b chỉ hiện dòng "cùng $Z$ mới là đồng vị" khi đã mở bảng.</li>
+  <li>Màn 2e (đặt sau 3c): Câu 2 (lực hạt nhân ra xa) — nhớ lại ý màn 2a sau 6 phút, không hỏi ngay; ghi ô 2·4 tr.2.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn cặp cùng số khối (B, C) hoặc cùng số nơtron (D). Điều kiện duy nhất cần kiểm: chỉ số dưới $Z$.</div>
+
+<h2>Điểm dừng 4 · Mô hình nguyên tử <small>phút 13–21 · tr.5 ô 5·4 → tr.2 ô 2·2 → ô 2·4</small></h2>
+<ul>
+  <li>Lật tr.5, ô 5·4 dòng "Bắn hạt alpha (Rutherford) · Dự đoán" — học sinh ghi dự đoán trước. PhET khoảng 3 phút (màn 4a): Thomson trước (mọi hạt gần thẳng), Rutherford sau (sát hạt nhân lệch mạnh, có hạt bật ngược). Dừng 30 giây cho lớp <b>ghi dòng "Thấy" ngay trên lớp</b>. Mở "kết quả" sau khi lớp đã nói: có câu "êlectron nhẹ hơn alpha &gt;7 000 lần" — đây là căn cứ để loại C ở câu 4, nhấn rõ.</li>
+  <li>Màn 4b (clip) bỏ qua theo mặc định; chỉ chiếu khi PhET không mở được.</li>
+  <li>Lật lại tr.2. Màn 4c: Hình 4 ba mô hình + 2 chỗ điền dòng 1–2 ô 2·2 ("dương", "năng lượng xác định"). Màn 4d: bảng ba cột — mỗi cột hỏi miệng "điểm mới là gì? bị bác bỏ / còn thiếu gì?" rồi mở cột đó. Ô "Hình" trong Tập để về nhà (vẽ theo Hình 4).</li>
+  <li>Bohr trong bài web là "đọc thêm, ngoài chương trình", nhưng Tập và đề 1191 (câu 13a, 16) có — dạy một câu, không mở rộng.</li>
+  <li>Màn 4e Câu 4 (phát biểu <u>sai</u>: C, do êlectron) và 4f Câu 6 (B), ghi ô 2·4. Câu 4 là kiểu bốn ý a)–d) Phần II của đề tốt nghiệp — nói cho lớp biết.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ alpha lệch do va êlectron (câu 4 C, đề 1191 câu 13); nghĩ thí nghiệm lá vàng chứng minh quỹ đạo dừng (là Bohr bổ sung).</div>
+
+<h2>Điểm dừng 5 · Kích thước, đơn vị u, bài toán mẫu <small>phút 21–27 · ô 2·4 câu 7 → tr.2 ô 2·3 → tr.4</small></h2>
+<ul>
+  <li>Màn 5f (đầu điểm dừng 5): Câu 7 (urani) — đổi số của câu 1, nhớ lại sau ~15 phút; ghi ô 2·4 và dòng "Câu 7" ở tr.5 ô 5·4.</li>
+  <li>Màn 5a: $R=1{,}2\cdot10^{-15}A^{1/3}$; nguyên tử $10^{-10}$, hạt nhân $10^{-15}$ → nhỏ hơn 100 000 lần (sân vận động – hạt đậu, hình ở tr.5). Hỏi "A gấp 27 lần thì R gấp mấy?" → 3 (đề 1191 câu 7 hỏi A gấp 8 → R gấp 2: chuyển sang số khác).</li>
+  <li>Màn 5b: định nghĩa u, $931{,}5\ \mathrm{MeV}/c^2$, $1\ \mathrm{MeV}=1{,}6\cdot10^{-13}$ J; $m\approx A$ u, $M\approx A$ g/mol. Màn 5c: Câu 5 ($M/N_A$).</li>
+  <li>Màn 5d: bài toán mẫu tr.4 — đọc đề, dòng đầu bảng phân tích đã in sẵn; lớp nói miệng 4 dòng còn lại rồi mở. Màn 5e: làm mẫu a), lớp tự làm b) (30 giây, $27^{1/3}=3$), c) dùng ngay Câu 5. d) về nhà.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> $R$ tỉ lệ thuận với $A$ (gấp 27 lần); nhân $M\cdot N_A$; quên đổi g → kg ở c); viết 27 u thay cho 26,98 u (bẫy 1).</div>
+
+<h2>Điểm dừng 6 · Bẫy, trả bài, quay lại, đề 1191 <small>phút 27–30 · 30–45 làm đề · tr.3 → tr.1 ô 1·3</small></h2>
+<ul>
+  <li>Màn 6a (20 giây): ba bẫy ô 3·1 in sẵn — mỗi em tick bẫy mình từng sập.</li>
+  <li>Màn 6b: trả bài 2 câu của ô 3·2 (câu 3 đồng vị, câu 5 u + R — hai nhóm đề 1191 hỏi nhiều nhất). Viết 1 phút, gấp màn, rồi mở từng câu để tự sửa bằng bút khác màu. Câu 1, 2, 4 về nhà.</li>
+  <li>Màn 6c "Quay lại lá vàng" (1 phút): hình kết quả (hầu hết bay thẳng, vài hạt lệch, rất hiếm bật ngược) + "8 000 hạt → 1 hạt lệch quá 90°". Mở đáp án B (A là dự đoán của Thomson, bị bác vì có hạt bật ngược). Lớp lật tr.1 ô 1·3: ghi đáp án, đúng/sai, dòng "điều em hiểu sai" (VD "tưởng êlectron đẩy được alpha"). 20 giây: đánh dấu ô 1·1.</li>
+  <li>Chiếu mã QR (màn 6d), cả lớp quét, làm đề 1191 trong 15 phút. Tập tr.3 ô "Ghi chú" có dòng "Đề cuối tiết: mã ___ Điểm …/… Câu sai ___": ghi mã 1191, …/18. Ô "Bạn cùng bàn kiểm" (tr.3) không đủ giờ trên lớp: giao về nhà.</li>
+  <li>Đọc màn "Về nhà theo Tập bài 17" — liệt kê đúng mã ô; ô 5·1 ghi đề BTVN thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1191 so với phần học trên lớp:</b>
+<ul>
+  <li>Đã dạy trực tiếp: câu 1 (nuclôn), 3 (tầm lực hạt nhân, = câu 2 màn), 14 (trung hoà, chữ nhỏ màn 2a) ở điểm dừng 2; câu 2, 4, 5, 15 ở điểm dừng 3 (câu 5 C-12/C-14 trùng dòng 1 bảng màn 3b, câu 15 trùng màn 3a); câu 13, 16 ở điểm dừng 4; câu 6, 8, 9, 10, 11 ở điểm dừng 5.</li>
+  <li>Chuyển sang tình huống mới: câu 7 (A gấp 8 → R gấp 2; trên lớp làm A gấp 27).</li>
+  <li>Phần về nhà / chưa dạy: câu 12 (thể tích hạt nhân ∝ $A$) — chỉ gần với thử thách ★★★ tr.5; câu 18b ($m_n \gt m_p$) — chỉ có ở bảng khối lượng trên web, Tập không có.</li>
+  <li>Hỏi lại đúng tình huống vừa chữa (đo "nhớ lại"): câu 17 (${}^{65}_{29}\mathrm{Cu}$ = Tự kiểm tra 1), câu 5, câu 18c (26,98 u = bài mẫu c).</li>
+</ul></div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · $N_A=6{,}022\cdot10^{23}$ mol$^{-1}$</small></h2>
+<ol>
+<li>Hạt nhân ${}^{56}_{26}\mathrm{Fe}$ có số nơtron là: A. $26$ · B. $30$ · C. $56$ · D. $82$</li>
+<li>Cặp nào là hai đồng vị? A. ${}^{24}_{12}\mathrm{Mg}$ và ${}^{24}_{11}\mathrm{Na}$ · B. ${}^{235}_{92}\mathrm{U}$ và ${}^{238}_{92}\mathrm{U}$ · C. ${}^{40}_{19}\mathrm{K}$ và ${}^{40}_{20}\mathrm{Ca}$ · D. ${}^{14}_{6}\mathrm{C}$ và ${}^{15}_{7}\mathrm{N}$</li>
+<li>Bán kính hạt nhân ${}^{64}_{30}\mathrm{Zn}$ ($R=1{,}2\cdot10^{-15}A^{1/3}$ m): A. $4{,}8\cdot10^{-15}$ m · B. $7{,}68\cdot10^{-14}$ m · C. $9{,}6\cdot10^{-15}$ m · D. $4{,}8\cdot10^{-10}$ m</li>
+<li>Hạt nhân X có số khối gấp 125 lần hạt nhân Y. Bán kính X gấp bán kính Y: A. $125$ lần · B. $25$ lần · C. $5$ lần · D. $11{,}2$ lần</li>
+<li>Natri có $M=22{,}99$ g/mol. Khối lượng một nguyên tử natri: A. $3{,}82\cdot10^{-26}$ kg · B. $3{,}82\cdot10^{-23}$ kg · C. $1{,}38\cdot10^{25}$ kg · D. $2{,}62\cdot10^{22}$ kg</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>$N=56-26=30$</td><td>A: lấy $Z$ · C: lấy $A$ · D: cộng $A+Z$</td></tr>
+<tr><td>2</td><td>B</td><td>cùng $Z=92$, $N$ là 143 và 146</td><td>A, C: chỉ cùng số khối · D: chỉ cùng 8 nơtron</td></tr>
+<tr><td>3</td><td>A</td><td>$64^{1/3}=4$ → $R=4{,}8\cdot10^{-15}$ m</td><td>B: quên mũ $1/3$ · C: lấy căn bậc hai · D: nhầm cỡ nguyên tử</td></tr>
+<tr><td>4</td><td>C</td><td>$125^{1/3}=5$</td><td>A: $R\propto A$ · B: $A^{2/3}$ · D: căn bậc hai</td></tr>
+<tr><td>5</td><td>A</td><td>$22{,}99/6{,}022\cdot10^{23}=3{,}82\cdot10^{-23}$ g $=3{,}82\cdot10^{-26}$ kg</td><td>B: quên đổi g → kg · C: nhân $M\cdot N_A$ · D: lấy $N_A/M$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 2d (hình chốt kí hiệu); ô 4·2 (bảng phân tích đề) chép ở nhà; bỏ biểu quyết câu 6 (đọc nhanh đáp án); trả bài chỉ câu 3. Không cắt giờ làm đề 1191 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: PhET "Đồng vị và nguyên tử khối" (dòng "Đồng vị neon" ở tr.5 ô 5·4: vì sao neon ghi 20,18); hoặc thử thách ★★★ tr.5 (hạt nhân vàng chiếm bao nhiêu phần thể tích nguyên tử) — khớp đề 1191 câu 12.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong hình ba mô hình (màn 4c) và hình kí hiệu (màn 2d) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu câu dự đoán (ô 1·2) và câu 4 (alpha lệch do êlectron?) — so với câu 13 đề 1191.</li>
+  <li>Đề 1191: điểm trung bình lớp, câu sai nhiều nhất (dự kiến 7, 12, 18), số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng 5 (25 chỗ) có vượt 7 phút không; điểm dừng nào vượt mốc phút.</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Năng lượng liên kết · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Năng lượng liên kết hạt nhân (L12 Bài 15, Tập in "Bài 18") — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Trên web: bài 15, trên Tập in: <b>BÀI 18</b> — nói với lớp "Tập bài 18".</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Máy tính cầm tay: mỗi bàn ít nhất một chiếc (điểm dừng 3–4 bấm $1{,}007276\times931{,}5$, $0{,}030377\times931{,}5$, $492/56$).</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net) và clip. Mở trước khi vào lớp để trình duyệt nhớ sẵn; không có mạng thì công thức hiện dạng đô-la thô.</li>
+  <li>Cuối tiết làm <b>đề 1192 "Kiểm tra nhanh — Bài 15. Năng lượng liên kết hạt nhân"</b> (20 câu: 14 câu A–D + 6 câu Đúng/Sai, 15 phút, mục Lý thuyết id 147) trên điện thoại: màn 6b có mã QR (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1192&amp;item=147</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 23 màn, mỗi màn một ý. Chữ thường = 5,2% chiều cao màn (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F). Trước giờ ngồi thử ở bàn cuối.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi trang và ô. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Clip "Hai nam châm vòng trên một que"</b> (màn 2a, cần mạng, không có PhET cho bài này): clip bên trái, cột phải chữ to. Clip bỏ phần mở đầu (câu dự đoán đã ở cột phải trước khi phát), chạy từ 10,1 s đến 41,5 s (khoảng 31 giây), <b>tự dừng 3 lần</b> + dừng cuối: ① 13,8 s lơ lửng $d=18$ mm (đáp án B) → "ép sát rồi buông?"; ② 17,4 s bật về 18 mm → "muốn đứng yên sát hơn cần gì?"; ③ 21,6 s có đai, $d=5$ mm → "trong heli cái gì đóng vai chiếc đai?"; sau đó clip tự chạy màn Kết quả + Bẫy và giới hạn (lực điện chỉ đẩy; đai bó ngoài khác lực hạt nhân) rồi dừng cuối. <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; ↺ xem lại đoạn vừa chiếu; dừng cuối Enter sang màn sau. Trước giờ bấm ▶ rồi ↺ để máy tải sẵn. Mốc dừng đã xem khung hình thật (cách đầu cảnh/chuyển động ≥ 0,3 s).</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu.</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đúng &gt; 80% ngay lần đầu: bỏ bước thuyết phục. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li><b>Câu 2–7</b> là câu "Tự kiểm tra ngay" của bài trên web: học sinh ghi vào <b>tr.3 ô 3·4</b> (cột Em chọn · Chắc? · Đúng?) <i>trước</i> khi mở đáp án, mở xong tích cột Đúng. Câu 8 về nhà. Màn 3b "Hỏi nhanh" chỉ giơ tay, không ghi (ô 3·4 không có dòng Câu 1).</li>
+</ul>
+
+<h2>Đi theo Tập bài 18 <small>thứ tự lật: tr.1 → tr.2 → tr.4 → tr.2 → tr.3 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán: vì sao hạt nhân không bung</td><td>0–3</td><td>tr.1 ô 1·2</td><td>Em chọn, chắc/không chắc, 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Lực hạt nhân (clip nam châm)</td><td>3–9</td><td>tr.1 ô 1·4 → tr.3 ô 3·4 Câu 2</td><td>7 chỗ + 1 dòng ô 3·4</td></tr>
+<tr><td>3 · Cân hạt nhân, $E=mc^2$</td><td>9–16</td><td>tr.1 ô 1·5 → tr.2 ô 2·1 → ô 3·4 Câu 3</td><td>8 + 4 = 12 chỗ + 1 dòng ô 3·4</td></tr>
+<tr><td>4 · $\Delta m$, $E_{lk}$, $E_{lkr}$ + bài mẫu He-4</td><td>16–24</td><td>tr.2 ô 2·2 → tr.4 ô 4 (Phân tích đề, Giải) → tr.2 ô 2·3 dòng He → ô 3·4 Câu 4, 6</td><td>11 chỗ + 3 dòng a) b) c) + 2 ô bảng + 2 dòng ô 3·4</td></tr>
+<tr><td>5 · Đường cong $E_{lkr}$, bẫy, hoá học – hạt nhân</td><td>24–29</td><td>tr.2 ô 2·4 → ô 3·4 Câu 5, 7 → tr.3 ô 3·1, 3·2</td><td>8 + 3 chỗ + 3 ô tích bẫy + 2 dòng ô 3·4</td></tr>
+<tr><td>6 · Quay lại heli + đề 1192</td><td>29–30, đề 30–45</td><td>tr.1 ô 1·3, 1·1 → đề</td><td>đáp án dự đoán, đúng/sai + đánh dấu mục tiêu</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 4 dày nhất (bài mẫu nằm ở tr.4, phải lật đi rồi lật lại tr.2 ô 2·3). Bài mẫu chính là số đo phổ kế vừa xem ở điểm dừng 3, nên chỉ cần làm mẫu a) và cho lớp tự bấm b). Trả bài 6 câu (ô 3·3) không làm trên lớp — về nhà, bạn cùng bàn kiểm đầu tiết sau. Bảng ô 2·3: trên lớp chỉ dòng He-4 (đáp số bài mẫu); dòng Fe-56 có sẵn ở Câu 4 ($492/56=8{,}79$) — nhắc ghi luôn nếu kịp.</p>
+
+<h2>Điểm dừng 1 · Dự đoán <small>phút 0–3 · Tập tr.1 ô 1·2 · màn m1</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Hai điện tích cùng dấu thì sao? Trong hạt nhân heli có hai prôtôn sát nhau cỡ $10^{-15}$ m — lực đẩy ở khoảng cách đó lớn hay nhỏ?" Không giảng thêm.</li>
+  <li>Ghi "Em chọn", tích chắc/không chắc, viết một dòng "Vì sao". Màn m1 không có ô đáp án: ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại". Phương án trên màn chép y Tập (ba phương án A–C, Tập không có D).</li>
+  <li>Lưu ý: hình ở ô 1·2 trong Tập in sẵn nhãn "lực hạt nhân / hút vào" — các em nhìn hình là đoán được A. Không cấm nhìn; hỏi "Vì sao" để các em phải nói ra "mạnh hơn lực đẩy".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn B (lực đẩy yếu) — hỏi lại "lực Coulomb tỉ lệ $1/r^2$; $r$ cỡ $10^{-15}$ m thì lực lớn hay nhỏ?". Chọn C (êlectron hút vào) — êlectron ở cách hạt nhân cỡ $10^{-10}$ m, xa gấp trăm nghìn lần, và nó hút cả hai prôtôn ra phía ngoài như nhau.</div>
+
+<h2>Điểm dừng 2 · Lực hạt nhân <small>phút 3–9 · tr.1 ô 1·4 · màn 2a–2c</small></h2>
+<ul>
+  <li><span class="k">Clip (màn 2a, khoảng 2,5 phút kể cả dừng):</span> trước khi phát, cột phải có câu "buông tay, vòng trên sẽ…" A–D — giơ tay rồi mới ▶. Ba lần dừng như mục Chuẩn bị. Ở lần dừng ③ hỏi "trong heli, cái gì đóng vai chiếc đai?" — để lớp nói "lực hạt nhân" trước khi clip tự chạy màn Kết quả.</li>
+  <li>Clip có màn "Bẫy và giới hạn": lực điện giữa prôtôn chỉ đẩy; đai bó từ ngoài, còn lực hạt nhân hút trực tiếp từng cặp nuclôn sát nhau. Đọc to dòng này: phép so sánh có giới hạn.</li>
+  <li><span class="k">Màn 2b (ô 1·4):</span> chiếu xong mới cho chép, đọc to 7 chữ gạch chân. Hỏi miệng "nơtron không mang điện, có bị lực hạt nhân hút không?" (đề 1192 câu 15d).</li>
+  <li><span class="k">Màn 2c Câu 2:</span> biểu quyết, ghi ô 3·4, mở.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ lực hạt nhân là lực hấp dẫn (vì "hút"); nghĩ nơtron không chịu lực hạt nhân (D của Câu 2); lẫn "tầm ngắn" thành "yếu".</div>
+
+<h2>Điểm dừng 3 · Cân hạt nhân và $E=mc^2$ <small>phút 9–16 · tr.1 ô 1·5 → tr.2 ô 2·1 · màn 3a–3d</small></h2>
+<ul>
+  <li><span class="k">Màn 3a (ô 1·5):</span> "không cân được hạt nhân" → đo nguyên tử bằng phổ kế. Cho chép đủ 6 chữ số thập phân của $m_p,\ m_n,\ m_e$.</li>
+  <li><span class="k">Màn 3b Hỏi nhanh</span> (giơ tay, không ghi): "nguyên tử heli so với tổng các hạt rời…". Biểu quyết rồi mở số đo: hạt rời $4{,}032980$ u, đo được $4{,}002603$ u. Dòng nhỏ: làm tròn còn 4,00 u và 1,01 u ra 0,04 u, sai khoảng 32 % (đề 1192 câu 16b).</li>
+  <li><span class="k">Màn 3c (ô 2·1):</span> "khối lượng hụt đi đâu?" → $E=mc^2$; nói luôn hai dạng $m=E/c^2$ và $E_0=m_0c^2$ (đề câu 12, 13). Cả lớp bấm $1{,}007276\times931{,}5$ rồi mới mở $938{,}3$ MeV. Đọc dòng "kg và m/s ra jun; u nhân 931,5 ra MeV" (đề câu 18c, d).</li>
+  <li><span class="k">Màn 3d Câu 3:</span> hỏi phát biểu <u>sai</u> — nhấn chữ "sai" hai lần. Màn chỉ tô đáp án, không có khung giải thích — thầy nói: A là hiện tượng đo được, B là kết luận, C là cơ chế (chưa học); D sai vì máy đo khối phổ cân ion/nguyên tử nên khối lượng electron vẫn tính vào, phải trừ đi.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Hỏi nhanh chọn B (bằng) vì quen "bảo toàn khối lượng" ở hoá học; Câu 3 chọn C vì chưa học năng lượng liên kết — nói "C là lời giải thích, mục sau sẽ học".</div>
+
+<h2>Điểm dừng 4 · Độ hụt khối, năng lượng liên kết, bài mẫu <small>phút 16–24 · tr.2 ô 2·2 → tr.4 ô 4 → tr.2 ô 2·3 · màn 4a–4f</small></h2>
+<ul>
+  <li><span class="k">Màn 4a (Hình 2 của bài):</span> chỉ hai thanh 4,032980 u và 4,002603 u, hỏi "phần hụt 0,030377 u đi đâu?" → toả ra 28,30 MeV khi kết hợp. Trả lời luôn câu của điểm dừng 3.</li>
+  <li><span class="k">Màn 4b (ô 2·2):</span> 3 công thức, 11 chữ gạch chân. Nhấn: "đề cho khối lượng <b>nguyên tử</b> → cộng $Z\,m_e$" (đề câu 14, 16d) và "tách ra cấp vào, tạo thành toả ra" (đề câu 7).</li>
+  <li><span class="k">Màn 4c–4d (tr.4 ô 4, bài mẫu He-4):</span> lật sang tr.4. Dòng đầu bảng Phân tích đề đã in sẵn; lớp nói 4 dòng còn lại rồi bấm "Mở: bảng phân tích đề" để so (ghi vào Tập nếu kịp, không thì về nhà). Làm mẫu a) trên bảng (đã in trên màn), lớp tự bấm b) 45 giây rồi mở, c) hỏi miệng. Lật về tr.2 ô 2·3 điền dòng He-4: $28{,}30$ · $7{,}07$.</li>
+  <li><span class="k">Màn 4e Câu 4, màn 4f Câu 6:</span> biểu quyết, ghi ô 3·4. Câu 4 xong nhắc: dòng Fe-56 của ô 2·3 chính là $8{,}79$.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> quên cộng $Z\,m_e$ khi đề cho khối lượng nguyên tử (ra 0,029279 u, 27,27 MeV); nhân thêm $c^2$ sau khi đã nhân 931,5; Câu 4 chia cho $Z=26$ (ra 18,9); Câu 6 nghĩ "khối lượng mất hẳn".</div>
+
+<h2>Điểm dừng 5 · Đường cong $E_{lkr}$, bẫy, hoá học – hạt nhân <small>phút 24–29 · tr.2 ô 2·4 → tr.3 ô 3·4, 3·1, 3·2 · màn 5a–5d</small></h2>
+<ul>
+  <li><span class="k">Màn 5a (ô 2·4, cùng hình đường cong trong Tập):</span> chỉ đỉnh Fe-56, 8,8 MeV/nuclôn, vùng $A\approx50$–$80$ (đề câu 6). Hai mũi tên "hợp lại: toả", "vỡ ra: toả": cả hai đều đi lên phía đỉnh → $E_{lkr}$ tăng → toả. 8 chữ gạch chân.</li>
+  <li><span class="k">Màn 5b Câu 5, màn 5c Câu 7:</span> Câu 7 là Bẫy 2 ("$E_{lk}$ lớn là bền"); màn chỉ tô đáp án — thầy chỉ ra phương án A là bẫy so $E_{lk}$ thô. Sau khi mở, hỏi miệng: "hai hạt nhân cùng $E_{lk}$, $A$ của X gấp đôi Y — hạt nào bền?" (đề câu 11: X kém bền, $E_{lkr}$ bằng nửa).</li>
+  <li><span class="k">Màn 5d (ô 3·1 + ô 3·2):</span> hình so sánh của Tập (thang logarit, mỗi vạch gấp 1000 lần): 8 eV và 28,3 MeV, hơn nhau cỡ $10^6$ lần (ô 3·1 điền số mũ 6). Mở "ba cái bẫy", lớp tích 3 ô của ô 3·2.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 5 chọn A ("số nhỏ là bền" — lẫn với năng lượng cần để phá); Câu 7 chọn A (so $E_{lk}$ thô); đọc đường cong thành "càng nặng càng bền"; nghĩ hạt nhân nặng vỡ ra thì thu năng lượng (đề câu 17d).</div>
+
+<h2>Điểm dừng 6 · Quay lại heli + đề 1192 <small>phút 29–30 · 30–45 làm đề · tr.1 ô 1·3, 1·1</small></h2>
+<ul>
+  <li><span class="k">Màn "Quay lại hạt nhân heli" (Hình 1 của bài), 1 phút:</span> hỏi lại câu đầu giờ, lớp tự nói rồi Enter mở "A". Lớp lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai hoặc mới biết". <b>20 giây: đánh dấu ô 1·1</b> (mục tiêu).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1192 trong 15 phút. Nộp xong ghi điểm …/20 ở lề tr.3 ô 3·4 (Tập chưa có ô riêng cho điểm đề).</li>
+  <li>Đọc màn "Về nhà theo Tập bài 18" — gồm Trả bài 6 câu ô 3·3 (bạn cùng bàn kiểm), ô 2·3 ba dòng còn lại, Câu 8, tr.4 đơteri, tr.5. Ô Đề BTVN ở tr.5 ghi đề thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1192 so với phần học trên lớp:</b>
+Điểm dừng 2: câu 1, 2, 15 (lực hạt nhân, $10^{-15}$ m, nơtron vẫn chịu lực).
+Điểm dừng 3: câu 5 (hạt nhân nhẹ hơn), 10 (931,5 MeV/$c^2$), 12 ($m=E/c^2$), 13 ($E_0=m_0c^2$), 16 (phổ kế, làm tròn, cộng $2m_e$).
+Điểm dừng 4: câu 3 (định nghĩa $E_{lk}$), 7 (kết hợp thì toả), 8 (công thức $\Delta m$), 9 ($E_{lkr}=E_{lk}/A$), 14 (cộng $Z m_e$), 18 ($E_{lk}$ tỉ lệ bậc nhất $\Delta m$; kg ra J), 20 (thứ tự tính, chia cho $A$ không chia $Z$).
+Điểm dừng 5: câu 4 (bền khi $E_{lkr}$ lớn), 6 ($A$ 50–80), 11 (cùng $E_{lk}$, $A$ gấp đôi — chỉ hỏi miệng, là câu chuyển sang tình huống mới), 17 (đồ thị), 19 (U-235 và Fe-56, trùng ý Câu 7).
+Không câu nào thuộc phần về nhà. Câu 19 và 17 gần như hỏi lại đúng Câu 7 và màn 5a nên đo "nhớ lại"; câu 11 và 18b mới đo "chuyển sang tình huống mới".</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa · $m_p=1{,}007276$ u, $m_n=1{,}008665$ u, $m_e=0{,}000549$ u, $1$ u $=931{,}5$ MeV/$c^2$</small></h2>
+<ol>
+<li>Lực hạt nhân giữa một prôtôn và một nơtron: A. không có, vì nơtron không mang điện · B. là lực hút, tầm tác dụng cỡ $10^{-15}$ m · C. là lực đẩy, chống lại lực hút tĩnh điện · D. là lực hấp dẫn giữa hai nuclôn</li>
+<li>Nguyên tử $^{6}_{3}\text{Li}$ có khối lượng nguyên tử $6{,}015123$ u. Độ hụt khối của hạt nhân: A. $0{,}032700$ u · B. $0{,}034347$ u · C. $0{,}05$ u · D. $6{,}047823$ u</li>
+<li>Năng lượng liên kết riêng của $^{6}_{3}\text{Li}$ (dùng kết quả câu 2): A. $32{,}0$ MeV/nuclôn · B. $10{,}7$ MeV/nuclôn · C. $5{,}33$ MeV/nuclôn · D. $0{,}0343$ MeV/nuclôn</li>
+<li>Hạt nhân X ($A=40$) có $E_{lk}=342$ MeV, hạt nhân Y ($A=90$) có $E_{lk}=783$ MeV. Kết luận đúng: A. Y bền hơn vì $E_{lk}$ lớn hơn hơn hai lần · B. X bền hơn vì nhẹ hơn · C. Y bền hơn vì $E_{lkr}$ của Y là $8{,}70$, của X là $8{,}55$ MeV/nuclôn · D. Không so được vì khác số khối</li>
+<li>Một hạt nhân có độ hụt khối $0{,}005$ u. Năng lượng liên kết của nó: A. $4{,}66$ MeV · B. $0{,}005$ MeV · C. $4{,}66\cdot c^2$ MeV · D. $4{,}66$ MeV cho mỗi $c^2$</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>B</td><td>Lực hạt nhân không phụ thuộc điện tích, hút mọi cặp nuclôn</td><td>A: nghĩ lực hạt nhân là lực điện · C: nhớ ngược hút/đẩy · D: "hút" nên tưởng hấp dẫn</td></tr>
+<tr><td>2</td><td>B</td><td>$m_X=6{,}015123-3\cdot0{,}000549=6{,}013476$ u; $\Delta m=3\cdot1{,}007276+3\cdot1{,}008665-6{,}013476=0{,}034347$ u</td><td>A: quên êlectron · C: làm tròn về 1,01 u và 6,01 u · D: lấy tổng hạt rời</td></tr>
+<tr><td>3</td><td>C</td><td>$E_{lk}=0{,}034347\times931{,}5=32{,}0$ MeV; $E_{lkr}=32{,}0/6=5{,}33$ MeV/nuclôn</td><td>A: chưa chia $A$ · B: chia cho $Z=3$ · D: quên nhân 931,5</td></tr>
+<tr><td>4</td><td>C</td><td>$342/40=8{,}55$; $783/90=8{,}70$</td><td>A: so $E_{lk}$ thô · B: "nhỏ là bền" · D: tưởng $E_{lkr}$ không so được</td></tr>
+<tr><td>5</td><td>A</td><td>$0{,}005\times931{,}5=4{,}66$ MeV</td><td>B: quên 931,5 · C, D: nhân/chia thêm $c^2$ khi 931,5 đã gồm $c^2$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: clip dừng ở mốc ③ (21,6 s) rồi sang màn 2b, bỏ phần Kết quả/Bẫy của clip (đã có ở màn 2b) — lợi khoảng 30 giây; bảng phân tích đề (màn 4c) để về nhà; Câu 6 (màn 4f) về nhà; màn 5d chỉ mở ba cái bẫy, ô 3·1 về nhà. Không cắt giờ làm đề 1192.</li>
+  <li>Dư: Thử thách ⭐⭐ ở tr.5 "vì sao urani có $E_{lk}$ lớn hơn sắt mà kém bền hơn?" bằng miệng; hoặc bấm dòng O-16 của ô 2·3.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào; nhãn trong Hình 1, 2, 4 (phóng lên từ hình điện thoại) có đọc được không; phụ đề trong clip có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở Câu 5 và Câu 7 (bẫy độ bền); câu 4, 11, 19 của đề 1192.</li>
+  <li>Điểm dừng 4 có kịp trong 8 phút không (lật tr.2 → tr.4 → tr.2).</li>
+  <li>Đề 1192: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+</ul>
+</body>
+</html>

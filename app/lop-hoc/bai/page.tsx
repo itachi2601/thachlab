@@ -12,7 +12,7 @@ import {
 } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, Tv, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
@@ -22,6 +22,7 @@ import { useTeacherView } from "@/components/auth/useTeacherView";
 import AroundReadMore from "@/components/lessons/AroundReadMore";
 import LessonPresenter from "@/components/lessons/LessonPresenterLazy";
 import BtmPresenter from "@/components/lessons/btm-trinh-chieu/BtmPresenterLazy";
+import { banChieuCuaBai, linkBanChieu } from "@/features/lessons/tren-lop";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import StudentNoteFab, { OPEN_STUDENT_NOTE_EVENT } from "@/components/lessons/StudentNoteFab";
 import NenKhtn9 from "@/components/lop-hoc/NenKhtn9";
@@ -1204,6 +1205,22 @@ function LessonLoader() {
     </button>
   );
 
+  // Bản chiếu "trên lớp" dựng riêng cho tivi (features/lessons/tren-lop.ts) — chỉ giáo viên, chỉ bài đã có bản chiếu.
+  const banChieu = canPresent ? banChieuCuaBai(id) : undefined;
+  const banChieuButton = banChieu && (
+    <a
+      className="lesson-present-btn"
+      href={linkBanChieu(banChieu.slug)}
+      target="_blank"
+      rel="noopener"
+      title="Bản chiếu trên lớp cho tivi: mỗi màn một ý, clip tự dừng, cuối tiết mã QR đề kiểm tra (mở tab mới, F11)"
+      aria-label="Bản chiếu lớp"
+    >
+      <Tv size={16} aria-hidden />
+      <span className="lesson-tool-text">Bản chiếu lớp</span>
+    </a>
+  );
+
   const readTools = (
     <>
       <button
@@ -1550,7 +1567,14 @@ function LessonLoader() {
               <h1>{title}</h1>
               {hasLessonMeta && renderMeta("lesson-meta")}
             </div>
-            {presentButton}
+            {banChieuButton ? (
+              <div className="lesson-present-group">
+                {presentButton}
+                {banChieuButton}
+              </div>
+            ) : (
+              presentButton
+            )}
             {readToolButton}
             <button
               type="button"

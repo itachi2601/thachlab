@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trọng lực và lực căng · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style><!--CSS-->
+/* Bài 17: hình Tập (scripts/ruot-tap/hinh-l10-bai17.mjs) chép thẳng vào màn; hình đáp án phủ lên hình câu hỏi (.an-o trong .fig) */
+.fig{position:relative}
+.fig>.an-o{position:absolute;inset:0;display:flex;justify-content:center;background:var(--bg)}
+.fig>.an-o svg{height:100%;width:auto;max-width:100%}
+.hai>.fig.hep{width:36%}
+.hai>.fig.hep2{width:28%}
+.ft svg text{font-size:21px}
+.f3 svg text{font-size:22px}
+@media (max-width:760px){.fig>.an-o{position:static;display:block}.hai>.fig.hep,.hai>.fig.hep2{width:100%}}
+</style>
+</head>
+<body>
+
+<!-- ================= Màn mở ================= -->
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 10 · Bài 17</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 17 · tr.49</span></div>
+  <div class="giua">
+    <h1>Trọng lực và lực căng</h1>
+    <p class="hoi">Hôm nay trả lời được:</p>
+    <ul>
+      <li>Đĩa CD treo trên đinh: trọng lực đặt ở đâu?</li>
+      <li>"Em nặng 50 kg" sai ở chỗ nào?</li>
+      <li>Dây kéo vật theo hướng nào; khi nào $T=P$?</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<!-- ================= 1. Dự đoán ================= -->
+<section class="man" id="m1a">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.49 · ô 49·2</span></div>
+  <div class="hai">
+    <div class="fig f1 hep"><svg viewBox="0 0 200 232" role="img" aria-label="Đĩa CD treo bằng dây buộc ở mép"><rect x="0" y="0" width="200" height="232" fill="#f3f5fa"/><circle cx="100" cy="22" r="5" fill="#1c2540"/><text x="112" y="28" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">đinh</text><line x1="100.0" y1="22.0" x2="100.0" y2="70.0" stroke="#1c2540" stroke-width="2.2"/><text x="108" y="56" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">dây</text><circle cx="100" cy="146" r="76" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="146" r="22" fill="none" stroke="#8a94ad" stroke-width="1.8"/><circle cx="100" cy="146" r="9" fill="#f3f5fa" stroke="#1c2540" stroke-width="2.2"/><circle cx="100" cy="70" r="3.5" fill="#1c2540"/></svg></div>
+    <div class="ben">
+      <h2>Đĩa CD treo trên đinh</h2>
+      <p>Dây buộc ở mép đĩa.</p>
+      <p>Giữa đĩa là lỗ khoét, không có nhựa.</p>
+      <p>Đĩa lắc vài cái rồi đứng yên.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m1b">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–3</span><span class="tap">tr.49 · ô 49·2</span></div>
+  <div class="giua">
+    <p class="hoi">Trọng lực tác dụng lên đĩa đặt ở đâu?</p>
+    <ol class="opt">
+      <li><b>A.</b> Ở điểm buộc dây trên mép đĩa, vì dây giữ đĩa ở đó</li>
+      <li><b>B.</b> Ở tâm lỗ, dù chỗ đó không có nhựa</li>
+      <li><b>C.</b> Rải đều trên vành, nên không có một điểm đặt nào</li>
+      <li><b>D.</b> Ở điểm thấp nhất của mép đĩa, vì gần đất nhất</li>
+    </ol>
+    <p class="nho">Khoanh vào Tập, viết một dòng "Vì sao?". Đáp án: cuối tiết (màn "Quay lại đĩa CD").</p>
+  </div>
+</section>
+
+<!-- ================= 2. Trọng lực, trọng tâm ================= -->
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Trọng lực</span><span>phút 3–11</span><span class="tap">tr.49 · ô 49·4 · dòng 1–5</span></div>
+  <h2>Trọng lực $\vec P$</h2>
+  <div class="giua">
+    <p>Lực <b class="o">hấp dẫn</b> giữa Trái Đất và vật.</p>
+    <ul>
+      <li>Điểm đặt: trọng tâm $G$ của vật.</li>
+      <li>Phương: <b class="o">thẳng đứng</b> · Chiều: <b class="o">hướng về tâm Trái Đất</b></li>
+      <li>Độ lớn: $P=$ <b class="o">$mg$</b></li>
+    </ul>
+    <p>Đơn vị: $P$ <b class="o">N</b>, $m$ <b class="o">kg</b>, $g$ <b class="o">m/s²</b></p>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Dây dọi</span><span>phút 3–11</span><span class="tap">tr.49 · ô 49·4 · dòng 6–7</span></div>
+  <div class="hai">
+    <div class="fig ft"><svg viewBox="0 0 400 290" role="img" aria-label="Chưa mở hình"><rect x="0" y="0" width="400" height="290" rx="16" fill="#f8fafc"/><text x="200" y="185" font-size="120" font-weight="800" text-anchor="middle" fill="#cbd5e1">?</text></svg><span class="an-o" data-o="d2"><!--FIG1--></span></div>
+    <div class="ben">
+      <p>Dây dọi của thợ xây chỉ phương <b class="o">thẳng đứng</b>.</p>
+      <p class="hoi">Ở hai phía Trái Đất, hai dây dọi có song song không? Vì sao?</p>
+      <button class="mo" data-mo="d2">Mở: trả lời</button>
+      <div class="an" id="d2" hidden><p>Không. Mỗi dây dọi chỉ về <b>tâm Trái Đất</b>: hai phía thì gần như ngược nhau.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2c">
+  <div class="top"><span class="so">2/6 · Trọng tâm</span><span>phút 3–11</span><span class="tap">tr.50 · ô 50·1</span></div>
+  <h2>Trọng tâm $G$</h2>
+  <div class="giua">
+    <p>Trọng tâm là <b class="o">điểm đặt</b> của trọng lực.</p>
+    <p>Vật phẳng, mỏng, đồng chất, đối xứng: ở <b class="o">tâm đối xứng</b><br>(thước thẳng: <b class="o">giữa thước</b>; đĩa tròn: <b class="o">tâm đĩa</b>).</p>
+    <p>Vị trí phụ thuộc <b class="o">sự phân bố khối lượng của vật</b>;<br><span class="nho">ví dụ cái búa: trọng tâm lệch về phía đầu sắt nặng.</span></p>
+    <p>có thể nằm <b class="o">trong hoặc ngoài</b> vật.</p>
+  </div>
+</section>
+
+<section class="man" id="m2d">
+  <div class="top"><span class="so">2/6 · Thí nghiệm tại lớp</span><span>phút 3–11</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 240 200" role="img" aria-label="Tấm bìa với hai đường dây dọi cắt nhau"><path d="M38,32 L204,40 L222,124 L150,190 L56,176 L22,98 z" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><line x1="62.0" y1="46.0" x2="163.5" y2="168.5" stroke="#1f5fa8" stroke-width="2.4" stroke-dasharray="7 5"/><line x1="196.0" y1="62.0" x2="74.4" y2="148.4" stroke="#1f5fa8" stroke-width="2.4" stroke-dasharray="7 5"/><circle cx="62" cy="46" r="5" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><text x="72" y="54" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">A</text><circle cx="196" cy="62" r="5" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><text x="170" y="70" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">B</text><circle cx="120" cy="116" r="5" fill="#b3261e"/><text x="130" y="138" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">G</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Treo ở A, B, C, mỗi lần kẻ theo dây dọi. Ba đường thế nào?</p>
+      <button class="mo" data-mo="q2">Mở: quan sát, rút ra</button>
+      <div class="an" id="q2" hidden>
+        <p><b class="o">Gặp nhau tại một điểm</b>; đặt lên bút chì, bìa <b class="o">thăng bằng</b>.</p>
+        <p>Đứng yên: $G$ <b class="o">ngay dưới</b> điểm treo.</p>
+      </div>
+      <button class="mo" data-mo="q3">Mở: mấy lần treo?</button>
+      <div class="an" id="q3" hidden><p>Ít nhất <b>2</b>: mỗi lần một đường chứa $G$, hai đường cắt nhau tại $G$. Lần 3: kiểm tra.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2e">
+  <div class="top"><span class="so">2/6 · Tấm bìa (clip)</span><span>chỉ chiếu khi không làm thật · mặc định bỏ qua</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="vg" data-bat="0.3" data-het="26.5">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-01-20261118.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-01-20261118.webp" preload="metadata" playsinline title="Dây dọi và tấm bìa treo"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: đường kẻ theo dây dọi sau mỗi lần treo.</p><p class="nho">Tấm bìa ba lỗ A, B, C.</p></div>
+      <div class="buoc" data-t="0.3"><p class="hoi">Treo ở A, đợi đứng yên, kẻ theo dây dọi.</p></div>
+      <div class="buoc" data-t="4.4" data-dung><p class="hoi">Bìa treo ở A đã đứng yên. $G$ nằm ở đâu?</p>
+        <ol class="opt lo"><li><b>A.</b> Ngay tại điểm treo A</li><li data-dung><b>B.</b> Ở đâu đó trên đường vừa kẻ</li><li><b>C.</b> Lệch về phía có nhiều bìa hơn, ngoài đường kẻ</li></ol></div>
+      <div class="buoc" data-t="4.5"><p class="hoi">Treo ở B, rồi ở C: mỗi lần kẻ thêm một đường.</p></div>
+      <div class="buoc" data-t="17.8" data-dung><p class="so-lon">Ba đường: gặp nhau tại một điểm</p><p class="hoi">Đặt điểm đó lên đầu bút chì thì bìa…?</p></div>
+      <div class="buoc" data-t="17.9"><p class="hoi">Đặt lên bút chì.</p></div>
+      <div class="buoc" data-t="26.5"><p class="so-lon">Bìa thăng bằng: đó là $G$</p><p class="hoi">Lần treo ở A: $G$ trên đường vừa kẻ → <b>B</b>.</p><p class="hoi">Đứng yên: $G$ ngay dưới điểm treo.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<!-- ================= 3. Trọng lượng ================= -->
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Trọng lượng</span><span>phút 11–17</span><span class="tap">tr.50 · ô 50·3</span></div>
+  <h2>Khối lượng hay trọng lượng?</h2>
+  <table>
+    <thead><tr><th></th><th>Khối lượng $m$</th><th>Trọng lượng $P$</th></tr></thead>
+    <tbody>
+      <tr><td>Đơn vị · đo bằng</td><td class="ns"><span class="an-o" data-o="b3">kg · cân</span></td><td class="ns"><span class="an-o" data-o="b3">N · lực kế</span></td></tr>
+      <tr><td>Đổi chỗ đặt vật</td><td class="ns"><span class="an-o" data-o="b3">không đổi</span></td><td class="ns"><span class="an-o" data-o="b3">đổi theo $g$</span></td></tr>
+      <tr><td>Vô hướng hay vectơ</td><td class="ns"><span class="an-o" data-o="b3">vô hướng</span></td><td class="ns"><span class="an-o" data-o="b3">vectơ</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b3">Mở bảng</button>
+  <p>Gần mặt đất $g\approx$ <b class="o">9,8</b> m/s²; $g$ hơi khác theo <b class="o">vĩ độ</b> và <b class="o">độ cao</b>.</p>
+  <p>$1$ N/kg $=1$ <b class="o">m/s²</b> <span class="nho">vì $1$ N $=1$ kg·m/s²</span></p>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Lực kế + quả nặng 50 g</span><span>2 điểm dừng · khoảng 1,5 phút</span><span class="tap">tr.50 · ô 50·4</span></div>
+  <div class="vg" data-bat="9.4" data-het="27.2">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-02-20261030.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-02-20261030.webp" preload="metadata" playsinline title="Lực kế và các quả nặng 50 g"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ lực kế khi treo thêm từng quả.</p><p class="hoi">1 quả: $0{,}50$ N. Treo 4 quả như thế thì lực kế chỉ:</p>
+        <ol class="opt lo hai-cot"><li><b>A.</b> khoảng 0,5 N</li><li><b>B.</b> khoảng 1 N</li><li data-dung><b>C.</b> khoảng 2 N</li><li><b>D.</b> khoảng 3 N</li></ol></div>
+      <div class="buoc" data-t="9.4"><p class="hoi">Treo thêm từng quả, đợi kim đứng yên rồi đọc.</p></div>
+      <div class="buoc" data-t="17.2" data-dung><p class="so-lon">4 quả: $1{,}95$ N → C</p>
+        <table class="bang"><tr><th>$m$ (kg)</th><td>0,050</td><td>0,100</td><td>0,150</td><td>0,200</td></tr><tr><th>$P$ (N)</th><td>0,50</td><td>0,95</td><td>1,45</td><td>1,95</td></tr></table>
+        <p class="hoi">Tính $P/m$ từng hàng vào cột cuối.</p></div>
+      <div class="buoc" data-t="17.3"><p class="hoi">Đồ thị $P$ theo $m$, rồi cột $P/m$.</p></div>
+      <div class="buoc" data-t="27.2"><table class="bang"><tr><th>$m$ (kg)</th><td>0,050</td><td>0,100</td><td>0,150</td><td>0,200</td></tr><tr><th>$P/m$ <span class="nho">(làm tròn 0,1)</span></th><td class="ns">10,0</td><td class="ns">9,5</td><td class="ns">9,7</td><td class="ns">9,8</td></tr></table>
+        <p>$P$ <b class="o">tỉ lệ thuận</b> với $m$.</p><p>$P/m$ gần bằng <b class="o">$g$</b> $\approx9{,}8$ N/kg.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Đọc bảng</span><span>phút 11–17</span><span class="tap">tr.50 · ô 50·4 · câu hỏi</span></div>
+  <div class="giua">
+    <p class="hoi">Hàng nào kém tin cậy nhất? Vì sao?</p>
+    <p class="nho">Mỗi số đọc sai tới $\pm0{,}05$ N (một vạch).</p>
+    <table class="bang"><tr><th>$m$ (kg)</th><td>0,050</td><td>0,100</td><td>0,150</td><td>0,200</td></tr><tr><th>$P$ (N)</th><td>0,50</td><td>0,95</td><td>1,45</td><td>1,95</td></tr></table>
+    <button class="mo" data-mo="h3">Mở: trả lời</button>
+    <div class="an" id="h3" hidden>
+      <p>Hàng đầu: một vạch là 10 % của $0{,}50$ N.</p>
+      <p>Hàng cuối: chỉ khoảng 2,6 %. Vật nặng hơn, $P/m$ tin cậy hơn.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3d">
+  <div class="top"><span class="so">3/6 · Bẫy 1</span><span>phút 11–17</span><span class="tap">tr.51 · ô 51·4 · dòng 1</span></div>
+  <div class="giua">
+    <p>"Em nặng 50 kg." kg đo <b class="o">khối lượng</b>; trọng lượng đo bằng <b class="o">lực kế</b>.</p>
+    <p class="hoi">Nhà du hành $60$ kg lên Mặt Trăng ($g=1{,}6$ m/s²). Số đo nào đúng? <span class="nho">(chỉ trên màn, trả lời miệng)</span></p>
+    <ol class="opt lo hai-cot">
+      <li><b>A.</b> $10$ kg; $96$ N</li>
+      <li><b>B.</b> $60$ kg; $588$ N</li>
+      <li data-dung><b>C.</b> $60$ kg; $96$ N</li>
+      <li><b>D.</b> $9{,}6$ kg; $60$ N</li>
+    </ol>
+    <button class="mo" data-mo="a3">Mở đáp án</button>
+    <div class="an" id="a3" hidden><p><b>C.</b> $m$ vẫn $60$ kg; $P=60\cdot1{,}6=96$ N.</p><p class="nho">B: dùng $g$ của Trái Đất · A, D: cho khối lượng đổi.</p></div>
+  </div>
+</section>
+
+<!-- ================= 4. Lực căng ================= -->
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Lực căng dây</span><span>phút 17–23</span><span class="tap">tr.51 · ô 51·1</span></div>
+  <h2>Lực căng $\vec T$</h2>
+  <div class="giua">
+    <ul>
+      <li>Điểm đặt: <b class="o">chỗ dây chạm vật</b></li>
+      <li>Phương: <b class="o">dọc theo dây</b> · Chiều: <b class="o">kéo vật về phía dây</b></li>
+      <li>Dây chỉ <b class="o">kéo</b>, không <b class="o">đẩy</b>.</li>
+      <li>Dây nhẹ: $T$ <b class="o">như nhau</b> ở mọi điểm, kể cả qua ròng rọc nhẹ.</li>
+      <li>Đèn đứng yên: $T$ <b class="o">bằng</b> $P$ của đèn.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Vẽ lực căng</span><span>phút 17–23</span><span class="tap">tr.51 · ô 51·1 · hình</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 200 166" role="img" aria-label="Đèn treo trần bằng dây"><line x1="30.0" y1="16.0" x2="190.0" y2="16.0" stroke="#1c2540" stroke-width="2.8"/><line x1="30.0" y1="16.0" x2="38.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="46.0" y1="16.0" x2="54.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="62.0" y1="16.0" x2="70.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="78.0" y1="16.0" x2="86.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="94.0" y1="16.0" x2="102.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="110.0" y1="16.0" x2="118.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="126.0" y1="16.0" x2="134.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="142.0" y1="16.0" x2="150.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="158.0" y1="16.0" x2="166.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="174.0" y1="16.0" x2="182.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><rect x="92" y="16" width="16" height="10" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="100.0" y1="26.0" x2="100.0" y2="100.0" stroke="#1c2540" stroke-width="2.2"/><path d="M100,100 L62,138 L138,138 z" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="148" r="10" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><circle cx="100" cy="100" r="4.5" fill="#b3261e"/><text x="112" y="98" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">1</text><circle cx="100" cy="27" r="4.5" fill="#b3261e"/><text x="112" y="50" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">2</text></svg><span class="an-o" data-o="v4"><svg viewBox="0 0 200 166" role="img" aria-label="Đèn treo trần bằng dây"><line x1="30.0" y1="16.0" x2="190.0" y2="16.0" stroke="#1c2540" stroke-width="2.8"/><line x1="30.0" y1="16.0" x2="38.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="46.0" y1="16.0" x2="54.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="62.0" y1="16.0" x2="70.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="78.0" y1="16.0" x2="86.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="94.0" y1="16.0" x2="102.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="110.0" y1="16.0" x2="118.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="126.0" y1="16.0" x2="134.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="142.0" y1="16.0" x2="150.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="158.0" y1="16.0" x2="166.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="174.0" y1="16.0" x2="182.0" y2="8.0" stroke="#8a94ad" stroke-width="1.8"/><rect x="92" y="16" width="16" height="10" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><line x1="100.0" y1="26.0" x2="100.0" y2="100.0" stroke="#1c2540" stroke-width="2.2"/><path d="M100,100 L62,138 L138,138 z" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="148" r="10" fill="#fff" stroke="#1c2540" stroke-width="2.2"/><circle cx="100" cy="100" r="4.5" fill="#b3261e"/><text x="112" y="98" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">1</text><circle cx="100" cy="27" r="4.5" fill="#b3261e"/><text x="112" y="50" fill="#b3261e" font-size="20" text-anchor="start" font-weight="700">2</text><defs><marker id="dtd" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="84" y1="100" x2="84" y2="66" stroke="#b3261e" stroke-width="3.6" marker-end="url(#dtd)"/><line x1="84" y1="28" x2="84" y2="60" stroke="#b3261e" stroke-width="3.6" marker-end="url(#dtd)"/><text x="58" y="92" fill="#b3261e" font-size="22" font-weight="700">T</text><text x="58" y="48" fill="#b3261e" font-size="22" font-weight="700">T</text></svg></span></div>
+    <div class="ben">
+      <p class="hoi">Vẽ $\vec T$ lên đèn (điểm 1) và lên móc trần (điểm 2).</p>
+      <button class="mo" data-mo="v4">Mở: hình vẽ</button>
+      <div class="an" id="v4" hidden><p>Lên đèn: hướng <b>lên</b>, gốc ở đèn.</p><p>Lên móc: hướng <b>xuống</b>, gốc ở móc.</p><p class="nho">Cùng độ lớn $T$, đều hướng vào giữa dây.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Ròng rọc + lực kế</span><span>1 điểm dừng · khoảng 1 phút</span><span class="tap">tr.51 · ô 51·3</span></div>
+  <div class="vg" data-bat="10.9" data-het="21.4">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-03-20261030-2.mp4" poster="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l10-trong-luc-luc-cang-03-20261030-2.webp" preload="metadata" playsinline title="Dây vắt qua ròng rọc cố định"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: số chỉ lực kế khi đổi hướng kéo dây.</p><p class="nho">Quả nặng $1{,}0$ N, giữ đứng yên. Clip vào thẳng phần đo.</p></div>
+      <div class="buoc" data-t="10.9"><p class="hoi">Kéo thẳng đứng, đọc lực kế.</p></div>
+      <div class="buoc" data-t="13.2" data-dung><p class="so-lon">Thẳng đứng: $1{,}0$ N</p><p class="hoi">Kéo nằm ngang, quả nặng vẫn đứng yên. Lực kế chỉ…</p>
+        <ol class="opt lo hai-cot"><li><b>A.</b> nhỏ hơn 1,0 N</li><li data-dung><b>B.</b> khoảng 1,0 N</li><li><b>C.</b> lớn hơn 1,0 N</li><li><b>D.</b> 0 N</li></ol></div>
+      <div class="buoc" data-t="13.3"><p class="hoi">Chếch 45°, rồi nằm ngang.</p></div>
+      <div class="buoc" data-t="21.4"><table class="bang"><tr><td>thẳng đứng</td><td>chếch 45°</td><td>nằm ngang</td></tr><tr><td class="ns">1,0 N</td><td class="ns">1,0 N</td><td class="ns">1,0 N</td></tr></table>
+        <p class="hoi">→ <b>B</b>. Ròng rọc đổi <b class="o">hướng</b> của dây, lực căng hai bên <b class="o">bằng nhau</b>.</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">4/6 · Bẫy 3</span><span>phút 17–23</span><span class="tap">tr.51 · ô 51·4 · dòng 3</span></div>
+  <div class="hai">
+    <div class="fig f1 hep2"><svg viewBox="0 0 180 156" role="img" aria-label="Con lắc đang lệch sang phải"><line x1="20.0" y1="14.0" x2="140.0" y2="14.0" stroke="#1c2540" stroke-width="2.8"/><line x1="20.0" y1="14.0" x2="28.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="36.0" y1="14.0" x2="44.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="52.0" y1="14.0" x2="60.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="68.0" y1="14.0" x2="76.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="84.0" y1="14.0" x2="92.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="100.0" y1="14.0" x2="108.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="116.0" y1="14.0" x2="124.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="80.0" y1="14.0" x2="132.0" y2="120.0" stroke="#1c2540" stroke-width="2.2"/><line x1="80.0" y1="14.0" x2="80.0" y2="130.0" stroke="#8a94ad" stroke-width="1.6" stroke-dasharray="5 4"/><circle cx="138" cy="132" r="14" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="133" cy="121" r="3.5" fill="#b3261e"/></svg><span class="an-o" data-o="a4"><svg viewBox="0 0 180 156" role="img" aria-label="Con lắc đang lệch sang phải"><line x1="20.0" y1="14.0" x2="140.0" y2="14.0" stroke="#1c2540" stroke-width="2.8"/><line x1="20.0" y1="14.0" x2="28.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="36.0" y1="14.0" x2="44.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="52.0" y1="14.0" x2="60.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="68.0" y1="14.0" x2="76.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="84.0" y1="14.0" x2="92.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="100.0" y1="14.0" x2="108.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="116.0" y1="14.0" x2="124.0" y2="6.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="80.0" y1="14.0" x2="132.0" y2="120.0" stroke="#1c2540" stroke-width="2.2"/><line x1="80.0" y1="14.0" x2="80.0" y2="130.0" stroke="#8a94ad" stroke-width="1.6" stroke-dasharray="5 4"/><circle cx="138" cy="132" r="14" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="133" cy="121" r="3.5" fill="#b3261e"/><defs><marker id="cld" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="133" y1="121" x2="110" y2="75" stroke="#b3261e" stroke-width="3.6" marker-end="url(#cld)"/><text x="90" y="100" fill="#b3261e" font-size="22" font-weight="700">T</text></svg></span></div>
+    <div class="ben">
+      <p class="hoi">Con lắc đang lệch sang phải. Lực căng dây lên quả cầu hướng:</p>
+      <ol class="opt lo">
+        <li><b>A.</b> Thẳng đứng lên trên</li>
+        <li><b>B.</b> Dọc dây, từ điểm treo xuống quả cầu</li>
+        <li><b>C.</b> Nằm ngang, về vị trí cân bằng</li>
+        <li data-dung><b>D.</b> Dọc dây, từ quả cầu về phía điểm treo</li>
+      </ol>
+      <button class="mo" data-mo="a4">Mở đáp án</button>
+      <div class="an" id="a4" hidden><p><b>D.</b> Gốc ở <b class="o">chỗ dây buộc vào quả cầu</b>, mũi dọc dây chĩa <b class="o">về điểm treo</b>.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 5. Hệ vật + bài mẫu + Bẫy 2 ================= -->
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Hệ vật nối dây</span><span>phút 23–28</span><span class="tap">tr.51 · ô 51·2</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 320 166" role="img" aria-label="Khối A trên bàn nhẵn nối vật B treo qua ròng rọc ở mép bàn"><defs><marker id="hla" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="4.0" y1="92.0" x2="232.0" y2="92.0" stroke="#1c2540" stroke-width="2.8"/><line x1="12.0" y1="92.0" x2="4.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="28.0" y1="92.0" x2="20.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="44.0" y1="92.0" x2="36.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="60.0" y1="92.0" x2="52.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="76.0" y1="92.0" x2="68.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="92.0" y1="92.0" x2="84.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="108.0" y1="92.0" x2="100.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="124.0" y1="92.0" x2="116.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="140.0" y1="92.0" x2="132.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="156.0" y1="92.0" x2="148.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="172.0" y1="92.0" x2="164.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="188.0" y1="92.0" x2="180.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="204.0" y1="92.0" x2="196.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="220.0" y1="92.0" x2="212.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><rect x="56" y="48" width="78" height="44" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="95" y="77" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><line x1="232.0" y1="92.0" x2="250.0" y2="78.0" stroke="#1c2540" stroke-width="2.4"/><circle cx="250" cy="78" r="15" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="250" cy="78" r="3" fill="#1c2540"/><line x1="134.0" y1="63.0" x2="250.0" y2="63.0" stroke="#1c2540" stroke-width="2.2"/><line x1="265.0" y1="78.0" x2="265.0" y2="114.0" stroke="#1c2540" stroke-width="2.2"/><rect x="243" y="114" width="44" height="38" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="265" y="140" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">B</text><line x1="70.0" y1="126.0" x2="150.0" y2="126.0" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#hla)"/><line x1="304.0" y1="114.0" x2="304.0" y2="160.0" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#hla)"/></svg></div>
+    <div class="ben">
+      <p>Dây không dãn: cùng <b class="o">độ lớn gia tốc</b>.</p>
+      <p>Dây nhẹ, ròng rọc nhẹ nhẵn: $T_1$ <b class="o">=</b> $T_2$.</p>
+      <p>Viết $\vec F=m\vec a$ <b class="o">riêng</b> cho từng vật, chiều dương theo <b class="o">chiều chuyển động</b>;</p>
+      <p><b class="o">cộng</b> các phương trình để khử $T$.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bài mẫu</span><span>phút 23–28</span><span class="tap">tr.52 · ô 52·3</span></div>
+  <div class="hai">
+    <div class="fig f1"><svg viewBox="0 0 320 166" role="img" aria-label="Khối A trên bàn nhẵn nối vật B treo qua ròng rọc ở mép bàn"><defs><marker id="vma" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="4.0" y1="92.0" x2="232.0" y2="92.0" stroke="#1c2540" stroke-width="2.8"/><line x1="12.0" y1="92.0" x2="4.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="28.0" y1="92.0" x2="20.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="44.0" y1="92.0" x2="36.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="60.0" y1="92.0" x2="52.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="76.0" y1="92.0" x2="68.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="92.0" y1="92.0" x2="84.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="108.0" y1="92.0" x2="100.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="124.0" y1="92.0" x2="116.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="140.0" y1="92.0" x2="132.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="156.0" y1="92.0" x2="148.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="172.0" y1="92.0" x2="164.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="188.0" y1="92.0" x2="180.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="204.0" y1="92.0" x2="196.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><line x1="220.0" y1="92.0" x2="212.0" y2="100.0" stroke="#8a94ad" stroke-width="1.8"/><rect x="56" y="48" width="78" height="44" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="95" y="77" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><line x1="232.0" y1="92.0" x2="250.0" y2="78.0" stroke="#1c2540" stroke-width="2.4"/><circle cx="250" cy="78" r="15" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="250" cy="78" r="3" fill="#1c2540"/><line x1="134.0" y1="63.0" x2="250.0" y2="63.0" stroke="#1c2540" stroke-width="2.2"/><line x1="265.0" y1="78.0" x2="265.0" y2="114.0" stroke="#1c2540" stroke-width="2.2"/><rect x="243" y="114" width="44" height="38" rx="3" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="265" y="140" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">B</text><text x="95" y="38" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">2 kg</text><text x="236" y="140" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400">0,5 kg</text><line x1="70.0" y1="126.0" x2="150.0" y2="126.0" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#vma)"/><line x1="304.0" y1="114.0" x2="304.0" y2="160.0" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#vma)"/></svg></div>
+    <div class="ben">
+      <p>Khối $A$ $2$ kg trên bàn ngang nhẵn, nối dây nhẹ, không dãn qua ròng rọc nhẹ ở mép bàn với vật $B$ $0{,}5$ kg treo.</p>
+      <p>Thả từ nghỉ, bỏ qua ma sát, $g=10$ m/s².</p>
+      <p class="hoi">Tính gia tốc của hệ và lực căng dây.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5c">
+  <div class="top"><span class="so">5/6 · Bài mẫu · đọc đề</span><span>phút 23–28</span><span class="tap">tr.52 · ô 52·3 · bảng</span></div>
+  <table>
+    <thead><tr><th>Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr></thead>
+    <tbody>
+      <tr><td>"vật $B$ … $0{,}5$ kg treo"</td><td>$P_B=m_Bg=5$ N</td></tr>
+      <tr><td>"bàn ngang nhẵn"</td><td class="ns"><span class="an-o" data-o="b5">không ma sát; $P_A$ cân bằng $N$</span></td></tr>
+      <tr><td>"dây nhẹ, không dãn … ròng rọc nhẹ"</td><td class="ns"><span class="an-o" data-o="b5">cùng $a$, cùng $T$</span></td></tr>
+      <tr><td>"gia tốc … lực căng"</td><td class="ns"><span class="an-o" data-o="b5">$a$, $T$ chưa biết → viết $F=ma$ cho từng vật</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b5">Mở bảng</button>
+</section>
+
+<section class="man" id="m5d">
+  <div class="top"><span class="so">5/6 · Bài mẫu · giải</span><span>phút 23–28</span><span class="tap">tr.52 · ô 52·3 · dòng 1–3</span></div>
+  <div class="hai">
+    <div class="fig f3"><!--FIG3--></div>
+    <div class="ben">
+      <p class="hoi">Viết $F=ma$ cho từng vật, mỗi vật một chiều dương.</p>
+      <button class="mo" data-mo="e5">Mở: vật A, vật B</button>
+      <div class="an" id="e5" hidden><p>$A$ (về phía ròng rọc): $T=m_Aa$</p><p>$B$ (xuống): $P_B-T=m_Ba$</p></div>
+      <button class="mo" data-mo="g5">Mở: cộng hai phương trình</button>
+      <div class="an" id="g5" hidden><p>$P_B=(m_A+m_B)a$</p><p>$a=\dfrac{5}{2{,}5}=2$ m/s²</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5d2">
+  <div class="top"><span class="so">5/6 · Bài mẫu · lực căng</span><span>phút 23–28</span><span class="tap">tr.52 · ô 52·3 · dòng 4</span></div>
+  <div class="giua">
+    <p>$a=2$ m/s², $m_A=2$ kg, $m_B=0{,}5$ kg, $P_B=5$ N.</p>
+    <p class="hoi">Lực căng dây bằng:</p>
+    <ol class="opt lo hai-cot"><li><b>A.</b> $5$ N</li><li data-dung><b>B.</b> $4$ N</li><li><b>C.</b> $1$ N</li><li><b>D.</b> $20$ N</li></ol>
+    <button class="mo" data-mo="a5">Mở đáp án</button>
+    <div class="an" id="a5" hidden><p><b>B.</b> $T=m_Aa=2\cdot2=4$ N, nhỏ hơn $P_B=5$ N.</p><p class="nho">A: coi $T=P_B$ · C: lấy $m_Ba$ · D: lấy $P_A$.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m5v">
+  <div class="top"><span class="so">5/6 · Hướng của gia tốc</span><span>phút 23–28</span><span class="tap">tr.51 · ô 51·4 · bảng, cột 1</span></div>
+  <div class="hai">
+    <div class="fig f1 hep"><svg viewBox="0 0 200 250" role="img" aria-label="Vật treo đi xuống chậm dần"><line x1="20" y1="14" x2="180" y2="14" stroke="#1c2540" stroke-width="2.8"/><line x1="20" y1="14" x2="28" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="36" y1="14" x2="44" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="52" y1="14" x2="60" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="68" y1="14" x2="76" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="84" y1="14" x2="92" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="100" y1="14" x2="108" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="116" y1="14" x2="124" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="132" y1="14" x2="140" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="148" y1="14" x2="156" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="164" y1="14" x2="172" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="100" y1="14" x2="100" y2="120" stroke="#1c2540" stroke-width="2.2"/><rect x="76" y="120" width="48" height="40" rx="4" fill="#fde4cf" stroke="#1c2540" stroke-width="2.8"/><line x1="48" y1="110" x2="48" y2="200" stroke="#2563eb" stroke-width="3.6"/><polyline points="41.0,187.9 48,200 55.0,187.9" fill="none" stroke="#2563eb" stroke-width="3.6" stroke-linejoin="round"/><text x="22" y="165" fill="#2563eb" font-size="22" font-weight="700" font-style="italic">v</text><text x="152" y="160" fill="#8a94ad" font-size="30" font-weight="700">?</text><text x="100" y="238" text-anchor="middle" fill="#1c2540" font-size="20">đi xuống, chậm dần</text></svg><span class="an-o" data-o="a8"><svg viewBox="0 0 200 250" role="img" aria-label="Vật treo đi xuống chậm dần"><line x1="20" y1="14" x2="180" y2="14" stroke="#1c2540" stroke-width="2.8"/><line x1="20" y1="14" x2="28" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="36" y1="14" x2="44" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="52" y1="14" x2="60" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="68" y1="14" x2="76" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="84" y1="14" x2="92" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="100" y1="14" x2="108" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="116" y1="14" x2="124" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="132" y1="14" x2="140" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="148" y1="14" x2="156" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="164" y1="14" x2="172" y2="6" stroke="#8a94ad" stroke-width="1.8"/><line x1="100" y1="14" x2="100" y2="120" stroke="#1c2540" stroke-width="2.2"/><rect x="76" y="120" width="48" height="40" rx="4" fill="#fde4cf" stroke="#1c2540" stroke-width="2.8"/><line x1="48" y1="110" x2="48" y2="200" stroke="#2563eb" stroke-width="3.6"/><polyline points="41.0,187.9 48,200 55.0,187.9" fill="none" stroke="#2563eb" stroke-width="3.6" stroke-linejoin="round"/><text x="22" y="165" fill="#2563eb" font-size="22" font-weight="700" font-style="italic">v</text><line x1="160" y1="200" x2="160" y2="110" stroke="#0f9d58" stroke-width="3.6"/><polyline points="167.0,122.1 160,110 153.0,122.1" fill="none" stroke="#0f9d58" stroke-width="3.6" stroke-linejoin="round"/><text x="170" y="165" fill="#0f9d58" font-size="22" font-weight="700" font-style="italic">a</text><text x="100" y="238" text-anchor="middle" fill="#1c2540" font-size="20">đi xuống, chậm dần</text></svg></span></div>
+    <div class="ben">
+      <p class="hoi">Vật treo đang <b>đi xuống, chậm dần</b>. $\vec a$ hướng nào?</p>
+      <ol class="opt lo"><li data-dung><b>A.</b> Hướng lên</li><li><b>B.</b> Hướng xuống</li></ol>
+      <button class="mo" data-mo="a8">Mở đáp án</button>
+      <div class="an" id="a8" hidden><p><b>A.</b> Vận tốc <b>giảm</b> ⇒ $\vec a$ <b>ngược</b> $\vec v$.</p><p>Vận tốc tăng ⇒ $\vec a$ cùng $\vec v$.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5e">
+  <div class="top"><span class="so">5/6 · Bẫy 2</span><span>phút 23–28</span><span class="tap">tr.51 · ô 51·4 · dòng 2 + bảng</span></div>
+  <p>"Lực căng luôn bằng trọng lượng." Chỉ đúng khi vật <b class="o">đứng yên hoặc chuyển động thẳng đều</b>.</p>
+  <table>
+    <thead><tr><th>Gia tốc của vật treo</th><th>Chiều dương theo $\vec a$</th><th>So $T$, $P$</th></tr></thead>
+    <tbody>
+      <tr><td>$\vec a$ hướng lên<br><span class="nho">lên nhanh dần, xuống chậm dần</span></td><td class="ns"><span class="an-o" data-o="b6">$T-P=ma$ ⇒ $T=m(g+a)$</span></td><td class="ns"><span class="an-o" data-o="b6">$T\gt P$</span></td></tr>
+      <tr><td>$\vec a$ hướng xuống<br><span class="nho">xuống nhanh dần, lên chậm dần</span></td><td class="ns"><span class="an-o" data-o="b6">$P-T=ma$ ⇒ $T=m(g-a)$</span></td><td class="ns"><span class="an-o" data-o="b6">$T\lt P$</span></td></tr>
+    </tbody>
+  </table>
+  <button class="mo" data-mo="b6">Mở bảng</button>
+  <p class="nho">Bài mẫu: $T=4$ N $\lt P_B=5$ N · chưa kịp chép bảng thì chép ở nhà.</p>
+</section>
+
+<!-- ================= 6. Trả bài + đĩa CD + đề 1238 ================= -->
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 28–29 · viết 1 phút rồi mới mở</span><span class="tap">tr.52 · ô 52·1 · câu 2, 5</span></div>
+  <div class="giua">
+    <p class="hoi">Câu 2. Trọng tâm vật phẳng đối xứng ở đâu? Có luôn nằm trên vật không?</p>
+    <button class="mo" data-mo="t2">Mở câu 2</button>
+    <div class="an" id="t2" hidden><p>Tâm đối xứng (vật đồng chất) · có thể ở ngoài vật (đĩa CD, nhẫn).</p></div>
+    <p class="hoi">Câu 5. Lực căng dây: điểm đặt, phương, chiều?</p>
+    <button class="mo" data-mo="t5">Mở câu 5</button>
+    <div class="an" id="t5" hidden><p>Chỗ dây chạm vật · dọc dây · kéo vật về phía dây.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m6dia">
+  <div class="top"><span class="so">6/6 · Quay lại đĩa CD</span><span>phút 29–30</span><span class="tap">tr.49 · ô 49·3</span></div>
+  <div class="hai">
+    <div class="fig f1 hep"><svg viewBox="0 0 200 232" role="img" aria-label="Đĩa CD treo bằng dây buộc ở mép"><rect x="0" y="0" width="200" height="232" fill="#f3f5fa"/><circle cx="100" cy="22" r="5" fill="#1c2540"/><text x="112" y="28" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">đinh</text><line x1="100.0" y1="22.0" x2="100.0" y2="70.0" stroke="#1c2540" stroke-width="2.2"/><text x="108" y="56" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">dây</text><circle cx="100" cy="146" r="76" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="146" r="22" fill="none" stroke="#8a94ad" stroke-width="1.8"/><circle cx="100" cy="146" r="9" fill="#f3f5fa" stroke="#1c2540" stroke-width="2.2"/><circle cx="100" cy="70" r="3.5" fill="#1c2540"/></svg><span class="an-o" data-o="a6"><svg viewBox="0 0 200 232" role="img" aria-label="Đĩa CD treo bằng dây buộc ở mép"><rect x="0" y="0" width="200" height="232" fill="#f3f5fa"/><circle cx="100" cy="22" r="5" fill="#1c2540"/><text x="112" y="28" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">đinh</text><line x1="100.0" y1="22.0" x2="100.0" y2="70.0" stroke="#1c2540" stroke-width="2.2"/><text x="108" y="56" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400">dây</text><circle cx="100" cy="146" r="76" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><circle cx="100" cy="146" r="22" fill="none" stroke="#8a94ad" stroke-width="1.8"/><circle cx="100" cy="146" r="9" fill="#f3f5fa" stroke="#1c2540" stroke-width="2.2"/><circle cx="100" cy="70" r="3.5" fill="#1c2540"/><defs><marker id="dcd" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="100" y1="70" x2="100" y2="226" stroke="#1f5fa8" stroke-width="2.4" stroke-dasharray="7 5"/><line x1="100" y1="146" x2="100" y2="206" stroke="#b3261e" stroke-width="3.6" marker-end="url(#dcd)"/><circle cx="100" cy="146" r="4.5" fill="#b3261e"/><text x="122" y="140" fill="#b3261e" font-size="22" font-weight="700">G</text><text x="108" y="204" fill="#b3261e" font-size="22" font-weight="700">P</text></svg></span></div>
+    <div class="ben">
+      <p class="nhin">Tấm bìa: $G$ ngay dưới điểm treo.</p>
+      <button class="mo" data-mo="a6">Mở: đĩa CD</button>
+      <div class="an" id="a6" hidden><p><b>B.</b> Dây kéo dài đi qua tâm lỗ → $G$ ở tâm lỗ, ngoài phần nhựa.</p></div>
+      <button class="mo" data-mo="a7">Mở: vì sao A, C, D sai</button>
+      <div class="an" id="a7" hidden><p class="nho">A: điểm buộc là chỗ đặt lực căng · C: các lực hút gộp lại thành một lực đặt ở $G$ · D: gần đất nhất không phải điểm đặt.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.52 ô 52·2 ghi điểm</span></div>
+  <div class="qr"><!--QR--></div>
+  <p class="made">Mã đề <b>1238</b> · 18 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1238 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 17</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.49</b> ô 49·3 dòng "điều em hiểu sai" · ô 49·4 câu dây dọi (viết lại bằng lời)</li>
+    <li><b>tr.50</b> ô 50·2 câu "mấy lần treo" · ô 50·4 câu "hàng nào kém tin cậy"</li>
+    <li><b>tr.51</b> ô 51·4 bảng Bẫy 2 (nếu chưa chép xong)</li>
+    <li><b>tr.52</b> ô 52·1 câu 1, 3, 4, 6 · ô 52·3 dòng "so $T$ với $P_B$"</li>
+    <li><b>tr.49</b> ô 49·1: đánh dấu mục em đã tự làm được (hệ vật: sau khi làm ô 53·2)</li>
+    <li><b>tr.53</b> ô 53·1 ghi đề BTVN thầy giao trên web · ô 53·2, 53·3, 53·4, 53·5</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+<script><!--JS--></script>
+</body>
+</html>

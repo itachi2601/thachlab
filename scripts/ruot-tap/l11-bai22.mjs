@@ -5,7 +5,7 @@
 // bài toán mẫu cáp kích bình, thử thách ⭐–⭐⭐⭐, 5 dạng bài tập mẫu. Đáp số Bài tương tự (tuongTu.dap) tính bằng Python 12/11/2026.
 // Chạy: node scripts/ruot-tap/l11-bai22.mjs [file.pdf]       → scripts/ruot-tap/out/ruot-tap-vl11-bai22.pdf
 //       node scripts/ruot-tap/l11-bai22.mjs --hinh           → chụp từng hình ở cỡ in (46 mm) vào out/hinh-l11-bai22/ để soát chữ/nét
-import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon, rkHai } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, ck, box, opt, chon } from './khung.mjs';
 import { hinhL11b22 as H } from './hinh-l11-bai22.mjs';
 
 if (process.argv[2] === '--hinh') {
@@ -94,9 +94,9 @@ ${box(cau(`Cục sạc nhanh ghi ${u('5\\ \\mathrm V')}, ${u('3\\ \\mathrm A')}.
 ${h3(3, 'II.2 · Thí nghiệm đo: đồng hồ USB và điện thoại', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Làm:</b> cắm đồng hồ đo USB (hiện ${I} và điện lượng theo mAh) giữa cục sạc và điện thoại cạn pin. Sạc chậm, dòng giữ ổn định ${u('I=1{,}50\\ \\mathrm A')}. Cứ 10 phút ghi số mAh, 5 lần.</div>
-<div>Đổi đơn vị: ${m('1\\ \\mathrm{mAh}=10^{-3}\\ \\mathrm A\\cdot')} ${f(14)} ${m('\\mathrm s=')} ${f(16)} C</div></div>
+<div>Đổi: 10 phút ${m('=')} ${f(12)} s · ${m('1\\ \\mathrm{mAh}=10^{-3}\\ \\mathrm A\\cdot')} ${f(14)} ${m('\\mathrm s=')} ${f(16)} C <span class="hint">(mAh cũng là đơn vị điện lượng)</span></div></div>
 <div class="fig-side" style="${fs(48)}"><div>
-<table class="tbl-ct"><tr><th>${dt} (phút)</th><th>Đồng hồ (mAh)</th><th>${m('\\Delta q=I\\Delta t')} (C)</th></tr>
+<table class="tbl-ct"><tr><th>${dt} (phút)</th><th>Số đồng hồ (mAh)</th><th>${m('\\Delta q=I\\Delta t')} (C)</th></tr>
 <tr><td>10</td><td>250</td><td>900</td></tr><tr><td>20</td><td>500</td><td></td></tr><tr><td>30</td><td>750</td><td></td></tr><tr><td>40</td><td>1000</td><td></td></tr><tr><td>50</td><td>1250</td><td></td></tr></table>
 <div style="margin-top:.8mm"><b>Rút ra:</b> dòng không đổi thì ${dq} tỉ lệ ${f(20)} với ${dt}; độ dốc đồ thị là ${f(14)}.</div>
 <div style="margin-top:.6mm">Dòng dao động ${u('\\pm0{,}02\\ \\mathrm A')}: ở hàng 10 phút, ${dq} lệch ${nw(`${m('\\pm')} ${f(14)} C`)}</div>${lines(2)}</div>
@@ -122,7 +122,7 @@ ${h3(2, 'II.4 · Cường độ dòng điện và hạt tải điện', '3·2')}
 <div>Số hạt trong trụ: ${nw(`${m('N=')} ${f(28)}`)} · điện lượng qua ${m('S')}: ${nw(`${m('\\Delta q=')} ${f(26)}`)}</div>
 <div style="margin:1mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">Chia cho ${dt}: ${m('I=')} ${cao(26, 9)}</div>
 <div>Mật độ dòng điện ${nw(`${m('j=\\dfrac{I}{S}=')} ${f(14)}`)}, đơn vị ${f(14)}</div>
-<div>Đồng: ${nCu} (do vật liệu, cho sẵn). Tăng ${I} trong cùng một dây là tăng ${f(10)}, không phải tăng ${f(10)}.</div></div>
+<div>Đồng: ${nCu} (cho sẵn). Tăng ${I} trong cùng một dây là tăng ${f(10)}, không phải tăng ${f(10)}.</div></div>
 ${H.hinhTru()}</div>
 ${h3(3, 'Ví dụ tính: electron trôi nhanh cỡ nào?', '3·3')}
 <div class="card" style="padding:1.2mm 3mm">
@@ -149,8 +149,8 @@ ${tb('4. Dòng không đổi khác dòng một chiều ở chỗ nào?')}${lines
 ${tb(`5. Viết ${m('I=Snve')}, nêu nghĩa và đơn vị từng kí hiệu.`)}${lines(2)}
 ${tb('6. Mật độ dòng điện là gì? Vì sao electron chậm mà đèn sáng ngay?')}${lines(2)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
-${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·3')}
-${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
+${h3(3, 'Đề 1217 (20 câu, cuối tiết)', '4·3')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">

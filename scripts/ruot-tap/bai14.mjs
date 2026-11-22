@@ -136,15 +136,15 @@ ${head('BÀI 17 · HẠT NHÂN VÀ NGUYÊN TỬ', 'Vật lí 12 · Chương 4: V
 <div class="card soft">
 <div style="margin:.3mm 0"><span class="ck"></span>Nêu được hạt nhân gồm <b>prôtôn, nơtron</b> và lực giữ chúng lại</div>
 <div style="margin:.3mm 0"><span class="ck"></span>Đọc và viết đúng kí hiệu ${m('{}^{A}_{Z}\\mathrm{X}')}, tính số nơtron</div>
-<div style="margin:.3mm 0"><span class="ck"></span>Nói được <b>đồng vị</b> là gì; phân biệt 3 mô hình nguyên tử</div>
+<div style="margin:.3mm 0"><span class="ck"></span>Nói được <b>đồng vị</b> là gì; phân biệt mô hình <b>Thomson</b> và <b>Rutherford</b></div>
 </div>
 <h3><i>2</i>Dự đoán trước khi học</h3>${tag('1·2')}
 <div class="card">
-<p style="margin:0 0 1mm">Năm 1909, Rutherford bắn hạt alpha vào lá vàng mỏng và thấy như hình bên. Theo em, nguyên tử:</p>
+<p style="margin:0 0 1mm">Thomson cho rằng nguyên tử là khối cầu điện dương đặc, êlectron nằm rải rác. Năm 1909, Rutherford bắn hàng vạn hạt alpha (điện ${m('+2e')}) vào lá vàng mỏng, máy dò (hình bên) đếm hạt ở từng góc. Theo em, sẽ thấy:</p>
 <div class="fig-side" style="grid-template-columns:1fr 30mm"><div>
-<div class="opt"><span class="b">A</span><span>Là khối cầu đặc, các hạt phân bố đều</span></div>
-<div class="opt"><span class="b">B</span><span>Không có hạt nhân, chỉ có các êlectron</span></div>
-<div class="opt"><span class="b">C</span><span>Gần như trống rỗng, điện dương tập trung ở một vùng rất nhỏ</span></div>
+<div class="opt"><span class="b">A</span><span>Mọi hạt đi gần thẳng, không hạt nào lệch rõ</span></div>
+<div class="opt"><span class="b">B</span><span>Phần lớn đi thẳng, số ít lệch nhiều góc, rất ít hạt bật ngược</span></div>
+<div class="opt"><span class="b">C</span><span>Phần lớn hạt lệch mạnh hoặc bật lại, vì vàng rất đặc</span></div>
 <div style="margin-top:1.5mm">Em chọn: <span class="fill" style="min-width:10mm"></span> &nbsp;<span class="ck"></span>chắc &nbsp;<span class="ck"></span>không chắc</div><div class="ln"><span class="hint">Vì sao em chọn vậy?</span></div></div>
 ${hinh.anh('rutherford-bo-thi-nghiem.png', 'Máy dò quay quanh lá vàng, đếm hạt ở góc φ.')}</div>
 </div>
@@ -171,7 +171,7 @@ ${head('ĐỒNG VỊ · MÔ HÌNH · KÍCH THƯỚC')}
 <div class="card fig-side" style="grid-template-columns:1fr 40mm;margin-bottom:1.5mm;padding:1.2mm 3mm"><div><div>Đồng vị: cùng số <span class="fill" style="min-width:14mm"></span>, khác số <span class="fill" style="min-width:14mm"></span>; tính chất <span class="fill" style="min-width:20mm"></span> giống nhau.</div>
 <div style="margin-top:1mm">Ba đồng vị của hiđrô: ${m('{}^{1}_{1}\\mathrm{H}')}, ${m('{}^{2}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>), ${m('{}^{3}_{1}\\mathrm{H}')} (<span class="fill" style="min-width:12mm"></span>): cùng <span class="fill" style="min-width:6mm"></span> prôtôn, nơtron <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span> / <span class="fill" style="min-width:6mm"></span></div></div>
 ${hinh.dongViH('Cùng 1 prôtôn (đặc, +), khác số nơtron (rỗng).')}</div>
-<table><tr><th>Cặp hạt nhân</th><th style="width:18mm">${m('Z')}</th><th style="width:18mm">${m('N')}</th><th style="width:34mm">Đồng vị?</th></tr>
+<table><tr><th>Cặp hạt nhân</th><th style="width:18mm">${m('Z')} <small class="hint">(1 · 2)</small></th><th style="width:18mm">${m('N')} <small class="hint">(1 · 2)</small></th><th style="width:34mm">Đồng vị?</th></tr>
 <tr style="height:7.5mm"><td>${m('{}^{12}_{6}\\mathrm{C}')} và ${m('{}^{14}_{6}\\mathrm{C}')}</td><td></td><td></td>${yn}</tr>
 <tr style="height:7.5mm"><td>${m('{}^{40}_{18}\\mathrm{Ar}')} và ${m('{}^{40}_{20}\\mathrm{Ca}')}</td><td></td><td></td>${yn}</tr>
 <tr style="height:7.5mm"><td>${m('{}^{35}_{17}\\mathrm{Cl}')} và ${m('{}^{37}_{17}\\mathrm{Cl}')}</td><td></td><td></td>${yn}</tr></table>
@@ -207,7 +207,7 @@ ${box(`<div><b>1.</b> Hạt nhân gồm những hạt nào? Vì sao không vỡ 
 <div><b>4.</b> Thomson, Rutherford, Bohr khác nhau ở đâu?<span class="ck" style="float:right;margin:0"></span></div>${lines(3)}
 <div><b>5.</b> Đơn vị u là gì? Viết công thức bán kính hạt nhân.<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/5 câu · câu chưa thuộc: <span class="fill" style="min-width:14mm"></span> → ô Tập <span class="fill" style="min-width:12mm"></span></div>
-<div class="card" style="padding:1mm 3mm"><b>Ghi chú</b>${lines(7)}</div>
+<div class="card" style="padding:1mm 3mm"><b>Ghi chú</b> · <span class="hint">Đề cuối tiết: mã</span> <span class="fill" style="min-width:12mm"></span> <span class="hint">Điểm</span> ……/…… <span class="hint">Câu sai:</span> <span class="fill" style="min-width:22mm"></span>${lines(7)}</div>
 ${foot(3)}</section>
 
 <!-- TRANG 4: bài toán mẫu -->

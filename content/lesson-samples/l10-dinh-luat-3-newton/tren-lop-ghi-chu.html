@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Định luật 3 Newton · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Định luật 3 Newton (L10 Bài 16) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li>Mỗi nhóm (hoặc 1 bộ cho thầy + camera chiếu): <b>hai lực kế lò xo 5 N</b> đã chỉnh số 0, móc vào nhau được, đặt nằm ngang. Thử ở nhà: kéo chậm tới 1, 2, 3, 4, 5 N, đọc hai số — đọc được tới $\pm0{,}1$ N.</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1237 "Kiểm tra nhanh — Bài 16. Định luật 3 Newton"</b> (19 câu, 15 phút, mục Lý thuyết id 117) trên điện thoại: màn 6b có mã QR (cao 62% màn để quét từ xa) (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1237&amp;item=117</code>) và số đề để gõ tay ở trang Quét mã. Hỏi trước lớp có đủ điện thoại + mạng không; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 25 màn, mỗi màn một ý. Cỡ chữ tính theo chiều cao màn: chữ thường = 5,2% chiều cao (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại để chỉnh.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn (điểm dừng 2, Bẫy 1, Bẫy 2, "Rút ra" của thí nghiệm) = đúng chữ của chỗ trống trong Tập; góc phải màn ghi ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Hai clip thí nghiệm dựng lại</b> (cần mạng). <b>Màn 5c (hai xe đẩy + lò xo + cảm biến lực) là clip chính</b> — lớp không có cảm biến lực nên không làm thật được. <b>Màn 3d (hai lực kế) mặc định bỏ qua</b> (bấm → qua luôn), chỉ chiếu khi thiếu lực kế hoặc bàn cuối không thấy kim. Clip nằm bên trái cao hết màn, cột phải hiện chữ to; clip bỏ phần mở đầu, <b>tự dừng ở mỗi điểm dừng + lần cuối</b> (clip 5c: 1 lần + lần cuối; clip 3d: 2 lần + lần cuối): cột phải hiện số vừa đo + câu hỏi cho lớp đoán. <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; nút ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Trước giờ tới từng màn bấm ▶ rồi ↺ để máy tải sẵn. Rời màn thì clip tự dừng.</li>
+  <li>Màn 3b gõ chữ được: bấm vào ô "Lớp đo", gõ số lớp đọc được, Enter. Chữ to để bàn cuối thấy.</li>
+  <li><b>Ô 40·1 "Kết quả tự kiểm tra (đề chiếu trên lớp)"</b> có 6 dòng = Câu 1–6 <b>đánh số theo thứ tự chiếu</b> (màn 3c, 4c, 4e, 5a, 5f, 5g = Câu 1–6; đúng 6 câu "Tự kiểm tra ngay" của bài web nhưng số thứ tự khác web). Đầu tiết dặn <b>kẹp bút ở tr.40</b> để khỏi lật tìm. Mỗi câu: biểu quyết xong, học sinh ghi "Em chọn", "Chắc?" vào ô 40·1 rồi mới mở; nút mở ghi "Mở đáp án → đánh dấu Đúng?". Góc màn ghi "ghi ô 40·1 · Câu n". Câu 6 (màn 5g) mặc định về nhà.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 16 <small>thứ tự lật: tr.37 → tr.38 → tr.39 → tr.40; ô 40·1 kẹp bút sẵn; cuối giờ tr.39 → tr.37</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán thành sân</td><td>0–3</td><td>tr.37 ô 37·2</td><td>khoanh 1 phương án + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Lực – phản lực, định luật 3, bốn đặc điểm</td><td>3–10</td><td>tr.37 ô 37·4 → tr.38 ô 38·1</td><td>11 + 7 = 18 chỗ điền ngắn, chia hai nhịp</td></tr>
+<tr><td>3 · Hai lực kế kéo nhau + Câu 1</td><td>10–15</td><td>tr.38 ô 38·2 (+ ô 40·1 Câu 1)</td><td>"Em chọn" màn 3a + 3 chỗ "Rút ra" + 1 dòng ô 40·1 = 5</td></tr>
+<tr><td>4 · Bẫy 1, Bẫy 3 + Câu 2, Câu 3</td><td>15–21</td><td>tr.38 ô 38·3 → tr.39 ô 39·3 (nghe) (+ ô 40·1 Câu 2, 3)</td><td>6 ô bảng + 4 chỗ dòng sách–bàn + 2 dòng ô 40·1 = 12</td></tr>
+<tr><td>5 · Bẫy 2, clip hai xe, bài toán mẫu + Câu 4, 5</td><td>21–28</td><td>tr.39 ô 39·2 → tr.40 ô 40·2 (+ ô 40·1 Câu 4, 5)</td><td>3 ô bảng + 3 chỗ + 3 dòng phân tích đề + 2 dòng giải + 2 dòng ô 40·1 = 13</td></tr>
+<tr><td>6 · Trả bài + thành sân + đề 1237</td><td>28–30, đề 30–45</td><td>tr.39 ô 39·4 câu 4, 5 → tr.37 ô 37·3</td><td>2 dòng trả bài + đáp án, đúng/sai (dòng "hiểu sai" và ô 37·1 về nhà)</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 2 dày nhất (18 chỗ, chỉ là từ ngắn): chia hai nhịp — màn 2a chép 1 phút, rồi 2b + 2c. Điểm dừng 5 mặc định bỏ màn 5g (Câu 6, về nhà, ghi ô 40·1 Câu 6 ở nhà); clip 5c chỉ còn 1 điểm dừng + lần cuối. Ô 39·3 (Bẫy 3) Tập in "(về nhà)": trên lớp chỉ nghe. Màn "Quay lại thành sân" 1 phút: chỉ ghi đáp án + đúng/sai ở ô 37·3.</p>
+
+<h2>Điểm dừng 1 · Dự đoán thành sân <small>phút 0–3 · Tập tr.37 ô 37·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ai đi trượt patin, trượt băng rồi? Đứng sát tường, đẩy mạnh vào tường thì sao?" — để các em nhớ cảm giác thật trước khi chọn.</li>
+  <li>Khoanh vào Tập, viết một dòng "Vì sao". Màn 1a không có ô đáp án (tránh bấm nhầm lộ đáp án): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn "Quay lại thành sân", ô 37·3). Câu hỏi và 4 phương án chép y Tập; hình là hình ô 37·2 (chỉ có mũi tên "em đẩy", không vẽ lực của thành).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (thành không nhúc nhích thì không đẩy lại) — hỏi lại "nếu thành không đẩy gì thì cái gì làm em chuyển động?". Chọn B — làm cùng chiều lực mình đẩy. Chọn D — không có lực nào hướng sang bên.</div>
+
+<h2>Điểm dừng 2 · Lực – phản lực, định luật 3, bốn đặc điểm <small>phút 3–10 · tr.37 ô 37·4 → tr.38 ô 38·1</small></h2>
+<ul>
+  <li>Màn 2a (ô 37·4 dòng 1–5): hình người bơi đạp thành bể (đúng hình ô 37·4). Hỏi "người bơi đạp vào thành, cái gì đẩy người đi?" trước khi đọc dòng. Chỉ hai mũi tên: <b>đặc đặt lên thành, đứt đặt lên người</b> — hai vật khác nhau. <b>Nhịp 1:</b> dừng 1 phút cho chép xong 5 dòng rồi mới sang 2b.</li>
+  <li>Màn 2b (dòng 6–8): vế phải "$-\vec F_{BA}$" ẩn — hỏi lớp "điền gì vào ô trống?" rồi Enter mở. Đọc to "lực A tác dụng lên B" — chữ cái đầu là vật tác dụng, chữ sau là vật nhận. Dấu trừ = ngược chiều, độ lớn bằng nhau.</li>
+  <li>Màn 2c (ô 38·1): mẹo <b>Ba Cùng – Một Ngược – Một Khác</b>. Hỏi miệng "Trái Đất hút quả táo, quả táo có hút Trái Đất không? Mạnh hơn hay yếu hơn?" trước khi đọc dòng 2. Cột "Nghĩa là" Tập in sẵn, màn không chiếu — nói "không chép cột đó". Câu hỏi "Trái Đất to hơn, sao lực bằng?" hẹn sang điểm dừng 5 (dòng cuối màn).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ phản lực "đến sau" lực (cùng lúc — thí nghiệm ở điểm dừng 3 cho thấy hai kim cùng nhích); nghĩ vật nặng tác dụng lực lớn hơn (Bẫy 2, điểm dừng 5); viết $\vec F_{AB}=\vec F_{BA}$ quên dấu trừ (đề 1237 câu 8, 19).</div>
+
+<h2>Điểm dừng 3 · Thí nghiệm hai lực kế + Câu 1 <small>phút 10–15 · tr.38 ô 38·2</small></h2>
+<ul>
+  <li>Màn 3a: biểu quyết A/B/C "kéo lực kế 2 tới 2,0 N, lực kế 1 chỉ…" (câu của clip, 3 phương án) <i>trước</i> khi làm; học sinh ghi "Em chọn" + chắc/không chắc ở hộp "Trước khi làm" của ô 38·2. Làm thật: giữ lực kế 1, kéo lực kế 2 tới 2,0 N, cả lớp đọc hai số. Bấm "Làm thật rồi mới mở" → tô C.</li>
+  <li>Màn 3b: kéo chậm tăng dần 5 lần, thầy đọc to hai số và gõ vào cột "Lớp đo". Bảng trong Tập in sẵn số minh hoạ (1,0 … 5,0, lần 3 và 4 lệch 0,1 N); số lớp đo có thể khác — chỉ gõ lên màn, không bắt chép, Câu 1 dùng bảng Tập. Bấm "Mở: rút ra", lớp điền 3 chỗ dòng "Rút ra" của ô 38·2.</li>
+  <li>Màn 3c = Câu 1 (lần 3, 4 của bảng Tập lệch 0,1 N): biểu quyết, ghi ô 40·1 Câu 1, rồi mới mở.</li>
+  <li>Thiếu lực kế / bàn cuối không thấy kim: chiếu màn 3d (clip, khoảng 1 phút). Ba lần dừng: ① kéo nhẹ 1,0 N = 1,0 N → "kéo vừa, lực kế 2 chỉ 2,0 N, lực kế 1 chỉ…?"; ② bảng 3 lần nhẹ/vừa/mạnh → "lực kế 1 đo lực đặt lên vật nào?"; ③ "hai lực đặt lên hai vật". Clip không có lần lệch 0,1 N — Câu 1 vẫn dùng bảng Tập.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A ở màn 3a ("đầu được giữ yên thì 0 N") hoặc B ("bên kéo mạnh hơn"). Câu 1 chọn B: nếu lực kế 2 thật sự mạnh hơn thì lệch phải cùng chiều ở mọi lần, mà lần 4 lại ngược. Chọn C: lực và phản lực xuất hiện cùng lúc.</div>
+
+<h2>Điểm dừng 4 · Bẫy 1, Bẫy 3 + Câu 2, Câu 3 <small>phút 15–21 · tr.38 ô 38·3 → tr.39 ô 39·3</small></h2>
+<ul>
+  <li>Màn 4a (ô 38·3): <span class="k">Gợi mở:</span> "Lực và phản lực bằng nhau, ngược chiều — cộng lại bằng 0. Thế sao em vẫn trượt lùi?" Để lớp tranh luận 30 giây rồi mới chỉ bảng: chỉ được cộng các lực <b>cùng đặt lên một vật</b>. Điền 6 ô bảng.</li>
+  <li>Màn 4b (dòng cuối ô 38·3, đúng hình sách–bàn của Tập): hỏi "P đặt lên vật nào? N? N′?" rồi lớp điền 4 chỗ bằng <b>kí hiệu</b> (P, N, N′), rồi mới mở. Ô mở: "N và N′ (N lên sách, N′ lên bàn)" + "P không phải phản lực của N".</li>
+  <li>Màn 4c = Câu 2 (đèn treo), ghi ô 40·1 Câu 2. Đề 1237 câu 16 hỏi lại đúng tình huống này (đúng/sai).</li>
+  <li>Màn 4d (ô 39·3, Bẫy 3) chỉ hỏi miệng 1 phút: "trong chân không, tên lửa đẩy vào cái gì?" — mở → khí cháy. Hai câu của ô 39·3 viết ở nhà (Tập in "(về nhà)") — nói rõ "không chép bây giờ". Màn 4e = Câu 3 (phi hành gia ném búa), ghi ô 40·1 Câu 3.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 2 chọn A (trọng lực và lực dây kéo đèn: bằng nhau, ngược chiều — đó là cân bằng, cùng đặt lên đèn); chọn B (trọng lực là Trái Đất hút đèn, khác cặp vật). Câu 3 chọn A "không có gì để tựa vào" — quên búa cũng đẩy lại tay.</div>
+
+<h2>Điểm dừng 5 · Bẫy 2, clip hai xe, bài toán mẫu <small>phút 21–28 · tr.39 ô 39·2 → tr.40 ô 40·2</small></h2>
+<ul>
+  <li>Màn 5a = Câu 4 (con muỗi) làm câu mở: biểu quyết, ghi ô 40·1 Câu 4, mở. Rồi sang màn 5b (ô 39·2): lớp tự tính 3 ô (lực lên xe tải, hai gia tốc) 1 phút rồi bấm "Mở: lực, gia tốc"; ô mở có 3 chỗ trống dòng dưới bảng Tập (gia tốc · lực · $m_Ba_B$).</li>
+  <li><span class="k">Clip hai xe (màn 5c, khoảng 1 phút):</span> lớp không có cảm biến lực nên đây là "thí nghiệm" của phần $m_Aa_A=m_Ba_B$. Hai lần dừng: ① hai xe 1 kg: 4 N và 4 N → biểu quyết A–C "xe 2 thành 3 kg, hai cảm biến chỉ…" (giơ tay, không ghi; đáp án B, clip chiếu ngay sau); ② lần cuối "$1\cdot4{,}0=3\cdot1{,}33\approx4$ — lực bằng nhau, xe nặng gia tốc nhỏ hơn" rồi Enter sang bài toán mẫu. (Bản trước dừng thêm ở bảng hai lần đo; đã bỏ cho kịp giờ.)</li>
+  <li>Màn 5d (ô 40·2, hình ô 40·2 có "F = ?"): đọc đề, lớp điền 3 dòng còn trống của bảng "Phân tích đề" (dòng đầu Tập in sẵn), bấm mở để so. Màn 5e: cả lớp tự tính $a_A$, $a_B$ 1 phút vào phần "Giải" rồi mới mở (hình có số chỉ hiện khi mở). Dòng "Kiểm tra $m_Aa_A$ và $m_Ba_B$" làm luôn; phần "B nặng 80 kg" và ô 40·3 về nhà.</li>
+  <li>Màn 5f = Câu 5 (xe đẩy lò xo), ghi ô 40·1 Câu 5. Màn 5g = Câu 6 (tốc độ sau khi buông tay) — mặc định bỏ qua, về nhà; chỉ chiếu khi dư giờ.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 4 chọn A (muỗi nhẹ nên lực nhỏ). Bài toán mẫu: dùng $120/(40+60)$ cho cả hai bạn; quên bạn A cũng chịu 120 N (theo định luật III). Câu 5 chọn C (lực bằng nhau thì gia tốc bằng nhau) hoặc D (nhân thay vì chia). Câu 6 chọn C (lực bằng nhau → tốc độ bằng nhau).</div>
+
+<h2>Điểm dừng 6 · Trả bài + đề 1237 <small>phút 28–30 trả bài · 30–45 làm đề · tr.39 ô 39·4 → tr.37 ô 37·3</small></h2>
+<ul>
+  <li>Trả bài 2 câu của ô 39·4 (đúng lời trong Tập): câu 4 và câu 5, mỗi câu 1 dòng. Cho viết <b>1 phút, gấp màn</b> (chưa bấm Mở), rồi mở từng câu để các em tự sửa bằng bút khác màu. Câu 1, 2, 3, 6 về nhà.</li>
+  <li><span class="k">Màn "Quay lại thành sân" (6/6), 1 phút:</span> hình ô 37·2 cạnh câu "Em đẩy thành. Thành có đẩy lại em không?". Enter mở "C. thành đẩy lại em…", rồi Enter mở "sao thành không nhúc nhích" (khối lượng cả Trái Đất). Lớp lật tr.37 ô 37·3: <b>chỉ ghi đáp án + đánh dấu đoán đúng/sai</b>. Dòng "điều em hiểu sai" (viết bằng chữ "phản lực") và ô 37·1 (mục tiêu) về nhà — đúng như màn "Về nhà".</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1237 trong 15 phút. Tập bài 16 không có ô ghi điểm đề cuối tiết (ô 40·1 là 6 câu chiếu trên lớp) — điểm xem trên web.</li>
+  <li>Đọc màn "Về nhà theo Tập" — liệt kê đúng mã ô; ô 41·1 ghi đề BTVN thầy giao trên web (đề, số câu, hạn).</li>
+</ul>
+<div class="sai"><b>Đề 1237 so với phần học trên lớp:</b> câu 1, 2, 8, 12, 19 (phát biểu, biểu thức, táo – Trái Đất, lực gấp đôi) là điểm dừng 2; câu 15 (lực kế, sai số $\pm0{,}1$ N) điểm dừng 3; câu 3, 5, 6, 16 (cân bằng vs lực – phản lực, sách – bàn, tên lửa, đèn treo) điểm dừng 4; câu 7, 9, 10, 11, 13, 18 điểm dừng 5. Câu 14 (tốc độ khi buông tay) chỉ dạy ở màn 5g — mặc định về nhà; dư giờ thì chiếu. Câu 17 (đi bộ, bơi, súng giật) là ô 41·3 — về nhà, trên lớp chưa nói. Câu 4 (thành sân), 5 (sách – bàn), 16 (đèn treo) hỏi lại đúng tình huống vừa chữa nên đo "nhớ lại", chưa đo "chuyển sang tình huống mới".</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu tính số, số liệu khác mọi câu đã chữa · bỏ qua ma sát</small></h2>
+<ol>
+<li>Bạn A ($45$ kg) và bạn B ($75$ kg) đứng trên giày trượt, A đẩy B bằng lực $90$ N. Gia tốc của A và của B: A. $2$ và $1{,}2\ \text{m/s}^2$ · B. $1{,}2$ và $2\ \text{m/s}^2$ · C. $2$ và $2\ \text{m/s}^2$ · D. $0{,}75$ và $0{,}75\ \text{m/s}^2$</li>
+<li>Hai xe trên đường ray nhẵn, lò xo nén giữa hai xe rồi thả. Xe 1 nặng $0{,}5$ kg có gia tốc $6\ \text{m/s}^2$; xe 2 nặng $1{,}5$ kg có gia tốc: A. $18\ \text{m/s}^2$ · B. $2\ \text{m/s}^2$ · C. $6\ \text{m/s}^2$ · D. $0{,}33\ \text{m/s}^2$</li>
+<li>Người $50$ kg đi giày trượt đẩy tường bằng lực nằm ngang $75$ N. Lực tường tác dụng lên người và gia tốc của người: A. $75$ N; $1{,}5\ \text{m/s}^2$ · B. $0$ N; $0$ · C. $75$ N; $0$ · D. $37{,}5$ N; $0{,}75\ \text{m/s}^2$</li>
+<li>Ô tô $1200$ kg va vào xe máy $150$ kg; lực ô tô tác dụng lên xe máy là $6000$ N (coi là hợp lực lên mỗi xe). Gia tốc của xe máy: A. $5\ \text{m/s}^2$ · B. $40\ \text{m/s}^2$ · C. $320\ \text{m/s}^2$ · D. $0{,}025\ \text{m/s}^2$</li>
+<li>Bạn A ($40$ kg) và bạn B ($64$ kg) đứng yên trên giày trượt, đẩy nhau bằng lực $80$ N trong $0{,}5$ s rồi buông tay. Tốc độ của B khi buông tay: A. $1$ m/s · B. $0{,}625$ m/s · C. $1{,}25$ m/s · D. $0{,}385$ m/s</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>Hai bạn cùng chịu $90$ N: $a_A=90/45=2$; $a_B=90/75=1{,}2\ \text{m/s}^2$</td><td>B: đảo hai bạn · C: tưởng lực bằng thì gia tốc bằng · D: chia cho tổng khối lượng</td></tr>
+<tr><td>2</td><td>B</td><td>$m_1a_1=m_2a_2$: $a_2=0{,}5\cdot6/1{,}5=2\ \text{m/s}^2$</td><td>A: nhân thay vì chia · C: gia tốc bằng nhau · D: quên nhân $a_1$</td></tr>
+<tr><td>3</td><td>A</td><td>Định luật III: tường đẩy người $75$ N; $a=75/50=1{,}5\ \text{m/s}^2$</td><td>B: tường không đẩy lại · C: tưởng phản lực triệt tiêu lực đẩy · D: chia đôi lực</td></tr>
+<tr><td>4</td><td>B</td><td>$a=6000/150=40\ \text{m/s}^2$ (ô tô: $6000/1200=5\ \text{m/s}^2$)</td><td>A: dùng khối lượng ô tô · C: nghĩ lực lên xe máy lớn hơn theo tỉ lệ khối lượng · D: lấy $m/F$</td></tr>
+<tr><td>5</td><td>B</td><td>$a_B=80/64=1{,}25\ \text{m/s}^2$; $v=at=1{,}25\cdot0{,}5=0{,}625$ m/s</td><td>A: tính cho bạn A · C: quên nhân $t$ · D: chia cho tổng khối lượng</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: (màn 5g đã bỏ mặc định); màn 4d (Bẫy 3) chỉ nói một câu rồi sang Câu 4; màn 3d đã bỏ mặc định; bài toán mẫu chỉ làm phần Giải, bảng phân tích đề về nhà. Không cắt giờ làm đề 1237 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: chiếu màn 5g (Câu 6 — đề 1237 câu 14 hỏi phần này); hỏi miệng ô 41·3 (đi bộ: chân đẩy đất ra sau, đất đẩy ta lên trước) — đề 1237 câu 17 hỏi phần này; hoặc thử thách ⭐⭐ ô 41·2 (hai bạn 50 kg và 40 kg, lực 100 N).</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào (hỏi 2–3 em bàn cuối sau tiết); nhãn trong hình (P, N, N′, 120 N, lực kế 1/2) có đọc được không.</li>
+  <li>Tỉ lệ đúng lần đầu ở màn 3a (lực kế 1 chỉ bao nhiêu) và Câu 2 (đèn treo); câu 3, 5, 16 của đề 1237. Điểm dừng 2 (18 chỗ điền, hai nhịp) có chép kịp trong 7 phút không.</li>
+  <li>Đề 1237: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút.</li>
+  <li>Điểm dừng nào vượt mốc phút (đoán trước: điểm dừng 5); màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>

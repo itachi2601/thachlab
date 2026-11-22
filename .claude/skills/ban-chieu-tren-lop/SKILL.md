@@ -25,6 +25,14 @@ description: Dựng "đường trên lớp" cho MỘT bài đã có lý thuyết
 5. **Kiểm máy**: build; trình duyệt 1280×720 và 1920×1080, mở hết `.an[hidden]` → không `.man` nào `scrollHeight>clientHeight`; đo chiều cao hình + cỡ chữ nhỏ nhất trong hình khi đáp án mở; `.katex-error` = 0; 375px không cuộn ngang; clip dừng đúng mốc.
 6. **Lớp ảo** (agent, lưu `thu-lop-ao/`): agent THẦY (sonnet) lập `sach-trong.md` (trang 1–5 bỏ đáp án) + `dung-N.md` từng điểm dừng + `phan-hoi-N.md` + `nhat-ky-thay.md`; agent HỌC SINH (sonnet, chỉ đọc file trong thu-lop-ao, kiến thức tới bài trước, chỗ đoán ghi "(đoán)") điền `sach-hs.md` + `hs-N.md`. Phiên chính chỉ nhắn "lượt N" (tin ≤ 40 từ). Cuối: thầy viết `gop-y.md` (file · vị trí · sửa gì · ưu tiên · bằng chứng). Tin mục "phải đoán" và "tài liệu lệch nhau", không tin tỉ lệ đúng.
 7. **Sửa theo góp ý** (cao + vừa đã tự kiểm), chạy lại bước 5, PDF ruột tập `node scripts/ruot-tap/<file>.mjs` giữ số trang; ghi mục "Đã xử lý" cuối gop-y.md; commit.
+8. **Lên web** (sau bước 7): `build_tren_lop.py` chép bản noindex sang `public/dev/tren-lop/<slug>.html` (+ `-ghi-chu.html`); thêm MỘT dòng `{lessonId, slug, ten, ghiChu}` vào `features/lessons/tren-lop.ts` → hiện ở mục lục `/dev/tren-lop` và nút "Bản chiếu lớp" (chế độ giáo viên) trên trang bài. Giao diện theo token nền sáng của web (khối `:root` + `<link>` font `/fonts/be-vietnam-pro/be-vietnam-pro.css` y bài mẫu; nền trắng là lệch có chủ ý cho tivi). Deploy do phiên chính/thầy quyết, không tự deploy.
+
+## Làm nhiều bài trong một phiên — tiết kiệm token (thầy chốt 22/11/2026)
+Phiên làm 2–5 bài liền context phình (lớp ảo + ảnh + bản chiếu dài), mỗi lượt sau gửi lại cả đống đó. Nên:
+- **Phiên chính chỉ điều phối**, không mở theory.html/tren-lop.src.html, không đọc ảnh. Mỗi bài giao MỘT agent `general-purpose` (model sonnet) làm bước 1–5, 7, 8 + commit; nhận về đúng dòng báo cáo dưới đây. Tối đa 2 agent dựng bài chạy song song (cùng sửa `features/lessons/tren-lop.ts` → agent chỉ thêm dòng, phiên chính kiểm `git diff` dòng đó).
+- **Lớp ảo gộp 1 lượt**: agent thầy đưa cả 6 điểm dừng một lần, agent học sinh (model haiku — đóng vai HS trung bình, càng dễ lộ chỗ phải đoán) điền một lần; thầy viết `gop-y.md`. Không nhắn qua lại từng lượt.
+- **Kiểm máy bằng `scripts/kiem-tren-lop.mjs`** (in số đo), ảnh khung hình clip chỉ đọc trong agent.
+- Tiến độ ghi ở `content/tren-lop-tien-do/<nhóm>.md` (mỗi bài một dòng), cập nhật + commit sau mỗi bài; phiên mới đọc file này thay vì dò git log. Phiên đã làm ≥4 bài hoặc context >150k → chốt tiến độ, push, mở phiên mới.
 
 ## Báo cáo mỗi bài (một dòng)
 `bài · commit · số màn · đề cuối tiết (mã/không có) · số góp ý làm/bỏ · việc treo`
@@ -33,3 +41,6 @@ description: Dựng "đường trên lớp" cho MỘT bài đã có lý thuyết
 - 2026-11-20 · Đáp án mở ra dưới hình ép hình còn 15% màn, chữ hình 13px — kiểm tràn không bắt được → đo chiều cao hình khi đáp án mở, dùng bố cục `.hai`.
 - 2026-11-20 · Mốc dừng clip tính từ code lệch 0,1–0,2 s ở chỗ chuyển động/chuyển cảnh (dừng vào khung trắng, lộ đáp án) → cách ≥ 0,3 s và xem khung hình thật.
 - 2026-11-20 · Học sinh ảo đúng 66/66 ô nên tỉ lệ đúng vô nghĩa; góp ý giá trị là chỗ phải đoán và chỗ màn/ghi chú/Tập lệch nhau (ô 4·3 "8 câu" vs đề 20 câu, phương án dùng từ chưa học).
+- 2026-11-22 · Bản chiếu chỉ nằm trong content/ nên thầy tưởng web còn bản cũ; font ghi tên Be Vietnam Pro mà không tải nên tivi hiện Segoe → bước 8: chép sang public/dev/tren-lop + dòng trong features/lessons/tren-lop.ts, nạp font tự host; báo rõ "chỉ trên máy" hay "đã lên web" kèm link.
+- 2026-11-22 · L10 b18–21: mọi Tập in ô kết quả 6 dòng trong khi đề cuối tiết 19–20 câu, màn clip hiện "Đáp án X" trước biểu quyết → dặn agent dựng tránh ngay; lớp ảo gộp 3 lượt (ĐD1–2, 3–4, 5–6+cuối) vẫn bắt đủ lỗi mà đỡ ~½ số tin; truy vấn đề phải chạy từ checkout chính (worktree không supabase link).
+- 2026-11-22 · L11 bài 21–24: Tập nhiều bài còn ô "Kết quả tự kiểm tra (đề chiếu trên lớp, 6–8 câu)" lệch đề 20 câu, chữ in sẵn lộ đáp án biểu quyết, hình web màu nền tối mờ trên nền trắng → kiểm ba chỗ này ngay ở bước 1; kiểm máy bằng `content/tren-lop-tien-do/kiem-tren-lop.mjs`; lớp ảo rút còn 3 lượt (thầy soạn → HS làm hết dung → thầy góp ý) vẫn bắt đủ lỗi lệch.

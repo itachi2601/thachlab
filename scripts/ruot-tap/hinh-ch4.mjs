@@ -50,12 +50,14 @@ const nhom = (x, y, k) => Array.from({ length: k }, (_, i) =>
 export const hinhCh4 = {
   // ===== Bài 15 · Năng lượng liên kết =====
   // Trang 1 · hai prôtôn: đẩy tĩnh điện (đặc, ra ngoài) – lực hạt nhân (đứt, vào trong)
-  lucHatNhan: (cap = 'Hai prôtôn cách ~10⁻¹⁵ m: lực đẩy tĩnh điện (nét đặc) bị lực hạt nhân (nét đứt) thắng.') => {
+  // an = true: bản dùng ở ô dự đoán — chỉ vẽ lực đẩy, giữa ghi "?" (không lộ đáp án; góp ý lớp ảo 22/11/2026)
+  lucHatNhan: (cap = 'Hai prôtôn cách ~10⁻¹⁵ m: lực đẩy tĩnh điện (nét đặc) bị lực hạt nhân (nét đứt) thắng.', an = false) => {
     let b = defs('lh1') + defs('lh2');
     b += p(92, 56, 24) + p(208, 56, 24);
     b += arr(66, 56, 12, 56, 'lh1', RED) + arr(234, 56, 288, 56, 'lh1', RED);
-    b += arr(120, 40, 142, 40, 'lh2', BLUE, '6 4') + arr(180, 40, 158, 40, 'lh2', BLUE, '6 4');
-    b += T(150, 104, 'lực hạt nhân', { a: 'middle', c: BLUE }) + T(150, 126, 'hút vào', { a: 'middle', c: BLUE });
+    if (an) b += T(150, 64, '?', { a: 'middle', c: BLUE, size: 30, w: 700 });
+    else b += arr(120, 40, 142, 40, 'lh2', BLUE, '6 4') + arr(180, 40, 158, 40, 'lh2', BLUE, '6 4')
+      + T(150, 104, 'lực hạt nhân', { a: 'middle', c: BLUE }) + T(150, 126, 'hút vào', { a: 'middle', c: BLUE });
     b += T(40, 104, 'đẩy ra', { a: 'middle', c: RED }) + T(260, 104, 'đẩy ra', { a: 'middle', c: RED });
     return wrap('0 0 300 136', b, cap, 'Lực đẩy tĩnh điện và lực hạt nhân giữa hai prôtôn');
   },

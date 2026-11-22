@@ -1,6 +1,6 @@
 // Ruột tập VL12 – Bài 15 · Năng lượng liên kết hạt nhân (lesson id 16). Khung chung: khung.mjs; hình: hinh-ch4.mjs.
 // Chạy: node scripts/ruot-tap/bai15.mjs [file.pdf] → scripts/ruot-tap/out/ruot-tap-vl12-bai15.pdf
-import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, hinh } from './khung.mjs';
+import { khoiTao, m, lines, wl, fill as f, nw, exp, ck, box, opt, chon, rkHai, rkRow, rkTable, hinh } from './khung.mjs';
 const K = khoiTao({ bai: 18, baiDau: 17, lid: 16, ten: 'NĂNG LƯỢNG LIÊN KẾT HẠT NHÂN' });
 const { head, h3, card, foot } = K;
 const fs = (fig, w, extra = '') => `grid-template-columns:1fr ${w}mm;${extra}`;
@@ -21,7 +21,7 @@ ${opt('A', 'Lực hạt nhân hút các nuclôn mạnh hơn hẳn lực đẩy t
 ${opt('B', 'Lực đẩy tĩnh điện giữa các prôtôn rất yếu')}
 ${opt('C', 'Êlectron ở vỏ hút ngược các prôtôn vào trong')}
 <div style="margin-top:1.5mm">${chon(10)}</div><div class="hint">Vì sao?</div>${lines(1)}</div>
-${hinh.lucHatNhan('Hai prôtôn cách ~10<sup>−15</sup> m: đẩy (nét đặc) bị lực hạt nhân (nét đứt) thắng.')}</div>
+${hinh.lucHatNhan('Hai prôtôn cách ~10<sup>−15</sup> m đẩy nhau (nét đặc). Cái gì giữ chúng lại?', true)}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
@@ -68,7 +68,7 @@ ${foot(2)}</section>`;
 const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'II.6 · Hoá học và hạt nhân', '3·1')}
-<div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: vài ${nw(`${f(8)}&nbsp;eV`)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${nw(`10${exp}&nbsp;lần`)}.</div>
+<div class="card" style="padding:1.2mm 3mm">Đốt một phân tử: cỡ ${nw(`${f(8)}&nbsp;eV`)}; tạo một hạt nhân He-4: ${nw(`${f(8)}&nbsp;MeV`)} → hơn nhau cỡ ${nw(`10${exp}&nbsp;lần`)}.</div>
 ${h3(2, 'III · Ba cái bẫy hay sập', '3·2')}
 <div class="card" style="padding:1mm 3mm">
 <div class="trap">${ck}<span><b>“Khối lượng đã mất đi.”</b> Không mất: chuyển thành năng lượng ${m('E=\\Delta m\\,c^2')}.</span></div>
@@ -83,7 +83,7 @@ ${box(`<div><b>1.</b> Lực hạt nhân là gì? Ba đặc điểm?<span class="
 <div><b>6.</b> Vì sao tính ${m('E_{lk}')} bằng 931,5 MeV/u không nhân ${m('c^2')} nữa?<span class="ck" style="float:right;margin:0"></span></div>${lines(2)}`)}
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
 ${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·4')}
-${rkHai([2, 3, 4, 5], [6, 7, 8])}
+<div class="two">${rkTable([2, 3, 4, 5].map(rkRow).join(''))}${rkTable([6, 7].map(rkRow).join('') + '<tr><td><b>8</b></td><td colspan="3">tự luận · giải ở mục Câu 8, trang Về nhà</td></tr><tr><td colspan="4">Đề cuối tiết: ……… /20 điểm</td></tr>')}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
@@ -117,7 +117,7 @@ ${h3(3, 'Thử thách phân tầng')}
 <div class="fig-side" style="${fs('', 52)}">${box(`<div class="ln"><b>★ ${m('{}^{16}_{\\ 8}\\mathrm{O}')}:</b> ${m('\\Delta m=0{,}137005\\ \\mathrm{u}')} → ${m('E_{lkr}=')} ${f(22)}</div>` + wl('★★ Vì sao urani có E<sub>lk</sub> lớn hơn sắt mà lại kém bền?', 3) + wl('★★★ Tổng E<sub>lk</sub> sau phản ứng lớn hơn trước: toả hay thu? Vì sao không cần Δm?', 4))}<div style="display:grid;gap:2mm">${hinh.anh('nang-luong-lien-ket-rieng.png', 'Trục dọc: năng lượng liên kết riêng (MeV/nuclôn). Đỉnh quanh Fe-56, Ni-62 (≈ 8,8); hạt nhân nặng bên phải kém bền hơn. (Halliday 42.2.3)')}</div></div>
 ${h3(4, 'Câu 8 và ví dụ 1 gam heli-4')}
 ${box(wl('Câu 8: D + T → He + n, khối lượng giảm 0,018883 u; năng lượng toả ra cho MỘT phản ứng = …', 2)
- + wl('1 g He-4 (N<sub>A</sub> = 6,02·10²³/mol; 1 MeV = 1,6·10⁻¹³ J) có N = … hạt; E = N·28,3 MeV = … J', 2)
+ + wl('Tạo 1 g He-4 từ nuclôn rời (M = 4 g/mol; N<sub>A</sub> = 6,02·10²³/mol; 1 MeV = 1,6·10⁻¹³ J): N = … hạt; năng lượng toả ra E = N·28,3 MeV = … J', 2)
  + wl('So với đốt than (2,9·10⁷ J/kg): … kg', 2))}
 ${foot(5)}</section>`;
 

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Làm quen với Vật lí · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Làm quen với Vật lí (L10 Bài 1) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Bản thử, chưa đăng lên web.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Thí nghiệm giọt mực (điểm dừng 2):</b> hai cốc thuỷ tinh trong cùng cỡ, một cốc nước lạnh, một cốc nước nóng khoảng $60^\circ\text{C}$ (phích nước nóng pha nguội bớt — cẩn thận bỏng), lọ mực + ống nhỏ giọt. Đặt cốc trên tờ giấy trắng, trước camera hoặc ở bàn đầu để cả lớp thấy. Thử ở nhà: sau khoảng 1 phút, cốc nóng đã loang đều rõ.</li>
+  <li><b>Thí nghiệm sách – giấy rơi (điểm dừng 5):</b> một quyển sách bìa cứng, hai tờ giấy A4 (nhỏ hơn bìa sách một chút). Thả từ ngang tầm tay giơ cao, đứng trên bục để cả lớp thấy. Phần giấy vo + đếm khung hình xem bằng clip (màn 5b).</li>
+  <li>Màn chiếu cần mạng để tải công thức (KaTeX từ cdn.jsdelivr.net). Không có mạng thì công thức hiện dạng ký hiệu đô-la thô — mở trước khi vào lớp để trình duyệt nhớ sẵn.</li>
+  <li>Cuối tiết làm <b>đề 1222 "Kiểm tra nhanh — Bài 1. Làm quen với Vật lí"</b> (20 câu, 15 phút, mục Lý thuyết id 81) trên điện thoại: màn QR (cao 62% màn để quét từ xa) (đã giải mã lại, ra đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1222&amp;item=81</code>) và số đề để gõ tay ở trang Quét mã. Bài 1 là tiết đầu năm: kiểm tra trước lớp đã có tài khoản thachlab, có điện thoại + mạng; thiếu máy thì dùng phiếu giấy dự phòng cuối trang này.</li>
+  <li><b>Chiếu tivi 50 inch:</b> 26 màn, mỗi màn một ý. Cỡ chữ tính theo chiều cao màn: chữ thường = 5,2% chiều cao (khoảng 3,2 cm trên tivi 50"). Mở toàn màn hình (F11 hoặc ⌃⌘F) — thanh địa chỉ ăn mất chiều cao làm chữ nhỏ lại. Trước giờ ngồi thử ở bàn cuối: màn nào không đọc được thì ghi lại để chỉnh.</li>
+  <li><b>Chữ gạch chân xanh</b> trên màn = đúng chữ của chỗ trống trong Tập; góc phải màn ghi ô và dòng. Đọc to: "chữ gạch chân là chữ điền vào ô…".</li>
+  <li><b>Clip sách và giấy rơi (màn 5b, khoảng 1,5 phút, cần mạng)</b> là clip chính: lớp thả thật giấy phẳng và giấy trên sách (định tính), clip thêm phần giấy vo tròn và <b>đếm khung hình</b> (lớp không quay 60 hình/giây được). Clip nằm bên trái cao hết màn, cột phải hiện chữ to; <b>tự dừng 2 lần + lần cuối</b> (11,0 s · 23,0 s · 31,3 s): ① câu đoán A–D "giấy vo rơi thế nào" (biểu quyết miệng, không ghi Tập); ② bảng số khung 3 lần → "chậm hơn thật không?"; ③ "2,7 khung &gt; ±1: giả thuyết ① bác bỏ, ② ủng hộ". Clip dừng trước phần "Còn thiếu / Bẫy" (31,7 s trở đi) — phần đó không cần trên lớp. <b>Enter</b> (hoặc Space, bấm vào clip, nút ▶) = phát tiếp; nút ↺ xem lại đoạn vừa chiếu; lần dừng cuối Enter sang màn sau. Trước giờ tới màn 5b bấm ▶ rồi ↺ để máy tải sẵn.</li>
+  <li><b>Hai loại "Câu" trong Tập — đừng lẫn:</b> "Làm nhanh · Câu 1, 2, 3" là ô viết tay ở tr.1–3 (ô 1·5, 2·4, 3·2). <b>Ô 4·3 "Kết quả tự kiểm tra (đề chiếu trên lớp)"</b> có 7 dòng = Câu 1–7 chiếu trên màn (màn 2d, 3c, 4d, 6b, 6c, 5d, và Câu 7 về nhà — đúng 7 câu "Tự kiểm tra ngay" của bài web). Mỗi câu chiếu: biểu quyết xong, học sinh ghi "Em chọn", "Chắc?" vào ô 4·3 rồi mới mở; mở xong đánh "Đúng?". Góc màn ghi "ghi ô 4·3 · Câu n". Câu 3 chiếu trùng Làm nhanh Câu 3 (ô 3·2): khoanh ở ô 4·3, dòng "Vì sao" ở ô 3·2 về nhà.</li>
+  <li>Điều khiển: → / PageDown sang màn sau, ← / PageUp quay lại, <b>Enter</b> mở ô kế tiếp trong màn đang chiếu (bút trình chiếu thường gửi PageDown/PageUp).</li>
+</ul>
+
+<h2>Cách biểu quyết (dùng cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, cho 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án. Đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn. Biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đáp án đúng chiếm &gt; 80% ngay lần đầu: bỏ qua bước thuyết phục, đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+  <li>Tiết đầu năm: nói trước "giơ tay sai không bị trừ điểm, đoán sai rồi sửa mới là học" — lớp chưa quen biểu quyết.</li>
+</ul>
+
+<h2>Đi theo Tập bài 1 <small>thứ tự lật: tr.1 → tr.4 (ô 4·3) → tr.2 → tr.3 → tr.4 → tr.1</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô trống điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán ấm nước</td><td>0–2</td><td>tr.1 ô 1·2</td><td>khoanh 1 phương án + 1 dòng "Vì sao"</td></tr>
+<tr><td>2 · Vi mô – vĩ mô, giọt mực + Câu 1</td><td>2–8</td><td>tr.1 ô 1·4 → ô 1·5 (+ ô 4·3 Câu 1)</td><td>4 + 5 chỗ + 2 dòng Làm nhanh + 1 dòng ô 4·3 = 12</td></tr>
+<tr><td>3 · Mục tiêu, năm lĩnh vực + Câu 2</td><td>8–12</td><td>tr.2 ô 2·1 → 2·2 → 2·4 (+ ô 4·3 Câu 2)</td><td>5 chỗ + 5 dòng bảng + 1 dòng + 1 dòng ô 4·3 = 12</td></tr>
+<tr><td>4 · Hai phương pháp, 5 bước + Câu 3</td><td>12–18</td><td>tr.2 ô 2·3 → tr.3 ô 3·1 → 3·2 (+ ô 4·3 Câu 3)</td><td>4 ô bảng + 2 chỗ + 9 chỗ + 1 dòng ô 4·3 = 16</td></tr>
+<tr><td>5 · Sách – giấy rơi, clip, đọc bảng + Câu 6</td><td>18–25</td><td>tr.3 ô 3·3 → tr.4 ô 4·1 dòng 3 (+ ô 4·3 Câu 6)</td><td>2 chỗ Quan sát + 6 ô bảng + 1 chỗ ±… s + 1 ô vượt/không + 2 chỗ Rút ra + 1 chỗ Bẫy 3 + 1 dòng ô 4·3 = 14</td></tr>
+<tr><td>6 · Bẫy 1, Bẫy 2 + Câu 4, 5 · ấm nước · đề 1222</td><td>25–30, đề 30–45</td><td>tr.4 ô 4·1 dòng 1–2 (+ ô 4·3 Câu 4, 5) → tr.1 ô 1·3, 1·1</td><td>4 chỗ + 2 dòng ô 4·3 + đáp án, đúng/sai</td></tr>
+</tbody>
+</table>
+<p class="nho">Điểm dừng 4 dày nhất (16 chỗ, đều là từ ngắn): chiếu xong mới cho chép, đọc to từng dòng. Trả bài (ô 4·2), giả thuyết của Hà (ô 3·4), bài toán mẫu ly nước đá (ô 5·1) và Câu 7 không dạy trên lớp — về nhà. Màn "Quay lại ấm nước" dùng đúng 1 phút ô 1·3.</p>
+
+<h2>Điểm dừng 1 · Dự đoán ấm nước <small>phút 0–2 · Tập tr.1 ô 1·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Ở nhà đun nước, nghe nắp ấm kêu lách cách. Cái gì làm nắp ấm rung?" — để các em nhớ cảnh thật trước khi chọn.</li>
+  <li>Khoanh vào Tập, viết một dòng "Vì sao". Màn 1a không có ô đáp án (tránh bấm nhầm lộ đáp án): ghi tỉ lệ biểu quyết lên góc bảng, nói "cuối giờ quay lại câu này" (điểm dừng 6, màn "Quay lại ấm nước", ô 1·3). Câu hỏi và 4 phương án chép y Tập; hình là hình ô 1·2.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (chỉ cái nhìn thấy mới là vật lí); chọn D (đun nước là "hoá" — hỏi lại "nước sôi xong có thành chất khác không?"); chọn B (phân tử mới là gốc, bỏ phần thấy được).</div>
+
+<h2>Điểm dừng 2 · Vi mô – vĩ mô, giọt mực + Câu 1 <small>phút 2–8 · tr.1 ô 1·4 → ô 1·5</small></h2>
+<ul>
+  <li>Màn 2a (ô 1·4): 4 chỗ điền. Hình thang năm đối tượng (hình ô 2·1 của Tập, chiếu sớm để có chỗ chỉ). Hỏi "ranh giới vi mô – vĩ mô nằm giữa hai đối tượng nào?" (giữa phân tử nước và hạt cát).</li>
+  <li>Màn 2b: nhỏ mực vào hai cốc cùng lúc, cả lớp đoán (giơ tay lạnh / nóng / như nhau) trong lúc chờ khoảng 1 phút. Bấm "Làm thật rồi mới mở" → dòng Quan sát + hình hai cốc của Tập hiện ra.</li>
+  <li>Màn 2c: hỏi "mực loang là thứ mắt thấy — cái gì gây ra nó?" rồi mở 4 chỗ "Rút ra" của ô 1·5.</li>
+  <li>Màn 2d = Câu 1 (cặp phân loại đúng), ghi ô 4·3 Câu 1. Màn 2e = Làm nhanh Câu 1 (ô 1·5, khung cuối trang 1): viết 1 phút rồi mở bảng.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> xếp hạt cát vào vi mô ("rất nhỏ") — tiêu chí là mắt thường có thấy không, không phải to hay nhỏ. Câu 1 chọn C (vũ trụ "quá lớn", ngoài vật lí). Rút ra: viết "mực chuyển động nhanh" thay vì "phân tử nước".</div>
+
+<h2>Điểm dừng 3 · Mục tiêu, năm lĩnh vực + Câu 2 <small>phút 8–12 · tr.2 ô 2·1 → 2·2 → 2·4</small></h2>
+<ul>
+  <li>Màn 3a (ô 2·1): 3 chỗ điền rồi hỏi "tổng quát là gì?" — một định luật cho cả xe đạp xuống dốc và pin hết dần. Mở → 2 chỗ (động năng, điện năng). Đừng giảng sâu về năng lượng: lớp 10 sẽ học ở chương Năng lượng.</li>
+  <li>Màn 3b (ô 2·2): lớp ghép 5 ví dụ trong "ngân hàng ví dụ" vào 5 dòng bảng (30 giây), mở để so. Ô 2·4 (Làm nhanh Câu 2: MRI, LED, kính hiển vi) chép luôn từ bảng — không cần màn riêng.</li>
+  <li>Màn 3c = Câu 2 (thiết bị – lĩnh vực), ghi ô 4·3 Câu 2. Phương án A (nhiễu xạ tia X: y tế) là bẫy — đề 1222 câu 6 hỏi lại đúng cặp này.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 2 chọn A (nghe "tia X" là nghĩ X-quang bệnh viện); xếp đèn LED trồng cây vào công nghiệp (đề 1222 câu 6 phương án C); kính hiển vi điện tử vào y tế.</div>
+
+<h2>Điểm dừng 4 · Hai phương pháp, quy trình 5 bước + Câu 3 <small>phút 12–18 · tr.2 ô 2·3 → tr.3 ô 3·1 → 3·2</small></h2>
+<ul>
+  <li>Màn 4a (bảng ô 2·3): hỏi "nhà vật lí tìm ra điều mới bằng hai cách nào?" trước khi mở 4 ô bảng. Chốt: hai phương pháp <b>bổ sung nhau</b> (đề 1222 câu 8).</li>
+  <li>Màn 4b (ví dụ ô 2·3): đo bằng video là thực nghiệm, tính trước $t=\sqrt{2h/g}$ là lí thuyết. Chưa giải thích công thức — "học kĩ ở bài Sự rơi tự do"; chỉ đọc tên các chữ $h$, $g$, $t$.</li>
+  <li>Màn 4c (ô 3·1, hình năm bước của Tập): mẹo <b>Thấy – Hỏi – Đoán – Thử – Chốt</b>. Đọc to 9 chỗ điền, chỉ vào mũi tên "không khớp" quay về bước 3.</li>
+  <li>Màn 4d = Câu 3 (câu của Lan, chép y Làm nhanh Câu 3 ô 3·2; 4 phương án lấy từ bài web): ghi ô 4·3 Câu 3. Mở xong đọc dòng "Lưu ý" của ô 3·1: suy luận bước 1 chỉ dẫn tới câu <b>hỏi</b>; đoán nguyên nhân để đem đi kiểm tra mới là giả thuyết.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> thứ tự đảo "giả thuyết" lên trước "vấn đề" (đề 1222 câu 9 phương án B); Câu 3 chọn A (thấy "Lan thấy" ở đầu câu là chọn quan sát) hoặc D (câu nói chắc chắn nghe như kết luận — chữ "Chắc do" là đoán).</div>
+
+<h2>Điểm dừng 5 · Sách và giấy rơi, clip, đọc bảng + Câu 6 <small>phút 18–25 · tr.3 ô 3·3 → tr.4 ô 4·1 dòng 3</small></h2>
+<ul>
+  <li>Màn 5a: nhắc giả thuyết của Lan ("không khí cản giấy"). Hỏi "nếu Lan đúng, giấy đặt trên sách rơi thế nào?" rồi mới thả: sách + giấy phẳng, sau đó giấy đặt trên sách. Bấm "Làm thật rồi mới mở" → 2 chỗ Quan sát + hình bốn vật rơi của Tập.</li>
+  <li><span class="k">Clip màn 5b:</span> ba lần dừng như mục Chuẩn bị. Lần dừng ①: biểu quyết A–D giấy vo (đáp án B, clip chiếu ngay sau). Lần dừng ②: so số khung với bảng Tập (in sẵn 38 · 38 · 39 và 41 · 41 · 41).</li>
+  <li>Màn 5c (bảng ô 3·3): lớp tự tính TB, $t$, $g$ 1 phút (sách: 38,3 · 0,64 s · 9,8; giấy vo: 41 · 0,68 s · 8,6), rồi mở. Chỗ "±… s" = 0,017. Nói rõ: giấy vo ra 8,6 vì còn bị cản — đó không phải $g$. Đơn vị $g$ là $\text{m/s}^2$ (đề 1222 câu 14).</li>
+  <li>Màn 5d = Câu 6, ghi ô 4·3 Câu 6; mở xong lớp đánh dấu "vượt" sai số ở ô 3·3. Màn 5e: mở 2 chỗ Rút ra của ô 3·3 (không khí · nhẹ), rồi lật tr.4 điền dòng 3 của ô 4·1 (Bẫy 3: "không vượt quá").</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> nghĩ giấy rơi chậm vì nhẹ (Aristotle) — giấy trên sách và giấy vo phản bác; Câu 6 chọn C ("chỉ chênh vài khung") hoặc A (lần 39 "đo hỏng"). Tính $t$ quên chia 60; tính $g$ quên bình phương $t$ (đề 1222 câu 13 phương án B).</div>
+
+<h2>Điểm dừng 6 · Bẫy 1, Bẫy 2 + Câu 4, 5 · ấm nước · đề 1222 <small>phút 25–30 · đề 30–45 · tr.4 ô 4·1 → tr.1 ô 1·3</small></h2>
+<ul>
+  <li>Màn 6a (ô 4·1 dòng 1, hình robot của Tập): lớp tính $6:0{,}2$ (Enter hiện 30), rồi mở "tìm nguyên nhân". Màn 6b = Câu 4, ghi ô 4·3 Câu 4.</li>
+  <li>Màn 6c = Câu 5 (xe đồ chơi gắn quả nặng), ghi ô 4·3 Câu 5; mở xong điền dòng 2 ô 4·1 (sai · mới). Đề 1222 câu 19 hỏi lại đúng tình huống này (đúng/sai).</li>
+  <li><span class="k">Màn "Quay lại ấm nước", 1 phút:</span> hình ô 1·2, Enter mở "C. cả hai…". Lớp lật tr.1 ô 1·3: ghi đáp án, đánh dấu đoán đúng/sai, dòng "điều em hiểu sai hoặc mới biết". <b>20 giây: đánh dấu ô 1·1</b> (mục tiêu đã đạt).</li>
+  <li>Chiếu mã QR, cả lớp quét, làm đề 1222 trong 15 phút. Tập bài 1 không có ô ghi điểm đề cuối tiết (ô 4·3 là 7 câu chiếu trên lớp) — điểm xem trên web.</li>
+  <li>Màn "Về nhà theo Tập" — liệt kê đúng mã ô; khung Đề BTVN ở tr.5 ghi đề thầy giao trên web (đề, số câu, hạn). Màn cuối "Về nhà · Câu 7": học sinh chụp lại, làm sau khi giải ô 5·1, ghi ô 4·3 Câu 7. Đáp án C (buổi sau chữa).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> Câu 4 chọn C (tin lí thuyết hơn số đo) hoặc A; Câu 5 chọn D ("giả thuyết sai thì không rút ra được gì") hoặc B (làm lại tới khi ra đúng ý muốn — nói rõ: đó không phải khoa học).</div>
+<div class="sai"><b>Đề 1222 so với phần học trên lớp:</b> câu 1, 2, 4 là điểm dừng 2; câu 5, 6 điểm dừng 3; câu 7, 8, 9, 10, 12 điểm dừng 4; câu 11, 13, 14, 15, 17, 18 điểm dừng 5; câu 3, 16, 19 điểm dừng 6. <b>Câu 20 (ly nước đá, đúng/sai) là bài toán mẫu ô 5·1 — trên lớp chưa dạy</b>: dư giờ thì đọc nhanh đề ô 5·1 và hai giả thuyết G1, G2 trước khi chiếu QR. Câu 3 (quãng đường gấp đôi thì $t=s/v$ gấp đôi) và câu 14 (đơn vị $g$) là suy luận một bước từ phần đã học, trên lớp chỉ nói miệng. Câu 6, 10, 19 hỏi lại đúng tình huống vừa chữa nên đo "nhớ lại", chưa đo "chuyển sang tình huống mới". Phần đúng/sai (câu 15–20) không có trong file đề tải về — xem trên web trước giờ.</div>
+
+<h2>Phiếu giấy dự phòng (mất mạng / thiếu điện thoại) <small>5 câu, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Robot hút bụi đi đường dài $8$ m với tốc độ $0{,}25$ m/s. Mô hình coi robot chạy đều thì dự đoán thời gian là: A. $32$ s · B. $2$ s · C. $35$ s · D. $3{,}2$ s</li>
+<li>Quay video $50$ hình/giây; mỗi lần đếm có thể lệch $\pm1$ khung hình. Sai số thời gian của mỗi lần đếm là: A. $\pm0{,}02$ s · B. $\pm0{,}05$ s · C. $\pm0{,}5$ s · D. $\pm1$ s</li>
+<li>Cũng video $50$ hình/giây, sai số $\pm1$ khung. Sách: $30 \cdot 31 \cdot 31$ khung; quả bóng giấy: $31 \cdot 31 \cdot 32$ khung. Kết luận đúng: A. Bóng giấy rơi chậm hơn thật · B. Chưa kết luận được hai vật rơi khác nhau · C. Lần đo $30$ là đo hỏng · D. Sách rơi chậm hơn thật</li>
+<li>Thả vật từ độ cao $h=1{,}8$ m, đo được thời gian rơi $t=0{,}60$ s. Tính $g=\dfrac{2h}{t^2}$: A. $10\ \text{m/s}^2$ · B. $6\ \text{m/s}^2$ · C. $2{,}5\ \text{m/s}^2$ · D. $0{,}4\ \text{m/s}^2$</li>
+<li>Bằng lí thuyết, thời gian rơi của vật thả từ độ cao $19{,}6$ m (lấy $g=9{,}8\ \text{m/s}^2$) là $t=\sqrt{\dfrac{2h}{g}}$ bằng: A. $2$ s · B. $4$ s · C. $1$ s · D. $0{,}5$ s</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th><th>Phương án sai thường do</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$t=s/v=8:0{,}25=32$ s</td><td>B: nhân $8\cdot0{,}25$ · C: lấy luôn số đo "thật" · D: chia nhầm $8:2{,}5$</td></tr>
+<tr><td>2</td><td>A</td><td>$1$ khung $=1/50=0{,}02$ s</td><td>B: lấy $1/20$ · C: nhầm $0{,}5$ · D: quên đổi khung ra giây</td></tr>
+<tr><td>3</td><td>B</td><td>TB sách $30{,}67$, bóng giấy $31{,}33$: chênh $0{,}67$ khung &lt; $\pm1$ khung → chưa kết luận được</td><td>A: thấy hai số khác nhau là khác thật (Bẫy 3) · C: coi lệch 1 khung là hỏng · D: đọc ngược</td></tr>
+<tr><td>4</td><td>A</td><td>$g=\dfrac{2\cdot1{,}8}{0{,}60^2}=\dfrac{3{,}6}{0{,}36}=10\ \text{m/s}^2$</td><td>B: quên bình phương $t$ · C: $h/(2t^2)$ · D: lộn ngược $2t^2/h$</td></tr>
+<tr><td>5</td><td>A</td><td>$t=\sqrt{2\cdot19{,}6/9{,}8}=\sqrt4=2$ s</td><td>B: quên lấy căn · C: $\sqrt{h/(2g)}$ · D: $\sqrt{g/(2h)}$</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 2e (Làm nhanh Câu 1, về nhà); màn 4b chỉ nói một câu; màn 5c chỉ tính TB và $t$ của sách, phần $g$ về nhà; Câu 5 (màn 6c) về nhà. Không cắt giờ làm đề 1222 — học sinh chưa xong thì làm nốt ở nhà trong ngày.</li>
+  <li>Dư: đọc đề ly nước đá ô 5·1 và hai giả thuyết G1, G2 (đề 1222 câu 20 hỏi phần này); hoặc chiếu luôn màn "Về nhà · Câu 7" và biểu quyết; hoặc Trả bài câu 4, 5 (ô 4·2), viết 1 phút.</li>
+</ul>
+
+<h2>Sau buổi dạy — ghi lại để quyết có làm bài khác không</h2>
+<ul>
+  <li>Bàn cuối đọc được những màn nào (hỏi 2–3 em bàn cuối sau tiết); nhãn trong hình (năm đối tượng, Thấy–Hỏi–Đoán–Thử–Chốt, 1,5 m) có đọc được không; giọt mực ở hai cốc có nhìn rõ từ cuối lớp không.</li>
+  <li>Tỉ lệ đúng lần đầu ở dự đoán ấm nước và Câu 3 (Lan); câu 9, 10, 11, 20 của đề 1222. Điểm dừng 4 (16 chỗ điền) có chép kịp trong 6 phút không.</li>
+  <li>Đề 1222: điểm trung bình lớp, câu sai nhiều nhất, số em chưa nộp kịp trong 15 phút (tiết đầu năm: số em chưa vào được tài khoản).</li>
+  <li>Điểm dừng nào vượt mốc phút (đoán trước: điểm dừng 5); màn nào chữ nhỏ ở cuối lớp.</li>
+</ul>
+</body>
+</html>
