@@ -40,3 +40,29 @@ Số ô [n] là số chỗ trống trong `thu-lop-ao/sach-trong.md`. Bằng ch�
 | 17 | **.mjs** p4 ô 52·1 (mỗi câu một dòng `lines(1)`) | Câu 2, 5 trả lời dài, một dòng không đủ. | Cho `lines(2)` ở câu 2, 5 hoặc ghi chú: "viết gọn ý, không viết cả câu". | hs-6 "Em thấy khó" mục 2 |
 | 18 | **.mjs** p4 dòng "Bạn cùng bàn kiểm" + **ghi chú** ĐD6 | HS không biết kiểm lúc nào. | Ghi chú: "sau khi lớp tự sửa, đổi bài cho bạn bên cạnh, mỗi câu đúng một ☐". | hs-6 "Em thấy khó" mục [__75__]/[__76__] |
 | 19 | **.mjs** p2 ô 50·4 "P/m gần bằng ___" (`f(12)`) | HS viết "g ≈ 9,8 N/kg" dài hơn chỗ trống. | Mở rộng chỗ trống `f(25)`. | hs-3 "Em thấy khó" mục [__39__] |
+
+## Đã xử lý (22/11/2026)
+
+| # | Kết quả | Ghi chú |
+|---|---|---|
+| 1 | Làm | .mjs ô 52·2: bỏ `rkHai` 6 câu, thay dòng "Điểm …/18 · Câu sai · Câu đoán mò"; màn 6/6 QR đã ghi "ô 52·2 ghi điểm"; ghi chú ĐD6 ghi rõ ba mục. |
+| 2 | Làm một phần | Thêm màn mới "Hướng của gia tốc" (m5v) trước Bẫy 2: hình vật treo với $\vec v$ xuống, biểu quyết $\vec a$ lên/xuống, hình đáp án thêm $\vec a$ lên + "vận tốc giảm ⇒ $\vec a$ ngược $\vec v$"; ghi chú ĐD5 thêm. Tập chưa thêm dòng này: thêm vào ô 51·4 làm tr.51 tràn 6 mm (trang 3 đang dư 0 mm). |
+| 3 | Làm | Màn 2a: bỏ khung $P=mg$ riêng, ghi "Độ lớn: $P=$ <u>mg</u>" trong danh sách như Tập. |
+| 4 | Làm | Màn "Về nhà" thêm dòng "tr.49 ô 49·1: đánh dấu mục em đã tự làm được (hệ vật: sau ô 53·2)"; ghi chú ĐD6 thêm. Chữ "trọng tâm" trong mục tiêu giữ nguyên (mục tiêu nêu cái sẽ học). |
+| 5 | Làm | Ô mở màn 2d: "mỗi lần một đường chứa $G$, hai đường cắt nhau tại $G$. Lần 3: kiểm tra." |
+| 6 | Làm | Màn 3b: cột "$P/m$ (làm tròn 0,1)"; Tập ô 50·4 thêm "P/m làm tròn 0,1" vào dòng câu hỏi (đổi tiêu đề cột làm tr.50 tràn 2 mm); ghi chú ĐD3 thêm ví dụ 9,67 → 9,7; 9,75 → 9,8. |
+| 7 | Làm | Chọn cách rẻ: màn 3d ghi "(chỉ trên màn, trả lời miệng)"; ghi chú ĐD3 nói rõ. Không thêm dòng vào Tập (tr.51 không còn chỗ). |
+| 8 | Làm | Đáp án màn 4d: "Gốc ở chỗ dây buộc vào quả cầu, mũi dọc dây chĩa về điểm treo"; ghi chú ĐD4 "chỗ buộc = chỗ dây chạm vật". |
+| 9 | Làm | Ô mở màn 4b: "Lên đèn: hướng lên, gốc ở đèn · Lên móc: hướng xuống, gốc ở móc"; ghi chú ĐD4 sửa theo. |
+| 10 | Làm | Màn 2c thêm ví dụ cái búa (trọng tâm lệch về đầu sắt). Không dùng ví dụ quả cầu rỗng nửa bên: khó hình dung hơn. |
+| 11 | Làm | Màn 3a thêm "vì $1$ N $=1$ kg·m/s²"; ghi chú ĐD3 thêm câu nói "$g=P/m$ nên N/kg". |
+| 12 | Làm | Ghi chú phần chuẩn bị: hỏi và ghi từng hàng rồi mới Mở bảng. Cột kiến thức đã hiện sẵn, chỉ cột đáp án ẩn, nên không sửa màn. |
+| 13 | Làm một phần | Màn Bẫy 2 thêm "chưa kịp chép bảng thì chép ở nhà"; ghi chú ĐD5 thêm. Không gom ba Bẫy về một lượt: mỗi Bẫy đi ngay sau phần kiến thức của nó, gom cuối giờ làm Bẫy xa ngữ cảnh. |
+| 14 | Làm | Ghi chú ĐD5: chọn một chiều dương; giải ra $a\lt0$ thì chiều thật ngược lại. |
+| 15 | Làm | Màn 5d: "$A$ (về phía ròng rọc)", khớp Tập. Vật $B$ giữ "(xuống)" cho vừa màn. |
+| 16 | Làm | Màn 5c: "$a$, $T$ chưa biết → viết $F=ma$ cho từng vật". |
+| 17 | Làm | .mjs ô 52·1: câu 2 và câu 5 thành `lines(2)` (tr.52 vẫn dư 4 mm); ghi chú: viết gọn ý. |
+| 18 | Làm | Ghi chú ĐD6: sau khi tự sửa, đổi Tập cho bạn bên cạnh ghi dòng "Bạn cùng bàn kiểm". |
+| 19 | Làm một phần | Chỗ trống "P/m gần bằng" từ `f(12)` lên `f(20)` (không lên `f(25)`: tr.50 tràn 2 mm). |
+
+Ruột tập: PDF giữ 12 trang (trước 12, sau 12; mỗi trang dư ≥ 0 mm). Bản chiếu: 27 màn; kiem.mjs: 1280×720 và 1920×1080 không tràn, katex-error 0, "$" còn 0; 375px scrollWidth 375.
