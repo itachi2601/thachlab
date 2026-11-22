@@ -132,6 +132,10 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   18. `mayphat3` máy biến áp — 53,2 s; tưởng tăng U thì tăng công suất.
   19. `xoaychieu2` hai LED ngược chiều — đổi chiều f thay vì 2f lần/s.
   20. `thuchanhtu3` dây hợp góc θ (Bài 11 thực hành, cùng bộ cân với mẫu) — tưởng B đổi khi xoay dây.
+- **Kết quả lô 20 (21/11/2026, nhánh `claude/clip-l12-lo20-35bb39`) — CHỜ THẦY DUYỆT, CHƯA GHI DB.** Cả 20: `--do-chu` 12–19 → 0 LỖI,
+  từ/phút 158–216 → 130–166 (≤ 180/cảnh), 44,5–50,0 s, 1,2–2,2 MB; cổng B kiem-code ở 283 px; `xuat-khung.py --kiem` OK; đã tải
+  `lesson-clips/clip/<tn>-20261121.{mp4,webp}` (HEAD 200 cả 20). Bảng từng clip + link mp4 + danh sách điều thầy cần quyết (10 điểm):
+  `content/thi-nghiem/so-clip-anh-dong.md` mục "Việc 4 — lô 20". Kho, bài, DB vẫn bản cũ tới khi thầy duyệt.
 
 ### Việc 5 — Mô phỏng tự kéo sau clip cho thí nghiệm một biến
 - **Model:** Opus (thiết kế tương tác + vật lí), phiên chính làm UI học sinh.

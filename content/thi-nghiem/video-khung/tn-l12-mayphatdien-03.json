@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-mayphatdien-03",
   "ten": "Tự quấn máy biến áp: vôn kế chỉ bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-03-20261112-2.mp4",
-  "tong_giay": 53.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-03-20261121.mp4",
+  "tong_giay": 49.5,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.8,
+      "giay": 3.3,
       "chu": "Sơ cấp 200 vòng, 12 V. Thứ cấp 400 vòng thì vôn kế chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.1,
-      "chu": "Lõi thép kín, nguồn xoay chiều 12 V, sơ cấp 200 vòng; thứ cấp 100, 200, 400, 600 vòng, chưa nối tải. Coi máy lí tưởng."
+      "giay": 9.2,
+      "chu": "Lõi thép kín, nguồn xoay chiều, vôn kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.6,
+      "giay": 17.1,
       "chu": "N₂ = 100 đến 600 vòng: U₂ từ 5,9 đến 35,1 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.9,
-      "chu": "N₂ gấp đôi thì U₂ gấp đôi: U₂ tỉ lệ với số vòng. Lõi kín nên từ thông qua mỗi vòng như nhau.\nHao phí nhỏ làm U₁/U₂ đo hơi lớn hơn N₁/N₂ (2,03 so với 2,00)."
+      "giay": 20.3,
+      "chu": "N₂ gấp đôi thì U₂ gấp đôi: mỗi vòng quấn trên cùng lõi góp cùng một điện áp."
     },
     {
       "khoa": "chua_noi",
-      "giay": 37.9,
-      "chu": "Không đo dòng điện nên chưa biết hiệu suất khi có tải; chỉ dùng nguồn xoay chiều."
+      "giay": 27.4,
+      "chu": "Chỉ có vôn kế, chưa đo dòng điện nên chưa biết công suất và hiệu suất khi có tải."
     }
   ],
   "dung_dua": {
-    "giay": 9.9,
+    "giay": 9.05,
     "cau_hoi": "Cuộn sơ cấp 200 vòng nối nguồn xoay chiều 12 V. Cuộn thứ cấp 400 vòng, vôn kế chỉ bao nhiêu?",
     "chon": [
       "A. 6 V",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "U₂ = U₁·N₂/N₁ = 12 × 400/200 = 24 V; video đo được 23,5 V, hơi thấp do hao phí.",
     "giai_thich_sai": "Số vòng thứ cấp gấp mấy lần sơ cấp? Điện áp thứ cấp thay đổi cùng tỉ lệ đó."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Cùng máy trên (sơ cấp 200 vòng), thứ cấp chỉ 100 vòng và nối tải, coi máy lí tưởng. Dòng điện thứ cấp I₂ so với dòng sơ cấp I₁ thế nào?",
+    "chon": [
+      "A. I₂ ≈ I₁/2",
+      "B. I₂ ≈ I₁",
+      "C. I₂ ≈ 2I₁",
+      "D. I₂ ≈ 4I₁"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Đó là trường hợp tăng áp (U₂ gấp đôi). Ở đây 100 vòng so với 200 vòng: máy hạ áp, U₂ chỉ bằng nửa U₁. Công suất gần như giữ nguyên nên I₂ phải gấp đôi I₁.",
+      "Dòng bằng nhau chỉ khi U₂ = U₁ (hai cuộn cùng số vòng). U₂ ở đây bằng nửa U₁, mà U·I gần như giữ nguyên nên I₂ ≈ 2I₁.",
+      "U₂ = U₁·100/200 = U₁/2. Máy không tự sinh năng lượng: U₂·I₂ ≈ U₁·I₁, nên I₂ ≈ 2I₁. Hạ áp thì dòng tăng.",
+      "Bình phương tỉ số vòng chỉ xuất hiện ở hao phí trên đường dây, không ở dòng điện máy biến áp. U₂ bằng nửa U₁ thì I₂ chỉ gấp đôi I₁."
+    ]
   }
 }

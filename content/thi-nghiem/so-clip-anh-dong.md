@@ -416,3 +416,44 @@ Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi 
 | tn-l12-thuchanhtu-04 | clips/thuchanhtu4.py | 199 → 138 | 16 → 0 | 49,7 · 1 298 | `lesson-clips/clip/tn-l12-thuchanhtu-04-20261120.mp4` |
 Khung JSON `video-khung/*.json` đã trỏ bản `-20261120` + mốc mới (`--kiem` OK); kho `content/thi-nghiem/<id>.json` và DB vẫn bản `-20261119`.
 20/11 11h: thầy duyệt → kho JSON + bài 57/83/12 (theory.src/html, bundle) đổi sang `-20261120`, `gan-khung-video.mts` gắn lại khung mốc mới (commit f400fda70). Dry-run `--chi-video` sạch bài 57, 83; bài 12 khác vì hộp mô phỏng việc 5 (clip dời lên trước hộp, `data-mo-phong=can-dong-dien` — bản web chưa deploy thì bỏ qua khoá lạ) → `--cho-phep-khac`. Hẹn `dang-viec4.sh --yes --22h05` (tab terminal, log `scripts/logs/dang-viec4-20261120.log`). Danh sách đề xuất lô 20 clip L12 ở file kế hoạch.
+
+## Việc 4 — lô 20 clip L12 dựng lại theo cổng mới (21/11/2026) **CHỜ THẦY DUYỆT, CHƯA GHI DB**
+Nhánh `claude/clip-l12-lo20-35bb39`. Mỗi clip một agent Opus, cổng A `--do-chu` 0 LỖI, cổng B kiem-code ở 283 px (1–2 vòng, lượt cuối tự crop). `xuat-khung.py --kiem` OK cả 20; khung JSON trỏ `-20261121`. Đã tải `lesson-clips/clip/<tn>-20261121.{mp4,webp}` (HEAD 200 cả 20). Kho `content/thi-nghiem/<tn>.json`, bài và DB vẫn bản cũ.
+
+| Clip | tn | Từ/phút trước → sau | LỖI trước → sau | Giây | KB | Commit | mp4 |
+|---|---|---|---|---|---|---|---|
+| hatnhan3 | tn-l12-hatnhan-03 | 199 → 158 | 19 → 0 | 63,5 → 49,7 | 1 441 | b0ee6fab9 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-hatnhan-03-20261121.mp4) |
+| boyle | tn-l12-boylecharles-01 | 179 → 138 | 14 → 0 | 54,2 → 48,7 | 2 276 | 1adc74bf8 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-01-20261121.mp4) |
+| boylecharles2 | tn-l12-boylecharles-02 | 177 → 148 | 13 → 0 | 49,9 → 49,4 | 1 749 | bd73b4a9b | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-02-20261121.mp4) |
+| pttrangthai2 | tn-l12-pttrangthai-02 | 158 → 155 | 12 → 0 | 48,5 → 49,6 | 1 670 | 7e2fab983 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-pttrangthai-02-20261121.mp4) |
+| apsuat2 | tn-l12-apsuatdongnang-02 | 169 → 130 | 16 → 0 | 52,6 → 49,9 | 1 971 | 75c8b7290 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-02-20261121.mp4) |
+| thangnhietdo1 | tn-l12-thangnhietdo-01 | 187 → 151 | 15 → 0 | 49,7 → 49,7 | 1 410 | 307c35a93 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thangnhietdo-01-20261121.mp4) |
+| thuchanh1 | tn-l12-thuchanh-01 | 198 → 166 | 19 → 0 | 49,9 → 49,9 | 1 482 | ea64a91b8 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261121.mp4) |
+| thuchanh2 | tn-l12-thuchanh-02 | 182 → 162 | 19 → 0 | 53,3 → 49,7 | 1 581 | f3496bd70 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-02-20261121.mp4) |
+| chuyenthe | tn-l12-chuyenthe-01 | 216 → 144 | 13 → 0 | 50,6 → 49,8 | 1 746 | 1216a2c68 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-chuyenthe-01-20261121.mp4) |
+| noinang4 | tn-l12-noinang-04 | 198 → 162 | 12 → 0 | 50,0 → 50,0 | 2 134 | d31e9d56d | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261121.mp4) |
+| phongxa2 | tn-l12-phongxa-02 | 172 → 157 | 17 → 0 | 54,9 → 49,4 | 1 498 | d621a740c | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261121.mp4) |
+| antoanpx1 | tn-l12-antoanpx-01 | 198 → 130 | 17 → 0 | 54,6 → 49,6 | 1 996 | 559eac8f1 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.mp4) |
+| luctu6 | tn-l12-luctu-06 | 198 → 155 | 14 → 0 | 48,6 → 49,8 | 1 247 | 82cad3007 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261121.mp4) |
+| luctu5 | tn-l12-luctu-05 | 197 → 137 | 13 → 0 | 48,9 → 49,8 | 1 596 | 21ce86f21 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-05-20261121.mp4) |
+| camungdt5 | tn-l12-camungdt-05 | 188 → 159 | 13 → 0 | 49,2 → 49,5 | 1 434 | f01d8ee08 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261121.mp4) |
+| camungdt3 | tn-l12-camungdt-03 | 194 → 140 | 14 → 0 | 50,3 → 49,8 | 1 472 | 48f35ec71 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-03-20261121.mp4) |
+| mayphat1 | tn-l12-mayphatdien-01 | 202 → 141 | 18 → 0 | 53,8 → 49,9 | 1 825 | 64cd749d6 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-01-20261121.mp4) |
+| mayphat3 | tn-l12-mayphatdien-03 | 191 → 143 | 16 → 0 | 53,2 → 49,5 | 1 507 | dbd517f9c | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-03-20261121.mp4) |
+| xoaychieu2 | tn-l12-xoaychieu-02 | 197 → 132 | 15 → 0 | 49,0 → 49,4 | 1 310 | c39c9ed46 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261121.mp4) |
+| thuchanhtu3 | tn-l12-thuchanhtu-03 | 198 → 135 | 12 → 0 | 45,2 → 44,5 | 1 235 | 4e0426cd9 | [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanhtu-03-20261121.mp4) |
+
+Danh sách thầy duyệt (mỗi dòng: tên · link · điều cần quyết):
+- hatnhan3 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-hatnhan-03-20261121.mp4) · kho đã thêm Z_Al = 13 (commit cùng clip); bài còn data-khung cũ → gắn lại khung khi đăng.
+- noinang4 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-04-20261121.mp4) · dòng "Nhìn vào" trong bài + `video.nhin_vao` kho còn "nén nhanh" → đổi theo Dự đoán mới (kéo pit-tông 50 → 100 cm³)?
+- thuchanh1 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-01-20261121.mp4) · giả thuyết khung "phải đun tới 100 °C" khác hộp exp ("c phụ thuộc m"); theory.html ~397 nói nhiệt kế chạm thành bình → sai số ngẫu nhiên, kho nói làm c nhỏ — chọn bản nào?
+- camungdt5 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-05-20261121.mp4) · kho muc_tieu/gia_thuyet/quan_sat/rut_ra còn viết cho clip cũ (e ∝ v) → cập nhật kho theo clip mới (chiều dòng, Lenz)? Bài còn khung -20261112-2.
+- camungdt3 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-03-20261121.mp4) · chốt dùng Φ âm (α = 120°) bài chưa dạy → giữ + thêm 1 dòng "α > 90° thì Φ âm" vào bài, hay đổi ca?
+- antoanpx1 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.mp4) · chốt 1 → 6 m ngoài khoảng đo kho (0,5–3 m), lời giải ghi "theo mô hình 1/r²"; bỏ cảnh quên trừ phông — được không?
+- phongxa2 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-02-20261121.mp4) · bỏ cảnh quên trừ phông để đủ ≤ 50 s — được không?
+- mayphat3 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-03-20261121.mp4) · Dự đoán 400 vòng → 24 V trùng bảng "Bấm xem" (đóng, sau video) — chấp nhận?
+- xoaychieu2 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-02-20261121.mp4) · chốt f = 2,5 Hz là ca tự suy (trong dải tham_so, không có trong so_lieu_mau), có ghi rõ trong lời giải — chấp nhận?
+- thuchanhtu3 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanhtu-03-20261121.mp4) · chốt nghiêng đối xứng 60° → +1,26 g (số đã hiện ở Tiến hành; điểm hỏi là chiều lực, nhiễu −1,26 g) — chấp nhận?
+- luctu6 · [mp4](https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-luctu-06-20261121.mp4) · hook để êlectron đứng yên khi khoá mở (không đóng khoá ở hook vì sai vật lí) — chỉ xem.
+- 9 clip còn lại (boyle, boylecharles2, pttrangthai2, apsuat2, thangnhietdo1, thuchanh2, chuyenthe, luctu5, mayphat1) · link ở bảng · không có điểm riêng; chuyenthe bài còn data-khung cũ.
+Sau duyệt (22h hoặc khi thầy bảo): kho + bài đổi sang `-20261121` + `gan-khung-video.mts`, `cap-nhat-ly-thuyet.sh --chi-video` theo mẫu `dang-viec4.sh`.

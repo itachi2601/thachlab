@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-boylecharles-02",
   "ten": "Ống nghiệm nhốt khí bằng giọt dầu, ngâm vào cốc nước nóng dần",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-02-20261114.mp4",
-  "tong_giay": 49.9,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-02-20261121.mp4",
+  "tong_giay": 49.4,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,41 +12,58 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Nước 25 °C → 50 °C, áp suất không đổi. Cột khí 10,9 cm sẽ dài khoảng bao nhiêu?"
+      "giay": 3.3,
+      "chu": "Nước 25 °C → 50 °C, áp suất không đổi. Cột khí đang dài 10,9 cm sẽ dài khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.1,
-      "chu": "Ống nghiệm đầu hở nhốt cột khí bằng giọt dầu; ngâm 4 cốc nước nóng dần, mỗi cốc đợi 2 phút."
+      "giay": 8.8,
+      "chu": "Giọt dầu nhốt khí; ngâm từng cốc nước."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.9,
-      "chu": "Nước nóng dần, cột khí dài ra: 10,0 → 12,9 cm (0 → 75 °C)."
+      "giay": 16.8,
+      "chu": "50 °C: cột khí 11,9 cm, chỉ dài thêm khoảng 1 cm. Từ 0 °C đến 75 °C: 10,0 → 12,9 cm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.7,
-      "chu": "L/T gần không đổi (0,0366–0,0368 cm/K), đường L–T thẳng qua gốc O: L tỉ lệ thuận với T (K)."
+      "giay": 33.6,
+      "chu": "Áp suất không đổi: L/T, tức V/T, không đổi; T tính bằng kenvin, không dùng °C."
     },
     {
       "khoa": "chua_noi",
-      "giay": 32.8,
-      "chu": "Chỉ đo từ 273 K đến 348 K.\nĐoạn kéo dài tới 0 K là kéo dài đường thẳng, chưa đo."
+      "giay": 40.0,
+      "chu": "Chỉ đo 273 K → 348 K; đoạn tới 0 K chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 7.9,
+    "giay": 8.65,
     "cau_hoi": "Nước 25 °C → 50 °C, áp suất không đổi. Cột khí đang dài 10,9 cm sẽ dài khoảng bao nhiêu?",
     "chon": [
-      "A. Khoảng 10,9 cm (nghĩ p không đổi thì V không đổi)",
-      "B. Khoảng 21,8 cm (gấp đôi theo °C)",
+      "A. Khoảng 10,9 cm",
+      "B. Khoảng 21,8 cm",
       "C. Khoảng 11,9 cm",
-      "D. Khoảng 5,5 cm (nhầm tỉ lệ nghịch như Boyle)"
+      "D. Khoảng 5,5 cm"
     ],
     "dung": 2,
-    "giai_thich_dung": "Nhiệt độ tăng thì cột khí dài ra nhưng chỉ vài phần trăm, không gấp đôi. Xem số đo thật ở đoạn kế.",
-    "giai_thich_sai": "Áp suất không đổi nhưng nhiệt độ tăng, nên thể tích vẫn đổi; và nó không đổi theo kiểu gấp đôi hay giảm đi. Xem số đo thật ở đoạn kế."
+    "giai_thich_dung": "Tính bằng kenvin, 298 K → 323 K chỉ tăng chút ít, nên cột khí chỉ dài thêm khoảng 1 cm: 10,9 → 11,9 cm.",
+    "giai_thich_sai": "Tỉ số nhiệt độ không lấy theo °C: thang °C không bắt đầu từ số 0 thật, 50 °C không phải \"gấp đôi\" 25 °C. Đổi ra kenvin: 298 K → 323 K chỉ tăng chút ít. Đẳng áp thì V vẫn đổi theo T, và nóng lên thì V tăng. Xem số đo ở đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 46.1,
+    "cau_hoi": "Ở 0 °C cột khí dài 10,0 cm. Ngâm ống vào nước sôi 100 °C, áp suất không đổi. Cột khí dài khoảng bao nhiêu?",
+    "chon": [
+      "A. 10,0 cm",
+      "B. 13,7 cm",
+      "C. 17,2 cm",
+      "D. 23,8 cm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Áp suất không đổi nhưng nhiệt độ tăng thì thể tích tăng theo, cột khí không giữ nguyên 10,0 cm.",
+      "Đổi ra kenvin: 0 °C = 273 K, 100 °C = 373 K. L = 10,0 × 373/273 ≈ 13,7 cm.",
+      "Đây là 12,9 × 100/75: lấy tỉ số theo °C. Thang °C không bắt đầu từ số 0 thật, phải đổi ra kenvin: 373/348 chỉ tăng chút ít.",
+      "Đây là 11,9 × 100/50: coi 100 °C \"gấp đôi\" 50 °C. Tính bằng kenvin, 373 K so với 323 K chỉ tăng chút ít, cột khí không gấp đôi."
+    ]
   }
 }

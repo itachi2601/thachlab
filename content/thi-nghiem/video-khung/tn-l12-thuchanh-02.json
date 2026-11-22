@@ -1,44 +1,44 @@
 {
   "id": "tn-l12-thuchanh-02",
-  "ten": "Một lần đun 0,100 kg nước đá bằng bếp 100 W",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-02-20261112-2.mp4",
-  "tong_giay": 53.3,
+  "ten": "Đun đá tới cạn: giai đoạn nào lâu nhất?",
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-thuchanh-02-20261121.mp4",
+  "tong_giay": 49.7,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Đồ thị nhiệt độ có hai đoạn nằm ngang ứng với hai lần chuyển thể, và giai đoạn hoá hơi ngốn nhiều nhiệt nhất.",
-      "kiem": "Mỗi giai đoạn kéo dài bao lâu?"
+      "chu": "Đồ thị nhiệt độ có hai đoạn nằm ngang ứng với hai lần chuyển thể. Trong các đoạn ngang bếp vẫn cấp nhiệt, và giai đoạn hoá hơi ngốn nhiều nhiệt nhất.",
+      "kiem": "Mỗi giai đoạn đun kéo dài bao lâu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Đun liên tục 0,100 kg đá, bếp 100 W. Giai đoạn nào dài nhất?"
+      "giay": 2.8,
+      "chu": "Đun liên tục 0,100 kg đá, bếp giữ 100 W, tới khi nước cạn. Giai đoạn nào dài nhất?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.5,
-      "chu": "Bình, bếp 100 W, nhiệt kế, cân, đồng hồ; 0,100 kg nước đá."
+      "giay": 8.5,
+      "chu": "Bình đá, oát kế, nhiệt kế, đồng hồ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.9,
-      "chu": "Đứng yên ở 0 °C suốt 334 s, rồi lên đều tới 100 °C."
+      "giay": 18.9,
+      "chu": "Nhiệt kế đứng yên ở 0 °C suốt 334 s, tăng đều trong 419 s, rồi đứng yên ở 100 °C suốt 2 260 s; oát kế vẫn chỉ 100 W, nước cạn dần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 20.7,
-      "chu": "Đứng yên ở 100 °C suốt 2 260 s (226 000 J): sôi dài nhất, gấp ≈ 5,4 lần giai đoạn nóng lên (2 260 s so với 419 s).\nTừ ba giai đoạn tính được λ = 3,34×10⁵ J/kg, c = 4,19×10³ J/(kg·K), L = 2,26×10⁶ J/kg."
+      "giay": 33.7,
+      "chu": "Đoạn ngang: bếp vẫn cấp nhiệt để chuyển thể. Sôi dài nhất, gấp ≈ 5,4 lần nóng lên."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38,
-      "chu": "Số liệu chỉ minh hoạ. Mất nhiệt làm λ, L đo lớn hơn giá trị bảng."
+      "giay": 40.6,
+      "chu": "Số liệu chỉ minh hoạ. Thực tế có mất nhiệt nên λ, L đo được lớn hơn giá trị bảng."
     }
   ],
   "dung_dua": {
-    "giay": 9.35,
-    "cau_hoi": "Đun liên tục 0,100 kg nước đá bằng bếp 100 W cho tới khi nước cạn. Giai đoạn nào kéo dài nhất?",
+    "giay": 8.3,
+    "cau_hoi": "Đun liên tục 0,100 kg nước đá ở 0 °C bằng bếp giữ 100 W cho tới khi nước cạn. Giai đoạn nào kéo dài nhất?",
     "chon": [
       "A. Đá tan",
       "B. Nóng lên",
@@ -46,7 +46,24 @@
       "D. Bằng nhau"
     ],
     "dung": 2,
-    "giai_thich_dung": "Sôi tới cạn mất 2 260 s, gấp khoảng 5,4 lần giai đoạn nóng lên 419 s.",
-    "giai_thich_sai": "So ba khoảng thời gian trên đồ thị ở đoạn kế rồi tìm khoảng dài nhất."
+    "giai_thich_dung": "Sôi tới cạn mất 2 260 s, gấp khoảng 5,4 lần giai đoạn nóng lên (419 s). Suốt đoạn ngang ở 100 °C bếp vẫn cấp 100 W; nhiệt dùng để biến nước thành hơi.",
+    "giai_thich_sai": "Bếp giữ 100 W cả lúc nhiệt kế đứng yên. Xem tiếp rồi so độ dài ba đoạn trên đồ thị."
+  },
+  "cau_chot": {
+    "giay": 46.2,
+    "cau_hoi": "Nước đang sôi ở 100 °C trong bình hở, để trong phòng. Tắt bếp thì nhiệt kế chỉ thế nào?",
+    "chon": [
+      "A. Vẫn đứng ở 100 °C một lúc lâu",
+      "B. Giảm dần xuống dưới 100 °C",
+      "C. Tăng lên trên 100 °C",
+      "D. Tụt ngay xuống 0 °C"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Nhiệt kế chỉ đứng yên ở 100 °C khi nước vẫn nhận nhiệt để hoá hơi. Tắt bếp thì không còn nhiệt vào, nước lại toả nhiệt ra phòng nên không giữ được 100 °C.",
+      "Đoạn ngang cần bếp cấp nhiệt liên tục cho nước hoá hơi. Tắt bếp, nước thôi sôi và toả nhiệt ra không khí mát hơn, nên nhiệt độ giảm dần.",
+      "Muốn tăng nhiệt độ phải có nhiệt vào. Tắt bếp thì nước chỉ mất nhiệt ra phòng, nhiệt độ không thể tăng.",
+      "Nước nguội dần theo thời gian, không tụt ngay. Nó cũng chỉ nguội tới gần nhiệt độ phòng, không xuống 0 °C."
+    ]
   }
 }

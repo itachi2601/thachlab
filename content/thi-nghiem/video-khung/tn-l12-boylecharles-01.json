@@ -1,8 +1,8 @@
 {
   "id": "tn-l12-boylecharles-01",
   "ten": "Nén khí trong xilanh kín: ấn pittông, áp kế chỉ bao nhiêu?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-01-20261119-2.mp4",
-  "tong_giay": 54.2,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-01-20261121.mp4",
+  "tong_giay": 48.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -13,39 +13,57 @@
     {
       "khoa": "du_doan",
       "giay": 3.8,
-      "chu": "Ấn pittông tới một nửa thể tích. Áp kế chỉ bao nhiêu?"
+      "chu": "Nén khí từ 8,0 ml (áp kế 100 kPa) còn 4,0 ml. Áp kế chỉ bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Xilanh nhốt 8,0 ml không khí, nối áp kế.\nẤn pittông từ từ, đợi số ổn định."
+      "giay": 9.5,
+      "chu": "Xilanh nhốt 8,0 ml khí, nối áp kế. Ấn từ từ."
     },
     {
       "khoa": "quan_sat",
-      "giay": 16.7,
-      "chu": "V giảm 8,0 → 3,0 ml thì p tăng 100 → 267 kPa."
+      "giay": 14.5,
+      "chu": "V giảm 8,0 → 6,0 → 5,0 → 4,0 ml thì p tăng 100 → 142 → 170 → 215 kPa.\nCòn một nửa thể tích: áp suất gần gấp đôi."
     },
     {
       "khoa": "rut_ra",
-      "giay": 29.8,
-      "chu": "Tích p·V gần như không đổi (800–860).\nV nhỏ đi, mật độ phân tử tăng, va chạm lên thành nhiều hơn."
+      "giay": 30.7,
+      "chu": "Tích p·V gần như không đổi.\nV nhỏ đi, mật độ tăng, va chạm lên thành nhiều hơn nên p tăng."
     },
     {
       "khoa": "chua_noi",
-      "giay": 38.9,
-      "chu": "Chỉ khẳng định pV không đổi trong phạm vi sai số đo. Chưa cho biết p phụ thuộc nhiệt độ thế nào."
+      "giay": 38.3,
+      "chu": "Chỉ đúng khi nhiệt độ giữ không đổi, trong phạm vi sai số đo. Chưa cho biết p phụ thuộc nhiệt độ thế nào."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
-    "cau_hoi": "Ấn pittông từ 8 ml xuống 4 ml (một nửa). Áp kế đang chỉ 100 kPa. Sau khi ấn, áp kế chỉ gần nhất:",
+    "giay": 9.3,
+    "cau_hoi": "Khí nhốt kín 8,0 ml, áp kế chỉ 100 kPa. Ấn pittông từ từ (nhiệt độ không đổi) cho khí còn 4,0 ml. Sau khi ấn, áp kế chỉ gần nhất:",
     "chon": [
-      "A. 100 kPa",
+      "A. 110 kPa",
       "B. 150 kPa",
-      "C. 200 kPa"
+      "C. 200 kPa",
+      "D. 400 kPa"
     ],
     "dung": 2,
-    "giai_thich_dung": "V giảm một nửa thì p gần gấp đôi. Xem số đo thật ở đoạn kế.",
+    "giai_thich_dung": "Thể tích giảm 2 lần thì áp suất tăng 2 lần. Xem số đo thật ở đoạn kế.",
     "giai_thich_sai": "Xem số đo thật ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 44.4,
+    "cau_hoi": "Áp kế chỉ đo được tới 300 kPa. Vẫn 8,0 ml khí ở 100 kPa, ấn pittông từ từ (nhiệt độ không đổi). Lấy p·V lúc đầu, kim chạm vạch 300 kPa khi khí còn khoảng:",
+    "chon": [
+      "A. 2,0 ml",
+      "B. 2,7 ml",
+      "C. 3,5 ml",
+      "D. 5,3 ml"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Ở 2,0 ml thể tích giảm 4 lần nên p ≈ 400 kPa, kim đã vượt thang. Giữ p·V ≈ 800 kPa·ml thì kim chạm 300 kPa khi V = 800/300 ≈ 2,7 ml.",
+      "p·V ≈ 800 kPa·ml không đổi nên V = 800/300 ≈ 2,7 ml. Nén thêm nữa thì kim vượt thang đo.",
+      "Ở 3,5 ml áp suất mới khoảng 800/3,5 ≈ 229 kPa, kim chưa tới 300. Phải nén tiếp tới V = 800/300 ≈ 2,7 ml.",
+      "Số này ra khi lấy 8,0 × 200/300, coi thể tích giảm theo phần áp suất tăng thêm. Định luật Boyle giữ p·V ≈ 800 kPa·ml nên V = 800/300 ≈ 2,7 ml."
+    ]
   }
 }

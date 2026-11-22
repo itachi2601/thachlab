@@ -1,8 +1,9 @@
 {
   "id": "tn-l12-antoanpx-01",
   "ten": "Lùi xa nguồn phóng xạ: máy Geiger đếm thế nào?",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261112-2.mp4",
-  "tong_giay": 54.6,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.mp4",
+  "poster": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-01-20261121.webp",
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,33 +13,33 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Ở 1 m máy đếm 360 xung/phút. Lùi ra 2 m thì còn bao nhiêu?"
+      "giay": 2.7,
+      "chu": "Ở 0,5 m máy đếm 1454 xung/phút. Lùi ra 1 m thì còn bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.9,
-      "chu": "Nguồn gamma hoạt độ thấp, máy Geiger, thước dây.\nĐo phông, rồi đếm 5 phút ở 0,5; 1; 1,5; 2; 3 m."
+      "giay": 8.4,
+      "chu": "Nguồn gamma, máy Geiger, thước dây."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.3,
-      "chu": "Từ 1 m ra 2 m, nhịp thực giảm từ 360 còn khoảng 90 xung/phút."
+      "giay": 11.8,
+      "chu": "Từ 0,5 m ra 1 m, nhịp thực giảm từ 1454 còn 360 xung/phút, khoảng 4 lần."
     },
     {
       "khoa": "rut_ra",
-      "giay": 27.5,
-      "chu": "Nhịp thực N tỉ lệ nghịch với d²: N·d² gần như không đổi, quanh 360.\nChưa trừ phông thì N·d² tăng theo d."
+      "giay": 20.9,
+      "chu": "Nhịp thực tỉ lệ nghịch với d²: cùng số hạt trải trên diện tích tăng theo d²."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.7,
-      "chu": "Không cho biết tác hại lên cơ thể: máy chỉ đếm xung, chưa tính loại tia (cần liều tương đương Sv).\nSát một nguồn lớn thì không còn coi là nguồn điểm."
+      "giay": 27.8,
+      "chu": "Không cho biết tác hại lên cơ thể: máy chỉ đếm xung, cần liều tương đương Sv."
     }
   ],
   "dung_dua": {
-    "giay": 8.75,
-    "cau_hoi": "Ở 1 m: 360 xung/phút. Lùi ra 2 m thì còn bao nhiêu?",
+    "giay": 8.25,
+    "cau_hoi": "Ở 0,5 m: 1454 xung/phút (đã trừ phông). Lùi ra 1 m thì còn bao nhiêu?",
     "chon": [
       "A. Còn khoảng 1/2",
       "B. Còn khoảng 1/4",
@@ -46,7 +47,24 @@
       "D. Gần như không đổi"
     ],
     "dung": 1,
-    "giai_thich_dung": "Gấp đôi khoảng cách thì nhịp thực còn 1/4: từ 360 xuống khoảng 90 xung/phút.",
-    "giai_thich_sai": "Hãy xem số đếm ở 2 m ở đoạn kế và so với 360 ở 1 m."
+    "giai_thich_dung": "Xa gấp 2 thì cùng số hạt trải trên diện tích gấp 4, nên nhịp thực còn khoảng 1/4: từ 1454 xuống 360 xung/phút.",
+    "giai_thich_sai": "Xa gấp 2 thì diện tích hạt trải ra tăng mấy lần? Xem số đếm ở 1 m ngay đoạn kế."
+  },
+  "cau_chot": {
+    "giay": 45.2,
+    "cau_hoi": "Lùi đầu dò từ 1 m ra 6 m. Nhịp thực (đã trừ phông) giảm khoảng mấy lần?",
+    "chon": [
+      "A. 6 lần",
+      "B. 25 lần",
+      "C. 12 lần",
+      "D. 36 lần"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "6 là tỉ số khoảng cách (6 : 1). Nhịp thực tỉ lệ nghịch với d², nên phải bình phương tỉ số này: 6² = 36 lần.",
+      "25 = 5², tức lấy hiệu 6 − 1 = 5 m rồi bình phương. Phải lấy tỉ số khoảng cách mới/cũ: 6 : 1 = 6, nên giảm 6² = 36 lần.",
+      "12 = 2 × 6 là nhân đôi tỉ số chứ chưa bình phương. Tỉ số khoảng cách là 6, bình phương được 36 lần.",
+      "Khoảng cách gấp 6 : 1 = 6 lần nên nhịp thực giảm 6² = 36 lần. Theo mô hình 1/r² (không phải số đo thật): từ 360 còn khoảng 10 xung/phút, đã nhỏ hơn cả phông 30 xung/phút."
+    ]
   }
 }

@@ -1,52 +1,69 @@
 {
   "id": "tn-l12-camungdt-03",
   "ten": "Khung dây quay giữa hai cực nam châm",
-  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-03-20261112-2.mp4",
-  "tong_giay": 50.3,
+  "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-camungdt-03-20261121.mp4",
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Chỉ đổi góc quay khung cũng làm từ thông biến thiên.",
-      "kiem": "Quay khung, từ thông qua khung có đổi không?"
+      "chu": "Từ thông tính bằng góc giữa pháp tuyến n và B, không phải góc giữa mặt khung và B.",
+      "kiem": "Nghiêng khung thì Φ còn bao nhiêu?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Quay khung từ 0° tới 90°, B và S không đổi. Đồ thị Φ theo α trông thế nào?"
+      "giay": 3.8,
+      "chu": "Lúc đầu mặt khung vuông góc B: Φ lớn nhất. Quay tới khi mặt khung hợp B góc 60°. Φ còn bao nhiêu phần Φ lớn nhất?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
-      "chu": "Khung dây nối điện kế đặt giữa hai cực nam châm chữ U.\nDừng ở 0°, 30°, 60°, 90°."
+      "giay": 9.7,
+      "chu": "Khung dây quay, nam châm chữ U, điện kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.6,
-      "chu": "Kim lệch lúc quay, về 0 khi dừng. Φ giảm từ 0,01 Wb xuống 0 ở 90°."
+      "giay": 19.9,
+      "chu": "Kim lệch khi quay, về 0 khi dừng. α = 30°: Φ = 0,00866 Wb; α = 90°: Φ = 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.9,
-      "chu": "Mặt khung càng nghiêng thì càng ít đường sức xuyên qua, nên Φ giảm dù B và S không đổi. Φ = BS·cosα đổi khi α đổi."
+      "giay": 25.1,
+      "chu": "α là góc giữa pháp tuyến n và B. Mặt khung hợp B góc 60° thì α = 90° − 60° = 30°, nên Φ = BS cos α = 0,00866 Wb, hơn nửa Φ lớn nhất (0,01 Wb)."
     },
     {
       "khoa": "chua_noi",
-      "giay": 41.2,
+      "giay": 42.5,
       "chu": "Không cho chiều dòng cảm ứng (Lenz) và độ lớn suất điện động (Faraday)."
     }
   ],
   "dung_dua": {
-    "giay": 9.05,
-    "cau_hoi": "Quay khung từ 0° tới 90°, B và S không đổi. Đồ thị Φ theo α?",
+    "giay": 9.55,
+    "cau_hoi": "Lúc đầu mặt khung vuông góc B (Φ lớn nhất). Quay tới khi mặt khung hợp B góc 60°. Φ còn bao nhiêu phần Φ lớn nhất?",
     "chon": [
-      "A. Gần như nằm ngang",
-      "B. Tăng dần từ 0",
-      "C. Giảm dần về 0",
-      "D. Tăng rồi giảm"
+      "A. Ít hơn một nửa",
+      "B. Đúng một nửa",
+      "C. Hơn một nửa",
+      "D. Bằng 0"
     ],
     "dung": 2,
-    "giai_thich_dung": "Ở 0° mặt khung vuông góc đường sức nên Φ lớn nhất, nghiêng dần thì Φ giảm về 0 ở 90°.",
-    "giai_thich_sai": "Hãy so số đo Φ ở 0° và ở 90° trên bảng ở đoạn kế."
+    "giai_thich_dung": "Pháp tuyến n vuông góc mặt khung, nên góc giữa n và B là α = 90° − 60° = 30°. cos 30° ≈ 0,87, nên Φ còn khoảng 0,87 phần Φ lớn nhất, hơn một nửa.",
+    "giai_thich_sai": "60° là góc của mặt khung, không phải α. Pháp tuyến n vuông góc mặt khung nên α = 90° − 60° = 30°, và cos 30° ≈ 0,87: Φ còn hơn một nửa."
+  },
+  "cau_chot": {
+    "giay": 44.3,
+    "cau_hoi": "Khung (B = 0,2 T, S = 0,05 m²) quay tiếp, quá vị trí mặt khung song song B, tới khi mặt khung hợp B góc 30°. Từ thông qua khung bằng bao nhiêu?",
+    "chon": [
+      "A. 0,005 Wb",
+      "B. −0,005 Wb",
+      "C. 0,00866 Wb",
+      "D. −0,00866 Wb"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Số này ứng với α = 60°, tức khung chưa quay quá vị trí song song. Pháp tuyến n đã quay 90° + 30° = 120° so với B, nên Φ = BS cos 120° = 0,01 × (−0,5) = −0,005 Wb.",
+      "n đã quay 90° + 30° = 120° so với B. Φ = BS cos 120° = 0,2 × 0,05 × (−0,5) = −0,005 Wb: đường sức xuyên qua khung ngược chiều n.",
+      "Số này ra khi lấy cos 30°, tức lấy góc của mặt khung. α là góc giữa n và B: n đã quay 120°, nên Φ = 0,01 × cos 120° = −0,005 Wb.",
+      "Dấu âm đúng nhưng lấy cos của góc mặt khung (30°). α là góc giữa n và B, bằng 90° + 30° = 120°: Φ = 0,01 × cos 120° = −0,005 Wb."
+    ]
   }
 }
