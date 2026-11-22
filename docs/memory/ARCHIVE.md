@@ -112,3 +112,4 @@ Chuyển ra khỏi MEMORY.md 28/9/2026 để giảm ~40% token index mỗi phiê
 
 ## Chuyển từ MEMORY.md khi rút gọn 18/11/2026
 - [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–9 + sửa hộp exp đã đăng 18/11
+- [L11 5 đề: tên chủ đề trong đề](project_thachlab_l11_5_de_chu_de_exams.md) — xong 22/11: 126/129 khớp, không cần vá
