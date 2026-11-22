@@ -49,7 +49,7 @@ import {
 const PAD_L = 46; // chừa chỗ vẽ bệ phóng
 const PAD_R = 10;
 const PAD_T = 16;
-const PAD_B = 26; // chừa chỗ ghi thước đo dưới mặt đất
+const PAD_B = 32; // chừa chỗ ghi thước đo dưới mặt đất
 
 interface Box {
   w: number;
@@ -124,8 +124,8 @@ function drawScene(canvas: HTMLCanvasElement, p: SceneParams, pal: StagePalette)
   const setFont = (size: number) => {
     ctx.font = `${size}px ${MONO}`;
   };
-  const fsRuler = Math.max(11, 12 * k);
-  const fsValue = Math.max(12, 13 * k);
+  const fsRuler = Math.max(13, 12 * k);
+  const fsValue = Math.max(14, 13 * k);
 
   // --- nền + lưới ---
   const bg = ctx.createLinearGradient(0, 0, 0, geo.groundY);
@@ -439,12 +439,12 @@ function drawArrow(
   ctx.lineTo(x2 - head * Math.cos(ang + 0.4), y2 - head * Math.sin(ang + 0.4));
   ctx.fill();
 
-  const fs = Math.max(11, 12 * k);
+  const fs = Math.max(13, 12 * k);
   ctx.font = `${fs}px ${MONO}`;
   const labelWidth = ctx.measureText(label).width;
   ctx.fillText(label, x2 + 5, y2 + 4);
   if (sub) {
-    ctx.font = `${Math.max(9, fs - 3)}px ${MONO}`;
+    ctx.font = `${Math.max(11, fs - 3)}px ${MONO}`;
     ctx.fillText(sub, x2 + 5 + labelWidth + 0.5, y2 + 4 + fs * 0.3);
   }
 }

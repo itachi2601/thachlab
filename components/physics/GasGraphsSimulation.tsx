@@ -286,24 +286,24 @@ function Graph({ spec, proc, s, unit, onParam }: GraphProps) {
           <path d={`M${W - PR + 4},${xAxisY} l-7,-4 v8 z`} className="fill-muted" />
           <line x1={yAxisX} x2={yAxisX} y1={H - PB} y2={PT - 6} className="stroke-muted" strokeWidth={1.5} />
           <path d={`M${yAxisX},${PT - 6} l-4,7 h8 z`} className="fill-muted" />
-          <text x={yAxisX - 6} y={xAxisY + 15} textAnchor="end" className="fill-ink" fontSize={13} fontWeight={700}>
+          <text x={yAxisX - 6} y={xAxisY + 15} textAnchor="end" className="fill-ink" fontSize={14} fontWeight={700}>
             O
           </text>
 
           {ay.ticks.map((t) => (
-            <text key={`ty${t}`} x={yAxisX - 6} y={sy(ay, t) + 4} textAnchor="end" className="fill-muted" fontSize={13}>
+            <text key={`ty${t}`} x={yAxisX - 6} y={sy(ay, t) + 4} textAnchor="end" className="fill-muted" fontSize={14}>
               {fmtTick(t)}
             </text>
           ))}
           {ax.ticks.map((t) => (
-            <text key={`tx${t}`} x={sx(ax, t)} y={H - PB + 16} textAnchor="middle" className="fill-muted" fontSize={13}>
+            <text key={`tx${t}`} x={sx(ax, t)} y={H - PB + 16} textAnchor="middle" className="fill-muted" fontSize={14}>
               {fmtTick(t)}
             </text>
           ))}
-          <text x={W - PR} y={H - 4} textAnchor="end" className="fill-ink" fontSize={14} fontStyle="italic">
+          <text x={W - PR} y={H - 4} textAnchor="end" className="fill-ink" fontSize={15} fontStyle="italic">
             {ax.label}
           </text>
-          <text x={yAxisX + 8} y={PT + 2} className="fill-ink" fontSize={14} fontStyle="italic">
+          <text x={yAxisX + 8} y={PT + 2} className="fill-ink" fontSize={15} fontStyle="italic">
             {ay.label}
           </text>
 
@@ -326,7 +326,7 @@ function Graph({ spec, proc, s, unit, onParam }: GraphProps) {
                   y={xAxisY + 16}
                   textAnchor="middle"
                   className="fill-ink"
-                  fontSize={13}
+                  fontSize={14}
                   fontWeight={700}
                 >
                   −273
@@ -341,11 +341,11 @@ function Graph({ spec, proc, s, unit, onParam }: GraphProps) {
 
           {/* trạng thái (1) và (2) */}
           <circle cx={a.x} cy={a.y} r={5} className="fill-panel" stroke="var(--color-ink)" strokeWidth={2} />
-          <text x={a.x + 8} y={a.y - 8} className="fill-ink" fontSize={13}>
+          <text x={a.x + 8} y={a.y - 8} className="fill-ink" fontSize={14}>
             (1)
           </text>
           <circle cx={b.x} cy={b.y} r={7} fill="var(--color-primary)" stroke="var(--color-panel)" strokeWidth={2} />
-          <text x={b.x + 9} y={b.y + 16} className="fill-primary" fontSize={13} fontWeight={700}>
+          <text x={b.x + 9} y={b.y + 16} className="fill-primary" fontSize={14} fontWeight={700}>
             (2)
           </text>
         </svg>
