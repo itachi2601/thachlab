@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thực hành đo ℰ, r của pin · trên lớp</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+/* Bản chiếu cho TIVI 50 inch: một cột, mỗi màn một ý, cỡ chữ tính theo chiều cao màn (vh)
+   nên lên 1080p hay 4K chữ vẫn chiếm cùng tỉ lệ. Chữ thường = 5,2% chiều cao màn (~3,2 cm trên tivi 50"). */
+/* Màu = token nền sáng của web (app/globals.css, docs/MAU-NEN-SANG.md): ink/muted/primary/ok/warn/danger.
+   Lệch có chủ ý: nền trắng (web #f5f7fa) và đường kẻ đậm hơn (web rgba .10) để rõ trên tivi xa 6–8 m. */
+:root{
+  --bg:#ffffff; --ink:#0f172a; --muted:#475569; --line:rgba(15,23,42,.2);
+  --accent:#1d4ed8; --ok:#047857; --ok-bg:#ecfdf5; --no:#b91c1c; --warn-bg:#fffbeb; --warn:#b45309;
+}
+*{box-sizing:border-box}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:min(5.2vh,2.95vw);line-height:1.32}
+.man{height:100vh;scroll-snap-align:start;padding:2.5vh 4vw 2vh;display:flex;flex-direction:column;gap:1.6vh;border-bottom:4px solid var(--line);overflow:hidden}
+.top{display:flex;align-items:center;gap:.8em;font-size:.62em;color:var(--muted);font-weight:700}
+.top .so{color:var(--accent);text-transform:uppercase;letter-spacing:.03em}
+.top .tap{margin-left:auto}
+.tap{display:inline-block;font-weight:800;color:var(--warn);background:var(--warn-bg);border:3px solid #e8b04a;border-radius:999px;padding:.05em .7em;white-space:nowrap;font-size:1.15em}
+h1,h2{margin:0;line-height:1.15}
+h1{font-size:2.4em} h2{font-size:1.3em}
+p{margin:0}
+ul{margin:0;padding-left:1.1em} li{margin:.12em 0}
+.giua{flex:1;display:flex;flex-direction:column;justify-content:center;gap:1.6vh}
+.hoi{font-weight:800}
+ol.opt{list-style:none;margin:0;padding:0;display:grid;gap:.7vh}
+ol.opt li{border:4px solid var(--line);border-radius:14px;padding:.12em .55em}
+ol.opt li b{display:inline-block;min-width:1.5em}
+ol.opt.hang{grid-template-columns:repeat(4,1fr);text-align:center}
+ol.opt.hang li b{min-width:0;margin-right:.3em}
+.lo .dung{border-color:var(--ok);background:var(--ok-bg)}
+button.mo,a.mo,button.vn{align-self:flex-start;display:inline-block;text-decoration:none;font:inherit;font-size:.68em;font-weight:800;color:#fff;background:var(--accent);
+  border:0;border-radius:999px;padding:.35em 1.1em;cursor:pointer;min-height:44px}
+button.mo[aria-expanded="true"]{background:#94a3b8}
+button.vn.phu{background:#64748b}
+.nut{display:flex;gap:.6em;flex-wrap:wrap}
+.an[hidden]{display:none}
+.an{border-left:10px solid var(--ok);background:var(--ok-bg);border-radius:0 14px 14px 0;padding:.25em .7em}
+.an.nhap{border-color:var(--warn);background:var(--warn-bg)}
+.nho{font-size:.7em;color:var(--muted)}
+.fig{display:flex;justify-content:center;min-height:0}
+.fig svg{height:100%;width:auto;max-width:100%;color:var(--ink)}
+.hai>.fig.rong{width:56%} .hai>.fig.hep{width:34%} .hai>.fig.vua{width:40%} .f3 svg,.f4 svg{overflow:visible}
+ol.opt.hang3{grid-template-columns:repeat(3,1fr);text-align:center} ol.opt.hang3 li b{min-width:0;margin-right:.3em}
+/* màu hình web vẽ cho nền tối: đổi sang sắc đậm để đủ tương phản trên nền trắng tivi */
+.fig svg [fill="#38bdf8"]{fill:#0369a1} .fig svg [stroke="#38bdf8"]{stroke:#0369a1} .fig svg [fill="#f87171"]{fill:#dc2626} .fig svg [stroke="#f87171"]{stroke:#dc2626}
+.fig svg [fill="#34d399"]{fill:#047857} .fig svg [stroke="#34d399"]{stroke:#047857} .fig svg [fill="#fb923c"]{fill:#c2410c} .fig svg [stroke="#fb923c"]{stroke:#c2410c}
+/* nhãn trong hình vẽ cho điện thoại: phóng lên để chữ trong hình ≈ 0,75 cỡ chữ thường */
+.f2 svg text,.f4 svg text,.f5 svg text{font-size:20px} .f1 svg text{font-size:26px} .f3 svg text{font-size:22px}
+.f2 svg,.f1 svg,.f4 svg,.f5 svg{overflow:visible}
+/* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
+.o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
+.hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
+.hai>.fig{flex:none;width:44%;height:100%;align-items:center}
+.hai>.ben{gap:1.6vh}
+ol.opt.hai-cot{grid-template-columns:1fr 1fr}
+.gian{flex:1;min-height:0} .gian svg{height:100%}
+.fx{font-size:1.45em;text-align:center;border:4px solid var(--accent);border-radius:16px;padding:.15em .4em}
+table{border-collapse:collapse;width:100%}
+th,td{border:3px solid var(--line);padding:.12em .4em;text-align:left;vertical-align:middle}
+th{background:#eef2f7;font-size:.8em}
+td.trong{min-width:4.5em;font-weight:800;color:var(--accent);text-align:center;outline:none}
+td.trong:focus{background:#eef4ff}
+td.ns{color:var(--ok);font-weight:800;text-align:center}
+/* màn clip: video dọc 9:16 bên trái cao hết màn, cột phải chữ to (câu hỏi ở điểm dừng) — N8, V2, V12 */
+.vg{flex:1;min-height:0;display:flex;gap:3vw}
+.vg video{height:100%;aspect-ratio:9/16;flex:none;background:#000;border-radius:12px;cursor:pointer}
+.ben{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
+.buoc{display:none;flex-direction:column;gap:2vh} .buoc.hien{display:flex}
+.nhin{font-weight:800;border-left:10px solid var(--accent);padding-left:.5em}
+.so-lon{font-size:1.45em;font-weight:800;color:var(--accent)}
+.bang td,.bang th{text-align:center}
+.vnut{display:flex;align-items:center;gap:.6em}
+.moc{display:flex;gap:.35em;margin-left:.4em} .moc i{width:.5em;height:.5em;border-radius:50%;border:3px solid var(--accent)} .moc i.qua{background:var(--accent)}
+.qr svg{display:block;height:62vh;width:auto;margin:0 auto}
+.made{font-size:1.5em;text-align:center}
+.made b{color:var(--accent)}
+.dk{position:fixed;right:12px;bottom:10px;font-size:14px;color:var(--muted);background:rgba(255,255,255,.9);border:1px solid var(--line);border-radius:8px;padding:4px 8px}
+@media (max-width:760px){
+  html{scroll-snap-type:none}
+  body{font-size:18px}
+  .man{height:auto;min-height:0;padding:18px 16px 22px;overflow:visible}
+  .f1,.f2,.f3,.f4,.f5,.f6,.gian{height:auto;flex:none} .hai{flex-direction:column} .hai>.fig{width:100%;height:auto} .fig svg{width:100%;height:auto}
+  .vg{flex-direction:column} .vg video{height:70vh;align-self:center}
+  ol.opt.hang{grid-template-columns:1fr 1fr}
+  .qr svg{height:auto;width:100%;max-width:320px}
+  .top{flex-wrap:wrap}
+  .bang td,.bang th{padding:.1em .1em;font-size:.7em}
+  .dk{display:none}
+}
+@media print{html{scroll-snap-type:none}.man{height:auto;page-break-after:always}button.mo,a.mo,.dk,video,.vnut{display:none}.buoc{display:flex}.an[hidden]{display:block}}
+</style>
+
+<!-- Nguồn: theory.html bài 45 (Thực hành đo ℰ, r của pin) + ruột tập scripts/ruot-tap/l11-bai26.mjs (tr.49–53, mã ô t·k tuyệt đối);
+     hình: dấu TAP:ten = hình hinh-l11-bai26.mjs của Tập (build_tren_lop.py).
+     Clip tn-l11-do-sdd-pin-01 (clips/sddpin1.py, 49,3 s): dự đoán 3,0–9,3 (thẻ), "Tiến hành" 9,3–~21,4 (đáp án hiện ~19,5), "Rút ra" 21,4–~32 (đường + ℰ = 1,50 V ~27, "Chưa nói được" 28,2).
+     Clip tn-l11-do-sdd-pin-02 (clips/sddpin2.py, 49,8 s): dự đoán 3,8–10,0, "Tiến hành" 10,0–~22, đáp án ~20,0, "Rút ra" ~22,5–~32.
+     Điểm dừng đã xem khung hình thật (8,6 · 17,6 · 27,6 · 31,0 và 9,0 · 21,0 · 27,5 · 30,6). Không dùng PhET (clip thay). -->
+
+<section class="man" id="m0">
+  <div class="top"><span class="so">Vật lí 11 · Bài 26 · Thực hành</span><span>6 điểm dừng · 15 phút cuối làm đề</span><span class="tap">Tập bài 26 · tr.49</span></div>
+  <div class="giua">
+    <h1>Đo suất điện động và điện trở trong của pin</h1>
+    <p class="hoi">Hôm nay làm được:</p>
+    <ul>
+      <li>Lắp mạch đo, đọc ampe kế và vôn kế, ghi bảng $(I,U)$</li>
+      <li>Vẽ $U$ theo $I$ rồi đọc $\mathcal E$ và $r$ từ đường thẳng</li>
+      <li>Ghi kết quả kèm sai số, biết số liệu nào đáng tin</li>
+    </ul>
+    <p>Đoán trước, giơ tay A/B/C/D, rồi mới mở đáp án.</p>
+  </div>
+  <p class="nho">Phím → ← sang màn · Enter mở ô kế tiếp</p>
+</section>
+
+<section class="man" id="m1">
+  <div class="top"><span class="so">1/6 · Dự đoán</span><span>phút 0–2</span><span class="tap">tr.49 · ô 49·2</span></div>
+  <div class="hai">
+    <div class="fig f1 hep"><svg viewBox="0 0 320 182" role="img" aria-label="Số chỉ vôn kế hai đầu một viên pin trước và sau khi nối động cơ"><defs><marker id="xd1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><rect x="38" y="28" width="62" height="40" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="69" y="55" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">1,50 V</text><line x1="69" y1="68" x2="69" y2="92" stroke="#1c2540" stroke-width="2.8"/><line x1="47" y1="101" x2="91" y2="101" stroke="#1c2540" stroke-width="2.8"/><line x1="58" y1="119" x2="80" y2="119" stroke="#1c2540" stroke-width="6"/><text x="99" y="106" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">+</text><line x1="69" y1="119" x2="69" y2="142" stroke="#1c2540" stroke-width="2.8"/><text x="69" y="168" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">không nối gì</text><rect x="190" y="28" width="62" height="40" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="221" y="55" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">1,06 V</text><line x1="221" y1="68" x2="221" y2="92" stroke="#1c2540" stroke-width="2.8"/><line x1="199" y1="101" x2="243" y2="101" stroke="#1c2540" stroke-width="2.8"/><line x1="210" y1="119" x2="232" y2="119" stroke="#1c2540" stroke-width="6"/><text x="251" y="106" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">+</text><line x1="221" y1="119" x2="221" y2="142" stroke="#1c2540" stroke-width="2.8"/><line x1="221" y1="92" x2="290" y2="92" stroke="#1c2540" stroke-width="2.8"/><line x1="290" y1="92" x2="290" y2="112" stroke="#1c2540" stroke-width="2.8"/><circle cx="290" cy="130" r="18" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="290" y="138" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">M</text><line x1="290" y1="148" x2="290" y2="142" stroke="#1c2540" stroke-width="2.8"/><line x1="290" y1="142" x2="221" y2="142" stroke="#1c2540" stroke-width="2.8"/><text x="256" y="168" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">động cơ quay</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Xe đồ chơi chạy pin AA đứng ì. Vôn kế hai đầu pin: $1{,}50$ V lúc chưa lắp vào xe; $1{,}06$ V lúc động cơ rên ư ử. Vì sao tụt?</p>
+      <ol class="opt hai-cot">
+        <li><b>A.</b> Đồng hồ đo sai mỗi khi có dòng chạy trong mạch</li>
+        <li><b>B.</b> Động cơ “hút” bớt suất điện động của viên pin</li>
+        <li><b>C.</b> Có dòng thì pin sụt áp bên trong, pin cũ sụt nhiều</li>
+        <li><b>D.</b> Pin hết năng lượng nên chỉ còn “điện áp ảo” ở hai cực</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2a">
+  <div class="top"><span class="so">2/6 · Nhắc lại bài 24</span><span>phút 2–7</span><span class="tap">tr.49 · ô 49·4</span></div>
+  <div class="hai">
+    <div class="fig f2"><svg viewBox="0 0 320 186" role="img" aria-label="Đường thẳng U theo I đi xuống, hai điểm trên đường"><defs><marker id="dt1" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><line x1="56" y1="150" x2="300" y2="150" stroke="#1c2540" stroke-width="2.8"/><line x1="56" y1="150" x2="56" y2="18" stroke="#1c2540" stroke-width="2.8"/><path d="M300,150 l-9,-5 v10 z" fill="#1c2540"/><path d="M56,18 l-5,9 h10 z" fill="#1c2540"/><text x="300" y="174" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">I</tspan> (A)</text><text x="66" y="26" fill="#1c2540" font-size="20" text-anchor="start" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">U</tspan> (V)</text><line x1="56" y1="52" x2="276" y2="140" stroke="#1c2540" stroke-width="2.8"/><line x1="56" y1="74.4" x2="112" y2="74.4" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><line x1="112" y1="74.4" x2="112" y2="150" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><circle cx="112" cy="74.4" r="5.5" fill="#1c2540"/><text x="50" y="81.4" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">U</tspan><tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan></text><text x="112" y="174" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">I</tspan><tspan font-size="15" dy="5">1</tspan><tspan dy="-5"> </tspan></text><line x1="56" y1="115.2" x2="214" y2="115.2" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><line x1="214" y1="115.2" x2="214" y2="150" stroke="#8a94ad" stroke-width="2" stroke-dasharray="5 4"/><circle cx="214" cy="115.2" r="5.5" fill="#1c2540"/><text x="50" y="122.2" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">U</tspan><tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan></text><text x="214" y="174" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400"><tspan font-family="KaTeX_Math" font-style="italic">I</tspan><tspan font-size="15" dy="5">2</tspan><tspan dy="-5"> </tspan></text><circle cx="56" cy="52" r="5.5" fill="#b3261e"/><text x="50" y="46" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700"><tspan font-family="KaTeX_Math" font-style="italic">E</tspan></text><text x="48" y="174" fill="#1c2540" font-size="20" text-anchor="end" font-weight="400">0</text></svg></div>
+    <div class="ben">
+      <p>Pin có $\mathcal E$, $r$; dòng $I$ chạy qua: $U=$ <b class="o">$\mathcal E-Ir$</b></p>
+      <p>Đồ thị $U$ theo $I$: đường <b class="o">thẳng</b>, cắt trục $U$ tại <b class="o">$\mathcal E$</b> (lúc $I=$ <b class="o">$0$</b>); hệ số góc bằng <b class="o">$-r$</b>.</p>
+      <p class="nho">Đơn vị: $\mathcal E,U$: V · $I$: A · $r$: $\Omega$</p>
+      <p class="hoi">Hai điểm (1), (2) bất kì trên đường (1 ở $I$ nhỏ hơn): $r=\dfrac{U_1-U_2}{I_2-I_1}$</p><p class="nho">Đường đi xuống: hệ số góc $-r$, nên $U_1-U_2$ ở tử.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m2b">
+  <div class="top"><span class="so">2/6 · Làm nhanh</span><span>phút 2–7</span><span class="tap">tr.49 · ô 49·5</span></div>
+  <div class="giua">
+    <p class="hoi">Đường $U$–$I$ của một pin cắt trục $U$ tại $1{,}50$ V và đi qua điểm $(0{,}50\ \text{A};\ 1{,}10\ \text{V})$. Điện trở trong $r$ của pin là bao nhiêu?</p>
+    <button class="mo" data-mo="a2b">Mở đáp án</button>
+    <div class="an" id="a2b" hidden>
+      <p>$\mathcal E=1{,}50$ V (giao trục $U$). $r=\dfrac{\mathcal E-U}{I}=\dfrac{1{,}50-1{,}10}{0{,}50}=$ <b class="o">$0{,}80\ \Omega$</b></p>
+      <p class="nho">Hai điểm: $(0;\,1{,}50)$ và $(0{,}50;\,1{,}10)$ trên cùng đường thẳng.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3a">
+  <div class="top"><span class="so">3/6 · Dụng cụ và sơ đồ</span><span>phút 7–13</span><span class="tap">tr.50 · ô 50·1</span></div>
+  <div class="hai">
+    <div class="fig f3 vua"><svg viewBox="0 0 320 204" role="img" aria-label="Sơ đồ mạch đo suất điện động và điện trở trong của pin"><line x1="34" y1="28" x2="82" y2="28" stroke="#1c2540" stroke-width="2.8"/><line x1="106" y1="28" x2="160" y2="28" stroke="#1c2540" stroke-width="2.8"/><line x1="184" y1="28" x2="296" y2="28" stroke="#1c2540" stroke-width="2.8"/><line x1="296" y1="28" x2="296" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="296" y1="168" x2="238" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="180" y1="168" x2="156" y2="168" stroke="#1c2540" stroke-width="2.8"/><line x1="100" y1="168" x2="34" y2="168" stroke="#1c2540" stroke-width="2.8"/><circle cx="82" cy="28" r="4.5" fill="#1c2540"/><circle cx="106" cy="28" r="4.5" fill="#1c2540"/><line x1="82" y1="28" x2="102" y2="12" stroke="#1c2540" stroke-width="2.8"/><text x="100" y="62" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">K</text><circle cx="172" cy="28" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="172" y="35" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><line x1="34" y1="28" x2="34" y2="82" stroke="#1c2540" stroke-width="2.8"/><line x1="12" y1="87" x2="56" y2="87" stroke="#1c2540" stroke-width="2.8"/><line x1="23" y1="105" x2="45" y2="105" stroke="#1c2540" stroke-width="6"/><line x1="34" y1="105" x2="34" y2="168" stroke="#1c2540" stroke-width="2.8"/><circle cx="34" cy="66" r="4.5" fill="#1c2540"/><text x="26" y="70" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">M</text><circle cx="34" cy="128" r="4.5" fill="#1c2540"/><text x="26" y="140" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">N</text><line x1="34" y1="66" x2="90" y2="66" stroke="#1c2540" stroke-width="2.8"/><line x1="90" y1="66" x2="90" y2="76" stroke="#1c2540" stroke-width="2.8"/><circle cx="90" cy="93" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="90" y="100" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">V</text><line x1="90" y1="110" x2="90" y2="128" stroke="#1c2540" stroke-width="2.8"/><line x1="90" y1="128" x2="34" y2="128" stroke="#1c2540" stroke-width="2.8"/><rect x="100" y="159" width="56" height="18" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="128" y="196" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">R<tspan font-size="15" dy="5">0</tspan><tspan dy="-5"> </tspan></text><rect x="180" y="159" width="58" height="18" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><path d="M196,142 L226,161" stroke="#1c2540" stroke-width="2.8" fill="none"/><path d="M226,161 l-9,-1 l5,-8 z" fill="#1c2540"/><text x="209" y="196" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">R<tspan font-size="15" dy="5">x</tspan><tspan dy="-5"> </tspan></text></svg></div>
+    <div class="ben">
+      <ul>
+        <li>Pin AA cũ + pin mới · khoá K</li>
+        <li>Biến trở $R_x$: $0$–$100\ \Omega$ · $R_0=2{,}0\ \Omega$</li>
+        <li>Ampe kế (thang $2$ A), vôn kế (thang $2$ V)</li>
+      </ul>
+      <p class="hoi">Chỉ ra: ampe kế mắc thế nào? vôn kế kẹp vào đâu?</p>
+      <button class="mo" data-mo="a3a">Mở: cách mắc</button>
+      <div class="an" id="a3a" hidden><p>Ampe kế <b class="o">nối tiếp</b> với $R_0$, $R_x$. Vôn kế <b class="o">song song</b> hai cực pin (M, N).</p><p class="nho">Pin, $R_x$, $R_0$, K: nối tiếp trong mạch kín.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3b">
+  <div class="top"><span class="so">3/6 · Điện trở bảo vệ $R_0$</span><span>phút 7–13</span><span class="tap">tr.50 · ô 50·2</span></div>
+  <div class="giua">
+    <p>$I=\dfrac{\mathcal E}{R_{\text{ngoài}}+r}$. Pin ví dụ: $\mathcal E=1{,}50$ V, $r=0{,}30\ \Omega$ (cho sẵn). $R_{\text{ngoài}}=R_0+R_x$. Ampe kế đo tối đa $2$ A.</p>
+    <p class="hoi">Vặn $R_x=0$. Bỏ $R_0$: $I=$ ? Có $R_0=2{,}0\ \Omega$: $I=$ ? Cách nào dòng còn trong thang?</p>
+    <button class="mo" data-mo="a3b">Mở đáp án</button>
+    <div class="an" id="a3b" hidden>
+      <p>Bỏ $R_0$: $I=\dfrac{1{,}50}{0{,}30}=$ <b class="o">$5{,}0$ A</b> (quá thang). Có $R_0$: $I=\dfrac{1{,}50}{2{,}0+0{,}30}\approx$ <b class="o">$0{,}65$ A</b>.</p>
+      <p class="nho">Chọn có $R_0$: dòng lớn nhất còn trong thang $2$ A.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m3c">
+  <div class="top"><span class="so">3/6 · Mắc nhầm là hỏng</span><span>phút 7–13</span><span class="tap">tr.50 · ô 50·3</span></div>
+  <p class="hoi">Một bạn mắc ampe kế như hình. Chuyện gì xảy ra?</p>
+  <div class="hai">
+    <div class="fig f4"><svg viewBox="0 0 180 156" role="img" aria-label="Ampe kế mắc song song với hai cực pin"><line x1="40" y1="20" x2="130" y2="20" stroke="#1c2540" stroke-width="2.8"/><line x1="130" y1="20" x2="130" y2="58" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="20" x2="40" y2="52" stroke="#1c2540" stroke-width="2.8"/><line x1="18" y1="57" x2="62" y2="57" stroke="#1c2540" stroke-width="2.8"/><line x1="29" y1="75" x2="51" y2="75" stroke="#1c2540" stroke-width="6"/><line x1="40" y1="75" x2="40" y2="140" stroke="#1c2540" stroke-width="2.8"/><line x1="40" y1="140" x2="130" y2="140" stroke="#1c2540" stroke-width="2.8"/><line x1="130" y1="100" x2="130" y2="140" stroke="#1c2540" stroke-width="2.8"/><circle cx="40" cy="40" r="4.5" fill="#1c2540"/><text x="30" y="44" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">M</text><circle cx="40" cy="108" r="4.5" fill="#1c2540"/><text x="30" y="114" fill="#1c2540" font-size="20" text-anchor="end" font-weight="700">N</text><line x1="40" y1="40" x2="82" y2="40" stroke="#1c2540" stroke-width="2.8"/><line x1="82" y1="40" x2="82" y2="52" stroke="#1c2540" stroke-width="2.8"/><circle cx="82" cy="69" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="82" y="76" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">A</text><line x1="82" y1="86" x2="82" y2="108" stroke="#1c2540" stroke-width="2.8"/><line x1="82" y1="108" x2="40" y2="108" stroke="#1c2540" stroke-width="2.8"/><rect x="116" y="58" width="28" height="42" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="130" y="86" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">R</text><line x1="130" y1="20" x2="130" y2="58" stroke="#1c2540" stroke-width="2.8"/><line x1="130" y1="100" x2="130" y2="140" stroke="#1c2540" stroke-width="2.8"/></svg></div>
+    <div class="ben">
+      <ol class="opt lo">
+        <li><b>A.</b> Ampe kế chỉ 0</li>
+        <li data-dung><b>B.</b> Ampe kế nối tắt hai cực: dòng rất lớn, pin nóng</li>
+        <li><b>C.</b> Ampe kế vẫn đọc đúng dòng qua biến trở</li>
+      </ol>
+      <button class="mo" data-mo="a3c">Mở đáp án</button>
+    </div>
+  </div>
+  <div class="an" id="a3c" hidden><p><b>B.</b> Ampe kế có điện trở <b class="o">rất nhỏ</b>, phải <b class="o">nối tiếp</b>. Vôn kế có điện trở <b class="o">rất lớn</b>, mắc <b class="o">song song</b> với pin.</p></div>
+</section>
+
+<section class="man" id="m4a">
+  <div class="top"><span class="so">4/6 · Các bước đo</span><span>phút 13–16</span><span class="tap">tr.51 · ô 51·1</span></div>
+  <div class="giua">
+    <ul>
+      <li>Lắp mạch; kiểm cực đồng hồ. Thang: vôn kế <b class="o">$2$ V</b>, ampe kế <b class="o">$2$ A</b>. Khoá K <b class="o">mở</b>.</li>
+      <li>Vặn $R_x=100\ \Omega$, đóng K, đọc nhanh $U$ và $I$, ghi bảng, <b>ngắt K ngay</b>.</li>
+      <li>Giảm $R_x$: $20$; $10$; $5$; $2$; $0\ \Omega$. Mỗi pin <b class="o">6</b> lần đo, cả hai pin 12 lần.</li>
+      <li>Thay pin mới, giữ nguyên mạch, đo lại. Vẽ đồ thị, đọc $\mathcal E$, $r$.</li>
+    </ul>
+    <p class="hoi">An toàn: không nối thẳng hai cực pin bằng dây hay ampe kế. Vì sao chỉ đóng K lúc đọc số?</p>
+    <button class="mo" data-mo="a4a">Mở đáp án</button>
+    <div class="an" id="a4a" hidden><p>Đóng K lâu thì pin <b class="o">nóng</b>, $\mathcal E$ và $r$ <b class="o">trôi</b>: số liệu lệch.</p></div>
+  </div>
+</section>
+
+<section class="man" id="m4b">
+  <div class="top"><span class="so">4/6 · Đo pin cũ</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.52 · ô 52·1 · Pin cũ</span></div>
+  <div class="vg" data-bat="3.0" data-het="31.0">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-01-20261116.mp4" preload="metadata" playsinline title="Đo suất điện động và điện trở trong của pin cũ"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: ampe kế $I$ và vôn kế $U$ mỗi lần giảm $R_x$.</p><p class="nho">Chép 6 cặp $(I,U)$ vào bảng Pin cũ, ô 52·1.</p></div>
+      <div class="buoc" data-t="3.0"><p class="hoi">Đọc câu đoán trên màn.</p></div>
+      <div class="buoc" data-t="8.6" data-dung><p class="hoi">$R_x$ giảm: $100;\ 20;\ 10;\ 5;\ 2;\ 0\ \Omega$. Số chỉ vôn kế hai cực pin đổi thế nào qua từng nấc?</p>
+        <ol class="opt"><li><b>A.</b> Tụt đều, mỗi nấc như nhau</li><li><b>B.</b> Tụt ít lúc đầu, tụt mạnh ở các nấc cuối</li><li><b>C.</b> Tụt mạnh lúc đầu, ít ở các nấc cuối</li><li><b>D.</b> Không đổi, vẫn $1{,}50$ V</li></ol></div>
+      <div class="buoc" data-t="8.8"><p class="hoi">Đóng K, đọc nhanh, ngắt K.</p></div>
+      <div class="buoc" data-t="17.6" data-dung><p class="so-lon">$I$: $0{,}014\to0{,}534$ A · $U$: $1{,}48\to1{,}06$ V</p><p class="hoi">Chép đủ 6 cặp vào bảng. Tính hiệu $U$ giữa hai nấc liền nhau: hiệu nào lớn nhất? So với đoán lúc nãy.</p></div>
+      <div class="buoc" data-t="17.7"><p class="hoi">So từng nấc với nấc trước.</p></div>
+      <div class="buoc" data-t="27.6" data-dung><p class="so-lon">$\mathcal E=1{,}50$ V</p><p class="hoi">Đường thẳng cắt trục $U$ ở đây. Chọn hai điểm xa nhau trên đường, tính $r$ (ô 53·2).</p></div>
+      <div class="buoc" data-t="27.7"><p class="hoi">Kéo đường tới trục $U$.</p></div>
+      <div class="buoc" data-t="28.4"><p class="hoi">Còn bỏ ngỏ: dòng lớn hơn $0{,}534$ A, còn thẳng không?</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Rút ra từ số liệu pin cũ</span><span>phút 14–22</span><span class="tap">tr.52 · ô 52·1 → tr.53 · ô 53·2</span></div>
+  <table class="bang">
+    <tr><th>$R_x$ ($\Omega$)</th><td>100</td><td>20</td><td>10</td><td>5</td><td>2</td><td>0</td></tr>
+    <tr><th>$I$ (A)</th><td>0,014</td><td>0,066</td><td>0,117</td><td>0,191</td><td>0,311</td><td>0,534</td></tr>
+    <tr><th>$U$ (V)</th><td>1,48</td><td>1,44</td><td>1,40</td><td>1,35</td><td>1,25</td><td>1,06</td></tr>
+  </table>
+  <p class="hoi">Lấy lần 1 và lần 6: $r=\dfrac{U_1-U_6}{I_6-I_1}$. $\mathcal E$ đọc ở giao trục $U$.</p>
+  <button class="mo" data-mo="r4c">Mở: ℰ và r</button>
+  <div class="an" id="r4c" hidden>
+    <p>$r=\dfrac{1{,}48-1{,}06}{0{,}534-0{,}014}\approx$ <b class="o">$0{,}8\ \Omega$</b> · $\mathcal E=$ <b class="o">$1{,}50$ V</b> (giao trục $U$).</p>
+    <p class="nho">Số liệu mẫu cho nhóm đối chiếu. Số nhóm em đo thật sẽ lệch chút: sai số dụng cụ.</p>
+  </div>
+</section>
+
+<section class="man" id="m4d">
+  <div class="top"><span class="so">5/6 · Thay pin mới</span><span>3 điểm dừng · khoảng 2 phút</span><span class="tap">tr.52 · ô 52·1 · Pin mới</span></div>
+  <div class="vg" data-bat="3.0" data-het="30.6">
+    <video src="https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l11-do-sdd-pin-02-20261031-2.mp4" preload="metadata" playsinline title="Pin cũ và pin mới trên cùng đồ thị U–I"></video>
+    <div class="ben">
+      <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: các chấm xanh (pin mới) so với đường xám (pin cũ).</p><p class="nho">Chép 6 cặp vào bảng Pin mới, ô 52·1.</p></div>
+      <div class="buoc" data-t="3.0"><p class="hoi">Đọc câu đoán trên màn.</p></div>
+      <div class="buoc" data-t="9.0" data-dung><p class="hoi">Thay pin mới cùng loại, giữ nguyên mạch và 6 lần đo. Đường $U$–$I$ của pin mới thế nào?</p>
+        <ol class="opt"><li><b>A.</b> Song song với đường pin cũ, nằm cao hơn</li><li><b>B.</b> Thoải hơn hẳn, cắt trục $U$ gần chỗ cũ</li><li><b>C.</b> Dốc hơn, cắt trục $U$ cao hơn hẳn</li><li><b>D.</b> Trùng với đường pin cũ</li></ol></div>
+      <div class="buoc" data-t="9.2"><p class="hoi">Đóng K ngắn, đọc, ngắt. Chấm lên cùng hệ trục.</p></div>
+      <div class="buoc" data-t="21.0" data-dung><p class="so-lon">Đường pin mới thoải hơn</p><p class="hoi">So đáp án với đoán. Hai đường cắt trục $U$ ở đâu? Đường nào dốc hơn?</p></div>
+      <div class="buoc" data-t="21.2"><p class="hoi">So chỗ cắt trục $U$ và độ dốc.</p></div>
+      <div class="buoc" data-t="27.5" data-dung><p class="so-lon">Dốc nhỏ hơn → $r$ nhỏ hơn</p><p class="hoi">Đoạn đỏ "phần hụt $Ir$" ở cùng $I$: pin nào hụt nhiều hơn?</p></div>
+      <div class="buoc" data-t="27.7"><p class="hoi">Còn bỏ ngỏ: trong pin, điều gì làm $r$ tăng?</p></div>
+    </div>
+  </div>
+  <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
+</section>
+
+<section class="man" id="m4e">
+  <div class="top"><span class="so">5/6 · Pin cũ so với pin mới</span><span>phút 22–25</span><span class="tap">tr.53 · ô 53·2</span></div>
+  <table class="bang">
+    <tr><th>$R_x$ ($\Omega$) · pin mới</th><td>100</td><td>20</td><td>10</td><td>5</td><td>2</td><td>0</td></tr>
+    <tr><th>$I$ (A)</th><td>0,015</td><td>0,073</td><td>0,129</td><td>0,217</td><td>0,372</td><td>0,701</td></tr>
+    <tr><th>$U$ (V)</th><td>1,58</td><td>1,56</td><td>1,55</td><td>1,53</td><td>1,49</td><td>1,40</td></tr>
+  </table>
+  <p class="nho">Điểm A, B cho ô 53·2: lần 1 và lần 6. Pin cũ: $\mathcal E=1{,}50$ V, $r\approx0{,}8\ \Omega$.</p>
+  <p class="hoi">Pin mới: $\mathcal E$ và $r$? So với pin cũ?</p>
+  <button class="mo" data-mo="r4e">Mở: số + rút ra</button>
+  <div class="an" id="r4e" hidden>
+    <p>Pin mới: $\mathcal E=$ <b class="o">$1{,}58$ V</b>, $r=\dfrac{1{,}58-1{,}40}{0{,}701-0{,}015}\approx$ <b class="o">$0{,}26\ \Omega$</b>. $\mathcal E$ gần nhau; $r$ pin cũ lớn hơn nhiều, nên cùng dòng $I$ hụt $Ir$ nhiều hơn.</p>
+  </div>
+</section>
+
+<section class="man" id="m5a">
+  <div class="top"><span class="so">5/6 · Bẫy 1: số đọc của vôn kế</span><span>phút 25–27</span><span class="tap">tr.51 · ô 51·2</span></div>
+  <div class="giua">
+    <p>Pin $\mathcal E=1{,}50$ V, $r=0{,}8\ \Omega$ nối động cơ kéo dòng $0{,}50$ A.</p>
+    <p class="hoi">Vôn kế hai đầu động cơ chỉ bao nhiêu khi mạch hở ($I=0$)? Khi có tải ($I>0$)?</p>
+    <button class="mo" data-mo="a5a">Mở đáp án</button>
+    <div class="an" id="a5a" hidden>
+      <p>Hở mạch: <b class="o">$1{,}50$ V</b> $=\mathcal E$. Có tải: $U=\mathcal E-Ir=1{,}50-0{,}50\cdot0{,}8=$ <b class="o">$1{,}10$ V</b>.</p>
+      <p class="nho">Số đọc "1,5 V" ghi trên pin là $\mathcal E$, không phải hiệu điện thế khi pin đang cấp dòng.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m5b">
+  <div class="top"><span class="so">5/6 · Bẫy 2: một cặp số</span><span>thiếu giờ thì bỏ (về nhà)</span><span class="tap">tr.51 · ô 51·3</span></div>
+  <div class="giua">
+    <p>Lần đo 5 ($R_x=2\ \Omega$, $R_0=2{,}0\ \Omega$): $I=0{,}311$ A, $U=1{,}25$ V. Bạn A tính $r=U/I=4{,}0\ \Omega$.</p>
+    <p class="hoi">$U/I$ là điện trở của phần nào? Tính lại $r$ với $\mathcal E=1{,}50$ V.</p>
+    <button class="mo" data-mo="a5b">Mở đáp án</button>
+    <div class="an" id="a5b" hidden>
+      <p>$U/I$ là điện trở của <b class="o">mạch ngoài</b> $=R_0+R_x=$ <b class="o">$4{,}0\ \Omega$</b>.</p>
+      <p>$r=\dfrac{\mathcal E-U}{I}=\dfrac{1{,}50-1{,}25}{0{,}311}\approx$ <b class="o">$0{,}80\ \Omega$</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6a">
+  <div class="top"><span class="so">6/6 · Sai số</span><span>phút 27–29 · thiếu giờ thì bỏ</span><span class="tap">tr.52 · ô 52·3 (52·2 về nhà)</span></div>
+  <div class="hai">
+    <div class="fig f5"><svg viewBox="0 0 320 172" role="img" aria-label="Vôn kế nối sát cực pin hoặc nối qua dây dài"><rect x="30" y="30" width="84" height="32" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="72" y="53" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">pin</text><line x1="30" y1="46" x2="14" y2="46" stroke="#1c2540" stroke-width="2.8"/><line x1="114" y1="46" x2="130" y2="46" stroke="#1c2540" stroke-width="2.8"/><text x="8" y="20" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">(1)</text><circle cx="30" cy="46" r="4.5" fill="#1c2540"/><circle cx="114" cy="46" r="4.5" fill="#1c2540"/><line x1="36" y1="62" x2="36" y2="100" stroke="#1c2540" stroke-width="2.8"/><line x1="108" y1="62" x2="108" y2="100" stroke="#1c2540" stroke-width="2.8"/><circle cx="72" cy="118" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="72" y="125" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">V</text><line x1="36" y1="100" x2="72" y2="100" stroke="#1c2540" stroke-width="2.8"/><line x1="72" y1="100" x2="72" y2="101" stroke="#1c2540" stroke-width="2.8"/><line x1="108" y1="100" x2="72" y2="100" stroke="#1c2540" stroke-width="2.8"/><rect x="198" y="30" width="84" height="32" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="240" y="53" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">pin</text><line x1="198" y1="46" x2="182" y2="46" stroke="#1c2540" stroke-width="2.8"/><line x1="282" y1="46" x2="298" y2="46" stroke="#1c2540" stroke-width="2.8"/><text x="176" y="20" fill="#1c2540" font-size="20" text-anchor="start" font-weight="700">(2)</text><circle cx="198" cy="46" r="4.5" fill="#1c2540"/><circle cx="282" cy="46" r="4.5" fill="#1c2540"/><line x1="182" y1="46" x2="182" y2="120" stroke="#1c2540" stroke-width="2.8"/><line x1="298" y1="46" x2="298" y2="120" stroke="#1c2540" stroke-width="2.8"/><line x1="182" y1="120" x2="223" y2="120" stroke="#1c2540" stroke-width="2.8"/><line x1="258" y1="120" x2="298" y2="120" stroke="#1c2540" stroke-width="2.8"/><circle cx="240" cy="120" r="17" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text x="240" y="127" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="700">V</text><text x="240" y="160" fill="#1c2540" font-size="20" text-anchor="middle" font-weight="400">dây dài</text></svg></div>
+    <div class="ben">
+      <p class="hoi">Chọn 2 lần đo để tính $r$: lần 1–6 (hiệu $U$ là $0{,}42$ V) hay lần 2–3 (hiệu $U$ là $0{,}04$ V)? Sai số của hiệu hai số $U$ là $0{,}02$ V.</p>
+      <button class="mo" data-mo="a6a">Mở đáp án</button>
+      <div class="an" id="a6a" hidden>
+        <p>Lần 1–6: $0{,}02/0{,}42\approx$ <b class="o">$5\ \%$</b>. Lần 2–3: $0{,}02/0{,}04=$ <b class="o">$50\ \%$</b>.</p>
+        <p>Chọn hai lần <b class="o">xa nhau</b>: hiệu lớn so với sai số.</p><p class="nho">Ampe kế <b class="o">ngoài</b> đoạn M–N: không cộng vào $r$. Ô 52·2 và dòng $\Delta r$ (53·2: tổng hai sai số tỉ đối) làm ở nhà.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6b">
+  <div class="top"><span class="so">6/6 · Trả bài</span><span>phút 29–30 · viết 1,5 phút rồi mới mở</span><span class="tap">tr.53 · ô 53·3</span></div>
+  <div class="giua">
+    <p class="hoi">1. Pin nào có $r$ lớn hơn? Giải thích vì sao xe đồ chơi chạy yếu với pin cũ.</p>
+    <button class="mo" data-mo="t1">Mở câu 1</button>
+    <div class="an" id="t1" hidden><p>Pin <b>cũ</b> có $r$ lớn hơn ($\approx0{,}8\ \Omega$ so với $0{,}26\ \Omega$). Xe cần dòng lớn nên $Ir$ trong pin cũ lớn, hiệu điện thế đến động cơ nhỏ.</p></div>
+    <p class="nho">Câu 2 (nguồn sai số lớn nhất của nhóm, cách giảm): ghi ở nhà.</p>
+  </div>
+</section>
+
+<section class="man" id="m6ct">
+  <div class="top"><span class="so">6/6 · Quay lại chiếc xe</span><span>phút 30</span><span class="tap">tr.49 · ô 49·3</span></div>
+  <div class="hai">
+    <div class="fig f1" data-chep="m1"></div>
+    <div class="ben">
+      <p class="nhin">Pin $1{,}50$ V lúc hở, $1{,}06$ V khi chạy xe.</p>
+      <button class="mo" data-mo="a6">Mở: đáp án</button>
+      <div class="an" id="a6" hidden><p><b>C.</b> Có dòng thì $U=\mathcal E-Ir$ tụt vì sụt áp $Ir$ trong pin; pin cũ $r$ lớn nên sụt nhiều.</p>
+        <p class="nho">A: đồng hồ không sai · B: $\mathcal E$ do pin quyết định, động cơ không "hút" nó · D: hở mạch mới đọc được $\mathcal E$.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="man" id="m6q">
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: tr.50 ô 50·4 ghi điểm</span></div>
+  <div class="qr"><svg viewBox="-4 -4 41 41" role="img" aria-label="Mã QR mở đề 1221" shape-rendering="crispEdges"><rect x="-4" y="-4" width="41" height="41" fill="#fff"/><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM8 0h1v1h-1zM9 0h1v1h-1zM10 0h1v1h-1zM11 0h1v1h-1zM12 0h1v1h-1zM14 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM20 0h1v1h-1zM21 0h1v1h-1zM23 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM9 1h1v1h-1zM10 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM18 1h1v1h-1zM20 1h1v1h-1zM21 1h1v1h-1zM22 1h1v1h-1zM23 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM11 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM20 2h1v1h-1zM22 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM11 3h1v1h-1zM12 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM12 4h1v1h-1zM16 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM15 5h1v1h-1zM16 5h1v1h-1zM17 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM12 7h1v1h-1zM14 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM20 7h1v1h-1zM23 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM9 8h1v1h-1zM10 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM19 8h1v1h-1zM20 8h1v1h-1zM21 8h1v1h-1zM26 8h1v1h-1zM29 8h1v1h-1zM31 8h1v1h-1zM32 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM2 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM11 9h1v1h-1zM13 9h1v1h-1zM16 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM27 9h1v1h-1zM29 9h1v1h-1zM30 9h1v1h-1zM32 9h1v1h-1zM1 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM20 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM25 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM31 10h1v1h-1zM32 10h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM11 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM27 11h1v1h-1zM29 11h1v1h-1zM31 11h1v1h-1zM1 12h1v1h-1zM3 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM14 12h1v1h-1zM16 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM31 12h1v1h-1zM32 12h1v1h-1zM0 13h1v1h-1zM2 13h1v1h-1zM5 13h1v1h-1zM7 13h1v1h-1zM10 13h1v1h-1zM12 13h1v1h-1zM14 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM22 13h1v1h-1zM25 13h1v1h-1zM27 13h1v1h-1zM29 13h1v1h-1zM31 13h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM14 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM19 14h1v1h-1zM22 14h1v1h-1zM26 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM29 14h1v1h-1zM0 15h1v1h-1zM1 15h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM8 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM19 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM25 16h1v1h-1zM26 16h1v1h-1zM28 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM0 17h1v1h-1zM2 17h1v1h-1zM5 17h1v1h-1zM10 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM22 17h1v1h-1zM23 17h1v1h-1zM24 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM32 17h1v1h-1zM0 18h1v1h-1zM1 18h1v1h-1zM2 18h1v1h-1zM4 18h1v1h-1zM5 18h1v1h-1zM6 18h1v1h-1zM9 18h1v1h-1zM11 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM18 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM25 18h1v1h-1zM26 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM30 18h1v1h-1zM31 18h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM8 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM31 19h1v1h-1zM2 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM32 20h1v1h-1zM0 21h1v1h-1zM2 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM8 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM14 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM21 21h1v1h-1zM23 21h1v1h-1zM24 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM32 21h1v1h-1zM2 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM14 22h1v1h-1zM15 22h1v1h-1zM21 22h1v1h-1zM23 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM31 22h1v1h-1zM32 22h1v1h-1zM1 23h1v1h-1zM2 23h1v1h-1zM3 23h1v1h-1zM7 23h1v1h-1zM8 23h1v1h-1zM10 23h1v1h-1zM12 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM0 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM11 24h1v1h-1zM13 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM31 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM12 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM19 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM11 27h1v1h-1zM14 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM11 28h1v1h-1zM12 28h1v1h-1zM13 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM21 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM30 28h1v1h-1zM32 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM12 29h1v1h-1zM16 29h1v1h-1zM17 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM27 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM12 30h1v1h-1zM14 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM22 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM11 31h1v1h-1zM13 31h1v1h-1zM14 31h1v1h-1zM17 31h1v1h-1zM18 31h1v1h-1zM24 31h1v1h-1zM26 31h1v1h-1zM27 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM32 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM12 32h1v1h-1zM13 32h1v1h-1zM14 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM21 32h1v1h-1zM28 32h1v1h-1zM29 32h1v1h-1zM30 32h1v1h-1z" fill="#000"/></svg></div>
+  <p class="made">Mã đề <b>1221</b> · 20 câu · 15 phút</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1221 · làm một mình, nộp xong mới cất máy</p>
+</section>
+
+<section class="man" id="m6c">
+  <div class="top"><span class="so">Về nhà theo Tập bài 26</span><span class="tap">chụp lại màn này</span></div>
+  <ul>
+    <li><b>tr.49</b> ô 49·3 dòng "điều em hiểu sai"</li>
+    <li><b>tr.51</b> ô 51·3 Bẫy 2 (nếu trên lớp bỏ)</li>
+    <li><b>tr.52</b> ô 52·1 bảng Pin cũ, Pin mới (nếu chưa chép đủ) · ô 52·2 sai số · ô 52·3 (nếu trên lớp bỏ)</li>
+    <li><b>tr.53</b> ô 53·1 đồ thị · ô 53·2 bảng $\mathcal E$, $r$ · ô 53·3 câu 2 · khối "Đề BTVN" (tr.51) ghi đề thầy giao</li>
+  </ul>
+</section>
+
+<div class="dk" aria-hidden="true">← → sang màn · Enter mở ô</div>
+
+<script>
+(function(){
+  function toggle(btn){
+    var id=btn.getAttribute('data-mo'), box=document.getElementById(id), open=btn.getAttribute('aria-expanded')==='true';
+    if(box){ box.hidden=open; }
+    document.querySelectorAll('.an-o[data-o="'+id+'"]').forEach(function(s){ s.style.visibility=open?'hidden':'visible'; });
+    btn.setAttribute('aria-expanded', open?'false':'true');
+    btn.textContent = open ? btn.dataset.label : btn.dataset.label.replace(/^Mở:?\s*/, 'Ẩn ');
+    // mở đáp án của câu biểu quyết thì tô phương án đúng trong cùng màn
+    var sec=btn.closest('.man');
+    if(sec && /^(a|r|m5c)/.test(id)){ sec.querySelectorAll('ol.opt li[data-dung]').forEach(function(li){ li.classList.toggle('dung', !open); }); }
+  }
+  document.querySelectorAll('[data-chep]').forEach(function(d){ var s=document.querySelector('#'+d.dataset.chep+' .fig svg'); if(s) d.appendChild(s.cloneNode(true)); });
+  document.querySelectorAll('button.mo').forEach(function(b){
+    b.dataset.label=b.textContent; b.setAttribute('aria-expanded','false');
+    var id=b.getAttribute('data-mo'); if(document.getElementById(id)) b.setAttribute('aria-controls',id);
+    b.addEventListener('click',function(){toggle(b)});
+  });
+  document.querySelectorAll('.an-o').forEach(function(s){ s.style.visibility='hidden'; });
+  var mans=[].slice.call(document.querySelectorAll('.man'));
+  function cur(){ var y=window.scrollY+window.innerHeight*0.35, k=0; mans.forEach(function(s,i){ if(s.offsetTop<=y) k=i; }); return k; }
+  function go(d){ var k=Math.max(0,Math.min(mans.length-1,cur()+d)); mans[k].scrollIntoView({behavior:'smooth'}); }
+  // clip có điểm dừng: bắt đầu từ data-bat, tự dừng ở mỗi .buoc[data-dung] và ở data-het; Enter/Space/bấm video = phát tiếp
+  var vgs=[].slice.call(document.querySelectorAll('.vg')).map(function(g){
+    var v=g.querySelector('video'), sec=g.closest('.man'), bs=[].slice.call(g.querySelectorAll('.buoc'));
+    var bat=+g.dataset.bat, het=+g.dataset.het, raf=0, chay=false, o=-1;
+    var dung=bs.filter(function(b){return b.hasAttribute('data-dung')}).map(function(b){return +b.dataset.t}).concat([het]);
+    var qua=dung.map(function(){return false});
+    var moc=sec.querySelector('.moc'), nutTiep=sec.querySelector('[data-v="tiep"]');
+    dung.forEach(function(){ moc.appendChild(document.createElement('i')); });
+    function ve(){
+      var t=chay?v.currentTime:-1, hien=bs[0];
+      if(o>=0) t=dung[o];   // đang đứng ở điểm dừng: hiện đúng ô của điểm đó
+      bs.forEach(function(b){ if(+b.dataset.t<=t+0.001) hien=b; });
+      bs.forEach(function(b){ b.classList.toggle('hien', b===hien); });
+      [].forEach.call(moc.children,function(c,i){ c.classList.toggle('qua', qua[i]); });
+      nutTiep.textContent = qua[qua.length-1] ? '→ Sang màn sau' : (!chay ? '▶ Phát' : (v.paused ? '▶ Phát tiếp' : '❚❚ Tạm dừng'));
+    }
+    function lap(){
+      var t=v.currentTime;
+      for(var i=0;i<dung.length;i++){ if(!qua[i] && t>=dung[i]-0.02){ qua[i]=true; o=i; v.pause(); break; } }
+      ve(); if(!v.paused) raf=requestAnimationFrame(lap);
+    }
+    v.addEventListener('play',function(){ o=-1; cancelAnimationFrame(raf); raf=requestAnimationFrame(lap); ve(); });
+    v.addEventListener('pause',ve);
+    function tiep(){
+      if(qua[qua.length-1]){ go(1); return; }
+      if(!chay){ chay=true; v.currentTime=bat; }
+      if(v.paused) v.play(); else v.pause();
+    }
+    function lai(){
+      if(!chay) return;
+      var t=v.currentTime, tu=bat;
+      dung.forEach(function(d,i){ if(qua[i] && d<t-0.3) tu=d; });
+      dung.forEach(function(d,i){ if(d>tu+0.001) qua[i]=false; });
+      o=-1; v.currentTime=tu; v.play();
+    }
+    v.addEventListener('click',tiep);
+    nutTiep.addEventListener('click',tiep);
+    sec.querySelector('[data-v="lai"]').addEventListener('click',lai);
+    ve();
+    return {sec:sec, tiep:tiep};
+  });
+  document.addEventListener('keydown',function(e){
+    var t=e.target;
+    if(t.isContentEditable){ if(e.key==='Enter'||e.key==='Escape'){ e.preventDefault(); t.blur(); } return; }
+    if(t.closest && (t.closest('button')||t.closest('video')) && (e.key==='Enter'||e.key===' ')) return;
+    var vg=vgs.filter(function(x){return x.sec===mans[cur()]})[0];
+    if(vg && (e.key==='Enter'||e.key===' ')){ e.preventDefault(); vg.tiep(); return; }
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); go(1); }
+    else if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); go(-1); }
+    else if(e.key==='Enter'){ var b=mans[cur()].querySelector('button.mo[aria-expanded="false"]'); if(b){ e.preventDefault(); toggle(b); } }
+  });
+  // rời màn thì dừng clip đang chạy
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){ es.forEach(function(en){ if(!en.isIntersecting) en.target.pause(); }); },{threshold:.2});
+    document.querySelectorAll('video').forEach(function(v){ io.observe(v); });
+  }
+  document.addEventListener('DOMContentLoaded',function(){
+    if(window.renderMathInElement) renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],throwOnError:false});
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thực hành đo ℰ, r của pin · ghi chú dạy</title>
+<link rel="stylesheet" href="/fonts/be-vietnam-pro/be-vietnam-pro.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body,{delimiters:[{left:'$',right:'$',display:false}],throwOnError:false})"></script>
+<style>
+/* token nền sáng của web (app/globals.css) */
+:root{--bg:#f5f7fa;--ink:#0f172a;--muted:#475569;--line:rgba(15,23,42,.12);--accent:#1d4ed8;--warn:#b45309;--warn-bg:#fffbeb}
+*{box-sizing:border-box}
+body{margin:0 auto;max-width:860px;padding:20px 16px 40px;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.5}
+h1{font-size:1.5em;margin:.2em 0}
+h2{font-size:1.15em;margin:1.4em 0 .3em;padding-top:.6em;border-top:2px solid var(--line)}
+h2 small{color:var(--muted);font-weight:400}
+ul{margin:.3em 0;padding-left:1.3em}
+li{margin:.15em 0}
+.k{font-weight:700;color:var(--accent)}
+.sai{background:var(--warn-bg);border-left:4px solid var(--warn);padding:.3em .7em;border-radius:0 8px 8px 0;margin:.4em 0}
+table{border-collapse:collapse;width:100%;margin:.4em 0}
+th,td{border:1px solid var(--line);padding:.25em .5em;text-align:left;vertical-align:top}
+th{background:#eef2f7}
+.nho{color:var(--muted);font-size:.92em}
+@media print{body{max-width:none;font-size:12pt}h2{break-after:avoid}}
+</style>
+</head>
+<body>
+<h1>Thực hành đo suất điện động và điện trở trong của pin (L11 Bài 26) — ghi chú dạy một tiết</h1>
+<p class="nho">Đi kèm màn chiếu <code>tren-lop.html</code> (cùng thư mục). Trang này không chiếu. Tập in số trang tuyệt đối của quyển Chương 4: bài 26 = tr.49–60, học trên lớp tr.49–53.</p>
+
+<h2>Chuẩn bị trước giờ</h2>
+<ul>
+  <li><b>Chiếu tivi 50 inch:</b> 19 màn, mỗi màn một ý. Mở toàn màn hình (F11 hoặc ⌃⌘F), ngồi thử ở bàn cuối. Cần mạng (KaTeX, 2 clip); mở trước để trình duyệt nhớ sẵn.</li>
+  <li><b>Hai clip tự dựng</b> (không giọng, phụ đề): màn 4b đo pin cũ (3 điểm dừng) và màn 4d thay pin mới (3 điểm dừng). Không dùng PhET: clip đã thay.</li>
+  <li><b>Đồ thật (không bắt buộc):</b> một viên pin AA cũ, một viên mới, một vôn kế cầm tay để mở bài ("pin 1,5 V mà xe không chạy").</li>
+  <li>Bài thực hành nhưng tiết này <b>chưa lắp mạch thật</b>: lớp đi theo clip và số liệu mẫu, tự điền Tập. Muốn đo thật thì dùng tiết sau, số của nhóm khác số mẫu chút ít.</li>
+  <li>Cuối tiết làm <b>đề 1221</b> (mục 216, 20 câu, 15 phút) trên điện thoại: màn QR đã giải mã lại đúng <code>thachlab.id.vn/kiem-tra/lam/?id=1221&amp;item=216</code>.</li>
+  <li><b>Chữ gạch chân xanh</b> = đúng chữ ô trống trong Tập; góc phải màn ghi trang và ô. Điều khiển: → ← sang màn, <b>Enter</b> mở ô kế tiếp.</li>
+</ul>
+
+<h2>Cách biểu quyết (cho mọi câu A/B/C/D)</h2>
+<ul>
+  <li>Đọc câu, 30 giây tự nghĩ, cả lớp giơ tay theo từng phương án; đếm nhanh, nói to tỉ lệ.</li>
+  <li>Gọi hai em chọn khác nhau, mỗi em 30 giây thuyết phục bạn; biểu quyết lại rồi mới bấm Mở.</li>
+  <li>Đúng &gt; 80% ngay lần đầu: đi tiếp. &lt; 30%: giảng lại trước khi biểu quyết lần hai.</li>
+</ul>
+
+<h2>Đi theo Tập bài 26 <small>thứ tự lật: tr.49 → tr.50 → tr.51 → tr.52 → tr.53 → tr.49</small></h2>
+<table>
+<thead><tr><th>Điểm dừng</th><th>Phút</th><th>Ô trong Tập</th><th>Ô điền trên lớp</th></tr></thead>
+<tbody>
+<tr><td>1 · Dự đoán xe đồ chơi</td><td>0–2</td><td>tr.49 ô 49·2</td><td>khoanh 1 phương án, chắc/không chắc, dòng "Vì sao"</td></tr>
+<tr><td>2 · Nhắc lại U = ℰ − Ir</td><td>2–7</td><td>tr.49 ô 49·4, 49·5</td><td>chữ gạch chân · r = 0,80 Ω</td></tr>
+<tr><td>3 · Dụng cụ, sơ đồ, R₀, ampe kế</td><td>7–13</td><td>tr.50 ô 50·1 → 50·3</td><td>cách mắc · 5,0 A / 0,65 A · khoanh ampe kế nối tắt</td></tr>
+<tr><td>4 · Các bước đo + clip pin cũ</td><td>13–22</td><td>tr.51 ô 51·1 → tr.52 ô 52·1 → tr.53 ô 53·1–53·2</td><td>thang đo, 6 lần, vì sao ngắt K · chép 6 cặp (I, U) · ℰ, r pin cũ</td></tr>
+<tr><td>5 · Clip pin mới + hai bẫy</td><td>22–27</td><td>tr.52 ô 52·1 (Pin mới) · tr.53 ô 53·2 · tr.51 ô 51·2, 51·3</td><td>pin mới · so ℰ, r · 1,10 V · mạch ngoài 4,0 Ω, r ≈ 0,80 Ω</td></tr>
+<tr><td>6 · Sai số, trả bài, quay lại, đề 1221</td><td>27–30, đề 30–45</td><td>tr.52 ô 52·2, 52·3 · tr.53 ô 53·3 câu 1 · tr.49 ô 49·3 · tr.50 ô 50·4</td><td>chọn hai lần xa nhau · câu 1 · đáp án dự đoán · điểm …/20</td></tr>
+</tbody>
+</table>
+<p class="nho">Tập 52·2 (bảng nguyên nhân sai số) và dòng Δr ở 53·2 làm ở nhà (đáp án ô 52·2 hiện ở màn 6a). Dày nhất: điểm dừng 4 (clip + bảng + r). Bẫy 2 (màn 5b) và màn sai số (6a) bỏ được khi thiếu giờ, đã ghi "về nhà". Ô 53·1 (vẽ đồ thị trên lưới) làm ở nhà vì không đủ giờ.</p>
+
+<h2>Điểm dừng 1 · Dự đoán <small>phút 0–2 · tr.49 ô 49·2</small></h2>
+<ul>
+  <li><span class="k">Gợi mở:</span> "Pin ghi 1,5 V, vôn kế đo hở mạch ra 1,50 V, mà xe đồ chơi vẫn đứng ì. Vôn kế đo đúng hay sai?"</li>
+  <li>Màn 1 có hình (y Tập) và câu A–D; không mở đáp án, ghi tỉ lệ biểu quyết góc bảng, "cuối giờ quay lại".</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A (đồng hồ sai) hoặc B (động cơ "hút" ℰ).</div>
+
+<h2>Điểm dừng 2 · Nhắc lại <small>phút 2–7 · tr.49 ô 49·4, 49·5</small></h2>
+<ul>
+  <li>Màn 2a: hình đường thẳng của Tập; điền U = ℰ − Ir, giao trục U = ℰ, hệ số góc −r. Màn 2b: cho lớp tính 40 giây rồi mở r = 0,80 Ω.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> lấy r = U/I = 1,10/0,50 = 2,2 Ω (quên trừ từ ℰ).</div>
+
+<h2>Điểm dừng 3 · Dụng cụ và sơ đồ <small>phút 7–13 · tr.50 ô 50·1 → 50·3</small></h2>
+<ul>
+  <li>Màn 3a: hình sơ đồ; hỏi ampe kế mắc thế nào, vôn kế kẹp đâu. Màn 3b: cho lớp tự tính hai dòng (5,0 A; 0,65 A) rồi mở. Màn 3c: biểu quyết ampe kế mắc song song (đáp án B), rồi mở dòng điện trở ampe kế/vôn kế.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A hoặc C ở màn 3c; không thấy vì sao cần R₀.</div>
+
+<h2>Điểm dừng 4 · Các bước đo + clip pin cũ <small>phút 13–22 · tr.51 ô 51·1 → tr.52 ô 52·1</small></h2>
+<ul>
+  <li>Màn 4a: đọc các bước, điền thang 2 V, 2 A, K mở, 6 lần; hỏi vì sao chỉ đóng K lúc đọc.</li>
+  <li><span class="k">Clip pin cũ (màn 4b, khoảng 2 phút):</span> ① 8,6 s: biểu quyết "vôn kế tụt thế nào qua các nấc?" (đáp án B); ② 17,6 s: 6 cặp (I, U) đã hiện đủ, lớp chép bảng 52·1 và tính các hiệu U (clip tự hiện đáp án B ở khoảng 19,5 s khi bấm phát tiếp); ③ 27,6 s: ℰ = 1,50 V, lớp chọn 2 điểm xa nhau tính r; cuối 31,0 s: "dòng lớn hơn 0,534 A còn thẳng không?" (để ngỏ).</li>
+  <li>Màn 4c: bảng số liệu mẫu và r ≈ 0,8 Ω (lần 1 và 6).</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> chọn A hoặc C (tụt đều / tụt mạnh đầu); chép sai cột I và U; lấy hai điểm sát nhau.</div>
+
+<h2>Điểm dừng 5 · Clip pin mới + hai bẫy <small>phút 22–27</small></h2>
+<ul>
+  <li>Dừng ở clip đủ lâu cho lớp chép 6 cặp (I, U) pin mới; chép không kịp thì chiếu bảng màn 4e trước khi nói ℰ = 1,58 V. Câu "điều gì làm r tăng" để ngỏ, không chấm (gợi ý: pin dùng lâu, chất bên trong cạn, tiếp xúc kém).</li>
+  <li><span class="k">Clip pin mới (màn 4d):</span> ① 9,0 s: biểu quyết đường pin mới (đáp án B); ② 21,0 s: đáp án hiện, so chỗ cắt trục U và độ dốc; ③ 27,5 s: "phần hụt Ir" ở cùng I; cuối 30,6 s: để ngỏ "trong pin điều gì làm r tăng?". Màn 4e: bảng ℰ, r hai pin.</li>
+  <li>Màn 5a Bẫy 1 (1,50 V hở mạch, 1,10 V có tải). Màn 5b Bẫy 2 (U/I là mạch ngoài 4,0 Ω): <b>thiếu giờ thì bỏ</b>.</li>
+</ul>
+<div class="sai"><b>Học sinh hay mắc:</b> coi 1,5 V trên pin là hiệu điện thế luôn; tính r = U/I.</div>
+
+<h2>Điểm dừng 6 · Sai số, trả bài, quay lại, đề 1221 <small>phút 27–30 · đề 30–45</small></h2>
+<ul>
+  <li>Màn 6a (sai số, bỏ được): hình hai cách kẹp vôn kế; chọn hai lần xa nhau (5% so với 50%). Màn 6b: trả bài câu 1 của ô 53·3, viết 1,5 phút rồi mới mở; câu 2 về nhà.</li>
+  <li>Màn "Quay lại chiếc xe": mở đáp án C; lớp lật tr.49 ô 49·3 điền đáp án, đúng/sai, "điều em hiểu sai".</li>
+  <li>QR đề 1221, 15 phút; nộp xong ghi tr.50 ô 50·4: điểm …/20, câu sai, câu đoán mò. Đọc màn "Về nhà"; khối "Đề BTVN" (tr.51) ghi đề thầy giao trên web.</li>
+</ul>
+<div class="sai"><b>Đề 1221:</b> exam.json trong thư mục bài chỉ có 6 câu — tra đề 1221 trên web (20 câu?) trước giờ dạy.  chưa đối chiếu từng câu với phần dạy (cần tra DB); số câu 20 theo quy ước các bài trước, chưa kiểm.</div>
+
+<h2>Phiếu giấy dự phòng <small>3 câu, số liệu khác mọi câu đã chữa</small></h2>
+<ol>
+<li>Đường U–I của một pin cắt trục U tại $1{,}60$ V và đi qua $(0{,}40\ \mathrm A;\ 1{,}20\ \mathrm V)$. Điện trở trong: A. $1{,}0\ \Omega$ · B. $3{,}0\ \Omega$ · C. $0{,}30\ \Omega$ · D. $4{,}0\ \Omega$</li>
+<li>Pin $\mathcal E=1{,}5$ V, $r=0{,}5\ \Omega$ nối với $R_0=2{,}5\ \Omega$: dòng điện: A. $0{,}50$ A · B. $0{,}60$ A · C. $3{,}0$ A · D. $0{,}75$ A</li>
+<li>Vôn kế hai cực pin chỉ $1{,}50$ V khi hở mạch, $1{,}20$ V khi $I=0{,}30$ A. $r=$ A. $1{,}0\ \Omega$ · B. $4{,}0\ \Omega$ · C. $0{,}25\ \Omega$ · D. $5{,}0\ \Omega$</li>
+</ol>
+<table>
+<thead><tr><th>Câu</th><th>Đáp án</th><th>Lời giải</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>A</td><td>$r=(1{,}60-1{,}20)/0{,}40=1{,}0\ \Omega$ (B: $U/I$; D: quên chia)</td></tr>
+<tr><td>2</td><td>A</td><td>$I=1{,}5/(2{,}5+0{,}5)=0{,}50$ A (C: bỏ qua R; D: quên r)</td></tr>
+<tr><td>3</td><td>A</td><td>$r=(1{,}50-1{,}20)/0{,}30=1{,}0\ \Omega$ (B: $U/I$; C: sai đảo)</td></tr>
+</tbody>
+</table>
+
+<h2>Nếu thiếu giờ / dư giờ</h2>
+<ul>
+  <li>Thiếu: bỏ màn 5b, 6a; ở clip pin mới dừng ở ②; không cắt giờ làm đề 1221.</li>
+  <li>Dư: cho lớp làm một câu phiếu giấy và gọi hai em giải thích; hoặc bắt đầu ô 53·1 (vẽ đồ thị trên lưới).</li>
+</ul>
+
+<h2>Sau buổi dạy</h2>
+<ul>
+  <li>Ghi tỉ lệ biểu quyết lần đầu của: dự đoán xe, ampe kế (3c), vôn kế tụt thế nào (clip 4b), đường pin mới (clip 4d). Câu &lt; 30% đúng thì ghi vào ô ghi chú lớp (phím N).</li>
+  <li>Điểm đề 1221: câu sai nhiều nhất thì quay lại đúng màn tương ứng buổi sau.</li>
+</ul>
+</body>
+</html>

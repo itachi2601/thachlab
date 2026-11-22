@@ -16,6 +16,7 @@ export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 43, slug: "l11-nguon-dien", ten: "Vật lí 11 · Bài 24 · Nguồn điện", ghiChu: "23 màn · cuối tiết đề 1219 (QR)" },
   { lessonId: 42, slug: "l11-dien-tro-dinh-luat-ohm", ten: "Vật lí 11 · Bài 23 · Điện trở. Định luật Ohm", ghiChu: "24 màn · cuối tiết đề 1218 (QR)" },
   { lessonId: 44, slug: "l11-nang-luong-cong-suat-dien", ten: "Vật lí 11 · Bài 25 · Năng lượng điện và công suất điện", ghiChu: "24 màn · cuối tiết đề 1220 (QR)" },
+  { lessonId: 45, slug: "l11-thuc-hanh-do-sdd-pin", ten: "Vật lí 11 · Bài 26 · Thực hành đo suất điện động và điện trở trong của pin", ghiChu: "19 màn · cuối tiết đề 1221 (QR)" },
   { lessonId: 15, slug: "l12-hat-nhan-mo-hinh-nguyen-tu", ten: "Vật lí 12 · Bài 14 · Hạt nhân và mô hình nguyên tử", ghiChu: "27 màn · cuối tiết đề 1191 (QR)" },
 ];
 

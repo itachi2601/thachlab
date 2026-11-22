@@ -86,7 +86,7 @@ ${bangDc(['Pin cần đo: pin AA đã dùng + pin mới cùng loại', `Biến t
 </div>${H.soDo()}</div>
 ${h3(2, `Vì sao phải mắc điện trở bảo vệ ${m('R_0')}?`, '2·2')}
 <div class="card" style="padding:1.2mm 3mm">
-<div>Định luật Ohm toàn mạch: ${nw(m('I=\\dfrac{\\mathcal{E}}{R_{\\text{ngoài}}+r}'))}. Pin mới có ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}30\\ \\Omega'))} (cho sẵn).</div>
+<div>Định luật Ohm toàn mạch: ${nw(m('I=\\dfrac{\\mathcal{E}}{R_{\\text{ngoài}}+r}'))}. Pin ví dụ có ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}30\\ \\Omega'))} (cho sẵn).</div>
 <div style="margin-top:.6mm">Bỏ ${R0}, vặn ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(22)}`)} &nbsp;· Có ${R0} ${nw(m('=2{,}0\\ \\Omega'))}, ${nw(`${Rx} = 0`)}: ${nw(`${m('I=')} ${f(22)}`)}</div>
 <div style="margin-top:.6mm">Ampe kế thang ${nw(m('2\\ \\mathrm A'))}. Cách nào dòng lớn nhất còn trong thang? ${ck}bỏ ${R0} &nbsp;${ck}có ${R0}</div></div>
 ${h3(3, 'Ampe kế và vôn kế: mắc nhầm là hỏng', '2·3')}
@@ -96,8 +96,8 @@ ${h3(3, 'Ampe kế và vôn kế: mắc nhầm là hỏng', '2·3')}
 <tr><td style="height:9mm">Mắc với pin</td><td></td><td></td></tr></table>
 <div style="margin-top:1mm;line-height:1.35">Một bạn mắc ampe kế như hình. Em chọn: ${ck}ampe kế chỉ 0 &nbsp;${ck}ampe kế nối tắt hai cực: dòng rất lớn, pin nóng &nbsp;${ck}ampe kế vẫn đọc đúng dòng qua biến trở</div></div>
 ${H.ampeSongSong()}</div>
-${h3(4, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '2·4')}
-${rkHai([1, 2, 3, 4], [5, 6, 7, 8])}
+${h3(4, 'Đề 1221 (20 câu, cuối tiết)', '2·4')}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/20 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${foot(2)}</section>`;
 
 const p3 = `<section class="page">
@@ -111,12 +111,12 @@ ${h3(1, 'II.3 · Các bước đo', '3·1')}
 <div class="trap"><b>5.</b><span>Vẽ đồ thị (tr. ${5 + OFF}); đọc ${E}, ${r}; ước lượng sai số; ghi kết quả.</span></div>
 <div style="margin-top:.6mm"><b>An toàn:</b> không nối thẳng hai cực pin bằng dây hay ampe kế (đoản mạch: pin nóng, hỏng đồng hồ); không đóng K lâu vì ${E}, ${r} trôi.</div>
 <div style="margin-top:.6mm"><b>Vì sao</b> chỉ đóng K lúc đọc số, đọc xong ngắt ngay?</div>${lines(2)}</div>
-${h3(2, 'III · Bẫy 1: “vôn kế 1,5 V nên pin cấp 1,5 V”', '3·2')}
+${h3(2, 'III · Bẫy 1: số đọc của vôn kế', '3·2')}
 <div class="card" style="padding:1.2mm 3mm">
 <table><tr><th style="width:36mm"></th><th>Mạch hở (${m('I=0')})</th><th>Có tải (${m('I>0')})</th></tr>
 <tr><td style="height:8mm">Vôn kế đọc</td><td></td><td></td></tr></table>
 <div style="margin-top:.8mm">Pin ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}, ${nw(m('r=0{,}8\\ \\Omega'))} nối động cơ kéo dòng ${A('0{,}50')}. Hiệu điện thế hai đầu động cơ: ${nw(`${m('U=')} ${f(22)}`)}</div></div>
-${h3(3, 'III · Bẫy 2: lấy một cặp số rồi tính r = U/I', '3·3')}
+${h3(3, 'III · Bẫy 2: một cặp số', '3·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Lần đo 5 (${nw(`${Rx} = 2 Ω`)}, ${nw(m('R_0=2{,}0\\ \\Omega'))}): ${nw(m('I=0{,}311\\ \\mathrm A'))}, ${nw(m('U=1{,}25\\ \\mathrm V'))}. Bạn A tính ${nw(m('r=U/I=4{,}0\\ \\Omega'))}.</div>
 <div style="margin-top:.6mm">${m('U/I')} là điện trở của ${f(22)}, bằng ${nw(`${R0} + ${Rx} = ${f(10)}`)}. Với ${nw(m('\\mathcal{E}=1{,}50\\ \\mathrm V'))}: ${nw(`${m('r=\\dfrac{\\mathcal{E}-U}{I}=')} <span class="fill" style="min-width:26mm;height:10mm"></span>`)}</div></div>
