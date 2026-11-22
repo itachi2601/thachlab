@@ -58,6 +58,12 @@ for x, lab in volts.items():
 MX, MY, NX, NY = 110, 80, 280, 160
 b += line(MX, MY, NX, NY, "currentColor", 2)
 b += f'<path d="M{MX},{MY} Q250,48 {NX},{NY}" fill="none" stroke="{ORG}" stroke-width="2" stroke-dasharray="6 4"/>'
+# góc α giữa MN và chiều đường sức (để Bẫy 2 "xem Hình 2" có chỗ nhìn)
+import math as _m
+_al = _m.atan2(NY - MY, NX - MX)
+b += line(MX, MY, MX + 62, MY, "currentColor", 1.2, "4 3", .7)
+b += f'<path d="M{MX+38},{MY} A38,38 0 0,1 {MX+38*_m.cos(_al):.1f},{MY+38*_m.sin(_al):.1f}" fill="none" stroke="{ORG}" stroke-width="2"/>'
+b += text(MX + 50, MY + 13, "α", ORG, 14, "middle", "700")
 b += dot(MX, MY, 5) + dot(NX, NY, 5)
 b += text(MX - 10, MY - 6, "M", "currentColor", 14, "end", "700") + text(NX + 10, NY + 4, "N", "currentColor", 14, "start", "700")
 b += line(MX, MY + 6, MX, 246, "currentColor", 1, "3 3", .6) + line(NX, NY + 6, NX, 246, "currentColor", 1, "3 3", .6)
@@ -66,7 +72,7 @@ b += arrow("f2", "g", mid, 242, MX + 2, 242, 2) + arrow("f2", "g", mid, 242, NX 
 b += text(mid, 237, "d", GRN, 14, "middle", "700")
 b += text(14, 264, "điện thế cao", "currentColor", 14, "start", "400") + text(426, 264, "điện thế thấp", "currentColor", 14, "end", "400")
 fig2 = wrap("0 0 440 270", "Điện trường đều giữa hai bản: điện thế giảm từ 12 V ở bản dương xuống 0 V ở bản âm; công từ M đến N không phụ thuộc đường đi, chỉ phụ thuộc hình chiếu d",
-            b, "Hình 2. Đường liền và đường cong cam cho cùng một công.<br>Chỉ hình chiếu <strong>d</strong> của MN lên đường sức là đáng kể.<br>Nét đứt xanh: đường đẳng thế.")
+            b, "Hình 2. Đường liền và đường cong cam cho cùng một công.<br>Chỉ hình chiếu <strong>d</strong> của MN lên đường sức là đáng kể.<br>α: góc giữa MN và đường sức, d = MN·cos α.<br>Nét đứt xanh: đường đẳng thế (mọi điểm trên đó cùng điện thế).")
 
 # ---- Hình 3: đồ thị V theo x của thí nghiệm đo (d = 10 cm, U = 6 V)
 OX, OY, SX, SV = 60, 210, 34, 30          # gốc, px/cm, px/V
