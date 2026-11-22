@@ -94,9 +94,9 @@ ${box(cau(`Cục sạc nhanh ghi ${u('5\\ \\mathrm V')}, ${u('3\\ \\mathrm A')}.
 ${h3(3, 'II.2 · Thí nghiệm đo: đồng hồ USB và điện thoại', '2·3')}
 <div class="card" style="padding:1.2mm 3mm">
 <div><b>Làm:</b> cắm đồng hồ đo USB (hiện ${I} và điện lượng theo mAh) giữa cục sạc và điện thoại cạn pin. Sạc chậm, dòng giữ ổn định ${u('I=1{,}50\\ \\mathrm A')}. Cứ 10 phút ghi số mAh, 5 lần.</div>
-<div>Đổi đơn vị: ${m('1\\ \\mathrm{mAh}=10^{-3}\\ \\mathrm A\\cdot')} ${f(14)} ${m('\\mathrm s=')} ${f(16)} C</div></div>
+<div>Đổi: 10 phút ${m('=')} ${f(12)} s · ${m('1\\ \\mathrm{mAh}=10^{-3}\\ \\mathrm A\\cdot')} ${f(14)} ${m('\\mathrm s=')} ${f(16)} C <span class="hint">(mAh cũng là đơn vị điện lượng)</span></div></div>
 <div class="fig-side" style="${fs(48)}"><div>
-<table class="tbl-ct"><tr><th>${dt} (phút)</th><th>Đồng hồ (mAh)</th><th>${m('\\Delta q=I\\Delta t')} (C)</th></tr>
+<table class="tbl-ct"><tr><th>${dt} (phút)</th><th>Số đồng hồ (mAh)</th><th>${m('\\Delta q=I\\Delta t')} (C)</th></tr>
 <tr><td>10</td><td>250</td><td>900</td></tr><tr><td>20</td><td>500</td><td></td></tr><tr><td>30</td><td>750</td><td></td></tr><tr><td>40</td><td>1000</td><td></td></tr><tr><td>50</td><td>1250</td><td></td></tr></table>
 <div style="margin-top:.8mm"><b>Rút ra:</b> dòng không đổi thì ${dq} tỉ lệ ${f(20)} với ${dt}; độ dốc đồ thị là ${f(14)}.</div>
 <div style="margin-top:.6mm">Dòng dao động ${u('\\pm0{,}02\\ \\mathrm A')}: ở hàng 10 phút, ${dq} lệch ${nw(`${m('\\pm')} ${f(14)} C`)}</div>${lines(2)}</div>
@@ -122,7 +122,7 @@ ${h3(2, 'II.4 · Cường độ dòng điện và hạt tải điện', '3·2')}
 <div>Số hạt trong trụ: ${nw(`${m('N=')} ${f(28)}`)} · điện lượng qua ${m('S')}: ${nw(`${m('\\Delta q=')} ${f(26)}`)}</div>
 <div style="margin:1mm 0;min-height:11mm;display:flex;align-items:flex-end;gap:2mm">Chia cho ${dt}: ${m('I=')} ${cao(26, 9)}</div>
 <div>Mật độ dòng điện ${nw(`${m('j=\\dfrac{I}{S}=')} ${f(14)}`)}, đơn vị ${f(14)}</div>
-<div>Đồng: ${nCu} (do vật liệu, cho sẵn). Tăng ${I} trong cùng một dây là tăng ${f(10)}, không phải tăng ${f(10)}.</div></div>
+<div>Đồng: ${nCu} (cho sẵn). Tăng ${I} trong cùng một dây là tăng ${f(10)}, không phải tăng ${f(10)}.</div></div>
 ${H.hinhTru()}</div>
 ${h3(3, 'Ví dụ tính: electron trôi nhanh cỡ nào?', '3·3')}
 <div class="card" style="padding:1.2mm 3mm">
