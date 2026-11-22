@@ -25,6 +25,7 @@ description: Dựng "đường trên lớp" cho MỘT bài đã có lý thuyết
 5. **Kiểm máy**: build; trình duyệt 1280×720 và 1920×1080, mở hết `.an[hidden]` → không `.man` nào `scrollHeight>clientHeight`; đo chiều cao hình + cỡ chữ nhỏ nhất trong hình khi đáp án mở; `.katex-error` = 0; 375px không cuộn ngang; clip dừng đúng mốc.
 6. **Lớp ảo** (agent, lưu `thu-lop-ao/`): agent THẦY (sonnet) lập `sach-trong.md` (trang 1–5 bỏ đáp án) + `dung-N.md` từng điểm dừng + `phan-hoi-N.md` + `nhat-ky-thay.md`; agent HỌC SINH (sonnet, chỉ đọc file trong thu-lop-ao, kiến thức tới bài trước, chỗ đoán ghi "(đoán)") điền `sach-hs.md` + `hs-N.md`. Phiên chính chỉ nhắn "lượt N" (tin ≤ 40 từ). Cuối: thầy viết `gop-y.md` (file · vị trí · sửa gì · ưu tiên · bằng chứng). Tin mục "phải đoán" và "tài liệu lệch nhau", không tin tỉ lệ đúng.
 7. **Sửa theo góp ý** (cao + vừa đã tự kiểm), chạy lại bước 5, PDF ruột tập `node scripts/ruot-tap/<file>.mjs` giữ số trang; ghi mục "Đã xử lý" cuối gop-y.md; commit.
+8. **Lên web** (sau bước 7): `build_tren_lop.py` chép bản noindex sang `public/dev/tren-lop/<slug>.html` (+ `-ghi-chu.html`); thêm MỘT dòng `{lessonId, slug, ten, ghiChu}` vào `features/lessons/tren-lop.ts` → hiện ở mục lục `/dev/tren-lop` và nút "Bản chiếu lớp" (chế độ giáo viên) trên trang bài. Giao diện theo token nền sáng của web (khối `:root` + `<link>` font `/fonts/be-vietnam-pro/be-vietnam-pro.css` y bài mẫu; nền trắng là lệch có chủ ý cho tivi). Deploy do phiên chính/thầy quyết, không tự deploy.
 
 ## Báo cáo mỗi bài (một dòng)
 `bài · commit · số màn · đề cuối tiết (mã/không có) · số góp ý làm/bỏ · việc treo`
@@ -33,3 +34,4 @@ description: Dựng "đường trên lớp" cho MỘT bài đã có lý thuyết
 - 2026-11-20 · Đáp án mở ra dưới hình ép hình còn 15% màn, chữ hình 13px — kiểm tràn không bắt được → đo chiều cao hình khi đáp án mở, dùng bố cục `.hai`.
 - 2026-11-20 · Mốc dừng clip tính từ code lệch 0,1–0,2 s ở chỗ chuyển động/chuyển cảnh (dừng vào khung trắng, lộ đáp án) → cách ≥ 0,3 s và xem khung hình thật.
 - 2026-11-20 · Học sinh ảo đúng 66/66 ô nên tỉ lệ đúng vô nghĩa; góp ý giá trị là chỗ phải đoán và chỗ màn/ghi chú/Tập lệch nhau (ô 4·3 "8 câu" vs đề 20 câu, phương án dùng từ chưa học).
+- 2026-11-22 · Bản chiếu chỉ nằm trong content/ nên thầy tưởng web còn bản cũ; font ghi tên Be Vietnam Pro mà không tải nên tivi hiện Segoe → bước 8: chép sang public/dev/tren-lop + dòng trong features/lessons/tren-lop.ts, nạp font tự host; báo rõ "chỉ trên máy" hay "đã lên web" kèm link.
