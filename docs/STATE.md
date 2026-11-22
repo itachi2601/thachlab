@@ -83,3 +83,5 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" L12+L11 (8/11): 27 bài (L12 3 4 6 7 8 9 15 16 17 19; L11 20–22 24 25 28 30–36 39 40 43 44) đã lên DB + deploy; đã kiểm live 375px (43, 33); 7 chỗ lệch nhỏ cần sửa component ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11 L12+L11.
 - "Một dạng — một hình" L10+KHTN9 (8/11): 19 bài (L10 45–53, 62–79 chọn lọc; KHTN9 156) đã lên DB + deploy; còn treo ở `docs/MOT-DANG-MOT-HINH.md` mục 8/11.
+- Dụng cụ đo tương tác · thư viện `/mo-phong` công khai · thí nghiệm ảo theo bộ thiết bị SGK (kế hoạch 21/11, chưa bắt đầu, giao phiên khác): `docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md`.
+- Gói B `/mo-phong` (21/11, nhánh `claude/goi-b-thu-vien-mo-phong-cb60a5`): trang chỉ mục + 5 trang mô phỏng đã làm, CHƯA deploy (hỏi thầy). Dụng cụ đo Gói A thêm sau: 1 dòng `lib/mo-phong-trang.ts` + 1 dòng `components/mo-phong/MoPhongTheoSlug.tsx`, rồi `npx tsx scripts/gen-thu-vien-mo-phong.mts`; kiểm link `scripts/kiem-link-thu-vien-mo-phong.mts --mang`.
