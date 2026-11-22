@@ -39,3 +39,31 @@ File gọi tắt: **src** = tren-lop.src.html · **ghi chú** = tren-lop-ghi-chu
 | 21 | .mjs · ô 1·4 đồ thị ☐ tăng / ☐ không đổi | hs-1: em bỏ trống chỗ này, ô nằm giữa câu | Đưa ☐ xuống đầu dòng riêng "BC: ☐ tăng ☐ không đổi" rồi "nhỏ hơn ở A khoảng [__] N" ở dòng sau (giữ số trang nếu còn chỗ) |
 | 22 | src · màn 6/6 "Quay lại thùng nước" | soát: ô 1·3 + ô 1·1 + hai lớp "Mở" trong 1 phút; hs-3: đủ giờ | Giữ nguyên; không sửa |
 | 23 | ghi chú · mục "Nếu thiếu giờ" | soát: ĐD3 18 chỗ + clip trong 7 phút; hs-3: "dồn nhất ĐD2 và ĐD3" | Thêm: "Thiếu giờ ở ĐD3 thì để ô 2·2 dòng Rút ra về nhà" |
+
+## Đã xử lý (2026-11-22)
+
+- 1 làm: m2b bước cuối hiện bảng trước, "Đáp án C" nằm trong ô ẩn; JS: ở màn clip, Enter/Phát mở ô đáp án còn đóng của bước đang hiện trước khi phát tiếp.
+- 2 làm: m3b tách thành dừng 19,4 (bảng ba số $1{,}2$ N + nút "Mở: đáp án Câu 1") và dừng 19,6 (câu lăn); "Lăn: D" ở bước cuối cũng ẩn sau nút. Đã ghi "4 điểm dừng".
+- 3 làm: .mjs đổi tiêu đề ô 4·2 thành "Tự kiểm tra Câu 1–6 · Đề 1239: ……/20 · sai câu ………"; ghi chú + màn QR trỏ về dòng tiêu đề này.
+- 4 làm: màn Về nhà + ghi chú ghi đường đi thachlab → Bài 18 → Lý thuyết → Tự kiểm tra ngay.
+- 5 làm: m5c thêm "$m$ có ở cả hai vế, triệt tiêu" và dòng thay số $\sin30^\circ$, $\cos30^\circ$.
+- 6 làm: cột đổi tên "Viết ra: con số hoặc công thức" (cả .mjs và màn); dòng $v^2=2as$ ghi "(không có $t$)". Đây là công thức Động học HS đã học, không coi là kiến thức mới. Ghi chú: phân tích đề 2 phút, bù 30 giây từ Câu 5. Dòng mẫu $v_0=0$ vốn đã in.
+- 7 làm: nhãn đầu màn thành "Câu 3/2/5 · 30 giây"; chữ "Đây là bẫy n" chỉ hiện khi mở đáp án; ghi chú bỏ dặn đánh dấu bẫy trước.
+- 8 làm: câu biểu quyết ghi chữ cái ra lề, sau màn 5a chép cả bốn vào ô 4·2 (dòng nhắc trên màn 5a); ghi chú "lật 4 lần".
+- 9 làm: m2b dòng "trục ngang: thời gian", m2c dòng "Trục ngang: lực kéo".
+- 10 làm: dòng ✔ nhắc tích ở d2 (ô 1·4), Câu 3, Câu 2, Câu 1; Câu 5 gộp vào dòng nhắc chép ở 5a.
+- 11 làm: .mjs "ma sát trượt ___ khi đổi diện tích, đổi tốc độ"; màn 3c dùng đúng câu đó.
+- 12 làm: m3d hàng 1 hiện sẵn làm mẫu, dòng "máy tính điện thoại · 40 giây · mỗi dãy một hàng"; ghi chú bù giờ bằng cách chép "Rút ra" lúc clip dừng.
+- 13 làm: m4a thêm dòng $F\sin\alpha$ kéo vật lên → đè sàn nhẹ hơn.
+- 14 làm: m4c mở đủ bước $\sin\to\cos=\sqrt{1-\sin^2}\to\tan$ cho cả $0{,}36$ và $0{,}30$; ghi chú bấm máy 20 giây.
+- 15 làm: .mjs "lần ___ (tỉ số 0,05 N : lực trượt đọc được lớn nhất), vì". Chữ ngắn hơn đề xuất vì dòng đầy.
+- 16 làm: .mjs ô 5·3 thêm dòng gợi ý, bớt một dòng kẻ (5 → 4).
+- 17 làm: Trả bài viết 2 phút (màn + ghi chú).
+- 18 làm: .mjs "N: ___, đơn vị N". Chữ "niutơn" làm tr.2 tràn 4 mm nên bỏ, đồng thời thu hẹp hai chỗ trống. Màn 3a bỏ dòng chú thích nghiêng/đứng.
+- 19 làm: .mjs "so với bảng ở ô 2·3".
+- 20 làm: ghi chú ĐD2, đoán miệng 10 giây trước khi mở mỗi dòng.
+- 21 làm: .mjs tách "BC: ☐ tăng ☐ không đổi" thành dòng riêng.
+- 22 bỏ: góp ý tự ghi "giữ nguyên".
+- 23 làm: ghi chú thêm "Thiếu giờ ở điểm dừng 3: để dòng Rút ra ô 2·2 về nhà".
+- Thêm (phiên chính giao): .mjs gắn mã ô 5·1 cho "Đề BTVN" (`K.tag('5·1')`, không sửa khung.mjs); màn Về nhà ghi "ô 5·1".
+- Kiểm: PDF Tập 12 trang trước và sau, không trang nào tràn (tr.2 dư 1 mm, tr.4 dư 1 mm), katexErr 0. Bản chiếu: 1280×720 và 1920×1080 không tràn ở mọi bước clip và mọi ô mở; 375px không cuộn ngang; katex-error 0.

@@ -75,7 +75,7 @@ ${h3(4, 'II.1 · Ma sát nghỉ', '1·4')}
 <div><b>Đọc đồ thị:</b></div>
 <div>Đoạn OA: hộp ${f(25)}</div>
 <div>Tại A: hộp ${f(25)}</div>
-<div>Đoạn BC: ma sát ${ck}tăng ${ck}không đổi, nhỏ hơn ở A khoảng ${nw(`${f(12)}&nbsp;N`)}</div>
+<div>Đoạn BC: ${ck}tăng ${ck}không đổi</div><div>Ma sát ở BC nhỏ hơn ở A khoảng ${nw(`${f(12)}&nbsp;N`)}</div>
 </div>
 ${H.doThi()}</div>
 <div style="margin-top:1mm"><b>Ví dụ:</b> tủ cần lực ngang ít nhất ${nw('300 N')} mới dịch. Hai bạn đẩy ${nw('260 N')} và kéo ${nw('35 N')} cùng chiều: tủ ${ck}đứng yên ${ck}trượt; lực ma sát ${nw(`${f(14)}&nbsp;N`)}</div></div>
@@ -86,14 +86,14 @@ ${head('MA SÁT TRƯỢT · ĐO HỆ SỐ MA SÁT · ÁP LỰC')}
 ${h3(1, 'II.2 · Ma sát trượt', '2·1')}
 <div class="card" style="padding:1.2mm 3mm">
 <div>Xuất hiện khi vật ${f(25)} trên bề mặt; chiều ngược chiều ${f(25)} tương đối.</div>
-<div style="margin:.6mm 0">${nw(`${Fmst}${m('=')} ${f(12)}`)} &nbsp;· ${mu}: hệ số ma sát trượt, đơn vị ${f(25)} · ${m('N')}: ${f(25)} (N)</div>
+<div style="margin:.6mm 0">${nw(`${Fmst}${m('=')} ${f(12)}`)} &nbsp;· ${mu}: hệ số ma sát trượt, đơn vị ${f(16)} · ${m('N')}: ${f(20)}, đơn vị N</div>
 <div>Phụ thuộc: vật liệu, tình trạng bề mặt và ${f(30)} (thay đổi khi kéo chếch, khi đặt trên dốc).</div>
 <div>Không phụ thuộc: ${f(25)}, ${f(25)}. Thường ${ck}lớn hơn ${ck}nhỏ hơn ma sát nghỉ cực đại.</div></div>
 ${h3(2, 'Thí nghiệm: đổi mặt tiếp xúc, đổi tốc độ, cho lăn', '2·2')}
 <div class="card fig-side" style="${fs(40)};padding:1.2mm 3mm"><div>
 <div><b>Làm:</b> hộp ${nw('0,40 kg')} kéo trượt đều khi nằm (mặt rộng), dựng đứng (mặt hẹp), rồi kéo nhanh hơn; cuối cùng kê lên hai bút chì cho lăn.</div>
 <div><b>Quan sát:</b> ba lần trượt lực kế đều chỉ khoảng ${nw('1,2 N')}; khi lăn chỉ dưới ${nw('0,1 N')}.</div>
-<div><b>Rút ra:</b> ma sát trượt ${f(25)} theo diện tích, tốc độ; ma sát lăn ${f(25)} ma sát trượt rất nhiều.</div></div>
+<div><b>Rút ra:</b> ma sát trượt ${f(25)} khi đổi diện tích, đổi tốc độ; ma sát lăn ${f(25)} ma sát trượt rất nhiều.</div></div>
 ${H.butChi()}</div>
 ${h3(3, 'II.3 · Đo hệ số ma sát bằng lực kế', '2·3')}
 <div class="fig-side" style="${fs(58)}"><table class="tbl-ct" style="font-size:var(--fs-sm)">
@@ -104,7 +104,7 @@ ${h3(3, 'II.3 · Đo hệ số ma sát bằng lực kế', '2·3')}
 <tr><td>7,84</td><td>2,9</td><td>2,4</td><td></td></tr></table>
 <div style="font-size:var(--fs-sm);line-height:1.4"><b>Làm:</b> hộp gỗ trên bàn gỗ, thêm gia trọng; ${m('N=mg')}, ${g98}. Lực kế chia độ ${nw('0,1 N')}, đọc sai cỡ ${nw('±0,05 N')}.<br>Tính tỉ số ở cột cuối (2 chữ số sau dấu phẩy).</div></div>
 <div class="card" style="margin-top:.8mm;padding:1mm 3mm">
-<div>Trung bình ${nw(`${mu} ${m('\\approx')} ${f(14)}`)} · Lần đo kém tin cậy nhất (xét <b>sai số tương đối</b> ${nw('0,05 N')} : lực đọc được): lần ${f(12)}, vì</div>${lines(1)}</div>
+<div>Trung bình ${nw(`${mu} ${m('\\approx')} ${f(14)}`)} · Lần đo kém tin cậy nhất: lần ${f(12)} (tỉ số ${nw('0,05 N')} : lực trượt đọc được lớn nhất), vì</div>${lines(1)}</div>
 ${h3(4, 'II.4 · Áp lực N: không phải lúc nào cũng bằng mg', '2·4')}
 <div class="card fig-side" style="${fs(48)};padding:1.2mm 3mm"><div>
 <div>Lấy ${m('N')} theo phương ${f(25)} mặt tiếp xúc.</div>
@@ -121,7 +121,7 @@ ${h3(1, 'Thí nghiệm: nâng dần tấm ván', '3·1')}
 <div class="card fig-side" style="${fs(42)};padding:1.2mm 3mm"><div>
 <div><b>Quan sát:</b> hộp bắt đầu trượt khi ${nw('h ≈ 0,34 m')}; búng nhẹ thì hộp trượt đều khi ${nw('h ≈ 0,29 m')}. ${nw(m('\\sin\\alpha=h/L'))}.</div>
 <div style="margin-top:.6mm">Sắp trượt: ${nw(`${m('mg\\sin\\alpha=\\mu_n\\,mg\\cos\\alpha')}`)}<br>⇒ ${nw(`${m('\\mu_n=')} <span class="fill" style="min-width:16mm;height:9mm"></span> ${m('\\approx')} ${f(14)}`)}</div>
-<div style="margin-top:.6mm">Trượt đều: ${nw(`${m('\\mu=\\tan\\alpha\\approx')} ${f(12)}`)}; so với bảng ở Tập 62·3: ${ck}khớp ${ck}lệch</div></div>
+<div style="margin-top:.6mm">Trượt đều: ${nw(`${m('\\mu=\\tan\\alpha\\approx')} ${f(12)}`)}; so với bảng ở ô 2·3: ${ck}khớp ${ck}lệch</div></div>
 ${H.nangVan()}</div>
 ${h3(2, 'II.5 · Ma sát lăn · có lợi, có hại', '3·2')}
 <div class="card fig-side" style="${fs(36)};padding:1.2mm 3mm"><div>
@@ -148,7 +148,7 @@ ${h3(1, 'III · Ba cái bẫy hay sập', '4·1')}
 <div class="trap">${ck}<span><b>“Ma sát lúc nào cũng bằng ${m('\\mu N')}.”</b> Đứng yên: ma sát nghỉ, tính bằng cân bằng lực.</span></div>
 <div class="trap">${ck}<span><b>“Áp lực luôn bằng ${m('mg')}.”</b> Kéo chếch lên: ${m('mg-F\\sin\\alpha')}; mặt nghiêng: ${m('mg\\cos\\alpha')}.</span></div>
 <div class="trap">${ck}<span><b>“Ma sát luôn cản chuyển động.”</b> Bước đi: ma sát nghỉ đẩy bàn chân tới trước.</span></div></div>
-${h3(2, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·2')}
+${h3(2, 'Tự kiểm tra Câu 1–6 · Đề 1239: ……/20 · sai câu ………', '4·2')}
 ${rkHai([1, 2, 3], [4, 5, 6])}
 ${h3(3, 'V · Bài toán mẫu: cầu trượt ở công viên', '4·3')}
 <div class="card soft" style="padding:1.2mm 3mm">Một bạn nhỏ được thả không vận tốc đầu từ đỉnh cầu trượt dài ${m('2{,}0\\ \\mathrm m')}, nghiêng ${m('30^\\circ')} so với phương ngang. Hệ số ma sát trượt giữa bạn và mặt trượt là ${m('0{,}20')}. Lấy ${g98}.
@@ -171,13 +171,13 @@ ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
 ${head('BÀI TẬP VỀ NHÀ · THỬ THÁCH · MANG VỀ')}
-${K.btvn()}
+${K.btvn().replace('Đề BTVN</h3>', 'Đề BTVN</h3>' + K.tag('5·1'))}
 ${h3(2, 'Thử thách phân tầng', '5·2')}
 <div class="fig-side" style="${fs(44)}">${box(wl(`${m('\\bigstar')} Kéo thùng ${nw('20 kg')} trượt đều trên sàn ngang bằng lực ngang ${nw('60 N')}; ${g10}. Tìm ${mu}.`, 3)
  + wl(`${m('\\bigstar\\bigstar')} Kéo thùng ${nw('10 kg')} trượt đều trên sàn ngang bằng dây chếch lên ${nw('45°')}; ${nw(m('\\mu=0{,}20'))}; ${g98}. Tìm lực kéo.`, 4)
  + wl(`${m('\\bigstar\\bigstar\\bigstar')} Xe tải phanh gấp, khoá bánh, để lại vết trượt dài ${nw('45 m')} trên đường nhựa khô; ${nw(m('\\mu=0{,}70'))}; ${g98}. Lúc bắt đầu trượt xe chạy bao nhiêu km/h?`, 4))}${H.vetPhanh()}</div>
 ${h3(3, 'Câu đổi chiều: biết chuyển động, tìm hệ số ma sát', '5·3')}
-${box(wl(`Xe đạp và người ${nw('86 kg')} đang chạy ${nw('4 m/s')} thì bóp phanh khoá bánh, xe trượt ${nw('2 m')} rồi dừng trên đường ngang; ${g10}. Tìm gia tốc, lực ma sát và ${mu} giữa lốp và đường.`, 5))}
+${box(wl(`Xe đạp và người ${nw('86 kg')} đang chạy ${nw('4 m/s')} thì bóp phanh khoá bánh, xe trượt ${nw('2 m')} rồi dừng trên đường ngang; ${g10}. Tìm gia tốc, lực ma sát và ${mu} giữa lốp và đường.<div style="font-size:.9em;color:#555">gợi ý: từ ${m('v')}, ${m('s')} tìm ${m('a')} → lực → ${mu}</div>`, 4))}
 ${h3(4, 'VI · Mang về: điều em dễ quên nhất', '5·4')}
 ${box(wl('1.', 3) + wl('2.', 3) + wl('3.', 3))}
 ${foot(5)}</section>`;
