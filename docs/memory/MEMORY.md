@@ -56,6 +56,7 @@
 - [Chống đề mất hình](project_thachlab_missing_figures.md) — treo duyệt 80 hình AI
 - [Ảnh xấu ngân hàng → SVG](project_thachlab_anh_xau_ngan_hang.md) — 20 câu chờ thầy
 - [Sửa đề đã đăng](project_thachlab_sua_de_admin.md) — treo deploy 8 điểm UI
+- [L11 5 đề: tên chủ đề trong đề](project_thachlab_l11_5_de_chu_de_exams.md) — 22/11 kiểm: 126/129 khớp, không cần vá
 - [Ngân hàng câu hỏi](project_thachlab_question_bank.md) — Dễ/TB/Khó
 - [Đề thi thử trường/sở](project_thachlab_de_thi_thu_truong_so.md) — 304 file CHƯA ĐĂNG
 - [Đề VL10 24-25](project_thachlab_de_lop10_24_25.md) — 167 bộ chưa đăng

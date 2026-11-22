@@ -155,6 +155,7 @@ FILES=(
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
 # ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
 #   20261010300000_hsg_cham_nhanh (đã có bảng + 1 bài Pre-test; chạy lại báo policy tồn tại), 20261010100000_khoa_hsg9_vat_ly_khung
+# ĐÃ CHẠY 14/11/2026 ~09:00 (chạy tay `supabase db query -f`, giao dịch tắt trg_exams_sync_bank): 20261006120000_fix_grade_ngan_hang_5_de_l11, 20261006130000_gan_lai_chu_de_5_de_l11
 # ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions
