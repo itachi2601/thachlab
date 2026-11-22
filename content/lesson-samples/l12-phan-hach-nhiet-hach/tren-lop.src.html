@@ -58,6 +58,7 @@ button.vn.phu{background:#64748b}
 .fk{align-items:center}
 table.mh td{font-size:.86em;vertical-align:top;width:29%} table.mh th{font-size:.8em}
 table.gon td,table.gon th{font-size:.8em;padding:.04em .35em}
+@media (min-width:761px){table.gon th{white-space:nowrap}}
 /* chữ gạch chân xanh = đúng chữ của ô trống trong Tập (mục 19 góp ý) */
 .o{color:var(--accent);text-decoration:underline;text-decoration-thickness:.1em;text-underline-offset:.14em}
 .hai{flex:1;min-height:0;display:flex;gap:3vw;align-items:center}
@@ -128,8 +129,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p class="hoi">Nhà máy điện hạt nhân không có ngọn lửa. Năng lượng khổng lồ ấy đến từ đâu?</p>
       <ol class="opt" style="font-size:.87em">
         <li><b>A.</b> Phản ứng hoá học giữa urani với nước</li>
-        <li><b>B.</b> Hạt nhân urani vỡ ra, khối lượng nghỉ thành năng lượng</li>
-        <li><b>C.</b> Nhiệt còn lại trong lòng đất</li>
+        <li><b>B.</b> Hạt nhân urani vỡ thành hai mảnh, tổng khối lượng sau nhỏ hơn trước</li>
+        <li><b>C.</b> Urani phóng xạ liên tục, tự toả nhiệt</li>
         <li><b>D.</b> Ma sát giữa nước và thanh nhiên liệu</li>
       </ol>
     </div>
@@ -193,8 +194,8 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="ben">
       <p>Hạt nhân rất <b class="o">nặng</b> hấp thụ <b class="o">nơtron</b> chậm rồi vỡ thành <b class="o">hai</b> mảnh; mỗi lần thêm <b class="o">2</b>–<b class="o">3</b> nơtron và tia <b class="o">$\gamma$</b>.</p>
       <p>Toả vì hai mảnh bền hơn: $E_{lkr}$ <b class="o">tăng</b>, tổng khối lượng nghỉ <b class="o">giảm</b>.</p>
-      <p>Một phân hạch cỡ <b class="o">200</b> MeV</p>
-      <p class="nho">Phản ứng trong hình toả 173 MeV; trung bình mọi cặp mảnh ≈ 200 MeV.</p>
+      <p>Một phân hạch cỡ <b class="o">200</b> MeV <span class="nho">(trung bình mọi cặp mảnh)</span></p>
+      <p class="nho">Phản ứng trong hình là một cặp mảnh Ba + Kr: toả 173 MeV.</p>
     </div>
   </div>
 </section>
@@ -224,6 +225,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <p>$k=1$: <b class="o">tự duy trì</b></p>
       <p>$k&gt;1$: <b class="o">tăng nhanh</b></p>
       <p>Khối lượng tới hạn: lượng nhiên liệu <b class="o">tối thiểu</b> để giữ $k\ge1$.</p>
+      <p class="nho">Ít quá ⇒ nơtron thoát ra ngoài trước khi gặp hạt nhân khác.</p>
     </div>
   </div>
 </section>
@@ -249,10 +251,9 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig flo"><svg viewBox="0 0 330 148" role="img" aria-label="Sơ đồ nhà máy điện hạt nhân"><rect x="2" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="37" y="92" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Lò</text><line x1="72" y1="86" x2="74" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M74 79 L85 86 L74 93 z" fill="#1c2540"/><rect x="84" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="119" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Trao đổi</text><text x="119" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">nhiệt</text><line x1="154" y1="86" x2="156" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M156 79 L167 86 L156 93 z" fill="#1c2540"/><rect x="166" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="201" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Tua</text><text x="201" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">bin</text><line x1="236" y1="86" x2="238" y2="86" stroke="#1c2540" stroke-width="2.8"/><path d="M238 79 L249 86 L238 93 z" fill="#1c2540"/><rect x="248" y="60" width="70" height="52" rx="4" fill="#fff" stroke="#1c2540" stroke-width="2.8" /><text x="283" y="82" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">Máy</text><text x="283" y="104" fill="#1c2540" font-size="18" text-anchor="middle" font-weight="400">phát</text><rect x="20" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><rect x="38" y="14" width="10" height="42" fill="#8a94ad" stroke="#1c2540" stroke-width="2.4"/><text x="60" y="40" fill="#1c2540" font-size="18" text-anchor="start" font-weight="400">thanh điều khiển</text><text x="326" y="140" fill="#b3261e" font-size="20" text-anchor="end" font-weight="700">điện</text></svg></div>
     <div class="ben">
-      <p>Thanh điều khiển (bo, cađimi) <b class="o">hấp thụ</b> nơtron:<br>đẩy vào ⇒ $k$ <b class="o">giảm</b>; kéo ra ⇒ $k$ <b class="o">tăng</b>.</p>
-      <p>Giữ $k=$ <b class="o">1</b> để công suất không đổi.</p>
       <p>Chất tải nhiệt đưa nhiệt tới <b class="o">bộ trao đổi nhiệt</b> rồi <b class="o">tua bin</b>.</p>
-      <p class="nho">Nhiên liệu: urani làm giàu (vài % U-235).</p>
+      <p class="nho">Nhiên liệu: urani làm giàu, tăng tỉ lệ U-235 (tự nhiên ≈ 0,7 %) lên vài %.</p>
+      <p class="hoi"><b>Muốn tắt lò thì làm gì với thanh điều khiển?</b></p>
     </div>
   </div>
 </section>
@@ -265,7 +266,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
       <div class="buoc" data-t="-1"><p class="nhin">Nhìn vào: che bớt lưới ghim thì dây chuyền đổi thế nào?</p><p class="nho">Clip dừng 3 lần cho lớp đoán.</p></div>
       <div class="buoc" data-t="0.4"><p class="hoi">Ghim đổ làm đổ ghim bên cạnh,<br>như nơtron mồi phân hạch tiếp theo.</p><p class="hoi">Tấm bìa che bớt lưới ghim.</p></div>
       <div class="buoc" data-t="9.0" data-dung><p class="hoi">Lấy bìa che 30 % rồi 60 % lưới ghim. Số ghim đổ sẽ:</p>
-        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> Giảm theo đúng tỉ lệ phần bị che</li><li><b>B.</b> Gần như không đổi cho tới khi che kín</li><li data-dung><b>C.</b> Giảm mạnh, có mức che làm dây chuyền tắt sớm</li><li><b>D.</b> Tăng lên vì bi chỉ rơi vào phần còn hở</li></ol></div>
+        <ol class="opt lo" style="font-size:.86em"><li><b>A.</b> Giảm đúng bằng tỉ lệ phần bị che</li><li><b>B.</b> Gần như không đổi cho tới khi che kín</li><li data-dung><b>C.</b> Giảm mạnh hơn nhiều so với tỉ lệ phần che</li><li><b>D.</b> Tăng lên vì bi chỉ rơi vào phần còn hở</li></ol></div>
       <div class="buoc" data-t="9.1"><p class="hoi">Thả bi ở ba mức che, đếm ghim đổ.</p></div>
       <div class="buoc" data-t="19.0" data-dung><table class="bang"><tr><td>che 0 %</td><td class="ns">36 · 34 · 37</td></tr><tr><td>che 30 %</td><td class="ns">12 · 10 · 11</td></tr><tr><td>che 60 %</td><td class="ns">4 · 5 · 3</td></tr></table><p class="hoi">Che 30 % mà còn chỉ khoảng 1/3. Đáp án dự đoán? Vì sao giảm mạnh thế?</p></div>
       <div class="buoc" data-t="19.1"><p class="so-lon">C: giảm mạnh, tắt sớm</p><p class="hoi">Ghim bị che còn cắt mọi nhánh lan tiếp từ nó: $k$ tụt dưới 1.</p></div>
@@ -277,6 +278,15 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="vnut"><button class="vn" data-v="tiep">▶ Phát</button><button class="vn phu" data-v="lai">↺ Xem lại đoạn</button><span class="moc"></span></div>
 </section>
 
+<section class="man" id="m4c">
+  <div class="top"><span class="so">4/6 · Sau clip · thanh điều khiển</span><span>phút 15–21</span><span class="tap">tr.26 · ô 26·3</span></div>
+  <div class="giua">
+    <p>Thanh điều khiển (bo, cađimi) <b class="o">hấp thụ</b> nơtron:<br>đẩy vào ⇒ $k$ <b class="o">giảm</b>; kéo ra ⇒ $k$ <b class="o">tăng</b>.</p>
+    <p>Giữ $k=$ <b class="o">1</b> để công suất không đổi.</p>
+    <p class="nho">Tắt lò: đẩy thanh vào hết, $k$ giảm dưới 1.</p>
+  </div>
+</section>
+
 <!-- ================= 5. Nhiệt hạch, bài toán mẫu ================= -->
 <section class="man" id="m5a">
   <div class="top"><span class="so">5/6 · Nhiệt hạch</span><span>phút 21–27</span><span class="tap">tr.26 · ô 26·4</span></div>
@@ -284,7 +294,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
     <div class="fig fnh"><svg viewBox="0 0 312 100" role="img" aria-label="Phản ứng nhiệt hạch đơteri với triti"><defs><marker id="nh" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><circle cx="34" cy="50" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="23.656" y="46.1">2</tspan><tspan x="23.656" y="61.5">1</tspan></text><text x="25.656" y="56" font-size="22" fill="#1c2540" font-weight="700">H</text><text x="76" y="58" fill="#1c2540" font-size="26" text-anchor="middle" font-weight="400">+</text><circle cx="118" cy="50" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="107.656" y="46.1">3</tspan><tspan x="107.656" y="61.5">1</tspan></text><text x="109.656" y="56" font-size="22" fill="#1c2540" font-weight="700">H</text><line x1="152" y1="50" x2="178" y2="50" stroke="#1c2540" stroke-width="2.8" marker-end="url(#nh)"/><circle cx="214" cy="50" r="30" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="14.399999999999999" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="202.352" y="45.2">4</tspan><tspan x="202.352" y="62">2</tspan></text><text x="204.352" y="56" font-size="24" fill="#1c2540" font-weight="700">He</text><text x="252" y="58" fill="#1c2540" font-size="26" text-anchor="middle" font-weight="400">+</text><circle cx="286" cy="50" r="10" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><text x="286" y="92" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="400">n</text></svg></div>
     <p>Hạt nhân rất <b class="o">nhẹ</b> kết hợp thành hạt nhân <b class="o">nặng hơn</b>.</p>
     <p class="nho">D + T → He + n, toả cỡ 17,6 MeV</p>
-    <p>Điều kiện: <b class="o">$10^8$–$10^9$</b> K, mật độ <b class="o">đủ lớn</b>, duy trì <b class="o">đủ lâu</b>.</p>
+    <p>Điều kiện (lò trên Trái Đất): <b class="o">$10^8$–$10^9$</b> K, mật độ <b class="o">đủ lớn</b>, duy trì <b class="o">đủ lâu</b>.</p>
     <p>Nơi có nhiệt hạch tự nhiên: <b class="o">Mặt trời, các sao</b>.</p>
   </div>
 </section>
@@ -325,15 +335,15 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m5e">
-  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · đề + phân tích đề</span></div>
-  <p>Phản ứng ở Tự kiểm tra 1. $m_{\mathrm U}=235{,}0439$; $m_{\mathrm n}=1{,}0087$; $m_{\mathrm{Ba}}=143{,}9230$; $m_{\mathrm{Kr}}=88{,}9176$ (u); $N_A=6{,}02\cdot10^{23}$; than $2{,}7\cdot10^{7}$ J/kg.</p>
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · đề + ô 28·1 phân tích đề</span></div>
+  <p>$m_{\mathrm U}=235{,}0439$; $m_{\mathrm n}=1{,}0087$; $m_{\mathrm{Ba}}=143{,}9230$; $m_{\mathrm{Kr}}=88{,}9176$ (u); $M_{\mathrm U}=235$ g/mol; $N_A=6{,}02\cdot10^{23}$; than $2{,}7\cdot10^{7}$ J/kg.</p>
   <p class="nho">a) $x$ · b) $\Delta m$, $W$ (MeV) · c) 1 g U-235 toả bao nhiêu J? · d) bằng mấy kg than?</p>
   <table class="bang gon">
     <thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
     <tbody>
       <tr><td>"U-235 hấp thụ nơtron chậm"</td><td>$A=235;\ Z=92$</td><td>bảo toàn $A$, $Z$</td></tr>
       <tr><td>"khối lượng các hạt"</td><td class="ns"><span class="an-o" data-o="b5">$m_{\mathrm U}, m_{\mathrm n}, m_{\mathrm{Ba}}, m_{\mathrm{Kr}}$</span></td><td class="ns"><span class="an-o" data-o="b5">$W=\Delta m\,c^2$</span></td></tr>
-      <tr><td>"một gam U-235"</td><td class="ns"><span class="an-o" data-o="b5">$m=1$ g; $M=235$ g/mol</span></td><td class="ns"><span class="an-o" data-o="b5">$N=\frac{m}{M}N_A$</span></td></tr>
+      <tr><td>"một gam U-235"</td><td class="ns"><span class="an-o" data-o="b5">$m=1$ g; $M_{\mathrm U}=235$ g/mol</span></td><td class="ns"><span class="an-o" data-o="b5">$N=\frac{m}{M}N_A$</span></td></tr>
       <tr><td>"than toả $2{,}7\cdot10^{7}$ J/kg"</td><td class="ns"><span class="an-o" data-o="b5">năng suất toả nhiệt</span></td><td class="ns"><span class="an-o" data-o="b5">$m_{\text{than}}=W/q$</span></td></tr>
     </tbody>
   </table>
@@ -341,11 +351,12 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m5f">
-  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · Giải a) b) c) d)</span></div>
+  <div class="top"><span class="so">5/6 · Bài toán mẫu</span><span>phút 21–27</span><span class="tap">tr.28 · ô 28·2 Giải a) b) c) d)</span></div>
   <div class="giua">
     <div class="an nhap"><p><b>a)</b> $x=3$ (Tự kiểm tra 1) · điện tích $92=56+36$ ✓</p></div>
     <button class="mo" data-mo="m5g1">Mở b)</button>
-    <div class="an" id="m5g1" hidden><p>$\Delta m=236{,}0526-235{,}8667=0{,}1859$ u · $W=0{,}1859\times931{,}5\approx173$ MeV</p></div>
+    <div class="an" id="m5g1" hidden><p>$\Delta m=236{,}0526-235{,}8667=0{,}1859$ u · $W=0{,}1859\times931{,}5\approx173$ MeV</p>
+      <p class="nho">Ở đây $\Delta m$ = tổng khối lượng <b>trước − sau</b> (khác độ hụt khối của một hạt nhân).</p></div>
     <button class="mo" data-mo="m5g2">Mở c) d)</button>
     <div class="an" id="m5g2" hidden><p>$N=\frac{1}{235}\cdot6{,}02\cdot10^{23}\approx2{,}56\cdot10^{21}$ · $W\approx2{,}56\cdot10^{21}\cdot173{,}2\cdot1{,}6\cdot10^{-13}\approx7{,}1\cdot10^{10}$ J</p>
       <p>Than: $7{,}1\cdot10^{10}/2{,}7\cdot10^{7}\approx2{,}6\cdot10^{3}$ kg ≈ 2,6 tấn</p></div>
@@ -353,7 +364,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 </section>
 
 <section class="man" id="m5g">
-  <div class="top"><span class="so">5/6 · Câu 7 · đổi số</span><span>phút 21–27</span><span class="tap">tr.27 ô 27·3 · tr.28 "Mở rộng" bước 2</span></div>
+  <div class="top"><span class="so">5/6 · Câu 7 · đổi số · dự phòng</span><span>còn giờ thì chiếu, không thì về nhà</span><span class="tap">tr.27 ô 27·3 · ghi đáp án ở ô 28·3 bước 2</span></div>
   <div class="giua">
     <p class="hoi">Câu 7. U-235 phân hạch toả trung bình $200$ MeV. Số phân hạch cần để toả ra $1$ J là:</p>
     <ol class="opt lo hang">
@@ -372,7 +383,7 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
 <section class="man" id="m6a">
   <div class="top"><span class="so">6/6 · Ba cái bẫy</span><span>phút 27–30 · 20 giây</span><span class="tap">tr.27 · ô 27·1</span></div>
   <div class="giua">
-    <p class="hoi">Đánh dấu ☐ bẫy em từng sập:</p>
+    <p class="hoi">Đánh dấu ☐ bẫy em <b>đã nghĩ như vậy</b> trước hôm nay:</p>
     <ul>
       <li><b>"U-235 tự vỡ như chất phóng xạ."</b> Phân hạch cần <b>nơtron</b> bắn vào, điều khiển được bằng $k$.</li>
       <li><b>"Khối lượng được bảo toàn."</b> Khối lượng nghỉ <b>không</b> bảo toàn: phần hụt là năng lượng.</li>
@@ -398,28 +409,29 @@ td.ns{color:var(--ok);font-weight:800;text-align:center}
   <div class="hai">
     <div class="fig fph"><svg viewBox="0 0 310 170" role="img" aria-label="Phân hạch urani-235"><defs><marker id="ph2" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L7,3.5 L0,7 z" fill="context-stroke"/></marker></defs><circle cx="22" cy="86" r="9" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="34" y1="86" x2="62" y2="86" stroke="#1f5fa8" stroke-width="2.8" marker-end="url(#ph2)"/><circle cx="104" cy="86" r="38" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="16.8" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="109.232" y="81.4">235</tspan><tspan x="109.232" y="101">92</tspan></text><text x="111.232" y="94" font-size="28" fill="#1c2540" font-weight="700">U</text><line x1="146" y1="72" x2="178" y2="46" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph2)"/><line x1="146" y1="100" x2="178" y2="126" stroke="#1c2540" stroke-width="2.8" marker-end="url(#ph2)"/><circle cx="206" cy="36" r="26" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="206.968" y="32.1">144</tspan><tspan x="206.968" y="47.5">56</tspan></text><text x="208.968" y="42" font-size="22" fill="#1c2540" font-weight="700">Ba</text><circle cx="206" cy="136" r="24" fill="#fff" stroke="#1c2540" stroke-width="2.8"/><text font-size="13.2" fill="#1c2540" font-weight="700" text-anchor="end"><tspan x="201.312" y="132.1">89</tspan><tspan x="201.312" y="147.5">36</tspan></text><text x="203.312" y="142" font-size="22" fill="#1c2540" font-weight="700">Kr</text><circle cx="284" cy="64" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="88" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><circle cx="284" cy="112" r="8" fill="#fff" stroke="#1f5fa8" stroke-width="2.8"/><line x1="146" y1="88" x2="262" y2="88" stroke="#1f5fa8" stroke-width="2.8" stroke-dasharray="6 4" marker-end="url(#ph2)"/><text x="284" y="140" fill="#1f5fa8" font-size="20" text-anchor="middle" font-weight="400">3n</text><path d="M60 20 q8 -8 16 0 t16 0 t16 0" fill="none" stroke="#b3261e" stroke-width="2.4"/><text x="40" y="28" fill="#b3261e" font-size="22" text-anchor="middle" font-weight="700">γ</text></svg></div>
     <div class="ben">
-      <p class="nhin">Không có lửa, nhiệt lấy từ đâu?</p>
+      <p class="nhin">Nhà máy điện hạt nhân không có ngọn lửa. Năng lượng khổng lồ ấy đến từ đâu?</p>
       <button class="mo" data-mo="a8">Mở: năng lượng đến từ…</button>
-      <div class="an" id="a8" hidden><p><b>B.</b> Hạt nhân urani vỡ ra; phần khối lượng nghỉ hụt thành năng lượng $W=\Delta m\,c^2$.</p>
-        <p class="nho">A: hoá học chỉ đụng lớp êlectron, toả ít hơn hàng triệu lần · C, D: không phải nguồn nhiệt của lò.</p></div>
+      <div class="an" id="a8" hidden><p><b>B.</b> Urani vỡ thành hai mảnh, khối lượng hụt thành $W=\Delta m\,c^2$.</p>
+        <p class="nho">A: hoá học toả ít hơn hàng triệu lần · C: phân hạch cần nơtron, urani không tự toả nhiệt · D: không phải nguồn nhiệt của lò.</p></div>
     </div>
   </div>
 </section>
 
 <section class="man" id="m6d">
-  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm …/19 cạnh ô 27·3</span></div>
+  <div class="top"><span class="so">6/6 · Kiểm tra lý thuyết</span><span>phút 30–45</span><span class="tap">nộp xong: ghi điểm …/19 vào ô 27·4</span></div>
   <div class="qr"><!--QR--></div>
   <p class="made">Mã đề <b>1193</b> · 19 câu · 15 phút</p>
-  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1193 · làm một mình, nộp xong mới cất máy</p>
+  <p class="nho" style="text-align:center">thachlab → Quét mã, hoặc gõ số đề 1193 (web: Bài 16) · làm một mình, nộp xong mới cất máy</p>
 </section>
 
 <section class="man" id="m6e">
-  <div class="top"><span class="so">Về nhà theo Tập bài 19</span><span class="tap">chụp lại màn này</span></div>
+  <div class="top"><span class="so">Về nhà theo Tập bài 19 (web: Bài 16)</span><span class="tap">chụp lại màn này</span></div>
   <ul>
     <li><b>tr.25</b> ô 25·3 dòng "điều em hiểu sai" · ô 25·1 đánh dấu mục tiêu</li>
-    <li><b>tr.27</b> ô 27·2 câu 1, 2, 5, 6 (nói cho người nhà nghe) · ô 27·3 cột "Đúng?" còn trống</li>
-    <li><b>tr.28</b> phần Giải a)–d) chép lại · "Mở rộng" bước 3</li>
-    <li><b>tr.29</b> ô Đề BTVN (thầy giao trên web) · ô 29 Mang về · Thử thách ★ → ★★★</li>
+    <li><b>tr.27</b> ô 27·2 câu 1, 2, 5, 6: nói cho bạn cùng bàn hoặc người nhà nghe, ghi số câu nói được ở dòng "Bạn cùng bàn kiểm" · ô 27·3 cột "Đúng?" còn trống</li>
+    <li><b>tr.28</b> ô 28·2 Giải a)–d) chép lại · ô 28·3 "Mở rộng" bước 2 (câu 7), bước 3</li>
+    <li><b>tr.29</b> ô 29·1 Đề BTVN (thầy giao trên web) · ô 29·2 Mang về · ô 29·3 Thử thách ★ → ★★★</li>
+    <li>Sau khi nộp đề 1193: xem lời giải trên web</li>
   </ul>
 </section>
 

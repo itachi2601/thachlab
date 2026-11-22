@@ -46,3 +46,30 @@ Số ô như trong `sach-trong.md` (25·2, 26·1…). Bằng chứng trích từ
 
 **Đã xác nhận khớp (không cần sửa):** số chỗ điền điểm dừng 2 = 19 (nhật ký 7); bảng clip 36·34·37 / 12·10·11 / 4·5·3 khớp ghi chú (nhật ký 8); bảng 27·3 gồm câu 2–7 khớp "Tự kiểm tra 1 = câu 1".
 **Lưu ý khi sửa Tập:** sau mỗi lần sửa `bai16.mjs` chạy lại dựng PDF kiểm đúng 5 trang (tr.25–29) và số ô; mã ô mới 27·4, 28·1–3, 29·1–3 phải cập nhật cả `sach-trong.md` nếu còn dùng làm nguồn tham chiếu.
+
+---
+
+## Đã xử lý (22/11/2026)
+
+Làm 19/20, bỏ 1 một phần. Ruột tập vẫn 12 trang (tr.25–29 = 5 trang, dư giấy mỗi trang ≥ 6 mm), kiểm máy ĐẠT (25 màn, 1280×720 và 1920×1080 không tràn, katex-error 0, 375px không cuộn ngang).
+
+- #1 làm: B "Hạt nhân urani vỡ thành hai mảnh, tổng khối lượng sau nhỏ hơn trước", C "Urani phóng xạ liên tục, tự toả nhiệt", A, D giữ; đáp án vẫn B. Tập (25·2) và màn 1, 6c y chữ.
+- #2 làm: hình phân hạch dời khỏi ô 25·2 sang ô 26·1 (tr.26); ghi chú dặn chưa lật sang tr.26 khi biểu quyết.
+- #3 làm: ô 26·1 "(trung bình mọi cặp mảnh)", màn 3a chữ nhỏ "một cặp mảnh Ba + Kr: 173 MeV", Bước 1 tr.28 sửa lời giải thích.
+- #4 không cần sửa Tập: bảng 27·3 trong Tập thật đã trống (chỉ `sach-trong.md` ghi lệch). Màn 6e vẫn khớp "cột Đúng? còn trống".
+- #5 làm: ô mới 27·4 "Đề 1193 cuối tiết: điểm …/19 · câu sai"; tr.29 đổi "Điểm BTVN"; màn 6d, ghi chú trỏ ô 27·4.
+- #6 làm: tr.29 bỏ ô T4, chỉ nhắc "đáp án ghi ở Bước 2 tr.28"; ghi chú nói chỉ điền một nơi.
+- #7 làm: màn 4a chỉ còn sơ đồ + câu hỏi; dòng thanh điều khiển/k chuyển sang màn mới 4c sau clip; dừng 1 bỏ "tắt sớm" khỏi C, A đổi "đúng bằng tỉ lệ phần bị che".
+- #8 làm: đề in thêm "$M_U=235$ g/mol", màn 5e thêm M (không còn chỗ cho "khối lượng nguyên tử" trên màn, chỉ ở Tập).
+- #9 làm: mã ô 28·1–3, 29·1–3 (tag trong tiêu đề); màn 6e, ghi chú dùng mã mới.
+- #10 làm: "web: Bài 16" ở đầu tr.25 và tr.29, màn 6d, 6e.
+- #11 làm: câu "Muốn tắt lò thì làm gì với thanh điều khiển?" hiện trên màn 4a; ghi chú sửa.
+- #12 làm: màn 6c dùng đúng câu của ô 25·2; A–D màn 1 = Tập.
+- #13 làm: màn 6e nói rõ bạn cùng bàn hoặc người nhà, ghi ở dòng "Bạn cùng bàn kiểm".
+- #14 làm: gợi ý ★★★ ở Tập tr.29; màn 5a thêm "(lò trên Trái Đất)". Màn 5b vốn không có chú thích Halliday.
+- #15 làm một phần: màn 5f thêm dòng $\Delta m$ trước − sau; Tập đề in thêm "(khối lượng nguyên tử)" (màn bỏ vì tràn).
+- #16 bỏ phần gộp 5c+5d: hai câu A–D chung một màn làm chữ phương án nhỏ dưới ngưỡng tivi/tràn màn. Thay bằng: màn 5g thành "dự phòng" (còn giờ mới chiếu, không thì về nhà), ghi chú ĐD5 còn 6 màn trong 7 phút.
+- #17 làm: màn 3c chữ nhỏ "ít quá ⇒ nơtron thoát ra ngoài", ghi chú giải nơtron chậm.
+- #18 làm: màn 4a "urani làm giàu…"; ghi chú vòng sơ/thứ cấp; bỏ "(Halliday …)" khỏi chú thích hình in cho học sinh (nguồn còn trong theory/nguon.md).
+- #19 làm: màn 6a và nhãn ô 27·1 "bẫy em đã nghĩ như vậy trước hôm nay"; ghi chú đếm tay.
+- #20 làm: màn 6e thêm "xem lời giải đề 1193 trên web"; ghi chú nói câu 12, 16, 18d chữa buổi sau hoặc đưa BTVN.

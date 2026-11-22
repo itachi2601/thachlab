@@ -9,7 +9,7 @@ const tb = (s) => `<div><b>${s}</b><span class="ck" style="float:right;margin:0"
 // Bài tương tự giải vào vở: ô đáp số đặt cuối dòng của từng ý (như l10-bai23).
 const ttCss = '<style>.yo{display:flex;justify-content:space-between;align-items:flex-end;gap:2mm;line-height:1.35}.yo .oo{flex:none;display:flex;gap:3mm}.yo .fill{height:3.4mm}.tt:has(.nhap-t) .hd>span+span{display:none}</style>';
 const p1 = `${ttCss}<section class="page">
-${head('BÀI 19 · PHÂN HẠCH · NHIỆT HẠCH', K.sub)}
+${head('BÀI 19 · PHÂN HẠCH · NHIỆT HẠCH', K.sub + ' · web: Bài 16')}
 ${h3(1, 'Mục tiêu', '1·1')}
 <div class="card soft">
 <div style="margin:.3mm 0">${ck}Nêu được <b>phản ứng hạt nhân</b> và các đại lượng <b>bảo toàn</b></div>
@@ -19,13 +19,12 @@ ${h3(1, 'Mục tiêu', '1·1')}
 ${h3(2, 'Dự đoán trước khi học', '1·2')}
 <div class="card">
 <p style="margin:0 0 1mm">Nhà máy điện hạt nhân không có ngọn lửa. Năng lượng khổng lồ ấy đến từ đâu?</p>
-<div class="fig-side" style="${fs(52)}"><div>
+<div>
 ${opt('A', 'Phản ứng hoá học giữa urani với nước')}
-${opt('B', 'Hạt nhân urani vỡ ra, khối lượng nghỉ thành năng lượng')}
-${opt('C', 'Nhiệt còn lại trong lòng đất')}
+${opt('B', 'Hạt nhân urani vỡ thành hai mảnh, tổng khối lượng sau nhỏ hơn trước')}
+${opt('C', 'Urani phóng xạ liên tục, tự toả nhiệt')}
 ${opt('D', 'Ma sát giữa nước và thanh nhiên liệu')}
 <div style="margin-top:1mm">${chon(10)}</div><div class="hint">Vì sao?</div>${lines(1)}</div>
-${hinh.phanHach(`Một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia ${m('\\gamma')}.`)}</div>
 </div>
 ${h3(3, 'Học xong, em sửa lại', '1·3')}
 <div class="card soft"><div>Đáp án đúng là: ${f()} &nbsp; Em đoán ${ck}đúng &nbsp;${ck}sai &nbsp;· <span class="hint">Điều em hiểu sai hoặc mới biết:</span></div>${lines(1)}</div>
@@ -45,8 +44,9 @@ ${foot(1)}</section>`;
 const p2 = `<section class="page">
 ${head('PHÂN HẠCH · DÂY CHUYỀN · LÒ PHẢN ỨNG · NHIỆT HẠCH')}
 ${h3(1, 'II.3 · Phân hạch', '2·1')}
-<div class="card" style="padding:1.2mm 3mm"><div>Hạt nhân rất ${f(10)} hấp thụ ${f(12)} chậm rồi vỡ thành ${f(8)} mảnh; mỗi lần thêm ${f(8)}–${f(8)} nơtron và tia ${f(8)}.</div>
-<div>Toả vì hai mảnh bền hơn: ${m('E_{lkr}')} ${f(10)}, tổng khối lượng nghỉ ${f(10)}. Một phân hạch cỡ ${nw(`${f(10)}&nbsp;MeV`)}.</div></div>
+<div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div><div>Hạt nhân rất ${f(10)} hấp thụ ${f(12)} chậm rồi vỡ thành ${f(8)} mảnh; mỗi lần thêm ${f(8)}–${f(8)} nơtron và tia ${f(8)}.</div>
+<div>Toả vì hai mảnh bền hơn: ${m('E_{lkr}')} ${f(10)}, tổng khối lượng nghỉ ${f(10)}. Một phân hạch cỡ ${nw(`${f(10)}&nbsp;MeV`)} (trung bình mọi cặp mảnh).</div></div>
+${hinh.phanHach(`Một nơtron chậm làm vỡ U-235: hai mảnh, thêm 2–3 nơtron, tia ${m('\\gamma')}.`)}</div>
 ${h3(2, 'II.4 · Phản ứng dây chuyền, hệ số nhân k', '2·2')}
 <div class="card fig-side" style="${fs(52)};padding:1.2mm 3mm"><div>
 <div>${m('k=')} ${f(12)} / ${f(12)}</div>
@@ -58,7 +58,7 @@ ${h3(3, 'II.5 · Lò phản ứng', '2·3')}
 <div class="card fig-side" style="${fs(56)};padding:1.2mm 3mm"><div>
 <div>Thanh điều khiển (bo, cađimi) ${f(14)} nơtron: đẩy vào ⇒ ${m('k')} ${f(10)}; kéo ra ⇒ ${m('k')} ${f(10)}.</div>
 <div>Giữ ${m('k=')} ${f(6)} để công suất không đổi. Chất tải nhiệt đưa nhiệt tới ${f(16)} rồi ${f(14)}.</div></div>
-${hinh.anh('lo-phan-ung-nuoc-ap-luc.png', 'Lò nước áp lực: lõi lò (tím) đun nước vòng sơ cấp → bình sinh hơi → tua bin + máy phát; bình ngưng làm lạnh hơi (vòng thứ cấp). Thanh điều khiển cắm từ trên xuống lõi. (Halliday 43.2.2)')}</div>
+${hinh.anh('lo-phan-ung-nuoc-ap-luc.png', 'Lò nước áp lực: lõi lò (tím) đun nước vòng sơ cấp → bình sinh hơi → tua bin + máy phát; bình ngưng làm lạnh hơi (vòng thứ cấp). Thanh điều khiển cắm từ trên xuống lõi.')}</div>
 ${h3(4, 'II.6 · Nhiệt hạch', '2·4')}
 <div class="card fig-side" style="${fs(54)};padding:1.2mm 3mm"><div>
 <div>Hạt nhân rất ${f(10)} kết hợp thành hạt nhân ${f(12)}.</div>
@@ -71,6 +71,7 @@ const p3 = `<section class="page">
 ${head('BẪY · TRẢ BÀI · KẾT QUẢ TỰ KIỂM TRA')}
 ${h3(1, 'III · Ba cái bẫy hay sập', '3·1')}
 <div class="card" style="padding:1mm 3mm">
+<div class="hint">Đánh dấu bẫy em <b>đã nghĩ như vậy</b> trước hôm nay.</div>
 <div class="trap">${ck}<span><b>“U-235 tự vỡ như chất phóng xạ.”</b> Phân hạch cần <b>nơtron</b> bắn vào, điều khiển được bằng ${m('k')}.</span></div>
 <div class="trap">${ck}<span><b>“Khối lượng được bảo toàn.”</b> Khối lượng nghỉ <b>không</b> bảo toàn: phần hụt là năng lượng.</span></div>
 <div class="trap">${ck}<span><b>“Phân hạch và nhiệt hạch là một.”</b> Ngược chiều: nặng vỡ ra – nhẹ ghép lại.</span></div></div>
@@ -84,41 +85,44 @@ ${tb('6. Nhiệt hạch là gì? Điều kiện và một nơi có nhiệt hạc
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Bạn cùng bàn kiểm:</b> nói được ……/6 câu · câu chưa thuộc: ${f(30)} → đọc lại ô Tập ${f(14)}</div>
 ${h3(3, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '3·3')}
 ${rkHai([2, 3, 4], [5, 6, 7])}
+${h3(4, 'Đề 1193 cuối tiết (web: Bài 16)', '3·4')}
+<div class="card soft" style="padding:1mm 3mm">Điểm ……/19 &nbsp;· câu sai: ${f(40)}</div>
 ${foot(3)}</section>`;
 
 const p4 = `<section class="page">
 ${head('BÀI TOÁN MẪU · MỘT GAM URANI BẰNG MẤY TẤN THAN?')}
 ${h3(1, 'V · Đề bài', '4')}
-<div class="card soft" style="padding:1.2mm 3mm">${m('{}^{235}_{92}\\mathrm{U}+{}^{1}_{0}\\mathrm{n}\\to{}^{144}_{56}\\mathrm{Ba}+{}^{89}_{36}\\mathrm{Kr}+x\\,{}^{1}_{0}\\mathrm{n}')}. ${m('m_{\\mathrm{U}}=235{,}0439')}, ${m('m_{\\mathrm{n}}=1{,}0087')}, ${m('m_{\\mathrm{Ba}}=143{,}9230')}, ${m('m_{\\mathrm{Kr}}=88{,}9176')} (u); ${m('1\\ \\mathrm{MeV}=1{,}6\\cdot10^{-13}\\ \\mathrm{J}')}; ${m('N_A=6{,}02\\cdot10^{23}')}; than ${m('2{,}7\\cdot10^{7}\\ \\mathrm{J/kg}')}.
+<div class="card soft" style="padding:1.2mm 3mm">${m('{}^{235}_{92}\\mathrm{U}+{}^{1}_{0}\\mathrm{n}\\to{}^{144}_{56}\\mathrm{Ba}+{}^{89}_{36}\\mathrm{Kr}+x\\,{}^{1}_{0}\\mathrm{n}')}. ${m('m_{\\mathrm{U}}=235{,}0439')}, ${m('m_{\\mathrm{n}}=1{,}0087')}, ${m('m_{\\mathrm{Ba}}=143{,}9230')}, ${m('m_{\\mathrm{Kr}}=88{,}9176')} (u, khối lượng nguyên tử); ${m('M_{\\mathrm{U}}=235\\ \\mathrm{g/mol}')}; ${m('1\\ \\mathrm{MeV}=1{,}6\\cdot10^{-13}\\ \\mathrm{J}')}; ${m('N_A=6{,}02\\cdot10^{23}')}; than ${m('2{,}7\\cdot10^{7}\\ \\mathrm{J/kg}')}.
 <div><b>a)</b> Tìm ${m('x')}, kiểm tra bảo toàn.</div><div><b>b)</b> Độ hụt khối và năng lượng của một phân hạch (MeV).</div><div><b>c)</b> Một gam U-235 phân hạch hết toả bao nhiêu jun?</div><div><b>d)</b> Bằng đốt bao nhiêu kg than?</div></div>
-${h3(2, 'Phân tích đề (điền cùng thầy)')}
+${h3(2, 'Phân tích đề (điền cùng thầy)', '4·1')}
 <table><tr><th style="width:46mm">Câu trong đề</th><th style="width:36mm">Dữ liệu</th><th>Kiến thức liên quan</th></tr>
 <tr><td>“U-235 hấp thụ nơtron chậm”</td><td>${m('A=235,\\ Z=92')}</td><td>bảo toàn ${m('A,\\ Z')}</td></tr>
 <tr><td style="height:6.5mm">“khối lượng các hạt”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“một gam U-235”</td><td></td><td></td></tr>
 <tr><td style="height:6.5mm">“than toả ${m('2{,}7\\cdot10^{7}')} J/kg”</td><td></td><td></td></tr></table>
-${h3(3, 'Giải')}
+${h3(3, 'Giải', '4·2')}
 <div class="fig-side" style="${fs(56)};margin-top:1mm"><div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
 ${wl('a)', 2)}${wl('b)', 4)}${wl('c)', 3)}${wl('d)', 2)}</div>${hinh.canPhanUng('Khối lượng nghỉ sau nhỏ hơn trước: phần hụt thành W.')}</div>
-${h3(4, 'Mở rộng: trung bình 200 MeV một phân hạch')}
+${h3(4, 'Mở rộng: trung bình 200 MeV một phân hạch', '4·3')}
 <div style="background:#fff;border:.3mm solid var(--navy);border-radius:1.5mm;padding:0 3mm">
-<div class="ln" style="height:auto;padding-top:1mm"><b>Bước 1 (cho sẵn):</b> ${m('200\\ \\mathrm{MeV}=3{,}2\\cdot10^{-11}\\ \\mathrm{J}')} (đề trên làm tròn khối lượng nên ra 173 MeV; trung bình thực tế ≈ 200 MeV).</div>
+<div class="ln" style="height:auto;padding-top:1mm"><b>Bước 1 (cho sẵn):</b> ${m('200\\ \\mathrm{MeV}=3{,}2\\cdot10^{-11}\\ \\mathrm{J}')} (đề trên là một cặp mảnh Ba + Kr: 173 MeV; trung bình mọi cặp mảnh ≈ 200 MeV).</div>
 ${wl('Bước 2: muốn có đúng 1 J cần … phân hạch', 2)}${wl('Bước 3: con số đó nói lên điều gì về nhiên liệu hạt nhân?', 2)}</div>
 <div class="card soft" style="margin-top:1.5mm;padding:1mm 3mm"><b>Em tự kiểm:</b> ${ck}cộng đủ nơtron cả hai vế &nbsp;${ck}đổi MeV ra J &nbsp;${ck}có ghi đơn vị</div>
 ${foot(4)}</section>`;
 
 const p5 = `<section class="page">
-${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH')}
-${K.btvn()}
-${h3(2, 'VI · Mang về: điều em dễ quên nhất', '5')}
+${head('BÀI TẬP VỀ NHÀ · MANG VỀ · THỬ THÁCH', 'Tập bài 19 = Bài 16 trên web')}
+${K.btvn().replace('</h3>', `</h3>${K.tag('5·1')}`).replace('<b>Điểm:</b>', '<b>Điểm BTVN:</b>')}
+${h3(2, 'VI · Mang về: điều em dễ quên nhất', '5·2')}
 ${box(wl('1.', 2) + wl('2.', 2) + wl('3.', 2))}
-${h3(3, 'Thử thách phân tầng')}
+${h3(3, 'Thử thách phân tầng', '5·3')}
 ${box(wl('★ Bốn bộ phận chính của nhà máy điện hạt nhân và vai trò thanh điều khiển:', 3)
  + wl('★★ Vì sao trong lò phải giữ k = 1 mà không để k lớn hơn một chút?', 3)
  + wl('★★★ (HS giỏi) Mặt trời chỉ 1,5·10⁷ K, thấp hơn 10⁸ K; vì sao vẫn cháy?', 3)
- + wl('Câu 7: 200 MeV/phân hạch; số phân hạch để toả 1 J = …', 1))}
+ + '<div class="hint">Gợi ý ★★★: (1) chỉ cần một số rất ít hạt nhanh hơn trung bình; (2) mật độ lõi rất lớn, thời gian hàng tỉ năm.</div>'
+ + '<div class="hint">Câu 7 (tr.27, màn 5g): đáp án ghi ở Bước 2 tr.28, không điền lại ở đây.</div>')}
 ${h3(4, 'Xem hình: Mặt trời là lò nhiệt hạch')}
-<div class="fig-side" style="grid-template-columns:90mm 1fr">${hinh.anh('chu-trinh-proton-proton.png', 'Chu trình p–p: 4 prôtôn → He-4 + 2 nơtrinô + 6γ, toả 26,7 MeV. e⁺ pôzitron, ν nơtrinô, γ phôtôn, Q năng lượng toả ra của từng bước. (Halliday 43.5.1)')}<div class="hint">Lõi Mặt trời chỉ cỡ 1,5·10⁷ K; vì sao vẫn cháy? (thử thách ★★★)</div></div>
+<div class="fig-side" style="grid-template-columns:90mm 1fr">${hinh.anh('chu-trinh-proton-proton.png', 'Chu trình p–p: 4 prôtôn → He-4 + 2 nơtrinô + 6γ, toả 26,7 MeV. e⁺ pôzitron, ν nơtrinô, γ phôtôn, Q năng lượng toả ra của từng bước.')}<div class="hint">Lõi Mặt trời chỉ cỡ 1,5·10⁷ K; vì sao vẫn cháy? (thử thách ★★★)</div></div>
 ${foot(5)}</section>`;
 
 const dang = [
