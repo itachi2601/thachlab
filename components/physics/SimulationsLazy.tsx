@@ -55,3 +55,33 @@ export function ThuocKepLazy() {
     </LazyErrorBoundary>
   );
 }
+
+const Panme = dynamic(() => import("@/components/physics/do-luong/Panme"), { ssr: false, loading });
+
+export function PanmeLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <Panme />
+    </LazyErrorBoundary>
+  );
+}
+
+const DongHoDaNang = dynamic(() => import("@/components/physics/do-luong/DongHoDaNang"), { ssr: false, loading });
+
+export function DongHoDaNangLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <DongHoDaNang />
+    </LazyErrorBoundary>
+  );
+}
+
+const DongHoHienSo = dynamic(() => import("@/components/physics/do-luong/DongHoHienSo"), { ssr: false, loading });
+
+export function DongHoHienSoLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <DongHoHienSo />
+    </LazyErrorBoundary>
+  );
+}

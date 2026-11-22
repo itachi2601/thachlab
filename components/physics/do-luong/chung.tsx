@@ -50,15 +50,18 @@ export function HangChon<T extends string | number>({
   items,
   value,
   onChange,
+  labelTren = false,
 }: {
   label: string;
   items: { value: T; text: string }[];
   value: T;
   onChange: (v: T) => void;
+  /** Nhãn nằm trên hàng nút (khi chữ trên nút dài, ví dụ "1000 V"). */
+  labelTren?: boolean;
 }) {
   return (
-    <div className="flex items-center gap-2">
-      <span className="shrink-0 text-sm text-muted">{label}</span>
+    <div className={labelTren ? "space-y-1" : "flex items-center gap-2"}>
+      <span className={labelTren ? "block text-sm text-muted" : "shrink-0 text-sm text-muted"}>{label}</span>
       <div className="flex flex-1 gap-2">
         {items.map((it) => (
           <button key={String(it.value)} type="button" className={segBtn(it.value === value)} onClick={() => onChange(it.value)}>
