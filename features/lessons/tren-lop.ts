@@ -8,6 +8,7 @@ export type BanChieuTrenLop = { lessonId: number; slug: string; ten: string; ghi
 
 export const BAN_CHIEU_TREN_LOP: BanChieuTrenLop[] = [
   { lessonId: 39, slug: "l11-dien-the", ten: "Vật lí 11 · Bài 20 · Điện thế", ghiChu: "22 màn · cuối tiết đề 1215 (QR)" },
+  { lessonId: 61, slug: "l10-dinh-luat-3-newton", ten: "Vật lí 10 · Bài 16 · Định luật 3 Newton", ghiChu: "25 màn · cuối tiết đề 1237 (QR)" },
 ];
 
 export const banChieuCuaBai = (lessonId: number) => BAN_CHIEU_TREN_LOP.find((b) => b.lessonId === lessonId);

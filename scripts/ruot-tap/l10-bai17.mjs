@@ -108,8 +108,8 @@ ${h3(4, 'Thí nghiệm: treo các quả nặng 50 g vào lực kế', '2·4')}
 <tr><td>0,100</td><td>0,95</td><td></td></tr>
 <tr><td>0,150</td><td>1,45</td><td></td></tr>
 <tr><td>0,200</td><td>1,95</td><td></td></tr></table>
-<div style="margin-top:.6mm"><b>Rút ra:</b> ${m('P')} ${f(25)} với ${m('m')}; ${m('P/m')} gần bằng ${f(12)}.</div>
-${wl('Hàng nào kém tin cậy nhất? Vì sao? (mỗi số đọc sai tới ± 0,05 N)', 2)}</div>
+<div style="margin-top:.6mm"><b>Rút ra:</b> ${m('P')} ${f(25)} với ${m('m')}; ${m('P/m')} gần bằng ${f(20)}.</div>
+${wl('Hàng nào kém tin cậy nhất? Vì sao? (mỗi số đọc sai tới ± 0,05 N; P/m làm tròn 0,1)', 2)}</div>
 ${H.lucKe()}</div>
 ${foot(2)}</section>`;
 
@@ -150,14 +150,14 @@ const p4 = `<section class="page">
 ${head('TRẢ BÀI · TỰ KIỂM TRA · BÀI TOÁN MẪU')}
 ${h3(1, 'IV · Trả bài 6 câu', '4·1')}
 ${box(`${tb('1. Trọng lực là gì? Nêu bốn đặc điểm.')}${lines(1)}
-${tb('2. Trọng tâm vật phẳng đối xứng ở đâu? Có luôn nằm trên vật không?')}${lines(1)}
+${tb('2. Trọng tâm vật phẳng đối xứng ở đâu? Có luôn nằm trên vật không?')}${lines(2)}
 ${tb('3. Cách tìm trọng tâm tấm bìa bằng dây dọi?')}${lines(1)}
 ${tb('4. Trọng lượng khác khối lượng ở những điểm nào?')}${lines(1)}
-${tb('5. Lực căng dây: điểm đặt, phương, chiều?')}${lines(1)}
+${tb('5. Lực căng dây: điểm đặt, phương, chiều?')}${lines(2)}
 ${tb('6. Hệ vật nối dây nhẹ không dãn qua ròng rọc: hai vật giống nhau ở điều gì?')}${lines(1)}`)}
 <div class="card soft" style="margin-top:.8mm;padding:.8mm 3mm"><b>Bạn cùng bàn kiểm:</b> ……/6 câu · chưa thuộc: ${f(25)} ${nw(`→ đọc lại ô ${f(12)} Tập`)}</div>
 ${h3(2, 'Kết quả tự kiểm tra (đề chiếu trên lớp)', '4·2')}
-${rkHai([1, 2, 3], [4, 5, 6])}
+<div class="card soft" style="padding:1mm 3mm"><b>Điểm:</b> ……/18 &nbsp;· <b>Câu sai:</b> ${f(30)} &nbsp;· <b>Câu đoán mò:</b> ${f(22)}</div>
 ${h3(3, 'V · Bài toán mẫu: khối trên bàn nối vật treo', '4·3')}
 <div class="card soft" style="padding:1.2mm 3mm">Khối ${m('A')} khối lượng ${kg('2')} nằm trên bàn ngang nhẵn, nối bằng dây nhẹ, không dãn vắt qua ròng rọc nhẹ ở mép bàn với vật ${m('B')} khối lượng ${kg('0{,}5')} treo thẳng đứng. Thả hệ từ nghỉ, bỏ qua mọi ma sát, lấy ${g10}. Tính gia tốc của hệ và lực căng dây.</div>
 <table><tr><th style="width:50mm">Câu trong đề</th><th>Dữ liệu → kiến thức</th></tr>
