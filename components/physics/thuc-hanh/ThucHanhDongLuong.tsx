@@ -123,7 +123,7 @@ function CanhBang({
   );
   return (
     <svg
-      viewBox="0 0 360 150"
+      viewBox="0 0 360 170"
       className="block w-full select-none text-ink"
       role="img"
       aria-label="Băng đệm khí nằm ngang, xe 1 bên trái, xe 2 đứng yên giữa hai cổng quang"
@@ -145,8 +145,13 @@ function CanhBang({
       <line x1={px(CUOI) + 4} x2={px(CUOI) + 4} y1={YB - 18} y2={YB} stroke="currentColor" strokeWidth={3} />
       {cong(CONG1, "Cổng 1", chan("A"))}
       {cong(CONG2, "Cổng 2", chan("B"))}
-      {xe(mui1Ve, "Xe 1", "x1")}
-      {xe(mui2, "Xe 2", "x2")}
+      {xe(mui1Ve, t >= vaCham ? "" : "Xe 1", "x1")}
+      {xe(mui2, t >= vaCham ? "" : "Xe 2", "x2")}
+      {t >= vaCham && (
+        <text x={px(mui2 - L_XE)} y={YB + 26} textAnchor="middle" fontSize={16} fill="currentColor">
+          Xe 1 + Xe 2
+        </text>
+      )}
       {t >= vaCham && <circle cx={px(mui2 - L_XE)} cy={YB - 11} r={3} fill="var(--color-warn)" />}
       <text x={X0} y={YB + 46} fontSize={16} fill="var(--color-muted)">
         Đệm khí{coMaSat ? ", còn ma sát khí" : " (bỏ qua ma sát)"}
@@ -202,6 +207,9 @@ const CAU_DE = {
 
 type Loat = { so: number; coMaSat: boolean; hang: Hang[] };
 
+/** So δ, ε sau khi làm tròn 1 chữ số như số hiện trên màn (kết luận và bảng khớp nhau). */
+const lam1 = (x: number) => Math.round(x * 10) / 10;
+
 const ghiS = (ms: number) => vnSo(ms / 1000, 3);
 
 function MatDongHo({ ten, ms }: { ten: string; ms: number }) {
@@ -209,9 +217,7 @@ function MatDongHo({ ten, ms }: { ten: string; ms: number }) {
     <div className="rounded-xl border border-line-strong bg-surface-2 p-2">
       <p className="text-sm text-muted">{ten}</p>
       <div className="mt-1 flex items-baseline justify-end gap-1 rounded-lg border border-line bg-panel px-2 py-1">
-        <span className="font-mono text-3xl font-bold tabular-nums text-ink">
-          {(Math.min(ms, 9999) / 1000).toFixed(3)}
-        </span>
+        <span className="font-mono text-3xl font-bold tabular-nums text-ink">{vnSo(Math.min(ms, 9999) / 1000, 3)}</span>
         <span className="text-base text-muted">s</span>
       </div>
     </div>
@@ -291,9 +297,9 @@ export default function ThucHanhDongLuong() {
 
   const h1 = bangTinh?.hang[0];
   const kq1 = h1 ? tinhHang(h1) : null;
-  const dangHienBangTinh = loat.so === 1;
+  const dangHienBangTinh = loat.so === bangTinh?.so;
   const soHangHien = loat.hang.length - (chay ? 1 : 0);
-  const lichSuHien = chay && bangDay && loat.so !== 1 ? lichSu.slice(0, -1) : lichSu;
+  const lichSuHien = chay && bangDay && loat.so !== bangTinh?.so ? lichSu.slice(0, -1) : lichSu;
   const coCaHai = lichSuHien.some((l) => l.coMaSat) && lichSuHien.some((l) => !l.coMaSat);
   // kết luận lần 1 theo δ, ε của học sinh (nếu đã nhập đúng)
   const dHs = hs.d ?? (kq1 ? kq1.delta * 100 : 0);
@@ -429,12 +435,12 @@ export default function ThucHanhDongLuong() {
           {bangTinh && h1 && kq1 && !(chay && dangHienBangTinh) && (
             <div className="mt-4 space-y-2">
               <p className="text-base font-semibold">
-                Tự tính lần 1 của bảng 1 (s = 0,0500 m; Δm = 0,001 kg; Δt = 0,001 s)
+                Tự tính lần 1 của bảng {bangTinh.so} (s = 0,0500 m; Δm = 0,001 kg; Δt = 0,001 s)
               </p>
               <ONhapCham
                 nhan={<>1. Động lượng trước va chạm p = m1 · s/t1 =</>}
                 donVi="kg·m/s"
-                vidu="0,1035"
+                vidu="0,0000"
                 cham={(r) => chamP(r, h1, kq1)}
                 onXong={(r, v) => {
                   if (r.loai === "dung") setHs((x) => ({ ...x, p: v }));
@@ -445,7 +451,7 @@ export default function ThucHanhDongLuong() {
                 <ONhapCham
                   nhan={<>2. Động lượng sau va chạm p′ =</>}
                   donVi="kg·m/s"
-                  vidu="0,1012"
+                  vidu="0,0000"
                   cham={(r) => chamPp(r, h1, kq1)}
                   onXong={(r, v) => {
                     if (r.loai === "dung") setHs((x) => ({ ...x, pp: v }));
@@ -457,7 +463,7 @@ export default function ThucHanhDongLuong() {
                 <ONhapCham
                   nhan={<>3. Độ lệch δ = |p′ − p| : p =</>}
                   donVi="%"
-                  vidu="2,2"
+                  vidu="0,0"
                   cham={(r) => chamDelta(r, kq1, hs.p ?? kq1.p, hs.pp ?? kq1.pp)}
                   onXong={(r, v) => {
                     if (r.loai === "dung") setHs((x) => ({ ...x, d: Math.abs(v) }));
@@ -469,7 +475,7 @@ export default function ThucHanhDongLuong() {
                 <ONhapCham
                   nhan={<>4. Sai số ε = Δm/m1 + Δt/t1 + 2Δm/(m1 + m2) + Δt/t1′ =</>}
                   donVi="%"
-                  vidu="2,5"
+                  vidu="0,0"
                   cham={(r) => chamEps(r, h1, kq1)}
                   onXong={(r, v) => {
                     if (r.loai === "dung") setHs((x) => ({ ...x, e: v }));
@@ -487,7 +493,7 @@ export default function ThucHanhDongLuong() {
                       "δ ≤ ε: động lượng bảo toàn trong phạm vi sai số.",
                       "δ > ε: chưa kết luận định luật sai; kiểm lại băng, cổng quang rồi đo lại.",
                     ].map((t, k) => {
-                      const dung = dHs <= eHs === (k === 0);
+                      const dung = lam1(dHs) <= lam1(eHs) === (k === 0);
                       const mau =
                         ketLuan === null
                           ? "border-line-strong"
@@ -547,13 +553,13 @@ export default function ThucHanhDongLuong() {
                         i + 1,
                         vnSo(k.p, 4),
                         vnSo(k.pp, 4),
-                        `${vnSo(k.delta * 100, 1)}${k.delta <= k.eps ? "" : " >ε"}`,
+                        `${vnSo(k.delta * 100, 1)}${lam1(k.delta * 100) <= lam1(k.eps * 100) ? "" : " >ε"}`,
                         vnSo(k.eps * 100, 1),
                       ])}
                     />
                     <p className="mt-1 text-sm text-muted">
                       p, p′ tính bằng kg·m/s. p′ &lt; p ở {ds.filter((k) => k.pp < k.p).length}/{ds.length} lần; δ &gt;
-                      ε ở {ds.filter((k) => k.delta > k.eps).length}/{ds.length} lần.
+                      ε ở {ds.filter((k) => lam1(k.delta * 100) > lam1(k.eps * 100)).length}/{ds.length} lần.
                     </p>
                   </div>
                 );

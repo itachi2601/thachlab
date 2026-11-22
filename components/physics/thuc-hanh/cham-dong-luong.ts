@@ -141,23 +141,40 @@ export function chamEps(raw: string, h: Hang, kq: KetQuaHang): KetQuaCham | null
   const phanT = DC_T / t1 + DC_T / t1p;
   const e = kq.eps * 100;
   const cach = `ε = Δm/m1 + Δt/t1 + 2Δm/(m1 + m2) + Δt/t1' = 0,001/${g(h.m1)} + 0,001/${g(t1)} + 0,002/${g(M)} + 0,001/${g(t1p)} ≈ ${vnSo(e, 1)} %.`;
-  return phanLoai(
-    so.value,
-    cach,
-    [[e, 0.1]],
+  const loi: [number, number, string][] = [
+    [e - (DC_M / M) * 100, 0.06, "m1 + m2 là hai lần cân nên sai số của nó là 2Δm = 0,002 kg."],
+    [e / 2, 0.08, "Bài này lấy sai số dụng cụ bằng 1 độ chia (0,001 kg; 0,001 s), không phải nửa độ chia."],
     [
-      [e - (DC_M / M) * 100, 0.06, "m1 + m2 là hai lần cân nên sai số của nó là 2Δm = 0,002 kg."],
-      [e / 2, 0.08, "Bài này lấy sai số dụng cụ bằng 1 độ chia (0,001 kg; 0,001 s), không phải nửa độ chia."],
-      [
-        e - (phanT / 2) * 100,
-        0.06,
-        "Bài này lấy sai số dụng cụ của đồng hồ bằng 1 độ chia (0,001 s), không phải nửa độ chia.",
-      ],
-      [phanT * 100, 0.08, "Thiếu phần sai số của khối lượng (Δm/m1 và 2Δm/(m1 + m2))."],
-      [phanM * 100, 0.08, "Thiếu phần sai số của thời gian (Δt/t1 và Δt/t1')."],
-      [kq.eps, 0.001, "Đó là ε dạng số thập phân; ô này ghi theo %, nhân thêm 100."],
+      e - (phanT / 2) * 100,
+      0.06,
+      "Bài này lấy sai số dụng cụ của đồng hồ bằng 1 độ chia (0,001 s), không phải nửa độ chia.",
     ],
+    [
+      e - (phanM / 2) * 100,
+      0.04,
+      "Bài này lấy sai số dụng cụ của cân bằng 1 độ chia (0,001 kg), không phải nửa độ chia.",
+    ],
+    [phanT * 100, 0.08, "Thiếu phần sai số của khối lượng (Δm/m1 và 2Δm/(m1 + m2))."],
+    [phanM * 100, 0.08, "Thiếu phần sai số của thời gian (Δt/t1 và Δt/t1')."],
+    [kq.eps, 0.001, "Đó là ε dạng số thập phân; ô này ghi theo %, nhân thêm 100."],
+  ];
+  // 0,06: đủ cho làm tròn ε tới 0,1 %, đủ hẹp để bắt "quên 2Δm" (0,125 % ở m1 + m2 = 0,803 kg).
+  // Tổng 4 số hạng đã làm tròn 0,1 % từng cái cũng nhận đúng, TRỪ khi nó rơi vào vùng của một lỗi (thử 32 000 lần:
+  // nếu nhận vô điều kiện thì "quên 2Δm" lọt 22 %).
+  const lamTron = [DC_M / h.m1, DC_T / t1, (2 * DC_M) / M, DC_T / t1p].reduce(
+    (a, x) => a + Math.round(x * 1000) / 10,
+    0,
   );
+  const dung: [number, number][] = [[e, 0.06]];
+  if (!loi.some(([v, tol]) => Math.abs(lamTron - v) <= tol + 0.05)) dung.push([lamTron, 0.06]);
+  // Không nhận được vì trùng vùng lỗi: vẫn gọi đúng tên cách làm tròn (lỗi gần nhất thắng, số em gõ trùng tổng này).
+  else
+    loi.push([
+      lamTron,
+      0.05,
+      "Làm tròn từng số hạng tới 0,1 % rồi mới cộng thì tổng lệch nhiều; mỗi số hạng giữ 2 chữ số thập phân (theo %), cộng xong mới làm tròn ε.",
+    ]);
+  return phanLoai(so.value, cach, dung, loi);
 }
 
 export { vnSo };
