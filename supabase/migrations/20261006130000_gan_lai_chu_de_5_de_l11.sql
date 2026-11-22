@@ -8,6 +8,9 @@ create table if not exists public.question_bank_backup_20261006_topic as
   select id, topic_id, topic_name from public.question_bank
    where source_exam_id in (638,639,658,693,701) and grade = '11';
 
+alter table public.question_bank_backup_20261006_topic enable row level security;
+revoke all on public.question_bank_backup_20261006_topic from anon, authenticated;
+
 update public.question_bank q
    set topic_id = v.tid,
        topic_name = coalesce(t.name, ''),

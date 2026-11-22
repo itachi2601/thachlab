@@ -1,5 +1,7 @@
 // Lưu buổi tập + số đo. Buổi đang tập giữ ở localStorage (tải lại trang không mất);
 // bấm Kết thúc → ghi Supabase; lỗi mạng/chưa chạy migration → vào hàng chờ, lần mở sau tự gửi lại.
+// HỌC SINH (không phải admin/instructor) — thầy chốt 22/11/2026: KHÔNG thu thập dữ liệu tập luyện. Buổi tập chỉ lưu
+// localStorage của máy; buổi đã gửi trước đó được kéo về máy rồi xoá khỏi workout_logs (moveServerToLocal).
 import { getSupabase } from "@/services/supabase";
 
 export type SetKind = "w" | "n"; // khởi động | làm việc
@@ -33,10 +35,16 @@ export type Measurement = {
 // và hàng chờ của người trước không bị gửi lên dưới tài khoản người sau.
 let uid = "";
 const K = (name: string) => `tapluyen:${uid ? `${uid}:` : ""}${name}`;
-const K_DRAFT = "draft", K_QUEUE = "queue", K_CACHE = "cache", K_MCACHE = "mcache";
+const K_DRAFT = "draft", K_QUEUE = "queue", K_CACHE = "cache", K_MCACHE = "mcache", K_MOVED = "movedLocal";
+let localOnly = true; // mặc định an toàn: chưa biết vai trò thì không gửi gì
+/** Học sinh: buổi tập chỉ nằm trên máy, không gửi máy chủ. */
+export const isLocalOnly = () => localOnly;
+/** Chỉ lưu trên máy thì bộ nhớ máy là bản duy nhất → giữ nhiều hơn. */
+const cacheMax = () => (localOnly ? 1000 : 200);
 
 /** Gọi trước mọi hàm lưu/đọc. `adoptLegacy`: chuyển dữ liệu khoá cũ (chưa theo tài khoản, chỉ giáo viên dùng trước 19/11/2026) về tài khoản này. */
 export function setTapLuyenUser(id: string, adoptLegacy: boolean) {
+  localOnly = !adoptLegacy; // adoptLegacy = giáo viên; học sinh → chỉ lưu trên máy
   if (uid === id) return;
   uid = id;
   try {
@@ -88,7 +96,8 @@ async function upsertWorkout(w: Workout) {
 /** Ghi buổi tập; trả về true nếu đã lên máy chủ, false nếu đang nằm hàng chờ. */
 export async function saveWorkout(w: Workout): Promise<boolean> {
   const cache = lsGet<Workout[]>(K_CACHE, []).filter((x) => x.client_id !== w.client_id);
-  lsSet(K_CACHE, [w, ...cache].slice(0, 200));
+  lsSet(K_CACHE, sortWorkouts([w, ...cache]).slice(0, cacheMax()));
+  if (localOnly) return true;
   try {
     await upsertWorkout(w);
     return true;
@@ -100,6 +109,15 @@ export async function saveWorkout(w: Workout): Promise<boolean> {
 
 export async function flushQueue(): Promise<number> {
   const q = queue();
+  if (localOnly) {
+    // hàng chờ cũ (chưa kịp gửi) → giữ lại trên máy, không gửi nữa
+    if (q.length) {
+      const ids = new Set(q.map((w) => w.client_id));
+      lsSet(K_CACHE, sortWorkouts([...q, ...lsGet<Workout[]>(K_CACHE, []).filter((w) => !ids.has(w.client_id))]).slice(0, cacheMax()));
+      lsSet(K_QUEUE, null);
+    }
+    return 0;
+  }
   const left: Workout[] = [];
   for (const w of q) {
     try {
@@ -112,7 +130,37 @@ export async function flushQueue(): Promise<number> {
   return q.length - left.length;
 }
 
+/** Một lần cho mỗi tài khoản học sinh trên mỗi máy: kéo buổi đã gửi trước 22/11/2026 về máy, kiểm đã ghi được,
+ *  rồi mới xoá trên máy chủ. Lỗi ở bước nào thì để lần mở sau thử lại; không bao giờ xoá khi chưa chắc bản trên máy có đủ. */
+async function moveServerToLocal() {
+  if (lsGet<boolean>(K_MOVED, false)) return;
+  try {
+    const { data, error } = await getSupabase()
+      .from("workout_logs")
+      .select("client_id,routine_key,title,started_at,ended_at,exercises,note")
+      .order("started_at", { ascending: false })
+      .limit(1000);
+    if (error) throw error;
+    const server = (data ?? []) as Workout[];
+    if (server.length) {
+      const ids = new Set(server.map((w) => w.client_id));
+      lsSet(K_CACHE, sortWorkouts([...server, ...lsGet<Workout[]>(K_CACHE, []).filter((w) => !ids.has(w.client_id))]).slice(0, cacheMax()));
+      const back = new Set(lsGet<Workout[]>(K_CACHE, []).map((w) => w.client_id));
+      if (![...ids].every((id) => back.has(id))) return; // bộ nhớ máy đầy / ẩn danh → không xoá
+      const del = await getSupabase().from("workout_logs").delete().in("client_id", [...ids]);
+      if (del.error) throw del.error;
+    }
+    lsSet(K_MOVED, true);
+  } catch {
+    /* mất mạng: lần sau thử lại */
+  }
+}
+
 export async function fetchWorkouts(): Promise<{ list: Workout[]; offline: boolean }> {
+  if (localOnly) {
+    await moveServerToLocal();
+    return { list: sortWorkouts(lsGet<Workout[]>(K_CACHE, [])), offline: false };
+  }
   const local = [...queue(), ...lsGet<Workout[]>(K_CACHE, [])];
   try {
     const { data, error } = await getSupabase()
@@ -136,6 +184,7 @@ const sortWorkouts = (l: Workout[]) => [...l].sort((a, b) => b.started_at.locale
 export async function deleteWorkout(clientId: string) {
   lsSet(K_CACHE, lsGet<Workout[]>(K_CACHE, []).filter((x) => x.client_id !== clientId));
   lsSet(K_QUEUE, queue().filter((x) => x.client_id !== clientId));
+  if (localOnly) return;
   const { error } = await getSupabase().from("workout_logs").delete().eq("client_id", clientId);
   if (error) throw error;
 }

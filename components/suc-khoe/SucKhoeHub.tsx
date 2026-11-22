@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Activity, BarChart3, BookOpen, ChevronRight, Dumbbell, Moon, Play, Ruler, Salad } from "lucide-react";
+import { Activity, BarChart3, BookOpen, ChevronRight, Dumbbell, Footprints, Moon, Play, Ruler, Salad } from "lucide-react";
 import { MODULES } from "@/lib/suc-khoe/modules";
 import { TARGET, programFor } from "@/lib/tap-luyen/chuong-trinh";
 import { fetchMeasurements, fetchWorkouts, setTapLuyenUser, weekPlan, type Measurement, type Workout } from "@/lib/tap-luyen/store";
@@ -10,6 +10,7 @@ import { fmtDay, vn } from "@/components/tap-luyen/ui";
 
 const ICON: Record<string, React.ReactNode> = {
   "tap-luyen": <Dumbbell size={20} />,
+  "tai-nha": <Footprints size={20} />,
   "so-do": <Ruler size={20} />,
   "tien-bo": <BarChart3 size={20} />,
   "dinh-duong": <Salad size={20} />,

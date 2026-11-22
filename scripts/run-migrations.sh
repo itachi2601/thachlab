@@ -134,6 +134,7 @@ FILES=(
   "supabase/migrations/20261119120000_body_measurements_neck_wrist.sql|Thêm cột neck_cm, wrist_cm (cho phép null) vào body_measurements để ước tính % mỡ và khung xương|lúc nào cũng được (chỉ thêm cột)|supabase db query --linked -f perf/rollback/20261119120000_body_measurements_neck_wrist.down.sql"
   "supabase/migrations/20261120120000_lesson_clip_views.sql|Việc 6 clip: bảng lesson_clip_views (mỗi lượt xem khung video thí nghiệm một dòng) + RPC log_clip_view + bảng cộng dồn lesson_clip_view_rollups, pg_cron rollup >12 tháng|lúc nào cũng được (bảng mới), khuyên sau 22h|supabase db query --linked -f perf/rollback/20261120120000_lesson_clip_views.down.sql"
 )
+# ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
 # ĐÃ CHẠY 12/11/2026 08:52: 20261112100000_cnc_quiz_cham_server_buoc_2
 # ĐÃ CHẠY 12/11/2026 08:45: 20261112090000_cnc_quiz_cham_server_buoc_1
@@ -154,6 +155,7 @@ FILES=(
 # ĐÃ CHẠY 10/10/2026 (13:11): 20261009180000_an_cau_de_hong_audit, 20261009100000_notify_exam_assigned, 20261006150000_quiz_live; 20261010200000_hsg9_dot1_muc_noi_dung bỏ qua vì DB đã có đủ mục + nội dung bài 154/155/160/162
 # ĐÃ CHẠY 10/10/2026: 20261010400000_rank_chan_thuong_qua_cao, 20261010410000_rank_thu_hoi_rp_vuot (thu hồi 4.350 RP/79 dòng), 20261010420000_rank_ly_thuyet_muc_cong,
 #   20261010300000_hsg_cham_nhanh (đã có bảng + 1 bài Pre-test; chạy lại báo policy tồn tại), 20261010100000_khoa_hsg9_vat_ly_khung
+# ĐÃ CHẠY 14/11/2026 ~09:00 (chạy tay `supabase db query -f`, giao dịch tắt trg_exams_sync_bank): 20261006120000_fix_grade_ngan_hang_5_de_l11, 20261006130000_gan_lai_chu_de_5_de_l11
 # ĐÃ CHẠY 8/10/2026 23:27: 20261008120000_rank_streak_week_theory_review
 # ĐÃ CHẠY 5–6/10/2026 (đối chiếu log scripts/logs/, dọn khỏi FILES 7/10): 20261005140000_weakest_topics, 20261005100000_bank_grade_lop10,
 #   20261005160000_push_subscriptions, 20261006120000_question_bank_dedup, 20261006120000_thpt_fee_ledger, 20261006180000_similar_bank_questions

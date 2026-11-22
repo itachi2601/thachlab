@@ -231,8 +231,10 @@ const stripZeros = (s: string) => (s.includes(".") ? s.replace(/\.?0+$/, "") : s
  * In số kiểu đề Việt Nam. `latex`: dấu phẩy `{,}` và lũy thừa `6{,}4.10^{18}` (dùng trong $…$);
  * không latex: "2,2" (đáp án ô Phần III). Số |x| ≥ 1e5 hoặc < 1e-3 in dạng a.10^n (chỉ khi latex).
  */
-export function formatNum(x: number, spec: RoundSpec, latex = true): string {
+export function formatNum(x: number, spec: RoundSpec, latex = true, giuSo0 = false): string {
   if (!Number.isFinite(x)) return String(x);
+  // giuSo0: phương án A–D giữ số 0 cuối (1,20 chứ không 1,2) để mọi phương án cùng số chữ số — không lộ đáp án
+  const strip = giuSo0 ? (t: string) => t : stripZeros;
   const comma = latex ? "{,}" : ",";
   const ax = Math.abs(x);
   if (latex && "cs" in spec && x !== 0 && (ax >= 1e5 || ax < 1e-3)) {
@@ -240,13 +242,13 @@ export function formatNum(x: number, spec: RoundSpec, latex = true): string {
     let m = roundDec(x / Math.pow(10, e), spec.cs - 1);
     if (Math.abs(m) >= 10) { m /= 10; e += 1; }
     if (Math.abs(m) === 1) return `${m < 0 ? "-" : ""}10^{${e}}`; // "1.10^{5}" dễ đọc nhầm thành 1,10
-    return `${stripZeros(m.toFixed(spec.cs - 1)).replace(".", comma)}.10^{${e}}`;
+    return `${strip(m.toFixed(spec.cs - 1)).replace(".", comma)}.10^{${e}}`;
   }
   const r = roundSpec(x, spec);
   let dec: number;
   if ("tp" in spec) dec = spec.tp;
   else dec = r === 0 ? 0 : Math.max(0, spec.cs - 1 - Math.floor(Math.log10(Math.abs(r))));
-  const s = stripZeros(r.toFixed(dec));
+  const s = strip(r.toFixed(dec));
   return (s === "-0" ? "0" : s).replace(".", comma);
 }
 
@@ -366,7 +368,7 @@ export function tryOnce(v: WorkedVariant, seed: number): TryResult {
   if (picks.length < 3) return { ok: false, loi: lastWhy };
   const opts = shuffle([{ x: exact, loi: "", buoc: undefined as number | undefined, right: true }, ...picks.map((p) => ({ ...p, right: false }))], rng);
   const unit = v.don_vi ? ` ${v.don_vi}` : "";
-  const options = opts.map((o) => `$${formatNum(o.x, spec, true)}$${unit}`);
+  const options = opts.map((o) => `$${formatNum(o.x, spec, true, true)}$${unit}`);
   if (new Set(options).size < 4) return { ok: false, loi: "hai phương án in ra giống nhau sau làm tròn" };
   const notes: Record<string, string> = {};
   opts.forEach((o, i) => { if (!o.right && o.loi) notes[LETTERS[i]] = o.loi; });
