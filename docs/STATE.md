@@ -49,6 +49,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Sách in Ch.3 L10 (Động lực học): bản 1 (144 trang, 10/11) chờ thầy xem; `public/sach-data` ch3 CHƯA commit/deploy (sinh lại bằng `make.py l10-ch3-dong-luc-hoc`).
 - Ruột tập VL10 Ch.4 (bài 23–27): bản 1, 60 trang (`bash scripts/ruot-tap/dung-l10-chuong4.sh`), đã sửa theo HS ảo; Bài tương tự tr.8–9 = bài về nhà giải vào vở (thầy chốt 10/11, giấy chỉ có ô đáp số); **thầy chốt bản 1 ngày 14/11** (VL10 Ch.4 + VL11 Ch.3); PDF in từ `scripts/ruot-tap/out/` (gitignore), chưa ai cầm bản in giấy.
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
+- 22/11 Gói A dụng cụ đo (`components/physics/do-luong/`: thước kẹp, panme, đồng hồ đa năng, đồng hồ hiện số; `/dev/do-luong`): code ở main, CHỜ `deploy.sh` + đăng lý thuyết 48, 47, 51, 45 bằng `cap-nhat-ly-thuyet.sh` (lịch 22h05 22/11). Treo: quy ước sai số dụng cụ thước kẹp (độ chính xác hay nửa) — thầy chốt.
 
 ## Nội dung đang treo
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
@@ -66,8 +67,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
-- Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.
-- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do (20/11: thêm newton3-05 bài 61, motasong-02 bài 27 — ĐÃ ĐĂNG DB 20/11 sáng, thầy cho đăng ngay). Việc 4: 3 clip mẫu `-20261120` thầy duyệt 20/11, ĐÃ GHI DB 21/11 06:29 (bài 57, 83, 12; hẹn 22:05 treo vì máy ngủ; log `scripts/logs/dang-viec4-20261121.log`, 3/3 ✓). Lô 20 clip L12: phiên nhánh clip-l12-lo20. Code việc 1, 2, 6 chưa deploy.
+- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do (20/11: thêm newton3-05 bài 61, motasong-02 bài 27 — ĐÃ ĐĂNG DB 20/11 sáng, thầy cho đăng ngay). Việc 4: 3 clip mẫu `-20261120` thầy duyệt 20/11, ĐÃ GHI DB 21/11 06:29 (bài 57, 83, 12; hẹn 22:05 treo vì máy ngủ; log `scripts/logs/dang-viec4-20261121.log`, 3/3 ✓). Lô 20 clip L12 `-20261121`: thầy duyệt 21/11, kho + 15 bài + khung đã vào main; HẸN GHI DB 22:05 22/11 (`dang-lo20.sh --yes --22h05` + caffeinate, log `scripts/video-thi-nghiem/ra/lo20-dang.log`). Code việc 1, 2, 6 chưa deploy.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.

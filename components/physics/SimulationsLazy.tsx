@@ -44,3 +44,44 @@ export function CurrentBalanceSimulationLazy() {
     </LazyErrorBoundary>
   );
 }
+
+/* ---- Dụng cụ đo (Gói A, docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md mục 3) ---- */
+const ThuocKep = dynamic(() => import("@/components/physics/do-luong/ThuocKep"), { ssr: false, loading });
+
+export function ThuocKepLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <ThuocKep />
+    </LazyErrorBoundary>
+  );
+}
+
+const Panme = dynamic(() => import("@/components/physics/do-luong/Panme"), { ssr: false, loading });
+
+export function PanmeLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <Panme />
+    </LazyErrorBoundary>
+  );
+}
+
+const DongHoDaNang = dynamic(() => import("@/components/physics/do-luong/DongHoDaNang"), { ssr: false, loading });
+
+export function DongHoDaNangLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <DongHoDaNang />
+    </LazyErrorBoundary>
+  );
+}
+
+const DongHoHienSo = dynamic(() => import("@/components/physics/do-luong/DongHoHienSo"), { ssr: false, loading });
+
+export function DongHoHienSoLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <DongHoHienSo />
+    </LazyErrorBoundary>
+  );
+}

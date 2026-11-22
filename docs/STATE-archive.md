@@ -930,3 +930,5 @@ Giao dịch một lượt (`lock_timeout 5s`, tắt `trg_exams_sync_bank` + `trg
 
 - **Việc 6 clip (20/11)**: `20261120120000_lesson_clip_views` CHỜ CHẠY (bảng mới `lesson_clip_views` + RPC `log_clip_view`, rollup >12 tháng; chạy lúc nào cũng được, khuyên sau 22h; đã thử trong giao dịch 20/11). Client gửi khi deploy; tỉ lệ theo clip: `scripts/sql/ty-le-clip-thi-nghiem.sql`.
 - → ĐÃ CHẠY 20/11 08:20 (log `scripts/logs/20261120-082035-20261120120000_lesson_clip_views.log` ở checkout chính); kiểm: 2 bảng + RPC có, RLS bật, anon không đọc/gọi được, pg_cron `lesson-clip-views-rollup` đặt; `gen-database-doc` chạy lại. Client chưa deploy.
+
+- Clip L11 Dao động đợt 2 (8 clip, bài 20/23/24/25/26) + L10 lô 9/11 (6 clip, bài 46/48/76/77) ĐÃ ĐĂNG DB 14/11 ~22h50 (`--chi-video`, kiểm DB 9/9 + HEAD 14/14); vantocdddh2 chưa chèn (bài chưa có hộp exp); chưa thử HS thật — sổ `content/thi-nghiem/so-clip-anh-dong.md`.

@@ -7,6 +7,12 @@ import {
   CurrentBalanceSimulationLazy,
   GasGraphsSimulationLazy,
 } from "@/components/physics/SimulationsLazy";
+import {
+  DongHoDaNangLazy,
+  DongHoHienSoLazy,
+  PanmeLazy,
+  ThuocKepLazy,
+} from "@/components/physics/SimulationsLazy";
 
 /**
  * Gắn mô phỏng tự kéo (C1, C2 — content/thi-nghiem/de-xuat-bo-sung-2026-11-12.md mục C) vào hộp
@@ -19,6 +25,10 @@ const MO_PHONG = {
   "do-thi-khi": GasGraphsSimulationLazy,
   "dien-tich-tu-truong": ChargeInFieldSimulationLazy,
   "can-dong-dien": CurrentBalanceSimulationLazy,
+  "thuoc-kep": ThuocKepLazy,
+  panme: PanmeLazy,
+  "dong-ho-da-nang": DongHoDaNangLazy,
+  "dong-ho-hien-so": DongHoHienSoLazy,
 } as const;
 type Khoa = keyof typeof MO_PHONG;
 
