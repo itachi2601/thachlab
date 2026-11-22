@@ -7,10 +7,7 @@ import {
   type TypeCounts,
 } from "@/features/lessons/types";
 import type { ExamForTaking, ExamQuestion, ExamQuestionPublic, QuestionResponse } from "@/features/exams/types";
-import {
-  buildQuestionResults,
-  gradeQuestion,
-} from "@/features/exams/types";
+import { gradeQuestion } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 import { checkPick, fetchExamReviews, fetchExamsForTaking, unansweredSentinel } from "@/services/exam-server";
 import {
@@ -492,14 +489,22 @@ export interface PracticeQueuePayload {
   clientToken: string;
   lessonId: number | null;
   itemId: number | null;
-  questionCount: number;
-  correctCount: number;
-  score10: number;
   durationSeconds: number;
   timedOut: boolean;
   /** Thời điểm học sinh nộp (ISO) — chỉ có ở bản gửi lại, để giữ thứ tự "lần đầu". */
   occurredAt?: string;
-  rows: {
+  /**
+   * Bản mới (22/11/2026): câu đã bốc + bài làm — server tự chấm (RPC practice_session_submit), không gửi điểm.
+   * Thiếu = phiên kiểu cũ còn trong hàng đợi offline: gửi theo đường INSERT cũ (bị từ chối sau migration
+   * 20261122110500 → bỏ qua).
+   */
+  picks?: { exam_id: number | null; source_index: number; bank_id: number | null }[];
+  responses?: QuestionResponse[];
+  // ---- Chỉ có ở phiên kiểu cũ (trước 22/11/2026) ----
+  questionCount?: number;
+  correctCount?: number;
+  score10?: number;
+  rows?: {
     question_index: number;
     /** null với câu ngân hàng (không thuộc đề nào). */
     exam_id: number | null;
@@ -517,32 +522,40 @@ export interface PracticeQueuePayload {
 }
 
 function toPracticePayload(input: PracticeSessionInput): PracticeQueuePayload {
-  const questions = input.picks.map((p) => p.question);
-  const rows = buildQuestionResults(questions, input.responses).map((r, i) => ({
-    question_index: r.question_index,
-    exam_id: input.picks[i].bankId != null ? null : input.picks[i].examId,
-    source_index: input.picks[i].sourceIndex,
-    ...(input.picks[i].bankId != null ? { bank_id: input.picks[i].bankId as number } : {}),
-    topic_name: r.topic_name,
-    form: r.form,
-    qtype: r.qtype,
-    earned: r.earned,
-    max: r.max,
-    is_correct: r.is_correct,
-    difficulty: r.difficulty,
-  }));
   return {
     studentId: input.studentId,
     clientToken: input.clientToken,
     lessonId: input.lessonId,
     itemId: input.itemId,
-    questionCount: input.picks.length,
-    correctCount: input.correctCount,
-    score10: input.score10,
     durationSeconds: input.durationSeconds,
     timedOut: input.timedOut,
-    rows,
+    picks: input.picks.map((p) =>
+      p.bankId != null
+        ? { exam_id: null, source_index: 0, bank_id: p.bankId }
+        : { exam_id: p.examId, source_index: p.sourceIndex, bank_id: null },
+    ),
+    responses: input.picks.map((_, i) => input.responses[i] ?? null),
   };
+}
+
+/** Phiên kiểu mới: server chấm lại từ câu gốc + bài làm và ghi cả phiên lẫn kết quả từng câu (một giao dịch). */
+async function sendPracticeViaServer(p: PracticeQueuePayload): Promise<SendResult> {
+  try {
+    const { error } = await getSupabase().rpc("practice_session_submit", {
+      p_client_token: p.clientToken,
+      p_lesson_id: p.lessonId,
+      p_item_id: p.itemId,
+      p_picks: p.picks ?? [],
+      p_responses: p.responses ?? [],
+      p_duration_seconds: p.durationSeconds,
+      p_timed_out: p.timedOut,
+      p_occurred_at: p.occurredAt ?? null,
+    });
+    if (error) return isNetworkError(error) ? "network" : "logic";
+    return "ok";
+  } catch (e) {
+    return isNetworkError(e) ? "network" : "logic";
+  }
 }
 
 /**
@@ -551,6 +564,8 @@ function toPracticePayload(input: PracticeSessionInput): PracticeQueuePayload {
  * "network" = đáng gửi lại; "logic" = lỗi DB/RLS, gửi lại cũng vậy.
  */
 async function sendPracticePayload(p: PracticeQueuePayload): Promise<SendResult> {
+  if (p.picks) return sendPracticeViaServer(p);
+  // Phiên kiểu cũ còn trong hàng đợi offline (trước 22/11/2026).
   const supabase = getSupabase();
   try {
     const existing = await supabase
@@ -566,9 +581,9 @@ async function sendPracticePayload(p: PracticeQueuePayload): Promise<SendResult>
         student_id: p.studentId,
         lesson_id: p.lessonId,
         item_id: p.itemId,
-        question_count: p.questionCount,
-        correct_count: p.correctCount,
-        score: p.score10,
+        question_count: p.questionCount ?? 0,
+        correct_count: p.correctCount ?? 0,
+        score: p.score10 ?? 0,
         duration_seconds: p.durationSeconds,
         timed_out: p.timedOut,
       };
@@ -596,14 +611,15 @@ async function sendPracticePayload(p: PracticeQueuePayload): Promise<SendResult>
       if ((have.count ?? 0) > 0) return "ok";
     }
 
-    const names = [...new Set(p.rows.map((r) => r.topic_name).filter((t) => t !== ""))];
+    const legacyRows = p.rows ?? [];
+    const names = [...new Set(legacyRows.map((r) => r.topic_name).filter((t) => t !== ""))];
     const idByName = new Map<string, number>();
     if (names.length) {
       const { data: topics, error } = await supabase.from("question_topics").select("id, name").in("name", names);
       if (error && isNetworkError(error)) return "network";
       for (const t of topics ?? []) idByName.set(t.name as string, t.id as number);
     }
-    const rows = p.rows.map((r) => ({
+    const rows = legacyRows.map((r) => ({
       session_id: sessionId,
       question_index: r.question_index,
       student_id: p.studentId,
