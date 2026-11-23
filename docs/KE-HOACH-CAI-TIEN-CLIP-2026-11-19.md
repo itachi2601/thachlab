@@ -132,10 +132,15 @@ Mỗi việc một phiên riêng, làm được độc lập trừ chỗ ghi "sa
   18. `mayphat3` máy biến áp — 53,2 s; tưởng tăng U thì tăng công suất.
   19. `xoaychieu2` hai LED ngược chiều — đổi chiều f thay vì 2f lần/s.
   20. `thuchanhtu3` dây hợp góc θ (Bài 11 thực hành, cùng bộ cân với mẫu) — tưởng B đổi khi xoay dây.
-- **Kết quả lô 20 (21/11/2026, nhánh `claude/clip-l12-lo20-35bb39`) — CHỜ THẦY DUYỆT, CHƯA GHI DB.** Cả 20: `--do-chu` 12–19 → 0 LỖI,
+- **Kết quả lô 20 (21/11/2026, nhánh `claude/clip-l12-lo20-35bb39`) — ĐÃ GHI DB 22/11 (dòng dưới).** Cả 20: `--do-chu` 12–19 → 0 LỖI,
   từ/phút 158–216 → 130–166 (≤ 180/cảnh), 44,5–50,0 s, 1,2–2,2 MB; cổng B kiem-code ở 283 px; `xuat-khung.py --kiem` OK; đã tải
   `lesson-clips/clip/<tn>-20261121.{mp4,webp}` (HEAD 200 cả 20). Bảng từng clip + link mp4 + danh sách điều thầy cần quyết (10 điểm):
   `content/thi-nghiem/so-clip-anh-dong.md` mục "Việc 4 — lô 20". Kho, bài, DB vẫn bản cũ tới khi thầy duyệt.
+- **Lô 20 ĐÃ GHI DB 22/11/2026 22:26–22:28** (thầy duyệt 21/11 "Duyệt cả", 22/11 "đăng luôn"): kho + 15 bài + khung đổi sang
+  `-20261121` (main 7b24f446f); `dang-lo20.sh --yes` 15/15 ✓, không LOI (log `scripts/video-thi-nghiem/ra/lo20-dang.log`, sao lưu
+  `scripts/logs/ly-thuyet-bai*-backup-*.json`). Kiểm DB 23/11: 20/20 khung trỏ `<tn>-20261121`, đủ `cau_chot`. Sửa chữ theo duyệt:
+  "Nhìn vào" noinang4/camungdt5/luctu5; kho camungdt5 theo chiều dòng (Lenz); bài 13 thêm "α > 90° thì Φ âm"; bài 5 dòng từ khoá
+  "đầu đo chạm điện trở → c nhỏ hơn". Còn: `lib/data/thu-vien-mo-phong.json` giữ "Nhìn vào" cũ (chạy lại `gen-thu-vien-mo-phong.mts`).
 
 ### Việc 5 — Mô phỏng tự kéo sau clip cho thí nghiệm một biến
 - **Model:** Opus (thiết kế tương tác + vật lí), phiên chính làm UI học sinh.

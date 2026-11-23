@@ -417,7 +417,7 @@ Kế hoạch: `docs/KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md` mục Việc 4. Mỗi 
 Khung JSON `video-khung/*.json` đã trỏ bản `-20261120` + mốc mới (`--kiem` OK); kho `content/thi-nghiem/<id>.json` và DB vẫn bản `-20261119`.
 20/11 11h: thầy duyệt → kho JSON + bài 57/83/12 (theory.src/html, bundle) đổi sang `-20261120`, `gan-khung-video.mts` gắn lại khung mốc mới (commit f400fda70). Dry-run `--chi-video` sạch bài 57, 83; bài 12 khác vì hộp mô phỏng việc 5 (clip dời lên trước hộp, `data-mo-phong=can-dong-dien` — bản web chưa deploy thì bỏ qua khoá lạ) → `--cho-phep-khac`. Hẹn `dang-viec4.sh --yes --22h05` (tab terminal, log `scripts/logs/dang-viec4-20261120.log`). Danh sách đề xuất lô 20 clip L12 ở file kế hoạch.
 
-## Việc 4 — lô 20 clip L12 dựng lại theo cổng mới (21/11/2026) **CHỜ THẦY DUYỆT, CHƯA GHI DB**
+## Việc 4 — lô 20 clip L12 dựng lại theo cổng mới (21/11/2026) **ĐÃ GHI DB 22/11/2026 22:26–22:28** (15/15 bài, kiểm DB 23/11: 20/20 khung `-20261121` có `cau_chot`)
 Nhánh `claude/clip-l12-lo20-35bb39`. Mỗi clip một agent Opus, cổng A `--do-chu` 0 LỖI, cổng B kiem-code ở 283 px (1–2 vòng, lượt cuối tự crop). `xuat-khung.py --kiem` OK cả 20; khung JSON trỏ `-20261121`. Đã tải `lesson-clips/clip/<tn>-20261121.{mp4,webp}` (HEAD 200 cả 20). Kho `content/thi-nghiem/<tn>.json`, bài và DB vẫn bản cũ.
 
 | Clip | tn | Từ/phút trước → sau | LỖI trước → sau | Giây | KB | Commit | mp4 |
