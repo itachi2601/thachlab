@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 440 hàm, sinh tự động 2026-11-20
+# Hàm SQL / RPC (schema public) — 445 hàm, sinh tự động 2026-11-23
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -13,6 +13,7 @@ repo — xem trên Supabase Dashboard).
 - `bank_apply_question_fix(p_old jsonb, p_new jsonb)` → jsonb
 - `bank_dup_topic_ids(p_grade text)` → TABLE(topic_id bigint, n bigint)
 - `bank_practice_lesson_ok(p_lesson_id bigint, p_uid uuid)` → boolean
+- `bank_questions_for_student(p_topic_ids bigint[], p_form text, p_source_exam_ids bigint[], p_limit integer)` → jsonb
 - `bank_replace_imgs_in_json(p_q jsonb, p_map jsonb)` → jsonb
 - `bank_replace_question_imgs(p_bank_id bigint, p_map jsonb)` → jsonb
 - `bank_set_distractor_notes(p_bank_id bigint, p_notes jsonb)` → integer
@@ -37,6 +38,7 @@ repo — xem trên Supabase Dashboard).
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
 - `diagnostic_bank_topic_ids()` → bigint[]
 - `diagnostic_can_read(p_student uuid)` → boolean
+- `diagnostic_check_answer(p_bank_id bigint, p_response jsonb)` → jsonb
 - `diagnostic_get(p_student uuid)` → jsonb
 - `diagnostic_maps(p_students uuid[])` → TABLE(student_id uuid, created_at timestamp with time zone, per_topic jsonb)
 - `diagnostic_reset(p_student uuid)` → void
@@ -134,6 +136,7 @@ repo — xem trên Supabase Dashboard).
 - `pl_safe_birth(p text)` → date
 - `pl_student_class_label(p_student uuid)` → text
 - `pl_student_phone_match(p_student uuid, p_phone9 text)` → boolean
+- `practice_session_submit(p_client_token uuid, p_lesson_id bigint, p_item_id bigint, p_picks jsonb, p_responses jsonb, p_duration_seconds integer, p_timed_out boolean, p_occurred_at timestamp with time zone)` → jsonb
 - `preview_cttc_enroll()` → jsonb
 - `preview_cttc_unenroll()` → integer
 - `purge_learning_events(p_before timestamp with time zone)` → bigint
@@ -295,8 +298,8 @@ repo — xem trên Supabase Dashboard).
 - `staff_set_student_phones(p_student uuid, p_phone text, p_parent_phone text)` → void
 - `staff_student_account(p_student uuid)` → TABLE(login_email text, username text, contact_email text, phone text, parent_phone text, birth_date text, gender text, student_code text, created_at timestamp with time zone, last_sign_in_at timestamp with time zone, from_roster boolean)
 - `start_checklist_attempt(p_course_id bigint, p_code text, p_student_id uuid, p_lesson_id text)` → jsonb
-- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `start_equipment_repair(p_id bigint)` → void
+- `start_equipment_repair(p_id bigint, p_assigned_to uuid)` → void
 - `strict_word_similarity(text, text)` → real
 - `strict_word_similarity_commutator_op(text, text)` → boolean
 - `strict_word_similarity_dist_commutator_op(text, text)` → real
@@ -384,6 +387,7 @@ repo — xem trên Supabase Dashboard).
 - `trg_catchup_progress()` → trigger
 - `trg_claim_parent_link()` → trigger
 - `trg_claim_staff_invite()` → trigger
+- `trg_entry_diagnostic_checks_clear()` → trigger
 - `trg_eqr_tutoring_needs()` → trigger
 - `trg_exam_classes_sync_bank()` → trigger
 - `trg_exam_question_results_server_grade()` → trigger
@@ -415,6 +419,7 @@ repo — xem trên Supabase Dashboard).
 - `trial_request_notify()` → trigger
 - `tutoring_check_topics(p_slot_id bigint, p_topics bigint[], p_check_deadline boolean, p_check_ready boolean)` → void
 - `tutoring_exit_attempt_guard()` → trigger
+- `tutoring_exit_quiz_submit(p_need_id bigint, p_question_ids bigint[], p_responses jsonb, p_window_id uuid)` → jsonb
 - `tutoring_exit_window_defaults()` → trigger
 - `tutoring_exit_window_slot_guard()` → trigger
 - `tutoring_followup_report(p_class_id bigint, p_days integer)` → TABLE(registration_id bigint, slot_id bigint, work_date date, start_time time without time zone, assistant_name text, student_id uuid, student_name text, topic_id bigint, topic_name text, attended boolean, has_session boolean, best_pct integer, attempts integer, passed boolean, cleared boolean)
