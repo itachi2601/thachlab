@@ -26,6 +26,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
+- 23/11 Sức khỏe HS + trang chủ, 5 chỉnh nhỏ (`d1ea76ba8`: bỏ "0/3 buổi", thẻ "Trước buổi đầu tiên", cue 14px, hero 375px, thẻ cài app sau chọn lớp): ĐÃ DEPLOY 23/11 từ main `302b15be0` (bản này kèm `/suc-khoe/tai-nha` của phiên khác). Trang chủ đã kiểm trên site thật; 3 chỗ Sức khỏe chưa xem bằng tài khoản HS.
 - Clip việc 1/2/5/6 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md`): ĐÃ DEPLOY 21/11 06:29 (`01eab4d3f`, chunk có `log_clip_view`); `lesson_clip_views` bắt đầu ghi từ 21/11 — xem số liệu sau 2–4 tuần. Chưa thử bằng HS thật.
 - Dashboard GV CNC: tab "Buổi học" theo nhịp lớp đảo ngược (10/11, `TeacherFlipBoard`, xem thử `/dev/cnc-bang-buoi`) — ĐÃ DEPLOY 10/11 từ commit c9eb40921 (kèm `dac7911f7` đáp án sau 2 lượt + `d72917876` cổng G tính `final`; CHƯA gồm CTTC thanh đáy `db053cc45`). Mở được bằng tài khoản thầy với lớp CĐ CK 24A; chưa thử trong một buổi dạy thật.
 - `ExamDoneLocked` ĐÃ DEPLOY 18/11 (migration đáp án sau 2 lượt chạy 10/11, chi tiết STATE-archive); còn thử bằng HS thật (đề 1297, lớp 11, 375px).
