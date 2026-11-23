@@ -1,3 +1,4 @@
+import type { QuestionResponse } from "@/features/exams/types";
 import { getSupabase } from "@/services/supabase";
 import { fetchLessonWithItemsStatic } from "@/services/static-content";
 
@@ -761,30 +762,25 @@ export async function fetchMyExitAttempts(studentId: string, needIds: number[]):
   return ((data ?? []) as unknown as ExitAttemptRow[]).map(toExitAttempt);
 }
 
-/** Ghi một lượt tự kiểm tra — trigger DB tính pct/passed và tự đóng mục nếu đạt. */
-export async function logExitAttempt(input: {
+/**
+ * Nộp bài tự kiểm tra / kiểm tra cuối buổi: server chấm từ question_bank rồi ghi tutoring_exit_attempts
+ * (RPC tutoring_exit_quiz_submit, migration 20261122090000). Trả thêm đúng/sai từng câu (không có đáp án).
+ */
+export async function submitExitQuiz(input: {
   tutoringNeedId: number;
-  studentId: string;
   questionIds: number[];
-  total: number;
-  correct: number;
-  /** Có thì đây là lượt làm trong cửa sổ kiểm tra cuối buổi (70%, 10 câu, được tính điểm trợ giảng). */
+  responses: QuestionResponse[];
   windowId?: string;
-}): Promise<ExitAttempt> {
-  const { data, error } = await getSupabase()
-    .from("tutoring_exit_attempts")
-    .insert({
-      tutoring_need_id: input.tutoringNeedId,
-      student_id: input.studentId,
-      question_ids: input.questionIds,
-      total: input.total,
-      correct: input.correct,
-      ...(input.windowId ? { window_id: input.windowId } : {}),
-    })
-    .select(EXIT_ATTEMPT_SELECT)
-    .single();
-  if (error) throw error;
-  return toExitAttempt(data as unknown as ExitAttemptRow);
+}): Promise<ExitAttempt & { perQuestion: boolean[] }> {
+  const { data, error } = await getSupabase().rpc("tutoring_exit_quiz_submit", {
+    p_need_id: input.tutoringNeedId,
+    p_question_ids: input.questionIds,
+    p_responses: input.responses,
+    p_window_id: input.windowId ?? null,
+  });
+  if (error) throw new Error(error.message);
+  const row = data as ExitAttemptRow & { per_question?: boolean[] | null };
+  return { ...toExitAttempt(row), perQuestion: Array.isArray(row.per_question) ? row.per_question : [] };
 }
 
 // ============================================================

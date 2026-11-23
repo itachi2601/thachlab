@@ -9,6 +9,7 @@ import { getSupabase, supabaseConfigured } from "@/services/supabase";
 import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { pathAfterLogin, safeNextPath } from "@/lib/after-login";
+import { CHANGE_PASSWORD_PATH, isDefaultPassword, markMustChangePassword, mustChangePassword } from "@/lib/mat-khau-mac-dinh";
 
 type UserType = "student" | "teacher";
 
@@ -50,7 +51,11 @@ export default function LoginPage() {
   const destination = nextPath ?? pathAfterLogin(realProfile?.role);
   useEffect(() => {
     if (authLoading || !session) return;
-    const to = safeNextPath(new URLSearchParams(window.location.search).get("next")) ?? pathAfterLogin(realProfile?.role);
+    const dest = safeNextPath(new URLSearchParams(window.location.search).get("next")) ?? pathAfterLogin(realProfile?.role);
+    // Mật khẩu vẫn là mã số HS → đổi mật khẩu trước, xong mới tới đích.
+    const to = mustChangePassword(session.user.id)
+      ? `${CHANGE_PASSWORD_PATH}/?next=${encodeURIComponent(dest)}`
+      : dest;
     router.replace(to);
     // WebView cũ / mạng yếu đôi khi router.replace không chạy (kẹt "đang chuyển hướng"): sau 2,5s chuyển cứng.
     const t = window.setTimeout(() => window.location.assign(to), 2500);
@@ -69,10 +74,11 @@ export default function LoginPage() {
       const { data: resolved } = await getSupabase().rpc("resolve_login_email", { p_login: typed });
       loginEmail = typeof resolved === "string" && resolved ? resolved : `${typed}@thachlab.local`;
     }
-    const { error } = await getSupabase().auth.signInWithPassword({
+    const { data: signIn, error } = await getSupabase().auth.signInWithPassword({
       email: loginEmail,
       password,
     });
+    if (!error && signIn.user && isDefaultPassword(typed, password)) markMustChangePassword(signIn.user.id, typed);
 
     setBusy(false);
     if (error) {

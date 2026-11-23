@@ -1,4 +1,5 @@
 import AuthProvider from "@/components/auth/AuthProvider";
+import DefaultPasswordGate from "@/components/auth/DefaultPasswordGate";
 import PreviewAsStudentToggle from "@/components/auth/PreviewAsStudentToggle";
 import RankCelebrationWatcher from "@/components/rank/RankCelebrationWatcher";
 import BugReportWidget from "@/components/BugReportWidget";
@@ -19,6 +20,7 @@ export default function AuthedShell({ children }: { children: React.ReactNode })
   return (
     <AuthProvider>
       {children}
+      <DefaultPasswordGate />
       <PreviewAsStudentToggle />
       <BugReportWidget />
       <RankCelebrationWatcher />

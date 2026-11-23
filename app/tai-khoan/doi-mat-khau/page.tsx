@@ -7,8 +7,11 @@ import { Check, KeyRound } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import RequireAuth from "@/components/auth/RequireAuth";
+import { useAuth } from "@/components/auth/AuthProvider";
 import { useToast } from "@/components/ui/Toast";
 import { changeMyPassword } from "@/services/password-reset";
+import { safeNextPath } from "@/lib/after-login";
+import { clearMustChangePassword, mustChangePassword } from "@/lib/mat-khau-mac-dinh";
 
 const inputCls =
   "w-full rounded-xl border border-line-strong bg-surface-2 px-4 py-2.5 text-ink placeholder:text-slate-500 focus:border-primary focus:outline-none";
@@ -24,6 +27,12 @@ function Card({ children }: { children: React.ReactNode }) {
 function ChangePasswordForm() {
   const router = useRouter();
   const toast = useToast();
+  const { session, signOut } = useAuth();
+  // Đăng nhập bằng mật khẩu mặc định (= mã số HS): bắt buộc đổi trước khi dùng tiếp (DefaultPasswordGate).
+  const forced = mustChangePassword(session?.user.id);
+  const [nextPath] = useState(() =>
+    typeof window === "undefined" ? null : safeNextPath(new URLSearchParams(window.location.search).get("next")),
+  );
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -39,10 +48,10 @@ function ChangePasswordForm() {
           Mật khẩu mới đã có hiệu lực — lần đăng nhập sau nhớ dùng mật khẩu này.
         </p>
         <Link
-          href="/tai-khoan"
+          href={nextPath ?? "/tai-khoan"}
           className="mt-6 flex items-center justify-center rounded-xl bg-primary py-3 text-sm font-bold text-white"
         >
-          Về Tài khoản của tôi
+          {nextPath ? "Tiếp tục" : "Về Tài khoản của tôi"}
         </Link>
       </Card>
     );
@@ -61,9 +70,14 @@ function ChangePasswordForm() {
       toast("error", "Hai lần nhập mật khẩu mới không khớp.");
       return;
     }
+    if (forced && newPassword.trim().toLowerCase() === forced.login) {
+      toast("error", "Mật khẩu mới phải khác mã số học sinh.");
+      return;
+    }
     setBusy(true);
     try {
       await changeMyPassword(currentPassword, newPassword);
+      clearMustChangePassword();
       setDone(true);
     } catch (error) {
       toast("error", errorMessage(error, "Chưa đổi được mật khẩu."));
@@ -75,9 +89,13 @@ function ChangePasswordForm() {
   return (
     <Card>
       <KeyRound className="mx-auto text-primary" size={36} />
-      <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">Đổi mật khẩu</h1>
+      <h1 className="mt-4 text-center font-display text-xl font-bold text-ink">
+        {forced ? "Đổi mật khẩu trước khi học tiếp" : "Đổi mật khẩu"}
+      </h1>
       <p className="mt-2 text-center text-sm text-muted">
-        Nhập mật khẩu hiện tại và mật khẩu mới muốn dùng từ giờ.
+        {forced
+          ? "Mật khẩu của em đang là mã số học sinh — ai biết mã số cũng vào được tài khoản. Mật khẩu hiện tại chính là mã số; đặt mật khẩu mới chỉ em biết."
+          : "Nhập mật khẩu hiện tại và mật khẩu mới muốn dùng từ giờ."}
       </p>
       <form onSubmit={submit} className="mt-5 space-y-3">
         <input
@@ -118,13 +136,23 @@ function ChangePasswordForm() {
           Nhờ giáo viên cấp mã đặt lại
         </Link>
       </p>
-      <button
-        type="button"
-        onClick={() => router.push("/tai-khoan")}
-        className="mt-2 w-full text-center text-xs text-slate-500 hover:text-ink"
-      >
-        ← Quay lại Tài khoản của tôi
-      </button>
+      {forced ? (
+        <button
+          type="button"
+          onClick={() => void signOut().then(() => router.replace("/dang-nhap"))}
+          className="mt-2 min-h-11 w-full text-center text-xs text-slate-500 hover:text-ink"
+        >
+          Đăng xuất
+        </button>
+      ) : (
+        <button
+          type="button"
+          onClick={() => router.push("/tai-khoan")}
+          className="mt-2 w-full text-center text-xs text-slate-500 hover:text-ink"
+        >
+          ← Quay lại Tài khoản của tôi
+        </button>
+      )}
     </Card>
   );
 }

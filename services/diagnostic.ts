@@ -1,3 +1,4 @@
+import type { QuestionResponse } from "@/features/exams/types";
 import { getSupabase } from "./supabase";
 
 /** Độ chắc em tự chọn sau mỗi câu (thầy chốt 14/10/2026: 3 mức). */
@@ -90,6 +91,16 @@ export async function submitDiagnostic(
 }
 
 /** Thầy / trợ giảng cho em làm lại. */
+/**
+ * Chấm 1 câu chẩn đoán ở server (RPC diagnostic_check_answer, migration 20261122090000): chỉ trả đúng/sai,
+ * không trả đáp án; lần trả lời đầu của mỗi câu được ghi lại và là lần được tính.
+ */
+export async function checkDiagnosticAnswer(bankId: number, response: QuestionResponse): Promise<boolean> {
+  const { data, error } = await getSupabase().rpc("diagnostic_check_answer", { p_bank_id: bankId, p_response: response });
+  if (error) throw new Error(error.message);
+  return (data as { is_correct?: boolean } | null)?.is_correct === true;
+}
+
 export async function resetDiagnostic(studentId: string): Promise<void> {
   const { error } = await getSupabase().rpc("diagnostic_reset", { p_student: studentId });
   if (error) throw new Error(error.message);
