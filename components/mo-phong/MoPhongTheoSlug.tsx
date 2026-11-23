@@ -19,6 +19,10 @@ const MAP: Record<string, ComponentType> = {
   "can-dong-dien": dynamic(() => import("@/components/physics/CurrentBalanceSimulation"), { ssr: false, loading }),
   "nem-xien": dynamic(() => import("@/components/physics/ProjectileSimulation").then((m) => m.ProjectileSimulation), { ssr: false, loading }),
   "giao-thoa-song": dynamic(() => import("@/components/physics/InterferenceSimulation").then((m) => m.InterferenceSimulation), { ssr: false, loading }),
+  "thuoc-kep": dynamic(() => import("@/components/physics/do-luong/ThuocKep"), { ssr: false, loading }),
+  panme: dynamic(() => import("@/components/physics/do-luong/Panme"), { ssr: false, loading }),
+  "dong-ho-da-nang": dynamic(() => import("@/components/physics/do-luong/DongHoDaNang"), { ssr: false, loading }),
+  "dong-ho-hien-so": dynamic(() => import("@/components/physics/do-luong/DongHoHienSo"), { ssr: false, loading }),
 };
 
 export default function MoPhongTheoSlug({ slug }: { slug: string }) {
