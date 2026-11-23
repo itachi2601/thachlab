@@ -7,6 +7,15 @@ import type { ReactNode } from "react";
 
 export const C_MAX = "#c2410c", C_MIN = "#0e7490", C_HL = "#facc15";
 
+/**
+ * Chất lỏng (thầy chốt 23/11/2026): TRONG SUỐT phủ màu — nhìn xuyên thấy nét ống, điểm A/B, thước bên trong.
+ *  - LONG_DO: chất lỏng nặng / thuỷ ngân / chất ở đáy ống U.
+ *  - LONG_XANH: nước, dầu, chất lỏng nhẹ, bể nước.
+ * Tô bằng fillOpacity LONG_OP (≈ một lớp kính màu), mặt thoáng vẽ nét liền cùng màu đậm để thấy mức chất lỏng (M3, M4).
+ * Không dùng xám/đen đặc: che mất điểm và nhãn nằm trong chất lỏng, nền tối thì thành mảng đen.
+ */
+export const LONG_DO = "#dc2626", LONG_XANH = "#2563eb", LONG_OP = 0.22;
+
 export const fmt = (x: number, dp = 1) => {
   const s = x.toFixed(dp).replace(/\.?0+$/, "");
   return (s === "-0" ? "0" : s).replace(".", ",");

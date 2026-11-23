@@ -1,3 +1,4 @@
+import { LONG_DO, LONG_OP } from "@/components/lessons/cong-cu/chung";
 import type { ChieuBai } from "./types";
 
 /**
@@ -106,12 +107,15 @@ export function HinhOngThuyNgan({ lop }: { lop: Set<string> }) {
         </marker>
       </defs>
       {/* Chậu + thuỷ ngân */}
-      <path d="M32 160 L50 245 Q50 252 58 252 L302 252 Q310 252 310 245 L328 160 Z" fill="var(--hg)" />
+      {/* Thuỷ ngân: đỏ trong suốt (LONG_DO, thầy chốt 23/11) — thấy xuyên ống, điểm A/B; mặt thoáng nét đỏ đậm */}
+      <path d="M32 160 L50 245 Q50 252 58 252 L302 252 Q310 252 310 245 L328 160 Z" fill={LONG_DO} fillOpacity={LONG_OP} />
+      <line x1="32" y1="160" x2="328" y2="160" stroke={LONG_DO} strokeWidth="1.6" />
       <path d="M30 150 L50 245 Q50 252 58 252 L302 252 Q310 252 310 245 L330 150" fill="none" stroke="currentColor" strokeWidth="2" />
 
       {/* Ống ① */}
       <rect x="91" y="41" width="20" height="89" fill="var(--s1-nhat)" />
-      <rect x="91" y="130" width="20" height="30" fill="var(--hg)" />
+      <rect x="91" y="130" width="20" height="30" fill={LONG_DO} fillOpacity={LONG_OP} />
+      <line x1="91" y1="130" x2="111" y2="130" stroke={LONG_DO} strokeWidth="1.6" />
       <path d="M90 228 V40 H112 V228" fill="none" stroke="currentColor" strokeWidth="2" />
       <text x="101" y="28" textAnchor="middle" className="otn-chu" fill="var(--s1)">①</text>
       <g stroke="var(--s1)" strokeWidth="1.6">

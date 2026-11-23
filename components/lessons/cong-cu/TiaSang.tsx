@@ -30,7 +30,7 @@
  *  "chu" | "vang" (Mặt Trời). Mọi mục nhận `het`.
  */
 
-import { C_HL, C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
+import { C_HL, C_MAX, C_MIN, Chevron, LONG_OP, LONG_XANH, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { TiaSangLop, TiaSangMoi, TiaSangPhan, TiaSangTuDoMuc, TiaSangHuongTuDo } from "@/features/lessons/types";
 
 type Props = { moi: TiaSangMoi[]; goc: number[]; x0?: number; chieu?: "xuong" | "len"; hinh?: TiaSangLop[]; lop?: TiaSangLop[][]; layer: number };
@@ -186,8 +186,10 @@ function TiaSangXepLop({ moi, goc, x0 = 10, chieu = "xuong", hinh = [], lop, lay
           sb = j === 0 ? sMat[0] : j === moi.length - 1 ? tong : sMat[j];
         const y1 = Math.min(Y(sa), Y(sb)),
           h = Math.abs(Y(sb) - Y(sa));
-        const dam = m.dam ?? (j === 0 ? 0 : 0.08 + 0.07 * j);
-        return dam > 0 ? <rect key={`n${j}`} x={0} y={y1} width={W} height={h} fill={C_MIN} fillOpacity={dam} /> : null;
+        // Chất lỏng (nước, dầu, rượu…) tô xanh trong suốt như mọi hình chất lỏng (LONG_XANH, 23/11/2026) kể cả khi là lớp đầu.
+        const long = /nước|dầu|rượu|chất lỏng|glixerin|benzen/i.test(m.ten ?? "");
+        const dam = m.dam ?? (long ? LONG_OP : j === 0 ? 0 : 0.08 + 0.07 * j);
+        return dam > 0 ? <rect key={`n${j}`} x={0} y={y1} width={W} height={h} fill={long ? LONG_XANH : C_MIN} fillOpacity={dam} /> : null;
       })}
       {sMat.slice(0, -1).map((s, k) => (
         <line key={`m${k}`} x1={0} y1={Y(s)} x2={W} y2={Y(s)} stroke="currentColor" strokeWidth={0.1} />

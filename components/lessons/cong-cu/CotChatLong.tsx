@@ -3,7 +3,7 @@
 /**
  * Họ hình `cot_chat_long` (đợt Đ4 3/11/2026, mẫu đầu: bài 34 Khối lượng riêng. Áp suất chất lỏng L10, dạng 4): bình chứa
  * chất lỏng vẽ nét đơn giản, độ cao đo bằng cm theo đúng tỉ lệ đề. Hai cảnh:
- *  - `ong_u`: ống chữ U hai nhánh hở, chất lỏng nặng (xám) ở đáy, chất lỏng nhẹ (lam) trên nhánh trái; y = 0 là mặt phân
+ *  - `ong_u`: ống chữ U hai nhánh hở, chất lỏng nặng (đỏ trong) ở đáy, chất lỏng nhẹ (xanh trong) trên nhánh trái; y = 0 là mặt phân
  *    cách. Mục: muc {h1, h2} (cột nhẹ trên mặt phân cách · mặt chất nặng nhánh phải), diem {ten: "A"|"B"}, ngang (nét đứt
  *    nối A–B), thuoc {ong: "trai"|"phai"|"giua", tu, den, nhan} (giữa: thước giữa hai nhánh + gạch dóng hai mức).
  *  - `be`: bể rộng, mặt nước y = 0, khối hộp (`rong` × `cao` cm) ở giữa. Mục: khoi {chim, vat?} (khối mới nhất đang hiện
@@ -16,7 +16,7 @@
  * Hình không đổi cao giữa các bước (D2: khung theo h_max/tren/sau); nhãn trên hình (N8, H3); lực bằng nét + tên (H4).
  */
 
-import { C_MAX, C_MIN, Chevron, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
+import { C_MAX, C_MIN, Chevron, LONG_DO, LONG_OP, LONG_XANH, Label, chiaDong, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
 import type { CotChatLongCanh, CotChatLongLop } from "@/features/lessons/types";
 
 type Props = { canh: CotChatLongCanh; hinh?: CotChatLongLop[]; lop?: CotChatLongLop[][]; layer: number };
@@ -58,11 +58,11 @@ export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) 
       const hg = `M${XL - R} ${Y(0)} H${XL + R} V${yc} H${XR - R} V${Y(it.h2)} H${XR + R} V${YB} H${XL - R} Z`;
       return (
         <g className={cls}>
-          <path d={hg} fill="currentColor" fillOpacity={0.32} />
-          <rect x={XL - R} y={Y(it.h1)} width={2 * R} height={Y(0) - Y(it.h1)} fill={C_MIN} fillOpacity={0.22} />
-          <line x1={XL - R} y1={Y(it.h1)} x2={XL + R} y2={Y(it.h1)} stroke={C_MIN} strokeWidth={0.08} />
-          <line x1={XR - R} y1={Y(it.h2)} x2={XR + R} y2={Y(it.h2)} stroke="currentColor" strokeWidth={0.08} />
-          <line x1={XL - R} y1={Y(0)} x2={XL + R} y2={Y(0)} stroke="currentColor" strokeWidth={0.06} />
+          <path d={hg} fill={LONG_DO} fillOpacity={LONG_OP} />
+          <rect x={XL - R} y={Y(it.h1)} width={2 * R} height={Y(0) - Y(it.h1)} fill={LONG_XANH} fillOpacity={LONG_OP} />
+          <line x1={XL - R} y1={Y(it.h1)} x2={XL + R} y2={Y(it.h1)} stroke={LONG_XANH} strokeWidth={0.1} />
+          <line x1={XR - R} y1={Y(it.h2)} x2={XR + R} y2={Y(it.h2)} stroke={LONG_DO} strokeWidth={0.1} />
+          <line x1={XL - R} y1={Y(0)} x2={XL + R} y2={Y(0)} stroke={LONG_DO} strokeWidth={0.08} />
         </g>
       );
     }
@@ -169,7 +169,7 @@ export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) 
   return (
     <svg viewBox={`-0.4 -0.2 ${W + 0.8} ${H + 3.7}`} className="cc-fig" role="img" aria-label={u ? "Ống chữ U chứa hai chất lỏng" : "Khối hộp nổi trong bể nước"}>
       {/* chất lỏng + khối trước, nét bình đè lên, nhãn/lực sau cùng */}
-      {!u && <rect x={1.6} y={Y0} width={W - 3.2} height={YB - Y0} fill={C_MIN} fillOpacity={0.14} />}
+      {!u && <rect x={1.6} y={Y0} width={W - 3.2} height={YB - Y0} fill={LONG_XANH} fillOpacity={LONG_OP} />}
       {thu(hinhHien.filter((it) => !sau(it)), false, "h")}
       {thu(items.filter((it) => !sau(it)), true, "l")}
       {u ? (
@@ -183,7 +183,7 @@ export default function CotChatLong({ canh, hinh = [], lop, layer: Lr }: Props) 
       ) : (
         <g>
           <path d={`M1.6 ${Y0 - 1.6} V${YB} H${W - 1.6} V${Y0 - 1.6}`} fill="none" stroke="currentColor" strokeWidth={0.14} />
-          <line x1={1.6} y1={Y0} x2={W - 1.6} y2={Y0} stroke={C_MIN} strokeWidth={0.08} />
+          <line x1={1.6} y1={Y0} x2={W - 1.6} y2={Y0} stroke={LONG_XANH} strokeWidth={0.1} />
         </g>
       )}
       {thu(hinhHien.filter(sau), false, "hs")}
@@ -245,8 +245,8 @@ function OngKin({ dai, hinh, lop, layer: Lr }: { dai: number; hinh: CotChatLongL
       return (
         <g className={cls}>
           <rect x={x - R2} y={Y(kB)} width={2 * R2} height={Y(kA) - Y(kB)} fill={C_MIN} fillOpacity={0.16 * op} />
-          <rect x={x - R2} y={Y(gB)} width={2 * R2} height={Y(gA) - Y(gB)} fill="currentColor" fillOpacity={0.34 * op} />
-          <line x1={x - R2} y1={yMat} x2={x + R2} y2={yMat} stroke="currentColor" strokeWidth={0.07} strokeDasharray={it.dut ? "0.25 0.18" : undefined} />
+          <rect x={x - R2} y={Y(gB)} width={2 * R2} height={Y(gA) - Y(gB)} fill={LONG_DO} fillOpacity={LONG_OP * op} />
+          <line x1={x - R2} y1={yMat} x2={x + R2} y2={yMat} stroke={LONG_DO} strokeWidth={0.1} strokeDasharray={it.dut ? "0.25 0.18" : undefined} />
           <path d={`M${x - R2} ${Y(0)} V${Y(dai)} M${x + R2} ${Y(0)} V${Y(dai)}`} stroke="currentColor" strokeWidth={0.14} fill="none" />
           <line x1={x - R2 - 0.07} y1={yKin} x2={x + R2 + 0.07} y2={yKin} stroke="currentColor" strokeWidth={0.3} />
           {it.nhan_khi && thuoc(xt, Y(kA), Y(kB), it.nhan_khi, trai)}

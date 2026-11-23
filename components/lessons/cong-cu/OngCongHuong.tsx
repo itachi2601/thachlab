@@ -13,7 +13,7 @@
  * A, x_max không dùng. Quy tắc: N8 + H3 (nhãn trên hình), H4 (nét đường bao khác nét nước), N5, B4 (không chạy).
  */
 
-import { C_MAX, C_MIN, Chevron, Label, dangHien, ghiMoiNhat } from "@/components/lessons/cong-cu/chung";
+import { C_MAX, C_MIN, Chevron, Label, dangHien, ghiMoiNhat, LONG_OP, LONG_XANH } from "@/components/lessons/cong-cu/chung";
 import type { SongDayCanh, SongDayLop } from "@/features/lessons/types";
 
 type Props = { lam: number; canh: Extract<SongDayCanh, { kieu: "ong" }>; lop?: SongDayLop[][]; layer: number };
@@ -61,8 +61,8 @@ export default function OngCongHuong({ lam, canh, lop, layer: L }: Props) {
       {/* nước */}
       {nuoc && nuoc.l < canh.dai && (
         <g className="cc-in">
-          <rect x={XC - R} y={Y(nuoc.l)} width={2 * R} height={yDay - Y(nuoc.l)} fill={C_MIN} fillOpacity={0.16} />
-          <line x1={XC - R} y1={Y(nuoc.l)} x2={XC + R} y2={Y(nuoc.l)} stroke={C_MIN} strokeWidth={0.12} />
+          <rect x={XC - R} y={Y(nuoc.l)} width={2 * R} height={yDay - Y(nuoc.l)} fill={LONG_XANH} fillOpacity={LONG_OP} />
+          <line x1={XC - R} y1={Y(nuoc.l)} x2={XC + R} y2={Y(nuoc.l)} stroke={LONG_XANH} strokeWidth={0.12} />
         </g>
       )}
       {/* thành ống: miệng hở, đáy kín */}
