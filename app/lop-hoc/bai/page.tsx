@@ -151,6 +151,20 @@ function LessonLoader() {
     const timer = window.setTimeout(() => setPresenting(true), 0);
     return () => window.clearTimeout(timer);
   }, []);
+  // "#chieu-btm-3" → mở thẳng trình chiếu dạng 3 của mục Bài tập mẫu đầu tiên (thầy lưu link cho tiết chữa bài).
+  // Chờ items tải xong và đã xác định quyền giáo viên; chỉ mở một lần mỗi lần vào trang.
+  const daMoBtmRef = useRef(false);
+  useEffect(() => {
+    if (daMoBtmRef.current || !canPresent || !items) return;
+    const m = /^#chieu-btm-(\d+)$/i.exec(currentHash());
+    if (!m) return;
+    daMoBtmRef.current = true;
+    const it = items.find((x) => x.kind === "bai_tap_mau" && x.questions.length > 0);
+    if (!it) return;
+    const start = Math.min(Math.max(Number(m[1]) - 1, 0), it.questions.length - 1);
+    const timer = window.setTimeout(() => setChieuBtm({ itemId: it.id, start }), 0);
+    return () => window.clearTimeout(timer);
+  }, [canPresent, items]);
   // Mục lý thuyết đã đăng và có nội dung — nguồn duy nhất cho bộ trang chiếu, không gọi mạng.
   const theoryItems = useMemo(
     () => (items ?? []).filter((item) => item.kind === "ly_thuyet" && item.body_html.trim() !== ""),
@@ -1776,7 +1790,14 @@ function LessonLoader() {
       {chieuBtm && (() => {
         const it = items?.find((x) => x.id === chieuBtm.itemId);
         return it && it.questions.length > 0 ? (
-          <BtmPresenter questions={it.questions} start={chieuBtm.start} title={title} onClose={() => setChieuBtm(null)} />
+          <BtmPresenter
+            questions={it.questions}
+            start={chieuBtm.start}
+            title={title}
+            lessonId={Number.isFinite(id) ? id : undefined}
+            itemId={it.id}
+            onClose={() => setChieuBtm(null)}
+          />
         ) : null;
       })()}
     </div>

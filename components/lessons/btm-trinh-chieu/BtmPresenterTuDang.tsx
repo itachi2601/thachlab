@@ -10,11 +10,15 @@ export default function BtmPresenterTuDang({
   questions,
   start,
   title,
+  lessonId,
+  itemId,
   onClose,
 }: {
   questions: LessonWorkedQuestion[];
   start: number;
   title?: string;
+  lessonId?: number;
+  itemId?: number;
   onClose: () => void;
 }) {
   const { bais, batDau } = useMemo(() => {
@@ -25,5 +29,5 @@ export default function BtmPresenterTuDang({
     };
   }, [questions, start]);
   if (!bais.length) return null;
-  return <BtmPresenter bais={bais} start={batDau} title={title} onClose={onClose} />;
+  return <BtmPresenter bais={bais} start={batDau} title={title} lessonId={lessonId} itemId={itemId} onClose={onClose} />;
 }

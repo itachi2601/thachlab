@@ -106,6 +106,7 @@ export function tuDang(q: LessonWorkedQuestion, idx: number): ChieuBai {
   const [so, ...ten] = (q.label || `Ví dụ ${idx + 1}`).split(" · ");
   return {
     nhan: so,
+    stt: idx,
     dang: ten.join(" · ") || undefined,
     de_html: q.problem_html ?? q.body_html,
     tom_de: q.tom_de?.cho?.length || q.tom_de?.tim?.length ? q.tom_de : undefined,

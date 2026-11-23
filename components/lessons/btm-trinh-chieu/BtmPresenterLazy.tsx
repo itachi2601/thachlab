@@ -17,7 +17,7 @@ const Inner = dynamic(() => import("./BtmPresenterTuDang"), {
   ),
 });
 
-export default function BtmPresenterLazy(props: { questions: LessonWorkedQuestion[]; start: number; title?: string; onClose: () => void }) {
+export default function BtmPresenterLazy(props: { questions: LessonWorkedQuestion[]; start: number; title?: string; lessonId?: number; itemId?: number; onClose: () => void }) {
   return (
     <LazyErrorBoundary
       fallback={

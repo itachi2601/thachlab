@@ -61,6 +61,8 @@ export interface ChieuHinhCtx {
 /** Một dạng đã sẵn sàng chiếu (sau tu-dang.ts, hoặc soạn tay ở trang /dev). */
 export interface ChieuBai {
   nhan: string;
+  /** Vị trí dạng trong mục Bài tập mẫu (0-based, tính cả dạng không chiếu được) — dùng cho link sâu #chieu-btm-<stt+1>. */
+  stt?: number;
   dang?: string;
   de_html: string;
   tom_de?: { cho: string[]; tim: string[] };

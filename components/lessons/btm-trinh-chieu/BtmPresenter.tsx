@@ -1,8 +1,10 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, Maximize2, Minimize2, Moon, RotateCcw, Sun, X } from "lucide-react";
+import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { ChevronLeft, ChevronRight, Keyboard, Maximize2, Minimize2, Moon, NotebookPen, RotateCcw, Sun, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
+import PresenterNoteBox from "@/components/lessons/PresenterNoteBox";
+import { PresenterInkTools, penLabelOf, usePresenterInk } from "@/components/lessons/presenter-ink";
 import type { ChieuBai } from "@/features/lessons/btm-trinh-chieu/types";
 import s from "./BtmPresenter.module.css";
 
@@ -21,6 +23,20 @@ type Nhip = { k: "de" } | { k: "kt" } | { k: "buoc"; b: number; n: number } | { 
 type Bg = "light" | "dark";
 const BG_STORE = "thachlab-presenter-bg";
 const ABC = ["A", "B", "C", "D"];
+/** Cỡ chữ riêng của bài tập mẫu (gốc 1,55rem ≠ lý thuyết 1,3rem) nên nhớ khoá riêng. */
+const ZOOM_STORE = "thachlab-btm-zoom";
+const ZOOM_MIN = 0.7;
+const ZOOM_MAX = 1.8;
+const ZOOM_STEP = 0.1;
+
+function docZoom(): number {
+  try {
+    const v = Number(localStorage.getItem(ZOOM_STORE));
+    return v >= ZOOM_MIN && v <= ZOOM_MAX ? v : 1;
+  } catch {
+    return 1;
+  }
+}
 
 function docBg(): Bg {
   try {
@@ -36,12 +52,18 @@ export default function BtmPresenter({
   bais,
   start = 0,
   title,
+  lessonId,
+  itemId,
   onClose,
 }: {
   bais: ChieuBai[];
   start?: number;
   /** Tên bài học — hiện ở thanh trên. */
   title?: string;
+  /** Có lessonId → bật ghi chú nhanh (phím N, bảng teacher_lesson_notes). Trang /dev không truyền. */
+  lessonId?: number;
+  /** Mục Bài tập mẫu đang chiếu (lesson_items.id) — gắn vào ghi chú. */
+  itemId?: number | null;
   onClose?: () => void;
 }) {
   const [d, setD] = useState(() => Math.min(Math.max(start, 0), Math.max(bais.length - 1, 0)));
@@ -50,6 +72,12 @@ export default function BtmPresenter({
   // Chỉ mount phía client (next/dynamic ssr:false) nên đọc nền đã nhớ ngay lúc khởi tạo được.
   const [bg, setBg] = useState<Bg>(docBg);
   const [full, setFull] = useState(false);
+  const [zoom, setZoom] = useState(docZoom);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const [noteOpen, setNoteOpen] = useState(false);
+  const [noteSaved, setNoteSaved] = useState(false);
+  // Nét vẽ theo từng dạng (như từng trang của trình chiếu lý thuyết): lật bước vẫn còn, sang dạng khác thì trang mới.
+  const ink = usePresenterInk(`dang-${d}`);
   const rootRef = useRef<HTMLDivElement>(null);
   const cuoiRef = useRef<HTMLDivElement>(null);
 
@@ -119,6 +147,13 @@ export default function BtmPresenter({
     if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
     else rootRef.current?.requestFullscreen?.().catch(() => {});
   }, []);
+  const doiZoom = useCallback((v: number) => {
+    const z = Math.round(Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, v)) * 100) / 100;
+    setZoom(z);
+    try {
+      localStorage.setItem(ZOOM_STORE, String(z));
+    } catch {}
+  }, []);
   const thoat = useCallback(() => {
     if (document.fullscreenElement) document.exitFullscreen().catch(() => {});
     onClose?.();
@@ -138,9 +173,32 @@ export default function BtmPresenter({
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.metaKey || e.ctrlKey || e.altKey) return;
       const t = e.target as HTMLElement | null;
       if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      if (e.ctrlKey || e.metaKey) {
+        // Ctrl +/−/0: chữ to nhỏ ngay trên lớp (phòng sâu, máy chiếu mờ) — chặn phóng to cả trình duyệt.
+        if (e.key === "+" || e.key === "=") doiZoom(zoom + ZOOM_STEP);
+        else if (e.key === "-" || e.key === "_") doiZoom(zoom - ZOOM_STEP);
+        else if (e.key === "0") doiZoom(1);
+        else return;
+        e.preventDefault();
+        return;
+      }
+      if (e.altKey) return;
+      if (e.key === "Escape") {
+        // Đang toàn màn hình thì trình duyệt tự lo Esc; ở đây đóng lần lượt: ghi chú → phím tắt → bút → thoát.
+        if (noteOpen) setNoteOpen(false);
+        else if (helpOpen) setHelpOpen(false);
+        else if (ink.pen !== "off") ink.setPenMode("off");
+        else if (!document.fullscreenElement) thoat();
+        return;
+      }
+      if (e.key === "?") return setHelpOpen((o) => !o);
+      if ((e.key === "n" || e.key === "N") && lessonId != null) {
+        e.preventDefault();
+        return setNoteOpen(true);
+      }
+      if (ink.handleKey(e.key)) return;
       if (["ArrowRight", "ArrowDown", "PageDown", " ", "Enter"].includes(e.key)) {
         e.preventDefault();
         tiep();
@@ -153,12 +211,11 @@ export default function BtmPresenter({
       else if (e.key === "[") doiDang(-1);
       else if (e.key === "f" || e.key === "F") batFull();
       else if (e.key === "b" || e.key === "B") doiBg();
-      else if (e.key === "Escape" && !document.fullscreenElement) thoat();
       else if (/^[1-9]$/.test(e.key) && Number(e.key) <= bai.buoc.length) nhayBuoc(Number(e.key) - 1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [tiep, lui, batFull, doiBg, thoat, doiDang, nhayBuoc, nhip.length, bai.buoc.length]);
+  }, [tiep, lui, batFull, doiBg, thoat, doiDang, nhayBuoc, nhip.length, bai.buoc.length, zoom, doiZoom, noteOpen, helpOpen, ink, lessonId]);
 
   // Cuộn tới dòng vừa hiện (chỉ trong cột phải — cột tối thiểu 0 nên không kéo lệch khung).
   useEffect(() => {
@@ -176,7 +233,17 @@ export default function BtmPresenter({
   const nutTiep = hienTai.k === "buoc" && dongHienTai === 0 ? "Hiện lời giải" : hienTai.k === "de" ? "Bắt đầu giải" : "Tiếp";
 
   return (
-    <div ref={rootRef} className={`lesson-presenter is-chrome ${s.root}`} data-bg={bg} role="dialog" aria-label="Trình chiếu bài tập mẫu">
+    <div
+      ref={rootRef}
+      className={`lesson-presenter is-chrome ${ink.pen !== "off" ? "is-drawing" : ""} ${s.root}`}
+      data-bg={bg}
+      role="dialog"
+      aria-label="Trình chiếu bài tập mẫu"
+      tabIndex={-1}
+      style={{ "--presenter-zoom": zoom } as CSSProperties}
+    >
+      {/* Khung vẽ phủ cả hai cột, nằm dưới hai thanh nút (z 15 < 20): bật bút vẫn bấm được nút. */}
+      <canvas {...ink.canvasProps} />
       <header className="presenter-top">
         <div className="presenter-info">
           <strong>
@@ -205,6 +272,16 @@ export default function BtmPresenter({
           <button type="button" onClick={doiBg} title="Đổi nền sáng / tối (B)">
             {bg === "light" ? <Sun size={16} aria-hidden /> : <Moon size={16} aria-hidden />}
             <span className="presenter-btn-text">{bg === "light" ? "Nền sáng" : "Nền tối"}</span>
+          </button>
+          {lessonId != null && (
+            <button type="button" onClick={() => setNoteOpen(true)} title="Ghi chú nhanh cho dạng/bước này (N)">
+              <NotebookPen size={16} aria-hidden />
+              <span className="presenter-btn-text">Ghi chú</span>
+            </button>
+          )}
+          <button type="button" onClick={() => setHelpOpen((o) => !o)} title="Phím tắt (?)">
+            <Keyboard size={16} aria-hidden />
+            <span className="presenter-btn-text">Phím tắt</span>
           </button>
           <button type="button" onClick={batFull} title="Toàn màn hình (F)">
             {full ? <Minimize2 size={16} aria-hidden /> : <Maximize2 size={16} aria-hidden />}
@@ -444,9 +521,107 @@ export default function BtmPresenter({
           {nutTiep}
           <ChevronRight size={16} aria-hidden />
         </button>
+        <span className="presenter-bar-sep" aria-hidden />
+        <PresenterInkTools ink={ink} />
+        <span className="presenter-bar-sep" aria-hidden />
+        <button type="button" onClick={() => doiZoom(zoom - ZOOM_STEP)} disabled={zoom <= ZOOM_MIN} title="Thu nhỏ chữ (Ctrl −)" aria-label="Thu nhỏ chữ">
+          <ZoomOut size={15} aria-hidden />
+        </button>
+        <span className="presenter-zoom" aria-live="polite">
+          {Math.round(zoom * 100)}%
+        </span>
+        <button type="button" onClick={() => doiZoom(zoom + ZOOM_STEP)} disabled={zoom >= ZOOM_MAX} title="Phóng to chữ (Ctrl +)" aria-label="Phóng to chữ">
+          <ZoomIn size={15} aria-hidden />
+        </button>
       </footer>
       <div className="presenter-progress" aria-hidden>
         <span style={{ width: `${(k / Math.max(nhip.length - 1, 1)) * 100}%` }} />
+      </div>
+      {helpOpen && <BangPhim onClose={() => setHelpOpen(false)} linkSau={bai.stt != null ? `#chieu-btm-${bai.stt + 1}` : null} />}
+      {noteOpen && lessonId != null && (
+        <PresenterNoteBox
+          lessonId={lessonId}
+          itemId={itemId ?? null}
+          pageKey={`btm-${bai.stt ?? d}-${hienTai.k === "buoc" ? `b${buocHienTai + 1}` : hienTai.k}`}
+          pageHeading={`Bài tập mẫu › ${bai.nhan}${bai.dang ? ` · ${bai.dang}` : ""} › ${nhanTienDo}`}
+          onClose={(saved) => {
+            setNoteOpen(false);
+            rootRef.current?.focus();
+            if (saved) {
+              setNoteSaved(true);
+              window.setTimeout(() => setNoteSaved(false), 1800);
+            }
+          }}
+        />
+      )}
+      {noteSaved && (
+        <p className="presenter-note-saved" role="status">
+          Đã ghi chú
+        </p>
+      )}
+      {ink.drawHint && ink.pen !== "off" && (
+        <p className="presenter-draw-hint">
+          Đang bật {penLabelOf(ink.pen)}: vẽ trực tiếp lên màn chiếu — bấm <kbd>Esc</kbd> để tắt
+        </p>
+      )}
+    </div>
+  );
+}
+
+const PHIM: [string[], string][] = [
+  [["→", "Space"], "Hiện thứ tiếp theo (câu hỏi lớp → từng dòng giải)"],
+  [["←"], "Lùi một nhịp"],
+  [["1", "…", "9"], "Nhảy tới bước"],
+  [["[", "]"], "Dạng trước / dạng sau"],
+  [["Home", "End"], "Về đề bài / tới tổng kết"],
+  [["D"], "Bật/tắt bút vẽ (khoanh ý chính)"],
+  [["H"], "Bút dạ quang vàng"],
+  [["E"], "Tẩy (xoá cả nét vừa chạm)"],
+  [["Z"], "Bỏ nét vừa vẽ"],
+  [["C"], "Xoá hết nét ở dạng này"],
+  [["Ctrl +", "Ctrl −", "Ctrl 0"], "Phóng to / thu nhỏ / về cỡ gốc"],
+  [["N"], "Ghi chú nhanh cho bước đang chiếu (Enter lưu)"],
+  [["B"], "Đổi nền sáng / tối"],
+  [["F"], "Toàn màn hình"],
+  [["Esc"], "Đóng bảng → tắt bút → thoát"],
+];
+
+function BangPhim({ onClose, linkSau }: { onClose: () => void; linkSau: string | null }) {
+  return (
+    <div className="presenter-panel presenter-panel--help" role="dialog" aria-label="Phím tắt khi chiếu bài tập mẫu">
+      <div className="presenter-panel-head">
+        <p>
+          <Keyboard size={15} aria-hidden /> Phím tắt khi chiếu bài tập mẫu
+        </p>
+        <button type="button" onClick={onClose} aria-label="Đóng bảng phím tắt">
+          <X size={15} aria-hidden />
+        </button>
+      </div>
+      <div className="presenter-panel-body">
+        <dl className="presenter-keys">
+          {PHIM.map(([keys, label]) => (
+            <div key={label}>
+              <dt>
+                {keys.map((k, i) => (
+                  <span key={k}>
+                    {i > 0 && " "}
+                    {k === "…" ? "…" : <kbd>{k}</kbd>}
+                  </span>
+                ))}
+              </dt>
+              <dd>{label}</dd>
+            </div>
+          ))}
+        </dl>
+        <p className="presenter-help-note">
+          Nét vẽ lưu riêng theo từng dạng — lật bước vẫn còn. Bút trình chiếu (nút lật trang) dùng được như phím → ←.
+          {linkSau && (
+            <>
+              {" "}
+              Mở thẳng dạng này khi vào lớp: thêm <kbd>{linkSau}</kbd> vào cuối link trang bài.
+            </>
+          )}
+        </p>
       </div>
     </div>
   );

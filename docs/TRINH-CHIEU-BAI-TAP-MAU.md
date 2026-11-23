@@ -19,7 +19,14 @@ Phím tắt:
 | `[` `]` | đổi dạng |
 | F | toàn màn hình |
 | B | đổi nền sáng/tối |
-| Esc | thoát |
+| D / H / E | bút vẽ / dạ quang / tẩy (nét lưu theo từng dạng) |
+| Z / C | bỏ nét vừa vẽ / xoá hết nét của dạng |
+| Ctrl + / − / 0 | phóng to / thu nhỏ / cỡ gốc (nhớ khoá `thachlab-btm-zoom`) |
+| N | ghi chú nhanh cho bước đang chiếu (bảng `teacher_lesson_notes`, `page_key` = `btm-<stt>-b<bước>`) |
+| ? | bảng phím tắt |
+| Esc | đóng bảng → tắt bút → thoát |
+
+Link sâu: thêm `#chieu-btm-3` vào link trang bài → giáo viên mở là vào thẳng dạng 3 của mục Bài tập mẫu đầu tiên.
 
 ## Code
 
@@ -29,6 +36,7 @@ Phím tắt:
 | `features/lessons/btm-trinh-chieu/tu-dang.tsx` | **dựng bản chiếu tự động** từ dạng đã soạn (`problem_html`, `tom_de`, `buoc[]`, `chon_buoc_ke`, `.bt-step`, `.bt-ans`, `.bt-final`, `cong_cu`) |
 | `features/lessons/btm-trinh-chieu/mau-ong-thuy-ngan.tsx` | mẫu soạn tay đầy đủ: bảng ①②, hình SVG từng lớp, bẫy |
 | `components/lessons/btm-trinh-chieu/BtmPresenter.tsx` + `.module.css` | màn chiếu |
+| `components/lessons/presenter-ink.tsx` | bút vẽ dùng chung (`usePresenterInk` + `PresenterInkTools`), tách từ `LessonPresenter` — LessonPresenter chưa chuyển sang (đổi khi có dịp sửa file đó) |
 | `components/lessons/btm-trinh-chieu/BtmPresenterLazy.tsx` | `next/dynamic({ssr:false})` + `LazyErrorBoundary` — không nặng thêm trang HS |
 | `components/lessons/WorkedQuestionsGrid.tsx` | nút "Trình chiếu dạng này" trong từng dạng (chỉ khi xem bằng quyền giáo viên) |
 | `app/lop-hoc/bai/page.tsx` | mở màn chiếu, dùng `questions` đã tải — **0 request Supabase mới** |
@@ -71,7 +79,7 @@ Việc còn lại: deploy theo quy trình thường; thầy bấm thử bằng t
    Các dạng còn lại vẫn dùng bản tự dựng.
 3. Mỗi dạng sửa: chạy `--xem-thu`, xem `/dev/btm-trinh-chieu?f=btm` ở 1280×720 sáng/tối, rồi đăng.
 
-**Chặng 3 — công cụ trên lớp (code, khi chặng 1 cho thấy cần):**
+**Chặng 3 — công cụ trên lớp: ĐÃ LÀM 23/11/2026 (làm trước chặng 1 để bản deploy đầu đã đủ đồ nghề như chiếu lý thuyết):**
 - Bút vẽ / bút dạ / tẩy, tách từ `LessonPresenter` thành component dùng chung.
 - Phóng to ±.
 - Ghi chú lớp (phím N), đọc qua skill `xem-ghi-chu-lop`.
