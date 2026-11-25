@@ -88,12 +88,95 @@ function EventItem({ e, compact }: { e: PlanEvent; compact?: boolean }) {
   );
 }
 
+// Lưới giờ: cột giờ cố định bên trái, mỗi mục đặt theo giờ thật (cao = thời lượng).
+const PX = 1; // px mỗi phút → 1 giờ = 60px
+type Placed = { e: PlanEvent; lane: number; lanes: number };
+function layoutDay(list: PlanEvent[]): Placed[] {
+  // Chia làn cho các mục chồng giờ: mỗi cụm chồng nhau chia đều bề ngang.
+  const out: Placed[] = [];
+  let cluster: Placed[] = [], clusterEnd = -1;
+  const flush = () => { const n = Math.max(0, ...cluster.map((p) => p.lane)) + 1; cluster.forEach((p) => { p.lanes = n; }); out.push(...cluster); cluster = []; };
+  for (const e of list) {
+    const s = toMin(e.start);
+    if (cluster.length && s >= clusterEnd) flush();
+    const used = new Set(cluster.filter((p) => toMin(p.e.end) > s).map((p) => p.lane));
+    let lane = 0; while (used.has(lane)) lane++;
+    cluster.push({ e, lane, lanes: 1 });
+    clusterEnd = Math.max(clusterEnd, toMin(e.end));
+  }
+  if (cluster.length) flush();
+  return out;
+}
+
+function TimeGrid({ days, byDay, weekStart, todayIso, nowMin, startH, endH, selected, onSelect }: {
+  days: number[]; byDay: PlanEvent[][]; weekStart: string; todayIso: string; nowMin: number;
+  startH: number; endH: number; selected: PlanEvent | null; onSelect: (e: PlanEvent | null) => void;
+}) {
+  const hours = Array.from({ length: endH - startH }, (_, i) => startH + i);
+  const height = (endH - startH) * 60 * PX;
+  const single = days.length === 1;
+  return (
+    <div className="mt-3 overflow-hidden rounded-2xl border border-line">
+      {!single && (
+        <div className="grid border-b border-line" style={{ gridTemplateColumns: `3rem repeat(${days.length}, minmax(0, 1fr))` }}>
+          <div />
+          {days.map((wd) => {
+            const isToday = iso(dateOf(weekStart, wd)) === todayIso;
+            return (
+              <div key={wd} className={`border-l border-line px-2 py-2 text-sm font-bold ${isToday ? "bg-primary-soft text-primary" : "text-ink"}`}>
+                {DAY_SHORT[wd]} <span className="tabular-nums font-semibold text-muted">{dm(dateOf(weekStart, wd))}</span>
+              </div>
+            );
+          })}
+        </div>
+      )}
+      <div className="grid" style={{ gridTemplateColumns: `3rem repeat(${days.length}, minmax(0, 1fr))` }}>
+        <div className="relative" style={{ height }} aria-hidden>
+          {hours.map((h) => (
+            <span key={h} className="absolute right-1.5 -translate-y-1/2 text-xs tabular-nums text-muted" style={{ top: (h - startH) * 60 * PX }}>
+              {h > startH ? `${pad(h)}:00` : ""}
+            </span>
+          ))}
+        </div>
+        {days.map((wd) => {
+          const isToday = iso(dateOf(weekStart, wd)) === todayIso;
+          return (
+            <div key={wd} className={`relative border-l border-line ${isToday ? "bg-primary-soft/40" : ""}`} style={{ height }}>
+              {hours.map((h) => (
+                <div key={h} className="absolute inset-x-0 border-t border-line/60" style={{ top: (h - startH) * 60 * PX }} />
+              ))}
+              {isToday && nowMin >= startH * 60 && nowMin <= endH * 60 && (
+                <div className="absolute inset-x-0 z-20 border-t-2 border-rose-500" style={{ top: (nowMin - startH * 60) * PX }} aria-label="Bây giờ" />
+              )}
+              {layoutDay(byDay[wd]).map(({ e, lane, lanes }, i) => {
+                const top = (toMin(e.start) - startH * 60) * PX;
+                const h = Math.max(22, (toMin(e.end) - toMin(e.start)) * PX);
+                const sel = selected === e;
+                return (
+                  <button key={i} type="button" onClick={() => onSelect(sel ? null : e)} title={`${e.start}–${e.end} · ${e.title}`}
+                    className={`absolute z-10 overflow-hidden rounded-md border-l-4 bg-surface-2 px-1.5 py-0.5 text-left shadow-sm ${srcOf(e.src).border} ${sel ? "ring-2 ring-primary" : ""} ${e.clash ? "outline outline-1 outline-warn" : ""}`}
+                    style={{ top: top + 1, height: h - 2, left: `calc(${(100 / lanes) * lane}% + 2px)`, width: `calc(${100 / lanes}% - 4px)` }}>
+                    <span className="block text-[11px] font-semibold leading-tight tabular-nums text-muted">{e.start}–{e.end}</span>
+                    <span className={`block text-xs font-semibold leading-tight text-ink ${single ? "" : "break-words"}`}>{e.title}{e.where && <span className="font-normal text-muted"> · {e.where}</span>}</span>
+                    {single && e.lesson && h >= 70 && <span className="mt-0.5 block text-xs leading-tight text-muted">{e.lesson}</span>}
+                  </button>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function StaffWeekPlan() {
   const [plans, setPlans] = useState<Plan[] | null>(null);
   const [error, setError] = useState("");
   const [week, setWeek] = useState(mondayIso(0));
   const [day, setDay] = useState(() => ((nowVN().getDay() + 6) % 7) + 1);
   const [tick, setTick] = useState(0);
+  const [selected, setSelected] = useState<PlanEvent | null>(null);
   const touchX = useRef<number | null>(null);
   const now = nowVN();
   const todayIso = iso(now);
@@ -121,6 +204,13 @@ export default function StaffWeekPlan() {
     plan?.events.forEach((e) => m[e.weekday]?.push(e));
     m.forEach((l) => l.sort((a, b) => a.start.localeCompare(b.start)));
     return m;
+  }, [plan]);
+
+  // Khung giờ cố định: 6h–22h, nới ra nếu có mục ngoài khoảng đó
+  const [startH, endH] = useMemo(() => {
+    let a = 6, b = 22;
+    plan?.events.forEach((e) => { a = Math.min(a, Math.floor(toMin(e.start) / 60)); b = Math.max(b, Math.ceil(toMin(e.end) / 60)); });
+    return [a, Math.min(24, b)];
   }, [plan]);
 
   // Điểm 4: tổng kết tuần
@@ -168,7 +258,7 @@ export default function StaffWeekPlan() {
         {weeks.length > 1 && (
           <div className="flex gap-2" role="tablist" aria-label="Chọn tuần">
             {weeks.map((w) => (
-              <button key={w} type="button" role="tab" aria-selected={w === week} onClick={() => { setWeek(w); setDay(w === mondayIso(0) ? todayWd : 1); }}
+              <button key={w} type="button" role="tab" aria-selected={w === week} onClick={() => { setSelected(null); setWeek(w); setDay(w === mondayIso(0) ? todayWd : 1); }}
                 className={`min-h-11 rounded-xl border px-4 py-2 text-sm font-semibold ${w === week ? "border-primary bg-primary-soft text-ink" : "border-line text-ink hover:border-line-strong"}`}>
                 {dm(dateOf(w, 1))}–{dm(dateOf(w, 7))}
               </button>
@@ -221,28 +311,26 @@ export default function StaffWeekPlan() {
                 );
               })}
             </div>
-            <div className="mt-3 rounded-2xl border border-line p-3" onTouchStart={(ev) => onTouchStart(ev.touches[0].clientX)} onTouchEnd={(ev) => onTouchEnd(ev.changedTouches[0].clientX)}>
-              <h3 className="text-sm font-bold text-ink">{DAY[day]} {dm(dateOf(plan.week_start, day))}{dayIso(day) === todayIso && <span className="ml-2 text-xs text-primary">Hôm nay</span>}</h3>
-              {byDay[day].length === 0 ? <p className="mt-2 text-sm text-muted">Trống</p> : (
-                <ul className="mt-2 space-y-2">{byDay[day].map((e, i) => <EventItem key={i} e={e} />)}</ul>
-              )}
+            <div onTouchStart={(ev) => onTouchStart(ev.touches[0].clientX)} onTouchEnd={(ev) => onTouchEnd(ev.changedTouches[0].clientX)}>
+              <h3 className="mt-3 text-sm font-bold text-ink">{DAY[day]} {dm(dateOf(plan.week_start, day))}{dayIso(day) === todayIso && <span className="ml-2 text-xs text-primary">Hôm nay</span>}{byDay[day].length === 0 && <span className="ml-2 font-normal text-muted">· Trống</span>}</h3>
+              <TimeGrid days={[day]} byDay={byDay} weekStart={plan.week_start} todayIso={todayIso} nowMin={nowMin} startH={startH} endH={endH} selected={selected} onSelect={setSelected} />
             </div>
           </div>
 
-          {/* Điểm 2: desktop — lưới 7 cột */}
-          <div className="mt-4 hidden grid-cols-7 gap-2 md:grid">
-            {[1, 2, 3, 4, 5, 6, 7].map((wd) => {
-              const isToday = dayIso(wd) === todayIso;
-              return (
-                <div key={wd} className={`min-w-0 rounded-2xl border p-2 ${isToday ? "border-primary bg-primary-soft" : "border-line"}`}>
-                  <h3 className="text-sm font-bold text-ink">{DAY_SHORT[wd]} <span className="tabular-nums font-semibold text-muted">{dm(dateOf(plan.week_start, wd))}</span>{isToday && <span className="ml-1 text-xs text-primary">Hôm nay</span>}</h3>
-                  {byDay[wd].length === 0 ? <p className="mt-2 text-xs text-muted">Trống</p> : (
-                    <ul className="mt-2 space-y-1.5">{byDay[wd].map((e, i) => <EventItem key={i} e={e} compact />)}</ul>
-                  )}
-                </div>
-              );
-            })}
+          {/* Điểm 2: desktop — lưới 7 cột, cột giờ bên trái */}
+          <div className="hidden md:block">
+            <TimeGrid days={[1, 2, 3, 4, 5, 6, 7]} byDay={byDay} weekStart={plan.week_start} todayIso={todayIso} nowMin={nowMin} startH={startH} endH={endH} selected={selected} onSelect={setSelected} />
           </div>
+
+          {/* Bấm một mục trên lưới → hiện đủ chi tiết (mốc bài, ghi chú, link ứng dụng tập) */}
+          {selected ? (
+            <div className="mt-3">
+              <p className="mb-1 text-xs font-semibold text-muted">{DAY[selected.weekday]} {dm(dateOf(plan.week_start, selected.weekday))}</p>
+              <ul><EventItem e={selected} /></ul>
+            </div>
+          ) : (
+            <p className="mt-2 text-xs text-muted">Bấm vào một mục để xem chi tiết.</p>
+          )}
 
           <p className="mt-4 text-xs text-muted">Cập nhật {new Date(plan.updated_at).toLocaleString("vi-VN")}</p>
         </>
