@@ -8,7 +8,11 @@ Mỗi thẻ mang `neo` = một đoạn chữ duy nhất của nó trong bài, đ
 cho nút "Ôn ngay" bằng chính splitTheorySections (không phụ thuộc trang đọc chia theo h3 hay h4).
 Mỗi thẻ có `id` = 8 ký tự đầu sha1(neo) — khoá lịch ôn trong bảng on_tap_the; sửa chữ câu hỏi là thành thẻ mới.
 
-Dùng:  python3 scripts/on-tap/rut-the-on.py <slug> [--toi-da 8]   → content/on-tap/<slug>.json
+Dùng:  python3 scripts/on-tap/rut-the-on.py <slug> [<slug> …] [--toi-da 8]   → content/on-tap/<slug>.json
+       python3 scripts/on-tap/rut-the-on.py --tat-ca      (mọi bài có ô Chốt mục)
+       python3 scripts/on-tap/rut-the-on.py --chi-index   (chỉ sinh lại content/on-tap/index.ts)
+lesson_id lấy từ content/on-tap/_lesson-ids.json (sinh bằng `npx tsx scripts/on-tap/anh-xa-lesson-id.mts`).
+Mỗi lần chạy đều SINH LẠI content/on-tap/index.ts từ các JSON trong thư mục (không sửa tay file đó).
 File ra là bản nháp: người soạn đọc lại, bỏ thẻ trùng ý, giữ ≤ 8 thẻ (N5), rồi mới commit.
 """
 import argparse, hashlib, json, pathlib, re
@@ -63,12 +67,59 @@ def bullets(html: str, sentences: bool = False) -> str:
     return "<ul>" + "".join(f"<li>{x}</li>" for x in parts) + "</ul>"
 
 
+def sinh_index() -> None:
+    """content/on-tap/index.ts: import tường minh từng JSON (bundler tách đúng từng chunk), khoá theo slug và lesson_id."""
+    d = ROOT / "content/on-tap"
+    rows, ids = [], []
+    for f in sorted(d.glob("*.json")):
+        if f.name.startswith("_"):
+            continue
+        j = json.loads(f.read_text(encoding="utf8"))
+        rows.append(f'  "{f.stem}": () => import("./{f.name}").then((m) => m.default as BoOnTap),')
+        if j.get("lesson_id"):
+            ids.append((int(j["lesson_id"]), f.stem, len(j.get("the", []))))
+    ids.sort()
+    out = [
+        "// FILE SINH TỰ ĐỘNG bởi scripts/on-tap/rut-the-on.py — KHÔNG SỬA TAY (chạy lại script với --chi-index).",
+        'import type { BoOnTap } from "@/components/lessons/OnNamPhut";',
+        "",
+        "/** Bộ thẻ \"Ôn 5 phút\" theo slug bài; mỗi bộ một chunk riêng, chỉ nạp khi mở. */",
+        "export const BO_ON_TAP: Record<string, () => Promise<BoOnTap>> = {",
+        *rows,
+        "};",
+        "",
+        "/** lesson_id → slug + số thẻ (để trang bài biết có bộ thẻ và hiện \"N thẻ\" mà chưa phải nạp JSON). */",
+        "export const ON_TAP_THEO_BAI: Record<number, { slug: string; so_the: number }> = {",
+        *[f'  {i}: {{ slug: "{s}", so_the: {n} }},' for i, s, n in ids],
+        "};",
+        "",
+    ]
+    (d / "index.ts").write_text("\n".join(out), encoding="utf8")
+    print(f"index.ts: {len(rows)} bộ, {len(ids)} có lesson_id")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("slug")
+    ap.add_argument("slugs", nargs="*")
     ap.add_argument("--toi-da", type=int, default=8)
+    ap.add_argument("--tat-ca", action="store_true")
+    ap.add_argument("--chi-index", action="store_true")
     a = ap.parse_args()
+    if not a.chi_index:
+        slugs = a.slugs
+        if a.tat_ca:
+            slugs = sorted(p.parent.name for p in (ROOT / "content/lesson-samples").glob("*/theory.html")
+                           if "tl-chot" in p.read_text(encoding="utf8"))
+        ids_f = ROOT / "content/on-tap/_lesson-ids.json"
+        ids = json.loads(ids_f.read_text(encoding="utf8")) if ids_f.exists() else {}
+        for slug in slugs:
+            rut(slug, a.toi_da, ids.get(slug))
+    sinh_index()
 
+
+def rut(slug: str, toi_da: int, lesson_id) -> None:
+    class A: pass
+    a = A(); a.slug = slug; a.toi_da = toi_da
     src = ROOT / "content/lesson-samples" / a.slug / "theory.html"
     html = src.read_text(encoding="utf8")
     lesson_title = ""
@@ -150,13 +201,12 @@ def main() -> None:
     data = {
         "schema": "thachlab.on-tap/v1",
         "slug": a.slug,
+        "lesson_id": lesson_id,
         "lesson_title": lesson_title,
         "the": cards[: a.toi_da],
     }
     out.write_text(json.dumps(data, ensure_ascii=False, indent=1) + "\n", encoding="utf8")
-    print(f"{out.relative_to(ROOT)}: {len(cards)} thẻ rút được, giữ {len(data['the'])}")
-    for c in data["the"]:
-        print(f"  [{c['kieu']}] {c['muc'][:28]:28} | {c['neo']}")
+    print(f"{out.relative_to(ROOT)}: {len(cards)} thẻ rút được, giữ {len(data['the'])}, lesson_id={lesson_id}")
 
 
 if __name__ == "__main__":
