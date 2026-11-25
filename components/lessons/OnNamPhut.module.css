@@ -53,19 +53,113 @@
   display: grid;
   gap: 10px;
 }
+/* Thẻ lật: hai mặt chồng trong cùng một ô lưới → thẻ cao bằng mặt dài hơn, không nhảy khi lật. */
+.flip {
+  display: grid;
+  perspective: 1200px;
+}
+.face {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 15rem;
+  padding: 18px 16px 16px;
+  border-radius: 16px;
+  border: 1px solid var(--color-line);
+  box-shadow: 0 6px 18px rgb(15 23 42 / 0.08);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.front {
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(160deg, var(--color-primary-soft), var(--color-panel) 75%);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-line));
+}
+.front:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.back {
+  transform: rotateY(180deg);
+  background: var(--color-panel);
+  border-left: 5px solid var(--color-ok, #15803d);
+}
+.flipped .front {
+  transform: rotateY(-180deg);
+}
+.flipped .back {
+  transform: rotateY(0deg);
+}
+.quiz {
+  min-height: 0;
+  background: var(--color-panel);
+}
+@media (prefers-reduced-motion: reduce) {
+  .face {
+    transition: none;
+  }
+}
+.tag {
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  background: var(--color-primary);
+  color: #fff;
+}
+.tagBack {
+  background: var(--color-ok, #15803d);
+}
+.hinh {
+  display: flex;
+  justify-content: center;
+}
+.hinh :global(figure) {
+  margin: 0;
+}
+.hinh :global(svg) {
+  display: block;
+  max-width: 100%;
+  max-height: 11rem;
+  height: auto;
+}
 .q {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   line-height: 1.5;
+  text-align: center;
+}
+.qSmall {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.45;
+}
+.tapHint {
+  margin-top: auto;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-muted);
 }
 .a {
-  padding: 12px;
-  border-radius: 10px;
-  background: var(--color-surface-2);
+  font-size: 1.02rem;
   line-height: 1.6;
 }
 .a p {
   margin: 0;
+}
+.a ul {
+  margin: 0;
+  padding-left: 1.25em;
+  display: grid;
+  gap: 8px;
+}
+.a li::marker {
+  color: var(--color-ok, #15803d);
 }
 .hint {
   margin: 0;
@@ -101,6 +195,9 @@
   border: 1px solid var(--color-line-strong);
   background: transparent;
   color: var(--color-ink);
+}
+.rate button {
+  padding: 0 8px;
 }
 .rate {
   display: grid;

@@ -12,11 +12,13 @@ import styles from "./OnNamPhut.module.css";
  * Quy tắc (docs/QUY-TAC-THIET-KE.md): mỗi màn một thẻ, HS bấm "tiếp" (N1, N5) · nhớ lại TRƯỚC rồi mới lật
  * (L1, testing effect) · ≤ 3 nút tự chấm (N2), đích chạm ≥ 44px (D) · thẻ chưa nhớ có "Ôn ngay" trỏ đúng
  * đoạn lý thuyết (L4) · không điểm, không RP, không xếp hạng (L3) · tiến độ theo bài (L2).
+ * Thẻ lật thật (mặt trước câu hỏi + hình gợi nhớ, mặt sau đáp án gạch đầu dòng): hình đi cùng chữ giúp nhớ lâu
+ * hơn chữ đơn thuần (M1, mã kép); một ý một dòng (N4). prefers-reduced-motion → đổi mặt không xoay.
  * Thẻ chưa nhớ lưu trên máy (localStorage, chỉ là tiện ích của bản thử) — lần mở sau ôn riêng các thẻ đó.
  */
 
 export type TheOn =
-  | { kieu: "lat"; muc: string; neo: string; hoi: string; dap: string; tieu_muc?: string }
+  | { kieu: "lat"; muc: string; neo: string; hoi: string; dap: string; tieu_muc?: string; hinh?: string }
   | { kieu: "chon"; muc: string; neo: string; hoi?: string; html: string };
 
 export interface BoOnTap {
@@ -261,48 +263,63 @@ export default function OnNamPhut({
 
       {the!.kieu === "lat" ? (
         <div className={styles.card}>
-          <ContentHtml html={the!.hoi} className={styles.q} />
-          {!lat ? (
-            <>
-              <p className={styles.hint}>Nói thành lời hoặc viết ra nháp trước, rồi mới lật.</p>
-              <div className={styles.actions}>
-                <button type="button" className={styles.primary} onClick={() => setLat(true)}>
-                  Lật xem đáp án
-                </button>
-              </div>
-            </>
-          ) : (
-            <>
+          <div key={pos} className={`${styles.flip} ${lat ? styles.flipped : ""}`}>
+            <div
+              className={`${styles.face} ${styles.front}`}
+              role="button"
+              tabIndex={lat ? -1 : 0}
+              inert={lat}
+              aria-label="Lật thẻ xem đáp án"
+              onClick={() => setLat(true)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setLat(true);
+                }
+              }}
+            >
+              <span className={styles.tag}>Câu hỏi</span>
+              {the!.hinh && <ContentHtml html={the!.hinh} className={styles.hinh} />}
+              <ContentHtml html={the!.hoi} className={styles.q} />
+              <span className={styles.tapHint}>Nói thành lời trước · chạm để lật ↻</span>
+            </div>
+            <div className={`${styles.face} ${styles.back}`} inert={!lat} onClick={() => !rated && setLat(false)}>
+              <span className={`${styles.tag} ${styles.tagBack}`}>Đáp án</span>
+              <ContentHtml html={the!.hoi} className={styles.qSmall} />
               <ContentHtml html={the!.dap} className={styles.a} />
-              {!rated ? (
-                <>
-                  <p className={styles.hint}>Em nhớ tới đâu?</p>
-                  <div className={styles.rate}>
-                    <button type="button" onClick={() => cham("nho")}>
-                      Nhớ rõ
-                    </button>
-                    <button type="button" onClick={() => cham("lomo")}>
-                      Lơ mơ
-                    </button>
-                    <button type="button" onClick={() => cham("quen")}>
-                      Quên
-                    </button>
-                  </div>
-                </>
-              ) : (
-                <div className={styles.actions}>
-                  {onNgayBtn(the!)}
-                  <button type="button" className={styles.primary} onClick={tiep}>
-                    Thẻ tiếp
+            </div>
+          </div>
+          {lat &&
+            (!rated ? (
+              <>
+                <p className={styles.hint}>Em nhớ tới đâu?</p>
+                <div className={styles.rate}>
+                  <button type="button" onClick={() => cham("nho")}>
+                    😀 Nhớ rõ
+                  </button>
+                  <button type="button" onClick={() => cham("lomo")}>
+                    🤔 Lơ mơ
+                  </button>
+                  <button type="button" onClick={() => cham("quen")}>
+                    😶 Quên
                   </button>
                 </div>
-              )}
-            </>
-          )}
+              </>
+            ) : (
+              <div className={styles.actions}>
+                {onNgayBtn(the!)}
+                <button type="button" className={styles.primary} onClick={tiep}>
+                  Thẻ tiếp
+                </button>
+              </div>
+            ))}
         </div>
       ) : (
         <div className={styles.card} ref={quizRef}>
-          <ContentHtml html={the!.html} />
+          <div className={`${styles.face} ${styles.quiz}`}>
+            <span className={styles.tag}>Chọn đáp án</span>
+            <ContentHtml html={the!.html} />
+          </div>
           {rated && (
             <div className={styles.actions}>
               {rated !== "nho" && onNgayBtn(the!)}
