@@ -1,0 +1,54 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l11-nguon-dien",
+ "lesson_title": "Bài 24. Nguồn điện",
+ "the": [
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu",
+   "neo": "Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn?",
+   "hoi": "Nguồn điện là gì? Vì sao hai quả cầu A, B không phải nguồn?",
+   "dap": "<p>Thiết bị <strong>tạo và duy trì</strong> hiệu điện thế giữa hai cực · duy trì dòng điện trong mạch kín. Hai quả cầu: trung hoà sau một lát, $V_A = V_B$, dòng tắt — không duy trì được.</p>",
+   "tieu_muc": "1. Nguồn điện duy trì hiệu điện thế"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu",
+   "neo": "Định nghĩa, công thức và đơn vị suất điện động.",
+   "hoi": "Định nghĩa, công thức và đơn vị suất điện động.",
+   "dap": "<p>Đặc trưng khả năng thực hiện công của nguồn · $\\mathcal{E} = A/q$ · $A$ công lực lạ (J), $q$ điện tích dương dịch chuyển (C) · $\\mathcal{E}$ đo bằng vôn.</p>",
+   "tieu_muc": "2. Lực lạ và suất điện động"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu",
+   "neo": "Điện trở trong là gì? $U$ theo $\\mathcal{E}$, $I$, $r$? Khi ",
+   "hoi": "Điện trở trong là gì? $U$ theo $\\mathcal{E}$, $I$, $r$? Khi nào $U = \\mathcal{E}$?",
+   "dap": "<p>Sự cản trở điện tích đi trong nguồn · $r$ ($\\Omega$) · $U = \\mathcal{E} - Ir$ · $U = \\mathcal{E}$ khi hở mạch ($I = 0$).</p>",
+   "tieu_muc": "3. Điện trở trong và hiệu điện thế hai cực"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu",
+   "neo": "Định luật Ohm cho toàn mạch suy ra từ đâu? Đoản mạch là gì?",
+   "hoi": "Định luật Ohm cho toàn mạch suy ra từ đâu? Đoản mạch là gì?",
+   "dap": "<p>Bảo toàn năng lượng: $\\mathcal{E}It = RI^2t + rI^2t$ · $I = \\dfrac{\\mathcal{E}}{R + r}$ · đoản mạch: $R \\to 0$, $I_{\\text{đm}} = \\mathcal{E}/r$ rất lớn.</p>",
+   "tieu_muc": "4. Định luật Ohm cho toàn mạch và đoản mạch"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: nguồn điện làm gì và làm được bao nhiêu",
+   "neo": "So sánh $\\mathcal{E}$ và $U$; ghép nối tiếp, song song.",
+   "hoi": "So sánh $\\mathcal{E}$ và $U$; ghép nối tiếp, song song.",
+   "dap": "<p>Giống: đều là công trên mỗi coulomb (vôn). Khác: $\\mathcal{E}$ — công lực lạ (nguồn); $U$ — công lực điện (mạch ngoài). Nối tiếp: cộng $\\mathcal{E}$, cộng $r$. Song song $n$ nguồn giống nhau: giữ $\\mathcal{E}$, $r_b = r/n$.</p>",
+   "tieu_muc": "5. Ghép nguồn thành bộ"
+  },
+  {
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy sập nhiều nhất",
+   "neo": "Trong mạch kín, chiều dòng điện (quy ước) bên trong nguồn là",
+   "hoi": "Trong mạch kín, chiều dòng điện (quy ước) bên trong nguồn là:",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p>Trong mạch kín, chiều dòng điện (quy ước) bên trong nguồn là:</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl43-q6\" id=\"on-tl43-q6a\"><label for=\"on-tl43-q6a\" class=\"tl-opt tl-no\">A. Từ (+) sang (−), như ở mạch ngoài</label>\n<input type=\"radio\" name=\"on-tl43-q6\" id=\"on-tl43-q6b\"><label for=\"on-tl43-q6b\" class=\"tl-opt tl-ok\">B. Từ (−) sang (+), nhờ lực lạ</label>\n<input type=\"radio\" name=\"on-tl43-q6\" id=\"on-tl43-q6c\"><label for=\"on-tl43-q6c\" class=\"tl-opt tl-no\">C. Không có dòng trong nguồn, chỉ ở mạch ngoài</label>\n<input type=\"radio\" name=\"on-tl43-q6\" id=\"on-tl43-q6d\"><label for=\"on-tl43-q6d\" class=\"tl-opt tl-no\">D. Tuỳ cách mắc điện trở $R$ vào mạch</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> Dòng chạy thành vòng: ra ở cực (+), qua $R$, vào cực (−), rồi lực lạ \"bơm\" ngược lên cực (+) để đi tiếp. Nếu trong nguồn dòng cũng đi (+) → (−) thì không thành vòng kín.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong> A — nếu vậy điện tích dương tụ hết ở cực âm, hai cực trung hoà và dòng tắt như hai quả cầu A, B. C — dòng điện trong mạch kín phải liên tục; điện tích vào cực (−) rồi phải đi tiếp qua nguồn. D — chiều dòng do nguồn quyết định (cực nào là dương), không do cách mắc $R$. Hình dung máy bơm nước đưa nước từ bể thấp lên bể cao.</p></div>\n</div>\n</div>"
+  }
+ ]
+}

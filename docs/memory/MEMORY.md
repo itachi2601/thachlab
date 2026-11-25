@@ -77,6 +77,7 @@
 ## Giao diện & sản phẩm
 - [Câu tương tự đúng dạng](project_thachlab_cau_tuong_tu_dung_dang.md) — chờ xem bài 18
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — deploy, chưa thử HS thật
+- [Ôn 5 phút + rút bài toán mẫu](project_thachlab_on_5_phut.md) — thử L11 22–24, chờ duyệt
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — sau Q2/2027
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — chờ chốt
@@ -94,7 +95,7 @@
 - [Nạp ngân hàng VL12 VnTeach](project_thachlab_nap_ngan_hang_vl12_vnteach.md) — còn Đ–S, Ch.3–4
 - [Ruột tập: quy ước + bài 14](project_thachlab_ruot_tap_bai14.md) — chờ in giấy
 - [Ruột tập cả 3 lớp](project_thachlab_ruot_tap_con_lai.md) — 65/65 bài, chờ in thử
-- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — lô 1–11 đã đăng DB (19/11); 2 YouTube nghi sai chờ thầy
+- [Video thí nghiệm tự dựng](project_thachlab_video_thi_nghiem_tu_dung.md) — 2 YouTube nghi sai chờ thầy
 - [Mẹo từ khoá 🧠](project_thachlab_meo_tu_khoa.md) — đợt 2 chờ số liệu Trả bài
 - [Mẹo nhìn 💡 bài tập mẫu](project_thachlab_meo_nhin_giai_bai.md) — đo lại 3/12
 - [Khung chương ↔ bài + màn rộng](project_thachlab_khung_chuong_bai.md) — màn ≥1280; chưa deploy

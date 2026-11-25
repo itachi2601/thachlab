@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { OPEN_DANG_EVENT, clearPendingDang, peekPendingDang, scrollToPart } from "@/app/lop-hoc/bai/_parts/lesson-nav";
 import { ChevronDown, MonitorPlay } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import SimilarBankPractice from "@/components/lessons/SimilarBankPractice";
@@ -141,7 +142,41 @@ export default function WorkedQuestionsGrid({
   /** Chỉ giáo viên: mở trình chiếu chữa bài từ dạng thứ idx (17/11/2026). Dạng không chia bước thì không có nút. */
   onPresent?: (idx: number) => void;
 }) {
-  const [openIdx, setOpenIdx] = useState<Set<number>>(() => new Set(questions.length ? [0] : []));
+  // Dạng N trong nhãn "Dạng N · …" → chỉ số hàng (nhãn lệch thứ tự thì vẫn khớp đúng dạng; không có nhãn thì lấy hàng N).
+  const idxOfDang = useCallback(
+    (n: number) => {
+      const byLabel = questions.findIndex((q) => dangNumber(q.label) === n);
+      return byLabel >= 0 ? byLabel : n >= 1 && n <= questions.length ? n - 1 : -1;
+    },
+    [questions],
+  );
+  // Link "Giải từng bước → Dạng N" ở bài toán mẫu trong lý thuyết: mở sẵn đúng dạng đó thay cho dạng 1.
+  // Initializer chỉ ĐỌC dạng chờ mở (Strict Mode gọi hai lần); xoá + cuộn trong effect sau khi mount.
+  const [target] = useState<number>(() => {
+    const n = peekPendingDang();
+    return n ? idxOfDang(n) : -1;
+  });
+  const [openIdx, setOpenIdx] = useState<Set<number>>(() =>
+    new Set(target >= 0 ? [target] : questions.length ? [0] : []),
+  );
+  useEffect(() => {
+    clearPendingDang();
+    if (target < 0) return;
+    const t = window.setTimeout(() => scrollToPart(`dang-row-${target + 1}`), 80);
+    return () => window.clearTimeout(t);
+  }, [target]);
+  // Grid đã hiện mà HS bấm link lần nữa (kể cả cùng dạng): mở + cuộn thẳng trong handler, không qua state.
+  useEffect(() => {
+    function onOpen(e: Event) {
+      const idx = idxOfDang((e as CustomEvent<number>).detail);
+      clearPendingDang();
+      if (idx < 0) return;
+      setOpenIdx((cur) => new Set(cur).add(idx));
+      window.setTimeout(() => scrollToPart(`dang-row-${idx + 1}`), 80);
+    }
+    window.addEventListener(OPEN_DANG_EVENT, onOpen);
+    return () => window.removeEventListener(OPEN_DANG_EVENT, onOpen);
+  }, [idxOfDang]);
 
   function toggle(idx: number) {
     setOpenIdx((current) => {
@@ -159,7 +194,7 @@ export default function WorkedQuestionsGrid({
       {questions.map((q, idx) => {
         const open = openIdx.has(idx);
         return (
-          <div key={idx} className="lesson-worked-row">
+          <div key={idx} id={`dang-row-${idx + 1}`} className="lesson-worked-row">
             <button
               type="button"
               onClick={() => toggle(idx)}

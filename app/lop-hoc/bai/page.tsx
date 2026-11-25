@@ -78,7 +78,10 @@ import {
   DIM_STORE,
   LESSON_DONE_STORE,
   TOC_READ_STORE,
+  clearPendingDang,
+  parseDangHash,
   parseTabHash,
+  requestOpenDang,
   currentHash,
   scrollToPart,
   writeTabHash,
@@ -352,6 +355,10 @@ function LessonLoader() {
       setReviewBannerOpen(false);
       setHashTargetItemId(theorySectionItemId(hash));
       const parsed = parseTabHash(hash);
+      // Chỉ giữ dạng chờ mở khi link thật sự đưa sang tab Bài mẫu — không để số dạng "kẹt" cho grid bài khác.
+      clearPendingDang();
+      const dang = parseDangHash(hash);
+      if (dang && parsed.kind === "bai_tap_mau") requestOpenDang(dang);
       if (parsed.kind) selectTab(parsed.kind);
     }
     window.addEventListener("hashchange", applyHash);

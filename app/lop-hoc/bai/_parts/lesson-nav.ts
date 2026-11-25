@@ -44,6 +44,31 @@ export function requestOpenTheorySection(hashId: string) {
   window.dispatchEvent(new CustomEvent<string>(OPEN_SECTION_EVENT, { detail: hashId }));
 }
 
+/** Link trong lý thuyết `#muc=bai-tap-mau&dang=N` (bài toán mẫu trỏ sang "Giải từng bước ở Dạng N", 25/11/2026):
+ *  đổi tab xong thì `selectTab` ghi đè hash, nên số dạng cần mở được giữ ở đây cho WorkedQuestionsGrid lấy lúc dựng. */
+export const OPEN_DANG_EVENT = "thachlab:open-dang";
+let pendingDang: number | null = null;
+
+export function parseDangHash(hash: string): number | null {
+  const m = /(?:^#|&)dang=(\d{1,2})(?:&|$)/.exec(hash);
+  return m ? Number(m[1]) : null;
+}
+
+export function requestOpenDang(n: number) {
+  pendingDang = n;
+  window.dispatchEvent(new CustomEvent<number>(OPEN_DANG_EVENT, { detail: n }));
+}
+
+/** Số dạng (1-based) đang chờ mở: từ link vừa bấm, hoặc từ hash lúc tải trang (link chia sẻ). Chỉ đọc — gọi
+ *  được trong initializer của useState (Strict Mode gọi hai lần); xoá bằng clearPendingDang() sau khi mount. */
+export function peekPendingDang(): number | null {
+  return pendingDang ?? parseDangHash(currentHash());
+}
+
+export function clearPendingDang() {
+  pendingDang = null;
+}
+
 /**
  * Đọc tab muốn mở từ hash của URL. Nhận cả 2 kiểu:
  *  - `#muc=luyen-tap` — link chia sẻ tab (trang này tự sinh khi bấm tab)

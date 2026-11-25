@@ -1,0 +1,54 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l11-dien-tro-dinh-luat-ohm",
+ "lesson_title": "Bài 23. Điện trở. Định luật Ohm",
+ "the": [
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: điện trở, định luật Ohm, nhiệt độ",
+   "neo": "Điện trở là gì? Công thức, đơn vị?",
+   "hoi": "Điện trở là gì? Công thức, đơn vị?",
+   "dap": "<p>Mức cản dòng của vật dẫn<br>$R = U/I$<br>$U$ (V), $I$ (A), $R$ (Ω)<br>$1\\ \\text{k}\\Omega = 10^3\\ \\Omega$, $1\\ \\text{M}\\Omega = 10^6\\ \\Omega$<br>$1\\ \\text{mA} = 10^{-3}$ A</p>",
+   "tieu_muc": "1. Điện trở là gì"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: điện trở, định luật Ohm, nhiệt độ",
+   "neo": "Phát biểu định luật Ohm. Khi nào dùng được?",
+   "hoi": "Phát biểu định luật Ohm. Khi nào dùng được?",
+   "dap": "<p>$I$ tỉ lệ thuận $U$, tỉ lệ nghịch $R$<br>$I = U/R$<br>Đoạn mạch chỉ có điện trở, $R$ không đổi (nhiệt độ vật dẫn không đổi khi $U$ thay đổi)<br>Với đèn: vẫn tính $I = U/R$ ở từng trạng thái, nhưng $I$ không còn tỉ lệ thuận $U$</p>",
+   "tieu_muc": "3. Định luật Ohm"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: điện trở, định luật Ohm, nhiệt độ",
+   "neo": "Công thức điện trở kim loại theo nhiệt độ, ý nghĩa ký hiệu?",
+   "hoi": "Công thức điện trở kim loại theo nhiệt độ, ý nghĩa ký hiệu?",
+   "dap": "<p>$R = R_0[1 + \\alpha(t - t_0)]$<br>$R_0$ ở $t_0$<br>$\\alpha$ hệ số nhiệt điện trở (K⁻¹), dương với kim loại<br>$\\rho$ cũng theo công thức đó</p>",
+   "tieu_muc": "5. Điện trở phụ thuộc nhiệt độ"
+  },
+  {
+   "kieu": "lat",
+   "muc": "II. Kiến thức: điện trở, định luật Ohm, nhiệt độ",
+   "neo": "NTC, PTC khác kim loại ở chỗ nào?",
+   "hoi": "NTC, PTC khác kim loại ở chỗ nào?",
+   "dap": "<p>NTC: điện trở nhiệt hệ số âm, nóng thì $R$ giảm mạnh<br>Dùng làm cảm biến nhiệt<br>PTC thì ngược lại: nóng thì $R$ tăng vọt<br>Kim loại: nóng thì $R$ tăng từ từ</p>",
+   "tieu_muc": "6. Điện trở nhiệt: NTC và PTC"
+  },
+  {
+   "kieu": "lat",
+   "muc": "III. Ba cái bẫy sập nhiều nhất",
+   "neo": "Đường đặc trưng V–A của điện trở và của đèn khác nhau thế nà",
+   "hoi": "Đường đặc trưng V–A của điện trở và của đèn khác nhau thế nào?",
+   "dap": "<p>Đồ thị $I$ theo $U$<br>Điện trở: thẳng qua gốc, dốc $= 1/R$<br>Đèn: cong, dốc giảm dần vì $R$ tăng khi nóng<br>Điốt: không thẳng, chỉ dẫn một chiều</p>",
+   "tieu_muc": "Bẫy 3: \"Đường dốc hơn là điện trở lớn hơn\""
+  },
+  {
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy sập nhiều nhất",
+   "neo": "NTC 10 kΩ trong pin điện thoại. Pin sạc nóng từ 25 °C lên 45",
+   "hoi": "NTC 10 kΩ trong pin điện thoại. Pin sạc nóng từ 25 °C lên 45 °C. Điện trở NTC:",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p>NTC 10 kΩ trong pin điện thoại. Pin sạc nóng từ 25 °C lên 45 °C. Điện trở NTC:</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl42-q6\" id=\"on-tl42-q6a\"><label for=\"on-tl42-q6a\" class=\"tl-opt tl-ok\">A. Giảm, còn khoảng 4 kΩ</label>\n<input type=\"radio\" name=\"on-tl42-q6\" id=\"on-tl42-q6b\"><label for=\"on-tl42-q6b\" class=\"tl-opt tl-no\">B. Tăng lên khoảng 11 kΩ, như kim loại</label>\n<input type=\"radio\" name=\"on-tl42-q6\" id=\"on-tl42-q6c\"><label for=\"on-tl42-q6c\" class=\"tl-opt tl-no\">C. Không đổi, vì NTC không phải kim loại</label>\n<input type=\"radio\" name=\"on-tl42-q6\" id=\"on-tl42-q6d\"><label for=\"on-tl42-q6d\" class=\"tl-opt tl-no\">D. Giảm về 0, vì NTC thành siêu dẫn</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> NTC nóng thì $R$ giảm: thí nghiệm cho 4,3 kΩ ở 45 °C. Mạch sạc đọc giá trị này để biết pin nóng và giảm dòng sạc.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong> B — công thức bậc nhất với $\\alpha \\gt 0$ là của kim loại; NTC có hệ số nhiệt <em>âm</em>. C — \"điện trở nhiệt\" được chế tạo chính vì $R$ đổi mạnh theo nhiệt độ, không thể không đổi. D — siêu dẫn chỉ xảy ra ở nhiệt độ rất thấp (cỡ vài đến vài chục kelvin), không phải lúc nóng lên 45 °C.</p></div>\n</div>\n</div>"
+  }
+ ]
+}
