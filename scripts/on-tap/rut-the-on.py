@@ -45,6 +45,31 @@ def no_caption(fig: str) -> str:
     return re.sub(r"<figcaption>.*?</figcaption>", "", fig, flags=re.S)
 
 
+INLINE = ("strong", "em", "b", "i", "span", "u", "sub", "sup", "mark")
+
+
+def can_the(parts: list) -> list:
+    """Tách câu có thể cắt ngang <strong>…</strong>: mỗi gạch tự đóng thẻ còn mở và mở lại ở gạch sau."""
+    out, mo = [], []  # mo: các thẻ mở (nguyên văn) mang sang gạch sau
+    for p in parts:
+        q = "".join(mo) + p
+        mo = []
+        for m in re.finditer(r"<(/?)(\w+)\b[^>]*>", q):
+            ten = m.group(2).lower()
+            if ten not in INLINE:
+                continue
+            if m.group(1):
+                for k in range(len(mo) - 1, -1, -1):
+                    if re.match(rf"<{ten}\b", mo[k], re.I):
+                        del mo[k]
+                        break
+            else:
+                mo.append(m.group(0))
+        q += "".join(f"</{re.match(r'<(\w+)', t).group(1)}>" for t in reversed(mo))
+        out.append(re.sub(r"<(\w+)\b[^>]*>\s*</\1>", "", q))
+    return out
+
+
 def bullets(html: str, sentences: bool = False) -> str:
     """Mỗi ý một dòng (thầy chốt 25/11): tách theo " · ", <br>, và câu (". " + chữ hoa) → <ul><li>…</li></ul>."""
     inner = html.strip()
@@ -60,7 +85,12 @@ def bullets(html: str, sentences: bool = False) -> str:
                 parts.append(x[start : m.start()])
                 start = m.end()
         parts.append(x[start:])
+    parts = can_the(parts)
     parts = [p.strip().rstrip(".").strip() for p in parts]
+    # Câu hướng dẫn thao tác trên hình động ("Bấm ▶ Chạy…") vô nghĩa trên thẻ; "(số liệu minh hoạ)" là ghi chú cho hình.
+    parts = [re.sub(r"\s*\(số liệu minh hoạ\)", "", p) for p in parts if not text(p).startswith(("Bấm ", "Nhấn "))]
+    # Gạch chỉ còn đơn vị (ví dụ "J" tách ra từ "… · J · …") → nói rõ là đơn vị.
+    parts = [f"Đơn vị: {p}" if re.fullmatch(r"[A-Za-zΩ°/·]{1,3}", p.strip()) else p for p in parts if text(p)]
     parts = [p[0].upper() + p[1:] if p[:1].isalpha() else p for p in parts if p]
     if len(parts) < 2:
         return f"<p>{inner}</p>"
