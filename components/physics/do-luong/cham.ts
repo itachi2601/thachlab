@@ -221,6 +221,8 @@ export type KetQuaDo = {
   loai: "dung" | "chua-toi-uu" | "sai" | "nguy-hiem";
   chiDut: boolean;
   loi: string;
+  /** Quá thang: màn hiện "1" sát trái (phân biệt với giá trị thật đúng bằng 1 ở thang 1000 V/750 V). */
+  qua?: boolean;
 };
 
 /** Chữ trên màn cho giá trị ở thang th (quá thang → "1", như đồng hồ thật). */
@@ -334,7 +336,10 @@ export function doDongHo(nv: NhiemVuDH, ch: CauHinhDH, chiDutSan = false): KetQu
   const can = cauHinhDung(nv);
   const man = manHinhDH(nv.giaTri, th);
   if (nv.giaTri >= th.T)
-    return kq("sai", man, `Quá thang: màn chỉ hiện số 1 ở bên trái. Chuyển lên thang lớn hơn: ${THANG_DH[can.dl][can.thang].ten}.`);
+    return {
+      ...kq("sai", man, `Quá thang: màn chỉ hiện số 1 ở bên trái. Chuyển lên thang lớn hơn: ${THANG_DH[can.dl][can.thang].ten}.`),
+      qua: true,
+    };
   if (ch.thang !== can.thang)
     return kq(
       "chua-toi-uu",
