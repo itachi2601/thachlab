@@ -77,7 +77,7 @@
 ## Giao diện & sản phẩm
 - [Câu tương tự đúng dạng](project_thachlab_cau_tuong_tu_dung_dang.md) — chờ xem bài 18
 - [Ôn tập theo chặng](project_thachlab_on_tap_theo_chang.md) — deploy, chưa thử HS thật
-- [Ôn 5 phút + rút bài toán mẫu](project_thachlab_on_5_phut.md) — lịch ôn: migration đã chạy, chưa deploy
+- [Ôn 5 phút + rút bài toán mẫu](project_thachlab_on_5_phut.md) — lịch ôn đã chạy, chưa deploy; vị trí đã chốt, chờ triển khai 81 bài
 - [UI phụ huynh 45–60](project_thachlab_phu_huynh_ui.md) — treo migration 20261003130000
 - [AI Tutor GĐ 4](project_thachlab_ai_tutor.md) — sau Q2/2027
 - [Đề xuất từ nghiên cứu HS 14–22](project_thachlab_de_xuat_nghien_cuu_hs_14_22.md) — chờ chốt
