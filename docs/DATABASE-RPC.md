@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 445 hàm, sinh tự động 2026-11-23
+# Hàm SQL / RPC (schema public) — 448 hàm, sinh tự động 2026-11-25
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -128,6 +128,9 @@ repo — xem trên Supabase Dashboard).
 - `notify_student_side(p_student uuid, p_kind text, p_title text, p_body text, p_href_student text, p_href_parent text, p_extra uuid)` → void
 - `notify_user(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
 - `notify_user_staff(p_user uuid, p_kind text, p_title text, p_body text, p_href text)` → void
+- `on_tap_den_han(p_limit integer)` → TABLE(slug text, the_id text, bac smallint, han_on timestamp with time zone, tong_den_han integer)
+- `on_tap_ghi(p_slug text, p_ket_qua jsonb)` → void
+- `on_tap_trang_thai(p_slug text)` → TABLE(the_id text, bac smallint, han_on timestamp with time zone)
 - `parent_attendance_summary(p_student uuid, p_limit integer)` → TABLE(session_id bigint, session_date date, title text, status text)
 - `pl_digits(p text)` → text
 - `pl_fold_name(p text)` → text
@@ -249,12 +252,12 @@ repo — xem trên Supabase Dashboard).
 - `refresh_class_tutoring_needs(p_class bigint)` → integer
 - `refresh_public_stats()` → void
 - `refresh_tutoring_needs(p_student uuid)` → void
-- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone)` → bigint
+- `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
 - `review_board_stage(p_session bigint, p_stage integer)` → jsonb

@@ -21,7 +21,6 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.
 - **Sức khỏe mở cho HS/SV (19/11)**: `student` vào được `/suc-khoe` (THPT + CTTC), chương trình riêng không dụng cụ `PROGRAM_HS` (3 buổi ~30′), không thấy Số đo/ngực–eo; link ở `/tai-khoan/them`; localStorage tách theo tài khoản. Chưa deploy, chưa thử bằng tài khoản HS thật.
 - 19/11 RPC gộp trang bài + buổi ôn: đã chạy + deploy; chưa thử bằng HS thật.
-- `20261125120000_on_tap_lich_on` — bảng on_tap_the + 3 RPC lịch ôn thẻ (Ôn 5 phút), nhẹ, chạy giờ nào cũng được; nhánh claude/student-review-plan-7e827d.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật

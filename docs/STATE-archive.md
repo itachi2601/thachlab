@@ -3,6 +3,9 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 25/11/2026 10:34 (đã chạy, log `scripts/logs/20261125-103452-20261125120000_on_tap_lich_on.log`)
+- `20261125120000_on_tap_lich_on` — bảng on_tap_the + 3 RPC lịch ôn thẻ (Ôn 5 phút), nhẹ, chạy giờ nào cũng được; nhánh claude/student-review-plan-7e827d. Thử trong giao dịch rollback trước, rồi chạy thật; kiểm lại: RLS bật, 0 policy, anon/authenticated không quyền bảng, 3 hàm definer chỉ authenticated execute.
+
 ## Migration — 08/11/2026 19:00 (đã chạy, log `scripts/logs/20261108-185959-20261108120000_cnc_prep_responses.log`, `scripts/logs/20261108-190003-cnc-prep-buoi-2.log`)
 - `20261108120000_cnc_prep_responses.sql`: bảng mới cnc_prep_responses (CNC lớp đảo ngược, quiz chuẩn bị tối trước + câu chưa rõ), RLS SV của mình / GV phân công khoá + admin; thử trong giao dịch trước, đạt.
 - `scripts/sql/cnc-prep-buoi-2.sql`: 5 câu `exams.cnc_key='prep-2'` (published=false). Rollback: `delete from public.exams where cnc_key='prep-2';`
