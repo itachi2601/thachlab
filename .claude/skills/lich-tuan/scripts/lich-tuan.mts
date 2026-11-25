@@ -92,8 +92,9 @@ try {
   if (arg("--cong-tac")) ct = fs.readFileSync(arg("--cong-tac")!, "utf8");
   else {
     const list = await (await fetch("https://caothang.edu.vn/m/bai_viet/Lich-Cong-Tac-Tuan-14")).text();
-    const key = `den-ngay-${fmt(dayOf(7)).replace("/", "")}${dayOf(7).getFullYear()}`.toLowerCase();
-    const m = [...list.matchAll(/href="([^"]*Lich-cong-tac[^"]*)"/gi)].map((x) => x[1]).find((h) => h.toLowerCase().includes(key));
+    // Link tuần có lúc viết "den-ngay-29112026", có lúc "den-29112026" (tuần 13–14/2026) → khớp số ngày cuối tuần
+    const key = `-${fmt(dayOf(7)).replace("/", "")}${dayOf(7).getFullYear()}`;
+    const m = [...list.matchAll(/href="([^"]*Lich-cong-tac[^"]*)"/gi)].map((x) => x[1]).find((h) => new RegExp(`den(-ngay)?${key}\\b`, "i").test(h));
     if (!m) warn.push("Chưa thấy trang lịch công tác của tuần này trên caothang.edu.vn (có thể chưa đăng).");
     else ct = decode((await (await fetch(new URL(m, "https://caothang.edu.vn/m/").href)).text()).replace(/<(br|\/p|\/tr|\/li|\/div)[^>]*>/gi, "\n").replace(/<[^>]+>/g, " ")).replace(/[ \t]+/g, " ");
   }
@@ -101,6 +102,7 @@ try {
 const ctLines: { day: number; text: string }[] = [];
 let cur = 0;
 for (const raw of ct.split("\n").map((l) => l.trim()).filter(Boolean)) {
+  if (/^Ghi chú/i.test(raw)) break; // phần ghi chú cuối trang không phải sự kiện (tuần 14/2026 bị gán nhầm vào CN)
   const mm = raw.match(/^TH[ỨỪ]\s+(HAI|BA|TƯ|NĂM|SÁU|BẢY)|^CHỦ NHẬT/i);
   if (mm) { cur = ({ HAI: 1, BA: 2, TƯ: 3, NĂM: 4, SÁU: 5, BẢY: 6 } as any)[(mm[1] ?? "").toUpperCase()] ?? 7; continue; }
   if (cur) ctLines.push({ day: cur, text: raw });
