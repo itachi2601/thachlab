@@ -156,9 +156,21 @@ function TimeGrid({ days, byDay, weekStart, todayIso, nowMin, startH, endH, sele
                   <button key={i} type="button" onClick={() => onSelect(sel ? null : e)} title={`${e.start}–${e.end} · ${e.title}`}
                     className={`absolute z-10 overflow-hidden rounded-md border-l-4 bg-surface-2 px-1.5 py-0.5 text-left shadow-sm ${srcOf(e.src).border} ${sel ? "ring-2 ring-primary" : ""} ${e.clash ? "outline outline-1 outline-warn" : ""}`}
                     style={{ top: top + 1, height: h - 2, left: `calc(${(100 / lanes) * lane}% + 2px)`, width: `calc(${100 / lanes}% - 4px)` }}>
-                    <span className="block text-[11px] font-semibold leading-tight tabular-nums text-muted">{e.start}–{e.end}</span>
-                    <span className={`block text-xs font-semibold leading-tight text-ink ${single ? "" : "break-words"}`}>{e.title}{e.where && <span className="font-normal text-muted"> · {e.where}</span>}</span>
-                    {single && e.lesson && h >= 70 && <span className="mt-0.5 block text-xs leading-tight text-muted">{e.lesson}</span>}
+                    {h < 40 ? (
+                      // Mục ngắn (≤ ~35 phút): một dòng, cắt bằng "…" để thấy rõ là còn chữ — bấm xem đủ
+                      <span className="block truncate text-xs font-semibold leading-tight text-ink">
+                        <span className="tabular-nums text-muted">{e.start}</span> {e.title}
+                      </span>
+                    ) : (
+                      <>
+                        <span className="block text-[11px] font-semibold leading-tight tabular-nums text-muted">{e.start}–{e.end}</span>
+                        <span className="block overflow-hidden text-ellipsis text-xs font-semibold leading-4 text-ink"
+                          style={{ display: "-webkit-box", WebkitBoxOrient: "vertical", WebkitLineClamp: Math.max(1, Math.floor((h - 20) / 16)) }}>
+                          {e.title}{e.where && <span className="font-normal text-muted"> · {e.where}</span>}
+                        </span>
+                        {single && e.lesson && h >= 90 && <span className="mt-0.5 block truncate text-xs leading-tight text-muted">{e.lesson}</span>}
+                      </>
+                    )}
                   </button>
                 );
               })}
