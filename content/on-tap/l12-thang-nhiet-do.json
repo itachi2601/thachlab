@@ -1,0 +1,61 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l12-thang-nhiet-do",
+ "lesson_id": 3,
+ "lesson_title": "Bài 2. Thang nhiệt độ",
+ "the": [
+  {
+   "id": "3319f09f",
+   "kieu": "lat",
+   "muc": "II. Kiến thức",
+   "neo": "Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào?",
+   "hoi": "Nhiệt độ cho biết gì? Nhiệt năng truyền theo chiều nào?",
+   "dap": "<ul><li><strong>Cân bằng nhiệt</li><li>Chiều truyền nhiệt năng.</strong> Hai vật tiếp xúc mà chênh nhiệt độ thì nhiệt năng truyền từ vật nóng hơn sang vật lạnh hơn, cho tới khi hai nhiệt độ bằng nhau — hai vật ở trạng thái cân bằng nhiệt</li></ul>",
+   "tieu_muc": "1. Nhiệt độ và cân bằng nhiệt"
+  },
+  {
+   "id": "70847349",
+   "kieu": "lat",
+   "muc": "II. Kiến thức",
+   "neo": "Hai mốc quy ước của thang Celsius? Khoảng giữa chia thế nào?",
+   "hoi": "Hai mốc quy ước của thang Celsius? Khoảng giữa chia thế nào?",
+   "dap": "<ul><li><strong>Nước đá đang tan 0 °C</li><li>Hơi nước đang sôi 100 °C.</strong> Khoảng giữa chia thành 100 khoảng bằng nhau; kí hiệu $t$, đơn vị $^\\circ\\text{C}$; cao hơn 0 là số dương, thấp hơn 0 là số âm</li></ul>",
+   "tieu_muc": "2. Thang Celsius"
+  },
+  {
+   "id": "5580fff5",
+   "kieu": "lat",
+   "muc": "II. Kiến thức",
+   "neo": "Độ không tuyệt đối là gì, bằng bao nhiêu °C? Nhiệt độ điểm b",
+   "hoi": "Độ không tuyệt đối là gì, bằng bao nhiêu °C? Nhiệt độ điểm ba của nước?",
+   "dap": "<ul><li><strong>Độ không tuyệt đối = 0 K = −273,15 °C</strong> — nhiệt độ thấp nhất mà vật có thể có</li><li>Nhiệt độ điểm ba của nước: nước tinh khiết tồn tại đồng thời ở cả ba thể, quy ước $273{,}16\\ \\text{K}$ (tức $0{,}01\\ ^\\circ\\text{C}$)</li></ul>",
+   "tieu_muc": "3. Thang Kelvin — mốc 0 tuyệt đối"
+  },
+  {
+   "id": "53a4abc5",
+   "kieu": "lat",
+   "muc": "II. Kiến thức",
+   "neo": "Viết công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết \"°K\"",
+   "hoi": "Viết công thức đổi °C ↔ K và °C ↔ °F. Vì sao không viết \"°K\"?",
+   "dap": "<ul><li>$T(\\text{K}) = t(^\\circ\\text{C}) + 273{,}15$ và $t(^\\circ\\text{C}) = T(\\text{K}) - 273{,}15$; thường làm tròn 273</li><li>$t(^\\circ\\text{F}) = 1{,}8\\,t(^\\circ\\text{C}) + 32$</li><li>Kí hiệu đúng là $\\text{K}$, không có dấu độ, vì kelvin là đơn vị SI cơ bản của nhiệt độ, không phải một \"độ\" (quy ước từ năm 1967)</li></ul>",
+   "tieu_muc": "4. Thang Fahrenheit và cách đổi giữa ba thang"
+  },
+  {
+   "id": "54a9019d",
+   "kieu": "lat",
+   "muc": "II. Kiến thức",
+   "neo": "Kể tên các loại nhiệt kế và tính chất vật lí mà mỗi loại dựa",
+   "hoi": "Kể tên các loại nhiệt kế và tính chất vật lí mà mỗi loại dựa vào.",
+   "dap": "<ul><li><strong>Chất lỏng:</strong> cột chất lỏng nở dài</li><li><strong>Kim loại:</strong> thanh kim loại nở dài</li><li><strong>Khí:</strong> áp suất hoặc thể tích khí thay đổi theo nhiệt độ</li><li><strong>Điện trở:</strong> điện trở của vật liệu thay đổi theo nhiệt độ</li><li><strong>Cặp nhiệt điện:</strong> suất điện động tăng theo độ chênh nhiệt độ hai đầu</li><li><strong>Hồng ngoại điện tử:</strong> nhận bức xạ điện từ vật phát ra</li></ul>",
+   "tieu_muc": "5. Nhiệt kế"
+  },
+  {
+   "id": "7a56ebd9",
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy sập nhiều nhất",
+   "neo": "Câu 6. Một khay bánh vừa ra lò nguội từ 180 °C xuống 25 °C. ",
+   "hoi": "<strong>Câu 6.</strong> Một khay bánh vừa ra lò nguội từ 180 °C xuống 25 °C. Độ giảm nhiệt độ đó là:",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p class=\"tl-conf\">Em chắc bao nhiêu? <label><input type=\"radio\" name=\"on-tl3-q6c\" value=\"chac\"> Chắc</label> <label><input type=\"radio\" name=\"on-tl3-q6c\" value=\"khong\"> Không chắc</label></p>\n<p><strong>Câu 6.</strong> Một khay bánh vừa ra lò nguội từ 180 °C xuống 25 °C. Độ giảm nhiệt độ đó là:</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl3-q6\" id=\"on-tl3-q6a\"><label for=\"on-tl3-q6a\" class=\"tl-opt tl-ok\">A. $155\\ ^\\circ\\text{C}$, tức $155\\ \\text{K}$ và $279\\ ^\\circ\\text{F}$</label>\n<input type=\"radio\" name=\"on-tl3-q6\" id=\"on-tl3-q6b\"><label for=\"on-tl3-q6b\" class=\"tl-opt tl-no\">B. $155\\ ^\\circ\\text{C}$, tức $428\\ \\text{K}$ và $279\\ ^\\circ\\text{F}$</label>\n<input type=\"radio\" name=\"on-tl3-q6\" id=\"on-tl3-q6c\"><label for=\"on-tl3-q6c\" class=\"tl-opt tl-no\">C. $155\\ ^\\circ\\text{C}$, tức $155\\ \\text{K}$ và $155\\ ^\\circ\\text{F}$</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> Đây là <em>khoảng chênh</em>, không phải một giá trị nhiệt độ. Khoảng chênh trên thang Kelvin bằng đúng khoảng chênh trên thang Celsius ($1\\ \\text{K} = 1\\ ^\\circ\\text{C}$), còn trên thang Fahrenheit thì nhân 1,8: $1{,}8 \\times 155 = 279\\ ^\\circ\\text{F}$.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong> Đừng cộng 273 vào một <em>khoảng chênh</em>: 273 là độ lệch giữa hai gốc, chỉ dùng khi đổi một giá trị nhiệt độ. Còn quên nhân 1,8 là lỗi của phương án C — mỗi 1 °C chênh ứng với 1,8 °F chênh. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>\n</div>\n</div>"
+  }
+ ]
+}
