@@ -210,6 +210,8 @@ export interface RankStatus {
   titles_count: number;
   weekly: RankWeekly | null;
   daily: RankDaily | null;
+  /** Số thẻ "Ôn 5 phút" đến hạn của chính mình (trần 99). Chỉ rank_my_status có (migration 20261125180000), rank_status_of thì không. */
+  on_tap_den_han?: number;
 }
 
 // ---------- rank_my_titles / rank_titles_of ----------
