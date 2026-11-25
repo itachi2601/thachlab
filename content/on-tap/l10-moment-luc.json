@@ -1,0 +1,54 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l10-moment-luc",
+ "lesson_id": 66,
+ "lesson_title": "Bài 21. Moment lực. Cân bằng của vật rắn",
+ "the": [
+  {
+   "id": "8b39a7c0",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: moment lực và cân bằng",
+   "neo": "Moment lực là gì? Viết công thức, đơn vị.",
+   "hoi": "Moment lực là gì? Viết công thức, đơn vị.",
+   "dap": "<ul><li>Đặc trưng tác dụng làm quay của lực</li><li>$M = F d$</li><li>Đơn vị $\\text{N}\\cdot\\text{m}$</li></ul>",
+   "tieu_muc": "1. Moment lực"
+  },
+  {
+   "id": "b896b0fa",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: moment lực và cân bằng",
+   "neo": "Phát biểu quy tắc moment. Áp dụng cho vật nào?",
+   "hoi": "Phát biểu quy tắc moment. Áp dụng cho vật nào?",
+   "dap": "<ul><li>Vật có trục quay cố định</li><li>Tổng moment thuận kim = tổng moment ngược kim</li></ul>",
+   "tieu_muc": "2. Quy tắc moment",
+   "hinh": "<figure class=\"fig\" data-exp=\"tn-l10-moment-luc-02\" data-tl=\"1\"><svg viewBox=\"0 0 440 270\" role=\"img\" aria-label=\"Thước quay quanh trục O ở giữa; quả nặng P1 = 2,0 N treo cách trục 15 cm bên trái, lực kế kéo thẳng đứng xuống bên phải cách trục d2\"><rect x=\"27.5\" y=\"104\" width=\"385.0\" height=\"12\" rx=\"2\" fill=\"rgba(251,146,60,.18)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"220.0\" y1=\"110.0\" x2=\"220.0\" y2=\"230.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"190.0\" y1=\"230.0\" x2=\"250.0\" y2=\"230.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"1\"/><circle cx=\"220\" cy=\"110\" r=\"5\" fill=\"rgba(148,163,184,.35)\" stroke=\"currentColor\" stroke-width=\"2.4\"/><text x=\"230.0\" y=\"146.0\" fill=\"currentColor\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" font-style=\"italic\" font-family=\"serif\">O</text><line x1=\"275.0\" y1=\"104.0\" x2=\"275.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"302.5\" y1=\"104.0\" x2=\"302.5\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"330.0\" y1=\"104.0\" x2=\"330.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"385.0\" y1=\"104.0\" x2=\"385.0\" y2=\"109.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><line x1=\"137.5\" y1=\"116.0\" x2=\"137.5\" y2=\"206.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><rect x=\"124.5\" y=\"206\" width=\"26\" height=\"30\" rx=\"3\" fill=\"rgba(148,163,184,.35)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"137.5\" y1=\"116.0\" x2=\"137.5\" y2=\"176.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M143.3,166.0 L137.5,176.0 L131.7,166.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"147.5\" y=\"170.0\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\" font-style=\"italic\" font-family=\"serif\">P<tspan baseline-shift=\"sub\" font-size=\"14\">1</tspan></text><line x1=\"330.0\" y1=\"116.0\" x2=\"330.0\" y2=\"190.0\" stroke=\"currentColor\" stroke-width=\"1.4\" opacity=\"1\"/><rect x=\"320.0\" y=\"190\" width=\"20\" height=\"58\" rx=\"4\" fill=\"rgba(56,189,248,.15)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"330.0\" y1=\"248.0\" x2=\"330.0\" y2=\"262.0\" stroke=\"currentColor\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"346.0\" y=\"238.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">lực kế</text><line x1=\"330.0\" y1=\"116.0\" x2=\"330.0\" y2=\"161.6\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M335.8,151.6 L330.0,161.6 L324.2,151.6\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"320.0\" y=\"157.6\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\" font-style=\"italic\" font-family=\"serif\">F<tspan baseline-shift=\"sub\" font-size=\"14\">2</tspan></text><line x1=\"220.0\" y1=\"80.0\" x2=\"137.5\" y2=\"80.0\" stroke=\"#f87171\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"137.5\" y1=\"74.0\" x2=\"137.5\" y2=\"86.0\" stroke=\"#f87171\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"220.0\" y1=\"74.0\" x2=\"220.0\" y2=\"86.0\" stroke=\"#f87171\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"178.8\" y=\"70.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">d<tspan baseline-shift=\"sub\" font-size=\"14\">1</tspan> = 15 cm</text><line x1=\"220.0\" y1=\"80.0\" x2=\"330.0\" y2=\"80.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"330.0\" y1=\"74.0\" x2=\"330.0\" y2=\"86.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><line x1=\"220.0\" y1=\"74.0\" x2=\"220.0\" y2=\"86.0\" stroke=\"#38bdf8\" stroke-width=\"1.6\" opacity=\"1\"/><text x=\"275.0\" y=\"70.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">d<tspan baseline-shift=\"sub\" font-size=\"14\">2</tspan></text><text x=\"18.0\" y=\"30.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">quay ngược kim</text><text x=\"422.0\" y=\"30.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">quay thuận kim</text></svg></figure>"
+  },
+  {
+   "id": "4a60d516",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: moment lực và cân bằng",
+   "neo": "Hai điều kiện cân bằng của vật rắn?",
+   "hoi": "Hai điều kiện cân bằng của vật rắn?",
+   "dap": "<ul><li>Tổng lực bằng $\\vec 0$</li><li>Tổng moment đối với điểm bất kì bằng 0</li></ul>",
+   "tieu_muc": "3. Điều kiện cân bằng tổng quát của vật rắn"
+  },
+  {
+   "id": "30128ba2",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: moment lực và cân bằng",
+   "neo": "Ngẫu lực là gì? Gây ra chuyển động gì?",
+   "hoi": "Ngẫu lực là gì? Gây ra chuyển động gì?",
+   "dap": "<ul><li>Hai lực song song, ngược chiều, bằng nhau, cùng đặt vào một vật</li><li>Chỉ làm quay</li><li>Vật tự do quay quanh trọng tâm</li></ul>",
+   "tieu_muc": "4. Ngẫu lực",
+   "hinh": "<figure class=\"fig\" data-tl=\"1\"><svg viewBox=\"0 0 440 290\" role=\"img\" aria-label=\"Ngẫu lực trên vô lăng: tay trái đẩy lên, tay phải kéo xuống, hai lực bằng nhau; d là khoảng cách giữa hai giá\"><circle cx=\"220\" cy=\"140\" r=\"90\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"7\" opacity=\".55\"/><line x1=\"130.0\" y1=\"140.0\" x2=\"310.0\" y2=\"140.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"0.45\"/><line x1=\"220.0\" y1=\"140.0\" x2=\"220.0\" y2=\"230.0\" stroke=\"currentColor\" stroke-width=\"3\" opacity=\"0.45\"/><circle cx=\"220\" cy=\"140\" r=\"14\" fill=\"rgba(148,163,184,.3)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"130.0\" y1=\"140.0\" x2=\"130.0\" y2=\"76.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M124.2,86.0 L130.0,76.0 L135.8,86.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"310.0\" y1=\"140.0\" x2=\"310.0\" y2=\"204.0\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M315.8,194.0 L310.0,204.0 L304.2,194.0\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><circle cx=\"130\" cy=\"140\" r=\"5\" fill=\"#f87171\"/><circle cx=\"310\" cy=\"140\" r=\"5\" fill=\"#f87171\"/><text x=\"120.0\" y=\"86.0\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"end\" font-style=\"italic\" font-family=\"serif\">F<tspan baseline-shift=\"sub\" font-size=\"14\">1</tspan></text><text x=\"320.0\" y=\"200.0\" fill=\"#f87171\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\" font-style=\"italic\" font-family=\"serif\">F<tspan baseline-shift=\"sub\" font-size=\"14\">2</tspan></text><line x1=\"130.0\" y1=\"30.0\" x2=\"130.0\" y2=\"262.0\" stroke=\"#f87171\" stroke-width=\"1.3\" stroke-dasharray=\"5 5\" opacity=\"0.7\"/><line x1=\"310.0\" y1=\"30.0\" x2=\"310.0\" y2=\"262.0\" stroke=\"#f87171\" stroke-width=\"1.3\" stroke-dasharray=\"5 5\" opacity=\"0.7\"/><line x1=\"130.0\" y1=\"258.0\" x2=\"310.0\" y2=\"258.0\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"130.0\" y1=\"251.0\" x2=\"130.0\" y2=\"265.0\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"310.0\" y1=\"251.0\" x2=\"310.0\" y2=\"265.0\" stroke=\"#34d399\" stroke-width=\"2\" opacity=\"1\"/><text x=\"220.0\" y=\"250.0\" fill=\"#34d399\" font-size=\"16\" font-weight=\"700\" text-anchor=\"middle\" font-style=\"italic\" font-family=\"serif\">d</text><path d=\"M148.0,54.2 A112,112 0 0 1 292.0,54.2\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M288.2,43.9 L292.0,54.2 L281.2,52.3\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"220.0\" y=\"22.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">quay thuận kim</text></svg></figure>"
+  },
+  {
+   "id": "0d948782",
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Câu 3. Lực $100$ N đặt ở tay cầm búa cách điểm tì $0{,}25$ m",
+   "hoi": "<strong>Câu 3.</strong> Lực $100$ N đặt ở tay cầm búa cách điểm tì $0{,}25$ m, hợp với cán góc $30^\\circ$. Moment lực:",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p><strong>Câu 3.</strong> Lực $100$ N đặt ở tay cầm búa cách điểm tì $0{,}25$ m, hợp với cán góc $30^\\circ$. Moment lực:</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl66-q4\" id=\"on-tl66-q4a\"><label for=\"on-tl66-q4a\" class=\"tl-opt tl-no\">A. $25\\ \\text{N}\\cdot\\text{m}$</label>\n<input type=\"radio\" name=\"on-tl66-q4\" id=\"on-tl66-q4b\"><label for=\"on-tl66-q4b\" class=\"tl-opt tl-no\">B. $21{,}7\\ \\text{N}\\cdot\\text{m}$</label>\n<input type=\"radio\" name=\"on-tl66-q4\" id=\"on-tl66-q4c\"><label for=\"on-tl66-q4c\" class=\"tl-opt tl-ok\">C. $12{,}5\\ \\text{N}\\cdot\\text{m}$</label>\n<input type=\"radio\" name=\"on-tl66-q4\" id=\"on-tl66-q4d\"><label for=\"on-tl66-q4d\" class=\"tl-opt tl-no\">D. $400\\ \\text{N}\\cdot\\text{m}$</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> $d = 0{,}25 \\sin 30^\\circ = 0{,}125$ m; $M = 100 \\cdot 0{,}125 = 12{,}5\\ \\text{N}\\cdot\\text{m}$.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong> $25\\ \\text{N}\\cdot\\text{m}$ là lấy khoảng cách tới điểm đặt làm cánh tay đòn. $21{,}7$ là dùng nhầm $\\cos 30^\\circ$. $400$ là chia $F/d$. Vẽ giá lực, hạ vuông góc từ trục như Hình 2. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>\n</div>\n</div>"
+  }
+ ]
+}

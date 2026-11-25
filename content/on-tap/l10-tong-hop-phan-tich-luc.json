@@ -1,0 +1,71 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l10-tong-hop-phan-tich-luc",
+ "lesson_id": 58,
+ "lesson_title": "Bài 13. Tổng hợp và phân tích lực. Cân bằng lực",
+ "the": [
+  {
+   "id": "a39ad25c",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: tổng hợp, phân tích, cân bằng",
+   "neo": "Tổng hợp lực là gì? Hợp lực và lực thành phần là gì?",
+   "hoi": "Tổng hợp lực là gì? Hợp lực và lực thành phần là gì?",
+   "dap": "<ul><li><strong>Thay nhiều lực</li><li>Bằng một lực</li><li>Tác dụng y hệt.</strong> Lực thay thế = hợp lực; các lực bị thay = lực thành phần</li></ul>",
+   "tieu_muc": "1. Tổng hợp lực"
+  },
+  {
+   "id": "038a82d1",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: tổng hợp, phân tích, cân bằng",
+   "neo": "Viết công thức độ lớn hợp lực hai lực đồng quy và bốn trường",
+   "hoi": "Viết công thức độ lớn hợp lực hai lực đồng quy và bốn trường hợp đặc biệt.",
+   "dap": "<ul><li>$F^2 = F_1^2 + F_2^2 + 2F_1F_2\\cos\\alpha$</li><li>Cùng chiều: $F_1 + F_2$</li><li>Ngược chiều: $\\lvert F_1 - F_2 \\rvert$</li><li>Vuông góc: $\\sqrt{F_1^2 + F_2^2}$</li><li>Hai lực bằng nhau: $2F_1\\cos\\dfrac{\\alpha}{2}$</li></ul>",
+   "tieu_muc": "3. Hai lực đồng quy: quy tắc hình bình hành",
+   "hinh": "<figure class=\"fig\" data-tl=\"1\"><svg viewBox=\"0 0 440 220\" role=\"img\" aria-label=\"Quy tắc hình bình hành: hai lực F1, F2 hợp nhau góc alpha, đường chéo là hợp lực F\"><line x1=\"273.5\" y1=\"140.8\" x2=\"284.0\" y2=\"21.3\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"100.5\" y1=\"70.5\" x2=\"284.0\" y2=\"21.3\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" opacity=\"0.6\"/><line x1=\"90\" y1=\"190\" x2=\"273.5\" y2=\"140.8\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M261.9,137.7 L273.5,140.8 L265.0,149.3\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"90\" y1=\"190\" x2=\"100.5\" y2=\"70.5\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M93.6,80.3 L100.5,70.5 L105.6,81.4\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"90\" y1=\"190\" x2=\"284.0\" y2=\"21.3\" stroke=\"#34d399\" stroke-width=\"2.8\"/><path d=\"M272.2,23.6 L284.0,21.3 L280.1,32.6\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><path d=\"M134.4,178.1 A46,46 0 0 0 94.0,144.2\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"/><text x=\"116\" y=\"146\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">α</text><path d=\"M165.3,169.8 A78,78 0 0 0 148.9,138.8\" fill=\"none\" stroke=\"#34d399\" stroke-width=\"1.5\"/><text x=\"172\" y=\"150\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">θ</text><text x=\"239.525906994923\" y=\"170.82438143052104\" fill=\"#f87171\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"14\">1</tspan></text><text x=\"90.45868912971898\" y=\"74.45663622899053\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">F<tspan dy=\"4\" font-size=\"14\">2</tspan></text><text x=\"293.98459612464194\" y=\"29.281017659511576\" fill=\"#34d399\" font-size=\"16\" font-weight=\"700\" text-anchor=\"start\">F</text><circle cx=\"90.0\" cy=\"190.0\" r=\"4\" fill=\"currentColor\"/><text x=\"84\" y=\"208\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">O</text></svg></figure>"
+  },
+  {
+   "id": "1e950d21",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: tổng hợp, phân tích, cân bằng",
+   "neo": "Hợp lực của hai lực song song cùng chiều có độ lớn bao nhiêu",
+   "hoi": "Hợp lực của hai lực song song cùng chiều có độ lớn bao nhiêu, giá nằm ở đâu?",
+   "dap": "<ul><li>$F = F_1 + F_2$, cùng chiều hai lực</li><li>Giá nằm giữa hai giá, gần lực lớn hơn: $\\dfrac{F_1}{F_2} = \\dfrac{d_2}{d_1}$ (tỉ lệ <strong>nghịch</strong>)</li></ul>",
+   "tieu_muc": "4. Hai lực song song cùng chiều"
+  },
+  {
+   "id": "bb7e9a70",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: tổng hợp, phân tích, cân bằng",
+   "neo": "Phân tích lực là gì? Viết $F_x$, $F_y$ và nói $\\alpha$ là gó",
+   "hoi": "Phân tích lực là gì? Viết $F_x$, $F_y$ và nói $\\alpha$ là góc nào.",
+   "dap": "<ul><li>Thay một lực bằng hai thành phần vuông góc</li><li>$F_x = F\\cos\\alpha$, $F_y = F\\sin\\alpha$, với $\\alpha$ là góc giữa $\\vec F$ và trục $Ox$</li><li>Thành phần kề góc dùng cos, đối góc dùng sin</li><li>Trên dốc, $\\alpha$ là góc nghiêng nên thành phần dọc dốc là $P\\sin\\alpha$, vuông góc dốc là $P\\cos\\alpha$</li></ul>",
+   "tieu_muc": "5. Phân tích lực"
+  },
+  {
+   "id": "21f65caf",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: tổng hợp, phân tích, cân bằng",
+   "neo": "Điều kiện cân bằng của chất điểm? Với ba lực thì thế nào?",
+   "hoi": "Điều kiện cân bằng của chất điểm? Với ba lực thì thế nào?",
+   "dap": "<ul><li>Tổng các lực bằng $\\vec 0$</li><li>Ba lực: hợp của hai lực <strong>bằng và ngược chiều</strong> lực thứ ba; ba lực đồng quy</li></ul>",
+   "tieu_muc": "6. Cân bằng lực"
+  },
+  {
+   "id": "fd883fc4",
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Câu 3. Hai lực đồng quy $6$ N và $8$ N. Hợp lực của chúng có",
+   "hoi": "<strong>Câu 3.</strong> Hai lực đồng quy $6$ N và $8$ N. Hợp lực của chúng có thể có độ lớn nào?",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p><strong>Câu 3.</strong> Hai lực đồng quy $6$ N và $8$ N. Hợp lực của chúng có thể có độ lớn nào?</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl58-q4\" id=\"on-tl58-q4a\"><label for=\"on-tl58-q4a\" class=\"tl-opt tl-no\">A. $1$ N</label>\n<input type=\"radio\" name=\"on-tl58-q4\" id=\"on-tl58-q4b\"><label for=\"on-tl58-q4b\" class=\"tl-opt tl-ok\">B. $10$ N</label>\n<input type=\"radio\" name=\"on-tl58-q4\" id=\"on-tl58-q4c\"><label for=\"on-tl58-q4c\" class=\"tl-opt tl-no\">C. $15$ N</label>\n<input type=\"radio\" name=\"on-tl58-q4\" id=\"on-tl58-q4d\"><label for=\"on-tl58-q4d\" class=\"tl-opt tl-no\">D. $20$ N</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> Hợp lực nằm trong khoảng từ $\\lvert 8 - 6 \\rvert = 2$ N đến $8 + 6 = 14$ N. Giá trị $10$ N thuộc khoảng này (ứng với hai lực vuông góc).</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong><br>Tìm hai đầu mút trước: nhỏ nhất khi hai lực ngược chiều, lớn nhất khi cùng chiều.<br>Giá trị đã chọn đang nằm ngoài khoảng đó.<br>Đã chọn <em>Chắc</em> mà vẫn sai thì đây là chỗ cần xem lại.</p></div>\n</div>\n</div>"
+  },
+  {
+   "id": "855c0d61",
+   "kieu": "lat",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Hai lực cân bằng khác cặp lực – phản lực ở điểm nào?",
+   "hoi": "Hai lực cân bằng khác cặp lực – phản lực ở điểm nào?",
+   "dap": "<p><strong>Cân bằng: cùng một vật, triệt tiêu.</strong> Lực – phản lực: hai vật khác nhau, không triệt tiêu.</p>",
+   "tieu_muc": "Bẫy 3: nhầm sin và cos khi phân tích lực"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l10-thuc-hanh-sai-so",
+ "lesson_id": 48,
+ "lesson_title": "Bài 3. Thực hành tính sai số trong phép đo. Ghi kết quả đo",
+ "the": [
+  {
+   "id": "ff144998",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "7 đơn vị cơ bản SI; thứ nguyên và hai quy tắc kiểm công thức",
+   "hoi": "7 đơn vị cơ bản SI; thứ nguyên và hai quy tắc kiểm công thức?",
+   "dap": "<ul><li>$\\text{m}$</li><li>$\\text{kg}$</li><li>$\\text{s}$</li><li>$\\text{K}$</li><li>$\\text{A}$</li><li>$\\text{mol}$</li><li>$\\text{cd}$</li><li>Thứ nguyên $[X]$: đơn vị phụ thuộc đơn vị cơ bản thế nào</li><li>Số hạng cộng trừ cùng thứ nguyên</li><li>Hai vế cùng thứ nguyên</li></ul>",
+   "tieu_muc": "2. Thứ nguyên"
+  },
+  {
+   "id": "b232434f",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "Hệ thống khác ngẫu nhiên thế nào? Đo nhiều lần giảm loại nào",
+   "hoi": "Hệ thống khác ngẫu nhiên thế nào? Đo nhiều lần giảm loại nào?",
+   "dap": "<ul><li>Hệ thống: lệch cùng phía, do dụng cụ, ĐCNN</li><li>Ngẫu nhiên: tản hai phía, do thao tác</li><li>Đo nhiều lần chỉ giảm ngẫu nhiên</li></ul>",
+   "tieu_muc": "3. Phép đo và các loại sai số",
+   "hinh": "<figure class=\"fig\" data-tl=\"1\" data-exp=\"tn-l10-sai-so-02\"><svg viewBox=\"0 0 410 215\" role=\"img\" aria-label=\"Thước kẻ vạch chia 1 milimét; mép cục tẩy nằm đúng vạch 12; dưới thước là khoảng ± 0,5 mm quanh vạch 12 cho đầu này\"><rect x=\"12\" y=\"28\" width=\"193\" height=\"42\" fill=\"#fb923c\" fill-opacity=\".35\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"26.0\" y=\"55.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">cục tẩy</text><rect x=\"14\" y=\"90\" width=\"382\" height=\"62\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"40.0\" y1=\"90.0\" x2=\"40.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"40.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">9</text><line x1=\"95.0\" y1=\"90.0\" x2=\"95.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"95.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">10</text><line x1=\"150.0\" y1=\"90.0\" x2=\"150.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"150.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">11</text><line x1=\"205.0\" y1=\"90.0\" x2=\"205.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"205.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">12</text><line x1=\"260.0\" y1=\"90.0\" x2=\"260.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"260.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">13</text><line x1=\"315.0\" y1=\"90.0\" x2=\"315.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"315.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">14</text><line x1=\"370.0\" y1=\"90.0\" x2=\"370.0\" y2=\"112.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"370.0\" y=\"140.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">15</text><line x1=\"205.0\" y1=\"70.0\" x2=\"205.0\" y2=\"112.0\" stroke=\"#fb923c\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><line x1=\"260.0\" y1=\"74.0\" x2=\"260.0\" y2=\"90.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"315.0\" y1=\"74.0\" x2=\"315.0\" y2=\"90.0\" stroke=\"#38bdf8\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"287.5\" y1=\"82.0\" x2=\"262.0\" y2=\"82.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M271.5,87.5 L262.0,82.0 L271.5,76.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"287.5\" y1=\"82.0\" x2=\"313.0\" y2=\"82.0\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M303.5,76.5 L313.0,82.0 L303.5,87.5\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"287.5\" y=\"64.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">ĐCNN = 1 mm</text><line x1=\"177.5\" y1=\"172.0\" x2=\"232.5\" y2=\"172.0\" stroke=\"#34d399\" stroke-width=\"4\" opacity=\"1\"/><line x1=\"177.5\" y1=\"164.0\" x2=\"177.5\" y2=\"180.0\" stroke=\"#34d399\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"232.5\" y1=\"164.0\" x2=\"232.5\" y2=\"180.0\" stroke=\"#34d399\" stroke-width=\"3\" opacity=\"1\"/><text x=\"205.0\" y=\"200.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">đầu này ± 0,5 mm</text></svg></figure>"
+  },
+  {
+   "id": "17403313",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "Sai số tuyệt đối của phép đo trực tiếp?",
+   "hoi": "Sai số tuyệt đối của phép đo trực tiếp?",
+   "dap": "<ul><li>$\\overline{A}$ trung bình</li><li>$\\Delta A_i = |\\overline{A} - A_i|$</li><li>$\\overline{\\Delta A}$ trung bình các $\\Delta A_i$</li><li>$\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$</li></ul>",
+   "tieu_muc": "4. Sai số tuyệt đối của phép đo trực tiếp",
+   "hinh": "<figure class=\"fig\" data-tl=\"1\" data-exp=\"tn-l10-sai-so-01\"><svg viewBox=\"0 0 420 240\" role=\"img\" aria-label=\"Trục thời gian: năm chấm là năm lần đo, vạch xanh dương là giá trị trung bình 20,07 s, đoạn xanh lá từ 19,92 s đến 20,22 s là kết quả 20,07 ± 0,15 s\"><line x1=\"24.0\" y1=\"200.0\" x2=\"396.0\" y2=\"200.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"75.0\" y1=\"195.0\" x2=\"75.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"75.0\" y=\"224.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">19,8</text><line x1=\"165.0\" y1=\"195.0\" x2=\"165.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"165.0\" y=\"224.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">20,0</text><line x1=\"255.0\" y1=\"195.0\" x2=\"255.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"255.0\" y=\"224.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">20,2</text><line x1=\"345.0\" y1=\"195.0\" x2=\"345.0\" y2=\"205.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"345.0\" y=\"224.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"middle\">20,4</text><text x=\"398.0\" y=\"190.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">t (s)</text><line x1=\"196.5\" y1=\"46.0\" x2=\"196.5\" y2=\"200.0\" stroke=\"#38bdf8\" stroke-width=\"2\" stroke-dasharray=\"5 4\" opacity=\"1\"/><text x=\"196.5\" y=\"40.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">trung bình</text><circle cx=\"250.5\" cy=\"90.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"97.5\" cy=\"90.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"228.0\" cy=\"90.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"138.0\" cy=\"90.0\" r=\"6\" fill=\"#fb923c\"/><circle cx=\"268.5\" cy=\"90.0\" r=\"6\" fill=\"#fb923c\"/><text x=\"300.0\" y=\"95.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">5 lần đo</text><line x1=\"129.0\" y1=\"140.0\" x2=\"264.0\" y2=\"140.0\" stroke=\"#34d399\" stroke-width=\"5\" opacity=\"1\"/><line x1=\"129.0\" y1=\"130.0\" x2=\"129.0\" y2=\"150.0\" stroke=\"#34d399\" stroke-width=\"3\" opacity=\"1\"/><line x1=\"264.0\" y1=\"130.0\" x2=\"264.0\" y2=\"150.0\" stroke=\"#34d399\" stroke-width=\"3\" opacity=\"1\"/><text x=\"206.5\" y=\"124.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"start\">20,07 ± 0,15 s</text><text x=\"129.0\" y=\"172.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">19,92</text><text x=\"264.0\" y=\"172.0\" fill=\"#34d399\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">20,22</text></svg></figure>"
+  },
+  {
+   "id": "6707f9cd",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "Sai số tỉ đối: công thức và ý nghĩa?",
+   "hoi": "Sai số tỉ đối: công thức và ý nghĩa?",
+   "dap": "<ul><li>$\\delta A = \\dfrac{\\Delta A}{\\overline{A}} \\cdot 100\\,\\%$</li><li>Cho biết mức độ chính xác</li><li>Càng nhỏ càng chính xác</li></ul>",
+   "tieu_muc": "5. Sai số tỉ đối"
+  },
+  {
+   "id": "86fa6568",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "Sai số gián tiếp: tổng/hiệu, tích/thương, luỹ thừa?",
+   "hoi": "Sai số gián tiếp: tổng/hiệu, tích/thương, luỹ thừa?",
+   "dap": "<ul><li>Tổng, hiệu: cộng $\\Delta A$</li><li>Tích, thương: cộng $\\delta A$</li><li>Luỹ thừa: số mũ nhân $\\delta$ của chính nó</li></ul>",
+   "tieu_muc": "6. Phép đo gián tiếp"
+  },
+  {
+   "id": "1476529a",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: đơn vị, sai số, cách ghi kết quả",
+   "neo": "Ghi kết quả đo và đếm chữ số có nghĩa?",
+   "hoi": "Ghi kết quả đo và đếm chữ số có nghĩa?",
+   "dap": "<ul><li>$A = \\overline{A} \\pm \\Delta A$</li><li>$\\Delta A$ 1–2 CSCN</li><li>$\\overline{A}$ cùng bậc thập phân</li><li>Số khác 0, số 0 giữa, số 0 cuối thập phân: có nghĩa; số 0 đứng đầu: không</li></ul>",
+   "tieu_muc": "7. Ghi kết quả đo và chữ số có nghĩa"
+  },
+  {
+   "id": "2c887846",
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Câu 5. Cân điện tử chưa chỉnh về số 0, luôn chỉ thừa $0{,}3\\",
+   "hoi": "<strong>Câu 5.</strong> Cân điện tử chưa chỉnh về số 0, luôn chỉ thừa $0{,}3\\ \\text{g}$. Cân vật 5 lần, lấy trung bình. Kết luận đúng:",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p><strong>Câu 5.</strong> Cân điện tử chưa chỉnh về số 0, luôn chỉ thừa $0{,}3\\ \\text{g}$. Cân vật 5 lần, lấy trung bình. Kết luận đúng:</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl48-q6\" id=\"on-tl48-q6a\"><label for=\"on-tl48-q6a\" class=\"tl-opt tl-ok\">A. Trung bình vẫn thừa khoảng $0{,}3\\ \\text{g}$; đo thêm không sửa được</label>\n<input type=\"radio\" name=\"on-tl48-q6\" id=\"on-tl48-q6b\"><label for=\"on-tl48-q6b\" class=\"tl-opt tl-no\">B. Hết sai số, vì đã lấy trung bình</label>\n<input type=\"radio\" name=\"on-tl48-q6\" id=\"on-tl48-q6c\"><label for=\"on-tl48-q6c\" class=\"tl-opt tl-no\">C. Độ lệch còn khoảng $0{,}06\\ \\text{g}$, vì chia cho 5</label>\n<input type=\"radio\" name=\"on-tl48-q6\" id=\"on-tl48-q6d\"><label for=\"on-tl48-q6d\" class=\"tl-opt tl-no\">D. Đo thêm 100 lần thì độ lệch triệt tiêu</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Đúng.</strong> Lệch cùng một phía $0{,}3\\ \\text{g}$ ở cả 5 lần nên trung bình cũng lệch $0{,}3\\ \\text{g}$. Muốn sửa phải chỉnh cân về số 0.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong> B, C, D đều tưởng trung bình xoá được sai số hệ thống: chỉ sai số tản hai phía mới bị trung bình làm nhỏ đi. Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>\n</div>\n</div>"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "schema": "thachlab.on-tap/v1",
+ "slug": "l10-dinh-luat-3-newton",
+ "lesson_id": 61,
+ "lesson_title": "Bài 16. Định luật 3 Newton",
+ "the": [
+  {
+   "id": "38f2c554",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: lực luôn đi theo cặp",
+   "neo": "Phát biểu định luật III Newton.",
+   "hoi": "Phát biểu định luật III Newton.",
+   "dap": "<ul><li><strong>A tác dụng B thì B tác dụng lại A</li><li>Cùng phương</li><li>Ngược chiều</li><li>Cùng độ lớn.</strong></li></ul>",
+   "tieu_muc": "1. Lực và phản lực"
+  },
+  {
+   "id": "4799b68b",
+   "kieu": "lat",
+   "muc": "II. Kiến thức: lực luôn đi theo cặp",
+   "neo": "Cặp lực – phản lực có 4 đặc điểm nào?",
+   "hoi": "Cặp lực – phản lực có 4 đặc điểm nào?",
+   "dap": "<ul><li><strong>Ba Cùng – Một Ngược – Một Khác.</strong> Ba cùng: cùng lúc, cùng loại, cùng độ lớn</li><li>Một ngược: ngược chiều (cùng phương)</li><li>Một khác: đặt lên hai vật khác nhau</li></ul>",
+   "tieu_muc": "3. Thí nghiệm: hai lực kế kéo nhau",
+   "hinh": "<figure class=\"fig\" data-exp=\"tn-l10-newton3-01\" data-tl=\"1\"><svg viewBox=\"0 0 440 190\" role=\"img\" aria-label=\"Hai lực kế móc vào nhau cùng chỉ 5 N; lực kế 2 kéo lực kế 1 sang phải, lực kế 1 kéo lực kế 2 sang trái\"><rect x=\"30\" y=\"80\" width=\"120\" height=\"42\" rx=\"5\" fill=\"rgba(148,163,184,.18)\" stroke=\"currentColor\" stroke-width=\"2\"/><rect x=\"290\" y=\"80\" width=\"120\" height=\"42\" rx=\"5\" fill=\"rgba(148,163,184,.18)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"150.0\" y1=\"101.0\" x2=\"290.0\" y2=\"101.0\" stroke=\"currentColor\" stroke-width=\"2.5\" opacity=\"1\"/><circle cx=\"220\" cy=\"101.0\" r=\"5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"90.0\" y=\"107.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">5 N</text><text x=\"350.0\" y=\"107.0\" fill=\"currentColor\" font-size=\"17\" font-weight=\"700\" text-anchor=\"middle\">5 N</text><text x=\"30.0\" y=\"162.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Lực kế 1</text><text x=\"410.0\" y=\"162.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">Lực kế 2</text><line x1=\"152\" y1=\"62\" x2=\"206\" y2=\"62\" stroke=\"#f87171\" stroke-width=\"2.8\"/><path d=\"M196.0,56.2 L206.0,62.0 L196.0,67.8\" fill=\"none\" stroke=\"#f87171\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><line x1=\"288\" y1=\"62\" x2=\"234\" y2=\"62\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M244.0,67.8 L234.0,62.0 L244.0,56.2\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"30.0\" y=\"38.0\" fill=\"#f87171\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Lên lực kế 1</text><text x=\"410.0\" y=\"38.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"end\">Lên lực kế 2</text></svg></figure>"
+  },
+  {
+   "id": "1dae41f7",
+   "kieu": "chon",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Câu 2. Chiếc đèn treo vào trần bằng một sợi dây, đang đứng y",
+   "hoi": "<strong>Câu 2.</strong> Chiếc đèn treo vào trần bằng một sợi dây, đang đứng yên. Hai lực nào là cặp lực – phản lực?",
+   "html": "<div class=\"tl-box tl-box--think tl-check\">\n<p class=\"tl-label\">Tự kiểm tra ngay</p>\n<p><strong>Câu 2.</strong> Chiếc đèn treo vào trần bằng một sợi dây, đang đứng yên. Hai lực nào là cặp lực – phản lực?</p>\n<div class=\"tl-quiz\">\n<input type=\"radio\" name=\"on-tl61-q2\" id=\"on-tl61-q2a\"><label for=\"on-tl61-q2a\" class=\"tl-opt tl-no\">A. Trọng lực lên đèn và lực dây kéo đèn</label>\n<input type=\"radio\" name=\"on-tl61-q2\" id=\"on-tl61-q2b\"><label for=\"on-tl61-q2b\" class=\"tl-opt tl-no\">B. Trọng lực lên đèn và lực đèn kéo dây</label>\n<input type=\"radio\" name=\"on-tl61-q2\" id=\"on-tl61-q2c\"><label for=\"on-tl61-q2c\" class=\"tl-opt tl-no\">C. Lực dây kéo đèn và lực trần kéo dây</label>\n<input type=\"radio\" name=\"on-tl61-q2\" id=\"on-tl61-q2d\"><label for=\"on-tl61-q2d\" class=\"tl-opt tl-ok\">D. Lực dây kéo đèn và lực đèn kéo dây</label>\n<div class=\"tl-fb tl-fb--ok\"><p><strong>Chính xác.</strong> Cùng cặp hai vật (dây và đèn), cùng loại (cùng là lực đàn hồi, do dây và móc đèn đều bị biến dạng), đặt lên hai vật khác nhau.</p></div>\n<div class=\"tl-fb tl-fb--no\"><p><strong>Chưa đúng.</strong></p><ul class=\"tl-fb-list\"><li>Chọn A: cả hai lực đều đặt lên đèn, đó là hai lực cân bằng.</li><li>Chọn B: trọng lực là Trái Đất hút đèn, không cùng cặp vật với lực đèn kéo dây.</li><li>Chọn C: một lực là dây–đèn, một lực là trần–dây, hai cặp vật khác nhau.</li></ul><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>\n</div>\n</div>"
+  },
+  {
+   "id": "a4aef74d",
+   "kieu": "lat",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Hai lực cân bằng khác lực – phản lực ở đâu?",
+   "hoi": "Hai lực cân bằng khác lực – phản lực ở đâu?",
+   "dap": "<ul><li>Cân bằng: <strong>cùng một vật</strong>, triệt tiêu</li><li>Lực – phản lực: <strong>hai vật</strong>, không triệt tiêu</li></ul>",
+   "tieu_muc": "Bẫy 1: \"bằng nhau, ngược chiều thì triệt tiêu\"",
+   "hinh": "<figure class=\"fig\" data-exp=\"tn-l10-newton3-03\" data-tl=\"1\"><svg viewBox=\"0 0 420 290\" role=\"img\" aria-label=\"Sách nằm yên trên bàn: P và N cùng đặt lên sách và cân bằng; N đặt lên sách và N phẩy đặt lên bàn là cặp lực phản lực\"><rect x=\"140\" y=\"80\" width=\"140\" height=\"60\" rx=\"3\" fill=\"rgba(251,146,60,.15)\" stroke=\"currentColor\" stroke-width=\"2\"/><text x=\"146.0\" y=\"72.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Quyển sách</text><rect x=\"90\" y=\"210\" width=\"240\" height=\"40\" rx=\"3\" fill=\"rgba(56,189,248,.12)\" stroke=\"currentColor\" stroke-width=\"2\"/><line x1=\"110.0\" y1=\"250.0\" x2=\"110.0\" y2=\"282.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><line x1=\"310.0\" y1=\"250.0\" x2=\"310.0\" y2=\"282.0\" stroke=\"currentColor\" stroke-width=\"2\" opacity=\"1\"/><text x=\"98.0\" y=\"236.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">Mặt bàn</text><line x1=\"180\" y1=\"110\" x2=\"180\" y2=\"162\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M185.8,152.0 L180.0,162.0 L174.2,152.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"170.0\" y=\"160.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"end\">P</text><text x=\"12.0\" y=\"182.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"500\" text-anchor=\"start\">Vẽ tách sách</text><text x=\"12.0\" y=\"200.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"500\" text-anchor=\"start\">khỏi bàn</text><line x1=\"245\" y1=\"140\" x2=\"245\" y2=\"88\" stroke=\"#fb923c\" stroke-width=\"2.8\"/><path d=\"M239.2,98.0 L245.0,88.0 L250.8,98.0\" fill=\"none\" stroke=\"#fb923c\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"256.0\" y=\"108.0\" fill=\"#fb923c\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">N</text><line x1=\"245\" y1=\"210\" x2=\"245\" y2=\"262\" stroke=\"#38bdf8\" stroke-width=\"2.8\"/><path d=\"M250.8,252.0 L245.0,262.0 L239.2,252.0\" fill=\"none\" stroke=\"#38bdf8\" stroke-width=\"2.8\" stroke-linejoin=\"miter\" stroke-miterlimit=\"10\" stroke-linecap=\"butt\"/><text x=\"256.0\" y=\"240.0\" fill=\"#38bdf8\" font-size=\"15\" font-weight=\"700\" text-anchor=\"start\">N′</text><line x1=\"245.0\" y1=\"144.0\" x2=\"245.0\" y2=\"206.0\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-dasharray=\"4 4\" opacity=\"0.8\"/><text x=\"256.0\" y=\"166.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">N và N′:</text><text x=\"256.0\" y=\"184.0\" fill=\"currentColor\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">lực–phản lực</text><text x=\"10.0\" y=\"22.0\" fill=\"#fb923c\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">● Cam: lực đặt lên SÁCH</text><text x=\"10.0\" y=\"42.0\" fill=\"#38bdf8\" font-size=\"14\" font-weight=\"600\" text-anchor=\"start\">● Xanh: lực đặt lên BÀN</text></svg></figure>"
+  },
+  {
+   "id": "fe2f209f",
+   "kieu": "lat",
+   "muc": "III. Ba cái bẫy của bài này",
+   "neo": "Lực hai bên bằng nhau, sao gia tốc hai vật lại khác nhau?",
+   "hoi": "Lực hai bên bằng nhau, sao gia tốc hai vật lại khác nhau?",
+   "dap": "<p>$a = F/m$: <strong>vật nhẹ hơn, gia tốc lớn hơn</strong>.</p>",
+   "tieu_muc": "Bẫy 2: \"xe nặng đâm xe nhẹ thì lực lớn hơn\""
+  }
+ ]
+}
