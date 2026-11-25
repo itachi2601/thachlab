@@ -3,6 +3,9 @@
 Lịch sử các đợt migration đã chạy xong trên production, chuyển sang đây để STATE.md chỉ còn việc
 đang chờ/đang treo. Log chạy thực tế ở `scripts/logs/`, rollback ở `perf/rollback/`.
 
+## Migration — 25/11/2026 10:56 (đã chạy, log `scripts/logs/20261125-105626-20261125180000_rank_my_status_on_tap.log`)
+- `20261125180000_rank_my_status_on_tap` — rank_my_status() thêm trường on_tap_den_han (Ôn 5 phút, trần 99), chữ ký/grant giữ nguyên; thử trong giao dịch rollback trước (có trường mới); nhánh claude/ecstatic-curie-d02642. Rollback `perf/rollback/20261125180000_rank_my_status_on_tap.down.sql`.
+
 ## Migration — 25/11/2026 10:34 (đã chạy, log `scripts/logs/20261125-103452-20261125120000_on_tap_lich_on.log`)
 - `20261125120000_on_tap_lich_on` — bảng on_tap_the + 3 RPC lịch ôn thẻ (Ôn 5 phút), nhẹ, chạy giờ nào cũng được; nhánh claude/student-review-plan-7e827d. Thử trong giao dịch rollback trước, rồi chạy thật; kiểm lại: RLS bật, 0 policy, anon/authenticated không quyền bảng, 3 hàm definer chỉ authenticated execute.
 
