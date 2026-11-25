@@ -1,0 +1,80 @@
+/* Gọi tên ngẫu nhiên — nút nổi nằm ngay trên nút "Ghi chú" của giáo viên (.lesson-note-float: right 76px, bottom 20px). */
+.float { position: fixed; z-index: 45; right: 76px; bottom: 72px; }
+.fab {
+  display: inline-flex; min-height: 44px; align-items: center; gap: 6px;
+  border: 1px solid rgba(15, 23, 42, .18); border-radius: 999px; background: rgba(255, 255, 255, .96);
+  padding: 0 14px; color: #17233a; font: inherit; font-size: 13px; font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .18); cursor: pointer;
+}
+.fab:hover { border-color: #1d4ed8; color: #1d4ed8; }
+
+/* Lớp phủ: đè cả chế độ trình chiếu (z 120) để quay số ngay trên màn chiếu. */
+.overlay {
+  position: fixed; inset: 0; z-index: 140; display: flex; align-items: center; justify-content: center;
+  background: rgba(8, 13, 26, .72); padding: 16px;
+}
+.panel {
+  display: flex; width: min(760px, 100%); max-height: calc(100dvh - 32px); flex-direction: column; gap: 14px;
+  overflow: auto; border-radius: 20px; background: var(--color-panel, #fff); padding: 18px 20px 20px;
+  color: var(--color-ink, #17233a); box-shadow: 0 20px 60px rgba(0, 0, 0, .35);
+}
+.head { display: flex; align-items: center; gap: 12px; }
+.head h2 { flex: 1; margin: 0; font-size: 18px; font-weight: 800; }
+.select, .className { min-height: 44px; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 10px;
+  background: var(--color-bg, #f5f7fa); padding: 0 10px; color: inherit; font: inherit; font-size: 15px; font-weight: 600; }
+.className { display: inline-flex; align-items: center; }
+.close { display: grid; width: 44px; height: 44px; place-items: center; border: 0; border-radius: 10px;
+  background: none; color: var(--color-muted, #475569); cursor: pointer; }
+.close:hover { background: var(--color-bg, #f5f7fa); }
+
+.stage {
+  display: grid; min-height: 34vh; place-items: center; border-radius: 16px;
+  background: var(--color-bg, #f5f7fa); padding: 20px; text-align: center;
+}
+.hint { margin: 0; color: var(--color-muted, #475569); font-size: 17px; }
+.result { display: grid; gap: 6px; }
+.result strong { font-size: clamp(56px, 12vh, 128px); font-weight: 900; line-height: 1.05; letter-spacing: -.01em; color: #1d4ed8; }
+.result span { font-size: clamp(18px, 3vh, 28px); font-weight: 600; color: var(--color-ink, #17233a); }
+.rolling strong { color: var(--color-muted, #475569); }
+.landed { animation: pop .35s ease-out; }
+@keyframes pop { from { transform: scale(.8); opacity: .4; } to { transform: scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .landed { animation: none; } }
+
+.actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.spin {
+  display: inline-flex; min-height: 56px; min-width: 200px; align-items: center; justify-content: center; gap: 8px;
+  border: 0; border-radius: 14px; background: #1d4ed8; padding: 0 24px; color: #fff; font: inherit;
+  font-size: 19px; font-weight: 800; cursor: pointer;
+}
+.spin:hover:not(:disabled) { background: #1e40af; }
+.spin:disabled { opacity: .55; cursor: default; }
+.ghost {
+  min-height: 56px; border: 1px solid var(--color-line-strong, #8b93a1); border-radius: 14px; background: none;
+  padding: 0 18px; color: inherit; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer;
+}
+
+.meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px;
+  color: var(--color-muted, #475569); font-size: 14px; }
+.toggle { display: inline-flex; min-height: 44px; align-items: center; gap: 8px; color: var(--color-ink, #17233a); cursor: pointer; }
+.toggle input { width: 18px; height: 18px; }
+
+.called h3 { display: flex; align-items: center; justify-content: space-between; margin: 0 0 6px; font-size: 15px; font-weight: 800; }
+.called ol { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; counter-reset: goi; }
+.called li { counter-increment: goi; border-radius: 999px; background: var(--color-bg, #f5f7fa); padding: 6px 12px; font-size: 14px; }
+.called li::before { content: counter(goi) ". "; color: var(--color-muted, #475569); }
+.reset { display: inline-flex; min-height: 44px; align-items: center; gap: 4px; border: 0; background: none;
+  color: #1d4ed8; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+
+.roster summary { min-height: 44px; display: flex; align-items: center; cursor: pointer; font-size: 15px; font-weight: 700; }
+.roster ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 6px; margin: 6px 0 0; padding: 0; list-style: none; }
+.roster button { width: 100%; min-height: 44px; border: 1px solid var(--color-line, rgba(15, 23, 42, .12)); border-radius: 10px;
+  background: none; padding: 6px 10px; color: inherit; font: inherit; font-size: 14px; text-align: left; cursor: pointer; }
+.roster button.absent { background: var(--color-bg, #f5f7fa); color: var(--color-muted, #475569); text-decoration: line-through; }
+.roster em { font-style: normal; text-decoration: none; }
+
+@media (max-width: 767px) {
+  .float { right: 12px; bottom: 130px; }
+  .fab span { display: none; }
+  .fab { width: 44px; justify-content: center; padding: 0; }
+  .panel { padding: 14px; }
+}

@@ -25,6 +25,7 @@ import BtmPresenter from "@/components/lessons/btm-trinh-chieu/BtmPresenterLazy"
 import { banChieuCuaBai, linkBanChieu } from "@/features/lessons/tren-lop";
 import LessonNoteFab, { type LessonNoteContext } from "@/components/lessons/LessonNoteFab";
 import StudentNoteFab, { OPEN_STUDENT_NOTE_EVENT } from "@/components/lessons/StudentNoteFab";
+import RandomCallFab, { type CallClass } from "@/components/lessons/RandomCallFab";
 import NenKhtn9 from "@/components/lop-hoc/NenKhtn9";
 import { HSG_SUBJECT_CODE } from "@/services/academic-subjects";
 import ChapterTree from "@/components/lessons/ChapterTree";
@@ -564,6 +565,19 @@ function LessonLoader() {
       })
       .filter((entry) => entry.lessons.length > 0);
   }, [siblingChapters, siblingLessons, siblingClasses, chapterId, classSlug]);
+
+  // Lớp có thể "Gọi tên ngẫu nhiên" trong bài này: các lớp gắn với chương đang xem (dữ liệu đã tải,
+  // không thêm request); mặc định lớp theo ?class=.
+  const callClasses = useMemo((): CallClass[] => {
+    if (!siblingChapters || !siblingClasses || chapterId == null) return [];
+    const ch = siblingChapters.find((c) => c.id === chapterId);
+    if (!ch) return [];
+    return siblingClasses
+      .filter((c) => ch.classIds.includes(c.id))
+      .sort((a, b) => a.sort_order - b.sort_order)
+      .map((c) => ({ id: c.id, name: c.name }));
+  }, [siblingChapters, siblingClasses, chapterId]);
+  const callDefaultClassId = (classSlug && siblingClasses?.find((c) => c.slug === classSlug)?.id) || null;
 
   const courseLessons = useMemo(() => courseChapters.flatMap((entry) => entry.lessons), [courseChapters]);
 
@@ -1794,6 +1808,9 @@ function LessonLoader() {
       )}
 
       {canPresent && Number.isFinite(id) && <LessonNoteFab lessonId={id} getContext={getNoteContext} />}
+      {canPresent && Number.isFinite(id) && (
+        <RandomCallFab lessonId={id} classes={callClasses} defaultClassId={callDefaultClassId} />
+      )}
       {!canPresent && Number.isFinite(id) && <StudentNoteFab lessonId={id} getContext={getNoteContext} />}
 
       {/* Chế độ trình chiếu bài giảng — lớp phủ toàn màn hình, tải chậm, chỉ mount khi bấm nút
