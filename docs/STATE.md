@@ -66,7 +66,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Bài 65 L10: 3 góp ý Hình 3/4/5; bài 65/67 chưa xem 375 px.
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
-- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do. Việc 4 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md`): 3 clip mẫu `-20261120` + lô 20 clip L12 `-20261121` ĐÃ GHI DB (21/11, 22/11 22:28; chi tiết STATE-archive 23/11). Code việc 1, 2, 5, 6 ĐÃ DEPLOY 21/11 06:29.
+- Video thí nghiệm: mọi TN loại `thi_nghiem` đã có clip hoặc bỏ có lý do. Việc 4 (`KE-HOACH-CAI-TIEN-CLIP-2026-11-19.md`): 3 clip mẫu `-20261120` + lô 20 clip L12 `-20261121` ĐÃ GHI DB (21/11, 22/11 22:28; chi tiết STATE-archive 23/11). Code việc 1, 2, 5, 6 đã deploy, nhưng /lop-hoc/bai thiếu `data-lesson-id` nên 0 lượt ghi tới 25/11; sửa + deploy 25/11 (9e50dcab4) — kiểm lại `lesson_clip_views` có dòng sau buổi học tới.
 - Lô 12/11 (14/11): 7 clip đề Bộ bản 2 đã trên DB từ 13/11 (nhánh review-experiment gộp main 14/11); 12 clip bẫy Ch.1/2/4 vào `lib/clip-bay.ts`; mô phỏng tự kéo `MoPhongPortals` ở bài 7, 8, 11 (DB ghi 14/11 8h50, deploy 8h47). Chưa thử HS thật; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.

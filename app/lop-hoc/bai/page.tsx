@@ -1085,7 +1085,15 @@ function LessonLoader() {
 
       if (item.kind === "ly_thuyet")
         return (
-          <div key={item.id} id={`lesson-item-${item.id}`} className="lesson-stack" data-item={item.id}>
+          <div
+            key={item.id}
+            id={`lesson-item-${item.id}`}
+            className="lesson-stack"
+            data-item={item.id}
+            // KhungPortals đọc mã bài ở đây để ghi lượt xem/lựa chọn clip (lesson_clip_views, lesson_clip_choices);
+            // chỉ học sinh — thiếu thuộc tính này thì không ghi gì (0 dòng 6–25/11/2026).
+            data-lesson-id={recordProgress && Number.isFinite(id) ? id : undefined}
+          >
             <TheoryBlock
               item={item}
               defaultOpen={itemIndex === 0 || item.id === hashTargetItemId}
