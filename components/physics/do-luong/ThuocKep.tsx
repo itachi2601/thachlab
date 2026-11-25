@@ -14,7 +14,7 @@
  * B4 (không gì tự chạy).
  */
 
-import { useMemo, useRef, useState, type PointerEvent, type ReactNode } from "react";
+import { useId, useMemo, useRef, useState, type PointerEvent, type ReactNode } from "react";
 import { ChonCheDo, HangChon, LuyenDoc, phuBtn, soNguyenRaChuoi, useTienDo, type CheDo } from "./chung";
 import { DU_XICH, chamThuocKep, ghiThuocKep, ngauNhienThuocKep, tachThuocKep, type LoaiDuXich } from "./cham";
 
@@ -35,6 +35,50 @@ function kepZ(zH: number, pH: LoaiDuXich) {
   const max = MAX_N * 100 + (DU_XICH[pH].N - 1) * pH;
   return Math.max(0, Math.min(max, Math.round(zH / pH) * pH));
 }
+
+/* ---------------- Màu thép (cố định, không đổi theo sáng/tối: đây là "ảnh" dụng cụ thật — M5) ---------------- */
+
+/** Mực khắc vạch, màu vạch 0 du xích, màu vạch trùng — cố định vì nằm trên nền thép sáng ở cả hai chế độ. */
+const MUC = "#1b2026";
+const XANH = "#1d4ed8";
+const LUC = "#15803d";
+/** Chữ đậm hơn nét để đạt ≥ 4,5:1 trên tấm du xích (kiem-code 25/11). */
+const LUC_CHU = "#166534";
+const XANH_CHU = "#1e40af";
+
+/** Gradient thép không gỉ (thân thước, du xích, hàm, đồng thau của vật kẹp). id duy nhất theo useId. */
+function MauThep({ id }: { id: string }) {
+  return (
+    <defs>
+      <linearGradient id={`${id}-than`} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#f6f8fa" />
+        <stop offset="0.42" stopColor="#dde2e7" />
+        <stop offset="0.58" stopColor="#cbd2d8" />
+        <stop offset="1" stopColor="#eef1f4" />
+      </linearGradient>
+      <linearGradient id={`${id}-tam`} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#eaedf0" />
+        <stop offset="1" stopColor="#c6cdd4" />
+      </linearGradient>
+      <linearGradient id={`${id}-ham`} x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stopColor="#c3cad1" />
+        <stop offset="0.5" stopColor="#eef1f4" />
+        <stop offset="1" stopColor="#b7bfc7" />
+      </linearGradient>
+      <linearGradient id={`${id}-dong`} x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stopColor="#f6dc98" />
+        <stop offset="0.5" stopColor="#c9973a" />
+        <stop offset="1" stopColor="#efcd7e" />
+      </linearGradient>
+      <pattern id={`${id}-khia`} width="3" height="4" patternUnits="userSpaceOnUse">
+        <rect width="3" height="4" fill="#9aa4ad" />
+        <rect width="1.4" height="4" fill="#5f6a74" />
+      </pattern>
+    </defs>
+  );
+}
+
+const VIEN = "#7b8590";
 
 /* ---------------- Hình toàn thước ---------------- */
 
@@ -60,19 +104,27 @@ function HinhToanThuoc({
   const z = zH / 100;
   const ref = useRef<SVGSVGElement>(null);
   const down = useRef(false);
+  const id = `tk${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
 
   const toMm = (e: PointerEvent<SVGSVGElement>) => {
     const r = ref.current!.getBoundingClientRect();
     return ((e.clientX - r.left) / r.width) * W - X0;
   };
 
+  // Thân thước: y 22–62; vạch thước chính khắc từ mép dưới thân lên; tấm du xích 62–84 ngay dưới.
+  const T0 = 22;
+  const BY = 62;
+  const P1 = 84;
+  const xa = x(z);
+  const xb = x(z + len + 2);
+
   const main: ReactNode[] = [];
   for (let j = 0; j <= R; j++) {
-    const h = j % 10 === 0 ? 13 : j % 5 === 0 ? 8 : 5;
-    main.push(<line key={j} x1={x(j)} x2={x(j)} y1={50} y2={50 - h} />);
+    const h = j % 10 === 0 ? 12 : j % 5 === 0 ? 8 : 5;
+    main.push(<line key={j} x1={x(j)} x2={x(j)} y1={BY} y2={BY - h} />);
     if (j % 10 === 0)
       main.push(
-        <text key={`t${j}`} x={x(j)} y={31} textAnchor="middle" fontSize={16} fill="currentColor" stroke="none">
+        <text key={`t${j}`} x={x(j)} y={T0 + 18} textAnchor="middle" fontSize={15} fill={MUC} stroke="none">
           {j}
         </text>,
       );
@@ -80,14 +132,24 @@ function HinhToanThuoc({
   const ver: ReactNode[] = [];
   for (let i = 0; i <= N; i++) {
     const xi = x(z + (i * len) / N);
-    ver.push(<line key={i} x1={xi} x2={xi} y1={50} y2={50 + (i % DU_XICH[pH].nhanMoi === 0 ? 9 : 5)} />);
+    ver.push(
+      <line
+        key={i}
+        x1={xi}
+        x2={xi}
+        y1={BY}
+        y2={BY + (i % DU_XICH[pH].nhanMoi === 0 ? 9 : 5)}
+        stroke={i === 0 ? XANH : MUC}
+        strokeWidth={i === 0 ? 1.8 : 1}
+      />,
+    );
   }
 
   return (
     <svg
       ref={ref}
-      viewBox={`0 0 ${W} 126`}
-      className="block w-full select-none text-ink"
+      viewBox={`0 0 ${W} 150`}
+      className="block w-full select-none"
       style={{ touchAction: "pan-y" }}
       role="img"
       aria-label={xem ? `Thước kẹp đang chỉ ${ghiThuocKep(zH, pH)} mm. Kéo hàm để đổi.` : "Thước kẹp. Chạm vào thước để dời kính lúp."}
@@ -100,44 +162,50 @@ function HinhToanThuoc({
       onPointerUp={() => (down.current = false)}
       onPointerCancel={() => (down.current = false)}
     >
-      {/* thước chính + hàm cố định */}
+      <MauThep id={id} />
+      {/* vật được kẹp: thanh đồng thau nhìn ngang */}
+      {z > 0.3 && <rect x={X0} y={100} width={xa - X0} height={30} fill={`url(#${id}-dong)`} stroke="#9a6f22" strokeWidth={0.8} />}
+      {/* hàm cố định: hàm đo ngoài (dưới) + mỏ đo trong (trên), mặt đo thẳng đứng ở x = X0 */}
       <path
-        d={`M${X0 - 16},12 H${X1 + 6} V50 H${X0} V118 H${X0 - 16} Z`}
-        fill="var(--color-panel)"
-        stroke="currentColor"
-        strokeWidth={1.5}
+        d={`M${X0},${BY} V136 L${X0 - 3},146 L${X0 - 8},142 L${X0 - 22},110 V${BY} Z`}
+        fill={`url(#${id}-ham)`}
+        stroke={VIEN}
+        strokeWidth={1}
       />
-      <g stroke="currentColor" strokeWidth={1}>
+      <path d={`M${X0},${T0} V4 L${X0 - 4},4 L${X0 - 16},${T0} Z`} fill={`url(#${id}-ham)`} stroke={VIEN} strokeWidth={1} />
+      {/* thân thước (chạy ra khỏi mép phải hình) */}
+      <rect x={X0 - 22} y={T0} width={W - X0 + 30} height={BY - T0} fill={`url(#${id}-than)`} stroke={VIEN} strokeWidth={1} />
+      <line x1={X0 - 22} x2={W + 8} y1={BY - 1} y2={BY - 1} stroke="#ffffff" strokeOpacity={0.6} />
+      <g stroke={MUC} strokeWidth={1}>
         {main}
       </g>
-      {/* vật được kẹp */}
-      {z > 0.3 && (
-        <rect x={X0} y={92} width={x(z) - X0} height={26} fill="var(--color-warn)" fillOpacity={0.18} stroke="var(--color-warn)" />
-      )}
-      {/* con trượt + hàm động */}
+      {/* con trượt: dải trên thân + tấm du xích + hàm động + mỏ trên + vít hãm + núm khía */}
+      <rect x={xa} y={T0 - 6} width={xb - xa} height={6} fill={`url(#${id}-tam)`} stroke={VIEN} strokeWidth={1} />
+      <path d={`M${xa},${T0 - 6} V4 L${xa + 4},4 L${xa + 16},${T0 - 6} Z`} fill={`url(#${id}-ham)`} stroke={VIEN} strokeWidth={1} />
+      <rect x={xa + (xb - xa) * 0.55 - 6} y={6} width={12} height={10} rx={1.5} fill={`url(#${id}-khia)`} stroke="#4b5560" />
       <path
-        d={`M${x(z)},50 H${x(z + len + 2)} V80 H${x(z) + 16} V118 H${x(z)} Z`}
-        fill="var(--color-primary-soft)"
-        stroke="var(--color-primary)"
-        strokeWidth={1.5}
+        d={`M${xa},${BY} H${xb - 4} Q${xb},${BY} ${xb},${BY + 4} V${P1 - 4} Q${xb},${P1} ${xb - 4},${P1} H${xa + 22} V110 L${xa + 8},142 L${xa + 3},146 L${xa},136 Z`}
+        fill={`url(#${id}-tam)`}
+        stroke={VIEN}
+        strokeWidth={1}
       />
-      <g stroke="currentColor" strokeWidth={1}>
-        {ver}
-      </g>
+      <line x1={xa} x2={xb - 4} y1={BY + 0.6} y2={BY + 0.6} stroke="#5f6a74" strokeOpacity={0.5} />
+      <g>{ver}</g>
+      <rect x={xa + 28} y={P1 - 3} width={24} height={13} rx={3} fill={`url(#${id}-khia)`} stroke="#4b5560" />
       {/* khung kính lúp */}
       <rect
         x={x(c - wMm / 2)}
-        y={6}
+        y={1}
         width={wMm * S}
-        height={82}
+        height={P1 + 4}
         fill="none"
-        stroke="var(--color-primary)"
+        stroke={XANH}
         strokeWidth={2}
         strokeDasharray="5 3"
         rx={3}
       />
       {xem && (
-        <text x={x(z) + 22} y={110} fontSize={16} fill="var(--color-primary)">
+        <text x={xa + 28} y={120} fontSize={15} fill="var(--color-primary)">
           ⇆ kéo hàm
         </text>
       )}
@@ -157,6 +225,7 @@ function KinhLup({ zH, pH, c, toTrung }: { zH: number; pH: LoaiDuXich; c: number
   const z = zH / 100;
   const { n, k } = tachThuocKep(zH, pH);
   const BY = 72; // đường ranh giới thước chính / du xích
+  const id = `kl${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
 
   const main: ReactNode[] = [];
   const j0 = Math.max(0, Math.floor(c - (Rr - L) / ppm / 2) - 1);
@@ -166,20 +235,10 @@ function KinhLup({ zH, pH, c, toTrung }: { zH: number; pH: LoaiDuXich; c: number
     if (!inView(px)) continue;
     const hl = toTrung && j === n + k;
     const h = j % 10 === 0 ? 34 : j % 5 === 0 ? 26 : 17;
-    main.push(
-      <line
-        key={j}
-        x1={px}
-        x2={px}
-        y1={BY}
-        y2={BY - h}
-        stroke={hl ? "var(--color-ok)" : "currentColor"}
-        strokeWidth={hl ? 3 : 1.4}
-      />,
-    );
+    main.push(<line key={j} x1={px} x2={px} y1={BY} y2={BY - h} stroke={hl ? LUC : MUC} strokeWidth={hl ? 3 : 1.4} />);
     if ((ppm >= 40 || j % 5 === 0) && px > L + 12 && px < Rr - 12)
       main.push(
-        <text key={`t${j}`} x={px} y={26} textAnchor="middle" fontSize={16} fontWeight={j % 5 === 0 ? 700 : 400} fill="currentColor">
+        <text key={`t${j}`} x={px} y={26} textAnchor="middle" fontSize={16} fontWeight={j % 5 === 0 ? 700 : 400} fill={MUC}>
           {j}
         </text>,
       );
@@ -199,34 +258,51 @@ function KinhLup({ zH, pH, c, toTrung }: { zH: number; pH: LoaiDuXich; c: number
         x2={px}
         y1={BY}
         y2={BY + (labeled ? 26 : 17)}
-        stroke={hl ? "var(--color-ok)" : zero ? "var(--color-primary)" : "currentColor"}
+        stroke={hl ? LUC : zero ? XANH : MUC}
         strokeWidth={hl ? 3 : zero ? 2.4 : 1.4}
       />,
     );
     if (labeled && px > L + 8 && px < Rr - 8)
       ver.push(
-        <text key={`v${i}`} x={px} y={BY + 44} textAnchor="middle" fontSize={16} fill={zero ? "var(--color-primary)" : "currentColor"}>
+        <text key={`v${i}`} x={px} y={BY + 44} textAnchor="middle" fontSize={16} fill={zero ? XANH_CHU : MUC}>
           {Math.round(i * pH * 0.1)}
         </text>,
       );
     if (hl)
       ver.push(
-        <text key="trung" x={px} y={BY + 66} textAnchor="middle" fontSize={16} fontWeight={700} fill="var(--color-ok)">
+        <text key="trung" x={px} y={BY + 66} textAnchor="middle" fontSize={16} fontWeight={700} fill={LUC_CHU}>
           ✓ trùng
         </text>,
       );
   }
 
-  const sx0 = Math.max(L, x(z - 0.6));
+  const sx0 = Math.max(L, x(z));
   const sx1 = Math.min(Rr, x(z + len + 1));
   return (
-    <svg viewBox={`0 0 ${W} 146`} className="block w-full select-none text-ink" role="img" aria-label="Kính lúp: phóng to chỗ đọc du xích">
-      <rect x={L} y={2} width={Rr - L} height={BY - 2} fill="var(--color-panel)" />
-      {sx1 > sx0 && <rect x={sx0} y={BY} width={sx1 - sx0} height={72} fill="var(--color-primary-soft)" />}
-      <line x1={L} x2={Rr} y1={BY} y2={BY} stroke="currentColor" strokeWidth={1} />
-      {main}
-      {ver}
-      <rect x={L} y={2} width={Rr - L} height={142} fill="none" stroke="var(--color-line-strong)" rx={6} />
+    <svg viewBox={`0 0 ${W} 148`} className="block w-full select-none" role="img" aria-label="Kính lúp: phóng to chỗ đọc du xích">
+      <MauThep id={id} />
+      <defs>
+        <radialGradient id={`${id}-toi`} cx="0.5" cy="0.5" r="0.75">
+          <stop offset="0.6" stopColor="#000" stopOpacity={0} />
+          <stop offset="1" stopColor="#000" stopOpacity={0.16} />
+        </radialGradient>
+        <clipPath id={`${id}-o`}>
+          <rect x={L} y={3} width={Rr - L} height={142} rx={10} />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${id}-o)`}>
+        {/* nền sau thước (khe giữa các chi tiết) */}
+        <rect x={L} y={3} width={Rr - L} height={142} fill="#8e979f" />
+        {/* thân thước */}
+        <rect x={L} y={3} width={Rr - L} height={BY - 3} fill={`url(#${id}-than)`} />
+        {/* tấm du xích (chỉ trong khoảng con trượt) */}
+        {sx1 > sx0 && <rect x={sx0 - 6} y={BY} width={sx1 - sx0 + 6} height={80} fill={`url(#${id}-tam)`} />}
+        {sx1 > sx0 && <line x1={sx0 - 6} x2={sx1} y1={BY + 1} y2={BY + 1} stroke="#4b5560" strokeOpacity={0.55} strokeWidth={1.5} />}
+        {main}
+        {ver}
+        <rect x={L} y={3} width={Rr - L} height={142} fill={`url(#${id}-toi)`} />
+      </g>
+      <rect x={L} y={3} width={Rr - L} height={142} fill="none" stroke="#3f4852" strokeWidth={3} rx={10} />
     </svg>
   );
 }
