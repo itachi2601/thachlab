@@ -46,7 +46,7 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - **Mục công tác có chữ "Thạch" (Thầy Thạch, Đ/c Thạch, Diệu Thạch…) là thầy — luôn giữ** dù không có trưởng/phó khoa hay giao ban. Cả trường chỉ có một người tên Thạch (thầy chốt 19/10/2026), nên khớp chữ "thạch" là đủ; từ khoá ở `ten_thay` trong `references/lich-co-dinh.json`. Mục khớp được ghi chú "CÓ TÊN THẦY".
 - Sáng T7 8h–11h dạy HSG KHTN 9 ở THCS Trần Văn Ơn.
 - T2: họp cán bộ 7h15–8h15, sau đó cà phê cùng cán bộ bộ môn; 10h có việc khác (nội dung chưa rõ, giả định 1 giờ — hỏi thầy tên việc).
-- Duyệt đồ án 8h30–9h30 vào T4 và T6 (thầy xác nhận 18/10/2026; T2 không có duyệt đồ án).
+- Duyệt đồ án (T4, T6 8h30–9h30): đã bỏ 25/11/2026 vì đồ án đã bảo vệ xong.
 - Lịch công tác tuần: thầy phải dự khi thành phần có **trưởng/phó khoa, Bộ Cơ khí, hoặc giao ban**.
 - Trượt băng ≥3 buổi/tuần (giả định 2 giờ, chiều tối), gym 2–3 buổi (1,5 giờ, không hai ngày liền). Giờ ưu tiên sửa ở `the_thao`. Né T2 cho trượt băng. Tuần kín thì báo thiếu, không ép.
 - Mỗi mục Dạy Vật lí ghi `lesson` = "Đã tới: <mốc thpt_courses.current_topic_id> · Tiếp: <chủ đề tầng bài kế tiếp cùng khối>" (khoá không theo mốc, vd ôn thi HK: `buoi_day.ghi_chu_khoa[id]` trong `lich-co-dinh.json`) và `note` = nhịp buổi `buoi_day.nhip` (tự ôn 10–15′ → kiểm tra bài cũ 20–25′ → sửa bài & ôn 30′ → bài mới + bài tập). Thầy báo "lớp X đã học tới bài Y" → gọi `teaching_set(course, topic, true, ngày)` qua `supabase db query --linked` với `set_config('request.jwt.claims', …sub = uid thầy…)`; mốc chỉ nhận chủ đề tầng bài (`parent_id null`, đúng khối).

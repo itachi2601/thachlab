@@ -155,3 +155,6 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-25 · Trước khi đăng hàng loạt, so DB với HEAD cho cả lô (DB == HEAD cả 20 bài) rồi chạy dry-run cả lô, grep dòng `DB :` đều chứa 🧮 → chắc chắn chỉ khối Bài toán mẫu đổi; sau đó mới ghi. Rẻ hơn đọc từng khác biệt.
 - 2026-11-25 · Nhiều link "Dạng N" trong một dòng nối bằng " · " bị lint báo dồn ý → mỗi link một dòng `<br>`. Đáp số tính lại + kiem-code soát theo lô 5 bài: bắt được 2 chỗ thiếu link dạng và thiếu Tự kiểm.
 - 2026-11-25 · Backup của cap-nhat-ly-thuyet.sh ghi vào `scripts/logs/` của WORKTREE (gitignore) → dọn worktree là mất; chạy từ worktree thì chép backup sang `~/Projects/thachlab/scripts/logs/`.
+- 2026-11-25 · Rút Bài toán mẫu L11: dry-run `cap-nhat-ly-thuyet.sh` chỉ in vị trí khác ĐẦU TIÊN, không đủ biết DB có cũ hơn repo không (bài 39 DB còn thiếu 3 commit Chốt mục/vá chưa đăng) → trước khi đăng, so `body_html` DB với `git show <commit trước khi sửa>:theory.html` (bỏ khác khoảng trắng); khác thì dừng, hỏi thầy.
+- 2026-11-25 · Rút lời giải mà hình (FIGn) nằm trong lời giải → đừng xoá mốc `<!--FIGn-->` (build_figs.py đòi đúng 1 lần), chuyển hình vào ô đáp số; hình lộ đáp số cũng chuyển vào đó.
+- 2026-11-25 · Xoá lời giải làm treo câu "xem lại bước c của lời giải" trong phản hồi quiz → grep "lời giải" trong cả bài sau khi rút.
