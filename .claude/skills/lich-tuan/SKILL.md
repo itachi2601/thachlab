@@ -23,6 +23,10 @@ npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts --khoa            # xem
 npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts --tim "sóng dừng"  # tìm id chủ đề tầng bài đúng khối
 npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts 4:46:2026-10-16    # <course_id>:<topic_id>:<ngày dạy>, nhiều bộ cách nhau bằng dấu cách
 ```
+   **Không chờ thầy báo — đọc phiếu trợ giảng trước** (từ 11/2026 phiếu buổi lớp có ô bắt buộc "Nội dung thầy đã dạy buổi hôm đó", `ta_sessions.policy->>'lesson_content'`): `ghi-moc-bai.mts --tro-giang 21` ghép buổi → khoá theo khối + thứ, cột `moi` = sau lần tick cuối. Đổi chữ tự do sang chủ đề tầng bài rồi ghi; buổi chỉ chữa đề/ôn (B7/B8) hoặc nội dung không có chủ đề riêng (vd "Điện từ trường – sóng điện từ" L12) thì giữ mốc, ghi vào báo cáo.
+```
+npx tsx .claude/skills/lich-tuan/scripts/ghi-moc-bai.mts --tro-giang 21     # nội dung trợ giảng ghi, theo khoá
+```
    Script gọi `teaching_set` dưới danh nghĩa thầy (ghi `thpt_teaching_progress` + đồng bộ `current_topic_id`); chỉ nhận chủ đề `parent_id null` đúng khối. Ghi xong làm tiếp bước 1–5 để web cập nhật.
 1. Xác định tuần (mặc định tuần hiện tại; "tuần sau" → `--tuan` một ngày trong tuần đó).
 2. **TKB Cao Thắng**: nếu `scripts/data/lich-tuan/tkb-caothang.json` chưa có hoặc đã sang học kỳ/tuần khác, nhờ thầy đăng nhập portal trong tab trình duyệt (built-in hoặc Chrome), rồi Claude đọc trang TKB đã mở (`get_page_text`) và ghi file JSON `[{weekday,start,end,title,where}]` (tiết → giờ theo bảng tiết của trường; ghi rõ cách đổi tiết–giờ vào file nếu suy ra). Hoặc thầy dán/chụp TKB. TKB đổi theo tuần thì lưu lại theo tuần.
@@ -62,3 +66,4 @@ cd /Users/MAC/Projects/thachlab && npx tsx .claude/skills/lich-tuan/scripts/lich
 - 2026-10-18 · thầy nêu lớp theo "thứ" nhưng lệch với `thpt_course_schedules` (nói "lớp 10 thứ 2" trong khi 10L3 là thứ 3) → đối chiếu theo TÊN lớp trong DB, ghi rõ cách hiểu khi báo lại; 12L1 B7/B8 ôn thi nên không có mốc bài → dùng `ghi_chu_khoa`.
 - 2026-10-19 · thầy dặn mục có tên "Thạch" là thầy và lịch công tác được ưu tiên → khớp chữ "thạch" là đủ (cả trường một người), trùng giờ thì cảnh báo "nhờ người xem hộ" chứ không tự bỏ việc nào; trước khi sửa `StaffWeekPlan.tsx` phải `git log` + đọc lại vì phiên khác đã viết lại file.
 - 2026-10-19 · thầy muốn nội dung tập hiện trong lịch → đặt dữ liệu ở `lich-co-dinh.json` (`noi_dung_tap`), script chỉ gán theo quy tắc; trình tự trượt băng theo đúng triết lý thầy (edge → turn → waltz jump/spin), gym chân nặng không đặt ngay trước buổi nhảy.
+- 2026-11-25 · mốc bài các lớp đứng từ giữa 10 dù trợ giảng đã ghi nội dung dạy ở phiếu buổi từ 11/11 → mỗi lần lên lịch tuần chạy `--tro-giang` trước, ghi mốc rồi mới `--ghi`; khoá không có buổi trợ giảng ghi (10L3) thì hỏi thầy.
