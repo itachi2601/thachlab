@@ -150,3 +150,4 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-18 · Cả 5 bài lệch số dòng "N hình = cả bài" với số dòng thật trong khung Mang về → đếm lại sau mỗi lần sửa khung; kiem-code bắt được, lint không.
 - 2026-11-18 · Bài 92 lớp 9 lọt từ thông có dấu/đếm "tăng–giảm" ở khung dây quay (kiến thức L12) → bài L9 chỉ nêu "số đường sức xuyên qua biến thiên" + "đổi chiều 2 lần/vòng", không định lượng.
 - 2026-11-18 · Agent soạn lỡ commit `xem-thu/` (29 ảnh) → commit theo danh sách file lọc `grep -v xem-thu`; zsh không tách `$f` nên `git commit -- $f` hỏng — truyền đường dẫn thư mục bài + file thí nghiệm rõ ràng. `chup_anh.py` cần PIL → chạy bằng `/usr/bin/python3`.
+- 2026-11-25 · Thầy không thích đáp số/ý nối liền bằng " · " trong hộp đáp số, Chốt mục → mỗi ý (mỗi câu a, b, c; mỗi điều Tự kiểm) một `<li>`, không nối ý bằng "·".

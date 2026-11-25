@@ -23,6 +23,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Mục Sức khỏe + ứng dụng tập (18–19/11): migration đã chạy, đã deploy; chưa ghi buổi tập thật (chi tiết STATE-archive 23/11).
 - **Sức khỏe mở cho HS/SV (19/11)**: `student` vào được `/suc-khoe` (THPT + CTTC), chương trình riêng không dụng cụ `PROGRAM_HS` (3 buổi ~30′), không thấy Số đo/ngực–eo; link ở `/tai-khoan/them`; localStorage tách theo tài khoản. Chưa deploy, chưa thử bằng tài khoản HS thật.
 - 19/11: `get_lesson_page_student` + `review_stage_exams` đã chạy + deploy; chưa thử trang bài + buổi ôn bằng HS thật.
+- `20261125120000_on_tap_lich_on` — bảng on_tap_the + 3 RPC lịch ôn thẻ (Ôn 5 phút), nhẹ, chạy giờ nào cũng được; nhánh claude/student-review-plan-7e827d.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật

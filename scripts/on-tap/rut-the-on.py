@@ -6,11 +6,12 @@ Không soạn nội dung mới — chỉ lấy lại thứ bài đã có:
   - hộp bẫy (mục có chữ "bẫy" trong <h3>): câu tự kiểm tra đầu tiên có .tl-quiz → thẻ chọn đáp án.
 Mỗi thẻ mang `neo` = một đoạn chữ duy nhất của nó trong bài, để trang học sinh tìm đúng đoạn lý thuyết
 cho nút "Ôn ngay" bằng chính splitTheorySections (không phụ thuộc trang đọc chia theo h3 hay h4).
+Mỗi thẻ có `id` = 8 ký tự đầu sha1(neo) — khoá lịch ôn trong bảng on_tap_the; sửa chữ câu hỏi là thành thẻ mới.
 
 Dùng:  python3 scripts/on-tap/rut-the-on.py <slug> [--toi-da 8]   → content/on-tap/<slug>.json
 File ra là bản nháp: người soạn đọc lại, bỏ thẻ trùng ý, giữ ≤ 8 thẻ (N5), rồi mới commit.
 """
-import argparse, json, pathlib, re
+import argparse, hashlib, json, pathlib, re
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 
@@ -142,7 +143,7 @@ def main() -> None:
                 card["tieu_muc"] = tm[-1].split("$")[0].strip()
             hinh.append((at, card))
     cards += hinh[:2]
-    cards = [c for _, c in sorted(cards, key=lambda x: x[0])]
+    cards = [{"id": hashlib.sha1(c["neo"].encode()).hexdigest()[:8], **c} for _, c in sorted(cards, key=lambda x: x[0])]
 
     out = ROOT / "content/on-tap" / f"{a.slug}.json"
     out.parent.mkdir(exist_ok=True)

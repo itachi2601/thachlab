@@ -74,7 +74,6 @@
 }
 .front {
   justify-content: center;
-  cursor: pointer;
   background: linear-gradient(160deg, var(--color-primary-soft), var(--color-panel) 75%);
   border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-line));
 }
@@ -224,4 +223,48 @@
 .weakQ {
   flex: 1 1 14rem;
   font-weight: 600;
+}
+/* Cam kết trước khi lật (L1, generation effect): gõ vài chữ khoá hoặc nhận "chưa nhớ ra". */
+.ghiForm {
+  display: grid;
+  gap: 8px;
+  margin-top: auto;
+}
+.ghiLabel {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+.ghiInput {
+  min-height: 44px;
+  padding: 0 12px;
+  border-radius: 10px;
+  border: 1px solid var(--color-line-strong);
+  background: var(--color-panel);
+  color: var(--color-ink);
+  font-size: 1rem; /* ≥16px: iOS không tự phóng to khi gõ */
+}
+.ghiBtns {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.ghiBtns .primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.emGhi {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: var(--color-primary-soft);
+  font-size: 0.95rem;
+}
+.emGhi span {
+  font-weight: 600;
+}
+.lichList {
+  margin: 0;
+  padding-left: 1.2em;
+  color: var(--color-muted);
+  font-size: 0.92rem;
 }

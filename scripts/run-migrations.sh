@@ -137,6 +137,7 @@ FILES=(
   "supabase/migrations/20261122100000_luyen_tap_cham_server_buoc_1.sql|Vá bảo mật: RPC practice_session_submit — phiên luyện tập chấm lại ở server từ câu gốc (qua check_practice_answer/check_bank_practice_answer), không tin điểm máy HS gửi; chỉ thêm hàm|lúc nào cũng được (TRƯỚC khi deploy client)|supabase db query --linked -f perf/rollback/20261122100000_luyen_tap_cham_server_buoc_1.down.sql"
   "supabase/migrations/20261122110000_bank_hs_khong_doc_dap_an_buoc_2.sql|Vá bảo mật chặng 4 bước 2: bỏ 2 policy HS đọc thẳng question_bank (lộ đáp án) + policy HS INSERT thẳng tutoring_exit_attempts (tự gửi điểm)|SAU khi client mới deploy ≥1 ngày, sau 22h hoặc trước 6h|supabase db query --linked -f perf/rollback/20261122110000_bank_hs_khong_doc_dap_an_buoc_2.down.sql"
   "supabase/migrations/20261122110500_luyen_tap_cham_server_buoc_2.sql|Vá bảo mật: bỏ 2 policy HS INSERT thẳng practice_sessions/practice_question_results (tự gửi điểm luyện tập → RP, chuỗi ngày)|SAU khi client mới deploy ≥1 ngày, sau 22h hoặc trước 6h|supabase db query --linked -f perf/rollback/20261122110500_luyen_tap_cham_server_buoc_2.down.sql"
+  "supabase/migrations/20261125120000_on_tap_lich_on.sql|Ôn 5 phút: bảng on_tap_the (lịch ôn giãn cách từng thẻ, RLS không policy) + 3 RPC on_tap_ghi / on_tap_den_han / on_tap_trang_thai|lúc nào cũng được (chỉ thêm bảng rỗng + hàm)"
 )
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong
