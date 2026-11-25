@@ -257,3 +257,59 @@ export function decorateGoalBox(html: string): string {
     )
     .replace(/<p>⏱[^<]*<\/p>\s*/, "");
 }
+
+// ---------- Đi từng mục con trong một mốc lớn (thầy chốt 25/11/2026) ----------
+// Mốc <h3> "II. Kiến thức" thường gộp 3–4 mục con <h4> (700–1.200 từ ≈ 6–9 màn điện thoại), nên một lần bấm
+// "Tiếp" chưa phải một nội dung chính. Trang đọc chia tiếp mốc đó thành từng bước: mỗi bước một mục con, cuối
+// bước là ô 📌 Chốt mục (`.tl-chot` trong nội dung) rồi nút "Tiếp" sang mục con sau (N5 segmenting, G1).
+// CHỈ cắt ở cấp đầu của mốc (không trong hộp/quiz/bảng) để mỗi bước vẫn là HTML trọn vẹn: điểm cắt là <h4> đứng
+// riêng hoặc hộp bẫy <div class="tl-trap"> (bẫy đặt <h4> bên trong hộp). Id mốc `theory-sec-…` giữ nguyên nên
+// "Ôn ngay", mục lục, độ sâu đọc và link clip không đổi.
+const STEP_TAG = /<(\/?)(div|details|section|blockquote|figure|table|ul|ol|aside|h4)\b([^>]*)>/gi;
+
+export interface TheoryStep {
+  heading: string;
+  html: string;
+}
+
+/** Tách thân một mốc thành các bước theo mục con cấp đầu. Phần trước điểm cắt đầu tiên (thẻ <h3>, lời dẫn) gộp
+ *  vào bước 1. Ít hơn 2 mục con → null (mốc đi một bước như cũ). */
+export function splitTheorySteps(sectionHtml: string): TheoryStep[] | null {
+  // Comment HTML có thể chứa thẻ (<!-- <div> -->): thay bằng khoảng trắng CÙNG ĐỘ DÀI để đếm độ sâu không sai mà chỉ số cắt
+  // vẫn khớp chuỗi gốc.
+  const scan = sectionHtml.replace(/<!--[\s\S]*?-->/g, (c) => " ".repeat(c.length));
+  const cuts: Array<{ at: number; headingFrom: number }> = [];
+  let depth = 0;
+  STEP_TAG.lastIndex = 0;
+  for (let m = STEP_TAG.exec(scan); m; m = STEP_TAG.exec(scan)) {
+    const closing = m[1] === "/";
+    const tag = m[2].toLowerCase();
+    if (tag === "h4") {
+      if (!closing && depth === 0) cuts.push({ at: m.index, headingFrom: m.index });
+      continue; // <h4> không tính vào độ sâu
+    }
+    if (/\/\s*$/.test(m[3])) continue; // thẻ tự đóng <div/> không mở cấp mới
+    if (closing) {
+      depth = Math.max(0, depth - 1);
+      continue;
+    }
+    if (depth === 0 && tag === "div" && /\bclass="[^"]*\btl-trap\b/.test(m[3]))
+      cuts.push({ at: m.index, headingFrom: m.index });
+    depth += 1;
+  }
+  if (cuts.length < 2) return null;
+  return cuts.map((cut, i) => {
+    const start = i === 0 ? 0 : cut.at;
+    const end = i + 1 < cuts.length ? cuts[i + 1].at : sectionHtml.length;
+    const part = sectionHtml.slice(cut.headingFrom, end);
+    const label = /<h4\b[^>]*>([\s\S]*?)<\/h4>/i.exec(part) ?? /<p class="tl-label">([\s\S]*?)<\/p>/i.exec(part);
+    const heading = (label?.[1] ?? "")
+      .replace(/<[^>]+>/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+    return {
+      heading: heading || `Phần ${i + 1}`,
+      html: sectionHtml.slice(start, end),
+    };
+  });
+}

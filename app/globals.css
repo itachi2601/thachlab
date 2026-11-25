@@ -2980,7 +2980,7 @@ html .exam-content .tl-box--think .tl-label { color: #93c5fd; }
 html[data-theme="light"] .exam-content .tl-box--think .tl-label { color: #1d4ed8; }
 html .lesson-shell .theory-next, html[data-theme="light"] .lesson-shell .theory-next { border-color: transparent; background: var(--color-primary); color: #fff; }
 html .lesson-shell .theory-next:hover { background: var(--lesson-accent-hover, #1e40af); border-color: transparent; }
-html .lesson-shell .theory-next :is(small, svg) { color: #fff; }
+html .lesson-shell .theory-next :is(small, svg), html[data-theme="light"] .lesson-shell .theory-next :is(small, svg) { color: #fff; } /* nhãn "TIẾP · 2/6" xanh ngọc trên nền xanh chỉ ~1,2:1 ở theme sáng (M2) — 25/11/2026 */
 html .lesson-page.is-dim .lesson-body .theory-next { color: #fff; }
 html .lesson-page.is-dim .lesson-body :is(.theory-next small, .theory-next svg) { color: #fff; }
 html[data-theme="light"] .exam-content .tl-opt { border-color: rgba(15,23,42,.45); }
@@ -3993,6 +3993,12 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .exam-content .tl-more > :not(summary) { margin-left: 12px; margin-right: 0; }
 .exam-content .tl-more > :last-child { margin-bottom: 6px; }
 .exam-content :is(.tl-fx, .tl-keep, .tl-trap, .tl-check) > :is(h4, .tl-label, .tl-fx-name):first-child { padding-right: 40px; }
+/* 📌 Chốt mục (thử 25/11/2026, bài Boyle–Charles): cuối mỗi mục con, ngay trước nút "Tiếp · phần …". Hai dòng chạm-mở:
+   🎯 câu tự trả lời (L1 truy xuất) và ✍️ ghi vở (nội dung vừa đọc → gập để không lặp, N4). Dùng khung .tl-keep sẵn có. */
+.exam-content .tl-chot .tl-chot-h { margin: 12px 0 0; font-weight: 600; }
+.exam-content .tl-chot .tl-more { margin: 6px 0; }
+.exam-content .tl-chot .tl-chot-ghi > summary { font-weight: 600; }
+.exam-content .tl-chot .tl-chot-ghi ul { margin: 6px 0 0; }
 
 /* ============================================================================================
    KHUNG ĐỒNG BỘ TRANG CHƯƠNG ↔ TRANG BÀI (thầy duyệt 26/10/2026, bản xem thử "Trang chương và trang bài")

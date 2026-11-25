@@ -6,7 +6,12 @@ import { ArrowRight, Check, ChevronDown, FileText, Play } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useReadDepth } from "@/components/lessons/useReadDepth";
-import { splitTheorySections, estimateTheoryTime, decorateGoalBox } from "@/features/lessons/theory-sections";
+import {
+  splitTheorySections,
+  splitTheorySteps,
+  estimateTheoryTime,
+  decorateGoalBox,
+} from "@/features/lessons/theory-sections";
 import { withMarginNotes } from "@/features/lessons/margin-notes";
 import { type LessonItem } from "@/features/lessons/types";
 import type { TheoryStatusResult } from "@/features/progress/types";
@@ -74,6 +79,11 @@ export function TheoryBlock({
   const displayHtml = useMemo(() => withMarginNotes(decorateGoalBox(item.body_html)), [item.body_html]);
   const { introHtml, sections } = useMemo(() => splitTheorySections(displayHtml, item.id), [displayHtml, item.id]);
   const total = sections.length;
+  // Mốc có ≥ 2 mục con cấp đầu (<h4>, hộp bẫy) → đi từng mục con (xem splitTheorySteps).
+  const steps = useMemo(() => sections.map((s) => splitTheorySteps(s.html)), [sections]);
+  // Số mục con đang hiện của mỗi mốc. Chỉ đặt khi học sinh đi bằng "Tiếp" / tiêu đề / "Tiếp tục"; mốc mở bằng
+  // mục lục / "Ôn ngay" / "Mở tất cả" không có khoá → hiện đủ (đích cuộn có thể nằm ở mục con cuối).
+  const [stepShown, setStepShown] = useState<Record<number, number>>({ 0: 1 });
   const estimate = useMemo(() => estimateTheoryTime(item.body_html), [item.body_html]);
   const [openSections, setOpenSections] = useState<Set<number>>(() => new Set([0]));
   const [allOpen, setAllOpen] = useState(forceAllOpen);
@@ -94,9 +104,11 @@ export function TheoryBlock({
     h3Total: total,
     quizTotal,
     rootRef,
-    openKey: allOpen ? "all" : Array.from(openSections).join(","),
+    openKey: allOpen ? "all" : `${Array.from(openSections).join(",")}|${JSON.stringify(stepShown)}`,
   });
   const isOpen = (i: number) => allOpen || openSections.has(i);
+  // Mốc i đã hiện hết mục con chưa (mốc không chia mục con coi như đã hết) — chỉ khi đó mới hiện nút "Tiếp" sang mốc sau.
+  const stepsDone = (i: number) => allOpen || !steps[i] || (stepShown[i] ?? Infinity) >= steps[i]!.length;
   // Số mốc chưa từng mở — hiện cạnh "Mở tất cả" để biết bài còn bao nhiêu (bản đồ "còn gì").
   const unopenedCount = allOpen ? 0 : Math.max(0, total - openSections.size);
 
@@ -114,6 +126,7 @@ export function TheoryBlock({
   /** Mở đoạn `index` do học sinh bấm (nút Tiếp / tiêu đề / Tiếp tục) rồi cuộn tới nếu cần. */
   function goTo(index: number, scroll: boolean) {
     openSection(index);
+    setStepShown((prev) => (index in prev ? prev : { ...prev, [index]: 1 }));
     savePos(index);
     setResumeIndex(null);
     if (scroll) window.setTimeout(() => scrollToPart(sections[index]?.id ?? null), 60);
@@ -126,7 +139,15 @@ export function TheoryBlock({
       const id = (e as CustomEvent<string>).detail;
       if (typeof id !== "string" || !id.startsWith(prefix)) return;
       const index = Number(id.slice(prefix.length));
-      if (Number.isInteger(index) && index >= 0) openSection(index);
+      if (Number.isInteger(index) && index >= 0) {
+        openSection(index);
+        setStepShown((prev) => {
+          if (!(index in prev)) return prev;
+          const next = { ...prev };
+          delete next[index]; // đích cuộn có thể ở mục con chưa mở → hiện đủ cả mốc
+          return next;
+        });
+      }
     };
     window.addEventListener(OPEN_SECTION_EVENT, onOpen);
     return () => window.removeEventListener(OPEN_SECTION_EVENT, onOpen);
@@ -164,7 +185,7 @@ export function TheoryBlock({
     return () => observer.disconnect();
     // savePos chỉ dùng item.id — đã nằm trong deps qua `total`/`open`; openSections/allOpen đổi → danh sách đoạn mở đổi.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [item.id, total, open, openSections, allOpen]);
+  }, [item.id, total, open, openSections, allOpen, stepShown]);
 
   const resume = resumeIndex !== null && !isOpen(resumeIndex) ? sections[resumeIndex] : null;
 
@@ -225,7 +246,7 @@ export function TheoryBlock({
                 const next = sections[i + 1];
                 // Đoạn thu gọn ngay sau một đoạn đang mở đã có nút "Tiếp" ở cuối đoạn đó → không
                 // hiện thêm dòng tiêu đề (N4 không lặp); vẫn giữ <div id> để mục lục/"Ôn ngay" cuộn tới.
-                const coveredByNext = !opened && i > 0 && isOpen(i - 1);
+                const coveredByNext = !opened && i > 0 && isOpen(i - 1) && stepsDone(i - 1);
                 return (
                   <div
                     key={section.id}
@@ -236,8 +257,40 @@ export function TheoryBlock({
                   >
                     {opened ? (
                       <>
-                        <ContentHtml html={section.html} className="block leading-relaxed" />
-                        {next && !isOpen(i + 1) && (
+                        {(() => {
+                          const parts = steps[i];
+                          const shown = allOpen || !parts ? Infinity : (stepShown[i] ?? Infinity);
+                          // Mốc có mục con luôn dựng theo từng mục con (kể cả khi đã hiện đủ) để bấm "Tiếp" không
+                          // dựng lại phần đã đọc — dựng lại sẽ xoá lựa chọn quiz em vừa bấm.
+                          if (!parts) return <ContentHtml html={section.html} className="block leading-relaxed" />;
+                          const after = shown < parts.length ? parts[shown] : null;
+                          return (
+                            <>
+                              {parts.slice(0, shown).map((p, k) => (
+                                <div key={k} id={`theory-step-${item.id}-${i}-${k}`}>
+                                  <ContentHtml html={p.html} className="block leading-relaxed" />
+                                </div>
+                              ))}
+                              {after && (
+                                <button
+                                  type="button"
+                                  className="theory-next theory-next--step"
+                                  onClick={() => {
+                                    setStepShown((prev) => ({ ...prev, [i]: shown + 1 }));
+                                    window.setTimeout(() => scrollToPart(`theory-step-${item.id}-${i}-${shown}`), 60);
+                                  }}
+                                >
+                                  <small>
+                                    Tiếp · phần {shown + 1}/{parts.length}
+                                  </small>
+                                  <strong>{after.heading}</strong>
+                                  <ArrowRight size={16} aria-hidden />
+                                </button>
+                              )}
+                            </>
+                          );
+                        })()}
+                        {next && !isOpen(i + 1) && stepsDone(i) && (
                           <button type="button" className="theory-next" onClick={() => goTo(i + 1, true)}>
                             <small>
                               Tiếp · {i + 2}/{total}
