@@ -151,3 +151,6 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-18 · Bài 92 lớp 9 lọt từ thông có dấu/đếm "tăng–giảm" ở khung dây quay (kiến thức L12) → bài L9 chỉ nêu "số đường sức xuyên qua biến thiên" + "đổi chiều 2 lần/vòng", không định lượng.
 - 2026-11-18 · Agent soạn lỡ commit `xem-thu/` (29 ảnh) → commit theo danh sách file lọc `grep -v xem-thu`; zsh không tách `$f` nên `git commit -- $f` hỏng — truyền đường dẫn thư mục bài + file thí nghiệm rõ ràng. `chup_anh.py` cần PIL → chạy bằng `/usr/bin/python3`.
 - 2026-11-25 · Thầy không thích đáp số/ý nối liền bằng " · " trong hộp đáp số, Chốt mục → mỗi ý (mỗi câu a, b, c; mỗi điều Tự kiểm) một `<li>`, không nối ý bằng "·".
+- 2026-11-25 · Rút Bài toán mẫu L11: dry-run `cap-nhat-ly-thuyet.sh` chỉ in vị trí khác ĐẦU TIÊN, không đủ biết DB có cũ hơn repo không (bài 39 DB còn thiếu 3 commit Chốt mục/vá chưa đăng) → trước khi đăng, so `body_html` DB với `git show <commit trước khi sửa>:theory.html` (bỏ khác khoảng trắng); khác thì dừng, hỏi thầy.
+- 2026-11-25 · Rút lời giải mà hình (FIGn) nằm trong lời giải → đừng xoá mốc `<!--FIGn-->` (build_figs.py đòi đúng 1 lần), chuyển hình vào ô đáp số; hình lộ đáp số cũng chuyển vào đó.
+- 2026-11-25 · Xoá lời giải làm treo câu "xem lại bước c của lời giải" trong phản hồi quiz → grep "lời giải" trong cả bài sau khi rút.
