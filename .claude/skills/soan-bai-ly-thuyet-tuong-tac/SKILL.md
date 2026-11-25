@@ -201,9 +201,13 @@ Chỉ HTML + CSS, không JS, lọt qua DOMPurify. Bài cũ chưa có thì vẫn 
    (không trong `.tl-box`/quiz/bảng) và `.tl-nums` đặt NGAY sau đoạn nó thuộc về thì lên lề, ngang đoạn đó. Trong hộp thì giữ
    như mục 6. Mỗi đoạn tối đa ~2 ghi chú + 1 ô số, định nghĩa ≤ 1 câu, để cột lề (140–240px) không dài hơn đoạn.
 
+## Ô 📌 Chốt mục trỏ ruột tập (thầy chốt 25/11/2026)
+Cuối mỗi mục kiến thức một ô `.tl-chot` (🎯 một câu nhớ lại lấy từ Trả bài + ✍️ trỏ ô Tập) và `data-tap` trên tiêu đề mục — cách làm, khuôn HTML, cách kiểm: `references/o-chot-muc.md`.
+
 ## Nhật ký rút kinh nghiệm (bắt buộc cập nhật cuối MỖI phiên dùng skill này — xem `AGENTS.md`)
 
 Nhật ký đầy đủ (120+ dòng từ 2/10/2026) ở `references/nhat-ky.md` — **không đọc hết**. Trước khi soạn, tra đúng việc:
 `grep -n "<chương|tên bài|svg|quiz|build_figs|agent…>" .claude/skills/soan-bai-ly-thuyet-tuong-tac/references/nhat-ky.md`.
 Cuối phiên, thêm vào CUỐI `references/nhat-ky.md` mỗi bài học một dòng `- YYYY-MM-DD · <sự cố/phát hiện> → <cách làm đúng>`; nếu bài học làm
 một bước phía trên sai/thiếu thì sửa luôn bước đó trong SKILL.md (quy tắc áp cho mọi bài phải nằm ở phần trên, không chỉ trong nhật ký). Phiên không có bài học mới thì ghi "không có bài học mới" trong câu trả lời.
+- 2026-11-25 · Ô Chốt mục ghi "Ghi vở" trong khi ruột tập đã có ô điền cùng ý → HS chép hai lần; ✍️ phải trỏ ô Tập (đọc `h3(k,…,"trang·ô")` trong `scripts/ruot-tap/<bài>.mjs`), chỉ giữ "Ghi vở" khi Tập không có ô.
