@@ -41,7 +41,7 @@ exam = {
          "explanation": "Công việc bị ngắt quãng (làm hết loạt mới trở đầu) nên mất tính liên tục → 2 nguyên công."},
         {"type": MC,
          "question": "Phay bánh răng 30 răng trên đầu phân độ, phôi không tháo ra giữa các răng. Mỗi lần chia răng là một:",
-         "options": ["Nguyên công", "Lần gá", "Vị trí", "Động tác"],
+         "options": ["Nguyên công", "Lần gá", "Vị trí", "Đường chuyển dao"],
          "answer": 2,
          "explanation": "Phôi đổi chỗ so với dao mà không tháo ra → vị trí mới; số vị trí bằng số răng."},
         {"type": MC,

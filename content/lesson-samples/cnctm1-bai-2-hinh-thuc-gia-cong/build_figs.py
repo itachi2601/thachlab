@@ -27,7 +27,7 @@ def fig1():
     o.append('<path d="M40 205 L130 100 L210 100" fill="none" stroke="currentColor" stroke-width="2.5"/>')
     o.append('<text x="70" y="140" fill="currentColor" font-weight="700">I</text>')
     o.append('<text x="164" y="92" fill="currentColor" font-weight="700">II</text>')
-    o.append('<text x="56" y="160" fill="currentColor" font-size="12">nung</text>')
+    o.append('<text x="98" y="172" fill="currentColor" font-size="12">nung</text>')
     o.append('<text x="150" y="122" fill="currentColor" font-size="12">giữ nhiệt</text>')
     # ba đường nguội (giai đoạn III)
     o.append('<path d="M210 100 C215 160 222 200 238 207" fill="none" stroke="#dc2626" stroke-width="2.5"/>')
@@ -43,7 +43,7 @@ def fig1():
         o.append(f'<line x1="150" y1="{y - 4}" x2="172" y2="{y - 4}" stroke="{c}" stroke-width="3"/>')
         o.append(f'<text x="178" y="{y}" fill="currentColor" font-size="12">{s}</text>')
     o.append('</svg>')
-    return fig("".join(o), "Hình 1. Ba giai đoạn nhiệt luyện. Cùng nung và giữ nhiệt, cách làm nguội quyết định thép mềm hay cứng.")
+    return fig("".join(o), "Hình 2. Ba giai đoạn nhiệt luyện. Cùng nung và giữ nhiệt, cách làm nguội quyết định thép mềm hay cứng.")
 
 
 # Hình 2: thớ kim loại khi cắt ren (tiện) và khi cán ren
@@ -78,7 +78,7 @@ def fig2():
     o.append('<text x="225" y="162" fill="currentColor" font-size="12">Thớ uốn theo răng,</text>')
     o.append('<text x="225" y="180" fill="currentColor" font-size="12">không bị cắt, bề mặt biến cứng.</text>')
     o.append('</svg>')
-    return fig("".join(o), "Hình 2. Cùng một biên dạng ren, cách làm khác nhau cho thớ kim loại khác nhau (hình minh hoạ, không theo tỉ lệ).")
+    return fig("".join(o), "Hình 1. Cùng một biên dạng ren, cách làm khác nhau cho thớ kim loại khác nhau (hình minh hoạ, không theo tỉ lệ).")
 
 
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
