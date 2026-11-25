@@ -73,7 +73,11 @@ for (const s of sch ?? []) {
 
 // 3. TKB Cao Thắng (cache)
 const tkbFile = arg("--tkb") ?? path.join(root, "scripts/data/lich-tuan/tkb-caothang.json");
-if (fs.existsSync(tkbFile)) for (const e of JSON.parse(fs.readFileSync(tkbFile, "utf8"))) evs.push({ ...e, src: "TKB Cao Thắng" });
+// Mục có "tu"/"den" (YYYY-MM-DD, tính theo thứ Hai của tuần) chỉ áp trong khoảng đó — vd SHCN đổi giờ giữa học kỳ.
+if (fs.existsSync(tkbFile)) for (const { tu, den, ...e } of JSON.parse(fs.readFileSync(tkbFile, "utf8"))) {
+  if ((tu && iso(mon) < tu) || (den && iso(mon) > den)) continue;
+  evs.push({ ...e, src: "TKB Cao Thắng" });
+}
 else warn.push(`Chưa có TKB Cao Thắng (${tkbFile}) — portal cần đăng nhập, xem SKILL.md bước 2. Lịch dưới đây CHƯA tính giờ dạy ở Cao Thắng.`);
 
 // 4. lịch công tác
