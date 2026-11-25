@@ -22,6 +22,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - **Sức khỏe mở cho HS/SV (19/11)**: `student` vào được `/suc-khoe` (THPT + CTTC), chương trình riêng không dụng cụ `PROGRAM_HS` (3 buổi ~30′), không thấy Số đo/ngực–eo; link ở `/tai-khoan/them`; localStorage tách theo tài khoản. Chưa deploy, chưa thử bằng tài khoản HS thật.
 - 19/11 RPC gộp trang bài + buổi ôn: đã chạy + deploy; chưa thử bằng HS thật.
 - **Ôn 5 phút (25/11)**: cả 2 migration đã chạy; 81 bài có thẻ + dòng ở /lop-hoc đã vào main, CHƯA deploy (chi tiết `docs/memory/project_thachlab_on_5_phut.md`).
+- **Gọi tên ngẫu nhiên trong bài (26/11)**: `20261126090000_goi_ten_ngau_nhien` (hàm `class_call_roster`, chỉ đọc) CHƯA CHẠY; nút "Gọi tên"/phím G ở /lop-hoc/bai chưa deploy.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
