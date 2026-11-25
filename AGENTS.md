@@ -70,6 +70,7 @@ Hiện trạng + ĐANG CHỜ: `docs/STATE.md`. Bản đầy đủ: `docs/AGENTS-
 # Đồng bộ giữa các phiên (cloud + Mac) — không giẫm chân nhau
 Mỗi phiên chạy trên nhánh `claude/<tên>` riêng; chỉ thứ đã **commit và vào `main`** mới tới được phiên khác và máy Thạch.
 Nhánh `claude/*` tự fast-forward/merge vào `main` khi push (`.github/workflows/gop-claude-vao-main.yml`); job đỏ (xung đột) mới cần merge tay trên Mac (`git -C ~/Projects/thachlab fetch origin && git -C ~/Projects/thachlab merge origin/claude/<tên>`). Không mở PR. Phiên trên Mac thì commit thẳng `main`.
+- **Từ 12/11/2026 ruleset `bao-ve-main-deploy` chặn GITHUB_TOKEN đẩy `main`** → workflow tự gộp luôn đỏ "GH013" (25/11: 15 nhánh). Phiên Mac: `git merge origin/main` vào nhánh rồi `git push origin HEAD:main` (fast-forward, quyền admin); phiên cloud: báo thầy nhánh chờ gộp.
 - Đầu phiên: `git fetch origin` + `git merge origin/main` (không rebase/force-push nhánh đã push); `/tinh-hinh`; `git branch -r --sort=-committerdate | head`.
 - Chỉ sửa file thuộc việc được giao, không "tiện tay" dọn/đổi tên/format file khác. File dùng chung (`docs/STATE.md`, `docs/memory/MEMORY.md`, `scripts/run-migrations.sh`, `AGENTS.md`, `package.json`): chỉ thêm dòng/mục, không viết lại/sắp xếp lại (trừ đợt dọn theo mục "Giữ file nạp-mỗi-phiên gọn").
 - Migration đặt tên theo timestamp, không sửa/xoá migration của phiên khác. Không xoá/reset/force-push nhánh hay worktree phiên khác; thấy lạ thì ghi vào `STATE.md`.
