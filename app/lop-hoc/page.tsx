@@ -1,7 +1,7 @@
 "use client";
 
 import { Fragment, Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Network, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Network, RotateCcw, Search, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import Navbar from "@/components/layout/Navbar";
@@ -886,6 +886,17 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {renderNextCard()}
                         {/* Buổi ôn tập theo chặng: một dòng ngay dưới "Học tiếp", không còn banner thứ hai ở đầu trang (B2). */}
                         <ReviewBanner compact />
+                        {/* Ôn 5 phút: một dòng khi có thẻ đến hạn (thầy chốt 25/11/2026) — số lấy sẵn từ rank_my_status,
+                            không thêm round-trip; không banner, không huy hiệu (B2, L3, G2). Phụ huynh không có trường này. */}
+                        {!isParent && (rank?.on_tap_den_han ?? 0) > 0 && (
+                          <Link prefetch={false} href="/lop-hoc/on-the" className="class-task-row">
+                            <RotateCcw size={18} className="shrink-0 text-primary" aria-hidden />
+                            <span className="class-task-title">
+                              {rank!.on_tap_den_han! >= 99 ? "99+" : rank!.on_tap_den_han} thẻ đến hạn ôn
+                            </span>
+                            <span className="class-task-sub">Ôn 5 phút</span>
+                          </Link>
+                        )}
                         {/* Khoá HSG Vật lí 9: buổi thứ Bảy tới + việc hôm nay (lộ trình 18 buổi ở /lop-hoc/lo-trinh-hsg). */}
                         {!isParent && subjectCode === HSG_SUBJECT_CODE && (
                           <Hsg9WeekCard

@@ -91,6 +91,7 @@ import {
 import { ProgressRing, formatDue, LessonLoginWall, LessonSkeleton, LessonHomeLink } from "./_parts/LessonBits";
 import { VideoBlock } from "./_parts/VideoBlock";
 import { TheoryBlock, TheoryQuizBlock } from "./_parts/TheoryBlock";
+import OnNamPhutGon from "@/components/lessons/OnNamPhutGon";
 import { ExamRow } from "./_parts/ExamRow";
 import { GradedItemBlock } from "./_parts/GradedItemBlock";
 import { WorkedPracticeBlock } from "./_parts/WorkedPracticeBlock";
@@ -1113,6 +1114,10 @@ function LessonLoader() {
                 loggedIn={!!session}
                 teacherView={isTeacherView}
               />
+            )}
+            {/* Ôn 5 phút: cuối mục Lý thuyết, trước Bài tập mẫu (thầy chốt 25/11/2026; L1, N2, B2). */}
+            {Number.isFinite(id) && item.id === theoryItemsAll[theoryItemsAll.length - 1]?.id && (
+              <OnNamPhutGon lessonId={id} theoryHtml={item.body_html ?? undefined} theoryItemId={item.id} />
             )}
           </div>
         );

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import { splitTheorySections } from "@/features/lessons/theory-sections";
+import { invalidateMyRankCache } from "@/services/rank";
 import { getSupabase } from "@/services/supabase";
 import styles from "./OnNamPhut.module.css";
 
@@ -31,6 +32,8 @@ export type TheOn = (
 
 export interface BoOnTap {
   slug: string;
+  /** lessons.id của bài (rut-the-on.py ghi từ content/on-tap/_lesson-ids.json); lượt trộn không có. */
+  lesson_id?: number | null;
   lesson_title: string;
   the: TheOn[];
 }
@@ -96,6 +99,7 @@ export default function OnNamPhut({
   theoryItemId,
   onOnNgay,
   tron = false,
+  vaoNgay = false,
 }: {
   bo: BoOnTap;
   /** body_html mục lý thuyết của bài — để tìm đúng đoạn cho nút "Ôn ngay". Không có thì ẩn nút. */
@@ -105,6 +109,8 @@ export default function OnNamPhut({
   onOnNgay?: (sectionId: string, tieuMuc?: string) => void;
   /** Lượt trộn thẻ đến hạn của nhiều bài: mỗi thẻ mang slug riêng, không tra lịch theo bài. */
   tron?: boolean;
+  /** Bỏ màn mở đầu, vào thẳng thẻ 1 (cả bài) — khi HS đã bấm "Bắt đầu" ở thẻ thu gọn (OnNamPhutGon). */
+  vaoNgay?: boolean;
 }) {
   const all = bo.the;
   // neo → id đoạn lý thuyết, chia đúng như trang đọc (splitTheorySections "doc").
@@ -133,7 +139,7 @@ export default function OnNamPhut({
   const [weakSaved, setWeakSaved] = useState<string[]>([]);
   const [lich, setLich] = useState<Lich[] | null>(null);
   const [dangNhap, setDangNhap] = useState(false);
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(vaoNgay);
   const [now] = useState(() => Date.now());
   const daLuu = useRef(false);
   const quizRef = useRef<HTMLDivElement>(null);
@@ -216,6 +222,7 @@ export default function OnNamPhut({
       const { data: ss } = await sb.auth.getSession();
       if (!ss.session) return;
       for (const [slug, kq] of theoBai) await sb.rpc("on_tap_ghi", { p_slug: slug, p_ket_qua: kq });
+      invalidateMyRankCache(); // số thẻ đến hạn ở /lop-hoc đi kèm rank_my_status
       if (!tron) {
         const { data } = await sb.rpc("on_tap_trang_thai", { p_slug: bo.slug });
         if (Array.isArray(data)) setLich(data as Lich[]);
