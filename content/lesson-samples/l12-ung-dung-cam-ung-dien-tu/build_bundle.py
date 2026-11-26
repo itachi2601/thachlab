@@ -1,4 +1,4 @@
-"""Đóng gói theory.html + 5 câu tự kiểm tra thành bundle.json (schema thachlab.lesson-bundle/v1).
+"""Đóng gói theory.html + 7 câu luyện tập thành bundle.json (schema thachlab.lesson-bundle/v1).
 Chạy từ thư mục này: python3 build_bundle.py
 """
 import json
@@ -56,6 +56,23 @@ EXAM = {
             "options": ["55 V.", "880 V.", "165 V.", "220 V."],
             "answer": 0,
             "explanation": "U2 = U1·N2/N1 = 220 × 150/600 = 220 × 0,25 = 55 V. Cuộn thứ cấp ít vòng hơn nên điện áp ra nhỏ hơn điện áp vào (máy hạ áp). Các phương án sai là ba lỗi hay gặp: đảo tỉ số vòng (880 V), lấy hiệu số vòng (165 V), và tưởng máy biến áp giữ nguyên điện áp (220 V).",
+        },
+        {
+            "type": "true_false",
+            "question": "Đế sạc không dây có cuộn sơ cấp 200 vòng nối với nguồn xoay chiều 12 V; cuộn thứ cấp 150 vòng nằm sau lưng điện thoại. Hai cuộn không có lõi sắt chung.",
+            "statements": [
+                {"text": "Nếu nối cuộn sơ cấp với nguồn điện một chiều 12 V ổn định thì cuộn thứ cấp vẫn có suất điện động cảm ứng.", "answer": False},
+                {"text": "Coi hai cuộn ghép lí tưởng thì điện áp hiệu dụng ở cuộn thứ cấp bằng 9,0 V.", "answer": True},
+                {"text": "Đặt điện thoại xa đế sạc hơn thì điện áp ở cuộn thứ cấp tăng vì từ thông rò giảm.", "answer": False},
+                {"text": "Pin cần nhận 5 400 J với công suất nạp 9 W thì thời gian nạp là 10 phút.", "answer": True},
+            ],
+            "explanation": "a) Sai: dòng một chiều ổn định thì từ thông qua cuộn thứ cấp không đổi, không có suất điện động cảm ứng.<br>b) Đúng: $U_2 = U_1\\dfrac{N_2}{N_1} = 12 \\cdot \\dfrac{150}{200} = 9{,}0$ V.<br>c) Sai: càng xa thì từ thông rò càng nhiều, điện áp thứ cấp càng giảm.<br>d) Đúng: $t = \\dfrac{A}{P} = \\dfrac{5\\,400}{9} = 600$ s $= 10$ phút.",
+        },
+        {
+            "type": "short_answer",
+            "question": "Một bếp từ có công suất 2 000 W đun 1,5 kg nước từ 25 °C lên 75 °C trong 3 phút. Nhiệt dung riêng của nước 4 180 J/(kg·K). Hiệu suất của bếp bằng bao nhiêu phần trăm (làm tròn đến hàng đơn vị)?",
+            "answer": "87",
+            "explanation": "$H = \\dfrac{mc\\Delta t}{P\\tau} = \\dfrac{1{,}5 \\cdot 4\\,180 \\cdot 50}{2\\,000 \\cdot 180} = \\dfrac{313\\,500}{360\\,000} \\approx 0{,}871$, tức khoảng 87%.",
         },
     ],
 }
