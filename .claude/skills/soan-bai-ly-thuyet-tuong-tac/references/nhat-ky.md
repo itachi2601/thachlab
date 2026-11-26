@@ -165,3 +165,7 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-26 · Nhãn SVG đặt cạnh nét xiên ("nung") bị nét cắt chữ → tính toạ độ nét tại đúng y của nhãn trước khi đặt; nhãn luôn nằm hẳn một bên nét.
 - 2026-11-26 · Bài CTTC ngoài giáo trình (A3 thép, nhiệt độ ram theo HRC) ghi như số đo chắc → ghi "cỡ/khoảng… (tra giản đồ/đồ thị)" khi số không có trong giáo trình.
 - 2026-11-26 · `textutil` trên .doc ra rác nhị phân; `chup_anh.py` lỗi thiếu PIL với python Homebrew → dùng `pdftotext -layout` trên bản PDF; chạy `chup_anh.py` bằng `/usr/bin/python3`.
+- 2026-11-26 · CNCTM 10–12: kiem-code bắt nhiều câu vượt/ngược giáo trình (phay ngón "chính xác", "loạt nhỏ" thành "đơn chiếc", tự đặt "then bằng ghép chặt", lý do khe hở răng là "cho dầu" ghi như chắc) → mỗi nhận định đánh giá (chính xác/năng suất/dạng sản xuất) phải đối chiếu đúng câu giáo trình; lời giải thích tự thêm ghi "(thông lệ)"/"(suy luận)".
+- 2026-11-26 · "Dao phay đĩa mô-đun số 3" bị đọc thành m = 3 → khi số hiệu dao trùng dạng với thông số, viết đủ "mô-đun m = 2, dao số 3 trong bộ 8 dao".
+- 2026-11-26 · Quiz đặt ngay sau dòng "Phát biểu nào sau đây đúng?" của tl-conf bị coi là thiếu câu dẫn khi tách khỏi bẫy → mọi quiz có câu dẫn riêng ("Tự kiểm tra: …") ngay trước lựa chọn.
+- 2026-11-26 · Hình bao hình (dao lăn – phôi) vẽ dao lơ lửng không chạm răng → hình ăn khớp/tiếp xúc phải cho nét dao chạm đúng vành răng; phôi trải thẳng thì ghi rõ trong chú thích.
