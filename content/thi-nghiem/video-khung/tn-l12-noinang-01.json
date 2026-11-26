@@ -2,7 +2,7 @@
   "id": "tn-l12-noinang-01",
   "ten": "Bơm xe bằng tay: đo nhiệt độ thân bơm",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-01-20261114.mp4",
-  "tong_giay": 48.9,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 3.8,
       "chu": "Bơm nhanh 45 lần. Chỗ nào trên thân bơm nóng nhất?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.0,
+      "giay": 9.3,
       "chu": "Ấn nhanh; đo nhiệt độ thân bơm, ở đáy, sau 0, 10, 20, 30, 45 lần ấn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 19.2,
+      "giay": 17.9,
       "chu": "Đáy, gần van nóng nhất: 26,0 → 34,0 °C sau 45 lần ấn."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.8,
-      "chu": "Khí nóng dồn về đáy; nhận công, Q ≈ 0 nên ΔU > 0.\nMa sát dọc cả ống không giải thích đáy nóng nhất."
+      "giay": 25.9,
+      "chu": "Nhận công A > 0, ấn nhanh Q ≈ 0 nên ΔU > 0; khí bị nén ở đáy truyền nhiệt ra thành.\nMa sát dọc cả ống không giải thích đáy nóng nhất."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.2,
+      "giay": 38.9,
       "chu": "Chưa đo được nhiệt độ khí bên trong.\nChưa biết ma sát góp bao nhiêu."
     }
   ],
   "dung_dua": {
-    "giay": 8.7,
+    "giay": 9.1,
     "cau_hoi": "Bơm xe nhanh 45 lần. Chỗ nào trên thân bơm nóng nhất?",
     "chon": [
       "A. Phần trên, gần tay cầm",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Thân bơm nóng lên rõ rệt, nhất là phần đáy gần van. Xem số đo ở đoạn kế.",
     "giai_thich_sai": "Số đo cho thấy nhiệt độ thân bơm có tăng và không đồng đều dọc ống. Xem số đo ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 43.7,
+    "cau_hoi": "Cùng bơm đó, ấn nhanh 60 lần thì đáy thân bơm lên 37,0 °C. Ấn chậm 60 lần, mỗi lần cách vài giây. Đáy thân bơm lên tới:",
+    "chon": [
+      "A. Cao hơn 37,0 °C",
+      "B. Đúng 37,0 °C",
+      "C. Thấp hơn 37,0 °C",
+      "D. Vẫn 26,0 °C"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Bơm lâu hơn không làm khí nhận thêm công: vẫn 60 lần nén. Ấn chậm thì trong lúc nén khí kịp toả nhiệt (Q âm), nên ΔU = A + Q nhỏ hơn và thân bơm nóng ít hơn.",
+      "Công nén như nhau, nhưng ấn chậm thì Q không còn ≈ 0: khí toả bớt nhiệt ra ngoài trong lúc nén, nên đáy thân bơm nóng ít hơn 37,0 °C.",
+      "Ấn chậm thì khí kịp toả nhiệt ra ngoài trong lúc nén (Q âm), nên ΔU = A + Q nhỏ hơn, thân bơm lên thấp hơn 37,0 °C.",
+      "Khí vẫn nhận công A > 0 ở mỗi lần nén nên vẫn nóng lên một ít; chỉ là ấn chậm thì nhiệt kịp thoát nên thấp hơn 37,0 °C."
+    ]
   }
 }

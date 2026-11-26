@@ -2,7 +2,7 @@
   "id": "tn-l12-noinang-02",
   "ten": "Bình nước trên bếp điện có oát kế: tính c từ số đo",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-noinang-02-20261114.mp4",
-  "tong_giay": 49.8,
+  "tong_giay": 48.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.0,
+      "giay": 3.4,
       "chu": "Sách ghi c = 4 180 J/(kg·K). c đo được so với 4 180 thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 8.7,
+      "giay": 8.9,
       "chu": "Bếp điện, oát kế, nhiệt kế, bình nước đậy nắp; khuấy đều, ghi mỗi 20 s."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.7,
+      "giay": 17.5,
       "chu": "c ≈ 4 348 → 4 412, lớn hơn 4 180 (sách), tăng dần theo τ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.2,
-      "chu": "Nhiệt ra ngoài: Δt nhỏ, c lớn hơn."
+      "giay": 25.5,
+      "chu": "Một phần nhiệt ra bình và không khí: Δt đo nhỏ hơn lí tưởng (18,1 so với 19,1 K) nên c tính ra lớn hơn."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.9,
+      "giay": 38.3,
       "chu": "Chưa biết nhiệt mất bao nhiêu.\nChưa biết c có đổi theo khối lượng m không."
     }
   ],
   "dung_dua": {
-    "giay": 8.4,
+    "giay": 8.7,
     "cau_hoi": "Đo nhiệt dung riêng của nước bằng bình này. c tính ra so với 4 180 J/(kg·K) thế nào?",
     "chon": [
       "A. Nhỏ hơn 4 180",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Cả các mốc đo đều cho c lớn hơn 4 180. Xem số đo ở đoạn kế.",
     "giai_thich_sai": "Số liệu thật đi theo một hướng rõ rệt chứ không đúng hay lệch lúc này lúc khác. Xem số đo ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 42.7,
+    "cau_hoi": "Vẫn bình đó, ở mốc 20 s, nhưng đầu nhiệt kế đặt sát dây đốt. c tính ra so với 4 348 J/(kg·K):",
+    "chon": [
+      "A. Lớn hơn 4 348",
+      "B. Bằng 4 348",
+      "C. Nhỏ hơn 4 348",
+      "D. Không tính được"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Sát dây đốt nước nóng hơn chỗ khác, nhiệt kế chỉ cao hơn nhiệt độ trung bình của nước. Δt đọc được lớn hơn nên c = P·τ/(m·Δt) nhỏ hơn 4 348.",
+      "Chỗ sát dây đốt nóng hơn phần còn lại của nước, nên Δt đọc được lớn hơn và c = P·τ/(m·Δt) nhỏ hơn 4 348.",
+      "Nhiệt kế sát dây đốt chỉ cao hơn nhiệt độ trung bình của nước, Δt đọc được lớn hơn nên c = P·τ/(m·Δt) nhỏ hơn 4 348.",
+      "Vẫn có P, τ, m và Δt đọc được nên vẫn tính được c. Chỉ là Δt đọc sát dây đốt lớn hơn, nên c ra nhỏ hơn 4 348."
+    ]
   }
 }

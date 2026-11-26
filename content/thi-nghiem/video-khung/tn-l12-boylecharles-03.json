@@ -2,7 +2,7 @@
   "id": "tn-l12-boylecharles-03",
   "ten": "Ống chữ J một đầu kín: rót thêm chất lỏng vào nhánh hở",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-boylecharles-03-20261114.mp4",
-  "tong_giay": 49.9,
+  "tong_giay": 48.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 3.4,
       "chu": "Mức chất lỏng hai nhánh chênh 110 mmHg. Khí bị nhốt có áp suất bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.0,
+      "giay": 8.9,
       "chu": "Ống chữ J một đầu kín nhốt khí; rót thêm chất lỏng, đợi 1 phút mỗi lần, đọc h và L."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.4,
-      "chu": "Cột khí ngắn dần: 21,8 → 17,9 cm.\nÁp suất khí p = p₀ + h; h = 110 mmHg thì p = 870 mmHg."
+      "giay": 16.2,
+      "chu": "Cột khí ngắn dần: 21,8 → 19,0 cm khi h tăng 0 → 110 mmHg.\nÁp suất khí p = p₀ + h = 870 mmHg."
     },
     {
       "khoa": "rut_ra",
-      "giay": 31.3,
+      "giay": 29.2,
       "chu": "p tăng, L giảm, tích p·L giữ ≈ 1,65–1,66 (10⁴ mmHg·cm); khí nhốt kín, không thêm phân tử."
     },
     {
       "khoa": "chua_noi",
-      "giay": 39.5,
+      "giay": 36.9,
       "chu": "Chỉ đo p từ 760 đến 925 mmHg.\nNhiệt độ đổi thì chưa biết."
     }
   ],
   "dung_dua": {
-    "giay": 8.8,
+    "giay": 8.7,
     "cau_hoi": "Ống chữ J, khí quyển 760 mmHg. Mức chất lỏng nhánh hở cao hơn nhánh kín 110 mmHg. Khí bị nhốt có áp suất bao nhiêu?",
     "chon": [
       "A. 650 mmHg",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Cột chất lỏng cao hơn đè thêm lên khí. Xem số đo thật ở đoạn kế.",
     "giai_thich_sai": "Khí bị nhốt chịu cả áp suất khí quyển lẫn áp suất cột chất lỏng chênh giữa hai nhánh. Xem số đo thật ở đoạn kế rồi so với dự đoán của em."
+  },
+  "cau_chot": {
+    "giay": 42.2,
+    "cau_hoi": "Lúc đầu khí nhốt dài 21,8 cm ở 760 mmHg. Rót thêm (nhiệt độ không đổi) tới khi mức chất lỏng chênh 150 mmHg. Cột khí dài khoảng:",
+    "chon": [
+      "A. 27,2 cm",
+      "B. 21,8 cm",
+      "C. 18,2 cm",
+      "D. 17,9 cm"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "27,2 cm là lấy 21,8 × 910/760, coi L tăng theo áp suất. Khí bị nén nên L phải giảm: L = 21,8 × 760/910 ≈ 18,2 cm.",
+      "Rót thêm thì cột chất lỏng đè thêm lên khí nên khí bị nén, L không thể giữ 21,8 cm. p = 760 + 150 = 910 mmHg nên L = 21,8 × 760/910 ≈ 18,2 cm.",
+      "p = p₀ + h = 760 + 150 = 910 mmHg, giữ p·L không đổi: L = 21,8 × 760/910 ≈ 18,2 cm.",
+      "17,9 cm là số đo ở chênh 165 mmHg (925 mmHg). Ở chênh 150 mmHg, p = 910 mmHg nên L = 21,8 × 760/910 ≈ 18,2 cm."
+    ]
   }
 }

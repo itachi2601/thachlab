@@ -2,7 +2,7 @@
   "id": "tn-l12-apsuatdongnang-01",
   "ten": "Lắc hộp hạt gạo, áp tai vào thành hộp",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-apsuatdongnang-01-20261112-2.mp4",
-  "tong_giay": 52.6,
+  "tong_giay": 49.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 11.4,
-      "chu": "Hộp nhựa trong có nắp, nắm gạo (200 hạt); lắc theo tần số đã chọn, áp tai vào thành hộp."
+      "giay": 9.3,
+      "chu": "Hộp kín 200 hạt gạo; lắc 1 Hz rồi 3 Hz, đếm cú đập vào thành cam (chiếu chậm)."
     },
     {
       "khoa": "quan_sat",
-      "giay": 21.8,
+      "giay": 20.4,
       "chu": "200 hạt: 1 Hz được 250 cú đập/giây, 3 Hz được 750 (từ mô hình)."
     },
     {
       "khoa": "rut_ra",
-      "giay": 28.2,
-      "chu": "Lắc nhanh gấp 3 thì cú đập gấp 3.\nMột hạt chỉ đập một cái; vô số hạt đập liên tục mới thành lực đều, như phân tử khí."
+      "giay": 28.1,
+      "chu": "Lắc nhanh gấp 3 thì cú đập gấp 3.\nMột hạt đập từng cú lẻ; vô số hạt đập liên tục mới thành lực đều."
     },
     {
       "khoa": "chua_noi",
-      "giay": 41.6,
+      "giay": 38.6,
       "chu": "Số cú đập tính từ mô hình, không đo; chưa biết độ lớn một cú đập; lắc tay không đều."
     }
   ],
   "dung_dua": {
-    "giay": 10.7,
+    "giay": 9.1,
     "cau_hoi": "Lắc từ 1 Hz lên 3 Hz, số cú đập vào thành cam sẽ…",
     "chon": [
       "A. Không đổi, vẫn 200 hạt",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Hạt bay nhanh gấp ba nên số cú đập mỗi giây tăng gấp ba: từ 250 lên 750.",
     "giai_thich_sai": "Xem bảng số cú đập ở đoạn kế, so lúc lắc 1 Hz với 3 Hz."
+  },
+  "cau_chot": {
+    "giay": 43.3,
+    "cau_hoi": "Vẫn 200 hạt, lắc 1 Hz, nhưng hộp dài gấp đôi theo chiều tới thành cam. Số cú đập mỗi giây vào thành cam gần nhất:",
+    "chon": [
+      "A. 63",
+      "B. 125",
+      "C. 250",
+      "D. 500"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "63 là giảm 4 lần, như thể cú đập tỉ lệ nghịch với bình phương chiều dài. Mỗi hạt chỉ phải đi quãng gấp đôi mới quay lại thành cam, nên cú đập giảm 2 lần: 250/2 = 125.",
+      "Hạt vẫn bay nhanh như cũ nhưng phải đi quãng gấp đôi mới quay lại thành cam, nên mỗi hạt đập thưa đi 2 lần: 250/2 = 125.",
+      "Số hạt không đổi, nhưng mỗi hạt đi quãng gấp đôi mới quay lại thành cam, nên cú đập thưa đi: 250/2 = 125.",
+      "Hộp dài hơn không làm hạt bay nhanh hơn. Quãng đi gấp đôi nên cú đập thưa đi 2 lần: 250/2 = 125."
+    ]
   }
 }
