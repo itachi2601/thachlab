@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Cog, Factory, Medal, Sigma, Wrench, type LucideIcon } from "lucide-react";
+import { ArrowRight, BookOpen, Cog, Factory, Medal, Sigma, Wrench, Zap, type LucideIcon } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -35,6 +35,12 @@ const COURSES: Course[] = [
     description: "Nguyên công, gá, bước, dạng sản xuất và các hình thức gia công cơ khí. Lớp CĐ CK 25C, vào có duyệt.",
     href: "/lop-hoc/cnctm",
     icon: Factory,
+  },
+  {
+    title: "Gia công phi truyền thống",
+    description: "EDM, laser, tia nước, điện hoá, siêu âm...: nhóm thuyết trình, thầy tổng kết, thi tự luận có câu chọn công nghệ. Vào có duyệt.",
+    href: "/lop-hoc/gcpt",
+    icon: Zap,
   },
   {
     title: "Anh văn chuyên ngành cơ khí",
