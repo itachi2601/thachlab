@@ -87,5 +87,5 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" (8/11): 46 bài L10/L11/L12/KHTN9 đã lên DB + deploy; 7 chỗ lệch nhỏ chờ sửa component (`docs/MOT-DANG-MOT-HINH.md` mục 8/11).
 - Dụng cụ đo tương tác · thư viện `/mo-phong` công khai · thí nghiệm ảo theo bộ thiết bị SGK (kế hoạch 21/11, chưa bắt đầu, giao phiên khác): `docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md`.
-  - 26/11: Gói C có 4 bài (56, 75 đã đăng; **51, 67 gắn hộp `thuc-hanh-toc-do`/`thuc-hanh-tong-hop-luc`, CHỜ ĐĂNG** sau 22h: `bash scripts/cap-nhat-ly-thuyet.sh content/lesson-samples/<thư mục>/theory.html <id>`). Xem thử `/dev/thuc-hanh`.
+  - 26/11: Gói C có 4 bài (56, 75 đã đăng; 51, 67 gắn hộp `thuc-hanh-toc-do`/`thuc-hanh-tong-hop-luc`, đã đăng DB 26/11 23h25; **CHỜ DEPLOY** `bash scripts/deploy.sh` thì mô phỏng mới hiện). Xem thử `/dev/thuc-hanh`.
 - `/mo-phong` Gói B + 4 dụng cụ đo Gói A: đã lên production 23–25/11. Thêm trang: 1 dòng `lib/mo-phong-trang.ts` + 1 dòng `MoPhongTheoSlug.tsx` → `npx tsx scripts/gen-thu-vien-mo-phong.mts`.
