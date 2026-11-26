@@ -90,8 +90,9 @@ def fig2():
     o.append('<rect x="30" y="54" width="360" height="20" fill="none" stroke="currentColor" stroke-opacity="0.45" stroke-width="1" stroke-dasharray="4 3"/>')
     o.append(f'<path d="M30,54 Q210,22 390,54 L390,74 Q210,42 30,74 Z" {WP}/>')
     o.append(poly([(210, 64), (198, 86), (222, 86)], f'fill="{O}" stroke="{O}" stroke-width="1"'))
-    o.append(T(228, 84, "dao", O, 12, "700"))
-    o.append(ar(170, 66, 170, 42, "currentColor", 2))
+    o.append(T(228, 94, "dao", O, 12, "700"))
+    o.append(ar(250, 40, 250, 20, "currentColor", 2))
+    o.append(T(258, 30, "lực cắt", size=12, w="700"))
     o.append(T(120, 100, "lực cắt đẩy giữa trục võng lên,", size=12, a="middle"))
     o.append(T(120, 116, "dao ăn ít hơn ở giữa", size=12, a="middle"))
     o.append(f'<path d="M40,130 Q210,118 380,130 L380,150 Q210,162 40,150 Z" {WP}/>')
@@ -104,7 +105,7 @@ def fig2():
     for x, y in ((180, y0 + 21), (180, y0 + 59)):
         o.append(f'<circle cx="{x}" cy="{y}" r="8" fill="none" stroke="{B}" stroke-width="1.8"/>')
     o.append(f'<path d="M180,{y0 + 13} L180,{y0 + 6} L150,{y0 + 6} L150,{y0 + 74} L180,{y0 + 74} L180,{y0 + 67}" fill="none" stroke="{B}" stroke-width="1.8"/>')
-    o.append(T(144, y0 + 44, "luynét", B, 12, "700", a="end"))
+    o.append(T(144, y0 + 72, "luynét", B, 12, "700", a="end"))
     o.append(poly([(260, y0 + 50), (248, y0 + 72), (272, y0 + 72)], f'fill="{O}" stroke="{O}" stroke-width="1"'))
     o.append(T(278, y0 + 70, "dao", O, 12, "700"))
     o.append(T(210, y0 + 96, "trục không võng → đường kính đều", size=12, w="700", a="middle"))
@@ -148,7 +149,6 @@ def fig4():
     o += [center(40, 62, right=False), center(380, 62)]
     o.append(f'<rect x="40" y="50" width="340" height="24" {WP}/>')
     o.append(f'<rect x="180" y="76" width="40" height="40" {STONE}/>')
-    o.append(f'<line x1="180" y1="75" x2="220" y2="75" stroke="{O}" stroke-width="3"/>')
     o.append(T(226, 102, "đá mài", size=12, w="700"))
     o.append(ar(130, 136, 270, 136, B, both=True))
     o.append(T(200, 156, "bàn máy mang trục đi – về", B, 12, a="middle"))
@@ -168,17 +168,18 @@ def fig4():
 # Hình 5: mài vô tâm nhìn dọc trục chi tiết
 def fig5():
     G, Rg = (110, 132), 88          # đá mài
-    r = 22                          # chi tiết
-    py = 112
+    r = 26                          # chi tiết
+    py = 104
     px = G[0] + math.sqrt((Rg + r) ** 2 - (py - G[1]) ** 2)
     Rd, gy = 60, 140                # đá dẫn
     gx = px + math.sqrt((Rd + r) ** 2 - (gy - py) ** 2)
     n = (-math.sin(math.radians(25)), math.cos(math.radians(25)))
     C = (px + r * n[0], py + r * n[1])
     d = (math.cos(math.radians(30)), math.sin(math.radians(30)))
-    p1, p2 = (C[0] - 6 * d[0], C[1] - 6 * d[1]), (C[0] + 14 * d[0], C[1] + 14 * d[1])
-    for q in (p1, p2):               # thanh đỡ không chạm hai đá
-        assert math.dist(q, G) > Rg + 1 and math.dist(q, (gx, gy)) > Rd + 1, q
+    p1, p2 = (C[0] - 5 * d[0], C[1] - 5 * d[1]), (C[0] + 8 * d[0], C[1] + 8 * d[1])
+    edge = [p1, p2] + [(p1[0], y) for y in range(int(p1[1]), 237, 4)] + [(p2[0], y) for y in range(int(p2[1]), 237, 4)]
+    for q in edge:                   # thanh đỡ cách hai đá ≥ 4 px
+        assert math.dist(q, G) > Rg + 4 and math.dist(q, (gx, gy)) > Rd + 4, q
     o = [f'<circle cx="{G[0]}" cy="{G[1]}" r="{Rg}" {STONE}/>',
          f'<circle cx="{gx:.1f}" cy="{gy}" r="{Rd}" {STONE}/>',
          poly([p1, p2, (p2[0], 236), (p1[0], 236)], 'fill="currentColor" fill-opacity="0.35" stroke="currentColor" stroke-width="1.4"'),
@@ -186,13 +187,13 @@ def fig5():
          f'<line x1="{G[0]}" y1="{G[1]}" x2="{gx:.1f}" y2="{gy}" stroke="currentColor" stroke-width="1" stroke-dasharray="5 3"/>']
     yl = G[1] + (gy - G[1]) * (px - G[0]) / (gx - G[0])
     o.append(f'<line x1="{px:.1f}" y1="{py}" x2="{px:.1f}" y2="{yl:.1f}" stroke="{B}" stroke-width="1.6"/>')
-    o.append(T(px + 5, (py + yl) / 2 + 12, "h", B, 13, "700"))
+    o.append(T(px + 5, (py + yl) / 2 + 5, "h", B, 14, "700"))
     o.append(rot(G[0], G[1], 50, 50, 200, 320))
     o.append(rot(gx, gy, 36, 36, 200, 320))
-    o.append(rot(px, py, 13, 13, 330, 60))
+    o.append(rot(px, py, r + 9, r + 9, 330, 215))
     o += [T(G[0], G[1] + 44, "đá mài", size=13, w="700", a="middle"),
           T(gx, gy + 30, "đá dẫn", size=13, w="700", a="middle"),
-          T(px, py - r - 8, "chi tiết", O, 12, "700", a="middle"),
+          T(px, py - r - 16, "chi tiết", O, 12, "700", a="middle"),
           T(p1[0] - 6, 230, "thanh đỡ", size=12, a="end")]
     return fig(svg(244, "Sơ đồ mài vô tâm", o),
                "Hình 5. Mài vô tâm nhìn dọc trục. Đá mài và đá dẫn quay cùng chiều; chi tiết quay ngược lại. Tâm chi tiết cao hơn đường nối tâm hai đá một đoạn h.")
