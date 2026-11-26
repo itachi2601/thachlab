@@ -28,6 +28,8 @@ góc dây đo so với phương thẳng đứng (bài dùng góc với phương 
 - CĐ mới không docx (10, 15, 16, 17) → tự viết dàn ý theo đề cương THI HSG 9 KHTN 26-27, lời mình (mục Bản quyền AGENTS.md).
 - Dàn ý chốt: 5–7 mục lý thuyết, danh sách **4–7 dạng** (tên dạng + số liệu đã tính bằng Python), 6–8 bài tự luận (E+G), ≥6 câu luyện tập, cái bẫy (H).
   Số liệu tính một lần ở đây rồi đưa nguyên cho các agent → các mục không lệch số nhau.
+- Tra `docs/BANG-MEO-GIAI.md` mục "HSG KHTN 9" (bảng A–D) ngay khi chốt danh sách dạng: ghi vào dàn ý dạng nào có 💡 (≤ 2 dạng/bài, không đặt ở dạng "Mở rộng HSG"),
+  dạng nào có ✓ Soát nhanh, dạng nào dùng quy trình 📈 Đọc hình (mỗi chuyên đề ≥ 1 dạng). Mẹo chỉ để định hướng và soát; lời giải mẫu vẫn trình bày đủ.
 
 ## 3. Soạn song song (subagent, một lượt gửi)
 | Agent | Việc | Đầu ra |

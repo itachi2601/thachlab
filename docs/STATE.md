@@ -9,6 +9,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
+- **GCPT bài thuyết trình (27/11)**: migration `20261127150000` ĐÃ CHẠY 27/11 (qua `supabase db query -f`, checkout chính bẩn nên không qua run-migrations.sh → không có log); bài id 228 + đề 1423 đã đăng, published=false, chờ thầy duyệt bật.
 - **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã đăng và BẬT HIỆN (26/11); còn: tạo course_offering (chờ tên lớp/năm học), thầy đối chiếu số liệu "tham khảo".
 - **CNCTM 2 (27/11)**: `20261127090000_lop_cnctm2_bai_14_19` CHƯA CHẠY (môn/lớp `cnctm2` + 6 bài 14–19, published=false; code lớp đã vào nhánh, chưa deploy). Nội dung `content/lesson-samples/cnctm2-bai-1{4..9}-*/` đã qua kiem-code, chờ thầy duyệt `xem-thu/xem-thu.html` → chạy migration → `upload-lesson.mts … --lesson <id>` → bật published → deploy. Chưa có course_offering (chờ lớp/năm học).
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
@@ -74,7 +75,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
 - P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. 38, 39 đã đổi dòng hai mốc và đăng 23h41. CÒN: file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
-- Clip L12 lô 32 (Việc 4, 26/11): dựng lại + tải `-20261126` cả 32, khung trỏ bản mới; CHỜ THẦY DUYỆT rồi đổi kho/bài + `--chi-video` (sổ clip mục "lô 32"; 1 lỗi bài tutruong dòng 116).
+- Clip L12 lô 32 (Việc 4): thầy duyệt 27/11; kho + 20 bài đổi `-20261126`, khung gắn lại, dry-run 20/20 sạch; HẸN GHI DB 22:05 27/11 (`dang-lo32.sh --yes --22h05`, tab terminal). Còn treo: lỗi bài tutruong dòng 116 + điểm kho trong sổ clip mục "lô 32".
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
