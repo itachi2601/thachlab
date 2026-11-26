@@ -110,7 +110,8 @@ const { data: lessons, error: lErr } = await sb
   .order("sort_order");
 if (lErr) fail(`đọc lessons: ${lErr.message}`);
 const lessonTheoChuong = new Map<number, { id: number; title: string; published: boolean }>();
-for (const l of lessons ?? []) lessonTheoChuong.set(Number(l.sort_order), { id: l.id as number, title: l.title as string, published: !!l.published });
+// Từ 30/10–19/11/2026 lớp có thêm bài 11 (ôn thì) và 12 (đề thi thử) — script chỉ lo 10 chương giáo trình (sort_order 1–10).
+for (const l of (lessons ?? []).filter((x) => Number(x.sort_order) >= 1 && Number(x.sort_order) <= 10)) lessonTheoChuong.set(Number(l.sort_order), { id: l.id as number, title: l.title as string, published: !!l.published });
 if (lessonTheoChuong.size !== 10) fail(`DB không đủ 10 bài AVCN (thấy ${lessonTheoChuong.size})`);
 
 // 3. Bundle local + đọc mục đang có
