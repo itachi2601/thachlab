@@ -113,3 +113,4 @@
 - [Clip nền Dấu chân phía trước](project_thachlab_video_dau_chan_phia_truoc.md) — bản 4 chờ duyệt
 - [CNC lớp CĐT 24A + mở lớp](project_thachlab_cnc_mo_lop_cdt24a.md) — treo Hộp thư lọc tin
 - [Rà soát website 18/11](project_thachlab_ra_soat_website_2026_11_18.md) — đợt 2, 3 chờ chọn
+- [Rà quiz + độ dài theo chương](project_thachlab_ra_soat_quiz_do_dai.md) — L12 Ch.3 xong; 8 câu mới chờ duyệt

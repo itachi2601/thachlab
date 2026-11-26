@@ -13,6 +13,8 @@ import {
   PanmeLazy,
   ThucHanhDongLuongLazy,
   ThucHanhRoiTuDoLazy,
+  ThucHanhTocDoLazy,
+  ThucHanhTongHopLucLazy,
   ThuocKepLazy,
 } from "@/components/physics/SimulationsLazy";
 
@@ -33,6 +35,8 @@ const MO_PHONG = {
   "dong-ho-hien-so": DongHoHienSoLazy,
   "thuc-hanh-roi-tu-do": ThucHanhRoiTuDoLazy,
   "thuc-hanh-dong-luong": ThucHanhDongLuongLazy,
+  "thuc-hanh-toc-do": ThucHanhTocDoLazy,
+  "thuc-hanh-tong-hop-luc": ThucHanhTongHopLucLazy,
 } as const;
 type Khoa = keyof typeof MO_PHONG;
 

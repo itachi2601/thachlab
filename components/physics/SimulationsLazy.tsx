@@ -86,7 +86,10 @@ export function DongHoHienSoLazy() {
   );
 }
 
-const ThucHanhRoiTuDo = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhRoiTuDo"), { ssr: false, loading });
+const ThucHanhRoiTuDo = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhRoiTuDo"), {
+  ssr: false,
+  loading,
+});
 
 export function ThucHanhRoiTuDoLazy() {
   return (
@@ -96,12 +99,38 @@ export function ThucHanhRoiTuDoLazy() {
   );
 }
 
-const ThucHanhDongLuong = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhDongLuong"), { ssr: false, loading });
+const ThucHanhDongLuong = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhDongLuong"), {
+  ssr: false,
+  loading,
+});
 
 export function ThucHanhDongLuongLazy() {
   return (
     <LazyErrorBoundary fallback={failed}>
       <ThucHanhDongLuong />
+    </LazyErrorBoundary>
+  );
+}
+
+const ThucHanhTocDo = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhTocDo"), { ssr: false, loading });
+
+export function ThucHanhTocDoLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <ThucHanhTocDo />
+    </LazyErrorBoundary>
+  );
+}
+
+const ThucHanhTongHopLuc = dynamic(() => import("@/components/physics/thuc-hanh/ThucHanhTongHopLuc"), {
+  ssr: false,
+  loading,
+});
+
+export function ThucHanhTongHopLucLazy() {
+  return (
+    <LazyErrorBoundary fallback={failed}>
+      <ThucHanhTongHopLuc />
     </LazyErrorBoundary>
   );
 }
