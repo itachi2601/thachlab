@@ -64,7 +64,6 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: mọi TN đã có clip; lô 20 clip L12 + 3 mẫu đã lên DB (21–22/11). Lỗi 0 lượt ghi (`lesson_clip_views`, `lesson_clip_choices`) do thiếu `data-lesson-id` ở /lop-hoc/bai — sửa + deploy 25/11 (9e50dcab4); kiểm lại có dòng sau buổi học tới. Treo: sinh lại `thu-vien-mo-phong.json`.
-- Clip Ch.1 lô B (26/11): bài 46, 48, 22 hẹn ghi DB 22:05 26/11 (`--chi-video`, log `scripts/logs/dang-22h-3bai-20261126.log`) — phiên sau kiểm log 3 lần "Khác biệt ngoài khối video: KHÔNG", không "LOI".
 - Lô 12/11: clip đề Bộ, 12 clip bẫy, `MoPhongPortals` bài 7, 8, 11 đã lên; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
