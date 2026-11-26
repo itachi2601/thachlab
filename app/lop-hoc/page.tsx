@@ -571,7 +571,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const onlyMeta = !only
       ? ""
       : !showAccountProgress
-        ? `${only.itemCount} mục`
+        ? only.itemCount > 0 ? `${only.itemCount} mục` : "" // khách chưa đăng nhập đọc ra 0 → đừng in "0 mục" (lớp trông rỗng, 26/11/2026)
         : onlyPercent === 100
           ? "Hoàn thành"
           : onlyPercent > 0
@@ -677,7 +677,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {periodic
                           ? showAccountProgress ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
                           : !showAccountProgress
-                            ? `${lesson.itemCount} mục`
+                            ? lesson.itemCount > 0 ? `${lesson.itemCount} mục` : ""
                             : review
                               ? "Ôn lại"
                               : complete
