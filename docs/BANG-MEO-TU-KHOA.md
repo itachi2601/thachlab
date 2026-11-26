@@ -37,3 +37,8 @@ Dạng mỗi dòng: `lớp · bài · mục · mẹo · ý từng chữ · bài 
 - 11 · song-dung · (gom 1 + 3 + 5, đặt sau Câu 2 mục 3) · **Cố Định: Nút – Ngược – Nguyên** / **Tự Do: Bụng – Cùng – Lẻ** · Nút/Bụng: đầu dây; Ngược/Cùng: pha sóng phản xạ; Nguyên/Lẻ: nguyên lần λ/2 / lẻ lần λ/4 · —. Bỏ "λ/2", "λ/4" khỏi chữ mẹo (bảng đề xuất có) vì ở 375px dòng "Cố Định: … Nguyên λ/2" xuống dòng; λ/2, λ/4 nằm ở 🔑 và bảng 2 cột ngay dưới. Bỏ 🔑 cũ của mục 3 (trùng ý khối gom)
 - 11 · khai-niem-dien-truong · 4. Đường sức điện · **Tiếp – Ra – Vào – Mau** · Tiếp: tiếp tuyến là giá E; Ra: ra từ điện tích dương; Vào: vào ở điện tích âm; Mau: mau thì mạnh · cặp với L12 Tiếp – Kín – Không Cắt – Mau (khác ở chữ 2–3). Khối mẹo + 🔑 dời xuống sau Câu 3 (Câu 3 hỏi "khép kín")
 - 11 · cuong-do-dong-dien · 4. Hạt tải điện · **Đông – Nhanh – To** · Đông: mật độ hạt tải n; Nhanh: tốc độ trôi v; To: tiết diện S (I = Snve) · —. 🔑 thêm "xét từng yếu tố, hai yếu tố kia giữ nguyên" vì Câu 4 hỏi cùng I mà S gấp đôi thì v giảm (tránh hiểu "to đi cùng nhanh")
+
+## CTTC – Công nghệ chế tạo máy 1 (26/11/2026)
+
+- CNCTM · bài 5 Độ chính xác gia công · 1. Bốn yếu tố · **Cỡ – Dáng – Vị – Mặt** · Cỡ: kích thước; Dáng: hình dạng hình học; Vị: vị trí tương quan; Mặt: chất lượng bề mặt · —
+- CNCTM · bài 6 Thiết kế quy trình công nghệ · 1. QTCN để làm gì · **Rẻ – Đạt – Hợp – Mới** · Rẻ: chi phí thấp nhất; Đạt: đạt chất lượng bản vẽ; Hợp: hợp máy, thợ, tổ chức nhà máy; Mới: kỹ thuật mới, sáng kiến, dây chuyền · —

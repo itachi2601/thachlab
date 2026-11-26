@@ -165,3 +165,7 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-26 · Nhãn SVG đặt cạnh nét xiên ("nung") bị nét cắt chữ → tính toạ độ nét tại đúng y của nhãn trước khi đặt; nhãn luôn nằm hẳn một bên nét.
 - 2026-11-26 · Bài CTTC ngoài giáo trình (A3 thép, nhiệt độ ram theo HRC) ghi như số đo chắc → ghi "cỡ/khoảng… (tra giản đồ/đồ thị)" khi số không có trong giáo trình.
 - 2026-11-26 · `textutil` trên .doc ra rác nhị phân; `chup_anh.py` lỗi thiếu PIL với python Homebrew → dùng `pdftotext -layout` trên bản PDF; chạy `chup_anh.py` bằng `/usr/bin/python3`.
+- 2026-11-26 · Bài CNCTM 5 viết theo đủ ý giáo trình ra 2 740 từ hiện (lỗi cứng >2 500); cắt nhiều vòng mới xuống 1 992 → trước khi viết, ngân sách ~200 từ/mục × 8 mục; bảng phụ, ví dụ, "ảnh hưởng tới…" cho vào `<details>` ngay từ đầu; phản hồi quiz (tl-fb) không tính vào số từ hiện nên cắt nó không giảm cảnh báo.
+- 2026-11-26 · Giáo trình CNCTM ghi Ø38−0,039 là "cấp 7" nhưng IT7 (30–50 mm) = 25 µm, 0,039 là IT8 → đừng chép cấp chính xác từ giáo trình mà không tra lại bảng IT; không chắc thì bỏ cấp, báo thầy.
+- 2026-11-26 · Nhãn "mũi dao" Hình 3 bài 5 đặt (300,16) nằm trong vòng tròn r=70 tâm (350,70) → với hình có cung/tròn, tính y của đường tròn tại x của nhãn (cy ± √(r²−dx²)) trước khi đặt.
+- 2026-11-26 · Mẹo 🧠 viết thành câu ("Rẻ nhất mà vẫn đạt") sai dạng bảng mẹo → mẹo luôn là chữ đầu hoa ngăn " – ", mỗi chữ khớp một ý của dòng 🔑 ngay dưới; soát `docs/BANG-MEO-TU-KHOA.md` trước khi thêm.
