@@ -651,7 +651,7 @@ async function main() {
   let strippedBodies = 0;
   for (const raw of itemRows) {
     const { body_html, summary_html, questions, ...meta } = raw;
-    if (raw.kind === "ly_thuyet" && (body_html ?? "").trim() && !minutesByLesson.has(raw.lesson_id)) {
+    if (raw.kind === "ly_thuyet" && (body_html ?? "").trim()) {
       const html = body_html;
       const inter =
         (html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length + (html.match(/class="[^"]*\btl-box--(?:exp|think)\b/g) ?? []).length;
@@ -662,7 +662,8 @@ async function main() {
         .replace(/&nbsp;/gi, " ");
       const authored = /⏱\s*Khoảng\s+(\d{1,3})\s*phút/.exec(visible);
       const words = visible.split(/\s+/).filter(Boolean).length;
-      minutesByLesson.set(raw.lesson_id, authored ? Math.max(1, Number(authored[1])) : Math.max(1, Math.ceil(words / 140 + inter)));
+      // bài nhiều mục lý thuyết: cộng phút mọi mục (kiem-code 26/11)
+      minutesByLesson.set(raw.lesson_id, (minutesByLesson.get(raw.lesson_id) ?? 0) + (authored ? Math.max(1, Number(authored[1])) : Math.max(1, Math.ceil(words / 140 + inter))));
     }
     const keepBody = BODY_KINDS.has(raw.kind);
     if (!keepBody && (body_html ?? "").trim()) strippedBodies += 1;

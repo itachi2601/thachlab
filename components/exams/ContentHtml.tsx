@@ -34,6 +34,23 @@ function speakQuizOption(label: HTMLElement) {
  * vựng AVCN (`data-tl-word`/`data-tl-audio`: hàng chục câu nhỏ, hỏi mức tự tin từng từ là thừa). Tên nhóm
  * `<tên-câu>-conf` để các bộ đếm câu (TheoryReviewStep.isConfGroup) không tính nó thành một câu hỏi.
  */
+/**
+ * Dòng "Em chắc bao nhiêu?" soạn tay (119 bài) nằm TRƯỚC đề câu hỏi, dòng tự chèn nằm SAU đề, ngay trên phương án →
+ * HS học thử 26/11 thấy lúc trên lúc dưới. Hiển thị thống nhất: luôn sau đề, ngay trên khối phương án (đọc đề → đánh giá
+ * độ chắc → chọn; N3 nhất quán). Chỉ dời khi giữa hai thứ chỉ là các đoạn <p> của đề; không sửa HTML đã đăng.
+ */
+export function withConfAfterQuestion(html: string): string {
+  if (!html.includes("tl-conf")) return html;
+  // "Em chắc bao nhiêu? Chắc / Không chắc" → "Chắc chưa? Chắc / Chưa chắc": vừa MỘT dòng ở 360–375px (cùng nút dạng viên,
+  // CSS globals.css). Giá trị radio (chac/khong) giữ nguyên nên bộ đếm, lưu trả lời không đổi.
+  return html
+    .replace(/<p class="tl-conf">[\s\S]*?<\/p>/g, (p) => p.replace(/^(<p class="tl-conf">)\s*Em chắc bao nhiêu\?/, "$1Chắc chưa?").replace(/>\s*Không chắc<\/label>/, "> Chưa chắc</label>"))
+    .replace(
+    /(<p class="tl-conf">(?:(?!<\/p>)[\s\S])*<\/p>)((?:\s*<p\b(?![^>]*tl-conf)[^>]*>(?:(?!<\/p>)[\s\S])*<\/p>)+)(\s*<div\b[^>]*\bclass="[^"]*\btl-quiz\b)/g,
+    (_m, conf: string, ques: string, quiz: string) => `${ques.replace(/^\s+/, "")}\n${conf}${quiz}`,
+  );
+}
+
 export function withConfidenceRows(html: string): string {
   if (!html.includes("tl-quiz")) return html;
   const starts = [...html.matchAll(/<div\b[^>]*\bclass="[^"]*\btl-quiz\b[^"]*"[^>]*>/g)];
@@ -52,9 +69,9 @@ export function withConfidenceRows(html: string): string {
     const g = `${name}-conf`;
     out +=
       html.slice(cursor, at) +
-      `<p class="tl-conf">Em chắc bao nhiêu? ` +
+      `<p class="tl-conf">Chắc chưa? ` +
       `<label><input type="radio" name="${g}" id="${g}-chac" value="chac"> Chắc</label> ` +
-      `<label><input type="radio" name="${g}" id="${g}-khong" value="khong"> Không chắc</label></p>`;
+      `<label><input type="radio" name="${g}" id="${g}-khong" value="khong"> Chưa chắc</label></p>`;
     cursor = at;
   }
   return out + html.slice(cursor);
@@ -291,7 +308,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withStackTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html)))))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withStackTables(withDeBaiBox(withConfidenceRows(withConfAfterQuestion(stripWordArtifacts(html))))))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);

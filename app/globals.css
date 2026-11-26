@@ -4503,11 +4503,21 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
   .exam-content .tl-table--stack td { border: 0; border-top: 1px solid rgba(148,163,184,.25); padding: 6px 12px 8px; }
   .exam-content .tl-table--stack td:first-child { border-top: 0; }
   .exam-content .tl-table--stack td[data-th]::before { content: attr(data-th); display: block; margin-bottom: 2px; color: var(--color-muted); font-size: 12.5px; font-weight: 700; letter-spacing: .02em; }
-  .exam-content .tl-scroll:has(> .tl-table--stack) { overflow: visible; }
-  .exam-content .tl-scroll > .tl-table--stack { min-width: 0; }
+  .exam-content :is(.tl-scroll, .table-scroll):has(> .tl-table--stack) { overflow: visible; }
+  .exam-content :is(.tl-scroll, .table-scroll) > .tl-table--stack { min-width: 0; }
 }
 /* (10) Dòng giải thích "Tập" một lần mỗi bài (ContentHtml.withTapNote). */
 .exam-content .tl-tap-note { margin: 0 0 8px; color: var(--color-muted); font-size: 14px; line-height: 1.5; }
 /* (5) D6/D2: phím π và / dưới ô đáp số của bước có π (StepwiseSolution.needsPiKeys). */
 .exam-content .bt-ask-keys { display: flex; gap: 8px; margin-top: 8px; }
 .exam-content .bt-ask-keys .lesson-btn-ghost { min-width: 52px; min-height: 44px; justify-content: center; font-size: 18px; font-weight: 700; }
+/* "Em chắc bao nhiêu? ◯ Chắc ◯ Không chắc" giữ MỘT dòng ở 360–375px (HS học thử 26/11: rớt 2 dòng, N3) */
+/* Nút dạng viên (radio ẩn khỏi mắt, vẫn bàn phím/đọc màn hình được), đích chạm 44px (D6) */
+.exam-content .tl-conf { flex-wrap: nowrap; gap: 8px; font-size: .84em; }
+.exam-content .tl-conf label { position: relative; white-space: nowrap; min-height: 44px; padding: 0 12px; gap: 0;
+  border: 1px solid var(--color-border, #cbd5e1); border-radius: 999px; color: var(--color-text, #0f172a); }
+.exam-content .tl-conf input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-conf label:has(input:checked) { background: var(--color-primary, #1d4ed8); border-color: var(--color-primary, #1d4ed8); color: #fff; }
+.exam-content .tl-conf label:has(input:focus-visible) { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; }
+.exam-content .tl-conf { white-space: nowrap; }
+@media (max-width: 400px) { .exam-content .tl-conf { gap: 6px; font-size: .78em; } .exam-content .tl-conf label { padding: 0 8px; } }
