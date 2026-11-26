@@ -64,7 +64,7 @@ def fig1():
     o += [T(262, 36, "mũi khoan quay:", R, 12, "700"), T(262, 52, "chuyển động chính", R, 12)]
     o.append(ar(256, 66, 256, 100, B))
     o += [T(268, 82, "tiến dọc trục:", B, 12, "700"), T(268, 98, "chạy dao", B, 12)]
-    o += [T(48, 182, "phôi", size=12, w="700"), T(176, 70, "mũi khoan", O, 12, "700", a="end")]
+    o += [T(48, 182, "phôi", size=12, w="700"), T(178, 104, "mũi khoan", O, 12, "700", a="end")]
     return fig(svg(200, "Sơ đồ khoan lỗ", o),
                "Hình 1. Khoan trên máy khoan: mũi khoan quay là chuyển động chính (đỏ), tiến dọc trục là chạy dao (xanh).")
 
@@ -72,8 +72,8 @@ def fig1():
 # Hình 2: ba sai hỏng khi khoan (mặt cắt dọc lỗ thông)
 def fig2():
     o = []
-    cases = (("a) Xiên", (50, 80, 68, 98), "đường tâm nghiêng"),
-             ("b) Lay rộng", (44, 86, 44, 86), "lỗ to hơn mũi khoan"),
+    cases = (("a) Xiên", (48, 82, 66, 100), "đường tâm nghiêng"),
+             ("b) Lay rộng", (45, 89, 45, 89), "lỗ to hơn mũi khoan"),
              ("c) Lệch tâm", (62, 92, 62, 92), "tâm lỗ lệch vị trí"))
     for i, (title, (lt, rt, lb, rb), note) in enumerate(cases):
         x0 = 4 + 138 * i
@@ -99,13 +99,11 @@ def fig3():
                                  (350, 8, "Dao doa", "nhiều lưỡi", "cấp 10 – 6")):
         cy = 74
         o.append(f'<circle cx="{cx}" cy="{cy}" r="44" fill="{O}" fill-opacity="0.15" stroke="{O}" stroke-width="1.6"/>')
-        r_in = 10 if n == 2 else 18
+        r_in = 6 if n == 2 else 18
         for k in range(n):
             a = math.radians(90 + 360 * k / n)
             o.append(f'<line x1="{cx + r_in * math.cos(a):.1f}" y1="{cy + r_in * math.sin(a):.1f}" '
                      f'x2="{cx + 44 * math.cos(a):.1f}" y2="{cy + 44 * math.sin(a):.1f}" stroke="{O}" stroke-width="3.2"/>')
-        if n == 2:
-            o.append(f'<line x1="{cx - 10}" y1="{cy + 10}" x2="{cx + 10}" y2="{cy - 10}" stroke="{O}" stroke-width="3.2"/>')
         o += [T(cx, 140, name, size=13, w="700", a="middle"), T(cx, 158, l1, size=12, a="middle"),
               T(cx, 174, l2, size=12, a="middle")]
     return fig(svg(184, "Mặt đầu mũi khoan, mũi khoét và dao doa", o),
@@ -127,11 +125,11 @@ def fig4():
         for sgn in (-1, 1):
             o.append(poly([(x - 12, ax + sgn * 8), (x - 12, ax + sgn * (8 + h)), (x, ax + sgn * 8)],
                           f'fill="{O}" stroke="{O}" stroke-width="1"'))
-    o.append(ar(340, ax + 44, 400, ax + 44, R))
-    o += [T(404, ax + 66, "dao bị kéo:", R, 12, "700", a="end"), T(404, ax + 82, "chuyển động chính", R, 12, a="end")]
+    o.append(ar(320, ax + 44, 382, ax + 44, R))
+    o += [T(390, ax + 66, "dao bị kéo:", R, 12, "700", a="end"), T(390, ax + 82, "chuyển động chính", R, 12, a="end")]
     o += [T(228, ax - 68, "chi tiết đứng yên", size=12, w="700", a="middle")]
-    o += [T(20, ax + 40, "răng sau cao hơn", O, 12, "700"), T(20, ax + 56, "răng trước", O, 12, "700")]
-    o.append(f'<line x1="20" y1="{ax + 70}" x2="40" y2="{ax + 70}" stroke="currentColor" stroke-width="1"/>')
+    o += [T(20, ax - 54, "răng càng về đuôi", O, 12, "700"), T(20, ax - 38, "càng cao", O, 12, "700")]
+    o.append(f'<line x1="84" y1="{ax - 34}" x2="146" y2="{ax - 20}" stroke="currentColor" stroke-width="1"/>')
     return fig(svg(192, "Sơ đồ chuốt kéo lỗ", o),
                "Hình 4. Chuốt kéo: mỗi răng cao hơn răng trước một chút, cắt một lớp mỏng. Một lượt kéo là xong lỗ.")
 
@@ -147,20 +145,21 @@ def fig5():
         o.append(f'<line x1="120" y1="{top + k}" x2="300" y2="{top + k + 70}" stroke="currentColor" stroke-opacity="0.16" stroke-width="1"/>')
         o.append(f'<line x1="120" y1="{top + k + 70}" x2="300" y2="{top + k}" stroke="currentColor" stroke-opacity="0.16" stroke-width="1"/>')
     o.append('</g>')
-    up, lo = (top - 18, top + 42), (bot - 42, bot + 18)
+    up, lo = (top - 24, top + 36), (bot - 36, bot + 24)
     for x in (120, 286):
         o.append(f'<rect x="{x}" y="{up[0]}" width="14" height="{up[1] - up[0]}" {STONE}/>')
         o.append(f'<rect x="{x}" y="{lo[0]}" width="14" height="{lo[1] - lo[0]}" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 3"/>')
     o.append(f'<rect x="134" y="{up[0] + 6}" width="152" height="6" fill="currentColor" fill-opacity="0.5"/>')
     o.append(f'<rect x="204" y="6" width="12" height="{up[0]}" fill="currentColor" fill-opacity="0.5"/>')
-    o.append(rot(210, 16, 30, 7, 20, 160))
-    o.append(T(250, 14, "quay", R, 12, "700"))
+    o.append(rot(210, 16, 38, 7, 20, 160))
+    o.append(T(254, 14, "quay", R, 12, "700"))
     o.append(ar(70, 90, 70, 170, B, both=True))
     o += [T(14, 124, "đi lên –", B, 12, "700"), T(14, 140, "đi xuống", B, 12, "700")]
     for (ya, yb, lab) in ((up[0], top, "l₁"), (bot, lo[1], "l₂")):
-        o.append(f'<line x1="330" y1="{ya}" x2="352" y2="{ya}" stroke="currentColor" stroke-width="1"/>')
-        o.append(f'<line x1="330" y1="{yb}" x2="352" y2="{yb}" stroke="currentColor" stroke-width="1"/>')
-        o.append(f'<line x1="344" y1="{ya}" x2="344" y2="{yb}" stroke="currentColor" stroke-width="1.4"/>')
+        for yy in (ya, yb):                         # đường gióng từ đầu thỏi đá / miệng lỗ
+            o.append(f'<line x1="302" y1="{yy}" x2="352" y2="{yy}" stroke="currentColor" stroke-width="1" stroke-dasharray="3 2"/>')
+        o.append(ar(344, (ya + yb) / 2, 344, ya + 1, "currentColor", 1.4, 6))
+        o.append(ar(344, (ya + yb) / 2, 344, yb - 1, "currentColor", 1.4, 6))
         o.append(T(356, (ya + yb) / 2 + 5, "độ vượt " + lab, size=12, w="700"))
     o.append(T(210, 134, "vết đan chéo", size=12, w="700", a="middle"))
     o.append(T(14, 250, "Nét liền: thỏi đá ở đầu trên. Nét đứt: ở đầu dưới.", size=12))
