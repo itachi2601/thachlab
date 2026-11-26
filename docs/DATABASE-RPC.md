@@ -1,4 +1,4 @@
-# Hàm SQL / RPC (schema public) — 448 hàm, sinh tự động 2026-11-25
+# Hàm SQL / RPC (schema public) — 451 hàm, sinh tự động 2026-11-26
 
 Sinh bằng `node scripts/gen-database-doc.mjs`. Gọi từ client bằng `supabase.rpc("ten_ham", {...})`.
 Định nghĩa đầy đủ: grep tên hàm trong `supabase/migrations/` (hàm cũ hơn 9/2026 không có trong
@@ -20,6 +20,7 @@ repo — xem trên Supabase Dashboard).
 - `bank_set_question_figure(p_bank_id bigint, p_img_html text)` → jsonb
 - `bank_set_question_figure_svc(p_bank_id bigint, p_img_html text)` → jsonb
 - `bank_source_is_assessment(p_exam bigint)` → boolean
+- `call_roster_lists()` → TABLE(kind text, id bigint, name text, n integer)
 - `can_edit_teaching(p_class bigint)` → boolean
 - `can_manage_class(p_class_id bigint)` → boolean
 - `can_manage_course(p_course_id bigint)` → boolean
@@ -30,11 +31,13 @@ repo — xem trên Supabase Dashboard).
 - `claim_parent_link(p_code text)` → TABLE(student_name text, class_name text)
 - `claim_push_reminders_due(p_now timestamp with time zone)` → TABLE(subscription_id bigint, student_id uuid, endpoint text, p256dh text, auth_key text, topic_name text, lesson_id bigint, level text, inactive_days integer)
 - `claim_staff_invite(p_code text)` → TABLE(role text, class_name text, tier text)
+- `class_call_roster(p_class_id bigint)` → TABLE(student_id uuid, full_name text)
 - `cleanup_old_machine_photos(p_course_id bigint, p_keep_session_id bigint)` → text[]
 - `cnc_milling_quiz_save(p_course_id bigint, p_participant_key uuid, p_participant_name text, p_class_name text, p_answers jsonb, p_score integer, p_total integer, p_status text)` → void
 - `cnc_quiz_bank_of(p_lesson_id text, p_assessment_id text)` → TABLE(cnc_key text, pass_ratio numeric)
 - `cnc_quiz_submit(p_course_id bigint, p_lesson_id text, p_assessment_id text, p_answers jsonb)` → TABLE(score integer, total integer, passed boolean)
 - `count_question_types(qs jsonb)` → jsonb
+- `course_call_roster(p_course_id bigint)` → TABLE(student_id uuid, full_name text)
 - `create_post_with_targets(p_title text, p_body text, p_video_url text, p_content_type text, p_subject_code text, p_class_ids bigint[], p_course_ids bigint[])` → bigint
 - `diagnostic_bank_topic_ids()` → bigint[]
 - `diagnostic_can_read(p_student uuid)` → boolean
@@ -256,8 +259,8 @@ repo — xem trên Supabase Dashboard).
 - `report_equipment_breakdown(p_course_id bigint, p_session_id bigint, p_machine_code text, p_description text, p_storage_path text, p_broken_at timestamp with time zone, p_reported_by uuid)` → bigint
 - `request_course_enrollment(p_join_code text)` → jsonb
 - `request_parent_link_review(p_name text, p_birth date, p_phone text, p_note text)` → bigint
-- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text, p_resolved_by uuid)` → void
+- `resolve_equipment_breakdown(p_id bigint, p_note text, p_resolved_photo_path text)` → void
 - `resolve_login_email(p_login text)` → text
 - `review_board(p_session bigint)` → jsonb
 - `review_board_stage(p_session bigint, p_stage integer)` → jsonb
