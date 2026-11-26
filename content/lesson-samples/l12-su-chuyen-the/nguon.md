@@ -11,3 +11,4 @@ Hình 3 — sửa theo rà soát vật lý, không có hình HRW tương ứng (
 - Hình 3 giữ SVG: OpenStax không có sơ đồ vòng chuyển thể sáu quá trình.
 - Hình 4 giữ SVG: Hình 14.8 trục hoành là năng lượng ΔQ/m (không phải thời gian như bài) và thang kJ/kg ghi 0–3 sai bậc (thực tế hàng trăm–nghìn kJ/kg), nhãn Anh + đơn vị không khớp bài.
 - Ảnh raster là ngoại lệ có chủ đích của quy tắc SVG tự vẽ; CC BY-NC-SA 4.0.
+- 26/11/2026: Hình 2 vẽ lại thành SVG tự vẽ (build_figs.py) theo Hình 14.7, nhãn tiếng Việt ngay trên hình (H3/N8); bỏ chú thích nhãn tiếng Anh và chú thích cuối (tl-fns), nguồn ghi trong `<small>` dưới hình.
