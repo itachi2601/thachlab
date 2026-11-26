@@ -26,6 +26,8 @@ export interface Profile {
   // Hệ học của học sinh/sinh viên — nguồn sự thật duy nhất để chọn giao diện CTTC hay THPT.
   track: "thpt" | "cttc" | null;
   avatar_url: string | null;
+  /** Mã HS khi nhập từ danh sách lớp — cùng class_name quyết định HS có ruột Tập in sẵn (features/lessons/an-ruot-tap). */
+  student_code?: string | null;
 }
 
 export type PreviewMode = "student" | "cttc" | null;
