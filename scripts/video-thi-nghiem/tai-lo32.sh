@@ -3,6 +3,7 @@
 # Mỗi clip: tải mp4 + ảnh bìa (thử lại 4 lần) → khung video-khung/<tn>.json trỏ URL mới → trả kho <tn>.json về bản cũ
 # (kho + bài chỉ đổi khi thầy duyệt, như lô 20). Chạy trong tab terminal, ở worktree có .env.local + node_modules.
 # Dùng: bash scripts/video-thi-nghiem/tai-lo32.sh [tn-id ...]   (không đối số = cả lô)
+# Dựng lại trong cùng ngày: BAN=2 bash ... <tn-id> (tên <tn>-<ngày>-2, bucket không ghi đè)
 cd "$(dirname "$0")/../.."
 LO=(tn-l12-apsuatdongnang-01 tn-l12-boylecharles-03 tn-l12-chuyenthe-03 tn-l12-noinang-01 tn-l12-noinang-02
   tn-l12-tdhphantu-01 tn-l12-thangnhietdo-02 tn-l12-thangnhietdo-03 tn-l12-thangnhietdo-04 tn-l12-thuchanh-03
@@ -18,7 +19,7 @@ for TN in "${LO[@]}"; do
   ok=0
   for k in 1 2 3 4; do
     echo "== $TN lần $k"
-    if npx tsx scripts/tai-clip-len-storage.mts "$MP4" --tn "$TN" --toi-da 55 --apply; then ok=1; break; fi
+    if npx tsx scripts/tai-clip-len-storage.mts "$MP4" --tn "$TN" --toi-da 55 ${BAN:+--ban $BAN} --apply; then ok=1; break; fi
     sleep 5
   done
   [ $ok = 1 ] || { echo "LOI $TN"; LOI+=("$TN"); continue; }

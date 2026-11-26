@@ -91,6 +91,7 @@ def forces(d, dmm, mode, a=1.0):
     arrow(d, (AX, yb_u), (AX, yb_u - L), A(RED, a), w=8, head=26)
     arrow(d, (AX, LOW_TOP), (AX, LOW_TOP + L), A(RED, a), w=8, head=26)
     text(d, (AX + 24, LOW_TOP + L - 20), "F đẩy", 56, RED, anchor="lm", alpha=a)
+    text(d, (AX + 24, yb_u - L + 20), "F đẩy", 56, RED, anchor="lm", alpha=a)
     if mode == "free":
         arrow(d, (AX + 200, yU), (AX + 200, yU + L), A(BLUE, a), w=8, head=26)
         text(d, (AX + 230, yU + L - 20), "P", 56, BLUE, anchor="lm", alpha=a)
@@ -200,7 +201,7 @@ def s_rutra(img, d, t, sc):
     proton(d, xl, cy, 62, k1); proton(d, xr, cy, 62, k1)
     for x, sg in ((xl, -1), (xr, 1)):
         arrow(d, (x, cy - 100), (x + sg * 150, cy - 100), A(RED, k1), w=9, head=28)
-        if k2 > 0: arrow(d, (x, cy + 100), (x - sg * 200, cy + 100), A(GREEN, k2), w=9, head=28)
+        if k2 > 0: arrow(d, (x, cy + 100), (x - sg * 105, cy + 100), A(GREEN, k2), w=9, head=28)
     text(d, (W / 2, 390), "điện: đẩy", 60, RED, alpha=k1)
     text(d, (W / 2, 850), "lực hạt nhân: hút", 60, GREEN, alpha=k2)
     if k2 > 0:
@@ -221,9 +222,9 @@ def s_bay(img, d, t, sc):
     gr = k1
     for x, sg in ((xl, -1), (xr, 1)):
         arrow(d, (x, cy - 95), (x + sg * 170, cy - 95), A(RED, k1), w=9, head=28)
-        if gr > 0: arrow(d, (x, cy + 95), (x - sg * 34, cy + 95), A(MUTED, gr), w=6, head=16)
+        if gr > 0: arrow(d, (x + sg * 10, cy + 90), (x - sg * 70, cy + 90), A(MUTED, gr), w=9, head=26)
     text(d, (W / 2, 590), "điện", 56, RED, alpha=k1)
-    text(d, (W / 2, 830), "hấp dẫn", 56, MUTED, alpha=gr)
+    text(d, (W / 2, 868), "hấp dẫn", 64, MUTED, alpha=gr)
     kv = appear(t, M[1] + 0.2, 0.4)
     if kv > 0:
         card(d, (340, 930, 740, 1040), fill=A((254, 226, 226), kv), outline=A(RED, kv), r=30, w=5)

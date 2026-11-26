@@ -72,7 +72,7 @@ def do_state(t, sc):
     return wk, k, rd, n
 
 ROW_Y0, ROW_H = 1150, 88
-BX0, BX1 = 470, 930
+BX0, BX1 = 540, 950
 def s_do(img, d, t, sc):
     M = sc["M"]
     wk, k, rd, n = do_state(t, sc)
@@ -87,7 +87,8 @@ def s_do(img, d, t, sc):
     else:
         badge(d, 250, 560, 0.8, glow=0.5 + 0.5 * math.sin(t * 4))
     card(d, (60, 960, 1020, 1640), fill=WHITE, outline=NAVY, w=4)
-    text(d, (180, 1025), "Tuần", 56, NOTE); text(d, (340, 1025), "mSv", 56, NOTE)
+    text(d, (160, 1025), "Tuần", 56, NOTE); text(d, (330, 1025), "mSv", 56, NOTE)
+    d.line([(440, 990), (440, 1610)], fill=LIGHT, width=4)
     for v, lb in ((0.0, "0"), (0.1, "0,1"), (0.2, "0,2")):
         x = BX0 + v / 0.2 * (BX1 - BX0)
         d.line([(x, 1070), (x, ROW_Y0 + 4 * ROW_H - 40)], fill=(236, 230, 220), width=2)
@@ -97,15 +98,15 @@ def s_do(img, d, t, sc):
         y = ROW_Y0 + i * ROW_H
         if i >= n: continue
         a = appear(t, week_at(i, sc) + SLIDE + READ, 0.3)
-        text(d, (180, y), str(i + 1), 56, INK, alpha=a)
-        text(d, (340, y), vn(WEEKS[i]), 56, INK, alpha=a)
+        text(d, (160, y), str(i + 1), 56, INK, alpha=a)
+        text(d, (330, y), vn(WEEKS[i]), 56, INK, alpha=a)
         x1 = BX0 + WEEKS[i] / 0.2 * (BX1 - BX0) * ease(a)
         if x1 - BX0 > 2: d.rectangle([BX0, y - 24, x1, y + 24], fill=TEAL)
     kt = appear(t, week_at(3, sc) + SLIDE + READ + 1.0, 0.4)
     if kt > 0:
         y = ROW_Y0 + 4 * ROW_H + 20
         d.line([(90, y - 48), (990, y - 48)], fill=A(NAVY, kt), width=4)
-        text(d, (180, y + 10), "Tổng", 56, TEAL, alpha=kt); text(d, (340, y + 10), TONG, 60, TEAL, alpha=kt)
+        text(d, (160, y + 10), "Tổng", 56, TEAL, alpha=kt); text(d, (330, y + 10), TONG, 60, TEAL, alpha=kt)
 
 # ---------------- canh 3: Dap an: chia 4, nhan 50, so voi 20 ----------------
 def s_ans(img, d, t, sc):
@@ -171,12 +172,19 @@ def s_end(img, d, t, sc):
     card(d, (40, 260, 1040, 1450), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
     pill(d, W / 2, 340, "THỬ NGHĨ", ORANGE, k1)
     seg_bar(d, 420, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
-    text(d, (W / 2, 570), "Mỗi tuần 0,5 mSv, 50 tuần:", 60, INK, alpha=k1)
+    text(d, (W / 2, 570), "Làm đủ 50 tuần:", 60, INK, alpha=k1)
     text(d, (W / 2, 665), "vượt 20 mSv/năm không?", 60, DORANGE, alpha=k1)
-    nf = int(clamp((t - 0.8) / 4.0) * 50)                # 50 o = 50 tuan, to dan
+    nf = int(clamp((t - 0.8) / 5.0) * 50)                # 50 o = 50 tuan, to dan; khong hien tong
     for i in range(50):
-        x = 190 + (i % 10) * 72; y = 860 + (i // 10) * 90
-        d.rounded_rectangle([x, y, x + 56, y + 60], radius=8, fill=A(TEAL if i < nf else TEAL_L, k1), outline=A(TEAL, k1), width=3)
+        x = 110 + (i % 10) * 66; y = 800 + (i // 10) * 86
+        d.rounded_rectangle([x, y, x + 52, y + 58], radius=8, fill=A(TEAL if i < nf else TEAL_L, k1), outline=A(TEAL, k1), width=3)
+    km = appear(t, 4.6, 0.4)                             # moc o thu 40 = 20 mSv
+    if km > 0:
+        ym = 800 + 4 * 86 - 14
+        for xx in range(96, 780, 26): d.line([(xx, ym), (min(xx + 15, 780), ym)], fill=A(RED, km), width=7)
+        text(d, (800, ym), "20 mSv", 56, RED, anchor="lm", alpha=km)
+    kl = appear(t, 2.4, 0.4)
+    text(d, (W / 2, 1310), "mỗi ô = 1 tuần (0,5 mSv)", 56, TEAL, alpha=kl * k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
@@ -202,8 +210,8 @@ SCENES = [
  dict(key="bay", title="Cái bẫy", draw=s_bay, tail=0.4, caps=[
    ("Đúng hay sai?", 2.8),
    ("Sai: hết hạn mức cả năm.", 4.4)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=2.8, caps=[
-   ("Cộng dồn rồi so giới hạn.", 3.8)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=3.8, caps=[
+   ("Cộng dồn, so giới hạn.", 3.8)]),
 ]
 
 CLIP = dict(id="tn-l12-antoanpx-04", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
