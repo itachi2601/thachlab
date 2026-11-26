@@ -43,7 +43,7 @@ def fig1():
     o.append(T(72, 44, "Nước áp cao"))
     o.append(f'<rect x="40" y="58" width="40" height="22" {SOLID}/>')
     o.append(T(88, 72, "Lỗ phun", size=12.5))
-    o.append(T(88, 88, "Ø 0,1–0,4 mm", size=12.5))
+    o.append(T(88, 88, "cỡ Ø 0,1–0,4 mm", size=12.5))
     o.append(f'<line x1="60" y1="80" x2="60" y2="198" stroke="{B}" stroke-width="2.5"/>')
     o.append(chevron(60, 200, 0, 1, B, 2.4, 10))
     o.append(f'<rect x="15" y="202" width="90" height="22" {PLATE}/>')
@@ -59,7 +59,7 @@ def fig1():
     o.append(T(284, 114, "Buồng trộn", size=12.5))
     o.append(f'<rect x="243" y="104" width="14" height="58" {SOLID}/>')
     o.append(T(266, 138, "Ống tập trung", size=12.5))
-    o.append(T(266, 154, "Ø 0,7–1,2 mm", size=12.5))
+    o.append(T(266, 154, "cỡ Ø 0,7–1,2 mm", size=12.5))
     o.append(f'<line x1="250" y1="162" x2="250" y2="198" stroke="{B}" stroke-width="4"/>')
     for yy in (172, 184, 194):
         o.append(f'<circle cx="250" cy="{yy}" r="2.2" fill="{O}"/>')
