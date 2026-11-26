@@ -181,8 +181,8 @@ b += (f'<path d="M{BOT[0]-ar:.1f},{BOT[1]:.1f} A{ar},{ar} 0 0 1 {BOT[0]-ar*math.
 b += text(BOT[0] - ar - 6, BOT[1] - 6, "α", "currentColor", 15, "end", "700", True)
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Vật trên mặt nghiêng góc alpha: trọng lực P tách thành Px dọc dốc và Py vuông góc dốc; phản lực N cân bằng Py; ma sát hướng lên dốc", b,
-            "Hình 3. Vật trượt xuống mặt nghiêng (vẽ cho α = 30°, μ = 0,20). $P$ tách thành $P_x = P\\sin\\alpha$ kéo vật xuống dốc "
-            "và $P_y = P\\cos\\alpha$ ép vào dốc (nét đứt). $N$ cân bằng $P_y$; $F_{\\text{ms}} = \\mu N$ hướng lên dốc, ngược chiều trượt.")
+            "Hình 3. Vật trượt xuống dốc ($\\alpha = 30^\\circ$).<br>$P_x = P\\sin\\alpha$ kéo vật xuống dốc.<br>"
+            "$P_y = P\\cos\\alpha$ ép vào dốc, $N$ cân bằng $P_y$.<br>$F_{\\text{ms}} = \\mu N$ hướng lên dốc.")
 # kiểm tỉ lệ: N = Py, Px = P sinα, đỉnh mũi P nằm trên đường chéo hình chữ nhật Px–Py
 assert abs(math.hypot(Px, Py) - SP) < 1e-6
 for (x, y) in corners:
@@ -258,10 +258,14 @@ NX = (f"$F_{{\\text{{trượt}}}}/N \\approx$ {'; '.join(num(r, 2) for r in rati
 print("tỉ số trượt:", [round(r, 3) for r in ratios], "μ tb", round(mu_tb, 3), "nghỉ:", [round(r, 3) for r in rn])
 src = src.replace("__NHANXET__", NX)
 
-# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2): thay SVG mặt nghiêng (H3) bằng Hình 5.4, xem nguon.md
+# ---- Ảnh OpenStax College Physics 2e (28/10/2026, đợt 2), Hình 5.4, xem nguon.md.
+# 26/11/2026: ảnh dùng ký hiệu w, f, 25° khác bài → hình chính trở lại SVG (P, F_ms, α), ảnh thật vào ô bấm xem thêm.
+fig3_svg = fig3
 fig3 = (
+    '<details class="tl-details tl-more"><summary>📷 Bấm xem ảnh thật: người trượt tuyết trên dốc</summary>'
     '<figure class="fig"><img src="/assets/openstax/l10-luc-ma-sat/hinh-mat-nghieng-luc-ma-sat.webp" alt="Người trượt tuyết trên dốc 25 độ: trọng lực w tách thành w song song và w vuông góc với dốc, phản lực N vuông góc dốc, ma sát f hướng lên dốc, kèm sơ đồ lực" loading="lazy" width="875" height="416">'
-    '<figcaption>Hình 3. $w = P$; $w_\\parallel = P_x$; $w_\\perp = P_y$.<br>$N$ cân bằng $P_y$; $f = F_{\\text{ms}}$ hướng lên dốc.<br>Chỉ minh hoạ dạng lực: sách 25°, bài $\\alpha = 30^\\circ$.<br><small>Hình: OpenStax, College Physics 2e, Hình 5.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure>')
+    '<figcaption>Sách ghi $w$ cho $P$, $f$ cho $F_{\\text{ms}}$; dốc 25°.<br><small>Hình: OpenStax, College Physics 2e, Hình 5.4 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small></figcaption></figure></details>')
+fig3 = fig3_svg + fig3
 # ---------------- Ghép hình ----------------
 figs = [re.sub(r"<figcaption>Hình \d\.", f"<figcaption>Hình {k}.", f) for k, f in enumerate((fig1, fig2, fig3, fig4), 1)]
 order = [int(k) for k in re.findall(r"<!--FIG(\d)-->", src)]
