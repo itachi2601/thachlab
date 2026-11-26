@@ -33,3 +33,8 @@ export function anRuotTap(html: string): string {
     .replace(GAP_TAP_RE, "Gấp vở")
     .replace(TAP_O_TRONG_CAU_RE, (_m, dauDoan?: string) => (dauDoan ? `${dauDoan}Vở` : "vở"));
 }
+
+/** Thầy chốt 26/11/2026: HS "có ruột Tập" = đã nhập từ danh sách lớp của thầy (có class_name hoặc student_code). */
+export function hocSinhCoRuotTap(p: { class_name?: string | null; student_code?: string | null }): boolean {
+  return Boolean(p.class_name?.trim() || p.student_code?.trim());
+}

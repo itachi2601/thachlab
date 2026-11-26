@@ -16,6 +16,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, Monito
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import { anRuotTap, hocSinhCoRuotTap } from "@/features/lessons/an-ruot-tap";
 import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
 import { useTeacherView } from "@/components/auth/useTeacherView";
@@ -98,7 +99,7 @@ import { GradedItemBlock } from "./_parts/GradedItemBlock";
 import { WorkedPracticeBlock } from "./_parts/WorkedPracticeBlock";
 
 function LessonLoader() {
-  const { session, loading } = useAuth();
+  const { session, loading, profile } = useAuth();
   const { isTeacherView } = useTeacherView();
   // B1/N1: Trình chiếu và ghi chú lúc dạy chỉ ở chế độ giáo viên.
   // "Xem như học sinh" tắt isTeacherView nên hiện đúng giao diện học sinh.
@@ -118,7 +119,18 @@ function LessonLoader() {
   }, [title]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
-  const [items, setItems] = useState<LessonItem[] | null>(null);
+  const [rawItems, setItems] = useState<LessonItem[] | null>(null);
+  // P3 (26/11/2026): HS không nhập từ danh sách lớp của thầy (không class_name/student_code) thì không có
+  // ruột Tập in sẵn → đổi nhãn "✍️ Tập ô …" thành "Ghi vào vở", bỏ câu "Ruột tập: …" (N1). Không round-trip mới:
+  // dùng profile AuthProvider đã tải. Giáo viên/admin/trợ giảng giữ nguyên.
+  const coRuotTap = !profile || profile.role !== "student" || hocSinhCoRuotTap(profile);
+  const items = useMemo(
+    () =>
+      coRuotTap || !rawItems
+        ? rawItems
+        : rawItems.map((it) => (it.kind === "ly_thuyet" ? { ...it, body_html: anRuotTap(it.body_html) } : it)),
+    [rawItems, coRuotTap],
+  );
   /** Lời giải bài tập mẫu không nằm trong file tĩnh — theo dõi lượt tải thêm để không hiện lưới trống. */
   const [workedFailedId, setWorkedFailedId] = useState<number | null>(null);
   const workedState: "loading" | "failed" = workedFailedId === id ? "failed" : "loading";
