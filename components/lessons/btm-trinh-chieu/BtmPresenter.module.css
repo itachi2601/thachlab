@@ -11,8 +11,9 @@
   --ok-nhat: #ecfdf5;
   --hoi: #b45309;
   --hoi-nhat: #fff8eb;
-  /* 18/11/2026: 1,22rem → 1,55rem (thầy: chữ bài mẫu nhỏ khi chiếu lên lớp; lý thuyết đang 1,3rem) */
-  --fs: calc(1.55rem * var(--presenter-zoom, 1));
+  /* 18/11/2026: 1,22rem → 1,55rem. 26/11/2026: vẫn nhỏ trên bảng vì rem cố định 24,8px (≈2,3vh ở TV 1080p) → theo
+     chiều cao màn như bản chiếu tren-lop.html (5,2vh): 4,2vh ≈ 45px ở 1080p, 34px ở 1280×800; 2,4vw chặn màn dẹt. */
+  --fs: calc(min(4.2vh, 2.4vw) * var(--presenter-zoom, 1));
 }
 .root[data-bg="dark"] {
   --s1: #fdba74;
@@ -25,33 +26,152 @@
   --hoi: #fbbf24;
   --hoi-nhat: rgba(251, 191, 36, 0.08);
 }
+/* GỐC lỗi "chữ bài mẫu nhỏ khi chiếu" (26/11/2026): ContentHtml render span .exam-content mà globals.css khoá cứng
+   1,125rem (18px; 16px dưới 640px) ngay trên thẻ → mọi đề/câu hỏi/dòng giải đứng yên 18px bất kể --fs, Ctrl +.
+   Đè lại để kế thừa cỡ của khung chiếu; nội dung dán từ Word còn mang <p class="text-base">/style inline nên cần !important
+   (cùng cách .review-board trong globals.css); chừa span của KaTeX để chỉ số trên/dưới vẫn nhỏ. */
+.root :global(.exam-content),
+.root :global(.exam-content) :where(p, li, strong, em, b, i, td, th, span:not(:global(.katex), :global(.katex) *)) {
+  font-size: inherit !important;
+  line-height: inherit !important;
+}
+.root :global(.exam-content) :global(.katex) {
+  font-size: 1.1em;
+}
 /* Chữ đậm trong nội dung: trang bài học tô #fff (.lesson-page .exam-content strong) — trên nền chiếu sáng sẽ mất chữ. */
 .root.root :global(.exam-content) :is(strong, b) {
   color: var(--pres-heading);
 }
 
-/* ── thân 2 cột, chừa chỗ cho thanh trên/dưới nổi ── */
+/* ── thân MỘT cột (N1): dải đề trên, lời giải chiếm cả màn; chừa chỗ cho thanh trên/dưới nổi ── */
 .than {
   position: relative;
   z-index: 10;
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
   /* thanh trên ~76px (ô thông tin 2 dòng + lề 16px), thanh dưới ~66px */
   padding: 88px 0 clamp(76px, 11vh, 92px);
   font-size: var(--fs);
   line-height: 1.6;
 }
+/* Dải đề (thu): Cho/Tìm · hình xem lướt · bảng ①② nằm ngang, chữ 0,8 — bảng vẫn nháy khi điền nên lớp theo được. */
 .trai {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
+  align-items: center;
+  gap: 12px clamp(16px, 2.4vw, 44px);
   min-height: 0;
-  padding: 8px clamp(14px, 2vw, 32px) 16px;
-  border-right: 1px solid var(--pres-line);
+  max-height: 30vh;
+  padding: 4px clamp(14px, 3vw, 56px) 10px;
+  border-bottom: 1px solid var(--pres-line);
+  font-size: 0.8em;
+  overflow: hidden;
+  cursor: zoom-in;
+}
+.trai .tomDe {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.trai .hinh {
+  flex: 0 1 auto;
+  width: auto;
+}
+.trai .hinh svg {
+  max-height: 24vh;
+}
+.trai .bang {
+  flex: 0 0 auto;
+  width: auto;
+  margin: 0;
+}
+.moDeNut {
+  flex: none;
+  order: 9;
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--pres-muted);
+  font-size: clamp(13px, 1.8vh, 20px);
+  font-weight: 600;
+  opacity: 0.7;
+}
+.moDeNut kbd {
+  padding: 0 6px;
+  border: 1px solid var(--pres-line);
+  border-radius: 4px;
+  font: inherit;
+}
+
+/* Dải đề mở to (T): che lời giải, hình to + tóm đề + bảng cạnh nhau. */
+.than[data-mo-de="true"] .trai {
+  grid-row: 1 / -1;
+  max-height: none;
+  align-items: center;
+  justify-content: center;
+  gap: 24px clamp(24px, 4vw, 72px);
+  padding-top: 12px;
+  border-bottom: 0;
+  font-size: 1em;
   overflow-y: auto;
-  scrollbar-width: thin;
+  cursor: zoom-out;
+}
+.than[data-mo-de="true"] .tomDe {
+  flex: 0 1 34%;
+  order: 1;
+}
+.than[data-mo-de="true"] .hinh {
+  order: 0;
+}
+.than[data-mo-de="true"] .hinh {
+  flex: 1 1 40%;
+}
+.than[data-mo-de="true"] .hinh svg {
+  max-height: 62vh;
+}
+.than[data-mo-de="true"] .bang {
+  order: 2;
+}
+.than[data-mo-de="true"] .tomDe .choTim ul {
+  flex-direction: column;
+}
+.than[data-mo-de="true"] .phai {
+  display: none;
+}
+
+/* Nhịp đọc đề: đề chữ to bên trái, hình to + bảng ①② (ô ? cần tìm) bên phải. */
+.than[data-nhip="de"] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 40%);
+  grid-template-rows: minmax(0, 1fr);
+}
+.than[data-nhip="de"] .trai {
+  grid-column: 2;
+  grid-row: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  max-height: none;
+  padding: 8px clamp(14px, 3vw, 56px) 16px clamp(8px, 1.5vw, 24px);
+  border-bottom: 0;
+  font-size: 0.85em;
+  cursor: default;
+}
+.than[data-nhip="de"] .tomDe {
+  display: none;
+}
+.than[data-nhip="de"] .hinh svg,
+.than[data-mo-de="true"] .hinh svg {
+  width: 100%;
+  height: auto;
+}
+.than[data-nhip="de"] .hinh svg {
+  max-height: 52vh;
+}
+.than[data-nhip="de"] .phai {
+  grid-column: 1;
+  grid-row: 1;
 }
 .phai {
   display: flex;
@@ -88,7 +208,7 @@
   border-radius: 6px;
   background: var(--s1-nhat);
   color: var(--s1);
-  font-size: 0.72em;
+  font-size: 0.8em;
   font-weight: 800;
   text-align: center;
 }
@@ -111,7 +231,7 @@
   max-width: 100%;
 }
 .hinh svg {
-  max-height: 30vh; /* 34vh → 30vh bù chữ to 1,55rem: bảng ①② vẫn vừa cột trái ở 1280×800 */
+  max-height: 30vh;
   width: auto;
   max-width: 100%;
 }
@@ -161,7 +281,7 @@
 .donVi {
   margin-left: 6px;
   color: var(--pres-muted);
-  font-size: 0.68em;
+  font-size: 0.8em;
   font-weight: 500;
 }
 .c1 {
@@ -201,7 +321,7 @@
 .ray {
   display: flex;
   gap: 6px;
-  padding: 2px clamp(14px, 2.4vw, 40px) 10px;
+  padding: 8px clamp(14px, 3vw, 56px) 8px;
   border-bottom: 1px solid var(--pres-line);
   overflow-x: auto;
   scrollbar-width: none;
@@ -211,14 +331,14 @@
   flex: none;
   align-items: center;
   gap: 7px;
-  min-height: 36px;
-  padding: 0 12px 0 5px;
+  min-height: 1.5em;
+  padding: 0.1em;
   border: 1px solid var(--pres-line);
   border-radius: 999px;
   background: var(--pres-surface);
   color: var(--pres-muted);
   font: inherit;
-  font-size: 12.5px;
+  font-size: 0.75em;
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
@@ -227,17 +347,17 @@
   border-color: var(--pres-accent);
   color: var(--pres-heading);
 }
-.rayNut[data-trang-thai="chua"] .rayTen {
+.rayNut[data-trang-thai="chua"] {
   opacity: 0.6;
 }
+/* Dải bước chỉ còn số (tên bước đã là tiêu đề to ngay dưới) — số theo cỡ chữ màn, không còn 12px. */
 .raySo {
   display: inline-grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
+  width: 1.4em;
+  height: 1.4em;
   border-radius: 50%;
   background: var(--pres-line);
-  font-size: 12px;
   font-weight: 800;
 }
 .rayNut[data-trang-thai="dang"] .raySo {
@@ -261,14 +381,14 @@
   margin: 0 0 0.5em;
   color: var(--pres-muted);
   font-family: var(--font-mono), monospace;
-  font-size: 0.62em;
-  letter-spacing: 0.12em;
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .deTo {
-  max-width: 44em;
-  font-size: 1.1em;
-  line-height: 1.65;
+  max-width: 40em;
+  font-size: 1em; /* 1,1em cũ: chữ thân giờ đã theo màn, đề dài 8–9 dòng phải vừa một màn không cuộn */
+  line-height: 1.55;
   animation: vao 0.25s ease-out;
 }
 .kienThuc {
@@ -296,7 +416,7 @@
   background: transparent;
   color: var(--pres-muted);
   font: inherit;
-  font-size: 0.78em;
+  font-size: 0.85em;
   text-align: left;
   cursor: pointer;
 }
@@ -364,16 +484,20 @@
   transition: opacity 0.3s, font-size 0.3s;
 }
 .hoi[data-mo="false"] {
-  opacity: 0.75;
-  font-size: 0.82em;
+  opacity: 0.8;
+  font-size: 0.85em;
+}
+/* nhãn trong ô hỏi đã thu: 0,85 × 0,8 dưới ngưỡng → giữ nhãn ≥ 0,8 cỡ thân */
+.hoi[data-mo="false"] .hoiNhan {
+  font-size: 0.94em;
 }
 .hoiNhan {
   flex: none;
   color: var(--hoi);
   font-family: var(--font-mono), monospace;
-  font-size: 0.62em;
+  font-size: 0.8em;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 .luaChon {
@@ -439,12 +563,12 @@
   padding: 6px 14px;
   border-left: 3px solid var(--key);
   color: var(--pres-muted);
-  font-size: 0.82em;
+  font-size: 0.9em;
 }
 .bayNhan {
   display: block;
   color: var(--key);
-  font-size: 0.85em;
+  font-size: 0.9em;
   font-weight: 700;
 }
 @keyframes vao {
@@ -490,7 +614,7 @@
   border: 1px solid var(--pres-line);
   border-radius: 12px;
   background: var(--pres-panel);
-  font-size: 0.88em;
+  font-size: 0.9em;
 }
 .the ul {
   margin: 4px 0 0;
@@ -499,7 +623,7 @@
 .theNhan {
   margin: 0 0 4px;
   font-weight: 800;
-  font-size: 0.85em;
+  font-size: 0.9em;
 }
 .theBay {
   border-color: var(--key);
@@ -526,7 +650,7 @@
   min-width: 150px;
   padding: 0 8px;
   color: var(--pres-muted);
-  font-size: 12.5px;
+  font-size: clamp(13px, 2vh, 22px);
   font-weight: 600;
   text-align: center;
   font-variant-numeric: tabular-nums;
@@ -556,24 +680,44 @@
     flex-wrap: wrap;
     gap: 8px 12px;
     max-height: 44vh;
-    border-right: 0;
-    border-bottom: 1px solid var(--pres-line);
     font-size: 15px;
+  }
+  .moDeNut {
+    display: none;
+  }
+  .than[data-nhip="de"] {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+  }
+  .than[data-nhip="de"] .trai {
+    grid-column: auto;
+    grid-row: 1;
+    flex-direction: row;
+    max-width: none;
+    max-height: 40vh;
+    font-size: 15px;
+  }
+  .than[data-nhip="de"] .phai {
+    grid-column: auto;
+    grid-row: 2;
+  }
+  .than[data-mo-de="true"] .trai {
+    font-size: 17px;
+  }
+  .than[data-mo-de="true"] .tomDe {
+    flex: 1 1 100%;
   }
   .tomDe {
     flex: 1 1 100%;
   }
-  .hinh {
+  .trai .hinh {
     flex: 1 1 48%;
     max-width: 260px;
   }
-  .bang {
+  .trai .bang {
     flex: 1 1 40%;
     width: auto;
     font-size: 14px;
-  }
-  .rayTen {
-    display: none;
   }
   .ray {
     padding-top: 8px;
