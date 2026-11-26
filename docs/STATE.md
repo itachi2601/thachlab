@@ -53,6 +53,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
+- P2 hai mốc thời gian + P3 ẩn "Tập ô" (26/11, nhánh `claude/intelligent-moser-94297d`): P2 đã sửa ~110 bài trong repo (`dat_phut_hai_moc.py`), **chưa đăng DB** — chờ thầy duyệt, sau 22h chạy `scripts/update-ly-thuyet-from-bundle.mts`; P3 chỉ là code render (HS không class_name/student_code thấy "Ghi vào vở"), **chưa deploy**. Bài Làm quen L10 (46) chưa có mốc học kỹ (dòng ⏱ mới, giữ nguyên).
 - **HS học thử 26/11 (nhánh `claude/thachlab-16-ui-fixes-4f6a2f`)**: nhóm 1 + mục 10–16 xong, chưa deploy; chờ đăng lý thuyết id 20, 2, 46 (`cap-nhat-ly-thuyet.sh`, sau 22h); nhóm 2 (mục 6–9) chờ thầy quyết.
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
