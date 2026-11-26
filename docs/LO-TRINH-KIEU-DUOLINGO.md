@@ -128,3 +128,21 @@ kiểm tra (`exam_results`), mastery. Chỉ cần thêm:
 2. Khoá mềm (gợi ý thứ tự + Kiểm tra vượt) hay khoá cứng bài sau đến khi chốt bài trước?
 3. Chương thử nào, lớp nào?
 4. Nút Luyện chỉ câu Dễ, hay Dễ + một ít Trung bình ở cuối lượt?
+
+## 10. Kết quả GĐ0–1 (26/11/2026)
+
+**GĐ0 — đếm (chỉ đọc, `question_bank.difficulty` = `de`/`trung-binh`/`kho`):**
+- Chương sẵn sàng đủ 3 điều kiện (mọi bài ≥15 câu Dễ, có thẻ ôn, có quiz lý thuyết): L10 Ch.4, Ch.6, Ch.7 ·
+  L12 Ch.1, Ch.2, Ch.4. Các chương L10 Ch.2–3, L11 Ch.1–4, L12 Ch.3 có 1–4 bài 0 câu Dễ (thường bài thực hành / bài tập
+  tổng hợp) → nút Luyện của bài đó dùng câu TB hoặc bỏ.
+- KHTN 9: không bài nào có thẻ ôn; nhiều chương 0 câu Dễ → chưa đưa vào lộ trình.
+- Câu đổi số `bien_the`: mới **1 dạng** (L12 Ch.4) → nút Luyện GĐ3 chủ yếu dựa câu Dễ ngân hàng, đổi số là phần thêm.
+- Chọn chương thử: **L12 Ch.4 Vật lí hạt nhân** (5 bài đủ điều kiện, có dạng đổi số, có Kiểm tra chương).
+
+**GĐ1 — `/lop-hoc/lo-trinh` (không migration):** không tham số → danh sách chương có thẻ ôn theo lớp;
+`?chuong=<id>` → bản đồ. Nút suy từ mục bài: Hiểu = `ly_thuyet`, Nhớ = có bộ thẻ (`ON_TAP_THEO_BAI`, xong khi
+`on_tap_trang_thai` có thẻ), Mẫu = `bai_tap_mau`, Luyện = `luyen_tap`, Chốt = `kiem_tra`; xong theo cùng luật
+`isItemDone` của trang lớp. Bài "Kiểm tra chương" đứng cuối con đường. Khách: RLS chỉ mở mục bài xem thử → chỉ hiện
+"Mở bài" + nút đăng nhập. Logic: `features/lo-trinh/ban-do.ts`.
+- Còn thiếu: nút Nhớ mở tab lý thuyết, chưa cuộn thẳng tới "Ôn 5 phút" cuối mục; chưa gắn lối vào từ trang chủ/trang
+  lớp (cố ý — thử bằng link trước); trạng thái đăng nhập mới kiểm bằng dữ liệu thật qua script, chưa chụp màn hình.

@@ -49,15 +49,15 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 
 ## Học liệu THPT: chương · bài · mục — 12 bảng
 
-- **chapter_classes** (~22): chapter_id:int8*>chapters, class_id:int8*>classes
-- **chapters** (~22): id:int8*, created_at:ts, title:text, sort_order:int, subject_code:text>academic_subjects
+- **chapter_classes** (~59): chapter_id:int8*>chapters, class_id:int8*>classes
+- **chapters** (~52): id:int8*, created_at:ts, title:text, sort_order:int, subject_code:text>academic_subjects
 - **lesson_clip_choices** (~-1): student_id:uuid*>profiles, tn_id:text*, lesson_id:int8>lessons, choice:smallint, correct:bool, occurred_at:ts
 - **lesson_clip_view_rollups** (~-1): thang:date*, tn_id:text*, ban_clip:text*, so_luot:int, so_hs:int, du_doan_tra_loi:int, du_doan_dung:int, du_doan_bo_qua:int, chot_co:int, chot_tra_loi:int, chot_dung:int, chot_bo_qua:int, xem_het:int
 - **lesson_clip_views** (~-1): luot_id:uuid*, student_id:uuid>profiles, tn_id:text, lesson_id:int8>lessons, ban_clip:text, co_cau_chot:bool, du_doan:smallint, du_doan_bo_qua:bool, du_doan_dung:bool, chot:smallint, chot_bo_qua:bool, chot_dung:bool, so_xem_lai:smallint, xem_het:bool, giay_max:numeric(6,1), bat_dau:ts, cap_nhat:ts, so_lan_gui:int
-- **lesson_items** (~459): id:int8*, created_at:ts, lesson_id:int8>lessons, kind:text, title:text, subtitle:text, body_html:text, video_url:text, pdf_url:text, sort_order:int, exam_ids:bigint[], questions:jsonb, due_at:ts, quiz_min_correct:int, practice_pass_score:numeric(4,2), required:bool, published_at:ts, draft_payload:jsonb, draft_saved_at:ts, summary_html:text
+- **lesson_items** (~463): id:int8*, created_at:ts, lesson_id:int8>lessons, kind:text, title:text, subtitle:text, body_html:text, video_url:text, pdf_url:text, sort_order:int, exam_ids:bigint[], questions:jsonb, due_at:ts, quiz_min_correct:int, practice_pass_score:numeric(4,2), required:bool, published_at:ts, draft_payload:jsonb, draft_saved_at:ts, summary_html:text
 - **lesson_notes** (~-1): user_id:uuid*>users, lesson_id:int8*>lessons, heading_id:text*, heading_text:text, body:text, updated_at:ts
 - **lesson_progress** (~1111): user_id:uuid*>profiles, item_id:int8*>lesson_items, done_at:ts, course_id:int8>course_offerings
-- **lesson_read_depth** (~2617): student_id:uuid*>profiles, item_id:int8*>lesson_items, read_date:date*, lesson_id:int8>lessons, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, sends:int, first_at:ts, last_at:ts
+- **lesson_read_depth** (~2770): student_id:uuid*>profiles, item_id:int8*>lesson_items, read_date:date*, lesson_id:int8>lessons, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, sends:int, first_at:ts, last_at:ts
 - **lesson_read_depth_rollups** (~-1): student_id:uuid*>profiles, item_id:int8*>lesson_items, lesson_id:int8>lessons, days_read:int, h3_max:smallint, h3_total:smallint, quiz_done:smallint, quiz_total:smallint, first_at:ts, last_at:ts, updated_at:ts
 - **lessons** (~181): id:int8*, created_at:ts, chapter_id:int8>chapters, title:text, sort_order:int, published:bool, lesson_kind:text, description:text, is_preview:bool
 - **subjects** (~4): id:int8*, code:text, name:text, area:text, active:bool, is_practicum:bool
@@ -70,7 +70,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **exam_question_results** (~84445): exam_result_id:int8*>exam_results, question_index:int*, student_id:uuid>profiles, exam_id:int8>exams, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, earned:numeric(4,2), max:numeric(4,2), is_correct:bool, estimated:bool, created_at:ts, manual_earned:numeric(4,2), manual_max:numeric(4,2), graded_by:uuid>profiles, graded_at:ts, difficulty:text
 - **exam_results** (~4175): id:int8*, created_at:ts, student_id:uuid>profiles, exam_id:int8>exams, score:numeric(4,2), detail:jsonb, duration_seconds:int, course_id:int8>course_offerings, violation_count:int, violations:jsonb, client_token:uuid, results_rolled_up_at:ts
 - **exam_ta_previews** (~-1): exam_id:int8*>exams, class_id:int8*>classes, sent_by:uuid>users, sent_at:ts
-- **exams** (~1270): id:int8*, created_at:ts, title:text, duration_minutes:int, published:bool, questions:jsonb, question_count:int, topic:text, difficulty:text, type_counts:jsonb, subject_code:text>academic_subjects, cnc_key:text, pass_score:numeric(4,2)
+- **exams** (~1313): id:int8*, created_at:ts, title:text, duration_minutes:int, published:bool, questions:jsonb, question_count:int, topic:text, difficulty:text, type_counts:jsonb, subject_code:text>academic_subjects, cnc_key:text, pass_score:numeric(4,2)
 - **practice_question_results** (~12049): session_id:int8*>practice_sessions, question_index:int*, student_id:uuid>profiles, exam_id:int8>exams, source_index:int, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, earned:numeric(4,2), max:numeric(4,2), is_correct:bool, created_at:ts, difficulty:text, bank_id:int8
 - **practice_sessions** (~857): id:int8*, created_at:ts, student_id:uuid>profiles, lesson_id:int8>lessons, item_id:int8>lesson_items, question_count:int, correct_count:int, score:numeric(5,2), duration_seconds:int, timed_out:bool, client_token:uuid, results_rolled_up_at:ts
 - **question_bank** (~33651): id:int8*, created_at:ts, updated_at:ts, subject_code:text, grade:text, topic_id:int8>question_topics, topic_name:text, form:text, qtype:text, difficulty:text, question:jsonb, content_hash:text, source_exam_id:int8>exams, source_index:int, archived:bool, note:text, figure_not_needed:bool, ai_figure:jsonb, difficulty_source:text, lint_flags:text[]
@@ -129,7 +129,7 @@ Xương sống CTTC: `course_offerings` → `course_enrollments`, điểm danh `
 - **tutoring_registrations** (~-1): id:int8*, slot_id:int8>tutoring_slots, student_id:uuid>profiles, created_at:ts, topic_ids:bigint[], attended:bool, attended_at:ts
 - **tutoring_session_topics** (~248): id:int8*, session_id:uuid>ta_sessions, student_id:uuid>profiles, topic_id:int8>question_topics, need_id:int8>tutoring_needs, note:text, created_at:ts
 - **tutoring_slots** (~-1): id:int8*, assistant_id:uuid>ta_assistants, class_id:int8>classes, work_date:date, start_time:time without time zone, end_time:time without time zone, topic_ids:bigint[], capacity:int, registered_count:int, note:text, status:text, created_at:ts
-- **tutoring_theory_reviews** (~149): tutoring_need_id:int8*>tutoring_needs, student_id:uuid>profiles, item_id:int8>lesson_items, started_at:ts, last_ping_at:ts, active_seconds:int, required_seconds:int, sections_total:int, sections_seen:int, quiz_total:int, quiz_answered:int, completed_at:ts
+- **tutoring_theory_reviews** (~151): tutoring_need_id:int8*>tutoring_needs, student_id:uuid>profiles, item_id:int8>lesson_items, started_at:ts, last_ping_at:ts, active_seconds:int, required_seconds:int, sections_total:int, sections_seen:int, quiz_total:int, quiz_answered:int, completed_at:ts
 - **tutoring_waitlist** (~-1): id:int8*, slot_id:int8>tutoring_slots, student_id:uuid>profiles, created_at:ts, topic_ids:bigint[]
 
 ## CTTC: CNC · điểm danh · checklist · máy — 27 bảng
