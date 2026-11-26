@@ -17,6 +17,12 @@ Không cần trình duyệt. Đo trên **chữ học sinh thật sự nhìn th�
     — đo cơ chế "phần thưởng bị trì hoãn" (học sinh phải đọc bao nhiêu mới được làm gì). Chỉ quiz
     tính là việc: `<details>`/hình là nhịp thụ động, không phải việc. Không có quiz → None.
 
+  - "Học kỹ" (`phut_hoc_ky`, mốc thứ hai của dòng đầu bài "Đọc ~N phút · học kỹ … ~M phút") =
+    TỔNG từ (kể cả ô bấm mở, phản hồi quiz) / `--wpm` + giây clip / 60 + 30 giây mỗi `.tl-quiz`
+    (cả câu hành trang). Giây clip: `tong_giay` trong `data-khung`; `<video>` ngoài khung tính 30 s;
+    YouTube `start`/`end` lấy end − start, không có `end` tính 60 s. Đặt số vào bài bằng
+    `dat_phut_hai_moc.py` (chạy sau build).
+
 Thoát 1 nếu có lỗi cứng (✗); cảnh báo (⚠) không đổi exit code.
 Vì sao các ngưỡng này: xem bảng "Hạn mức" trong tài liệu trên (số đo 5 bài mẫu 2/10/2026).
 """
@@ -42,6 +48,29 @@ COMMENT = re.compile(r"<!--.*?-->", re.S)
 NHIP = re.compile(r'<details\b|class="tl-quiz|<figure\b', re.I)
 HEAD = re.compile(r"<h([34])\b[^>]*>(.*?)</h\1>", re.S | re.I)
 QUIZ = re.compile(r'class="tl-quiz', re.I)
+KHUNG = re.compile(r'data-khung="([^"]*)"')
+YT = re.compile(r'<iframe\b[^>]*src="[^"]*youtube[^"]*/embed/[^"]*"', re.I)
+GIAY_QUIZ, GIAY_VIDEO_LE, GIAY_YT_MAC_DINH = 30, 30, 60
+
+
+def giay_clip(t):
+    """Tổng giây clip trong bài: data-khung (tong_giay) + <video> ngoài khung + YouTube start/end."""
+    t = COMMENT.sub(" ", t)
+    giay, n_khung = 0.0, 0
+    for m in KHUNG.finditer(t):
+        try:
+            k = json.loads(html.unescape(m.group(1)))
+        except ValueError:
+            continue
+        n_khung += 1
+        giay += float(k.get("tong_giay") or GIAY_VIDEO_LE)
+    giay += max(0, len(re.findall(r"<video\b", t, re.I)) - n_khung) * GIAY_VIDEO_LE
+    for m in YT.finditer(t):
+        src = html.unescape(re.search(r'src="([^"]*)"', m.group(0)).group(1))
+        a = re.search(r"[?&]start=(\d+)", src)
+        b = re.search(r"[?&]end=(\d+)", src)
+        giay += (int(b.group(1)) - (int(a.group(1)) if a else 0)) if b else GIAY_YT_MAC_DINH
+    return giay
 
 
 def _text(s):
@@ -178,7 +207,10 @@ def kiem(path):
     if hinh < HINH_MIN:
         canh_bao.append(f"chỉ {hinh} hình < {HINH_MIN}")
 
-    return dict(file=path, hien=hien, tong=dem_tu(t), toi_viec_dau=dau, so_h3=so_h3, so_muc=len(muc),
+    tong = dem_tu(t)
+    clip = giay_clip(t)
+    phut_hoc_ky = tong / WPM + clip / 60 + (quiz + quiz_ht) * GIAY_QUIZ / 60
+    return dict(file=path, hien=hien, tong=tong, giay_clip=clip, phut_hoc_ky=phut_hoc_ky, toi_viec_dau=dau, so_h3=so_h3, so_muc=len(muc),
                 quiz=quiz, quiz_ht=quiz_ht, hinh=hinh, details=details, phut=hien / WPM, hang=hang, loi=loi, canh_bao=canh_bao)
 
 
@@ -190,6 +222,7 @@ def in_nguoi(kq, chi_loi=False):
     print(f"\n{kq['file']}")
     print(f"  {nghin(kq['hien'])} từ hiện ngay / {nghin(kq['tong'])} từ cả file · ~{kq['phut']:.1f} phút "
           f"· {kq['so_h3']} mục lớn + mục con · {kq['quiz']} quiz" + (f" + {kq['quiz_ht']} câu hành trang" if kq['quiz_ht'] else "") + f" · {kq['hinh']} hình · {kq['details']} details")
+    print(f"  học kỹ (cả ô mở, phản hồi quiz, {kq['giay_clip']:.0f} s clip, 30 s/câu): ~{kq['phut_hoc_ky']:.1f} phút")
     dau = kq["toi_viec_dau"]
     print(f"  tới việc đầu (quiz đầu tiên): {'không có quiz' if dau is None else f'{dau} từ (~{dau / WPM:.1f} phút)'}")
     print(f"  {'mục':<58} {'hiện':>6} {'nhịp':>5} {'liền':>5}")

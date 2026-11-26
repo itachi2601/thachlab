@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Check, ChevronDown, FileText, Play } from "lucide-react";
-import ContentHtml from "@/components/exams/ContentHtml";
+import ContentHtml, { withTapNote } from "@/components/exams/ContentHtml";
 import TheoryRpBar, { TheoryRpHint, useTheoryRp } from "@/components/lessons/TheoryRpBar";
 import { useReadDepth } from "@/components/lessons/useReadDepth";
 import {
@@ -76,7 +76,7 @@ export function TheoryBlock({
   // Tách theo từng mốc <h3> — cùng hàm với mục lục (tocEntries) và "Ôn ngay" nên id
   // `theory-sec-<itemId>-<n>` khớp nhau; chỉ tính lại khi nội dung mục thật sự đổi.
   // Chú thích/định nghĩa/ô số của từng đoạn chép thêm một bản cho cột lề phải ≥ 1280px (features/lessons/margin-notes.ts).
-  const displayHtml = useMemo(() => withMarginNotes(decorateGoalBox(item.body_html)), [item.body_html]);
+  const displayHtml = useMemo(() => withMarginNotes(withTapNote(decorateGoalBox(item.body_html))), [item.body_html]);
   const { introHtml, sections } = useMemo(() => splitTheorySections(displayHtml, item.id), [displayHtml, item.id]);
   const total = sections.length;
   // Mốc có ≥ 2 mục con cấp đầu (<h4>, hộp bẫy) → đi từng mục con (xem splitTheorySteps).

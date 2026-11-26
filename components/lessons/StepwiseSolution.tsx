@@ -153,6 +153,19 @@ function Choices({
   );
 }
 
+/** Bước tự nhập cần phím π và "/": đơn vị có "rad", hoặc đáp số = (p/q)·π với q ≤ 12 mà không phải số "đẹp" (bội của 0,5). */
+function needsPiKeys(step: WorkedStep): boolean {
+  if (/rad/i.test(step.don_vi ?? "")) return true;
+  const x = step.dap_so;
+  if (x === undefined || !Number.isFinite(x) || x === 0) return false;
+  if (Math.abs(x * 2 - Math.round(x * 2)) < 1e-9) return false;
+  for (let q = 1; q <= 12; q++) {
+    const p = (x / Math.PI) * q;
+    if (Math.abs(p - Math.round(p)) < 1e-3) return true; // đáp số ghi tròn 4 chữ số (2,0944)
+  }
+  return false;
+}
+
 function StepAsk({
   step,
   index,
@@ -171,6 +184,22 @@ function StepAsk({
   const [wrong, setWrong] = useState(0);
   const [lastWrong, setLastWrong] = useState(false);
   const nextOk = !needNext || !!nextPick?.dung;
+  const inputRef = useRef<HTMLInputElement>(null);
+  // Đáp số là bội hữu tỉ của π (pha 2π/3, góc π/6…) hoặc đơn vị rad: bàn phím số không có "π", "/" → thêm hai phím
+  // cạnh ô (máy chấm đã nhận "2pi/3", "2π/3" — HS học thử 26/11, D6).
+  const piKeys = needsPiKeys(step);
+  function insertKey(k: string) {
+    const el = inputRef.current;
+    const a = el?.selectionStart ?? val.length;
+    const b = el?.selectionEnd ?? val.length;
+    const next = val.slice(0, a) + k + val.slice(b);
+    setVal(next);
+    setLastWrong(false);
+    requestAnimationFrame(() => {
+      el?.focus();
+      el?.setSelectionRange(a + k.length, a + k.length);
+    });
+  }
 
   function checkNumber() {
     const x = parseNumber(val);
@@ -224,6 +253,7 @@ function StepAsk({
               }}
             >
               <input
+                ref={inputRef}
                 className="bt-ask-input"
                 inputMode="decimal"
                 autoComplete="off"
@@ -240,6 +270,22 @@ function StepAsk({
                 Kiểm tra
               </button>
             </form>
+          )}
+          {!step.lua_chon && piKeys && (
+            <div className="bt-ask-keys" aria-label="Phím nhập thêm">
+              {["π", "/"].map((k) => (
+                <button
+                  key={k}
+                  type="button"
+                  className="lesson-btn-ghost"
+                  onMouseDown={(e) => e.preventDefault()} /* giữ bàn phím ảo, không làm ô mất focus */
+                  onClick={() => insertKey(k)}
+                  aria-label={k === "π" ? "Chèn π" : "Chèn dấu chia"}
+                >
+                  {k}
+                </button>
+              ))}
+            </div>
           )}
           {lastWrong && !step.lua_chon && (
             <p className="bt-feedback bt-feedback--wrong" role="status">

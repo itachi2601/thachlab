@@ -34,6 +34,23 @@ function speakQuizOption(label: HTMLElement) {
  * vựng AVCN (`data-tl-word`/`data-tl-audio`: hàng chục câu nhỏ, hỏi mức tự tin từng từ là thừa). Tên nhóm
  * `<tên-câu>-conf` để các bộ đếm câu (TheoryReviewStep.isConfGroup) không tính nó thành một câu hỏi.
  */
+/**
+ * Dòng "Em chắc bao nhiêu?" soạn tay (119 bài) nằm TRƯỚC đề câu hỏi, dòng tự chèn nằm SAU đề, ngay trên phương án →
+ * HS học thử 26/11 thấy lúc trên lúc dưới. Hiển thị thống nhất: luôn sau đề, ngay trên khối phương án (đọc đề → đánh giá
+ * độ chắc → chọn; N3 nhất quán). Chỉ dời khi giữa hai thứ chỉ là các đoạn <p> của đề; không sửa HTML đã đăng.
+ */
+export function withConfAfterQuestion(html: string): string {
+  if (!html.includes("tl-conf")) return html;
+  // "Em chắc bao nhiêu? Chắc / Không chắc" → "Chắc chưa? Chắc / Chưa chắc": vừa MỘT dòng ở 360–375px (cùng nút dạng viên,
+  // CSS globals.css). Giá trị radio (chac/khong) giữ nguyên nên bộ đếm, lưu trả lời không đổi.
+  return html
+    .replace(/<p class="tl-conf">[\s\S]*?<\/p>/g, (p) => p.replace(/^(<p class="tl-conf">)\s*Em chắc bao nhiêu\?/, "$1Chắc chưa?").replace(/>\s*Không chắc<\/label>/, "> Chưa chắc</label>"))
+    .replace(
+    /(<p class="tl-conf">(?:(?!<\/p>)[\s\S])*<\/p>)((?:\s*<p\b(?![^>]*tl-conf)[^>]*>(?:(?!<\/p>)[\s\S])*<\/p>)+)(\s*<div\b[^>]*\bclass="[^"]*\btl-quiz\b)/g,
+    (_m, conf: string, ques: string, quiz: string) => `${ques.replace(/^\s+/, "")}\n${conf}${quiz}`,
+  );
+}
+
 export function withConfidenceRows(html: string): string {
   if (!html.includes("tl-quiz")) return html;
   const starts = [...html.matchAll(/<div\b[^>]*\bclass="[^"]*\btl-quiz\b[^"]*"[^>]*>/g)];
@@ -52,9 +69,9 @@ export function withConfidenceRows(html: string): string {
     const g = `${name}-conf`;
     out +=
       html.slice(cursor, at) +
-      `<p class="tl-conf">Em chắc bao nhiêu? ` +
+      `<p class="tl-conf">Chắc chưa? ` +
       `<label><input type="radio" name="${g}" id="${g}-chac" value="chac"> Chắc</label> ` +
-      `<label><input type="radio" name="${g}" id="${g}-khong" value="khong"> Không chắc</label></p>`;
+      `<label><input type="radio" name="${g}" id="${g}-khong" value="khong"> Chưa chắc</label></p>`;
     cursor = at;
   }
   return out + html.slice(cursor);
@@ -166,6 +183,39 @@ function withDeBaiBox(html: string): string {
   );
 }
 
+/** Bảng phân tích đề "Câu trong đề | Dữ liệu | Kiến thức liên quan" ⇒ class `tl-table--stack` + nhãn cột `data-th` ở
+ *  từng ô, để dưới 480px CSS xếp mỗi dòng thành một thẻ (3 cột ở 375px làm KaTeX gãy dòng — HS học thử 26/11, H2). */
+export function withStackTables(html: string): string {
+  if (!html.includes("Câu trong đề")) return html;
+  return html.replace(/<table class="([^"]*\btl-table\b[^"]*)"([^>]*)>([\s\S]*?)<\/table>/g, (m, cls: string, rest: string, inner: string) => {
+    const head = /<thead>([\s\S]*?)<\/thead>/.exec(inner)?.[1];
+    if (!head || !head.includes("Câu trong đề")) return m;
+    const th = [...head.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((x) =>
+      x[1].replace(/<[^>]+>/g, "").replace(/"/g, "&quot;").trim(),
+    );
+    const body = inner.replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/g, (tr) => {
+      if (tr.includes("<th")) return tr;
+      let k = 0;
+      return tr.replace(/<td\b/g, () => {
+        const label = th[k++];
+        return label ? `<td data-th="${label}"` : "<td";
+      });
+    });
+    return `<table class="${cls} tl-table--stack"${rest}>${body}</table>`;
+  });
+}
+
+/** "Tập ô 1·4", "Trả bài vào Tập ô 4·2", "Ruột tập": HS chỉ học trên web không biết "Tập" là gì ⇒ trước ô ✍️ đầu tiên của
+ *  bài chèn MỘT dòng giải thích (làm lúc hiển thị, không sửa 81 bài đã đăng — HS học thử 26/11, N1, L4). */
+export function withTapNote(html: string): string {
+  const at = html.indexOf('<details class="tl-details tl-more tl-chot-ghi"');
+  if (at < 0 || html.includes("tl-tap-note")) return html;
+  const note =
+    '<p class="tl-tap-note">✍️ <b>Tập</b> là vở ghi in sẵn của lớp; “ô 1·4” là chỗ ghi trong vở. ' +
+    "Học trên web: tự viết ra giấy (hoặc nói lại) rồi mở dòng ✍️ để đối chiếu.</p>";
+  return html.slice(0, at) + note + html.slice(at);
+}
+
 function stripWordArtifacts(html: string): string {
   return html
     .replace(/[�￼]/g, "")
@@ -258,7 +308,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html))))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withStackTables(withDeBaiBox(withConfidenceRows(withConfAfterQuestion(stripWordArtifacts(html))))))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);
