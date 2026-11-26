@@ -12,7 +12,7 @@ sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuon
 from svg_lib import chevron  # noqa: E402
 
 FONT = 'font-family="system-ui, sans-serif" font-size="13"'
-RED, BLUE, GREEN, ORANGE = "#dc2626", "#0284c7", "#059669", "#ea580c"
+RED, BLUE, GREEN, ORANGE = "#dc2626", "#0369a1", "#047857", "#ea580c"
 METAL = 'fill="#94a3b8" fill-opacity="0.28"'
 
 
@@ -96,6 +96,7 @@ def fig_thong_so():
     o.append(f'<path d="M{270 + r * math.cos(a0):.1f},{yr + r * math.sin(a0):.1f} A{r},{r} 0 0 1 '
              f'{270 + r * math.cos(a1):.1f},{yr + r * math.sin(a1):.1f}" fill="none" stroke="{RED}" stroke-width="1.8"/>')
     o.append(T(270, 100, "α", 14, "middle", "700", RED))
+    o.append(Ln(270, 104, 270, 115, RED, 1.2))
     # chú giải, mỗi ý một dòng
     o.append(T(12, 242, "P: bước ren, đo song song với trục", 12))
     o.append(T(12, 260, "α: góc prôfin, ren hệ mét α = 60°", 12, c=RED))
@@ -138,7 +139,7 @@ def fig_tien_dao():
     t30 = math.tan(math.radians(30))
     specs = [("a) Hướng kính", "2 lưỡi cùng cắt", "→ dùng cắt tinh"),
              ("b) Hướng xiên", "1 lưỡi cắt", "→ dùng cắt thô"),
-             ("c) Phối hợp", "lưỡi phụ cắt ít", "→ hay dùng nhất")]
+             ("c) Phối hợp", "lưỡi kia cắt ít", "→ hay dùng nhất")]
     for i, (a, b, c) in enumerate(specs):
         x0 = i * 140
         xc = x0 + 70
@@ -159,7 +160,7 @@ def fig_tien_dao():
         o.append(Ln(ax, ay, ax - hb, ay - 35, left_c, 3 if left_c != "currentColor" else 1.4))
         o.append(Ln(ax, ay, ax + hb, ay - 35, RED, 3))
         if i == 0:
-            o.append(Ar(ax + 36, 26, ax + 36, 60))
+            o.append(Ar(ax + 50, 26, ax + 50, 60))
         else:
             s, cth = math.sin(math.radians(30)), math.cos(math.radians(30))
             x1, y1 = xc - 64, 20
@@ -201,6 +202,7 @@ def fig_taro_ban_ren():
     for y in range(86, 140, 10):
         o.append(Ln(91, y, 119, y - 6, w=1))
     o.append(Rot(105, 44, 26, 8, 20, 160))
+    o.append(T(74, 40, "quay", 12, "end"))
     o.append(Ar(150, 34, 150, 68))
     o.append(T(158, 52, "tiến", 12))
     # chú thích
@@ -219,9 +221,10 @@ def fig_taro_ban_ren():
                'fill="#64748b" fill-opacity="0.45" stroke="currentColor" stroke-width="1.4"'))
     o.append(P([(334, 112), (380, 112), (380, 136), (334, 136)],
                'fill="#64748b" fill-opacity="0.45" stroke="currentColor" stroke-width="1.4"'))
-    o.append(Rot(315, 100, 62, 10, 200, 340))
+    o.append(Rot(315, 100, 62, 10, 340, 200))
+    o.append(T(248, 98, "quay", 12, "end"))
     o.append(Ar(392, 128, 392, 92))
-    o.append(T(386, 82, "tiến", 12, "end"))
+    o.append(T(392, 150, "tiến", 12, "middle"))
     o.append(T(252, 152, "bàn ren", 12, "end"))
     o.append(T(238, 182, "đã có ren", 12, "middle"))
     o.append(Ln(270, 178, 298, 172, w=1))
@@ -238,7 +241,7 @@ def fig_can_ren():
     o.append(Ar(300, 18, 372, 18))
     o.append(P([(30, 36), (390, 36), (390, 72), (30, 72)], 'fill="#64748b" fill-opacity="0.35" stroke="currentColor" stroke-width="1.5"'))
     o.append(P([(30, 124), (390, 124), (390, 160), (30, 160)], 'fill="#64748b" fill-opacity="0.35" stroke="currentColor" stroke-width="1.5"'))
-    for x in range(40, 384, 16):
+    for x in range(40, 372, 16):
         o.append(Ln(x, 72, x + 10, 36, w=1))
         o.append(Ln(x + 8, 160, x + 18, 124, w=1))
     o.append(f'<circle cx="120" cy="98" r="26" {METAL} stroke="currentColor" stroke-width="2"/>')
