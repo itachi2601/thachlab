@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { ChevronLeft, ChevronRight, Keyboard, Maximize2, Minimize2, Moon, NotebookPen, RotateCcw, Sun, X, ZoomIn, ZoomOut } from "lucide-react";
+import { ChevronLeft, ChevronRight, Expand, Keyboard, Maximize2, Minimize2, Moon, NotebookPen, RotateCcw, Sun, X, ZoomIn, ZoomOut } from "lucide-react";
 import ContentHtml from "@/components/exams/ContentHtml";
 import PresenterNoteBox from "@/components/lessons/PresenterNoteBox";
 import { PresenterInkTools, penLabelOf, usePresenterInk } from "@/components/lessons/presenter-ink";
@@ -11,8 +11,9 @@ import s from "./BtmPresenter.module.css";
 /**
  * components/lessons/btm-trinh-chieu/BtmPresenter.tsx — TRÌNH CHIẾU BÀI TẬP MẪU (thầy duyệt mẫu 17/11/2026).
  *
- * Bố cục như bảng thầy khi chữa bài: TRÁI cố định = tóm đề (Cho/Tìm) + hình theo bước + bảng trạng thái ①② điền dần;
- * PHẢI = lời giải theo bước. Mỗi lần bấm (→ / Space / PageDown — bút trình chiếu gửi PageDown) hiện đúng MỘT thứ:
+ * Bố cục (26/11/2026, thầy: chiếu lên bảng chữ quá nhỏ): MỘT cột lời giải chiếm cả màn (N1), chữ theo chiều cao màn.
+ * Tóm đề (Cho/Tìm) + hình theo bước + bảng trạng thái ①② điền dần gọn thành DẢI ĐỀ trên cùng; phím T / chạm dải
+ * mở to đề + hình (che lời giải), bấm tiếp thì tự thu lại. Nhịp đọc đề: đề chữ to bên trái, hình to bên phải. Mỗi lần bấm (→ / Space / PageDown — bút trình chiếu gửi PageDown) hiện đúng MỘT thứ:
  * câu hỏi của bước (lớp nghĩ/chọn phương án) rồi từng dòng giải như viết bảng (N1, N5). Bước đã qua thu lại một dòng.
  *
  * Khung (thanh trên, thanh dưới dạng viên thuốc, nền sáng/tối, phím tắt) dùng chung lớp `.lesson-presenter` với trình
@@ -24,9 +25,11 @@ type Bg = "light" | "dark";
 const BG_STORE = "thachlab-presenter-bg";
 const ABC = ["A", "B", "C", "D"];
 /** Cỡ chữ riêng của bài tập mẫu (gốc 1,55rem ≠ lý thuyết 1,3rem) nên nhớ khoá riêng. */
-const ZOOM_STORE = "thachlab-btm-zoom";
-const ZOOM_MIN = 0.7;
-const ZOOM_MAX = 1.8;
+// 26/11/2026: cỡ gốc đổi sang theo chiều cao màn (min(4,2vh; 2,4vw)) ≈ gấp đôi cũ trên TV → khoá mới để mức Ctrl+ cũ
+// (đặt bù cho chữ nhỏ) không nhân đôi lần nữa.
+const ZOOM_STORE = "thachlab-btm-zoom-v2";
+const ZOOM_MIN = 0.6;
+const ZOOM_MAX = 2.5;
 const ZOOM_STEP = 0.1;
 
 function docZoom(): number {
@@ -76,6 +79,8 @@ export default function BtmPresenter({
   const [helpOpen, setHelpOpen] = useState(false);
   const [noteOpen, setNoteOpen] = useState(false);
   const [noteSaved, setNoteSaved] = useState(false);
+  /** Dải đề đang mở to (phím T): che lời giải, hình + bảng ①② to. */
+  const [moDe, setMoDe] = useState(false);
   // Nét vẽ theo từng dạng (như từng trang của trình chiếu lý thuyết): lật bước vẫn còn, sang dạng khác thì trang mới.
   const ink = usePresenterInk(`dang-${d}`);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -121,8 +126,15 @@ export default function BtmPresenter({
     return { lop, bang, moi };
   }, [bai, soDongHien, buocHienTai]);
 
-  const tiep = useCallback(() => setK((x) => Math.min(x + 1, nhip.length - 1)), [nhip.length]);
-  const lui = useCallback(() => setK((x) => Math.max(x - 1, 0)), []);
+  // Bấm tiếp/lùi thì thu dải đề lại để lớp thấy ngay dòng vừa hiện.
+  const tiep = useCallback(() => {
+    setMoDe(false);
+    setK((x) => Math.min(x + 1, nhip.length - 1));
+  }, [nhip.length]);
+  const lui = useCallback(() => {
+    setMoDe(false);
+    setK((x) => Math.max(x - 1, 0));
+  }, []);
   const nhayBuoc = useCallback((b: number) => setK(Math.max(0, nhip.findIndex((x) => x.k === "buoc" && x.b === b))), [nhip]);
   const doiDang = useCallback(
     (delta: number) => {
@@ -189,6 +201,7 @@ export default function BtmPresenter({
         // Đang toàn màn hình thì trình duyệt tự lo Esc; ở đây đóng lần lượt: ghi chú → phím tắt → bút → thoát.
         if (noteOpen) setNoteOpen(false);
         else if (helpOpen) setHelpOpen(false);
+        else if (moDe) setMoDe(false);
         else if (ink.pen !== "off") ink.setPenMode("off");
         else if (!document.fullscreenElement) thoat();
         return;
@@ -211,16 +224,54 @@ export default function BtmPresenter({
       else if (e.key === "[") doiDang(-1);
       else if (e.key === "f" || e.key === "F") batFull();
       else if (e.key === "b" || e.key === "B") doiBg();
+      else if (e.key === "t" || e.key === "T") setMoDe((o) => !o);
       else if (/^[1-9]$/.test(e.key) && Number(e.key) <= bai.buoc.length) nhayBuoc(Number(e.key) - 1);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [tiep, lui, batFull, doiBg, thoat, doiDang, nhayBuoc, nhip.length, bai.buoc.length, zoom, doiZoom, noteOpen, helpOpen, ink, lessonId]);
+  }, [tiep, lui, batFull, doiBg, thoat, doiDang, nhayBuoc, nhip.length, bai.buoc.length, zoom, doiZoom, noteOpen, helpOpen, moDe, ink, lessonId]);
 
   // Cuộn tới dòng vừa hiện (chỉ trong cột phải — cột tối thiểu 0 nên không kéo lệch khung).
   useEffect(() => {
     cuoiRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [k, d]);
+
+  // V/hình: nhãn chữ trong hình (SVG tự co theo khung) không nhỏ hơn 0,7 cỡ chữ thường khi hình đang to (nhịp đề, dải
+  // mở). Phóng tối đa 1,4× cỡ gốc để nhãn không đè nét. Dải thu nhỏ là hình xem lướt nên bỏ qua.
+  const hinhRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const box = hinhRef.current;
+    if (!box) return;
+    const chinh = () => {
+      const svg = box.querySelector("svg");
+      const texts = svg ? Array.from(svg.querySelectorAll<SVGTextElement>("text")) : [];
+      const to = moDe || nhip[Math.min(k, nhip.length - 1)].k === "de";
+      for (const t of texts) {
+        if (t.dataset.coGoc === undefined) t.dataset.coGoc = String(parseFloat(getComputedStyle(t).fontSize) || 0);
+        t.style.fontSize = "";
+      }
+      if (!svg || !to) return;
+      const vb = svg.viewBox?.baseVal;
+      const h = svg.getBoundingClientRect().height;
+      if (!vb || !vb.height || !h) return;
+      const tiLe = h / vb.height; // px màn / đơn vị SVG
+      const fsPx = parseFloat(getComputedStyle(box).fontSize) || 0;
+      const canDonVi = (0.7 * fsPx) / tiLe;
+      for (const t of texts) {
+        const goc = Number(t.dataset.coGoc);
+        if (goc > 0 && goc < canDonVi) t.style.fontSize = `${Math.min(canDonVi, goc * 1.4)}px`;
+      }
+    };
+    chinh();
+    const ro = new ResizeObserver(chinh);
+    ro.observe(box);
+    const mo = new MutationObserver(() => requestAnimationFrame(chinh));
+    mo.observe(box, { childList: true, subtree: true });
+    return () => {
+      ro.disconnect();
+      mo.disconnect();
+    };
+  }, [k, d, moDe, zoom, nhip]);
 
   const nhanTienDo =
     hienTai.k === "de"
@@ -296,9 +347,14 @@ export default function BtmPresenter({
         </div>
       </header>
 
-      <div className={s.than} key={d}>
-        {/* ── TRÁI: tóm đề — luôn trước mắt, như góc trái bảng ── */}
-        <aside className={s.trai} aria-label="Tóm đề">
+      <div className={s.than} key={d} data-nhip={hienTai.k === "de" ? "de" : "giai"} data-mo-de={moDe && hienTai.k !== "de"}>
+        {/* ── DẢI ĐỀ: tóm đề + hình + bảng ①② — luôn trước mắt như góc bảng; chạm / T để mở to ── */}
+        <aside
+          className={s.trai}
+          aria-label="Tóm đề"
+          onClick={hienTai.k === "de" || ink.pen !== "off" ? undefined : () => setMoDe((o) => !o)}
+          title={hienTai.k === "de" ? undefined : moDe ? "Thu dải đề lại (T)" : "Mở to đề và hình (T)"}
+        >
           {bai.tom_de ? (
             <div className={s.tomDe}>
               <div className={s.choTim}>
@@ -326,7 +382,12 @@ export default function BtmPresenter({
             hienTai.k !== "de" && <H html={bai.de_html} className={`block ${s.deNho}`} />
           )}
 
-          {bai.hinh && <div className={s.hinh}>{bai.hinh({ layer: daXong, step: Math.max(0, Math.min(buocHienTai, bai.buoc.length - 1)), lop })}</div>}
+          {hienTai.k !== "de" && (
+            <span className={s.moDeNut} aria-hidden>
+              <Expand size={16} /> {moDe ? "Thu lại" : "Đề & hình"} <kbd>T</kbd>
+            </span>
+          )}
+          {bai.hinh && <div className={s.hinh} ref={hinhRef}>{bai.hinh({ layer: daXong, step: Math.max(0, Math.min(buocHienTai, bai.buoc.length - 1)), lop })}</div>}
 
           {bai.bang && (
             <table className={s.bang}>
@@ -380,9 +441,9 @@ export default function BtmPresenter({
                 data-trang-thai={i < buocHienTai ? "xong" : i === buocHienTai ? "dang" : "chua"}
                 onClick={() => nhayBuoc(i)}
                 title={`${i + 1}. ${b.tieu_de} (phím ${i + 1})`}
+                aria-label={`Bước ${i + 1}: ${b.tieu_de}`}
               >
                 <span className={s.raySo}>{i < buocHienTai ? "✓" : i + 1}</span>
-                <span className={s.rayTen}>{b.tieu_de}</span>
               </button>
             ))}
           </nav>
@@ -581,9 +642,10 @@ const PHIM: [string[], string][] = [
   [["C"], "Xoá hết nét ở dạng này"],
   [["Ctrl +", "Ctrl −", "Ctrl 0"], "Phóng to / thu nhỏ / về cỡ gốc"],
   [["N"], "Ghi chú nhanh cho bước đang chiếu (Enter lưu)"],
+  [["T"], "Mở to / thu lại đề, hình và bảng ①② (chạm dải đề cũng được)"],
   [["B"], "Đổi nền sáng / tối"],
   [["F"], "Toàn màn hình"],
-  [["Esc"], "Đóng bảng → tắt bút → thoát"],
+  [["Esc"], "Đóng bảng → thu dải đề → tắt bút → thoát"],
 ];
 
 function BangPhim({ onClose, linkSau }: { onClose: () => void; linkSau: string | null }) {
