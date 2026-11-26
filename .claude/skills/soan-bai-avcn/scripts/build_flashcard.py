@@ -71,6 +71,8 @@ h1 { font-size:1.35rem; line-height:1.3; margin:4px 0 2px; }
 .boxes b { display:block; font-size:1.3rem; color:var(--ink); }
 .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:0 2px 10px rgba(15,23,42,.06); }
 .pic { width:100%; aspect-ratio:4/3; object-fit:contain; background:#fff; border-radius:12px; display:block; }
+/* màn thấp (điện thoại 375×812): ảnh cao đẩy nút Chưa nhớ/Nhớ rồi xuống dưới màn → hạ ảnh, sau khi lật tự cuộn tới nút (D — đích chạm trong tầm). */
+@media (max-height: 900px) { .pic { max-height:24vh; } }
 .def { font-size:1.1rem; font-weight:600; margin:12px 0 0; }
 .hint { color:var(--muted); font-size:.9rem; margin:8px 0 0; }
 .back { border-top:1px dashed var(--line); margin-top:14px; padding-top:12px; }
@@ -181,7 +183,7 @@ function renderLeitner() {
       <div class="row"><button class="btn btn-bad" id="no">Chưa nhớ</button><button class="btn btn-ok" id="yes">Nhớ rồi</button></div>
     </div>
     <button class="btn btn-main" id="flip">Lật thẻ</button></div>`;
-  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; speak(t.term); };
+  document.getElementById("flip").onclick = (e) => { e.target.remove(); document.getElementById("back").hidden = false; document.getElementById("yes").scrollIntoView({ block: "nearest", behavior: "smooth" }); speak(t.term); };
   view.querySelector("#no").onclick = () => { box[t.id] = 1; save(); renderLeitner(); };
   view.querySelector("#yes").onclick = () => { box[t.id] = Math.min(3, boxOf(t) + 1); save(); renderLeitner(); };
 }

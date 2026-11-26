@@ -321,7 +321,18 @@ def sec_tra_bai() -> str:
     return (f'<h3>{ROMAN[7]}. Trả bài: gấp sách lại, trả lời 8 câu</h3>'
             '<p>Nhớ lại được là nhớ lâu. Với mỗi câu: <strong>nói ra đáp án trước</strong>, rồi mới bấm mở. Câu nào không trả lời được thì quay lên mục tương ứng, rồi sang tab <strong>Đề mẫu</strong>.</p>'
             + think("🎤 Trả bài", items)
-            + (f'<p><strong>Quay lại tình huống đầu bài:</strong> {M["boi_canh"]["quay_lai"]}</p>' if M.get("boi_canh") else ""))
+            + sec_quay_lai())
+
+
+def sec_quay_lai() -> str:
+    # 26/11/2026: câu hỏi quay lại tình huống trước đây không có đáp án → em không biết mình hiểu đúng chưa.
+    # boi_canh.tra_loi (mảng, mỗi ý một dòng) → gập sau câu hỏi, nói xong mới mở như các câu Trả bài.
+    bc = M.get("boi_canh")
+    if not bc:
+        return ""
+    if bc.get("tra_loi"):
+        return think("🔧 Quay lại tình huống đầu bài", details(bc["quay_lai"], nl(bc["tra_loi"])))
+    return f'<p><strong>Quay lại tình huống đầu bài:</strong> {bc["quay_lai"]}</p>'
 
 
 def build_theory() -> str:
