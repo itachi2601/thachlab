@@ -12,7 +12,7 @@ sys.path.insert(0, str(HERE.parents[2] / ".claude/skills/soan-bai-ly-thuyet-tuon
 from svg_lib import chevron  # noqa: E402
 
 FONT = 'font-family="system-ui, sans-serif" font-size="13"'
-RED, BLUE, GREEN, ORANGE = "#dc2626", "#0284c7", "#059669", "#ea580c"
+RED, BLUE, GREEN, ORANGE = "#dc2626", "#0369a1", "#047857", "#ea580c"
 METAL = 'fill="#94a3b8" fill-opacity="0.28"'
 
 
@@ -89,7 +89,7 @@ def fig_moi_ghep():
     cx, cy = 105, 105
     o.append(f'<circle cx="{cx}" cy="{cy}" r="75" {HUB}/>')
     o.append(f'<circle cx="{cx}" cy="{cy}" r="45" {SHAFT}/>')
-    o.append(P([(93, 48), (117, 48), (117, 72), (93, 72)], f'fill="{ORANGE}" fill-opacity="0.85" stroke="currentColor" stroke-width="1.4"'))
+    o.append(P([(93, 48), (117, 48), (117, 72), (93, 72)], f'fill="{ORANGE}" stroke="currentColor" stroke-width="1.4"'))
     o.append(Ln(93, 48, 93, 72, RED, 3))
     o.append(Ln(117, 48, 117, 72, RED, 3))
     o.append(T(cx, 112, "trục", 13, "middle", "700"))
@@ -154,17 +154,17 @@ def fig_phay_ranh():
     o.append(T(30, 86, "chạy dao", 12))
     o.append(T(105, 182, "rãnh kín", 13, "middle", "700"))
     o.append(T(105, 200, "khoan mồi trước", 13, "middle"))
-    o.append(T(105, 218, "chính xác, năng suất thấp", 12, "middle", c=BLUE))
+    o.append(T(105, 218, "năng suất thấp, sửa nguội", 12, "middle", c=BLUE))
     # b) dao phay đĩa
     o.append(T(315, 16, "b) Dao phay đĩa", 13, "middle", "700"))
     o.append(f'<rect x="225" y="110" width="180" height="50" {SHAFT}/>')
-    o.append(f'<rect x="225" y="110" width="75" height="18" fill="#ffffff" fill-opacity="0.9" stroke="currentColor" stroke-width="1.2"/>')
+    o.append('<path d="M225,110 L335.5,110 A44,44 0 0,1 300,128 L225,128 Z" fill="#ffffff" fill-opacity="0.9" stroke="currentColor" stroke-width="1.2"/>')
     o.append(f'<circle cx="300" cy="84" r="44" fill="#64748b" fill-opacity="0.45" stroke="currentColor" stroke-width="1.6"/>')
     o.append(f'<circle cx="300" cy="84" r="34" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3"/>')
     o.append(f'<circle cx="300" cy="84" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/>')
     o.append(Rot(300, 84, 52, 52, 195, 285))
     o.append(Ar(356, 100, 398, 100))
-    o.append(T(398, 90, "chạy dao", 12, "end"))
+    o.append(T(356, 90, "chạy dao", 12))
     o.append(T(315, 182, "rãnh suốt, hở đầu", 13, "middle", "700"))
     o.append(T(315, 200, "năng suất cao", 13, "middle"))
     o.append(T(315, 218, "rãnh bị rộng thêm ≥ 0,1 mm", 12, "middle", c=RED))
@@ -207,7 +207,7 @@ def fig_duong_chay_dao():
 # Hình 5: ba kiểu định tâm then hoa
 def fig_dinh_tam():
     o = []
-    specs = [("Theo D", "đồng tâm khá", "mài dễ", "outer"),
+    specs = [("Theo D", "thấp hơn d", "mài dễ", "outer"),
              ("Theo d", "đồng tâm cao nhất", "hay dùng", "inner"),
              ("Theo b", "đồng tâm kém nhất", "mômen lớn nhất", "sides")]
     for i, (n1, n2, n3, kind) in enumerate(specs):
