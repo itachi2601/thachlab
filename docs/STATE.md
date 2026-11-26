@@ -75,6 +75,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Sửa nội dung + rút độ dài 8 bài (26/11, mục 17–19): lý thuyết bài 59, 79, 35, 38, 33, 13, 17, 126 đã đăng 26/11 22h20 (sao lưu `scripts/logs/ly-thuyet-bai*-backup-179570*`). CHỜ thầy duyệt câu Đ/S + trả lời ngắn mới trong `build_bundle.py` của l12-cam-ung-dien-tu (4 câu), l12-phan-hach-nhiet-hach (2), l12-ung-dung-cam-ung-dien-tu (2) — đề Luyện tập, chưa đăng.
 
 - P5 câu tự kiểm 6 mục nặng công thức (26/11, nhánh `claude/musing-euclid-251601`, đã vào main, CHƯA ghi DB): lesson 54, 50, 24, 36, 14, 22 (id suy từ tiền tố radio, `--dry-run` xác nhận) — chờ thầy duyệt rồi sau 22h `update-ly-thuyet-from-bundle.mts <bundle> --lesson <id>`.
+- Clip L12 lô 32 (Việc 4, 26/11): dựng lại + tải `-20261126` cả 32, khung trỏ bản mới; CHỜ THẦY DUYỆT rồi đổi kho/bài + `--chi-video` (sổ clip mục "lô 32"; 1 lỗi bài tutruong dòng 116).
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
