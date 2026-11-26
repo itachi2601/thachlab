@@ -84,7 +84,7 @@ def fig2():
         o.append(f'<circle cx="{151 + (dy % 8) - 4}" cy="{200 + dy}" r="2.4" fill="{O}"/>')
     o.append(T(166, 226, "Kim loại chảy bị thổi xuống", c=O, size=12))
     o.append(f'<line x1="250" y1="172" x2="330" y2="172" stroke="currentColor" stroke-width="2.2"/>')
-    o.append(T(256, 164, "Kẹp mass (cực dương)", size=12))
+    o.append(T(256, 164, "Kẹp nối phôi (cực dương)", size=12))
     o.append(ar(300, 54, 380, 54, B))
     o.append(T(300, 44, "Hướng cắt", c=B, size=12, w="700"))
     return fig(svg(244, "Sơ đồ cắt plasma", o),

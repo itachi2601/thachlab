@@ -95,7 +95,7 @@ def fig2():
     o.append(T(130, 124, "u", c=R, size=14, w="700"))
     o.append(ar(270, 102, 317, 102, R, 2.2, 9))
     o.append(T(286, 124, "u", c=R, size=14, w="700"))
-    o.append(T(14, 218, "Ăn đẳng hướng: u ≈ d, hệ số ăn mòn Fe = d / u ≈ 1", size=12.5, w="700"))
+    o.append(T(14, 218, "Ăn đẳng hướng: u ≈ d, hệ số ăn mòn F = d / u ≈ 1", size=12.5, w="700"))
     o.append(T(14, 236, "Thành hốc cong, mép mặt nạ bị ăn lẹm vào dưới", size=12))
     return fig(svg(248, "Mặt cắt hốc ăn mòn có ăn lẹm", o),
                "Hình 2. Mặt cắt hốc ăn mòn. Xanh: độ sâu d. Đỏ: lẹm ngang u dưới mép cản quang.")
