@@ -53,8 +53,6 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
-- P2 hai mốc thời gian + P3 ẩn "Tập ô" (26/11, nhánh `claude/intelligent-moser-94297d`): P2 đã sửa ~110 bài trong repo (`dat_phut_hai_moc.py`), **chưa đăng DB** — chờ thầy duyệt, sau 22h chạy `scripts/update-ly-thuyet-from-bundle.mts`; P3 chỉ là code render (HS không class_name/student_code thấy "Ghi vào vở"), **chưa deploy**. Bài Làm quen L10 (46) chưa có mốc học kỹ (dòng ⏱ mới, giữ nguyên).
-- P4 ô 💡 Gợi ý bước đầu (26/11): 66 bài L10–12 có ô trước "Bấm xem đáp số" (đã kiem-code), **chưa đăng DB** — sau 22h: `update-ly-thuyet-from-bundle.mts <bundle> --lesson <id> --dry-run` (chỗ khác đầu tiên phải là ô gợi ý) rồi ghi thật.
 - **HS học thử 26/11 (nhánh `claude/thachlab-16-ui-fixes-4f6a2f`)**: nhóm 1 + mục 10–16 đã vào main; đã đăng lý thuyết id 20, 2, 46 lúc 22h35 26/11 (sao lưu `scripts/logs/ly-thuyet-bai{20,2,46}-backup-*.json`); **chờ deploy** (trang HS đọc body từ catalog dựng lúc build); nhóm 2 (mục 6–9) chờ thầy quyết.
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
@@ -76,6 +74,8 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Cải tiến lý thuyết sau học thử vai HS (26/11, nhánh `claude/theory-improvement-review-5ca7c7`): bài 63 + 35 đã đăng lý thuyết 26/11 22h05 (sao lưu `scripts/logs/ly-thuyet-bai{63,35}-backup-*`); còn 5 quyết định P1–P5 ở `docs/DE-XUAT-CAI-TIEN-LY-THUYET-2026-11-26.md`.
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
+
+- P2/P4 đăng 26/11 ~23h: 74 bài L10–12 (sao lưu `scripts/logs/p2p4-2026-11-26/`). CÒN: bài 51, 67, 39, 31 lệch DB (bỏ qua), 27 bài CNC/KHTN 9/l12 ngoài bảng id chưa đăng; deploy P3 chạy 26/11 — kiểm lại.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
