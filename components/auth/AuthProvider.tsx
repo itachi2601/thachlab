@@ -94,7 +94,7 @@ export default function AuthProvider({
   const loadProfile = useCallback(async (userId: string) => {
     const { data, error } = await getSupabase()
       .from("profiles")
-      .select("id, full_name, class_name, role, admin_area, track, avatar_url")
+      .select("id, full_name, class_name, role, admin_area, track, avatar_url, student_code")
       .eq("id", userId)
       .single();
     // Fallback nếu chưa chạy migration thêm cột admin_area/track/avatar_url (tránh khoá luôn tài khoản admin).
@@ -104,7 +104,7 @@ export default function AuthProvider({
         .select("id, full_name, class_name, role")
         .eq("id", userId)
         .single();
-      return fallbackData ? ({ ...fallbackData, admin_area: null, track: null, avatar_url: null } as Profile) : null;
+      return fallbackData ? ({ ...fallbackData, admin_area: null, track: null, avatar_url: null, student_code: null } as Profile) : null;
     }
     return (data as Profile) ?? null;
   }, []);

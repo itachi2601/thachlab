@@ -9,7 +9,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
-- **GCPT Gia công phi truyền thống (26/11)**: `20261126140000_lop_gcpt_gia_cong_phi_truyen_thong` CHƯA CHẠY → chạy, rồi upload từng bài `content/lesson-samples/gcpt-bai-*` (`--lesson <id>`), bật published; quy cách `docs/MON-GCPT-QUY-CACH.md`; chưa tạo course_offering (chờ tên lớp).
+- **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã có nội dung nhưng `published=false` → chờ thầy duyệt `/lop-hoc/bai/?id=216..227` rồi bật; chưa tạo course_offering (chờ tên lớp).
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - Điểm học phần CNC (14/11): migration đã chạy, `/lop-hoc/cnc/bang-diem/` đã deploy 18/11; điểm Phay chưa nạp (mẫu `scripts/gui-diem-thi-tien-cnc.mts`, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
@@ -53,6 +53,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
+- P2 hai mốc thời gian + P3 ẩn "Tập ô" (26/11, nhánh `claude/intelligent-moser-94297d`): P2 đã sửa ~110 bài trong repo (`dat_phut_hai_moc.py`), **chưa đăng DB** — chờ thầy duyệt, sau 22h chạy `scripts/update-ly-thuyet-from-bundle.mts`; P3 chỉ là code render (HS không class_name/student_code thấy "Ghi vào vở"), **chưa deploy**. Bài Làm quen L10 (46) chưa có mốc học kỹ (dòng ⏱ mới, giữ nguyên).
 - **HS học thử 26/11 (nhánh `claude/thachlab-16-ui-fixes-4f6a2f`)**: nhóm 1 + mục 10–16 xong, chưa deploy; chờ đăng lý thuyết id 20, 2, 46 (`cap-nhat-ly-thuyet.sh`, sau 22h); nhóm 2 (mục 6–9) chờ thầy quyết.
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
