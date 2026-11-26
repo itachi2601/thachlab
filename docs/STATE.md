@@ -74,6 +74,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - L10 Bài 6 Thực hành đo tốc độ (lesson 51): đã đăng 10/11; còn 4 điểm chờ thầy quyết — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`; đề quiz cũ 1227 chờ dọn.
 - Cải tiến lý thuyết sau học thử vai HS (26/11, nhánh `claude/theory-improvement-review-5ca7c7`): bài 63 + 35 đã đăng lý thuyết 26/11 22h05 (sao lưu `scripts/logs/ly-thuyet-bai{63,35}-backup-*`); còn 5 quyết định P1–P5 ở `docs/DE-XUAT-CAI-TIEN-LY-THUYET-2026-11-26.md`.
 - Sửa nội dung + rút độ dài 8 bài (26/11, mục 17–19): lý thuyết bài 59, 79, 35, 38, 33, 13, 17, 126 đã đăng 26/11 22h20 (sao lưu `scripts/logs/ly-thuyet-bai*-backup-179570*`). CHỜ thầy duyệt câu Đ/S + trả lời ngắn mới trong `build_bundle.py` của l12-cam-ung-dien-tu (4 câu), l12-phan-hach-nhiet-hach (2), l12-ung-dung-cam-ung-dien-tu (2) — đề Luyện tập, chưa đăng.
+- Mục 20 rà quiz + độ dài theo chương (26/11): L12 Ch.3 xong — bài 10, 11, 12, 125, 127 đã đăng 26/11 22h45. Còn lại theo bảng quét `docs/quet-quiz-do-dai-2026-11-26.tsv` (cột: bài · từ hiện ngay · số quiz · đáp án · % chữ nhiều nhất · chuỗi liền · đáp án dài nổi bật · ⚠ lộ đáp án); brief agent ở cuối `docs/memory/project_thachlab_ra_soat_quiz_do_dai.md`.
 
 
 ## CHƯA làm (roadmap)
