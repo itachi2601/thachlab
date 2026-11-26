@@ -2,7 +2,7 @@
   "id": "tn-l12-xoaychieu-01",
   "ten": "Máy phát mini quay tay: đổi tốc độ quay",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-01-20261114.mp4",
-  "tong_giay": 49.8,
+  "tong_giay": 48.1,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
+      "giay": 3.4,
       "chu": "Đang quay 4 vòng/s, quay 8 vòng/s thì biên độ U0 trên màn thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Máy phát mini, dao động ký, đồng hồ bấm giây."
+      "giay": 9.1,
+      "chu": "Máy phát mini quay tay, dao động ký."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.6,
+      "giay": 12.7,
       "chu": "n = 2, 4, 6, 8, 10 vòng/s: U0 = 0,95; 1,82; 2,84; 3,67; 4,70 V."
     },
     {
       "khoa": "rut_ra",
-      "giay": 19.6,
+      "giay": 22.3,
       "chu": "U0/n gần như không đổi (≈ 0,47) nên U0 tỉ lệ thuận với n, tức với ω; tần số f = n."
     },
     {
       "khoa": "chua_noi",
-      "giay": 27.6,
+      "giay": 36.0,
       "chu": "Không cho biết dạng sin chính xác.\nKhông cho giá trị hiệu dụng; dao động ký chỉ đọc biên độ."
     }
   ],
   "dung_dua": {
-    "giay": 9.2,
+    "giay": 9.0,
     "cau_hoi": "Máy phát mini đang quay 4 vòng/s, dao động ký đọc được biên độ U0. Quay nhanh gấp đôi, 8 vòng/s. Biên độ U0 trên màn thế nào?",
     "chon": [
       "A. Không đổi, chỉ sóng dày hơn",
@@ -48,5 +48,22 @@
     "dung": 1,
     "giai_thich_dung": "Đo được 1,82 V ở 4 vòng/s và 3,67 V ở 8 vòng/s: U0 = NBSω tỉ lệ với tốc độ quay, tần số cũng tăng theo.",
     "giai_thich_sai": "Quay nhanh thì từ thông biến thiên nhanh hơn nên biên độ tăng theo tốc độ: 1,82 V lên 3,67 V, gấp đôi chứ không giữ nguyên hay gấp bốn."
+  },
+  "cau_chot": {
+    "giay": 42.4,
+    "cau_hoi": "Cùng máy phát đó, dao động ký đọc được biên độ U₀ = 2,35 V. Máy đang quay khoảng bao nhiêu vòng/s?",
+    "chon": [
+      "A. 1,1 vòng/s",
+      "B. 2,5 vòng/s",
+      "C. 5 vòng/s",
+      "D. 10 vòng/s"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Lấy 2,35 × 0,47 ≈ 1,1 là nhân nhầm; U₀ = 0,47·n nên phải chia: n = U₀/0,47.",
+      "2,35 V nằm giữa 1,82 V (4 vòng/s) và 2,84 V (6 vòng/s), nên n phải giữa 4 và 6 vòng/s, không thể là 2,5.",
+      "U₀/n ≈ 0,47 V·s không đổi nên n = 2,35/0,47 = 5 vòng/s, nằm giữa hai hàng 4 và 6 vòng/s của bảng.",
+      "Ở 10 vòng/s đo được 4,70 V, gấp đôi 2,35 V; biên độ tỉ lệ với n nên tốc độ chỉ bằng một nửa."
+    ]
   }
 }

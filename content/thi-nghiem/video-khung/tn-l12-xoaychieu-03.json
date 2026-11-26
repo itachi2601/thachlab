@@ -2,7 +2,7 @@
   "id": "tn-l12-xoaychieu-03",
   "ten": "Một đèn, hai nguồn 12 V: sáng thế nào?",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-xoaychieu-03-20261112-2.mp4",
-  "tong_giay": 52.5,
+  "tong_giay": 49.3,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Một đèn 12 V, nối nguồn một chiều 12 V rồi nguồn xoay chiều 12 V hiệu dụng. Đèn ở nguồn xoay chiều so với một chiều sẽ thế nào?"
+      "giay": 3.4,
+      "chu": "Cùng 12 V: đèn ở nguồn xoay chiều so với đèn ở nguồn một chiều sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.7,
-      "chu": "Đèn 12 V; nguồn một chiều 12 V và xoay chiều 12 V hiệu dụng."
+      "giay": 9.1,
+      "chu": "Bóng 12 Ω; nguồn một chiều 12 V, xoay chiều 12 V."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.5,
+      "giay": 13.7,
       "chu": "Đèn sáng như nhau với nguồn một chiều và xoay chiều."
     },
     {
       "khoa": "rut_ra",
-      "giay": 24.9,
-      "chu": "Xoay chiều hiệu dụng 12 V (đỉnh ≈ 17 V) toả nhiệt như một chiều."
+      "giay": 21.9,
+      "chu": "p = u²/R không âm, dao động từ 0 đến ≈ 24 W, trung bình 12 W: bằng một chiều 12 V. 12 V hiệu dụng (đỉnh U₀ = 12√2 ≈ 17 V) toả nhiệt như một chiều 12 V."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.3,
+      "giay": 37.2,
       "chu": "Mắt chỉ so độ sáng thô, không đo được công suất. Chưa cho thấy hệ số √2 đến từ đâu."
     }
   ],
   "dung_dua": {
-    "giay": 9.55,
+    "giay": 9.0,
     "cau_hoi": "Đèn nối nguồn xoay chiều 12 V hiệu dụng so với nguồn một chiều 12 V sẽ:",
     "chon": [
       "A. Không sáng",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "12 V hiệu dụng được định nghĩa theo tác dụng nhiệt: công suất trung bình bằng nguồn một chiều 12 V.",
     "giai_thich_sai": "Hiệu dụng được định nghĩa theo tác dụng nhiệt; thử so công suất trung bình của hai nguồn."
+  },
+  "cau_chot": {
+    "giay": 43.6,
+    "cau_hoi": "Vôn kế xoay chiều chỉ 24 V, nối vào bóng 12 Ω. Công suất toả nhiệt trung bình của bóng là bao nhiêu?",
+    "chon": [
+      "A. 12 W",
+      "B. 24 W",
+      "C. 48 W",
+      "D. 96 W"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "12 W là kết quả với 12 V; ở đây vôn kế chỉ 24 V.",
+      "24 W là lấy U²/R = 48 W rồi chia đôi thêm; vôn kế đã chỉ giá trị hiệu dụng nên không chia 2 nữa.",
+      "Vôn kế xoay chiều chỉ giá trị hiệu dụng U = 24 V, nên P = U²/R = 24²/12 = 48 W.",
+      "96 W là dùng đỉnh U₀ = 24√2 V: P = U₀²/R chỉ là công suất lúc cực đại, không phải trung bình."
+    ]
   }
 }

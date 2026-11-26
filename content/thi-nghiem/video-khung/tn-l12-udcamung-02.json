@@ -2,7 +2,7 @@
   "id": "tn-l12-udcamung-02",
   "ten": "Hai cuộn dây cạnh nhau: kim điện kế làm gì khi bật, giữ, ngắt K?",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-02-20261112-2.mp4",
-  "tong_giay": 48.4,
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 3.4,
       "chu": "Bật K, giữ đóng, rồi ngắt K. Kim điện kế ở cuộn 2 sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.4,
-      "chu": "Cuộn 1 nối pin 1,5 V, công tắc K; cuộn 2 nối điện kế."
+      "giay": 9.3,
+      "chu": "Cuộn 1 nối pin 1,5 V qua K; cuộn 2 sát bên, nối điện kế."
     },
     {
       "khoa": "quan_sat",
-      "giay": 15.0,
-      "chu": "Kim giật lúc bật và lúc ngắt, ngược phía nhau."
+      "giay": 14.9,
+      "chu": "Kim giật lúc bật và lúc ngắt, ngược phía; giữ K: kim 0."
     },
     {
       "khoa": "rut_ra",
-      "giay": 23.6,
-      "chu": "Cuộn 2 chỉ có e₂ khi dòng ở cuộn 1 đổi: e₂ = −M·Δi₁/Δt. Giữ K đóng thì Δi₁/Δt = 0 nên e₂ = 0."
+      "giay": 19.3,
+      "chu": "Cuộn 2 chỉ có e₂ khi i₁ đang đổi (từ thông qua cuộn 2 đổi): e₂ = −ΔΦ₂/Δt. Giữ K đóng thì i₁ không đổi nên e₂ = 0.\nBật: i₁ tăng, e₂ âm; ngắt: i₁ giảm, e₂ dương. Số ±0,05 V là minh hoạ."
     },
     {
       "khoa": "chua_noi",
-      "giay": 34.7,
-      "chu": "Chưa đo độ lớn e₂; hai cuộn xa nhau thì kim lệch ít. Số liệu ±0,05 V là minh hoạ."
+      "giay": 37.6,
+      "chu": "Chưa đo độ lớn e₂ thật; chưa thử hai cuộn đặt xa nhau."
     }
   ],
   "dung_dua": {
-    "giay": 9.05,
+    "giay": 9.1,
     "cau_hoi": "Bật K, giữ đóng, rồi ngắt K. Kim điện kế sẽ:",
     "chon": [
       "A. lệch một phía, giữ nguyên",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Lúc bật i₁ tăng, lúc ngắt i₁ giảm nên từ thông qua cuộn 2 lúc tăng, lúc giảm: kim giật hai lần về hai phía. Giữ K đóng thì i₁ không đổi, kim về 0.",
     "giai_thich_sai": "Hỏi riêng ba lúc: bật, giữ đóng, ngắt; lúc nào i₁ đang đổi?"
+  },
+  "cau_chot": {
+    "giay": 44.3,
+    "cau_hoi": "Đế sạc không dây nối thẳng vào pin 1,5 V (dòng một chiều không đổi). Đặt điện thoại lên đế, điện thoại có được sạc không?",
+    "chon": [
+      "A. Có, sạc liên tục",
+      "B. Không sạc được",
+      "C. Chỉ sạc khi pin mới",
+      "D. Có, nhưng sạc chậm"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Dòng một chiều không đổi tạo từ trường không đổi; từ thông qua cuộn của điện thoại không đổi nên không có suất điện động cảm ứng.",
+      "Dòng từ pin không đổi nên từ thông qua cuộn trong điện thoại không đổi, e = 0 (trừ một xung rất ngắn lúc vừa nối): không sạc được. Đế sạc thật phải dùng dòng xoay chiều.",
+      "Pin mới hay cũ vẫn cho dòng một chiều gần như không đổi; điều quyết định là dòng có đổi hay không, không phải pin mạnh hay yếu.",
+      "Không phải chậm mà là không có: giữ K đóng ở thí nghiệm, kim đứng ở 0 dù dòng i₁ vẫn chạy."
+    ]
   }
 }

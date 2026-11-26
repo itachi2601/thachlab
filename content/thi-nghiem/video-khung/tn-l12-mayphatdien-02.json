@@ -2,51 +2,68 @@
   "id": "tn-l12-mayphatdien-02",
   "ten": "Ba cuộn dây quanh một nam châm quay",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-mayphatdien-02-20261114.mp4",
-  "tong_giay": 48.4,
+  "tong_giay": 49.9,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
-      "chu": "Ba cuộn dây giống nhau đặt lệch 120° quanh một nam châm quay cho ba suất điện động cùng tần số, cùng biên độ, lệch pha nhau 2π/3.",
+      "chu": "Ba cuộn dây giống nhau đặt lệch 120° quanh một nam châm quay cho ba suất điện động cùng tần số, cùng biên độ, đỉnh lệch nhau T/3.",
       "kiem": "Ba suất điện động khác nhau ở điểm nào?"
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
-      "chu": "Nam châm quay đều. Ba đèn chớp thế nào?"
+      "giay": 3.4,
+      "chu": "Quay 1 vòng/s. Đèn 1 vừa sáng nhất. Bao lâu sau tới đèn 2?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Vòng nhựa, ba cuộn dây lệch 120°, nam châm, ba LED."
+      "giay": 9.5,
+      "chu": "Ba cuộn lệch 120°, một nam châm, ba đèn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 13.8,
-      "chu": "Ba LED chớp lần lượt, không bao giờ hai đèn cùng lúc."
+      "giay": 13.3,
+      "chu": "Ba đèn sáng lần lượt 1 → 2 → 3, đều nhịp."
     },
     {
       "khoa": "rut_ra",
-      "giay": 19.2,
-      "chu": "Ba suất điện động cùng biên độ 6 V, cùng tần số, đỉnh lệch T/3; tổng luôn bằng 0."
+      "giay": 17.9,
+      "chu": "Ba e cùng biên độ 6 V, cùng chu kì T = 1 s; đỉnh sau trễ T/3 = 1/3 s. Cộng ba e ở mọi lúc được 0.\nChỉ một nam châm nên ba cuộn chung chu kì, không phải ba tần số."
     },
     {
       "khoa": "chua_noi",
-      "giay": 27.2,
-      "chu": "Chưa cho biết cách nối ba cuộn (hình sao hay tam giác).\nChưa đo chính xác biên độ."
+      "giay": 37.0,
+      "chu": "Chưa cho biết nối sao hay tam giác, chưa đo điện áp giữa hai dây pha. Số 6 V là minh hoạ."
     }
   ],
   "dung_dua": {
-    "giay": 9.6,
-    "cau_hoi": "Ba cuộn dây giống nhau đặt lệch nhau 120° quanh một nam châm quay đều, mỗi cuộn nối một đèn LED. Ba đèn chớp thế nào?",
+    "giay": 9.3,
+    "cau_hoi": "Nam châm quay 1 vòng/s giữa ba cuộn dây lệch 120°, mỗi cuộn nối một đèn. Đèn 1 vừa sáng nhất. Bao lâu sau đèn 2 sáng nhất?",
     "chon": [
-      "A. Cả ba cùng lúc",
-      "B. Lần lượt, cách nhau 1/3 chu kì",
-      "C. Lần lượt, cách nhau 1/4 chu kì",
-      "D. Ba nhịp nhanh chậm khác nhau"
+      "A. 0 s",
+      "B. 0,25 s",
+      "C. 1/3 s",
+      "D. 0,5 s"
+    ],
+    "dung": 2,
+    "giai_thich_dung": "Một vòng quay là một chu kì T = 1 s. Cuộn 2 lệch 120° = 1/3 vòng nên đỉnh của nó trễ T/3 = 1/3 s.",
+    "giai_thich_sai": "Ba cuộn không lệch 90° hay 180° mà lệch 120°, tức 1/3 vòng. Nam châm quay 1 vòng mất 1 s thì mất bao lâu để quay thêm 1/3 vòng?"
+  },
+  "cau_chot": {
+    "giay": 44.5,
+    "cau_hoi": "Đảo chiều quay nam châm (vẫn 1 vòng/s). Sau đèn 1, đèn nào sáng nhất tiếp theo?",
+    "chon": [
+      "A. Đèn số 2",
+      "B. Đèn số 3",
+      "C. Hai đèn cùng lúc",
+      "D. Không đèn nào"
     ],
     "dung": 1,
-    "giai_thich_dung": "Một nam châm quay qua ba cuộn lệch 120° lần lượt, nên ba suất điện động cùng tần số, đỉnh lệch nhau T/3.",
-    "giai_thich_sai": "Chỉ có một nam châm nên ba cuộn cùng tần số; cuộn đặt lệch 120° nên đỉnh lệch nhau 1/3 chu kì, không cùng lúc, không lệch 1/4."
+    "giai_thich": [
+      "Thứ tự 1 → 2 → 3 chỉ đúng với chiều quay cũ. Quay ngược thì cực nam châm đi qua cuộn 3 trước cuộn 2.",
+      "Quay ngược, cực nam châm rời cuộn 1 sẽ tới cuộn 3 trước (sau 1/3 s), rồi mới tới cuộn 2; thứ tự thành 1 → 3 → 2 (ca suy từ hình, không có trong số đo).",
+      "Đèn 2 và đèn 3 không thể sáng nhất cùng lúc: hai cuộn lệch 120° nên cực nam châm không ở sát cả hai cùng lúc; đỉnh của chúng luôn cách nhau 1/3 chu kì.",
+      "Đảo chiều quay, từ thông qua mỗi cuộn vẫn biến thiên nên vẫn có suất điện động; chỉ thứ tự các đỉnh thay đổi."
+    ]
   }
 }

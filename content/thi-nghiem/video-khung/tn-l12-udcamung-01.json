@@ -2,7 +2,7 @@
   "id": "tn-l12-udcamung-01",
   "ten": "Nam châm, cuộn dây và loa: lúc nào có tiếng?",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-udcamung-01-20261114.mp4",
-  "tong_giay": 49.5,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -17,27 +17,27 @@
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.9,
+      "giay": 8.9,
       "chu": "Cuộn 500 vòng nối loa qua bộ khuếch đại; nam châm thẳng."
     },
     {
       "khoa": "quan_sat",
-      "giay": 17.3,
-      "chu": "Đưa vào, rút ra: loa kêu. Giữ yên: loa im."
+      "giay": 16.1,
+      "chu": "Giữ yên: loa im. Rút, đưa nhanh: kêu rõ."
     },
     {
       "khoa": "rut_ra",
-      "giay": 21.9,
-      "chu": "Loa chỉ kêu khi từ thông qua cuộn đổi; đưa vào nhanh kêu rõ hơn đưa vào chậm."
+      "giay": 19.9,
+      "chu": "Loa chỉ kêu khi từ thông qua cuộn đổi: e = −N·ΔΦ/Δt. Giữ yên thì ΔΦ = 0 nên e = 0.\nĐưa vào và rút ra cho e trái dấu (−0,2 V và +0,2 V): dòng ngược chiều. Số vôn là minh hoạ."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.5,
-      "chu": "Loa chỉ cho nghe to hay khẽ, không đo được số vôn, không cho biết chiều dòng điện."
+      "giay": 37.9,
+      "chu": "Loa chỉ cho nghe to hay khẽ: không đo được số vôn, không cho biết chiều dòng điện (cần điện kế)."
     }
   ],
   "dung_dua": {
-    "giay": 10.3,
+    "giay": 8.7,
     "cau_hoi": "Đưa nam châm vào cuộn rồi giữ yên trong đó. Trong lúc giữ yên, loa:",
     "chon": [
       "A. Kêu đều, không dứt",
@@ -47,6 +47,23 @@
     ],
     "dung": 1,
     "giai_thich_dung": "Giữ yên thì từ thông qua cuộn không đổi, không có suất điện động cảm ứng nên loa im.",
-    "giai_thich_sai": "Thử nghĩ: lúc giữ yên, từ thông qua cuộn có đang thay đổi không?"
+    "giai_thich_sai": "Nam châm mạnh nằm trong cuộn chưa đủ. Thử nghĩ: lúc giữ yên, từ thông qua cuộn có đang thay đổi không?"
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Cuộn 1000 vòng, cùng nam châm (ΔΦ mỗi vòng = 20 µWb), đưa vào trong 0,2 s. Độ lớn suất điện động cảm ứng là bao nhiêu?",
+    "chon": [
+      "A. 0,05 V",
+      "B. 0,1 V",
+      "C. 0,2 V",
+      "D. 0,4 V"
+    ],
+    "dung": 1,
+    "giai_thich": [
+      "Đây là quên nhân đủ số vòng hoặc chia nhầm. Tính lại |e| = N·ΔΦ/Δt với N = 1000.",
+      "|e| = N·ΔΦ/Δt = 1000 · 20·10⁻⁶ Wb / 0,2 s = 0,1 V (ca tính từ mô hình kho, không phải số đo).",
+      "0,2 V là số của cuộn 500 vòng đưa vào nhanh trong 0,05 s. Ở đây Δt = 0,2 s lớn gấp 4 lần.",
+      "Gấp đôi số vòng làm e gấp đôi, nhưng Δt dài hơn làm e nhỏ đi; phải tính cả hai: 1000 · 20·10⁻⁶ / 0,2."
+    ]
   }
 }
