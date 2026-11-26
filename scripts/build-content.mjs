@@ -644,9 +644,26 @@ async function main() {
   const generatedAt = new Date().toISOString();
   const chapterTitle = new Map(chapters.map((c) => [c.id, c.title]));
   const itemsByLesson = new Map();
+  // Số phút học lý thuyết mỗi bài cho trang lớp ("~17 phút" thay "5 mục" — HS học thử 26/11/2026, N3). Cùng công thức
+  // với estimateTheoryTime (features/lessons/theory-sections.ts): chữ hiện ngay / 140 từ/phút + 1 phút mỗi tương tác,
+  // bài ghi sẵn "⏱ Khoảng N phút" thì lấy N. Sửa một bên thì sửa cả hai.
+  const minutesByLesson = new Map();
   let strippedBodies = 0;
   for (const raw of itemRows) {
     const { body_html, summary_html, questions, ...meta } = raw;
+    if (raw.kind === "ly_thuyet" && (body_html ?? "").trim() && !minutesByLesson.has(raw.lesson_id)) {
+      const html = body_html;
+      const inter =
+        (html.match(/class="[^"]*\btl-quiz\b/g) ?? []).length + (html.match(/class="[^"]*\btl-box--(?:exp|think)\b/g) ?? []).length;
+      const visible = html
+        .replace(/<details\b[\s\S]*?<\/details>/gi, " ")
+        .replace(/<(script|style|svg)\b[\s\S]*?<\/\1>/gi, " ")
+        .replace(/<[^>]+>/g, " ")
+        .replace(/&nbsp;/gi, " ");
+      const authored = /⏱\s*Khoảng\s+(\d{1,3})\s*phút/.exec(visible);
+      const words = visible.split(/\s+/).filter(Boolean).length;
+      minutesByLesson.set(raw.lesson_id, authored ? Math.max(1, Number(authored[1])) : Math.max(1, Math.ceil(words / 140 + inter)));
+    }
     const keepBody = BODY_KINDS.has(raw.kind);
     if (!keepBody && (body_html ?? "").trim()) strippedBodies += 1;
     const item = {
@@ -690,6 +707,7 @@ async function main() {
     lessons: lessons.map((l) => ({
       ...l,
       itemCount: (itemsByLesson.get(l.id) ?? []).length,
+      ...(minutesByLesson.has(l.id) ? { minutes: minutesByLesson.get(l.id) } : {}),
       itemRefs: (itemsByLesson.get(l.id) ?? []).map((it) => ({ id: it.id, exam_ids: it.exam_ids })),
     })),
   };

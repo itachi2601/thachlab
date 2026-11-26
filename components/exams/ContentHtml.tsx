@@ -166,6 +166,39 @@ function withDeBaiBox(html: string): string {
   );
 }
 
+/** Bảng phân tích đề "Câu trong đề | Dữ liệu | Kiến thức liên quan" ⇒ class `tl-table--stack` + nhãn cột `data-th` ở
+ *  từng ô, để dưới 480px CSS xếp mỗi dòng thành một thẻ (3 cột ở 375px làm KaTeX gãy dòng — HS học thử 26/11, H2). */
+export function withStackTables(html: string): string {
+  if (!html.includes("Câu trong đề")) return html;
+  return html.replace(/<table class="([^"]*\btl-table\b[^"]*)"([^>]*)>([\s\S]*?)<\/table>/g, (m, cls: string, rest: string, inner: string) => {
+    const head = /<thead>([\s\S]*?)<\/thead>/.exec(inner)?.[1];
+    if (!head || !head.includes("Câu trong đề")) return m;
+    const th = [...head.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/g)].map((x) =>
+      x[1].replace(/<[^>]+>/g, "").replace(/"/g, "&quot;").trim(),
+    );
+    const body = inner.replace(/<tr\b[^>]*>[\s\S]*?<\/tr>/g, (tr) => {
+      if (tr.includes("<th")) return tr;
+      let k = 0;
+      return tr.replace(/<td\b/g, () => {
+        const label = th[k++];
+        return label ? `<td data-th="${label}"` : "<td";
+      });
+    });
+    return `<table class="${cls} tl-table--stack"${rest}>${body}</table>`;
+  });
+}
+
+/** "Tập ô 1·4", "Trả bài vào Tập ô 4·2", "Ruột tập": HS chỉ học trên web không biết "Tập" là gì ⇒ trước ô ✍️ đầu tiên của
+ *  bài chèn MỘT dòng giải thích (làm lúc hiển thị, không sửa 81 bài đã đăng — HS học thử 26/11, N1, L4). */
+export function withTapNote(html: string): string {
+  const at = html.indexOf('<details class="tl-details tl-more tl-chot-ghi"');
+  if (at < 0 || html.includes("tl-tap-note")) return html;
+  const note =
+    '<p class="tl-tap-note">✍️ <b>Tập</b> là vở ghi in sẵn của lớp; “ô 1·4” là chỗ ghi trong vở. ' +
+    "Học trên web: tự viết ra giấy (hoặc nói lại) rồi mở dòng ✍️ để đối chiếu.</p>";
+  return html.slice(0, at) + note + html.slice(at);
+}
+
 function stripWordArtifacts(html: string): string {
   return html
     .replace(/[�￼]/g, "")
@@ -258,7 +291,7 @@ export default function ContentHtml({
   className?: string;
 }) {
   const cleaned = useMemo(
-    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html))))))),
+    () => withoutAnimationIfReduced(withImageDimensions(withVideoFacades(withQuestionTables(withStackTables(withDeBaiBox(withConfidenceRows(stripWordArtifacts(html)))))))),
     [html],
   );
   const needsMath = useMemo(() => hasMath(cleaned), [cleaned]);
