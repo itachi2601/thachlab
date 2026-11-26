@@ -1,0 +1,429 @@
+<div class="tl-box tl-note">
+<p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
+<ul>
+<li>Nêu <strong>bốn yếu tố</strong> của độ chính xác gia công.</li>
+<li>Nêu các yếu tố ảnh hưởng <strong>độ nhám</strong>.</li>
+<li>So sánh <strong>cắt thử</strong> với tự động đạt kích thước.</li>
+<li>Kể nguyên nhân sai số, tính sai số do <strong>mòn dao, mòn máy</strong>, đọc đường cong phân bố.</li>
+</ul>
+<p>Cuối bài, em phải tự trả lời được <strong>6 câu ở mục Trả bài</strong> mà không mở giáo trình.</p>
+</div>
+
+<h3>I. Mở bài: 100 trục, không cái nào giống cái nào</h3>
+
+<p>Máy tiện chỉnh sẵn, chạy liền 100 trục <strong>Ø50</strong>. Đo: nhỏ nhất 50,00 mm, lớn nhất 50,35 mm.</p>
+
+<div class="tl-box tl-box--think tl-note">
+<p class="tl-label">🤔 Dự đoán trước khi học</p>
+<p>Vì sao cùng một máy, cùng một lần chỉnh dao mà 100 trục lại khác nhau?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q1" id="tlc5-q1a"><label for="tlc5-q1a" class="tl-opt tl-no">A. Máy bị hỏng một bộ phận lớn</label>
+<input type="radio" name="tlc5-q1" id="tlc5-q1b"><label for="tlc5-q1b" class="tl-opt tl-no">B. Người đo đọc panme sai</label>
+<input type="radio" name="tlc5-q1" id="tlc5-q1c"><label for="tlc5-q1c" class="tl-opt tl-ok">C. Nhiều nguyên nhân nhỏ cùng lúc: dao mòn, máy nóng lên, chi tiết võng…</label>
+<input type="radio" name="tlc5-q1" id="tlc5-q1d"><label for="tlc5-q1d" class="tl-opt tl-no">D. Máy tiện thường không đủ chính xác</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Mỗi trục chịu một tổ hợp sai số nhỏ khác nhau.</p><p>Việc của em: giữ tổng sai số <strong>nhỏ hơn dung sai</strong>.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Máy hỏng hay đo sai làm lệch một hướng, không làm 100 trục tản đều.</p><p>Nghĩ tới thứ <em>thay đổi dần</em> khi tiện: dao, nhiệt, lực.</p></div>
+</div>
+</div>
+
+<h3>II. Kiến thức: độ chính xác gia công</h3>
+
+<h4>1. Bốn yếu tố của độ chính xác</h4>
+
+<p class="tl-meo">🧠 <b>Cỡ – Dáng – Vị – Mặt</b></p>
+<p><strong>🔑 Sai số càng lớn, chính xác càng thấp</strong></p>
+
+<p>Độ chính xác gia công là mức <strong>giống</strong> giữa chi tiết thật và bản vẽ, xét theo bốn yếu tố:</p>
+<ul>
+<li><strong>Cỡ</strong>: kích thước thẳng, góc; dung sai càng nhỏ càng chính xác.</li>
+<li><strong>Dáng</strong>: hình dạng: độ côn, ô van, tang trống, độ phẳng.</li>
+<li><strong>Vị</strong>: vị trí tương quan: đồng tâm, song song, vuông góc.</li>
+<li><strong>Mặt</strong>: chất lượng bề mặt: nhám, sóng, lớp kim loại mặt.</li>
+</ul>
+
+<!--FIG1-->
+
+<details class="tl-details tl-more">
+<summary>📐 Bấm xem: bốn yếu tố trên bản vẽ bạc trượt thép C45</summary>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Yếu tố</th><th>Trên bản vẽ bạc trượt</th></tr></thead>
+<tbody>
+<tr><td><strong>Cỡ</strong></td><td>Lỗ Ø22 +0,021; ngoài Ø38 −0,039; kích thước không ghi dung sai lấy cấp 12</td></tr>
+<tr><td><strong>Dáng</strong></td><td>Độ trụ lỗ Ø22 ≤ 0,02 mm</td></tr>
+<tr><td><strong>Vị</strong></td><td>Độ đồng tâm Ø22 và Ø38 ≤ 0,02 mm</td></tr>
+<tr><td><strong>Mặt</strong></td><td>Lỗ Ø22: $R_a\,1{,}25$, cứng 42–45 HRC; ngoài Ø38: $R_a\,2{,}5$</td></tr>
+</tbody></table></div>
+</details>
+
+<p>Chính xác càng cao càng đắt → xưởng làm theo <strong>độ chính xác kinh tế</strong>.</p>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra</p>
+<p>Lỗ ghi <strong>Ø22 +0,021</strong> (sai lệch dưới bằng 0). Lỗ đạt yêu cầu khi đường kính nằm trong khoảng nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q2" id="tlc5-q2a"><label for="tlc5-q2a" class="tl-opt tl-no">A. 21,979 – 22,021 mm</label>
+<input type="radio" name="tlc5-q2" id="tlc5-q2b"><label for="tlc5-q2b" class="tl-opt tl-no">B. 21,979 – 22,000 mm</label>
+<input type="radio" name="tlc5-q2" id="tlc5-q2c"><label for="tlc5-q2c" class="tl-opt tl-no">C. Đúng 22,021 mm</label>
+<input type="radio" name="tlc5-q2" id="tlc5-q2d"><label for="tlc5-q2d" class="tl-opt tl-ok">D. 22,000 – 22,021 mm</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> ES = +0,021, EI = 0 → lỗ từ 22,000 đến 22,021 mm.</p><p>Dung sai T = ES − EI = 0,021 mm.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Chỉ ghi +0,021 nghĩa là sai lệch dưới bằng 0, không phải ±0,021.</p></div>
+</div>
+</div>
+
+<h4>2. Chất lượng bề mặt</h4>
+
+<p><strong>🔑 Nhám, sóng, lớp biến cứng</strong></p>
+
+<ul>
+<li><strong>Độ nhám</strong> (nhấp nhô tế vi): lồi lõm rất nhỏ, đo bằng $R_a$, $R_z$ trên chiều dài chuẩn $l$.</li>
+<li><strong>Độ sóng</strong>: lượn dài, thường do rung.</li>
+<li><strong>Lớp biến cứng</strong>: lớp mặt cứng hơn lõi, có ứng suất dư.</li>
+</ul>
+
+<!--FIG2-->
+
+<p>TCVN chia độ nhám thành <strong>14 cấp</strong>; cấp 14 nhẵn nhất.</p>
+
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Mức</th><th>Cấp</th><th>Trị số</th></tr></thead>
+<tbody>
+<tr><td>Thô</td><td>1 – 4</td><td>$R_z$ 320 – 40 µm</td></tr>
+<tr><td>Bán tinh</td><td>5 – 7</td><td>$R_z$ 20; $R_a$ 2,5 – 1,25 µm</td></tr>
+<tr><td>Tinh</td><td>8 – 11</td><td>$R_a$ 0,63 – 0,08 µm</td></tr>
+<tr><td>Siêu tinh</td><td>12 – 14</td><td>$R_a$ 0,04; $R_z$ 0,1 – 0,05 µm</td></tr>
+</tbody></table></div>
+
+<p>Bản vẽ ghi <strong>$R_a$ cho cấp 6 – 12</strong>, còn lại ghi $R_z$.</p>
+
+<h4>3. Độ nhám phụ thuộc gì?</h4>
+
+<p><strong>🔑 Dao, chế độ cắt, vật liệu, rung</strong></p>
+
+<ul>
+<li><strong>Mũi dao</strong>: $S$ lớn, $r$ nhỏ → nhấp nhô cao (Hình 3).</li>
+</ul>
+
+<!--FIG3-->
+
+<p>Ví dụ: $S = 0{,}2$, $r = 1$ mm → $R_z \approx 0{,}2^2/8$ mm = <strong>5 µm</strong>.</p>
+
+<ul>
+<li><strong>Tốc độ cắt</strong>: 15 – 20 m/phút sinh lẹo dao, mặt xấu nhất (Hình 4).</li>
+<li><strong>Lượng chạy dao</strong>: thép cacbon chọn khoảng 0,05 – 0,12 mm/vòng.</li>
+</ul>
+
+<!--FIG4-->
+
+<details class="tl-details tl-more">
+<summary>🔩 Bấm xem: chiều sâu cắt, vật liệu, rung động</summary>
+<ul>
+<li><strong>Chiều sâu cắt</strong>: ít ảnh hưởng; quá nhỏ (0,02 – 0,03 mm) dao trượt, mặt xấu; quá lớn thì rung.</li>
+<li><strong>Vật liệu</strong>: thép dẻo (ít cacbon) cho mặt nhám hơn; thường hoá 850 – 870 °C trước khi cắt để cải thiện. Vật liệu càng cứng, $R_z$ càng ít phụ thuộc tốc độ cắt.</li>
+<li><strong>Rung động</strong> của máy – gá – dao – chi tiết → tăng sóng và nhám; phụ thuộc độ cứng vững của máy, của chi tiết khi kẹp, của đồ gá và dao.</li>
+</ul>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra</p>
+<p>Tiện tinh trục thép C45, mặt còn hơi nhám. Muốn giảm $R_z$ mà vẫn giữ năng suất, nên làm gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q3" id="tlc5-q3a"><label for="tlc5-q3a" class="tl-opt tl-ok">A. Dùng dao có bán kính mũi $r$ lớn hơn</label>
+<input type="radio" name="tlc5-q3" id="tlc5-q3b"><label for="tlc5-q3b" class="tl-opt tl-no">B. Tăng lượng chạy dao lên 0,3 mm/vòng</label>
+<input type="radio" name="tlc5-q3" id="tlc5-q3c"><label for="tlc5-q3c" class="tl-opt tl-no">C. Giảm tốc độ cắt xuống khoảng 18 m/phút</label>
+<input type="radio" name="tlc5-q3" id="tlc5-q3d"><label for="tlc5-q3d" class="tl-opt tl-no">D. Giảm lượng chạy dao xuống 0,01 mm/vòng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $R_z \approx S^2/(8r)$: $r$ ở mẫu số, $r$ lớn → nhấp nhô thấp, không phải giảm $S$.</p><p>Khi $S$ nhỏ, công thức có thêm $h_{min}$ nhưng $r$ lớn vẫn cho mặt nhẵn hơn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $S$ tăng thì $R_z$ tăng theo bình phương; 18 m/phút là vùng lẹo dao; $S$ = 0,01 quá nhỏ, dao trượt.</p></div>
+</div>
+</div>
+
+<details class="tl-details tl-more">
+<summary>⚙️ Bấm xem: bề mặt ảnh hưởng gì tới chi tiết khi làm việc?</summary>
+<ul>
+<li><strong>Chống mòn</strong>: lúc đầu chỉ các đỉnh nhấp nhô chạm nhau, mòn rất nhanh (mất khoảng 65 – 75 % chiều cao nhấp nhô), sau đó mới mòn bình thường.</li>
+<li><strong>Độ bền mỏi</strong>: đáy nhấp nhô tập trung ứng suất, nứt từ đó. Thí nghiệm với thép C45: giảm $R_z$ từ 75 µm xuống 2 µm, giới hạn mỏi tăng từ 192 lên 282 N/mm².</li>
+<li><strong>Ăn mòn hoá học</strong>: chỗ lõm giữ muối, axit; mặt càng nhẵn càng ít gỉ.</li>
+<li><strong>Mối lắp</strong>: lắp lỏng thì nhấp nhô mòn nhanh làm khe hở tăng; lắp chặt thì $R_z$ lớn làm mối ghép yếu.</li>
+</ul>
+</details>
+
+<h4>4. Hai cách đạt độ chính xác trên máy</h4>
+
+<p><strong>🔑 Cắt thử hay chỉnh sẵn</strong></p>
+
+<div class="table-scroll"><table class="tl-table tl-cmp">
+<thead><tr><th></th><th>Cắt thử</th><th>Tự động đạt kích thước</th></tr></thead>
+<tbody>
+<tr><th>Cách làm</th><td>Cắt → đo → chỉnh, từng chi tiết</td><td>Chỉnh dao sẵn một lần</td></tr>
+<tr><th>Chính xác nhờ</th><td class="tl-diff">Tay nghề thợ</td><td class="tl-diff">Đồ gá, chỉnh máy</td></tr>
+<tr><th>Mòn dao</th><td class="tl-diff">Không ảnh hưởng</td><td class="tl-diff">Có ảnh hưởng</td></tr>
+<tr><th>Năng suất</th><td>Thấp, giá cao</td><td>Cao, giá thấp</td></tr>
+<tr><th>Dùng cho</th><td>Đơn chiếc, loạt nhỏ</td><td>Loạt vừa trở lên</td></tr>
+</tbody></table></div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra</p>
+<p>Xưởng sửa chữa cần tiện <strong>3 chốt thay thế</strong> trên máy tiện cũ, phôi là thép thanh cắt sẵn. Nên dùng cách nào?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q4" id="tlc5-q4a"><label for="tlc5-q4a" class="tl-opt tl-no">A. Làm đồ gá chuyên dùng, tự động đạt kích thước</label>
+<input type="radio" name="tlc5-q4" id="tlc5-q4b"><label for="tlc5-q4b" class="tl-opt tl-ok">B. Cắt thử, nhờ thợ có tay nghề</label>
+<input type="radio" name="tlc5-q4" id="tlc5-q4c"><label for="tlc5-q4c" class="tl-opt tl-no">C. Phải mua máy CNC mới đạt được</label>
+<input type="radio" name="tlc5-q4" id="tlc5-q4d"><label for="tlc5-q4d" class="tl-opt tl-no">D. Cách nào cũng như nhau vì chỉ có 3 cái</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Ba chiếc là đơn chiếc: đồ gá chuyên dùng không đáng tiền.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Tự động đạt kích thước cần đồ gá riêng và chỉ lợi khi làm cả loạt. Mua CNC cho 3 chốt thì quá đắt.</p><p>Xem lại hàng "Dùng cho" trong bảng.</p></div>
+</div>
+</div>
+
+<h4>5. Sai số do máy, đồ gá, dao</h4>
+
+<p><strong>🔑 Máy lệch, gá lệch, dao mòn</strong></p>
+
+<ul>
+<li><strong>Máy</strong>: sống trượt không song song tâm trục chính → chi tiết côn.</li>
+<li><strong>Mòn máy</strong>: sống trượt trước mòn, mũi dao lệch $y = \dfrac{\delta H}{B}$.</li>
+</ul>
+
+<p>$\delta$: độ mòn sống trượt; $H$: chiều cao tâm; $B$: khoảng cách hai sống trượt. Đường kính sai $2y$.</p>
+
+<ul>
+<li><strong>Đồ gá</strong>: chính xác hơn chi tiết ít nhất một cấp. Dao định kích thước (mũi khoan, doa, tarô) sai bao nhiêu, chi tiết sai bấy nhiêu.</li>
+<li><strong>Mòn dao</strong>: ba giai đoạn (Hình 5). Giai đoạn II: $U = \dfrac{U_0 L}{1000}$.</li>
+</ul>
+
+<p>$U$ (µm); $U_0$: cường độ mòn (µm/km, tra bảng); $L$: đường cắt (m). Tiện: $L = \dfrac{\pi D l}{1000 S}$ ($D$, $l$: mm; $S$: mm/vòng).</p>
+
+<!--FIG5-->
+
+<p>Mũi dao mòn $U$ → <strong>đường kính tăng $2U$</strong>.</p>
+
+<h4>6. Sai số do biến dạng đàn hồi</h4>
+
+<p><strong>🔑 Võng chỗ nào, to chỗ đó</strong></p>
+
+<p><strong>Độ cứng vững</strong> $J = \dfrac{P_y}{y}$: lực $P_y$ làm hệ máy – gá – dao – chi tiết lùi $y$.</p>
+
+<p>Chi tiết trụ: $y = \dfrac{P_y\, l^3}{m E J_0}$ ($J_0$: mômen quán tính tiết diện). Hệ số gá $m$ lớn → cứng vững.</p>
+
+<!--FIG6-->
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Tự kiểm tra</p>
+<p>Trục mảnh dài 300 mm, kẹp mâm cặp ba chấu, đầu kia để tự do. Tiện xong đo đường kính dọc trục, em thấy gì?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q5" id="tlc5-q5a"><label for="tlc5-q5a" class="tl-opt tl-no">A. Giữa trục to nhất</label>
+<input type="radio" name="tlc5-q5" id="tlc5-q5b"><label for="tlc5-q5b" class="tl-opt tl-no">B. Đầu sát mâm cặp to nhất</label>
+<input type="radio" name="tlc5-q5" id="tlc5-q5c"><label for="tlc5-q5c" class="tl-opt tl-ok">C. Đầu tự do to nhất, càng gần mâm cặp càng nhỏ</label>
+<input type="radio" name="tlc5-q5" id="tlc5-q5d"><label for="tlc5-q5d" class="tl-opt tl-no">D. Đều nhau, vì dao chạy thẳng</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Đầu tự do võng nhiều nhất nên bị cắt ít nhất → loa kèn. Chữa: chống tâm thêm hoặc dùng luy-nét.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Dao chạy thẳng nhưng chi tiết võng; "giữa to" là khi chống tâm hai đầu. Xem hàng dưới Hình 6.</p></div>
+</div>
+</div>
+
+<h4>7. Lực kẹp, ứng suất dư, rung, nhiệt, đo</h4>
+
+<p><strong>🔑 Mỗi nguyên nhân một cách chặn</strong></p>
+
+<ul>
+<li><strong>Lực kẹp</strong>: ống mỏng méo.</li>
+<li><strong>Ứng suất dư</strong>: chi tiết cong dần.</li>
+<li><strong>Rung</strong>: sinh sóng, nhám.</li>
+<li><strong>Nhiệt</strong>: máy, chi tiết dãn.</li>
+<li><strong>Đo</strong>: dụng cụ kém, đo lúc nóng.</li>
+</ul>
+
+<details class="tl-details tl-more">
+<summary>🛠️ Bấm xem: cách hạn chế từng nguyên nhân</summary>
+<div class="table-scroll"><table class="tl-table">
+<thead><tr><th>Nguyên nhân</th><th>Cách hạn chế</th></tr></thead>
+<tbody>
+<tr><td><strong>Lực kẹp</strong> làm ống mỏng méo</td><td>Kẹp vừa đủ, đúng chỗ; chấu mềm, ống kẹp đàn hồi</td></tr>
+<tr><td><strong>Ứng suất dư</strong> trong phôi đúc, sau gia công thô, nhiệt luyện</td><td>Thời hiệu nhân tạo: khoảng 500 °C, giữ 4 – 5 giờ, khử 70 – 85 %</td></tr>
+<tr><td><strong>Rung cưỡng bức</strong> từ ngoài vào: chi tiết quay lệch, bánh răng sai</td><td>Cân bằng chi tiết quay, tăng cứng vững, nền móng chắc</td></tr>
+<tr><td><strong>Tự rung</strong> do chính lực cắt duy trì</td><td>Tăng cứng vững, tránh lẹo dao, phoi không quá mỏng hay quá rộng</td></tr>
+<tr><td><strong>Nhiệt</strong>: máy, vít me nóng dãn; chi tiết nhận khoảng 3 – 10 % nhiệt cắt</td><td>Tưới nguội đủ, cắt nhanh để nhiệt theo phoi</td></tr>
+<tr><td><strong>Đo</strong>: dụng cụ kém chính xác, đo khi còn nóng</td><td>Cần đọc 0,03 mm → thước cặp 1/50, không dùng 1/20; để nguội rồi đo</td></tr>
+</tbody></table></div>
+<p>Khử ứng suất dư còn có thể:</p>
+<ul>
+<li>Thiết kế tránh thành dày mỏng đột ngột, bán kính lượn quá nhỏ.</li>
+<li>Gõ búa (chi tiết lớn) hoặc cho vào thùng quay (chi tiết nhỏ).</li>
+<li>Thời hiệu tự nhiên: để phôi đúc ngoài trời 6 – 12 tháng, chỉ khử khoảng 30 – 40 %, kéo dài chu kỳ sản xuất.</li>
+</ul>
+</details>
+
+<h4>8. Xác định độ chính xác của cả loạt</h4>
+
+<p><strong>🔑 Kinh nghiệm, tính toán, thống kê</strong></p>
+
+<ul>
+<li><strong>Kinh nghiệm</strong>: tra độ chính xác kinh tế; đơn giản, định tính.</li>
+<li><strong>Tính toán</strong>: cộng từng sai số, tổng nhỏ hơn dung sai; dùng khi nghiên cứu.</li>
+<li><strong>Thống kê</strong>: đo cả loạt, vẽ đường cong phân bố; dùng cho loạt lớn.</li>
+</ul>
+
+<div class="tl-box tl-box--exp tl-note">
+<p class="tl-label">🔬 Đo loạt 100 trục Ø50 ở mở bài</p>
+<ol class="tl-steps">
+<li><strong>Làm:</strong> đo cả 100 trục (nên 60 – 100), chia 50,00 – 50,35 thành 7 khoảng (ít nhất 6), đếm số trục mỗi khoảng.</li>
+<li><strong>Quan sát:</strong> Hình 7 (số $m$ dưới mỗi cột là số trục): dồn ở giữa, thưa dần hai đầu.</li>
+<li><strong>Rút ra:</strong> kích thước là đại lượng ngẫu nhiên, gần theo <strong>đường cong Gauss</strong>.</li>
+</ol>
+</div>
+
+<!--FIG7-->
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Đọc số liệu Hình 7</p>
+<p>Bản vẽ cho phép đường kính từ <strong>50,00 đến 50,30 mm</strong>. Loạt 100 trục trên có bao nhiêu phần trăm phế phẩm?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q6" id="tlc5-q6a"><label for="tlc5-q6a" class="tl-opt tl-no">A. 18 %</label>
+<input type="radio" name="tlc5-q6" id="tlc5-q6b"><label for="tlc5-q6b" class="tl-opt tl-ok">B. 3 %</label>
+<input type="radio" name="tlc5-q6" id="tlc5-q6c"><label for="tlc5-q6c" class="tl-opt tl-no">C. 5 %</label>
+<input type="radio" name="tlc5-q6" id="tlc5-q6d"><label for="tlc5-q6d" class="tl-opt tl-no">D. 0 %</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Chỉ khoảng 50,30 – 50,35 vượt giới hạn trên: 3 trục trên 100 → 3 %.</p><p>Các trục này còn dư kích thước nên tiện lại được (phế phẩm sửa được).</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Phế phẩm là trục nằm <em>ngoài</em> 50,00 – 50,30: tìm cột bên phải mốc 50,30.</p></div>
+</div>
+</div>
+
+<h3>III. Những cái bẫy</h3>
+
+<div class="tl-trap">
+<h4>Bẫy 1: "Lượng chạy dao càng nhỏ, mặt càng nhẵn"</h4>
+<div class="table-scroll"><table class="tl-table tl-cmp">
+<thead><tr><th>$S$ (thép cacbon)</th><th>$R_z$</th></tr></thead>
+<tbody>
+<tr><th>Lớn hơn khoảng 0,15</th><td class="tl-diff">Tăng mạnh theo $S^2$</td></tr>
+<tr><th>Khoảng 0,05 – 0,12</th><td class="tl-diff">Nhỏ, năng suất vẫn tốt → nên chọn</td></tr>
+<tr><th>Quá nhỏ (dưới khoảng 0,02)</th><td class="tl-diff">Tăng lại: dao trượt, cắt không liên tục</td></tr>
+</tbody></table></div>
+<details class="tl-details tl-more">
+<summary>🤔 Vì sao $S$ quá nhỏ lại làm mặt nhám hơn?</summary>
+<p>Lưỡi dao có bán kính cùn nhất định. Phoi mỏng hơn mức đó thì dao không cắt mà miết, trượt lên kim loại.</p>
+<p>Kim loại bị ép dẻo rồi bật lại, mặt gợn không đều.</p></details>
+</div>
+
+<div class="tl-trap">
+<h4>Bẫy 2: lẫn tang trống với loa kèn</h4>
+<div class="table-scroll"><table class="tl-table tl-cmp">
+<thead><tr><th>Cách gá</th><th>Chỗ võng nhiều nhất → hình</th></tr></thead>
+<tbody>
+<tr><th>Chống tâm hai đầu</th><td class="tl-diff">Giữa trục → tang trống</td></tr>
+<tr><th>Mâm cặp, đầu tự do</th><td class="tl-diff">Đầu tự do → loa kèn</td></tr>
+</tbody></table></div>
+</div>
+
+<p class="tl-conf">Em chắc bao nhiêu?
+<label><input type="radio" name="tlc5-q7c" value="chac"> Chắc</label>
+<label><input type="radio" name="tlc5-q7c" value="khong"> Không chắc</label></p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q7" id="tlc5-q7a"><label for="tlc5-q7a" class="tl-opt tl-no">A. Cắt thử: mòn dao làm sai cả loạt</label>
+<input type="radio" name="tlc5-q7" id="tlc5-q7b"><label for="tlc5-q7b" class="tl-opt tl-no">B. Tiện tinh với $S$ = 0,01 mm/vòng cho mặt nhẵn nhất</label>
+<input type="radio" name="tlc5-q7" id="tlc5-q7c"><label for="tlc5-q7c" class="tl-opt tl-ok">C. Trục chống tâm bị tang trống: thêm giá đỡ ở giữa</label>
+<input type="radio" name="tlc5-q7" id="tlc5-q7d"><label for="tlc5-q7d" class="tl-opt tl-no">D. Đồ gá chỉ cần chính xác bằng chi tiết</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> Giá đỡ ở giữa đỡ đúng chỗ võng nhiều nhất, tăng cứng vững.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> Soát lại: cắt thử đo lại từng chi tiết nên mòn dao không ảnh hưởng; $S$ quá nhỏ làm $R_z$ tăng lại; đồ gá phải chính xác hơn chi tiết ít nhất một cấp.</p><p>Nếu em đã chọn <em>Chắc</em> mà vẫn sai, đây là chỗ cần xem lại nhất.</p></div>
+</div>
+
+<h3>IV. Trả bài</h3>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">🎤 Trả bài</p>
+<details class="tl-details"><summary>Bốn yếu tố của độ chính xác gia công?</summary>
+<p>Cỡ – Dáng – Vị – Mặt:</p>
+<p>kích thước, hình dạng, vị trí tương quan, chất lượng bề mặt.</p></details>
+<details class="tl-details"><summary>Chất lượng bề mặt gồm gì? Ra ghi cho cấp nào?</summary>
+<p>Nhám, sóng, lớp biến cứng và ứng suất dư.</p>
+<p>Ra cho cấp 6 – 12; Rz cho cấp 1 – 5 và 13 – 14.</p></details>
+<details class="tl-details"><summary>Bốn nhóm yếu tố ảnh hưởng độ nhám?</summary>
+<p>Hình dáng dao ($S$, $r$).<br>Chế độ cắt (lẹo dao ở 15 – 20 m/phút).<br>Vật liệu.<br>Rung động.</p></details>
+<details class="tl-details"><summary>Cắt thử khác tự động đạt kích thước ở đâu?</summary>
+<p>Cắt thử: nhờ tay nghề, mòn dao không ảnh hưởng, đơn chiếc.</p>
+<p>Tự động: nhờ đồ gá chỉnh sẵn, mòn dao có ảnh hưởng, loạt vừa trở lên.</p></details>
+<details class="tl-details"><summary>Ba giai đoạn mòn dao? Đường kính đổi bao nhiêu?</summary>
+<p>Ban đầu (nhanh) → bình thường (đều) → khốc liệt.</p>
+<p>Đường kính tăng $2U$.</p></details>
+<details class="tl-details"><summary>Chống tâm hai đầu, mâm cặp đầu tự do: hình gì?</summary>
+<p>Tang trống.<br>Loa kèn.</p></details>
+</div>
+
+<h3>V. Bài toán mẫu: dao mòn, khi nào phải chỉnh lại?</h3>
+
+<div class="tl-box tl-note">
+<p class="tl-label">📄 Đề bài</p>
+<p>Tiện tinh loạt trục thép 45, dao T15K6, 120 m/phút. Mỗi trục tiện đoạn <strong>Ø50, dài 100 mm</strong>, $S = 0{,}1$ mm/vòng; dao đã qua mòn ban đầu.</p>
+<p>Dung sai đường kính 0,025 mm, chỉ dành cho mòn dao.</p>
+<ol>
+<li>Mỗi trục làm đường kính tăng bao nhiêu?</li>
+<li>Tiện được bao nhiêu trục thì phải chỉnh lại dao?</li>
+</ol>
+</div>
+
+<div class="table-scroll"><table class="tl-table tl-table--data">
+<thead><tr><th>Câu trong đề</th><th>Dữ liệu</th><th>Kiến thức liên quan</th></tr></thead>
+<tbody>
+<tr><td>"thép 45, T15K6, 120 m/phút"</td><td>tra bảng: $U_0$ = 12 µm/km</td><td>$U_0$ theo cặp vật liệu</td></tr>
+<tr><td>"Ø50, dài 100, $S$ = 0,1"</td><td>$D$ = 50, $l$ = 100, $S$ = 0,1</td><td>$L = \pi D l/(1000 S)$</td></tr>
+<tr><td>"đã qua mòn ban đầu"</td><td>giai đoạn II</td><td>$U = U_0 L/1000$; đường kính tăng $2U$</td></tr>
+</tbody></table></div>
+
+<details class="tl-details tl-more">
+<summary>🧮 Bấm xem lời giải</summary>
+<ol class="tl-steps">
+<li><strong>Chiều dài đường cắt mỗi trục:</strong> $L = \dfrac{\pi \cdot 50 \cdot 100}{1000 \cdot 0{,}1} \approx 157$ m.</li>
+<li><strong>Mòn mỗi trục:</strong> $U = \dfrac{12 \cdot 157}{1000} \approx 1{,}88$ µm.</li>
+<li><strong>Đường kính tăng mỗi trục:</strong> $2U \approx 3{,}77$ µm.</li>
+<li><strong>Số trục:</strong> $25 / 3{,}77 \approx 6{,}6$ → tiện <strong>6 trục</strong> thì chỉnh dao (trục thứ 7 sẽ vượt dung sai).</li>
+<li><strong>Kiểm tra:</strong> 6 trục làm đường kính tăng 6 × 3,77 ≈ 22,6 µm &lt; 25 µm; 7 trục ≈ 26,4 µm &gt; 25 µm. Hợp lý.</li>
+</ol>
+</details>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">✍️ Điền bước còn thiếu</p>
+<p>Máy tiện có chiều cao tâm $H$ = 200 mm, khoảng cách hai sống trượt $B$ = 350 mm, sống trượt trước mòn $\delta$ = 0,035 mm.</p>
+<ol class="tl-steps">
+<li>Mũi dao lệch ngang: $y = \delta H / B$.</li>
+<li><strong>Em điền:</strong> $y$ bằng bao nhiêu? Đường kính chi tiết sai đi bao nhiêu?</li>
+</ol>
+<details class="tl-details"><summary>Xem đáp án</summary>
+<p>$y = 0{,}035 \cdot 200 / 350 = 0{,}02$ mm.</p>
+<p>Đường kính tăng $2y$ = 0,04 mm.</p></details>
+</div>
+
+<div class="tl-box tl-box--think tl-check">
+<p class="tl-label">Thử sức đổi số</p>
+<p>Giữ nguyên bài toán mẫu, chỉ tăng $S$ lên <strong>0,2 mm/vòng</strong>. Tiện được bao nhiêu trục thì phải chỉnh dao?</p>
+<div class="tl-quiz">
+<input type="radio" name="tlc5-q8" id="tlc5-q8a"><label for="tlc5-q8a" class="tl-opt tl-no">A. 3 trục</label>
+<input type="radio" name="tlc5-q8" id="tlc5-q8b"><label for="tlc5-q8b" class="tl-opt tl-no">B. 6 trục</label>
+<input type="radio" name="tlc5-q8" id="tlc5-q8c"><label for="tlc5-q8c" class="tl-opt tl-no">C. 26 trục</label>
+<input type="radio" name="tlc5-q8" id="tlc5-q8d"><label for="tlc5-q8d" class="tl-opt tl-ok">D. 13 trục</label>
+<div class="tl-fb tl-fb--ok"><p><strong>Đúng.</strong> $S$ gấp đôi → $L$ ≈ 78,5 m, giảm một nửa → mỗi trục tăng ≈ 1,88 µm → 25/1,88 ≈ 13,3 → 13 trục.</p><p>Nhưng $S$ lớn thì $R_z$ tăng: được số trục, mất độ nhẵn.</p></div>
+<div class="tl-fb tl-fb--no"><p><strong>Chưa đúng.</strong> $S$ ở mẫu số của $L$: $S$ gấp đôi thì mòn mỗi trục còn một nửa. Nhớ làm tròn xuống.</p></div>
+</div>
+</div>
+
+<h3>VI. Mang về và thử thách</h3>
+
+<div class="tl-box tl-box--rule tl-keep">
+<p class="tl-label">Mang về sau bài học</p>
+<ul>
+<li>Cỡ – Dáng – Vị – Mặt.</li>
+<li>$R_z \approx S^2/(8r)$ khi $S$ lớn; tránh lẹo dao 15 – 20 m/phút.</li>
+<li>Mòn dao, mòn máy: đường kính sai $2U$, $2y$.</li>
+<li>Chống tâm → tang trống; mâm cặp đầu tự do → loa kèn.</li>
+<li>Cả loạt: Gauss; phần ngoài dung sai là phế phẩm.</li>
+<li>Đọc đề: tìm <em>cặp vật liệu</em> để tra $U_0$, và <em>dung sai</em> dành cho mòn.</li>
+</ul>
+</div>
+
+<details class="tl-details tl-more">
+<summary>⭐ Vì sao piston vừa mài xong, còn ấm 40 °C, đo đạt mà để nguội lại bị nhỏ hơn yêu cầu?</summary>
+<p>Kim loại co lại khi nguội. Piston hợp kim nhôm Ø100 nguội từ 40 °C về 20 °C nhỏ đi khoảng 0,05 mm. Phải để nguội về nhiệt độ phòng rồi mới đo.</p></details>
+<details class="tl-details tl-more">
+<summary>⭐⭐ Tiện ống thành mỏng trên mâm cặp ba chấu: lỗ tiện xong tròn, tháo ra lại méo. Vì sao, chữa thế nào?</summary>
+<p>Lực kẹp ép ống méo thành ba múi. Tiện lỗ tròn trên ống đang méo; tháo ra ống đàn hồi về tròn ngoài, lỗ thành méo.</p>
+<p>Chữa: kẹp nhẹ, dùng chấu mềm ôm rộng hoặc ống kẹp đàn hồi, kẹp theo mặt đầu.</p></details>
+<details class="tl-details tl-more">
+<summary>⭐⭐⭐ Loạt 100 trục ở mở bài, dung sai 50,00 – 50,30: chỉ chỉnh dao vào sâu hơn có hết phế phẩm không?</summary>
+<p>Không. Các trục trải rộng khoảng 0,35 mm, lớn hơn dung sai 0,30 mm: dời cả đường cong sang trái thì đầu phải bớt, đầu trái lại có trục dưới 50,00.</p>
+<p>Trục nhỏ quá là phế phẩm không sửa được, nên giữ tâm lệch về phía còn dư thường lợi hơn.</p>
+<p>Muốn hết phế phẩm phải giảm độ phân tán: tăng cứng vững, bù mòn dao, giữ nhiệt ổn định.</p></details>
