@@ -64,7 +64,7 @@ def fig1():
     o.append(f'<rect x="238" y="140" width="8" height="12" fill="currentColor"/>')
     o.append(ar(262, 146, 212, 146, B, 2.2, 9))
     o.append(T(266, 138, "lưỡi gạt trải bột", size=12, c=B))
-    o.append(T(176, 175, "chi tiết", size=12, a="start"))
+    o.append(T(182, 207, "chi tiết", size=12, a="start"))
     o.append(T(330, 190, "bột đỡ chi tiết,", size=12)); o.append(T(330, 205, "phần nhô ra", size=12)); o.append(T(330, 220, "cần chống đỡ", size=12))
     return fig(svg(262, "Sơ đồ LPBF nung chảy lớp bột", o),
                "Hình 1. LPBF. Laser (đỏ) quét theo lát cắt, nung chảy lớp bột (cam nhạt) thành lớp đặc (cam đậm); bàn hạ một lớp rồi lưỡi gạt trải lớp mới.")
@@ -79,13 +79,13 @@ def fig2():
         o.append(f'<line x1="{x0}" y1="62" x2="150" y2="112" stroke="{O}" stroke-width="2.2" stroke-dasharray="5 4"/>')
     o.append(T(14, 60, "bột (cam)", c=O, size=12, w="700"))
     o.append(f'<ellipse cx="150" cy="114" rx="26" ry="7" fill="{R}" fill-opacity="0.8"/>')
-    o.append(T(190, 120, "vũng chảy", c=R, w="700"))
+    o.append(T(190, 108, "vũng chảy", c=R, w="700"))
     o.append(f'<rect x="94" y="122" width="112" height="14" {SOLID}/>')
-    o.append(T(214, 134, "lớp đã đắp", size=12))
+    o.append(T(214, 132, "lớp đã đắp", size=12))
     o.append(rect(50, 136, 300, 30, WP))
     o.append(T(60, 156, "nền: phôi hoặc chi tiết cần sửa", size=12))
-    o.append(ar(236, 50, 300, 50, B, 2.2, 9))
-    o.append(T(236, 42, "đầu di chuyển", size=12, c=B, w="700"))
+    o.append(ar(236, 74, 300, 74, B, 2.2, 9))
+    o.append(T(236, 64, "đầu di chuyển", size=12, c=B, w="700"))
     return fig(svg(180, "Sơ đồ đắp năng lượng định hướng DED", o),
                "Hình 2. DED. Bột (hoặc dây) và tia laser đến cùng một điểm; vũng chảy đông lại thành vệt đắp ngay trên nền.")
 

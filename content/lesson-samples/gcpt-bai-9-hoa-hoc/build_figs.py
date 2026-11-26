@@ -44,11 +44,11 @@ def panel(ox, oy, kind):
     """Một ô mặt cắt 190 x 118: phôi (xám) + cản quang (cam) + phim/UV/hốc tuỳ bước."""
     o = []
     x0, x1, yt, yb = ox + 10, ox + 180, oy + 66, oy + 96
-    gl, gr = ox + 80, ox + 110  # cửa sổ vùng cần ăn
+    gl, gr = ox + 78, ox + 112  # cửa sổ vùng cần ăn
     titles = {"a": "a) Phủ cản quang", "b": "b) Chiếu UV qua phim", "c": "c) Hiện hình", "d": "d) Ăn mòn"}
     o.append(T(ox + 4, oy + 14, titles[kind], w="700"))
     if kind == "d":
-        o.append(f'<path d="M{x0},{yt} H{gl - 8} A23,20 0 0 0 {gr + 8},{yt} H{x1} V{yb} H{x0} Z" {WP}/>')
+        o.append(f'<path d="M{x0},{yt} H{gl - 12} A29,22 0 0 0 {gr + 12},{yt} H{x1} V{yb} H{x0} Z" {WP}/>')
     else:
         o.append(f'<rect x="{x0}" y="{yt}" width="{x1 - x0}" height="{yb - yt}" {WP}/>')
     if kind in ("a", "b"):
@@ -64,7 +64,7 @@ def panel(ox, oy, kind):
             o.append(ar(x, oy + 22, x, yt - 10, B, 1.8, 7))
         o.append(T(x1 - 2, yf - 4, "phim", size=11.5, a="end"))
     if kind == "d":
-        o.append(T(gr + 34, yt + 24, "hốc ăn", size=11.5))
+        o.append(T(gr + 14, yt + 26, "hốc ăn", size=11.5))
     if kind == "a":
         o.append(T(x0 + 2, yt + 21, "phôi", size=11.5))
         o.append(T(x1 - 2, yt - 12, "cản quang", c=O, size=11.5, a="end"))
@@ -91,10 +91,10 @@ def fig2():
     o.append(T(210, 54, "cửa sổ mặt nạ", a="middle"))
     o.append(ar(210, 96, 210, 142, B, 2.2, 9))
     o.append(T(222, 124, "d", c=B, size=14, w="700"))
-    o.append(ar(150, 108, 100, 108, R, 2.2, 9))
-    o.append(T(118, 126, "u", c=R, size=14, w="700"))
-    o.append(ar(270, 108, 320, 108, R, 2.2, 9))
-    o.append(T(290, 126, "u", c=R, size=14, w="700"))
+    o.append(ar(150, 102, 103, 102, R, 2.2, 9))
+    o.append(T(130, 124, "u", c=R, size=14, w="700"))
+    o.append(ar(270, 102, 317, 102, R, 2.2, 9))
+    o.append(T(286, 124, "u", c=R, size=14, w="700"))
     o.append(T(14, 218, "Ăn đẳng hướng: u ≈ d, hệ số ăn mòn Fe = d / u ≈ 1", size=12.5, w="700"))
     o.append(T(14, 236, "Thành hốc cong, mép mặt nạ bị ăn lẹm vào dưới", size=12))
     return fig(svg(248, "Mặt cắt hốc ăn mòn có ăn lẹm", o),
