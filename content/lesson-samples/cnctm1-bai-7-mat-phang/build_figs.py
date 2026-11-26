@@ -63,8 +63,9 @@ def fig1():
     for y in (46, 56, 66):
         o.append(f'<line x1="40" y1="{y}" x2="200" y2="{y}" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3"/>')
     o.append(ar(26, 112, 26, 62, B))                         # bàn máy nhích lên (phần đã bào ở trên)
-    o.append(ar(30, 78, 210, 78, R, both=True))               # dao đi – về
-    o.append(tool(212, 78))
+    o.append(T(12, 92, "S", B, w="700", a="middle"))
+    o.append(ar(30, 78, 196, 78, R, both=True))               # dao đi – về
+    o.append(tool(206, 78))
     o += [T(240, 64, "Dao đi – về:", R, w="700"), T(240, 80, "chuyển động chính", R),
           T(240, 102, "Bàn máy nhích S", B, w="700"), T(240, 118, "sau mỗi hành trình kép:", B),
           T(240, 134, "chạy dao", B)]
@@ -75,6 +76,7 @@ def fig1():
     for y in (38, 48, 58):
         o.append(f'<line x1="40" y1="{y0 + y}" x2="200" y2="{y0 + y}" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3"/>')
     o.append(tool(112, y0 + 70))
+    o.append(T(104, y0 + 75, "dao", O, 12, "700", a="end"))
     o.append(ar(140, y0 + 62, 140, y0 + 92, B))               # dao nhích xuống phần chưa bào
     o.append(ar(40, y0 + 128, 200, y0 + 128, R, both=True))    # bàn máy mang phôi đi – về
     o += [T(240, y0 + 66, "Dao nhích ngang:", B, w="700"), T(240, y0 + 82, "chạy dao", B),
@@ -130,12 +132,15 @@ def mill_panel(cx, title, nghich, lines):
     L, Rx = cx - 95, cx + 95
     o = [T(cx - 93, 18, title, w="700")]
     o.append(poly([(L, y_bot)] + prev + [(Rx, y_top), (Rx, 168), (L, 168)], WP))
-    o.append(f'<circle cx="{cx}" cy="{cy}" r="{Rr}" fill="#94a3b8" fill-opacity="0.12" stroke="currentColor" stroke-width="1.6"/>')
+    o.append(poly(teeth_pts(cx, cy, Rr - 5, Rr, 12), 'fill="#94a3b8" fill-opacity="0.12" stroke="currentColor" stroke-width="1.4"'))
     o.append(f'<circle cx="{cx}" cy="{cy}" r="7" fill="none" stroke="currentColor" stroke-width="1.4"/>')
     o.append(poly(cur + prev[::-1], f'fill="{O}" fill-opacity="0.85" stroke="{O}" stroke-width="1"'))
     o.append(rot(cx, cy, 58, 58, -40, -140) if nghich else rot(cx, cy, 58, 58, -140, -40))
     o.append(ar(cx + 40, 184, cx - 40, 184, B))
-    o.append(T(cx + 46, 188, "chạy dao", B, 12))
+    o.append(T(cx - 46, 188, "chạy dao", B, 12, a="end"))
+    xt = cx + Rr * math.cos(math.radians(th))           # đầu dày của phoi (trên), đầu mỏng (dưới)
+    o.append(T(xt + 8, y_top - 4, "ra" if nghich else "vào", O, 12, "700"))
+    o.append(T(cx - fz - 4, y_bot + 14, "vào" if nghich else "ra", O, 12, "700", a="end"))
     for i, s in enumerate(lines):
         o.append(T(cx - 93, 210 + 16 * i, s, size=12.5, w="700" if i == 2 else "400"))
     return o
@@ -157,19 +162,20 @@ def fig4():
     o.append('<circle cx="105" cy="94" r="12" fill="none" stroke="currentColor" stroke-width="1.6"/>')
     o.append(rot(105, 94, 66, 66, -40, -140))
     o.append(f'<line x1="94" y1="150" x2="116" y2="150" stroke="{O}" stroke-width="5"/>')
-    o.append(ar(60, 196, 150, 196, B, both=True))
-    o.append(T(14, 218, "tiếp xúc hẹp, dễ thoát nhiệt", size=12.5))
-    o.append(T(14, 234, "→ chính xác, nhẵn hơn", size=12.5, w="700"))
+    o.append(T(105, 198, "vùng tiếp xúc", O, 12, a="middle"))
+    o.append(ar(60, 212, 150, 212, B, both=True))
+    o.append(T(14, 236, "tiếp xúc hẹp, dễ thoát nhiệt", size=12.5))
+    o.append(T(14, 252, "→ chính xác, nhẵn hơn", size=12.5, w="700"))
     o.append(f'<rect x="226" y="150" width="182" height="30" {WP}/>')
     o.append(f'<rect x="250" y="112" width="134" height="38" {STONE}/>')
     o.append('<rect x="305" y="46" width="24" height="66" fill="none" stroke="currentColor" stroke-width="1.6"/>')
     o.append(rot(317, 76, 34, 9, 20, 160))
     o.append(f'<line x1="250" y1="150" x2="384" y2="150" stroke="{O}" stroke-width="5"/>')
-    o.append(ar(272, 196, 362, 196, B, both=True))
-    o.append(T(226, 218, "tiếp xúc rộng → năng suất cao", size=12.5, w="700"))
-    o.append(T(226, 234, "nóng hơn, kém chính xác hơn", size=12.5))
-    o.append(T(122, 146, "vùng tiếp xúc", O, 12))
-    return fig(svg(244, "Mài mặt phẳng bằng lưng đá và bằng mặt đầu đá", o),
+    o.append(T(317, 198, "vùng tiếp xúc", O, 12, a="middle"))
+    o.append(ar(272, 212, 362, 212, B, both=True))
+    o.append(T(226, 236, "tiếp xúc rộng → nhanh hơn", size=12.5, w="700"))
+    o.append(T(226, 252, "nóng hơn, kém chính xác hơn", size=12.5))
+    return fig(svg(262, "Mài mặt phẳng bằng lưng đá và bằng mặt đầu đá", o),
                "Hình 4. Vùng tiếp xúc (cam) quyết định cách mài: hẹp thì mát và chính xác, rộng thì năng suất. Xanh: bàn máy đi – về.")
 
 
@@ -193,9 +199,9 @@ def fig5():
         o.append(f'<rect x="{x0}" y="{y0}" width="{s}" height="{s}" fill="#94a3b8" fill-opacity="0.2" stroke="currentColor" stroke-width="1.8"/>')
         for k in range(-s, s, 14):                     # vết cạo đan hai hướng (vuông góc nhau)
             o.append(f'<line x1="{x0 + max(k, 0)}" y1="{y0 + max(-k, 0)}" x2="{x0 + min(k + s, s)}" y2="{y0 + min(s - k, s)}" '
-                     'stroke="currentColor" stroke-opacity="0.18" stroke-width="1"/>')
+                     'stroke="currentColor" stroke-opacity="0.11" stroke-width="1"/>')
             o.append(f'<line x1="{x0 + max(k, 0)}" y1="{y0 + s - max(-k, 0)}" x2="{x0 + min(k + s, s)}" y2="{y0 + s - min(s - k, s)}" '
-                     'stroke="currentColor" stroke-opacity="0.18" stroke-width="1"/>')
+                     'stroke="currentColor" stroke-opacity="0.11" stroke-width="1"/>')
         pts = spots(x0, y0, s, n, r, seed)
         assert len(pts) == n
         for x, y in pts:
