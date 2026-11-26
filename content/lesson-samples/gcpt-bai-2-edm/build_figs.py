@@ -63,13 +63,13 @@ def build(figs):
 # Hình 1: sơ đồ EDM chìm
 def fig1():
     o = [rect(20, 70, 280, 150, LQ, 0)]                       # bể điện môi
-    o.append(T(26, 86, "điện môi (dầu)", B, 12, "700"))
+    o.append(T(26, 134, "điện môi (dầu)", B, 12, "700"))
     o.append(rect(70, 184, 180, 36, WP))                      # phôi
     o.append(T(160, 206, "phôi", size=12.5, w="700", a="middle"))
     o.append(poly([(120, 40), (200, 40), (200, 120), (190, 150), (130, 150), (120, 120)],
                   'fill="#475569" fill-opacity="0.55" stroke="currentColor" stroke-width="1.8"'))
     o.append(T(160, 88, "điện cực", "#fff", 12.5, "700", "middle"))
-    o.append(T(160, 104, "than chì / đồng", "#fff", 11.5, "400", "middle"))
+    o.append(T(160, 104, "than chì/đồng", "#fff", 11, "400", "middle"))
     o.append(line(160, 20, 160, 40))
     o.append(ar(100, 46, 100, 110, B))
     o.append(T(94, 60, "tiến dần", B, 11.5, "700", "end"))
@@ -88,11 +88,8 @@ def fig1():
     o.append(ar(60, 168, 112, 168, B, 1.8, 9))
     o.append(T(54, 162, "dòng rửa", B, 11.5, "700", "end"))
     o.append(T(54, 176, "cuốn mạt", B, 11.5, "400", "end"))
-    o.append(T(320, 140, "Xung ngắt quãng,", size=12, w="700"))
-    o.append(T(320, 156, "mỗi xung bóc", size=12))
-    o.append(T(320, 172, "một hạt cực nhỏ", size=12))
     return fig(svg(232, "Sơ đồ nguyên lý EDM chìm", o),
-               "Hình 1. EDM chìm. Đỏ: nguồn xung và tia lửa. Xanh: điện môi, dòng rửa và chuyển động tiến của điện cực. Điện cực không chạm phôi.")
+               "Hình 1. EDM chìm. Đỏ: nguồn xung và tia lửa. Xanh: điện môi, dòng rửa và chuyển động tiến của điện cực. Điện cực không chạm phôi. Khe hở vẽ phóng to, không theo tỉ lệ.")
 
 
 # Hình 2: dạng xung

@@ -77,7 +77,7 @@ def fig1():
             o.append(T(x + 8, y + 27, b, size=11.5))
     o.append(T(210, 232, "Gốc chung: bóc vật liệu không bằng lực cắt của dao cứng hơn phôi", size=12, w="700", a="middle"))
     return fig(svg(244, "Ba nhóm gia công phi truyền thống theo dạng năng lượng", o),
-               "Hình 2. Ba nhóm theo dạng năng lượng bóc vật liệu. Mỗi công nghệ có một bài riêng (Bài 2–10).")
+               "Hình 2. Ba nhóm theo dạng năng lượng bóc vật liệu. Mỗi công nghệ có một bài riêng (Bài 2–9).")
 
 
 # Hình 2: góc trong khi phay và khi dùng điện cực

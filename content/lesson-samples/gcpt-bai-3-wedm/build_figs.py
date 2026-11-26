@@ -63,7 +63,7 @@ def build(figs):
 # Hình 1: sơ đồ cắt dây (nhìn nghiêng từ bên)
 def fig1():
     o = [rect(110, 100, 200, 50, WP)]                                   # phôi
-    o.append(T(210, 129, "phôi", size=12.5, w="700", a="middle"))
+    o.append(T(150, 129, "phôi", size=12.5, w="700", a="middle"))
     o.append(rect(190, 74, 40, 24, 'fill="#475569" fill-opacity="0.5" stroke="currentColor" stroke-width="1.6"', 3))   # dẫn trên
     o.append(rect(190, 152, 40, 24, 'fill="#475569" fill-opacity="0.5" stroke="currentColor" stroke-width="1.6"', 3))  # dẫn dưới
     o.append(T(236, 90, "ống dẫn trên", size=11.5))
@@ -84,24 +84,24 @@ def fig1():
         o.append(line(xx, 152, xx - 6 if xx < 210 else xx + 6, 146, B, 1.6))
     o.append(T(24, 70, "nước khử ion", B, 12, "700"))
     o.append(T(24, 85, "phun qua ống dẫn", B, 11.5))
-    o.append(ar(110, 78, 188, 100, B, 1.4, 7))
+    o.append(ar(126, 88, 188, 102, B, 1.4, 7))
     # bàn X-Y
-    o.append(ar(110, 190, 60, 190, "#0f766e", 2, 9, both=True))
-    o.append(T(60, 208, "bàn X–Y chạy", "#0f766e", 12, "700"))
-    o.append(T(60, 222, "theo biên dạng", "#0f766e", 11.5))
-    o.append(T(330, 124, "tia lửa dọc", R, 12, "700"))
-    o.append(T(330, 138, "mặt cắt", size=11.5))
-    o.append(T(330, 152, "(nơi dây gần phôi)", size=11.5))
+    o.append(ar(110, 162, 60, 162, "#0f766e", 2, 9, both=True))
+    o.append(T(60, 182, "bàn X–Y chạy", "#0f766e", 12, "700"))
+    o.append(T(60, 196, "theo biên dạng", "#0f766e", 11.5))
+    o.append(f'<polyline points="203,112 208,117 203,122 208,127 203,132" fill="none" stroke="{R}" stroke-width="1.8"/>')
+    o.append(T(240, 120, "tia lửa", R, 12, "700"))
+    o.append(T(240, 134, "ở khe cắt", size=11.5))
     return fig(svg(244, "Sơ đồ nguyên lý cắt dây WEDM", o),
-               "Hình 1. Cắt dây. Đỏ: dây và tia lửa. Xanh: nước khử ion. Xanh lục: bàn máy mang phôi chạy theo biên dạng. Dây không chạm phôi.")
+               "Hình 1. Cắt dây. Đỏ: dây và tia lửa. Xanh: nước khử ion. Xanh lục: bàn máy mang phôi chạy theo biên dạng. Dây không chạm phôi; hình không theo tỉ lệ.")
 
 
 # Hình 2: cắt thô rồi cắt tinh – bề mặt sau mỗi lượt
 def fig2():
     o = []
-    rows = [("Lượt 1: cắt thô", 36, 28, 7, "nhanh, chừa dư"),
-            ("Lượt 2: cắt tinh", 112, 12, 4, "bóc lớp mỏng"),
-            ("Lượt 3: tinh nữa", 188, 4, 2, "mịn, chính xác")]
+    rows = [("Lượt 1: cắt thô", 50, 28, 7, "nhanh, chừa dư"),
+            ("Lượt 2: cắt tinh", 126, 12, 4, "bóc lớp mỏng"),
+            ("Lượt 3: tinh nữa", 202, 4, 2, "mịn, chính xác")]
     for name, y, allow, amp, note in rows:
         o.append(T(14, y - 10, name, size=12.5, w="700"))
         o.append(rect(14, y + 14, 392, 30, f'fill="{GR}" fill-opacity="0.3" stroke="none"', 0))
@@ -112,8 +112,8 @@ def fig2():
         o.append(poly(pts + [(406, y + 14), (14, y + 14)], f'fill="{O}" fill-opacity="0.35" stroke="{O}" stroke-width="1.6"'))
         o.append(line(14, y + 14, 406, y + 14, "currentColor", 1.6, "5 3"))
         o.append(T(300, y - 10, note, size=11.5))
-    o.append(T(14, 262, "Nét đứt: biên dạng đúng. Cam: phần còn dư, nhám giảm dần.", size=11.5))
-    return fig(svg(274, "Cắt thô rồi cắt tinh nhiều lượt", o),
+    o.append(T(14, 276, "Nét đứt: biên dạng đúng. Cam: phần còn dư, nhám giảm dần.", size=11.5))
+    return fig(svg(288, "Cắt thô rồi cắt tinh nhiều lượt", o),
                "Hình 3. Mỗi lượt dùng dòng nhỏ hơn, bóc lớp mỏng hơn: phần dư (cam) và độ nhám giảm dần về biên dạng đúng.")
 
 
@@ -123,7 +123,9 @@ def fig3():
     o.append(rect(170, 20, 80, 140, 'fill="none" stroke="none"', 0))
     cx, cy, rd, g = 210, 90, 24, 16
     o.append(f'<circle cx="{cx}" cy="{cy}" r="{rd}" fill="{R}" fill-opacity="0.3" stroke="{R}" stroke-width="2"/>')
-    o.append(T(cx, cy + 4, "dây", R, 12, "700", "middle"))
+    o.append(T(cx, cy + rd + 14, "dây", R, 12, "700", "middle"))
+    o.append(T(95, 140, "phôi", size=12.5, w="700", a="middle"))
+    o.append(T(325, 140, "phôi", size=12.5, w="700", a="middle"))
     o.append(ar(cx - rd, 176, cx + rd, 176, R, 1.6, 7, both=True))
     o.append(T(cx, 192, "d", R, 13, "700", "middle"))
     o.append(ar(cx - rd - g, 206, cx - rd, 206, B, 1.6, 7, both=True))
@@ -131,11 +133,11 @@ def fig3():
     o.append(ar(cx - rd - g, 236, cx + rd + g, 236, "currentColor", 1.6, 7, both=True))
     o.append(T(cx, 254, "W = d + 2g", "currentColor", 13, "700", "middle"))
     o.append(ar(cx, cy, cx + rd + g - 2, cy, "currentColor", 1.4, 6))
-    o.append(T(cx + 4, cy - 30, "d/2 + g", size=12, w="700"))
-    o.append(T(cx + 4, cy - 17, "tâm → biên", size=11))
+    o.append(T(cx + rd + g + 8, cy - 4, "d/2 + g", size=12, w="700"))
+    o.append(T(cx + rd + g + 8, cy + 10, "tâm → biên", size=11))
     o.append(T(14, 276, "g: khe phóng điện hai bên dây; W: bề rộng khe cắt", size=11.5))
     return fig(svg(288, "Khe cắt rộng hơn đường kính dây", o),
-               "Hình 2. Nhìn từ trên xuống. Dây tròn đường kính d, khe phóng điện g mỗi bên, bề rộng khe cắt W. Đường tâm dây phải cách biên d/2 + g.")
+               "Hình 2. Nhìn từ trên xuống. Dây tròn đường kính d, khe phóng điện g mỗi bên, bề rộng khe cắt W. Đường tâm dây phải cách biên d/2 + g. Khe g vẽ phóng to, không theo tỉ lệ.")
 
 
 build([fig1, fig3, fig2])
