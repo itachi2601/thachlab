@@ -32,7 +32,8 @@ const COURSES: Course[] = [
   },
   {
     title: "Công nghệ chế tạo máy",
-    description: "Kiến thức về phôi, dụng cụ, nguyên công và tổ chức sản xuất cơ khí.",
+    description: "Nguyên công, gá, bước, dạng sản xuất và các hình thức gia công cơ khí. Lớp CĐ CK 25C, vào có duyệt.",
+    href: "/lop-hoc/cnctm",
     icon: Factory,
   },
   {

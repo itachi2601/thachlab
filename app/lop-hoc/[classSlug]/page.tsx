@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import ClassHubPage from "../page";
-import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG } from "@/services/classes";
+import { MANAGED_CLASSES, AVCN_CLASS_SLUG, CASIO_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG } from "@/services/classes";
 
 export const dynamicParams = false;
 
@@ -36,6 +36,13 @@ export async function generateMetadata({
     return {
       title: "WorldSkills — Industrial Mechanics 2026 — CTTC",
       description: "Đề thi, thang điểm, phiếu tự chấm và thuật ngữ song ngữ Anh–Việt để huấn luyện sinh viên dự thi WorldSkills Skill 01 Industrial Mechanics.",
+    };
+  }
+
+  if (classSlug === CNCTM_CLASS_SLUG) {
+    return {
+      title: "Công nghệ chế tạo máy 1 — CTTC",
+      description: "Nguyên công, gá, bước, dạng sản xuất và các hình thức gia công cơ khí: bài lý thuyết tương tác có câu tự kiểm cho sinh viên Cơ khí.",
     };
   }
 

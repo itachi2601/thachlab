@@ -21,8 +21,12 @@ export const CASIO_SUBJECT_CODE = "casio-vat-ly";
 export const WORLDSKILLS_CLASS_SLUG = "worldskills-im";
 export const WORLDSKILLS_SUBJECT_CODE = "worldskills-im";
 
+/** Học phần CTTC "Công nghệ chế tạo máy 1" (26/11/2026, CĐ CK 25C): vào có duyệt; nội dung = môn 'cnctm'. */
+export const CNCTM_CLASS_SLUG = "cnctm";
+export const CNCTM_SUBJECT_CODE = "cnctm";
+
 /** Các lớp thuộc không gian CTTC: gốc đường dẫn về /lop-hoc/cttc, không về bộ chọn lớp THPT. */
-export const CTTC_CLASS_SLUGS: ReadonlySet<string> = new Set([AVCN_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG]);
+export const CTTC_CLASS_SLUGS: ReadonlySet<string> = new Set([AVCN_CLASS_SLUG, WORLDSKILLS_CLASS_SLUG, CNCTM_CLASS_SLUG]);
 export const isCttcClassSlug = (slug: string | null | undefined) => !!slug && CTTC_CLASS_SLUGS.has(slug);
 
 export const MANAGED_CLASSES: ManagedClassSeed[] = [
@@ -77,6 +81,14 @@ export const MANAGED_CLASSES: ManagedClassSeed[] = [
     color: "#C2410C",
     icon: "🛠️",
     sort_order: 8,
+  },
+  // Học phần CTTC "Công nghệ chế tạo máy 1" (26/11/2026): vào có duyệt; mỗi bài một chương, môn 'cnctm'.
+  {
+    name: "Công nghệ chế tạo máy 1",
+    slug: CNCTM_CLASS_SLUG,
+    color: "#475569",
+    icon: "⚙️",
+    sort_order: 9,
   },
 ];
 

@@ -160,3 +160,8 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-25 · Xoá lời giải làm treo câu "xem lại bước c của lời giải" trong phản hồi quiz → grep "lời giải" trong cả bài sau khi rút.
 - 2026-11-25 · Rút Bài toán mẫu L10 (26 bài, 5 agent song song): script đồng bộ src→html bằng vá diff có ngữ cảnh vỡ khi hai đoạn đổi sát nhau → dựng lại theory.html = src MỚI + thay đúng các khối placeholder (<!--FIGn-->, __X__) lấy từ cặp src/html HEAD, tự kiểm dựng lại được html HEAD (bản ở side-session-notes `dong-bo.py`).
 - 2026-11-25 · Xoá lời giải có số điền bằng placeholder `__VD_*__` → khoá REPL trong build_figs.py còn `assert k in h` sẽ làm build sau dừng → xoá luôn khoá thừa trong REPL, kiểm `keys ⊆ src`.
+- 2026-11-26 · Quiz CNCTM 2 hỏi Ra = 1,25 µm đúng biên chung của hai dòng bảng (bán tinh 10–1,25, tinh 1,25–0,63) → hai đáp án đúng; kiem-code mới bắt được → số trong quiz tra bảng phải nằm GIỮA một khoảng, không chọn giá trị biên.
+- 2026-11-26 · Chèn `<!--FIG2-->` trước `<!--FIG1-->` trong theory.src.html → em đọc Hình 2 trước Hình 1 → đánh số hình theo thứ tự xuất hiện trong bài, không theo thứ tự vẽ trong build_figs.py.
+- 2026-11-26 · Nhãn SVG đặt cạnh nét xiên ("nung") bị nét cắt chữ → tính toạ độ nét tại đúng y của nhãn trước khi đặt; nhãn luôn nằm hẳn một bên nét.
+- 2026-11-26 · Bài CTTC ngoài giáo trình (A3 thép, nhiệt độ ram theo HRC) ghi như số đo chắc → ghi "cỡ/khoảng… (tra giản đồ/đồ thị)" khi số không có trong giáo trình.
+- 2026-11-26 · `textutil` trên .doc ra rác nhị phân; `chup_anh.py` lỗi thiếu PIL với python Homebrew → dùng `pdftotext -layout` trên bản PDF; chạy `chup_anh.py` bằng `/usr/bin/python3`.
