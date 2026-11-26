@@ -104,7 +104,7 @@ def fig_bon_loai():
     o.append(T(315, 252, "d) Mặt định hình khối", 13, "middle", "700"))
     o.append(T(315, 269, "cánh tuabin, khuôn mẫu", 12, "middle"))
     return fig(svg(280, "Bốn loại mặt định hình", o),
-               "Hình 1. Bốn loại mặt định hình. Nét đỏ là đường sinh hoặc đường bao tạo nên mặt.")
+               "Hình 1. Bốn loại mặt định hình. Nét đỏ là đường sinh hoặc đường bao tạo nên mặt. Nét đứt: các mặt cắt cong.")
 
 
 # Hình 2: dao lưỡi rộng và quay con trượt trên
@@ -115,9 +115,9 @@ def fig_tien_con_ngan():
     o.append(P([(20, 50), (130, 50), (150, 62), (150, 98), (130, 110), (20, 110)], WORK))
     o.append(P([(134, 115), (156, 102), (186, 132), (164, 145)], TOOL))
     o.append(Ln(134, 115, 156, 102, RED, 3))
-    o.append(Ar(196, 150, 176, 132))
+    o.append(Ar(202, 160, 202, 126))
     o.append(T(105, 172, "lưỡi cắt nghiêng", 12, "middle"))
-    o.append(T(105, 188, "đúng góc côn", 12, "middle"))
+    o.append(T(105, 188, "α/2 so với trục", 12, "middle"))
     o.append(T(105, 206, "côn dài ≤ 20 mm", 12, "middle", c=BLUE))
     o.append(T(315, 18, "b) Quay con trượt trên", 13, "middle", "700"))
     o.append(Ln(222, 80, 408, 80, w=1, dash="6 4"))
@@ -131,24 +131,24 @@ def fig_tien_con_ngan():
                 (x0 + 96 * ux + 14 * nx, y0 + 96 * uy + 14 * ny), (x0 + 14 * nx, y0 + 14 * ny)],
                'fill="#64748b" fill-opacity="0.25" stroke="currentColor" stroke-width="1.2"'))
     o.append(P([(344, 114), (360, 110), (352, 99)], TOOL))
-    o.append(Ar(x0 + 8 * ux, y0 + 8 * uy - 16, x0 + 70 * ux, y0 + 70 * uy - 16))
+    o.append(Ar(x0 + 2 * ux, y0 + 2 * uy - 16, x0 + 26 * ux, y0 + 26 * uy - 16))
     o.append(Ln(x0, y0, x0 + 60, y0, w=1, dash="4 3"))
     a = math.degrees(math.atan2(dy, dx))
     o.append(f'<path d="M{x0 + 40:.1f},{y0:.1f} A40,40 0 0,0 {x0 + 40 * ux:.1f},{y0 + 40 * uy:.1f}" fill="none" stroke="{BLUE}" stroke-width="1.4"/>')
-    o.append(T(x0 + 46, y0 - 2, "α/2", 13, w="700", c=BLUE))
+    o.append(T(x0 + 64, y0 + 10, "α/2", 13, w="700", c=BLUE))
     o.append(T(315, 172, "con trượt quay α/2", 12, "middle"))
     o.append(T(315, 188, "tiến tay, côn ngắn", 12, "middle"))
     o.append(T(315, 206, "góc côn bất kỳ", 12, "middle", c=BLUE))
     _ = a
     return fig(svg(216, "Tiện côn bằng dao lưỡi rộng và quay con trượt trên", o),
-               "Hình 2. Tiện côn ngắn. a) Lưỡi cắt đặt nghiêng đúng góc côn. b) Con trượt trên quay nửa góc côn α/2, dao tiến tay theo đường sinh.")
+               "Hình 2. Tiện côn ngắn. a) Lưỡi cắt nghiêng so với trục một góc α/2 (giáo trình gọi là đặt theo góc côn). b) Con trượt trên quay nửa góc côn α/2, dao tiến tay theo đường sinh.")
 
 
 # Hình 3: đánh lệch ụ động
 def fig_lech_u_dong():
     o = []
     o.append(Ln(12, 90, 408, 90, w=1, dash="6 4"))
-    o.append(T(14, 84, "tâm máy", 12))
+    o.append(T(44, 56, "nét đứt dài: tâm máy", 12))
     o.append(P([(40, 64), (380, 82), (380, 134), (40, 116)], WORK))
     o.append(Ln(40, 90, 380, 108, w=1, dash="2 3"))
     o.append(P([(22, 80), (40, 90), (22, 100)], TOOL))
@@ -156,11 +156,11 @@ def fig_lech_u_dong():
     o.append(P([(304, 36), (320, 36), (312, 70)], TOOL))
     o.append(Ar(290, 30, 160, 30))
     o.append(T(150, 24, "dao chạy dọc", 12, "end"))
-    o.append(Ln(366, 90, 412, 90, BLUE, 1.2))
-    o.append(Ln(366, 108, 412, 108, BLUE, 1.2))
-    o.append(Ar(408, 72, 408, 90, BLUE, 1.4))
-    o.append(Ar(408, 126, 408, 108, BLUE, 1.4))
-    o.append(T(400, 150, "h", 14, "middle", "700", BLUE))
+    o.append(Ln(402, 90, 418, 90, BLUE, 1.2))
+    o.append(Ln(402, 108, 418, 108, BLUE, 1.2))
+    o.append(Ar(413, 72, 413, 90, BLUE, 1.4))
+    o.append(Ar(413, 126, 413, 108, BLUE, 1.4))
+    o.append(T(410, 150, "h", 14, "middle", "700", BLUE))
     o.append(T(12, 176, "Ụ động lệch h, trục chi tiết nghiêng α/2", 13))
     o.append(T(12, 196, "Dao chạy song song băng máy → mặt côn dài", 13))
     o.append(T(12, 216, "Sổ tay: h = L(D − d) / (2l)", 13, w="700"))
@@ -184,10 +184,12 @@ def fig_thuoc_con():
                'fill="#64748b" fill-opacity="0.6" stroke="currentColor" stroke-width="1.4"'))
     o.append(Ln(260, 140, 260, yr(260) - 8, w=2.5))
     o.append(T(96, 214, "thước côn nghiêng α/2", 12, "middle", c=RED))
-    o.append(T(284, 134, "dao", 12))
+    o.append(T(284, 100, "dao", 12))
+    o.append(Ln(282, 97, 269, 104, w=1))
     o.append(T(284, 154, "con trượt ngang", 12))
+    o.append(Ln(282, 149, 277, 136, w=1))
     o.append(T(284, 170, "đã tháo vít", 12))
-    o.append(Ar(400, 228, 300, 228))
+    o.append(Ar(400, 228, 308, 228))
     o.append(T(296, 232, "xe dao chạy dọc", 12, "end"))
     o.append(T(12, 256, "Côn ≤ 10 ÷ 12°: hiệu quả và năng suất nhất", 13))
     o.append(T(12, 274, "Thay thước bằng dưỡng cong → tiện chép hình", 13))
@@ -212,8 +214,8 @@ def fig_dao_dinh_hinh():
     o.append(Ar(330, 186, 330, 136))
     o.append(T(336, 162, "tiến ngang", 12))
     o.append(T(230, 160, "dao định hình", 12, "middle"))
-    o.append(T(12, 206, "Prôfin lưỡi dao = prôfin chi tiết", 13, w="700"))
-    o.append(T(12, 226, "Lưỡi rộng ≤ 60 mm, mài lại prôfin không đổi", 13))
+    o.append(T(12, 206, "Prôfin lưỡi dao khớp ngược prôfin chi tiết", 13, w="700"))
+    o.append(T(12, 226, "Lưỡi thường ≤ 60 mm, mài lại prôfin không đổi", 13))
     o.append(T(12, 246, "Dao đắt: sản lượng lớn mới kinh tế", 13))
     return fig(svg(256, "Tiện mặt tròn xoay bằng dao định hình", o),
                "Hình 5. Dao định hình chỉ cần tiến ngang một lần là ra cả đoạn prôfin, quãng chạy dao ngắn hơn chép hình.")
