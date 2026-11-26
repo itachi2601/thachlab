@@ -55,7 +55,7 @@ exam = {
          "answer": 0,
          "explanation": "Lỗ đúc sẵn không khoan; khoét sửa đường tâm; doa bán tinh đạt cấp 8–7, Ra 1,6."},
         {"type": MC,
-         "question": "Lỗ bắt bulông trên phôi đặc chỉ cần cấp 13, Rz 30 µm. Bước gia công nào là đủ?",
+         "question": "Lỗ bắt bulông trên phôi đặc chỉ cần cấp 13, Rz 30 µm. Cách nào ít công nhất mà vẫn đạt yêu cầu?",
          "options": ["Khoan rồi doa tinh", "Khoét rồi mài lỗ", "Chỉ khoan", "Tiện tinh mỏng"],
          "answer": 2,
          "explanation": "Khoan đạt cấp 14–12, Rz 40–20; cấp 13, Rz 30 nằm trong khoảng đó."},
