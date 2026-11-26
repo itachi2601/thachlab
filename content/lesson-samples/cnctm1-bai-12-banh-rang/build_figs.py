@@ -82,21 +82,22 @@ def fig_khe_ho():
     # răng bánh 2 chen vào rãnh, tựa sườn trái, hở sườn phải 14
     lx = lambda y: 150 - (y - 50) * k
     rx = lambda y: 250 + (y - 50) * k - 14
-    o.append(P([(lx(70), 70), (rx(70), 70), (rx(170), 170), (lx(170), 170)], METAL + ' stroke="currentColor" stroke-width="1.4"'))
-    o.append(P([(40, 170), (380, 170), (380, 200), (40, 200)], METAL + ' stroke="currentColor" stroke-width="1.4"'))
-    o.append(T(210, 190, "bánh răng 2", 13, "middle", "700"))
+    o.append(P([(lx(70), 70), (rx(70), 70), (rx(140), 140), (lx(140), 140)], METAL + ' stroke="currentColor" stroke-width="1.4"'))
+    o.append(P([(40, 140), (380, 140), (380, 170), (40, 170)], METAL + ' stroke="currentColor" stroke-width="1.4"'))
+    o.append(T(210, 160, "bánh răng 2", 13, "middle", "700"))
     o.append(Ln(lx(72), 72, lx(118), 118, RED, 4))
-    o.append(T(130, 150, "sườn đang tiếp xúc", 12, "end", c=RED))
-    o.append(Ln(132, 146, 143, 112, RED, 1))
+    o.append(T(84, 96, "sườn", 12, "end", c=RED))
+    o.append(T(84, 112, "tiếp xúc", 12, "end", c=RED))
+    o.append(Ln(88, 100, lx(95) - 3, 95, RED, 1))
     y = 100
     o.append(Ar(222, y, rx(y) - 1, y, BLUE, 1.8))
     o.append(Ar(290, y, 250 + (y - 50) * k + 1, y, BLUE, 1.8))
-    o.append(Ln(rx(140), 140, 292, 150, BLUE, 1))
-    o.append(T(296, 154, "khe hở cạnh răng", 13, c=BLUE, w="700"))
-    o.append(T(12, 228, "4 dạng: A bằng 0, B nhỏ, C trung bình, D lớn", 13))
-    o.append(T(12, 248, "Khoảng cách tâm càng lớn, khe hở càng lớn", 13))
-    return fig(svg(258, "Khe hở cạnh răng giữa hai bánh răng ăn khớp", o),
-               "Hình 1. Khe hở cạnh răng: một sườn tiếp xúc, sườn kia để hở cho dầu bôi trơn và giãn nở nhiệt.")
+    o.append(Ln(rx(124) + 2, 124, 296, 130, BLUE, 1))
+    o.append(T(300, 134, "khe hở cạnh răng", 13, c=BLUE, w="700"))
+    o.append(T(12, 198, "4 dạng: A bằng 0, B nhỏ, C trung bình, D lớn", 13))
+    o.append(T(12, 218, "Khoảng cách tâm càng lớn, khe hở càng lớn", 13))
+    return fig(svg(228, "Khe hở cạnh răng giữa hai bánh răng ăn khớp", o),
+               "Hình 1. Khe hở cạnh răng: một sườn tiếp xúc, sườn kia để hở (thông lệ: chỗ cho dầu bôi trơn và giãn nở nhiệt).")
 
 
 # Hình 2: định hình và bao hình
@@ -122,19 +123,19 @@ def fig_dinh_hinh_bao_hinh():
     o.append(T(105, 274, "sau mỗi rãnh", 12, "middle"))
     # b) bao hình
     o.append(T(315, 18, "b) Bao hình (phay lăn)", 13, "middle", "700"))
-    o.append(Ln(226, 85, 404, 85, w=1, dash="6 4"))
-    o.append(P([(240, 62), (388, 62), (388, 108), (240, 108)], 'fill="#64748b" fill-opacity="0.4" stroke="currentColor" stroke-width="1.4"'))
+    o.append(Ln(226, 123, 404, 123, w=1, dash="6 4"))
+    o.append(P([(240, 100), (388, 100), (388, 146), (240, 146)], 'fill="#64748b" fill-opacity="0.4" stroke="currentColor" stroke-width="1.4"'))
     for x in range(244, 380, 14):
-        o.append(Ln(x, 108, x + 12, 62, RED, 1.6))
-    o.append(T(314, 50, "dao phay lăn", 12, "middle"))
-    o.append(Rot(396, 85, 7, 26, -70, 70))
+        o.append(Ln(x, 146, x + 12, 100, RED, 1.6))
+    o.append(T(314, 90, "dao phay lăn", 12, "middle"))
+    o.append(Rot(396, 123, 7, 26, -70, 70))
     teeth_row(235, 40, 5, o)
     o.append(P([(220, 200), (410, 200), (410, 218), (220, 218)], METAL + ' stroke="currentColor" stroke-width="1.3"'))
     o.append(Ar(260, 236, 370, 236))
     o.append(T(315, 256, "phôi quay ăn khớp liên tục", 12, "middle"))
     o.append(T(315, 274, "không cần phân độ", 12, "middle"))
     return fig(svg(284, "Gia công răng định hình và bao hình", o),
-               "Hình 2. a) Định hình: prôfin dao (đỏ) giống rãnh răng, cắt từng rãnh. b) Bao hình: dao phay lăn như trục vít, phôi như bánh vít.")
+               "Hình 2. a) Định hình: prôfin dao (đỏ) giống rãnh răng, cắt từng rãnh. b) Bao hình: dao phay lăn như trục vít, phôi như bánh vít. Vành răng phôi vẽ trải thẳng.")
 
 
 # Hình 3: bộ 8 dao phay mô-đun
@@ -149,7 +150,6 @@ def fig_bo_dao():
         o.append(P([(x, 36), (x + 46, 36), (x + 46, 76), (x, 76)], fill + ' stroke="currentColor" stroke-width="1.3"'))
         o.append(T(x + 23, 62, f"số {i + 1}", 13, "middle", "700"))
         o.append(T(x + 23, 96, r, 12, "middle"))
-    o.append(T(10, 116, "Z:", 12))
     for cx, s in ((138, "Z = 20 → dao số 3"), (330, "Z = 60 → dao số 7")):
         o.append(Ar(cx, 136, cx, 104))
         o.append(T(cx, 154, s, 13, "middle", "700", RED))
@@ -164,7 +164,7 @@ def fig_xoc_rang():
     o = []
     o.append(gear(120, 130, 82, 70, 24))
     o.append(f'<circle cx="120" cy="130" r="18" fill="none" stroke="currentColor" stroke-width="1.3"/>')
-    o.append(T(120, 112, "phôi", 13, "middle", "700"))
+    o.append(T(120, 104, "phôi", 13, "middle", "700"))
     o.append(Rot(120, 130, 42, 42, 20, 110))
     o.append(T(120, 192, "n phôi", 12, "middle", c=RED))
     o.append(gear(237, 130, 48, 36, 14, rot=180 + 180 / 14,
