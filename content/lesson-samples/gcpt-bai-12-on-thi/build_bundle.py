@@ -15,7 +15,7 @@ exam = {"title": "Kiểm tra nhanh — Ôn thi tự luận", "duration_minutes":
     {"type": MC, "question": "Bài chọn đúng WEDM, nêu đủ lý do, nhưng không nói vì sao không chọn phay hay laser. Thiếu phần nào của khung Chọn – Vì – Loại – Lưu?",
      "options": ["Chọn", "Vì", "Lưu", "Loại"], "answer": 3,
      "explanation": "Câu chọn công nghệ đòi nêu cả các công nghệ không chọn và lý do loại."},
-    {"type": MC, "question": "Tấm gốm đổi thành thép đã tôi, vẫn 20 lỗ vuông 3 × 3 mm. Công nghệ nào mở ra mà với gốm bị loại?",
+    {"type": MC, "question": "Tấm gốm đổi thành thép đã tôi, vẫn 20 lỗ vuông 3 × 3 mm. Công nghệ nào phù hợp nhất?",
      "options": ["Siêu âm", "EDM chìm với điện cực vuông", "Cắt plasma", "Tia nước"], "answer": 1,
      "explanation": "Thép dẫn điện nên nhóm phóng điện dùng được; điện cực vuông in lỗ vuông."},
 ]}
