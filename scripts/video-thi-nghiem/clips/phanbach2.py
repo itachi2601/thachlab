@@ -6,12 +6,15 @@
 # Day chuyen lan theo the he (ghim do lam do ghim ke ben, 4 huong), ghim duoi bia khong truyen. Mot lan tha moi muc
 # duoc ve (36, 12, 4 = lan 1 trong bang); so the he do random co dinh hat giong, khong in so the he len man.
 #
+# Dung lai 26/11/2026 theo KE-HOACH-CAI-TIEN-CLIP viec 4 lo 32: cong --do-chu, chu >= 56 px, <= 50 s, Du doan khong
+#   nut A-D (K10), canh Bay (hien_tuong_hay_sai[0]: thanh dieu khien "lam nguoi lo") + THU NGHI theo mau hatnhan3.
 # Hop Du doan (cho JSON khung) - "Đặt tấm bìa che 30 % rồi 60 % lưới. Số ghim đổ thay đổi thế nào?"
 #   A. Giảm theo đúng tỉ lệ phần bị che
 #   B. Gần như không đổi cho tới khi che kín
 #   C. Giảm mạnh, có mức che làm dây chuyền tắt sớm      <- ĐÁP ÁN
 #   D. Tăng lên vì bi chỉ rơi vào phần còn hở
 # Cau chot THU NGHI (vong 3): "Ghim cách 3 cm, che 30 %: lan, giữ hay tắt dần?" - goi y: "Nhớ bảng 3 cm ở thí nghiệm trước".
+#   (khung: KHONG con dong goi y chu tren man; hinh hai hang ghim 2 cm / 3 cm)
 #   Dap so: tắt dần - 3 cm chưa che đã k ≈ 1 (bảng bàn ghim phanbach-01 trong bài: 9 · 8 · 10 ghim), che thêm làm k < 1.
 #   Khong hoi "rut het thanh dieu khien" vi do la cau Nghi tiep ngay sau hop trong bai.
 from engine import *
@@ -83,49 +86,54 @@ def board(d, t, p, tl, cover_k=1.0, ball=True, show_fall=True):
         rr = lerp(40, 20, q); yy = lerp(y - 120, y - 6, ease(q))
         dot(d, x + 22, yy, rr, (170, 176, 190), NAVY); dot(d, x + 16, yy - 6, rr * 0.3, WHITE)
 
+DORANGE = (154, 52, 18); BROWN = (150, 118, 80); NOTE = (70, 75, 95)
+
+def pill(d, cx, cy, s, fill, alpha=1.0, size=56):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (cx - pw / 2, cy - 38, cx + pw / 2, cy + 38), fill=A(fill, alpha), r=36)
+    text(d, (cx, cy), s, size, WHITE, alpha=alpha)
+
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
+    card(d, (190, y, 890, y + 70), fill=A(LIGHT, a), r=35)
+    if q > 0: card(d, (190, y, 190 + max(70, 700 * q), y + 70), fill=A(col, a), r=35)
+
 def spacing_mark(d, a=1.0):
-    x0, _ = P(0, 0); x1, _ = P(0, 1); y = BOARD[1] - 26
-    d.line([(x0, y), (x1, y)], fill=A(MUTED, a), width=4)
-    for x in (x0, x1): d.line([(x, y - 12), (x, y + 12)], fill=A(MUTED, a), width=4)
-    text(d, (x1 + 16, y), "2 cm", 40, MUTED, anchor="lm", alpha=a)
+    x0, _ = P(0, 0); x1, _ = P(0, 1); y = BOARD[1] - 30
+    d.line([(x0, y), (x1, y)], fill=A(NOTE, a), width=4)
+    for x in (x0, x1): d.line([(x, y - 12), (x, y + 12)], fill=A(NOTE, a), width=4)
+    text(d, (x1 + 16, y), "2 cm", 56, NOTE, anchor="lm", alpha=a)
 
-def side(d, p_lbl, cnt, a=1.0, cnt_col=ORANGE):
-    """cot ben phai: muc che + bo dem ghim do"""
+def side(d, p_lbl, cnt, cnt_col=ORANGE):
     card(d, (780, 300, 1020, 560), fill=WHITE, outline=LIGHT, r=24, w=4)
-    text(d, (900, 352), "Che", 42, MUTED, bold=False)
-    text(d, (900, 460), p_lbl, 56, (150, 118, 80) if p_lbl != "0 %" else INK)
+    text(d, (900, 360), "Che", 56, NOTE)
+    text(d, (900, 470), p_lbl, 60, BROWN if p_lbl != "0 %" else INK)
     card(d, (780, 590, 1020, 972), fill=WHITE, outline=LIGHT, r=24, w=4)
-    text(d, (900, 642), "Đổ", 42, MUTED, bold=False)
-    text(d, (900, 760), cnt, 84, cnt_col)
-    text(d, (900, 880), "/ 49", 46, MUTED, bold=False)
+    text(d, (900, 650), "Đổ", 56, NOTE)
+    text(d, (900, 770), cnt, 84, cnt_col)
+    text(d, (900, 890), "/ 49", 56, NOTE)
 
-# ---------------- canh 1: mo bai + du doan ----------------
+# ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
-    IMG_REF[0] = img
     M = sc["M"]
     board(d, t, 0, -1, ball=False)
-    spacing_mark(d, appear(t, 0.3))
-    k = appear(t, M[1] - 0.5, 0.5)
-    if k <= 0: return
-    card(d, (60, 1010, 1020, 1420), fill=A(WHITE, k), outline=A(PURPLE, k), w=6)
-    text(d, (W / 2, 1062), "Dự đoán", 46, PURPLE, alpha=k)
-    ctext(d, 1170, "Lấy bìa che 30 % rồi 60 % lưới.\nSố ghim đổ sẽ ra sao?", 46, INK, alpha=k)
-    text(d, (W / 2, 1290), "Chọn đáp án ở khung câu hỏi", 40, MUTED, bold=False, alpha=k * appear(t, M[1] + 0.2))
-    t1, t2 = M[1] + 0.6, sc["T"] - 0.1; q = clamp((t - t1) / (t2 - t1))
-    d.rounded_rectangle([140, 1356, 940, 1370], radius=7, fill=A(LIGHT, k))
-    if q < 1: d.rounded_rectangle([140, 1356, 140 + 800 * (1 - q), 1370], radius=7, fill=A(PURPLE, k))
+    spacing_mark(d)
+    a = appear(t, M[1] - 0.2, 0.5)
+    if a <= 0: return
+    y0 = 1030 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 500), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 66, "DỰ ĐOÁN", PURPLE, a)
+    seg_bar(d, y0 + 130, t, M[1] + 0.3, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 300), "Bìa che 30 % rồi 60 % lưới.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 405), "Số ghim đổ thay đổi ra sao?", 60, PURPLE, alpha=a)
 
 # ---------------- canh 2: tha bi o ba muc che ----------------
 def do_plan(sc):
-    """moc (giay trong canh): tha bi (cham ghim dau) va luc hang bang hien, cho tung muc che"""
     M = sc["M"]
-    d0 = M[0] + 0.5
-    d30 = M[1] + 0.7                      # bia truot vao trong 0,5 s truoc do
-    d60 = d30 + NGEN[30] * GEN + 1.4
-    plan = []
-    for p, dt in ((0, d0), (30, d30), (60, d60)):
-        plan.append((p, dt, dt + NGEN[p] * GEN + 0.45))
-    return plan
+    d0 = 0.9
+    d30 = d0 + NGEN[0] * GEN + 1.9
+    d60 = d30 + NGEN[30] * GEN + 1.9
+    return [(p, dt, dt + NGEN[p] * GEN + 0.45) for p, dt in ((0, d0), (30, d30), (60, d60))]
 
 def do_state(t, sc):
     plan = do_plan(sc); cur = plan[0]
@@ -134,145 +142,116 @@ def do_state(t, sc):
     return cur, plan
 
 def s_do(img, d, t, sc):
-    IMG_REF[0] = img
     (p, dt, rt), plan = do_state(t, sc)
     ck = 1.0 if p == 0 else clamp((t - (dt - 0.75)) / 0.5)
     tl = t - dt
     board(d, t, p, tl, cover_k=ck)
     spacing_mark(d)
-    if p:
-        a = appear(t, dt - 0.75, 0.3)
-        x0, _ = P(0, min(COVER[p])); x1, _ = P(0, max(COVER[p]))
-        text(d, ((x0 + x1) / 2, BOARD[3] + 34), "bìa = vật hấp thụ", 40, (150, 118, 80), alpha=a)
-    side(d, "0 %" if p == 0 else f"≈ {p} %", "···" if tl < 0 else str(n_fallen(p, tl)), cnt_col=MUTED if tl < 0 else ORANGE)
-    # bang so lieu
-    card(d, (60, 1040, 1020, 1600), fill=WHITE, outline=NAVY, w=4)
-    xs = [190, 640]
-    text(d, (xs[0], 1094), "Che", 42, MUTED); text(d, (xs[1], 1094), "Đổ (3 lần)", 42, MUTED)
-    d.line([(90, 1130), (990, 1130)], fill=LIGHT, width=4)
+    side(d, "0 %" if p == 0 else f"≈ {p} %", "···" if tl < 0 else str(n_fallen(p, tl)), cnt_col=NOTE if tl < 0 else ORANGE)
+    card(d, (60, 1040, 1020, 1500), fill=WHITE, outline=NAVY, w=4)
+    xs = [220, 640]
+    text(d, (xs[0], 1100), "Che", 56, NOTE); text(d, (xs[1], 1100), "Đổ (3 lần)", 56, NOTE)
+    d.line([(90, 1145), (990, 1145)], fill=LIGHT, width=4)
     for i, (pp, three, _) in enumerate(ROWS):
-        a = appear(t, plan[i][2], 0.35)
+        a = 1.0 if i == 0 and t >= plan[0][2] else appear(t, plan[i][2], 0.35)
         if a <= 0: continue
-        y = 1186 + i * 84
-        if pp == p: d.rounded_rectangle([80, y - 36, 1000, y + 36], radius=14, fill=A((255, 237, 213), a))
-        text(d, (xs[0], y), f"{pp} %", 46, BLUE, alpha=a)
-        text(d, (xs[1], y), three, 46, INK, alpha=a)
-    text(d, (W / 2, 1500), "Mô hình định tính, số minh hoạ", 44, PURPLE)
+        y = 1215 + i * 95
+        if pp == p: d.rounded_rectangle([80, y - 42, 1000, y + 42], radius=14, fill=A((255, 237, 213), a))
+        text(d, (xs[0], y), f"{pp} %", 58, BLUE, alpha=a)
+        text(d, (xs[1], y), three, 58, INK, alpha=a)
 
-# ---------------- canh 3: dap an + k theo muc che ----------------
+# ---------------- canh 3: Dap an - k theo muc che ----------------
 def s_ans(img, d, t, sc):
-    IMG_REF[0] = img
-    M = sc["M"]; k = back((t - 0.2) / 0.5) if t > 0.2 else 0
-    card(d, (60, 250, 1020, 400), fill=(220, 252, 231), outline=GREEN, w=5)
-    ctext(d, 325, "ĐÁP ÁN · Giảm mạnh, có mức che tắt sớm", 46, GREEN, maxw=920, alpha=clamp(k))
-    # cot k
-    card(d, (60, 430, 1020, 1120), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 476), "k ước lượng", 42, MUTED)
-    yb, s = 960, 250                                 # day cot, px moi don vi k
-    d.line([(110, yb), (980, yb)], fill=NAVY, width=5)
-    k1 = appear(t, M[0] + 0.2)
-    for xx in range(110, 980, 30): d.line([(xx, yb - s), (xx + 16, yb - s)], fill=A(RED, k1), width=4)
-    text(d, (975, yb - s - 30), "k = 1", 40, RED, anchor="rm", alpha=k1)
-    lab = ["lan rộng", "giữ, không lan", "tắt dần"]
+    M = sc["M"]
+    pill(d, W / 2, 310, "ĐÁP ÁN: giảm mạnh", GREEN)
+    card(d, (40, 390, 1040, 1130), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (W / 2, 450), "k ước lượng", 56, NOTE)
+    yb, s = 960, 250
+    d.line([(90, yb), (990, yb)], fill=NAVY, width=5)
+    for xx in range(90, 990, 30): d.line([(xx, yb - s), (xx + 16, yb - s)], fill=RED, width=4)
+    text(d, (985, yb - s - 40), "k = 1", 56, RED, anchor="rm")
     for i, (pp, _, kv) in enumerate(ROWS):
-        cx = 240 + i * 300; g = ease((t - 0.4 - 0.25 * i) / 0.6)
-        text(d, (cx, yb + 40), f"che {pp} %", 40, MUTED, bold=False)
+        cx = 220 + i * 320; g = ease((t - 0.3 - 0.5 * i) / 0.8)
+        text(d, (cx, yb + 60), f"che {pp} %", 56, NOTE)
         if g <= 0: continue
         h = float(kv.replace(",", ".")) * s * g
-        if h > 2: d.rectangle([cx - 60, yb - h, cx + 60, yb], fill=(BLUE, ORANGE, GRAY)[i])
-        text(d, (cx, yb - h - 32), f"≈ {kv}", 44, INK, alpha=g)
-        text(d, (cx, yb + 92), lab[i], 42, (BLUE, ORANGE, MUTED)[i], alpha=appear(t, M[1] - 0.2 + 0.3 * i))
-    # co che: ban do mo hinh -> lo
-    a = appear(t, M[1] + 0.3)
-    if a <= 0: return
-    card(d, (60, 1160, 1020, 1400), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
-    for j, (l, r) in enumerate((("ghim đổ", "neutron"), ("tấm bìa", "thanh điều khiển"))):
-        aj = appear(t, M[1] + 0.3 + 0.5 * j); y = 1230 + j * 100
-        text(d, (330, y), l, 46, ORANGE, anchor="rm", alpha=aj)
-        text(d, (390, y), "↔", 46, MUTED, alpha=aj)
-        text(d, (450, y), r, 46, BLUE, anchor="lm", alpha=aj)
+        if h > 2: d.rectangle([cx - 70, yb - h, cx + 70, yb], fill=(BLUE, ORANGE, GRAY)[i])
+        text(d, (cx + (0 if i != 1 else 0), yb - h - 40 if i != 1 else yb - h + 40), kv, 58, INK if i != 1 else WHITE, alpha=g)
+    k2 = appear(t, M[1] + 0.3, 0.45)
+    if k2 > 0:
+        card(d, (40, 1180, 1040, 1420), fill=A((239, 246, 255), k2), outline=A(BLUE, k2), w=5)
+        text(d, (230, 1300), "bìa", 62, BROWN, alpha=k2)
+        arrow(d, (320, 1300), (470, 1300), A(INK, k2), w=8, head=26)
+        text(d, (750, 1300), "thanh điều khiển", 60, BLUE, alpha=k2)
+        pz = 0.5 + 0.5 * math.sin((t - M[1]) * 2 * math.pi / 1.2)
+        d.rounded_rectangle([60, 1200, 1020, 1400], radius=26, outline=A(BLUE, k2 * (0.2 + 0.8 * pz)), width=6)
 
-# ---------------- canh 4: chua noi duoc gi ----------------
-def s_lim(img, d, t, sc):
-    IMG_REF[0] = img
-    board(d, t, 60, 9, show_fall=True, ball=False)
-    b = appear(t, 0.3)
-    card(d, (60, 1030, 1020, 1560), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
-    text(d, (W / 2, 1100), "Chưa nói được", 48, PURPLE, alpha=b)
-    for j, s in enumerate(("• k thật của lò", "• vì sao bo hấp thụ tốt")):
-        text(d, (150, 1240 + j * 110), s, 48, INK, anchor="lm", alpha=appear(t, 0.6 + 0.6 * j))
-
-# ---------------- canh 5: bay ----------------
-TRAP = [("Thanh điều khiển làm nguội lò", "hấp thụ neutron, giảm k"),
-        ("Che ít: không ảnh hưởng", "che 30 %: còn 10–12 ghim"),
-        ("Giảm công suất = tắt lò", "k < 1 mới tắt")]
-def trap_t(i, sc):
-    r0 = 0.3 + 2.0 * i
-    return r0, r0 + 1.0, r0 + 1.3                   # hien cau sai, gach, hien cau dap
+# ---------------- canh 4: Bay - "thanh dieu khien lam nguoi lo" ----------------
 def s_trap(img, d, t, sc):
-    IMG_REF[0] = img
-    n = sum(1 for i in range(3) if t >= trap_t(i, sc)[0])
-    if n == 0: return
-    y1 = 300 + n * 300 + 20
-    card(d, (60, 300, 1020, y1), fill=(254, 242, 242), outline=RED, r=28, w=4)
-    for i in range(n):
-        r0, rs, ra = trap_t(i, sc); y = 390 + i * 300
-        a = appear(t, r0, 0.35)
-        f = F(46); wdt = tw(d, TRAP[i][0], f)
-        text(d, (W / 2, y), TRAP[i][0], 46, INK, alpha=a)
-        ks = clamp((t - rs) / 0.35)
-        if ks > 0:
-            x0 = W / 2 - wdt / 2 - 10
-            d.line([(x0, y + 6), (x0 + (wdt + 20) * ks, y + 6)], fill=RED, width=4)
-            text(d, (W / 2 - wdt / 2 - 50, y), "✗", 50, RED, alpha=ks)
-        kb = appear(t, ra, 0.35)
-        if kb > 0:
-            text(d, (W / 2, y + 100), "→ " + TRAP[i][1], 46, GREEN, alpha=kb)
+    M = sc["M"]; k1 = appear(t, 0.2, 0.4)
+    card(d, (40, 260, 1040, 1100), fill=A(WHITE, k1), outline=A(RED, k1), w=6)
+    pill(d, W / 2, 330, "BẪY", RED, k1)
+    text(d, (W / 2, 445), "“Thanh điều khiển làm nguội lò”?", 58, INK, alpha=k1)
+    # neutron bay tu trai sang, gap thanh thi bi nuot (bien mat) - lap lai
+    rx = 640
+    d.rounded_rectangle([rx - 30, 540, rx + 30, 900], radius=14, fill=A((90, 96, 112), k1))
+    for j in range(5):
+        y = 580 + j * 75; ph = ((t * 0.9 + j * 0.37) % 1.0)
+        x = 120 + ph * 640
+        if x < rx - 40: dot(d, x, y, 18, A(ORANGE, k1))
+        else:
+            q = clamp((x - rx + 40) / 60)
+            if q < 1: dot(d, rx - 40, y, 18 * (1 - q), A(ORANGE, k1))
+    text(d, (870, 720), "thanh", 56, NOTE, alpha=k1)
+    kv = appear(t, M[1] + 0.2, 0.4)
+    if kv > 0:
+        card(d, (340, 950, 740, 1060), fill=A((254, 226, 226), kv), outline=A(RED, kv), r=30, w=5)
+        text(d, (W / 2, 1005), "SAI", 72, RED, alpha=kv)
+    k3 = appear(t, M[2] + 0.2, 0.45)
+    if k3 > 0:
+        card(d, (40, 1150, 1040, 1330), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        text(d, (W / 2, 1240), "Hấp thụ neutron, k giảm", 62, NAVY, alpha=k3)
 
-# ---------------- canh 6: chot + thu nghi ----------------
+# ---------------- canh 5: Chot (phu de) + THU NGHI (= cau_chot khung web) ----------------
 def s_end(img, d, t, sc):
-    IMG_REF[0] = img
-    M = sc["M"]
-    def rows(d, t, k):                               # hai hang ghim: 2 cm (da thu) va 3 cm (ca moi), khong ghi dap so
-        ks = appear(t, M[0] + 0.8, 0.5) * k
-        if ks <= 0: return
-        for j, (sp, lb, col) in enumerate(((60, "2 cm", MUTED), (90, "3 cm ?", ORANGE))):
-            y = 1010 + j * 110
-            text(d, (150, y), lb, 44, col, anchor="lm", alpha=ks)
-            for n in range(int(600 / sp) + 1):
-                dot(d, 360 + n * sp, y, 13, A(NAVY, ks))
-    chot_hoi(d, t, sc, "Hấp thụ và hệ số k",
-             "Ghim cách 3 cm, che 30 %: lan, giữ hay tắt dần?", body=rows)
-    kh = appear(t, M[0] + 3.0, 0.5)                  # goi y tu ve, hien tre ~2,5 s
-    if kh <= 0: return
-    card(d, (110, 1330, 970, 1540), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-    text(d, (W / 2, 1385), "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1468, "Nhớ bảng 3 cm ở thí nghiệm trước", 44, INK, maxw=820, alpha=kh)
+    k1 = appear(t, 0.15, 0.4)
+    card(d, (40, 260, 1040, 1500), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, W / 2, 340, "THỬ NGHĨ", ORANGE, k1)
+    seg_bar(d, 420, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
+    text(d, (W / 2, 570), "Ghim cách 3 cm, che 30 %:", 60, INK, alpha=k1)
+    text(d, (W / 2, 665), "lan, giữ hay tắt dần?", 60, DORANGE, alpha=k1)
+    for j, (sp, lb, col) in enumerate(((60, "2 cm", NOTE), (90, "3 cm", ORANGE))):
+        y = 900 + j * 220
+        text(d, (110, y), lb, 60, col, anchor="lm", alpha=k1)
+        for n in range(int(600 / sp) + 1):
+            dot(d, 360 + n * sp, y, 16, A(NAVY, k1))
+        if j == 1: text(d, (W / 2, y + 110), "?", 80, ORANGE, alpha=k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, an, tr, e = sc["hook"], sc["do"], sc["ans"], sc["trap"], sc["end"]
-    cs = [(h["t0"] + h["M"][1] - 0.5, "open"), (h["t0"] + h["T"] - 0.1, "ding")]
+    cs = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
     for p, dt, rt in do_plan(do): cs.append((do["t0"] + dt, "tap"))
-    cs += [(an["t0"] + 0.2, "ding"), (tr["t0"] + 0.1, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    cs += [(an["t0"] + 0.2, "ding"), (tr["t0"] + 0.2, "buzz"), (e["t0"] + 0.15, "open")]
     return cs
 
+SCENES = [
+ dict(key="hook", title="Che bớt bàn ghim", draw=s_hook, tail=0.2, caps=[
+   ("Lưới 49 ghim, thả bi vào giữa.", 3.2),
+   ("Dừng lại, tự đoán.", 4.8)]),
+ dict(key="do", title="Thả bi ở ba mức che", draw=s_do, tail=0.4, caps=[
+   ("Thả bi, đếm số ghim đổ.", 3.6),
+   ("Bìa chặn đường lan của ghim.", 6.4)]),
+ dict(key="ans", title="Che càng nhiều, k càng nhỏ", draw=s_ans, tail=0.4, caps=[
+   ("k dưới 1: dây chuyền tắt.", 3.8),
+   ("Bìa đóng vai thanh điều khiển.", 3.8)]),
+ dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.4, caps=[
+   ("Đúng hay sai?", 2.8),
+   ("Thanh không làm nguội lò.", 3.2),
+   ("Nó nuốt neutron đang lan.", 3.2)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=2.8, caps=[
+   ("Hấp thụ hạt đang lan: k giảm.", 3.8)]),
+]
+
 CLIP = dict(id="tn-l12-phanbach-02", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
-    footer="Phân hạch và lò phản ứng · thachlab.id.vn", scenes=[
- dict(key="hook", title="Che bớt bàn ghim", draw=s_hook, tail=0.5, caps=[
-   "Thả bi vào giữa.",
-   ("Nghĩ trước khi xem.", 6.0)]),
- dict(key="do", title="Thả bi ở ba mức che", draw=s_do, tail=0.6, caps=[
-   "Thả bi, đếm số ghim đổ.",
-   ("Bìa chắn đường lan của ghim.", 5.6)]),
- dict(key="ans", title="Che càng nhiều, k càng nhỏ", draw=s_ans, tail=0.7, caps=[
-   ("k dưới 1: tắt dần.", 3.2),
-   ("Bìa nuốt ghim như thanh nuốt neutron.", 3.8)]),
- dict(key="lim", title="Giới hạn của mô hình", draw=s_lim, tail=0.5, caps=[
-   ("Chỉ là mô hình.", 4.2)]),
- dict(key="trap", title="Cái bẫy", draw=s_trap, tail=0.8, caps=[
-   ("Câu nào sai?", 5.4),
-   ("k so với 1.", 3.0)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Tự trả lời.", 6.6)]),
-])
+    footer="Phân hạch và lò phản ứng · thachlab.id.vn", scenes=SCENES)

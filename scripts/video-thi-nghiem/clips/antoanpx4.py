@@ -8,6 +8,7 @@
 #   B. Khoang 5,8 mSv  <- dung (ket_qua_ky_vong)
 #   C. Khoang 23 mSv (nham: nhan TONG 4 tuan voi 50 = 0,46 x 50; so nhieu tu loi tinh, khong phai so do)
 # Cau chot (ca moi, khong trung Du doan): moi tuan doc 0,5 mSv (tham_so L_tuan max = 0,5), 50 tuan -> 25 mSv > 20: vuot.
+# Dung lai 26/11/2026 (viec 4 lo 32): cong --do-chu, chu >= 56 px, <= 50 s; mot bay (#3: 20 mSv mot tuan), bo the goi y o canh chot.
 from engine import *
 
 WEEKS = [0.12, 0.09, 0.15, 0.10]           # so_lieu_mau (mSv)
@@ -16,48 +17,51 @@ NOTE = (70, 75, 95)
 TEAL_L = (204, 240, 236)
 def vn(x): return f"{x:.2f}".replace(".", ",")
 
-def badge(d, x, y, s=1.0, a=1.0, lab=None):
+DORANGE = (154, 52, 18)
+
+def pill(d, cx, cy, s, fill, alpha=1.0, size=56):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (cx - pw / 2, cy - 38, cx + pw / 2, cy + 38), fill=A(fill, alpha), r=36)
+    text(d, (cx, cy), s, size, WHITE, alpha=alpha)
+
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
+    card(d, (190, y, 890, y + 70), fill=A(LIGHT, a), r=35)
+    if q > 0: card(d, (190, y, 190 + max(70, 700 * q), y + 70), fill=A(col, a), r=35)
+
+def badge(d, x, y, s=1.0, a=1.0, glow=0.0):
     w, h = 70 * s, 92 * s
+    if glow > 0: d.rounded_rectangle([x - w - 14, y - h - 14, x + w + 14, y + h + 14], radius=int(24 * s), outline=A(ORANGE, glow), width=8)
     d.rounded_rectangle([x - w, y - h, x + w, y + h], radius=int(16 * s), fill=A(WHITE, a), outline=A(NAVY, a), width=5)
     d.rectangle([x - w + 10 * s, y - h + 14 * s, x + w - 10 * s, y - h + 50 * s], fill=A(TEAL, a))
     for k in range(3): dot(d, x - 34 * s + k * 34 * s, y + 22 * s, 13 * s, A((226, 214, 196), a), A(NAVY, a))
-    text(d, (x, y + 66 * s), "TLD", int(36 * s), NAVY, alpha=a)
-    if lab: text(d, (x, y - h - 34), lab, 44, NOTE, alpha=a)
 
-def person(d, x, y):
+def person(d, x, y, t=0.0):
     dot(d, x, y - 260, 70, (244, 214, 186), NAVY)
     d.rounded_rectangle([x - 130, y - 175, x + 130, y + 170], radius=60, fill=(147, 197, 253), outline=NAVY, width=5)
-    badge(d, x - 50, y - 70, 0.55)
+    badge(d, x - 50, y - 70, 0.55, glow=0.5 + 0.5 * math.sin(t * 4))
 
 # ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     M = sc["M"]
-    person(d, 260, 720)
-    card(d, (520, 300, 1020, 820), fill=WHITE, outline=LIGHT, r=28, w=4)
-    text(d, (770, 370), "Sổ ghi liều", 46, NOTE)
-    text(d, (770, 520), "4 tuần", 60, INK)
-    text(d, (770, 660), f"tổng {TONG} mSv", 54, TEAL)
-    a = appear(t, M[1] - 0.6, 0.5)
+    person(d, 260, 720, t)
+    card(d, (520, 330, 1020, 800), fill=WHITE, outline=LIGHT, r=28, w=4)
+    text(d, (770, 500), "4 tuần", 64, INK)
+    text(d, (770, 600), f"{TONG} mSv", 64, TEAL)
+    a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1010 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 430), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(40)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 26, W / 2 + pw / 2, y0 + 90), fill=A(PURPLE, a), r=32)
-    text(d, (W / 2, y0 + 58), "DỰ ĐOÁN", 40, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 175), "Làm như vậy 50 tuần.", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 290), "Liều năm khoảng bao nhiêu?", 50, INK, alpha=a)
-    tc, tend = M[1] + 0.3, sc["T"] - 0.2
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 370, 940, y0 + 384], radius=7, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 370, 140 + 800 * (1 - p), y0 + 384], radius=7, fill=A(PURPLE, a))
+    y0 = 1000 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 470), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 66, "DỰ ĐOÁN", PURPLE, a)
+    seg_bar(d, y0 + 130, t, M[1] + 0.3, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 290), "Làm vậy 50 tuần:", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 390), "liều năm bao nhiêu?", 62, PURPLE, alpha=a)
 
 # ---------------- canh 2: doc lieu ke tung tuan, ghi so ----------------
 SLIDE, READ = 0.5, 0.3
-def week_at(i, sc): return sc["M"][0] + 0.2 + i * 1.1
+def week_at(i, sc): return 2.0 + i * 1.1
 
 def do_state(t, sc):
-    """(tuan dang doc, muc truot, so tren may doc, so hang da ghi) -- may doc va bang doi cung moc."""
     wk, k, rd, n = -1, 0.0, "···", 0
     for i in range(4):
         s = week_at(i, sc)
@@ -67,167 +71,140 @@ def do_state(t, sc):
         else: rd = "···"
     return wk, k, rd, n
 
-ROW_Y0, ROW_H = 1150, 78
-BX0, BX1 = 470, 930                          # thanh ngang: 0 -> 0,20 mSv (truc tu 0)
+ROW_Y0, ROW_H = 1150, 88
+BX0, BX1 = 470, 930
 def s_do(img, d, t, sc):
     M = sc["M"]
     wk, k, rd, n = do_state(t, sc)
-    # may doc
     card(d, (500, 280, 1020, 760), fill=(226, 232, 240), outline=NAVY, r=28, w=5)
-    text(d, (760, 330), "Máy đọc liều", 44, NOTE)
-    d.rounded_rectangle([560, 370, 960, 490], radius=16, fill=NAVY)
-    text(d, (760, 430), f"{rd} mSv" if rd != "···" else rd, 62, (134, 239, 172))
-    d.rectangle([580, 560, 720, 590], fill=NAVY); d.rectangle([800, 560, 940, 590], fill=NAVY)       # hai khe
-    badge(d, 870, 650, 0.38)
-    text(d, (870, 728), "chuẩn", 44, NOTE)
-    # lieu ke cua tuan dang doc truot vao khe trai
+    text(d, (760, 335), "Máy đọc", 56, NOTE)
+    d.rounded_rectangle([560, 380, 960, 500], radius=16, fill=NAVY)
+    text(d, (760, 440), f"{rd} mSv" if rd != "···" else rd, 62, (134, 239, 172))
+    d.rectangle([600, 600, 920, 630], fill=NAVY)
     if wk >= 0:
-        x = lerp(250, 650, ease(k)); y = lerp(520, 650, ease(k))
-        badge(d, x, y, 0.38 if k > 0.6 else lerp(0.6, 0.38, (k / 0.6)))
-        text(d, (250, 360), f"tuần {wk + 1}", 52, INK)
-    ka = appear(t, 0.4, 0.4)
-    text(d, (W / 2, 850), "Trừ phông bằng liều kế chuẩn", 44, NOTE, bold=False, alpha=ka)
-    # bang so ghi lieu
-    card(d, (60, 960, 1020, 1600), fill=WHITE, outline=NAVY, w=4)
-    text(d, (180, 1020), "Tuần", 44, NOTE); text(d, (330, 1020), "mSv", 44, NOTE)
+        x = lerp(250, 760, ease(k)); y = lerp(560, 690, ease(k))
+        badge(d, x, y, lerp(0.8, 0.45, ease(k)))
+    else:
+        badge(d, 250, 560, 0.8, glow=0.5 + 0.5 * math.sin(t * 4))
+    card(d, (60, 960, 1020, 1640), fill=WHITE, outline=NAVY, w=4)
+    text(d, (180, 1025), "Tuần", 56, NOTE); text(d, (340, 1025), "mSv", 56, NOTE)
     for v, lb in ((0.0, "0"), (0.1, "0,1"), (0.2, "0,2")):
         x = BX0 + v / 0.2 * (BX1 - BX0)
-        d.line([(x, 1060), (x, ROW_Y0 + 4 * ROW_H - 40)], fill=(236, 230, 220), width=2)
-        text(d, (x, 1020), lb, 44, NOTE, bold=False)
-    d.line([(90, 1066), (990, 1066)], fill=LIGHT, width=4)
+        d.line([(x, 1070), (x, ROW_Y0 + 4 * ROW_H - 40)], fill=(236, 230, 220), width=2)
+        text(d, (x, 1025), lb, 56, NOTE)
+    d.line([(90, 1072), (990, 1072)], fill=LIGHT, width=4)
     for i in range(4):
         y = ROW_Y0 + i * ROW_H
         if i >= n: continue
         a = appear(t, week_at(i, sc) + SLIDE + READ, 0.3)
-        text(d, (180, y), str(i + 1), 46, INK, alpha=a)
-        text(d, (330, y), vn(WEEKS[i]), 46, INK, alpha=a)
+        text(d, (180, y), str(i + 1), 56, INK, alpha=a)
+        text(d, (340, y), vn(WEEKS[i]), 56, INK, alpha=a)
         x1 = BX0 + WEEKS[i] / 0.2 * (BX1 - BX0) * ease(a)
-        if x1 - BX0 > 2: d.rectangle([BX0, y - 22, x1, y + 22], fill=TEAL)
-    kt = appear(t, M[1] + 0.2, 0.4)
+        if x1 - BX0 > 2: d.rectangle([BX0, y - 24, x1, y + 24], fill=TEAL)
+    kt = appear(t, week_at(3, sc) + SLIDE + READ + 1.0, 0.4)
     if kt > 0:
-        y = ROW_Y0 + 4 * ROW_H + 16
-        d.line([(90, y - 44), (990, y - 44)], fill=A(NAVY, kt), width=4)
-        text(d, (180, y + 12), "Tổng", 46, TEAL, alpha=kt); text(d, (330, y + 12), TONG, 50, TEAL, alpha=kt)
+        y = ROW_Y0 + 4 * ROW_H + 20
+        d.line([(90, y - 48), (990, y - 48)], fill=A(NAVY, kt), width=4)
+        text(d, (180, y + 10), "Tổng", 56, TEAL, alpha=kt); text(d, (340, y + 10), TONG, 60, TEAL, alpha=kt)
 
 # ---------------- canh 3: Dap an: chia 4, nhan 50, so voi 20 ----------------
 def s_ans(img, d, t, sc):
-    M = sc["M"]
-    ka = appear(t, 0.3, 0.4)
-    s = f"ĐÁP ÁN · khoảng {NAM} mSv"
-    pw = tw(d, s, F(42)) + 56
-    card(d, (W / 2 - pw / 2, 236, W / 2 + pw / 2, 304), fill=A(NAVY, ka), r=32)
-    text(d, (W / 2, 270), s, 42, WHITE, alpha=ka)
-    card(d, (60, 330, 1020, 600), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (W / 2, 410), f"{TONG} : 4 = {TB} mSv/tuần", 50, INK, alpha=appear(t, 0.7, 0.4))
-    text(d, (W / 2, 520), f"{TB} × 50 ≈ {NAM} mSv/năm", 50, TEAL, alpha=appear(t, 2.0, 0.4))
-    # cot lieu nam, truc tu 0, vach gioi han 20
-    kc = appear(t, M[1] - 0.1, 0.4)
+    pill(d, W / 2, 290, f"ĐÁP ÁN: {NAM} mSv", NAVY)
+    card(d, (60, 360, 1020, 620), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (W / 2, 440), f"{TONG} : 4 = {TB}", 60, INK, alpha=appear(t, 1.6, 0.4))
+    text(d, (W / 2, 550), f"{TB} × 50 ≈ {NAM} mSv/năm", 58, TEAL, alpha=appear(t, 3.8, 0.4))
+    kc = appear(t, 6.0, 0.4)
     if kc <= 0: return
-    card(d, (60, 640, 1020, 1600), fill=A(WHITE, kc), outline=A(LIGHT, kc), w=3)
-    yb, yt = 1480, 800; Y = lambda v: yb - v / 25 * (yb - yt)
-    d.line([(230, yb), (960, yb)], fill=A(NAVY, kc), width=5); d.line([(230, yb), (230, yt - 30)], fill=A(NAVY, kc), width=5)
-    text(d, (250, 710), "mSv/năm", 44, NOTE, bold=False, anchor="lm", alpha=kc)
-    for v in (0, 5, 10, 15, 20, 25):
-        d.line([(220, Y(v)), (230, Y(v))], fill=A(NAVY, kc), width=4)
-        text(d, (205, Y(v)), str(v), 44, NOTE, bold=False, anchor="rm", alpha=kc)
-    gh = appear(t, M[1] + 0.2, 0.4)
-    for xx in range(240, 950, 28): d.line([(xx, Y(GH)), (min(xx + 16, 950), Y(GH))], fill=A(RED, gh), width=6)
-    text(d, (950, Y(GH) - 36), "giới hạn nghề nghiệp", 44, RED, anchor="rm", alpha=gh)
-    g = ease((t - M[1] - 0.6) / 0.6)
+    card(d, (60, 660, 1020, 1560), fill=A(WHITE, kc), outline=A(LIGHT, kc), w=3)
+    yb, yt = 1460, 820; Y = lambda v: yb - v / 25 * (yb - yt)
+    d.line([(160, yb), (960, yb)], fill=A(NAVY, kc), width=5); d.line([(160, yb), (160, yt - 30)], fill=A(NAVY, kc), width=5)
+    for xx in range(170, 950, 28): d.line([(xx, Y(GH)), (min(xx + 16, 950), Y(GH))], fill=A(RED, kc), width=6)
+    text(d, (950, Y(GH) - 44), "giới hạn 20", 56, RED, anchor="rm", alpha=kc)
+    g = ease((t - 6.3) / 0.6)
     if g > 0:
         top = yb - (yb - Y(5.75)) * g
-        if yb - top > 2: d.rectangle([420, top, 580, yb], fill=TEAL)
-        text(d, (500, top - 34), f"{NAM}", 48, TEAL, alpha=clamp(g * 2 - 1))
+        if yb - top > 2: d.rectangle([300, top, 460, yb], fill=TEAL)
+        text(d, (380, top - 40), NAM, 60, TEAL, alpha=clamp(g * 2 - 1))
 
 # ---------------- canh 4: rut ra + chua noi duoc gi ----------------
 def s_why(img, d, t, sc):
     M = sc["M"]
     a = appear(t, 0.2, 0.4)
-    card(d, (60, 260, 1020, 700), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
-    badge(d, 200, 470, 0.8, a)
-    text(d, (330, 400), "Liều phải đo và ghi sổ,", 48, INK, anchor="lm", alpha=a)
-    text(d, (330, 480), "không đoán.", 48, INK, anchor="lm", alpha=a)
+    card(d, (60, 260, 1020, 640), fill=A(WHITE, a), outline=A(BLUE, a), w=5)
+    badge(d, 190, 450, 0.8, a, glow=a * (0.5 + 0.5 * math.sin(t * 4)))
+    text(d, (620, 400), "Đo bằng liều kế,", 58, INK, alpha=a)
+    text(d, (620, 490), "ghi sổ", 58, INK, alpha=a)
     b = appear(t, M[1] - 0.1, 0.4)
     if b <= 0: return
-    card(d, (60, 750, 1020, 1120), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
-    text(d, (W / 2, 815), "Chưa nói được gì?", 48, PURPLE, alpha=b)
-    text(d, (120, 930), "• Có tuần gặp sự cố?", 46, INK, anchor="lm", alpha=b)
-    text(d, (120, 1040), "• Liều ở tay, ở mắt?", 46, INK, anchor="lm", alpha=appear(t, M[1] + 1.4, 0.4))
+    card(d, (60, 700, 1020, 1120), fill=A(WHITE, b), outline=A(PURPLE, b), w=5)
+    text(d, (W / 2, 820), "Tuần có sự cố?", 58, INK, alpha=b)
+    text(d, (W / 2, 990), "Liều ở tay, mắt?", 58, INK, alpha=appear(t, M[1] + 1.9, 0.4))
 
-# ---------------- canh 5: bay ----------------
-def quote(d, y, q, ks, a):
-    f = F(46); lw = tw(d, q, f)
-    text(d, (W / 2, y), q, 46, mix(INK, GRAY, ks), alpha=a)
-    if ks > 0: d.line([(W / 2 - lw / 2 - 6, y + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, y + 2)], fill=A(RED, 0.85), width=6)
-
+# ---------------- canh 5: bay "mot tuan 20 mSv cung khong sao" ----------------
 def s_bay(img, d, t, sc):
-    M = sc["M"]; m1, m2 = M[0] + 2.4, M[1] - 0.2
-    a1 = appear(t, 0.2, 0.4)
-    card(d, (40, 250, 1040, 620), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
-    pw = tw(d, "BẪY 1", F(40)) + 52
-    card(d, (W / 2 - pw / 2, 276, W / 2 + pw / 2, 340), fill=A(RED, a1), r=32)
-    text(d, (W / 2, 308), "BẪY 1", 40, WHITE, alpha=a1)
-    quote(d, 430, f"“{TONG} mSv là liều cả năm”", clamp((t - m1) / 0.4), a1)
-    text(d, (W / 2, 540), "Mới 4 tuần", 48, GREEN, alpha=appear(t, m1 + 0.2, 0.4))
-    a2 = appear(t, m1 + 0.7, 0.4)
-    card(d, (40, 660, 1040, 1520), fill=A(WHITE, a2), outline=A(RED, a2), w=6)
-    pw = tw(d, "BẪY 2", F(40)) + 52
-    card(d, (W / 2 - pw / 2, 686, W / 2 + pw / 2, 750), fill=A(RED, a2), r=32)
-    text(d, (W / 2, 718), "BẪY 2", 40, WHITE, alpha=a2)
-    quote(d, 840, "“Một tuần 20 mSv cũng không sao”", clamp((t - m2) / 0.4), a2)
-    kb = appear(t, m2 + 0.2, 0.45)
-    if kb > 0:
-        yb, yt = 1330, 960; Y = lambda v: yb - v / 25 * (yb - yt)
-        d.line([(200, yb), (900, yb)], fill=A(NAVY, kb), width=5)
-        for xx in range(200, 900, 28): d.line([(xx, Y(GH)), (min(xx + 16, 900), Y(GH))], fill=A(RED, kb), width=6)
-        text(d, (900, Y(GH) - 34), "20 mSv/năm", 44, RED, anchor="rm", alpha=kb)
-        g = ease((t - m2 - 0.5) / 0.6)
-        if g > 0 and (yb - Y(GH)) * g > 2: d.rectangle([300, yb - (yb - Y(GH)) * g, 420, yb], fill=RED)
-        text(d, (360, yb + 42), "1 tuần", 44, NOTE, bold=False, alpha=kb)
-        text(d, (W / 2, 1450), "Hết hạn mức năm", 48, GREEN, alpha=appear(t, m2 + 1.3, 0.4))
-
-# ---------------- canh 6: chot + cau hoi tu nho lai ----------------
-def _end_body(d, t, k):
-    for i in range(50):                         # 50 o = 50 tuan lam viec
-        x = 190 + (i % 10) * 72; y = 1010 + (i // 10) * 52
-        d.rounded_rectangle([x, y, x + 56, y + 38], radius=8, fill=A(TEAL_L, k), outline=A(TEAL, k), width=3)
-
-def s_end(img, d, t, sc):
     M = sc["M"]
-    chot_hoi(d, t, sc, "Đo liều, cộng dồn, so giới hạn năm",
-             "Mỗi tuần 0,5 mSv, làm 50 tuần:\ncó vượt 20 mSv/năm không?", None, body=_end_body)
-    kh = appear(t, M[0] + 2.6, 0.5)
-    if kh > 0:
-        card(d, (110, 1300, 970, 1530), fill=A((255, 247, 237), kh), outline=A(ORANGE, kh), r=24, w=4)
-        ctext(d, 1360, "Gợi ý", 44, INK, alpha=kh)
-        ctext(d, 1450, "Mỗi ô là một tuần", 46, (176, 64, 8), maxw=820, alpha=kh)
+    a1 = appear(t, 0.2, 0.4)
+    card(d, (40, 250, 1040, 560), fill=A(WHITE, a1), outline=A(RED, a1), w=6)
+    pill(d, W / 2, 320, "BẪY", RED, a1)
+    text(d, (W / 2, 420), "“Một tuần 20 mSv", 60, INK, alpha=a1)
+    text(d, (W / 2, 500), "cũng không sao”?", 60, INK, alpha=a1)
+    kb = appear(t, 2.6, 0.45)
+    if kb <= 0: return
+    card(d, (40, 600, 1040, 1420), fill=A(WHITE, kb), outline=A(LIGHT, kb), w=3)
+    yb, yt = 1290, 760; Y = lambda v: yb - v / 25 * (yb - yt)
+    d.line([(160, yb), (960, yb)], fill=A(NAVY, kb), width=5)
+    for xx in range(170, 950, 28): d.line([(xx, Y(GH)), (min(xx + 16, 950), Y(GH))], fill=A(RED, kb), width=6)
+    text(d, (950, Y(GH) - 44), "20 mSv/năm", 56, RED, anchor="rm", alpha=kb)
+    g = ease((t - 3.0) / 0.6)
+    if g > 0:
+        pulse = 0.5 + 0.5 * math.sin(t * 5)
+        d.rectangle([260, yb - (yb - Y(GH)) * g, 420, yb], fill=mix(RED, (252, 165, 165), pulse * 0.6))
+        top = yb - (yb - Y(5.75)) * g
+        d.rectangle([620, top, 780, yb], fill=TEAL)
+        text(d, (700, top - 40), NAM, 60, TEAL, alpha=clamp(g * 2 - 1))
+    text(d, (340, yb + 60), "1 tuần", 56, NOTE, alpha=kb)
+    text(d, (700, yb + 60), "cả năm", 56, NOTE, alpha=kb)
+
+# ---------------- canh 6: Chot (phu de) + THU NGHI (= cau_chot khung web) ----------------
+def s_end(img, d, t, sc):
+    k1 = appear(t, 0.15, 0.4)
+    card(d, (40, 260, 1040, 1450), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, W / 2, 340, "THỬ NGHĨ", ORANGE, k1)
+    seg_bar(d, 420, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
+    text(d, (W / 2, 570), "Mỗi tuần 0,5 mSv, 50 tuần:", 60, INK, alpha=k1)
+    text(d, (W / 2, 665), "vượt 20 mSv/năm không?", 60, DORANGE, alpha=k1)
+    nf = int(clamp((t - 0.8) / 4.0) * 50)                # 50 o = 50 tuan, to dan
+    for i in range(50):
+        x = 190 + (i % 10) * 72; y = 860 + (i // 10) * 90
+        d.rounded_rectangle([x, y, x + 56, y + 60], radius=8, fill=A(TEAL if i < nf else TEAL_L, k1), outline=A(TEAL, k1), width=3)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
-    h, do, an, wy, b, e = sc["hook"], sc["do"], sc["ans"], sc["why"], sc["bay"], sc["end"]
-    out = [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.1, "ding")]
+    h, do, an, b, e = sc["hook"], sc["do"], sc["ans"], sc["bay"], sc["end"]
+    out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
     out += [(do["t0"] + week_at(i, do) + SLIDE + READ, "tap") for i in range(4)]
-    out += [(an["t0"] + 0.3, "ding"), (wy["t0"] + wy["M"][1] - 0.1, "tap"),
-            (b["t0"] + b["M"][0] + 2.4, "buzz"), (b["t0"] + b["M"][1] - 0.2, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    out += [(an["t0"] + 0.2, "ding"), (b["t0"] + 0.2, "buzz"), (e["t0"] + 0.15, "open")]
     return out
 
-CLIP = dict(id="tn-l12-antoanpx-04", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
-    footer="An toàn phóng xạ · thachlab.id.vn", scenes=[
- dict(key="hook", title="Liều kế cá nhân", draw=s_hook, tail=0.3, caps=[
-   ("Kỹ thuật viên đeo liều kế ở ngực.", 2.9),
-   ("Chọn đáp án ở khung câu hỏi.", 5.4)]),
+SCENES = [
+ dict(key="hook", title="Liều kế cá nhân", draw=s_hook, tail=0.2, caps=[
+   ("Liều kế đeo ở ngực.", 3.4),
+   ("Dừng lại, tự đoán.", 4.8)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.4, caps=[
-   ("Mỗi tuần gửi đọc một liều kế.", 4.6),
-   ("Cộng bốn tuần vào sổ.", 2.9)]),
- dict(key="ans", title="Kết quả", draw=s_ans, tail=0.5, caps=[
-   ("Chia 4 tuần, rồi nhân 50.", 3.4),
-   ("So với vạch giới hạn.", 3.4)]),
- dict(key="why", title="Rút ra", draw=s_why, tail=0.4, caps=[
-   ("Liều kế cho số thật.", 3.0),
-   ("Chưa trả lời được.", 3.6)]),
+   ("Mỗi tuần đọc một liều kế.", 4.6),
+   ("Cộng bốn tuần vào sổ.", 3.2)]),
+ dict(key="ans", title="Kết quả", draw=s_ans, tail=0.4, caps=[
+   ("Chia 4, rồi nhân 50 tuần.", 3.8),
+   ("Dưới vạch giới hạn năm.", 3.8)]),
+ dict(key="why", title="Rút ra", draw=s_why, tail=0.2, caps=[
+   ("Liều kế cho số thật.", 3.4),
+   ("Hai điều chưa biết:", 3.8)]),
  dict(key="bay", title="Cái bẫy", draw=s_bay, tail=0.4, caps=[
-   ("Đúng hay sai?", 5.4),
-   ("Cả hai đều sai.", 3.0)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=0.5, caps=[
-   ("Dừng video và trả lời.", 6.0)]),
-])
+   ("Đúng hay sai?", 2.8),
+   ("Sai: hết hạn mức cả năm.", 4.4)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=2.8, caps=[
+   ("Cộng dồn rồi so giới hạn.", 3.8)]),
+]
+
+CLIP = dict(id="tn-l12-antoanpx-04", header="VẬT LÍ 12 · THÍ NGHIỆM", cues=_cues,
+    footer="An toàn phóng xạ · thachlab.id.vn", scenes=SCENES)

@@ -2,7 +2,7 @@
   "id": "tn-l12-antoanpx-04",
   "ten": "Đọc liều kế cá nhân 4 tuần, ước liều năm",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-antoanpx-04-20261114.mp4",
-  "tong_giay": 49.4,
+  "tong_giay": 48.6,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 3.8,
       "chu": "Đeo 4 tuần, tổng 0,46 mSv. Làm như vậy 50 tuần, liều năm khoảng bao nhiêu?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.9,
+      "giay": 8.8,
       "chu": "Liều kế TLD đeo ngực, máy đọc, liều kế chuẩn."
     },
     {
       "khoa": "quan_sat",
-      "giay": 14.9,
+      "giay": 13.8,
       "chu": "Bốn tuần: 0,12; 0,09; 0,15; 0,10 mSv. Tổng 0,46 mSv."
     },
     {
       "khoa": "rut_ra",
-      "giay": 18.6,
+      "giay": 17.4,
       "chu": "0,46 : 4 = 0,115 mSv/tuần; × 50 tuần ≈ 5,8 mSv/năm, dưới giới hạn 20 mSv/năm."
     },
     {
       "khoa": "chua_noi",
-      "giay": 29.3,
+      "giay": 29.6,
       "chu": "Dự báo giả sử công việc giữ nguyên; tuần có sự cố làm số thật khác hẳn.\nLiều ở tay, ở mắt chưa đo."
     }
   ],
   "dung_dua": {
-    "giay": 9.7,
+    "giay": 8.7,
     "cau_hoi": "Kỹ thuật viên đeo liều kế 4 tuần, tổng 0,46 mSv. Làm như vậy suốt 50 tuần, liều năm khoảng bao nhiêu?",
     "chon": [
       "A. Khoảng 0,46 mSv",
@@ -47,5 +47,22 @@
     "dung": 1,
     "giai_thich_dung": "Trung bình 0,46 : 4 = 0,115 mSv/tuần; nhân 50 tuần được khoảng 5,8 mSv, dưới giới hạn 20 mSv/năm.",
     "giai_thich_sai": "0,46 mSv chỉ là 4 tuần, chưa phải cả năm. Phải lấy liều một tuần (0,115 mSv) nhân 50, không nhân tổng 4 tuần."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Một kỹ thuật viên khác đọc được 0,5 mSv mỗi tuần, làm việc 50 tuần trong năm. Liều năm có vượt giới hạn 20 mSv/năm không?",
+    "chon": [
+      "A. Không, khoảng 2,5 mSv",
+      "B. Không, khoảng 10 mSv",
+      "C. Không, vừa đúng 20 mSv",
+      "D. Có, khoảng 25 mSv"
+    ],
+    "dung": 3,
+    "giai_thich": [
+      "2,5 mSv là lấy 0,5 nhân 5, không phải 50 tuần.",
+      "10 mSv ứng với 0,2 mSv mỗi tuần; ở đây mỗi tuần 0,5 mSv.",
+      "Muốn vừa đúng 20 mSv thì mỗi tuần chỉ được 0,4 mSv.",
+      "0,5 × 50 = 25 mSv, lớn hơn 20 mSv/năm: phải giảm thời gian gần nguồn hoặc tăng che chắn."
+    ]
   }
 }

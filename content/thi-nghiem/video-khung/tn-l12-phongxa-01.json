@@ -2,7 +2,7 @@
   "id": "tn-l12-phongxa-01",
   "ten": "Đếm xung một nguồn phóng xạ năm lần liền",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phongxa-01-20261114.mp4",
-  "tong_giay": 49.9,
+  "tong_giay": 48.7,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 3.3,
+      "giay": 3.4,
       "chu": "Đếm 5 lần, mỗi lần 1 phút. Năm số đếm sẽ thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.2,
+      "giay": 8.4,
       "chu": "Nguồn cách ống Geiger 10 cm, đếm mỗi lần 1 phút."
     },
     {
       "khoa": "quan_sat",
-      "giay": 18.8,
+      "giay": 17.9,
       "chu": "Năm số khác nhau, quanh 506; phông nền 23."
     },
     {
       "khoa": "rut_ra",
-      "giay": 22.2,
-      "chu": "Một lần đếm lệch cỡ ±20 ≈ √N (≈ 4 %); trung bình 5 lần chỉ lệch cỡ ±10."
+      "giay": 21.3,
+      "chu": "Một lần đếm lệch cỡ ±20 ≈ √N, tức cỡ 1/25; trung bình 5 lần chỉ lệch cỡ ±10."
     },
     {
       "khoa": "chua_noi",
-      "giay": 30.0,
+      "giay": 29.1,
       "chu": "Chưa biết nguồn có yếu dần theo thời gian không.\nChưa biết nguồn phát tia α, β hay γ."
     }
   ],
   "dung_dua": {
-    "giay": 9.1,
+    "giay": 8.3,
     "cau_hoi": "Nguồn cách ống Geiger 10 cm, đếm 5 lần, mỗi lần 1 phút. Năm số đếm sẽ thế nào?",
     "chon": [
       "A. Bằng nhau, vì nguồn không đổi",
@@ -47,5 +47,22 @@
     "dung": 2,
     "giai_thich_dung": "Năm số 512, 486, 531, 497, 505 khác nhau, quanh 506. Từng phút phân rã ngẫu nhiên, lệch cỡ √N ≈ 20; trung bình nhiều lần mới đặc trưng cho nguồn.",
     "giai_thich_sai": "Phân rã là ngẫu nhiên nên năm phút không cho cùng một số; 5 phút cũng quá ngắn để thấy nguồn yếu dần. Số đếm dao động quanh 506."
+  },
+  "cau_chot": {
+    "giay": 43.0,
+    "cau_hoi": "Đếm mỗi lần 4 phút (khoảng 2000 xung) thay vì 1 phút (lệch khoảng 4 %). Độ lệch tương đối giờ cỡ bao nhiêu?",
+    "chon": [
+      "A. Lớn gấp 4 lần, khoảng 16 %",
+      "B. Vẫn như cũ, khoảng 4 %",
+      "C. Nhỏ đi một nửa, khoảng 2 %",
+      "D. Nhỏ đi 4 lần, khoảng 1 %"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Đếm lâu hơn thì N lớn hơn, độ lệch tương đối nhỏ đi chứ không lớn lên.",
+      "Độ lệch tương đối là √N/N = 1/√N, nên đổi khi N đổi: N gấp 4 thì nó đổi.",
+      "N ≈ 2000, độ lệch ≈ √2000 ≈ 45, tức 45/2000 ≈ 2 %: N gấp 4 thì 1/√N chỉ giảm một nửa.",
+      "Độ lệch tuyệt đối √N còn tăng (20 → 45), nên tỉ lệ chỉ giảm theo √4 = 2 chứ không phải 4."
+    ]
   }
 }

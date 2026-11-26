@@ -2,43 +2,43 @@
   "id": "tn-l12-hatnhan-01",
   "ten": "Bắn bi qua tấm che: bi ra theo hướng nào?",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-hatnhan-01-20261112-2.mp4",
-  "tong_giay": 51.7,
+  "tong_giay": 49.8,
   "o": [
     {
       "khoa": "gia_thuyet",
       "giay": 0,
       "chu": "Chùm bi bị lệch cho biết có vật nhỏ, cứng khuất bên trong, như Rutherford với hạt nhân.",
-      "kiem": "Bi lăn 60 lượt qua tấm che: hướng ra đổi không?"
+      "kiem": "Bi qua tấm che: hướng ra có đổi không?"
     },
     {
       "khoa": "du_doan",
-      "giay": 4.2,
+      "giay": 3.4,
       "chu": "Bi 10 mm lăn 60 lượt qua vùng rộng 20 cm có tấm che. Hướng bi đi ra thế nào?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 10.8,
+      "giay": 8.9,
       "chu": "Bi thép 10 mm lăn 60 lượt, ghi hướng vào và ra. Đinh nhỏ dưới tấm bìa che; bi lăn lọt dưới bìa."
     },
     {
       "khoa": "quan_sat",
-      "giay": 20.7,
-      "chu": "57 lượt đi thẳng, 3 lượt lệch mạnh (0,05)."
+      "giay": 18.2,
+      "chu": "57 lượt đi thẳng, 3 lượt lệch mạnh (tỉ lệ 0,05). Nhấc tấm che: một chiếc đinh 2 mm."
     },
     {
       "khoa": "rut_ra",
-      "giay": 26.6,
-      "chu": "Hạt alpha bật ngược: hạt nhân rất nhỏ, nặng, mang điện dương."
+      "giay": 25.8,
+      "chu": "Chỉ 3/60 lượt lệch: vật chắn rất hẹp. Lá vàng: alpha bật ngược hiếm, hạt nhân rất nhỏ."
     },
     {
       "khoa": "chua_noi",
-      "giay": 36.6,
-      "chu": "Bi va chạm cứng. Tỉ lệ lệch còn phụ thuộc cỡ vật chắn."
+      "giay": 39.3,
+      "chu": "Bi phải chạm đinh mới lệch; alpha bị đẩy từ xa bởi lực điện."
     }
   ],
   "dung_dua": {
-    "giay": 10.45,
-    "cau_hoi": "Bi 10 mm lăn 60 lượt qua vùng rộng 20 cm, dưới tấm che có một chiếc đinh 2 mm. Hướng bi đi ra thế nào?",
+    "giay": 8.75,
+    "cau_hoi": "Bi 10 mm lăn 60 lượt qua vùng rộng 20 cm, giữa đường có tấm che. Hướng bi đi ra thế nào?",
     "chon": [
       "A. Lượt nào cũng lệch nhẹ",
       "B. Khoảng nửa số lượt lệch",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Đinh 2 mm chỉ chắn một dải hẹp của vùng 20 cm, nên phần lớn bi đi thẳng qua; chỉ vài lượt trúng đinh mới bật lệch mạnh.",
     "giai_thich_sai": "Đinh rất nhỏ so với vùng lăn. Nghĩ xem bao nhiêu phần bề rộng bị chắn, rồi xem 60 lượt trong video."
+  },
+  "cau_chot": {
+    "giay": 44.6,
+    "cau_hoi": "Đinh 4 mm, bi 10 mm, 60 lượt. Nới vùng lăn từ 20 cm lên 40 cm. Tỉ lệ lượt bi lệch thay đổi thế nào?",
+    "chon": [
+      "A. Tăng gấp đôi, khoảng 0,13",
+      "B. Giữ nguyên, khoảng 0,07",
+      "C. Giảm một nửa, khoảng 0,03",
+      "D. Về 0, không lượt nào lệch"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Vùng rộng hơn thì đinh chắn phần nhỏ hơn của bề rộng, nên tỉ lệ lệch không thể tăng.",
+      "Đinh giữ nguyên cỡ nhưng vùng lăn rộng gấp đôi, nên phần bề rộng bị chắn không còn như cũ.",
+      "Dải bị chắn vẫn hẹp như cũ, vùng lăn rộng gấp đôi: tỉ lệ còn một nửa, khoảng 2/60 lượt.",
+      "Đinh vẫn nằm trên đường lăn, nên vẫn có vài lượt trúng; tỉ lệ chỉ giảm, không về 0."
+    ]
   }
 }

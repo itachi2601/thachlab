@@ -2,7 +2,7 @@
   "id": "tn-l12-phanbach-02",
   "ten": "Che dần bàn ghim: dây chuyền thay đổi thế nào?",
   "video": "https://jgvbdbpvjdntdgzthumv.supabase.co/storage/v1/object/public/lesson-clips/clip/tn-l12-phanbach-02-20261114.mp4",
-  "tong_giay": 49.7,
+  "tong_giay": 45.4,
   "o": [
     {
       "khoa": "gia_thuyet",
@@ -12,32 +12,32 @@
     },
     {
       "khoa": "du_doan",
-      "giay": 2.9,
-      "chu": "Lấy bìa che 30 % rồi 60 % lưới ghim. Số ghim đổ sẽ ra sao?"
+      "giay": 4.2,
+      "chu": "Bìa che 3/10 rồi 6/10 lưới ghim. Số ghim đổ thay đổi ra sao?"
     },
     {
       "khoa": "dung_cu",
-      "giay": 9.8,
-      "chu": "Bàn ghim 7 × 7; bìa che bớt lưới."
+      "giay": 9.2,
+      "chu": "Bàn ghim 7 × 7 cách 2 cm; bìa che bớt lưới."
     },
     {
       "khoa": "quan_sat",
       "giay": 13.2,
-      "chu": "Che 0 %: 36 · 34 · 37 ghim. Che 30 %: 12 · 10 · 11. Che 60 %: 4 · 5 · 3."
+      "chu": "Không che: 36 · 34 · 37 ghim. Che 3/10: 12 · 10 · 11. Che 6/10: 4 · 5 · 3."
     },
     {
       "khoa": "rut_ra",
-      "giay": 19.8,
-      "chu": "Bìa lấy đi các ghim đang lan truyền: k giảm từ ≈ 1,6 xuống ≈ 0,6, dây chuyền tắt sớm."
+      "giay": 20.4,
+      "chu": "Bìa lấy đi các ghim đang lan: k giảm từ ≈ 1,6 xuống ≈ 0,6, dây chuyền tắt sớm. Bìa đóng vai thanh điều khiển."
     },
     {
       "khoa": "chua_noi",
-      "giay": 27.9,
-      "chu": "Không đo được giá trị k thật của lò phản ứng: bàn ghim chỉ là mô hình định tính."
+      "giay": 31.6,
+      "chu": "Thanh hấp thụ neutron chứ không làm nguội lò. Bàn ghim chỉ định tính, không cho k thật của lò."
     }
   ],
   "dung_dua": {
-    "giay": 9.25,
+    "giay": 9.0,
     "cau_hoi": "Lấy bìa che 30 % rồi 60 % lưới ghim. Số ghim đổ sẽ:",
     "chon": [
       "A. Giảm theo đúng tỉ lệ phần bị che",
@@ -48,5 +48,22 @@
     "dung": 2,
     "giai_thich_dung": "Mỗi ghim bị che không chỉ mất đi một mà còn cắt mọi nhánh lan tiếp từ nó, nên k tụt dưới 1 và dây chuyền tắt sớm.",
     "giai_thich_sai": "Thử nghĩ: ghim bị che còn kích được những ghim phía sau nó không?"
+  },
+  "cau_chot": {
+    "giay": 39.0,
+    "cau_hoi": "Làm lại với ghim cách 3 cm (chưa che đã k ≈ 1), rồi che 30 % lưới. Dây chuyền sẽ thế nào?",
+    "chon": [
+      "A. Lan rộng hơn lúc chưa che",
+      "B. Vẫn giữ, không lan thêm",
+      "C. Tắt dần sau vài thế hệ",
+      "D. Đổ hết cả 49 ghim"
+    ],
+    "dung": 2,
+    "giai_thich": [
+      "Bìa chỉ lấy bớt ghim đang lan, không thể làm dây chuyền mạnh hơn lúc chưa che.",
+      "Chưa che đã k ≈ 1; che thêm lấy bớt ghim đang lan nên k tụt dưới 1, không giữ được.",
+      "3 cm chưa che đã k ≈ 1; che 30 % làm k < 1 nên mỗi thế hệ ít ghim đổ hơn và dây chuyền tắt dần.",
+      "Ngay cả 2 cm không che cũng chỉ đổ khoảng 36/49 ghim; ghim thưa hơn lại bị che thì càng ít đổ."
+    ]
   }
 }

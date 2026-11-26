@@ -1,4 +1,8 @@
-# Clip: tn-l12-hatnhan-01 - Mo hinh "ban bi mu": tim vat chan khuat bang chum bi bi lech (28/10/2026)
+# Clip: tn-l12-hatnhan-01 - Mo hinh "ban bi mu": tim vat chan khuat bang chum bi bi lech (28/10/2026; dung lai 26/11/2026
+# theo KE-HOACH-CAI-TIEN-CLIP viec 4 lo 32: cong --do-chu, chu >= 56 px khi ve, <= 50 s, Du doan khong nut A-D (K10)).
+# Du doan (hien_tuong_hay_sai: "bay thang = ben trong khong co gi" / tuong lech deu): bi ra huong nao? -> da so thang, vai luot lech manh.
+# Cau THU NGHI (= cau_chot khung web): dinh 4 mm, noi vung lan 20 -> 40 cm -> ti le lech giam con mot nua
+#   (so_lieu_mau: 4 luot -> 2 luot / 60). Buoc suy luan chua chieu: dai bi chan giu nguyen, vung lan rong gap doi.
 # So lieu lay nguyen tu content/thi-nghiem/tn-l12-hatnhan-01.json:
 #   tham_so: d_bia = 2 mm (mac dinh), d_bi = 10 mm, b = 20 cm, N = 60 luot
 #   so_lieu_mau: dinh 2 mm, b 20 cm, 60 luot -> 3 luot lech manh, ti le 0,05 ; dinh 6 mm -> 6 luot ;
@@ -102,25 +106,45 @@ def ball(d, x, y, alpha=1.0):
 
 def inside_cover(x, y, m=0): return COV[0] - m < x < COV[2] + m and COV[1] - m < y < COV[3] + m
 
+DORANGE = (154, 52, 18); DRED = (185, 28, 28); GOLD = (234, 179, 8)
+
+def _kiem_so():
+    import json, os
+    k = json.load(open(os.path.join(HERE, "..", "..", "content", "thi-nghiem", "tn-l12-hatnhan-01.json")))
+    h = k["so_lieu_mau"]["hang"]
+    assert h[0] == [2, 20, 60, 3, 0.05] and h[4][:4] == [6, 20, 60, 6] and h[2][:4] == [4, 20, 60, 4] and h[3][:4] == [4, 40, 60, 2]
+    z = {p["ky_hieu"]: p for p in k["tham_so"]}; assert z["d_bi"]["gia_tri"] == 10 and z["d_bia"]["mac_dinh"] == 2
+_kiem_so()
+
+def pill(d, cx, cy, s, fill, alpha=1.0, size=56):
+    pw = tw(d, s, F(size)) + 60
+    card(d, (cx - pw / 2, cy - 38, cx + pw / 2, cy + 38), fill=A(fill, alpha), r=36)
+    text(d, (cx, cy), s, size, WHITE, alpha=alpha)
+
+def seg_bar(d, y, t, t0, t1, col, a=1.0):
+    """Thanh dem LIEN cao 70 px, ngan dan theo 10 nac (moi nac doi hinh du ro cho cong --do-chu)."""
+    p = clamp((t - t0) / (t1 - t0)); q = 1 - math.floor(p * 10 + 1e-9) / 10
+    card(d, (190, y, 890, y + 70), fill=A(LIGHT, a), r=35)
+    if q > 0: card(d, (190, y, 190 + max(70, 700 * q), y + 70), fill=A(col, a), r=35)
+
 def table(d):
     card(d, TBL, fill=WOOD, outline=LIGHT, r=28, w=3)
-    # kich thuoc vung lan b = 20 cm
-    x = 86
+    x = 96                                              # kich thuoc vung lan b = 20 cm
     d.line([(x, yl(0)), (x, yl(B_MM))], fill=NAVY, width=3)
     for yy, s in ((yl(0), -1), (yl(B_MM), 1)):
         chevron(d, x, yy, s * math.pi / 2, NAVY, s=14, w=3)
         d.line([(x - 14, yy), (x + 14, yy)], fill=NAVY, width=3)
-    ym = yl(40)                                         # tranh nhan "bi 10 mm" (hook) va tia 3 (y 698-791)
-    card(d, (x - 40, ym - 62, x + 40, ym + 62), fill=WHITE, r=16)
-    text(d, (x, ym - 23), "20", 36, INK)
-    text(d, (x, ym + 23), "cm", 36, INK, bold=False)
+    ym = yl(40)
+    card(d, (x - 46, ym - 70, x + 46, ym + 70), fill=WHITE, r=16)
+    text(d, (x, ym - 30), "20", 56, INK)
+    text(d, (x, ym + 30), "cm", 56, INK)
 
 def cover(d, alpha=1.0, mark=False):
     if alpha <= 0.02: return
     card(d, COV, fill=A(CARD, alpha), outline=A(mix(CARD, NAVY, 0.4), alpha), r=18, w=4)
-    text(d, ((COV[0] + COV[2]) / 2, COV[3] - 36), "tấm che", 36, mix(NAVY, CARD, 0.2), bold=False, alpha=alpha)
+    if alpha > 0.95: text(d, ((COV[0] + COV[2]) / 2, COV[1] + 50), "tấm che", 56, mix(NAVY, CARD, 0.1), alpha=alpha)
     if mark:
-        text(d, ((COV[0] + COV[2]) / 2, (COV[1] + COV[3]) / 2 - 10), "?", 150, WHITE, alpha=alpha)
+        text(d, ((COV[0] + COV[2]) / 2, (COV[1] + COV[3]) / 2 - 30), "?", 160, WHITE, alpha=alpha)
 
 def ring6(d, alpha):                   # vong ban kinh 6 mm = noi tam bi nam khi cham dinh
     if alpha <= 0.02: return
@@ -130,28 +154,22 @@ def nail(d, alpha=1.0):
     if alpha <= 0.02: return
     d.ellipse([NX - RN - 1, NY - RN - 1, NX + RN + 1, NY + RN + 1], fill=A(NAVY, alpha))
 
-# ---------------- canh 1: Du doan ----------------
 
+# ---------------- canh 1: Du doan ----------------
 def s_hook(img, d, t, sc):
     table(d); cover(d, 1.0, mark=True)
     bx = XS + 40 * ease((t - 0.3) / 1.2)
     ball(d, bx, yl(150))
     arrow(d, (bx + RB + 10, yl(150)), (bx + RB + 90, yl(150)), NAVY, w=5, head=18)
-    text(d, (bx, yl(150) + 46), "bi 10 mm", 36, NAVY, bold=False)
+    text(d, (70, 965), "bi 10 mm", 56, NAVY, anchor="lm")
     M = sc["M"]; a = appear(t, M[1] - 0.2, 0.5)
     if a <= 0: return
-    y0 = 1030 + (1 - a) * 40
-    card(d, (50, y0, 1030, y0 + 380), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
-    pw = tw(d, "DỰ ĐOÁN", F(36)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 86), fill=A(PURPLE, a), r=31)
-    text(d, (W / 2, y0 + 55), "DỰ ĐOÁN", 36, WHITE, alpha=a)
-    text(d, (W / 2, y0 + 165), "Hướng bi đi ra thế nào?", 46, INK, alpha=a)
-    text(d, (W / 2, y0 + 250), "Chọn đáp án ở khung câu hỏi", 38, MUTED, bold=False, alpha=a)   # K10
-    tc, tend = M[1] + 0.8, sc["T"] - 0.3
-    if t > tc:
-        p = clamp((t - tc) / (tend - tc))
-        d.rounded_rectangle([140, y0 + 330, 940, y0 + 342], radius=6, fill=A(LIGHT, a))
-        d.rounded_rectangle([140, y0 + 330, 140 + 800 * (1 - p), y0 + 342], radius=6, fill=A(PURPLE, a))
+    y0 = 1040 + (1 - a) * 40
+    card(d, (50, y0, 1030, y0 + 520), fill=A(WHITE, a), outline=A(PURPLE, a), w=6)
+    pill(d, W / 2, y0 + 70, "DỰ ĐOÁN", PURPLE, a)
+    seg_bar(d, y0 + 140, t, M[1] + 0.3, sc["T"] - 0.3, PURPLE, a)
+    text(d, (W / 2, y0 + 320), "Bi lăn 60 lượt qua tấm che.", 60, INK, alpha=a)
+    text(d, (W / 2, y0 + 425), "Hướng bi đi ra thế nào?", 60, PURPLE, alpha=a)
 
 # ---------------- canh 2: Tien hanh ----------------
 SLOW, FAST_D = 1.15, 0.38              # 3 luot dau cham; con lai moi luot 0,38 s, xuat phat cach nhau deu
@@ -169,8 +187,9 @@ def table_runs(d, t, sc, live=True):
     for k, r in enumerate(RUNS):
         if t < st[k]: continue
         s = clamp((t - st[k]) / du[k]) * r["L"]
-        col = A(RED, 0.95) if r["hit"] else A((95, 92, 100), 0.45)
-        trace(d, r, s, col, 5 if r["hit"] else 3)
+        red = r["hit"] and t >= hit_time(r, st[k], du[k])           # do chi khi luot do da lech ra khoi tam che
+        col = A(RED, 0.95) if red else A((95, 92, 100), 0.45)
+        trace(d, r, s, col, 6 if red else 3)
         if s >= r["L"] - 0.5: n_done += 1
         if r["hit"] and t >= hit_time(r, st[k], du[k]): n_hit += 1
         if live and s < r["L"] - 0.5:
@@ -178,159 +197,162 @@ def table_runs(d, t, sc, live=True):
             if not inside_cover(x, y, RB - 2): ball(d, x, y)
     return n_done, n_hit
 
-def counter(d, n, m, fast):
-    card(d, (50, 1040, 1030, 1250), fill=WHITE, outline=LIGHT, w=3)
-    text(d, (290, 1090), "Đã lăn", 40, MUTED, bold=False)
-    text(d, (790, 1090), "Lệch mạnh", 40, MUTED, bold=False)
-    text(d, (290, 1175), f"{n}/60", 72, INK)
-    text(d, (790, 1175), str(m), 72, RED if m else INK)
-    d.line([(540, 1070), (540, 1220)], fill=LIGHT, width=3)
-    if fast:
-        wdt = tw(d, "TUA NHANH", F(34)) + 44
-        card(d, (1030 - wdt, 1260, 1030, 1310), fill=ORANGE, r=25); text(d, (1030 - wdt / 2, 1285), "TUA NHANH", 34, WHITE)
+def ff_icon(d, cx, cy, col):
+    for dx in (-26, 18):
+        d.polygon([(cx + dx - 22, cy - 28), (cx + dx + 22, cy), (cx + dx - 22, cy + 28)], fill=col)
 
 def s_do(img, d, t, sc):
     table(d)
     n, m = table_runs(d, t, sc)
     cover(d)
     st, du = schedule(sc)
-    counter(d, n, m, t > st[3] - 0.05 and n < 60)
-    k = appear(t, 0.5, 0.4)
-    card(d, (50, 1330, 1030, 1590), fill=A(WHITE, k), outline=A(LIGHT, k), w=3)
-    text(d, (100, 1395), "Mỗi lượt:", 40, INK, anchor="lm", alpha=k)
-    d.line([(110, 1470), (230, 1470)], fill=A((95, 92, 100), 0.6 * k), width=4)
-    text(d, (260, 1470), "thẳng (xám)", 40, INK, bold=False, anchor="lm", alpha=k)
-    d.line([(110, 1540), (230, 1540)], fill=A(RED, k), width=6); chevron(d, 230, 1540, 0, A(RED, k), s=16, w=5)
-    text(d, (260, 1540), "lệch >15° (đỏ)", 40, INK, bold=False, anchor="lm", alpha=k)
+    if st[3] - 0.05 < t and n < 60:
+        card(d, (900, 302, 1018, 374), fill=WHITE, r=20); ff_icon(d, 959, 338, ORANGE)
+    card(d, (50, 1040, 1030, 1250), fill=WHITE, outline=LIGHT, w=3)
+    text(d, (290, 1090), "Đã lăn", 56, INK)
+    text(d, (790, 1090), "Lệch mạnh", 56, INK)
+    text(d, (290, 1185), f"{n}/60", 76, INK)
+    text(d, (790, 1185), str(m), 76, RED if m else INK)
+    d.line([(540, 1065), (540, 1225)], fill=LIGHT, width=3)
+    card(d, (50, 1280, 1030, 1500), fill=WHITE, outline=LIGHT, w=3)
+    d.line([(110, 1345), (250, 1345)], fill=A((95, 92, 100), 0.6), width=5)
+    text(d, (290, 1345), "đi thẳng (xám)", 56, INK, anchor="lm")
+    d.line([(110, 1435), (250, 1435)], fill=RED, width=7); chevron(d, 250, 1435, 0, RED, s=18, w=6)
+    text(d, (290, 1435), "lệch mạnh (đỏ)", 56, INK, anchor="lm")
 
-# ---------------- canh 3: Dap an + rut ra ----------------
+# ---------------- canh 3: Dap an ----------------
 def s_dapan(img, d, t, sc):
     M = sc["M"]; table(d)
-    sc_do = SC["do"]
-    table_runs(d, 99, sc_do, live=False)
-    kx = appear(t, M[1] + 0.1, 0.6)                # keo dai vet lech vao trong
-    kc = appear(t, M[2] + 0.1, 0.7)                # nhac tam che
-    cover(d, 1 - 0.75 * kc)
-    if kx > 0:
-        for r in RUNS:
-            if not r["hit"]: continue
-            C, E = r["C"], r["E"]; P = (COV[0], C[1])
-            c = A(ORANGE, kx * (1 - kc))
-            dashed(d, P, (lerp(P[0], C[0], kx), C[1]), c, w=3, seg=10, gap=8)
-            dashed(d, E, (lerp(E[0], C[0], kx), lerp(E[1], C[1], kx)), c, w=4)
-        ka6 = appear(t, M[1] + 0.7, 0.4)
-        ring6(d, ka6)
-        text(d, (NX + 30, NY - 40), "chạm đinh", 38, NAVY, anchor="lm", alpha=ka6)
-        d.line([(NX + 24, NY - 30), (NX + RC * 0.75, NY - RC * 0.75)], fill=A(NAVY, ka6), width=3)
-    for j, r in enumerate([r for r in RUNS if r["hit"]]):      # danh so 3 tia ra
-        Z, v = r["pts"][-1], r["v"]; bx, by = Z[0] - 62 * v[0], Z[1] - 62 * v[1]
-        sg = -1 if v[0] < -0.9 else 1                           # tia bat nguoc: so nam phia xa duong vao
-        bx += sg * 28 * -v[1]; by += sg * 28 * v[0]
-        ko = appear(t, M[0] + 0.3, 0.4)
-        dot(d, bx, by, 21, A(RED, ko)); text(d, (bx, by), str(j + 1), 32, WHITE, alpha=ko)
+    table_runs(d, 99, SC["do"], live=False)
+    kc = appear(t, M[1] + 0.2, 0.8)                # nhac tam che + keo dai vet lech vao trong
+    cover(d, 1 - 0.8 * kc)
     if kc > 0:
         for r in RUNS:
             if not r["hit"]: continue
             C, E = r["C"], r["E"]
-            d.line([(COV[0], C[1]), C, E], fill=A(RED, kc), width=5)
+            d.line([(COV[0], C[1]), C, E], fill=A(RED, kc), width=6)
             d.ellipse([C[0] - RB, C[1] - RB, C[0] + RB, C[1] + RB], outline=A(STEEL, kc), width=3)
-        ring6(d, 1.0); nail(d, kc)
-        text(d, (NX + 30, NY - 150), "đinh 2 mm", 38, NAVY, anchor="lm", alpha=kc)
-        d.line([(NX + 22, NY - 148), (NX + 2, NY - 6)], fill=A(NAVY, kc), width=3)
-    ka = appear(t, M[0] + 0.1, 0.5)
-    pw = tw(d, "ĐÁP ÁN C", F(36)) + 52
-    card(d, (1012 - pw, 302, 1012, 360), fill=A(NAVY, ka), r=29)
-    text(d, (1012 - pw / 2, 331), "ĐÁP ÁN C", 36, WHITE, alpha=ka)
-    # so lieu
-    card(d, (50, 1040, 1030, 1220), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
-    for x, lab, val, col in ((210, "Đi thẳng", "57", INK), (540, "Lệch mạnh", "3", RED), (870, "Tỉ lệ lệch", "0,05", INK)):
-        text(d, (x, 1085), lab, 36, MUTED, bold=False, alpha=ka)
-        text(d, (x, 1160), val, 64, col, alpha=ka)
-    for x in (375, 705): d.line([(x, 1070), (x, 1190)], fill=A(LIGHT, ka), width=3)
-    # rut ra
-    k1 = appear(t, M[2] + 0.4, 0.5); k2 = appear(t, M[3] + 0.1, 0.5)
-    card(d, (50, 1245, 1030, 1600), fill=A(WHITE, k1), outline=A(GREEN, k1), w=5)
-    text(d, (W / 2, 1292), "Rút ra", 38, GREEN, alpha=k1)
-    lines = (("• Lệch mạnh → có vật nhỏ, cứng.", k1),
-             ("• 3/60 → vật chắn rất hẹp.", k1),
-             ("• Alpha bật ngược → hạt nhân.", k2))
-    for j, (s, kk) in enumerate(lines):
-        text(d, (80, 1360 + j * 56), s, 40, INK, bold=False, anchor="lm", alpha=kk)
+        ring6(d, kc); nail(d, kc)
+        ZC, ZR, Z = (905, 660), 105, 4.5                    # o phong to x4,5: dinh 2 mm va vong 6 mm (noi tam bi khi cham)
+        d.line([(NX + 8, NY), (ZC[0] - ZR, ZC[1])], fill=A(NAVY, kc), width=3)
+        d.ellipse([ZC[0] - ZR, ZC[1] - ZR, ZC[0] + ZR, ZC[1] + ZR], fill=A(WHITE, kc), outline=A(NAVY, kc), width=4)
+        d.ellipse([ZC[0] - RC * Z, ZC[1] - RC * Z, ZC[0] + RC * Z, ZC[1] + RC * Z], outline=A(ORANGE, kc), width=5)
+        d.ellipse([ZC[0] - RN * Z, ZC[1] - RN * Z, ZC[0] + RN * Z, ZC[1] + RN * Z], fill=A(NAVY, kc))
+        text(d, (905, 510), "đinh 2 mm", 56, NAVY, alpha=kc)
+    ka = appear(t, 0.3, 0.5)
+    pill(d, W / 2, 1090, "ĐÁP ÁN: đa số đi thẳng", NAVY, ka)
+    card(d, (50, 1170, 1030, 1400), fill=A(WHITE, ka), outline=A(LIGHT, ka), w=3)
+    for x, lab, val, col in ((210, "thẳng", "57", INK), (540, "lệch", "3", RED), (870, "tỉ lệ", "0,05", INK)):
+        text(d, (x, 1225), lab, 56, INK, alpha=ka)
+        text(d, (x, 1320), val, 76, col, alpha=ka)
+    for x in (375, 705): d.line([(x, 1195), (x, 1375)], fill=A(LIGHT, ka), width=3)
 
-# ---------------- canh 4: Bay + chua noi duoc ----------------
+# ---------------- canh 4: Rut ra (bi -> alpha) ----------------
+def panel_bi(d, box, a):
+    x0, y0, x1, y1 = box; cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    card(d, box, fill=A(WOOD, a), outline=A(LIGHT, a), r=24, w=3)
+    for yy in (y0 + 60, y0 + 120, y1 - 120, y1 - 60): d.line([(x0 + 30, yy), (x1 - 30, yy)], fill=A((95, 92, 100), 0.45 * a), width=4)
+    d.line([(x0 + 30, cy - 6), (cx - 20, cy - 6), (x0 + 120, y0 + 40)], fill=A(RED, a), width=6)
+    dot(d, cx, cy, 18, A(NAVY, a))
+
+def panel_au(d, box, a):
+    x0, y0, x1, y1 = box; cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
+    card(d, box, fill=A((255, 244, 204), a), outline=A(GOLD, a), r=24, w=3)
+    for yy in (y0 + 60, y0 + 120, y1 - 120, y1 - 60): d.line([(x0 + 30, yy), (x1 - 30, yy)], fill=A((95, 92, 100), 0.45 * a), width=4)
+    P0, C, P2 = (x0 + 30, cy - 10), (cx + 30, cy - 10), (x0 + 40, cy - 110)     # quay dau truoc hat nhan, khong cham
+    pts = [((1 - u) ** 2 * P0[0] + 2 * u * (1 - u) * C[0] + u * u * P2[0], (1 - u) ** 2 * P0[1] + 2 * u * (1 - u) * C[1] + u * u * P2[1])
+           for u in [i / 40 for i in range(41)]]
+    d.line(pts, fill=A(ORANGE, a), width=8, joint="curve")
+    dot(d, cx, cy, 18, A(RED, a))
+
+def s_rutra(img, d, t, sc):
+    M = sc["M"]; k1 = appear(t, 0.3, 0.5); k2 = appear(t, M[1] + 0.2, 0.5)
+    panel_bi(d, (50, 290, 520, 1040), k1)
+    if k2 > 0: panel_au(d, (560, 290, 1030, 1040), k2)
+    for j, (l, r, cl, cr) in enumerate((("đinh", "hạt nhân", NAVY, DRED), ("bi", "alpha", NAVY, DORANGE))):
+        y = 1140 + j * 130
+        text(d, (285, y), l, 62, cl, alpha=k1)
+        if k2 > 0:
+            arrow(d, (420, y), (640, y), A(INK, k2), w=8, head=26)
+            text(d, (830, y), r, 62, cr, alpha=k2)
+
+# ---------------- canh 5: Bay + chua noi duoc ----------------
 def s_bay(img, d, t, sc):
-    M = sc["M"]
-    k1 = appear(t, 0.3, 0.45)
-    y0 = 255 + (1 - k1) * 30
-    card(d, (40, y0, 1040, y0 + 640), fill=A(WHITE, k1), outline=A(RED, k1), w=6)
-    pw = tw(d, "BẪY", F(38)) + 52
-    card(d, (W / 2 - pw / 2, y0 + 24, W / 2 + pw / 2, y0 + 88), fill=A(RED, k1), r=32)
-    text(d, (W / 2, y0 + 56), "BẪY", 38, WHITE, alpha=k1)
-    q = "“Tỉ lệ lệch không phụ thuộc cỡ đinh”"
-    ks = clamp((t - 1.2) / 0.4)
-    lw = tw(d, q, F(40)); yy = y0 + 150
-    text(d, (W / 2, yy), q, 40, mix(INK, GRAY, ks), alpha=k1)
-    if ks > 0: d.line([(W / 2 - lw / 2 - 6, yy + 2), (W / 2 - lw / 2 - 6 + (lw + 12) * ks, yy + 2)], fill=A(RED, 0.8 * k1), width=4)
-    for j, (lab, n) in enumerate((("đinh 2 mm", 3), ("đinh 6 mm", 6))):
-        yy = y0 + 325 + j * 95
-        text(d, (80, yy), lab, 38, INK, anchor="lm", alpha=k1)
-        d.rounded_rectangle([290, yy - 26, 770, yy + 26], radius=26, fill=A(LIGHT, k1))
-        d.rounded_rectangle([290, yy - 26, 290 + 480 * n / 6 * ease((t - 0.4) / 0.7), yy + 26], radius=26, fill=A(RED, k1))
-        text(d, (800, yy), f"{n}/60", 40, RED, anchor="lm", alpha=k1)
-    ctext(d, y0 + 560, "Sai: đinh to → lệch nhiều hơn.", 44, RED, maxw=900, alpha=appear(t, 1.6, 0.5))
-    k2 = appear(t, M[1] - 0.1, 0.45)
-    if k2 > 0:
-        y0 = 925 + (1 - k2) * 30
-        card(d, (40, y0, 1040, y0 + 500), fill=A(WHITE, k2), outline=A(NAVY, k2), w=6)
-        text(d, (W / 2, y0 + 58), "Chưa nói được:", 44, NAVY, alpha=k2)
-        ka = k2 * appear(t, M[1] + 0.3, 0.4); kb = k2 * appear(t, M[2] + 0.1, 0.4)
-        text(d, (80, y0 + 145), "• Bi: va chạm cứng.", 40, INK, bold=False, anchor="lm", alpha=ka)
-        text(d, (80, y0 + 199), "• Alpha: không chạm.", 40, INK, bold=False, anchor="lm", alpha=ka)
-        text(d, (W / 2, y0 + 290), "LỰC ĐIỆN ĐẨY", 56, PURPLE, alpha=kb)
+    M = sc["M"]; k1 = appear(t, 0.3, 0.45)
+    card(d, (40, 270, 1040, 1070), fill=A(WHITE, k1), outline=A(RED, k1), w=6)
+    pill(d, W / 2, 345, "BẪY", RED, k1)
+    text(d, (W / 2, 460), "“Cỡ đinh không ảnh hưởng”?", 60, INK, alpha=k1)
+    text(d, (W / 2, 570), "lượt lệch / 60", 56, INK, alpha=k1)
+    for j, (lab, n) in enumerate((("2 mm", 3), ("6 mm", 6))):
+        yy = 680 + j * 130
+        text(d, (80, yy), lab, 64, NAVY, anchor="lm", alpha=k1)
+        for i in range(n):
+            ki = k1 * appear(t, (0.6 + 0.3 * i) if j == 0 else (1.8 + 0.5 * i), 0.25)
+            dot(d, 330 + i * 115, yy, 42, A(RED, ki))
+    kv = appear(t, M[1] + 0.2, 0.4)
+    if kv > 0:
+        card(d, (340, 935, 740, 1045), fill=A((254, 226, 226), kv), outline=A(RED, kv), r=30, w=5)
+        text(d, (W / 2, 990), "SAI", 72, RED, alpha=kv)
+    k3 = appear(t, M[2] + 0.2, 0.45)
+    if k3 > 0:
+        card(d, (40, 1110, 1040, 1500), fill=A(WHITE, k3), outline=A(NAVY, k3), w=6)
+        text(d, (W / 2, 1185), "Alpha bị đẩy từ xa", 62, NAVY, alpha=k3)
+        hx, hy = 700, 1390                                   # hat nhan; alpha quay dau truoc khi cham
+        P0, C, P2 = (120, hy), (1080, hy + 6), (160, 1250)
+        pts = [((1 - u) ** 2 * P0[0] + 2 * u * (1 - u) * C[0] + u * u * P2[0],
+                (1 - u) ** 2 * P0[1] + 2 * u * (1 - u) * C[1] + u * u * P2[1]) for u in [i / 40 for i in range(41)]]
+        d.line(pts, fill=A(ORANGE, k3), width=8, joint="curve")
+        arrow(d, pts[-4], P2, A(ORANGE, k3), w=8, head=24)
+        dot(d, hx, hy, 20, A(RED, k3))
 
-# ---------------- canh 5: Chot + cau hoi tu nho lai ----------------
-def _hint(d, t, k):                    # goi y tu ve, hien sau ~2,8 s (khong lo tang/giam)
-    sc = SC["end"]; kh = appear(t, sc["M"][0] + 2.8, 0.5)
-    if kh <= 0: return
-    card(d, (110, 1290, 970, 1560), fill=A((255, 237, 213), kh), outline=A(ORANGE, kh), r=24, w=4)
-    ctext(d, 1345, "Gợi ý", 40, ORANGE, alpha=kh)
-    ctext(d, 1450, "Nhớ lại thí nghiệm 60 lượt.", 44, INK, maxw=800, alpha=kh)
+# ---------------- canh 6: Chot (phu de) + THU NGHI (= cau_chot khung web) ----------------
+def lane(d, cx, yc, w_cm, a):
+    """Vung lan nhin tu tren: be rong theo ti le 20 cm = 280 px; dinh 4 mm o giua (cham)."""
+    h = 280 * w_cm / 20
+    card(d, (cx - 170, yc - h / 2, cx + 170, yc + h / 2), fill=A(WOOD, a), outline=A(LIGHT, a), r=16, w=3)
+    dot(d, cx, yc, 15, A(NAVY, a))
+    text(d, (cx, yc + 70), "đinh 4 mm", 56, NAVY, alpha=a)
+    text(d, (cx, 1450), f"{w_cm} cm", 60, NAVY, alpha=a)
 
 def s_end(img, d, t, sc):
-    chot_hoi(d, t, sc, "Bi lệch mạnh: có vật nhỏ, cứng",
-             "Nới vùng lăn 20 → 40 cm: tỉ lệ lệch ra sao?",
-             None, body=_hint)
+    k1 = appear(t, 0.15, 0.4)
+    card(d, (40, 260, 1040, 1530), fill=A(WHITE, k1), outline=A(ORANGE, k1), w=6)
+    pill(d, W / 2, 340, "THỬ NGHĨ", ORANGE, k1)
+    seg_bar(d, 420, t, 0.8, sc["T"] - 0.2, ORANGE, k1)
+    text(d, (W / 2, 570), "Nới vùng lăn 20 → 40 cm:", 60, INK, alpha=k1)
+    text(d, (W / 2, 665), "tỉ lệ lệch ra sao?", 60, DORANGE, alpha=k1)
+    lane(d, 290, 1050, 20, k1); lane(d, 790, 1050, 40, k1)
 
 def _cues(clip):
     sc = {s["key"]: s for s in clip["scenes"]}
     h, do, da, b, e = sc["hook"], sc["do"], sc["dapan"], sc["bay"], sc["end"]
     st, du = schedule(do)
-    out = [(h["t0"] + h["M"][1], "open"), (h["t0"] + h["T"] - 0.3, "ding")]
+    out = [(h["t0"] + h["M"][1] - 0.2, "open"), (h["t0"] + h["T"] - 0.6, "ding")]
     for k, r in enumerate(RUNS):
         if r["hit"]: out.append((do["t0"] + hit_time(r, st[k], du[k]), "tap"))
         elif k >= 3 and k % 3 == 0: out.append((do["t0"] + st[k], "tick"))
-    out += [(da["t0"] + da["M"][0] + 0.1, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + e["M"][0] + 0.1, "open")]
+    out += [(da["t0"] + 0.3, "ding"), (b["t0"] + 0.3, "buzz"), (e["t0"] + 0.15, "open")]
     return sorted(out)
 
 SCENES = [
- dict(key="hook", title="Tìm vật bị che khuất", draw=s_hook, tail=0.6, caps=[
-   ("Đinh 2 mm giấu dưới tấm che.", 2.6),
-   ("Dự đoán: bi ra hướng nào?", 6.0)]),
+ dict(key="hook", title="Tìm vật bị che khuất", draw=s_hook, tail=0.3, caps=[
+   ("Có gì dưới tấm che?", 3.0),
+   ("Dừng lại, tự đoán.", 5.2)]),
  dict(key="do", title="Tiến hành", draw=s_do, tail=0.3, caps=[
-   ("Bi lăn dưới tấm che.", 2.8),
-   ("Ghi hướng vào, hướng ra.", 2.8),
-   ("Tua nhanh đủ 60 lượt.", 2.6)]),
- dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.5, caps=[
-   ("57 thẳng, 3 lệch: C.", 2.9),
-   ("Vệt lệch dồn một chỗ.", 2.8),
-   ("Nhấc tấm che.", 2.8),
-   ("Lá vàng tương tự.", 3.1)]),
- dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.4, caps=[
-   ("Bẫy hay gặp.", 3.2),
-   ("Chưa nói được.", 3.4),
-   ("Alpha: lực điện.", 3.4)]),
- dict(key="end", title="Chốt lại", draw=s_end, tail=2.5, caps=[
-   ("Thử nghĩ.", 5.0)]),
+   ("Mỗi lượt: ghi hướng vào, ra.", 3.4),
+   ("Tua nhanh đủ 60 lượt.", 5.2)]),
+ dict(key="dapan", title="Kết quả", draw=s_dapan, tail=0.2, caps=[
+   ("Chỉ vài lượt lệch mạnh.", 3.2),
+   ("Nhấc tấm che: một chiếc đinh.", 3.4)]),
+ dict(key="rutra", title="Rút ra", draw=s_rutra, tail=0.2, caps=[
+   ("Chỉ 3/60 lệch: vật rất hẹp.", 3.6),
+   ("Lá vàng: alpha cũng vậy.", 2.8)]),
+ dict(key="bay", title="Bẫy và giới hạn", draw=s_bay, tail=0.1, caps=[
+   ("Đúng hay sai?", 2.8),
+   ("Đinh to: dễ bị trúng hơn.", 2.9),
+   ("Bi chạm đinh, alpha thì không.", 2.9)]),
+ dict(key="end", title="Chốt lại", draw=s_end, tail=2.8, caps=[
+   ("Bi lệch mạnh: có vật nhỏ, cứng.", 3.6)]),
 ]
 SC = {s["key"]: s for s in SCENES}
 
