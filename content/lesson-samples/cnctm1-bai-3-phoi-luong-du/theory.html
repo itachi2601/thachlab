@@ -1,7 +1,7 @@
 <div class="tl-box tl-note">
 <p class="tl-label">🎯 Mục tiêu bài học hôm nay</p>
 <ul>
-<li>Phân biệt phôi <strong>cán, rèn, đúc</strong>: cách làm, độ chính xác, khi dùng.</li>
+<li>Phân biệt phôi <strong>cán, rèn, đúc</strong> và khi nào dùng.</li>
 <li><strong>Chọn phôi</strong> và đánh giá bằng hệ số $K$.</li>
 <li>Tính <strong>lượng dư trung gian, tổng cộng</strong> cho mặt phẳng, trục, lỗ.</li>
 <li>Kể năm bước <strong>chuẩn bị phôi</strong>.</li>
@@ -42,7 +42,7 @@
 
 <ul>
 <li>Kim loại bị kéo vào khe giữa hai trục, mỏng đi, dài ra.</li>
-<li>Tiết diện giống lỗ hình trục; dài không hạn chế.</li>
+<li>Tiết diện giống hình khe giữa hai trục cán; dài không hạn chế.</li>
 </ul>
 
 <figure class="fig" data-tl="1"><svg viewBox="0 0 420 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sơ đồ nguyên lý cán kim loại" font-family="system-ui, sans-serif" font-size="13"><defs><marker id="b3f1-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs><path d="M20 105 L177.2 105 A48 48 0 0 0 210 118 L400 118 L400 132 L210 132 A48 48 0 0 0 177.2 145 L20 145 Z" fill="#ea580c" fill-opacity=".25" stroke="#ea580c" stroke-width="2"/><circle cx="210" cy="70" r="48" fill="#94a3b8" fill-opacity=".35" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="70" r="4" fill="currentColor"/><circle cx="210" cy="180" r="48" fill="#94a3b8" fill-opacity=".35" stroke="currentColor" stroke-width="2"/><circle cx="210" cy="180" r="4" fill="currentColor"/><path d="M239.0 19.8 A58 58 0 0 0 181.0 19.8" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#b3f1-ar)"/><path d="M239.0 230.2 A58 58 0 0 1 181.0 230.2" fill="none" stroke="currentColor" stroke-width="1.6" marker-end="url(#b3f1-ar)"/><text x="270" y="60" fill="currentColor" font-size="12">trục cán trên</text><text x="270" y="200" fill="currentColor" font-size="12">trục cán dưới</text><text x="20" y="96" fill="currentColor" font-size="12">phôi dày</text><text x="268" y="110" fill="currentColor" font-size="12">sản phẩm mỏng, dài</text><line x1="290" y1="152" x2="390" y2="152" stroke="currentColor" stroke-width="1.6" marker-end="url(#b3f1-ar)"/><text x="290" y="170" fill="currentColor" font-size="12">chiều cán</text></svg><figcaption>Hình 1. Cán: hai trục quay ngược chiều kéo phôi vào khe, phôi mỏng đi và dài ra (sơ đồ, không theo tỉ lệ).</figcaption></figure>
@@ -109,8 +109,8 @@
 
 <details class="tl-details tl-more">
 <summary>🔍 Bấm xem: vì sao đúc ly tâm đứng chỉ dùng cho vật ngắn?</summary>
-<p>Kim loại lỏng chịu cả lực ly tâm lẫn trọng lực → mặt trong có dạng parabol: dưới rộng ra, trên hẹp lại.</p>
-<p>Vật càng cao thì đường kính trong trên – dưới chênh càng nhiều. Ống dài phải đúc ly tâm <strong>ngang</strong>.</p>
+<p>Lực ly tâm cộng trọng lực → mặt trong dạng parabol: dưới thành dày, trên thành mỏng.</p>
+<p>Vật càng cao, lỗ trên – dưới chênh càng nhiều. Ống dài phải đúc ly tâm <strong>ngang</strong>.</p>
 </details>
 
 <div class="tl-box tl-box--think tl-check">
@@ -180,7 +180,8 @@ $$K = \dfrac{M_{ct}}{M_{ph}}$$
 
 <p>$a$, $d_1$: kích thước bước <em>trước</em> để lại; $b$, $d_2$: kích thước bước <em>đang làm</em>.</p>
 
-<p>Ví dụ: trục từ phôi Ø45, tiện thô còn Ø41: $2Z_1 = 45 - 41 = 4$ mm, mỗi phía chỉ hớt $Z_1 = 2$ mm.</p>
+<p>Ví dụ: trục Ø45 tiện thô còn Ø41.</p>
+<p>$2Z_1 = 45 - 41 = 4$ mm → mỗi phía $Z_1 = 2$ mm.</p>
 
 <div class="tl-box tl-box--think tl-check">
 <p class="tl-label">Tự kiểm tra</p>
@@ -300,6 +301,7 @@ $$K = \dfrac{M_{ct}}{M_{ph}}$$
 <p class="tl-conf">Em chắc bao nhiêu?
 <label><input type="radio" name="tlc3-q4c" value="chac"> Chắc</label>
 <label><input type="radio" name="tlc3-q4c" value="khong"> Không chắc</label></p>
+<p><strong>Chọn phát biểu ĐÚNG:</strong></p>
 <div class="tl-quiz">
 <input type="radio" name="tlc3-q4" id="tlc3-q4a"><label for="tlc3-q4a" class="tl-opt tl-ok">A. Tiện trục từ Ø52 xuống Ø48 thì mỗi phía hớt 2 mm</label>
 <input type="radio" name="tlc3-q4" id="tlc3-q4b"><label for="tlc3-q4b" class="tl-opt tl-no">B. Vật đúc cấp 3 chính xác hơn vật đúc cấp 1</label>
@@ -347,7 +349,7 @@ $$K = \dfrac{M_{ct}}{M_{ph}}$$
 <tr><td>"mặt trên 6 mm…"</td><td>lượng dư từng mặt</td><td>kích thước phôi = chi tiết + lượng dư hai phía</td></tr>
 </tbody></table></div>
 
-<figure class="fig" data-tl="1"><svg viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bản vẽ lồng phôi khối D" font-family="system-ui, sans-serif" font-size="13"><defs><marker id="b3f6-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs><rect x="100" y="30" width="180" height="190" fill="#ea580c" fill-opacity=".3" stroke="#ea580c" stroke-width="1.4"/><rect x="120" y="60" width="140" height="140" fill="none" stroke="currentColor" stroke-width="3"/><text x="185" y="50" fill="currentColor" font-size="12" font-weight="700">6</text><text x="185" y="214" fill="currentColor" font-size="12" font-weight="700">4</text><text x="106" y="135" fill="currentColor" font-size="12" font-weight="700">4</text><text x="266" y="135" fill="currentColor" font-size="12" font-weight="700">4</text><text x="158" y="125" fill="currentColor" font-size="12">chi tiết</text><text x="150" y="143" fill="currentColor" font-size="12">100 × 100</text><text x="100" y="20" fill="currentColor" font-size="12">↑ mặt trên khi rót</text><line x1="292" y1="86" x2="316" y2="86" stroke="currentColor" stroke-width="3"/><text x="322" y="90" fill="currentColor" font-size="12">chi tiết</text><line x1="292" y1="110" x2="316" y2="110" stroke="#ea580c" stroke-width="1.4"/><text x="322" y="114" fill="currentColor" font-size="12">phôi đúc</text><rect x="292" y="128" width="24" height="12" fill="#ea580c" fill-opacity=".3"/><text x="322" y="138" fill="currentColor" font-size="12">lượng dư (mm)</text></svg><figcaption>Hình 6. Mặt cắt khối D: chi tiết lồng trong phôi đúc. Lượng dư vẽ phóng to để dễ đọc.</figcaption></figure>
+<figure class="fig" data-tl="1"><svg viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bản vẽ lồng phôi khối D" font-family="system-ui, sans-serif" font-size="13"><defs><marker id="b3f6-ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="currentColor" stroke-width="1.6"/></marker></defs><rect x="100" y="30" width="180" height="190" fill="#ea580c" fill-opacity=".3" stroke="#ea580c" stroke-width="1.4"/><rect x="120" y="60" width="140" height="140" fill="#cbd5e1" stroke="currentColor" stroke-width="3"/><text x="185" y="50" fill="currentColor" font-size="12" font-weight="700">6</text><text x="185" y="214" fill="currentColor" font-size="12" font-weight="700">4</text><text x="106" y="135" fill="currentColor" font-size="12" font-weight="700">4</text><text x="266" y="135" fill="currentColor" font-size="12" font-weight="700">4</text><text x="158" y="125" fill="currentColor" font-size="12">chi tiết</text><text x="150" y="143" fill="currentColor" font-size="12">100 × 100</text><text x="100" y="20" fill="currentColor" font-size="12">↑ mặt trên khi rót</text><line x1="292" y1="86" x2="316" y2="86" stroke="currentColor" stroke-width="3"/><text x="322" y="90" fill="currentColor" font-size="12">chi tiết</text><line x1="292" y1="110" x2="316" y2="110" stroke="#ea580c" stroke-width="1.4"/><text x="322" y="114" fill="currentColor" font-size="12">phôi đúc</text><rect x="292" y="128" width="24" height="12" fill="#ea580c" fill-opacity=".3"/><text x="322" y="138" fill="currentColor" font-size="12">lượng dư (mm)</text></svg><figcaption>Hình 6. Mặt cắt khối D: chi tiết lồng trong phôi đúc. Lượng dư vẽ phóng to để dễ đọc.</figcaption></figure>
 
 <details class="tl-details tl-more">
 <summary>🧮 Bấm xem lời giải</summary>

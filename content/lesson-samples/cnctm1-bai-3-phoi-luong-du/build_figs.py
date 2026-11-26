@@ -179,7 +179,7 @@ def fig5():
 def fig6():
     o = [svg_open(420, 240, "Bản vẽ lồng phôi khối D", "f6")]
     o.append(f'<rect x="100" y="30" width="180" height="190" fill="{ORANGE}" fill-opacity=".3" stroke="{ORANGE}" stroke-width="1.4"/>')
-    o.append('<rect x="120" y="60" width="140" height="140" fill="none" stroke="currentColor" stroke-width="3"/>')
+    o.append(f'<rect x="120" y="60" width="140" height="140" fill="#cbd5e1" stroke="currentColor" stroke-width="3"/>')
     o.append(t(185, 50, "6", ' font-weight="700"'))
     o.append(t(185, 214, "4", ' font-weight="700"'))
     o.append(t(106, 135, "4", ' font-weight="700"'))

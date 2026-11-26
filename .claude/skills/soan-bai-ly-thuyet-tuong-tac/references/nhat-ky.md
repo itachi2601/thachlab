@@ -165,3 +165,8 @@ một bước phía trên sai/thiếu thì sửa luôn bước đó. Phiên khô
 - 2026-11-26 · Nhãn SVG đặt cạnh nét xiên ("nung") bị nét cắt chữ → tính toạ độ nét tại đúng y của nhãn trước khi đặt; nhãn luôn nằm hẳn một bên nét.
 - 2026-11-26 · Bài CTTC ngoài giáo trình (A3 thép, nhiệt độ ram theo HRC) ghi như số đo chắc → ghi "cỡ/khoảng… (tra giản đồ/đồ thị)" khi số không có trong giáo trình.
 - 2026-11-26 · `textutil` trên .doc ra rác nhị phân; `chup_anh.py` lỗi thiếu PIL với python Homebrew → dùng `pdftotext -layout` trên bản PDF; chạy `chup_anh.py` bằng `/usr/bin/python3`.
+- 2026-11-26 · Quiz sau `p.tl-conf` (Em chắc bao nhiêu?) chỉ có 4 phương án, thiếu câu dẫn ở cả Bài 3 lẫn Bài 4 CNCTM → luôn có `<p><strong>Chọn phát biểu ĐÚNG:</strong></p>` ngay trước `.tl-quiz` của câu bẫy.
+- 2026-11-26 · Mẹo chữ đầu "Mộc – Đều – Phẳng – Một lần" (4 tên) cho "năm nguyên tắc" → HS đếm thấy lệch; số tên trong mẹo phải bằng số ý trong tiêu đề.
+- 2026-11-26 · Ví dụ số bậc tự do "khoan lỗ → 6 bậc" sai cho lỗ thông (chỉ 5) → ví dụ định vị phải nói rõ lỗ thông/cụt, kích thước nào cần đạt rồi mới đếm bậc.
+- 2026-11-26 · Hình hộp 3-2-1 vẽ mặt trước cao gần bằng mặt đáy, mâu thuẫn "đáy lớn nhất"; ruột chi tiết `fill="none"` lẫn màu với lượng dư → tỉ lệ hình phải khớp lời (mặt lớn nhất trông lớn nhất), vùng khác nghĩa phải khác màu.
+- 2026-11-26 · `build_preview.py <theory> <out>` nhận `<out>` là THƯ MỤC; truyền `xem-thu/xem-thu.html` tạo thư mục lồng, chụp ra mỗi ảnh desktop → bỏ đối số thứ hai (mặc định `xem-thu/`). Công thức inline bị ngắt dòng bị `--kiem-tran` báo "rộng 342px" → tách câu để công thức nằm gọn một dòng.
