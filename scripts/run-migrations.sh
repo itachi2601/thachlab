@@ -140,6 +140,7 @@ FILES=(
   "supabase/migrations/20261125120000_on_tap_lich_on.sql|Ôn 5 phút: bảng on_tap_the (lịch ôn giãn cách từng thẻ, RLS không policy) + 3 RPC on_tap_ghi / on_tap_den_han / on_tap_trang_thai|lúc nào cũng được (chỉ thêm bảng rỗng + hàm)"
   "supabase/migrations/20261125180000_rank_my_status_on_tap.sql|Ôn 5 phút: rank_my_status() thêm trường on_tap_den_han (số thẻ đến hạn của chính mình, trần 99) cho /lop-hoc, không thêm round-trip; chữ ký/grant giữ nguyên; PHẢI chạy sau 20261125120000|lúc nào cũng được (chỉ thay 1 hàm)|supabase db query --linked -f perf/rollback/20261125180000_rank_my_status_on_tap.down.sql"
   "supabase/migrations/20261126090000_goi_ten_ngau_nhien.sql|Gọi tên ngẫu nhiên trong bài học: thêm hàm class_call_roster(p_class_id) (SECURITY DEFINER, chỉ GV/trợ giảng/admin của lớp) trả danh sách HS đang học; chỉ đọc|lúc nào cũng được (chỉ thêm 1 hàm)|supabase db query --linked -f perf/rollback/20261126090000_goi_ten_ngau_nhien.down.sql"
+  "supabase/migrations/20261126100000_goi_ten_chon_danh_sach.sql|Gọi tên ngẫu nhiên: thêm call_roster_lists() (danh sách lớp THPT + khoá CTTC người gọi dạy) + course_call_roster(p_course_id); chỉ đọc; chạy sau 20261126090000|lúc nào cũng được (chỉ thêm 2 hàm)|supabase db query --linked -f perf/rollback/20261126100000_goi_ten_chon_danh_sach.down.sql"
 )
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong

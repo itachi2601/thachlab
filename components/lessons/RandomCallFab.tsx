@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Dices, RotateCcw, X } from "lucide-react";
 import { getSupabase } from "@/services/supabase";
 import s from "./RandomCallFab.module.css";
@@ -20,10 +20,31 @@ interface SessionState {
   absent: string[];
 }
 
-/** Một "buổi" = lớp + bài + ngày (giờ VN): sang ngày khác danh sách đã gọi tự làm mới. */
-function storeKey(classId: number, lessonId: number) {
+/** Một danh sách gọi được: lớp THPT (user_classes) hoặc khoá CTTC (course_enrollments). */
+interface CallList {
+  key: string; // "class:15" | "course:11"
+  kind: "class" | "course";
+  id: number;
+  name: string;
+  n: number | null;
+}
+
+const PICK_KEY = "goi-ten-chon"; // + ":<lessonId>" = lựa chọn riêng bài; không hậu tố = lần chọn gần nhất
+
+function readPick(k: string): string | null {
+  try {
+    return window.localStorage.getItem(k);
+  } catch {
+    return null;
+  }
+}
+
+/** Một "buổi" = danh sách + bài + ngày (giờ VN): sang ngày khác danh sách đã gọi tự làm mới. */
+function storeKey(listKey: string, lessonId: number) {
   const day = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Ho_Chi_Minh" });
-  return `goi-ten:${classId}:${lessonId}:${day}`;
+  // Giữ dạng cũ "goi-ten:<classId>:..." cho lớp THPT để lượt đã gọi hôm nay không mất.
+  const id = listKey.startsWith("class:") ? listKey.slice(6) : listKey;
+  return `goi-ten:${id}:${lessonId}:${day}`;
 }
 
 function loadSession(key: string): SessionState {
@@ -53,8 +74,9 @@ function givenName(full: string) {
 
 /**
  * Nút "Gọi tên" + phím G trên trang bài học: quay ngẫu nhiên một học sinh của lớp để trả lời câu hỏi.
- * Chỉ trang render cho giáo viên/trợ giảng. Danh sách lớp chỉ tải khi mở lần đầu (RPC class_call_roster),
- * không thêm request lúc tải trang. Em đã gọi/vắng trong buổi lưu ở localStorage của máy thầy.
+ * Chỉ trang render cho giáo viên/trợ giảng. Thầy chọn danh sách (lớp THPT hoặc khoá CTTC mình dạy — RPC
+ * call_roster_lists), lựa chọn nhớ theo bài. Mọi thứ chỉ tải khi mở hộp lần đầu, không thêm request lúc tải
+ * trang. Em đã gọi/vắng trong buổi lưu ở localStorage của máy thầy.
  */
 export default function RandomCallFab({
   lessonId,
@@ -66,63 +88,99 @@ export default function RandomCallFab({
   defaultClassId: number | null;
 }) {
   const [open, setOpen] = useState(false);
-  // null = chưa chọn tay → theo lớp mặc định (?class=) hoặc lớp đầu tiên.
-  const [pickedClassId, setClassId] = useState<number | null>(null);
-  const classId = pickedClassId ?? defaultClassId ?? classes[0]?.id ?? null;
-  const [rosters, setRosters] = useState<Record<number, Student[]>>({});
-  const [loadErrors, setLoadErrors] = useState<Record<number, string>>({});
+  // Danh sách thầy gọi được: tải khi mở lần đầu; lỗi → dùng các lớp gắn với chương (props).
+  const [lists, setLists] = useState<CallList[] | null>(null);
+  const fallbackLists = useMemo<CallList[]>(
+    () => classes.map((c) => ({ key: `class:${c.id}`, kind: "class" as const, id: c.id, name: c.name, n: null })),
+    [classes],
+  );
+  const allLists = lists ?? fallbackLists;
+  // Thứ tự chọn: chọn tay lúc này → đã chọn cho bài này → ?class= → lần chọn gần nhất → lớp đầu của chương.
+  const [pickedKey, setPickedKey] = useState<string | null>(null);
+  const has = (k: string | null) => !!k && allLists.some((l) => l.key === k);
+  const candidates = [
+    pickedKey,
+    open ? readPick(`${PICK_KEY}:${lessonId}`) : null,
+    defaultClassId != null ? `class:${defaultClassId}` : null,
+    open ? readPick(PICK_KEY) : null,
+    fallbackLists[0]?.key ?? null,
+    allLists[0]?.key ?? null,
+  ];
+  const listKey = candidates.find((k) => has(k)) ?? null;
+  const list = allLists.find((l) => l.key === listKey) ?? null;
+  const [rosters, setRosters] = useState<Record<string, Student[]>>({});
+  const [loadErrors, setLoadErrors] = useState<Record<string, string>>({});
   const [sessions, setSessions] = useState<Record<string, SessionState>>({});
   const [noRepeat, setNoRepeat] = useState(true);
   const [shownState, setShownState] = useState<{ key: string; student: Student } | null>(null);
   const [spinning, setSpinning] = useState(false);
   const timer = useRef<number | null>(null);
 
-  const key = classId != null ? storeKey(classId, lessonId) : null;
-  const roster = classId != null ? rosters[classId] : undefined;
-  const loadError = classId != null ? loadErrors[classId] ?? null : null;
+  const key = listKey ? storeKey(listKey, lessonId) : null;
+  const roster = listKey ? rosters[listKey] : undefined;
+  const loadError = listKey ? loadErrors[listKey] ?? null : null;
   const session: SessionState = key ? sessions[key] ?? (open ? loadSession(key) : EMPTY) : EMPTY;
   const shown = shownState && shownState.key === key ? shownState.student : null;
-  const setShown = useCallback(
-    (st: Student | null) => setShownState(st && key ? { key, student: st } : null),
-    [key],
-  );
+  const setShown = (st: Student | null) => setShownState(st && key ? { key, student: st } : null);
 
-  // Tải danh sách lớp khi mở lần đầu cho lớp đó.
+  // Các danh sách thầy dạy (lớp THPT + khoá CTTC) — tải một lần khi mở hộp lần đầu.
+  const listsAsked = useRef(false);
   useEffect(() => {
-    if (!open || classId == null || rosters[classId]) return;
-    let stale = false;
+    if (!open || listsAsked.current) return;
+    listsAsked.current = true;
     getSupabase()
-      .rpc("class_call_roster", { p_class_id: classId })
+      .rpc("call_roster_lists")
       .then(({ data, error }) => {
-        if (stale) return;
-        if (error) {
-          setLoadErrors((prev) => ({
-            ...prev,
-            [classId]: "Chưa tải được danh sách lớp. Thử lại sau hoặc kiểm tra quyền dạy lớp này.",
-          }));
-          return;
-        }
-        const list = ((data ?? []) as { student_id: string; full_name: string }[]).map((r) => ({
-          id: r.student_id,
-          name: r.full_name,
-        }));
-        setRosters((prev) => ({ ...prev, [classId]: list }));
+        if (error || !Array.isArray(data)) return; // giữ fallback theo chương
+        const chapterIds = new Set(classes.map((c) => c.id));
+        const rows = (data as { kind: string; id: number; name: string; n: number }[])
+          .filter((r) => (r.kind === "class" || r.kind === "course") && (r.n > 0 || (r.kind === "class" && chapterIds.has(r.id))))
+          .map((r) => ({ key: `${r.kind}:${r.id}`, kind: r.kind as "class" | "course", id: r.id, name: r.name, n: r.n }));
+        if (rows.length > 0) setLists(rows);
       });
+  }, [open, classes]);
+
+  // Tải học sinh của danh sách đang chọn khi cần.
+  useEffect(() => {
+    if (!open || !list || rosters[list.key]) return;
+    let stale = false;
+    const k = list.key;
+    const req =
+      list.kind === "course"
+        ? getSupabase().rpc("course_call_roster", { p_course_id: list.id })
+        : getSupabase().rpc("class_call_roster", { p_class_id: list.id });
+    req.then(({ data, error }) => {
+      if (stale) return;
+      if (error) {
+        setLoadErrors((prev) => ({ ...prev, [k]: "Chưa tải được danh sách. Thử lại sau hoặc kiểm tra quyền dạy lớp này." }));
+        return;
+      }
+      const students = ((data ?? []) as { student_id: string; full_name: string }[]).map((r) => ({
+        id: r.student_id,
+        name: r.full_name,
+      }));
+      setRosters((prev) => ({ ...prev, [k]: students }));
+    });
     return () => {
       stale = true;
     };
-  }, [open, classId, rosters]);
+  }, [open, list, rosters]);
 
-  const save = useCallback(
-    (next: SessionState) => {
-      if (!key) return;
-      setSessions((prev) => ({ ...prev, [key]: next }));
-      try {
-        window.localStorage.setItem(key, JSON.stringify(next));
-      } catch {}
-    },
-    [key],
-  );
+  function pickList(k: string) {
+    setPickedKey(k);
+    try {
+      window.localStorage.setItem(`${PICK_KEY}:${lessonId}`, k);
+      window.localStorage.setItem(PICK_KEY, k);
+    } catch {}
+  }
+
+  const save = (next: SessionState) => {
+    if (!key) return;
+    setSessions((prev) => ({ ...prev, [key]: next }));
+    try {
+      window.localStorage.setItem(key, JSON.stringify(next));
+    } catch {}
+  };
 
   const byId = useMemo(() => new Map((roster ?? []).map((st) => [st.id, st])), [roster]);
   const present = useMemo(() => (roster ?? []).filter((st) => !session.absent.includes(st.id)), [roster, session.absent]);
@@ -131,7 +189,7 @@ export default function RandomCallFab({
     [present, noRepeat, session.called],
   );
 
-  const spin = useCallback(() => {
+  const spin = () => {
     if (spinning || pool.length === 0) return;
     const winner = pool[randomIndex(pool.length)];
     const reduce = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -157,7 +215,7 @@ export default function RandomCallFab({
       timer.current = window.setTimeout(tick, delay);
     };
     tick();
-  }, [spinning, pool, present, session, save, setShown]);
+  };
 
   useEffect(() => () => {
     if (timer.current) window.clearTimeout(timer.current);
@@ -212,8 +270,6 @@ export default function RandomCallFab({
     setShown(null);
   }
 
-  if (classes.length === 0) return null;
-
   const calledList = session.called.map((id) => byId.get(id)).filter((x): x is Student => !!x);
   const exhausted = roster && roster.length > 0 && pool.length === 0;
 
@@ -232,22 +288,31 @@ export default function RandomCallFab({
           <div className={s.panel}>
             <header className={s.head}>
               <h2>Gọi tên ngẫu nhiên</h2>
-              {classes.length > 1 ? (
+              {allLists.length > 1 ? (
                 <select
                   className={s.select}
-                  value={classId ?? ""}
-                  onChange={(e) => setClassId(Number(e.target.value))}
-                  aria-label="Chọn lớp"
+                  value={listKey ?? ""}
+                  onChange={(e) => pickList(e.target.value)}
+                  aria-label="Chọn danh sách để gọi"
                 >
-                  {classes.map((c) => (
-                    <option key={c.id} value={c.id}>
-                      {c.name}
-                    </option>
-                  ))}
+                  {(["course", "class"] as const).map((kind) => {
+                    const group = allLists.filter((l) => l.kind === kind);
+                    if (group.length === 0) return null;
+                    return (
+                      <optgroup key={kind} label={kind === "course" ? "Khoá CTTC" : "Lớp THPT"}>
+                        {group.map((l) => (
+                          <option key={l.key} value={l.key}>
+                            {l.name}
+                            {l.n != null ? ` (${l.n})` : ""}
+                          </option>
+                        ))}
+                      </optgroup>
+                    );
+                  })}
                 </select>
-              ) : (
-                <span className={s.className}>{classes[0].name}</span>
-              )}
+              ) : list ? (
+                <span className={s.className}>{list.name}</span>
+              ) : null}
               <button type="button" className={s.close} onClick={() => setOpen(false)} aria-label="Đóng (Esc)">
                 <X size={22} aria-hidden />
               </button>
@@ -256,10 +321,12 @@ export default function RandomCallFab({
             <div className={s.stage} aria-live="polite">
               {loadError ? (
                 <p className={s.hint}>{loadError}</p>
+              ) : !list ? (
+                <p className={s.hint}>Chưa có danh sách nào thầy được gọi.</p>
               ) : !roster ? (
-                <p className={s.hint}>Đang tải danh sách lớp…</p>
+                <p className={s.hint}>Đang tải danh sách…</p>
               ) : roster.length === 0 ? (
-                <p className={s.hint}>Lớp này chưa có học sinh đang học.</p>
+                <p className={s.hint}>Danh sách này chưa có học sinh đang học.</p>
               ) : shown ? (
                 <div className={`${s.result} ${spinning ? s.rolling : s.landed}`} key={spinning ? "roll" : shown.id}>
                   <strong>{givenName(shown.name)}</strong>
