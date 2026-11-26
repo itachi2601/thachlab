@@ -23,6 +23,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - 19/11 RPC gộp trang bài + buổi ôn: đã chạy + deploy; chưa thử bằng HS thật.
 - **Ôn 5 phút (25/11)**: cả 2 migration đã chạy; 81 bài có thẻ + dòng ở /lop-hoc đã vào main, CHƯA deploy (chi tiết `docs/memory/project_thachlab_on_5_phut.md`).
 - **Gọi tên ngẫu nhiên trong bài (26/11)**: `20261126090000_goi_ten_ngau_nhien` (hàm `class_call_roster`, chỉ đọc) ĐÃ CHẠY 26/11 bằng `supabase db query -f` (checkout chính kẹt thay đổi phiên khác nên không qua run-migrations.sh, chưa có log, chưa gen-database-doc); nút "Gọi tên"/phím G ở /lop-hoc/bai đã deploy 26/11 (deploy 1934227); chưa thử bằng tài khoản GV với lớp thật. 26/11 thêm chọn danh sách (lớp THPT + khoá CTTC): `20261126100000_goi_ten_chon_danh_sach` ĐÃ CHẠY bằng `db query -f`. Deploy 06118878f = nguồn 3ceceea96 + 2 file RandomCallFab (KHÔNG gồm code lớp CNCTM đang chờ migration).
+- **CNCTM 1 bài 7–9 (26/11)**: `20261126111000_cnctm1_bai_7_9` (3 chương/bài, published=false) CHƯA CHẠY, chờ thầy duyệt nội dung `content/lesson-samples/cnctm1-bai-{7,8,9}-*/xem-thu/xem-thu.html`; sau đó chạy migration → `upload-lesson.mts … --lesson <id>` → bật published.
 - Sau mỗi migration: `node scripts/gen-database-doc.mjs`.
 
 ## Chờ deploy / chờ thử thật
