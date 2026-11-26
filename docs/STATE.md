@@ -9,6 +9,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
+- **GCPT Gia công phi truyền thống (26/11)**: `20261126140000_lop_gcpt_gia_cong_phi_truyen_thong` CHƯA CHẠY → chạy, rồi upload từng bài `content/lesson-samples/gcpt-bai-*` (`--lesson <id>`), bật published; quy cách `docs/MON-GCPT-QUY-CACH.md`; chưa tạo course_offering (chờ tên lớp).
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - Điểm học phần CNC (14/11): migration đã chạy, `/lop-hoc/cnc/bang-diem/` đã deploy 18/11; điểm Phay chưa nạp (mẫu `scripts/gui-diem-thi-tien-cnc.mts`, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
