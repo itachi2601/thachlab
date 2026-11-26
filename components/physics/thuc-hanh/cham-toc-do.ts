@@ -73,7 +73,16 @@ export const nhieuNgauNhien = (): Nhieu => ({
  */
 export function lanChan(s: number, motCong: boolean, lechMm: number, nh: Nhieu): LanChan[] {
   const [a, b] = lanChanBiLan(A_MANG, D_BI, X_E, s);
-  if (!motCong) return [a, { o: "B", vao: b.vao + nh.n, ra: b.ra + nh.n }];
+  if (!motCong) {
+    // Tính theo lúc TÂM bi qua cổng (mô hình t = (v_F − v_E)/a của JSON và bài 51: s = 0,500 m → 0,837 s);
+    // tính theo mép trước sẽ ra 0,854 s, lệch số trong bài.
+    const aV = Math.round(tg(X_E));
+    const bV = Math.round(tg(X_E + s)) + nh.n;
+    return [
+      { o: "A", vao: aV, ra: aV + (a.ra - a.vao) },
+      { o: "B", vao: bV, ra: bV + (b.ra - b.vao) },
+    ];
+  }
   const c = dayCung(lechMm);
   const vao = Math.round(tg(X_E + s - c / 2));
   const chan = Math.max(1, Math.round(tg(X_E + s + c / 2) - tg(X_E + s - c / 2) + nh.u));
@@ -154,14 +163,15 @@ export function chamV(raw: string, s: number, kq: KetQuaLoat): KetQuaCham | null
     [
       [kq.tbar / s, 0.01, "Em lấy t̄ chia s; tốc độ là quãng đường chia thời gian."],
       [s * kq.tbar, 0.005, "Em nhân s với t̄; tốc độ là s chia t̄."],
+      [Math.round(kq.v * 100) / 100, 1e-7, "Em làm tròn sớm quá; bài này ghi v̄ tới 3 chữ số thập phân."],
     ],
   );
 }
 
 /**
  * Δv chấm theo Δt và v̄ CỦA HỌC SINH ở hai ô trước (ô đó sai thì dùng số đúng), như chamDg bài 56.
- * Dung sai 0,00055 = làm tròn 3 chữ số thập phân. Giới hạn đã biết: phần Δs/s chỉ cỡ 0,0006 m/s ở s = 0,500 m nên
- * "quên Δs/s" có thể lọt vào dung sai đúng; ở s nhỏ (0,200 m) thì bắt được.
+ * Nhận đúng khi trùng số làm tròn 3 chữ số hoặc khớp 4 chữ số; phần Δs/s chỉ cỡ 0,0006 m/s ở s = 0,500 m nên dung
+ * sai rộng (±0,00055) sẽ để lọt "quên Δs/s".
  */
 export function chamDv(raw: string, s: number, kq: KetQuaLoat, dtHs = kq.dt, vHs = kq.v): KetQuaCham | null {
   const so = docSo(raw);
@@ -173,7 +183,11 @@ export function chamDv(raw: string, s: number, kq: KetQuaLoat, dtHs = kq.dt, vHs
   return phanLoai(
     so.value,
     cach,
-    [[dv, 0.00055]],
+    // Đúng khi khớp làm tròn 3 chữ số hoặc ghi 4 chữ số; dung sai rộng hơn sẽ để lọt "quên Δs/s" khi s lớn.
+    [
+      [Math.round(dv * 1000) / 1000, 1e-7],
+      [dv, 0.00006],
+    ],
     [
       [voi(dtHs, false), 0.0002, "Thiếu phần Δs/s của thước (0,0005 m chia cho s)."],
       [delta, 0.0003, "Đó là sai số tỉ đối δv; Δv = δv · v̄ mới là sai số tuyệt đối (m/s)."],
@@ -203,7 +217,7 @@ export function chamVF(raw: string, kq: KetQuaLoat): KetQuaCham | null {
       [D_BI / tRound, 0.005],
     ],
     [
-      [kq.v * 1000, 15, "Em chưa đổi d = 20,0 mm ra mét (0,020 m)."],
+      [kq.v * 1000, kq.v * 100, "Em chưa đổi d = 20,0 mm ra mét (0,020 m)."],
       [kq.v / 2, 0.01, "Em lấy bán kính; bi chắn tia suốt một đường kính d = 20,0 mm."],
     ],
   );

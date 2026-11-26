@@ -102,6 +102,7 @@ export function chamFve(raw: string, h: Hang, kq: KetQuaHang): KetQuaCham | null
     ],
     [
       [kq.cheo / XICH, 0.06, "Em chia chéo cho 0,5; từ cm ra N phải nhân với 0,5."],
+      [kq.cheo, 0.06, "Đó là chiều dài đường chéo (cm); nhân với 0,5 N/cm để ra niutơn."],
       [
         f1 + f2,
         0.06,

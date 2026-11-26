@@ -78,7 +78,7 @@ function NhinGanCong({ lech }: { lech: boolean }) {
         đoạn chắn {vnSo(dayCung(lech ? LECH_MM : 0) * 1000, 0)} mm
       </text>
       <text x={214} y={84} fontSize={16} fill="var(--color-muted)">
-        {lech ? `tia thấp hơn tâm ${LECH_MM} mm` : "tia ngang tâm bi"}
+        {lech ? `tia lệch ${LECH_MM} mm` : "tia ngang tâm bi"}
       </text>
       <text x={20} y={118} fontSize={15} fill="var(--color-muted)">
         Nhìn gần cổng F (phóng to)
@@ -143,8 +143,8 @@ function TrucKetQua({ ds, vF }: { ds: TomTat[]; vF: number }) {
   return (
     <TrucKhoang
       lo={0.3}
-      hi={1.3}
-      vach={[0.4, 0.6, 0.8, 1.0, 1.2]}
+      hi={1.4}
+      vach={[0.4, 0.6, 0.8, 1.0, 1.2, 1.4]}
       moc={vF}
       ds={ds.map((d) => ({ nhan: d.nhan, giua: d.kq.v, ban: d.kq.dv, phu: d.lech }))}
       ghiVach={(v) => vnSo(v, 1)}
@@ -196,7 +196,8 @@ export default function ThucHanhTocDo() {
         tMs: bangMoi ? [tSau] : [...loatMot.tMs, tSau],
       };
       setLoatMot(moi);
-      if (moi.tMs.length === SO_LAN) setLichSuMot((ls) => [...ls, moi].slice(-4));
+      if (moi.tMs.length === SO_LAN)
+        setLichSuMot((ls) => (ls.length < 4 ? [...ls, moi] : [ls[0], ...ls.slice(-2), moi])); // giữ bảng một cổng đầu (ô v = d : t̄)
     }
     may.tha();
   };
@@ -212,7 +213,7 @@ export default function ThucHanhTocDo() {
   const doiCong = (mot: boolean, lechMoi: boolean) => {
     setMotCong(mot);
     setLech(lechMoi);
-    if (mot) setLoatMot((cu) => ({ so: cu.tMs.length ? cu.so + 1 : cu.so, lech: lechMoi, tMs: [] }));
+    if (mot) setLoatMot((cu) => ({ so: cu.tMs.length === SO_LAN ? cu.so + 1 : cu.so, lech: lechMoi, tMs: [] }));
     reset();
   };
 

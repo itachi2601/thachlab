@@ -65,9 +65,14 @@ function CanhBang({ h, f3T, so0 }: { h: Pick<Hang, "f1T" | "f2T" | "a">; f3T: nu
   const c1 = { x: O.x - r * Math.sin(rad(t1)), y: O.y - r * Math.cos(rad(t1)) };
   const c2 = { x: O.x + r * Math.sin(rad(t2)), y: O.y - r * Math.cos(rad(t2)) };
   const lon = h.a > 180 ? 1 : 0;
+  // Chữ F3/vật đặt phía dây KHÔNG chúc xuống (dây chúc xuống dưới O khi góc lệch của nó > 90°).
+  const ghiBenTrai = t2 > 90;
+  const xGhi = ghiBenTrai ? O.x - 34 : O.x + 34;
+  const neoGhi = ghiBenTrai ? "end" : "start";
   const chot = (p: { x: number; y: number }) => <circle cx={p.x} cy={Math.max(p.y, 14)} r={5} fill="currentColor" />;
-  const ghiTrai = { x: Math.max(4, p1.x - 6), y: Math.max(p1.y, 14) + 22 };
-  const ghiPhai = { x: Math.min(356, p2.x + 6), y: Math.max(p2.y, 14) + 22 };
+  // Số chỉ ghi ở hai góc trên của bảng: hai chốt gần nhau (α nhỏ) thì ghi cạnh chốt sẽ đè nhau.
+  const ghiTrai = { x: 14, y: 28 };
+  const ghiPhai = { x: 346, y: 28 };
   return (
     <svg
       viewBox="0 0 360 260"
@@ -104,7 +109,13 @@ function CanhBang({ h, f3T, so0 }: { h: Pick<Hang, "f1T" | "f2T" | "a">; f3T: nu
         stroke="var(--color-primary)"
         strokeWidth={2}
       />
-      <text x={O.x} y={O.y - r - 8} fontSize={16} textAnchor="middle" fill="var(--color-primary)">
+      <text
+        x={t1 > 90 ? O.x + 12 : O.x - 12}
+        y={O.y + 24}
+        fontSize={16}
+        textAnchor={t1 > 90 ? "start" : "end"}
+        fill="var(--color-primary)"
+      >
         α = {h.a}°
       </text>
       {/* dây 3 + lực kế 3 + vật */}
@@ -112,18 +123,25 @@ function CanhBang({ h, f3T, so0 }: { h: Pick<Hang, "f1T" | "f2T" | "a">; f3T: nu
       <LucKe x1={O.x} y1={150} x2={O.x} y2={204} />
       <rect x={O.x - 18} y={214} width={36} height={30} rx={3} fill="currentColor" />
       <circle cx={O.x} cy={O.y} r={4} fill="var(--color-danger)" />
-      <text x={O.x - 12} y={O.y + 20} fontSize={16} textAnchor="end" fill="currentColor">
+      <text x={O.x + 10} y={O.y + 5} fontSize={16} fill="currentColor">
         O
       </text>
-      <text x={O.x + 34} y={186} fontSize={16} fontWeight={700} fill={so0 ? "var(--color-warn)" : "currentColor"}>
+      <text
+        x={xGhi}
+        y={186}
+        textAnchor={neoGhi}
+        fontSize={16}
+        fontWeight={700}
+        fill={so0 ? "var(--color-warn)" : "currentColor"}
+      >
         F3 = {vnSo(f3T / 10, 1)} N
       </text>
       {so0 && (
-        <text x={O.x + 34} y={208} fontSize={15} fill="var(--color-warn)">
+        <text x={xGhi} y={208} textAnchor={neoGhi} fontSize={15} fill="var(--color-warn)">
           số 0 lệch +{vnSo(SO0_LECH_T / 10, 1)} N
         </text>
       )}
-      <text x={O.x + 26} y={236} fontSize={15} fill="var(--color-muted)">
+      <text x={ghiBenTrai ? O.x - 26 : O.x + 26} y={236} textAnchor={neoGhi} fontSize={15} fill="var(--color-muted)">
         vật
       </text>
     </svg>
@@ -170,7 +188,13 @@ function HinhBinhHanh({ h, cheo }: { h: Hang; cheo: number }) {
         <text x={O.x + 8} y={O.y + 18} fontSize={16} fill="currentColor">
           O
         </text>
-        <text x={A.x - 4} y={A.y - 6} fontSize={16} textAnchor="end" fill="currentColor">
+        <text
+          x={A.x - 4 < XT + 70 ? A.x + 4 : A.x - 4}
+          y={A.y - 6}
+          fontSize={16}
+          textAnchor={A.x - 4 < XT + 70 ? "start" : "end"}
+          fill="currentColor"
+        >
           {vnSo(h.f1T / 10 / XICH, 1)} cm
         </text>
         <text
@@ -565,7 +589,7 @@ export default function ThucHanhTongHopLuc() {
               {coCaHai ? (
                 <p className="rounded-xl border border-line bg-surface-2 p-3 text-base leading-relaxed">
                   Các lần số 0 lệch: F3 luôn <b>lớn hơn</b> F vẽ chừng {vnSo(SO0_LECH_T / 10, 1)} N, đoạn cam dồn hẳn
-                  sang phải, có lần vượt Δ. Đó không phải quy tắc hình bình hành sai: trừ số lệch (hoặc chỉnh số 0 đúng
+                  sang phải, thường vượt Δ. Đó không phải quy tắc hình bình hành sai: trừ số lệch (hoặc chỉnh số 0 đúng
                   tư thế treo) thì δ lại nhỏ. Vượt sát Δ thì tìm nguyên nhân lệch một phía trước khi kết luận.
                 </p>
               ) : (
