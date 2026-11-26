@@ -75,7 +75,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Rà quiz + độ dài (26/11, mục 17–20): đã đăng lý thuyết 59, 79, 35, 38, 33, 13, 17, 126 + L12 Ch.3 (10, 11, 12, 125, 127). CHỜ thầy duyệt 8 câu Đ/S + trả lời ngắn mới (đề Luyện tập bài 13, 17, 126); các chương còn lại — memory `project_thachlab_ra_soat_quiz_do_dai`.
 
 
-- P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. CÒN: 38, 39 dòng đầu bài chưa dạng hai mốc; file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
+- P2/P4 xong 26/11 ~23h30: 74 bài L10–12 + 17 bài KHTN 9 + 8 bài CNC (`cnc_lessons`, dựng từ bản DB chỉ thay dòng mốc để giữ neo `muc-N`) + bài 31; 51, 67 DB đã trùng file; P3 đã chạy trên site. Bài 39 (Chốt mục + data-tap + gợi ý P4) đã đăng 26/11 ~23h35 theo thầy duyệt. 38, 39 đã đổi dòng hai mốc và đăng 23h41. CÒN: file `cnc-*/theory.src.html` thiếu neo `muc-N` đang có trên DB (đăng từ file sẽ mất neo).
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
