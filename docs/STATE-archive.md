@@ -998,3 +998,4 @@ Kiểm chỉ đọc (`scripts/data/gan-chu-de-l11/kiem.sql`): 126/129 câu chủ
 - 26/11/2026 ~22h40 · P5 đã đăng lý thuyết 5 bài 54, 50, 24, 36, 22 (từ phiên chính; 33 DB đã có sẵn). Bài 54, 50 đăng bằng bundle tạm giữ dòng "Đọc khoảng N phút" cũ của DB — sau đó thầy chạy lại `.p5-ghi.sh` ở worktree P5 nên 54, 50 đã mang dòng hai mốc P2 (thầy: "Giữ, duyệt P2"). Sao lưu `scripts/logs/ly-thuyet-bai{54,50,24,36,22}-backup-17957076*.json`.
 - 26/11/2026 ~22h45 · Thầy chạy thêm `.p5-ghi.sh` (phiên P5) sau lần đăng trên: 24, 36, 22 ghi lại y nguyên; **54, 50 nay đã có dòng hai mốc P2 trên DB** (trước khi P2 được duyệt). Bản DB ngay trước đó: `scripts/logs/ly-thuyet-bai54-backup-1795707915879.json`, `ly-thuyet-bai50-backup-1795707918473.json`.
 - 26/11/2026 ~22h50 · Thầy chốt: giữ dòng hai mốc trên bài 54, 50 và duyệt P2 ("Giữ, duyệt P2").
+- 26/11/2026 · Bật published=true 12 bài gcpt (lesson 216–227).

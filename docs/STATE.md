@@ -9,7 +9,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Nền SÁNG mặc định (11/10): token `app/globals.css`, `docs/MAU-NEN-SANG.md`.
 
 ## Migration — ĐANG CHỜ (nguồn đúng: `bash scripts/run-migrations.sh --list` + `scripts/logs/`; sau migration chạy `node scripts/gen-database-doc.mjs`)
-- **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã có nội dung nhưng `published=false` → chờ thầy duyệt `/lop-hoc/bai/?id=216..227` rồi bật; chưa tạo course_offering (chờ tên lớp).
+- **GCPT (26/11)**: lớp `gcpt` id 24, 12 bài id 216–227 đã đăng và BẬT HIỆN (26/11); còn: tạo course_offering (chờ tên lớp/năm học), thầy đối chiếu số liệu "tham khảo".
 - **AI sửa lỗi → sửa luôn câu gốc ngân hàng (16/11)**: `20261116120000_bank_apply_question_fix` ĐÃ CHẠY 16/11 (hàm tồn tại, chặn người không phải giáo viên). Client đã sửa (ExamSection + services/ai-check-exam) nhưng chưa vào main/deploy; chưa thử bấm AI sửa thật.
 - Điểm học phần CNC (14/11): migration đã chạy, `/lop-hoc/cnc/bang-diem/` đã deploy 18/11; điểm Phay chưa nạp (mẫu `scripts/gui-diem-thi-tien-cnc.mts`, module 'phay').
 - Bài tập ngày 28/10 (đề 1289–1293): chưa rõ đã deploy `ClassRoster.tsx`.
@@ -53,7 +53,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - `.htaccess` thêm `Cache-Control: no-cache` cho HTML — chờ thầy gật.
 
 ## Nội dung đang treo
-- **HS học thử 26/11 (nhánh `claude/thachlab-16-ui-fixes-4f6a2f`)**: nhóm 1 + mục 10–16 đã vào main; đã đăng lý thuyết id 20, 2, 46 lúc 22h35 26/11 (sao lưu `scripts/logs/ly-thuyet-bai{20,2,46}-backup-*.json`); **chờ deploy** (trang HS đọc body từ catalog dựng lúc build); nhóm 2 (mục 6–9) chờ thầy quyết.
+- **HS học thử 26/11 (nhánh `claude/thachlab-16-ui-fixes-4f6a2f`)**: nhóm 1 + mục 10–16 đã vào main; đã đăng lý thuyết id 20, 2, 46 lúc 22h35 26/11 (sao lưu `scripts/logs/ly-thuyet-bai{20,2,46}-backup-*.json`); đã deploy 26/11 ~23h; chờ thử máy thật (bàn phím iOS che ô nhập); nhóm 2 (mục 6–9) chờ thầy quyết.
 - Sửa định dạng ngân hàng+đề (11/11 06:44, nhánh `claude/ai-question-review-feature-8b092c`): đã ghi 1.910 câu NH + 666 đề, ẩn 670225; sao lưu `bk_sua_dinh_dang_202611101518_{bank,exams}`. Treo: 29 câu bộ sửa bỏ qua (KaTeX), 74 nghi ngờ trong đề, deploy docx-reader + cảnh báo soạn đề.
 - Mẹo từ khoá đợt 2 chờ số liệu Trả bài; 5 bài >2.500 từ để phiên video giảm chữ.
 - Thí nghiệm L12: nhánh `claude/data-tap-lessons-16-19-e5e3b0` KHÔNG đăng từ đó (phải merge main trước); `video-theo-bai.json` còn vị trí cũ video id 12, 126.
@@ -87,5 +87,5 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" (8/11): 46 bài L10/L11/L12/KHTN9 đã lên DB + deploy; 7 chỗ lệch nhỏ chờ sửa component (`docs/MOT-DANG-MOT-HINH.md` mục 8/11).
 - Dụng cụ đo tương tác · thư viện `/mo-phong` công khai · thí nghiệm ảo theo bộ thiết bị SGK (kế hoạch 21/11, chưa bắt đầu, giao phiên khác): `docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md`.
-  - 26/11: Gói C có 4 bài (56, 75 đã đăng; 51, 67 gắn hộp `thuc-hanh-toc-do`/`thuc-hanh-tong-hop-luc`, đã đăng DB 26/11 23h25; **CHỜ DEPLOY** `bash scripts/deploy.sh` thì mô phỏng mới hiện). Xem thử `/dev/thuc-hanh`.
+  - 26/11: Gói C có 4 bài (56, 75 đã đăng; 51, 67 gắn hộp `thuc-hanh-toc-do`/`thuc-hanh-tong-hop-luc`, đã đăng DB 26/11 23h25 + deploy 23h45; chưa thử bằng tài khoản HS thật). Xem thử `/dev/thuc-hanh`.
 - `/mo-phong` Gói B + 4 dụng cụ đo Gói A: đã lên production 23–25/11. Thêm trang: 1 dòng `lib/mo-phong-trang.ts` + 1 dòng `MoPhongTheoSlug.tsx` → `npx tsx scripts/gen-thu-vien-mo-phong.mts`.
