@@ -143,6 +143,7 @@ FILES=(
   "supabase/migrations/20261126100000_lop_cnctm1_bai_1_2.sql|CTTC Công nghệ chế tạo máy 1 (CĐ CK 25C): môn + lớp 'cnctm' (vào có duyệt), 2 chương/2 bài đầu (published=false), subjects + course_offering CNCTM-25C; chỉ chèn dữ liệu, idempotent|lúc nào cũng được (chỉ chèn dữ liệu); rollback: khối chú thích cuối file"
   "supabase/migrations/20261126100000_goi_ten_chon_danh_sach.sql|Gọi tên ngẫu nhiên: thêm call_roster_lists() (danh sách lớp THPT + khoá CTTC người gọi dạy) + course_call_roster(p_course_id); chỉ đọc; chạy sau 20261126090000|lúc nào cũng được (chỉ thêm 2 hàm)|supabase db query --linked -f perf/rollback/20261126100000_goi_ten_chon_danh_sach.down.sql"
   "supabase/migrations/20261126110000_cnctm1_bai_3_4.sql|CTTC Công nghệ chế tạo máy 1: thêm chương/bài 3 Phôi và lượng dư, chương/bài 4 Chuẩn (published=false); chỉ chèn dữ liệu, idempotent; chạy sau 20261126100000_lop_cnctm1_bai_1_2|lúc nào cũng được (chỉ chèn dữ liệu); rollback: khối chú thích cuối file"
+  "supabase/migrations/20261126110500_cnctm1_bai_5_6.sql|CNCTM 1: chương/bài 5 Độ chính xác gia công + 6 Thiết kế quy trình công nghệ (published=false) cho lớp 'cnctm'; chỉ chèn dữ liệu, idempotent; chạy sau 20261126100000_lop_cnctm1_bai_1_2|lúc nào cũng được (chỉ chèn dữ liệu); rollback: khối chú thích cuối file"
 )
 # ĐÃ ÁP 19/11/2026 (memory AVCN: lesson 202 chương 12, đề 1387–1396 đã có trên DB; file idempotent): 20261119150000_avcn_bai_12_de_thi_thu
 # ĐÃ CHẠY 19/11/2026 08:05: 20261119090000_dinh_duong

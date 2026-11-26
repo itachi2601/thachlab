@@ -21,6 +21,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - **GitHub 12/11 06:46**: có ruleset `bao-ve-main-deploy` (chỉ admin cập nhật `main`/`deploy`) → workflow `gop-claude-vao-main.yml` KHÔNG đẩy được vào main nữa (GH013). Phiên Mac: `git push origin HEAD:main` (fast-forward, sau khi `git merge origin/main`); phiên cloud: không tự vào main được, chờ thầy quyết. Repo vẫn công khai, `nhmkct1`/`zKdKaidO` vẫn quyền ghi.
 - **Sức khỏe mở cho HS/SV (19/11)**: `student` vào được `/suc-khoe` (THPT + CTTC), chương trình riêng không dụng cụ `PROGRAM_HS` (3 buổi ~30′), không thấy Số đo/ngực–eo; link ở `/tai-khoan/them`; localStorage tách theo tài khoản. Chưa deploy, chưa thử bằng tài khoản HS thật.
 - 19/11 RPC gộp trang bài + buổi ôn: đã chạy + deploy; chưa thử bằng HS thật.
+- **CNCTM 1 bài 5–6 (26/11)**: `20261126110500_cnctm1_bai_5_6` CHƯA CHẠY (chèn chương/bài 5, 6, published=false); nội dung `content/lesson-samples/cnctm1-bai-5-do-chinh-xac/`, `cnctm1-bai-6-thiet-ke-qtcn/` chờ thầy duyệt rồi mới chạy + upload-lesson.mts.
 - **Ôn 5 phút (25/11)**: cả 2 migration đã chạy; 81 bài có thẻ + dòng ở /lop-hoc đã vào main, CHƯA deploy (chi tiết `docs/memory/project_thachlab_on_5_phut.md`).
 - **Gọi tên ngẫu nhiên trong bài (26/11)**: `20261126090000_goi_ten_ngau_nhien` (hàm `class_call_roster`, chỉ đọc) ĐÃ CHẠY 26/11 bằng `supabase db query -f` (checkout chính kẹt thay đổi phiên khác nên không qua run-migrations.sh, chưa có log, chưa gen-database-doc); nút "Gọi tên"/phím G ở /lop-hoc/bai đã deploy 26/11 (deploy 1934227); chưa thử bằng tài khoản GV với lớp thật. 26/11 thêm chọn danh sách (lớp THPT + khoá CTTC): `20261126100000_goi_ten_chon_danh_sach` ĐÃ CHẠY bằng `db query -f`. Deploy 06118878f = nguồn 3ceceea96 + 2 file RandomCallFab (KHÔNG gồm code lớp CNCTM đang chờ migration).
 - **CNCTM 1 Bài 3–4 (26/11)**: `20261126110000_cnctm1_bai_3_4` CHƯA CHẠY, chờ thầy duyệt `content/lesson-samples/cnctm1-bai-{3-phoi-luong-du,4-chuan}/xem-thu/xem-thu.html`; sau đó chạy migration rồi `upload-lesson.mts` 2 bundle, bật published.
@@ -65,7 +66,6 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: mọi TN đã có clip; lô 20 clip L12 + 3 mẫu đã lên DB (21–22/11). Lỗi 0 lượt ghi (`lesson_clip_views`, `lesson_clip_choices`) do thiếu `data-lesson-id` ở /lop-hoc/bai — sửa + deploy 25/11 (9e50dcab4); kiểm lại có dòng sau buổi học tới. Treo: sinh lại `thu-vien-mo-phong.json`.
-- Clip Ch.1 lô B (26/11): bài 46, 48, 22 hẹn ghi DB 22:05 26/11 (`--chi-video`, log `scripts/logs/dang-22h-3bai-20261126.log`) — phiên sau kiểm log 3 lần "Khác biệt ngoài khối video: KHÔNG", không "LOI".
 - Lô 12/11: clip đề Bộ, 12 clip bẫy, `MoPhongPortals` bài 7, 8, 11 đã lên; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
@@ -78,6 +78,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Bài tập mẫu → ngân hàng → nút "Bài tương đương" (RPC gộp).
 - Đo độ trễ Supabase từ VN trước khi xoá project Sydney; cột `updated_at` cho `lessons`/`lesson_items`.
 - Đề xuất nghiên cứu HS 14–22 (chờ chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`.
+- Lộ trình học kiểu Duolingo (bản thiết kế, chờ chốt mục 9): `docs/LO-TRINH-KIEU-DUOLINGO.md`.
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" (8/11): 46 bài L10/L11/L12/KHTN9 đã lên DB + deploy; 7 chỗ lệch nhỏ chờ sửa component (`docs/MOT-DANG-MOT-HINH.md` mục 8/11).
 - Dụng cụ đo tương tác · thư viện `/mo-phong` công khai · thí nghiệm ảo theo bộ thiết bị SGK (kế hoạch 21/11, chưa bắt đầu, giao phiên khác): `docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md`.
