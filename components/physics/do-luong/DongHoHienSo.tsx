@@ -484,12 +484,12 @@ export function DongThoiGianChan({
 
 /* ---------------- Cảnh bài 6: bi lăn qua hai cổng ---------------- */
 
-const D_BI = 0.02; // m
-const X_E = 0.1; // m, từ chỗ thả tới cổng E
+export const D_BI = 0.02; // m
+export const X_E = 0.1; // m, từ chỗ thả tới cổng E
 
-type ThongSo = { a: number; s: number };
+export type ThongSo = { a: number; s: number };
 
-function CanhMang({ ts, tMs, lan }: { ts: ThongSo; tMs: number; lan: LanChan[] }) {
+export function CanhMang({ ts, tMs, lan }: { ts: ThongSo; tMs: number; lan: LanChan[] }) {
   const id = `mg${useId().replace(/[^a-zA-Z0-9]/g, "")}`;
   const P0 = { x: 46, y: 58 };
   const P1 = { x: 346, y: 116 };
