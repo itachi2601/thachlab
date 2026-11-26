@@ -30,6 +30,8 @@ import {
   WORLDSKILLS_SUBJECT_CODE,
   CNCTM_CLASS_SLUG,
   CNCTM_SUBJECT_CODE,
+  GCPT_CLASS_SLUG,
+  GCPT_SUBJECT_CODE,
   isCttcClassSlug,
   expandClassIdsByGrade,
   fetchMyClassRequest,
@@ -255,6 +257,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
   const isCasio = active?.slug === CASIO_CLASS_SLUG;
   const isWorldSkills = active?.slug === WORLDSKILLS_CLASS_SLUG;
   const isCnctm = active?.slug === CNCTM_CLASS_SLUG;
+  const isGcpt = active?.slug === GCPT_CLASS_SLUG;
   const isCttc = isCttcClassSlug(active?.slug);
   const subjectCode = isAvcn
     ? AVCN_SUBJECT_CODE
@@ -264,11 +267,13 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     ? WORLDSKILLS_SUBJECT_CODE
     : isCnctm
     ? CNCTM_SUBJECT_CODE
+    : isGcpt
+    ? GCPT_SUBJECT_CODE
     : classGrade(active?.name ?? "") === "9"
     ? activeSubjectCode
     : "vat-ly";
   const activeDisplayName = active
-    ? isAvcn || isCasio || isWorldSkills || isCnctm
+    ? isAvcn || isCasio || isWorldSkills || isCnctm || isGcpt
       ? active.name
       : classGrade(active.name) === "9"
       ? subjectCode === HSG_SUBJECT_CODE
@@ -571,7 +576,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
     const onlyMeta = !only
       ? ""
       : !showAccountProgress
-        ? only.itemCount > 0 ? `${only.itemCount} mục` : "" // khách chưa đăng nhập đọc ra 0 → đừng in "0 mục" (lớp trông rỗng, 26/11/2026)
+        ? only.minutes ? `~${only.minutes} phút` : "" // "x mục" không có nghĩa với HS → số phút từ catalog (HS học thử 26/11, N3)
         : onlyPercent === 100
           ? "Hoàn thành"
           : onlyPercent > 0
@@ -677,7 +682,7 @@ function ClassHubContent({ classSlug }: { classSlug?: string }) {
                         {periodic
                           ? showAccountProgress ? (complete ? "Đã làm" : "Chưa làm") : "Kiểm tra"
                           : !showAccountProgress
-                            ? lesson.itemCount > 0 ? `${lesson.itemCount} mục` : ""
+                            ? lesson.minutes ? `~${lesson.minutes} phút` : ""
                             : review
                               ? "Ôn lại"
                               : complete

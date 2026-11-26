@@ -128,7 +128,7 @@ b += text(87, 30, "bể bơi", anchor="middle", weight="600")
 b += text(295, 30, "hồ rộng", anchor="middle", weight="600")
 fig1 = wrap(f"0 0 {VB[1][0]} {VB[1][1]}",
             "Mặt cắt một bể bơi hẹp và một hồ rộng; ở cả hai nơi có một điểm nằm sâu 2 m dưới mặt nước",
-            b, "Hình 1. Cùng độ sâu 2 m dưới mặt nước: bên trái là bể bơi hẹp, bên phải là hồ rộng.")
+            b, "Hình 1. Bể bơi hẹp (trái) và hồ rộng (phải), cùng độ sâu 2 m.")
 
 # ================= Hình 2: áp suất tại M, N theo mọi phương; Δh =================
 CUR["fig"] = 2
@@ -160,8 +160,8 @@ b += dim_v(328, M[1], N[1], name="Δh") + text(338, (M[1] + N[1]) / 2 + 6, "Δ" 
 b += text(306, SURF2 + 5, "mặt thoáng", weight="600")
 fig2 = wrap(f"0 0 {VB[2][0]} {VB[2][1]}",
             "Bình nước có hai điểm M nông và N sâu; ở mỗi điểm bốn mũi tên chĩa vào từ bốn phía, mũi tên ở N dài hơn; ghi độ sâu h1, h2 và độ chênh Δh",
-            b, "Hình 2. Ở mỗi điểm, nước ép như nhau theo mọi phương; mũi tên dài theo phần áp suất do nước. "
-               "N sâu hơn M nên bị ép mạnh hơn; hiệu áp suất chỉ phụ thuộc độ chênh độ sâu.")
+            b, "Hình 2. Ở mỗi điểm, nước ép đều theo mọi phương. "
+               "N sâu hơn M nên bị ép mạnh hơn.")
 fig2 = fig2.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-klr-apsuat-03"', 1)
 
 # ================= Hình 3: ống chữ U, nước + dầu (đọc hàng 10 cm của tn-04) =================
@@ -197,8 +197,8 @@ b += dim_v(76, YOIL, YI, name="cột dầu") + text(68, (YOIL + YI) / 2 + 6, f"{
 b += dim_v(324, YR, YI, name="cột nước") + text(332, (YR + YI) / 2 + 6, f"{num(HN, 0)} cm")
 fig3 = wrap(f"0 0 {VB[3][0]} {VB[3][1]}",
             "Ống chữ U: nhánh trái có cột dầu hoả 10 cm nằm trên nước, nhánh phải chỉ có nước cao 8 cm tính từ mức ngang của mặt phân cách; A và B cùng mức ngang",
-            b, "Hình 3. Dầu hoả (cam) nổi trên nước ở nhánh trái. A và B cùng mức ngang, cùng nằm trong nước nên cùng áp suất: "
-               "cột dầu hoả 10 cm cân với cột nước 8 cm, mặt dầu cao hơn mặt nước bên kia.")
+            b, "Hình 3. Dầu hoả (cam) nổi trên nước ở nhánh trái: "
+               "cột dầu 10 cm cân với cột nước 8 cm.")
 fig3 = fig3.replace('<figure class="fig"', '<figure class="fig" data-exp="tn-l10-klr-apsuat-04"', 1)
 
 # ================= Hình 4: ba bình khác hình dạng, cùng mực nước =================
@@ -364,6 +364,8 @@ print("ρ:", [round(x, 4) for x in rhos], "lệch %:", [round(100 * l_, 2) for l
 src = (HERE / "theory.src.html").read_text(encoding="utf8")
 for k, v in {"__BANG__": BANG, "__NHANXET__": NX, "__DIENBUOC__": DIENBUOC, "__DOICHIEU__": DOICHIEU,
              "__S1__": S1, "__S2__": S2, "__S3__": S3}.items():
+    if k == "__DIENBUOC__" and k not in src:  # lời giải từng bước đã chuyển sang Bài mẫu (39f79601a)
+        continue
     assert k in src, k
     src = src.replace(k, v)
 figs = (fig1, fig2, fig3, fig4, fig5)

@@ -93,17 +93,34 @@ export function useStickyTop() {
   const [top, setTop] = useState(0);
   useEffect(() => {
     let raf = 0;
+    let tail = 0;
+    // Xếp chồng: thanh dính nằm ngay dưới thanh trước (thanh bài 0–56 rồi dải tab 56–110) cũng tính — trước chỉ
+    // lấy thanh có top ≤ 1 nên khối dính đặt top 56 và dải tab che dòng "Tìm … · Đề ▼" (HS học thử 26/11, B6).
     const measure = () => {
       raf = 0;
-      let t = 0;
-      document.querySelectorAll<HTMLElement>("header, nav, .lesson-head").forEach((el) => {
+      const bars: DOMRect[] = [];
+      document.querySelectorAll<HTMLElement>("header, nav, .lesson-head, .lesson-tabs").forEach((el) => {
         const cs = getComputedStyle(el), r = el.getBoundingClientRect();
-        if ((cs.position === "sticky" || cs.position === "fixed") && r.top <= 1 && r.height > 0 && r.height < 200) t = Math.max(t, r.bottom);
+        if (!(cs.position === "sticky" || cs.position === "fixed") || r.height <= 0 || r.height >= 200 || cs.visibility === "hidden") return;
+        if (el.classList.contains("lesson-tabs")) {
+          // Dải tab trượt ẩn/hiện (is-tabs-hidden): lấy vị trí ĐÍCH, không lấy vị trí đang trượt
+          if (el.closest(".is-tabs-hidden")) return;
+          const dy = cs.transform === "none" ? 0 : new DOMMatrixReadOnly(cs.transform).m42;
+          bars.push(new DOMRect(r.x, r.y - dy, r.width, r.height));
+          return;
+        }
+        bars.push(r);
       });
+      bars.sort((a, b) => a.top - b.top);
+      let t = 0;
+      for (const r of bars) if (r.top <= t + 1 && r.bottom > t) t = r.bottom;
       setTop(Math.round(t));
     };
     const onScroll = () => {
       if (!raf) raf = requestAnimationFrame(measure);
+      // dải tab trượt ẩn/hiện mất ~0,2 s: đo lại sau khi trượt xong
+      window.clearTimeout(tail);
+      tail = window.setTimeout(measure, 260);
     };
     measure();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -112,6 +129,7 @@ export function useStickyTop() {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       cancelAnimationFrame(raf);
+      window.clearTimeout(tail);
     };
   }, []);
   return top;

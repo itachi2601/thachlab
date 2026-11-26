@@ -138,9 +138,7 @@ def don_bay_nhiet(noi_voi_de):
     html = fig("meo-don-bay", "0 40 320 172", "Đòn bẩy nhiệt trên trục nhiệt độ: thả lần lượt ba viên sắt 100 độ C vào nước 20 độ C", body, cap)
     return {
         "ten": "Đòn bẩy nhiệt",
-        "dieu_kien": "Chỉ dùng khi hệ cô lập (nhiệt lượng kế, bỏ qua trao đổi nhiệt với môi trường) và chỉ các vật nằm trên đòn "
-                     "trao đổi nhiệt với nhau; không vật nào chuyển thể, nhiệt dung riêng coi như không đổi, "
-                     "không có công cơ học, không có hoà tan.",
+        "dieu_kien": "Chỉ dùng khi hệ cô lập: các vật trên đòn chỉ trao đổi nhiệt với nhau, không vật nào chuyển thể; nhiệt dung riêng không đổi, không có công cơ học, không hoà tan.",
         "html": html + noi_voi_de,
     }
 

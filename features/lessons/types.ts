@@ -32,6 +32,8 @@ export interface Lesson {
   published: boolean;
   lesson_kind: LessonKind;
   itemCount: number;
+  /** Số phút học lý thuyết (chỉ có ở danh mục tĩnh catalog.json — scripts/build-content.mjs). */
+  minutes?: number;
   description: string; // yêu cầu cần đạt, hiện ngắn gọn dưới tên bài
 }
 

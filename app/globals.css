@@ -3668,7 +3668,7 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
 .bt-tomde-bar .exam-content { font-size: inherit; line-height: inherit; } /* .exam-content đặt 16px/1.6 → dòng 28px */
 .bt-tomde-bar .katex { display: inline; overflow: visible; vertical-align: baseline; font-size: 1.08em; } /* inline-block (luật chung .exam-content .katex) làm dòng cao ~24px → thanh cao, hình co */
 .bt-tomde-bar > i { flex: none; color: var(--color-muted); font-size: 12.5px; font-style: normal; font-weight: 600; }
-.cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px - var(--cc-tim, 40px)); }
+.cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(40svh - 110px - var(--cc-tim, 40px)); }
 .bt-tomde-pop { position: absolute; top: 100%; right: 0; left: 0; z-index: 6; max-height: min(60svh, 480px); overflow: auto; border: 1px solid var(--color-line); border-radius: 0 0 12px 12px; background: var(--color-panel); padding: 12px 14px; box-shadow: 0 14px 28px rgb(0 0 0 / .18); font-size: 15px; line-height: 1.55; }
 .bt-tomde h4 { margin: 0 0 2px; color: var(--color-muted); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
 .bt-tomde ul { margin: 0 0 10px; padding-left: 1.1em; list-style: disc; }
@@ -3681,10 +3681,10 @@ html[data-theme="light"] .bt-meo { border-color: rgba(180,83,9,.4); background: 
   /* cột 0px: thẻ tràn sang khoảng trống phải (--wide-bleed của trang bài; trang xem thử không có thì 240px) */
   .cc-split > .bt-tomde-side { display: block; position: sticky; grid-column: 2; grid-row: 1 / span 3; align-self: start; width: min(240px, calc(var(--wide-bleed, 240px) + 4px)); margin-left: 28px; border-left: 1px solid var(--color-line); padding-left: 12px; color: var(--color-ink); font-size: 13.5px; line-height: 1.55; }
   .cc-sticky :is(.bt-tomde-bar, .bt-tomde-pop) { display: none; }
-  .cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 96px); }
+  .cc-sticky:has(.bt-tomde-bar) .cc-fig { height: calc(40svh - 110px); }
   .bt-tomde-khung > .cc-sticky { display: none; } /* dạng không hình: khối dính chỉ có dòng Tìm → thẻ lề thay */
 }
-.cc-fig { display: block; width: 100%; height: calc(42svh - 96px); min-height: 150px; max-height: 340px; }
+.cc-fig { display: block; width: 100%; height: calc(40svh - 110px); min-height: 120px; max-height: 340px; } /* khối dính (hình + Tìm + nút bước + gợi ý) ≤ 40svh: 356px → ~325px ở 812 (HS học thử 26/11, B6) */
 .cc-stepper { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 14px; font-weight: 600; }
 .cc-step-title { flex: 1; min-width: 0; text-align: center; font-size: 13.5px; line-height: 1.25; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; text-wrap: balance; } /* 2 dòng thay vì cắt "Hướng của gia …" ở 375px (HS ảo 3/11, C2) */
 .cc-hint { margin: 2px 0 0; min-height: 2.7em; font-size: 13.5px; line-height: 1.35; text-align: center; color: var(--color-muted); text-wrap: balance; }
@@ -4398,8 +4398,8 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .cc-dong-nut:disabled { opacity: .55; cursor: default; }
 .cc-sticky .cc-dong { margin-top: 2px; }
 .cc-sticky .cc-dong-nut { min-height: 36px; padding: 4px 12px; font-size: 13.5px; }
-.cc-sticky:has(.cc-dong) .cc-fig { height: calc(42svh - 136px); }
-.cc-sticky:has(.cc-dong):has(.bt-tomde-bar) .cc-fig { height: calc(42svh - 136px - var(--cc-tim, 40px)); } /* nút chạy chỉ có ở bước dùng nó: hình co lại để khối dính không cao thêm (B6, N8) */
+.cc-sticky:has(.cc-dong) .cc-fig { height: calc(40svh - 150px); }
+.cc-sticky:has(.cc-dong):has(.bt-tomde-bar) .cc-fig { height: calc(40svh - 150px - var(--cc-tim, 40px)); } /* nút chạy chỉ có ở bước dùng nó: hình co lại để khối dính không cao thêm (B6, N8) */
 
 /* Bài đọc SHCN (/sinh-hoat/[hk]/[bai]) — bảng phiếu tự điền + đáp án gập (B8, C1). */
 .shcn-prose { font-size: 1.0625rem; }
@@ -4477,3 +4477,47 @@ html[data-theme="light"] .class-done-tag.is-fail { color: #b45309; }
 .avcn-lt-old > summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; font-weight: 600; color: var(--color-primary); }
 .avcn-lt-old[open] > summary { margin-bottom: 10px; }
 @media (prefers-reduced-motion: reduce) { .avcn-lt-bar > span { transition: none; } }
+
+/* ---- HS học thử 26/11/2026 (khách, 375×812) — nhóm 1 ---- */
+/* (1) N1/B6: nút nổi "Ghi chú" đè nút Tiếp · mục sau, phương án quiz → < 1024 vào bảng Aa; ≥ 1024 giữ nút nổi (không có thanh đáy). */
+.lesson-tool--note { display: none; }
+@media (max-width: 1023px) {
+  .lesson-tools .lesson-tool--note { display: inline-flex; }
+  .student-note-fab { display: none; }
+}
+/* (3) B6: dải tab trượt lên sau thanh bài khi cuộn xuống (đặt class ở app/lop-hoc/bai/page.tsx), hiện lại khi cuộn lên. */
+@media (max-width: 1023px) {
+  .lesson-page .lesson-tabs { transition: transform .18s ease-out; }
+  .lesson-page.is-tabs-hidden .lesson-tabs { transform: translateY(-100%); pointer-events: none; }
+}
+@media (max-width: 1023px) and (prefers-reduced-motion: reduce) { .lesson-page .lesson-tabs { transition: none; } }
+/* (2) B6/D6: ô đáp số được cuộn tới thì nằm dưới thanh bài + khối dính, không chui dưới hình. */
+.cc-steps :is(input, textarea, .bt-ask) { scroll-margin-top: 136px; scroll-margin-bottom: 24px; }
+/* (4) H2: bảng phân tích đề "Câu trong đề | Dữ liệu | Kiến thức" 3 cột ở 375px làm KaTeX gãy dòng → dưới 480px mỗi dòng thành một thẻ,
+   nhãn cột lấy từ data-th (ContentHtml.withStackTables gắn lúc hiển thị, bài đã đăng không cần đăng lại). */
+@media (max-width: 479px) {
+  .exam-content .tl-table--stack, .exam-content .tl-table--stack :is(tbody, tr, td) { display: block; width: 100%; }
+  .exam-content .tl-table--stack thead { display: none; }
+  .exam-content .tl-table--stack { border: 0; }
+  .exam-content .tl-table--stack tr { margin: 0 0 10px; border: 1px solid rgba(148,163,184,.4); border-radius: 10px; overflow: hidden; }
+  .exam-content .tl-table--stack td { border: 0; border-top: 1px solid rgba(148,163,184,.25); padding: 6px 12px 8px; }
+  .exam-content .tl-table--stack td:first-child { border-top: 0; }
+  .exam-content .tl-table--stack td[data-th]::before { content: attr(data-th); display: block; margin-bottom: 2px; color: var(--color-muted); font-size: 12.5px; font-weight: 700; letter-spacing: .02em; }
+  .exam-content :is(.tl-scroll, .table-scroll):has(> .tl-table--stack) { overflow: visible; }
+  .exam-content :is(.tl-scroll, .table-scroll) > .tl-table--stack { min-width: 0; }
+}
+/* (10) Dòng giải thích "Tập" một lần mỗi bài (ContentHtml.withTapNote). */
+.exam-content .tl-tap-note { margin: 0 0 8px; color: var(--color-muted); font-size: 14px; line-height: 1.5; }
+/* (5) D6/D2: phím π và / dưới ô đáp số của bước có π (StepwiseSolution.needsPiKeys). */
+.exam-content .bt-ask-keys { display: flex; gap: 8px; margin-top: 8px; }
+.exam-content .bt-ask-keys .lesson-btn-ghost { min-width: 52px; min-height: 44px; justify-content: center; font-size: 18px; font-weight: 700; }
+/* "Em chắc bao nhiêu? ◯ Chắc ◯ Không chắc" giữ MỘT dòng ở 360–375px (HS học thử 26/11: rớt 2 dòng, N3) */
+/* Nút dạng viên (radio ẩn khỏi mắt, vẫn bàn phím/đọc màn hình được), đích chạm 44px (D6) */
+.exam-content .tl-conf { flex-wrap: nowrap; gap: 8px; font-size: .84em; }
+.exam-content .tl-conf label { position: relative; white-space: nowrap; min-height: 44px; padding: 0 12px; gap: 0;
+  border: 1px solid var(--color-border, #cbd5e1); border-radius: 999px; color: var(--color-text, #0f172a); }
+.exam-content .tl-conf input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.exam-content .tl-conf label:has(input:checked) { background: var(--color-primary, #1d4ed8); border-color: var(--color-primary, #1d4ed8); color: #fff; }
+.exam-content .tl-conf label:has(input:focus-visible) { outline: 2px solid var(--color-primary, #1d4ed8); outline-offset: 2px; }
+.exam-content .tl-conf { white-space: nowrap; }
+@media (max-width: 400px) { .exam-content .tl-conf { gap: 6px; font-size: .78em; } .exam-content .tl-conf label { padding: 0 8px; } }

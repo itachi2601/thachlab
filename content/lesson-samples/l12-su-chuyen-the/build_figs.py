@@ -67,15 +67,78 @@ b += text(290, 140, "nhiệt từ", RED, 14) + text(290, 158, "không khí vào"
 fig1 = wrap("0 0 420 214", "Li nước đá đang tan có cắm nhiệt kế, ngoài thành li có nước ngưng tụ",
             b, "Hình 1. Không khí nóng truyền nhiệt vào li đá đang tan: nhiệt kế chỉ bao nhiêu? Nước ngoài thành li là hơi nước <em>ngưng tụ</em> khi gặp mặt lạnh.")
 
-# ---------------------------------------------------------------- Hình 2: ảnh OpenStax 14.7 (đợt 2, 27/10/2026)
-fig2 = ('<p>Hình 2 đặt ba thể cạnh nhau ở mức phân tử.<sup class="tl-fn"><a href="#tl-fn-1">1</a></sup></p>\n\n'
-        '<figure class="fig" data-tl="1"><img src="/assets/openstax/l12-su-chuyen-the/hinh-ba-the-mo-hinh.webp" '
-        'alt="Mô hình phân tử của chất rắn, chất lỏng và chất khí, kèm chiều nóng chảy, đông đặc, sôi, ngưng tụ" '
-        'loading="lazy" width="875" height="864"><figcaption>Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.<br>'
-        'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết.<br>Lỏng: phân tử chuyển động tự do hơn.<br>Khí: phân tử rất xa nhau, bay thẳng.</figcaption></figure>\n'
-        '<ol class="tl-fns"><li id="tl-fn-1"><strong>Nhãn trong hình:</strong> Solid = rắn · Liquid = lỏng · Gas = khí · Limits of motion = giới hạn dao động · '
-        'Energy input = nhận năng lượng · Energy output = toả năng lượng · Melt = nóng chảy · Freeze = đông đặc · Boil = sôi (hoá hơi) · Condense = ngưng tụ.<br>'
-        'Hình: OpenStax, College Physics 2e, Hình 14.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</li></ol>')
+# ---------------------------------------------------------------- Hình 2: ba thể ở mức phân tử (26/11/2026)
+# Vẽ lại theo OpenStax College Physics 2e Hình 14.7, nhãn tiếng Việt ngay trên hình (H3, N8); xếp dọc cho màn 360 px.
+import math as _mm
+b = ""
+PX, PW, PH = 12, 160, 110
+rows = ((30, "RẮN"), (208, "LỎNG"), (386, "KHÍ"))
+for y, ten in rows:
+    b += f'<rect x="{PX}" y="{y}" width="{PW}" height="{PH}" rx="8" fill="rgba(148,163,184,.1)" stroke="currentColor" stroke-width="1.6"/>'
+    b += text(PX + PW / 2, y - 9, ten, "currentColor", 15, "middle", "700")
+
+
+def lo_xo(x1, y1, x2, y2, n=6, a=3.5):  # trả đoạn "M… L…" để gộp mọi lò xo vào một <path>
+    L = _mm.hypot(x2 - x1, y2 - y1); ux, uy = (x2 - x1) / L, (y2 - y1) / L
+    p = [(x1, y1)]
+    for i in range(n):
+        t = (i + .5) / n; s = a if i % 2 == 0 else -a
+        p.append((x1 + ux * L * t - uy * s, y1 + uy * L * t + ux * s))
+    p.append((x2, y2))
+    return "M" + " ".join(f"{px:.0f},{py:.0f}" for px, py in p)
+
+
+def hat(x, y):  # đặt trong nhóm <g> tô sẵn màu hạt
+    return f'<circle cx="{x}" cy="{y}" r="7"/>'
+
+
+HAT_G = f'<g fill="{ORG}" stroke="currentColor" stroke-width="1.2">'
+
+
+def vec(x, y, dx, dy):  # mũi tên chuyển động gắn vào hạt
+    n = _mm.hypot(dx, dy); ux, uy = dx / n, dy / n
+    x1, y1 = x + ux * 9, y + uy * 9
+    return line(f"{x1:.0f}", f"{y1:.0f}", f"{x+dx:.0f}", f"{y+dy:.0f}", "currentColor", 1.5) + chevron(x + dx, y + dy, dx, dy, "currentColor", 1.5, 6)
+
+
+# rắn: mạng đều, nối bằng "lò xo" liên kết, chỉ rung tại chỗ (mũi tên rất ngắn)
+xs_, ys_ = (32, 72, 112, 152), (51, 85, 119)
+d = ""
+for y in ys_:
+    for x in xs_:
+        if x != xs_[-1]: d += lo_xo(x + 7, y, x + 33, y)
+        if y != ys_[-1]: d += lo_xo(x, y + 7, x, y + 27)
+b += f'<path d="{d}" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".75"/>'
+b += HAT_G + "".join(hat(x, y) for y in ys_ for x in xs_) + "</g>"
+# lỏng: sát nhau nhưng lộn xộn, đổi chỗ được
+liq = ((34, 230), (68, 226), (102, 234), (138, 228), (160, 256), (46, 262), (82, 258), (118, 266),
+       (148, 290), (30, 296), (66, 292), (104, 300))
+b += HAT_G + "".join(hat(x, y) for x, y in liq) + "</g>"
+for (x, y), (dx, dy) in zip(liq[::3], ((14, 10), (-10, 14), (16, -8), (12, 12))):
+    b += vec(x, y, dx, dy)
+# khí: rất xa nhau, bay thẳng nhanh
+gas = (((36, 410), (34, 18)), ((140, 404), (-30, 20)), ((88, 450), (30, -8)), ((40, 480), (24, -22)), ((150, 478), (-6, -34)))
+b += HAT_G + "".join(hat(x, y) for (x, y), _ in gas) + "</g>"
+for (x, y), (dx, dy) in gas:
+    b += vec(x, y, dx, dy)
+
+
+def cap_mui_ten(y_top, y_bot, xuong, c_xuong, len_, c_len):
+    s = line(196, y_top, 196, y_bot - 2, c_xuong, 2.4) + chevron(196, y_bot, 0, 1, c_xuong, 2.4, 10)
+    s += line(222, y_bot, 222, y_top + 2, c_len, 2.4) + chevron(222, y_top, 0, -1, c_len, 2.4, 10)
+    m = (y_top + y_bot) / 2
+    s += text(236, m - 22, xuong, c_xuong, 15, "start", "700") + text(236, m - 4, "nhận nhiệt", c_xuong, 14, "start", "500")
+    s += text(236, m + 26, len_, c_len, 15, "start", "700") + text(236, m + 44, "toả nhiệt", c_len, 14, "start", "500")
+    return s
+
+
+b += cap_mui_ten(100, 236, "nóng chảy", RED, "đông đặc", BLUE)
+b += cap_mui_ten(278, 414, "hoá hơi", ORG, "ngưng tụ", BLUE)
+fig2 = ('<p>Hình 2 đặt ba thể cạnh nhau ở mức phân tử.</p>\n\n'
+        + wrap("0 0 360 504", "Mô hình phân tử của chất rắn, chất lỏng và chất khí; rắn nóng chảy thành lỏng và lỏng hoá hơi thành khí khi nhận nhiệt, chiều ngược lại đông đặc và ngưng tụ khi toả nhiệt",
+               b, 'Hình 2. Cùng là các phân tử, khác nhau ở <strong>khoảng cách</strong> và <strong>mức trật tự</strong>.<br>'
+               'Rắn: phân tử dao động quanh vị trí cố định, nối bằng "lò xo" liên kết.<br>Lỏng: phân tử chuyển động tự do hơn.<br>Khí: phân tử rất xa nhau, bay thẳng.<br>'
+               '<small>Vẽ lại theo OpenStax, College Physics 2e, Hình 14.7 — CC BY‑NC‑SA 4.0 — openstax.org/books/college-physics-2e</small>'))
 
 # ---------------------------------------------------------------- Hình 3: vòng chuyển thể
 b = defs("f3")
