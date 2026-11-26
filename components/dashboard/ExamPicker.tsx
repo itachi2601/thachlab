@@ -108,7 +108,14 @@ export default function ExamPicker({
         <Search size={16} className="pointer-events-none absolute top-1/2 left-3 -translate-y-1/2 text-slate-500" />
         <input
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e) => {
+            const next = e.target.value;
+            setSearch(next);
+            // Báo lỗi #169: tìm ra đúng một đề thì chọn luôn, kẻo nút "Trình chiếu chữa bài" vẫn mở đề đang chọn cũ.
+            const kw = next.trim().toLowerCase();
+            const hits = kw ? exams.filter((x) => x.title.toLowerCase().includes(kw) || String(x.id) === kw) : [];
+            if (hits.length === 1 && hits[0].id !== value) onChange(hits[0].id);
+          }}
           placeholder="Tìm đề theo tên hoặc mã…"
           aria-label="Tìm đề"
           className="w-full rounded-xl border border-white/10 bg-panel py-2 pr-3 pl-9 text-sm text-white focus:border-primary focus:outline-none"
