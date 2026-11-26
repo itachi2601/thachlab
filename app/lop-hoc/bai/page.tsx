@@ -12,10 +12,11 @@ import {
 } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, Tv, Search, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, Eye, Maximize2, Menu, MonitorPlay, NotebookPen, Tv, Search, X } from "lucide-react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import ContentHtml from "@/components/exams/ContentHtml";
+import { anRuotTap, hocSinhCoRuotTap } from "@/features/lessons/an-ruot-tap";
 import { useAuth } from "@/components/auth/AuthProvider";
 import TeacherViewBanner from "@/components/auth/TeacherViewBanner";
 import { useTeacherView } from "@/components/auth/useTeacherView";
@@ -98,7 +99,7 @@ import { GradedItemBlock } from "./_parts/GradedItemBlock";
 import { WorkedPracticeBlock } from "./_parts/WorkedPracticeBlock";
 
 function LessonLoader() {
-  const { session, loading } = useAuth();
+  const { session, loading, profile } = useAuth();
   const { isTeacherView } = useTeacherView();
   // B1/N1: Trình chiếu và ghi chú lúc dạy chỉ ở chế độ giáo viên.
   // "Xem như học sinh" tắt isTeacherView nên hiện đúng giao diện học sinh.
@@ -118,7 +119,18 @@ function LessonLoader() {
   }, [title]);
   const [chapterId, setChapterId] = useState<number | null>(null);
   const [lessonKind, setLessonKind] = useState<LessonKind>("bai_hoc");
-  const [items, setItems] = useState<LessonItem[] | null>(null);
+  const [rawItems, setItems] = useState<LessonItem[] | null>(null);
+  // P3 (26/11/2026): HS không nhập từ danh sách lớp của thầy (không class_name/student_code) thì không có
+  // ruột Tập in sẵn → đổi nhãn "✍️ Tập ô …" thành "Ghi vào vở", bỏ câu "Ruột tập: …" (N1). Không round-trip mới:
+  // dùng profile AuthProvider đã tải. Giáo viên/admin/trợ giảng giữ nguyên.
+  const coRuotTap = !profile || profile.role !== "student" || hocSinhCoRuotTap(profile);
+  const items = useMemo(
+    () =>
+      coRuotTap || !rawItems
+        ? rawItems
+        : rawItems.map((it) => (it.kind === "ly_thuyet" ? { ...it, body_html: anRuotTap(it.body_html) } : it)),
+    [rawItems, coRuotTap],
+  );
   /** Lời giải bài tập mẫu không nằm trong file tĩnh — theo dõi lượt tải thêm để không hiện lưới trống. */
   const [workedFailedId, setWorkedFailedId] = useState<number | null>(null);
   const workedState: "loading" | "failed" = workedFailedId === id ? "failed" : "loading";
@@ -205,6 +217,27 @@ function LessonLoader() {
   const [bodyReady, setBodyReady] = useState(false);
   /** Ngăn kéo "Nội dung khoá" trên điện thoại: gộp cột trái + cột phải vào một bottom sheet. */
   const [drawerOpen, setDrawerOpen] = useState(false);
+  // B6 (HS học thử 26/11/2026): < 1024 dải tab ẩn khi cuộn xuống, hiện lại khi cuộn lên — thanh cố định
+  // từ 172px (21% của 812) còn 118px (14,5%). Dựa vào cuộn của chính học sinh nên không phạm B4.
+  const [tabsHidden, setTabsHidden] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 1023px)");
+    let last = window.scrollY;
+    // Không qua requestAnimationFrame: việc ở đây rẻ (so sánh số, setState trùng giá trị thì React bỏ qua).
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (!mq.matches || y < 160) {
+        setTabsHidden(false);
+        last = y;
+        return;
+      }
+      if (Math.abs(y - last) < 8) return;
+      setTabsHidden(y > last);
+      last = y;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   const drawerRef = useRef<HTMLDivElement>(null);
   const drawerDragRef = useRef<number | null>(null);
   const [openChapters, setOpenChapters] = useState<Set<number>>(new Set());
@@ -1055,7 +1088,7 @@ function LessonLoader() {
   // Bài tương ứng trong SGK thống nhất (chỉ L12) — HS mở đúng trang sách.
   const sgkRef = SGK_L12[id];
   const hasLessonMeta =
-    lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed || !!theoryMeta || !!sgkRef;
+    lessonKind !== "bai_hoc" || !!assignmentItem?.due_at || lessonTheoryPassed || (!!theoryMeta && (activeSection?.kind ?? "ly_thuyet") === "ly_thuyet") || !!sgkRef;
   // Mục lục: số mục đã đọc (✓). Tab đã xong hết → mọi mục ✓.
   const tocComplete = !!session && !!activeSection && activeSection.items.every(isDone);
   const tocDoneCount = tocComplete ? tocEntries.length : Math.min(tocRead.key === tocStoreKey ? tocRead.max : 0, tocEntries.length);
@@ -1309,6 +1342,20 @@ function LessonLoader() {
         <Maximize2 size={14} aria-hidden />
         <span className="lesson-tool-text">Toàn màn hình</span>
       </button>
+      {/* < 1024: Ghi chú vào bảng Aa thay nút nổi — nút nổi đè nút "Tiếp · mục sau", phương án quiz (HS học thử 26/11, N1, B6) */}
+      {!canPresent && (
+        <button
+          type="button"
+          className="lesson-tool lesson-tool--note"
+          onClick={() => {
+            setToolsOpen(false);
+            window.dispatchEvent(new Event(OPEN_STUDENT_NOTE_EVENT));
+          }}
+        >
+          <NotebookPen size={14} aria-hidden />
+          <span>Ghi chú</span>
+        </button>
+      )}
     </>
   );
 
@@ -1492,7 +1539,8 @@ function LessonLoader() {
   function renderMeta(className: string) {
     return (
       <div className={className}>
-        {theoryMeta && (
+        {/* Số phút/mục/câu là của tab Lý thuyết → chỉ hiện ở tab đó (HS học thử 26/11: hiện cả ở Bài mẫu/Luyện tập, N4) */}
+        {theoryMeta && (activeSection?.kind ?? "ly_thuyet") === "ly_thuyet" && (
           <span className="lesson-meta-time">
             ~{theoryMeta.minutes} phút · {theoryMeta.total} mục
             {theoryMeta.quizzes > 0 ? ` · ${theoryMeta.quizzes} câu tự kiểm tra` : ""}
@@ -1582,7 +1630,7 @@ function LessonLoader() {
   if (!nextInCourse) nextInCourse = nextLesson;
 
   return (
-    <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""}`}>
+    <div className={`lesson-shell lesson-page ${isAvcn ? "lesson-shell--cttc" : ""} ${dim ? "is-dim" : ""} ${drawerOpen ? "is-drawer-open" : ""} ${tabsHidden ? "is-tabs-hidden" : ""}`}>
       <TeacherViewBanner />
       <div className="lesson-layout lesson-layout--rail">
         {/* Rail trái = "mình đang ở đâu", cùng cạnh với rail chương ở trang chương (B5, 26/10/2026): lối về

@@ -142,6 +142,20 @@ export default function GiaiCungHinh({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [opened]);
+  // Bàn phím ảo bật (visualViewport co lại): ô đáp số đang gõ phải nằm giữa thanh bài và bàn phím — trước đó ô
+  // rơi xuống dưới hình/bàn phím (HS học thử 26/11, D6, B6). scroll-margin trong globals.css giữ khoảng cách mép trên.
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return;
+    const keep = () => {
+      const el = document.activeElement;
+      if (!(el instanceof HTMLInputElement) || !splitRef.current?.contains(el)) return;
+      const r = el.getBoundingClientRect();
+      if (r.bottom > vv.height - 12 || r.top < top + 8) el.scrollIntoView({ block: "center", behavior: "instant" });
+    };
+    vv.addEventListener("resize", keep);
+    return () => vv.removeEventListener("resize", keep);
+  }, [top]);
   const layer = Math.min(opened, step + 1);
   const { cur, play, dangChay } = useDong(tool);
   const tomDe = getTomDe(q);

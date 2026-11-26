@@ -519,11 +519,18 @@ export default function VideoThiNghiemKhung({
   const daQuaDuDoan = chose !== null || boQua;
   const an = (o: VideoKhungO) => o.khoa === "gia_thuyet" && !!o.kiem && !daQuaDuDoan;
   const nhan = (o: VideoKhungO) =>
-    asking === "cau_chot" && o === data.o[curOf(t)] ? "Câu chốt" : an(o) ? "Cần kiểm tra" : NHAN[o.khoa];
+    asking === "cau_chot" && o === data.o[curOf(t)] ? "Câu chốt" : an(o) ? "Câu hỏi của thí nghiệm" : NHAN[o.khoa];
   const chu = (o: VideoKhungO) => (an(o) ? o.kiem : o.chu);
 
   const cur = curOf(t);
   const shown = asking === "du_doan" ? duDoanIdx : cur;
+  // Chưa bấm phát: "Cần kiểm tra · 1/6 · 0:00" + 5 ổ khoá không nói phải làm gì → một câu chỉ dẫn (HS học thử 26/11, N1, L4).
+  const chuaXem = t === 0 && reached === 0 && asking === null && chose === null && !boQua;
+  const chiDan = (
+    <p className="text-[15px] leading-snug text-ink" style={{ margin: "0 0 10px" }}>
+      Bấm ▶ xem video. Video tự dừng ở câu dự đoán để em đoán trước; các ô 🔒 mở dần khi video chạy tới.
+    </p>
+  );
 
   const body = (i: number, big: boolean) => {
     const o = data.o[i];
@@ -589,6 +596,7 @@ export default function VideoThiNghiemKhung({
         {/* Phần tương tác (câu hỏi, sáu ô): bên phải ở màn rộng cho dễ bấm, dưới video ở điện thoại */}
         <div className="order-2">
           {/* Điện thoại: dải sáu chấm + MỘT ô hiện tại */}
+          {chuaXem && chiDan}
           <div className="lg:hidden">
             <ol className="mb-3 flex gap-1.5" aria-label="Các bước thí nghiệm">
               {data.o.map((o, i) => (
@@ -616,9 +624,11 @@ export default function VideoThiNghiemKhung({
             <div ref={cardRef} className="scroll-mb-24 rounded-xl border border-line-strong bg-primary-soft p-4">
               <p className="flex items-baseline gap-2 text-[15px] font-bold text-primary" style={{ marginBottom: 6 }}>
                 <span>{nhan(data.o[shown])}</span>
-                <span className="text-[13px] font-semibold text-muted">
-                  {shown + 1}/{data.o.length} · {mmss(data.o[shown].giay)}
-                </span>
+                {!chuaXem && (
+                  <span className="text-[13px] font-semibold text-muted">
+                    {shown + 1}/{data.o.length} · {mmss(data.o[shown].giay)}
+                  </span>
+                )}
               </p>
               {body(shown, true)}
             </div>
