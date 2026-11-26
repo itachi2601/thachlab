@@ -11,7 +11,7 @@ Trang học đã tự chia mỗi `<h3>` thành từng bước "Tiếp" theo `<h4
 <details class="tl-details tl-more tl-chot-ghi"><summary>✍️ Tập ô 2·2 · đối chiếu 2 dòng</summary><ul><li>…</li></ul></details>
 </div>
 ```
-- 🎯: MỘT câu nhớ lại. **Lấy câu Trả bài có sẵn** của bài đúng mục đó chuyển lên (N4 — không thêm câu mới làm phình bài); mục Trả bài cuối bài chỉ giữ câu còn lại, đánh số lại.
+- 🎯: MỘT câu nhớ lại. **Lấy câu Trả bài có sẵn** của bài đúng mục đó chuyển lên (N4 — không thêm câu mới làm phình bài); mục Trả bài cuối bài chỉ giữ câu còn lại, đánh số lại (còn 1 câu thì bỏ số), và mở đầu bằng dòng `<p>Các câu tự hỏi của từng phần nằm ở ô <strong>🎯 Cần nắm</strong> cuối mỗi mục phía trên. Ở đây chỉ còn câu gom cả bài.</p>` — thiếu dòng này HS tưởng mất câu (báo lỗi #177, 26/11/2026).
 - ✍️: 2–3 dòng ý cốt lõi, **trỏ ô ruột tập** đang chứa đúng các ý đó (đọc `scripts/ruot-tap/<file bài>.mjs`: `h3(k, 'tên', 'trang·ô')`). Không có ô Tập nào chứa ý đó → giữ `✍️ Ghi vở · N dòng` và ghi vào báo cáo.
 - Mục "Mang về" cuối bài: thay danh sách bằng một dòng "Ruột tập: điền đủ các ô …. Ô nào còn trống, mở dòng ✍️ trong ô Chốt mục tương ứng ở trên."
 - Bài 1–2 mục kiến thức: 2–3 ô là đủ; bài thực hành: một ô cuối phần Kết quả/Rút ra (nếu Tập có ô tương ứng).

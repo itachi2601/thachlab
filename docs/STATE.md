@@ -64,12 +64,12 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Audit đáp án ngân hàng: 127 câu `_can_xac_nhan`, `scripts/logs/db-sai-can-duyet.csv` (656 câu).
 - Backfill mức độ: ~3.500 câu rỗng — `backfill-question-bank-difficulty.mts 20` (**ghi thật**).
 - Video thí nghiệm: mọi TN đã có clip; lô 20 clip L12 + 3 mẫu đã lên DB (21–22/11). Lỗi 0 lượt ghi (`lesson_clip_views`, `lesson_clip_choices`) do thiếu `data-lesson-id` ở /lop-hoc/bai — sửa + deploy 25/11 (9e50dcab4); kiểm lại có dòng sau buổi học tới. Treo: sinh lại `thu-vien-mo-phong.json`.
-- Clip Ch.1 lô B (26/11): bài 46, 48, 22 hẹn ghi DB 22:05 26/11 (`--chi-video`, log `scripts/logs/dang-22h-3bai-20261126.log`) — phiên sau kiểm log 3 lần "Khác biệt ngoài khối video: KHÔNG", không "LOI".
 - Lô 12/11: clip đề Bộ, 12 clip bẫy, `MoPhongPortals` bài 7, 8, 11 đã lên; bài 7, 8 `theory.src.html` còn trỏ clip cũ (DB/`theory.html` mới hơn).
 - Rank mùa 2 (5/11): 4 mùa theo khối 02/11–17/01 đang chạy (id 26–29); chưa thử bằng HS thật — memory `project_thachlab_rank_system`.
 - Rank: gắn `challenge_exam_id` season 4; spec `docs/BAN-GIAO-RANK-THI-THANG-HANG-2026-10-03.md`.
 - KHTN 9 cơ học 129–131: chờ thầy duyệt (memory `project_thachlab_l9_co_hoc_129_131`).
 - L10 Bài 6 Thực hành đo tốc độ (lesson 51): đã đăng 10/11; còn 4 điểm chờ thầy quyết — `content/lesson-samples/l10-thuc-hanh-do-toc-do/ra-soat.md`; đề quiz cũ 1227 chờ dọn.
+- Cải tiến lý thuyết sau học thử vai HS (26/11, nhánh `claude/theory-improvement-review-5ca7c7`): bài 63 + 35 đã đăng lý thuyết 26/11 22h05 (sao lưu `scripts/logs/ly-thuyet-bai{63,35}-backup-*`); còn 5 quyết định P1–P5 ở `docs/DE-XUAT-CAI-TIEN-LY-THUYET-2026-11-26.md`.
 
 ## CHƯA làm (roadmap)
 - `/luyen-tap` lọc Lớp → Chương → Bài → YCCĐ → mức; `/lo-trinh`; Động học 10 ≥30 câu/bài.
@@ -77,6 +77,7 @@ Nạp mỗi phiên, giữ dưới 15 KB: hiện trạng + ĐANG CHỜ (1–2 dò
 - Bài tập mẫu → ngân hàng → nút "Bài tương đương" (RPC gộp).
 - Đo độ trễ Supabase từ VN trước khi xoá project Sydney; cột `updated_at` cho `lessons`/`lesson_items`.
 - Đề xuất nghiên cứu HS 14–22 (chờ chốt mục 5): `docs/DE-XUAT-NGHIEN-CUU-HS-14-22-2026-10-11.md`.
+- Lộ trình học kiểu Duolingo (bản thiết kế, chờ chốt mục 9): `docs/LO-TRINH-KIEU-DUOLINGO.md`.
 - 5 việc CSS bài lý thuyết đã duyệt (mục 1,3,4,5,6): `docs/PHAN-TICH-HIEN-THI-LY-THUYET-TUONG-TAC-2026-10-11.md` §5.
 - "Một dạng — một hình" (8/11): 46 bài L10/L11/L12/KHTN9 đã lên DB + deploy; 7 chỗ lệch nhỏ chờ sửa component (`docs/MOT-DANG-MOT-HINH.md` mục 8/11).
 - Dụng cụ đo tương tác · thư viện `/mo-phong` công khai · thí nghiệm ảo theo bộ thiết bị SGK (kế hoạch 21/11, chưa bắt đầu, giao phiên khác): `docs/KE-HOACH-MO-PHONG-HOC-TU-EDUTOOLKIT.md`.
