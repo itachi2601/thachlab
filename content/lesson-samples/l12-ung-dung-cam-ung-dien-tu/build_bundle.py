@@ -21,10 +21,10 @@ EXAM = {
         },
         {
             "type": "multiple_choice",
-            "question": "Một đế sạc không dây có cuộn sơ cấp 20 vòng nối với nguồn xoay chiều 12 V, cuộn thứ cấp 15 vòng. Coi hai cuộn ghép lí tưởng, điện áp trên cuộn thứ cấp là",
+            "question": "Một đế sạc không dây có cuộn sơ cấp 200 vòng nối với nguồn xoay chiều 12 V, cuộn thứ cấp 150 vòng. Coi hai cuộn ghép lí tưởng, điện áp trên cuộn thứ cấp là",
             "options": ["9,0 V.", "16 V.", "12 V.", "3 V."],
             "answer": 0,
-            "explanation": "Máy biến áp lí tưởng: U2/U1 = N2/N1, suy ra U2 = 12 × 15/20 = 9,0 V. Các phương án sai ứng với ba lỗi hay gặp: đảo tỉ số vòng (16 V), tưởng máy biến áp không đổi điện áp (12 V), và lấy hiệu số vòng (3 V). Thực tế sạc không dây không có lõi sắt chung nên điện áp đo được còn thấp hơn giá trị lí tưởng này.",
+            "explanation": "Máy biến áp lí tưởng: U2/U1 = N2/N1, suy ra U2 = 12 × 150/200 = 9,0 V. Các phương án sai ứng với ba lỗi hay gặp: đảo tỉ số vòng (16 V), tưởng máy biến áp không đổi điện áp (12 V), và lấy hiệu số vòng (3 V). Thực tế sạc không dây không có lõi sắt chung nên điện áp đo được còn thấp hơn giá trị lí tưởng này.",
         },
         {
             "type": "multiple_choice",
